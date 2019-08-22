@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49BA598F83
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 11:38:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C681C98F7F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 11:37:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nU7hcavxU7l+heFs6hyBdvJDECURCkQxN3+AfxQgPwg=; b=cwzEFB8G+HEAp7
-	5yOAEBQayf56gaW9e2MTzolPEg1Gj2ioGVcs/J0s7DPjBiVWtBqPneliPpQ+1Fn2NAWEji+vt7FYF
-	s9Y6BdAMf8MsVbZ4OM+pYVlnoyD03eI/NuuuM+7EnrDaUPgib64RYLmXb04x1GzhR7e2+8Jvb+yrG
-	S61Lkx3YrkNyJDXV+s0iX95jwIuRRq4b7nj76dw1YG6s29BP5mbHVK1IOpVv8r/eUJoICYm4vFovQ
-	t3EQ/PwQqwgMlw5OzIczAvWVXVj3TpdT/f5zZudHltermZV+mODkDTKS7TcJFAS8sXonA/Hbqqamx
-	4vjQ4eIAfqykeHeaJ2wA==;
+	List-Owner; bh=kFn0T55/EvLP8LldTa3oBG1jVymfErDiYWPkCI9e/0M=; b=hh9JHu27nnANZ/
+	DapxeMF24mODq6Zr2mBW5CsPjGWhHCezVKPjDGmNKVnpKMTYsntzGu/hUD8XcxqJnbvKRyT3JBDyn
+	juDSCPiTVjZUOS4Q6OFnS3Ng3VmVsxIz7wvH5lVxcC5V8S109GQFFFXgyrHN8wJGa5N6p/Qvn11Ce
+	pPQa9Gi87nNxhTnD1uxJbhDYVqUF3rSrkvMTYgW2WsMYlBCdwu1QqLBvkw6uCWS0qQ06KlkkCnfja
+	fjEo79vPHZVlMLEkbofmSp21tupAq5oHTtjiFOk1qo8ko9K9+f41d3a+c/KANwyygyGmaK11SioYu
+	NuX6rdbYxGSjn+0+UCtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0jY8-0003ak-Gh; Thu, 22 Aug 2019 09:38:32 +0000
+	id 1i0jXO-0002u0-UT; Thu, 22 Aug 2019 09:37:47 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0jUB-0007Es-79
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 09:34:30 +0000
+ id 1i0jU5-00075F-Fy
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 09:34:24 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id BF9C0D7563;
- Thu, 22 Aug 2019 11:34:24 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 5FF33D7567;
+ Thu, 22 Aug 2019 11:34:19 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id ye-Fov3VnB4j; Thu, 22 Aug 2019 11:33:49 +0200 (CEST)
+ with ESMTP id uiRR5u0ASFBZ; Thu, 22 Aug 2019 11:33:39 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id B3DE3D7556;
- Thu, 22 Aug 2019 11:33:05 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 3B738D7571;
+ Thu, 22 Aug 2019 11:33:03 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id miP-xL8D7hA4; Thu, 22 Aug 2019 11:32:58 +0200 (CEST)
+ with ESMTP id FiRjZKE5M8nP; Thu, 22 Aug 2019 11:32:59 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 9B051D756A;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id E9798D756B;
  Thu, 22 Aug 2019 11:26:51 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH v2 16/20] ARM: mmp: add SMP support
-Date: Thu, 22 Aug 2019 11:26:39 +0200
-Message-Id: <20190822092643.593488-17-lkundrak@v3.sk>
+Subject: [PATCH v2 17/20] ARM: mmp: move cputype.h to include/linux/soc/
+Date: Thu, 22 Aug 2019 11:26:40 +0200
+Message-Id: <20190822092643.593488-18-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190822092643.593488-1-lkundrak@v3.sk>
 References: <20190822092643.593488-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_023427_491752_87B78165 
-X-CRM114-Status: GOOD (  13.21  )
+X-CRM114-CacheID: sfid-20190822_023422_693750_323C7263 
+X-CRM114-Status: GOOD (  10.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,72 +82,145 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Used to bring up the second core on MMP3.
+Let's move cputype.h away from mach-mmp/ so that the drivers outside that
+directory are able to tell the precise silicon revision. The MMP3 USB OTG
+PHY driver needs this.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-
 ---
-Changes since v1:
-- Wrap SW_BRANCH_VIRT_ADDR with __pa_symbol()
+ MAINTAINERS                                            | 1 +
+ arch/arm/mach-mmp/common.c                             | 2 +-
+ arch/arm/mach-mmp/devices.c                            | 2 +-
+ arch/arm/mach-mmp/mmp2.c                               | 2 +-
+ arch/arm/mach-mmp/pm-mmp2.c                            | 2 +-
+ arch/arm/mach-mmp/pm-pxa910.c                          | 2 +-
+ arch/arm/mach-mmp/pxa168.c                             | 2 +-
+ arch/arm/mach-mmp/pxa910.c                             | 2 +-
+ arch/arm/mach-mmp/time.c                               | 2 +-
+ {arch/arm/mach-mmp => include/linux/soc/mmp}/cputype.h | 0
+ 10 files changed, 9 insertions(+), 8 deletions(-)
+ rename {arch/arm/mach-mmp => include/linux/soc/mmp}/cputype.h (100%)
 
- arch/arm/mach-mmp/Makefile  |  3 +++
- arch/arm/mach-mmp/platsmp.c | 33 +++++++++++++++++++++++++++++++++
- 2 files changed, 36 insertions(+)
- create mode 100644 arch/arm/mach-mmp/platsmp.c
-
-diff --git a/arch/arm/mach-mmp/Makefile b/arch/arm/mach-mmp/Makefile
-index 322c1c97dc900..7b3a7f979eece 100644
---- a/arch/arm/mach-mmp/Makefile
-+++ b/arch/arm/mach-mmp/Makefile
-@@ -22,6 +22,9 @@ ifeq ($(CONFIG_PM),y)
- obj-$(CONFIG_CPU_PXA910)	+= pm-pxa910.o
- obj-$(CONFIG_CPU_MMP2)		+= pm-mmp2.o
- endif
-+ifeq ($(CONFIG_SMP),y)
-+obj-$(CONFIG_MACH_MMP3_DT)	+= platsmp.o
-+endif
+diff --git a/MAINTAINERS b/MAINTAINERS
+index 43604d6ab96c2..014f533d5aff8 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -10796,6 +10796,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
+ S:	Odd Fixes
+ F:	arch/arm/boot/dts/mmp*
+ F:	arch/arm/mach-mmp/
++F:	linux/soc/mmp/
  
- # board support
- obj-$(CONFIG_MACH_ASPENITE)	+= aspenite.o
-diff --git a/arch/arm/mach-mmp/platsmp.c b/arch/arm/mach-mmp/platsmp.c
-new file mode 100644
-index 0000000000000..98d5ef23623cb
---- /dev/null
-+++ b/arch/arm/mach-mmp/platsmp.c
-@@ -0,0 +1,33 @@
-+// SPDX-License-Identifier: GPL-2.0-or-later
-+/*
-+ * Copyright (C) 2019 Lubomir Rintel <lkundrak@v3.sk>
-+ */
-+#include <linux/io.h>
-+#include <asm/smp_scu.h>
-+#include <asm/smp.h>
-+#include "addr-map.h"
-+
-+#define SW_BRANCH_VIRT_ADDR	CIU_REG(0x24)
-+
-+static int mmp3_boot_secondary(unsigned int cpu, struct task_struct *idle)
-+{
-+	/*
-+	 * Apparently, the boot ROM on the second core spins on this
-+	 * register becoming non-zero and then jumps to the address written
-+	 * there. No IPIs involved.
-+	 */
-+	__raw_writel(virt_to_phys(secondary_startup),
-+			__pa_symbol(SW_BRANCH_VIRT_ADDR));
-+	return 0;
-+}
-+
-+static void mmp3_smp_prepare_cpus(unsigned int max_cpus)
-+{
-+	scu_enable(SCU_VIRT_BASE);
-+}
-+
-+static const struct smp_operations mmp3_smp_ops __initconst = {
-+	.smp_prepare_cpus	= mmp3_smp_prepare_cpus,
-+	.smp_boot_secondary	= mmp3_boot_secondary,
-+};
-+CPU_METHOD_OF_DECLARE(mmp3_smp, "marvell,mmp3-smp", &mmp3_smp_ops);
+ MMU GATHER AND TLB INVALIDATION
+ M:	Will Deacon <will@kernel.org>
+diff --git a/arch/arm/mach-mmp/common.c b/arch/arm/mach-mmp/common.c
+index 24c689a01ecb7..e94349d4726ca 100644
+--- a/arch/arm/mach-mmp/common.c
++++ b/arch/arm/mach-mmp/common.c
+@@ -13,7 +13,7 @@
+ #include <asm/mach/map.h>
+ #include <asm/system_misc.h>
+ #include "addr-map.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ 
+ #include "common.h"
+ 
+diff --git a/arch/arm/mach-mmp/devices.c b/arch/arm/mach-mmp/devices.c
+index 130c1a603ba29..18bee66a671ff 100644
+--- a/arch/arm/mach-mmp/devices.c
++++ b/arch/arm/mach-mmp/devices.c
+@@ -11,7 +11,7 @@
+ #include <asm/irq.h>
+ #include "irqs.h"
+ #include "devices.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "regs-usb.h"
+ 
+ int __init pxa_register_device(struct pxa_device_desc *desc,
+diff --git a/arch/arm/mach-mmp/mmp2.c b/arch/arm/mach-mmp/mmp2.c
+index 18ea3e1a26e69..bbc4c2274de3a 100644
+--- a/arch/arm/mach-mmp/mmp2.c
++++ b/arch/arm/mach-mmp/mmp2.c
+@@ -20,7 +20,7 @@
+ #include <asm/mach/time.h>
+ #include "addr-map.h"
+ #include "regs-apbc.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "irqs.h"
+ #include "mfp.h"
+ #include "devices.h"
+diff --git a/arch/arm/mach-mmp/pm-mmp2.c b/arch/arm/mach-mmp/pm-mmp2.c
+index 2923dd5732a62..2d86381e152d6 100644
+--- a/arch/arm/mach-mmp/pm-mmp2.c
++++ b/arch/arm/mach-mmp/pm-mmp2.c
+@@ -17,7 +17,7 @@
+ #include <linux/interrupt.h>
+ #include <asm/mach-types.h>
+ 
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "addr-map.h"
+ #include "pm-mmp2.h"
+ #include "regs-icu.h"
+diff --git a/arch/arm/mach-mmp/pm-pxa910.c b/arch/arm/mach-mmp/pm-pxa910.c
+index 58535ce206dc5..69ebe18ff209f 100644
+--- a/arch/arm/mach-mmp/pm-pxa910.c
++++ b/arch/arm/mach-mmp/pm-pxa910.c
+@@ -18,7 +18,7 @@
+ #include <asm/mach-types.h>
+ #include <asm/outercache.h>
+ 
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "addr-map.h"
+ #include "pm-pxa910.h"
+ #include "regs-icu.h"
+diff --git a/arch/arm/mach-mmp/pxa168.c b/arch/arm/mach-mmp/pxa168.c
+index 6e02774889679..b642e900727a5 100644
+--- a/arch/arm/mach-mmp/pxa168.c
++++ b/arch/arm/mach-mmp/pxa168.c
+@@ -21,7 +21,7 @@
+ #include "addr-map.h"
+ #include "clock.h"
+ #include "common.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "devices.h"
+ #include "irqs.h"
+ #include "mfp.h"
+diff --git a/arch/arm/mach-mmp/pxa910.c b/arch/arm/mach-mmp/pxa910.c
+index cba31c758dea6..b19a069d9fabe 100644
+--- a/arch/arm/mach-mmp/pxa910.c
++++ b/arch/arm/mach-mmp/pxa910.c
+@@ -18,7 +18,7 @@
+ #include <asm/mach/time.h>
+ #include "addr-map.h"
+ #include "regs-apbc.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "irqs.h"
+ #include "mfp.h"
+ #include "devices.h"
+diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
+index 8f4cacbf640e9..110dcb3314d13 100644
+--- a/arch/arm/mach-mmp/time.c
++++ b/arch/arm/mach-mmp/time.c
+@@ -33,7 +33,7 @@
+ #include "regs-timers.h"
+ #include "regs-apbc.h"
+ #include "irqs.h"
+-#include "cputype.h"
++#include <linux/soc/mmp/cputype.h>
+ #include "clock.h"
+ 
+ #define TIMERS_VIRT_BASE	TIMERS1_VIRT_BASE
+diff --git a/arch/arm/mach-mmp/cputype.h b/include/linux/soc/mmp/cputype.h
+similarity index 100%
+rename from arch/arm/mach-mmp/cputype.h
+rename to include/linux/soc/mmp/cputype.h
 -- 
 2.21.0
 
