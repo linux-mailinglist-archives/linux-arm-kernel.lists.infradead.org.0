@@ -2,139 +2,189 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E1B398E51
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 10:49:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D54798E68
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 10:53:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=70a5iHrf0j1LmgicdV59j2dmz9m7vP+X7bmZQtFCOR4=; b=q9H8cRJVdHw9ei
-	Aj512hU2/VI+p8uEtlifCg481yf5LouJ2+exyW6Kwcc1qzaXbtBBDFy8d/UHfM+bFcY3H1x5Cfy6p
-	ebAhMO1P+vTVWmAdDmxw+MFMdAYTOer2DiLYyB4f/obQZhLBNnXPemMwo+ge//wfYVUF7MDXPOvTO
-	/Otwg4TGliVHw/aNM/A+zDr+7sk9fakVYIXyuLeCzaAXDe3WKBmY0EwqynqHnCcv/KiWOaqvQ6AQy
-	p00MgViiB0T+kCOzAlOM9FNrhHt17zMWX1lP3xuuJHcjny3TVI3bS4G5C/nlC89kqSARXzDBeLN8x
-	WCcm7eLks+qJAvtsj9Ow==;
+	List-Owner; bh=4hVtz92kyyh+fp70msaJibrLdN4RuYD7cHiugg36Nl4=; b=RExFly0tvRb3Qf
+	F9O4Ji/LGX0A239aZq0rdh9t30RA406qUjF80Jx5cdUsP2jItIzehvUuSejoJXX/pxlIa1QYHXbg1
+	OwQh2rj+FSXDEhj345Gf5EUbK7XA07xXkEo92o857MfrsmbCtOBs2Oa7u0lie9zSrGY7Sxse7y7Sx
+	shN58wsS9/Ts5DCO77glh/TIgPTwCLMScgLpRdFW2nY1+sPEqf1fqHNKBYX1KpBjAFEfIlBOlOK7p
+	4LT0uEeB9HgXnG8O/TQsm2Rc1FORfuWFWoZ6Lt66Caqmt4/T+3n414XQnfubKu7tIMs2OnG5GuVm7
+	5odrkb95T/VovCXJzTeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0imt-0000oN-IV; Thu, 22 Aug 2019 08:49:43 +0000
-Received: from mail-eopbgr700077.outbound.protection.outlook.com
- ([40.107.70.77] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
+	id 1i0iqI-0002lZ-T2; Thu, 22 Aug 2019 08:53:15 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0imY-0000o2-9l
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 08:49:23 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=SDxToYdmuCVjotsBUw+BWDuOIiBc27pXQZOZRUtRgfDlLs3DDxg0WMHEqYDkFuZa5RAH7cbhirAC/G8wY7cufY9XUIuEl+SAg2/blNOOpgwEOg6U5Cy5i1qn5tKRf/4mBkTic7/lGbDoxiE0yDbi2AQuUX7/BeXnPPilux+y8obO78O14q7Zqwkzr26+YKab/WhXwpo+1M71Puug2qvSdTIEEzBFh9DpHLJxaO5K6R13V788St6ehwTwHVKTxrTQ9/8d82vHScDwT7h8oFS/V5JsSuWSZoa3B7hjfejRebdplTxlAcLWST0jRCo95m4FhTeJARbPq26JwBdaw8ETpQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uRIVbmD87mP7lywA6ZM2ve2/SJYR+gHsTHLAgIqJLEc=;
- b=BQUa60gUZL4+QgoNq3bSs3/doInzgWCd0bVtv0Q0P3/VVdk9vv8JpDZb5iI8fmV9I9RnX0zM1d+Yb/aaq77B7eHLFnLTi5I2eY/6OxIWQf+nplW5QX0ZkE4xPqFrShU63wEJmqAjO2g37Dgwu1DX9Pu01DDIoDGcrtD2F6yEAC1ptlQSnKM9Fex6itiCgYWRgOmn0ZuDljupmOJtm822yU5aa2idBRrDlYSEwSpantB/ZKB3WVutd/ogKeF5UH17CEz/gBnXhXIzwuIe78yRW/kT85hYql4+NH35nEiViO0Pe5E0QkcHUn3gOucDq9nltrn7jn9wiz0+TBFh77gc2A==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=oracle.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=uRIVbmD87mP7lywA6ZM2ve2/SJYR+gHsTHLAgIqJLEc=;
- b=NKZs40b0iyQr/KaYgl79uprz9kU6N7g7ekJvR6MahOspi/sChfJR0T8w39FsHTDF8Xn6iK2vFK8WQzNzcXC8gsOgKcZGqmy/IaOiTPZof66usIKr2FE8fnq8qBVLIILMNDkPy06+5XLKJfJbC67WCXAPo2kAqwRo2YnqJHos3qg=
-Received: from MWHPR0201CA0046.namprd02.prod.outlook.com
- (2603:10b6:301:73::23) by BN7PR02MB4034.namprd02.prod.outlook.com
- (2603:10b6:406:fe::20) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2178.16; Thu, 22 Aug
- 2019 08:49:19 +0000
-Received: from SN1NAM02FT011.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::201) by MWHPR0201CA0046.outlook.office365.com
- (2603:10b6:301:73::23) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2199.14 via Frontend
- Transport; Thu, 22 Aug 2019 08:49:19 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; oracle.com; dkim=none (message not signed)
- header.d=none;oracle.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT011.mail.protection.outlook.com (10.152.72.82) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2199.13
- via Frontend Transport; Thu, 22 Aug 2019 08:49:18 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1i0imU-0005Iz-9f; Thu, 22 Aug 2019 01:49:18 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1i0imP-0005wS-6Q; Thu, 22 Aug 2019 01:49:13 -0700
-Received: from xsj-pvapsmtp01 (smtp2.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x7M8n7bc027385; 
- Thu, 22 Aug 2019 01:49:07 -0700
-Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1i0imJ-0005q3-Ek; Thu, 22 Aug 2019 01:49:07 -0700
-Subject: Re: [PATCH 1/4] misc: xilinx_sdfec: Fix a couple small information
- leaks
-To: Dan Carpenter <dan.carpenter@oracle.com>,
- Michal Simek <michal.simek@xilinx.com>
-References: <20190821070606.GA26957@mwanda>
- <58e9a151-3d92-c730-eea6-5cfde90934a4@xilinx.com>
- <20190822082831.GH3964@kadam>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <3877ba50-8c3b-bc88-95d3-3aeb3e09fcf1@xilinx.com>
-Date: Thu, 22 Aug 2019 10:49:04 +0200
+ id 1i0ipL-0002h8-Iv; Thu, 22 Aug 2019 08:52:19 +0000
+Received: by mail-ed1-x542.google.com with SMTP id z51so6776636edz.13;
+ Thu, 22 Aug 2019 01:52:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=qx9NznMkUIg0nmTk1HZniMyla7Gavafi3qDiSFJZG50=;
+ b=jj9+HE/DmIVSewPGDnxnbYyhGyUF5XZfsQV9MdmIuJm52aDMHX74fbafZINd5c+JhC
+ Hy3g5PUSb96dAIsOPlwQZwPquJJHwVWObjl+qUzKgEcOB0NyEqx1hoMQNu1zAG8gBYyr
+ aY+eXOdWNbc9Ze6k75Le1Foxhd6mRMF/Fn9PHNTk0N9uJ885FQEhBRJFzta51e4qiwKM
+ AQShOVgL/ivRpwlyCbE4ZC3aYzDImzthxMFCfontNdltteKyl8KJ7VWbnyFdHDNiDkO4
+ 6q4GbsIHHilM5xOFa9KYbE4bK0DI7QnIDZAFzTE2Rmwj6dTaZvUnYTCz3P1ZHJhRNCH+
+ 4ajQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=qx9NznMkUIg0nmTk1HZniMyla7Gavafi3qDiSFJZG50=;
+ b=DBKPRLk4FTuj2RkTNoBmFkAGLEzufwjn1hv5SqBcUF4mkDTStFWoW+aGb8P0J4emrw
+ GpvYoowoWYrdSbRwk/s9bD9oRZvT/ewqnheL1WV6QekTgs+bKQpuq9FH6Mmi/dydDMBY
+ gc2h7Z2IsX2JFmDLdIcG3ZSKvaCtZw9q5V25D1G9OnvXLoxm/SqSZtn0GU18PBW6p4L8
+ IWbMfzKzrkyaryvRk2VkYLhcveYiOQ3zJutZQzx3VKhU358bBP+iGyPDgjEYSkgVkEVw
+ mA0UJrf/AzhTQ07kY4XpkeDrmTURN1AVBBhcHisf09u+a5ohh6kPUm/hqI0YLNV61stx
+ oLQQ==
+X-Gm-Message-State: APjAAAXsi05CPb0+4VD0nD+yd3ltxS/lVslRvS+TDymkKfaB0XFPK07D
+ 5aTaG/jiD2GfJOWwl8+nXs6iLDFm7xE=
+X-Google-Smtp-Source: APXvYqzUtHNfkeT0QrX18PsHelc50P805854I1TgKbGTyGwFuaXYkhA4TQwuhYpBZ+2dNbMImds01w==
+X-Received: by 2002:a50:f419:: with SMTP id r25mr28741812edm.57.1566463933237; 
+ Thu, 22 Aug 2019 01:52:13 -0700 (PDT)
+Received: from ziggy.stardust ([37.223.137.147])
+ by smtp.gmail.com with ESMTPSA id h9sm4642590edv.75.2019.08.22.01.52.12
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 22 Aug 2019 01:52:12 -0700 (PDT)
+Subject: Re: [PATCH 2/2] pwm: pwm-mediatek: Add MT8516 SoC support
+To: Fabien Parent <fparent@baylibre.com>, thierry.reding@gmail.com,
+ robh+dt@kernel.org
+References: <20190805125848.15751-1-fparent@baylibre.com>
+ <20190805125848.15751-2-fparent@baylibre.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
+ fL3eT7ZsYV5nur7zctmJ+vbszoOASXUpfq8M+S5hU2w7sBaVk5rpH9yW8CUWz2+ZpQXPJcFa
+ OhLZuSKB1F5JcvLbETRjNzNU7B3TdS2+zkgQQdEyt7Ij2HXGLJ2w+yG2GuR9/iyCJRf10Okq
+ gTh//XESJZ8S6KlOWbLXRE+yfkKDXQx2Jr1XuVvM3zPqH5FMg8reRVFsQ+vI0b+OlyekT/Xe
+ 0Hwvqkev95GG6x7yseJwI+2ydDH6M5O7fPKFW5mzAdDE2g/K9B4e2tYK6/rA7Fq4cqiAw1+u
+ EgO44+eFgv082xtBez5WNkGn18vtw0LW3ESmKh19u6kEGoi0WZwslCNaGFrS4M7OH+aOJeqK
+ fx5dIv2CEbxc6xnHY7dwkcHikTA4QdbdFeUSuj4YhIZ+0QlDVtS1QEXyvZbZky7ur9rHkZvP
+ ZqlUsLJ2nOqsmahMTIQ8Mgx9SLEShWqD4kOF4zNfPJsgEMB49KbS2o9jxbGB+JKupjNddfxZ
+ HlH1KF8QwCMZEYaTNogrVazuEJzx6JdRpR3sFda/0x5qjTadwIW6Cl9tkqe2h391dOGX1eOA
+ 1ntn9O/39KqSrWNGvm+1raHK+Ev1yPtn0Wxn+0oy1tl67TxUjQARAQABtClNYXR0aGlhcyBC
+ cnVnZ2VyIDxtYXR0aGlhcy5iZ2dAZ21haWwuY29tPokCUgQTAQIAPAIbAwYLCQgHAwIGFQgC
+ CQoLBBYCAwECHgECF4AWIQTmuZIYwPLDJRwsOhfZFAuyVhMC8QUCWt3scQIZAQAKCRDZFAuy
+ VhMC8WzRD/4onkC+gCxG+dvui5SXCJ7bGLCu0xVtiGC673Kz5Aq3heITsERHBV0BqqctOEBy
+ ZozQQe2Hindu9lasOmwfH8+vfTK+2teCgWesoE3g3XKbrOCB4RSrQmXGC3JYx6rcvMlLV/Ch
+ YMRR3qv04BOchnjkGtvm9aZWH52/6XfChyh7XYndTe5F2bqeTjt+kF/ql+xMc4E6pniqIfkv
+ c0wsH4CkBHqoZl9w5e/b9MspTqsU9NszTEOFhy7p2CYw6JEa/vmzR6YDzGs8AihieIXDOfpT
+ DUr0YUlDrwDSrlm/2MjNIPTmSGHH94ScOqu/XmGW/0q1iar/Yr0leomUOeeEzCqQtunqShtE
+ 4Mn2uEixFL+9jiVtMjujr6mphznwpEqObPCZ3IcWqOFEz77rSL+oqFiEA03A2WBDlMm++Sve
+ 9jpkJBLosJRhAYmQ6ey6MFO6Krylw1LXcq5z1XQQavtFRgZoruHZ3XlhT5wcfLJtAqrtfCe0
+ aQ0kJW+4zj9/So0uxJDAtGuOpDYnmK26dgFN0tAhVuNInEVhtErtLJHeJzFKJzNyQ4GlCaLw
+ jKcwWcqDJcrx9R7LsCu4l2XpKiyxY6fO4O8DnSleVll9NPfAZFZvf8AIy3EQ8BokUsiuUYHz
+ wUo6pclk55PZRaAsHDX/fNr24uC6Eh5oNQ+v4Pax/gtyybkCDQRT9c4FARAAqdGWpdzcSM8q
+ 6I2oTPS5J4KXXIJS8O2jbUcxoNuaSBnUkhwp2eML/i30oLbEC+akmagcOLD0kOY46yRFeSEC
+ SPM9SWLxKvKUTQYGLX2sphPVZ3hEdFYKen3+cbvo6GyYTnm8ropHM9uqmXPZFFfLJDL76Nau
+ kFsRfPMQUuwMe3hFVLmF7ntvdX3Z3jKImoMWrgA/SnsT6K40n/GCl1HNz2T8PSnqAUQjvSoI
+ FAenxb23NtW6kg50xIxlb7DKbncnQGGTwoYn8u9Lgxkh8gJ03IMiSDHZ9o+wl21U8B3OXr1K
+ L08vXmdR70d6MJSmt6pKs7yTjxraF0ZS6gz+F2BTy080jxceZwEWIIbK7zU3tm1hnr7QIbj/
+ H6W2Pv9p5CXzQCIw17FXFXjpGPa9knzd4WMzJv2Rgx/m8/ZG91aKq+4Cbz9TLQ7OyRdXqhPJ
+ CopfKgZ2l/Fc5+AGhogJLxOopBoELIdHgB50Durx4YJLmQ1z/oimD0O/mUb5fJu0FUQ5Boc1
+ kHHJ8J8bZTuFrGAomfvnsek+dyenegqBpZCDniCSfdgeAx9oWNoXG4cgo8OVG7J/1YIWBHRa
+ Wnk+WyXGBfbY/8247Gy8oaXtQs1OnehbMKBHRIY0tgoyUlag3wXuUzeK+0PKtWC7ZYelKNC0
+ Fn+zL9XpnK3HLE5ckhBLgK8AEQEAAYkCHwQYAQIACQUCU/XOBQIbDAAKCRDZFAuyVhMC8Yyu
+ D/9g6+JZZ+oEy7HoGZ0Bawnlxu/xQrzaK/ltQhA2vtiMaxCN46gOvEF/x+IvFscAucm3q4Dy
+ bJJkW2qY30ISK9MDELnudPmHRqCxTj8koabvcI1cP8Z0Fw1reMNZVgWgVZJkwHuPYnkhY15u
+ 3vHDzcWnfnvmguKgYoJxkqqdp/acb0x/qpQgufrWGeYv2yb1YNidXBHTJSuelFcGp/oBXeJz
+ rQ2IP1JBbQmQfPSePZzWdSLlrR+3jcBJEP/A/73lSObOQpiYJomXPcla6dH+iyV0IiiZdYgU
+ Htwru4Stv/cFVFsUJk1fIOP1qjSa+L6Y0dWX6JMniqUXHhaXo6OPf7ArpVbBygMuzvy99LtS
+ FSkMcYXn359sXOYsRy4V+Yr7Bs0lzdnHnKdpVqHiDvNgrrLoPNrKTiYwTmzTVbb9u/BjUGhC
+ YUS705vcjBgXhdXS44kgO22kaB5c6Obg7WP7cucFomITovtZs5Rm1iaZZc31lzobfFPUwDSc
+ YXOj6ckS9bF9lDG26z3C/muyiifZeiQvvG1ygexrHtnKYTNxqisOGjjcXzDzpS8egIOtIEI/
+ arzlqK5RprMLVOl6n/npxEWmInjBetsBsaX/9kJNZFM4Yais5scOnP+tuTnFTW2K9xKySyuD
+ q/iLORJYRYMloJPaDAftiYfjFa8zuw1XnQyG17kCDQRT9gX3ARAAsL2UwyvSLQuMxOW2GRLv
+ CiZuxtIEoUuhaBWdC/Yq3c6rWpTu692lhLd4bRpKJkE4nE3saaTVxIHFF3tt3IHSa3Qf831S
+ lW39EkcFxr7DbO17kRThOyU1k7KDhUQqhRaUoT1NznrykvpTlNszhYNjA0CMYWH249MJXgck
+ iKOezSHbQ2bZWtFG3uTloWSKloFsjsmRsb7Vn2FlyeP+00PVC6j7CRqczxpkyYoHuqIS0w1z
+ Aq8HP5DDSH7+arijtPuJhVv9uaiD6YFLgSIQy4ZCZuMcdzKJz2j6KCw2kUXLehk4BU326O0G
+ r9+AojZT8J3qvZYBpvCmIhGliKhZ7pYDKZWVseRw7rJS5UFnst5OBukBIjOaSVdp6JMpe99o
+ caLjyow2By6DCEYgLCrquzuUxMQ8plEMfPD1yXBo00bLPatkuxIibM0G4IstKL5hSAKiaFCc
+ 2f73ppp7eby3ZceyF4uCIxN3ABjW9ZCEAcEwC40S3rnh2wZhscBFZ+7sO7+Fgsd0w67zjpt+
+ YHFNv/chRJiPnDGGRt0jPWryaasDnQtAAf59LY3qd4GVHu8RA1G0Rz4hVw27yssHGycc4+/Z
+ ZX7sPpgNKlpsToMaB5NWgc389HdqOG80Ia+sGkNj9ylp74MPbd0t3fzQnKXzBSHOCNuS67sc
+ lUAw7HB+wa3BqgsAEQEAAYkEPgQYAQIACQUCU/YF9wIbAgIpCRDZFAuyVhMC8cFdIAQZAQIA
+ BgUCU/YF9wAKCRC0OWJbLPHTQ14xD/9crEKZOwhIWX32UXvB/nWbhEx6+PQG2uWsnah7oc5D
+ 7V+aY7M1jy5af8yhlhVdaxL5xUoepfOP08lkCEuSdrYbS5wBcQj4NE1QUoeAjJKbq4JwxUkX
+ Baq2Lu91UZpdKxEVFfSkEzmeMaVvClGjGOtNCUKl8lwLuthU7dGTW74mJaW5jjlXldgzfzFd
+ BkS3fsXfcmeDhHh5TpA4e3MYVBIJrq6Repv151g/zxdA02gjJgGvJlXTb6OgEZGNFr8LGJDh
+ LP7MSksBw6IxCAJSicMESu5kXsJfcODlm4zFaV8QDBevI/s/TgOQ9KQ/EJQsG+XBAuh0dqpu
+ ImmCdhlHx+YaGmwKO1/yhfWvg1h1xbVn98izeotmq1+0J1jt9tgM17MGvgHjmvqlaY+oUXfj
+ OkHkcCGOvao5uAsddQhZcSLmLhrSot8WJI0z3NIM30yiNx/r6OMu47lzTobdYCU8/8m7Rhsq
+ fyW68D+XR098NIlU2oYy1zUetw59WJLf2j5u6D6a9p10doY5lYUEeTjy9Ejs/cL+tQbGwgWh
+ WwKVal1lAtZVaru0GMbSQQ2BycZsZ+H+sbVwpDNEOxQaQPMmEzwgv2Sk2hvR3dTnhUoUaVoR
+ hQE3/+fVRbWHEEroh/+vXV6n4Ps5bDd+75NCQ/lfPZNzGxgxqbd/rd2wStVZpQXkhofMD/4k
+ Z8IivHZYaTA+udUk3iRm0l0qnuX2M5eUbyHW0sZVPnL7Oa4OKXoOir1EWwzzq0GNZjHCh6Cz
+ vLOb1+pllnMkBky0G/+txtgvj5T/366ErUF+lQfgNtENKY6In8tw06hPJbu1sUTQIs50Jg9h
+ RNkDSIQ544ack0fzOusSPM+vo6OkvIHt8tV0fTO1muclwCX/5jb7zQIDgGiUIgS8y0M4hIkP
+ KvdmgurPywi74nEoQQrKF6LpPYYHsDteWR/k2m2BOj0ciZDIIxVR09Y9moQIjBLJKN0J21XJ
+ eAgam4uLV2p1kRDdw/ST5uMCqD4Qi5zrZyWilCci6jF1TR2VEt906E2+AZ3BEheRyn8yb2KO
+ +cJD3kB4RzOyBC/Cq/CGAujfDkRiy1ypFF3TkZdya0NnMgka9LXwBV29sAw9vvrxHxGa+tO+
+ RpgKRywr4Al7QGiw7tRPbxkcatkxg67OcRyntfT0lbKlSTEQUxM06qvwFN7nobc9YiJJTeLu
+ gfa4fCqhQCyquWVVoVP+MnLqkzu1F6lSB6dGIpiW0s3LwyE/WbCAVBraPoENlt69jI0WTXvH
+ 4v71zEffYaGWqtrSize20x9xZf5c/Aukpx0UmsqheKeoSprKyRD/Wj/LgsuTE2Uod85U36Xk
+ eFYetwQY1h3lok2Zb/3uFhWr0NqmT14EL7kCDQRT9gkSARAApxtQ4zUMC512kZ+gCiySFcIF
+ /mAf7+l45689Tn7LI1xmPQrAYJDoqQVXcyh3utgtvBvDLmpQ+1BfEONDWc8KRP6Abo35YqBx
+ 3udAkLZgr/RmEg3+Tiof+e1PJ2zRh5zmdei5MT8biE2zVd9DYSJHZ8ltEWIALC9lAsv9oa+2
+ L6naC+KFF3i0m5mxklgFoSthswUnonqvclsjYaiVPoSldDrreCPzmRCUd8znf//Z4BxtlTw3
+ SulF8weKLJ+Hlpw8lwb3sUl6yPS6pL6UV45gyWMe677bVUtxLYOu+kiv2B/+nrNRDs7B35y/
+ J4t8dtK0S3M/7xtinPiYRmsnJdk+sdAe8TgGkEaooF57k1aczcJlUTBQvlYAEg2NJnqaKg3S
+ CJ4fEuT8rLjzuZmLkoHNumhH/mEbyKca82HvANu5C9clyQusJdU+MNRQLRmOAd/wxGLJ0xmA
+ ye7Ozja86AIzbEmuNhNH9xNjwbwSJNZefV2SoZUv0+V9EfEVxTzraBNUZifqv6hernMQXGxs
+ +lBjnyl624U8nnQWnA8PwJ2hI3DeQou1HypLFPeY9DfWv4xYdkyeOtGpueeBlqhtMoZ0kDw2
+ C3vzj77nWwBgpgn1Vpf4hG/sW/CRR6tuIQWWTvUM3ACa1pgEsBvIEBiVvPxyAtL+L+Lh1Sni
+ 7w3HBk1EJvUAEQEAAYkCHwQYAQIACQUCU/YJEgIbDAAKCRDZFAuyVhMC8QndEACuN16mvivn
+ WwLDdypvco5PF8w9yrfZDKW4ggf9TFVB9skzMNCuQc+tc+QM+ni2c4kKIdz2jmcg6QytgqVu
+ m6V1OsNmpjADaQkVp5jL0tmg6/KA9Tvr07Kuv+Uo4tSrS/4djDjJnXHEp/tB+Fw7CArNtUtL
+ lc8SuADCmMD+kBOVWktZyzkBkDfBXlTWl46T/8291lEspDWe5YW1ZAH/HdCR1rQNZWjNCpB2
+ Cic58CYMD1rSonCnbfUeyZYNNhNHZosl4dl7f+am87Q2x3pK0DLSoJRxWb7vZB0uo9CzCSm3
+ I++aYozF25xQoT+7zCx2cQi33jwvnJAK1o4VlNx36RfrxzBqc1uZGzJBCQu48UjmUSsTwWC3
+ HpE/D9sM+xACs803lFUIZC5H62G059cCPAXKgsFpNMKmBAWweBkVJAisoQeX50OP+/11ArV0
+ cv+fOTfJj0/KwFXJaaYh3LUQNILLBNxkSrhCLl8dUg53IbHx4NfIAgqxLWGfXM8DY1aFdU79
+ pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
+ AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
+ jrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <d9b1f0a3-bd10-9fe8-af9f-17dafd7a509c@gmail.com>
+Date: Thu, 22 Aug 2019 10:52:11 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190822082831.GH3964@kadam>
+In-Reply-To: <20190805125848.15751-2-fparent@baylibre.com>
 Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(136003)(346002)(376002)(39860400002)(2980300002)(199004)(189003)(9786002)(4744005)(486006)(476003)(126002)(50466002)(70206006)(70586007)(44832011)(6246003)(31696002)(446003)(336012)(426003)(11346002)(2616005)(305945005)(8676002)(81156014)(81166006)(26005)(5660300002)(8936002)(186003)(110136005)(478600001)(356004)(6666004)(2906002)(4326008)(36386004)(316002)(229853002)(58126008)(54906003)(31686004)(106002)(47776003)(230700001)(14444005)(65956001)(76176011)(23676004)(65806001)(52146003)(2486003)(36756003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR02MB4034; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; A:1; MX:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 69648e9e-2c2c-4e77-51f8-08d726dd9ec6
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(4709080)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328);
- SRVR:BN7PR02MB4034; 
-X-MS-TrafficTypeDiagnostic: BN7PR02MB4034:
-X-Microsoft-Antispam-PRVS: <BN7PR02MB4034DFBA6D81505FAC474B23C6A50@BN7PR02MB4034.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:4714;
-X-Forefront-PRVS: 01371B902F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: DsRzjuNo/se7hjdVoaDL3MXAJ6Fy4SM8y85AT+wetVM9CZS+bQpDIbrwKRUmYCdm+Mh05KQGS4S6bglBfx5Z4j55cqdLTbQVHvjQSXF4BWvf5/vUjZBrJf2D4KzmAEEsmPiscxYgF+MYsJCklne/aAG7Y7cs9uoEPcXTP+3xA6X+v4OD+1x3p3E9hVJsmhveU/sbFFFa26RRGHMpTMEoPT5hk5mVq3HMHn07EZPz5ghVpxh+MFZo4BV1+ln5U0EuESvlIPYqAP3I8c2I4KZCc5LOZVfRT4Xw+ybMp8bdnrfRHPo8ziibofoST+CvgxHCZI/kIhDVIm3Txe641cttp8FUM4O7oqbH0AVbbuE53Mu2KM67a1cmvHz72eAvYlA3WRWRKlPXau48OGqIL3OzhMXhSvOUBJETzmqtDaiq/Fo=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 22 Aug 2019 08:49:18.6897 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 69648e9e-2c2c-4e77-51f8-08d726dd9ec6
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB4034
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_014922_345864_B56CE036 
-X-CRM114-Status: GOOD (  12.38  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190822_015215_654054_27C3B7E5 
+X-CRM114-Status: GOOD (  16.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.70.77 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,37 +196,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Dragan Cvetic <dragan.cvetic@xilinx.com>, kernel-janitors@vger.kernel.org,
- linux-kernel@vger.kernel.org, Derek Kiernan <derek.kiernan@xilinx.com>,
+Cc: mark.rutland@arm.com, linux-pwm@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 22. 08. 19 10:28, Dan Carpenter wrote:
-> On Thu, Aug 22, 2019 at 10:14:12AM +0200, Michal Simek wrote:
->> Hi Dan,
->>
->> On 21. 08. 19 9:06, Dan Carpenter wrote:
->>> These structs have holes in them so we end up disclosing a few bytes of
->>> uninitialized stack data.
->>>
->>> drivers/misc/xilinx_sdfec.c:305 xsdfec_get_status() warn: check that 'status' doesn't leak information (struct has a hole after 'activity')
->>> drivers/misc/xilinx_sdfec.c:449 xsdfec_get_turbo() warn: check that 'turbo_params' doesn't leak information (struct has a hole after 'scale')
->>
->> Who is generating these warnings? Is this any new GCC or different tool?
->> I see that 3byte padding but never seen these warnings.
+
+
+On 05/08/2019 14:58, Fabien Parent wrote:
+> Add the compatible and the platform data to support PWM on the MT8516
+> SoC.
 > 
-> This is a Smatch check.
+> Signed-off-by: Fabien Parent <fparent@baylibre.com>
 
-ok. It looks like I need to update it to latest version. My version is
-not showing these.
+Reviewed-by: Matthias Brugger <matthias.bgg@gmail.com>
 
-Anyway thanks for patches,
-Michal
+> ---
+>  drivers/pwm/pwm-mediatek.c | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/drivers/pwm/pwm-mediatek.c b/drivers/pwm/pwm-mediatek.c
+> index eb6674ce995f..6697e30811e7 100644
+> --- a/drivers/pwm/pwm-mediatek.c
+> +++ b/drivers/pwm/pwm-mediatek.c
+> @@ -302,11 +302,18 @@ static const struct mtk_pwm_platform_data mt7628_pwm_data = {
+>  	.has_clks = false,
+>  };
+>  
+> +static const struct mtk_pwm_platform_data mt8516_pwm_data = {
+> +	.num_pwms = 5,
+> +	.pwm45_fixup = false,
+> +	.has_clks = true,
+> +};
+> +
+>  static const struct of_device_id mtk_pwm_of_match[] = {
+>  	{ .compatible = "mediatek,mt2712-pwm", .data = &mt2712_pwm_data },
+>  	{ .compatible = "mediatek,mt7622-pwm", .data = &mt7622_pwm_data },
+>  	{ .compatible = "mediatek,mt7623-pwm", .data = &mt7623_pwm_data },
+>  	{ .compatible = "mediatek,mt7628-pwm", .data = &mt7628_pwm_data },
+> +	{ .compatible = "mediatek,mt8516-pwm", .data = &mt8516_pwm_data },
+>  	{ },
+>  };
+>  MODULE_DEVICE_TABLE(of, mtk_pwm_of_match);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
