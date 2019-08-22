@@ -2,90 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84227997B4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:06:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6B490997CC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 17:11:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Subject:To:From:
+	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TtfrkPXbAyjXs/C7OT7VBJ+6RBKVTpDbE8W0KGesGrc=; b=igQQrxuCaBnnkSnfK11KDklG+
-	XeOIr4DDjD3cV/WZZB9gcPCAkd/+W/7aYgCR0zgb+fPLG1eF4nRrEykjPlZthty0uHK4d62Q7Tfhe
-	O2ix3KlMdtjwQvmpiyFOj9VwC30ISgdvzJ2Pk7NJp2WkV5dG3Q82iCo310MhDFPOJ3H6jwqO3thr2
-	GRiyXUOAUgSjJrWvpbQOTcI/l0bbbEae2asQo3bIuZFqP+2sJahdC/w2de/TplfK33d81mk4B5urL
-	B9BZjeWCrXdB12JRb1gJQZjEHKFWN5DKE+OB/60xHTEZHWY7X1CKxSyH0J/OLZqsY/UrxUcb3U6Z1
-	Xmvn68Rdg==;
+	 bh=xeut+KzMU8uWBEuxZwvXcXRBoT1VXBcnYa/r591+OY0=; b=MtcTR63GtVu25uE7yuaH1h02S
+	URMZbZDf1NTn9CoGZFJi8mkUwsaXIPHqtI6jRRGkpeA5U7bfAH3pWx0ntVpBXIekc4QxL/pmbw03X
+	uiC7UEdaVU49so7bRmgubsJWU4D5O8/NMR+KLSkqRXO5+ARsu9kzII+h+ibsVogR+u0VeOqWbPRx0
+	Kg5MP5T+1QVpHBupxRWqlU29HR48xeGo1liF0eHSiFhfPbZmmHwj44T4v716gQN3mLKjdLL/bFOAs
+	zR/jJXB6oV0FIUkdTrV1lJwitrxAuGkuPEfE0BFwrGGb8eoJAlpGiF0ix3qv2cY3P34PIgEHaZrlJ
+	ugzxP2omg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0ofK-0007qZ-Cs; Thu, 22 Aug 2019 15:06:19 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0of2-0007pt-Du
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 15:06:01 +0000
-Received: by mail-wm1-x344.google.com with SMTP id 10so5985234wmp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 08:05:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=f86P8y/bEfM/LNm6Gbw7F3VV00jAjdLsjnLP2BnusNc=;
- b=scbsmQ0WsynE3+iucma4KyewlPzagmL8m2e+Vw3n14Ka/qE8yDTPPOgkqQ4P3KVupS
- iLQaFvVXRrGyoWIoNVpsYKLIuBT/VCISpIxNC9ho5vujFyDe8aGgfXAqnZaI4rQeVeyD
- ApcXU0K8njsXPPJaYSQe0sg+H4axC7fc6HfNzC8gixRIu7ZQ3X+hNXhlNGxjTeqT99Tm
- 9aIwFeMiD/81EmrqSVWz0Z3elzu/qtfedT0jBmsRXYvfgNvmlm4lMh3fmcuYMiEuXKZH
- IaUVssJHmKuRHM6ltwkzcoIWxyeMr9+NmID3NjpaiFJSxi+fwR1jphgOQVTRsg2Qbo1i
- yVQw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=f86P8y/bEfM/LNm6Gbw7F3VV00jAjdLsjnLP2BnusNc=;
- b=HAuesuyXFxvLXTUhkBWxwaD838M/5aJgFK8BJ+Wk8C9gatNNyxbJMxjoDTiMy57PQX
- cCVXIYwbCi1bvrTSLWudSQFzMzCly2HIgFnt+iBla3DQH2xGZqOOMpYHJvID9aRTMV58
- +30GCHMoIAIJIIDHsomeff8KRd7ZhN+GECwcnT4Mh9PdKXbaSLhEDQrnyPfx8Mf8K9O9
- YM9OpdDWCFd+FibO0qbJqo7FY1rudS3t7EZtPxnmuYXecpJUUZ3BjEHcGl02qt8spvzw
- IIcFOwKlWctpIblhXxvrEQl1FRLxjpck1trXiqb0q4tl4yKlVdmWGP67RT17czNk9EnC
- Au4g==
-X-Gm-Message-State: APjAAAWvPSyHL3YjVquB4JA0I0BjRemB9/X/wFmRqTwzBgLp1d2ZW+zm
- NVQChlLIFSgMJh/QNpPOatHRzgN3
-X-Google-Smtp-Source: APXvYqxVvx/3YX34Q402BNXkpuBssIZCO1hsFVIgEgim/PhREvq2JCRoX+bq1Bvv0/3KTPAFdW/2+w==
-X-Received: by 2002:a1c:a701:: with SMTP id q1mr6801047wme.72.1566486358273;
- Thu, 22 Aug 2019 08:05:58 -0700 (PDT)
-Received: from [192.168.1.67]
- (host81-157-241-155.range81-157.btcentralplus.com. [81.157.241.155])
- by smtp.gmail.com with ESMTPSA id b4sm3541836wma.5.2019.08.22.08.05.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 22 Aug 2019 08:05:57 -0700 (PDT)
-Subject: Re: [PATCH v2 06/12] irqchip/gic-v3: Dynamically allocate PPI NMI
- refcounts
-To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Jason Cooper <jason@lakedaemon.net>, Rob Herring <robh+dt@kernel.org>
-References: <20190806100121.240767-1-maz@kernel.org>
- <20190806100121.240767-7-maz@kernel.org>
-From: Julien <julien.thierry.kdev@gmail.com>
-Message-ID: <daa0ff03-cf73-e1de-b4b2-d1382c5d5548@gmail.com>
-Date: Thu, 22 Aug 2019 16:05:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.5.2
+	id 1i0okT-0003UD-Rc; Thu, 22 Aug 2019 15:11:38 +0000
+Received: from mx.0dd.nl ([2a04:52c0:101:921::25])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0okD-0003TN-Rm; Thu, 22 Aug 2019 15:11:24 +0000
+Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.0dd.nl (Postfix) with ESMTPS id CC0475FC44;
+ Thu, 22 Aug 2019 17:11:16 +0200 (CEST)
+Authentication-Results: mx.0dd.nl;
+ dkim=pass (2048-bit key) header.d=vdorst.com header.i=@vdorst.com
+ header.b="dYtNjIu0"; dkim-atps=neutral
+Received: from www (www.vdorst.com [192.168.2.222])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.vdorst.com (Postfix) with ESMTPSA id 793D71D85FE6;
+ Thu, 22 Aug 2019 17:11:16 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com 793D71D85FE6
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
+ s=default; t=1566486676;
+ bh=pWtXsRVEPvLed/m0NhhlKu1CLza7De9LHyjrNdYZbdw=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dYtNjIu04is6DPPpcRUqOnSHBRAWJuENhjamzlkFcc69mGO3UfQ3rsngHuva405Ha
+ Sf5D+/HMAqHmafBNG8I9vTUaW1SbS+dtuyQPKaqOEwzoP+22izycD/C2tswjAIR9A8
+ z4YKAjK0nuAEI1H0+0Mk7BEakNXjYBNeM5QDi79kZSKYlaquhliHINULslkHDOW2aI
+ c4/YqK5inUtYUUTbx5tmLY0lheFwhmR28bcfPzcQMTIqHRgOayJpgCQbp62D9Q9sHW
+ +pgb9NVMHtGsvrCejRaJDOJF/5b0maqGgeBus9yWOdWZRepvuqnmewN04zsKY/7BzC
+ wH5MogCvoHYew==
+Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) by
+ www.vdorst.com (Horde Framework) with HTTPS; Thu, 22 Aug 2019 15:11:16 +0000
+Date: Thu, 22 Aug 2019 15:11:16 +0000
+Message-ID: <20190822151116.Horde.3pVh2Kr0MEO82EWm7859Zd2@www.vdorst.com>
+From: =?utf-8?b?UmVuw6k=?= van Dorst <opensource@vdorst.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: [PATCH net-next v2 1/3] net: ethernet: mediatek: Add basic
+ PHYLINK support
+References: <20190821144336.9259-1-opensource@vdorst.com>
+ <20190821144336.9259-2-opensource@vdorst.com>
+ <20190822142739.GS13294@shell.armlinux.org.uk>
+In-Reply-To: <20190822142739.GS13294@shell.armlinux.org.uk>
+User-Agent: Horde Application Framework 5
 MIME-Version: 1.0
-In-Reply-To: <20190806100121.240767-7-maz@kernel.org>
-Content-Language: en-US
+Content-Disposition: inline
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_080600_472056_6935D7C4 
-X-CRM114-Status: GOOD (  23.72  )
+X-CRM114-CacheID: sfid-20190822_081122_314831_C49521A0 
+X-CRM114-Status: GOOD (  18.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (julien.thierry.kdev[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,6 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,133 +90,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lokesh Vutla <lokeshvutla@ti.com>, John Garry <john.garry@huawei.com>,
- linux-kernel@vger.kernel.org,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: Nelson Chang <nelson.chang@mediatek.com>,
+ Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, linux-mips@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Stefan Roese <sr@denx.de>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="utf-8"; Format="flowed"; DelSp="Yes"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
-
-On 06/08/19 11:01, Marc Zyngier wrote:
-> As we're about to have a variable number of PPIs, let's make the
-> allocation of the NMI refcounts dynamic. Also apply some minor
-> cleanups (moving things around).
-> 
-> Signed-off-by: Marc Zyngier <maz@kernel.org>
-
-Reviewed-by: Julien Thierry <julien.thierry.kdev@gmail.com>
-
-Thanks,
-
-> ---
->   drivers/irqchip/irq-gic-v3.c | 47 ++++++++++++++++++++++++++----------
->   1 file changed, 34 insertions(+), 13 deletions(-)
-> 
-> diff --git a/drivers/irqchip/irq-gic-v3.c b/drivers/irqchip/irq-gic-v3.c
-> index e03fb6d7c2ce..4253c7f67c86 100644
-> --- a/drivers/irqchip/irq-gic-v3.c
-> +++ b/drivers/irqchip/irq-gic-v3.c
-> @@ -88,7 +88,7 @@ static DEFINE_STATIC_KEY_TRUE(supports_deactivate_key);
->   static DEFINE_STATIC_KEY_FALSE(supports_pseudo_nmis);
->   
->   /* ppi_nmi_refs[n] == number of cpus having ppi[n + 16] set as NMI */
-> -static refcount_t ppi_nmi_refs[16];
-> +static refcount_t *ppi_nmi_refs;
->   
->   static struct gic_kvm_info gic_v3_kvm_info;
->   static DEFINE_PER_CPU(bool, has_rss);
-> @@ -409,6 +409,16 @@ static void gic_irq_set_prio(struct irq_data *d, u8 prio)
->   	writeb_relaxed(prio, base + offset + index);
->   }
->   
-> +static u32 gic_get_ppi_index(struct irq_data *d)
-> +{
-> +	switch (get_intid_range(d)) {
-> +	case PPI_RANGE:
-> +		return d->hwirq - 16;
-> +	default:
-> +		unreachable();
-> +	}
-> +}
-> +
->   static int gic_irq_nmi_setup(struct irq_data *d)
->   {
->   	struct irq_desc *desc = irq_to_desc(d->irq);
-> @@ -429,10 +439,12 @@ static int gic_irq_nmi_setup(struct irq_data *d)
->   		return -EINVAL;
->   
->   	/* desc lock should already be held */
-> -	if (gic_irq(d) < 32) {
-> +	if (gic_irq_in_rdist(d)) {
-> +		u32 idx = gic_get_ppi_index(d);
-> +
->   		/* Setting up PPI as NMI, only switch handler for first NMI */
-> -		if (!refcount_inc_not_zero(&ppi_nmi_refs[gic_irq(d) - 16])) {
-> -			refcount_set(&ppi_nmi_refs[gic_irq(d) - 16], 1);
-> +		if (!refcount_inc_not_zero(&ppi_nmi_refs[idx])) {
-> +			refcount_set(&ppi_nmi_refs[idx], 1);
->   			desc->handle_irq = handle_percpu_devid_fasteoi_nmi;
->   		}
->   	} else {
-> @@ -464,9 +476,11 @@ static void gic_irq_nmi_teardown(struct irq_data *d)
->   		return;
->   
->   	/* desc lock should already be held */
-> -	if (gic_irq(d) < 32) {
-> +	if (gic_irq_in_rdist(d)) {
-> +		u32 idx = gic_get_ppi_index(d);
-> +
->   		/* Tearing down NMI, only switch handler for last NMI */
-> -		if (refcount_dec_and_test(&ppi_nmi_refs[gic_irq(d) - 16]))
-> +		if (refcount_dec_and_test(&ppi_nmi_refs[idx]))
->   			desc->handle_irq = handle_percpu_devid_irq;
->   	} else {
->   		desc->handle_irq = handle_fasteoi_irq;
-> @@ -1394,7 +1408,19 @@ static void gic_enable_nmi_support(void)
->   {
->   	int i;
->   
-> -	for (i = 0; i < 16; i++)
-> +	if (!gic_prio_masking_enabled())
-> +		return;
-> +
-> +	if (gic_has_group0() && !gic_dist_security_disabled()) {
-> +		pr_warn("SCR_EL3.FIQ is cleared, cannot enable use of pseudo-NMIs\n");
-> +		return;
-> +	}
-> +
-> +	ppi_nmi_refs = kcalloc(gic_data.ppi_nr, sizeof(*ppi_nmi_refs), GFP_KERNEL);
-> +	if (!ppi_nmi_refs)
-> +		return;
-> +
-> +	for (i = 0; i < gic_data.ppi_nr; i++)
->   		refcount_set(&ppi_nmi_refs[i], 0);
->   
->   	static_branch_enable(&supports_pseudo_nmis);
-> @@ -1472,12 +1498,7 @@ static int __init gic_init_bases(void __iomem *dist_base,
->   			gicv2m_init(handle, gic_data.domain);
->   	}
->   
-> -	if (gic_prio_masking_enabled()) {
-> -		if (!gic_has_group0() || gic_dist_security_disabled())
-> -			gic_enable_nmi_support();
-> -		else
-> -			pr_warn("SCR_EL3.FIQ is cleared, cannot enable use of pseudo-NMIs\n");
-> -	}
-> +	gic_enable_nmi_support();
->   
->   	return 0;
->   
-> 
-
--- 
-Julien Thierry
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUnVzc2VsbCwKClF1b3RpbmcgUnVzc2VsbCBLaW5nIC0gQVJNIExpbnV4IGFkbWluIDxsaW51
+eEBhcm1saW51eC5vcmcudWs+OgoKPiBPbiBXZWQsIEF1ZyAyMSwgMjAxOSBhdCAwNDo0MzozNFBN
+ICswMjAwLCBSZW7DqSB2YW4gRG9yc3Qgd3JvdGU6Cj4+ICtzdGF0aWMgdm9pZCBtdGtfbWFjX2xp
+bmtfZG93bihzdHJ1Y3QgcGh5bGlua19jb25maWcgKmNvbmZpZywgIAo+PiB1bnNpZ25lZCBpbnQg
+bW9kZSwKPj4gKwkJCSAgICAgIHBoeV9pbnRlcmZhY2VfdCBpbnRlcmZhY2UpCj4+ICt7Cj4+ICsJ
+c3RydWN0IG10a19tYWMgKm1hYyA9IGNvbnRhaW5lcl9vZihjb25maWcsIHN0cnVjdCBtdGtfbWFj
+LAo+PiArCQkJCQkgICBwaHlsaW5rX2NvbmZpZyk7Cj4+Cj4+IC0JcmV0dXJuIDA7Cj4+ICsJbXRr
+X3czMihtYWMtPmh3LCBNQUNfTUNSX0ZPUkNFX0xJTktfRE9XTiwgTVRLX01BQ19NQ1IobWFjLT5p
+ZCkpOwo+PiAgfQo+Cj4gWW91IHNldCB0aGUgTUFDX01DUl9GT1JDRV9NT0RFIGJpdCBoZXJlLi4u
+Cj4KPj4gK3N0YXRpYyB2b2lkIG10a19tYWNfbGlua191cChzdHJ1Y3QgcGh5bGlua19jb25maWcg
+KmNvbmZpZywgIAo+PiB1bnNpZ25lZCBpbnQgbW9kZSwKPj4gKwkJCSAgICBwaHlfaW50ZXJmYWNl
+X3QgaW50ZXJmYWNlLAo+PiArCQkJICAgIHN0cnVjdCBwaHlfZGV2aWNlICpwaHkpCj4+ICB7Cj4+
+ICsJc3RydWN0IG10a19tYWMgKm1hYyA9IGNvbnRhaW5lcl9vZihjb25maWcsIHN0cnVjdCBtdGtf
+bWFjLAo+PiArCQkJCQkgICBwaHlsaW5rX2NvbmZpZyk7Cj4+ICsJdTMyIG1jciA9IG10a19yMzIo
+bWFjLT5odywgTVRLX01BQ19NQ1IobWFjLT5pZCkpOwo+Pgo+PiArCW1jciB8PSBNQUNfTUNSX1RY
+X0VOIHwgTUFDX01DUl9SWF9FTjsKPj4gKwltdGtfdzMyKG1hYy0+aHcsIG1jciwgTVRLX01BQ19N
+Q1IobWFjLT5pZCkpOwo+PiArfQo+Cj4gTG9va2luZyBhdCB0aGlzLCBhIGxpbmtfZG93bigpIGZv
+bGxvd2VkIGJ5IGEgbGlua191cCgpIHdvdWxkIHJlc3VsdCBpbgo+IHRoaXMgcmVnaXN0ZXIgY29u
+dGFpbmluZyBNQUNfTUNSX0ZPUkNFX01PREUgfCBNQUNfTUNSX1RYX0VOIHwKPiBNQUNfTUNSX1JY
+X0VOID8gIElzIHRoYXQgYWN0dWFsbHkgY29ycmVjdD8gIChNQUNfTUNSX0ZPUkNFX0xJTksgaXNu
+J3QKPiBzZXQsIHNvIGl0IGxvb2tzIHRvIG1lIGxpa2UgaXQgc3RpbGwgZm9yY2VzIHRoZSBsaW5r
+IGRvd24uKQoKVGhhbmtzIGZvciByZXZpZXdpbmcuCgpQcm9iYWJseSBub3QuCkkgYXNzdW1lZCB0
+aGF0IG1hY19jb25maWcoKSBpcyBhbHdheXMgY2FsbGVkIGJlZm9yZSBsaW5rX3VwKCkKCkkgc2lt
+cGx5IGNhbiBtYWtlIGl0IHRoZSBvcHBvc2l0ZSBvZiBsaW5rX3VwKCkKCmxpa2UgdGhpczoKc3Rh
+dGljIHZvaWQgbXRrX21hY19saW5rX2Rvd24oc3RydWN0IHBoeWxpbmtfY29uZmlnICpjb25maWcs
+IHVuc2lnbmVkICAKaW50IG1vZGUsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBwaHlf
+aW50ZXJmYWNlX3QgaW50ZXJmYWNlKQp7CiAgICAgICBzdHJ1Y3QgbXRrX21hYyAqbWFjID0gY29u
+dGFpbmVyX29mKGNvbmZpZywgc3RydWN0IG10a19tYWMsCiAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICBwaHlsaW5rX2NvbmZpZyk7CiAgICAgICB1MzIgbWNyID0gbXRrX3IzMihtYWMt
+Pmh3LCBNVEtfTUFDX01DUihtYWMtPmlkKSk7CgogICAgICAgbWNyICY9IChNQUNfTUNSX1RYX0VO
+IHwgTUFDX01DUl9SWF9FTik7CiAgICAgICBtdGtfdzMyKG1hYy0+aHcsIG1jciwgTVRLX01BQ19N
+Q1IobWFjLT5pZCkpOwp9Cgo+Cj4gTm90ZSB0aGF0IGxpbmsgdXAvZG93biBmb3JjaW5nIHNob3Vs
+ZCBub3QgYmUgZG9uZSBmb3IgaW4tYmFuZCBBTi4KPgoKVGhpcyBtZWFucyB0aGF0IG1hY19jb25m
+aWcoKSBvZiB0aGUgU0dNSUkgcGF0Y2ggaXMgYWxzbyBpbmNvcnJlY3Q/CgptYWNfY29uZmlnKCkg
+YWx3YXlzIHNldHMgdGhlIE1BQyBpbiBhIGZvcmNlIG1vZGUuCkJ1dCB0aGUgU0dNSUkgYmxvY2sg
+aXMgc2V0IGluIEFOLgoKTWFpbmxpbmUgY29kZSBzZWVtcyB0byBkbyB0aGUgc2FtZS4KUHV0cyB0
+aGUgU0dNSUkgYmxvY2sgaW4gQU4gb3IgZm9yY2VkIG1vZGUgYW5kIGFsd2F5cyBzZXQgdGhlIE1B
+QyBpbiAgCmZvcmNlZCBtb2RlLgoKPj4gK3N0YXRpYyB2b2lkIG10a192YWxpZGF0ZShzdHJ1Y3Qg
+cGh5bGlua19jb25maWcgKmNvbmZpZywKPj4gKwkJCSB1bnNpZ25lZCBsb25nICpzdXBwb3J0ZWQs
+Cj4+ICsJCQkgc3RydWN0IHBoeWxpbmtfbGlua19zdGF0ZSAqc3RhdGUpCj4+ICt7Cj4+ICsJc3Ry
+dWN0IG10a19tYWMgKm1hYyA9IGNvbnRhaW5lcl9vZihjb25maWcsIHN0cnVjdCBtdGtfbWFjLAo+
+PiArCQkJCQkgICBwaHlsaW5rX2NvbmZpZyk7Cj4+ICsJX19FVEhUT09MX0RFQ0xBUkVfTElOS19N
+T0RFX01BU0sobWFzaykgPSB7IDAsIH07Cj4+Cj4+ICsJaWYgKHN0YXRlLT5pbnRlcmZhY2UgIT0g
+UEhZX0lOVEVSRkFDRV9NT0RFX05BICYmCj4+ICsJICAgIHN0YXRlLT5pbnRlcmZhY2UgIT0gUEhZ
+X0lOVEVSRkFDRV9NT0RFX01JSSAmJgo+PiArCSAgICBzdGF0ZS0+aW50ZXJmYWNlICE9IFBIWV9J
+TlRFUkZBQ0VfTU9ERV9HTUlJICYmCj4+ICsJICAgICEoTVRLX0hBU19DQVBTKG1hYy0+aHctPnNv
+Yy0+Y2FwcywgTVRLX1JHTUlJKSAmJgo+PiArCSAgICAgIHBoeV9pbnRlcmZhY2VfbW9kZV9pc19y
+Z21paShzdGF0ZS0+aW50ZXJmYWNlKSkgJiYKPj4gKwkgICAgIShNVEtfSEFTX0NBUFMobWFjLT5o
+dy0+c29jLT5jYXBzLCBNVEtfVFJHTUlJKSAmJgo+PiArCSAgICAgICFtYWMtPmlkICYmIHN0YXRl
+LT5pbnRlcmZhY2UgPT0gUEhZX0lOVEVSRkFDRV9NT0RFX1RSR01JSSkpIHsKPj4gKwkJbGlua21v
+ZGVfemVybyhzdXBwb3J0ZWQpOwo+PiArCQlyZXR1cm47Cj4+ICAJfQo+Pgo+PiArCXBoeWxpbmtf
+c2V0X3BvcnRfbW9kZXMobWFzayk7Cj4+ICsJcGh5bGlua19zZXQobWFzaywgQXV0b25lZyk7Cj4+
+Cj4+ICsJaWYgKHN0YXRlLT5pbnRlcmZhY2UgPT0gUEhZX0lOVEVSRkFDRV9NT0RFX1RSR01JSSkg
+ewo+PiArCQlwaHlsaW5rX3NldChtYXNrLCAxMDAwYmFzZVRfRnVsbCk7Cj4+ICsJfSBlbHNlIHsK
+Pj4gKwkJcGh5bGlua19zZXQobWFzaywgMTBiYXNlVF9IYWxmKTsKPj4gKwkJcGh5bGlua19zZXQo
+bWFzaywgMTBiYXNlVF9GdWxsKTsKPj4gKwkJcGh5bGlua19zZXQobWFzaywgMTAwYmFzZVRfSGFs
+Zik7Cj4+ICsJCXBoeWxpbmtfc2V0KG1hc2ssIDEwMGJhc2VUX0Z1bGwpOwo+PiArCj4+ICsJCWlm
+IChzdGF0ZS0+aW50ZXJmYWNlICE9IFBIWV9JTlRFUkZBQ0VfTU9ERV9NSUkpIHsKPj4gKwkJCXBo
+eWxpbmtfc2V0KG1hc2ssIDEwMDBiYXNlVF9IYWxmKTsKPj4gKwkJCXBoeWxpbmtfc2V0KG1hc2ss
+IDEwMDBiYXNlVF9GdWxsKTsKPj4gKwkJCXBoeWxpbmtfc2V0KG1hc2ssIDEwMDBiYXNlWF9GdWxs
+KTsKPj4gKwkJfQo+PiArCX0KPj4KPj4gKwlwaHlsaW5rX3NldChtYXNrLCBQYXVzZSk7Cj4+ICsJ
+cGh5bGlua19zZXQobWFzaywgQXN5bV9QYXVzZSk7Cj4+Cj4+ICsJbGlua21vZGVfYW5kKHN1cHBv
+cnRlZCwgc3VwcG9ydGVkLCBtYXNrKTsKPj4gKwlsaW5rbW9kZV9hbmQoc3RhdGUtPmFkdmVydGlz
+aW5nLCBzdGF0ZS0+YWR2ZXJ0aXNpbmcsIG1hc2spOwo+PiAgfQo+Cj4gVGhpcyBsb29rcyBmaW5l
+LgoKT0suCgo+IFRoYW5rcy4KPgo+IC0tCj4gUk1LJ3MgUGF0Y2ggc3lzdGVtOiBodHRwczovL3d3
+dy5hcm1saW51eC5vcmcudWsvZGV2ZWxvcGVyL3BhdGNoZXMvCj4gRlRUQyBicm9hZGJhbmQgZm9y
+IDAuOG1pbGUgbGluZSBpbiBzdWJ1cmJpYTogc3luYyBhdCAxMi4xTWJwcyBkb3duIDYyMmticHMg
+dXAKPiBBY2NvcmRpbmcgdG8gc3BlZWR0ZXN0Lm5ldDogMTEuOU1icHMgZG93biA1MDBrYnBzIHVw
+CgpHcmVhdHMsCgpSZW7DqQoKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
+QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
+aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
