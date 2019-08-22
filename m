@@ -2,62 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75E519991B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 18:25:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CBDF99920
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 18:27:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
+	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kTE0oafVnCURz6tEZA+jWyGS+Ab69g+9DVCUFP6oJFA=; b=ePIuUq5vXCSpuP
-	edDVUgMyDbLJmNR9NTkvT26x2PpgFMupU9nxNoRzJg4fm+HRQXKSst1iqaPbh+115I0XAxN/4QYA3
-	cQ5hYP3HNtdK1kGBu1dS4kiAIqSnvvV5PZVAsIZCX9Ebgjvr0LLIrUY9+jk8ReJach2F++J2+i2rL
-	5glUsDLcso6AlFKPkomuKnXemeLOoXqo4orYfz5PkLPH/mGCCozTlIsKoLcTIVqtHtZmTqggrJTUy
-	5Hl12fMJLin68W1+HAmEBM8Nw1eQToz/bHL3ijY+BmDZtJdUiLnc/C1QWBbwd9XjkiNC/U3gFfTIB
-	Uj3J6MnFqRZsSXKg+Gdg==;
+	List-Owner; bh=Gn/6pqtgToT29WkivYOc2qNt1Lh1Uss+BJuykxCdYgA=; b=BvsekPVy7+Kmdj
+	VzMVuMzljVa5y5eWocALa3Bz5Q5C1N16niU4SPaRB3ALkzavMY/43zHfam09U4Ptra4OCSTvqf7UD
+	Fbw/99hlz/51qe01YyGbsnuk9nK+bFiDX2nG+3K++StaS1PFvvKrxt76cqbExjVTwn4L/pgPGhA+6
+	3YGeBiEPBbeQcktzKW41YZwzqGG2j/9pNJUU/fjOelZcHPB8T+Hlx+p9sBXI0VCOs1Ce2zzlXETZz
+	nznODjN2LAQTHbj1gOvWlJPP2YWq9Kyr92iuiGc04BZyrmbqggm3w7D4LIgz92RxsqGbboBha6g4v
+	wYqydY1JUnl/g+nA0Mrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0ptd-00007G-Ly; Thu, 22 Aug 2019 16:25:09 +0000
-Received: from mga09.intel.com ([134.134.136.24])
+	id 1i0pvp-0001dy-Pb; Thu, 22 Aug 2019 16:27:26 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0ptN-000069-3M
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 16:24:54 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by orsmga102.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 22 Aug 2019 09:24:49 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,417,1559545200"; d="scan'208";a="181437997"
-Received: from sjchrist-coffee.jf.intel.com (HELO linux.intel.com)
- ([10.54.74.41])
- by orsmga003.jf.intel.com with ESMTP; 22 Aug 2019 09:24:49 -0700
-Date: Thu, 22 Aug 2019 09:24:49 -0700
-From: Sean Christopherson <sean.j.christopherson@intel.com>
-To: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v3 04/10] KVM: Implement kvm_put_guest()
-Message-ID: <20190822162449.GF25467@linux.intel.com>
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-5-steven.price@arm.com>
- <20190822152854.GE25467@linux.intel.com>
- <e2abc69b-74c2-64ef-e270-43d93513eaae@arm.com>
+ id 1i0pvf-0001dX-7k
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 22 Aug 2019 16:27:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=References:In-Reply-To:Date:
+ Content-Type:Subject:Cc:To:From:Message-ID:MIME-Version:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=EFlLendt8CWQXL+vG3NFYTimiM+PuQRe0tn54GrTJvI=; b=oBZ6jP9fBmUJo8jsHyytYmftv
+ RGfiHFegAWCpxMkWZNWzHWmB6joqNT3VK7Dyziws6eLS6LQy598eKPv5pWNwrM6RlUnIhlVPBKfm2
+ UHY5FMPdSUh976HBidPq6kgZW0J4q/zXyvplIHlpczCuocFEOKUsdGrqHcqGQM+opXL/oYxVNKPfC
+ 472CPKoJI1Q5W9xSahaslhRSrPCNy+G+kyscWTnUmWQ0XBp5gG1RirCMU4rwR8hT8vrSjo1dCEqSg
+ h7FpAFC0tHtxpi6pYhjXwTSSzO6LX0ftDge3t/fj+cO3SiIfrkG55X/BscAK5Q+2XSNFLQ3KOBptd
+ 3mZhAmgFA==;
+Received: from mout.gmx.net ([212.227.17.22])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0pvc-0005tX-Ei
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 16:27:13 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1566491191;
+ bh=EFlLendt8CWQXL+vG3NFYTimiM+PuQRe0tn54GrTJvI=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
+ b=J1oj+y+FOWEcxd/2mh0ST+byTtNPBFHL7bTKRkcLdRVhO4qIBRhkO711lC3ZS0f8l
+ tP/t/UOMLwhRNCwvneZ2G3U6hBel+vnnplJFKcx8aEdZmwtlwzIBVpMf4qjx0A7jvO
+ nzT6ewyRND+nEsfYOPLPwhhdT7aDBUU/5XNsvkcY=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [217.61.154.89] ([217.61.154.89]) by web-mail.gmx.net
+ (3c-app-gmx-bap07.server.lan [172.19.172.77]) (via HTTP); Thu, 22 Aug 2019
+ 18:26:31 +0200
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e2abc69b-74c2-64ef-e270-43d93513eaae@arm.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_092453_192628_2D1169C3 
-X-CRM114-Status: GOOD (  21.72  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+Message-ID: <trinity-34b058f1-59d5-44b0-8783-a2c2440daf91-1566491191041@3c-app-gmx-bap07>
+From: "Frank Wunderlich" <frank-w@public-files.de>
+To: "Frank Wunderlich" <frank-w@public-files.de>
+Subject: Aw: [PATCH net-next v2 0/3] net: dsa: mt7530: Convert to PHYLINK
+ and add support for port 5
+Date: Thu, 22 Aug 2019 18:26:31 +0200
+Importance: normal
+Sensitivity: Normal
+In-Reply-To: <trinity-b1f48e51-af73-466d-9ecf-d560a7d7c1ee-1566488653737@3c-app-gmx-bap07>
+References: <20190821144547.15113-1-opensource@vdorst.com>
+ <trinity-b1f48e51-af73-466d-9ecf-d560a7d7c1ee-1566488653737@3c-app-gmx-bap07>
+X-UI-Message-Type: mail
+X-Priority: 3
+X-Provags-ID: V03:K1:Kj7CZobsPnsr7zMq8BK+GQacgt27Jspm9jpx7yWGWaplZdZd8aja9akdwt++VHup9BcS0
+ IVp0fhJXRc3pZQS4I0+mu06yvbd8TsfKwAREa02+QVekEJ9ZwW3K+gtAQC8lX7eO8ECuCls76G46
+ 72xV4qHPnIgvR9hBqOZoe8uPVuAiERZUUlmSIozv8fYLE+Aqq90YDQjFBGPhS6htpYNcKSQ11Jl1
+ 648imqiT/DAtQW6R+4saQlf8rnlqp5ePVxVuBhFol+gkPP4CWDhTRaRJI5t1tTv2hXEeqV4TL3aT
+ s8=
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:t+0B4WWivmI=:H2oz4bEmfWxC94hqA5jzqm
+ KkusajgSnBgs/U3CkieChIr/hk41B8/m7wcoQfMR+PwI3GKgXuvhFfVTUsc1yCgTqslVUUD29
+ VCSEuIaFgfW4rmaoET0PimCX+/6DvAVYQpOqqF3MJ9qZAxs1vh0sQxQ6hGNWnA3RgR37DPz+5
+ EasdTGiXpaOXejgPQCwtUfC1xAqRhlm1yRDmzAbPDG89ePmQ23raCpn0X3yw8WtBpZJiWTqVD
+ DpWY36Ii4Ep7KJD4KmuOKAFRccfZG5/deBsQe0Y5fGzz3U1DiOCttZpL1UQBkcDNTgz+vZ7p5
+ zjmfhXeb2uICSFDTOWOmm0LwT8oezRBjfGRifBPENq02qfAOHCmZta3E2Rh5wts7ohCr6ybbI
+ LBTZIUsEckzDBdOPG3cW8ypxAsJd0PLSJlOud2igzVImOD75iZA5ypn6zp3JdRu+3WGYpDBxk
+ w2UxlslnJKHuPVHMY06YII3Bs/0/D+7m4aFEESes6kHB4NVJY6OYxQm9vL1MvXOjbPVtjlK0X
+ tj/mKnR+ncWOcoTJNYyXhzAvYoPt2rhaKKpSXWxucCV7/XVjjhgEygWiOIGq7jV1gY7GDT8VI
+ OWnmEKD3hnMJ20F49WuPuqpH4dyN25U+wLFMLHgWpeNefs7Rbta6TqoiINQOeekH/n3j++tiq
+ humnnsNH/695SjU8Vww/AlCF0ru7gDq90sQDJ/hCy9AwEng==
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.24 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.227.17.22 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,64 +105,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>, kvm@vger.kernel.org,
- Suzuki K Pouloze <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- linux-doc@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
- linux-arm-kernel@lists.infradead.org,
- Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
+ netdev@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
+ linux-mips@vger.kernel.org, Vivien Didelot <vivien.didelot@gmail.com>,
+ =?UTF-8?Q?=22Ren=C3=A9_van_Dorst=22?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 04:46:10PM +0100, Steven Price wrote:
-> On 22/08/2019 16:28, Sean Christopherson wrote:
-> > On Wed, Aug 21, 2019 at 04:36:50PM +0100, Steven Price wrote:
-> >> kvm_put_guest() is analogous to put_user() - it writes a single value to
-> >> the guest physical address. The implementation is built upon put_user()
-> >> and so it has the same single copy atomic properties.
-> > 
-> > What you mean by "single copy atomic"?  I.e. what guarantees does
-> > put_user() provide that __copy_to_user() does not?
-> 
-> Single-copy atomicity is defined by the Arm architecture[1] and I'm not
-> going to try to go into the full details here, so this is a summary.
-> 
-> For the sake of this feature what we care about is that the value
-> written/read cannot be "torn". In other words if there is a read (in
-> this case from another VCPU) that is racing with the write then the read
-> will either get the old value or the new value. It cannot return a
-> mixture. (This is of course assuming that the read is using a
-> single-copy atomic safe method).
+tested now also on bpi-r64 (mt7622) v0.1 (rtl8367 switch), without linux-next to avoid power-regulator-problems like on bpi-r2
 
-Thanks for the explanation.  I assumed that's what you were referring to,
-but wanted to double check.
- 
-> __copy_to_user() is implemented as a memcpy() and as such cannot provide
-> single-copy atomicity in the general case (the buffer could easily be
-> bigger than the architecture can guarantee).
-> 
-> put_user() on the other hand is implemented (on arm64) as an explicit
-> store instruction and therefore is guaranteed by the architecture to be
-> single-copy atomic (i.e. another CPU cannot see a half-written value).
+dmesg without warnings/errors caused by this patches
+link came up as desired
+iperf3 looks good: 943 Mbits/sec in both directions and no other issues
 
-I don't think kvm_put_guest() belongs in generic code, at least not with
-the current changelog explanation about it providing single-copy atomic
-semantics.  AFAICT, the single-copy thing is very much an arm64
-implementation detail, e.g. the vast majority of 32-bit architectures,
-including x86, do not provide any guarantees, and x86-64 generates more
-or less the same code for put_user() and __copy_to_user() for 8-byte and
-smaller accesses.
+so it is currently only the rx-throughput-problem on mt7623/bpi-r2
 
-As an alternative to kvm_put_guest() entirely, is it an option to change
-arm64's raw_copy_to_user() to redirect to __put_user() for sizes that are
-constant at compile time and can be handled by __put_user()?  That would
-allow using kvm_write_guest() to update stolen time, albeit with
-arguably an even bigger dependency on the uaccess implementation details.
+regards Frank
 
 _______________________________________________
 linux-arm-kernel mailing list
