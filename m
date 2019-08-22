@@ -2,55 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD96399734
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:44:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 730619973B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 16:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=1G8bYIlvoOiXBDLH9o+YrLyzBVesvgeTK9f1QVstBbk=; b=fg9T9MqQkqtDJUnWTTFPLht0k6
-	BpVJVpLL0J6v4PgBcCK0F35q9jS9Wl4FfRu8T0Dg7Gw9n9NZ8MjN/3w6/qv60JCkvLR0g7XzIk/+v
-	dC31q5aGDxzN15pTZqPV2+tlVgQ7wan366OeC5sAljO+LWL++3zT5BmXZNZUaMeJ1HyAxTsiqajpc
-	+mCRubxiHKi+XMDEFnlS1cjTlnOqdgqcCMUOZH6/6j6pjFJszsKWtT5A/g9AF1C8BgroV5vqQoDuk
-	gY11lUmlvB8vT2STLsw2CScUhUDSSOB/T5swbNbgyE5BfIu6UBu9rtH8+dUy2Yp072wdx4888DJFJ
-	HjLocK4A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hAXg5TesGZ311+qAyFJyc32OuNZUFcZCpR+JIDVUvsA=; b=j5o9ZTiSQ7hkxy
+	eXK2OwHxBKfz7bAOBqmvb36mqPdH7bRJ4l2uyG++Fez6X1c5742DEtuH4x4uXSU4GqC3AEmqoIMJ9
+	XtW96BwlJJ3bXPObJn7WWgHINkYLe4McKVflGuBIkDAxVOtp+ynyAzUOA+iGKmvtyNYJKeVvryA82
+	E8+Oh4mI3L8zF4KjFruCpidGCpr0PKbrWiP9WQrjEmQcPpYu/lrYAKIdWds3nTFkSKSAqXgHslrc4
+	dCYcAoDkZqG9au1dLQHuDU4vpkLMod67lPmROEJVsbVTnbwnh8QZu0xs6UY6BTetNYTpHMafAzdCx
+	kp2Og9CSy252hZajE4XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0oKL-0005uH-SC; Thu, 22 Aug 2019 14:44:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i0oIU-0004QQ-PJ
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 14:42:44 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0C5CD1570;
- Thu, 22 Aug 2019 07:42:42 -0700 (PDT)
-Received: from e121650-lin.cambridge.arm.com (e121650-lin.cambridge.arm.com
- [10.1.196.120])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB64C3F706;
- Thu, 22 Aug 2019 07:42:40 -0700 (PDT)
-From: Raphael Gault <raphael.gault@arm.com>
-To: linux-arm-kernel@lists.infradead.org,
-	linux-kernel@vger.kernel.org
-Subject: [PATCH v4 7/7] Documentation: arm64: Document PMU counters access
- from userspace
-Date: Thu, 22 Aug 2019 15:42:20 +0100
-Message-Id: <20190822144220.27860-8-raphael.gault@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190822144220.27860-1-raphael.gault@arm.com>
-References: <20190822144220.27860-1-raphael.gault@arm.com>
+	id 1i0oLB-0006vE-45; Thu, 22 Aug 2019 14:45:29 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0oKb-0006I2-1F; Thu, 22 Aug 2019 14:44:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
+ Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
+ Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Ups/VrVzSUhhwl/GEM5YSxWOiDm7bA4AN942AhbRqwo=; b=sQhrwnvpafZLPmo5FsdfINJTy
+ gqrWQhb1Z+5QCrEIDeMoEi3SdBeRlQ0v769zMUgIPnlfHp+R1toUOanWZs4j4fAgaJJx1+1pNN3Pk
+ sNHT4ZUjpanIjfQnjDQrwSSarOzK6SevySl9bvgFrqzO6breQcO9593EEUjk1JNQrOqUxmxuFJU0c
+ TpuUduJ3+r+cF0iBFl5sEupcoYvbP5YoYJ3FOfWGLzUpxFTU5tFekqHvRaVXIpVmTTl0GqkOdI5eb
+ pqV3DqYa6AYnAb68AilWTr+NCyLz1cmjlmYN/zsAZnyRurU3lp3eQ/w5Z3yHwvYigqb2Bblzib3XI
+ tYyrEZhDg==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:48060)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i0oKL-0007ES-Kj; Thu, 22 Aug 2019 15:44:37 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i0oKH-0007m8-RC; Thu, 22 Aug 2019 15:44:33 +0100
+Date: Thu, 22 Aug 2019 15:44:33 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: =?iso-8859-1?Q?Ren=E9?= van Dorst <opensource@vdorst.com>
+Subject: Re: [PATCH net-next v2 2/3] net: ethernet: mediatek: Re-add support
+ SGMII
+Message-ID: <20190822144433.GT13294@shell.armlinux.org.uk>
+References: <20190821144336.9259-1-opensource@vdorst.com>
+ <20190821144336.9259-3-opensource@vdorst.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190821144336.9259-3-opensource@vdorst.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_074243_124600_4F99FB33 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190822_074453_096007_4222C68E 
+X-CRM114-Status: GOOD (  11.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,75 +87,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, raph.gault+kdev@gmail.com, peterz@infradead.org,
- catalin.marinas@arm.com, will.deacon@arm.com, acme@kernel.org,
- Raphael Gault <raphael.gault@arm.com>, mingo@redhat.com
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Nelson Chang <nelson.chang@mediatek.com>,
+ Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
+ Sean Wang <sean.wang@mediatek.com>, linux-mips@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Stefan Roese <sr@denx.de>,
+ "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a documentation file to describe the access to the pmu hardware
-counters from userspace
+On Wed, Aug 21, 2019 at 04:43:35PM +0200, Ren=E9 van Dorst wrote:
+> +	if (MTK_HAS_CAPS(mac->hw->soc->caps, MTK_SGMII)) {
+> +		if (state->interface !=3D PHY_INTERFACE_MODE_2500BASEX) {
+>  			phylink_set(mask, 1000baseT_Full);
+>  			phylink_set(mask, 1000baseX_Full);
+> +		} else {
+> +			phylink_set(mask, 2500baseT_Full);
+> +			phylink_set(mask, 2500baseX_Full);
+> +		}
 
-Signed-off-by: Raphael Gault <raphael.gault@arm.com>
----
- .../arm64/pmu_counter_user_access.txt         | 42 +++++++++++++++++++
- 1 file changed, 42 insertions(+)
- create mode 100644 Documentation/arm64/pmu_counter_user_access.txt
+If you can dynamically switch between 1000BASE-X and 2500BASE-X, then
+you need to have both set.  See mvneta.c:
 
-diff --git a/Documentation/arm64/pmu_counter_user_access.txt b/Documentation/arm64/pmu_counter_user_access.txt
-new file mode 100644
-index 000000000000..6788b1107381
---- /dev/null
-+++ b/Documentation/arm64/pmu_counter_user_access.txt
-@@ -0,0 +1,42 @@
-+Access to PMU hardware counter from userspace
-+=============================================
-+
-+Overview
-+--------
-+The perf user-space tool relies on the PMU to monitor events. It offers an
-+abstraction layer over the hardware counters since the underlying
-+implementation is cpu-dependent.
-+Arm64 allows userspace tools to have access to the registers storing the
-+hardware counters' values directly.
-+
-+This targets specifically self-monitoring tasks in order to reduce the overhead
-+by directly accessing the registers without having to go through the kernel.
-+
-+How-to
-+------
-+The focus is set on the armv8 pmuv3 which makes sure that the access to the pmu
-+registers is enable and that the userspace have access to the relevent
-+information in order to use them.
-+
-+In order to have access to the hardware counter it is necessary to open the event
-+using the perf tool interface: the sys_perf_event_open syscall returns a fd which
-+can subsequently be used with the mmap syscall in order to retrieve a page of memory
-+containing information about the event.
-+The PMU driver uses this page to expose to the user the hardware counter's
-+index. Using this index enables the user to access the PMU registers using the
-+`mrs` instruction.
-+
-+Have a look `at tools/perf/arch/arm64/tests/user-events.c` for an example. It can be
-+run using the perf tool to check that the access to the registers works
-+correctly from userspace:
-+
-+./perf test -v
-+
-+About chained events
-+--------------------
-+When the user requests for an event to be counted on 64 bits, two hardware
-+counters are used and need to be combined to retrieve the correct value:
-+
-+val = read_counter(idx);
-+if ((event.attr.config1 & 0x1))
-+	val = (val << 32) | read_counter(idx - 1);
--- 
-2.17.1
+        if (pp->comphy || state->interface !=3D PHY_INTERFACE_MODE_2500BASE=
+X) {
+                phylink_set(mask, 1000baseT_Full);
+                phylink_set(mask, 1000baseX_Full);
+        }
+        if (pp->comphy || state->interface =3D=3D PHY_INTERFACE_MODE_2500BA=
+SEX) {
+                phylink_set(mask, 2500baseT_Full);
+                phylink_set(mask, 2500baseX_Full);
+        }
 
+What this is saying is, if we have a comphy (which is the serdes lane
+facing component, where the data rate is setup) then we can support
+both speeds (and so mask ends up with all four bits set.)  Otherwise,
+we only support a single-speed (1000Gbps for non-2500BASE-X etc.)
+
+> +	} else {
+> +		if (state->interface =3D=3D PHY_INTERFACE_MODE_TRGMII) {
+> +			phylink_set(mask, 1000baseT_Full);
+> +		} else {
+> +			phylink_set(mask, 10baseT_Half);
+> +			phylink_set(mask, 10baseT_Full);
+> +			phylink_set(mask, 100baseT_Half);
+> +			phylink_set(mask, 100baseT_Full);
+> +
+> +			if (state->interface !=3D PHY_INTERFACE_MODE_MII) {
+> +				phylink_set(mask, 1000baseT_Half);
+> +				phylink_set(mask, 1000baseT_Full);
+> +				phylink_set(mask, 1000baseX_Full);
+> +			}
+
+I'm also wondering about the "MTK_HAS_CAPS(mac->hw->soc->caps,
+MTK_SGMII)" above.
+
+(Here comes a reason why using SGMII to cover all single-lane serdes
+modes causes confusion - unfortunately, some folk use SGMII to describe
+all these modes.  So, I'm going to use the terminology "Cisco SGMII"
+to mean exactly the SGMII format published by Cisco, "802.3 1000BASE-X"
+to mean the original IEEE 802.3 format running at 1.25Gbps, and
+"up-clocked 2500BASE-X" to mean the 3.125Gbps version of the 802.3
+1000BASE-X protocol.)
+
+Isn't this set for Cisco SGMII as well as for 802.3 1000BASE-X and
+the up-clocked 2500BASE-X modes?
+
+If so, is there a reason why 10Mbps and 100Mbps speeds aren't
+supported on Cisco SGMII links?
+
+-- =
+
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
+up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
