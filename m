@@ -2,80 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7177999EF4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 20:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E01ED99F0E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 20:41:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BrmhDrbMdk6YsaOEHlTKkUqD8ssxn0aQDxCim2wRlx0=; b=JqOqUcgdFuftB4
-	v29FSJr11INh/zDHEdzcgPyGqNebSgEXhtjqytIUPRtkPA2NtKzUV9K/d5nSi47t1nFg5ZWe7Mq02
-	hQip8MMhto62XhwtPohoRpxEdkVHZC/7JJwTaNuXkxnyLboMfdyBKSjmaTBq1VoOG+McWHDo9waMj
-	8jsREnLel4THSqW2UtLr9WEtpze31XCO50ghi6833a8ObLm12tvl7flx/voBkcUEmdP7lB+0D6Vdi
-	Wo037AdHruwJYMoz0JTfvGbykRIuFAL0yElb6G0lll6RENbyCf/KJ1XymaH+9oD1KHdePnlF6b1ey
-	i8Vz7E6bXfJ2GtuD56hg==;
+	List-Owner; bh=nsPFqSMpEIAF+Nk0crhMtEbwzq2iNCVs27Tp93iTvxg=; b=nssT37n3TEueq1
+	mGue7d6xBq6NAzwMd66Yfy+Jl1zXLSGBoMjuB+MlRBswCYGA5DYJ7qRXw4+nzE20F4dwXhzM0drcO
+	mknvrcp0A8lCL01nIy/oau+uBZL4XOV2sqJ7pb6mvAURRVxrmHXREaBbDBh9YB/ik8c948QFn20hs
+	DuCUc9Lg60o0IqqmtIqvMOfbYpY6Z+YzZyyzg/0hEOsXol2ecMVQrihFrpnM7B3VS+Jg3hSaAOcAk
+	zVvgpp/nXA/3ICTjBQgAc4xM4Wh8pOBZ4ULNJi2vQvARd3runoiaNCn6YGhTMZzfD9oJ3POkMdbvV
+	zIyf95LeCn2JhJDvvWvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0rvv-0005eK-MH; Thu, 22 Aug 2019 18:35:39 +0000
-Received: from mail-wm1-f66.google.com ([209.85.128.66])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0rvg-0005UO-GM
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 18:35:25 +0000
-Received: by mail-wm1-f66.google.com with SMTP id g67so6738672wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 11:35:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=/tUddt47UVuCta3mgJSc1hmEBY8bqXM8P4CnUZuuCDU=;
- b=hcVorzdlxl2DGUN7Sl+GmH5r6AbK5pWDpoMFBBhOckUrkvel2YlWFMfXwoLPShFVCO
- ZIFjDvGdjGRxBlB327U8kL5et8mS+y06mm0CpHFv9iCoGdUlyPhVrMAUUIboUJ2s01q+
- ClNVAWBPN2aBeLfNIebtOIehSD4Pm90IpzqWDJ26iUKx8/zmh7sTBKENKR8j8xG8uG9g
- 617+EzWMJvf1ZaIZNA5MPQY+hWSh2C8T8hfnLKLDG/XY3xqxnoz5RlnsbDM4LAF4+Uhu
- ElaSqjK8v6+fNLLX6ydIn2k02rzHXrdFVYIW9y7c0Pl2G86ZoVDWFuGnWerLEgr8QGA/
- l/wA==
-X-Gm-Message-State: APjAAAVw8SX96ceyoYxQQAoENcJzMifpxbwGMvV5GNqJLobWiC9STgZu
- /8CdS0pZnxZCX40kfRRkAgA=
-X-Google-Smtp-Source: APXvYqzKy1puvqnfw8PmDe+xf37FAc+l4js3Rg5NT3wefojKXtpdPyZtRzBlLGggVQtM3iApxVZLJw==
-X-Received: by 2002:a1c:9ec5:: with SMTP id h188mr501768wme.176.1566498922468; 
- Thu, 22 Aug 2019 11:35:22 -0700 (PDT)
-Received: from kozik-lap ([194.230.147.11])
- by smtp.googlemail.com with ESMTPSA id f197sm819174wme.22.2019.08.22.11.35.21
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 22 Aug 2019 11:35:21 -0700 (PDT)
-Date: Thu, 22 Aug 2019 20:35:19 +0200
-From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
- arm@kernel.org, soc@kernel.org
-Subject: Re: [GIT PULL 1/3] soc: samsung: Exynos for v5.4
-Message-ID: <20190822183519.GA23735@kozik-lap>
-References: <20190816163042.6604-1-krzk@kernel.org>
- <CAJKOXPcgZ2_ofZyAeTSxALkALaP-SFNfvNmNPYSPyLzuhpGZ0w@mail.gmail.com>
+	id 1i0s1O-0007Td-MX; Thu, 22 Aug 2019 18:41:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i0s1D-0007N6-Nn
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 18:41:09 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9432928;
+ Thu, 22 Aug 2019 11:41:04 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 124213F718;
+ Thu, 22 Aug 2019 11:41:03 -0700 (PDT)
+Date: Thu, 22 Aug 2019 19:41:02 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v3 1/5] jump_label: Don't warn on __exit jump entries
+Message-ID: <20190822184101.GA14582@e119886-lin.cambridge.arm.com>
+References: <20190812143625.42745-1-andrew.murray@arm.com>
+ <20190812143625.42745-2-andrew.murray@arm.com>
+ <20190822153237.GC33080@lakrids.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAJKOXPcgZ2_ofZyAeTSxALkALaP-SFNfvNmNPYSPyLzuhpGZ0w@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190822153237.GC33080@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_113524_546887_B7D37DBD 
-X-CRM114-Status: GOOD (  18.48  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190822_114107_823967_D562A8F2 
+X-CRM114-Status: GOOD (  21.94  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.66 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,53 +62,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- Kukjin Kim <kgene@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
+ Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 09:51:09AM +0200, Krzysztof Kozlowski wrote:
-> On Fri, 16 Aug 2019 at 18:30, Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >
-> > The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-> >
-> >   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-> >
-> > are available in the Git repository at:
-> >
-> >   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.4
-> >
-> > for you to fetch changes up to 40d8aff614f71ab3cab20785b4f213e3802d4e87:
-> >
-> >   soc: samsung: chipid: Convert exynos-chipid driver to use the regmap API (2019-08-15 20:25:25 +0200)
-> >
-> > ----------------------------------------------------------------
-> > Samsung soc drivers changes for v5.4
-> >
-> > Add Exynos Chipid driver for identification of product IDs and SoC
-> > revisions.  The driver also exposes chipid regmap, later to be used by
-> > Exynos Adaptive Supply Voltage driver (adjusting voltages to different
-> > revisions of same SoC).
+On Thu, Aug 22, 2019 at 04:32:37PM +0100, Mark Rutland wrote:
+> On Mon, Aug 12, 2019 at 03:36:21PM +0100, Andrew Murray wrote:
+> > On architectures that discard .exit.* sections at runtime, a
+> > warning is printed for each jump label that is used within an
+> > in-kernel __exit annotated function:
+> > 
+> > can't patch jump_label at ehci_hcd_cleanup+0x8/0x3c
+> > WARNING: CPU: 0 PID: 1 at kernel/jump_label.c:410 __jump_label_update+0x12c/0x138
+> > 
+> > As these functions will never get executed (they are free'd along
+> > with the rest of initmem) - we do not need to patch them and should
+> > not display any warnings.
+> > 
+> > The warning is displayed because the test required to satisfy
+> > jump_entry_is_init is based on init_section_contains (__init_begin to
+> > __init_end) whereas the test in __jump_label_update is based on
+> > init_kernel_text (_sinittext to _einittext) via kernel_text_address).
+> > 
+> > In addition to fixing this, we also remove an out-of-date comment
+> > and use a WARN instead of a WARN_ONCE.
 > 
-> It turns out that it brings troubles (code is executed on every
-> platform polluting logs because it is an initcall, not a driver) so
-> Sylwester (submitter) asked to skip the submission.
+> This last sentence is stale -- it was true in v1 but not since then.
 > 
-> Please ignore the pull request.
+> With that droppped:
+> 
+> Acked-by: Mark Rutland <mark.rutland@arm.com>
 
-I talked with Sylwester and Bartlomiej who contributed the chipid driver
-and they provided small incremental fixes. The driver is still useful
-and in the future it will be expanded towards AVS. Therefore please pull
-it or optionally wait a week and I will send incremental pull request
-with fixes.
+Thanks.
 
-Best regards,
-Krzysztof
+Andrew Murray
 
+> 
+> Mark.
+>  
+> > Fixes: 19483677684b ("jump_label: Annotate entries that operate on __init code earlier")
+> > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+> > ---
+> >  kernel/jump_label.c | 4 +++-
+> >  1 file changed, 3 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/kernel/jump_label.c b/kernel/jump_label.c
+> > index df3008419a1d..cdb3ffab128b 100644
+> > --- a/kernel/jump_label.c
+> > +++ b/kernel/jump_label.c
+> > @@ -407,7 +407,9 @@ static bool jump_label_can_update(struct jump_entry *entry, bool init)
+> >  		return false;
+> >  
+> >  	if (!kernel_text_address(jump_entry_code(entry))) {
+> > -		WARN_ONCE(1, "can't patch jump_label at %pS", (void *)jump_entry_code(entry));
+> > +		WARN_ONCE(!jump_entry_is_init(entry),
+> > +			  "can't patch jump_label at %pS",
+> > +			  (void *)jump_entry_code(entry));
+> >  		return false;
+> >  	}
+> >  
+> > -- 
+> > 2.21.0
+> > 
 
 _______________________________________________
 linux-arm-kernel mailing list
