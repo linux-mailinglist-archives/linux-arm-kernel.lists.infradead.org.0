@@ -2,91 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB8579A0A5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:02:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76AD89A0A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 22:03:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hFdszbBqHdAiaqx0C1TZs9wD4Wm0sBANL4A9dW3xNpM=; b=jxIEe8upNssR5m
-	yFdqehzXuDcNP1Zov6xLWuZMiBJcQu/xqh8V/o2+L3AR772bBUlWqSfxl5JiHMZER5fP1ISLrqcFt
-	Ox6KrwiZi5X1D3sV/ji3ZYUmj5DPh0fkCr1+pZdDbiWEm/073HpE7pnIkHd4BWFYjZHbRodVLxdmh
-	7o8a+dIyJsTR9ba+l64qq8uZRdZ8i+VNFa8w5LY92IT/C9J6iqJkJozPRjeTnLhDy+J6z6nsKHQ+U
-	h+lQEr/SP0n+A+0JXQUPcSgdgP5NG9p753A0aFMLIPTzS50fTbtUklNt1/dOm+x9eh7/zHWeb6wvG
-	OYB619oZM2yzlepvI+GQ==;
+	List-Owner; bh=6hFBhX5MZ+0svcNmY/qFp+8HjC8f+MLerDz6CwlX8zs=; b=ZSh3TZrylrtX5g
+	1wNTd5UTADNyLKeqvnAmBYpJZcMDGySJ2EC9tlHFbv4k3J8xqr+OTGdnqutDcqsadSW2Vk0Ts4fi2
+	H58sjB/QAaAFPg7xZKLf/a0kJwQPOUvo4vj92UCJ7VV+e4+DN6hKnugZwymPkw0RW+zX/6aQvRlgV
+	dknFDBD1l3Q7DpOUbIpoQn2jrQqaKjr6+9hRS04BJfk0NQ+lG//GkjI6HnU/HqRaOb9vb2nAv5wqg
+	tuo1u6+sKhsVBlaZtZQOjId1hE7v4LNtsz12/MMYCCqS0B84Yxh4g3g6+rRBCGPMGn9Rd8Beg1Ln3
+	knq8gj7lSA9VXD1UCNxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0tI0-0000wh-14; Thu, 22 Aug 2019 20:02:32 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1i0tIQ-0001GK-S1; Thu, 22 Aug 2019 20:02:58 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0tHm-0000wJ-IP
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:02:20 +0000
-Received: by mail-pl1-x642.google.com with SMTP id bj8so4069529plb.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 13:02:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6M0MCfExdShtaBNC5rUsoqRluAjvGaMj1xK+AyvQMYQ=;
- b=wA70pSlyGS3xgLPfhfiwGb0w/uRVfR15xemS5RDPcnl/8GpoFcuwlN0PCp/SEaEnpo
- mEHpTymSCekh6celiS+enQkRXEBgPXV7kcSj9oHk//cMuLPJulR9GY0I4d4ZXJNNsSv6
- aR5eS3Wwm3Q494wldXv44AnZt66FrkAEvjNx6FxFMGqR28hbsoQ0hDc3q3zmHbyy4pof
- rdlq2pAQOi02JdewYeXI6x6yTkCURuQydiWxtVJH5a1QK+8nHTG89xKaEuTMyvnNzdKy
- QcFZkYwm3hMOBfPsNhfI3IrpyxAZnhJpDX+SimVFZyLYJeRzJUURphgkEXFWVdao1TUM
- +W6Q==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6M0MCfExdShtaBNC5rUsoqRluAjvGaMj1xK+AyvQMYQ=;
- b=hQnd0sN8EtUairQ/0nlJC+gTFIrOaehLFMfIWTHazv59yjB41E941vgEWGZRCc2tqO
- bpr2IrtNhwtJf/LwFKjF2HLLdIZ+X5/xwsAU9rI7I94NeIKkUzvLwze7h8eXW0iDx3+A
- GWO3uPAifqmYfQB/pGenTAaI913+oW9GU5dWYGjs8t5UOQsphooh27TyznfdwyhPixTW
- 5/8Ayt5W1krRaZO3gcEcVAa64EPK01U7CqQpE8tIXmBoUWLwagTFvfr2wYOjb9PGS2iz
- CAosN9/3XKjcUMjf10SdQlA0TPkoXQQJ99SYr5KURazwQ6cPFWigpeES4uDvM4m2CfUE
- trfQ==
-X-Gm-Message-State: APjAAAWjQ7XYXffUrI/5L65fUw6ZVTzoKrhzHGTyG953NbXh80QVOyh5
- YG5b7JX5sjmiyYzitKbr0JtcacT12zhN7g6UKjiA2hkac1MtoQ==
-X-Google-Smtp-Source: APXvYqx3e5m9jsrDl6BgfUIB+8APB2djIY7vDgQy/jsFhzhsM2f1gsybya3+Zu7fin3SzbJZ83BqJnNE4rwu0WVhAyQ=
-X-Received: by 2002:a17:902:8484:: with SMTP id
- c4mr569679plo.223.1566504137158; 
- Thu, 22 Aug 2019 13:02:17 -0700 (PDT)
+ id 1i0tI7-0001E6-Mk
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 20:02:45 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 4129B1E2036;
+ Thu, 22 Aug 2019 20:02:39 +0000 (UTC)
+Received: from treble (ovpn-121-55.rdu2.redhat.com [10.10.121.55])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id E04F951C46;
+ Thu, 22 Aug 2019 20:02:37 +0000 (UTC)
+Date: Thu, 22 Aug 2019 15:02:35 -0500
+From: Josh Poimboeuf <jpoimboe@redhat.com>
+To: Raphael Gault <raphael.gault@arm.com>
+Subject: Re: [RFC v4 05/18] objtool: special: Adapt special section handling
+Message-ID: <20190822200235.e3p37o3prmbkeude@treble>
+References: <20190816122403.14994-1-raphael.gault@arm.com>
+ <20190816122403.14994-6-raphael.gault@arm.com>
 MIME-Version: 1.0
-References: <CAKwvOd=wKUhnWr4UhVvgn6NYh+=zQOpMmKG9d_zEqaKLa4_9FA@mail.gmail.com>
- <20190822183022.130790-1-nhuck@google.com>
-In-Reply-To: <20190822183022.130790-1-nhuck@google.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 22 Aug 2019 13:02:05 -0700
-Message-ID: <CAKwvOdn6av8bX4xUtuuKeJQdiQU+_Ty2aM8wtjP9+teU0Gt6Yg@mail.gmail.com>
-Subject: Re: [PATCH v3] ARM: UNWINDER_FRAME_POINTER implementation for Clang
-To: Nathan Huckleberry <nhuck@google.com>
+Content-Disposition: inline
+In-Reply-To: <20190816122403.14994-6-raphael.gault@arm.com>
+User-Agent: NeoMutt/20180716
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.71]); Thu, 22 Aug 2019 20:02:39 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_130218_637679_D6CA0BF5 
-X-CRM114-Status: GOOD (  41.52  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190822_130239_806407_509A7E91 
+X-CRM114-Status: GOOD (  36.04  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,343 +69,299 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tri Vo <trong@google.com>, Russell King <linux@armlinux.org.uk>,
- LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- =?UTF-8?B?TWlsZXMgQ2hlbiAo6Zmz5rCR5qi6KQ==?= <miles.chen@mediatek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: raph.gault+kdev@gmail.com, peterz@infradead.org, catalin.marinas@arm.com,
+ will.deacon@arm.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, julien.thierry.kdev@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 11:30 AM Nathan Huckleberry <nhuck@google.com> wrote:
->
-> The stackframe setup when compiled with clang is different.
-> Since the stack unwinder expects the gcc stackframe setup it
-> fails to print backtraces. This patch adds support for the
-> clang stackframe setup.
->
-> Link: https://github.com/ClangBuiltLinux/linux/issues/35
-> Cc: clang-built-linux@googlegroups.com
-> Suggested-by: Tri Vo <trong@google.com>
-> Signed-off-by: Nathan Huckleberry <nhuck@google.com>
-> Tested-by: Nick Desaulniers <ndesaulniers@google.com>
+On Fri, Aug 16, 2019 at 01:23:50PM +0100, Raphael Gault wrote:
+> This patch abstracts the few architecture dependent tests that are
 
-Great, thanks for following up on the suggestions from code review.
-Since this is going to go up via the arm tree, which has its own
-process, please add my:
-Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-to the commit message, then submit the patch to the maintainer's patch
-tracking system:
-https://www.armlinux.org.uk/developer/patches/info.php
-(create a login, sign in, then visit:
-https://www.armlinux.org.uk/developer/patches/add.php . I think the
-correct thing is to put the first line of the commit in the summary
-field, next/master as the kernel version (I applied/tested off of
--next), then the rest of the commit message body in the Patch Notes
-field.  Make sure to attach the patch file.  Finally, it should appear
-at https://www.armlinux.org.uk/developer/patches/section.php?section=0
-I think within 24hrs).
+The patch description shouldn't talk about the patch specifically, but
+should rather describe what it does, in imperative language.
 
+> perform when handling special section and switch tables. It enables any
+
+"performed"
+
+> architecture to ignore a particular CPU feature or not to handle switch
+> tables.
+> 
+> Signed-off-by: Raphael Gault <raphael.gault@arm.com>
 > ---
-> Changes from v2->v3
-> * Fix indentation on code
-> * Fix comment formatting
->
->  arch/arm/Kconfig.debug         |   2 +-
->  arch/arm/Makefile              |   5 +-
->  arch/arm/lib/Makefile          |   8 +-
->  arch/arm/lib/backtrace-clang.S | 217 +++++++++++++++++++++++++++++++++
->  4 files changed, 229 insertions(+), 3 deletions(-)
->  create mode 100644 arch/arm/lib/backtrace-clang.S
->
-> diff --git a/arch/arm/Kconfig.debug b/arch/arm/Kconfig.debug
-> index 85710e078afb..b9c674ec19e0 100644
-> --- a/arch/arm/Kconfig.debug
-> +++ b/arch/arm/Kconfig.debug
-> @@ -56,7 +56,7 @@ choice
->
->  config UNWINDER_FRAME_POINTER
->         bool "Frame pointer unwinder"
-> -       depends on !THUMB2_KERNEL && !CC_IS_CLANG
-> +       depends on !THUMB2_KERNEL
->         select ARCH_WANT_FRAME_POINTERS
->         select FRAME_POINTER
->         help
-> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
-> index c3624ca6c0bc..6f251c201db0 100644
-> --- a/arch/arm/Makefile
-> +++ b/arch/arm/Makefile
-> @@ -36,7 +36,10 @@ KBUILD_CFLAGS        += $(call cc-option,-mno-unaligned-access)
->  endif
->
->  ifeq ($(CONFIG_FRAME_POINTER),y)
-> -KBUILD_CFLAGS  +=-fno-omit-frame-pointer -mapcs -mno-sched-prolog
-> +KBUILD_CFLAGS  +=-fno-omit-frame-pointer
-> +ifeq ($(CONFIG_CC_IS_GCC),y)
-> +KBUILD_CFLAGS += -mapcs -mno-sched-prolog
-> +endif
->  endif
->
->  ifeq ($(CONFIG_CPU_BIG_ENDIAN),y)
-> diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
-> index b25c54585048..6d2ba454f25b 100644
-> --- a/arch/arm/lib/Makefile
-> +++ b/arch/arm/lib/Makefile
-> @@ -5,7 +5,7 @@
->  # Copyright (C) 1995-2000 Russell King
->  #
->
-> -lib-y          := backtrace.o changebit.o csumipv6.o csumpartial.o   \
-> +lib-y          := changebit.o csumipv6.o csumpartial.o               \
->                    csumpartialcopy.o csumpartialcopyuser.o clearbit.o \
->                    delay.o delay-loop.o findbit.o memchr.o memcpy.o   \
->                    memmove.o memset.o setbit.o                        \
-> @@ -19,6 +19,12 @@ lib-y                := backtrace.o changebit.o csumipv6.o csumpartial.o   \
->  mmu-y          := clear_user.o copy_page.o getuser.o putuser.o       \
->                    copy_from_user.o copy_to_user.o
->
-> +ifdef CONFIG_CC_IS_CLANG
-> +  lib-y        += backtrace-clang.o
-> +else
-> +  lib-y        += backtrace.o
-> +endif
-> +
->  # using lib_ here won't override already available weak symbols
->  obj-$(CONFIG_UACCESS_WITH_MEMCPY) += uaccess_with_memcpy.o
->
-> diff --git a/arch/arm/lib/backtrace-clang.S b/arch/arm/lib/backtrace-clang.S
+>  tools/objtool/arch/arm64/Build                |  1 +
+>  tools/objtool/arch/arm64/arch_special.c       | 22 +++++++++++++++
+>  .../objtool/arch/arm64/include/arch_special.h | 10 +++++--
+>  tools/objtool/arch/x86/Build                  |  1 +
+>  tools/objtool/arch/x86/arch_special.c         | 28 +++++++++++++++++++
+>  tools/objtool/arch/x86/include/arch_special.h |  9 ++++++
+>  tools/objtool/check.c                         | 24 ++++++++++++++--
+>  tools/objtool/special.c                       |  9 ++----
+>  tools/objtool/special.h                       |  3 ++
+>  9 files changed, 96 insertions(+), 11 deletions(-)
+>  create mode 100644 tools/objtool/arch/arm64/arch_special.c
+>  create mode 100644 tools/objtool/arch/x86/arch_special.c
+> 
+> diff --git a/tools/objtool/arch/arm64/Build b/tools/objtool/arch/arm64/Build
+> index bf7a32c2b9e9..3d09be745a84 100644
+> --- a/tools/objtool/arch/arm64/Build
+> +++ b/tools/objtool/arch/arm64/Build
+> @@ -1,3 +1,4 @@
+> +objtool-y += arch_special.o
+>  objtool-y += decode.o
+>  objtool-y += orc_dump.o
+>  objtool-y += orc_gen.o
+> diff --git a/tools/objtool/arch/arm64/arch_special.c b/tools/objtool/arch/arm64/arch_special.c
 > new file mode 100644
-> index 000000000000..2ff375144b55
+> index 000000000000..a21d28876317
 > --- /dev/null
-> +++ b/arch/arm/lib/backtrace-clang.S
-> @@ -0,0 +1,217 @@
-> +/* SPDX-License-Identifier: GPL-2.0-only */
+> +++ b/tools/objtool/arch/arm64/arch_special.c
+> @@ -0,0 +1,22 @@
 > +/*
-> + *  linux/arch/arm/lib/backtrace-clang.S
+> + * This program is free software; you can redistribute it and/or
+> + * modify it under the terms of the GNU General Public License
+> + * as published by the Free Software Foundation; either version 2
+> + * of the License, or (at your option) any later version.
 > + *
-> + *  Copyright (C) 2019 Nathan Huckleberry
+> + * This program is distributed in the hope that it will be useful,
+> + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> + * GNU General Public License for more details.
 > + *
+> + * You should have received a copy of the GNU General Public License
+> + * along with this program; if not, see <http://www.gnu.org/licenses/>.
 > + */
-> +#include <linux/kern_levels.h>
-> +#include <linux/linkage.h>
-> +#include <asm/assembler.h>
-> +               .text
+> +#include "../../special.h"
+> +#include "arch_special.h"
 > +
-> +/* fp is 0 or stack frame */
-> +
-> +#define frame  r4
-> +#define sv_fp  r5
-> +#define sv_pc  r6
-> +#define mask   r7
-> +#define sv_lr  r8
-> +
-> +ENTRY(c_backtrace)
-> +
-> +#if !defined(CONFIG_FRAME_POINTER) || !defined(CONFIG_PRINTK)
-> +               ret     lr
-> +ENDPROC(c_backtrace)
-> +#else
-> +
-> +
-> +/*
-> + * Clang does not store pc or sp in function prologues so we don't know exactly
-> + * where the function starts.
-> + *
-> + * We can treat the current frame's lr as the saved pc and the preceding
-> + * frame's lr as the current frame's lr, but we can't trace the most recent
-> + * call.  Inserting a false stack frame allows us to reference the function
-> + * called last in the stacktrace.
-> + *
-> + * If the call instruction was a bl we can look at the callers branch
-> + * instruction to calculate the saved pc.  We can recover the pc in most cases,
-> + * but in cases such as calling function pointers we cannot. In this case,
-> + * default to using the lr. This will be some address in the function, but will
-> + * not be the function start.
-> + *
-> + * Unfortunately due to the stack frame layout we can't dump r0 - r3, but these
-> + * are less frequently saved.
-> + *
-> + * Stack frame layout:
-> + *             <larger addresses>
-> + *             saved lr
-> + *     frame=> saved fp
-> + *             optionally saved caller registers (r4 - r10)
-> + *             optionally saved arguments (r0 - r3)
-> + *             <top of stack frame>
-> + *             <smaller addresses>
-> + *
-> + * Functions start with the following code sequence:
-> + * corrected pc =>  stmfd sp!, {..., fp, lr}
-> + *             add fp, sp, #x
-> + *             stmfd sp!, {r0 - r3} (optional)
-> + *
-> + *
-> + *
-> + *
-> + *
-> + *
-> + * The diagram below shows an example stack setup for dump_stack.
-> + *
-> + * The frame for c_backtrace has pointers to the code of dump_stack. This is
-> + * why the frame of c_backtrace is used to for the pc calculation of
-> + * dump_stack. This is why we must move back a frame to print dump_stack.
-> + *
-> + * The stored locals for dump_stack are in dump_stack's frame. This means that
-> + * to fully print dump_stack's frame we need both the frame for dump_stack (for
-> + * locals) and the frame that was called by dump_stack (for pc).
-> + *
-> + * To print locals we must know where the function start is. If we read the
-> + * function prologue opcodes we can determine which variables are stored in the
-> + * stack frame.
-> + *
-> + * To find the function start of dump_stack we can look at the stored LR of
-> + * show_stack. It points at the instruction directly after the bl dump_stack.
-> + * We can then read the offset from the bl opcode to determine where the branch
-> + * takes us.  The address calculated must be the start of dump_stack.
-> + *
-> + * c_backtrace frame           dump_stack:
-> + * {[LR]    }  ============|   ...
-> + * {[FP]    }  =======|    |   bl c_backtrace
-> + *                    |    |=> ...
-> + * {[R4-R10]}         |
-> + * {[R0-R3] }         |        show_stack:
-> + * dump_stack frame   |        ...
-> + * {[LR]    } =============|   bl dump_stack
-> + * {[FP]    } <=======|    |=> ...
-> + * {[R4-R10]}
-> + * {[R0-R3] }
-> + */
-> +
-> +               stmfd   sp!, {r4 - r9, fp, lr}  @ Save an extra register
-> +                                               @ to ensure 8 byte alignment
-> +               movs    frame, r0               @ if frame pointer is zero
-> +               beq     no_frame                @ we have no stack frames
-> +               tst     r1, #0x10               @ 26 or 32-bit mode?
-> +               moveq   mask, #0xfc000003
-> +               movne   mask, #0                @ mask for 32-bit
-> +
-> +/*
-> + * Switches the current frame to be the frame for dump_stack.
-> + */
-> +               add     frame, sp, #24          @ switch to false frame
-> +for_each_frame:        tst     frame, mask             @ Check for address exceptions
-> +               bne     no_frame
-> +
-> +/*
-> + * sv_fp is the stack frame with the locals for the current considered
-> + * function.
-> + *
-> + * sv_pc is the saved lr frame the frame above. This is a pointer to a code
-> + * address within the current considered function, but it is not the function
-> + * start. This value gets updated to be the function start later if it is
-> + * possible.
-> + */
-> +1001:          ldr     sv_pc, [frame, #4]      @ get saved 'pc'
-> +1002:          ldr     sv_fp, [frame, #0]      @ get saved fp
-> +
-> +               teq     sv_fp, mask             @ make sure next frame exists
-> +               beq     no_frame
-> +
-> +/*
-> + * sv_lr is the lr from the function that called the current function. This is
-> + * a pointer to a code address in the current function's caller.  sv_lr-4 is
-> + * the instruction used to call the current function.
-> + *
-> + * This sv_lr can be used to calculate the function start if the function was
-> + * called using a bl instruction. If the function start can be recovered sv_pc
-> + * is overwritten with the function start.
-> + *
-> + * If the current function was called using a function pointer we cannot
-> + * recover the function start and instead continue with sv_pc as an arbitrary
-> + * value within the current function. If this is the case we cannot print
-> + * registers for the current function, but the stacktrace is still printed
-> + * properly.
-> + */
-> +1003:          ldr     sv_lr, [sv_fp, #4]      @ get saved lr from next frame
-> +
-> +               ldr     r0, [sv_lr, #-4]        @ get call instruction
-> +               ldr     r3, .Lopcode+4
-> +               and     r2, r3, r0              @ is this a bl call
-> +               teq     r2, r3
-> +               bne     finished_setup          @ give up if it's not
-> +               and     r0, #0xffffff           @ get call offset 24-bit int
-> +               lsl     r0, r0, #8              @ sign extend offset
-> +               asr     r0, r0, #8
-> +               ldr     sv_pc, [sv_fp, #4]      @ get lr address
-> +               add     sv_pc, sv_pc, #-4       @ get call instruction address
-> +               add     sv_pc, sv_pc, #8        @ take care of prefetch
-> +               add     sv_pc, sv_pc, r0, lsl #2@ find function start
-> +
-> +finished_setup:
-> +
-> +               bic     sv_pc, sv_pc, mask      @ mask PC/LR for the mode
-> +
-> +/*
-> + * Print the function (sv_pc) and where it was called from (sv_lr).
-> + */
-> +1004:          mov     r0, sv_pc
-> +
-> +               mov     r1, sv_lr
-> +               mov     r2, frame
-> +               bic     r1, r1, mask            @ mask PC/LR for the mode
-> +               bl      dump_backtrace_entry
-> +
-> +/*
-> + * Test if the function start is a stmfd instruction to determine which
-> + * registers were stored in the function prologue.
-> + *
-> + * If we could not recover the sv_pc because we were called through a function
-> + * pointer the comparison will fail and no registers will print. Unwinding will
-> + * continue as if there had been no registers stored in this frame.
-> + */
-> +1005:          ldr     r1, [sv_pc, #0]         @ if stmfd sp!, {..., fp, lr}
-> +               ldr     r3, .Lopcode            @ instruction exists,
-> +               teq     r3, r1, lsr #11
-> +               ldr     r0, [frame]             @ locals are stored in
-> +                                               @ the preceding frame
-> +               subeq   r0, r0, #4
-> +               bleq    dump_backtrace_stm      @ dump saved registers
-> +
-> +/*
-> + * If we are out of frames or if the next frame is invalid.
-> + */
-> +               teq     sv_fp, #0               @ zero saved fp means
-> +               beq     no_frame                @ no further frames
-> +
-> +               cmp     sv_fp, frame            @ next frame must be
-> +               mov     frame, sv_fp            @ above the current frame
-> +               bhi     for_each_frame
-> +
-> +1006:          adr     r0, .Lbad
-> +               mov     r1, frame
-> +               bl      printk
-> +no_frame:      ldmfd   sp!, {r4 - r9, fp, pc}
-> +ENDPROC(c_backtrace)
-> +               .pushsection __ex_table,"a"
-> +               .align  3
-> +               .long   1001b, 1006b
-> +               .long   1002b, 1006b
-> +               .long   1003b, 1006b
-> +               .long   1004b, 1006b
-> +               .long   1005b, 1006b
-> +               .popsection
-> +
-> +.Lbad:         .asciz  "Backtrace aborted due to bad frame pointer <%p>\n"
-> +               .align
-> +.Lopcode:      .word   0xe92d4800 >> 11        @ stmfd sp!, {... fp, lr}
-> +               .word   0x0b000000              @ bl if these bits are set
-> +
-> +#endif
-> --
-> 2.23.0.187.g17f5b7556c-goog
->
+> +void arch_force_alt_path(unsigned short feature,
+> +			 bool uaccess,
+> +			 struct special_alt *alt)
+> +{
+> +}
 
+Instead of these dedicated files with empty .c functions -- including
+the arm64 orc .c files -- I'd rather just have them be empty static
+inline functions in header files, like the kernel does.
+
+> diff --git a/tools/objtool/arch/arm64/include/arch_special.h b/tools/objtool/arch/arm64/include/arch_special.h
+> index 63da775d0581..185103be8a51 100644
+> --- a/tools/objtool/arch/arm64/include/arch_special.h
+> +++ b/tools/objtool/arch/arm64/include/arch_special.h
+> @@ -30,7 +30,13 @@
+>  #define ALT_ORIG_LEN_OFFSET	10
+>  #define ALT_NEW_LEN_OFFSET	11
+>  
+> -#define X86_FEATURE_POPCNT (4 * 32 + 23)
+> -#define X86_FEATURE_SMAP   (9 * 32 + 20)
+> +static inline bool arch_should_ignore_feature(unsigned short feature)
+> +{
+> +	return false;
+> +}
+>  
+> +static inline bool arch_support_switch_table(void)
+> +{
+> +	return false;
+> +}
+>  #endif /* _ARM64_ARCH_SPECIAL_H */
+> diff --git a/tools/objtool/arch/x86/Build b/tools/objtool/arch/x86/Build
+> index 1f11b45999d0..63e167775bc8 100644
+> --- a/tools/objtool/arch/x86/Build
+> +++ b/tools/objtool/arch/x86/Build
+> @@ -1,3 +1,4 @@
+> +objtool-y += arch_special.o
+>  objtool-y += decode.o
+>  objtool-y += orc_dump.o
+>  objtool-y += orc_gen.o
+> diff --git a/tools/objtool/arch/x86/arch_special.c b/tools/objtool/arch/x86/arch_special.c
+> new file mode 100644
+> index 000000000000..6583a1770bb2
+> --- /dev/null
+> +++ b/tools/objtool/arch/x86/arch_special.c
+
+The "arch_" is redundant, these files can just be named "special.c".
+
+> @@ -0,0 +1,28 @@
+> +/*
+> + * This program is free software; you can redistribute it and/or
+> + * modify it under the terms of the GNU General Public License
+> + * as published by the Free Software Foundation; either version 2
+> + * of the License, or (at your option) any later version.
+> + *
+> + * This program is distributed in the hope that it will be useful,
+> + * but WITHOUT ANY WARRANTY; without even the implied warranty of
+> + * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+> + * GNU General Public License for more details.
+> + *
+> + * You should have received a copy of the GNU General Public License
+> + * along with this program; if not, see <http://www.gnu.org/licenses/>.
+> + */
+> +#include "../../special.h"
+> +#include "arch_special.h"
+> +
+> +void arch_force_alt_path(unsigned short feature,
+> +			 bool uaccess,
+> +			 struct special_alt *alt)
+> +{
+> +		if (feature == X86_FEATURE_SMAP) {
+> +			if (uaccess)
+> +				alt->skip_orig = true;
+> +			else
+> +				alt->skip_alt = true;
+> +		}
+> +}
+
+Bad indention.
+
+> diff --git a/tools/objtool/arch/x86/include/arch_special.h b/tools/objtool/arch/x86/include/arch_special.h
+> index 424ce47013e3..fce2b1193194 100644
+> --- a/tools/objtool/arch/x86/include/arch_special.h
+> +++ b/tools/objtool/arch/x86/include/arch_special.h
+> @@ -33,4 +33,13 @@
+>  #define X86_FEATURE_POPCNT (4 * 32 + 23)
+>  #define X86_FEATURE_SMAP   (9 * 32 + 20)
+>  
+> +static inline bool arch_should_ignore_feature(unsigned short feature)
+> +{
+> +	return feature == X86_FEATURE_POPCNT;
+> +}
+> +
+> +static inline bool arch_support_switch_table(void)
+> +{
+> +	return true;
+> +}
+>  #endif /* _X86_ARCH_SPECIAL_H */
+> diff --git a/tools/objtool/check.c b/tools/objtool/check.c
+> index 30e147391dcb..4af6422d3428 100644
+> --- a/tools/objtool/check.c
+> +++ b/tools/objtool/check.c
+> @@ -729,7 +729,7 @@ static int handle_group_alt(struct objtool_file *file,
+>  		last_orig_insn = insn;
+>  	}
+>  
+> -	if (next_insn_same_sec(file, last_orig_insn)) {
+> +	if (last_orig_insn && next_insn_same_sec(file, last_orig_insn)) {
+
+Even if the reason for the change is trivial, these types of changes
+(and the insn->visited change below) should each be in an earlier
+separate patch which explains the reasoning.  Putting each logical
+change in its own patch helps with review, and also future bisections,
+debugging and archaeology.
+
+>  		fake_jump = malloc(sizeof(*fake_jump));
+>  		if (!fake_jump) {
+>  			WARN("malloc failed");
+> @@ -1061,6 +1061,26 @@ static struct rela *find_jump_table(struct objtool_file *file,
+>  		table_rela = find_rela_by_dest(table_sec, table_offset);
+>  		if (!table_rela)
+>  			continue;
+> +		/*
+> +		 * If we are on arm64 architecture, we now that we
+
+"know"
+
+> +		 * are in presence of a switch table thanks to
+> +		 * the `br <Xn>` insn. but we can't retrieve it yet.
+> +		 * So we just ignore unreachable for this file.
+> +		 */
+> +		if (!arch_support_switch_table()) {
+> +			file->ignore_unreachables = true;
+> +			return NULL;
+> +		}
+
+All arches need to support switch tables, otherwise it's a major gap in
+functionality.
+
+I think you did it this way because the switch table support comes in a
+later patch, right?  If so, the patches should be reordered so that you
+don't need to add arch_support_switch_table() in the middle.
+
+> +
+> +		rodata_rela = find_rela_by_dest(rodata_sec, table_offset);
+> +		if (rodata_rela) {
+> +			/*
+> +			 * Use of RIP-relative switch jumps is quite rare, and
+> +			 * indicates a rare GCC quirk/bug which can leave dead
+> +			 * code behind.
+> +			 */
+> +			if (text_rela->type == R_X86_64_PC32)
+> +				file->ignore_unreachables = true;
+>  
+>  		/*
+>  		 * Use of RIP-relative switch jumps is quite rare, and
+
+This repeats code which already exists right below it?
+
+> @@ -1864,7 +1884,7 @@ static int validate_branch(struct objtool_file *file, struct symbol *func,
+>  	insn = first;
+>  	sec = insn->sec;
+>  
+> -	if (insn->alt_group && list_empty(&insn->alts)) {
+> +	if (!insn->visited && insn->alt_group && list_empty(&insn->alts)) {
+>  		WARN_FUNC("don't know how to handle branch to middle of alternative instruction group",
+>  			  sec, insn->offset);
+>  		return 1;
+> diff --git a/tools/objtool/special.c b/tools/objtool/special.c
+> index b8ccee1b5382..7a0092d6e5b3 100644
+> --- a/tools/objtool/special.c
+> +++ b/tools/objtool/special.c
+> @@ -81,7 +81,7 @@ static int get_alt_entry(struct elf *elf, struct special_entry *entry,
+>  		 * feature path which is a "very very small percentage of
+>  		 * machines".
+>  		 */
+> -		if (feature == X86_FEATURE_POPCNT)
+> +		if (arch_should_ignore_feature(feature))
+>  			alt->skip_orig = true;
+>  
+>  		/*
+> @@ -93,12 +93,7 @@ static int get_alt_entry(struct elf *elf, struct special_entry *entry,
+>  		 * find paths that see the STAC but take the NOP instead of
+>  		 * CLAC and the other way around.
+>  		 */
+> -		if (feature == X86_FEATURE_SMAP) {
+> -			if (uaccess)
+> -				alt->skip_orig = true;
+> -			else
+> -				alt->skip_alt = true;
+> -		}
+> +		arch_force_alt_path(feature, uaccess, alt);
+
+Instead of arch_force_alt_path(), maybe it could be something like:
+
+		if (arch_is_uaccess_feature(alt))
+			if (uaccess)
+				alt->skip_orig = true;
+			else
+				alt->skip_alt = true;
+
+That helps keep the common bits common, and even better it makes the
+code clearer.
+
+>  	}
+>  
+>  	orig_rela = find_rela_by_dest(sec, offset + entry->orig);
+> diff --git a/tools/objtool/special.h b/tools/objtool/special.h
+> index 35061530e46e..90626a7e41cf 100644
+> --- a/tools/objtool/special.h
+> +++ b/tools/objtool/special.h
+> @@ -27,5 +27,8 @@ struct special_alt {
+>  };
+>  
+>  int special_get_alts(struct elf *elf, struct list_head *alts);
+> +void arch_force_alt_path(unsigned short feature,
+> +			 bool uaccess,
+> +			 struct special_alt *alt);
+>  
+>  #endif /* _SPECIAL_H */
+> -- 
+> 2.17.1
+> 
 
 -- 
-Thanks,
-~Nick Desaulniers
+Josh
 
 _______________________________________________
 linux-arm-kernel mailing list
