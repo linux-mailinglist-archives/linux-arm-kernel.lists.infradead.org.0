@@ -2,114 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9F2F99E56
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:56:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 578CA99E59
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N59TEpZgPbnmgfpNWORu0WKhiAXpXyypCnN/PJdneQY=; b=JAs/8LNB/Q9wHC
-	Lc/UvdxUyNDLdB9cm1jUz9QH/5urgQEzrPaYV67cLK9AU6lxTEFloXKzfvBTKi6S1drp7AVkHtUIR
-	vwuVbOQ3NvkinWikmM3xP8no2c6Rfk61j9MpnhY0cRDQIDs9jBL5fU0lKX0uu4twfKYKKaXA5J7p9
-	aH0zgw42ilJYIKg1Q9i1Kolf7IdPw0ELqm6/7+HfL01puI3+VlMaMsUwGL7Hyqf4fa7ZUvChDp1aC
-	9ZomiF70QlSN8sOh4o+IpwTaT7NrX0TcSE0D07R+Feze8dPq2d/SaZDSM9vghHH4ZD0YT5175mEY1
-	+JaaSOUbwHQBwWrWXmAg==;
+	List-Owner; bh=2ejlDS5momnGwzkci/ggy9Qm4/ANyKMleu4ViL7qhTY=; b=RU7WQZVZO7xpnW
+	ExNkEAKYt3V7ao5gg2/rkrWr3O3hyFF7fugP9hbob93JdsErI/b0QzPVVkgRpgv7oJzxPqn1akX/h
+	Su+AcANaWUY790WoMs7Mgnilp0BAWJ2Bqia/CWf+2riwlsySTf1EouaPz6UkuiQK6Cco6N9SLZhwk
+	IXXWDDT2k2RaFj++OfSxJBblWUIEmzDrnGXccyIaOkln1Lq5wx1xrtlFv08hMXy5Tfy5WJDxVRI25
+	n2wkYEVPjFe+sODiUnb9aHQxYSG1/KjbIwK93kTLYguR8/ip4FoIjj1O8SR8s8mIliHqgtG1pwhD9
+	5Mvhv0Vo6c9l70K5d5hg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0rJh-00049r-7i; Thu, 22 Aug 2019 17:56:09 +0000
-Received: from mail-bn3nam04on061d.outbound.protection.outlook.com
- ([2a01:111:f400:fe4e::61d]
- helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1i0rKI-0004U9-3j; Thu, 22 Aug 2019 17:56:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0rJV-00049K-Eb
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:55:59 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=WWhqdInEk6uyTla1GtvG8XjmJaAB1cAwjRwXKcY5J9Zx+QcXfxEEgkamozh6BTsSDu2bWTb3WPcArnCu4rzUe/Wux7H/+WtlyK4wJHNyaFRhYDXzBfPcTpnf6bhDiGIn40k5aDbLOKGB4AKbRkDlorQ4EcbSNVz7lpvVmQZLunbolbUAAUHLXGTO29ERBSGoWO56rEGKq1UwXuSQBz5If4Ot8NI7tTzwz57Q0w68Rr8iPLfY/AIlf9bm1JKPnmfK9xF+dfUyLVksgD/g9pxzlsc6X9bX/fuw1tZ1/mQpiu9S6UBuZwkr7iyrf5WLFxcLH2sCEE08/+GoTQCeLHd8Ow==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EYzMgoAN6NM14VPhIBwd7Ai1RxoPcCeqbOgf/MFgI4E=;
- b=TQx53JHiJW3DCZ1oeaPy1VaDcHhS8xnoqaonaDrIswpuRaeKOQFrlcnPGYsCC73QkYiMTMyZiBULoheQwsfxKSKyxqTnJ0CiNjYUyvQFQUOOxuEZRAfV455dD24HJTrurv8typtNHk5m1B4hNFXJot72K6e0yshEgjORHeJqQ2Lf26PJoo/ZkqBLa6YAFRzfZuacfxn+cOHj2q6X0/gnGfQbbzyPt4kgzqnNLeqOZA8uvYcRM+6U2PTLjeZgUI+8eqll+pW6WvLaZnuOLmmx0T9tVZeLkbYnHnSAATQga5+E3PjCtJ0goyDaf5tEqoJGGcFwjYM0aPFhnq9LIvkgNQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=xilinx.com; dmarc=pass action=none header.from=xilinx.com;
- dkim=pass header.d=xilinx.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EYzMgoAN6NM14VPhIBwd7Ai1RxoPcCeqbOgf/MFgI4E=;
- b=YudYopLterMA57das8r08ksidURXhV4O9/LENu4xtyD4wa+CjOX3oyd2OrZaZVtdNSiE1pnOtmqpor889uJLlhjIv+JJX3MUeUGxQQDkMVbg4lnjTbF8WA7x1Wl6VHyG5mvyTXIbddnxyeyUNJ/J/rpUY35qLZHp8uQaNdFeBAo=
-Received: from CH2PR02MB6359.namprd02.prod.outlook.com (52.132.231.93) by
- CH2PR02MB6984.namprd02.prod.outlook.com (20.180.11.201) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Thu, 22 Aug 2019 17:55:54 +0000
-Received: from CH2PR02MB6359.namprd02.prod.outlook.com
- ([fe80::5c58:16c0:d226:4c96]) by CH2PR02MB6359.namprd02.prod.outlook.com
- ([fe80::5c58:16c0:d226:4c96%2]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
- 17:55:54 +0000
-From: Dragan Cvetic <draganc@xilinx.com>
-To: Dan Carpenter <dan.carpenter@oracle.com>, Derek Kiernan
- <dkiernan@xilinx.com>
-Subject: RE: [PATCH 4/4] misc: xilinx_sdfec: Prevent integer overflow in
- xsdfec_table_write()
-Thread-Topic: [PATCH 4/4] misc: xilinx_sdfec: Prevent integer overflow in
- xsdfec_table_write()
-Thread-Index: AQHVV++vOnMFcLNfRkOFJ6N+dUEQ/qcHdYPA
-Date: Thu, 22 Aug 2019 17:55:54 +0000
-Message-ID: <CH2PR02MB63593CB2434AC146D841E56BCBA50@CH2PR02MB6359.namprd02.prod.outlook.com>
-References: <20190821070606.GA26957@mwanda> <20190821071122.GD26957@mwanda>
-In-Reply-To: <20190821071122.GD26957@mwanda>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=draganc@xilinx.com; 
-x-originating-ip: [149.199.80.133]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6a510962-e8db-4662-7053-08d72729fa8c
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:CH2PR02MB6984; 
-x-ms-traffictypediagnostic: CH2PR02MB6984:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <CH2PR02MB69848E24700568880E2E42CECBA50@CH2PR02MB6984.namprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 01371B902F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39850400004)(396003)(376002)(136003)(366004)(346002)(13464003)(189003)(199004)(6246003)(86362001)(11346002)(486006)(446003)(8676002)(476003)(6436002)(26005)(99286004)(3846002)(6116002)(81166006)(7696005)(6636002)(71200400001)(229853002)(66556008)(66446008)(76116006)(316002)(64756008)(66946007)(55016002)(66476007)(9686003)(305945005)(14444005)(14454004)(256004)(66066001)(52536014)(4326008)(102836004)(81156014)(110136005)(54906003)(2906002)(74316002)(478600001)(53546011)(6506007)(53936002)(186003)(33656002)(5660300002)(7736002)(71190400001)(8936002)(25786009)(76176011);
- DIR:OUT; SFP:1101; SCL:1; SRVR:CH2PR02MB6984;
- H:CH2PR02MB6359.namprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: xilinx.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: YUnQRQfC1vj61Fqx/TEprCeMDb/DYllytgqfn9+jmbCdKINjDSpqmo5HD6JpcS4wcFpO3Em3jComXMkylwPxc3CD23PL3cI0xOegF4FUa6sf14wZjGEOhvoI8FDDPKG0FuKyhX1ALcMDpNALe/EyA5N2HkeiKtCe8qbZTfSSG4kF7ZZSmJu/oGCGZXegwqQbZLOV83COk2r5pmY3aRzAzW/+YnKIIL+DX+4LLBfmb/jzECqhYHpvlO+lVnsEHNato1EfFNfGv70o3T9hwpK6XHkJWVysSLmbwUq07OOgY6lGH3cPiHfcyOc2RmZdhww52UV0b8DuOFC8KrSwmflTxWZZAn6P1B/p5Mz9Fzrk8gD4ejBwPaqCD+n0GWifGTe9eNoMIsA7rGESSpnkWjUBHlZtwIHQYcnNWGbR8k/SlRo=
+ id 1i0rK5-0004Tm-LV
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:56:34 +0000
+Received: from mail-qt1-f172.google.com (mail-qt1-f172.google.com
+ [209.85.160.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2307B233FC
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 17:56:33 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566496593;
+ bh=L9UMGcdA614fnSHWQ04BSdS4ymvZGTviHvehBqLdubs=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=ZNLjdK+2Tq5C2CzVvNoWBQJCMNgJaYiAZrGB2fXAjonnhn+dzQ3Vx7E63+MqY88+p
+ i2vdqvHMZiNOqz5ZBEtZKtOZnRp/mSd9geEiqx2AdkHp4kf7K3VFWyq2Y6CUgYT2xA
+ bbT+p1lhoCDgWcMgSTgwRWxpB1Ga+pT/rPA6IQdI=
+Received: by mail-qt1-f172.google.com with SMTP id l9so8718123qtu.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 10:56:33 -0700 (PDT)
+X-Gm-Message-State: APjAAAWJn7NHLGvZ9oqc1ln0MOEOVQP8t/XZNI8mef9a6H9eRUXg20BU
+ XY2R2JEm4vOvLRb4tRB4rAGZXDgWL7baGmKSsQ==
+X-Google-Smtp-Source: APXvYqxmpTMuJpoR2hQvI30KNyZXaO90aPAJVNRDaz/KGX8/IUr6Sp01aMXULiLAaSLUCCkn9iQ5zlj6tY+yhexEMPk=
+X-Received: by 2002:ac8:44c4:: with SMTP id b4mr890120qto.224.1566496592345;
+ Thu, 22 Aug 2019 10:56:32 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6a510962-e8db-4662-7053-08d72729fa8c
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 17:55:54.6245 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: VLpLINQjkgQQrDVBo/HcMlEi6QxwWlK6+I+KO+UY3Thqaq/DoS41Qs0Ql2ICG1P00kiMlF3CNTkQ94Ony8pMRg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CH2PR02MB6984
+References: <20190822060238.3887-1-krzk@kernel.org>
+ <20190822060238.3887-3-krzk@kernel.org>
+In-Reply-To: <20190822060238.3887-3-krzk@kernel.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Thu, 22 Aug 2019 12:56:20 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq++LZ82v9WbyHK8pQg3WVQOxLvWcJ-qM0QAnhzKw033vA@mail.gmail.com>
+Message-ID: <CAL_Jsq++LZ82v9WbyHK8pQg3WVQOxLvWcJ-qM0QAnhzKw033vA@mail.gmail.com>
+Subject: Re: [PATCH v7 3/4] dt-bindings: arm: fsl: Add Kontron i.MX6UL N6310
+ compatibles
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_105557_495952_60389551 
-X-CRM114-Status: GOOD (  16.00  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190822_105633_726570_8EC0E55C 
+X-CRM114-Status: GOOD (  11.91  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -121,62 +87,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Arnd Bergmann <arnd@arndb.de>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "kernel-janitors@vger.kernel.org" <kernel-janitors@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Michal Simek <michals@xilinx.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+ Schrempf Frieder <frieder.schrempf@kontron.de>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Dan,
-
-
-> -----Original Message-----
-> From: Dan Carpenter [mailto:dan.carpenter@oracle.com]
-> Sent: Wednesday 21 August 2019 08:11
-> To: Derek Kiernan <dkiernan@xilinx.com>; Dragan Cvetic <draganc@xilinx.com>
-> Cc: Arnd Bergmann <arnd@arndb.de>; Greg Kroah-Hartman <gregkh@linuxfoundation.org>; Michal Simek <michals@xilinx.com>;
-> linux-arm-kernel@lists.infradead.org; linux-kernel@vger.kernel.org; kernel-janitors@vger.kernel.org
-> Subject: [PATCH 4/4] misc: xilinx_sdfec: Prevent integer overflow in xsdfec_table_write()
-> 
-> The checking here needs to handle integer overflows because "offset" and
-> "len" come from the user.
-
-Good catch, thanks.
-
-> 
-> Fixes: 20ec628e8007 ("misc: xilinx_sdfec: Add ability to configure LDPC")
-> Signed-off-by: Dan Carpenter <dan.carpenter@oracle.com>
+On Thu, Aug 22, 2019 at 1:02 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> Add the compatibles for Kontron i.MX6UL N6310 SoM and boards.
+>
+> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+>
 > ---
->  drivers/misc/xilinx_sdfec.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/misc/xilinx_sdfec.c b/drivers/misc/xilinx_sdfec.c
-> index 3fc53d20abf3..0bf3bcc8e1ef 100644
-> --- a/drivers/misc/xilinx_sdfec.c
-> +++ b/drivers/misc/xilinx_sdfec.c
-> @@ -611,7 +611,9 @@ static int xsdfec_table_write(struct xsdfec_dev *xsdfec, u32 offset,
->  	 * Writes that go beyond the length of
->  	 * Shared Scale(SC) table should fail
->  	 */
-> -	if ((XSDFEC_REG_WIDTH_JUMP * (offset + len)) > depth) {
-> +	if (offset > depth / XSDFEC_REG_WIDTH_JUMP ||
-> +	    len > depth / XSDFEC_REG_WIDTH_JUMP ||
-> +	    offset + len > depth / XSDFEC_REG_WIDTH_JUMP) {
->  		dev_dbg(xsdfec->dev, "Write exceeds SC table length");
->  		return -EINVAL;
->  	}
-> --
-> 2.20.1
+>
+> Changes since v6:
+> 1. Split entries to pass the dtbs_check.
+>
+> Changes since v5:
+> New patch
+> ---
+>  Documentation/devicetree/bindings/arm/fsl.yaml | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
 
-Reviewed-by: Dragan Cvetic <dragan.cvetic@xilinx.com>
-
-Thanks 
-Dragan
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
