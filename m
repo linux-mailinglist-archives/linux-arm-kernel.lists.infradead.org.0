@@ -2,92 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5643B9A29D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 00:10:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F0329A2BE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 00:26:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=GFEKsCTc5FB7rTibXy6VP6gOWkDLQRd9y5nNdv+H4Fk=; b=Fq8gwQ0cW7v2BuzvrAs0839w21
-	WeQBnLLX9B1M9J/CfzNaPsY7WNoSugrl0V+eRDYNXXKc6l6gzVhglUr8zp2vmCUB2CxK0uQAKWP1n
-	nYnA029CzToDhtCZx5hyrOgNBY4mTczvMmakZslUvwwxKSoucJ8zlKNk0SZrjnGrdkvPVu1dLh8M4
-	KVCs2lmwajtdMVChV6M8tNhYfvCdNCvvh3EFc5x8D90/nAkAJsliJHs5am0GOBC5UaBNaBFcw+44g
-	cdIi9o/YI/AB9GxPq7KXS0yT9xrlvLVJo62ret/MKvubDJqe5oO7q0JhmiL5i91X//6J/0t9qzP+4
-	bDwRnchA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=E3anFCiPlKIDnOGGyzhFLOqF0nW+v1RtcRh0EdL8HEQ=; b=ioIkU5tSTRFext
+	vJGNM1n/e/Nato+9ueA+5SgBFIHf/OFUjZOhfBQzcwwddJ2kbLT2zWdOMtnEefC0STfnMlK39+jH9
+	+un6kAaizuNoSlysYJzooYasxRkxWOoWibqO4UWr5EWHPUlXG/ye0NczJe3G61WqSvUDzCupcwcZ9
+	5Y5wHKvkEIFjTxo06tx5o3qPvaRQIxEo91FXmeXmE0+bLFYFehzRurJGnJXLPyBrpu38dbT5Ab0NI
+	GZ/lmephA2WGx8h+vBh5OwD59xpVVVajYL0cKmd9jCybqHc68HeYr4SE8WspEiyKn2ZF3x9WGkFhB
+	UV1B7rg9nbMYt3qh6vGQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0vHK-0001rC-Kr; Thu, 22 Aug 2019 22:09:58 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1i0vXQ-00018X-Dk; Thu, 22 Aug 2019 22:26:36 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0vGi-0001O7-I0
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 22:09:22 +0000
-Received: by mail-pf1-x442.google.com with SMTP id w26so4876072pfq.12
+ id 1i0vXH-00017N-1M
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 22:26:28 +0000
+Received: by mail-pf1-x444.google.com with SMTP id v12so4922659pfn.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 15:09:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=9zuadHq2oNAonLqdCJokcmV7Tuo9vqcylSnraeruuq0=;
- b=Kpr3QTAHjS54FLrMAqnHEX87rbU/GpTGSZqfU8qQ9hxl6HzXlLA48Sn/M1KycdVeI6
- KJRdjA8uLj5Gi1uS7vdpyPz0Kw9s1VUmnULZVRTHyjf0pfqL2Q/HetGUczthXAWr9gZq
- s1rMj910XwiYgUUXbDCNTFrw2b0Liwi6uFyax9ibgDqxQlUb5bBcCgGo9WqHF+EfOCNY
- Vok1YRSY4m/O8w9HyFPA55mudsdKVOJFDk3y1ocvXxKDld3J51o+zwkHeZgyppoSnnTy
- v6GFTLNHweKRTDvOhjQKi7B1IGcuhfgiQZ4xVj04Sg0wI1ODfvlqViynwPxYi36lvVNM
- jYbg==
+ Thu, 22 Aug 2019 15:26:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=t4hXv9cggrlxKrmBWOfxBfWb9+XY7JPaFG3ZSJTCrY4=;
+ b=L02p7MTZgJSiLnO5xtArax8M52FA4xo/lKe0Dc38mB2q1uJl2C1xNZJTSRufArXftm
+ bGVtFcHDRfmEdMNyxpxyX6sAxuPAlRtvhcR1wrcvkdVNhP2hmuL3Yg3WkfzV3UuCiHpE
+ qBdCZPjxT4jKeeLRp7vIfFYVvzouMA2SEyWES5czqFEzZMXBHywEztChIjLDMAB1V7fI
+ bcI4zWblknUhZlnFdTAJX8+r5O8kJ4jBv9JF1ifzhV0z0Fq/JtXD7kkOCa1cwuEM3v9H
+ 8oCGPEeJT/iLPQ6HMXGrFK+w7sj0kORhV3asiA4zet/AHDWuTeVyQKMG7SGGinBLH/ii
+ sMCw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=9zuadHq2oNAonLqdCJokcmV7Tuo9vqcylSnraeruuq0=;
- b=TN77RcjbIbhRehA0SoMN2xNwgr1Vnbt9Mc014wi1Hw4vCLdv9UleiM/4cxBzDlGjQW
- 3oRokiJ28ACZ91Wx0IzekSAOvGNxnWcyjD7S+xV5LuM5Mg0dV4kdZ18CCmJP0LGw/z6P
- eCPAud+6KVNS3WtWMzb1v20Kkct9/NqtdYlurnWkPEvhsO/6FkHJmC9lqJYRFNvPMc3m
- R6yH60mAGvsr5Idee9dVb2a5zuG8SdeTgyjXiAPhB01PiOZIM+6YKZkbmUY99kk1FQ2Z
- PC9eOwoO6SOJt6xSoNcMbqw70Cxo7y147aucBGh0VPdT2nl+jKv+yAFwPaoYRownUoAO
- EArA==
-X-Gm-Message-State: APjAAAXTRY+p9Gpbe5blYfXuc95S+gf0JEjThK5oZNFY6mRvfndyuEKs
- vb89n8fVosAH3nBPGB2x7l2dXQ==
-X-Google-Smtp-Source: APXvYqy84OkTLajF4+tdro/zEbqpNFakHDW+gSLGmhAWrFYvZI20iFVQypOHf0JtT/vxegZCjr1sfw==
-X-Received: by 2002:a63:607:: with SMTP id 7mr1204487pgg.240.1566511759764;
- Thu, 22 Aug 2019 15:09:19 -0700 (PDT)
-Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
- [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id s7sm377432pfb.138.2019.08.22.15.09.18
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 22 Aug 2019 15:09:19 -0700 (PDT)
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: yabinc@google.com,
-	suzuki.poulose@arm.com,
-	leo.yan@linaro.org
-Subject: [PATCH 2/2] coresight: tmc-etr: Add barrier packet when moving offset
- forward
-Date: Thu, 22 Aug 2019 16:09:15 -0600
-Message-Id: <20190822220915.8876-3-mathieu.poirier@linaro.org>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190822220915.8876-1-mathieu.poirier@linaro.org>
-References: <20190822220915.8876-1-mathieu.poirier@linaro.org>
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=t4hXv9cggrlxKrmBWOfxBfWb9+XY7JPaFG3ZSJTCrY4=;
+ b=LWK3wxkiXa+oJtW+ucOUEyfLcO4l3uCnuHaKwD8jTNAPuGA5/0HWbCu3HFTm/OENC7
+ 7020KwgyaZFQOT8CBPpP0Zx+E/SpmG2YYrA+OV3rAKf+7xGogPfy6gDzqFOUrTDJatUl
+ RyvopqTr++fyFIqivNnbkFeIj/aLmlhkbuRzzoQQc4eUSDGIeJIa2X3SZRBLuQ8BZBH7
+ iaQEbU2CgetYZlBw4memVdel4u1erl3X/yjjSxYxZ1NBRhMai7YInbLvvkQnQuHCMq9n
+ kL2QyYDtAq1p6BpzDhyT6GPqXtJIScFP/FmGotYf2HBjifbpfdDRne7ntoE3uYZODxRI
+ 6Dnw==
+X-Gm-Message-State: APjAAAUvTPda9DmP/2TBW/GQbHoL8JGoE1LCc92a2ZHaZjCkkKBA5vjZ
+ 9sQ8VS6IpfYiw9g8YCxpGm1tHX/vLEs=
+X-Google-Smtp-Source: APXvYqz7feSiqp0VVtPbpzkC0q2Llqu7JNkCqqYZ963rXLnIewSU4VusDt5Oga9DB5bP6eTW3VjLdg==
+X-Received: by 2002:a65:62cd:: with SMTP id m13mr1209603pgv.437.1566512785980; 
+ Thu, 22 Aug 2019 15:26:25 -0700 (PDT)
+Received: from localhost ([2601:602:9200:a1a5:89d4:68d1:fc04:721])
+ by smtp.gmail.com with ESMTPSA id v145sm412995pfc.31.2019.08.22.15.26.25
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 22 Aug 2019 15:26:25 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH v2 00/14] arm64: dts: meson: fixes following YAML bindings
+ schemas conversion
+In-Reply-To: <20190821142043.14649-1-narmstrong@baylibre.com>
+References: <20190821142043.14649-1-narmstrong@baylibre.com>
+Date: Thu, 22 Aug 2019 15:26:24 -0700
+Message-ID: <7h36hs3khb.fsf@baylibre.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_150920_593196_944B25C9 
-X-CRM114-Status: GOOD (  16.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190822_152627_226040_C6624CB7 
+X-CRM114-Status: UNSURE (   8.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,122 +93,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexander.shishkin@linux.intel.com, linux-arm-kernel@lists.infradead.org,
- mike.leach@arm.com, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: linux-amlogic@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds barrier packets in the trace stream when the offset in the
-data buffer needs to be moved forward.  Otherwise the decoder isn't aware
-of the break in the stream and can't synchronise itself with the trace
-data.
+Neil Armstrong <narmstrong@baylibre.com> writes:
 
-Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
----
- .../hwtracing/coresight/coresight-tmc-etr.c   | 43 ++++++++++++++-----
- 1 file changed, 33 insertions(+), 10 deletions(-)
+> This is the first set of DT fixes following the first YAML bindings conversion
+> at [1], [2] and [3].
+>
+> After this set of fixes, the remaining errors are :
+> meson-axg-s400.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+> meson-g12a-sei510.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+> meson-g12b-odroid-n2.dt.yaml: usb-hub: gpios:0:0: 20 is not valid under any of the given schemas
+> meson-g12b-odroid-n2.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+> meson-g12a-x96-max.dt.yaml: sound: 'clocks' is a dependency of 'assigned-clocks'
+>
+> These are only cosmetic changes, and should not break drivers implementation
+> following the bindings.
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 4f000a03152e..0e4cd6ec5f28 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -946,10 +946,6 @@ static void tmc_sync_etr_buf(struct tmc_drvdata *drvdata)
- 	WARN_ON(!etr_buf->ops || !etr_buf->ops->sync);
- 
- 	etr_buf->ops->sync(etr_buf, rrp, rwp);
--
--	/* Insert barrier packets at the beginning, if there was an overflow */
--	if (etr_buf->full)
--		tmc_etr_buf_insert_barrier_packet(etr_buf, etr_buf->offset);
- }
- 
- static void __tmc_etr_enable_hw(struct tmc_drvdata *drvdata)
-@@ -1415,10 +1411,11 @@ static void tmc_free_etr_buffer(void *config)
-  * buffer to the perf ring buffer.
-  */
- static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf,
-+				     unsigned long src_offset,
- 				     unsigned long to_copy)
- {
- 	long bytes;
--	long pg_idx, pg_offset, src_offset;
-+	long pg_idx, pg_offset;
- 	unsigned long head = etr_perf->head;
- 	char **dst_pages, *src_buf;
- 	struct etr_buf *etr_buf = etr_perf->etr_buf;
-@@ -1427,7 +1424,6 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf,
- 	pg_idx = head >> PAGE_SHIFT;
- 	pg_offset = head & (PAGE_SIZE - 1);
- 	dst_pages = (char **)etr_perf->pages;
--	src_offset = etr_buf->offset + etr_buf->len - to_copy;
- 
- 	while (to_copy > 0) {
- 		/*
-@@ -1475,7 +1471,7 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 		      void *config)
- {
- 	bool lost = false;
--	unsigned long flags, size = 0;
-+	unsigned long flags, offset, size = 0;
- 	struct tmc_drvdata *drvdata = dev_get_drvdata(csdev->dev.parent);
- 	struct etr_perf_buffer *etr_perf = config;
- 	struct etr_buf *etr_buf = etr_perf->etr_buf;
-@@ -1503,11 +1499,39 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
- 
- 	size = etr_buf->len;
-+	offset = etr_buf->offset;
-+	lost |= etr_buf->full;
-+
-+	/*
-+	 * The ETR buffer may be bigger than the space available in the
-+	 * perf ring buffer (handle->size).  If so advance the offset so that we
-+	 * get the latest trace data.  In snapshot mode none of that matters
-+	 * since we are expected to clobber stale data in favour of the latest
-+	 * traces.
-+	 */
- 	if (!etr_perf->snapshot && size > handle->size) {
--		size = handle->size;
-+		u32 mask = tmc_get_memwidth_mask(drvdata);
-+
-+		/*
-+		 * Make sure the new size is aligned in accordance with the
-+		 * requirement explained in function tmc_get_memwidth_mask().
-+		 */
-+		size = handle->size & mask;
-+		offset = etr_buf->offset + etr_buf->len - size;
-+
-+		if (offset >= etr_buf->size)
-+			offset -= etr_buf->size;
- 		lost = true;
- 	}
--	tmc_etr_sync_perf_buffer(etr_perf, size);
-+
-+	/*
-+	 * Insert barrier packets at the beginning, if there was an overflow
-+	 * or if the offset had to be brought forward.
-+	 */
-+	if (lost)
-+		tmc_etr_buf_insert_barrier_packet(etr_buf, offset);
-+
-+	tmc_etr_sync_perf_buffer(etr_perf, offset, size);
- 
- 	/*
- 	 * In snapshot mode we simply increment the head by the number of byte
-@@ -1518,7 +1542,6 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
- 	if (etr_perf->snapshot)
- 		handle->head += size;
- 
--	lost |= etr_buf->full;
- out:
- 	/*
- 	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
--- 
-2.17.1
+Any chance you can rebase this on top of my v5.4/dt64 branch?
 
+Thanks,
+
+Kevin
 
 _______________________________________________
 linux-arm-kernel mailing list
