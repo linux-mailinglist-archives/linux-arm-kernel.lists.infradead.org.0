@@ -2,117 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2582F98FF4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 11:47:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D091C9904F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 12:04:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/Ldm1jghh2wr3qFbBG7PHKVeauJUFiQZwEWIL4P/NR4=; b=gbjTEBfyFubaDC
-	Z0v7w+KqHQbaLSphSfMaM8nC9KF+O6K1PNPMNet32R0QZaJfXidnQjuJxKmTY5Tz5ICtr2DB8VRXj
-	aMpJaIa+Vs2dsJNym3mws5xIWPoBZX4shXGo+7Mq73LQ96lsq6IR1IIqsEe1gcUQ8xOjvu82+whIL
-	9P0dyjqMZSTtIuExgG3byvp6yEijVkSM9wHJ8LCahvLQ6H256HOzj41ssoOX2eVvuvqZbZaQPGKIA
-	4fml6m6tFLInyd2hng5sfJ44D22GeXidVip3lUEATKTB/9r+9Yvh7/75Fu5J+plMgVun2t/HoJOd2
-	nXcTf6tKQdKPbQJGz4Bw==;
+	List-Owner; bh=baZoghEpfTvXYgYSsI+XaswtdlEd3I4rbeHYoqXMXFM=; b=gqZUMFPC8mP429
+	/eVfg0bm7qWG9ozrNo9BMGvu+eJ6TkJZwdIoAbF09ITCe1OjjkSlJdnKvudyrhItWV9J4yg5taoOi
+	BfUdYzMsR8ir85pKniwMz1vwiqbeOwU7P6xkka1c1akDLm2UdlVaBpMoNbmJdPed+36VCmxA0iqEk
+	7u91UMWi1oJ7bMaEKMGz5C51R63hgEfcZp9RtPoiXDZ+gfgCRRHQGL7DT53sUqLVa6K+YS/nr/Kze
+	I31SHTg3Al19yeoRCOzeQzXRkj65M1n0q6bnLIYyglUp//YZ2z/xa0ksdOtEy10AQUtyViAUzr7ny
+	49kv5h7C7hBDydQO4W9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0jgn-0000Ti-BJ; Thu, 22 Aug 2019 09:47:29 +0000
-Received: from mail-eopbgr680048.outbound.protection.outlook.com
- ([40.107.68.48] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1i0jxI-00071O-Da; Thu, 22 Aug 2019 10:04:32 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0jga-0000TN-JU
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 09:47:17 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=BRzZsvojYJEzn8t+CEn5CxOkNKZ8LjKVVxHBwRUFf242ZIzRJo/h0XJuzCVkf/1BKaOAz1M7KY1KXA083xChuomhEti2eFvA9tZUC2UtTGBQCekWi97kVIvZfkHdrLpfDEZjaA8zS7oNT+KSXxlg4SDkh61CEwmb7xytwhQUxUlSIPxW5ljI+CehizTgLf0kpz+FwC4Up8W+HakqzELBM4KrBO/qQRvy6vchBE8YyXreACvk5wfSZkDImtvE7SmJ3KGROwgBruZY9WqPJOSg5TzonVJkUX0EenRLeohM14/6hrYiLXlZxoerzfrJHO01tE5IRO5eVBWPMzKAXCOgww==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iuJB/D9ZAYIC4/U+5sFDlnKf5jFkhlANnyJd94ODdTk=;
- b=QnCdQA2H0PTTXWU6ApcEWCEGndBd5KpfXstX8fGgHyEiEN4ox6jDpK0RLRaDAdEh0X0avG6fLZwVYQ4IQk8IKMYwSv8D7qqTmPTVDEEUlSXWJJgOUXl6TSOKpC2oxJ+XwqZxz5FPcIJZFBUu0NkBcZF1TZs4aVqhZzxRSIYVIzOmmxOrMIjhK0KWDDCQ+rHsl3RWaCzYa/k4lAcri/4xf/hHPwRC9IVBBXMqZz4Tvyp05oOnMpqOVWM76kvy7mfLY79A/dWp4w4p8soCGo1N7f0QMvp/LT8O/4KiKU8r23rl48SmqtDn+zu6MbpUl/iBV+Ak8QDq/gJHRhGsQpN1tA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=synaptics.com; dmarc=pass action=none
- header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=iuJB/D9ZAYIC4/U+5sFDlnKf5jFkhlANnyJd94ODdTk=;
- b=kgIIwDBioO3eIZVV20lcuSHjZ8h93L4BmJrRr/2aYrJDOcQudSjhK7OqOVck94GRdFbKLVv5CscINFHgvhiCb5G/NpuAXLfvDctLTwZcX5wVk3bKCXMR+PhlN8oIIWoFqd2UGJbIAggmSeSthSU9OwIv4WSZlkIhrBdxnrilC0Q=
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
- BYAPR03MB3606.namprd03.prod.outlook.com (52.135.213.140) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.16; Thu, 22 Aug 2019 09:47:13 +0000
-Received: from BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::b050:60f8:d275:e9f4]) by BYAPR03MB4773.namprd03.prod.outlook.com
- ([fe80::b050:60f8:d275:e9f4%7]) with mapi id 15.20.2178.020; Thu, 22 Aug 2019
- 09:47:13 +0000
-From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-To: "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>
-Subject: Re: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Topic: [PATCH v4] arm64: implement KPROBES_ON_FTRACE
-Thread-Index: AQHVWJwGDRorz/HiOUajlPa5ER0qaKcGu4YAgAAtQwA=
-Date: Thu, 22 Aug 2019 09:47:13 +0000
-Message-ID: <20190822173558.63de3fc4@xhacker.debian>
-References: <20190822113421.52920377@xhacker.debian>
- <1566456155.27ojwy97ss.naveen@linux.ibm.com>
-In-Reply-To: <1566456155.27ojwy97ss.naveen@linux.ibm.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [124.74.246.114]
-x-clientproxiedby: TY1PR01CA0162.jpnprd01.prod.outlook.com (2603:1096:402::14)
- To BYAPR03MB4773.namprd03.prod.outlook.com
- (2603:10b6:a03:134::24)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c86dcc4b-a5c5-4285-68ac-08d726e5b5b1
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BYAPR03MB3606; 
-x-ms-traffictypediagnostic: BYAPR03MB3606:
-x-microsoft-antispam-prvs: <BYAPR03MB36062B8D1A079519B6A4C197EDA50@BYAPR03MB3606.namprd03.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8273;
-x-forefront-prvs: 01371B902F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39850400004)(346002)(366004)(136003)(396003)(376002)(189003)(199004)(478600001)(14454004)(50226002)(7416002)(3846002)(6116002)(446003)(26005)(4326008)(186003)(25786009)(66446008)(66476007)(64756008)(66556008)(52116002)(66946007)(305945005)(6916009)(6246003)(53936002)(7736002)(102836004)(11346002)(486006)(229853002)(99286004)(386003)(6506007)(476003)(316002)(2906002)(71190400001)(1076003)(5660300002)(14444005)(256004)(86362001)(6436002)(76176011)(8936002)(6486002)(6512007)(81156014)(8676002)(54906003)(9686003)(66066001)(71200400001)(81166006)(39210200001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB3606;
- H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:0; 
-received-spf: None (protection.outlook.com: synaptics.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: zGFL02ylg/+6vR4i9eNdVgXqglW/BIazKBhUfaMMdOSgWj8qVy9fNpvAGWBoUcpxG8oerVsS9MhPulojauKXtJLBMzGGcvst7p9txzVcBogFm3xXCJT/R0pn3UT9DJLbAh3dMxbogRk8OJdLhIWexi92ljStuBMqvCePZ9OKyfeZfOzbAEQc4YjV9VimaG9hCdcdepjtUODWPOhlxFqaySLPtZ1WMUQ3NOSv7MeeELklbHtaDA1n/gFXqluAAezefWeS03Jbw2+J26YKEuPJxu2BGyMvXKgq/F53tF7fsro2ko93HjTdWA9DHaE9XQEfZcahYrmL0t8c3G9i0zQPQJY2OFyyy+n6iLmp4kTpovrZYGFXI/nOszWt94HAYAbydLuhv85EHCfVyV/6TETPSGzx4WarVsQCK+nrhGEkYh4=
-x-ms-exchange-transport-forked: True
-Content-ID: <D08A975643B7AC41B1D6B870A7F5FB7F@namprd03.prod.outlook.com>
-MIME-Version: 1.0
-X-OriginatorOrg: synaptics.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c86dcc4b-a5c5-4285-68ac-08d726e5b5b1
-X-MS-Exchange-CrossTenant-originalarrivaltime: 22 Aug 2019 09:47:13.6052 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: yp5GDMiuRrrS/I+HNgk5dsoW/+ONKEWylN1dgay/RVs1F1n/azXaBXOWCjVh8s7bGJo/bFl7m9oJsU2Dcnn65A==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB3606
+ id 1i0jwy-00070H-3c
+ for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 10:04:13 +0000
+Received: from lupine.hi.pengutronix.de
+ ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
+ by metis.ext.pengutronix.de with esmtp (Exim 4.92)
+ (envelope-from <p.zabel@pengutronix.de>)
+ id 1i0jwj-00045d-JA; Thu, 22 Aug 2019 12:03:57 +0200
+Message-ID: <1566468231.3653.8.camel@pengutronix.de>
+Subject: Re: [PATCH v2 1/3] arm64: imx8mq: add imx8mq iomux-gpr field defines
+From: Philipp Zabel <p.zabel@pengutronix.de>
+To: Guido =?ISO-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>, Arnd Bergmann
+ <arnd@arndb.de>
+Date: Thu, 22 Aug 2019 12:03:51 +0200
+In-Reply-To: <20190821174208.GA9486@bogon.m.sigxcpu.org>
+References: <cover.1565367567.git.agx@sigxcpu.org>
+ <e0562d8bb4098dc4cdb4023b41fb75b312be22a5.1565367567.git.agx@sigxcpu.org>
+ <CAK8P3a3Vrd+sttJrQwD-jA9p_egG4x-hc41eGK8H-_aVm-uoYw@mail.gmail.com>
+ <20190813101057.GB10751@bogon.m.sigxcpu.org>
+ <CAK8P3a1q9G8VKgNKh+6khzoW3bFTVR_Zorygy=Qqsq-PYzM4=g@mail.gmail.com>
+ <20190821174208.GA9486@bogon.m.sigxcpu.org>
+X-Mailer: Evolution 3.22.6-1+deb9u2 
+Mime-Version: 1.0
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
+X-SA-Exim-Mail-From: p.zabel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_024716_666727_7B893E68 
-X-CRM114-Status: GOOD (  17.80  )
+X-CRM114-CacheID: sfid-20190822_030412_146795_DF9E3FD5 
+X-CRM114-Status: GOOD (  23.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.48 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,119 +69,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Jonathan Corbet <corbet@lwn.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>, Ingo Molnar <mingo@redhat.com>,
- Masami Hiramatsu <mhiramat@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Will Deacon <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ Jernej Skrabec <jernej.skrabec@siol.net>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Sam Ravnborg <sam@ravnborg.org>, Neil Armstrong <narmstrong@baylibre.com>,
+ David Airlie <airlied@linux.ie>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Jonas Karlman <jonas@kwiboo.se>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ dri-devel <dri-devel@lists.freedesktop.org>,
+ Andrzej Hajda <a.hajda@samsung.com>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
+ Robert Chiras <robert.chiras@nxp.com>, Lee Jones <lee.jones@linaro.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-On Thu, 22 Aug 2019 12:23:58 +0530
-"Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com> wrote:
-
-
-> 
-> 
-> Jisheng Zhang wrote:
-> > KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
-> > eliminates the need for a trap, as well as the need to emulate or
-> > single-step instructions.
-> >
-> > Tested on berlin arm64 platform.
-> >
-> > ~ # mount -t debugfs debugfs /sys/kernel/debug/
-> > ~ # cd /sys/kernel/debug/
-> > /sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
-> >
-> > before the patch:
-> >
-> > /sys/kernel/debug # cat kprobes/list
-> > ffffff801009fe28  k  _do_fork+0x0    [DISABLED]
-> >
-> > after the patch:
-> >
-> > /sys/kernel/debug # cat kprobes/list
-> > ffffff801009ff54  k  _do_fork+0x4    [DISABLED][FTRACE]
-> >
-> > Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>  
-> 
-> This looks good to me. Except for a small confirmation below:
-> Reviewed-by: Naveen N. Rao <naveen.n.rao@linux.vnet.ibm.com>
-> 
-> 
-
-<...>
-
-> > +/* Ftrace callback handler for kprobes -- called under preepmt disabed */
-> > +void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
-> > +                        struct ftrace_ops *ops, struct pt_regs *regs)
-> > +{
-> > +     struct kprobe *p;
-> > +     struct kprobe_ctlblk *kcb;
-> > +
-> > +     /* Preempt is disabled by ftrace */
-> > +     p = get_kprobe((kprobe_opcode_t *)ip);
-> > +     if (unlikely(!p) || kprobe_disabled(p))
-> > +             return;
-> > +
-> > +     kcb = get_kprobe_ctlblk();
-> > +     if (kprobe_running()) {
-> > +             kprobes_inc_nmissed_count(p);
-> > +     } else {
-> > +             unsigned long orig_ip = instruction_pointer(regs);
-> > +             /* Kprobe handler expects regs->pc = pc + 4 as breakpoint hit */
-> > +             instruction_pointer_set(regs, ip + sizeof(kprobe_opcode_t));  
-> 
-> Just want to make sure that you've confirmed that this is what happens
-> with a regular trap/brk based kprobe on ARM64. The reason for setting
-> the instruction pointer here is to ensure that it is set to the same
-> value as would be set if there was a trap/brk instruction at the ftrace
-> location. This ensures that the kprobe pre handler sees the same value
-> regardless.
-
-Due to the arm64's DYNAMIC_FTRACE_WITH_REGS implementation, the code itself
-is correct. But this doesn't look like "there was a trap instruction at
-the ftrace location".
-
-W/O KPROBE_ON_FTRACE:
-
-foo:
-00	insA
-04	insB
-08	insC
-
-kprobe's pre_handler() will see pc points to 00.
-
-W/ KPROBE_ON_FTRACE:
-
-foo:
-00	lr saver
-04	nop     // will be modified to ftrace call ins when KPROBE is armed
-08	insA
-0c	insB
-
-later, kprobe_ftrace_handler() will see pc points to 04, so pc + 4 will
-point to 08 the same as the one w/o KPROBE_ON_FTRACE.
-
-It seems I need to fix the comment.
-
-> 
-> Further changes to the instruction pointer are to achieve the same
-> effect for kprobe post handlers.
-> 
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyMDE5LTA4LTIxIGF0IDE5OjQyICswMjAwLCBHdWlkbyBHw7xudGhlciB3cm90ZToK
+PiBIaSwKPiBPbiBUdWUsIEF1ZyAxMywgMjAxOSBhdCAwMTowNzo1MlBNICswMjAwLCBBcm5kIEJl
+cmdtYW5uIHdyb3RlOgo+ID4gT24gVHVlLCBBdWcgMTMsIDIwMTkgYXQgMTI6MTAgUE0gR3VpZG8g
+R8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4gd3JvdGU6Cj4gPiA+IE9uIFR1ZSwgQXVnIDEzLCAy
+MDE5IGF0IDEwOjA4OjQ0QU0gKzAyMDAsIEFybmQgQmVyZ21hbm4gd3JvdGU6Cj4gPiA+ID4gT24g
+RnJpLCBBdWcgOSwgMjAxOSBhdCA2OjI0IFBNIEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5v
+cmc+IHdyb3RlOgo+ID4gPiA+ID4gCj4gPiA+ID4gPiBUaGlzIGFkZHMgYWxsIHRoZSBncHIgcmVn
+aXN0ZXJzIGFuZCB0aGUgZGVmaW5lIG5lZWRlZCBmb3Igc2VsZWN0aW5nCj4gPiA+ID4gPiB0aGUg
+aW5wdXQgc291cmNlIGluIHRoZSBpbXgtbndsIGRybSBicmlkZ2UuCj4gPiA+ID4gPiAKPiA+ID4g
+PiA+IFNpZ25lZC1vZmYtYnk6IEd1aWRvIEfDvG50aGVyIDxhZ3hAc2lneGNwdS5vcmc+Cj4gPiA+
+ID4gPiArCj4gPiA+ID4gPiArI2RlZmluZSBJT01VWENfR1BSMCAgICAweDAwCj4gPiA+ID4gPiAr
+I2RlZmluZSBJT01VWENfR1BSMSAgICAweDA0Cj4gPiA+ID4gPiArI2RlZmluZSBJT01VWENfR1BS
+MiAgICAweDA4Cj4gPiA+ID4gPiArI2RlZmluZSBJT01VWENfR1BSMyAgICAweDBjCj4gPiA+ID4g
+PiArI2RlZmluZSBJT01VWENfR1BSNCAgICAweDEwCj4gPiA+ID4gPiArI2RlZmluZSBJT01VWENf
+R1BSNSAgICAweDE0Cj4gPiA+ID4gPiArI2RlZmluZSBJT01VWENfR1BSNiAgICAweDE4Cj4gPiA+
+ID4gPiArI2RlZmluZSBJT01VWENfR1BSNyAgICAweDFjCj4gPiA+ID4gCj4gPiA+ID4gKG1vcmUg
+b2YgdGhlIHNhbWUpCj4gPiA+ID4gCj4gPiA+ID4gaHVoPwo+ID4gPiAKPiA+ID4gVGhlc2UgYXJl
+IHRoZSBuYW1lcyBmcm9tIHRoZSBpbXg4TVEgcmVmZXJlbmNlIG1hbnVhbCAoZ2VuZXJhbCBwdXJw
+b3NlCj4gPiA+IHJlZ2lzdGVycywgdGhleSBsdW1wIHRvZ2V0aGVyIGFsbCBzb3J0cyBvZiB0aGlu
+Z3MpLCBpdCdzIHRoZSBzYW1lIG9uCj4gPiA+IGlteDYvaW14Nyk6Cj4gPiA+IAo+ID4gPiAgICAg
+aHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9naXQvdG9ydmFsZHMv
+bGludXguZ2l0L3RyZWUvaW5jbHVkZS9saW51eC9tZmQvc3lzY29uL2lteDZxLWlvbXV4Yy1ncHIu
+aAo+ID4gPiAgICAgaHR0cHM6Ly9naXQua2VybmVsLm9yZy9wdWIvc2NtL2xpbnV4L2tlcm5lbC9n
+aXQvdG9ydmFsZHMvbGludXguZ2l0L3RyZWUvaW5jbHVkZS9saW51eC9tZmQvc3lzY29uL2lteDct
+aW9tdXhjLWdwci5oCj4gPiA+IAo+ID4gPiA+ID4gKy8qIGkuTVg4TXEgaW9tdXggZ3ByIHJlZ2lz
+dGVyIGZpZWxkIGRlZmluZXMgKi8KPiA+ID4gPiA+ICsjZGVmaW5lIElNWDhNUV9HUFIxM19NSVBJ
+X01VWF9TRUwgICAgICAgICAgICAgIEJJVCgyKQo+ID4gPiA+IAo+ID4gPiA+IEkgdGhpbmsgdGhp
+cyBkZWZpbmUgc2hvdWxkIHByb2JhYmx5IGJlIGxvY2FsIHRvIHRoZSBwaW5jdHJsIGRyaXZlciwg
+dG8KPiA+ID4gPiBlbnN1cmUgdGhhdCBubyBvdGhlciBkcml2ZXJzIGZpZGRsZSB3aXRoIHRoZSBy
+ZWdpc3RlcnMgbWFudWFsbHkuCj4gPiA+IAo+ID4gPiBUaGUgcHVycG9zZSBvZiB0aGVzZSBiaXRz
+IGlzIGZvciBhIGRyaXZlciB0byBmaWRkbGUgd2l0aCB0aGVtIHRvIHNlbGVjdAo+ID4gPiB0aGUg
+aW5wdXQgc291cmNlLiBTaW1pbGFyIG9uIGlteDcgaXQncyBhbHJlYWR5IHVzZWQgZm9yIGUuZy4g
+dGhlIHBoeQo+ID4gPiByZWZjbGsgaW4gdGhlIHBjaSBjb250cm9sbGVyOgo+ID4gPiAKPiA+ID4g
+ICAgIGh0dHBzOi8vZ2l0Lmtlcm5lbC5vcmcvcHViL3NjbS9saW51eC9rZXJuZWwvZ2l0L3RvcnZh
+bGRzL2xpbnV4LmdpdC90cmVlL2RyaXZlcnMvcGNpL2NvbnRyb2xsZXIvZHdjL3BjaS1pbXg2LmMj
+bjYzOAo+ID4gCj4gPiBUaGF0IG9uZSBzaG91bGQgbGlrZWx5IHVzZSBlaXRoZXIgdGhlIGNsayBp
+bnRlcmZhY2Ugb3IgdGhlIHBoeQo+ID4gaW50ZXJmYWNlIGluc3RlYWQuCj4gPiAKPiA+ID4gVGhl
+IEdQUnMgYXJlIG5vdCBhYm91dCBwYWQgY29uZmlndXJhdGlvbiBidXQgZ2F0aGVyIGFsbCBzb3J0
+cyBvZiB0aGluZ3MKPiA+ID4gKHNlY3Rpb24gOC4yLjQgb2YgdGhlIGlteDhtcSByZWZlcmVuY2Ug
+bWFudWFsKTogcGNpZSBzZXR1cCwgZHNpIHJlbGF0ZWQKPiA+ID4gYml0cyBzbyBJIGRvbid0IHRo
+aW5rIHRoaXMgc2hvdWxkIGJlIGRvbmUgdmlhIGEgcGluY3RybAo+ID4gPiBkcml2ZXIuIFNob3Vs
+ZCB3ZSBoYW5kbGUgdGhhdCBkaWZmZXJlbnRseSB0aGFuIG9uIGlteDYvNz8KPiA+IAo+ID4gSXQg
+d291bGQgYmUgbmljZSB0byBmaXggdGhlIGV4aXN0aW5nIGNvZGUgYXMgd2VsbCwgYnV0IGZvciB0
+aGUgbW9tZW50LAo+ID4gSSBvbmx5IHRoaW5rIHdlIHNob3VsZCBub3QgYWRkIG1vcmUgb2YgdGhh
+dC4KPiA+IAo+ID4gR2VuZXJhbGx5IHNwZWFraW5nLCB3ZSBjYW4gdXNlIHN5c2NvbiB0byBkbyBy
+YW5kb20gdGhpbmdzIHRoYXQgZG9uJ3QKPiA+IGhhdmUgYSBzdWJzeXN0ZW0gb2YgdGhlaXIgb3du
+LCBidXQgd2Ugc2hvdWxkIG5vdCB1c2UgaXQgdG8gZG8gdGhpbmdzCj4gPiB0aGF0IGhhdmUgYW4g
+ZXhpc3RpbmcgZHJpdmVyIGZyYW1ld29yayBsaWtlIHBpbmN0cmwsIGNsb2NrLCByZXNldCwgcGh5
+Cj4gPiBldGMuCj4gCj4gU2luY2UgaXQncyBub3QgYW4gZXh0ZXJuYWwgcGluIGkgb3B0ZWQgdG8g
+dXNlIE1VWF9NTUlPIGluc3RlYWQgd2hpY2gKPiBzZWVtcyBsaWtlIGEgZ29vZCBmaXQgaGVyZS4g
+RG9lcyB0aGF0IG1ha2Ugc2Vuc2U/CgpZZXMsIEkgYWdyZWUuIFRoZSBpLk1YNiBkaXNwbGF5IHN1
+YnN5c3RlbSBwcmVkYXRlcyB0aGUgbXV4IGZyYW1ld29yaywKb3RoZXJ3aXNlIEkgd291bGQgaGF2
+ZSB1c2VkIGl0IGZvciB0aGUgTFZEUyBhbmQgSERNSSBtdXhlcyBpbiB0aGUgZmlyc3QKcGxhY2Uu
+IFdlIHNob3VsZCBwcm9iYWJseSBzd2l0Y2ggaW14LWRybSBvdmVyIGFzIHdlbGwsIGluIGEgYmFj
+a3dhcmRzCmNvbXBhdGlibGUgZmFzaGlvbi4gVGhlICZtdXggZGVmaW5pdGlvbnMgYXJlIGFscmVh
+ZHkgdGhlcmUgaW4KYXJjaC9hcm0vYm9vdC9kdHMvaW14NnEuZHRzaS4KCnJlZ2FyZHMKUGhpbGlw
+cAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
+YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
+b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
+LWtlcm5lbAo=
