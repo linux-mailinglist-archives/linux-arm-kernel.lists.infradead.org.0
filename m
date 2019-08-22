@@ -2,56 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8B8CA999FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:11:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1687E99A8D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 22 Aug 2019 19:14:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DCraIHwxRpzWC+OX9K1QZ8WUqSmWL0bWmwdK6SuwK10=; b=Req5c2itFAWtzl
-	6jsulZtz+cjDh0rpfehRfHHDg9bQdCORwTY29/ilur14nbzMwJr7CkAPAAZjK1ap792py9IhU5qYj
-	DzLEazPSLJPr+qj3hxHUowTiuieOMXfWTV7LLhxc+QfAWgfLDUXl0DdpfcMsqf7XhRZOznhCdq0Gk
-	QjyHlbK6YSTqFOFaaW85xl2RFX4axp1n93o3qniqqrJCed08K7jW3p5a70iYmd8e3T67lIw9AJ2Bq
-	oBocO+BXxGi8AZOUk2KVBpShAT+//LcJgxgXHTo7sk1nk8RRgrCWgFcaB6JvaFXIfBtgD44y2AMVb
-	8VFPYnOhuS49VlL/+jKg==;
+	List-Owner; bh=g06aWsvjX/OnqL74jYgD3xr4Ygj65kN4NjDLWmDRE2U=; b=IrFDfQiSrEvjaL
+	DB4PuGnyg4NHgclM1c5S0uatgHFp1oNTzx0nRKnJwptCmMQjzJ/7sx8yn3Vc5RTbsa2gci2VBTQUA
+	qOxBy6VNJnQaT6hiQ0Q14stgbqFgHan8aVKIx4CkPW19evwnk3qTEBdVqYjRq2dldSOCgRbYEfR0M
+	5waEx5ak3W07mh4RZF24YuS7B7Gwl3wqIWYbQBFursESSdyp8FJfsGUwzfd1MZLMKAoNiWGuWF4FE
+	6V36n9/mrSK8sAgFNYic3UsDQ3gQCcydrbqTbqwk/zdDkS03/CkCFqpiSXGbhqXtOTsUDeFviAx1r
+	83XfSc7huwJfxKdIbXSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0qcK-0007vI-45; Thu, 22 Aug 2019 17:11:20 +0000
+	id 1i0qfU-0000n5-Gt; Thu, 22 Aug 2019 17:14:36 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0qc9-0007u5-PT
- for linux-arm-kernel@lists.infradead.org; Thu, 22 Aug 2019 17:11:10 +0000
-Received: from localhost (wsip-184-188-36-2.sd.sd.cox.net [184.188.36.2])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 821062089E;
- Thu, 22 Aug 2019 17:11:08 +0000 (UTC)
+ id 1i0qfH-0000mN-RV; Thu, 22 Aug 2019 17:14:25 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 13B182089E;
+ Thu, 22 Aug 2019 17:14:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566493868;
- bh=Eu5zYHsgZr/DzgkYZtrV8Xf3yPbZrB6F/5Aa3SVutiA=;
+ s=default; t=1566494063;
+ bh=vqE2N/zi1fzhDJw+o9xdlWk9123wTSi4CKCbyRiWtHc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=YgpviCCuEYOqne1wsEWgd6l+Gzkw+5xYBwggmYQtDll2PjCPqB1qmScWDXN1P/B5K
- B/RNg/icssWR6AjcDPdeqSlGGxWCAS2rl4YBtOQnalt5AVfZm3e4ze3if6d5gFRY2x
- +KvCpV/lo8jNDpZObQ1PLinLdtTKiva/GCEIEsL4=
-Date: Thu, 22 Aug 2019 10:11:08 -0700
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: Christoph Hellwig <hch@lst.de>
-Subject: Re: next take at setting up a dma mask by default for platform
- devices v2
-Message-ID: <20190822171108.GA17471@kroah.com>
-References: <20190816062435.881-1-hch@lst.de>
+ b=gTshqoq99M9s6kEqnvExZ9y43tJZ5RG6H7DJicnyp4xB0EEyG3E8dxsEeD+mtCaSN
+ tPOnriBlWjBj6t3b/aXGqSnI7for4nxNhTc101nzXmKDqt5n+5VHe7Jxkot9Q6CAmx
+ WfjOx+T5BTnDWixtTIskYdTH9FZDyzwtT6bJ2aG0=
+Date: Thu, 22 Aug 2019 18:14:16 +0100
+From: Will Deacon <will@kernel.org>
+To: Yong Wu <yong.wu@mediatek.com>
+Subject: Re: [PATCH v10 09/23] iommu/io-pgtable-arm-v7s: Extend to support
+ PA[33:32] for MediaTek
+Message-ID: <20190822171415.475yg7pmy6gfj35l@willie-the-truck>
+References: <1566395606-7975-1-git-send-email-yong.wu@mediatek.com>
+ <1566395606-7975-10-git-send-email-yong.wu@mediatek.com>
+ <20190821152448.qmoqjh5zznfpdi6n@willie-the-truck>
+ <1566464186.11621.7.camel@mhfsdcap03>
+ <10d5122d-3375-161b-9356-2ddfc1c835bd@arm.com>
+ <20190822101749.3kwzd5lb7zinsord@willie-the-truck>
+ <e6652176-763d-5298-9e10-8c1fbe1b3c0d@arm.com>
+ <20190822112836.efodtwu3souq3uwa@willie-the-truck>
+ <1566475533.11621.18.camel@mhfsdcap03>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190816062435.881-1-hch@lst.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <1566475533.11621.18.camel@mhfsdcap03>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_101109_846583_9DCC24D9 
-X-CRM114-Status: GOOD (  14.77  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190822_101423_915723_CB9FCFE1 
+X-CRM114-Status: GOOD (  10.56  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
@@ -61,6 +68,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -73,52 +84,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Gavin Li <git@thegavinli.com>,
- linuxppc-dev@lists.ozlabs.org, linux-kernel@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>, Geoff Levand <geoff@infradead.org>,
- Fabio Estevam <festevam@gmail.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- linux-usb@vger.kernel.org, Michal Simek <michal.simek@xilinx.com>,
- iommu@lists.linux-foundation.org,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- linux-m68k@lists.linux-m68k.org, Alan Stern <stern@rowland.harvard.edu>,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Minas Harutyunyan <hminas@synopsys.com>, Shawn Guo <shawnguo@kernel.org>,
- Bin Liu <b-liu@ti.com>, linux-arm-kernel@lists.infradead.org,
- Laurentiu Tudor <laurentiu.tudor@nxp.com>
+Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
+ Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
+ srv_heupstream@mediatek.com, Tomasz Figa <tfiga@google.com>,
+ Joerg Roedel <joro@8bytes.org>, linux-kernel@vger.kernel.org,
+ Evan Green <evgreen@chromium.org>, chao.hao@mediatek.com,
+ iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ ming-fan.chen@mediatek.com, anan.sun@mediatek.com,
+ Robin Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 08:24:29AM +0200, Christoph Hellwig wrote:
-> Hi all,
+On Thu, Aug 22, 2019 at 08:05:33PM +0800, Yong Wu wrote:
+> On Thu, 2019-08-22 at 12:28 +0100, Will Deacon wrote:
+> > Ok, great. Yong Wu -- are you ok respinning with the above + missing
+> > brackets?
 > 
-> this is another attempt to make sure the dma_mask pointer is always
-> initialized for platform devices.  Not doing so lead to lots of
-> boilerplate code, and makes platform devices different from all our
-> major busses like PCI where we always set up a dma_mask.  In the long
-> run this should also help to eventually make dma_mask a scalar value
-> instead of a pointer and remove even more cruft.
+> Of course I can.
 > 
-> The bigger blocker for this last time was the fact that the usb
-> subsystem uses the presence or lack of a dma_mask to check if the core
-> should do dma mapping for the driver, which is highly unusual.  So we
-> fix this first.  Note that this has some overlap with the pending
-> desire to use the proper dma_mmap_coherent helper for mapping usb
-> buffers.  The first two patches have already been queued up by Greg
-> and are only included for completeness.
+> NearlyAll the interface in this file is prefixed with "arm_v7s_", so
+> does the new interface also need it?, like arm_v7s_is_mtk_enabled. And
+> keep the iopte_to_paddr and paddr_to_iopte symmetrical.
+> 
+> 
+> Then the final patch would looks like below, is it ok?
 
-Note to everyone.  The first two patches in this series is already in
-5.3-rc5.
+Looks good to me:
 
-I've applied the rest of the series to my usb-next branch (with the 6th
-patch landing there later today.)  They are scheduled to be merge to
-Linus in 5.4-rc1.
+Acked-by: Will Deacon <will@kernel.org>
 
-Christoph, thanks so much for these cleanups.
-
-greg k-h
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
