@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 297499AFB3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:37:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A8099AFAF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:37:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,39 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=QxVR3lCKU6EDxvDpgQm56abn4UTwa4xjiiwLCjnP1yw=; b=ibGu/MsjACM7q1k7DVnZpdniNr
-	AJU8oscSkaPkVFpuY8MYfz6CUbYjzW6M2PVGo2TM1Wm6UWKK1wQDqqJbyNHme64k2nYWjQ3HYOtMQ
-	bzdjNu4o+9aTk1mGOJ6p3UirfMntDSr3T6Ko+ZFLxv8s1yi6fUYwL4CwsEQzMejeFsiaWRMMj47dj
-	pmaI7JTp2oP9xDoOKyLxrZuD/JQLCPDM4o41CXIOjgR0cL113/UAGEvkPmHUDEPJysZiHNx4hc1n6
-	zLUm7IaDqccLbZS+2vxUwYnkz+sDIAw5qc6Td/2dXDBH/bXobZ4h7XDEAQDxmFV2EqFviE0kCeYJE
-	po9VqLqw==;
+	bh=4V9nyE88xjapXm5msZtfAJIWGGShyi8V/5I8sdgrq58=; b=c7SAUUGqmzZ0j6Sq2t7pLztMlr
+	/2pXOcVBLXrNYTEEqg2H8z40RIbR1oAwb2j19iNViekStVT8bCFzc1Gq+aQZws2kghforatSoAd3i
+	QyTgDqvQDzE+uPB7Wc7lOJFOjVikwabzz9KWY35Q1QEY5ncP0n7foq3cfS3LI2koLT3NFiypj57CP
+	qDqlfrODyx5V9D3473wXcsu/EBlBAdDDM/eeA/bM7n9X++BBOJtHF74h+a5cOwKubsshtWOFTYThM
+	j1SaUQCPQNQCBre036Sed5OJxr+xPj57Jq7E4AM3Ksfhke3nwCT4N4952126pm+zHFcw6cpqgYGEI
+	Fdbyl9Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i18p8-0007lA-6a; Fri, 23 Aug 2019 12:37:46 +0000
-Received: from laurent.telenet-ops.be ([2a02:1800:110:4::f00:19])
+	id 1i18ov-0007VY-FD; Fri, 23 Aug 2019 12:37:33 +0000
+Received: from michel.telenet-ops.be ([2a02:1800:110:4::f00:18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i18oQ-00074L-Jn
+ id 1i18oQ-00074O-JP
  for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 12:37:05 +0000
-Received: from ramsan ([84.194.98.4]) by laurent.telenet-ops.be with bizsmtp
- id sccr2000k05gfCL01ccrcd; Fri, 23 Aug 2019 14:36:55 +0200
+Received: from ramsan ([84.194.98.4]) by michel.telenet-ops.be with bizsmtp
+ id sccr2000S05gfCL06ccrx1; Fri, 23 Aug 2019 14:36:54 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i18oF-0006YM-D3; Fri, 23 Aug 2019 14:36:51 +0200
+ id 1i18oF-0006YO-Dj; Fri, 23 Aug 2019 14:36:51 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i18oF-0004uI-Bu; Fri, 23 Aug 2019 14:36:51 +0200
+ id 1i18oF-0004uK-Ch; Fri, 23 Aug 2019 14:36:51 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: arm-soc <arm@kernel.org>,
 	arm-soc <soc@kernel.org>
-Subject: [PULL 1/5] Renesas ARM DT updates for v5.4
-Date: Fri, 23 Aug 2019 14:36:39 +0200
-Message-Id: <20190823123643.18799-2-geert+renesas@glider.be>
+Subject: [PULL 2/5] Renesas ARM SoC updates for v5.4
+Date: Fri, 23 Aug 2019 14:36:40 +0200
+Message-Id: <20190823123643.18799-3-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190823123643.18799-1-geert+renesas@glider.be>
 References: <20190823123643.18799-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_053702_812880_E25289B3 
-X-CRM114-Status: UNSURE (   8.32  )
+X-CRM114-CacheID: sfid-20190823_053702_816653_32AF92CC 
+X-CRM114-Status: UNSURE (   7.89  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -51,7 +51,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:19 listed in]
+ low trust [2a02:1800:110:4:0:0:f00:18 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -84,26 +84,24 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-dt-for-v5.4-tag1
+  git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm-soc-for-v5.4-tag1
 
-for you to fetch changes up to 57012813f1ba82412cdcc3665b04d4353b357378:
+for you to fetch changes up to e9670ccb39dbcfc934ae9533163e81a769d2cb82:
 
-  ARM: dts: r8a77470: Add PMU device node (2019-08-21 10:28:57 +0200)
-
-----------------------------------------------------------------
-Renesas ARM DT updates for v5.4
-
-  - Fix HSCIF PM Domain on R-Car H1,
-  - PMU support for RZ/G1C.
+  ARM: debug-ll: Add support for r7s9210 (2019-08-21 11:15:26 +0200)
 
 ----------------------------------------------------------------
-Geert Uytterhoeven (2):
-      ARM: dts: r8a7779: Use SYSC "always-on" PM Domain for HSCIF
-      ARM: dts: r8a77470: Add PMU device node
+Renesas ARM SoC updates for v5.4
 
- arch/arm/boot/dts/r8a77470.dtsi | 7 +++++++
- arch/arm/boot/dts/r8a7779.dtsi  | 4 ++--
- 2 files changed, 9 insertions(+), 2 deletions(-)
+  - Low-level debugging support for RZ/A2M.
+
+----------------------------------------------------------------
+Geert Uytterhoeven (1):
+      ARM: debug-ll: Add support for r7s9210
+
+ arch/arm/Kconfig.debug                | 20 +++++++++++++++++++-
+ arch/arm/include/debug/renesas-scif.S |  6 +++++-
+ 2 files changed, 24 insertions(+), 2 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
