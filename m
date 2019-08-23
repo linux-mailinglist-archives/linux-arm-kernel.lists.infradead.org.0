@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F21699AEAC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:05:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B931F9AEC4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:10:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LUzbrAgEZXpmCkiLDOW+K2sB3BvTzQD6zo20XiSLqyo=; b=tLJxHIXTdTbh0c
-	zZMauav+J8q2C0nFZ/4S83SYTEAqGE4uolmteeNe+zNhf3z86xcsmeageybAZ+4BH8HRM6VG2+rzS
-	wr47UNq4moL92NhXFciLgA11Fr7Vu3nAbJG2usRsroLQXo2rDooUzi3vic9r4GrCHrX6VAwMzLHpi
-	iUTIZ25cdldwsVUetaatxNrOf6gBc9bOGkiA5KkO/KCRg8H1p3kDPZqRQqaF3OgnRO6xQRhZQxL3o
-	bAhUK+IBptTPXWaBUG2oRmE1KqW02DsfNmxfmceRXH4qj99fwNcbdffkYMcjyq8g8hd3oVz9iNzpO
-	rxHLVrdGcnjaZyccfQMA==;
+	List-Owner; bh=/FxLrAcGttk16zHa1MblhPUiOKItm5jr/AdyFQhtit8=; b=fBJR1KeqwRJ9nl
+	PTRZ2HgTgyLaSWg1BumNJyi/9mbRcgiW6lN3AFtiVwlTMgE9UdiI0tPQkzjT907M3Ff/dhjKaS9dR
+	m/4jukYosgOi4TJ4tedpLbI45TmVdz5d48mBmZciSBBDWMtJPa6EXfTdsOK03aO6+rIx+b2EW/N70
+	Bjpxxs/LEzq6hPmdgcYuZp1nu6FY0Zns5y/fFJD1dwc9HH62GZtc+Az0qqp4B8pq72yfrqe/KAUsL
+	WxGrsxd0fQuEJj5TpKveyu4jT1SghSetpKHqSFvjdPcV59sKBaIo8X3Hu3tmkOWHDztxzmvsjJoZ/
+	+790L0gJc7LBRGC7mdIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i18Jw-0007RC-4h; Fri, 23 Aug 2019 12:05:32 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i18O6-0000ZQ-Si; Fri, 23 Aug 2019 12:09:50 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i18Jj-0007Pz-Li; Fri, 23 Aug 2019 12:05:21 +0000
-Received: by mail-wr1-x442.google.com with SMTP id k2so8421013wrq.2;
- Fri, 23 Aug 2019 05:05:18 -0700 (PDT)
+ id 1i18Ne-0000Lp-B9; Fri, 23 Aug 2019 12:09:23 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v15so8695667wml.0;
+ Fri, 23 Aug 2019 05:09:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=Qy9yj0gm3ROYQ/b8OzfC7UDO3jx1zZgKFcv2X3+v62Q=;
- b=J/wIKlEFPv0JtcHXH8Ti0FhU7PKfeNj2OyTxwO9LPEb4wINdjwU0PiyTrKCvFnWPzO
- R61WgDjIvYvhEbVrTtg0SwpETUh7rJ0QO7N8HkXLHN0+AnNvdYKO9aMLCK1+6EC6Xg8v
- Lyw7LivRsTk3WnMaqdY7DTIdXOrNhJXX+MstB0TBlZsvt3ZTgbHI+y3gEDfwxuPmwo07
- U8DGRSVUdnE4LQiI7CQ2LMr1SvTL9hpJQ3t12DeWnIf15OyEh2cprOyyBIGxU5UpjFX6
- mq9I6JKQu5k1LmPHAvmOyNeWaVwYMkjy1ZxxptEn4DiG+7cpRLhCpGMAmvw5fh6CoZLv
- IOCA==
+ bh=Es9Uls55h1NyjhWPz637coo+itqvJlzPhgRY79trhYc=;
+ b=dHbYgUAcUCamsaYlI/u6CnuUbv+GasujhEXivtbWsv/5lVBqAphXlE7R4245SpkVZe
+ IkqDeNbjDWJinMRBHopqDNRFBvNd6rA6TBc0DM4l+eKaGLvwv+8YWj/7F8QnX/FStFwb
+ w9YKPlo21zCS33fAq5q4jGPgXihvJZoqod/3RwHR4kZX4H1f6U7CHgF50onDyx38EqG+
+ awf7iKxY38CN3k9gzesDIV2vAg1ed90m8z/T/yTnN5ePTu1JcKo+hXFeD1RBOVnbLqmv
+ HwV0RzVf3+EtkhHQXAnu6zb39xGSC5fKimhsKu1gjwiodk6R5yfFaJu4BQnIHN3uOaU/
+ 7uPQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=Qy9yj0gm3ROYQ/b8OzfC7UDO3jx1zZgKFcv2X3+v62Q=;
- b=YQ0DWfuNhXGgj8+tok34yGVpWjLQGyEce1rMl6yAiB3B3ELr5l5kmj/pMxMlMrBP3e
- 0oCDYqC01UV0BP4m1d0+kVazPEXMBiXQ++kxhFdvOm9E7nwcSW6gPIFt1A0T+yfRayUl
- +37hdvRkL1lE33SP3EpiqOWpCqip05zv7kzZjudH8rUAtGvhhYTj8Ulw9/5paQyE38+F
- u8NhS9AaLIUakATHuMbs3AV1DFgcZNussbu4dC4u30CgInFIkqGB9JWjrUlhXC9QaTso
- UtqsLh5OFd1O/CqlYhpdnVsk37G6gImmlZzG6xedY1BieDRuoMdsJTb+qU2FDy9MLf2Q
- qbZQ==
-X-Gm-Message-State: APjAAAVJM+hn1DlIUxn/9pZfEnkdamjsz6gRcWDdGb1y0nwr3zWIav1q
- WccPxeW71nAv7cdPb3A5WOs=
-X-Google-Smtp-Source: APXvYqx2UrYKrHoDwbvxJf/arNFijFrquIidTyu1kuxfIsEVIccFlnJpdNRUPEPNaNQpuOEErxPOWA==
-X-Received: by 2002:a5d:564f:: with SMTP id j15mr4622522wrw.326.1566561917465; 
- Fri, 23 Aug 2019 05:05:17 -0700 (PDT)
+ bh=Es9Uls55h1NyjhWPz637coo+itqvJlzPhgRY79trhYc=;
+ b=srIYnfrSWYncL+UmwHAM0zNxa/qng9bZbt1+vJTKncMbYgmz5euc0WQVODRB3oWbkc
+ BiSX470MLHKEsR6tLZadxgk/457DpbKrlLsAimvvIPmAIhCvVdqHZQgrsnPmQdX0VliI
+ Dntk21P760yo/H/gyAspYOZcKTIlZhna/hvYmg/l2zRUCRr6kJftjD11ds/Pi4JR4vnp
+ D+WZYshDnwZY0OcnLMyCYYoUpCmIwWYcvXvmWE0AMAc+cpVC4tR1x7DEmG4M3jLtpxFe
+ epPrWjj0UKUvZsw1HqDcFpMgjIELnwK5lMBgcqwtz4EzzjLaKuWM8CgCOtxOpRwkOFTa
+ xgvQ==
+X-Gm-Message-State: APjAAAWoCdbedgfe9+IlnpvYWaQnDM6yA+Qd5yhxWPCPeD9bqg7qKEeX
+ vTewaniPjfOBcrxi23p0tCg=
+X-Google-Smtp-Source: APXvYqyUeaDd1hE1hs09ONVwgE8kjsPlD9dANkHcAGfdOeXzqVx9gibcU+RnyrpJ6mnOTUT3cvQT8g==
+X-Received: by 2002:a1c:770d:: with SMTP id t13mr4910563wmi.27.1566562160997; 
+ Fri, 23 Aug 2019 05:09:20 -0700 (PDT)
 Received: from ziggy.stardust ([37.223.137.147])
- by smtp.gmail.com with ESMTPSA id c8sm3007500wrn.50.2019.08.23.05.05.15
+ by smtp.gmail.com with ESMTPSA id c11sm2347277wrt.25.2019.08.23.05.09.19
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 23 Aug 2019 05:05:16 -0700 (PDT)
-Subject: Re: [RESEND, PATCH v13 07/12] soc: mediatek: cmdq: reorder the
- parameter
+ Fri, 23 Aug 2019 05:09:20 -0700 (PDT)
+Subject: Re: [RESEND, PATCH v13 08/12] soc: mediatek: cmdq: change the type of
+ input parameter
 To: Bibby Hsieh <bibby.hsieh@mediatek.com>,
  Jassi Brar <jassisinghbrar@gmail.com>, Rob Herring <robh+dt@kernel.org>,
  CK HU <ck.hu@mediatek.com>
 References: <20190820084932.22282-1-bibby.hsieh@mediatek.com>
- <20190820084932.22282-8-bibby.hsieh@mediatek.com>
+ <20190820084932.22282-9-bibby.hsieh@mediatek.com>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
@@ -158,23 +158,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <b24a9c8c-494c-b5f7-9196-4d98eda2b774@gmail.com>
-Date: Fri, 23 Aug 2019 14:05:15 +0200
+Message-ID: <71911fc7-c44a-b8b1-d5e1-278c2a3767ea@gmail.com>
+Date: Fri, 23 Aug 2019 14:09:19 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190820084932.22282-8-bibby.hsieh@mediatek.com>
+In-Reply-To: <20190820084932.22282-9-bibby.hsieh@mediatek.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_050519_739717_136003F4 
-X-CRM114-Status: GOOD (  18.50  )
+X-CRM114-CacheID: sfid-20190823_050922_469244_16E09683 
+X-CRM114-Status: GOOD (  18.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -216,82 +216,105 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 On 20/08/2019 10:49, Bibby Hsieh wrote:
-> The order of gce instructions is [subsys offset value]
-> so reorder the parameter of cmdq_pkt_write_mask
-> and cmdq_pkt_write function.
+> According to the cmdq hardware design, the subsys is u8,
+> the offset is u16 and the event id is u16.
+> This patch changes the type of subsys, offset and event id
+> to the correct type.
 > 
 > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 > Reviewed-by: CK Hu <ck.hu@mediatek.com>
 
-applied to v5.3-next/soc
-
-Thanks!
+Applied, thanks
 
 > ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c |  6 +++---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c | 10 +++++-----
 >  include/linux/soc/mediatek/mtk-cmdq.h  | 10 +++++-----
->  2 files changed, 8 insertions(+), 8 deletions(-)
+>  2 files changed, 10 insertions(+), 10 deletions(-)
 > 
 > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index ff9fef5a032b..082b8978651e 100644
+> index 082b8978651e..7aa0517ff2f3 100644
 > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
 > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
 > @@ -136,7 +136,7 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
 >  	return 0;
 >  }
 >  
-> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 value, u32 subsys, u32 offset)
-> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value)
+> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value)
+> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
 >  {
 >  	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
 >  		    (subsys << CMDQ_SUBSYS_SHIFT);
-> @@ -145,8 +145,8 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 value, u32 subsys, u32 offset)
+> @@ -145,8 +145,8 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value)
 >  }
 >  EXPORT_SYMBOL(cmdq_pkt_write);
 >  
-> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 value,
-> -			u32 subsys, u32 offset, u32 mask)
-> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
-> +			u32 offset, u32 value, u32 mask)
+> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+> -			u32 offset, u32 value, u32 mask)
+> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> +			u16 offset, u32 value, u32 mask)
 >  {
 >  	u32 offset_mask = offset;
 >  	int err = 0;
+> @@ -161,7 +161,7 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_write_mask);
+>  
+> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event)
+> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+>  {
+>  	u32 arg_b;
+>  
+> @@ -181,7 +181,7 @@ int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event)
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_wfe);
+>  
+> -int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u32 event)
+> +int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
+>  {
+>  	if (event >= CMDQ_MAX_EVENT)
+>  		return -EINVAL;
 > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
-> index 4e8899972db4..39d813dde4b4 100644
+> index 39d813dde4b4..9618debb9ceb 100644
 > --- a/include/linux/soc/mediatek/mtk-cmdq.h
 > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
-> @@ -60,26 +60,26 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt);
->  /**
->   * cmdq_pkt_write() - append write command to the CMDQ packet
->   * @pkt:	the CMDQ packet
-> - * @value:	the specified target register value
->   * @subsys:	the CMDQ sub system code
->   * @offset:	register offset from CMDQ sub system
-> + * @value:	the specified target register value
+> @@ -66,7 +66,7 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt);
 >   *
 >   * Return: 0 for success; else the error code is returned
 >   */
-> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 value, u32 subsys, u32 offset);
-> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value);
+> -int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value);
+> +int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value);
 >  
 >  /**
 >   * cmdq_pkt_write_mask() - append write command with mask to the CMDQ packet
->   * @pkt:	the CMDQ packet
-> - * @value:	the specified target register value
->   * @subsys:	the CMDQ sub system code
->   * @offset:	register offset from CMDQ sub system
-> + * @value:	the specified target register value
->   * @mask:	the specified target register mask
+> @@ -78,8 +78,8 @@ int cmdq_pkt_write(struct cmdq_pkt *pkt, u32 subsys, u32 offset, u32 value);
 >   *
 >   * Return: 0 for success; else the error code is returned
 >   */
-> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 value,
-> -			u32 subsys, u32 offset, u32 mask);
-> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
-> +			u32 offset, u32 value, u32 mask);
+> -int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+> -			u32 offset, u32 value, u32 mask);
+> +int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+> +			u16 offset, u32 value, u32 mask);
 >  
 >  /**
 >   * cmdq_pkt_wfe() - append wait for event command to the CMDQ packet
+> @@ -88,7 +88,7 @@ int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u32 subsys,
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event);
+> +int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event);
+>  
+>  /**
+>   * cmdq_pkt_clear_event() - append clear event command to the CMDQ packet
+> @@ -97,7 +97,7 @@ int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u32 event);
+>   *
+>   * Return: 0 for success; else the error code is returned
+>   */
+> -int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u32 event);
+> +int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event);
+>  
+>  /**
+>   * cmdq_pkt_flush_async() - trigger CMDQ to asynchronously execute the CMDQ
 > 
 
 _______________________________________________
