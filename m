@@ -2,54 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 962109A91B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:48:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9C929A922
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:50:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8Ewl5G/OT4wGL9q70ST2kN698kGBfWK1QHV6VXcIKKg=; b=Su3oqHlKccDUfenowoqgTPbxj
-	QSEpG+J04Btuyj3D8Quh6Tq1i1DmGlXZVEhokqfspzXKUO0pn4aYdJnMKrlfdoe7LVLV18unXMqum
-	6BUdmzTyhftTdid28KCYShAnEGvOLEnqcVKf1fqE0z8PU91M2FdUHMwEyTw5/HD/yhbhbDfW4mZyR
-	xPNLIVXKZNRMxg1NU7G082cEB9BN1bJsojMWlQr7kfS8a82lTA99fGnMau6NEuQzGcmYFVtMi+QYx
-	/5bzrXgMoCANFkZjnFBJC6AAkidxdqAc7Y1kQw53fqMZy/kgJkJviSLDtFp4oWWC4rRjK5inUL3Zj
-	ui4ba3mzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qdC5RaV0VBY/360kYMiTe4+vSGAwAphDHBMfX+XX5OU=; b=N4KmmbhzQvobmd
+	TVuUeXUXWtFFudWj/KiHeGNvXQ07TIL3ekPACYIrsxcbzpBlJzkaq5ouyy5J4u2jMbOXNxoO+GINP
+	uSGD28FFUociHjsPRdcqEvYFk/fpoQrIARjAIGJxAuaORldjiT64wfI7BrPutlGtioFOwx30sL4mH
+	SxGYM2QA+WOzYD42QhDYehWNQE2Lt+Ht+udu8CumnycvKGgzkWFMIvM2nZbBOISBT3vHa7uEHNMlK
+	nY9jXaEdjbZNrHkjV7NHoWOQmRYvUdo5EUmA1PldwG4tQkOI5MhoLZApJKDaOdbWqZKF+EzJhZFC9
+	dr8EEOyfQyvQneTVg31Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14Iz-0002Az-Lx; Fri, 23 Aug 2019 07:48:17 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1i14LO-00044n-9p; Fri, 23 Aug 2019 07:50:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i14Im-0002A9-1u
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:48:05 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id 42D4210000C;
- Fri, 23 Aug 2019 07:47:55 +0000 (UTC)
-Date: Fri, 23 Aug 2019 09:47:54 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Hans Verkuil <hans.verkuil@cisco.com>,
- Sakari Ailus <sakari.ailus@linux.intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>
-Subject: Re: [PATCH v8 0/5] media: Allwinner A10 CSI support
-Message-ID: <20190823074754.z23rx62o5do4pu3z@flea>
-References: <cover.85d78dd1a3b44fe4cde1b65a9b1eb3b95daea7cc.1566462064.git-series.maxime.ripard@bootlin.com>
+ id 1i14LB-00044O-DR
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:50:35 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 924B322CE3;
+ Fri, 23 Aug 2019 07:50:30 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566546631;
+ bh=QGB1QBbRBrvFJ0/ORqHfkbvDtYwROh22ycSAYGYaOko=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=oQWM/EOSnXMuyItw5blNA1dLPvsG9tdgOjJwfMILly3AcaU7CRSxARkh8ZDSpDlqt
+ dHAT8oq0KUFejzdqkF502yLNsk25p7Tp/O48oKVoQNwPOq5s1xI9pqTKG7kczP9vat
+ 7EunzJrmSyE8pluvsRyanF/+guAD9slGOQ8zl0dE=
+Date: Fri, 23 Aug 2019 08:50:27 +0100
+From: Will Deacon <will@kernel.org>
+To: Zhen Lei <thunder.leizhen@huawei.com>
+Subject: Re: [PATCH v3 0/2] improve the concurrency of
+ arm_smmu_atc_inv_domain()
+Message-ID: <20190823075026.pwlx33e4crh3m6tn@willie-the-truck>
+References: <20190823024551.24448-1-thunder.leizhen@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <cover.85d78dd1a3b44fe4cde1b65a9b1eb3b95daea7cc.1566462064.git-series.maxime.ripard@bootlin.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <20190823024551.24448-1-thunder.leizhen@huawei.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_004804_249834_7C71A300 
-X-CRM114-Status: GOOD (  15.45  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190823_005033_481948_EE04B1D3 
+X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,81 +78,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
-Content-Type: multipart/mixed; boundary="===============6734087309292226401=="
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Joerg Roedel <joro@8bytes.org>, John Garry <john.garry@huawei.com>,
+ iommu <iommu@lists.linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Aug 23, 2019 at 10:45:49AM +0800, Zhen Lei wrote:
+> v2 --> v3:
+> As Will Deacon's suggestion, I changed the lock type of
+> arm_smmu_domain.devices_lock from spinlock_t to rwlock_t, and I saw that the
+> performance is all right. And further use nr_ats_masters to quickly check have
+> no obvious effect, so I drop it.
 
---===============6734087309292226401==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="p5b5zggpj4lv77ke"
-Content-Disposition: inline
+:/
 
+I already sent two versions of a series fixing this without any locking at
+all on the ->unmap() path, and you were on cc. I've also queued that stuff
+up.
 
---p5b5zggpj4lv77ke
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Did you not receive my patches?
 
-On Thu, Aug 22, 2019 at 10:21:11AM +0200, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> Hi,
->
-> Here is a series introducing the support for the A10 (and SoCs of the same
-> generation) CMOS Sensor Interface (called CSI, not to be confused with
-> MIPI-CSI, which isn't support by that IP).
->
-> That interface is pretty straightforward, but the driver has a few issues
-> that I wanted to bring up:
->
->   * The only board I've been testing this with has an ov5640 sensor
->     attached, which doesn't work with the upstream driver. Copying the
->     Allwinner init sequence works though, and this is how it has been
->     tested. Testing with a second sensor would allow to see if it's an
->     issue on the CSI side or the sensor side.
->   * We don't have support for the ISP at the moment, but this can be added
->     eventually.
+v1: https://lists.linuxfoundation.org/pipermail/iommu/2019-August/038306.html
+v2: https://lists.linuxfoundation.org/pipermail/iommu/2019-August/038374.html
 
-Applied patch 4.
+Queued: https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/log/?h=for-joerg/arm-smmu/smmu-v3
 
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---p5b5zggpj4lv77ke
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXV+aKgAKCRDj7w1vZxhR
-xRMwAP0fMmxNQd3iwRCBEhylWiBgjth2nBRFWwaoecI6PiXhjQD8Cr8Op739M9P5
-ELbAfEs0KtHW7ro3qTMi5KruzloAGgU=
-=+ikl
------END PGP SIGNATURE-----
-
---p5b5zggpj4lv77ke--
-
-
---===============6734087309292226401==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6734087309292226401==--
-
