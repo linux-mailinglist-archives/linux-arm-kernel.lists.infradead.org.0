@@ -2,84 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A96A9AEE2
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:14:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 362CC9AF5A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 14:26:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:Date:Subject:To:
-	From:Message-ID:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7wJFJM1P++idKNnPEZRPLONsZTshGUkO2/lb499d2Cg=; b=XTFLd0UH6LTFf8
-	+u1LgOggzLLPBhcm/7fn4R8GrNs/B9LbLNqBJolNazM/L6SQoRorAFbbeanwG1a2Q4W/8AGUjynbc
-	Si0eCkvg8XQAk0fPZMmCvgdhU904gi0y+D/2xLGnspd9f0JquvR+aW23Ghp5VxK5rtSJdeZIc9b/P
-	FZ0mHPfSLQyc/AmHw2JUQ6yhXQK3d79clcb9wQ5ti3tLSOVA4BZaFcetAzZ5ZEDqJjG/NldzRPkbA
-	S/GLGxKl26lUgJxWikzHhgDBa/6SLahFQ1Bv/4TXIFHRaemis3LzFh6LJgYjuezMNWhDPgf7nNuzU
-	u5P98qXgUn42TC2OKIdA==;
+	List-Owner; bh=lIfnwsNTxy3EQ/tbYWpAozgwczD9xinPv9xE0jg2DQ4=; b=rh75ZZDF6xKdJO
+	s3pNsZrUNre58nypjm2RzUjc8uP3IWaaWa3v+G1+T8jCmimhfoUXMvjf9vCD1BX76o0tXwrwm00yc
+	gH4sVv8P/M/i2BGEGkkI9ltdOZRsJ80P+sigGfv+rkgdcpbHtkmP075hRR1Rh5kvit5D50S3lMSkf
+	Wgp9/X2BPC/rcEDVgwts7ZqTeke4LK2EnrYNPUENVeNld+R4Z59Jt1V3blMEfpVHElGVSPMijxPL0
+	BO82Vrflq+wNmLq4O4+hFtYObkkaH8Gx+Bv5FIZnuhnR2PaNSJr9vIQtXPve+9im3fmRPULHU4OvR
+	/D5ZvPH2yDLU0w4IRgew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i18T3-0003UO-8S; Fri, 23 Aug 2019 12:14:57 +0000
-Received: from mout.gmx.net ([212.227.17.20])
+	id 1i18eJ-00029Q-IM; Fri, 23 Aug 2019 12:26:35 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i18Sq-0003T5-1K; Fri, 23 Aug 2019 12:14:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1566562433;
- bh=ZZeV6qRtSW/Hn8aQJ6GSyIcFFJLdxp8khErjnJb6tDY=;
- h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=FBQpYh+kIJbWDHnjvns4r0qIa5UOO4cbX3d0pJfuKJQ5y42tn0Tk1LWViStDHVUJ0
- l8u0uHxjhi1p4zou1hzwKGXjSAzdCGQY2wrJ5xNMe8gJqqMi9fLM1Hi8HCbLuWtPgM
- VE1fJPnOd5+1wXqEm283z06cO2yt5UAm9k/d7yAk=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [217.61.154.8] ([217.61.154.8]) by web-mail.gmx.net
- (3c-app-gmx-bs11.server.lan [172.19.170.62]) (via HTTP); Fri, 23 Aug 2019
- 14:13:53 +0200
+ id 1i18eC-00028t-Le
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 12:26:30 +0000
+Received: from [5.158.153.52] (helo=nanos.tec.linutronix.de)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1i18do-0001xv-4e; Fri, 23 Aug 2019 14:26:04 +0200
+Date: Fri, 23 Aug 2019 14:25:58 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: Re: Regression in 5.3-rc1 and later
+In-Reply-To: <20190823111712.GB13294@shell.armlinux.org.uk>
+Message-ID: <alpine.DEB.2.21.1908231424230.1896@nanos.tec.linutronix.de>
+References: <faaa3843-09a6-1a21-3448-072eeed1ea00@googlemail.com>
+ <20190823103654.GX13294@shell.armlinux.org.uk>
+ <20190823104050.o6golaa4fmdd7np5@willie-the-truck>
+ <20190823111712.GB13294@shell.armlinux.org.uk>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-Message-ID: <trinity-1f82bff1-535e-47cd-9a2f-8faccb56e356-1566562433314@3c-app-gmx-bs11>
-From: "Frank Wunderlich" <frank-w@public-files.de>
-To: "Hsin-Hsiung Wang" <hsin-hsiung.wang@mediatek.com>
-Subject: [BUG] [PATCH v5 02/10] mfd: mt6397: extract irq related code from
- core driver
-Date: Fri, 23 Aug 2019 14:13:53 +0200
-Importance: normal
-Sensitivity: Normal
-In-Reply-To: <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
-References: <1566531931-9772-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
-X-UI-Message-Type: mail
-X-Priority: 3
-X-Provags-ID: V03:K1:nr4dyiSrd5gDD/bbRxF4ZEMIgz3xepFd/XlrekfNAvjvFi0Rx9xJ40d++NeKsHyt0x2if
- Vsxhi9F2hKxfL2TtgZhz8QB3wGKc7O4PkkNfmHp2rkd+cyNHuOeuvgv4tTWEc5vz/AKmz43rcKVO
- w2jtE9MncIXl4dzU+xzojsi78V+giOD8SsFFuIaVLPsJYTcyUSiy3wte1lI3MMA1l7eViGEXQQXU
- yCKnXLU87YTlbIylJbH+NPl9SoVc0aFsk0n3Hp4z+x5ZYnWHl7jBQ13pt2nLpkqQaYEj6njm7x2i
- +Y=
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:FnVj54k4t1g=:xdot20YBEqJE3Af3zCaBWN
- Bhkf7wY8DCiRL/dAZBYCJ+tX4aoZA6MWAIBeFyPLOS1gVGIbxCzXRz+7jJbzi3VdLA9lLq9VX
- khKYQ3M03zz3DK/k4cSUE8BNkY5STJDWdOarnUPjWEFbYi1sAIMrxEhc55jbnAKL59/Ek4dl9
- WROreyN+6//0XzUk7kMUjeMmqPwOVKQXW4+xCzS3i8Yh3b2Jv033NVjhDfxHG5BLsJoW6BOcO
- nO+aobMhP5FqUb2aBCnQ9sPjA0Xo9pLiC71DAGgfe6kPNVpeP7Qss6j604hQqk5rTv0UIi6WK
- mR+UddvyW9pHXMhIWZdVnEZ1fAQxXsZdoRKQThlZ1Oz9o8iUca4ES+4R0x89lOMQ4Q4kM9/8H
- Cp1J3hL8C5iVpG5JsNsxqV3BVXZBCYZkpCdB+a6lCjEbkMPoB78sINVR3smTfETnHbq9WkbL0
- EV/uXYkwijeRyfx/7dh++1bj1hKeIaLfrew2OuZWysvrQdgBQxTrlfmWvq1olPIdBqiNB57rj
- oRsUMxl9y9Ol/SJtBbnbnADmPVLNlN+7wgl6WaWyNaBVg/6Gnk2lOf9G5P4zD1MDH6lRJ3vU2
- Un1VhrxjKj6kjzX/bMOI1VupE+fMVk+urJQ3DefrmrYUi88bbyplr1v4M8QpGaZZQM6zEtPhD
- +pVMmTPI6cM2yQC9gSvpZ6ikWI161WUqjQKjzXdXKLxy0Qg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_051444_380619_41B4DED9 
-X-CRM114-Status: UNSURE (   9.34  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190823_052628_851248_D25BF8EF 
+X-CRM114-Status: GOOD (  13.39  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.20 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,64 +63,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- linux-kernel@vger.kernel.org,
- =?UTF-8?Q?=22Ren=C3=A9_van_Dorst=22?= <opensource@vdorst.com>,
- Lee Jones <lee.jones@linaro.org>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>, linux-rtc@vger.kernel.org,
- devicetree@vger.kernel.org, Sean Wang <sean.wang@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, Alessandro Zummo <a.zummo@towertech.it>,
- srv_heupstream@mediatek.com, Richard
- Fontana <rfontana@redhat.com>, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>
+Cc: linux@rasmusvillemoes.dk, catalin.marinas@arm.com, will.deacon@arm.com,
+ LKML <linux-kernel@vger.kernel.org>, linux-kselftest@vger.kernel.org,
+ vincenzo.frascino@arm.com, shuah@kernel.org, linux-arch@vger.kernel.org,
+ Will Deacon <will@kernel.org>, daniel.lezcano@linaro.org, arnd@arndb.de,
+ andre.przywara@arm.com, Chris Clayton <chris2553@googlemail.com>,
+ 0x7f454c46@gmail.com, pcc@google.com, linux-arm-kernel@lists.infradead.org,
+ huw@codeweavers.com, linux-mips@vger.kernel.org, ralf@linux-mips.org,
+ salyzyn@android.com, paul.burton@mips.com, sthotton@marvell.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Fri, 23 Aug 2019, Russell King - ARM Linux admin wrote:
 
-this commit breaks mt6323 pmic on BananaPi-R2
+> On Fri, Aug 23, 2019 at 11:40:50AM +0100, Will Deacon wrote:
+> > On Fri, Aug 23, 2019 at 11:36:54AM +0100, Russell King - ARM Linux admin wrote:
+> > > To everyone on the long Cc list...
+> > > 
+> > > What's happening with this?  I was about to merge the patches for 32-bit
+> > > ARM, which I don't want to do if doing so will cause this regression on
+> > > 32-bit ARM as well.
+> > 
+> > tglx fixed it:
+> > 
+> > https://lkml.kernel.org/r/alpine.DEB.2.21.1908221257580.1983@nanos.tec.linutronix.de
+> > 
+> > which I assume is getting routed as a fix via -tip.
+> 
+> Right, so Chris reported the issue to everyone involved.  Tglx's
+> reply severely trimmed the Cc list so folk like me had no idea what
+> was going on, removing even the mailing lists.  On the face of it,
+> it looks like an intentional attempt to cut people out of the loop
+> who really should've been kept in the loop.  Yea, that's just great.
 
-https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/?id=a4872e80ce7d2a1844328176dbf279d0a2b89bdb
+Sorry that was no intentional attempt to cut anyone out of the
+loop. Trimmed it too agressively without applying much brain.
 
-resulting in this message in dmesg:
+Thanks,
 
-mt6397 1000d000.pwrap:mt6323: unsupported chip: 0x0
-and multiple
-mtk-cpufreq mtk-cpufreq: failed to initialize dvfs info for cpu0
-
-see discussion here:
-http://lists.infradead.org/pipermail/linux-mediatek/2019-August/022505.html
-
-after reverting this one the errors are gone, please provide a fix
-
-regards Frank
-
-
-> Gesendet: Freitag, 23. August 2019 um 05:45 Uhr
-> Von: "Hsin-Hsiung Wang" <hsin-hsiung.wang@mediatek.com>
-> Betreff: [PATCH v5 02/10] mfd: mt6397: extract irq related code from core driver
->
-> In order to support different types of irq design, we decide to add
-> separate irq drivers for different design and keep mt6397 mfd core
-> simple and reusable to all generations of PMICs so far.
->
-> Acked-for-mfd-by: Lee Jones <lee.jones@linaro.org>
-> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-> ---
->  drivers/mfd/Makefile            |   3 +-
->  drivers/mfd/mt6397-core.c       | 146 --------------------------------
->  drivers/mfd/mt6397-irq.c        | 181 ++++++++++++++++++++++++++++++++++++++++
->  include/linux/mfd/mt6397/core.h |   9 ++
->  4 files changed, 192 insertions(+), 147 deletions(-)
->  create mode 100644 drivers/mfd/mt6397-irq.c
-
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
