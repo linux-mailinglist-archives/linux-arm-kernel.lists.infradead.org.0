@@ -2,73 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E35C79A6E3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 07:01:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B9B39A71C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 07:29:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/YqVeKtSl7VDWqfAmEDbUXHfVRG8RKPBOHNW7S+nxVk=; b=I+7jowDvGBJXGh
-	P6kYOdwn6a3QuvzgpJqbMfC7W5TSnc0GjUwa719V+S3Hmw8kGYIF7mBGBEq2Pr2UA/9v52muGuDc/
-	H8oco3z+jr06y9qk1hs188PJZKdvnuGZid5CtQJq9Xt4KEjFJTzJq7tFWzffJ4/UWUrk9Z16vLHmj
-	s8p++OzWiZEzppteQk+yEpetI1//yGh0bDIJKcgYDgijlp00dFpe5X8bEpQ9gZjVcbIAgrTTTm9oF
-	XOBhY/dp4fVbchljQMDqgKEb+MoD/jWG/R8Z0D2NXHnlpILfpk7ak/rtqlK+PApzOpRUtkm1XdbqJ
-	bdbzMZibuWsMAMofJyzQ==;
+	List-Owner; bh=xdp034EgXBM1fU4ppibGx/JUZrGZRAgx33mPu5mITzc=; b=bfkfJnHwiPSu4W
+	CwINwmp3YZLPe2g9GJAkCtqj4bdC+Q7yYarjX9CmvmkAUNSAfbszUsqNwF5Q5UWWk0KWmms6Yq8KB
+	iRhB/OYNidhQRw2AL6NYdUmGxHc+0aRYbcuTvQ1+RZ6Kp7t72cP+PzmauZZ3GqNCRUaOx2faOtUkz
+	AopM9hjHI1H1NkwF7Bz9CXUodrBRlcfwbs5rooSfO8HjRFiSPAzoG4qzbAno2sZ3pSyRlgNICr4EP
+	jcHD2+ehCgilYLZnmAon6niLWTKnyPoLY4dao3SVV1xfN6koI8qPizWsnlky0FN38Abs7QalJsgDm
+	G0PgGkSlydxKau7TuRvQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i11gn-0004fU-I8; Fri, 23 Aug 2019 05:00:42 +0000
-Received: from smtprelay0118.hostedemail.com ([216.40.44.118]
- helo=smtprelay.hostedemail.com)
+	id 1i128X-00058g-9b; Fri, 23 Aug 2019 05:29:21 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i11gK-00043x-82; Fri, 23 Aug 2019 05:00:13 +0000
-Received: from filter.hostedemail.com (clb03-v110.bra.tucows.net
- [216.40.38.60])
- by smtprelay03.hostedemail.com (Postfix) with ESMTP id 73D998368F05;
- Fri, 23 Aug 2019 04:59:53 +0000 (UTC)
-X-Session-Marker: 6A6F6540706572636865732E636F6D
-X-Spam-Summary: 2, 0, 0, , d41d8cd98f00b204, joe@perches.com, :::::::::::::,
- RULES_HIT:41:355:379:599:800:960:973:988:989:1260:1277:1311:1313:1314:1345:1359:1437:1515:1516:1518:1534:1541:1593:1594:1711:1730:1747:1777:1792:2198:2199:2393:2559:2562:2828:3138:3139:3140:3141:3142:3352:3622:3865:3867:3871:3872:4321:5007:8784:10004:10400:10848:11026:11232:11473:11658:11914:12043:12048:12297:12438:12555:12740:12760:12895:12986:13069:13161:13229:13311:13357:13439:14096:14097:14181:14659:14721:21080:21451:21627:30054:30070:30091,
- 0,
- RBL:23.242.196.136:@perches.com:.lbl8.mailshell.net-62.8.0.180 64.201.201.201,
- CacheIP:none, Bayesian:0.5, 0.5, 0.5, Netcheck:none, DomainCache:0,
- MSF:not bulk, SPF:fn, MSBL:0, DNSBL:neutral, Custom_rules:0:0:0, LFtime:25,
- LUA_SUMMARY:none
-X-HE-Tag: farm80_39106449b3b1d
-X-Filterd-Recvd-Size: 2482
-Received: from XPS-9350.home (cpe-23-242-196-136.socal.res.rr.com
- [23.242.196.136]) (Authenticated sender: joe@perches.com)
- by omf18.hostedemail.com (Postfix) with ESMTPA;
- Fri, 23 Aug 2019 04:59:52 +0000 (UTC)
-Message-ID: <59c7ff8f2306069095503b72824714e369a378f8.camel@perches.com>
-Subject: Re: [PATCH 10/12] phy: amlogic: G12A: Fix misuse of GENMASK macro
-From: Joe Perches <joe@perches.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>, Neil Armstrong
- <narmstrong@baylibre.com>, Andrew Morton <akpm@linux-foundation.org>, Kevin
- Hilman <khilman@baylibre.com>
-Date: Thu, 22 Aug 2019 21:59:49 -0700
-In-Reply-To: <6d7abb4d-fe68-8d02-d985-7214118be126@ti.com>
-References: <cover.1562734889.git.joe@perches.com>
- <d149d2851f9aa2425c927cb8e311e20c4b83e186.1562734889.git.joe@perches.com>
- <c6cabf9c-7edd-eea8-3388-df781163cddd@baylibre.com>
- <6d7abb4d-fe68-8d02-d985-7214118be126@ti.com>
-User-Agent: Evolution 3.32.1-2 
+ id 1i1283-00057w-3n
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 05:28:52 +0000
+Received: by mail-wr1-x441.google.com with SMTP id z11so7428732wrt.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 22 Aug 2019 22:28:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=0jZOuGomjvqGYTjnoHRQnEezUC30S/yYktb2hSFP7WE=;
+ b=ZsZhZA5toWhhCMR8ORZnkeX18nS/RQ2ih4MGR5PbRXW4fGxvgYg41L5YkbhqfuMXAg
+ mkAKeh3DAtZHZr2Hy8m1ZZEyMd0RYkpIVNOinUsUm9LSyeaZL5xjE5mDmFb6hBOgPoP4
+ x3XX/VTD9ZCimPxO3iHOWmMSWKM9ozmfQpa5ODTu03PSPfBQAxVrqHRR4i7tCTvrEuvD
+ 8S4CM2B8GSezAVMEVwuJrKF8O2JJxynlNW2q3whLIqL8iKIymONrlRfa354T15nmpb9t
+ YQQLUdqtjyw97shJg5StkamMN1OCVetEtqsQEjw5m9+DxyojtsUay/oeJ2Pz6F1jVb2r
+ 84zQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=0jZOuGomjvqGYTjnoHRQnEezUC30S/yYktb2hSFP7WE=;
+ b=V0h0EnhVlcIvYhPeXwc/Jc/59Z0cnfrXwpwh4lUaPg8DDt/0FPeUHbP1nfC4OtCQNI
+ 2X2AzplLKL8loYeQi0EBDjVorVl7gNlwEdNUEq/F/kUOT7NH6iyy3jR0JUE+yM4+MttC
+ xft8rYLAPJthRbJgNqosN63TX8hprUUwonlAFiQyMH8H+uDyxuNRlPPRLEHuQou6xlkw
+ 3zw6vfKfIodYWWiKcD8U5Gz2HQREPDLYdj38dAxV7qATiZ+eEUroybeYe9Xylo5Yclrp
+ BV+DGD5EF5hhIwnnZZctF0aB8nUCKlPSTGN+aMT59MYi+w0WMDI+AISB5nlckmFX6wFK
+ 5WHw==
+X-Gm-Message-State: APjAAAXTorvZI3sbhqpO2NE0XOaspBNPkYWUc2lEVWR2asd22bXfBGpH
+ Lbl+h4u3gBpp7hpzrPrxoP4=
+X-Google-Smtp-Source: APXvYqz0Z2vhDlK0hJlhKifI62Nz2sFkvKxwoKaEwtT65rtUxiNhzfI4E7Wt5QqqMivW9WMKUI00cg==
+X-Received: by 2002:a5d:50cb:: with SMTP id f11mr2663367wrt.277.1566538127201; 
+ Thu, 22 Aug 2019 22:28:47 -0700 (PDT)
+Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
+ by smtp.gmail.com with ESMTPSA id w5sm2377262wmm.43.2019.08.22.22.28.46
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 22 Aug 2019 22:28:46 -0700 (PDT)
+Date: Thu, 22 Aug 2019 22:28:44 -0700
+From: Nathan Chancellor <natechancellor@gmail.com>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH v3] ARM: UNWINDER_FRAME_POINTER implementation for Clang
+Message-ID: <20190823052844.GA70417@archlinux-threadripper>
+References: <CAKwvOd=wKUhnWr4UhVvgn6NYh+=zQOpMmKG9d_zEqaKLa4_9FA@mail.gmail.com>
+ <20190822183022.130790-1-nhuck@google.com>
+ <CAKwvOdn6av8bX4xUtuuKeJQdiQU+_Ty2aM8wtjP9+teU0Gt6Yg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAKwvOdn6av8bX4xUtuuKeJQdiQU+_Ty2aM8wtjP9+teU0Gt6Yg@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_220012_358291_087EBF84 
-X-CRM114-Status: GOOD (  11.99  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190822_222851_183827_DE0531B3 
+X-CRM114-Status: GOOD (  18.63  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.40.44.118 listed in list.dnswl.org]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [216.40.44.118 listed in wl.mailspike.net]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (natechancellor[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,47 +101,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Tri Vo <trong@google.com>, LKML <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Miles Chen =?utf-8?B?KOmZs+awkeaouik=?= <miles.chen@mediatek.com>,
+ Nathan Huckleberry <nhuck@google.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-08-23 at 08:11 +0530, Kishon Vijay Abraham I wrote:
+On Thu, Aug 22, 2019 at 01:02:05PM -0700, 'Nick Desaulniers' via Clang Built Linux wrote:
+> On Thu, Aug 22, 2019 at 11:30 AM Nathan Huckleberry <nhuck@google.com> wrote:
+> >
+> > The stackframe setup when compiled with clang is different.
+> > Since the stack unwinder expects the gcc stackframe setup it
+> > fails to print backtraces. This patch adds support for the
+> > clang stackframe setup.
+> >
+> > Link: https://github.com/ClangBuiltLinux/linux/issues/35
+> > Cc: clang-built-linux@googlegroups.com
+> > Suggested-by: Tri Vo <trong@google.com>
+> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
+> > Tested-by: Nick Desaulniers <ndesaulniers@google.com>
 > 
-> On 22/07/19 12:53 PM, Neil Armstrong wrote:
-> > On 10/07/2019 07:04, Joe Perches wrote:
-> > > Arguments are supposed to be ordered high then low.
-> > > 
-> > > Signed-off-by: Joe Perches <joe@perches.com>
-> > > ---
-> > >  drivers/phy/amlogic/phy-meson-g12a-usb2.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > > 
-> > > diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb2.c b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> > > index 9065ffc85eb4..cd7eccab2649 100644
-> > > --- a/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> > > +++ b/drivers/phy/amlogic/phy-meson-g12a-usb2.c
-> > > @@ -66,7 +66,7 @@
-> > >  #define PHY_CTRL_R14						0x38
-> > >  	#define PHY_CTRL_R14_I_RDP_EN				BIT(0)
-> > >  	#define PHY_CTRL_R14_I_RPU_SW1_EN			BIT(1)
-> > > -	#define PHY_CTRL_R14_I_RPU_SW2_EN			GENMASK(2, 3)
-> > > +	#define PHY_CTRL_R14_I_RPU_SW2_EN			GENMASK(3, 2)
-> > >  	#define PHY_CTRL_R14_PG_RSTN				BIT(4)
-> > >  	#define PHY_CTRL_R14_I_C2L_DATA_16_8			BIT(5)
-> > >  	#define PHY_CTRL_R14_I_C2L_ASSERT_SINGLE_EN_ZERO	BIT(6)
-> > > 
-> > 
-> > Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-> 
-> Shouldn't this go to stable trees as well?
+> Great, thanks for following up on the suggestions from code review.
+> Since this is going to go up via the arm tree, which has its own
+> process, please add my:
+> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
+> to the commit message, then submit the patch to the maintainer's patch
+> tracking system:
+> https://www.armlinux.org.uk/developer/patches/info.php
+> (create a login, sign in, then visit:
+> https://www.armlinux.org.uk/developer/patches/add.php . I think the
+> correct thing is to put the first line of the commit in the summary
+> field, next/master as the kernel version (I applied/tested off of
+> -next), then the rest of the commit message body in the Patch Notes
+> field.  Make sure to attach the patch file.  Finally, it should appear
+> at https://www.armlinux.org.uk/developer/patches/section.php?section=0
+> I think within 24hrs).
 
-The macro define is unused so it doesn't have to go into stable.
+Also for the record, I came across this a couple of months ago, Catalin
+Marinas had a git config alias that could be used for sending one patch
+to the patches email address so that you don't have to muck around the
+web interface:
 
-> -Kishon
+https://lore.kernel.org/lkml/20190624144924.GE29120@arrakis.emea.arm.com/
 
+Web interface works fine but I prefer everything via the command line :)
+
+Cheers,
+Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
