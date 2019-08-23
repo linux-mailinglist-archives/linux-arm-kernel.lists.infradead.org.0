@@ -2,75 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EB3E9AA72
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:35:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A40DA9AA87
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:38:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=c4biGYlgbML7xtsOajo1J/mC/xeCRJf176nv/BKxLk8=; b=XKtOll3pe2EpUr
-	fQ5LrdCaTqmNwW3RAXeBBOryCZTgeamASPpgWK6qYEBqpOKTR+4PxGg2Cx9AbIQ9KuAoL5lJlnjdk
-	l8nBKUDQoth0EAKfsV2n14f5c3r9CqorNIBPovyQxOwB6J4mgkaIyQe3WTWSKY49dkouSQ2VMkhzv
-	TbQCZvV1TIXg1YGeVnDJYJqGGgQ/ciTOQy3Mxasa3BRF/9xNrCWg6asr6IXEKPaspYMseTyii/Ldb
-	MU6SMxCeetN5aX7HkubcMeIeGTuzILhP5Dwa8gsn7kRuz13GAa2ZGcO0jq33x3H8rfEJpLEOeRS3m
-	MMxIgFbaI96jk7jvX3Kg==;
+	List-Owner; bh=yPRDjhnSNU8QV/dB3DH1rxdBh2GjEPcOWAdjCJYvhSE=; b=qHztEP6clkddA5
+	XaqwzOoYR2lX1692Pzb5ebDSSPVTchBUjWYOdDH3uvhCOPpmOYbC0SdNImvHiIf0skeU2pSPOxSRc
+	gKAh5MMBM3eOaiR+U6eKmqLLIjn+5NU3acOgdn9MKr+3JliaCve0chmKefjCHpIY+wK9oTdWbNjEO
+	0FUpqGL6HCI25Bh0pKIH+LpW5fhhjv0lXASl3/NpUAcWwutCP1Zn9HnTTC1a6c3ilDHZ2r9xbcNXa
+	rDb3BOHRhACRp3qB4mVDw3huDT0gV+kuW02JmTIgakNHVfTwFwJoNR776I9Smz/wq7rAwy8V+g4pU
+	Omzm5Czn5Yps7LaqaXUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i152n-0005aW-HA; Fri, 23 Aug 2019 08:35:37 +0000
-Received: from mail-oi1-f196.google.com ([209.85.167.196])
+	id 1i155H-0006qZ-NV; Fri, 23 Aug 2019 08:38:11 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i152Z-0005a6-F9
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:35:24 +0000
-Received: by mail-oi1-f196.google.com with SMTP id h21so6450128oie.7
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 01:35:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=unheAuDdl4/wWkUa8UrhU8e3stxZhpx9YLspZKHtIg8=;
- b=Oy2uWm/Lz1JI+xnEs9NoS6sMrjdivZg6DuDhOFRLcG0GGm0AXUlQJ7bJPdTYzvjQhR
- wOsfjTqk2MK0qi88ZXB6zBlUy3VsAtFJFWNpzRFrwa94HcKIY26dS5x7ykWa2uuTsiU2
- kn91NPwLJntGFp97An5acFdkHhUq1VQM1QgvhrSrhi4oww2izyFenXxAZGOsAXZEM2HR
- V+a3GT8Z2SHnxWv2XZG9NaaAapE4kHbYlogIcUDqDIyVpVxmf4vrzroHvxt6Uq9js2fB
- XGce5F8nkiQUyax8bapZjPRUh7a6AF6MjO1T4rtKEqDRIGFI6JUsQ7Ygk2CJmGvF8DzC
- hTOw==
-X-Gm-Message-State: APjAAAVVIfqgTeMM79XNguRqAxMwJM7+3fkD3qO2c4fDP2EUKGobCqVE
- +aKx32psPFAiaxGnoqaE7JxPAmB/WicHLgSqvL4=
-X-Google-Smtp-Source: APXvYqwFzBTDR+im2MPWNkXPKyXvUEDkaDhE0QohZr8jCL8GxjrJrJalE5QzxQSvr+R8FmZddYAIDjND5STAhrCHJf8=
-X-Received: by 2002:aca:ea82:: with SMTP id i124mr2204127oih.153.1566549322721; 
- Fri, 23 Aug 2019 01:35:22 -0700 (PDT)
+ id 1i154Q-0006F7-AC
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:37:21 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 599C922CEC;
+ Fri, 23 Aug 2019 08:37:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566549437;
+ bh=niV7neuzYojJdHn0ExBeb264ApqQ6IcTCNkFCeK4d+o=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=lo91WDqMkrMHkBSpDl1bj3ZG5vGkzmlVPsKy2PaOuAhB8vy9ujjPpFGPC4MW4h1cU
+ FqIft2qhTQzKucvJeqF4/BmwPJnFE6ZTbwpi6UEqDCdTaOKZIBGoqdX2OJd+jeeDPo
+ mCmk/FFGHESA6BxwLZTCKFbsPfstWev8YNa/jqlg=
+Date: Fri, 23 Aug 2019 09:37:13 +0100
+From: Will Deacon <will@kernel.org>
+To: "Leizhen (ThunderTown)" <thunder.leizhen@huawei.com>
+Subject: Re: [PATCH v3 0/2] improve the concurrency of
+ arm_smmu_atc_inv_domain()
+Message-ID: <20190823083712.ggzmw3rcodwyhmlf@willie-the-truck>
+References: <20190823024551.24448-1-thunder.leizhen@huawei.com>
+ <20190823075026.pwlx33e4crh3m6tn@willie-the-truck>
+ <7e28e1ce-2cc3-3c7f-45c7-e7de334c6976@huawei.com>
 MIME-Version: 1.0
-References: <20190821124602.29317-1-geert+renesas@glider.be>
- <CAMuHMdWj7eCa9URtztqth=fYMn2uTHWDS3WAKnRvxDfMjjBH_A@mail.gmail.com>
-In-Reply-To: <CAMuHMdWj7eCa9URtztqth=fYMn2uTHWDS3WAKnRvxDfMjjBH_A@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Fri, 23 Aug 2019 10:35:11 +0200
-Message-ID: <CAMuHMdX6Z9oe3kbkNr00dkfckxBTForrEnOZLWSBE-8EFGtFAw@mail.gmail.com>
-Subject: Re: [PATCH 0/3] soc: renesas: ARM errata updates
-To: Geert Uytterhoeven <geert+renesas@glider.be>
+Content-Disposition: inline
+In-Reply-To: <7e28e1ce-2cc3-3c7f-45c7-e7de334c6976@huawei.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_013523_511060_4829FE07 
-X-CRM114-Status: GOOD (  15.63  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190823_013718_439063_D0FBC729 
+X-CRM114-Status: GOOD (  15.33  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.196 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.196 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,50 +79,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ Joerg Roedel <joro@8bytes.org>, John Garry <john.garry@huawei.com>,
+ iommu <iommu@lists.linux-foundation.org>, Robin Murphy <robin.murphy@arm.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 9:54 AM Geert Uytterhoeven <geert@linux-m68k.org> wrote:
-> On Wed, Aug 21, 2019 at 2:46 PM Geert Uytterhoeven
-> <geert+renesas@glider.be> wrote:
-> > This patch series updates the handling of ARM errata for affected
-> > Renesas SoCs.
-> >
-> > The first patch enables the new ARM_ERRATA_814220 for Cortex-A7, using
-> > Kconfig logic.
->
-> Queuing the first one in renesas-devel for v5.4.
->
-> > The second patch moves enablement of ARM_ERRATA_754322 for Cortex-A9
-> > from shmobile_defconfig to Kconfig logic, to make sure it's always
-> > enabled when needed.
-> > The third patch disables PL310_ERRATA_588369, as it doesn't affect any
-> > Renesas SoCs.
-> >
-> > The last patch is marked RFC, as I don't know the revision of PL310 on
-> > EMMA Mobile EV2, and cannot test it on EMEV2.
->
-> The other 2 are postponed.
+On Fri, Aug 23, 2019 at 04:06:52PM +0800, Leizhen (ThunderTown) wrote:
+> 
+> 
+> On 2019/8/23 15:50, Will Deacon wrote:
+> > On Fri, Aug 23, 2019 at 10:45:49AM +0800, Zhen Lei wrote:
+> >> v2 --> v3:
+> >> As Will Deacon's suggestion, I changed the lock type of
+> >> arm_smmu_domain.devices_lock from spinlock_t to rwlock_t, and I saw that the
+> >> performance is all right. And further use nr_ats_masters to quickly check have
+> >> no obvious effect, so I drop it.
+> > 
+> > :/
+> > 
+> > I already sent two versions of a series fixing this without any locking at
+> > all on the ->unmap() path, and you were on cc. I've also queued that stuff
+> > up.
+> > 
+> > Did you not receive my patches?
+> Sorry, my message filter setting is a bit wrong, must contains
+> "linux-kernel@vger.kernel.org", I have corrected it.
 
-Given it untangles dependencies, I'm also queuing the Kconfig part of patch 2.
-The defconfig update will happen automatically during the refresh
-after v5.4-rc1.
+Ha, sounds like the opposite of my email filter ;)
 
-Gr{oetje,eeting}s,
+> > v1: https://lists.linuxfoundation.org/pipermail/iommu/2019-August/038306.html
+> > v2: https://lists.linuxfoundation.org/pipermail/iommu/2019-August/038374.html
+> OK, I will test it when it's my turn to use the board.
 
-                        Geert
+Thanks, although I plan to send it to Joerg today so any changes will need
+to go on top. Does your testing involve ATS, or just non-ATS devices? I've
+tested the latter locally, although I haven't looked at the performance
+since most of the patches are trying to fix the enable/disable ordering.
 
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+Thanks,
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
