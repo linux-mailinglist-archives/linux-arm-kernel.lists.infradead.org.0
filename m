@@ -2,86 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B9B39A71C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 07:29:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7B0D09A786
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 08:27:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xdp034EgXBM1fU4ppibGx/JUZrGZRAgx33mPu5mITzc=; b=bfkfJnHwiPSu4W
-	CwINwmp3YZLPe2g9GJAkCtqj4bdC+Q7yYarjX9CmvmkAUNSAfbszUsqNwF5Q5UWWk0KWmms6Yq8KB
-	iRhB/OYNidhQRw2AL6NYdUmGxHc+0aRYbcuTvQ1+RZ6Kp7t72cP+PzmauZZ3GqNCRUaOx2faOtUkz
-	AopM9hjHI1H1NkwF7Bz9CXUodrBRlcfwbs5rooSfO8HjRFiSPAzoG4qzbAno2sZ3pSyRlgNICr4EP
-	jcHD2+ehCgilYLZnmAon6niLWTKnyPoLY4dao3SVV1xfN6koI8qPizWsnlky0FN38Abs7QalJsgDm
-	G0PgGkSlydxKau7TuRvQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=d8UljWRN/fIk1gl1hQqze4S60eQe8i9pPkhycx3qJVQ=; b=VSjuzCwVS4WNRL
+	+/kcmrwJfZvTl23Wlm8paNKyAjmcs8rgzAxCmyA4C6HV1JWrFJOamVsv6Rz3mLGHSaqn+NNT41/KN
+	s/ctFw6kLPDXtD1By9jPLoEsVd0REiOe+mxptf4qeLXVPN7N7tOEjn4LVpCRnWJTEFKlZj3AWFiGm
+	/ZLFp3Y6KRipO36enzWBo+16iPNhyBnlG0Pjm4gEa2752nEGfk6zmcQytbQGHWNGNN5qJelgMbQnc
+	V0RVD698A/ijGwpnt7ck81370AJYjMUk0g6R7hFuyDrUFx69e3YX/2MjrUR4v2pt72y+HHHlIIWyN
+	Gwd5XuL/0duhlTIl7h4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i128X-00058g-9b; Fri, 23 Aug 2019 05:29:21 +0000
-Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
+	id 1i132u-0002Bv-Ci; Fri, 23 Aug 2019 06:27:36 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1283-00057w-3n
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 05:28:52 +0000
-Received: by mail-wr1-x441.google.com with SMTP id z11so7428732wrt.4
+ id 1i132c-0002BJ-Ky
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 06:27:20 +0000
+Received: by mail-pl1-x642.google.com with SMTP id f19so4988418plr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 22:28:48 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=0jZOuGomjvqGYTjnoHRQnEezUC30S/yYktb2hSFP7WE=;
- b=ZsZhZA5toWhhCMR8ORZnkeX18nS/RQ2ih4MGR5PbRXW4fGxvgYg41L5YkbhqfuMXAg
- mkAKeh3DAtZHZr2Hy8m1ZZEyMd0RYkpIVNOinUsUm9LSyeaZL5xjE5mDmFb6hBOgPoP4
- x3XX/VTD9ZCimPxO3iHOWmMSWKM9ozmfQpa5ODTu03PSPfBQAxVrqHRR4i7tCTvrEuvD
- 8S4CM2B8GSezAVMEVwuJrKF8O2JJxynlNW2q3whLIqL8iKIymONrlRfa354T15nmpb9t
- YQQLUdqtjyw97shJg5StkamMN1OCVetEtqsQEjw5m9+DxyojtsUay/oeJ2Pz6F1jVb2r
- 84zQ==
+ Thu, 22 Aug 2019 23:27:17 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GhjRfjhMwINY908SCrXL1aDBLnxIvIs4Y71zc0rRgRU=;
+ b=dh+RaFUCw0uw79iT30CYn2FWwnL24m0shKCCYpFZVygUMcYvPN83NN7ROJNqa3sh3P
+ 4CvH9sJoWVNk5/JHKRogK6iczeRLwh2qeDj1pX8wfj5lYpWuQcsVx1/PB6hyw20ySi1r
+ QeuQixRWgAV0BmcQMikTTokcwuFWkKCO2HDRM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=0jZOuGomjvqGYTjnoHRQnEezUC30S/yYktb2hSFP7WE=;
- b=V0h0EnhVlcIvYhPeXwc/Jc/59Z0cnfrXwpwh4lUaPg8DDt/0FPeUHbP1nfC4OtCQNI
- 2X2AzplLKL8loYeQi0EBDjVorVl7gNlwEdNUEq/F/kUOT7NH6iyy3jR0JUE+yM4+MttC
- xft8rYLAPJthRbJgNqosN63TX8hprUUwonlAFiQyMH8H+uDyxuNRlPPRLEHuQou6xlkw
- 3zw6vfKfIodYWWiKcD8U5Gz2HQREPDLYdj38dAxV7qATiZ+eEUroybeYe9Xylo5Yclrp
- BV+DGD5EF5hhIwnnZZctF0aB8nUCKlPSTGN+aMT59MYi+w0WMDI+AISB5nlckmFX6wFK
- 5WHw==
-X-Gm-Message-State: APjAAAXTorvZI3sbhqpO2NE0XOaspBNPkYWUc2lEVWR2asd22bXfBGpH
- Lbl+h4u3gBpp7hpzrPrxoP4=
-X-Google-Smtp-Source: APXvYqz0Z2vhDlK0hJlhKifI62Nz2sFkvKxwoKaEwtT65rtUxiNhzfI4E7Wt5QqqMivW9WMKUI00cg==
-X-Received: by 2002:a5d:50cb:: with SMTP id f11mr2663367wrt.277.1566538127201; 
- Thu, 22 Aug 2019 22:28:47 -0700 (PDT)
-Received: from archlinux-threadripper ([2a01:4f8:222:2f1b::2])
- by smtp.gmail.com with ESMTPSA id w5sm2377262wmm.43.2019.08.22.22.28.46
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 22 Aug 2019 22:28:46 -0700 (PDT)
-Date: Thu, 22 Aug 2019 22:28:44 -0700
-From: Nathan Chancellor <natechancellor@gmail.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v3] ARM: UNWINDER_FRAME_POINTER implementation for Clang
-Message-ID: <20190823052844.GA70417@archlinux-threadripper>
-References: <CAKwvOd=wKUhnWr4UhVvgn6NYh+=zQOpMmKG9d_zEqaKLa4_9FA@mail.gmail.com>
- <20190822183022.130790-1-nhuck@google.com>
- <CAKwvOdn6av8bX4xUtuuKeJQdiQU+_Ty2aM8wtjP9+teU0Gt6Yg@mail.gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=GhjRfjhMwINY908SCrXL1aDBLnxIvIs4Y71zc0rRgRU=;
+ b=rYGa0jmJYmNCN+UsCro0tRr9MCXYJnqyEroCIqkK2ktJ8OGdvOzEObJwVxPS196pWt
+ BXPkoetwUPtJvcXPtR6lZ7aD8kV7XBnhMj/EnQuUE0Kv/0VffDx2rvY6fEoi3qTS16n+
+ bTc7p2+UOGbZ62TYsBf6RUr0H2mkkHATeK8+gECPfBsZc3xLH4P4f3mQPBwa/NpgeLWC
+ UKXuKJU3uivmqELOJg0si37SBuAGDSr05Usj3EWmw78/4QklWE4yS4nx3/5tIYpT8KXJ
+ e8NHZdjRuxGqYFM/M/tRjTNNsHcMPKtSVEWv50pt6SWmFJVOwWMnikj7gq7/pT8E232v
+ TgjA==
+X-Gm-Message-State: APjAAAU/nN0w3r40JLkPHInhWSUBKsqo8APshCjvJtUJgNV3KnmByrvz
+ zrRYQfzE1IctDbV7xwSPnDltDwIAEOs=
+X-Google-Smtp-Source: APXvYqxsGxrRqSSIoxb1SULucqZZIslLOBDGEU9/wOXaFvOn3E0EpM+vtjgQYhxackVeD+CPnWS7YQ==
+X-Received: by 2002:a17:902:9b8f:: with SMTP id
+ y15mr3055556plp.194.1566541636820; 
+ Thu, 22 Aug 2019 23:27:16 -0700 (PDT)
+Received: from hsinyi-z840.tpe.corp.google.com
+ ([2401:fa00:1:10:b852:bd51:9305:4261])
+ by smtp.gmail.com with ESMTPSA id q13sm2139671pfl.124.2019.08.22.23.27.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Thu, 22 Aug 2019 23:27:15 -0700 (PDT)
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+To: linux-arm-kernel@lists.infradead.org, "Theodore Y . Ts'o" <tytso@mit.edu>
+Subject: [PATCH v10 0/3] add support for rng-seed
+Date: Fri, 23 Aug 2019 14:24:49 +0800
+Message-Id: <20190823062452.127528-1-hsinyi@chromium.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdn6av8bX4xUtuuKeJQdiQU+_Ty2aM8wtjP9+teU0Gt6Yg@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_222851_183827_DE0531B3 
-X-CRM114-Status: GOOD (  18.63  )
+X-CRM114-CacheID: sfid-20190822_232719_028283_2C11E03C 
+X-CRM114-Status: GOOD (  13.28  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (natechancellor[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -90,6 +82,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,58 +94,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tri Vo <trong@google.com>, LKML <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Miles Chen =?utf-8?B?KOmZs+awkeaouik=?= <miles.chen@mediatek.com>,
- Nathan Huckleberry <nhuck@google.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mukesh Ojha <mojha@codeaurora.org>,
+ Grzegorz Halat <ghalat@redhat.com>, "H . Peter Anvin" <hpa@zytor.com>,
+ Guenter Roeck <groeck@chromium.org>, Will Deacon <will@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Rob Herring <robh@kernel.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>, Yury Norov <ynorov@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Aaro Koskinen <aaro.koskinen@nokia.com>, Ingo Molnar <mingo@redhat.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Waiman Long <longman@redhat.com>,
+ "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>, Wei Li <liwei391@huawei.com>,
+ Alexey Dobriyan <adobriyan@gmail.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Len Brown <len.brown@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Rik van Riel <riel@surriel.com>,
+ Stephen Boyd <swboyd@chromium.org>, Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Mike Rapoport <rppt@linux.vnet.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Marcelo Tosatti <mtosatti@redhat.com>, linux-kernel@vger.kernel.org,
+ Armijn Hemel <armijn@tjaldur.nl>, Jiri Kosina <jkosina@suse.cz>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Tim Chen <tim.c.chen@linux.intel.com>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 01:02:05PM -0700, 'Nick Desaulniers' via Clang Built Linux wrote:
-> On Thu, Aug 22, 2019 at 11:30 AM Nathan Huckleberry <nhuck@google.com> wrote:
-> >
-> > The stackframe setup when compiled with clang is different.
-> > Since the stack unwinder expects the gcc stackframe setup it
-> > fails to print backtraces. This patch adds support for the
-> > clang stackframe setup.
-> >
-> > Link: https://github.com/ClangBuiltLinux/linux/issues/35
-> > Cc: clang-built-linux@googlegroups.com
-> > Suggested-by: Tri Vo <trong@google.com>
-> > Signed-off-by: Nathan Huckleberry <nhuck@google.com>
-> > Tested-by: Nick Desaulniers <ndesaulniers@google.com>
-> 
-> Great, thanks for following up on the suggestions from code review.
-> Since this is going to go up via the arm tree, which has its own
-> process, please add my:
-> Reviewed-by: Nick Desaulniers <ndesaulniers@google.com>
-> to the commit message, then submit the patch to the maintainer's patch
-> tracking system:
-> https://www.armlinux.org.uk/developer/patches/info.php
-> (create a login, sign in, then visit:
-> https://www.armlinux.org.uk/developer/patches/add.php . I think the
-> correct thing is to put the first line of the commit in the summary
-> field, next/master as the kernel version (I applied/tested off of
-> -next), then the rest of the commit message body in the Patch Notes
-> field.  Make sure to attach the patch file.  Finally, it should appear
-> at https://www.armlinux.org.uk/developer/patches/section.php?section=0
-> I think within 24hrs).
+Introducing a chosen node, rng-seed, which is an entropy that can be
+passed to kernel called very early to increase initial device
+randomness. This can be used for adding sufficient initial entropy
+for stack canary. Especially architectures that lack per-stack canary.
 
-Also for the record, I came across this a couple of months ago, Catalin
-Marinas had a git config alias that could be used for sending one patch
-to the patches email address so that you don't have to muck around the
-web interface:
+Hsin-Yi Wang (3):
+  arm64: map FDT as RW for early_init_dt_scan()
+  fdt: add support for rng-seed
+  arm64: kexec_file: add rng-seed support
 
-https://lore.kernel.org/lkml/20190624144924.GE29120@arrakis.emea.arm.com/
+ arch/arm64/include/asm/mmu.h           |  2 +-
+ arch/arm64/kernel/kaslr.c              |  5 +----
+ arch/arm64/kernel/machine_kexec_file.c | 18 +++++++++++++++++-
+ arch/arm64/kernel/setup.c              |  9 ++++++++-
+ arch/arm64/mm/mmu.c                    | 15 +--------------
+ drivers/char/Kconfig                   |  9 +++++++++
+ drivers/char/random.c                  | 14 ++++++++++++++
+ drivers/of/fdt.c                       | 14 ++++++++++++--
+ include/linux/random.h                 |  1 +
+ 9 files changed, 64 insertions(+), 23 deletions(-)
 
-Web interface works fine but I prefer everything via the command line :)
+-- 
+2.20.1
 
-Cheers,
-Nathan
 
 _______________________________________________
 linux-arm-kernel mailing list
