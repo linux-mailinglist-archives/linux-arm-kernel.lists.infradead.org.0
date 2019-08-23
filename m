@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 708769A8E0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:34:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD4639A902
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cu7I1ybAiZhOCXqNqX0aFpU4JEEBPEbiEdTBBRantwM=; b=gHOB/52UWOTGfq
-	qf0l0xy1t906XW0sf6M0bB1Nwz+ZvFens3/65GVBxY3+Zug5m7TQmMd1IaLLYKrsMm76jO5WxdBos
-	KR67rVK3sMupO9aRiVdk5GLLudGf1AIDzyKuF32H/FWpPWiewz4/Gk/ryipThcr0z9AOyqPXr99Y6
-	NQ1OnI0OqqXBvjiAKlYu/WvVG0f82sXHlX+ZP9a5zaKp6DxT6vXzFKh4qvFO+ULgpkZ8GSAUcvBcb
-	nuMUnIPhUjaysAOVBVqOUQoNgbf9z3+MvM7nFon0nSvXT4ydqTV7OacZcLDNCor0zVzwKShEfI0CM
-	ab6N2mfT2SUTSsD7h3Dw==;
+	List-Owner; bh=eWQSYN0+CQWe0KDCZRNU4tqA+yGXOUzMUM5uTb0A9bk=; b=iJEpCTZpkIiPNI
+	pfhg/qNbGnT8sbczOwD/eDq/uoduE2u1OjYj44/1Cn1qNoeNFSo/72VSD9IB3jbCNz5TTbKFe10UO
+	3TpTC3UO/LuA7G4YVFOSPwhNErOk5FplSt+X3+S+572dE6zEecYWVTtXoGbxMjQGMMXLeNMP17O0B
+	9KF67q5uqnWojV/EZYk1efvMU+NVjKNjG1lWvqgOdH3fuFjVFapetx3B1vSWhkWeDazWO7IfJr4HP
+	Rsh9PXjW5aAwCiBJSfYfetYPhmqztQtHBUIpXdLFceGOOfODWI/wQkJg5kv8XydaB6Z0dueqxJxGd
+	nCyT5Aiu6BzEcl8Tl61g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1459-0004Cz-NQ; Fri, 23 Aug 2019 07:33:59 +0000
-Received: from relay5-d.mail.gandi.net ([217.70.183.197])
+	id 1i1492-0006Kl-Qd; Fri, 23 Aug 2019 07:38:00 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i144v-0003qf-Gt
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:33:47 +0000
-X-Originating-IP: 86.250.200.211
-Received: from xps13 (lfbn-1-17395-211.w86-250.abo.wanadoo.fr [86.250.200.211])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay5-d.mail.gandi.net (Postfix) with ESMTPSA id CE0A61C000B;
- Fri, 23 Aug 2019 07:33:25 +0000 (UTC)
-Date: Fri, 23 Aug 2019 09:33:24 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: Kishon Vijay Abraham I <kishon@ti.com>
-Subject: Re: [PATCH v3 00/19] Enhance CP110 COMPHY support
-Message-ID: <20190823093324.2d7da1f4@xps13>
-In-Reply-To: <4e1c4d27-3676-5efa-1126-8149a8635eb5@ti.com>
-References: <20190731122126.3049-1-miquel.raynal@bootlin.com>
- <4e1c4d27-3676-5efa-1126-8149a8635eb5@ti.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1i148n-0006K4-Q9
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:37:47 +0000
+Received: by mail-lj1-x243.google.com with SMTP id x4so7958153ljj.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 00:37:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZZWCM1NaKkWZfHYdamHWGDCsp0daigJ/P9DBMZ7/h0o=;
+ b=gnV+a8SbxnF8E7z2Tj14yFsvjUuIGqSsViiLQ/zAYEOipY0vHqYoB2FX2Q9pBj7Byn
+ a8uth2qvzy+VzbI5mKAiM0vjBaR9exB16/ASG5Ddhfv8myEUUBaV67NAcnESCw6XGEYK
+ oFsRP3hNBTbtXU7DMZdHowrtfY6DkD9y27XIUoOGoQbKnSVxe0iRViKWToVDqVCiNSrD
+ 1EC2EsLbxekU9X1hKemCBp9Upb3BVVc6Fa5SwH7ARexZmFgondpi+/1u8PgmTannFBIy
+ LDqliBZWjE2ewubCbfQmU9vE2GMbIRij4CGeVQ544MW/Zc5SZtl2+01ffnjVd/XT4foa
+ kamw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZZWCM1NaKkWZfHYdamHWGDCsp0daigJ/P9DBMZ7/h0o=;
+ b=pPwx5HWaPqR9a7BsVbHPc5kTs/6cXaT9Oe6BIMxV0l3lMqN9uNCKc04Sk+EE1xJuC2
+ MCZvDp7Jxhdd7+ilmEXHiUb7uPY8EAdq3ky9tCVm9b07N2hHEL+1g1Dl0ueQ+bEhj4Vc
+ gPNNqtAXT9GE3F7B2phgUCVMs3NQag/X8TnAzR7E5qDA3udWXcJGmVlN6+p1AcnF2xJ6
+ PIjhBQAF3dCMqcTWRrlcdb6asVvpEVTr5N2ugAA2it/P3iCjSCzXxwIJfyHJZwiYX2CB
+ 7bHExisxys9nkX3QaWIS/kDHW72OikQ07DpLOMFyvdtl0j6YyOWPFIpEGvai1b5JjUnU
+ XEKA==
+X-Gm-Message-State: APjAAAX4RM7ejskFlfmDnYlsoYzHzrJSg0B1mif574FhgnN1+1cxKq6A
+ rYnPBpPeSHkrbTcxNYEA1XCod4Zw4wHA7J3lCE0POQ==
+X-Google-Smtp-Source: APXvYqwoTIF/Emnt9eBfMVVaR3D0yZcfntQldBQ8nXDMcgI62M2HujpKdWtwI9F1v3Vnmg1r5+YyulnqcRsz+8EBjBU=
+X-Received: by 2002:a2e:80da:: with SMTP id r26mr1930950ljg.62.1566545863148; 
+ Fri, 23 Aug 2019 00:37:43 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190808101628.36782-1-hui.song_1@nxp.com>
+In-Reply-To: <20190808101628.36782-1-hui.song_1@nxp.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 23 Aug 2019 09:37:31 +0200
+Message-ID: <CACRpkdbYEHQ=sYohxEC99T41qUBHYgBCYjM3MaAnD9PmY4YCyA@mail.gmail.com>
+Subject: Re: [PATCH v1 1/3] gpio: mpc8xxx: add ls1088a platform gpio node DT
+ binding description
+To: Hui Song <hui.song_1@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_003345_714076_66AA3054 
-X-CRM114-Status: GOOD (  18.28  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190823_003745_861910_189FFB11 
+X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.197 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,48 +92,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Jason Cooper <jason@lakedaemon.net>,
- devicetree@vger.kernel.org, Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Russell King <linux@armlinux.org.uk>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- linux-arm-kernel@lists.infradead.org,
- Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Li Yang <leoyang.li@nxp.com>, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgS2lzaG9uLAoKS2lzaG9uIFZpamF5IEFicmFoYW0gSSA8a2lzaG9uQHRpLmNvbT4gd3JvdGUg
-b24gRnJpLCAyMyBBdWcgMjAxOQowODo0NjoxNCArMDUzMDoKCj4gT24gMzEvMDcvMTkgNTo1MSBQ
-TSwgTWlxdWVsIFJheW5hbCB3cm90ZToKPiA+IEFybWFkYSBDUDExMCBoYXZlIGEgQ09NUEhZIElQ
-IHdoaWNoIHN1cHBvcnRzIGNvbmZpZ3VyaW5nIFNFUkRFUyBsYW5lcwo+ID4gaW4gb25lIG1vZGUs
-IGVpdGhlcjoKPiA+IC0gU0FUQQo+ID4gLSBVU0IzIGhvc3QKPiA+IC0gUENJZSAoc2V2ZXJhbCB3
-aWR0aCkKPiA+IC0gRXRoZXJuZXQgKHNldmVyYWwgbW9kZXMpCj4gPiAKPiA+IEFzIG9mIHRvZGF5
-LCBvbmx5IGEgZmV3IEV0aGVybmV0IG1vZGVzIGFyZSBzdXBwb3J0ZWQgYW5kIHRoZSBjb2RlIGlz
-Cj4gPiBlbWJlZGRlZCBpbiB0aGUgTGludXggZHJpdmVyLiBBIG1vcmUgY29tcGxldGUgQ09NUEhZ
-IGRyaXZlciB0aGF0IGNhbgo+ID4gYmUgdXNlZCBieSBib3RoIExpbnV4IGFuZCBVLUJvb3QgaXMg
-ZW1iZWRkZWQgaW4gdGhlIGZpcm13YXJlIGFuZCBjYW4KPiA+IGJlIHJ1biB0aHJvdWdoIFNNQyBj
-YWxscy4KPiA+IAo+ID4gRmlyc3QgdGhlIGN1cnJlbnQgQ09NUEhZIGRyaXZlciBpcyB1cGRhdGVk
-IHRvIHVzZSBTTUMgY2FsbHMgYnV0Cj4gPiBmYWxsYmFja3MgdG8gdGhlIGFscmVhZHkgZXhpc3Rp
-bmcgZnVuY3Rpb25zIGlmIHRoZSBmaXJtd2FyZSBpcyBub3QKPiA+IHVwLXRvLWRhdGUuIFRoZW4s
-IG1vcmUgRXRoZXJuZXQgbW9kZXMgYXJlIGFkZGVkICh0aHJvdWdoIFNNQyBjYWxscwo+ID4gb25s
-eSkuIFNBVEEsIFVTQjNIIGFuZCBQQ0llIG1vZGVzIGFyZSBhbHNvIHN1cHBvcnRlZCBvbmUgYnkg
-b25lLgo+ID4gCj4gPiBUaGVyZSBpcyBvbmUgc3VidGxlIGRpZmZlcmVuY2Ugd2l0aCB0aGUgUENJ
-ZSBmdW5jdGlvbnM6IHdlIG11c3QgdGVsbAo+ID4gdGhlIGZpcm13YXJlIHRoZSBudW1iZXIgb2Yg
-bGFuZXMgdG8gY29uZmlndXJlICh4MSwgeDIgb3IgeDQpLiBUaGlzCj4gPiBwYXJhbWV0ZXIgZGVw
-ZW5kcyBvbiB0aGUgbnVtYmVyIG9mIGVudHJpZXMgaW4gdGhlICdwaHlzJyBwcm9wZXJ0eQo+ID4g
-ZGVzY3JpYmluZyB0aGUgUENJZSBQSFkuIFdlIHVzZSB0aGUgInN1Ym1vZGUiIHBhcmFtZXRlciBv
-ZiB0aGUgZ2VuZXJpYwo+ID4gUEhZIEFQSSB0byBjYXJyeSB0aGlzIHZhbHVlLiBUaGUgQXJtYWRh
-LThrIFBDSWUgZHJpdmVyIGhhcyBiZWVuCj4gPiB1cGRhdGVkIHRvIGZvbGxvdyB0aGlzIGlkZWEg
-YW5kIHRoaXMgY2hhbmdlIGhhcyBiZWVuIG1lcmdlZCBhbHJlYWR5Ogo+ID4gaHR0cDovL3BhdGNo
-d29yay5vemxhYnMub3JnL3BhdGNoLzEwNzI3NjMvICAKPiAKPiBTb21lIG9mIHRoZSBwYXRjaGVz
-IGFyZSBub3QgYXBwbHlpbmcgY2xlYW5seS4gQ2FyZSB0byByZXNlbmQgdGhlIHNlcmllcyBhZnRl
-cgo+IHJlYmFzaW5nIHRvIHBoeSAtbmV4dD8KClN1cmUsIEknbGwgZG8gaXQgYXNhcC4KClRoYW5r
-cyEKTWlxdcOobAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
-aW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZv
-L2xpbnV4LWFybS1rZXJuZWwK
+On Thu, Aug 8, 2019 at 12:26 PM Hui Song <hui.song_1@nxp.com> wrote:
+
+> From: Song Hui <hui.song_1@nxp.com>
+>
+> ls1088a and ls1028a platform share common gpio node.
+>
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
+
+Patch applied with Rob's ACK!
+
+Yours,
+Linus Walleij
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
