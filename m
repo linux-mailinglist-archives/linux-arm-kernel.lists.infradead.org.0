@@ -2,85 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E3FB9AA37
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:26:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8CC029AA53
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:28:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=q+4fklOaPTgZaZLcFwLNdxsTHUmVX9ptDruj5BHprb0=; b=Qzn6rFA8+WH2nN
-	7wVSvhZNtnvegdM/XNIfiKpmzyc5PZ6lXlUi/NM6p9O9as4H9mWqyO2AkXxrrIXNPE4si3wLHNyDa
-	6qBskysWpNX/uJzLROyGOmdR4gWN/je2iWc68k4Qe9u2/TdQALw4eGUJ6TAdHLeVuoh2DcM8v1wEA
-	SBzP2k7CV1clzFgWPip23ZY5uBxfN2eIWEOMkt7pduC8JiaVoIiSNJf5jjRJcY1H5AQBKALNS/abb
-	aHyC01QNTlUez0nvdYrWznh5aspXZZspesl3LrHgAkUiMYTALFZ1Vgt1doj5lOTD/qhdfwxxl5nSP
-	FwekYGFcH2XKHvMuqsZQ==;
+	List-Owner; bh=BltjdmW6kSa1mLZTuV0n0qwtZLG01wsEkrce6aK5DQs=; b=PFs2wm/d34TBkd
+	TyUUfbkzp27TGxb+WTdUuU5/cGQO9SFs7Pc5cg6zUEIcfCabWr/58aHQ7x6/097oE4ZXy8JHDhhjp
+	POcoke+YHdP5xLkTt9aUAxaJn31HT8ycVmGtV/j5QJYJ1SKpieqRYsC6QH3GmPQ8oU/HZf5IpePkg
+	SyhhDPaWVBoGo2YCqwKcsiQcsB+UvXmIaQZu5nRPQAziqUByFwsKtJc0Pd2Ft1Wl4Rv1djMOwuEBi
+	lky9VVQHuC4AUPzs0NNPi3Ta/KRPUsMDdjHOj5RTK+2uN3+FR24ROqsVldw6NYeChwwFVmwojVI2j
+	D4XXd86CRK/r7aBy9k7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14u6-0008Ti-JK; Fri, 23 Aug 2019 08:26:38 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
+	id 1i14wI-0000qB-OC; Fri, 23 Aug 2019 08:28:54 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i14tu-0008TQ-RP
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:26:28 +0000
-Received: by mail-lj1-x241.google.com with SMTP id m24so8060341ljg.8
+ id 1i14w3-0000pS-Il
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:28:40 +0000
+Received: by mail-ot1-f67.google.com with SMTP id b1so8055353otp.6
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 01:26:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jAjMP4xmuyulOMV5YHvxWXlnTiDG+r9Si9f0jb+2WDc=;
- b=wnqmvTiQ4ZhkeUMMGa8l+1/vKLWR57cpy51RNA8D86BswIXgpaC66WZNEnz+gaAtEd
- yaF5lSTARq14IcDa5Pb7Im1swP5IFnrdkL+zBM8oXP3mSJ0sjyWSOc5tP5EUjnjIUqvE
- yXIIsrDNXL/poNk6ChLnNmVn3TZxuhlh/UgCm/+Z0A5ASVSF9fyBygW85hnKhlRIOy7L
- yDSegJk+yU5y+DmcU3onPXtkgt0fieVYFJMNJyBTNSKmhjVeghLmDd1/CPqCOWIlbXnI
- VYie58F4+bV8/Alw7sqLSe/Bhl2Zrg08cX9CK0YNfr1hMdI6fYIJWa3/6HSN4vqfu6He
- pkZQ==
+ Fri, 23 Aug 2019 01:28:39 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jAjMP4xmuyulOMV5YHvxWXlnTiDG+r9Si9f0jb+2WDc=;
- b=FsoOKQ42/+s+GtnlC24yDGALXwn82G9GlyWGPwyg5J4GruKPMYOpEA0K2cGsRFpobe
- pwZ7xTm61kJZrgFEWf6kaD1hf0mMppq2Rz5+Ua3Hn8aEHyDfP3LsBnjiz9ppVp80Damk
- DaXlPdp35yymA+hE1Gl1cCoOvd5WJeqvhj7ojQNZlF6yZVIuuxx13Q//qaKme+ZPGYL1
- L5fPv0D4q84Mozu3SGTWmF8LylPWtNkye8i61KxWqjVg4g2MMBlPtaRxokQP0dAunIH+
- l3lCD6rQ6Gv6lFEGYabcz7wYMwHwpFm1DUrMBZD6R8KqDEZW/AsI44pVQxNTbz+uzsPE
- b1kA==
-X-Gm-Message-State: APjAAAUySvxc4qcNBIBVHKPxTIMwdGBDoCYKuQmatOqcCtF8fnyyDZeb
- yMUhoUx4/Q2h6gx8PQfD+VkcqQJI4W+RawWiFNBvJw==
-X-Google-Smtp-Source: APXvYqyhTMDzE6GdzWuXk5RzTjGHl0wxLPmcdtUjxeFGV4fqNcsMAPshNok8qNzvW4m2O1CDv3ny2IJQx10PdbaavvE=
-X-Received: by 2002:a2e:b174:: with SMTP id a20mr2217761ljm.108.1566548785065; 
- Fri, 23 Aug 2019 01:26:25 -0700 (PDT)
+ bh=I01Rd3eaxSJ78FG7Sav/xOd85SsWSsEzvMhKftmhJLE=;
+ b=LE+XnW7TZwy5QS75xiNafjEk58cB/ePr3egwxOy0NF/aXWO/pqjzSJu2agt+vf76++
+ rYfpoaf/DvTGHnEX9seANxMA0MiU8/Mc9LpLTo8A70XNcRZPSbejSbZp47UT3HHe858X
+ k3wiufaNTPeBG7uuN+SGV4vN6qoviE2zaCpBkpKSJqbv7mV/cgapeImsKpJrQK0Z3aJO
+ xXMABLdXQRSTlREJLL1mXfvt0csAQMSq740WmeXLK9LFlbKTTDD7vdTIiqoZUSYvnFkt
+ 3FQtWUKLHDTcJewa271rYvl3v8TBRyPpJaN1/b0ZTwZyJlkNdPS5WIgYNAIen6rq9nZY
+ j0YQ==
+X-Gm-Message-State: APjAAAUH0pF/nO9hHaEcYEMMhBkPxZcvAot53Wvfu/W1cKUUApxOBhUb
+ BDtX51d+Ekhp8gVW4KHVG4R+84sn1tSQ/c1boz4=
+X-Google-Smtp-Source: APXvYqyqdAxGVm2yMUytfNc9WX6a5aL/7hEQvriEj+yfmj8WyLMbwK0No6Navxiw9hVPjb9mfFcw4wZ2uC0dwAqCxI4=
+X-Received: by 2002:a9d:61c3:: with SMTP id h3mr3269258otk.39.1566548918554;
+ Fri, 23 Aug 2019 01:28:38 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190819080028.13091-1-geert@linux-m68k.org>
-In-Reply-To: <20190819080028.13091-1-geert@linux-m68k.org>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 23 Aug 2019 10:26:13 +0200
-Message-ID: <CACRpkdb66GWnW6j=G==vAP_79ePyVCL=dHwcM2ui-GRC58eCjg@mail.gmail.com>
+ <CACRpkdb66GWnW6j=G==vAP_79ePyVCL=dHwcM2ui-GRC58eCjg@mail.gmail.com>
+In-Reply-To: <CACRpkdb66GWnW6j=G==vAP_79ePyVCL=dHwcM2ui-GRC58eCjg@mail.gmail.com>
+From: Geert Uytterhoeven <geert@linux-m68k.org>
+Date: Fri, 23 Aug 2019 10:28:26 +0200
+Message-ID: <CAMuHMdWAQn+GmJ6q_VfGdkMmS7amEaSUndSJ73J616nFKNbfFw@mail.gmail.com>
 Subject: Re: [PATCH] soc: ixp4xx: Protect IXP4xx SoC drivers by ARCH_IXP4XX ||
  COMPILE_TEST
-To: Geert Uytterhoeven <geert@linux-m68k.org>
+To: Linus Walleij <linus.walleij@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_012626_898760_DD1FCBEB 
-X-CRM114-Status: UNSURE (   9.01  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_012839_620882_505AB2B8 
+X-CRM114-Status: GOOD (  11.89  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (geert.uytterhoeven[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,27 +90,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 10:46 AM Geert Uytterhoeven
-<geert@linux-m68k.org> wrote:
+Hi Linus,
 
-> The move of the IXP4xx SoC drivers exposed their config options on all
-> platforms.
+On Fri, Aug 23, 2019 at 10:26 AM Linus Walleij <linus.walleij@linaro.org> wrote:
+> On Mon, Aug 19, 2019 at 10:46 AM Geert Uytterhoeven
+> <geert@linux-m68k.org> wrote:
+> > The move of the IXP4xx SoC drivers exposed their config options on all
+> > platforms.
+> >
+> > Fix this by wrapping them inside an ARCH_IXP4XX or COMPILE_TEST block.
+> >
+> > Fixes: fcf2d8978cd538a5 ("ARM: ixp4xx: Move NPE and QMGR to drivers/soc")
+> > Signed-off-by: Geert Uytterhoeven <geert@linux-m68k.org>
+> > ---
+> > v2:
+> >   - Rebased on top of commit ec8f24b7faaf3d47 ("treewide: Add SPDX
+> >     license identifier - Makefile/Kconfig").
 >
-> Fix this by wrapping them inside an ARCH_IXP4XX or COMPILE_TEST block.
+> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
 >
-> Fixes: fcf2d8978cd538a5 ("ARM: ixp4xx: Move NPE and QMGR to drivers/soc")
-> Signed-off-by: Geert Uytterhoeven <geert@linux-m68k.org>
-> ---
-> v2:
->   - Rebased on top of commit ec8f24b7faaf3d47 ("treewide: Add SPDX
->     license identifier - Makefile/Kconfig").
+> Do you want me to also take care of sending this into the ARM SoC tree?
 
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Given you're listed as (one of) the maintainer(s), I think that would make
+perfect sense.
 
-Do you want me to also take care of sending this into the ARM SoC tree?
+Thanks!
 
-Yours,
-Linus Walleij
+Gr{oetje,eeting}s,
+
+                        Geert
+
+-- 
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
