@@ -2,58 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 631FF9A7AF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 08:37:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CA2F59A7BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 08:41:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hzXasXdBNnfVgDx7+IndxdupP4cjRaff9n/TsmVYxAk=; b=KIWvY1YvKJte0W
-	FiooqPYXxBrHpnr/VZts/m18kDVo9FEMhAnrm/AxoM2ainRN5BPExz7OrItAjq5WVD9HqvilI2r5s
-	wzFf0yscL3UCcqbJxk1WRu8Q7YafNaB1YC6IFXKLPKvnrUKgWKa4ivWuRMkx5Hln4aapDSEBuamkH
-	sVFWxiBvlD7qaGcgGgtl4vLxmEqlRiTCX7l7cibGPEI+gUg51kmMtsxi9p6Nh2+YP6YeXltGDivbk
-	YiAHJrvdWQMUTuTndXO7LCpoUif4ZK3sneq5fW5H1YqwdyONn1iOhLQHwGu8kHMiQ42Eko25QZkWZ
-	4zwY5rLicAyIY7wKYSiw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KAn1Vk1pxEqk4Ez5EVjDwZ/13jffE4SNmzt4xA05/nE=; b=HhGXcMV1B5jTf1
+	B0PoFOARYK2q/H2eOYvtJbjMsnBCaD8quKKo0JwxsmAQLqlR/n4ajtFmG8pVRMOTGj3oc3xUwnmx+
+	42M82qB6ygCSQfPCJ8hm4oF5YFQOEDJ1FEkm7paIMArBB4PrjaO2kdNg7P61UZwGQd00bkDBPXz7d
+	qWgbO892ydb/T+EfKhLQXfyGllnKInafq/tgWyBIAdYFykALI9s6DZkvclJggYUfJqyrlMBM8XE+e
+	CHCd4/rAaV0lJroU1CthgKujkYDJSxFQ9JjL4JW1HO44rKoMOrqxVThpv5/ybGdU603sh867euSEE
+	jY+sNUu8xjIRyYJWhvFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i13Cj-0006yg-VV; Fri, 23 Aug 2019 06:37:45 +0000
+	id 1i13Fj-0000Dy-BG; Fri, 23 Aug 2019 06:40:51 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i13CT-0006y7-NM; Fri, 23 Aug 2019 06:37:30 +0000
-X-UUID: a9120a304a4e4d17815b9a55214e3d47-20190822
-X-UUID: a9120a304a4e4d17815b9a55214e3d47-20190822
+ id 1i13FW-0000DN-J4; Fri, 23 Aug 2019 06:40:40 +0000
+X-UUID: 10346a39850f4cc583235b2c62c6424b-20190822
+X-UUID: 10346a39850f4cc583235b2c62c6424b-20190822
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ran.bi@mediatek.com>)
+ (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1798994645; Thu, 22 Aug 2019 22:37:19 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 22 Aug 2019 23:37:18 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by mtkmbs07n1.mediatek.inc
- (172.21.101.16) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 23 Aug 2019 14:37:16 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 23 Aug 2019 14:37:15 +0800
-Message-ID: <1566542240.12318.53.camel@mhfsdcap03>
-Subject: Re: [PATCH v2 2/4] rtc: Add support for the MediaTek MT2712 RTC
-From: Ran Bi <ran.bi@mediatek.com>
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
-Date: Fri, 23 Aug 2019 14:37:20 +0800
-In-Reply-To: <20190822133649.GT27031@piout.net>
-References: <20190801110122.26834-1-ran.bi@mediatek.com>
- <20190801110122.26834-3-ran.bi@mediatek.com>
- <20190820201744.GZ3545@piout.net> <1566477254.12318.41.camel@mhfsdcap03>
- <20190822124628.GS27031@piout.net> <1566480361.12318.50.camel@mhfsdcap03>
- <20190822133649.GT27031@piout.net>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ with ESMTP id 105507618; Thu, 22 Aug 2019 22:40:28 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 22 Aug 2019 23:40:27 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 23 Aug 2019 14:40:24 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 23 Aug 2019 14:40:23 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Mathias Nyman <mathias.nyman@intel.com>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [RESEND PATCH v2 1/2] dt-bindings: usb: mtk-xhci: add an optional
+ xhci_ck clock
+Date: Fri, 23 Aug 2019 14:40:24 +0800
+Message-ID: <1566542425-20082-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 28C714632E7B96289CC589C52B901DE75F63E441DB7A96A8CF8353BDAADD6D702000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_233729_764610_89E9CCE1 
-X-CRM114-Status: GOOD (  13.23  )
+X-CRM114-CacheID: sfid-20190822_234038_634498_68104D19 
+X-CRM114-Status: GOOD (  10.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,60 +71,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark
- Rutland <mark.rutland@arm.com>, Alessandro Zummo <a.zummo@towertech.it>,
- YT Shen <yt.shen@mediatek.com>, Flora
- Fu <flora.fu@mediatek.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Greg
- Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, Sean Wang <sean.wang@mediatek.com>,
- linux-kernel@vger.kernel.org,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Yingjoe Chen <yingjoe.chen@mediatek.com>,
- Eddie Huang <eddie.huang@mediatek.com>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Ian Campbell <ijc+devicetree@hellion.org.uk>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-22 at 15:36 +0200, Alexandre Belloni wrote:
-> On 22/08/2019 21:26:01+0800, Ran Bi wrote:
-> > On Thu, 2019-08-22 at 14:46 +0200, Alexandre Belloni wrote:
-> > > On 22/08/2019 20:34:14+0800, Ran Bi wrote:
-> > > > > > +	/* RTC need POWERKEY1/2 match, then goto normal work mode */
-> > > > > > +	mt2712_writel(rtc, MT2712_POWERKEY1, MT2712_POWERKEY1_KEY);
-> > > > > > +	mt2712_writel(rtc, MT2712_POWERKEY2, MT2712_POWERKEY2_KEY);
-> > > > > 
-> > > > > This should be written when setting the time after power was lost.
-> > > > > 
-> > > > 
-> > > > I suppose we can move this into mt2712_rtc_read_time function's "if
-> > > > (p1 != MT2712_POWERKEY1_KEY || p2 != MT2712_POWERKEY2_KEY)" condition
-> > > > which will be added at next patch. We need additional flag to mark this
-> > > > condition or another if condition in mt2712_rtc_set_time fucntion if we
-> > > > put these code in mt2712_rtc_set_time function.
-> > > > 
-> > > 
-> > > It is fine to test both in read_time and in set_time.
-> > > 
-> > 
-> > Do you mean that we can test powerkey and then set powerkey both in
-> > read_time and in set_time?
-> > 
-> 
-> I mean that can test in read_time and test and set in set_time
-> 
-> 
+Add a new optional clock xhci_ck
 
-Ok, I will change it at next patch.
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+v2 changes:
+  1. add the new clock at the end, suggested by Rob
+---
+ Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
 
-Best Regards,
-Ran
+diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
+index 266c2d917a28..f3e4acecabe8 100644
+--- a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
++++ b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
+@@ -30,7 +30,8 @@ Required properties:
+ 	the following ones are optional:
+ 	"ref_ck": reference clock used by low power mode etc,
+ 	"mcu_ck": mcu_bus clock for register access,
+-	"dma_ck": dma_bus clock for data transfer by DMA
++	"dma_ck": dma_bus clock for data transfer by DMA,
++	"xhci_ck": controller clock
+ 
+  - phys : see usb-hcd.txt in the current directory
+ 
+@@ -100,7 +101,7 @@ Required properties:
+  - clocks : a list of phandle + clock-specifier pairs, one for each
+ 	entry in clock-names
+  - clock-names : must contain "sys_ck", and the following ones are optional:
+-	"ref_ck", "mcu_ck" and "dma_ck"
++	"ref_ck", "mcu_ck" and "dma_ck", "xhci_ck"
+ 
+ Optional properties:
+  - vbus-supply : reference to the VBUS regulator;
+-- 
+2.23.0
 
 
 _______________________________________________
