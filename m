@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D95AE9B889
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 00:25:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 33F779B888
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 00:25:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=W00W8Q1VMBumxekEkn5h2FVu5OdXN7hITUCOporAg9Y=; b=ZGfPyu5XoiRfIk
-	bGFEfjHB/0NvvKvVH5s+gvSze6vLe4pCSpNZb6Zwm7GPesTjW5jamGT3Vmyjm9zjAokRJ/qmGYSCA
-	rAC8KfY6OcvwUvnXNXK3Fy30CiAFQXC505ctiaiqPNpXXQ5YQP88x0dGj1yHD9L1I9s1ObKjlql+n
-	r51cswhakSpcjUA8krz7l9QeIq9t/4vVUGF6VIyvrVVK7jNHzH9F9oys4uX8n9U+ctjHiFyDexOxf
-	bdnD0RlP7ruJFqXoqec/ERNeIZRw1RMo+fZXsmY3nHWwDH0l7QL56yQMzCWXscX+iGS8+z7YPYTte
-	aZFVVhc1W7KNGd5rpnWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ePArl+QjcYy5rgBePeTHfIH64Cq9SFdEYwKuoxxs2iY=; b=APIbxf45ADJK+1
+	5VKi/BRCGQV+QOwznG4TKuVDFXRV4C2a4OFJFdtAMRuWR2b+qP4Wu+QAddQW8svyTPXhnwKmgt6wv
+	0lffzsO/t61JZABWItsNfITRhr+m+J1nMTm+pSUMKl+0h+v4tl72Ry+C1BY0kO0MCYFbqJCJ5WSh0
+	ALfgswfka3G4TGdXo2/kQd/h+34vwDpN2hwS9HWb4QgEFeGoza+AyCmP+Y3o4x6T4FRITjavcusbT
+	pTIsKtvEksSf2j+jdOfgZWUGZScQ2bWn9FnWDNbqtNUNikxWsyky8//38l3bHYbgB/opRb4tzRcVy
+	AN3mUz06TeIIJZbXowdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1Hzb-0003uB-FZ; Fri, 23 Aug 2019 22:25:11 +0000
+	id 1i1HzL-0003oT-96; Fri, 23 Aug 2019 22:24:55 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i1HzE-0003nr-Bs
+ id 1i1HzE-0003ns-FP
  for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 22:24:49 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 0FB4880A5;
- Fri, 23 Aug 2019 22:25:14 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 329518161;
+ Fri, 23 Aug 2019 22:25:16 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 1/2] ti-sysc driver changes for v5.3
-Date: Fri, 23 Aug 2019 15:24:41 -0700
-Message-Id: <pull-1566599057-142651@atomide.com>
+Subject: [GIT PULL 2/2] dts changes for omap variants for v5.4
+Date: Fri, 23 Aug 2019 15:24:42 -0700
+Message-Id: <pull-1566599057-142651@atomide.com-2>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <pull-1566599057-142651@atomide.com>
+References: <pull-1566599057-142651@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_152448_514295_1528B0F8 
-X-CRM114-Status: UNSURE (   7.59  )
+X-CRM114-CacheID: sfid-20190823_152448_553706_6EE7906B 
+X-CRM114-Status: UNSURE (   7.08  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,45 +68,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit 5b63fb90adb95a178ad403e1703f59bf1ff2c16b:
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 
-  ARM: dts: Fix incomplete dts data for am3 and am4 mmc (2019-08-13 04:03:30 -0700)
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.4/ti-sysc-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.4/dt-take2-signed
 
-for you to fetch changes up to c8a738f4cfaeccce40b171aca6da5fc45433ce60:
+for you to fetch changes up to a27401cecf7795cda7e0c17751feb98fedbaa99d:
 
-  bus: ti-sysc: remove set but not used variable 'quirks' (2019-08-13 04:40:11 -0700)
-
-----------------------------------------------------------------
-Driver changes for ti-sysc for v5.4
-
-Few changes to prepare for using a reset driver for PRM rstctrl mostly
-to deal with the clocks for reset. Then few minor clean-up patches and
-SPDX license identifier changes, and add a MAINTAINERs file entry.
+  ARM: dts: am335x-boneblue: Use of am335x-osd335x-common.dtsi (2019-08-13 04:51:31 -0700)
 
 ----------------------------------------------------------------
-Suman Anna (4):
-      MAINTAINERS: Add ti-sysc files under the OMAP2+ entry
-      dt-bindings: ti-sysc: Add SPDX license identifier
-      bus: ti-sysc: Switch to SPDX license identifier
-      bus: ti-sysc: Add missing kerneldoc comments
+dts changes for omap variants for v5.4
 
-Tero Kristo (3):
-      bus: ti-sysc: re-order the clkdm control around reset handling
-      bus: ti-sysc: rework the reset handling
-      bus: ti-sysc: allow reset sharing across devices
+Remove regulator-boot-off properties that we never had in the mainline
+kernel so they won't do anything. We add stdout-path for gta04, and
+make am335x-boneblue use am335x-osd335x-common.dtsi file.
 
-YueHaibing (1):
-      bus: ti-sysc: remove set but not used variable 'quirks'
+----------------------------------------------------------------
+David Lechner (1):
+      ARM: dts: am335x-boneblue: Use of am335x-osd335x-common.dtsi
 
- MAINTAINERS                           |  2 ++
- drivers/bus/ti-sysc.c                 | 56 ++++++++++++++---------------------
- include/dt-bindings/bus/ti-sysc.h     |  1 +
- include/linux/platform_data/ti-sysc.h |  7 +++--
- 4 files changed, 31 insertions(+), 35 deletions(-)
+Ezequiel Garcia (2):
+      ARM: dts: am335x-cm-t335: Remove regulator-boot-off property
+      ARM: dts: omap3-n950-n9: Remove regulator-boot-off property
+
+H. Nikolaus Schaller (1):
+      ARM: dts: gta04: define chosen/stdout-path
+
+ arch/arm/boot/dts/am335x-boneblue.dts | 92 +----------------------------------
+ arch/arm/boot/dts/am335x-cm-t335.dts  |  1 -
+ arch/arm/boot/dts/omap3-gta04.dtsi    |  4 ++
+ arch/arm/boot/dts/omap3-n950-n9.dtsi  |  1 -
+ 4 files changed, 6 insertions(+), 92 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
