@@ -2,56 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 398E89AD7C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 12:42:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 720D89AD92
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 12:47:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6+5ai8v5/s7/BoVbNDfjm8ud/aNJpabhbN8rGeUmX4k=; b=MIUoOhK/QmwQQS
-	7kQdn1//FeaIny0fC0e+YeL+R4vWHl5icAfvS7PKtEVdcc1ctRn9ngu/Pp4EsxlzGGOpMIN+7spGa
-	LkT/44N8RUOuoX3dJFj2a4gFU3eZBQK+1iytx+Ubkcactbsj+0i7Lj0S/aE8ejEmAliZYsyZYOd/Q
-	NPgNrBzeszw+jeOMcH/RkT8LfVuY5Mc9b3ckZGH24fzvYmq96hM8TcRYGHL5gmvxvuWAHdvm9LsUe
-	1/blGNqlFHVPvs2vdlhjZupVarravIx+1nmGagLS900wvb34Dwav92P5igKmCtUKzV6BE+U9qY/2E
-	q10TAawX8JxZQTR3UnoQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aUwvfWghYIV5VCJW2sDtJUctOTnFvmN//bmYT9niQDE=; b=hj3u2qqtcBM8UI
+	3pv6LuLq1NtYCBAmUXGlh+X/zoPJcIeruOenGJGR0oT3leMfxDFdZx7ritdrdc2V0EZCt9rWV6Jcw
+	+ySy8kCuHBPGskxNyhQe98wGIFYKvfWtwvgZ/UJhDhHDrh6SNYCfqI3D6gm1Z3EvCyK/Hxkd8i/qh
+	h64UWuVMKL6QE/BHSKnmqwuQ7+Jlb7GaRBYk0YDhRRG7PpQ9Zl7RpPH6Eh+wmkGFK7KyxjhyfKfta
+	EtmeHxJy/5qLe6lGlrdLjQNRHXP9mP7L7R2spyDfomgQf4SA7IywTgfXN0DKhEkQ9RJB8dTw7FVo/
+	jWNXGYtvdAPIjuOWpZoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i171N-0002ZU-SY; Fri, 23 Aug 2019 10:42:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i171G-0002Yf-3Y
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 10:42:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 61D44337;
- Fri, 23 Aug 2019 03:42:08 -0700 (PDT)
-Received: from [10.37.12.154] (unknown [10.37.12.154])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CD3923F246;
- Fri, 23 Aug 2019 03:42:04 -0700 (PDT)
-Subject: Re: Regression in 5.3-rc1 and later
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>,
- Chris Clayton <chris2553@googlemail.com>
-References: <faaa3843-09a6-1a21-3448-072eeed1ea00@googlemail.com>
- <20190823103654.GX13294@shell.armlinux.org.uk>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <8ab59d01-348e-9ac1-2944-5e98acd9b1f8@arm.com>
-Date: Fri, 23 Aug 2019 11:43:32 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1i175u-00059n-Tg; Fri, 23 Aug 2019 10:46:58 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i175l-00058m-Pi
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 10:46:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=fTnjvJjKhCTch2+e+s4C+1ah7tCrVFGr9EdjhwXZqls=; b=hs3EkrXPt9WeCNkIRiOmuAtXu
+ LCi1Y4DcuIPxchYsgg3mvuf6dXptSKJUr4sakinSQbarSbn/04029HH+7nvn251FaAOntApDC8qU6
+ qw5qa+6NrknJSm20CTx9tvf28KsCtuifmhepWFX3nbLpf9V4LHr71oiF0dI4544EAEeLTTNYJ6DVl
+ zeedSXn8wGRq457v+wB+WsMuWgC8J7lSuHEMXsBiQHYv4vfCfX5sNi3bu2vE/0vPb8yGpSWlrsZJJ
+ czL/A+phe5KOIRMxIRNZ5s095a66iRR8WYJdHfZgvIpdETGb0SqIudAakDUFI7JUGDuJQmR3s2w/G
+ 0b++5iJ+g==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:48398)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i175S-00049Z-LJ; Fri, 23 Aug 2019 11:46:30 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i175J-0000Ay-5M; Fri, 23 Aug 2019 11:46:21 +0100
+Date: Fri, 23 Aug 2019 11:46:21 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Chris Packham <chris.packham@alliedtelesis.co.nz>
+Subject: Re: [PATCH v9 1/8] ARM: aurora-l2: add prefix to MAX_RANGE_SIZE
+Message-ID: <20190823104621.GY13294@shell.armlinux.org.uk>
+References: <20190712034904.5747-1-chris.packham@alliedtelesis.co.nz>
+ <20190712034904.5747-2-chris.packham@alliedtelesis.co.nz>
 MIME-Version: 1.0
-In-Reply-To: <20190823103654.GX13294@shell.armlinux.org.uk>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190712034904.5747-2-chris.packham@alliedtelesis.co.nz>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_034210_238872_F16CF25C 
-X-CRM114-Status: GOOD (  30.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_034649_836576_171BA7F6 
+X-CRM114-Status: GOOD (  17.06  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,135 +87,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-mips@vger.kernel.org,
- linux-kselftest@vger.kernel.org, arnd@arndb.de, huw@codeweavers.com,
- andre.przywara@arm.com, daniel.lezcano@linaro.org, will.deacon@arm.com,
- LKML <linux-kernel@vger.kernel.org>, ralf@linux-mips.org, salyzyn@android.com,
- paul.burton@mips.com, linux@rasmusvillemoes.dk, 0x7f454c46@gmail.com,
- catalin.marinas@arm.com, pcc@google.com, tglx@linutronix.de,
- sthotton@marvell.com, shuah@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jlu@pengutronix.de,
+ linux-edac@vger.kernel.org, linux-kernel@vger.kernel.org, robh+dt@kernel.org,
+ james.morse@arm.com, Gregory CLEMENT <gregory.clement@free-electrons.com>,
+ bp@alien8.de, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ patches@armlinux.org.uk
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
-
-On 8/23/19 11:36 AM, Russell King - ARM Linux admin wrote:
-> Hi,
+On Fri, Jul 12, 2019 at 03:48:57PM +1200, Chris Packham wrote:
+> From: Jan Luebbe <jlu@pengutronix.de>
 > 
-> To everyone on the long Cc list...
+> The macro name is too generic, so add a AURORA_ prefix.
 > 
-> What's happening with this?  I was about to merge the patches for 32-bit
-> ARM, which I don't want to do if doing so will cause this regression on
-> 32-bit ARM as well.
+> Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
+> Reviewed-by: Gregory CLEMENT <gregory.clement@free-electrons.com>
+> Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> ---
+>  arch/arm/include/asm/hardware/cache-aurora-l2.h | 2 +-
+
+I can't apply this series - this file does not exist in my tree, and
+from what git tells me, it never has existed.  Maybe it's in someone
+elses tree?
+
+>  arch/arm/mm/cache-l2x0.c                        | 4 ++--
+>  2 files changed, 3 insertions(+), 3 deletions(-)
 > 
-
-The regression is sorted as of yesterday, a new patch is going through tip:
-timers/urgent and will be part of the next -rc.
-
-If you want to merge them there should be nothing blocking.
-
-> Thanks.
+> diff --git a/arch/arm/include/asm/hardware/cache-aurora-l2.h b/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> index c86124769831..dc5c479ec4c3 100644
+> --- a/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> +++ b/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> @@ -41,7 +41,7 @@
+>  #define AURORA_ACR_FORCE_WRITE_THRO_POLICY	\
+>  	(2 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
+>  
+> -#define MAX_RANGE_SIZE		1024
+> +#define AURORA_MAX_RANGE_SIZE	1024
+>  
+>  #define AURORA_WAY_SIZE_SHIFT	2
+>  
+> diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
+> index 428d08718107..83b733a1f1e6 100644
+> --- a/arch/arm/mm/cache-l2x0.c
+> +++ b/arch/arm/mm/cache-l2x0.c
+> @@ -1352,8 +1352,8 @@ static unsigned long aurora_range_end(unsigned long start, unsigned long end)
+>  	 * since cache range operations stall the CPU pipeline
+>  	 * until completion.
+>  	 */
+> -	if (end > start + MAX_RANGE_SIZE)
+> -		end = start + MAX_RANGE_SIZE;
+> +	if (end > start + AURORA_MAX_RANGE_SIZE)
+> +		end = start + AURORA_MAX_RANGE_SIZE;
+>  
+>  	/*
+>  	 * Cache range operations can't straddle a page boundary.
+> -- 
+> 2.22.0
 > 
-> On Thu, Aug 22, 2019 at 07:57:59AM +0100, Chris Clayton wrote:
->> Hi everyone,
->>
->> Firstly, apologies to anyone on the long cc list that turns out not to be particularly interested in the following, but
->> you were all marked as cc'd in the commit message below.
->>
->> I've found a problem that isn't present in 5.2 series or 4.19 series kernels, and seems to have arrived in 5.3-rc1. The
->> problem is that if I suspend (to ram) my laptop, on resume 14 minutes or more after suspending, I have no networking
->> functionality. If I resume the laptop after 13 minutes or less, networking works fine. I haven't tried to get finer
->> grained timings between 13 and 14 minutes, but can do if it would help.
->>
->> ifconfig shows that wlan0 is still up and still has its assigned ip address but, for instance, a ping of any other
->> device on my network, fails as does pinging, say, kernel.org. I've tried "downing" the network with (/sbin/ifdown) and
->> unloading the iwlmvm module and then reloading the module and "upping" (/sbin/ifup) the network, but my network is still
->> unusable. I should add that the problem also manifests if I hibernate the laptop, although my testing of this has been
->> minimal. I can do more if required.
->>
->> As I say, the problem first appears in 5.3-rc1, so I've bisected between 5.2.0 and 5.3-rc1 and that concluded with:
->>
->> [chris:~/kernel/linux]$ git bisect good
->> 7ac8707479886c75f353bfb6a8273f423cfccb23 is the first bad commit
->> commit 7ac8707479886c75f353bfb6a8273f423cfccb23
->> Author: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> Date:   Fri Jun 21 10:52:49 2019 +0100
->>
->>     x86/vdso: Switch to generic vDSO implementation
->>
->>     The x86 vDSO library requires some adaptations to take advantage of the
->>     newly introduced generic vDSO library.
->>
->>     Introduce the following changes:
->>      - Modification of vdso.c to be compliant with the common vdso datapage
->>      - Use of lib/vdso for gettimeofday
->>
->>     [ tglx: Massaged changelog and cleaned up the function signature formatting ]
->>
->>     Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->>     Signed-off-by: Thomas Gleixner <tglx@linutronix.de>
->>     Cc: linux-arch@vger.kernel.org
->>     Cc: linux-arm-kernel@lists.infradead.org
->>     Cc: linux-mips@vger.kernel.org
->>     Cc: linux-kselftest@vger.kernel.org
->>     Cc: Catalin Marinas <catalin.marinas@arm.com>
->>     Cc: Will Deacon <will.deacon@arm.com>
->>     Cc: Arnd Bergmann <arnd@arndb.de>
->>     Cc: Russell King <linux@armlinux.org.uk>
->>     Cc: Ralf Baechle <ralf@linux-mips.org>
->>     Cc: Paul Burton <paul.burton@mips.com>
->>     Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
->>     Cc: Mark Salyzyn <salyzyn@android.com>
->>     Cc: Peter Collingbourne <pcc@google.com>
->>     Cc: Shuah Khan <shuah@kernel.org>
->>     Cc: Dmitry Safonov <0x7f454c46@gmail.com>
->>     Cc: Rasmus Villemoes <linux@rasmusvillemoes.dk>
->>     Cc: Huw Davies <huw@codeweavers.com>
->>     Cc: Shijith Thotton <sthotton@marvell.com>
->>     Cc: Andre Przywara <andre.przywara@arm.com>
->>     Link: https://lkml.kernel.org/r/20190621095252.32307-23-vincenzo.frascino@arm.com
->>
->>  arch/x86/Kconfig                         |   3 +
->>  arch/x86/entry/vdso/Makefile             |   9 ++
->>  arch/x86/entry/vdso/vclock_gettime.c     | 245 ++++---------------------------
->>  arch/x86/entry/vdso/vdsox32.lds.S        |   1 +
->>  arch/x86/entry/vsyscall/Makefile         |   2 -
->>  arch/x86/entry/vsyscall/vsyscall_gtod.c  |  83 -----------
->>  arch/x86/include/asm/pvclock.h           |   2 +-
->>  arch/x86/include/asm/vdso/gettimeofday.h | 191 ++++++++++++++++++++++++
->>  arch/x86/include/asm/vdso/vsyscall.h     |  44 ++++++
->>  arch/x86/include/asm/vgtod.h             |  75 +---------
->>  arch/x86/include/asm/vvar.h              |   7 +-
->>  arch/x86/kernel/pvclock.c                |   1 +
->>  12 files changed, 284 insertions(+), 379 deletions(-)
->>  delete mode 100644 arch/x86/entry/vsyscall/vsyscall_gtod.c
->>  create mode 100644 arch/x86/include/asm/vdso/gettimeofday.h
->>  create mode 100644 arch/x86/include/asm/vdso/vsyscall.h
->>
->> To confirm my bisection was correct, I did a git checkout of 7ac8707479886c75f353bfb6a8273f423cfccb2. As expected, the
->> kernel exhibited the problem I've described. However, a kernel built at the immediately preceding (parent?) commit
->> (bfe801ebe84f42b4666d3f0adde90f504d56e35b) has a working network after a (>= 14minute) suspend/resume cycle.
->>
->> As the module name implies, I'm using wireless networking. The hardware is detected as "Intel(R) Wireless-AC 9260
->> 160MHz, REV=0x324" by iwlwifi.
->>
->> I'm more than happy to provide additional diagnostics (but may need a little hand-holding) and to apply diagnostic or
->> fix patches, but please cc me on any reply as I'm not subscribed to any of the kernel-related mailing lists.
->>
->> Chris
->>
->> _______________________________________________
->> linux-arm-kernel mailing list
->> linux-arm-kernel@lists.infradead.org
->> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
->>
 > 
 
 -- 
-Regards,
-Vincenzo
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
