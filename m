@@ -2,69 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE9669AAA8
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:51:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1E2949AB03
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:05:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L5GFA0vFToO1I/PQHd7kjVE2XtBNG+S8PDI2gsMkuD4=; b=btPuHb1Td51/A2
-	J+Yhsm+K70M/lK3z2SNp/XZjTfWqS+GzO5wizobCTHhnhPD1g16eb6mD4Edsny053gjuF8OXdvECu
-	dtwvwxtuHViZUQjV51uHIhoVsDzGLMOwk6rsQFqdloQrMx+PR2dxvOwfb8mdrntasdZng/7d8BytF
-	ovSVI7wGpr+kQqX61WdrTK3tR+DCbPvgcwn7Eg+WshuuR/INOFjtKLDZQbHJG2kj3T5fibaL9OGZG
-	l04/xm4Tzi0XTyLjPLbABs6UGr1zyTfdBDec+ChpoTjEQNJHuMQSaMq9ekI+ajyR+wvZschf16ysZ
-	WRK59kf4X/mpyCJ4/cCQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ecU1qiPEGlhUcVe5eEL4dwt/2oP95VJHOTzhBOvhDwA=; b=VW3NpauobH+84q
+	16WjI/QaQRhdhVbL87To96ZDgFg9DVXgss6XE+HRfs6y9lB9PwTf8rx/3o+Aqe6P5AJ+GTPLKITYd
+	ZZEb03lw7w3MzyxZH3kS5fPek6qwMBCJjRq8QLfZW4uQ2i0EmEMczOAn24ZtRSyUTOdeGumUl4bWv
+	qSQTFQGvoavI+kb1+1nsq8Q9BuKyZmM2hN3dviiqfmm5f3wMyjHThAMeyMMAYB56WF5N7nLZkUiUe
+	YSyjGYW0tf3Z/j0XZcgP2KcPlSRRjP4eT4m2/DRFYjsZQw6+OG/tkfec3UZsa7Ml7IFwb5i79bzDm
+	Eupny4ey63uSuN9DTBjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i15HW-0004LG-DG; Fri, 23 Aug 2019 08:50:51 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i15VK-0000nk-93; Fri, 23 Aug 2019 09:05:06 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i15Gv-0004Ku-DK
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:50:14 +0000
-Received: from lupine.hi.pengutronix.de
- ([2001:67c:670:100:3ad5:47ff:feaf:1a17] helo=lupine)
- by metis.ext.pengutronix.de with esmtp (Exim 4.92)
- (envelope-from <p.zabel@pengutronix.de>)
- id 1i15Go-0003X9-JC; Fri, 23 Aug 2019 10:50:06 +0200
-Message-ID: <1566550205.3023.4.camel@pengutronix.de>
-Subject: Re: [PATCH 2/8] soc: ti: add initial PRM driver with reset control
- support
-From: Philipp Zabel <p.zabel@pengutronix.de>
-To: Tero Kristo <t-kristo@ti.com>, Suman Anna <s-anna@ti.com>, Keerthy
- <j-keerthy@ti.com>, ssantosh@kernel.org,
- linux-arm-kernel@lists.infradead.org,  linux-omap@vger.kernel.org,
- robh+dt@kernel.org
-Date: Fri, 23 Aug 2019 10:50:05 +0200
-In-Reply-To: <e75eed22-1bed-4c8a-930d-e05890d58c47@ti.com>
-References: <1565164139-21886-1-git-send-email-t-kristo@ti.com>
- <1565164139-21886-3-git-send-email-t-kristo@ti.com>
- <3b76f0e0-7530-e7b5-09df-2de9956f30ee@ti.com>
- <59709a2d-f13a-bd55-8aba-864c1cf2f19e@ti.com>
- <9372957c-9ab9-b0dd-fe07-815eb2cb2f16@ti.com>
- <0f335aec-bfdf-345a-8dfb-dad70aef1af6@ti.com>
- <a4196b73-63a0-f9d8-1c43-e6c4d1c1d6a4@ti.com>
- <1566400237.4193.15.camel@pengutronix.de>
- <5e82199f-2f75-ee05-ba65-1595d0526572@ti.com>
- <e75eed22-1bed-4c8a-930d-e05890d58c47@ti.com>
-X-Mailer: Evolution 3.22.6-1+deb9u2 
-Mime-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:1a17
-X-SA-Exim-Mail-From: p.zabel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+ id 1i15UJ-0000ik-Io
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:04:05 +0000
+Received: by mail-lj1-x243.google.com with SMTP id h15so8149693ljg.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 02:04:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D79k8qyR+lkFZuNmiQyz7KjiI3FDq0RN+8yGAkt4ero=;
+ b=mt7TlPL5AmogFU9Is2n4Q6zALZP97v2qowDOKyz/K3yzn+8/tDW9g3UxAy4NFXy+A9
+ 6FxvwjtAqOhpV17gayDwEJXpK+6ZfsYET6rK6x13RQwGQJpiEzojgT/73pjElq4rcLg2
+ L00uCWg4yMnrLh4s/8a1zL4UkvidD9Xz1NIfbNoFvnFglmEdV+hOvTCKI8VYXxJVLcY+
+ OUvrXl+IfeXiv2aZlN0tepjP1MbWVsqoYYajpHhVlU24IJQKo1PDnGGAh0zcrXjxG3lk
+ +y7/PaO0uXQH+Al4sQGeSL+V46t6TtYA75GDkYNG6FMF02m3z6No4CZpkWIC+SfUPjFg
+ KwKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=D79k8qyR+lkFZuNmiQyz7KjiI3FDq0RN+8yGAkt4ero=;
+ b=nCf9kpkpiglztJng2ALHBdrhTp3kLHE3LRkI3NlasIitTkNuRDBqCIWmNL0++N23VE
+ 7a4w3Ut4AcKd/cds94gwxegot4grlaOkGto4iErkm+9ctX5kklCQr62ZEuoMTMDOZnSZ
+ Z4tjlnQczQVXIqGQPyoW5MqGh943Tp3ZmDSyfInGrdArYNReUNGW2HbZ+npGf2Btqsv2
+ vq8AS/wMEemJ8UHTUCrgaFmrLnFCOj5KWn9JE2AaPXZMqK2vswc9MPjQ2W8h9Ig3WFBQ
+ VC+eBqHzfJfBNMiLVAchFOy9MT96y+Kqpy/sutIZhq8PKfDFr4LhY7LfMSUYdeD7Hk5i
+ UIHw==
+X-Gm-Message-State: APjAAAX6kACi+y7PYLylp6DE8KHoFw8uY5tC7zVrX7qv0wYvHX+42yRr
+ rc8W4gUaSQp1JeCWmSlKOsD8Rg==
+X-Google-Smtp-Source: APXvYqxn+Myl0Zh68VB/gUSVTk1+y+dieMuMV02tQYFhoO9J49zf6nx+6CzqcvaWsDXjAZBIelYlAA==
+X-Received: by 2002:a2e:b0cb:: with SMTP id g11mr2218617ljl.76.1566551042075; 
+ Fri, 23 Aug 2019 02:04:02 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id i9sm499237lfl.10.2019.08.23.02.04.00
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 23 Aug 2019 02:04:01 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: arm@kernel.org,
+	soc@kernel.org
+Subject: [PATCH] soc: ixp4xx: Protect IXP4xx SoC drivers by ARCH_IXP4XX ||
+ COMPILE_TEST
+Date: Fri, 23 Aug 2019 11:03:52 +0200
+Message-Id: <20190823090352.12243-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_015013_465726_446AAA5E 
-X-CRM114-Status: GOOD (  12.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_020403_971413_0C3FD608 
+X-CRM114-Status: UNSURE (   7.60  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,33 +97,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-08-21 at 21:15 +0300, Tero Kristo wrote:
-> On 21.8.2019 18.45, Suman Anna wrote:
-> > On 8/21/19 10:10 AM, Philipp Zabel wrote:
-[...]
-> > > In general, assuming the device tree contains no errors, this should not
-> > > matter much, but I think it is nice if the reset driver, even with a
-> > > misconfigured device tree, can't write into arbitrary bit fields.
-> > 
-> > Tero,
-> > Can you add a check for this if possible?
-> 
-> Well, I can enforce the usage of reset bit mapping, which I have already 
-> implemented for some SoCs like am33xx. If the specific ID is not found, 
-> I can bail out. So, basically in this example requesting reset at index 
-> 3 would succeed, but it would fail for any other ID; this would be 
-> direct HW bit mapping.
+From: Geert Uytterhoeven <geert@linux-m68k.org>
 
-That should be fine.
+The move of the IXP4xx SoC drivers exposed their config options on all
+platforms.
 
-regards
-Philipp
+Fix this by wrapping them inside an ARCH_IXP4XX or COMPILE_TEST block.
+
+Fixes: fcf2d8978cd538a5 ("ARM: ixp4xx: Move NPE and QMGR to drivers/soc")
+Signed-off-by: Geert Uytterhoeven <geert@linux-m68k.org>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+Hi ARM SoC folks, please apply this directly for fixes.
+---
+ drivers/soc/ixp4xx/Kconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/drivers/soc/ixp4xx/Kconfig b/drivers/soc/ixp4xx/Kconfig
+index de2e62c3310a..e3eb19b85fa4 100644
+--- a/drivers/soc/ixp4xx/Kconfig
++++ b/drivers/soc/ixp4xx/Kconfig
+@@ -1,4 +1,6 @@
+ # SPDX-License-Identifier: GPL-2.0-only
++if ARCH_IXP4XX || COMPILE_TEST
++
+ menu "IXP4xx SoC drivers"
+ 
+ config IXP4XX_QMGR
+@@ -15,3 +17,5 @@ config IXP4XX_NPE
+ 	  and is automatically selected by Ethernet and HSS drivers.
+ 
+ endmenu
++
++endif
+-- 
+2.21.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
