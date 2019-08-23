@@ -2,44 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ECC949AD33
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 12:31:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB4499AD40
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 12:32:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4hfl5pnTPrhV273gEF2nnyZVWcWU/3bGfvdOyyABtu8=; b=KGcmb/tnpZMzVb
-	mrw1SumlHz6pP2Zyo/0kn4PekXlyGcat5lx8p92t7oheCjVa32LGgAZ200xI/SPThxWDgL9tW3zR8
-	RxmEtIiiQKrzKoivBKk7HycCUaV5T246a8r3LIbxJTOBTpr31Zvz944O6ooOx7T/oht8TB+NjPsL4
-	eK0ugWb2aM0UfCG8WdibSRyevUxXBdUN+QkZudawOCMr42rRhRBy4jxvukDOsYb3LS1FPb8GUBelP
-	rOc7RGER3PG3lrxHbJm9EVVVzZ+rdiKwu+e8QU09g4ImcDVU/LFdV3+ATO5s5XJ1CazuQQvQWvz9H
-	iqpGUNJZGHd2H/xSJj1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LOPlA7x1wOieNDy4CCL87Z46wfBwZv8ve3B8x6Gusas=; b=cAmopSoy+bybG9
+	AzW9nfjcsvG0cjpiMNR6U154fv4Urkx//cB6BcmXSGyvt4IX7Yo6OYOrR7LhjvMcQIhvX0yoXcv5s
+	LDZjtPIOva8clWAqWw9ohrFuCpOs+/GO09mgWhbXddC3Sc2xruaNGTuoR4eeyesW5qzTEtW+taiFj
+	V8iA6E8mxPHV2T6LFxFAwRGJ9zmgCOUSndW0uWPOySamhuyZgzGMaDzwBAf0IPbqMYnCiwbZZQDDo
+	KxukBhTeO1mFOwCsOYjC7ULcuhauQefIjsv8epuyLu4jD9as6XBBvl00i/dnzXPh8biQ08E95+S2B
+	I65HPNP4MjiXAz6k/G1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i16rL-00037q-Q3; Fri, 23 Aug 2019 10:31:55 +0000
+	id 1i16rV-0003Gz-Vt; Fri, 23 Aug 2019 10:32:06 +0000
 Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i16rD-00036D-VN
+ id 1i16rE-00036E-6W
  for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 10:31:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566556306; bh=yUYphsfGd/2aYDGopZa37BQyG22wCozSNaBWz/Gf3VA=;
- h=From:To:Cc:Subject:Date:From;
- b=CLBm2jf8h4JtgS5SxCdnyB2k5v8MbkLorcykkkZZPMcfFyOYh8pAvI9yMkkJw4NGU
- mqsWw8GoynR+GBSYaUVHdBRcRQwBvHHLND7+NgL963Bh7n32Mzfe2iyE4G9Whqdn+/
- +M3v7tWKaN4Xieu16idwAgjEUyowSPLPrarww1V4=
+ t=1566556306; bh=m2aKtRbkPTkJVuTP8zfANK/QWGiSc2Jdal4+JCozxGg=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=L06V5E+mkypAmZdneB6hYyjjUgHu1laLiD9Wh+yKZ0GS6HqU85zz3VnR2U5Yqh8Cs
+ wQLUPAQ/M5iElTZD+whjM+wQATeeHAFO7fXvdYhIHPm6F8VcsCcB0Upvp7zNkXFcqX
+ fDbww4+L2ojZKXMHD7vkME/9BukKozBvzSOCNKMk=
 From: megous@megous.com
 To: Maxime Ripard <mripard@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
  Rob Herring <robh+dt@kernel.org>, Marcel Holtmann <marcel@holtmann.org>,
  Johan Hedberg <johan.hedberg@gmail.com>
-Subject: [RESEND PATCH 0/5] Add bluetooth support for Orange Pi 3
-Date: Fri, 23 Aug 2019 12:31:34 +0200
-Message-Id: <20190823103139.17687-1-megous@megous.com>
+Subject: [RESEND PATCH 1/5] dt-bindings: net: Add compatible for BCM4345C5
+ bluetooth device
+Date: Fri, 23 Aug 2019 12:31:35 +0200
+Message-Id: <20190823103139.17687-2-megous@megous.com>
+In-Reply-To: <20190823103139.17687-1-megous@megous.com>
+References: <20190823103139.17687-1-megous@megous.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_033148_179555_4804D5B5 
-X-CRM114-Status: UNSURE (   8.62  )
+X-CRM114-CacheID: sfid-20190823_033148_399522_BA623623 
+X-CRM114-Status: UNSURE (   7.11  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,38 +80,25 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Ondrej Jirman <megous@megous.com>
 
-(Resend to add missing lists, sorry for the noise.)
+This is present in the AP6526 WiFi/Bluetooth 5.0 module.
 
-This series implements bluetooth support for Xunlong Orange Pi 3 board.
+Signed-off-by: Ondrej Jirman <megous@megous.com>
+---
+ Documentation/devicetree/bindings/net/broadcom-bluetooth.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-The board uses AP6256 WiFi/BT 5.0 chip.
-
-Summary of changes:
-
-- add more delay to let initialize the chip
-- let the kernel detect firmware file path
-- add new compatible and update dt-bindings
-- update Orange Pi 3 / H6 DTS
-
-Please take a look.
-
-thank you and regards,
-  Ondrej Jirman
-
-Ondrej Jirman (5):
-  dt-bindings: net: Add compatible for BCM4345C5 bluetooth device
-  bluetooth: bcm: Add support for loading firmware for BCM4345C5
-  bluetooth: hci_bcm: Give more time to come out of reset
-  arm64: dts: allwinner: h6: Add pin configs for uart1
-  arm64: dts: allwinner: orange-pi-3: Enable UART1 / Bluetooth
-
- .../bindings/net/broadcom-bluetooth.txt       |  1 +
- .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 19 +++++++++++++++++++
- arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 10 ++++++++++
- drivers/bluetooth/btbcm.c                     |  3 +++
- drivers/bluetooth/hci_bcm.c                   |  3 ++-
- 5 files changed, 35 insertions(+), 1 deletion(-)
-
+diff --git a/Documentation/devicetree/bindings/net/broadcom-bluetooth.txt b/Documentation/devicetree/bindings/net/broadcom-bluetooth.txt
+index c26f4e11037c..4fa00e2eafcf 100644
+--- a/Documentation/devicetree/bindings/net/broadcom-bluetooth.txt
++++ b/Documentation/devicetree/bindings/net/broadcom-bluetooth.txt
+@@ -13,6 +13,7 @@ Required properties:
+    * "brcm,bcm20702a1"
+    * "brcm,bcm4330-bt"
+    * "brcm,bcm43438-bt"
++   * "brcm,bcm4345c5"
+ 
+ Optional properties:
+ 
 -- 
 2.23.0
 
