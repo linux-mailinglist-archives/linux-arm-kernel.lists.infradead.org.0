@@ -2,74 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6235C9B275
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:51:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D3D19B27B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:53:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ifdyPlszaoAkL0xRwfrm2tlQWgBu9ZcvRNnkyPXCcjY=; b=BIYt1E4zDUANM7
-	TLy+nZ4qq61dHBJ89PA6PBf9AL6x4hvq//TrixyjDPiaPwQkKd2yPjs4ducexKHCFQQ3V99VDVeWi
-	VxbP/ZOIqNpOpTaOFHuVSaJK3jvWt4hvDQRdvd7F1xHixVvhAVZ0JyonpUFVIsj+b8tvJvXZfPVpy
-	HkCQpNi4TuKOfYgH40Wk0QT8YRv/ZoA6RHNvPSyVn2Tax07gJ9aB3OFhC9Odp2VNplcFwK+xjEqI+
-	Ne30ZysKIzYEO6gkhvda8UJgY6Q6dQWZMQ6XByF+w+jLy8hP4AqkSujNzOKIu/hJ0hJ9JMP08OlPG
-	1srlg81S7W6a2aNE5NGQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XQGoSkf22rrPOrwBv8Q7tkm+35QgFUxl3rlYSoksfEI=; b=DZ4
+	Iwm7Tmw4UEnWtuTVNoQPMW8GD4SynbAI9TTrctnqYD9koEWzNi7RiVgjI5UwuCglRcTGEGliODBMo
+	79Uhr+185oPxz0UUNMr1K6dJGTLsprhWEqbQx1shYxDuQLXufvolBJelMDwh7NkiA7jke6bD4WEiC
+	t+Zuil5eyPC5EHkn0MXoA6Q7FnvFdCcJY8F0uRfbYNg4gL2gY4UogDCStstdc1z2LndXP9T2tr4v7
+	mqY0PYzm5Bd9Ah1kgbEktJxW4DfVD0WIrmP+/PoqLTRlDn+IpWqiaTKzAa2qK99IH6QH/10LkhWxN
+	JI3ABhnsWcXkEgxFAjjV8r1WZBytC8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1Auj-0000nV-VR; Fri, 23 Aug 2019 14:51:41 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1Aud-0000n2-8G
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:51:36 +0000
-Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 97BFE2166E;
- Fri, 23 Aug 2019 14:51:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566571894;
- bh=aVchjuHWTXOaTDZuWT4rE8xKpWB6QsFxLg6BDqrPMBU=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=lOhadIdBCMKhZZkWRsZKTsc0dnSKABUI8r7IDxP9auoTwL6cq9VHHquL4sgCddJ6+
- i1Jq9+dVh+hxyozPx0IO9InPMe2+rO8hPvYEdx76EdJfBrs/UVH85CpxjJtTRN9YbF
- 4CjkRdbiWquBWBZNXw5KcjOc4pDLb86Dt8FmvwSE=
-Date: Fri, 23 Aug 2019 23:51:27 +0900
-From: Masami Hiramatsu <mhiramat@kernel.org>
-To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
-Subject: Re: [PATCH v2 1/3] kprobes/x86: use instruction_pointer and
- instruction_pointer_set
-Message-Id: <20190823235127.6b1ab6bdb3a280b64ca8585e@kernel.org>
-In-Reply-To: <20190821095527.729b2b0d@xhacker.debian>
-References: <20190820113928.1971900c@xhacker.debian>
- <20190820114109.4624d56b@xhacker.debian>
- <alpine.DEB.2.21.1908201050370.2223@nanos.tec.linutronix.de>
- <20190820165152.20275268@xhacker.debian>
- <20190821105247.f0236d2c04b2c0c4d4e1847e@kernel.org>
- <20190821095527.729b2b0d@xhacker.debian>
-X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
-Mime-Version: 1.0
+	id 1i1AwK-00014U-Tw; Fri, 23 Aug 2019 14:53:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i1AwD-00013e-AR
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:53:15 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0C1A28;
+ Fri, 23 Aug 2019 07:53:12 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 03F303F718;
+ Fri, 23 Aug 2019 07:53:11 -0700 (PDT)
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: Add support for the Transactional Memory Extension
+ (TME)
+Date: Fri, 23 Aug 2019 15:52:25 +0100
+Message-Id: <20190823145225.16106-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_075135_309983_BE0CE9FB 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190823_075313_455198_F01E6368 
+X-CRM114-Status: GOOD (  14.57  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,46 +58,235 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jonathan Corbet <corbet@lwn.net>, Catalin Marinas <catalin.marinas@arm.com>,
- "x86@kernel.org" <x86@kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Anil S Keshavamurthy <anil.s.keshavamurthy@intel.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H. Peter Anvin" <hpa@zytor.com>, "Naveen N. Rao" <naveen.n.rao@linux.ibm.com>,
- Thomas Gleixner <tglx@linutronix.de>, Will Deacon <will@kernel.org>,
- "David S. Miller" <davem@davemloft.net>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, catalin.marinas@arm.com, maz@kernel.org,
+ Will Deacon <will@kernel.org>, jade.alglave@arm.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jisheng,
+Whilst the Transactional Memory Extension doesn't require substantial
+support in the kernel in order to be used from userspace or guest
+operating systems, we do need to enable it before exposing its existence
+via the ID register emulation and a new hwcap.
 
-On Wed, 21 Aug 2019 02:09:10 +0000
-Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ Documentation/arm64/cpu-feature-registers.rst |  2 ++
+ arch/arm64/include/asm/cpucaps.h              |  3 ++-
+ arch/arm64/include/asm/esr.h                  |  3 ++-
+ arch/arm64/include/asm/hwcap.h                |  1 +
+ arch/arm64/include/asm/kvm_arm.h              |  5 +++--
+ arch/arm64/include/asm/kvm_emulate.h          |  3 +++
+ arch/arm64/include/asm/sysreg.h               |  5 +++++
+ arch/arm64/include/uapi/asm/hwcap.h           |  1 +
+ arch/arm64/kernel/cpufeature.c                | 18 ++++++++++++++++++
+ arch/arm64/kernel/cpuinfo.c                   |  1 +
+ arch/arm64/kernel/traps.c                     |  1 +
+ 11 files changed, 39 insertions(+), 4 deletions(-)
 
-> > > In v2, actually, the arm64 version's kprobe_ftrace_handler() is the same
-> > > as x86's, the only difference is comment, e.g
-> > >
-> > > /* Kprobe handler expects regs->ip = ip + 1 as breakpoint hit */
-> > >
-> > > while in arm64
-> > >
-> > > /* Kprobe handler expects regs->pc = ip + 1 as breakpoint hit */  
-> > 
-> > As Peter pointed, on arm64, is that really 1 or 4 bytes?
-> > This part is heavily depends on the processor software-breakpoint
-> > implementation.
-> 
-> Per my understanding, the "+1" here means "+ one kprobe_opcode_t".
-
-No, that is the size of INT3. It just emulates the software trap on x86.
-
-Thank you,
+diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
+index 2955287e9acc..ec256423982e 100644
+--- a/Documentation/arm64/cpu-feature-registers.rst
++++ b/Documentation/arm64/cpu-feature-registers.rst
+@@ -131,6 +131,8 @@ infrastructure:
+      +------------------------------+---------+---------+
+      | RDM                          | [31-28] |    y    |
+      +------------------------------+---------+---------+
++     | TME                          | [27-24] |    y    |
++     +------------------------------+---------+---------+
+      | ATOMICS                      | [23-20] |    y    |
+      +------------------------------+---------+---------+
+      | CRC32                        | [19-16] |    y    |
+diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
+index f19fe4b9acc4..0996ae1b9036 100644
+--- a/arch/arm64/include/asm/cpucaps.h
++++ b/arch/arm64/include/asm/cpucaps.h
+@@ -52,7 +52,8 @@
+ #define ARM64_HAS_IRQ_PRIO_MASKING		42
+ #define ARM64_HAS_DCPODP			43
+ #define ARM64_WORKAROUND_1463225		44
++#define ARM64_HAS_TME				45
+ 
+-#define ARM64_NCAPS				45
++#define ARM64_NCAPS				46
+ 
+ #endif /* __ASM_CPUCAPS_H */
+diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
+index cb29253ae86b..e3b47853389a 100644
+--- a/arch/arm64/include/asm/esr.h
++++ b/arch/arm64/include/asm/esr.h
+@@ -35,7 +35,8 @@
+ #define ESR_ELx_EC_SYS64	(0x18)
+ #define ESR_ELx_EC_SVE		(0x19)
+ #define ESR_ELx_EC_ERET		(0x1a)	/* EL2 only */
+-/* Unallocated EC: 0x1b - 0x1E */
++#define ESR_ELx_EC_TME		(0x1b)
++/* Unallocated EC: 0x1C - 0x1E */
+ #define ESR_ELx_EC_IMP_DEF	(0x1f)	/* EL3 only */
+ #define ESR_ELx_EC_IABT_LOW	(0x20)
+ #define ESR_ELx_EC_IABT_CUR	(0x21)
+diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
+index 3d2f2472a36c..365cbaa97d66 100644
+--- a/arch/arm64/include/asm/hwcap.h
++++ b/arch/arm64/include/asm/hwcap.h
+@@ -86,6 +86,7 @@
+ #define KERNEL_HWCAP_SVESM4		__khwcap2_feature(SVESM4)
+ #define KERNEL_HWCAP_FLAGM2		__khwcap2_feature(FLAGM2)
+ #define KERNEL_HWCAP_FRINT		__khwcap2_feature(FRINT)
++#define KERNEL_HWCAP_TME		__khwcap2_feature(TME)
+ 
+ /*
+  * This yields a mask that user programs can use to figure out what
+diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
+index a8b205e5c4a8..ca8ac52827d4 100644
+--- a/arch/arm64/include/asm/kvm_arm.h
++++ b/arch/arm64/include/asm/kvm_arm.h
+@@ -15,6 +15,7 @@
+ #define HCR_FWB		(UL(1) << 46)
+ #define HCR_API		(UL(1) << 41)
+ #define HCR_APK		(UL(1) << 40)
++#define HCR_TME		(UL(1) << 39)
+ #define HCR_TEA		(UL(1) << 37)
+ #define HCR_TERR	(UL(1) << 36)
+ #define HCR_TLOR	(UL(1) << 35)
+@@ -78,8 +79,8 @@
+ 			 HCR_AMO | HCR_SWIO | HCR_TIDCP | HCR_RW | HCR_TLOR | \
+ 			 HCR_FMO | HCR_IMO)
+ #define HCR_VIRT_EXCP_MASK (HCR_VSE | HCR_VI | HCR_VF)
+-#define HCR_HOST_NVHE_FLAGS (HCR_RW | HCR_API | HCR_APK)
+-#define HCR_HOST_VHE_FLAGS (HCR_RW | HCR_TGE | HCR_E2H)
++#define HCR_HOST_NVHE_FLAGS (HCR_RW | HCR_API | HCR_APK | HCR_TME)
++#define HCR_HOST_VHE_FLAGS (HCR_RW | HCR_TGE | HCR_E2H | HCR_TME)
+ 
+ /* TCR_EL2 Registers bits */
+ #define TCR_EL2_RES1		((1 << 31) | (1 << 23))
+diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
+index d69c1efc63e7..ac3b3db923a6 100644
+--- a/arch/arm64/include/asm/kvm_emulate.h
++++ b/arch/arm64/include/asm/kvm_emulate.h
+@@ -70,6 +70,9 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
+ 	if (cpus_have_const_cap(ARM64_MISMATCHED_CACHE_TYPE) ||
+ 	    vcpu_el1_is_32bit(vcpu))
+ 		vcpu->arch.hcr_el2 |= HCR_TID2;
++
++	if (cpus_have_const_cap(ARM64_HAS_TME))
++		vcpu->arch.hcr_el2 |= HCR_TME;
+ }
+ 
+ static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 1df45c7ffcf7..55a4ad380d71 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -478,6 +478,10 @@
+ #define SYS_CNTV_CVAL_EL02		sys_reg(3, 5, 14, 3, 2)
+ 
+ /* Common SCTLR_ELx flags. */
++#define SCTLR_ELx_TME	(BIT(53))
++#define SCTLR_ELx_TME0	(BIT(52))
++#define SCTLR_ELx_TMT	(BIT(51))
++#define SCTLR_ELx_TMT0	(BIT(50))
+ #define SCTLR_ELx_DSSBS	(BIT(44))
+ #define SCTLR_ELx_ENIA	(BIT(31))
+ #define SCTLR_ELx_ENIB	(BIT(30))
+@@ -543,6 +547,7 @@
+ #define ID_AA64ISAR0_SM3_SHIFT		36
+ #define ID_AA64ISAR0_SHA3_SHIFT		32
+ #define ID_AA64ISAR0_RDM_SHIFT		28
++#define ID_AA64ISAR0_TME_SHIFT		24
+ #define ID_AA64ISAR0_ATOMICS_SHIFT	20
+ #define ID_AA64ISAR0_CRC32_SHIFT	16
+ #define ID_AA64ISAR0_SHA2_SHIFT		12
+diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
+index a1e72886b30c..751d889265e2 100644
+--- a/arch/arm64/include/uapi/asm/hwcap.h
++++ b/arch/arm64/include/uapi/asm/hwcap.h
+@@ -65,5 +65,6 @@
+ #define HWCAP2_SVESM4		(1 << 6)
+ #define HWCAP2_FLAGM2		(1 << 7)
+ #define HWCAP2_FRINT		(1 << 8)
++#define HWCAP2_TME		(1 << 9)
+ 
+ #endif /* _UAPI__ASM_HWCAP_H */
+diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
+index 95201e5ff5e1..6d3593299463 100644
+--- a/arch/arm64/kernel/cpufeature.c
++++ b/arch/arm64/kernel/cpufeature.c
+@@ -126,6 +126,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SM3_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SHA3_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RDM_SHIFT, 4, 0),
++	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TME_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_ATOMICS_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_CRC32_SHIFT, 4, 0),
+ 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SHA2_SHIFT, 4, 0),
+@@ -1252,6 +1253,11 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
+ }
+ #endif
+ 
++static void cpu_enable_tme(const struct arm64_cpu_capabilities *cap)
++{
++	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_TME0);
++}
++
+ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 	{
+ 		.desc = "GIC system register CPU interface",
+@@ -1552,6 +1558,17 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
+ 		.min_field_value = 1,
+ 	},
+ #endif
++	{
++		.desc = "Transactional memory extension",
++		.capability = ARM64_HAS_TME,
++		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
++		.sys_reg = SYS_ID_AA64ISAR0_EL1,
++		.sign = FTR_UNSIGNED,
++		.field_pos = ID_AA64ISAR0_TME_SHIFT,
++		.min_field_value = 1,
++		.matches = has_cpuid_feature,
++		.cpu_enable = cpu_enable_tme,
++	},
+ 	{},
+ };
+ 
+@@ -1615,6 +1632,7 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SHA2_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_SHA512),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_CRC32_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_CRC32),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_ATOMICS_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ATOMICS),
++	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_TME_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_TME),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_RDM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_ASIMDRDM),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SHA3_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SHA3),
+ 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SM3_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SM3),
+diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
+index 05933c065732..834ea12323ce 100644
+--- a/arch/arm64/kernel/cpuinfo.c
++++ b/arch/arm64/kernel/cpuinfo.c
+@@ -84,6 +84,7 @@ static const char *const hwcap_str[] = {
+ 	"svesm4",
+ 	"flagm2",
+ 	"frint",
++	"tme",
+ 	NULL
+ };
+ 
+diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
+index 6e950908eb97..1ec8e13a0191 100644
+--- a/arch/arm64/kernel/traps.c
++++ b/arch/arm64/kernel/traps.c
+@@ -746,6 +746,7 @@ static const char *esr_class_str[] = {
+ 	[ESR_ELx_EC_SYS64]		= "MSR/MRS (AArch64)",
+ 	[ESR_ELx_EC_SVE]		= "SVE",
+ 	[ESR_ELx_EC_ERET]		= "ERET/ERETAA/ERETAB",
++	[ESR_ELx_EC_TME]		= "TME TSTART",
+ 	[ESR_ELx_EC_IMP_DEF]		= "EL3 IMP DEF",
+ 	[ESR_ELx_EC_IABT_LOW]		= "IABT (lower EL)",
+ 	[ESR_ELx_EC_IABT_CUR]		= "IABT (current EL)",
 -- 
-Masami Hiramatsu <mhiramat@kernel.org>
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
