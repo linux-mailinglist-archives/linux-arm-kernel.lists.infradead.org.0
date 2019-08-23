@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8996E9B2CD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:57:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AB8D9B2D6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:59:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Zaux0iivZ5e0GSZgZFi1ko3yDMv3YRgRi2LnDXmTZlk=; b=iYlc2UUNzGV5djCu8iTrmY8JJ
-	B4ZXpmYAQnj2VPz99iOmhMl8a1sNFp9/MmC3V8R3GsMd0J6DU/OaPzsc4zacMrb9ZGdJoLb/Tfl1p
-	qilYZXeuSVFRBHhX+vdXvqsxsuTfPqk/ZGX9Br1rXUAgtDA+iectqMXvy0ghyyTSjVt9nMQrw0Bkg
-	M2yU3MG3im/MGqVIcexK0F7fb9Az09rSAVu25s/FuZjM2M7jqc1Kk5K3642O0VN4ekridrW89lB8w
-	ME4LeYqWZUw+YYvQ55DThmezp/MFyicZk7RZUXAnLhrHv+SzNGYQ/6aELD89zXAH80vyTUJU15mP1
-	KqlWarGCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Message-Id:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3EGKVOBoKmqiwfJcoixDDo8wjf/gMRjx2KA/IOmEUe0=; b=qfQgV0kFtxubMh
+	uJVI1uNhkJF8cm+6IrcJyft9Q0rUcLKR7a210mnOTEgnG8YkpNruOhV9GGrCAQePCb5IWIX9NaOW0
+	eCI81T8YQn/xhgOBobscrzRp8ELeOswjkANRwFtdl5DcPsas8cOE7TGkIbYzKv/Dhi7s+iiKqpDVl
+	EmrzI1mrjgjmH+gQHGpVkIzUSy3UgY2OnYvcIrAoH6A+NKGHYo0iY+alcWOX3Nio7JHYqEH7/VeRY
+	KHh8gohQwqU2CxOvPHuk6JEq/2d4KsbVOguuul6v5EydBMx1kBvY7152OPy2muYcy8DBJFFUH+IPT
+	HcJawQE+pz3RVuNKGBXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1Azs-0005ht-M5; Fri, 23 Aug 2019 14:57:00 +0000
-Received: from relay11.mail.gandi.net ([217.70.178.231])
+	id 1i1B0S-00063A-Fz; Fri, 23 Aug 2019 14:57:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1AzU-0005Jk-Nl
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:56:38 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211]) (Authenticated sender: maxime.ripard@bootlin.com)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id C5C4F100004;
- Fri, 23 Aug 2019 14:56:21 +0000 (UTC)
-Date: Fri, 23 Aug 2019 16:56:21 +0200
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH v4 05/10] ARM: dts: sunxi: a80: Add msgbox node
-Message-ID: <20190823145621.pxl4jrux7izflzmg@flea>
-References: <20190820032311.6506-1-samuel@sholland.org>
- <20190820032311.6506-6-samuel@sholland.org>
- <20190820081528.7g2lo4njkut5lanu@flea>
- <f3e3420e-450a-7d41-edf8-776c0cd5a320@sholland.org>
-MIME-Version: 1.0
-In-Reply-To: <f3e3420e-450a-7d41-edf8-776c0cd5a320@sholland.org>
-User-Agent: NeoMutt/20180716
+ id 1i1B0I-00062L-90
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:57:28 +0000
+Received: from devnote2 (NE2965lan1.rev.em-net.ne.jp [210.141.244.193])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 3128B22CE3;
+ Fri, 23 Aug 2019 14:57:22 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566572245;
+ bh=nGyHVGYJBOvLh/YCjAm/19L+X2rQRKDPdrvRJJNSXuY=;
+ h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
+ b=yCgfe4zpT8YrkttAdUN3y4hg/Ifyy1eVlbHEVOaPdGHQkit/cwgzI5NfNDg7j0Ba0
+ KJDFaBx3YCLilzz4JR4n7AK0RXWxoC4x9/U8ywLS0eXKGRjfPj1/9bnQIcSbjzoU9v
+ PNNnSoMRygN5+Sbt/CHba375XEK/XYx1fHjTbgFw=
+Date: Fri, 23 Aug 2019 23:57:21 +0900
+From: Masami Hiramatsu <mhiramat@kernel.org>
+To: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+Subject: Re: [PATCH v5] arm64: implement KPROBES_ON_FTRACE
+Message-Id: <20190823235721.fa481fca3475a3afd92c740c@kernel.org>
+In-Reply-To: <20190822191351.3796aca8@xhacker.debian>
+References: <20190822191351.3796aca8@xhacker.debian>
+X-Mailer: Sylpheed 3.5.1 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_075636_954777_5A72EDC7 
-X-CRM114-Status: GOOD (  15.16  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190823_075726_355152_2CC3D43A 
+X-CRM114-Status: GOOD (  28.42  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,80 +75,229 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============1272011598736100534=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Steven Rostedt <rostedt@goodmis.org>,
+ "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>,
+ Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Jisheng,
 
---===============1272011598736100534==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="c4vbgluuko4stj5s"
-Content-Disposition: inline
+On Thu, 22 Aug 2019 11:25:00 +0000
+Jisheng Zhang <Jisheng.Zhang@synaptics.com> wrote:
+
+> KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
+> eliminates the need for a trap, as well as the need to emulate or
+> single-step instructions.
+> 
+> Tested on berlin arm64 platform.
+> 
+> ~ # mount -t debugfs debugfs /sys/kernel/debug/
+> ~ # cd /sys/kernel/debug/
+> /sys/kernel/debug # echo 'p _do_fork' > tracing/kprobe_events
+> 
+> before the patch:
+> 
+> /sys/kernel/debug # cat kprobes/list
+> ffffff801009fe28  k  _do_fork+0x0    [DISABLED]
+> 
+> after the patch:
+> 
+> /sys/kernel/debug # cat kprobes/list
+> ffffff801009ff54  k  _do_fork+0x4    [DISABLED][FTRACE]
+> 
+> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+
+Looks good to me.
+
+Acked-by: Masami Hiramatsu <mhiramat@kernel.org>
+
+Thank you,
+
+> ---
+> 
+> KPROBES_ON_FTRACE avoids much of the overhead with regular kprobes as it
+> eliminates the need for a trap, as well as the need to emulate or
+> single-step instructions.
+> 
+> Applied after arm64 FTRACE_WITH_REGS:
+> http://lists.infradead.org/pipermail/linux-arm-kernel/2019-August/674404.html
+> 
+> Changes since v4:
+>   - correct reg->pc: probed on foo, then pre_handler see foo+0x4, while
+>     post_handler see foo+0x8
+> 
+> Changes since v3:
+>   - move kprobe_lookup_name() and arch_kprobe_on_func_entry to ftrace.c since
+>     we only want to choose the ftrace entry for KPROBES_ON_FTRACE.
+>   - only choose ftrace entry if (addr && !offset)
+> 
+> Changes since v2:
+>   - remove patch1, make it a single cleanup patch
+>   - remove "This patch" in the change log
+>   - implement arm64's kprobe_lookup_name() and arch_kprobe_on_func_entry instead
+>     of patching the common kprobes code
+> 
+> Changes since v1:
+>   - make the kprobes/x86: use instruction_pointer and instruction_pointer_set
+>     as patch1
+>   - add Masami's ACK to patch1
+>   - add some description about KPROBES_ON_FTRACE and why we need it on
+>     arm64
+>   - correct the log before the patch
+>   - remove the consolidation patch, make it as TODO
+>   - only adjust kprobe's addr when KPROBE_FLAG_FTRACE is set
+>   - if KPROBES_ON_FTRACE, ftrace_call_adjust() the kprobe's addr before
+>     calling ftrace_location()
+>   - update the kprobes-on-ftrace/arch-support.txt in doc
+> 
+>  .../debug/kprobes-on-ftrace/arch-support.txt  |  2 +-
+>  arch/arm64/Kconfig                            |  1 +
+>  arch/arm64/kernel/probes/Makefile             |  1 +
+>  arch/arm64/kernel/probes/ftrace.c             | 83 +++++++++++++++++++
+>  4 files changed, 86 insertions(+), 1 deletion(-)
+>  create mode 100644 arch/arm64/kernel/probes/ftrace.c
+> 
+> diff --git a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
+> index 68f266944d5f..e8358a38981c 100644
+> --- a/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
+> +++ b/Documentation/features/debug/kprobes-on-ftrace/arch-support.txt
+> @@ -9,7 +9,7 @@
+>      |       alpha: | TODO |
+>      |         arc: | TODO |
+>      |         arm: | TODO |
+> -    |       arm64: | TODO |
+> +    |       arm64: |  ok  |
+>      |         c6x: | TODO |
+>      |        csky: | TODO |
+>      |       h8300: | TODO |
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 663392d1eae2..928700f15e23 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -167,6 +167,7 @@ config ARM64
+>  	select HAVE_STACKPROTECTOR
+>  	select HAVE_SYSCALL_TRACEPOINTS
+>  	select HAVE_KPROBES
+> +	select HAVE_KPROBES_ON_FTRACE
+>  	select HAVE_KRETPROBES
+>  	select HAVE_GENERIC_VDSO
+>  	select IOMMU_DMA if IOMMU_SUPPORT
+> diff --git a/arch/arm64/kernel/probes/Makefile b/arch/arm64/kernel/probes/Makefile
+> index 8e4be92e25b1..4020cfc66564 100644
+> --- a/arch/arm64/kernel/probes/Makefile
+> +++ b/arch/arm64/kernel/probes/Makefile
+> @@ -4,3 +4,4 @@ obj-$(CONFIG_KPROBES)		+= kprobes.o decode-insn.o	\
+>  				   simulate-insn.o
+>  obj-$(CONFIG_UPROBES)		+= uprobes.o decode-insn.o	\
+>  				   simulate-insn.o
+> +obj-$(CONFIG_KPROBES_ON_FTRACE)	+= ftrace.o
+> diff --git a/arch/arm64/kernel/probes/ftrace.c b/arch/arm64/kernel/probes/ftrace.c
+> new file mode 100644
+> index 000000000000..9f80905f02fa
+> --- /dev/null
+> +++ b/arch/arm64/kernel/probes/ftrace.c
+> @@ -0,0 +1,83 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * Dynamic Ftrace based Kprobes Optimization
+> + *
+> + * Copyright (C) Hitachi Ltd., 2012
+> + * Copyright (C) 2019 Jisheng Zhang <jszhang@kernel.org>
+> + *		      Synaptics Incorporated
+> + */
+> +
+> +#include <linux/kprobes.h>
+> +
+> +/* Ftrace callback handler for kprobes -- called under preepmt disabed */
+> +void kprobe_ftrace_handler(unsigned long ip, unsigned long parent_ip,
+> +			   struct ftrace_ops *ops, struct pt_regs *regs)
+> +{
+> +	struct kprobe *p;
+> +	struct kprobe_ctlblk *kcb;
+> +
+> +	/* Preempt is disabled by ftrace */
+> +	p = get_kprobe((kprobe_opcode_t *)ip);
+> +	if (unlikely(!p) || kprobe_disabled(p))
+> +		return;
+> +
+> +	kcb = get_kprobe_ctlblk();
+> +	if (kprobe_running()) {
+> +		kprobes_inc_nmissed_count(p);
+> +	} else {
+> +		unsigned long orig_ip = instruction_pointer(regs);
+> +
+> +		instruction_pointer_set(regs, ip);
+> +		__this_cpu_write(current_kprobe, p);
+> +		kcb->kprobe_status = KPROBE_HIT_ACTIVE;
+> +		if (!p->pre_handler || !p->pre_handler(p, regs)) {
+> +			/*
+> +			 * Emulate singlestep (and also recover regs->pc)
+> +			 * as if there is a nop
+> +			 */
+> +			instruction_pointer_set(regs,
+> +				(unsigned long)p->addr + MCOUNT_INSN_SIZE);
+> +			if (unlikely(p->post_handler)) {
+> +				kcb->kprobe_status = KPROBE_HIT_SSDONE;
+> +				p->post_handler(p, regs, 0);
+> +			}
+> +			instruction_pointer_set(regs, orig_ip);
+> +		}
+> +		/*
+> +		 * If pre_handler returns !0, it changes regs->pc. We have to
+> +		 * skip emulating post_handler.
+> +		 */
+> +		__this_cpu_write(current_kprobe, NULL);
+> +	}
+> +}
+> +NOKPROBE_SYMBOL(kprobe_ftrace_handler);
+> +
+> +kprobe_opcode_t *kprobe_lookup_name(const char *name, unsigned int offset)
+> +{
+> +	unsigned long addr = kallsyms_lookup_name(name);
+> +
+> +	if (addr && !offset) {
+> +		unsigned long faddr;
+> +		/*
+> +		 * with -fpatchable-function-entry=2, the first 4 bytes is the
+> +		 * LR saver, then the actual call insn. So ftrace location is
+> +		 * always on the first 4 bytes offset.
+> +		 */
+> +		faddr = ftrace_location_range(addr,
+> +					      addr + AARCH64_INSN_SIZE);
+> +		if (faddr)
+> +			return (kprobe_opcode_t *)faddr;
+> +	}
+> +	return (kprobe_opcode_t *)addr;
+> +}
+> +
+> +bool arch_kprobe_on_func_entry(unsigned long offset)
+> +{
+> +	return offset <= AARCH64_INSN_SIZE;
+> +}
+> +
+> +int arch_prepare_kprobe_ftrace(struct kprobe *p)
+> +{
+> +	p->ainsn.api.insn = NULL;
+> +	return 0;
+> +}
+> -- 
+> 2.23.0.rc1
+> 
 
 
---c4vbgluuko4stj5s
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi,
-
-On Tue, Aug 20, 2019 at 08:17:49AM -0500, Samuel Holland wrote:
-> On 8/20/19 3:15 AM, Maxime Ripard wrote:
-> > On Mon, Aug 19, 2019 at 10:23:06PM -0500, Samuel Holland wrote:
-> >> The A80 SoC contains a message box that can be used to send messages and
-> >> interrupts back and forth between the ARM application CPUs and the ARISC
-> >> coprocessor. Add a device tree node for it.
-> >>
-> >> Signed-off-by: Samuel Holland <samuel@sholland.org>
-> >
-> > I think you mentionned that crust has been tested only on the A64 and
-> > the H3/H5, did you test the mailbox on those other SoCs as well?
->
-> No, I only have A64/H3/H5, and recently H6, hardware to test. I've looked
-> through the manuals to verify that the registers are all the same, but I haven't
-> run the driver on earlier SoCs.
-
-I'd rather not merge them until they've been properly tested. We've
-had some surprises with the documentation in the past :/
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---c4vbgluuko4stj5s
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXV/+lQAKCRDj7w1vZxhR
-xXWQAPwKyvkn2KiTnIGYIVua45lADkdWOtD9xl/wV7233OeEOQEAr2kwv01eXmx9
-SIGag0d/CuVhDIijFXIJeE/tUUHnJQ8=
-=7n7e
------END PGP SIGNATURE-----
-
---c4vbgluuko4stj5s--
-
-
---===============1272011598736100534==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Masami Hiramatsu <mhiramat@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1272011598736100534==--
-
