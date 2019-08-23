@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E42829AB90
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:43:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 98ECC9AB9F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:49:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=twnNxam9YlVsl/NL0GDk7qUHJYKfgTiTEMFJn6fQuZQ=; b=rt2n9z/k5uGbfn
-	C+vGiGXBq3cSF50x73ur6xUd9ht8ZvrF/f4K+rnKmJRaMGQRJafgaRRlwO5Tb+gprcofXkWsvLg1A
-	QX0ZfC74FAFEDEKa5jOjJ1/DM1/fn9KErlh4Y8sDItE/YHpMduV/WLV6Eco6k2UyOV3y1FlsAlbzO
-	eQn9wxl6ApSOeJrhHamytFR/ZJYp2s7RPcD43pAClYw0emRas+NvLhabW9H6jbQX3X8QSa9lQaaBq
-	rYWZgi9NblMzu+PJ2hLbG3XCd17pgqaQyLWQhYHs2viMf9Ne5Mo1REDVw/sc/BVk65sy1vJ9rCgpb
-	V2bF3XNNyFCnhCKzMBFw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/qbaXycfWVqw0tPEa7B+CbCnbIwLDGSRkmsEoVoCUC8=; b=CGT5KSndcbFASm
+	1okymuVKUvz1ixglqP1NjNP0NRtvcnnIUfRBXuAkOoxDTlcjTfLx82Cn+idTzdjtkOQIyXSyKA9Hp
+	rG975vHiumDeJ/iV2Q5dWmPIo6RpHZCWek50+MUKfKDPSDxhV+Rvsy7BoPtpvCpHhIrVPCDlaCwcf
+	gqhM2v4XTjh9qtOqU7IclEK35NoLgDP4dOYo7w7yoFF3cXl/U2GvjW2Z1vhk4S2gO7G+rtDTppCcS
+	AAMfzy4ZGYXp6vHBxXx4zfsxfTPOr9IhOwhMDKwfB+w0H2KjwPDKo6dvpsnKCJNNHeNGAJlM+NZ3Q
+	xc1ghBVjC28xhOLXlCsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i166H-0003CC-3g; Fri, 23 Aug 2019 09:43:17 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i165z-0003B9-Qc
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:43:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E7C19337;
- Fri, 23 Aug 2019 02:42:58 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- C62C63F246; Fri, 23 Aug 2019 02:42:56 -0700 (PDT)
-Subject: Re: [PATCH v2 00/20] Initial support for Marvell MMP3 SoC
-To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
-References: <20190822092643.593488-1-lkundrak@v3.sk>
- <244fdc87-0fe5-be79-d9cd-2395d0ac3f57@kernel.org>
- <424d2881edcaf7cedbfa5cbbf2e73aaff5355df3.camel@v3.sk>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <08a0e65e-4a80-f611-e36e-8e3f70fa8113@kernel.org>
-Date: Fri, 23 Aug 2019 10:42:52 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i16CB-0007Dw-Rw; Fri, 23 Aug 2019 09:49:24 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i16Br-0006ps-NP
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:49:05 +0000
+Received: by mail-lj1-x242.google.com with SMTP id l14so8271301ljj.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 02:49:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ZIj5J3GC6fJ/z8+TZRbG+UFUp/TNBUYk41ueKujFuvY=;
+ b=rX/SkVUPR5Xkum4I8dMllwZbXC1J8GqzVGhKQLmtAJGWXvHSayB4J0ZHclIAfzhS/1
+ f0SOPcPZRdLEPalAWtVSzoFv/JBIY5IrmsWallBDJse86OTX+RAC1RxImtwA9g/3FseR
+ Ucf8GyfUKVXrrySMNJ0T1f6zafGxlaJ4ddQUtq+lpBQryywv+xWaFS68YCwCu4ptDgFu
+ f+zVa5bWK7uS2ueRpQGIRJs1XiUs/ebTCCTf8W3YdbpnZU0ENFuBRkwenmakiWoj4mX5
+ 6mAZx1bSxP8v0O1GioXeSCbuTTjoJZU/vX8bEvt+corLyRnOVu7o9u61v6P3w6BxR1dP
+ cjpA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ZIj5J3GC6fJ/z8+TZRbG+UFUp/TNBUYk41ueKujFuvY=;
+ b=bC/Fv92WT/VaXWGZHP4X9Oh1E4vwGORfy2DFj2+dYAeapHL/WUuSrT2tNVyIFhyTSr
+ nEJAmcTqctNAAFAXFdXbCJkDL/8RCUNn3hJs90up+P1umswz9tN+kVWMnzm82AcGi7Sc
+ 155op23Hdgo7iXVo38bA9NvMEYotzOf96CIkt56DpGAcrhDm0Kp+gJM4Sz2co9kDLBD8
+ rfydJmJXl7fdBmWPTyK95Fo2Kt/RNsAqQ0ZgmRWY6saboY0NOHnivSHsXSIpAyLVvUHZ
+ AL3QbkNTln4opD7SYaix+J2hYKiMocCv5Vs3F3dSIAaMIFViWsMbZFG5kRUODybx/7Kq
+ 8ddg==
+X-Gm-Message-State: APjAAAX1r6UabmqipEv+w/t4X49DNvX6Qx0jDeYI37VtA/1W7h1JWJTK
+ t52LjzI/JRu0GDP2AtCLtKE5rGB9AYWOwvyCAMjfSw==
+X-Google-Smtp-Source: APXvYqzzgizcf1hEzZp0DPeYQ5HNGJre4pFWBphhjTNGc0lG4u7yjHgyy1zrsnB2xD/LzIjtVs5fBSj61nDdBgIULiM=
+X-Received: by 2002:a2e:9903:: with SMTP id v3mr2407466lji.37.1566553738017;
+ Fri, 23 Aug 2019 02:48:58 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <424d2881edcaf7cedbfa5cbbf2e73aaff5355df3.camel@v3.sk>
-Content-Language: en-US
+References: <20190815060718.3286-1-nishkadg.linux@gmail.com>
+In-Reply-To: <20190815060718.3286-1-nishkadg.linux@gmail.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Fri, 23 Aug 2019 11:48:46 +0200
+Message-ID: <CACRpkdYsM=R5Du8bLCWxwxjQvVhH=hGAn7DwUMfdLk_3Ytg9wQ@mail.gmail.com>
+Subject: Re: [PATCH] pinctrl: meson: meson: Add of_node_put() before return
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_024259_902978_738ECA34 
-X-CRM114-Status: GOOD (  19.93  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190823_024903_771735_8B96E4C5 
+X-CRM114-Status: UNSURE (   7.96  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,63 +91,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Kevin Hilman <khilman@baylibre.com>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/08/2019 08:21, Lubomir Rintel wrote:
-> On Thu, 2019-08-22 at 11:31 +0100, Marc Zyngier wrote:
->> On 22/08/2019 10:26, Lubomir Rintel wrote:
->>> Hi, 
->>>
->>> this is a second spin of a patch set that adds support for the Marvell
->>> MMP3 processor. MMP3 is used in OLPC XO-4 laptops, Panasonic Toughpad
->>> FZ-A1 tablet and Dell Wyse 3020 Tx0D thin clients. 
->>>
->>> Compared to v1, there's a handful of fixes in response to reviews. Patch
->>> 02/20 is new. Details in individual patches.
->>>  
->>> Apart from the adjustments in mach-mmp/, the patch makes necessary 
->>> changes to the irqchip driver and adds an USB2 PHY driver. The latter 
->>> has a dependency on the mach-mmp/ changes, so it can't be submitted 
->>> separately.
->>>  
->>> The patch set has been tested to work on Wyse Tx0D and not ruin MMP2 
->>> support on XO-1.75. 
->>
->> How do you want this series to be merged? I'm happy to take the irqchip
->> related patches as well as the corresponding DT change (once reviewed)
->> through my tree.
-> 
-> I was hoping for the Arm SoC tree, because there are some dependencies
-> (MMP3 USB PHY depends on MMP3 SoC).
-> 
-> That said, the irqchip patches are rather independent and the only
-> downside of them going in via a different tree will be that the other
-> tree that will lack them won't boot on MMP3 (things will compile
-> though). I don't know if that's okay. What's typically done in cases
-> like these?
+On Thu, Aug 15, 2019 at 8:07 AM Nishka Dasgupta
+<nishkadg.linux@gmail.com> wrote:
 
-I usually take the irqchip patches that can be built standalone (without
-dependency on header files, for example). If you want them to go via
-another tree, stick my
+> Each iteration of for_each_child_of_node puts the previous node, but in
+> the case of a return from the middle of the loop, there is no put, thus
+> causing a memory leak. Hence add an of_node_put before the return.
+> Issue found with Coccinelle.
+>
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 
-	Acked-by: Marc Zyngier <maz@kernel.org>
+Patch applied with Neil's ACK.
 
-on patches #6 through #9.
-
-Thanks,
-
-	M.
--- 
-Jazz is not dead, it just smells funny...
+Yours,
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
