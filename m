@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7316E9AB8C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:43:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E42829AB90
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:43:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5McYzm1Qv/Q6dMZ4XsKUbPmmaABrEdCjLfjop7PUBzI=; b=ahIfB+RzSqXUWi
-	1/3inx6LAA+InsX4qAgUwwzOTL4ztMAefzG/G8LN/02Oo5CpU9bBwURl6gGTXAvEOvrr9iQnOXAdH
-	lj/QED1m9UtR9BvU3ohbWx02UFRuOH//HimRTDpLiX5spnOQ42g7gP8XnUhGhyf6LKyEgg4T4qRRV
-	onZYUfA8ZYgJDj/XoMZZI/AWl4QMGBHnONQMUmBoAXT4vsbzCWlNFwyk4anY28pOvqbIUS8BX1TcZ
-	bCM9G/ZhXrWOOhHe74qFy0IsoA+QVHCmRYAnrVFTh9fxOeGN0rgX5ylRH1g0bHVkA+ad+UEGpCBE8
-	Xum47RJtGoZDLaU3lQSg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=twnNxam9YlVsl/NL0GDk7qUHJYKfgTiTEMFJn6fQuZQ=; b=rt2n9z/k5uGbfn
+	C+vGiGXBq3cSF50x73ur6xUd9ht8ZvrF/f4K+rnKmJRaMGQRJafgaRRlwO5Tb+gprcofXkWsvLg1A
+	QX0ZfC74FAFEDEKa5jOjJ1/DM1/fn9KErlh4Y8sDItE/YHpMduV/WLV6Eco6k2UyOV3y1FlsAlbzO
+	eQn9wxl6ApSOeJrhHamytFR/ZJYp2s7RPcD43pAClYw0emRas+NvLhabW9H6jbQX3X8QSa9lQaaBq
+	rYWZgi9NblMzu+PJ2hLbG3XCd17pgqaQyLWQhYHs2viMf9Ne5Mo1REDVw/sc/BVk65sy1vJ9rCgpb
+	V2bF3XNNyFCnhCKzMBFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i165t-0002xk-4R; Fri, 23 Aug 2019 09:42:53 +0000
-Received: from vps.xff.cz ([195.181.215.36])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i165c-0002uc-UI
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:42:39 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1566553352; bh=1Cw9Xa/6TDBO8NX8xFz1oE/pjRmfY5YYNJ0SmLr41QE=;
- h=From:To:Cc:Subject:Date:From;
- b=lxilk2ZN5+GuOYV2xnSk5104SvjdE8bG+YgWkZ8SBxJgtHVwvOkY/K9F07H+54vyQ
- 2gFdNcSfft/JWqmYqycNFAlC1kYrDzXlDr3oF0ohBAdqOB0sHL9KgFD6lmbFjtLlag
- E6Ym8NYOqd9Ku70XRS/nQCGtSGwwmCELaj9FzcOA=
-From: megous@megous.com
-To: Maxime Ripard <mripard@kernel.org>,
-	Chen-Yu Tsai <wens@csie.org>
-Subject: [PATCH] arm64: dts: allwinner: orange-pi-3: Enable WiFi
-Date: Fri, 23 Aug 2019 11:42:28 +0200
-Message-Id: <20190823094228.6540-1-megous@megous.com>
+	id 1i166H-0003CC-3g; Fri, 23 Aug 2019 09:43:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i165z-0003B9-Qc
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:43:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E7C19337;
+ Fri, 23 Aug 2019 02:42:58 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ C62C63F246; Fri, 23 Aug 2019 02:42:56 -0700 (PDT)
+Subject: Re: [PATCH v2 00/20] Initial support for Marvell MMP3 SoC
+To: Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>
+References: <20190822092643.593488-1-lkundrak@v3.sk>
+ <244fdc87-0fe5-be79-d9cd-2395d0ac3f57@kernel.org>
+ <424d2881edcaf7cedbfa5cbbf2e73aaff5355df3.camel@v3.sk>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <08a0e65e-4a80-f611-e36e-8e3f70fa8113@kernel.org>
+Date: Fri, 23 Aug 2019 10:42:52 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <424d2881edcaf7cedbfa5cbbf2e73aaff5355df3.camel@v3.sk>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_024237_446122_5292372B 
-X-CRM114-Status: GOOD (  13.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_024259_902978_738ECA34 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,130 +65,62 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Ondrej Jirman <megous@megous.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ondrej Jirman <megous@megous.com>
+On 23/08/2019 08:21, Lubomir Rintel wrote:
+> On Thu, 2019-08-22 at 11:31 +0100, Marc Zyngier wrote:
+>> On 22/08/2019 10:26, Lubomir Rintel wrote:
+>>> Hi, 
+>>>
+>>> this is a second spin of a patch set that adds support for the Marvell
+>>> MMP3 processor. MMP3 is used in OLPC XO-4 laptops, Panasonic Toughpad
+>>> FZ-A1 tablet and Dell Wyse 3020 Tx0D thin clients. 
+>>>
+>>> Compared to v1, there's a handful of fixes in response to reviews. Patch
+>>> 02/20 is new. Details in individual patches.
+>>>  
+>>> Apart from the adjustments in mach-mmp/, the patch makes necessary 
+>>> changes to the irqchip driver and adds an USB2 PHY driver. The latter 
+>>> has a dependency on the mach-mmp/ changes, so it can't be submitted 
+>>> separately.
+>>>  
+>>> The patch set has been tested to work on Wyse Tx0D and not ruin MMP2 
+>>> support on XO-1.75. 
+>>
+>> How do you want this series to be merged? I'm happy to take the irqchip
+>> related patches as well as the corresponding DT change (once reviewed)
+>> through my tree.
+> 
+> I was hoping for the Arm SoC tree, because there are some dependencies
+> (MMP3 USB PHY depends on MMP3 SoC).
+> 
+> That said, the irqchip patches are rather independent and the only
+> downside of them going in via a different tree will be that the other
+> tree that will lack them won't boot on MMP3 (things will compile
+> though). I don't know if that's okay. What's typically done in cases
+> like these?
 
-Orange Pi 3 has AP6256 WiFi/BT module. WiFi part of the module is called
-bcm43356 and can be used with the brcmfmac driver. The module is powered by
-the two always on regulators (not AXP805).
+I usually take the irqchip patches that can be built standalone (without
+dependency on header files, for example). If you want them to go via
+another tree, stick my
 
-WiFi uses a PG port with 1.8V voltage level signals. SoC needs to be
-configured so that it sets up an 1.8V input bias on this port. This is done
-by the pio driver by reading the vcc-pg-supply voltage.
+	Acked-by: Marc Zyngier <maz@kernel.org>
 
-You'll need a fw_bcm43456c5_ag.bin firmware file and nvram.txt
-configuration that can be found in the Xulongs's repository for H6:
+on patches #6 through #9.
 
-https://github.com/orangepi-xunlong/OrangePiH6_external/tree/master/ap6256
+Thanks,
 
-Mainline brcmfmac driver expects the firmware and nvram at the following
-paths relative to the firmware directory:
-
-  brcm/brcmfmac43456-sdio.bin
-  brcm/brcmfmac43456-sdio.txt
-
-Signed-off-by: Ondrej Jirman <megous@megous.com>
----
-
-Since RTC patches for H6 were merged, this can now go in too, if it looks ok.
-
-Other patches for this WiFi chip support were merged in previous cycles,
-so this just needs enabling in DTS now.
-
-Sorry for the links in the commit log, but this information is useful,
-even if the link itself goes bad. Any pointer what to google for
-(file names, tree name) is great for anyone searching in the future.
-
-Please take a look.
-
-Thank you,
-	Ondrej
-
- .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 48 +++++++++++++++++++
- 1 file changed, 48 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-index eda9d5f640b9..49d954369087 100644
---- a/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-+++ b/arch/arm64/boot/dts/allwinner/sun50i-h6-orangepi-3.dts
-@@ -56,6 +56,34 @@
- 		regulator-max-microvolt = <5000000>;
- 		regulator-always-on;
- 	};
-+
-+	reg_vcc33_wifi: vcc33-wifi {
-+		/* Always on 3.3V regulator for WiFi and BT */
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc33-wifi";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		vin-supply = <&reg_vcc5v>;
-+	};
-+
-+	reg_vcc_wifi_io: vcc-wifi-io {
-+		/* Always on 1.8V/300mA regulator for WiFi and BT IO */
-+		compatible = "regulator-fixed";
-+		regulator-name = "vcc-wifi-io";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
-+		regulator-always-on;
-+		vin-supply = <&reg_vcc33_wifi>;
-+	};
-+
-+	wifi_pwrseq: wifi_pwrseq {
-+		compatible = "mmc-pwrseq-simple";
-+		clocks = <&rtc 1>;
-+		clock-names = "ext_clock";
-+		reset-gpios = <&r_pio 1 3 GPIO_ACTIVE_LOW>; /* PM3 */
-+		post-power-on-delay-ms = <200>;
-+	};
- };
- 
- &cpu0 {
-@@ -91,6 +119,25 @@
- 	status = "okay";
- };
- 
-+&mmc1 {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&mmc1_pins>;
-+	vmmc-supply = <&reg_vcc33_wifi>;
-+	vqmmc-supply = <&reg_vcc_wifi_io>;
-+	mmc-pwrseq = <&wifi_pwrseq>;
-+	bus-width = <4>;
-+	non-removable;
-+	status = "okay";
-+
-+	brcm: sdio-wifi@1 {
-+		reg = <1>;
-+		compatible = "brcm,bcm4329-fmac";
-+		interrupt-parent = <&r_pio>;
-+		interrupts = <1 0 IRQ_TYPE_LEVEL_LOW>; /* PM0 */
-+		interrupt-names = "host-wake";
-+	};
-+};
-+
- &ohci0 {
- 	status = "okay";
- };
-@@ -102,6 +149,7 @@
- &pio {
- 	vcc-pc-supply = <&reg_bldo2>;
- 	vcc-pd-supply = <&reg_cldo1>;
-+	vcc-pg-supply = <&reg_vcc_wifi_io>;
- };
- 
- &r_i2c {
+	M.
 -- 
-2.23.0
-
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
