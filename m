@@ -2,57 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 434E69B162
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 15:54:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E05B9B170
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 15:55:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=H6vNtme21mal0rFyEOOAjGF0TO9L1l/NK/QUsPnHHds=; b=Zle9jdkApEAP9/xmh9s4dL7g/
-	udvz9hDpPBKlZ+vfvmTs0GoomSuqzMblMwXUEKTfjmQ3EkjBfZfaZgHh4elBm5HG692kNVG+lauUx
-	7k/0/lZWciMLXqSfbPZauKG/oi0CeaPXyPJQEpNJcqCtIXbkZRJZuDSRAzgNmVm1fpCThGaeb958j
-	wV+fpbTvfYe6iGhn2Dlw/2Us7eUQ4Qj30NpmYCPWFeV5OfDQW3o6wJ9HSwDCTX2J3AZn+tvGcFpn7
-	rF4EAQnujwO5g+HmG7Yve4jM3l6+sqgFAA6Ot//sBiM6HItOTYp9qHN7uI18X16Z0r30qGoiA4eRc
-	oMFHtiWMA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5tKuTTeiRNPM+ZVs0TrheB7f1dUtHL9tLMQ6yEDqEz8=; b=rL0eoDZ2+zuZVy
+	GLhCYoup7xv1LzpGsZ7x/eYi8iOiOMR9sJYp7+J8qZ49jDZeEcO6Nj6hn9inCPpccXq5rTIScvorE
+	tjKtn6lYKYj94UrJtGTGnKhrHeTBM1wJMx0Qyq+MqFenXUICQV6+B4ennSORYcmcmjV+Xz+teaqRa
+	ypeM+PHf//wdeey7HL1BJHcf9vpmYYOuwvhkbcmYH3rjz0t6GhuuxuXMJl/BRoH7pi3EXjvMITgv0
+	u1rj1DzINoqzf81aq2aLc1b0xRM+VW7+AiAojVcqGekmV6O4d47+mVNXOl54h30ePng+WlHm5zNHY
+	qBjTvP9h4nG2yW9k5fVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1A1g-00018X-O3; Fri, 23 Aug 2019 13:54:48 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i1A1a-00017m-OP
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 13:54:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F60D28;
- Fri, 23 Aug 2019 06:54:40 -0700 (PDT)
-Received: from [10.1.196.50] (e108454-lin.cambridge.arm.com [10.1.196.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 895E63F718;
- Fri, 23 Aug 2019 06:54:39 -0700 (PDT)
-Subject: Re: [PATCH v3] KVM: arm: VGIC: properly initialise private IRQ
- affinity
-To: Andre Przywara <andre.przywara@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>
-References: <20190823103416.110976-1-andre.przywara@arm.com>
-From: Julien Grall <julien.grall@arm.com>
-Message-ID: <bdb1426b-1c00-fce3-5e42-25c97d4311e1@arm.com>
-Date: Fri, 23 Aug 2019 14:54:38 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i1A2g-0002im-Jz; Fri, 23 Aug 2019 13:55:50 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i1A2Y-0002hq-Lg; Fri, 23 Aug 2019 13:55:43 +0000
+Received: by mail-pf1-x442.google.com with SMTP id s11so584736pfe.6;
+ Fri, 23 Aug 2019 06:55:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=BUAiw1OCmJxcFhDfFwk6vJ4atOusYa0enlexPK5RdcM=;
+ b=p1kpl17yQ70OZJjj0Ex1dhmfo2/01ZSY1fOdxj+J/0LKK1tvqbyWGApNp+RopSCBU9
+ F4JDgPHlcLiS1iW8iLa6+Oz3hvJ93YLeeZOw8VI/PWR7yXZkQ2Y3BWj/9xw0zvYm8PgM
+ xCORxywfStYr2iObddDIvw4uxyyFDzJ4nH8mOJxihZGgGGvOFtqX5rLKfVLumbHnUiDf
+ cp+XG0kMNbLUq5HT5W+hUh/PxuwaBDz2hVRJ6ISjeckQ/denHk7F5JHtEBhHBSkgw5OY
+ 5pVQ0XdibEupNYaM8DhPTT4HkPLbYUHv2fszhaDZIjemQ/II2oo6OpoSBdKla1hplbzS
+ Zchg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=BUAiw1OCmJxcFhDfFwk6vJ4atOusYa0enlexPK5RdcM=;
+ b=ambJUDA6H77O2JRF1Xn0g4+hPaNFUVUrw6JSj2ov3BS7apT/4fYq3UmVfPKG8CuOwt
+ M/VB5THFbE327DzQpzGNx4E8O2gw58/tvksIcY0h57W8avWm9JA59baENG6fR6N35F/C
+ qzxtUizK4jC/l2g1xgTwNyatzBTDLnCv51mglMzwp6pOjyLGdlFaLWxcyV4mK78rbbqc
+ A2PqPEZjsK8WMScP/ZkTPoWnG5gX8Hj6HyTw3RBe+xF9v/grZA3zJTZOUQVN20ANaEpC
+ aDzfHtzCPCkiA9lHS7gofjyUdSplmA3osIAWzbo+Ml/u58EhRCu1yvlsWhLukfwB5KcK
+ Ikdg==
+X-Gm-Message-State: APjAAAVVn1vpPC/+INnH8YJMHNupDcG0SBAUCdb6QdfY8arfiUgTkYNM
+ yBEQDMAJnN1di079NMoxqw4=
+X-Google-Smtp-Source: APXvYqzeZA+QEa5Xq4+pVCPW2H7vItZxat4J0/SQ1XBxiBF3Po4TqLpUuSgHOh67wlOMVyJ/4CHLaQ==
+X-Received: by 2002:a17:90a:aa90:: with SMTP id
+ l16mr5454982pjq.73.1566568541762; 
+ Fri, 23 Aug 2019 06:55:41 -0700 (PDT)
+Received: from localhost (g75.222-224-160.ppp.wakwak.ne.jp. [222.224.160.75])
+ by smtp.gmail.com with ESMTPSA id
+ z13sm2477619pjn.32.2019.08.23.06.55.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 23 Aug 2019 06:55:41 -0700 (PDT)
+Date: Fri, 23 Aug 2019 22:55:39 +0900
+From: Stafford Horne <shorne@gmail.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 05/26] openrisc: map as uncached in ioremap
+Message-ID: <20190823135539.GC24874@lianli.shorne-pla.net>
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-6-hch@lst.de>
 MIME-Version: 1.0
-In-Reply-To: <20190823103416.110976-1-andre.przywara@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190817073253.27819-6-hch@lst.de>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_065442_841952_E5BD2DD3 
-X-CRM114-Status: GOOD (  15.80  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_065542_713914_56EAAD7F 
+X-CRM114-Status: GOOD (  10.18  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (shorne[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,50 +100,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dave Martin <dave.martin@arm.com>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andre,
-
-On 23/08/2019 11:34, Andre Przywara wrote:
-> At the moment we initialise the target *mask* of a virtual IRQ to the
-> VCPU it belongs to, even though this mask is only defined for GICv2 and
-> quickly runs out of bits for many GICv3 guests.
-> This behaviour triggers an UBSAN complaint for more than 32 VCPUs:
-> ------
-> [ 5659.462377] UBSAN: Undefined behaviour in virt/kvm/arm/vgic/vgic-init.c:223:21
-> [ 5659.471689] shift exponent 32 is too large for 32-bit type 'unsigned int'
-> ------
-> Also for GICv3 guests the reporting of TARGET in the "vgic-state" debugfs
-> dump is wrong, due to this very same problem.
+On Sat, Aug 17, 2019 at 09:32:32AM +0200, Christoph Hellwig wrote:
+> Openrisc is the only architecture not mapping ioremap as uncached,
+> which has been the default since the Linux 2.6.x days.  Switch it
+> over to implement uncached semantics by default.
 > 
-> Because there is no requirement to create the VGIC device before the
-> VCPUs (and QEMU actually does it the other way round), we can't safely
-> initialise mpidr or targets in kvm_vgic_vcpu_init(). But since we touch
-> every private IRQ for each VCPU anyway later (in vgic_init()), we can
-> just move the initialisation of those fields into there, where we
-> definitely know the VGIC type.
-> 
-> On the way make sure we really have either a VGICv2 or a VGICv3 device,
-> since the existing code is just checking for "VGICv3 or not", silently
-> ignoring the uninitialised case.
-> 
-> Signed-off-by: Andre Przywara <andre.przywara@arm.com>
-> Reported-by: Dave Martin <dave.martin@arm.com>
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/openrisc/include/asm/io.h      | 20 +++-----------------
+>  arch/openrisc/include/asm/pgtable.h |  2 +-
+>  arch/openrisc/mm/ioremap.c          |  8 ++++----
+>  3 files changed, 8 insertions(+), 22 deletions(-)
 
-I have tested with both a combination of GICv2/GICv3 and kvmtools/QEMU. I can 
-confirm the UBSAN warning is not present anymore. Feel free to add my tested-by:
+Acked-by: Stafford Horne <shorne@gmail.com>
 
-Tested-by: Julien Grall <julien.grall@arm.com>
-
-Cheers,
-
--- 
-Julien Grall
+Thanks,
+ -Stafford 
 
 _______________________________________________
 linux-arm-kernel mailing list
