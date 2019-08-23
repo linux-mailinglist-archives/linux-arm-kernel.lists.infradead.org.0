@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 737A79AA85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:37:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 749919AA86
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bRopC8/tt6dgnu6WA2/B/metizfVMwphlSm7tyqROSI=; b=SQNaivKxPVDkOAhMFWdSJHErRD
-	VwRODdmzts/LLvPFZBUG2Z749JImjqNG2+NSu6P3lTao305xEVMi51fWv8+o9flJ56QEvzm7Hwrwi
-	DIMBjh7HBqFreS6Qo+QQnnnOH0ThBROGvpR+RIsTIGswzkcguUzdzLzJWReZnRMJ7e4SJaIaAOMfF
-	hh7a2Q4+/n5lmL4VtOIrNmjJZXhCeghxt5UBV5GjZJ2LXpUCne4g9e3XtFKr+4l3xIINc/JiuQJFO
-	pHuUrSxw6so0f9dsJBKOD2difFZEJUrI0WA6q9/gC9mlOgEVluuFVs5Vp4ODjaA4oBwZNDO/NM1AM
-	Oaurxclg==;
+	bh=6CgCKhUss4RhaokJ334ArfdaKb7ODERvKcwNPropkJU=; b=T0yzM9KUVQSF74uO/StjwthTQa
+	AWy4XPAD7fpe0hw8da2oxF+av4WT73SdO1U7zJIyHlyhzi5D6oZqIi/lu+eG5CYn+59iQw8yAfVoM
+	6yK0Q+CSglDmyvoGoQu4r/7k9uphiX8g6bCTOiYpWmYmXz/ymORMDBgniMMthioD/5CQ+hQw1hCIR
+	IPeUf3/nmamu90+Amd8RxfHFpc68TuiWN1MFyq+ruTWa5whohzXzwr4moqCoxK2KIJy42C/hOUOxa
+	YwgPNmCwjOb7MudnK3juYyoiErQSaPleJQuxo5rKnt8bRNx+kPJHT0jHtFMxAFAZRBOe4NjqCjs2Z
+	kX/k7ZdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i154p-0006Ot-9f; Fri, 23 Aug 2019 08:37:43 +0000
+	id 1i1553-0006dS-Sm; Fri, 23 Aug 2019 08:37:57 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1544-0005tw-V7
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:36:58 +0000
+ id 1i1546-0005uL-Ab
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:37:00 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id C73C71A0004;
- Fri, 23 Aug 2019 10:36:55 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 27BD81A003E;
+ Fri, 23 Aug 2019 10:36:57 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6A8041A003E;
- Fri, 23 Aug 2019 10:36:47 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 094741A06A1;
+ Fri, 23 Aug 2019 10:36:49 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id CE418402E1;
- Fri, 23 Aug 2019 16:36:37 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 634324030D;
+ Fri, 23 Aug 2019 16:36:39 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  leoyang.li@nxp.com, minghuan.Lian@nxp.com, mingkai.hu@nxp.com,
@@ -41,16 +41,16 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linuxppc-dev@lists.ozlabs.org,
  zhiqiang.hou@nxp.com
-Subject: [PATCH v4 2/3] arm64: dts: ls1028a: Add PCIe controller DT nodes
-Date: Fri, 23 Aug 2019 16:26:42 +0800
-Message-Id: <20190823082643.10903-2-xiaowei.bao@nxp.com>
+Subject: [PATCH v4 3/3] PCI: layerscape: Add LS1028a support
+Date: Fri, 23 Aug 2019 16:26:43 +0800
+Message-Id: <20190823082643.10903-3-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190823082643.10903-1-xiaowei.bao@nxp.com>
 References: <20190823082643.10903-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_013657_271842_4524682B 
-X-CRM114-Status: UNSURE (   6.60  )
+X-CRM114-CacheID: sfid-20190823_013658_742663_C627F12B 
+X-CRM114-Status: UNSURE (   6.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,83 +80,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-LS1028a implements 2 PCIe 3.0 controllers.
+Add support for the LS1028a PCIe controller.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 Signed-off-by: Hou Zhiqiang <Zhiqiang.Hou@nxp.com>
 ---
 v2:
- - Fix up the legacy INTx allocate failed issue.
-v3:
  - No change.
+v3:
+ - Reuse the ls2088 driver data structurt.
 v4:
- - Remove the num-lanes proparty.
-depends on: https://patchwork.kernel.org/project/linux-pci/list/?series=162215
+ - No change.
 
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi | 50 ++++++++++++++++++++++++++
- 1 file changed, 50 insertions(+)
+ drivers/pci/controller/dwc/pci-layerscape.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index 72b9a75..a25f9d9 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -625,6 +625,56 @@
- 			};
- 		};
- 
-+		pcie@3400000 {
-+			compatible = "fsl,ls1028a-pcie";
-+			reg = <0x00 0x03400000 0x0 0x00100000   /* controller registers */
-+			       0x80 0x00000000 0x0 0x00002000>; /* configuration space */
-+			reg-names = "regs", "config";
-+			interrupts = <GIC_SPI 108 IRQ_TYPE_LEVEL_HIGH>, /* PME interrupt */
-+				     <GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>; /* aer interrupt */
-+			interrupt-names = "pme", "aer";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			device_type = "pci";
-+			dma-coherent;
-+			bus-range = <0x0 0xff>;
-+			ranges = <0x81000000 0x0 0x00000000 0x80 0x00010000 0x0 0x00010000   /* downstream I/O */
-+				  0x82000000 0x0 0x40000000 0x80 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-+			msi-parent = <&its>;
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 7>;
-+			interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 109 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 2 &gic 0 0 GIC_SPI 110 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 3 &gic 0 0 GIC_SPI 111 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 4 &gic 0 0 GIC_SPI 112 IRQ_TYPE_LEVEL_HIGH>;
-+			status = "disabled";
-+		};
-+
-+		pcie@3500000 {
-+			compatible = "fsl,ls1028a-pcie";
-+			reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
-+			       0x88 0x00000000 0x0 0x00002000>; /* configuration space */
-+			reg-names = "regs", "config";
-+			interrupts = <GIC_SPI 113 IRQ_TYPE_LEVEL_HIGH>,
-+				     <GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>;
-+			interrupt-names = "pme", "aer";
-+			#address-cells = <3>;
-+			#size-cells = <2>;
-+			device_type = "pci";
-+			dma-coherent;
-+			bus-range = <0x0 0xff>;
-+			ranges = <0x81000000 0x0 0x00000000 0x88 0x00010000 0x0 0x00010000   /* downstream I/O */
-+				  0x82000000 0x0 0x40000000 0x88 0x40000000 0x0 0x40000000>; /* non-prefetchable memory */
-+			msi-parent = <&its>;
-+			#interrupt-cells = <1>;
-+			interrupt-map-mask = <0 0 0 7>;
-+			interrupt-map = <0000 0 0 1 &gic 0 0 GIC_SPI 114 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 2 &gic 0 0 GIC_SPI 115 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 3 &gic 0 0 GIC_SPI 116 IRQ_TYPE_LEVEL_HIGH>,
-+					<0000 0 0 4 &gic 0 0 GIC_SPI 117 IRQ_TYPE_LEVEL_HIGH>;
-+			status = "disabled";
-+		};
-+
- 		pcie@1f0000000 { /* Integrated Endpoint Root Complex */
- 			compatible = "pci-host-ecam-generic";
- 			reg = <0x01 0xf0000000 0x0 0x100000>;
+diff --git a/drivers/pci/controller/dwc/pci-layerscape.c b/drivers/pci/controller/dwc/pci-layerscape.c
+index 3a5fa26..f24f79a 100644
+--- a/drivers/pci/controller/dwc/pci-layerscape.c
++++ b/drivers/pci/controller/dwc/pci-layerscape.c
+@@ -263,6 +263,7 @@ static const struct ls_pcie_drvdata ls2088_drvdata = {
+ static const struct of_device_id ls_pcie_of_match[] = {
+ 	{ .compatible = "fsl,ls1012a-pcie", .data = &ls1046_drvdata },
+ 	{ .compatible = "fsl,ls1021a-pcie", .data = &ls1021_drvdata },
++	{ .compatible = "fsl,ls1028a-pcie", .data = &ls2088_drvdata },
+ 	{ .compatible = "fsl,ls1043a-pcie", .data = &ls1043_drvdata },
+ 	{ .compatible = "fsl,ls1046a-pcie", .data = &ls1046_drvdata },
+ 	{ .compatible = "fsl,ls2080a-pcie", .data = &ls2080_drvdata },
 -- 
 2.9.5
 
