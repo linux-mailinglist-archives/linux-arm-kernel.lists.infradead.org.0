@@ -2,61 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 243609A5C4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 04:47:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96D2F9A5D8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 04:59:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QUwxB/BKOrgPvw0fnVhwhKk51oCfD1dSp4RJs6gUi54=; b=ICb5O5NStIm1uR
-	T88X1XDxXaQ8cmpy7CURhfr0UV/AKr/0Go+vrJ+lpDxGTL92PqYRtltIu4H9im/MgWIN2g2kJTM+g
-	skkUdL/mcLwHHuS/IZbGlmZVYnzc+bz+fc86Hdh5QweycrnzkDKaPg49gpL5Rq/p+m5hbnT6HFIa+
-	05H08BFIQE1j9rnTHYTeSMVlvRxWamyJ8N4I80DmLH7LYXZv+ySysvXs6LPkE2G+Ns0zH9wg2Omha
-	QlWgNeRg6rOwSDkbnLv/Z/Rzn4gj5u2C7GddtyOPexn+8OswTw1SkLgRgTxFMSbEVhEFDsszNG0sE
-	737PEBTg1zGGLHnGjnXQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ZAOj+OZ6BA//KoH2u807o/ty+9gvAbFVKHQ00ol9isE=; b=pQp
+	VdqlXHgVvAVnLL9/uupovco7+34pzZwC6oJedcar7PcJKa08308bVL1CVeMo6Rz2cHe10GG9Tycvz
+	uNBvfvROLGELsYNKyGZwjLwRL9QHjobG8ix/+eUEK6SNfvcSH/D/dCMujH2Mud08cuIFTIOPC625D
+	VztCF/PBH+c1tBvOCCRYEB9hP9jWBcWKVnThuQ7QhZHPn6FpaZEElrmAiyXhAwt6ZIIrCudjT4xAl
+	Yy3OEn69MoOYxjZlgT3a7at1qRjIP2DH80Nv8t29iO9oO29chjgIQMOwnZulYvl/C+k4ejZjBt3GZ
+	92dcFyByW3TbMrsxGTZqHlrDyLv3X+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0zbh-0006Ea-Vb; Fri, 23 Aug 2019 02:47:18 +0000
-Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
+	id 1i0zms-0002i8-4S; Fri, 23 Aug 2019 02:58:50 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0zbU-0006B3-15
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 02:47:05 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 1DF7C88E4DAE3FF3267F;
- Fri, 23 Aug 2019 10:46:55 +0800 (CST)
-Received: from HGHY4L002753561.china.huawei.com (10.133.215.186) by
- DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
- 14.3.439.0; Fri, 23 Aug 2019 10:46:48 +0800
-From: Zhen Lei <thunder.leizhen@huawei.com>
-To: Jean-Philippe Brucker <jean-philippe@linaro.org>, John Garry
- <john.garry@huawei.com>, Robin Murphy <robin.murphy@arm.com>, Will Deacon
- <will@kernel.org>, Joerg Roedel <joro@8bytes.org>, iommu
- <iommu@lists.linux-foundation.org>, linux-arm-kernel
- <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v3 2/2] iommu/arm-smmu-v3: change the lock type of
- arm_smmu_domain.devices_lock
-Date: Fri, 23 Aug 2019 10:45:51 +0800
-Message-ID: <20190823024551.24448-3-thunder.leizhen@huawei.com>
-X-Mailer: git-send-email 2.21.0.windows.1
-In-Reply-To: <20190823024551.24448-1-thunder.leizhen@huawei.com>
-References: <20190823024551.24448-1-thunder.leizhen@huawei.com>
-MIME-Version: 1.0
-X-Originating-IP: [10.133.215.186]
-X-CFilter-Loop: Reflected
+ id 1i0zmd-0002hn-Po
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 02:58:37 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-11.nifty.com with ESMTP id x7N2wDua012632;
+ Fri, 23 Aug 2019 11:58:13 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x7N2wDua012632
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1566529093;
+ bh=8CosFU0pC2ctS3iNrA/qY5iVZIjxaMWMDqXin1AO7LU=;
+ h=From:To:Cc:Subject:Date:From;
+ b=Yf6o5wqGOxca7n5PZXCSlYBzIInSYk2Nv000Mt4NIkIcVz8rSQnsvfW9PIZDlqqz0
+ i+1vweVR5eCqZA9iFLtHZBDlwPvVpHEBx9KqCAlPxb6TKfs0dhwEOheTQszwfiXHGh
+ mICZM+hR7tjISdF+WMNRDRQcnIm15BifexxXESwU1HLbSKHZuQJdOk6+e7CIz9gJg9
+ fJhD1Hzo0Xf8I2uTeVJBSDg1x5lA63RoFQsFktDIrLe8W+WhDu2v3KWb8JkRbkXDUa
+ itg2weW3P3uSJsRhiHk787sKx07cUMeivpemvawtu7fd0UUdwJVmItVGR86sMyZFzE
+ UKe55y3NyZxRQ==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: Tony Lindgren <tony@atomide.com>, linux-omap@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] ARM: omap2: move platform-specific asm-offset.h to
+ arch/arm/mach-omap2
+Date: Fri, 23 Aug 2019 11:58:08 +0900
+Message-Id: <20190823025808.11875-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_194704_275271_4B4EDF01 
-X-CRM114-Status: GOOD (  11.15  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190822_195836_054333_F9D4BEE4 
+X-CRM114-Status: GOOD (  12.85  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.32 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.78 listed in wl.mailspike.net]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,102 +75,123 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Zhen Lei <thunder.leizhen@huawei.com>
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A master add into or remove from smmu_domain->devices only happened in
-arm_smmu_attach_dev()/arm_smmu_detach_dev(), the frequency of these
-operations is very low. But we traverse smmu_domain->devices list in
-arm_smmu_atc_inv_domain() are frequent. So change the protection from
-spinlock to rwlock can improve concurrency, especially for the smmu
-domain without ATS masters.
+<generated/ti-pm-asm-offsets.h> is only generated and included by
+arch/arm/mach-omap2/, so it does not need to reside in the globally
+visible include/generated/.
 
-By the way, the cmdq has its own lock, so this change is safe.
+I renamed it to arch/arm/mach-omap2/pm-asm-offsets.h since the prefix
+'ti-' is just redundant in mach-omap2/.
 
-Here is the performance data tested on my board:
-Before:
-Jobs: 24 (f=24): [0.1% done] [9798M/0K /s] [2392K/0  iops] [09h:59m:13s]
-Jobs: 24 (f=24): [0.1% done] [9782M/0K /s] [2388K/0  iops] [09h:59m:12s]
-Jobs: 24 (f=24): [0.2% done] [9825M/0K /s] [2399K/0  iops] [09h:59m:11s]
-Jobs: 24 (f=24): [0.2% done] [9836M/0K /s] [2401K/0  iops] [09h:59m:10s]
+My main motivation of this change is to avoid the race condition for
+the parallel build (-j) when CONFIG_IKHEADERS is enabled.
 
-After:
-Jobs: 24 (f=24): [0.1% done] [10996M/0K /s] [2685K/0  iops] [09h:59m:13s]
-Jobs: 24 (f=24): [0.1% done] [10817M/0K /s] [2641K/0  iops] [09h:59m:12s]
-Jobs: 24 (f=24): [0.2% done] [11083M/0K /s] [2706K/0  iops] [09h:59m:11s]
-Jobs: 24 (f=24): [0.2% done] [10603M/0K /s] [2589K/0  iops] [09h:59m:10s]
+When it is enabled, all the headers under include/ are archived into
+kernel/kheaders_data.tar.xz and exposed in the sysfs.
 
-Signed-off-by: Zhen Lei <thunder.leizhen@huawei.com>
-Suggested-by: Will Deacon <will@kernel.org>
+In the parallel build, we have no idea in which order files are built.
+
+ - If ti-pm-asm-offsets.h is built before kheaders_data.tar.xz,
+   the header will be included in the archive. Probably nobody will
+   use it, but it is harmless except that it will increase the archive
+   size needlessly.
+
+ - If kheaders_data.tar.xz is built before ti-pm-asm-offsets.h,
+   the header will not be included in the archive. However, in the next
+   build, the archive will be re-generated to include the newly-found
+   ti-pm-asm-offsets.h. This is not nice from the build system point
+   of view.
+
+ - If ti-pm-asm-offsets.h and kheaders_data.tar.xz are built at the
+   same time, the corrupted header might be included in the archive,
+   which does not look nice either.
+
+This commit fixes the race.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+Tested-by: Keerthy <j-keerthy@ti.com>
 ---
- drivers/iommu/arm-smmu-v3.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index e0dcc5d27291f8b..eded2e7a5a0c444 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -641,7 +641,7 @@ struct arm_smmu_domain {
- 	struct iommu_domain		domain;
+ arch/arm/mach-omap2/.gitignore  | 1 +
+ arch/arm/mach-omap2/Makefile    | 5 +++--
+ arch/arm/mach-omap2/sleep33xx.S | 2 +-
+ arch/arm/mach-omap2/sleep43xx.S | 2 +-
+ 4 files changed, 6 insertions(+), 4 deletions(-)
+ create mode 100644 arch/arm/mach-omap2/.gitignore
+
+diff --git a/arch/arm/mach-omap2/.gitignore b/arch/arm/mach-omap2/.gitignore
+new file mode 100644
+index 000000000000..79a8d6ea7152
+--- /dev/null
++++ b/arch/arm/mach-omap2/.gitignore
+@@ -0,0 +1 @@
++pm-asm-offsets.h
+diff --git a/arch/arm/mach-omap2/Makefile b/arch/arm/mach-omap2/Makefile
+index 600650551621..21c6d4bca3c0 100644
+--- a/arch/arm/mach-omap2/Makefile
++++ b/arch/arm/mach-omap2/Makefile
+@@ -223,9 +223,10 @@ obj-y					+= omap_phy_internal.o
  
- 	struct list_head		devices;
--	spinlock_t			devices_lock;
-+	rwlock_t			devices_lock;
- };
+ obj-$(CONFIG_MACH_OMAP2_TUSB6010)	+= usb-tusb6010.o
  
- struct arm_smmu_option_prop {
-@@ -1536,10 +1536,10 @@ static int arm_smmu_atc_inv_domain(struct arm_smmu_domain *smmu_domain,
+-include/generated/ti-pm-asm-offsets.h: arch/arm/mach-omap2/pm-asm-offsets.s FORCE
++$(obj)/pm-asm-offsets.h: $(obj)/pm-asm-offsets.s FORCE
+ 	$(call filechk,offsets,__TI_PM_ASM_OFFSETS_H__)
  
- 	arm_smmu_atc_inv_to_cmd(ssid, iova, size, &cmd);
+-$(obj)/sleep33xx.o $(obj)/sleep43xx.o: include/generated/ti-pm-asm-offsets.h
++$(obj)/sleep33xx.o $(obj)/sleep43xx.o: $(obj)/pm-asm-offsets.h
  
--	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
-+	read_lock_irqsave(&smmu_domain->devices_lock, flags);
- 	list_for_each_entry(master, &smmu_domain->devices, domain_head)
- 		ret |= arm_smmu_atc_inv_master(master, &cmd);
--	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
-+	read_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+ targets += pm-asm-offsets.s
++clean-files += pm-asm-offsets.h
+diff --git a/arch/arm/mach-omap2/sleep33xx.S b/arch/arm/mach-omap2/sleep33xx.S
+index 68fee339d3f1..dc221249bc22 100644
+--- a/arch/arm/mach-omap2/sleep33xx.S
++++ b/arch/arm/mach-omap2/sleep33xx.S
+@@ -6,7 +6,6 @@
+  *	Dave Gerlach, Vaibhav Bedia
+  */
  
- 	return ret ? -ETIMEDOUT : 0;
- }
-@@ -1648,7 +1648,7 @@ static struct iommu_domain *arm_smmu_domain_alloc(unsigned type)
+-#include <generated/ti-pm-asm-offsets.h>
+ #include <linux/linkage.h>
+ #include <linux/platform_data/pm33xx.h>
+ #include <linux/ti-emif-sram.h>
+@@ -15,6 +14,7 @@
  
- 	mutex_init(&smmu_domain->init_mutex);
- 	INIT_LIST_HEAD(&smmu_domain->devices);
--	spin_lock_init(&smmu_domain->devices_lock);
-+	rwlock_init(&smmu_domain->devices_lock);
+ #include "iomap.h"
+ #include "cm33xx.h"
++#include "pm-asm-offsets.h"
  
- 	return &smmu_domain->domain;
- }
-@@ -1911,9 +1911,9 @@ static void arm_smmu_detach_dev(struct arm_smmu_master *master)
- 	if (!smmu_domain)
- 		return;
+ #define AM33XX_CM_CLKCTRL_MODULESTATE_DISABLED			0x00030000
+ #define AM33XX_CM_CLKCTRL_MODULEMODE_DISABLE			0x0003
+diff --git a/arch/arm/mach-omap2/sleep43xx.S b/arch/arm/mach-omap2/sleep43xx.S
+index c1f4e4852644..90d2907a2eb2 100644
+--- a/arch/arm/mach-omap2/sleep43xx.S
++++ b/arch/arm/mach-omap2/sleep43xx.S
+@@ -6,7 +6,6 @@
+  *	Dave Gerlach, Vaibhav Bedia
+  */
  
--	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
-+	write_lock_irqsave(&smmu_domain->devices_lock, flags);
- 	list_del(&master->domain_head);
--	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
-+	write_unlock_irqrestore(&smmu_domain->devices_lock, flags);
+-#include <generated/ti-pm-asm-offsets.h>
+ #include <linux/linkage.h>
+ #include <linux/ti-emif-sram.h>
+ #include <linux/platform_data/pm33xx.h>
+@@ -19,6 +18,7 @@
+ #include "iomap.h"
+ #include "omap-secure.h"
+ #include "omap44xx.h"
++#include "pm-asm-offsets.h"
+ #include "prm33xx.h"
+ #include "prcm43xx.h"
  
- 	master->domain = NULL;
- 	arm_smmu_install_ste_for_dev(master);
-@@ -1966,9 +1966,9 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
- 
- 	arm_smmu_install_ste_for_dev(master);
- 
--	spin_lock_irqsave(&smmu_domain->devices_lock, flags);
-+	write_lock_irqsave(&smmu_domain->devices_lock, flags);
- 	list_add(&master->domain_head, &smmu_domain->devices);
--	spin_unlock_irqrestore(&smmu_domain->devices_lock, flags);
-+	write_unlock_irqrestore(&smmu_domain->devices_lock, flags);
- out_unlock:
- 	mutex_unlock(&smmu_domain->init_mutex);
- 	return ret;
 -- 
-1.8.3
-
+2.17.1
 
 
 _______________________________________________
