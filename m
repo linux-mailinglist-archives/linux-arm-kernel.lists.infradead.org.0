@@ -2,92 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4B38F9B372
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 17:36:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C75F59B39E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 17:42:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-ID:From:To:Subject:
-	MIME-Version:References:In-Reply-To:Date:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hDxstFP0kFbPVC7uFlhareIMO6LtSYkvIboU698L9q4=; b=TZyVk8KN3krO8n
-	HsZQYkiqhtXrLm+IXJyUsBBPmDhH4d4JsfnoJCB3s97ZCOdWTP8yg86FBW68Y/ZH0gAZ6VumISMb7
-	Q0ZQR5BgPfAKXSX+LrjlsjRxdlMzKyRyekWYpWdC3KDeagzW7B34tSzWBkHDXYuODVkE2ILTwkXTc
-	NwU+FBtG2d2Lv/ootZleUayoVS3+v/jraL6gKTbuaIjGrUmLeaBQxgHCWSNVMFqVSWG47AkLJ/qB1
-	QVRy3gQ4uOY56I0kIqnpHovKwZ9tho7tfUTs8860m850QJtgnmjfKGjaZav+t3BqWlZU77ngHgd24
-	GMO0QVQ6HlPTDVJddpew==;
+	List-Owner; bh=p0NCflvlLybJAsaLfTnuGKAQKh6Zoa+ybr1egdpa/fs=; b=riw8uEgOTtvg9U
+	GuGclaRMdh3atP8jIPIJWo6+G5E8AnDf3YhHa7RqtT0BkRTwVlf4QH4HMrRZEaBRwUKGLWcQnETv4
+	44BpfFDt4DcDEnXdgoeVTN+usWCxzyyqs2/WQSMISpgQqsFlTAZ4bwUASzqE78iVM+EN+GIYaqX8P
+	dw3MfgufJb/DUDwm0wvc+dWDJJSqR6M/9GHl7ZDEGNKFdfhAq3sixtkS50ItdfKeVRitMj1wfQNil
+	Td5jca8o6tUb6D/xZVJo0HMnToYjyP2+ijco3c4D8Qg+m1R0PSseIBQ7KkQTkU7IUdRrqMvxAAzOZ
+	6oMtDxDbjeMKrqmr8L7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1Bby-0003QF-OU; Fri, 23 Aug 2019 15:36:22 +0000
-Received: from mout.gmx.net ([212.227.17.22])
+	id 1i1Bhf-0005jn-Qq; Fri, 23 Aug 2019 15:42:15 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1Bbr-0003PB-VR; Fri, 23 Aug 2019 15:36:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1566574541;
- bh=vd75T/vd4ArUBu9LLpHkJoLc/Kt2E9SfiGvqFhhKu9E=;
- h=X-UI-Sender-Class:Date:In-Reply-To:References:Subject:Reply-to:To:
- CC:From;
- b=PFDhZv8zZ4cZIpvkNCFUMAq+17D72PgDWucX7+CLVSkwyOL4/lMy3erhx/hpmsvq0
- 1/lohDr3GB1u0z0wvFiiNpvqaXQ1shmmFGrXuW/tB6dhYLh1WFfWqZnm75XSzUyiha
- nuXVF7GYX4BbaTt9Bg5hVSCZYsrokU1/6AdJhjQ0=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [10.159.16.108] ([80.187.106.162]) by mail.gmx.com (mrgmx103
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0Mhhr5-1hotW33DkJ-00MuaE; Fri, 23
- Aug 2019 17:35:41 +0200
-Date: Fri, 23 Aug 2019 17:35:36 +0200
-User-Agent: K-9 Mail for Android
-In-Reply-To: <e8a918ab-3e7a-b487-db77-df28d56518ce@gmail.com>
-References: <1566531931-9772-1-git-send-email-hsin-hsiung.wang@mediatek.com>
- <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
- <trinity-1f82bff1-535e-47cd-9a2f-8faccb56e356-1566562433314@3c-app-gmx-bs11>
- <e8a918ab-3e7a-b487-db77-df28d56518ce@gmail.com>
+ id 1i1BhZ-0005jG-1g
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 15:42:10 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0A1B621019;
+ Fri, 23 Aug 2019 15:42:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566574928;
+ bh=BDjfteW/QU9KMSbRapMH7R8D4vRCcjKAbhun5quyEHk=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=xKcFN0VRwM4eDlY9+q1YP1NyK92TfhpVYPLSA7KszQyoFiO3TUUaA5e73plzmSMGr
+ 1z1h+vmeQsi4l3fFTdxEG/DAdboXAfPBqj6JkL2fUd5obOBiA6P+d/xQhEs4ZLt1sk
+ 9olUyYc+Ulu+ot1ZnxtocySEJH/F8mJAUV4XgxPo=
+Date: Fri, 23 Aug 2019 16:41:59 +0100
+From: Will Deacon <will@kernel.org>
+To: Hsin-Yi Wang <hsinyi@chromium.org>, tytso@mit.edu
+Subject: Re: [PATCH v10 2/3] fdt: add support for rng-seed
+Message-ID: <20190823154158.wgcnxfzpcttpnhga@willie-the-truck>
+References: <20190823062452.127528-1-hsinyi@chromium.org>
+ <20190823062452.127528-3-hsinyi@chromium.org>
 MIME-Version: 1.0
-Subject: Re: [BUG] [PATCH v5 02/10] mfd: mt6397: extract irq related code from
- core driver
-To: linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
-From: Frank Wunderlich <frank-w@public-files.de>
-Message-ID: <285EC979-8472-4634-863C-E7A9967C9AD0@public-files.de>
-X-Provags-ID: V03:K1:bL575h7X+tk6ewiOyq1Gud/GzAGlvjPNFuS8Ma+k+w6MxDp2tFE
- K0YCUniTUPdEUB5rmZbIv/CCyHeA0yFsxVDuW8b3JbaZLkwQwG42PgjoSMWjQQN38+xqI07
- OFIXUgK+qtZdR0BdbN5z7GiRA2DqPiV6wA3EZy7zQKP45FEeJc7URlnBGCg9BUt6twWLSMf
- gupMtRHUUge8Sib2t35rg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:8hWNIA30oJQ=:sX3UEKaNIgkFhyhJyx2qYV
- 0T1+XfwgFJjBTWHcIYcT3s7JIsmlcNpdQ8ovLlV9iBuGAO3dZWZ1PZuyYau0GNHB5vTRBLCYI
- ajPENZ+pdQMroqQdAa211D9SvilR7cR/fkIzVcnjLfAlmnuPdw8j+GQ5pyFbuEGqHq5biNrAQ
- OBNcMMQEnXsBZXH1878HaheIvGOE8Jmh/zzyih+Vr6oI49ArWtKy94/ZeEYHECe/rud5nZDkl
- WH48PtprMWDWjtYb1j5x150S+vEHVGY3Qwp+MCjlDz3HTT4FbTtakWdt8ovo40L8arCIf/Bp8
- ILx6+XjmMsW8DKaxtjPKEYVkVEfCWwutbBBVj/5i5eFKSrPCHD2U7JCNehZIIDAnmJJz2Oj0q
- GGmkUpzjG2+hRfgDskQjDkPktNlQ/bQ1nsZtmWv1MbqHU7HRpf1YXjSs40YZCWYqc2x2FssO/
- VV9mDfn49NsvoiEU6MNIJkeEHqQflkRPRxO8pMr67wIX/19ZVpE6LvHxtGfP3ifiwVdEBcdwX
- +T2A4hgQ3h/gl1O32CkcBzBB6Utu5Fjv7HWITX+q6uqqmhAy8+RcqhKlU2bi5eTc5kmYbJgki
- esCh8QEhOKK8LCVnBbylFXAZrrfX7t4vhW32EOwtHar61Z9i943nk3eRaf+RAPCglSNCT4yqu
- hMTe7yecGzyEqoInrIg6VTXE9n56JSJpqroR8Vjru7Lk2el6AjC013lp/Z/uoZwo5adS/d3fy
- tlqsCPXrRArS7Pl9nGbTJOepQ83jORe3DeF+bOf1Gnk24NdLQo/dauXYSonwB/VAUVAVxM1uL
- bim2FnxaRHkfkUmERdxyG2O1qyfUTlvxfCXumV98tvVqBgPPd9Vhtbtnsz/6XU8InNbfzFIwP
- V1jMtiEl6xlY4VnxoUaoWAaUn+0y9AySJugQVyS3zZo6tncS0nQUE+RsjqfandOXFYO4R5fZA
- 0Rn+3UpzBlSXp32F6eqaa8JlITBXfiFtEd8y/b1wBQihIQWXRVMQcxHmWFzN0IyyDaDQinMNQ
- bKit6o5+HGAYwx0ib1wwMl85DCuOsqCHWkg0LIfkyvX5/1o+Kv9jr50Lxa0awgSTHH7K4VZ+D
- GcBPm7pQg4QAB9MNPVYcVCGMlcfbwHSRk2z5rDkFgaUjcJO944PFq1oGf+X0fWXm2ZZktTxis
- itMTU=
+Content-Disposition: inline
+In-Reply-To: <20190823062452.127528-3-hsinyi@chromium.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_083616_308592_8A36DE42 
-X-CRM114-Status: UNSURE (   3.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190823_084209_133843_5B4E0392 
+X-CRM114-Status: GOOD (  14.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.22 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,26 +77,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: frank-w@public-files.de
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, srv_heupstream@mediatek.com,
- devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Mark Brown <broonie@kernel.org>, Sean Wang <sean.wang@mediatek.com>,
- Liam Girdwood <lgirdwood@gmail.com>, linux-kernel@vger.kernel.org,
- Richard Fontana <rfontana@redhat.com>, Rob Herring <robh+dt@kernel.org>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- =?ISO-8859-1?Q?Ren=E9_van_Dorst?= <opensource@vdorst.com>,
- Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org,
- linux-rtc@vger.kernel.org
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Mukesh Ojha <mojha@codeaurora.org>,
+ Grzegorz Halat <ghalat@redhat.com>, "H . Peter Anvin" <hpa@zytor.com>,
+ Guenter Roeck <groeck@chromium.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>, Rob Herring <robh@kernel.org>,
+ Daniel Thompson <daniel.thompson@linaro.org>,
+ Anders Roxell <anders.roxell@linaro.org>, Yury Norov <ynorov@marvell.com>,
+ Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
+ Aaro Koskinen <aaro.koskinen@nokia.com>, Ingo Molnar <mingo@redhat.com>,
+ Viresh Kumar <viresh.kumar@linaro.org>, Waiman Long <longman@redhat.com>,
+ "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>, Wei Li <liwei391@huawei.com>,
+ Alexey Dobriyan <adobriyan@gmail.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Len Brown <len.brown@intel.com>, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Rik van Riel <riel@surriel.com>,
+ Stephen Boyd <swboyd@chromium.org>, Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Mike Rapoport <rppt@linux.vnet.ibm.com>, Borislav Petkov <bp@alien8.de>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Marcelo Tosatti <mtosatti@redhat.com>, linux-kernel@vger.kernel.org,
+ Armijn Hemel <armijn@tjaldur.nl>, Jiri Kosina <jkosina@suse.cz>,
+ Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Tim Chen <tim.c.chen@linux.intel.com>,
+ "David S . Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As far as i understand does old init-function not rely on the chip-id, so it seems that with this commit a prior bug is shown.
-maybe the chip-id (should be 0x23 like constant) is set later after irq-request or completely missing for mt6323
+On Fri, Aug 23, 2019 at 02:24:51PM +0800, Hsin-Yi Wang wrote:
+> Introducing a chosen node, rng-seed, which is an entropy that can be
+> passed to kernel called very early to increase initial device
+> randomness. Bootloader should provide this entropy and the value is
+> read from /chosen/rng-seed in DT.
+> 
+> Obtain of_fdt_crc32 for CRC check after early_init_dt_scan_nodes(),
+> since early_init_dt_scan_chosen() would modify fdt to erase rng-seed.
+> 
+> Add a new interface add_bootloader_randomness() for rng-seed use case.
+> Depends on whether the seed is trustworthy, rng seed would be passed to
+> add_hwgenerator_randomness(). Otherwise it would be passed to
+> add_device_randomness(). Decision is controlled by kernel config
+> RANDOM_TRUST_BOOTLOADER.
+> 
+> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+> Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+> Reviewed-by: Rob Herring <robh@kernel.org>
+> ---
+> Change from v9:
+> * reword kconfig
+> * use IS_ENABLED for config
+
+Given that these aren't functional changes, I've kept Ted's ack from v9
+and I'll queue these via arm64 assuming they pass testing.
+
+Ted -- please shout if you're not happy about that, and I'll drop the
+series.
+
+Thanks,
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
