@@ -2,62 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D50519B4AD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 18:41:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3491C9B4B2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 18:42:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
 	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=soh9GsEKTEM6N+jjyiGsTd4SIWdkhGF1jJQRkayJS8U=; b=kXwxH6jXhaUgcZ
-	4mssvpPgN23mEHGHedukVj3fvn3m8LOb1jWsiEV2nFznnBrRXu6g4O3M2dVcsEjRv3s0BPO78XunD
-	C6IcnwRaUOM/J6OV/E3b1y4wUGHd+Q0O39h0i+dgWkpVNtht/sAwSJvhE6lnc0jsxjyDj/0YBQYt0
-	sc8oGo1mz53Vt9MJdGqboFMNSL9ZHhFTOp/Z43U/MvX8L5m5PVc8ov/mLDebr/0ZeS2evo8Lc4sZ6
-	3FwN9CsKiqcnWGO8ZL9MoxZC8fypkyL3LPlvISXCddJHlwfgIktifzHldoLuUKnULNJXpdSqlPEKb
-	csO+XzfJM3R2kD3ebeOg==;
+	List-Owner; bh=xWpdnuarv0uxgcLBMyo3UyJtf9QUwFYe60w+OFam+kQ=; b=m2w0x9ddkbYdsG
+	0ks9va0joiOrUrUmhreUtj2Yd0syO2jCFfsXO+ZZcquqHBNIcPXDsBQWR7Ppez6TYgDQngrQFwbO/
+	dhMVw/kNNlRKn+mLWs15J5Z/rjkoPjYtuyJ7vRaY9sA6lqaStfsQzg+AxdgWzG5R50OBLFEUmi0PC
+	IeHCoFKJTHy36iDQwY5p4eC0i0VXi7koqRNB6IvcX44ciKM91Zg6KLlmmBL7RadqN0M83/0M/G0qv
+	MK1fTTORdb0PjxnxRMwSNByXjdBQ98eu1Som8Cdug24KceyzjE4tu+RnjWYCv4lQa/V+je6vANhWU
+	nyCvz0hBZHgA19Nix0Ag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1CcP-0005gV-Ap; Fri, 23 Aug 2019 16:40:53 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1i1Ce0-00060E-BV; Fri, 23 Aug 2019 16:42:32 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1CcH-0005fR-9m; Fri, 23 Aug 2019 16:40:46 +0000
-Received: by mail-ed1-x543.google.com with SMTP id w5so14340485edl.8;
- Fri, 23 Aug 2019 09:40:44 -0700 (PDT)
+ id 1i1Cdq-0005yc-VT; Fri, 23 Aug 2019 16:42:24 +0000
+Received: by mail-ed1-x542.google.com with SMTP id a21so14346188edt.11;
+ Fri, 23 Aug 2019 09:42:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=to:cc:from:subject:openpgp:autocrypt:message-id:date:user-agent
  :mime-version:content-language:content-transfer-encoding;
- bh=aFMRnVNqmcvLjwbBS18W3qG+Uo3qp8Bvau1ief3uAxI=;
- b=YRxEiuiKrYM96JxS7uVb/5Rz1xlpPGenoC9wR0WgxpJb2AXRU7nIUYBME+CYwk9IUz
- MbpoKhvjo2RJJRMYxDj3sSp5vSqHvf6px2oMSy9zj34DRKGX1OJd0J8IxSBcVn+Oqb07
- hzwOGjOsAme1Cp4kHpb9mUetg3XRjtlFNwn7VKIEuhe0s6qx+l0SN7aKpMbp1vr/gErt
- iDMLyGtqR3xCyMopbdwHyVTuY6HeE/ljASMUwKXSPq4/Wo7yGttpeCkCrKVkX6O+YB8x
- 81yu2ZJva/M1hMWs7uBS6ri5+2OKuCrY5+BTzaL7Wqlouj/K8BDsnw2OpNBEYdT3YKs1
- AaCg==
+ bh=hgYy7I7ChVaeadCUQGVLISUWLCXb/3d0H/RkHQQVRi4=;
+ b=HaRVed3gQivfI09m8sngNK6cdMjYe8prbF+92JO+/00soZJWoFdKEM6hy3GuCGTQ5K
+ UVWO2Zmw/LR/1aUgza0xEUvbOW476S9FETz7TiHtp4071VelpTuFMQz/OvHpG/U2TQ+5
+ F1wBLklqAWdxVJUPpMmmxCpkvylUoXa99dspHVZNMGsUxg5OvFfwCh8KvC2KOb55QZ0i
+ bbt4AvH/j4SFUrejxbAIUsUA8IkDhs+PQwAj44lFv6L9Vk2ggCkHR1DYKPNEv8kvcEE/
+ Ke088+350x3fQQZwXH1GAGQAzmjHxcdz57qKIfp3zs9+BlyTojkMUxEUgkG8RQGmzZfk
+ wAWQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:to:cc:from:subject:openpgp:autocrypt:message-id
  :date:user-agent:mime-version:content-language
  :content-transfer-encoding;
- bh=aFMRnVNqmcvLjwbBS18W3qG+Uo3qp8Bvau1ief3uAxI=;
- b=LoZ5CXIwEJP36j9fcJ5MSr7y+K3bpQcX8h4hhB84K+FmpFEKm0EeV7xjU1kRkAahZO
- ovt2i9Sg0k61dzT2GEl/jZWU3LNx9WERxCK4cqRZsncAG6/h4qn85KxWyABsggad/ycO
- 3W1cXyGFMVExpFOVXDMHfYILdd+v2UHgxlBrErUoeikWoAa4GV4pMujd3Zb/hcx+qfnE
- utluNa6jzCdb7cf9f1YN5tk7IsOY6HmEcB9RIBMdsi2Ma5l65Thws9tg0DjODlP1rkLz
- IPI9WUzuGtFx7PGxeJRMNs+drb4gzF7yTfztnB1PaqotDaVVBEGutyOxtB4ej4VfAVia
- HGKg==
-X-Gm-Message-State: APjAAAVvrz0+DaOFLYYVfCo0PgBTfD/OwEMgYf1mbYhjr93xnXlSkE5/
- ZC36fR0okMejxKoFdEmQOcLOjAVKSAU=
-X-Google-Smtp-Source: APXvYqwYEtxX47/VxyKnLYuJkaxLAWykEpwo6AGbXnU/p73cmLXFgtSerSlJD4n5tkwJ6nCprNSghA==
-X-Received: by 2002:aa7:da4a:: with SMTP id w10mr5452413eds.74.1566578443483; 
- Fri, 23 Aug 2019 09:40:43 -0700 (PDT)
+ bh=hgYy7I7ChVaeadCUQGVLISUWLCXb/3d0H/RkHQQVRi4=;
+ b=phGVUDlsR0Zn9TVVyEmhWKIIk58VPkbqkBhtxd+3oFA+ZV3qsJSgbgXYbovZGDcMV+
+ ixpsBSjSKylyO0/S0jjWnS56DPGVarpBPEvtEGvd62lURR6ysFmXE/ra9LDlgmYg/d+4
+ TC9YizM2QzZPK2M5JnQjICZuNRqvc59i5P5N0hy+OVCykwiogEKbJCQAQWwFERLaJkRn
+ cglsJh8z379QvAl+AoHpp3NFelzFMdOxqAgg/8+kUZAFmWkdaFxCDV8TixGm6wr5vE+z
+ TEUuda0fImCIhVdJcJuPXZASVpCYf2NOtGoTm+3cOTAA3y7kFnizz1e6YOH4BRjuOWmd
+ yAAA==
+X-Gm-Message-State: APjAAAUqskwykty5sFaPHLnF9qBy7YODCvTsCBqM6KESItvqIgNdMJxl
+ 1fEhU+Pp0ayQOVFyTfhMhfqIEwFshoU=
+X-Google-Smtp-Source: APXvYqwA9nS151JEC9qHTqQdlmrWFejHUjYdglESRqLvufREX/gfwf+sn7z2OXnqWcOMpiMZnb3H0g==
+X-Received: by 2002:a50:d882:: with SMTP id p2mr5516719edj.276.1566578541134; 
+ Fri, 23 Aug 2019 09:42:21 -0700 (PDT)
 Received: from ziggy.stardust ([37.223.137.147])
- by smtp.gmail.com with ESMTPSA id c15sm627464edf.37.2019.08.23.09.40.42
+ by smtp.gmail.com with ESMTPSA id r3sm616267edm.6.2019.08.23.09.42.20
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 23 Aug 2019 09:40:42 -0700 (PDT)
+ Fri, 23 Aug 2019 09:42:20 -0700 (PDT)
 To: arm-soc <arm@kernel.org>, soc@kernel.org
 From: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [GIT PULL] arm: mediatek: dts32 updates for v5.4
+Subject: [GIT PULL] arm64: mediatek: dts64 updates for v5.4
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  mQINBFP1zgUBEAC21D6hk7//0kOmsUrE3eZ55kjc9DmFPKIz6l4NggqwQjBNRHIMh04BbCMY
@@ -152,22 +152,22 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <e236f659-2851-21b8-1873-314cd72ed6be@gmail.com>
-Date: Fri, 23 Aug 2019 18:40:40 +0200
+Message-ID: <def8fb77-fce4-097d-7ae2-8c4670bc09c1@gmail.com>
+Date: Fri, 23 Aug 2019 18:42:19 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_094045_345546_C210423A 
-X-CRM114-Status: GOOD (  15.05  )
+X-CRM114-CacheID: sfid-20190823_094223_042620_26067152 
+X-CRM114-Status: GOOD (  14.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -191,20 +191,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ryder Lee <ryder.lee@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
- <linux-mediatek@lists.infradead.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "moderated list:ARM/Mediatek SoC support"
+ <linux-mediatek@lists.infradead.org>, Mars Cheng <mars.cheng@mediatek.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd and Olof,
+Hi Olof and Arnd,
 
-please have a look on the following patch.
+Please take the following patches into account.
 
-Regards,
+Thanks!
 Matthias
 
 ---
@@ -215,27 +215,39 @@ The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
 are available in the Git repository at:
 
   https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-tags/v5.3-next-dts32
+tags/v5.3-next-dts64
 
-for you to fetch changes up to cc212241df0b8975bb0e6d7f9028405a9c664e49:
+for you to fetch changes up to 7b07a7a4e169180c7da5078bdf5254515e69c152:
 
-  arm: dts: mediatek: add basic support for MT7629 SoC (2019-08-22 11:22:17 +0200)
-
-----------------------------------------------------------------
-add support for the mt7629 reference board
+  dt-bindings: irq: mtk, sysirq: add support for mt6779 (2019-08-23 17:50:07 +0200)
 
 ----------------------------------------------------------------
-Ryder Lee (1):
-      arm: dts: mediatek: add basic support for MT7629 SoC
+mt8183:
+- fix pwrap interrupt number
+- add i2c notes
 
- arch/arm/boot/dts/Makefile                |   1 +
- arch/arm/boot/dts/mt7629-rfb.dts          | 263 ++++++++++++++++
- arch/arm/boot/dts/mt7629.dtsi             | 481 ++++++++++++++++++++++++++++++
- include/dt-bindings/reset/mt7629-resets.h |  71 +++++
- 4 files changed, 816 insertions(+)
- create mode 100644 arch/arm/boot/dts/mt7629-rfb.dts
- create mode 100644 arch/arm/boot/dts/mt7629.dtsi
- create mode 100644 include/dt-bindings/reset/mt7629-resets.h
+dt-bindings:
+- add compatible for mt6779
+- add mt6779 uart and sysirq compatible
+
+----------------------------------------------------------------
+Hsin-Hsiung Wang (1):
+      arm64: dts: mt8183: fix pwrap gic number
+
+Mars Cheng (3):
+      dt-bindings: mediatek: add support for mt6779 reference board
+      dt-bindings: mtk-uart: add mt6779 uart bindings
+      dt-bindings: irq: mtk, sysirq: add support for mt6779
+
+Qii Wang (1):
+      arm64: dts: mt8183: add I2C nodes
+
+ .../devicetree/bindings/arm/mediatek.yaml          |   4 +
+ .../interrupt-controller/mediatek,sysirq.txt       |   1 +
+ .../devicetree/bindings/serial/mtk-uart.txt        |   1 +
+ arch/arm64/boot/dts/mediatek/mt8183-evb.dts        |  96 +++++++++++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi           | 191 ++++++++++++++++++++-
+ 5 files changed, 292 insertions(+), 1 deletion(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
