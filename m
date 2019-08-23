@@ -2,55 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EAA1B9B119
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 15:38:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6589B9B12F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 15:45:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9NyvFs9Mp+JhpFA7eIKTsUvJjdtgvfHuZY3TQnRSlBM=; b=DIp0l53ubUdQPu
-	xHL8e9JijEe25g3Pi5FAIvWdpwGKmtMTwO6e4e2bXqSng81AgprOX9HOxdPd2C9Gx2tWOk/f728S2
-	qPOhsaadt/HlGioLeg4Y3Jri6yDowBzmwFi8xt+ULJcAzpo40+8GLt0+fP6gcH3DKmUEm33ottCIK
-	WbknpNpAyBZw3Q4bGg5FAJhscDaua1oMmwoCLFvwngzr0PHTRhN8s+23+gUc7URj02ZB2G4UZb2Jn
-	3YN3mmOB1ANwSnQMgMUov9tN7wjqWp0gKojpFQvSruTrWZy4tgI++G80grqc6UthQ5UNPN9NCCJHX
-	u6AovfaI2wT0T76UImNg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ERR7GgWhVNfvY0REUuPgghRU1BS+pIjL2KSI9gw4G7I=; b=RkE8AVpY030XgL
+	BOR9rsi+lTVGqtOm8FfNaAWN01wFpUlFuq/FK47JdoVqm4VQnEE6LHUmi6KVL7vYqzFkPNnTh+BB7
+	BP/HhJDdgMuynojUxAkJ90wkXoKJSvr5L10qzDXVstJddJLgFe9hyg0WWO1PfTtYgVjJgSxCsXqOr
+	oqVO4Rp1tWx5TIwPW5uvHLoH3VHWiUmP0aA7UWDAGcS4SMcZ4WvbUO3Q4Tml/oTq2TBRLxoNrMAjU
+	uOT42q1AOY1qf0ZrJP7++UCcInAsFi8tzgGa7WEXbyFAnXgB2fPq90RkP/o2zAs5ZxCFJ3mZuqZ4P
+	leuodN0ITIKlaQAWOc5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i19mB-0000Cf-Nf; Fri, 23 Aug 2019 13:38:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
+	id 1i19t2-0003cM-VJ; Fri, 23 Aug 2019 13:45:52 +0000
+Received: from mx.0dd.nl ([2a04:52c0:101:921::25])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i19m5-0000CJ-DT
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 13:38:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 56F6628;
- Fri, 23 Aug 2019 06:38:40 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A40F03F718;
- Fri, 23 Aug 2019 06:38:39 -0700 (PDT)
-Date: Fri, 23 Aug 2019 14:38:38 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH v2 03/10] PCI: designware-ep: Move the function of
- getting MSI capability forward
-Message-ID: <20190823133837.GF14582@e119886-lin.cambridge.arm.com>
-References: <20190822112242.16309-1-xiaowei.bao@nxp.com>
- <20190822112242.16309-3-xiaowei.bao@nxp.com>
+ id 1i19ss-0003Te-Nn; Fri, 23 Aug 2019 13:45:44 +0000
+Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.0dd.nl (Postfix) with ESMTPS id AA80F5FA7B;
+ Fri, 23 Aug 2019 15:45:39 +0200 (CEST)
+Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
+ secure) header.d=vdorst.com header.i=@vdorst.com header.b="VphKtHb6"; 
+ dkim-atps=neutral
+Received: from pc-rene.vdorst.com (pc-rene.vdorst.com [192.168.2.125])
+ by mail.vdorst.com (Postfix) with ESMTPA id 6DD951D89681;
+ Fri, 23 Aug 2019 15:45:39 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com 6DD951D89681
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
+ s=default; t=1566567939;
+ bh=4DXT2J8mfFRCiwxSqy0mkdAE2qhxEDwsE+v9BSRv9mo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=VphKtHb6a42eRPTzPTxmHYEDVRgcxRQVC/UGv7HMIqdMhJNRa0YhE0DdufZxZXWr9
+ 6mNhvtcx23q2xZH35r4DFHDRuoEAOP62k2vFBE0sx+tlzT6XV6dk9s77a57krT6ONk
+ JDXw+9lPhGJR8tJDKztkexhSlH0MP0Kd1W7zEBRYJMkI8SZka+IO4iCDn4akory5qJ
+ 8ui8zWa/x2ozqxrTgtZnyzHwl/kRTBxpIalSuSW3B2UwngipsfpubRaOysC8CH2vFY
+ XiRJtIJuxCwaf6ZbR+pjPOaW4Fr8//fBFqpBArHPm8+cdlzRdSVoRJGZVTrF4sFEZN
+ +OV+M5caJdarw==
+From: =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>
+To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
+ Nelson Chang <nelson.chang@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH net-next v3 0/3] net: ethernet: mediatek: convert to PHYLINK
+Date: Fri, 23 Aug 2019 15:45:13 +0200
+Message-Id: <20190823134516.27559-1-opensource@vdorst.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190822112242.16309-3-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_063841_500849_C2EC0C23 
-X-CRM114-Status: GOOD (  15.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_064543_079817_672A33E1 
+X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,64 +83,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.co,
- arnd@arndb.de, devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
- linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, kishon@ti.com, minghuan.Lian@nxp.com,
- robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
- bhelgaas@google.com, leoyang.li@nxp.com, shawnguo@kernel.org,
- mingkai.hu@nxp.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
+ linux-mips@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, Stefan Roese <sr@denx.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 07:22:35PM +0800, Xiaowei Bao wrote:
-> Move the function of getting MSI capability to the front of init
-> function, because the init function of the EP platform driver will use
-> the return value by the function of getting MSI capability.
-> 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-
-> ---
-> v2:
->  - No change.
-> 
->  drivers/pci/controller/dwc/pcie-designware-ep.c | 7 ++++---
->  1 file changed, 4 insertions(+), 3 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-designware-ep.c b/drivers/pci/controller/dwc/pcie-designware-ep.c
-> index b8388f8..0a6c199 100644
-> --- a/drivers/pci/controller/dwc/pcie-designware-ep.c
-> +++ b/drivers/pci/controller/dwc/pcie-designware-ep.c
-> @@ -656,6 +656,10 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
->  	if (ret < 0)
->  		epc->max_functions = 1;
->  
-> +	ep->msi_cap = dw_pcie_ep_find_capability(pci, PCI_CAP_ID_MSI);
-> +
-> +	ep->msix_cap = dw_pcie_ep_find_capability(pci, PCI_CAP_ID_MSIX);
-> +
->  	if (ep->ops->ep_init)
->  		ep->ops->ep_init(ep);
->  
-> @@ -672,9 +676,6 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
->  		dev_err(dev, "Failed to reserve memory for MSI/MSI-X\n");
->  		return -ENOMEM;
->  	}
-> -	ep->msi_cap = dw_pcie_ep_find_capability(pci, PCI_CAP_ID_MSI);
-> -
-> -	ep->msix_cap = dw_pcie_ep_find_capability(pci, PCI_CAP_ID_MSIX);
->  
->  	offset = dw_pcie_ep_find_ext_capability(pci, PCI_EXT_CAP_ID_REBAR);
->  	if (offset) {
-> -- 
-> 2.9.5
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlc2UgcGF0Y2hlcyBjb252ZXJ0cyBtZWRpYXRlayBkcml2ZXIgdG8gUEhZTElOSyBBUEkuCgp2
+Mi0+djM6CiogUGh5bGluayBpbXByb3ZlbWVudHMgYW5kIGNsZWFuLXVwcyBhZnRlciByZXZpZXcK
+djEtPnYyOgoqIFJlYmFzZSBmb3IgbXQ3Nng4IGNoYW5nZXMKKiBQaHlsaW5rIGltcHJvdmVtZW50
+cyBhbmQgY2xlYW4tdXBzIGFmdGVyIHJldmlldwoqIFNHTUlJIHBvcnQgZG9lc24ndCBzdXBwb3J0
+IDIuNUdiaXQgaW4gU0dNSUkgbW9kZSBvbmx5IGluIEJBU0UtWCBtb2RlLgogIFJlZmFjdG9yIHRo
+ZSBjb2RlLgoKUmVuw6kgdmFuIERvcnN0ICgzKToKICBuZXQ6IGV0aGVybmV0OiBtZWRpYXRlazog
+QWRkIGJhc2ljIFBIWUxJTksgc3VwcG9ydAogIG5ldDogZXRoZXJuZXQ6IG1lZGlhdGVrOiBSZS1h
+ZGQgc3VwcG9ydCBTR01JSQogIGR0LWJpbmRpbmdzOiBuZXQ6IGV0aGVybmV0OiBVcGRhdGUgbXQ3
+NjIyIGRvY3MgYW5kIGR0cyB0byByZWZsZWN0IHRoZQogICAgbmV3IHBoeWxpbmsgQVBJCgogLi4u
+L2FybS9tZWRpYXRlay9tZWRpYXRlayxzZ21paXN5cy50eHQgICAgICAgIHwgICAyIC0KIC4uLi9k
+dHMvbWVkaWF0ZWsvbXQ3NjIyLWJhbmFuYXBpLWJwaS1yNjQuZHRzICB8ICAyOCArLQogYXJjaC9h
+cm02NC9ib290L2R0cy9tZWRpYXRlay9tdDc2MjIuZHRzaSAgICAgIHwgICAxIC0KIGRyaXZlcnMv
+bmV0L2V0aGVybmV0L21lZGlhdGVrL0tjb25maWcgICAgICAgICB8ICAgMiArLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvbWVkaWF0ZWsvbXRrX2V0aF9wYXRoLmMgIHwgIDc1ICstLQogZHJpdmVycy9u
+ZXQvZXRoZXJuZXQvbWVkaWF0ZWsvbXRrX2V0aF9zb2MuYyAgIHwgNTI5ICsrKysrKysrKysrKy0t
+LS0tLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWVkaWF0ZWsvbXRrX2V0aF9zb2MuaCAgIHwgIDY4
+ICsrLQogZHJpdmVycy9uZXQvZXRoZXJuZXQvbWVkaWF0ZWsvbXRrX3NnbWlpLmMgICAgIHwgIDY1
+ICsrLQogOCBmaWxlcyBjaGFuZ2VkLCA0NzcgaW5zZXJ0aW9ucygrKSwgMjkzIGRlbGV0aW9ucygt
+KQoKLS0gCjIuMjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlz
+dHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3Rp
+bmZvL2xpbnV4LWFybS1rZXJuZWwK
