@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD4639A902
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:38:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 80E249A908
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:39:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eWQSYN0+CQWe0KDCZRNU4tqA+yGXOUzMUM5uTb0A9bk=; b=iJEpCTZpkIiPNI
-	pfhg/qNbGnT8sbczOwD/eDq/uoduE2u1OjYj44/1Cn1qNoeNFSo/72VSD9IB3jbCNz5TTbKFe10UO
-	3TpTC3UO/LuA7G4YVFOSPwhNErOk5FplSt+X3+S+572dE6zEecYWVTtXoGbxMjQGMMXLeNMP17O0B
-	9KF67q5uqnWojV/EZYk1efvMU+NVjKNjG1lWvqgOdH3fuFjVFapetx3B1vSWhkWeDazWO7IfJr4HP
-	Rsh9PXjW5aAwCiBJSfYfetYPhmqztQtHBUIpXdLFceGOOfODWI/wQkJg5kv8XydaB6Z0dueqxJxGd
-	nCyT5Aiu6BzEcl8Tl61g==;
+	List-Owner; bh=0ahZmSHAmV/BHF6+HgqlSCEhuKwwWx6aQBC98kBYJcI=; b=kjDSbh6rGzIaey
+	SBgWbEI/DlZvLHSC29qtWaT06ycgnd8UzIUHkPL+Vt1Gj4e0BjSLFJZMzFzQMRdVLS5qxu5W2FQOy
+	rPMbb2wGCN0kK2zcQZDQ47KzlNzZMqFKTC4UWlNlDUxEeYQ7brZDVx/Paym17NZB+1DlqqlliEEk7
+	bkwlyrcoJLENRLRDO4KClT4ywRPtahXqgH2XGAH8f7AfwHiRPPbPs1Rnfw/BhfuLFEn/Qdd0y3/QY
+	Q/hjJGgvoCz49MNpYi5F27gZby1TOcYS4NilKnaQd1SyeKPQQ85Z/toiEmRrYG33z8yuSIiO8pT+Z
+	KcBK68tehddsSa3G/m9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1492-0006Kl-Qd; Fri, 23 Aug 2019 07:38:00 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1i14A9-0006e3-Nd; Fri, 23 Aug 2019 07:39:10 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i148n-0006K4-Q9
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:37:47 +0000
-Received: by mail-lj1-x243.google.com with SMTP id x4so7958153ljj.6
+ id 1i149p-0006ca-K9
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:38:50 +0000
+Received: by mail-lf1-x143.google.com with SMTP id c9so6447863lfh.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 00:37:44 -0700 (PDT)
+ Fri, 23 Aug 2019 00:38:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ZZWCM1NaKkWZfHYdamHWGDCsp0daigJ/P9DBMZ7/h0o=;
- b=gnV+a8SbxnF8E7z2Tj14yFsvjUuIGqSsViiLQ/zAYEOipY0vHqYoB2FX2Q9pBj7Byn
- a8uth2qvzy+VzbI5mKAiM0vjBaR9exB16/ASG5Ddhfv8myEUUBaV67NAcnESCw6XGEYK
- oFsRP3hNBTbtXU7DMZdHowrtfY6DkD9y27XIUoOGoQbKnSVxe0iRViKWToVDqVCiNSrD
- 1EC2EsLbxekU9X1hKemCBp9Upb3BVVc6Fa5SwH7ARexZmFgondpi+/1u8PgmTannFBIy
- LDqliBZWjE2ewubCbfQmU9vE2GMbIRij4CGeVQ544MW/Zc5SZtl2+01ffnjVd/XT4foa
- kamw==
+ :cc; bh=Lz2W/Er+vhSnNSGXtvI+raF02sxjt0QdGmNNXiXbeZ8=;
+ b=xSbUP94itBW5D+EIP6J+VeADRYAq49B6u3tO5t95hiQ3LqFqEQ+LFuJEBkPwIvl6NJ
+ rdHJD228PuvuWY4ayKaABZy0R7ZgUsv1KoJKe1+B4yBMntOltSIwBMnp0zedzqrv87zL
+ FyQiEkp4NI1BU+dGZ0yLr0aX/BmREJwiUiVaQP7m7hDwK2klVCy6+CigyrmqkaynwxUX
+ i9hJB5OCNPeM/9T9HUThretRY6cbh94rGzMPh3Hx8QHO9Re1SquQiiwQO2kbIgauukEr
+ DUTZbK0uzXVvytwctPYRyQDuMKG6qUb+FWGnnGyZvGsYO7gI58znr1Ne4ZP01V0cDmVx
+ f3vw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ZZWCM1NaKkWZfHYdamHWGDCsp0daigJ/P9DBMZ7/h0o=;
- b=pPwx5HWaPqR9a7BsVbHPc5kTs/6cXaT9Oe6BIMxV0l3lMqN9uNCKc04Sk+EE1xJuC2
- MCZvDp7Jxhdd7+ilmEXHiUb7uPY8EAdq3ky9tCVm9b07N2hHEL+1g1Dl0ueQ+bEhj4Vc
- gPNNqtAXT9GE3F7B2phgUCVMs3NQag/X8TnAzR7E5qDA3udWXcJGmVlN6+p1AcnF2xJ6
- PIjhBQAF3dCMqcTWRrlcdb6asVvpEVTr5N2ugAA2it/P3iCjSCzXxwIJfyHJZwiYX2CB
- 7bHExisxys9nkX3QaWIS/kDHW72OikQ07DpLOMFyvdtl0j6YyOWPFIpEGvai1b5JjUnU
- XEKA==
-X-Gm-Message-State: APjAAAX4RM7ejskFlfmDnYlsoYzHzrJSg0B1mif574FhgnN1+1cxKq6A
- rYnPBpPeSHkrbTcxNYEA1XCod4Zw4wHA7J3lCE0POQ==
-X-Google-Smtp-Source: APXvYqwoTIF/Emnt9eBfMVVaR3D0yZcfntQldBQ8nXDMcgI62M2HujpKdWtwI9F1v3Vnmg1r5+YyulnqcRsz+8EBjBU=
-X-Received: by 2002:a2e:80da:: with SMTP id r26mr1930950ljg.62.1566545863148; 
- Fri, 23 Aug 2019 00:37:43 -0700 (PDT)
+ bh=Lz2W/Er+vhSnNSGXtvI+raF02sxjt0QdGmNNXiXbeZ8=;
+ b=hg9/1oBEdmEzpA4WxP0HGVEI/mn75G71N78t7DU93x/UnMwZoyRTN7H6/w1JE/RfMZ
+ QuFHB6mizRvbgCHbA06NjBb5N0YhjUBajHOJkCBDxUk+xWR/F+0AsnHlp6j9lVjT3Pih
+ Y+P7O5hetKiWFF2LFHIYxwsaA/NU62Y5XQrZnM/XP2AtFGF5PFBcDjZJA8F6gANxt3j7
+ sknw2hfPlwnSmt6KhN5pQyqfH9U3iUCaMNXSUKE7mJMBAW1Al/FxfnmiUZG06luMHB6p
+ SnGNCHXqbEHa1Wc7+ZyCSqk+24Nkpsz6BOzWJtxIGHbJUa9YOoLmBzkNQpz645Upsjy8
+ c3Og==
+X-Gm-Message-State: APjAAAWPmEL5XBCQdQc45N90mqrf8DUi8kJCERO7zImtyrbet6LZp2Fv
+ ctGhuqmFUlEE/aocGlmpIbPyAeu9X7Kfuc9fnVRuBQ==
+X-Google-Smtp-Source: APXvYqwn8sOli89h3xpwI0gsI6dJyFeTKTHshx0YK3OmzA9sFUzjhWgRf+UO3GE1WNBwItHvNrorYCww02wff3Qgq/U=
+X-Received: by 2002:a19:e006:: with SMTP id x6mr1813674lfg.165.1566545928179; 
+ Fri, 23 Aug 2019 00:38:48 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190808101628.36782-1-hui.song_1@nxp.com>
-In-Reply-To: <20190808101628.36782-1-hui.song_1@nxp.com>
+ <20190808101628.36782-3-hui.song_1@nxp.com>
+In-Reply-To: <20190808101628.36782-3-hui.song_1@nxp.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Fri, 23 Aug 2019 09:37:31 +0200
-Message-ID: <CACRpkdbYEHQ=sYohxEC99T41qUBHYgBCYjM3MaAnD9PmY4YCyA@mail.gmail.com>
-Subject: Re: [PATCH v1 1/3] gpio: mpc8xxx: add ls1088a platform gpio node DT
- binding description
+Date: Fri, 23 Aug 2019 09:38:37 +0200
+Message-ID: <CACRpkdajLb3Spsq4SvRCEJVQcABK+QnNyZi5C3ciTvirjcHF-Q@mail.gmail.com>
+Subject: Re: [PATCH v1 3/3] gpio: mpc8xxx: add ls1088a platform special
+ function
 To: Hui Song <hui.song_1@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_003745_861910_189FFB11 
-X-CRM114-Status: UNSURE (   7.39  )
+X-CRM114-CacheID: sfid-20190823_003849_669967_1597885E 
+X-CRM114-Status: UNSURE (   8.30  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,7 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,11 +110,12 @@ On Thu, Aug 8, 2019 at 12:26 PM Hui Song <hui.song_1@nxp.com> wrote:
 
 > From: Song Hui <hui.song_1@nxp.com>
 >
-> ls1088a and ls1028a platform share common gpio node.
+> ls1028a and ls1088a platform share common special function.
+> The gpio hardware what they use is the same version.
 >
 > Signed-off-by: Song Hui <hui.song_1@nxp.com>
 
-Patch applied with Rob's ACK!
+Patch applied.
 
 Yours,
 Linus Walleij
