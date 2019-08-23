@@ -2,76 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7B0D09A786
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 08:27:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD0389A787
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 08:28:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d8UljWRN/fIk1gl1hQqze4S60eQe8i9pPkhycx3qJVQ=; b=VSjuzCwVS4WNRL
-	+/kcmrwJfZvTl23Wlm8paNKyAjmcs8rgzAxCmyA4C6HV1JWrFJOamVsv6Rz3mLGHSaqn+NNT41/KN
-	s/ctFw6kLPDXtD1By9jPLoEsVd0REiOe+mxptf4qeLXVPN7N7tOEjn4LVpCRnWJTEFKlZj3AWFiGm
-	/ZLFp3Y6KRipO36enzWBo+16iPNhyBnlG0Pjm4gEa2752nEGfk6zmcQytbQGHWNGNN5qJelgMbQnc
-	V0RVD698A/ijGwpnt7ck81370AJYjMUk0g6R7hFuyDrUFx69e3YX/2MjrUR4v2pt72y+HHHlIIWyN
-	Gwd5XuL/0duhlTIl7h4g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aV2vWjofNslXFaa922dOU56RLP0aLb3nuZ0luDId3xU=; b=tuM6EboCBfVG+h
+	pBjBpDoqSaqe8tlwQjaluRpnPisFVPCJQK5h3rmdA753t8Hi67CtyKjqakV76PSokL+8dyx8p9TRu
+	NmCs0vcIKAOCrDEi1txkaVUfwEL8BnhfqAMVtapGoNuONsQXdOVZ7q++pFZ+6IXVousiO9AHqXVVp
+	cdO4ON7AB85080e8sfz/8UMNLXPJA+Nao6PIk2DFkGs1vxWymq/NAT+9vm/OSy2IXdFodPJrmMkOT
+	6YcDKNv0GWryyRDUB0Y2AwA5SxVT76YQjNw05IjUIK3ZSbeRK9lTTPBICKvUMTPamuYBqGvPD/CNz
+	s7Y2a1LqnjaizTH0WTSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i132u-0002Bv-Ci; Fri, 23 Aug 2019 06:27:36 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1i133G-0002U4-PA; Fri, 23 Aug 2019 06:27:59 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i132c-0002BJ-Ky
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 06:27:20 +0000
-Received: by mail-pl1-x642.google.com with SMTP id f19so4988418plr.3
+ id 1i132l-0002J0-Mr
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 06:27:29 +0000
+Received: by mail-pf1-x444.google.com with SMTP id w16so5769144pfn.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 22 Aug 2019 23:27:17 -0700 (PDT)
+ Thu, 22 Aug 2019 23:27:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GhjRfjhMwINY908SCrXL1aDBLnxIvIs4Y71zc0rRgRU=;
- b=dh+RaFUCw0uw79iT30CYn2FWwnL24m0shKCCYpFZVygUMcYvPN83NN7ROJNqa3sh3P
- 4CvH9sJoWVNk5/JHKRogK6iczeRLwh2qeDj1pX8wfj5lYpWuQcsVx1/PB6hyw20ySi1r
- QeuQixRWgAV0BmcQMikTTokcwuFWkKCO2HDRM=
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=eIxzCYSNGJ1lxWeqSNSG7GyRTQIEX53i0hzKbiv7trI=;
+ b=oYAcHGJo8ofm/V8t0u6PfkdzCvMo9lhgUsLDM+hHk312lUWwjVZ3d6nDug4JPZSN3X
+ QqmiKNRhCUXxhGpc6d+pfIlXAau/c1AsyqGim1EuG4SG0OgIE4MpCnwlPim8AYqMQ8c/
+ HHanRPbBAApz31OdNVb7GKkN00vYG1ur60uXY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=GhjRfjhMwINY908SCrXL1aDBLnxIvIs4Y71zc0rRgRU=;
- b=rYGa0jmJYmNCN+UsCro0tRr9MCXYJnqyEroCIqkK2ktJ8OGdvOzEObJwVxPS196pWt
- BXPkoetwUPtJvcXPtR6lZ7aD8kV7XBnhMj/EnQuUE0Kv/0VffDx2rvY6fEoi3qTS16n+
- bTc7p2+UOGbZ62TYsBf6RUr0H2mkkHATeK8+gECPfBsZc3xLH4P4f3mQPBwa/NpgeLWC
- UKXuKJU3uivmqELOJg0si37SBuAGDSr05Usj3EWmw78/4QklWE4yS4nx3/5tIYpT8KXJ
- e8NHZdjRuxGqYFM/M/tRjTNNsHcMPKtSVEWv50pt6SWmFJVOwWMnikj7gq7/pT8E232v
- TgjA==
-X-Gm-Message-State: APjAAAU/nN0w3r40JLkPHInhWSUBKsqo8APshCjvJtUJgNV3KnmByrvz
- zrRYQfzE1IctDbV7xwSPnDltDwIAEOs=
-X-Google-Smtp-Source: APXvYqxsGxrRqSSIoxb1SULucqZZIslLOBDGEU9/wOXaFvOn3E0EpM+vtjgQYhxackVeD+CPnWS7YQ==
-X-Received: by 2002:a17:902:9b8f:: with SMTP id
- y15mr3055556plp.194.1566541636820; 
- Thu, 22 Aug 2019 23:27:16 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=eIxzCYSNGJ1lxWeqSNSG7GyRTQIEX53i0hzKbiv7trI=;
+ b=HkPNitgNmwvVopOIAL2iOkIaqwdAaciW9/Qb+8NYrgyT6O022NX22a2Sx+9heLsNuT
+ LwpM0m6qfFlwqgCfseFzhr4dFkZ+LSjzX6C5KA7nxO9M+t9/FB3hT/ZCZnJrlgBa02Pn
+ 1U5bzUPUI+ym242jwMn02KB8GIYK+w15y/EDFQdK7CA2wo0aVUFzpymOScW08VrEwUtt
+ 1Q74qDnE65CLRVXPrfhmGKeC6kYXy7qndSB09zXqIckAcm2UyFV5VJlqJ/I4YnRd45FK
+ vhPEUlt6tWMzJRhB2qLWXwWWOrDxcqVupK2ms5mpmyVg1vg+6qgNcHaPGHIE4KvVmaZ4
+ UjvQ==
+X-Gm-Message-State: APjAAAW1Ka69BqEKE1mOmn1TWsdVnm3UtJVkRWsoLw0XeGWChZHko0NU
+ cDzMD0yIXDqrMO8KRLfWAKr6Tt4cZw4=
+X-Google-Smtp-Source: APXvYqxRb14mUGIehiZPCWEcwvXqS00EzwwRDVOu4cdqpm/Bv8WL2Qhx+S2boAghlhKJWrsDxZM+NQ==
+X-Received: by 2002:a65:6448:: with SMTP id s8mr2545974pgv.223.1566541646783; 
+ Thu, 22 Aug 2019 23:27:26 -0700 (PDT)
 Received: from hsinyi-z840.tpe.corp.google.com
  ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id q13sm2139671pfl.124.2019.08.22.23.27.09
+ by smtp.gmail.com with ESMTPSA id q13sm2139671pfl.124.2019.08.22.23.27.20
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Thu, 22 Aug 2019 23:27:15 -0700 (PDT)
+ Thu, 22 Aug 2019 23:27:26 -0700 (PDT)
 From: Hsin-Yi Wang <hsinyi@chromium.org>
 To: linux-arm-kernel@lists.infradead.org, "Theodore Y . Ts'o" <tytso@mit.edu>
-Subject: [PATCH v10 0/3] add support for rng-seed
-Date: Fri, 23 Aug 2019 14:24:49 +0800
-Message-Id: <20190823062452.127528-1-hsinyi@chromium.org>
+Subject: [PATCH v10 1/3] arm64: map FDT as RW for early_init_dt_scan()
+Date: Fri, 23 Aug 2019 14:24:50 +0800
+Message-Id: <20190823062452.127528-2-hsinyi@chromium.org>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190823062452.127528-1-hsinyi@chromium.org>
+References: <20190823062452.127528-1-hsinyi@chromium.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_232719_028283_2C11E03C 
-X-CRM114-Status: GOOD (  13.28  )
+X-CRM114-CacheID: sfid-20190822_232728_071251_72C10B92 
+X-CRM114-Status: GOOD (  18.48  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -125,27 +126,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introducing a chosen node, rng-seed, which is an entropy that can be
-passed to kernel called very early to increase initial device
-randomness. This can be used for adding sufficient initial entropy
-for stack canary. Especially architectures that lack per-stack canary.
+Currently in arm64, FDT is mapped to RO before it's passed to
+early_init_dt_scan(). However, there might be some codes
+(eg. commit "fdt: add support for rng-seed") that need to modify FDT
+during init. Map FDT to RO after early fixups are done.
 
-Hsin-Yi Wang (3):
-  arm64: map FDT as RW for early_init_dt_scan()
-  fdt: add support for rng-seed
-  arm64: kexec_file: add rng-seed support
+Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
+Reviewed-by: Stephen Boyd <swboyd@chromium.org>
+Reviewed-by: Mike Rapoport <rppt@linux.ibm.com>
+---
+No change since v7
+---
+ arch/arm64/include/asm/mmu.h |  2 +-
+ arch/arm64/kernel/kaslr.c    |  5 +----
+ arch/arm64/kernel/setup.c    |  9 ++++++++-
+ arch/arm64/mm/mmu.c          | 15 +--------------
+ 4 files changed, 11 insertions(+), 20 deletions(-)
 
- arch/arm64/include/asm/mmu.h           |  2 +-
- arch/arm64/kernel/kaslr.c              |  5 +----
- arch/arm64/kernel/machine_kexec_file.c | 18 +++++++++++++++++-
- arch/arm64/kernel/setup.c              |  9 ++++++++-
- arch/arm64/mm/mmu.c                    | 15 +--------------
- drivers/char/Kconfig                   |  9 +++++++++
- drivers/char/random.c                  | 14 ++++++++++++++
- drivers/of/fdt.c                       | 14 ++++++++++++--
- include/linux/random.h                 |  1 +
- 9 files changed, 64 insertions(+), 23 deletions(-)
-
+diff --git a/arch/arm64/include/asm/mmu.h b/arch/arm64/include/asm/mmu.h
+index fd6161336653..f217e3292919 100644
+--- a/arch/arm64/include/asm/mmu.h
++++ b/arch/arm64/include/asm/mmu.h
+@@ -126,7 +126,7 @@ extern void init_mem_pgprot(void);
+ extern void create_pgd_mapping(struct mm_struct *mm, phys_addr_t phys,
+ 			       unsigned long virt, phys_addr_t size,
+ 			       pgprot_t prot, bool page_mappings_only);
+-extern void *fixmap_remap_fdt(phys_addr_t dt_phys);
++extern void *fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot);
+ extern void mark_linear_text_alias_ro(void);
+ 
+ #define INIT_MM_CONTEXT(name)	\
+diff --git a/arch/arm64/kernel/kaslr.c b/arch/arm64/kernel/kaslr.c
+index 5a59f7567f9c..416f537bf614 100644
+--- a/arch/arm64/kernel/kaslr.c
++++ b/arch/arm64/kernel/kaslr.c
+@@ -62,9 +62,6 @@ static __init const u8 *kaslr_get_cmdline(void *fdt)
+ 	return default_cmdline;
+ }
+ 
+-extern void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size,
+-				       pgprot_t prot);
+-
+ /*
+  * This routine will be executed with the kernel mapped at its default virtual
+  * address, and if it returns successfully, the kernel will be remapped, and
+@@ -93,7 +90,7 @@ u64 __init kaslr_early_init(u64 dt_phys)
+ 	 * attempt at mapping the FDT in setup_machine()
+ 	 */
+ 	early_fixmap_init();
+-	fdt = __fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
++	fdt = fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
+ 	if (!fdt)
+ 		return 0;
+ 
+diff --git a/arch/arm64/kernel/setup.c b/arch/arm64/kernel/setup.c
+index 57ff38600828..56f664561754 100644
+--- a/arch/arm64/kernel/setup.c
++++ b/arch/arm64/kernel/setup.c
+@@ -170,9 +170,13 @@ static void __init smp_build_mpidr_hash(void)
+ 
+ static void __init setup_machine_fdt(phys_addr_t dt_phys)
+ {
+-	void *dt_virt = fixmap_remap_fdt(dt_phys);
++	int size;
++	void *dt_virt = fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL);
+ 	const char *name;
+ 
++	if (dt_virt)
++		memblock_reserve(dt_phys, size);
++
+ 	if (!dt_virt || !early_init_dt_scan(dt_virt)) {
+ 		pr_crit("\n"
+ 			"Error: invalid device tree blob at physical address %pa (virtual address 0x%p)\n"
+@@ -184,6 +188,9 @@ static void __init setup_machine_fdt(phys_addr_t dt_phys)
+ 			cpu_relax();
+ 	}
+ 
++	/* Early fixups are done, map the FDT as read-only now */
++	fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL_RO);
++
+ 	name = of_flat_dt_get_machine_name();
+ 	if (!name)
+ 		return;
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index e67bab4d613e..1586d7fbf26a 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -877,7 +877,7 @@ void __set_fixmap(enum fixed_addresses idx,
+ 	}
+ }
+ 
+-void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
++void *__init fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
+ {
+ 	const u64 dt_virt_base = __fix_to_virt(FIX_FDT);
+ 	int offset;
+@@ -930,19 +930,6 @@ void *__init __fixmap_remap_fdt(phys_addr_t dt_phys, int *size, pgprot_t prot)
+ 	return dt_virt;
+ }
+ 
+-void *__init fixmap_remap_fdt(phys_addr_t dt_phys)
+-{
+-	void *dt_virt;
+-	int size;
+-
+-	dt_virt = __fixmap_remap_fdt(dt_phys, &size, PAGE_KERNEL_RO);
+-	if (!dt_virt)
+-		return NULL;
+-
+-	memblock_reserve(dt_phys, size);
+-	return dt_virt;
+-}
+-
+ int __init arch_ioremap_p4d_supported(void)
+ {
+ 	return 0;
 -- 
 2.20.1
 
