@@ -2,113 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 45A839A457
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 02:38:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2E7DE9A46E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 02:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aVKbNI26S6u+sZkzduJRx78e8hB2ibZjjwhh1n+xRoI=; b=Q2SzMcZB/MdqiF
-	744jdfNw7yut5Cfvhgant2GrQ9rS+GB0MiVU43ajrRAFaqJMf7JvzT8EufDVsNd7az/LdVeT5iFn9
-	6f3lmzL9lmCdYSVSNqNoaGaRHhv8NCR4+Dg36BUhe5p3BHUTbLqgrN+tRXLzLvNp7vnYW+4rdQxzU
-	cX5BU5toij36KxFjPKuHLpi5rOgEkroG7i4U08g8x1+VTggdrelB1uPNtHaOqDNBodpukHjjhRr5W
-	w2Vl7X0f6mCLgAMQMJsQFIc3L0TlLR6ToxEgzmFcuTx6YmQMF09UsQOTJ4NcFBnzf4hinD0cBkrvx
-	XcTvsVhrFq0kFNcP2Myw==;
+	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=A61DOP04Nni0ay+qBdwK4MARF2CaFGHlFI0mU9MBKpY=; b=qtluQZuFO8i6fY
+	A9ipEQIFASi9WX7Z/LufctYrc/E74+zDc86K4/DtJM1qCeUVq4nmT2oinbVIEc8LYnMoc9qGva138
+	yI3aS1ZWaoqk/azdGmx9eoHJzYfZopcLMwaHThLBXzwkk17kv96YHvNBRfZe7j2VEbj6fmgyvy/qk
+	PixT583rzkQRRxQXG+WdeEcf3aE9jAIFkQB8c0LulR5l9B9wDEEUFQyTpmez4qA+wAn+KU+vE8MIK
+	74DrVhzX26CkIxUaX7PVO3BRZDtKsAIYgfi5X8oX6niFmXSDcjtKlUxv4nRxV6EywsIPh83siNaTw
+	Av5++Mf269WeDrH1MrcQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i0xaW-0000GA-PG; Fri, 23 Aug 2019 00:37:56 +0000
-Received: from mail-eopbgr140040.outbound.protection.outlook.com
- ([40.107.14.40] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1i0xnB-00068M-J5; Fri, 23 Aug 2019 00:51:01 +0000
+Received: from mailout3.samsung.com ([203.254.224.33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i0xaE-00008d-VR
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 00:37:40 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FM/+w6EZb7azJ2dPYo2qefegLdhYd9rhyN/u5Rmd5xij+31pFVqy+01dW6p1MMIiuaIiuqSeSJPgNMVL9bQumGGSngjUQCSDgwamCd6+Z8yo4pPKmPvUm/YWHhEihsQEh2KewpdgSQrfHdhNqE/EYxHYi+kn6sM2HVgKIDaWxsldoGUeU6SKTSgaqYx9PplougclVTgbRmiZNBSLvF34d3jOBvllwOZGF/SvXXE0ke2OXJ1VMF/bYiLoeYZCGitfx9ZWTh8dBf95OL8N6bdZDEUvhb6heHTzEQ4prIrdp57vVaxX5xjc4NOUOr7JeBKl+5up/6y9eqBDRiwKtvui1g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EFHoVRyshSnuwD7ZrWTFrVyea3LTERa6XZf17qufvV4=;
- b=lHF6t2pXI0s8rxDK6vbZZE9GhU9e8t//vnvJ0awjIAWFjPmvq60yMxV68ZHhXwWVHHxS/jHaIMWpuYNpHIeO/LnFG2dRQMj9mObDSIStEr38YZ+HfNhul7JLQl0JNCjHVbnaYzIoYYTJCG0QV1p2t1i4ZzVNdzb8J7Eu3+ZNWnq+Gzl7q0oTHT+Vhn5EQg8FRUsH6ct+c3+6A4AU7pJyYXJaG0Gdfxrr/qFq8rqKFhR7QsX45QAjCtPcVqLwz5SSNE0+REnij2OPMZp+9fomVhSF/c488gQ5h3FyX5M3aORLjLz26F263nSnrJFqnPdir+odSJx81uadV59wJrejmg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=EFHoVRyshSnuwD7ZrWTFrVyea3LTERa6XZf17qufvV4=;
- b=smgT8UJXSm1Haidzm6iqOokZMiHICPhkD0gIGYg/F4RUNFD2ajvJeb24AsLL3v2Blf3bqUnD83Yi8HyZ2ap50v7V+/YL71xUQUsz09x8d0RlpWt7zbNSztycQxc3/iuWcCVxxt9k64Q2vcKan0nab2Ub00ZRMJ2DMlOVsW5nalI=
-Received: from AM6PR04MB4936.eurprd04.prod.outlook.com (20.177.34.20) by
- AM6PR04MB4662.eurprd04.prod.outlook.com (20.177.38.213) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Fri, 23 Aug 2019 00:37:35 +0000
-Received: from AM6PR04MB4936.eurprd04.prod.outlook.com
- ([fe80::559a:24e4:40bb:faed]) by AM6PR04MB4936.eurprd04.prod.outlook.com
- ([fe80::559a:24e4:40bb:faed%7]) with mapi id 15.20.2178.018; Fri, 23 Aug 2019
- 00:37:35 +0000
-From: Fancy Fang <chen.fang@nxp.com>
-To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, Abel Vesa
- <abel.vesa@nxp.com>, "kernel@pengutronix.de" <kernel@pengutronix.de>
-Subject: [PATCH 2/2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
-Thread-Topic: [PATCH 2/2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
-Thread-Index: AQHVWUr1au1vBfNheEmiNgH4/hdPdQ==
-Date: Fri, 23 Aug 2019 00:37:35 +0000
-Message-ID: <20190823003600.8317-2-chen.fang@nxp.com>
-References: <20190823003600.8317-1-chen.fang@nxp.com>
-In-Reply-To: <20190823003600.8317-1-chen.fang@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.17.1
-x-clientproxiedby: SG2PR06CA0232.apcprd06.prod.outlook.com
- (2603:1096:4:ac::16) To AM6PR04MB4936.eurprd04.prod.outlook.com
- (2603:10a6:20b:8::20)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=chen.fang@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 16944f96-2e01-4d7e-cb81-08d727621781
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:AM6PR04MB4662; 
-x-ms-traffictypediagnostic: AM6PR04MB4662:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM6PR04MB4662463B1A55BF3C3B374C2CF3A40@AM6PR04MB4662.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0138CD935C
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(396003)(136003)(376002)(346002)(366004)(199004)(189003)(2906002)(2616005)(256004)(476003)(71190400001)(71200400001)(446003)(53936002)(36756003)(11346002)(2501003)(186003)(6116002)(64756008)(6506007)(3846002)(486006)(5660300002)(66446008)(386003)(66556008)(25786009)(76176011)(66946007)(26005)(52116002)(102836004)(4326008)(1076003)(66066001)(8936002)(305945005)(8676002)(81156014)(81166006)(66476007)(99286004)(50226002)(7736002)(14454004)(2201001)(316002)(478600001)(54906003)(86362001)(110136005)(6486002)(6436002)(6512007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM6PR04MB4662;
- H:AM6PR04MB4936.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: sHSR6V5VsMU6DuH49pTCjAO7wmed1zQ3fcDreDo2QPfRFiEIDNoaDl4c53k8eAtPHOjvxO9zQJY09r6mtVgKEGMsPIohs4pRbuIGetloGIzBjXdBtGOc429Y8Eip9lI1I8V316kEsTXnSiQlXQJmeRQIG3y9oOv2LSeMkl5FhDAidv8ov1zOzITpYXNmDY7jT7c3cocpZ8EUIXHOg5EsnpE2l7PkOGDyzYgwLEkt7i9QMZcKI8vCs2TR1j5FnwxxXnzPcHNas5IbHjK9B4sM9+tfWT0Vj7+67eHySb4VmRxCfCkeHw9ly6cW2e6Pu+AMJqrfXnV/B1t1GgEJ4m2s1y8CEwu9iKGFI43FZrZaFBvJRbEI3gRlac6XldVt0COnOhZHCBnFf8d4cYIB+jq9Cp/+7LjBYZOIEPFiYH/Bq48=
+ id 1i0xn1-00067p-JV
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 00:50:53 +0000
+Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
+ by mailout3.samsung.com (KnoxPortal) with ESMTP id
+ 20190823005045epoutp0346b9e1e68eb62cf2bc2e7a7233ea150a~9ZvReQYR12230622306epoutp03a
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 00:50:45 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
+ 20190823005045epoutp0346b9e1e68eb62cf2bc2e7a7233ea150a~9ZvReQYR12230622306epoutp03a
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1566521445;
+ bh=f2ThUHwqU6SxyDkaBykTiPQlcm0wcRMy3IpQiQiChcs=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=qjJP3CPDZUoPqC+TllhSHlEzayDCNEEA/ZeZhRffZlSa6IWzZNyyy/WghomGNCSH3
+ Ll12acSDQNebr7Gm85XsT73lLM+iAcMPvCd+fTuz8IXicflKfBccxTrV2stA77r50K
+ SbznIaYWExt+HtvjAggHXAnol3/leqScWyxLjaic=
+Received: from epsnrtp2.localdomain (unknown [182.195.42.163]) by
+ epcas2p4.samsung.com (KnoxPortal) with ESMTP id
+ 20190823005044epcas2p4d26d2085b61ee54bd5954b1c574ebbe6~9ZvRA3S2Y1951719517epcas2p4w;
+ Fri, 23 Aug 2019 00:50:44 +0000 (GMT)
+Received: from epsmges2p2.samsung.com (unknown [182.195.40.184]) by
+ epsnrtp2.localdomain (Postfix) with ESMTP id 46F2rL3vD7zMqYkk; Fri, 23 Aug
+ 2019 00:50:42 +0000 (GMT)
+Received: from epcas2p4.samsung.com ( [182.195.41.56]) by
+ epsmges2p2.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 5E.38.04149.2683F5D5; Fri, 23 Aug 2019 09:50:42 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas2p3.samsung.com (KnoxPortal) with ESMTPA id
+ 20190823005041epcas2p3c8550c3fabbd6a6db6429cb06dbbf3a6~9ZvObUZVL1059310593epcas2p3U;
+ Fri, 23 Aug 2019 00:50:41 +0000 (GMT)
+Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190823005041epsmtrp1e67b842e0eeb29d74f2dcb22b227f249~9ZvOaIzfb2194621946epsmtrp1o;
+ Fri, 23 Aug 2019 00:50:41 +0000 (GMT)
+X-AuditID: b6c32a46-fd5ff70000001035-b2-5d5f38625f08
+Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
+ epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ F7.1A.03706.1683F5D5; Fri, 23 Aug 2019 09:50:41 +0900 (KST)
+Received: from KORDO035251 (unknown [12.36.165.204]) by epsmtip2.samsung.com
+ (KnoxPortal) with ESMTPA id
+ 20190823005041epsmtip2748af0669304060f493849067826a76f~9ZvOI_Fjj0682606826epsmtip2h;
+ Fri, 23 Aug 2019 00:50:41 +0000 (GMT)
+From: "boojin.kim" <boojin.kim@samsung.com>
+To: "'Krzysztof Kozlowski'" <krzk@kernel.org>
+Subject: Re: [PATCH 1/9] crypt: Add diskcipher
+Date: Fri, 23 Aug 2019 09:50:41 +0900
+Message-ID: <00da01d5594c$c9d87390$5d895ab0$@samsung.com>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 16944f96-2e01-4d7e-cb81-08d727621781
-X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Aug 2019 00:37:35.4113 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: is0VbZygNncpMtBVroGxIK65lBIOHD4AovfIHhwGMbQXsN4//HUzJnV09dsLtTj+gjGV6/T0RtiOjZk76zTYVQ==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM6PR04MB4662
+X-Mailer: Microsoft Outlook 14.0
+Thread-Index: AdVZTE1TDvDE+uWuReO+5O58h7ifGg==
+Content-Language: ko
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprFLsWRmVeSWpSXmKPExsWy7bCmhW6SRXysweKVkhZfv3SwWKw/dYzZ
+ YvXdfjaL01PPMlnMOd/CYrH33WxWi7V7/jBbdL+SsXiyfhazxY1fbawW/Y9fM1ucP7+B3WLT
+ 42usFntvaVvcv/eTyWLmvDtsFpcWuVu8mveNxWLP3pMsFpd3zWGzOPK/n9Fixvl9TBZtG78y
+ WrT2/GS3OL423EHSY8vKm0weLZvLPbYdUPW4fLbUY9OqTjaPO9f2sHlsXlLvsXvBZyaPpjNH
+ mT3e77vK5tG3ZRWjx+dNcgE8UTk2GamJKalFCql5yfkpmXnptkrewfHO8aZmBoa6hpYW5koK
+ eYm5qbZKLj4Bum6ZOUC/KymUJeaUAoUCEouLlfTtbIryS0tSFTLyi0tslVILUnIKDA0L9IoT
+ c4tL89L1kvNzrQwNDIxMgSoTcjI6Ly5kKvjFXLFyz1PWBsaJzF2MnBwSAiYSL6bdBLK5OIQE
+ djBKHLn/Csr5xCix9PRDFgjnG6PEowUX2GFafl3vYoNI7GWUuPn/HVTLS0aJna+nsoBUsQlo
+ S2w+vooRxBYR0JXYfGM5O0gRs8A/doknnw6BFQkL6EnMeLCYCcRmEVCV2PysF2gsBwevgKXE
+ q49qIGFeAUGJkzOfgJUzC8hLbH87B+pwBYkdZ19DzdeTeN4xnR2iRkRidmcb2EESAj/ZJSb9
+ ameBaHCR6JtwBcoWlnh1fAvUO1ISL/vboOx6iavLFrNDNPcwSpz5BZMwlpj1rJ0R5DhmAU2J
+ 9bv0QUwJAWWJI7egbuOT6Dj8lx0izCvR0SYE0agiMffTZSaIsJTEh546iLCHRPPBDrYJjIqz
+ kDw5C8mTs5A8Mwth7QJGllWMYqkFxbnpqcVGBUbIkb2JEZwvtNx2MC4553OIUYCDUYmHt6Aj
+ LlaINbGsuDL3EKMEB7OSCG/ZRKAQb0piZVVqUX58UWlOavEhRlNgFExklhJNzgfmsrySeENT
+ IzMzA0tTC1MzIwslcd5N3DdjhATSE0tSs1NTC1KLYPqYODilGhhb2VZ9bj/4j9m9Iuf7vUUs
+ J3MWHf0j1lTS2eO4QTdzw8b5G6K8pjDqvjtzN9nhxX13G1vnkq0G1TZrtL/4bHvHupRDP5rx
+ VqSo+KHqV+sObK02DLrOElD9o+/Xi+W1bfOcdJRutyZXXz9cM4dTcjbnAX/x5gzHh1uvntDf
+ efu79KO5c470TF6hxFKckWioxVxUnAgA7+Q96S0EAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrFIsWRmVeSWpSXmKPExsWy7bCSvG6iRXyswZrzuhZfv3SwWKw/dYzZ
+ YvXdfjaL01PPMlnMOd/CYrH33WxWi7V7/jBbdL+SsXiyfhazxY1fbawW/Y9fM1ucP7+B3WLT
+ 42usFntvaVvcv/eTyWLmvDtsFpcWuVu8mveNxWLP3pMsFpd3zWGzOPK/n9Fixvl9TBZtG78y
+ WrT2/GS3OL423EHSY8vKm0weLZvLPbYdUPW4fLbUY9OqTjaPO9f2sHlsXlLvsXvBZyaPpjNH
+ mT3e77vK5tG3ZRWjx+dNcgE8UVw2Kak5mWWpRfp2CVwZnRcXMhX8Yq5YuecpawPjROYuRk4O
+ CQETiV/Xu9i6GLk4hAR2M0qc+72aHSIhJbG1fQ9UkbDE/ZYjrBBFzxklDhw4BVbEJqAtsfn4
+ KkYQW0RAV2LzjeVgcWaBaRwSuz6Ig9jCAnoSMx4sZgKxWQRUJTY/6wXaxsHBK2Ap8eqjGkiY
+ V0BQ4uTMJywgYWag8raNjBBT5CW2v50DdYKCxI6zr6E26Uk875gOtUlEYnZnG/MERsFZSCbN
+ Qpg0C8mkWUg6FjCyrGKUTC0ozk3PLTYsMMxLLdcrTswtLs1L10vOz93ECE4BWpo7GC8viT/E
+ KMDBqMTDW9ARFyvEmlhWXJl7iFGCg1lJhLdsIlCINyWxsiq1KD++qDQntfgQozQHi5I479O8
+ Y5FCAumJJanZqakFqUUwWSYOTqkGxpkCz5+oMws9PX3b/Iwkf+SF3W8rQ53jHge67jXfcttX
+ XfWf/YkDt2PWHm6XO/JJRet0fPHMFRtncfxadl8yhy+f9dwq5ZWcKeFMbiHrX7L3Sj37OZvd
+ 4obsuk/CfvZi882OzLqbKXEtsXAff8/CwM0+Hnof3BSz71z2LO/ouybA31ka2n+AWYmlOCPR
+ UIu5qDgRAIuCqND9AgAA
+X-CMS-MailID: 20190823005041epcas2p3c8550c3fabbd6a6db6429cb06dbbf3a6
+X-Msg-Generator: CA
+X-Sendblock-Type: AUTO_CONFIDENTIAL
+CMS-TYPE: 102P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190823005041epcas2p3c8550c3fabbd6a6db6429cb06dbbf3a6
+References: <CGME20190823005041epcas2p3c8550c3fabbd6a6db6429cb06dbbf3a6@epcas2p3.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190822_173739_013729_02EBD225 
-X-CRM114-Status: GOOD (  13.79  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190822_175051_885114_44988C46 
+X-CRM114-Status: GOOD (  10.11  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.40 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.33 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -118,6 +131,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,97 +143,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- Jana Build <jana.build@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- LnxRevLi <LnxRevLi@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: 'Ulf
+ Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
+ dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
+ 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
+ linux-samsung-soc@vger.kernel.org, 'Herbert Xu' <herbert@gondor.apana.org.au>,
+ 'Krzysztof Kozlowski' <krzk@kernel.org>,
+ 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
+ linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
+ linux-block@vger.kernel.org, linux-fscrypt@vger.kernel.org,
+ 'Jaegeuk Kim' <jaegeuk@kernel.org>, linux-arm-kernel@lists.infradead.org,
+ 'Jens Axboe' <axboe@kernel.dk>, 'Theodore Ts'o' <tytso@mit.edu>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-f2fs-devel@lists.sourceforge.net, linux-crypto@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, "'David S. Miller'" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The mipi pll clock comes from the MIPI PHY PLL output, so
-it should not be a fixed clock.
+On Wed, 22 Aug 2019 at 17:37, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> Your patch looks corrupted - wrapped by mailer. The easiest way
+> usually is to use git format-patch and git send-email - then you do
+> not have to worry about formatting etc.
+>
+> Best regards,
+> Krzysztof
 
-MIPI PHY PLL is in the MIPI DSI space, and it is used as
-the bit clock for transferring the pixel data out and its
-output clock is configured according to the display mode.
+I'm using outlook instead of 'git send-email' because of workplace policy.
+It's probably broken when I copied the code.
+Thanks for your notice. I will be more careful.
 
-So it should be used only for MIPI DSI and not be exported
-out for other usages.
-
-Signed-off-by: Fancy Fang <chen.fang@nxp.com>
----
- .../devicetree/bindings/clock/imx7ulp-clock.txt   |  1 -
- drivers/clk/imx/clk-imx7ulp.c                     |  3 +--
- include/dt-bindings/clock/imx7ulp-clock.h         | 15 +++++++--------
- 3 files changed, 8 insertions(+), 11 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-index a4f8cd478f92..93d89adb7afe 100644
---- a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-+++ b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-@@ -82,7 +82,6 @@ pcc2: pcc2@403f0000 {
- 		 <&scg1 IMX7ULP_CLK_APLL_PFD0>,
- 		 <&scg1 IMX7ULP_CLK_UPLL>,
- 		 <&scg1 IMX7ULP_CLK_SOSC_BUS_CLK>,
--		 <&scg1 IMX7ULP_CLK_MIPI_PLL>,
- 		 <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>,
- 		 <&scg1 IMX7ULP_CLK_ROSC>,
- 		 <&scg1 IMX7ULP_CLK_SPLL_BUS_CLK>;
-diff --git a/drivers/clk/imx/clk-imx7ulp.c b/drivers/clk/imx/clk-imx7ulp.c
-index 2022d9bead91..459b120b71d5 100644
---- a/drivers/clk/imx/clk-imx7ulp.c
-+++ b/drivers/clk/imx/clk-imx7ulp.c
-@@ -28,7 +28,7 @@ static const char * const scs_sels[]		= { "dummy", "sosc", "sirc", "firc", "dumm
- static const char * const ddr_sels[]		= { "apll_pfd_sel", "upll", };
- static const char * const nic_sels[]		= { "firc", "ddr_clk", };
- static const char * const periph_plat_sels[]	= { "dummy", "nic1_bus_clk", "nic1_clk", "ddr_clk", "apll_pfd2", "apll_pfd1", "apll_pfd0", "upll", };
--static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "mpll", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
-+static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "dummy", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
- static const char * const arm_sels[]		= { "divcore", "dummy", "dummy", "hsrun_divcore", };
- 
- /* used by sosc/sirc/firc/ddr/spll/apll dividers */
-@@ -75,7 +75,6 @@ static void __init imx7ulp_clk_scg1_init(struct device_node *np)
- 	clks[IMX7ULP_CLK_SOSC]		= imx_obtain_fixed_clk_hw(np, "sosc");
- 	clks[IMX7ULP_CLK_SIRC]		= imx_obtain_fixed_clk_hw(np, "sirc");
- 	clks[IMX7ULP_CLK_FIRC]		= imx_obtain_fixed_clk_hw(np, "firc");
--	clks[IMX7ULP_CLK_MIPI_PLL]	= imx_obtain_fixed_clk_hw(np, "mpll");
- 	clks[IMX7ULP_CLK_UPLL]		= imx_obtain_fixed_clk_hw(np, "upll");
- 
- 	/* SCG1 */
-diff --git a/include/dt-bindings/clock/imx7ulp-clock.h b/include/dt-bindings/clock/imx7ulp-clock.h
-index 6f66f9005c81..f8d34fb4378f 100644
---- a/include/dt-bindings/clock/imx7ulp-clock.h
-+++ b/include/dt-bindings/clock/imx7ulp-clock.h
-@@ -49,15 +49,14 @@
- #define IMX7ULP_CLK_NIC1_DIV		36
- #define IMX7ULP_CLK_NIC1_BUS_DIV	37
- #define IMX7ULP_CLK_NIC1_EXT_DIV	38
--#define IMX7ULP_CLK_MIPI_PLL		39
--#define IMX7ULP_CLK_SIRC		40
--#define IMX7ULP_CLK_SOSC_BUS_CLK	41
--#define IMX7ULP_CLK_FIRC_BUS_CLK	42
--#define IMX7ULP_CLK_SPLL_BUS_CLK	43
--#define IMX7ULP_CLK_HSRUN_SYS_SEL	44
--#define IMX7ULP_CLK_HSRUN_CORE_DIV	45
-+#define IMX7ULP_CLK_SIRC		39
-+#define IMX7ULP_CLK_SOSC_BUS_CLK	40
-+#define IMX7ULP_CLK_FIRC_BUS_CLK	41
-+#define IMX7ULP_CLK_SPLL_BUS_CLK	42
-+#define IMX7ULP_CLK_HSRUN_SYS_SEL	43
-+#define IMX7ULP_CLK_HSRUN_CORE_DIV	44
- 
--#define IMX7ULP_CLK_SCG1_END		46
-+#define IMX7ULP_CLK_SCG1_END		45
- 
- /* PCC2 */
- #define IMX7ULP_CLK_DMA1		0
--- 
-2.17.1
+Thanks for your reply
+Boojin Kim.
 
 
 _______________________________________________
