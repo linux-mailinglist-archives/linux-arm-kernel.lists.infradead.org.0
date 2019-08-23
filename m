@@ -2,52 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2B9009B1D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:22:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51DB69B1E8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:28:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=smO2KZDiXR3w/aHNosIEP+fSbrafsnCNCrMvJWrucQA=; b=YdVMT6VfyMSg5Y
-	28Jylm+EC6FHpdQQAYK4zuIeg7oRkkxOlz+ChyOOdYavV03AiTzSPBozS0tq65o3ImKEbAQ0Qe3/1
-	a/ucEo3oKTHK093rNC0mYJhUVzZNoTMvQSE9vkIninNQPPdQGgfSZz2EIaSOZc8UR9w5tbdaoW8X8
-	R79bCg/sqPOuc+cIjj65/6r4fgVnA18mYVOR6NGdEORxNnp/1/yrfNbimT8ZDmQrHja9O0N6xqprY
-	OUqmblK4nLSPAgr2sVSgieg87DZ7MBFp2jCLRXBZW+S6udzaONwHm3xOTRQYLhFwExgAYq35p6dMk
-	e4TZ0hNKpsWhGJQjMnVQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=cgrvnb7x3DZ1EyixWC5WqRzwCWPvcoKf4u7+VJSA/Qc=; b=lDsXeMuonxLB+J
+	z03n9FoNM/9QB4zYR5Z0Y7hcwq/Djjkt0qD61m8g71ANITFAiG+vHTiQXATOWJmXENSast+7NJmbK
+	MJZW8A/4ws9jpCPfBI9shFr3NgWxHorsr1/3taUwYBRAu7+u8Xs3aibebM8/Kn5nT4bYwnZT+1MMs
+	VntyTzAXI/7wF3lbtfTFVcgaFGZgqQyVMat5h55rqWl61cZU2FIN6A8kbLHgblUfCu1A3gsCEpOTi
+	o8hdtPQuyVXt5o3cH+QwCYivQrZ+ZUE6GdprIeUyD8DhCQrxU3yBz0J1Iz5e60nrrLHzyLMY5Rs3u
+	ndnM4HNVQVL4Z7bLZ/Gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1ASs-0001AY-Gl; Fri, 23 Aug 2019 14:22:54 +0000
+	id 1i1AXv-0002p6-SD; Fri, 23 Aug 2019 14:28:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i1ASl-0001A2-Di
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:22:49 +0000
+ id 1i1AXo-0002li-EG
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:28:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B9A4528;
- Fri, 23 Aug 2019 07:22:46 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5606E3F718;
- Fri, 23 Aug 2019 07:22:45 -0700 (PDT)
-From: Steven Price <steven.price@arm.com>
-Subject: Re: [PATCH v3 10/10] arm64: Retrieve stolen time as paravirtualized
- guest
-To: Zenghui Yu <yuzenghui@huawei.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-11-steven.price@arm.com>
- <6040a45c-fc39-a33e-c6a4-7baa586c247c@huawei.com>
-Message-ID: <29cd1304-6b4d-05ef-3c08-6b4ba769c8fa@arm.com>
-Date: Fri, 23 Aug 2019 15:22:44 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 631C628;
+ Fri, 23 Aug 2019 07:27:59 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AF57E3F718;
+ Fri, 23 Aug 2019 07:27:58 -0700 (PDT)
+Date: Fri, 23 Aug 2019 15:27:57 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH v2 08/10] PCI: layerscape: Add EP mode support for
+ ls1088a and ls2088a
+Message-ID: <20190823142756.GI14582@e119886-lin.cambridge.arm.com>
+References: <20190822112242.16309-1-xiaowei.bao@nxp.com>
+ <20190822112242.16309-8-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <6040a45c-fc39-a33e-c6a4-7baa586c247c@huawei.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <20190822112242.16309-8-xiaowei.bao@nxp.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_072247_557398_0B7E01B2 
-X-CRM114-Status: GOOD (  24.78  )
+X-CRM114-CacheID: sfid-20190823_072800_570437_BDC50409 
+X-CRM114-Status: GOOD (  20.58  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,169 +62,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Paolo Bonzini <pbonzini@redhat.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.co,
+ arnd@arndb.de, devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, minghuan.Lian@nxp.com,
+ robh+dt@kernel.org, gustavo.pimentel@synopsys.com, jingoohan1@gmail.com,
+ bhelgaas@google.com, leoyang.li@nxp.com, shawnguo@kernel.org,
+ mingkai.hu@nxp.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjMvMDgvMjAxOSAxMjo0NSwgWmVuZ2h1aSBZdSB3cm90ZToKPiBIaSBTdGV2ZW4sCj4gCj4g
-T24gMjAxOS84LzIxIDIzOjM2LCBTdGV2ZW4gUHJpY2Ugd3JvdGU6Cj4+IEVuYWJsZSBwYXJhdmly
-dHVhbGl6YXRpb24gZmVhdHVyZXMgd2hlbiBydW5uaW5nIHVuZGVyIGEgaHlwZXJ2aXNvcgo+PiBz
-dXBwb3J0aW5nIHRoZSBQVl9USU1FX1NUIGh5cGVyY2FsbC4KPj4KPj4gRm9yIGVhY2ggKHYpQ1BV
-LCB3ZSBhc2sgdGhlIGh5cGVydmlzb3IgZm9yIHRoZSBsb2NhdGlvbiBvZiBhIHNoYXJlZAo+PiBw
-YWdlIHdoaWNoIHRoZSBoeXBlcnZpc29yIHdpbGwgdXNlIHRvIHJlcG9ydCBzdG9sZW4gdGltZSB0
-byB1cy4gV2Ugc2V0Cj4+IHB2X3RpbWVfb3BzIHRvIHRoZSBzdG9sZW4gdGltZSBmdW5jdGlvbiB3
-aGljaCBzaW1wbHkgcmVhZHMgdGhlIHN0b2xlbgo+PiB2YWx1ZSBmcm9tIHRoZSBzaGFyZWQgcGFn
-ZSBmb3IgYSBWQ1BVLiBXZSBndWFyYW50ZWUgc2luZ2xlLWNvcHkKPj4gYXRvbWljaXR5IHVzaW5n
-IFJFQURfT05DRSB3aGljaCBtZWFucyB3ZSBjYW4gYWxzbyByZWFkIHRoZSBzdG9sZW4KPj4gdGlt
-ZSBmb3IgYW5vdGhlciBWQ1BVIHRoYW4gdGhlIGN1cnJlbnRseSBydW5uaW5nIG9uZSB3aGlsZSBp
-dCBpcwo+PiBwb3RlbnRpYWxseSBiZWluZyB1cGRhdGVkIGJ5IHRoZSBoeXBlcnZpc29yLgo+Pgo+
-PiBTaWduZWQtb2ZmLWJ5OiBTdGV2ZW4gUHJpY2UgPHN0ZXZlbi5wcmljZUBhcm0uY29tPgo+PiAt
-LS0KPj4gwqAgYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wYXJhdmlydC5oIHzCoMKgIDkgKy0KPj4g
-wqAgYXJjaC9hcm02NC9rZXJuZWwvcGFyYXZpcnQuY8KgwqDCoMKgwqAgfCAxNDggKysrKysrKysr
-KysrKysrKysrKysrKysrKysrKysrCj4+IMKgIGFyY2gvYXJtNjQva2VybmVsL3RpbWUuY8KgwqDC
-oMKgwqDCoMKgwqDCoCB8wqDCoCAzICsKPj4gwqAgaW5jbHVkZS9saW51eC9jcHVob3RwbHVnLmjC
-oMKgwqDCoMKgwqDCoCB8wqDCoCAxICsKPj4gwqAgNCBmaWxlcyBjaGFuZ2VkLCAxNjAgaW5zZXJ0
-aW9ucygrKSwgMSBkZWxldGlvbigtKQo+Pgo+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9pbmNs
-dWRlL2FzbS9wYXJhdmlydC5oCj4+IGIvYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wYXJhdmlydC5o
-Cj4+IGluZGV4IDc5OWQ5ZGQ2ZjdjYy4uMTI1YzI2YzQyOTAyIDEwMDY0NAo+PiAtLS0gYS9hcmNo
-L2FybTY0L2luY2x1ZGUvYXNtL3BhcmF2aXJ0LmgKPj4gKysrIGIvYXJjaC9hcm02NC9pbmNsdWRl
-L2FzbS9wYXJhdmlydC5oCj4+IEBAIC0yMSw2ICsyMSwxMyBAQCBzdGF0aWMgaW5saW5lIHU2NCBw
-YXJhdmlydF9zdGVhbF9jbG9jayhpbnQgY3B1KQo+PiDCoCB7Cj4+IMKgwqDCoMKgwqAgcmV0dXJu
-IHB2X29wcy50aW1lLnN0ZWFsX2Nsb2NrKGNwdSk7Cj4+IMKgIH0KPj4gLSNlbmRpZgo+PiArCj4+
-ICtpbnQgX19pbml0IGt2bV9ndWVzdF9pbml0KHZvaWQpOwo+PiArCj4+ICsjZWxzZQo+PiArCj4+
-ICsjZGVmaW5lIGt2bV9ndWVzdF9pbml0KCkKPj4gKwo+PiArI2VuZGlmIC8vIENPTkZJR19QQVJB
-VklSVAo+PiDCoCDCoCAjZW5kaWYKPj4gZGlmZiAtLWdpdCBhL2FyY2gvYXJtNjQva2VybmVsL3Bh
-cmF2aXJ0LmMgYi9hcmNoL2FybTY0L2tlcm5lbC9wYXJhdmlydC5jCj4+IGluZGV4IDRjZmVkOTFm
-ZTI1Ni4uZWE4ZGJiYmQzMjkzIDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybTY0L2tlcm5lbC9wYXJh
-dmlydC5jCj4+ICsrKyBiL2FyY2gvYXJtNjQva2VybmVsL3BhcmF2aXJ0LmMKPj4gQEAgLTYsMTMg
-KzYsMTYxIEBACj4+IMKgwqAgKiBBdXRob3I6IFN0ZWZhbm8gU3RhYmVsbGluaSA8c3RlZmFuby5z
-dGFiZWxsaW5pQGV1LmNpdHJpeC5jb20+Cj4+IMKgwqAgKi8KPj4gwqAgKyNkZWZpbmUgcHJfZm10
-KGZtdCkgImt2bWFybS1wdjogIiBmbXQKPj4gKwo+PiArI2luY2x1ZGUgPGxpbnV4L2FybS1zbWNj
-Yy5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L2NwdWhvdHBsdWcuaD4KPj4gwqAgI2luY2x1ZGUgPGxp
-bnV4L2V4cG9ydC5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L2lvLmg+Cj4+IMKgICNpbmNsdWRlIDxs
-aW51eC9qdW1wX2xhYmVsLmg+Cj4+ICsjaW5jbHVkZSA8bGludXgvcHJpbnRrLmg+Cj4+ICsjaW5j
-bHVkZSA8bGludXgvcHNjaS5oPgo+PiArI2luY2x1ZGUgPGxpbnV4L3JlYm9vdC5oPgo+PiArI2lu
-Y2x1ZGUgPGxpbnV4L3NsYWIuaD4KPj4gwqAgI2luY2x1ZGUgPGxpbnV4L3R5cGVzLmg+Cj4+ICsK
-Pj4gwqAgI2luY2x1ZGUgPGFzbS9wYXJhdmlydC5oPgo+PiArI2luY2x1ZGUgPGFzbS9wdmNsb2Nr
-LWFiaS5oPgo+PiArI2luY2x1ZGUgPGFzbS9zbXBfcGxhdC5oPgo+PiDCoCDCoCBzdHJ1Y3Qgc3Rh
-dGljX2tleSBwYXJhdmlydF9zdGVhbF9lbmFibGVkOwo+PiDCoCBzdHJ1Y3Qgc3RhdGljX2tleSBw
-YXJhdmlydF9zdGVhbF9ycV9lbmFibGVkOwo+PiDCoCDCoCBzdHJ1Y3QgcGFyYXZpcnRfcGF0Y2hf
-dGVtcGxhdGUgcHZfb3BzOwo+PiDCoCBFWFBPUlRfU1lNQk9MX0dQTChwdl9vcHMpOwo+PiArCj4+
-ICtzdHJ1Y3Qga3ZtYXJtX3N0b2xlbl90aW1lX3JlZ2lvbiB7Cj4+ICvCoMKgwqAgc3RydWN0IHB2
-Y2xvY2tfdmNwdV9zdG9sZW5fdGltZSAqa2FkZHI7Cj4+ICt9Owo+PiArCj4+ICtzdGF0aWMgREVG
-SU5FX1BFUl9DUFUoc3RydWN0IGt2bWFybV9zdG9sZW5fdGltZV9yZWdpb24sCj4+IHN0b2xlbl90
-aW1lX3JlZ2lvbik7Cj4+ICsKPj4gK3N0YXRpYyBib29sIHN0ZWFsX2FjYyA9IHRydWU7Cj4+ICtz
-dGF0aWMgaW50IF9faW5pdCBwYXJzZV9ub19zdGVhbGFjYyhjaGFyICphcmcpCj4+ICt7Cj4+ICvC
-oMKgwqAgc3RlYWxfYWNjID0gZmFsc2U7Cj4+ICvCoMKgwqAgcmV0dXJuIDA7Cj4+ICt9Cj4+ICsK
-Pj4gK2Vhcmx5X3BhcmFtKCJuby1zdGVhbC1hY2MiLCBwYXJzZV9ub19zdGVhbGFjYyk7Cj4+ICsK
-Pj4gKy8qIHJldHVybiBzdG9sZW4gdGltZSBpbiBucyBieSBhc2tpbmcgdGhlIGh5cGVydmlzb3Ig
-Ki8KPj4gK3N0YXRpYyB1NjQga3ZtX3N0ZWFsX2Nsb2NrKGludCBjcHUpCj4+ICt7Cj4+ICvCoMKg
-wqAgc3RydWN0IGt2bWFybV9zdG9sZW5fdGltZV9yZWdpb24gKnJlZzsKPj4gKwo+PiArwqDCoMKg
-IHJlZyA9IHBlcl9jcHVfcHRyKCZzdG9sZW5fdGltZV9yZWdpb24sIGNwdSk7Cj4+ICvCoMKgwqAg
-aWYgKCFyZWctPmthZGRyKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCBwcl93YXJuX29uY2UoInN0b2xl
-biB0aW1lIGVuYWJsZWQgYnV0IG5vdCBjb25maWd1cmVkIGZvciBjcHUKPj4gJWRcbiIsCj4+ICvC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBjcHUpOwo+PiArwqDCoMKgwqDCoMKgwqAg
-cmV0dXJuIDA7Cj4+ICvCoMKgwqAgfQo+PiArCj4+ICvCoMKgwqAgcmV0dXJuIGxlNjRfdG9fY3B1
-KFJFQURfT05DRShyZWctPmthZGRyLT5zdG9sZW5fdGltZSkpOwo+PiArfQo+PiArCj4+ICtzdGF0
-aWMgaW50IGRpc2FibGVfc3RvbGVuX3RpbWVfY3VycmVudF9jcHUodm9pZCkKPj4gK3sKPj4gK8Kg
-wqDCoCBzdHJ1Y3Qga3ZtYXJtX3N0b2xlbl90aW1lX3JlZ2lvbiAqcmVnOwo+PiArCj4+ICvCoMKg
-wqAgcmVnID0gdGhpc19jcHVfcHRyKCZzdG9sZW5fdGltZV9yZWdpb24pOwo+PiArwqDCoMKgIGlm
-ICghcmVnLT5rYWRkcikKPj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+PiArCj4+ICvCoMKg
-wqAgbWVtdW5tYXAocmVnLT5rYWRkcik7Cj4+ICvCoMKgwqAgbWVtc2V0KHJlZywgMCwgc2l6ZW9m
-KCpyZWcpKTsKPj4gKwo+PiArwqDCoMKgIHJldHVybiAwOwo+PiArfQo+PiArCj4+ICtzdGF0aWMg
-aW50IHN0b2xlbl90aW1lX2R5aW5nX2NwdSh1bnNpZ25lZCBpbnQgY3B1KQo+PiArewo+PiArwqDC
-oMKgIHJldHVybiBkaXNhYmxlX3N0b2xlbl90aW1lX2N1cnJlbnRfY3B1KCk7Cj4+ICt9Cj4+ICsK
-Pj4gK3N0YXRpYyBpbnQgaW5pdF9zdG9sZW5fdGltZV9jcHUodW5zaWduZWQgaW50IGNwdSkKPj4g
-K3sKPj4gK8KgwqDCoCBzdHJ1Y3Qga3ZtYXJtX3N0b2xlbl90aW1lX3JlZ2lvbiAqcmVnOwo+PiAr
-wqDCoMKgIHN0cnVjdCBhcm1fc21jY2NfcmVzIHJlczsKPj4gKwo+PiArwqDCoMKgIHJlZyA9IHRo
-aXNfY3B1X3B0cigmc3RvbGVuX3RpbWVfcmVnaW9uKTsKPj4gKwo+PiArwqDCoMKgIGFybV9zbWNj
-Y18xXzFfaW52b2tlKEFSTV9TTUNDQ19IVl9QVl9USU1FX1NULCAmcmVzKTsKPj4gKwo+PiArwqDC
-oMKgIGlmICgobG9uZylyZXMuYTAgPCAwKQo+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIC1FSU5W
-QUw7Cj4+ICsKPj4gK8KgwqDCoCByZWctPmthZGRyID0gbWVtcmVtYXAocmVzLmEwLAo+PiArwqDC
-oMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBzaXplb2Yoc3RydWN0IHB2Y2xvY2tfdmNw
-dV9zdG9sZW5fdGltZSksCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIE1F
-TVJFTUFQX1dCKTsKPiAKPiBjcHVocCBjYWxsYmFja3MgY2FuIGJlIGludm9rZWQgaW4gYXRvbWlj
-IGNvbnRleHQgKHNlZToKPiDCoMKgwqDCoHNlY29uZGFyeV9zdGFydF9rZXJuZWwgLT4KPiDCoMKg
-wqDCoG5vdGlmeV9jcHVfc3RhcnRpbmcgLT4KPiDCoMKgwqDCoGludm9rZSBjYWxsYmFja3MpLAo+
-IGJ1dCBtZW1yZW1hcCBtaWdodCBzbGVlcC4uLgo+IAo+IFRyeSB0byBydW4gYSBERUJVR19BVE9N
-SUNfU0xFRVAgZW5hYmxlZCBQViBndWVzdCwgSSBndWVzcyB3ZSB3aWxsIGJlCj4gZ3JlZXRlZCBi
-eSB0aGUgU2xlZXAtaW4tQXRvbWljLUNvbnRleHQgQlVHLsKgIFdlIG5lZWQgYW4gYWx0ZXJuYXRp
-dmUKPiBoZXJlPwoKQWN0dWFsbHkgSSBoYWQgcnVuIERFQlVHX0FUT01JQ19TTEVFUCBhbmQgbm90
-IHNlZW4gYW55IGlzc3VlLiBCdXQgSQp0aGluayB0aGF0J3MgYmVjYXVzZSBvZiB0aGUgd2F5IEkn
-dmUgY29uZmlndXJlZCB0aGUgcmVnaW9uIGluIG15IGt2bXRvb2wKY2hhbmdlcy4gSSdtIGhpdHRp
-bmcgdGhlIHBhdGggd2hlcmUgdGhlIG1lbW9yeSByZWdpb24gaXMgaW4gdGhlIGxpbmVhcgptYXAg
-b2YgdGhlIGtlcm5lbCBhbmQgc28gbm8gYWN0dWFsIHJlbWFwcGluZyBpcyBuZWVkZWQgYW5kIGhl
-bmNlCm1lbXJlbWFwIGRvZXNuJ3Qgc2xlZXAgKHRoZSBzaGFyZWQgc3RydWN0dXJlIGlzIGluIGEg
-cmVzZXJ2ZWQgcmVnaW9uIG9mClJBTSkuCgpCdXQgZXZlbiBjaGFuZ2luZyB0aGUgbWVtb3J5IGxh
-eW91dCBvZiB0aGUgZ3Vlc3Qgc28gdGhlIGNhbGwgZ29lcyBpbnRvCmlvcmVtYXBfcGFnZV9yYW5n
-ZSgpICh3aGljaCBjb250YWlucyBhIG1pZ2h0X3NsZWVwKCkpIEknbSBub3Qgc2VlaW5nIGFueQpw
-cm9ibGVtcy4KCkFtIEkgbWlzc2luZyBzb21ldGhpbmc/IEkgaGF2ZSB0byBhZG1pdCBJIGRvbid0
-IGVudGlyZWx5IGZvbGxvdyB0aGUKZWFybHkgc3RhcnQgdXAgLSBwZXJoYXBzIGl0J3MgYSBzaW1w
-bGUgYXMgREVCVUdfQVRPTUlDX1NMRUVQIGRvZXNuJ3QKd29yayB0aGlzIGVhcmx5IGluIGJvb3Q/
-Cgo+PiArCj4+ICvCoMKgwqAgaWYgKCFyZWctPmthZGRyKSB7Cj4+ICvCoMKgwqDCoMKgwqDCoCBw
-cl93YXJuKCJGYWlsZWQgdG8gbWFwIHN0b2xlbiB0aW1lIGRhdGEgc3RydWN0dXJlXG4iKTsKPj4g
-K8KgwqDCoMKgwqDCoMKgIHJldHVybiAtRU5PTUVNOwo+PiArwqDCoMKgIH0KPj4gKwo+PiArwqDC
-oMKgIGlmIChsZTMyX3RvX2NwdShyZWctPmthZGRyLT5yZXZpc2lvbikgIT0gMCB8fAo+PiArwqDC
-oMKgwqDCoMKgwqAgbGUzMl90b19jcHUocmVnLT5rYWRkci0+YXR0cmlidXRlcykgIT0gMCkgewo+
-PiArwqDCoMKgwqDCoMKgwqAgcHJfd2FybigiVW5leHBlY3RlZCByZXZpc2lvbiBvciBhdHRyaWJ1
-dGVzIGluIHN0b2xlbiB0aW1lCj4+IGRhdGFcbiIpOwo+PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJu
-IC1FTlhJTzsKPj4gK8KgwqDCoCB9Cj4+ICsKPj4gK8KgwqDCoCByZXR1cm4gMDsKPj4gK30KPj4g
-Kwo+PiArc3RhdGljIGludCBrdm1fYXJtX2luaXRfc3RvbGVuX3RpbWUodm9pZCkKPj4gK3sKPj4g
-K8KgwqDCoCBpbnQgcmV0Owo+PiArCj4+ICvCoMKgwqAgcmV0ID0gY3B1aHBfc2V0dXBfc3RhdGUo
-Q1BVSFBfQVBfQVJNX0tWTVBWX1NUQVJUSU5HLAo+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgICJoeXBlcnZpc29yL2t2bWFybS9wdjpzdGFydGluZyIsCj4+ICvCoMKgwqDCoMKgwqDC
-oMKgwqDCoMKgwqDCoMKgwqAgaW5pdF9zdG9sZW5fdGltZV9jcHUsIHN0b2xlbl90aW1lX2R5aW5n
-X2NwdSk7Cj4+ICvCoMKgwqAgaWYgKHJldCA8IDApCj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4g
-cmV0Owo+PiArwqDCoMKgIHJldHVybiAwOwo+PiArfQo+PiArCj4+ICtzdGF0aWMgYm9vbCBoYXNf
-a3ZtX3N0ZWFsX2Nsb2NrKHZvaWQpCj4+ICt7Cj4+ICvCoMKgwqAgc3RydWN0IGFybV9zbWNjY19y
-ZXMgcmVzOwo+PiArCj4+ICvCoMKgwqAgLyogVG8gZGV0ZWN0IHRoZSBwcmVzZW5jZSBvZiBQViB0
-aW1lIHN1cHBvcnQgd2UgcmVxdWlyZSBTTUNDQwo+PiAxLjErICovCj4+ICvCoMKgwqAgaWYgKHBz
-Y2lfb3BzLnNtY2NjX3ZlcnNpb24gPCBTTUNDQ19WRVJTSU9OXzFfMSkKPj4gK8KgwqDCoMKgwqDC
-oMKgIHJldHVybiBmYWxzZTsKPj4gKwo+PiArwqDCoMKgIGFybV9zbWNjY18xXzFfaW52b2tlKEFS
-TV9TTUNDQ19BUkNIX0ZFQVRVUkVTX0ZVTkNfSUQsCj4+ICvCoMKgwqDCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoCBBUk1fU01DQ0NfSFZfUFZfRkVBVFVSRVMsICZyZXMpOwo+PiArCj4+ICvCoMKg
-wqAgaWYgKHJlcy5hMCAhPSBTTUNDQ19SRVRfU1VDQ0VTUykKPj4gK8KgwqDCoMKgwqDCoMKgIHJl
-dHVybiBmYWxzZTsKPj4gKwo+PiArwqDCoMKgIGFybV9zbWNjY18xXzFfaW52b2tlKEFSTV9TTUND
-Q19IVl9QVl9GRUFUVVJFUywKPj4gK8KgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgIEFS
-TV9TTUNDQ19IVl9QVl9USU1FX1NULCAmcmVzKTsKPj4gKwo+PiArwqDCoMKgIGlmIChyZXMuYTAg
-IT0gU01DQ0NfUkVUX1NVQ0NFU1MpCj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gZmFsc2U7Cj4+
-ICsKPj4gK8KgwqDCoCByZXR1cm4gdHJ1ZTsKPj4gK30KPj4gKwo+PiAraW50IF9faW5pdCBrdm1f
-Z3Vlc3RfaW5pdCh2b2lkKQo+PiArewo+PiArwqDCoMKgIGludCByZXQgPSAwOwo+IAo+IEFuZCB0
-aGlzIGxvb2sgbGlrZSBhIHJlZHVuZGFudCBpbml0aWFsaXphdGlvbj8KClllcyAtIHRoYXQgc2hv
-dWxkIGdvLCB0aGFua3MgZm9yIHNwb3R0aW5nIGl0LgoKU3RldmUKCj4gCj4gCj4gVGhhbmtzLAo+
-IHplbmdodWkKPiAKPj4gKwo+PiArwqDCoMKgIGlmICghaGFzX2t2bV9zdGVhbF9jbG9jaygpKQo+
-PiArwqDCoMKgwqDCoMKgwqAgcmV0dXJuIDA7Cj4+ICsKPj4gK8KgwqDCoCByZXQgPSBrdm1fYXJt
-X2luaXRfc3RvbGVuX3RpbWUoKTsKPj4gK8KgwqDCoCBpZiAocmV0KQo+PiArwqDCoMKgwqDCoMKg
-wqAgcmV0dXJuIHJldDsKPj4gKwo+PiArwqDCoMKgIHB2X29wcy50aW1lLnN0ZWFsX2Nsb2NrID0g
-a3ZtX3N0ZWFsX2Nsb2NrOwo+PiArCj4+ICvCoMKgwqAgc3RhdGljX2tleV9zbG93X2luYygmcGFy
-YXZpcnRfc3RlYWxfZW5hYmxlZCk7Cj4+ICvCoMKgwqAgaWYgKHN0ZWFsX2FjYykKPj4gK8KgwqDC
-oMKgwqDCoMKgIHN0YXRpY19rZXlfc2xvd19pbmMoJnBhcmF2aXJ0X3N0ZWFsX3JxX2VuYWJsZWQp
-Owo+PiArCj4+ICvCoMKgwqAgcHJfaW5mbygidXNpbmcgc3RvbGVuIHRpbWUgUFZcbiIpOwo+PiAr
-Cj4+ICvCoMKgwqAgcmV0dXJuIDA7Cj4+ICt9Cj4+IGRpZmYgLS1naXQgYS9hcmNoL2FybTY0L2tl
-cm5lbC90aW1lLmMgYi9hcmNoL2FybTY0L2tlcm5lbC90aW1lLmMKPj4gaW5kZXggMGIyOTQ2NDE0
-ZGM5Li5hNTJhZWExNGM2ZWMgMTAwNjQ0Cj4+IC0tLSBhL2FyY2gvYXJtNjQva2VybmVsL3RpbWUu
-Ywo+PiArKysgYi9hcmNoL2FybTY0L2tlcm5lbC90aW1lLmMKPj4gQEAgLTMwLDYgKzMwLDcgQEAK
-Pj4gwqAgwqAgI2luY2x1ZGUgPGFzbS90aHJlYWRfaW5mby5oPgo+PiDCoCAjaW5jbHVkZSA8YXNt
-L3N0YWNrdHJhY2UuaD4KPj4gKyNpbmNsdWRlIDxhc20vcGFyYXZpcnQuaD4KPj4gwqAgwqAgdW5z
-aWduZWQgbG9uZyBwcm9maWxlX3BjKHN0cnVjdCBwdF9yZWdzICpyZWdzKQo+PiDCoCB7Cj4+IEBA
-IC02NSw0ICs2Niw2IEBAIHZvaWQgX19pbml0IHRpbWVfaW5pdCh2b2lkKQo+PiDCoCDCoMKgwqDC
-oMKgIC8qIENhbGlicmF0ZSB0aGUgZGVsYXkgbG9vcCBkaXJlY3RseSAqLwo+PiDCoMKgwqDCoMKg
-IGxwal9maW5lID0gYXJjaF90aW1lcl9yYXRlIC8gSFo7Cj4+ICsKPj4gK8KgwqDCoCBrdm1fZ3Vl
-c3RfaW5pdCgpOwo+PiDCoCB9Cj4+IGRpZmYgLS1naXQgYS9pbmNsdWRlL2xpbnV4L2NwdWhvdHBs
-dWcuaCBiL2luY2x1ZGUvbGludXgvY3B1aG90cGx1Zy5oCj4+IGluZGV4IDA2ODc5M2E2MTljYS4u
-ODlkNzVlZGI1NzUwIDEwMDY0NAo+PiAtLS0gYS9pbmNsdWRlL2xpbnV4L2NwdWhvdHBsdWcuaAo+
-PiArKysgYi9pbmNsdWRlL2xpbnV4L2NwdWhvdHBsdWcuaAo+PiBAQCAtMTM2LDYgKzEzNiw3IEBA
-IGVudW0gY3B1aHBfc3RhdGUgewo+PiDCoMKgwqDCoMKgIC8qIE11c3QgYmUgdGhlIGxhc3QgdGlt
-ZXIgY2FsbGJhY2sgKi8KPj4gwqDCoMKgwqDCoCBDUFVIUF9BUF9EVU1NWV9USU1FUl9TVEFSVElO
-RywKPj4gwqDCoMKgwqDCoCBDUFVIUF9BUF9BUk1fWEVOX1NUQVJUSU5HLAo+PiArwqDCoMKgIENQ
-VUhQX0FQX0FSTV9LVk1QVl9TVEFSVElORywKPj4gwqDCoMKgwqDCoCBDUFVIUF9BUF9BUk1fQ09S
-RVNJR0hUX1NUQVJUSU5HLAo+PiDCoMKgwqDCoMKgIENQVUhQX0FQX0FSTTY0X0lTTkRFUF9TVEFS
-VElORywKPj4gwqDCoMKgwqDCoCBDUFVIUF9BUF9TTVBDRkRfRFlJTkcsCj4+Cj4gCgoKX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5l
-bCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6
-Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+On Thu, Aug 22, 2019 at 07:22:40PM +0800, Xiaowei Bao wrote:
+> Add PCIe EP mode support for ls1088a and ls2088a, there are some
+> difference between LS1 and LS2 platform, so refactor the code of
+> the EP driver.
+> 
+> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
+> ---
+> v2:
+>  - New mechanism for layerscape EP driver.
+
+Was there a v1 of this patch?
+
+> 
+>  drivers/pci/controller/dwc/pci-layerscape-ep.c | 76 ++++++++++++++++++++------
+>  1 file changed, 58 insertions(+), 18 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> index 7ca5fe8..2a66f07 100644
+> --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> @@ -20,27 +20,29 @@
+>  
+>  #define PCIE_DBI2_OFFSET		0x1000	/* DBI2 base address*/
+>  
+> -struct ls_pcie_ep {
+> -	struct dw_pcie		*pci;
+> -	struct pci_epc_features	*ls_epc;
+> +#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
+> +
+> +struct ls_pcie_ep_drvdata {
+> +	u32				func_offset;
+> +	const struct dw_pcie_ep_ops	*ops;
+> +	const struct dw_pcie_ops	*dw_pcie_ops;
+>  };
+>  
+> -#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
+> +struct ls_pcie_ep {
+> +	struct dw_pcie			*pci;
+> +	struct pci_epc_features		*ls_epc;
+> +	const struct ls_pcie_ep_drvdata *drvdata;
+> +};
+>  
+>  static int ls_pcie_establish_link(struct dw_pcie *pci)
+>  {
+>  	return 0;
+>  }
+>  
+> -static const struct dw_pcie_ops ls_pcie_ep_ops = {
+> +static const struct dw_pcie_ops dw_ls_pcie_ep_ops = {
+>  	.start_link = ls_pcie_establish_link,
+>  };
+>  
+> -static const struct of_device_id ls_pcie_ep_of_match[] = {
+> -	{ .compatible = "fsl,ls-pcie-ep",},
+> -	{ },
+> -};
+> -
+>  static const struct pci_epc_features*
+>  ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
+>  {
+> @@ -82,10 +84,44 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  	}
+>  }
+>  
+> -static const struct dw_pcie_ep_ops pcie_ep_ops = {
+> +static unsigned int ls_pcie_ep_func_conf_select(struct dw_pcie_ep *ep,
+> +						u8 func_no)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
+> +	u8 header_type;
+> +
+> +	header_type = ioread8(pci->dbi_base + PCI_HEADER_TYPE);
+> +
+> +	if (header_type & (1 << 7))
+> +		return pcie->drvdata->func_offset * func_no;
+> +	else
+> +		return 0;
+
+It looks like there isn't a PCI define for multi function, the nearest I
+could find was PCI_HEADER_TYPE_MULTIDEVICE in hotplug/ibmphp.h. A comment
+above the test might be helpful to explain the test.
+
+As the ls_pcie_ep_drvdata structures are static, the unset .func_offset
+will be initialised to 0, so you could just drop the test above.
+
+However something to the effect of the following may help spot
+misconfiguration:
+
+WARN_ON(func_no && !pcie->drvdata->func_offset);
+return pcie->drvdata->func_offset * func_no;
+
+The WARN is probably quite useful as if you are attempting to use
+non-zero functions and func_offset isn't set - then things may appear to work
+normally but actually will break horribly.
+
+Thanks,
+
+Andrew Murray
+
+> +}
+> +
+> +static const struct dw_pcie_ep_ops ls_pcie_ep_ops = {
+>  	.ep_init = ls_pcie_ep_init,
+>  	.raise_irq = ls_pcie_ep_raise_irq,
+>  	.get_features = ls_pcie_ep_get_features,
+> +	.func_conf_select = ls_pcie_ep_func_conf_select,
+> +};
+> +
+> +static const struct ls_pcie_ep_drvdata ls1_ep_drvdata = {
+> +	.ops = &ls_pcie_ep_ops,
+> +	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
+> +};
+> +
+> +static const struct ls_pcie_ep_drvdata ls2_ep_drvdata = {
+> +	.func_offset = 0x20000,
+> +	.ops = &ls_pcie_ep_ops,
+> +	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
+> +};
+> +
+> +static const struct of_device_id ls_pcie_ep_of_match[] = {
+> +	{ .compatible = "fsl,ls1046a-pcie-ep", .data = &ls1_ep_drvdata },
+> +	{ .compatible = "fsl,ls1088a-pcie-ep", .data = &ls2_ep_drvdata },
+> +	{ .compatible = "fsl,ls2088a-pcie-ep", .data = &ls2_ep_drvdata },
+> +	{ },
+>  };
+>  
+>  static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+> @@ -98,7 +134,7 @@ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+>  	int ret;
+>  
+>  	ep = &pci->ep;
+> -	ep->ops = &pcie_ep_ops;
+> +	ep->ops = pcie->drvdata->ops;
+>  
+>  	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
+>  	if (!res)
+> @@ -137,14 +173,11 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+>  	if (!ls_epc)
+>  		return -ENOMEM;
+>  
+> -	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+> -	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+> -	if (IS_ERR(pci->dbi_base))
+> -		return PTR_ERR(pci->dbi_base);
+> +	pcie->drvdata = of_device_get_match_data(dev);
+>  
+> -	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
+>  	pci->dev = dev;
+> -	pci->ops = &ls_pcie_ep_ops;
+> +	pci->ops = pcie->drvdata->dw_pcie_ops;
+> +
+>  	pcie->pci = pci;
+>  
+>  	ls_epc->linkup_notifier = false,
+> @@ -152,6 +185,13 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+>  
+>  	pcie->ls_epc = ls_epc;
+>  
+> +	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+> +	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+> +	if (IS_ERR(pci->dbi_base))
+> +		return PTR_ERR(pci->dbi_base);
+> +
+> +	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
+> +
+>  	platform_set_drvdata(pdev, pcie);
+>  
+>  	ret = ls_add_pcie_ep(pcie, pdev);
+> -- 
+> 2.9.5
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
