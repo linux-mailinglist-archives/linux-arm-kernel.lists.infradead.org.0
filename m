@@ -2,74 +2,153 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 028AA9AB25
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:09:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6EB3C9AB33
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:14:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=kDTwXwE5RmkO6SFLnGsC1y6JwVVrji8c0w9XYJ7WeZ0=; b=DpoGebIaCPUk8kb5NMcZ9HVOh
-	14E0PtyuXEuHjm0cUCpWj+edlXb0dYVyZLFZCQs9FYwMrtFZDOmAzZMDKFG98BeXWxwJRVW1tebX4
-	4yV7DpKd/dONWDgw44LHaNlQ/OHeB5jGZwhGDNX4C7dCrflrDvAsrJMgAGshSg12gru2jKUngm6I3
-	n6ecQC2BtThzUeyuSXyl5B7eNwpHsRh19aD4tBecdL32cXQsLRrr0QA7ZpsC4o0x5lxRmj7tr5met
-	Gx0VQwHR+3PYGtBuM33fDJPXp8xg+tG1JLj9VekiHMq92yqjaWESqYPVqhBrC17af8FSINyxwO2Fw
-	C9uxVNxdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=hhYyC0gnnVqqdrJmnXMQtQeeoFlOdFJGjDT1yHyGnZU=; b=gxtsZ5X/e5H+OP
+	W52dU+EDJHAE+oHpltBng2xrK+OlmPr6Zgcrp5Xrsx2Wlxy7I5c6W9Ut8MNcRh8IO8b44AJwqN0bw
+	V+rIhBLKqi1IWDJTobEs0KN71+l4MdLXjq3E367er0/XhRFKmGIPBFQZtk5YwMg+XutY/L+zKY8WO
+	D74RiMFPzZdVjxwbD0U18eAVaLfQzYU77crM+KP6nLX7PZSwwm/yfKhT7pdIi3zlv0O7ShyVznoZ8
+	t6owULkw4sRVrF/eHMWlXUy0smKToXiJb4gCC69xJxuyEID36HfAptROOplG14RoUsPNp3FToCinT
+	lFHP9lmCxAM96A11P9Dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i15Zs-00058n-DA; Fri, 23 Aug 2019 09:09:48 +0000
-Received: from smtpng2.m.smailru.net ([94.100.179.3])
+	id 1i15eB-0006tX-MF; Fri, 23 Aug 2019 09:14:15 +0000
+Received: from esa2.microchip.iphmx.com ([68.232.149.84])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i15Zb-00058L-2i
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:09:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=orpaltech.com; s=mailru; 
- h=Content-Transfer-Encoding:Content-Type:In-Reply-To:MIME-Version:Date:Message-ID:From:References:Cc:To:Subject;
- bh=nXK2D0TcC1nhX8n9bWUP8IEizetK3TCvGKOu8cukqU4=; 
- b=m+kjkDc1dQLEU3rpYMd70IyRkDMoN0pNWeg+bKJuw1u8gRwW4mIul3nli0kedjahpBn6pf4IGMt47uU4K6b2TMIbvckOH04yps3Cbc0Rs8qyEIndzJJ5D+hKlF49wTTJ3sxy4Pojhc0xdhYABuVF938ELhXFrhpPbX2PQ5XEGG0=;
-Received: by smtpng2.m.smailru.net with esmtpa (envelope-from
- <ssuloev@orpaltech.com>)
- id 1i15ZT-0001ba-SE; Fri, 23 Aug 2019 12:09:24 +0300
-Subject: Re: [PATCH 20/21] ASoC: sun4i-i2s: Add support for TDM slots
-To: Maxime Ripard <mripard@kernel.org>
-References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
- <26392af30b3e7b31ee48d5b867d45be8675db046.1566242458.git-series.maxime.ripard@bootlin.com>
- <c311e88a-fdd2-8a01-275e-675d98dc90ba@orpaltech.com>
- <20190821120551.r4b3h4nnet357wem@flea>
-From: Sergey Suloev <ssuloev@orpaltech.com>
-Message-ID: <606f8345-827c-e6e8-7cff-221b4b592eba@orpaltech.com>
-Date: Fri, 23 Aug 2019 12:09:17 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190821120551.r4b3h4nnet357wem@flea>
+ id 1i15dv-0006tF-F9
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:14:00 +0000
+Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa2.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa2.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: cNqvVtt9a3IDeqOscB8kEVPfUd32aq023tmhdicUVbdb+KvxdLvb+EqCtmMRreIYRIi+p0jJX+
+ 50Ym5+FqhNLBnhxZeE/6zt5Czp2rqN0VWFBjJSXmjDz4PFPKs3ZRjrytc/qiB3BSOzlZRh7nhI
+ esNictdDGjkj0EUQATj3ttgqs1MDunv1uw5D334EMOamyqGV5RJC9KoqlXI0B09CoJnn7Hj6Ph
+ vBcNA6gt8fmVejW0L1jsY6O/tx3wMFI/xoZoBrauW1rqdOXRkO9kk1kPlEXh/I3IKNJTXv+4N6
+ FM4=
+X-IronPort-AV: E=Sophos;i="5.64,420,1559545200"; d="scan'208";a="46273240"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 23 Aug 2019 02:13:58 -0700
+Received: from chn-vm-ex04.mchp-main.com (10.10.85.152) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Fri, 23 Aug 2019 02:13:58 -0700
+Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
+ via Frontend Transport; Fri, 23 Aug 2019 02:13:58 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=BrdbAv9EtE1fDJiFTNFI5EljBHUP1X42It2ORpbl6EILE1ScEGsKdDAK6U3Tdo/4l4FkaU3YFYJwCnKQGcwYfufifbWvXTESIKWL4T346Su6iEjn3m3WOQKG47q85n0u1lOZ8/OA3dxA2jTuomamVV9B38fbLT79WhPfsfY/zxtX/UWpYxWsTp3nd38Q1xXFXN5xEnjPZCzlAzGbIY1ZDhuTAocusUGrBhUnWci8CKuI4dO8C9PSCQfgYikTKtutAW9uVCl/B7OvaEPxoGAPVrckHVsuB9ij7I1VLX2reN+5De/cuJWJo1e36ojUirsR/F649sn6aYiCLHVgCF27Gw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bcf7zRSxm5W2Bk6tPrmrK65rz9pk1nI9QZjjnnZKrXQ=;
+ b=hHWeSDOiwXrGkHLja59IHnePhXR46uIbIm3qcr7nNVzAwW1WRXG2gfnf7D+I4YWArj4bwmPuFMBDncTpPSEvqK/UTR7yONbBGTZh/+ruNZ3+FGddP7Sx6Ofkk3zRqB+BXlM9EN60Wy55a+GDfjvPSL3w+2XWGfjvBE+APYxdLyW6tTtX3gqemAx3Y9gTtX1h5rNij117R0mJh2nEJX3chOEFgE3NvwR/j1+/pzSgR60452MCWSN+20AWj+OSCnXibuIlO64nbEELUelbRIL3sCbJNLd7/tmWvQmOVVxxmxOSnXamCK9yNZgJkixtzMqZeXZp/6ozr49ssXh8Hy4Xrw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=bcf7zRSxm5W2Bk6tPrmrK65rz9pk1nI9QZjjnnZKrXQ=;
+ b=Hk7FYPxFtjI+UqxHDYiBSXdNP1hABbUNY7s+Tt06SV+TxgaHi+3M+LjCRw1ajQWmkuy5j/hBdvqr77Kq0ShEpkEAfW5kBuwKQ8bq2IzXUY8t0j4L5ZBb6HSWuswz2hauW1HWUeQpDnZinhKnDIi7lrvvAaM0Ao537nyv2rhpA74=
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com (10.172.55.15) by
+ MWHPR11MB1437.namprd11.prod.outlook.com (10.172.53.19) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2178.18; Fri, 23 Aug 2019 09:13:57 +0000
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::410a:9d4b:b1df:2134]) by MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::410a:9d4b:b1df:2134%12]) with mapi id 15.20.2178.020; Fri, 23 Aug
+ 2019 09:13:57 +0000
+From: <Nicolas.Ferre@microchip.com>
+To: <sebastian.duda@fau.de>
+Subject: Re: Status of Subsystems - MICROCHIP SAMA5D2-COMPATIBLE PIOBU GPIO
+Thread-Topic: Status of Subsystems - MICROCHIP SAMA5D2-COMPATIBLE PIOBU GPIO
+Thread-Index: AQHVWZMXcPl+3nOggkK/p91ZWTeY5Q==
+Date: Fri, 23 Aug 2019 09:13:57 +0000
+Message-ID: <f73f5db7-edcd-f579-ec2a-e42bf92c044d@microchip.com>
+References: <d2bdb45a-3571-5989-8278-6f5c7d9839f2@fau.de>
+In-Reply-To: <d2bdb45a-3571-5989-8278-6f5c7d9839f2@fau.de>
+Accept-Language: en-US
 Content-Language: en-US
-Authentication-Results: smtpng2.m.smailru.net;
- auth=pass smtp.auth=ssuloev@orpaltech.com
- smtp.mailfrom=ssuloev@orpaltech.com
-X-77F55803: 257C4F86AB09C89C5A78504BD2AC2941988784FC6C4AE31FFB04523ACB9590FAFF1072D5B91DFA916CB0DE5807FA22B3BA680126405A466E
-X-7FA49CB5: 0D63561A33F958A5C7E4CF47E883CCF65960FDBDE3D08C9A25FE0D63A85EB8D88941B15DA834481FA18204E546F3947CEDCF5861DED71B2F389733CBF5DBD5E9C8A9BA7A39EFB7666BA297DBC24807EA117882F44604297287769387670735209ECD01F8117BC8BEA471835C12D1D977C4224003CC836476C0CAF46E325F83A522CA9DD8327EE4930A3850AC1BE2E735F0CA3639F44440439F6CB68E6F63A0CD731C566533BA786A40A5AABA2AD371193C9F3DD0FB1AF5EB38286209DE2710BF3C9F3DD0FB1AF5EB4E70A05D1297E1BBCB5012B2E24CD356
-X-Mailru-Sender: 689FA8AB762F739303AC06854B75154566D093553CD66664EC06F020B2E840B7778B5FB1219D8779F6BCD4B1DE95BF653AE5922765F965CDF1D7D1B96E5495AE10FCEA6DFE3E0A150D4ABDE8C577C2ED
-X-Mras: OK
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LNXP265CA0082.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:76::22) To MWHPR11MB1662.namprd11.prod.outlook.com
+ (2603:10b6:301:e::15)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [213.41.198.74]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 667b0b06-8074-4a6f-f53f-08d727aa3a1d
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:MWHPR11MB1437; 
+x-ms-traffictypediagnostic: MWHPR11MB1437:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR11MB1437A7C30B9EA9B37EE595E2E0A40@MWHPR11MB1437.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0138CD935C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(396003)(39860400002)(136003)(376002)(346002)(366004)(199004)(45074003)(189003)(81156014)(8676002)(5660300002)(36756003)(86362001)(6512007)(76176011)(25786009)(966005)(6436002)(6306002)(52116002)(64756008)(8936002)(66476007)(66446008)(66066001)(66556008)(3846002)(2906002)(6116002)(66946007)(7736002)(4326008)(478600001)(186003)(14454004)(31696002)(2616005)(476003)(316002)(4744005)(446003)(11346002)(256004)(54906003)(53936002)(6246003)(26005)(6506007)(6916009)(386003)(99286004)(53546011)(102836004)(229853002)(6486002)(81166006)(71190400001)(71200400001)(486006)(31686004)(305945005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1437;
+ H:MWHPR11MB1662.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: wSzHt9mvaJnHyjhCgsjoww6rtwrpvGbULz/CuIYQHjNm2VCWuwxvCNeNiXOfo7oKO8qNWibuLZDQIO5z+DavCZWJrmnqXIaCqkVyyPy546H9NNgs6e5wBS2eWV1EdoHKIDIMhGak63IqoeEN4C57mGE4dfo8BahH0h1QxmwCdLwFjSm9cNWbS8J9KBXdtLB4lC8BCopZ+g7+R0FYzAEpzzGaxwcxKNLNPaneKpC2bYnQrfoQCIb260Vlt8YtZTMqqsbGwieZTO13GGhpklqyV1eYcdtlkB8VOZqE08wUySgEc75hHYQU4UKNqd27g8v79aVCxjuRkneYqx9b1KkJ/NQK0UJZMOcAszZLqM5yB0+ReOyyiIf43JFSjNTBFhXoJGrnFTkCK4qvz2EkyTaSg9BmZkdckbetkrvHQ18VN3A=
+Content-ID: <23C79482857EE14793949EFCB96DAB9D@namprd11.prod.outlook.com>
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: 667b0b06-8074-4a6f-f53f-08d727aa3a1d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 23 Aug 2019 09:13:57.0489 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: XWjjOFHtWA16+i+rhNJvFVPEf3MZG4srPjHietVoKE0eYTJHdNR2L8nVu4qyyRnuElJB/+HSbO2NmtMLZh/A7CTxMsAgrMNzkAcaGOSWmjY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1437
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_020931_309349_844C5A52 
-X-CRM114-Status: GOOD (  19.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_021359_538182_181D863E 
+X-CRM114-Status: UNSURE (   9.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [94.100.179.3 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.149.84 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -82,168 +161,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, codekipper@gmail.com,
- Chen-Yu Tsai <wens@csie.org>, broonie@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Ludovic.Desroches@microchip.com,
+ lukas.bulwahn@gmail.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Maxime,
+Sebastian,
 
-On 8/21/19 3:05 PM, Maxime Ripard wrote:
-> Hi,
->
-> On Tue, Aug 20, 2019 at 08:46:30AM +0300, Sergey Suloev wrote:
->> Hi, Maxime,
->>
->> On 8/19/19 10:25 PM, Maxime Ripard wrote:
->>> From: Maxime Ripard <maxime.ripard@bootlin.com>
->>>
->>> The i2s controller supports TDM, for up to 8 slots. Let's support the TDM
->>> API.
->>>
->>> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
->>> ---
->>>    sound/soc/sunxi/sun4i-i2s.c | 40 ++++++++++++++++++++++++++++++++------
->>>    1 file changed, 34 insertions(+), 6 deletions(-)
->>>
->>> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
->>> index 0dac09814b65..4f76daeaaed7 100644
->>> --- a/sound/soc/sunxi/sun4i-i2s.c
->>> +++ b/sound/soc/sunxi/sun4i-i2s.c
->>> @@ -168,6 +168,8 @@ struct sun4i_i2s {
->>>    	struct reset_control *rst;
->>>    	unsigned int	mclk_freq;
->>> +	unsigned int	slots;
->>> +	unsigned int	slot_width;
->>>    	struct snd_dmaengine_dai_dma_data	capture_dma_data;
->>>    	struct snd_dmaengine_dai_dma_data	playback_dma_data;
->>> @@ -287,7 +289,7 @@ static bool sun4i_i2s_oversample_is_valid(unsigned int oversample)
->>>    static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
->>>    				  unsigned int rate,
->>> -				  unsigned int channels,
->>> +				  unsigned int slots,
->>>    				  unsigned int word_size)
->>>    {
->>>    	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
->>> @@ -335,7 +337,7 @@ static int sun4i_i2s_set_clk_rate(struct snd_soc_dai *dai,
->>>    	bclk_parent_rate = i2s->variant->get_bclk_parent_rate(i2s);
->>>    	bclk_div = sun4i_i2s_get_bclk_div(i2s, bclk_parent_rate,
->>> -					  rate, channels, word_size);
->>> +					  rate, slots, word_size);
->>>    	if (bclk_div < 0) {
->>>    		dev_err(dai->dev, "Unsupported BCLK divider: %d\n", bclk_div);
->>>    		return -EINVAL;
->>> @@ -419,6 +421,10 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
->>>    				  const struct snd_pcm_hw_params *params)
->>>    {
->>>    	unsigned int channels = params_channels(params);
->>> +	unsigned int slots = channels;
->>> +
->>> +	if (i2s->slots)
->>> +		slots = i2s->slots;
->>>    	/* Map the channels for playback and capture */
->>>    	regmap_write(i2s->regmap, SUN8I_I2S_TX_CHAN_MAP_REG, 0x76543210);
->>> @@ -428,7 +434,6 @@ static int sun8i_i2s_set_chan_cfg(const struct sun4i_i2s *i2s,
->>>    	regmap_update_bits(i2s->regmap, SUN8I_I2S_TX_CHAN_SEL_REG,
->>>    			   SUN4I_I2S_CHAN_SEL_MASK,
->>>    			   SUN4I_I2S_CHAN_SEL(channels));
->>> -
->>>    	regmap_update_bits(i2s->regmap, SUN8I_I2S_RX_CHAN_SEL_REG,
->>>    			   SUN4I_I2S_CHAN_SEL_MASK,
->>>    			   SUN4I_I2S_CHAN_SEL(channels));
->>> @@ -452,10 +457,18 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->>>    			       struct snd_soc_dai *dai)
->>>    {
->>>    	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
->>> +	unsigned int word_size = params_width(params);
->>>    	unsigned int channels = params_channels(params);
->>> +	unsigned int slots = channels;
->>>    	int ret, sr, wss;
->>>    	u32 width;
->>> +	if (i2s->slots)
->>> +		slots = i2s->slots;
->>> +
->>> +	if (i2s->slot_width)
->>> +		word_size = i2s->slot_width;
->>> +
->>>    	ret = i2s->variant->set_chan_cfg(i2s, params);
->>>    	if (ret < 0) {
->>>    		dev_err(dai->dev, "Invalid channel configuration\n");
->>> @@ -477,15 +490,14 @@ static int sun4i_i2s_hw_params(struct snd_pcm_substream *substream,
->>>    	if (sr < 0)
->>>    		return -EINVAL;
->>> -	wss = i2s->variant->get_wss(i2s, params_width(params));
->>> +	wss = i2s->variant->get_wss(i2s, word_size);
->>>    	if (wss < 0)
->>>    		return -EINVAL;
->>>    	regmap_field_write(i2s->field_fmt_wss, wss);
->>>    	regmap_field_write(i2s->field_fmt_sr, sr);
->>> -	return sun4i_i2s_set_clk_rate(dai, params_rate(params),
->>> -				      channels, params_width(params));
->>> +	return sun4i_i2s_set_clk_rate(dai, params_rate(params), slots, word_size);
->>>    }
->>>    static int sun4i_i2s_set_soc_fmt(const struct sun4i_i2s *i2s,
->>> @@ -785,10 +797,26 @@ static int sun4i_i2s_set_sysclk(struct snd_soc_dai *dai, int clk_id,
->>>    	return 0;
->>>    }
->>> +static int sun4i_i2s_set_tdm_slot(struct snd_soc_dai *dai,
->>> +				  unsigned int tx_mask, unsigned int rx_mask,
->>> +				  int slots, int slot_width)
->>> +{
->>> +	struct sun4i_i2s *i2s = snd_soc_dai_get_drvdata(dai);
->>> +
->>> +	if (slots > 8)
->>> +		return -EINVAL;
->>> +
->>> +	i2s->slots = slots;
->>> +	i2s->slot_width = slot_width;
->>> +
->>> +	return 0;
->>> +}
->>> +
->>>    static const struct snd_soc_dai_ops sun4i_i2s_dai_ops = {
->>>    	.hw_params	= sun4i_i2s_hw_params,
->>>    	.set_fmt	= sun4i_i2s_set_fmt,
->>>    	.set_sysclk	= sun4i_i2s_set_sysclk,
->>> +	.set_tdm_slot	= sun4i_i2s_set_tdm_slot,
->>>    	.trigger	= sun4i_i2s_trigger,
->>>    };
->> it seems like you forgot to implement sun4i_i2s_dai_ops.set_bclk_ratio
->> because, as I far as I understand, it should alter tdm slots functionality
->> indirectly.
-> As far as I can see, while this indeed changes a few things on the TDM
-> setup, it's optional, orthogonal and it has a single user in the tree
-> (some intel platform card).
->
-> So I'd say that if someone ever needs it, we can have it, but it's not
-> a blocker.
+On 20/08/2019 at 15:27, Sebastian Duda wrote:
+> Hello Andrei,
+> 
+> in my master thesis, I'm using the association of subsystems to
+> maintainers/reviewers and its status given in the MAINTAINERS file.
+> During the research I noticed that there are several subsystems without
+> a status in the maintainers file. One of them is the subsystem
+> `MICROCHIP SAMA5D2-COMPATIBLE PIOBU GPIO` where you're mentioned as
+> maintainer.
+> 
+> Is it intended not to mention a status for your subsystems?
+> What is the current status of your subsystem?
 
-"orthogonal" meaning that one can achieve the same effect with using 
-"sun4i_i2s_set_tdm_slot" instead of "set_bclk_ratio" ?
+I've just removed this entry and merged it with other gpio/pinctrl 
+driver's entry:
+https://lore.kernel.org/linux-arm-kernel/20190823083158.2649-1-nicolas.ferre@microchip.com/
 
-For example, for WM8731 codec in "non-USB" master mode should generate 
-BCLK = 64 * FS, and I had to implement "set_bclk_ratio" in order to 
-setup it. Note, that this is 100% mandatory condition for the code to 
-operate in this mode.
-
-Did you mean that now the correct way would be using 
-"sun4i_i2s_set_tdm_slot" instead ?
-
-
-Thank you
-
-
->
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+Best regards,
+-- 
+Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
