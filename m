@@ -2,55 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7BE69A9BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:09:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FACC9A9E6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:14:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GWwu5Cdl2hkEoF1OF10Cfq4IVe3kWNF9FU1+8v4h+vg=; b=fqXxdMjKjSYYo2
-	Rsgppo/xgHaBWXBbNBTWaoiwKEVYYL2UfEwR13IzbQUvFM/U5CtT/bRE/CE3VCLpHK20+u5/3qEZl
-	oyElef1pJJmjByKuugSTkC6xawxmsM2MS5HOIsKCqVViXTHJXvr7016neUM5OnmQK6zDjdvTh6CvC
-	D8PGbt27zVM/J+pBlwTwOcM4jBw3TizBR5go4ToHBuYdyznvHoBMwzAVY7iMASiKC+ci4N8HWAo49
-	EzXcZMJBLJWTLCzraC9olJnOfcmZfYM3kPBCppZWiFPrnlbAiabgcx0eGdKyTxDpooSx3hxEGefOK
-	zLPxuZuDE9CoFnRRb31Q==;
+	List-Owner; bh=qiENzFhUgaHvIM9gI8AsN+xekPw8lJxR+FwRGQPpG0Y=; b=hBw4gMjEiJk77N
+	UAL7ziDxDbUgu2bytGYL/zfWjP67UIIQj1qWQzGv6UTMpB+oJZt3OZ9wos8Q7McJven47PnOTdNEi
+	iNuiixWbbl2mdCOuaWtwxtzd0FaQlBEAr7GBz8Z/Cvb1/4hmBVKGrVhQZ0FsqU8wHwSPxl0tm0ium
+	UDWvg7ic6bxe1oKIpncbeKuw4owSo9X+D1xKtnQS5F05Aqvkmf9kPfiWnRbdvpJL5F6SYE4YkBFWh
+	+pIGD9VI5LjE5TiaFjcwewB01p4H3zhXv0FE0jp68uBPt4eSK4ME557cteTwj4IEoLE9iGI2fh/E6
+	nwdYCJOYSHmTjf6wlebg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14dv-0005iv-3V; Fri, 23 Aug 2019 08:09:55 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i14i5-00088j-8T; Fri, 23 Aug 2019 08:14:13 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i14dg-0005iP-1T; Fri, 23 Aug 2019 08:09:41 +0000
-X-UUID: 5df780de695542d5ba0c687ac470f491-20190823
-X-UUID: 5df780de695542d5ba0c687ac470f491-20190823
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <qii.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 920433887; Fri, 23 Aug 2019 00:09:32 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 23 Aug 2019 01:09:30 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs01n1.mediatek.inc
- (172.21.101.68) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 23 Aug 2019 16:09:30 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 23 Aug 2019 16:09:27 +0800
-Message-ID: <1566547772.19935.2.camel@mhfsdcap03>
-Subject: Re: [PATCH v2] i2c: mediatek: disable zero-length transfers for mt8183
-From: Qii Wang <qii.wang@mediatek.com>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Date: Fri, 23 Aug 2019 16:09:32 +0800
-In-Reply-To: <20190822094516.55130-1-hsinyi@chromium.org>
-References: <20190822094516.55130-1-hsinyi@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i14hs-00087W-6W
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:14:01 +0000
+Received: by mail-qt1-x843.google.com with SMTP id k13so10379430qtm.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 01:13:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=+iEZzmAuZ9VlWo1rY1HoUVRqOc3pQbx/jL7+3U6XUrE=;
+ b=KQoYmM1kiPcUeWePSRh/MATRSKtGHbDYwmscEnDEJex+ScfK8GC0Pn565Cm8BTQ7fS
+ TN0P76B44uAatP3B3BZ61Hp3/1ZaAhV2sP1r/Qzr+VQI42UarAvsX6fIFMwnvDohlRBM
+ i/SnM/kjB9KyiVRKnmaBnb4WhhIpto3GuckqI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=+iEZzmAuZ9VlWo1rY1HoUVRqOc3pQbx/jL7+3U6XUrE=;
+ b=trzj63jORbA3gG+Sk2LNN/uHKpCDhCfs3GPfS/BYYB2/QUyV1Kqsl2px+spHjeQGOm
+ dcLIsvBmq5ObYasoPY8M1MxkC7HQq9TUai8e0NR1Kufs9jkj8bveDikU/IxF5KHR6Dgy
+ CuUK8AKLwEEeeh84iOE+rifEq0CXtHeoswFItgWtd8WLPTCelhYC1vI031pW8OdBkBxK
+ DmGV04FyAxvaX/uzTSQvKc1e0u5ZqsyTH6BK4k3QzYXt8p7WVuyGkOe8URy5k+tqplo2
+ 12UPqOKtJqCeNtDG5wBd7znL88HfCroZmFKHqB2rP+PBXaWIFfmUfqsVo+4f+CLvoHlf
+ mAzA==
+X-Gm-Message-State: APjAAAXwVZ3a9Y1jBnkw9ug/JDtjAQhky30ux/0lphD/9LnHJrg46gb+
+ ako6CveG0yWMQc0se+DiaJSX469NhwA7exefnWyffQ==
+X-Google-Smtp-Source: APXvYqxNnLStOk4ZXp11RN7jSj7XJVMznct6ojLcGz5Yls6xfN9NE4mhgE85LSRowXYs50aMoWOgyWYV7b4IKr4cJAE=
+X-Received: by 2002:ac8:1e1c:: with SMTP id n28mr3591243qtl.78.1566548035657; 
+ Fri, 23 Aug 2019 01:13:55 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190822094516.55130-1-hsinyi@chromium.org>
+ <1566547772.19935.2.camel@mhfsdcap03>
+In-Reply-To: <1566547772.19935.2.camel@mhfsdcap03>
+From: Hsin-Yi Wang <hsinyi@chromium.org>
+Date: Fri, 23 Aug 2019 16:13:29 +0800
+Message-ID: <CAJMQK-gb+A9dwyMqMcA5yaaXak9no8_=urwK0XbLnNAEGyZ_hg@mail.gmail.com>
+Subject: Re: [PATCH v2] i2c: mediatek: disable zero-length transfers for mt8183
+To: Qii Wang <qii.wang@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_010940_090743_1D6DD3F3 
-X-CRM114-Status: GOOD (  17.97  )
-X-Spam-Note: SpamAssassin invocation failed
+X-CRM114-CacheID: sfid-20190823_011400_268526_CA04E0C1 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,101 +92,32 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Nicolas Boichat <drinkcat@chromium.org>,
  Alexandru M Stan <amstan@chromium.org>, Wolfram Sang <wsa@the-dreams.de>,
- Jun Gao <jun.gao@mediatek.com>, linux-kernel@vger.kernel.org,
+ Jun Gao <jun.gao@mediatek.com>, lkml <linux-kernel@vger.kernel.org>,
  linux-mediatek@lists.infradead.org, linux-i2c@vger.kernel.org,
  Matthias Brugger <matthias.bgg@gmail.com>,
  Yingjoe Chen <yingjoe.chen@mediatek.com>, Thomas Gleixner <tglx@linutronix.de>,
- linux-arm-kernel@lists.infradead.org
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-22 at 17:45 +0800, Hsin-Yi Wang wrote:
-> When doing i2cdetect quick write mode, we would get transfer
-> error ENOMEM, and i2cdetect shows there's no device at the address.
-> Quoting from mt8183 datasheet, the number of transfers to be
-> transferred in one transaction should be set to bigger than 1,
-> so we should forbid zero-length transfer and update functionality.
-> 
-> Incorrect return:
-> localhost ~ # i2cdetect -q -y 0
->      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-> 00:          -- -- -- -- -- -- -- -- -- -- -- -- --
-> 10: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 20: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 30: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 40: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 60: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 70: -- -- -- -- -- -- -- --
-> 
-> After this patch:
-> localhost ~ #  i2cdetect -q -y 0
-> Error: Can't use SMBus Quick Write command on this bus
-> 
-> localhost ~ #  i2cdetect -y 0
-> Warning: Can't use SMBus Quick Write command, will skip some addresses
->      0  1  2  3  4  5  6  7  8  9  a  b  c  d  e  f
-> 00:
-> 10:
-> 20:
-> 30: -- -- -- -- -- -- -- --
-> 40:
-> 50: -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
-> 60:
-> 70:
-> 
-> Reported-by: Alexandru M Stan <amstan@chromium.org>
-> Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> ---
-> Change from v1:
-> * restore the order of algo and quirks
-> ---
->  drivers/i2c/busses/i2c-mt65xx.c | 11 ++++++++++-
->  1 file changed, 10 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/i2c/busses/i2c-mt65xx.c b/drivers/i2c/busses/i2c-mt65xx.c
-> index 252edb433fdf..29eae1bf4f86 100644
-> --- a/drivers/i2c/busses/i2c-mt65xx.c
-> +++ b/drivers/i2c/busses/i2c-mt65xx.c
-> @@ -234,6 +234,10 @@ static const struct i2c_adapter_quirks mt7622_i2c_quirks = {
->  	.max_num_msgs = 255,
->  };
->  
-> +static const struct i2c_adapter_quirks mt8183_i2c_quirks = {
-> +	.flags = I2C_AQ_NO_ZERO_LEN,
-> +};
-> +
->  static const struct mtk_i2c_compatible mt2712_compat = {
->  	.regs = mt_i2c_regs_v1,
->  	.pmic_i2c = 0,
-> @@ -298,6 +302,7 @@ static const struct mtk_i2c_compatible mt8173_compat = {
->  };
->  
->  static const struct mtk_i2c_compatible mt8183_compat = {
-> +	.quirks = &mt8183_i2c_quirks,
->  	.regs = mt_i2c_regs_v2,
->  	.pmic_i2c = 0,
->  	.dcm = 0,
-> @@ -870,7 +875,11 @@ static irqreturn_t mtk_i2c_irq(int irqno, void *dev_id)
->  
->  static u32 mtk_i2c_functionality(struct i2c_adapter *adap)
->  {
-> -	return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
-> +	if (adap->quirks->flags & I2C_AQ_NO_ZERO_LEN)
-> +		return I2C_FUNC_I2C |
-> +			(I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK);
-> +	else
-> +		return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
+On Fri, Aug 23, 2019 at 4:09 PM Qii Wang <qii.wang@mediatek.com> wrote:
 
-It can be removed?
-
->  }
->  
->  static const struct i2c_algorithm mtk_i2c_algorithm = {
-
-
+> >
+> >  static u32 mtk_i2c_functionality(struct i2c_adapter *adap)
+> >  {
+> > -     return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
+> > +     if (adap->quirks->flags & I2C_AQ_NO_ZERO_LEN)
+> > +             return I2C_FUNC_I2C |
+> > +                     (I2C_FUNC_SMBUS_EMUL & ~I2C_FUNC_SMBUS_QUICK);
+> > +     else
+> > +             return I2C_FUNC_I2C | I2C_FUNC_SMBUS_EMUL;
+>
+> It can be removed?
+See previous discussion: https://patchwork.kernel.org/patch/10814391/#22484435
+but not all SoC's quirks has I2C_AQ_NO_ZERO_LEN.
 
 _______________________________________________
 linux-arm-kernel mailing list
