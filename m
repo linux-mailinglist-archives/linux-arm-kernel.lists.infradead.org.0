@@ -2,51 +2,192 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D3D19B27B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:53:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D5D99B282
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 16:54:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=XQGoSkf22rrPOrwBv8Q7tkm+35QgFUxl3rlYSoksfEI=; b=DZ4
-	Iwm7Tmw4UEnWtuTVNoQPMW8GD4SynbAI9TTrctnqYD9koEWzNi7RiVgjI5UwuCglRcTGEGliODBMo
-	79Uhr+185oPxz0UUNMr1K6dJGTLsprhWEqbQx1shYxDuQLXufvolBJelMDwh7NkiA7jke6bD4WEiC
-	t+Zuil5eyPC5EHkn0MXoA6Q7FnvFdCcJY8F0uRfbYNg4gL2gY4UogDCStstdc1z2LndXP9T2tr4v7
-	mqY0PYzm5Bd9Ah1kgbEktJxW4DfVD0WIrmP+/PoqLTRlDn+IpWqiaTKzAa2qK99IH6QH/10LkhWxN
-	JI3ABhnsWcXkEgxFAjjV8r1WZBytC8w==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=5EcdwIXWisfRoUSyt+onmlapWQgrT/WES+PMcxLXPdk=; b=oQKrl7EuAX1Lx/
+	9W7fGoRUM/XsI8wUH8agzFK4hzIazJ6vqnDUj6U12N45IQYWpXqRXH+nQT8D7V9N2EH5e1+2bieKj
+	dMBujx2IwXDi8DkVg9sntbxDOtFIUouo6Obl/T8oSnHjxEYkTcMLIAHqCl6Yd9GiztQ1A7K1iwi58
+	RURMtozvUBajZkLCc4at5fTxuM+eZgiSeJiafVYsK2Qm4A9l3joRuf9v5Kr8sd0zEJPIsUkYaU3WM
+	8oozSTq7cixLyZH5JDsn28XUp248onsdII5hooYwwu3Ea5u3Lv/HjNzfCBzC/VIvDhE8tlHew5Adk
+	NgMesc8TZ/BoEKWZGopw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1AwK-00014U-Tw; Fri, 23 Aug 2019 14:53:20 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i1AwD-00013e-AR
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 14:53:15 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E0C1A28;
- Fri, 23 Aug 2019 07:53:12 -0700 (PDT)
-Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 03F303F718;
- Fri, 23 Aug 2019 07:53:11 -0700 (PDT)
-From: Will Deacon <will@kernel.org>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: Add support for the Transactional Memory Extension
- (TME)
-Date: Fri, 23 Aug 2019 15:52:25 +0100
-Message-Id: <20190823145225.16106-1-will@kernel.org>
-X-Mailer: git-send-email 2.11.0
+	id 1i1Awz-0001Pu-JC; Fri, 23 Aug 2019 14:54:01 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i1Awn-0001NI-Pk; Fri, 23 Aug 2019 14:53:51 +0000
+Received: by mail-ed1-x542.google.com with SMTP id w5so13856735edl.8;
+ Fri, 23 Aug 2019 07:53:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=zgl387QkD2iiqhSO+GDAgWSNL5E+i+hM/fHygMH0Lh0=;
+ b=VYmytlO1v4Svp/a/Jz+6DoaHSFi87t5Bf72MJplc3IH6y/CMnQvWGbIQy1Ge+llXt+
+ z/kRwUoWrKnqhF6GXG0NnNLx5YrZLXJxCJ2I1GUD9JJaDxlERoFKJ1oEHbFBDKQlOSDs
+ amFvqJsFQeqZdG++Z6TdfGGT9G3D/gxgUZ6by+x4d8OzeKnaeK7hUzm62yj1C3X7SkzT
+ MnowufOZs+d4bRtdbKk93L4dj+FerwtE6s5fD2pe8pQX010Rh+XO23ekMT10HazEI7L/
+ RgMhrLzJlpEXJXo/0Bvs732rruaE6pYWDyUcTxw2G5KmJcivJfVcmdcHVGnN25uo+Uzc
+ 1LbQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=zgl387QkD2iiqhSO+GDAgWSNL5E+i+hM/fHygMH0Lh0=;
+ b=LVxGelL0ZO+dJfotyc9WbCz6fNOVvE4LRWXnXWQ9ufk9ncqUbSZD5YyrdWi3jInkOZ
+ GvW9wEED/niWrqZqvAJrQwxJEKM8LrHEx96gRy8ZZNiawQ6lGUQ9lmh94dEIaiXF9oza
+ W160ugCYuutaY7Qm5wW5IAzmEq4exBXjwCVLH1yyQAzetyT1mFmX8oTgl0gHpR29ZZdq
+ VO5I4rMnODy+cvWmgEmmrJBtlqD3nj1B3H42QN17/sXKphZjTGaIh6pX2e08QsKUb6Ib
+ 5B2EHjsmYaw0lIZCBPzZn0dRejYFhmv0WqqPKIDLqsvf8CaIFXjmxeu08yPNBH6g6K/d
+ y15Q==
+X-Gm-Message-State: APjAAAU9VJTqqxtW+/J8uHrfklra+4zQAdgT9YFghEkX2KwCI9iN41gx
+ U8mjme1X+w0FpfecLYRq8Hw=
+X-Google-Smtp-Source: APXvYqxVy6AX4x2czv/ljIOE9Qcym6jmbl1ZVItw545AFJybfTz/tHgfW14Eu8jBOn3YICtxKuvzMg==
+X-Received: by 2002:a50:9738:: with SMTP id c53mr4978319edb.221.1566572028048; 
+ Fri, 23 Aug 2019 07:53:48 -0700 (PDT)
+Received: from ziggy.stardust ([37.223.137.147])
+ by smtp.gmail.com with ESMTPSA id a3sm441172eje.90.2019.08.23.07.53.45
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 23 Aug 2019 07:53:47 -0700 (PDT)
+Subject: Re: [PATCH v5 02/10] mfd: mt6397: extract irq related code from core
+ driver
+To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ Lee Jones <lee.jones@linaro.org>, Rob Herring <robh+dt@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>
+References: <1566531931-9772-1-git-send-email-hsin-hsiung.wang@mediatek.com>
+ <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ jrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <d32fed91-5d7a-a6fb-535b-fca9e311df42@gmail.com>
+Date: Fri, 23 Aug 2019 16:53:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <1566531931-9772-3-git-send-email-hsin-hsiung.wang@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_075313_455198_F01E6368 
-X-CRM114-Status: GOOD (  14.57  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190823_075349_862775_E20746F1 
+X-CRM114-Status: GOOD (  20.14  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -58,235 +199,441 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, catalin.marinas@arm.com, maz@kernel.org,
- Will Deacon <will@kernel.org>, jade.alglave@arm.com
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-kernel@vger.kernel.org, Richard Fontana <rfontana@redhat.com>,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Thomas Gleixner <tglx@linutronix.de>, Eddie Huang <eddie.huang@mediatek.com>,
+ Kate Stewart <kstewart@linuxfoundation.org>, linux-rtc@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Whilst the Transactional Memory Extension doesn't require substantial
-support in the kernel in order to be used from userspace or guest
-operating systems, we do need to enable it before exposing its existence
-via the ID register emulation and a new hwcap.
 
-Signed-off-by: Will Deacon <will@kernel.org>
----
- Documentation/arm64/cpu-feature-registers.rst |  2 ++
- arch/arm64/include/asm/cpucaps.h              |  3 ++-
- arch/arm64/include/asm/esr.h                  |  3 ++-
- arch/arm64/include/asm/hwcap.h                |  1 +
- arch/arm64/include/asm/kvm_arm.h              |  5 +++--
- arch/arm64/include/asm/kvm_emulate.h          |  3 +++
- arch/arm64/include/asm/sysreg.h               |  5 +++++
- arch/arm64/include/uapi/asm/hwcap.h           |  1 +
- arch/arm64/kernel/cpufeature.c                | 18 ++++++++++++++++++
- arch/arm64/kernel/cpuinfo.c                   |  1 +
- arch/arm64/kernel/traps.c                     |  1 +
- 11 files changed, 39 insertions(+), 4 deletions(-)
 
-diff --git a/Documentation/arm64/cpu-feature-registers.rst b/Documentation/arm64/cpu-feature-registers.rst
-index 2955287e9acc..ec256423982e 100644
---- a/Documentation/arm64/cpu-feature-registers.rst
-+++ b/Documentation/arm64/cpu-feature-registers.rst
-@@ -131,6 +131,8 @@ infrastructure:
-      +------------------------------+---------+---------+
-      | RDM                          | [31-28] |    y    |
-      +------------------------------+---------+---------+
-+     | TME                          | [27-24] |    y    |
-+     +------------------------------+---------+---------+
-      | ATOMICS                      | [23-20] |    y    |
-      +------------------------------+---------+---------+
-      | CRC32                        | [19-16] |    y    |
-diff --git a/arch/arm64/include/asm/cpucaps.h b/arch/arm64/include/asm/cpucaps.h
-index f19fe4b9acc4..0996ae1b9036 100644
---- a/arch/arm64/include/asm/cpucaps.h
-+++ b/arch/arm64/include/asm/cpucaps.h
-@@ -52,7 +52,8 @@
- #define ARM64_HAS_IRQ_PRIO_MASKING		42
- #define ARM64_HAS_DCPODP			43
- #define ARM64_WORKAROUND_1463225		44
-+#define ARM64_HAS_TME				45
- 
--#define ARM64_NCAPS				45
-+#define ARM64_NCAPS				46
- 
- #endif /* __ASM_CPUCAPS_H */
-diff --git a/arch/arm64/include/asm/esr.h b/arch/arm64/include/asm/esr.h
-index cb29253ae86b..e3b47853389a 100644
---- a/arch/arm64/include/asm/esr.h
-+++ b/arch/arm64/include/asm/esr.h
-@@ -35,7 +35,8 @@
- #define ESR_ELx_EC_SYS64	(0x18)
- #define ESR_ELx_EC_SVE		(0x19)
- #define ESR_ELx_EC_ERET		(0x1a)	/* EL2 only */
--/* Unallocated EC: 0x1b - 0x1E */
-+#define ESR_ELx_EC_TME		(0x1b)
-+/* Unallocated EC: 0x1C - 0x1E */
- #define ESR_ELx_EC_IMP_DEF	(0x1f)	/* EL3 only */
- #define ESR_ELx_EC_IABT_LOW	(0x20)
- #define ESR_ELx_EC_IABT_CUR	(0x21)
-diff --git a/arch/arm64/include/asm/hwcap.h b/arch/arm64/include/asm/hwcap.h
-index 3d2f2472a36c..365cbaa97d66 100644
---- a/arch/arm64/include/asm/hwcap.h
-+++ b/arch/arm64/include/asm/hwcap.h
-@@ -86,6 +86,7 @@
- #define KERNEL_HWCAP_SVESM4		__khwcap2_feature(SVESM4)
- #define KERNEL_HWCAP_FLAGM2		__khwcap2_feature(FLAGM2)
- #define KERNEL_HWCAP_FRINT		__khwcap2_feature(FRINT)
-+#define KERNEL_HWCAP_TME		__khwcap2_feature(TME)
- 
- /*
-  * This yields a mask that user programs can use to figure out what
-diff --git a/arch/arm64/include/asm/kvm_arm.h b/arch/arm64/include/asm/kvm_arm.h
-index a8b205e5c4a8..ca8ac52827d4 100644
---- a/arch/arm64/include/asm/kvm_arm.h
-+++ b/arch/arm64/include/asm/kvm_arm.h
-@@ -15,6 +15,7 @@
- #define HCR_FWB		(UL(1) << 46)
- #define HCR_API		(UL(1) << 41)
- #define HCR_APK		(UL(1) << 40)
-+#define HCR_TME		(UL(1) << 39)
- #define HCR_TEA		(UL(1) << 37)
- #define HCR_TERR	(UL(1) << 36)
- #define HCR_TLOR	(UL(1) << 35)
-@@ -78,8 +79,8 @@
- 			 HCR_AMO | HCR_SWIO | HCR_TIDCP | HCR_RW | HCR_TLOR | \
- 			 HCR_FMO | HCR_IMO)
- #define HCR_VIRT_EXCP_MASK (HCR_VSE | HCR_VI | HCR_VF)
--#define HCR_HOST_NVHE_FLAGS (HCR_RW | HCR_API | HCR_APK)
--#define HCR_HOST_VHE_FLAGS (HCR_RW | HCR_TGE | HCR_E2H)
-+#define HCR_HOST_NVHE_FLAGS (HCR_RW | HCR_API | HCR_APK | HCR_TME)
-+#define HCR_HOST_VHE_FLAGS (HCR_RW | HCR_TGE | HCR_E2H | HCR_TME)
- 
- /* TCR_EL2 Registers bits */
- #define TCR_EL2_RES1		((1 << 31) | (1 << 23))
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index d69c1efc63e7..ac3b3db923a6 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -70,6 +70,9 @@ static inline void vcpu_reset_hcr(struct kvm_vcpu *vcpu)
- 	if (cpus_have_const_cap(ARM64_MISMATCHED_CACHE_TYPE) ||
- 	    vcpu_el1_is_32bit(vcpu))
- 		vcpu->arch.hcr_el2 |= HCR_TID2;
-+
-+	if (cpus_have_const_cap(ARM64_HAS_TME))
-+		vcpu->arch.hcr_el2 |= HCR_TME;
- }
- 
- static inline unsigned long *vcpu_hcr(struct kvm_vcpu *vcpu)
-diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
-index 1df45c7ffcf7..55a4ad380d71 100644
---- a/arch/arm64/include/asm/sysreg.h
-+++ b/arch/arm64/include/asm/sysreg.h
-@@ -478,6 +478,10 @@
- #define SYS_CNTV_CVAL_EL02		sys_reg(3, 5, 14, 3, 2)
- 
- /* Common SCTLR_ELx flags. */
-+#define SCTLR_ELx_TME	(BIT(53))
-+#define SCTLR_ELx_TME0	(BIT(52))
-+#define SCTLR_ELx_TMT	(BIT(51))
-+#define SCTLR_ELx_TMT0	(BIT(50))
- #define SCTLR_ELx_DSSBS	(BIT(44))
- #define SCTLR_ELx_ENIA	(BIT(31))
- #define SCTLR_ELx_ENIB	(BIT(30))
-@@ -543,6 +547,7 @@
- #define ID_AA64ISAR0_SM3_SHIFT		36
- #define ID_AA64ISAR0_SHA3_SHIFT		32
- #define ID_AA64ISAR0_RDM_SHIFT		28
-+#define ID_AA64ISAR0_TME_SHIFT		24
- #define ID_AA64ISAR0_ATOMICS_SHIFT	20
- #define ID_AA64ISAR0_CRC32_SHIFT	16
- #define ID_AA64ISAR0_SHA2_SHIFT		12
-diff --git a/arch/arm64/include/uapi/asm/hwcap.h b/arch/arm64/include/uapi/asm/hwcap.h
-index a1e72886b30c..751d889265e2 100644
---- a/arch/arm64/include/uapi/asm/hwcap.h
-+++ b/arch/arm64/include/uapi/asm/hwcap.h
-@@ -65,5 +65,6 @@
- #define HWCAP2_SVESM4		(1 << 6)
- #define HWCAP2_FLAGM2		(1 << 7)
- #define HWCAP2_FRINT		(1 << 8)
-+#define HWCAP2_TME		(1 << 9)
- 
- #endif /* _UAPI__ASM_HWCAP_H */
-diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-index 95201e5ff5e1..6d3593299463 100644
---- a/arch/arm64/kernel/cpufeature.c
-+++ b/arch/arm64/kernel/cpufeature.c
-@@ -126,6 +126,7 @@ static const struct arm64_ftr_bits ftr_id_aa64isar0[] = {
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SM3_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SHA3_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_RDM_SHIFT, 4, 0),
-+	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_TME_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_ATOMICS_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_CRC32_SHIFT, 4, 0),
- 	ARM64_FTR_BITS(FTR_VISIBLE, FTR_STRICT, FTR_LOWER_SAFE, ID_AA64ISAR0_SHA2_SHIFT, 4, 0),
-@@ -1252,6 +1253,11 @@ static bool can_use_gic_priorities(const struct arm64_cpu_capabilities *entry,
- }
- #endif
- 
-+static void cpu_enable_tme(const struct arm64_cpu_capabilities *cap)
-+{
-+	sysreg_clear_set(sctlr_el1, 0, SCTLR_ELx_TME0);
-+}
-+
- static const struct arm64_cpu_capabilities arm64_features[] = {
- 	{
- 		.desc = "GIC system register CPU interface",
-@@ -1552,6 +1558,17 @@ static const struct arm64_cpu_capabilities arm64_features[] = {
- 		.min_field_value = 1,
- 	},
- #endif
-+	{
-+		.desc = "Transactional memory extension",
-+		.capability = ARM64_HAS_TME,
-+		.type = ARM64_CPUCAP_SYSTEM_FEATURE,
-+		.sys_reg = SYS_ID_AA64ISAR0_EL1,
-+		.sign = FTR_UNSIGNED,
-+		.field_pos = ID_AA64ISAR0_TME_SHIFT,
-+		.min_field_value = 1,
-+		.matches = has_cpuid_feature,
-+		.cpu_enable = cpu_enable_tme,
-+	},
- 	{},
- };
- 
-@@ -1615,6 +1632,7 @@ static const struct arm64_cpu_capabilities arm64_elf_hwcaps[] = {
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SHA2_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_SHA512),
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_CRC32_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_CRC32),
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_ATOMICS_SHIFT, FTR_UNSIGNED, 2, CAP_HWCAP, KERNEL_HWCAP_ATOMICS),
-+	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_TME_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_TME),
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_RDM_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_ASIMDRDM),
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SHA3_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SHA3),
- 	HWCAP_CAP(SYS_ID_AA64ISAR0_EL1, ID_AA64ISAR0_SM3_SHIFT, FTR_UNSIGNED, 1, CAP_HWCAP, KERNEL_HWCAP_SM3),
-diff --git a/arch/arm64/kernel/cpuinfo.c b/arch/arm64/kernel/cpuinfo.c
-index 05933c065732..834ea12323ce 100644
---- a/arch/arm64/kernel/cpuinfo.c
-+++ b/arch/arm64/kernel/cpuinfo.c
-@@ -84,6 +84,7 @@ static const char *const hwcap_str[] = {
- 	"svesm4",
- 	"flagm2",
- 	"frint",
-+	"tme",
- 	NULL
- };
- 
-diff --git a/arch/arm64/kernel/traps.c b/arch/arm64/kernel/traps.c
-index 6e950908eb97..1ec8e13a0191 100644
---- a/arch/arm64/kernel/traps.c
-+++ b/arch/arm64/kernel/traps.c
-@@ -746,6 +746,7 @@ static const char *esr_class_str[] = {
- 	[ESR_ELx_EC_SYS64]		= "MSR/MRS (AArch64)",
- 	[ESR_ELx_EC_SVE]		= "SVE",
- 	[ESR_ELx_EC_ERET]		= "ERET/ERETAA/ERETAB",
-+	[ESR_ELx_EC_TME]		= "TME TSTART",
- 	[ESR_ELx_EC_IMP_DEF]		= "EL3 IMP DEF",
- 	[ESR_ELx_EC_IABT_LOW]		= "IABT (lower EL)",
- 	[ESR_ELx_EC_IABT_CUR]		= "IABT (current EL)",
--- 
-2.11.0
+On 23/08/2019 05:45, Hsin-Hsiung Wang wrote:
+> In order to support different types of irq design, we decide to add
+> separate irq drivers for different design and keep mt6397 mfd core
+> simple and reusable to all generations of PMICs so far.
+> 
+> Acked-for-mfd-by: Lee Jones <lee.jones@linaro.org>
+> Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+> ---
+>  drivers/mfd/Makefile            |   3 +-
+>  drivers/mfd/mt6397-core.c       | 146 --------------------------------
+>  drivers/mfd/mt6397-irq.c        | 181 ++++++++++++++++++++++++++++++++++++++++
+>  include/linux/mfd/mt6397/core.h |   9 ++
+>  4 files changed, 192 insertions(+), 147 deletions(-)
+>  create mode 100644 drivers/mfd/mt6397-irq.c
+> 
+> diff --git a/drivers/mfd/Makefile b/drivers/mfd/Makefile
+> index f026ada..9a96325 100644
+> --- a/drivers/mfd/Makefile
+> +++ b/drivers/mfd/Makefile
+> @@ -241,7 +241,8 @@ obj-$(CONFIG_INTEL_SOC_PMIC)	+= intel-soc-pmic.o
+>  obj-$(CONFIG_INTEL_SOC_PMIC_BXTWC)	+= intel_soc_pmic_bxtwc.o
+>  obj-$(CONFIG_INTEL_SOC_PMIC_CHTWC)	+= intel_soc_pmic_chtwc.o
+>  obj-$(CONFIG_INTEL_SOC_PMIC_CHTDC_TI)	+= intel_soc_pmic_chtdc_ti.o
+> -obj-$(CONFIG_MFD_MT6397)	+= mt6397-core.o
+> +mt6397-objs	:= mt6397-core.o mt6397-irq.o
+> +obj-$(CONFIG_MFD_MT6397)	+= mt6397.o
+>  
+>  obj-$(CONFIG_MFD_ALTERA_A10SR)	+= altera-a10sr.o
+>  obj-$(CONFIG_MFD_ALTERA_SYSMGR) += altera-sysmgr.o
+> diff --git a/drivers/mfd/mt6397-core.c b/drivers/mfd/mt6397-core.c
+> index c070862..93c8881 100644
+> --- a/drivers/mfd/mt6397-core.c
+> +++ b/drivers/mfd/mt6397-core.c
+> @@ -18,10 +18,6 @@
+>  #define MT6397_RTC_BASE		0xe000
+>  #define MT6397_RTC_SIZE		0x3e
+>  
+> -#define MT6323_CHIP_ID		0x23
+> -#define MT6391_CHIP_ID		0x91
+> -#define MT6397_CHIP_ID		0x97
+> -
+>  static const struct resource mt6397_rtc_resources[] = {
+>  	{
+>  		.start = MT6397_RTC_BASE,
+> @@ -86,148 +82,6 @@
+>  	}
+>  };
+>  
+> -static void mt6397_irq_lock(struct irq_data *data)
+> -{
+> -	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> -
+> -	mutex_lock(&mt6397->irqlock);
+> -}
+> -
+> -static void mt6397_irq_sync_unlock(struct irq_data *data)
+> -{
+> -	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> -
+> -	regmap_write(mt6397->regmap, mt6397->int_con[0],
+> -		     mt6397->irq_masks_cur[0]);
+> -	regmap_write(mt6397->regmap, mt6397->int_con[1],
+> -		     mt6397->irq_masks_cur[1]);
+> -
+> -	mutex_unlock(&mt6397->irqlock);
+> -}
+> -
+> -static void mt6397_irq_disable(struct irq_data *data)
+> -{
+> -	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> -	int shift = data->hwirq & 0xf;
+> -	int reg = data->hwirq >> 4;
+> -
+> -	mt6397->irq_masks_cur[reg] &= ~BIT(shift);
+> -}
+> -
+> -static void mt6397_irq_enable(struct irq_data *data)
+> -{
+> -	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> -	int shift = data->hwirq & 0xf;
+> -	int reg = data->hwirq >> 4;
+> -
+> -	mt6397->irq_masks_cur[reg] |= BIT(shift);
+> -}
+> -
+> -#ifdef CONFIG_PM_SLEEP
+> -static int mt6397_irq_set_wake(struct irq_data *irq_data, unsigned int on)
+> -{
+> -	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(irq_data);
+> -	int shift = irq_data->hwirq & 0xf;
+> -	int reg = irq_data->hwirq >> 4;
+> -
+> -	if (on)
+> -		mt6397->wake_mask[reg] |= BIT(shift);
+> -	else
+> -		mt6397->wake_mask[reg] &= ~BIT(shift);
+> -
+> -	return 0;
+> -}
+> -#else
+> -#define mt6397_irq_set_wake NULL
+> -#endif
+> -
+> -static struct irq_chip mt6397_irq_chip = {
+> -	.name = "mt6397-irq",
+> -	.irq_bus_lock = mt6397_irq_lock,
+> -	.irq_bus_sync_unlock = mt6397_irq_sync_unlock,
+> -	.irq_enable = mt6397_irq_enable,
+> -	.irq_disable = mt6397_irq_disable,
+> -	.irq_set_wake = mt6397_irq_set_wake,
+> -};
+> -
+> -static void mt6397_irq_handle_reg(struct mt6397_chip *mt6397, int reg,
+> -		int irqbase)
+> -{
+> -	unsigned int status;
+> -	int i, irq, ret;
+> -
+> -	ret = regmap_read(mt6397->regmap, reg, &status);
+> -	if (ret) {
+> -		dev_err(mt6397->dev, "Failed to read irq status: %d\n", ret);
+> -		return;
+> -	}
+> -
+> -	for (i = 0; i < 16; i++) {
+> -		if (status & BIT(i)) {
+> -			irq = irq_find_mapping(mt6397->irq_domain, irqbase + i);
+> -			if (irq)
+> -				handle_nested_irq(irq);
+> -		}
+> -	}
+> -
+> -	regmap_write(mt6397->regmap, reg, status);
+> -}
+> -
+> -static irqreturn_t mt6397_irq_thread(int irq, void *data)
+> -{
+> -	struct mt6397_chip *mt6397 = data;
+> -
+> -	mt6397_irq_handle_reg(mt6397, mt6397->int_status[0], 0);
+> -	mt6397_irq_handle_reg(mt6397, mt6397->int_status[1], 16);
+> -
+> -	return IRQ_HANDLED;
+> -}
+> -
+> -static int mt6397_irq_domain_map(struct irq_domain *d, unsigned int irq,
+> -					irq_hw_number_t hw)
+> -{
+> -	struct mt6397_chip *mt6397 = d->host_data;
+> -
+> -	irq_set_chip_data(irq, mt6397);
+> -	irq_set_chip_and_handler(irq, &mt6397_irq_chip, handle_level_irq);
+> -	irq_set_nested_thread(irq, 1);
+> -	irq_set_noprobe(irq);
+> -
+> -	return 0;
+> -}
+> -
+> -static const struct irq_domain_ops mt6397_irq_domain_ops = {
+> -	.map = mt6397_irq_domain_map,
+> -};
+> -
+> -static int mt6397_irq_init(struct mt6397_chip *mt6397)
+> -{
+> -	int ret;
+> -
+> -	mutex_init(&mt6397->irqlock);
+> -
+> -	/* Mask all interrupt sources */
+> -	regmap_write(mt6397->regmap, mt6397->int_con[0], 0x0);
+> -	regmap_write(mt6397->regmap, mt6397->int_con[1], 0x0);
+> -
+> -	mt6397->irq_domain = irq_domain_add_linear(mt6397->dev->of_node,
+> -		MT6397_IRQ_NR, &mt6397_irq_domain_ops, mt6397);
+> -	if (!mt6397->irq_domain) {
+> -		dev_err(mt6397->dev, "could not create irq domain\n");
+> -		return -ENOMEM;
+> -	}
+> -
+> -	ret = devm_request_threaded_irq(mt6397->dev, mt6397->irq, NULL,
+> -		mt6397_irq_thread, IRQF_ONESHOT, "mt6397-pmic", mt6397);
+> -	if (ret) {
+> -		dev_err(mt6397->dev, "failed to register irq=%d; err: %d\n",
+> -			mt6397->irq, ret);
+> -		return ret;
+> -	}
+> -
+> -	return 0;
+> -}
+> -
+>  #ifdef CONFIG_PM_SLEEP
+>  static int mt6397_irq_suspend(struct device *dev)
+>  {
+> diff --git a/drivers/mfd/mt6397-irq.c b/drivers/mfd/mt6397-irq.c
+> new file mode 100644
+> index 0000000..b2d3ce1
+> --- /dev/null
+> +++ b/drivers/mfd/mt6397-irq.c
+> @@ -0,0 +1,181 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +//
+> +// Copyright (c) 2019 MediaTek Inc.
+> +
+> +#include <linux/interrupt.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_device.h>
+> +#include <linux/of_irq.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/mfd/mt6323/core.h>
+> +#include <linux/mfd/mt6323/registers.h>
+> +#include <linux/mfd/mt6397/core.h>
+> +#include <linux/mfd/mt6397/registers.h>
+> +
+> +static void mt6397_irq_lock(struct irq_data *data)
+> +{
+> +	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> +
+> +	mutex_lock(&mt6397->irqlock);
+> +}
+> +
+> +static void mt6397_irq_sync_unlock(struct irq_data *data)
+> +{
+> +	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> +
+> +	regmap_write(mt6397->regmap, mt6397->int_con[0],
+> +		     mt6397->irq_masks_cur[0]);
+> +	regmap_write(mt6397->regmap, mt6397->int_con[1],
+> +		     mt6397->irq_masks_cur[1]);
+> +
+> +	mutex_unlock(&mt6397->irqlock);
+> +}
+> +
+> +static void mt6397_irq_disable(struct irq_data *data)
+> +{
+> +	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> +	int shift = data->hwirq & 0xf;
+> +	int reg = data->hwirq >> 4;
+> +
+> +	mt6397->irq_masks_cur[reg] &= ~BIT(shift);
+> +}
+> +
+> +static void mt6397_irq_enable(struct irq_data *data)
+> +{
+> +	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(data);
+> +	int shift = data->hwirq & 0xf;
+> +	int reg = data->hwirq >> 4;
+> +
+> +	mt6397->irq_masks_cur[reg] |= BIT(shift);
+> +}
+> +
+> +#ifdef CONFIG_PM_SLEEP
+> +static int mt6397_irq_set_wake(struct irq_data *irq_data, unsigned int on)
+> +{
+> +	struct mt6397_chip *mt6397 = irq_data_get_irq_chip_data(irq_data);
+> +	int shift = irq_data->hwirq & 0xf;
+> +	int reg = irq_data->hwirq >> 4;
+> +
+> +	if (on)
+> +		mt6397->wake_mask[reg] |= BIT(shift);
+> +	else
+> +		mt6397->wake_mask[reg] &= ~BIT(shift);
+> +
+> +	return 0;
+> +}
+> +#else
+> +#define mt6397_irq_set_wake NULL
+> +#endif
+> +
+> +static struct irq_chip mt6397_irq_chip = {
+> +	.name = "mt6397-irq",
+> +	.irq_bus_lock = mt6397_irq_lock,
+> +	.irq_bus_sync_unlock = mt6397_irq_sync_unlock,
+> +	.irq_enable = mt6397_irq_enable,
+> +	.irq_disable = mt6397_irq_disable,
+> +	.irq_set_wake = mt6397_irq_set_wake,
+> +};
+> +
+> +static void mt6397_irq_handle_reg(struct mt6397_chip *mt6397, int reg,
+> +				  int irqbase)
+> +{
+> +	unsigned int status;
+> +	int i, irq, ret;
+> +
+> +	ret = regmap_read(mt6397->regmap, reg, &status);
+> +	if (ret) {
+> +		dev_err(mt6397->dev, "Failed to read irq status: %d\n", ret);
+> +		return;
+> +	}
+> +
+> +	for (i = 0; i < 16; i++) {
+> +		if (status & BIT(i)) {
+> +			irq = irq_find_mapping(mt6397->irq_domain, irqbase + i);
+> +			if (irq)
+> +				handle_nested_irq(irq);
+> +		}
+> +	}
+> +
+> +	regmap_write(mt6397->regmap, reg, status);
+> +}
+> +
+> +static irqreturn_t mt6397_irq_thread(int irq, void *data)
+> +{
+> +	struct mt6397_chip *mt6397 = data;
+> +
+> +	mt6397_irq_handle_reg(mt6397, mt6397->int_status[0], 0);
+> +	mt6397_irq_handle_reg(mt6397, mt6397->int_status[1], 16);
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static int mt6397_irq_domain_map(struct irq_domain *d, unsigned int irq,
+> +				 irq_hw_number_t hw)
+> +{
+> +	struct mt6397_chip *mt6397 = d->host_data;
+> +
+> +	irq_set_chip_data(irq, mt6397);
+> +	irq_set_chip_and_handler(irq, &mt6397_irq_chip, handle_level_irq);
+> +	irq_set_nested_thread(irq, 1);
+> +	irq_set_noprobe(irq);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct irq_domain_ops mt6397_irq_domain_ops = {
+> +	.map = mt6397_irq_domain_map,
+> +};
+> +
+> +int mt6397_irq_init(struct mt6397_chip *chip)
+> +{
+> +	int ret;
+> +
+> +	mutex_init(&chip->irqlock);
+> +
+> +	switch (chip->chip_id) {
+> +	case MT6323_CHIP_ID:
+> +		chip->int_con[0] = MT6323_INT_CON0;
+> +		chip->int_con[1] = MT6323_INT_CON1;
+> +		chip->int_status[0] = MT6323_INT_STATUS0;
+> +		chip->int_status[1] = MT6323_INT_STATUS1;
+> +		break;
+> +
+> +	case MT6391_CHIP_ID:
+> +	case MT6397_CHIP_ID:
+> +		chip->int_con[0] = MT6397_INT_CON0;
+> +		chip->int_con[1] = MT6397_INT_CON1;
+> +		chip->int_status[0] = MT6397_INT_STATUS0;
+> +		chip->int_status[1] = MT6397_INT_STATUS1;
+> +		break;
+> +
 
+Just stumbled over this in linux-next. I personally would prefer to have two
+patches, one that moves the code and another one that adds the switch etc.
+
+This way it would be much easier to realize this change.
+Not sure if this is still possible, because it seems to be in one of Lee's
+repositories already. (and if Lee thinks the same as I do, of course)
+
+Regards,
+Matthias
+
+
+> +	default:
+> +		dev_err(chip->dev, "unsupported chip: 0x%x\n", chip->chip_id);
+> +		return -ENODEV;
+> +	}
+> +
+> +	/* Mask all interrupt sources */
+> +	regmap_write(chip->regmap, chip->int_con[0], 0x0);
+> +	regmap_write(chip->regmap, chip->int_con[1], 0x0);
+> +
+> +	chip->irq_domain = irq_domain_add_linear(chip->dev->of_node,
+> +						 MT6397_IRQ_NR,
+> +						 &mt6397_irq_domain_ops,
+> +						 chip);
+> +	if (!chip->irq_domain) {
+> +		dev_err(chip->dev, "could not create irq domain\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	ret = devm_request_threaded_irq(chip->dev, chip->irq, NULL,
+> +					mt6397_irq_thread, IRQF_ONESHOT,
+> +					"mt6397-pmic", chip);
+> +	if (ret) {
+> +		dev_err(chip->dev, "failed to register irq=%d; err: %d\n",
+> +			chip->irq, ret);
+> +		return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> diff --git a/include/linux/mfd/mt6397/core.h b/include/linux/mfd/mt6397/core.h
+> index 25a95e7..9320c2a 100644
+> --- a/include/linux/mfd/mt6397/core.h
+> +++ b/include/linux/mfd/mt6397/core.h
+> @@ -7,6 +7,12 @@
+>  #ifndef __MFD_MT6397_CORE_H__
+>  #define __MFD_MT6397_CORE_H__
+>  
+> +enum chip_id {
+> +	MT6323_CHIP_ID = 0x23,
+> +	MT6391_CHIP_ID = 0x91,
+> +	MT6397_CHIP_ID = 0x97,
+> +};
+> +
+>  enum mt6397_irq_numbers {
+>  	MT6397_IRQ_SPKL_AB = 0,
+>  	MT6397_IRQ_SPKR_AB,
+> @@ -54,6 +60,9 @@ struct mt6397_chip {
+>  	u16 irq_masks_cache[2];
+>  	u16 int_con[2];
+>  	u16 int_status[2];
+> +	u16 chip_id;
+>  };
+>  
+> +int mt6397_irq_init(struct mt6397_chip *chip);
+> +
+>  #endif /* __MFD_MT6397_CORE_H__ */
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
