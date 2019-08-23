@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CD839A8B4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:24:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 067779A8B5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 09:24:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OvIeDaz3VPq85IKUVWiFPlcx4xZv/c3r0lLetePKaCw=; b=a6CzCezmiLzbEV
-	o6TvnCYGl6T2g/r3Vbzn4z09BmYhj1YNAW4JegmUlZ1V3ewRevNAhPJoYjhXovS4wAJuu++zSkKjl
-	oQtfUJYBsgzmx+PbrZEDTuq8K8DEGDy9RFeKGqM4AvO2UzBck5jsksjT9EZKzDYkNQ/1vOcZmEamC
-	8MDVerTy/COUJ05wrjQLhYpVb2A5felunCEeYpbu7bPI3WRxX+CJI/NmFPxjM34lvyB2E8Go7TGip
-	j5Bm+PAaHUTQ3KXLaFqA2Yhv5ryF96B7aJyf9vX8yKlkK+jZ2iP0JuKmSksvB+O06HPWGuIToA3NT
-	MHgf3AwrgtnGOXKQGZEg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=gVifAUArJeiyzXKqfHJnoaSHQfhkk92luIgGDdh51Q8=; b=SDMDcbfQ7bcAm0
+	pjVKgjyK4EylIE4oLvQdcH+oKf0QAM06i8E0tjqZ2K/2ydhACpdaSGfv61eA8+pB5T5gSM4VNHaMa
+	S8MKpDwwhefet1wzgqgftuDPcIasP0wfagp/bJpKBD8c+HBeubogX+D/Ncjqot2Zn2dvLF9i04ZfD
+	j1ER+WQdmracH7t15oUUG777urKzHKnwhrhCPL1dPW8zSaD2dUIwpFYWWcd7uRl/7KiFHiLJuBv91
+	SacrWJ0Pyu40erb13jMe35tWH+MUML7hU5JMD/dkonIw6pl963PkAzzT/F4eu1RP8TVci2r2Dzasc
+	3bypjlGR7ZtFDpBqQCug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i13va-00073C-Hu; Fri, 23 Aug 2019 07:24:06 +0000
-Received: from shell.v3.sk ([90.176.6.54])
+	id 1i13w2-0007RD-UF; Fri, 23 Aug 2019 07:24:35 +0000
+Received: from mail-lf1-x143.google.com ([2a00:1450:4864:20::143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i13ld-0006tf-F9
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:13:54 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id F065CD7697;
- Fri, 23 Aug 2019 09:13:39 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id yGh66jtHXRfw; Fri, 23 Aug 2019 09:13:36 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 46C8AD7698;
- Fri, 23 Aug 2019 09:13:36 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 9QtK_aypLOFJ; Fri, 23 Aug 2019 09:13:35 +0200 (CEST)
-Received: from belphegor (nat-pool-brq-t.redhat.com [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id D11F1D7697;
- Fri, 23 Aug 2019 09:13:34 +0200 (CEST)
-Message-ID: <0897fa54f487f481bf8770ed516578b6f4f53380.camel@v3.sk>
-Subject: Re: [PATCH v2 16/20] ARM: mmp: add SMP support
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: Florian Fainelli <f.fainelli@gmail.com>, Olof Johansson <olof@lixom.net>
-Date: Fri, 23 Aug 2019 09:13:33 +0200
-In-Reply-To: <6f9d2285-5ca4-a63a-610e-890b49a4f816@gmail.com>
-References: <20190822092643.593488-1-lkundrak@v3.sk>
- <20190822092643.593488-17-lkundrak@v3.sk>
- <6f9d2285-5ca4-a63a-610e-890b49a4f816@gmail.com>
-User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
+ id 1i13mT-0007CO-Rl
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 07:14:49 +0000
+Received: by mail-lf1-x143.google.com with SMTP id b29so6401019lfq.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 23 Aug 2019 00:14:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=KnDL8S0nYFPZuOGkV7hWvantVpmZ1rr6sKUqGh/Qang=;
+ b=C4F3CA9BIwRT6cG0lrQu03QQ7T17Ti/u+9GOwkz/EafvkLjriBsK5KwuThbRK8v9Fk
+ XwbVT3YmNPxrNXxmzFRlPRw5qwSjYpucf7Cpg4DS99HOlO58tKslDrZFeBQmFWtVGImu
+ YCzoS4JAiTXMuK4+jnLP6dhrum522zYnK9Sr+sI2Eykvwre/GxXIXXAwgTQ/12D2gino
+ Oss2NJFKC8pP7IEphCpSDljubqhbMjqBSQr4pd3WM6tinppk2/1Q3EtayWeXOUm3qt9a
+ I4gTq2M0P5RY9Ntr4kn9tiid2ff/eJ5T9+ySpO2pV7yIAxrPr4q9peawF7fyLhflhjyb
+ mCCQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=KnDL8S0nYFPZuOGkV7hWvantVpmZ1rr6sKUqGh/Qang=;
+ b=fLZ+BbcNQi0XSA/Sy/JDXl9/pHfB7cTWs1Y+kuOPFXA3JPK7fIEmDqd23Ugik7QNcL
+ 4HvwlTfLk/AbSyON5/gHVB9iHU/SCgHNGNzMlWq7pLtMm4scOjZzFPsXuTBSzYJe5XME
+ IoUcgradQ3i3yiyf7VI965AqJiVuGg7RAlly1K3HmI4oMwpMvmLeiLehSRcR+jIo2G1U
+ UsACMu5r2WS6G2kn8YhzpwFH9K42yppPTUh8uQ+CU+D5kvlhifW8xe8j6sPhtIJSxLAp
+ HVX7pNCFQAhLNCNEbieTgZo5u9mDqeZznDgjwphl/PaOhwGR7hU0PMiznGpqtP4B8ucY
+ 2XUQ==
+X-Gm-Message-State: APjAAAUeXRFhiNE9rOQFSma9G4wuMYVCnF2Pm8L6cuEoepUVZZZ+/+mR
+ OblvJEq7hKQRbd0yc369Kzk5xrRrdQE=
+X-Google-Smtp-Source: APXvYqz2Zvq7MNQVB42tAcYJVPQ1nSI8t5nqPcSa3zDpvbk2eY8bX/DL5PpbQDxNNhHTirZYu3iqYw==
+X-Received: by 2002:a05:6512:50f:: with SMTP id
+ o15mr990933lfb.63.1566544474967; 
+ Fri, 23 Aug 2019 00:14:34 -0700 (PDT)
+Received: from genomnajs.ideon.se ([85.235.10.227])
+ by smtp.gmail.com with ESMTPSA id m21sm482721ljj.48.2019.08.23.00.14.33
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 23 Aug 2019 00:14:33 -0700 (PDT)
+From: Linus Walleij <linus.walleij@linaro.org>
+To: dri-devel@lists.freedesktop.org,
+ Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, Sean Paul <sean@poorly.run>
+Subject: [PATCH] drm/sti: Include the right header
+Date: Fri, 23 Aug 2019 09:14:28 +0200
+Message-Id: <20190823071428.6155-1-linus.walleij@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_001351_618711_768071BE 
-X-CRM114-Status: GOOD (  17.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_001444_027171_A130F0C6 
+X-CRM114-Status: GOOD (  10.84  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:143 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,82 +97,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
- Stephen Boyd <sboyd@kernel.org>, Marc Zyngier <maz@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-22 at 09:36 -0700, Florian Fainelli wrote:
-> On 8/22/19 2:26 AM, Lubomir Rintel wrote:
-> > Used to bring up the second core on MMP3.
-> > 
-> > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
-> > 
-> > ---
-> > Changes since v1:
-> > - Wrap SW_BRANCH_VIRT_ADDR with __pa_symbol()
-> > 
-> >  arch/arm/mach-mmp/Makefile  |  3 +++
-> >  arch/arm/mach-mmp/platsmp.c | 33 +++++++++++++++++++++++++++++++++
-> >  2 files changed, 36 insertions(+)
-> >  create mode 100644 arch/arm/mach-mmp/platsmp.c
-> > 
-> > diff --git a/arch/arm/mach-mmp/Makefile b/arch/arm/mach-mmp/Makefile
-> > index 322c1c97dc900..7b3a7f979eece 100644
-> > --- a/arch/arm/mach-mmp/Makefile
-> > +++ b/arch/arm/mach-mmp/Makefile
-> > @@ -22,6 +22,9 @@ ifeq ($(CONFIG_PM),y)
-> >  obj-$(CONFIG_CPU_PXA910)	+= pm-pxa910.o
-> >  obj-$(CONFIG_CPU_MMP2)		+= pm-mmp2.o
-> >  endif
-> > +ifeq ($(CONFIG_SMP),y)
-> > +obj-$(CONFIG_MACH_MMP3_DT)	+= platsmp.o
-> > +endif
-> >  
-> >  # board support
-> >  obj-$(CONFIG_MACH_ASPENITE)	+= aspenite.o
-> > diff --git a/arch/arm/mach-mmp/platsmp.c b/arch/arm/mach-mmp/platsmp.c
-> > new file mode 100644
-> > index 0000000000000..98d5ef23623cb
-> > --- /dev/null
-> > +++ b/arch/arm/mach-mmp/platsmp.c
-> > @@ -0,0 +1,33 @@
-> > +// SPDX-License-Identifier: GPL-2.0-or-later
-> > +/*
-> > + * Copyright (C) 2019 Lubomir Rintel <lkundrak@v3.sk>
-> > + */
-> > +#include <linux/io.h>
-> > +#include <asm/smp_scu.h>
-> > +#include <asm/smp.h>
-> > +#include "addr-map.h"
-> > +
-> > +#define SW_BRANCH_VIRT_ADDR	CIU_REG(0x24)
-> > +
-> > +static int mmp3_boot_secondary(unsigned int cpu, struct task_struct *idle)
-> > +{
-> > +	/*
-> > +	 * Apparently, the boot ROM on the second core spins on this
-> > +	 * register becoming non-zero and then jumps to the address written
-> > +	 * there. No IPIs involved.
-> > +	 */
-> > +	__raw_writel(virt_to_phys(secondary_startup),
-> > +			__pa_symbol(SW_BRANCH_VIRT_ADDR));
-> 
-> That looks wrong, the __pa_symbol() is applicable to secondary_startup,
-> while SW_BRANCH_VIRT_ADDR does not need that.
+The sti_hdmi.c file include <linux/of_gpio.h> despite not even
+using any GPIOs.
 
-Whoops, sorry for that. Will fix in the next patch version in a few
-days.
+What it does use is devm_ioremap_nocache() which comes from
+<linux/io.h> implicitly by including that header.
 
-Thanks
-Lubo
+Fix this up by including the right header instead.
+
+Cc: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Cc: Vincent Abriou <vincent.abriou@st.com>
+Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
+---
+ drivers/gpu/drm/sti/sti_hdmi.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/gpu/drm/sti/sti_hdmi.c b/drivers/gpu/drm/sti/sti_hdmi.c
+index f03d617edc4c..4f1aaf222cb0 100644
+--- a/drivers/gpu/drm/sti/sti_hdmi.c
++++ b/drivers/gpu/drm/sti/sti_hdmi.c
+@@ -9,7 +9,7 @@
+ #include <linux/debugfs.h>
+ #include <linux/hdmi.h>
+ #include <linux/module.h>
+-#include <linux/of_gpio.h>
++#include <linux/io.h>
+ #include <linux/platform_device.h>
+ #include <linux/reset.h>
+ 
+-- 
+2.21.0
 
 
 _______________________________________________
