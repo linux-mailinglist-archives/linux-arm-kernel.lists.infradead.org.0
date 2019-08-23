@@ -2,88 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 136F19A9F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:16:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 752F79A9F2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 10:16:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JzIlmaW1PRGU2+V9238JjY+aTyGcdDDTIyKSDN+OxXM=; b=tCHD6UxDxMAnXZ
-	z0gxP4s+Bfq8YE/RZ/f4wbSIf0l+cRu7KBz0jCk6JBFFcO+lpGdHn0kfW7SVJdCTYSBZHjpU8M/pZ
-	GzGjnHno5zoVR3aYSF0Go4lpNW2PucklHTbwA15Npr/UBsatBANcKfolV5/CfKFE4wqJoEiXWl9VB
-	xWXQgHhXVZeR//c4Q0rTbUldTeu0Xey4/Z/TuCKxH0zKWRs7LrkmE43KcrgB+tAmOGNrKOFSch3mo
-	4S/7tnwh3fZEVzIceZWIihysEAeFxE+bmig4lqbM/Uc4yvAUhK9wxmqxOVj/BB59rvi2bSZur+q6b
-	a/BpnWK+EMS2zPWrnxcQ==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=3jV6LkgtDmgZBHvZfvV7RjB6WK2ciY3nAl67w/93dlE=; b=XiobjaZPJl2zkzdKnIJBSN6kPz
+	LprSUBm1tTaQ88edhsWGvNBhxz1o+FmS1z4cde+9vI7GOOhRUkmur6bTVFlWWeQWRtizwH4qc0pto
+	TNLpF0tUL76PXw5fadp7tX8dJmFYgMniI3cT4Br45/EFhBxH+TbkXgIksAnBsikcM5Av/pXgsb4mL
+	NLvR4mKMa6sg0yqNRf7tBWvdOcvkim7hpvT/ZHHit2djoL6lCOTzFSC2mJ/AYn7xecoFds+15SpjR
+	0I3dRdOQPsO0pAnD3rXGJNST+t1RG8UbiXI1MIPRORAWkxakNXrC1lh4Srhtaj81vKjTu0OQ4mLdz
+	NdC2a5/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i14jn-00023A-CU; Fri, 23 Aug 2019 08:15:59 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i14k7-0002Ii-Jy; Fri, 23 Aug 2019 08:16:19 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i14iQ-0008QW-0B
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:14:36 +0000
-Received: by mail-wm1-x341.google.com with SMTP id m125so8197541wmm.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 01:14:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=tWIXIHsRRnjSYQ3AsI0iEQhYAJ00xnlwPbNZjsDVxCk=;
- b=psJnyGdCUXOnfYhGt0XNOWkMUB9iTLmvzy2FunTubobkCZMC/dGNrnlFFi24eGzliT
- BztwYjuP49mrhDHf0UBfGn5WW5yy3WIWcp6h4zGhOoPpGj4sRGjRqrBahzfEpMIHgD5t
- b97JICc4ZeulSUnS2spPGRerGT8lXEpm4ScewXrf4OMcYp3JMZN8vWxmUH5i37ZQq04n
- KLwG3LBPOtMBj6qDdgE9sPSgDsrliznHHFc+cFAOCLQmDCmu7ZU07czDmLBWjv4g7VGm
- JmXwl4pjAsNDqHSfAxPAyUu8aqwEJkcysERuGTyVz396wNuOe936uhdy75Gtnui1hFhj
- dGbA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=tWIXIHsRRnjSYQ3AsI0iEQhYAJ00xnlwPbNZjsDVxCk=;
- b=pG2bkpyVSc7fYZ8XM2qLgWfSDxttlA0JgMwUZb/MmaoQIs50vi+I9pWeAuL5zsvXfa
- bkJf4OFa67SBvOQv4c1vDg7jO2Mj3+g4RzmPmN/KS6SYR0UPbJx441pZEDVeXaKY9qzo
- A/7FFbxdulVraXEF+m+YBI9QDFpeWfL3Y0SSVVRGpVn/15W+20rUmpRIaPYs7h0G/Kro
- 3ieYknq82IQ38lsylRU4+Xa1kguzCU4J+RBOTvzxvTi7S48AGfEDCZoQX5XC8PChMHXH
- Tr0d+WrN12y6axeVEqwA+qDnpBCZwmEr+ZlGYkPwmJvG4lp4lCPUw7x6SdICuBPlKdNs
- TTzw==
-X-Gm-Message-State: APjAAAXNIUDkTDIbvX/dROcntHAlPaEgTgehzpUqwGj8DWRCyvqoKa6o
- rcevrqoy19EflC0vmdEh/p9ezXY2TwWeQQ==
-X-Google-Smtp-Source: APXvYqw/tJbGfOMT0u4Ry9S5gyhMfZG5NLVl9v2ufDFsaia6+nJjrVPT+0ExheOJXEdqvRW6bnQPyQ==
-X-Received: by 2002:a7b:cf11:: with SMTP id l17mr3522090wmg.158.1566548072267; 
- Fri, 23 Aug 2019 01:14:32 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id 74sm3632535wma.15.2019.08.23.01.14.31
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 23 Aug 2019 01:14:31 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: khilman@baylibre.com
-Subject: [PATCH 3/3] arm64: dts: khadas-vim3: add support for the SM1 based
- VIM3
-Date: Fri, 23 Aug 2019 10:14:27 +0200
-Message-Id: <20190823081427.17228-4-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190823081427.17228-1-narmstrong@baylibre.com>
-References: <20190823081427.17228-1-narmstrong@baylibre.com>
+ id 1i14j5-0001fx-9U
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 08:15:17 +0000
+Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 9B9376584E140FA06078;
+ Fri, 23 Aug 2019 16:15:12 +0800 (CST)
+Received: from [127.0.0.1] (10.133.215.186) by DGGEMS404-HUB.china.huawei.com
+ (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0;
+ Fri, 23 Aug 2019 16:15:02 +0800
+Subject: Re: [PATCH v2 0/2] iommu/iova: enhance the rcache optimization
+To: Jean-Philippe Brucker <jean-philippe.brucker@arm.com>, "Jean-Philippe
+ Brucker" <jean-philippe@linaro.org>, John Garry <john.garry@huawei.com>,
+ "Robin Murphy" <robin.murphy@arm.com>, Will Deacon <will@kernel.org>, Joerg
+ Roedel <joro@8bytes.org>, iommu <iommu@lists.linux-foundation.org>, Omer
+ Peleg <omer@cs.technion.ac.il>, Adam Morrison <mad@cs.technion.ac.il>,
+ Shaohua Li <shli@fb.com>, Ben Serebrin <serebrin@google.com>, David Woodhouse
+ <David.Woodhouse@intel.com>, linux-arm-kernel
+ <linux-arm-kernel@lists.infradead.org>, linux-kernel
+ <linux-kernel@vger.kernel.org>
+References: <20190815121104.29140-1-thunder.leizhen@huawei.com>
+From: "Leizhen (ThunderTown)" <thunder.leizhen@huawei.com>
+Message-ID: <297e3718-eb31-d92a-1eb9-d4999fcd20c5@huawei.com>
+Date: Fri, 23 Aug 2019 16:15:00 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
+In-Reply-To: <20190815121104.29140-1-thunder.leizhen@huawei.com>
+Content-Language: en-US
+X-Originating-IP: [10.133.215.186]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_011434_041783_A1E95117 
-X-CRM114-Status: GOOD (  15.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190823_011515_712673_069818A8 
+X-CRM114-Status: GOOD (  12.79  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,111 +74,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the Amlogic SM1 based Khadas VIM3, sharing all the same features
-as the G12B based one, but:
-- a different DVFS support since only a single cluster is available
-- audio is still not available on SM1
+Hi all,
+  Can anyone help review it?
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- arch/arm64/boot/dts/amlogic/Makefile          |  1 +
- .../dts/amlogic/meson-sm1-khadas-vim3.dts     | 69 +++++++++++++++++++
- 2 files changed, 70 insertions(+)
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3.dts
 
-diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-index edbf128e7707..33690b2ae2e1 100644
---- a/arch/arm64/boot/dts/amlogic/Makefile
-+++ b/arch/arm64/boot/dts/amlogic/Makefile
-@@ -35,3 +35,4 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxm-q201.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxm-rbox-pro.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxm-vega-s96.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sei610.dtb
-+dtb-$(CONFIG_ARCH_MESON) += meson-sm1-khadas-vim3.dtb
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3.dts
-new file mode 100644
-index 000000000000..3eb9cc5915d9
---- /dev/null
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3.dts
-@@ -0,0 +1,69 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 BayLibre, SAS
-+ * Author: Neil Armstrong <narmstrong@baylibre.com>
-+ */
-+
-+/dts-v1/;
-+
-+#include "meson-sm1.dtsi"
-+#include "meson-khadas-vim3.dtsi"
-+
-+/ {
-+	compatible = "khadas,vim3", "amlogic,sm1";
-+
-+	vddcpu: regulator-vddcpu {
-+		/*
-+		 * Silergy SY8030DEC Regulator.
-+		 */
-+		compatible = "pwm-regulator";
-+
-+		regulator-name = "VDDCPU";
-+		regulator-min-microvolt = <690000>;
-+		regulator-max-microvolt = <1050000>;
-+
-+		vin-supply = <&vsys_3v3>;
-+
-+		pwms = <&pwm_AO_cd 1 1250 0>;
-+		pwm-dutycycle-range = <100 0>;
-+
-+		regulator-boot-on;
-+		regulator-always-on;
-+	};
-+};
-+
-+&cpu0 {
-+	cpu-supply = <&vddcpu>;
-+	operating-points-v2 = <&cpu_opp_table>;
-+	clocks = <&clkc CLKID_CPU_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu1 {
-+	cpu-supply = <&vddcpu>;
-+	operating-points-v2 = <&cpu_opp_table>;
-+	clocks = <&clkc CLKID_CPU1_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu2 {
-+	cpu-supply = <&vddcpu>;
-+	operating-points-v2 = <&cpu_opp_table>;
-+	clocks = <&clkc CLKID_CPU2_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&cpu3 {
-+	cpu-supply = <&vddcpu>;
-+	operating-points-v2 = <&cpu_opp_table>;
-+	clocks = <&clkc CLKID_CPU3_CLK>;
-+	clock-latency = <50000>;
-+};
-+
-+&pwm_AO_cd {
-+	pinctrl-0 = <&pwm_ao_d_e_pins>;
-+	pinctrl-names = "default";
-+	clocks = <&xtal>;
-+	clock-names = "clkin1";
-+	status = "okay";
-+};
--- 
-2.22.0
+On 2019/8/15 20:11, Zhen Lei wrote:
+> v1 --> v2
+> 1. I did not chagne the patches but added this cover-letter.
+> 2. Add a batch of reviewers base on
+>    9257b4a206fc ("iommu/iova: introduce per-cpu caching to iova allocation")
+> 3. I described the problem I met in patch 2, but I hope below brief description
+>    can help people to quickly understand.
+>    Suppose there are six rcache sizes, each size can maximum hold 10000 IOVAs.
+>    --------------------------------------------
+>    |  4K   |  8K  | 16K  |  32K | 64K  | 128K |
+>    --------------------------------------------
+>    | 10000 | 9000 | 8500 | 8600 | 9200 | 7000 |
+>    --------------------------------------------
+>    As the above map displayed, the whole rcache buffered too many IOVAs. Now, the
+>    worst case can be coming, suppose we need 20000 4K IOVAs at one time. That means
+>    10000 IOVAs can be allocated from rcache, but another 10000 IOVAs should be 
+>    allocated from RB tree base on alloc_iova() function. But the RB tree currently
+>    have at least (9000 + 8500 + 8600 + 9200 + 7000) = 42300 nodes. The average speed
+>    of RB tree traverse will be very slow. For my test scenario, the 4K size IOVAs are
+>    frequently used, but others are not. So similarly, when the 20000 4K IOVAs are
+>    continuous freed, the first 10000 IOVAs can be quickly buffered, but the other
+>    10000 IOVAs can not.
+> 
+> Zhen Lei (2):
+>   iommu/iova: introduce iova_magazine_compact_pfns()
+>   iommu/iova: enhance the rcache optimization
+> 
+>  drivers/iommu/iova.c | 100 +++++++++++++++++++++++++++++++++++++++++++++++----
+>  include/linux/iova.h |   1 +
+>  2 files changed, 95 insertions(+), 6 deletions(-)
+> 
 
 
 _______________________________________________
