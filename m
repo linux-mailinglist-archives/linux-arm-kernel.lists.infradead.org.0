@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 15E3C9AB13
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:06:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD6249AB1A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZtBu2aYCeDFKYcr4imPPpRoY1YinRKqWH+w/QU88Vv8=; b=lCrih8jhroc7k8
-	Zs859141Prmij9x8q7J+zFYl0Q7X7L/MsKQ0xf2O23tSNi5/cKJuhNLTBZOUae/E/E4vCI3QFNqHT
-	pNuZbpX8XM03aOC+d+qRxF3qaboz7ii9JJEN3uXTMpzcxjlJiqp6YqytfzKRpdmDV5LlP4ViNbthE
-	zzL/xmDq/1d9NGNXuVFbygPmAVhxF5peXhiXpApJIVP+B+litcbXixlFicPAyWQpG0nlNg3iKocr1
-	4RWmj2FolHlQ20CkflU3nLNshrhGMrpfzGnyhHtTUWa4oH2O9cUZDCBrTlf1F6hgunTtF/lwOoeYh
-	LW6AmYpjHkRp//HOzJJw==;
+	List-Owner; bh=PDIipuaNwcFagl5e174+ifOUG/iLc0Ty2X/wkQYpupA=; b=PIaGGzSdWbhxEK
+	W8QCSLAwqD0OUYAhJJRHW4AyvvqKmr3MGF4f/019qrvHIH+EibKapS0af8U+XR0DrUEzGJVG9IsHk
+	lQE7xOCDzPlDWo547S+nlNT3LKq+Z596Qb0M0iMdR08vt3CI9F/++1OcG3OkTHMIuXOvw4cIEjewO
+	AeednUTt3r1Nl87i1/QGqHzSWyYs0JYlCnuhZl7Zycg5GAbCJ04iQhz1dYhzQ+C5wlivbHyssMxJc
+	VhV7eTG3eEeBFVtDS/WkCcCDmNioRhYNrxmzUOSWQCnuwNNC077BCgixJjJ4OhXHYolREVTmXtJZ3
+	KkeHGfpkLm7jSs7nRn2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i15Wf-0002xr-NM; Fri, 23 Aug 2019 09:06:29 +0000
+	id 1i15Xj-0003sL-51; Fri, 23 Aug 2019 09:07:35 +0000
 Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i15Uf-0000tu-I3
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:04:31 +0000
-Received: by mail-wm1-x342.google.com with SMTP id 10so8190150wmp.3
+ id 1i15Ug-0000v1-LN
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:04:32 +0000
+Received: by mail-wm1-x342.google.com with SMTP id k1so8219399wmi.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 02:04:25 -0700 (PDT)
+ Fri, 23 Aug 2019 02:04:26 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=x7lS6otfNfKn2A4Z6EJ+EWGqquL/jDHyWtp6eWoI2sQ=;
- b=b0KqI2bKabxX/CLyMZVp4C9olw9IuKvdW4s2hW59kzepQ9tpvF7cIj3t7rlg5bdUoi
- SjrpZuX4aNecZpzG5WoarF2JwNbhgnTmhw6tOCTLPyj6a0MlCUri0PrZZbpzevTGI+2u
- jCP/dyGPZLHcwTzex2b+yWNzs+SYVzxIbYmN+1/gCEV4dWN/KFAkr/GkRmYPFEBq72qa
- +vptHtmHo11a57W5NNTxKHo7S3yWTEcABRlm9XfLO8ZpzjIQ3XrTcW9admytv+PYB37p
- wMOPBj4PfQGnFhzI+wRMlAt/VscakAVYsPEWyoClsGMbQUQG+zDSOFYHufNIYK/zcXeF
- adEQ==
+ bh=tKHSL2TvLdzeYTHakHcSzedmEttI2anacBGRuNcRBkU=;
+ b=GmV8Y1qAC14OzfTnstiQTLtSRJ4eKTZc3RCsEia7V/22Us2/TJ6DvracJKrPIOyt0V
+ XSWI5ru9VfHDziUruw6sVNCura20aXsw6/OFD+G8Vl6ER+1uaJK3gjk/bs9F/JOojCnA
+ NQM6+A3A4avL9YZKxlcRqquhPsVqoR2MaOUU6Su+2xeJJYA6vFWXsv4T9cfqlBvrU3Qw
+ 7+lilrgMdKAYBbmZ/U/p2dANT24xBrDEr8LHFqmDpq9O5q0qrGywSyMQhqIlGJy4yzu6
+ 05x1HRk2ngC9gFNXeDvtN3UR39CssrFA71aRJk/3PQR39v+lXHrEDfef0SLrv6ZG49M6
+ bK1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=x7lS6otfNfKn2A4Z6EJ+EWGqquL/jDHyWtp6eWoI2sQ=;
- b=GsrZq33wXMCiv09veB9RaMk16RoNvsWQe0HX+QfvZ25Qqbv6nKFtkIg/WyJKHxBRYJ
- mKJ8Gr01RkZ1WykQRhbdYhXFWPjId+m6bDe7FVS1mn0aqy22NtNTMuk9yZ2AIjdNG/3b
- QmfI4LBg+6HtZVlQIXiUhiK2BoW8e/mtVsmxdkMz0ZNmygAPoq3bGppEuirNBVefovFx
- 2tJkykQqeVZ6soXwAOBIRus7Ub+Ozcfq7e3JuAd7b8c5is3vdXcVdi08lGc1WeAeOtUw
- kwHrj+jFkoLL/TE6fw4L2gmocLaYRdTzm12bFp+fSdNHbptCK2ShW2tCYtffBL7+p8UJ
- zaCA==
-X-Gm-Message-State: APjAAAUSfioraKaWRQH8tYUj7Gk82wPyT2VjBnFTI9/NWKQN/h0L+DFo
- DiswptCXUsvuYm0PfkOZ4c2I8Q==
-X-Google-Smtp-Source: APXvYqzv+3OEYdyAmsOvtHfKnTXCIdOXKgggpEvAEYxC41wrsIacwiO8beWA5cQ7p8t4M1JJqXh2tw==
-X-Received: by 2002:a1c:c1cd:: with SMTP id r196mr4049459wmf.127.1566551064134; 
- Fri, 23 Aug 2019 02:04:24 -0700 (PDT)
+ bh=tKHSL2TvLdzeYTHakHcSzedmEttI2anacBGRuNcRBkU=;
+ b=ecYYCcmk7L+qpInlRW6q43OOhBXbJ78fFBqcdJAt7CVUDLVG7hqt7F4jRuOn68zH+2
+ ghbuiGrxmSrVG2ZSYdbtVgZtipRncp3VECPCvfs18Ixg9YnUgZ+t9eN9psyL5mdcYyIF
+ tLQOQ4vL6FtVrUYUtY8tq9mV6d+TRBBE5zf++bPGIxhIDz3raiehC20bAKaEHoGH1j1Q
+ m6Kmfs0k0GIzh8LCIYEA6jul0mUhq10O5tkXClCTe+T+rkpyn87Qa2gTRyRQ+2KZdaRg
+ MxXP96q8vAJ9YLWVXbasdg7YQLau9ff7dzOit73WX7TwoBTKhxU0Q4Za51EYpj3hnc3i
+ MDkw==
+X-Gm-Message-State: APjAAAWnlXIsWoGWCQQVirHMsAIO95sPD/biGewpnXOI0CMDlfjBAjjZ
+ fQoYWYhDXBbDZwe9mn8TrUJWyw==
+X-Google-Smtp-Source: APXvYqyNRvGj3V0YbEVMpMvc8XkM8d3DsccgAZV4aJwajw0WiCJWsTm7i1pRBnGymWb8H802qYaLHw==
+X-Received: by 2002:a1c:a584:: with SMTP id o126mr3941416wme.147.1566551065315; 
+ Fri, 23 Aug 2019 02:04:25 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id x26sm1625544wmj.42.2019.08.23.02.04.23
+ by smtp.gmail.com with ESMTPSA id x26sm1625544wmj.42.2019.08.23.02.04.24
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 23 Aug 2019 02:04:23 -0700 (PDT)
+ Fri, 23 Aug 2019 02:04:24 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com,
 	ulf.hansson@linaro.org
-Subject: [PATCH v2 4/5] arm64: dts: meson-sm1-sei610: add HDMI display support
-Date: Fri, 23 Aug 2019 11:04:17 +0200
-Message-Id: <20190823090418.17148-5-narmstrong@baylibre.com>
+Subject: [PATCH v2 5/5] arm64: dts: meson-sm1-sei610: add USB support
+Date: Fri, 23 Aug 2019 11:04:18 +0200
+Message-Id: <20190823090418.17148-6-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190823090418.17148-1-narmstrong@baylibre.com>
 References: <20190823090418.17148-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_020426_161200_98FC964F 
-X-CRM114-Status: GOOD (  10.33  )
+X-CRM114-CacheID: sfid-20190823_020427_358158_154F0437 
+X-CRM114-Status: GOOD (  10.89  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -103,54 +103,30 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the HDMI support nodes for the Amlogic SM1 Based SEI610 Board.
+Add the USB properties for the Amlogic SM1 Based SEI610 Board in order to
+support the USB DRD Type-C port and the USB3 Type A port.
+
+The USB DRD Type-C controller uses the ID signal to toggle the USB role
+between the DWC3 Host controller and the DWC2 Device controller.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../boot/dts/amlogic/meson-sm1-sei610.dts     | 23 +++++++++++++++++++
- 1 file changed, 23 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-index 12dab0ba2f26..66bd3bfbaf91 100644
+index 66bd3bfbaf91..36ac2e4b970d 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-@@ -51,6 +51,17 @@
- 		};
- 	};
- 
-+	hdmi-connector {
-+		compatible = "hdmi-connector";
-+		type = "a";
-+
-+		port {
-+			hdmi_connector_in: endpoint {
-+				remote-endpoint = <&hdmi_tx_tmds_out>;
-+			};
-+		};
-+	};
-+
- 	leds {
- 		compatible = "gpio-leds";
- 
-@@ -177,6 +188,18 @@
- 	phy-mode = "rmii";
+@@ -321,3 +321,8 @@
+ 	pinctrl-0 = <&uart_ao_a_pins>;
+ 	pinctrl-names = "default";
  };
- 
-+&hdmi_tx {
++
++&usb {
 +	status = "okay";
-+	pinctrl-0 = <&hdmitx_hpd_pins>, <&hdmitx_ddc_pins>;
-+	pinctrl-names = "default";
++	dr_mode = "otg";
 +};
-+
-+&hdmi_tx_tmds_port {
-+	hdmi_tx_tmds_out: endpoint {
-+		remote-endpoint = <&hdmi_connector_in>;
-+	};
-+};
-+
- &i2c3 {
- 	status = "okay";
- 	pinctrl-0 = <&i2c3_sda_a_pins>, <&i2c3_sck_a_pins>;
 -- 
 2.22.0
 
