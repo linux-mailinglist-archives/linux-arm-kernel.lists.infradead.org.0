@@ -2,89 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E2949AB03
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:05:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEBB09AB18
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 23 Aug 2019 11:07:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ecU1qiPEGlhUcVe5eEL4dwt/2oP95VJHOTzhBOvhDwA=; b=VW3NpauobH+84q
-	16WjI/QaQRhdhVbL87To96ZDgFg9DVXgss6XE+HRfs6y9lB9PwTf8rx/3o+Aqe6P5AJ+GTPLKITYd
-	ZZEb03lw7w3MzyxZH3kS5fPek6qwMBCJjRq8QLfZW4uQ2i0EmEMczOAn24ZtRSyUTOdeGumUl4bWv
-	qSQTFQGvoavI+kb1+1nsq8Q9BuKyZmM2hN3dviiqfmm5f3wMyjHThAMeyMMAYB56WF5N7nLZkUiUe
-	YSyjGYW0tf3Z/j0XZcgP2KcPlSRRjP4eT4m2/DRFYjsZQw6+OG/tkfec3UZsa7Ml7IFwb5i79bzDm
-	Eupny4ey63uSuN9DTBjA==;
+	List-Owner; bh=X1zhR3fnaSMR05N1RUGlqCVBXj6kGAhrXdgCepYKNng=; b=FwMYgxLQ8Oo4QT
+	xLppg/K3n0Gza+hdCCiW6uvF6ngqYmff7G/2Rv7Sq6EN+CKezjah0oasd7l/b1gSdDBUFwYCnYWK9
+	R5kktcuuMJZF2xCuZw+kzCSoZ/+bc5btR1+t9SmnBPa2BooIvn6Bw1/h0JbAigr9OQSGBh7DLBqvL
+	dZNpLThb7tg/q1i2ALGG4m46hmo+tcghb5K1rfndyC4OIYu90m7KHPgZPo2znp/6cZxpKW4b2e3bX
+	/gDiZuEa6sS6TMOdEAWGe3GNEO2Fpm8Dloq+BGbSXg1TFurwqt7EGxfks7UX8VPdsKOfbFElrTzbc
+	mrL0TQcNdCURatdWY9pA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i15VK-0000nk-93; Fri, 23 Aug 2019 09:05:06 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1i15XC-0003MM-Ss; Fri, 23 Aug 2019 09:07:03 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i15UJ-0000ik-Io
- for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:04:05 +0000
-Received: by mail-lj1-x243.google.com with SMTP id h15so8149693ljg.10
+ id 1i15Ud-0000ri-Nf
+ for linux-arm-kernel@lists.infradead.org; Fri, 23 Aug 2019 09:04:26 +0000
+Received: by mail-wm1-x341.google.com with SMTP id o4so8207657wmh.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 02:04:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Fri, 23 Aug 2019 02:04:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=D79k8qyR+lkFZuNmiQyz7KjiI3FDq0RN+8yGAkt4ero=;
- b=mt7TlPL5AmogFU9Is2n4Q6zALZP97v2qowDOKyz/K3yzn+8/tDW9g3UxAy4NFXy+A9
- 6FxvwjtAqOhpV17gayDwEJXpK+6ZfsYET6rK6x13RQwGQJpiEzojgT/73pjElq4rcLg2
- L00uCWg4yMnrLh4s/8a1zL4UkvidD9Xz1NIfbNoFvnFglmEdV+hOvTCKI8VYXxJVLcY+
- OUvrXl+IfeXiv2aZlN0tepjP1MbWVsqoYYajpHhVlU24IJQKo1PDnGGAh0zcrXjxG3lk
- +y7/PaO0uXQH+Al4sQGeSL+V46t6TtYA75GDkYNG6FMF02m3z6No4CZpkWIC+SfUPjFg
- KwKw==
+ bh=Dl/uscAowXukXuhpqgLF0MCIjY2hwV9HUJY7MTPFx+U=;
+ b=m7Lm47K3lfmXXBH6bb1ALP6Euh07K7vyM5wb7vvgY1B/1TR9RRsENy/mPoA/yPIk/e
+ p4efrhHsjMIdMdqdpRRb6j2eazLpFHK0x8RbKnmNFLtBD3KJ9gSq/RgvvS0jQ1xWpzDb
+ Td7RNmf5S4vIqYxm+tQBGBfFowm9P6Ul0t2yjFo6I8FlGfhngtHEG1mwNBaLM5rxKIRe
+ WLurq85T17urVVGq9y/qSw8gPnT7vV0ks2XJ/CA8pLLLdg5yJWFK4k5SlmGNe6bNrA65
+ G6REu8wlkQTiZSn9ltQIqMPhfYCZpnPhmwkfksyfImvLuI/2yy3EEz5rHZv7/VmGEt2N
+ Fj2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
  :content-transfer-encoding;
- bh=D79k8qyR+lkFZuNmiQyz7KjiI3FDq0RN+8yGAkt4ero=;
- b=nCf9kpkpiglztJng2ALHBdrhTp3kLHE3LRkI3NlasIitTkNuRDBqCIWmNL0++N23VE
- 7a4w3Ut4AcKd/cds94gwxegot4grlaOkGto4iErkm+9ctX5kklCQr62ZEuoMTMDOZnSZ
- Z4tjlnQczQVXIqGQPyoW5MqGh943Tp3ZmDSyfInGrdArYNReUNGW2HbZ+npGf2Btqsv2
- vq8AS/wMEemJ8UHTUCrgaFmrLnFCOj5KWn9JE2AaPXZMqK2vswc9MPjQ2W8h9Ig3WFBQ
- VC+eBqHzfJfBNMiLVAchFOy9MT96y+Kqpy/sutIZhq8PKfDFr4LhY7LfMSUYdeD7Hk5i
- UIHw==
-X-Gm-Message-State: APjAAAX6kACi+y7PYLylp6DE8KHoFw8uY5tC7zVrX7qv0wYvHX+42yRr
- rc8W4gUaSQp1JeCWmSlKOsD8Rg==
-X-Google-Smtp-Source: APXvYqxn+Myl0Zh68VB/gUSVTk1+y+dieMuMV02tQYFhoO9J49zf6nx+6CzqcvaWsDXjAZBIelYlAA==
-X-Received: by 2002:a2e:b0cb:: with SMTP id g11mr2218617ljl.76.1566551042075; 
- Fri, 23 Aug 2019 02:04:02 -0700 (PDT)
-Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id i9sm499237lfl.10.2019.08.23.02.04.00
+ bh=Dl/uscAowXukXuhpqgLF0MCIjY2hwV9HUJY7MTPFx+U=;
+ b=lv/4XlKon2TiWLCq5E/ur7uQpkeW6aVoTOnsEK7/3SjlcYQ7bZ1n+ftza9zwJmlu+O
+ dzmGwa3P07IooZM/psMhWVbnIleGBl0VKm/L6A9T8fHhDIHSwhOGzhRfKURfNyXP3Uk5
+ yC92S3ekO1wOjvLLyzItn8U24pA5EEA3dJt0Nu3Hh213+glZJjw0vrSPxM8l1xbe0cJr
+ J5wASmF7tysfKIcIMWRSTXKLq1sgcGAlbsgUlStxH4EtMcsqMxMrE9HI5bhfL8ED6PVf
+ gvT761sxoYl8zBYReJW2lZbo9JHIb2B8xiU7jtOdOQPGYp2b8Pl+tHEOorIpwqGdFEyA
+ x4dQ==
+X-Gm-Message-State: APjAAAUPnGCSAkk1pTjeut7PW/8eAEtuhZctxSeackE0FOINT6GgtAlB
+ 7tyT+eOx50K9NcwljRFc8Y5/Kw==
+X-Google-Smtp-Source: APXvYqwmq4sNSi424dS+1qU5TMcPyATzSUaYYh47inFl7d7klYRZCt3JcgSepJzzLt1ujHPiHmZPhQ==
+X-Received: by 2002:a1c:64c5:: with SMTP id y188mr4038875wmb.154.1566551060583; 
+ Fri, 23 Aug 2019 02:04:20 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id x26sm1625544wmj.42.2019.08.23.02.04.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 23 Aug 2019 02:04:01 -0700 (PDT)
-From: Linus Walleij <linus.walleij@linaro.org>
-To: arm@kernel.org,
-	soc@kernel.org
-Subject: [PATCH] soc: ixp4xx: Protect IXP4xx SoC drivers by ARCH_IXP4XX ||
- COMPILE_TEST
-Date: Fri, 23 Aug 2019 11:03:52 +0200
-Message-Id: <20190823090352.12243-1-linus.walleij@linaro.org>
-X-Mailer: git-send-email 2.21.0
+ Fri, 23 Aug 2019 02:04:20 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com,
+	ulf.hansson@linaro.org
+Subject: [PATCH v2 0/5] arm64: meson: add support for SM1 Power Domains
+Date: Fri, 23 Aug 2019 11:04:13 +0200
+Message-Id: <20190823090418.17148-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_020403_971413_0C3FD608 
-X-CRM114-Status: UNSURE (   7.60  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190823_020424_663102_2FE24E1B 
+X-CRM114-Status: GOOD (  13.80  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -97,49 +93,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-amlogic@lists.infradead.org, linux-pm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Neil Armstrong <narmstrong@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Geert Uytterhoeven <geert@linux-m68k.org>
+This patchset introduces a new "Everything-Else Power Domain Controller"
+designed to handle all the different non-Always On peripherals like :
+- VPU
+- Ethernet Memories
+- USB, PCIe, Audio, NNA on SM1
 
-The move of the IXP4xx SoC drivers exposed their config options on all
-platforms.
+The current "gx-vpu-pwrc" process has been integrated to support the VPU
+and the other power domains in a single driver.
 
-Fix this by wrapping them inside an ARCH_IXP4XX or COMPILE_TEST block.
+Support for SoC domains has been made generic and easily extendable.
 
-Fixes: fcf2d8978cd538a5 ("ARM: ixp4xx: Move NPE and QMGR to drivers/soc")
-Signed-off-by: Geert Uytterhoeven <geert@linux-m68k.org>
-Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
----
-Hi ARM SoC folks, please apply this directly for fixes.
----
- drivers/soc/ixp4xx/Kconfig | 4 ++++
- 1 file changed, 4 insertions(+)
+In order to restart from clean architecture :
+- the PWRC node has been moved into the HHI simple-mfd, this suits much
+  better than beeing in the AO RTI simple-mfd
+- a brand new yaml bindings schemas has been written
+- reset-names has been added to clarify which resets are needed, so we can
+  dispatch them to domains
 
-diff --git a/drivers/soc/ixp4xx/Kconfig b/drivers/soc/ixp4xx/Kconfig
-index de2e62c3310a..e3eb19b85fa4 100644
---- a/drivers/soc/ixp4xx/Kconfig
-+++ b/drivers/soc/ixp4xx/Kconfig
-@@ -1,4 +1,6 @@
- # SPDX-License-Identifier: GPL-2.0-only
-+if ARCH_IXP4XX || COMPILE_TEST
-+
- menu "IXP4xx SoC drivers"
- 
- config IXP4XX_QMGR
-@@ -15,3 +17,5 @@ config IXP4XX_NPE
- 	  and is automatically selected by Ethernet and HSS drivers.
- 
- endmenu
-+
-+endif
+For G12A, the PWRC now offers support for the ethmac memory power domain.
+
+For SM1, it also offers support for PCIe, USB, NNA, ethmac and Audio power
+domains.
+
+The DOS domains has been excluded for now, but can be added very easily.
+
+GX hasn't been integrated for now, but it would follow the same scheme
+as G12A support.
+
+Changes since v1 at [1]:
+- removed open-coded reset & clock get, enable/assert, disable/deassert
+- moved to clk_bulk and reset_array with count check with a warning
+- removed remaining sm1_pwrc in probe
+- reordered arguments for VPU_PD and TOP_PD
+- added get_power for TOP_PD aswell
+- ported special VPU handling from gx-vpu-pwrc
+- added shutdown driver call to avoid errors on reboot
+- fixed patch 4 commit log
+- collected rob's review tag on patch 1
+
+[1] https://patchwork.kernel.org/cover/11106393/
+
+Neil Armstrong (5):
+  dt-bindings: power: add Amlogic Everything-Else power domains bindings
+  soc: amlogic: Add support for Everything-Else power domains controller
+  arm64: meson-g12: add Everything-Else power domain controller
+  arm64: dts: meson-sm1-sei610: add HDMI display support
+  arm64: dts: meson-sm1-sei610: add USB support
+
+ .../bindings/power/amlogic,meson-ee-pwrc.yaml |  93 ++++
+ .../boot/dts/amlogic/meson-g12-common.dtsi    |  92 ++--
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi   |   9 +
+ arch/arm64/boot/dts/amlogic/meson-g12b.dtsi   |   9 +
+ .../boot/dts/amlogic/meson-sm1-sei610.dts     |  28 +
+ arch/arm64/boot/dts/amlogic/meson-sm1.dtsi    |  15 +-
+ drivers/soc/amlogic/Kconfig                   |  11 +
+ drivers/soc/amlogic/Makefile                  |   1 +
+ drivers/soc/amlogic/meson-ee-pwrc.c           | 492 ++++++++++++++++++
+ include/dt-bindings/power/meson-g12a-power.h  |  13 +
+ include/dt-bindings/power/meson-sm1-power.h   |  18 +
+ 11 files changed, 733 insertions(+), 48 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/power/amlogic,meson-ee-pwrc.yaml
+ create mode 100644 drivers/soc/amlogic/meson-ee-pwrc.c
+ create mode 100644 include/dt-bindings/power/meson-g12a-power.h
+ create mode 100644 include/dt-bindings/power/meson-sm1-power.h
+
 -- 
-2.21.0
+2.22.0
 
 
 _______________________________________________
