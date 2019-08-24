@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F3D29B99D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 02:28:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 71BA59B99E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 02:28:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1xUeUsABvLXG1qfeSPhO8C1iSm8quvFWpOf5ZGkvao0=; b=AEYGJKegL/IkLh
-	Xd7AhywvhKALxGbYgSXbgwCBGuy/WUnSaUSqMzndwQS8+EhKfCYazfNR5L+PS2M2MPTCQ0ZioiYH/
-	jDYZFnCnwOP13bTywO1zN4tsY5EBKWurpzzzISBzpZ8jVxbY3ILnLp407qHWWx/oE3U2J2pK48mr1
-	MwTnmFHXSLpFow0MaQM5uA50hk+DmSYrL//TV1TB1ZKxnSVyVWImupMyYNaIME1/3rLzaCWCXiBi4
-	ZGOPzFuxbiCgO10uVgvLyNz9EXWiJHr8nVrHfUtscSD8oRctBDrYQxaY9BzulTUotKI+C/+aalhHD
-	G1PFYkSUJdYa0imqsArg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=HrkYB7/FsC7rNKqb0QUb9CX5fpybpHSHe1MB8U5iteg=; b=RXt4axjZgdgzuJANvwttHLnVhf
+	UU85b82XQEnk+P6EaOZGkstpYipW94OHlCYXk5nqX2mLhgHeyENXSdOnyLi3k300fUG0tuDu17yyL
+	BZZOPkTPoDn8Mn1bUqfYmoCr5YAFXVMNIk5HcJqt46biALjfBbJHpny+8pzccHyptrXEiz2orDK7T
+	d0X7m7uWwwQylrULdHO3gMSJTPTN72BBynnhR3VkhhbLGgUmbgWPg2jG3N9GtzU9rbGSoh5PBmnay
+	t2omLnq1dp8yZElhHDnQAjoj9UaXe4v7B/y9V3Pw/ku+TquhreliPWZGD1AqTh8xYZz3zCmi89F4u
+	bpBpxdpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1JuX-0000x9-0Y; Sat, 24 Aug 2019 00:28:05 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i1Jul-00017I-SO; Sat, 24 Aug 2019 00:28:20 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1JuM-0000wU-Nk
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 00:27:56 +0000
-Received: by mail-pg1-x544.google.com with SMTP id m3so6639668pgv.13
+ id 1i1JuR-0000yc-Ag
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 00:28:01 +0000
+Received: by mail-pf1-x444.google.com with SMTP id d85so7596260pfd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 23 Aug 2019 17:27:54 -0700 (PDT)
+ Fri, 23 Aug 2019 17:27:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4aDP2sxBH+DTF0SIc0YSQecsbsINEtcbFoqwgL4lwgo=;
- b=kRMv8aoArR05QyuJAV0pHnmHwOy7NURhHQwyCrpJUp+MqOx9q+yo62ThQgTKpT2Kox
- G9wS1+W5Ov+jNi1jdSVwiaPszp9qAUlL8qA2cErpDOCXPyH06o0hUaARLQ32nGx8e1hq
- eVJ/pmQ8v2ARVAqe1b9rl4ijys+cQ3C5Lmo+SsjSnc7tO6JzzG7J5OzIAjBQYgoF5Ds6
- tjqEBDEg21fsHLQTNFTU/N5EsLiZQEqH0H2rBNhV1+C8JUT2V4+EkrOv49COMhegLyWs
- YaZ+vM+/fk4HR7//YKWTRjQim6RPo5a9WWD7V8hPjuoHPX2tf7jLqhOZ9pnkwbzC1iVi
- 29fA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=9P29BImsxbIGtO7TEAe3tccPsN9iEcFuYCLBJBhx1Hs=;
+ b=vCTYYFfzcIV2nLrt6Q7ls+gVNEdWx1mXTVl8aPEwPo78kW+3k31dxHHtIbcdB9DHRG
+ NPL3jyjdn8+Lwtlb+y70v69xM5tfN2EAboh4iDS14AswONFZnB319bpInC3p4zmZMv9i
+ 3snrcg3dQ9V6MIohr/y8WAIlHEg31e9+WnMWXhsRLpIYftQ8y3btuJ3s1j9gAriU4hsE
+ 5YqMyJHMbl6l3fd18Y7EFUF3OP1DPIfPz7krK1WKXJmd4VFTcK9mJ14g0AFyevECChLV
+ MM+hk/2ZL+gNHnVvdTn/xiYbFKatl3vRL40HMWRspnUWJIUQQuX7hSBDMTW5K6Pl/Y2G
+ jm2g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4aDP2sxBH+DTF0SIc0YSQecsbsINEtcbFoqwgL4lwgo=;
- b=UDodncPgZd2k3kHVfwipQN0dOyiCInzkvChiQWKf/0mFPCfjB1J438M084hQi1hq4L
- 6DqlImUC51B/GcCuktMqOVeX2dBRbfhSv+A2Ml+r0pRhTodIrfNDhGLwWkwPZDlrw+OL
- 67yhBBNQCofojdYknwH0jBgKYqnhZ9tqXBV1m03s93E2Yhrsglkw66yhbJuMa5VtH2wz
- yr8m+qCcukD1hQFFOHHOVE7YLkFrpd2pwtjPrk4PLD6RIP/25JLbLcli5I2Ti0SOLucR
- 68kexXcULaNhsOcZjALqW7BALbHlSP6k+4ix/WwyXbWS/JoFfvrfSUqxHAIAHsFjwNvP
- 9YoQ==
-X-Gm-Message-State: APjAAAUiL43W0OxsbA7nme1tYaTjTLDr5uHmBGf7py2GfoT8LMz2Nr3A
- P4grSP2ZtSTn8FknDFvj2IgLAUyWplA=
-X-Google-Smtp-Source: APXvYqxHED+qBSwU9pUxCHsWXp/N6MoD+4BzaRj4J7K2JFacCcje8EPZATwu/yV8TrNs4dx8Zr8+mQ==
-X-Received: by 2002:a65:448a:: with SMTP id l10mr6098897pgq.327.1566606473580; 
- Fri, 23 Aug 2019 17:27:53 -0700 (PDT)
-Received: from localhost.lan (c-67-185-54-80.hsd1.wa.comcast.net.
- [67.185.54.80])
- by smtp.gmail.com with ESMTPSA id b13sm3471442pjz.10.2019.08.23.17.27.52
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=9P29BImsxbIGtO7TEAe3tccPsN9iEcFuYCLBJBhx1Hs=;
+ b=JDaU9DPt0tmEdFdwAjCafqSinF9+A8sGgLX612xWLXtOtxtff/Mq9yRzKfyciF4ENf
+ jjmHFXTjFaJud4vTfo6QKhmQz6NNcZTqdBML9DqYK9usQWVio2DcBrhN1N3MdmsL7kW+
+ V0DmFX4t0+O/N3Wk2ZSwN3JSKP8GDmkcuhUyKIVMQeS9fnkube1xvKH/O1LxpkmxLTdS
+ cmO8Fj414stmACU/peS7KVNtEPtzzqhdNJkgb0pI4Y2DsBix6Lt6PxGxbnMkle0nF1Is
+ YCRS2XRmjhYsgcCHHYu37hg82f5slCFQG0QyEKQVbM5xwC15AnK0e55DmUNCp24zSnQD
+ vN3A==
+X-Gm-Message-State: APjAAAWw5nNbSUNI93FhoTRPX32pesecPT/iG6HMQ+ORwbmiySNVsVwY
+ Y+svx9rjoxoRKolMM5LGwRtVOTLk
+X-Google-Smtp-Source: APXvYqxSRF+eXHrQZha0TeU4wEjJVBW5pXYxdvoo19OQyuNLhiG3Hai4ryqiDw8/9L72VPQ1/LW2kg==
+X-Received: by 2002:a63:c008:: with SMTP id h8mr6360376pgg.427.1566606477971; 
+ Fri, 23 Aug 2019 17:27:57 -0700 (PDT)
+Received: from majic.sklembedded.com (c-73-202-231-77.hsd1.ca.comcast.net.
+ [73.202.231.77])
+ by smtp.googlemail.com with ESMTPSA id n70sm3703018pjc.3.2019.08.23.17.27.56
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 23 Aug 2019 17:27:52 -0700 (PDT)
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] ARM: dts: vf610-zii-scu4-aib: Use generic names for DT nodes
-Date: Fri, 23 Aug 2019 17:27:47 -0700
-Message-Id: <20190824002747.14610-1-andrew.smirnov@gmail.com>
-X-Mailer: git-send-email 2.21.0
-MIME-Version: 1.0
+ Fri, 23 Aug 2019 17:27:57 -0700 (PDT)
+From: Steve Longerbeam <slongerbeam@gmail.com>
+To: linux-media@vger.kernel.org
+Subject: [PATCH 1/2] media: imx: Move capture device init to registered
+Date: Fri, 23 Aug 2019 17:27:49 -0700
+Message-Id: <20190824002750.5860-2-slongerbeam@gmail.com>
+X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190824002750.5860-1-slongerbeam@gmail.com>
+References: <20190824002750.5860-1-slongerbeam@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190823_172754_770929_EC58BB9E 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190823_172759_412001_8E8F90CC 
+X-CRM114-Status: GOOD (  18.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
+ provider (slongerbeam[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,135 +98,236 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Cory Tusar <cory.tusar@zii.aero>, Andrey Smirnov <andrew.smirnov@gmail.com>,
- Shawn Guo <shawnguo@kernel.org>, linux-kernel@vger.kernel.org,
- Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rui Miguel Silva <rmfrfs@gmail.com>,
+ NXP Linux Team <linux-imx@nxp.com>, Philipp Zabel <p.zabel@pengutronix.de>,
+ Steve Longerbeam <slongerbeam@gmail.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The devicetree specification recommends using generic node names.
+If the CSI is unregistered and then registered again without the
+driver being removed and re-probed (which will happen when the media
+device is removed and re-probed without also removing/re-probing the
+CSI), the result is the kobject error and backtrace "tried to init an
+initialized object". This is because the video device is left in an
+initialized state after being unregistered, thus the video device's
+underlying kobject is also left in an initialized state when the device
+is registered again.
 
-Some ZII dts files already follow such recommendation, but some don't,
-so use generic node names for consistency among the ZII dts files.
+Fix this by moving imx_media_capture_device_init() and _remove()
+into csi_registered() and csi_unregistered(). This will create a new
+un-initialized video device when the CSI is re-registered. Do this for
+all the subdevices that register a capture device.
 
-Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-Cc: Shawn Guo <shawnguo@kernel.org>
-Cc: Chris Healy <cphealy@gmail.com>
-Cc: Cory Tusar <cory.tusar@zii.aero>
-Cc: Fabio Estevam <festevam@gmail.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
+Reported-by: Russell King <linux@armlinux.org.uk>
+Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 ---
- arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
+ drivers/staging/media/imx/imx-ic-prpencvf.c | 24 ++++++++++++---------
+ drivers/staging/media/imx/imx-media-csi.c   | 20 ++++++++++-------
+ drivers/staging/media/imx/imx7-media-csi.c  | 22 +++++++++----------
+ 3 files changed, 37 insertions(+), 29 deletions(-)
 
-diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-index 45a978defbdc..6edd682dbd29 100644
---- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-+++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-@@ -417,7 +417,7 @@
- 	pinctrl-0 = <&pinctrl_dspi1>;
- 	status = "okay";
+diff --git a/drivers/staging/media/imx/imx-ic-prpencvf.c b/drivers/staging/media/imx/imx-ic-prpencvf.c
+index 67ffa46a8e96..301f5fce53c0 100644
+--- a/drivers/staging/media/imx/imx-ic-prpencvf.c
++++ b/drivers/staging/media/imx/imx-ic-prpencvf.c
+@@ -1271,17 +1271,26 @@ static int prp_registered(struct v4l2_subdev *sd)
+ 	if (ret)
+ 		return ret;
  
--	spi-flash@0 {
-+	flash@0 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		compatible = "jedec,spi-nor";
-@@ -430,7 +430,7 @@
- 		};
- 	};
++	priv->vdev = imx_media_capture_device_init(ic_priv->ipu_dev,
++						   &ic_priv->sd,
++						   PRPENCVF_SRC_PAD);
++	if (IS_ERR(priv->vdev))
++		return PTR_ERR(priv->vdev);
++
+ 	ret = imx_media_capture_device_register(priv->vdev);
+ 	if (ret)
+-		return ret;
++		goto remove_vdev;
  
--	spi-flash@1 {
-+	flash@1 {
- 		#address-cells = <1>;
- 		#size-cells = <1>;
- 		compatible = "jedec,spi-nor";
-@@ -519,7 +519,7 @@
- 		#gpio-cells = <2>;
- 	};
+ 	ret = prp_init_controls(priv);
+ 	if (ret)
+-		goto unreg;
++		goto unreg_vdev;
  
--	lm75@48 {
-+	temp-sensor@48 {
- 		compatible = "national,lm75";
- 		reg = <0x48>;
- 	};
-@@ -534,7 +534,7 @@
- 		reg = <0x52>;
- 	};
+ 	return 0;
+-unreg:
++
++unreg_vdev:
+ 	imx_media_capture_device_unregister(priv->vdev);
++remove_vdev:
++	imx_media_capture_device_remove(priv->vdev);
+ 	return ret;
+ }
  
--	ds1682@6b {
-+	elapsed-time-recorder@6b {
- 		compatible = "dallas,ds1682";
- 		reg = <0x6b>;
- 	};
-@@ -551,7 +551,7 @@
- 		reg = <0x38>;
- 	};
+@@ -1290,6 +1299,8 @@ static void prp_unregistered(struct v4l2_subdev *sd)
+ 	struct prp_priv *priv = sd_to_priv(sd);
  
--	adt7411@4a {
-+	adc@4a {
- 		compatible = "adi,adt7411";
- 		reg = <0x4a>;
- 	};
-@@ -563,7 +563,7 @@
- 	pinctrl-0 = <&pinctrl_i2c2>;
- 	status = "okay";
+ 	imx_media_capture_device_unregister(priv->vdev);
++	imx_media_capture_device_remove(priv->vdev);
++
+ 	v4l2_ctrl_handler_free(&priv->ctrl_hdlr);
+ }
  
--	gpio9: sx1503q@20 {
-+	gpio9: io-expander@20 {
- 		compatible = "semtech,sx1503q";
- 		pinctrl-names = "default";
- 		pinctrl-0 = <&pinctrl_sx1503_20>;
-@@ -574,12 +574,12 @@
- 		interrupts = <31 IRQ_TYPE_EDGE_FALLING>;
- 	};
+@@ -1336,12 +1347,6 @@ static int prp_init(struct imx_ic_priv *ic_priv)
+ 	spin_lock_init(&priv->irqlock);
+ 	timer_setup(&priv->eof_timeout_timer, prp_eof_timeout, 0);
  
--	lm75@4e {
-+	temp-sensor@4e {
- 		compatible = "national,lm75";
- 		reg = <0x4e>;
- 	};
+-	priv->vdev = imx_media_capture_device_init(ic_priv->ipu_dev,
+-						   &ic_priv->sd,
+-						   PRPENCVF_SRC_PAD);
+-	if (IS_ERR(priv->vdev))
+-		return PTR_ERR(priv->vdev);
+-
+ 	mutex_init(&priv->lock);
  
--	lm75@4f {
-+	temp-sensor@4f {
- 		compatible = "national,lm75";
- 		reg = <0x4f>;
- 	};
-@@ -591,17 +591,17 @@
- 		reg = <0x23>;
- 	};
+ 	return 0;
+@@ -1352,7 +1357,6 @@ static void prp_remove(struct imx_ic_priv *ic_priv)
+ 	struct prp_priv *priv = ic_priv->task_priv;
  
--	adt7411@4a {
-+	adc@4a {
- 		compatible = "adi,adt7411";
- 		reg = <0x4a>;
- 	};
+ 	mutex_destroy(&priv->lock);
+-	imx_media_capture_device_remove(priv->vdev);
+ }
  
--	at24c08@54 {
-+	eeprom@54 {
- 		compatible = "atmel,24c08";
- 		reg = <0x54>;
- 	};
+ struct imx_ic_ops imx_ic_prpencvf_ops = {
+diff --git a/drivers/staging/media/imx/imx-media-csi.c b/drivers/staging/media/imx/imx-media-csi.c
+index 367e39f5b382..b3f1cf08a102 100644
+--- a/drivers/staging/media/imx/imx-media-csi.c
++++ b/drivers/staging/media/imx/imx-media-csi.c
+@@ -1797,12 +1797,22 @@ static int csi_registered(struct v4l2_subdev *sd)
+ 	if (ret)
+ 		goto free_fim;
  
--	tca9548@70 {
-+	i2c-mux@70 {
- 		compatible = "nxp,pca9548";
- 		pinctrl-names = "default";
- 		#address-cells = <1>;
-@@ -639,7 +639,7 @@
- 		};
- 	};
++	priv->vdev = imx_media_capture_device_init(priv->sd.dev,
++						   &priv->sd,
++						   CSI_SRC_PAD_IDMAC);
++	if (IS_ERR(priv->vdev)) {
++		ret = PTR_ERR(priv->vdev);
++		goto free_fim;
++	}
++
+ 	ret = imx_media_capture_device_register(priv->vdev);
+ 	if (ret)
+-		goto free_fim;
++		goto remove_vdev;
  
--	tca9548@71 {
-+	i2c-mux@71 {
- 		compatible = "nxp,pca9548";
- 		pinctrl-names = "default";
- 		reg = <0x71>;
+ 	return 0;
+ 
++remove_vdev:
++	imx_media_capture_device_remove(priv->vdev);
+ free_fim:
+ 	if (priv->fim)
+ 		imx_media_fim_free(priv->fim);
+@@ -1816,6 +1826,7 @@ static void csi_unregistered(struct v4l2_subdev *sd)
+ 	struct csi_priv *priv = v4l2_get_subdevdata(sd);
+ 
+ 	imx_media_capture_device_unregister(priv->vdev);
++	imx_media_capture_device_remove(priv->vdev);
+ 
+ 	if (priv->fim)
+ 		imx_media_fim_free(priv->fim);
+@@ -1963,11 +1974,6 @@ static int imx_csi_probe(struct platform_device *pdev)
+ 	imx_media_grp_id_to_sd_name(priv->sd.name, sizeof(priv->sd.name),
+ 				    priv->sd.grp_id, ipu_get_num(priv->ipu));
+ 
+-	priv->vdev = imx_media_capture_device_init(priv->sd.dev, &priv->sd,
+-						   CSI_SRC_PAD_IDMAC);
+-	if (IS_ERR(priv->vdev))
+-		return PTR_ERR(priv->vdev);
+-
+ 	mutex_init(&priv->lock);
+ 
+ 	v4l2_ctrl_handler_init(&priv->ctrl_hdlr, 0);
+@@ -1997,7 +2003,6 @@ static int imx_csi_probe(struct platform_device *pdev)
+ free:
+ 	v4l2_ctrl_handler_free(&priv->ctrl_hdlr);
+ 	mutex_destroy(&priv->lock);
+-	imx_media_capture_device_remove(priv->vdev);
+ 	return ret;
+ }
+ 
+@@ -2008,7 +2013,6 @@ static int imx_csi_remove(struct platform_device *pdev)
+ 
+ 	v4l2_ctrl_handler_free(&priv->ctrl_hdlr);
+ 	mutex_destroy(&priv->lock);
+-	imx_media_capture_device_remove(priv->vdev);
+ 	v4l2_async_unregister_subdev(sd);
+ 	media_entity_cleanup(&sd->entity);
+ 
+diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+index 4ca79ff4c9b3..b61ab16a337a 100644
+--- a/drivers/staging/media/imx/imx7-media-csi.c
++++ b/drivers/staging/media/imx/imx7-media-csi.c
+@@ -1119,7 +1119,16 @@ static int imx7_csi_registered(struct v4l2_subdev *sd)
+ 	if (ret < 0)
+ 		return ret;
+ 
+-	return imx_media_capture_device_register(csi->vdev);
++	csi->vdev = imx_media_capture_device_init(csi->sd.dev, &csi->sd,
++						  IMX7_CSI_PAD_SRC);
++	if (IS_ERR(csi->vdev))
++		return PTR_ERR(csi->vdev);
++
++	ret = imx_media_capture_device_register(csi->vdev);
++	if (ret)
++		imx_media_capture_device_remove(csi->vdev);
++
++	return ret;
+ }
+ 
+ static void imx7_csi_unregistered(struct v4l2_subdev *sd)
+@@ -1127,6 +1136,7 @@ static void imx7_csi_unregistered(struct v4l2_subdev *sd)
+ 	struct imx7_csi *csi = v4l2_get_subdevdata(sd);
+ 
+ 	imx_media_capture_device_unregister(csi->vdev);
++	imx_media_capture_device_remove(csi->vdev);
+ }
+ 
+ static int imx7_csi_init_cfg(struct v4l2_subdev *sd,
+@@ -1253,11 +1263,6 @@ static int imx7_csi_probe(struct platform_device *pdev)
+ 	csi->sd.grp_id = IMX_MEDIA_GRP_ID_CSI;
+ 	snprintf(csi->sd.name, sizeof(csi->sd.name), "csi");
+ 
+-	csi->vdev = imx_media_capture_device_init(csi->sd.dev, &csi->sd,
+-						  IMX7_CSI_PAD_SRC);
+-	if (IS_ERR(csi->vdev))
+-		return PTR_ERR(csi->vdev);
+-
+ 	v4l2_ctrl_handler_init(&csi->ctrl_hdlr, 0);
+ 	csi->sd.ctrl_handler = &csi->ctrl_hdlr;
+ 
+@@ -1271,8 +1276,6 @@ static int imx7_csi_probe(struct platform_device *pdev)
+ 	return 0;
+ 
+ free:
+-	imx_media_capture_device_unregister(csi->vdev);
+-	imx_media_capture_device_remove(csi->vdev);
+ 	v4l2_ctrl_handler_free(&csi->ctrl_hdlr);
+ 
+ cleanup:
+@@ -1300,9 +1303,6 @@ static int imx7_csi_remove(struct platform_device *pdev)
+ 	v4l2_device_unregister(&imxmd->v4l2_dev);
+ 	media_device_cleanup(&imxmd->md);
+ 
+-	imx_media_capture_device_unregister(csi->vdev);
+-	imx_media_capture_device_remove(csi->vdev);
+-
+ 	v4l2_async_unregister_subdev(sd);
+ 	v4l2_ctrl_handler_free(&csi->ctrl_hdlr);
+ 
 -- 
-2.21.0
+2.17.1
 
 
 _______________________________________________
