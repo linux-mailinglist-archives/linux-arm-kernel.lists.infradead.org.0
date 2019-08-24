@@ -2,62 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCC7D9C0BB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 00:30:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 335F09C0BF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 00:32:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hfNIGYLM2XwHPLrwrqZildptyFslvR/VBHD6oIUehZ8=; b=F+caL414WakX0h
-	oaaHAubVT5Otf3WQRKX8OB5BPgkE8yyYnmeqtSx3E4glzOum10rYSwZfsq1hHkAjcxnumwtSgSM9u
-	M5ihrZBhwhMYUCKm5dHSJ7ZjFPOi6ZIzlBPa76qAWTQa5Ram9JZq21jszf6KjhEC9dSyCdPm4ym/p
-	AHHj6H4d/EwHKyiteGlL90aSnEA/HrqlGZO9yMhCTRhpAJpizAVXuYORXm9oqYgXyv1UV1/NdXbY5
-	5x1Hxy0LFc8+oVRqk+rJWxIkmTH3XgoPfSbopTVtuJ8EdSq28xtzLrWQyIqn08Z4r3vFlWYUkjgaG
-	gEl47PQLaiCtOqMc17hQ==;
+	List-Owner; bh=H6Vz8XmTrdl2l/t+Ooxhy/SzuWUKb2BoP0auhcSS7MY=; b=o1PEve4Tg6k1FN
+	2W6Vjn5HFDlGFdZG4ENWWRFTE8sJHjNhC2Jg74exjC84YxBmroYOMVSgiyDzB7jx2G9pjvNL4ajTe
+	TwYs9qLRRTUsOjBLj/KrE2Hf8Yy0P+RxkrSSURdns+tmNCJdxtlds63rnWXMsrcIcO8waTvBPFkNR
+	Av6+jg1qYHb5a7rE26YB+1r8fM2z39ITclfE3U+/SdQfI8X0OK119CmI5vUWOLm4L5DfIoYtTGy0F
+	r6YDp7YYFVZKMn5wD+KcnqnO6/AeU4OwJistrGhUYM9j2BTvi732/d80Pt7XP/9XnWfrwRYJnCXMW
+	J+GXfmYft/Y+5rYsJR/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1eYS-0008EL-BN; Sat, 24 Aug 2019 22:30:40 +0000
+	id 1i1eZn-0000mg-UZ; Sat, 24 Aug 2019 22:32:04 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1eXj-0007eV-B6; Sat, 24 Aug 2019 22:29:58 +0000
+ id 1i1eZY-0000lQ-An; Sat, 24 Aug 2019 22:31:49 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
- Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
- Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=KgLGmqz/luWIy9zKj3FDN98xWu56ty660JouMxtEr68=; b=Lwxe6oqB/J9UPt424/kBrbn6f
- SKDIiSicjpF8GzMD6CyBoa8Z23ad8kLubvU8o8Va6gLlwjLwLg32z9xoVeF2qgML4y4pmfkcKSHlY
- uxPbCmKhzMwkiEQDbsroSju3YhkIbI+4vlZ09xw14duzOah/tq98unBJNCVkH+r4//SpZmZgZZRHx
- tmAo4/1SxpqWafF0U87szm5FubgzEboKB0AAli2Uq965QUgWawiJFPIYCYYfKOX8uPjKfsgn1E4BT
- II7R/U0IAKpRdKG5ELlc6ruS6h7FQ05BizbINS5UfZSmX/gJPZ0IoHvbA6dCqu3npqszxny9K6OAm
- sK0R50Esg==;
+ bh=0P9kq7rO9q6BZvVdrWv6/VLTzkv+c7sSgMh3X9sSgj4=; b=WurvjCu2wGq2loRlkOquX6nOV
+ zdbMPRjNKc8M08ZT4mP9gXJewORGnh+wClTJsI0T3ZIKdOf1kwTh/M33iM3GuCmqv8UObI5DXd8i6
+ pMoJRc7+NIQ0zz9wg9Vc3UFEXqRnsptRhqAuKyPr0beR7ue1hbYKqLtfX3zDv6ElvdUyDqSRWaXzC
+ vSzgaFACTkfh8dSaMU77IjBEuKBONLgt5qlJkbnYIvm8pLX/lzdI28KyQ2eOSRANlzJrX6nrMDckT
+ /IqRPFjoX6gEtjRMMLQmLijk8mBKXPkt291LOuMn1srN6iGr+eFAkKAhq7/kIH8ObQ1UlT5QzZs9g
+ URd1ylAtA==;
 Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:54162)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:54164)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1i1eXS-0005VI-Kg; Sat, 24 Aug 2019 23:29:38 +0100
+ id 1i1eZM-0005W5-D1; Sat, 24 Aug 2019 23:31:36 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i1eXP-0002yX-7f; Sat, 24 Aug 2019 23:29:35 +0100
-Date: Sat, 24 Aug 2019 23:29:35 +0100
+ id 1i1eZK-0002yi-27; Sat, 24 Aug 2019 23:31:34 +0100
+Date: Sat, 24 Aug 2019 23:31:34 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: =?iso-8859-1?Q?Ren=E9?= van Dorst <opensource@vdorst.com>
+To: Andrew Lunn <andrew@lunn.ch>
 Subject: Re: [PATCH net-next v2 0/3] net: dsa: mt7530: Convert to PHYLINK and
  add support for port 5
-Message-ID: <20190824222935.GG13294@shell.armlinux.org.uk>
+Message-ID: <20190824223133.GH13294@shell.armlinux.org.uk>
 References: <20190821144547.15113-1-opensource@vdorst.com>
+ <20190822.162047.1140525762795777800.davem@davemloft.net>
+ <20190823010928.GK13020@lunn.ch>
+ <20190824.141803.1656753287804303137.davem@davemloft.net>
+ <20190824221519.GF8251@lunn.ch>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190821144547.15113-1-opensource@vdorst.com>
+In-Reply-To: <20190824221519.GF8251@lunn.ch>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_152955_392993_17B9B205 
-X-CRM114-Status: GOOD (  11.96  )
+X-CRM114-CacheID: sfid-20190824_153148_382171_240B5F9C 
+X-CRM114-Status: GOOD (  12.89  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -86,63 +90,44 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Lunn <andrew@lunn.ch>, Florian Fainelli <f.fainelli@gmail.com>,
- Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-mips@vger.kernel.org,
- "David S . Miller" <davem@davemloft.net>, linux-mediatek@lists.infradead.org,
- John Crispin <john@phrozen.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Vivien Didelot <vivien.didelot@gmail.com>,
+Cc: f.fainelli@gmail.com, frank-w@public-files.de, netdev@vger.kernel.org,
+ sean.wang@mediatek.com, linux-mips@vger.kernel.org, vivien.didelot@gmail.com,
+ opensource@vdorst.com, linux-mediatek@lists.infradead.org, john@phrozen.org,
+ matthias.bgg@gmail.com, David Miller <davem@davemloft.net>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 04:45:44PM +0200, Ren=E9 van Dorst wrote:
-> 1. net: dsa: mt7530: Convert to PHYLINK API
->    This patch converts mt7530 to PHYLINK API.
-> 2. dt-bindings: net: dsa: mt7530: Add support for port 5
-> 3. net: dsa: mt7530: Add support for port 5
->    These 2 patches adding support for port 5 of the switch.
-> =
+On Sun, Aug 25, 2019 at 12:15:19AM +0200, Andrew Lunn wrote:
+> 65;5402;1cOn Sat, Aug 24, 2019 at 02:18:03PM -0700, David Miller wrote:
+> > From: Andrew Lunn <andrew@lunn.ch>
+> > Date: Fri, 23 Aug 2019 03:09:28 +0200
+> > 
+> > > That would be Russell.
+> > > 
+> > > We should try to improve MAINTAINER so that Russell King gets picked
+> > > by the get_maintainer script.
+> > 
+> > Shoule he be added to the mt7530 entry?
+> 
+> Hi David
+> 
+> No. I think we need a phylink entry. And then make use of the K: line
+> format to list keywords. I hope that even though changes like this
+> don't touch any files listed as being part of phylink, they will match
+> the keyword and pickup Russell.
 
-> v1->v2:
->  * Mostly phylink improvements after review.
-> rfc -> v1:
->  * Mostly phylink improvements after review.
->  * Drop phy isolation patches. Adds no value for now.
-> Ren=E9 van Dorst (3):
->   net: dsa: mt7530: Convert to PHYLINK API
->   dt-bindings: net: dsa: mt7530: Add support for port 5
->   net: dsa: mt7530: Add support for port 5
-> =
+Note that phylink itself is already covered by
 
->  .../devicetree/bindings/net/dsa/mt7530.txt    | 218 ++++++++++
->  drivers/net/dsa/mt7530.c                      | 371 +++++++++++++++---
->  drivers/net/dsa/mt7530.h                      |  61 ++-
->  3 files changed, 577 insertions(+), 73 deletions(-)
+"SFF/SFP/SFP+ MODULE SUPPORT"
 
-Having looked through this set of patches, I don't see anything
-from the phylink point of view that concerns me.  So, for the
-series from the phylink perspective:
+but doesn't pick up on keywords.
 
-Acked-by: Russell King <rmk+kernel@armlinux.org.uk>
-
-Thanks.
-
-I did notice a dev_info() in patch 3 that you may like to consider
-whether they should be printed at info level or debug level.  You
-may keep my ack on the patch when fixing that.
-
-I haven't considered whether the patch passes davem's style
-requirements for networking code; what I spotted did look like
-the declarations were upside-down christmas tree.
-
--- =
-
+-- 
 RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps =
-up
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
 According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
