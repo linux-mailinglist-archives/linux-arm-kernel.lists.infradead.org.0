@@ -2,67 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 654729C076
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 23:29:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9216F9C07C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 23:35:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y2K0uXKuBDG+dlyvtvC9Apt4Uf1ydPCfWmidK2wNHiQ=; b=WvbODLsDq0Bg84
-	nRpRKc58jyFJWKmcHvwuYcpi/7KGxOs1DRwl6gYNYLYLsDBcFNkTB67aLF2OYvUxcjdsyu5XEdVaa
-	veVzoruxz73s0eiACgEo0oujaIZlK49TBuQfoFERe4MYe8uWuHI6s4YsBTqDYI3dA1zMlOoJwAYCq
-	UwIYCM486hEbk1HkVugMCPcRh1iUdTC8LUqmphYRkOOVmSSFwRE+hPMZKzQObv/bCYTdbayNRUu6p
-	UEL5U//kREemcwMP+cOxtguVhc285jagV5CRBVWio//cxyQ9RfN4v5rVnLqBXp7o9xGQa9Y034G4h
-	Z3hRThthWQWhggjaxYpg==;
+	List-Owner; bh=jOLFzI4boLwKyG1tUrQCjoP/IhSprMwDENelIpBhNVo=; b=bB9EbGonzFD99y
+	npNX6av9zv8Aoh4hrPXJ/+RnekEPoZgcJtbsfKaYMyYSxuNPqPsYivz5+CwGQo1AINoGFDgpRZlSh
+	8U+DPhmQ++o3zRIUZGiLFHctLBLRgW24RVpzfvN3Zh4gXSNgjkm2+IG2UlPK4cBd25R4+k0IJuJF4
+	T37f/dEZJnlg3hP0D//YhA1LLWu6K2mMJs106dHxoBF+A97rDjAVS4vgl9Dd19N7M7laa2jDp6O8u
+	3uhBAtDIzpWMrCYx10lUIZXdGMn+VrPkYLftrtOgBTqKheb0R2ulxUcZZVb9Y/I5RPLFS1Q9U8z7h
+	xwaL5q7l8CLXkrRk3PSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1dbL-0004EN-76; Sat, 24 Aug 2019 21:29:35 +0000
+	id 1i1dgb-0005w2-1a; Sat, 24 Aug 2019 21:35:01 +0000
 Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1db4-0004DZ-6O; Sat, 24 Aug 2019 21:29:19 +0000
-Received: by mail-ot1-x342.google.com with SMTP id 100so1121924otn.2;
- Sat, 24 Aug 2019 14:29:17 -0700 (PDT)
+ id 1i1dgJ-0005uH-0P; Sat, 24 Aug 2019 21:34:44 +0000
+Received: by mail-ot1-x342.google.com with SMTP id k18so11939129otr.3;
+ Sat, 24 Aug 2019 14:34:42 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=NeHDDT5xeUM288NKVamfGsJVmVu1XwAAe3AxKH60utQ=;
- b=Ly3Kf0VwR9LsyZVVa+EOsomX2wAFjqIU390PXXa0DK62nLZ7VpXD9zwowzBPiCUpsU
- 7vOQLVMMyyTzHyZrdA/epH1UICSqFzTgv6nLgchp/hjQceNFxDd5l4ctmjrFmwEIrWAq
- 5PO2uzSBkIyWPsTzqgmxQKtOaWSasqLiHv4jOIKop84uYrOd/9JSIjQjFCYwiOsFu7eQ
- GG8eqns023jFpz+s1KEungiE53ci+4RT9Ze94r7A3fsaO2lIXr1ev1hUaYLzO30do51e
- vg3UcQc/KEZttKjF53nZpt+yHC5s0sSctlG3CTsj0J3WP1S4++a5z36kxS2aEM8hOOak
- ASNA==
+ :cc; bh=savXqhs2uu2xmuEzviZKveXuAb0IFd9jFNiOauijyzY=;
+ b=Vez0S7pajWL6j3W9sv4ihT78Hv+L6CgTLaiEDc5PAUpRTdYrjtsii6vHCQ+sYoTaek
+ VZ5TAQS0Gw14OskOgIRMxa9+9ZKvg094k/y2nwTFwScfsMWsYqM68sGFikZKnhSZzLBO
+ L9S5ogu6GksQtl4Lv1Im6wSDHtUsB4GWzwy9PSF/Risf/g+Oh4hXbkwrbrwBytwfYz1Q
+ qqsdNJNxDGej0xlOD0r7b749a+nS6RY0WA+MqVwH4PeCfoqn99n/QFvgkUPsRv6VGiiA
+ 4wwX21xVn5rlCJUtfGO+KBjb1eVtpuKQ8eAZ6a5BGLeKfSLG2hB7gUn9FgchTEya9YUa
+ PJug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=NeHDDT5xeUM288NKVamfGsJVmVu1XwAAe3AxKH60utQ=;
- b=HfZUmtJEXeFHiwfeMNrqsvbjR/TkiZi3LhpU5UZk7DLVa8mfHQzuV10NyZbGFpkdtQ
- oJI7bAJKZD/925Cnpg4yqpXvZwPEXUd/uTcBhPeMltYf5iWq/IlPfI8F8gy0Pk+kyo1q
- BYf3hNoxedtms74v6y7cAVQolXFaA2ILo8Dp6qFtz7l3xzZXSueYvQGW1WQInK+Q3jxX
- i0VsJfc4vDnWDUMgZF4HqjJ3PTVnooRM7yvAC4LmMI4/fwrG72jSF/FqNTS0WKP07/6X
- CHDBXrcUcEDzSjgCI4pZIJ+qMvl51+G1qdtykWxYtsHc6MZuEI3w+mmx+UZR7ctqwMib
- Q5cQ==
-X-Gm-Message-State: APjAAAUXOw8rROkAQryf7JpPkiP8EKyzZMwR/+Zh2nuGUOQKwtm6NSXi
- PQSxLjFmNnXgG44OVhWIUgGhHCrGcU8paHCnI/k=
-X-Google-Smtp-Source: APXvYqwZ4LtTbx1t2uEJ3OH/npfUf1S1SQtV0TTY+uuc+2k/bBVJu0K2vv4Zrs3bIWzAMsVuhirsdW09fdbogEOTKAg=
-X-Received: by 2002:a9d:1d5:: with SMTP id e79mr9347623ote.98.1566682156724;
- Sat, 24 Aug 2019 14:29:16 -0700 (PDT)
+ bh=savXqhs2uu2xmuEzviZKveXuAb0IFd9jFNiOauijyzY=;
+ b=tw/+CtjLnMs0Ht9Xk4VHIPa9LfrRuggWl15bbQ9wXU6d3OlgKNcq0kdM0I3hKUT8yv
+ s5Uqgxe9Iq74Mwq4TFgteQHqSCQxQCz/SEF+nT6B5cyVmyHpKCTsSLCy0MLMef0bWbJk
+ ynRNuCN34AS6fK5ubGsIG4J+c8pJ6AeLXYc2pRpgzwCrnE1DAryGCKRGRZ0cLorCkYY+
+ YWBfCRr0eK3EyR3ry6AcbG8RGHWmBh2QpF0UA7i7PaMJPXMxUscAFUTvxsI/HFyNTyU1
+ 5iSJB3vsnJj7atB/GPSPHL2rgzuq5nsNuokt6thqdVRQ8cQp7HMtN/zkPdXwWYyg7fTX
+ cwmA==
+X-Gm-Message-State: APjAAAVSDTib1kmWqrUy2XRjp+9YkQlJhMfNWg56ATehXXh8jw6mhuXl
+ MT92KGKpfEpyHEQiqO7w18uPlvFOvZ6RSmKt3Vo=
+X-Google-Smtp-Source: APXvYqz17aHOJPKFNLYxMYsQ/6MafCK5GmP9whUj0nEYsJX1zTyXwxzYqW+ciohIN2Uw7AQ+s8+mxRV7kvLWXdUsfpY=
+X-Received: by 2002:a9d:7b44:: with SMTP id f4mr928724oto.42.1566682482002;
+ Sat, 24 Aug 2019 14:34:42 -0700 (PDT)
 MIME-Version: 1.0
-References: <1566633850-9421-1-git-send-email-christianshewitt@gmail.com>
- <1566633850-9421-4-git-send-email-christianshewitt@gmail.com>
-In-Reply-To: <1566633850-9421-4-git-send-email-christianshewitt@gmail.com>
+References: <20190708173330.13217-1-martin.blumenstingl@googlemail.com>
+ <20190708173330.13217-3-martin.blumenstingl@googlemail.com>
+ <CAPDyKFoFQ_QvHD-+Mg_VAR5rqs3CM_h7dw25p81JTzE1Yz7d1A@mail.gmail.com>
+In-Reply-To: <CAPDyKFoFQ_QvHD-+Mg_VAR5rqs3CM_h7dw25p81JTzE1Yz7d1A@mail.gmail.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 24 Aug 2019 23:29:05 +0200
-Message-ID: <CAFBinCC-ncHtni9-Ve1_eQROTrJg0WPkA_rOi1We7T-uSOyYHg@mail.gmail.com>
-Subject: Re: [PATCH v2,
- 3/3] arm64: dts: meson-g12b-ugoos-am6: add initial device-tree
-To: Christian Hewitt <christianshewitt@gmail.com>
+Date: Sat, 24 Aug 2019 23:34:31 +0200
+Message-ID: <CAFBinCBOhKezUQMJb4eRHTbzXOhucxuAJydDe4H5JyRFgOxS-w@mail.gmail.com>
+Subject: Re: [PATCH RFC v1 2/2] mmc: host: meson-mx-sdhc: new driver for the
+ Amlogic Meson SDHC host
+To: Ulf Hansson <ulf.hansson@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_142918_257351_A4F56188 
-X-CRM114-Status: GOOD (  10.61  )
+X-CRM114-CacheID: sfid-20190824_143443_077289_410A3E50 
+X-CRM114-Status: GOOD (  19.97  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -93,82 +94,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Oleg Ivanov <balbes-150@yandex.ru>, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ jianxin.pan@amlogic.com,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>,
+ "open list:ARM/Amlogic Meson..." <linux-amlogic@lists.infradead.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christian,
+Hi Ulf,
 
-On Sat, Aug 24, 2019 at 10:06 AM Christian Hewitt
-<christianshewitt@gmail.com> wrote:
+On Thu, Aug 22, 2019 at 3:53 PM Ulf Hansson <ulf.hansson@linaro.org> wrote:
 >
-> The Ugoos AM6 is based on the Amlogic W400 (G12B) reference design using the
-> S922X chipset. Hardware specifications:
+> On Mon, 8 Jul 2019 at 19:33, Martin Blumenstingl
+> <martin.blumenstingl@googlemail.com> wrote:
+> >
+> > WiP - only partially working - see performance numbers.
+> >
+> > Odroid-C1 eMMC (HS-200):
+> > Amlogic's vendor driver @ Linux 3.10:
+> >   7781351936 bytes (7.8 GB) copied, 134.714 s, 57.8 MB/s
+> > This driver:
+> >   7781351936 bytes (7.8 GB, 7.2 GiB) copied, 189.02 s, 41.2 MB/s
+> >
+> > EC-100 eMMC (HS MMC):
+> > Amlogic's vendor driver @ Linux 3.10:
+> >   15762194432 bytes (16 GB) copied, 422.967 s, 37.3 MB/s
+> > This driver:
+> >   15762194432 bytes (16 GB, 15 GiB) copied, 9232.65 s, 1.7 MB/s
+> >
+> > 1) Amlogic's vendor driver does some magic with the divider:
+> >       clk_div = input_rate / clk_ios - !(input_rate%clk_ios);
+> >       if (!(clk_div & 0x01)) // if even number, turn it to an odd one
+> >          clk_div++;
+> >    It's not clear to me whether what the reason behind this is, what is
+> >    supposed to be achieved with this?
+> >
+> > 2) The hardcoded RX clock phases are taken from the vendor driver. It
+> >    seems that these are only valid when fclk_div3 is used as input
+> >    clock (however, there are four more inputs). It's not clear to me how
+> >    to calculate the RX clock phases in set_ios based on the input clock
+> >    and the ios rate.
+> >
+> > 3) The hardware supports a timeout IRQ but the max_busy_timeout is not
+> >    documented anywhere.
+> >
+> > Signed-off-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 >
-> - 2GB LPDDR4 RAM
-> - 16GB eMMC storage
-> - 10/100/1000 Base-T Ethernet using External RGMII PHY
-> - 802.11 a/b/g/b/ac + BT 5.0 sdio wireless (Ampak 6398S)
-> - HDMI 2.0 (4k@60p) video
-> - Composite video + 2-channel audio output on 3.5mm jack
-> - S/PDIF audio output
-> - Aux input
-> - 1x USB 3.0
-> - 3x USB 2.0
-> - 1x micro SD card slot
->
-> The device-tree is laregly based on meson-g12b-odroid-n2 but with audio
-typo -> largely
+> Martin, overall this looks good to me. Once you moved from RFC to a
+> formal patch I will check again, of course.
+OK, great
 
-[...]
-> +       tflash_vdd: regulator-tflash_vdd {
-> +               compatible = "regulator-fixed";
-> +
-> +               regulator-name = "TFLASH_VDD";
-> +               regulator-min-microvolt = <3300000>;
-> +               regulator-max-microvolt = <3300000>;
-> +
-> +               gpio = <&gpio_ao GPIOAO_8 GPIO_ACTIVE_HIGH>;
-> +               enable-active-high;
-do we need regulator-always-on here as well, see [0]?
+in the meantime I got answers to my questions (off-list) from Jianxin.
 
-[...]
-> +       usb_pwr_en: regulator-usb_pwr_en {
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "USB_PWR_EN";
-> +               regulator-min-microvolt = <5000000>;
-> +               regulator-max-microvolt = <5000000>;
-> +               vin-supply = <&vcc_5v>;
-> +
-> +               /* Connected to the microUSB port power enable */
-> +               gpio = <&gpio GPIOH_6 GPIO_ACTIVE_HIGH>;
-> +               enable-active-high;
-> +       };
-the photos I found don't show a micro USB port (but 3x USB A 2.0 and
-1x USB A 3.0 - just like you mentioned in the patch description)
-does this regulator exist?
+also someone asked me (just this week) for the .dts patches so he
+could test on his own board (I have them ready but didn't send them
+yet)
+unfortunately he ran into some data corruption on writing
+I can reproduce it but I didn't have time to debug this yet
 
-[...]
-> +&ethmac {
-> +       pinctrl-0 = <&eth_pins>, <&eth_rgmii_pins>;
-> +       pinctrl-names = "default";
-> +       status = "okay";
-> +       phy-mode = "rgmii";
-> +       phy-handle = <&external_phy>;
-> +       amlogic,tx-delay-ns = <2>;
-> +};
-is the PHY reset GPIO not wired to GPIOZ_15 like on Odroid-N2 and X96 Max?
+I'll send an updated version once I have resolved that - as non-RFC
+
+> There are a couple of calls to readl_poll_timeout(), for different
+> reasons, that I have some questions about, but we can discuss those in
+> the next step.
+sure.
+feel free to ask now since I still have to debug that data corruption
+problem as stated above
 
 
 Martin
-
-
-[0] https://git.kernel.org/pub/scm/linux/kernel/git/next/linux-next.git/commit/arch/arm64/boot/dts/amlogic/meson-g12b-odroid-n2.dts?id=dc7f2cb218b5ef65ab3d455a0e62d27e44075203
 
 _______________________________________________
 linux-arm-kernel mailing list
