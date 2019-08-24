@@ -2,62 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81B179BF42
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:23:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FC709BF44
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:31:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eXUJqFxvFvnHIEHFtPkebaenCtCxQBfSISeWvSDLjqg=; b=ZPfvxLjMl7s0sT
-	EUPAC2t8Ho+O+4uuF8074Lz7st5RrxoheSMt2k251NSt5CGPwh4xIpVc2l2rzUXh6uOZAGhw+HpEA
-	MgbTwH3J2tpw9Vc7cF6Gj20GazOBy2HiZzy4heWgLlYV3PTo8sFIu9pWE7oFE3XgzV6Dve1sUBkUG
-	wnIKH3Uq5oXVgtJwdvG+1MAUzT+1ftEkRGJZMi75wqxEmAhGrWpknneyRVDh/he7pAlAANYJ/Ozo5
-	I986uuOqVM21CV3HMNk0/h05WKwIr8i/+QuNuWtRzKILH4jAUKhSWpt4XJkqY/oTvCdR0JDL/ogNi
-	tNJGdd7h6eEmesXIo+5Q==;
+	List-Owner; bh=GLsmPZnqGqzsUeUkF4ViWEMO+HBT/nbIR+0U1QIY9F8=; b=slddJA8Rg6lZc+
+	W5xu57xdENu8iMlMoe0L7R+1fdO2trnF/Np6S0It32EzBksbaEYQ5RU4U+gM0lduJYy5lQRTbTW9Z
+	rF0LDJOiLzayn3D7u2eleTsXCasZtJH48KfeXa/mo4VkOJP0/VLRFQ1isjOinz7xQJpBK/T2TiRLT
+	0upe73ZXRKqqaNCDOWsDIFEDimIGOMn/OADRBYEv9a0uaN6aidKQv2eCYbJVyFPKml8qRdsqgrxW0
+	yG5TDYknugs3EhW/ROSg9HoL07qegbuz5fes5cM+Q3r4sOrXfJRtvMv9mISSfNnzGOSDqIdYV61Co
+	wY5nveAuZaLhpTDsMqlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1agz-0005Gr-BP; Sat, 24 Aug 2019 18:23:13 +0000
+	id 1i1ap9-00087f-0s; Sat, 24 Aug 2019 18:31:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1agk-0005GZ-4t
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:22:59 +0000
-Received: from mail-yb1-f175.google.com (mail-yb1-f175.google.com
- [209.85.219.175])
+ id 1i1aos-00087L-Hg
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:31:23 +0000
+Received: from X250 (cm-84.211.118.175.getinternet.no [84.211.118.175])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4591E22CE9
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 24 Aug 2019 18:22:57 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9E42B21897;
+ Sat, 24 Aug 2019 18:31:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566670977;
- bh=wwn25KAtlhTVxUgyGHWFSw8XC0EUfcLAQ3jg1KljjlI=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=LKTcsNkvPNCSKUIZC0u3jRO2pc4WgqFHrfUPdBW0QAFFJp0l225WURQDltf19B32Q
- xkNmanmdoK64D6CIqSMpghEpuJ+dkfBoE8voNMLtaZ7B2wamJN0dy/GcAW8Lyf1A+n
- b3DSsG9QO/n12nUT5H1TgcQ2kPw9+/xCeo4GYsbs=
-Received: by mail-yb1-f175.google.com with SMTP id z2so2091717ybp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 24 Aug 2019 11:22:57 -0700 (PDT)
-X-Gm-Message-State: APjAAAUEfLG+REuhP4EDJdp5nX5dLy7cG8sr08Rmx2CS5sFP+q3ll0+q
- zjylCD/JK9xzf1Uo5l4OhJ1OCR7693LxBaBlziI=
-X-Google-Smtp-Source: APXvYqxjxYuDkT7G2sfsbtYdGdTut3HUbxdvhgcLlUhp9PLXvtGkuWRbFcM9/bJA4qrQOyr2eHTzdHwpbuoGt5FhJzE=
-X-Received: by 2002:a25:587:: with SMTP id 129mr8070270ybf.121.1566670976521; 
- Sat, 24 Aug 2019 11:22:56 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190822213503.14726-1-alexandre.belloni@bootlin.com>
-In-Reply-To: <20190822213503.14726-1-alexandre.belloni@bootlin.com>
+ s=default; t=1566671481;
+ bh=DmSHzsJoUz62nz9KFHCqYK6dgiAFue8c2ZDdH9pdfK8=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=M2QXTWCICjZPv5ZEEjocTVjyM1eAuZZ3ftM80JvvuhT4NKVpk5Jg22a5w8p1+0DDh
+ JOznZRvPQ6/xi4yZUjy/WzTPwV1ALtOQP+3r75xC7IncNppOtnZ5fdQL+xtpea0Sz1
+ ZdMtyV0YApmDfm/u7EXdgNGBZkX1LECVOlTh6iUQ=
+Date: Sat, 24 Aug 2019 20:31:09 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-Date: Sat, 24 Aug 2019 20:22:39 +0200
-X-Gmail-Original-Message-ID: <CAJBJ56JQ1P9zpT6EadPgAxrauSS3fp8TqYmv=VkVvUvD1fLirg@mail.gmail.com>
-Message-ID: <CAJBJ56JQ1P9zpT6EadPgAxrauSS3fp8TqYmv=VkVvUvD1fLirg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: pbab01: correct rtc vendor
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Leonard Crestez <leonard.crestez@nxp.com>
+Subject: Re: [PATCH] ARM: imx: Drop imx_anatop_init()
+Message-ID: <20190824183108.GA14936@X250>
+References: <20190731180131.8597-1-andrew.smirnov@gmail.com>
+ <VI1PR04MB7023AE3910B261877892EEABEEA50@VI1PR04MB7023.eurprd04.prod.outlook.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <VI1PR04MB7023AE3910B261877892EEABEEA50@VI1PR04MB7023.eurprd04.prod.outlook.com>
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_112258_213019_76DDB320 
-X-CRM114-Status: UNSURE (   9.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190824_113122_608822_CD447072 
+X-CRM114-Status: GOOD (  12.20  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,26 +77,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawn.guo@linaro.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Peter Chen <peter.chen@nxp.com>,
+ Andrey Smirnov <andrew.smirnov@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>, Chris Healy <cphealy@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 11:35 PM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
->
-> The rtc8564 is made by Epson but is similar to the NXP pcf8563. Use the
-> correct vendor name.
->
-> Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
+On Thu, Aug 22, 2019 at 05:33:13PM +0000, Leonard Crestez wrote:
+> On 31.07.2019 21:01, Andrey Smirnov wrote:
+> > With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
+> > detect in mxs_phy_hw_init()") in tree all of the necessary charger
+> > setup is done by the USB PHY driver which covers all of the affected
+> > i.MX6 SoCs.
+> > 
+> > NOTE: Imx_anatop_init() was also called for i.MX7D, but looking at its
+> > datasheet it appears to have a different USB PHY IP block, so
+> > executing i.MX6 charger disable configuration seems unnecessary.
+> > 
+> > -void __init imx_anatop_init(void)
+> > -{
+> > -	anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
+> > -	if (IS_ERR(anatop)) {
+> > -		pr_err("%s: failed to find imx6q-anatop regmap!\n", __func__);
+> > -		return;
+> > -	}
+> 
+> This patch breaks suspend on imx6 in linux-next because the "anatop" 
+> regmap is no longer initialized. This was found via bisect but 
+> no_console_suspend prints a helpful stack anyway:
+> 
+> (regmap_read) from [<c01226e4>] (imx_anatop_enable_weak2p5+0x28/0x70)
+> (imx_anatop_enable_weak2p5) from [<c0122744>] 
+> (imx_anatop_pre_suspend+0x18/0x64)
+> (imx_anatop_pre_suspend) from [<c0124434>] (imx6q_pm_enter+0x60/0x16c)
+> (imx6q_pm_enter) from [<c018c8a4>] (suspend_devices_and_enter+0x7d4/0xcbc)
+> (suspend_devices_and_enter) from [<c018d544>] (pm_suspend+0x7b8/0x904)
+> (pm_suspend) from [<c018b1b4>] (state_store+0x68/0xc8)
 
-Please use my kernel.org mailbox <shawnguo@kernel.org> for future patches.
+I dropped it from my branch for now.  Thanks for reporting!
 
-Applied, thanks.
+Shawn
 
 _______________________________________________
 linux-arm-kernel mailing list
