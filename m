@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 30E199BCAE
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 11:12:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBF179BCB7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 11:22:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ptx41a7Z5q+xiJ5CV95vcODc/l4rDrAdGTwooGAl5uk=; b=FvfSoRC+kPuHly
-	zShLTWk7f8zgXZ+O5AALyxtE6bFIOUjX31XVQEZcyko/XcuTO71wWUxSeq+9+QZK3g4N+hCMr1CRm
-	Vn0cS4RYHWWtR3phxi33w8APJt7hKgO73PPikjZmQWK7Uj8VN5kZVhrQzzV+iP7bOM71kbfm5oGEQ
-	80D4CKjiIeyU4b4P+1x0jQAafi09qEqjMs+DHLVgkPSvilAcaOjVcn2yz2cAHDV+HyIJ6U7EIdy6D
-	0gK9XmPI/C53eorOlnjZv3dYA8vWonH5uUXQiUdQMoardlOODa46CJiNFGS9GasJOB64PR/vWJgkz
-	t2nuxeYlOxhBBFCl5Kyw==;
+	List-Owner; bh=vdXzxMMAAiILCMxtPmmhu1k+q2gB8zzHlB3Tbc1pKcg=; b=c3Sd9535dW/R2O
+	Fd0x9wUxvvojt0xzTzWreZxuzgDTv5W3tE2/QjGD5+gS3BNsOKc5xV4fTY2NXAuZfIx8g4p2+JwaN
+	KwM1lXH1AGDmTcPLqvvTlUKqHQJp57FbjG8jnzxu1T2rDZPzHwZYgIx1PeyvhiJejIowgbm3PlTWO
+	hiAuSzve+PHv4YiAFFaXuu+Rwa+mkan8URNKrozb8CXHI/8Ji0zwfj0Z8Q7uNfnsFBWZJQ9GMfb57
+	37QfqURxBMV0D1kOyV6ox1qFXFtiiF9LNVybrH2UvtF6G/py4vX+SJ6PKnJX+mPZ7A/931zJ4tUCo
+	l9AUSSRV5W5yGl6Aunaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1S5a-0005ed-QN; Sat, 24 Aug 2019 09:12:03 +0000
+	id 1i1SFd-0000El-Gd; Sat, 24 Aug 2019 09:22:25 +0000
 Received: from pandora.armlinux.org.uk
  ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1S5C-0005e3-Kf; Sat, 24 Aug 2019 09:11:42 +0000
+ id 1i1SFR-0000EF-1d; Sat, 24 Aug 2019 09:22:14 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:
  Content-Transfer-Encoding:Content-Type:MIME-Version:References:Message-ID:
  Subject:Cc:To:From:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=35I2LZAPShB6Cj6P1TUgP57NLp4slH9dw71QCTasf9w=; b=mLioaqdQuJrNX1/NOkC7pA8My
- Ryo55kL3A7U7vH8bgvzRZRnYXeZ2hRuR+aV+Sc3CBEDrBRmT35v1S4u6kcoA16cth4z8CJTm6ymbD
- 8WNI/0PSz/PSa2MVjCktPfJYME3Y3RZPoAOyP/skC54IPikXx2zLBOF2tH7vrGDyfBW0ZLCSY6og5
- +OvoFmwhMZbpHFxXBxrW3v60B6ExenZlhuYUSmpKggb28NJIaq+yDZpiI9Xx3Iym4pGP1vujJZkaM
- Hrh7+UUsjFRODb6McAKxgR1p8fT+POTuIuy8aMHnD2pXhRqNR169RFR1NJ3NGxJkNUHXdGvRkZx6K
- SMP73liAA==;
+ bh=u9kDsmGvpvy+ySdibnxbYTURZ6SqJ3ZYL88TNhJH+08=; b=BxkVzn8VPjh7EVNaF8lJqzsdg
+ zlQtBsYy6mqdeQKvuta6hdh11UqgUHuutlKtwXtqBsr1KyMfrHDUC3/8BZQMYxZ5HMkT0T1uJlTZa
+ 3Fq89O+sCd5fzU8N+4LkDqqbqOOpKetTEm/MZHhOmONXL4e7Z09L4tuRastd6vbyQAVH01q9o2J3/
+ PiY4zUjHfiI2uxA8iAmhd4MIbK3tnt/hL+Mpe0J4+NBgKAW0Vbb6Bb5BZ6f+H38zUWkYOSUK6UT+g
+ BnqNw49mKpWR+BCC25NDpcxBwm9J+bN8FVA1Ocbv9Cc+tpGIwBkpCh8UlLZups1EYvuCSp/N/8dS8
+ KfiH+nsyw==;
 Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:53936)
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:53938)
  by pandora.armlinux.org.uk with esmtpsa
  (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
  (envelope-from <linux@armlinux.org.uk>)
- id 1i1S4m-00029T-5T; Sat, 24 Aug 2019 10:11:12 +0100
+ id 1i1SFD-0002C7-Ik; Sat, 24 Aug 2019 10:21:59 +0100
 Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
  (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i1S4g-0002Ql-9j; Sat, 24 Aug 2019 10:11:06 +0100
-Date: Sat, 24 Aug 2019 10:11:06 +0100
+ id 1i1SFA-0002Qx-72; Sat, 24 Aug 2019 10:21:56 +0100
+Date: Sat, 24 Aug 2019 10:21:56 +0100
 From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
 To: =?iso-8859-1?Q?Ren=E9?= van Dorst <opensource@vdorst.com>
-Subject: Re: [PATCH net-next v3 1/3] net: ethernet: mediatek: Add basic
- PHYLINK support
-Message-ID: <20190824091106.GC13294@shell.armlinux.org.uk>
+Subject: Re: [PATCH net-next v3 2/3] net: ethernet: mediatek: Re-add support
+ SGMII
+Message-ID: <20190824092156.GD13294@shell.armlinux.org.uk>
 References: <20190823134516.27559-1-opensource@vdorst.com>
- <20190823134516.27559-2-opensource@vdorst.com>
+ <20190823134516.27559-3-opensource@vdorst.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190823134516.27559-2-opensource@vdorst.com>
+In-Reply-To: <20190823134516.27559-3-opensource@vdorst.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_021139_039800_648B9B3C 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190824_022213_091634_B6487F0D 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
@@ -99,31 +98,53 @@ Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 03:45:14PM +0200, Ren=E9 van Dorst wrote:
-> This convert the basics to PHYLINK API.
-> SGMII support is not in this patch.
-> =
+On Fri, Aug 23, 2019 at 03:45:15PM +0200, Ren=E9 van Dorst wrote:
+> +	switch (state->interface) {
+> +	case PHY_INTERFACE_MODE_SGMII:
+> +		phylink_set(mask, 10baseT_Half);
+> +		phylink_set(mask, 10baseT_Full);
+> +		phylink_set(mask, 100baseT_Half);
+> +		phylink_set(mask, 100baseT_Full);
 
-> Signed-off-by: Ren=E9 van Dorst <opensource@vdorst.com>
-> --
-> v2->v3:
-> * Make link_down() similar as link_up() suggested by Russell King
+You also want 1000baseX_Full here - the connected PHY could have a fiber
+interface on it.
 
-Yep, almost there, but...
+> +		/* fall through */
+> +	case PHY_INTERFACE_MODE_TRGMII:
+>  		phylink_set(mask, 1000baseT_Full);
 
-> +static void mtk_mac_link_down(struct phylink_config *config, unsigned in=
-t mode,
-> +			      phy_interface_t interface)
-> +{
-> +	struct mtk_mac *mac =3D container_of(config, struct mtk_mac,
-> +					   phylink_config);
-> +	u32 mcr =3D mtk_r32(mac->hw, MTK_MAC_MCR(mac->id));
->  =
+I don't know enough about this interface type to comment whether it
+should support 1000baseX_Full - if this is connected to a PHY that may
+support fiber, then it ought to set it.
 
-> +	mcr &=3D (MAC_MCR_TX_EN | MAC_MCR_RX_EN);
+> +		break;
+> +	case PHY_INTERFACE_MODE_2500BASEX:
+> +		phylink_set(mask, 2500baseX_Full);
+> +		/* fall through */
+> +	case PHY_INTERFACE_MODE_1000BASEX:
+> +		phylink_set(mask, 1000baseX_Full);
 
-... this clears all bits _except_ for the tx and rx enable (which will
-remain set) - you probably wanted a ~ before the (.
+Both should be set.  The reasoning here is that if you have a
+Fiberchannel 4Gbaud SFP plugged in and connected directly to the
+MAC, it can operate at either 2500Base-X or 1000Base-X.  If we
+decide to operate at 2500Base-X, then PHY_INTERFACE_MODE_2500BASEX
+will be chosen.  Otherwise, PHY_INTERFACE_MODE_1000BASEX will be
+used.
+
+The user can use ethtool to control which interface mode is used
+by adjusting the advertise mask and/or placing the interface in
+manual mode and setting the speed directly.  This will change
+the PHY_INTERFACE_MODE_xxxxBASEX (via phylink_helper_basex_speed())
+between the two settings.
+
+If we lose 2500baseX_Full when 1000Base-X is selected, the user
+will not be able to go back to 2500Base-X mode.
+
+Yes, it's a little confusing and has slightly different rules
+from the other modes - partly due to phylink_helper_basex_speed().
+These are the only interface modes that we dynamically switch
+between depending on the settings that the user configures via
+ethtool.
 
 -- =
 
