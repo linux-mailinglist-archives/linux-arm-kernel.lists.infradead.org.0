@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A020B9C030
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 22:46:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 722A29C035
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 22:47:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3l+0G0C94RA9rRPqGuH1EcG8RHYQfj1Q25CVWbE+uSk=; b=owtRhE13JTKk89
-	waYiXvUio03kDuBcrdX9nUxtN0BUMU+oTXcTVijRJFLmvCQBZR9bUVSa0QIZitavXk/XlnH0O5VcW
-	tkcCTBh3+wnH8NzGAR0Iz+wcPEpCMtjdv7oVerLQb118ap/cZCqPXNBhq33ikhu7Tjbdorylb75fM
-	0P2dK1d1TST/6V4jGE/VpvLwr4QGAQrN0/zWurJ7zZSquvO8d+4IDHY1Ilz1g/hACBNPMfgfHiFtS
-	P3CUV7LRQ6S2KOqE9OiViADnP+hGXks/DGy8xct4wo08QFHSqJjEFXK6kR0R2bCQXpJ7Vgqa+p6Sj
-	yWM6NvJR2dAet2l5bqZw==;
+	List-Owner; bh=I1GrLEnw56s+nECm3tqg/xr9VxvdALNZOa6q2t2gP4A=; b=jYt9W8qYYAzN++
+	8JqqrAdHgWF/LBMNY+dPKDEBk6dQWxCXNiPUKERMXMeyjB3XuZo9nekRFv62fB0duktYFKPOUNfrh
+	1cZqeqeJszSdD9CDfojuw87IwfEAE41ZQsplcoz25/oUEOufA34Rx26lOLSvOehGxQkrc8HHxCV5+
+	XXRYsC1fOIOCjo66d6//iiythxxHtWDk/WDmLBasmPLNDyBCQQR1/bqX9jImt+riV6dhGIoaLzj+0
+	/kkNcLqroPG6YK4RrHOoTg+3/0eXTLTcfOWYN6Y2IuQNnRpi6RTX7rY7xjfP4b06syLW6DHtXNp0+
+	KXH0rLsXsKlZpU+fk5ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1cvk-00084H-Bv; Sat, 24 Aug 2019 20:46:36 +0000
+	id 1i1cx3-0008Pw-Ap; Sat, 24 Aug 2019 20:47:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1cvZ-00083s-6b
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 20:46:26 +0000
+ id 1i1cwr-0008PF-Ei
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 20:47:46 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5176323400;
- Sat, 24 Aug 2019 20:46:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 75B7023400;
+ Sat, 24 Aug 2019 20:47:41 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566679584;
- bh=yZMM3l308/2lqQFht7ckfNZ8LSwL8s2Dgv+0qdHJC0k=;
+ s=default; t=1566679665;
+ bh=TJqij8c/dTiUq/2K83ATZKYkTkvjNo6UP+zrCOvUTKc=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=S2rtEB2YMmpIYVgLsAtzygziEHICBpBa5ERig+771E0NZDfRpB1uOqbqPeujMfAXM
- 61LjpTP6lfAaUamQwUfebLy8bpbZa1EZVIw07q1xJEts1KXTQoKL1IwmDRGYjEnCxZ
- iBcdQvx+YxXv5AIxIYUSkm8qRBVY3kfKQ5YALayc=
-Date: Sat, 24 Aug 2019 22:46:12 +0200
+ b=hBqEGbCuzVfuP9xucEQG37JN2EqZ5NxttIi1Vs4YkTCSn03KAWzl6V4AL+qJerkv9
+ k49976kLMPUGVRwtAOcuQm06kAzqjw1ChQXaU21ER4q5LNvFtHAB/Gw4MszwhiPEsg
+ rURC4XI+3/uCPpa2xTIcfBgt3wV5mbpm3bpQZV8E=
+Date: Sat, 24 Aug 2019 22:47:31 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
-Subject: Re: [PATCH v7 1/4] dt-bindings: vendor-prefixes: Add Anvo-Systems
-Message-ID: <20190824204611.GL16308@X250.getinternet.no>
-References: <20190822060238.3887-1-krzk@kernel.org>
+To: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+Subject: Re: [PATCH 1/1] arm64: dts: imx8mq: Add mux controller to iomuxc_gpr
+Message-ID: <20190824204730.GM16308@X250.getinternet.no>
+References: <cover.1566471985.git.agx@sigxcpu.org>
+ <fa3b1df7fc5e74f375df5de53061d1a93d154b51.1566471985.git.agx@sigxcpu.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190822060238.3887-1-krzk@kernel.org>
+In-Reply-To: <fa3b1df7fc5e74f375df5de53061d1a93d154b51.1566471985.git.agx@sigxcpu.org>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_134625_265176_3BA8A6EC 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20190824_134745_508642_5DC02613 
+X-CRM114-Status: UNSURE (   7.85  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,23 +80,26 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- Schrempf Frieder <frieder.schrempf@kontron.de>,
+ Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
+ Carlo Caione <ccaione@baylibre.com>, Andrey Smirnov <andrew.smirnov@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ "Angus Ainslie \(Purism\)" <angus@akkea.ca>, linux-kernel@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 08:02:35AM +0200, Krzysztof Kozlowski wrote:
-> Add vendor prefix for Anvo-Systems Dresden GmbH.
-> 
-> Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> Reviewed-by: Rob Herring <robh@kernel.org>
+On Thu, Aug 22, 2019 at 01:10:23PM +0200, Guido G=FCnther wrote:
+> The only mux controls the MIPI DSI input selection.
+> =
 
-Applied all, thanks.
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
