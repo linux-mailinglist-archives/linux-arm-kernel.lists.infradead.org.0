@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0BD89BF4E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:37:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D45499BF5C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:45:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tJV4TSybtqfBH1kPTSbT1AhEQGKmnqBgfRAwnHECJd4=; b=eaS0JrD970bPsJ
-	dJsTPSX+8D7+CwDz9l2eY7srDDWAU4UbrQM3pERsv1f+63IGeaAmqZ3NvBgVZPivXRdSlZFnYhHj8
-	PjcRFHa8/WbYC8VcIS7rNKRPLWyFErWCPA1lVLWutApUFHY33dEBhA7cXNt/pDb5nYRP0Wn3l6nXb
-	jRYVdMIq5oro/kjJ6JtA8WWPID+LZeUBQLSk5juFthGd7MbyOiOv9u5ZU0RdBhlpKVNObTuyTLhrK
-	BbI7RblRgrpRm7oQXYnxeHVN+ne4bhzwVUlRYYAj0S9CDLzDga7P5YE0e23QPN0ZBKWFfzBiXOgzF
-	ks7gBkTSPtoa4FjrJhnA==;
+	List-Owner; bh=zusacqYjAkclx5iUN7M+VPZLtLncbvPiW343v+bIVA8=; b=NELEE4iaMXS5et
+	QyTKixbFxgD7W0b+0nlaY4ZbLRJ+/bwUOUeQkOT/kivV07Dr5rSfThiofl1og/KIFeRqfnnl2UYgk
+	p1QChVHDLt1CxiTP9s2XqiIX4C9feit+SvpYBR4XLvJnpioXkjtDEscWTz0pipFsTBEvNG/H83q2G
+	qok7Pcu1GA82ZsHaKcc25x26eHunF/GFZZU28fjZ5sbpZ9lwrAapE3R9w/83ldevDapIx5gnM2Ktd
+	9FwIgPbGZUF2uKT+xXM/r74KlEsDI8bkxqK3DLZNuWTAU1jnjavPc/O4yomoNd7/eP9Br9GOMcn8F
+	G0UExr5JtDA3uaO/eG6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1auZ-0001PU-2W; Sat, 24 Aug 2019 18:37:15 +0000
+	id 1i1b2Q-0004MT-Mv; Sat, 24 Aug 2019 18:45:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1auK-0001P1-HA
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:37:02 +0000
-Received: from X250 (cm-84.211.118.175.getinternet.no [84.211.118.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D6CDA21897;
- Sat, 24 Aug 2019 18:36:57 +0000 (UTC)
+ id 1i1b2D-0004Lj-1D
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:45:10 +0000
+Subject: Re: [GIT PULL] arm64: Fixes for -rc6
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566671820;
- bh=bLkoRt7V89o7Y8hLjEcVFDgB9HJCyvuoCmSBCtHCiZ8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=O/+6hlkQsxLxo1bC5JbDLWChN6zVVaUVuQh4NYCkjq548G6w75qBXCP+mURI6l1PW
- 70cYDFfFMrbF3gO8n1ambm1lSjNh25A0ThGMSB7MH1Vy2Es+w/08HH+hstc8hgDfrP
- P69sYlzls8gzc8W9xXKJPKZJHs819q6qjPlCkB9k=
-Date: Sat, 24 Aug 2019 20:36:48 +0200
-From: Shawn Guo <shawnguo@kernel.org>
-To: Chuanhua Han <chuanhua.han@nxp.com>
-Subject: Re: [PATCH 2/3] arm64: dts: ls1088a: Add the DSPI controller node
-Message-ID: <20190824183647.GC14936@X250>
-References: <20190801083105.30102-1-chuanhua.han@nxp.com>
- <20190801083105.30102-2-chuanhua.han@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190801083105.30102-2-chuanhua.han@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+ s=default; t=1566672308;
+ bh=7Qs4bkWflVG2mFrf3I3eozRzQTQ5YMm/Ki/3Id1X/AI=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=nIAB4BxMmxWEosyKv10E7oJVldQ05MeERhSeCglIKLgjWljr2Wy5JQY1UX+ndUgn3
+ 85W+dw4yr9dwMkmlTWdwamz5jUpmnBygOpzNglxppFzcLo+q912QCdTpN1keUHwAiy
+ 1qqAgCYxQsCP+OOZr+dEFbmf7yhi9qeIoQBh2hQQ=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20190824121255.ojqt7tjlzfp5a3nw@willie-the-truck>
+References: <20190824121255.ojqt7tjlzfp5a3nw@willie-the-truck>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20190824121255.ojqt7tjlzfp5a3nw@willie-the-truck>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+ tags/arm64-fixes
+X-PR-Tracked-Commit-Id: 087eeea9adcbaef55ae8d68335dcd3820c5b344b
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 0a022eccf7c468efcb8aa5192b8d13e20127bbac
+Message-Id: <156667230824.2337.2969578272613309440.pr-tracker-bot@kernel.org>
+Date: Sat, 24 Aug 2019 18:45:08 +0000
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_113700_599468_93B44A3B 
-X-CRM114-Status: GOOD (  14.36  )
+X-CRM114-CacheID: sfid-20190824_114509_101686_4B1D6A0A 
+X-CRM114-Status: UNSURE (   1.37  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,55 +77,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-spi@vger.kernel.org,
- broonie@kernel.org, leoyang.li@nxp.com, linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, rkrcmar@redhat.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ torvalds@linux-foundation.org, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 04:31:04PM +0800, Chuanhua Han wrote:
-> This patch adds the DSPI controller node for ls1088a boards.
-> 
-> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
-> ---
->  arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 13 +++++++++++++
->  1 file changed, 13 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> index dacd8cf..fe8f1bd 100644
-> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
-> @@ -252,6 +252,19 @@
->  			#thermal-sensor-cells = <1>;
->  		};
->  
-> +		dspi: spi@2100000 {
-> +			compatible = "fsl,ls1088a-dspi",
-> +						"fsl,ls1021a-v1.0-dspi";
+The pull request you sent on Sat, 24 Aug 2019 13:12:55 +0100:
 
-I fixed the indent to have two compatible strings aligned on same
-column when applying.
+> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
 
-Shawn
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/0a022eccf7c468efcb8aa5192b8d13e20127bbac
 
-> +			#address-cells = <1>;
-> +			#size-cells = <0>;
-> +			reg = <0x0 0x2100000 0x0 0x10000>;
-> +			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
-> +			clock-names = "dspi";
-> +			clocks = <&clockgen 4 1>;
-> +			spi-num-chipselects = <6>;
-> +			status = "disabled";
-> +		};
-> +
->  		duart0: serial@21c0500 {
->  			compatible = "fsl,ns16550", "ns16550a";
->  			reg = <0x0 0x21c0500 0x0 0x100>;
-> -- 
-> 2.9.5
-> 
+Thank you!
+
+-- 
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
