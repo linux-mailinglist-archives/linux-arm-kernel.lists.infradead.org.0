@@ -2,52 +2,39 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D46F9C0C7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 00:35:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22359C0D7
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 00:42:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xUXelAxiVFi9ebLKWd7LAIs33bNylX9PtanBZgrOhY4=; b=DDoZrBSQ9fB0mK
-	RubMyxel8DhwcgZYbqlMJr5Scy94mvwgod2IyOQY5ujOIBIdutoVw7vzbxaHFMt3laJuPzPqPeEaS
-	RhbQKZBFyOo87bp4ih2fhpeiR2wgHdk9rXh0hZDomm5PmOs7FbYAM6BzR18kCRRxjsY6WihZXSbno
-	eRA3Z7ibbgUFyL0YkyX6pDiJesCWAqM5cy7z9aEY+Ff8pG11Zh89mUFloaRcVSphDZiZOEMnWomzO
-	jiL2McSz13EcN5h4ylQQIuNTJFJNcdgFogL0zbnmYpbPeJOPle81mzr1CF+DtEbI5aIiw+JJDnCRD
-	zrjenjkUdzhTRjHvosTg==;
+	List-Owner; bh=Z367p3urCkGHHDGpm4c1KV/ixBjxb0sVAOwuGssesDw=; b=KRTVsmljm4ET+c
+	K8n+MbR6u6XnbiBCDo9Z5EczMphiq3A6J45unBlha4curwDz7LheImpnXo+/vet0rAaMPHtZI0C6n
+	xjecNLRA+AkpVRgYP8wXkafQp7zeHYbYw2hJOohuL4/TRw7b9iCEymqn0OchWqvnjoUhkxorSIrjd
+	H4Crd1h+QZhYrTH6FWhPWssfnRLvaICwhRi0fKht2CF6ckttiZYdQLrxFqgGtdRa17cWH7bfhmQBq
+	864x/MgCSJZ2f8Q3LIq84JU8JpwCijdCtJqmfrsJfaiYRghAFi4bbW/5pcjzB56lpdzp7k7HC0E/9
+	JrunJ2//M5BI38HzLy+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1ecw-00016f-8I; Sat, 24 Aug 2019 22:35:18 +0000
-Received: from verein.lst.de ([213.95.11.211])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1eca-00015v-4r
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 22:34:57 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 3E93268AEF; Sun, 25 Aug 2019 00:34:50 +0200 (CEST)
-Date: Sun, 25 Aug 2019 00:34:49 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: Paul Burton <paul.burton@mips.com>
-Subject: Re: cleanup the dma_pgprot handling
-Message-ID: <20190824223449.GC21729@lst.de>
-References: <20190816070754.15653-1-hch@lst.de>
- <20190823215759.zprrwotlbva46y33@pburton-laptop>
+	id 1i1ejR-0003v4-16; Sat, 24 Aug 2019 22:42:01 +0000
+Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
+ Linux)) id 1i1eiy-0003rr-8F; Sat, 24 Aug 2019 22:41:32 +0000
+Date: Sat, 24 Aug 2019 15:41:32 -0700
+From: Christoph Hellwig <hch@infradead.org>
+To: Tom Murphy <murphyt7@tcd.ie>
+Subject: Re: [PATCH V5 1/5] iommu/amd: Remove unnecessary locking from AMD
+ iommu driver
+Message-ID: <20190824224132.GA14806@infradead.org>
+References: <20190815110944.3579-1-murphyt7@tcd.ie>
+ <20190815110944.3579-2-murphyt7@tcd.ie>
+ <20190820094143.GA24154@infradead.org>
+ <CALQxJussiGDzWFT1xhko6no5jZNOezWCFuJQUCr4XwH4NHri3Q@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190823215759.zprrwotlbva46y33@pburton-laptop>
-User-Agent: Mutt/1.5.17 (2007-11-01)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_153456_340370_11C04FDE 
-X-CRM114-Status: GOOD (  13.33  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+In-Reply-To: <CALQxJussiGDzWFT1xhko6no5jZNOezWCFuJQUCr4XwH4NHri3Q@mail.gmail.com>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,38 +46,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Shawn Anastasio <shawn@anastas.io>, Will Deacon <will@kernel.org>,
- "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- Geert Uytterhoeven <geert@linux-m68k.org>, James Hogan <jhogan@kernel.org>,
- Guan Xuetao <gxt@pku.edu.cn>, Christoph Hellwig <hch@lst.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <robin.murphy@arm.com>
+Cc: Heiko Stuebner <heiko@sntech.de>, virtualization@lists.linux-foundation.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Thierry Reding <thierry.reding@gmail.com>, Will Deacon <will@kernel.org>,
+ Jean-Philippe Brucker <jean-philippe@linaro.org>,
+ linux-samsung-soc@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>, Christoph Hellwig <hch@infradead.org>,
+ linux-rockchip@lists.infradead.org, Kukjin Kim <kgene@kernel.org>,
+ Andy Gross <agross@kernel.org>, linux-s390@vger.kernel.org,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>, linux-arm-msm@vger.kernel.org,
+ linux-mediatek@lists.infradead.org, linux-tegra@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Robin Murphy <robin.murphy@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ iommu@lists.linux-foundation.org, David Woodhouse <dwmw2@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 09:58:04PM +0000, Paul Burton wrote:
-> So I believe uncached & uncached accelerated are another case like that
-> described above - they're 2 different CCAs but the same "access type",
-> namely uncached.
-> 
-> Section 4.9 then goes on to forbid mixing access types, but not CCAs.
-> 
-> It would be nice if the precise mapping from CCA to access type was
-> provided, but I don't see that anywhere. I can check with the
-> architecture team to be sure, but to my knowledge we're fine to mix
-> access via kseg1 (ie. uncached) & mappings with CCA=7 (uncached
-> accelerated).
-
-Ok.  Looks like we can keep it then and I'll add a comment to the
-code with the above reference.
+Thank for the explanation Tom. It might make sense to add a condensed
+version of it to commit log for the next iteration.
 
 _______________________________________________
 linux-arm-kernel mailing list
