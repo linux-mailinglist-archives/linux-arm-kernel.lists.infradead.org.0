@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 567419BFBF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:12:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6A0F9BFCB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:15:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=30mLNAh3XVttbOIB8FdpHbJnaCElrRqERLBB+0j74uQ=; b=WVSm6Noy1rO5nC
-	aZlJzzIN56eFtHOth2K1Xc7ZlZ9tFF+OnvLh/t9GV1vpiwoyMJfLGUVSjx7GcUN/zC/5Za8TAAb8P
-	2ojYYCTjoGhOWD3cnT1C0uXtHFTUVpVq3YSohB8FY/7f806xdsJSON43lKjEThihsj/Yq/Ig9hmZN
-	BIV5xVMYGGl5mRZ3SxmgMuJL4t4QoQnN0WtIEyRGFf6bJEvxXRJxnQI+aFUx98CeDsOCBs1I8c8Xp
-	KXpXQU1t0yT68193+/g6a8V9PWHFuuYH2MHyY33ZxgoHnJjjn6oMLk/uNczpVujIa0eL7u44v+4A9
-	IlbraHiBDxWGWFYjyFDQ==;
+	List-Owner; bh=HSRX5i8sMQ+bUAvpI4YfNx6L+FXpOm7yTyKOh6aWCzs=; b=o1KVg66j87+fL+
+	pV+bRhJ+nGUFdJP33iieY+6ccNQtc93Oj1cNc3zZ5OCbA8clnJbvDj6KX/UDS6JXau4EyGbNFJLXf
+	n18ziK9R2/08X9FfGT07PjWvZZYypKjnH6wEgFUqqsCa7F51NLpuaTE+ZE2Zt9T8O+LQJnekDW2Vc
+	O0Xl1wfAHKGkEJClf1/8g37wEdZi6CyjsOo672s3TEoOmu7lWyAa9xeQCpBWdWCvtz1iazHxIO9zz
+	fsCzso13OYzvygg0mMxOYoXldBGUrd88y4FIM9L2SkEeScpTYeinWzvgLWd146o+qkIeHY1XxduXA
+	Ru/WP5f3VoveBRem3Pfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1bSM-000513-TG; Sat, 24 Aug 2019 19:12:10 +0000
+	id 1i1bVB-0005K5-7W; Sat, 24 Aug 2019 19:15:05 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1bSD-00050f-6c
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:12:02 +0000
+ id 1i1bUy-0005Jl-92
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:14:53 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8C2F62146E;
- Sat, 24 Aug 2019 19:11:59 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 864092146E;
+ Sat, 24 Aug 2019 19:14:49 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566673920;
- bh=ezRY8yYFMypgLFWgx+5OQQJxcoy3QEXmesB47+8ufzI=;
+ s=default; t=1566674092;
+ bh=8qX1ZJe1XLYMzC7AJza+cKAUFCy/FnwUUpWjirZd0JY=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=m6v4/aZ+ImZd7NTE9+8wGYp6+Ps1oERNv9g0DBYUKSmqeyANYjh+q8GYRn9VmWxRI
- WamiIPkAYvjySRwulOd3fFY7ApE64dmacMO/3cbtc4MvteMINBl7J5JH1ipjaYTqi7
- SZvTgcwwaItZ1R2EgJMubnmX7ddWXBQI+du0YsPg=
-Date: Sat, 24 Aug 2019 21:11:49 +0200
+ b=ia/mYxruLGEEb0ATpZpUyBqnVlcfnLCbSfL9lrPv495b+HukbAQOuSsBDb36Ok2uC
+ gaxroPEWyjeNjJQO+xN6+137UrES0LIxO9culjvY5e425FKLEi6ElxU+sKnAWXg4P7
+ phqPRMe6N7kmWdzUGmYC9lccfSdVtTAgBQcYugQk=
+Date: Sat, 24 Aug 2019 21:14:39 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH] ARM: dts: vf610-zii-dev-rev-b: Drop redundant I2C
- properties
-Message-ID: <20190824191148.GD16308@X250.getinternet.no>
-References: <20190820031952.14804-1-andrew.smirnov@gmail.com>
+To: Hui Song <hui.song_1@nxp.com>
+Subject: Re: [PATCH v4] arm64: dts: ls1088a: fix gpio node
+Message-ID: <20190824191438.GE16308@X250.getinternet.no>
+References: <20190820055438.43469-1-hui.song_1@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190820031952.14804-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190820055438.43469-1-hui.song_1@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_121201_267111_41531145 
-X-CRM114-Status: GOOD (  14.01  )
+X-CRM114-CacheID: sfid-20190824_121452_340195_8A3540BB 
+X-CRM114-Status: GOOD (  13.35  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,62 +77,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-gpio@vger.kernel.org, Linus Walleij <linus.walleij@linaro.org>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 08:19:52PM -0700, Andrey Smirnov wrote:
-> Drop redundant I2C properties that are already specified in
-> vf610-zii-dev.dtsi
+On Tue, Aug 20, 2019 at 01:54:38PM +0800, Hui Song wrote:
+> From: Song Hui <hui.song_1@nxp.com>
 > 
-> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Chris Healy <cphealy@gmail.com>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  arch/arm/boot/dts/vf610-zii-dev-rev-b.dts | 10 ----------
->  1 file changed, 10 deletions(-)
+> add ls1088a gpio specify compatible.
 > 
-> diff --git a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
-> index 48086c5e8549..e500911ce0a5 100644
-> --- a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
-> +++ b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
-> @@ -323,11 +323,6 @@
->  };
->  
->  &i2c0 {
-> -	clock-frequency = <100000>;
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_i2c0>;
+> Signed-off-by: Song Hui <hui.song_1@nxp.com>
 
-pinctrl for i2c0 is not same as what vf610-zii-dev.dtsi has.
+I updated the patch subject as below, and applied the patch.
+
+  arm64: dts: ls1088a: update gpio compatible
 
 Shawn
 
-> -	status = "okay";
-> -
->  	gpio5: io-expander@20 {
->  		compatible = "nxp,pca9554";
->  		reg = <0x20>;
-> @@ -350,11 +345,6 @@
->  };
+> ---
+> Changes in v4:
+> 	- update the patch description.
+> Changes in v3:
+> 	- delete the attribute of little-endian.
+> Changes in v2:
+> 	- update the subject.
 >  
->  &i2c2 {
-> -	clock-frequency = <100000>;
-> -	pinctrl-names = "default";
-> -	pinctrl-0 = <&pinctrl_i2c2>;
-> -	status = "okay";
-> -
->  	tca9548@70 {
->  		compatible = "nxp,pca9548";
->  		pinctrl-0 = <&pinctrl_i2c_mux_reset>;
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> index dfbead4..ff669c8 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> @@ -269,7 +269,7 @@
+>  		};
+>  
+>  		gpio0: gpio@2300000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2300000 0x0 0x10000>;
+>  			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -280,7 +280,7 @@
+>  		};
+>  
+>  		gpio1: gpio@2310000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2310000 0x0 0x10000>;
+>  			interrupts = <0 36 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -291,7 +291,7 @@
+>  		};
+>  
+>  		gpio2: gpio@2320000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2320000 0x0 0x10000>;
+>  			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
+> @@ -302,7 +302,7 @@
+>  		};
+>  
+>  		gpio3: gpio@2330000 {
+> -			compatible = "fsl,qoriq-gpio";
+> +			compatible = "fsl,ls1088a-gpio", "fsl,qoriq-gpio";
+>  			reg = <0x0 0x2330000 0x0 0x10000>;
+>  			interrupts = <0 37 IRQ_TYPE_LEVEL_HIGH>;
+>  			little-endian;
 > -- 
-> 2.21.0
+> 2.9.5
 > 
 
 _______________________________________________
