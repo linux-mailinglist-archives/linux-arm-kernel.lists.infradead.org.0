@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 119B79BFBB
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:09:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 567419BFBF
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:12:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PBfOEjRe1jZr7Jvi3gDTl0LR6GjZguCATIhRnSb1tOk=; b=a1dqy0X4EtwUHL
-	kKCvexlWHXdc1pgXj8HnUDh1eEyjPJTPAyn2ZbCnJ52UpBnOy02K1mWyglV2KS5ipwe7R7EKgK2nF
-	PLopt/YvjLO6TW//VJZ1GUEx17sRsOuLA86fGlU1k9Uq7OJ8O4wQjPpt6b5csA0DtoM7fvWrHaMWG
-	ErVIXseT2o86BM0LWCpgn8wiKDeWJlw9ROdWft4mSo1B2zoQao5l6+Q6cAVoPDNLWHRHkz/+aQ+1W
-	d3Leu4sMR+UEfyk4TVx9WirZU/Twx7NzllRYMNrH/694s9NYltN8S8A08B+pGvYPFhNuZG+/surjd
-	1btziPX6eFShfkt8xUyg==;
+	List-Owner; bh=30mLNAh3XVttbOIB8FdpHbJnaCElrRqERLBB+0j74uQ=; b=WVSm6Noy1rO5nC
+	aZlJzzIN56eFtHOth2K1Xc7ZlZ9tFF+OnvLh/t9GV1vpiwoyMJfLGUVSjx7GcUN/zC/5Za8TAAb8P
+	2ojYYCTjoGhOWD3cnT1C0uXtHFTUVpVq3YSohB8FY/7f806xdsJSON43lKjEThihsj/Yq/Ig9hmZN
+	BIV5xVMYGGl5mRZ3SxmgMuJL4t4QoQnN0WtIEyRGFf6bJEvxXRJxnQI+aFUx98CeDsOCBs1I8c8Xp
+	KXpXQU1t0yT68193+/g6a8V9PWHFuuYH2MHyY33ZxgoHnJjjn6oMLk/uNczpVujIa0eL7u44v+4A9
+	IlbraHiBDxWGWFYjyFDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1bPj-0003Yq-Di; Sat, 24 Aug 2019 19:09:27 +0000
+	id 1i1bSM-000513-TG; Sat, 24 Aug 2019 19:12:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1bPY-0003YW-3u
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:09:17 +0000
+ id 1i1bSD-00050f-6c
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:12:02 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7B3062146E;
- Sat, 24 Aug 2019 19:09:14 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C2F62146E;
+ Sat, 24 Aug 2019 19:11:59 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566673755;
- bh=GqVf24z8FxhvMhEfTsWDTwhTbtkDygR3jTkJ+Klid5Y=;
+ s=default; t=1566673920;
+ bh=ezRY8yYFMypgLFWgx+5OQQJxcoy3QEXmesB47+8ufzI=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=fdcECoyPaKDSaTdLtZBsxyHlR6m24VsZiObIMIq7WDlGLL7vLqN8E40yIp/P+u/cy
- 2Z6tShiR84e4Jkt2NAodJjVx7JCTMfOErMfsegRgmL8x08HqXrwsvtPxoez+Iv/tn8
- aMhJotZAGSZp4wVZhrPjXusQ46KnSNbFDZOFSiR0=
-Date: Sat, 24 Aug 2019 21:09:04 +0200
+ b=m6v4/aZ+ImZd7NTE9+8wGYp6+Ps1oERNv9g0DBYUKSmqeyANYjh+q8GYRn9VmWxRI
+ WamiIPkAYvjySRwulOd3fFY7ApE64dmacMO/3cbtc4MvteMINBl7J5JH1ipjaYTqi7
+ SZvTgcwwaItZ1R2EgJMubnmX7ddWXBQI+du0YsPg=
+Date: Sat, 24 Aug 2019 21:11:49 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH] ARM: dts: vf610-zii-scu4-aib: Drop "rs485-rts-delay"
- property
-Message-ID: <20190824190903.GC16308@X250.getinternet.no>
-References: <20190820031301.11172-1-andrew.smirnov@gmail.com>
+Subject: Re: [PATCH] ARM: dts: vf610-zii-dev-rev-b: Drop redundant I2C
+ properties
+Message-ID: <20190824191148.GD16308@X250.getinternet.no>
+References: <20190820031952.14804-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190820031301.11172-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190820031952.14804-1-andrew.smirnov@gmail.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_120916_183218_0297D14F 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20190824_121201_267111_41531145 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,14 +85,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 08:13:01PM -0700, Andrey Smirnov wrote:
-> LPUART driver does not support specifying "rs485-rts-delay"
-> property. Drop it.
-
-If so, we need to fix bindings/serial/fsl-lpuart.txt in the meantime?
-
-Shawn
-
+On Mon, Aug 19, 2019 at 08:19:52PM -0700, Andrey Smirnov wrote:
+> Drop redundant I2C properties that are already specified in
+> vf610-zii-dev.dtsi
 > 
 > Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
 > Cc: Shawn Guo <shawnguo@kernel.org>
@@ -101,29 +96,42 @@ Shawn
 > Cc: linux-arm-kernel@lists.infradead.org
 > Cc: linux-kernel@vger.kernel.org
 > ---
->  arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 2 --
->  1 file changed, 2 deletions(-)
+>  arch/arm/boot/dts/vf610-zii-dev-rev-b.dts | 10 ----------
+>  1 file changed, 10 deletions(-)
 > 
-> diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-> index 666ec27a73e3..d8c38ef6a98a 100644
-> --- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-> +++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
-> @@ -685,7 +685,6 @@
->  	linux,rs485-enabled-at-boot-time;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_uart1>;
-> -	rs485-rts-delay = <0 200>;
->  	status = "okay";
+> diff --git a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
+> index 48086c5e8549..e500911ce0a5 100644
+> --- a/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
+> +++ b/arch/arm/boot/dts/vf610-zii-dev-rev-b.dts
+> @@ -323,11 +323,6 @@
 >  };
 >  
-> @@ -693,7 +692,6 @@
->  	linux,rs485-enabled-at-boot-time;
->  	pinctrl-names = "default";
->  	pinctrl-0 = <&pinctrl_uart2>;
-> -	rs485-rts-delay = <0 200>;
->  	status = "okay";
+>  &i2c0 {
+> -	clock-frequency = <100000>;
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_i2c0>;
+
+pinctrl for i2c0 is not same as what vf610-zii-dev.dtsi has.
+
+Shawn
+
+> -	status = "okay";
+> -
+>  	gpio5: io-expander@20 {
+>  		compatible = "nxp,pca9554";
+>  		reg = <0x20>;
+> @@ -350,11 +345,6 @@
 >  };
 >  
+>  &i2c2 {
+> -	clock-frequency = <100000>;
+> -	pinctrl-names = "default";
+> -	pinctrl-0 = <&pinctrl_i2c2>;
+> -	status = "okay";
+> -
+>  	tca9548@70 {
+>  		compatible = "nxp,pca9548";
+>  		pinctrl-0 = <&pinctrl_i2c_mux_reset>;
 > -- 
 > 2.21.0
 > 
