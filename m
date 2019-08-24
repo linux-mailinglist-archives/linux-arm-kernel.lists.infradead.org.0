@@ -2,56 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56CC39BFAF
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:03:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 119B79BFBB
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 21:09:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=p7rBtQTlqjYgjudeHxr/O7ohlWrkazFT0W/jlrFRTno=; b=suw1gEgmhsDvu9
-	+4U6f4lJOVIUQT1er2sSIRXWeWpVXVdfrdswyBEsFk4rVbooqAoMfXmropWpyj0865djJfdq9u/xJ
-	yDPpD6Vn4s0TztcmGPJhdwo9zAepEFo2LAIT+dz7IgxP0QFERmRUU1qmIg15UVy7RdT4KMvYbszeU
-	eYqbBzP+Y7MciwvN88nma+yooaiFVRu3iFWEtwzv9SBakTw/fSJJkSzx2WqQXv4d8m7u3Mp232xGq
-	+7pNXleCP55aN/T1cfYOnJFSkOEeXNmRZ+yurBc+CidtFXkKyqBrlE06tqRLaVROII3pwUT7838UT
-	PhU3DGE2lMiLdfBGN+eg==;
+	List-Owner; bh=PBfOEjRe1jZr7Jvi3gDTl0LR6GjZguCATIhRnSb1tOk=; b=a1dqy0X4EtwUHL
+	kKCvexlWHXdc1pgXj8HnUDh1eEyjPJTPAyn2ZbCnJ52UpBnOy02K1mWyglV2KS5ipwe7R7EKgK2nF
+	PLopt/YvjLO6TW//VJZ1GUEx17sRsOuLA86fGlU1k9Uq7OJ8O4wQjPpt6b5csA0DtoM7fvWrHaMWG
+	ErVIXseT2o86BM0LWCpgn8wiKDeWJlw9ROdWft4mSo1B2zoQao5l6+Q6cAVoPDNLWHRHkz/+aQ+1W
+	d3Leu4sMR+UEfyk4TVx9WirZU/Twx7NzllRYMNrH/694s9NYltN8S8A08B+pGvYPFhNuZG+/surjd
+	1btziPX6eFShfkt8xUyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1bKH-00022w-UJ; Sat, 24 Aug 2019 19:03:49 +0000
+	id 1i1bPj-0003Yq-Di; Sat, 24 Aug 2019 19:09:27 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1bK7-00022a-6L
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:03:40 +0000
+ id 1i1bPY-0003YW-3u
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 19:09:17 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6C0D620850;
- Sat, 24 Aug 2019 19:03:35 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7B3062146E;
+ Sat, 24 Aug 2019 19:09:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566673418;
- bh=V8faoiSowxfdVDSnfuFJKqgtuKh9q9FIIhDTXCo+WOo=;
+ s=default; t=1566673755;
+ bh=GqVf24z8FxhvMhEfTsWDTwhTbtkDygR3jTkJ+Klid5Y=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=AErla3A3rEc7cT9EqjgHaROYiQvS2t+r0MBwXldY1Pm1EJUSRLV5IVNZ4OsaP36SZ
- iDSYEcxa5CbI+aiSMGTusWCKwTWA9iI2dXcZ8ZpiGZF5X84WkOJ3rQl9+WDKsv4acY
- zQnhOcnRTu46oJjn0e6QP/czZRpDWNdr/6Z6Btes=
-Date: Sat, 24 Aug 2019 21:03:25 +0200
+ b=fdcECoyPaKDSaTdLtZBsxyHlR6m24VsZiObIMIq7WDlGLL7vLqN8E40yIp/P+u/cy
+ 2Z6tShiR84e4Jkt2NAodJjVx7JCTMfOErMfsegRgmL8x08HqXrwsvtPxoez+Iv/tn8
+ aMhJotZAGSZp4wVZhrPjXusQ46KnSNbFDZOFSiR0=
+Date: Sat, 24 Aug 2019 21:09:04 +0200
 From: Shawn Guo <shawnguo@kernel.org>
-To: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
-Subject: Re: [PATCH v4 2/2] arm64: dts: imx: Add i.mx8mq nitrogen8m basic dts
- support
-Message-ID: <20190824190324.GB16308@X250.getinternet.no>
-References: <20190819172606.6410-1-dafna.hirschfeld@collabora.com>
- <20190819172606.6410-3-dafna.hirschfeld@collabora.com>
+To: Andrey Smirnov <andrew.smirnov@gmail.com>
+Subject: Re: [PATCH] ARM: dts: vf610-zii-scu4-aib: Drop "rs485-rts-delay"
+ property
+Message-ID: <20190824190903.GC16308@X250.getinternet.no>
+References: <20190820031301.11172-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190819172606.6410-3-dafna.hirschfeld@collabora.com>
+In-Reply-To: <20190820031301.11172-1-andrew.smirnov@gmail.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_120339_255926_640E731D 
-X-CRM114-Status: UNSURE (   7.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190824_120916_183218_0297D14F 
+X-CRM114-Status: GOOD (  14.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -80,27 +78,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, s.hauer@pengutronix.de,
- linux-kernel@vger.kernel.org, Troy Kisky <troy.kisky@boundarydevices.com>,
- Gary Bisson <gary.bisson@boundarydevices.com>, robh+dt@kernel.org,
- kernel@pengutronix.de, kernel@collabora.com, ezequiel@collabora.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 07:26:06PM +0200, Dafna Hirschfeld wrote:
-> From: Gary Bisson <gary.bisson@boundarydevices.com>
-> 
-> Add basic dts support for i.MX8MQ NITROGEN8M.
-> 
-> Signed-off-by: Gary Bisson <gary.bisson@boundarydevices.com>
-> Signed-off-by: Troy Kisky <troy.kisky@boundarydevices.com>
-> [Dafna: porting vendor's code to mainline]
-> Signed-off-by: Dafna Hirschfeld <dafna.hirschfeld@collabora.com>
+On Mon, Aug 19, 2019 at 08:13:01PM -0700, Andrey Smirnov wrote:
+> LPUART driver does not support specifying "rs485-rts-delay"
+> property. Drop it.
 
-Applied, thanks.
+If so, we need to fix bindings/serial/fsl-lpuart.txt in the meantime?
+
+Shawn
+
+> 
+> Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Chris Healy <cphealy@gmail.com>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 2 --
+>  1 file changed, 2 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> index 666ec27a73e3..d8c38ef6a98a 100644
+> --- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> +++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> @@ -685,7 +685,6 @@
+>  	linux,rs485-enabled-at-boot-time;
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_uart1>;
+> -	rs485-rts-delay = <0 200>;
+>  	status = "okay";
+>  };
+>  
+> @@ -693,7 +692,6 @@
+>  	linux,rs485-enabled-at-boot-time;
+>  	pinctrl-names = "default";
+>  	pinctrl-0 = <&pinctrl_uart2>;
+> -	rs485-rts-delay = <0 200>;
+>  	status = "okay";
+>  };
+>  
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
