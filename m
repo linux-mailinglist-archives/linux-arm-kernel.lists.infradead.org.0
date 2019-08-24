@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2E879BF4A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:36:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0BD89BF4E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 24 Aug 2019 20:37:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lZ0AuRSNvJ6QqynVxeGT4Xz9/GvqGM6MW/0yzMTq9As=; b=mCnh4ol/X1vGyz
-	L5K+eNWRS8OnoVruf5TyGKJcpvl1CSqIOHut9oid6QEmFTMyuMUo2j13czOc8V4kDDN9AHLA5mowz
-	WdJ+jXOoyhXGRMvSJa/d0nCviWf/RS74E2UctuCvF3sKhMbwqneh5VtXH/JF+uVWtZjvSpUfuNg+7
-	AGcFmVJuXrshyZlZJmsQbHsGX3KC35iqBBJhN0td8lSNAZ7/7swLCumXKoJznCxxSa+D38dgLiyJc
-	mV6T6Pej2tJQVhkYHQw/5brP/G0hoM9T/GUGioiOc+H7iS5vsJb9w5UWiZM12m1yvSMkh5Oy3A0uL
-	ahHqRAp8IdB9WOSLAkPQ==;
+	List-Owner; bh=tJV4TSybtqfBH1kPTSbT1AhEQGKmnqBgfRAwnHECJd4=; b=eaS0JrD970bPsJ
+	dJsTPSX+8D7+CwDz9l2eY7srDDWAU4UbrQM3pERsv1f+63IGeaAmqZ3NvBgVZPivXRdSlZFnYhHj8
+	PjcRFHa8/WbYC8VcIS7rNKRPLWyFErWCPA1lVLWutApUFHY33dEBhA7cXNt/pDb5nYRP0Wn3l6nXb
+	jRYVdMIq5oro/kjJ6JtA8WWPID+LZeUBQLSk5juFthGd7MbyOiOv9u5ZU0RdBhlpKVNObTuyTLhrK
+	BbI7RblRgrpRm7oQXYnxeHVN+ne4bhzwVUlRYYAj0S9CDLzDga7P5YE0e23QPN0ZBKWFfzBiXOgzF
+	ks7gBkTSPtoa4FjrJhnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1atM-0001Ag-Mu; Sat, 24 Aug 2019 18:36:00 +0000
+	id 1i1auZ-0001PU-2W; Sat, 24 Aug 2019 18:37:15 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1at7-0001AO-GF
- for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:35:46 +0000
+ id 1i1auK-0001P1-HA
+ for linux-arm-kernel@lists.infradead.org; Sat, 24 Aug 2019 18:37:02 +0000
 Received: from X250 (cm-84.211.118.175.getinternet.no [84.211.118.175])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C132D21897;
- Sat, 24 Aug 2019 18:35:42 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D6CDA21897;
+ Sat, 24 Aug 2019 18:36:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566671745;
- bh=9N765O+RItokcg7MqxGOP60qDa/cmTnbhzDUQvZdyAk=;
+ s=default; t=1566671820;
+ bh=bLkoRt7V89o7Y8hLjEcVFDgB9HJCyvuoCmSBCtHCiZ8=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=lbLj+8HuBm8AbXmjPWUGiu+oEdjQnOjsUb4QRNE5o8uSLCZzNu0ZJooy4SX0u5eof
- jnuwDP3+fXiiFjIEE1aH6LfvxWK4NlloC6216i2cQOGXPYozY27QlPYuLMvPAEvHqu
- GxLrsAN5/h8331yRE5XrPzDHjLq98QLmgpMBNQyc=
-Date: Sat, 24 Aug 2019 20:35:33 +0200
+ b=O/+6hlkQsxLxo1bC5JbDLWChN6zVVaUVuQh4NYCkjq548G6w75qBXCP+mURI6l1PW
+ 70cYDFfFMrbF3gO8n1ambm1lSjNh25A0ThGMSB7MH1Vy2Es+w/08HH+hstc8hgDfrP
+ P69sYlzls8gzc8W9xXKJPKZJHs819q6qjPlCkB9k=
+Date: Sat, 24 Aug 2019 20:36:48 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Chuanhua Han <chuanhua.han@nxp.com>
-Subject: Re: [PATCH 1/3] dt-bindings: fsl: dspi: Add fsl,ls1088a-dspi
- compatible string
-Message-ID: <20190824183532.GB14936@X250>
+Subject: Re: [PATCH 2/3] arm64: dts: ls1088a: Add the DSPI controller node
+Message-ID: <20190824183647.GC14936@X250>
 References: <20190801083105.30102-1-chuanhua.han@nxp.com>
+ <20190801083105.30102-2-chuanhua.han@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190801083105.30102-1-chuanhua.han@nxp.com>
+In-Reply-To: <20190801083105.30102-2-chuanhua.han@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_113545_566351_2A50BE55 
-X-CRM114-Status: UNSURE (   6.80  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190824_113700_599468_93B44A3B 
+X-CRM114-Status: GOOD (  14.36  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,12 +85,47 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 01, 2019 at 04:31:03PM +0800, Chuanhua Han wrote:
-> new compatible string: "fsl,ls1088a-dspi".
+On Thu, Aug 01, 2019 at 04:31:04PM +0800, Chuanhua Han wrote:
+> This patch adds the DSPI controller node for ls1088a boards.
 > 
 > Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
+> ---
+>  arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
+> 
+> diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> index dacd8cf..fe8f1bd 100644
+> --- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+> @@ -252,6 +252,19 @@
+>  			#thermal-sensor-cells = <1>;
+>  		};
+>  
+> +		dspi: spi@2100000 {
+> +			compatible = "fsl,ls1088a-dspi",
+> +						"fsl,ls1021a-v1.0-dspi";
 
-Applied all, thanks.
+I fixed the indent to have two compatible strings aligned on same
+column when applying.
+
+Shawn
+
+> +			#address-cells = <1>;
+> +			#size-cells = <0>;
+> +			reg = <0x0 0x2100000 0x0 0x10000>;
+> +			interrupts = <GIC_SPI 26 IRQ_TYPE_LEVEL_HIGH>;
+> +			clock-names = "dspi";
+> +			clocks = <&clockgen 4 1>;
+> +			spi-num-chipselects = <6>;
+> +			status = "disabled";
+> +		};
+> +
+>  		duart0: serial@21c0500 {
+>  			compatible = "fsl,ns16550", "ns16550a";
+>  			reg = <0x0 0x21c0500 0x0 0x100>;
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
