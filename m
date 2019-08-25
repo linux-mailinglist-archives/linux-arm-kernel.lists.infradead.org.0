@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E8BA9C18C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 06:03:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5D6889C18F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 06:03:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yaxDn7kOFM0a92BCdef5CNx4KSauXaVNB9NU6+I+3bA=; b=nU14wGUoyiYGGp395qNHXSBEss
-	EeQNctcadrty+UZPygS0Vyq97FRprzgBMS5/IBHSQI7CzwSZ20uu0hT9zrq0bsHKSZgwMHP6l7GHd
-	KyE4I5OwspA8rT8FLUljkeU8wLgFgzmFgsSKkGYC1uVMQb8vi5YIZAWOj0LFJqiURJrehmJB3Kj0s
-	gn8p0wyOOdql/kVUdgENECpi3b7gjS7g9753WMK1I8mAkF1jYoSnyFK0xMoiJ1I2qEBPNKqa+I8ta
-	epzhdB+/MVmix2bctQEOwnMNOaeOvmDR4GolNlCMl01h4Cs+X+PdyeHvxsaf/s+3S563boSow/3o7
-	jraPQAaQ==;
+	bh=C/dLxXKBhmaVHdn0Eldv0UO+63rOGHxD/VNh/pWdon4=; b=jTWTj9iFhg+Ood0x3g7yc+eRpF
+	TYxKTDrPd/v9pylT4WBb0sc+CyiCzWV3xMRU9rKeqYyfqkyxVHq+T8JerySatXI3PfjkqX2IHCjiw
+	FdYVfnpwxOnZTzSUco/Xn8tBsEsLPatw/4kAGNPjJmRFlggyKh7Y7yCr/t0RYSrAg8IqjRJXuckNd
+	qca0Q9kJEkfbo5QCdUsKj5Ze8cM/9v4BGgfrca8wtnDvSqc44453ojqMtsIv2pZbmEPsoN3Vjappk
+	xD052wIUcZ+Z6kvo/2IqUdNmO5vu/gAYWgDOtV6hscBN4DyChjRALMcZgsfF90ky2FBVmD4inx/bm
+	bFVlATqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1jkY-0006CU-Rs; Sun, 25 Aug 2019 04:03:31 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i1jkv-0006X9-Es; Sun, 25 Aug 2019 04:03:53 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1jjV-0005fP-2D; Sun, 25 Aug 2019 04:02:26 +0000
-Received: by mail-wm1-x342.google.com with SMTP id d16so12691791wme.2;
- Sat, 24 Aug 2019 21:02:24 -0700 (PDT)
+ id 1i1jjX-0005gd-VM; Sun, 25 Aug 2019 04:02:29 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p74so12335332wme.4;
+ Sat, 24 Aug 2019 21:02:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=pvW2fAe5qKhI+32AuCLAPIq8InayZWwjBPViLCnooBA=;
- b=YNUzb656fRAp02e6EEjNCbourwaslTMlBfdnBZy5wc53xGSYuZGIQs7JrIlbea2Ugd
- JCJaKvCjo33MT3ZkPK7p4hvKqnrDLmPtCkIX1skl3nPAS2pm28ktEL1cGvtLu5gUuCTL
- SpeCPIfLBsDnp24rwx7ZvHv2QHx+oxy7oKISEvsBR5nq0JXelIrFASyD6L/xW+orfsCs
- 4XjG1JvF5NHvvPv51TgA8lFj0SQSVfAECmw8InYZkiLgWZpoOa9/I8HJGPTU2pJixc0T
- 9F70iMW+nudCwXOtIT40A/Gw2g8ZMiNPfh6W0y7vfwxzsKrJ7mDWdJdmAoC+VrZyYvCV
- 1rIQ==
+ bh=zELEUgSsCN+8CRAOeDo9/h1leFLyd06lkasS5K9oq38=;
+ b=adjbLfK8fidX/mMusGXjbEyvbhpLmfP04BYSiiwz0j3ALh42WU/gfYLDnik2D9ViPZ
+ Z1601BUxrJD3wVL+8UTRUOcLekPV9VOFO8HA7Lqtixzkxki56TLAgkkcP+EcNytqvfXx
+ jWYFLpe1evjM6sYocwV40uE5J6KZZ34WJ8Lz/IZZUUlIkmkb3gmIjNe7B50r9smKqqHs
+ DA2TGBkKZIREM6sAZ6Bfb97Jvl8u3Y3PB6o45kjHWEZUoVVrLZ3M8PP+zYXDypq9RpL9
+ HfT4NdfnSZMfV/6JGpSKzRFeFmLUXv2U9XjVkQcEUNAEM1wdjhJR4OrKBkIfWDs49D+E
+ FZoA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=pvW2fAe5qKhI+32AuCLAPIq8InayZWwjBPViLCnooBA=;
- b=cH5WbYq3fr0bLuonP9MbwFnIAJZ+EJi/1EGNlHngA1ofwXAOSDBba1BM/qaCFHuPi6
- 5NiYzVkre/hsA/5Ii0NvEyG0Ii5OeRezLe8exU595H0/meIN+t2aUTkNkfxPg4PL5DVq
- NDSch+/RemMSMGkLrYCbQ7jLBtzZPB8WFQvU10y7qjw5HDJM6RjxaczGHHefAb3JZ8nS
- KsmY/kKkzOrfg2X2SjCzqIlfZ5Qgpjp+iOOjhDTKu29yJaq6AK6eBZbQu1yyN92YtPb3
- ZQIUQmk22DPy62VAUe3lIHeIFmERu/0mj9n/097ylpJ7TG67VBE4k8ohzLpY8+6XW3Js
- dKJA==
-X-Gm-Message-State: APjAAAX/qnRt3hIJQArQz9vspbQU95mS2IrcNq/haeVXorLqda012rk3
- S8qNUive5VxOj06Hhj9WSxc=
-X-Google-Smtp-Source: APXvYqztzIJKlySFmdH9BdFnbtrF+f7KI5MphOF2Nh6m250q3lZ/+sKv+4qCnuRAgmm6p/IffKy0hA==
-X-Received: by 2002:a1c:7914:: with SMTP id l20mr14162802wme.130.1566705743964; 
- Sat, 24 Aug 2019 21:02:23 -0700 (PDT)
+ bh=zELEUgSsCN+8CRAOeDo9/h1leFLyd06lkasS5K9oq38=;
+ b=pnYf4aJygu471TikTcdLsbTL9UCVJdgg+BPQAQ7Vbc0tRtA/u6Kv0/LmouwGy6ng/m
+ hcZhUVvDpe80P+naqzaxGrXEmXUYWqeE0p/15gxKeVoEQNgR8ekb8ClzpWzFZgi74Y7i
+ LPX9C23Cz2FM25+kVT8rr69VEvGSqwH/Aeg5hn44HIQxgV1hJf329SdDcoVkNJRiehfL
+ gDolxyeSKbsqMcSXzZf+o/dEhb5NkKtAXxfY7+iKg/hDuSO7jX5zZirLJkuk/uwAT9em
+ p211VTKmrzT1smkAEoRdwKuWuTUxjzqTNScdXanPYtFSm14gj/8C1R81fSM+2iLPLTCB
+ Ae1Q==
+X-Gm-Message-State: APjAAAUepiiM6aNzutx71FuGrS+OeNT53lUGqLstKWYuFImYYBZhDEho
+ OGM5dZONfSS7gF2OAWW0aaA=
+X-Google-Smtp-Source: APXvYqx4cizF/w/NxjuQDhehIndoZo3vHd5SzkH1pDdj55nTy14mvcbc2b5y15qoEMJmPp4mbQ91iQ==
+X-Received: by 2002:a1c:9a46:: with SMTP id c67mr13836550wme.152.1566705746188; 
+ Sat, 24 Aug 2019 21:02:26 -0700 (PDT)
 Received: from localhost.localdomain ([94.204.252.234])
- by smtp.gmail.com with ESMTPSA id a6sm6820985wmj.15.2019.08.24.21.02.21
+ by smtp.gmail.com with ESMTPSA id a6sm6820985wmj.15.2019.08.24.21.02.24
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sat, 24 Aug 2019 21:02:23 -0700 (PDT)
+ Sat, 24 Aug 2019 21:02:25 -0700 (PDT)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 2/7] arm64: dts: meson-g12a-x96-max: add rc-x96max keymap
-Date: Sun, 25 Aug 2019 08:01:23 +0400
-Message-Id: <1566705688-18442-3-git-send-email-christianshewitt@gmail.com>
+Subject: [PATCH 3/7] arm64: dts: meson-gxbb-wetek-hub: add rc-wetek-hub keymap
+Date: Sun, 25 Aug 2019 08:01:24 +0400
+Message-Id: <1566705688-18442-4-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566705688-18442-1-git-send-email-christianshewitt@gmail.com>
 References: <1566705688-18442-1-git-send-email-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_210225_115500_89CDEA4C 
-X-CRM114-Status: GOOD (  11.76  )
+X-CRM114-CacheID: sfid-20190824_210228_015392_03C4299C 
+X-CRM114-Status: UNSURE (   9.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -105,25 +106,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add the rc-x96max keymap to the ir node
+add the rc-wetek-hub keymap to the ir node
 
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-index fe4013c..357d7dc 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a-x96-max.dts
-@@ -277,6 +277,7 @@
- 	status = "okay";
- 	pinctrl-0 = <&remote_input_ao_pins>;
- 	pinctrl-names = "default";
-+	linux,rc-map-name = "rc-x96max";
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dts
+index 2bfe699..83b985b 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-wetek-hub.dts
+@@ -12,3 +12,7 @@
+ 	compatible = "wetek,hub", "amlogic,meson-gxbb";
+ 	model = "WeTek Hub";
  };
- 
- &ext_mdio {
++
++&ir {
++	linux,rc-map-name = "rc-wetek-hub";
++};
 -- 
 2.7.4
 
