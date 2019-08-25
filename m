@@ -2,75 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 275929C31A
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 13:42:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DEEE9C31F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 13:55:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:Subject:To:From:
-	Message-ID:Date:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=crppU/S/PgZCKfJIXuUpxCdVwP7lmDHeGMTxU1LUGxo=; b=NS0PzJapaDfLyv3nispCGb80b
-	kzxb6dRrpA0Q1Ts5R2rKewBwGu1bUn0SJCBYknySZ8UkZGnfeJa/nUIusYbNSu0Uar+v3NCuGkz39
-	f0CnNJ9AMFNwYpj0LUNV6QgkHJmOwoQbc8kNUUyBjk9kQLERWOXdtPKSodtgSQhuCXpXnpYvTQPca
-	7q/NWsGfXHnAXmg4cOb/g0o71PDX94CpX0TUfE2QdTZGj0Y974ui6YLlobpLxBBivb4HNoxVpPdmK
-	jx6W9eKplEdd0VRJC4PZo/XtBHe+YhpEL4ugWO6ZdLRc8/Au9vdPLG/jQWfwe5nXZyfJwZzdHus14
-	NGk7ovgFA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=d1h6on6XKxCU+A/3pALnQ9kO++C2OTF8ZASItVkPDIU=; b=eeM7dELlUsUiCs
+	NOO38l1rAzsYVf8ZwqmKOmxk1xiGu7MjDrlMf6bW02UcR5/xOsvuKjXWs21EANz0ala2r2F6Y9LR7
+	kwie4oDXuQhxv1b2iIKWSRSZ1nzJ9XzLF76w6pOezJ6zYNrGTAjPHM/1mOhtKzevwGa/VNXrwgqOp
+	mLOO1umUF1ETk1LU6ftJN79aNBrYUpCjQ09XxUU/5McVNkQPMXEgpzxqKZ+wVPebKWUrc1vV1blig
+	dU8o/j3kM/CMzinrKiuKYfMQHkydQJkbKheWwr6TDHjFtj8z00YDFGyN25v9npPYQLJ1o9WRUCRa0
+	NggY0VPGMaLatOV1yS8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1quZ-0001EO-77; Sun, 25 Aug 2019 11:42:19 +0000
-Received: from mx.0dd.nl ([2a04:52c0:101:921::25])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i1quA-0001Ds-AF; Sun, 25 Aug 2019 11:41:56 +0000
-Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mx.0dd.nl (Postfix) with ESMTPS id 1028F5FA49;
- Sun, 25 Aug 2019 13:41:49 +0200 (CEST)
-Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
- secure) header.d=vdorst.com header.i=@vdorst.com header.b="k2ujcvjx"; 
- dkim-atps=neutral
-Received: from www (www.vdorst.com [192.168.2.222])
+	id 1i1r7L-0005e5-Mb; Sun, 25 Aug 2019 11:55:31 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i1r79-0005dm-68
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 11:55:20 +0000
+Received: from X250 (cm-84.211.118.175.getinternet.no [84.211.118.175])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.vdorst.com (Postfix) with ESMTPSA id C3E2C1D8CF55;
- Sun, 25 Aug 2019 13:41:48 +0200 (CEST)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com C3E2C1D8CF55
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
- s=default; t=1566733308;
- bh=nsy8i4SCb+0PbdWowmCp7cLFbW2VLegD4UK2dhPrFDg=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=k2ujcvjx/ALRN/ixzonsCgb1tzx7N7jKGX6BmUUKe9+JBnV34DinBqys+Ri+okn96
- vnF8VeFKnCeEF1z5Dtw0eIYUVz+9hYCWufDSvqf1IbGhqlRX0vOqN+TtxFr0nCKzAg
- qbP+RCyQGeWXmNHcoTOAchZ5lDZSTlgMgAWmNqiieuUgQI59bqVXzQVrP4a4ZzPmv9
- tm1QgQTxH5TRiYaPgUKzYew4dNeGDF4UmrcuwM2qhUgU7CGWh2mcLeTHvHinCJE6x+
- Jhu8gb3pBLmWzKa6rHV8bgPyaRZkUuXEtN//8aPrs2SVcKzCSrFi7Nc08GUE0/q14l
- t+0Zw09R5xNSQ==
-Received: from localhost.localdomain (localhost.localdomain [127.0.0.1]) by
- www.vdorst.com (Horde Framework) with HTTPS; Sun, 25 Aug 2019 11:41:48 +0000
-Date: Sun, 25 Aug 2019 11:41:48 +0000
-Message-ID: <20190825114148.Horde.Eep_u3-9rhj5i9Itx7gh4x4@www.vdorst.com>
-From: =?utf-8?b?UmVuw6k=?= van Dorst <opensource@vdorst.com>
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-Subject: Re: [PATCH net-next v3 2/3] net: ethernet: mediatek: Re-add support
- SGMII
-References: <20190823134516.27559-1-opensource@vdorst.com>
- <20190823134516.27559-3-opensource@vdorst.com>
- <20190824092156.GD13294@shell.armlinux.org.uk>
- <20190824131117.Horde.vSCF_CQ5jCMHcSTWkh7Woxm@www.vdorst.com>
- <20190824133225.GE13294@shell.armlinux.org.uk>
-In-Reply-To: <20190824133225.GE13294@shell.armlinux.org.uk>
-User-Agent: Horde Application Framework 5
+ by mail.kernel.org (Postfix) with ESMTPSA id DBBC82082F;
+ Sun, 25 Aug 2019 11:55:16 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566734118;
+ bh=IoQV6qRlYw1jN0SzAS1HIdX1/BJ95f/Yu7T9WJkxFy0=;
+ h=Date:From:To:Cc:Subject:From;
+ b=e8XV0TH2T4pJDr5mA5efQmLfyH+drBbWKluLTGhLig/dUTAG4ovzFv3VLuZ9pK0Ay
+ nkpO9T63LO2kzie9ExOTTLs8DXcGvsk3ELaQpWvXIflp05cwMPTx8TOZj/S9DLWV+7
+ UucH+bwzsxxzK7drBbTHySPCj+CTBG4eR4xQsano=
+Date: Sun, 25 Aug 2019 13:55:06 +0200
+From: Shawn Guo <shawnguo@kernel.org>
+To: Stephen Boyd <sboyd@kernel.org>
+Subject: [GIT PULL] i.MX clock changes for 5.4
+Message-ID: <20190825115505.GA20454@X250>
 MIME-Version: 1.0
 Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_044154_640037_A00F3252 
-X-CRM114-Status: GOOD (  15.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190825_045519_272878_9D7F930A 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -80,7 +62,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,43 +74,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nelson Chang <nelson.chang@mediatek.com>,
- Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
- Sean Wang <sean.wang@mediatek.com>, linux-mips@vger.kernel.org,
- linux-mediatek@lists.infradead.org, John Crispin <john@phrozen.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Stefan Roese <sr@denx.de>,
- "David S . Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"; DelSp="Yes"
+Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
+ Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgUnVzc2VsbCwKClF1b3RpbmcgUnVzc2VsbCBLaW5nIC0gQVJNIExpbnV4IGFkbWluIDxsaW51
-eEBhcm1saW51eC5vcmcudWs+OgoKPiBIaSBSZW7DqSwKPgo+IE9uIFNhdCwgQXVnIDI0LCAyMDE5
-IGF0IDAxOjExOjE3UE0gKzAwMDAsIFJlbsOpIHZhbiBEb3JzdCB3cm90ZToKPj4gSGkgUnVzc2Vs
-bCwKPj4KPj4gTWVkaWF0ZWsgY2FsbHMgaXQgVHVyYm8gUkdNSUkuIEl0IGlzIGEgb3ZlcmNsb2Nr
-IHZlcnNpb24gb2YgUkdNSUkgbW9kZS4KPj4gSXQgaXMgdXNlZCBiZXR3ZWVuIGZpcnN0IEdNQUMg
-YW5kIHBvcnQgNiBvZiB0aGUgbXQ3NTMwIHN3aXRjaC4gQ2FuIGJlIHVzZWQKPj4gd2l0aAo+PiBh
-biBpbnRlcm5hbCBhbmQgYW4gZXh0ZXJuYWwgbXQ3NTMwIHN3aXRjaC4KPj4KPj4gVFJHTUlJIHNw
-ZWVkIGFyZToKPj4gKiBtdDc2MjE6IDEyMDBNYml0Cj4+ICogbXQ3NjIzOiAyMDAwTWJpdCBhbmQg
-MjYwME1iaXQuCj4+Cj4+IEkgdGhpbmsgdGhhdCBUUkdNSUkgaXMgb25seSB1c2VkIGluIGEgZml4
-ZWQtbGluayBzaXR1YXRpb24gaW4gY29tYmluYXRpb24KPj4gd2l0aCBhCj4+IG10NzUzMCBzd2l0
-Y2ggYW5kIHJ1bm5pbmcgYW5kIG1heGltdW0gc3BlZWQvZnVsbCBkdXBsZXguIFNvIHJlcG9ydGlu
-Zwo+PiAxMDAwYmFzZVRfRnVsbCBzZWVtcyB0byBtZSB0aGUgcmlnaHQgb3B0aW9uLgo+Cj4gSSB0
-aGluayB3ZSBjYW4gaWdub3JlIHRoaXMgb25lIGZvciB0aGUgcHVycG9zZXMgb2YgbWVyZ2luZyB0
-aGlzIHBhdGNoCj4gc2V0LCBzaW5jZSB0aGlzIHNlZW1zIHRvIGJlIHNwZWNpZmljIHRvIHRoaXMg
-c2V0dXAuICBOZWl0aGVyIDEwMDBCYXNlVAo+IG5vciAxMDAwQmFzZVggZml0IHZlcnkgd2VsbCwg
-YnV0IHdlIGhhdmUgdG8gY2hvb3NlIHNvbWV0aGluZy4KPgo+PiBQSFlfSU5URVJGQUNFX01PREVf
-R01JSToKPj4gCSAgMTBiYXNlVF9IYWxmCj4+IAkgIDEwYmFzZVRfRnVsbAo+PiAJIDEwMGJhc2VU
-X0hhbGYKPj4gCSAxMDBiYXNlVF9GdWxsCj4+IAkxMDAwYmFzZVRfSGFsZgo+PiAJMTAwMGJhc2VU
-X0Z1bGwKPgo+IEkgdGhpbmsgR01JSSBjYW4gYmUgY29ubmVjdGVkIHRvIGEgUEhZIHRoYXQgY2Fu
-IGNvbnZlcnQgdG8gMTAwMEJhc2VYLCBzbwo+IHNob3VsZCBwcm9iYWJseSBpbmNsdWRlIHRoYXQg
-aGVyZSB0b28uCj4KClRoYW5rcyBmb3IgcmV2aWV3aW5nLgpJIHNoYWxsIGFkZCB0aGF0IHRvby4K
-Ckkgc2VuZCB2NCB0b2RheS4KCkdyZWF0cywKClJlbsOpCgoKPiBUaGFua3MuCj4KPiAtLQo+IFJN
-SydzIFBhdGNoIHN5c3RlbTogaHR0cHM6Ly93d3cuYXJtbGludXgub3JnLnVrL2RldmVsb3Blci9w
-YXRjaGVzLwo+IEZUVEMgYnJvYWRiYW5kIGZvciAwLjhtaWxlIGxpbmUgaW4gc3VidXJiaWE6IHN5
-bmMgYXQgMTIuMU1icHMgZG93biA2MjJrYnBzIHVwCj4gQWNjb3JkaW5nIHRvIHNwZWVkdGVzdC5u
-ZXQ6IDExLjlNYnBzIGRvd24gNTAwa2JwcyB1cAoKCgoKX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGlu
-dXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQu
-b3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+Hi Stephen,
+
+This is the i.MX clock changes I collected for 5.4.  Please help pull,
+and keep commit 6ad7cb7122ce ("clk: imx8: Add DSP related clocks")
+stable, as I pulled it into my DT branch as dependency.  Thanks!
+
+Shawn
+
+
+The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+
+  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+
+are available in the Git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/clk-imx-5.4
+
+for you to fetch changes up to 760e548e7f885d89bf2dfab4838df9379edd19fc:
+
+  clk: imx: imx8mn: fix audio pll setting (2019-08-24 21:04:27 +0200)
+
+----------------------------------------------------------------
+i.MX clock changes for 5.4:
+ - Add clock driver for i.MX8MN SoC.
+ - Switch i.MX8MM clock driver to platform driver.
+ - Add API for clk unregister when driver probe fail.
+ - Add Hifi4 DSP related clocks for i.MX8QXP SoC.
+ - Fix Audio PLL setting and parent clock for USB.
+ - Misc i.MX8 clock driver improvements and corrections.
+
+----------------------------------------------------------------
+Abel Vesa (3):
+      clk: imx: Remove unused clk based API
+      clk: imx8mm: Switch to platform driver
+      clk: imx8mq: Mark AHB clock as critical
+
+Anson Huang (14):
+      dt-bindings: imx: Add clock binding doc for i.MX8MN
+      clk: imx8mm: Make 1416X/1443X PLL macro definitions common for usage
+      clk: imx: Add API for clk unregister when driver probe fail
+      clk: imx: Add support for i.MX8MN clock driver
+      clk: imx8mq: Remove CLK_IS_CRITICAL flag for IMX8MQ_CLK_TMU_ROOT
+      clk: imx8mm: Fix typo of pwm3 clock's mux option #4
+      clk: imx8mm: GPT1 clock mux option #5 should be sys_pll1_80m
+      clk: imx7ulp: Make sure earlycon's clock is enabled
+      clk: imx: Remove unused function statement
+      clk: imx8mn: Keep uart clocks on for early console
+      clk: imx8mm: Unregister clks when of_clk_add_provider failed
+      clk: imx8mq: Unregister clks when of_clk_add_provider failed
+      clk: imx8mn: Add missing rate_count assignment for each PLL structure
+      clk: imx8mn: Add necessary frequency support for ARM PLL table
+
+Daniel Baluta (1):
+      clk: imx8: Add DSP related clocks
+
+Fancy Fang (1):
+      clk: imx8mm: rename 'share_count_dcss' to 'share_count_disp'
+
+Leonard Crestez (4):
+      clk: imx8mq: Fix sys3 pll references
+      clk: imx8mm: Fix incorrect parents
+      clk: imx8mn: Fix incorrect parents
+      clk: imx8mn: Add GIC clock
+
+Li Jun (2):
+      clk: imx8mm: correct the usb1_ctrl parent to be usb_bus
+      clk: imx8mq: set correct parent for usb ctrl clocks
+
+Peng Fan (3):
+      clk: imx: imx8mm: fix audio pll setting
+      clk: imx8mn: fix int pll clk gate
+      clk: imx: imx8mn: fix audio pll setting
+
+ .../devicetree/bindings/clock/imx8mn-clock.yaml    | 112 ++++
+ drivers/clk/imx/Kconfig                            |   6 +
+ drivers/clk/imx/Makefile                           |   1 +
+ drivers/clk/imx/clk-imx7ulp.c                      |  31 +
+ drivers/clk/imx/clk-imx8mm.c                       | 109 ++--
+ drivers/clk/imx/clk-imx8mn.c                       | 660 +++++++++++++++++++++
+ drivers/clk/imx/clk-imx8mq.c                       | 131 ++--
+ drivers/clk/imx/clk-imx8qxp-lpcg.c                 |   5 +
+ drivers/clk/imx/clk.c                              |   8 +
+ drivers/clk/imx/clk.h                              |  43 +-
+ include/dt-bindings/clock/imx8-clock.h             |   6 +-
+ include/dt-bindings/clock/imx8mn-clock.h           | 216 +++++++
+ 12 files changed, 1188 insertions(+), 140 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
+ create mode 100644 drivers/clk/imx/clk-imx8mn.c
+ create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
