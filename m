@@ -2,67 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B79069C51D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 19:29:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D6CB9C53D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 19:44:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=TKsAfYngUDoTcu0IiubdnS9sSrSPwH6J+YANu8Z8yJE=; b=eJZ
-	CNJ5uoMPpYMXhX6j7wZlaEPp3pKPehE3ICMbmh/AwKPHTebJ5zjVfZwK6PcYZUGPLQUtpkEYPUq4G
-	ODMgxh8TlNnpEbetWSr6sLiJwtzEyzx9+qeHCQmfsqoQkJUtXij/lMAiDPMF8slZmGKfXUDnzcZ22
-	LuwDfURf3zkFqBoKaFvuFahCVBqETnWt5JAioj4Xgbg1UyOSf3fc64f41V34xqnUsqmyObYKEeLUd
-	p5hl3vuLC+29KU49eu8qKGuwoee8OsaJDV9brypHx+cN+IkhKxTKDO9gg+6787egYKmBVCXC+3kVV
-	lx8DZWmgSQIBemMHwOkQcV+Xwrq5qDw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=xnIx8xiCWF1X3jsaoO+XfgVA1ZUCNu5fDxg5zFacTPs=; b=dF9RbohqJZrAzx
+	Jkr7CDMnDL44wU5T/+2HNnkU/e18M3LHL8qsTRiXtsdEHMHJVtib13Vwsv5ZhHTw8pnb55nFwlT2j
+	35bNMuNEh9ZEeqDWOke0graFHT4K6g7gpepHR39KHYi97Egy7evo68RjEsIILvs1zRO6ZwsaREZ2k
+	3Lxy664kxhtbx/fUh7cYaxN0byrOqLiRLkk6XjZZaS+hzekbFddiqyauQ1a/T8+pfqu1t8FQiLhqN
+	yL46OlSQqTvv7o7MMF0HM10HdOqFbjC4WKMjbEFBOdfJnUQLvFnYQhzMcHjqQbEkIVM4+TcgtW4Wa
+	+mtMznCUzyP9v9uzb29A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1wKH-0002Le-V0; Sun, 25 Aug 2019 17:29:14 +0000
-Received: from conuserg-11.nifty.com ([210.131.2.78])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1wK9-0002L9-DJ
- for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 17:29:07 +0000
-Received: from grover.flets-west.jp (softbank126125143222.bbtec.net
- [126.125.143.222]) (authenticated)
- by conuserg-11.nifty.com with ESMTP id x7PHSb7O010019;
- Mon, 26 Aug 2019 02:28:37 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x7PHSb7O010019
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1566754118;
- bh=O8rVg1SxjWnsiBqfyChLy0jNlbeiFProErHAOQpA2Mo=;
+	id 1i1wYk-0006jX-E3; Sun, 25 Aug 2019 17:44:10 +0000
+Received: from mx.0dd.nl ([5.2.79.48])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i1wYY-0006iJ-3W; Sun, 25 Aug 2019 17:44:00 +0000
+Received: from mail.vdorst.com (mail.vdorst.com [IPv6:fd01::250])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx.0dd.nl (Postfix) with ESMTPS id 0BDA45FA49;
+ Sun, 25 Aug 2019 19:43:55 +0200 (CEST)
+Authentication-Results: mx.0dd.nl; dkim=pass (2048-bit key;
+ secure) header.d=vdorst.com header.i=@vdorst.com header.b="GGlDHOIy"; 
+ dkim-atps=neutral
+Received: from pc-rene.vdorst.com (pc-rene.vdorst.com [192.168.2.125])
+ by mail.vdorst.com (Postfix) with ESMTPA id BDD6E1D8E163;
+ Sun, 25 Aug 2019 19:43:54 +0200 (CEST)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mail.vdorst.com BDD6E1D8E163
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=vdorst.com;
+ s=default; t=1566755034;
+ bh=o6wAtIg9/9bX+HgLTjY6gx3KROiRBjCVc3xSGwYT8a4=;
  h=From:To:Cc:Subject:Date:From;
- b=z/jVUTMrEkyDDPZkmEQd2+urd8daK8IpIY1QBUGfpE718vIjykWHonuzimvizeyeZ
- IdFkT0v6FNX5pDQg5MmUnhGQ6Q1LdcjolG3E2rLgotthLHKMdi3V4ZUgdCKWm1TI8l
- KbpJJtIeq7hqmkAN4QFqzyjK9GpswiZ+sS3vjovXmXYKZgwa+Sgidl6jFvA8Bl5jD2
- YhVWU7aOianmGiV3S0rX+sGuf8dONVyX7gLex5yXHZbk25GyYYQc9yzDAeG66pxDyq
- XqNG9O2xKt/FIQDw3L5YcqjKYAwgeaUom5z9b6mUozIZVlOp112GOVjzEJpjyTTEz/
- LUoSsVVi8hZjw==
-X-Nifty-SrcIP: [126.125.143.222]
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-To: linux-kbuild@vger.kernel.org
-Subject: [PATCH 1/2] kbuild: change *FLAGS_<basetarget>.o to take the path
- relative to $(obj)
-Date: Mon, 26 Aug 2019 02:28:32 +0900
-Message-Id: <20190825172833.5708-1-yamada.masahiro@socionext.com>
-X-Mailer: git-send-email 2.17.1
+ b=GGlDHOIyVmHv3TJ/Pwnx6inYEWPnk/uL9BdikBAoiAv4wjbsOUKCSt+9/rEz8C4dq
+ ODy7m/c8vrCUnLkaXFvTGm+FtbTATj0DL9kkdchm/5FkCz48ivzBGDO39Cc6tdFEzI
+ fPpaNR4siNWqWf8Svp7Ir9VNL47OHf91CYWMJsdzMGyp/aOT/FeIZanbPOAb19WK1f
+ cxPVGncvxKPxUDm3FRYe/bQq/2SZcn33j7tNy69TRrD4/4SIpkUR+5pskKcKO3w0mW
+ +EXGwVpLUK/ms8Y1YwkXiEVdxZuTY0nLu+IknfWmo2eNFGlyDZ0WvDtFn3NPIQVvQD
+ YDMnzZe+iKG2A==
+From: =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>
+To: John Crispin <john@phrozen.org>, Sean Wang <sean.wang@mediatek.com>,
+ Nelson Chang <nelson.chang@mediatek.com>,
+ "David S . Miller" <davem@davemloft.net>,
+ Matthias Brugger <matthias.bgg@gmail.com>
+Subject: [PATCH net-next v4 0/3] net: ethernet: mediatek: convert to PHYLINK
+Date: Sun, 25 Aug 2019 19:43:38 +0200
+Message-Id: <20190825174341.20750-1-opensource@vdorst.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_102905_674816_6CC5B8F6 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190825_104358_434669_293D125E 
+X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.78 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [210.131.2.78 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,240 +83,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Michal Marek <michal.lkml@markovi.net>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- x86@kernel.org, Russell King <linux@armlinux.org.uk>,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- linux-arm-kernel@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
- "H. Peter Anvin" <hpa@zytor.com>, James Morse <james.morse@arm.com>,
- Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
- Julien Thierry <julien.thierry.kdev@gmail.com>
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Frank Wunderlich <frank-w@public-files.de>, netdev@vger.kernel.org,
+ linux-mips@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ =?UTF-8?q?Ren=C3=A9=20van=20Dorst?= <opensource@vdorst.com>,
+ linux-mediatek@lists.infradead.org, Stefan Roese <sr@denx.de>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Kbuild provides per-file compiler flag addition/removal:
-
-  CFLAGS_<basetarget>.o
-  CFLAGS_REMOVE_<basetarget>.o
-  AFLAGS_<basetarget>.o
-  AFLAGS_REMOVE_<basetarget>.o
-  CPPFLAGS_<basetarget>
-  HOSTCFLAGS_<basetarget>.o
-  HOSTCXXFLAGS_<basetarget>.o
-
-The <basetarget> is the filename of the target without its suffix.
-
-This syntax comes into a trouble when two files with the same name
-appear in one Makefile, for example:
-
-  obj-y += foo.o
-  obj-y += dir/foo.o
-  CFLAGS_foo.o := <some-flags>
-
-Here, the <some-flags> applies to both foo.o and dir/foo.o
-
-The real world problem is:
-
-  scripts/kconfig/util.c
-  scripts/kconfig/lxdialog/util.c
-
-Both files are compiled into scripts/kconfig/mconf, but only the
-latter should be given with additional flags for ncurses.
-
-It is more sensible to use the relative path to the Makefile, like this:
-
-  obj-y += foo.o
-  CFLAGS_foo.o := <some-flags>
-  obj-y += dir/foo.o
-  CFLAGS_dir/foo.o := <other-flags>
-
-The $* variable is replaced with the stem ('%') part in a pattern rule.
-In other words, this only works for pattern rules.
-
-Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
----
-
- arch/arm/kvm/Makefile        |  5 +++--
- arch/x86/entry/vdso/Makefile |  3 ++-
- scripts/Makefile.host        | 30 +++++++++++++++---------------
- scripts/Makefile.lib         | 10 +++++-----
- scripts/kconfig/Makefile     |  8 ++++----
- 5 files changed, 29 insertions(+), 27 deletions(-)
-
-diff --git a/arch/arm/kvm/Makefile b/arch/arm/kvm/Makefile
-index 531e59f5be9c..b76b75bd9e00 100644
---- a/arch/arm/kvm/Makefile
-+++ b/arch/arm/kvm/Makefile
-@@ -8,13 +8,14 @@ ifeq ($(plus_virt),+virt)
- 	plus_virt_def := -DREQUIRES_VIRT=1
- endif
- 
-+KVM := ../../../virt/kvm
-+
- ccflags-y += -I $(srctree)/$(src) -I $(srctree)/virt/kvm/arm/vgic
--CFLAGS_arm.o := $(plus_virt_def)
-+CFLAGS_$(KVM)/arm/arm.o := $(plus_virt_def)
- 
- AFLAGS_init.o := -Wa,-march=armv7-a$(plus_virt)
- AFLAGS_interrupts.o := -Wa,-march=armv7-a$(plus_virt)
- 
--KVM := ../../../virt/kvm
- kvm-arm-y = $(KVM)/kvm_main.o $(KVM)/coalesced_mmio.o $(KVM)/eventfd.o $(KVM)/vfio.o
- 
- obj-$(CONFIG_KVM_ARM_HOST) += hyp/
-diff --git a/arch/x86/entry/vdso/Makefile b/arch/x86/entry/vdso/Makefile
-index 8df549138193..0f2154106d01 100644
---- a/arch/x86/entry/vdso/Makefile
-+++ b/arch/x86/entry/vdso/Makefile
-@@ -89,6 +89,7 @@ $(vobjs): KBUILD_CFLAGS := $(filter-out $(GCC_PLUGINS_CFLAGS) $(RETPOLINE_CFLAGS
- #
- CFLAGS_REMOVE_vdso-note.o = -pg
- CFLAGS_REMOVE_vclock_gettime.o = -pg
-+CFLAGS_REMOVE_vdso32/vclock_gettime.o = -pg
- CFLAGS_REMOVE_vgetcpu.o = -pg
- CFLAGS_REMOVE_vvar.o = -pg
- 
-@@ -128,7 +129,7 @@ $(obj)/%.so: $(obj)/%.so.dbg FORCE
- $(obj)/vdsox32.so.dbg: $(obj)/vdsox32.lds $(vobjx32s) FORCE
- 	$(call if_changed,vdso_and_check)
- 
--CPPFLAGS_vdso32.lds = $(CPPFLAGS_vdso.lds)
-+CPPFLAGS_vdso32/vdso32.lds = $(CPPFLAGS_vdso.lds)
- VDSO_LDFLAGS_vdso32.lds = -m elf_i386 -soname linux-gate.so.1
- 
- targets += vdso32/vdso32.lds
-diff --git a/scripts/Makefile.host b/scripts/Makefile.host
-index b402c619147d..cd2b98e2f727 100644
---- a/scripts/Makefile.host
-+++ b/scripts/Makefile.host
-@@ -80,9 +80,9 @@ host-cxxshobjs	:= $(addprefix $(obj)/,$(host-cxxshobjs))
- # Handle options to gcc. Support building with separate output directory
- 
- _hostc_flags   = $(KBUILD_HOSTCFLAGS)   $(HOST_EXTRACFLAGS)   \
--                 $(HOSTCFLAGS_$(basetarget).o)
-+                 $(HOSTCFLAGS_$*.o)
- _hostcxx_flags = $(KBUILD_HOSTCXXFLAGS) $(HOST_EXTRACXXFLAGS) \
--                 $(HOSTCXXFLAGS_$(basetarget).o)
-+                 $(HOSTCXXFLAGS_$*.o)
- 
- # $(objtree)/$(obj) for including generated headers from checkin source files
- ifeq ($(KBUILD_EXTMOD),)
-@@ -102,7 +102,7 @@ hostcxx_flags  = -Wp,-MD,$(depfile) $(_hostcxx_flags)
- # host-csingle -> Executable
- quiet_cmd_host-csingle 	= HOSTCC  $@
-       cmd_host-csingle	= $(HOSTCC) $(hostc_flags) $(KBUILD_HOSTLDFLAGS) -o $@ $< \
--		$(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
-+		$(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
- $(host-csingle): $(obj)/%: $(src)/%.c FORCE
- 	$(call if_changed_dep,host-csingle)
- 
-@@ -110,9 +110,9 @@ $(host-csingle): $(obj)/%: $(src)/%.c FORCE
- # host-cmulti -> executable
- quiet_cmd_host-cmulti	= HOSTLD  $@
-       cmd_host-cmulti	= $(HOSTCC) $(KBUILD_HOSTLDFLAGS) -o $@ \
--			  $(addprefix $(obj)/,$($(@F)-objs)) \
--			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
--$(host-cmulti): FORCE
-+			  $(addprefix $(obj)/, $($*-objs)) \
-+			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
-+$(host-cmulti): $(obj)/%: FORCE
- 	$(call if_changed,host-cmulti)
- $(call multi_depend, $(host-cmulti), , -objs)
- 
-@@ -128,9 +128,9 @@ $(host-cobjs): $(obj)/%.o: $(src)/%.c FORCE
- quiet_cmd_host-cxxmulti	= HOSTLD  $@
-       cmd_host-cxxmulti	= $(HOSTCXX) $(KBUILD_HOSTLDFLAGS) -o $@ \
- 			  $(foreach o,objs cxxobjs,\
--			  $(addprefix $(obj)/,$($(@F)-$(o)))) \
--			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
--$(host-cxxmulti): FORCE
-+			  $(addprefix $(obj)/, $($*-$(o)))) \
-+			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
-+$(host-cxxmulti): $(obj)/%: FORCE
- 	$(call if_changed,host-cxxmulti)
- $(call multi_depend, $(host-cxxmulti), , -objs -cxxobjs)
- 
-@@ -161,9 +161,9 @@ $(host-cxxshobjs): $(obj)/%.o: $(src)/%.c FORCE
- # *.o -> .so shared library (host-cshlib)
- quiet_cmd_host-cshlib	= HOSTLLD -shared $@
-       cmd_host-cshlib	= $(HOSTCC) $(KBUILD_HOSTLDFLAGS) -shared -o $@ \
--			  $(addprefix $(obj)/,$($(@F:.so=-objs))) \
--			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
--$(host-cshlib): FORCE
-+			  $(addprefix $(obj)/, $($*-objs)) \
-+			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*.so)
-+$(host-cshlib): $(obj)/%.so: FORCE
- 	$(call if_changed,host-cshlib)
- $(call multi_depend, $(host-cshlib), .so, -objs)
- 
-@@ -171,9 +171,9 @@ $(call multi_depend, $(host-cshlib), .so, -objs)
- # *.o -> .so shared library (host-cxxshlib)
- quiet_cmd_host-cxxshlib	= HOSTLLD -shared $@
-       cmd_host-cxxshlib	= $(HOSTCXX) $(KBUILD_HOSTLDFLAGS) -shared -o $@ \
--			  $(addprefix $(obj)/,$($(@F:.so=-objs))) \
--			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
--$(host-cxxshlib): FORCE
-+			  $(addprefix $(obj)/, $($*-objs)) \
-+			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*.so)
-+$(host-cxxshlib): $(obj)/%.so: FORCE
- 	$(call if_changed,host-cxxshlib)
- $(call multi_depend, $(host-cxxshlib), .so, -objs)
- 
-diff --git a/scripts/Makefile.lib b/scripts/Makefile.lib
-index 264611972c4a..0d48e17bfb07 100644
---- a/scripts/Makefile.lib
-+++ b/scripts/Makefile.lib
-@@ -109,12 +109,12 @@ basename_flags = -DKBUILD_BASENAME=$(call name-fix,$(basetarget))
- modname_flags  = -DKBUILD_MODNAME=$(call name-fix,$(modname))
- 
- orig_c_flags   = $(KBUILD_CPPFLAGS) $(KBUILD_CFLAGS) \
--                 $(ccflags-y) $(CFLAGS_$(basetarget).o)
--_c_flags       = $(filter-out $(CFLAGS_REMOVE_$(basetarget).o), $(orig_c_flags))
-+                 $(ccflags-y) $(CFLAGS_$*.o)
-+_c_flags       = $(filter-out $(CFLAGS_REMOVE_$*.o), $(orig_c_flags))
- orig_a_flags   = $(KBUILD_CPPFLAGS) $(KBUILD_AFLAGS) \
--                 $(asflags-y) $(AFLAGS_$(basetarget).o)
--_a_flags       = $(filter-out $(AFLAGS_REMOVE_$(basetarget).o), $(orig_a_flags))
--_cpp_flags     = $(KBUILD_CPPFLAGS) $(cppflags-y) $(CPPFLAGS_$(@F))
-+                 $(asflags-y) $(AFLAGS_$*.o)
-+_a_flags       = $(filter-out $(AFLAGS_REMOVE_$*.o), $(orig_a_flags))
-+_cpp_flags     = $(KBUILD_CPPFLAGS) $(cppflags-y) $(CPPFLAGS_$*.lds)
- 
- #
- # Enable gcov profiling flags for a file, directory or for all files depending
-diff --git a/scripts/kconfig/Makefile b/scripts/kconfig/Makefile
-index bed7a5a2fbe9..ef2f2336c469 100644
---- a/scripts/kconfig/Makefile
-+++ b/scripts/kconfig/Makefile
-@@ -166,15 +166,15 @@ $(obj)/nconf.o $(obj)/nconf.gui.o: $(obj)/nconf-cfg
- 
- # mconf: Used for the menuconfig target based on lxdialog
- hostprogs-y	+= mconf
--lxdialog	:= checklist.o inputbox.o menubox.o textbox.o util.o yesno.o
--mconf-objs	:= mconf.o $(addprefix lxdialog/, $(lxdialog)) $(common-objs)
-+lxdialog	:= $(addprefix lxdialog/, \
-+		     checklist.o inputbox.o menubox.o textbox.o util.o yesno.o)
-+mconf-objs	:= mconf.o $(lxdialog) $(common-objs)
- 
- HOSTLDLIBS_mconf = $(shell . $(obj)/mconf-cfg && echo $$libs)
- $(foreach f, mconf.o $(lxdialog), \
-   $(eval HOSTCFLAGS_$f = $$(shell . $(obj)/mconf-cfg && echo $$$$cflags)))
- 
--$(obj)/mconf.o: $(obj)/mconf-cfg
--$(addprefix $(obj)/lxdialog/, $(lxdialog)): $(obj)/mconf-cfg
-+$(addprefix $(obj)/, mconf.o $(lxdialog)): $(obj)/mconf-cfg
- 
- # qconf: Used for the xconfig target based on Qt
- hostprogs-y	+= qconf
--- 
-2.17.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhlc2UgcGF0Y2hlcyBjb252ZXJ0cyBtZWRpYXRlayBkcml2ZXIgdG8gUEhZTElOSyBBUEkuCgp2
+My0+djQ6CiogUGh5bGluayBpbXByb3ZlbWVudHMgYW5kIGNsZWFuLXVwcyBhZnRlciByZXZpZXcK
+djItPnYzOgoqIFBoeWxpbmsgaW1wcm92ZW1lbnRzIGFuZCBjbGVhbi11cHMgYWZ0ZXIgcmV2aWV3
+CnYxLT52MjoKKiBSZWJhc2UgZm9yIG10NzZ4OCBjaGFuZ2VzCiogUGh5bGluayBpbXByb3ZlbWVu
+dHMgYW5kIGNsZWFuLXVwcyBhZnRlciByZXZpZXcKKiBTR01JSSBwb3J0IGRvZXNuJ3Qgc3VwcG9y
+dCAyLjVHYml0IGluIFNHTUlJIG1vZGUgb25seSBpbiBCQVNFLVggbW9kZS4KICBSZWZhY3RvciB0
+aGUgY29kZS4KCgpSZW7DqSB2YW4gRG9yc3QgKDMpOgogIG5ldDogZXRoZXJuZXQ6IG1lZGlhdGVr
+OiBBZGQgYmFzaWMgUEhZTElOSyBzdXBwb3J0CiAgbmV0OiBldGhlcm5ldDogbWVkaWF0ZWs6IFJl
+LWFkZCBzdXBwb3J0IFNHTUlJCiAgZHQtYmluZGluZ3M6IG5ldDogZXRoZXJuZXQ6IFVwZGF0ZSBt
+dDc2MjIgZG9jcyBhbmQgZHRzIHRvIHJlZmxlY3QgdGhlCiAgICBuZXcgcGh5bGluayBBUEkKCiAu
+Li4vYXJtL21lZGlhdGVrL21lZGlhdGVrLHNnbWlpc3lzLnR4dCAgICAgICAgfCAgIDIgLQogLi4u
+L2R0cy9tZWRpYXRlay9tdDc2MjItYmFuYW5hcGktYnBpLXI2NC5kdHMgIHwgIDI4ICstCiBhcmNo
+L2FybTY0L2Jvb3QvZHRzL21lZGlhdGVrL210NzYyMi5kdHNpICAgICAgfCAgIDEgLQogZHJpdmVy
+cy9uZXQvZXRoZXJuZXQvbWVkaWF0ZWsvS2NvbmZpZyAgICAgICAgIHwgICAyICstCiBkcml2ZXJz
+L25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3BhdGguYyAgfCAgNzUgKy0tCiBkcml2ZXJz
+L25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3NvYy5jICAgfCA1MjEgKysrKysrKysrKysr
+LS0tLS0tCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfZXRoX3NvYy5oICAgfCAg
+NjggKystCiBkcml2ZXJzL25ldC9ldGhlcm5ldC9tZWRpYXRlay9tdGtfc2dtaWkuYyAgICAgfCAg
+NjUgKystCiA4IGZpbGVzIGNoYW5nZWQsIDQ3MCBpbnNlcnRpb25zKCspLCAyOTIgZGVsZXRpb25z
+KC0pCgotLSAKMi4yMC4xCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBs
+aXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlz
+dGluZm8vbGludXgtYXJtLWtlcm5lbAo=
