@@ -2,92 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C79589C4D4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 18:14:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B79069C51D
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 19:29:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6NIGrHaC4XR18U/Bhtp+VmCmx8eQNCo1UBWFurjZtjg=; b=ZBVQxpB8I8qCXJ
-	Li6SaWz0PBSBPBRoGtgokQadnhHGzJ664V5KN1KOyHPI2f6ZiX5QPQxBKBwegLi3NwyrVpUJNkYUk
-	Ho9smzMp8bL8GSzge7yF/2ai4jU7l+XvpCm/RInECMkQ7jeoXkbKcihdA6l59PbpMbN1U11CsNLY8
-	hFXjC+OqeXer5IZj0kqytmM5CbuxXB2RjKrhoqQg50fXVOa7fJaooWVI/XDWUJT1GdiDOAvOYS8FS
-	AiO4ik/sMq7CfbQQdPIpRXniD5aMW1CbcZjfuOonoEQroZDBiHQVZesobRxllg0jl3EHz33bvXc+v
-	Pi5nMfTGn5sfKiGagfJg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=TKsAfYngUDoTcu0IiubdnS9sSrSPwH6J+YANu8Z8yJE=; b=eJZ
+	CNJ5uoMPpYMXhX6j7wZlaEPp3pKPehE3ICMbmh/AwKPHTebJ5zjVfZwK6PcYZUGPLQUtpkEYPUq4G
+	ODMgxh8TlNnpEbetWSr6sLiJwtzEyzx9+qeHCQmfsqoQkJUtXij/lMAiDPMF8slZmGKfXUDnzcZ22
+	LuwDfURf3zkFqBoKaFvuFahCVBqETnWt5JAioj4Xgbg1UyOSf3fc64f41V34xqnUsqmyObYKEeLUd
+	p5hl3vuLC+29KU49eu8qKGuwoee8OsaJDV9brypHx+cN+IkhKxTKDO9gg+6787egYKmBVCXC+3kVV
+	lx8DZWmgSQIBemMHwOkQcV+Xwrq5qDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1vA4-00057U-NY; Sun, 25 Aug 2019 16:14:36 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1i1wKH-0002Le-V0; Sun, 25 Aug 2019 17:29:14 +0000
+Received: from conuserg-11.nifty.com ([210.131.2.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1v9o-00056H-GY
- for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 16:14:22 +0000
-Received: by mail-io1-xd43.google.com with SMTP id o9so31542959iom.3
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 25 Aug 2019 09:14:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=o5hlv7LBBBQ7yX2vTJxs90ureJ9F2QkcSE1n+2RFehQ=;
- b=EHavlmakZHdQ2TgI6cSSUt8egECu5c6Qhvd6qXCgaANp5/fbK7QaYLlOeT2Wf/VmE2
- 7H285DQaahoH+A8XtfQJ+hLzp5mz28CdpA1uxRJcLZDJkLSbNOnbJJqwNNVAYFLc4I77
- mhQVxaR2RDyuPRQ8USa944iZcy2tzFRhoDXd7lmA8WVXQklV1xGiMsPS3rn/vbs35E+1
- 4eFik9hUKYo/S+F9x5MrqbrHXvafS84a4K49ajq868ezZtvzRY9se/08M3m4d6D+Xlpq
- RxZR50pAePjM5B0BR5mQDBrSIN++nLZ3MXNRxDRr3/1KHVAgh6rGrf62Tf/U9yo7sdwF
- 4rUw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=o5hlv7LBBBQ7yX2vTJxs90ureJ9F2QkcSE1n+2RFehQ=;
- b=NHRmrEtVkoht6CQR89dZJH08/MVybnEH7j8ThHqYT+xOTEfLCiu1nGP9xFVGSN4kpa
- f97eWC9VVE0EnVoh2XrW2fFl4mtIkixS3KvfMh1mRYf19JO0BS8wpPTajEkic4OYDCXJ
- r4doMF9yGT+ClxYw9i8dey7WgPUGdDorcz05ctjMtnTTAPir6IPylsrsBATOz1SlMbpB
- SGyq4oikW3KsPHIjgJ6eAXhLacJAuq/2CJtKLuBb/t0cE6OfSjFD7g3N71/apW0/ehj2
- OMbzkwk4o54L3MQVvcJiD5QRC3DVc9zA2vFxZf95jvJi/Km/bagrdIh0rXQCn1zioTxm
- k7QA==
-X-Gm-Message-State: APjAAAXBCx4CyRegBu2B3YAv3OgvKMFlg6sHPA4s8DSL2LctM+D3hOMX
- xuG/3RjZrtWjgHgl0+OVcrT2HTJHuaeqP91P7/Q=
-X-Google-Smtp-Source: APXvYqyYW/WgCe7KrtqDjbWr9khgZgLkZFrQPqqWIE/KTfnyeROY9OqnnPpzAzTtsJwGJAkMVkGdRQnAPcorkdXkPEI=
-X-Received: by 2002:a05:6602:cb:: with SMTP id z11mr2793812ioe.4.1566749655914; 
- Sun, 25 Aug 2019 09:14:15 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-9-tiny.windzz@gmail.com>
- <CA+E=qVfp-rProxOwX__J6jM-pZ9g_SmeuOCOgvC_5DJVQw4OGw@mail.gmail.com>
- <CAEExFWubLqtPZ=ZKJTCb6x2-PeYebXb3sr-t-XvtrLJTRiUU1A@mail.gmail.com>
- <CA+E=qVf9V9iTvCfXXyjqKeviCJOvYpKUO8qw6cQsKqoaRmdKYQ@mail.gmail.com>
- <20190813200623.2dmxcwibuyolnuhh@core.my.home>
- <CA+E=qVd-hz68VhL0n+3-HDNua2QsT0dOVY9mRjhb5e5+tBW5Fg@mail.gmail.com>
-In-Reply-To: <CA+E=qVd-hz68VhL0n+3-HDNua2QsT0dOVY9mRjhb5e5+tBW5Fg@mail.gmail.com>
-From: Frank Lee <tiny.windzz@gmail.com>
-Date: Mon, 26 Aug 2019 00:14:04 +0800
-Message-ID: <CAEExFWueWPOvXoE+zj67DuKWeamcLgawfOxanfPp6Jyo9Envzg@mail.gmail.com>
-Subject: Re: [PATCH v5 08/18] thermal: sun8i: support mod clocks
-To: Vasily Khoruzhick <anarsoul@gmail.com>
+ id 1i1wK9-0002L9-DJ
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 17:29:07 +0000
+Received: from grover.flets-west.jp (softbank126125143222.bbtec.net
+ [126.125.143.222]) (authenticated)
+ by conuserg-11.nifty.com with ESMTP id x7PHSb7O010019;
+ Mon, 26 Aug 2019 02:28:37 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-11.nifty.com x7PHSb7O010019
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1566754118;
+ bh=O8rVg1SxjWnsiBqfyChLy0jNlbeiFProErHAOQpA2Mo=;
+ h=From:To:Cc:Subject:Date:From;
+ b=z/jVUTMrEkyDDPZkmEQd2+urd8daK8IpIY1QBUGfpE718vIjykWHonuzimvizeyeZ
+ IdFkT0v6FNX5pDQg5MmUnhGQ6Q1LdcjolG3E2rLgotthLHKMdi3V4ZUgdCKWm1TI8l
+ KbpJJtIeq7hqmkAN4QFqzyjK9GpswiZ+sS3vjovXmXYKZgwa+Sgidl6jFvA8Bl5jD2
+ YhVWU7aOianmGiV3S0rX+sGuf8dONVyX7gLex5yXHZbk25GyYYQc9yzDAeG66pxDyq
+ XqNG9O2xKt/FIQDw3L5YcqjKYAwgeaUom5z9b6mUozIZVlOp112GOVjzEJpjyTTEz/
+ LUoSsVVi8hZjw==
+X-Nifty-SrcIP: [126.125.143.222]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: linux-kbuild@vger.kernel.org
+Subject: [PATCH 1/2] kbuild: change *FLAGS_<basetarget>.o to take the path
+ relative to $(obj)
+Date: Mon, 26 Aug 2019 02:28:32 +0900
+Message-Id: <20190825172833.5708-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_091420_559718_C3332453 
-X-CRM114-Status: GOOD (  34.46  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190825_102905_674816_6CC5B8F6 
+X-CRM114-Status: GOOD (  10.90  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [210.131.2.78 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tiny.windzz[at]gmail.com)
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,139 +74,240 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Linux PM <linux-pm@vger.kernel.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Eduardo Valentin <edubezval@gmail.com>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Jonathan.Cameron@huawei.com,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, rui.zhang@intel.com,
- "David S. Miller" <davem@davemloft.net>,
- arm-linux <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Michal Marek <michal.lkml@markovi.net>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
+ linux-arm-kernel@lists.infradead.org, Andy Lutomirski <luto@kernel.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, James Morse <james.morse@arm.com>,
+ Thomas Gleixner <tglx@linutronix.de>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SEkgVmFzaWx5LAoKT24gV2VkLCBBdWcgMTQsIDIwMTkgYXQgMTE6MDEgQU0gVmFzaWx5IEtob3J1
-emhpY2sgPGFuYXJzb3VsQGdtYWlsLmNvbT4gd3JvdGU6Cj4KPiBPbiBUdWUsIEF1ZyAxMywgMjAx
-OSBhdCAxOjA2IFBNIE9uZMWZZWogSmlybWFuIDxtZWdvdXNAbWVnb3VzLmNvbT4gd3JvdGU6Cj4g
-Pgo+ID4gT24gTW9uLCBBdWcgMTIsIDIwMTkgYXQgMDQ6NTQ6MTVQTSAtMDcwMCwgVmFzaWx5IEto
-b3J1emhpY2sgd3JvdGU6Cj4gPiA+IE9uIE1vbiwgQXVnIDEyLCAyMDE5IGF0IDQ6NDYgUE0gRnJh
-bmsgTGVlIDx0aW55LndpbmR6ekBnbWFpbC5jb20+IHdyb3RlOgo+ID4gPiA+Cj4gPiA+ID4gSEkg
-VmFzaWx5LAo+ID4gPiA+Cj4gPiA+ID4gT24gU2F0LCBBdWcgMTAsIDIwMTkgYXQgMjoxNyBQTSBW
-YXNpbHkgS2hvcnV6aGljayA8YW5hcnNvdWxAZ21haWwuY29tPiB3cm90ZToKPiA+ID4gPiA+Cj4g
-PiA+ID4gPiBPbiBGcmksIEF1ZyA5LCAyMDE5IGF0IDEwOjMxIFBNIFlhbmd0YW8gTGkgPHRpbnku
-d2luZHp6QGdtYWlsLmNvbT4gd3JvdGU6Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IEgzIGhhcyBl
-eHRyYSBjbG9jaywgc28gaW50cm9kdWNlIHNvbWV0aGluZyBpbiB0aHNfdGhlcm1hbF9jaGlwL3Ro
-c19kZXZpY2UKPiA+ID4gPiA+ID4gYW5kIGFkZHMgdGhlIHByb2Nlc3Mgb2YgdGhlIGNsb2NrLgo+
-ID4gPiA+ID4gPgo+ID4gPiA+ID4gPiBUaGlzIGlzIHByZS13b3JrIGZvciBzdXBwcnQgaXQuCj4g
-PiA+ID4gPiA+Cj4gPiA+ID4gPiA+IFNpZ25lZC1vZmYtYnk6IFlhbmd0YW8gTGkgPHRpbnkud2lu
-ZHp6QGdtYWlsLmNvbT4KPiA+ID4gPiA+ID4gLS0tCj4gPiA+ID4gPiA+ICBkcml2ZXJzL3RoZXJt
-YWwvc3VuOGlfdGhlcm1hbC5jIHwgMTcgKysrKysrKysrKysrKysrKy0KPiA+ID4gPiA+ID4gIDEg
-ZmlsZSBjaGFuZ2VkLCAxNiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9uKC0pCj4gPiA+ID4gPiA+
-Cj4gPiA+ID4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3RoZXJtYWwvc3VuOGlfdGhlcm1hbC5j
-IGIvZHJpdmVycy90aGVybWFsL3N1bjhpX3RoZXJtYWwuYwo+ID4gPiA+ID4gPiBpbmRleCBiOTM0
-YmM4MWViYTcuLjZmNDI5NGMyYWJhNyAxMDA2NDQKPiA+ID4gPiA+ID4gLS0tIGEvZHJpdmVycy90
-aGVybWFsL3N1bjhpX3RoZXJtYWwuYwo+ID4gPiA+ID4gPiArKysgYi9kcml2ZXJzL3RoZXJtYWwv
-c3VuOGlfdGhlcm1hbC5jCj4gPiA+ID4gPiA+IEBAIC01NCw2ICs1NCw3IEBAIHN0cnVjdCB0c2Vu
-c29yIHsKPiA+ID4gPiA+ID4gIH07Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ICBzdHJ1Y3QgdGhz
-X3RoZXJtYWxfY2hpcCB7Cj4gPiA+ID4gPiA+ICsgICAgICAgYm9vbCAgICAgICAgICAgIGhhc19t
-b2RfY2xrOwo+ID4gPiA+ID4gPiAgICAgICAgIGludCAgICAgICAgICAgICBzZW5zb3JfbnVtOwo+
-ID4gPiA+ID4gPiAgICAgICAgIGludCAgICAgICAgICAgICBvZmZzZXQ7Cj4gPiA+ID4gPiA+ICAg
-ICAgICAgaW50ICAgICAgICAgICAgIHNjYWxlOwo+ID4gPiA+ID4gPiBAQCAtNjksNiArNzAsNyBA
-QCBzdHJ1Y3QgdGhzX2RldmljZSB7Cj4gPiA+ID4gPiA+ICAgICAgICAgc3RydWN0IHJlZ21hcCAg
-ICAgICAgICAgICAgICAgICAgICAgICAgICpyZWdtYXA7Cj4gPiA+ID4gPiA+ICAgICAgICAgc3Ry
-dWN0IHJlc2V0X2NvbnRyb2wgICAgICAgICAgICAgICAgICAgICpyZXNldDsKPiA+ID4gPiA+ID4g
-ICAgICAgICBzdHJ1Y3QgY2xrICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgKmJ1c19jbGs7
-Cj4gPiA+ID4gPiA+ICsgICAgICAgc3RydWN0IGNsayAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgICptb2RfY2xrOwo+ID4gPiA+ID4gPiAgICAgICAgIHN0cnVjdCB0c2Vuc29yICAgICAgICAg
-ICAgICAgICAgICAgICAgICBzZW5zb3JbTUFYX1NFTlNPUl9OVU1dOwo+ID4gPiA+ID4gPiAgfTsK
-PiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gQEAgLTI3NCw2ICsyNzYsMTIgQEAgc3RhdGljIGludCBz
-dW44aV90aHNfcmVzb3VyY2VfaW5pdChzdHJ1Y3QgdGhzX2RldmljZSAqdG1kZXYpCj4gPiA+ID4g
-PiA+ICAgICAgICAgaWYgKElTX0VSUih0bWRldi0+YnVzX2NsaykpCj4gPiA+ID4gPiA+ICAgICAg
-ICAgICAgICAgICByZXR1cm4gUFRSX0VSUih0bWRldi0+YnVzX2Nsayk7Cj4gPiA+ID4gPiA+Cj4g
-PiA+ID4gPiA+ICsgICAgICAgaWYgKHRtZGV2LT5jaGlwLT5oYXNfbW9kX2Nsaykgewo+ID4gPiA+
-ID4gPiArICAgICAgICAgICAgICAgdG1kZXYtPm1vZF9jbGsgPSBkZXZtX2Nsa19nZXQoJnBkZXYt
-PmRldiwgIm1vZCIpOwo+ID4gPiA+ID4gPiArICAgICAgICAgICAgICAgaWYgKElTX0VSUih0bWRl
-di0+bW9kX2NsaykpCj4gPiA+ID4gPiA+ICsgICAgICAgICAgICAgICAgICAgICAgIHJldHVybiBQ
-VFJfRVJSKHRtZGV2LT5tb2RfY2xrKTsKPiA+ID4gPiA+ID4gKyAgICAgICB9Cj4gPiA+ID4gPiA+
-ICsKPiA+ID4gPiA+ID4gICAgICAgICByZXQgPSByZXNldF9jb250cm9sX2RlYXNzZXJ0KHRtZGV2
-LT5yZXNldCk7Cj4gPiA+ID4gPiA+ICAgICAgICAgaWYgKHJldCkKPiA+ID4gPiA+ID4gICAgICAg
-ICAgICAgICAgIHJldHVybiByZXQ7Cj4gPiA+ID4gPiA+IEBAIC0yODIsMTIgKzI5MCwxOCBAQCBz
-dGF0aWMgaW50IHN1bjhpX3Roc19yZXNvdXJjZV9pbml0KHN0cnVjdCB0aHNfZGV2aWNlICp0bWRl
-dikKPiA+ID4gPiA+ID4gICAgICAgICBpZiAocmV0KQo+ID4gPiA+ID4gPiAgICAgICAgICAgICAg
-ICAgZ290byBhc3NlcnRfcmVzZXQ7Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IC0gICAgICAgcmV0
-ID0gc3VuNTBpX3Roc19jYWxpYnJhdGUodG1kZXYpOwo+ID4gPiA+ID4gPiArICAgICAgIHJldCA9
-IGNsa19wcmVwYXJlX2VuYWJsZSh0bWRldi0+bW9kX2Nsayk7Cj4gPiA+ID4gPgo+ID4gPiA+ID4g
-WW91IGhhdmUgdG8gc2V0IHJhdGUgb2YgbW9kY2xrIGJlZm9yZSBlbmFibGluZyBpdCBzaW5jZSB5
-b3UgY2FuJ3QgcmVseQo+ID4gPiA+ID4gb24gd2hhdGV2ZXIgYm9vdGxvYWRlciBsZWZ0IGZvciB5
-b3UuCj4gPiA+ID4gPgo+ID4gPiA+ID4gQWxzbyBJIGZvdW5kIHRoYXQgcGFyYW1ldGVycyB5b3Un
-cmUgdXNpbmcgZm9yIFBDX1RFTVBfUEVSSU9ELCBBQ1EwIGFuZAo+ID4gPiA+ID4gQUNRMSBhcmUg
-dG9vIGFnZ3Jlc3NpdmUgYW5kIG1heSByZXN1bHQgaW4gaGlnaCBpbnRlcnJ1cHQgcmF0ZSB0byB0
-aGUKPiA+ID4gPiA+IHBvaW50IHdoZW4gaXQgbWF5IHN0YWxsIFJDVS4gSSBjaGFuZ2VkIGRyaXZl
-ciBhIGJpdCB0byB1c2UgcGFyYW1zIGZyb20KPiA+ID4gPiA+IFBoaWxpcHAgUm9zc2FrJ3Mgd29y
-ayAobW9kY2xrIHNldCB0byA0TUh6LCBQQ19URU1QX1BFUklPRCBpcyA3LCBBQ1EwCj4gPiA+ID4g
-PiBpcyAyNTUsIEFDUTEgaXMgNjMpIGFuZCBpdCBmaXhlZCBSQ1Ugc3RhbGxzIGZvciBtZSwgc2Vl
-IFsxXSBmb3IKPiA+ID4gPiA+IGRldGFpbHMuCj4gPiA+ID4KPiA+ID4gPiBXaHkgaXMgdGhlIFJD
-VSBzdGFsbCBoYXBwZW5pbmcsIGlzIGl0IGNhdXNlZCBieSBhIGRlYWRsb2NrPwo+ID4gPiA+IENh
-biB5b3UgcHJvdmlkZSBsb2cgaW5mb3JtYXRpb24gYW5kIHlvdXIgY29uZmlndXJhdGlvbj8KPiA+
-ID4gPiBJIGFtIGEgYml0IGN1cmlvdXMuCj4gPiA+Cj4gPiA+IEl0J3Mgbm90IGRlYWRsb2NrLCBJ
-IGJlbGlldmUgaXQganVzdCBjYW4ndCBoYW5kbGUgdGhhdCBtYW55IGludGVycnVwdHMKPiA+ID4g
-d2hlbiBydW5uaW5nIGF0IGxvd2VzdCBDUFUgZnJlcXVlbmN5LiBFdmVuIHdpdGggUGhpbGlwcCdz
-IHNldHRpbmdzCj4gPiA+IHRoZXJlJ3MgfjIwIGludGVycnVwdHMgYSBzZWNvbmQgZnJvbSB0aHMu
-IEkgZG9uJ3QgcmVtZW1iZXIgaG93IG1hbnkKPiA+ID4gaW50ZXJydXB0cyB3ZXJlIHRoZXJlIHdp
-dGggeW91ciBzZXR0aW5ncy4KPiA+ID4KPiA+ID4gVW5mb3J0dW5hdGVseSB0aGVyZSdzIG5vdGhp
-bmcgaW50ZXJlc3RpbmcgaW4gYmFja3RyYWNlcywgSSdtIHVzaW5nCj4gPiA+IFBpbmU2NC1MVFMg
-Ym9hcmQuCj4gPgo+ID4gUmVjZW50bHkgdGhlcmUgd2FzIGEgc2ltaWxhciBpc3N1ZSwgd2l0aCBi
-dWdneSBDQ1UgZHJpdmVyIHRoYXQgY2F1c2VkCj4gPiBDSVIgaW50ZXJydXB0cyBiZWluZyBmaXJl
-ZCBjb25zdGFudGx5LCBhbmQgaXQgYWxzbyByZXN1bHRlZCBpbiBSQ1UKPiA+IHN0YWxscy4gTG9v
-a3MgbGlrZSBhIGNvbW9uIGNhdXNlIG9mIFJDVSBzdGFsbHMuCj4gPgo+ID4gVEhTIHRpbWluZyBz
-ZXR0aW5ncyBwcm9iYWJseSBuZWVkIHRvIGJlIG1hZGUgc3BlY2lmaWMgdG8gdGhlIFNvQywgYmVj
-YXVzZQo+ID4gSSBub3RpY2VkIHRoYXQgdGhlIHNhbWUgc2V0dGluZ3MgbGVhZCB0byB3aWxkbHkg
-ZGlmZmVyZW50IHRpbWluZ3Mgb24KPiA+IGRpZmZlcmVudCBTb0NzLgo+ID4KPiA+IEl0IHdvdWxk
-IGJlIGdvb2QgdG8gbWVhc3VyZSBob3cgb2Z0ZW4gdGhzIGludGVycnVwdCBmaXJlcyB3aXRoIHRo
-aXMgZHJpdmVyCj4gPiBvbiB2YXJpb3VzIFNvQ3MuCj4gPgo+ID4gMjAgdGltZXMgYSBzZWNvbmQg
-YW5kIG1vcmUgc291bmRzIGxpa2Ugb3ZlcmtpbGwuIEknZCBleHBlY3QgYSB1c2VmdWwKPiA+IHJh
-bmdlIHRvIGJlIGF0IG1vc3QgNS0xMCB0aW1lcyBhIHNlY29uZC4gVGhhdCBzaG91bGQgYmUgZW5v
-dWdoIHRvIHN0b3AKPiA+IG92ZXJoZWF0aW5nIHRoZSBTb0MgZHVlIHRvIHN1ZGRlbmx5IGluY3Jl
-YXNlZCBsb2FkLCBldmVuIHdpdGhvdXQgYQo+ID4gaGVhdHNpbmsuCj4KPiBOb3RlIHRoYXQgQTY0
-IGhhcyAzIHNlbnNvcnMgYW5kIGVhY2ggc2Vuc29yIGhhcyBpbmRpdmlkdWFsIGludGVycnVwdCwK
-PiBzbyB0ZWNobmljYWxseSBpdCdzIDYtNyBpbnRlcnJ1cHRzIHBlciBzZW5zb3IgcGVyIHNlY29u
-ZAoKWW91IG9ubHkgbmVlZCB0byBpbmNyZWFzZSB0aGUgdmFsdWUgb2YgdGhlIHBlcmlvZCB0byBy
-ZWR1Y2UgdGhlIG51bWJlcgpvZiBpbnRlcnJ1cHRzLgpDYW4geW91IHRlc3QgdGhlIHJlbGF0aW9u
-c2hpcCBiZXR3ZWVuIHRoZSBwZXJpb2QgYW5kIHRoZSBudW1iZXIgb2YgaW50ZXJydXB0cwp3aGVu
-IHRoZSBtb2QgY2xvY2sgZG9lcyBub3QgY2hhbmdlIGFuZCBzdGF5cyAyNE0/CgpUaHguCllhbmd0
-YW8KCj4KPiA+IHJlZ2FyZHMsCj4gPiAgICAgICAgIG8uCj4gPgo+ID4gPiA+IFRoeCwKPiA+ID4g
-PiBZYW5ndGFvCj4gPiA+ID4KPiA+ID4gPiA+Cj4gPiA+ID4gPiBbMV0gaHR0cHM6Ly9naXRodWIu
-Y29tL2FuYXJzb3VsL2xpbnV4LTIuNi9jb21taXQvNDZiOGJiMGZlMmNjZDFjZDg4ZmE5MTgxYTJl
-Y2JmNzllOGQ1MTNiMgo+ID4gPiA+ID4KPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ICAgICAgICAgaWYg
-KHJldCkKPiA+ID4gPiA+ID4gICAgICAgICAgICAgICAgIGdvdG8gYnVzX2Rpc2FibGU7Cj4gPiA+
-ID4gPiA+Cj4gPiA+ID4gPiA+ICsgICAgICAgcmV0ID0gc3VuNTBpX3Roc19jYWxpYnJhdGUodG1k
-ZXYpOwo+ID4gPiA+ID4gPiArICAgICAgIGlmIChyZXQpCj4gPiA+ID4gPiA+ICsgICAgICAgICAg
-ICAgICBnb3RvIG1vZF9kaXNhYmxlOwo+ID4gPiA+ID4gPiArCj4gPiA+ID4gPiA+ICAgICAgICAg
-cmV0dXJuIDA7Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+ICttb2RfZGlzYWJsZToKPiA+ID4gPiA+
-ID4gKyAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUodG1kZXYtPm1vZF9jbGspOwo+ID4gPiA+
-ID4gPiAgYnVzX2Rpc2FibGU6Cj4gPiA+ID4gPiA+ICAgICAgICAgY2xrX2Rpc2FibGVfdW5wcmVw
-YXJlKHRtZGV2LT5idXNfY2xrKTsKPiA+ID4gPiA+ID4gIGFzc2VydF9yZXNldDoKPiA+ID4gPiA+
-ID4gQEAgLTM5NSw2ICs0MDksNyBAQCBzdGF0aWMgaW50IHN1bjhpX3Roc19yZW1vdmUoc3RydWN0
-IHBsYXRmb3JtX2RldmljZSAqcGRldikKPiA+ID4gPiA+ID4gIHsKPiA+ID4gPiA+ID4gICAgICAg
-ICBzdHJ1Y3QgdGhzX2RldmljZSAqdG1kZXYgPSBwbGF0Zm9ybV9nZXRfZHJ2ZGF0YShwZGV2KTsK
-PiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gKyAgICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUodG1k
-ZXYtPm1vZF9jbGspOwo+ID4gPiA+ID4gPiAgICAgICAgIGNsa19kaXNhYmxlX3VucHJlcGFyZSh0
-bWRldi0+YnVzX2Nsayk7Cj4gPiA+ID4gPiA+ICAgICAgICAgcmVzZXRfY29udHJvbF9hc3NlcnQo
-dG1kZXYtPnJlc2V0KTsKPiA+ID4gPiA+ID4KPiA+ID4gPiA+ID4gLS0KPiA+ID4gPiA+ID4gMi4x
-Ny4xCj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+Cj4gPiA+ID4gPiA+IF9fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCj4gPiA+ID4gPiA+IGxpbnV4LWFybS1rZXJu
-ZWwgbWFpbGluZyBsaXN0Cj4gPiA+ID4gPiA+IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
-ZWFkLm9yZwo+ID4gPiA+ID4gPiBodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwKPiA+ID4KPiA+ID4gX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX18KPiA+ID4gbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
-IGxpc3QKPiA+ID4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gPiA+IGh0
-dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5l
-bAoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgt
-YXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQu
-b3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJt
-LWtlcm5lbAo=
+Kbuild provides per-file compiler flag addition/removal:
+
+  CFLAGS_<basetarget>.o
+  CFLAGS_REMOVE_<basetarget>.o
+  AFLAGS_<basetarget>.o
+  AFLAGS_REMOVE_<basetarget>.o
+  CPPFLAGS_<basetarget>
+  HOSTCFLAGS_<basetarget>.o
+  HOSTCXXFLAGS_<basetarget>.o
+
+The <basetarget> is the filename of the target without its suffix.
+
+This syntax comes into a trouble when two files with the same name
+appear in one Makefile, for example:
+
+  obj-y += foo.o
+  obj-y += dir/foo.o
+  CFLAGS_foo.o := <some-flags>
+
+Here, the <some-flags> applies to both foo.o and dir/foo.o
+
+The real world problem is:
+
+  scripts/kconfig/util.c
+  scripts/kconfig/lxdialog/util.c
+
+Both files are compiled into scripts/kconfig/mconf, but only the
+latter should be given with additional flags for ncurses.
+
+It is more sensible to use the relative path to the Makefile, like this:
+
+  obj-y += foo.o
+  CFLAGS_foo.o := <some-flags>
+  obj-y += dir/foo.o
+  CFLAGS_dir/foo.o := <other-flags>
+
+The $* variable is replaced with the stem ('%') part in a pattern rule.
+In other words, this only works for pattern rules.
+
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
+
+ arch/arm/kvm/Makefile        |  5 +++--
+ arch/x86/entry/vdso/Makefile |  3 ++-
+ scripts/Makefile.host        | 30 +++++++++++++++---------------
+ scripts/Makefile.lib         | 10 +++++-----
+ scripts/kconfig/Makefile     |  8 ++++----
+ 5 files changed, 29 insertions(+), 27 deletions(-)
+
+diff --git a/arch/arm/kvm/Makefile b/arch/arm/kvm/Makefile
+index 531e59f5be9c..b76b75bd9e00 100644
+--- a/arch/arm/kvm/Makefile
++++ b/arch/arm/kvm/Makefile
+@@ -8,13 +8,14 @@ ifeq ($(plus_virt),+virt)
+ 	plus_virt_def := -DREQUIRES_VIRT=1
+ endif
+ 
++KVM := ../../../virt/kvm
++
+ ccflags-y += -I $(srctree)/$(src) -I $(srctree)/virt/kvm/arm/vgic
+-CFLAGS_arm.o := $(plus_virt_def)
++CFLAGS_$(KVM)/arm/arm.o := $(plus_virt_def)
+ 
+ AFLAGS_init.o := -Wa,-march=armv7-a$(plus_virt)
+ AFLAGS_interrupts.o := -Wa,-march=armv7-a$(plus_virt)
+ 
+-KVM := ../../../virt/kvm
+ kvm-arm-y = $(KVM)/kvm_main.o $(KVM)/coalesced_mmio.o $(KVM)/eventfd.o $(KVM)/vfio.o
+ 
+ obj-$(CONFIG_KVM_ARM_HOST) += hyp/
+diff --git a/arch/x86/entry/vdso/Makefile b/arch/x86/entry/vdso/Makefile
+index 8df549138193..0f2154106d01 100644
+--- a/arch/x86/entry/vdso/Makefile
++++ b/arch/x86/entry/vdso/Makefile
+@@ -89,6 +89,7 @@ $(vobjs): KBUILD_CFLAGS := $(filter-out $(GCC_PLUGINS_CFLAGS) $(RETPOLINE_CFLAGS
+ #
+ CFLAGS_REMOVE_vdso-note.o = -pg
+ CFLAGS_REMOVE_vclock_gettime.o = -pg
++CFLAGS_REMOVE_vdso32/vclock_gettime.o = -pg
+ CFLAGS_REMOVE_vgetcpu.o = -pg
+ CFLAGS_REMOVE_vvar.o = -pg
+ 
+@@ -128,7 +129,7 @@ $(obj)/%.so: $(obj)/%.so.dbg FORCE
+ $(obj)/vdsox32.so.dbg: $(obj)/vdsox32.lds $(vobjx32s) FORCE
+ 	$(call if_changed,vdso_and_check)
+ 
+-CPPFLAGS_vdso32.lds = $(CPPFLAGS_vdso.lds)
++CPPFLAGS_vdso32/vdso32.lds = $(CPPFLAGS_vdso.lds)
+ VDSO_LDFLAGS_vdso32.lds = -m elf_i386 -soname linux-gate.so.1
+ 
+ targets += vdso32/vdso32.lds
+diff --git a/scripts/Makefile.host b/scripts/Makefile.host
+index b402c619147d..cd2b98e2f727 100644
+--- a/scripts/Makefile.host
++++ b/scripts/Makefile.host
+@@ -80,9 +80,9 @@ host-cxxshobjs	:= $(addprefix $(obj)/,$(host-cxxshobjs))
+ # Handle options to gcc. Support building with separate output directory
+ 
+ _hostc_flags   = $(KBUILD_HOSTCFLAGS)   $(HOST_EXTRACFLAGS)   \
+-                 $(HOSTCFLAGS_$(basetarget).o)
++                 $(HOSTCFLAGS_$*.o)
+ _hostcxx_flags = $(KBUILD_HOSTCXXFLAGS) $(HOST_EXTRACXXFLAGS) \
+-                 $(HOSTCXXFLAGS_$(basetarget).o)
++                 $(HOSTCXXFLAGS_$*.o)
+ 
+ # $(objtree)/$(obj) for including generated headers from checkin source files
+ ifeq ($(KBUILD_EXTMOD),)
+@@ -102,7 +102,7 @@ hostcxx_flags  = -Wp,-MD,$(depfile) $(_hostcxx_flags)
+ # host-csingle -> Executable
+ quiet_cmd_host-csingle 	= HOSTCC  $@
+       cmd_host-csingle	= $(HOSTCC) $(hostc_flags) $(KBUILD_HOSTLDFLAGS) -o $@ $< \
+-		$(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
++		$(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
+ $(host-csingle): $(obj)/%: $(src)/%.c FORCE
+ 	$(call if_changed_dep,host-csingle)
+ 
+@@ -110,9 +110,9 @@ $(host-csingle): $(obj)/%: $(src)/%.c FORCE
+ # host-cmulti -> executable
+ quiet_cmd_host-cmulti	= HOSTLD  $@
+       cmd_host-cmulti	= $(HOSTCC) $(KBUILD_HOSTLDFLAGS) -o $@ \
+-			  $(addprefix $(obj)/,$($(@F)-objs)) \
+-			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
+-$(host-cmulti): FORCE
++			  $(addprefix $(obj)/, $($*-objs)) \
++			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
++$(host-cmulti): $(obj)/%: FORCE
+ 	$(call if_changed,host-cmulti)
+ $(call multi_depend, $(host-cmulti), , -objs)
+ 
+@@ -128,9 +128,9 @@ $(host-cobjs): $(obj)/%.o: $(src)/%.c FORCE
+ quiet_cmd_host-cxxmulti	= HOSTLD  $@
+       cmd_host-cxxmulti	= $(HOSTCXX) $(KBUILD_HOSTLDFLAGS) -o $@ \
+ 			  $(foreach o,objs cxxobjs,\
+-			  $(addprefix $(obj)/,$($(@F)-$(o)))) \
+-			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
+-$(host-cxxmulti): FORCE
++			  $(addprefix $(obj)/, $($*-$(o)))) \
++			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*)
++$(host-cxxmulti): $(obj)/%: FORCE
+ 	$(call if_changed,host-cxxmulti)
+ $(call multi_depend, $(host-cxxmulti), , -objs -cxxobjs)
+ 
+@@ -161,9 +161,9 @@ $(host-cxxshobjs): $(obj)/%.o: $(src)/%.c FORCE
+ # *.o -> .so shared library (host-cshlib)
+ quiet_cmd_host-cshlib	= HOSTLLD -shared $@
+       cmd_host-cshlib	= $(HOSTCC) $(KBUILD_HOSTLDFLAGS) -shared -o $@ \
+-			  $(addprefix $(obj)/,$($(@F:.so=-objs))) \
+-			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
+-$(host-cshlib): FORCE
++			  $(addprefix $(obj)/, $($*-objs)) \
++			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*.so)
++$(host-cshlib): $(obj)/%.so: FORCE
+ 	$(call if_changed,host-cshlib)
+ $(call multi_depend, $(host-cshlib), .so, -objs)
+ 
+@@ -171,9 +171,9 @@ $(call multi_depend, $(host-cshlib), .so, -objs)
+ # *.o -> .so shared library (host-cxxshlib)
+ quiet_cmd_host-cxxshlib	= HOSTLLD -shared $@
+       cmd_host-cxxshlib	= $(HOSTCXX) $(KBUILD_HOSTLDFLAGS) -shared -o $@ \
+-			  $(addprefix $(obj)/,$($(@F:.so=-objs))) \
+-			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$(@F))
+-$(host-cxxshlib): FORCE
++			  $(addprefix $(obj)/, $($*-objs)) \
++			  $(KBUILD_HOSTLDLIBS) $(HOSTLDLIBS_$*.so)
++$(host-cxxshlib): $(obj)/%.so: FORCE
+ 	$(call if_changed,host-cxxshlib)
+ $(call multi_depend, $(host-cxxshlib), .so, -objs)
+ 
+diff --git a/scripts/Makefile.lib b/scripts/Makefile.lib
+index 264611972c4a..0d48e17bfb07 100644
+--- a/scripts/Makefile.lib
++++ b/scripts/Makefile.lib
+@@ -109,12 +109,12 @@ basename_flags = -DKBUILD_BASENAME=$(call name-fix,$(basetarget))
+ modname_flags  = -DKBUILD_MODNAME=$(call name-fix,$(modname))
+ 
+ orig_c_flags   = $(KBUILD_CPPFLAGS) $(KBUILD_CFLAGS) \
+-                 $(ccflags-y) $(CFLAGS_$(basetarget).o)
+-_c_flags       = $(filter-out $(CFLAGS_REMOVE_$(basetarget).o), $(orig_c_flags))
++                 $(ccflags-y) $(CFLAGS_$*.o)
++_c_flags       = $(filter-out $(CFLAGS_REMOVE_$*.o), $(orig_c_flags))
+ orig_a_flags   = $(KBUILD_CPPFLAGS) $(KBUILD_AFLAGS) \
+-                 $(asflags-y) $(AFLAGS_$(basetarget).o)
+-_a_flags       = $(filter-out $(AFLAGS_REMOVE_$(basetarget).o), $(orig_a_flags))
+-_cpp_flags     = $(KBUILD_CPPFLAGS) $(cppflags-y) $(CPPFLAGS_$(@F))
++                 $(asflags-y) $(AFLAGS_$*.o)
++_a_flags       = $(filter-out $(AFLAGS_REMOVE_$*.o), $(orig_a_flags))
++_cpp_flags     = $(KBUILD_CPPFLAGS) $(cppflags-y) $(CPPFLAGS_$*.lds)
+ 
+ #
+ # Enable gcov profiling flags for a file, directory or for all files depending
+diff --git a/scripts/kconfig/Makefile b/scripts/kconfig/Makefile
+index bed7a5a2fbe9..ef2f2336c469 100644
+--- a/scripts/kconfig/Makefile
++++ b/scripts/kconfig/Makefile
+@@ -166,15 +166,15 @@ $(obj)/nconf.o $(obj)/nconf.gui.o: $(obj)/nconf-cfg
+ 
+ # mconf: Used for the menuconfig target based on lxdialog
+ hostprogs-y	+= mconf
+-lxdialog	:= checklist.o inputbox.o menubox.o textbox.o util.o yesno.o
+-mconf-objs	:= mconf.o $(addprefix lxdialog/, $(lxdialog)) $(common-objs)
++lxdialog	:= $(addprefix lxdialog/, \
++		     checklist.o inputbox.o menubox.o textbox.o util.o yesno.o)
++mconf-objs	:= mconf.o $(lxdialog) $(common-objs)
+ 
+ HOSTLDLIBS_mconf = $(shell . $(obj)/mconf-cfg && echo $$libs)
+ $(foreach f, mconf.o $(lxdialog), \
+   $(eval HOSTCFLAGS_$f = $$(shell . $(obj)/mconf-cfg && echo $$$$cflags)))
+ 
+-$(obj)/mconf.o: $(obj)/mconf-cfg
+-$(addprefix $(obj)/lxdialog/, $(lxdialog)): $(obj)/mconf-cfg
++$(addprefix $(obj)/, mconf.o $(lxdialog)): $(obj)/mconf-cfg
+ 
+ # qconf: Used for the xconfig target based on Qt
+ hostprogs-y	+= qconf
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
