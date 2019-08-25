@@ -2,67 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DEEE9C31F
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 13:55:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1CA1E9C32E
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 14:18:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	List-Archive:List-Unsubscribe:List-Id:To:MIME-Version:Subject:From:Message-Id
 	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d1h6on6XKxCU+A/3pALnQ9kO++C2OTF8ZASItVkPDIU=; b=eeM7dELlUsUiCs
-	NOO38l1rAzsYVf8ZwqmKOmxk1xiGu7MjDrlMf6bW02UcR5/xOsvuKjXWs21EANz0ala2r2F6Y9LR7
-	kwie4oDXuQhxv1b2iIKWSRSZ1nzJ9XzLF76w6pOezJ6zYNrGTAjPHM/1mOhtKzevwGa/VNXrwgqOp
-	mLOO1umUF1ETk1LU6ftJN79aNBrYUpCjQ09XxUU/5McVNkQPMXEgpzxqKZ+wVPebKWUrc1vV1blig
-	dU8o/j3kM/CMzinrKiuKYfMQHkydQJkbKheWwr6TDHjFtj8z00YDFGyN25v9npPYQLJ1o9WRUCRa0
-	NggY0VPGMaLatOV1yS8Q==;
+	List-Owner; bh=BUvSuQsJ6LUu+Sn+gEsNC5l++36Ni3hj0QqW4PY3iAE=; b=cs9AzZd2IFt9hA
+	CHbovLWjFmGJq7Q5jl+6SUQdEwfi/JhL7ktI/uMdGosQXI5Ffv1SZBuQtaOjxgCTh1dJ3bUBvuCBu
+	SkSWCvhYURsq2TzjLufOyzNJcQlZjqi2eOdvrfLUeB0CsrVtJVb44r1gC4biMSTVJMGWfFqphGi9s
+	jYJ7qqJ1shg4/7AcLf3Raf1/CB2QRInAxQG7T7Q4w4S8/ubT7JhyZyiT0qpCrFKm187GYOKJlkBZH
+	UsaIn/0y0lbenIz88x7tylpdQIu9UHW8F4SbQ36pjazBNxvRSwrdOIIPvNleqsBlYa+Qsycft8hud
+	MDuxtu6BK3ULlTRFWtOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1r7L-0005e5-Mb; Sun, 25 Aug 2019 11:55:31 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i1rT2-0003hX-4t; Sun, 25 Aug 2019 12:17:56 +0000
+Received: from rere.qmqm.pl ([91.227.64.183])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1r79-0005dm-68
- for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 11:55:20 +0000
-Received: from X250 (cm-84.211.118.175.getinternet.no [84.211.118.175])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id DBBC82082F;
- Sun, 25 Aug 2019 11:55:16 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566734118;
- bh=IoQV6qRlYw1jN0SzAS1HIdX1/BJ95f/Yu7T9WJkxFy0=;
- h=Date:From:To:Cc:Subject:From;
- b=e8XV0TH2T4pJDr5mA5efQmLfyH+drBbWKluLTGhLig/dUTAG4ovzFv3VLuZ9pK0Ay
- nkpO9T63LO2kzie9ExOTTLs8DXcGvsk3ELaQpWvXIflp05cwMPTx8TOZj/S9DLWV+7
- UucH+bwzsxxzK7drBbTHySPCj+CTBG4eR4xQsano=
-Date: Sun, 25 Aug 2019 13:55:06 +0200
-From: Shawn Guo <shawnguo@kernel.org>
-To: Stephen Boyd <sboyd@kernel.org>
-Subject: [GIT PULL] i.MX clock changes for 5.4
-Message-ID: <20190825115505.GA20454@X250>
+ id 1i1rSp-0003eW-4U
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 12:17:44 +0000
+Received: from remote.user (localhost [127.0.0.1])
+ by rere.qmqm.pl (Postfix) with ESMTPSA id 46GYy30s3Vz55;
+ Sun, 25 Aug 2019 14:15:55 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=rere.qmqm.pl; s=1;
+ t=1566735358; bh=midx80iUy3avtT/Mo/OB+mMlAmfHoL2kDdpN3DL3rD8=;
+ h=Date:From:Subject:To:Cc:From;
+ b=eauM8c1/MyDyDyTQkcK2LHoYBiaBO2oi7tltzy+B3oKUvTdU7jf2D3eAGtrOJgUDb
+ agOVBJfxzwopF+7o3MXULCFvrXUwKhsSQCnjmn5/P+YIQZzWG3LgGV5x9Q/8TeThkt
+ uRswhsbFHFStN3YzbTU4qZUnu0oLiVkv4ude3S9Yz9YZL0vAjaImIIBgvQocCsVQ5I
+ cJAf0aAjFSHAoflws+z/SIOF7XHXbUenP8C8u4RqkJp2Qjxr2RWKMLD9Qc4rLqzsLZ
+ 3soSE+Q01tFJl4y9Hoa8ZrA61vnG+P561zUNpudqou0DPwsqYw//n/WIGE05Cbj73/
+ xO1ZgVPYLvOtQ==
+X-Virus-Status: Clean
+X-Virus-Scanned: clamav-milter 0.101.2 at mail
+Date: Sun, 25 Aug 2019 14:17:30 +0200
+Message-Id: <cover.1566734630.git.mirq-linux@rere.qmqm.pl>
+From: =?UTF-8?q?Micha=C5=82=20Miros=C5=82aw?= <mirq-linux@rere.qmqm.pl>
+Subject: [PATCH v2 0/4] wm8904: adapt driver for use with audio-graph-card
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.5.24 (2015-08-30)
+To: alsa-devel@alsa-project.org,
+	patches@opensource.cirrus.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_045519_272878_9D7F930A 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190825_051743_346965_AAFAEBD6 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,105 +71,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, linux-imx@nxp.com, kernel@pengutronix.de,
- Fabio Estevam <festevam@gmail.com>, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Maxime Jourdan <mjourdan@baylibre.com>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Kuninori Morimoto <kuninori.morimoto.gx@renesas.com>,
+ Kirill Marinushkin <kmarinushkin@birdec.tech>,
+ Liam Girdwood <lgirdwood@gmail.com>, Paul Cercueil <paul@crapouillou.net>,
+ Srinivas Kandagatla <srinivas.kandagatla@linaro.org>,
+ Jerome Brunet <jbrunet@baylibre.com>, Anders Roxell <anders.roxell@linaro.org>,
+ Takashi Iwai <tiwai@suse.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ Charles Keepax <ckeepax@opensource.cirrus.com>,
+ Piotr Stankiewicz <piotrs@opensource.cirrus.com>,
+ Annaliese McDermond <nh6z@nh6z.net>,
+ Richard Fitzgerald <rf@opensource.cirrus.com>, Mark Brown <broonie@kernel.org>,
+ Nariman Poushin <npoushin@opensource.cirrus.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Jaroslav Kysela <perex@perex.cz>,
+ zhong jiang <zhongjiang@huawei.com>, Allison Randal <allison@lohutok.net>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Randy Dunlap <rdunlap@infradead.org>,
+ Nikesh Oswal <nikesh@opensource.cirrus.com>, linux-kernel@vger.kernel.org,
+ Enrico Weigelt <info@metux.net>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Stephen,
-
-This is the i.MX clock changes I collected for 5.4.  Please help pull,
-and keep commit 6ad7cb7122ce ("clk: imx8: Add DSP related clocks")
-stable, as I pulled it into my DT branch as dependency.  Thanks!
-
-Shawn
-
-
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/shawnguo/linux.git tags/clk-imx-5.4
-
-for you to fetch changes up to 760e548e7f885d89bf2dfab4838df9379edd19fc:
-
-  clk: imx: imx8mn: fix audio pll setting (2019-08-24 21:04:27 +0200)
-
-----------------------------------------------------------------
-i.MX clock changes for 5.4:
- - Add clock driver for i.MX8MN SoC.
- - Switch i.MX8MM clock driver to platform driver.
- - Add API for clk unregister when driver probe fail.
- - Add Hifi4 DSP related clocks for i.MX8QXP SoC.
- - Fix Audio PLL setting and parent clock for USB.
- - Misc i.MX8 clock driver improvements and corrections.
-
-----------------------------------------------------------------
-Abel Vesa (3):
-      clk: imx: Remove unused clk based API
-      clk: imx8mm: Switch to platform driver
-      clk: imx8mq: Mark AHB clock as critical
-
-Anson Huang (14):
-      dt-bindings: imx: Add clock binding doc for i.MX8MN
-      clk: imx8mm: Make 1416X/1443X PLL macro definitions common for usage
-      clk: imx: Add API for clk unregister when driver probe fail
-      clk: imx: Add support for i.MX8MN clock driver
-      clk: imx8mq: Remove CLK_IS_CRITICAL flag for IMX8MQ_CLK_TMU_ROOT
-      clk: imx8mm: Fix typo of pwm3 clock's mux option #4
-      clk: imx8mm: GPT1 clock mux option #5 should be sys_pll1_80m
-      clk: imx7ulp: Make sure earlycon's clock is enabled
-      clk: imx: Remove unused function statement
-      clk: imx8mn: Keep uart clocks on for early console
-      clk: imx8mm: Unregister clks when of_clk_add_provider failed
-      clk: imx8mq: Unregister clks when of_clk_add_provider failed
-      clk: imx8mn: Add missing rate_count assignment for each PLL structure
-      clk: imx8mn: Add necessary frequency support for ARM PLL table
-
-Daniel Baluta (1):
-      clk: imx8: Add DSP related clocks
-
-Fancy Fang (1):
-      clk: imx8mm: rename 'share_count_dcss' to 'share_count_disp'
-
-Leonard Crestez (4):
-      clk: imx8mq: Fix sys3 pll references
-      clk: imx8mm: Fix incorrect parents
-      clk: imx8mn: Fix incorrect parents
-      clk: imx8mn: Add GIC clock
-
-Li Jun (2):
-      clk: imx8mm: correct the usb1_ctrl parent to be usb_bus
-      clk: imx8mq: set correct parent for usb ctrl clocks
-
-Peng Fan (3):
-      clk: imx: imx8mm: fix audio pll setting
-      clk: imx8mn: fix int pll clk gate
-      clk: imx: imx8mn: fix audio pll setting
-
- .../devicetree/bindings/clock/imx8mn-clock.yaml    | 112 ++++
- drivers/clk/imx/Kconfig                            |   6 +
- drivers/clk/imx/Makefile                           |   1 +
- drivers/clk/imx/clk-imx7ulp.c                      |  31 +
- drivers/clk/imx/clk-imx8mm.c                       | 109 ++--
- drivers/clk/imx/clk-imx8mn.c                       | 660 +++++++++++++++++++++
- drivers/clk/imx/clk-imx8mq.c                       | 131 ++--
- drivers/clk/imx/clk-imx8qxp-lpcg.c                 |   5 +
- drivers/clk/imx/clk.c                              |   8 +
- drivers/clk/imx/clk.h                              |  43 +-
- include/dt-bindings/clock/imx8-clock.h             |   6 +-
- include/dt-bindings/clock/imx8mn-clock.h           | 216 +++++++
- 12 files changed, 1188 insertions(+), 140 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/clock/imx8mn-clock.yaml
- create mode 100644 drivers/clk/imx/clk-imx8mn.c
- create mode 100644 include/dt-bindings/clock/imx8mn-clock.h
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBzZXJpZXMgYWxsb3dzIHRvIHVzZSBXTTg5MDQgY29kZWMgYXMgYXVkaW8tZ3JhcGgtY2Fy
+ZCBjb21wb25lbnQuCkl0IHN0YXJ0cyB3aXRoIHJld29yayBvZiBGTEwgaGFuZGxpbmcgaW4gdGhl
+IGNvZGVjJ3MgZHJpdmVyLCBhbmQgYXMgYW4KZXhhbXBsZSBpbmNsdWRlcyAodW50ZXN0ZWQpIHJl
+d29yayBmb3IgY29kZWMgd2l0aCBzaW1pbGFyIEZMTDogV004OTk0LgoKU2VyaWVzIGJhc2VkIG9u
+IHRpd2FpL3NvdW5kL2Zvci1uZXh0IHRyZWUuIFlvdSBjYW4gYWxzbyBwdWxsIGZyb206CiAgIGh0
+dHBzOi8vcmVyZS5xbXFtLnBsL2dpdC9saW51eApicmFuY2g6CiAgIHdtODkwNAoKKGJyYW5jaCBp
+bmNsdWRlcyB0d28gZml4ZXMgYWxyZWFkeSBzZW50IHRvIGFsc2EtZGV2ZWwsIGJ1dCBub3QgbWVy
+Z2VkIHlldCkuCgpNaWNoYcWCIE1pcm9zxYJhdyAoNCk6CiAgQVNvQzogd21fZmxsOiBleHRyYWN0
+IGNvbW1vbiBjb2RlIGZvciBXb2xmc29uIEZMTHMKICBBU29DOiB3bTg5MDQ6IHVzZSBjb21tb24g
+RkxMIGNvZGUKICBBU29DOiB3bTg5MDQ6IGF1dG9tYXRpY2FsbHkgY2hvb3NlIGNsb2NrIHNvdXJj
+ZQogIFtSRlRdIEFTb0M6IHdtODk5NDogdXNlIGNvbW1vbiBGTEwgY29kZQoKIHNvdW5kL3NvYy9h
+dG1lbC9hdG1lbF93bTg5MDQuYyB8ICAxMSArLQogc291bmQvc29jL2NvZGVjcy9LY29uZmlnICAg
+ICAgIHwgICA5ICsKIHNvdW5kL3NvYy9jb2RlY3MvTWFrZWZpbGUgICAgICB8ICAgMiArCiBzb3Vu
+ZC9zb2MvY29kZWNzL3dtODkwNC5jICAgICAgfCA1MTYgKysrKysrKysrKystLS0tLS0tLS0tLS0t
+LS0tLS0tLS0KIHNvdW5kL3NvYy9jb2RlY3Mvd204OTA0LmggICAgICB8ICAgNSAtCiBzb3VuZC9z
+b2MvY29kZWNzL3dtODk5NC5jICAgICAgfCAyODEgKysrKystLS0tLS0tLS0tLS0tCiBzb3VuZC9z
+b2MvY29kZWNzL3dtODk5NC5oICAgICAgfCAgIDQgKy0KIHNvdW5kL3NvYy9jb2RlY3Mvd21fZmxs
+LmMgICAgICB8IDUxOCArKysrKysrKysrKysrKysrKysrKysrKysrKysrKysrKysKIHNvdW5kL3Nv
+Yy9jb2RlY3Mvd21fZmxsLmggICAgICB8ICA2MCArKysrCiA5IGZpbGVzIGNoYW5nZWQsIDg0OSBp
+bnNlcnRpb25zKCspLCA1NTcgZGVsZXRpb25zKC0pCiBjcmVhdGUgbW9kZSAxMDA2NDQgc291bmQv
+c29jL2NvZGVjcy93bV9mbGwuYwogY3JlYXRlIG1vZGUgMTAwNjQ0IHNvdW5kL3NvYy9jb2RlY3Mv
+d21fZmxsLmgKCi0tIAoyLjIwLjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
+bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
+bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
