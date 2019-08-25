@@ -2,55 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CB599C268
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 09:16:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90BAA9C26F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 09:19:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=heuPXZFT6tmKlOzG6wYQytnlzxU/cZUC9DFf+MjrK58=; b=VXHQM9cXwXOvBR
-	q8aymoc8QCmYfmpr4sCWMUPcxcjoI3ZWyd4W379jLPJkFdAagrlhYKKsRKmpplqk+jQb5h4mjnGxs
-	Ss32z+ay3hxPFTMnXjrrSupVh/VdP6oJr0KzOayHi7lSArXbnoiX0ShSXPEmFnxyjj+SUDR1abmfr
-	6/kRZy/BO/UUp6Gq0yySvy+pgVi7E5vyD0IyOpf/HSj7djiUUwbSXstDN/v01FxZJ03EMVRs+62v3
-	eW6lB3govKStkJIDQ/7rVOXEc5LZ52FULNtsyoCP5z5ncuAqn/OHDdp5rCDGgEtaMNH91Enoj6Jzf
-	4RBA3HeKUobLS5x008/A==;
+	List-Owner; bh=7GwGxOo1rsl3t4QgCpoIJVdbyLJUhf4ZyLDRypMk86k=; b=mDkKzzcH9i2aSp
+	DLeZIUrRwPi3VZsCHLZNwe6UtlS7WCCLoAuI2Mv6W8XgRNPyYri58BTfkSjZiiJElS1r4gL7Vo0VO
+	8vacYNlFkgc5jnPLJZYTqiyuYXOpTXVBewAy3YjGL/Is1Nr1MKSg7V28OYkxpRa9LB1nYx4+sQ85J
+	R1oWi9fdgWdN5ihHd/qijsgTMjpb7Pm8ttiv+H959n/pVaMe5FunoKc6YM0m7Uhqwf1dFRyEfLK2i
+	fN1bMvKob5FdrcnqDsZ7DqnICkFhERTM+TRS1hWYMBrvcioRiRiTmZQ4FqfVrSp2KAdYS/0IR7F9U
+	s/H1DGv8h8XyuYDtFeLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1mky-0002f2-Ok; Sun, 25 Aug 2019 07:16:08 +0000
+	id 1i1mnq-0002xx-P9; Sun, 25 Aug 2019 07:19:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1mkm-0002el-KG
- for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 07:15:57 +0000
+ id 1i1mnc-0002xY-Nu
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 07:18:54 +0000
 Received: from X250.getinternet.no (98.142.130.235.16clouds.com
  [98.142.130.235])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 905F420850;
- Sun, 25 Aug 2019 07:15:54 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id DEE5320850;
+ Sun, 25 Aug 2019 07:18:50 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566717356;
- bh=8pqmVNKR1eEG8zWJwqVegtkwFiqBjuE2bxUuKd2gWAg=;
+ s=default; t=1566717532;
+ bh=u6TLqqJcw4RRZYE1Dwc3608YvdXfn/16/oY6owKULKk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=jNyNPj3RzhO3eG/nR5IoYVHpEutzU1wJB05NgxkW+aiGgqPdn9b3BWzLcHth8eFLg
- RZKKoY7phAAIdhkdoqPHTWvhBQVyUq53OC6vJ/R3KwQIoan26oy1Hg4Kcky/vdH92g
- LE5uKYf00DKgPgDqrn9fD3//Bv2iva41QBoli8LQ=
-Date: Sun, 25 Aug 2019 09:15:44 +0200
+ b=KpqiCHhhQVcAodn5otYYU6uJQEXGEs0kEj6qlIrotDBfSjTrMiBtOTakQxQ4suz34
+ 7CHm6q3dDdR681aQ+qCZQxH7idgCMqIkQTKd2fuLLpkZf+PBv6VB+KR9xLX880OmrO
+ k7W7bL4zTYZlwkQSeVDToLuJdqx0+t/qGkjrFm1Y=
+Date: Sun, 25 Aug 2019 09:18:40 +0200
 From: Shawn Guo <shawnguo@kernel.org>
 To: Andrey Smirnov <andrew.smirnov@gmail.com>
-Subject: Re: [PATCH] ARM: dts: vf610-zii-scu4-aib: Configure IRQ line for
- GPIO expander
-Message-ID: <20190825071543.GB5292@X250.getinternet.no>
-References: <20190824002703.13902-1-andrew.smirnov@gmail.com>
+Subject: Re: [PATCH] ARM: dts: vf610-zii-scu4-aib: Use generic names for DT
+ nodes
+Message-ID: <20190825071839.GC5292@X250.getinternet.no>
+References: <20190824002747.14610-1-andrew.smirnov@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190824002703.13902-1-andrew.smirnov@gmail.com>
+In-Reply-To: <20190824002747.14610-1-andrew.smirnov@gmail.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_001556_687877_22E9B13C 
-X-CRM114-Status: UNSURE (   8.79  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190825_001852_821942_0A863DBB 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,10 +86,11 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 05:27:03PM -0700, Andrey Smirnov wrote:
-> Configure IRQ line for SX1503 GPIO expander. We already have
-> appropriate pinmux entry and all that is missing is "interrupt-parent"
-> and "interrupts" properties. Add them.
+On Fri, Aug 23, 2019 at 05:27:47PM -0700, Andrey Smirnov wrote:
+> The devicetree specification recommends using generic node names.
+> 
+> Some ZII dts files already follow such recommendation, but some don't,
+> so use generic node names for consistency among the ZII dts files.
 > 
 > Signed-off-by: Andrey Smirnov <andrew.smirnov@gmail.com>
 > Cc: Shawn Guo <shawnguo@kernel.org>
@@ -100,7 +100,120 @@ On Fri, Aug 23, 2019 at 05:27:03PM -0700, Andrey Smirnov wrote:
 > Cc: linux-arm-kernel@lists.infradead.org
 > Cc: linux-kernel@vger.kernel.org
 
-Applied, thanks.
+It doesn't apply to my branch.
+
+Shawn
+
+> ---
+>  arch/arm/boot/dts/vf610-zii-scu4-aib.dts | 24 ++++++++++++------------
+>  1 file changed, 12 insertions(+), 12 deletions(-)
+> 
+> diff --git a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> index 45a978defbdc..6edd682dbd29 100644
+> --- a/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> +++ b/arch/arm/boot/dts/vf610-zii-scu4-aib.dts
+> @@ -417,7 +417,7 @@
+>  	pinctrl-0 = <&pinctrl_dspi1>;
+>  	status = "okay";
+>  
+> -	spi-flash@0 {
+> +	flash@0 {
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+>  		compatible = "jedec,spi-nor";
+> @@ -430,7 +430,7 @@
+>  		};
+>  	};
+>  
+> -	spi-flash@1 {
+> +	flash@1 {
+>  		#address-cells = <1>;
+>  		#size-cells = <1>;
+>  		compatible = "jedec,spi-nor";
+> @@ -519,7 +519,7 @@
+>  		#gpio-cells = <2>;
+>  	};
+>  
+> -	lm75@48 {
+> +	temp-sensor@48 {
+>  		compatible = "national,lm75";
+>  		reg = <0x48>;
+>  	};
+> @@ -534,7 +534,7 @@
+>  		reg = <0x52>;
+>  	};
+>  
+> -	ds1682@6b {
+> +	elapsed-time-recorder@6b {
+>  		compatible = "dallas,ds1682";
+>  		reg = <0x6b>;
+>  	};
+> @@ -551,7 +551,7 @@
+>  		reg = <0x38>;
+>  	};
+>  
+> -	adt7411@4a {
+> +	adc@4a {
+>  		compatible = "adi,adt7411";
+>  		reg = <0x4a>;
+>  	};
+> @@ -563,7 +563,7 @@
+>  	pinctrl-0 = <&pinctrl_i2c2>;
+>  	status = "okay";
+>  
+> -	gpio9: sx1503q@20 {
+> +	gpio9: io-expander@20 {
+>  		compatible = "semtech,sx1503q";
+>  		pinctrl-names = "default";
+>  		pinctrl-0 = <&pinctrl_sx1503_20>;
+> @@ -574,12 +574,12 @@
+>  		interrupts = <31 IRQ_TYPE_EDGE_FALLING>;
+>  	};
+>  
+> -	lm75@4e {
+> +	temp-sensor@4e {
+>  		compatible = "national,lm75";
+>  		reg = <0x4e>;
+>  	};
+>  
+> -	lm75@4f {
+> +	temp-sensor@4f {
+>  		compatible = "national,lm75";
+>  		reg = <0x4f>;
+>  	};
+> @@ -591,17 +591,17 @@
+>  		reg = <0x23>;
+>  	};
+>  
+> -	adt7411@4a {
+> +	adc@4a {
+>  		compatible = "adi,adt7411";
+>  		reg = <0x4a>;
+>  	};
+>  
+> -	at24c08@54 {
+> +	eeprom@54 {
+>  		compatible = "atmel,24c08";
+>  		reg = <0x54>;
+>  	};
+>  
+> -	tca9548@70 {
+> +	i2c-mux@70 {
+>  		compatible = "nxp,pca9548";
+>  		pinctrl-names = "default";
+>  		#address-cells = <1>;
+> @@ -639,7 +639,7 @@
+>  		};
+>  	};
+>  
+> -	tca9548@71 {
+> +	i2c-mux@71 {
+>  		compatible = "nxp,pca9548";
+>  		pinctrl-names = "default";
+>  		reg = <0x71>;
+> -- 
+> 2.21.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
