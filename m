@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41B139C5F4
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 21:52:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F2189C5FB
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 21:55:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z4zi6E3Ya/hJRgoO4BPol8eVpg9a6fB146sjl83HC+k=; b=H0OlU7LkGzUDNY
-	1g4rowKVATuWWwnhY5G81pGN73QXk5UXcYCAkuTTuqAZloRBFLSbVuYjAs/jJnVYSTrjhyWuWqhJS
-	2pUZ33iOAFL+4pc1wxjxQK98HfsFvc+wXNPXrN6Zn4hvEfYrG55hvAmvVOnhhz1BkRUhGho1e2UOA
-	B+gCL54FhyMaC9mwpHhKacXF+LyhlLME4416MZpOpdjgvJYkcvgGcMIi9qyKxTVONY0JNzMw7EsZH
-	c838jyR9w1GyBGSbjeDWaf9OQLxy6sTzYuzbyWDRUMo76FmKXZnZAP5diOpEPvI2tUl5l5g6ACkDU
-	nmmex0ErUnEF2aDqoIoA==;
+	List-Owner; bh=YjVOguFF6FfdSUl3qFIrK7soalZqzi/K24piWrMWhBw=; b=a7p13rFkqFODPD
+	RJwKvdOQLoglZSHDWAFqLarzsSgejP5CJ1/9Pv/XvQ82Dhy8SwCU+ew3vOQwKVPzaCnTdpQjS/yFl
+	rSqxRM+egV9pZSNwoK20lgbJvnbnmHI3Ir784jLY1EVGWV70XXpqH4ir336rqSt7zBwjr4LVGZaON
+	EGp2NZlclzlDfpsh/zUDZU52fVyIKgUHAc4GkdMuldplEP5lUSYfRaNJkbxeGkjam0F/R4EB8WqAY
+	kW2x3jARwlR5PM4S0uxhVZqvOO2mVMVgGquwv+8TVL3ayHZfuHpI+pqF/doBb22kbJ55oT68obwgi
+	Ahl88GoL9bvY4So62/fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1yYG-0006hP-4f; Sun, 25 Aug 2019 19:51:48 +0000
-Received: from mail-oi1-x244.google.com ([2607:f8b0:4864:20::244])
+	id 1i1yc1-0008IP-IM; Sun, 25 Aug 2019 19:55:41 +0000
+Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1yY2-0006fZ-L7; Sun, 25 Aug 2019 19:51:35 +0000
-Received: by mail-oi1-x244.google.com with SMTP id a127so10629308oii.2;
- Sun, 25 Aug 2019 12:51:34 -0700 (PDT)
+ id 1i1ybn-0008Ge-8L; Sun, 25 Aug 2019 19:55:28 +0000
+Received: by mail-ot1-x343.google.com with SMTP id b1so13308704otp.6;
+ Sun, 25 Aug 2019 12:55:25 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=googlemail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=hjng6vlLFgbv9Pq9MqHuljD4Do50I8hCQZSgXlEUD+s=;
- b=JrDdoARW3RK4az1cCf/czevGVpc2XlfXp8QUxGdhWyb3hVQORUWD8P3xDDMIDpy3AE
- 3KAkLF5yPDxXJXfDCVqf7kuHgDdCRIqIGVn2h2f+jLlHQSQTp64ULV3JHXm5RuQhHD9B
- OCrtDQ8dqbF+NUrvZpRPclVYhN2us1pbugiPBNfbyc30P4xgzUvEY8dUsF+l4zc3tmgT
- q0UmeQYGc3WHoysYNlUofnqCWkg8/k0LPwPDN8+Qz9igplv2xKYrkqK16H+T7IiWs/qO
- zxn+EdozSlAEbQyfaux5mw/6XF2EmAqQGz+TvFuEPhDBsdbr1lJ2EgsLmr2kin//JpJL
- ZSxw==
+ :cc; bh=kGmPx2xuPkputCeT387Wpalg1a3GB50jgvbEZF5SlNQ=;
+ b=ZWgvPDk+e19f+KMo42AfleUbEhqmR1sbLN8un2pAZwnKo7R+VFoNu706wHkkepu0uj
+ d/Q9lHk+J4OW9bqN0IAkEXFMzpQAr7rpurCXwxo59pu6SUYdLxN2zHRLq3pQGCTHHkYm
+ 4HnbVp8i7pIjGh9Xne1FL92bPb39lmbmnfBD6DhRM/6mWCUhl5DgB731UDJVNRLnIpbP
+ QDhGbaHKI6HDe1YTMMIYqmN9aH27a+tuZv8rdpuwpULP8svXVorHyX6tV43FGyRJMtJl
+ leWknAathV2ibsvyQgXz1FF9lfbszCiabYMdW5cnO1t7yG/L7PVtp29Hk4XfTg4YNk3l
+ FrIw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hjng6vlLFgbv9Pq9MqHuljD4Do50I8hCQZSgXlEUD+s=;
- b=KHUUJbxD6cF6kV6xvJbFk3e0vFBgyQa1Gjr7jyPfK8BORaA9JK4MB6bhsK6Ii3Vbee
- Ymb+tsjV+edj18GznYlLn13Iq+fg352xSCEfqEeyGTWsucDvcPZqNvLXnO18+Eg5zw0M
- X1B0rR1AgHoencYGCwTM2fWnvjcKQlLT30Zgj3pIkKhw5VFX71huuEUUWFhUxuAZ54kC
- /qsXlwggWfGvzaxVIoQkoUahOrRDPRv1v3WsVWcO0d7lQh2x1vH3WkpxQCxcV9fkqXwm
- G/wiHRphSZuNzntODxmeKgrH8rnxmhybKQx6FSX9EHk+FDBJYN31FkMJiP1N9dDAS9s9
- ZTFw==
-X-Gm-Message-State: APjAAAVm/C3FhfmNATntrfOypsYRKZ/qXc1TxOS5Zc3LAIkfIVTvixTs
- VRj5qJ/15byjei7xwHeKHbgirPbcpFCDdbuGw40=
-X-Google-Smtp-Source: APXvYqytfpz4w1IVT5MQr4MnHby/LbGVf5kKD4Rnq9rK/D7rVL1EJG62FQ5lDoR6ZfEKArVTzVXqRM0d613Y4v6IXcc=
-X-Received: by 2002:a05:6808:5cf:: with SMTP id
- d15mr10416816oij.140.1566762693708; 
- Sun, 25 Aug 2019 12:51:33 -0700 (PDT)
+ bh=kGmPx2xuPkputCeT387Wpalg1a3GB50jgvbEZF5SlNQ=;
+ b=S232lwgfhiKIJp5C4yvXhw+ZdTpn3LUqm3aGmiha1wuXuj54npAozmjJ8yUFSt5R5V
+ SfwsXQs+4iWCDHt/XFjpJ+ul7pEp6hqLriSGp4WYuXCQMy9n2W1yG/RVN14J+wWnAWnh
+ N+Xziown03DuyTzC1tYSS1wIZRY50P+x3AIGA5ZArbfJphpSNUlwcXaMrXPn1JC79WTJ
+ NQCOyxxYwld5EsFWoh02MQvfToM5lLiSfvOS3Vj2pDOSjXE8rtgvduS7MAUE7QiRp2vQ
+ W9d8enUXRoBeKlc7kBNxFLgZM6B4bWv7NQ+BqNRZvThBy7BMPXDHlb7BJyh4/T1IJM0S
+ uZ7Q==
+X-Gm-Message-State: APjAAAVWh6901cIGWuktevobMVaWY7E+Nv2eVuRdFlHftUjl1oFUV70l
+ iJ4782PLWWqAlEHMhRsm1ffHK7jed7btakATZBA=
+X-Google-Smtp-Source: APXvYqzzvtkVUjkecPWG03cxd1nVZTZf8ShZr+HnDL6BFQMZnJcYWHUOL3e4dOdG1vazH5JciiRHL10NvWwaLCvR9a4=
+X-Received: by 2002:a9d:1d5:: with SMTP id e79mr12418370ote.98.1566762925225; 
+ Sun, 25 Aug 2019 12:55:25 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190823081427.17228-1-narmstrong@baylibre.com>
- <20190823081427.17228-3-narmstrong@baylibre.com>
-In-Reply-To: <20190823081427.17228-3-narmstrong@baylibre.com>
+ <20190823081427.17228-4-narmstrong@baylibre.com>
+In-Reply-To: <20190823081427.17228-4-narmstrong@baylibre.com>
 From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sun, 25 Aug 2019 21:51:22 +0200
-Message-ID: <CAFBinCBLVDVWPbDZ+_cPTbJNCavvzJH4A6U8D9XWVSR-j3fzFQ@mail.gmail.com>
-Subject: Re: [PATCH 2/3] amlogic: arm: add Amlogic SM1 based Khadas VIM3
- variant bindings
+Date: Sun, 25 Aug 2019 21:55:14 +0200
+Message-ID: <CAFBinCAH2LP2OyFEek290Prm9N=rxxAc-9gZ_jS0tY_4+utByA@mail.gmail.com>
+Subject: Re: [PATCH 3/3] arm64: dts: khadas-vim3: add support for the SM1
+ based VIM3
 To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_125134_720696_CF41373A 
-X-CRM114-Status: GOOD (  13.33  )
+X-CRM114-CacheID: sfid-20190825_125527_302149_76078D6B 
+X-CRM114-Status: UNSURE (   9.63  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:244 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -94,51 +94,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: khilman@baylibre.com, linux-amlogic@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
+Cc: khilman@baylibre.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
-
-the subject should be: dt-bindings: arm: amlogic: ...
-
 On Fri, Aug 23, 2019 at 10:15 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
 >
-> The Khadas VIM3 is also available with the Pin-to-pin compatible
-> Amlogic SM1 SoC in the S905D3 variant package.
->
-> Change the description to match the S905X3/D3/Y3 variants like the G12A
-> description, and add the vim3 compatible.
+> Add the Amlogic SM1 based Khadas VIM3, sharing all the same features
+> as the G12B based one, but:
+> - a different DVFS support since only a single cluster is available
+> - audio is still not available on SM1
 >
 > Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> ---
->  Documentation/devicetree/bindings/arm/amlogic.yaml | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
->
-> diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-> index b48ea1e4913a..2751dd778ce0 100644
-> --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
-> +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-> @@ -150,9 +150,10 @@ properties:
->            - const: amlogic,s922x
->            - const: amlogic,g12b
->
-> -      - description: Boards with the Amlogic Meson SM1 S905X3 SoC
-> +      - description: Boards with the Amlogic Meson SM1 S905X3/D3/Y3 SoC
->          items:
->            - enum:
->                - seirobotics,sei610
-> +              - khadas,vim3
->            - const: amlogic,sm1
-on the GXL we differentiate between S905X and S905D
-do we need to differentiate S905X3 from S905D3 (for example)?
-
-
-Martin
+schematics are not available yet but this looks sane so:
+Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
