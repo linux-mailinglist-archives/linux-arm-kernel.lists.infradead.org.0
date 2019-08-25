@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0564D9C194
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 06:04:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC8979C196
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 06:04:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9bMgRmPwV49gARYvPZyERVzF+N7EooYnxyP50bf2VWc=; b=I+8SqjqHiYAvTEOrYbshV6ckyP
-	WFJ2OVRs+Hf/4aTreCCrl7Mc6sNnOVXvHHSOcTH1nbjWRkjBJrKjqYNM5fxryS+dxPGD9+6TcdLSs
-	YRm8IkwuSeEWHB4v2ErN18u3KxTjYOjDWlyLrFoBm9NCWLyDExpHfsz+GwMjBgYN+ScFDBIJ2y/GW
-	YWDiUeYLdf7He9DBWLYtLw3RiMGA6Z6/oEt7FIR8s7UDe+Jy/gtbd3a63CZNhfwBMS8wsRCj7tI7g
-	vqLymX8S8zUSG+dSWr4u+nfya1HHn04i3Ww/YgpysZFekV2t0dtbce/nn4CDg0uiWqoVppfkw8umT
-	shee3UPQ==;
+	bh=g3VqMp7E+08vWteKWRX7A4+OqDzH3M8rbM9bJ3N43+s=; b=F2CzT1Jn5ixMLqEOogjPKgLl6A
+	mZcZ1UfxkqpDl8lhRq8/2L78W1WZnUtIHblbWhA+2pYXfQM1X5GG50u1IfWBN2kBBMUoyxffOyyA8
+	E9q8oU6hRLhuwuVKQvxsWIZSAEFEuBnpJJU75rhjTFUbq8L56fCSk+M/mRkBbXv2+ZExHOy3VHPkS
+	2aRCwdIn32xvBeaE+fVwE1HLkFfYSVTFzZyGrmVtIcIloFjJkKzeOXEvEXcSsPRkYSDVw0WmRFOsn
+	XeuhqaIGsWAp59WBlhVGFDbtVmMErmRcCoQzd537DE0NlwEaTlIXU1AON4XTXyYHKRFx4DJgEfOnM
+	15LWGT0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1jlW-00072F-BO; Sun, 25 Aug 2019 04:04:30 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i1jlr-0007Mv-0M; Sun, 25 Aug 2019 04:04:51 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1jjd-0005l1-7n; Sun, 25 Aug 2019 04:02:34 +0000
-Received: by mail-wr1-x444.google.com with SMTP id u16so12130560wrr.0;
- Sat, 24 Aug 2019 21:02:32 -0700 (PDT)
+ id 1i1jji-0005mu-Qs; Sun, 25 Aug 2019 04:02:40 +0000
+Received: by mail-wr1-x442.google.com with SMTP id y8so12089476wrn.10;
+ Sat, 24 Aug 2019 21:02:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=nS5ZdwaXnWLnup1daWCQzgoGPiOKricQ3p0EiljFPek=;
- b=YsFhtGysGFaBx0FpoKJiH+kDHGWWH2ZTZCvrxYciZu6TGElkD8hmOBYdl1IrsqJw1H
- bVnOr8TKC6t2jdWvfxVtI60Hi+53O1WRnEjXDkHQjfQzZzMtC74DMR423jRtUF7UL/BQ
- Gpdf15fJoQmY/1H/t0NN78HNREdCRlionQg3jCc8sqaJJkobwfX8woxGfE3WM7DILeeL
- QRB7hguPsEUlBLcBjt9+xflN7mdD1O5llbV+XFbR6aAWko9FKtgXZQSs0AxvaZm1Mx+k
- RxA0OO+p4sFltJtp+7Fg/3YlopTfKhUaF1s8vgoFKN5v2mvFn/mI5vSFhnnCPTCBCfio
- Telw==
+ bh=OfWp6DdTWFBY5iMG3Y4I12ubDq+isq8BawGVdp8q8tE=;
+ b=u0G77X/SBFfXDGhxY1mgwkw+Lc2DpUIoIdKiKE75hN27NrmpsHPOmAB9IvCgyFpaqq
+ rqRhGnNYOp+OwHv0oIwXSLEAcbca8ahJGUAlfO+gLJS5615+roz8DGgd2YFJiSiPppth
+ wolUraO1EjUXvX7Zk1xK9BPSsj37Tk9bck9BVZQK8a0SPRJRvPSfrQZnDBGBud1XnH7l
+ p47u5vyuCd70xoosyLni2CDNTOwMFqM3GkPUn4PBC1fHw4RsW7+9JmVfzzIKVsJznXNz
+ VqfLDKUQdveYiqSz6Zzj5P3wEMkJIrQIUdm/kstxbgI/DFhsAScgmbJQ4/7XGapeKdVY
+ xGbQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=nS5ZdwaXnWLnup1daWCQzgoGPiOKricQ3p0EiljFPek=;
- b=tpk2XVKMN9W7fM0PildrMkuAAupQlcICoJKZl5AdqFlBpSo52bu7duModBdhzdeTVc
- lL81NDoKjLI0Rm1+pmf7LsRetmyNS1ukfDf/VUNJ22UODd7DqxWRyovB1ifXaC9uuqJZ
- vI2cDyYbzN5daSxurx9XtXnHNv3Kw/KMIbYUf40zINGfxALB1nFaX8T+SihdQOtAWAAW
- 9/mMC5doECvjyM2MCS3rCXpHzrPcltUsjPFuXF4wX3CJRWdrUeuUJFG35VNJk5/zoLhL
- Oid3uADmMOoQ2iRumG6zBYZH0cOj6ZuiyUH2wZk+zmVUZNSdII+W7I66MsJDH2R/gN5b
- z8fw==
-X-Gm-Message-State: APjAAAWUEBtrBk9w/Or/BxYbYfmS4LceM3x5/CBZELI/YhAbQ8ulIcW8
- D8F4oWTFC26WXgGV8+y8rgA=
-X-Google-Smtp-Source: APXvYqzpbvks94RUaUaHxbIcLp4EI33cVGxO4/18OYAgWCn3juOpT/w3h/KFPUXwRVDgDJmS/myrJA==
-X-Received: by 2002:a5d:63d1:: with SMTP id c17mr10502168wrw.3.1566705751398; 
- Sat, 24 Aug 2019 21:02:31 -0700 (PDT)
+ bh=OfWp6DdTWFBY5iMG3Y4I12ubDq+isq8BawGVdp8q8tE=;
+ b=raDKwVuY3CPbDyO3yHH3wU5krN1jBLngf8vRkMhVRFPFfhFsIR2Bnn1YV62cEzXKC6
+ JeqZwbmWQsBJzYd20UjVnDRubWHqQOt94vBdfkd3GTEhqjY73xSdG+8o2KX6xAm+mmLr
+ Sw6v9/84AYoDwNtRR1UdzMjGdGxOfQCphAxyDz1/juxYLWIzsj4HS4TtBxmJyfjNEmIB
+ Cdbu/ANwN6zuOBH2djV9Y+VA7uTZ78VQrgIeN2GSQAJC7jgfZi1OLeIseS9+6bdvV74Y
+ 9smZYt64CkbbvMbwOsDDO6CGQ3umCLCOdRrL+oaFtjanifCPJsJW+5dszKrtFlta1eXF
+ 6nvg==
+X-Gm-Message-State: APjAAAWpr6UT+HXfpy1kQhJhuIaZ02kst+YmqjTC001+4+mTgNhwgwDx
+ nu2SB6OlfewoDZVZ7FbDi2k=
+X-Google-Smtp-Source: APXvYqzIzM7anln1kp1dhBf/Fy8v6RC5KHmIZwhYYq5nmO5CVTPGaWeWNBN7WkqDnGAFj51lP5TGPg==
+X-Received: by 2002:adf:e94e:: with SMTP id m14mr14601540wrn.230.1566705753817; 
+ Sat, 24 Aug 2019 21:02:33 -0700 (PDT)
 Received: from localhost.localdomain ([94.204.252.234])
- by smtp.gmail.com with ESMTPSA id a6sm6820985wmj.15.2019.08.24.21.02.29
+ by smtp.gmail.com with ESMTPSA id a6sm6820985wmj.15.2019.08.24.21.02.31
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sat, 24 Aug 2019 21:02:30 -0700 (PDT)
+ Sat, 24 Aug 2019 21:02:33 -0700 (PDT)
 From: Christian Hewitt <christianshewitt@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: [PATCH 5/7] arm64: dts: meson-gxl-s905x-khadas-vim: use rc-khadas
+Subject: [PATCH 6/7] arm64: dts: meson-gxl-s905w-tx3-mini: add rc-tx3mini
  keymap
-Date: Sun, 25 Aug 2019 08:01:26 +0400
-Message-Id: <1566705688-18442-6-git-send-email-christianshewitt@gmail.com>
+Date: Sun, 25 Aug 2019 08:01:27 +0400
+Message-Id: <1566705688-18442-7-git-send-email-christianshewitt@gmail.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566705688-18442-1-git-send-email-christianshewitt@gmail.com>
 References: <1566705688-18442-1-git-send-email-christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_210233_670737_CEB0B8EA 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20190824_210239_019380_A1DB7729 
+X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,26 +107,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Swap to the rc-khadas keymap that maps the mouse button to KEY_MUTE.
+add the rc-tx3mini keymap to the ir node
 
 Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-index 5499e8d..2a5cd30 100644
---- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905x-khadas-vim.dts
-@@ -110,7 +110,7 @@
+diff --git a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
+index 789c819..dd729ac 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
++++ b/arch/arm64/boot/dts/amlogic/meson-gxl-s905w-tx3-mini.dts
+@@ -20,3 +20,7 @@
+ 		reg = <0x0 0x0 0x0 0x40000000>; /* 1 GiB or 2 GiB */
+ 	};
  };
- 
- &ir {
--	linux,rc-map-name = "rc-geekbox";
-+	linux,rc-map-name = "rc-khadas";
- };
- 
- &gpio_ao {
++
++&ir {
++	linux,rc-map-name = "rc-tanix-tx3mini";
++};
 -- 
 2.7.4
 
