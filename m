@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 16CE19C45C
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 16:19:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88D359C461
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 16:20:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=1HyeBOPHssU43+0Ug2yKJ+eh/OStvMK56xtybY6zfF0=; b=PnqciECqzeiEYk
-	kVGrjFzEoi4M+d7lbj9Hv7CrOg7jACrntW/U3wT0DkppODyMD3C1jL4Ig1iA2USWsEm4Ova3lJVNc
-	4D37VtdV4yK4GblIS0xrYj9+etsokhZAZJYv4K1Qf6zhvsUG+EwUHKr8vA7S+JjA36OdVHMAx1hEi
-	fAN0JHt9POtF/dC3GZP4vO6l30aa7wV7slRzt8WhX9Hn/0nHBI4jlszwZpV6t7M/J5h+jwDLgmfI+
-	VHfGxT7gdyrsbjOiauPaXS3oyXiIsh1zfl5ENwNbrPxmA7XykI9QyAd3AcKJNzWhlr2/MdRcU5HyX
-	80fdd9KFCGTYZXnxEX1Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eZOCqLATXEAHOTZSif2Gn/Knw4eTKteNDWWyaWf40d4=; b=Er3eZtWe57YsnM
+	2QADrRxiDUDzOgUo+zfhU9XYpLZkDpO3pEDQkCtvCFhk1CDzOXyvqGm/QbxRcs+qG5kBql4GavW9y
+	vuV0L7dYmzfg5RgGwnwgWo+KEt8BQtmBD2Ti57MGBXH2AGW4fMdI1JqkszCI5SbAKzoHV5oihIytS
+	RH7HchDiEvSo8Plf5Eb4HHkvWFuWFkOEMpjLFAXn/PS/95+6dhphgBLSvStW4ConBwHNRLTbDWGJ4
+	noKyAqFpaJ8L9wn4jxzkkYB8a5jNYXcuDwZ3WHgN7UYMtrHyczJLU1CFko9yE407GqltSLRflFg0C
+	T6cQ0wEYxUhP2v+Q6Row==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1tMX-00073C-7G; Sun, 25 Aug 2019 14:19:21 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i1tMx-0007D0-Sx; Sun, 25 Aug 2019 14:19:48 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1tML-00072d-B6
- for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 14:19:11 +0000
-Received: by mail-pg1-x544.google.com with SMTP id e11so8790262pga.5
+ id 1i1tMO-00072y-9E
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 14:19:13 +0000
+Received: by mail-pf1-x442.google.com with SMTP id d85so9896176pfd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 25 Aug 2019 07:19:06 -0700 (PDT)
+ Sun, 25 Aug 2019 07:19:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=RtYk7exTF7NfCD8WVZ5loNoPWEQYfaksEbf8ILjY4KQ=;
- b=O3BjAdJkNpamh1SmbCMA1Bzi6HhC+cUCkqC7QLbjPCkm51Ep5jVb4UAe6KoQhTxQbC
- 1RvTU9evIGER0O0LJVvFEdZUW0RapKuldVzLsZR7aL+UzsZhZwpxgGXHBPABGJpMBnlw
- ZWAcsgxFfHCbIqJP/zWmESqilkuefaMSlU8sxFzmgxCFfGFwtTIWjt7JyXfK+S6r1A6v
- vCOH1TYFdS4tyOO0D2t/NtR0w6w1jCmVXbuXr6zTQDHNDKGeAy1JbazapR0bR22q4URD
- ZB1mH459wif49S4XnE670N4/zmMGR+B90TN56WGDMgSl3LUEXJVfjcD/5sbkyR4U//D3
- xRaA==
+ h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=Y+TiXTfy0GvucZpWMpF+hFSYcOEhRLjxhLj5EgYmgAI=;
+ b=Fmj0w6FapHbABc+eh987fmHXPe8SCHwirQLQQP6cdae4qFHsUNAz1Siwh0NjJqvkfa
+ COWY1/KpH6kxxFZWb2ckNWPSfK4YHU2vt/XlWuP6hGzLArij8okqzymSXrHeuyx5m8EM
+ TsjBS11ZpnL4SSmyZIIk4lpjSPniC9YDes63aNa35olscVGvNBX9A5KqGOC6ESzv3ljC
+ BoV1R5+gtzPIG6VZkRqRqmCoAQDOnScmWmP9FSIH4xRu/JA5/vWhrCw16R9eWFs3odxV
+ dyv38klp+9OXGyfwPTTAzUWArNP4j5gawujiivYMxRIDgHdTCU+ZL6NyYVe8rvYuzCWM
+ ZKaA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=RtYk7exTF7NfCD8WVZ5loNoPWEQYfaksEbf8ILjY4KQ=;
- b=DPw12KFH/2qwatZE2Sjxi8BPQg33LZHcZApWeml1WFXXH58M04HDcCTAzqFZIV4jvW
- 5T9pwudm7t9lflM4D3nqabiyBJDiyKrioZ4oRa4HDenQmDRfYPVZJ8stspYwE0hclXUT
- So83OV3fqSZau15BrRJeNnO+Nz0Kheerf5e8tqxP2amMPcywXrgTxRQtDABtvX2VZqsR
- bEKoiQViZ1YmL4wGcZAdG8+5k3onAerzDFWSAXhQbGOyr2UXrN2u3iJrSvI0MLohLoqX
- ZP/4twgaKu9+D2eM96JChExWiPcsgZcf9PM3aMlF9/tRDsK17QXGhJeLRpBXpBBM6ipW
- hQpw==
-X-Gm-Message-State: APjAAAUm76cZgbAADzs6VxkmvAZ8RyVY/jTrxYhUL5CtH28/DSBlAYLk
- t3OLUd+dZQo/UE+xTGImfz0=
-X-Google-Smtp-Source: APXvYqw+BdGM2bYgXLSTAm2CCYaNa7tim2PpUW6H7sQva3iK/gVHzmXGpFoQosg2DoIgat46BIqllg==
-X-Received: by 2002:a63:bf01:: with SMTP id v1mr11997789pgf.278.1566742746257; 
- Sun, 25 Aug 2019 07:19:06 -0700 (PDT)
+ :in-reply-to:references:mime-version:content-transfer-encoding;
+ bh=Y+TiXTfy0GvucZpWMpF+hFSYcOEhRLjxhLj5EgYmgAI=;
+ b=Eh2b4koRmOZaZ9SQpyD/6zCvRYAKOQ5/8Vg/w+cYKmE6uSH67UDWXI5aFM5kbOqWwR
+ DbKNmLS7FztjE1UDHOGLyyXhWibpIWGgZYPGAQcTwfkomEMxdzx60k65L/l8frjSNSFL
+ Gppx9HCIbpw0IsCY3c9rH6JX1sYfbFXMZ0JnnhYqjCaztB5RO9gYLs/PVieZnkkRRMx5
+ PoD0EXQD+KtE8iOd+MppetHf9lkIv1BSX0JGN5PammKyx1k1n6fFEzqJair6pl54INZl
+ 3O0stC5gHmY0lM0vu1aoslylmPbxzyFKF51aNzaJSZt2yT4XErNgGuWM/YCBwLe06fsy
+ 04ew==
+X-Gm-Message-State: APjAAAWarFsj32iJBoUdXcc38nKcddqPgIi3aJOpMZL6CApua8SwHKSX
+ lz02z5ls9ks/W9hKlnOCXZ+k7Slz
+X-Google-Smtp-Source: APXvYqzKESmVpB2PpNa7q5Q8l51H9Ksa648hdf0lESby6oBi9xrh0rz5puTH5viJQ284Y8gkE5TC2Q==
+X-Received: by 2002:a63:5920:: with SMTP id n32mr11870847pgb.352.1566742751322; 
+ Sun, 25 Aug 2019 07:19:11 -0700 (PDT)
 Received: from voyager.ozlabs.ibm.com (pa49-199-217-21.pa.vic.optusnet.com.au.
  [49.199.217.21])
- by smtp.gmail.com with ESMTPSA id w1sm7734562pjt.30.2019.08.25.07.19.02
+ by smtp.gmail.com with ESMTPSA id w1sm7734562pjt.30.2019.08.25.07.19.06
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 25 Aug 2019 07:19:05 -0700 (PDT)
+ Sun, 25 Aug 2019 07:19:10 -0700 (PDT)
 From: Joel Stanley <joel@jms.id.au>
 To: Stephen Boyd <sboyd@kernel.org>,
  Michael Turquette <mturquette@baylibre.com>
-Subject: [PATCH v2 0/2] clk: Add driver for ast2600
-Date: Sun, 25 Aug 2019 23:48:46 +0930
-Message-Id: <20190825141848.17346-1-joel@jms.id.au>
+Subject: [PATCH v2 1/2] clk: aspeed: Move structures to header
+Date: Sun, 25 Aug 2019 23:48:47 +0930
+Message-Id: <20190825141848.17346-2-joel@jms.id.au>
 X-Mailer: git-send-email 2.23.0.rc1
+In-Reply-To: <20190825141848.17346-1-joel@jms.id.au>
+References: <20190825141848.17346-1-joel@jms.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_071909_421890_F2DA4746 
-X-CRM114-Status: GOOD (  10.31  )
+X-CRM114-CacheID: sfid-20190825_071912_323434_AAB54667 
+X-CRM114-Status: GOOD (  16.42  )
 X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
@@ -108,30 +110,215 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello clock maintainers,
+They will be reused by the ast2600 driver.
 
-v2 of the clock driver addresses most review comments from Stephen, and
-contains a few fixes found while testing on hardware.
+Signed-off-by: Joel Stanley <joel@jms.id.au>
+---
+v2:
+ include required headers for structures used by clk-aspeed.h
 
-Stephen, I did not get a chance to move to the new parent registration scheme.
-If you would be comfortable with taking these patches for 5.4 I can work
-on to moving to the new parent scheme next merge window, for both the
-ast2600 and the existing driver.
-
-Joel Stanley (2):
-  clk: aspeed: Move structures to header
-  clk: Add support for AST2600 SoC
-
- drivers/clk/Makefile                      |   1 +
- drivers/clk/clk-aspeed.c                  |  67 +-
- drivers/clk/clk-aspeed.h                  |  82 +++
- drivers/clk/clk-ast2600.c                 | 704 ++++++++++++++++++++++
- include/dt-bindings/clock/ast2600-clock.h | 113 ++++
- 5 files changed, 903 insertions(+), 64 deletions(-)
+ drivers/clk/clk-aspeed.c | 67 ++------------------------------
+ drivers/clk/clk-aspeed.h | 82 ++++++++++++++++++++++++++++++++++++++++
+ 2 files changed, 85 insertions(+), 64 deletions(-)
  create mode 100644 drivers/clk/clk-aspeed.h
- create mode 100644 drivers/clk/clk-ast2600.c
- create mode 100644 include/dt-bindings/clock/ast2600-clock.h
 
+diff --git a/drivers/clk/clk-aspeed.c b/drivers/clk/clk-aspeed.c
+index 898291501f45..abf06fb6453e 100644
+--- a/drivers/clk/clk-aspeed.c
++++ b/drivers/clk/clk-aspeed.c
+@@ -1,19 +1,19 @@
+ // SPDX-License-Identifier: GPL-2.0+
++// Copyright IBM Corp
+ 
+ #define pr_fmt(fmt) "clk-aspeed: " fmt
+ 
+-#include <linux/clk-provider.h>
+ #include <linux/mfd/syscon.h>
+ #include <linux/of_address.h>
+ #include <linux/of_device.h>
+ #include <linux/platform_device.h>
+ #include <linux/regmap.h>
+-#include <linux/reset-controller.h>
+ #include <linux/slab.h>
+-#include <linux/spinlock.h>
+ 
+ #include <dt-bindings/clock/aspeed-clock.h>
+ 
++#include "clk-aspeed.h"
++
+ #define ASPEED_NUM_CLKS		36
+ 
+ #define ASPEED_RESET2_OFFSET	32
+@@ -42,48 +42,6 @@ static struct clk_hw_onecell_data *aspeed_clk_data;
+ 
+ static void __iomem *scu_base;
+ 
+-/**
+- * struct aspeed_gate_data - Aspeed gated clocks
+- * @clock_idx: bit used to gate this clock in the clock register
+- * @reset_idx: bit used to reset this IP in the reset register. -1 if no
+- *             reset is required when enabling the clock
+- * @name: the clock name
+- * @parent_name: the name of the parent clock
+- * @flags: standard clock framework flags
+- */
+-struct aspeed_gate_data {
+-	u8		clock_idx;
+-	s8		reset_idx;
+-	const char	*name;
+-	const char	*parent_name;
+-	unsigned long	flags;
+-};
+-
+-/**
+- * struct aspeed_clk_gate - Aspeed specific clk_gate structure
+- * @hw:		handle between common and hardware-specific interfaces
+- * @reg:	register controlling gate
+- * @clock_idx:	bit used to gate this clock in the clock register
+- * @reset_idx:	bit used to reset this IP in the reset register. -1 if no
+- *		reset is required when enabling the clock
+- * @flags:	hardware-specific flags
+- * @lock:	register lock
+- *
+- * Some of the clocks in the Aspeed SoC must be put in reset before enabling.
+- * This modified version of clk_gate allows an optional reset bit to be
+- * specified.
+- */
+-struct aspeed_clk_gate {
+-	struct clk_hw	hw;
+-	struct regmap	*map;
+-	u8		clock_idx;
+-	s8		reset_idx;
+-	u8		flags;
+-	spinlock_t	*lock;
+-};
+-
+-#define to_aspeed_clk_gate(_hw) container_of(_hw, struct aspeed_clk_gate, hw)
+-
+ /* TODO: ask Aspeed about the actual parent data */
+ static const struct aspeed_gate_data aspeed_gates[] = {
+ 	/*				 clk rst   name			parent	flags */
+@@ -208,13 +166,6 @@ static struct clk_hw *aspeed_ast2500_calc_pll(const char *name, u32 val)
+ 			mult, div);
+ }
+ 
+-struct aspeed_clk_soc_data {
+-	const struct clk_div_table *div_table;
+-	const struct clk_div_table *eclk_div_table;
+-	const struct clk_div_table *mac_div_table;
+-	struct clk_hw *(*calc_pll)(const char *name, u32 val);
+-};
+-
+ static const struct aspeed_clk_soc_data ast2500_data = {
+ 	.div_table = ast2500_div_table,
+ 	.eclk_div_table = ast2500_eclk_div_table,
+@@ -315,18 +266,6 @@ static const struct clk_ops aspeed_clk_gate_ops = {
+ 	.is_enabled = aspeed_clk_is_enabled,
+ };
+ 
+-/**
+- * struct aspeed_reset - Aspeed reset controller
+- * @map: regmap to access the containing system controller
+- * @rcdev: reset controller device
+- */
+-struct aspeed_reset {
+-	struct regmap			*map;
+-	struct reset_controller_dev	rcdev;
+-};
+-
+-#define to_aspeed_reset(p) container_of((p), struct aspeed_reset, rcdev)
+-
+ static const u8 aspeed_resets[] = {
+ 	/* SCU04 resets */
+ 	[ASPEED_RESET_XDMA]	= 25,
+diff --git a/drivers/clk/clk-aspeed.h b/drivers/clk/clk-aspeed.h
+new file mode 100644
+index 000000000000..5296b15b1c88
+--- /dev/null
++++ b/drivers/clk/clk-aspeed.h
+@@ -0,0 +1,82 @@
++/* SPDX-License-Identifier: GPL-2.0-or-later */
++/*
++ * Structures used by ASPEED clock drivers
++ *
++ * Copyright 2019 IBM Corp.
++ */
++
++#include <linux/clk-provider.h>
++#include <linux/kernel.h>
++#include <linux/reset-controller.h>
++#include <linux/spinlock.h>
++
++struct clk_div_table;
++struct regmap;
++
++/**
++ * struct aspeed_gate_data - Aspeed gated clocks
++ * @clock_idx: bit used to gate this clock in the clock register
++ * @reset_idx: bit used to reset this IP in the reset register. -1 if no
++ *             reset is required when enabling the clock
++ * @name: the clock name
++ * @parent_name: the name of the parent clock
++ * @flags: standard clock framework flags
++ */
++struct aspeed_gate_data {
++	u8		clock_idx;
++	s8		reset_idx;
++	const char	*name;
++	const char	*parent_name;
++	unsigned long	flags;
++};
++
++/**
++ * struct aspeed_clk_gate - Aspeed specific clk_gate structure
++ * @hw:		handle between common and hardware-specific interfaces
++ * @reg:	register controlling gate
++ * @clock_idx:	bit used to gate this clock in the clock register
++ * @reset_idx:	bit used to reset this IP in the reset register. -1 if no
++ *		reset is required when enabling the clock
++ * @flags:	hardware-specific flags
++ * @lock:	register lock
++ *
++ * Some of the clocks in the Aspeed SoC must be put in reset before enabling.
++ * This modified version of clk_gate allows an optional reset bit to be
++ * specified.
++ */
++struct aspeed_clk_gate {
++	struct clk_hw	hw;
++	struct regmap	*map;
++	u8		clock_idx;
++	s8		reset_idx;
++	u8		flags;
++	spinlock_t	*lock;
++};
++
++#define to_aspeed_clk_gate(_hw) container_of(_hw, struct aspeed_clk_gate, hw)
++
++/**
++ * struct aspeed_reset - Aspeed reset controller
++ * @map: regmap to access the containing system controller
++ * @rcdev: reset controller device
++ */
++struct aspeed_reset {
++	struct regmap			*map;
++	struct reset_controller_dev	rcdev;
++};
++
++#define to_aspeed_reset(p) container_of((p), struct aspeed_reset, rcdev)
++
++/**
++ * struct aspeed_clk_soc_data - Aspeed SoC specific divisor information
++ * @div_table: Common divider lookup table
++ * @eclk_div_table: Divider lookup table for ECLK
++ * @mac_div_table: Divider lookup table for MAC (Ethernet) clocks
++ * @calc_pll: Callback to maculate common PLL settings
++ */
++struct aspeed_clk_soc_data {
++	const struct clk_div_table *div_table;
++	const struct clk_div_table *eclk_div_table;
++	const struct clk_div_table *mac_div_table;
++	struct clk_hw *(*calc_pll)(const char *name, u32 val);
++};
 -- 
 2.23.0.rc1
 
