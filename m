@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4D4F9C0F3
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 01:19:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B204F9C137
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 25 Aug 2019 03:11:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rqIzi62BZvhW2F0VgthGTV6op9Eibkrx+Gq1saX49Qk=; b=pGvvcNkfghFY/H
-	NN+/f82UmHIt4vshLqr2dLx1nUkuNr7Rh7JN8PgAgAiVQu3DCzy6XNjT5ekiA7VogD91k03zV5XUC
-	MST2QiGHGLwCgOQ33JHHEM+v/t3a4eF85YJoyhrv61nsMIYlV4VLUt87ARX9u6ifFb9KB7QyjU0+9
-	VjUNrkCvWjZc6yx9BMEtHaJ1Bcjob1vlP12wvp85Jhhs55GEspjDPGulei2p6u4BpSfU32TAzJUt2
-	x1ETrcSLpZ9jyct2SSYcl0BuiZRzttK9Vhr4fs4VTiSZ+O0awjfNxPyUHeUT4MP2/dtMZS2y/WGn5
-	eOAUOdwrL0tVBEf2p6LA==;
+	List-Owner; bh=qpvyTikDWe5utmVsIZyiH/OI1/ILEVS2BGhj5E5IHKc=; b=qmvJBxcsYUpzzA
+	tXgZa7kcLaoDiOcBrAtPY9z+ugpbNXpat0+Zt0hzDP69O5rzn+FVo/DygWIDXffohL5Fk2iRNDdOb
+	RwH6AMWeNUoK2Y24mfq66QX0UMYXsp0b1X93GgG9aWCNoJE3kjIimiVp5XGubpmWjRI54YhyJ2TiK
+	1SegLSMpKTQVTJ5Pdgw22xw61a4I+4+NCV6R5ws5+AHAKth1PrjhX0XUJtoyVHMTdfPAQpBwrzQ3O
+	FqDytcs9qwLDVja8L0JkrzAdzmVNr8wKVXLk8DE5OUJHk/Caj2l7F8mXyAhh6bANg6eOA1soD1tsP
+	r56UthRxHe6N+RSCcwnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i1fJl-0005RX-Bi; Sat, 24 Aug 2019 23:19:34 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1i1h3c-000899-Fd; Sun, 25 Aug 2019 01:11:00 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i1fJU-0005RA-3G; Sat, 24 Aug 2019 23:19:17 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 1E0F91525F715;
- Sat, 24 Aug 2019 16:19:14 -0700 (PDT)
-Date: Sat, 24 Aug 2019 16:19:12 -0700 (PDT)
-Message-Id: <20190824.161912.1377369658338940538.davem@davemloft.net>
-To: opensource@vdorst.com
-Subject: Re: [PATCH net-next v2 3/3] net: dsa: mt7530: Add support for port 5
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20190821144547.15113-4-opensource@vdorst.com>
-References: <20190821144547.15113-1-opensource@vdorst.com>
- <20190821144547.15113-4-opensource@vdorst.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sat, 24 Aug 2019 16:19:14 -0700 (PDT)
+ id 1i1h3D-000886-96
+ for linux-arm-kernel@lists.infradead.org; Sun, 25 Aug 2019 01:10:36 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id BCB0D68AEF; Sun, 25 Aug 2019 03:10:25 +0200 (CEST)
+Date: Sun, 25 Aug 2019 03:10:25 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v2 2/2] dma-contiguous: Use fallback alloc_pages for
+ single pages
+Message-ID: <20190825011025.GA23410@lst.de>
+References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
+ <20190506223334.1834-3-nicoleotsuka@gmail.com>
+ <CAK7LNARacEorb38mVBw_V-Zvz-znWgBma1AP1-z_5B_xZU4ogg@mail.gmail.com>
+ <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190824_161916_141125_0ED0E650 
-X-CRM114-Status: UNSURE (   4.31  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190824_181035_492887_F462A47E 
+X-CRM114-Status: GOOD (  11.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -63,24 +62,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andrew@lunn.ch, f.fainelli@gmail.com, frank-w@public-files.de,
- netdev@vger.kernel.org, sean.wang@mediatek.com, linux-mips@vger.kernel.org,
- linux-mediatek@lists.infradead.org, john@phrozen.org, matthias.bgg@gmail.com,
- vivien.didelot@gmail.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>, Joerg Roedel <joro@8bytes.org>,
+ Russell King <linux@armlinux.org.uk>, Thierry Reding <treding@nvidia.com>,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Nicolin Chen <nicoleotsuka@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Chris Zankel <chris@zankel.net>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, iommu@lists.linux-foundation.org,
+ iamjoonsoo.kim@lge.com, David Woodhouse <dwmw2@infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ren=E9 van Dorst <opensource@vdorst.com>
-Date: Wed, 21 Aug 2019 16:45:47 +0200
+On Fri, Aug 23, 2019 at 09:56:52PM +0900, Masahiro Yamada wrote:
+> + linux-mmc, Ulf Hansson, Adrian Hunter,
+> 
+> 
+> ADMA of SDHCI is not working
+> since bd2e75633c8012fc8a7431c82fda66237133bf7e
 
-> +	dev_info(ds->dev, "Setup P5, HWTRAP=3D0x%x, intf_sel=3D%s, phy-mode=3D%=
-s\n",
-> +		 val, p5_intf_modes(priv->p5_intf_sel), phy_modes(interface));
+Does it work for you with this commit:
 
-This is debugging, at best.  Please make this a debugging message or
-remove it entirely.
+http://git.infradead.org/users/hch/dma-mapping.git/commitdiff/90ae409f9eb3bcaf38688f9ec22375816053a08e
 
 _______________________________________________
 linux-arm-kernel mailing list
