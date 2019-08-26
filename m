@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 978BB9CA88
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 09:32:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3C4C9CA96
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 09:32:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dalZ7MjJF7WN2NJZ2aHDLTu3PUX7Z7nOhCGBgkX7C8s=; b=gCKK9daJcXBU05
-	yMwzIR/jQqC0Y0vMrhFoEdwCzaGH+nQ9K94eG1NokTUALX7ZGFSMmToUI6pLyhVNBtZRWGiU+GsZB
-	81ymiv1ANX2BoNGCvQZlF/yiv43hXFqz040lNvunPaV4r8TsyZ/zjPUBSDG6QbRECpctm6TNCbWw5
-	irFJbATOBKBn6ddFdDPYPoWCeYX4T9ng7PSriialm69bH5o7aBAIENGj4kxfFSM5iEXqX2yvSzecQ
-	pIQlZnRuOu/jo9gmSXvJbt4CJCoflFKIJYDhGhNkUZjKJu2hEBcFIdvi1uyEn1ON8oOEK8+/bkQkM
-	vcic+PrxbH9MN/RbqOpg==;
+	List-Owner; bh=cfr7EXFOp86R/EYMT8xP0V3vahkQzNHf/O4TKptAAy0=; b=PO8RFlHDcJ1a0l
+	inCMPbXSXte5ur6+Sed61A70tUHALe5eI3IvrVAX36Ua2CCpaJfZ8SYGZ4LGHUP0vGjmy8Z4BGDVL
+	HIGGlCqYOmfWBDAZPANyP3+XcttyvjYvis5X2G7qmP3vE2oi92+7nvm3PYFnFB4EyhLA2o09/O8HG
+	zvPtsa8JljRJdUUH5kHlTbpryyd1Kx5Imx8uhr++RRFuE92hoPAH8xihhzVkWHWz4fDbD5Xwvpq6n
+	4ztcQ8hF1OiKcr+EIh6TCVUDb01b+2B50ifMcKYn1Yc4uoRZ8l1FR6Dcvauu3JuMbxuSHUcjmTnH4
+	YXuzouy2X1MwswLwCIcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i29UG-0005VJ-4D; Mon, 26 Aug 2019 07:32:24 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1i29UW-0005mZ-N6; Mon, 26 Aug 2019 07:32:40 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i29Tq-0005Mz-4Q
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 07:31:59 +0000
+ id 1i29Tv-0005Sz-NP
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 07:32:05 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d638aee0000>; Mon, 26 Aug 2019 00:31:59 -0700
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d638af30001>; Mon, 26 Aug 2019 00:32:03 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 26 Aug 2019 00:31:57 -0700
+ Mon, 26 Aug 2019 00:32:02 -0700
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 26 Aug 2019 00:31:57 -0700
+ by hqpgpgate101.nvidia.com on Mon, 26 Aug 2019 00:32:02 -0700
 Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL107.nvidia.com
  (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 26 Aug
- 2019 07:31:57 +0000
-Received: from HQMAIL111.nvidia.com (172.20.187.18) by HQMAIL109.nvidia.com
+ 2019 07:32:02 +0000
+Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL109.nvidia.com
  (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Mon, 26 Aug
- 2019 07:31:56 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL111.nvidia.com
- (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Mon, 26 Aug 2019 07:31:56 +0000
+ 2019 07:32:02 +0000
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+ Transport; Mon, 26 Aug 2019 07:32:02 +0000
 Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d638ae80001>; Mon, 26 Aug 2019 00:31:56 -0700
+ id <B5d638aed0000>; Mon, 26 Aug 2019 00:32:01 -0700
 From: Vidya Sagar <vidyas@nvidia.com>
 To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
  <thierry.reding@gmail.com>, <jonathanh@nvidia.com>
-Subject: [PATCH 1/6] dt-bindings: PCI: tegra: Add sideband pins configuration
- entries
-Date: Mon, 26 Aug 2019 13:01:38 +0530
-Message-ID: <20190826073143.4582-2-vidyas@nvidia.com>
+Subject: [PATCH 2/6] arm64: tegra: Add configuration for PCIe C5 sideband
+ signals
+Date: Mon, 26 Aug 2019 13:01:39 +0530
+Message-ID: <20190826073143.4582-3-vidyas@nvidia.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190826073143.4582-1-vidyas@nvidia.com>
 References: <20190826073143.4582-1-vidyas@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1566804719; bh=jVsQ77MHmcaFLC4s0eTgGVoxDo/A2MJu8aiRKpUsI/Q=;
+ t=1566804723; bh=haHXWsGgD8MESPMvbZs2yQ/SLeRmS1gQyc9LUmqIL08=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=BX88ouucSggVa8KCQO3Bl2bAB0tI6aUNO8erv2/5t72+dQwwHKdtdWaqFUdD/1zg5
- CoDuzH3Oso0hnDZQxNZdHvdpdr4L8AQqOvz6FXb2E9TTEc4V/9cngOw4T1KqHssbM3
- oGbgV16zaIn2Z3FxedxDHRGHPmlu1kmZAtbTrfwKbTck0uF9ZcT0PBgn8wmUfqB71X
- X9T6EnNHrCjT0s9r6+5NJZ6RRj2UGVHXdmlqmMK+hZcASoDJoyBrhmmunmU+5KoCJc
- o9m3zcAChdZjLfHhzCEL2sKND/q5fadD5Hj+KQbj95rpjccyvISnOi8NDJG7g8oKTM
- 8+KImlUGtrkCw==
+ b=enioegNBwGCOT2yISiZYdP1kIxO403F96JdyOLm+PfeeD3pmboxHreNCa+wwGs0B7
+ YDD44xpHZapFBDlc+d6XPMfhP0HHtGmhSQ2npgdVa68WHSkm3MyyqZTizkBM5+RiXk
+ f3vN2TtLI19NHMR0KyWX2FKvgINcR96LeMJxjrrpqmsWwCDkbtJ+J30kK9jyROEKAL
+ fFqPyH+3L9RpcA82qr/8FBEV0OVvV/rYizx3q4PW++BtSVylBp0ZcJ7PMLxiM6vkk2
+ 7BXBz0Zf0xlCgaznTMpWDzZiWxgBEH+fug4pZxwc3Up7ROGxGVHFreUavdFf8fNrG3
+ 33dUVIDvUQFjQ==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_003158_267114_8DC72E5C 
-X-CRM114-Status: UNSURE (   7.75  )
+X-CRM114-CacheID: sfid-20190826_003203_793932_86B06B0E 
+X-CRM114-Status: UNSURE (   9.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -108,40 +108,79 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add optional bindings "pinctrl-names" and "pinctrl-0" to describe pin
-configuration information of a particular PCIe controller.
+Add support to configure PCIe C5's sideband signals PERST# and CLKREQ#
+as output and bi-directional signals respectively which unlike other
+PCIe controllers sideband signals are not configured by default.
 
 Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 ---
- .../devicetree/bindings/pci/nvidia,tegra194-pcie.txt      | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi | 38 +++++++++++++++++++++++-
+ 1 file changed, 37 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-index 674e5adb2895..0ac1b867ac24 100644
---- a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-+++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-@@ -83,6 +83,11 @@ Required properties:
- - vddio-pex-ctl-supply: Regulator supply for PCIe side band signals
+diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+index adebbbf36bd0..3c0cf54f0aab 100644
+--- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
++++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
+@@ -3,8 +3,9 @@
+ #include <dt-bindings/gpio/tegra194-gpio.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
+ #include <dt-bindings/mailbox/tegra186-hsp.h>
+-#include <dt-bindings/reset/tegra194-reset.h>
++#include <dt-bindings/pinctrl/pinctrl-tegra.h>
+ #include <dt-bindings/power/tegra194-powergate.h>
++#include <dt-bindings/reset/tegra194-reset.h>
+ #include <dt-bindings/thermal/tegra194-bpmp-thermal.h>
  
- Optional properties:
-+- pinctrl-names: A list of pinctrl state names.
-+  It is mandatory for C5 controller and optional for other controllers.
-+  - "default": Configures PCIe I/O for proper operation.
-+- pinctrl-0: phandle for the 'default' state of pin configuration.
-+  It is mandatory for C5 controller and optional for other controllers.
- - supports-clkreq: Refer to Documentation/devicetree/bindings/pci/pci.txt
- - nvidia,update-fc-fixup: This is a boolean property and needs to be present to
-     improve performance when a platform is designed in such a way that it
-@@ -120,6 +125,9 @@ Tegra194:
- 		num-lanes = <8>;
- 		linux,pci-domain = <0>;
+ / {
+@@ -130,6 +131,38 @@
+ 			};
+ 		};
+ 
++		pinmux: pinmux@2430000 {
++			compatible = "nvidia,tegra194-pinmux";
++			reg = <0x2430000 0x17000
++			       0xc300000 0x4000>;
++
++			status = "okay";
++
++			pex_rst_c5_out_state: pex_rst_c5_out {
++				pex_rst {
++					nvidia,pins = "pex_l5_rst_n_pgg1";
++					nvidia,schmitt = <TEGRA_PIN_DISABLE>;
++					nvidia,lpdr = <TEGRA_PIN_ENABLE>;
++					nvidia,enable-input = <TEGRA_PIN_DISABLE>;
++					nvidia,io-high-voltage = <TEGRA_PIN_ENABLE>;
++					nvidia,tristate = <TEGRA_PIN_DISABLE>;
++					nvidia,pull = <TEGRA_PIN_PULL_NONE>;
++				};
++			};
++
++			clkreq_c5_bi_dir_state: clkreq_c5_bi_dir {
++				clkreq {
++					nvidia,pins = "pex_l5_clkreq_n_pgg0";
++					nvidia,schmitt = <TEGRA_PIN_DISABLE>;
++					nvidia,lpdr = <TEGRA_PIN_ENABLE>;
++					nvidia,enable-input = <TEGRA_PIN_ENABLE>;
++					nvidia,io-high-voltage = <TEGRA_PIN_ENABLE>;
++					nvidia,tristate = <TEGRA_PIN_DISABLE>;
++					nvidia,pull = <TEGRA_PIN_PULL_NONE>;
++				};
++			};
++		};
++
+ 		uarta: serial@3100000 {
+ 			compatible = "nvidia,tegra194-uart", "nvidia,tegra20-uart";
+ 			reg = <0x03100000 0x40>;
+@@ -1365,6 +1398,9 @@
+ 		num-viewport = <8>;
+ 		linux,pci-domain = <5>;
  
 +		pinctrl-names = "default";
 +		pinctrl-0 = <&pex_rst_c5_out_state>, <&clkreq_c5_bi_dir_state>;
 +
- 		clocks = <&bpmp TEGRA194_CLK_PEX0_CORE_0>;
- 		clock-names = "core";
- 
+ 		clocks = <&bpmp TEGRA194_CLK_PEX1_CORE_5>,
+ 			<&bpmp TEGRA194_CLK_PEX1_CORE_5M>;
+ 		clock-names = "core", "core_m";
 -- 
 2.17.1
 
