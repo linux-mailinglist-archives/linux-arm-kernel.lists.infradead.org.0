@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB8E69CF6F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 14:20:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5989C9CF70
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 14:20:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ZTxFb35j1BzUiOvkcF3UUbzJXOJTqfA3TQHOZkmPr8=; b=cwlOL9g0OXfttA
-	bl4TPO0snmG42Z7xg1s4/G0VX2esO5a9fdlwCvBxClL3j6kwXmz2Xp0YPSul5bSMQxII40MacZIV5
-	FlKElaGfEvFA3gGNwBiQM4plduFgn0+0xJcmlR7slD9CF6DNZwfVqPBjyyGaZ2aCAxjZoJzjGCG89
-	hpdTKKtSQyUyWy46kX/M3Pi27mHavU8akq0HHhGs7pubyJzwHj0ivSGHzVreBBgp3aXoROYx2iw1o
-	mRNtSGzcdW2/RG/rpT/+xJbuAW60pUAgYMLpBKm7SbFkPLhTdpNrYnyUvPSR5WXQFsivsjcUZsfhG
-	riVbBtG0ttIXER5ohsCw==;
+	List-Owner; bh=wPxUMuou8OOgxaVoIqq2+MIaqRpkBhVyY6495P5Y8qs=; b=amWxujqEzUuuLi
+	x5/XlYaPPBkJr1TROiEgVYmA3uatYttzK2W6hl3LF9xK6iVIznLmDx25ky3gfEcmJnWH77aSS1xql
+	7R3gbRsUoNWef/b9BCdIWIQIReTIcuHWBzSthdc3q4NiZvex9nTScuMvHhW1wMBptxB5OwCkV9H7X
+	ctSs3xChikixqbeUZ/Zqu+5IYirhZYgW2PTOxcTWLCVwmBQGyg6u4n+3OMSamXJnqBctJVjCDjsDH
+	kpjIMPX4ps78D1sduKIsTJAVpE2QNXmtttCB7GOfM2mzOY2EJQgkjGZL+cXIlt35Kn7B6Tv+gCS8d
+	jHyNE8y8osvY5Qt4hahw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Dz8-00045M-NC; Mon, 26 Aug 2019 12:20:34 +0000
+	id 1i2DzK-0004LU-Em; Mon, 26 Aug 2019 12:20:46 +0000
 Received: from clnet-p19-102.ikbnet.co.at ([83.175.77.102] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i2DyU-0002Kc-A5; Mon, 26 Aug 2019 12:19:54 +0000
+ id 1i2DyW-0002OV-UB; Mon, 26 Aug 2019 12:19:57 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Stefano Stabellini <sstabellini@kernel.org>,
  Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>
-Subject: [PATCH 03/11] xen/arm: simplify dma_cache_maint
-Date: Mon, 26 Aug 2019 14:19:36 +0200
-Message-Id: <20190826121944.515-4-hch@lst.de>
+Subject: [PATCH 04/11] xen/arm: remove xen_dma_ops
+Date: Mon, 26 Aug 2019 14:19:37 +0200
+Message-Id: <20190826121944.515-5-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190826121944.515-1-hch@lst.de>
 References: <20190826121944.515-1-hch@lst.de>
@@ -43,114 +43,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: xen-devel@lists.xenproject.org, iommu@lists.linux-foundation.org,
- x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: x86@kernel.org, Julien Grall <julien.grall@arm.com>,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Calculate the required operation in the caller, and pass it directly
-instead of recalculating it for each page, and use simple arithmetics
-to get from the physical address to Xen page size aligned chunks.
+arm and arm64 can just use xen_swiotlb_dma_ops directly like x86, no
+need for a pointer indirection.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
+Reviewed-by: Julien Grall <julien.grall@arm.com>
 ---
- arch/arm/xen/mm.c | 62 +++++++++++++++++------------------------------
- 1 file changed, 22 insertions(+), 40 deletions(-)
+ arch/arm/mm/dma-mapping.c    | 3 ++-
+ arch/arm/xen/mm.c            | 4 ----
+ arch/arm64/mm/dma-mapping.c  | 3 ++-
+ include/xen/arm/hypervisor.h | 2 --
+ 4 files changed, 4 insertions(+), 8 deletions(-)
 
+diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+index 738097396445..2661cad36359 100644
+--- a/arch/arm/mm/dma-mapping.c
++++ b/arch/arm/mm/dma-mapping.c
+@@ -35,6 +35,7 @@
+ #include <asm/mach/map.h>
+ #include <asm/system_info.h>
+ #include <asm/dma-contiguous.h>
++#include <xen/swiotlb-xen.h>
+ 
+ #include "dma.h"
+ #include "mm.h"
+@@ -2360,7 +2361,7 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+ 
+ #ifdef CONFIG_XEN
+ 	if (xen_initial_domain())
+-		dev->dma_ops = xen_dma_ops;
++		dev->dma_ops = &xen_swiotlb_dma_ops;
+ #endif
+ 	dev->archdata.dma_ops_setup = true;
+ }
 diff --git a/arch/arm/xen/mm.c b/arch/arm/xen/mm.c
-index 90574d89d0d4..14210ebdea1a 100644
+index 14210ebdea1a..9b3a6c0ca681 100644
 --- a/arch/arm/xen/mm.c
 +++ b/arch/arm/xen/mm.c
-@@ -35,64 +35,46 @@ unsigned long xen_get_swiotlb_free_pages(unsigned int order)
- 	return __get_free_pages(flags, order);
+@@ -163,16 +163,12 @@ void xen_destroy_contiguous_region(phys_addr_t pstart, unsigned int order)
  }
+ EXPORT_SYMBOL_GPL(xen_destroy_contiguous_region);
  
--enum dma_cache_op {
--       DMA_UNMAP,
--       DMA_MAP,
--};
- static bool hypercall_cflush = false;
- 
--/* functions called by SWIOTLB */
+-const struct dma_map_ops *xen_dma_ops;
+-EXPORT_SYMBOL(xen_dma_ops);
 -
--static void dma_cache_maint(dma_addr_t handle, unsigned long offset,
--	size_t size, enum dma_data_direction dir, enum dma_cache_op op)
-+/* buffers in highmem or foreign pages cannot cross page boundaries */
-+static void dma_cache_maint(dma_addr_t handle, size_t size, u32 op)
+ int __init xen_mm_init(void)
  {
  	struct gnttab_cache_flush cflush;
--	unsigned long xen_pfn;
--	size_t left = size;
+ 	if (!xen_initial_domain())
+ 		return 0;
+ 	xen_swiotlb_init(1, false);
+-	xen_dma_ops = &xen_swiotlb_dma_ops;
  
--	xen_pfn = (handle >> XEN_PAGE_SHIFT) + offset / XEN_PAGE_SIZE;
--	offset %= XEN_PAGE_SIZE;
-+	cflush.a.dev_bus_addr = handle & XEN_PAGE_MASK;
-+	cflush.offset = xen_offset_in_page(handle);
-+	cflush.op = op;
+ 	cflush.op = 0;
+ 	cflush.a.dev_bus_addr = 0;
+diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+index bd2b039f43a6..4b244a037349 100644
+--- a/arch/arm64/mm/dma-mapping.c
++++ b/arch/arm64/mm/dma-mapping.c
+@@ -8,6 +8,7 @@
+ #include <linux/cache.h>
+ #include <linux/dma-noncoherent.h>
+ #include <linux/dma-iommu.h>
++#include <xen/swiotlb-xen.h>
  
- 	do {
--		size_t len = left;
--	
--		/* buffers in highmem or foreign pages cannot cross page
--		 * boundaries */
--		if (len + offset > XEN_PAGE_SIZE)
--			len = XEN_PAGE_SIZE - offset;
+ #include <asm/cacheflush.h>
+ 
+@@ -64,6 +65,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+ 
+ #ifdef CONFIG_XEN
+ 	if (xen_initial_domain())
+-		dev->dma_ops = xen_dma_ops;
++		dev->dma_ops = &xen_swiotlb_dma_ops;
+ #endif
+ }
+diff --git a/include/xen/arm/hypervisor.h b/include/xen/arm/hypervisor.h
+index 2982571f7cc1..43ef24dd030e 100644
+--- a/include/xen/arm/hypervisor.h
++++ b/include/xen/arm/hypervisor.h
+@@ -19,8 +19,6 @@ static inline enum paravirt_lazy_mode paravirt_get_lazy_mode(void)
+ 	return PARAVIRT_LAZY_NONE;
+ }
+ 
+-extern const struct dma_map_ops *xen_dma_ops;
 -
--		cflush.op = 0;
--		cflush.a.dev_bus_addr = xen_pfn << XEN_PAGE_SHIFT;
--		cflush.offset = offset;
--		cflush.length = len;
--
--		if (op == DMA_UNMAP && dir != DMA_TO_DEVICE)
--			cflush.op = GNTTAB_CACHE_INVAL;
--		if (op == DMA_MAP) {
--			if (dir == DMA_FROM_DEVICE)
--				cflush.op = GNTTAB_CACHE_INVAL;
--			else
--				cflush.op = GNTTAB_CACHE_CLEAN;
--		}
--		if (cflush.op)
--			HYPERVISOR_grant_table_op(GNTTABOP_cache_flush, &cflush, 1);
-+		if (size + cflush.offset > XEN_PAGE_SIZE)
-+			cflush.length = XEN_PAGE_SIZE - cflush.offset;
-+		else
-+			cflush.length = size;
-+
-+		HYPERVISOR_grant_table_op(GNTTABOP_cache_flush, &cflush, 1);
-+
-+		handle += cflush.length;
-+		size -= cflush.length;
- 
--		offset = 0;
--		xen_pfn++;
--		left -= len;
--	} while (left);
-+		cflush.offset = 0;
-+	} while (size);
- }
- 
- static void __xen_dma_page_dev_to_cpu(struct device *hwdev, dma_addr_t handle,
- 		size_t size, enum dma_data_direction dir)
- {
--	dma_cache_maint(handle & PAGE_MASK, handle & ~PAGE_MASK, size, dir, DMA_UNMAP);
-+	if (dir != DMA_TO_DEVICE)
-+		dma_cache_maint(handle, size, GNTTAB_CACHE_INVAL);
- }
- 
- static void __xen_dma_page_cpu_to_dev(struct device *hwdev, dma_addr_t handle,
- 		size_t size, enum dma_data_direction dir)
- {
--	dma_cache_maint(handle & PAGE_MASK, handle & ~PAGE_MASK, size, dir, DMA_MAP);
-+	if (dir == DMA_FROM_DEVICE)
-+		dma_cache_maint(handle, size, GNTTAB_CACHE_INVAL);
-+	else
-+		dma_cache_maint(handle, size, GNTTAB_CACHE_CLEAN);
- }
- 
- void __xen_dma_map_page(struct device *hwdev, struct page *page,
+ #ifdef CONFIG_XEN
+ void __init xen_early_init(void);
+ #else
 -- 
 2.20.1
 
