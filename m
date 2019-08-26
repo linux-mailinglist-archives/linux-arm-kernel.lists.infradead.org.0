@@ -2,60 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D84189CF41
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 14:13:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D94389CF42
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 14:13:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+5oZ2x2hv+Sj+EmFQ7Hr+QPLBqpvP0rkgA7pQAkZVVQ=; b=bwY0a29wozUcNX
-	62labZVy2ucImLxQyFmGQF0cOUYn4RipQJtDiYFgsCjZMguuStqoksxgkC24tur+3Xh7T3/mYtJz4
-	JiHpu2f9NAcbdj2lTpWyDNdic0CYRcJG8I4J59MNRpf9HLNh+Ywc/tccbDVnPtl5nEjnR/KJzripv
-	dWHkU3+ujirH6nLzJfkJ6s7pw5GicuSo3SLFuk5g3Emlz8Ekv8/aq+ZWM9WpD4UyobckVSCfWyGyM
-	CO9EcnYQADBOozcQeB6HLvhHRhj+egICgjw5Z9JHI6lOY0b9pw5NISU+itDSlPPTW5mV0+HUuEnF3
-	Yv232tJ5DsLom3Z5Jsyw==;
+	List-Owner; bh=oxug9nXzUx6iv+zE2p0RYVVOOxo1A2kMOsn1qc1xnrg=; b=Bc0Ltj9Pi9h47G
+	YwGcPlI72TfFE93kadukRzV+oDo0SCaWtOzIIuKdqGlNh/425IsDFWqKlQZLkaK5ssPcZISuUbLl5
+	KwMiSrlzWCITjC+srOEyldPyVOFxpKjtMnxJwBUqlqNtmtThEk3bBlCLFXquw68cdXRuTut2XiBGM
+	5sqtS5Gn8Pr09MeJ20bKVOETNNmnnHBz53xqXE9tY2FuJNBDjqKElcuY8cYMlfsQyr3EdHQ+Pw8bG
+	k9vNx7FfHLa4kHSrFQXwgoxiGaa1ZX9tomCY3ViSiM+iIF/kuU1Xag2J0jsj4qfGJbN7Ly3fI5nr1
+	N8FnO1lNMCx4zTtwe9qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2DsG-0000Ct-B0; Mon, 26 Aug 2019 12:13:28 +0000
+	id 1i2DsR-0000RM-HU; Mon, 26 Aug 2019 12:13:39 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Dpw-00062h-8H; Mon, 26 Aug 2019 12:11:05 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
+ id 1i2DqP-0006Yy-5q; Mon, 26 Aug 2019 12:11:34 +0000
+Received: from mail-qk1-f172.google.com (mail-qk1-f172.google.com
+ [209.85.222.172])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 52931217F5;
- Mon, 26 Aug 2019 12:11:03 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9619621883;
+ Mon, 26 Aug 2019 12:11:32 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566821463;
- bh=RQQYenaHO1We36aA/sTFhPjRCVJtTam6Xh8rOSVyZIA=;
+ s=default; t=1566821492;
+ bh=YjOhHVNb3S+TKmqIRau91HDeiF/9aMDjoGnlxjpwtFI=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=LfkBmC+XCAqE+tHlu7Y94bpSTLY9+aTQUEYNIA8XTpKecTBsW+LPD+0ul3iwGyMU7
- F9Tk8tVr4lTWV06j+QbfE0wtFPpfvVWDEWyNFxIwPBG9r0T80bzkJXK/610CMeMHEn
- R39GJUGMQItyoh8yuCKvXkVvShYfTvIt1W5hljUI=
-Received: by mail-qt1-f179.google.com with SMTP id z4so17591242qtc.3;
- Mon, 26 Aug 2019 05:11:03 -0700 (PDT)
-X-Gm-Message-State: APjAAAW50Cm6IXPVTOSdNCz1oKFCEeLLBIj63Pz0c2RRYyIpOG/M8LoS
- lzVgWRBsGcKJvcwMtclv1g+dAQsUfhzPBZheVg==
-X-Google-Smtp-Source: APXvYqwoiMD5LlRk2/FPphU9B2qUd5FKFbojCZmShFSHNq7fBlsxlxPuXEu3AGwHM//EAWDsRS+w6+ti9+Fdn1RuB6E=
-X-Received: by 2002:ad4:4050:: with SMTP id r16mr15134256qvp.200.1566821462484; 
- Mon, 26 Aug 2019 05:11:02 -0700 (PDT)
+ b=nXGicwi8LQMcrqtLzIDuXd2LskmnWsntr0uvzQtncJ+uBbM8dsai6PA6n9rZG3gIj
+ a3B0I+mcQe2sdxhq3J11jzfVQZaccPj66WqPYLJBGrBvvKUac/qJCUXOYaTVoqz/Qx
+ BWxu6sEVnIUFWYZiVrbCphZdvtqiIA96t3Gn3OUI=
+Received: by mail-qk1-f172.google.com with SMTP id g17so13755903qkk.8;
+ Mon, 26 Aug 2019 05:11:32 -0700 (PDT)
+X-Gm-Message-State: APjAAAVPa/0+rzMPR+gNE31fycwzhMVt2fYKZNkoHnAAekkVr13QD8pd
+ R8crRsi+Uy+4dshMx/qEUAcHxZ2TusjxciKovw==
+X-Google-Smtp-Source: APXvYqxagKO99F9mS7t6DaXXxukZkMZEy/9XN2GKqINovi5R7IFk0Zl3h+jg5Zq3YC4qsFWsngg9N8DwLKv0FhuW7S8=
+X-Received: by 2002:a37:4941:: with SMTP id w62mr14601999qka.119.1566821491710; 
+ Mon, 26 Aug 2019 05:11:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <1566633850-9421-1-git-send-email-christianshewitt@gmail.com>
- <1566633850-9421-2-git-send-email-christianshewitt@gmail.com>
-In-Reply-To: <1566633850-9421-2-git-send-email-christianshewitt@gmail.com>
+ <1566633850-9421-3-git-send-email-christianshewitt@gmail.com>
+In-Reply-To: <1566633850-9421-3-git-send-email-christianshewitt@gmail.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 26 Aug 2019 07:10:44 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqKXnpHf5=2aRxvx_wpKg2e0phDPL5PRNGkVUELyni5NDg@mail.gmail.com>
-Message-ID: <CAL_JsqKXnpHf5=2aRxvx_wpKg2e0phDPL5PRNGkVUELyni5NDg@mail.gmail.com>
-Subject: Re: [PATCH v2,1/3] dt-bindings: Add vendor prefix for Ugoos
+Date: Mon, 26 Aug 2019 07:11:15 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKJvyYpAb2n1aq7RRKrgnt+oL2yd47b4jh=QiZdu6t39A@mail.gmail.com>
+Message-ID: <CAL_JsqKJvyYpAb2n1aq7RRKrgnt+oL2yd47b4jh=QiZdu6t39A@mail.gmail.com>
+Subject: Re: [PATCH v2,2/3] dt-bindings: arm: amlogic: Add support for the
+ Ugoos AM6
 To: Christian Hewitt <christianshewitt@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_051104_366699_E3E97D5E 
-X-CRM114-Status: UNSURE (   9.02  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190826_051133_373146_5C9E0B8E 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -98,15 +98,13 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Sat, Aug 24, 2019 at 3:05 AM Christian Hewitt
 <christianshewitt@gmail.com> wrote:
 >
-> Ugoos Industrial Co., Ltd. are a manufacturer of ARM based TV Boxes,
-> Dongles, Digital Signage and Advertisement Solutions [0].
->
-> [0] (https://ugoos.com)
+> The Ugoos AM6 is based on the Amlogic W400 (G12B) reference design using the
+> S922X chipset.
 >
 > Signed-off-by: Christian Hewitt <christianshewitt@gmail.com>
 > ---
->  Documentation/devicetree/bindings/vendor-prefixes.yaml | 2 ++
->  1 file changed, 2 insertions(+)
+>  Documentation/devicetree/bindings/arm/amlogic.yaml | 1 +
+>  1 file changed, 1 insertion(+)
 
 Acked-by: Rob Herring <robh@kernel.org>
 
