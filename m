@@ -2,92 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AD75D9D90F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:25:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7B189D915
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:26:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AnlHkhpFNooSaXpQ4hzuKHH49pQ3yqJ1veEdlc3SLLE=; b=GOrspooIW7+8dB
-	e2X9d1FqOZQPs82a4KX2zO9i9me5YtIqL+mrm9ga88VwB2ICnywXyl7f5/m20vdrSz0OkU1kgh7c/
-	0UqVtUarvnZy5xzkbybjsQQBGVJVEvAoYwsjmhiG7aF+uQE9H26u7IWuQZWYmCidjnuUEiCqgm3ZD
-	8JUajIJq4rcar8+R+TDvHcfsESzl6t/FKQ98eCsu1V+zzxY1kELUHPkPkvSLcJ34i9EVFxxMpYm4E
-	eDtVRF1rMg7nFPOTuZ1a3amE2qnoE96MTkMmcAWRngwpIutzl5ICHG5cgiHt8cTAnIrC0dlbyiEDn
-	1XeCNgMpCH1qgJPOL0Lg==;
+	List-Owner; bh=aff2mQm4akWZJMirrT8YGMoh5r3Wi4vYMgIaquwm9P8=; b=FGgjqAK+Eo6zW9
+	ysb2u69TRTiqPupt4doqComHj3dGBEvfvzYwD0jVfNajXiF4IK8MTQNZaqb/0HYeufhG+3DAWDJPP
+	94SuCz5D8j6BVvLOa0/Uws0706gB4+ScOHPdza1ewqlyxsNiBHoL+nFfl90J3UD2FO1BBzvgZPAL2
+	9wk6PkwpTwl+7erWzxNLnPd6tIf4nu7rlW27L8is0dz+YErabkc1IQiuZsGfzTgOFMM4U6E/Qm+d0
+	VrmrayG//eDVdXk2nyjpTgw0r9X16utPMikbMltw32Z1SGIl15V0MzoP76/pnA/RxU95jUQG9RHEV
+	uqHzq8E9aszexRRUqQuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2NQf-0006jK-3n; Mon, 26 Aug 2019 22:25:37 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1i2NRe-000768-1Y; Mon, 26 Aug 2019 22:26:38 +0000
+Received: from galois.linutronix.de ([2a0a:51c0:0:12e:550::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2NQR-0006io-7F; Mon, 26 Aug 2019 22:25:24 +0000
-Received: by mail-pg1-x542.google.com with SMTP id m3so11403583pgv.13;
- Mon, 26 Aug 2019 15:25:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=NdrKt952AuvDe+QMynjr4iuarcTkuNP/kAs8J0u4A+s=;
- b=a0zMmyWBK90UYJtyoqynyxpcCWQ63iFelFOAu2wf9q+P7tEGrAMDTLQ7ns9kTHCAvV
- zOtTYGjAxNvaMG4PH070aBsaBC17H9ftkGmoEi1jbpZFGywLt3QZL7gqqDvhtYn2QJAj
- HSQU1nyy/xAx7EGwqSnb5+oUhOiY0vilM355IeRksUhMIXlBU+ac4G4LkEY6hh/lQJqH
- TCnArxvquzzcbANPftPtDewlrkSUrPpD/afdr91bwf897Kd0DnHeETaJ3blnDHKXuHRK
- pv4PbuZrnheVZVo5X1lDBWaTzlVchp+wBfR+mBKzN+vI9AKQDusQD89Py284sXkk9381
- 0sVQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NdrKt952AuvDe+QMynjr4iuarcTkuNP/kAs8J0u4A+s=;
- b=jUCsiaWMcm+069XA7+ZGNm6wbXohnm0/0Kfthsq38Zj2+efXd0OHOyj95EdjUqB4E0
- 6qUQNF8hxprvPF2JQHjw0Jr4B1RtOGODIGXmWdszP5sk89e/3BwBymUhOCqgWtcfU1Ld
- s11Xgtb8CPv1NJ+xXkxIgHQYnQvTi5tLh+HuZeP6uZOz6Sq0IOdRWD/Zb7b7jrywsdHv
- zInaGOHB21l+0m0LLtng1iINRApKHaUnZEQ9KPmBb8DpOdp3bu08TBwVJBLbtqcDQ5BB
- 3hjOBD1cGuzRyd9SyiI4hR/EmOovTOoMZI4lMqzY/sGI6DfouGc+EezT+NRC9vQr6P0k
- FTww==
-X-Gm-Message-State: APjAAAUYVpu/8nUHpc9rLsRS0qkH7MA45jnYwCwyQtpVwewYEerqwdnu
- epOvcqAQHvvw0daBtVoxI0g=
-X-Google-Smtp-Source: APXvYqy681ZUL1/GOI1ZqNuttC4tPBoxw38R2Hiki+GEnFDGGEOPoegEj5VFS0OPFx5JUD/3pSIIpA==
-X-Received: by 2002:a65:6108:: with SMTP id z8mr8200381pgu.289.1566858322037; 
- Mon, 26 Aug 2019 15:25:22 -0700 (PDT)
-Received: from mail.google.com ([149.28.153.17])
- by smtp.gmail.com with ESMTPSA id t6sm449041pjy.18.2019.08.26.15.25.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 15:25:21 -0700 (PDT)
-Date: Tue, 27 Aug 2019 06:25:12 +0800
-From: Changbin Du <changbin.du@gmail.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH 03/11] asm-generic: add generic dwarf definition
-Message-ID: <20190826222510.6m2k3puwflnr52b7@mail.google.com>
-References: <20190825132330.5015-1-changbin.du@gmail.com>
- <20190825132330.5015-4-changbin.du@gmail.com>
- <20190826074215.GL2369@hirez.programming.kicks-ass.net>
+ id 1i2NRQ-00075o-Lh
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 22:26:26 +0000
+Received: from p5de0b6c5.dip0.t-ipconnect.de ([93.224.182.197] helo=nanos)
+ by Galois.linutronix.de with esmtpsa (TLS1.2:DHE_RSA_AES_256_CBC_SHA256:256)
+ (Exim 4.80) (envelope-from <tglx@linutronix.de>)
+ id 1i2NR8-0006Vh-6T; Tue, 27 Aug 2019 00:26:07 +0200
+Date: Tue, 27 Aug 2019 00:26:05 +0200 (CEST)
+From: Thomas Gleixner <tglx@linutronix.de>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [RFC PATCH 5/7] arm64: smp: use generic SMP stop common code
+In-Reply-To: <c6a86709-6faf-bf84-08aa-c41dab61c58f@arm.com>
+Message-ID: <alpine.DEB.2.21.1908270025340.1939@nanos.tec.linutronix.de>
+References: <20190823115720.605-1-cristian.marussi@arm.com>
+ <20190823115720.605-6-cristian.marussi@arm.com>
+ <20190826153236.GA9591@infradead.org>
+ <c6a86709-6faf-bf84-08aa-c41dab61c58f@arm.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190826074215.GL2369@hirez.programming.kicks-ass.net>
-User-Agent: NeoMutt/20180716
+X-Linutronix-Spam-Score: -1.0
+X-Linutronix-Spam-Level: -
+X-Linutronix-Spam-Status: No , -1.0 points, 5.0 required, ALL_TRUSTED=-1,
+ SHORTCIRCUIT=-0.0001
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_152523_266328_24603679 
-X-CRM114-Status: GOOD (  17.45  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_152624_849961_3936BAD3 
+X-CRM114-Status: GOOD (  10.70  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2a0a:51c0:0:12e:550:0:0:1 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (changbin.du[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,66 +67,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- linux-parisc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- linux-sh@vger.kernel.org, x86@kernel.org, linux-doc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
- linux-mips@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
- Jessica Yu <jeyu@kernel.org>, sparclinux@vger.kernel.org,
- linux-kbuild@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
- linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, Changbin Du <changbin.du@gmail.com>
+Cc: linux-arch@vger.kernel.org, mark.rutland@arm.com, peterz@infradead.org,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ Christoph Hellwig <hch@infradead.org>, takahiro.akashi@linaro.org,
+ james.morse@arm.com, hidehiro.kawai.ez@hitachi.com, will@kernel.org,
+ dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Peter,
-
-On Mon, Aug 26, 2019 at 09:42:15AM +0200, Peter Zijlstra wrote:
-> On Sun, Aug 25, 2019 at 09:23:22PM +0800, Changbin Du wrote:
-> > Add generic DWARF constant definitions. We will use it later.
+On Mon, 26 Aug 2019, Cristian Marussi wrote:
+> On 8/26/19 4:32 PM, Christoph Hellwig wrote:
+> > > +config ARCH_USE_COMMON_SMP_STOP
+> > > +	def_bool y if SMP
 > > 
-> > Signed-off-by: Changbin Du <changbin.du@gmail.com>
-> > ---
-> >  include/asm-generic/dwarf.h | 199 ++++++++++++++++++++++++++++++++++++
-> >  1 file changed, 199 insertions(+)
-> >  create mode 100644 include/asm-generic/dwarf.h
+> > The option belongs into common code and the arch code shoud only
+> > select it.
 > > 
-> > diff --git a/include/asm-generic/dwarf.h b/include/asm-generic/dwarf.h
-> > new file mode 100644
-> > index 000000000000..c705633c2a8f
-> > --- /dev/null
-> > +++ b/include/asm-generic/dwarf.h
-> > @@ -0,0 +1,199 @@
-> > +/* SPDX-License-Identifier: GPL-2.0
-> > + *
-> > + * Architecture independent definitions of DWARF.
-> > + *
-> > + * Copyright (C) 2019 Changbin Du <changbin.du@gmail.com>
 > 
-> You're claiming copyright on dwarf definitions? ;-)
+> In fact that was my first approach, but then I noticed that in kernel/ topdir
+> there was no generic Kconfig but only subsystem specific ones:
 > 
-> I'm thinking only Oracle was daft enough to think stuff like that was
-> copyrightable.
-> 
-ok, let me remove copyright line. I think SPDX claim is okay, right?
+> Kconfig.freezer  Kconfig.hz       Kconfig.locks    Kconfig.preempt
 
-> Also; I think it would be very good to not use/depend on DWARF for this.
->
-It only includes the DWARF expersion opcodes, not all of dwarf stuffs.
+arch/Kconfig
 
-> You really don't need all of DWARF; I'm thikning you only need a few
-> types; for location we already have regs_get_kernel_argument() which
-> has all the logic to find the n-th argument.
-> 
-regs_get_kernel_argument() can handle most cases, but if the size of one paramater
-exceeds 64bit (it is rare in kernel), we must recalculate the locations. So I think
-dwarf location descriptor is the most accurate one.
+Thanks,
 
--- 
-Cheers,
-Changbin Du
+	tglx
 
 _______________________________________________
 linux-arm-kernel mailing list
