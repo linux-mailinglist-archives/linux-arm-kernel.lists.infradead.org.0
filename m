@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69E1C9D79E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 22:46:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FC3F9D7A0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 22:47:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kLtICralPD4HgMcY0x9Hqbflz6gbIkZd/SQxM37EumE=; b=tVbw6l1mxtkHfF5zLA6HL1wbDZ
-	377rAcKSNYPtFOpGMOYp0fjxOcrCsbCzf6y4si4gfIz+3cGwazFRFXzXk25jqqr1B4AVZRT71Mx1G
-	RgWObHYAGRG+d7demDeAr/o1Ngz4gGwwZzqrUOPnx/exVKq9uF28gzr/d3g8Ua1nGGuzitoFGuDpE
-	dj8CedjUZQYK6Og87jiY7Yri0BdrLIyeUTzJOS3NFe7hEl113bNRHOp78nZU6MYWC9WdpLkH5WeJT
-	gbdA5Dl+Eka20FKEVK9q2E1x8JaWBnXyyReM2dd9maSLbTk8YsEmpcAZU+W6SwBky7DQJ9SoAbiiz
-	mFajyCMw==;
+	bh=m2+UesCdgeTXpJJ10bcIFjLrUaVfBYoX6jjYh1TupJ4=; b=RjZgl5ktj3tCoWwiN2VvBmz15E
+	IkYwNU15TbAxAEj6OtL8uGDH7CwPos39RRI/IXFWGI5mvdAaFkRH/679AKyZTfQJHHGaaXLxk8/3O
+	ymXrVLkU052tweD/Xgn+5lJUvJpEZ0TvS60Ny0cf9wU5PJd6gsJWyWCNB5LC29Skr50FNyClzL26N
+	yJIQHAM4a9A/qBzOFkv01DMPav45TgC7CyABshwZMBsSjdu+Q449rwQURqGQg2/41gkU9RlAMFRh6
+	4W/rLy5IvgYu8ek8scIiNaFtLztHLU22ccPmxMJF45d7u9SxRcP2wyeGetQovZzdd3VO0Vka0NkTp
+	J/EgHTeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2LsL-0004SW-EQ; Mon, 26 Aug 2019 20:46:05 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i2Lsw-0004sB-Rn; Mon, 26 Aug 2019 20:46:42 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Lr5-0002iO-3M
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 20:44:48 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y8so16572200wrn.10
+ id 1i2Lr7-0002k2-UO
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 20:44:52 +0000
+Received: by mail-wr1-x443.google.com with SMTP id t16so16597868wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 13:44:47 -0700 (PDT)
+ Mon, 26 Aug 2019 13:44:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=GWZ01Skh8cQcWVz+pcA6teJikvF4jln+3VYBxfBbkpc=;
- b=aaCTVJwleR8Zw8xXwUhKuTzGd3qAizfF2VBj/m0V6UyufC3CfXvN26JTI9Qrqgssr/
- MhbELD3m6GkHfHycRbKyOSLyJp1wxd8gM339k0zH0PrYKmvsziPSwDgx8OJQWIo6wrwZ
- yU7N3lGW+65+NSrVqjMTQIyBNrKfysn9IMIvmb6xeRY7xPFzJwXkU8xVO0ez8FjkkANm
- Nijts4qCeRVlCthLo6XSxPOVkh/3IaPj8g63mPvqx6G7z1P2cVY6jMWljaPU9hKc1R0R
- Z7kkWsD4ujQUzzh/Y0Rxv/O91hBecyfb02dbxrwgW8Tge+9m29v1crfF+7pvspowd1Ai
- DaeA==
+ bh=SZT7LwQ4zVm6UpU1R0QaKTwCzMI6AEH9QZz6xkZt/VY=;
+ b=SOVljHUU8N7UbYj/cOCqgEomKmgW/J60GyZGE8TlJHFlEQP3S8H5JbmKJRln4V8uTH
+ 1wmjcjxn/otSmTYMMbHHqk9cpXO+iunSYYqnkeDJFnZrbagQOcDvaYvDvTSuCkGdobYH
+ yPdEdjfRf6YWiDbWw1rcR4Xbnt+xZQDzSLOJ8+NCTjg8G6U1uArrZc6VWR7N2eiz78O8
+ OLrmN2VVwjDWJN9bIz+7NwHo+JPHDfW9WOQ/cQXIiT4ozFmPGQjrtNYzUU9q0dF2RvPz
+ fmrQAxhgz9q1XKjICu+OBZQTaq9AJl3SQ+jbS2GjyferSwq0iMEqajyG2HyIPnOs0OVR
+ eKZA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=GWZ01Skh8cQcWVz+pcA6teJikvF4jln+3VYBxfBbkpc=;
- b=PCd1/1GDG8NUeFRnscFCl07kGIhmQLEFwFmVucCUx35aoHQGZ6uCktjqJ710X5ZbSA
- BiyvlOmGpz9sUXKw+01tss2er738G8QWhILmxuAN4yBaj4M3XjVT76egl4DiH5zzMc+E
- nMG4KTBaooSTZ7v4Dw5hDPaWAr14oXyXjlz/1XvGAqciNHAryPjMCjuMm/sOGHR7raYM
- ZoqwsaSJWR/WpaqRgjNuki3saagXCTRzURjLjGXlfk7b4+1Ht6ifAe6lko/7YvSGKo/p
- 3iqOMWbjMg9cwyN2J0Q6u7oyKmb0KcL/ZBlSIVCVIE/CN8Epy8Y2wsyD12ejgX/hy4pH
- btEA==
-X-Gm-Message-State: APjAAAXLOs8vuHww/ofUZ0at/bDwIsPrGkipqwBc3MvoRG+roOffvFdA
- J2WmBopJdby4cyzUvwSkpK199g==
-X-Google-Smtp-Source: APXvYqzPx683hISSMEiLSPegjxKr3ZnA/URrCNibdrFqGNOCuSaM5/nrVsE1EecmfWjLGocI32sTDg==
-X-Received: by 2002:a5d:52cc:: with SMTP id r12mr23928260wrv.272.1566852285709; 
- Mon, 26 Aug 2019 13:44:45 -0700 (PDT)
+ bh=SZT7LwQ4zVm6UpU1R0QaKTwCzMI6AEH9QZz6xkZt/VY=;
+ b=s9HxbLU+T+wmCFuLKwyLBIqS09OECaPFMHUvsSns9Ldoi1AIx8RIYQgQDzI99G84Mk
+ RK2EDHQmvjmm5ln7+YBPhReHUvSfUVy/TFdkF0sKgVp+Cq2bBJfqAHgs91BVhfxzBTll
+ jb37J07vjSe5uF91snOUCHcRtnND76kE+VnL5r4+XhLkPa+jsh0QmZRpoOtcr88laAuH
+ M5Xn8kkP8kKg73IbpxsT9jPV7aMrJW867xVRlfi68PrYtaelnGZPpS/yIGuBDtl3vvr8
+ riUm7WqnGvSkFE7zCRAlANAO82MmRD/E192/kh7xNWNtbqrv3VD3uk25x1NAuo4Nzw8Y
+ p6RQ==
+X-Gm-Message-State: APjAAAW7xFHmJc23txMHQfOo/5611wM02Z0rBHMLsxvSeaYVBHLBXv8x
+ ZzUQrp0EGDXx1QFv+656u+MZdg==
+X-Google-Smtp-Source: APXvYqwdwUCw5aUqZelDvNyEgt4T4jxvKT/tVakrpiJfZDKLHDs0Lltb+i/VwDXc0av0TDel5R/6Gg==
+X-Received: by 2002:adf:e5cd:: with SMTP id a13mr23978628wrn.316.1566852288125; 
+ Mon, 26 Aug 2019 13:44:48 -0700 (PDT)
 Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:f881:f5ed:b15d:96ab])
- by smtp.gmail.com with ESMTPSA id 20sm549557wmk.34.2019.08.26.13.44.44
+ by smtp.gmail.com with ESMTPSA id 20sm549557wmk.34.2019.08.26.13.44.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 13:44:44 -0700 (PDT)
+ Mon, 26 Aug 2019 13:44:47 -0700 (PDT)
 From: Daniel Lezcano <daniel.lezcano@linaro.org>
 To: tglx@linutronix.de
-Subject: [PATCH 04/20] clocksource: sun4i: Add missing compatibles
-Date: Mon, 26 Aug 2019 22:43:51 +0200
-Message-Id: <20190826204407.17759-4-daniel.lezcano@linaro.org>
+Subject: [PATCH 05/20] dt-bindings: timer: Convert Allwinner A13 HSTimer to a
+ schema
+Date: Mon, 26 Aug 2019 22:43:52 +0200
+Message-Id: <20190826204407.17759-5-daniel.lezcano@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190826204407.17759-1-daniel.lezcano@linaro.org>
 References: <df27caba-d9f8-e64d-0563-609f8785ecb3@linaro.org>
  <20190826204407.17759-1-daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_134447_151655_EFCEDA42 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190826_134450_225894_F959FF85 
+X-CRM114-Status: GOOD (  14.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -97,8 +97,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Allwinner sunXi SoC support"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
@@ -109,30 +112,139 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-Newer Allwinner SoCs have different number of interrupts, let's add
-different compatibles for all of them to deal with this properly.
+The newer Allwinner SoCs have a High Speed Timer supported in Linux, with a
+matching Device Tree binding.
+
+Now that we have the DT validation in place, let's convert the device tree
+bindings for that controller over to a YAML schemas.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 ---
- drivers/clocksource/timer-sun4i.c | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../timer/allwinner,sun5i-a13-hstimer.txt     | 26 ------
+ .../timer/allwinner,sun5i-a13-hstimer.yaml    | 79 +++++++++++++++++++
+ 2 files changed, 79 insertions(+), 26 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
+ create mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
 
-diff --git a/drivers/clocksource/timer-sun4i.c b/drivers/clocksource/timer-sun4i.c
-index 65f38f6ca714..0ba8155b8287 100644
---- a/drivers/clocksource/timer-sun4i.c
-+++ b/drivers/clocksource/timer-sun4i.c
-@@ -219,5 +219,9 @@ static int __init sun4i_timer_init(struct device_node *node)
- }
- TIMER_OF_DECLARE(sun4i, "allwinner,sun4i-a10-timer",
- 		       sun4i_timer_init);
-+TIMER_OF_DECLARE(sun8i_a23, "allwinner,sun8i-a23-timer",
-+		 sun4i_timer_init);
-+TIMER_OF_DECLARE(sun8i_v3s, "allwinner,sun8i-v3s-timer",
-+		 sun4i_timer_init);
- TIMER_OF_DECLARE(suniv, "allwinner,suniv-f1c100s-timer",
- 		       sun4i_timer_init);
+diff --git a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
+deleted file mode 100644
+index 2c5c1be78360..000000000000
+--- a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
++++ /dev/null
+@@ -1,26 +0,0 @@
+-Allwinner SoCs High Speed Timer Controller
+-
+-Required properties:
+-
+-- compatible :	should be "allwinner,sun5i-a13-hstimer" or
+-		"allwinner,sun7i-a20-hstimer"
+-- reg : Specifies base physical address and size of the registers.
+-- interrupts :	The interrupts of these timers (2 for the sun5i IP, 4 for the sun7i
+-		one)
+-- clocks: phandle to the source clock (usually the AHB clock)
+-
+-Optional properties:
+-- resets: phandle to a reset controller asserting the timer
+-
+-Example:
+-
+-timer@1c60000 {
+-	compatible = "allwinner,sun7i-a20-hstimer";
+-	reg = <0x01c60000 0x1000>;
+-	interrupts = <0 51 1>,
+-		     <0 52 1>,
+-		     <0 53 1>,
+-		     <0 54 1>;
+-	clocks = <&ahb1_gates 19>;
+-	resets = <&ahb1rst 19>;
+-};
+diff --git a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
+new file mode 100644
+index 000000000000..dfa0c41fd261
+--- /dev/null
++++ b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
+@@ -0,0 +1,79 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/timer/allwinner,sun5i-a13-hstimer.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Allwinner A13 High-Speed Timer Device Tree Bindings
++
++maintainers:
++  - Chen-Yu Tsai <wens@csie.org>
++  - Maxime Ripard <maxime.ripard@bootlin.com>
++
++properties:
++  compatible:
++    oneOf:
++      - const: allwinner,sun5i-a13-hstimer
++      - const: allwinner,sun7i-a20-hstimer
++      - items:
++          - const: allwinner,sun6i-a31-hstimer
++          - const: allwinner,sun7i-a20-hstimer
++
++  reg:
++    maxItems: 1
++
++  interrupts:
++    minItems: 2
++    maxItems: 4
++    items:
++      - description: Timer 0 Interrupt
++      - description: Timer 1 Interrupt
++      - description: Timer 2 Interrupt
++      - description: Timer 3 Interrupt
++
++  clocks:
++    maxItems: 1
++
++  resets:
++    maxItems: 1
++
++required:
++  - compatible
++  - reg
++  - interrupts
++  - clocks
++
++if:
++  properties:
++    compatible:
++      items:
++        const: allwinner,sun5i-a13-hstimer
++
++then:
++  properties:
++    interrupts:
++      minItems: 2
++      maxItems: 2
++
++else:
++  properties:
++    interrupts:
++      minItems: 4
++      maxItems: 4
++
++additionalProperties: false
++
++examples:
++  - |
++    timer@1c60000 {
++        compatible = "allwinner,sun7i-a20-hstimer";
++        reg = <0x01c60000 0x1000>;
++        interrupts = <0 51 1>,
++                     <0 52 1>,
++                     <0 53 1>,
++                     <0 54 1>;
++        clocks = <&ahb1_gates 19>;
++        resets = <&ahb1rst 19>;
++    };
++
++...
 -- 
 2.17.1
 
