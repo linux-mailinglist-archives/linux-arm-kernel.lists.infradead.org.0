@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A74529D0B4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:34:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F31F49D0F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:46:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rHikkO4HomQCUJKjv5F1jaUec3OITbNYOhbOAQXqC4g=; b=Zchh/bvKVt0x5H
-	9pXir+JMPb57cupE79pmY1AtsEvs3dpx/0piEZ0vgp7bMZZ1WUkiitb6/td4y+gVWlUxlflqlR8AW
-	BN8YU/CPB6AWj7bCVbzzc0rsj3HSxxFDMxGMl+Ni/uUaWhlE7sbiHVbnpspJBOb5JW6OY5ClKmtI2
-	Vxkdd65oxWxuKin07TPf9BZP6uhDeIupTeyOTCd/wskoD8Q6+BXzaiMJ/wmUFdy8q5wZP0j64fvNu
-	O4Uqp6xPAP4kGKRUTa3PcF368aku0hcM3t0cL0F6ByWejffHEqtUUjybbEblDX+fGj+HOYzQk3Y/e
-	Wh3gZR47RTbUMH8ha4vw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=5gAsQ8wL/c/m84AAt6rDJT/JBCHNCEBYxPTLg6iv/6g=; b=gkT
+	5xxg8UFMZJatQwDxkG2ZrqccZxmfq10biyuKXtrN7mh86RZ3M/VSVd55NwhNKGI3DJbt/wMyTistA
+	NOSNEBSSmClJSwaS7eMb0B308DIofNtuNKMZ2rW3JhFtEFMZ2sdWNtqgu2qIMfcYO8VHUrKnXsPNt
+	K0uLvVxOgWfS7KWtoqN5kq/dIUwXwx4Q/NwbVW+WiPKBgfiIkKhPGqhDo3J1JszgVKJnqLdXXjFi3
+	Qa+b3NGj8x7HQTj64Kqk7HsZ2gWV31FniJ7wB7XkxOwkFv6om04r1t05mtlTZ3cgDO0xl1arJukLL
+	h/ThUI6CqbDAnWYN4+eDDBH7RydcL2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2F8y-0003yO-0F; Mon, 26 Aug 2019 13:34:48 +0000
-Received: from fllv0016.ext.ti.com ([198.47.19.142])
+	id 1i2FKJ-0000wn-Bx; Mon, 26 Aug 2019 13:46:31 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2F8k-0003y3-Tx
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 13:34:36 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7QDYRNM079246;
- Mon, 26 Aug 2019 08:34:27 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1566826467;
- bh=tFtUvrneNrSqbCFtE8usIztfzaxK1LraQM5WctMkqTA=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=qViWhYJz73w0k2FAsMDL8ujwbOcYASgp3m1GuBVMPh1uZiEzi0UJJnhvIVlHCm8Ee
- jCNW+M3etAIjU1plruUGUd852YtG6WVqOcFJh8Jn/DpZ8jAGKpwDaMQWLZZFAFCg+Q
- fW+mnfGNcXN/IzBWLAdeBivW/vcVwbJRTGDR18zU=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7QDYRIn107581
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 26 Aug 2019 08:34:27 -0500
-Received: from DFLE103.ent.ti.com (10.64.6.24) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 26
- Aug 2019 08:34:27 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE103.ent.ti.com
- (10.64.6.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 26 Aug 2019 08:34:27 -0500
-Received: from [172.24.145.97] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7QDYOCH066831;
- Mon, 26 Aug 2019 08:34:25 -0500
-Subject: Re: [PATCH] ARM: davinci: dm646x: Fix a typo in the comment
-To: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
- <bgolaszewski@baylibre.com>, <linux@armlinux.org.uk>
-References: <20190722213657.27175-1-christophe.jaillet@wanadoo.fr>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <7f2fb9c1-cc6f-0244-1945-13a2b05080b8@ti.com>
-Date: Mon, 26 Aug 2019 19:04:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190722213657.27175-1-christophe.jaillet@wanadoo.fr>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1i2FIX-0007Tr-SP
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 13:44:44 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8F0DE200201;
+ Mon, 26 Aug 2019 15:44:36 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 8042620000C;
+ Mon, 26 Aug 2019 15:44:36 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id E98A220605;
+ Mon, 26 Aug 2019 15:44:35 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Chanwoo Choi <cw00.choi@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>
+Subject: [PATCH v4 0/6] PM / devfreq: Add dev_pm_qos support
+Date: Mon, 26 Aug 2019 16:44:27 +0300
+Message-Id: <cover.1566826075.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_063435_044316_ADA94B50 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190826_064442_051023_CDAD658C 
+X-CRM114-Status: UNSURE (   7.44  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.142 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,25 +66,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: =?UTF-8?q?Artur=20=C5=9Awigo=C5=84?= <a.swigon@partner.samsung.com>,
+ Abel Vesa <abel.vesa@nxp.com>, Saravana Kannan <saravanak@google.com>,
+ linux-pm@vger.kernel.org, Viresh Kumar <viresh.kumar@linaro.org>,
+ Krzysztof Kozlowski <krzk@kernel.org>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ Georgi Djakov <georgi.djakov@linaro.org>, linux-arm-kernel@lists.infradead.org,
+ Jacky Bai <ping.bai@nxp.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 23/07/19 3:06 AM, Christophe JAILLET wrote:
-> The driver is dedicated to DM646x. So update the description in the top
-> most comment accordingly.
-> 
-> It must have been derived from dm644x.c, but looks DM646 speecific now.
-> 
-> Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+Add dev_pm_qos notifies to devfreq core in order to support frequency
+limits via the dev_pm_qos_add_request.
 
-Applied to my v5.4/soc branch.
+Unlike the rest of devfreq the dev_pm_qos frequency is measured in Khz,
+this is consistent with current dev_pm_qos usage for cpufreq and
+allows frequencies above 2Ghz (pm_qos expresses limits as s32).
 
-Thanks,
-Sekhar
+Like with cpufreq the handling of min_freq/max_freq is moved to the
+dev_pm_qos mechanism.
+
+Patches 1/2 are technically bugfixes; as far as I can tell the paths
+that "goto err_devfreq" in devfreq_add_device never worked correctly.
+
+Constraints from userspace are no longer clamped on store, instead all
+values are allowed and we only check against OPPs in a new
+devfreq_get_freq_range function. This is consistent with the design of
+dev_pm_qos design.
+
+Changes since v3:
+* Cleanup locking and error-handling in devfreq_add_device
+* Register notifiers after device registration but before governor start
+* Keep the initialization of min_req/max_req ahead of device_register
+because it's used for sysfs handling
+* Use HZ_PER_KHZ instead of 1000
+* Add kernel-doc comments
+* Move OPP notifier to core
+Link to v3: https://patchwork.kernel.org/cover/11104061/
+
+Changes since v2:
+* Handle sysfs via dev_pm_qos (in separate patch)
+* Add locking to {min,max}_freq_show
+* Fix checkpatch issues (long lines etc)
+Link to v2: https://patchwork.kernel.org/patch/11084279/
+
+Changes since v1:
+* Add doxygen comments for min_nb/max_nb
+* Remove notifiers on error/cleanup paths. Keep gotos simple by relying on
+dev_pm_qos_remove_notifier ignoring notifiers which were not added.
+Link to v1: https://patchwork.kernel.org/patch/11078475/
+
+Leonard Crestez (6):
+  PM / devfreq: Don't take lock in devfreq_add_device
+  PM / devfreq: Add to devfreq_list immediately after registration
+  PM / devfreq: Introduce devfreq_get_freq_range
+  PM / devfreq: Add dev_pm_qos support
+  PM / devfreq: Use dev_pm_qos for sysfs min/max_freq
+  PM / devfreq: Move opp notifier registration to core
+
+ drivers/devfreq/devfreq.c    | 313 +++++++++++++++++++----------------
+ drivers/devfreq/exynos-bus.c |   7 -
+ drivers/devfreq/rk3399_dmc.c |   6 -
+ include/linux/devfreq.h      |  22 ++-
+ 4 files changed, 177 insertions(+), 171 deletions(-)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
