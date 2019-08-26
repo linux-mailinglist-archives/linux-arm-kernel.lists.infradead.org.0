@@ -2,90 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 337209D479
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 18:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFB249D49D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 19:04:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gkRyRiwpEUiZblA3s27aPVBS9js5cG2+lzIa2prIZnc=; b=PjesLh6664osVf
-	+cDtcGtumAr7ujXvHvvGXvhMEpLGWlCNSJ+s1nlTSghu2xriA32GYQ8LXJTGHS43aiIOyCvxhL6bY
-	734VOgGsGuCLTj+53495/o5IBi6M2hVMeh3mDdKDUe5zUnbsV6MX2nZAYTBPxowRmC5jyC5TV5SB5
-	pDMGmxTyptwc4Jnj8kxG4t8lcL8n0svGD3qdzI0XIH8qxW3OVY+aMJr5+F7bkQxSAWdPfH+rhEN30
-	mJtfejMEj5pBguQEr1o89sDager4qhbM6vov8KRIIoVqJSn7b5pI7f6qdBXAzMSyAgtR9XByY61NE
-	/+kaKqWZOt4no7JWFdGg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tdOT8UGgKwTuZ2sHGjYtCOpd2XMpUQ+F+rW4rRvclRk=; b=FrdLXdYCYCHL/e
+	J1bwUBTRHJdVPZ+MAkYJqjT/yV30bsl/eXCQgUrHcuD+veEslbdf6NI8xB7tPnYYs6jqFK/aT5bSk
+	BTLnLhYipxw6Gjkz9nnw5Lrz/QoqN5CYfEQgg136qpK1Cg5iy7EpC54XLFO1R+g7kwtBrSauGSh3q
+	JV1gWxoBmC4QjT5/i/KWvRRhjCsnNa1gJNGmVzv0aPYTEwMnn++956DGdwB1+g8MAf/8UYi5xne3o
+	A2NbWgZxq8p+ivwjdINMUGQwHHAQJFECFOySg/CkQHcv/wASKzhJhGCmD9fa5353KYatI3QlD2C6F
+	RLQoDWNdnx05MVVhyDFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2IC8-0005m6-0r; Mon, 26 Aug 2019 16:50:16 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i2IPq-00026g-K6; Mon, 26 Aug 2019 17:04:27 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2IBs-0005PC-Qi
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 16:50:02 +0000
-Received: by mail-wr1-x442.google.com with SMTP id u16so16025021wrr.0
+ id 1i2IPZ-00025x-3N
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 17:04:10 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d3so10346006plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 09:50:00 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:from:to:cc:references:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=9O3VW3qz3WP/gvDFs/gxnhqdNJMrlfVE1S3aHZOLj9E=;
- b=HWMFq+cz5DqcHZUfi0dmj3bx0hOg0UV25W7l6S656MlMQyKPXIcSUcrnzpLxkluIYh
- OilnzePPW1Z6DjubzBLxs+3jW5nIc9WdTQnLjS5oJbRRdZK4303IVNDj1be+qElbZe0q
- /pNOrM/MTeU3voPjffFv9+Zxh3dQEQX2NObtrbLh+9D13NA7qeiD+R6xCNOBYXKJ6XzY
- ku73gyCf5EyxKwaH9e8nWcfrNquMFyPD9L7dsLYjorOlWRMX6dZE+KPXOIQDq4QP+mO+
- R0UjhUAdcM79vu43aHBTs4bUFjC70Do/BKPxrxiLHzADeTtwg9KEvzGRTSooxslorgVu
- SZ5Q==
+ Mon, 26 Aug 2019 10:04:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=FQr2+CCalKgDrA12cz6kTPFlEgpE4NTSJBHk84k9KlA=;
+ b=gK38A443J07JEv1eh/lZRr+OP0alDEoLrPFRvrv0zx5PtWmDjpTo4wBqkXvanXqjRb
+ womdthz/nhAEw63Hr7UOKqCsf5KERELbxa/Zr5s1O5Mzy8LBJsr8yN34FuO60Jm1IiuT
+ UXgjQtyVt5Gwo0tmxjHxcSj1RAoSitwBdXQW+n+vaJbaaYkMDPtVzPJwmd0tSg3sXNDU
+ lXcphOgTaWgiVrnkBPDWoXbkjGp9PS3O27W1GwLxqG5n+xVP2vtsFBG1IBPoNTpGRS7K
+ eRy5w6Wx8de29tC7h1k4Md4ZVCe4WSHKOUNT+qXUDzCB4ozgZaUlDffa25kNVr4n4ayr
+ MYlw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:from:to:cc:references:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=9O3VW3qz3WP/gvDFs/gxnhqdNJMrlfVE1S3aHZOLj9E=;
- b=tE4vPuqUcSrmdyxE9XjSKft2jlxNwpyqBBZuhkNm3yXnttdjvZYzcsF0y8iOh9tNmC
- kL8cgZ9mIqEUdjFTRpB+dJ5LD273nuusgVfledk5i4bT/FEfJQsqWHdHC81lwMC8w6Ps
- Evt/yuKFdHhanJlO1HMWlUi/ds+dZt/BMMxh0dZrYqcawr1XGhIxqH9J/G4obzUJofN4
- iom848ZHRfAzC+3+uz32yxsFtfvk/UNqgSyZHZTQF80fJCBREipiOfY78tJW3HhwL/e6
- b2FoCFyHbARSCGK8J5kZ9UFeGtbU8lgAfLnIrrrPC1gTYd74XzY32FX7okWVgzQOkB0c
- cYrQ==
-X-Gm-Message-State: APjAAAVseJ1xBffmG8ZmInqPeLDuCJ9Dqfo/FQv/3IhbI2QlulvKJ24A
- 3tOtOpgCkdR+yBdv842siKxe5g==
-X-Google-Smtp-Source: APXvYqzZyta820DGKYuXk323AK7pGPLNWaOkL+Aei8zaUqk5nIuD17ybsHumS8O17dakMKqBLy73gw==
-X-Received: by 2002:adf:90e7:: with SMTP id i94mr22117449wri.224.1566838199090; 
- Mon, 26 Aug 2019 09:49:59 -0700 (PDT)
-Received: from [192.168.1.6] (124.red-83-36-179.dynamicip.rima-tde.net.
- [83.36.179.124])
- by smtp.gmail.com with ESMTPSA id j20sm32590323wre.65.2019.08.26.09.49.56
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 26 Aug 2019 09:49:58 -0700 (PDT)
-Subject: Re: [PATCH v4 00/13] Support CPU frequency scaling on QCS404
-From: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
-To: bjorn.andersson@linaro.org, sboyd@kernel.org, david.brown@linaro.org,
- jassisinghbrar@gmail.com, mark.rutland@arm.com, mturquette@baylibre.com,
- robh+dt@kernel.org, will.deacon@arm.com, arnd@arndb.de,
- horms+renesas@verge.net.au, heiko@sntech.de, sibis@codeaurora.org,
- enric.balletbo@collabora.com, jagan@amarulasolutions.com, olof@lixom.net
-References: <20190731202929.16443-1-jorge.ramirez-ortiz@linaro.org>
- <f34a75d0-c479-267d-b4a1-c2418d4efb22@linaro.org>
-Message-ID: <0098ab9d-9abc-ac9d-5f36-67ad7cbc4f9c@linaro.org>
-Date: Mon, 26 Aug 2019 18:49:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=FQr2+CCalKgDrA12cz6kTPFlEgpE4NTSJBHk84k9KlA=;
+ b=WRztqkIWdMwMPt0Xdk9N4CPPRw9bZSnTtpbSok0GFban5TkWehx/9GpdohOkCrCnbM
+ RCU8qrCw3gMKS9Kv+SPjnocWphVNaYMGZpIiMNTU5WGy6zl7Bc7F4qhz9cClbFjbLSrm
+ xEDbHngfY4l+LFRI8DLoWCzcvFkk4G/YVtO3q02vtff6aFBbAzLuKTrRHp/AOgnu6hU1
+ I0ChTtaVLGuMTLOeElC4+OMesKNhanwJRK9dFIUX0QkgVHh68/be9ImJyjnok2L9YJSJ
+ 8KPnkQ/rt9IOmdDlMbQbt7fKDzSao+Z0X5MOiX2WNGIPzFGxxKRm7+QO7fTXebbTVDK5
+ ubAw==
+X-Gm-Message-State: APjAAAVK3XllL2tbSPQC1ACO2ucpMs2OPngE77ROG2JTkuvrlM/yT3L5
+ 2Wri8h7mIFpjGpmRrkXeoBrNH7qCeTYgJ1L5Ykiwvg==
+X-Google-Smtp-Source: APXvYqxjWDEwbkiE2ZsJXoDXKy8bI8tnus4ZqI8PGuQRfd0/qEvKV0AcHKVrO9J3tvHAbI2QR49LL7GHmT1tgXzHaKI=
+X-Received: by 2002:a17:902:8484:: with SMTP id
+ c4mr19844087plo.223.1566839045123; 
+ Mon, 26 Aug 2019 10:04:05 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <f34a75d0-c479-267d-b4a1-c2418d4efb22@linaro.org>
-Content-Language: en-US
+References: <20190812215052.71840-1-ndesaulniers@google.com>
+ <20190812215052.71840-12-ndesaulniers@google.com>
+ <20190813082744.xmzmm4j675rqiz47@willie-the-truck>
+ <CANiq72mAfJ23PyWzZAELgbKQDCX2nvY0z+dmOMe14qz=wa6eFg@mail.gmail.com>
+ <20190813170829.c3lryb6va3eopxd7@willie-the-truck>
+ <CAKwvOdk4hca8WzWzhcPEvxXnJVLbXGnhBdDZbeL_W_H91Ttjqw@mail.gmail.com>
+ <CANiq72mGoGpx7EAVUPcGuhVkLit8sB3bR-k1XBDyeM8HBUaDZw@mail.gmail.com>
+ <CANiq72nUyT-q3A9mTrYzPZ+J9Ya7Lns5MyTK7W7-7yXgFWc2xA@mail.gmail.com>
+ <CANiq72nfn4zxAO63GEEoUjumC6Jwi5_jdcD_5Xzt1vZRgh52fg@mail.gmail.com>
+ <20190824112542.7guulvdenm35ihs7@willie-the-truck>
+ <CANiq72mcSniCzMzW6AX_5tG5W2edjEmZ=Rf=jo-Mw3H-9RVJqw@mail.gmail.com>
+In-Reply-To: <CANiq72mcSniCzMzW6AX_5tG5W2edjEmZ=Rf=jo-Mw3H-9RVJqw@mail.gmail.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Mon, 26 Aug 2019 10:03:53 -0700
+Message-ID: <CAKwvOdkhJQEwWNZSC08sg9vGjydTXrbqNqNrqfN6vbRZUsjGvA@mail.gmail.com>
+Subject: Re: [PATCH 12/16] arm64: prefer __section from compiler_attributes.h
+To: Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_095000_869221_B2DBE2E1 
-X-CRM114-Status: GOOD (  21.00  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_100409_170742_C33D8DEB 
+X-CRM114-Status: GOOD (  14.62  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,6 +94,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,123 +107,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- khasim.mohammed@linaro.org, linux-kernel@vger.kernel.org,
- amit.kucheria@linaro.org, linux-clk@vger.kernel.org, vkoul@kernel.org,
- niklas.cassel@linaro.org, georgi.djakov@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Alexei Starovoitov <ast@kernel.org>, Will Deacon <will@kernel.org>,
+ Daniel Borkmann <daniel@iogearbox.net>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Allison Randal <allison@lohutok.net>, Yonghong Song <yhs@fb.com>,
+ Masayoshi Mizuma <m.mizuma@jp.fujitsu.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andrey Konovalov <andreyknvl@google.com>,
+ Shaokun Zhang <zhangshaokun@hisilicon.com>,
+ Alexios Zavras <alexios.zavras@intel.com>,
+ Josh Poimboeuf <jpoimboe@redhat.com>, Sedat Dilek <sedat.dilek@gmail.com>,
+ Thomas Gleixner <tglx@linutronix.de>, bpf@vger.kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Network Development <netdev@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>, Enrico Weigelt <info@metux.net>,
+ Martin KaFai Lau <kafai@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/26/19 08:54, Jorge Ramirez wrote:
-> On 7/31/19 22:29, Jorge Ramirez-Ortiz wrote:
->> The following patchset enables CPU frequency scaling support on the
->> QCS404 (with dynamic voltage scaling).
->>
->> It is important to notice that this functionality will be superseded
->> by Core Power Reduction (CPR), a more accurate form of AVS found on
->> certain Qualcomm SoCs.
->>
->> Some of the changes required to support CPR do conflict with the
->> configuration required for CPUFreq.
->>
->> In particular, the following commit for CPR - already merged - will
->> need to be reverted in order to enable CPUFreq.
->>
->>    Author: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
->>    Date:   Thu Jul 25 12:41:36 2019 +0200
->>        cpufreq: Add qcs404 to cpufreq-dt-platdev blacklist
->>     
->> Patch 8 "clk: qcom: hfpll: CLK_IGNORE_UNUSED" is a bit controversial;
->> in this platform, this PLL provides the clock signal to a CPU
->> core. But in others it might not.
->>
->> We opted for the minimal ammount of changes without affecting the
->> default functionality: simply bypassing the COMMON_CLK_DISABLE_UNUSED
->> framework and letting the firwmare chose whether to enable or disable
->> the clock at boot. However maybe a DT property and marking the clock
->> as critical would be more appropriate for this PLL. we'd appreciate the
->> maintainer's input on this topic.
->>
->> v2:
->>    - dts: ms8916: apcs mux/divider: new bindings
->>      (the driver can still support the old bindings)
->>
->>    - qcs404.dtsi
->>      fix apcs-hfpll definition
->>      fix cpu_opp_table definition
->>
->>    - GPLL0_AO_OUT operating frequency
->>      define new alpha_pll_fixed_ops to limit the operating frequency
->>
->> v3:
->>   - qcom-apcs-ipc-mailbox
->>     replace goto to ease readability
->>
->>   - apcs-msm8916.c
->>     rework patch to use of_clk_parent_fill
->>
->>   - hfpll.c
->>     add relevant comments to the code
->>
->>   - qcs404.dtsi
->>     add voltage scaling support
->>
->> v4:
->>  - squash OPP definition and DVFS enablement in dts
->>    (patches 10 and 13 in previous version)
->>    
->>  - qcom-apcs-ipc-mailbox
->>    replace return condition for readability
->>    
->>  - answer one question on CLK_IGNORE_UNUSED in mailing list
->>
->> Jorge Ramirez-Ortiz, Niklas Cassel (13):
->>   clk: qcom: gcc: limit GPLL0_AO_OUT operating frequency
->>   mbox: qcom: add APCS child device for QCS404
->>   mbox: qcom: replace integer with valid macro
->>   dt-bindings: mailbox: qcom: Add clock-name optional property
->>   clk: qcom: apcs-msm8916: get parent clock names from DT
->>   clk: qcom: hfpll: get parent clock names from DT
->>   clk: qcom: hfpll: register as clock provider
->>   clk: qcom: hfpll: CLK_IGNORE_UNUSED
->>   arm64: dts: qcom: msm8916: Add the clocks for the APCS mux/divider
->>   arm64: dts: qcom: qcs404: Add HFPLL node
->>   arm64: dts: qcom: qcs404: Add the clocks for APCS mux/divider
->>   arm64: dts: qcom: qcs404: Add DVFS support
->>   arm64: defconfig: Enable HFPLL
->>
->>  .../mailbox/qcom,apcs-kpss-global.txt         | 24 +++++++++--
->>  arch/arm64/boot/dts/qcom/msm8916.dtsi         |  3 +-
->>  arch/arm64/boot/dts/qcom/qcs404.dtsi          | 43 +++++++++++++++++++
->>  arch/arm64/configs/defconfig                  |  1 +
->>  drivers/clk/qcom/apcs-msm8916.c               | 23 ++++++++--
->>  drivers/clk/qcom/clk-alpha-pll.c              |  8 ++++
->>  drivers/clk/qcom/clk-alpha-pll.h              |  1 +
->>  drivers/clk/qcom/gcc-qcs404.c                 |  2 +-
->>  drivers/clk/qcom/hfpll.c                      | 25 ++++++++++-
->>  drivers/mailbox/qcom-apcs-ipc-mailbox.c       | 11 +++--
->>  10 files changed, 128 insertions(+), 13 deletions(-)
->>
-> 
-> any feedback on this set?
-> 
-> TIA
-> 
+On Sat, Aug 24, 2019 at 5:48 AM Miguel Ojeda
+<miguel.ojeda.sandonis@gmail.com> wrote:
+>
+> On Sat, Aug 24, 2019 at 1:25 PM Will Deacon <will@kernel.org> wrote:
+> >
+> > Which bit are you pinging about? This patch (12/16) has been in -next for a
+> > while and is queued in the arm64 tree for 5.4. The Oops/boot issue is
+> > addressed in patch 14 which probably needs to be sent as a separate patch
+> > (with a commit message) if it's targetting 5.3 and, I assume, routed via
+> > somebody like akpm.
+>
+> I was pinging about the bit I was quoting, i.e. whether the Oops in
+> the cover letter was #14 indeed. Also, since Nick said he wanted to
+> get this ASAP through compiler-attributes, I assumed he wanted it to
+> be in 5.3, but I have not seen the independent patch.
+>
+> Since he seems busy, I will write a better commit message myself and
+> send it to Linus next week.
 
-trying to ease the maintainers task, I have resent the series split in
-three individual sets:
-
-- device tree
-- clk
-- mbox
-
-for full functionality obviously all of them are required
-
-please let me know if there is anything else I can do.
-
+Sorry, very hectic week here last week.  I'll try to get the import
+bit split off, collect the acks/reviewed-by tags, and resend a v2 of
+the series this week.
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
