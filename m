@@ -2,91 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B4549C663
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 00:11:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 12D929C6E3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 02:47:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=kzlKB70p24SdYiHydJDu9RLg/7FOIcdn5iqpHrmjeJg=; b=YlV3caPOZU1ex/
-	wUf7NRgT6CuiV0HJkX2fgdFD4U7N77A9+3HJEI2tAgOgt7a6VPemPxxjl4CyDV3NGjC2Zxg9XnKVZ
-	sVyC0wyNV/DabCT1GiQ+5hV57OnSjxCPzsW1p3sEDXynmaCuGmKvzp9i2u70m+nEe07/M2rISJwXZ
-	sg2HBbFejChpnr/YJl7VMblKwMRp/HMYdqZ4yzjqCn00/1oBtycwknEECJmD5PAtyK7FnOXVtwluy
-	nBzwmpXOAnr5zDEALT+18lqAt4x5AKM2mJDKN6U1d/uFGMaEzLtFmW1eZwP5IwgGl773DX0uBC/d2
-	4gCMXqMX/7g9khk9jNhA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+YZVzlb1DsxQXSy06Pm9sAm5EXMADtTFWJuoApmUKbQ=; b=EGlQV3Nz/DgnTa
+	5IwGoAmgHw+zmiPgFAnKPmmPzvoj46KI2qiIOLrh/yU9PuZBC8897mz8Wj86UwNWI1biW4rHbw9FV
+	n4FBNNJ5fyHnj64wCJqWoFPimQhVyb5iB8S75+McstdLmHN1CqoR7ml5oPHZFCs7xFNK6fDJE8lQH
+	Cn5d/LH/Z2SElXVzs7m87CWMSXvL7iiCxD5OIkE5cCdTB0IKd6MqeE8lcMqYxNVu4b2h3wBJC86Rz
+	zJhSJwCsgKZliiDNHTUNLh75CdmY+AB2gWd5Xe4uL3uM1iG7lnRQH9mGmlNLulz6XnP2F2wn/jM7n
+	4mqV/mtocKXvJfkZ31sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i20iu-00052s-Dm; Sun, 25 Aug 2019 22:10:56 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i23A4-0002qF-DN; Mon, 26 Aug 2019 00:47:08 +0000
+Received: from gate2.alliedtelesis.co.nz ([2001:df5:b000:5::4])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i20il-00052W-10; Sun, 25 Aug 2019 22:10:48 +0000
-Received: by mail-wr1-x444.google.com with SMTP id s18so13485674wrn.1;
- Sun, 25 Aug 2019 15:10:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=FSDaDPkwEDuhPwyp2tph1yu0z2JTeSJAZvKVpXGb/b4=;
- b=SYfe+LJIQxIUY6Yzw/uCtw32IfYh2xzQJidH53o0SLmHNQ5dydIffPk8LaV57MYJNV
- Xw6qt1/cj6rKvtgyDtEAucFnyqUUD8UyqIf/GBd+EsPHKqCeMho6m50+VWdZC6yPxZ9F
- 6eqRJqKID8EzRkDjNhqICdBr81EnHMBsXQK+vhGQkjC8dzFqNLYGRWhnCQcNMHctC07s
- SpqNLcDV4J66Jojgl45FpM/zbdNCbiWqSB45kUYXWwpv+pXDmqSD5UU5w6m6lYujfEJn
- qJvTmp0YJITbS4Vd4vON/cG9sk+9aboYrmw9WBfNlgBh8P8dvA0XxN8z5dGVesQWmfnL
- xWQw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=FSDaDPkwEDuhPwyp2tph1yu0z2JTeSJAZvKVpXGb/b4=;
- b=Hj4ZuxaM1Kylm/DcjmvCIOklSez+n+6QKoo5SW0JJ1agbXpmB0dP2pnlnCeFWCY1El
- jGC+jzj3x3e//D9ftTk8Ue4/J3NkCkei2csH9/PAsF1guKn49YNEKM2U0m8PSFFVwoRh
- nylIfR8gFRfSikXdSJvfsfx7DW+TTMRIMHjlbGQT38JMpDLpLt4wk6V/AMW1oRLeH8vA
- VUC80xrmxqai93Lt3LHyEic4CWI77cS9y0+J1zjL6jbC0fSZ8ySv99xd1ey+t5dylN4C
- D+ASL4KcbG8CoUaDf1MKtfeB4PrDrka95GXE2QAAnWm1l8Pqe5l58cwp56fdmeRmT4iJ
- 6F6Q==
-X-Gm-Message-State: APjAAAU2onpk7JctOZ8otI+bUhyxLS9ceipNvSPxE3V8KEqnNU3UdS3e
- VHFdeABQscCH0X6vX0vYLL+1qlz1G/q4RA==
-X-Google-Smtp-Source: APXvYqxiGvZXVlVu/JaE0UslanWEGQOGDzHXiV60bRr5wjvX3RTgu5+0YA/diKHUOXLRsZzWY1BtPw==
-X-Received: by 2002:a5d:4a11:: with SMTP id m17mr18371554wrq.40.1566771042170; 
- Sun, 25 Aug 2019 15:10:42 -0700 (PDT)
-Received: from localhost.localdomain (ip5b4096c3.dynamic.kabel-deutschland.de.
- [91.64.150.195])
- by smtp.gmail.com with ESMTPSA id r5sm8544562wmh.35.2019.08.25.15.10.40
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 25 Aug 2019 15:10:41 -0700 (PDT)
-From: Krzysztof Wilczynski <kw@linux.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH] PCI: mediatek: Remove surplus return from a void function
-Date: Mon, 26 Aug 2019 00:10:39 +0200
-Message-Id: <20190825221039.6977-1-kw@linux.com>
-X-Mailer: git-send-email 2.22.1
+ id 1i239u-0002pO-4p
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 00:47:00 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id C8F7980719;
+ Mon, 26 Aug 2019 12:46:49 +1200 (NZST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1566780409;
+ bh=TJtgfincaDm7qrXJ9SAhuUGk4llEldCBcfwenl5GlMg=;
+ h=From:To:CC:Subject:Date:References:In-Reply-To;
+ b=RR6KEkaIPTqCUFwleHO3gMGa6wW6vS5+Xqri6JSyfCB3ZgvHOry2WcSVcpdEOUhGj
+ 35khK/zY/UdYbcOK03beeIQPUzwgs+6htHqytIX/4/xdY+GjxC/mbqAk01csGFcRQ5
+ gnsAPALDwRSf+8uN75j7XmSqTc+zlBOwqDtTFs1Y6zqNNrD8aGqG5haZS5LnhwLeaV
+ w3ZnIjvglFBLRnQdzbL9iJp8zU7dV1AIQ8+9MLbLad11qzD+nWbQ5RX2FTMTKTwcrK
+ LWqlvt1jqKSC7Ojk/exAm5x1RQ23DqOrpcYrf8AFxaO4QwnL8BYF/emjLmbclqHFrb
+ Aj3u90gshrcQQ==
+Received: from svr-chch-ex1.atlnz.lc (Not Verified[10.32.16.77]) by
+ mmarshal3.atlnz.lc with Trustwave SEG (v7, 5, 8, 10121)
+ id <B5d632bf30000>; Mon, 26 Aug 2019 12:46:48 +1200
+Received: from svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) by
+ svr-chch-ex1.atlnz.lc (2001:df5:b000:bc8::77) with Microsoft SMTP Server
+ (TLS) id 15.0.1156.6; Mon, 26 Aug 2019 12:46:44 +1200
+Received: from svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8]) by
+ svr-chch-ex1.atlnz.lc ([fe80::409d:36f5:8899:92e8%12]) with mapi id
+ 15.00.1156.000; Mon, 26 Aug 2019 12:46:44 +1200
+From: Chris Packham <Chris.Packham@alliedtelesis.co.nz>
+To: "linux@armlinux.org.uk" <linux@armlinux.org.uk>
+Subject: Re: [PATCH v9 1/8] ARM: aurora-l2: add prefix to MAX_RANGE_SIZE
+Thread-Topic: [PATCH v9 1/8] ARM: aurora-l2: add prefix to MAX_RANGE_SIZE
+Thread-Index: AQHVOGTGof7sJp7iK06MfTI7WDVk4qcIBgyAgAABHQCABA5YgA==
+Date: Mon, 26 Aug 2019 00:46:44 +0000
+Message-ID: <836653f04f526333e8dbd45361329731f8dfe2ea.camel@alliedtelesis.co.nz>
+References: <20190712034904.5747-1-chris.packham@alliedtelesis.co.nz>
+ <20190712034904.5747-2-chris.packham@alliedtelesis.co.nz>
+ <20190823104621.GY13294@shell.armlinux.org.uk>
+ <20190823105020.GZ13294@shell.armlinux.org.uk>
+In-Reply-To: <20190823105020.GZ13294@shell.armlinux.org.uk>
+Accept-Language: en-NZ, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.32.14.96]
+Content-ID: <EA9848220D51A84EA5A0DD1FA608AE4E@atlnz.lc>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_151047_094976_E839730A 
-X-CRM114-Status: UNSURE (   8.15  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190825_174658_771726_9B73BC2E 
+X-CRM114-Status: GOOD (  25.77  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kswilczynski[at]gmail.com)
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,45 +97,100 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Ryder Lee <ryder.lee@mediatek.com>,
- Bjorn Helgaas <helgaas@kernel.org>, linux-mediatek@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "jlu@pengutronix.de" <jlu@pengutronix.de>,
+ "linux-edac@vger.kernel.org" <linux-edac@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "gregory.clement@free-electrons.com" <gregory.clement@free-electrons.com>,
+ "bp@alien8.de" <bp@alien8.de>, "mchehab@kernel.org" <mchehab@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "patches@armlinux.org.uk" <patches@armlinux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove unnecessary empty return statement at the
-end of a void function mtk_pcie_intr_handler() in
-the drivers/pci/controller/pcie-mediatek.c.
+Hi Russell,
 
-The surplus return statement was added as part of
-the work in commit 42fe2f91b4eb ("PCI: mediatek:
-Implement chained IRQ handling setup").
+On Fri, 2019-08-23 at 11:50 +0100, Russell King - ARM Linux admin
+wrote:
+> On Fri, Aug 23, 2019 at 11:46:21AM +0100, Russell King - ARM Linux
+> admin wrote:
+> > On Fri, Jul 12, 2019 at 03:48:57PM +1200, Chris Packham wrote:
+> > > From: Jan Luebbe <jlu@pengutronix.de>
+> > > 
+> > > The macro name is too generic, so add a AURORA_ prefix.
+> > > 
+> > > Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
+> > > Reviewed-by: Gregory CLEMENT <gregory.clement@free-electrons.com>
+> > > Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+> > > ---
+> > >  arch/arm/include/asm/hardware/cache-aurora-l2.h | 2 +-
+> > 
+> > I can't apply this series - this file does not exist in my tree,
+> > and
+> > from what git tells me, it never has existed.  Maybe it's in
+> > someone
+> > elses tree?
+> 
+> I think the file is in my tree, just as arch/arm/mm/cache-aurora-l2.h
+> which is where it has been since it was originally submitted in 2012.
+> 
 
-Signed-off-by: Krzysztof Wilczynski <kw@linux.com>
----
- drivers/pci/controller/pcie-mediatek.c | 2 --
- 1 file changed, 2 deletions(-)
+Sorry there is a missing patch that moves it next to the
+hardware/cache-*.h. I can send the missing patch or I can re-send the
+whole series. If I do send the whole series do you want me to rebase it
+against a particular tag/tree?
 
-diff --git a/drivers/pci/controller/pcie-mediatek.c b/drivers/pci/controller/pcie-mediatek.c
-index 3eaa7081ab2a..626a7c352dfd 100644
---- a/drivers/pci/controller/pcie-mediatek.c
-+++ b/drivers/pci/controller/pcie-mediatek.c
-@@ -635,8 +635,6 @@ static void mtk_pcie_intr_handler(struct irq_desc *desc)
- 	}
- 
- 	chained_irq_exit(irqchip, desc);
--
--	return;
- }
- 
- static int mtk_pcie_setup_irq(struct mtk_pcie_port *port,
--- 
-2.22.1
-
-
+> > 
+> > >  arch/arm/mm/cache-l2x0.c                        | 4 ++--
+> > >  2 files changed, 3 insertions(+), 3 deletions(-)
+> > > 
+> > > diff --git a/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> > > b/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> > > index c86124769831..dc5c479ec4c3 100644
+> > > --- a/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> > > +++ b/arch/arm/include/asm/hardware/cache-aurora-l2.h
+> > > @@ -41,7 +41,7 @@
+> > >  #define AURORA_ACR_FORCE_WRITE_THRO_POLICY	\
+> > >  	(2 << AURORA_ACR_FORCE_WRITE_POLICY_OFFSET)
+> > >  
+> > > -#define MAX_RANGE_SIZE		1024
+> > > +#define AURORA_MAX_RANGE_SIZE	1024
+> > >  
+> > >  #define AURORA_WAY_SIZE_SHIFT	2
+> > >  
+> > > diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
+> > > index 428d08718107..83b733a1f1e6 100644
+> > > --- a/arch/arm/mm/cache-l2x0.c
+> > > +++ b/arch/arm/mm/cache-l2x0.c
+> > > @@ -1352,8 +1352,8 @@ static unsigned long
+> > > aurora_range_end(unsigned long start, unsigned long end)
+> > >  	 * since cache range operations stall the CPU pipeline
+> > >  	 * until completion.
+> > >  	 */
+> > > -	if (end > start + MAX_RANGE_SIZE)
+> > > -		end = start + MAX_RANGE_SIZE;
+> > > +	if (end > start + AURORA_MAX_RANGE_SIZE)
+> > > +		end = start + AURORA_MAX_RANGE_SIZE;
+> > >  
+> > >  	/*
+> > >  	 * Cache range operations can't straddle a page boundary.
+> > > -- 
+> > > 2.22.0
+> > > 
+> > > 
+> > 
+> > -- 
+> > RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+> > FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down
+> > 622kbps up
+> > According to speedtest.net: 11.9Mbps down 500kbps up
+> 
+> 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
