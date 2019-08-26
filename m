@@ -2,83 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 927D99D91C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:29:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 973279D940
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:35:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qWuH/3ZlArcL9fbWfQ92iHmPPQNWOL88wp1ujNT3jG8=; b=fwj/27/V/nzeBX
-	83CoxFkY6snjIEa8dV+qEwcWlWCY1TvqW0qhslvAQx/HD7HgkeDmkvlHf3HEPeOsb82bmJpcoNgAZ
-	1SDTwt87HFF8NYYdq9BA8Uut9SzlBJpZrFPeYaKQpjC7EwvlVNbnUubo5CISlJoXm7Xw4+RlGIdJL
-	X4k0y2nPY/KktvVkvIZQUljhMUncgq/BOhoR08x/OhCLx24S2IhSP84JohY+nI0A271AniggCfF2L
-	fZU3thkBN6u4s5TaiQUYcc37ZQkox7lVr4jNMAIhMvxvP0b+eFf4xItx6whNXEXaP3cefF0quCjS2
-	BYVYWJEJdKON+XLtddjw==;
+	List-Owner; bh=KfL2nXnT8p6FyTRM1Bg/3NqRAOX65s8sHi7FY6TJtPk=; b=CdS48HUCRCp5IO
+	/Bg8rpyGyvM3l+eGy9vhD0XkdzGY20tZLUdq/9eaj4oQxWdL4PLaxqGidkycDM4lEi2vX0vD+BLYQ
+	LIjY+jL5JQmRsa9ExpaM2oh0JaakgOfm+BN1mIXi+QmIVR9z3IfNgF0fTJTtxHTkscshTwp0UX5wC
+	RbKwnAv2uXdb19G46fS8edfeZW4J+W+RX7VIyqNknQOtVbbUai46V47LpYeAAo0UL/LADUe39bsuH
+	NsFojU/MXfJPoc3NOhtwJwyHZdRgwutwDI1adAOA9dp3EJedWDeTIskXBOMBd942b3sjNGP7yUdpo
+	k5TP8nOu2/QlstlOq4HQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2NUQ-0007Me-Il; Mon, 26 Aug 2019 22:29:30 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i2NaB-0001oG-Fw; Mon, 26 Aug 2019 22:35:27 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2NUC-0007MK-IB
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 22:29:17 +0000
-Received: by mail-pf1-x444.google.com with SMTP id w26so12692226pfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 15:29:15 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ id 1i2NZy-0001nX-01; Mon, 26 Aug 2019 22:35:15 +0000
+Received: by mail-pf1-x441.google.com with SMTP id w26so12701124pfq.12;
+ Mon, 26 Aug 2019 15:35:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=2OBnpARfjQ0J/9nW4cJTwsZwJqtu0b2ynezQ4Q9DKfE=;
- b=GwnoZNOgsGObAY3hpC4oydxAm4B52C2Y6BMc+iHlcVlzesiTsm9HgWP8vLoK5d3+Ta
- hhAGq5SuUGO9z7cOzSuN5xwz5eABB0ApWo+WZARgpfoV+Bvwo/Okk99gdh0LCzzPwSCl
- TtzqWy3hegJUPeHnceXI93zKERjou6d7uncNBvVIRZ8spBKStTx+bsuE7qWKTifAMz3Z
- p5iRlFopasWBLi/mB9MDjIind3D1aaPwMJJcsDBipMwrI8Y5+FVrlEZXggbPt8tx+S+R
- DgFvnF++iQmg9DefEkVeSOTVzc0jz2p5LE/18Wj1ZQ3DAlySSUB5pDr5JJWALga5ct32
- eCug==
+ bh=ZTtLxIEFBiFvvirLNk7rJCpHyKJsG3UuT12vwumOc6c=;
+ b=V4Yj/mgKIET0UoJp2BRwZVUfM8V2AmczCU0x1SnvT/ZOx56IgJ9BD2GVGSi/vhq8VT
+ fCApXRmB4ctSw9Qja4Kg0K+GcJl8Q6DdxLSq+q61/ftTv9i5CG6gwcSj3xiWeRzQ1qWl
+ KifPe7A7QjANncPafKhoJI2VCx5usWEIbMg0ZGE/I7ZdFFUTesd1FXWT2Q07SZVnGF/Y
+ 1IDGhaTKkYwZyw0MpgLx9S1ru+lG8BGfGNGS/7INVWaXjpxI9Pp2t+OVu436nKa8238G
+ oNqZKQK8uVFD/nAamPO86nU17D7TwmRoXDUF53i42+GF5eIES6p9m9cXmSCrdSiQLsco
+ z2KQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=2OBnpARfjQ0J/9nW4cJTwsZwJqtu0b2ynezQ4Q9DKfE=;
- b=pt0yDVbtDwVtXF9Cvm/majUHrcj3FYqx6tqDDxoaT19xhZOqZkOPzwH8tWkMh9sjW4
- dsc0k+BvF1wNf35UJfGVBj5ebyeQyU9Tb65sG4tWyltn9mrVxdxGGJkvW6rE9WOpboy/
- QKPUfEG7N/VtgzxfpRC5RtdkmNr+Hqd9OrsrqxjnTK+Q4/MXFUq4xUjVbiMouZrUGEW5
- YMx0DUOdIkb9qqa17gls6k5pvHYD3MCVSH55X6XcMw+yXyvpepHZfQ0E0MC/leOeu3Nx
- FTblsrD0b+6cE0UILAe/AF/EenhHHpMyMsncBXBEF8nzely4P7IubEp9heOZU1sVS1kh
- wkoQ==
-X-Gm-Message-State: APjAAAU/mbEZMLeMNWihO/dragNirHhr58jEGd/Nb7JsCeUDziooh//H
- e5wWryWJ6u9nEcdIwEuR1f3UWg==
-X-Google-Smtp-Source: APXvYqyXr3jkFheyAKuMOywGw7V59eeVNWD6UWnURiOgWHKReYpQhS+4b9FNzEMwOxnMw88QsPFKQA==
-X-Received: by 2002:aa7:842f:: with SMTP id q15mr22667960pfn.250.1566858555244; 
- Mon, 26 Aug 2019 15:29:15 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id o130sm15657598pfg.171.2019.08.26.15.29.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 26 Aug 2019 15:29:14 -0700 (PDT)
-Date: Mon, 26 Aug 2019 16:29:12 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH 2/8] coresight: etm4x: Fix input validation for sysfs.
-Message-ID: <20190826222912.GB24690@xps15>
-References: <20190819205720.24457-1-mike.leach@linaro.org>
- <20190819205720.24457-3-mike.leach@linaro.org>
+ bh=ZTtLxIEFBiFvvirLNk7rJCpHyKJsG3UuT12vwumOc6c=;
+ b=ERLmc1TSaM7MoGr4Kuj19R+/lAstdyM8/8rQNxqSYuvEcNGvQdTlURyyru6H/kv8ML
+ z1NrQD+LQ+ASMKvsLcDajZQnDuZV1BJKfoQCXA89fMzuhLuL1IM2NL9V0X7tgje4ZY27
+ 2cyu+kIdYn5QkgfVMrQk4o0tZzAMPLSJxKIRuVzbJSzM5tF4LAyM3Yll8P1UdxAgsqqQ
+ BOYAevF4uMf6h2HP0unvrvYIev0aFidbr9iG36R8pyuCLWBonk5YjDsKdnly/QqNaoct
+ dWsAidFASgrbsosZ2IBTy+GD2KROoXK3fV/tf3hMmaoZLsT7yIc5YCgEogcRxd/dosvm
+ /JTA==
+X-Gm-Message-State: APjAAAUp71fti0OBKV4QTjV7POVpcyAaELZq2LK8MzxVvYlRMzjGaKqi
+ cX3h+VvK3qqcTrZtqSIrgWk=
+X-Google-Smtp-Source: APXvYqx9fB2zz3reQwDJm1c/UTcOst3U1UlmTMEEGuwoeB+hHpMqnGwoyiFnFyuGEv6PeBIfrwI1hg==
+X-Received: by 2002:a65:62d7:: with SMTP id m23mr18488160pgv.358.1566858912811; 
+ Mon, 26 Aug 2019 15:35:12 -0700 (PDT)
+Received: from mail.google.com ([149.28.153.17])
+ by smtp.gmail.com with ESMTPSA id s5sm474687pjo.26.2019.08.26.15.35.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 26 Aug 2019 15:35:12 -0700 (PDT)
+Date: Tue, 27 Aug 2019 06:35:02 +0800
+From: Changbin Du <changbin.du@gmail.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH 05/11] ftrace: create memcache for hash entries
+Message-ID: <20190826223501.ymj3g4ftrf5eqhzq@mail.google.com>
+References: <20190825132330.5015-1-changbin.du@gmail.com>
+ <20190825132330.5015-6-changbin.du@gmail.com>
+ <20190826074437.GM2369@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190819205720.24457-3-mike.leach@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190826074437.GM2369@hirez.programming.kicks-ass.net>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_152916_633011_8423EB1D 
-X-CRM114-Status: GOOD (  16.44  )
+X-CRM114-CacheID: sfid-20190826_153514_042644_387DB9B8 
+X-CRM114-Status: GOOD (  18.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (changbin.du[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -98,100 +99,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
- suzuki.poulose@arm.com
+Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-parisc@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ linux-sh@vger.kernel.org, x86@kernel.org, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ linux-mips@vger.kernel.org, Ingo Molnar <mingo@redhat.com>,
+ Jessica Yu <jeyu@kernel.org>, sparclinux@vger.kernel.org,
+ linux-kbuild@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linuxppc-dev@lists.ozlabs.org, linux-riscv@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Changbin Du <changbin.du@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 09:57:14PM +0100, Mike Leach wrote:
-> A number of issues are fixed relating to sysfs input validation:-
+On Mon, Aug 26, 2019 at 09:44:37AM +0200, Peter Zijlstra wrote:
+> On Sun, Aug 25, 2019 at 09:23:24PM +0800, Changbin Du wrote:
+> > When CONFIG_FTRACE_FUNC_PROTOTYPE is enabled, thousands of
+> > ftrace_func_entry instances are created. So create a dedicated
+> > memcache to enhance performance.
+> > 
+> > Signed-off-by: Changbin Du <changbin.du@gmail.com>
+> > ---
+> >  kernel/trace/ftrace.c | 17 ++++++++++++++++-
+> >  1 file changed, 16 insertions(+), 1 deletion(-)
+> > 
+> > diff --git a/kernel/trace/ftrace.c b/kernel/trace/ftrace.c
+> > index a314f0768b2c..cfcb8dad93ea 100644
+> > --- a/kernel/trace/ftrace.c
+> > +++ b/kernel/trace/ftrace.c
+> > @@ -94,6 +94,8 @@ struct ftrace_ops *function_trace_op __read_mostly = &ftrace_list_end;
+> >  /* What to set function_trace_op to */
+> >  static struct ftrace_ops *set_function_trace_op;
+> >  
+> > +struct kmem_cache *hash_entry_cache;
+> > +
+> >  static bool ftrace_pids_enabled(struct ftrace_ops *ops)
+> >  {
+> >  	struct trace_array *tr;
+> > @@ -1169,7 +1171,7 @@ static int add_hash_entry(struct ftrace_hash *hash, unsigned long ip,
+> >  {
+> >  	struct ftrace_func_entry *entry;
+> >  
+> > -	entry = kmalloc(sizeof(*entry), GFP_KERNEL);
+> > +	entry = kmem_cache_alloc(hash_entry_cache, GFP_KERNEL);
+> >  	if (!entry)
+> >  		return -ENOMEM;
+> >  
+> > @@ -6153,6 +6155,15 @@ void __init ftrace_init(void)
+> >  	if (ret)
+> >  		goto failed;
+> >  
+> > +	hash_entry_cache = kmem_cache_create("ftrace-hash",
+> > +					     sizeof(struct ftrace_func_entry),
+> > +					     sizeof(struct ftrace_func_entry),
+> > +					     0, NULL);
+> > +	if (!hash_entry_cache) {
+> > +		pr_err("failed to create ftrace hash entry cache\n");
+> > +		goto failed;
+> > +	}
 > 
-> 1) bb_ctrl_store() - incorrect compare of bit select field to absolute
-> value. Reworked per ETMv4 specification.
-> 2) seq_event_store() - incorrect mask value - register has two
-> event values.
-> 3) cyc_threshold_store() - must mask with max before checking min
-> otherwise wrapped values can set illegal value below min.
-> 4) res_ctrl_store() - update to mask off all res0 bits.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  .../coresight/coresight-etm4x-sysfs.c         | 21 ++++++++++++-------
->  1 file changed, 13 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> index b6984be0c515..fa1d6a938f6c 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> @@ -652,10 +652,13 @@ static ssize_t cyc_threshold_store(struct device *dev,
->  
->  	if (kstrtoul(buf, 16, &val))
->  		return -EINVAL;
-> +
-> +	/* mask off max threshold before checking min value */
-> +	val &= ETM_CYC_THRESHOLD_MASK;
->  	if (val < drvdata->ccitmin)
->  		return -EINVAL;
->  
-> -	config->ccctlr = val & ETM_CYC_THRESHOLD_MASK;
-> +	config->ccctlr = val;
->  	return size;
->  }
->  static DEVICE_ATTR_RW(cyc_threshold);
-> @@ -686,14 +689,16 @@ static ssize_t bb_ctrl_store(struct device *dev,
->  		return -EINVAL;
->  	if (!drvdata->nr_addr_cmp)
->  		return -EINVAL;
-> +
->  	/*
-> -	 * Bit[7:0] selects which address range comparator is used for
-> -	 * branch broadcast control.
-> +	 * Bit[8] controls include(1) / exclude(0), bits[0-7] select
-> +	 * individual range comparators. If include then at least 1
-> +	 * range must be  selected.
+> Wait what; you already have then in the binary image, now you're
+> allocating extra memory for each of them?
+>
+No, here we only allocate ftrace hash entries. The prototype data is not copied.
+The entry->priv points to prototype data in binary.
 
-s/"must be  selected"/"must be selected"
+> Did you look at what ORC does? Is the binary search really not fast
+> enough?
+For ftrace, binary search is not enough. Just like the hash tables
+(ftrace_graph_notrace_hash, ftrace_graph_hash) we already have which is used to
+filter traced functions.
 
->  	 */
-> -	if (BMVAL(val, 0, 7) > drvdata->nr_addr_cmp)
-> +	if ((val & BIT(8)) && (BMVAL(val, 0, 7) == 0))
->  		return -EINVAL;
->  
-> -	config->bb_ctrl = val;
-> +	config->bb_ctrl = val & GENMASK(8, 0);
->  	return size;
->  }
->  static DEVICE_ATTR_RW(bb_ctrl);
-> @@ -1324,8 +1329,8 @@ static ssize_t seq_event_store(struct device *dev,
->  
->  	spin_lock(&drvdata->spinlock);
->  	idx = config->seq_idx;
-> -	/* RST, bits[7:0] */
-> -	config->seq_ctrl[idx] = val & 0xFF;
-> +	/* Seq control has two masks B[15:5] F[7:0] */
-> +	config->seq_ctrl[idx] = val & 0xFFFF;
->  	spin_unlock(&drvdata->spinlock);
->  	return size;
->  }
-> @@ -1580,7 +1585,7 @@ static ssize_t res_ctrl_store(struct device *dev,
->  	if (idx % 2 != 0)
->  		/* PAIRINV, bit[21] */
->  		val &= ~BIT(21);
-> -	config->res_ctrl[idx] = val;
-> +	config->res_ctrl[idx] = val & GENMASK(21, 0);
->  	spin_unlock(&drvdata->spinlock);
->  	return size;
->  }
 
-With the above:
-
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-
-> -- 
-> 2.17.1
-> 
+-- 
+Cheers,
+Changbin Du
 
 _______________________________________________
 linux-arm-kernel mailing list
