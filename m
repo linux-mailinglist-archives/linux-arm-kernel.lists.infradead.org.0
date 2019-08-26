@@ -2,77 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F0C5D9CA3C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 09:26:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57ED59CA49
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 09:27:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=24zmMiRfCSKzzBPd63wncMk6FHNCP630UE6mdtcz5NQ=; b=fr34RJUv8olmjD
-	j9/VCsqqqHrt0Zpe6U446AOSB5DSYkUWDHAhAeGX5QCx2LPhLMkV1rw+T/5D1Kzbw9MGdqJ1kDzf2
-	deQHLsA2M3N/S8FMXeewK1goXtHipbakHrErlOAX2FOpDC3DB9mCVdU6Z/X0cW/UIBtdjvLwiQOnb
-	RCHzuenX58CfK1ni3hQSe6dtOyftkFEBTNIFHbhZEKCPq2sJsoM3iP8F7a+I4cSHVSaFUMQ1yGsGh
-	a1N7UP5Gr3sR2wv6NC5t6vvzsEbTBWR9j8vhqlr+a4K3ANRHyc7Euj3rIjUNlZ1uptGmDEW6uf4mG
-	dNEsqSqfA+D8i5ZVu6mg==;
+	List-Owner; bh=NvwhWtzohJcc2/30B4IY5DHWx5uoPSXpUL1+dfj/wbI=; b=VmX/nuMkiz0yVA
+	qSP3l3vKrZGwM1U2PWkgkPW7S3HC/KYIm4ITLPoa4oh3dKAucCPfjHP2lw8FtS4UACr7ooyMgxZdr
+	YLMbJ6hM1/9Zv0q0cdrflKjDUHEZ/PWZNp8C342fKbEBFmELdSHsfJAf5UwcdPVa+OYTOAiK5tTMS
+	wYs1kgyzDqUsiBZojnIA7J9AH2FHKb5VwCFTkZBZ+hJwPP8Qpsf2CH4n0DeJfvPKWraaMlU/XtPJ8
+	xtZL3K+/Gumng+UbkYvdcj8n2jgeHwt4Q5VMujkEX1sBkzCp078jWZdc6r9cocOvAtN0gRKJserxq
+	viyPFFxnpiViNlxmrJ8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i29Oj-0001JU-2L; Mon, 26 Aug 2019 07:26:41 +0000
+	id 1i29P4-0001aq-Fd; Mon, 26 Aug 2019 07:27:02 +0000
 Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i29Nq-0000yO-8u
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 07:25:48 +0000
-Received: by mail-wr1-x442.google.com with SMTP id p17so14227269wrf.11
+ id 1i29Nq-0000yq-P3
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 07:25:49 +0000
+Received: by mail-wr1-x442.google.com with SMTP id t16so14245117wra.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 00:25:45 -0700 (PDT)
+ Mon, 26 Aug 2019 00:25:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=CGSQN1D6LMdbmgRSGuE1QGkShUk3nt2JdTILP9Ti30I=;
- b=qT5sO3/VwNLT9TYqFJpq3GUIhwypqUCsOJYUBM/JGzJ/gCpXWQiNF1AM6Gi6hIqIsH
- W+DNZxpwQSlQ/bWfL5331VrESChFxdIa8OBRlfuGlHAfYIZThkf6SUCakQ499aGtoD8A
- xlRZGuz8leZeFBkz6lF+U7393CssphmGpF7rznn47Pg8bxx+9aMs1ws/oeRbl7qKpigs
- SARsEA2jq6l7cLv0phk2SQ+9ynqJUrdGdcl795ULoIayT2/b2cjA3BCNFkdbAzZgcpfh
- wyQ52xxVMQIlDFGRwLQaTMEjziHECD024y92rUV/T4MldmvJisruNiWMlWqgXxlMuIw5
- 5CSg==
+ bh=nJHfbz+huzGopfFPJhZtlN2IlNWUSzPOdQ/xmWJJvQ8=;
+ b=istq9sbhj58cYisvAeCuR5G/LIt7KdOzhPH1bwzZJHL1hgSLFX1uYYdnwvRH9VRqLi
+ uFQtJnNb/jkK/NHic0Qhn6hwOcUbL6NJ04wOfmPprc5wim0eVNLEKa/eVCHEk1+bhZwf
+ tZWSJDWmhbEFqdMlrmGuFDe1Ism9+6RsS16Fvl/rRTNQGs7vvpMrFJBwUUptyTG/uzHW
+ jr9D5QpQFeOwJHEm+bhbgsSLFtgmN5fpt6BDCKPv/Zop0KFGkjsz0EjvnYSHwrNMUdmi
+ DlYIzmggcFzYMZWZroVwM1jPjLlltwuWv1alwIVcNvLXUJmqEd7vebmGX+uHsU7M1z+6
+ svLw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=CGSQN1D6LMdbmgRSGuE1QGkShUk3nt2JdTILP9Ti30I=;
- b=L+oOG3gf1vLpOoRsfivzNB89D308WxRPJWWonf8c1dpnLFQVL6lFE2VQedzJh25mSo
- d7jJN0IzDThpT4+dPTb/FibRBllTo/+cTFf1EwVIWJvXON5UsK+hTGdrg/2yKhjd9n9d
- Uwm2CLL8eHQS8tIs+CNkgkWbBCzBazZjOUfrOckVTk9RSMPpSo+VShAzWARPBV4Zk4+I
- +fHaTeV3l8lw40D9l4xSbPX5n5PQ5DnzFIBqAawLofuTvJkUASJ7pW/Ws9jNwWyeZAwC
- 50SNZa9joWYgtRNboe+MgBqUIZ9FYXeqXd7erj2s9CNlIeWj7cBw5s4GN9ghbN6h1RZm
- 5iwg==
-X-Gm-Message-State: APjAAAUdmXIl6H1UmdgjAyfu4iyQmp7aaTD8bZaUMZ3NhPIVAioNOFE9
- 8NrF+nbDoimV3xpFW7t0e5VrMw==
-X-Google-Smtp-Source: APXvYqwlbtNtWnQBNuZa6LXcquUhpElWikUs08sQ+LU2PHstPRCWiPiyF+S0J+d1FpO1H6bp1Vu7DA==
-X-Received: by 2002:adf:e4c6:: with SMTP id v6mr19549498wrm.315.1566804344540; 
- Mon, 26 Aug 2019 00:25:44 -0700 (PDT)
+ bh=nJHfbz+huzGopfFPJhZtlN2IlNWUSzPOdQ/xmWJJvQ8=;
+ b=aoL7NxuOzzSNoDWKL73P+7pzaOGzlcW8YnREDAHc88Sp+6wuFh7LI8Xt6CzHFzAYPp
+ ABDYu3nhLIZlYsY3j0mK4+oXLO56VBmACf5MTbHgmNd4FyL4gvM9CAJhNpq38Eyd/o2+
+ /jX7ktZTKKVO7GFLDsi/57Ypz0N/O0VmqusMo7ZUt4ByG4FKD5mKzm7HdKIrq5h/BjDn
+ ZAkDFamXt7qkp6t59OseTIU3EBSNo+dH2pniXjFLW9h2ezIiSQikr5sQedACKpcD6xTk
+ 9SDSTMy2Ek6zFjLKPv63YE+dW8Aosb5uec2E3/TIQIgJqggDY3SGFQQor2w+KjyDA178
+ qQ/A==
+X-Gm-Message-State: APjAAAU72pWN8IlwvEumpvuJsZ4H1ilYrwiz5fP2SyaXthPSQjCmkTzF
+ MSGE/+urMYoPC4T0LQn8vKqISA==
+X-Google-Smtp-Source: APXvYqxtbfOmi8JmtMhTSlPA/AjPQRoE3qO3PPjBR5B3uDHyHoPTQCPQFcWFKcHQq3GO0FyhJnRMsQ==
+X-Received: by 2002:adf:dec8:: with SMTP id i8mr19954405wrn.217.1566804345323; 
+ Mon, 26 Aug 2019 00:25:45 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id a26sm10821324wmg.45.2019.08.26.00.25.43
+ by smtp.gmail.com with ESMTPSA id a26sm10821324wmg.45.2019.08.26.00.25.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 00:25:43 -0700 (PDT)
+ Mon, 26 Aug 2019 00:25:44 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com,
-	jbrunet@baylibre.com,
-	devicetree@vger.kernel.org
-Subject: [PATCH v2 1/5] dt-bindings: clk: meson: add sm1 periph clock
- controller bindings
-Date: Mon, 26 Aug 2019 09:25:35 +0200
-Message-Id: <20190826072539.27725-2-narmstrong@baylibre.com>
+	jbrunet@baylibre.com
+Subject: [PATCH v2 2/5] clk: meson: g12a: add support for SM1 GP1 PLL
+Date: Mon, 26 Aug 2019 09:25:36 +0200
+Message-Id: <20190826072539.27725-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190826072539.27725-1-narmstrong@baylibre.com>
 References: <20190826072539.27725-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_002546_366847_F73B6534 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20190826_002547_007384_1E66D63B 
+X-CRM114-Status: GOOD (  13.08  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -105,49 +103,386 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Update the documentation to support clock driver for the Amlogic SM1 SoC
-and expose the GP1, DSU and the CPU 1, 2 & 3 clocks.
+Add the new GP1 PLL for the Amlogic SM1 SoC, used to feed the new
+DynamIQ Shared Unit of the ARM Cores Complex.
 
-SM1 clock tree is very close, the main differences are :
-- each CPU core can achieve a different frequency, albeit a common PLL
-- a similar tree as the clock tree has been added for the DynamIQ Shared Unit
-- has a new GP1 PLL used for the DynamIQ Shared Unit
-- SM1 has additional clocks like for CSI, NanoQ an other components
+This also adds a dedicated set of clock and compatible for SM1.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-Reviewed-by: Kevin Hilman <khilman@baylibre.com>
 ---
- .../devicetree/bindings/clock/amlogic,gxbb-clkc.txt          | 1 +
- include/dt-bindings/clock/g12a-clkc.h                        | 5 +++++
- 2 files changed, 6 insertions(+)
+ drivers/clk/meson/g12a.c | 300 +++++++++++++++++++++++++++++++++++++++
+ drivers/clk/meson/g12a.h |  11 +-
+ 2 files changed, 310 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/clock/amlogic,gxbb-clkc.txt b/Documentation/devicetree/bindings/clock/amlogic,gxbb-clkc.txt
-index 6eaa52092313..7ccecd5c02c1 100644
---- a/Documentation/devicetree/bindings/clock/amlogic,gxbb-clkc.txt
-+++ b/Documentation/devicetree/bindings/clock/amlogic,gxbb-clkc.txt
-@@ -11,6 +11,7 @@ Required Properties:
- 		"amlogic,axg-clkc" for AXG SoC.
- 		"amlogic,g12a-clkc" for G12A SoC.
- 		"amlogic,g12b-clkc" for G12B SoC.
-+		"amlogic,sm1-clkc" for SM1 SoC.
- - clocks : list of clock phandle, one for each entry clock-names.
- - clock-names : should contain the following:
-   * "xtal": the platform xtal
-diff --git a/include/dt-bindings/clock/g12a-clkc.h b/include/dt-bindings/clock/g12a-clkc.h
-index 8ccc29ac7a72..0837c1a7ae49 100644
---- a/include/dt-bindings/clock/g12a-clkc.h
-+++ b/include/dt-bindings/clock/g12a-clkc.h
-@@ -138,5 +138,10 @@
- #define CLKID_VDEC_HEVCF			210
- #define CLKID_TS				212
- #define CLKID_CPUB_CLK				224
-+#define CLKID_GP1_PLL				243
-+#define CLKID_DSU_CLK				252
-+#define CLKID_CPU1_CLK				253
-+#define CLKID_CPU2_CLK				254
-+#define CLKID_CPU3_CLK				255
+diff --git a/drivers/clk/meson/g12a.c b/drivers/clk/meson/g12a.c
+index c3f0ffc3280d..34dfac4b4dc6 100644
+--- a/drivers/clk/meson/g12a.c
++++ b/drivers/clk/meson/g12a.c
+@@ -1443,6 +1443,69 @@ static struct clk_regmap g12a_gp0_pll = {
+ 	},
+ };
  
- #endif /* __G12A_CLKC_H */
++static struct clk_regmap sm1_gp1_pll_dco = {
++	.data = &(struct meson_clk_pll_data){
++		.en = {
++			.reg_off = HHI_GP1_PLL_CNTL0,
++			.shift   = 28,
++			.width   = 1,
++		},
++		.m = {
++			.reg_off = HHI_GP1_PLL_CNTL0,
++			.shift   = 0,
++			.width   = 8,
++		},
++		.n = {
++			.reg_off = HHI_GP1_PLL_CNTL0,
++			.shift   = 10,
++			.width   = 5,
++		},
++		.frac = {
++			.reg_off = HHI_GP1_PLL_CNTL1,
++			.shift   = 0,
++			.width   = 17,
++		},
++		.l = {
++			.reg_off = HHI_GP1_PLL_CNTL0,
++			.shift   = 31,
++			.width   = 1,
++		},
++		.rst = {
++			.reg_off = HHI_GP1_PLL_CNTL0,
++			.shift   = 29,
++			.width   = 1,
++		},
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "gp1_pll_dco",
++		.ops = &meson_clk_pll_ro_ops,
++		.parent_data = &(const struct clk_parent_data) {
++			.fw_name = "xtal",
++		},
++		.num_parents = 1,
++		/* This clock feeds the DSU, avoid disabling it */
++		.flags = CLK_IS_CRITICAL,
++	},
++};
++
++static struct clk_regmap sm1_gp1_pll = {
++	.data = &(struct clk_regmap_div_data){
++		.offset = HHI_GP1_PLL_CNTL0,
++		.shift = 16,
++		.width = 3,
++		.flags = (CLK_DIVIDER_POWER_OF_TWO |
++			  CLK_DIVIDER_ROUND_CLOSEST),
++	},
++	.hw.init = &(struct clk_init_data){
++		.name = "gp1_pll",
++		.ops = &clk_regmap_divider_ro_ops,
++		.parent_hws = (const struct clk_hw *[]) {
++			&sm1_gp1_pll_dco.hw
++		},
++		.num_parents = 1,
++	},
++};
++
+ /*
+  * Internal hifi pll emulation configuration parameters
+  */
+@@ -4121,6 +4184,228 @@ static struct clk_hw_onecell_data g12b_hw_onecell_data = {
+ 	.num = NR_CLKS,
+ };
+ 
++static struct clk_hw_onecell_data sm1_hw_onecell_data = {
++	.hws = {
++		[CLKID_SYS_PLL]			= &g12a_sys_pll.hw,
++		[CLKID_FIXED_PLL]		= &g12a_fixed_pll.hw,
++		[CLKID_FCLK_DIV2]		= &g12a_fclk_div2.hw,
++		[CLKID_FCLK_DIV3]		= &g12a_fclk_div3.hw,
++		[CLKID_FCLK_DIV4]		= &g12a_fclk_div4.hw,
++		[CLKID_FCLK_DIV5]		= &g12a_fclk_div5.hw,
++		[CLKID_FCLK_DIV7]		= &g12a_fclk_div7.hw,
++		[CLKID_FCLK_DIV2P5]		= &g12a_fclk_div2p5.hw,
++		[CLKID_GP0_PLL]			= &g12a_gp0_pll.hw,
++		[CLKID_MPEG_SEL]		= &g12a_mpeg_clk_sel.hw,
++		[CLKID_MPEG_DIV]		= &g12a_mpeg_clk_div.hw,
++		[CLKID_CLK81]			= &g12a_clk81.hw,
++		[CLKID_MPLL0]			= &g12a_mpll0.hw,
++		[CLKID_MPLL1]			= &g12a_mpll1.hw,
++		[CLKID_MPLL2]			= &g12a_mpll2.hw,
++		[CLKID_MPLL3]			= &g12a_mpll3.hw,
++		[CLKID_DDR]			= &g12a_ddr.hw,
++		[CLKID_DOS]			= &g12a_dos.hw,
++		[CLKID_AUDIO_LOCKER]		= &g12a_audio_locker.hw,
++		[CLKID_MIPI_DSI_HOST]		= &g12a_mipi_dsi_host.hw,
++		[CLKID_ETH_PHY]			= &g12a_eth_phy.hw,
++		[CLKID_ISA]			= &g12a_isa.hw,
++		[CLKID_PL301]			= &g12a_pl301.hw,
++		[CLKID_PERIPHS]			= &g12a_periphs.hw,
++		[CLKID_SPICC0]			= &g12a_spicc_0.hw,
++		[CLKID_I2C]			= &g12a_i2c.hw,
++		[CLKID_SANA]			= &g12a_sana.hw,
++		[CLKID_SD]			= &g12a_sd.hw,
++		[CLKID_RNG0]			= &g12a_rng0.hw,
++		[CLKID_UART0]			= &g12a_uart0.hw,
++		[CLKID_SPICC1]			= &g12a_spicc_1.hw,
++		[CLKID_HIU_IFACE]		= &g12a_hiu_reg.hw,
++		[CLKID_MIPI_DSI_PHY]		= &g12a_mipi_dsi_phy.hw,
++		[CLKID_ASSIST_MISC]		= &g12a_assist_misc.hw,
++		[CLKID_SD_EMMC_A]		= &g12a_emmc_a.hw,
++		[CLKID_SD_EMMC_B]		= &g12a_emmc_b.hw,
++		[CLKID_SD_EMMC_C]		= &g12a_emmc_c.hw,
++		[CLKID_AUDIO_CODEC]		= &g12a_audio_codec.hw,
++		[CLKID_AUDIO]			= &g12a_audio.hw,
++		[CLKID_ETH]			= &g12a_eth_core.hw,
++		[CLKID_DEMUX]			= &g12a_demux.hw,
++		[CLKID_AUDIO_IFIFO]		= &g12a_audio_ififo.hw,
++		[CLKID_ADC]			= &g12a_adc.hw,
++		[CLKID_UART1]			= &g12a_uart1.hw,
++		[CLKID_G2D]			= &g12a_g2d.hw,
++		[CLKID_RESET]			= &g12a_reset.hw,
++		[CLKID_PCIE_COMB]		= &g12a_pcie_comb.hw,
++		[CLKID_PARSER]			= &g12a_parser.hw,
++		[CLKID_USB]			= &g12a_usb_general.hw,
++		[CLKID_PCIE_PHY]		= &g12a_pcie_phy.hw,
++		[CLKID_AHB_ARB0]		= &g12a_ahb_arb0.hw,
++		[CLKID_AHB_DATA_BUS]		= &g12a_ahb_data_bus.hw,
++		[CLKID_AHB_CTRL_BUS]		= &g12a_ahb_ctrl_bus.hw,
++		[CLKID_HTX_HDCP22]		= &g12a_htx_hdcp22.hw,
++		[CLKID_HTX_PCLK]		= &g12a_htx_pclk.hw,
++		[CLKID_BT656]			= &g12a_bt656.hw,
++		[CLKID_USB1_DDR_BRIDGE]		= &g12a_usb1_to_ddr.hw,
++		[CLKID_MMC_PCLK]		= &g12a_mmc_pclk.hw,
++		[CLKID_UART2]			= &g12a_uart2.hw,
++		[CLKID_VPU_INTR]		= &g12a_vpu_intr.hw,
++		[CLKID_GIC]			= &g12a_gic.hw,
++		[CLKID_SD_EMMC_A_CLK0_SEL]	= &g12a_sd_emmc_a_clk0_sel.hw,
++		[CLKID_SD_EMMC_A_CLK0_DIV]	= &g12a_sd_emmc_a_clk0_div.hw,
++		[CLKID_SD_EMMC_A_CLK0]		= &g12a_sd_emmc_a_clk0.hw,
++		[CLKID_SD_EMMC_B_CLK0_SEL]	= &g12a_sd_emmc_b_clk0_sel.hw,
++		[CLKID_SD_EMMC_B_CLK0_DIV]	= &g12a_sd_emmc_b_clk0_div.hw,
++		[CLKID_SD_EMMC_B_CLK0]		= &g12a_sd_emmc_b_clk0.hw,
++		[CLKID_SD_EMMC_C_CLK0_SEL]	= &g12a_sd_emmc_c_clk0_sel.hw,
++		[CLKID_SD_EMMC_C_CLK0_DIV]	= &g12a_sd_emmc_c_clk0_div.hw,
++		[CLKID_SD_EMMC_C_CLK0]		= &g12a_sd_emmc_c_clk0.hw,
++		[CLKID_MPLL0_DIV]		= &g12a_mpll0_div.hw,
++		[CLKID_MPLL1_DIV]		= &g12a_mpll1_div.hw,
++		[CLKID_MPLL2_DIV]		= &g12a_mpll2_div.hw,
++		[CLKID_MPLL3_DIV]		= &g12a_mpll3_div.hw,
++		[CLKID_FCLK_DIV2_DIV]		= &g12a_fclk_div2_div.hw,
++		[CLKID_FCLK_DIV3_DIV]		= &g12a_fclk_div3_div.hw,
++		[CLKID_FCLK_DIV4_DIV]		= &g12a_fclk_div4_div.hw,
++		[CLKID_FCLK_DIV5_DIV]		= &g12a_fclk_div5_div.hw,
++		[CLKID_FCLK_DIV7_DIV]		= &g12a_fclk_div7_div.hw,
++		[CLKID_FCLK_DIV2P5_DIV]		= &g12a_fclk_div2p5_div.hw,
++		[CLKID_HIFI_PLL]		= &g12a_hifi_pll.hw,
++		[CLKID_VCLK2_VENCI0]		= &g12a_vclk2_venci0.hw,
++		[CLKID_VCLK2_VENCI1]		= &g12a_vclk2_venci1.hw,
++		[CLKID_VCLK2_VENCP0]		= &g12a_vclk2_vencp0.hw,
++		[CLKID_VCLK2_VENCP1]		= &g12a_vclk2_vencp1.hw,
++		[CLKID_VCLK2_VENCT0]		= &g12a_vclk2_venct0.hw,
++		[CLKID_VCLK2_VENCT1]		= &g12a_vclk2_venct1.hw,
++		[CLKID_VCLK2_OTHER]		= &g12a_vclk2_other.hw,
++		[CLKID_VCLK2_ENCI]		= &g12a_vclk2_enci.hw,
++		[CLKID_VCLK2_ENCP]		= &g12a_vclk2_encp.hw,
++		[CLKID_DAC_CLK]			= &g12a_dac_clk.hw,
++		[CLKID_AOCLK]			= &g12a_aoclk_gate.hw,
++		[CLKID_IEC958]			= &g12a_iec958_gate.hw,
++		[CLKID_ENC480P]			= &g12a_enc480p.hw,
++		[CLKID_RNG1]			= &g12a_rng1.hw,
++		[CLKID_VCLK2_ENCT]		= &g12a_vclk2_enct.hw,
++		[CLKID_VCLK2_ENCL]		= &g12a_vclk2_encl.hw,
++		[CLKID_VCLK2_VENCLMMC]		= &g12a_vclk2_venclmmc.hw,
++		[CLKID_VCLK2_VENCL]		= &g12a_vclk2_vencl.hw,
++		[CLKID_VCLK2_OTHER1]		= &g12a_vclk2_other1.hw,
++		[CLKID_FIXED_PLL_DCO]		= &g12a_fixed_pll_dco.hw,
++		[CLKID_SYS_PLL_DCO]		= &g12a_sys_pll_dco.hw,
++		[CLKID_GP0_PLL_DCO]		= &g12a_gp0_pll_dco.hw,
++		[CLKID_HIFI_PLL_DCO]		= &g12a_hifi_pll_dco.hw,
++		[CLKID_DMA]			= &g12a_dma.hw,
++		[CLKID_EFUSE]			= &g12a_efuse.hw,
++		[CLKID_ROM_BOOT]		= &g12a_rom_boot.hw,
++		[CLKID_RESET_SEC]		= &g12a_reset_sec.hw,
++		[CLKID_SEC_AHB_APB3]		= &g12a_sec_ahb_apb3.hw,
++		[CLKID_MPLL_PREDIV]		= &g12a_mpll_prediv.hw,
++		[CLKID_VPU_0_SEL]		= &g12a_vpu_0_sel.hw,
++		[CLKID_VPU_0_DIV]		= &g12a_vpu_0_div.hw,
++		[CLKID_VPU_0]			= &g12a_vpu_0.hw,
++		[CLKID_VPU_1_SEL]		= &g12a_vpu_1_sel.hw,
++		[CLKID_VPU_1_DIV]		= &g12a_vpu_1_div.hw,
++		[CLKID_VPU_1]			= &g12a_vpu_1.hw,
++		[CLKID_VPU]			= &g12a_vpu.hw,
++		[CLKID_VAPB_0_SEL]		= &g12a_vapb_0_sel.hw,
++		[CLKID_VAPB_0_DIV]		= &g12a_vapb_0_div.hw,
++		[CLKID_VAPB_0]			= &g12a_vapb_0.hw,
++		[CLKID_VAPB_1_SEL]		= &g12a_vapb_1_sel.hw,
++		[CLKID_VAPB_1_DIV]		= &g12a_vapb_1_div.hw,
++		[CLKID_VAPB_1]			= &g12a_vapb_1.hw,
++		[CLKID_VAPB_SEL]		= &g12a_vapb_sel.hw,
++		[CLKID_VAPB]			= &g12a_vapb.hw,
++		[CLKID_HDMI_PLL_DCO]		= &g12a_hdmi_pll_dco.hw,
++		[CLKID_HDMI_PLL_OD]		= &g12a_hdmi_pll_od.hw,
++		[CLKID_HDMI_PLL_OD2]		= &g12a_hdmi_pll_od2.hw,
++		[CLKID_HDMI_PLL]		= &g12a_hdmi_pll.hw,
++		[CLKID_VID_PLL]			= &g12a_vid_pll_div.hw,
++		[CLKID_VID_PLL_SEL]		= &g12a_vid_pll_sel.hw,
++		[CLKID_VID_PLL_DIV]		= &g12a_vid_pll.hw,
++		[CLKID_VCLK_SEL]		= &g12a_vclk_sel.hw,
++		[CLKID_VCLK2_SEL]		= &g12a_vclk2_sel.hw,
++		[CLKID_VCLK_INPUT]		= &g12a_vclk_input.hw,
++		[CLKID_VCLK2_INPUT]		= &g12a_vclk2_input.hw,
++		[CLKID_VCLK_DIV]		= &g12a_vclk_div.hw,
++		[CLKID_VCLK2_DIV]		= &g12a_vclk2_div.hw,
++		[CLKID_VCLK]			= &g12a_vclk.hw,
++		[CLKID_VCLK2]			= &g12a_vclk2.hw,
++		[CLKID_VCLK_DIV1]		= &g12a_vclk_div1.hw,
++		[CLKID_VCLK_DIV2_EN]		= &g12a_vclk_div2_en.hw,
++		[CLKID_VCLK_DIV4_EN]		= &g12a_vclk_div4_en.hw,
++		[CLKID_VCLK_DIV6_EN]		= &g12a_vclk_div6_en.hw,
++		[CLKID_VCLK_DIV12_EN]		= &g12a_vclk_div12_en.hw,
++		[CLKID_VCLK2_DIV1]		= &g12a_vclk2_div1.hw,
++		[CLKID_VCLK2_DIV2_EN]		= &g12a_vclk2_div2_en.hw,
++		[CLKID_VCLK2_DIV4_EN]		= &g12a_vclk2_div4_en.hw,
++		[CLKID_VCLK2_DIV6_EN]		= &g12a_vclk2_div6_en.hw,
++		[CLKID_VCLK2_DIV12_EN]		= &g12a_vclk2_div12_en.hw,
++		[CLKID_VCLK_DIV2]		= &g12a_vclk_div2.hw,
++		[CLKID_VCLK_DIV4]		= &g12a_vclk_div4.hw,
++		[CLKID_VCLK_DIV6]		= &g12a_vclk_div6.hw,
++		[CLKID_VCLK_DIV12]		= &g12a_vclk_div12.hw,
++		[CLKID_VCLK2_DIV2]		= &g12a_vclk2_div2.hw,
++		[CLKID_VCLK2_DIV4]		= &g12a_vclk2_div4.hw,
++		[CLKID_VCLK2_DIV6]		= &g12a_vclk2_div6.hw,
++		[CLKID_VCLK2_DIV12]		= &g12a_vclk2_div12.hw,
++		[CLKID_CTS_ENCI_SEL]		= &g12a_cts_enci_sel.hw,
++		[CLKID_CTS_ENCP_SEL]		= &g12a_cts_encp_sel.hw,
++		[CLKID_CTS_VDAC_SEL]		= &g12a_cts_vdac_sel.hw,
++		[CLKID_HDMI_TX_SEL]		= &g12a_hdmi_tx_sel.hw,
++		[CLKID_CTS_ENCI]		= &g12a_cts_enci.hw,
++		[CLKID_CTS_ENCP]		= &g12a_cts_encp.hw,
++		[CLKID_CTS_VDAC]		= &g12a_cts_vdac.hw,
++		[CLKID_HDMI_TX]			= &g12a_hdmi_tx.hw,
++		[CLKID_HDMI_SEL]		= &g12a_hdmi_sel.hw,
++		[CLKID_HDMI_DIV]		= &g12a_hdmi_div.hw,
++		[CLKID_HDMI]			= &g12a_hdmi.hw,
++		[CLKID_MALI_0_SEL]		= &g12a_mali_0_sel.hw,
++		[CLKID_MALI_0_DIV]		= &g12a_mali_0_div.hw,
++		[CLKID_MALI_0]			= &g12a_mali_0.hw,
++		[CLKID_MALI_1_SEL]		= &g12a_mali_1_sel.hw,
++		[CLKID_MALI_1_DIV]		= &g12a_mali_1_div.hw,
++		[CLKID_MALI_1]			= &g12a_mali_1.hw,
++		[CLKID_MALI]			= &g12a_mali.hw,
++		[CLKID_MPLL_50M_DIV]		= &g12a_mpll_50m_div.hw,
++		[CLKID_MPLL_50M]		= &g12a_mpll_50m.hw,
++		[CLKID_SYS_PLL_DIV16_EN]	= &g12a_sys_pll_div16_en.hw,
++		[CLKID_SYS_PLL_DIV16]		= &g12a_sys_pll_div16.hw,
++		[CLKID_CPU_CLK_DYN0_SEL]	= &g12a_cpu_clk_premux0.hw,
++		[CLKID_CPU_CLK_DYN0_DIV]	= &g12a_cpu_clk_mux0_div.hw,
++		[CLKID_CPU_CLK_DYN0]		= &g12a_cpu_clk_postmux0.hw,
++		[CLKID_CPU_CLK_DYN1_SEL]	= &g12a_cpu_clk_premux1.hw,
++		[CLKID_CPU_CLK_DYN1_DIV]	= &g12a_cpu_clk_mux1_div.hw,
++		[CLKID_CPU_CLK_DYN1]		= &g12a_cpu_clk_postmux1.hw,
++		[CLKID_CPU_CLK_DYN]		= &g12a_cpu_clk_dyn.hw,
++		[CLKID_CPU_CLK]			= &g12a_cpu_clk.hw,
++		[CLKID_CPU_CLK_DIV16_EN]	= &g12a_cpu_clk_div16_en.hw,
++		[CLKID_CPU_CLK_DIV16]		= &g12a_cpu_clk_div16.hw,
++		[CLKID_CPU_CLK_APB_DIV]		= &g12a_cpu_clk_apb_div.hw,
++		[CLKID_CPU_CLK_APB]		= &g12a_cpu_clk_apb.hw,
++		[CLKID_CPU_CLK_ATB_DIV]		= &g12a_cpu_clk_atb_div.hw,
++		[CLKID_CPU_CLK_ATB]		= &g12a_cpu_clk_atb.hw,
++		[CLKID_CPU_CLK_AXI_DIV]		= &g12a_cpu_clk_axi_div.hw,
++		[CLKID_CPU_CLK_AXI]		= &g12a_cpu_clk_axi.hw,
++		[CLKID_CPU_CLK_TRACE_DIV]	= &g12a_cpu_clk_trace_div.hw,
++		[CLKID_CPU_CLK_TRACE]		= &g12a_cpu_clk_trace.hw,
++		[CLKID_PCIE_PLL_DCO]		= &g12a_pcie_pll_dco.hw,
++		[CLKID_PCIE_PLL_DCO_DIV2]	= &g12a_pcie_pll_dco_div2.hw,
++		[CLKID_PCIE_PLL_OD]		= &g12a_pcie_pll_od.hw,
++		[CLKID_PCIE_PLL]		= &g12a_pcie_pll.hw,
++		[CLKID_VDEC_1_SEL]		= &g12a_vdec_1_sel.hw,
++		[CLKID_VDEC_1_DIV]		= &g12a_vdec_1_div.hw,
++		[CLKID_VDEC_1]			= &g12a_vdec_1.hw,
++		[CLKID_VDEC_HEVC_SEL]		= &g12a_vdec_hevc_sel.hw,
++		[CLKID_VDEC_HEVC_DIV]		= &g12a_vdec_hevc_div.hw,
++		[CLKID_VDEC_HEVC]		= &g12a_vdec_hevc.hw,
++		[CLKID_VDEC_HEVCF_SEL]		= &g12a_vdec_hevcf_sel.hw,
++		[CLKID_VDEC_HEVCF_DIV]		= &g12a_vdec_hevcf_div.hw,
++		[CLKID_VDEC_HEVCF]		= &g12a_vdec_hevcf.hw,
++		[CLKID_TS_DIV]			= &g12a_ts_div.hw,
++		[CLKID_TS]			= &g12a_ts.hw,
++		[CLKID_GP1_PLL_DCO]		= &sm1_gp1_pll_dco.hw,
++		[CLKID_GP1_PLL]			= &sm1_gp1_pll.hw,
++		[NR_CLKS]			= NULL,
++	},
++	.num = NR_CLKS,
++};
++
+ /* Convenience table to populate regmap in .probe */
+ static struct clk_regmap *const g12a_clk_regmaps[] = {
+ 	&g12a_clk81,
+@@ -4336,6 +4621,8 @@ static struct clk_regmap *const g12a_clk_regmaps[] = {
+ 	&g12b_cpub_clk_axi,
+ 	&g12b_cpub_clk_trace_sel,
+ 	&g12b_cpub_clk_trace,
++	&sm1_gp1_pll_dco,
++	&sm1_gp1_pll,
+ };
+ 
+ static const struct reg_sequence g12a_init_regs[] = {
+@@ -4532,6 +4819,15 @@ static const struct meson_g12a_data g12b_clkc_data = {
+ 	.dvfs_setup = meson_g12b_dvfs_setup,
+ };
+ 
++static const struct meson_g12a_data sm1_clkc_data = {
++	.eeclkc_data = {
++		.regmap_clks = g12a_clk_regmaps,
++		.regmap_clk_num = ARRAY_SIZE(g12a_clk_regmaps),
++		.hw_onecell_data = &sm1_hw_onecell_data,
++	},
++	.dvfs_setup = meson_g12a_dvfs_setup,
++};
++
+ static const struct of_device_id clkc_match_table[] = {
+ 	{
+ 		.compatible = "amlogic,g12a-clkc",
+@@ -4541,6 +4837,10 @@ static const struct of_device_id clkc_match_table[] = {
+ 		.compatible = "amlogic,g12b-clkc",
+ 		.data = &g12b_clkc_data.eeclkc_data
+ 	},
++	{
++		.compatible = "amlogic,sm1-clkc",
++		.data = &sm1_clkc_data.eeclkc_data
++	},
+ 	{}
+ };
+ 
+diff --git a/drivers/clk/meson/g12a.h b/drivers/clk/meson/g12a.h
+index 559a34cfdfeb..e426b4121b7a 100644
+--- a/drivers/clk/meson/g12a.h
++++ b/drivers/clk/meson/g12a.h
+@@ -29,6 +29,14 @@
+ #define HHI_GP0_PLL_CNTL5		0x054
+ #define HHI_GP0_PLL_CNTL6		0x058
+ #define HHI_GP0_PLL_STS			0x05C
++#define HHI_GP1_PLL_CNTL0		0x060
++#define HHI_GP1_PLL_CNTL1		0x064
++#define HHI_GP1_PLL_CNTL2		0x068
++#define HHI_GP1_PLL_CNTL3		0x06C
++#define HHI_GP1_PLL_CNTL4		0x070
++#define HHI_GP1_PLL_CNTL5		0x074
++#define HHI_GP1_PLL_CNTL6		0x078
++#define HHI_GP1_PLL_STS			0x07C
+ #define HHI_PCIE_PLL_CNTL0		0x098
+ #define HHI_PCIE_PLL_CNTL1		0x09C
+ #define HHI_PCIE_PLL_CNTL2		0x0A0
+@@ -233,8 +241,9 @@
+ #define CLKID_CPUB_CLK_AXI			239
+ #define CLKID_CPUB_CLK_TRACE_SEL		240
+ #define CLKID_CPUB_CLK_TRACE			241
++#define CLKID_GP1_PLL_DCO			242
+ 
+-#define NR_CLKS					242
++#define NR_CLKS					244
+ 
+ /* include the CLKIDs that have been made part of the DT binding */
+ #include <dt-bindings/clock/g12a-clkc.h>
 -- 
 2.22.0
 
