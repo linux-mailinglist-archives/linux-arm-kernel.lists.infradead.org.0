@@ -2,85 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7CB89D9B0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 01:00:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B85069DA0A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 01:37:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=REk/qrq5oojuoAZcVMdoFyE5mgGWN4siYxAyoVvgkB4=; b=GQrbbvrWHUwNaV
-	buR64kSAzUuKy+cm/65FvYS/JFs9p0pGgsvXzXyftRRaBIfrpktQTzqPhpwqZHlukppHhxW2ymBPc
-	g5/STDcuOtJ6kENpxF1aBo6G6Oa+EHHpYb9fpm5BOHLYhqpaUr1isPkgzu8tz4zpn5tEBhOLibTFV
-	cvKwy1NxDBaADGhSCx/LmjwsXS5otmhzdOFIMTxlLxVhLc2xgFsYzceA7JWjpEJGnG3VGjofrVWnj
-	M6mbbcagVq1Ls3hzme5kqZkM9AVhSorSQZkpgT0SE/kDpRO0gmaWbhZhL7m0H/5nd/79hWs/Uujk1
-	qTap3aWhlTiNb6YumFAQ==;
+	List-Owner; bh=MB0m1m8KmFRCDZ3uwqBsbV1JVe7i7DSJa6pqyn7cjU4=; b=oOd6BgjRbVnSTj
+	9mU4m31MrkQWK72YLVwf2ezlXOoJyD5UiHBHnnwp+pcFIC217EOejQNoog4S7dSn8EFh/olBILeSD
+	lv928BTktpjDCzvrTxTTycQiEgcvYDk5qD3rjeW6KJ/qCkTsRo9EdVk4egYk2vLJH07iUEAt8Fpsf
+	hmYLb6qNiooTnYimzT9PhgQnJoEhS3Ed8Ifjb/jF6xT8ZskuJfTIkpY8WmlOlruBW+QfpJBdKgbWb
+	AuF2fbyBw4ZmaUChcN8IAvB2sFyPrthHghktQDgEDDR030N+tgjhoOG6T58KcAaKKq0OTbHrqueAP
+	llZBAa6U+rLfr9T4Io2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Ny0-0002QW-KV; Mon, 26 Aug 2019 23:00:04 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i2OXx-0005U9-Ua; Mon, 26 Aug 2019 23:37:14 +0000
+Received: from out1-smtp.messagingengine.com ([66.111.4.25])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Nxo-0002QC-RI
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 22:59:54 +0000
-Received: by mail-pf1-x443.google.com with SMTP id w26so12735952pfq.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 15:59:52 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=CgfL9em55pskgYqafEMjkjXApm1UUMRf3KrL/Bg/a7g=;
- b=EpUyev0Dmp60q+5DbW+HgJkbEd/Cp/VbCz1JdRzPjjyQR3zrYuViJkv/jkQJflhfLG
- UoWZCnLR7XaMykxiIIbybVhc5mWoqwvmklCh4+xOZAxBfk045vZqxDLtuMpNYnusbM31
- WB84PvEv4FmzEqvhk+83ByG9aBTgWq0BKqXTUnwN0mgU+S0IDEh6I2mqL6PBO+cZU8+x
- dbMM50tAJ90CkrF2RjjhbZgC4ogIrRu2dhTGMvM00F3XtIsvN12p341yjp8VtnpJQD/Q
- fFTNI89DM/4Z1S/mU4nV1B45qvkXvXzVug3WenYyxw8AXsRhf7EwdNAlQ5ou/mqxM6U2
- dwgg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=CgfL9em55pskgYqafEMjkjXApm1UUMRf3KrL/Bg/a7g=;
- b=rQm8oEK13ppVTQpUg5w8DaH8r7eAZzzGC2bzQugz5c8OdB3Vm/u22fdC8uDlZEa/ym
- rSm9/cfYuzGCnWReLkMrRsF+aBc+buq+x8eqTosACLtudNUCzScAPgscRImVrAilbKV3
- Ph4tIBpMFDzxNUF9MJyYUeyNhOJPbMN8HmVLBMYIeJa4/eMrinJUqtpL6a2V46oEy3/G
- AYHDBcGfgAZpOweGd+rlGjeYkG47K3ZVKbqxPLWe6KZos+4gjFT7jTSzzVfKIjPJIXFQ
- 326SN4zLh6l7wjQG8TCJQ3A4jSTO6hdzVWfcdOslWlY1ciXdIwb0QCj1QolprhaOwEtb
- ufRA==
-X-Gm-Message-State: APjAAAXK7szSkVCWaLBNkh3zfTD+oRw95gCmBiAmZhHY3IUkxLcYLpgo
- xhjXfIu1CmYR8m8JkLy/Oy31Ag==
-X-Google-Smtp-Source: APXvYqw5iQK0ic2g0BWsOcbpiUfcmQ0df8BTuwrTOFDPthzbQTF2+gGA7NdW2SXhWQPcQBRq7OZIBw==
-X-Received: by 2002:a65:4243:: with SMTP id d3mr8670220pgq.119.1566860391791; 
- Mon, 26 Aug 2019 15:59:51 -0700 (PDT)
-Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id s186sm18547979pfb.126.2019.08.26.15.59.50
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 26 Aug 2019 15:59:51 -0700 (PDT)
-Date: Mon, 26 Aug 2019 16:59:49 -0600
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-To: Mike Leach <mike.leach@linaro.org>
-Subject: Re: [PATCH 3/8] coresight: etm4x: Add missing API to set EL match on
- address filters
-Message-ID: <20190826225949.GC24690@xps15>
-References: <20190819205720.24457-1-mike.leach@linaro.org>
- <20190819205720.24457-4-mike.leach@linaro.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190819205720.24457-4-mike.leach@linaro.org>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+ id 1i2OXk-0005TY-Uh
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 23:37:04 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id 33D8E21D25;
+ Mon, 26 Aug 2019 19:36:58 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Mon, 26 Aug 2019 19:36:58 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=wixTDJAQbjY/Vhzqeg4T1GumEprOkBk
+ N/oC2LEVkCv4=; b=PAbrqX9B8koWzYVJHtqz0pMLPyeyPx4LDW6R86bfbm2tDgI
+ 8Ytorq10xVp3FU9/kCCeD4uHlcxHO68LG7bWdSuEDzBAWKNQVAsBVoYqC3qOxNVn
+ 1kDNkrl+aINL/oeLFipUO590mawo5SXiRKS7kXEu8+tUGkV0MdB1WkDlgILjS/WT
+ XeyOffwLJ0YyWpeMdtFVzTQJaxgABEIMtzISgxTrr0PhyV3V2kHK+GwKaUflyXeF
+ g6u8OWQCn32uEICm44xDtJgR7MgOXA1zQIxcOMoO2EQNHcuLsKnb5LV3fnzZ98q7
+ Vy9eVTQgCpeZFeYko3Pf54ZG6b2hMKguh+6QchQ==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=wixTDJ
+ AQbjY/Vhzqeg4T1GumEprOkBkN/oC2LEVkCv4=; b=HDDSyOKngXZbkHXmFgvbQe
+ FD8fS4uguq8G+lP1l18m+FzQ92yq/qe2r01oAZJrl7vAePmniV2yN9JgdX/gIeD0
+ aY38FutFDXejMBUl/z3HRs5JrrrJVLx5L2eH5m6aoKY3vp/R24fzNp+8WDM1frpM
+ 3ogrIvSoq9GrPo+6yZEuUdg8i7NzNunTNJNcjYN9hLd38RCxvBivsNyW4XAz8/Zu
+ z93qALwF1K+LSTuP+/KEXtiiuTGQqCPk5GcVplcfSceCIy/o0EptNT/GcPZvZ1kN
+ kXn/Kr8hnuvUrBly1sgg1qij4cSdqyg2I/JwaYWffCV/kWEQ+wURmcejSr6gQEbA
+ ==
+X-ME-Sender: <xms:GG1kXQ5D7mvyUHzjBokdQs4dTqgCuZjWam5BGykLec7vvvcx5B080w>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudehhedgvdeiucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
+ cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
+ rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
+ grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
+ rhfuihiivgeptd
+X-ME-Proxy: <xmx:GG1kXUVNImv6Gofm_nM9OW946oVf_CuldymEbwxsvyfzsV6mJGOxEQ>
+ <xmx:GG1kXdLF142R19ES50NeD_RzadR7Wg5AhhX12x75rQdBEm4W7PGp5g>
+ <xmx:GG1kXUTXGDHv1NFe9Cu14mPcsMpa5wb8gnRIO0fMO-jc2CajPlMKig>
+ <xmx:Gm1kXedKe0BHGFlFqZnx-d49jziKU13sk_W_B72cbh1vt4v0U_5-Ug>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id AF0E0E00A3; Mon, 26 Aug 2019 19:36:56 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.6-916-g49fca03-fmstable-20190821v7
+Mime-Version: 1.0
+Message-Id: <629128e7-cc91-412f-8946-668fac2eb3b9@www.fastmail.com>
+In-Reply-To: <20190826130343.GA23584@kadam>
+References: <20190826120013.183435-1-weiyongjun1@huawei.com>
+ <20190826130343.GA23584@kadam>
+Date: Tue, 27 Aug 2019 09:07:17 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Dan Carpenter" <dan.carpenter@oracle.com>,
+ "Wei Yongjun" <weiyongjun1@huawei.com>
+Subject: =?UTF-8?Q?Re:_[PATCH_-next]_mmc:_aspeed:_Fix_return_value_check_in_aspee?=
+ =?UTF-8?Q?d=5Fsdc=5Fprobe()?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_155952_915976_8BD259A7 
-X-CRM114-Status: GOOD (  18.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_163702_450702_27BB24A2 
+X-CRM114-Status: UNSURE (   6.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.25 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -99,93 +106,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
- suzuki.poulose@arm.com
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, linux-aspeed@lists.ozlabs.org,
+ kernel-janitors@vger.kernel.org, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 19, 2019 at 09:57:15PM +0100, Mike Leach wrote:
-> TRCACATRn registers have match bits for secure and non-secure exception
-> levels which are not accessible by the sysfs API.
-> This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
-> 
-> Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> ---
->  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++++
->  1 file changed, 39 insertions(+)
-> 
-> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> index fa1d6a938f6c..7eab5d7d0b62 100644
-> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> @@ -1233,6 +1233,44 @@ static ssize_t addr_context_store(struct device *dev,
->  }
->  static DEVICE_ATTR_RW(addr_context);
->  
-> +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
-> +				      struct device_attribute *attr,
-> +				      char *buf)
-> +{
-> +	u8 idx;
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	idx = config->addr_idx;
-> +	val = BMVAL(config->addr_acc[idx], 14, 8);
-> +	spin_unlock(&drvdata->spinlock);
-> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> +}
-> +
-> +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
-> +				       struct device_attribute *attr,
-> +				       const char *buf, size_t size)
-> +{
-> +	u8 idx;
-> +	unsigned long val;
-> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> +	struct etmv4_config *config = &drvdata->config;
-> +
-> +	if (kstrtoul(buf, 16, &val))
-> +		return -EINVAL;
-> +
-> +	spin_lock(&drvdata->spinlock);
-> +	idx = config->addr_idx;
-> +	/* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8] */
-> +	config->addr_acc[idx] &= ~(GENMASK(14, 8));
-> +	config->addr_acc[idx] |= (val << 8);
-> +	spin_unlock(&drvdata->spinlock);
-> +	return size;
-> +}
-> +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
-> +
->  static ssize_t seq_idx_show(struct device *dev,
->  			    struct device_attribute *attr,
->  			    char *buf)
-> @@ -2038,6 +2076,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
->  	&dev_attr_addr_stop.attr,
->  	&dev_attr_addr_ctxtype.attr,
->  	&dev_attr_addr_context.attr,
-> +	&dev_attr_addr_exlevel_s_ns.attr,
->  	&dev_attr_seq_idx.attr,
->  	&dev_attr_seq_state.attr,
->  	&dev_attr_seq_event.attr,
-
-I'm ok with this patch but the new entry needs to be documented in [1].  But
-before moving forward with that I'm wondering if this is the way to go.  Would
-it be better to consolidate type, ctxtype, context and exlevel_s_ns in a single
-entry, say addr_acc_type?  We'd shed a fair amount of code and make it more
-simple for users to configure.
 
 
-[1]. Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
+On Mon, 26 Aug 2019, at 22:34, Dan Carpenter wrote:
+> > Fixes: 09eed7fffd33 ("mmc: Add support for the ASPEED SD controller")
+>                         ^^^^
+> When we're adding new files, could we use the prefix for the new driver
+> instead of just the subsystem?  "mmc: aspeed: Add new driver"?
+> Otherwise it's tricky to know what people want for the driver.
 
-> -- 
-> 2.17.1
-> 
+I don't have any issue with the request, but I don't understand this last
+bit. What do you mean by "it's tricky to know what people want for the
+driver"?
+
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
