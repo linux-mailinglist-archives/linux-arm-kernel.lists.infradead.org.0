@@ -2,80 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 865DE9C71D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 04:06:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52F9E9C721
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 04:07:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sn45oDAS3dODd7xbTloL7urkkygOYEYtSasML66aOeA=; b=JjkXjRZ1RPSQqC
-	DaJsoeXRKGoo6E4AAPPlyZvumHHGGdljQ0t5QT6K3oEnjs3Nxv7xc4kKsj5GjcSw4Hr76j8WdSg4T
-	/MEtDg3ir/yFiIjgMl1zeTJTAwsijPvNZqRwu9zfV991zD8l1btkMxWGr8D3gR48Xy7dkSLLXl+2k
-	Q6z8SuwZCql2lkZk+cX0yJpnp2pz6Xb68ct5AqegHiP8fa2DZStxCWB+G89iGL4Q0bM/hXhmezrQ0
-	DpunHN8Jvl1IseHeeY6JYvgsB5Oe/lOh+B47Fu98XFRRwfZLKTVwjOMp0RjxHzi7AKAsb0sqicECH
-	yv95Z5weEurM1LWvCqdQ==;
+	List-Owner; bh=i5PT65fpP/pBlnrbxXqXV/RdGE39JKF3s2SFMfYn8xQ=; b=GRmsO62G41KuKU
+	sOQLBWCBKwlobMd0J3VDAMd/YnrDxBqK5BwY3gg0nfb87i/0bP3p4oOddLfogG7vjN2l0jy2JbKb5
+	97eSh3+IK5fYk9RGCz9cIhLqTiALGx7wChsRzDKEPr/1CUJhdy1CCG5yyip9npa6ee4Vif5K++9iy
+	AWPqqiKFUj2+gnetVFmvFteszLr9OzreTHSGm+f+1zT0BeYhQRb6Tv89klkfVL1g9TtbwLRPG0iJB
+	UgJKVQgFqpO+TIdOZyZuVuHJWkvSAM9eMEJiKKAOmv5rcCrir41S1HhvM0crEcG0hKvG+s6OjZamY
+	Y+WBHPzWnTYlzNPR0PXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i24Oe-0003Ux-8X; Mon, 26 Aug 2019 02:06:16 +0000
-Received: from conssluserg-04.nifty.com ([210.131.2.83])
+	id 1i24PR-0003tX-WE; Mon, 26 Aug 2019 02:07:06 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i24OT-0003UG-IS
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 02:06:07 +0000
-Received: from mail-ua1-f45.google.com (mail-ua1-f45.google.com
- [209.85.222.45]) (authenticated)
- by conssluserg-04.nifty.com with ESMTP id x7Q25aLQ023598
- for <linux-arm-kernel@lists.infradead.org>; Mon, 26 Aug 2019 11:05:37 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-04.nifty.com x7Q25aLQ023598
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1566785138;
- bh=Y6CSk1yG6UDaWDZc7YQfg16zRcI7iqnK0vjwzjH84CE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=HlDVXApQJeqCASixrhojuW15nWeQKG/b7hMjdNZda/cmyuZxv+3t8UR0Ca6JpcyWP
- 9LCxrDSsal0l/bwFSN1/POqAIsyKHp9lrBRnGhkqGX0unc+w0vAQTdFPyLa2f8pVAx
- e4Kg/wFqgXUqqAE5S88ZYvoK4bt8cMHtT/QomTtqKxLvol6HE6z51sO2OSdFX/e5eK
- yjRfQCHxDe+12O+JuZOWS5G0X5mv4iqgEjB4NwStZvN20TU0h0gnlOzo/XNI5a00e2
- Fpor8TyphVLqrvSFkArvbCYf7XiAN7MZrk/5l15wOdIufExGAWeGpB1El0zTlpqBJp
- Vfi3CKBbLrf/Q==
-X-Nifty-SrcIP: [209.85.222.45]
-Received: by mail-ua1-f45.google.com with SMTP id g13so5203116uap.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 25 Aug 2019 19:05:37 -0700 (PDT)
-X-Gm-Message-State: APjAAAXC1jc7Xkp4r0ivM5re+X7jsPkZSgfh147MiVa0eeMRLdhY30S+
- 4K+Pr9Osoww9lpjRb2W7ButLAk2Hn6ZvcUy4HPE=
-X-Google-Smtp-Source: APXvYqxTTMLLHvl8ZQ3KknXXOxUMTC3Y3hppkNTfIGAtnJsgB3ydviER0RL9pfJ3r191gBIB66pQqdIW5M4t3FT5soQ=
-X-Received: by 2002:ab0:442:: with SMTP id 60mr1079956uav.109.1566785136210;
- Sun, 25 Aug 2019 19:05:36 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
- <20190506223334.1834-3-nicoleotsuka@gmail.com>
- <CAK7LNARacEorb38mVBw_V-Zvz-znWgBma1AP1-z_5B_xZU4ogg@mail.gmail.com>
- <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
- <20190825011025.GA23410@lst.de>
-In-Reply-To: <20190825011025.GA23410@lst.de>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Mon, 26 Aug 2019 11:05:00 +0900
-X-Gmail-Original-Message-ID: <CAK7LNAQb1ZHr=DiHLNeNRaQExMuXdDOV4sFghoGbco_Q=Qzb8g@mail.gmail.com>
-Message-ID: <CAK7LNAQb1ZHr=DiHLNeNRaQExMuXdDOV4sFghoGbco_Q=Qzb8g@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] dma-contiguous: Use fallback alloc_pages for
- single pages
-To: Christoph Hellwig <hch@lst.de>
+ id 1i24PF-0003t9-W2; Mon, 26 Aug 2019 02:06:55 +0000
+Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 3B3FA14C36B36;
+ Sun, 25 Aug 2019 19:06:47 -0700 (PDT)
+Date: Sun, 25 Aug 2019 19:06:43 -0700 (PDT)
+Message-Id: <20190825.190643.573913079872386152.davem@davemloft.net>
+To: maowenan@huawei.com
+Subject: Re: [PATCH v2 -next] net: mediatek: remove set but not used
+ variable 'status'
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20190826013118.22720-1-maowenan@huawei.com>
+References: <20190824.142158.1506174328495468705.davem@davemloft.net>
+ <20190826013118.22720-1-maowenan@huawei.com>
+X-Mailer: Mew version 6.8 on Emacs 26.1
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sun, 25 Aug 2019 19:06:47 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190825_190605_860250_06D9E6B3 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190825_190654_028611_21313061 
+X-CRM114-Status: UNSURE (   5.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.83 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,51 +64,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Max Filippov <jcmvbkbc@gmail.com>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>, Joerg Roedel <joro@8bytes.org>,
- Russell King <linux@armlinux.org.uk>, Thierry Reding <treding@nvidia.com>,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Nicolin Chen <nicoleotsuka@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Chris Zankel <chris@zankel.net>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, iommu@lists.linux-foundation.org,
- iamjoonsoo.kim@lge.com, Robin Murphy <robin.murphy@arm.com>
+Cc: nbd@openwrt.org, nelson.chang@mediatek.com, netdev@vger.kernel.org,
+ sean.wang@mediatek.com, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ john@phrozen.org, matthias.bgg@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Christoph,
+From: Mao Wenan <maowenan@huawei.com>
+Date: Mon, 26 Aug 2019 09:31:18 +0800
 
-On Sun, Aug 25, 2019 at 10:10 AM Christoph Hellwig <hch@lst.de> wrote:
->
-> On Fri, Aug 23, 2019 at 09:56:52PM +0900, Masahiro Yamada wrote:
-> > + linux-mmc, Ulf Hansson, Adrian Hunter,
-> >
-> >
-> > ADMA of SDHCI is not working
-> > since bd2e75633c8012fc8a7431c82fda66237133bf7e
->
-> Does it work for you with this commit:
->
-> http://git.infradead.org/users/hch/dma-mapping.git/commitdiff/90ae409f9eb3bcaf38688f9ec22375816053a08e
+> Fixes gcc '-Wunused-but-set-variable' warning:
+> drivers/net/ethernet/mediatek/mtk_eth_soc.c: In function mtk_handle_irq:
+> drivers/net/ethernet/mediatek/mtk_eth_soc.c:1951:6: warning: variable status set but not used [-Wunused-but-set-variable]
+> 
+> Fixes: 296c9120752b ("net: ethernet: mediatek: Add MT7628/88 SoC support")
+> Signed-off-by: Mao Wenan <maowenan@huawei.com>
 
+Are you sure the register isn't being read in order to make some
+hardware side effect happen?
 
-This is included in v5.3-rc6
-so I tested it.
+Have you tested this on effected hardware?
 
-No, it did not fix the problem.
-
-
---
-Best Regards
-Masahiro Yamada
+I'm not applying this without definitive answers to these questions.
 
 _______________________________________________
 linux-arm-kernel mailing list
