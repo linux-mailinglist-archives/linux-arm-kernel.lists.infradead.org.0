@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B1B59D953
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:40:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6571F9D965
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:45:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iG+7YfdToUC36cDClQiSJAglaPGUfu2A+VGDN1Cu+fg=; b=t8nk0n1tFIoEpP
-	QGAWNsrBfHlf/hQe8ETO6GyVIrpHdYo7B3mmYOTPTtyF8mo2cJ8Lxbn9k2mPrxEQrP1AiFfexkrLY
-	5zaN22FPy1ApAYA81xvLU75dB86iHV4EQgXWZdXQScYJ9e8nragy5ZvtQ1UCxdOqC2liYsGatsLfa
-	FiGEkrFAQWws00hTPpc8xQCVGFdoXE4vdrsNGjJ/jtTFisKKloziEMoW8CJJR9C9dy0MqG5Kou980
-	sInV5msETOyh7nJavgf36e1Pyh2WCfoZ8Ofn7xINhRNsKSIdUnUsr4nqkzYG5NIv80zwEFgQYC2DE
-	E8LASZzHFYspv9RZdrdw==;
+	List-Owner; bh=bxFJBsblbEw+70KvHTjSlD7frtI+htMo6jOh98D+bmE=; b=LROJD0N8zF2E5R
+	R00H1HssDBkiN1PVqiid+Jh4HK+KSVWveYRNfCXCf+VjmEV3WUW0vCDZlZWOHC603yA0w/kZ4Z85l
+	pae1rHjJhH6ojvDnDTw8kWL+ar/+Pvo808MNUi6B5zIqEsJ/i9op4ZA63wfcwjL8G5c+ffGMCd2x+
+	qCUNwlf0WFStGfnNLGnUrouCrD2ioIQaZ/uO4bd8u5B2sgI683ZxjR7ATXvY3dLcD8pLSjC/2JxOp
+	dI7J7p9jtP5GtUIJlLBZzgUPA1WtQh1rtH7BVp4SG8DfaPKzfEZTn39s4wWbnORSeHJheADCPWAku
+	vVGDOPUz1IoRDAnRbfsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2NfP-0004GV-5N; Mon, 26 Aug 2019 22:40:51 +0000
-Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
+	id 1i2NjS-0005jo-7z; Mon, 26 Aug 2019 22:45:02 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Nf0-0004Ar-O4; Mon, 26 Aug 2019 22:40:28 +0000
-Received: by mail-ot1-x341.google.com with SMTP id k18so16841434otr.3;
- Mon, 26 Aug 2019 15:40:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=DBtUgp09ILtLJx82v7/9S8a2bPggcu3SBMJmSRWkOWU=;
- b=q9KKwFI2spBd11DLhVGrnyWQ1itKWiJjNUpvQb1lcigAsiIa+zqXV82lgLULFRFzvY
- i/A5q06MVmhusfme0Ht+CbyPFuNMSHhcZYLY8I4jksbTYGpNIuOmgXorJ5KIDpiRD80d
- 0zhLZqPjdoEjoVBAOLrpQMonWWoSoNqSpUUzUZBAm8wRtSHcdYw60KPG3ITSWALzqpTQ
- CEKoNBmEfKEjOnz2LA4YCMClL8//qfoXF7ybS3TZRxu+x2+AyvdmlGx5GAmhZ5KV5AbL
- 1LCSqWmL7gpHIxS6ZfGtcF+QfQvgAeypN9W97aH7Zp97DKtIu6KdXpA6IwBYNPrKjm66
- Un+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=DBtUgp09ILtLJx82v7/9S8a2bPggcu3SBMJmSRWkOWU=;
- b=FseH80sIIbJIrcVqdspPN+Pp1VQaHvL4sIy/5qkwso7KGWMcVYap5LhstZL6npdySL
- sLSkya2ZobkZSScQ1Jrjzv2psJXnMdza8FdytlRQDoFqXU6zbLxhK0gzg3nZiksCKq3v
- o/5EH604mE0zgiJbxABlT7OJzAMDnIM6FUMD6DR22hw970/9WeL4YqRzlPB8tneB1L/J
- 2+oIKPqMSJURyAtbh759/yWGhaD1B5Qak7zd8aqnB2tm0JF7BXL+fyBOKLO8hdlePooy
- nIHD6oEcHpvtKlDtCaOENewSF//eAX0Q/kRGBFl9GIyeEKcPmbLZ5pE5WeTJqbaLWk7f
- 6OYw==
-X-Gm-Message-State: APjAAAVKhCG3AL2gdQG+g7Ynuf4lT8XQdoeNdQdL9aOynspvNJcte+92
- WPWP26UFkCpBHAdfTdwBMHRjYd5aHskM6bIdhcY=
-X-Google-Smtp-Source: APXvYqz1tIwsKtjQUBPVQFswHzIWhO2ha2uKXMrM0jPjl6uCPWwQ2ehNr4SbBIrZI0zPPR9GJOgG6djB2Nf93UqVxso=
-X-Received: by 2002:a05:6830:1e5a:: with SMTP id
- e26mr16553944otj.96.1566859224972; 
- Mon, 26 Aug 2019 15:40:24 -0700 (PDT)
+ id 1i2NjE-0005jD-RH; Mon, 26 Aug 2019 22:44:50 +0000
+Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
+ [66.24.58.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 186C020644;
+ Mon, 26 Aug 2019 22:44:46 +0000 (UTC)
+Date: Mon, 26 Aug 2019 18:44:44 -0400
+From: Steven Rostedt <rostedt@goodmis.org>
+To: Changbin Du <changbin.du@gmail.com>
+Subject: Re: [PATCH 01/11] ftrace: move recordmcount tools to scripts/ftrace
+Message-ID: <20190826184444.09334ae9@gandalf.local.home>
+In-Reply-To: <20190825132330.5015-2-changbin.du@gmail.com>
+References: <20190825132330.5015-1-changbin.du@gmail.com>
+ <20190825132330.5015-2-changbin.du@gmail.com>
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-References: <20190823090418.17148-1-narmstrong@baylibre.com>
- <20190823090418.17148-3-narmstrong@baylibre.com>
- <CAFBinCBy-VxfSMPMR0cEDuNg8=UOUVvWfkDi2Tp=QhBZka93aQ@mail.gmail.com>
- <f6e7e4de-e1b7-f642-07cb-fa029ff2a883@baylibre.com>
-In-Reply-To: <f6e7e4de-e1b7-f642-07cb-fa029ff2a883@baylibre.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Tue, 27 Aug 2019 00:40:14 +0200
-Message-ID: <CAFBinCDDygiafTwLgqB9BimqrmwxL2=HFQD8cX8CQL23AFZNXQ@mail.gmail.com>
-Subject: Re: [PATCH v2 2/5] soc: amlogic: Add support for Everything-Else
- power domains controller
-To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_154026_813306_637849F9 
-X-CRM114-Status: GOOD (  33.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_154448_929036_43A127E2 
+X-CRM114-Status: GOOD (  13.66  )
+X-Spam-Score: -4.8 (----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-4.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,241 +63,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-arch@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ linux-parisc@vger.kernel.org, linux-doc@vger.kernel.org,
+ linux-sh@vger.kernel.org, linux-s390@vger.kernel.org,
+ "John F . Reiser" <jreiser@BitWagon.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
+ Ingo Molnar <mingo@redhat.com>, Jessica Yu <jeyu@kernel.org>,
+ sparclinux@vger.kernel.org, linux-kbuild@vger.kernel.org,
+ Thomas Gleixner <tglx@linutronix.de>, linuxppc-dev@lists.ozlabs.org,
+ linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Matt Helsley <mhelsley@vmware.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
+On Sun, 25 Aug 2019 21:23:20 +0800
+Changbin Du <changbin.du@gmail.com> wrote:
 
-On Mon, Aug 26, 2019 at 10:10 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->
-> On 25/08/2019 23:10, Martin Blumenstingl wrote:
-> > Hi Neil,
-> >
-> > thank you for this update
-> > I haven't tried this on the 32-bit SoCs yet, but I am confident that I
-> > can make it work by "just" adding the SoC specific bits!
-> >
-> > On Fri, Aug 23, 2019 at 11:06 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
-> > [...]
-> >> +/* AO Offsets */
-> >> +
-> >> +#define AO_RTI_GEN_PWR_SLEEP0          (0x3a << 2)
-> >> +#define AO_RTI_GEN_PWR_ISO0            (0x3b << 2)
-> >> +
-> >> +/* HHI Offsets */
-> >> +
-> >> +#define HHI_MEM_PD_REG0                        (0x40 << 2)
-> >> +#define HHI_VPU_MEM_PD_REG0            (0x41 << 2)
-> >> +#define HHI_VPU_MEM_PD_REG1            (0x42 << 2)
-> >> +#define HHI_VPU_MEM_PD_REG3            (0x43 << 2)
-> >> +#define HHI_VPU_MEM_PD_REG4            (0x44 << 2)
-> >> +#define HHI_AUDIO_MEM_PD_REG0          (0x45 << 2)
-> >> +#define HHI_NANOQ_MEM_PD_REG0          (0x46 << 2)
-> >> +#define HHI_NANOQ_MEM_PD_REG1          (0x47 << 2)
-> >> +#define HHI_VPU_MEM_PD_REG2            (0x4d << 2)
-> > should we switch to the actual register offsets like we did in the
-> > clock drivers?
->
-> I find it simpler to refer to the numbers in the documentation...
-OK, I have no strong preference here
-for the 32-bit SoCs I will need to use the offsets based on the
-"amlogic,meson8b-pmu", "syscon" [0], so these will be magic anyways
+> Move ftrace tools to its own directory. We will add another tool later.
+> 
+> Cc: John F. Reiser <jreiser@BitWagon.com>
+> Signed-off-by: Changbin Du <changbin.du@gmail.com>
+> ---
+>  scripts/.gitignore                   |  1 -
+>  scripts/Makefile                     |  2 +-
+>  scripts/Makefile.build               | 10 +++++-----
+>  scripts/ftrace/.gitignore            |  4 ++++
+>  scripts/ftrace/Makefile              |  4 ++++
+>  scripts/{ => ftrace}/recordmcount.c  |  0
+>  scripts/{ => ftrace}/recordmcount.h  |  0
+>  scripts/{ => ftrace}/recordmcount.pl |  0
+>  8 files changed, 14 insertions(+), 7 deletions(-)
+>  create mode 100644 scripts/ftrace/.gitignore
+>  create mode 100644 scripts/ftrace/Makefile
+>  rename scripts/{ => ftrace}/recordmcount.c (100%)
+>  rename scripts/{ => ftrace}/recordmcount.h (100%)
+>  rename scripts/{ => ftrace}/recordmcount.pl (100%)
+>  mode change 100755 => 100644
 
-[...]
-> >> +#define VPU_HHI_MEMPD(__reg)                                   \
-> >> +       { __reg, BIT(8) },                                      \
-> >> +       { __reg, BIT(9) },                                      \
-> >> +       { __reg, BIT(10) },                                     \
-> >> +       { __reg, BIT(11) },                                     \
-> >> +       { __reg, BIT(12) },                                     \
-> >> +       { __reg, BIT(13) },                                     \
-> >> +       { __reg, BIT(14) },                                     \
-> >> +       { __reg, BIT(15) }
-> > the Amlogic implementation from buildroot-openlinux-A113-201901 (the
-> > latest one I have)
-> > kernel/aml-4.9/drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c
-> > uses:
-> > hd_set_reg_bits(P_HHI_MEM_PD_REG0, 0, 8, 8)
-> > that basically translates to: GENMASK(15, 8) (which means we could
-> > drop this macro)
-> >
-> > the datasheet also states: 15~8 [...] HDMI memory PD (as a single
-> > 8-bit wide register)
->
-> Yep, but the actual code setting the VPU power domain is in u-boot :
->
-> drivers/vpu/aml_vpu_power_init.c:
-> 108         for (i = 8; i < 16; i++) {
-> 109                 vpu_hiu_setb(HHI_MEM_PD_REG0, 0, i, 1);
-> 110                 udelay(5);
-> 111         }
->
-> the linux code is like never used here, my preference goes to the u-boot code
-> implementation.
-I see, let's keep your implementation then
+Note, we are in the process of merging recordmcount with objtool. It
+would be better to continue from that work.
 
-> >
-> > [...]
-> >> +static struct meson_ee_pwrc_domain_desc g12a_pwrc_domains[] = {
-> >> +       [PWRC_G12A_VPU_ID]  = VPU_PD("VPU", &g12a_pwrc_vpu, g12a_pwrc_mem_vpu,
-> >> +                                    pwrc_ee_get_power, 11, 2),
-> >> +       [PWRC_G12A_ETH_ID] = MEM_PD("ETH", g12a_pwrc_mem_eth),
-> >> +};
-> >> +
-> >> +static struct meson_ee_pwrc_domain_desc sm1_pwrc_domains[] = {
-> >> +       [PWRC_SM1_VPU_ID]  = VPU_PD("VPU", &sm1_pwrc_vpu, sm1_pwrc_mem_vpu,
-> >> +                                   pwrc_ee_get_power, 11, 2),
-> >> +       [PWRC_SM1_NNA_ID]  = TOP_PD("NNA", &sm1_pwrc_nna, sm1_pwrc_mem_nna,
-> >> +                                   pwrc_ee_get_power),
-> >> +       [PWRC_SM1_USB_ID]  = TOP_PD("USB", &sm1_pwrc_usb, sm1_pwrc_mem_usb,
-> >> +                                   pwrc_ee_get_power),
-> >> +       [PWRC_SM1_PCIE_ID] = TOP_PD("PCI", &sm1_pwrc_pci, sm1_pwrc_mem_pcie,
-> >> +                                   pwrc_ee_get_power),
-> >> +       [PWRC_SM1_GE2D_ID] = TOP_PD("GE2D", &sm1_pwrc_ge2d, sm1_pwrc_mem_ge2d,
-> >> +                                   pwrc_ee_get_power),
-> >> +       [PWRC_SM1_AUDIO_ID] = MEM_PD("AUDIO", sm1_pwrc_mem_audio),
-> >> +       [PWRC_SM1_ETH_ID] = MEM_PD("ETH", g12a_pwrc_mem_eth),
-> >> +};
-> > my impression: I find this hard to read as it merges the TOP and
-> > Memory PD domains from above, adding some seemingly random "11, 2" for
-> > the VPU PD as well as pwrc_ee_get_power for some of the power domains
-> > personally I like the way we describe clk_regmap because it's easy to
-> > read (even though it adds a bit of boilerplate). I'm not sure if we
-> > can make it work here, but this (not compile tested) is what I have in
-> > mind (I chose two random power domains):
-> >   [PWRC_SM1_VPU_ID]  = {
-> >     .name = "VPU",
-> >     .top_pd = SM1_EE_PD(8),
-> >     .mem_pds = {
-> >         VPU_MEMPD(HHI_VPU_MEM_PD_REG0),
-> >         VPU_MEMPD(HHI_VPU_MEM_PD_REG1),
-> >         VPU_MEMPD(HHI_VPU_MEM_PD_REG2),
-> >         VPU_MEMPD(HHI_VPU_MEM_PD_REG3),
-> >         { HHI_VPU_MEM_PD_REG4, GENMASK(1, 0) },
-> >         { HHI_VPU_MEM_PD_REG4, GENMASK(3, 2) },
-> >         { HHI_VPU_MEM_PD_REG4, GENMASK(5, 4) },
-> >         { HHI_VPU_MEM_PD_REG4, GENMASK(7, 6) },
-> >         { HHI_MEM_PD_REG0, GENMASK(15, 8) },
-> >     },
-> >     .num_mem_pds = 9,
-> >     .reset_names_count = 11,
-> >     .clk_names_count = 2,
-> >   },
-> >   [PWRC_SM1_ETH_ID] = {
-> >     .name = "ETH",
-> >     .mem_pds = { HHI_MEM_PD_REG0, GENMASK(3, 2) },
-> >     .num_mem_pds = 1,
-> >   },
-> > ...
-> >
-> > I'd like to get Kevin's feedback on this
-> > what you have right now is probably good enough for the initial
-> > version of this driver. I'm bringing this discussion up because we
-> > will add support for more SoCs to this driver (we migrate GX over to
-> > it and I want to add 32-bit SoC support, which probably means at least
-> > Meson8 - assuming they kept the power domains identical between
-> > Meson8/8b/8m2).
->
-> I find it more compact, but nothing is set in stone, you can refactor this as
-> will when adding meson8 support, no problems here.
-OK. if Kevin (or someone else) has feedback on this then I don't have
-to waste time if it turns out that it's not a great idea ;)
+ http://lkml.kernel.org/r/2767f55f4a5fbf30ba0635aed7a9c5ee92ac07dd.1563992889.git.mhelsley@vmware.com
 
-> >
-> > [...]
-> >> +struct meson_ee_pwrc_domain {
-> >> +       struct generic_pm_domain base;
-> >> +       bool enabled;
-> >> +       struct meson_ee_pwrc *pwrc;
-> >> +       struct meson_ee_pwrc_domain_desc desc;
-> >> +       struct clk_bulk_data *clks;
-> >> +       int num_clks;
-> >> +       struct reset_control *rstc;
-> >> +       int num_rstc;
-> >> +};
-> >> +
-> >> +struct meson_ee_pwrc {
-> >> +       struct regmap *regmap_ao;
-> >> +       struct regmap *regmap_hhi;
-> >> +       struct meson_ee_pwrc_domain *domains;
-> >> +       struct genpd_onecell_data xlate;
-> >> +};
-> > (my impressions on this: I was surprised to find more structs down
-> > here, I expected them to be together with the other structs further
-> > up)
->
-> These are the "live" structures, opposed to the static structures defining the
-> data and these are allocated and filled a probe time.
-I see, thanks for the explanation
+-- Steve
 
-> I dislike changing static global data at runtime, this is why I clearly separated both.
-I didn't mean to make them static - the thing that caught my eye was
-that some of the structs are defined at the top of the driver while
-these two are define much further down
-I am used to having all struct definitions in one place
+> 
+> diff --git a/scripts/.gitignore b/scripts/.gitignore
+> index 17f8cef88fa8..1b5b5d595d80 100644
+> --- a/scripts/.gitignore
+> +++ b/scripts/.gitignore
+> @@ -6,7 +6,6 @@ conmakehash
+>  kallsyms
+>  pnmtologo
+>  unifdef
+> -recordmcount
+>  sortextable
+>  asn1_compiler
+>  extract-cert
+> diff --git a/scripts/Makefile b/scripts/Makefile
+> index 16bcb8087899..d5992def49a8 100644
+> --- a/scripts/Makefile
+> +++ b/scripts/Makefile
+> @@ -14,7 +14,6 @@ hostprogs-$(CONFIG_BUILD_BIN2C)  += bin2c
+>  hostprogs-$(CONFIG_KALLSYMS)     += kallsyms
+>  hostprogs-$(CONFIG_LOGO)         += pnmtologo
+>  hostprogs-$(CONFIG_VT)           += conmakehash
+> -hostprogs-$(BUILD_C_RECORDMCOUNT) += recordmcount
+>  hostprogs-$(CONFIG_BUILDTIME_EXTABLE_SORT) += sortextable
+>  hostprogs-$(CONFIG_ASN1)	 += asn1_compiler
+>  hostprogs-$(CONFIG_MODULE_SIG)	 += sign-file
+> @@ -34,6 +33,7 @@ hostprogs-y += unifdef
+>  subdir-$(CONFIG_GCC_PLUGINS) += gcc-plugins
+>  subdir-$(CONFIG_MODVERSIONS) += genksyms
+>  subdir-$(CONFIG_SECURITY_SELINUX) += selinux
+> +subdir-$(CONFIG_FTRACE) += ftrace
+>  
+>  # Let clean descend into subdirs
+>  subdir-	+= basic dtc gdb kconfig mod package
+> diff --git a/scripts/Makefile.build b/scripts/Makefile.build
+> index 2f66ed388d1c..67558983c518 100644
+> --- a/scripts/Makefile.build
+> +++ b/scripts/Makefile.build
+> @@ -188,18 +188,18 @@ endif
+>  # files, including recordmcount.
+>  sub_cmd_record_mcount =					\
+>  	if [ $(@) != "scripts/mod/empty.o" ]; then	\
+> -		$(objtree)/scripts/recordmcount $(RECORDMCOUNT_FLAGS) "$(@)";	\
+> +		$(objtree)/scripts/ftrace/recordmcount $(RECORDMCOUNT_FLAGS) "$(@)"; \
+>  	fi;
+> -recordmcount_source := $(srctree)/scripts/recordmcount.c \
+> -		    $(srctree)/scripts/recordmcount.h
+> +recordmcount_source := $(srctree)/scripts/ftrace/recordmcount.c \
+> +		       $(srctree)/scripts/ftrace/recordmcount.h
+>  else
+> -sub_cmd_record_mcount = perl $(srctree)/scripts/recordmcount.pl "$(ARCH)" \
+> +sub_cmd_record_mcount = perl $(srctree)/scripts/ftrace/recordmcount.pl "$(ARCH)" \
+>  	"$(if $(CONFIG_CPU_BIG_ENDIAN),big,little)" \
+>  	"$(if $(CONFIG_64BIT),64,32)" \
+>  	"$(OBJDUMP)" "$(OBJCOPY)" "$(CC) $(KBUILD_CPPFLAGS) $(KBUILD_CFLAGS)" \
+>  	"$(LD) $(KBUILD_LDFLAGS)" "$(NM)" "$(RM)" "$(MV)" \
+>  	"$(if $(part-of-module),1,0)" "$(@)";
+> -recordmcount_source := $(srctree)/scripts/recordmcount.pl
+> +recordmcount_source := $(srctree)/scripts/ftrace/recordmcount.pl
+>  endif # BUILD_C_RECORDMCOUNT
+>  cmd_record_mcount = $(if $(findstring $(strip $(CC_FLAGS_FTRACE)),$(_c_flags)),	\
+>  	$(sub_cmd_record_mcount))
+> diff --git a/scripts/ftrace/.gitignore b/scripts/ftrace/.gitignore
+> new file mode 100644
+> index 000000000000..54d582c8faad
+> --- /dev/null
+> +++ b/scripts/ftrace/.gitignore
+> @@ -0,0 +1,4 @@
+> +#
+> +# Generated files
+> +#
+> +recordmcount
+> diff --git a/scripts/ftrace/Makefile b/scripts/ftrace/Makefile
+> new file mode 100644
+> index 000000000000..6797e51473e5
+> --- /dev/null
+> +++ b/scripts/ftrace/Makefile
+> @@ -0,0 +1,4 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +
+> +hostprogs-$(BUILD_C_RECORDMCOUNT) += recordmcount
+> +always         := $(hostprogs-y)
+> diff --git a/scripts/recordmcount.c b/scripts/ftrace/recordmcount.c
+> similarity index 100%
+> rename from scripts/recordmcount.c
+> rename to scripts/ftrace/recordmcount.c
+> diff --git a/scripts/recordmcount.h b/scripts/ftrace/recordmcount.h
+> similarity index 100%
+> rename from scripts/recordmcount.h
+> rename to scripts/ftrace/recordmcount.h
+> diff --git a/scripts/recordmcount.pl b/scripts/ftrace/recordmcount.pl
+> old mode 100755
+> new mode 100644
+> similarity index 100%
+> rename from scripts/recordmcount.pl
+> rename to scripts/ftrace/recordmcount.pl
 
-> >
-> >> +static bool pwrc_ee_get_power(struct meson_ee_pwrc_domain *pwrc_domain)
-> >> +{
-> >> +       u32 reg;
-> >> +
-> >> +       regmap_read(pwrc_domain->pwrc->regmap_ao,
-> >> +                   pwrc_domain->desc.top_pd->sleep_reg, &reg);
-> >> +
-> >> +       return (reg & pwrc_domain->desc.top_pd->sleep_mask);
-> > should this also check for top_pd->iso_* as well as mem_pd->*?
-> > if the top_pd part was optional we could even use the get_power
-> > callback for *all* power domains in this driver (right now audio and
-> > Ethernet don't have any get_power callback)
->
-> We could, but how should we handle if one unexpected bit is set ? No idea...
-hmm, I see
-if we need it for other power domains then we can still implement it,
-so it's good for now
-
-[...]
-> > bonus question: what about the video decoder power domains?
-> > here is an example from vdec_1_start
-> > (drivers/staging/media/meson/vdec/vdec_1.c):
-> >   /* Enable power for VDEC_1 */
-> >   regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
-> >                                    GEN_PWR_VDEC_1, 0);
-> >   usleep_range(10, 20);
-> >   [...]
-> >   /* enable VDEC Memories */
-> >   amvdec_write_dos(core, DOS_MEM_PD_VDEC, 0);
-> >   /* Remove VDEC1 Isolation */
-> >   regmap_write(core->regmap_ao, AO_RTI_GEN_PWR_ISO0, 0);
-> >
-> > (my point here is that it mixes video decoder "DOS" registers with
-> > AO_RTI_GEN_PWR registers)
-> > do we also want to add support for these "DOS" power domains to the
-> > meson-ee-pwrc driver?
-> > what about the AO_RTI_GEN_PWR part then - should we keep management
-> > for the video decoder power domain bits in AO_RTI_GEN_PWR as part of
-> > the video decoder driver?
->
-> I left the decoders power domains aside so we can discuss it later on,
-> we should expose multiple power domains, but the driver would need to
-> be changed to support multiple power domains. But will loose the ability
-> to enable/disable each domain at will unless it created a sub-device for
-> each decoder and attaches the domain to to each device and use runtime pm.
->
-> It's simpler to discuss it later on !
-OK - does this mean you and/or Maxime have "discuss decoder power
-domains" on your (long) TODO-list or do you want me to open this
-discussion after this driver is merged?
-
-
-Martin
-
-
-[0] https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/amlogic/pmu.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
