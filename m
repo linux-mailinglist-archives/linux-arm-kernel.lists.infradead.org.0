@@ -2,79 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86B949D583
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:09:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 56DAC9D589
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:10:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r7gdQYPcEPVZlCtOYwT6gK+KbvDtrooVTJUe4m+mpPQ=; b=B7ICkm/ZeqyFOt
-	jue5ZT1KxvHTU0votKlKfe+xi8W5D3mgvoH4rJxJVkiCU7qtX55EAkkFa4n1kzqRQSUx5if2Ig53F
-	s32SRbKdhLoPzxjhzs0amUwQoxWQ3lRrV/NuM4MCx2YrXwfCGCCEHnKJSx/IqdZt7t0vJQDXkpWua
-	+ejmurfvrcgpAYKnHJkRKyzmzwYhQYR22i8QHwF490Ztf8HxvoNX6Ag99GAdkUdCEM4OTJMTIPYTT
-	N7Yebep84ciMWNMt7G2IhMjXg/Uga+pld63UFxk3Scg880sP5Vug3EFME7tZl8UKhd+F8fl4QlSUl
-	DaQTmf8HEV49SFjsAuug==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=k4VOBeFG+PLt7Yj+QtEsrIPOSJLT4Mb+w/kaGE1rMa8=; b=ZuMBKDuBgoLRD3
+	hIWiC7cDaOycSBIF0uMRgb5MepWTJR/YFMGZCOKYTP5LlZA0/KxIgHIuuj0l0yvBD7AV1LEzi7S3K
+	xmPyzNdGhA3SpfnE+xlvelgHseV+MKk9XP7t6eRTweqEnCAE70SS2amR4fjJFi6+GBYpCpY30DSRb
+	iMZ8bG6nAKwG31jtoy7l/XEthM0k7TxrpDlSHNvVg2lo7ZlPW0Omb+l6vX4cvoaSQvZ6nT10ZYRxE
+	w/MpTLx/ZdQ1+dNadtfaRtpGP+OpAJbRb90FmkrGI+4qgelFJA67XcgLrlilzUQtvMRuZbYvYnlyS
+	5TOvqXGTXnEkLB9FmIrA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2JQk-0004wy-FK; Mon, 26 Aug 2019 18:09:27 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1i2JRq-0006Qh-Ow; Mon, 26 Aug 2019 18:10:34 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JQ5-0004jH-Gu
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:08:46 +0000
-Received: by mail-io1-xd42.google.com with SMTP id t3so39430760ioj.12
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 11:08:45 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3xah1lt3wlvEGCrDzsIKSHmElIRBV0MEzfEYCJTIRls=;
- b=bdQxsuUWSvNpsg0AIG13yaf3RhMlQzVC7EwbV348reACqNAzHdsJrHuxOo886AFHM6
- BAdMIcvJ7+d1LwlNyHYnQtmFCMfYzjDcfqLw+A1IWJe8l+z3Z3jtGGZTnEDVtlaE0pyh
- LYkP4vRYvhARifbGhDrmehnv5FgIhTdO0ZlPCsogbihy8z6GL+0uWLpVsLQb3CRuKvJN
- zQLI6glxaQEMdTv0ChHmh7NRpQOF0ddiM/9tL0Vt9RF+vzpOnEL+rt/+IjbMuqO3BF6N
- LKgEeyo4SlDaqEpZSwhI4+T67dXuW9xcUp7n6btaElxSG2m9ixUuyPUEKOEUi695r2XF
- poOg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3xah1lt3wlvEGCrDzsIKSHmElIRBV0MEzfEYCJTIRls=;
- b=rmRNY3CBH7huz0HXSSa876zSNRE+LUfM6z611dVJlheqHxkiBBMDg0xdSdyOuWFtd9
- Gv5f9fFvTW5FLRq0hfIG8y1PK+CHT2k3xwJbxecvEe46DHsbByAU2BUBFMM2Z0nXxhfK
- bpsIXPTu2vbDtcuSK30EjO+ogB+uCwKx2EmyiZKVh5cKlH/Jj5iBzj4nOvkYogDZkv7K
- Tmjs3vF8zw+Kfx0vmHhiDqsK7RYIjD527A2duBWd/fOXN2xZPb52nbqoPkK6n84nDyKG
- AwugZ9LWPnwb+mSeodXKS5vOg4fr8j9ciZjIX4UdRkki2TpfkgEhFxsIlp22GyWuybbK
- vTvw==
-X-Gm-Message-State: APjAAAVeiFjP8T7LlA3lfOci9Ee4jG4gJ1dJSQ/fh6f5ip8eOf7zu8GV
- iX8p4DiwuNehC2+lpFievv80uikY6JFuTD1uH0hu2NxND70=
-X-Google-Smtp-Source: APXvYqzY1l2S7dZb4q9PB6apMM06+uMptYaLxj2TPY4bAk6d/GzS5TYysGR1ZfRCTmGF0Wyx6Qt6C8fvkwK/idYfNfc=
-X-Received: by 2002:a5e:a802:: with SMTP id c2mr17047667ioa.263.1566842924484; 
- Mon, 26 Aug 2019 11:08:44 -0700 (PDT)
+ id 1i2JQA-0004lK-4H
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:08:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1566842921;
+ bh=gweS6sFBqw7a79B6BUPIuvNnAjFw784tgZTGVNSFG4M=;
+ h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
+ b=ccXD9KWdx8djHzwWHNhEQU9UbL3MLnu10LoFg9o+E4vpxF2DWC/U1mJ3uLgP9AIPj
+ 5m1t8qASpsQX/dJGOu/9DwSnuS0oXGuxzqX3ycGvBxmBMloEuIanN56To2UxfwdlJU
+ +Gxz7cJmVb3Zw/BBaU5j1B7ZX7eEYUfehlt7OpPw=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.106]) by mail.gmx.com (mrgmx001
+ [212.227.17.190]) with ESMTPSA (Nemesis) id 0MNIi1-1i9DJA0o5R-006zWi; Mon, 26
+ Aug 2019 20:08:41 +0200
+To: Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Avaneesh Kumar Dwivedi <akdwived@codeaurora.org>,
+ Andy Gross <agross@kernel.org>
+From: Stefan Wahren <wahrenst@gmx.net>
+Subject: qcom: build issue in Linux 5.3-rc6 with CONFIG_XEN=y
+Message-ID: <d0ab0e86-a409-10bf-24ff-8bb984055752@gmx.net>
+Date: Mon, 26 Aug 2019 20:08:40 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190731180131.8597-1-andrew.smirnov@gmail.com>
- <VI1PR04MB7023AE3910B261877892EEABEEA50@VI1PR04MB7023.eurprd04.prod.outlook.com>
- <20190824183108.GA14936@X250>
-In-Reply-To: <20190824183108.GA14936@X250>
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-Date: Mon, 26 Aug 2019 11:08:33 -0700
-Message-ID: <CAHQ1cqGMXEEpXC=sihO-h6oZ3XQc6+W4TpqBZA_1EW6GCiQMWw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: imx: Drop imx_anatop_init()
-To: Shawn Guo <shawnguo@kernel.org>
+Content-Language: en-US
+X-Provags-ID: V03:K1:BFzBuSg1yc+c4VxvUnTxlCAwvxmbHViiZ1BzmW2Wt24EhucwFgx
+ F0zBkvnMr4a9FnlNu1Fpb3XGfKKUWf7PIuG+vnjF1gW6KOzvxmE5w9WKY0RrRkOLy06DBzr
+ UUau1NiXf6KR3m+J37KmlRYbPMX0ZKOH1UY6CxNtM5zK1KxSiGvm+cVaha3WAl6ZVBst6Xe
+ jXmyAGDAvNy9rdNACJfpQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:0LHqDGeWPHw=:LMEPYeER0SocJjfPhu405R
+ lYwfvU+KmI7XR8SQfAD5aDNrR9pdTPQXr3+/Kd7kHUP55x++wbnBLZ4+sitnVdKYPf9V0UJOd
+ FGTjiM5mfUplp3vJI2pJj6wCocV3mgvlHcponAUEwavgXb7j1EStk7mlgGZxXtquSYhAogemc
+ VQxTWVoCqM7u6qgTKMbI2sqSqmB/X9eYcfOcbXShmaJbgb3ysF64HJT4nstIKE1ouXw/toX5k
+ HWln8rC9kX3vh3hdwgJvR/ZSOA0IB6IvUTP1s3q+i2Q216Y5c6PWBW9BxfDyl3gkqtiTVEpir
+ qiVRgC5Wt7qYVQiC0U/Bv4cHvWvigvaZLQJ+y9EqnmlBatk+xgbRZaDXESMAvGAK+ki2z6114
+ ZKch6mn2RH53g8pETGCBJuQkT0uJS0jZMsSN57HgIjcyC4DJxSOdALyDc1WJElauC5h23N2ae
+ 9bkPJOj3JAOOjYzyBnZGiZxECeBzf6/BAT+ev5QWaFAMLH6q4uzlnZGQZx9CNQJxPdG/RoNuB
+ rOqN28A48iPnazXG9E+VtXA3mYTe+1YJY9NiGGF9JkDQA/0CRexRZOIVKDxZwqz5OQRXxGZtq
+ d+iOX3dvn36S+k2qLxgg650KaxgZEVE35SDp8oCT8lrKAhwqduiLjncdu4YyJUak2i1Z0w60e
+ FZg0VfI3qXakmG41A8QMQrMu14HaK9qh1AtdVYcIV1BMbN9pDmrnHG/kmvLGfHiZowxE0ClFX
+ RfkYSTW6y9UzAblLH40cmJ6f/5HqT60J8cOtMYa6Fz1CDeC5o7zpo+pXjkdS6J+wR/uJ9QIsy
+ SiMAKzymjhCHo5z3CTYqmDqGGdNU/XrFo9biVSHvlZ7lndiiUOdVnvQ3EduzkpvYmP888evPd
+ BeCvMIZIXpsxcqSwBf7Fv4ckotsAUnC9mR4dqhBCfYS/Eymb7PW4ly9Fdlr57k0uvHGSWTlbq
+ +t6Kk9roM+M7AFg/cNB4tvqjLkm5QbBbAikjQizJlI9nQaL6tQLKA20IU2FhGwkV9OVtdBH5o
+ 5vUNGGQvC+oEvxieSnK0FDfLxeP0gXogdrrU1G4GKTT+KY2oPFQ3wR3Ebn/Z0J3dB4kngDjQS
+ sKX4VaRCcQ9F202I3e8zquqoQetS8nCvjcfKe4fTWxzwbYkc15aRxyMUewFQcfvqebb0A8o8z
+ AoJh8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_110845_694760_D08F9E40 
-X-CRM114-Status: GOOD (  14.00  )
+X-CRM114-CacheID: sfid-20190826_110850_587351_A464CA3D 
+X-CRM114-Status: UNSURE (   6.39  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
+ provider (wahrenst[at]gmx.net)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -94,60 +101,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peter Chen <peter.chen@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Leonard Crestez <leonard.crestez@nxp.com>,
- Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Aug 24, 2019 at 11:31 AM Shawn Guo <shawnguo@kernel.org> wrote:
->
-> On Thu, Aug 22, 2019 at 05:33:13PM +0000, Leonard Crestez wrote:
-> > On 31.07.2019 21:01, Andrey Smirnov wrote:
-> > > With commit b5bbe2235361 ("usb: phy: mxs: Disable external charger
-> > > detect in mxs_phy_hw_init()") in tree all of the necessary charger
-> > > setup is done by the USB PHY driver which covers all of the affected
-> > > i.MX6 SoCs.
-> > >
-> > > NOTE: Imx_anatop_init() was also called for i.MX7D, but looking at its
-> > > datasheet it appears to have a different USB PHY IP block, so
-> > > executing i.MX6 charger disable configuration seems unnecessary.
-> > >
-> > > -void __init imx_anatop_init(void)
-> > > -{
-> > > -   anatop = syscon_regmap_lookup_by_compatible("fsl,imx6q-anatop");
-> > > -   if (IS_ERR(anatop)) {
-> > > -           pr_err("%s: failed to find imx6q-anatop regmap!\n", __func__);
-> > > -           return;
-> > > -   }
-> >
-> > This patch breaks suspend on imx6 in linux-next because the "anatop"
-> > regmap is no longer initialized. This was found via bisect but
-> > no_console_suspend prints a helpful stack anyway:
-> >
-> > (regmap_read) from [<c01226e4>] (imx_anatop_enable_weak2p5+0x28/0x70)
-> > (imx_anatop_enable_weak2p5) from [<c0122744>]
-> > (imx_anatop_pre_suspend+0x18/0x64)
-> > (imx_anatop_pre_suspend) from [<c0124434>] (imx6q_pm_enter+0x60/0x16c)
-> > (imx6q_pm_enter) from [<c018c8a4>] (suspend_devices_and_enter+0x7d4/0xcbc)
-> > (suspend_devices_and_enter) from [<c018d544>] (pm_suspend+0x7b8/0x904)
-> > (pm_suspend) from [<c018b1b4>] (state_store+0x68/0xc8)
->
-> I dropped it from my branch for now.  Thanks for reporting!
->
-
-OK, it sounds like I can submit a v2 that only removes
-imx_anatop_usb_chrg_detect_disable() and keeps imx_anatop_init()
-intact.
-
-Thanks,
-Andrey Smirnov
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGksCgppIHRyaWVkIHRvIGNyb3NzIGNvbXBpbGUgYXJtL211bHRpX3Y3X2RlZmNvbmZpZyB3aXRo
+IENPTkZJR19YRU49eSB3aXRoIExpbnV4IDUuMy1yYzYgYW5kIGknbSBnZXR0aW5nIHRoaXM6CgrC
+oGRyaXZlcnMvZmlybXdhcmUvcWNvbV9zY20uYzogSW4gZnVuY3Rpb24g4oCYcWNvbV9zY21fYXNz
+aWduX21lbeKAmToKZHJpdmVycy9maXJtd2FyZS9xY29tX3NjbS5jOjQ2MDo0NzogZXJyb3I6IHBh
+c3NpbmcgYXJndW1lbnQgMyBvZiDigJhkbWFfYWxsb2NfY29oZXJlbnTigJkgZnJvbSBpbmNvbXBh
+dGlibGUgcG9pbnRlciB0eXBlIFstV2Vycm9yPWluY29tcGF0aWJsZS1wb2ludGVyLXR5cGVzXQog
+IHB0ciA9IGRtYV9hbGxvY19jb2hlcmVudChfX3NjbS0+ZGV2LCBwdHJfc3osICZwdHJfcGh5cywg
+R0ZQX0tFUk5FTCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgXgpJbiBmaWxlIGluY2x1ZGVkIGZyb20gZHJpdmVycy9maXJtd2FyZS9xY29tX3NjbS5jOjEy
+OjA6Ci4vaW5jbHVkZS9saW51eC9kbWEtbWFwcGluZy5oOjYzNjoyMTogbm90ZTogZXhwZWN0ZWQg
+4oCYZG1hX2FkZHJfdCAqIHtha2EgbG9uZyBsb25nIHVuc2lnbmVkIGludCAqfeKAmSBidXQgYXJn
+dW1lbnQgaXMgb2YgdHlwZSDigJhwaHlzX2FkZHJfdCAqIHtha2EgdW5zaWduZWQgaW50ICp94oCZ
+CiBzdGF0aWMgaW5saW5lIHZvaWQgKmRtYV9hbGxvY19jb2hlcmVudChzdHJ1Y3QgZGV2aWNlICpk
+ZXYsIHNpemVfdCBzaXplLAogICAgICAgICAgICAgICAgICAgICBefn5+fn5+fn5+fn5+fn5+fn4K
+Y2MxOiBzb21lIHdhcm5pbmdzIGJlaW5nIHRyZWF0ZWQgYXMgZXJyb3JzCnNjcmlwdHMvTWFrZWZp
+bGUuYnVpbGQ6MjgwOiBkaWUgUmVnZWwgZsO8ciBaaWVsIOKAnmRyaXZlcnMvZmlybXdhcmUvcWNv
+bV9zY20ub+KAnCBzY2hlaXRlcnRlCm1ha2VbMl06ICoqKiBbZHJpdmVycy9maXJtd2FyZS9xY29t
+X3NjbS5vXSBGZWhsZXIgMQpzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjQ5NzogZGllIFJlZ2VsIGbD
+vHIgWmllbCDigJ5kcml2ZXJzL2Zpcm13YXJl4oCcIHNjaGVpdGVydGUKCkx1Y2tpbHkgdGhlcmUg
+aXMgYWxyZWFkeSBhIHBhdGNoIHRvIGZpeCB0aGlzIGluIGxpbnV4LW5leHQ6CgpmaXJtd2FyZTog
+cWNvbV9zY206IFVzZSBwcm9wZXIgdHlwZXMgZm9yIGRtYSBtYXBwaW5ncwoKSSBob3BlIHNvbWVv
+bmUgY2FuIHRha2UgY2FyZSBvZiB0aGlzLgoKUmVnYXJkcwpTdGVmYW4KCgpfX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
+bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
+LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
