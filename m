@@ -2,61 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E43709CD97
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 12:49:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6792F9CDC1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 13:09:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:From:Date:
-	MIME-Version:Subject:To:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=38hKFikWdjBNmmEjJRE6elZ3CbejAH/e7+pGAfZctU4=; b=MqEvS8srSloyTewJl49R9F0PW
-	OES4bSlZRBcPJKoIkf0eVmDJ4CDhVA2oegdqkstpdqJvQEj/OnECHbdL7KTXLv2sX4l5v6AaSQu0b
-	42leiN7fi7oTkcC0yg1UQFp+p0EuYPDS0P6Vp9L1rqjfQvJLqdhjl3fV3/GKUdFDN20l1yB+NxFAJ
-	gZtGJkYCQt1oEqmIuaUtl0tikjnMljV+qr0AVyOQY+hEi2rdaUrukL2FdIt/06QQCIJr9t5eFLDbc
-	8vmGhJJKFHSeMoMgsVc+2gFQBEBpT1d8VRpD/Buz0rY6SVU7GOVI7vkP+chJdFEeFrA2NYuCBOn0n
-	dOXTG+A6g==;
+	 bh=Yc82l8Z8FpjkeZ1WNYHt3suv0Mq/ZkeBa4BV2Uvadkk=; b=lEF2g5Imrk3/ESrYLxUDD0v5z
+	IiorGsSBONIbGgsg2JlRh4PGLeiAU6zROIZSLlp5iHTt1CVoVNi8476k7I9YSN0fRtsJ3Nn6RfqDl
+	JEGiX0BsF3XxAFT0eGyRTZpxGRUEjt2DNue5q5bmW7GgzIBgA7fiMe4wCYlymCrWiDG59KOFyXwZR
+	VQrdfEj/VutOwOJdjy57IQJcdx+cl0kJ1S/5kwf5ATvR5pkqauta3QJFyU8LDDNcs4Ji9aMvsJuSX
+	WmWgqYL41GcPzw8tbhFfTi5xNHdNCG0OVAYtE12apxOq0F1rvIVdIIMlnzTDJQgYyufZUuFblr4dp
+	r/KDvKz4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2CZM-0004dc-OB; Mon, 26 Aug 2019 10:49:52 +0000
-Received: from inca-roads.misterjones.org ([213.251.177.50])
+	id 1i2Cry-0006LS-JR; Mon, 26 Aug 2019 11:09:06 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2CZE-0004cS-Rn
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 10:49:47 +0000
-Received: from www-data by cheepnis.misterjones.org with local (Exim 4.80)
- (envelope-from <maz@kernel.org>)
- id 1i2CZC-0001Hc-8T; Mon, 26 Aug 2019 12:49:42 +0200
-To: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH v2 2/2] ARM: exynos: Enable support for ARM architected
- timers
-X-PHP-Originating-Script: 0:main.inc
+ id 1i2Crs-0006KO-1q; Mon, 26 Aug 2019 11:09:01 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id E9BAEAF23;
+ Mon, 26 Aug 2019 11:08:55 +0000 (UTC)
+Message-ID: <4d8d18af22d6dcd122bc9b4d9c2bd49e8443c746.camel@suse.de>
+Subject: Re: [PATCH v2 10/11] arm64: edit zone_dma_bits to fine tune
+ dma-direct min mask
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Date: Mon, 26 Aug 2019 13:08:50 +0200
+In-Reply-To: <20190826070633.GB11331@lst.de>
+References: <20190820145821.27214-1-nsaenzjulienne@suse.de>
+ <20190820145821.27214-11-nsaenzjulienne@suse.de>
+ <20190826070633.GB11331@lst.de>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-Date: Mon, 26 Aug 2019 11:49:42 +0100
-From: Marc Zyngier <maz@kernel.org>
-In-Reply-To: <20190826103142.3477-4-m.szyprowski@samsung.com>
-References: <20190826103142.3477-1-m.szyprowski@samsung.com>
- <CGME20190826103203eucas1p2d67b0ef44758eb06252b340f7751701a@eucas1p2.samsung.com>
- <20190826103142.3477-4-m.szyprowski@samsung.com>
-Message-ID: <d286053b6f4b4783d0638dc2dbd5858e@www.loen.fr>
-X-Sender: maz@kernel.org
-User-Agent: Roundcube Webmail/0.7.2
-X-SA-Exim-Connect-IP: <locally generated>
-X-SA-Exim-Rcpt-To: m.szyprowski@samsung.com, linux-samsung-soc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, cw00.choi@samsung.com,
- b.zolnierkie@samsung.com, krzk@kernel.org
-X-SA-Exim-Mail-From: maz@kernel.org
-X-SA-Exim-Scanned: No (on cheepnis.misterjones.org);
- SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_034945_041684_73B4C9D9 
-X-CRM114-Status: UNSURE (   6.69  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190826_040900_245950_8FDA0AAF 
+X-CRM114-Status: GOOD (  11.52  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,33 +61,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chanwoo Choi <cw00.choi@samsung.com>, linux-samsung-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-arch@vger.kernel.org, devicetree@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, f.fainelli@gmail.com, will@kernel.org,
+ eric@anholt.net, marc.zyngier@arm.com, catalin.marinas@arm.com,
+ frowand.list@gmail.com, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ iommu@lists.linux-foundation.org, robh+dt@kernel.org, wahrenst@gmx.net,
+ mbrugger@suse.com, linux-riscv@lists.infradead.org, m.szyprowski@samsung.com,
+ Robin Murphy <robin.murphy@arm.com>, akpm@linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, phill@raspberryi.org
+Content-Type: multipart/mixed; boundary="===============2551133157420240432=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-08-26 11:31, Marek Szyprowski wrote:
-> ARM architected timer can be used together with Exynos MultiCore 
-> Timer
-> driver, so enable support for it. Support for ARM architected timers 
-> is
-> essential for enabling proper KVM support.
 
-How can you say that this is to "enable KVM support", while in the 
-previous
-patch, you set "arm,cpu-registers-not-fw-configured" which implies that 
-you're
-booting in secure mode with the timer's CP15 registers left to 
-undefined values?
+--===============2551133157420240432==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-RvTUUUche1DA67AZeVhb"
 
-         M.
--- 
-Jazz is not dead. It just smells funny...
+
+--=-RvTUUUche1DA67AZeVhb
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, 2019-08-26 at 09:06 +0200, Christoph Hellwig wrote:
+> On Tue, Aug 20, 2019 at 04:58:18PM +0200, Nicolas Saenz Julienne wrote:
+> > -	if (IS_ENABLED(CONFIG_ZONE_DMA))
+> > +	if (IS_ENABLED(CONFIG_ZONE_DMA)) {
+> >  		arm64_dma_phys_limit =3D max_zone_dma_phys();
+> > +		zone_dma_bits =3D ilog2((arm64_dma_phys_limit - 1) &
+> > GENMASK_ULL(31, 0)) + 1;
+>
+Hi Christoph,
+thanks for the rewiews.
+
+> This adds a way too long line.
+
+I know, I couldn't find a way to split the operation without making it even
+harder to read. I'll find a solution.
+
+> I also find the use of GENMASK_ULL
+> horribly obsfucating, but I know that opinion is't shared by everyone.
+
+Don't have any preference so I'll happily change it. Any suggestions? Using=
+ the
+explicit 0xffffffffULL seems hard to read, how about SZ_4GB - 1?
+
+
+--=-RvTUUUche1DA67AZeVhb
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1jvcIACgkQlfZmHno8
+x/6y/wf/XTe7dlASMoYApyVt+lL6chBcap2r7MVKOVhCbC1oJQb7UdRyW7MVDO6k
+gwdo2WmXqD3wUwhY5djX0adczLOJye1iGEdrrQfheRqm1rh07um3quT3TzgCSPat
+OuX+vHuNsUE+3GyI+0OoOF0tu/TzOKJjgs4H645cnbuCaXbQFbL94yBctsDTF5hc
+m4Bx+nksz99ddodUnw9CF4Ss5DPwkX23I3h7okwMMjvVuegIPUa9edppw3Za0Kby
+k8b9QGCiMsGcwyq3+uSXTCq4iIU8reLTfvpZmVZ9QugMn8TkjjIQFyWS0HrXt2pz
+r9iNomMe9w20W9Y9jS5Aj8bxByoK+Q==
+=nQ/V
+-----END PGP SIGNATURE-----
+
+--=-RvTUUUche1DA67AZeVhb--
+
+
+
+--===============2551133157420240432==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2551133157420240432==--
+
+
