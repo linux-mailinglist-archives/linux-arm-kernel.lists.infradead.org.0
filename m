@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8604E9D5D3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:29:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D40FB9D5DA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:31:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MJD3w2py/EkHINlWCykb/gwL9Zs7iaRIGVyHzkyAQ1s=; b=qAAydrm71eYN+G
-	ByEW/R0LCkmOAQdg2VKM9UUf+77MOw44g3dRme2pBTVyel48FtVtlTsd0DA+228XBzKPKzI5KwCO4
-	9FnvwPG26RhFaCCnvT89z75zXW/4dTzXpYzEgtBtv36r7WN6Tx7++BA+R0xbOPZjNwz5qWk6vS9Qu
-	lmoXT/qiT75xFvIDUOuZ6aJ9qZNSHRoZ+GToC1ZkoRGBtvjUegmo0kPAaXcPFkgq0vh1okZpdkkO7
-	0pYI82ZlmtC8LRsZZOFB5yiT65h+WG9rpEav0ouxrsbOtn6MTQKcpjerEvJjzcEQEqB5Y30jwiVWg
-	xyqVJw9DMO3oWFlsKKfA==;
+	List-Owner; bh=O6Q2Lt9yuRBZuuhxHobPdT7RH06ZynfupWeJ5RxdEQQ=; b=JlXBFHwsk0IYGq
+	4wVUPcBi9S0/RI3JBhh0LoG27cQ3YSezWzzFuyvyWqt3cH/QQSt8bPD2RFrOkGGqMEcZLTK5kWPGG
+	CwrOxTp9C1ZhYOajrh15NkOBgWZ93l3cgZ/T0S062zjVmeFJDglJ0Pj59Mn6itz2r7qowFQaRxgmr
+	nvioKdpCQkWA5xPUFpPagjUVJEHQ87oGpBehiQciujl7MJQhCAcFgFbI1JyvAho84IHj2R3/VbdhG
+	Qyf5qBvrYnTC3TqmbulqpB0gRRp8XFqTPruoDj33qSFZ4NDqz6OD5Txav49Ycs4R2TP6szFX+9ZWb
+	m/wyyS6u8Ic2HNKxQPjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Jjd-0003vT-KV; Mon, 26 Aug 2019 18:28:57 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1i2Jls-0005Tv-KS; Mon, 26 Aug 2019 18:31:16 +0000
+Received: from bhuna.collabora.co.uk ([46.235.227.227])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JjL-0003pT-Q7
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:28:41 +0000
+ id 1i2Jlf-0005TZ-5v
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:31:04 +0000
 Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
  (Authenticated sender: bbrezillon)
- by bhuna.collabora.co.uk (Postfix) with ESMTPSA id F28C92804E7;
- Mon, 26 Aug 2019 19:28:34 +0100 (BST)
-Date: Mon, 26 Aug 2019 20:28:31 +0200
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id 29AC0281888;
+ Mon, 26 Aug 2019 19:31:01 +0100 (BST)
+Date: Mon, 26 Aug 2019 20:30:58 +0200
 From: Boris Brezillon <boris.brezillon@collabora.com>
 To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 5/8] media: cedrus: Detect first slice of a frame
-Message-ID: <20190826202831.311c7c20@collabora.com>
-In-Reply-To: <20190822194500.2071-6-jernej.skrabec@siol.net>
+Subject: Re: [PATCH 2/8] videodev2.h: add V4L2_DEC_CMD_FLUSH
+Message-ID: <20190826203058.0b3ffece@collabora.com>
+In-Reply-To: <20190822194500.2071-3-jernej.skrabec@siol.net>
 References: <20190822194500.2071-1-jernej.skrabec@siol.net>
- <20190822194500.2071-6-jernej.skrabec@siol.net>
+ <20190822194500.2071-3-jernej.skrabec@siol.net>
 Organization: Collabora
 X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_112839_980180_3FBFD6FD 
-X-CRM114-Status: GOOD (  17.31  )
+X-CRM114-CacheID: sfid-20190826_113103_490766_A3D2A0E8 
+X-CRM114-Status: GOOD (  21.07  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -50,6 +50,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [46.235.227.227 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,55 +74,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jernej,
-
-On Thu, 22 Aug 2019 21:44:57 +0200
+On Thu, 22 Aug 2019 21:44:54 +0200
 Jernej Skrabec <jernej.skrabec@siol.net> wrote:
 
-> When codec supports multiple slices in one frame, VPU has to know when
-> first slice of each frame is being processed, presumably to correctly
-> clear/set data in auxiliary buffers.
+> From: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 > 
-> Add first_slice field to cedrus_run structure and set it according to
-> timestamps of capture and output buffers. If timestamps are different,
-> it's first slice and viceversa.
+> Add this new V4L2_DEC_CMD_FLUSH decoder command and document it.
 > 
+> Signed-off-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
 > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+
+Reviewed-by: Boris Brezillon <boris.brezillon@collabora.com>
+
 > ---
->  drivers/staging/media/sunxi/cedrus/cedrus.h     | 1 +
->  drivers/staging/media/sunxi/cedrus/cedrus_dec.c | 2 ++
->  2 files changed, 3 insertions(+)
+>  Documentation/media/uapi/v4l/vidioc-decoder-cmd.rst | 11 ++++++++++-
+>  Documentation/media/videodev2.h.rst.exceptions      |  1 +
+>  include/uapi/linux/videodev2.h                      |  1 +
+>  3 files changed, 12 insertions(+), 1 deletion(-)
 > 
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
-> index 2f017a651848..32cb38e541c6 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
-> @@ -70,6 +70,7 @@ struct cedrus_mpeg2_run {
->  struct cedrus_run {
->  	struct vb2_v4l2_buffer	*src;
->  	struct vb2_v4l2_buffer	*dst;
-> +	bool first_slice;
+> diff --git a/Documentation/media/uapi/v4l/vidioc-decoder-cmd.rst b/Documentation/media/uapi/v4l/vidioc-decoder-cmd.rst
+> index 57f0066f4cff..0bffef6058f7 100644
+> --- a/Documentation/media/uapi/v4l/vidioc-decoder-cmd.rst
+> +++ b/Documentation/media/uapi/v4l/vidioc-decoder-cmd.rst
+> @@ -208,7 +208,16 @@ introduced in Linux 3.3. They are, however, mandatory for stateful mem2mem decod
+>  	been started yet, the driver will return an ``EPERM`` error code. When
+>  	the decoder is already running, this command does nothing. No
+>  	flags are defined for this command.
+> -
+> +    * - ``V4L2_DEC_CMD_FLUSH``
+> +      - 4
+> +      - Flush any held capture buffers. Only valid for stateless decoders,
+> +        and only if ``V4L2_BUF_CAP_SUPPORTS_M2M_HOLD_CAPTURE_BUF`` was set.
+> +	This command is typically used when the application reached the
+> +	end of the stream and the last output buffer had the
+> +	``V4L2_BUF_FLAG_M2M_HOLD_CAPTURE_BUF`` flag set. This would prevent
+> +	dequeueing the last capture buffer containing the last decoded frame.
+> +	So this command can be used to explicitly flush that last decoded
+> +	frame.
 >  
->  	union {
->  		struct cedrus_h264_run	h264;
-> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> index 56ca4c9ad01c..d7b54accfe83 100644
-> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
-> @@ -31,6 +31,8 @@ void cedrus_device_run(void *priv)
+>  Return Value
+>  ============
+> diff --git a/Documentation/media/videodev2.h.rst.exceptions b/Documentation/media/videodev2.h.rst.exceptions
+> index adeb6b7a15cb..a79028e4d929 100644
+> --- a/Documentation/media/videodev2.h.rst.exceptions
+> +++ b/Documentation/media/videodev2.h.rst.exceptions
+> @@ -434,6 +434,7 @@ replace define V4L2_DEC_CMD_START decoder-cmds
+>  replace define V4L2_DEC_CMD_STOP decoder-cmds
+>  replace define V4L2_DEC_CMD_PAUSE decoder-cmds
+>  replace define V4L2_DEC_CMD_RESUME decoder-cmds
+> +replace define V4L2_DEC_CMD_FLUSH decoder-cmds
 >  
->  	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
->  	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
-> +	run.first_slice =
-> +		run.src->vb2_buf.timestamp != run.dst->vb2_buf.timestamp;
-
-Can't we use slice->first_mb_in_slice to determine if a slice is the
-first? I'd expect ->first_mb_in_slice to be 0 (unless we decide to
-support ASO).
-
+>  replace define V4L2_DEC_CMD_START_MUTE_AUDIO decoder-cmds
+>  replace define V4L2_DEC_CMD_PAUSE_TO_BLACK decoder-cmds
+> diff --git a/include/uapi/linux/videodev2.h b/include/uapi/linux/videodev2.h
+> index 4fa9f543742d..91a79e16089c 100644
+> --- a/include/uapi/linux/videodev2.h
+> +++ b/include/uapi/linux/videodev2.h
+> @@ -1978,6 +1978,7 @@ struct v4l2_encoder_cmd {
+>  #define V4L2_DEC_CMD_STOP        (1)
+>  #define V4L2_DEC_CMD_PAUSE       (2)
+>  #define V4L2_DEC_CMD_RESUME      (3)
+> +#define V4L2_DEC_CMD_FLUSH       (4)
 >  
->  	/* Apply request(s) controls if needed. */
->  	src_req = run.src->vb2_buf.req_obj.req;
+>  /* Flags for V4L2_DEC_CMD_START */
+>  #define V4L2_DEC_CMD_START_MUTE_AUDIO	(1 << 0)
 
 
 _______________________________________________
