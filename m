@@ -2,57 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31D099CEBD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 13:56:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13C389CEDC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 14:01:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=nVvQlNl5hGBDE63iZlbsK8jN/uJMM646psiAvECDt64=; b=fVZoaDKgEYWjFg
-	Fn3U8QP7LUXgE4VgNThADq4jW1lQZ/OMpbyypdDGNvyilNcV0x2nJ24ho4Z3Slehrw110JR6rkfhq
-	H8LGfMVf7MgGtj2yhsZuhWWTxmsLiky1K5UytEsurH+sREvSntSE5OSx7y5BYsBw0OS+jwq4Cs9DP
-	X9ZZj4GsnEn1ZWxxSqOSgn5el5ccn1xeGhURmvyqx+Ao6kaNA5PPxjxehKRT/zw4GEuQNk5IKgYw2
-	kWnZ/AdAd3aj6oLPTRjl38dNZs2zq1Zrry/0VuZFOXQVhwBLVeyq7RlcOYMCyVoWozVGA6CCwezLI
-	JiJ6Q9YqJqWbIRG5+bvg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=T2vmW72QatxKF21bUVmY6LTcyADcY8QtY/HDR/AJKLA=; b=LWLd0ZeShOMMQs
+	RRgYHl+ghCLZyA+skQ47bN3Oy2GCO3IGyQL6e6OuGOKcOIU92t+Vr4H1GvCo+Kj4vAadganj1u3VD
+	1qzvIzmgqJlL5tTwSneOEqhkwDnn6s5Gy6X2HTYJuU4Z30b1/HKSKXNiJkwtkxPCS+xQuJQPUdqrP
+	qIYDJ7ZCRBgF8isO0Jq0hA5LfxuahMV6w0XRWXrVHShv4sgwzaqAN89AKcSb2rxEGdqVnT2htPUuX
+	9rKiB0rkJiRi7h94T/vaXdQPYnShv3hoZBIacVuAPsglpwF+0x7RFfvftkxgeUfYONiIeQRVzoIzR
+	JrooaOhKMWX94O1CDseA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2DcH-00023c-Le; Mon, 26 Aug 2019 11:56:57 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1i2DgJ-0006G0-Ld; Mon, 26 Aug 2019 12:01:07 +0000
+Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2DcA-00022D-4G
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 11:56:52 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 038A03A17AC74FA5FB94;
- Mon, 26 Aug 2019 19:56:47 +0800 (CST)
-Received: from localhost.localdomain.localdomain (10.175.113.25) by
- DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
- 14.3.439.0; Mon, 26 Aug 2019 19:56:38 +0800
-From: Wei Yongjun <weiyongjun1@huawei.com>
-To: Adrian Hunter <adrian.hunter@intel.com>, Ulf Hansson
- <ulf.hansson@linaro.org>, Joel Stanley <joel@jms.id.au>, Andrew Jeffery
- <andrew@aj.id.au>
-Subject: [PATCH -next] mmc: aspeed: Fix return value check in
- aspeed_sdc_probe()
-Date: Mon, 26 Aug 2019 12:00:13 +0000
-Message-ID: <20190826120013.183435-1-weiyongjun1@huawei.com>
-X-Mailer: git-send-email 2.20.1
+ id 1i2Dew-0003XM-61
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 11:59:44 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id DEB47D7E57;
+ Mon, 26 Aug 2019 13:59:35 +0200 (CEST)
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
+ with ESMTP id 55msylzmP3Vl; Mon, 26 Aug 2019 13:59:29 +0200 (CEST)
+Received: from localhost (localhost [127.0.0.1])
+ by zimbra.v3.sk (Postfix) with ESMTP id 62D99D7E55;
+ Mon, 26 Aug 2019 13:59:29 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at zimbra.v3.sk
+Received: from shell.v3.sk ([127.0.0.1])
+ by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
+ with ESMTP id xuimRokRPtg9; Mon, 26 Aug 2019 13:59:28 +0200 (CEST)
+Received: from belphegor (nat-pool-brq-t.redhat.com [213.175.37.10])
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 368ECD7E54;
+ Mon, 26 Aug 2019 13:59:28 +0200 (CEST)
+Message-ID: <481e832401c148baf222639f10f494b90dcd23c9.camel@v3.sk>
+Subject: Re: [PATCH v2 00/20] Initial support for Marvell MMP3 SoC
+From: Lubomir Rintel <lkundrak@v3.sk>
+To: Marc Zyngier <maz@kernel.org>, Olof Johansson <olof@lixom.net>
+Date: Mon, 26 Aug 2019 13:59:27 +0200
+In-Reply-To: <08a0e65e-4a80-f611-e36e-8e3f70fa8113@kernel.org>
+References: <20190822092643.593488-1-lkundrak@v3.sk>
+ <244fdc87-0fe5-be79-d9cd-2395d0ac3f57@kernel.org>
+ <424d2881edcaf7cedbfa5cbbf2e73aaff5355df3.camel@v3.sk>
+ <08a0e65e-4a80-f611-e36e-8e3f70fa8113@kernel.org>
+User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
 MIME-Version: 1.0
-X-Originating-IP: [10.175.113.25]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_045650_319743_3CB22FAB 
-X-CRM114-Status: GOOD (  10.84  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190826_045942_396672_C7120D99 
+X-CRM114-Status: GOOD (  22.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,42 +72,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-mmc@vger.kernel.org, kernel-janitors@vger.kernel.org,
- Wei Yongjun <weiyongjun1@huawei.com>, linux-aspeed@lists.ozlabs.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
+ linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Rob Herring <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case of error, the function of_platform_device_create() returns
-NULL pointer not ERR_PTR(). The IS_ERR() test in the return value
-check should be replaced with NULL test.
+On Fri, 2019-08-23 at 10:42 +0100, Marc Zyngier wrote:
+> On 23/08/2019 08:21, Lubomir Rintel wrote:
+> > On Thu, 2019-08-22 at 11:31 +0100, Marc Zyngier wrote:
+> > > On 22/08/2019 10:26, Lubomir Rintel wrote:
+> > > > Hi, 
+> > > > 
+> > > > this is a second spin of a patch set that adds support for the Marvell
+> > > > MMP3 processor. MMP3 is used in OLPC XO-4 laptops, Panasonic Toughpad
+> > > > FZ-A1 tablet and Dell Wyse 3020 Tx0D thin clients. 
+> > > > 
+> > > > Compared to v1, there's a handful of fixes in response to reviews. Patch
+> > > > 02/20 is new. Details in individual patches.
+> > > >  
+> > > > Apart from the adjustments in mach-mmp/, the patch makes necessary 
+> > > > changes to the irqchip driver and adds an USB2 PHY driver. The latter 
+> > > > has a dependency on the mach-mmp/ changes, so it can't be submitted 
+> > > > separately.
+> > > >  
+> > > > The patch set has been tested to work on Wyse Tx0D and not ruin MMP2 
+> > > > support on XO-1.75. 
+> > > 
+> > > How do you want this series to be merged? I'm happy to take the irqchip
+> > > related patches as well as the corresponding DT change (once reviewed)
+> > > through my tree.
+> > 
+> > I was hoping for the Arm SoC tree, because there are some dependencies
+> > (MMP3 USB PHY depends on MMP3 SoC).
+> > 
+> > That said, the irqchip patches are rather independent and the only
+> > downside of them going in via a different tree will be that the other
+> > tree that will lack them won't boot on MMP3 (things will compile
+> > though). I don't know if that's okay. What's typically done in cases
+> > like these?
+> 
+> I usually take the irqchip patches that can be built standalone (without
+> dependency on header files, for example). If you want them to go via
+> another tree, stick my
+> 
+> 	Acked-by: Marc Zyngier <maz@kernel.org>
+> 
+> on patches #6 through #9.
 
-Fixes: 09eed7fffd33 ("mmc: Add support for the ASPEED SD controller")
-Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
----
- drivers/mmc/host/sdhci-of-aspeed.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+Actually, please go ahead and pick the irqchip patches into your tree.
 
-diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-index 8bb095ca2fa9..d5acb5afc50f 100644
---- a/drivers/mmc/host/sdhci-of-aspeed.c
-+++ b/drivers/mmc/host/sdhci-of-aspeed.c
-@@ -261,9 +261,9 @@ static int aspeed_sdc_probe(struct platform_device *pdev)
- 		struct platform_device *cpdev;
- 
- 		cpdev = of_platform_device_create(child, NULL, &pdev->dev);
--		if (IS_ERR(cpdev)) {
-+		if (!cpdev) {
- 			of_node_put(child);
--			ret = PTR_ERR(cpdev);
-+			ret = -ENODEV;
- 			goto err_clk;
- 		}
- 	}
+The rest of the patch set may need a couple more spins, and it will be
+nice if it gets shorter.
 
-
+Thank you
+Lubo
 
 
 _______________________________________________
