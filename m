@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C91B29D842
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 23:29:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A3B9B9D8A6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 23:47:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=IHSd4v3vP5uwu835cxlFS8R4FVwdObFLZ1nT6ClHC8Q=; b=rNLuq0ydNo8ScwWLONdoFJGLjG
-	ag8O4lmOO0eU0DYY2CJPpG+dkh4G/csTvI9ADbGQUaV2Ek3ATzPlQHOJToYudzUPjErbewMGBx9uT
-	/et+ww+2kp91bnd2MCK1ksLkK8OIjMqxLFNH8lMF3bWjSx/yyFuLmZsPBcUlToKhruNbcCke3cwKi
-	2xD5P/1QRCfxwSM9IqkHaWf6kN8ihOgWs6l0IRPver6Y4CtbQiWP+LUZZ4msoPaLvYazucN24Aftp
-	3od1M32fDw8LcykFFXrRabr6E1UOZmgFtuzHcxUT0PrrbNUmJ8qyLWmAVq5R+95udzq2USkRbdLWT
-	pFeFjSHg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=jMrQmvxNw3ENPH8uYNzpSZzUI3j8eDplay7QZjiN4ZU=; b=iWmW/1MoU8ourM
+	lDHqrkkBFkJvYrXdRhVfNzWTdYtK7sCssB1y0Pb04tYRuT7jDB+fmyVcWk2S7ylc9JUSUFF8kwq7h
+	TDb92Cxz/wHuO+LYDu7el489GRfYkAi1aZp8SIF33FxbJDr/cmF7/VDd6UeM85ZfNcTWm92gDUWkH
+	MlLuaYafNWgiKV8Dv00Qb7IDYRJi3Tvpl7zvrL6gmttwKefDeZZv9tkjEan2L+fLF5o6j4I9OmYJV
+	l3d/K8RZ1zi8CnfrNYM/errnUmE6ZNLlxepWCh0xMEyVHvTKl91dw9Z7TMnB3H+CucJVJFxUiDvJ7
+	tHKlhi1i4ZhkhtTSqj+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2MYm-0003Cx-63; Mon, 26 Aug 2019 21:29:56 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1i2Mpn-00012Q-7p; Mon, 26 Aug 2019 21:47:31 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2MYT-0003BX-Ov
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 21:29:39 +0000
-Received: by mail-ed1-x541.google.com with SMTP id h8so28415142edv.7
+ id 1i2Mpa-00011p-PM
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 21:47:20 +0000
+Received: by mail-pl1-x644.google.com with SMTP id y8so10687407plr.12
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 14:29:37 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to;
- bh=irmPiXV6xMb94N1TWBMVdjC+CksYI3/837tqSXMotXI=;
- b=IA9lp4gQRx2gyfXmziKHHZV62IJhQFfo3kge7R70TpohrPCjPv7YE+m0odk8ubx6XZ
- T8/hjPQCSndGhCg4mTs2oY+QMBVRf6pzG2/MdXlYwANI6YD3OEz5cN19N+bsMwJsy8L+
- iccZKGeT5vRw50zWuXvTpih7FW3dPIDNZn8s4CCrxTHo3Rq4QRwd5v2d+OszIQuHmdpG
- 37y9qRIRCVI6/n7EQ0GxLvLHx5I8o9FYqm0rRAQRKTSJPMpebsQxltuLWMSV4oU6HvE2
- HmcskH5P4lXTXv1SMXmIMXoRX8eWVYeWZm46/rq4aIoFO07sLNH47vgZk7jW0DBX5taZ
- d1NA==
+ Mon, 26 Aug 2019 14:47:16 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=2rI7EyqN6fzwzpT/EaAV/hxOydzmgr1ECr1kzQwB91M=;
+ b=frkYrhZVwDwZYC9Tggp55X2bo6YlWujFgCcGoTCV81UplzeP7+HOYFqWYaSa/F2WRt
+ q9LpmN/f8qbqzGYf/xrwuJ1YTO/9MlOUVo4Hh9DOQ82W5lcHg09IqJX9GqLPC/hpCpgP
+ C3fPI5Ur6w3J5T1/vVCvqTo9ksy7oWWphmgwFZlaL/dqh+CRPkuE3fYAENXjWLDQXX5K
+ Kt8yz8kQGJMoBlWH5Go5E3c7CFPWVJomqGwDUPB2TGguYijtKvMu82bEqfGSp4Iwr62+
+ K7v8VoUgt/oWbLELNNn/reSJElHw8iBysy0HIqdjUylmUijhiCDO42dYF8dsfO+/wXse
+ 8H5A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to;
- bh=irmPiXV6xMb94N1TWBMVdjC+CksYI3/837tqSXMotXI=;
- b=tgyc0hsTNdOwBLYBM7vI3o1nQPUUKbJzXqwVboFjaFWiBjzGnkocOL7/OjY0PSvgTj
- e9oTMx+Fxg8gwFbzk8Qe5G7lrId449PGirtwCkG5r8PLxXsjW5tSeYoDtR/pdZH8X8h2
- HzXm6n/Grm+o43aT6jzpIjjJ3XXTBbtiGPDLZ+q5xodcV5pNKWqIwLv852AtkUVSfVQ5
- Q8AseHDEOIF95UJc6c19+en6hDxTgHeYr43NLZGdJ7VYWm/Cl2t2pS0ioWtNM9kA/8ct
- eoGGBKLwiHuPEscfhAY6zkrTk44cMe895rBUozgky1QHGszu5/a9Spp44BStPXM8jVbb
- si/Q==
-X-Gm-Message-State: APjAAAXDipJwKEaJu/qD/VsSZOLlR6I8jP89XTkUhX6ZcsXzZTwLB1lq
- TwZnHYKFux6zxR4xRET/agtRELSVjzkdGjmd9uWkKmEmU9E=
-X-Google-Smtp-Source: APXvYqyPUbPVLPRVGlxnyfKkABjtJwt/nypaoGxZPNMI7YKzSdzC8N2ue4PDBfXMa7J57EnWz0DzMTk4z4qERx/JCcw=
-X-Received: by 2002:a50:9ea1:: with SMTP id a30mr21320762edf.304.1566854976172; 
- Mon, 26 Aug 2019 14:29:36 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=2rI7EyqN6fzwzpT/EaAV/hxOydzmgr1ECr1kzQwB91M=;
+ b=Ge8pm4dIdbm327bYUqvlqJzJSGVmh04tXbWndrJkc+aNB3WKD0ikKk2EnPdpbbY4+B
+ 1ucXJO8J+CL/spzE2/Vp0Rj0UTsEzPBuKl/VHZr7Hg2cJZGdY+JvOn1mXvQTLLjU6h0I
+ Hf7fClRB98d2FVC+R3nEYysO95gxhdbfaeefBCSRY3ByUIv/Ak56CxGd1jmOq8mAjDVm
+ AtuxllG4tGTzs86Q8CPLKpCok2OK17wEvtY5tIIygZRfXGD2uYKVovVr5g87PmoWE9sT
+ Z5iysv6+xk/NyXh6jKGMl2l8ZWro9TMwERXNMXu5/NpkVozltwOqWGRMJ0rET4OSn/r9
+ hYlw==
+X-Gm-Message-State: APjAAAVeYelB21dzgTWqCmkFyeuQvG+hEaicfhqpJZUGEQAlwMU5g5YI
+ 7Toz4j8QDqJI6jJm1pbxRL18Sg==
+X-Google-Smtp-Source: APXvYqxWsdtoqr689w5ut3H66tHUBVgupsOHNNJkXJjITGN03VNoNVgcNDwJU7ApO2iGPn3g/eJHXg==
+X-Received: by 2002:a17:902:6b88:: with SMTP id
+ p8mr19468456plk.95.1566856036215; 
+ Mon, 26 Aug 2019 14:47:16 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id br18sm364767pjb.20.2019.08.26.14.47.15
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 26 Aug 2019 14:47:15 -0700 (PDT)
+Date: Mon, 26 Aug 2019 15:47:13 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH 1/8] coresight: etm4x: Fixes for ETM v4.4 architecture
+ updates.
+Message-ID: <20190826214713.GA24690@xps15>
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-2-mike.leach@linaro.org>
 MIME-Version: 1.0
-References: <20190826190056.27854-1-pasha.tatashin@soleen.com>
- <20190826190056.27854-6-pasha.tatashin@soleen.com>
-In-Reply-To: <20190826190056.27854-6-pasha.tatashin@soleen.com>
-From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Mon, 26 Aug 2019 17:29:25 -0400
-Message-ID: <CA+CK2bDXpoRV=1hD50E6FKJry=hRcyxkwbf4fq_PdFRPYCM3UQ@mail.gmail.com>
-Subject: Re: [PATCH v1 5/6] rqchip/gic-v3-its: move reset pending table
- outside of allocator
-To: Pavel Tatashin <pasha.tatashin@soleen.com>,
- James Morris <jmorris@namei.org>, 
- Sasha Levin <sashal@kernel.org>, kexec mailing list <kexec@lists.infradead.org>,
- LKML <linux-kernel@vger.kernel.org>, 
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Marc Zyngier <marc.zyngier@arm.com>, 
- James Morse <james.morse@arm.com>, Vladimir Murzin <vladimir.murzin@arm.com>, 
- Mark Rutland <mark.rutland@arm.com>
+Content-Disposition: inline
+In-Reply-To: <20190819205720.24457-2-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_142937_812341_07C3FA93 
-X-CRM114-Status: GOOD (  25.73  )
+X-CRM114-CacheID: sfid-20190826_144718_856927_3FC9F953 
+X-CRM114-Status: GOOD (  21.39  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,221 +100,157 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch requires a small fix (which I will do in later revisions):
+Hi Mike,
 
-diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-index 2ffdb3927549..c9faeac4b3a8 100644
---- a/drivers/irqchip/irq-gic-v3-its.c
-+++ b/drivers/irqchip/irq-gic-v3-its.c
-@@ -2182,7 +2182,8 @@ static void its_cpu_init_lpis(void)
-                paddr &= GENMASK_ULL(51, 16);
 
-                WARN_ON(!gic_check_reserved_range(paddr, LPI_PENDBASE_SZ));
--               its_free_pending_table(gic_data_rdist()->pend_page);
-+               if (efi_enabled(EFI_CONFIG_TABLES))
-+                       its_free_pending_table(gic_data_rdist()->pend_page);
-                gic_data_rdist()->pend_page = NULL;
+On Mon, Aug 19, 2019 at 09:57:13PM +0100, Mike Leach wrote:
+> ETMv4.4 adds in support for tracing secure EL2 (per arch 8.x updates).
 
-                goto out;
+What is the name of the ETMv4.4 document?  I can only find up to 4.2 on line.
 
-reserved-memory does not need to be freed. However, I am confused why
-it is needed to be freed in EFI case. Marc, can you please explain
-this to me?
-
-Thank you,
-Pasha
-
-On Mon, Aug 26, 2019 at 3:01 PM Pavel Tatashin
-<pasha.tatashin@soleen.com> wrote:
->
-> Allow to use reserved memory for interrupt controller tables.
->
-> Currently, it is not possible to do kexec reboots without possible memory
-> corruption using device tree and GICv3 interrupt controller.
->
-> GICv3 can be configured once during boot, and location of tables cannot
-> be changed thereafter.
->
-> The fix is to allow to reserve memory region in interrupt controller device
-> property, and use it to do allocations.
->
-> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
+> Patch accounts for this new capability.
+> 
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > ---
->  drivers/irqchip/irq-gic-v3-its.c | 82 ++++++++++++++++++++++++++++----
->  1 file changed, 72 insertions(+), 10 deletions(-)
->
-> diff --git a/drivers/irqchip/irq-gic-v3-its.c b/drivers/irqchip/irq-gic-v3-its.c
-> index d5f3508ca11f..aeda8760cc4e 100644
-> --- a/drivers/irqchip/irq-gic-v3-its.c
-> +++ b/drivers/irqchip/irq-gic-v3-its.c
-> @@ -47,6 +47,54 @@
->
->  static u32 lpi_id_bits;
->
-> +/*
-> + * Describes reserved memory region in interrupt controller.
-> + * The memory reserved: [pa_start, pa_end)
-> + */
-> +struct of_resv {
-> +       unsigned long pa_start;
-> +       unsigned long pa_end;
-> +};
-> +
-> +static struct page __init *get_of_page(struct of_resv *resv, unsigned long size)
-> +{
-> +       unsigned long pa = ALIGN(resv->pa_start, size);
-> +       unsigned long pa_next = pa + size;
-> +
-> +       /* Check if there is enough memory reserved to do another allocation */
-> +       if (pa_next > resv->pa_end)
-> +               return NULL;
-> +
-> +       resv->pa_start = pa_next;
-> +       memset(phys_to_virt(pa), 0, size);
-> +
-> +       return phys_to_page(pa);
-> +}
-> +
-> +/*
-> + * Memory controller might have a reserved memory region to be used for table
-> + * allocations. This is a requirement for kexec reboots.
-> + */
-> +static void __init its_of_mem_region(struct device_node *node,
-> +                                    struct of_resv **resv,
-> +                                    struct of_resv *resv_buf)
-> +{
-> +       struct device_node *np = of_parse_phandle(node, "memory-region", 0);
-> +       struct resource mem_res;
-> +
-> +       if (!np)
-> +               return;
-> +
-> +       if (of_address_to_resource(np, 0, &mem_res)) {
-> +               pr_warn("%pOF: address to resource failed\n", np);
-> +               return;
-> +       }
-> +
-> +       resv_buf->pa_start = mem_res.start;
-> +       resv_buf->pa_end = mem_res.start + resource_size(&mem_res);
-> +       *resv = resv_buf;
-> +}
-> +
->  /*
->   * We allocate memory for PROPBASE to cover 2 ^ lpi_id_bits LPIs to
->   * deal with (one configuration byte per interrupt). PENDBASE has to
-> @@ -1665,7 +1713,7 @@ static int gic_reserve_range(phys_addr_t addr, unsigned long size)
->         return 0;
+>  .../hwtracing/coresight/coresight-etm4x-sysfs.c   | 12 ++++++------
+>  drivers/hwtracing/coresight/coresight-etm4x.c     |  5 ++++-
+>  drivers/hwtracing/coresight/coresight-etm4x.h     | 15 +++++++++++----
+>  3 files changed, 21 insertions(+), 11 deletions(-)
+> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index 219c10eb752c..b6984be0c515 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -738,7 +738,7 @@ static ssize_t s_exlevel_vinst_show(struct device *dev,
+>  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+>  	struct etmv4_config *config = &drvdata->config;
+>  
+> -	val = BMVAL(config->vinst_ctrl, 16, 19);
+> +	val = (config->vinst_ctrl & ETM_EXLEVEL_S_VICTLR_MASK) >> 16;
+>  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
 >  }
->
-> -static int __init its_setup_lpi_prop_table(void)
-> +static int __init its_setup_lpi_prop_table(struct of_resv *resv)
+>  
+> @@ -754,8 +754,8 @@ static ssize_t s_exlevel_vinst_store(struct device *dev,
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> -	/* clear all EXLEVEL_S bits (bit[18] is never implemented) */
+> -	config->vinst_ctrl &= ~(BIT(16) | BIT(17) | BIT(19));
+> +	/* clear all EXLEVEL_S bits  */
+> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_S_VICTLR_MASK);
+>  	/* enable instruction tracing for corresponding exception level */
+>  	val &= drvdata->s_ex_level;
+>  	config->vinst_ctrl |= (val << 16);
+> @@ -773,7 +773,7 @@ static ssize_t ns_exlevel_vinst_show(struct device *dev,
+>  	struct etmv4_config *config = &drvdata->config;
+>  
+>  	/* EXLEVEL_NS, bits[23:20] */
+> -	val = BMVAL(config->vinst_ctrl, 20, 23);
+> +	val = (config->vinst_ctrl & ETM_EXLEVEL_NS_VICTLR_MASK) >> 20;
+>  	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+>  }
+>  
+> @@ -789,8 +789,8 @@ static ssize_t ns_exlevel_vinst_store(struct device *dev,
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> -	/* clear EXLEVEL_NS bits (bit[23] is never implemented */
+> -	config->vinst_ctrl &= ~(BIT(20) | BIT(21) | BIT(22));
+> +	/* clear EXLEVEL_NS bits  */
+> +	config->vinst_ctrl &= ~(ETM_EXLEVEL_NS_VICTLR_MASK);
+>  	/* enable instruction tracing for corresponding exception level */
+>  	val &= drvdata->ns_ex_level;
+>  	config->vinst_ctrl |= (val << 20);
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> index a128b5063f46..52b8876de157 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> @@ -629,6 +629,7 @@ static void etm4_init_arch_data(void *info)
+>  	 * TRCARCHMAJ, bits[11:8] architecture major versin number
+>  	 */
+>  	drvdata->arch = BMVAL(etmidr1, 4, 11);
+> +	drvdata->config.arch = drvdata->arch;
+>  
+>  	/* maximum size of resources */
+>  	etmidr2 = readl_relaxed(drvdata->base + TRCIDR2);
+> @@ -780,6 +781,7 @@ static u64 etm4_get_ns_access_type(struct etmv4_config *config)
+>  static u64 etm4_get_access_type(struct etmv4_config *config)
 >  {
->         if (gic_rdists->flags & RDIST_FLAGS_RD_TABLES_PREALLOCATED) {
->                 unsigned long pa;
-> @@ -1676,7 +1724,10 @@ static int __init its_setup_lpi_prop_table(void)
->                 lpi_id_bits = (val & GICR_PROPBASER_IDBITS_MASK) + 1;
->
->                 pa = val & GENMASK_ULL(51, 12);
-> -               va = memremap(pa, LPI_PROPBASE_SZ, MEMREMAP_WB);
-> +               if (resv)
-> +                       va = phys_to_virt(pa);
-> +               else
-> +                       va = memremap(pa, LPI_PROPBASE_SZ, MEMREMAP_WB);
->                 gic_rdists->prop_table_pa = pa;
->                 gic_rdists->prop_table_va = va;
->         } else {
-> @@ -1685,7 +1736,10 @@ static int __init its_setup_lpi_prop_table(void)
->                 lpi_id_bits = min_t(u32,
->                                     GICD_TYPER_ID_BITS(gic_rdists->gicd_typer),
->                                     ITS_MAX_LPI_NRBITS);
-> -               page = its_allocate_prop_table(GFP_NOWAIT);
-> +               if (resv)
-> +                       page = get_of_page(resv, LPI_PROPBASE_SZ);
-> +               else
-> +                       page = its_allocate_prop_table(GFP_NOWAIT);
->                 if (!page) {
->                         pr_err("Failed to allocate PROPBASE\n");
->                         return -ENOMEM;
-> @@ -2009,7 +2063,8 @@ static void its_free_pending_table(struct page *pt)
->
->  /*
->   * Booting with kdump and LPIs enabled is generally fine. Any other
-> - * case is wrong in the absence of firmware/EFI support.
-> + * case is wrong in the absence of firmware/EFI support or reserve-memory
-> + * in device tree for interrupt controller.
+>  	u64 access_type = etm4_get_ns_access_type(config);
+> +	u64 s_hyp = (config->arch & 0x0f) >= 0x4 ? ETM_EXLEVEL_S_HYP : 0;
+>  
+>  	/*
+>  	 * EXLEVEL_S, bits[11:8], don't trace anything happening
+> @@ -787,7 +789,8 @@ static u64 etm4_get_access_type(struct etmv4_config *config)
+>  	 */
+>  	access_type |= (ETM_EXLEVEL_S_APP	|
+>  			ETM_EXLEVEL_S_OS	|
+> -			ETM_EXLEVEL_S_HYP);
+> +			s_hyp			|
+> +			ETM_EXLEVEL_S_MON);
+>  
+>  	return access_type;
+>  }
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x.h b/drivers/hwtracing/coresight/coresight-etm4x.h
+> index 4523f10ddd0f..60bc2fb5159b 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x.h
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x.h
+> @@ -180,17 +180,22 @@
+>  /* PowerDown Control Register bits */
+>  #define TRCPDCR_PU			BIT(3)
+>  
+> -/* secure state access levels */
+> +/* secure state access levels - TRCACATRn */
+>  #define ETM_EXLEVEL_S_APP		BIT(8)
+>  #define ETM_EXLEVEL_S_OS		BIT(9)
+> -#define ETM_EXLEVEL_S_NA		BIT(10)
+> -#define ETM_EXLEVEL_S_HYP		BIT(11)
+> -/* non-secure state access levels */
+> +#define ETM_EXLEVEL_S_HYP		BIT(10)
+> +#define ETM_EXLEVEL_S_MON		BIT(11)
+> +/* non-secure state access levels - TRCACATRn */
+>  #define ETM_EXLEVEL_NS_APP		BIT(12)
+>  #define ETM_EXLEVEL_NS_OS		BIT(13)
+>  #define ETM_EXLEVEL_NS_HYP		BIT(14)
+>  #define ETM_EXLEVEL_NS_NA		BIT(15)
+>  
+> +/* secure / non secure masks - TRCVICTLR, IDR3 */
+> +#define ETM_EXLEVEL_S_VICTLR_MASK	GENMASK(19, 16)
+> +/* NS MON (EL3) mode never implemented */
+> +#define ETM_EXLEVEL_NS_VICTLR_MASK	GENMASK(22, 20)
+
+It is hard to say without documentation but shouldn't this be GENMASK(23, 20)?  
+
+> +
+>  /**
+>   * struct etmv4_config - configuration information related to an ETMv4
+>   * @mode:	Controls various modes supported by this ETM.
+> @@ -237,6 +242,7 @@
+>   * @vmid_mask0:	VM ID comparator mask for comparator 0-3.
+>   * @vmid_mask1:	VM ID comparator mask for comparator 4-7.
+>   * @ext_inp:	External input selection.
+> + * @arch:	ETM architecture version (for arch dependent config).
 >   */
->  static bool enabled_lpis_allowed(void)
->  {
-> @@ -2023,7 +2078,7 @@ static bool enabled_lpis_allowed(void)
->         return gic_check_reserved_range(addr, LPI_PROPBASE_SZ);
->  }
->
-> -static int __init allocate_lpi_tables(void)
-> +static int __init allocate_lpi_tables(struct of_resv *resv)
->  {
->         u64 val;
->         int err, cpu;
-> @@ -2039,7 +2094,7 @@ static int __init allocate_lpi_tables(void)
->                 pr_info("GICv3: Using preallocated redistributor tables\n");
->         }
->
-> -       err = its_setup_lpi_prop_table();
-> +       err = its_setup_lpi_prop_table(resv);
->         if (err)
->                 return err;
->
-> @@ -2051,7 +2106,10 @@ static int __init allocate_lpi_tables(void)
->         for_each_possible_cpu(cpu) {
->                 struct page *pend_page;
->
-> -               pend_page = its_allocate_pending_table(GFP_NOWAIT);
-> +               if (resv)
-> +                       pend_page = get_of_page(resv, LPI_PENDBASE_SZ);
-> +               else
-> +                       pend_page = its_allocate_pending_table(GFP_NOWAIT);
->                 if (!pend_page) {
->                         pr_err("Failed to allocate PENDBASE for CPU%d\n", cpu);
->                         return -ENOMEM;
-> @@ -3957,16 +4015,20 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
->                     struct irq_domain *parent_domain)
->  {
->         struct device_node *of_node;
-> +       struct of_resv resv_buf;
-> +       struct of_resv *resv = NULL;
->         struct its_node *its;
->         bool has_v4 = false;
->         int err;
->
->         its_parent = parent_domain;
->         of_node = to_of_node(handle);
-> -       if (of_node)
-> +       if (of_node) {
->                 its_of_probe(of_node);
-> -       else
-> +               its_of_mem_region(of_node, &resv, &resv_buf);
-> +       } else {
->                 its_acpi_probe();
-> +       }
->
->         if (list_empty(&its_nodes)) {
->                 pr_warn("ITS: No ITS available, not enabling LPIs\n");
-> @@ -3975,7 +4037,7 @@ int __init its_init(struct fwnode_handle *handle, struct rdists *rdists,
->
->         gic_rdists = rdists;
->
-> -       err = allocate_lpi_tables();
-> +       err = allocate_lpi_tables(resv);
->         if (err)
->                 return err;
->
-> --
-> 2.23.0
->
+>  struct etmv4_config {
+>  	u32				mode;
+> @@ -279,6 +285,7 @@ struct etmv4_config {
+>  	u32				vmid_mask0;
+>  	u32				vmid_mask1;
+>  	u32				ext_inp;
+> +	u8				arch;
+>  };
+>  
+>  /**
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
