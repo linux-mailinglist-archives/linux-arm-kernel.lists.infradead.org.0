@@ -2,52 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFB6D9D101
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:48:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC4499D152
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 16:06:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EsG5O1qCrJ1LunC2YQlbKXxiBrcMHHh2IbAF7UtuTK4=; b=UxX3ygSk5PFtoOrGVwN7SPwqV
-	Gf5sCquSK20yavHQbHoKbVdOL+hdf+efE61lC4q7nC07jKEjOGqVXNWNXRET3Arit0W4eTUHNfUsd
-	QHeE0GxGqNjKxJ/FoRd41c/5SEf83ini/oSk+aAJ22MgxcJLfmgox7twFTe6SS5fZRHgXR/Z/YLf/
-	MUVqOtbDlH9mdrLMOFqe9fa5cG6SWToNFx3P6tAYwyOJfQe0yGsJZpdLuip0j7d0v36Uub3PbpkKo
-	r5D7zfuLqASg7O0l5HYneYYt4S1xQ3lqP9+ECKbtYpzPI6R8pB5i9SPDtDzxoqNxNgNPaU6mk3t96
-	VJq3cH7kQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rqO+3/VjpMk0oLD/8EfNymuqj1ca1AjXOqYug8B5KVA=; b=sE7g+ydyLAal0k
+	sW9JKD2c4QvNpHILQN3HfMKqP8cz60Zyvn6vPwBI7OwFOAi9SMrpnuSFev3mZHelRIiB1sB3UuWDp
+	EYOyuDfrMY3a2+tXDsb4BNgYZbc0XifstJn1t8UQulzSdJ9xJql3vMqEkm0LYHLy/v6dj3cudtcJO
+	aASTc5P+UL8c4xENSW4dhmFOEANWYAmjfNfWfsyYpX49xD2fatwrs9M3on2/fnNEEVpIVUxk9rACZ
+	gVOUS0Fv3tEzHL7eBO/MwT7ImRdZcQgG0Sp3cEjmmK1U0OzmsOi465z8FoPf5tuZexhYgEfE19bH9
+	pOTk6dAoJ+C9/8/ohkiA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2FLn-0002GF-V5; Mon, 26 Aug 2019 13:48:04 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i2FdA-0000Ui-KZ; Mon, 26 Aug 2019 14:06:00 +0000
+Received: from hillosipuli.retiisi.org.uk ([2a01:4f9:c010:4572::81:2])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2FKl-0001pA-GF; Mon, 26 Aug 2019 13:47:01 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 4C2D6B038;
- Mon, 26 Aug 2019 13:46:57 +0000 (UTC)
-Message-ID: <027272c27398b950f207101a2c5dbc07a30a36bc.camel@suse.de>
-Subject: Re: [PATCH v2 01/11] asm-generic: add dma_zone_size
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Christoph Hellwig <hch@lst.de>
-Date: Mon, 26 Aug 2019 15:46:52 +0200
-In-Reply-To: <20190826070939.GD11331@lst.de>
-References: <20190820145821.27214-1-nsaenzjulienne@suse.de>
- <20190820145821.27214-2-nsaenzjulienne@suse.de>
- <20190826070939.GD11331@lst.de>
-User-Agent: Evolution 3.32.4 
+ id 1i2Fcx-0000U7-H3; Mon, 26 Aug 2019 14:05:49 +0000
+Received: from valkosipuli.localdomain (valkosipuli.retiisi.org.uk
+ [IPv6:2a01:4f9:c010:4572::80:2])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
+ key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
+ SHA256) (No client certificate requested)
+ by hillosipuli.retiisi.org.uk (Postfix) with ESMTPS id 8BCBD634C87;
+ Mon, 26 Aug 2019 17:05:36 +0300 (EEST)
+Received: from sailus by valkosipuli.localdomain with local (Exim 4.92)
+ (envelope-from <sakari.ailus@retiisi.org.uk>)
+ id 1i2Fcm-0000Q9-D9; Mon, 26 Aug 2019 17:05:36 +0300
+Date: Mon, 26 Aug 2019 17:05:36 +0300
+From: Sakari Ailus <sakari.ailus@iki.fi>
+To: Stu Hsieh <stu.hsieh@mediatek.com>
+Subject: Re: [PATCH v4 01/14] dt-bindings: Add binding for MT2712 MIPI-CSI2
+Message-ID: <20190826140536.GE826@valkosipuli.retiisi.org.uk>
+References: <1559643115-15124-1-git-send-email-stu.hsieh@mediatek.com>
+ <1559643115-15124-2-git-send-email-stu.hsieh@mediatek.com>
+ <1560134057.28527.5.camel@mtksdaap41>
+ <CAHD77H=vuPi2Rj4Mw-CQ2=UYX7YnS8w8FpUk0QTVxNUVLWKbJg@mail.gmail.com>
+ <1560153073.31854.6.camel@mtksdaap41>
+ <CAAFQd5DDE-L7mW8sTXVYOTLZ8yi3+X6Q3O73fJ61e1aUoeddgg@mail.gmail.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <CAAFQd5DDE-L7mW8sTXVYOTLZ8yi3+X6Q3O73fJ61e1aUoeddgg@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_064659_837847_3352C425 
-X-CRM114-Status: GOOD (  15.20  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190826_070547_925283_35C75E3E 
+X-CRM114-Status: GOOD (  23.14  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -60,103 +70,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-mm@kvack.org,
- linux-riscv@lists.infradead.org, will@kernel.org, m.szyprowski@samsung.com,
- linux-arch@vger.kernel.org, f.fainelli@gmail.com, frowand.list@gmail.com,
- devicetree@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- marc.zyngier@arm.com, robh+dt@kernel.org, linux-rpi-kernel@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, phill@raspberryi.org, mbrugger@suse.com,
- eric@anholt.net, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, wahrenst@gmx.net, akpm@linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>
-Content-Type: multipart/mixed; boundary="===============8947175381087683527=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tfiga@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ CK Hu <ck.hu@mediatek.com>, Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Jun 10, 2019 at 04:58:02PM +0900, Tomasz Figa wrote:
+> On Mon, Jun 10, 2019 at 4:51 PM CK Hu <ck.hu@mediatek.com> wrote:
+> >
+> > Hi, Tomasz:
+> >
+> > On Mon, 2019-06-10 at 12:32 +0900, Tomasz Figa wrote:
+> > > Hi CK, Stu,
+> > >
+> > > On Mon, Jun 10, 2019 at 11:34 AM CK Hu <ck.hu@mediatek.com> wrote:
+> > > >
+> > > > Hi, Stu:
+> > > >
+> > > > "mediatek,mt2712-mipicsi" and "mediatek,mt2712-mipicsi-common" have many
+> > > > common part with "mediatek,mt8183-seninf", and I've a discussion in [1],
+> > > > so I would like these two to be merged together.
+> > > >
+> > > > [1] https://patchwork.kernel.org/patch/10979131/
+> > > >
+> > >
+> > > Thanks CK for spotting this.
+> > >
+> > > I also noticed that the driver in fact handles two hardware blocks at
+> > > the same time - SenInf and CamSV. Unless the architecture is very
+> > > different from MT8183, I'd suggest splitting it.
+> > >
+> > > On a general note, the MT8183 SenInf driver has received several
+> > > rounds of review comments already, but I couldn't find any comments
+> > > posted for this one.
+> > >
+> > > Given the two aspects above and also based on my quick look at code
+> > > added by this series, I'd recommend adding MT2712 support on top of
+> > > the MT8183 series.
+> >
+> > In [1], "mediatek,mt8183-seninf" use one device to control multiple csi
+> > instance, so it duplicate many register definition. In [2], one
+> > "mediatek,mt2712-mipicsi" device control one csi instance, so there are
+> > multiple device and the register definition does not duplicate.
+> 
+> I guess we didn't catch that in the review yet. It should be fixed.
+> 
+> > You
+> > recommend adding MT2712 support on top of the MT8183 series, do you mean
+> > that "mediatek,mt2712-mipicsi" should use one device to control multiple
+> > csi instance and duplicate the register setting?
+> 
+> There are some aspects of MT8183 series that are done better than the
+> MT2712 series, but apparently there are also some better aspects in
+> MT2712. We should take the best aspects of both series. :)
 
---===============8947175381087683527==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-rvg1En4pB30QD7Cei8XS"
+Stu: Are the two devices similar enough or not; does this look like a
+feasible approach to you?
 
-
---=-rvg1En4pB30QD7Cei8XS
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
-
-On Mon, 2019-08-26 at 09:09 +0200, Christoph Hellwig wrote:
-> On Tue, Aug 20, 2019 at 04:58:09PM +0200, Nicolas Saenz Julienne wrote:
-> > Some architectures have platform specific DMA addressing limitations.
-> > This will allow for hardware description code to provide the constraint=
-s
-> > in a generic manner, so as for arch code to properly setup it's memory
-> > zones and DMA mask.
->=20
-> I know this just spreads the arm code, but I still kinda hate it.
-
-Rob's main concern was finding a way to pass the constraint from HW definit=
-ion
-to arch without widening fdt's architecture specific function surface. I'd =
-say
-it's fair to argue that having a generic mechanism makes sense as it'll now
-traverse multiple archs and subsystems.
-
-I get adding globals like this is not very appealing, yet I went with it as=
- it
-was the easier to integrate with arm's code. Any alternative suggestions?
-
-> MAX_DMA_ADDRESS is such an oddly defined concepts.  We have the mm
-> code that uses it to start allocating after the dma zones, but
-> I think that would better be done using a function returning
-> 1 << max(zone_dma_bits, 32) or so.  Then we have about a handful
-> of drivers using it that all seem rather bogus, and one of which
-> I think are usable on arm64.
-
-Is it safe to assume DMA limitations will always be a power of 2? I ask as =
-RPi4
-kinda isn't: ZONE_DMA is 0x3c000000 bytes big, I'm approximating the zone m=
-ask
-to 30 as [0x3c000000 0x3fffffff] isn't defined as memory so it's unlikely t=
-hat
-we=C2=B4ll encounter buffers there. But I don't know how it could affect mm
-initialization code.
-
-This also rules out 'zone_dma_bits' as a mechanism to pass ZONE_DMA's size =
-from
-HW definition code to arch's.
-
-
---=-rvg1En4pB30QD7Cei8XS
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1j4swACgkQlfZmHno8
-x/7+5Qf/RG+HHfwkIbvgTeNBR6PGQMv7ZNDSxgeVo0caYiQnN2w01vHWnEXBnsNK
-sj6p2ip+d5CQbSOMO2oVO7qS4+BoOjcdnFTNSLH0uN5coZj6sr8u5N/FFdeb2cI+
-6B9opO7apUCnnuwaBeV5Ocepk1gr4rNoRnrOWmFwnqoc9dBRBuKV4ejcEB43ySw6
-wxwOswOu17wPR3o6969vTlP29cTItzXnrjmlTn+lKyQpR6pOzC0IpU1tmO0KkfHM
-+U0Kypzbtb5Z9uCWvbS42mvT9oV3/El8iqrw1mPxbwRDgwDsBf2awc+fNmnQTsRK
-4pDSxPGJ5wST3O0WUjysQ9u+RJC+Cg==
-=y9Dx
------END PGP SIGNATURE-----
-
---=-rvg1En4pB30QD7Cei8XS--
-
-
-
---===============8947175381087683527==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Sakari Ailus
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8947175381087683527==--
-
-
