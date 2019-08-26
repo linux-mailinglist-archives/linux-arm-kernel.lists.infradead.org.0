@@ -2,94 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56DAC9D589
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:10:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8604E9D5D3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:29:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
-	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k4VOBeFG+PLt7Yj+QtEsrIPOSJLT4Mb+w/kaGE1rMa8=; b=ZuMBKDuBgoLRD3
-	hIWiC7cDaOycSBIF0uMRgb5MepWTJR/YFMGZCOKYTP5LlZA0/KxIgHIuuj0l0yvBD7AV1LEzi7S3K
-	xmPyzNdGhA3SpfnE+xlvelgHseV+MKk9XP7t6eRTweqEnCAE70SS2amR4fjJFi6+GBYpCpY30DSRb
-	iMZ8bG6nAKwG31jtoy7l/XEthM0k7TxrpDlSHNvVg2lo7ZlPW0Omb+l6vX4cvoaSQvZ6nT10ZYRxE
-	w/MpTLx/ZdQ1+dNadtfaRtpGP+OpAJbRb90FmkrGI+4qgelFJA67XcgLrlilzUQtvMRuZbYvYnlyS
-	5TOvqXGTXnEkLB9FmIrA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MJD3w2py/EkHINlWCykb/gwL9Zs7iaRIGVyHzkyAQ1s=; b=qAAydrm71eYN+G
+	ByEW/R0LCkmOAQdg2VKM9UUf+77MOw44g3dRme2pBTVyel48FtVtlTsd0DA+228XBzKPKzI5KwCO4
+	9FnvwPG26RhFaCCnvT89z75zXW/4dTzXpYzEgtBtv36r7WN6Tx7++BA+R0xbOPZjNwz5qWk6vS9Qu
+	lmoXT/qiT75xFvIDUOuZ6aJ9qZNSHRoZ+GToC1ZkoRGBtvjUegmo0kPAaXcPFkgq0vh1okZpdkkO7
+	0pYI82ZlmtC8LRsZZOFB5yiT65h+WG9rpEav0ouxrsbOtn6MTQKcpjerEvJjzcEQEqB5Y30jwiVWg
+	xyqVJw9DMO3oWFlsKKfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2JRq-0006Qh-Ow; Mon, 26 Aug 2019 18:10:34 +0000
-Received: from mout.gmx.net ([212.227.15.19])
+	id 1i2Jjd-0003vT-KV; Mon, 26 Aug 2019 18:28:57 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JQA-0004lK-4H
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:08:52 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1566842921;
- bh=gweS6sFBqw7a79B6BUPIuvNnAjFw784tgZTGVNSFG4M=;
- h=X-UI-Sender-Class:To:Cc:From:Subject:Date;
- b=ccXD9KWdx8djHzwWHNhEQU9UbL3MLnu10LoFg9o+E4vpxF2DWC/U1mJ3uLgP9AIPj
- 5m1t8qASpsQX/dJGOu/9DwSnuS0oXGuxzqX3ycGvBxmBMloEuIanN56To2UxfwdlJU
- +Gxz7cJmVb3Zw/BBaU5j1B7ZX7eEYUfehlt7OpPw=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.1.162] ([37.4.249.106]) by mail.gmx.com (mrgmx001
- [212.227.17.190]) with ESMTPSA (Nemesis) id 0MNIi1-1i9DJA0o5R-006zWi; Mon, 26
- Aug 2019 20:08:41 +0200
-To: Bjorn Andersson <bjorn.andersson@linaro.org>,
- Avaneesh Kumar Dwivedi <akdwived@codeaurora.org>,
- Andy Gross <agross@kernel.org>
-From: Stefan Wahren <wahrenst@gmx.net>
-Subject: qcom: build issue in Linux 5.3-rc6 with CONFIG_XEN=y
-Message-ID: <d0ab0e86-a409-10bf-24ff-8bb984055752@gmx.net>
-Date: Mon, 26 Aug 2019 20:08:40 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i2JjL-0003pT-Q7
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:28:41 +0000
+Received: from localhost (unknown [IPv6:2a01:e0a:2c:6930:5cf4:84a1:2763:fe0d])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ (Authenticated sender: bbrezillon)
+ by bhuna.collabora.co.uk (Postfix) with ESMTPSA id F28C92804E7;
+ Mon, 26 Aug 2019 19:28:34 +0100 (BST)
+Date: Mon, 26 Aug 2019 20:28:31 +0200
+From: Boris Brezillon <boris.brezillon@collabora.com>
+To: Jernej Skrabec <jernej.skrabec@siol.net>
+Subject: Re: [PATCH 5/8] media: cedrus: Detect first slice of a frame
+Message-ID: <20190826202831.311c7c20@collabora.com>
+In-Reply-To: <20190822194500.2071-6-jernej.skrabec@siol.net>
+References: <20190822194500.2071-1-jernej.skrabec@siol.net>
+ <20190822194500.2071-6-jernej.skrabec@siol.net>
+Organization: Collabora
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-redhat-linux-gnu)
 MIME-Version: 1.0
-Content-Language: en-US
-X-Provags-ID: V03:K1:BFzBuSg1yc+c4VxvUnTxlCAwvxmbHViiZ1BzmW2Wt24EhucwFgx
- F0zBkvnMr4a9FnlNu1Fpb3XGfKKUWf7PIuG+vnjF1gW6KOzvxmE5w9WKY0RrRkOLy06DBzr
- UUau1NiXf6KR3m+J37KmlRYbPMX0ZKOH1UY6CxNtM5zK1KxSiGvm+cVaha3WAl6ZVBst6Xe
- jXmyAGDAvNy9rdNACJfpQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:0LHqDGeWPHw=:LMEPYeER0SocJjfPhu405R
- lYwfvU+KmI7XR8SQfAD5aDNrR9pdTPQXr3+/Kd7kHUP55x++wbnBLZ4+sitnVdKYPf9V0UJOd
- FGTjiM5mfUplp3vJI2pJj6wCocV3mgvlHcponAUEwavgXb7j1EStk7mlgGZxXtquSYhAogemc
- VQxTWVoCqM7u6qgTKMbI2sqSqmB/X9eYcfOcbXShmaJbgb3ysF64HJT4nstIKE1ouXw/toX5k
- HWln8rC9kX3vh3hdwgJvR/ZSOA0IB6IvUTP1s3q+i2Q216Y5c6PWBW9BxfDyl3gkqtiTVEpir
- qiVRgC5Wt7qYVQiC0U/Bv4cHvWvigvaZLQJ+y9EqnmlBatk+xgbRZaDXESMAvGAK+ki2z6114
- ZKch6mn2RH53g8pETGCBJuQkT0uJS0jZMsSN57HgIjcyC4DJxSOdALyDc1WJElauC5h23N2ae
- 9bkPJOj3JAOOjYzyBnZGiZxECeBzf6/BAT+ev5QWaFAMLH6q4uzlnZGQZx9CNQJxPdG/RoNuB
- rOqN28A48iPnazXG9E+VtXA3mYTe+1YJY9NiGGF9JkDQA/0CRexRZOIVKDxZwqz5OQRXxGZtq
- d+iOX3dvn36S+k2qLxgg650KaxgZEVE35SDp8oCT8lrKAhwqduiLjncdu4YyJUak2i1Z0w60e
- FZg0VfI3qXakmG41A8QMQrMu14HaK9qh1AtdVYcIV1BMbN9pDmrnHG/kmvLGfHiZowxE0ClFX
- RfkYSTW6y9UzAblLH40cmJ6f/5HqT60J8cOtMYa6Fz1CDeC5o7zpo+pXjkdS6J+wR/uJ9QIsy
- SiMAKzymjhCHo5z3CTYqmDqGGdNU/XrFo9biVSHvlZ7lndiiUOdVnvQ3EduzkpvYmP888evPd
- BeCvMIZIXpsxcqSwBf7Fv4ckotsAUnC9mR4dqhBCfYS/Eymb7PW4ly9Fdlr57k0uvHGSWTlbq
- +t6Kk9roM+M7AFg/cNB4tvqjLkm5QbBbAikjQizJlI9nQaL6tQLKA20IU2FhGwkV9OVtdBH5o
- 5vUNGGQvC+oEvxieSnK0FDfLxeP0gXogdrrU1G4GKTT+KY2oPFQ3wR3Ebn/Z0J3dB4kngDjQS
- sKX4VaRCcQ9F202I3e8zquqoQetS8nCvjcfKe4fTWxzwbYkc15aRxyMUewFQcfvqebb0A8o8z
- AoJh8=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_110850_587351_A464CA3D 
-X-CRM114-Status: UNSURE (   6.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_112839_980180_3FBFD6FD 
+X-CRM114-Status: GOOD (  17.31  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.19 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wahrenst[at]gmx.net)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,34 +61,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devel@driverdev.osuosl.org, acourbot@chromium.org, pawel@osciak.com,
+ jonas@kwiboo.se, gregkh@linuxfoundation.org, wens@csie.org, mripard@kernel.org,
+ tfiga@chromium.org, paul.kocialkowski@bootlin.com, kyungmin.park@samsung.com,
+ linux-media@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ hverkuil-cisco@xs4all.nl, mchehab@kernel.org, ezequiel@collabora.com,
+ linux-kernel@vger.kernel.org, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgppIHRyaWVkIHRvIGNyb3NzIGNvbXBpbGUgYXJtL211bHRpX3Y3X2RlZmNvbmZpZyB3aXRo
-IENPTkZJR19YRU49eSB3aXRoIExpbnV4IDUuMy1yYzYgYW5kIGknbSBnZXR0aW5nIHRoaXM6CgrC
-oGRyaXZlcnMvZmlybXdhcmUvcWNvbV9zY20uYzogSW4gZnVuY3Rpb24g4oCYcWNvbV9zY21fYXNz
-aWduX21lbeKAmToKZHJpdmVycy9maXJtd2FyZS9xY29tX3NjbS5jOjQ2MDo0NzogZXJyb3I6IHBh
-c3NpbmcgYXJndW1lbnQgMyBvZiDigJhkbWFfYWxsb2NfY29oZXJlbnTigJkgZnJvbSBpbmNvbXBh
-dGlibGUgcG9pbnRlciB0eXBlIFstV2Vycm9yPWluY29tcGF0aWJsZS1wb2ludGVyLXR5cGVzXQog
-IHB0ciA9IGRtYV9hbGxvY19jb2hlcmVudChfX3NjbS0+ZGV2LCBwdHJfc3osICZwdHJfcGh5cywg
-R0ZQX0tFUk5FTCk7CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgXgpJbiBmaWxlIGluY2x1ZGVkIGZyb20gZHJpdmVycy9maXJtd2FyZS9xY29tX3NjbS5jOjEy
-OjA6Ci4vaW5jbHVkZS9saW51eC9kbWEtbWFwcGluZy5oOjYzNjoyMTogbm90ZTogZXhwZWN0ZWQg
-4oCYZG1hX2FkZHJfdCAqIHtha2EgbG9uZyBsb25nIHVuc2lnbmVkIGludCAqfeKAmSBidXQgYXJn
-dW1lbnQgaXMgb2YgdHlwZSDigJhwaHlzX2FkZHJfdCAqIHtha2EgdW5zaWduZWQgaW50ICp94oCZ
-CiBzdGF0aWMgaW5saW5lIHZvaWQgKmRtYV9hbGxvY19jb2hlcmVudChzdHJ1Y3QgZGV2aWNlICpk
-ZXYsIHNpemVfdCBzaXplLAogICAgICAgICAgICAgICAgICAgICBefn5+fn5+fn5+fn5+fn5+fn4K
-Y2MxOiBzb21lIHdhcm5pbmdzIGJlaW5nIHRyZWF0ZWQgYXMgZXJyb3JzCnNjcmlwdHMvTWFrZWZp
-bGUuYnVpbGQ6MjgwOiBkaWUgUmVnZWwgZsO8ciBaaWVsIOKAnmRyaXZlcnMvZmlybXdhcmUvcWNv
-bV9zY20ub+KAnCBzY2hlaXRlcnRlCm1ha2VbMl06ICoqKiBbZHJpdmVycy9maXJtd2FyZS9xY29t
-X3NjbS5vXSBGZWhsZXIgMQpzY3JpcHRzL01ha2VmaWxlLmJ1aWxkOjQ5NzogZGllIFJlZ2VsIGbD
-vHIgWmllbCDigJ5kcml2ZXJzL2Zpcm13YXJl4oCcIHNjaGVpdGVydGUKCkx1Y2tpbHkgdGhlcmUg
-aXMgYWxyZWFkeSBhIHBhdGNoIHRvIGZpeCB0aGlzIGluIGxpbnV4LW5leHQ6CgpmaXJtd2FyZTog
-cWNvbV9zY206IFVzZSBwcm9wZXIgdHlwZXMgZm9yIGRtYSBtYXBwaW5ncwoKSSBob3BlIHNvbWVv
-bmUgY2FuIHRha2UgY2FyZSBvZiB0aGlzLgoKUmVnYXJkcwpTdGVmYW4KCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi Jernej,
+
+On Thu, 22 Aug 2019 21:44:57 +0200
+Jernej Skrabec <jernej.skrabec@siol.net> wrote:
+
+> When codec supports multiple slices in one frame, VPU has to know when
+> first slice of each frame is being processed, presumably to correctly
+> clear/set data in auxiliary buffers.
+> 
+> Add first_slice field to cedrus_run structure and set it according to
+> timestamps of capture and output buffers. If timestamps are different,
+> it's first slice and viceversa.
+> 
+> Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> ---
+>  drivers/staging/media/sunxi/cedrus/cedrus.h     | 1 +
+>  drivers/staging/media/sunxi/cedrus/cedrus_dec.c | 2 ++
+>  2 files changed, 3 insertions(+)
+> 
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus.h b/drivers/staging/media/sunxi/cedrus/cedrus.h
+> index 2f017a651848..32cb38e541c6 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus.h
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus.h
+> @@ -70,6 +70,7 @@ struct cedrus_mpeg2_run {
+>  struct cedrus_run {
+>  	struct vb2_v4l2_buffer	*src;
+>  	struct vb2_v4l2_buffer	*dst;
+> +	bool first_slice;
+>  
+>  	union {
+>  		struct cedrus_h264_run	h264;
+> diff --git a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> index 56ca4c9ad01c..d7b54accfe83 100644
+> --- a/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> +++ b/drivers/staging/media/sunxi/cedrus/cedrus_dec.c
+> @@ -31,6 +31,8 @@ void cedrus_device_run(void *priv)
+>  
+>  	run.src = v4l2_m2m_next_src_buf(ctx->fh.m2m_ctx);
+>  	run.dst = v4l2_m2m_next_dst_buf(ctx->fh.m2m_ctx);
+> +	run.first_slice =
+> +		run.src->vb2_buf.timestamp != run.dst->vb2_buf.timestamp;
+
+Can't we use slice->first_mb_in_slice to determine if a slice is the
+first? I'd expect ->first_mb_in_slice to be 0 (unless we decide to
+support ASO).
+
+>  
+>  	/* Apply request(s) controls if needed. */
+>  	src_req = run.src->vb2_buf.req_obj.req;
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
