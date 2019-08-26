@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FC3F9D7A0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 22:47:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FBFC9D7A1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 22:47:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=m2+UesCdgeTXpJJ10bcIFjLrUaVfBYoX6jjYh1TupJ4=; b=RjZgl5ktj3tCoWwiN2VvBmz15E
-	IkYwNU15TbAxAEj6OtL8uGDH7CwPos39RRI/IXFWGI5mvdAaFkRH/679AKyZTfQJHHGaaXLxk8/3O
-	ymXrVLkU052tweD/Xgn+5lJUvJpEZ0TvS60Ny0cf9wU5PJd6gsJWyWCNB5LC29Skr50FNyClzL26N
-	yJIQHAM4a9A/qBzOFkv01DMPav45TgC7CyABshwZMBsSjdu+Q449rwQURqGQg2/41gkU9RlAMFRh6
-	4W/rLy5IvgYu8ek8scIiNaFtLztHLU22ccPmxMJF45d7u9SxRcP2wyeGetQovZzdd3VO0Vka0NkTp
-	J/EgHTeQ==;
+	bh=WhuH9SZn7KBGLN3q5xJwIsmJDfH7FYegXEEqEHb5Ajo=; b=H3wSQvELV7kegUyuyxCSfldQgM
+	bku7H6CnxCBdbn2bSosVXBWkdKqxpYWDxh+BFkiloATFO/qczlGIet2o7x7vTjocESPlnWJVC37ud
+	H3NfDRobZfm0G2qj2eksNN9jnX8g31anq1z6K30rKEveTAY2IpRrl9IR4+u9pd5OKerCDkJQjyMKf
+	BIQBgC0bBXPvqZqeTtBGS1k9vYPxWs1D3ynxOw1JNgaT2lNoPcJzXInlwHvYP3hqkwTLTsIeA6mKF
+	T4FNrWrQtQzBcYjd9SjItjql2yfXGBChkbmVj0/XwNmpYrr0pP9qn4777BXn5rlSUEoMu9J8JO7So
+	nRJBuPTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Lsw-0004sB-Rn; Mon, 26 Aug 2019 20:46:42 +0000
+	id 1i2LtX-0005SO-7Q; Mon, 26 Aug 2019 20:47:19 +0000
 Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Lr7-0002k2-UO
+ id 1i2Lr9-0002l9-3H
  for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 20:44:52 +0000
-Received: by mail-wr1-x443.google.com with SMTP id t16so16597868wra.6
+Received: by mail-wr1-x443.google.com with SMTP id z11so16613599wrt.4
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 13:44:49 -0700 (PDT)
+ Mon, 26 Aug 2019 13:44:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=SZT7LwQ4zVm6UpU1R0QaKTwCzMI6AEH9QZz6xkZt/VY=;
- b=SOVljHUU8N7UbYj/cOCqgEomKmgW/J60GyZGE8TlJHFlEQP3S8H5JbmKJRln4V8uTH
- 1wmjcjxn/otSmTYMMbHHqk9cpXO+iunSYYqnkeDJFnZrbagQOcDvaYvDvTSuCkGdobYH
- yPdEdjfRf6YWiDbWw1rcR4Xbnt+xZQDzSLOJ8+NCTjg8G6U1uArrZc6VWR7N2eiz78O8
- OLrmN2VVwjDWJN9bIz+7NwHo+JPHDfW9WOQ/cQXIiT4ozFmPGQjrtNYzUU9q0dF2RvPz
- fmrQAxhgz9q1XKjICu+OBZQTaq9AJl3SQ+jbS2GjyferSwq0iMEqajyG2HyIPnOs0OVR
- eKZA==
+ bh=KPovm7Wqq5ONpgYMzcWE7OA1yW+eFGPyRUwfUI0hUJ0=;
+ b=aU3cka8c1AQSVSN8MhAGKFkLRjd0H8XrOtbp/x2/hFD2uq4c0BbiB2QY0ghWInXBGC
+ 5rN5dd3SqgbzjbMCFWIpScJgDCd1YCPSTxuF2IjR4wG/Jz206l7856QTAku0xz2boFbH
+ xDPEUKf1OTt2vpZhFICPjDYkFy2HNrlf5SUg7lcV/G198a9Ci9hsaXQKgnK7yIxTvsZN
+ j8P6b6+xsyvAeMr2eSnIYCL/KatF+OXC6YnPNtBUoxOs8U1am6qjXfeiFV7HFp9kGj8V
+ Q83XJKPTKHtLU058eb1EFPriPhAR4ZZcPPT6/RTMTC4RwTmmWwAXCem9jCPuF6ZSxK9S
+ SOBg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=SZT7LwQ4zVm6UpU1R0QaKTwCzMI6AEH9QZz6xkZt/VY=;
- b=s9HxbLU+T+wmCFuLKwyLBIqS09OECaPFMHUvsSns9Ldoi1AIx8RIYQgQDzI99G84Mk
- RK2EDHQmvjmm5ln7+YBPhReHUvSfUVy/TFdkF0sKgVp+Cq2bBJfqAHgs91BVhfxzBTll
- jb37J07vjSe5uF91snOUCHcRtnND76kE+VnL5r4+XhLkPa+jsh0QmZRpoOtcr88laAuH
- M5Xn8kkP8kKg73IbpxsT9jPV7aMrJW867xVRlfi68PrYtaelnGZPpS/yIGuBDtl3vvr8
- riUm7WqnGvSkFE7zCRAlANAO82MmRD/E192/kh7xNWNtbqrv3VD3uk25x1NAuo4Nzw8Y
- p6RQ==
-X-Gm-Message-State: APjAAAW7xFHmJc23txMHQfOo/5611wM02Z0rBHMLsxvSeaYVBHLBXv8x
- ZzUQrp0EGDXx1QFv+656u+MZdg==
-X-Google-Smtp-Source: APXvYqwdwUCw5aUqZelDvNyEgt4T4jxvKT/tVakrpiJfZDKLHDs0Lltb+i/VwDXc0av0TDel5R/6Gg==
-X-Received: by 2002:adf:e5cd:: with SMTP id a13mr23978628wrn.316.1566852288125; 
- Mon, 26 Aug 2019 13:44:48 -0700 (PDT)
+ bh=KPovm7Wqq5ONpgYMzcWE7OA1yW+eFGPyRUwfUI0hUJ0=;
+ b=T3nzmf2ajFS2sL0cOD0UbRtViainZi2Yb7DPdvpWztYiYOScGStyX8Mwr7JgFIGkU0
+ 9eG7qaXxbI+hSdybYhCzSg99/4lGUoaOL2fZBPiMe9WNknj46Wv853VQVexCen0u6MSt
+ jZ3NrcaEbtByh9JLkGEZaFK1w9l1yjWK096I83BC4MBmXU6ztuyzaEorD+x97a1IGxCh
+ /DqyaJe09h4RasLGKfxl4sbShuUJ73mRAG6xdjVvq04uD4PmA5kBIxxwUgVGvwI1NGgV
+ 0YpRC9LN1Jz9Q3kdlZGizYVknJsOOKqwlBnRlRMsJNyzt85cij4bGqkJm8MLTRwUZEwe
+ 45YQ==
+X-Gm-Message-State: APjAAAVYMzgSe/qJgAsNCo+DJKUpmzSmTQAvNw0vhYd3bYvSO2i6ZqZt
+ B19ABqyJ5Vwjaoep9iwQz8J/KFOpTM0=
+X-Google-Smtp-Source: APXvYqx1bP/yZ2ct9gGrw3/PrAY5QgTYxdvm4ozIz6UraMNr+NRuLzZjgbTD62gTCxjLFwLXZDIrog==
+X-Received: by 2002:adf:fc03:: with SMTP id i3mr23215781wrr.48.1566852289672; 
+ Mon, 26 Aug 2019 13:44:49 -0700 (PDT)
 Received: from mai.imgcgcw.net ([2a01:e34:ed2f:f020:f881:f5ed:b15d:96ab])
- by smtp.gmail.com with ESMTPSA id 20sm549557wmk.34.2019.08.26.13.44.46
+ by smtp.gmail.com with ESMTPSA id 20sm549557wmk.34.2019.08.26.13.44.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 26 Aug 2019 13:44:47 -0700 (PDT)
+ Mon, 26 Aug 2019 13:44:49 -0700 (PDT)
 From: Daniel Lezcano <daniel.lezcano@linaro.org>
 To: tglx@linutronix.de
-Subject: [PATCH 05/20] dt-bindings: timer: Convert Allwinner A13 HSTimer to a
- schema
-Date: Mon, 26 Aug 2019 22:43:52 +0200
-Message-Id: <20190826204407.17759-5-daniel.lezcano@linaro.org>
+Subject: [PATCH 06/20] clocksource/drivers/tcb_clksrc: Register delay timer
+Date: Mon, 26 Aug 2019 22:43:53 +0200
+Message-Id: <20190826204407.17759-6-daniel.lezcano@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190826204407.17759-1-daniel.lezcano@linaro.org>
 References: <df27caba-d9f8-e64d-0563-609f8785ecb3@linaro.org>
  <20190826204407.17759-1-daniel.lezcano@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_134450_225894_F959FF85 
-X-CRM114-Status: GOOD (  14.27  )
+X-CRM114-CacheID: sfid-20190826_134451_211589_6D3A515D 
+X-CRM114-Status: GOOD (  13.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -97,12 +96,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
- linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Allwinner sunXi SoC support"
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-kernel@vger.kernel.org,
+ "moderated list:ARM/Microchip AT91 SoC support"
  <linux-arm-kernel@lists.infradead.org>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -110,141 +107,87 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
 
-The newer Allwinner SoCs have a High Speed Timer supported in Linux, with a
-matching Device Tree binding.
+Implement and register delay timer to allow get_cycles() to work properly.
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for that controller over to a YAML schemas.
-
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 Signed-off-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 ---
- .../timer/allwinner,sun5i-a13-hstimer.txt     | 26 ------
- .../timer/allwinner,sun5i-a13-hstimer.yaml    | 79 +++++++++++++++++++
- 2 files changed, 79 insertions(+), 26 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
- create mode 100644 Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
+ drivers/clocksource/Kconfig           |  2 +-
+ drivers/clocksource/timer-atmel-tcb.c | 18 ++++++++++++++++++
+ 2 files changed, 19 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
-deleted file mode 100644
-index 2c5c1be78360..000000000000
---- a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.txt
-+++ /dev/null
-@@ -1,26 +0,0 @@
--Allwinner SoCs High Speed Timer Controller
--
--Required properties:
--
--- compatible :	should be "allwinner,sun5i-a13-hstimer" or
--		"allwinner,sun7i-a20-hstimer"
--- reg : Specifies base physical address and size of the registers.
--- interrupts :	The interrupts of these timers (2 for the sun5i IP, 4 for the sun7i
--		one)
--- clocks: phandle to the source clock (usually the AHB clock)
--
--Optional properties:
--- resets: phandle to a reset controller asserting the timer
--
--Example:
--
--timer@1c60000 {
--	compatible = "allwinner,sun7i-a20-hstimer";
--	reg = <0x01c60000 0x1000>;
--	interrupts = <0 51 1>,
--		     <0 52 1>,
--		     <0 53 1>,
--		     <0 54 1>;
--	clocks = <&ahb1_gates 19>;
--	resets = <&ahb1rst 19>;
--};
-diff --git a/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
-new file mode 100644
-index 000000000000..dfa0c41fd261
---- /dev/null
-+++ b/Documentation/devicetree/bindings/timer/allwinner,sun5i-a13-hstimer.yaml
-@@ -0,0 +1,79 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/timer/allwinner,sun5i-a13-hstimer.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
+diff --git a/drivers/clocksource/Kconfig b/drivers/clocksource/Kconfig
+index 5e9317dc3d39..a642c23b2fba 100644
+--- a/drivers/clocksource/Kconfig
++++ b/drivers/clocksource/Kconfig
+@@ -429,7 +429,7 @@ config ATMEL_ST
+ 
+ config ATMEL_TCB_CLKSRC
+ 	bool "Atmel TC Block timer driver" if COMPILE_TEST
+-	depends on HAS_IOMEM
++	depends on ARM && HAS_IOMEM
+ 	select TIMER_OF if OF
+ 	help
+ 	  Support for Timer Counter Blocks on Atmel SoCs.
+diff --git a/drivers/clocksource/timer-atmel-tcb.c b/drivers/clocksource/timer-atmel-tcb.c
+index 6ed31f9def7e..7427b07495a8 100644
+--- a/drivers/clocksource/timer-atmel-tcb.c
++++ b/drivers/clocksource/timer-atmel-tcb.c
+@@ -6,6 +6,7 @@
+ #include <linux/irq.h>
+ 
+ #include <linux/clk.h>
++#include <linux/delay.h>
+ #include <linux/err.h>
+ #include <linux/ioport.h>
+ #include <linux/io.h>
+@@ -125,6 +126,18 @@ static u64 notrace tc_sched_clock_read32(void)
+ 	return tc_get_cycles32(&clksrc);
+ }
+ 
++static struct delay_timer tc_delay_timer;
 +
-+title: Allwinner A13 High-Speed Timer Device Tree Bindings
++static unsigned long tc_delay_timer_read(void)
++{
++	return tc_get_cycles(&clksrc);
++}
 +
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
++static unsigned long notrace tc_delay_timer_read32(void)
++{
++	return tc_get_cycles32(&clksrc);
++}
 +
-+properties:
-+  compatible:
-+    oneOf:
-+      - const: allwinner,sun5i-a13-hstimer
-+      - const: allwinner,sun7i-a20-hstimer
-+      - items:
-+          - const: allwinner,sun6i-a31-hstimer
-+          - const: allwinner,sun7i-a20-hstimer
+ #ifdef CONFIG_GENERIC_CLOCKEVENTS
+ 
+ struct tc_clkevt_device {
+@@ -432,6 +445,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 		/* setup ony channel 0 */
+ 		tcb_setup_single_chan(&tc, best_divisor_idx);
+ 		tc_sched_clock = tc_sched_clock_read32;
++		tc_delay_timer.read_current_timer = tc_delay_timer_read32;
+ 	} else {
+ 		/* we have three clocks no matter what the
+ 		 * underlying platform supports.
+@@ -444,6 +458,7 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 		/* setup both channel 0 & 1 */
+ 		tcb_setup_dual_chan(&tc, best_divisor_idx);
+ 		tc_sched_clock = tc_sched_clock_read;
++		tc_delay_timer.read_current_timer = tc_delay_timer_read;
+ 	}
+ 
+ 	/* and away we go! */
+@@ -458,6 +473,9 @@ static int __init tcb_clksrc_init(struct device_node *node)
+ 
+ 	sched_clock_register(tc_sched_clock, 32, divided_rate);
+ 
++	tc_delay_timer.freq = divided_rate;
++	register_current_timer_delay(&tc_delay_timer);
 +
-+  reg:
-+    maxItems: 1
-+
-+  interrupts:
-+    minItems: 2
-+    maxItems: 4
-+    items:
-+      - description: Timer 0 Interrupt
-+      - description: Timer 1 Interrupt
-+      - description: Timer 2 Interrupt
-+      - description: Timer 3 Interrupt
-+
-+  clocks:
-+    maxItems: 1
-+
-+  resets:
-+    maxItems: 1
-+
-+required:
-+  - compatible
-+  - reg
-+  - interrupts
-+  - clocks
-+
-+if:
-+  properties:
-+    compatible:
-+      items:
-+        const: allwinner,sun5i-a13-hstimer
-+
-+then:
-+  properties:
-+    interrupts:
-+      minItems: 2
-+      maxItems: 2
-+
-+else:
-+  properties:
-+    interrupts:
-+      minItems: 4
-+      maxItems: 4
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    timer@1c60000 {
-+        compatible = "allwinner,sun7i-a20-hstimer";
-+        reg = <0x01c60000 0x1000>;
-+        interrupts = <0 51 1>,
-+                     <0 52 1>,
-+                     <0 53 1>,
-+                     <0 54 1>;
-+        clocks = <&ahb1_gates 19>;
-+        resets = <&ahb1rst 19>;
-+    };
-+
-+...
+ 	return 0;
+ 
+ err_unregister_clksrc:
 -- 
 2.17.1
 
