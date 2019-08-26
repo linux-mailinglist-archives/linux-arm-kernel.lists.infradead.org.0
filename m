@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AA299D0F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:45:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3B1FF9D0EB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:45:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,36 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=9406YTyaCkNAeHANltSStVjCSpNmQYFm56gup9Fx0jE=; b=jMLILuf3ubdmAAegmBrZvL8h0g
-	Zt3jMaNsVDVGUxc3LiuCNfojJLLdV2OR+/ptCEBUzPulGH7GvuGu/h+HBNZ8I9oGkZRMtdfFOofRf
-	TKMI+j1HLFGhZayB4iX56LwwubUNtj5Hy0m22K/4Tw4jL42xUKwUN7wJBNq/Lfn+ARoxuLJG9Etij
-	zZW7c7LliEl0EIe/N1LnHz+aNjTRRH86+uuUetk4PnJZetNbOML4p4TpwLUmPe/eE7r3Eb6EnYHuL
-	5FfeaX6hedF4kDTJug/nN50J5YBOSWmCCfVGfxkyBJaZ90VDQaNBLd/EE3bJJ1MDHHomVXLel6NmQ
-	d95btM8w==;
+	bh=j+vAaGZZb7eA6JviPOGHOdQ3GXUwyBqrJOh7LHKuiKY=; b=t6vtcrGwzgyjL7vanNZt5H37S9
+	h9EYlOObw1+JuE2zarnBqabWi7HvmaXwffmIA0QzFpwMqk3ecQ7Qa5ihaSVRG9Zp7I5/8f/ycyPbv
+	+W1cSEKx4l798k4GMziM4kLRekRx4EWeaECXAum3Pz7dDog5VsAy+9mBFnfADgdJ2X6yDI9GOIA37
+	aeuZT7YJZM6VYBDH3QYSeeK/QdWi/SnnWmLIeW7iEwAtYadHnw7t3NcSrjVIg8tIJnM/Uy0MhHoe2
+	YKSwG7QVUqin02NRv6N2h27aKBF7w3DoXEZwcO91vtfD+ui8RNGAU3Whvh5yyamIuooWlmVsjN8z9
+	NByKSuAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2FJj-0000Tn-1c; Mon, 26 Aug 2019 13:45:55 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i2FJ9-0007WF-V6; Mon, 26 Aug 2019 13:45:20 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2FIW-0007Tj-Rh
+ id 1i2FIW-0007Tl-Rm
  for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 13:44:42 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 3DE031A01EA;
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id CE81D200241;
  Mon, 26 Aug 2019 15:44:37 +0200 (CEST)
 Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
  [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 25B811A01E3;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id BFAFE20000C;
  Mon, 26 Aug 2019 15:44:37 +0200 (CEST)
 Received: from fsr-ub1864-112.ea.freescale.net
  (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 8FA0220605;
- Mon, 26 Aug 2019 15:44:36 +0200 (CEST)
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 3597420605;
+ Mon, 26 Aug 2019 15:44:37 +0200 (CEST)
 From: Leonard Crestez <leonard.crestez@nxp.com>
 To: Chanwoo Choi <cw00.choi@samsung.com>,
  MyungJoo Ham <myungjoo.ham@samsung.com>
-Subject: [PATCH v4 1/6] PM / devfreq: Don't take lock in devfreq_add_device
-Date: Mon, 26 Aug 2019 16:44:28 +0300
-Message-Id: <26a030f735922b0b9ec821491981baa3f46fa3a8.1566826075.git.leonard.crestez@nxp.com>
+Subject: [PATCH v4 2/6] PM / devfreq: Add to devfreq_list immediately after
+ registration
+Date: Mon, 26 Aug 2019 16:44:29 +0300
+Message-Id: <29f4c0442344f0d1f333c5fbbcb9e60a4ffe3200.1566826075.git.leonard.crestez@nxp.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1566826075.git.leonard.crestez@nxp.com>
 References: <cover.1566826075.git.leonard.crestez@nxp.com>
@@ -48,8 +49,8 @@ In-Reply-To: <cover.1566826075.git.leonard.crestez@nxp.com>
 References: <cover.1566826075.git.leonard.crestez@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_064441_174542_4F79BC6F 
-X-CRM114-Status: UNSURE (   9.28  )
+X-CRM114-CacheID: sfid-20190826_064441_041454_EC9F7921 
+X-CRM114-Status: UNSURE (   9.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -57,7 +58,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -85,104 +86,53 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A device usually doesn't need to lock itself during initialization
-because it is not yet reachable from other threads.
+After the devfreq->dev is registered all error cleanup paths call
+devfreq_dev_release which fails if the devfreq instance is not in the
+global devfreq_list.
 
-This simplifies the code and helps avoid recursive lock warnings.
+Fix by adding to the list immediately after registration.
 
 Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/devfreq/devfreq.c | 10 ----------
- 1 file changed, 10 deletions(-)
+ drivers/devfreq/devfreq.c | 7 +++++--
+ 1 file changed, 5 insertions(+), 2 deletions(-)
+
+Alternatively we could make devfreq_dev_release accept devfreq instance
+not in the list.
 
 diff --git a/drivers/devfreq/devfreq.c b/drivers/devfreq/devfreq.c
-index afbe2a8f7529..15270293bea9 100644
+index 15270293bea9..9b3bf64dc37d 100644
 --- a/drivers/devfreq/devfreq.c
 +++ b/drivers/devfreq/devfreq.c
-@@ -636,11 +636,10 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 		err = -ENOMEM;
- 		goto err_out;
- 	}
- 
- 	mutex_init(&devfreq->lock);
--	mutex_lock(&devfreq->lock);
- 	devfreq->dev.parent = dev;
- 	devfreq->dev.class = devfreq_class;
- 	devfreq->dev.release = devfreq_dev_release;
- 	devfreq->profile = profile;
- 	strncpy(devfreq->governor_name, governor_name, DEVFREQ_NAME_LEN);
-@@ -648,28 +647,24 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 	devfreq->last_status.current_frequency = profile->initial_freq;
- 	devfreq->data = data;
- 	devfreq->nb.notifier_call = devfreq_notifier_call;
- 
- 	if (!devfreq->profile->max_state && !devfreq->profile->freq_table) {
--		mutex_unlock(&devfreq->lock);
- 		err = set_freq_table(devfreq);
- 		if (err < 0)
- 			goto err_dev;
--		mutex_lock(&devfreq->lock);
- 	}
- 
- 	devfreq->scaling_min_freq = find_available_min_freq(devfreq);
- 	if (!devfreq->scaling_min_freq) {
--		mutex_unlock(&devfreq->lock);
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
- 	devfreq->min_freq = devfreq->scaling_min_freq;
- 
- 	devfreq->scaling_max_freq = find_available_max_freq(devfreq);
- 	if (!devfreq->scaling_max_freq) {
--		mutex_unlock(&devfreq->lock);
- 		err = -EINVAL;
- 		goto err_dev;
- 	}
- 	devfreq->max_freq = devfreq->scaling_max_freq;
- 
-@@ -678,42 +673,37 @@ struct devfreq *devfreq_add_device(struct device *dev,
- 
- 	dev_set_name(&devfreq->dev, "devfreq%d",
- 				atomic_inc_return(&devfreq_no));
- 	err = device_register(&devfreq->dev);
+@@ -677,10 +677,15 @@ struct devfreq *devfreq_add_device(struct device *dev,
  	if (err) {
--		mutex_unlock(&devfreq->lock);
  		put_device(&devfreq->dev);
  		goto err_out;
  	}
  
++	/* Add to global list of devfreq instances */
++	mutex_lock(&devfreq_list_lock);
++	list_add(&devfreq->node, &devfreq_list);
++	mutex_unlock(&devfreq_list_lock);
++
  	devfreq->trans_table = devm_kzalloc(&devfreq->dev,
  			array3_size(sizeof(unsigned int),
  				    devfreq->profile->max_state,
  				    devfreq->profile->max_state),
  			GFP_KERNEL);
- 	if (!devfreq->trans_table) {
--		mutex_unlock(&devfreq->lock);
- 		err = -ENOMEM;
- 		goto err_devfreq;
+@@ -719,12 +724,10 @@ struct devfreq *devfreq_add_device(struct device *dev,
+ 		dev_err(dev, "%s: Unable to start governor for the device\n",
+ 			__func__);
+ 		goto err_init;
  	}
  
- 	devfreq->time_in_state = devm_kcalloc(&devfreq->dev,
- 			devfreq->profile->max_state,
- 			sizeof(unsigned long),
- 			GFP_KERNEL);
- 	if (!devfreq->time_in_state) {
--		mutex_unlock(&devfreq->lock);
- 		err = -ENOMEM;
- 		goto err_devfreq;
- 	}
- 
- 	devfreq->last_stat_updated = jiffies;
- 
- 	srcu_init_notifier_head(&devfreq->transition_notifier_list);
- 
--	mutex_unlock(&devfreq->lock);
+-	list_add(&devfreq->node, &devfreq_list);
 -
- 	mutex_lock(&devfreq_list_lock);
+ 	mutex_unlock(&devfreq_list_lock);
  
- 	governor = try_then_request_governor(devfreq->governor_name);
- 	if (IS_ERR(governor)) {
- 		dev_err(dev, "%s: Unable to find governor for the device\n",
+ 	return devfreq;
+ 
+ err_init:
 -- 
 2.17.1
 
