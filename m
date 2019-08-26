@@ -2,32 +2,34 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75C1D9D074
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:26:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 957ED9D06D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 15:26:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=XcQ1iAPl52y0ODy3wfOXefIqg1ZytLb7rbBvaaAiudg=; b=PjvVht7GkwdYiq
-	/WA/CrQUY/8c/xGAkKt2i8UbvBv3hEB6G7q8auWM8l0QPmt3ImTw0i/8+0rdqOeea48DcCjli5S9Y
-	onwM3psWXkm0glHuFLL/DYt716rgKkA0OTTfjlGqbjbumM4Sx2JDVdHoB3xY+OzGW+FFtM4+lxMRq
-	ewFTVTri9fEGs2bsdL1MTzhCrdXITO+KBeqoOzkr7+CEQNCpmI/Y6gkvXUDHnoEQuAnZyxiAoq00B
-	xOnQZKS+oPjcQ+r9az+RMT2kB/OjQaKFCzhQ/9ucAPiO7lJiVN2aCfPWobhWPoMiwFSQgDHSbngCy
-	URLF9eS5jvM7bvlJCM3Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=A5nh5eiMPOY4eG0i7+K5HzDF9bQNykK4mfUfc7K5NcQ=; b=P03AYJitzSCuqJ
+	vtcX/ySKfqGS6JKnI0cZfo3hF8ISPLKbIrQgZC7k48eEReBRTIlHzbNusuCeAqZWbceTamB2nGuTo
+	XKb2eWsfs/4B8eehSj/21nEZtcgQsx3MrkbkVEYU6b4Pd/s6b+ntktNnXFDzO9j8fJMmrnlpzKwBN
+	2bsBA06MBWpVw/DX97Bsx+ZdyJJeVpemULcjvnxsmoGo38CHMa3qqoMwY7JOp2vnQBRtQTFsZGwdB
+	DL9UTbuMhgbp3gCiO/aBoKkOPx3TN5iY2N91hfRBmaC+z94ANWkDvDkmZC+i2HFEUJtC6KrpCfB7A
+	tiTuBrG8p9H52P+e8uBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2F19-00087W-R0; Mon, 26 Aug 2019 13:26:44 +0000
+	id 1i2F0o-0007v1-On; Mon, 26 Aug 2019 13:26:22 +0000
 Received: from clnet-p19-102.ikbnet.co.at ([83.175.77.102] helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i2F0O-0007u5-36; Mon, 26 Aug 2019 13:25:56 +0000
+ id 1i2F0R-0007uO-IH; Mon, 26 Aug 2019 13:26:00 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: iommu@lists.linux-foundation.org
-Subject: cleanup the dma_pgprot handling v2
-Date: Mon, 26 Aug 2019 15:25:47 +0200
-Message-Id: <20190826132553.4116-1-hch@lst.de>
+Subject: [PATCH 1/6] unicore32: remove the unused pgprot_dmacoherent define
+Date: Mon, 26 Aug 2019 15:25:48 +0200
+Message-Id: <20190826132553.4116-2-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190826132553.4116-1-hch@lst.de>
+References: <20190826132553.4116-1-hch@lst.de>
 MIME-Version: 1.0
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -52,16 +54,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+Signed-off-by: Christoph Hellwig <hch@lst.de>
+---
+ arch/unicore32/include/asm/pgtable.h | 2 --
+ 1 file changed, 2 deletions(-)
 
-this series replaces the arch_dma_mmap_pgprot hooks with the
-simpler pgprot_dmacoherent as used by the arm code already and
-cleans up various bits around that area.
+diff --git a/arch/unicore32/include/asm/pgtable.h b/arch/unicore32/include/asm/pgtable.h
+index 9492aa304f03..126e961a8cb0 100644
+--- a/arch/unicore32/include/asm/pgtable.h
++++ b/arch/unicore32/include/asm/pgtable.h
+@@ -198,8 +198,6 @@ static inline pte_t pte_mkspecial(pte_t pte) { return pte; }
+ 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+ #define pgprot_writecombine(prot)	\
+ 	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+-#define pgprot_dmacoherent(prot)	\
+-	__pgprot(pgprot_val(prot) & ~PTE_CACHEABLE)
+ 
+ #define pmd_none(pmd)		(!pmd_val(pmd))
+ #define pmd_present(pmd)	(pmd_val(pmd) & PMD_PRESENT)
+-- 
+2.20.1
 
-Changes since v1:
- - improve the new arm64 comment
- - keep the special DMA_ATTR_WRITE_COMBINE handling for mips and
-   document it
 
 _______________________________________________
 linux-arm-kernel mailing list
