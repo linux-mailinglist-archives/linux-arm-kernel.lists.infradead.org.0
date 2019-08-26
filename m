@@ -2,80 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 883779D56C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:05:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE08F9D574
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 20:08:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GZrkzaCIXOPkL9RUfYJu8LE2WQBURGHJAouV16SSaN8=; b=bBD8t36B6jGzkV
-	UZDUKe++eGLYGFLKKckp0dC0FK+R7I2BDbxq5/PeVYL7rjbVLZpuHwtuCuBjpCbEdo5eSygynDA7G
-	FgmKoaydM+sGJEJjlmmF740bHarlY4pZDmPCkks/YQQvrY5QFQ2bk38kfM7MZ2Md4RJ9BWR8Sy2H9
-	+XcX6/7emv0VXXMEn/a0g2NZUXdmAsJWI8ZBltbBAvWt2d9glm0RcIbYmbIVl9xnyzIVNpqXdHOVx
-	kWVyXo9lEVQ47rccJfR16hac2CFZD2dgC1qp3dzXbQDt4qdIr42jVfCeOkM4PuNQGT0ZyGA2qztKc
-	5hot5CwogEzHRo2RiF6A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=d3wFHCl7ndbJq64myuJHXFRZc/v7dBVo2ZFEXXmVKf8=; b=CIPGXrJoB1EUN6
+	ErHgPXszzv1twmK1FK0P8JyOIR3z4zy+qDzM9RdKNXqeywk6VOCDfn7n+uP4JT6VY1daPtPb8hV7C
+	pQbctc34vLa7avNHcmjwDDx03aduOiZ94UfmaiLOGCOsh2VS63fMnqkSIEcvM3xWc2v3auKChJUNE
+	cQj7JLVaqHDS+xWyl8GF0zVm9lopudXm/iSP9ElFTKapqzeiyczeael4T0IsviKp/PhQCfRcOiGPz
+	/pQXJAQ9UITvAnXf/j1Vos7zqLdOX8n1R9UpuYWpyc5GPKgQTmdI/oZLULf7btYeCrTeBVWB/F5Av
+	JkxWLEqpAqNeOMx37SAg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2JN6-0003WU-5q; Mon, 26 Aug 2019 18:05:40 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1i2JPG-0003zn-Qm; Mon, 26 Aug 2019 18:07:54 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2JMo-0003Vt-5w
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:05:23 +0000
-Received: by mail-io1-xd44.google.com with SMTP id j4so31140694iog.11
+ id 1i2JP2-0003y4-3w
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 18:07:41 +0000
+Received: by mail-lf1-x144.google.com with SMTP id r5so7494085lfc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 26 Aug 2019 11:05:22 -0700 (PDT)
+ Mon, 26 Aug 2019 11:07:38 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xErunZPuJorD94l/vc7ENj6uuFr7usZrxrb/oaGw5eQ=;
- b=IfFABVr/1KfuRZB6p1y3WOunsyErFqxPhnXEOJrvwyDMOpnxu1fcWFb+OuGgHaLwY8
- P4QRB/Crm8ezMc8G4RzbPnMRC8hvlvj68jeVc1TMsvmrr/6W0zCHdu8wtEC9ReP+xPID
- +wFqzAUUHx4WZwrW4HxwQAKyKZ8uE1ZxNQE2eaS0XH9V0oNaEcwcjALuFQV3v+baB3Wy
- r2MLOlynILeLaeGT/NnJjBAm5tu9XUgMSYRadJvCkBBEQuWPNuaE+WMj7ylKNr8rkMm3
- mntJ2PgJ05bGqQFpe1hc+NvWiEsSw91U/pt1ZaPV2w5IiJOnX0RRBIqHDmruFJtSKrY2
- dvvg==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0ZhbVTTAhELTpK9khEQbzX5xO6vbVG1SPvOTB99Q+OI=;
+ b=jcuZpF/kXVwnEwcdZZ+XnmGDbebmISf1OOdd8xcPrfviFFqjWIK1rsoOScOKksNso9
+ bCXRagueJdLy0jSCwO0nqUk8F7/peUhgAaYhfvpOSYer0aXKD6poVhN5EaCWQXLVZNAB
+ 0L9XZsl31CtoRjoRvw257ge9D2O1b6Tslqp52qCLFSMXLKVK1a4BUyJiMRkZMh6HG/3X
+ rinB0UOC6BJtIFqfZgUwgmR0nYGmFA6dbIn2f91U4DIde+H3vl/FP84JxWJbhY6lHJAx
+ PA6y6uEXfM0XVjT3CUxLuTNQSxEul3GCMMItjBvyw15MpABL2keyRdErEmj9TsLtqvn5
+ Xa1w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=xErunZPuJorD94l/vc7ENj6uuFr7usZrxrb/oaGw5eQ=;
- b=niGUbPo67nqLzBew04M/yNJ6OHCqxwRkZu7ktjxsK2Nq8CjJh4gl/DzfNfibjJ6Py3
- xwA4N8PXYVEIxEHmtnR00KH0HEm6PMjphvPNE7gayop175GlQqOC1IA+iGp49+6f6Ksx
- LSp2DTuVlSDxnzh2Z178gZJUec2rAjyMjrUClgp9t++ai/G2f402PKZNFGx/eaumhZTH
- jtBn8UVnWFerlhXgBhnalKS6wXE+YSSevcRh5/TWrroc2vbQgyY1bAyvcFIx/lCawXwT
- CoS1Gc+zB24l+2snPvpIheYOvlrMe0s+hY+t+ClIKypX81W75U1+wmnpkg/3sOWiIVbX
- RA1g==
-X-Gm-Message-State: APjAAAUMyL733Tk2tTqr+VOrie1z3ypA96GgNYUvkC/o0NnusMZt/mat
- pgMgpoFUubKQtemu8WhZtcLdEI5yxm/AoV7iXMwMf2Aw
-X-Google-Smtp-Source: APXvYqw0YR2dFpgRDEYpOGIx9y+J6vXPTCqZruvnSxh0xULxLyWz6aaBXEf5EATJxms/V5T0eV7N7QEL3tgnqQNZEwY=
-X-Received: by 2002:a5e:8e08:: with SMTP id a8mr18337621ion.94.1566842721537; 
- Mon, 26 Aug 2019 11:05:21 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=0ZhbVTTAhELTpK9khEQbzX5xO6vbVG1SPvOTB99Q+OI=;
+ b=f/RRO6qDK6HxJBay0hHq7zIkO56qLeXkTnuwdkygFhOL+ncoRo5kGSwRZsmB7Ll/WH
+ xaayReq5r+c3KPshDnn4qgNTQN/IEgb9VNQ2uRjYy+hltRlr9EbIbOd5jPhQnnXwEJeQ
+ sdz98UABfbPa+IahzCjrzFMwSE/+98a5uc868duZIyJk65/J+lNwNZ/PycAyUhePmQKf
+ QRf6dOLC89Oz5D58j1KQv3Lwi2uXha0i6mMf0a4jFhWGDmqTqQMBgfsyUAwtIAbWCJvw
+ 17W1GBkkRYNW4by1KVcYbPhXaZFV46K7se8E1wavxUS3icSj4alnZtihFe3rkvNS7VJL
+ /VTQ==
+X-Gm-Message-State: APjAAAUlm1ygzrpS77PRPtslQYvyLN0i75DQTvgyxWbZPwFU+yrOdx4w
+ l+ZDKwDabSl2AcO65j8h6CU=
+X-Google-Smtp-Source: APXvYqwlKQ3vF5aBWkClkQ0SKJJhrLTfbv5xkLecYvruosChOjV23gpdsyMuOCHHHcpFh/3pKBCfEw==
+X-Received: by 2002:a19:f007:: with SMTP id p7mr11474484lfc.24.1566842857231; 
+ Mon, 26 Aug 2019 11:07:37 -0700 (PDT)
+Received: from localhost.localdomain (c213-102-74-69.bredband.comhem.se.
+ [213.102.74.69])
+ by smtp.gmail.com with ESMTPSA id u3sm2215564lfm.16.2019.08.26.11.07.36
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 26 Aug 2019 11:07:36 -0700 (PDT)
+From: codekipper@gmail.com
+To: mripard@kernel.org,
+	wens@csie.org,
+	linux-sunxi@googlegroups.com
+Subject: [PATCH v6 0/3] ASoC: sun4i-i2s: Updates to the driver
+Date: Mon, 26 Aug 2019 20:07:31 +0200
+Message-Id: <20190826180734.15801-1-codekipper@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20190820031301.11172-1-andrew.smirnov@gmail.com>
- <20190824190903.GC16308@X250.getinternet.no>
-In-Reply-To: <20190824190903.GC16308@X250.getinternet.no>
-From: Andrey Smirnov <andrew.smirnov@gmail.com>
-Date: Mon, 26 Aug 2019 11:05:10 -0700
-Message-ID: <CAHQ1cqENuDQ6OKHiP-ecxOHrjTHN1_Gf6DqrAwAq6W3PBE6Ggw@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: vf610-zii-scu4-aib: Drop "rs485-rts-delay"
- property
-To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_110522_225536_C98754AB 
-X-CRM114-Status: UNSURE (   8.57  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190826_110740_166666_9C7DDC28 
+X-CRM114-Status: GOOD (  14.25  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andrew.smirnov[at]gmail.com)
+ provider (codekipper[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,27 +99,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabio Estevam <festevam@gmail.com>, Chris Healy <cphealy@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>
+Cc: alsa-devel@alsa-project.org, Marcus Cooper <codekipper@gmail.com>,
+ lgirdwood@gmail.com, linux-kernel@vger.kernel.org, be17068@iperbole.bo.it,
+ broonie@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Aug 24, 2019 at 12:09 PM Shawn Guo <shawnguo@kernel.org> wrote:
->
-> On Mon, Aug 19, 2019 at 08:13:01PM -0700, Andrey Smirnov wrote:
-> > LPUART driver does not support specifying "rs485-rts-delay"
-> > property. Drop it.
->
-> If so, we need to fix bindings/serial/fsl-lpuart.txt in the meantime?
->
+From: Marcus Cooper <codekipper@gmail.com>
 
-Yeah, good point. Will submit a separate patch for that.
+Hi All,
 
-Thanks,
-Andrey Smirnov
+here is a patch series to add some improvements to the sun4i-i2s driver
+which is enough to get HDMI audio working on the A83T, A64, H3 and
+H5 platforms.
+
+I've dropped a lot of the functionality that was presented earlier in favour
+of getting initial HDMI audio delivered. H6 and multi-channel HDMI will
+follow shortly.
+
+My test branch for this can be found at
+https://github.com/codekipper/linux-sunxi/commits/upstream-i2s , I've been
+using a Pine64 to test with; validating the new SoC block with HDMI audio
+and ensuring that I've not broken the old block by making sure that the audio
+codec still works.
+
+BR,
+CK
+
+---
+v6 changes compared to v5 are:
+- removed patches for multi-channel and H6 HDMI audio.
+- removed patch for 20, 24 and 32 bit (will push support for just 20 and 24bit)
+- ditched tdm patches as support has already been added.
+- added fix for A83T reg map.
+
+v5 changes compared to v4 are:
+- removed delivered patches.
+- Added more details to commit messages.
+- replaced some reg fields with function calls.
+- Added DSP_A and DSP_B support for H3 and later SoCs.
+- Added support for the Allwinner H6.
+
+v4 changes compared to v3 are:
+- Moved patches around so that the more controversial of patches are
+  at the top of the stack.
+- Added more details to commit messages.
+- Fixed 20bit audio PCM format to use 4 bytes.
+- Reduced number of flags used to indicate a new SoC.
+
+v3 changes compared to v2 are:
+ - added back slave mode changes
+ - added back the use of tdm properties
+ - changes to regmap and caching
+ - removed loopback functionality
+ - fixes to the channel offset mask
+
+v2 changes compared to v1 are:
+ - removed slave mode changes which didn't set mclk and bclk div.
+ - removed use of tdm and now use a dedicated property.
+ - fix commit message to better explain reason for sign extending
+ - add divider calculations for newer SoCs.
+ - add support for multi-lane i2s data output.
+ - add support for 20, 24 and 32 bit samples.
+ - add loopback property so blocks can be tested without a codec.
+
+---
+
+Marcus Cooper (3):
+  ASoC: sun4i-i2s: incorrect regmap for A83T
+  ASoC: sun4i-i2s: Add regmap field to sign extend sample
+  ASoC: sun4i-i2s: Adjust LRCLK width
+
+ sound/soc/sunxi/sun4i-i2s.c | 24 ++++++++++++++++++++++--
+ 1 file changed, 22 insertions(+), 2 deletions(-)
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
