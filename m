@@ -2,68 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1DF09D1BE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 16:36:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D8DF79D1E9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 26 Aug 2019 16:47:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:
-	Subject:To:From:Date:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/BK86ZFEy7w5bE1AQSMct8ZFw4d7fuU6kV8pz/s/eaY=; b=OMFoAZokJeGy7a
-	RW3ytBloLEOCpQ+h5cAHKRECH/Ek0QxWMKJKXcJYs0+I+8A0IyVH8KVjSToEW3+gFSNX024ZN8nmZ
-	f28Lxp3nr4iYmfsx88TMldgwnS8/eQyd2aJeuds7K9bjpgt0ldbp/F9/aAP7MjTwPn8qGl6fRWT2W
-	5qIZwLpSpFvSCx4J2MrsCKlKXiu1Z95OjR5qwN8Id1EgCKg1jss9C097dIoHm9bmjc4th6upGRI6i
-	xTsuXbZgKkh3KvESQpo68EDy+xEGwNcEJzVISHsYVSdsjIAvvqV1Xn12cIbTMnFTG22jwupz0Zce5
-	Zp+facjMnanjxSE6cXUA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=nhRYejodHAZ2X68oovHp2/dl8lZ5oSX5PJDWt9Keq8g=; b=n7b6F4Zt+DK+yV
+	8kZSK9WgAKkzlHQTp3rYjygFmf45ttXXxc5R4xlHkO3uyhr+QjiHke4qwEkKc0K4TgyhUsenm5lXy
+	hE6egwPrs6jUjuMmxr1w5VmVU7lfYiRGlwBo4OgSF1kCRfWel2NMP1FrSqnMcEoz3nNHfDa6hKtsI
+	cYlGL5IZLIpea0KmnsizvTwKc8nTSHCUbwH1B5DNZh9reo2Yt16UdQw5yhvXCKmt1lTDadR13aHXg
+	7jet/tBzzsRoXtmhPUmk6L3ZJZMAEc2aVBywl5KDhStrlDzpWwEgQ34i8hY1WZw3IfuPgIb0FtQTr
+	UsMj0r2RHT5+PnpT1J3Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2G66-0001Gy-0F; Mon, 26 Aug 2019 14:35:54 +0000
-Received: from mail.kmu-office.ch ([2a02:418:6a02::a2])
+	id 1i2GH2-0006EJ-QY; Mon, 26 Aug 2019 14:47:13 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2G5Y-0001Fo-G4
- for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 14:35:22 +0000
-Received: from webmail.kmu-office.ch (unknown [IPv6:2a02:418:6a02::a3])
- by mail.kmu-office.ch (Postfix) with ESMTPSA id 060EA5C19C6;
- Mon, 26 Aug 2019 16:35:12 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=agner.ch; s=dkim;
- t=1566830112;
- h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
- to:to:cc:cc:mime-version:mime-version:content-type:content-type:
- content-transfer-encoding:content-transfer-encoding:
- in-reply-to:in-reply-to:references:references;
- bh=ry+edmxoGbqJLKXnIz/oWoL2et798Iawn9Q+DWPyA5A=;
- b=gDfdi8H6FBA5NLRxdkw7IzW8gkFhDgxBixLFgr80LDizqSmFoE0VMzmP5Vu5y24gGXAPbA
- IBC3CKEDv/rb3LfPtZIc4/2yyA08+1J8PHR2iw8w6JRdNZ4w2DugkepBL6sEdnUok02whO
- EGrocPZch8VAkKkqIEITZdBMxmSz0gU=
+ id 1i2GGk-0006CI-Np
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 14:46:56 +0000
+Received: by mail-wr1-x441.google.com with SMTP id k2so15615161wrq.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 26 Aug 2019 07:46:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lKqFlQ5uAweiWoy5Q0NBtlqDIxAoWdFqAZ3hE0aWMrA=;
+ b=oOsWkVyy0OVNO3GEWtL9KUlBPcNQ8EXb5NCLaRrryxI86WLE7itY1IhCRJ//gMudtE
+ MI6ag1jiTbVVcDqAqXe22G5Ebaq5BNPFjs6B3Wib8wz4iLstk/g8GUietWVUDOVMtFLD
+ B72moJ69pMr5bro4U1czlxVb8JfS6SU1/pnwUeOux5P8jlS5AmQgmodOo1MfubsAtRFd
+ 6thkrxpAUURZh4j5Bx+8fONziNmU3yKSV12jDFNhld88vr6ZzSyAwVmUIXXrkmddsp89
+ B3dw+IJyZkAPVaiO4vKQIwopRI6ZxW7dUD8oDdsLLhWbf2C5s+AV7/4TTATXNxBIP2Vf
+ RzRw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=lKqFlQ5uAweiWoy5Q0NBtlqDIxAoWdFqAZ3hE0aWMrA=;
+ b=oRuhabikOYWxYW9BgA424hrLv7z5jFzvL7eSthriHrYwULR14BOUxLrwFbCEmkbR7q
+ qucl5uCYQ2tAUGWictbzSw5stIgRwoDhgvi3YR3lL3up3spMTns31n7J4Ub9MRPusgE4
+ m9gou1knmBSVnFPNUm5hQSzR6bHRGXaxYT/9fg5PErLAK/chVStZhMZav/h4Ph0LUOlT
+ nrhLAk2BBS/ZJ3CtENSiHQfzulhdxjQeVoxTBnhESmg1gAQzxrEdV1QALjLhoT/7s3Es
+ kMr2GjNuS2mF1z3f6hgyTHqNuSj6JnPPGBiirLf029CFq/mFAKX28ThRNSz09dLjjLyf
+ nc0g==
+X-Gm-Message-State: APjAAAUpbp/8qcsfawXAAPq+0UodlOYQvJWflYUhOEqpI7rPH65e/OSI
+ PXF9O1vfU+c0fdQTWBO0hsEnag==
+X-Google-Smtp-Source: APXvYqzj8GflBpfqyAQoqHVpAUfVZVDf2xgGir3LWPo8zTibAZW8llY0SCOEuBpqNLk+uWaJWp10ZQ==
+X-Received: by 2002:a5d:408c:: with SMTP id o12mr21617046wrp.176.1566830811145; 
+ Mon, 26 Aug 2019 07:46:51 -0700 (PDT)
+Received: from bender.baylibre.local
+ (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id e9sm12984595wrm.43.2019.08.26.07.46.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 26 Aug 2019 07:46:50 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: dri-devel@lists.freedesktop.org
+Subject: [PATCH] drm/meson: vclk: use the correct G12A frac max value
+Date: Mon, 26 Aug 2019 16:46:47 +0200
+Message-Id: <20190826144647.17302-1-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-Date: Mon, 26 Aug 2019 16:35:10 +0200
-From: Stefan Agner <stefan@agner.ch>
-To: =?UTF-8?Q?Guido_G=C3=BCnther?= <agx@sigxcpu.org>
-Subject: Re: [PATCH v3 00/15] Improvements and fixes for mxsfb DRM driver
-In-Reply-To: <20190826120548.GA14316@bogon.m.sigxcpu.org>
-References: <1566382555-12102-1-git-send-email-robert.chiras@nxp.com>
- <20190826120548.GA14316@bogon.m.sigxcpu.org>
-Message-ID: <3bd35686e046048d35cd4987567a13cf@agner.ch>
-X-Sender: stefan@agner.ch
-User-Agent: Roundcube Webmail/1.3.9
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_073520_834770_D8EAE123 
-X-CRM114-Status: GOOD (  24.68  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190826_074654_814004_2B2C4066 
+X-CRM114-Status: GOOD (  10.40  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,98 +92,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marek Vasut <marex@denx.de>, Mark Rutland <mark.rutland@arm.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, Rob Herring <robh+dt@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Daniel Vetter <daniel@ffwll.ch>,
- Robert Chiras <robert.chiras@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS0wOC0yNiAxNDowNSwgR3VpZG8gR8O8bnRoZXIgd3JvdGU6Cj4gSGksCj4gT24gV2Vk
-LCBBdWcgMjEsIDIwMTkgYXQgMDE6MTU6NDBQTSArMDMwMCwgUm9iZXJ0IENoaXJhcyB3cm90ZToK
-Pj4gVGhpcyBwYXRjaC1zZXQgaW1wcm92ZXMgdGhlIHVzZSBvZiBlTENESUYgYmxvY2sgb24gaU1Y
-IDggU29DcyAobGlrZSA4TVEsIDhNTQo+PiBhbmQgOFFYUCkuIEZvbGxvd2luZywgYXJlIHRoZSBu
-ZXcgZmVhdHVyZXMgYWRkZWQgYW5kIGZpeGVzIGZyb20gdGhpcwo+PiBwYXRjaC1zZXQ6Cj4gCj4g
-SSd2ZSBhcHBsaWVkIHRoaXMgd2hvbGUgc2VyaWVzIG9uIHRvcCBvZiBteSBOV0wgd29yayBhbmQg
-aXQgbG9va3MgZ29vZAo+IHdpdGggYSBEU0kgcGFuZWwuIEFwcGx5aW5nIHRoZSB3aG9sZSBzZXJp
-ZXMgYWxzbyBmaXhlcyBhbiBpc3N1ZSB3aGVyZQo+IGFmdGVyIHVuYmxhbmsgdGhlIG91dHB1dCB3
-YXMgc29tZXRpbWVzIHNoaWZ0ZWQgYWJvdXQgaGFsZiBhIHNjcmVlbiB3aWR0aAo+IHRvIHRoZSBy
-aWdodCAod2hpY2ggZGlkbid0IGhhcHBlbiB3aXRoIERDU1MpLiBTbyBhdCBsZWFzdCBmcm9tIHRo
-ZSBwYXJ0cwo+IEkgY291bGQgdGVzdDoKPiAKPiAgIFRlc3RlZC1ieTogR3VpZG8gR8O8bnRoZXIg
-PGFneEBzaWd4Y3B1Lm9yZz4gCj4gCj4gZm9yIHRoZSB3aG9sZSB0aGluZy4KClRoYW5rcyBmb3Ig
-dGVzdGluZyEgV2hhdCBTb0MgZGlkIHlvdSB1c2U/IEkgdGhpbmsgaXQgd291bGQgYmUgZ29vZCB0
-bwphbHNvIGdpdmUgdGhpcyBhIHRyeSBvbiBpLk1YIDcgb3IgaS5NWCA2VUxMIGJlZm9yZSBtZXJn
-aW5nLgoKLS0KU3RlZmFuCgoKPiBDaGVlcnMsCj4gIC0tIEd1aWRvCj4+Cj4+IDEuIEFkZCBzdXBw
-b3J0IGZvciBkcm1fYnJpZGdlCj4+IE9uIDhNUSBhbmQgOE1NLCB0aGUgTENESUYgYmxvY2sgaXMg
-bm90IGRpcmVjdGx5IGNvbm5lY3RlZCB0byBhIHBhcmFsbGVsCj4+IGRpc3BsYXkgY29ubmVjdG9y
-LCB3aGVyZSBhbiBMQ0QgcGFuZWwgY2FuIGJlIGF0dGFjaGVkLCBidXQgaW5zdGVhZCBpdCBpcwo+
-PiBjb25uZWN0ZWQgdG8gRFNJIGNvbnRyb2xsZXIuIFNpbmNlIHRoaXMgRFNJIHN0YW5kcyBiZXR3
-ZWVuIHRoZSBkaXNwbGF5Cj4+IGNvbnRyb2xsZXIgKGVMQ0RJRikgYW5kIHRoZSBwaHlzaWNhbCBj
-b25uZWN0b3IsIHRoZSBEU0kgY2FuIGJlIGltcGxlbWVudGVkCj4+IGFzIGEgRFJNIGJyaWRnZS4g
-U28sIGluIG9yZGVyIHRvIGJlIGFibGUgdG8gY29ubmVjdCB0aGUgbXhzZmIgZHJpdmVyIHRvCj4+
-IHRoZSBEU0kgZHJpdmVyLCB0aGUgc3VwcG9ydCBmb3IgYSBkcm1fYnJpZGdlIHdhcyBuZWVkZWQg
-aW4gbXhzZmIgRFJNCj4+IGRyaXZlciAodGhlIGFjdHVhbCBkcml2ZXIgZm9yIHRoZSBlTENESUYg
-YmxvY2spLgo+Pgo+PiAyLiBBZGQgc3VwcG9ydCBmb3IgYWRkaXRpb25hbCBwaXhlbCBmb3JtYXRz
-Cj4+IFNvbWUgb2YgdGhlIHBpeGVsIGZvcm1hdHMgbmVlZGVkIGJ5IEFuZHJvaWQgd2VyZSBub3Qg
-aW1wbGVtZW50ZWQgaW4gdGhpcwo+PiBkcml2ZXIsIGJ1dCB0aGV5IHdlcmUgYWN0dWFsbHkgc3Vw
-cG9ydGVkLiBTbywgYWRkIHN1cHBvcnQgZm9yIHRoZW0uCj4+Cj4+IDMuIEFkZCBzdXBwb3J0IGZv
-ciBob3Jpem9udGFsIHN0cmlkZQo+PiBIYXZpbmcgc3VwcG9ydCBmb3IgaG9yaXpvbnRhbCBzdHJp
-ZGUgYWxsb3dzIHRoZSB1c2Ugb2YgZUxDRElGIHdpdGggYSBHUFUKPj4gKGZvciBleGFtcGxlKSB0
-aGF0IGNhbiBvbmx5IG91dHB1dCByZXNvbHV0aW9uIHNpemVzIG11bHRpcGxlIG9mIGEgcG93ZXIg
-b2YKPj4gOC4gRm9yIGV4YW1wbGUsIDEwODAgaXMgbm90IGEgcG93ZXIgb2YgMTYsIHNvIGluIG9y
-ZGVyIHRvIHN1cHBvcnQgMTkyMHgxMDgwCj4+IG91dHB1dCBmcm9tIEdQVXMgdGhhdCBjYW4gcHJv
-ZHVjZSBsaW5lYXIgYnVmZmVycyBvbmx5IGluIHNpemVzIG11bHRpcGxlIHRvIDE2LAo+PiB0aGlz
-IGZlYXR1cmUgaXMgbmVlZGVkLgo+Pgo+PiAzLiBGZXcgbWlub3IgZmVhdHVyZXMgYW5kIGJ1Zy1m
-aXhpbmcKPj4gVGhlIGFkZGl0aW9uIG9mIG1heC1yZXMgRFQgcHJvcGVydHkgd2FzIGFjdHVhbGx5
-IG5lZWRlZCBpbiBvcmRlciB0byBsaW1pdAo+PiB0aGUgYmFuZHdpZHRoIHVzYWdlIG9mIHRoZSBl
-TENESUYgYmxvY2suIFRoaXMgaXMgbmVlZCBvbiBzeXN0ZW1zIHdoZXJlCj4+IG11bHRpcGxlIGRp
-c3BsYXkgY29udHJvbGxlcnMgYXJlIHByZXNlbmQgYW5kIHRoZSBtZW1vcnkgYmFuZHdpZHRoIGlz
-IG5vdAo+PiBlbm91Z2ggdG8gaGFuZGxlIGFsbCBvZiB0aGVtIGF0IG1heGltdW0gY2FwYWNpdHkg
-KGxpa2UgaXQgaXMgdGhlIGNhc2Ugb24KPj4gOE1RLCB3aGVyZSB0aGVyZSBhcmUgdHdvIGRpc3Bs
-YXkgY29udHJvbGxlcnM6IERDU1MgYW5kIGVMQ0RJRikuCj4+IFRoZSByZXN0IG9mIHRoZSBwYXRj
-aGVzIGFyZSBidWctZml4ZXMuCj4+Cj4+IHYzOgo+PiAtIFJlbW92ZWQgdGhlIG1heC1yZXMgcHJv
-cGVydHkgcGF0Y2hlcyBhbmQgYWRkZWQgc3VwcG9ydCBmb3IKPj4gICBtYXgtbWVtb3J5LWJhbmR3
-aWR0aCBwcm9wZXJ0eSwgYXMgaXQgaXMgYWxzbyBpbXBsZW1lbnRlZCBpbiBvdGhlciBkcml2ZXJz
-Cj4+IC0gUmVtb3ZlZCB1bm5lY2Vzc2FyeSBkcm1fdmJsYW5rX29mZiBpbiBwcm9iZQo+Pgo+PiB2
-MjoKPj4gLSBDb2xsZWN0ZWQgVGVzdGVkLWJ5IGZyb20gR3VpZG8KPj4gLSBTcGxpdCB0aGUgZmly
-c3QgcGF0Y2gsIHdoaWNoIGFkZGVkIG1vcmUgdGhhbiBvbmUgZmVhdHVyZSBpbnRvIHJlbGV2YW50
-Cj4+ICAgcGF0Y2hlcywgZXhwbGFpbmluZyBlYWNoIGZlYXR1cmUgYWRkZWQKPj4gLSBBbHNvIHNw
-bGl0IHRoZSBzZWNvbmQgcGF0Y2ggaW50byBtb3JlIHBhdGNoZXMsIHRvIGRpZmZlcmVudGlhdGUg
-YmV0d2Vlbgo+PiAgIHRoZSBmZWF0dXJlIGl0c2VsZiAoYWRkaXRpb25hbCBwaXhlbCBmb3JtYXRz
-IHN1cHBvcnQpIGFuZCB0aGUgY2xlYW51cAo+PiAgIG9mIHRoZSByZWdpc3RlciBkZWZpbml0aW9u
-cyBmb3IgYSBiZXR0ZXIgcmVwcmVzZW50YXRpb24gKGd1aWRvKQo+PiAtIEluY2x1ZGVkIGEgcGF0
-Y2ggc3VibWl0dGVkIGJ5IEd1aWRvLCB3aGlsZSBoZSB3YXMgdGVzdGluZyBteSBwYXRjaC1zZXQK
-Pj4KPj4gR3VpZG8gR8O8bnRoZXIgKDEpOgo+PiAgIGRybS9teHNmYjogUmVhZCBidXMgZmxhZ3Mg
-ZnJvbSBicmlkZ2UgaWYgcHJlc2VudAo+Pgo+PiBNaXJlbGEgUmFidWxlYSAoMSk6Cj4+ICAgZHJt
-L214c2ZiOiBTaWduYWwgbW9kZSBjaGFuZ2VkIHdoZW4gYnBwIGNoYW5nZWQKPj4KPj4gUm9iZXJ0
-IENoaXJhcyAoMTMpOgo+PiAgIGRybS9teHNmYjogVXBkYXRlIG14c2ZiIHRvIHN1cHBvcnQgYSBi
-cmlkZ2UKPj4gICBkcm0vbXhzZmI6IEFkZCBkZWZpbmVzIGZvciB0aGUgcmVzdCBvZiByZWdpc3Rl
-cnMKPj4gICBkcm0vbXhzZmI6IFJlc2V0IHZpdGFsIHJlZ2lzdGVycyBmb3IgYSBwcm9wZXIgaW5p
-dGlhbGl6YXRpb24KPj4gICBkcm0vbXhzZmI6IFVwZGF0ZSByZWdpc3RlciBkZWZpbml0aW9ucyB1
-c2luZyBiaXQgbWFuaXB1bGF0aW9uIGRlZmluZXMKPj4gICBkcm0vbXhzZmI6IFVwZGF0ZSBteHNm
-YiB3aXRoIGFkZGl0aW9uYWwgcGl4ZWwgZm9ybWF0cwo+PiAgIGRybS9teHNmYjogRml4IHRoZSB2
-YmxhbmsgZXZlbnRzCj4+ICAgZHJtL214c2ZiOiBBZGQgbWF4LW1lbW9yeS1iYW5kd2lkdGggcHJv
-cGVydHkgZm9yIE1YU0ZCCj4+ICAgZHQtYmluZGluZ3M6IGRpc3BsYXk6IEFkZCBtYXgtbWVtb3J5
-LWJhbmR3aWR0aCBwcm9wZXJ0eSBmb3IgbXhzZmIKPj4gICBkcm0vbXhzZmI6IFVwZGF0ZSBteHNm
-YiB0byBzdXBwb3J0IExDRCByZXNldAo+PiAgIGRybS9teHNmYjogSW1wcm92ZSB0aGUgYXhpIGNs
-b2NrIHVzYWdlCj4+ICAgZHJtL214c2ZiOiBDbGVhciBPVVRTVEFORElOR19SRVFTIGJpdHMKPj4g
-ICBkcm0vbXhzZmI6IEFkZCBzdXBwb3J0IGZvciBob3Jpem9udGFsIHN0cmlkZQo+PiAgIGRybS9t
-eHNmYjogQWRkIHN1cHBvcnQgZm9yIGxpdmUgcGl4ZWwgZm9ybWF0IGNoYW5nZQo+Pgo+PiAgLi4u
-L2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9teHNmYi50eHQgICAgICAgICAgfCAgIDUgKwo+
-PiAgZHJpdmVycy9ncHUvZHJtL214c2ZiL214c2ZiX2NydGMuYyAgICAgICAgICAgICAgICAgfCAy
-ODcgKysrKysrKysrKysrKysrKysrLS0tCj4+ICBkcml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJf
-ZHJ2LmMgICAgICAgICAgICAgICAgICB8IDIwMyArKysrKysrKysrKysrLS0KPj4gIGRyaXZlcnMv
-Z3B1L2RybS9teHNmYi9teHNmYl9kcnYuaCAgICAgICAgICAgICAgICAgIHwgIDEyICstCj4+ICBk
-cml2ZXJzL2dwdS9kcm0vbXhzZmIvbXhzZmJfb3V0LmMgICAgICAgICAgICAgICAgICB8ICAyNiAr
-LQo+PiAgZHJpdmVycy9ncHUvZHJtL214c2ZiL214c2ZiX3JlZ3MuaCAgICAgICAgICAgICAgICAg
-fCAxOTMgKysrKysrKysrLS0tLS0KPj4gIDYgZmlsZXMgY2hhbmdlZCwgNTg5IGluc2VydGlvbnMo
-KyksIDEzNyBkZWxldGlvbnMoLSkKPj4KPj4gLS0KPj4gMi43LjQKPj4KCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+When calculating the HDMI PLL settings for a DMT mode PHY frequency,
+use the correct max fractional PLL value for G12A VPU.
+
+With this fix, we can finally setup the 1024x76-60 mode.
+
+Fixes: 202b9808f8ed ("drm/meson: Add G12A Video Clock setup")
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ drivers/gpu/drm/meson/meson_vclk.c | 9 +++++++--
+ 1 file changed, 7 insertions(+), 2 deletions(-)
+
+diff --git a/drivers/gpu/drm/meson/meson_vclk.c b/drivers/gpu/drm/meson/meson_vclk.c
+index ac491a781952..f690793ae2d5 100644
+--- a/drivers/gpu/drm/meson/meson_vclk.c
++++ b/drivers/gpu/drm/meson/meson_vclk.c
+@@ -638,13 +638,18 @@ static bool meson_hdmi_pll_validate_params(struct meson_drm *priv,
+ 		if (frac >= HDMI_FRAC_MAX_GXBB)
+ 			return false;
+ 	} else if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXM) ||
+-		   meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXL) ||
+-		   meson_vpu_is_compatible(priv, VPU_COMPATIBLE_G12A)) {
++		   meson_vpu_is_compatible(priv, VPU_COMPATIBLE_GXL)) {
+ 		/* Empiric supported min/max dividers */
+ 		if (m < 106 || m > 247)
+ 			return false;
+ 		if (frac >= HDMI_FRAC_MAX_GXL)
+ 			return false;
++	} else if (meson_vpu_is_compatible(priv, VPU_COMPATIBLE_G12A)) {
++		/* Empiric supported min/max dividers */
++		if (m < 106 || m > 247)
++			return false;
++		if (frac >= HDMI_FRAC_MAX_G12A)
++			return false;
+ 	}
+ 
+ 	return true;
+-- 
+2.22.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
