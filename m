@@ -2,56 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6571F9D965
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 00:45:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7CB89D9B0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 01:00:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bxFJBsblbEw+70KvHTjSlD7frtI+htMo6jOh98D+bmE=; b=LROJD0N8zF2E5R
-	R00H1HssDBkiN1PVqiid+Jh4HK+KSVWveYRNfCXCf+VjmEV3WUW0vCDZlZWOHC603yA0w/kZ4Z85l
-	pae1rHjJhH6ojvDnDTw8kWL+ar/+Pvo808MNUi6B5zIqEsJ/i9op4ZA63wfcwjL8G5c+ffGMCd2x+
-	qCUNwlf0WFStGfnNLGnUrouCrD2ioIQaZ/uO4bd8u5B2sgI683ZxjR7ATXvY3dLcD8pLSjC/2JxOp
-	dI7J7p9jtP5GtUIJlLBZzgUPA1WtQh1rtH7BVp4SG8DfaPKzfEZTn39s4wWbnORSeHJheADCPWAku
-	vVGDOPUz1IoRDAnRbfsA==;
+	List-Owner; bh=REk/qrq5oojuoAZcVMdoFyE5mgGWN4siYxAyoVvgkB4=; b=GQrbbvrWHUwNaV
+	buR64kSAzUuKy+cm/65FvYS/JFs9p0pGgsvXzXyftRRaBIfrpktQTzqPhpwqZHlukppHhxW2ymBPc
+	g5/STDcuOtJ6kENpxF1aBo6G6Oa+EHHpYb9fpm5BOHLYhqpaUr1isPkgzu8tz4zpn5tEBhOLibTFV
+	cvKwy1NxDBaADGhSCx/LmjwsXS5otmhzdOFIMTxlLxVhLc2xgFsYzceA7JWjpEJGnG3VGjofrVWnj
+	M6mbbcagVq1Ls3hzme5kqZkM9AVhSorSQZkpgT0SE/kDpRO0gmaWbhZhL7m0H/5nd/79hWs/Uujk1
+	qTap3aWhlTiNb6YumFAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2NjS-0005jo-7z; Mon, 26 Aug 2019 22:45:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i2Ny0-0002QW-KV; Mon, 26 Aug 2019 23:00:04 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2NjE-0005jD-RH; Mon, 26 Aug 2019 22:44:50 +0000
-Received: from gandalf.local.home (cpe-66-24-58-225.stny.res.rr.com
- [66.24.58.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 186C020644;
- Mon, 26 Aug 2019 22:44:46 +0000 (UTC)
-Date: Mon, 26 Aug 2019 18:44:44 -0400
-From: Steven Rostedt <rostedt@goodmis.org>
-To: Changbin Du <changbin.du@gmail.com>
-Subject: Re: [PATCH 01/11] ftrace: move recordmcount tools to scripts/ftrace
-Message-ID: <20190826184444.09334ae9@gandalf.local.home>
-In-Reply-To: <20190825132330.5015-2-changbin.du@gmail.com>
-References: <20190825132330.5015-1-changbin.du@gmail.com>
- <20190825132330.5015-2-changbin.du@gmail.com>
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1i2Nxo-0002QC-RI
+ for linux-arm-kernel@lists.infradead.org; Mon, 26 Aug 2019 22:59:54 +0000
+Received: by mail-pf1-x443.google.com with SMTP id w26so12735952pfq.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 26 Aug 2019 15:59:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=CgfL9em55pskgYqafEMjkjXApm1UUMRf3KrL/Bg/a7g=;
+ b=EpUyev0Dmp60q+5DbW+HgJkbEd/Cp/VbCz1JdRzPjjyQR3zrYuViJkv/jkQJflhfLG
+ UoWZCnLR7XaMykxiIIbybVhc5mWoqwvmklCh4+xOZAxBfk045vZqxDLtuMpNYnusbM31
+ WB84PvEv4FmzEqvhk+83ByG9aBTgWq0BKqXTUnwN0mgU+S0IDEh6I2mqL6PBO+cZU8+x
+ dbMM50tAJ90CkrF2RjjhbZgC4ogIrRu2dhTGMvM00F3XtIsvN12p341yjp8VtnpJQD/Q
+ fFTNI89DM/4Z1S/mU4nV1B45qvkXvXzVug3WenYyxw8AXsRhf7EwdNAlQ5ou/mqxM6U2
+ dwgg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CgfL9em55pskgYqafEMjkjXApm1UUMRf3KrL/Bg/a7g=;
+ b=rQm8oEK13ppVTQpUg5w8DaH8r7eAZzzGC2bzQugz5c8OdB3Vm/u22fdC8uDlZEa/ym
+ rSm9/cfYuzGCnWReLkMrRsF+aBc+buq+x8eqTosACLtudNUCzScAPgscRImVrAilbKV3
+ Ph4tIBpMFDzxNUF9MJyYUeyNhOJPbMN8HmVLBMYIeJa4/eMrinJUqtpL6a2V46oEy3/G
+ AYHDBcGfgAZpOweGd+rlGjeYkG47K3ZVKbqxPLWe6KZos+4gjFT7jTSzzVfKIjPJIXFQ
+ 326SN4zLh6l7wjQG8TCJQ3A4jSTO6hdzVWfcdOslWlY1ciXdIwb0QCj1QolprhaOwEtb
+ ufRA==
+X-Gm-Message-State: APjAAAXK7szSkVCWaLBNkh3zfTD+oRw95gCmBiAmZhHY3IUkxLcYLpgo
+ xhjXfIu1CmYR8m8JkLy/Oy31Ag==
+X-Google-Smtp-Source: APXvYqw5iQK0ic2g0BWsOcbpiUfcmQ0df8BTuwrTOFDPthzbQTF2+gGA7NdW2SXhWQPcQBRq7OZIBw==
+X-Received: by 2002:a65:4243:: with SMTP id d3mr8670220pgq.119.1566860391791; 
+ Mon, 26 Aug 2019 15:59:51 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id s186sm18547979pfb.126.2019.08.26.15.59.50
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 26 Aug 2019 15:59:51 -0700 (PDT)
+Date: Mon, 26 Aug 2019 16:59:49 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH 3/8] coresight: etm4x: Add missing API to set EL match on
+ address filters
+Message-ID: <20190826225949.GC24690@xps15>
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-4-mike.leach@linaro.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190819205720.24457-4-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_154448_929036_43A127E2 
-X-CRM114-Status: GOOD (  13.66  )
-X-Spam-Score: -4.8 (----)
+X-CRM114-CacheID: sfid-20190826_155952_915976_8BD259A7 
+X-CRM114-Status: GOOD (  18.29  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.8 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,148 +99,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
- linux-parisc@vger.kernel.org, linux-doc@vger.kernel.org,
- linux-sh@vger.kernel.org, linux-s390@vger.kernel.org,
- "John F . Reiser" <jreiser@BitWagon.com>, x86@kernel.org,
- linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- Ingo Molnar <mingo@redhat.com>, Jessica Yu <jeyu@kernel.org>,
- sparclinux@vger.kernel.org, linux-kbuild@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linuxppc-dev@lists.ozlabs.org,
- linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Matt Helsley <mhelsley@vmware.com>
+Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
+ suzuki.poulose@arm.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 25 Aug 2019 21:23:20 +0800
-Changbin Du <changbin.du@gmail.com> wrote:
-
-> Move ftrace tools to its own directory. We will add another tool later.
+On Mon, Aug 19, 2019 at 09:57:15PM +0100, Mike Leach wrote:
+> TRCACATRn registers have match bits for secure and non-secure exception
+> levels which are not accessible by the sysfs API.
+> This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
 > 
-> Cc: John F. Reiser <jreiser@BitWagon.com>
-> Signed-off-by: Changbin Du <changbin.du@gmail.com>
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
 > ---
->  scripts/.gitignore                   |  1 -
->  scripts/Makefile                     |  2 +-
->  scripts/Makefile.build               | 10 +++++-----
->  scripts/ftrace/.gitignore            |  4 ++++
->  scripts/ftrace/Makefile              |  4 ++++
->  scripts/{ => ftrace}/recordmcount.c  |  0
->  scripts/{ => ftrace}/recordmcount.h  |  0
->  scripts/{ => ftrace}/recordmcount.pl |  0
->  8 files changed, 14 insertions(+), 7 deletions(-)
->  create mode 100644 scripts/ftrace/.gitignore
->  create mode 100644 scripts/ftrace/Makefile
->  rename scripts/{ => ftrace}/recordmcount.c (100%)
->  rename scripts/{ => ftrace}/recordmcount.h (100%)
->  rename scripts/{ => ftrace}/recordmcount.pl (100%)
->  mode change 100755 => 100644
-
-Note, we are in the process of merging recordmcount with objtool. It
-would be better to continue from that work.
-
- http://lkml.kernel.org/r/2767f55f4a5fbf30ba0635aed7a9c5ee92ac07dd.1563992889.git.mhelsley@vmware.com
-
--- Steve
-
+>  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++++
+>  1 file changed, 39 insertions(+)
 > 
-> diff --git a/scripts/.gitignore b/scripts/.gitignore
-> index 17f8cef88fa8..1b5b5d595d80 100644
-> --- a/scripts/.gitignore
-> +++ b/scripts/.gitignore
-> @@ -6,7 +6,6 @@ conmakehash
->  kallsyms
->  pnmtologo
->  unifdef
-> -recordmcount
->  sortextable
->  asn1_compiler
->  extract-cert
-> diff --git a/scripts/Makefile b/scripts/Makefile
-> index 16bcb8087899..d5992def49a8 100644
-> --- a/scripts/Makefile
-> +++ b/scripts/Makefile
-> @@ -14,7 +14,6 @@ hostprogs-$(CONFIG_BUILD_BIN2C)  += bin2c
->  hostprogs-$(CONFIG_KALLSYMS)     += kallsyms
->  hostprogs-$(CONFIG_LOGO)         += pnmtologo
->  hostprogs-$(CONFIG_VT)           += conmakehash
-> -hostprogs-$(BUILD_C_RECORDMCOUNT) += recordmcount
->  hostprogs-$(CONFIG_BUILDTIME_EXTABLE_SORT) += sortextable
->  hostprogs-$(CONFIG_ASN1)	 += asn1_compiler
->  hostprogs-$(CONFIG_MODULE_SIG)	 += sign-file
-> @@ -34,6 +33,7 @@ hostprogs-y += unifdef
->  subdir-$(CONFIG_GCC_PLUGINS) += gcc-plugins
->  subdir-$(CONFIG_MODVERSIONS) += genksyms
->  subdir-$(CONFIG_SECURITY_SELINUX) += selinux
-> +subdir-$(CONFIG_FTRACE) += ftrace
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index fa1d6a938f6c..7eab5d7d0b62 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -1233,6 +1233,44 @@ static ssize_t addr_context_store(struct device *dev,
+>  }
+>  static DEVICE_ATTR_RW(addr_context);
 >  
->  # Let clean descend into subdirs
->  subdir-	+= basic dtc gdb kconfig mod package
-> diff --git a/scripts/Makefile.build b/scripts/Makefile.build
-> index 2f66ed388d1c..67558983c518 100644
-> --- a/scripts/Makefile.build
-> +++ b/scripts/Makefile.build
-> @@ -188,18 +188,18 @@ endif
->  # files, including recordmcount.
->  sub_cmd_record_mcount =					\
->  	if [ $(@) != "scripts/mod/empty.o" ]; then	\
-> -		$(objtree)/scripts/recordmcount $(RECORDMCOUNT_FLAGS) "$(@)";	\
-> +		$(objtree)/scripts/ftrace/recordmcount $(RECORDMCOUNT_FLAGS) "$(@)"; \
->  	fi;
-> -recordmcount_source := $(srctree)/scripts/recordmcount.c \
-> -		    $(srctree)/scripts/recordmcount.h
-> +recordmcount_source := $(srctree)/scripts/ftrace/recordmcount.c \
-> +		       $(srctree)/scripts/ftrace/recordmcount.h
->  else
-> -sub_cmd_record_mcount = perl $(srctree)/scripts/recordmcount.pl "$(ARCH)" \
-> +sub_cmd_record_mcount = perl $(srctree)/scripts/ftrace/recordmcount.pl "$(ARCH)" \
->  	"$(if $(CONFIG_CPU_BIG_ENDIAN),big,little)" \
->  	"$(if $(CONFIG_64BIT),64,32)" \
->  	"$(OBJDUMP)" "$(OBJCOPY)" "$(CC) $(KBUILD_CPPFLAGS) $(KBUILD_CFLAGS)" \
->  	"$(LD) $(KBUILD_LDFLAGS)" "$(NM)" "$(RM)" "$(MV)" \
->  	"$(if $(part-of-module),1,0)" "$(@)";
-> -recordmcount_source := $(srctree)/scripts/recordmcount.pl
-> +recordmcount_source := $(srctree)/scripts/ftrace/recordmcount.pl
->  endif # BUILD_C_RECORDMCOUNT
->  cmd_record_mcount = $(if $(findstring $(strip $(CC_FLAGS_FTRACE)),$(_c_flags)),	\
->  	$(sub_cmd_record_mcount))
-> diff --git a/scripts/ftrace/.gitignore b/scripts/ftrace/.gitignore
-> new file mode 100644
-> index 000000000000..54d582c8faad
-> --- /dev/null
-> +++ b/scripts/ftrace/.gitignore
-> @@ -0,0 +1,4 @@
-> +#
-> +# Generated files
-> +#
-> +recordmcount
-> diff --git a/scripts/ftrace/Makefile b/scripts/ftrace/Makefile
-> new file mode 100644
-> index 000000000000..6797e51473e5
-> --- /dev/null
-> +++ b/scripts/ftrace/Makefile
-> @@ -0,0 +1,4 @@
-> +# SPDX-License-Identifier: GPL-2.0
+> +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
+> +				      struct device_attribute *attr,
+> +				      char *buf)
+> +{
+> +	u8 idx;
+> +	unsigned long val;
+> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct etmv4_config *config = &drvdata->config;
 > +
-> +hostprogs-$(BUILD_C_RECORDMCOUNT) += recordmcount
-> +always         := $(hostprogs-y)
-> diff --git a/scripts/recordmcount.c b/scripts/ftrace/recordmcount.c
-> similarity index 100%
-> rename from scripts/recordmcount.c
-> rename to scripts/ftrace/recordmcount.c
-> diff --git a/scripts/recordmcount.h b/scripts/ftrace/recordmcount.h
-> similarity index 100%
-> rename from scripts/recordmcount.h
-> rename to scripts/ftrace/recordmcount.h
-> diff --git a/scripts/recordmcount.pl b/scripts/ftrace/recordmcount.pl
-> old mode 100755
-> new mode 100644
-> similarity index 100%
-> rename from scripts/recordmcount.pl
-> rename to scripts/ftrace/recordmcount.pl
+> +	spin_lock(&drvdata->spinlock);
+> +	idx = config->addr_idx;
+> +	val = BMVAL(config->addr_acc[idx], 14, 8);
+> +	spin_unlock(&drvdata->spinlock);
+> +	return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+> +}
+> +
+> +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
+> +				       struct device_attribute *attr,
+> +				       const char *buf, size_t size)
+> +{
+> +	u8 idx;
+> +	unsigned long val;
+> +	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> +	struct etmv4_config *config = &drvdata->config;
+> +
+> +	if (kstrtoul(buf, 16, &val))
+> +		return -EINVAL;
+> +
+> +	spin_lock(&drvdata->spinlock);
+> +	idx = config->addr_idx;
+> +	/* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8] */
+> +	config->addr_acc[idx] &= ~(GENMASK(14, 8));
+> +	config->addr_acc[idx] |= (val << 8);
+> +	spin_unlock(&drvdata->spinlock);
+> +	return size;
+> +}
+> +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
+> +
+>  static ssize_t seq_idx_show(struct device *dev,
+>  			    struct device_attribute *attr,
+>  			    char *buf)
+> @@ -2038,6 +2076,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
+>  	&dev_attr_addr_stop.attr,
+>  	&dev_attr_addr_ctxtype.attr,
+>  	&dev_attr_addr_context.attr,
+> +	&dev_attr_addr_exlevel_s_ns.attr,
+>  	&dev_attr_seq_idx.attr,
+>  	&dev_attr_seq_state.attr,
+>  	&dev_attr_seq_event.attr,
 
+I'm ok with this patch but the new entry needs to be documented in [1].  But
+before moving forward with that I'm wondering if this is the way to go.  Would
+it be better to consolidate type, ctxtype, context and exlevel_s_ns in a single
+entry, say addr_acc_type?  We'd shed a fair amount of code and make it more
+simple for users to configure.
+
+
+[1]. Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
+
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
