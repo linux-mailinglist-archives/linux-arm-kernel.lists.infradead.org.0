@@ -2,43 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B365F9F142
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:13:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D33BC9F14C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:13:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ZZ4ykWdDJO5Ov4g4zlShDJyTrw+2ms0HqEq78imdquM=; b=HJb
-	+7pKadW6fSymrUMvxSDQhrKjj/jhTIaeaB4azHxQS77I8H9QveHFK1hKtBYXq9VqOvs2x7b6QGLrL
-	NU3TinsElgKi6OWLJiOEoY0z9by+3glqani+PpQdwp3mEYBP53zFA16NtwGjnIxayKsVIaHOYC6h9
-	Jat6Bp5QzQlxu/X8FCc3vFH+9KU3U4P+nef9FnJuTYcMYL1cVrXv0e4SqgHbN9uTkok6CORIeLq6H
-	kp9vbZoNMAOawwGGE4Hotdsua6jlzt78SAKuLuLfVzuB+slbESBKg9e//IVDh7Aw43kqcY5S9UPSX
-	Prxzwrrr3ly/bmNoIzOD/cGcGJ7gRsw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LwjzTArUak7ezlebm0OdcKNh2zVEFEfd/XAYcjfiMBE=; b=JgwnNsUlUiv4wP
+	Z3PYpVvJHn7ZcqQIPtj7FfndoFqJQ/9ufCUlsULkPcm5cVFE4nPinaZeKsjgPyjiVct/R/h9lMX27
+	VEScpLv3jgtKKS74jF5UEeQ2ncBfMcPoVF/OyszwUBWxngjNO53JMb1YCzTZvaLWNwjqED2bRl8gu
+	Y9rCXtuJUK7GEKVkumcvhvYeZEtDFbZpOY+lB4u4OSnrV+L/LotpAt2wyiPKaQ/gRhtZb0eYGb7hI
+	076wVRF4H4Vk/krVrvQq9Pa0f1gtrlbY5IFUn/OHPuzw6acJ9X/ySOTKXCEZFE4YOu2UfsO9ft1vI
+	6txNGnFYTGBhk2l/A0PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2f1v-0008Uk-Ng; Tue, 27 Aug 2019 17:13:15 +0000
+	id 1i2f2V-0000T0-1M; Tue, 27 Aug 2019 17:13:51 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2f1j-0008UH-2b
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:13:04 +0000
+ id 1i2f2H-0000Ry-JJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:13:39 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 83F3B337;
- Tue, 27 Aug 2019 10:13:02 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B56153F718;
- Tue, 27 Aug 2019 10:13:01 -0700 (PDT)
-From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: kpti: ensure patched kernel text is fetched from PoU
-Date: Tue, 27 Aug 2019 18:12:57 +0100
-Message-Id: <20190827171257.36023-1-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B82C7337;
+ Tue, 27 Aug 2019 10:13:36 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13F4B3F718;
+ Tue, 27 Aug 2019 10:13:36 -0700 (PDT)
+Date: Tue, 27 Aug 2019 18:13:34 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH 6/6] PCI: tegra: Add support to enable slot regulators
+Message-ID: <20190827171333.GQ14582@e119886-lin.cambridge.arm.com>
+References: <20190826073143.4582-1-vidyas@nvidia.com>
+ <20190826073143.4582-7-vidyas@nvidia.com>
+ <20190827154725.GP14582@e119886-lin.cambridge.arm.com>
+ <91f8914a-22a9-8b7c-bc00-c309a21d83db@nvidia.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <91f8914a-22a9-8b7c-bc00-c309a21d83db@nvidia.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_101303_163354_E3E71D7D 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20190827_101337_719635_D048BBC0 
+X-CRM114-Status: GOOD (  21.27  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,66 +63,167 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, James Morse <james.morse@arm.com>,
- Will Deacon <will@kernel.org>
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
+ thierry.reding@gmail.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
+ digetx@gmail.com, jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org,
+ sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-While the MMUs is disabled, I-cache speculation can result in
-instructions being fetched from the PoC. During boot we may patch
-instructions (e.g. for alternatives and jump labels), and these may be
-dirty at the PoU (and stale at the PoC).
+On Tue, Aug 27, 2019 at 09:54:17PM +0530, Vidya Sagar wrote:
+> On 8/27/2019 9:17 PM, Andrew Murray wrote:
+> > On Mon, Aug 26, 2019 at 01:01:43PM +0530, Vidya Sagar wrote:
+> > > Add support to get regulator information of 3.3V and 12V supplies of a PCIe
+> > > slot from the respective controller's device-tree node and enable those
+> > > supplies. This is required in platforms like p2972-0000 where the supplies
+> > > to x16 slot owned by C5 controller need to be enabled before attempting to
+> > > enumerate the devices.
+> > > 
+> > > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> > > ---
+> > >   drivers/pci/controller/dwc/pcie-tegra194.c | 65 ++++++++++++++++++++++
+> > >   1 file changed, 65 insertions(+)
+> > > 
+> > > diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
+> > > index 8a27b25893c9..97de2151a738 100644
+> > > --- a/drivers/pci/controller/dwc/pcie-tegra194.c
+> > > +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+> > > @@ -278,6 +278,8 @@ struct tegra_pcie_dw {
+> > >   	u32 aspm_l0s_enter_lat;
+> > >   	struct regulator *pex_ctl_supply;
+> > > +	struct regulator *slot_ctl_3v3;
+> > > +	struct regulator *slot_ctl_12v;
+> > >   	unsigned int phy_count;
+> > >   	struct phy **phys;
+> > > @@ -1047,6 +1049,59 @@ static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
+> > >   	}
+> > >   }
+> > > +static void tegra_pcie_get_slot_regulators(struct tegra_pcie_dw *pcie)
+> > > +{
+> > > +	pcie->slot_ctl_3v3 = devm_regulator_get_optional(pcie->dev, "vpcie3v3");
+> > > +	if (IS_ERR(pcie->slot_ctl_3v3))
+> > > +		pcie->slot_ctl_3v3 = NULL;
+> > > +
+> > > +	pcie->slot_ctl_12v = devm_regulator_get_optional(pcie->dev, "vpcie12v");
+> > > +	if (IS_ERR(pcie->slot_ctl_12v))
+> > > +		pcie->slot_ctl_12v = NULL;
+> > 
+> > Do these need to take into consideration -EPROBE_DEFER?
+> Since these are devm_* APIs, isn't it taken care of automatically?
 
-Thus, while the MMU is disabled in the KPTI pagetable fixup code we may
-load stale instructions into the I-cache, potentially leading to
-subsequent crashes when executing regions of code which have been
-modified at runtime.
+devm_regulator_get_optional can still return -EPROBE_DEFER - for times when
+"lookup could succeed in the future".
 
-Similarly to commit:
+It's probably helpful here for your driver to distinguish between there not
+being a regulator specified in the DT, and there being a regulator but there
+is no device for it yet. For the latter case - your driver would probe but
+nothing would enumerate.
 
-  8ec41987436d566f ("arm64: mm: ensure patched kernel text is fetched from PoU")
+See pcie-rockchip-host.c for an example of where this is handled.
 
-... we can invalidate the I-cache after enabling the MMU to prevent such
-issues.
+Of course if, for whatever reason it is unlikely you'll ever get -EPROBE_DEFER
+then maybe it's OK as it is.
 
-The KPTI pagetable fixup code itself should be clean to the PoC per the
-boot protocol, so no maintenance is required for this code.
+Thanks,
 
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: James Morse <james.morse@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm64/mm/proc.S | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Andrew Murray
 
-diff --git a/arch/arm64/mm/proc.S b/arch/arm64/mm/proc.S
-index 7dbf2be470f6..28a8f7b87ff0 100644
---- a/arch/arm64/mm/proc.S
-+++ b/arch/arm64/mm/proc.S
-@@ -286,6 +286,15 @@ skip_pgd:
- 	msr	sctlr_el1, x18
- 	isb
- 
-+	/*
-+	 * Invalidate the local I-cache so that any instructions fetched
-+	 * speculatively from the PoC are discarded, since they may have
-+	 * been dynamically patched at the PoU.
-+	 */
-+	ic	iallu
-+	dsb	nsh
-+	isb
-+
- 	/* Set the flag to zero to indicate that we're all done */
- 	str	wzr, [flag_ptr]
- 	ret
--- 
-2.11.0
-
+> 
+> > 
+> > Thanks,
+> > 
+> > Andrew Murray
+> > 
+> > > +}
+> > > +
+> > > +static int tegra_pcie_enable_slot_regulators(struct tegra_pcie_dw *pcie)
+> > > +{
+> > > +	int ret;
+> > > +
+> > > +	if (pcie->slot_ctl_3v3) {
+> > > +		ret = regulator_enable(pcie->slot_ctl_3v3);
+> > > +		if (ret < 0) {
+> > > +			dev_err(pcie->dev,
+> > > +				"Failed to enable 3V3 slot supply: %d\n", ret);
+> > > +			return ret;
+> > > +		}
+> > > +	}
+> > > +
+> > > +	if (pcie->slot_ctl_12v) {
+> > > +		ret = regulator_enable(pcie->slot_ctl_12v);
+> > > +		if (ret < 0) {
+> > > +			dev_err(pcie->dev,
+> > > +				"Failed to enable 12V slot supply: %d\n", ret);
+> > > +			if (pcie->slot_ctl_3v3)
+> > > +				regulator_disable(pcie->slot_ctl_3v3);
+> > > +			return ret;
+> > > +		}
+> > > +	}
+> > > +
+> > > +	/*
+> > > +	 * According to PCI Express Card Electromechanical Specification
+> > > +	 * Revision 1.1, Table-2.4, T_PVPERL (Power stable to PERST# inactive)
+> > > +	 * should be a minimum of 100ms.
+> > > +	 */
+> > > +	msleep(100);
+> > > +
+> > > +	return 0;
+> > > +}
+> > > +
+> > > +static void tegra_pcie_disable_slot_regulators(struct tegra_pcie_dw *pcie)
+> > > +{
+> > > +	if (pcie->slot_ctl_12v)
+> > > +		regulator_disable(pcie->slot_ctl_12v);
+> > > +	if (pcie->slot_ctl_3v3)
+> > > +		regulator_disable(pcie->slot_ctl_3v3);
+> > > +}
+> > > +
+> > >   static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+> > >   					bool en_hw_hot_rst)
+> > >   {
+> > > @@ -1060,6 +1115,10 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+> > >   		return ret;
+> > >   	}
+> > > +	ret = tegra_pcie_enable_slot_regulators(pcie);
+> > > +	if (ret < 0)
+> > > +		goto fail_slot_reg_en;
+> > > +
+> > >   	ret = regulator_enable(pcie->pex_ctl_supply);
+> > >   	if (ret < 0) {
+> > >   		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
+> > > @@ -1142,6 +1201,8 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+> > >   fail_core_clk:
+> > >   	regulator_disable(pcie->pex_ctl_supply);
+> > >   fail_reg_en:
+> > > +	tegra_pcie_disable_slot_regulators(pcie);
+> > > +fail_slot_reg_en:
+> > >   	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+> > >   	return ret;
+> > > @@ -1174,6 +1235,8 @@ static int __deinit_controller(struct tegra_pcie_dw *pcie)
+> > >   		return ret;
+> > >   	}
+> > > +	tegra_pcie_disable_slot_regulators(pcie);
+> > > +
+> > >   	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+> > >   	if (ret) {
+> > >   		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
+> > > @@ -1372,6 +1435,8 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
+> > >   		return ret;
+> > >   	}
+> > > +	tegra_pcie_get_slot_regulators(pcie);
+> > > +
+> > >   	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
+> > >   	if (IS_ERR(pcie->pex_ctl_supply)) {
+> > >   		dev_err(dev, "Failed to get regulator: %ld\n",
+> > > -- 
+> > > 2.17.1
+> > > 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
