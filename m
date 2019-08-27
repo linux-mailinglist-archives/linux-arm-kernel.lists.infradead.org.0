@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C4F79E510
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:59:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD7C29E513
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:59:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pWK/DapGJwX4Oc6QIItHvOs/QeSx1xQq0h4VGiO+wU0=; b=DeyZupmxP4G9xu
-	asXD+jN3Z2DQBRu/MN+sH2T3A8ULRvbOeN0wSaNVPy1dXaDHtBa6kHw4bbS+NnfRpcDEgnxUMGkjX
-	Ie2s8yDmeU4DK9f5dReOzWXQNUYhWTmHIfduAE2epwMIlmAWFx8+Tpk253KVjRQ2FQaWQUcB4MSEu
-	twPnbXRbAu2G9606fpd9ARVU1/SrFpygSCucUhdqvcz35AZnrCJy0UUHxAaBYisKCS8RcdYYYI34d
-	5CRV5wQ92DxkldQ/k3CeBn8yaXzo3HxFfwebsVpGJxRUS0ki2M5a+mMzsNsLaodx663IpZc+B8eYz
-	YKlyZ3uxBxvva0ZGEIeg==;
+	List-Owner; bh=cFBGrLbJMr2tLeD0myWHnWRoRexkKxvhZMz0jPOqnm8=; b=jWPvkVtQraX0/B
+	M9DJ66Mq7iNDgfxtgbRhZ6UlPcMLyt/FsbEaArqaizdcxMw9ShH2xKUHRYi9jlSduw9qGpI/y7Uwb
+	JFbO/1aZcGucjWr0ELuPW7rFEZ6sTpUk9asvq8f4ukMySY+vc9rHhirzRljLbfA2Q9kamQ0WiPmn8
+	eHcboALMPai7tDoArMXr6WQyyUh2Rt1AEhdDWc0PLeRHj1YtMWAzc3lYZrtDYpDueo6tzle3Hs57q
+	tSB9pyc6jVf/stJu2+g8rOHqqMSFn9oYzks0zhMW/T+EwJ7Tjcntv6boPS467w6S3aoJDCrqh+Pw7
+	70cAVWhOQRxfKT1fYIrg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YFr-0001CH-V1; Tue, 27 Aug 2019 09:59:12 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1i2YGD-0001XM-7i; Tue, 27 Aug 2019 09:59:33 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YFC-0000wu-4n
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:58:32 +0000
-Received: by mail-wr1-x443.google.com with SMTP id z1so18132893wru.13
+ id 1i2YFD-0000xj-VR
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:58:33 +0000
+Received: by mail-wr1-x444.google.com with SMTP id j16so18118929wrr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 02:58:29 -0700 (PDT)
+ Tue, 27 Aug 2019 02:58:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=e3MX6dJTEQsQ89HsRB1zdZlcheUaoM7pF8lBBmIX570=;
- b=Ugl/8zrolmxov83L5GM9xV8mmhNk/xvoT9Qx80voxCM0e8fyHjKUfK9EPT9dzOC14H
- hDRkEM8GqCtOPBom0oTAthFAT/kEh2l/myItSPKeMeNTkl/qfNLQ/lIvkyxw4YvUBcom
- LaMQoNUJEJ+bdvvurb05C58eDEp2KNhjg9m46jQoNSAYu+zFKVgBhKQHPKp1+fSHpp9P
- 7obFgm0tdMoEyEKKO10dgDvTaWnz2rUrvbU0EDVHVaNwJoLLfSHFCwM/dvDk113dUAP7
- Q5czgoZ3XfZXqGwFrWn/2hJjvjMMeYoj7TgAu5ru27WSD46DDJpRCHBZ2Pbsd2BIlHhK
- nJtA==
+ bh=wbdxbxYZcKVLdPE0Y/8WQgSXBgDUmbVqM2Rjtf0OVOI=;
+ b=mOB8HFsHRuuCRYt9Kp+g2Vrx/KvyTnWXGglzhl804o2JfqJ/QDMeTgZoO+Ued+xtAJ
+ TsIhTzlWDYZdbIWQcdYRQomzPGGDcnNvhXxY5ncQKWOpnCKWoaRWuZ8Vg/I7othlgGnc
+ 8UMoMLp1R1rWbJ9ya7spTIgvhPMIs0kwWyOxJYppM3Hc2stPXW/gJiRVeOGl9ICcfVOr
+ JnOpENKyJyp37NeDesmyZP6FSvgqpY+YBz/ld3SmFp0pMHPad2BWgChIlhkMP3+ugTgm
+ VyxwniLooNR/upSBilO/t4y9/bdbW2v+nwtyLjrOKOBljWrmUnAuJRfc+sCrxF07LpAq
+ VulA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=e3MX6dJTEQsQ89HsRB1zdZlcheUaoM7pF8lBBmIX570=;
- b=nNaHBxF6zo/Je87UDw6w4y97c+Iq5tWdRjmFEnGnLQpKIHv1+/GEX6siXD/CAE4sq1
- 38bBLEkHVpp2BifLXtwdLNg7bb8AeebI7xjlmOIunAi3xo3G3A7By6xSpINxspEvvQn6
- /1mtM1F0R+Ca7tTL8QpXXEVJxFn+bmx36lwcZ/NniPObLaQjwqcpYkjZc3+QJ/eIX85A
- IeIPZ0Qkq+jyH6ojvs4X2Xfo19dYos6mO8FvWSvo/ctRfKe/qj/bbaUdJ9tBT6Xye/1x
- xtBzf7Y++CdHs1DXOEvlPoDnCDqCPzViMtSg+h/rRKl9jFSPExvsv4J74YSu8TMIdNWK
- Melw==
-X-Gm-Message-State: APjAAAUx4FK3iN6D04I5+wqNQCICw7TruhUdTIM1wlio562l936/88gE
- exBou8PTWwKvSZwyFKiCDqaJAw==
-X-Google-Smtp-Source: APXvYqy4ZYB2/q/DqDVQb0WL+EPpli8OSFxCaqbkjlDMpmc/cnWWUqiSdxK0DJT+0XlCte2VBKjc4Q==
-X-Received: by 2002:a5d:66c8:: with SMTP id k8mr28230101wrw.7.1566899908606;
- Tue, 27 Aug 2019 02:58:28 -0700 (PDT)
+ bh=wbdxbxYZcKVLdPE0Y/8WQgSXBgDUmbVqM2Rjtf0OVOI=;
+ b=j8xxSL46c3yTrc9fzs6J5whRnQnW9wZV1MCeEsePuUkpxZ7g64elczwVuQdT+t71FP
+ nJUOHi362/xbj8nPnbCFcPbQjYAGb9R6mUFY3ZpEO+v8Kq/PpmZEz9FrX6ynh9kGm/mR
+ IfCPHH/ym5M3teJeghxQxD56SlpWpFVdetjdOf3lPnzEanSfjQNd3CyBcat+HyOdT59x
+ eVbG+iubLzxuDna4QeCRAm05IcPTK/SdS9JAPY8JEKlmJ3woxefuT/A5OvfpSbkJ9m13
+ ENRa4hDQVaWVGjukLpGD/6I3Dt8qEhopALldKyyxOrw0HFE3YINC/R7arSt8Lv5E4R5U
+ N9fA==
+X-Gm-Message-State: APjAAAU9h4KxeYb4i24coWTqKbnWLAt3oqh2p4Q/zTGj/SW+GHU4LZvb
+ vpOybC95CyudjEgt4VnD3CKntA==
+X-Google-Smtp-Source: APXvYqzlJBCTaG+pE4o2jLBqQI6zVkgZsqDDyXOyYdI2n3XJFdcBqkqNW7xzsAxTdeooMlTarCQ78Q==
+X-Received: by 2002:a5d:5112:: with SMTP id s18mr2484026wrt.34.1566899910193; 
+ Tue, 27 Aug 2019 02:58:30 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id m6sm10862084wrq.95.2019.08.27.02.58.27
+ by smtp.gmail.com with ESMTPSA id m6sm10862084wrq.95.2019.08.27.02.58.29
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 02:58:28 -0700 (PDT)
+ Tue, 27 Aug 2019 02:58:29 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: dri-devel@lists.freedesktop.org
-Subject: [PATCH 1/2] drm/meson: dw_hdmi: add resume/suspend hooks
-Date: Tue, 27 Aug 2019 11:58:24 +0200
-Message-Id: <20190827095825.21015-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/2] drm/meson: add resume/suspend hooks
+Date: Tue, 27 Aug 2019 11:58:25 +0200
+Message-Id: <20190827095825.21015-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190827095825.21015-1-narmstrong@baylibre.com>
 References: <20190827095825.21015-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_025830_187964_FC9E23D3 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20190827_025832_009982_F3B32AD3 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -102,168 +102,72 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the suspens and resume hooks to:
-- reset the whole HDMI glue and HDMI controller on suspend
-- re-init the HDMI glue and HDMI controller on resume
-
-The HDMI glue init is refactored to be re-used from the resume hook.
-
-It makes usage of dw_hdmi_resume() to recover a functionnal DDC bus.
+Add the suspend and resume hooks to:
+- save and disable the entire DRM driver on suspend
+- re-init the entire VPU subsystem on resume, to recover CRTC and pixel
+generator functionnal usage after DDR suspend, then recover DRM driver
+state
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- drivers/gpu/drm/meson/meson_dw_hdmi.c | 110 ++++++++++++++++++--------
- 1 file changed, 76 insertions(+), 34 deletions(-)
+ drivers/gpu/drm/meson/meson_drv.c | 32 +++++++++++++++++++++++++++++++
+ 1 file changed, 32 insertions(+)
 
-diff --git a/drivers/gpu/drm/meson/meson_dw_hdmi.c b/drivers/gpu/drm/meson/meson_dw_hdmi.c
-index df3f9ddd2234..a722ddbfbede 100644
---- a/drivers/gpu/drm/meson/meson_dw_hdmi.c
-+++ b/drivers/gpu/drm/meson/meson_dw_hdmi.c
-@@ -799,6 +799,47 @@ static bool meson_hdmi_connector_is_available(struct device *dev)
- 	return false;
- }
- 
-+static void meson_dw_hdmi_init(struct meson_dw_hdmi *meson_dw_hdmi)
-+{
-+	struct meson_drm *priv = meson_dw_hdmi->priv;
-+
-+	/* Enable clocks */
-+	regmap_update_bits(priv->hhi, HHI_HDMI_CLK_CNTL, 0xffff, 0x100);
-+
-+	/* Bring HDMITX MEM output of power down */
-+	regmap_update_bits(priv->hhi, HHI_MEM_PD_REG0, 0xff << 8, 0);
-+
-+	/* Reset HDMITX APB & TX & PHY */
-+	reset_control_reset(meson_dw_hdmi->hdmitx_apb);
-+	reset_control_reset(meson_dw_hdmi->hdmitx_ctrl);
-+	reset_control_reset(meson_dw_hdmi->hdmitx_phy);
-+
-+	/* Enable APB3 fail on error */
-+	if (!meson_vpu_is_compatible(priv, "amlogic,meson-g12a-vpu")) {
-+		writel_bits_relaxed(BIT(15), BIT(15),
-+				    meson_dw_hdmi->hdmitx + HDMITX_TOP_CTRL_REG);
-+		writel_bits_relaxed(BIT(15), BIT(15),
-+				    meson_dw_hdmi->hdmitx + HDMITX_DWC_CTRL_REG);
-+	}
-+
-+	/* Bring out of reset */
-+	meson_dw_hdmi->data->top_write(meson_dw_hdmi,
-+				       HDMITX_TOP_SW_RESET,  0);
-+
-+	msleep(20);
-+
-+	meson_dw_hdmi->data->top_write(meson_dw_hdmi,
-+				       HDMITX_TOP_CLK_CNTL, 0xff);
-+
-+	/* Enable HDMI-TX Interrupt */
-+	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_INTR_STAT_CLR,
-+				       HDMITX_TOP_INTR_CORE);
-+
-+	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_INTR_MASKN,
-+				       HDMITX_TOP_INTR_CORE);
-+
-+}
-+
- static int meson_dw_hdmi_bind(struct device *dev, struct device *master,
- 				void *data)
- {
-@@ -922,40 +963,7 @@ static int meson_dw_hdmi_bind(struct device *dev, struct device *master,
- 
- 	DRM_DEBUG_DRIVER("encoder initialized\n");
- 
--	/* Enable clocks */
--	regmap_update_bits(priv->hhi, HHI_HDMI_CLK_CNTL, 0xffff, 0x100);
--
--	/* Bring HDMITX MEM output of power down */
--	regmap_update_bits(priv->hhi, HHI_MEM_PD_REG0, 0xff << 8, 0);
--
--	/* Reset HDMITX APB & TX & PHY */
--	reset_control_reset(meson_dw_hdmi->hdmitx_apb);
--	reset_control_reset(meson_dw_hdmi->hdmitx_ctrl);
--	reset_control_reset(meson_dw_hdmi->hdmitx_phy);
--
--	/* Enable APB3 fail on error */
--	if (!meson_vpu_is_compatible(priv, "amlogic,meson-g12a-vpu")) {
--		writel_bits_relaxed(BIT(15), BIT(15),
--				    meson_dw_hdmi->hdmitx + HDMITX_TOP_CTRL_REG);
--		writel_bits_relaxed(BIT(15), BIT(15),
--				    meson_dw_hdmi->hdmitx + HDMITX_DWC_CTRL_REG);
--	}
--
--	/* Bring out of reset */
--	meson_dw_hdmi->data->top_write(meson_dw_hdmi,
--				       HDMITX_TOP_SW_RESET,  0);
--
--	msleep(20);
--
--	meson_dw_hdmi->data->top_write(meson_dw_hdmi,
--				       HDMITX_TOP_CLK_CNTL, 0xff);
--
--	/* Enable HDMI-TX Interrupt */
--	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_INTR_STAT_CLR,
--				       HDMITX_TOP_INTR_CORE);
--
--	meson_dw_hdmi->data->top_write(meson_dw_hdmi, HDMITX_TOP_INTR_MASKN,
--				       HDMITX_TOP_INTR_CORE);
-+	meson_dw_hdmi_init(meson_dw_hdmi);
- 
- 	/* Bridge / Connector */
- 
-@@ -991,6 +999,34 @@ static const struct component_ops meson_dw_hdmi_ops = {
- 	.unbind	= meson_dw_hdmi_unbind,
+diff --git a/drivers/gpu/drm/meson/meson_drv.c b/drivers/gpu/drm/meson/meson_drv.c
+index 2310c96fff46..dc573ffd1f4c 100644
+--- a/drivers/gpu/drm/meson/meson_drv.c
++++ b/drivers/gpu/drm/meson/meson_drv.c
+@@ -361,6 +361,33 @@ static const struct component_master_ops meson_drv_master_ops = {
+ 	.unbind	= meson_drv_unbind,
  };
  
-+static int __maybe_unused meson_dw_hdmi_pm_suspend(struct device *dev)
++static int __maybe_unused meson_drv_pm_suspend(struct device *dev)
 +{
-+	struct meson_dw_hdmi *meson_dw_hdmi = dev_get_drvdata(dev);
++	struct meson_drm *priv = dev_get_drvdata(dev);
 +
-+	if (!meson_dw_hdmi)
++	if (!priv)
 +		return 0;
 +
-+	/* Reset TOP */
-+	meson_dw_hdmi->data->top_write(meson_dw_hdmi,
-+				       HDMITX_TOP_SW_RESET, 0);
++	return drm_mode_config_helper_suspend(priv->drm);
++}
++
++static int __maybe_unused meson_drv_pm_resume(struct device *dev)
++{
++	struct meson_drm *priv = dev_get_drvdata(dev);
++
++	if (!priv)
++		return 0;
++
++	meson_vpu_init(priv);
++	meson_venc_init(priv);
++	meson_vpp_init(priv);
++	meson_viu_init(priv);
++
++	drm_mode_config_helper_resume(priv->drm);
 +
 +	return 0;
 +}
 +
-+static int __maybe_unused meson_dw_hdmi_pm_resume(struct device *dev)
-+{
-+	struct meson_dw_hdmi *meson_dw_hdmi = dev_get_drvdata(dev);
-+
-+	if (!meson_dw_hdmi)
-+		return 0;
-+
-+	meson_dw_hdmi_init(meson_dw_hdmi);
-+
-+	dw_hdmi_resume(meson_dw_hdmi->hdmi);
-+
-+	return 0;
-+}
-+
- static int meson_dw_hdmi_probe(struct platform_device *pdev)
+ static int compare_of(struct device *dev, void *data)
  {
- 	return component_add(&pdev->dev, &meson_dw_hdmi_ops);
-@@ -1003,6 +1039,11 @@ static int meson_dw_hdmi_remove(struct platform_device *pdev)
- 	return 0;
- }
+ 	DRM_DEBUG_DRIVER("Comparing of node %pOF with %pOF\n",
+@@ -452,11 +479,16 @@ static const struct of_device_id dt_match[] = {
+ };
+ MODULE_DEVICE_TABLE(of, dt_match);
  
-+static const struct dev_pm_ops meson_dw_hdmi_pm_ops = {
-+	SET_SYSTEM_SLEEP_PM_OPS(meson_dw_hdmi_pm_suspend,
-+				meson_dw_hdmi_pm_resume)
++static const struct dev_pm_ops meson_drv_pm_ops = {
++	SET_SYSTEM_SLEEP_PM_OPS(meson_drv_pm_suspend, meson_drv_pm_resume)
 +};
 +
- static const struct of_device_id meson_dw_hdmi_of_table[] = {
- 	{ .compatible = "amlogic,meson-gxbb-dw-hdmi",
- 	  .data = &meson_dw_hdmi_gx_data },
-@@ -1022,6 +1063,7 @@ static struct platform_driver meson_dw_hdmi_platform_driver = {
- 	.driver		= {
- 		.name		= DRIVER_NAME,
- 		.of_match_table	= meson_dw_hdmi_of_table,
-+		.pm = &meson_dw_hdmi_pm_ops,
+ static struct platform_driver meson_drm_platform_driver = {
+ 	.probe      = meson_drv_probe,
+ 	.driver     = {
+ 		.name	= "meson-drm",
+ 		.of_match_table = dt_match,
++		.pm = &meson_drv_pm_ops,
  	},
  };
- module_platform_driver(meson_dw_hdmi_platform_driver);
+ 
 -- 
 2.22.0
 
