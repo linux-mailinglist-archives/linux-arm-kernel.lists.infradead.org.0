@@ -2,93 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23CE29E039
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 10:01:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DD919E1E5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 10:16:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lipjEQYY1tq2Gi7oy38nloYP68cDdORVmmC7FnoU8kE=; b=CKBfi9HtJ86uMw
-	y7IyTBzdZfD9ACINYxD1pXmznjgPYkh75ot2axUYAF6KChL5+RF35ZyhXR3l6DiRtnKR41rGv4dX9
-	x0p6UAIseo3YVfSAij/V7H1kDdtQUpNUCo1+yr7jD4GGNps0c9aguA4ppk0ohbKsT9451WfdUgfrO
-	+Dg3Qcc+TuCgAjprDODiLPhZRE+86BGJKpMorQWcubgH/XW4joX6AtUiqBQapkAMLQjlUR4fNqPLz
-	q1zuZn5FDeJsDg0R/zPVwQl0GYu2hjGeHxVztHPZQwLAC+Jhnj0ZbIso0jb/19icFhkonkGjTtrA9
-	yNRtNvCOf7dnTI5QsYjg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lMhmWJ/BVVuWw9e/8OA3ch2K+QO+Hw0RQ+rXwuWmOGg=; b=Wd1Fzn/TvbSgN0
+	Y0QXax1PlATMfy2MG1zNEbQRoIhLO0agvyJXz0x+Yiji4f3ujW1jwP8k8MP2oV0ksNgCfWIuARp1f
+	s/hPs4DXWnDc7HCOYcSJTLf9or3UcInryOog0rSssbm/PD92jZVosE9wY6vJXIt7hzZk8DdBA3omC
+	CBVOVJ42c8CNUHs+U98x3vtqoWozTW7MSJOCUGVqfPoOkzUII8Npsvct21WcBfSi9b4C0fDztMj1V
+	S9fac/qLV2YxbxXfvFLTYIYWYLWDbfCz1pe912iw8AnDTrkqcpVZeR/6p0NFDOTqMeJdZQkPqUpXk
+	xD5yl98VBRrQxQFLye5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2WQ8-0007oz-Fw; Tue, 27 Aug 2019 08:01:40 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2WPu-0007oZ-DY
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 08:01:28 +0000
-Received: by mail-ed1-f65.google.com with SMTP id m44so30118618edd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 01:01:25 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Aj/M9A/pRvOgZCbXpj3T4Q2/WP9XPh0HT/hjIq8gM3E=;
- b=jR1EntCRvwApZD5xO4wYxTlXCLIHhI5NbNf1J0Q6uXA7MX1wYtAZ1y+cL8UfixD9Z5
- jrG+gg3csuqX8slj77oaKf3sjOUqzvFlcmyr6zpIQS5FuQZKHDUGj3cSQPqPjs4zawoH
- fUSNHz9FD3YmIuVQHzlCAWxaek2q69+DmWzWKLEpkWu4IglEsMkohMpSmcJDLgImvbp/
- Onbr7s57xy6A2Khqxp4KZBXZpDCzbxlu4eB4UENnw5ZoptpQtG7Uvzx3hr59/mScN/ZN
- o7K8h/O5XqkVzzEAN1Dy3uLo3oTaKt313KBdU/faySO6X2VYoJ/YfIZy3Sk4Cypk9RTI
- GE9A==
-X-Gm-Message-State: APjAAAUmyDzpLeh9we0nioyfB8egwKuj33LD0+aw+VXwP2nYlWiNfXTr
- 317rzvZ//iQ6a7U5IanmZ8aLR6K65+E=
-X-Google-Smtp-Source: APXvYqyX7CgARhyfkriSkWm0DDO6AFXnWNaGWz3q+smiGiF8EP7M2Urp9TpHPrHJVHVIw270w0briw==
-X-Received: by 2002:a17:906:7e58:: with SMTP id
- z24mr20625240ejr.251.1566892884271; 
- Tue, 27 Aug 2019 01:01:24 -0700 (PDT)
-Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com.
- [209.85.221.46])
- by smtp.gmail.com with ESMTPSA id m26sm1824775edd.19.2019.08.27.01.01.23
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
-Received: by mail-wr1-f46.google.com with SMTP id t16so17780364wra.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
-X-Received: by 2002:adf:e941:: with SMTP id m1mr2132834wrn.279.1566892883607; 
- Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
+	id 1i2We4-0005ZA-D6; Tue, 27 Aug 2019 08:16:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2Wdo-0005Xl-I4; Tue, 27 Aug 2019 08:15:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A6A82337;
+ Tue, 27 Aug 2019 01:15:45 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 61C483F246; Tue, 27 Aug 2019 01:15:44 -0700 (PDT)
+Subject: Re: [PATCH v1 0/6] Allow kexec reboot for GICv3 and device tree
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+References: <20190826190056.27854-1-pasha.tatashin@soleen.com>
+ <20190826201313.246208e9@why>
+ <CA+CK2bAS-jDwY-qKfZQD8TbvyAhS1+rBvcxGqkR4BHd5NR5BGQ@mail.gmail.com>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <d7461fb3-0f6d-8abf-084d-ce0be1f1a18d@kernel.org>
+Date: Tue, 27 Aug 2019 09:15:43 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190826180734.15801-1-codekipper@gmail.com>
- <20190826180734.15801-2-codekipper@gmail.com>
- <CAGb2v651jVp+J2eyWh7vw-yHmFTVy4eaMjHV0FvOF17C5_Hswg@mail.gmail.com>
- <CAEKpxBmCg4AkqKM-O3C76gto+mPWyEdDbviAmRJ8PxLOOMTJ7w@mail.gmail.com>
-In-Reply-To: <CAEKpxBmCg4AkqKM-O3C76gto+mPWyEdDbviAmRJ8PxLOOMTJ7w@mail.gmail.com>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 27 Aug 2019 16:01:12 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64VNZ0oyD_760uNccwJb7MKngSooWB72M+d1DfT4-djog@mail.gmail.com>
-Message-ID: <CAGb2v64VNZ0oyD_760uNccwJb7MKngSooWB72M+d1DfT4-djog@mail.gmail.com>
-Subject: Re: [linux-sunxi] [PATCH v6 1/3] ASoC: sun4i-i2s: incorrect regmap
- for A83T
-To: Code Kipper <codekipper@gmail.com>
+In-Reply-To: <CA+CK2bAS-jDwY-qKfZQD8TbvyAhS1+rBvcxGqkR4BHd5NR5BGQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_010126_462533_FB57229D 
-X-CRM114-Status: GOOD (  35.54  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190827_011548_686193_D5C22C82 
+X-CRM114-Status: GOOD (  22.41  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,135 +63,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Maxime Ripard <mripard@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ James Morris <jmorris@namei.org>, LKML <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 1:55 PM Code Kipper <codekipper@gmail.com> wrote:
->
-> On Tue, 27 Aug 2019 at 06:13, Chen-Yu Tsai <wens@csie.org> wrote:
-> >
-> > On Tue, Aug 27, 2019 at 2:07 AM <codekipper@gmail.com> wrote:
-> > >
-> > > From: Marcus Cooper <codekipper@gmail.com>
-> > >
-> > > The regmap configuration is set up for the legacy block on the
-> > > A83T whereas it uses the new block with a larger register map.
-> >
-> > Looking at the code Allwinner previously released [1], that doesn't seem to be
-> > the case. Keep in mind that the register map shown in the user manual is for
-> > the TDM interface, which we don't actually support right now.
->
-> Should it matter what we support right now?, the block according to the user
-> manual shows the bigger range. I don't have a A83T device and from what I
+On 26/08/2019 22:25, Pavel Tatashin wrote:
+> On Mon, Aug 26, 2019 at 3:13 PM Marc Zyngier <maz@kernel.org> wrote:
+>>
+>> On Mon, 26 Aug 2019 15:00:50 -0400
+>> Pavel Tatashin <pasha.tatashin@soleen.com> wrote:
+>>
+>>> Marc Zyngier added the support for kexec and GICv3 for EFI based systems.
+>>> However, it is still not possible todo on systems with device trees.
+>>>
+>>> Here is EFI fixes from Marc:
+>>> https://lore.kernel.org/lkml/20180921195954.21574-1-marc.zyngier@arm.com
+>>>
+>>> For Device Tree variant: lets allow reserve a memory region in interrupt
+>>> controller node, and use this property to allocate interrupt tables.
+>>
+>> There is no such thing as a "device tree variant". As long as your
+>> bootloader implements EFI, everything will work correctly, whether
+>> you're using DT, ACPI, or the anything else.
+>>
+>> This already works today, without any need to add anything to the
+>> kernel (I have systems using EDK II and u-boot, both implementing EFI,
+>> and I'm able to kexec without any issue). If your bootloader doesn't
+>> support EFI, here's a good opportunity to implement it!
+> 
+> Hi Marc,
+> 
+> Thank you very much for looking at this work.
+> 
+> Running Linux without EFI is common, and there are scenarios which
+> make it appropriate. As I understand most of embedded linux do not
+> have EFI enabled, and thus I do not see a reason why we would not
+> support a first class feature of Linux (kexec) on non-EFI bootloaders.
 
-There are a total of four I2S controllers on the A83T. Currently three of them
-are listed in the dtsi file, which are _not_ the one shown in the user manual.
-The one shown is the fourth one, which is the TDM controller.
+Define "most". All the arm64 systems I have around (and trust me, that's
+quite a number of them) can either use u-boot, which has more than
+enough EFI support to use this functionality, or use EDK-II natively.
 
-It's not like we haven't seen this before. IIRC the A64 also had two variants
-of the I2S interface. The one coupled with the audio codec was different from
-the others.
+> We (Microsoft) have a small highly secure device with a high uptime
+> requirement. The device also has PCIe and thus GICv3. The update for
 
-> gather not many users do. But the compatible for the H3 has been removed
-> and replaced with the settings for the A83T which also has default settings in
-> registers further up than SUNXI_RXCHMAP.
+PCIe doesn't imply GICv3 at all.
 
-I'll sync up with Maxime on this.
+> this device relies on kexec. For a number of reasons, it was decided
+> to use U-Boot and Linux without EFI enabled. One of those reasons is
+> to improve boot performance, enabling EFI in U-Boot alone reduces the
+> boot performance by half a second. Our total reboot budget is under a
+> second which makes that half a second unacceptable. Also, adding EFI
+> support to kernel increases its size and there are security
+> implications from enabling more code both in U-Boot and Linux.
 
-> >
-> > The file shows the base address as 0x01c22800, and the last defined register
-> > is SUNXI_RXCHMAP at 0x3c.
-> >
-> > The I2S driver [2] also shows that it is the old register map size, but with
-> > TX_FIFO and INT_STA swapped around. This might mean that it would need a
-> > separate regmap_config, as the read/write callbacks need to be changed to
-> > fit the swapped registers.
-> >
-> > Finally, the TDM driver [3], which matches the TDM section in the manual, shows
-> > a larger register map.
-> >
-> > A83T is SUN8IW6, while SUN8IW7 refers to the H3.
->
-> Since when have we trusted Allwinner code?, the TDM labelled block
-> clearly supports
+You're are missing the point. kexec with EFI has 0 overhead (no
+non-kernel EFI code gets executed), doesn't impact your time budget, and
+only relies on a single in-memory table. This can be pretty trivially
+provided by the dumbest EFI shim.
 
-Since they haven't listed the I2S block in the user manual, so that is what we
-have to go by.
+All you are describing above is a set of self imposed limitations in
+your bootloader, which you are fully in control of. So instead of
+reinventing a square wheel, I suggest you adopt the existing implementation.
 
-The TDM section in the user manual only lists the block at 0x1c23000. The memory
-map says DAUDIO-[012] for addresses 0x1c22000, 0x1c22400, 0x1c22800, and TDM for
-address 0x1c23000. One would assume this meant these are somewhat different.
+Another reason not to do this is interoperability: I want to be able to
+kexec whatever Linux kernel I want, without having to cope with all
+flavours of the same functionality. Effectively, the EFI table is a
+private ABI between two Linux kernels. We're not changing it.
 
-> I2S. The biggest use case for this block is getting HDMI audio working
-> on the newer
-
-I understand that.
-
-> devices(LibreELEC nightlies has a user base of over 300) and I've tested this on
-> numerous set ups over the last couple of years.
-
-Tested on the H3, correct?
-
-> Failing that reverting (3e9acd7ac693: "ASoC: sun4i-i2s: Remove
-> duplicated quirks structure")
-> would help.
-
-I'll take a look. IIRC it worked with the old layout, with the two registers
-swapped, playing standard 48 KHz / 16 bit audio when I added supported for
-the A83T. Then again maybe the stars were perfectly aligned. At the very least
-we could separate A83T and H3 as you suggested.
-
-ChenYu
-
-
-> BR,
-> CK
-> >
-> > ChenYu
-> >
-> > [1] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/hdmiaudio/sunxi-hdmipcm.h
-> > [2] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/i2s0/sunxi-i2s0.h
-> > [3] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/daudio0/sunxi-daudio0.h
-> >
-> > > Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
-> > > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
-> > > ---
-> > >  sound/soc/sunxi/sun4i-i2s.c | 2 +-
-> > >  1 file changed, 1 insertion(+), 1 deletion(-)
-> > >
-> > > diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> > > index 57bf2a33753e..34575a8aa9f6 100644
-> > > --- a/sound/soc/sunxi/sun4i-i2s.c
-> > > +++ b/sound/soc/sunxi/sun4i-i2s.c
-> > > @@ -1100,7 +1100,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
-> > >  static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
-> > >         .has_reset              = true,
-> > >         .reg_offset_txdata      = SUN8I_I2S_FIFO_TX_REG,
-> > > -       .sun4i_i2s_regmap       = &sun4i_i2s_regmap_config,
-> > > +       .sun4i_i2s_regmap       = &sun8i_i2s_regmap_config,
-> > >         .field_clkdiv_mclk_en   = REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
-> > >         .field_fmt_wss          = REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
-> > >         .field_fmt_sr           = REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
-> > > --
-> > > 2.23.0
-> > >
-> > > --
-> > > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> > > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> > > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190826180734.15801-2-codekipper%40gmail.com.
->
-> --
-> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
-> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
-> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/CAEKpxBmCg4AkqKM-O3C76gto%2BmPWyEdDbviAmRJ8PxLOOMTJ7w%40mail.gmail.com.
+	M.
+-- 
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
