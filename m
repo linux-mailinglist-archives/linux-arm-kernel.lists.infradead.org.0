@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18AA59E536
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:03:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FB629E53A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:04:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=e6G5WD0YImGh4f4/iUlDyS5wEW9RfaUXTgnNTRc4qqs=; b=WbJ3KyZoVpIJ89
-	BTmHeXjoh7znwo9QALPAUAduDvHCAINPuKZS4Q8m1mj96L1SSysgnzDHzMvPasHhM0jWJZD94S2UP
-	4l+fFZyKPREgff3DOgqGHTWUdTbNyvy/TL3ubaeL06xU/H5DMI/bdMO23ZSJ3+H7E6evHSd82VDg2
-	Um/wez4QUpcYgWwKd/JiTVhqfomx+0lQ7V+Hx+pWEqgIYgyiCezF2Y/sR7abn5R0plUUJ71sXQQ1o
-	px9y0Qm+xmIaldA5tveYZQVeC06baLXd7RZp/bBoNNHDCLk1BNbZ9xKfCg9cYDiJLIeC7deb+BiAv
-	xcesw+AolILfMUzcnfww==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yR0SdVzkCiLaJ57XC1RispFkuvwSbz/IrUNIzwaDtDk=; b=RU5tz34lgYzMHw
+	YNEClsxXa7UUf+IjwFNpT2XXR/jRqjGr24z/j138tuiMz7jph1ygjU+HJ07Ojjh8OCSzi5TrncLWA
+	K29yzOnNlbCMM8SeAksHbs3EDF2rS16gFPqM/Zex8UDcEAxF8VuxqY00wq2vQj5vRfcDvg2eM0Rhj
+	WEZFTn0XDv/vUvv7++4i9nTN2X0tsL38GpOeEpzNItu+EB5qhFno53lsDJ8sKNJ8J0NEpBzcaHcBb
+	3Jj6ppiaN80oFIqj12NbY/D/u7Whv39znLU7ZfUnsl0/SCgPTq2NhbvItFunKIwZUMg664QfPCDll
+	QOEC5C2kj8NDBCFELdjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YK7-0004am-KB; Tue, 27 Aug 2019 10:03:35 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1i2YKW-000503-MI; Tue, 27 Aug 2019 10:04:00 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YJk-0004Se-Dd
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:03:13 +0000
-Received: by mail-wm1-x343.google.com with SMTP id m125so2348737wmm.3
+ id 1i2YJl-0004TJ-34
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:03:15 +0000
+Received: by mail-wr1-x444.google.com with SMTP id b16so18137567wrq.9
  for <linux-arm-kernel@lists.infradead.org>;
  Tue, 27 Aug 2019 03:03:12 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dfpmBSGlcGs38lFamRyhz8Fa4xFl9r4NMSFw+nilf+4=;
- b=scgDvIvYRNMAtfMsmF6Kh5SAZnT0KCRLs+0S/9i8oDKab6se5Z5PPJmdgM3hUyWwGg
- oNRzD2ab73hMIsdjPOhvy4BfuCYiK8X+yPGeNIdkDm9M/x70PxQshaNZDT+G+vDhcOqA
- Sbs+LOEBKDPBuAoicHDF1b1lMFVhvFxYBwUZFhKOLEYmWgOa40f7sR+Q9M/Fn1A5MkOL
- ItsxIMys3gGfraHcxeYWYf0RW3cuF2b4GnrvbBfV7AJgK1W8JmZMKJ7porS1vak4FIBV
- w1XS3t8Fey0CM3EXuWJ5D9MaSppcUh/au6vtXwF1eb9vqJ89JtMhN9nh5qXLRwBkSrw6
- zujw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=N3scpKO0Zzh4GV7gMEeSkZMIk4JwmB5WDbAZocPSw5A=;
+ b=CfWqhHrooMAEoQGPlWt04PkQ0BwbFh9AB3BKZNcewA4CorL6RgjmekMXMp1JiAtJTQ
+ 1zvucYfsGTz5RTGEiC5UAg4uzv+sHB1bTLWOZmoDFuECJmIFdp4gCsmgd/NjVeC4g+e1
+ gbWDLHUm9Gi2TWhmFoOrWwGAQeV1PQodjiqQN3zDRdptMCzai2iXaFnznGYJOqWa8GgR
+ 32NkepzHCO4QF1RaPf5KifZxphB5ayEx0vdsxmOZSb/K2h+TgP7tktAvlPj1Vzin3JF0
+ tLNNx9+d0nacz1GPOPsa9g0U9Fs/veRzp69CAUO4bC+ITLOzukAMPPheKbIwwij9DgaR
+ 6y8Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=dfpmBSGlcGs38lFamRyhz8Fa4xFl9r4NMSFw+nilf+4=;
- b=ixRo4bG6f/xxA+w5ZHVs3ENQ4AQ9YeOGuKwQUCXWwM7hm4Vb2D5saUVJBpCLbmi+Q4
- XspwXpeq1xPcHP4gyk8+c6FFZeSyXFnHdG5Jtx6jhXcCHs+rRQlxIdYYAC7hBFq+mO7s
- Cnzjm2rxVy3mPU67RrYk+zktmx7VRIW9bIVpd/O+bwCFLJYlkat28bhYwLfbVF2LIZDm
- liqKalsR/tvKBEuNAPRxKOkBNo8FNubPQRE+jbUXUpdgDI2qPGFknhN5ZsSqLcZWTbxn
- CyVTdXi6PZkXCR6It0qnJiLQX8Tx05Cmt+qLqiHkMrUKHUgzhEAEAEwZICwHISQBYWxe
- t59A==
-X-Gm-Message-State: APjAAAX4PoBv0rMEDGShgNNmHxpkpsMaYsG98l4pPXB6J1wz4CNZjH9O
- Q6GKkPxhdHCTRJUZNtjXrql0HA==
-X-Google-Smtp-Source: APXvYqwSlvXctj1/5N+lx0316n3C/TFLI2SVBe9G3fCjk/sXsHm1IWI8Id8tmjD/QhJB0i02kSVDGA==
-X-Received: by 2002:a1c:a481:: with SMTP id
- n123mr25414549wme.123.1566900190939; 
- Tue, 27 Aug 2019 03:03:10 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=N3scpKO0Zzh4GV7gMEeSkZMIk4JwmB5WDbAZocPSw5A=;
+ b=gRJPd9ty2tY4uZ3xWBn2NlFT3nt8nTS26KeDQZE7+WvFulG12afjzN5LIsTiQvndKh
+ 8rWC6X8MzjfBaQF+F+gfyeHTprcz/tDwczmxY1GUgHKodd+8ayQ2lUQKrmJHGFSIfrIj
+ D3+p3Hdf5CVby1zzKJr4OszSuNAxXGxn7mcKsVBUgrv61//OUrrXt5dsVpmVW8mmmYNB
+ dDc0zYMxpfwkoW6c/JGQT46d4ACOO6czI2Iu+rPmgEiniOAWUIO0u8URRMMfPxyCeIbO
+ QsNj4qOZHjw8U8Sxybxn0i8lhcYr7MPjXnJGCgg3cUmM0sgUw9Jsqd3+dBsEIa9iYrSh
+ 5ejA==
+X-Gm-Message-State: APjAAAXY/GrCXqGmCXs9f71tAyPASRYWx9qtZY/Emsnyuo5BPf1+pzEJ
+ qTTYVu9DjHyCbo02B7YrIiYpxg==
+X-Google-Smtp-Source: APXvYqz+ibjedBMsj+QgbZe3C3ACpAVhv4R3ODBxrUkdq28jETkegrCPCSVUALS3zqKZzfnd7/IouQ==
+X-Received: by 2002:adf:a2cd:: with SMTP id t13mr26526511wra.251.1566900191587; 
+ Tue, 27 Aug 2019 03:03:11 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
  by smtp.gmail.com with ESMTPSA id o25sm1816289wmc.36.2019.08.27.03.03.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 03:03:10 -0700 (PDT)
+ Tue, 27 Aug 2019 03:03:11 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 0/3] arm64: dts: meson-g12: specify suspend OPP
-Date: Tue, 27 Aug 2019 12:03:04 +0200
-Message-Id: <20190827100307.21661-1-narmstrong@baylibre.com>
+Subject: [PATCH 1/3] arm64: dts: meson-g12a: specify suspend OPP
+Date: Tue, 27 Aug 2019 12:03:05 +0200
+Message-Id: <20190827100307.21661-2-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190827100307.21661-1-narmstrong@baylibre.com>
+References: <20190827100307.21661-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_030312_495146_D81130B7 
-X-CRM114-Status: UNSURE (   8.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190827_030313_338481_F7814126 
+X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,24 +101,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tag the 1,2GHz OPP as suspend OPP to be set before going in suspend mode,
-for the G12A, G12B and SM1 SoCs.
+Tag the 1,2GHz OPP as suspend OPP to be set before going in suspend mode.
 
 It has been reported that using various OPPs can lead to error or
 resume with a different OPP from the ROM, thus use this safe OPP as
 it is the default OPP used by the BL2 boot firmware.
 
-Neil Armstrong (3):
-  arm64: dts: meson-g12a: specify suspend OPP
-  arm64: dts: meson-sm1: specify suspend OPP
-  arm64: dts: meson-g12b: specify suspend OPP
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 1 +
+ 1 file changed, 1 insertion(+)
 
- arch/arm64/boot/dts/amlogic/meson-g12a.dtsi       | 1 +
- arch/arm64/boot/dts/amlogic/meson-g12b-a311d.dtsi | 2 ++
- arch/arm64/boot/dts/amlogic/meson-g12b-s922x.dtsi | 2 ++
- arch/arm64/boot/dts/amlogic/meson-sm1.dtsi        | 1 +
- 4 files changed, 6 insertions(+)
-
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+index 733a9d46fc4b..57c880c06a07 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
+@@ -81,6 +81,7 @@
+ 		opp-1200000000 {
+ 			opp-hz = /bits/ 64 <1200000000>;
+ 			opp-microvolt = <731000>;
++			opp-suspend;
+ 		};
+ 
+ 		opp-1398000000 {
 -- 
 2.22.0
 
