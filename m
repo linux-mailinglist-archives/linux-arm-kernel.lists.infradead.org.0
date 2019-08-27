@@ -2,86 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19C9E9EF7D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 475589EF81
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:57:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DnaU4eFhog2TmExDkC+wv4hvZ81rShTzreVaRNxHRIk=; b=DgB4UTGiNyICoc
-	IcbKL3Jfid+EtqjLfWOkK2YksS8BwRzch4z9jM2rhN42M+DC9gnx4QUmCdsL9cW+4z5zokhDHblSD
-	ru11c7zeWFXqWW15ucYHriuTMJn5PGx4UfW81MaDixSUtDT5nPR7CIPsaeQxC5t4Ajb7SyfT89mvC
-	WgkE6Z2j0AaGA9fp/21kBzn0ReV/QCk/oLS929eW2k4MENADJH1onqqdm1HLPOXCblm9iq4ianZby
-	owkPEKf4Fltz17YX5egKH8yrcW02ox5emfebjQMIar/Q7WDChW2aBqTshaHERAGIfnVzzY+VinIga
-	1EoKNhXMoT1O9N4v/9/Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=rhxbQSncVqu43P9J8SUzFNFvKwZFLNHwP7TtS8WoeP8=; b=r+e
+	Zd28xL3ZezuAoAPqI2YUN2pbmmQsXVasvBHboPUc0Rq189ZEv7h37qlYRGVP2Ufn2ctDXtkYIaYs5
+	G7lUo+4QTYkq3LKQJcpxvMGzb7p9f9QIRbi5o3CrC21dA+mjdA6HN5AUkJJrDru/qztnW7Tb9cJ7r
+	T3IBgLAjt1lyle9ZSBj0QKvAKYes3KrjL0tpXKazuVkpNp/GTCqzK2HjgRi6Js8Yevvs2/AWDOpM9
+	TDyqhOq3BDf8u7M5mSgjHgNyif/9ROx225Y6ECdgJ3HbZrex9CyYnqJ1juHYvJOQprEa/ac7LVO8e
+	RxzccBqcWX2n1ZWh9MdMJdlMzDYn8EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dpm-0005Vi-4A; Tue, 27 Aug 2019 15:56:38 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dpc-0005VK-VS
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:56:30 +0000
-Received: by mail-oi1-f195.google.com with SMTP id p127so6738623oic.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 08:56:28 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=496l2D/NBnu+OvAkK9jRIei3uNVRt46Ohb23zKW6VBA=;
- b=pfs9h7FJv6TfFIIlh7jstFid2VY6fq3sN/6gpDwMuhw58PxCrcq7EQiq1f8zjjgbeR
- ++bgzLE33ak6j3UzjyrRQ9nzTBX3Jp/RZ9T7DJkB7wQRIEg6gXwUE2kf6OyGw2pZ93Qt
- ZY2JZ7rbZwtwcBP3rOOpc9hANIOOZQqdHK/n1TFb0n0CVyOr1bVNtA9W5i/TamG34Jgo
- +WADQSMdmts7jTKCn7Zjb4tarv8VLl8eDgGDLIn1lFgpndD6L7s/2PBsBwlr/7/SPILm
- 1LcEUOD451cVaJkOMUjX7e3Z2LOdtU3r7uMtIqmEOlXCPOEFV2a6FDs/dl94p5AH8/Tg
- 2XAw==
-X-Gm-Message-State: APjAAAW3w/uzl0G0QZIK94vNSqTOvpWtqvVBEZ4uJcgfMaSFhBGtcGXo
- HeJOy0ry5KYXYVSiiSfdTA==
-X-Google-Smtp-Source: APXvYqw99eOThTzexUEoPloxhW15jSlo6SFvfq/fyqIVqp8VzElz20lzUAUloqaV3S+Cnxsg4g40dw==
-X-Received: by 2002:aca:c6d8:: with SMTP id w207mr15904130oif.94.1566921387977; 
- Tue, 27 Aug 2019 08:56:27 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id u5sm4384898oic.45.2019.08.27.08.56.27
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 08:56:27 -0700 (PDT)
-Date: Tue, 27 Aug 2019 10:56:26 -0500
-From: Rob Herring <robh@kernel.org>
-To: =?iso-8859-1?Q?Andr=E9?= Draszik <git@andred.net>
-Subject: Re: [PATCH 2/2] dt-bindings: imx6q-pcie: add
- "fsl,pcie-phy-refclk-internal" for i.MX7D
-Message-ID: <20190827155626.GA29948@bogus>
-References: <20190813103759.38358-1-git@andred.net>
- <20190813103759.38358-2-git@andred.net>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190813103759.38358-2-git@andred.net>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1i2dqY-0005kS-Cw; Tue, 27 Aug 2019 15:57:26 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2dqN-0005k9-Oh
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:57:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48090337;
+ Tue, 27 Aug 2019 08:57:15 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 28F563F59C;
+ Tue, 27 Aug 2019 08:57:14 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: fix fixmap copy for 16K pages and 48-bit VA
+Date: Tue, 27 Aug 2019 16:57:08 +0100
+Message-Id: <20190827155708.34699-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_085629_016810_62C782F2 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190827_085715_841665_E6E071B9 
+X-CRM114-Status: GOOD (  15.28  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,74 +57,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Richard Zhu <hongxing.zhu@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
- NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-pci@vger.kernel.org,
- Bjorn Helgaas <bhelgaas@google.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Anshuman Khandual <anshuman.khandual@arm.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <Steve.Capper@arm.com>,
+ Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 13, 2019 at 11:37:59AM +0100, Andr=E9 Draszik wrote:
-> The i.MX7D variant of the IP can use either an external
-> crystal oscillator input or an internal clock input as
-> a reference clock input for the PCIe PHY.
-> =
+With 16K pages and 48-bit VAs, the PGD level of table has two entries,
+and so the fixmap shares a PGD with the kernel image. Since commit:
 
-> Document the optional property 'fsl,pcie-phy-refclk-internal'
-> =
+  f9040773b7bbbd9e ("arm64: move kernel image to base of vmalloc area")
 
-> Signed-off-by: Andr=E9 Draszik <git@andred.net>
-> Cc: Richard Zhu <hongxing.zhu@nxp.com>
-> Cc: Lucas Stach <l.stach@pengutronix.de>
-> Cc: Bjorn Helgaas <bhelgaas@google.com>
-> Cc: Rob Herring <robh+dt@kernel.org>
-> Cc: Mark Rutland <mark.rutland@arm.com>
-> Cc: Shawn Guo <shawnguo@kernel.org>
-> Cc: Sascha Hauer <s.hauer@pengutronix.de>
-> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
-> Cc: Fabio Estevam <festevam@gmail.com>
-> Cc: NXP Linux Team <linux-imx@nxp.com>
-> Cc: linux-pci@vger.kernel.org
-> Cc: linux-arm-kernel@lists.infradead.org
-> Cc: devicetree@vger.kernel.org
-> Cc: linux-kernel@vger.kernel.org
-> ---
->  Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt | 5 +++++
->  1 file changed, 5 insertions(+)
-> =
+... we copy the existing fixmap to the new fine-grained page tables at
+the PUD level in this case. When walking to the new PUD, we forgot to
+offset the PGD entry and always used the PGD entry at index 0, but this
+worked as the kernel image and fixmap were in the low half of the TTBR1
+address space.
 
-> diff --git a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt b/D=
-ocumentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-> index a7f5f5afa0e6..985d7083df9f 100644
-> --- a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-> +++ b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
-> @@ -56,6 +56,11 @@ Additional required properties for imx7d-pcie and imx8=
-mq-pcie:
->  	       - "turnoff"
->  - fsl,imx7d-pcie-phy: A phandle to an fsl,imx7d-pcie-phy node.
+As of commit:
 
-Not sure how this got in, but why is the phy binding not used here?
+  14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
 
->  =
+... the kernel image and fixmap are in the high half of the TTBR1
+address space, and hence use the PGD at index 1, but we didn't update
+the fixmap copying code to account for this.
 
-> +Additional optional properties for imx7d-pcie:
-> +- fsl,pcie-phy-refclk-internal: If present then an internal PLL input is=
- used
-> +  as PCIe PHY reference clock source. By default an external ocsillator =
-input
-> +  is used.
+Thus, we'll erroneously try to copy the fixmap slots into a PUD under
+the PGD entry at index 0. At the point we do so this PGD entry has not
+been initialised, and thus we'll try to write a value to a small offset
+from physical address 0, causing a number of potential problems.
 
-Can't the clock binding and maybe 'assigned-clocks' be used here? =
+Fix this be correctly offsetting the PGD. This is split over a few steps
+for legibility.
 
+Fixes: 14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
+Reported-by: Anshuman Khandual <anshuman.khandual@arm.com>
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Steve Capper <Steve.Capper@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/mm/mmu.c | 8 +++++---
+ 1 file changed, 5 insertions(+), 3 deletions(-)
 
-Also, this is a property of the PHY, so it belongs in the PHY's node.
+diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
+index 1d4247f9a496..4197f27f86e5 100644
+--- a/arch/arm64/mm/mmu.c
++++ b/arch/arm64/mm/mmu.c
+@@ -646,6 +646,8 @@ static void __init map_kernel(pgd_t *pgdp)
+ 		set_pgd(pgd_offset_raw(pgdp, FIXADDR_START),
+ 			READ_ONCE(*pgd_offset_k(FIXADDR_START)));
+ 	} else if (CONFIG_PGTABLE_LEVELS > 3) {
++		pgd_t *bm_pgdp;
++		pud_t *bm_pudp;
+ 		/*
+ 		 * The fixmap shares its top level pgd entry with the kernel
+ 		 * mapping. This can really only occur when we are running
+@@ -653,9 +655,9 @@ static void __init map_kernel(pgd_t *pgdp)
+ 		 * entry instead.
+ 		 */
+ 		BUG_ON(!IS_ENABLED(CONFIG_ARM64_16K_PAGES));
+-		pud_populate(&init_mm,
+-			     pud_set_fixmap_offset(pgdp, FIXADDR_START),
+-			     lm_alias(bm_pmd));
++		bm_pgdp = pgd_offset_raw(pgdp, FIXADDR_START);
++		bm_pudp = pud_set_fixmap_offset(bm_pgdp, FIXADDR_START);
++		pud_populate(&init_mm, bm_pudp, lm_alias(bm_pmd));
+ 		pud_clear_fixmap();
+ 	} else {
+ 		BUG();
+-- 
+2.11.0
 
-Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
