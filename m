@@ -2,90 +2,124 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96C3F9E4EC
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:53:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB3969E4E6
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:52:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFecbNEHIPNs6bTlXNLW2xHUbl2qvfIdsNxxD78A/FM=; b=s/E+MQ7d0hXpFA
-	4G0Q/CViD4i/xPwW6TR/Cc5idLo4oCbee2dl/tz704ZLkigZW3Nc7RKnaA6N0uHrke4p5u4BbhbVJ
-	ZpQKEj/i89vdY/1UHhRpfokKetdZKGf+1Z98ZIN4ACXU8yZQNzaMyGXWe+TkgS9SWz8hYBkqQ1//0
-	Yq9tXIkpkVRmw3g6G6vvWAlznqaBDg7l+c79bo1OiXNVnu76st2gn470AFMbx9aRSnctQdkyO9O7M
-	gF1ZIGyk440YLRem8+mOwbfQoa0LIcK6rmEgwH7qmlRDj6VlEC4cFWAu/it580qRcmuW4fFijeHZS
-	Sya7zt+VJIQ0lacWMFWg==;
+	List-Owner; bh=kE5faxhqR2Nkqlb3l/CC0iB+kHrTEgF+JH0TlkCHJPs=; b=dGD7IESxuilQKg
+	IhisIF3El+p3D+ITWLyr54RIi/EzdgUR6e1Tzgw1NGUK4FFvdQzrt3CUnsZR2aPd6VFOmPuFXT3Gg
+	VChLf/i8q2wGwh+fFwrivUXGUl0ssK0ySmBDeNfUuatjnheCrMxFfkwsFTDIwePBuKv/Or19JRDFH
+	/gFdMHwmA53DtlJhiD/OATXnMDrxZBa8sz1qcaysU0n5FLiu9YY17Zg+QBbyd0ajNIO+O5aEf/xmn
+	lvUoLcpk8QL4CsAkBjRncvX9Qhz06RgSfcXA2y/2LEHQEbrcoAsQ1shYaxo2ycK4m8sba9VGAJUQR
+	JzzlOQ+KvhFIOnTJpfJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Y9u-00076I-0Q; Tue, 27 Aug 2019 09:53:02 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1i2Y9b-0006jW-53; Tue, 27 Aug 2019 09:52:43 +0000
+Received: from mail-eopbgr00072.outbound.protection.outlook.com ([40.107.0.72]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Y96-0006VV-Rk
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:52:14 +0000
-Received: by mail-ed1-f65.google.com with SMTP id m44so30522269edd.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 02:52:12 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=rc+av+2pK1nD1xvCN1Qm/YJr4PtOyial+kNBUV8i24U=;
- b=JUj9/ZHDUcN23lsxMV6WMOrdXx0G4X7sYyAnf/DT/fx1s33ndsyMTxax9UMvrzu2zV
- wZxSCJkdVhYL9K4Be/zyzzugyQYnKU7I+qLXWuKb8nUtUM66ihSPavQlIjC9MRsfk87h
- tO5cR3TB0zaSc6yVeHEdm5U7sZz/CqbyzROyUdH/7H3k+r0mH5rYYiK/PVACcM9A+YlE
- nMqM+e9aU/bAjiBHruh2oym34TOOv/0qcz/xuloiuUEhgrVAyUDg7N6QTEMH5wPdCyBW
- LADkq9vUt1Z1djnjeIEiP7XNvS0iTBRvZ91Yw8oXotVcGLboHffjuU9Je9GXydngVX56
- GPvw==
-X-Gm-Message-State: APjAAAVYgu0QJp4MxZfVOv1dOXfpv7E5ndxwcHmJJ+8IbWcAa5COkEA/
- T5FEenu51CZvQJqx2/9g74k6uxGuXXc=
-X-Google-Smtp-Source: APXvYqxayT0eDwtrKX6+EWGYkQ3Ge0Q7Ce2ZpEwc/QYVc9O4isLyHVvvxes+oXJc3mgwECwJHrNatA==
-X-Received: by 2002:a17:906:b203:: with SMTP id
- p3mr20428080ejz.223.1566899531029; 
- Tue, 27 Aug 2019 02:52:11 -0700 (PDT)
-Received: from mail-wm1-f41.google.com (mail-wm1-f41.google.com.
- [209.85.128.41])
- by smtp.gmail.com with ESMTPSA id u26sm1866376eda.22.2019.08.27.02.52.10
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 27 Aug 2019 02:52:10 -0700 (PDT)
-Received: by mail-wm1-f41.google.com with SMTP id g67so2331303wme.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 02:52:10 -0700 (PDT)
-X-Received: by 2002:a1c:4c06:: with SMTP id z6mr26674457wmf.47.1566899530466; 
- Tue, 27 Aug 2019 02:52:10 -0700 (PDT)
+ id 1i2Y8v-0006Hy-0Y
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:52:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=M9lhDbXDjSeWHnUdw4zV7yIaXd6gthpafrq3jJqeeetEs9w3vbeuvUYp7uWblA7aoml9jR9PtfCKmJSiHsqw5igzP+RfTij8r6deTIwhrIxOfCCNCSn7JJGMuHzmZOf/RlkqtT8JQhucRj6zpixLSGvpG7RR82RIbQCIJMaW70rBJgkgPvyO91ClvRuL5Z+12kJ8DxIEPh73dnnYUFUpgI2fTSPhMyf/X6C6F6o08+sijwY3kVC5Ml2yQrlfOegdkJCXqdgJYJkAAsOpdHPLJJ5D7clryw2NPrwt1usHiK17/0CBg6CLQfMe4p30z9xvRC4Y0uCdi/ekJJw4g7GB3g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mQLiX/5q6Ozn7jRCB+ApopDSM5CpvY/9PJqQMc2HFhg=;
+ b=ag68nYaixO7UuudKXrNCZvZpzOl9gCyR1/KMf2EYfaD+Qii/fDSI3naVpfutO4GfCp+0MmNwVmaLMqHZHNhX12Muuin/tOF/SNNbCTPxVi2xj5S+0O0JHRCGZZUebSg/3lOyfqyIx2W+X2bogJMC7SRoKDfdTxmxhZknXpaSn0I26Mk0RTSE6IjOyIsmJb78I7xej3VY4YLhCF8zINQCaPYg2lIIqQbkQP4ldky1Oi+MBeGuOMbu8MjpTXphQNrHMjYb/6ox0Z7cYYyiePNEkwlmk8QLe9nGFny6E6rTDpl6c6TyHbzeTv/DU/hPmnuWyUXIfVuJMvcKT2AbN23CFw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mQLiX/5q6Ozn7jRCB+ApopDSM5CpvY/9PJqQMc2HFhg=;
+ b=m+VCO8fhZJUCuReIb1Z/rHefWAeauswP00rZZN/x95j+VzpiLUY/cZ3qo8sTNV1RcIVMXWTgw3/hWlS8hoga8redOm+Irnn4NGWexrRNVQUcG7wWjNfCrQxIRoRlJSVwCS7NJ9mX8v6RWCtikQ6MjdOopOiO9j0hvDJH6lJtk/U=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB4228.eurprd04.prod.outlook.com (52.134.126.26) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.21; Tue, 27 Aug 2019 09:51:59 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::5d98:e1f4:aa72:16b4]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::5d98:e1f4:aa72:16b4%4]) with mapi id 15.20.2178.022; Tue, 27 Aug 2019
+ 09:51:59 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "jassisinghbrar@gmail.com"
+ <jassisinghbrar@gmail.com>, "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>, "f.fainelli@gmail.com"
+ <f.fainelli@gmail.com>
+Subject: [PATCH v4 2/2] mailbox: introduce ARM SMC based mailbox
+Thread-Topic: [PATCH v4 2/2] mailbox: introduce ARM SMC based mailbox
+Thread-Index: AQHVXL0Rqmox0xa5yEKBC6oocJzJMg==
+Date: Tue, 27 Aug 2019 09:51:59 +0000
+Message-ID: <1566942646-18015-3-git-send-email-peng.fan@nxp.com>
+References: <1566942646-18015-1-git-send-email-peng.fan@nxp.com>
+In-Reply-To: <1566942646-18015-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK2PR02CA0130.apcprd02.prod.outlook.com
+ (2603:1096:202:16::14) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: cbd1d436-689e-4627-01c9-08d72ad43420
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB4228; 
+x-ms-traffictypediagnostic: AM0PR04MB4228:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB4228B7A4D1D5C2873BF6350288A00@AM0PR04MB4228.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:425;
+x-forefront-prvs: 0142F22657
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(396003)(346002)(136003)(376002)(366004)(189003)(199004)(110136005)(54906003)(36756003)(2616005)(305945005)(476003)(2501003)(15650500001)(486006)(6436002)(316002)(3846002)(26005)(7736002)(386003)(14454004)(66066001)(5660300002)(53936002)(50226002)(6486002)(446003)(186003)(52116002)(76176011)(11346002)(102836004)(6116002)(6306002)(86362001)(25786009)(2201001)(6512007)(478600001)(8936002)(256004)(71200400001)(8676002)(64756008)(66446008)(81156014)(66946007)(66476007)(71190400001)(81166006)(2906002)(66556008)(6506007)(4326008)(966005)(99286004)(44832011);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4228;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: u6Yh6yG0CYrbqYpMNVvLWSni+3I7iJB/9fvECgETEfK89Ivh+wDeKXIUnzwPVRJNdG4L5GJ6oNDfMS2+riM864AWrq0ynN/7eD0DHFQvW9EHXMd6JQkj01NTtShaxZyCxaqXVqFu5mXL0kqWeDLYj2mjD9ciKgQ51/AaN+xPYasUU+tfOqxPRjOvPac7Wq/YMSYQdnnFhuYn+ZUIxAkBIUN6PDFV/u+Jlbr3xDZ5OjM5Yb/izsQ+Qy/YMQc9UlR4n5Obw8iZbvo88ABVrk/2A22EQ0L00Vapw1C9ry58JPS81kTMcjA3rtYGASo08twpH1ei0q6g/t0CXPZ1fy7NecaSj+hY4rxa3RFaYZ9CQHmEjD+LRyjWbIMdmzo+/kndKfS4CohpxjxWqSdpiIWnG6Mzk7ObwyZg7zEluT3NhD0=
 MIME-Version: 1.0
-References: <20190827093206.17919-1-mripard@kernel.org>
- <20190827093206.17919-2-mripard@kernel.org>
-In-Reply-To: <20190827093206.17919-2-mripard@kernel.org>
-From: Chen-Yu Tsai <wens@csie.org>
-Date: Tue, 27 Aug 2019 17:51:59 +0800
-X-Gmail-Original-Message-ID: <CAGb2v64u+Q87woZpVbRLfwn=ocbx9QJeANYiALZ7x7rdDFXc=w@mail.gmail.com>
-Message-ID: <CAGb2v64u+Q87woZpVbRLfwn=ocbx9QJeANYiALZ7x7rdDFXc=w@mail.gmail.com>
-Subject: Re: [PATCH 2/2] ASoC: sun4i: Revert A83t description
-To: Maxime Ripard <mripard@kernel.org>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: cbd1d436-689e-4627-01c9-08d72ad43420
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 09:51:59.4029 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: niLGNQUQj1wvFk9Q0/pAiK1wvj31Ks07tpBuwN+l4lIK7ufzqNkjCdG78I/B59+I3hfbukgHwCLDTmKWWtJkMg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4228
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_025213_069985_B3DDCE5E 
-X-CRM114-Status: GOOD (  19.52  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190827_025201_107860_74AD6530 
+X-CRM114-Status: GOOD (  18.49  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (wens213[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (wens213[at]gmail.com)
+ no trust [40.107.0.72 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,91 +131,295 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
- Liam Girdwood <lgirdwood@gmail.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Code Kipper <codekipper@gmail.com>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 5:32 PM Maxime Ripard <mripard@kernel.org> wrote:
->
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->
-> The last set of reworks included some fixes to change the A83t behaviour
-> and "fix" it.
->
-> It turns out that the controller described in the datasheet and the one
-> supported here are not the same, yet the A83t has the two of them, and the
-> one supported in the driver wasn't the one described in the datasheet.
->
-> Fix this by reintroducing the proper quirks.
->
-> Fixes: 69e450e50ca6 ("ASoC: sun4i-i2s: Fix the LRCK period on A83t")
-> Fixes: bf943d527987 ("ASoC: sun4i-i2s: Fix MCLK Enable bit offset on A83t")
-> Fixes: 2e04fc4dbf50 ("ASoC: sun4i-i2s: Fix WSS and SR fields for the A83t")
-> Fixes: 515fcfbc7736 ("ASoC: sun4i-i2s: Fix LRCK and BCLK polarity offsets on newer SoCs")
-> Fixes: c1d3a921d72b ("ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs")
-> Fixes: fb19739d7f68 ("ASoC: sun4i-i2s: Use module clock as BCLK parent on newer SoCs")
-> Fixes: 71137bcd0a9a ("ASoC: sun4i-i2s: Move the format configuration to a callback")
-> Fixes: d70be625f25a ("ASoC: sun4i-i2s: Move the channel configuration to a callback")
-> Reported-by: Chen-Yu Tsai <wens@csie.org>
-> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> ---
->  sound/soc/sunxi/sun4i-i2s.c | 24 ++++++++++++------------
->  1 file changed, 12 insertions(+), 12 deletions(-)
->
-> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-> index a6a3f772fdf0..498ceebd9135 100644
-> --- a/sound/soc/sunxi/sun4i-i2s.c
-> +++ b/sound/soc/sunxi/sun4i-i2s.c
-> @@ -1106,18 +1106,18 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
->         .has_reset              = true,
->         .reg_offset_txdata      = SUN8I_I2S_FIFO_TX_REG,
->         .sun4i_i2s_regmap       = &sun4i_i2s_regmap_config,
-> -       .field_clkdiv_mclk_en   = REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
-> -       .field_fmt_wss          = REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
-> -       .field_fmt_sr           = REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
-> -       .bclk_dividers          = sun8i_i2s_clk_div,
-> -       .num_bclk_dividers      = ARRAY_SIZE(sun8i_i2s_clk_div),
-> -       .mclk_dividers          = sun8i_i2s_clk_div,
-> -       .num_mclk_dividers      = ARRAY_SIZE(sun8i_i2s_clk_div),
-> -       .get_bclk_parent_rate   = sun8i_i2s_get_bclk_parent_rate,
-> -       .get_sr                 = sun8i_i2s_get_sr_wss,
-> -       .get_wss                = sun8i_i2s_get_sr_wss,
-> -       .set_chan_cfg           = sun8i_i2s_set_chan_cfg,
-> -       .set_fmt                = sun8i_i2s_set_soc_fmt,
-> +       .field_clkdiv_mclk_en   = REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 7, 7),
-> +       .field_fmt_wss          = REG_FIELD(SUN4I_I2S_FMT0_REG, 2, 3),
-> +       .field_fmt_sr           = REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
-> +       .bclk_dividers          = sun4i_i2s_bclk_div,
-> +       .num_bclk_dividers      = ARRAY_SIZE(sun4i_i2s_bclk_div),
-> +       .mclk_dividers          = sun4i_i2s_mclk_div,
-> +       .num_mclk_dividers      = ARRAY_SIZE(sun4i_i2s_mclk_div),
-> +       .get_bclk_parent_rate   = sun4i_i2s_get_bclk_parent_rate,
-> +       .get_sr                 = sun4i_i2s_get_sr_wss,
-> +       .get_wss                = sun4i_i2s_get_sr_wss,
+From: Peng Fan <peng.fan@nxp.com>
 
-You want sun4i_i2s_get_sr and sun4i_i2s_get_wss here.
+This mailbox driver implements a mailbox which signals transmitted data
+via an ARM smc (secure monitor call) instruction. The mailbox receiver
+is implemented in firmware and can synchronously return data when it
+returns execution to the non-secure world again.
+An asynchronous receive path is not implemented.
+This allows the usage of a mailbox to trigger firmware actions on SoCs
+which either don't have a separate management processor or on which such
+a core is not available. A user of this mailbox could be the SCP
+interface.
 
-Otherwise, with both patches applied, I2S on the A83T returns to normal.
+Modified from Andre Przywara's v2 patch
+https://lore.kernel.org/patchwork/patch/812999/
 
-Tested-by: Chen-Yu Tsai <wens@csie.org>
+Cc: Andre Przywara <andre.przywara@arm.com>
+Signed-off-by: Peng Fan <peng.fan@nxp.com>
+---
+ drivers/mailbox/Kconfig           |   7 ++
+ drivers/mailbox/Makefile          |   2 +
+ drivers/mailbox/arm-smc-mailbox.c | 215 ++++++++++++++++++++++++++++++++++++++
+ 3 files changed, 224 insertions(+)
+ create mode 100644 drivers/mailbox/arm-smc-mailbox.c
 
-on the Bananapi-M3 with a PiFi DAC v2.0 (has PCM5122) connected.
-16bit stereo 44.1kHz, 48kHz, and 96kHz samples tested.
+diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
+index ab4eb750bbdd..7707ee26251a 100644
+--- a/drivers/mailbox/Kconfig
++++ b/drivers/mailbox/Kconfig
+@@ -16,6 +16,13 @@ config ARM_MHU
+ 	  The controller has 3 mailbox channels, the last of which can be
+ 	  used in Secure mode only.
+ 
++config ARM_SMC_MBOX
++	tristate "Generic ARM smc mailbox"
++	depends on OF && HAVE_ARM_SMCCC
++	help
++	  Generic mailbox driver which uses ARM smc calls to call into
++	  firmware for triggering mailboxes.
++
+ config IMX_MBOX
+ 	tristate "i.MX Mailbox"
+ 	depends on ARCH_MXC || COMPILE_TEST
+diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
+index c22fad6f696b..93918a84c91b 100644
+--- a/drivers/mailbox/Makefile
++++ b/drivers/mailbox/Makefile
+@@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
+ 
+ obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
+ 
++obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
++
+ obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
+ 
+ obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
+diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
+new file mode 100644
+index 000000000000..76a2ae11ee4d
+--- /dev/null
++++ b/drivers/mailbox/arm-smc-mailbox.c
+@@ -0,0 +1,215 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * Copyright (C) 2016,2017 ARM Ltd.
++ * Copyright 2019 NXP
++ */
++
++#include <linux/arm-smccc.h>
++#include <linux/device.h>
++#include <linux/kernel.h>
++#include <linux/interrupt.h>
++#include <linux/mailbox_controller.h>
++#include <linux/module.h>
++#include <linux/platform_device.h>
++
++#define ARM_SMC_MBOX_MEM_TRANS	BIT(0)
++
++struct arm_smc_chan_data {
++	u32 function_id;
++	u32 chan_id;
++	u32 flags;
++};
++
++struct arm_smccc_mbox_cmd {
++	unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
++};
++
++typedef unsigned long (smc_mbox_fn)(unsigned long, unsigned long,
++				    unsigned long, unsigned long,
++				    unsigned long, unsigned long,
++				    unsigned long, unsigned long);
++static smc_mbox_fn *invoke_smc_mbox_fn;
++
++static int arm_smc_send_data(struct mbox_chan *link, void *data)
++{
++	struct arm_smc_chan_data *chan_data = link->con_priv;
++	struct arm_smccc_mbox_cmd *cmd = data;
++	unsigned long ret;
++	u32 function_id;
++	u32 chan_id;
++
++	if (chan_data->flags & ARM_SMC_MBOX_MEM_TRANS) {
++		if (chan_data->function_id != UINT_MAX)
++			function_id = chan_data->function_id;
++		else
++			function_id = cmd->a0;
++		chan_id = chan_data->chan_id;
++		ret = invoke_smc_mbox_fn(function_id, chan_id, 0, 0, 0, 0,
++					 0, 0);
++	} else {
++		ret = invoke_smc_mbox_fn(cmd->a0, cmd->a1, cmd->a2, cmd->a3,
++					 cmd->a4, cmd->a5, cmd->a6, cmd->a7);
++	}
++
++	mbox_chan_received_data(link, (void *)ret);
++
++	return 0;
++}
++
++static unsigned long __invoke_fn_hvc(unsigned long function_id,
++				     unsigned long arg0, unsigned long arg1,
++				     unsigned long arg2, unsigned long arg3,
++				     unsigned long arg4, unsigned long arg5,
++				     unsigned long arg6)
++{
++	struct arm_smccc_res res;
++
++	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
++		      arg5, arg6, &res);
++	return res.a0;
++}
++
++static unsigned long __invoke_fn_smc(unsigned long function_id,
++				     unsigned long arg0, unsigned long arg1,
++				     unsigned long arg2, unsigned long arg3,
++				     unsigned long arg4, unsigned long arg5,
++				     unsigned long arg6)
++{
++	struct arm_smccc_res res;
++
++	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
++		      arg5, arg6, &res);
++	return res.a0;
++}
++
++static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
++	.send_data	= arm_smc_send_data,
++};
++
++static int arm_smc_mbox_probe(struct platform_device *pdev)
++{
++	struct device *dev = &pdev->dev;
++	struct mbox_controller *mbox;
++	struct arm_smc_chan_data *chan_data;
++	const char *method;
++	bool mem_trans = false;
++	int ret, i;
++	u32 val;
++
++	if (!of_property_read_u32(dev->of_node, "arm,num-chans", &val)) {
++		if (!val) {
++			dev_err(dev, "invalid arm,num-chans value %u\n", val);
++			return -EINVAL;
++		}
++	} else {
++		return -EINVAL;
++	}
++
++	if (!of_property_read_string(dev->of_node, "transports", &method)) {
++		if (!strcmp("mem", method)) {
++			mem_trans = true;
++		} else if (!strcmp("reg", method)) {
++			mem_trans = false;
++		} else {
++			dev_warn(dev, "invalid \"transports\" property: %s\n",
++				 method);
++
++			return -EINVAL;
++		}
++	} else {
++		return -EINVAL;
++	}
++
++	if (!of_property_read_string(dev->of_node, "method", &method)) {
++		if (!strcmp("hvc", method)) {
++			invoke_smc_mbox_fn = __invoke_fn_hvc;
++		} else if (!strcmp("smc", method)) {
++			invoke_smc_mbox_fn = __invoke_fn_smc;
++		} else {
++			dev_warn(dev, "invalid \"method\" property: %s\n",
++				 method);
++
++			return -EINVAL;
++		}
++	} else {
++		return -EINVAL;
++	}
++
++	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
++	if (!mbox)
++		return -ENOMEM;
++
++	mbox->num_chans = val;
++	mbox->chans = devm_kcalloc(dev, mbox->num_chans, sizeof(*mbox->chans),
++				   GFP_KERNEL);
++	if (!mbox->chans)
++		return -ENOMEM;
++
++	chan_data = devm_kcalloc(dev, mbox->num_chans, sizeof(*chan_data),
++				 GFP_KERNEL);
++	if (!chan_data)
++		return -ENOMEM;
++
++	for (i = 0; i < mbox->num_chans; i++) {
++		u32 function_id;
++
++		ret = of_property_read_u32_index(dev->of_node,
++						 "arm,func-ids", i,
++						 &function_id);
++		if (ret)
++			chan_data[i].function_id = UINT_MAX;
++
++		else
++			chan_data[i].function_id = function_id;
++
++		chan_data[i].chan_id = i;
++
++		if (mem_trans)
++			chan_data[i].flags |= ARM_SMC_MBOX_MEM_TRANS;
++		mbox->chans[i].con_priv = &chan_data[i];
++	}
++
++	mbox->txdone_poll = false;
++	mbox->txdone_irq = false;
++	mbox->ops = &arm_smc_mbox_chan_ops;
++	mbox->dev = dev;
++
++	platform_set_drvdata(pdev, mbox);
++
++	ret = devm_mbox_controller_register(dev, mbox);
++	if (ret)
++		return ret;
++
++	dev_info(dev, "ARM SMC mailbox enabled with %d chan%s.\n",
++		 mbox->num_chans, mbox->num_chans == 1 ? "" : "s");
++
++	return ret;
++}
++
++static int arm_smc_mbox_remove(struct platform_device *pdev)
++{
++	struct mbox_controller *mbox = platform_get_drvdata(pdev);
++
++	mbox_controller_unregister(mbox);
++	return 0;
++}
++
++static const struct of_device_id arm_smc_mbox_of_match[] = {
++	{ .compatible = "arm,smc-mbox", },
++	{},
++};
++MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
++
++static struct platform_driver arm_smc_mbox_driver = {
++	.driver = {
++		.name = "arm-smc-mbox",
++		.of_match_table = arm_smc_mbox_of_match,
++	},
++	.probe		= arm_smc_mbox_probe,
++	.remove		= arm_smc_mbox_remove,
++};
++module_platform_driver(arm_smc_mbox_driver);
++
++MODULE_AUTHOR("Andre Przywara <andre.przywara@arm.com>");
++MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
++MODULE_LICENSE("GPL v2");
+-- 
+2.16.4
 
-> +       .set_chan_cfg           = sun4i_i2s_set_chan_cfg,
-> +       .set_fmt                = sun4i_i2s_set_soc_fmt,
->  };
->
->  static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
-> --
-> 2.21.0
->
 
 _______________________________________________
 linux-arm-kernel mailing list
