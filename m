@@ -2,147 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A5EA9E575
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:11:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD0C69E57A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:13:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XF8knjtAQ1N0MtEo5ZCm7kv67S7IWmMwqj61PMfKogY=; b=L6eqkeyDaE+MZV
-	lBn2UvGm0JkLnXQdduGPgX9BGEnslttupzXeWcssAEkm8InhryXwGGhk06jtxMRkWdrPmhfL5lc7C
-	V5+exKE/zK4dt5BAJ4YMlqdkHM3EBwiTukpQJt0CmSrq39cdrZi4wSUfjcFpYop1Atu8boSa/UIc0
-	FSHwcqNl9EetsPZ/eavpCSVeGyqAl7P0sznU7ygCVvJY7TLPBPaiJqY5gKA18cxxyhQd4c84OP3ct
-	umSAYU0ykP1N4d9KxAu8QkaavCTOrWCJRjseX+4RcUvYA24eI1FsuNis0arC7ZF4x+rcPqPSabs4S
-	6gxOOJIaqDyKSv2qIpEg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vck3dCErASqD4Agxl1W2wJiubgpQZPJzyGi/BhUR1CE=; b=XctruT3dEhdPvq
+	pzK0Gef8RufYbJimNpDPT6WZvmcGURkZBjVbO3JlQ1Y2bs2B8n2m72CLkxLOFevOrpFENY4lqqOF+
+	NGn89/ZWh9RPaSZeBm3yEC3h+CRYEgQ5T3H+cafPD+zkVNkr5bCHFfLYEVOxjup3NTX20uMxunZ0U
+	l7uCTCO1QelrAmIIj0EjbHdnwap0Wx6jsZ+GD7HuQgRjDTvl+d7PlqJnJCmr1uL7hlPwZOJTt0Xay
+	we8Vm8VVRkj/g/g/5llZzsD2Eiz1j21QyTfAZ5nYL3mQIMW+gUTmVoLLcKN220LjTAAa47Lj6A6dg
+	0B1oKQtj5Hv0t/za5LDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YRy-0000oi-CO; Tue, 27 Aug 2019 10:11:42 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i2YTa-0001H6-4I; Tue, 27 Aug 2019 10:13:22 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YRh-0000nG-9D
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:11:27 +0000
-Received: by mail-wr1-x444.google.com with SMTP id y8so18162893wrn.10
+ id 1i2YTH-0001GW-DM
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:13:04 +0000
+Received: by mail-qt1-x843.google.com with SMTP id i4so20681390qtj.8
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 03:11:25 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=subject:to:cc:references:from:openpgp:autocrypt:organization
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=tkna0aUhgXF1vo9IZYq7Jw+bvzmL4pUu5WAhq5klAu0=;
- b=iy6c/gCGD3tlntcjbXE8i8cDx2WqH1+FISQOdrBZGhElQxxj6aefO+zvKk+WsyTk5z
- oFrWdHy43zTwG2w08QYuPYWq78YVXkMaFxq0G119k+2WcKU56VTBa4BHMTRsEhV/pGFM
- vJqAkTWJpx4lmRqqm8l6pihTGS7OkoEly4EWuYFWyLOMFibtv8OZFhuODUypCB/zaFj/
- R7Wj5QnTAtcINBjYhxA4KVInc4mJibs+V3DQlpSSjW8khUfJSmPNFT7DtFWlmNQZpgAh
- zcY4CDwHTcEJTrYL6YIPincVhogOaSGYE1/mUZJIneV1Hjxgh+D8mF5l9+iVPcSYBpe5
- ZrnA==
+ Tue, 27 Aug 2019 03:13:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=/vusDFU6s8TEicsuv7hfRCU2pDeBbBEuymkzk0ubJEo=;
+ b=DxmUzHyFf3YiGmt+G7r7RJb+G3VMQt0cXi/puJlaMLNvHXYnnhZz28bSNlgw1rORFl
+ KmMA7nrTuddmr4pCKweFpRPQKdJQjvc4eazL+B/5TbHm3AeNx3P0qEn4PoyyCzs5rmKH
+ Tknc7GYbhjdJKNC8YrAdf850pUHjuJyTwdSX0LAJI32RdZmtSd7gRhDcNnh5HNVfgc++
+ nI4IpoYuG2y6L31c3OpS0Se+UNh64X87Oxf0rpPjxCM5OiNIY0nSWlNEmSEBNNUvokwg
+ VOSQH+2IyayXZ+mFBTSLfsb16tQRmF05DYjBGipPNkkoM5TDe4RwOTgzDgeqpYbBNr8S
+ onFA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :organization:message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=tkna0aUhgXF1vo9IZYq7Jw+bvzmL4pUu5WAhq5klAu0=;
- b=jcqHt0h2ivmWYj0PjjdgD8g+9fuHQ3za3dFspxlSFGb8zMFeYzBa6QN1rWZVAZDZCk
- UrEhdX9srJtYmZ6m88D0Nu+UYIwINin8VR5T/yiAzN2Q2Gur5dOsINyy+F//Un0hZI48
- 6TMR+O0vNtmdn0P/yrjYzi5rolBg4r5ZQcleGOkD2fudhUI4aNCE2n227fVRgM0TZKxA
- wGdBU4N5zBgJk85dyRPj8O1kMvMnSrIDlZKlWclDdk/4DRjAOx7ATMuOdCjv/TfBZ5uW
- 70Pnkf5mxPuihwIZ6Z5Xdsm0hMOrsOKEsvFlqWorx8731Ng0zhRufO/O+96Gp45kOQ3H
- eOuA==
-X-Gm-Message-State: APjAAAVPW0Z92spSQterBpjqFXv9qfs2mQPOnXU9fX+UnuX2rdAmifnM
- T2qUv01Ls7b0R2nj5yP3lUxYVY2EVZM+0g==
-X-Google-Smtp-Source: APXvYqzFnusOnL686XHXuwsnTQuwpfRXfGQpciJadUCBSll988d56Idev6tfUQb8uPhcz5TWPE6rqQ==
-X-Received: by 2002:adf:e885:: with SMTP id d5mr3284141wrm.15.1566900683512;
- Tue, 27 Aug 2019 03:11:23 -0700 (PDT)
-Received: from [10.1.2.12] (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
- [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id q3sm2899956wma.48.2019.08.27.03.11.22
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 27 Aug 2019 03:11:22 -0700 (PDT)
-Subject: Re: [PATCH v2 2/5] soc: amlogic: Add support for Everything-Else
- power domains controller
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <20190823090418.17148-1-narmstrong@baylibre.com>
- <20190823090418.17148-3-narmstrong@baylibre.com>
- <CAFBinCBy-VxfSMPMR0cEDuNg8=UOUVvWfkDi2Tp=QhBZka93aQ@mail.gmail.com>
- <f6e7e4de-e1b7-f642-07cb-fa029ff2a883@baylibre.com>
- <CAFBinCDDygiafTwLgqB9BimqrmwxL2=HFQD8cX8CQL23AFZNXQ@mail.gmail.com>
-From: Neil Armstrong <narmstrong@baylibre.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
- 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
- ZaTUOEkgIor5losDrePdPgE=
-Organization: Baylibre
-Message-ID: <25e60f94-9be1-76b0-147f-abdd2d01872f@baylibre.com>
-Date: Tue, 27 Aug 2019 12:11:22 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=/vusDFU6s8TEicsuv7hfRCU2pDeBbBEuymkzk0ubJEo=;
+ b=jcOdecOjBgV6NyyC2MhIYSAEdtjuqcCEj5pwfdawOeHtnWYBOKmQvIV4T5ES2R4n/2
+ Tv45KRFgukWCjpXyV6kx0RHvYdcqiR7Yzl5IOog6PsTq9oYEInz1InkLwFihC9OuRYS7
+ nTCr1CN/fQtPY+H35Agzneluak1mfJidgqUl/KNBx9Z8lIK40li/7Y6e4HWNyxOebIkX
+ dii8BtW+LK4r6NmzIGW4d3pWtqchdAwLQDQ4/7pIl7G4sA8WOw9LRvd9XO8oS6advMIt
+ HPe0Xrk5NXW66Byj8GgWbsGlp6Ixj0GVJM3IFmQA2Cb1rN88i/2jiOZjvekZDEJuc90E
+ /u+g==
+X-Gm-Message-State: APjAAAXSolpCKBoD4AaLxLnw+OIxBaQEA5YOmE2xLE+KbHF2ONi7R7hm
+ FW/UF3iTDFJLyEg0ZRdyOgxuTf9nSI60PM/PayQCPlYAyrY=
+X-Google-Smtp-Source: APXvYqxlVDBCIpIvWO6SSYkYw1//UpHl1yHeahnu9uuMnTReYnQ2Y3CVHwvEJa3UY1joQowzWBfjxrw6yVjNV+9buOE=
+X-Received: by 2002:ac8:4988:: with SMTP id f8mr22451290qtq.2.1566900781970;
+ Tue, 27 Aug 2019 03:13:01 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCDDygiafTwLgqB9BimqrmwxL2=HFQD8cX8CQL23AFZNXQ@mail.gmail.com>
-Content-Language: en-US
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-2-mike.leach@linaro.org>
+ <20190826214713.GA24690@xps15>
+In-Reply-To: <20190826214713.GA24690@xps15>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Tue, 27 Aug 2019 11:12:51 +0100
+Message-ID: <CAJ9a7Vj90=m+m+NhBW7d=nYMH6SP47BpF968F9Q5z6g3WjrEvw@mail.gmail.com>
+Subject: Re: [PATCH 1/8] coresight: etm4x: Fixes for ETM v4.4 architecture
+ updates.
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_031125_331450_59499A50 
-X-CRM114-Status: GOOD (  28.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_031303_466342_4122E2E2 
+X-CRM114-Status: GOOD (  21.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -154,254 +94,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, linux-pm@vger.kernel.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Coresight ML <coresight@lists.linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/08/2019 00:40, Martin Blumenstingl wrote:
-> Hi Neil,
-> 
-> On Mon, Aug 26, 2019 at 10:10 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>
->> On 25/08/2019 23:10, Martin Blumenstingl wrote:
->>> Hi Neil,
->>>
->>> thank you for this update
->>> I haven't tried this on the 32-bit SoCs yet, but I am confident that I
->>> can make it work by "just" adding the SoC specific bits!
->>>
->>> On Fri, Aug 23, 2019 at 11:06 AM Neil Armstrong <narmstrong@baylibre.com> wrote:
->>> [...]
->>>> +/* AO Offsets */
->>>> +
->>>> +#define AO_RTI_GEN_PWR_SLEEP0          (0x3a << 2)
->>>> +#define AO_RTI_GEN_PWR_ISO0            (0x3b << 2)
->>>> +
->>>> +/* HHI Offsets */
->>>> +
->>>> +#define HHI_MEM_PD_REG0                        (0x40 << 2)
->>>> +#define HHI_VPU_MEM_PD_REG0            (0x41 << 2)
->>>> +#define HHI_VPU_MEM_PD_REG1            (0x42 << 2)
->>>> +#define HHI_VPU_MEM_PD_REG3            (0x43 << 2)
->>>> +#define HHI_VPU_MEM_PD_REG4            (0x44 << 2)
->>>> +#define HHI_AUDIO_MEM_PD_REG0          (0x45 << 2)
->>>> +#define HHI_NANOQ_MEM_PD_REG0          (0x46 << 2)
->>>> +#define HHI_NANOQ_MEM_PD_REG1          (0x47 << 2)
->>>> +#define HHI_VPU_MEM_PD_REG2            (0x4d << 2)
->>> should we switch to the actual register offsets like we did in the
->>> clock drivers?
->>
->> I find it simpler to refer to the numbers in the documentation...
-> OK, I have no strong preference here
-> for the 32-bit SoCs I will need to use the offsets based on the
-> "amlogic,meson8b-pmu", "syscon" [0], so these will be magic anyways
-> 
-> [...]
->>>> +#define VPU_HHI_MEMPD(__reg)                                   \
->>>> +       { __reg, BIT(8) },                                      \
->>>> +       { __reg, BIT(9) },                                      \
->>>> +       { __reg, BIT(10) },                                     \
->>>> +       { __reg, BIT(11) },                                     \
->>>> +       { __reg, BIT(12) },                                     \
->>>> +       { __reg, BIT(13) },                                     \
->>>> +       { __reg, BIT(14) },                                     \
->>>> +       { __reg, BIT(15) }
->>> the Amlogic implementation from buildroot-openlinux-A113-201901 (the
->>> latest one I have)
->>> kernel/aml-4.9/drivers/amlogic/media/vout/hdmitx/hdmi_tx_20/hw/hdmi_tx_hw.c
->>> uses:
->>> hd_set_reg_bits(P_HHI_MEM_PD_REG0, 0, 8, 8)
->>> that basically translates to: GENMASK(15, 8) (which means we could
->>> drop this macro)
->>>
->>> the datasheet also states: 15~8 [...] HDMI memory PD (as a single
->>> 8-bit wide register)
->>
->> Yep, but the actual code setting the VPU power domain is in u-boot :
->>
->> drivers/vpu/aml_vpu_power_init.c:
->> 108         for (i = 8; i < 16; i++) {
->> 109                 vpu_hiu_setb(HHI_MEM_PD_REG0, 0, i, 1);
->> 110                 udelay(5);
->> 111         }
->>
->> the linux code is like never used here, my preference goes to the u-boot code
->> implementation.
-> I see, let's keep your implementation then
-> 
->>>
->>> [...]
->>>> +static struct meson_ee_pwrc_domain_desc g12a_pwrc_domains[] = {
->>>> +       [PWRC_G12A_VPU_ID]  = VPU_PD("VPU", &g12a_pwrc_vpu, g12a_pwrc_mem_vpu,
->>>> +                                    pwrc_ee_get_power, 11, 2),
->>>> +       [PWRC_G12A_ETH_ID] = MEM_PD("ETH", g12a_pwrc_mem_eth),
->>>> +};
->>>> +
->>>> +static struct meson_ee_pwrc_domain_desc sm1_pwrc_domains[] = {
->>>> +       [PWRC_SM1_VPU_ID]  = VPU_PD("VPU", &sm1_pwrc_vpu, sm1_pwrc_mem_vpu,
->>>> +                                   pwrc_ee_get_power, 11, 2),
->>>> +       [PWRC_SM1_NNA_ID]  = TOP_PD("NNA", &sm1_pwrc_nna, sm1_pwrc_mem_nna,
->>>> +                                   pwrc_ee_get_power),
->>>> +       [PWRC_SM1_USB_ID]  = TOP_PD("USB", &sm1_pwrc_usb, sm1_pwrc_mem_usb,
->>>> +                                   pwrc_ee_get_power),
->>>> +       [PWRC_SM1_PCIE_ID] = TOP_PD("PCI", &sm1_pwrc_pci, sm1_pwrc_mem_pcie,
->>>> +                                   pwrc_ee_get_power),
->>>> +       [PWRC_SM1_GE2D_ID] = TOP_PD("GE2D", &sm1_pwrc_ge2d, sm1_pwrc_mem_ge2d,
->>>> +                                   pwrc_ee_get_power),
->>>> +       [PWRC_SM1_AUDIO_ID] = MEM_PD("AUDIO", sm1_pwrc_mem_audio),
->>>> +       [PWRC_SM1_ETH_ID] = MEM_PD("ETH", g12a_pwrc_mem_eth),
->>>> +};
->>> my impression: I find this hard to read as it merges the TOP and
->>> Memory PD domains from above, adding some seemingly random "11, 2" for
->>> the VPU PD as well as pwrc_ee_get_power for some of the power domains
->>> personally I like the way we describe clk_regmap because it's easy to
->>> read (even though it adds a bit of boilerplate). I'm not sure if we
->>> can make it work here, but this (not compile tested) is what I have in
->>> mind (I chose two random power domains):
->>>   [PWRC_SM1_VPU_ID]  = {
->>>     .name = "VPU",
->>>     .top_pd = SM1_EE_PD(8),
->>>     .mem_pds = {
->>>         VPU_MEMPD(HHI_VPU_MEM_PD_REG0),
->>>         VPU_MEMPD(HHI_VPU_MEM_PD_REG1),
->>>         VPU_MEMPD(HHI_VPU_MEM_PD_REG2),
->>>         VPU_MEMPD(HHI_VPU_MEM_PD_REG3),
->>>         { HHI_VPU_MEM_PD_REG4, GENMASK(1, 0) },
->>>         { HHI_VPU_MEM_PD_REG4, GENMASK(3, 2) },
->>>         { HHI_VPU_MEM_PD_REG4, GENMASK(5, 4) },
->>>         { HHI_VPU_MEM_PD_REG4, GENMASK(7, 6) },
->>>         { HHI_MEM_PD_REG0, GENMASK(15, 8) },
->>>     },
->>>     .num_mem_pds = 9,
->>>     .reset_names_count = 11,
->>>     .clk_names_count = 2,
->>>   },
->>>   [PWRC_SM1_ETH_ID] = {
->>>     .name = "ETH",
->>>     .mem_pds = { HHI_MEM_PD_REG0, GENMASK(3, 2) },
->>>     .num_mem_pds = 1,
->>>   },
->>> ...
->>>
->>> I'd like to get Kevin's feedback on this
->>> what you have right now is probably good enough for the initial
->>> version of this driver. I'm bringing this discussion up because we
->>> will add support for more SoCs to this driver (we migrate GX over to
->>> it and I want to add 32-bit SoC support, which probably means at least
->>> Meson8 - assuming they kept the power domains identical between
->>> Meson8/8b/8m2).
->>
->> I find it more compact, but nothing is set in stone, you can refactor this as
->> will when adding meson8 support, no problems here.
-> OK. if Kevin (or someone else) has feedback on this then I don't have
-> to waste time if it turns out that it's not a great idea ;)
-> 
->>>
->>> [...]
->>>> +struct meson_ee_pwrc_domain {
->>>> +       struct generic_pm_domain base;
->>>> +       bool enabled;
->>>> +       struct meson_ee_pwrc *pwrc;
->>>> +       struct meson_ee_pwrc_domain_desc desc;
->>>> +       struct clk_bulk_data *clks;
->>>> +       int num_clks;
->>>> +       struct reset_control *rstc;
->>>> +       int num_rstc;
->>>> +};
->>>> +
->>>> +struct meson_ee_pwrc {
->>>> +       struct regmap *regmap_ao;
->>>> +       struct regmap *regmap_hhi;
->>>> +       struct meson_ee_pwrc_domain *domains;
->>>> +       struct genpd_onecell_data xlate;
->>>> +};
->>> (my impressions on this: I was surprised to find more structs down
->>> here, I expected them to be together with the other structs further
->>> up)
->>
->> These are the "live" structures, opposed to the static structures defining the
->> data and these are allocated and filled a probe time.
-> I see, thanks for the explanation
-> 
->> I dislike changing static global data at runtime, this is why I clearly separated both.
-> I didn't mean to make them static - the thing that caught my eye was
-> that some of the structs are defined at the top of the driver while
-> these two are define much further down
-> I am used to having all struct definitions in one place
-
-I'll let Kevin leave his feedback on this aswell.
-
-> 
->>>
->>>> +static bool pwrc_ee_get_power(struct meson_ee_pwrc_domain *pwrc_domain)
->>>> +{
->>>> +       u32 reg;
->>>> +
->>>> +       regmap_read(pwrc_domain->pwrc->regmap_ao,
->>>> +                   pwrc_domain->desc.top_pd->sleep_reg, &reg);
->>>> +
->>>> +       return (reg & pwrc_domain->desc.top_pd->sleep_mask);
->>> should this also check for top_pd->iso_* as well as mem_pd->*?
->>> if the top_pd part was optional we could even use the get_power
->>> callback for *all* power domains in this driver (right now audio and
->>> Ethernet don't have any get_power callback)
->>
->> We could, but how should we handle if one unexpected bit is set ? No idea...
-> hmm, I see
-> if we need it for other power domains then we can still implement it,
-> so it's good for now
-> 
-> [...]
->>> bonus question: what about the video decoder power domains?
->>> here is an example from vdec_1_start
->>> (drivers/staging/media/meson/vdec/vdec_1.c):
->>>   /* Enable power for VDEC_1 */
->>>   regmap_update_bits(core->regmap_ao, AO_RTI_GEN_PWR_SLEEP0,
->>>                                    GEN_PWR_VDEC_1, 0);
->>>   usleep_range(10, 20);
->>>   [...]
->>>   /* enable VDEC Memories */
->>>   amvdec_write_dos(core, DOS_MEM_PD_VDEC, 0);
->>>   /* Remove VDEC1 Isolation */
->>>   regmap_write(core->regmap_ao, AO_RTI_GEN_PWR_ISO0, 0);
->>>
->>> (my point here is that it mixes video decoder "DOS" registers with
->>> AO_RTI_GEN_PWR registers)
->>> do we also want to add support for these "DOS" power domains to the
->>> meson-ee-pwrc driver?
->>> what about the AO_RTI_GEN_PWR part then - should we keep management
->>> for the video decoder power domain bits in AO_RTI_GEN_PWR as part of
->>> the video decoder driver?
->>
->> I left the decoders power domains aside so we can discuss it later on,
->> we should expose multiple power domains, but the driver would need to
->> be changed to support multiple power domains. But will loose the ability
->> to enable/disable each domain at will unless it created a sub-device for
->> each decoder and attaches the domain to to each device and use runtime pm.
->>
->> It's simpler to discuss it later on !
-> OK - does this mean you and/or Maxime have "discuss decoder power
-> domains" on your (long) TODO-list or do you want me to open this
-> discussion after this driver is merged?
-
-Both I think, let this be an open discussion !
-
-Neil
-
-> 
-> 
-> Martin
-> 
-> 
-> [0] https://www.kernel.org/doc/Documentation/devicetree/bindings/arm/amlogic/pmu.txt
-> 
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWF0aGlldSwKCk9uIE1vbiwgMjYgQXVnIDIwMTkgYXQgMjI6NDcsIE1hdGhpZXUgUG9pcmll
+cgo8bWF0aGlldS5wb2lyaWVyQGxpbmFyby5vcmc+IHdyb3RlOgo+Cj4gSGkgTWlrZSwKPgo+Cj4g
+T24gTW9uLCBBdWcgMTksIDIwMTkgYXQgMDk6NTc6MTNQTSArMDEwMCwgTWlrZSBMZWFjaCB3cm90
+ZToKPiA+IEVUTXY0LjQgYWRkcyBpbiBzdXBwb3J0IGZvciB0cmFjaW5nIHNlY3VyZSBFTDIgKHBl
+ciBhcmNoIDgueCB1cGRhdGVzKS4KPgo+IFdoYXQgaXMgdGhlIG5hbWUgb2YgdGhlIEVUTXY0LjQg
+ZG9jdW1lbnQ/ICBJIGNhbiBvbmx5IGZpbmQgdXAgdG8gNC4yIG9uIGxpbmUuCj4KCkFybcKuIEVt
+YmVkZGVkIFRyYWNlIE1hY3JvY2VsbApBcmNoaXRlY3R1cmUgU3BlY2lmaWNhdGlvbgpFVE12NC4w
+IHRvIEVUTXY0LjQKCkFSTSBJSEkwMDY0RgoKUHVibGlzaGVkIDIwMTggLSBub24tY29uZmlkZW50
+aWFsLgoKU28gc2hvdWxkIGJlIGF2YWlsYWJsZS4KCj4gPiBQYXRjaCBhY2NvdW50cyBmb3IgdGhp
+cyBuZXcgY2FwYWJpbGl0eS4KPiA+Cj4gPiBTaWduZWQtb2ZmLWJ5OiBNaWtlIExlYWNoIDxtaWtl
+LmxlYWNoQGxpbmFyby5vcmc+Cj4gPiAtLS0KPiA+ICAuLi4vaHd0cmFjaW5nL2NvcmVzaWdodC9j
+b3Jlc2lnaHQtZXRtNHgtc3lzZnMuYyAgIHwgMTIgKysrKysrLS0tLS0tCj4gPiAgZHJpdmVycy9o
+d3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1ldG00eC5jICAgICB8ICA1ICsrKystCj4gPiAg
+ZHJpdmVycy9od3RyYWNpbmcvY29yZXNpZ2h0L2NvcmVzaWdodC1ldG00eC5oICAgICB8IDE1ICsr
+KysrKysrKysrLS0tLQo+ID4gIDMgZmlsZXMgY2hhbmdlZCwgMjEgaW5zZXJ0aW9ucygrKSwgMTEg
+ZGVsZXRpb25zKC0pCj4gPgo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVz
+aWdodC9jb3Jlc2lnaHQtZXRtNHgtc3lzZnMuYyBiL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdo
+dC9jb3Jlc2lnaHQtZXRtNHgtc3lzZnMuYwo+ID4gaW5kZXggMjE5YzEwZWI3NTJjLi5iNjk4NGJl
+MGM1MTUgMTAwNjQ0Cj4gPiAtLS0gYS9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNp
+Z2h0LWV0bTR4LXN5c2ZzLmMKPiA+ICsrKyBiL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9j
+b3Jlc2lnaHQtZXRtNHgtc3lzZnMuYwo+ID4gQEAgLTczOCw3ICs3MzgsNyBAQCBzdGF0aWMgc3Np
+emVfdCBzX2V4bGV2ZWxfdmluc3Rfc2hvdyhzdHJ1Y3QgZGV2aWNlICpkZXYsCj4gPiAgICAgICBz
+dHJ1Y3QgZXRtdjRfZHJ2ZGF0YSAqZHJ2ZGF0YSA9IGRldl9nZXRfZHJ2ZGF0YShkZXYtPnBhcmVu
+dCk7Cj4gPiAgICAgICBzdHJ1Y3QgZXRtdjRfY29uZmlnICpjb25maWcgPSAmZHJ2ZGF0YS0+Y29u
+ZmlnOwo+ID4KPiA+IC0gICAgIHZhbCA9IEJNVkFMKGNvbmZpZy0+dmluc3RfY3RybCwgMTYsIDE5
+KTsKPiA+ICsgICAgIHZhbCA9IChjb25maWctPnZpbnN0X2N0cmwgJiBFVE1fRVhMRVZFTF9TX1ZJ
+Q1RMUl9NQVNLKSA+PiAxNjsKPiA+ICAgICAgIHJldHVybiBzY25wcmludGYoYnVmLCBQQUdFX1NJ
+WkUsICIlI2x4XG4iLCB2YWwpOwo+ID4gIH0KPiA+Cj4gPiBAQCAtNzU0LDggKzc1NCw4IEBAIHN0
+YXRpYyBzc2l6ZV90IHNfZXhsZXZlbF92aW5zdF9zdG9yZShzdHJ1Y3QgZGV2aWNlICpkZXYsCj4g
+PiAgICAgICAgICAgICAgIHJldHVybiAtRUlOVkFMOwo+ID4KPiA+ICAgICAgIHNwaW5fbG9jaygm
+ZHJ2ZGF0YS0+c3BpbmxvY2spOwo+ID4gLSAgICAgLyogY2xlYXIgYWxsIEVYTEVWRUxfUyBiaXRz
+IChiaXRbMThdIGlzIG5ldmVyIGltcGxlbWVudGVkKSAqLwo+ID4gLSAgICAgY29uZmlnLT52aW5z
+dF9jdHJsICY9IH4oQklUKDE2KSB8IEJJVCgxNykgfCBCSVQoMTkpKTsKPiA+ICsgICAgIC8qIGNs
+ZWFyIGFsbCBFWExFVkVMX1MgYml0cyAgKi8KPiA+ICsgICAgIGNvbmZpZy0+dmluc3RfY3RybCAm
+PSB+KEVUTV9FWExFVkVMX1NfVklDVExSX01BU0spOwo+ID4gICAgICAgLyogZW5hYmxlIGluc3Ry
+dWN0aW9uIHRyYWNpbmcgZm9yIGNvcnJlc3BvbmRpbmcgZXhjZXB0aW9uIGxldmVsICovCj4gPiAg
+ICAgICB2YWwgJj0gZHJ2ZGF0YS0+c19leF9sZXZlbDsKPiA+ICAgICAgIGNvbmZpZy0+dmluc3Rf
+Y3RybCB8PSAodmFsIDw8IDE2KTsKPiA+IEBAIC03NzMsNyArNzczLDcgQEAgc3RhdGljIHNzaXpl
+X3QgbnNfZXhsZXZlbF92aW5zdF9zaG93KHN0cnVjdCBkZXZpY2UgKmRldiwKPiA+ICAgICAgIHN0
+cnVjdCBldG12NF9jb25maWcgKmNvbmZpZyA9ICZkcnZkYXRhLT5jb25maWc7Cj4gPgo+ID4gICAg
+ICAgLyogRVhMRVZFTF9OUywgYml0c1syMzoyMF0gKi8KPiA+IC0gICAgIHZhbCA9IEJNVkFMKGNv
+bmZpZy0+dmluc3RfY3RybCwgMjAsIDIzKTsKPiA+ICsgICAgIHZhbCA9IChjb25maWctPnZpbnN0
+X2N0cmwgJiBFVE1fRVhMRVZFTF9OU19WSUNUTFJfTUFTSykgPj4gMjA7Cj4gPiAgICAgICByZXR1
+cm4gc2NucHJpbnRmKGJ1ZiwgUEFHRV9TSVpFLCAiJSNseFxuIiwgdmFsKTsKPiA+ICB9Cj4gPgo+
+ID4gQEAgLTc4OSw4ICs3ODksOCBAQCBzdGF0aWMgc3NpemVfdCBuc19leGxldmVsX3ZpbnN0X3N0
+b3JlKHN0cnVjdCBkZXZpY2UgKmRldiwKPiA+ICAgICAgICAgICAgICAgcmV0dXJuIC1FSU5WQUw7
+Cj4gPgo+ID4gICAgICAgc3Bpbl9sb2NrKCZkcnZkYXRhLT5zcGlubG9jayk7Cj4gPiAtICAgICAv
+KiBjbGVhciBFWExFVkVMX05TIGJpdHMgKGJpdFsyM10gaXMgbmV2ZXIgaW1wbGVtZW50ZWQgKi8K
+PiA+IC0gICAgIGNvbmZpZy0+dmluc3RfY3RybCAmPSB+KEJJVCgyMCkgfCBCSVQoMjEpIHwgQklU
+KDIyKSk7Cj4gPiArICAgICAvKiBjbGVhciBFWExFVkVMX05TIGJpdHMgICovCj4gPiArICAgICBj
+b25maWctPnZpbnN0X2N0cmwgJj0gfihFVE1fRVhMRVZFTF9OU19WSUNUTFJfTUFTSyk7Cj4gPiAg
+ICAgICAvKiBlbmFibGUgaW5zdHJ1Y3Rpb24gdHJhY2luZyBmb3IgY29ycmVzcG9uZGluZyBleGNl
+cHRpb24gbGV2ZWwgKi8KPiA+ICAgICAgIHZhbCAmPSBkcnZkYXRhLT5uc19leF9sZXZlbDsKPiA+
+ICAgICAgIGNvbmZpZy0+dmluc3RfY3RybCB8PSAodmFsIDw8IDIwKTsKPiA+IGRpZmYgLS1naXQg
+YS9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0LWV0bTR4LmMgYi9kcml2ZXJz
+L2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0LWV0bTR4LmMKPiA+IGluZGV4IGExMjhiNTA2
+M2Y0Ni4uNTJiODg3NmRlMTU3IDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9od3RyYWNpbmcvY29y
+ZXNpZ2h0L2NvcmVzaWdodC1ldG00eC5jCj4gPiArKysgYi9kcml2ZXJzL2h3dHJhY2luZy9jb3Jl
+c2lnaHQvY29yZXNpZ2h0LWV0bTR4LmMKPiA+IEBAIC02MjksNiArNjI5LDcgQEAgc3RhdGljIHZv
+aWQgZXRtNF9pbml0X2FyY2hfZGF0YSh2b2lkICppbmZvKQo+ID4gICAgICAgICogVFJDQVJDSE1B
+SiwgYml0c1sxMTo4XSBhcmNoaXRlY3R1cmUgbWFqb3IgdmVyc2luIG51bWJlcgo+ID4gICAgICAg
+ICovCj4gPiAgICAgICBkcnZkYXRhLT5hcmNoID0gQk1WQUwoZXRtaWRyMSwgNCwgMTEpOwo+ID4g
+KyAgICAgZHJ2ZGF0YS0+Y29uZmlnLmFyY2ggPSBkcnZkYXRhLT5hcmNoOwo+ID4KPiA+ICAgICAg
+IC8qIG1heGltdW0gc2l6ZSBvZiByZXNvdXJjZXMgKi8KPiA+ICAgICAgIGV0bWlkcjIgPSByZWFk
+bF9yZWxheGVkKGRydmRhdGEtPmJhc2UgKyBUUkNJRFIyKTsKPiA+IEBAIC03ODAsNiArNzgxLDcg
+QEAgc3RhdGljIHU2NCBldG00X2dldF9uc19hY2Nlc3NfdHlwZShzdHJ1Y3QgZXRtdjRfY29uZmln
+ICpjb25maWcpCj4gPiAgc3RhdGljIHU2NCBldG00X2dldF9hY2Nlc3NfdHlwZShzdHJ1Y3QgZXRt
+djRfY29uZmlnICpjb25maWcpCj4gPiAgewo+ID4gICAgICAgdTY0IGFjY2Vzc190eXBlID0gZXRt
+NF9nZXRfbnNfYWNjZXNzX3R5cGUoY29uZmlnKTsKPiA+ICsgICAgIHU2NCBzX2h5cCA9IChjb25m
+aWctPmFyY2ggJiAweDBmKSA+PSAweDQgPyBFVE1fRVhMRVZFTF9TX0hZUCA6IDA7Cj4gPgo+ID4g
+ICAgICAgLyoKPiA+ICAgICAgICAqIEVYTEVWRUxfUywgYml0c1sxMTo4XSwgZG9uJ3QgdHJhY2Ug
+YW55dGhpbmcgaGFwcGVuaW5nCj4gPiBAQCAtNzg3LDcgKzc4OSw4IEBAIHN0YXRpYyB1NjQgZXRt
+NF9nZXRfYWNjZXNzX3R5cGUoc3RydWN0IGV0bXY0X2NvbmZpZyAqY29uZmlnKQo+ID4gICAgICAg
+ICovCj4gPiAgICAgICBhY2Nlc3NfdHlwZSB8PSAoRVRNX0VYTEVWRUxfU19BUFAgICAgICAgfAo+
+ID4gICAgICAgICAgICAgICAgICAgICAgIEVUTV9FWExFVkVMX1NfT1MgICAgICAgIHwKPiA+IC0g
+ICAgICAgICAgICAgICAgICAgICBFVE1fRVhMRVZFTF9TX0hZUCk7Cj4gPiArICAgICAgICAgICAg
+ICAgICAgICAgc19oeXAgICAgICAgICAgICAgICAgICAgfAo+ID4gKyAgICAgICAgICAgICAgICAg
+ICAgIEVUTV9FWExFVkVMX1NfTU9OKTsKPiA+Cj4gPiAgICAgICByZXR1cm4gYWNjZXNzX3R5cGU7
+Cj4gPiAgfQo+ID4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jl
+c2lnaHQtZXRtNHguaCBiL2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2lnaHQtZXRt
+NHguaAo+ID4gaW5kZXggNDUyM2YxMGRkZDBmLi42MGJjMmZiNTE1OWIgMTAwNjQ0Cj4gPiAtLS0g
+YS9kcml2ZXJzL2h3dHJhY2luZy9jb3Jlc2lnaHQvY29yZXNpZ2h0LWV0bTR4LmgKPiA+ICsrKyBi
+L2RyaXZlcnMvaHd0cmFjaW5nL2NvcmVzaWdodC9jb3Jlc2lnaHQtZXRtNHguaAo+ID4gQEAgLTE4
+MCwxNyArMTgwLDIyIEBACj4gPiAgLyogUG93ZXJEb3duIENvbnRyb2wgUmVnaXN0ZXIgYml0cyAq
+Lwo+ID4gICNkZWZpbmUgVFJDUERDUl9QVSAgICAgICAgICAgICAgICAgICBCSVQoMykKPiA+Cj4g
+PiAtLyogc2VjdXJlIHN0YXRlIGFjY2VzcyBsZXZlbHMgKi8KPiA+ICsvKiBzZWN1cmUgc3RhdGUg
+YWNjZXNzIGxldmVscyAtIFRSQ0FDQVRSbiAqLwo+ID4gICNkZWZpbmUgRVRNX0VYTEVWRUxfU19B
+UFAgICAgICAgICAgICBCSVQoOCkKPiA+ICAjZGVmaW5lIEVUTV9FWExFVkVMX1NfT1MgICAgICAg
+ICAgICAgQklUKDkpCj4gPiAtI2RlZmluZSBFVE1fRVhMRVZFTF9TX05BICAgICAgICAgICAgIEJJ
+VCgxMCkKPiA+IC0jZGVmaW5lIEVUTV9FWExFVkVMX1NfSFlQICAgICAgICAgICAgQklUKDExKQo+
+ID4gLS8qIG5vbi1zZWN1cmUgc3RhdGUgYWNjZXNzIGxldmVscyAqLwo+ID4gKyNkZWZpbmUgRVRN
+X0VYTEVWRUxfU19IWVAgICAgICAgICAgICBCSVQoMTApCj4gPiArI2RlZmluZSBFVE1fRVhMRVZF
+TF9TX01PTiAgICAgICAgICAgIEJJVCgxMSkKPiA+ICsvKiBub24tc2VjdXJlIHN0YXRlIGFjY2Vz
+cyBsZXZlbHMgLSBUUkNBQ0FUUm4gKi8KPiA+ICAjZGVmaW5lIEVUTV9FWExFVkVMX05TX0FQUCAg
+ICAgICAgICAgQklUKDEyKQo+ID4gICNkZWZpbmUgRVRNX0VYTEVWRUxfTlNfT1MgICAgICAgICAg
+ICBCSVQoMTMpCj4gPiAgI2RlZmluZSBFVE1fRVhMRVZFTF9OU19IWVAgICAgICAgICAgIEJJVCgx
+NCkKPiA+ICAjZGVmaW5lIEVUTV9FWExFVkVMX05TX05BICAgICAgICAgICAgQklUKDE1KQo+ID4K
+PiA+ICsvKiBzZWN1cmUgLyBub24gc2VjdXJlIG1hc2tzIC0gVFJDVklDVExSLCBJRFIzICovCj4g
+PiArI2RlZmluZSBFVE1fRVhMRVZFTF9TX1ZJQ1RMUl9NQVNLICAgIEdFTk1BU0soMTksIDE2KQo+
+ID4gKy8qIE5TIE1PTiAoRUwzKSBtb2RlIG5ldmVyIGltcGxlbWVudGVkICovCj4gPiArI2RlZmlu
+ZSBFVE1fRVhMRVZFTF9OU19WSUNUTFJfTUFTSyAgIEdFTk1BU0soMjIsIDIwKQo+Cj4gSXQgaXMg
+aGFyZCB0byBzYXkgd2l0aG91dCBkb2N1bWVudGF0aW9uIGJ1dCBzaG91bGRuJ3QgdGhpcyBiZSBH
+RU5NQVNLKDIzLCAyMCk/Cj4KUGVyIHRoZSBjb21tZW50IGFib3ZlLCBFTDNfTlMgaXMgcHJvaGli
+aXRlZCBzbyB0aGUgbWFzayByZWZlcnMgdG8gb25seQp0aGUgMyBhbGxvdyBiaXRzIChOUyBFTDAg
+LSBFTDIpLgoKPiA+ICsKPiA+ICAvKioKPiA+ICAgKiBzdHJ1Y3QgZXRtdjRfY29uZmlnIC0gY29u
+ZmlndXJhdGlvbiBpbmZvcm1hdGlvbiByZWxhdGVkIHRvIGFuIEVUTXY0Cj4gPiAgICogQG1vZGU6
+ICAgIENvbnRyb2xzIHZhcmlvdXMgbW9kZXMgc3VwcG9ydGVkIGJ5IHRoaXMgRVRNLgo+ID4gQEAg
+LTIzNyw2ICsyNDIsNyBAQAo+ID4gICAqIEB2bWlkX21hc2swOiAgICAgIFZNIElEIGNvbXBhcmF0
+b3IgbWFzayBmb3IgY29tcGFyYXRvciAwLTMuCj4gPiAgICogQHZtaWRfbWFzazE6ICAgICAgVk0g
+SUQgY29tcGFyYXRvciBtYXNrIGZvciBjb21wYXJhdG9yIDQtNy4KPiA+ICAgKiBAZXh0X2lucDog
+RXh0ZXJuYWwgaW5wdXQgc2VsZWN0aW9uLgo+ID4gKyAqIEBhcmNoOiAgICBFVE0gYXJjaGl0ZWN0
+dXJlIHZlcnNpb24gKGZvciBhcmNoIGRlcGVuZGVudCBjb25maWcpLgo+ID4gICAqLwo+ID4gIHN0
+cnVjdCBldG12NF9jb25maWcgewo+ID4gICAgICAgdTMyICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICBtb2RlOwo+ID4gQEAgLTI3OSw2ICsyODUsNyBAQCBzdHJ1Y3QgZXRtdjRfY29uZmlnIHsK
+PiA+ICAgICAgIHUzMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdm1pZF9tYXNrMDsKPiA+
+ICAgICAgIHUzMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgdm1pZF9tYXNrMTsKPiA+ICAg
+ICAgIHUzMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXh0X2lucDsKPiA+ICsgICAgIHU4
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgYXJjaDsKPiA+ICB9Owo+ID4KPiA+ICAvKioK
+PiA+IC0tCj4gPiAyLjE3LjEKPiA+CgoKCi0tIApNaWtlIExlYWNoClByaW5jaXBhbCBFbmdpbmVl
+ciwgQVJNIEx0ZC4KTWFuY2hlc3RlciBEZXNpZ24gQ2VudHJlLiBVSwoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
