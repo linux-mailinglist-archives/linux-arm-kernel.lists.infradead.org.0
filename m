@@ -2,78 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE6AF9F074
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:40:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9AC639F087
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:44:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R/CaxOGO2ZeQayN5LyY0CYH5QbHSjVTdvGQI1CNgjDs=; b=ESgDV3c+NfnhHw
-	hTSqkBsTGuyM4Tb+mPB4Y/y33SrXkzhldIeuKaZvqFhaMzV6hvLgFaiGeLrmmbNDZpGaXCMHfDbqZ
-	8RVvvnqAeQz7gumj7g1sZy2+qLFWDLd1XIorg+JOhApTjsIDIdon37mDuI1PGvXulNCES9ykmlPZi
-	0f/zk1wPyM0AC2JQnX4ndgpivVN+uuoVsVbPmLHBSdujZRSW08I5pv3COOUvoTd0bKA0xocrXB0cA
-	RvbT3a2WZFoPC2isLMtF8KutqvQEqcOof0NlFK+Pw8bVUQKuzART9m95Ufvlp3UXf2rvRQODtQ0BL
-	uyKm7cLd2BAwFJ13nYug==;
+	List-Owner; bh=rkRDTFo/Q/OL9vW9gEmYmqc9YGP+h7tIrJ3CdoSSNp4=; b=hUvhQUY3UW2bpI
+	pDUb/0mXyUoSu/F7SAg2RS1+SL5dzNLcWjodJKP19XD8qne0AmVZ7+pxKB4HibTa77p65/YFKghMF
+	2j/Rga3fjGEMdfDsQtwmrMcGMksEuWa42MK+0jnE/AfgNP7keWGH07IYgx9RlC8zxtMoThHTgjuut
+	BEw4ifCapzgL14z5R8LXVBz6RCMmbCYTCQ6Aktb4TYsNQHy02spz7UvLpYtFyY8cweYmU6mhKIczF
+	sdxyD4D/FtfGvqQ8HUFdjc0B3tgtWM+jkZLwt6lqPB5U62hZWanTe+X9UJJgFu5WLdY+La1CZJq6B
+	U5W21qtCJpHTvNl7ugNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2eWU-0007Vc-U1; Tue, 27 Aug 2019 16:40:46 +0000
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
+	id 1i2ea1-0008A4-Eg; Tue, 27 Aug 2019 16:44:25 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2eWM-0007V4-Fo
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 16:40:39 +0000
-Received: from callcc.thunk.org (guestnat-104-133-0-111.corp.google.com
- [104.133.0.111] (may be forged)) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x7RGeCWG021084
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Tue, 27 Aug 2019 12:40:13 -0400
-Received: by callcc.thunk.org (Postfix, from userid 15806)
- id 70A4F42049E; Tue, 27 Aug 2019 12:40:12 -0400 (EDT)
-Date: Tue, 27 Aug 2019 12:40:12 -0400
-From: "Theodore Y. Ts'o" <tytso@mit.edu>
-To: "boojin.kim" <boojin.kim@samsung.com>
-Subject: Re: [PATCH 5/9] block: support diskcipher
-Message-ID: <20190827164012.GN28066@mit.edu>
-Mail-Followup-To: "Theodore Y. Ts'o" <tytso@mit.edu>,
- "boojin.kim" <boojin.kim@samsung.com>,
- 'Satya Tangirala' <satyat@google.com>,
- 'Herbert Xu' <herbert@gondor.apana.org.au>,
- "'David S. Miller'" <davem@davemloft.net>,
- 'Eric Biggers' <ebiggers@kernel.org>, 'Chao Yu' <chao@kernel.org>,
- 'Jaegeuk Kim' <jaegeuk@kernel.org>,
- 'Andreas Dilger' <adilger.kernel@dilger.ca>, dm-devel@redhat.com,
- 'Mike Snitzer' <snitzer@redhat.com>,
- 'Alasdair Kergon' <agk@redhat.com>, 'Jens Axboe' <axboe@kernel.dk>,
- 'Krzysztof Kozlowski' <krzk@kernel.org>,
- 'Kukjin Kim' <kgene@kernel.org>,
- 'Jaehoon Chung' <jh80.chung@samsung.com>,
- 'Ulf Hansson' <ulf.hansson@linaro.org>,
- linux-crypto@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-fscrypt@vger.kernel.org, linux-mmc@vger.kernel.org,
- linux-samsung-soc@vger.kernel.org, linux-block@vger.kernel.org,
- linux-ext4@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-arm-kernel@lists.infradead.org, linux-fsdevel@vger.kernel.org
-References: <CGME20190827083334epcas2p115d479190b9a72c886f66569add78203@epcas2p1.samsung.com>
- <03b201d55cb2$1d4d31b0$57e79510$@samsung.com>
+ id 1i2eZs-00087Q-1o
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 16:44:17 +0000
+Received: by mail-ed1-x542.google.com with SMTP id t50so32230267edd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 09:44:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
+ h=sender:date:from:to:cc:subject:message-id:mail-followup-to
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=T4/dJTACRgyspP6PQrEfl3SMkEU0BRTMNnpAOcNAN9k=;
+ b=Fzqv4nQ+umzv/2+KsGP2IW6/1O7DBQCIYC2HmBh/Ixkm0qxY1XpDuoKgz+tncImxs7
+ N7m7N3ReqRn0EeNNxHDIVftSZ9fXBGgZpadIxuWhZwJwT9VgxqDJeUZWp8QGR+pDw7jL
+ MrGOVuuTzL+18NS2EevgZPTFpC6D+ugKy/n7k=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :mail-followup-to:references:mime-version:content-disposition
+ :in-reply-to:user-agent;
+ bh=T4/dJTACRgyspP6PQrEfl3SMkEU0BRTMNnpAOcNAN9k=;
+ b=Ch8iUn3ldMNQ8+W7XXxpvHRf4+SOygX4mfgsxWZKFEa7q9kjIeTbhAy3y5pOqRfDIV
+ WFZFbrKikGLyaDByShZ+sY4doZGL+QvbZ7HRZSKpBFje/Y77ZtekHrAe4tNx/4lRAdVt
+ 3v9Py2sxq8m/xNIbq57PPX+qzImhTkBnIEzmq9sJThyDlpRXrSQpyvkyRnMpFFoK23pv
+ ZMsSB4Hrdtyx1WFmv0HQL9fQv9073gM7esBqph0dNLTnJ90SQhWNI8JzMhTbwJH00Y7+
+ wIHgSujoghhy3sdYcplTxo8+aue+8QEToYqW+il1vB3O9wF5Uj/Vxh17/Zwp2JRTCJnz
+ GsnQ==
+X-Gm-Message-State: APjAAAUEwnUd1RcZu8M2evxjqNAFxSk/E6e3UWZfWdqGS3cZgu9eDbwI
+ GkI5H3oDSwblCgDXrd+5Ztctuw==
+X-Google-Smtp-Source: APXvYqzGZWYGoQY3nS9VufjvpYmxU7hjhjBeufmUT4bsglP7TAQ2Nsm6LWhsAFqb4Pi6mCtsDOWt0g==
+X-Received: by 2002:aa7:d813:: with SMTP id v19mr25334216edq.45.1566924253874; 
+ Tue, 27 Aug 2019 09:44:13 -0700 (PDT)
+Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
+ [212.51.149.96])
+ by smtp.gmail.com with ESMTPSA id l27sm3498970ejd.31.2019.08.27.09.44.12
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 09:44:13 -0700 (PDT)
+Date: Tue, 27 Aug 2019 18:44:11 +0200
+From: Daniel Vetter <daniel@ffwll.ch>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 0/2] drm/meson: add resume/suspend hooks
+Message-ID: <20190827164411.GE2112@phenom.ffwll.local>
+Mail-Followup-To: Neil Armstrong <narmstrong@baylibre.com>,
+ dri-devel@lists.freedesktop.org, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-amlogic@lists.infradead.org
+References: <20190827095825.21015-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <03b201d55cb2$1d4d31b0$57e79510$@samsung.com>
+In-Reply-To: <20190827095825.21015-1-narmstrong@baylibre.com>
+X-Operating-System: Linux phenom 5.2.0-2-amd64 
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_094038_698129_C5C8839F 
-X-CRM114-Status: UNSURE (   9.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190827_094416_096989_8751BEC2 
+X-CRM114-Status: GOOD (  14.19  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [18.9.28.11 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,50 +101,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Ulf Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
- dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
- 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
- linux-samsung-soc@vger.kernel.org, 'Herbert Xu' <herbert@gondor.apana.org.au>,
- 'Krzysztof Kozlowski' <krzk@kernel.org>, 'Satya Tangirala' <satyat@google.com>,
- 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
- linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
- linux-block@vger.kernel.org, linux-fscrypt@vger.kernel.org,
- 'Jaegeuk Kim' <jaegeuk@kernel.org>, linux-arm-kernel@lists.infradead.org,
- 'Jens Axboe' <axboe@kernel.dk>, linux-mmc@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-f2fs-devel@lists.sourceforge.net,
- linux-crypto@vger.kernel.org, linux-fsdevel@vger.kernel.org,
- "'David S. Miller'" <davem@davemloft.net>
+Cc: linux-arm-kernel@lists.infradead.org, khilman@baylibre.com,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 05:33:33PM +0900, boojin.kim wrote:
+On Tue, Aug 27, 2019 at 11:58:23AM +0200, Neil Armstrong wrote:
+> This serie adds the resume/suspend hooks in the Amlogic Meson VPU main driver
+> and the DW-HDMI Glue driver to correctly save state and disable HW before
+> suspend, and succesfully re-init the HW to recover functionnal display
+> after resume.
 > 
-> Dear Satya.
-> Keyslot manager is a good solution for ICE. And probably no issue for FMP.
-> But, I think it's complicated for FMP because FMP doesn't need
-> any keyslot control.
+> This serie has been tested on Amlogic G12A based SEI510 board, using
+> the newly accepted VRTC driver and the rtcwake utility.
 
-Hi Boojin,
+No idea about the hw, but looks all neatly integrated into pm stuff, so on
+both patches:
 
-I think the important thing to realize here is that there are a large
-number of hardware devices for which the keyslot manager *is* needed.
-And from the upstream kernel's perspective, supporting two different
-schemes for supporting the inline encryption feature is more
-complexity than just supporting one which is general enough to support
-a wider variety of hardware devices.
+Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
+> 
+> Neil Armstrong (2):
+>   drm/meson: dw_hdmi: add resume/suspend hooks
+>   drm/meson: add resume/suspend hooks
+> 
+>  drivers/gpu/drm/meson/meson_drv.c     |  32 ++++++++
+>  drivers/gpu/drm/meson/meson_dw_hdmi.c | 110 ++++++++++++++++++--------
+>  2 files changed, 108 insertions(+), 34 deletions(-)
+> 
+> -- 
+> 2.22.0
+> 
+> _______________________________________________
+> dri-devel mailing list
+> dri-devel@lists.freedesktop.org
+> https://lists.freedesktop.org/mailman/listinfo/dri-devel
 
-If you want somethig which is only good for the hardware platform you
-are charged to support, that's fine if it's only going to be in a
-Samsung-specific kernel.  But if your goal is to get something that
-works upstream, especially if it requires changes in core layers of
-the kernel, it's important that it's general enough to support most,
-if not all, if the hardware devices in the industry.
-
-Regards,
-
-					- Ted
+-- 
+Daniel Vetter
+Software Engineer, Intel Corporation
+http://blog.ffwll.ch
 
 _______________________________________________
 linux-arm-kernel mailing list
