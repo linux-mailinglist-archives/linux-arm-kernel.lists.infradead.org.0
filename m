@@ -2,87 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111969F615
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 00:24:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C5A39F616
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 00:25:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=55KNr55/++oEutQOrwkcYGL6Eu+ZMBeRyxIIRG71QIU=; b=sHaT4iHKc1OG2T
-	kNyia+1uH+LiOmzMWpmfu+QK9QrybAcuH1FDPkmuNaBpdy7WA18Ya1lxBcLB9yqqsisFQbAL7HeML
-	sNz0HsGCQYAlIK/o+G8qlbXBq0xioqsIphW68NmuCTMbOVxDm0l4M1g6IiVt4b00r82ggreA3Zg80
-	hldzn+7+VosinkjvMZzFZz+Zr/8lWl1wccm6mjpDkDlBtxCv/N2vU4bw8E4WvdtQaiYHnwmWHBH6w
-	55ltFQcqTQXnGB2oifZKPVeWn2vmKXmVT1Fh5Brdjvonpat++wuo+NzCyj0X9ODyXy5E9fu8RJTSZ
-	8/PFCe1D1BTk1Wj/ZrSg==;
+	List-Owner; bh=7D9BkKbF6IRYfqNpdHCr/cZxT8/3pOq99Xvo5wCDIJ0=; b=EN0HH0uxPUxgpj
+	FsCmwAoJEgKJ3xtg6g69u3Z3lZu03Oo6RZLrru2dEinc6bRsETpt1Pz0tKpAtLA/wLpvvkdz7DK7f
+	vD4B6MO7hbfWrqh4/PBiNpvt5RUGWhRP8hkXVAQ6zpykPsVdDoL0DGOVqjngtRAfivvKNOBZiLlNL
+	7yzJ2h9DgFLRC7zwGuI+BSEv19axs5KbzouHO5rMCks4zC2Z7uRiZzfPBngk815swjIVjK+eOPF7K
+	D+p1aevWfEta3rp+CgNcxE3d/IYDBDcYHyL5t3PctqmFVSWQIrR+YFMHv1dKf1iw2482OcwRcoIuD
+	WB8/65SGPDtydIA2I+Vg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2jtN-0008Mq-GH; Tue, 27 Aug 2019 22:24:45 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i2jtj-0000DE-HE; Tue, 27 Aug 2019 22:25:07 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2jsq-0008D6-BI
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 22:24:14 +0000
-Received: by mail-pf1-x443.google.com with SMTP id q139so280362pfc.13
+ id 1i2jt6-0008Mk-Vi
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 22:24:30 +0000
+Received: by mail-ot1-f67.google.com with SMTP id 100so794494otn.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 15:24:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=vCX5b31iY8wVKWn4s0MiMbZnH0WhFm1gAfks1OXyHmA=;
- b=F+EjFb8mnDRedjegmCbjOeCNiw919VuMRS1FKW3wGCXia8C4iKHKjDFThdV6YyAepH
- IVxQKZBtOjFgT0DVcbfw0yvET5QE2z4FPf5b0EiriI4ohsgDMXB2xXfkaS6dZOtviPRl
- ewk7TlBPUAIOYOsGvyzenlF2UoYhChVGU9EW4i6+Hw8fLjfKoD9kqtw+D4z9J3w/9iaX
- AyM/gejkEBTGy+AGHf1SALhYnvs44Gnc/RDa1yQkKXX3ON/LH+VILy/+3PPo+HigkX2q
- Wf12xyWgkf6oNs7VoBquCPVKLz1lH7XgGxdvcq2f/rQLw4WqoajzaCI/hgjcY8AeBJLg
- V4Gw==
+ Tue, 27 Aug 2019 15:24:28 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
- :message-id:mime-version;
- bh=vCX5b31iY8wVKWn4s0MiMbZnH0WhFm1gAfks1OXyHmA=;
- b=t4iOhsau1YqIogF97NJkIEBQtbM2J9NbfBYh398AtJAzO8P/4sIZevqpgF6VR6dC9F
- QTliK7zWa2HHHnZhQ5MCFiC2cNB8UbluB4Lyx6zSDrDNakPWcAcCTGD7ybJAWEKZ+roN
- T3cvbto4w7ur1qzqhbUx33Yd14Hxr5CxNt9xh6Ya/ia2rfYzKsqf2hbBv2b7feGO28Wi
- lL1Azjr8LlEGbGFEZ7mbDiYGWHB/hKnKhTha1VGHbXyZ3wd/Ajzq67x4EyxeP7sQ3/I7
- zunIZA4STMkliRZIxzmBehGxfkj4aoDnnvq6XTEvbTQLYr5i7o3d93WNujF9tuA/9smw
- vY6w==
-X-Gm-Message-State: APjAAAWooNjvHeOMMa78aUnX3kj4lzNCVeXDHkpNIt0APfVQpa3NISoz
- kljnV2N+PieWSg2GH+9vEG5Iyw==
-X-Google-Smtp-Source: APXvYqxx1tZzErI7XJVc/UYjGuLNFMxrAtv5a6h2jHs+k/r7nNepgGtzkViHmUpx9AdKzhbPP5zTnA==
-X-Received: by 2002:aa7:9edc:: with SMTP id r28mr860234pfq.219.1566944651789; 
- Tue, 27 Aug 2019 15:24:11 -0700 (PDT)
-Received: from localhost ([2601:602:9200:a1a5:cc35:e750:308e:47f])
- by smtp.gmail.com with ESMTPSA id e21sm327759pfi.13.2019.08.27.15.24.11
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 27 Aug 2019 15:24:11 -0700 (PDT)
-From: Kevin Hilman <khilman@baylibre.com>
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- Christian Hewitt <christianshewitt@gmail.com>
-Subject: Re: [PATCH 0/7] arm64: dts: meson: ir keymap updates
-In-Reply-To: <CAFBinCD0uhE9Fj1we2MkaTbk7RwtmKh7Fn1C-2nn9wiWqCoNfg@mail.gmail.com>
-References: <1566705688-18442-1-git-send-email-christianshewitt@gmail.com>
- <CAFBinCD0uhE9Fj1we2MkaTbk7RwtmKh7Fn1C-2nn9wiWqCoNfg@mail.gmail.com>
-Date: Tue, 27 Aug 2019 15:24:10 -0700
-Message-ID: <7h7e6yuu0l.fsf@baylibre.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=mjdVVMQDkqNGF0eOBZhI/HxQmymiMnbH3eAi/1SeQc4=;
+ b=ZbyhSp4+1MZao1iDMISr7aJyZpJXDvY2dFwLxEXI86haCNNUWCtYP74kVPByN13je1
+ Kh7K62NedGGHyWZoTx+uTCNLQw2gK/7BxFjZ9f/dm2tbcnkaD4ga/SRfO3bTnuRq6Wse
+ lpEq4Yv7MTmGy4YDYhj08Ngsmxc6+HbgvkrIUg9vIe5F33HzJIgn8rbuJ+Uw7o9VIbxs
+ DGuNR915rF4EbpGoRVLMsO0jDjeeu4Vk5fXRDU+FX0Hqun2103pF9lLClcZGYOMXbLN3
+ FNfWtFF4cdw+JaSKinRw1L4sF9yYObQLwH/NQ01hH+oLj/5ld/5hc2qENLium33FEZBM
+ O2ew==
+X-Gm-Message-State: APjAAAUOW8HjjgQVLIZW52Bhga26neAknpr0IfW4UX6Bawg0XZJvrbk6
+ Vj4qmfGo00sN6iQOB9+5YtitLYoWtw==
+X-Google-Smtp-Source: APXvYqwk+lluzv6pKjU/kkkAdMVAJPZi8mAQRb45qY3E88UmalXi1rmX7cue6EBW5ApX5eQDaCXD7w==
+X-Received: by 2002:a9d:7092:: with SMTP id l18mr749674otj.217.1566944668217; 
+ Tue, 27 Aug 2019 15:24:28 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id g93sm269906otb.39.2019.08.27.15.24.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 15:24:27 -0700 (PDT)
+Date: Tue, 27 Aug 2019 17:24:27 -0500
+From: Rob Herring <robh@kernel.org>
+To: Lubomir Rintel <lkundrak@v3.sk>
+Subject: Re: [PATCH v2 05/20] dt-bindings: phy-mmp3-usb: Add bindings
+Message-ID: <20190827222427.GA16221@bogus>
+References: <20190822092643.593488-1-lkundrak@v3.sk>
+ <20190822092643.593488-6-lkundrak@v3.sk>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190822092643.593488-6-lkundrak@v3.sk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_152412_774827_133C38A5 
-X-CRM114-Status: UNSURE (   9.32  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_152429_509224_0FF7C820 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,48 +89,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Lubomir Rintel <lkundrak@v3.sk>, Olof Johansson <olof@lixom.net>,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Martin Blumenstingl <martin.blumenstingl@googlemail.com> writes:
+On Thu, 22 Aug 2019 11:26:28 +0200, Lubomir Rintel wrote:
+> This is the PHY chip for USB OTG on MMP3 platform.
+> 
+> Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+> 
+> ---
+> Changes since v1:
+> - s/usbphy@/usb-phy@/
+> - Dropped a reference to Documentation/phy.txt
+> 
+>  .../devicetree/bindings/phy/phy-mmp3-usb.txt        | 13 +++++++++++++
+>  1 file changed, 13 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/phy/phy-mmp3-usb.txt
+> 
 
-> On Sun, Aug 25, 2019 at 6:03 AM Christian Hewitt
-> <christianshewitt@gmail.com> wrote:
->>
->> This series adds keymaps for several box/board vendor IR remote devices
->> to respective device-tree files. The keymaps were submitted in [0] and
->> have been queued for inclusion in Linux 5.4.
->>
->> The Khadas remote change swaps the rc-geekbox keymap for rc-khadas. The
->> Geekbox branded remote was only sold for a brief period when VIM(1) was
->> a new device. The Khadas branded remote that replaced it exchanged the
->> Geekbox full-screen key for an Android mouse button using a different IR
->> keycode. The rc-khadas keymap supports the mouse button keycode and maps
->> it to KEY_MUTE.
->>
->> [0] https://patchwork.kernel.org/project/linux-media/list/?series=160309
->>
->> Christian Hewitt (7):
->>   arm64: dts: meson-g12b-odroid-n2: add rc-odroid keymap
->>   arm64: dts: meson-g12a-x96-max: add rc-x96max keymap
->>   arm64: dts: meson-gxbb-wetek-hub: add rc-wetek-hub keymap
->>   arm64: dts: meson-gxbb-wetek-play2: add rc-wetek-play2 keymap
->>   arm64: dts: meson-gxl-s905x-khadas-vim: use rc-khadas keymap
->>   arm64: dts: meson-gxl-s905w-tx3-mini: add rc-tx3mini keymap
->>   arm64: dts: meson-gxm-khadas-vim2: use rc-khadas keymap
->
-> Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-
-Queued for v5.4 w/Martin's tag,
-
-Thanks,
-
-Kevin
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
