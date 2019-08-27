@@ -2,57 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9310F9E9C5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:44:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46A0D9E9CE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:45:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6TJsUeV05nM1K7JRK/+CM2Fxwu6yN5YjtIICjN65ydw=; b=DR6nkz+ox43ezV
-	iSa7wvOZMnqXuEbxl116g8Wjxsca2MLXcKEfzSHKVZobZl772GMUufE4EZJI89XYrDFUhgL+Xdnew
-	DNEps0WwsUScDcGmJ+PqueV/YVGFJsO51wFKeTnaKLWy04mnh/DK7lnfoSctmSMwuJ+yno2BIcdqe
-	6K3QB4S4a4Od/nOBLAfBmKS/Th/MIeXgZWCqXRPk0HtBylNLjCUJvpwwysAVaEIcAKF1ETEHbrs5A
-	xOklhmtRHJODELeqpCWwcONQV4YWeHBaMPauH6Xpb/53SKA1WBWilCJALcKDFUYUsD0EoZZEDaI5N
-	zYNCiRbn2PPylGrsN0Gg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=l1rHXoi0g5zeD+GuUvOKaqf3/553Eo3cxNRsIV6u0+Q=; b=CdujNdxIEykw9b
+	azbUKG61Wxw0AsxVYNQNqDNKG8YJJwTubnoPfMa9cCQQBTFG1xtuYuT7ZugM59vDU9n7ZoDjdg9Na
+	JYij1rrgm+/3OU+L65MGCVTXgG9RGnbUGQ43/oyZq+H6xnXfUsIDitOK2M1Q3GWo5Ecoz17Rpyf6n
+	8WfX7ZWGeaFH0z2L7sCdjBmIGIzq9/5rnMn50cBDPEuXzrLktja1fRjawvSQl15CYiLrQg5+yJPaf
+	muF88cy/qmCD96evrfzDAq7r3vcY2nA1qH9jxjJ3M/giJ4TOgrIexKqtpFzl8V3gjHkaMRlcvDIIw
+	jP586ucTJSlKwong3pUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2blm-000243-0O; Tue, 27 Aug 2019 13:44:22 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1i2bmp-0003c7-Qv; Tue, 27 Aug 2019 13:45:27 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2blc-00023p-KK
- for linux-arm-kernel@bombadil.infradead.org; Tue, 27 Aug 2019 13:44:12 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=hXlXVXRXdhaabHSd8C1eZYIYW9fAq7xfTNbYO5WWwxA=; b=shAFU7qQntr4BbxQhAXW47zpd
- Zor3HUNY2ipGwquo1ZDWl9oBvjC5drYf7eBk4efFciPdbZlWnI+v8yWuZKrcWuOkSCdXeoYdM0oym
- glbsExgjVtNRhold6AkteO/C/ekTRqHUsgnK8ZMGRaa1920g1w/M6IFzjuf+1egSFgYWdPHDtItLG
- VMrtBFLmPPGUO6A3ZASq642lwxyHB2YyZO0c396oKmvyuxGwYT+fEYhZfMTzS9XBkBvqkY66N/Uiw
- ru80Dq5FDTlF1Q8SriDz8TeUOur33l8hVBsqxIg0lvLuFSfR7HKt4mIHLj5VjJZCehSF9c8BbV2Wo
- BRDcXlbYQ==;
-Received: from [179.97.35.50] (helo=sandy.ghostprotocols.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i2bla-0004Tq-Iu; Tue, 27 Aug 2019 13:44:10 +0000
-Received: by sandy.ghostprotocols.net (Postfix, from userid 1000)
- id 6DEC012E; Tue, 27 Aug 2019 10:44:04 -0300 (BRT)
-Date: Tue, 27 Aug 2019 10:44:04 -0300
-From: Arnaldo Carvalho de Melo <acme@redhat.com>
-To: Igor Lubashev <ilubashe@akamai.com>
-Subject: Re: [PATCH 3/5] perf util: kernel profiling is disallowed only when
- perf_event_paranoid > 1
-Message-ID: <20190827134404.GB8761@redhat.com>
-References: <1566869956-7154-1-git-send-email-ilubashe@akamai.com>
- <1566869956-7154-4-git-send-email-ilubashe@akamai.com>
+ id 1i2bmc-0003bL-Gh; Tue, 27 Aug 2019 13:45:16 +0000
+Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 710D265B4F12DA65DFD3;
+ Tue, 27 Aug 2019 21:45:09 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS409-HUB.china.huawei.com
+ (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Tue, 27 Aug 2019
+ 21:45:01 +0800
+From: YueHaibing <yuehaibing@huawei.com>
+To: <nbd@nbd.name>, <lorenzo.bianconi83@gmail.com>, <ryder.lee@mediatek.com>, 
+ <royluo@google.com>, <kvalo@codeaurora.org>, <davem@davemloft.net>,
+ <matthias.bgg@gmail.com>, <swboyd@chromium.org>, <yuehaibing@huawei.com>,
+ <weiyongjun1@huawei.com>
+Subject: [PATCH] mt76: mt7603: use devm_platform_ioremap_resource() to
+ simplify code
+Date: Tue, 27 Aug 2019 21:44:45 +0800
+Message-ID: <20190827134445.14696-1-yuehaibing@huawei.com>
+X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1566869956-7154-4-git-send-email-ilubashe@akamai.com>
-X-Url: http://acmel.wordpress.com
-User-Agent: Mutt/1.5.20 (2009-12-10)
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190827_064514_721895_30A97272 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-2.3 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.32 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,161 +65,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
- Suzuki Poulouse <suzuki.poulose@arm.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Alexey Budankov <alexey.budankov@linux.intel.com>,
- James Morris <jmorris@namei.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
- Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: netdev@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-wireless@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Em Mon, Aug 26, 2019 at 09:39:14PM -0400, Igor Lubashev escreveu:
-> Perf was too restrictive about sysctl kernel.perf_event_paranoid. The
-> kernel only disallows profiling when perf_event_paranoid > 1. Make perf do
-> the same.
+Use devm_platform_ioremap_resource() to simplify the code a bit.
+This is detected by coccinelle.
 
-Thanks for following up on this, I added these notes to this cset commit
-log message:
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+---
+ drivers/net/wireless/mediatek/mt76/mt7603/soc.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
---------------------------------- 8< ------------------------------------
-
-perf evsel: Kernel profiling is disallowed only when perf_event_paranoid > 1
-
-Perf was too restrictive about sysctl kernel.perf_event_paranoid. The
-kernel only disallows profiling when perf_event_paranoid > 1. Make perf
-do the same.
-
-Committer testing:
-
-For a non-root user:
-
-  $ id
-  uid=1000(acme) gid=1000(acme) groups=1000(acme),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
-  $
-
-Before:
-
-We were restricting it to just userspace (:u suffix) even for a
-workload started by the user:
-
-  $ perf record sleep 1
-  [ perf record: Woken up 1 times to write data ]
-  [ perf record: Captured and wrote 0.001 MB perf.data (8 samples) ]
-  $ perf evlist
-  cycles:u
-  $ perf evlist -v
-  cycles:u: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, exclude_kernel: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
-  $ perf report --stdio
-  # To display the perf.data header info, please use --header/--header-only options.
-  #
-  # Total Lost Samples: 0
-  #
-  # Samples: 8  of event 'cycles:u'
-  # Event count (approx.): 1040396
-  #
-  # Overhead  Command  Shared Object     Symbol                
-  # ........  .......  ................  ......................
-  #
-      68.36%  sleep    libc-2.29.so      [.] _dl_addr
-      27.33%  sleep    ld-2.29.so        [.] dl_main
-       3.80%  sleep    ld-2.29.so        [.] _dl_setup_hash
-  #
-  # (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
-  #
-  $
-  $ 
-
-After:
-
-When the kernel allows profiling the kernel in that scenario:
-
-  $ perf record sleep 1
-  [ perf record: Woken up 1 times to write data ]
-  [ perf record: Captured and wrote 0.023 MB perf.data (11 samples) ]
-  $ perf evlist
-  cycles
-  $ perf evlist -v
-  cycles: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
-  $
-  $ perf report --stdio
-  # To display the perf.data header info, please use --header/--header-only options.
-  #
-  # Total Lost Samples: 0
-  #
-  # Samples: 11  of event 'cycles'
-  # Event count (approx.): 1601964
-  #
-  # Overhead  Command  Shared Object     Symbol                    
-  # ........  .......  ................  ..........................
-  #
-      28.14%  sleep    [kernel.vmlinux]  [k] __rb_erase_color
-      27.21%  sleep    [kernel.vmlinux]  [k] unmap_page_range
-      27.20%  sleep    ld-2.29.so        [.] __tunable_get_val
-      15.24%  sleep    [kernel.vmlinux]  [k] thp_get_unmapped_area
-       1.96%  perf     [kernel.vmlinux]  [k] perf_event_exec
-       0.22%  perf     [kernel.vmlinux]  [k] native_sched_clock
-       0.02%  perf     [kernel.vmlinux]  [k] intel_bts_enable_local
-       0.00%  perf     [kernel.vmlinux]  [k] native_write_msr
-  #
-  # (Tip: Boolean options have negative forms, e.g.: perf report --no-children)
-  #
-  $
-
-Reported-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
-Tested-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
-Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
-Cc: James Morris <jmorris@namei.org>
-Cc: Jiri Olsa <jolsa@kernel.org>
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
-Cc: Namhyung Kim <namhyung@kernel.org>
-Cc: Peter Zijlstra <peterz@infradead.org>
-Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
-Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/1566869956-7154-4-git-send-email-ilubashe@akamai.com
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-
-# Please enter the commit message for your changes. Lines starting
-# with '#' will be ignored, and an empty message aborts the commit.
-#
-# Author:    Igor Lubashev <ilubashe@akamai.com>
-# Date:      Mon Aug 26 21:39:14 2019 -0400
-#
-# On branch perf/core
-# Changes to be committed:
-#	modified:   tools/perf/util/evsel.c
-#
-# Untracked files:
-#	a
-#	a.c
-#	bla
-#	f_mode
-#	perf.data
-#	perf.data.old
-#	q
-#
-# ------------------------ >8 ------------------------
-# Do not modify or remove the line above.
-# Everything below it will be ignored.
-diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
-index 7c704b8f0e5c..d4540bfe4574 100644
---- a/tools/perf/util/evsel.c
-+++ b/tools/perf/util/evsel.c
-@@ -282,7 +282,7 @@ struct evsel *perf_evsel__new_idx(struct perf_event_attr *attr, int idx)
- 
- static bool perf_event_can_profile_kernel(void)
+diff --git a/drivers/net/wireless/mediatek/mt76/mt7603/soc.c b/drivers/net/wireless/mediatek/mt76/mt7603/soc.c
+index c6c1ce6..c22715e 100644
+--- a/drivers/net/wireless/mediatek/mt76/mt7603/soc.c
++++ b/drivers/net/wireless/mediatek/mt76/mt7603/soc.c
+@@ -9,7 +9,6 @@
+ static int
+ mt76_wmac_probe(struct platform_device *pdev)
  {
--	return perf_event_paranoid_check(-1);
-+	return perf_event_paranoid_check(1);
- }
+-	struct resource *res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+ 	struct mt7603_dev *dev;
+ 	void __iomem *mem_base;
+ 	struct mt76_dev *mdev;
+@@ -20,7 +19,7 @@ mt76_wmac_probe(struct platform_device *pdev)
+ 	if (irq < 0)
+ 		return irq;
  
- struct evsel *perf_evsel__new_cycles(bool precise)
+-	mem_base = devm_ioremap_resource(&pdev->dev, res);
++	mem_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(mem_base)) {
+ 		dev_err(&pdev->dev, "Failed to get memory resource\n");
+ 		return PTR_ERR(mem_base);
+-- 
+2.7.4
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
