@@ -2,141 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 763949E523
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:01:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 011C29E52D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:03:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hTicn1hhN0wGDf2Agi5UV8VMo46Deuvyjfcb0XsLTkA=; b=fXSvd6Xc2jZcPD
-	zLaDpWgvSIuEGpftxK/8jTOaitqMa/8u8if3nPPpmlLyZFBbMyY0WkGvnaoCu8wVucr3O+Wj+kFH2
-	M8MHgcuPoYiIA4ekPxAMyERUqhjVBdrfBaucDmxRb1okIQH6QetGieieIV6P+ORuGr0/P1ibbaRPg
-	/Hyr7T1G7xDE9ZAVjZjWOEJ4UC2rfpVljDAGykO2SXiQgt4op+uMRmEwpMwP2IeCSE5ZfAmNqPHHt
-	pivcUP9gvxg9jUeBi1YfzPWpBIdLVrhEv/pn1Om6Ed7toIvgaVA4CKNCggT3X6dIVgn6BhQ+cYjLg
-	ZFURHHvJemDncX8Hcoqg==;
+	List-Owner; bh=O2odxS844dMQ1z1pwM2uK0+LVgLBpDiqGbgMJokd7Mg=; b=tLFL0blatWAOze
+	iJv6CpGmP8rNVKUWE2ACU4E0WUnuBPF0tBXNYX+4z02BfEX5Aqpt17WAENmT6be6fbVq++QfoZy9H
+	8o+/09kLyTWH7c5dExWfLR6ZiL+0e204LKJ0e444oO+8QqI1X8WC1rkwQH2nLqQSiGwk572aDyvi1
+	Rh47xhNIE4K2gOrBYT5SqGbTUgJr5O7Un3V2krTjxj00H2bU3wLXfO72QGNOUScKZM6pcsjIdep6Q
+	8isjkvQPPpNhJ4zXLFU8H4LMfr9n0VJ1WdvhlRbKb/gMyV4PBLi0Qb4sf5IXYLNaiUPhWZXQeASMg
+	8Eqipe2oMQ74lxI9UT6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YIF-0003qR-4c; Tue, 27 Aug 2019 10:01:39 +0000
-Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
+	id 1i2YJj-0004JB-Fy; Tue, 27 Aug 2019 10:03:11 +0000
+Received: from mail-eopbgr690095.outbound.protection.outlook.com
+ ([40.107.69.95] helo=NAM04-CO1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YH8-0003M6-72
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:00:32 +0000
-Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
- by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x7R9tAVC014777; Tue, 27 Aug 2019 03:00:19 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
- h=from : to : cc :
- subject : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=pfpt0818;
- bh=0378haLIb72PJrqQjEVfa0u6COwfUb+r7B/6R9GqokU=;
- b=lL36sXuxzch3FEm71Q+dB2q4eIBytiZajUpLZGQ8oiAbHDl5hMsfKjIKgvZzeDDwK0w/
- eUggn9TSeTq2GfwpUAR2f0YZXGCPH4te/Y6xH9rSDF34DAvcmZ1HNy8MNBOEvGcvN92n
- L9jwjtHq+n84GmBS2OkVOaNGWvLLI0y1EIjb9whZGxCoxqkX9cneom7YNxc3h4GjKDwA
- 86qElh4jJiaHIXA2Wh6wbh1SZuiJTVdswMUXXGpF7iJdKMCAwC5vuNoZAdm4g3DCQbX+
- eQpjOEY3HVMEBvrhcOc4YAzEEZA82PmsrjK6lDbT0BdBbKAYsDGQ/tQHtSXB+yNrIA9q Zg== 
-Received: from sc-exch01.marvell.com ([199.233.58.181])
- by mx0b-0016f401.pphosted.com with ESMTP id 2uk4rkj2c0-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
- Tue, 27 Aug 2019 03:00:19 -0700
-Received: from SC-EXCH04.marvell.com (10.93.176.84) by SC-EXCH01.marvell.com
- (10.93.176.81) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Tue, 27 Aug
- 2019 03:00:18 -0700
-Received: from NAM01-SN1-obe.outbound.protection.outlook.com (104.47.32.59) by
- SC-EXCH04.marvell.com (10.93.176.84) with Microsoft SMTP Server
- (TLS) id
- 15.0.1367.3 via Frontend Transport; Tue, 27 Aug 2019 03:00:18 -0700
+ id 1i2YJV-0004Ig-0I
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:02:58 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=KIZ1YfIVcJ8fEhDcZmcS/x/4zTUp8XWeIPojIg2pHseqrUHdJQVfH3YAwP/OG/rmcTwzoe74Uds1m6E11l98v1ft8qwYBodUmU1NdZ0wVihKrCyo726Gbbzwhce00Sk3AbjG+3Y56XeceRif2pF4ZpuLMzL7cXn/gYjocSzAI6/vFqKbcHCVSDloe8xTin8UFQwzl837oNHVkX0SB6gHVW7fQrF6UAebfqMXcdsXIDZF88cDYYRKENXXuu1oXizMXCx40GmbpjqejaPZ4K3xLieNwgzL7R3aK4LJafIQw1aal8J8JVNZWPHq1EwVDCN/FRz5d+ND6VmW7zlsYV8dbA==
+ b=mwUxhivcOsiFLdINMfYJ9ZpC9g45Xso+KWNNR//IsofxhQpnofC2Fg0yppF6YlfNSdCAyqtA5buQEwAE48BtptR/DPLczlhG+EYk8HNxmZj39pvL53Uur3Mx2YtTX8vjtQSKtSzyXweynGhgP9b4xoZFAGozLLAb2m4aMCPLN/J8Erxz2MWVEzjYqIaXlHiscvGw5VilgXbNnGGFKwstx6rXMTl8swT6J5xxEuzpixgBJCfnqy/IX6K6KCa0V+Aeyhk5SzS8UQgo1EEF2mIcN93UE26KhtOSmSxTC6115Qoy8ZrSapQX05E91ZZneCC910IDS8dZeeS7KpHZZdMmaA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0378haLIb72PJrqQjEVfa0u6COwfUb+r7B/6R9GqokU=;
- b=bTNNaT5Dcxzd898RKPJ/qUkv89wh6eEWF+PKH8xU01qgDaCEd+6E5ni79OeaoHP9aOEfV72kPqzjnNcdX7/y19JqjnaXcjRmS0iHWaFqKBamMKpFKfP38Ha0ZNWNvxxGmReTCnfEjCXyfhL3oHEIrLfwHyDQUDkQ/2/T9CQma+XZoCoUlUoXLQ/DKk5OArzy4YIUJPQWLrpoNKqzwJj2C0d8NDOhne2/c4bSnb+bPeDSdIq6fm1yN1Y6etONWQbjPB4z4dn+7ewixr3Q9YM9WTwoj0GvGalN0BDqpLMxwxqtZt+R3GKQ9l+QKKjcrnOxxt3GT5xMVaWyRwEKapooWw==
+ bh=4bZCVpPkOjw/sOBKGcHKXBQbaTUGDnO73l5yTovPOe8=;
+ b=Hol8Fmhd9DjCPUSsbbirIdQismQ4rjsEIOMUON8cbpxDnisl8SfKr9zBJV7UIecQRL2jaMPFoWuHdCNf4abF2fX1HxgeciYcSciA0Mk953+PJi1TIsxN6Cowe3Oh3Ibq8BnST1KHWnj0/ntSoffgGDZ1C3ncsZ5LhXmCKHMMysXFOHI2sjAxDpbQttFKwjjbLzcqL7+VomQd7v8s21XGSPyrERtZihlOj5klrFUg4xm+B18YHxF8gFqi8R1gU1iMNEbqNbB5DPT1WtkxWoOVy58kimQz8g3KQVaCdNO/l85vFtegYG2yC6s8wS27UYi4ebjtxsk/LoyEG9+bXHaJcw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
- dkim=pass header.d=marvell.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ smtp.mailfrom=wavecomp.com; dmarc=pass action=none header.from=mips.com;
+ dkim=pass header.d=mips.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
+ s=selector2;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=0378haLIb72PJrqQjEVfa0u6COwfUb+r7B/6R9GqokU=;
- b=TYhszhCsygZB4EeZXiTgycaCoNcOcgYbo+53qyDrJl0qauRXsQJEjsgWeF6P5edN6cJyqM7P31BAe8HZfXYiNvqLp8xB81gj6Yd5Fg2c/O1k6V9dYXtsIABuIxOX5098gOrciyNRCMNklhp92cFJ6CfAphT7tOlpIGghIci0ipM=
-Received: from DM5PR18MB1355.namprd18.prod.outlook.com (10.175.223.16) by
- DM5PR18MB1675.namprd18.prod.outlook.com (10.175.224.15) with Microsoft SMTP
+ bh=4bZCVpPkOjw/sOBKGcHKXBQbaTUGDnO73l5yTovPOe8=;
+ b=n8x/MtO8V64rZJiNikLzKdfGAnGwMBv9bI/hrNlPxx4jS4tGq7lv8c6JY3wdk3MaZ3HQwAR5i6dpUGUU4W/N8HYQFzSPCqm7KR7rc9us0X/m/4gJGWoVsfGkEO/Zm43XdD/Vuv4kAa0VTsPb6kval3CN8DzMCDtexN4JJvSSoRE=
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
+ MWHPR2201MB1390.namprd22.prod.outlook.com (10.174.162.9) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.21; Tue, 27 Aug 2019 10:00:16 +0000
-Received: from DM5PR18MB1355.namprd18.prod.outlook.com
- ([fe80::3cbf:34d2:5b36:e127]) by DM5PR18MB1355.namprd18.prod.outlook.com
- ([fe80::3cbf:34d2:5b36:e127%12]) with mapi id 15.20.2199.021; Tue, 27 Aug
- 2019 10:00:16 +0000
-From: Ganapatrao Kulkarni <gkulkarni@marvell.com>
-To: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Subject: [PATCH v4 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
- UNCORE driver.
-Thread-Topic: [PATCH v4 2/2] drivers/perf: Add CCPI2 PMU support in ThunderX2
- UNCORE driver.
-Thread-Index: AQHVXL46oZYwh/XuRUGtr0Udu4xvlQ==
-Date: Tue, 27 Aug 2019 10:00:16 +0000
-Message-ID: <1566899990-18277-3-git-send-email-gkulkarni@marvell.com>
-References: <1566899990-18277-1-git-send-email-gkulkarni@marvell.com>
-In-Reply-To: <1566899990-18277-1-git-send-email-gkulkarni@marvell.com>
+ 15.20.2199.20; Tue, 27 Aug 2019 10:02:52 +0000
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3]) by MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3%11]) with mapi id 15.20.2199.021; Tue, 27 Aug
+ 2019 10:02:52 +0000
+From: Paul Burton <paul.burton@mips.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 3/6] dma-mapping: remove arch_dma_mmap_pgprot
+Thread-Topic: [PATCH 3/6] dma-mapping: remove arch_dma_mmap_pgprot
+Thread-Index: AQHVXL6W4q15Kq6fKUqaVULtpP6zpQ==
+Date: Tue, 27 Aug 2019 10:02:51 +0000
+Message-ID: <20190827100245.dczrrixvgrmbrb42@pburton-laptop>
+References: <20190826132553.4116-1-hch@lst.de>
+ <20190826132553.4116-4-hch@lst.de>
+In-Reply-To: <20190826132553.4116-4-hch@lst.de>
 Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
-x-clientproxiedby: BYAPR03CA0005.namprd03.prod.outlook.com
- (2603:10b6:a02:a8::18) To DM5PR18MB1355.namprd18.prod.outlook.com
- (2603:10b6:3:14a::16)
+x-clientproxiedby: LO2P265CA0401.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:f::29) To MWHPR2201MB1277.namprd22.prod.outlook.com
+ (2603:10b6:301:18::12)
+user-agent: NeoMutt/20180716
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=pburton@wavecomp.com; 
 x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 1.8.3.1
-x-originating-ip: [199.233.59.128]
+x-originating-ip: [94.118.89.251]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: a325350c-dfc9-4359-46a1-08d72ad55be8
+x-ms-office365-filtering-correlation-id: fa6f4199-37f8-437c-f7df-08d72ad5b8b7
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM5PR18MB1675; 
-x-ms-traffictypediagnostic: DM5PR18MB1675:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM5PR18MB16754827EBD1B0908EBB9001B2A00@DM5PR18MB1675.namprd18.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
+ SRVR:MWHPR2201MB1390; 
+x-ms-traffictypediagnostic: MWHPR2201MB1390:
+x-microsoft-antispam-prvs: <MWHPR2201MB13909FBB7E045A1D214C6DA8C1A00@MWHPR2201MB1390.namprd22.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
 x-forefront-prvs: 0142F22657
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(346002)(396003)(136003)(366004)(39860400002)(199004)(189003)(7736002)(53946003)(8936002)(305945005)(4720700003)(8676002)(50226002)(81166006)(81156014)(66476007)(66446008)(5660300002)(64756008)(66556008)(6486002)(4326008)(2501003)(102836004)(14454004)(386003)(6506007)(26005)(186003)(6436002)(76176011)(99286004)(6512007)(52116002)(86362001)(2201001)(110136005)(53936002)(256004)(486006)(54906003)(316002)(6116002)(3846002)(66946007)(25786009)(476003)(71190400001)(71200400001)(11346002)(30864003)(14444005)(446003)(36756003)(66066001)(478600001)(2616005)(2906002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR18MB1675;
- H:DM5PR18MB1355.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: marvell.com does not designate
+ SFS:(10019020)(7916004)(366004)(39850400004)(376002)(136003)(396003)(346002)(189003)(199004)(71200400001)(486006)(102836004)(186003)(476003)(386003)(26005)(8676002)(42882007)(478600001)(6246003)(2906002)(305945005)(5660300002)(66066001)(53936002)(8936002)(9686003)(1076003)(446003)(14444005)(81156014)(6486002)(7736002)(81166006)(256004)(11346002)(4326008)(25786009)(14454004)(44832011)(52116002)(6512007)(58126008)(7416002)(6916009)(54906003)(76176011)(6116002)(3846002)(66946007)(66446008)(66476007)(66556008)(64756008)(33716001)(99286004)(71190400001)(316002)(6436002)(6506007)(229853002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1390;
+ H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:3; A:1; 
+received-spf: None (protection.outlook.com: wavecomp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: ghlDMrfiFtwoxFkxExEyXj922a46v0ZUKriEzMzDNBsnaPwuQF8GpVXSSjcmN3Sqy4n8M7u137fOLm+QmMmCrT825Lrznt9tX5WefHWzljdkE1k+gsWZQWVR3hjEkqy61v/4cqv0Hq3NsY7p8A7FdRTN2bGoBsuKil9Zv58XYHLA2odtZGUhLgJ4iugGlHga112U/+I9JfBZvl16O4GG4HSkSfD0bhZulERdHotXFQnwqzHhX8OXT7MjyUWlnlNRTxO+qdAWob094tPR6zQvdCOwVpvnl5y5ICMEPHOoxgAMnQWxmsCTcvKpNHQrTFmuTJVXZ7xQaFdyEv7a2nshArwqievQPXbCjgY0U0EO5FANxIYGX3FBAAhGkAviUfZ63jdFC1w0A5JH9uZEF1Mr8AR9EKcqTmdF5QiDiXWfIA8=
+x-microsoft-antispam-message-info: SYpkpt6z9VR18IKvPYfxsQWI5AsD799BjXcAJOtlR3YKgAQ6Gp23O9beX8OwV7tAAZmQIVAYeAcbxI4jG0Xkqa8j6z2uWdP894vl2Oy+T22mUhXQfKQUeAFdz2eSkEX6Wtx5nP8EAjwml39IT1lW0wsixlkNW02QzixYcdl3TeJzN9Tu71GDmE1pPr164frTBJZi3poZoXt1yfKpUGclhucliYyRN/BoS2jWNRwwG0r9ZZ6l7MAQ0Yc6XdOrh8nB7BOoZM1LDuwtwQMvm0GfsbFl+1fApZlWllcoD7Lq+zvFgeryMDT8JbV+SZEaA3RSW7aUZ6MJGhxAxBxmZNIz4VlO2BPLte35+BK90Mrs2McY62YxrZwwNVRqL+3ETmjRRJC9x5E7A716zYoVd9IzSOdXaU+EmnVqMhxpJ2POCS4=
+x-ms-exchange-transport-forked: True
+Content-ID: <FD34176D9B58E64093A09E7E3A0592BE@namprd22.prod.outlook.com>
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: a325350c-dfc9-4359-46a1-08d72ad55be8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 10:00:16.6648 (UTC)
+X-OriginatorOrg: mips.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: fa6f4199-37f8-437c-f7df-08d72ad5b8b7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 10:02:51.4658 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: rjLASeQFPEwfbbSb1QWR4hZ10f0rl71YuxPXi2tELgFePCqF3/8mCzIoURHrMUeqYiZN5BtVdD/NhEvl+z8e4w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR18MB1675
-X-OriginatorOrg: marvell.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:5.22.84,1.0.8
- definitions=2019-08-27_01:2019-08-26,2019-08-27 signatures=0
+X-MS-Exchange-CrossTenant-userprincipalname: arKpiCDLk6ip53O51O1woD9sV+kusnx/6Nuk5DzIrbcTRz7Wmw2zTmlYlGt1Uw0LEGhpx6x823lTp0yt1usXJA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1390
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_030030_407378_30CA5B5E 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190827_030257_216794_04686740 
+X-CRM114-Status: GOOD (  23.32  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.156.173 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.69.95 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -153,532 +128,295 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "corbet@lwn.net" <corbet@lwn.net>, Jan Glauber <jglauber@marvell.com>,
- Jayachandran Chandrasekharan Nair <jnair@marvell.com>,
- "gklkml16@gmail.com" <gklkml16@gmail.com>,
- Robert Richter <rrichter@marvell.com>, "will@kernel.org" <will@kernel.org>
+Cc: Shawn Anastasio <shawn@anastas.io>,
+ "linux-m68k@lists.linux-m68k.org" <linux-m68k@lists.linux-m68k.org>,
+ Will Deacon <will@kernel.org>,
+ "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Russell King <linux@armlinux.org.uk>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
+ Guan Xuetao <gxt@pku.edu.cn>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CCPI2 is a low-latency high-bandwidth serial interface for inter socket
-connectivity of ThunderX2 processors.
+Hi Christoph,
 
-CCPI2 PMU supports up to 8 counters per socket. Counters are
-independently programmable to different events and can be started and
-stopped individually. The CCPI2 counters are 64-bit and do not overflow
-in normal operation.
+On Mon, Aug 26, 2019 at 03:25:50PM +0200, Christoph Hellwig wrote:
+> arch_dma_mmap_pgprot is used for two things:
+> 
+>  1) to override the "normal" uncached page attributes for mapping
+>     memory coherent to devices that can't snoop the CPU caches
+>  2) to provide the special DMA_ATTR_WRITE_COMBINE semantics on older
+>     arm systems and some mips platforms
+> 
+> Replace one with the pgprot_dmacoherent macro that is already provided
+> by arm and much simpler to use, and lift the DMA_ATTR_WRITE_COMBINE
+> handling to common code with an explicit arch opt-in.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> Acked-by: Geert Uytterhoeven <geert@linux-m68k.org>
 
-Signed-off-by: Ganapatrao Kulkarni <gkulkarni@marvell.com>
----
- drivers/perf/thunderx2_pmu.c | 258 ++++++++++++++++++++++++++++++-----
- 1 file changed, 225 insertions(+), 33 deletions(-)
+For the MIPS bits:
 
-diff --git a/drivers/perf/thunderx2_pmu.c b/drivers/perf/thunderx2_pmu.c
-index 43d76c85da56..d290d8ebbd53 100644
---- a/drivers/perf/thunderx2_pmu.c
-+++ b/drivers/perf/thunderx2_pmu.c
-@@ -16,23 +16,36 @@
-  * they need to be sampled before overflow(i.e, at every 2 seconds).
-  */
- 
--#define TX2_PMU_MAX_COUNTERS		4
-+#define TX2_PMU_DMC_L3C_MAX_COUNTERS	4
-+#define TX2_PMU_CCPI2_MAX_COUNTERS	8
-+#define TX2_PMU_MAX_COUNTERS		TX2_PMU_CCPI2_MAX_COUNTERS
-+
-+
- #define TX2_PMU_DMC_CHANNELS		8
- #define TX2_PMU_L3_TILES		16
- 
- #define TX2_PMU_HRTIMER_INTERVAL	(2 * NSEC_PER_SEC)
--#define GET_EVENTID(ev)			((ev->hw.config) & 0x1f)
--#define GET_COUNTERID(ev)		((ev->hw.idx) & 0x3)
-+#define GET_EVENTID(ev, mask)		((ev->hw.config) & mask)
-+#define GET_COUNTERID(ev, mask)		((ev->hw.idx) & mask)
-  /* 1 byte per counter(4 counters).
-   * Event id is encoded in bits [5:1] of a byte,
-   */
- #define DMC_EVENT_CFG(idx, val)		((val) << (((idx) * 8) + 1))
- 
-+/* bits[3:0] to select counters, are indexed from 8 to 15. */
-+#define CCPI2_COUNTER_OFFSET		8
-+
- #define L3C_COUNTER_CTL			0xA8
- #define L3C_COUNTER_DATA		0xAC
- #define DMC_COUNTER_CTL			0x234
- #define DMC_COUNTER_DATA		0x240
- 
-+#define CCPI2_PERF_CTL			0x108
-+#define CCPI2_COUNTER_CTL		0x10C
-+#define CCPI2_COUNTER_SEL		0x12c
-+#define CCPI2_COUNTER_DATA_L		0x130
-+#define CCPI2_COUNTER_DATA_H		0x134
-+
- /* L3C event IDs */
- #define L3_EVENT_READ_REQ		0xD
- #define L3_EVENT_WRITEBACK_REQ		0xE
-@@ -51,15 +64,28 @@
- #define DMC_EVENT_READ_TXNS		0xF
- #define DMC_EVENT_MAX			0x10
- 
-+#define CCPI2_EVENT_REQ_PKT_SENT	0x3D
-+#define CCPI2_EVENT_SNOOP_PKT_SENT	0x65
-+#define CCPI2_EVENT_DATA_PKT_SENT	0x105
-+#define CCPI2_EVENT_GIC_PKT_SENT	0x12D
-+#define CCPI2_EVENT_MAX			0x200
-+
-+#define CCPI2_PERF_CTL_ENABLE		BIT(0)
-+#define CCPI2_PERF_CTL_START		BIT(1)
-+#define CCPI2_PERF_CTL_RESET		BIT(4)
-+#define CCPI2_EVENT_LEVEL_RISING_EDGE	BIT(10)
-+#define CCPI2_EVENT_TYPE_EDGE_SENSITIVE	BIT(11)
-+
- enum tx2_uncore_type {
- 	PMU_TYPE_L3C,
- 	PMU_TYPE_DMC,
-+	PMU_TYPE_CCPI2,
- 	PMU_TYPE_INVALID,
- };
- 
- /*
-- * pmu on each socket has 2 uncore devices(dmc and l3c),
-- * each device has 4 counters.
-+ * Each socket has 3 uncore devices associated with a PMU. The DMC and
-+ * L3C have 4 32-bit counters and the CCPI2 has 8 64-bit counters.
-  */
- struct tx2_uncore_pmu {
- 	struct hlist_node hpnode;
-@@ -69,8 +95,10 @@ struct tx2_uncore_pmu {
- 	int node;
- 	int cpu;
- 	u32 max_counters;
-+	u32 counters_mask;
- 	u32 prorate_factor;
- 	u32 max_events;
-+	u32 events_mask;
- 	u64 hrtimer_interval;
- 	void __iomem *base;
- 	DECLARE_BITMAP(active_counters, TX2_PMU_MAX_COUNTERS);
-@@ -92,7 +120,21 @@ static inline struct tx2_uncore_pmu *pmu_to_tx2_pmu(struct pmu *pmu)
- 	return container_of(pmu, struct tx2_uncore_pmu, pmu);
- }
- 
--PMU_FORMAT_ATTR(event,	"config:0-4");
-+#define TX2_PMU_FORMAT_ATTR(_var, _name, _format)			\
-+static ssize_t								\
-+__tx2_pmu_##_var##_show(struct device *dev,				\
-+			       struct device_attribute *attr,		\
-+			       char *page)				\
-+{									\
-+	BUILD_BUG_ON(sizeof(_format) >= PAGE_SIZE);			\
-+	return sprintf(page, _format "\n");				\
-+}									\
-+									\
-+static struct device_attribute format_attr_##_var =			\
-+	__ATTR(_name, 0444, __tx2_pmu_##_var##_show, NULL)
-+
-+TX2_PMU_FORMAT_ATTR(event, event, "config:0-4");
-+TX2_PMU_FORMAT_ATTR(event_ccpi2, event, "config:0-9");
- 
- static struct attribute *l3c_pmu_format_attrs[] = {
- 	&format_attr_event.attr,
-@@ -104,6 +146,11 @@ static struct attribute *dmc_pmu_format_attrs[] = {
- 	NULL,
- };
- 
-+static struct attribute *ccpi2_pmu_format_attrs[] = {
-+	&format_attr_event_ccpi2.attr,
-+	NULL,
-+};
-+
- static const struct attribute_group l3c_pmu_format_attr_group = {
- 	.name = "format",
- 	.attrs = l3c_pmu_format_attrs,
-@@ -114,6 +161,11 @@ static const struct attribute_group dmc_pmu_format_attr_group = {
- 	.attrs = dmc_pmu_format_attrs,
- };
- 
-+static const struct attribute_group ccpi2_pmu_format_attr_group = {
-+	.name = "format",
-+	.attrs = ccpi2_pmu_format_attrs,
-+};
-+
- /*
-  * sysfs event attributes
-  */
-@@ -164,6 +216,19 @@ static struct attribute *dmc_pmu_events_attrs[] = {
- 	NULL,
- };
- 
-+TX2_EVENT_ATTR(req_pktsent, CCPI2_EVENT_REQ_PKT_SENT);
-+TX2_EVENT_ATTR(snoop_pktsent, CCPI2_EVENT_SNOOP_PKT_SENT);
-+TX2_EVENT_ATTR(data_pktsent, CCPI2_EVENT_DATA_PKT_SENT);
-+TX2_EVENT_ATTR(gic_pktsent, CCPI2_EVENT_GIC_PKT_SENT);
-+
-+static struct attribute *ccpi2_pmu_events_attrs[] = {
-+	&tx2_pmu_event_attr_req_pktsent.attr.attr,
-+	&tx2_pmu_event_attr_snoop_pktsent.attr.attr,
-+	&tx2_pmu_event_attr_data_pktsent.attr.attr,
-+	&tx2_pmu_event_attr_gic_pktsent.attr.attr,
-+	NULL,
-+};
-+
- static const struct attribute_group l3c_pmu_events_attr_group = {
- 	.name = "events",
- 	.attrs = l3c_pmu_events_attrs,
-@@ -174,6 +239,11 @@ static const struct attribute_group dmc_pmu_events_attr_group = {
- 	.attrs = dmc_pmu_events_attrs,
- };
- 
-+static const struct attribute_group ccpi2_pmu_events_attr_group = {
-+	.name = "events",
-+	.attrs = ccpi2_pmu_events_attrs,
-+};
-+
- /*
-  * sysfs cpumask attributes
-  */
-@@ -213,6 +283,13 @@ static const struct attribute_group *dmc_pmu_attr_groups[] = {
- 	NULL
- };
- 
-+static const struct attribute_group *ccpi2_pmu_attr_groups[] = {
-+	&ccpi2_pmu_format_attr_group,
-+	&pmu_cpumask_attr_group,
-+	&ccpi2_pmu_events_attr_group,
-+	NULL
-+};
-+
- static inline u32 reg_readl(unsigned long addr)
- {
- 	return readl((void __iomem *)addr);
-@@ -245,33 +322,58 @@ static void init_cntr_base_l3c(struct perf_event *event,
- 		struct tx2_uncore_pmu *tx2_pmu)
- {
- 	struct hw_perf_event *hwc = &event->hw;
-+	u32 cmask;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	cmask = tx2_pmu->counters_mask;
- 
- 	/* counter ctrl/data reg offset at 8 */
- 	hwc->config_base = (unsigned long)tx2_pmu->base
--		+ L3C_COUNTER_CTL + (8 * GET_COUNTERID(event));
-+		+ L3C_COUNTER_CTL + (8 * GET_COUNTERID(event, cmask));
- 	hwc->event_base =  (unsigned long)tx2_pmu->base
--		+ L3C_COUNTER_DATA + (8 * GET_COUNTERID(event));
-+		+ L3C_COUNTER_DATA + (8 * GET_COUNTERID(event, cmask));
- }
- 
- static void init_cntr_base_dmc(struct perf_event *event,
- 		struct tx2_uncore_pmu *tx2_pmu)
- {
- 	struct hw_perf_event *hwc = &event->hw;
-+	u32 cmask;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	cmask = tx2_pmu->counters_mask;
- 
- 	hwc->config_base = (unsigned long)tx2_pmu->base
- 		+ DMC_COUNTER_CTL;
- 	/* counter data reg offset at 0xc */
- 	hwc->event_base = (unsigned long)tx2_pmu->base
--		+ DMC_COUNTER_DATA + (0xc * GET_COUNTERID(event));
-+		+ DMC_COUNTER_DATA + (0xc * GET_COUNTERID(event, cmask));
-+}
-+
-+static void init_cntr_base_ccpi2(struct perf_event *event,
-+		struct tx2_uncore_pmu *tx2_pmu)
-+{
-+	struct hw_perf_event *hwc = &event->hw;
-+	u32 cmask;
-+
-+	cmask = tx2_pmu->counters_mask;
-+
-+	hwc->config_base = (unsigned long)tx2_pmu->base
-+		+ CCPI2_COUNTER_CTL + (4 * GET_COUNTERID(event, cmask));
-+	hwc->event_base =  (unsigned long)tx2_pmu->base;
- }
- 
- static void uncore_start_event_l3c(struct perf_event *event, int flags)
- {
--	u32 val;
-+	u32 val, emask;
- 	struct hw_perf_event *hwc = &event->hw;
-+	struct tx2_uncore_pmu *tx2_pmu;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	emask = tx2_pmu->events_mask;
- 
- 	/* event id encoded in bits [07:03] */
--	val = GET_EVENTID(event) << 3;
-+	val = GET_EVENTID(event, emask) << 3;
- 	reg_writel(val, hwc->config_base);
- 	local64_set(&hwc->prev_count, 0);
- 	reg_writel(0, hwc->event_base);
-@@ -284,10 +386,17 @@ static inline void uncore_stop_event_l3c(struct perf_event *event)
- 
- static void uncore_start_event_dmc(struct perf_event *event, int flags)
- {
--	u32 val;
-+	u32 val, cmask, emask;
- 	struct hw_perf_event *hwc = &event->hw;
--	int idx = GET_COUNTERID(event);
--	int event_id = GET_EVENTID(event);
-+	struct tx2_uncore_pmu *tx2_pmu;
-+	int idx, event_id;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	cmask = tx2_pmu->counters_mask;
-+	emask = tx2_pmu->events_mask;
-+
-+	idx = GET_COUNTERID(event, cmask);
-+	event_id = GET_EVENTID(event, emask);
- 
- 	/* enable and start counters.
- 	 * 8 bits for each counter, bits[05:01] of a counter to set event type.
-@@ -302,9 +411,14 @@ static void uncore_start_event_dmc(struct perf_event *event, int flags)
- 
- static void uncore_stop_event_dmc(struct perf_event *event)
- {
--	u32 val;
-+	u32 val, cmask;
- 	struct hw_perf_event *hwc = &event->hw;
--	int idx = GET_COUNTERID(event);
-+	struct tx2_uncore_pmu *tx2_pmu;
-+	int idx;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	cmask = tx2_pmu->counters_mask;
-+	idx = GET_COUNTERID(event, cmask);
- 
- 	/* clear event type(bits[05:01]) to stop counter */
- 	val = reg_readl(hwc->config_base);
-@@ -312,27 +426,72 @@ static void uncore_stop_event_dmc(struct perf_event *event)
- 	reg_writel(val, hwc->config_base);
- }
- 
-+static void uncore_start_event_ccpi2(struct perf_event *event, int flags)
-+{
-+	u32 emask;
-+	struct hw_perf_event *hwc = &event->hw;
-+	struct tx2_uncore_pmu *tx2_pmu;
-+
-+	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
-+	emask = tx2_pmu->events_mask;
-+
-+	/* Bit [09:00] to set event id.
-+	 * Bits [10], set level to rising edge.
-+	 * Bits [11], set type to edge sensitive.
-+	 */
-+	reg_writel((CCPI2_EVENT_TYPE_EDGE_SENSITIVE |
-+			CCPI2_EVENT_LEVEL_RISING_EDGE |
-+			GET_EVENTID(event, emask)), hwc->config_base);
-+
-+	/* reset[4], enable[0] and start[1] counters */
-+	reg_writel(CCPI2_PERF_CTL_RESET |
-+			CCPI2_PERF_CTL_START |
-+			CCPI2_PERF_CTL_ENABLE,
-+			hwc->event_base + CCPI2_PERF_CTL);
-+	local64_set(&event->hw.prev_count, 0ULL);
-+}
-+
-+static void uncore_stop_event_ccpi2(struct perf_event *event)
-+{
-+	struct hw_perf_event *hwc = &event->hw;
-+
-+	/* disable and stop counter */
-+	reg_writel(0, hwc->event_base + CCPI2_PERF_CTL);
-+}
-+
- static void tx2_uncore_event_update(struct perf_event *event)
- {
--	s64 prev, delta, new = 0;
-+	u64 prev, delta, new = 0;
- 	struct hw_perf_event *hwc = &event->hw;
- 	struct tx2_uncore_pmu *tx2_pmu;
- 	enum tx2_uncore_type type;
- 	u32 prorate_factor;
-+	u32 cmask, emask;
- 
- 	tx2_pmu = pmu_to_tx2_pmu(event->pmu);
- 	type = tx2_pmu->type;
-+	cmask = tx2_pmu->counters_mask;
-+	emask = tx2_pmu->events_mask;
- 	prorate_factor = tx2_pmu->prorate_factor;
--
--	new = reg_readl(hwc->event_base);
--	prev = local64_xchg(&hwc->prev_count, new);
--
--	/* handles rollover of 32 bit counter */
--	delta = (u32)(((1UL << 32) - prev) + new);
-+	if (type == PMU_TYPE_CCPI2) {
-+		reg_writel(CCPI2_COUNTER_OFFSET +
-+				GET_COUNTERID(event, cmask),
-+				hwc->event_base + CCPI2_COUNTER_SEL);
-+		new = reg_readl(hwc->event_base + CCPI2_COUNTER_DATA_H);
-+		new = (new << 32) +
-+			reg_readl(hwc->event_base + CCPI2_COUNTER_DATA_L);
-+		prev = local64_xchg(&hwc->prev_count, new);
-+		delta = new - prev;
-+	} else {
-+		new = reg_readl(hwc->event_base);
-+		prev = local64_xchg(&hwc->prev_count, new);
-+		/* handles rollover of 32 bit counter */
-+		delta = (u32)(((1UL << 32) - prev) + new);
-+	}
- 
- 	/* DMC event data_transfers granularity is 16 Bytes, convert it to 64 */
- 	if (type == PMU_TYPE_DMC &&
--			GET_EVENTID(event) == DMC_EVENT_DATA_TRANSFERS)
-+			GET_EVENTID(event, emask) == DMC_EVENT_DATA_TRANSFERS)
- 		delta = delta/4;
- 
- 	/* L3C and DMC has 16 and 8 interleave channels respectively.
-@@ -351,6 +510,7 @@ static enum tx2_uncore_type get_tx2_pmu_type(struct acpi_device *adev)
- 	} devices[] = {
- 		{"CAV901D", PMU_TYPE_L3C},
- 		{"CAV901F", PMU_TYPE_DMC},
-+		{"CAV901E", PMU_TYPE_CCPI2},
- 		{"", PMU_TYPE_INVALID}
- 	};
- 
-@@ -380,7 +540,8 @@ static bool tx2_uncore_validate_event(struct pmu *pmu,
-  * Make sure the group of events can be scheduled at once
-  * on the PMU.
-  */
--static bool tx2_uncore_validate_event_group(struct perf_event *event)
-+static bool tx2_uncore_validate_event_group(struct perf_event *event,
-+		int max_counters)
- {
- 	struct perf_event *sibling, *leader = event->group_leader;
- 	int counters = 0;
-@@ -403,7 +564,7 @@ static bool tx2_uncore_validate_event_group(struct perf_event *event)
- 	 * If the group requires more counters than the HW has,
- 	 * it cannot ever be scheduled.
- 	 */
--	return counters <= TX2_PMU_MAX_COUNTERS;
-+	return counters <= max_counters;
- }
- 
- 
-@@ -439,7 +600,7 @@ static int tx2_uncore_event_init(struct perf_event *event)
- 	hwc->config = event->attr.config;
- 
- 	/* Validate the group */
--	if (!tx2_uncore_validate_event_group(event))
-+	if (!tx2_uncore_validate_event_group(event, tx2_pmu->max_counters))
- 		return -EINVAL;
- 
- 	return 0;
-@@ -456,6 +617,10 @@ static void tx2_uncore_event_start(struct perf_event *event, int flags)
- 	tx2_pmu->start_event(event, flags);
- 	perf_event_update_userpage(event);
- 
-+	/* No hrtimer needed for CCPI2, 64-bit counters */
-+	if (!tx2_pmu->hrtimer.function)
-+		return;
-+
- 	/* Start timer for first event */
- 	if (bitmap_weight(tx2_pmu->active_counters,
- 				tx2_pmu->max_counters) == 1) {
-@@ -510,11 +675,13 @@ static void tx2_uncore_event_del(struct perf_event *event, int flags)
- {
- 	struct tx2_uncore_pmu *tx2_pmu = pmu_to_tx2_pmu(event->pmu);
- 	struct hw_perf_event *hwc = &event->hw;
-+	u32 cmask;
- 
-+	cmask = tx2_pmu->counters_mask;
- 	tx2_uncore_event_stop(event, PERF_EF_UPDATE);
- 
- 	/* clear the assigned counter */
--	free_counter(tx2_pmu, GET_COUNTERID(event));
-+	free_counter(tx2_pmu, GET_COUNTERID(event, cmask));
- 
- 	perf_event_update_userpage(event);
- 	tx2_pmu->events[hwc->idx] = NULL;
-@@ -580,8 +747,10 @@ static int tx2_uncore_pmu_add_dev(struct tx2_uncore_pmu *tx2_pmu)
- 			cpu_online_mask);
- 
- 	tx2_pmu->cpu = cpu;
--	hrtimer_init(&tx2_pmu->hrtimer, CLOCK_MONOTONIC, HRTIMER_MODE_REL);
--	tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
-+
-+	if (tx2_pmu->hrtimer.function)
-+		hrtimer_init(&tx2_pmu->hrtimer,
-+				CLOCK_MONOTONIC, HRTIMER_MODE_REL);
- 
- 	ret = tx2_uncore_pmu_register(tx2_pmu);
- 	if (ret) {
-@@ -653,10 +822,13 @@ static struct tx2_uncore_pmu *tx2_uncore_pmu_init_dev(struct device *dev,
- 
- 	switch (tx2_pmu->type) {
- 	case PMU_TYPE_L3C:
--		tx2_pmu->max_counters = TX2_PMU_MAX_COUNTERS;
-+		tx2_pmu->max_counters = TX2_PMU_DMC_L3C_MAX_COUNTERS;
-+		tx2_pmu->counters_mask = 0x3;
- 		tx2_pmu->prorate_factor = TX2_PMU_L3_TILES;
- 		tx2_pmu->max_events = L3_EVENT_MAX;
-+		tx2_pmu->events_mask = 0x1f;
- 		tx2_pmu->hrtimer_interval = TX2_PMU_HRTIMER_INTERVAL;
-+		tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
- 		tx2_pmu->attr_groups = l3c_pmu_attr_groups;
- 		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
- 				"uncore_l3c_%d", tx2_pmu->node);
-@@ -665,10 +837,13 @@ static struct tx2_uncore_pmu *tx2_uncore_pmu_init_dev(struct device *dev,
- 		tx2_pmu->stop_event = uncore_stop_event_l3c;
- 		break;
- 	case PMU_TYPE_DMC:
--		tx2_pmu->max_counters = TX2_PMU_MAX_COUNTERS;
-+		tx2_pmu->max_counters = TX2_PMU_DMC_L3C_MAX_COUNTERS;
-+		tx2_pmu->counters_mask = 0x3;
- 		tx2_pmu->prorate_factor = TX2_PMU_DMC_CHANNELS;
- 		tx2_pmu->max_events = DMC_EVENT_MAX;
-+		tx2_pmu->events_mask = 0x1f;
- 		tx2_pmu->hrtimer_interval = TX2_PMU_HRTIMER_INTERVAL;
-+		tx2_pmu->hrtimer.function = tx2_hrtimer_callback;
- 		tx2_pmu->attr_groups = dmc_pmu_attr_groups;
- 		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
- 				"uncore_dmc_%d", tx2_pmu->node);
-@@ -676,6 +851,21 @@ static struct tx2_uncore_pmu *tx2_uncore_pmu_init_dev(struct device *dev,
- 		tx2_pmu->start_event = uncore_start_event_dmc;
- 		tx2_pmu->stop_event = uncore_stop_event_dmc;
- 		break;
-+	case PMU_TYPE_CCPI2:
-+		/* CCPI2 has 8 counters */
-+		tx2_pmu->max_counters = TX2_PMU_CCPI2_MAX_COUNTERS;
-+		tx2_pmu->counters_mask = 0x7;
-+		tx2_pmu->prorate_factor = 1;
-+		tx2_pmu->max_events = CCPI2_EVENT_MAX;
-+		tx2_pmu->events_mask = 0x1ff;
-+		tx2_pmu->attr_groups = ccpi2_pmu_attr_groups;
-+		tx2_pmu->name = devm_kasprintf(dev, GFP_KERNEL,
-+				"uncore_ccpi2_%d", tx2_pmu->node);
-+		tx2_pmu->init_cntr_base = init_cntr_base_ccpi2;
-+		tx2_pmu->start_event = uncore_start_event_ccpi2;
-+		tx2_pmu->stop_event = uncore_stop_event_ccpi2;
-+		tx2_pmu->hrtimer.function = NULL;
-+		break;
- 	case PMU_TYPE_INVALID:
- 		devm_kfree(dev, tx2_pmu);
- 		return NULL;
-@@ -744,7 +934,9 @@ static int tx2_uncore_pmu_offline_cpu(unsigned int cpu,
- 	if (cpu != tx2_pmu->cpu)
- 		return 0;
- 
--	hrtimer_cancel(&tx2_pmu->hrtimer);
-+	if (tx2_pmu->hrtimer.function)
-+		hrtimer_cancel(&tx2_pmu->hrtimer);
-+
- 	cpumask_copy(&cpu_online_mask_temp, cpu_online_mask);
- 	cpumask_clear_cpu(cpu, &cpu_online_mask_temp);
- 	new_cpu = cpumask_any_and(
--- 
-2.17.1
+    Acked-by: Paul Burton <paul.burton@mips.com>
 
+Thanks,
+    Paul
+
+> ---
+>  arch/arm/Kconfig                   |  2 +-
+>  arch/arm/mm/dma-mapping.c          |  6 ------
+>  arch/arm64/Kconfig                 |  1 -
+>  arch/arm64/include/asm/pgtable.h   |  4 ++++
+>  arch/arm64/mm/dma-mapping.c        |  6 ------
+>  arch/m68k/Kconfig                  |  1 -
+>  arch/m68k/include/asm/pgtable_mm.h |  3 +++
+>  arch/m68k/kernel/dma.c             |  3 +--
+>  arch/mips/Kconfig                  |  2 +-
+>  arch/mips/mm/dma-noncoherent.c     |  8 --------
+>  include/linux/dma-noncoherent.h    | 13 +++++++++++--
+>  kernel/dma/Kconfig                 | 12 +++++++++---
+>  kernel/dma/mapping.c               |  8 +++++---
+>  13 files changed, 35 insertions(+), 34 deletions(-)
+> 
+> diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> index 24360211534a..217083caeabd 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -8,7 +8,7 @@ config ARM
+>  	select ARCH_HAS_DEBUG_VIRTUAL if MMU
+>  	select ARCH_HAS_DEVMEM_IS_ALLOWED
+>  	select ARCH_HAS_DMA_COHERENT_TO_PFN if SWIOTLB
+> -	select ARCH_HAS_DMA_MMAP_PGPROT if SWIOTLB
+> +	select ARCH_HAS_DMA_WRITE_COMBINE if !ARM_DMA_MEM_BUFFERABLE
+>  	select ARCH_HAS_ELF_RANDOMIZE
+>  	select ARCH_HAS_FORTIFY_SOURCE
+>  	select ARCH_HAS_KEEPINITRD
+> diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+> index d42557ee69c2..d27b12f61737 100644
+> --- a/arch/arm/mm/dma-mapping.c
+> +++ b/arch/arm/mm/dma-mapping.c
+> @@ -2402,12 +2402,6 @@ long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+>  	return dma_to_pfn(dev, dma_addr);
+>  }
+>  
+> -pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+> -		unsigned long attrs)
+> -{
+> -	return __get_dma_pgprot(attrs, prot);
+> -}
+> -
+>  void *arch_dma_alloc(struct device *dev, size_t size, dma_addr_t *dma_handle,
+>  		gfp_t gfp, unsigned long attrs)
+>  {
+> diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
+> index 3adcec05b1f6..dab9dda34206 100644
+> --- a/arch/arm64/Kconfig
+> +++ b/arch/arm64/Kconfig
+> @@ -13,7 +13,6 @@ config ARM64
+>  	select ARCH_HAS_DEBUG_VIRTUAL
+>  	select ARCH_HAS_DEVMEM_IS_ALLOWED
+>  	select ARCH_HAS_DMA_COHERENT_TO_PFN
+> -	select ARCH_HAS_DMA_MMAP_PGPROT
+>  	select ARCH_HAS_DMA_PREP_COHERENT
+>  	select ARCH_HAS_ACPI_TABLE_UPGRADE if ACPI
+>  	select ARCH_HAS_ELF_RANDOMIZE
+> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> index e09760ece844..6700371227d1 100644
+> --- a/arch/arm64/include/asm/pgtable.h
+> +++ b/arch/arm64/include/asm/pgtable.h
+> @@ -435,6 +435,10 @@ static inline pmd_t pmd_mkdevmap(pmd_t pmd)
+>  	__pgprot_modify(prot, PTE_ATTRINDX_MASK, PTE_ATTRINDX(MT_NORMAL_NC) | PTE_PXN | PTE_UXN)
+>  #define pgprot_device(prot) \
+>  	__pgprot_modify(prot, PTE_ATTRINDX_MASK, PTE_ATTRINDX(MT_DEVICE_nGnRE) | PTE_PXN | PTE_UXN)
+> +#define pgprot_dmacoherent(prot) \
+> +	__pgprot_modify(prot, PTE_ATTRINDX_MASK, \
+> +			PTE_ATTRINDX(MT_NORMAL_NC) | PTE_PXN | PTE_UXN)
+> +
+>  #define __HAVE_PHYS_MEM_ACCESS_PROT
+>  struct file;
+>  extern pgprot_t phys_mem_access_prot(struct file *file, unsigned long pfn,
+> diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
+> index bd2b039f43a6..676efcda51e6 100644
+> --- a/arch/arm64/mm/dma-mapping.c
+> +++ b/arch/arm64/mm/dma-mapping.c
+> @@ -11,12 +11,6 @@
+>  
+>  #include <asm/cacheflush.h>
+>  
+> -pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+> -		unsigned long attrs)
+> -{
+> -	return pgprot_writecombine(prot);
+> -}
+> -
+>  void arch_sync_dma_for_device(struct device *dev, phys_addr_t paddr,
+>  		size_t size, enum dma_data_direction dir)
+>  {
+> diff --git a/arch/m68k/Kconfig b/arch/m68k/Kconfig
+> index c518d695c376..a9e564306d3e 100644
+> --- a/arch/m68k/Kconfig
+> +++ b/arch/m68k/Kconfig
+> @@ -4,7 +4,6 @@ config M68K
+>  	default y
+>  	select ARCH_32BIT_OFF_T
+>  	select ARCH_HAS_BINFMT_FLAT
+> -	select ARCH_HAS_DMA_MMAP_PGPROT if MMU && !COLDFIRE
+>  	select ARCH_HAS_DMA_PREP_COHERENT if HAS_DMA && MMU && !COLDFIRE
+>  	select ARCH_HAS_SYNC_DMA_FOR_DEVICE if HAS_DMA
+>  	select ARCH_MIGHT_HAVE_PC_PARPORT if ISA
+> diff --git a/arch/m68k/include/asm/pgtable_mm.h b/arch/m68k/include/asm/pgtable_mm.h
+> index fe3ddd73a0cc..fde4534b974f 100644
+> --- a/arch/m68k/include/asm/pgtable_mm.h
+> +++ b/arch/m68k/include/asm/pgtable_mm.h
+> @@ -169,6 +169,9 @@ static inline void update_mmu_cache(struct vm_area_struct *vma,
+>  	    ? (__pgprot((pgprot_val(prot) & _CACHEMASK040) | _PAGE_NOCACHE_S))	\
+>  	    : (prot)))
+>  
+> +pgprot_t pgprot_dmacoherent(pgprot_t prot);
+> +#define pgprot_dmacoherent(prot)	pgprot_dmacoherent(prot)
+> +
+>  #endif /* CONFIG_COLDFIRE */
+>  #include <asm-generic/pgtable.h>
+>  #endif /* !__ASSEMBLY__ */
+> diff --git a/arch/m68k/kernel/dma.c b/arch/m68k/kernel/dma.c
+> index 30cd59caf037..35064150e348 100644
+> --- a/arch/m68k/kernel/dma.c
+> +++ b/arch/m68k/kernel/dma.c
+> @@ -23,8 +23,7 @@ void arch_dma_prep_coherent(struct page *page, size_t size)
+>  	cache_push(page_to_phys(page), size);
+>  }
+>  
+> -pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+> -		unsigned long attrs)
+> +pgprot_t pgprot_dmacoherent(pgprot_t prot)
+>  {
+>  	if (CPU_IS_040_OR_060) {
+>  		pgprot_val(prot) &= ~_PAGE_CACHE040;
+> diff --git a/arch/mips/Kconfig b/arch/mips/Kconfig
+> index d50fafd7bf3a..fc88f68ea1ee 100644
+> --- a/arch/mips/Kconfig
+> +++ b/arch/mips/Kconfig
+> @@ -1119,7 +1119,7 @@ config DMA_PERDEV_COHERENT
+>  
+>  config DMA_NONCOHERENT
+>  	bool
+> -	select ARCH_HAS_DMA_MMAP_PGPROT
+> +	select ARCH_HAS_DMA_WRITE_COMBINE
+>  	select ARCH_HAS_SYNC_DMA_FOR_DEVICE
+>  	select ARCH_HAS_UNCACHED_SEGMENT
+>  	select NEED_DMA_MAP_STATE
+> diff --git a/arch/mips/mm/dma-noncoherent.c b/arch/mips/mm/dma-noncoherent.c
+> index ed56c6fa7be2..1d4d57dd9acf 100644
+> --- a/arch/mips/mm/dma-noncoherent.c
+> +++ b/arch/mips/mm/dma-noncoherent.c
+> @@ -65,14 +65,6 @@ long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+>  	return page_to_pfn(virt_to_page(cached_kernel_address(cpu_addr)));
+>  }
+>  
+> -pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+> -		unsigned long attrs)
+> -{
+> -	if (attrs & DMA_ATTR_WRITE_COMBINE)
+> -		return pgprot_writecombine(prot);
+> -	return pgprot_noncached(prot);
+> -}
+> -
+>  static inline void dma_sync_virt(void *addr, size_t size,
+>  		enum dma_data_direction dir)
+>  {
+> diff --git a/include/linux/dma-noncoherent.h b/include/linux/dma-noncoherent.h
+> index 0bff3d7fac92..dd3de6d88fc0 100644
+> --- a/include/linux/dma-noncoherent.h
+> +++ b/include/linux/dma-noncoherent.h
+> @@ -3,6 +3,7 @@
+>  #define _LINUX_DMA_NONCOHERENT_H 1
+>  
+>  #include <linux/dma-mapping.h>
+> +#include <asm/pgtable.h>
+>  
+>  #ifdef CONFIG_ARCH_HAS_DMA_COHERENCE_H
+>  #include <asm/dma-coherence.h>
+> @@ -42,10 +43,18 @@ void arch_dma_free(struct device *dev, size_t size, void *cpu_addr,
+>  		dma_addr_t dma_addr, unsigned long attrs);
+>  long arch_dma_coherent_to_pfn(struct device *dev, void *cpu_addr,
+>  		dma_addr_t dma_addr);
+> -pgprot_t arch_dma_mmap_pgprot(struct device *dev, pgprot_t prot,
+> -		unsigned long attrs);
+>  
+>  #ifdef CONFIG_MMU
+> +/*
+> + * Page protection so that devices that can't snoop CPU caches can use the
+> + * memory coherently.  We default to pgprot_noncached which is usually used
+> + * for ioremap as a safe bet, but architectures can override this with less
+> + * strict semantics if possible.
+> + */
+> +#ifndef pgprot_dmacoherent
+> +#define pgprot_dmacoherent(prot)	pgprot_noncached(prot)
+> +#endif
+> +
+>  pgprot_t dma_pgprot(struct device *dev, pgprot_t prot, unsigned long attrs);
+>  #else
+>  static inline pgprot_t dma_pgprot(struct device *dev, pgprot_t prot,
+> diff --git a/kernel/dma/Kconfig b/kernel/dma/Kconfig
+> index 9decbba255fc..73c5c2b8e824 100644
+> --- a/kernel/dma/Kconfig
+> +++ b/kernel/dma/Kconfig
+> @@ -20,6 +20,15 @@ config ARCH_HAS_DMA_COHERENCE_H
+>  config ARCH_HAS_DMA_SET_MASK
+>  	bool
+>  
+> +#
+> +# Select this option if the architecture needs special handling for
+> +# DMA_ATTR_WRITE_COMBINE.  Normally the "uncached" mapping should be what
+> +# people thing of when saying write combine, so very few platforms should
+> +# need to enable this.
+> +#
+> +config ARCH_HAS_DMA_WRITE_COMBINE
+> +	bool
+> +
+>  config DMA_DECLARE_COHERENT
+>  	bool
+>  
+> @@ -45,9 +54,6 @@ config ARCH_HAS_DMA_PREP_COHERENT
+>  config ARCH_HAS_DMA_COHERENT_TO_PFN
+>  	bool
+>  
+> -config ARCH_HAS_DMA_MMAP_PGPROT
+> -	bool
+> -
+>  config ARCH_HAS_FORCE_DMA_UNENCRYPTED
+>  	bool
+>  
+> diff --git a/kernel/dma/mapping.c b/kernel/dma/mapping.c
+> index b0038ca3aa92..1b96616c9f20 100644
+> --- a/kernel/dma/mapping.c
+> +++ b/kernel/dma/mapping.c
+> @@ -161,9 +161,11 @@ pgprot_t dma_pgprot(struct device *dev, pgprot_t prot, unsigned long attrs)
+>  	    (IS_ENABLED(CONFIG_DMA_NONCOHERENT_CACHE_SYNC) &&
+>               (attrs & DMA_ATTR_NON_CONSISTENT)))
+>  		return prot;
+> -	if (IS_ENABLED(CONFIG_ARCH_HAS_DMA_MMAP_PGPROT))
+> -		return arch_dma_mmap_pgprot(dev, prot, attrs);
+> -	return pgprot_noncached(prot);
+> +#ifdef CONFIG_ARCH_HAS_DMA_WRITE_COMBINE
+> +	if (attrs & DMA_ATTR_WRITE_COMBINE)
+> +		return pgprot_writecombine(prot);
+> +#endif
+> +	return pgprot_dmacoherent(prot);
+>  }
+>  #endif /* CONFIG_MMU */
+>  
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
