@@ -2,43 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 475589EF81
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:57:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 794B29EF89
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:59:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=rhxbQSncVqu43P9J8SUzFNFvKwZFLNHwP7TtS8WoeP8=; b=r+e
-	Zd28xL3ZezuAoAPqI2YUN2pbmmQsXVasvBHboPUc0Rq189ZEv7h37qlYRGVP2Ufn2ctDXtkYIaYs5
-	G7lUo+4QTYkq3LKQJcpxvMGzb7p9f9QIRbi5o3CrC21dA+mjdA6HN5AUkJJrDru/qztnW7Tb9cJ7r
-	T3IBgLAjt1lyle9ZSBj0QKvAKYes3KrjL0tpXKazuVkpNp/GTCqzK2HjgRi6Js8Yevvs2/AWDOpM9
-	TDyqhOq3BDf8u7M5mSgjHgNyif/9ROx225Y6ECdgJ3HbZrex9CyYnqJ1juHYvJOQprEa/ac7LVO8e
-	RxzccBqcWX2n1ZWh9MdMJdlMzDYn8EA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lm9m43c6WiX2Nt9sedX1y2vsruafO/SnwZR2nhTQ+4Q=; b=e907hVFii0/VJD
+	2s3jTVbqN7rpRQES5/btwFL/g4LnCMAy/thAkntv7KDQxjZ7gSKZRWzcpze7dw8I1JcW5PSzcH4gk
+	lGXW+a//xEvmhsuR0V1dPcCe/SGl8Xryo5rbB1NlWFVIj3azwgYgQDbexxsJIDYcF2MI3A4TXMbr6
+	rTTq4+tRK6WY12xnKd1aPhOSQmKofTJbCtmE2c5cN2gUQINPfT+3pr9zmyddOOGdJhQhFG845ERdT
+	HjW5i24kS+c0bLJv/GthmRvKViarGAoBCR4mILokhML/iWYNPOfqeeMtOxz9cFOkNWr8PS2yaol7M
+	ZOInUjekZ/Wr5GEi8kUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dqY-0005kS-Cw; Tue, 27 Aug 2019 15:57:26 +0000
+	id 1i2dsu-00061z-30; Tue, 27 Aug 2019 15:59:52 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dqN-0005k9-Oh
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:57:17 +0000
+ id 1i2dsk-00061c-8U
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:59:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48090337;
- Tue, 27 Aug 2019 08:57:15 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F12E337;
+ Tue, 27 Aug 2019 08:59:41 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 28F563F59C;
- Tue, 27 Aug 2019 08:57:14 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C7AE23F59C;
+ Tue, 27 Aug 2019 08:59:40 -0700 (PDT)
+Date: Tue, 27 Aug 2019 16:59:38 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] arm64: fix fixmap copy for 16K pages and 48-bit VA
-Date: Tue, 27 Aug 2019 16:57:08 +0100
-Message-Id: <20190827155708.34699-1-mark.rutland@arm.com>
-X-Mailer: git-send-email 2.11.0
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH 3/3] arm64: smp: Treat unknown boot failures as being
+ 'stuck in kernel'
+Message-ID: <20190827155938.GB43183@lakrids.cambridge.arm.com>
+References: <20190827151815.2160-1-will@kernel.org>
+ <20190827151815.2160-4-will@kernel.org>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190827151815.2160-4-will@kernel.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_085715_841665_E6E071B9 
-X-CRM114-Status: GOOD (  15.28  )
+X-CRM114-CacheID: sfid-20190827_085942_341277_87BC9B2B 
+X-CRM114-Status: GOOD (  15.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -57,85 +63,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Anshuman Khandual <anshuman.khandual@arm.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Steve Capper <Steve.Capper@arm.com>,
- Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>
-MIME-Version: 1.0
+Cc: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-With 16K pages and 48-bit VAs, the PGD level of table has two entries,
-and so the fixmap shares a PGD with the kernel image. Since commit:
+On Tue, Aug 27, 2019 at 04:18:15PM +0100, Will Deacon wrote:
+> When we fail to bring a secondary CPU online and it fails in an unknown
+> state, we should assume the worst and increment 'cpus_stuck_in_kernel'
+> so that things like kexec() are disabled.
 
-  f9040773b7bbbd9e ("arm64: move kernel image to base of vmalloc area")
+Definitely! I has assumed we already did this, but I see that we don't.
 
-... we copy the existing fixmap to the new fine-grained page tables at
-the PUD level in this case. When walking to the new PUD, we forgot to
-offset the PGD entry and always used the PGD entry at index 0, but this
-worked as the kernel image and fixmap were in the low half of the TTBR1
-address space.
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-As of commit:
+I don't see a nicer way of doing this, so:
 
-  14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 
-... the kernel image and fixmap are in the high half of the TTBR1
-address space, and hence use the PGD at index 1, but we didn't update
-the fixmap copying code to account for this.
+Thanks,
+Mark.
 
-Thus, we'll erroneously try to copy the fixmap slots into a PUD under
-the PGD entry at index 0. At the point we do so this PGD entry has not
-been initialised, and thus we'll try to write a value to a small offset
-from physical address 0, causing a number of potential problems.
-
-Fix this be correctly offsetting the PGD. This is split over a few steps
-for legibility.
-
-Fixes: 14c127c957c1c607 ("arm64: mm: Flip kernel VA space")
-Reported-by: Anshuman Khandual <anshuman.khandual@arm.com>
-Signed-off-by: Mark Rutland <mark.rutland@arm.com>
-Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
-Cc: Catalin Marinas <catalin.marinas@arm.com>
-Cc: Marc Zyngier <maz@kernel.org>
-Cc: Steve Capper <Steve.Capper@arm.com>
-Cc: Will Deacon <will@kernel.org>
----
- arch/arm64/mm/mmu.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/mm/mmu.c b/arch/arm64/mm/mmu.c
-index 1d4247f9a496..4197f27f86e5 100644
---- a/arch/arm64/mm/mmu.c
-+++ b/arch/arm64/mm/mmu.c
-@@ -646,6 +646,8 @@ static void __init map_kernel(pgd_t *pgdp)
- 		set_pgd(pgd_offset_raw(pgdp, FIXADDR_START),
- 			READ_ONCE(*pgd_offset_k(FIXADDR_START)));
- 	} else if (CONFIG_PGTABLE_LEVELS > 3) {
-+		pgd_t *bm_pgdp;
-+		pud_t *bm_pudp;
- 		/*
- 		 * The fixmap shares its top level pgd entry with the kernel
- 		 * mapping. This can really only occur when we are running
-@@ -653,9 +655,9 @@ static void __init map_kernel(pgd_t *pgdp)
- 		 * entry instead.
- 		 */
- 		BUG_ON(!IS_ENABLED(CONFIG_ARM64_16K_PAGES));
--		pud_populate(&init_mm,
--			     pud_set_fixmap_offset(pgdp, FIXADDR_START),
--			     lm_alias(bm_pmd));
-+		bm_pgdp = pgd_offset_raw(pgdp, FIXADDR_START);
-+		bm_pudp = pud_set_fixmap_offset(bm_pgdp, FIXADDR_START);
-+		pud_populate(&init_mm, bm_pudp, lm_alias(bm_pmd));
- 		pud_clear_fixmap();
- 	} else {
- 		BUG();
--- 
-2.11.0
-
+> ---
+>  arch/arm64/kernel/smp.c | 1 +
+>  1 file changed, 1 insertion(+)
+> 
+> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+> index 1f8aeb77cba5..dc9fe879c279 100644
+> --- a/arch/arm64/kernel/smp.c
+> +++ b/arch/arm64/kernel/smp.c
+> @@ -147,6 +147,7 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+>  		default:
+>  			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+>  					cpu, status);
+> +			cpus_stuck_in_kernel++;
+>  			break;
+>  		case CPU_KILL_ME:
+>  			if (!op_cpu_kill(cpu)) {
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
