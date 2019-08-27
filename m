@@ -2,71 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 700499F227
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 20:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6BDC99F22B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 20:15:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iZhI6dazem9m6dLLUNUOFALG3IviP6sNVPt6UrBmR6s=; b=hxNaTLddwJVm26UTFN4//CGPr
-	LGmeNjx4Gxy+q3zMxckdDWootjFw657mcxwHPwFcrlJOc6ueN7RSa0LIVISSTmVf4vmLWGjzmKhGM
-	GPtXHX4GVYwoT30HOTrS0+o9WsQJFXJefo1lspjhBGSujCTRYIwz/1Yio4Mqoj0VhmCn7NM5rocZF
-	7FM8QwYsSGTOPsULuQ7TcTSSPvPIxALIjsHNZJtppR84OthlbCgw7otJ2dTihDgHFn2CDOMzSwc3C
-	58CdtMkARxZ/YWIHQybPDtCceK8Iyk9LmwR0Nx4rI0mvuWBT5bGZMt40y/0+UGA+oASnisQ1y538p
-	ApMVYb23g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nGeO2O49Wqqt2sq+cOj6iqwiIiKDzfIQ37Hcnpc8QRk=; b=FGYCtP3IVF5Kmq
+	AC8uvS6YslQCcTHYo2gLF4zmKWx916zaqGhe63jkZgdxm0Or5/YeYuGwhkpyBtJTjnhPeOEYZOSWB
+	Hy0oZKzLjEdMzDYedla4qcl9mLQyxv1aoX+HqeSN1GFmkZD2POE72ij9MhlEn6KC3VvgYnW0RaGk/
+	+YaPUfS/nukNUkGLqNm7+++vKhvEKCDSiakkED7rcsmC5yr+/wbZBD55HJtafnjpYC40RFi1x7UTb
+	e7T/J5EYliSt9To+N0HcYRuBGYFsLBwLQFFYC2DzZXGVc2EIfYr2/acEl38wJ9Lz3SCEjdQf6HlIr
+	t6XNXHjLtBBVI4bMyL3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2fzB-0004bY-Hs; Tue, 27 Aug 2019 18:14:29 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2fz4-0004ay-0y
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 18:14:23 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=V/UcaU4EeSdHqUtL83nLzCKplC5y/OxX6AUl8iisM4g=; b=ieFQVeflIDdnhomkhIHE2o6+9
- hEtQBIghfiEmWGTnw2RAf00ImomLKDxCVWkCTJfwnxcJxlXJf98KD/68Y9/x1Y08kJ220GBw6GzFX
- PquP0c5A207abDqJzLuqpx+c+QGzU3QRf5O46Pn1mcVOgfK4p5FEWTq3MPy5iMCpm7hyg=;
-Received: from 92.41.142.151.threembb.co.uk ([92.41.142.151]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1i2fyv-0000t7-WE; Tue, 27 Aug 2019 18:14:14 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 841B7D02CE6; Tue, 27 Aug 2019 19:14:09 +0100 (BST)
-Date: Tue, 27 Aug 2019 19:14:09 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH 1/5] dt-bindings: sound: sun4i-spdif: Fix dma-names warning
-Message-ID: <20190827181409.GH23391@sirena.co.uk>
-References: <20190827142547.14577-1-mripard@kernel.org>
+	id 1i2fzv-00062s-AX; Tue, 27 Aug 2019 18:15:15 +0000
+Received: from eddie.linux-mips.org ([148.251.95.138] helo=cvs.linux-mips.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2fzk-0004sI-OG
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 18:15:07 +0000
+Received: (from localhost user: 'ladis' uid#1021 fake: STDIN
+ (ladis@eddie.linux-mips.org)) by eddie.linux-mips.org
+ id S23992798AbfH0SPAV-MII (ORCPT
+ <rfc822;linux-arm-kernel@lists.infradead.org>);
+ Tue, 27 Aug 2019 20:15:00 +0200
+Date: Tue, 27 Aug 2019 20:14:57 +0200
+From: Ladislav Michl <ladis@linux-mips.org>
+To: Tony Lindgren <tony@atomide.com>
+Subject: Re: [PATCH] ARM: OMAP2+: Delete an unnecessary kfree() call in
+ omap_hsmmc_pdata_init()
+Message-ID: <20190827181457.GA16333@lenoch>
+References: <69025c8c-8d84-6686-138b-cde59467b802@web.de>
+ <20190826162050.GX52127@atomide.com>
 MIME-Version: 1.0
-In-Reply-To: <20190827142547.14577-1-mripard@kernel.org>
-X-Cookie: Don't SANFORIZE me!!
+Content-Disposition: inline
+In-Reply-To: <20190826162050.GX52127@atomide.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_111422_070138_8F54555C 
-X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-CacheID: sfid-20190827_111504_795378_DD6D482D 
+X-CRM114-Status: UNSURE (   7.83  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [148.251.95.138 listed in list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,66 +66,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
- Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0330511891581656483=="
+Cc: Paul Walmsley <paul@pwsan.com>, Balaji T K <balajitk@ti.com>,
+ kernel-janitors@vger.kernel.org, Kishore Kadiyala <kishore.kadiyala@ti.com>,
+ Russell King <linux@armlinux.org.uk>, LKML <linux-kernel@vger.kernel.org>,
+ Markus Elfring <Markus.Elfring@web.de>, Nikolaus Schaller <hns@goldelico.com>,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Benoit Cousson <b-cousson@ti.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Mon, Aug 26, 2019 at 09:20:50AM -0700, Tony Lindgren wrote:
+> * Markus Elfring <Markus.Elfring@web.de> [190826 06:31]:
+> > From: Markus Elfring <elfring@users.sourceforge.net>
+> > Date: Mon, 26 Aug 2019 15:05:31 +0200
+> > 
+> > A null pointer would be passed to a call of the function "kfree" directly
+> > after a call of the function "kzalloc" failed at one place.
+> > Remove this superfluous function call.
+> > 
+> > This issue was detected by using the Coccinelle software.
+> 
+> Applying into omap-for-v5.4/soc thanks.
 
---===============0330511891581656483==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="fez1/uVX7m6GpeOd"
-Content-Disposition: inline
-
-
---fez1/uVX7m6GpeOd
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tue, Aug 27, 2019 at 04:25:43PM +0200, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->=20
-> Even though the H6 compatible has been properly added, the exeption for t=
-he
-> number of DMA channels hasn't been updated, leading in a validation
-> warning.
-
-Please use subject lines matching the style for the subsystem.  This
-makes it easier for people to identify relevant patches.  This
-doesn't even have ASoC in it...
-
---fez1/uVX7m6GpeOd
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1lcvAACgkQJNaLcl1U
-h9AQNwf/Wko2ywl/1pCNlhI8r5T9icdRCSO3aCusrcNdTqFPwCKGaybfQwcs7T1i
-0ljLfvQoPvxUH1pj+ed4D4e1D+L2MNaGgm30zRQvPmoldJ23rYC3scQgom5ejb8Z
-EfLTB7ogGLiwIysbn4eZojzA9AfJwkXdCsFPSR55iSGop/lztHREVQEGnW6Ktw+7
-U52qHI6sJ0mYGJgA39HQarp4lwVuSHRgouhsvA/6CXQ4sLUxTwZYNZwh4hKd/c3u
-+T0CZ022i3XwoWwGrD5VreO1Yas3ZU3jf7vT4gnpOrSH+oonnwHBfFl9nDCMMJB6
-IDS3MJpUDnm64N8iliKuxAO3z3Jgow==
-=7aoP
------END PGP SIGNATURE-----
-
---fez1/uVX7m6GpeOd--
-
-
---===============0330511891581656483==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Is it really wise touching almost dead code? Last user is pandora board, so
++Cc: Nikolaus Schaller <hns@goldelico.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0330511891581656483==--
-
