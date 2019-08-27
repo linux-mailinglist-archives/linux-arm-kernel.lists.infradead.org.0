@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCBE79EC40
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:18:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF5F29EC42
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:18:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=qYT7L6OFzjiT5JeCTQn0e6T2Yx4m0oz8ldmq2mMeA0w=; b=gUx
-	vNQOO/0b4GPdUN7cDum3W4wMhjes8r4oZu8Gnzf0RB20UGDEkHJ6WvzIOYiYmLD/xxX0VoVoJpXIy
-	/F5okgztVINF2OX2ic/RuSUPmVk2awy7Yu399OXPk3nje+5yLGqnILAlMNpgvEoq2Vum/Qobqc5U4
-	Fx0UDV26oyKnn/cf8i9uvayGsqVvT0IqxPKuqbVmv7GnRKnf8Z07i//tpKO34lmYBCg9mmbTiPI1a
-	CqYhMv0yFraMunJJ5hdyGA1ayWHMzJI0D9AQZKlt+YDvlNh6YBFyp6lvxAgSBVadq+i8yP/AGuGcK
-	JqC7o1oYjuMmgPgG4ecMDIqHOhTjEvw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DXgGr3M2m09asr2/Au8h5QUooPyFZqqdEqXq+X8NhIU=; b=gUbduzFsBaBcJVGeTU1QfGBjHH
+	DF+/VjNlxNfcoligV0rTdxNi2/YHhSqoUMd+QOMUKtKZvyR7dOS+o5CNep71fcs79GGY7SpUTQsrO
+	kA8krxeZ1X19OWOMLdYShL0QEO+NQjSxpGpdwDY84pQRUnJzrsAe4flk7viK6AkpliRbsfxw+SiKS
+	j2xQKzf5qXAaY4DrB5xiRZcr1LqOG+6HShNg5pp7R4gtPVNY2dWS0dMHbq6MAaslQ0gRr9fgWil2U
+	RPKb1YKSoEAzeN4MpHQWMHc0C67wTh/Plp1gucKGVr2GCoDlCP9hPSZsk0U5EJvrbVM/YcBSoKBxN
+	gcRrYuig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dEw-0005Md-1N; Tue, 27 Aug 2019 15:18:34 +0000
+	id 1i2dFA-0005VZ-Pa; Tue, 27 Aug 2019 15:18:48 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dEl-0005Ld-I7
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:18:24 +0000
+ id 1i2dEm-0005Lp-E4
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:18:25 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2AD18337;
- Tue, 27 Aug 2019 08:18:23 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 179EC360;
+ Tue, 27 Aug 2019 08:18:24 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6E85B3F59C;
- Tue, 27 Aug 2019 08:18:22 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5D1AB3F59C;
+ Tue, 27 Aug 2019 08:18:23 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 0/3] Try to make SMP booting slightly less fragile
-Date: Tue, 27 Aug 2019 16:18:12 +0100
-Message-Id: <20190827151815.2160-1-will@kernel.org>
+Subject: [PATCH 1/3] arm64: smp: Increase secondary CPU boot timeout value
+Date: Tue, 27 Aug 2019 16:18:13 +0100
+Message-Id: <20190827151815.2160-2-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
+In-Reply-To: <20190827151815.2160-1-will@kernel.org>
+References: <20190827151815.2160-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_081823_637824_99313686 
-X-CRM114-Status: UNSURE (   8.21  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190827_081824_510917_27B30109 
+X-CRM114-Status: GOOD (  11.36  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -66,30 +68,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi everyone,
+When many debug options are enabled simultaneously (e.g. PROVE_LOCKING,
+KMEMLEAK, DEBUG_PAGE_ALLOC, KASAN etc), it is possible for us to timeout
+when attempting to boot a secondary CPU and give up. Unfortunately, the
+CPU will /eventually/ appear, and sit in the background happily stuck
+in a recursive exception due to a NULL stack pointer.
 
-After spending some time investigating SMP boot issues when using
-(random?) configs from Qian Cai with lots of debug options enabled, I
-hacked together these two patches which make SMP booting a little more
-robust.
+Increase the timeout to 5s, which will of course be enough for anybody.
 
-The whole thing is still a racy mess, but I'm not sure we can do much
-about that without reworking it to use per-cpu data structures which
-we can update atomically.
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/kernel/smp.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-Will
-
---->8
-
-Will Deacon (3):
-  arm64: smp: Increase secondary CPU boot timeout value
-  arm64: smp: Don't enter kernel with NULL stack pointer or task struct
-  arm64: smp: Treat unknown boot failures as being 'stuck in kernel'
-
- arch/arm64/kernel/head.S | 8 ++++++++
- arch/arm64/kernel/smp.c  | 4 +++-
- 2 files changed, 11 insertions(+), 1 deletion(-)
-
+diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+index 018a33e01b0e..63c7a7682e93 100644
+--- a/arch/arm64/kernel/smp.c
++++ b/arch/arm64/kernel/smp.c
+@@ -123,7 +123,7 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+ 		 * time out.
+ 		 */
+ 		wait_for_completion_timeout(&cpu_running,
+-					    msecs_to_jiffies(1000));
++					    msecs_to_jiffies(5000));
+ 
+ 		if (!cpu_online(cpu)) {
+ 			pr_crit("CPU%u: failed to come online\n", cpu);
 -- 
 2.11.0
 
