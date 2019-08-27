@@ -2,56 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 794B29EF89
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:59:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E3B19EF8F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:00:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lm9m43c6WiX2Nt9sedX1y2vsruafO/SnwZR2nhTQ+4Q=; b=e907hVFii0/VJD
-	2s3jTVbqN7rpRQES5/btwFL/g4LnCMAy/thAkntv7KDQxjZ7gSKZRWzcpze7dw8I1JcW5PSzcH4gk
-	lGXW+a//xEvmhsuR0V1dPcCe/SGl8Xryo5rbB1NlWFVIj3azwgYgQDbexxsJIDYcF2MI3A4TXMbr6
-	rTTq4+tRK6WY12xnKd1aPhOSQmKofTJbCtmE2c5cN2gUQINPfT+3pr9zmyddOOGdJhQhFG845ERdT
-	HjW5i24kS+c0bLJv/GthmRvKViarGAoBCR4mILokhML/iWYNPOfqeeMtOxz9cFOkNWr8PS2yaol7M
-	ZOInUjekZ/Wr5GEi8kUw==;
+	List-Owner; bh=aXf7fF7ZgTXkD5yQdgG2WGvEgq0Qcmmfcf1uvI4heFY=; b=Q6NY/o/lrboNtC
+	V4iu+TIc2kxrKkYdKHj9zJ79eiAffCU7F4e3DlGHiHVqn+fXpvSIIhy6t3uqG80/glEgAy2w3AOnb
+	Ea0mN0w9pJH5qUKmZqFT8l9pvCU+BLUh3XLBS6R87adfN4LU7htN5IWn1UOMjsSXVgQjBOW+s0733
+	ys1+RTavKgFTE8ONwZmhULfgh6Ur06Ah/fAoh/6oGLKjqoijiwFFJpyN1vZRBMqJgQY/Yad2u0cJn
+	DXS+6MImJpSbbfJ6UI2RWxY/XUeyEPdFXlAecIWbITzcZBOJpcIHziOU7RZtEzXI7ZsBsZhq2CNgw
+	p22Dd7yplVqoOgRZmrJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dsu-00061z-30; Tue, 27 Aug 2019 15:59:52 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dsk-00061c-8U
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:59:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5F12E337;
- Tue, 27 Aug 2019 08:59:41 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C7AE23F59C;
- Tue, 27 Aug 2019 08:59:40 -0700 (PDT)
-Date: Tue, 27 Aug 2019 16:59:38 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH 3/3] arm64: smp: Treat unknown boot failures as being
- 'stuck in kernel'
-Message-ID: <20190827155938.GB43183@lakrids.cambridge.arm.com>
-References: <20190827151815.2160-1-will@kernel.org>
- <20190827151815.2160-4-will@kernel.org>
+	id 1i2dtc-0007YB-Ve; Tue, 27 Aug 2019 16:00:37 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2dtT-0007Xk-OW; Tue, 27 Aug 2019 16:00:28 +0000
+Received: by mail-ot1-f67.google.com with SMTP id b1so19165938otp.6;
+ Tue, 27 Aug 2019 09:00:27 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CwAy1Ps+MjuuEKpxDHokPNhG1OQvVQq/qbn73rtHDl4=;
+ b=E9eMIitIupJYEZa4Z+T/PUNVP5uMpojB7gUfFKpNwQA8C68qJsDYlSCZqZprnKI/5m
+ pQxMW+3xACnMrvgVUKmVRJ9NyRxIgJ7qlcD0uhJYnkp+NJJIjGwm4anQ98Q5TdyqneWa
+ 47PDjbvMiNxFogAxNslRGTQbIB6kc1hpVR00wn0HeLzUqdBfmYzyIETWja/fpslXx8zZ
+ c5dSvxNlNUd1HGp6jvS7yxvG32g2yxiEuEiewjKzHt2wbetT5W3QT0iY3nV+rvwMAi0d
+ 7lpfQ1CMnnxyZvD0EpAeaOjNhsMtNnfTYRnhPYc3I15/dj+qZqaimI9Z6bi6Tw/ojH5O
+ Soow==
+X-Gm-Message-State: APjAAAUB9EiiabFqZCU+4ngceiCPqn8grSgVXPpOF9VD8o22fSRtGseN
+ e2NqkynTyxKu/3/46BQdsA==
+X-Google-Smtp-Source: APXvYqwSKzfBpjOCtUh3Bg/GdA55c3XRKq0U7eMrWbyBtx4KABdnq/2qKlzSzSMzYXuXK2SHHvO5FA==
+X-Received: by 2002:a9d:170b:: with SMTP id i11mr19812279ota.60.1566921626608; 
+ Tue, 27 Aug 2019 09:00:26 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id h197sm4768104oib.14.2019.08.27.09.00.25
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 09:00:26 -0700 (PDT)
+Date: Tue, 27 Aug 2019 11:00:25 -0500
+From: Rob Herring <robh@kernel.org>
+To: Stefan Wahren <wahrenst@gmx.net>
+Subject: Re: [PATCH V2 03/13] dt-bindings: bcm2835-cprman: Add bcm2711 support
+Message-ID: <20190827160025.GA13142@bogus>
+References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+ <1565713248-4906-4-git-send-email-wahrenst@gmx.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190827151815.2160-4-will@kernel.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <1565713248-4906-4-git-send-email-wahrenst@gmx.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_085942_341277_87BC9B2B 
-X-CRM114-Status: GOOD (  15.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_090027_796841_0F91F978 
+X-CRM114-Status: GOOD (  11.61  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.67 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,47 +87,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: catalin.marinas@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Florian Fainelli <f.fainelli@gmail.com>,
+ Scott Branden <sbranden@broadcom.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Ray Jui <rjui@broadcom.com>, Stefan Wahren <wahrenst@gmx.net>,
+ Eric Anholt <eric@anholt.net>, bcm-kernel-feedback-list@broadcom.com,
+ linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 04:18:15PM +0100, Will Deacon wrote:
-> When we fail to bring a secondary CPU online and it fails in an unknown
-> state, we should assume the worst and increment 'cpus_stuck_in_kernel'
-> so that things like kexec() are disabled.
-
-Definitely! I has assumed we already did this, but I see that we don't.
-
-> Signed-off-by: Will Deacon <will@kernel.org>
-
-I don't see a nicer way of doing this, so:
-
-Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-
-Thanks,
-Mark.
-
+On Tue, 13 Aug 2019 18:20:38 +0200, Stefan Wahren wrote:
+> The new BCM2711 supports an additional clock for the emmc2 block.
+> So we need an additional compatible.
+> 
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> Acked-by: Eric Anholt <eric@anholt.net>
 > ---
->  arch/arm64/kernel/smp.c | 1 +
->  1 file changed, 1 insertion(+)
+>  Documentation/devicetree/bindings/clock/brcm,bcm2835-cprman.txt | 4 +++-
+>  include/dt-bindings/clock/bcm2835.h                             | 2 ++
+>  2 files changed, 5 insertions(+), 1 deletion(-)
 > 
-> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-> index 1f8aeb77cba5..dc9fe879c279 100644
-> --- a/arch/arm64/kernel/smp.c
-> +++ b/arch/arm64/kernel/smp.c
-> @@ -147,6 +147,7 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
->  		default:
->  			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
->  					cpu, status);
-> +			cpus_stuck_in_kernel++;
->  			break;
->  		case CPU_KILL_ME:
->  			if (!op_cpu_kill(cpu)) {
-> -- 
-> 2.11.0
-> 
+
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
