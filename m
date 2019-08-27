@@ -2,73 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5672B9DE86
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 09:16:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A7129DE9C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 09:21:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=+FGFN3wFaIARlv8OI5mUTq0cFc640mBJQegz2bGVx2U=; b=Cuy
-	gtN07MbSp55RE68cyY4SmkKm0gO/yChdiUeflDKxsXar/jF3fyrcNe8lZ6Rh2T+pmdf5M4+3ufuIY
-	+rL2g5qxmBSH502++vrMtPtzE/E/+mYGOvmnouSZItHjmaaERgliql31dFJFfmnKj2G7+YRzUL2SY
-	IbWt80zZCPEeEXdUpSmB/5jaGDGsE1neGyw1WM3+jNOFklanEA65EM53pmBfEwgNYVTETZujdHIk+
-	dn6H/gPSHztI9zmw36H2aHKZ9cfYmplh3a0N41P5N+FWI8RLFM/0Ca9zngSndJUv7TkmhljdaJraQ
-	GsVNmPHioh8N5xH84dYNXZo0uemmItg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oWu05nQCEfZwNRZYAWemMSNOf2in8MblspWVBy2eLP4=; b=DWlkIRnMdyp8e1
+	DyAbibp+OmjAJL+KqkTEFl5bgWROBsX9axGGognHy7AKbhMG33b51CyUtEggoIXo8gV7mFvY414qp
+	PyaWNT26UteiqDCMRQQ6NU+ikA1icbXGw0iR4+pIN/KXnuOEW/XxxWrYnXnubAByP6wLcZjqQdstj
+	cdK322DXYorx01lOe5G2DjwM1P/L2AR+7aUQej02O71k54nKw9GozRTZFCLSTFeGBjUP2Be1i/AoV
+	jT5e8SlCgIc/1Aa3w+J+cESOJYyRduUcVR/cSwHAjPapraIa1i/CiMLQ9irYknV1WBEZ5gfu3s9eE
+	Nj5oENN0ZTsNJtByL4xA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Vhp-00048M-GH; Tue, 27 Aug 2019 07:15:53 +0000
-Received: from regular1.263xmail.com ([211.150.70.197])
+	id 1i2Vmo-0006MZ-NQ; Tue, 27 Aug 2019 07:21:02 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Vhb-00046d-0u; Tue, 27 Aug 2019 07:15:40 +0000
-Received: from zhangzj?rock-chips.com (unknown [192.168.167.153])
- by regular1.263xmail.com (Postfix) with ESMTP id C11D9690;
- Tue, 27 Aug 2019 15:15:27 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from localhost.localdomain (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P15961T139881246357248S1566890113084555_; 
- Tue, 27 Aug 2019 15:15:17 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <3ad0733fd004bc1499c4d958c0965038>
-X-RL-SENDER: zhangzj@rock-chips.com
-X-SENDER: zhangzj@rock-chips.com
-X-LOGIN-NAME: zhangzj@rock-chips.com
-X-FST-TO: heiko@sntech.de
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-From: Elon Zhang <zhangzj@rock-chips.com>
-To: heiko@sntech.de,
-	mark.rutland@arm.com,
-	robh+dt@kernel.org
-Subject: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
- rk3288
-Date: Tue, 27 Aug 2019 15:14:39 +0800
-Message-Id: <20190827071439.14767-1-zhangzj@rock-chips.com>
-X-Mailer: git-send-email 2.17.1
+ id 1i2Vmb-0006Lq-Vs
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 07:20:51 +0000
+X-Amp-Result: UNSCANNABLE
+X-Amp-File-Uploaded: False
+Received: from fmsmga001.fm.intel.com ([10.253.24.23])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 27 Aug 2019 00:20:48 -0700
+X-IronPort-AV: E=Sophos;i="5.64,436,1559545200"; d="scan'208";a="197245079"
+Received: from paasikivi.fi.intel.com ([10.237.72.42])
+ by fmsmga001-auth.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 27 Aug 2019 00:20:46 -0700
+Received: by paasikivi.fi.intel.com (Postfix, from userid 1000)
+ id 8BAA92095B; Tue, 27 Aug 2019 10:20:43 +0300 (EEST)
+Date: Tue, 27 Aug 2019 10:20:43 +0300
+From: Sakari Ailus <sakari.ailus@linux.intel.com>
+To: YueHaibing <yuehaibing@huawei.com>
+Subject: Re: [PATCH -next] media: sun6i: Make sun4i_csi_formats static
+Message-ID: <20190827072043.GA7657@paasikivi.fi.intel.com>
+References: <20190827070623.15776-1-yuehaibing@huawei.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190827070623.15776-1-yuehaibing@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_001539_228031_5E777F0B 
-X-CRM114-Status: GOOD (  10.35  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190827_002050_062760_8435F115 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.197 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,42 +68,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Elon Zhang <zhangzj@rock-chips.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-rockchip@lists.infradead.org
-MIME-Version: 1.0
+Cc: maxime.ripard@bootlin.com, linux-kernel@vger.kernel.org, mripard@kernel.org,
+ wens@csie.org, mchehab@kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Not every board needs to enable crypto node, so the node should
-be set default disabled in rk3288.dtsi and enabled in specific
-board dts file.
+Hi Yue,
 
-Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
----
- arch/arm/boot/dts/rk3288.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+On Tue, Aug 27, 2019 at 03:06:23PM +0800, YueHaibing wrote:
+> Fix sparse warning:
+> 
+> drivers/media/platform/sunxi/sun4i-csi/sun4i_v4l2.c:21:31:
+>  warning: symbol 'sun4i_csi_formats' was not declared. Should it be static?
+> 
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
-index cc893e154fe5..d509aa24177c 100644
---- a/arch/arm/boot/dts/rk3288.dtsi
-+++ b/arch/arm/boot/dts/rk3288.dtsi
-@@ -984,7 +984,7 @@
- 		clock-names = "aclk", "hclk", "sclk", "apb_pclk";
- 		resets = <&cru SRST_CRYPTO>;
- 		reset-names = "crypto-rst";
--		status = "okay";
-+		status = "disabled";
- 	};
- 
- 	iep_mmu: iommu@ff900800 {
+Thanks for the patch.
+
+This has been already addressed by another patch:
+
+<URL:https://patchwork.linuxtv.org/patch/58395/>
+
 -- 
-2.17.1
-
-
-
+Sakari Ailus
+sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
