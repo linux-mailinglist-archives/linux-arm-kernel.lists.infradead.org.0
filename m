@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CD5569EBF9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:09:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B3349EC14
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:10:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fakyTowdi1o8dz4CAvHhoBEIeTeZxQGiewx7ZIVumNE=; b=XOtmHZKhnOdAhW
-	PdwdPhGojMoMzTjY7WxGOknNzqVFPeVBepYSclHGnWz6Xh8WO/a+GwBMXQQccLmwBxKqs9Nc3Rhr5
-	Wt1TYiSjfIMLFNy8bviDoa9xsOpj1KWnU+gvF3L9KYbEFxAYb3chMDCcOxXUJtcz80zDwzZAgGjKo
-	7PxLJeX92JaoSlR2xxCTq72YQZHAvDe7cwo43CaicjK4NgbfMCSeT1YiFtZvHFzIn7tnXly0/Eh0k
-	TzbZ6WY2RoKLf/1dABDZo3qtGAbmK9Wfjst0Ecei5jYNYqjOIDb3ZXgoeMWlb1PCW6tatIcJnyphp
-	XiT7jgHZ3tDv1eDM0BTw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=PQxL2KptcjazpN29sSUO75RERd4g4PpIyE9R0DrLTvA=; b=Pk7w2L7C0L3YUU
+	N/CoEzWa5bn48wfyBU9CYk4mcXUzDMDXAGaLHMpOy24RXQFTC55tmE1x4OMoquRFFC3qMYMcphr9l
+	eC03uTY6nsLNSChaYy/PQWUvym5FdBE4MBeZ8F6ws4nf1wEN/r2CH19Gb00wDUItT4vwn1tRUh3Eb
+	CbGkQh3Uks5ONyLNtwqVOEdUZEgS+COGMbO8VtzZ9RMCteGRtXx+/iiN1ABJ/Lb+HE6o7pdNvL/5s
+	RtlLepG0N+Yhm5qWrj/ima2Z7iiY0ZcwOOSvPG6j/2HY9d7DfvnYXy9yqlvG/WfuIaDrOyxTm/etE
+	3toLqvK/HZUrIDub8aXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2d5w-0007hv-18; Tue, 27 Aug 2019 15:09:16 +0000
+	id 1i2d6z-0000GF-KF; Tue, 27 Aug 2019 15:10:21 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2d5V-0007Wl-Ef
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:08:52 +0000
+ id 1i2d5c-0007bQ-JV
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:08:58 +0000
 Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7RF28XA026519; Tue, 27 Aug 2019 17:08:28 +0200
+ x7RF2Bim026535; Tue, 27 Aug 2019 17:08:46 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type :
- content-transfer-encoding : mime-version; s=STMicroelectronics;
- bh=XBn5EdlEuwPuny7s/ZVplkEwvVDz5QZdOFX+dgKCXXA=;
- b=iNORaUj7p6Vrz+dT27NTys4RFbS+VfOsa9329guLiC7b/Do+brszYr2pMO4ew3YzyzNM
- NB0Pjy6+9dBvLiwvNd+yE7efuMkFFrfe7UiYNHZ7+prV8NXDD24+bgJ5upoorAKVYi+T
- c3P2DG8fCtnZ3rJDwIq+9B9t7srkeH93DdVhn4TZoQpeXnEtLl6nB/6F6eEMNPuwetOU
- IFpI3OhI6uS1ozBIUwvNz3fe+qjtwQRge6Fh8bbYlBsa16M/sBr3KC6kFcA+RVBZ8Fa1
- /bM2ZiVTFBhLv/okCWn0oJvRLk4GFWajAJFT1uMjpZdI7sKsbVj9cw42Q7mZDfhVq/wV WA== 
+ : date : message-id : content-type : content-transfer-encoding :
+ mime-version; s=STMicroelectronics;
+ bh=gUrvHgWah4ogK3e4d0X42dS33drOe0YLe+g4hljra6o=;
+ b=K3vuiPZdjQRwuogyBGGmCVwVhUnIoztJkMiE1atuBbpcgX/pyRAoXcs5vvR7NKZV8d9I
+ dhCVBrBKLVTOrgfA+uYNNn3fAOTl2mwmCqRbyUfeX56+2dELOgN2slqYDBmv5erAtZQG
+ PSggwkbHt1sLpmJbAQQFaBFNnBkLNCqItHazJrQ/W+bEJRMMAugfn+aFT/UmBhjrNZfY
+ SQHsqpnZ5GBliovconIptSZzgg+pvSIErx31m6qhleoTPQDxUwH5bP6NvD8egP9m0Kr9
+ fR7CwnctL7LSMsDyG1TtlhWJlNXoRIYxB7KnkAZF6yyVIR+87QjN2jFUgdPVWspNbUFX KQ== 
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2ujv4kt4b3-1
+ by mx08-00178001.pphosted.com with ESMTP id 2ujv4kt4a8-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 27 Aug 2019 17:08:28 +0200
+ Tue, 27 Aug 2019 17:08:46 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 20FB056;
- Tue, 27 Aug 2019 15:08:23 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag5node3.st.com [10.75.127.15])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D02862B76DD;
- Tue, 27 Aug 2019 17:08:22 +0200 (CEST)
-Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG5NODE3.st.com
- (10.75.127.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 27 Aug
- 2019 17:08:22 +0200
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id C14A222;
+ Tue, 27 Aug 2019 15:08:13 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node1.st.com [10.75.127.7])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D24672AFE03;
+ Tue, 27 Aug 2019 17:08:12 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE1.st.com
+ (10.75.127.7) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 27 Aug
+ 2019 17:08:12 +0200
 Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
  SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
- 15.00.1473.003; Tue, 27 Aug 2019 17:08:21 +0200
+ 15.00.1473.003; Tue, 27 Aug 2019 17:08:12 +0200
 From: Gerald BAEZA <gerald.baeza@st.com>
 To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
  <mark.rutland@arm.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
@@ -66,13 +66,11 @@ To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
  <linux-stm32@st-md-mailman.stormreply.com>, "linux-kernel@vger.kernel.org"
  <linux-kernel@vger.kernel.org>, "linux-doc@vger.kernel.org"
  <linux-doc@vger.kernel.org>
-Subject: [PATCH v3 5/5] ARM: dts: stm32: add ddrperfm on stm32mp157c
-Thread-Topic: [PATCH v3 5/5] ARM: dts: stm32: add ddrperfm on stm32mp157c
-Thread-Index: AQHVXOlE7eeGfv5rUUSEpFdWg8XWbA==
-Date: Tue, 27 Aug 2019 15:08:21 +0000
-Message-ID: <1566918464-23927-6-git-send-email-gerald.baeza@st.com>
-References: <1566918464-23927-1-git-send-email-gerald.baeza@st.com>
-In-Reply-To: <1566918464-23927-1-git-send-email-gerald.baeza@st.com>
+Subject: [PATCH v3 0/5] stm32-ddr-pmu driver creation
+Thread-Topic: [PATCH v3 0/5] stm32-ddr-pmu driver creation
+Thread-Index: AQHVXOk+As8mb1s6+UKuO5XjiYJqiQ==
+Date: Tue, 27 Aug 2019 15:08:12 +0000
+Message-ID: <1566918464-23927-1-git-send-email-gerald.baeza@st.com>
 Accept-Language: fr-FR, en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
@@ -84,8 +82,8 @@ MIME-Version: 1.0
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
  definitions=2019-08-27_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_080849_962747_643A01B3 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190827_080857_123801_7EAADEFE 
+X-CRM114-Status: GOOD (  15.73  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -119,33 +117,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The DDRPERFM is the DDR Performance Monitor embedded
-in STM32MP1 SOC.
+The DDRPERFM is the DDR Performance Monitor embedded in STM32MP1 SOC.
 
-Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
+This series adds support for the DDRPERFM via a new stm32-ddr-pmu driver,
+registered into the perf framework.
+
+This driver is inspired from arch/arm/mm/cache-l2x0-pmu.c
+
 ---
- arch/arm/boot/dts/stm32mp157c.dtsi | 8 ++++++++
- 1 file changed, 8 insertions(+)
+Changes from v1:
+- add 'resets' description (bindings) and using (driver). Thanks Rob.
+- rebase on 5.2-rc1 (that includes the ddrperfm clock control patch).
 
-diff --git a/arch/arm/boot/dts/stm32mp157c.dtsi b/arch/arm/boot/dts/stm32mp157c.dtsi
-index 0c4e6eb..6ea6933 100644
---- a/arch/arm/boot/dts/stm32mp157c.dtsi
-+++ b/arch/arm/boot/dts/stm32mp157c.dtsi
-@@ -1378,6 +1378,14 @@
- 			};
- 		};
- 
-+		ddrperfm: perf@5a007000 {
-+			compatible = "st,stm32-ddr-pmu";
-+			reg = <0x5a007000 0x400>;
-+			clocks = <&rcc DDRPERFM>;
-+			resets = <&rcc DDRPERFM_R>;
-+			status = "okay";
-+		};
-+
- 		usart1: serial@5c000000 {
- 			compatible = "st,stm32h7-uart";
- 			reg = <0x5c000000 0x400>;
+Changes from v2:
+- rebase on 5.3-rc6 that has to be completed with
+  'perf tools: fix alignment trap in perf stat': mandatory.
+  'Documentation: add link to stm32mp157 docs': referenced from this series.
+- take into account all remarks from Mark Rutland: thanks for your time!
+  https://lkml.org/lkml/2019/6/26/388
+- fix for event type filtering in stm32_ddr_pmu_event_init()
+
+Gerald Baeza (5):
+  Documentation: perf: stm32: ddrperfm support
+  dt-bindings: perf: stm32: ddrperfm support
+  perf: stm32: ddrperfm driver creation
+  ARM: configs: enable STM32_DDR_PMU
+  ARM: dts: stm32: add ddrperfm on stm32mp157c
+
+ .../devicetree/bindings/perf/stm32-ddr-pmu.txt     |  16 +
+ Documentation/perf/stm32-ddr-pmu.txt               |  37 ++
+ arch/arm/boot/dts/stm32mp157c.dtsi                 |   8 +
+ arch/arm/configs/multi_v7_defconfig                |   1 +
+ drivers/perf/Kconfig                               |   6 +
+ drivers/perf/Makefile                              |   1 +
+ drivers/perf/stm32_ddr_pmu.c                       | 426 +++++++++++++++++++++
+ 7 files changed, 495 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
+ create mode 100644 Documentation/perf/stm32-ddr-pmu.txt
+ create mode 100644 drivers/perf/stm32_ddr_pmu.c
+
 -- 
 2.7.4
 
