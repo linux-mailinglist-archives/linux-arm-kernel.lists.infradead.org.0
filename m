@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7085E9E927
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:23:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38FB39E923
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:22:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ovfK0FuQxYSCWD87N2uqKMRZMVGHf8smdWVFcYZJyJU=; b=q2O4pg04v1gSKBCqRau7s6TPev
-	XcNO5Q299aNMYUoQn0+/9l6+FyLneOXrKp3LdrnSMbs5DsLCLyR0t6DMHhyRFZZT7v0PGLyXJkPOu
-	iXojTfpCTfzT7L9zwrPwSmRLUN5Vxg39J1ECtIHOx49NqJLgHwZUFMBSg8Njfyg06Ot9BIxm6180H
-	bqvDcKcIfbeOLd0Sx3pDSozOxz0m8ogWIw+C31YF09wAH70FrnOtZ2d/a0UyVfVlyw2IFpeX/KKWv
-	866PgYrgd8IP081jRWiqknmJ5+2+lQlaPu9XMCQfq0bwao1nKluzRbv2B/PwG9qjmX2SfLWpV0B9A
-	9dBaljmg==;
+	bh=3IC/UeQlg1NvOFO8+7Lgm0zqFfBwjz74hnfE6H4Fi9w=; b=t7dHixj/cFG8A4W6qFIBXCYmUa
+	tAgDmjv1neYAwtnXMZTZO9Vlx9DW8X/QBpznfpeVrA8Rf+TLSpyRlexzaW8ua6Qunnthj1bwGzf0A
+	ILTQFWI8XWu0ByYR3r3nyMyzaj3GzewRiET10l9bh1F8P4sQSjyljlxzYNyyjqGK985rrCY0LOzXr
+	u2v+jUG2SzZojGu8xSisPNPw/63OSeMrXKsQSPOL+e9bzGp/rRK4g2u4H5CrApQs8Usj+m1533AXE
+	PfhP7UkTC7NqAzAHvTM+8T8ltUmKdDf11MDl2cAKujisMlQpIcMUAfoT02LcCuSUpJwV945aEcK25
+	C3kKx9vQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2bR1-0007Ld-CQ; Tue, 27 Aug 2019 13:22:55 +0000
+	id 1i2bQl-00078F-Td; Tue, 27 Aug 2019 13:22:39 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2bMv-0002en-Bd
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:18:42 +0000
+ id 1i2bMv-0002fR-Nl
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:18:43 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 062B61576;
- Tue, 27 Aug 2019 06:18:40 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 47A2A15AB;
+ Tue, 27 Aug 2019 06:18:41 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EEF7A3F246;
- Tue, 27 Aug 2019 06:18:38 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3B3E83F246;
+ Tue, 27 Aug 2019 06:18:40 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 3/6] arm64: mm: Add ISB instruction to set_pgd()
-Date: Tue, 27 Aug 2019 14:18:15 +0100
-Message-Id: <20190827131818.14724-4-will@kernel.org>
+Subject: [PATCH 4/6] arm64: sysreg: Add some field definitions for PAR_EL1
+Date: Tue, 27 Aug 2019 14:18:16 +0100
+Message-Id: <20190827131818.14724-5-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190827131818.14724-1-will@kernel.org>
 References: <20190827131818.14724-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_061841_681507_74DE31A3 
-X-CRM114-Status: GOOD (  11.72  )
+X-CRM114-CacheID: sfid-20190827_061841_915048_C7D7DC50 
+X-CRM114-Status: GOOD (  10.07  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,32 +70,32 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Commit 6a4cbd63c25a ("Revert "arm64: Remove unnecessary ISBs from
-set_{pte,pmd,pud}"") reintroduced ISB instructions to some of our
-page table setter functions in light of a recent clarification to the
-Armv8 architecture. Although 'set_pgd()' isn't currently used to update
-a live page table, add the ISB instruction there too for consistency
-with the other macros and to provide some future-proofing if we use it
-on live tables in the future.
+PAR_EL1 is a mysterious creature, but sometimes it's necessary to read
+it when translating addresses in situations where we cannot walk the
+page table directly.
 
-Reported-by: Mark Rutland <mark.rutland@arm.com>
+Add a couple of system register definitions for the fault indication
+field ('F') and the fault status code ('FST').
+
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/pgtable.h | 1 +
- 1 file changed, 1 insertion(+)
+ arch/arm64/include/asm/sysreg.h | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
-index feda7294320c..2faa77635942 100644
---- a/arch/arm64/include/asm/pgtable.h
-+++ b/arch/arm64/include/asm/pgtable.h
-@@ -605,6 +605,7 @@ static inline void set_pgd(pgd_t *pgdp, pgd_t pgd)
+diff --git a/arch/arm64/include/asm/sysreg.h b/arch/arm64/include/asm/sysreg.h
+index 06ebcfef73df..2b229c23f3c1 100644
+--- a/arch/arm64/include/asm/sysreg.h
++++ b/arch/arm64/include/asm/sysreg.h
+@@ -212,6 +212,9 @@
+ #define SYS_FAR_EL1			sys_reg(3, 0, 6, 0, 0)
+ #define SYS_PAR_EL1			sys_reg(3, 0, 7, 4, 0)
  
- 	WRITE_ONCE(*pgdp, pgd);
- 	dsb(ishst);
-+	isb();
- }
- 
- static inline void pgd_clear(pgd_t *pgdp)
++#define SYS_PAR_EL1_F			BIT(1)
++#define SYS_PAR_EL1_FST			GENMASK(6, 1)
++
+ /*** Statistical Profiling Extension ***/
+ /* ID registers */
+ #define SYS_PMSIDR_EL1			sys_reg(3, 0, 9, 9, 7)
 -- 
 2.11.0
 
