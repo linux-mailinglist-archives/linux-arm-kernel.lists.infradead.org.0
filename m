@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D64CA9DF14
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 09:50:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EB3B9DF1C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 09:51:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+xt8HY8qRNSXNdvOtbENIwD2ZFnaFjMck3XZmyUNGuk=; b=sceXArWHmy2xzP
-	x/tAdCa4iQ90objnMlPoIMl82GftG/W9y9/IvbJVq6LK2fiLDitjmBFvBR99Td5NcGu7JpK0gzR24
-	MeEbAevu7upDCc6teDs5jpdttWPrPXaoSx4aAZP5P4gv6yzbptdICRH2s2F3Hdm4Q+3dFfvOMY5l3
-	vQi6Tm3ggFXLkRGqc167HCyLolQmV0kyxXlHIbrHOX6Q+cidavZeenT1Zx87qL+QW2Vmz0JnAEa99
-	jVlzw2aMh5Bk3h4TWxJen+tTHKfN1oQDVXNDh6CEmI2B1vquDVa4gHDP1BirtgagLa8prsAodmbOc
-	lR4/bKqQL/R91pGDXmAw==;
+	List-Owner; bh=mXaQ2PkT37IY32zxHMGTNdJ+sJSsDb0Z88J//mtCJfw=; b=gmc9mgOremh+E1
+	xKRZtPNG55hawgGG9pdGdw+JwDAGIDXCRlsBC9WUjBSfYBhRG+31ZeQJ37ozdCPDPv945LMsFKQQo
+	ttuTgANRYPT0iXnyp2QEK8gszNc9JjVILURpsfB1IHAOpEx8/8LJIiCLnsjXEzcuZMCqbm0JnSoKq
+	PmJxsyE0h7hp2WSNDyQMJQy3ABd9HbLYtNksFgxq0xYdDQHnwplfzm8ZIezcs2gBKPace3ZaQnIbR
+	XKLVxQWd5pz3DSbCjfEZn5joFGlZkto9YspQmwJTzhx7gcUUVju6L8CmKQkjzN1XIHzei1ayyB7Vp
+	AmXx4c2aMjQ068j/61Xw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2WFD-0000qP-Gm; Tue, 27 Aug 2019 07:50:23 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1i2WFo-0001V6-J2; Tue, 27 Aug 2019 07:51:00 +0000
+Received: from verein.lst.de ([213.95.11.211])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2WEu-00006H-M9
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 07:50:05 +0000
-Received: by mail-lf1-x142.google.com with SMTP id r5so8881989lfc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 00:50:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=S8ZPnzIzwp3dPl5EFI/1g9MYzH1aSuoZopYt/nP5q80=;
- b=YNYgBIyRPbSylY9yVS6fq7ufI5mIEOPQwSSIxhWCaFS6EppIOFX8+8R3WzVvbsdkTv
- 0dWBrvkU8dkIYNTLDM2+P2zpmD8+2MUTxYM2RjmAc42BnPuE9BL/yzqmzDc3E8Gsjszv
- cWYnPdPljPLcBHEjO8obgZBS70w3HCWfiXX3HGC4cJjgpMtMuDJjpczks4lFG791PBtV
- OVukTj/HICDHCW/KSGHs8dxdAfWwx5Xk2wwm5oq4OgeRMFgsG0XIx6C80ajP5JtnKehu
- b/wAdpEeVxeMZBbi7rqbmOEshVQT9D38kWNcrF/+w+jQ9Qy2pagW/3OWXzrlaqjGcyhb
- c+/A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=S8ZPnzIzwp3dPl5EFI/1g9MYzH1aSuoZopYt/nP5q80=;
- b=s9Jt11AwlMrjiFvg7PpcGrk/UKSjadTe531p/bW66hw1n9F3NxxvH80s1uAq228Oqp
- 1uUrZ5MmLwn0k/Yu9H0TowSc4G60HEjCOtaxzSmF6RfjsfRX7W4vmbUJwmM8tlWaRlEU
- gfnrfYkSswLE01G8vjzOCimRvlGa8rQ5Rm+yAzG1RWXB9H1inZQAVz3BK8z985/Eg+Zm
- AmVna74bBA2FTx7KtznNdXNp9IciftM5v5EpaboqFu0bipUTDNPNgvm7UqymbhWxtG72
- Q/cTdGF1MiBa9yAg0+p+7gfXwtGOUvdGM7PHW5t0upE+rsiom+Srg27nOWbchQ+3extr
- P4/Q==
-X-Gm-Message-State: APjAAAV0Y9f+qPqCgroenjIJoyW26hHguY7fLQ/jfAVNZqo0+fTccwsf
- ETC4Wu1WXwGOfgfer2KooYkAwS3M903Iuv6EhrSnQg==
-X-Google-Smtp-Source: APXvYqxQ5kTmN/fXTcZ+sapT/n4YUo9Fiby1B6bZg0qbOjRVjoB/nX0hNjZmjRwzPSP63fisdzPHEwGUuyid++LnJyU=
-X-Received: by 2002:ac2:5939:: with SMTP id v25mr13681194lfi.115.1566892202913; 
- Tue, 27 Aug 2019 00:50:02 -0700 (PDT)
+ id 1i2WFI-0001Eg-Lp
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 07:50:31 +0000
+Received: by verein.lst.de (Postfix, from userid 2407)
+ id 4577B68B05; Tue, 27 Aug 2019 09:50:21 +0200 (CEST)
+Date: Tue, 27 Aug 2019 09:50:21 +0200
+From: Christoph Hellwig <hch@lst.de>
+To: Masahiro Yamada <yamada.masahiro@socionext.com>
+Subject: Re: [PATCH v2 2/2] dma-contiguous: Use fallback alloc_pages for
+ single pages
+Message-ID: <20190827075021.GA953@lst.de>
+References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
+ <20190506223334.1834-3-nicoleotsuka@gmail.com>
+ <CAK7LNARacEorb38mVBw_V-Zvz-znWgBma1AP1-z_5B_xZU4ogg@mail.gmail.com>
+ <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
+ <20190825011025.GA23410@lst.de>
+ <CAK7LNAQb1ZHr=DiHLNeNRaQExMuXdDOV4sFghoGbco_Q=Qzb8g@mail.gmail.com>
+ <20190826073320.GA11712@lst.de>
+ <CAK7LNATYOLEboUTO4qPx2z7cqwDrHBO1HFHG8VzZEJ15STv+nw@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190805101607.29811-1-miquel.raynal@bootlin.com>
- <20190805101607.29811-4-miquel.raynal@bootlin.com>
-In-Reply-To: <20190805101607.29811-4-miquel.raynal@bootlin.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 27 Aug 2019 09:49:51 +0200
-Message-ID: <CACRpkdbaQjPeDKhaP75aOGtnXEf6DVVmUAdxbAP8PLSAJPSdAQ@mail.gmail.com>
-Subject: Re: [PATCH 3/3] pinctrl: mvebu: add additional variant for standalone
- CP115
-To: Miquel Raynal <miquel.raynal@bootlin.com>
+Content-Disposition: inline
+In-Reply-To: <CAK7LNATYOLEboUTO4qPx2z7cqwDrHBO1HFHG8VzZEJ15STv+nw@mail.gmail.com>
+User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_005004_742031_B795A273 
-X-CRM114-Status: GOOD (  10.86  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_005028_874062_061C7F06 
+X-CRM114-Status: GOOD (  20.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [213.95.11.211 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,41 +66,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Yan Markman <ymarkman@marvell.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Gregory Clement <gregory.clement@bootlin.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Tony Lindgren <tony@atomide.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>, Christoph Hellwig <hch@lst.de>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>, Joerg Roedel <joro@8bytes.org>,
+ Russell King <linux@armlinux.org.uk>, Thierry Reding <treding@nvidia.com>,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Nicolin Chen <nicoleotsuka@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Chris Zankel <chris@zankel.net>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ Robin Murphy <robin.murphy@arm.com>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, iommu@lists.linux-foundation.org,
+ iamjoonsoo.kim@lge.com, David Woodhouse <dwmw2@infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 5, 2019 at 12:16 PM Miquel Raynal <miquel.raynal@bootlin.com> wrote:
+On Tue, Aug 27, 2019 at 04:45:20PM +0900, Masahiro Yamada wrote:
+> On Mon, Aug 26, 2019 at 4:33 PM Christoph Hellwig <hch@lst.de> wrote:
+> >
+> > On Mon, Aug 26, 2019 at 11:05:00AM +0900, Masahiro Yamada wrote:
+> > > This is included in v5.3-rc6
+> > > so I tested it.
+> >
+> > So there is no allocation failure, but you get I/O errors later?
+> 
+> Right.
+> 
+> >
+> > Does the device use a device-private CMA area?
+> 
+> Not sure.
+> My driver is drivers/mmc/host/sdhci-cadence.c
+> It reuses routines in drivers/mmc/host/sdhci.c
+> 
+> 
+> 
+> >  Does it work with Linux
+> > 5.2 if CONFIG_DMA_CMA is disabled?
+> 
+> No.
+> 5.2 + disable CONFIG_DMA_CMA
+> failed in the same way.
 
-> From: Grzegorz Jaszczyk <jaz@semihalf.com>
->
-> With CP115 standalone modules, all MPP configuration are
-> possible. Handle this new possibility thanks to the new
-> "marvell,cp115-standalone-pinctrl" compatible property.
->
-> Signed-off-by: Grzegorz Jaszczyk <jaz@semihalf.com>
-> [<miquel.raynal@bootlin.com>: mention the new compatible in the
-> commit log]
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
+So it seems like the device wants CMA memory.   I guess the patch
+below will fix it, but that isn't the solution.  Can you try it
+to confirm?  In the end it probably assumes a dma mask it doesn't
+set that the CMA memory satisfies or something similar.
 
-Patch applied.
-
-Yours,
-Linus Walleij
+diff --git a/kernel/dma/contiguous.c b/kernel/dma/contiguous.c
+index 69cfb4345388..bd2f24aa7f19 100644
+--- a/kernel/dma/contiguous.c
++++ b/kernel/dma/contiguous.c
+@@ -236,7 +236,7 @@ struct page *dma_alloc_contiguous(struct device *dev, size_t size, gfp_t gfp)
+ 
+ 	if (dev && dev->cma_area)
+ 		cma = dev->cma_area;
+-	else if (count > 1)
++	else
+ 		cma = dma_contiguous_default_area;
+ 
+ 	/* CMA can be used only in the context which permits sleeping */
 
 _______________________________________________
 linux-arm-kernel mailing list
