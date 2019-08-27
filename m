@@ -2,85 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CBB789EC9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:28:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7F089ECB2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:30:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dZtb1+gjMfP2cG6Cd3vvTZAIZFUYcatb7PRRrauCEmM=; b=Imf/qwUrf6badC
-	k5XVJLGBrjnZPk1ponN9Iu0oij2LLFdFzykmH8bbfromLNnxdcWXaWq4rhWywzX30bHNVb+SjY7YR
-	2sn6QkREkWjl+V5nYAJ6I20qkXOzPLRswXPDY15pX4hQgJiaukIxpHcCAHe/QMAswqXEcuICI9EMM
-	K/BZ/hiCQsy7n0XIxiFnz9zVicGBwkQAExzxZt17uyBOsQUxXPMXPi2h7ECRR9SFPpMsiNnHOLIWm
-	gEuUvVXVdEXLmEL3li6PL9Rca7aR2UJjq+g2tCNylwabNgxfSP7PyHeb1VDCa5sqJX51Hq7SJWhf+
-	Gn9bCTJiYsXPBGdZRl8g==;
+	List-Owner; bh=N2llzIpiqGwwemmvEiYC5b4jl1a3GnlUlaYZGeuxP/k=; b=Hd0sIbAmMonpul
+	I5PqGrfk9zd/h5gU/h+cJDDezYssq7yMyv/13BSrVQ2BQ74nqxYtoc2/OZB2brF6xAsUVliH7LtTd
+	wGGI8vJeHVCzV/wUGNF2TE81RnnVMKozcv6PGMq0eCgTyzH0Xsw0/tiQeGFWEGBt1c+X7Lefpq10h
+	xDRl7GVlJkxNpFRKJLwRIOHoLkb7CJg+2ovWyxbJpkpn4MEG4l1m3XTLHyPtdyTvJ/ududSsnZfkt
+	r7lOaa+Qs1rhbc7Wb1cQGVnNg5H6IMnbLrw4yEBdwn5qBBjnmiLt8YEem+GDZ9mJpuEJVZcuB+ZR4
+	oJ1C02UQy+Bz2yrEfgkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dO6-0002gL-0W; Tue, 27 Aug 2019 15:28:02 +0000
-Received: from mail-oi1-f195.google.com ([209.85.167.195])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dNS-0002J0-6a
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:27:23 +0000
-Received: by mail-oi1-f195.google.com with SMTP id h21so15262883oie.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 08:27:21 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=5a2qkMONKijUeeWaRhR2tzwZA4N/jTBHB+gjYWsBgqk=;
- b=jdOaVwf+4TvZNEjasEufxJWXs0i2zRK3d1mHzAmTcgBrnImQ/vEwmRpqjSOgD06dUo
- eguqagcY9gi1656RaCKnpONQmXOmXxWFm8tCE0raW+FlKyKlyNqBbMt3B8XV+1enQKDs
- 2hw+CE5LE6fCVyjZ0htriqrnjI+3QUIzwC8MBMpE39SlouX4WotsLU/puxbOmxt5BfjX
- JaAvbfvKaIFzMtSft3LdKsOscCV+glw3CgfazhO8CX22ZPxMyELbEqr84UT/jvDV70kJ
- 1AUyD/nvUQiQ6qghFES4tBGNjRo15JCgZlMvH2UcMzAyzJhlpK3a6bv9lENZVLAEQXRo
- m/pw==
-X-Gm-Message-State: APjAAAVEKX6GDo3fR4SNBXXAlCudfyJZxouJNEMsfI9xcqKBz7umBPQX
- sg37o4VSYoB33WAmRt8FSg==
-X-Google-Smtp-Source: APXvYqz++OPbvepRcKtjgMn+dNQGml3FmGpPuBLHTxhzF0nrXokDGXGy1WXvHQuOxkbhOS6VRJHraQ==
-X-Received: by 2002:aca:c449:: with SMTP id u70mr16884592oif.5.1566919641033; 
- Tue, 27 Aug 2019 08:27:21 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id w10sm5367778otm.68.2019.08.27.08.27.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 08:27:20 -0700 (PDT)
-Date: Tue, 27 Aug 2019 10:27:19 -0500
-From: Rob Herring <robh@kernel.org>
-To: Yangtao Li <tiny.windzz@gmail.com>
-Subject: Re: [PATCH v5 17/18] dt-bindings: thermal: add binding document for
- r40 thermal controller
-Message-ID: <20190827152719.GA26972@bogus>
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-18-tiny.windzz@gmail.com>
+	id 1i2dQe-00052Q-V6; Tue, 27 Aug 2019 15:30:40 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2dQW-0004tm-VG
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:30:34 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CDB94337;
+ Tue, 27 Aug 2019 08:30:31 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 28B733F59C;
+ Tue, 27 Aug 2019 08:30:31 -0700 (PDT)
+Date: Tue, 27 Aug 2019 16:30:29 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH 3/6] PCI: tegra: Add support to configure sideband pins
+Message-ID: <20190827153029.GO14582@e119886-lin.cambridge.arm.com>
+References: <20190826073143.4582-1-vidyas@nvidia.com>
+ <20190826073143.4582-4-vidyas@nvidia.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190810052829.6032-18-tiny.windzz@gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190826073143.4582-4-vidyas@nvidia.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_082722_270745_62E4A91A 
-X-CRM114-Status: GOOD (  10.11  )
-X-Spam-Score: 0.7 (/)
+X-CRM114-CacheID: sfid-20190827_083033_056089_3F4D94C8 
+X-CRM114-Status: GOOD (  14.63  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.195 listed in list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.195 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,27 +61,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
- maxime.ripard@bootlin.com, gregkh@linuxfoundation.org,
- daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, edubezval@gmail.com,
- Yangtao Li <tiny.windzz@gmail.com>, wens@csie.org, robh+dt@kernel.org,
- Jonathan.Cameron@huawei.com, mchehab+samsung@kernel.org, rui.zhang@intel.com,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
+ thierry.reding@gmail.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
+ digetx@gmail.com, jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org,
+ sagar.tv@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 10 Aug 2019 05:28:28 +0000, Yangtao Li wrote:
-> This patch adds binding document for allwinner r40 thermal controller.
+On Mon, Aug 26, 2019 at 01:01:40PM +0530, Vidya Sagar wrote:
+> Add support to configure sideband signal pins when information is present
+> in respective controller's device-tree node.
 > 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
->  Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml | 1 +
->  1 file changed, 1 insertion(+)
+>  drivers/pci/controller/dwc/pcie-tegra194.c | 6 ++++++
+>  1 file changed, 6 insertions(+)
 > 
+> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
+> index fc0dbeb31d78..8a27b25893c9 100644
+> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
+> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+> @@ -1308,6 +1308,12 @@ static int tegra_pcie_config_rp(struct tegra_pcie_dw *pcie)
+>  		return ret;
+>  	}
+>  
+> +	ret = pinctrl_pm_select_default_state(pcie->dev);
+> +	if (ret < 0) {
+> +		dev_err(pcie->dev, "Failed to configure sideband pins\n");
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+I think you can just use dev instead of pcie->dev here.
+
+> +		return ret;
+
+Don't you need to pm_runtime_put_sync and pm_runtime_disable here?
+
+Thanks,
+
+Andrew Murray
+
+> +	}
+> +
+>  	tegra_pcie_init_controller(pcie);
+>  
+>  	pcie->link_state = tegra_pcie_dw_link_up(&pcie->pci);
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
