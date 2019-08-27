@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9FB629E53A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:04:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A4D59E548
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:04:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yR0SdVzkCiLaJ57XC1RispFkuvwSbz/IrUNIzwaDtDk=; b=RU5tz34lgYzMHw
-	YNEClsxXa7UUf+IjwFNpT2XXR/jRqjGr24z/j138tuiMz7jph1ygjU+HJ07Ojjh8OCSzi5TrncLWA
-	K29yzOnNlbCMM8SeAksHbs3EDF2rS16gFPqM/Zex8UDcEAxF8VuxqY00wq2vQj5vRfcDvg2eM0Rhj
-	WEZFTn0XDv/vUvv7++4i9nTN2X0tsL38GpOeEpzNItu+EB5qhFno53lsDJ8sKNJ8J0NEpBzcaHcBb
-	3Jj6ppiaN80oFIqj12NbY/D/u7Whv39znLU7ZfUnsl0/SCgPTq2NhbvItFunKIwZUMg664QfPCDll
-	QOEC5C2kj8NDBCFELdjQ==;
+	List-Owner; bh=Qo/AW31yGAvzOCwmmcwoY725PgM6q7dy8wZanrUY7pc=; b=AzsCVTDQVYasOO
+	c+Kq56Lio5Tr+tkMyObmTY7O3oR3O/Y0oJOUfIWHKMTCGNcEmIHy62z6vVomvlHmY8XKM15WRguSe
+	5hU7NGKiQatHLEwhFCVSNYYXgvF2UDG6f/uafOB0eL8Wm+VJVVSQGZ7iAXWcEMN9W05J5Ed629uXK
+	XrRNaqEB/QYWKwLHFw3+EJ7ptJRV1aN/QLfji/XVU3U8KkcyxomReYl6lDxqpO4Uj9GBmAvcogMgE
+	hX6nlkgvmRbZFGd1vgfFOAm1QDDJe8+8nE7SqnXn5wET8ga4+EDqfsp9NfqEPwegS7gNMaMnhkjxz
+	E1M0rQgL66Po0dchrLfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YKW-000503-MI; Tue, 27 Aug 2019 10:04:00 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i2YKu-0005CO-HQ; Tue, 27 Aug 2019 10:04:24 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YJl-0004TJ-34
+ id 1i2YJl-0004UI-HP
  for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:03:15 +0000
-Received: by mail-wr1-x444.google.com with SMTP id b16so18137567wrq.9
+Received: by mail-wr1-x443.google.com with SMTP id s18so18183805wrn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 03:03:12 -0700 (PDT)
+ Tue, 27 Aug 2019 03:03:13 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=N3scpKO0Zzh4GV7gMEeSkZMIk4JwmB5WDbAZocPSw5A=;
- b=CfWqhHrooMAEoQGPlWt04PkQ0BwbFh9AB3BKZNcewA4CorL6RgjmekMXMp1JiAtJTQ
- 1zvucYfsGTz5RTGEiC5UAg4uzv+sHB1bTLWOZmoDFuECJmIFdp4gCsmgd/NjVeC4g+e1
- gbWDLHUm9Gi2TWhmFoOrWwGAQeV1PQodjiqQN3zDRdptMCzai2iXaFnznGYJOqWa8GgR
- 32NkepzHCO4QF1RaPf5KifZxphB5ayEx0vdsxmOZSb/K2h+TgP7tktAvlPj1Vzin3JF0
- tLNNx9+d0nacz1GPOPsa9g0U9Fs/veRzp69CAUO4bC+ITLOzukAMPPheKbIwwij9DgaR
- 6y8Q==
+ bh=nFvBQ+ASUXIFlVmkozv/yv2UYrSxjvTzp86D19iRVSk=;
+ b=OQfE/BrI+i52OcYL2jZ5opgZ0p8C159XYYM9sMXYdxUyYIUr4nHp7lAp2Uq+YzYw9R
+ b1vNxfP8QjKQa0gI0xuAPADk1vdLA4HHznp91WI/dU353VlSQ/CFNaoINzl7neegNX17
+ V6503t8RaAyLtaN2Xhm9izG7Jo6eRliH6scgAp4FmvrA0RApgWDDy9a/aMC4QYXGDwL1
+ nFK3MoD2M+sgJU8Baq+FZnuHPoDT6xDLpJawv6HXxby0g2Yj/EAGsOu2L4MU3Lx3Mcrk
+ fbF0Arms9OxgmGNeYI6RSJuJ9alDV5PX/v0mOeqw6R6e0DoLTUFEd4s05vzysrR00ZEH
+ JYnQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=N3scpKO0Zzh4GV7gMEeSkZMIk4JwmB5WDbAZocPSw5A=;
- b=gRJPd9ty2tY4uZ3xWBn2NlFT3nt8nTS26KeDQZE7+WvFulG12afjzN5LIsTiQvndKh
- 8rWC6X8MzjfBaQF+F+gfyeHTprcz/tDwczmxY1GUgHKodd+8ayQ2lUQKrmJHGFSIfrIj
- D3+p3Hdf5CVby1zzKJr4OszSuNAxXGxn7mcKsVBUgrv61//OUrrXt5dsVpmVW8mmmYNB
- dDc0zYMxpfwkoW6c/JGQT46d4ACOO6czI2Iu+rPmgEiniOAWUIO0u8URRMMfPxyCeIbO
- QsNj4qOZHjw8U8Sxybxn0i8lhcYr7MPjXnJGCgg3cUmM0sgUw9Jsqd3+dBsEIa9iYrSh
- 5ejA==
-X-Gm-Message-State: APjAAAXY/GrCXqGmCXs9f71tAyPASRYWx9qtZY/Emsnyuo5BPf1+pzEJ
- qTTYVu9DjHyCbo02B7YrIiYpxg==
-X-Google-Smtp-Source: APXvYqz+ibjedBMsj+QgbZe3C3ACpAVhv4R3ODBxrUkdq28jETkegrCPCSVUALS3zqKZzfnd7/IouQ==
-X-Received: by 2002:adf:a2cd:: with SMTP id t13mr26526511wra.251.1566900191587; 
- Tue, 27 Aug 2019 03:03:11 -0700 (PDT)
+ bh=nFvBQ+ASUXIFlVmkozv/yv2UYrSxjvTzp86D19iRVSk=;
+ b=qlZVfGq05S5Fk4Mg1h93p8k6bgKlxxtN+ldrRom/IPBac7w3XZfWCR4VosWPNqSEEG
+ 68e9Pw4b3ICY+/OpkZ4NCUONwNuzXw34PW4X28xs68MS0IqQxpSRbfgwObKYp/Xrmw2P
+ GeyvI0gyLijocYrl2UNaDWx6+86HpbyfGdGc+pr2/dqyZM7LTfvK1r2OPQ1r8MZPfVPT
+ tG/DjJei1j14rGAENyujvIuJ5lOAvpeuSocCwqCJFPh+nR752JYsVh46H3tLVvwBLu9V
+ koAz1c3uxAfBFPbIIATh8BvG3HaPa100fPl0Kf4PNyzNZ4WHyXEvYUDJ/SW3h009n7/Z
+ yr3A==
+X-Gm-Message-State: APjAAAULkZnGpT3MNyhplfKQ3NvtgeNJoXYpARyj4Q+wOz1M63A/BbWD
+ iqwH4DCrIOlx3GrvPHQZuzQRQQ==
+X-Google-Smtp-Source: APXvYqyXg1CwX3b4xu5v1NJTgayfPDThhDxBvEtvylLfIoV3nJiJJMzI9qbPJJaPyUyDDamtHKAzAA==
+X-Received: by 2002:adf:9484:: with SMTP id 4mr27109881wrr.14.1566900192197;
+ Tue, 27 Aug 2019 03:03:12 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o25sm1816289wmc.36.2019.08.27.03.03.10
+ by smtp.gmail.com with ESMTPSA id o25sm1816289wmc.36.2019.08.27.03.03.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
  Tue, 27 Aug 2019 03:03:11 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com
-Subject: [PATCH 1/3] arm64: dts: meson-g12a: specify suspend OPP
-Date: Tue, 27 Aug 2019 12:03:05 +0200
-Message-Id: <20190827100307.21661-2-narmstrong@baylibre.com>
+Subject: [PATCH 2/3] arm64: dts: meson-sm1: specify suspend OPP
+Date: Tue, 27 Aug 2019 12:03:06 +0200
+Message-Id: <20190827100307.21661-3-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190827100307.21661-1-narmstrong@baylibre.com>
 References: <20190827100307.21661-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_030313_338481_F7814126 
+X-CRM114-CacheID: sfid-20190827_030313_641836_5D3625EC 
 X-CRM114-Status: GOOD (  10.90  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,21 +109,21 @@ it is the default OPP used by the BL2 boot firmware.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- arch/arm64/boot/dts/amlogic/meson-g12a.dtsi | 1 +
+ arch/arm64/boot/dts/amlogic/meson-sm1.dtsi | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-index 733a9d46fc4b..57c880c06a07 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12a.dtsi
-@@ -81,6 +81,7 @@
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+index e4830cbf7ed5..32e2de2614b1 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+@@ -82,6 +82,7 @@
  		opp-1200000000 {
  			opp-hz = /bits/ 64 <1200000000>;
- 			opp-microvolt = <731000>;
+ 			opp-microvolt = <780000>;
 +			opp-suspend;
  		};
  
- 		opp-1398000000 {
+ 		opp-1404000000 {
 -- 
 2.22.0
 
