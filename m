@@ -2,63 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C19BB9DC2D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 05:56:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC48F9DC42
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 06:00:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=2E/9BWVAqmhY6B+e2dfuMT48x7dy1tEk6mf/JEzJTsE=; b=Qfk
-	+RwwrmDJ636HmaAYDFkjxhJk+gwy3sXbYlWnw1hQ+o9AOj+htPZM9mY+VytVquvxLuhLs0prUz/l/
-	qGBD90iHtVgVzsm3Y1bg97CRksZmvHb6TABZV+k86n3lvFgaPP6/dlEz5caPkBN+w/Tx5rxDvDtT0
-	hMOTgX6n+sZUAheAYfSWIYKRZwc6Tou9HutEZ9ZvQwIJerT/KG+byhha/PCS4TCqENv+CKOn1i1N9
-	7bTv59zi/buaa9vRcRlbtntpmbPvflbsIeUo0OoSdNZCOd6A391UjV3zNxGMSQm5FxbSJeEeIfy8g
-	aMtw1jf1/hYp+5eyGKfB0GoBDQStBpw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VBagKJjmWqLScXI5/MVzGqbN+uNts1X4PTkJtUlXqt0=; b=SM9FM0dpP2Wk2H
+	YHxvA0IpINOPu0/2yFZyYjZYjZ4LVrZte0Bf8kGqZ5Ri/PBRIV94csSJPg+esKmFg1Qoud8OwWt0+
+	neSncft9rvhklMKN0bQs8vAgY+sDmgCjdUgQKX8HbOxNzYQUNTdPWwtzsWzjZyYUiFeaMdf/8R+QY
+	N9B8AUZvpG7ajHLlLGDJZOWTgyUaSwdzA8Y/NFpFKJi1xgGGZ1hB8kOYXCaG50RR+gScTf48A16tH
+	VT64kvYu9ewLJRy0Ct6BP5A3JXLyGkIQgu0mb/PwMUmJNTNhbGTUIwNNLo/HW4tXgAODWto+O3d5E
+	d3SU9ocZcAJLlzImWA8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Sb4-0007cf-7J; Tue, 27 Aug 2019 03:56:42 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i2SeK-0000vi-Ud; Tue, 27 Aug 2019 04:00:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Sau-0007Wz-0w
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 03:56:33 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A8CA41A05A0;
- Tue, 27 Aug 2019 05:56:27 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 8DA431A009E;
- Tue, 27 Aug 2019 05:56:19 +0200 (CEST)
-Received: from localhost.localdomain (shlinux2.ap.freescale.net
- [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 92751402A5;
- Tue, 27 Aug 2019 11:56:09 +0800 (SGT)
-From: Shengjiu Wang <shengjiu.wang@nxp.com>
-To: timur@kernel.org, nicoleotsuka@gmail.com, Xiubo.Lee@gmail.com,
- festevam@gmail.com, broonie@kernel.org, lgirdwood@gmail.com,
- perex@perex.cz, tiwai@suse.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, alsa-devel@alsa-project.org,
- viorel.suman@nxp.com
-Subject: [PATCH] ASoC: imx-audmix: register the card on a proper dev
-Date: Tue, 27 Aug 2019 11:55:15 -0400
-Message-Id: <1566921315-23402-1-git-send-email-shengjiu.wang@nxp.com>
-X-Mailer: git-send-email 2.7.4
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i2Sdv-0000iT-Fa; Tue, 27 Aug 2019 03:59:41 +0000
+X-UUID: a3084e7f475844389de2bfae69922be5-20190826
+X-UUID: a3084e7f475844389de2bfae69922be5-20190826
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1580231592; Mon, 26 Aug 2019 19:59:40 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 26 Aug 2019 20:59:38 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 27 Aug 2019 11:59:37 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 27 Aug 2019 11:59:36 +0800
+Message-ID: <1566878368.29523.1.camel@mtksdaap41>
+Subject: Re: [RESEND, PATCH v13 11/12] soc: mediatek: cmdq: add
+ cmdq_dev_get_client_reg function
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Tue, 27 Aug 2019 11:59:28 +0800
+In-Reply-To: <ccd3782e-b1bb-7887-f4a5-d7774183c7b7@gmail.com>
+References: <20190820084932.22282-1-bibby.hsieh@mediatek.com>
+ <20190820084932.22282-12-bibby.hsieh@mediatek.com>
+ <ccd3782e-b1bb-7887-f4a5-d7774183c7b7@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_205632_214402_2E1F3B9B 
-X-CRM114-Status: UNSURE (   8.12  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190826_205939_716871_EFF69F07 
+X-CRM114-Status: GOOD (  20.73  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,49 +75,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linuxppc-dev@lists.ozlabs.org, linux-imx@nxp.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>, Sascha
+ Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT Shen <yt.shen@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Sascha
+ Hauer <kernel@pengutronix.de>, CK HU <ck.hu@mediatek.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This platform device is registered from "fsl_audmix", which is
-its parent device. If use pdev->dev.parent for the priv->card.dev,
-the value set by dev_set_drvdata in parent device will be covered
-by the value in child device.
+On Fri, 2019-08-23 at 16:21 +0200, Matthias Brugger wrote:
+> 
+> On 20/08/2019 10:49, Bibby Hsieh wrote:
+> > GCE cannot know the register base address, this function
+> > can help cmdq client to get the cmdq_client_reg structure.
+> > 
+> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> > ---
+> >  drivers/soc/mediatek/mtk-cmdq-helper.c | 29 ++++++++++++++++++++++++++
+> >  include/linux/soc/mediatek/mtk-cmdq.h  | 21 +++++++++++++++++++
+> >  2 files changed, 50 insertions(+)
+> > 
+> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > index c53f8476c68d..80f75a1075b4 100644
+> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> > @@ -27,6 +27,35 @@ struct cmdq_instruction {
+> >  	u8 op;
+> >  };
+> >  
+> > +int cmdq_dev_get_client_reg(struct device *dev,
+> > +			    struct cmdq_client_reg *client_reg, int idx)
+> > +{
+> 
+> Can't we do/call this in cmdq_mbox_create parsing the number of gce-client-reg
+> properties we have and allocating these using a pointer to cmdq_client_reg in
+> cmdq_client?
+> We will have to free the pointer then in cmdq_mbox_destroy.
+> 
+> Regards,
+> Matthias
 
-Fixes: b86ef5367761 ("ASoC: fsl: Add Audio Mixer machine driver")
-Signed-off-by: Viorel Suman <viorel.suman@nxp.com>
-Signed-off-by: Shengjiu Wang <shengjiu.wang@nxp.com>
----
- sound/soc/fsl/imx-audmix.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+I don't think we need to keep the cmdq_client_reg in cmdq_client
+structure.
+Because our client will have own data structure, they will copy the
+client_reg information into their own structure.
 
-diff --git a/sound/soc/fsl/imx-audmix.c b/sound/soc/fsl/imx-audmix.c
-index 9e1cb18859ce..71590ca6394b 100644
---- a/sound/soc/fsl/imx-audmix.c
-+++ b/sound/soc/fsl/imx-audmix.c
-@@ -325,14 +325,14 @@ static int imx_audmix_probe(struct platform_device *pdev)
- 	priv->card.num_configs = priv->num_dai_conf;
- 	priv->card.dapm_routes = priv->dapm_routes;
- 	priv->card.num_dapm_routes = priv->num_dapm_routes;
--	priv->card.dev = pdev->dev.parent;
-+	priv->card.dev = &pdev->dev;
- 	priv->card.owner = THIS_MODULE;
- 	priv->card.name = "imx-audmix";
- 
- 	platform_set_drvdata(pdev, &priv->card);
- 	snd_soc_card_set_drvdata(&priv->card, priv);
- 
--	ret = devm_snd_soc_register_card(pdev->dev.parent, &priv->card);
-+	ret = devm_snd_soc_register_card(&pdev->dev, &priv->card);
- 	if (ret) {
- 		dev_err(&pdev->dev, "snd_soc_register_card failed\n");
- 		return ret;
--- 
-2.21.0
+In the design now, we do not allocate the cmdq_client_reg, client pass
+the cmdq_client_reg pointer into this API.
+Client will destroy the pointer after they get the information they
+want.
+
+Thanks for the comments so much.
+
+Bibby
+
+> 
+> > +	struct of_phandle_args spec;
+> > +	int err;
+> > +
+> > +	if (!client_reg)
+> > +		return -ENOENT;
+> > +
+> > +	err = of_parse_phandle_with_fixed_args(dev->of_node,
+> > +					       "mediatek,gce-client-reg",
+> > +					       3, idx, &spec);
+> > +	if (err < 0) {
+> > +		dev_err(dev,
+> > +			"error %d can't parse gce-client-reg property (%d)",
+> > +			err, idx);
+> > +
+> > +		return err;
+> > +	}
+> > +
+> > +	client_reg->subsys = (u8)spec.args[0];
+> > +	client_reg->offset = (u16)spec.args[1];
+> > +	client_reg->size = (u16)spec.args[2];
+> > +	of_node_put(spec.np);
+> > +
+> > +	return 0;
+> > +}
+> > +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
+> > +
+> >  static void cmdq_client_timeout(struct timer_list *t)
+> >  {
+> >  	struct cmdq_client *client = from_timer(client, t, timer);
+> > diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> > index a345870a6d10..02ddd60b212f 100644
+> > --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> > +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> > @@ -15,6 +15,12 @@
+> >  
+> >  struct cmdq_pkt;
+> >  
+> > +struct cmdq_client_reg {
+> > +	u8 subsys;
+> > +	u16 offset;
+> > +	u16 size;
+> > +};
+> > +
+> >  struct cmdq_client {
+> >  	spinlock_t lock;
+> >  	u32 pkt_cnt;
+> > @@ -24,6 +30,21 @@ struct cmdq_client {
+> >  	u32 timeout_ms; /* in unit of microsecond */
+> >  };
+> >  
+> > +/**
+> > + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device
+> > + *			       node of CMDQ client
+> > + * @dev:	device of CMDQ mailbox client
+> > + * @client_reg: CMDQ client reg pointer
+> > + * @idx:	the index of desired reg
+> > + *
+> > + * Return: 0 for success; else the error code is returned
+> > + *
+> > + * Help CMDQ client parsing the cmdq client reg
+> > + * from the device node of CMDQ client.
+> > + */
+> > +int cmdq_dev_get_client_reg(struct device *dev,
+> > +			    struct cmdq_client_reg *client_reg, int idx);
+> > +
+> >  /**
+> >   * cmdq_mbox_create() - create CMDQ mailbox client and channel
+> >   * @dev:	device of CMDQ mailbox client
+> > 
+
 
 
 _______________________________________________
