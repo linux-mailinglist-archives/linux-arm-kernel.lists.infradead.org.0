@@ -2,106 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A78359EBD1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:05:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 371E29EBDE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:06:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=CdwTK6Fzx+5M4KEqJwodWrS5i9+R3Z1AVW/NkiPhthg=; b=WM5+9MmOfY4+eQ
-	lGkT69jj0w4vUSWNT7pcEdqJ0PBQi1QZLE9QC2uxgZTfz6fA2Dwo35eu/o7EvpUS9I3INbmkqojl4
-	AUCDCiMmNON91T7kgR/2cqACyUHv6/PjTIWkp67BcFt7naNLi7xYykdOyfE7FJe3DaRNwqxtPiT3j
-	AFZjiS1g9szTMjNI29YP4c/vnk4FWrttKY4HjnEW/mq27Er2MSVJfv6pe9Syr1ZGKb0VU+pHYiRPD
-	7XVJzPTq7y7WD1JXufHF3Rq0+3DoFj+V0WUXNeOgk3Lx70ji/mUvDCIwT2B9Fqh6Yw4QEPFQq5O0X
-	zo1Y9PVpAyluVDIU68UA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Na4krZVADRHLz64Ux57NISO7F7rYdMBMTTfdgffHtXA=; b=G5slDh3jwWurtJ
+	jGJ7uNpqPj+F53+dmyRfLCzamAYlpuvXA2z2Y4L251t4qnbJZgusFsgQbLdUG7cOaKabfF9jRafaf
+	AMQ0XIFqyMMatvTwmre1jbVGSusLrS3jproGuuGMTi7WBsViiIupWxcXv2OLD5wDX8Kzg3t2pFRLD
+	0XkXh0QxBBx6FN3Rqmj/Rlmzaf/TGwW55gqZFVxYruGZrt+NyKLU1XWD2I457v5uYcSEBcz4J+nd9
+	pe9hZdHGYizD8Ihshn+mZRB6RIJdJF5HEcBkMNuc0O5GwBermJL4iCOXPOh13ani8pHdRzDexawNM
+	c3/EWejPL4sxwNBE0TUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2d1u-0005D2-Jo; Tue, 27 Aug 2019 15:05:06 +0000
-Received: from mail-eopbgr80072.outbound.protection.outlook.com ([40.107.8.72]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1i2d3O-000794-SK; Tue, 27 Aug 2019 15:06:38 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2d1f-0005Cg-4C
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:04:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=UMzcT8Zj4y0ndYZs4nKRHDx1pk9hVYh5oTlrhVrvh/x6hL1XRN3LpRtgKBl/CEe1Im0Lsvef6ww0OqZ9alNNa1EzH/WEIpAIfCExr/preIKQN34o+lk9FIreNA5W7eOkMPUb5rhruWWZfMugcJuDtXbCHD5cBxkK53a/SkUr06FImMhnUMwfvsnWWnMjDxyu7+tJYRrN6M1NzATfWDttxrTYyYKOjsmzEpoYHWC4cdh0mcyr/d/xF04MoYJK01OtRjPwkFaMCbcUNMIZXGoB4kR0sdDWBU+MLZI1w4/JAd0paWG8N4ZEARPZHCOFpjerFGTPm3ktFQr6e28dI0MIHg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zamh+tn53KCYW/Vo3jhLKc+2dsYqS01OUcHPSMJ+CiA=;
- b=DJui9jxlCIIk34y1/MRgvrCggDcPJprms3AuesKr91tdKW18HvqVyTv/gFGXDb3HtLT4kmQiKrvdJs5Yp8XInL53qk0nzpTps+QzlGaUb8yWwQJitAHWUnQwTiqnFm9MPjXvTqT7SoTPrGNNL7hQN/L+wStgFTqQ4tGHZ5T1qpO6nn3TArTIGolilCJv8EJ3tdXmjqt1tOKT8kukoOjJi+tkVHsk0z7Vhf9NryKj8DKzf+2sAb98M6LSjaPS0+f/xvxMeMkPv3/dNg/idTwhPAqZW/OqB3JK9uiJuHZ9ZzYdthuFbVJBsMiRL6vVUgOLumvOfTsct/FvZIKSDBaafA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=zamh+tn53KCYW/Vo3jhLKc+2dsYqS01OUcHPSMJ+CiA=;
- b=sYqUtcBaQja+zZlPw5sEsFBZf2wcNav3MYIyUCTn5sbvzlAFoTSvTVvepC5kuJm8rHGXmBdUtMFJfeh/daKrl9GRr9tpy3My7S5EHhnd8ThWb6Z14qIH+onZ+MUEMD/Bj+ic3xLmtE5zxEWrvlrRLIFAJ4OeKBKw/KgQ9eFvgkE=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB4398.eurprd04.prod.outlook.com (20.177.55.149) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.19; Tue, 27 Aug 2019 15:04:45 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e%3]) with mapi id 15.20.2199.021; Tue, 27 Aug 2019
- 15:04:45 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Jurgen Lambrecht <J.Lambrecht@TELEVIC.com>
-Subject: Re: FYI: imx-sdma firmware is not compatible with SLUB slab allocator
-Thread-Topic: FYI: imx-sdma firmware is not compatible with SLUB slab allocator
-Thread-Index: AQHVXNw+wzto4eeux06zQsdxRt35zA==
-Date: Tue, 27 Aug 2019 15:04:44 +0000
-Message-ID: <VI1PR04MB7023FB06F79F31334905D34EEEA00@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <1e2fe2dc-f5ea-db73-59cf-c61ec558131a@televic.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2f9da255-bf66-4e5d-2860-08d72affe56d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB4398; 
-x-ms-traffictypediagnostic: VI1PR04MB4398:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB4398EE756467AEB59AA2FA9FEEA00@VI1PR04MB4398.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0142F22657
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(39860400002)(376002)(396003)(346002)(136003)(189003)(199004)(25786009)(6916009)(86362001)(55016002)(66476007)(6436002)(3846002)(4326008)(66446008)(66556008)(66946007)(64756008)(91956017)(76116006)(54906003)(478600001)(99286004)(6116002)(9686003)(53936002)(6246003)(14454004)(186003)(7696005)(76176011)(81156014)(316002)(81166006)(5660300002)(44832011)(229853002)(8936002)(2906002)(476003)(486006)(7736002)(66066001)(53546011)(71190400001)(74316002)(26005)(6506007)(71200400001)(102836004)(8676002)(305945005)(446003)(33656002)(52536014)(256004);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB4398;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: RtMKm+uO2b1SYmuXf2+4zYa6N4ldn9Sx83kmE62LLO8Abt20ENAhmZmEt4eUVvg9u+znXuTVNK4uF2lGYJ3pXJYZ9CN7Kwwy59wYKTO+O1DHB1GCQFxxsv4I9JWra2Sn/GupRJWGs4nzwPhtK2jvK9WP2neweLOcE5u2hLpOXISsZKqeFnLT1u4iw1yNBL5I2vGijtRiKrlSPFNb1eJGP+o+fHvuWFtqUL99Nj3k0aBA0acx+V7tz6HRgl8lvrYFIuD4ZBdopR6yq9zNmpeiyPQ1mDAix0AmH+J0ZwLuaEy4oMnrawlv2IjUJd26JB8gcX6qWoFwqzFlOHs5ldWmRKDEgZQdMW1dxv3cJDeWenwPlH7St5JHoIZIoPlOI13IYAlXAIFzYGFiHcr2r3t+fgmHgFhm2/P0w6qnoDxrdsw=
+ id 1i2d36-00071m-Hc
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:06:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=Usqt65qKCjW/SaanMddOsovi4Ansin8CNvgKX8B3UgI=; b=TUGwbzRp9V7EITrN5S0x0Kr1h
+ lrjEaPLBpRfSGGvIWY/DanU0uumSNFLQ+DZBNjadjBC5dtkaPpKQDbKx4tDmcEeY4tO7/XgX8Luky
+ LNITSD5W7yPZZCwS583g4HvX7RUrqefOSQH0B0WjBPOW0iYfKPI837f61jkbWwdXsMrawP9ZAjWal
+ TRJXoD3Ltc62QphcGOMJVGrdWHje9c6QY23nG48l9j8ahEypW29Q8Htops4bei1liVd1Vo6+NcUb/
+ qeZKfRcnn65gAExGZc5LqSUDrOhycXc/UrX/yijndaq7BiSDye6rl3a5VMfIC1AznvFvnluy159O7
+ IqCh+OMtA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:38672)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i2d32-00058Q-3K; Tue, 27 Aug 2019 16:06:16 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i2d30-0005q3-Oj; Tue, 27 Aug 2019 16:06:14 +0100
+Date: Tue, 27 Aug 2019 16:06:14 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Ulf Hansson <ulf.hansson@linaro.org>
+Subject: Re: Continuous SD IO causes hung task messages
+Message-ID: <20190827150614.GN13294@shell.armlinux.org.uk>
+References: <20190827134337.GK13294@shell.armlinux.org.uk>
+ <CAPDyKFp7e2OD_idam3-2sEd0wJU5OcP=H04G1OvHmAUo2Y-bYw@mail.gmail.com>
+ <20190827143634.GL13294@shell.armlinux.org.uk>
+ <20190827145216.GM13294@shell.armlinux.org.uk>
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2f9da255-bf66-4e5d-2860-08d72affe56d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 15:04:44.9106 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 33wGl/mbPySJ3Cuq0f0a488Bswyn+dFtfw3JZD+CpddtAjmuDPWDckwJVXbKBPzOG8TB/vi0Ab9ZUI+JIAEd0w==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB4398
+Content-Disposition: inline
+In-Reply-To: <20190827145216.GM13294@shell.armlinux.org.uk>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_080451_255548_A06C82C9 
-X-CRM114-Status: GOOD (  16.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_080620_849422_4A1B8DD7 
+X-CRM114-Status: GOOD (  23.53  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.72 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -120,79 +89,156 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Robin Gong <yibin.gong@nxp.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27.08.2019 16:35, Jurgen Lambrecht wrote:
-> We are updating our kernel on our custom board with an iMX6UL from 3.14
-> to 4.19, and when loading linux-firmware/imx/sdma/sdma-imx6q.bin v3.5
-> the kernel hangs when booting, only "Starting kernel ..." is printed (by
-> uBoot I think).
-
-If you enable "earlycon" you should be able to see an useful error 
-message from crashes in early boot.
-
-Enabling earlycon is board-specific: if you have a correct 
-/chosen/stdout-path reference in dts just adding "earlycon" to kernel 
-cmdline should work otherwise you can specify 
-earlycon=ec_imx6q,0x202000,115200 with the exact address depending on 
-which uart is console on your board.
-
-> When I remove the sdma bin (built-in the kernel via EXTRA_FIRMWARE),
-> then it boots.
+On Tue, Aug 27, 2019 at 03:52:17PM +0100, Russell King - ARM Linux admin wrote:
+> On Tue, Aug 27, 2019 at 03:36:34PM +0100, Russell King - ARM Linux admin wrote:
+> > On Tue, Aug 27, 2019 at 03:55:23PM +0200, Ulf Hansson wrote:
+> > > On Tue, 27 Aug 2019 at 15:43, Russell King - ARM Linux admin
+> > > <linux@armlinux.org.uk> wrote:
+> > > >
+> > > > Hi,
+> > > >
+> > > > While dd'ing the contents of a SD card, I get hung task timeout
+> > > > messages as per below.  However, the dd is making progress.  Any
+> > > > ideas?
+> > > >
+> > > > Presumably, mmc_rescan doesn't get a look-in while IO is progressing
+> > > > for the card?
+> > > 
+> > > Is it a regression?
+> > > 
+> > > There not much of recent mmc core and mmc block changes, that I can
+> > > think of at this point.
+> > 
+> > No idea - I just repaired the SD socket after the D2 line became
+> > disconnected, and decided to run that command as a test.
+> > 
+> > > > ARM64 host, Macchiatobin, uSD card.
+> > > 
+> > > What mmc host driver is it? mmci?
+> > 
+> > sdhci-xenon.
+> > 
+> > I'm just trying with one CPU online, then I'll try with two.  My
+> > suspicion is that there's a problem in the ARM64 arch code where
+> > unlocking a mutex doesn't get noticed on other CPUs.
+> > 
+> > Hmm, I thought I'd try bringing another CPU online, but it seems
+> > like the ARM64 CPU hotplug code is broken:
+> > 
+> > [ 3552.029689] CPU1: shutdown
+> > [ 3552.031099] psci: CPU1 killed.
+> > [ 3949.835212] CPU1: failed to come online
+> > [ 3949.837753] CPU1: failed in unknown state : 0x0
+> > 
+> > which means I can only take CPUs down, I can't bring them back
+> > online without rebooting.
 > 
-> I found that the slab allocator (menu config -> General setup -> Choose
-> SLAB allocator) is the culprit: when using imx_v6_v7_defconfig the
-> kernel boots, but not with our config (based on a tiny config I think).
-> And the config that makes the difference is the slab allocator: with
-> SLUB or SLAB the kernel (with sdma bin) boots, but not with SLOB.
+> Okay, running on a single CPU shows no problems.
 > 
-> I don't know how to force selecting SLUB in Kconfig when selecting
-> IMX_SDMA, but anyhow first this issue must be confirmed on other
-> processors from the iMX family.
+> Running on four CPUs (as originally) shows that the kworker thread
+> _never_ gets scheduled, so the warning is not false.
+> 
+> With three CPUs, same problem.
+> 
+> root@arm-d06300000000:~# ps aux | grep ' D '
+> root        34  0.0  0.0      0     0 ?        D    15:38   0:00 [kworker/1:1+events_freezable]
+> root@arm-d06300000000:~# cat /proc/34/sched
+> kworker/1:1 (34, #threads: 1)
+> -------------------------------------------------------------------
+> se.exec_start                                :        318689.992440
+> se.vruntime                                  :         37750.882357
+> se.sum_exec_runtime                          :             9.421240
+> se.nr_migrations                             :                    0
+> nr_switches                                  :                 1174
+> nr_voluntary_switches                        :                 1171
+> nr_involuntary_switches                      :                    3
+> se.load.weight                               :              1048576
+> se.runnable_weight                           :              1048576
+> se.avg.load_sum                              :                    6
+> se.avg.runnable_load_sum                     :                    6
+> se.avg.util_sum                              :                 5170
+> se.avg.load_avg                              :                    0
+> se.avg.runnable_load_avg                     :                    0
+> se.avg.util_avg                              :                    0
+> se.avg.last_update_time                      :         318689991680
+> se.avg.util_est.ewma                         :                   10
+> se.avg.util_est.enqueued                     :                    0
+> policy                                       :                    0
+> prio                                         :                  120
+> clock-delta                                  :                    0
+> 
+> The only thing that changes there is "clock-delta".  When I kill the
+> dd, I get:
+> 
+> root@arm-d06300000000:~# cat /proc/34/sched
+> kworker/1:1 (34, #threads: 1)
+> -------------------------------------------------------------------
+> se.exec_start                                :        574025.791680
+> se.vruntime                                  :         79996.657300
+> se.sum_exec_runtime                          :            10.916400
+> se.nr_migrations                             :                    0
+> nr_switches                                  :                 1403
+> nr_voluntary_switches                        :                 1400
+> nr_involuntary_switches                      :                    3
+> se.load.weight                               :              1048576
+> se.runnable_weight                           :              1048576
+> se.avg.load_sum                              :                   15
+> se.avg.runnable_load_sum                     :                   15
+> se.avg.util_sum                              :                15007
+> se.avg.load_avg                              :                    0
+> se.avg.runnable_load_avg                     :                    0
+> se.avg.util_avg                              :                    0
+> se.avg.last_update_time                      :         574025791488
+> se.avg.util_est.ewma                         :                   10
+> se.avg.util_est.enqueued                     :                    0
+> policy                                       :                    0
+> prio                                         :                  120
+> clock-delta                                  :                   40
+> 
+> so the thread makes forward progress.
+> 
+> Down to two CPUs:
+> 
+> root@arm-d06300000000:~# ps aux | grep ' D '
+> root        34  0.0  0.0      0     0 ?        D    15:38   0:00 [kworker/1:1+events_freezable]
+> 
+> Same symptoms.  dd and md5sum switch between CPU 0 and CPU1.
 
-If there's an incompatibility between SLOB and sdma then it's sounds 
-like a bug which should be fixed, not worked around via kconfig.
+Hmm.
 
-I tried to enable EXTRA_FIRMWARE on v4.19.68 and imx6ul-14x14-evk booted 
-worked fine for me with these changes:
-diff --git arch/arm/configs/imx_v6_v7_defconfig 
-arch/arm/configs/imx_v6_v7_defconfig
-index 7f524cee1357..cedd4d2e0e02 100644
---- arch/arm/configs/imx_v6_v7_defconfig
-+++ arch/arm/configs/imx_v6_v7_defconfig
-@@ -11,8 +11,8 @@ CONFIG_RELAY=y
-  CONFIG_BLK_DEV_INITRD=y
-  CONFIG_EXPERT=y
-  CONFIG_PERF_EVENTS=y
--# CONFIG_SLUB_DEBUG is not set
-  # CONFIG_COMPAT_BRK is not set
-+CONFIG_SLOB=y
-  CONFIG_ARCH_MULTI_V6=y
-  CONFIG_ARCH_MXC=y
-  CONFIG_MACH_MX31LILLY=y
-@@ -90,6 +90,10 @@ CONFIG_RFKILL_INPUT=y
-  CONFIG_DEVTMPFS=y
-  CONFIG_DEVTMPFS_MOUNT=y
-  # CONFIG_STANDALONE is not set
-+CONFIG_EXTRA_FIRMWARE="imx/sdma/sdma-imx6q.bin"
-+CONFIG_EXTRA_FIRMWARE_DIR="../linux-firmware"
-+CONFIG_FW_LOADER_USER_HELPER=y
-+CONFIG_FW_LOADER_USER_HELPER_FALLBACK=y
-  CONFIG_CMA_SIZE_MBYTES=64
-  CONFIG_IMX_WEIM=y
-  CONFIG_CONNECTOR=y
+static blk_status_t mmc_mq_queue_rq(struct blk_mq_hw_ctx *hctx,
+                                    const struct blk_mq_queue_data *bd)
 
-Please try to get a stack dump with earlycon.
+        mq->in_flight[issue_type] += 1;
+	get_card = (mmc_tot_in_flight(mq) == 1);
 
---
-Regards,
-Leonard
+        if (get_card)
+	        mmc_get_card(card, &mq->ctx);
+
+mmc_get_card() gets the host lock according to the card.
+
+So, if we always have requests in flight (which is probably the case
+here) we never drop the host lock, and mmc_rescan() never gets a look
+in - hence blocking the kworker.
+
+So this is a real issue with MMC, and not down to something in the
+arch.
+
+I suspect the reason that single-CPU doesn't show it is because it is
+unable to keep multiple requests in flight.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
