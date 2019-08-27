@@ -2,79 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 538F19E9C1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:44:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9310F9E9C5
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:44:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4caw+1rAsPY4UFrpdFALaZtrxk+pKd8kuSWajGQDMwk=; b=c3srI9AQPuu3D5
-	dE9HgjkXHGs3rRgvlmpWWTfe+/joJP9uOI4G1GgxEUegHivpBphaAb8+0vq7eeG90F/67KffoOnUt
-	zpRzwYp5webaLnqLkAV44CESO2fcHmttIwl/USOKzlpFBsqAHHzNUw/UQzp4/6Oe3ihhg8R5Sa6rv
-	VKTjJHHpTGnq9GFoN9vD0stTZICAmx8fvZT3qpCPeYiuPGNTw2MaEsk1utb1xgkojBCo71NJuNH4F
-	CdGixB6i+gqZz6NYv2q60Fn9uihRKqtbbG/6S+Tkt3VYBMSO6hT1aegtQjL7HE+D7AGoGH6YzgKsy
-	baMsuX6HCffWdsYbluiA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=6TJsUeV05nM1K7JRK/+CM2Fxwu6yN5YjtIICjN65ydw=; b=DR6nkz+ox43ezV
+	iSa7wvOZMnqXuEbxl116g8Wjxsca2MLXcKEfzSHKVZobZl772GMUufE4EZJI89XYrDFUhgL+Xdnew
+	DNEps0WwsUScDcGmJ+PqueV/YVGFJsO51wFKeTnaKLWy04mnh/DK7lnfoSctmSMwuJ+yno2BIcdqe
+	6K3QB4S4a4Od/nOBLAfBmKS/Th/MIeXgZWCqXRPk0HtBylNLjCUJvpwwysAVaEIcAKF1ETEHbrs5A
+	xOklhmtRHJODELeqpCWwcONQV4YWeHBaMPauH6Xpb/53SKA1WBWilCJALcKDFUYUsD0EoZZEDaI5N
+	zYNCiRbn2PPylGrsN0Gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2blO-0001pf-J0; Tue, 27 Aug 2019 13:43:58 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1i2blm-000243-0O; Tue, 27 Aug 2019 13:44:22 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2blA-0001oR-Te
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:43:47 +0000
+ id 1i2blc-00023p-KK
+ for linux-arm-kernel@bombadil.infradead.org; Tue, 27 Aug 2019 13:44:12 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=IR73i9W0EgWINjS9LPHNsm8ROGSdMjBWUOLcAHrBo3w=; b=j+np2dDDpbw0CoBR0jB5sUlni
- j9ktn94XD/d4xb2OmpNf+hF25/OV57icLJ0Orwx5/kPjLZu8Bi78psmXzgPb7AjD6gBUVK6wMICOs
- R4bjnE13q6k8dNtsSp878vxHDHvDZPCTa0AMhlpK1bEWr33iK6wVVy3ZuDSMYtrnm0ihM6b448OYy
- zAar44mmsQyiYgoFVUiWz09bswrfk22p0RkQtCsKkUEM1eB3lN9m3gzgwjJ0rPB1S0TdXCg3ZVJWc
- xYvzljn2z2dN+Gfg4KRPmkCs14Q/lZrST1WZr7GnBpk7vZdwNUCQt0m2kIghJgxEqLF0wRxLuWds4
- c/hHzmi6g==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:55220)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i2bl4-0004jw-9A; Tue, 27 Aug 2019 14:43:38 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i2bl3-0005nO-KV; Tue, 27 Aug 2019 14:43:37 +0100
-Date: Tue, 27 Aug 2019 14:43:37 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-mmc@vger.kernel.org
-Subject: Continuous SD IO causes hung task messages
-Message-ID: <20190827134337.GK13294@shell.armlinux.org.uk>
+ bh=hXlXVXRXdhaabHSd8C1eZYIYW9fAq7xfTNbYO5WWwxA=; b=shAFU7qQntr4BbxQhAXW47zpd
+ Zor3HUNY2ipGwquo1ZDWl9oBvjC5drYf7eBk4efFciPdbZlWnI+v8yWuZKrcWuOkSCdXeoYdM0oym
+ glbsExgjVtNRhold6AkteO/C/ekTRqHUsgnK8ZMGRaa1920g1w/M6IFzjuf+1egSFgYWdPHDtItLG
+ VMrtBFLmPPGUO6A3ZASq642lwxyHB2YyZO0c396oKmvyuxGwYT+fEYhZfMTzS9XBkBvqkY66N/Uiw
+ ru80Dq5FDTlF1Q8SriDz8TeUOur33l8hVBsqxIg0lvLuFSfR7HKt4mIHLj5VjJZCehSF9c8BbV2Wo
+ BRDcXlbYQ==;
+Received: from [179.97.35.50] (helo=sandy.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2bla-0004Tq-Iu; Tue, 27 Aug 2019 13:44:10 +0000
+Received: by sandy.ghostprotocols.net (Postfix, from userid 1000)
+ id 6DEC012E; Tue, 27 Aug 2019 10:44:04 -0300 (BRT)
+Date: Tue, 27 Aug 2019 10:44:04 -0300
+From: Arnaldo Carvalho de Melo <acme@redhat.com>
+To: Igor Lubashev <ilubashe@akamai.com>
+Subject: Re: [PATCH 3/5] perf util: kernel profiling is disallowed only when
+ perf_event_paranoid > 1
+Message-ID: <20190827134404.GB8761@redhat.com>
+References: <1566869956-7154-1-git-send-email-ilubashe@akamai.com>
+ <1566869956-7154-4-git-send-email-ilubashe@akamai.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_064345_092047_D8C74005 
-X-CRM114-Status: UNSURE (   5.17  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+In-Reply-To: <1566869956-7154-4-git-send-email-ilubashe@akamai.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.5.20 (2009-12-10)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,98 +64,161 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>,
+ Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
+ James Morris <jmorris@namei.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Em Mon, Aug 26, 2019 at 09:39:14PM -0400, Igor Lubashev escreveu:
+> Perf was too restrictive about sysctl kernel.perf_event_paranoid. The
+> kernel only disallows profiling when perf_event_paranoid > 1. Make perf do
+> the same.
 
-While dd'ing the contents of a SD card, I get hung task timeout
-messages as per below.  However, the dd is making progress.  Any
-ideas?
+Thanks for following up on this, I added these notes to this cset commit
+log message:
 
-Presumably, mmc_rescan doesn't get a look-in while IO is progressing
-for the card?
+--------------------------------- 8< ------------------------------------
 
-ARM64 host, Macchiatobin, uSD card.
+perf evsel: Kernel profiling is disallowed only when perf_event_paranoid > 1
 
-Thanks.
+Perf was too restrictive about sysctl kernel.perf_event_paranoid. The
+kernel only disallows profiling when perf_event_paranoid > 1. Make perf
+do the same.
 
-root@arm-d06300000000:~# dd if=/dev/mmcblk1 | md5sum
-INFO: task kworker/2:1:52 blocked for more than 120 seconds.
-      Not tainted 5.2.0+ #309
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-kworker/2:1     D    0    52      2 0x00000028
-Workqueue: events_freezable mmc_rescan
-Call trace:
- __switch_to+0xb0/0x198
- __schedule+0x22c/0x604
- schedule+0x38/0xc8
- __mmc_claim_host+0xcc/0x1ec
- mmc_get_card+0x30/0x3c
- mmc_sd_detect+0x1c/0x78
- mmc_rescan+0x1c4/0x35c
- process_one_work+0x14c/0x408
- worker_thread+0x140/0x3f4
- kthread+0xfc/0x128
- ret_from_fork+0x10/0x18
-INFO: task kworker/2:1:52 blocked for more than 120 seconds.
-      Not tainted 5.2.0+ #309
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-kworker/2:1     D    0    52      2 0x00000028
-Workqueue: events_freezable mmc_rescan
-Call trace:
- __switch_to+0xb0/0x198
- __schedule+0x22c/0x604
- schedule+0x38/0xc8
- __mmc_claim_host+0xcc/0x1ec
- mmc_get_card+0x30/0x3c
- mmc_sd_detect+0x1c/0x78
- mmc_rescan+0x1c4/0x35c
- process_one_work+0x14c/0x408
- worker_thread+0x140/0x3f4
- kthread+0xfc/0x128
- ret_from_fork+0x10/0x18
-INFO: task kworker/2:1:52 blocked for more than 241 seconds.
-      Not tainted 5.2.0+ #309
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-kworker/2:1     D    0    52      2 0x00000028
-Workqueue: events_freezable mmc_rescan
-Call trace:
- __switch_to+0xb0/0x198
- __schedule+0x22c/0x604
- schedule+0x38/0xc8
- __mmc_claim_host+0xcc/0x1ec
- mmc_get_card+0x30/0x3c
- mmc_sd_detect+0x1c/0x78
- mmc_rescan+0x1c4/0x35c
- process_one_work+0x14c/0x408
- worker_thread+0x140/0x3f4
- kthread+0xfc/0x128
- ret_from_fork+0x10/0x18
-INFO: task kworker/2:1:52 blocked for more than 362 seconds.
-      Not tainted 5.2.0+ #309
-"echo 0 > /proc/sys/kernel/hung_task_timeout_secs" disables this message.
-kworker/2:1     D    0    52      2 0x00000028
-Workqueue: events_freezable mmc_rescan
-Call trace:
- __switch_to+0xb0/0x198
- __schedule+0x22c/0x604
- schedule+0x38/0xc8
- __mmc_claim_host+0xcc/0x1ec
- mmc_get_card+0x30/0x3c
- mmc_sd_detect+0x1c/0x78
- mmc_rescan+0x1c4/0x35c
- process_one_work+0x14c/0x408
- worker_thread+0x140/0x3f4
- kthread+0xfc/0x128
- ret_from_fork+0x10/0x18
+Committer testing:
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+For a non-root user:
+
+  $ id
+  uid=1000(acme) gid=1000(acme) groups=1000(acme),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  $
+
+Before:
+
+We were restricting it to just userspace (:u suffix) even for a
+workload started by the user:
+
+  $ perf record sleep 1
+  [ perf record: Woken up 1 times to write data ]
+  [ perf record: Captured and wrote 0.001 MB perf.data (8 samples) ]
+  $ perf evlist
+  cycles:u
+  $ perf evlist -v
+  cycles:u: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, exclude_kernel: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
+  $ perf report --stdio
+  # To display the perf.data header info, please use --header/--header-only options.
+  #
+  # Total Lost Samples: 0
+  #
+  # Samples: 8  of event 'cycles:u'
+  # Event count (approx.): 1040396
+  #
+  # Overhead  Command  Shared Object     Symbol                
+  # ........  .......  ................  ......................
+  #
+      68.36%  sleep    libc-2.29.so      [.] _dl_addr
+      27.33%  sleep    ld-2.29.so        [.] dl_main
+       3.80%  sleep    ld-2.29.so        [.] _dl_setup_hash
+  #
+  # (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
+  #
+  $
+  $ 
+
+After:
+
+When the kernel allows profiling the kernel in that scenario:
+
+  $ perf record sleep 1
+  [ perf record: Woken up 1 times to write data ]
+  [ perf record: Captured and wrote 0.023 MB perf.data (11 samples) ]
+  $ perf evlist
+  cycles
+  $ perf evlist -v
+  cycles: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
+  $
+  $ perf report --stdio
+  # To display the perf.data header info, please use --header/--header-only options.
+  #
+  # Total Lost Samples: 0
+  #
+  # Samples: 11  of event 'cycles'
+  # Event count (approx.): 1601964
+  #
+  # Overhead  Command  Shared Object     Symbol                    
+  # ........  .......  ................  ..........................
+  #
+      28.14%  sleep    [kernel.vmlinux]  [k] __rb_erase_color
+      27.21%  sleep    [kernel.vmlinux]  [k] unmap_page_range
+      27.20%  sleep    ld-2.29.so        [.] __tunable_get_val
+      15.24%  sleep    [kernel.vmlinux]  [k] thp_get_unmapped_area
+       1.96%  perf     [kernel.vmlinux]  [k] perf_event_exec
+       0.22%  perf     [kernel.vmlinux]  [k] native_sched_clock
+       0.02%  perf     [kernel.vmlinux]  [k] intel_bts_enable_local
+       0.00%  perf     [kernel.vmlinux]  [k] native_write_msr
+  #
+  # (Tip: Boolean options have negative forms, e.g.: perf report --no-children)
+  #
+  $
+
+Reported-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+Tested-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
+Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
+Cc: James Morris <jmorris@namei.org>
+Cc: Jiri Olsa <jolsa@kernel.org>
+Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+Cc: Namhyung Kim <namhyung@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Link: http://lkml.kernel.org/r/1566869956-7154-4-git-send-email-ilubashe@akamai.com
+Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# Author:    Igor Lubashev <ilubashe@akamai.com>
+# Date:      Mon Aug 26 21:39:14 2019 -0400
+#
+# On branch perf/core
+# Changes to be committed:
+#	modified:   tools/perf/util/evsel.c
+#
+# Untracked files:
+#	a
+#	a.c
+#	bla
+#	f_mode
+#	perf.data
+#	perf.data.old
+#	q
+#
+# ------------------------ >8 ------------------------
+# Do not modify or remove the line above.
+# Everything below it will be ignored.
+diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
+index 7c704b8f0e5c..d4540bfe4574 100644
+--- a/tools/perf/util/evsel.c
++++ b/tools/perf/util/evsel.c
+@@ -282,7 +282,7 @@ struct evsel *perf_evsel__new_idx(struct perf_event_attr *attr, int idx)
+ 
+ static bool perf_event_can_profile_kernel(void)
+ {
+-	return perf_event_paranoid_check(-1);
++	return perf_event_paranoid_check(1);
+ }
+ 
+ struct evsel *perf_evsel__new_cycles(bool precise)
 
 _______________________________________________
 linux-arm-kernel mailing list
