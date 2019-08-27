@@ -2,80 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6B4749EB29
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:36:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9EA2A9EB45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:41:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IKO35Acl+A3OfqVO1c28Kn3eTKF6grzggL20oOFQb5U=; b=UNiatrh9HLk6Jx
-	axslHtbTgDXIs6ncoIV1Jactjqn9rKsS69tMXnpw3gfXvJkhlSBCBGZ5MrMFS4yRqiPnXy/+f0cMp
-	iihVs4KYn0hMUDwB12HwBOTCvj7fwXsmFefK3pwVSIwC9lH8Zy05Pg4JUA29a4VJPZiceWhXrQvbG
-	zE6DD+rg13HzKK/vTMA6TnbAOTXzbZRoUq9gf873Io8PFTBUdIvYH2aRERzbQRhv01uPS1unOIOJo
-	rQKEP7WBsjRhZHxHXh+ubbIZzXgrtRBS1FNRCjz9hKCdeukWCVDBwB5DFKfPvT6hvrXXPx80mIgJP
-	FYKpxwiSrktgJOo5WsSA==;
+	List-Owner; bh=zsU6C56+oNT7pNSMcjyocJQFx5rrZUq4fh/8oeFKCyQ=; b=uBkZJ8uoETgId4
+	ONcYrnAceLfsm0vwG0e2CzSNSc7UZ9Yz9PQl466ten5PY69LV9KMJ4ID7pbqlZxPdweRzTLa8+xaO
+	bwLgLWstNkf5rxGXgDhB7W0WOkr/zpGxyTCZt4hr0qKjxK6uAxRSCZxLY2pQTt0260fZBtQxRk5hs
+	9pdTuSZGb0enb9erwY+zPG5HSdK4MNAULYEH/MBfwi9tPYucnUDCkW4rZP0hrc10xquQK4uq5/Mj6
+	+7+nto2o/cmy4uRZcWoaJ8gvYzrfNDzahezLYYQO+QZJkJrfUSBH8SEkEMpoQBLWI9nI7OQPpkWRw
+	w7hyFENA9OeKO0bABMDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2caf-0002hv-G4; Tue, 27 Aug 2019 14:36:57 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1i2ceb-0004Uw-U0; Tue, 27 Aug 2019 14:41:02 +0000
+Received: from relay11.mail.gandi.net ([217.70.178.231])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2caR-0002f5-Rl
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:36:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=vhzf+dZDreIumgSd/qgIOrRav/zwhEMSkCEy/wY4MGU=; b=t5tRKOdOnczH2Hp+z218qFN8+
- Q6wWgCMBppznidCK3hI63kFTn7KvDPLsVRYWSRJ3U+i7fZZbXNF6UAbbCIOyaiwNszYvHF/G8g2Rv
- DstzRoKm5aVvHtIkRA/CD7ixm0rnM4FErN8Mj+JWDFNP5bNXO/rSEaRRi7GqoFU7r9SZj44Co6y9N
- 1JpRW8mRZFDM+uNGTnD/AKX77SlKBCDbpDhOSz1MVRnrOuHIUIYJiPyYUHmKwD6WGcxlLF8Q0Ka4R
- NfcQGOM1W0GAQeajTvp09XKvuEpbFkyeHzyNfeIdYnc6PzkRQpeVm0rAbzu5tGXfUvr5gflfWs+C6
- v2BBQdvQg==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:38660)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i2caJ-0004zg-HP; Tue, 27 Aug 2019 15:36:35 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i2caI-0005om-AW; Tue, 27 Aug 2019 15:36:34 +0100
-Date: Tue, 27 Aug 2019 15:36:34 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: Continuous SD IO causes hung task messages
-Message-ID: <20190827143634.GL13294@shell.armlinux.org.uk>
-References: <20190827134337.GK13294@shell.armlinux.org.uk>
- <CAPDyKFp7e2OD_idam3-2sEd0wJU5OcP=H04G1OvHmAUo2Y-bYw@mail.gmail.com>
+ id 1i2ceR-0004UU-CI
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:40:53 +0000
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: gregory.clement@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id 15D4F100013;
+ Tue, 27 Aug 2019 14:40:47 +0000 (UTC)
+From: Gregory CLEMENT <gregory.clement@bootlin.com>
+To: Stephen Boyd <sboyd@kernel.org>, Mike Turquette <mturquette@baylibre.com>,
+ linux-clk@vger.kernel.org, linux-kernel@vger.kernel.org
+Subject: Re: [PATCH v7 6/6] arm64: dts: marvell: Add cpu clock node on Armada
+ 7K/8K
+In-Reply-To: <20190710134346.30239-7-gregory.clement@bootlin.com>
+References: <20190710134346.30239-1-gregory.clement@bootlin.com>
+ <20190710134346.30239-7-gregory.clement@bootlin.com>
+Date: Tue, 27 Aug 2019 16:40:47 +0200
+Message-ID: <87ftlmzn68.fsf@FE-laptop>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAPDyKFp7e2OD_idam3-2sEd0wJU5OcP=H04G1OvHmAUo2Y-bYw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_073643_902928_D9813E7D 
-X-CRM114-Status: GOOD (  15.10  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190827_074051_573662_1E3B5F4A 
+X-CRM114-Status: UNSURE (   9.86  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,60 +63,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Jason Cooper <jason@lakedaemon.net>,
+ Andrew Lunn <andrew@lunn.ch>, Antoine Tenart <antoine.tenart@bootlin.com>,
+ Maxime Chevallier <maxime.chevallier@bootlin.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
+ =?utf-8?Q?Miqu=C3=A8l?= Raynal <miquel.raynal@bootlin.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Sebastian Hesselbarth <sebastian.hesselbarth@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 03:55:23PM +0200, Ulf Hansson wrote:
-> On Tue, 27 Aug 2019 at 15:43, Russell King - ARM Linux admin
-> <linux@armlinux.org.uk> wrote:
-> >
-> > Hi,
-> >
-> > While dd'ing the contents of a SD card, I get hung task timeout
-> > messages as per below.  However, the dd is making progress.  Any
-> > ideas?
-> >
-> > Presumably, mmc_rescan doesn't get a look-in while IO is progressing
-> > for the card?
-> 
-> Is it a regression?
-> 
-> There not much of recent mmc core and mmc block changes, that I can
-> think of at this point.
 
-No idea - I just repaired the SD socket after the D2 line became
-disconnected, and decided to run that command as a test.
 
-> > ARM64 host, Macchiatobin, uSD card.
-> 
-> What mmc host driver is it? mmci?
+> Add cpu clock node on AP
+>
+> Signed-off-by: Gregory CLEMENT <gregory.clement@bootlin.com>
 
-sdhci-xenon.
+Applied on mvebu/dt64
 
-I'm just trying with one CPU online, then I'll try with two.  My
-suspicion is that there's a problem in the ARM64 arch code where
-unlocking a mutex doesn't get noticed on other CPUs.
-
-Hmm, I thought I'd try bringing another CPU online, but it seems
-like the ARM64 CPU hotplug code is broken:
-
-[ 3552.029689] CPU1: shutdown
-[ 3552.031099] psci: CPU1 killed.
-[ 3949.835212] CPU1: failed to come online
-[ 3949.837753] CPU1: failed in unknown state : 0x0
-
-which means I can only take CPUs down, I can't bring them back
-online without rebooting.
+Gregory
+> ---
+>  arch/arm64/boot/dts/marvell/armada-ap806-quad.dtsi | 4 ++++
+>  arch/arm64/boot/dts/marvell/armada-ap806.dtsi      | 7 +++++++
+>  2 files changed, 11 insertions(+)
+>
+> diff --git a/arch/arm64/boot/dts/marvell/armada-ap806-quad.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806-quad.dtsi
+> index 2baafe12ebd4..472211159979 100644
+> --- a/arch/arm64/boot/dts/marvell/armada-ap806-quad.dtsi
+> +++ b/arch/arm64/boot/dts/marvell/armada-ap806-quad.dtsi
+> @@ -20,24 +20,28 @@
+>  			compatible = "arm,cortex-a72";
+>  			reg = <0x000>;
+>  			enable-method = "psci";
+> +			clocks = <&cpu_clk 0>;
+>  		};
+>  		cpu1: cpu@1 {
+>  			device_type = "cpu";
+>  			compatible = "arm,cortex-a72";
+>  			reg = <0x001>;
+>  			enable-method = "psci";
+> +			clocks = <&cpu_clk 0>;
+>  		};
+>  		cpu2: cpu@100 {
+>  			device_type = "cpu";
+>  			compatible = "arm,cortex-a72";
+>  			reg = <0x100>;
+>  			enable-method = "psci";
+> +			clocks = <&cpu_clk 1>;
+>  		};
+>  		cpu3: cpu@101 {
+>  			device_type = "cpu";
+>  			compatible = "arm,cortex-a72";
+>  			reg = <0x101>;
+>  			enable-method = "psci";
+> +			clocks = <&cpu_clk 1>;
+>  		};
+>  	};
+>  };
+> diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+> index 91dad7e4ee59..fca6536494b3 100644
+> --- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+> +++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
+> @@ -280,6 +280,13 @@
+>  				#address-cells = <1>;
+>  				#size-cells = <1>;
+>  
+> +				cpu_clk: clock-cpu@278 {
+> +					compatible = "marvell,ap806-cpu-clock";
+> +					clocks = <&ap_clk 0>, <&ap_clk 1>;
+> +					#clock-cells = <1>;
+> +					reg = <0x278 0xa30>;
+> +				};
+> +
+>  				ap_thermal: thermal-sensor@80 {
+>  					compatible = "marvell,armada-ap806-thermal";
+>  					reg = <0x80 0x10>;
+> -- 
+> 2.20.1
+>
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Gregory Clement, Bootlin
+Embedded Linux and Kernel engineering
+http://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
