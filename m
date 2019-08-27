@@ -2,80 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E8579E8DA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:14:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC7789E922
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:22:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ufPNk57deKhHvFiAK4sR4hDooAFXRWViQ+wv9wGkHX0=; b=AdZaautqkUdA8S
-	wKMNu/0soBr9fLx9Z4auRcuv3Uugm9qfe/SsdQqCAh81Xhy8WTMcrXDlzyUzrT0V825dwUcIV/Wxx
-	L1wVrVcz8IMe/vmvhiXmokImAPCkrNg12hJioT/PKYJefYwZTLpBjPCUGAzLKKOX/oigNien3GtFw
-	H39MG2apNiokqHGEoOTP6+WanAzhLPCjc72DWmYKdloRhdSXz/RMYdpW3kT3R4TTWe4uKHZtdtL1E
-	AWvu4eZgbOrlizkJAaRsK2Rxk1mFC454Y5nkhBl9YxLKzBsGdyYwlTC/LKna9kwW5U74lJ1B6lSbN
-	9UOHkn/P4ZFRFn1IkyeA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=kaOqRv/7zgwYFfHbWt0bnybLKQqlz4LKmpWdtLINloM=; b=Znl
+	xACi8B2Cj2eZk3oieiF/MX/DRvu8BKZokecDGTqWLIuPr15L3bNYNnOAkIl+cuY4wuBEL8AFZBzQS
+	SIUw6sb7ghOoZpqgIBodK5Sd3fhiOXQsfu5r/2OC4Fm75EH56ZuIGJ4uNLejz17WTA0JO4d6m1Ysu
+	5RfnUUMcWMHc7vXeoKjmb7H1NoFmSM3tM8Zo4EKlRHVCai8wmv/GCatYr93b5YiGadaiifJ7XxhH+
+	9ExWkcT4qyHdJOPzZ5yHw7Zushc7PmCRBuYWrCOVATNJ/ziCUAF7sNj/XqpBMicPZmhdXLogeUUEB
+	R6e3gWteHGAziote9oXWEqTppsRilpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2bIc-0000A0-Ah; Tue, 27 Aug 2019 13:14:14 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2bIO-00009I-Fi
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:14:02 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 5B2F42184D
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 13:13:59 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566911639;
- bh=n8ibduXjZXj7Q34xh0Rv5sPDq7/16sV0kGKVNRLgDSs=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=lSNV9HxRdPa/5Ef56wsJ6JYR5Xjq4MdznNNx74DNIz4MOmTAVYNQsoy+Xu1Lk6dBW
- sRVBzin4qJyRoLxOuwFBdMs0YnPpXYwVMWlj8/onYqVPNA/0l4oiiK+0vfrDuiYGNu
- ApTb/71j0CI5hh9Pqi6kf6tBHis1MHAWXGOJnjS4=
-Received: by mail-qt1-f170.google.com with SMTP id t12so21194700qtp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 06:13:59 -0700 (PDT)
-X-Gm-Message-State: APjAAAXoxOzY2quzy3L2IyCvMEWpKGBQCdXCiRpHy/hnY4uuHuGSqdpI
- YWP+xTo9cW0XWM4ppkwILd25bdPFRIW0fmQvOg==
-X-Google-Smtp-Source: APXvYqxM4rKSeMsRFJ0k2CX54SJt1oCxc9GdiuyJ73RX+TOjoI7sPcD0/x/mVMxp/Tq4eyB0bRsd2oxqjdCHpUHNzIA=
-X-Received: by 2002:a0c:eb92:: with SMTP id x18mr20029210qvo.39.1566911638442; 
- Tue, 27 Aug 2019 06:13:58 -0700 (PDT)
-MIME-Version: 1.0
-References: <1566942646-18015-1-git-send-email-peng.fan@nxp.com>
- <1566942646-18015-2-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1566942646-18015-2-git-send-email-peng.fan@nxp.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 27 Aug 2019 08:13:47 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqK7xPTYFzSXt52m+Z0LRcFy2TUfa45XzY1YGH0-JRA-WQ@mail.gmail.com>
-Message-ID: <CAL_JsqK7xPTYFzSXt52m+Z0LRcFy2TUfa45XzY1YGH0-JRA-WQ@mail.gmail.com>
-Subject: Re: [PATCH v4 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-To: Peng Fan <peng.fan@nxp.com>
+	id 1i2bQZ-0006ne-E5; Tue, 27 Aug 2019 13:22:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2bMt-0002ai-1z
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:18:41 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0F84028;
+ Tue, 27 Aug 2019 06:18:36 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0BFC73F246;
+ Tue, 27 Aug 2019 06:18:34 -0700 (PDT)
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 0/6] Fix TLB invalidation on arm64
+Date: Tue, 27 Aug 2019 14:18:12 +0100
+Message-Id: <20190827131818.14724-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_061400_566989_8BA0715D 
-X-CRM114-Status: GOOD (  28.31  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190827_061839_492630_1402BED9 
+X-CRM114-Status: GOOD (  23.17  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,188 +57,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, Mark Rutland <mark.rutland@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
+ Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 4:51 AM Peng Fan <peng.fan@nxp.com> wrote:
->
-> From: Peng Fan <peng.fan@nxp.com>
->
-> The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
-> actions in software layers running in the EL2 or EL3 exception levels.
-> The term "ARM" here relates to the SMC instruction as part of the ARM
-> instruction set, not as a standard endorsed by ARM Ltd.
->
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  .../devicetree/bindings/mailbox/arm-smc.yaml       | 126 +++++++++++++++++++++
->  1 file changed, 126 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
->
-> diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> new file mode 100644
-> index 000000000000..ae677e0c0910
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> @@ -0,0 +1,126 @@
-> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: ARM SMC Mailbox Interface
-> +
-> +maintainers:
-> +  - Peng Fan <peng.fan@nxp.com>
-> +
-> +description: |
-> +  This mailbox uses the ARM smc (secure monitor call) and hvc (hypervisor
-> +  call) instruction to trigger a mailbox-connected activity in firmware,
-> +  executing on the very same core as the caller. By nature this operation
-> +  is synchronous and this mailbox provides no way for asynchronous messages
-> +  to be delivered the other way round, from firmware to the OS, but
-> +  asynchronous notification could also be supported. However the value of
-> +  r0/w0/x0 the firmware returns after the smc call is delivered as a received
-> +  message to the mailbox framework, so a synchronous communication can be
-> +  established, for a asynchronous notification, no value will be returned.
-> +  The exact meaning of both the action the mailbox triggers as well as the
-> +  return value is defined by their users and is not subject to this binding.
-> +
-> +  One use case of this mailbox is the SCMI interface, which uses shared memory
-> +  to transfer commands and parameters, and a mailbox to trigger a function
-> +  call. This allows SoCs without a separate management processor (or when
-> +  such a processor is not available or used) to use this standardized
-> +  interface anyway.
-> +
-> +  This binding describes no hardware, but establishes a firmware interface.
-> +  Upon receiving an SMC using one of the described SMC function identifiers,
-> +  the firmware is expected to trigger some mailbox connected functionality.
-> +  The communication follows the ARM SMC calling convention.
-> +  Firmware expects an SMC function identifier in r0 or w0. The supported
-> +  identifiers are passed from consumers, or listed in the the arm,func-ids
-> +  properties as described below. The firmware can return one value in
-> +  the first SMC result register, it is expected to be an error value,
-> +  which shall be propagated to the mailbox client.
-> +
-> +  Any core which supports the SMC or HVC instruction can be used, as long as
-> +  a firmware component running in EL3 or EL2 is handling these calls.
-> +
-> +properties:
-> +  compatible:
-> +    const: arm,smc-mbox
-> +
-> +  "#mbox-cells":
-> +    const: 1
-> +
-> +  arm,num-chans:
-> +    description: The number of channels supported.
-> +    items:
-> +     minimum: 1
-> +     maximum: 4096 # Should be enough?
-> +
-> +  method:
-> +    items:
+Hi all,
 
-You can drop 'items' as this is a single entry.
+[+linux-arch since the end of this may be applicable to other architectures]
 
-> +      - enum:
-> +          - smc
-> +          - hvc
-> +
-> +  transports:
-> +    items:
+Commit 24fe1b0efad4fcdd ("arm64: Remove unnecessary ISBs from
+set_{pte,pmd,pud") removed ISB instructions immediately following updates to
+the page table, on the grounds that they are not required by the
+architecture and a DSB alone is sufficient to ensure that subsequent data
+accesses use the new translation:
 
-same here
+  DDI0487E_a, B2-128:
 
-> +      - enum:
-> +          - mem
-> +          - reg
-> +
-> +  arm,func-ids:
+  | ... no instruction that appears in program order after the DSB instruction
+  | can alter any state of the system or perform any part of its functionality
+  | until the DSB completes other than:
+  |
+  | * Being fetched from memory and decoded
+  | * Reading the general-purpose, SIMD and floating-point, Special-purpose, or
+  |   System registers that are directly or indirectly read without causing
+  |   side-effects.
 
-Needs a $ref to a type (uint32-array).
+However, the same document also states the following:
 
-> +    description: |
-> +      An array of 32-bit values specifying the function IDs used by each
-> +      mailbox channel. Those function IDs follow the ARM SMC calling
-> +      convention standard [1].
-> +
-> +      There is one identifier per channel and the number of supported
-> +      channels is determined by the length of this array.
-> +    minItems: 0
-> +    maxItems: 4096   # Should be enough?
-> +
-> +required:
-> +  - compatible
-> +  - "#mbox-cells"
-> +  - arm,num-chans
-> +  - transports
-> +  - method
-> +
-> +examples:
-> +  - |
-> +    sram@910000 {
-> +      compatible = "mmio-sram";
-> +      reg = <0x0 0x93f000 0x0 0x1000>;
-> +      #address-cells = <1>;
-> +      #size-cells = <1>;
-> +      ranges = <0 0x0 0x93f000 0x1000>;
-> +
-> +        cpu_scp_lpri: scp-shmem@0 {
+  DDI0487E_a, B2-125:
 
-Looks like some indentation problem...
+  | DMB and DSB instructions affect reads and writes to the memory system
+  | generated by Load/Store instructions and data or unified cache maintenance
+  | instructions being executed by the PE. Instruction fetches or accesses
+  | caused by a hardware translation table access are not explicit accesses.
 
-> +          compatible = "arm,scmi-shmem";
-> +          reg = <0x0 0x200>;
-> +        };
-> +
-> +        cpu_scp_hpri: scp-shmem@200 {
-> +          compatible = "arm,scmi-shmem";
-> +          reg = <0x200 0x200>;
-> +        };
-> +    };
-> +
-> +    firmware {
-> +      smc_mbox: mailbox {
-> +        #mbox-cells = <1>;
-> +        compatible = "arm,smc-mbox";
-> +        method = "smc";
-> +        arm,num-chans = <0x2>;
-> +        transports = "mem";
-> +        /* Optional */
-> +        arm,func-ids = <0xc20000fe>, <0xc20000ff>;
-> +      };
-> +
-> +      scmi {
-> +        compatible = "arm,scmi";
-> +        mboxes = <&mailbox 0 &mailbox 1>;
+which appears to claim that the DSB alone is insufficient. Unfortunately,
+some CPU designers have followed the second clause above, whereas in Linux
+we've been relying on the first. This means that our mapping sequence:
 
-&smc_mbox and <> each entry.
+	MOV	X0, <valid pte>
+	STR	X0, [Xptep]	// Store new PTE to page table
+	DSB	ISHST
+	LDR	X1, [X2]	// Translates using the new PTE
 
-> +        mbox-names = "tx", "rx";
-> +        shmem = <&cpu_scp_lpri &cpu_scp_hpri>;
+can actually raise a translation fault on the load instruction because the
+translation can be performed speculatively before the page table update and
+then marked as "faulting" by the CPU. For user PTEs, this is ok because we
+can handle the spurious fault, but for kernel PTEs and intermediate table
+entries this results in a panic().
 
-<> each entry
+We can fix this by reverting 24fe1b0efad4fcdd, but the fun doesn't stop
+there. If we consider the unmap case, then a similar constraint applies to
+ordering subsequent memory accesses after the completion of the TLB
+invalidation, so we also need to add an ISB instruction to
+__flush_tlb_kernel_pgtable(). For user addresses, the exception return
+provides the necessary context synchronisation.
 
-> +      };
-> +    };
-> +
-> +...
-> --
-> 2.16.4
->
+This then raises an interesting question: if an ISB is required after a TLBI
+instruction to prevent speculative translation of subsequent instructions,
+how is this speculation prevented on concurrent CPUs that receive the
+broadcast TLB invalidation message? Sending and completing a broadcast TLB
+invalidation message does not imply execution of an ISB on the remote CPU,
+however it /does/ require that the remote CPU will no longer make use of any
+old translations because otherwise we wouldn't be able to guarantee that an
+unmapped page could no longer be modified. In this regard, receiving a TLB
+invalidation is in some ways stronger than sending one (where you need the
+ISB).
+
+So far, so good, but the final piece of the puzzle isn't quite so rosy.
+
+*** Other architecture maintainers -- start here! ***
+
+In the case that one CPU maps a page and then sets a flag to tell another
+CPU:
+
+	CPU 0
+	-----
+
+	MOV	X0, <valid pte>
+	STR	X0, [Xptep]	// Store new PTE to page table
+	DSB	ISHST
+	ISB
+	MOV	X1, #1
+	STR	X1, [Xflag]	// Set the flag
+
+	CPU 1
+	-----
+
+loop:	LDAR	X0, [Xflag]	// Poll flag with Acquire semantics
+	CBZ	X0, loop
+	LDR	X1, [X2]	// Translates using the new PTE
+
+then the final load on CPU 1 can raise a translation fault for the same
+reasons as mentioned at the start of this description. In reality, code
+such as:
+
+	CPU 0				CPU 1
+	-----				-----
+	spin_lock(&lock);		spin_lock(&lock);
+	*ptr = vmalloc(size);		if (*ptr)
+	spin_unlock(&lock);			foo = **ptr;
+					spin_unlock(&lock);
+
+will not trigger the fault because there is an address dependency on
+CPU1 which prevents the speculative translation. However, more exotic
+code where the virtual address is known ahead of time, such as:
+
+	CPU 0				CPU 1
+	-----				-----
+	spin_lock(&lock);		spin_lock(&lock);
+	set_fixmap(0, paddr, prot);	if (mapped)
+	mapped = true;				foo = *fix_to_virt(0);
+	spin_unlock(&lock);		spin_unlock(&lock);
+
+could fault. This can be avoided by any of:
+
+	* Introducing broadcast TLB maintenance on the map path
+	* Adding a DSB;ISB sequence after checking a flag which indicates
+	  that a virtual address is now mapped
+	* Handling the spurious fault
+
+Given that we have never observed a problem in the concurrent case under
+Linux and future revisions of the architecture are being tightened so that
+translation table walks are effectively ordered in the same way as explicit
+memory accesses, we no longer treat spurious kernel faults as fatal if the
+page table indicates that the access was valid.
+
+Anyway, this patch series attempts to implement some of this and I plan
+to queue it for 5.4.
+
+Will
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Mark Rutland <mark.rutland@arm.com>
+Cc: Marc Zyngier <maz@kernel.org>
+Cc: Peter Zijlstra <peterz@infradead.org>
+
+--->8
+
+Will Deacon (6):
+  Revert "arm64: Remove unnecessary ISBs from set_{pte,pmd,pud}"
+  arm64: tlb: Ensure we execute an ISB following walk cache invalidation
+  arm64: mm: Add ISB instruction to set_pgd()
+  arm64: sysreg: Add some field definitions for PAR_EL1
+  arm64: mm: Ignore spurious translation faults taken from the kernel
+  arm64: kvm: Replace hardcoded '1' with SYS_PAR_EL1_F
+
+ arch/arm64/include/asm/pgtable.h  | 13 ++++++++++---
+ arch/arm64/include/asm/sysreg.h   |  3 +++
+ arch/arm64/include/asm/tlbflush.h |  1 +
+ arch/arm64/kvm/hyp/switch.c       |  2 +-
+ arch/arm64/mm/fault.c             | 33 +++++++++++++++++++++++++++++++++
+ 5 files changed, 48 insertions(+), 4 deletions(-)
+
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
