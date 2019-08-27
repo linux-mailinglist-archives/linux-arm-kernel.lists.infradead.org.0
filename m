@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 509529EC43
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:19:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 682799EC45
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:19:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,39 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Cf9Zkp8VgCHzQl3qguEwNCsci/zBhGn9oQfLlOwpGLg=; b=kqGkJfZj4wukLk91KS9hhKQLFR
-	AnujsLQ94DsynnbavBv4s36JhSijsd+5+i3ygJsyottCSiMX4yeVdnUi3pV9t+Wk6ZciLcnysOpna
-	3JVGdfxoviauRTDcDEtli0KXNqfoqmJ6Zr/STSjbEPtxZfJQzQrJ8EzW2y/kHndq01qcmfxAKukAA
-	6SwO3EJygO15BAE3H30rEpiktA4+TTQSkViSD8heOKLIzEBXS4/kypoww0rO9FWZJ9iVpGuDQ3e3Q
-	DiQngVijAJDO1j/no/O4grmXkTWST5yZGxvuwnFWFxhj68ryhrEdgaoVOw5+oFRo4i3CGjxLko9xN
-	sonHlpuQ==;
+	bh=0D4sECmqPT69NyCBDUsdOnaTz/2H8f6UaitnC/oIaWA=; b=b7ttpwKjjU8c9WpcsYseggVE3S
+	Mz5PlaMMmz/LMY2m+jh+qfrbbpr5LWYRAtyjK333MKtemZKc37iJ1csEXTdtDdE1QPwOECFhHbS7F
+	OeBhLy70DWGMW4Ed+eHxPtvfLGRapbFJ9o4O8Zsz5mjPSBVOVBeqq2RIQJOqejGtoJeVI1cXAWv7D
+	mk2SitdlmEExNzzqCeOPSkr9c9nsYTeh40FdrtgPqAMA8DuS9MlfMSC76hSS4awZ6RONxlisrPBGe
+	/KGwQmOXSpPM661v5rN0n9EWc+5wXQig0Mhys+x8ze36kKqvxbmz4lcfx94mW3PH+DFLdX6RZhxyq
+	MdadVYSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dFM-0005l4-NI; Tue, 27 Aug 2019 15:19:00 +0000
+	id 1i2dFY-0005xV-29; Tue, 27 Aug 2019 15:19:12 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dEn-0005MD-S6
+ id 1i2dEo-0005MR-7x
  for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:18:27 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F0CCC337;
- Tue, 27 Aug 2019 08:18:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DEFDB360;
+ Tue, 27 Aug 2019 08:18:25 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 4B6CD3F59C;
- Tue, 27 Aug 2019 08:18:24 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 3097E3F59C;
+ Tue, 27 Aug 2019 08:18:25 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] arm64: smp: Don't enter kernel with NULL stack pointer or
- task struct
-Date: Tue, 27 Aug 2019 16:18:14 +0100
-Message-Id: <20190827151815.2160-3-will@kernel.org>
+Subject: [PATCH 3/3] arm64: smp: Treat unknown boot failures as being 'stuck
+ in kernel'
+Date: Tue, 27 Aug 2019 16:18:15 +0100
+Message-Id: <20190827151815.2160-4-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190827151815.2160-1-will@kernel.org>
 References: <20190827151815.2160-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_081825_946691_7514A7F9 
-X-CRM114-Status: GOOD (  10.32  )
+X-CRM114-CacheID: sfid-20190827_081826_375176_1AAB47CB 
+X-CRM114-Status: UNSURE (   9.41  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -69,58 +70,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Although SMP bringup is inherently racy, we can significantly reduce
-the window during which secondary CPUs can unexpectedly enter the
-kernel by sanity checking the 'stack' and 'task' fields of the
-'secondary_data' structure. If the booting CPU gave up waiting for us,
-then they will have been cleared to NULL and we should spin in a WFE; WFI
-loop instead.
+When we fail to bring a secondary CPU online and it fails in an unknown
+state, we should assume the worst and increment 'cpus_stuck_in_kernel'
+so that things like kexec() are disabled.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/kernel/head.S | 8 ++++++++
- arch/arm64/kernel/smp.c  | 1 +
- 2 files changed, 9 insertions(+)
+ arch/arm64/kernel/smp.c | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
-index 2cdacd1c141b..0baadf335172 100644
---- a/arch/arm64/kernel/head.S
-+++ b/arch/arm64/kernel/head.S
-@@ -724,14 +724,22 @@ __secondary_switched:
- 
- 	adr_l	x0, secondary_data
- 	ldr	x1, [x0, #CPU_BOOT_STACK]	// get secondary_data.stack
-+	cbz	x1, __secondary_too_slow
- 	mov	sp, x1
- 	ldr	x2, [x0, #CPU_BOOT_TASK]
-+	cbz	x2, __secondary_too_slow
- 	msr	sp_el0, x2
- 	mov	x29, #0
- 	mov	x30, #0
- 	b	secondary_start_kernel
- ENDPROC(__secondary_switched)
- 
-+__secondary_too_slow:
-+	wfe
-+	wfi
-+	b	__secondary_too_slow
-+ENDPROC(__secondary_too_slow)
-+
- /*
-  * The booting CPU updates the failed status @__early_cpu_boot_status,
-  * with MMU turned off.
 diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
-index 63c7a7682e93..1f8aeb77cba5 100644
+index 1f8aeb77cba5..dc9fe879c279 100644
 --- a/arch/arm64/kernel/smp.c
 +++ b/arch/arm64/kernel/smp.c
-@@ -136,6 +136,7 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
- 
- 	secondary_data.task = NULL;
- 	secondary_data.stack = NULL;
-+	__flush_dcache_area(&secondary_data, sizeof(secondary_data));
- 	status = READ_ONCE(secondary_data.status);
- 	if (ret && status) {
- 
+@@ -147,6 +147,7 @@ int __cpu_up(unsigned int cpu, struct task_struct *idle)
+ 		default:
+ 			pr_err("CPU%u: failed in unknown state : 0x%lx\n",
+ 					cpu, status);
++			cpus_stuck_in_kernel++;
+ 			break;
+ 		case CPU_KILL_ME:
+ 			if (!op_cpu_kill(cpu)) {
 -- 
 2.11.0
 
