@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 874249EAE5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:26:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB9399EAE8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:26:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3Ija3eYuWbj12OcyuzhVGJNCW/Y/u5Au3TcS3/ynggk=; b=IWLAyrfrrRcDNY
-	T2TZGOZ0wUyz0SCzcB/K2XJ2rc2kaNErPtvXUvrCE8LydVaUNfyyd3eFetRzlxH54prFZhJHWcI/i
-	F93zUESO7plTM/9Qfchy2jzhOh515GbTtal4PvsZR0wuJ+t9/FylSeFspZOyzK7Oi0Nyo+Wpj8jhZ
-	BKDjCET1EB2w+nZxwv+Ui3oi/f5vZAus0s32xWRbisLSgHeAF1ldwcRTVbSBXjvP1lAXfCcg5p6Ru
-	BAo2a7on9XMYaI4GfNI66Ou+QVG5GUQVAJBpi8Ktzf28Qz3HYk6hMKTmP8wJK0V4ckTIZikOjSMMy
-	Ole5qlt32CDtCwvd+C1Q==;
+	List-Owner; bh=/qucxxsK0eo6gjgoSlsPswZYYBzSTolGEXn3wRXxVGs=; b=PLzVp5TMRjqH8Q
+	ejs2985QG2NDQfeMxGvwnBiQvAq+wcBAqEOM5D8MTHP2tUFXRli+4KgPp/vw9lKrSesBaMqxG3qIc
+	PHIOp/EcjMt/+DVIPphEqosbCZT2BQA/dD8YPMPvU8YvGC2ml5Ed1JlQ54BRsA3XtZGhuhvyj1SKE
+	zOgy4t9wty1EEuQwQkelh+/4+SIGIZFZyeU4wgfLbtOQHazS0PiOOjCjuYR8yMKJjBfuXuyX8E9Ab
+	AA1jwJEeZJiq0p6PNYJJmZJO1z7ABRgO9/q4v37fTEBsfp+onCUZQ+byw+eTJx7dOkAuk5a3g4sM8
+	r6Y3kNhZ3Uy2rhUHzdIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2cQL-0005PG-Sp; Tue, 27 Aug 2019 14:26:17 +0000
+	id 1i2cQc-0005co-Ez; Tue, 27 Aug 2019 14:26:34 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2cPx-0005FF-Fo
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:25:55 +0000
+ id 1i2cQ0-0005I9-AW
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:25:58 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A832721872;
- Tue, 27 Aug 2019 14:25:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 735AB20828;
+ Tue, 27 Aug 2019 14:25:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566915953;
- bh=g4eeAIyFu2Qc6nElKVtHJTXmo8ZMb+dIHDrxDO/BT7k=;
+ s=default; t=1566915956;
+ bh=YoisSZN2CT2C0575Pt/EXXlF+MGscyp9DpACOKWzxHs=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=VPEf0dQNGptwrHbtbQb0yVqDmGzvD5qJQ04UeC2x6RkNqhsR65jEM2MQtQyjuUAAP
- 6Owv2rihqPrr5jSzHWmnYmUvM8IxvROy6/9iO+/ODEIcvTSikn6Ymly7sWX03qVj5e
- JuZEFEBPOhcA4U1qEOpB7SHsi2HSxuWVwx49kAh4=
+ b=C5Z8jLNy8gyU4uLv5FI681/gRgY12+EeZqK9GyGOF6R+BX1pQr3gV4S9gyfJb0yzT
+ T10qSyVWiz9j4Wu6WDrt5ZDPh+SzsCYyZosOK9kGF7Wkhwo67lRohf6ylBA5kCwLT1
+ 8aXRUbi0XOlPtcQd8og73vhCReHSmrBfKdka0pac=
 From: Maxime Ripard <mripard@kernel.org>
 To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH 2/5] dt-bindings: sound: Convert Allwinner A10 codec to a
+Subject: [PATCH 3/5] dt-bindings: sound: Convert Allwinner A33 codec to a
  schema
-Date: Tue, 27 Aug 2019 16:25:44 +0200
-Message-Id: <20190827142547.14577-2-mripard@kernel.org>
+Date: Tue, 27 Aug 2019 16:25:45 +0200
+Message-Id: <20190827142547.14577-3-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190827142547.14577-1-mripard@kernel.org>
 References: <20190827142547.14577-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_072553_769894_0DCF6D76 
-X-CRM114-Status: GOOD (  16.56  )
+X-CRM114-CacheID: sfid-20190827_072556_536247_FEAB4134 
+X-CRM114-Status: GOOD (  14.08  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,7 +89,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The Allwinner SoCs have an embedded audio codec that is supported in Linux,
+The Allwinner A33 SoC have an embedded audio codec that is supported in Linux,
 with a matching Device Tree binding.
 
 Now that we have the DT validation in place, let's convert the device tree
@@ -97,25 +97,25 @@ bindings for that controller over to a YAML schemas.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- .../sound/allwinner,sun4i-a10-codec.yaml      | 162 ++++++++++++++++++
- .../devicetree/bindings/sound/sun4i-codec.txt |  94 ----------
- 2 files changed, 162 insertions(+), 94 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
- delete mode 100644 Documentation/devicetree/bindings/sound/sun4i-codec.txt
+ .../sound/allwinner,sun8i-a33-codec.yaml      | 57 +++++++++++++++++
+ .../bindings/sound/sun8i-a33-codec.txt        | 63 -------------------
+ 2 files changed, 57 insertions(+), 63 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
 
-diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
 new file mode 100644
-index 000000000000..44feefae0ef0
+index 000000000000..5e7cc05bbff1
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
-@@ -0,0 +1,162 @@
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
+@@ -0,0 +1,57 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-codec.yaml#
++$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a33-codec.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A10 Codec Device Tree Bindings
++title: Allwinner A33 Codec Device Tree Bindings
 +
 +maintainers:
 +  - Chen-Yu Tsai <wens@csie.org>
@@ -126,13 +126,7 @@ index 000000000000..44feefae0ef0
 +    const: 0
 +
 +  compatible:
-+    enum:
-+      - allwinner,sun4i-a10-codec
-+      - allwinner,sun6i-a31-codec
-+      - allwinner,sun7i-a20-codec
-+      - allwinner,sun8i-a23-codec
-+      - allwinner,sun8i-h3-codec
-+      - allwinner,sun8i-v3s-codec
++    const: allwinner,sun8i-a33-codec
 +
 +  reg:
 +    maxItems: 1
@@ -147,56 +141,8 @@ index 000000000000..44feefae0ef0
 +
 +  clock-names:
 +    items:
-+      - const: apb
-+      - const: codec
-+
-+  dmas:
-+    items:
-+      - description: RX DMA Channel
-+      - description: TX DMA Channel
-+
-+  dma-names:
-+    items:
-+      - const: rx
-+      - const: tx
-+
-+  resets:
-+    maxItems: 1
-+
-+  allwinner,audio-routing:
-+    $ref: /schemas/types.yaml#definitions/non-unique-string-array
-+    description: |-
-+      A list of the connections between audio components.  Each entry
-+      is a pair of strings, the first being the connection\'s sink, the
-+      second being the connection\'s source. Valid names include
-+
-+        Audio pins on the SoC
-+          HP
-+          HPCOM
-+          LINEIN    (not on sun8i-v3s)
-+          LINEOUT   (not on sun8i-a23 or sun8i-v3s)
-+          MIC1
-+          MIC2      (not on sun8i-v3s)
-+          MIC3      (only on sun6i-a31)
-+
-+        Microphone biases from the SoC
-+          HBIAS
-+          MBIAS     (not on sun8i-v3s)
-+
-+        Board connectors
-+          Headphone
-+          Headset Mic
-+          Line In
-+          Line Out
-+          Mic
-+          Speaker
-+
-+  allwinner,codec-analog-controls:
-+    $ref: /schemas/types.yaml#/definitions/phandle
-+    description: Phandle to the codec analog controls in the PRCM
-+
-+  allwinner,pa-gpios:
-+    description: GPIO to enable the external amplifier
++      - const: bus
++      - const: mod
 +
 +required:
 +  - "#sound-dai-cells"
@@ -205,172 +151,90 @@ index 000000000000..44feefae0ef0
 +  - interrupts
 +  - clocks
 +  - clock-names
-+  - dmas
-+  - dma-names
-+
-+if:
-+  properties:
-+    compatible:
-+      enum:
-+        - allwinner,sun6i-a31-codec
-+        - allwinner,sun8i-a23-codec
-+        - allwinner,sun8i-h3-codec
-+        - allwinner,sun8i-v3s-codec
-+
-+then:
-+  if:
-+    properties:
-+      compatible:
-+        const: allwinner,sun6i-a31-codec
-+
-+  then:
-+    required:
-+      - resets
-+      - allwinner,audio-routing
-+
-+  else:
-+    required:
-+      - resets
-+      - allwinner,audio-routing
-+      - allwinner,codec-analog-controls
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    codec@1c22c00 {
-+        #sound-dai-cells = <0>;
-+        compatible = "allwinner,sun7i-a20-codec";
-+        reg = <0x01c22c00 0x40>;
-+        interrupts = <0 30 4>;
-+        clocks = <&apb0_gates 0>, <&codec_clk>;
-+        clock-names = "apb", "codec";
-+        dmas = <&dma 0 19>, <&dma 0 19>;
-+        dma-names = "rx", "tx";
-+    };
-+
-+  - |
-+    codec@1c22c00 {
-+        #sound-dai-cells = <0>;
-+        compatible = "allwinner,sun6i-a31-codec";
-+        reg = <0x01c22c00 0x98>;
-+        interrupts = <0 29 4>;
-+        clocks = <&ccu 61>, <&ccu 135>;
-+        clock-names = "apb", "codec";
-+        resets = <&ccu 42>;
-+        dmas = <&dma 15>, <&dma 15>;
-+        dma-names = "rx", "tx";
-+        allwinner,audio-routing =
-+            "Headphone", "HP",
-+            "Speaker", "LINEOUT",
-+            "LINEIN", "Line In",
-+            "MIC1", "MBIAS",
-+            "MIC1", "Mic",
-+            "MIC2", "HBIAS",
-+            "MIC2", "Headset Mic";
++    audio-codec@1c22e00 {
++      #sound-dai-cells = <0>;
++      compatible = "allwinner,sun8i-a33-codec";
++      reg = <0x01c22e00 0x400>;
++      interrupts = <0 29 4>;
++      clocks = <&ccu 47>, <&ccu 92>;
++      clock-names = "bus", "mod";
 +    };
 +
 +...
-diff --git a/Documentation/devicetree/bindings/sound/sun4i-codec.txt b/Documentation/devicetree/bindings/sound/sun4i-codec.txt
+diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
 deleted file mode 100644
-index 66579bbd3294..000000000000
---- a/Documentation/devicetree/bindings/sound/sun4i-codec.txt
+index 7ecf6bd60d27..000000000000
+--- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
 +++ /dev/null
-@@ -1,94 +0,0 @@
--* Allwinner A10 Codec
+@@ -1,63 +0,0 @@
+-Allwinner SUN8I audio codec
+-------------------------------------
+-
+-On Sun8i-A33 SoCs, the audio is separated in different parts:
+-	  - A DAI driver. It uses the "sun4i-i2s" driver which is
+-	  documented here:
+-	  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
+-	  - An analog part of the codec which is handled as PRCM registers.
+-	  See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+-	  - An digital part of the codec which is documented in this current
+-	  binding documentation.
+-	  - And finally, an audio card which links all the above components.
+-	  The simple-audio card will be used.
+-	  See Documentation/devicetree/bindings/sound/simple-card.txt
+-
+-This bindings documentation exposes Sun8i codec (digital part).
 -
 -Required properties:
--- compatible: must be one of the following compatibles:
--		- "allwinner,sun4i-a10-codec"
--		- "allwinner,sun6i-a31-codec"
--		- "allwinner,sun7i-a20-codec"
--		- "allwinner,sun8i-a23-codec"
--		- "allwinner,sun8i-h3-codec"
--		- "allwinner,sun8i-v3s-codec"
+-- compatible: must be "allwinner,sun8i-a33-codec"
 -- reg: must contain the registers location and length
 -- interrupts: must contain the codec interrupt
--- dmas: DMA channels for tx and rx dma. See the DMA client binding,
--	Documentation/devicetree/bindings/dma/dma.txt
--- dma-names: should include "tx" and "rx".
 -- clocks: a list of phandle + clock-specifer pairs, one for each entry
 -  in clock-names.
--- clock-names: should contain the following:
--   - "apb": the parent APB clock for this controller
--   - "codec": the parent module clock
+-- clock-names: should contain followings:
+-   - "bus": the parent APB clock for this controller
+-   - "mod": the parent module clock
 -
--Optional properties:
--- allwinner,pa-gpios: gpio to enable external amplifier
+-Here is an example to add a sound card and the codec binding on sun8i SoCs that
+-are similar to A33 using simple-card:
 -
--Required properties for the following compatibles:
--		- "allwinner,sun6i-a31-codec"
--		- "allwinner,sun8i-a23-codec"
--		- "allwinner,sun8i-h3-codec"
--		- "allwinner,sun8i-v3s-codec"
--- resets: phandle to the reset control for this device
--- allwinner,audio-routing: A list of the connections between audio components.
--			   Each entry is a pair of strings, the first being the
--			   connection's sink, the second being the connection's
--			   source. Valid names include:
+-	sound {
+-		compatible = "simple-audio-card";
+-		simple-audio-card,name = "sun8i-a33-audio";
+-		simple-audio-card,format = "i2s";
+-		simple-audio-card,frame-master = <&link_codec>;
+-		simple-audio-card,bitclock-master = <&link_codec>;
+-		simple-audio-card,mclk-fs = <512>;
+-		simple-audio-card,aux-devs = <&codec_analog>;
+-		simple-audio-card,routing =
+-				"Left DAC", "Digital Left DAC",
+-				"Right DAC", "Digital Right DAC";
 -
--			   Audio pins on the SoC:
--			   "HP"
--			   "HPCOM"
--			   "LINEIN"	(not on sun8i-v3s)
--			   "LINEOUT"	(not on sun8i-a23 or sun8i-v3s)
--			   "MIC1"
--			   "MIC2"	(not on sun8i-v3s)
--			   "MIC3"	(sun6i-a31 only)
+-		simple-audio-card,cpu {
+-			sound-dai = <&dai>;
+-		};
 -
--			   Microphone biases from the SoC:
--			   "HBIAS"
--			   "MBIAS"	(not on sun8i-v3s)
+-		link_codec: simple-audio-card,codec {
+-			sound-dai = <&codec>;
+-		};
 -
--			   Board connectors:
--			   "Headphone"
--			   "Headset Mic"
--			   "Line In"
--			   "Line Out"
--			   "Mic"
--			   "Speaker"
+-	soc@1c00000 {
+-		[...]
 -
--Required properties for the following compatibles:
--		- "allwinner,sun8i-a23-codec"
--		- "allwinner,sun8i-h3-codec"
--		- "allwinner,sun8i-v3s-codec"
--- allwinner,codec-analog-controls: A phandle to the codec analog controls
--				   block in the PRCM.
+-		audio-codec@1c22e00 {
+-			#sound-dai-cells = <0>;
+-			compatible = "allwinner,sun8i-a33-codec";
+-			reg = <0x01c22e00 0x400>;
+-			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+-			clocks = <&ccu CLK_BUS_CODEC>, <&ccu CLK_AC_DIG>;
+-			clock-names = "bus", "mod";
+-		};
+-	};
 -
--Example:
--codec: codec@1c22c00 {
--	#sound-dai-cells = <0>;
--	compatible = "allwinner,sun7i-a20-codec";
--	reg = <0x01c22c00 0x40>;
--	interrupts = <0 30 4>;
--	clocks = <&apb0_gates 0>, <&codec_clk>;
--	clock-names = "apb", "codec";
--	dmas = <&dma 0 19>, <&dma 0 19>;
--	dma-names = "rx", "tx";
--};
--
--codec: codec@1c22c00 {
--	#sound-dai-cells = <0>;
--	compatible = "allwinner,sun6i-a31-codec";
--	reg = <0x01c22c00 0x98>;
--	interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
--	clocks = <&ccu CLK_APB1_CODEC>, <&ccu CLK_CODEC>;
--	clock-names = "apb", "codec";
--	resets = <&ccu RST_APB1_CODEC>;
--	dmas = <&dma 15>, <&dma 15>;
--	dma-names = "rx", "tx";
--	allwinner,audio-routing =
--		"Headphone", "HP",
--		"Speaker", "LINEOUT",
--		"LINEIN", "Line In",
--		"MIC1",	"MBIAS",
--		"MIC1", "Mic",
--		"MIC2", "HBIAS",
--		"MIC2", "Headset Mic";
--};
 -- 
 2.21.0
 
