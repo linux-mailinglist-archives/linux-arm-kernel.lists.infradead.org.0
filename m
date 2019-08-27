@@ -2,74 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 371E29EBDE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:06:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 161349EBF2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:09:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Na4krZVADRHLz64Ux57NISO7F7rYdMBMTTfdgffHtXA=; b=G5slDh3jwWurtJ
-	jGJ7uNpqPj+F53+dmyRfLCzamAYlpuvXA2z2Y4L251t4qnbJZgusFsgQbLdUG7cOaKabfF9jRafaf
-	AMQ0XIFqyMMatvTwmre1jbVGSusLrS3jproGuuGMTi7WBsViiIupWxcXv2OLD5wDX8Kzg3t2pFRLD
-	0XkXh0QxBBx6FN3Rqmj/Rlmzaf/TGwW55gqZFVxYruGZrt+NyKLU1XWD2I457v5uYcSEBcz4J+nd9
-	pe9hZdHGYizD8Ihshn+mZRB6RIJdJF5HEcBkMNuc0O5GwBermJL4iCOXPOh13ani8pHdRzDexawNM
-	c3/EWejPL4sxwNBE0TUg==;
+	List-Owner; bh=M3LuV+OxckxQkBgvMNNuakk7C7qZRK/ucQWeed7r2KQ=; b=aP2DIjjG/T9NMg
+	WIAcDCl5Zp2qPUmnFvg5Em9Nao7TJ0G2D/MIYaV4UxdK3wVsgCDQ01fKUWODOPs7U5ZmcF5d9prgU
+	pWoVMHZZaWzNb4OXKd3zH5AScTFozz0gQyoMTJULamWGhB9OrLF4CtvfPgX3rcNJFh78l69MSkfso
+	ckD2iR6yF4M07gvUXI7iKDIagiI6uzzYkv/hdGcI6IHy7s24slgTGKwbrP49cB/ppgq08yTZTcT14
+	SfptEPhUcuZRhzuQMWlAVwRxLi+kwicvKraiC07QNYbUnXJMoHoarekPKR2N/Oaj6HbisRT00dl2H
+	VLAFldHo+WDHSEXOdxcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2d3O-000794-SK; Tue, 27 Aug 2019 15:06:38 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1i2d5f-0007YO-G6; Tue, 27 Aug 2019 15:08:59 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2d36-00071m-Hc
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:06:22 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Usqt65qKCjW/SaanMddOsovi4Ansin8CNvgKX8B3UgI=; b=TUGwbzRp9V7EITrN5S0x0Kr1h
- lrjEaPLBpRfSGGvIWY/DanU0uumSNFLQ+DZBNjadjBC5dtkaPpKQDbKx4tDmcEeY4tO7/XgX8Luky
- LNITSD5W7yPZZCwS583g4HvX7RUrqefOSQH0B0WjBPOW0iYfKPI837f61jkbWwdXsMrawP9ZAjWal
- TRJXoD3Ltc62QphcGOMJVGrdWHje9c6QY23nG48l9j8ahEypW29Q8Htops4bei1liVd1Vo6+NcUb/
- qeZKfRcnn65gAExGZc5LqSUDrOhycXc/UrX/yijndaq7BiSDye6rl3a5VMfIC1AznvFvnluy159O7
- IqCh+OMtA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:38672)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i2d32-00058Q-3K; Tue, 27 Aug 2019 16:06:16 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i2d30-0005q3-Oj; Tue, 27 Aug 2019 16:06:14 +0100
-Date: Tue, 27 Aug 2019 16:06:14 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: Re: Continuous SD IO causes hung task messages
-Message-ID: <20190827150614.GN13294@shell.armlinux.org.uk>
-References: <20190827134337.GK13294@shell.armlinux.org.uk>
- <CAPDyKFp7e2OD_idam3-2sEd0wJU5OcP=H04G1OvHmAUo2Y-bYw@mail.gmail.com>
- <20190827143634.GL13294@shell.armlinux.org.uk>
- <20190827145216.GM13294@shell.armlinux.org.uk>
+ id 1i2d5V-0007Wn-Ed
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:08:51 +0000
+Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7RF27Ps026516; Tue, 27 Aug 2019 17:08:29 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=STMicroelectronics;
+ bh=WCVwMfXR8g1j5Zrd8gSemrcYNLfQjqC+GHfOy9t5zVo=;
+ b=v84wXD4zkDFkoWgr/paZtKm5VOcO5Nrnzm7i0EE2WfaYqJa3fi7e2mIQ4iIz+sLvtCvr
+ 5/ewb5Q4At/B/iv1d+9B1wSTKn3U39s/W1ipI9+0A+tIJ/6Q+NZLvC1iDmrf5Qvi6MuO
+ fgD7nXic52Sre8I0aymQ/tj8WU7dkiBBRymnEWeqThDHfCXw5rvfKTDCJykbj5pdNGyM
+ NRjeE8FlDpMjzCLNMbYWjDVB0sXIlVhdr5nIMdOP1oyq7/py2u304A9hR0RibjYzeL1G
+ iZZ6eMbS/XXEy/WayuibsrKp/Utelpdr+pITnYWg1YY/gFVDrzMrJrqyH35TQccFqP7C gQ== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2ujv4kt4as-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 27 Aug 2019 17:08:29 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id CB53B52;
+ Tue, 27 Aug 2019 15:08:20 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7AFAE2B6ABC;
+ Tue, 27 Aug 2019 17:08:20 +0200 (CEST)
+Received: from SFHDAG5NODE1.st.com (10.75.127.13) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 27 Aug
+ 2019 17:08:20 +0200
+Received: from SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6]) by
+ SFHDAG5NODE1.st.com ([fe80::cc53:528c:36c8:95f6%20]) with mapi id
+ 15.00.1473.003; Tue, 27 Aug 2019 17:08:19 +0200
+From: Gerald BAEZA <gerald.baeza@st.com>
+To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>, Alexandre TORGUE
+ <alexandre.torgue@st.com>, "corbet@lwn.net" <corbet@lwn.net>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>, "olof@lixom.net"
+ <olof@lixom.net>, "arnd@arndb.de" <arnd@arndb.de>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "devicetree@vger.kernel.org"
+ <devicetree@vger.kernel.org>, "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>, "linux-doc@vger.kernel.org"
+ <linux-doc@vger.kernel.org>
+Subject: [PATCH v3 2/5] dt-bindings: perf: stm32: ddrperfm support
+Thread-Topic: [PATCH v3 2/5] dt-bindings: perf: stm32: ddrperfm support
+Thread-Index: AQHVXOlCMu3qbdWcXEe5CqPZR/zfNQ==
+Date: Tue, 27 Aug 2019 15:08:19 +0000
+Message-ID: <1566918464-23927-3-git-send-email-gerald.baeza@st.com>
+References: <1566918464-23927-1-git-send-email-gerald.baeza@st.com>
+In-Reply-To: <1566918464-23927-1-git-send-email-gerald.baeza@st.com>
+Accept-Language: fr-FR, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-ms-exchange-transport-fromentityheader: Hosted
+x-originating-ip: [10.75.127.50]
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190827145216.GM13294@shell.armlinux.org.uk>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-27_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_080620_849422_4A1B8DD7 
-X-CRM114-Status: GOOD (  23.53  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190827_080849_967393_824F31FB 
+X-CRM114-Status: GOOD (  14.12  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -89,156 +113,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Gerald BAEZA <gerald.baeza@st.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 03:52:17PM +0100, Russell King - ARM Linux admin wrote:
-> On Tue, Aug 27, 2019 at 03:36:34PM +0100, Russell King - ARM Linux admin wrote:
-> > On Tue, Aug 27, 2019 at 03:55:23PM +0200, Ulf Hansson wrote:
-> > > On Tue, 27 Aug 2019 at 15:43, Russell King - ARM Linux admin
-> > > <linux@armlinux.org.uk> wrote:
-> > > >
-> > > > Hi,
-> > > >
-> > > > While dd'ing the contents of a SD card, I get hung task timeout
-> > > > messages as per below.  However, the dd is making progress.  Any
-> > > > ideas?
-> > > >
-> > > > Presumably, mmc_rescan doesn't get a look-in while IO is progressing
-> > > > for the card?
-> > > 
-> > > Is it a regression?
-> > > 
-> > > There not much of recent mmc core and mmc block changes, that I can
-> > > think of at this point.
-> > 
-> > No idea - I just repaired the SD socket after the D2 line became
-> > disconnected, and decided to run that command as a test.
-> > 
-> > > > ARM64 host, Macchiatobin, uSD card.
-> > > 
-> > > What mmc host driver is it? mmci?
-> > 
-> > sdhci-xenon.
-> > 
-> > I'm just trying with one CPU online, then I'll try with two.  My
-> > suspicion is that there's a problem in the ARM64 arch code where
-> > unlocking a mutex doesn't get noticed on other CPUs.
-> > 
-> > Hmm, I thought I'd try bringing another CPU online, but it seems
-> > like the ARM64 CPU hotplug code is broken:
-> > 
-> > [ 3552.029689] CPU1: shutdown
-> > [ 3552.031099] psci: CPU1 killed.
-> > [ 3949.835212] CPU1: failed to come online
-> > [ 3949.837753] CPU1: failed in unknown state : 0x0
-> > 
-> > which means I can only take CPUs down, I can't bring them back
-> > online without rebooting.
-> 
-> Okay, running on a single CPU shows no problems.
-> 
-> Running on four CPUs (as originally) shows that the kworker thread
-> _never_ gets scheduled, so the warning is not false.
-> 
-> With three CPUs, same problem.
-> 
-> root@arm-d06300000000:~# ps aux | grep ' D '
-> root        34  0.0  0.0      0     0 ?        D    15:38   0:00 [kworker/1:1+events_freezable]
-> root@arm-d06300000000:~# cat /proc/34/sched
-> kworker/1:1 (34, #threads: 1)
-> -------------------------------------------------------------------
-> se.exec_start                                :        318689.992440
-> se.vruntime                                  :         37750.882357
-> se.sum_exec_runtime                          :             9.421240
-> se.nr_migrations                             :                    0
-> nr_switches                                  :                 1174
-> nr_voluntary_switches                        :                 1171
-> nr_involuntary_switches                      :                    3
-> se.load.weight                               :              1048576
-> se.runnable_weight                           :              1048576
-> se.avg.load_sum                              :                    6
-> se.avg.runnable_load_sum                     :                    6
-> se.avg.util_sum                              :                 5170
-> se.avg.load_avg                              :                    0
-> se.avg.runnable_load_avg                     :                    0
-> se.avg.util_avg                              :                    0
-> se.avg.last_update_time                      :         318689991680
-> se.avg.util_est.ewma                         :                   10
-> se.avg.util_est.enqueued                     :                    0
-> policy                                       :                    0
-> prio                                         :                  120
-> clock-delta                                  :                    0
-> 
-> The only thing that changes there is "clock-delta".  When I kill the
-> dd, I get:
-> 
-> root@arm-d06300000000:~# cat /proc/34/sched
-> kworker/1:1 (34, #threads: 1)
-> -------------------------------------------------------------------
-> se.exec_start                                :        574025.791680
-> se.vruntime                                  :         79996.657300
-> se.sum_exec_runtime                          :            10.916400
-> se.nr_migrations                             :                    0
-> nr_switches                                  :                 1403
-> nr_voluntary_switches                        :                 1400
-> nr_involuntary_switches                      :                    3
-> se.load.weight                               :              1048576
-> se.runnable_weight                           :              1048576
-> se.avg.load_sum                              :                   15
-> se.avg.runnable_load_sum                     :                   15
-> se.avg.util_sum                              :                15007
-> se.avg.load_avg                              :                    0
-> se.avg.runnable_load_avg                     :                    0
-> se.avg.util_avg                              :                    0
-> se.avg.last_update_time                      :         574025791488
-> se.avg.util_est.ewma                         :                   10
-> se.avg.util_est.enqueued                     :                    0
-> policy                                       :                    0
-> prio                                         :                  120
-> clock-delta                                  :                   40
-> 
-> so the thread makes forward progress.
-> 
-> Down to two CPUs:
-> 
-> root@arm-d06300000000:~# ps aux | grep ' D '
-> root        34  0.0  0.0      0     0 ?        D    15:38   0:00 [kworker/1:1+events_freezable]
-> 
-> Same symptoms.  dd and md5sum switch between CPU 0 and CPU1.
+The DDRPERFM is the DDR Performance Monitor embedded in STM32MP1 SOC.
 
-Hmm.
+This documentation indicates how to enable stm32-ddr-pmu driver on
+DDRPERFM peripheral, via the device tree.
 
-static blk_status_t mmc_mq_queue_rq(struct blk_mq_hw_ctx *hctx,
-                                    const struct blk_mq_queue_data *bd)
+Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
+---
+ Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
 
-        mq->in_flight[issue_type] += 1;
-	get_card = (mmc_tot_in_flight(mq) == 1);
-
-        if (get_card)
-	        mmc_get_card(card, &mq->ctx);
-
-mmc_get_card() gets the host lock according to the card.
-
-So, if we always have requests in flight (which is probably the case
-here) we never drop the host lock, and mmc_rescan() never gets a look
-in - hence blocking the kworker.
-
-So this is a real issue with MMC, and not down to something in the
-arch.
-
-I suspect the reason that single-CPU doesn't show it is because it is
-unable to keep multiple requests in flight.
-
+diff --git a/Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt b/Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
+new file mode 100644
+index 0000000..87ab12e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/perf/stm32-ddr-pmu.txt
+@@ -0,0 +1,16 @@
++* STM32 DDR Performance Monitor (DDRPERFM)
++
++Required properties:
++- compatible: must be "st,stm32-ddr-pmu".
++- reg: physical address and length of the registers set.
++- clocks: phandle and specifier for DDRPERFM input clock
++- resets: phandle and specifier for DDRPERFM reset
++
++Example:
++	ddrperfm: perf@5a007000 {
++		compatible = "st,stm32-ddr-pmu";
++		reg = <0x5a007000 0x400>;
++		clocks = <&rcc DDRPERFM>;
++		resets = <&rcc DDRPERFM_R>;
++	};
++
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
