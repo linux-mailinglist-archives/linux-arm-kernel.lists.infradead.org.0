@@ -2,85 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B8449F442
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 22:40:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C1DAF9F481
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 22:50:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=bkriwvqYeY2bd0MwNrhwH9nNeVGwkSWI0rx/ew22aiI=; b=RKAV/XfOXANseKXGwYywltrG2
-	OzlnR/4YkZNaA8u0ChFdaEgjn6GjniJBGQQ4gGuwdYkBWoK2nII25Bu8CduTLFWcdUrXoxxjtck4Y
-	Y8kPrJp5q2ggcDZDPhB/720KvXOMpeR0NbTVdEY7XxKjbvWkhJXNshGKPEbSkjkZcLYVRpUCnaBTn
-	BxtDDX35RlIEflcl8klXZny2E8TMazjMwrcsS3boM81EF3Bwn4Ci/Vj/ExgiuZQBsGlDCkSMr027z
-	HYT6soUV3g7p8wA6fTJ0AELqBY6iwl+Iq5/UM6berDNaGhJze+kGFaNWF9xiU5I7b8zFTsfmGwtd+
-	ZHo9a0Wug==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=VDGCqHndH+ynfD0h7s6k61rNUDvidQU4fmItgDnFlCQ=; b=TYN0sBFcDNh4Tm
+	3gvOjwA5KqQ2IOgSiiBG2J7P4C4vhVey8FGp4RBy6/txzjw7PfNw8AHUldVjyb+3Iun3vnGONgkEQ
+	RFKzFxSrSGWGV325MfmYvcyPPiWQwRhvpvZ0gPphffpj7g6SXxRxpmfr/sn25OPSKdSHfLHgxaRXl
+	Hsaf6pmRDMXvxQGTuoaLsKlG+MilJ3Yh31JXUBaKW67dah7m4XY9Xv1r5YTeofhXw1MPKkqIWE74w
+	Zo62+Sjt2YB0kWf7vgA57sJmbs753/5J2wC6U22YjBX/a8eZ9oC7HaYo9xZw9gV4wHdQGBwLu3jjV
+	HcmhL/6hFNKtEUXF+ufA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2iGV-0004bc-4r; Tue, 27 Aug 2019 20:40:31 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i2iPj-0006av-Ld; Tue, 27 Aug 2019 20:50:03 +0000
+Received: from gate2.alliedtelesis.co.nz ([202.36.163.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2iGH-0004bF-Lm
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 20:40:19 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y19so182050wrd.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 13:40:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=LVY+aGgV5phVkgMSXjfnQV4zLurQzKqT7u/u8Bbhqn4=;
- b=SdSulqDQhvJQaCl/gqpRI29PMKcIigY1c472uiQr0zBUH0suP/3zID/TWaFKLGGxt6
- wJU4/jiPdnLLZ98QU2A5JBMHijilc4FRAF9U1kvjapIdUhWELzGMNFxpZJT2qx3bai4t
- XnCyR06QWZxXtqEDbK+YC3i+qsylW9SxNrCTY=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=LVY+aGgV5phVkgMSXjfnQV4zLurQzKqT7u/u8Bbhqn4=;
- b=lCue8+CiptDHnYfL3M3UJvlxwi/0r+5RkEWAymdMW+XvL3Mhj4CQ3+TE5wpgX/qXj/
- wfUPv/fSaWAbP/DEeaGe6C/OM+n8K6rJHzRtadTFb9V+4YG93sSIVc6926yTA6y2sO/6
- Azm2IWXOpIUAehV5zYDzQkYKOSMJayEbygAqqMq9T+ItOqg5w+PiJs5RzIHIZQR6ra36
- xJTeBUSq+J5wFQ8l3jrWn5+PC7tShijyZ4bG6OUplyDqxYUsQFMYer1UDPp9oebJla2v
- lyhspY36XgEm31NHc+rC5onjGEAhba10vL2mU8zt7gemf1YwrimGu88vjp2cTpk5cdFv
- qTNw==
-X-Gm-Message-State: APjAAAU03OSv0eloPjh7qq5tnUGHZ83AS4hfBoM+5qN/uSnNUyVbB8k9
- c+oPZ0XWRFjDkZcwjMzUmRHyxQ==
-X-Google-Smtp-Source: APXvYqw2S8S1S6srBLnhNXgrsUaeESkm3bBtz02xDGo7Ut/x/S+256UHwPqj2L8/y9Wugysbq7pyJQ==
-X-Received: by 2002:adf:ce81:: with SMTP id r1mr133139wrn.114.1566938414417;
- Tue, 27 Aug 2019 13:40:14 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id d69sm189454wmd.4.2019.08.27.13.40.11
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 27 Aug 2019 13:40:13 -0700 (PDT)
-Subject: Re: [PATCH net-next] phy: mdio-bcm-iproc: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>, andrew@lunn.ch, f.fainelli@gmail.com, 
- hkallweit1@gmail.com, davem@davemloft.net, rjui@broadcom.com,
- sbranden@broadcom.com
-References: <20190827134616.11396-1-yuehaibing@huawei.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <27e43388-bc8f-6a36-5696-beb3b8d140d4@broadcom.com>
-Date: Tue, 27 Aug 2019 13:40:08 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i2iPU-0006Zt-84
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 20:49:50 +0000
+Received: from mmarshal3.atlnz.lc (mmarshal3.atlnz.lc [10.32.18.43])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by gate2.alliedtelesis.co.nz (Postfix) with ESMTPS id 1A0AD80719;
+ Wed, 28 Aug 2019 08:49:37 +1200 (NZST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alliedtelesis.co.nz;
+ s=mail181024; t=1566938977;
+ bh=PIfUy1UaDG+Bm4sZignWk5XvEQ/zp3pqmJ+geIdmjL0=;
+ h=From:To:Cc:Subject:Date;
+ b=xGg/ts7PoziI5S+5a9MLyXR3CXvJXGUTj1L669GdIu/XYGn9r6xjslEF1ZpHJ6wk7
+ 09FJ5rvsIAhkQhhcArglrzLanf+/ONLRyfR9tRQbspU9rRjfypE33+YZHL2zLDmBoY
+ Eb923LYCdI5Fbphyg/OVRr6krgmwFRGMvfG79CGWT5OnF5Azu+oTxMZcw229KnUr8Z
+ PxeH8XEUygujBPGdKTt1kx2LGQwMQUFwMfgUBYrPKpO3M38FAVdJwtHc/kpLoRc4T5
+ VjiD4jy6adYRjyH4+KfwtwND99baR7B8xKE5nLjyE+hq6NE3BbLH96I+LDV66Sbmd5
+ 9wMLGdUlJsACw==
+Received: from smtp (Not Verified[10.32.16.33]) by mmarshal3.atlnz.lc with
+ Trustwave SEG (v7, 5, 8, 10121)
+ id <B5d6597610000>; Wed, 28 Aug 2019 08:49:37 +1200
+Received: from chrisp-dl.ws.atlnz.lc (chrisp-dl.ws.atlnz.lc [10.33.22.20])
+ by smtp (Postfix) with ESMTP id 7C09C13EECA;
+ Wed, 28 Aug 2019 08:49:39 +1200 (NZST)
+Received: by chrisp-dl.ws.atlnz.lc (Postfix, from userid 1030)
+ id 7BBD8289DE2; Wed, 28 Aug 2019 08:49:36 +1200 (NZST)
+From: Chris Packham <chris.packham@alliedtelesis.co.nz>
+To: patches@armlinux.org.uk, linux@armlinux.org.uk, mark.rutland@arm.com,
+ jlu@pengutronix.de, gregory.clement@free-electrons.com, bp@alien8.de
+Subject: [PATCH] ARM: l2c: move cache-aurora-l2.h to asm/hardware
+Date: Wed, 28 Aug 2019 08:49:22 +1200
+Message-Id: <20190827204922.14832-1-chris.packham@alliedtelesis.co.nz>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-In-Reply-To: <20190827134616.11396-1-yuehaibing@huawei.com>
-Content-Language: en-US
+x-atlnz-ls: pat
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_134017_721111_C7B00977 
-X-CRM114-Status: GOOD (  17.18  )
+X-CRM114-CacheID: sfid-20190827_134948_482736_E7B8C7C1 
+X-CRM114-Status: UNSURE (   9.88  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
+ no trust [202.36.163.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -88,7 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,51 +86,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Chris Packham <chris.packham@alliedtelesis.co.nz>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-edac@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+From: Jan Luebbe <jlu@pengutronix.de>
 
+This include file will be used by the AURORA EDAC code.
 
-On 2019-08-27 6:46 a.m., YueHaibing wrote:
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
-> 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->   drivers/net/phy/mdio-bcm-iproc.c | 4 +---
->   1 file changed, 1 insertion(+), 3 deletions(-)
-> 
-> diff --git a/drivers/net/phy/mdio-bcm-iproc.c b/drivers/net/phy/mdio-bcm-iproc.c
-> index 7d0f388..7e9975d 100644
-> --- a/drivers/net/phy/mdio-bcm-iproc.c
-> +++ b/drivers/net/phy/mdio-bcm-iproc.c
-> @@ -123,15 +123,13 @@ static int iproc_mdio_probe(struct platform_device *pdev)
->   {
->   	struct iproc_mdio_priv *priv;
->   	struct mii_bus *bus;
-> -	struct resource *res;
->   	int rc;
->   
->   	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
->   	if (!priv)
->   		return -ENOMEM;
->   
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	priv->base = devm_ioremap_resource(&pdev->dev, res);
-> +	priv->base = devm_platform_ioremap_resource(pdev, 0);
->   	if (IS_ERR(priv->base)) {
->   		dev_err(&pdev->dev, "failed to ioremap register\n");
->   		return PTR_ERR(priv->base);
-> 
+Signed-off-by: Jan Luebbe <jlu@pengutronix.de>
+Reviewed-by: Gregory CLEMENT <gregory.clement@free-electrons.com>
+Signed-off-by: Chris Packham <chris.packham@alliedtelesis.co.nz>
+---
+KernelVersion: 5.3rc
 
-Looks good to me. Thanks.
+Hi Russell,
 
-Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+This is the missing first patch for the Armada EDAC series
+https://www.armlinux.org.uk/developer/patches/viewpatch.php?id=8885/1
+
+ arch/arm/{mm => include/asm/hardware}/cache-aurora-l2.h | 0
+ arch/arm/mm/cache-l2x0.c                                | 2 +-
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename arch/arm/{mm => include/asm/hardware}/cache-aurora-l2.h (100%)
+
+diff --git a/arch/arm/mm/cache-aurora-l2.h b/arch/arm/include/asm/hardware/cache-aurora-l2.h
+similarity index 100%
+rename from arch/arm/mm/cache-aurora-l2.h
+rename to arch/arm/include/asm/hardware/cache-aurora-l2.h
+diff --git a/arch/arm/mm/cache-l2x0.c b/arch/arm/mm/cache-l2x0.c
+index 5b251c8ecd45..428d08718107 100644
+--- a/arch/arm/mm/cache-l2x0.c
++++ b/arch/arm/mm/cache-l2x0.c
+@@ -18,8 +18,8 @@
+ #include <asm/cp15.h>
+ #include <asm/cputype.h>
+ #include <asm/hardware/cache-l2x0.h>
++#include <asm/hardware/cache-aurora-l2.h>
+ #include "cache-tauros3.h"
+-#include "cache-aurora-l2.h"
+ 
+ struct l2c_init_data {
+ 	const char *type;
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
