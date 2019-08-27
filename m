@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B44499E73D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 14:00:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C57E9E744
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 14:01:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O1BdYi7eXNHLIEcYNW4DR/QHCnzQ1maLFGq3DsWT+W8=; b=qNRr3286xtL6o2
-	TWKTRytFs7rx/LFSQKmYIfODop1zS8W9ep7MgjL9V/G4PVQPOVJTclPvbf9LF+LI9NyfTCKKDuZKc
-	UnMZYRL/bzHSrOWhzAvKGgvxLc/cLYTlrUcPs6iWTdRJ3/SH1tCu60PvkzcpLtAnSRZrm9oLtE6VI
-	uF/9QN3D2gao9Cq7PLclkd8VT/V40BSoiEGUHX/pbTdbNncPYvvPo1yYkbVnxtLdqqrb9Oz1HqiqH
-	GcwHo9kkg1k6xePIROKfAk0K9hwcQfHYC+YDRD81Fh3ipzMrvueMnBjJHAwhRvIxupgziuHi3AJSG
-	1pUPgVh/weecDEntkFOg==;
+	List-Owner; bh=wnQ6u0Hc65318GGCWufR/fcQzj0duWRQXw34DyO0qxU=; b=cDkRQumgzEbYMw
+	tQCFF7nrQL7GHX6O6/XOGn9uq35jjjaPyiCtJzyDSFon6CDYNqCu74Gt/Q4yIJ0AV6GPjxG+nG2vw
+	szvJjGIaXHnYAOb/JnYaMWw/bL+7FxPT8G8rHKccLOhwOJAH0jfFBBMwniQmqjtiFMAho/PJCNrcy
+	ICnTn/TvjkTvWoLiUhd7VsXjND78UZSDUBmiGt3ObtI8+wSmbAO0XKoVJs1lWe1HGL5T+wsVLWdeC
+	Lkd4hB0VGH8RPwpcaiCH1r+H5kUyhSM0B9LKDwR7d7thNogDrRh4YE5kyDAVqpEQtM0a+R7TTgoct
+	yVmScOAonettRnbzGNbA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2a98-0005QL-Lp; Tue, 27 Aug 2019 12:00:23 +0000
+	id 1i2aAB-0006m5-TD; Tue, 27 Aug 2019 12:01:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2a8k-0005K0-LT
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 12:00:00 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
+ id 1i2a9w-0006lh-Ge
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 12:01:13 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3280F22CBB
+ by mail.kernel.org (Postfix) with ESMTPSA id 110F322CBB
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 11:59:58 +0000 (UTC)
+ Tue, 27 Aug 2019 12:01:12 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566907198;
- bh=cojGaPwwiuNAb/W4vwUgL1AZRj1AsasbQrMb/I1e6iI=;
+ s=default; t=1566907272;
+ bh=+qDRaZrhhb1AnXiN2Q6owroXAmMbmaNMt1oSngi0vxU=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=T0pJ99OEmlQBr7pPoQJoDHmOtqwMOKuEXwbmbigauW6MlUwHMiCooYtqwR8OgpAnS
- Z8xNy1gdTVGPI3MkG+btJusN57WfVBUu3E5qOHKl96b73LRExbxcxFew7In4KKhx+o
- T/avNFZxabrlaVvNYxVFrq6mQ0633EAHtFlX4mVU=
-Received: by mail-qt1-f170.google.com with SMTP id z4so20991823qtc.3
+ b=kgZKzWyNadkQtNARRc1kbQlQ/WqYEk4l/taMGSezQMcG60hiIgIYMg8ExvVaybs+u
+ zFUlKdXzmw5W7d5bGWOP+KluMTFo/rBz736H6LPK53jWo6joBHjLJlWy62dw/9dzDx
+ ywdb4M1KVJwXKM2jHpcQb3T7eNKK2nS7SDy8kitU=
+Received: by mail-qt1-f176.google.com with SMTP id l9so20952236qtu.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 04:59:58 -0700 (PDT)
-X-Gm-Message-State: APjAAAV4rAAG+mTz7y+sKt3xlYnWCkKoBIJXwoRJmrA4sfNLJyKMg9Sy
- ic3wg54MRZu3bAg4numcnOzPInF6M+PFzKF1/A==
-X-Google-Smtp-Source: APXvYqxzLkdUJzCt/zWOg6IuhiGFBaSLvGFnC+KgLNTyvxF+vcnBvHOa0oGv5spSX6RPZ8f6ZyHhXNAQ/NwAtPhzuWs=
-X-Received: by 2002:aed:22b3:: with SMTP id p48mr20191755qtc.136.1566907197288; 
- Tue, 27 Aug 2019 04:59:57 -0700 (PDT)
+ Tue, 27 Aug 2019 05:01:12 -0700 (PDT)
+X-Gm-Message-State: APjAAAVlysfRzBMBhZmRCCHt1JUZahjvzGAWWNunKWwr4mFD98RXEBOi
+ bL9V6cICpFDSVRAhF+QFA5ZMJEjAJffTukNCNw==
+X-Google-Smtp-Source: APXvYqyEt2vkODWvj59K6AZBb5LQezLcB8zz2BLGw5qL8r/voX1ixWgv8a0d3shB2fnZUTj0/du4MZQda3++8ScIa+w=
+X-Received: by 2002:aed:24f4:: with SMTP id u49mr22661391qtc.110.1566907271254; 
+ Tue, 27 Aug 2019 05:01:11 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190822092643.593488-1-lkundrak@v3.sk>
- <20190822092643.593488-3-lkundrak@v3.sk>
-In-Reply-To: <20190822092643.593488-3-lkundrak@v3.sk>
+ <20190822092643.593488-4-lkundrak@v3.sk>
+In-Reply-To: <20190822092643.593488-4-lkundrak@v3.sk>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 27 Aug 2019 06:59:45 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJ4_h+M=6L-nzK2N+A9TAy-N8SoiFv1SSTk_kCcKt0eXw@mail.gmail.com>
-Message-ID: <CAL_JsqJ4_h+M=6L-nzK2N+A9TAy-N8SoiFv1SSTk_kCcKt0eXw@mail.gmail.com>
-Subject: Re: [PATCH v2 02/20] dt-bindings: arm: Convert Marvell MMP board/soc
- bindings to json-schema
+Date: Tue, 27 Aug 2019 07:00:59 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKb4j5Yz2RvOY=H7iCQzMS6Y6pqhkSv+CLzQ2L=jzSHTg@mail.gmail.com>
+Message-ID: <CAL_JsqKb4j5Yz2RvOY=H7iCQzMS6Y6pqhkSv+CLzQ2L=jzSHTg@mail.gmail.com>
+Subject: Re: [PATCH v2 03/20] dt-bindings: arm: mrvl: Document MMP3 compatible
+ string
 To: Lubomir Rintel <lkundrak@v3.sk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_045958_744651_165CD7E4 
-X-CRM114-Status: GOOD (  16.00  )
+X-CRM114-CacheID: sfid-20190827_050112_578453_DEEBFB20 
+X-CRM114-Status: GOOD (  12.28  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -100,94 +100,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 4:27 AM Lubomir Rintel <lkundrak@v3.sk> wrote:
+On Thu, Aug 22, 2019 at 4:33 AM Lubomir Rintel <lkundrak@v3.sk> wrote:
 >
-> Convert Marvell MMP SoC bindings to DT schema format using json-schema.
+> Marvel MMP3 is a successor to MMP2, containing similar peripherals with two
+> PJ4B cores.
 >
 > Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 >
 > ---
 > Changes since v1:
-> - Added this patch
+> - Rebased on top of mrvl.txt->mrvl.yaml conversion
 >
->  .../devicetree/bindings/arm/mrvl/mrvl.txt     | 14 ---------
->  .../devicetree/bindings/arm/mrvl/mrvl.yaml    | 31 +++++++++++++++++++
->  2 files changed, 31 insertions(+), 14 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/mrvl/mrvl.txt
->  create mode 100644 Documentation/devicetree/bindings/arm/mrvl/mrvl.yaml
->
-> diff --git a/Documentation/devicetree/bindings/arm/mrvl/mrvl.txt b/Documentation/devicetree/bindings/arm/mrvl/mrvl.txt
-> deleted file mode 100644
-> index 951687528efb0..0000000000000
-> --- a/Documentation/devicetree/bindings/arm/mrvl/mrvl.txt
-> +++ /dev/null
-> @@ -1,14 +0,0 @@
-> -Marvell Platforms Device Tree Bindings
-> -----------------------------------------------------
-> -
-> -PXA168 Aspenite Board
-> -Required root node properties:
-> -       - compatible = "mrvl,pxa168-aspenite", "mrvl,pxa168";
-> -
-> -PXA910 DKB Board
-> -Required root node properties:
-> -       - compatible = "mrvl,pxa910-dkb";
-> -
-> -MMP2 Brownstone Board
-> -Required root node properties:
-> -       - compatible = "mrvl,mmp2-brownstone", "mrvl,mmp2";
-> diff --git a/Documentation/devicetree/bindings/arm/mrvl/mrvl.yaml b/Documentation/devicetree/bindings/arm/mrvl/mrvl.yaml
-> new file mode 100644
-> index 0000000000000..dc9de506ac6e3
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/arm/mrvl/mrvl.yaml
-> @@ -0,0 +1,31 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/arm/mrvl/mrvl.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Marvell Platforms Device Tree Bindings
-> +
-> +maintainers:
-> +  - Lubomir Rintel <lkundrak@v3.sk>
-> +
-> +properties:
-> +  $nodename:
-> +    const: '/'
-> +  compatible:
-> +    oneOf:
-> +      - description: PXA168 Aspenite Board
-> +        items:
-> +          - enum:
-> +              - mrvl,pxa168-aspenite
-> +          - const: mrvl,pxa168
-> +      - description: PXA910 DKB Board
-> +        items:
-> +          - enum:
-> +              - mrvl,pxa910-dkb
+>  Documentation/devicetree/bindings/arm/mrvl/mrvl.yaml | 3 +++
+>  1 file changed, 3 insertions(+)
 
-Doesn't match what's in dts file:
-
-arch/arm/boot/dts/pxa910-dkb.dts:       compatible =
-"mrvl,pxa910-dkb", "mrvl,pxa910";
-
-> +      - description: MMP2 Brownstone Board
-
-If this entry is only for this board...
-
-> +        items:
-> +          - enum:
-> +              - mrvl,mmp2-brownstone
-
-...then this can be a 'const' instead. Same for the others.
-
-> +          - const: mrvl,mmp2
-> +...
-> --
-> 2.21.0
->
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
