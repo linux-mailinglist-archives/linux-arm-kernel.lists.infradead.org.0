@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C36C39F123
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:06:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 066F29F11F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:05:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BzUwU8V9EqLJ85DTVkqoQplFuKhu8QCbLCCXKBNybIc=; b=FXUTXgPD5qCz9GNXmbaH5HBiXs
-	d87hZT4EDBBbpUWOcVIV78Lz/NpVnqc11M2JsZjJKle2+bPW01VNnTAM05IFfORVlW6xmBh+2O6EN
-	sf/GE8Fz9OTg3BZwu8w8ZoXvcEE0EBw8qhDRkoT5LgTT3/L/Der+3fQsX+bUExkH9mWphRMedEeZv
-	DEnNkKV8PUdCnD6JpFxb8t545lu4EdMBWFdgAvW/scltMw8QHT1rJK2cauwBMxyOVcyWzzjRWgW4B
-	OJzJ+NGvHJ77uxuwDi2FWpAg29Xn59iq7YMQpmJroL1lzUib4b4SBa33En+pZaQMz0KfYfTmp1CKd
-	P2wx1Y4g==;
+	bh=wjboJgM0qc77lCvG2XTINX3KH/tdznhyRKzouXQWvbU=; b=Fd1h5VqjbiuEDlVSk/IWAWeV8S
+	N+XR/l+PAooeMmOV60MQ61X8rLKQaMLqR+MS8PN8Iy6iW5ozmzRNfxaae4PZmli7Bg0kOVI96u4vV
+	mX5FhzCCaRMLZBnREeT21dc6cqQ/D6o+AcF7dH5x3Adx44gjqC9odaA53nYeYx3Sf58+NX1qoOBXt
+	3RZKEXJx01DVRB5wYhw7K7zLNKNm/xUD9OWPocjisXQl6u51dUwnybB7DZiFv1ZSUu+twfe8tXamJ
+	pX1m996W8lajC3fZYswUFWOvZ1C5YaDkwr+9wJa7k6ZhYj3Yqytly9ogTbWOxNGC0+uxP970+Rn66
+	Jcdo0JaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2ev0-0000FJ-0o; Tue, 27 Aug 2019 17:06:06 +0000
-Received: from mout.gmx.net ([212.227.15.18])
+	id 1i2euH-0006yX-6t; Tue, 27 Aug 2019 17:05:21 +0000
+Received: from mout.gmx.net ([212.227.15.19])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2eu4-0006SR-F5
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:05:13 +0000
+ id 1i2etz-0005sD-DS
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:05:05 +0000
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
  s=badeba3b8450; t=1566925496;
- bh=Uo1b3HfhaDmYWZdy1HlA+2i2PHDkmmpjfklpjPXzKxw=;
+ bh=iHML+3J8Gz/ZoXa55rWlvuO5gxBAoQS0ShcVMHMoF+8=;
  h=X-UI-Sender-Class:From:To:Cc:Subject:Date:In-Reply-To:References;
- b=jjZbzo+XYlVxeu0N/XlLeLTxHHg108xm2GU+uCwoe0MtEhlzCF3U8fRe7b09Wb7fz
- F1Ol9pWw4rD4TpFRbTuoYwQ1C7tB1Es1tg1/5cPN3UrFNIso5VrCM62mcUsWEtUYDK
- /tBoTkBn0c/5PoSIX7Oqtc7mEvkF8lXEiyOALMag=
+ b=QIRU5LXEtpLxXDh5f4Tu8sKtaz3KCIFtqmFhU+C3bPOjwrcWwow6Wc6s5ei1cnDtZ
+ kUQkf4QjjnqV9oVJec58sB0ERMGW9/V7NKmaW+OwfKU/y5Kw+zLqiOpcHtLnFh9xVq
+ jT0owZ1x7wI289IWT+BlBVbjqyT7Sr7HinEjsLiQ=
 X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
 Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
  (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
- 0MV5hN-1hhPfx0Gwn-00YUII; Tue, 27 Aug 2019 19:04:56 +0200
+ 0MIuSH-1i4aq91kQD-002VXu; Tue, 27 Aug 2019 19:04:56 +0200
 From: Stefan Wahren <wahrenst@gmx.net>
 To: Wolfram Sang <wsa@the-dreams.de>, Eric Anholt <eric@anholt.net>,
  Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
  Scott Branden <sbranden@broadcom.com>
-Subject: [PATCH 2/3] i2c: bcm2835: Avoid clk stretch quirk for BCM2711
-Date: Tue, 27 Aug 2019 19:04:15 +0200
-Message-Id: <1566925456-5928-3-git-send-email-wahrenst@gmx.net>
+Subject: [PATCH 3/3] i2c: bcm2835: Add full name of devicetree node to adapter
+ name
+Date: Tue, 27 Aug 2019 19:04:16 +0200
+Message-Id: <1566925456-5928-4-git-send-email-wahrenst@gmx.net>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1566925456-5928-1-git-send-email-wahrenst@gmx.net>
 References: <1566925456-5928-1-git-send-email-wahrenst@gmx.net>
-X-Provags-ID: V03:K1:Khj7mXUW5z0WC/ZBBqLcGNldA+ElzWSWMIlsnsdZzREPTsd8HDD
- J+gPVzpIk9piKLiieHnfv5qxCFOVhQ3hfNctz70sxa4cm6/sV7NaZCNL1Ceqrify33wKkgn
- Gh96Vz3/dCD+L1MF6KCEMkIA/3GpcRij0fKqaoWTeO1ThunIEOgqMH5WffrL0J3diX3cCUv
- 8t2guKrtd7dEQorwAd8IA==
+X-Provags-ID: V03:K1:aZYCnrYSUMa259o8XUY7VioHSFgAqtazTRKuK29qv+dxx4hlcWX
+ y3W507fuap5c14ulqH8+mdcazpaWUShLGhu5I+k3ayg7Kwoh7HYWFfozjn8mihWipo166EI
+ sUBCS75QNwWoMNgYORuMcxPV+Dn5tm0Y7xWcykJe1Zi1SuSiU7hpl+zB5HuF4UkmsxJqziI
+ PbIK5Dh6YDWo5TU9CDaTg==
 X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:5pSzR/iKChg=:DVqxCdjc3UJXq8/A9WN25l
- f8lFLCErb4Rfa5ou0tV+AzzQ0Yh3Ze8ZPO0vgpX6FqmM8JNlspYjsiU6bEy/Cd19hWc9xG+6S
- sb4aysewj4iDvDrwfaNW2YOjzqHEV4IJkOigsAcwozkb8natDSbrGLxWUUkUiJ72tNULdHOVi
- LXVj+sW3kBzGJMIDYCO2zoKKlg4Wa3s5NAYXgwGjILCQx2sWCCROdfJesUyfSnISr0RnzJGXa
- ndFpwKZdotZPqVQEKUawsJJ+1xzPwIUgKrqv0GFQvgmVYcYOCjErv4HMCa52oByn8LBOrq5FU
- s2OHMEHLHCagVcoCvx54hdsK/0LMzECgP1CJSqMmHvrp1Kj8NAuzO7iHXSA2f35rLeDc4p6Oc
- 4Xl4Ilkr2bT8LUnS0sMuTwr+t/qG6VUckZPSBr7eMVAt2CgxMUFKOyeUQCJZJBPjIXyD0s4wt
- h70hNHruPX/ItfT7kg0fu+JWMtFlYIlvtSLTlnsCgXoC3jeJ4UIUBWy8ygpWGbTZXwX5N1IlT
- N42kmySAZQEg1jAgItAnpArNSZ/CVVcCXWu7fXeqj56n8bDqKTOYcGn7P8zpQQ/yH3KY+JFNN
- jrDKs6+aJCK9b9oAk2jGvy659Gluq3qWkXvtYI2JlDs9IoaDph6JCtYpBvfyVJwyDrr3xzUaS
- IuAjtCWzLX8PHHgF/CXgjG8zLbo+0YrzC1tdi1Y5K7pIguueOXoUBM930jC5b8eMdbUGP6ByW
- 8/IbMqwcuPpz1cb8DKOB+xh+wiIVaRQiHPEnubYAEqbvsrpBbu2BXkRouCDw8GoIdxV0sd3KI
- kfdI6w1EY8NgVpCtjw5hVlmOg3TV8PYlH5slBQXCGkvHfZrFL34fGpfR9np2bW2AziqOghyhu
- wpqpTnnkjlxgH87ShTCDtGZwmwkvEHKcFXC6JOkEiQtJ2hieXDzK9W712qVNdGNEk3WSN/oWb
- KxiXqIIBXYl/i740hGBfGRd2sTlSxHO0VOp7xwMRKuLy8OUkejFym2bJhW9kqvIsDS+rCjNII
- 5g8ZL1qM7VhtE6OVEjvz7HolgHnuWDgrQC0m1Rsg1XCLVi5gP9KXiFF18t1STlC+dyGZdhA3X
- SUHrQggJpnNhDB2kKO4gcDmqocffp456FprdqWaXRYmLddn3qFSWuL1pFMNofQHP5RYl8CTDq
- IaeLK+0SDv/rM1ZHMh5Z8KR7v0xdKteNfKkkXC5GZQ9yr7VQ==
+X-UI-Out-Filterresults: notjunk:1;V03:K0:te8ExPthDRw=:+1A4+agapq1RX9Pb4knZFi
+ qgN1IUfIiJsvYeSE8DMBA8l0KJSLd+o1+EEXGa+8GzeEIt2RfBv5v3wOCa3XP8ZXmkpfkYU8+
+ lgLZYAwxhMW0DhiksWtRhvlrl75myih6YgU3aUlPG3S4Fm6P9mfTKztTnQBI/6ntTIRcPJZ+5
+ 0yScBSID09fHIZfAyRNCnC/SUyaOiLMzPHz2cFD7ueXU2341JDvwTl8y6ugw2L0SBLw4SSgoP
+ beOMXtp264Ki9CDjCLSHImUUR+yluM5uXZiwZXbZCpnmG1BgUM4/uSSVhjN3tJVlla9bC6M7m
+ 1h+dNnTojqAncg9Pn6ErKpPW1G8KLUb3pjoFNT8o0KbDtCuj98TUS5DkPzT9fjvFxdhpdtxzc
+ Jrl6dwMDHbDhlWpxmoyRNBXSIbRE3STl6aOeNwFQJboWckHQ3parW1ZHQrz2o5Tf9KuN8aQqm
+ BT+0EQsfLrNPdneD0LUug90psobgLYLzm4GTbkizSHT4GqIJ+0slyN+mVBxKeGIlHC6Mjss8X
+ Tk65u4vHp49mjI3afTl6+bViCiAlncVm/obV0GY0bP6/UJnrbm7yNPUduKSjx0laU4FW7OD/W
+ Mgo/C0eSZ5K4yC+CHYZLI/HvXSTzJP07dzTgDqiQHRI5NzE9fDe4olBbw/Erdcw+K/TyUomyJ
+ gpEfJrpDMm1t2hgvGHUCBTYTo6OmpJ3tjqOn81f1dvrdVdFYAjaARoAGSTTdrhlj0FFT9U3Er
+ CckhZybyO5x+OdAuCO/pJjPFAMdMvo84sHWX3IjNus9Lu+zO/SvdjbHeTZ98GexWDGsCZNcjw
+ eIjhq0KGqruQn9K7eEfyt5cU5wwoO+TgFaNRoaCZZ41tGdBoIGzEFHozh1fxFr+hyhBrlq7MB
+ JzG24VMXCf0DturZZ8AmIjQWwvBV8w9kSONe294TQAMzlqKpWastQOoIKJXDJpyLbskl+UM/Y
+ KX8U0bAyWP7fanIERSmYAUU+EajnbUNjzX0ir8pvUsfosPiVLDJAUFMTRRzton2ZuTcnKEjOI
+ Oec9ixThaaW0jTF9cTgsYBz4MZe1ksw3o71tU3jc4+J6rqKjNYMSvjU0TLY3AfK3HI7BHhhx1
+ jYrnYKcGffNkLfoig7Tt+ScnyD33xir8nxt4aF2ZKDHie4XMnhAw1hjig==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_100508_929975_C5C94690 
-X-CRM114-Status: GOOD (  12.21  )
+X-CRM114-CacheID: sfid-20190827_100503_834488_2D7F05BC 
+X-CRM114-Status: GOOD (  11.18  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.15.18 listed in list.dnswl.org]
+ no trust [212.227.15.19 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -108,55 +108,29 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The I2C block on the BCM2711 isn't affected by the clk stretching bug.
-So there is no need to apply the corresponding quirk.
+Inspired by Lori Hikichi's patch for iproc, this adds the full name of
+the devicetree node to the adapter name. With the introduction of
+BCM2711 it's very difficult to distinguish between the multiple instances.
 
 Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-Reviewed-by: Eric Anholt <eric@anholt.net>
 ---
- drivers/i2c/busses/i2c-bcm2835.c | 8 +++++---
- 1 file changed, 5 insertions(+), 3 deletions(-)
+ drivers/i2c/busses/i2c-bcm2835.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
-index 67752f7..ab5502f 100644
+index ab5502f..e01b2b5 100644
 --- a/drivers/i2c/busses/i2c-bcm2835.c
 +++ b/drivers/i2c/busses/i2c-bcm2835.c
-@@ -12,6 +12,7 @@
- #include <linux/interrupt.h>
- #include <linux/io.h>
- #include <linux/module.h>
-+#include <linux/of_device.h>
- #include <linux/platform_device.h>
- #include <linux/slab.h>
-
-@@ -389,7 +390,7 @@ static const struct i2c_algorithm bcm2835_i2c_algo = {
- };
-
- /*
-- * This HW was reported to have problems with clock stretching:
-+ * The BCM2835 was reported to have problems with clock stretching:
-  * http://www.advamation.com/knowhow/raspberrypi/rpi-i2c-bug.html
-  * https://www.raspberrypi.org/forums/viewtopic.php?p=146272
-  */
-@@ -475,7 +476,7 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+@@ -472,7 +472,8 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+ 	i2c_set_adapdata(adap, i2c_dev);
+ 	adap->owner = THIS_MODULE;
+ 	adap->class = I2C_CLASS_DEPRECATED;
+-	strlcpy(adap->name, "bcm2835 I2C adapter", sizeof(adap->name));
++	snprintf(adap->name, sizeof(adap->name), "bcm2835 (%s)",
++		 of_node_full_name(pdev->dev.of_node));
  	adap->algo = &bcm2835_i2c_algo;
  	adap->dev.parent = &pdev->dev;
  	adap->dev.of_node = pdev->dev.of_node;
--	adap->quirks = &bcm2835_i2c_quirks;
-+	adap->quirks = of_device_get_match_data(&pdev->dev);
-
- 	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_C, 0);
-
-@@ -501,7 +502,8 @@ static int bcm2835_i2c_remove(struct platform_device *pdev)
- }
-
- static const struct of_device_id bcm2835_i2c_of_match[] = {
--	{ .compatible = "brcm,bcm2835-i2c" },
-+	{ .compatible = "brcm,bcm2711-i2c" },
-+	{ .compatible = "brcm,bcm2835-i2c", .data = &bcm2835_i2c_quirks },
- 	{},
- };
- MODULE_DEVICE_TABLE(of, bcm2835_i2c_of_match);
 --
 2.7.4
 
