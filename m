@@ -2,70 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF0509E7FB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 14:32:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B62939E7FE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 14:32:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MjkIouy9RDPQW9KeWb80/P40VozxL/FAjhFlf+CRJRo=; b=LMqBxW44U0AL9X
-	h3eWoGEMH1xI6VhMYB1aMinvTwHpSbUkTJ4cynB2Ksj5C9IH9fxLY2u1aG9irz0e1haiSFHEE/gwO
-	37OoWurg6PTcnz69zqf+sUVrqnb58TKb22m9ClG/hMHHwGLHjNqdYFu55D/Jy3Z5ihLXhps9qMI6Q
-	jRcG8Cdd6jG5mv1FQVijrePaPH/xahmYbG7mtjKCemXpfMSKskp67B7JCujngyNPpvEs11BfXUncs
-	sa4Z2Hp9B0Q4RfAoLIQP4/sTRy5Dok4R+61n8Ok62FF/8OPloMCbSN3j1lcvzOqbdqrWpDP6ySGWQ
-	zpkHvi+sXQ3WCdQGUaMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=1S8zUINhHIqeJiAp3IZfdK3+giaKXZqVIlspqiGQuhY=; b=tZIBtX0mQrRQSN
+	mj9exJ2ziGd/NS4fdcO2jWEgpUnSOUC9E7ieXLmcVTMaK2kAT9J828xECmiz4FKKI+szyLnHz/K5n
+	F6nbJNZdekY25rAIUvOLmB+oAQ1QZbAPTdfXEIG9yJmB74JruE0pUb9r+Q7myNdxlKQcIhT4fSswO
+	qSyrXSLEMHmQWLh5BpNej/HF0iX4ZszJvcgte/KWCZWupLj5qpobVmMrdWVCWcuvMdwPTLYB2KaTl
+	e8R4B3hhilBSSK0/UrG016+tfGnuqqAG0Y+o4FC3vAUShvWR4FEHVeMFy/5WbQBnsLbkoYsTKYxX4
+	ifsQxRCiqexE71+ty+XA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2ado-0001Qo-0Y; Tue, 27 Aug 2019 12:32:04 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2adN-0001HQ-BG
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 12:31:38 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8485B2077B;
- Tue, 27 Aug 2019 12:31:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566909097;
- bh=xCvxQXG5DeS+bCV1BCxYaut0VyxKbT2q0ubhq1Qtuvg=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=OHodhg2aRJFwuv2otPNAHsoCAsT9JpeZioP8ScabrTnO8EqkLAaNBAbaGD8xsGgF1
- eb7DGr0/PrehY6N5GjjBeJKUV0rwKa1xyua9u2Ebv2kTh86w5D21WhKA72EeFFj2Op
- c47rICtSWDYyhHRSqjFkD/6ReRBTELKegeRvNNY4=
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>, Maxime Ripard <mripard@kernel.org>,
- lgirdwood@gmail.com, broonie@kernel.org
-Subject: [PATCH v2 2/2] ASoC: sun4i: Revert A83t description
-Date: Tue, 27 Aug 2019 14:31:31 +0200
-Message-Id: <20190827123131.29129-2-mripard@kernel.org>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190827123131.29129-1-mripard@kernel.org>
-References: <20190827123131.29129-1-mripard@kernel.org>
+	id 1i2aeJ-0001uj-40; Tue, 27 Aug 2019 12:32:35 +0000
+Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2adb-0001T5-A6
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 12:31:54 +0000
+Received: from erd987.prtnl (erd987.prtnl [192.168.237.3])
+ by sparta (Postfix) with ESMTP id 8D94844A009E;
+ Tue, 27 Aug 2019 14:33:46 +0200 (CEST)
+From: Robin van der Gracht <robin@protonic.nl>
+To: Robin Gong <yibin.gong@nxp.com>
+Subject: [PATCH v2 1/2] input: keyboard: snvs_pwrkey: Send key events for
+ i.MX6 S, DL and Q
+Date: Tue, 27 Aug 2019 14:32:15 +0200
+Message-Id: <20190827123216.32728-1-robin@protonic.nl>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_053137_446262_E2494866 
-X-CRM114-Status: GOOD (  12.70  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190827_053151_900201_385E6A02 
+X-CRM114-Status: GOOD (  19.52  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,81 +57,202 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: codekipper@gmail.com, alsa-devel@alsa-project.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree @ vger . kernel . org" <devicetree@vger.kernel.org>,
+ Robin van der Gracht <robin@protonic.nl>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
+ Adam Ford <aford173@gmail.com>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel @ lists . infradead . org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Maxime Ripard <maxime.ripard@bootlin.com>
+The first generation i.MX6 processors does not send an interrupt when the
+power key is pressed. It sends a power down request interrupt if the key is
+released before a hard shutdown (5 second press). This should allow
+software to bring down the SoC safely.
 
-The last set of reworks included some fixes to change the A83t behaviour
-and "fix" it.
+For this driver to work as a regular power key with the older SoCs, we need
+to send a keypress AND release when we get the power down request irq.
 
-It turns out that the controller described in the datasheet and the one
-supported here are not the same, yet the A83t has the two of them, and the
-one supported in the driver wasn't the one described in the datasheet.
-
-Fix this by reintroducing the proper quirks.
-
-Fixes: 69e450e50ca6 ("ASoC: sun4i-i2s: Fix the LRCK period on A83t")
-Fixes: bf943d527987 ("ASoC: sun4i-i2s: Fix MCLK Enable bit offset on A83t")
-Fixes: 2e04fc4dbf50 ("ASoC: sun4i-i2s: Fix WSS and SR fields for the A83t")
-Fixes: 515fcfbc7736 ("ASoC: sun4i-i2s: Fix LRCK and BCLK polarity offsets on newer SoCs")
-Fixes: c1d3a921d72b ("ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs")
-Fixes: fb19739d7f68 ("ASoC: sun4i-i2s: Use module clock as BCLK parent on newer SoCs")
-Fixes: 71137bcd0a9a ("ASoC: sun4i-i2s: Move the format configuration to a callback")
-Fixes: d70be625f25a ("ASoC: sun4i-i2s: Move the channel configuration to a callback")
-Reported-by: Chen-Yu Tsai <wens@csie.org>
-Tested-by: Chen-Yu Tsai <wens@csie.org>
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-
+Signed-off-by: Robin van der Gracht <robin@protonic.nl>
 ---
+ .../devicetree/bindings/crypto/fsl-sec4.txt   | 16 ++++--
+ drivers/input/keyboard/Kconfig                |  2 +-
+ drivers/input/keyboard/snvs_pwrkey.c          | 52 ++++++++++++++++---
+ 3 files changed, 57 insertions(+), 13 deletions(-)
 
-Changes from v1:
-  - Fix function name
----
- sound/soc/sunxi/sun4i-i2s.c | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
-
-diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index a6a3f772fdf0..d0a8d5810c0a 100644
---- a/sound/soc/sunxi/sun4i-i2s.c
-+++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -1106,18 +1106,18 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.has_reset		= true,
- 	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
- 	.sun4i_i2s_regmap	= &sun4i_i2s_regmap_config,
--	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
--	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
--	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
--	.bclk_dividers		= sun8i_i2s_clk_div,
--	.num_bclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.mclk_dividers		= sun8i_i2s_clk_div,
--	.num_mclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
--	.get_sr			= sun8i_i2s_get_sr_wss,
--	.get_wss		= sun8i_i2s_get_sr_wss,
--	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
--	.set_fmt		= sun8i_i2s_set_soc_fmt,
-+	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 7, 7),
-+	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 2, 3),
-+	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
-+	.bclk_dividers		= sun4i_i2s_bclk_div,
-+	.num_bclk_dividers	= ARRAY_SIZE(sun4i_i2s_bclk_div),
-+	.mclk_dividers		= sun4i_i2s_mclk_div,
-+	.num_mclk_dividers	= ARRAY_SIZE(sun4i_i2s_mclk_div),
-+	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
-+	.get_sr			= sun4i_i2s_get_sr,
-+	.get_wss		= sun4i_i2s_get_wss,
-+	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
-+	.set_fmt		= sun4i_i2s_set_soc_fmt,
+diff --git a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+index 2fe245ca816a..e4fbb9797082 100644
+--- a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
++++ b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+@@ -420,14 +420,22 @@ EXAMPLE
+ =====================================================================
+ System ON/OFF key driver
+ 
+-  The snvs-pwrkey is designed to enable POWER key function which controlled
+-  by SNVS ONOFF, the driver can report the status of POWER key and wakeup
+-  system if pressed after system suspend.
++  The snvs-pwrkey is designed to enable POWER key function which is controlled
++  by SNVS ONOFF. It can wakeup the system if pressed after system suspend.
++
++  There are two generations of SVNS pwrkey hardware. The first generation is
++  included in i.MX6 Solo, DualLite and Quad processors. The second generation
++  is included in i.MX6 SoloX and newer SoCs.
++
++  Second generation SNVS can detect and report the status of POWER key, but the
++  first generation can only detect a key release and so emits an instantaneous
++  press and release event when the key is released.
+ 
+   - compatible:
+       Usage: required
+       Value type: <string>
+-      Definition: Mush include "fsl,sec-v4.0-pwrkey".
++      Definition: Must include "fsl,sec-v4.0-pwrkey" for i.MX6 SoloX and newer
++	   or "fsl,imx6qdl-snvs-pwrkey" for older SoCs.
+ 
+   - interrupts:
+       Usage: required
+diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+index 7c4f19dab34f..937e58da5ce1 100644
+--- a/drivers/input/keyboard/Kconfig
++++ b/drivers/input/keyboard/Kconfig
+@@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
+ 	depends on OF
+ 	help
+ 	  This is the snvs powerkey driver for the Freescale i.MX application
+-	  processors that are newer than i.MX6 SX.
++	  processors.
+ 
+ 	  To compile this driver as a module, choose M here; the
+ 	  module will be called snvs_pwrkey.
+diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
+index 5342d8d45f81..d71c44733103 100644
+--- a/drivers/input/keyboard/snvs_pwrkey.c
++++ b/drivers/input/keyboard/snvs_pwrkey.c
+@@ -29,6 +29,11 @@
+ #define DEBOUNCE_TIME 30
+ #define REPEAT_INTERVAL 60
+ 
++enum imx_snvs_hwtype {
++	IMX6SX_SNVS,	/* i.MX6 SoloX and newer */
++	IMX6QDL_SNVS,	/* i.MX6 Solo, DualLite and Quad */
++};
++
+ struct pwrkey_drv_data {
+ 	struct regmap *snvs;
+ 	int irq;
+@@ -37,14 +42,41 @@ struct pwrkey_drv_data {
+ 	int wakeup;
+ 	struct timer_list check_timer;
+ 	struct input_dev *input;
++	enum imx_snvs_hwtype hwtype;
  };
  
- static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
++static const struct of_device_id imx_snvs_pwrkey_ids[] = {
++	{
++		.compatible = "fsl,sec-v4.0-pwrkey",
++		.data = (const void *)IMX6SX_SNVS,
++	},
++	{
++		.compatible = "fsl,imx6qdl-snvs-pwrkey",
++		.data = (const void *)IMX6QDL_SNVS,
++	},
++	{ /* sentinel */ },
++};
++MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
++
+ static void imx_imx_snvs_check_for_events(struct timer_list *t)
+ {
+ 	struct pwrkey_drv_data *pdata = from_timer(pdata, t, check_timer);
+ 	struct input_dev *input = pdata->input;
+ 	u32 state;
+ 
++	if (pdata->hwtype == IMX6QDL_SNVS) {
++		/*
++		 * The first generation i.MX6 SoCs only sends an interrupt on
++		 * button release. To mimic power-key usage, we'll prepend a
++		 * press event.
++		 */
++		input_report_key(input, pdata->keycode, 1);
++		input_report_key(input, pdata->keycode, 0);
++		input_sync(input);
++		pm_relax(input->dev.parent);
++		return;
++	}
++
+ 	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
+ 	state = state & SNVS_HPSR_BTN ? 1 : 0;
+ 
+@@ -67,13 +99,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
+ {
+ 	struct platform_device *pdev = dev_id;
+ 	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
++	unsigned long expire = jiffies;
+ 	u32 lp_status;
+ 
+ 	pm_wakeup_event(pdata->input->dev.parent, 0);
+ 
+ 	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
+-	if (lp_status & SNVS_LPSR_SPO)
+-		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
++	if (lp_status & SNVS_LPSR_SPO) {
++		if (pdata->hwtype == IMX6SX_SNVS)
++			expire += msecs_to_jiffies(DEBOUNCE_TIME);
++		mod_timer(&pdata->check_timer, expire);
++	}
+ 
+ 	/* clear SPO status */
+ 	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
+@@ -93,6 +129,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 	struct pwrkey_drv_data *pdata = NULL;
+ 	struct input_dev *input = NULL;
+ 	struct device_node *np;
++	const struct of_device_id *match;
+ 	int error;
+ 
+ 	/* Get SNVS register Page */
+@@ -100,6 +137,10 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 	if (!np)
+ 		return -ENODEV;
+ 
++	match = of_match_node(imx_snvs_pwrkey_ids, np);
++	if (!match)
++		return -ENODEV;
++
+ 	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+ 	if (!pdata)
+ 		return -ENOMEM;
+@@ -115,6 +156,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 		dev_warn(&pdev->dev, "KEY_POWER without setting in dts\n");
+ 	}
+ 
++	pdata->hwtype = (enum imx_snvs_hwtype)match->data;
+ 	pdata->wakeup = of_property_read_bool(np, "wakeup-source");
+ 
+ 	pdata->irq = platform_get_irq(pdev, 0);
+@@ -175,12 +217,6 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-static const struct of_device_id imx_snvs_pwrkey_ids[] = {
+-	{ .compatible = "fsl,sec-v4.0-pwrkey" },
+-	{ /* sentinel */ }
+-};
+-MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
+-
+ static struct platform_driver imx_snvs_pwrkey_driver = {
+ 	.driver = {
+ 		.name = "snvs_pwrkey",
 -- 
-2.21.0
+2.20.1
 
 
 _______________________________________________
