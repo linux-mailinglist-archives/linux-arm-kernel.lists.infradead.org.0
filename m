@@ -2,94 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9AC639F087
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:44:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 892489F098
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:46:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rkRDTFo/Q/OL9vW9gEmYmqc9YGP+h7tIrJ3CdoSSNp4=; b=hUvhQUY3UW2bpI
-	pDUb/0mXyUoSu/F7SAg2RS1+SL5dzNLcWjodJKP19XD8qne0AmVZ7+pxKB4HibTa77p65/YFKghMF
-	2j/Rga3fjGEMdfDsQtwmrMcGMksEuWa42MK+0jnE/AfgNP7keWGH07IYgx9RlC8zxtMoThHTgjuut
-	BEw4ifCapzgL14z5R8LXVBz6RCMmbCYTCQ6Aktb4TYsNQHy02spz7UvLpYtFyY8cweYmU6mhKIczF
-	sdxyD4D/FtfGvqQ8HUFdjc0B3tgtWM+jkZLwt6lqPB5U62hZWanTe+X9UJJgFu5WLdY+La1CZJq6B
-	U5W21qtCJpHTvNl7ugNA==;
+	List-Owner; bh=LVvd0p9msEV1qilFdZ9QWUKH3eY7RHgLWA7jxLk07QY=; b=WRVkF6lQI6qP9a
+	zmrlnC7CzHGsXxv4NZlU+Ru47/4oWAiqXbnzG8joyTLPIxXaOrIK6VrcG1dPiZc6ChmWurhNg31NV
+	agNuipUs4P+JuQ1pTRXDFWhRcoqDxd/LvkRAs89uOHBNsgyNaUyL2p+cHSaaYjTcInUz4pCg5ESSf
+	gfm+Lx1QtgRy4hk+ruKeWWsTstYam7dUnggD9EWJ3kCqbyClDtPFtHZ9enl2iuB80YE78scm7J3jv
+	boJu+WarXcPeZG8hWUFVu3PM7wsLpU50wgLuTXcPNBo6HjCDN7WJnGb3312IXuC0G8Jl6jBWFzT4M
+	oqO6Ww5MP7dh8rW9xTTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2ea1-0008A4-Eg; Tue, 27 Aug 2019 16:44:25 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1i2ebv-0001PF-6r; Tue, 27 Aug 2019 16:46:23 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2eZs-00087Q-1o
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 16:44:17 +0000
-Received: by mail-ed1-x542.google.com with SMTP id t50so32230267edd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 09:44:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ffwll.ch; s=google;
- h=sender:date:from:to:cc:subject:message-id:mail-followup-to
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=T4/dJTACRgyspP6PQrEfl3SMkEU0BRTMNnpAOcNAN9k=;
- b=Fzqv4nQ+umzv/2+KsGP2IW6/1O7DBQCIYC2HmBh/Ixkm0qxY1XpDuoKgz+tncImxs7
- N7m7N3ReqRn0EeNNxHDIVftSZ9fXBGgZpadIxuWhZwJwT9VgxqDJeUZWp8QGR+pDw7jL
- MrGOVuuTzL+18NS2EevgZPTFpC6D+ugKy/n7k=
+ id 1i2ebm-0001Nx-3C; Tue, 27 Aug 2019 16:46:15 +0000
+Received: by mail-oi1-f194.google.com with SMTP id t24so15451921oij.13;
+ Tue, 27 Aug 2019 09:46:14 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :mail-followup-to:references:mime-version:content-disposition
- :in-reply-to:user-agent;
- bh=T4/dJTACRgyspP6PQrEfl3SMkEU0BRTMNnpAOcNAN9k=;
- b=Ch8iUn3ldMNQ8+W7XXxpvHRf4+SOygX4mfgsxWZKFEa7q9kjIeTbhAy3y5pOqRfDIV
- WFZFbrKikGLyaDByShZ+sY4doZGL+QvbZ7HRZSKpBFje/Y77ZtekHrAe4tNx/4lRAdVt
- 3v9Py2sxq8m/xNIbq57PPX+qzImhTkBnIEzmq9sJThyDlpRXrSQpyvkyRnMpFFoK23pv
- ZMsSB4Hrdtyx1WFmv0HQL9fQv9073gM7esBqph0dNLTnJ90SQhWNI8JzMhTbwJH00Y7+
- wIHgSujoghhy3sdYcplTxo8+aue+8QEToYqW+il1vB3O9wF5Uj/Vxh17/Zwp2JRTCJnz
- GsnQ==
-X-Gm-Message-State: APjAAAUEwnUd1RcZu8M2evxjqNAFxSk/E6e3UWZfWdqGS3cZgu9eDbwI
- GkI5H3oDSwblCgDXrd+5Ztctuw==
-X-Google-Smtp-Source: APXvYqzGZWYGoQY3nS9VufjvpYmxU7hjhjBeufmUT4bsglP7TAQ2Nsm6LWhsAFqb4Pi6mCtsDOWt0g==
-X-Received: by 2002:aa7:d813:: with SMTP id v19mr25334216edq.45.1566924253874; 
- Tue, 27 Aug 2019 09:44:13 -0700 (PDT)
-Received: from phenom.ffwll.local (212-51-149-96.fiber7.init7.net.
- [212.51.149.96])
- by smtp.gmail.com with ESMTPSA id l27sm3498970ejd.31.2019.08.27.09.44.12
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=0lM2LSGOVkJcZtWFfD5Jdwg0IHy7hecaVTT/aMqFXwU=;
+ b=Vb8BqkmkUKz5DkidpwEkgTyG6lsq4KA5OyUPxPDPIY//y/nmuGySe/FWa6R0kADmPw
+ PUvyONL0qBtCxO+8Kwc2rYM2Q/I16wR8fd1SejUjNlYhAawZBNloV4UaxbqkWFnSQovq
+ n0TTyo93CVqbdrgTKrqTRS/oVWlz86fLNxBbNUjwxMGZfgy+zS+kui7WHQ3AUCEtbsSi
+ C3iCu0bXY//ekj6/IPr6Im7RjtGJ3ffdWmYc5CAS/Qk6U/x0owirdNKAD0NpC6BPi5BF
+ FdSqvoLZQ/IayCT6VV8OIEdaxkP4llMVK+KYTy5hTzyeZWkdtRuM/M/+7+UnnYwZQwmY
+ uIDg==
+X-Gm-Message-State: APjAAAXubSqlxCD9//bmBevJJYFf38W5TVLxZvyUjULJADggNUilSQgh
+ GEGEEiCe0cUUIa0gg6VUAQ==
+X-Google-Smtp-Source: APXvYqy/7mhHBbKaDA0gXbeIS7o/GWKkWjXh2VhvxIQBONNcesOLPhf4YOZcCD9RmMJGg4w0JY1Pkw==
+X-Received: by 2002:aca:4f07:: with SMTP id d7mr17082181oib.70.1566924373339; 
+ Tue, 27 Aug 2019 09:46:13 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id t23sm4500156otc.59.2019.08.27.09.46.12
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 09:44:13 -0700 (PDT)
-Date: Tue, 27 Aug 2019 18:44:11 +0200
-From: Daniel Vetter <daniel@ffwll.ch>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 0/2] drm/meson: add resume/suspend hooks
-Message-ID: <20190827164411.GE2112@phenom.ffwll.local>
-Mail-Followup-To: Neil Armstrong <narmstrong@baylibre.com>,
- dri-devel@lists.freedesktop.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
-References: <20190827095825.21015-1-narmstrong@baylibre.com>
+ Tue, 27 Aug 2019 09:46:12 -0700 (PDT)
+Date: Tue, 27 Aug 2019 11:46:12 -0500
+From: Rob Herring <robh@kernel.org>
+To: Frank Wunderlich <frank-w@public-files.de>
+Subject: Re: [PATCH v6 02/13] dt-bindings: mfd: mediatek: update rtc to
+ include mt6323
+Message-ID: <20190827164612.GA18496@bogus>
+References: <20190818135611.7776-1-frank-w@public-files.de>
+ <20190818135611.7776-3-frank-w@public-files.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190827095825.21015-1-narmstrong@baylibre.com>
-X-Operating-System: Linux phenom 5.2.0-2-amd64 
+In-Reply-To: <20190818135611.7776-3-frank-w@public-files.de>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_094416_096989_8751BEC2 
-X-CRM114-Status: GOOD (  14.19  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_094614_138271_F2A22848 
+X-CRM114-Status: GOOD (  10.20  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,48 +88,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, khilman@baylibre.com,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- linux-amlogic@lists.infradead.org
+Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ "linux-arm-kernel @ lists . infradead . org Alessandro Zummo"
+ <a.zummo@towertech.it>, linux-pm@vger.kernel.org,
+ Frank Wunderlich <frank-w@public-files.de>,
+ Josef Friedl <josef.friedl@speed.at>, linux-kernel@vger.kernel.org,
+ Tianping Fang <tianping.fang@mediatek.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
+ Eddie Huang <eddie.huang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 11:58:23AM +0200, Neil Armstrong wrote:
-> This serie adds the resume/suspend hooks in the Amlogic Meson VPU main driver
-> and the DW-HDMI Glue driver to correctly save state and disable HW before
-> suspend, and succesfully re-init the HW to recover functionnal display
-> after resume.
+On Sun, 18 Aug 2019 15:56:00 +0200, Frank Wunderlich wrote:
+> From: Josef Friedl <josef.friedl@speed.at>
 > 
-> This serie has been tested on Amlogic G12A based SEI510 board, using
-> the newly accepted VRTC driver and the rtcwake utility.
+> add mt6323 to rtc-bindings
+> 
+> Signed-off-by: Josef Friedl <josef.friedl@speed.at>
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> ---
+> changes since v5: splitted from "dt-bindings: add powercontroller"
+> ---
+>  Documentation/devicetree/bindings/mfd/mt6397.txt | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
+> 
 
-No idea about the hw, but looks all neatly integrated into pm stuff, so on
-both patches:
-
-Acked-by: Daniel Vetter <daniel.vetter@ffwll.ch>
-> 
-> Neil Armstrong (2):
->   drm/meson: dw_hdmi: add resume/suspend hooks
->   drm/meson: add resume/suspend hooks
-> 
->  drivers/gpu/drm/meson/meson_drv.c     |  32 ++++++++
->  drivers/gpu/drm/meson/meson_dw_hdmi.c | 110 ++++++++++++++++++--------
->  2 files changed, 108 insertions(+), 34 deletions(-)
-> 
-> -- 
-> 2.22.0
-> 
-> _______________________________________________
-> dri-devel mailing list
-> dri-devel@lists.freedesktop.org
-> https://lists.freedesktop.org/mailman/listinfo/dri-devel
-
--- 
-Daniel Vetter
-Software Engineer, Intel Corporation
-http://blog.ffwll.ch
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
