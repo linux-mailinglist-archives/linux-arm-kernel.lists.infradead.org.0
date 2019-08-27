@@ -2,82 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FCB29F1F0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:58:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 700499F227
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 20:14:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZW6D7mdLDYV1E+4EQY6oNioNyQ8+zTUIeA/CCqcHYBw=; b=uls0nUlMB5hsb1
-	WR0NAONiATCR6T2cKVg/QRhFOSFMskaZw8sBQRO4mIWp8G8u6bPZ6/xgZ/QITszh31L/p3GfiWozq
-	pBr9QlQ7lMmj4XeLONAEEbms/gV4yp//NitvwSav9vp92z2GfOkjZAEvYDp/lxKUHYT+RXvS4+L7h
-	vfRteOx4ZO2qrv4ZqqfASm5kPh8WSyn8OCQzWb7LRPneLHnv8jwnv9qsktx/4qF7twVXx2L1CrtqQ
-	t7liKxVu5FQUWQCORyLTifGSwd2w009Z9g2hCPHccNf8x783Xr3gusxq1KZfPPJD38EoLdfFvTEea
-	pIBejD9Q5mr2/30ICVmg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=iZhI6dazem9m6dLLUNUOFALG3IviP6sNVPt6UrBmR6s=; b=hxNaTLddwJVm26UTFN4//CGPr
+	LGmeNjx4Gxy+q3zMxckdDWootjFw657mcxwHPwFcrlJOc6ueN7RSa0LIVISSTmVf4vmLWGjzmKhGM
+	GPtXHX4GVYwoT30HOTrS0+o9WsQJFXJefo1lspjhBGSujCTRYIwz/1Yio4Mqoj0VhmCn7NM5rocZF
+	7FM8QwYsSGTOPsULuQ7TcTSSPvPIxALIjsHNZJtppR84OthlbCgw7otJ2dTihDgHFn2CDOMzSwc3C
+	58CdtMkARxZ/YWIHQybPDtCceK8Iyk9LmwR0Nx4rI0mvuWBT5bGZMt40y/0+UGA+oASnisQ1y538p
+	ApMVYb23g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2fjS-0008W5-GY; Tue, 27 Aug 2019 17:58:14 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1i2fzB-0004bY-Hs; Tue, 27 Aug 2019 18:14:29 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2fjL-0008VZ-Cc
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:58:09 +0000
-Received: by mail-io1-xd44.google.com with SMTP id p12so248925iog.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 10:58:05 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=3EmRLO8wo/JIqbrGKJX2hVLR7XPZ2EAWf5gJTXryBMo=;
- b=EyZx7FLU6RmtO8L6DDu5VLMxB+1HSnlJxbGXFlkYsO9/yf3soFaiJ2II5Q0VKvqWAo
- +vohdOeRapZZFrzBEbj5vx82axB6tWR6h7KiXtzPGuATKilnuDLLVulPhhzIedR6FgtP
- gY0y6Aju2TE6iT/PabWQm39Kll/90lrnkFuYpk2t0HTDU4I+t+nPFi9f/O0SoFHynhs4
- VSY8B3aYEyojeWeEa0APZpKzHw72SWPabtwi2Dhbwxk1QYCSDLLDSKmIQ/NNRfV3YGyz
- VDPCcaXmzxRERl2Pt0ke6bhdfAsiP346PmjHdHiLNB7QYHcjb794plny4cfaf232AVeZ
- hWGQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=3EmRLO8wo/JIqbrGKJX2hVLR7XPZ2EAWf5gJTXryBMo=;
- b=f0UGWF4SgLan8PUyWyZHhGNzSM3qxv34DNyx2pvbrwu+9lsC3k0Fi0uXU/itFSlyD0
- HFuF9xIDKS3Q6gas17zs9yxojhaH7lzGOUCZSqrSfSjGu+GrYQokGsWz2ufgPcV+Nsyg
- r9aulOnIbgQE0h4/UkaEeClrNwB8UPVCx4HSEMXC6QzaUwU1Hkm06RX23k7sjmnv5jZQ
- U0qLPrcdRhoCMd1aeYaOwRavhiAFRapwn+w8BuGxo25YAb2rMmVl9SQkWTsUb9t8Vlpw
- zc41KOB3StdIuTwCmrC3rUWZ1CFmXk0mARqfoDQGLnhKTnHzIe+Z39icfuK05eN2gEhN
- e/Gg==
-X-Gm-Message-State: APjAAAVzmvnfFdL6uyGKyAPgKAMKmAQqzGSiRSBKN8RFfSxwl1RQwNSm
- oVi3CosyoXtEQkNieNxK7IlgNe7crBMsb1hJoLpDrA==
-X-Google-Smtp-Source: APXvYqzU3qiolDAJ/GjAXoKheTYvXHwYgRozBGE3tHk3MjFJDY3gAx485Umb1ZDNCbkUawOy1hyftTdLRSk86YK6bHw=
-X-Received: by 2002:a5d:8908:: with SMTP id b8mr8466207ion.237.1566928684877; 
- Tue, 27 Aug 2019 10:58:04 -0700 (PDT)
+ id 1i2fz4-0004ay-0y
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 18:14:23 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=V/UcaU4EeSdHqUtL83nLzCKplC5y/OxX6AUl8iisM4g=; b=ieFQVeflIDdnhomkhIHE2o6+9
+ hEtQBIghfiEmWGTnw2RAf00ImomLKDxCVWkCTJfwnxcJxlXJf98KD/68Y9/x1Y08kJ220GBw6GzFX
+ PquP0c5A207abDqJzLuqpx+c+QGzU3QRf5O46Pn1mcVOgfK4p5FEWTq3MPy5iMCpm7hyg=;
+Received: from 92.41.142.151.threembb.co.uk ([92.41.142.151]
+ helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.org.uk>)
+ id 1i2fyv-0000t7-WE; Tue, 27 Aug 2019 18:14:14 +0000
+Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
+ id 841B7D02CE6; Tue, 27 Aug 2019 19:14:09 +0100 (BST)
+Date: Tue, 27 Aug 2019 19:14:09 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 1/5] dt-bindings: sound: sun4i-spdif: Fix dma-names warning
+Message-ID: <20190827181409.GH23391@sirena.co.uk>
+References: <20190827142547.14577-1-mripard@kernel.org>
 MIME-Version: 1.0
-References: <20190819205720.24457-1-mike.leach@linaro.org>
- <20190819205720.24457-4-mike.leach@linaro.org>
- <20190826225949.GC24690@xps15>
- <CAJ9a7VgAYwCONqwJHTb9QunN0Q4R3E82kxzpSJXV9kv2dpRnHw@mail.gmail.com>
-In-Reply-To: <CAJ9a7VgAYwCONqwJHTb9QunN0Q4R3E82kxzpSJXV9kv2dpRnHw@mail.gmail.com>
-From: Mathieu Poirier <mathieu.poirier@linaro.org>
-Date: Tue, 27 Aug 2019 11:57:53 -0600
-Message-ID: <CANLsYkzg8yOeYuxbNREFiYE0hmqO9vmJZ-m6sfjRxWGXH4GDAg@mail.gmail.com>
-Subject: Re: [PATCH 3/8] coresight: etm4x: Add missing API to set EL match on
- address filters
-To: Mike Leach <mike.leach@linaro.org>
+In-Reply-To: <20190827142547.14577-1-mripard@kernel.org>
+X-Cookie: Don't SANFORIZE me!!
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_105807_492264_25C42544 
-X-CRM114-Status: GOOD (  27.75  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_111422_070138_8F54555C 
+X-CRM114-Status: UNSURE (   9.92  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -94,142 +78,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Coresight ML <coresight@lists.linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org, Liam Girdwood <lgirdwood@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============0330511891581656483=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 27 Aug 2019 at 04:55, Mike Leach <mike.leach@linaro.org> wrote:
->
-> Hi Mathieu,
->
-> On Mon, 26 Aug 2019 at 23:59, Mathieu Poirier
-> <mathieu.poirier@linaro.org> wrote:
-> >
-> > On Mon, Aug 19, 2019 at 09:57:15PM +0100, Mike Leach wrote:
-> > > TRCACATRn registers have match bits for secure and non-secure exception
-> > > levels which are not accessible by the sysfs API.
-> > > This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
-> > >
-> > > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > > ---
-> > >  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++++
-> > >  1 file changed, 39 insertions(+)
-> > >
-> > > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > > index fa1d6a938f6c..7eab5d7d0b62 100644
-> > > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > > @@ -1233,6 +1233,44 @@ static ssize_t addr_context_store(struct device *dev,
-> > >  }
-> > >  static DEVICE_ATTR_RW(addr_context);
-> > >
-> > > +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
-> > > +                                   struct device_attribute *attr,
-> > > +                                   char *buf)
-> > > +{
-> > > +     u8 idx;
-> > > +     unsigned long val;
-> > > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > > +     struct etmv4_config *config = &drvdata->config;
-> > > +
-> > > +     spin_lock(&drvdata->spinlock);
-> > > +     idx = config->addr_idx;
-> > > +     val = BMVAL(config->addr_acc[idx], 14, 8);
-> > > +     spin_unlock(&drvdata->spinlock);
-> > > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> > > +}
-> > > +
-> > > +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
-> > > +                                    struct device_attribute *attr,
-> > > +                                    const char *buf, size_t size)
-> > > +{
-> > > +     u8 idx;
-> > > +     unsigned long val;
-> > > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > > +     struct etmv4_config *config = &drvdata->config;
-> > > +
-> > > +     if (kstrtoul(buf, 16, &val))
-> > > +             return -EINVAL;
-> > > +
-> > > +     spin_lock(&drvdata->spinlock);
-> > > +     idx = config->addr_idx;
-> > > +     /* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8] */
-> > > +     config->addr_acc[idx] &= ~(GENMASK(14, 8));
-> > > +     config->addr_acc[idx] |= (val << 8);
-> > > +     spin_unlock(&drvdata->spinlock);
-> > > +     return size;
-> > > +}
-> > > +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
-> > > +
-> > >  static ssize_t seq_idx_show(struct device *dev,
-> > >                           struct device_attribute *attr,
-> > >                           char *buf)
-> > > @@ -2038,6 +2076,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
-> > >       &dev_attr_addr_stop.attr,
-> > >       &dev_attr_addr_ctxtype.attr,
-> > >       &dev_attr_addr_context.attr,
-> > > +     &dev_attr_addr_exlevel_s_ns.attr,
-> > >       &dev_attr_seq_idx.attr,
-> > >       &dev_attr_seq_state.attr,
-> > >       &dev_attr_seq_event.attr,
-> >
-> > I'm ok with this patch but the new entry needs to be documented in [1].
->
-> It is in a later patch.
 
-Very well
+--===============0330511891581656483==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="fez1/uVX7m6GpeOd"
+Content-Disposition: inline
 
->
-> >   But
-> > before moving forward with that I'm wondering if this is the way to go.  Would
-> > it be better to consolidate type, ctxtype, context and exlevel_s_ns in a single
-> > entry, say addr_acc_type?  We'd shed a fair amount of code and make it more
-> > simple for users to configure.
-> >
->
-> It will mean the user has less writes to do - but is it really simpler
-> to understand?
->
-> At present each feature takes the input value and interprets / shifts
-> it to set the relevant bits in the address comparator control
-> registers (context type being a string input rather than bit values).
->
-> The alternative is to require the user to understand the bit values -
-> which they may well do if they are referring to the ETM docs to
-> program in this detail, and provide a correct input value for their
-> requirements.
->
-> My addition adds to the API, rather than changes it, but if you prefer
-> we could go with an update to a single feature to control this value
-> in the comparator control registers.
 
-I am definitely not strongly opinionated on this - it is an idea I
-wanted to float by you.  Since you don't seem to have a strong
-position either we can just carry on with this patch and revisit in
-the future if need be.
+--fez1/uVX7m6GpeOd
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->
-> Mike
->
-> >
-> > [1]. Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
-> >
-> > > --
-> > > 2.17.1
-> > >
->
->
->
-> --
-> Mike Leach
-> Principal Engineer, ARM Ltd.
-> Manchester Design Centre. UK
+On Tue, Aug 27, 2019 at 04:25:43PM +0200, Maxime Ripard wrote:
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+>=20
+> Even though the H6 compatible has been properly added, the exeption for t=
+he
+> number of DMA channels hasn't been updated, leading in a validation
+> warning.
+
+Please use subject lines matching the style for the subsystem.  This
+makes it easier for people to identify relevant patches.  This
+doesn't even have ASoC in it...
+
+--fez1/uVX7m6GpeOd
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1lcvAACgkQJNaLcl1U
+h9AQNwf/Wko2ywl/1pCNlhI8r5T9icdRCSO3aCusrcNdTqFPwCKGaybfQwcs7T1i
+0ljLfvQoPvxUH1pj+ed4D4e1D+L2MNaGgm30zRQvPmoldJ23rYC3scQgom5ejb8Z
+EfLTB7ogGLiwIysbn4eZojzA9AfJwkXdCsFPSR55iSGop/lztHREVQEGnW6Ktw+7
+U52qHI6sJ0mYGJgA39HQarp4lwVuSHRgouhsvA/6CXQ4sLUxTwZYNZwh4hKd/c3u
++T0CZ022i3XwoWwGrD5VreO1Yas3ZU3jf7vT4gnpOrSH+oonnwHBfFl9nDCMMJB6
+IDS3MJpUDnm64N8iliKuxAO3z3Jgow==
+=7aoP
+-----END PGP SIGNATURE-----
+
+--fez1/uVX7m6GpeOd--
+
+
+--===============0330511891581656483==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0330511891581656483==--
+
