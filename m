@@ -2,122 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A46A19E237
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 10:18:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0ECE29E23B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 10:20:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=k78v0xHOmbpZE+pspzGiF7IyMkPGda/8fBeb2ZiGKv4=; b=hqpicWojGi+kHw
-	i+o9eGgosHoK+nRhzLGUsde0loWI4VDRZtftndNtWHaEziMMjsF+jhkt2Fa0toPfvzFQ8zrpAdhuU
-	LZjp8YBQGIV/Q08yFkIkCpX9/sB9xZ9kELagSwL0/sScxX29jItMe/sP0UAlXWE02r/dQ+4V0elhZ
-	7bpyx4UAY8fjnPzZU92k4PzWzuuMMhPV0M+K5FihYBmKJPTN68zmLJuIW2fNFnUELsiJvgT/0n27E
-	cfCStexyDsJGP+X2BxvLnWFhX7JuLJW0XugAcldZQjmUK1J06a0KDYt6WGIPwjqIYPNl4BmrEbOmk
-	9KMDQhg8W/5UgEdGoiVA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PW+9j/n0IGffhCzzJwGgo3xeZmPDvgMZgjz6MIzQ1K8=; b=L/KKE+JMHPu2sK
+	wmr82yq1B8Wzab1VC9q/au5lwBcQP9fE4+mKEs2mkiMXWE+T0xcjTS9d4bIlJ/Cpm3mIRxjw1Deln
+	4h2EnCvXlWFlaUazQ89fx8iSR/il4szF5jvkuApKzV0Cf54V2JeMLr65xB12QKeCFgGPqYR6YsiJf
+	n3/6zNd2ymnLJM6QkdBM85gcQRpoNfCs1v9DbUTfWvCVw2KKfSzTv1YInCaPtW00i/mtgUsLbPSbg
+	BH+T0AoOQsmySXt3usxrHuyb/CKHIBBsMPXIfdhLttshxJwlqND6TNWNGquuW1aQuVMahlriabeBP
+	yLg1rU16pG8gMww7nfOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Wg7-0006QN-69; Tue, 27 Aug 2019 08:18:11 +0000
-Received: from mail-db3eur04on061e.outbound.protection.outlook.com
- ([2a01:111:f400:fe0c::61e]
- helo=EUR04-DB3-obe.outbound.protection.outlook.com)
+	id 1i2Wig-0000Qg-M1; Tue, 27 Aug 2019 08:20:50 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Wfp-0006Cs-IY
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 08:17:55 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mC6SGfUGcj5qfowVWSJ996L5OzXYwktpH8iMQC2pLbM1ADZOtA4ZTllXCzGeYxZ/q49PldKvlaKqln3FVYJAa+fzFzYF9kPN88P3Hx8YIQxLGS0VZ3IJ7Nd4HKdczSBuEjqW//KTCy9iUz7UmRcCEEllnwR/Sv0pbw033bWRUPSvanRzuX+PJ5dUZTFAKM3eEQ7z5Ur73VdXQsuaD2nnTvpDZT4msP1e5mmzUS4BloKxEYd2y4Up/KHk0XQl/sGjq7gt9avOkpKSrWOWh8odLGNUzmeXnVgZyju3dfeGWiO/4kBHvDxPvgzG6X2qGVVwXW/Ch837WE/eCPoRjYFetQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6tLgUOAdcUK2g4ZMA3HdTrrSdjZWSUZVsh5luoh4dMA=;
- b=EWit/mVuTId+PLQDdfPdFEklX278AjaUp4K/eCE/D0p2/6zO9e+xIsNgdyC/Wp/guukcq1BtZ4OK4jPh/gVED1YAZY4hS8KAyfThYtv2i4WvTkP1rs1pY0s1Hfza1ppPezXbpAiJ1IlEkBxLXlWDjr09fIM/TliuY8qtlaaTU86f9WKEzJn38xI0F9uZWgDWuKAhbI+9DW8D9WoCOk54+3ejzLl/ch9m7MB2wYMsLXTg/f+IcivJkFbW/lQXA2PCVof87Ejs5U01uJjbU0F/vIdDpws31h+ANS9sgEWo+rWhkjQSkC0DalI7U35pmkLsg4GFOT/3DfR4ELPJptanKA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=6tLgUOAdcUK2g4ZMA3HdTrrSdjZWSUZVsh5luoh4dMA=;
- b=rGN9XdhVXSK6FQKzLQd1oOON8o4jwQSZnErHFROQIbdG8UX5bkPRlWT9shQ1o1At85ti97MaJef3s+3g5LJ9VZr4OwpR+WYo0zM7sWGoVN3uvS2nwWTYuYzt139bOhga1adUZsIPeCSznaVi2tmIk0nRDTs10fCZpgVNIHG3VxQ=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB6961.eurprd04.prod.outlook.com (52.132.214.213) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.21; Tue, 27 Aug 2019 08:17:50 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::5d98:e1f4:aa72:16b4]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::5d98:e1f4:aa72:16b4%4]) with mapi id 15.20.2178.022; Tue, 27 Aug 2019
- 08:17:50 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
- <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>, Aisheng Dong <aisheng.dong@nxp.com>
-Subject: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
-Thread-Topic: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
-Thread-Index: AQHVXK/qRNohGClvt0yC94cqOwkPUA==
-Date: Tue, 27 Aug 2019 08:17:50 +0000
-Message-ID: <1566936978-28519-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK2PR02CA0143.apcprd02.prod.outlook.com
- (2603:1096:202:16::27) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 31915c1d-db0b-4f77-1171-08d72ac70cc4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:AM0PR04MB6961; 
-x-ms-traffictypediagnostic: AM0PR04MB6961:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB696121F771311C6327AA6D9C88A00@AM0PR04MB6961.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0142F22657
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(376002)(396003)(136003)(39860400002)(366004)(346002)(199004)(189003)(71200400001)(54906003)(2501003)(8936002)(66066001)(478600001)(36756003)(64756008)(66556008)(6436002)(6486002)(66446008)(386003)(6506007)(66476007)(71190400001)(7736002)(110136005)(305945005)(2201001)(86362001)(316002)(14454004)(6636002)(81156014)(81166006)(2906002)(486006)(2616005)(476003)(26005)(4326008)(44832011)(66946007)(53936002)(186003)(14444005)(52116002)(102836004)(99286004)(25786009)(6512007)(256004)(50226002)(3846002)(6116002)(5660300002)(8676002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6961;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: JaamQxk4G4A+hccSgbT3aTuuAafYjkuY65ZzYnFOIQblxCbZe1qlbpJcI5cPT0nu3ofMKsAYLR9zkghodqNlY23CJx3AHW59knHEHFz2B3Zw4Gba0nCKZLuDntMoBH07iPXlWphzMbUXCga0Xn7Vtf1H3Sci2YqmQm1vNTFUT98tOATjaeWjxHR6KWd9VvaKpGpNelXetfe1pt0WXwQv3dk6dwhCC8U3/O0d52V4z9/N8cT4MMbiL882ZZ9ItppJUVIwCfmvrH3zgQcT8VUJDTHOUk9qL+fFySlcfFVJUK/J7vyg0CLJlNssDKvM9QfHNaSTnnKjCIjGRGZL6jO1zlgk+LoE1qBvBN52HN2/sYTxOHAGC5Ii/biDwf6zX/fU07nZNrOTwG7o/Rxex0hyYEGNYIabOTEEr/tZkHzG32k=
+ id 1i2WiU-0000QJ-Hr
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 08:20:40 +0000
+Received: by mail-ed1-f66.google.com with SMTP id r12so30246165edo.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 01:20:38 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qY2Ghx+cvhqn0reVmcdYz/Ra4oEaXlOnSP3k2TEC06I=;
+ b=geXGDKSsY1wH9CBTXa6MhAQn76oiTxl+WV+Z6+8RnYQSd0vLUdua3POszqilrw6BDM
+ 018XlTIXnshpk78fftaxo5edNhTAFgZVV7txuQm9ePu+r8MQeHqxdWo/RFxweWiMeldt
+ pCwhMqotajsLFkq0BgxLafJe1ba2KkWbUDGlLm3gXhb0pcwS5UALCN3P1heFk9UwpVWq
+ UrGFW+/wiUCh34kNadDbeyLwmLOtI9QgrDyr7hi96S5u8Kpb8yosnTujfGbggOxW5yct
+ Q+qMaGCAOEk3gtumdGe6ypsjti17Wpg8lZQMLK37opMoenDdfSVHqQGLkjoNnsU5WeQC
+ TWOA==
+X-Gm-Message-State: APjAAAWxtckgQuSsvsziIXPEB/E01wP/cG1ZWNyhdLcXVF55q+FvUghc
+ A+grgsa7nYdSMiBNmyyJ9000lEnl/yg=
+X-Google-Smtp-Source: APXvYqxSfH9DCHB6ujnC8ut7Qq8gr2dkvu9qnFG7ZWDR0WPvLbjCa3egWfu0liTwEnAJ1GZFopInKw==
+X-Received: by 2002:a50:ec18:: with SMTP id g24mr22653305edr.259.1566894036583; 
+ Tue, 27 Aug 2019 01:20:36 -0700 (PDT)
+Received: from mail-wm1-f44.google.com (mail-wm1-f44.google.com.
+ [209.85.128.44])
+ by smtp.gmail.com with ESMTPSA id s11sm947006edm.43.2019.08.27.01.20.35
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 27 Aug 2019 01:20:36 -0700 (PDT)
+Received: by mail-wm1-f44.google.com with SMTP id v15so2093859wml.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 01:20:35 -0700 (PDT)
+X-Received: by 2002:a1c:4c06:: with SMTP id z6mr26175657wmf.47.1566894035615; 
+ Tue, 27 Aug 2019 01:20:35 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 31915c1d-db0b-4f77-1171-08d72ac70cc4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 27 Aug 2019 08:17:50.1446 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: QAq71gkrnoh1/AcRotgSzzX5jZ0h43vi6PEuR8IzdXScqTdTeCB2PVd4YC3FLnefUqRmVumMF2pzHqetUypeaw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6961
+References: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
+In-Reply-To: <cover.e08aa7e33afe117e1fa8f017119d465d47c98016.1566242458.git-series.maxime.ripard@bootlin.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 27 Aug 2019 16:20:24 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64xOcs3Vi5k3yUwMiUrzZMuJ5vZ3kxp9w1=CQDrkn3cgA@mail.gmail.com>
+Message-ID: <CAGb2v64xOcs3Vi5k3yUwMiUrzZMuJ5vZ3kxp9w1=CQDrkn3cgA@mail.gmail.com>
+Subject: Re: [PATCH 00/21] ASoC: sun4i-i2s: Number of fixes and TDM Support
+To: Maxime Ripard <mripard@kernel.org>, Mark Brown <broonie@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_011753_650310_F028613F 
-X-CRM114-Status: GOOD (  11.32  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_012038_593948_A9BFC93B 
+X-CRM114-Status: GOOD (  17.82  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0c:0:0:0:61e listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ no trust [209.85.208.66 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,65 +93,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Jacky Bai <ping.bai@nxp.com>
+Cc: Code Kipper <codekipper@gmail.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Hi everyone,
 
-There is hardware issue that:
-The output clock the LPCG cell will not turn back on as expected,
-even though a read of the IPG registers in the LPCG indicates that
-the clock should be enabled.
+On Tue, Aug 20, 2019 at 3:25 AM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> Hi,
+>
+> This series aims at fixing a number of issues in the current i2s driver,
+> mostly related to the i2s master support and the A83t support. It also uses
+> that occasion to cleanup a few things and simplify the driver. Finally, it
+> builds on those fixes and cleanups to introduce TDM and DSP formats support.
+>
+> Let me know what you think,
+> Maxime
+>
+> Marcus Cooper (1):
+>   ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs
+>
+> Maxime Ripard (20):
+>   ASoC: sun4i-i2s: Register regmap and PCM before our component
+>   ASoC: sun4i-i2s: Switch to devm for PCM register
+>   ASoC: sun4i-i2s: Replace call to params_channels by local variable
+>   ASoC: sun4i-i2s: Move the channel configuration to a callback
+>   ASoC: sun4i-i2s: Move the format configuration to a callback
+>   ASoC: sun4i-i2s: Rework MCLK divider calculation
+>   ASoC: sun4i-i2s: Don't use the oversample to calculate BCLK
+>   ASoC: sun4i-i2s: Use module clock as BCLK parent on newer SoCs
+>   ASoC: sun4i-i2s: RX and TX counter registers are swapped
+>   ASoC: sun4i-i2s: Use the actual format width instead of an hardcoded one
+>   ASoC: sun4i-i2s: Fix LRCK and BCLK polarity offsets on newer SoCs
+>   ASoC: sun4i-i2s: Fix the LRCK polarity
+>   ASoC: sun4i-i2s: Fix WSS and SR fields for the A83t
+>   ASoC: sun4i-i2s: Fix MCLK Enable bit offset on A83t
+>   ASoC: sun4i-i2s: Fix the LRCK period on A83t
+>   ASoC: sun4i-i2s: Remove duplicated quirks structure
 
-The software workaround is to write twice to enable the LPCG clock
-output.
+Unfortunately the patches that "fix" support on the A83T actually break it.
+The confusion stems from the user manual not actually documenting the I2S
+controller. Instead it documents the TDM controller, which is very similar
+or the same as the I2S controller in the H3. The I2S controller that we
+actually support in this driver is not the TDM controller, but three other
+I2S controllers that are only mentioned in the memory map. Support for this
+was done by referencing the BSP kernel, which has separate driver instances
+for each controller instance, both I2S and TDM.
 
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/clk/imx/clk-lpcg-scu.c | 10 ++++++++++
- 1 file changed, 10 insertions(+)
+Now to remedy this I could send reverts for all the "A83t" patches, and
+fixes for all the others that affect the A83t quirks. However the fixes
+tags existing in the tree would be wrong and confusing. That might be a
+pain for the stable kernel maintainers.
 
-diff --git a/drivers/clk/imx/clk-lpcg-scu.c b/drivers/clk/imx/clk-lpcg-scu.c
-index a73a799fb777..7391d0668ec4 100644
---- a/drivers/clk/imx/clk-lpcg-scu.c
-+++ b/drivers/clk/imx/clk-lpcg-scu.c
-@@ -54,6 +54,11 @@ static int clk_lpcg_scu_enable(struct clk_hw *hw)
- 
- 	reg |= val << clk->bit_idx;
- 	writel(reg, clk->reg);
-+	/*
-+	 * There is hardware bug. When enabling the LPCG clock
-+	 * output, SW can write the enabling value twice
-+	 */
-+	writel(reg, clk->reg);
- 
- 	spin_unlock_irqrestore(&imx_lpcg_scu_lock, flags);
- 
-@@ -71,6 +76,11 @@ static void clk_lpcg_scu_disable(struct clk_hw *hw)
- 	reg = readl_relaxed(clk->reg);
- 	reg &= ~(CLK_GATE_SCU_LPCG_MASK << clk->bit_idx);
- 	writel(reg, clk->reg);
-+	/*
-+	 * There is hardware bug. When enabling the LPCG clock
-+	 * output, SW can write the enabling value twice
-+	 */
-+	writel(reg, clk->reg);
- 
- 	spin_unlock_irqrestore(&imx_lpcg_scu_lock, flags);
- }
--- 
-2.16.4
+Any suggestions on how to proceed?
 
+Regards
+ChenYu
+
+>   ASoC: sun4i-i2s: Pass the channels number as an argument
+>   ASoC: sun4i-i2s: Support more channels
+>   ASoC: sun4i-i2s: Add support for TDM slots
+>   ASoC: sun4i-i2s: Add support for DSP formats
+>
+>  sound/soc/sunxi/sun4i-i2s.c | 660 ++++++++++++++++++++-----------------
+>  1 file changed, 372 insertions(+), 288 deletions(-)
+>
+> base-commit: d45331b00ddb179e291766617259261c112db872
+> --
+> git-series 0.9.1
 
 _______________________________________________
 linux-arm-kernel mailing list
