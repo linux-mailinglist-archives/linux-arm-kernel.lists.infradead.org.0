@@ -2,54 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A2879EF4F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:47:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089559EF56
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:49:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FOjj2oAd7WHfhx/1XB0HJSATftyXdkvO+JBh5owXuX0=; b=FkCyvrGrbyCxUL
-	HlcDgsHJFJUbuL0ogNlvQHsTrCCoZ1S06ZSCa+GO2YWbU9YTeWgr0CaEdZSaXf5SzRH8sNovOusLv
-	fY4R8EBoC5nXJFujwNeZkeGmbCNt+I30RBYxL4GP2L3Tbx7LHk+QioUBPTAW7BlOZvvSdL+rTuY9b
-	eFFmCtKTw8y6ug8gz5ep7N/ouJ1ATDKU/Zbde+aVe50VcizODsz8yRxFHhrCL/SpSm8j+cc0axDPz
-	oIkls9fJEaNMfOHnb9y0RGznyka4shAseIMKMT3pDBLDrpYx4dzW1NZQjCbTgFTIY6vqAFiybQaWB
-	6MmqyOvOlR+24D9JZuTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=5b+KXNN/mraBxOV2UQlt2pM7JBBfxPxYE12QU9JApsc=; b=JZ+dUDCOUe076b
+	EzICBcXSPwQ3jApfpviVf3+AV7WlQ9eTgYSyIfmKZZULveN4c+3Z9Hr1twFPuE82SErLy838XaE+r
+	TdJnrQDGUS+xj2sfCLaErtUTbWgMfqWLoiIrpxc7J2Z3B9trgfSkgl6WJKvTGumQPfjIO2YxHGkhU
+	gGXeieg7RoM10O2tOgNSV2vWZc6ey5/U0o2icIH50jT/OhLIoFJdCZxunut55udLVrAiFRwKFqYtv
+	FmnCMmGA/iBwYy+xKdz7EaBM1GQ3pH5iUvQwO8xt4PZ4UGf5AMLt4DCOVW8GFxEJnYPSJ0l4yRu0O
+	HezYgLG9GDqhnpYcaCiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dh4-000264-Mi; Tue, 27 Aug 2019 15:47:38 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dgu-00023f-RQ
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:47:30 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A5C7337;
- Tue, 27 Aug 2019 08:47:28 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 598D23F59C;
- Tue, 27 Aug 2019 08:47:27 -0700 (PDT)
-Date: Tue, 27 Aug 2019 16:47:25 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH 6/6] PCI: tegra: Add support to enable slot regulators
-Message-ID: <20190827154725.GP14582@e119886-lin.cambridge.arm.com>
-References: <20190826073143.4582-1-vidyas@nvidia.com>
- <20190826073143.4582-7-vidyas@nvidia.com>
+	id 1i2dib-0002OO-F6; Tue, 27 Aug 2019 15:49:13 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2diR-0002Nh-VZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:49:06 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 213D828C771
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+To: soc@kernel.org
+Subject: [PATCH] arm/arm64: defconfig: Update configs to use the new CROS_EC
+ options
+Date: Tue, 27 Aug 2019 17:48:51 +0200
+Message-Id: <20190827154851.10486-1-enric.balletbo@collabora.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190826073143.4582-7-vidyas@nvidia.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_084728_976550_133C5B53 
-X-CRM114-Status: GOOD (  19.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_084904_277855_38F8F458 
+X-CRM114-Status: GOOD (  13.77  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,151 +56,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
- thierry.reding@gmail.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
- digetx@gmail.com, jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org,
- sagar.tv@gmail.com
+Cc: gwendal@chromium.org, kernel@collabora.com,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, groeck@chromium.org,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>, linux-samsung-soc@vger.kernel.org,
+ Anson Huang <Anson.Huang@nxp.com>, lee.jones@linaro.org,
+ Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, linux-tegra@vger.kernel.org,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Fabrice Gasnier <fabrice.gasnier@st.com>, bleung@chromium.org,
+ linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
+ =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>,
+ Dinh Nguyen <dinguyen@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
+ Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Mack <daniel@zonque.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 26, 2019 at 01:01:43PM +0530, Vidya Sagar wrote:
-> Add support to get regulator information of 3.3V and 12V supplies of a PCIe
-> slot from the respective controller's device-tree node and enable those
-> supplies. This is required in platforms like p2972-0000 where the supplies
-> to x16 slot owned by C5 controller need to be enabled before attempting to
-> enumerate the devices.
-> 
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> ---
->  drivers/pci/controller/dwc/pcie-tegra194.c | 65 ++++++++++++++++++++++
->  1 file changed, 65 insertions(+)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-> index 8a27b25893c9..97de2151a738 100644
-> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
-> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-> @@ -278,6 +278,8 @@ struct tegra_pcie_dw {
->  	u32 aspm_l0s_enter_lat;
->  
->  	struct regulator *pex_ctl_supply;
-> +	struct regulator *slot_ctl_3v3;
-> +	struct regulator *slot_ctl_12v;
->  
->  	unsigned int phy_count;
->  	struct phy **phys;
-> @@ -1047,6 +1049,59 @@ static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
->  	}
->  }
->  
-> +static void tegra_pcie_get_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	pcie->slot_ctl_3v3 = devm_regulator_get_optional(pcie->dev, "vpcie3v3");
-> +	if (IS_ERR(pcie->slot_ctl_3v3))
-> +		pcie->slot_ctl_3v3 = NULL;
-> +
-> +	pcie->slot_ctl_12v = devm_regulator_get_optional(pcie->dev, "vpcie12v");
-> +	if (IS_ERR(pcie->slot_ctl_12v))
-> +		pcie->slot_ctl_12v = NULL;
+Recently we refactored the CrOS EC drivers moving part of the code from
+the MFD subsystem to the platform chrome subsystem. During this change
+we needed to rename some config options, so, update the defconfigs
+accordingly.
 
-Do these need to take into consideration -EPROBE_DEFER?
+Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+Reviewed-by: Gwendal Grignou <gwendal@chromium.org>
+Tested-by: Gwendal Grignou <gwendal@chromium.org>
+---
+Dear all,
+
+This is basically a resend of [1] in order to get patch into the arm-soc
+patchwork and can be merged independently of the series. The patch was
+originally sent as part of the these series [2] but as defconfig changes
+often cause merge conflicts the maintainers prefer to have this merged
+through the arm-soc tree. My bad was not including the soc ML from the
+begining, so sorry about that.
 
 Thanks,
+ Enric
 
-Andrew Murray
+[1] https://lkml.org/lkml/2019/8/23/518
+[2] https://lkml.org/lkml/2019/8/23/475
 
-> +}
-> +
-> +static int tegra_pcie_enable_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	int ret;
-> +
-> +	if (pcie->slot_ctl_3v3) {
-> +		ret = regulator_enable(pcie->slot_ctl_3v3);
-> +		if (ret < 0) {
-> +			dev_err(pcie->dev,
-> +				"Failed to enable 3V3 slot supply: %d\n", ret);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	if (pcie->slot_ctl_12v) {
-> +		ret = regulator_enable(pcie->slot_ctl_12v);
-> +		if (ret < 0) {
-> +			dev_err(pcie->dev,
-> +				"Failed to enable 12V slot supply: %d\n", ret);
-> +			if (pcie->slot_ctl_3v3)
-> +				regulator_disable(pcie->slot_ctl_3v3);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	/*
-> +	 * According to PCI Express Card Electromechanical Specification
-> +	 * Revision 1.1, Table-2.4, T_PVPERL (Power stable to PERST# inactive)
-> +	 * should be a minimum of 100ms.
-> +	 */
-> +	msleep(100);
-> +
-> +	return 0;
-> +}
-> +
-> +static void tegra_pcie_disable_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	if (pcie->slot_ctl_12v)
-> +		regulator_disable(pcie->slot_ctl_12v);
-> +	if (pcie->slot_ctl_3v3)
-> +		regulator_disable(pcie->slot_ctl_3v3);
-> +}
-> +
->  static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  					bool en_hw_hot_rst)
->  {
-> @@ -1060,6 +1115,10 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  		return ret;
->  	}
->  
-> +	ret = tegra_pcie_enable_slot_regulators(pcie);
-> +	if (ret < 0)
-> +		goto fail_slot_reg_en;
-> +
->  	ret = regulator_enable(pcie->pex_ctl_supply);
->  	if (ret < 0) {
->  		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
-> @@ -1142,6 +1201,8 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  fail_core_clk:
->  	regulator_disable(pcie->pex_ctl_supply);
->  fail_reg_en:
-> +	tegra_pcie_disable_slot_regulators(pcie);
-> +fail_slot_reg_en:
->  	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->  
->  	return ret;
-> @@ -1174,6 +1235,8 @@ static int __deinit_controller(struct tegra_pcie_dw *pcie)
->  		return ret;
->  	}
->  
-> +	tegra_pcie_disable_slot_regulators(pcie);
-> +
->  	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->  	if (ret) {
->  		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
-> @@ -1372,6 +1435,8 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
->  		return ret;
->  	}
->  
-> +	tegra_pcie_get_slot_regulators(pcie);
-> +
->  	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
->  	if (IS_ERR(pcie->pex_ctl_supply)) {
->  		dev_err(dev, "Failed to get regulator: %ld\n",
-> -- 
-> 2.17.1
-> 
+ arch/arm/configs/exynos_defconfig   | 6 +++++-
+ arch/arm/configs/multi_v7_defconfig | 6 ++++--
+ arch/arm/configs/pxa_defconfig      | 4 +++-
+ arch/arm/configs/tegra_defconfig    | 2 +-
+ arch/arm64/configs/defconfig        | 6 ++++--
+ 5 files changed, 17 insertions(+), 7 deletions(-)
+
+diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
+index 2e6a863d25aa..d29029f534ec 100644
+--- a/arch/arm/configs/exynos_defconfig
++++ b/arch/arm/configs/exynos_defconfig
+@@ -154,7 +154,11 @@ CONFIG_CPU_THERMAL=y
+ CONFIG_THERMAL_EMULATION=y
+ CONFIG_WATCHDOG=y
+ CONFIG_S3C2410_WATCHDOG=y
+-CONFIG_MFD_CROS_EC=y
++CONFIG_MFD_CROS_EC_DEV=y
++CONFIG_CHROME_PLATFORMS=y
++CONFIG_CROS_EC=y
++CONFIG_CROS_EC_I2C=y
++CONFIG_CROS_EC_SPI=y
+ CONFIG_MFD_MAX14577=y
+ CONFIG_MFD_MAX77686=y
+ CONFIG_MFD_MAX77693=y
+diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
+index 6a40bc2ef271..0e9e70badf88 100644
+--- a/arch/arm/configs/multi_v7_defconfig
++++ b/arch/arm/configs/multi_v7_defconfig
+@@ -511,10 +511,12 @@ CONFIG_MFD_BCM590XX=y
+ CONFIG_MFD_AC100=y
+ CONFIG_MFD_AXP20X_I2C=y
+ CONFIG_MFD_AXP20X_RSB=y
+-CONFIG_MFD_CROS_EC=m
++CONFIG_MFD_CROS_EC_DEV=m
++CONFIG_CHROME_PLATFORMS=y
++CONFIG_CROS_EC=m
+ CONFIG_CROS_EC_I2C=m
+ CONFIG_CROS_EC_SPI=m
+-CONFIG_MFD_CROS_EC_CHARDEV=m
++CONFIG_CROS_EC_CHARDEV=m
+ CONFIG_MFD_DA9063=m
+ CONFIG_MFD_MAX14577=y
+ CONFIG_MFD_MAX77686=y
+diff --git a/arch/arm/configs/pxa_defconfig b/arch/arm/configs/pxa_defconfig
+index 787c3f9be414..635bf7dec53c 100644
+--- a/arch/arm/configs/pxa_defconfig
++++ b/arch/arm/configs/pxa_defconfig
+@@ -393,7 +393,9 @@ CONFIG_SA1100_WATCHDOG=m
+ CONFIG_MFD_AS3711=y
+ CONFIG_MFD_BCM590XX=m
+ CONFIG_MFD_AXP20X=y
+-CONFIG_MFD_CROS_EC=m
++CONFIG_MFD_CROS_EC_DEV=m
++CONFIG_CHROME_PLATFORMS=y
++CONFIG_CROS_EC=m
+ CONFIG_CROS_EC_I2C=m
+ CONFIG_CROS_EC_SPI=m
+ CONFIG_MFD_ASIC3=y
+diff --git a/arch/arm/configs/tegra_defconfig b/arch/arm/configs/tegra_defconfig
+index 8f5c6a5b444c..061037012335 100644
+--- a/arch/arm/configs/tegra_defconfig
++++ b/arch/arm/configs/tegra_defconfig
+@@ -147,7 +147,7 @@ CONFIG_SENSORS_LM95245=y
+ CONFIG_WATCHDOG=y
+ CONFIG_TEGRA_WATCHDOG=y
+ CONFIG_MFD_AS3722=y
+-CONFIG_MFD_CROS_EC=y
++CONFIG_MFD_CROS_EC_DEV=y
+ CONFIG_MFD_MAX8907=y
+ CONFIG_MFD_STMPE=y
+ CONFIG_MFD_PALMAS=y
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 0e58ef02880c..c4df1999fe0d 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -457,8 +457,7 @@ CONFIG_MFD_ALTERA_SYSMGR=y
+ CONFIG_MFD_BD9571MWV=y
+ CONFIG_MFD_AXP20X_I2C=y
+ CONFIG_MFD_AXP20X_RSB=y
+-CONFIG_MFD_CROS_EC=y
+-CONFIG_MFD_CROS_EC_CHARDEV=m
++CONFIG_MFD_CROS_EC_DEV=y
+ CONFIG_MFD_EXYNOS_LPASS=m
+ CONFIG_MFD_HI6421_PMIC=y
+ CONFIG_MFD_HI655X_PMIC=y
+@@ -668,8 +667,11 @@ CONFIG_VIRTIO_BALLOON=y
+ CONFIG_VIRTIO_MMIO=y
+ CONFIG_XEN_GNTDEV=y
+ CONFIG_XEN_GRANT_DEV_ALLOC=y
++CONFIG_CHROME_PLATFORMS=y
++CONFIG_CROS_EC=y
+ CONFIG_CROS_EC_I2C=y
+ CONFIG_CROS_EC_SPI=y
++CONFIG_CROS_EC_CHARDEV=m
+ CONFIG_COMMON_CLK_RK808=y
+ CONFIG_COMMON_CLK_SCPI=y
+ CONFIG_COMMON_CLK_CS2000_CP=y
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
