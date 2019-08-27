@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49B2C9EAE9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:26:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A19DB9EAEE
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 16:27:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=S1VKKFqkkQG5zlb1OF4UfreWNl9/BNMuRijsEnHjj5g=; b=dIMEaUn1IDVD5T
-	85CJ8L+Jb//PxqtY9D1ET2/jKN96qTUUrWu/PfJGE4Ax+2tCQdA1MEEc+8Lezn+9LIc7qxgBjEiBe
-	7KFjTBaxWiTyb749B5iif+UQR/ZzEjP/Z2TeQFppo61FovqLCk7KhcWp2csDtb+G/bCOwqK/khdqP
-	m60mW34aWmf1XkoJ1ghqN44LrzghP5TuDD+O1ppLpv4jpPqvURFFLHjEPgMP8hfgqSAF6DOGO9YyD
-	HFdoW/XbqljM95H+9cV1KHt+Jc0qG3z8Gt3OP81cmrmku2As5zXTpG1IXIiPUpv+d8C76KiCDKltI
-	cky+1TUjheP8p555bvvg==;
+	List-Owner; bh=nzusz32+uwWL4lzixWJuERwD5JFdHSupOm4dJA1CEzM=; b=tg0npzeWcjsaf3
+	19OwTW+WX4VOrdYsvPIHPq/ilztpFeNuwKwacgKp5SPK5aY/tzWjPZ62hGBvLs3ux4q5BH63/xAaT
+	bHS59T459wNF38w9Mll7nNRWkvAuEtM7sM8umbgcOd537/MohxsdoCnr5tSRyfLuM5of2sMScxi7+
+	dpKr2xGhHkZ9pEALZTh7eC1M3MkvSgmOUQpjPa34RA98jZLvdoumZI3wS+nnQkhJdUwUofx6ltzug
+	y52JRpwXcEtcq9FP7SfJ0rW/9xMDJYznKa4fNZ6BCM0jPwpuhiz4aD37PUg+6LLzHK/GBeCNgsFbk
+	zaHcFqZaaDHDAYf7qw6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2cQp-0005rG-PK; Tue, 27 Aug 2019 14:26:47 +0000
+	id 1i2cR3-00064m-Vy; Tue, 27 Aug 2019 14:27:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2cQ3-0005LB-Bq
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:26:01 +0000
+ id 1i2cQ5-0005NZ-Us
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 14:26:03 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 4432321872;
- Tue, 27 Aug 2019 14:25:58 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0C0092189D;
+ Tue, 27 Aug 2019 14:26:00 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566915958;
- bh=y/p4qRGUtj7C+DgvN86RfhLtJA9S7Q2uLcW/tPMXOIc=;
+ s=default; t=1566915961;
+ bh=6kDDKXGQGcLuzzUQBEmfMLlipuZZde3zVKewWDp2+VA=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=BgMnqFeSH/BOMKcT/3LEXEbjmhGU0EeJRxBnIexhJXGFav34pbE2lidrmkHDaCzyJ
- WxOE7pPPLNeSvuXVx2g7ocrMtkn9d6hTTxZeEHsCiubPeimSfTTFA+KR67ygDg9uSi
- RFQbjP/jwv8K2L4zOL5l3EqATe2DPt8TKEtZjElc=
+ b=uvGVJw72AC9KVhVJ6x7rkODTFdxTU+/AOuxgpRkO0E2UZjTp0evK7XYCPs5k+8qwg
+ CdwE64QrFKCwJPVwp/FRBq/bUctxiLVBlSRhhi6CFH7zNqXIuAm9pFkNORsrxm0nsE
+ 0adsFcVB8mgljXxaC2DnkbhuhvG/CSJhVN7zCKKw=
 From: Maxime Ripard <mripard@kernel.org>
 To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH 4/5] dt-bindings: sound: Convert Allwinner A23 analog codec to
+Subject: [PATCH 5/5] dt-bindings: sound: Convert Allwinner A64 analog codec to
  a schema
-Date: Tue, 27 Aug 2019 16:25:46 +0200
-Message-Id: <20190827142547.14577-4-mripard@kernel.org>
+Date: Tue, 27 Aug 2019 16:25:47 +0200
+Message-Id: <20190827142547.14577-5-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190827142547.14577-1-mripard@kernel.org>
 References: <20190827142547.14577-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_072559_993747_51A4CA1A 
-X-CRM114-Status: GOOD (  13.84  )
+X-CRM114-CacheID: sfid-20190827_072602_170975_FDE17626 
+X-CRM114-Status: GOOD (  12.54  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,34 +89,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The Allwinner A23 SoC and later have an embedded audio codec that uses a
-separate controller to drive its analog part, which is supported in Linux,
-with a matching Device Tree binding.
+The Allwinner A64 SoC has an embedded audio codec that uses a separate
+controller to drive its analog part, which is supported in Linux, with a
+matching Device Tree binding.
 
 Now that we have the DT validation in place, let's convert the device tree
 bindings for that controller over to a YAML schemas.
 
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 ---
- .../allwinner,sun8i-a23-codec-analog.yaml     | 38 +++++++++++++++++++
- .../bindings/sound/sun8i-codec-analog.txt     | 17 ---------
- 2 files changed, 38 insertions(+), 17 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
- delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+ .../allwinner,sun50i-a64-codec-analog.yaml    | 39 +++++++++++++++++++
+ .../bindings/sound/sun50i-codec-analog.txt    | 14 -------
+ 2 files changed, 39 insertions(+), 14 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
 
-diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
 new file mode 100644
-index 000000000000..832779389cbd
+index 000000000000..f290eb72a878
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
-@@ -0,0 +1,38 @@
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
+@@ -0,0 +1,39 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a23-codec-analog.yaml#
++$id: http://devicetree.org/schemas/sound/allwinner,sun50i-a64-codec-analog.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A23 Analog Codec Device Tree Bindings
++title: Allwinner A64 Analog Codec Device Tree Bindings
 +
 +maintainers:
 +  - Chen-Yu Tsai <wens@csie.org>
@@ -124,53 +124,51 @@ index 000000000000..832779389cbd
 +
 +properties:
 +  compatible:
-+    oneOf:
-+      # FIXME: This is documented in the PRCM binding, but needs to be
-+      # migrated here at some point
-+      # - const: allwinner,sun8i-a23-codec-analog
-+      - const: allwinner,sun8i-h3-codec-analog
-+      - const: allwinner,sun8i-v3s-codec-analog
++    const: allwinner,sun50i-a64-codec-analog
 +
 +  reg:
 +    maxItems: 1
 +
++  cpvdd-supply:
++    description:
++      Regulator for the headphone amplifier
++
 +required:
 +  - compatible
 +  - reg
++  - cpvdd-supply
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
 +    codec_analog: codec-analog@1f015c0 {
-+      compatible = "allwinner,sun8i-h3-codec-analog";
++      compatible = "allwinner,sun50i-a64-codec-analog";
 +      reg = <0x01f015c0 0x4>;
++      cpvdd-supply = <&reg_eldo1>;
 +    };
 +
 +...
-diff --git a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt b/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+diff --git a/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt b/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
 deleted file mode 100644
-index 07356758bd91..000000000000
---- a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
+index 056a098495cc..000000000000
+--- a/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
 +++ /dev/null
-@@ -1,17 +0,0 @@
--* Allwinner Codec Analog Controls
+@@ -1,14 +0,0 @@
+-* Allwinner A64 Codec Analog Controls
 -
 -Required properties:
 -- compatible: must be one of the following compatibles:
--		- "allwinner,sun8i-a23-codec-analog"
--		- "allwinner,sun8i-h3-codec-analog"
--		- "allwinner,sun8i-v3s-codec-analog"
--
--Required properties if not a sub-node of the PRCM node:
+-		- "allwinner,sun50i-a64-codec-analog"
 -- reg: must contain the registers location and length
+-- cpvdd-supply: Regulator supply for the headphone amplifier
 -
 -Example:
--prcm: prcm@1f01400 {
--	codec_analog: codec-analog {
--		compatible = "allwinner,sun8i-a23-codec-analog";
+-	codec_analog: codec-analog@1f015c0 {
+-		compatible = "allwinner,sun50i-a64-codec-analog";
+-		reg = <0x01f015c0 0x4>;
+-		cpvdd-supply = <&reg_eldo1>;
 -	};
--};
 -- 
 2.21.0
 
