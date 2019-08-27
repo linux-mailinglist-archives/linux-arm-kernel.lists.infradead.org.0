@@ -2,56 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0016C9EC50
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:21:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C83A9EC66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:23:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9DPSnI/iTkR96sJ/NZTdmVMGNcSN0tfahVwVYRW5K3w=; b=HCMDfLOPlvk1Xm
-	nA1mwwd1uEAjD6UzeXx2hS3GoVbsTwpAMBLzIwvtH6RvbTyRqhtCtX844xC2n9Kt9AP0lr++9FSKv
-	QfSQHGwK38A/Ne3nAaK7vL8Pd0koyqKV/BlrB9wmmbw1vDIt7Ozcat0pjqGXcheQ+4PeSIxN39zVl
-	p3e613CYLXA5YY6fxwRuQf3S7OsjZJdUJ9nyg4g9ftMfViQBDiBexfWb/+GnoeIEKMJ94XaKgySai
-	LdaNYVYnEYWhivxwx/slpcMUwsih8FEUJyLmHCeijGhnB9LinjaxtJueEPkEinO9ZtMXv5T0AfrKm
-	R31/azpgUJiAVGEgVYEw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=0li3nCtiQ/85M2rH6mMXZrBnk33nayTSZQ8zwWNEeJ4=; b=b91Xj7F6vtXn/ViEp9wXhGxJh
+	om95Rs7l+AswfsxFKsYJaFVBIecHWaeoANfjtVb1kqQCUooASKNWwv5YWBb/mIJGstPCLKjGD1pa5
+	mD5TUZRx5Xo+HpnDD98EGG5Q50hPq9KEsJjpk/+/8DrlpvhOc5MgOwqDNTytbApGIOpSB9qSEquMa
+	KcIhxl9mdcFyfNNb794MUpLblM+0RvdjxeU4V4WHagVpaOdz+fbpsJNAFTGnVP9lPDbVFNHlGXX3y
+	ytn9zIuZspgmN/CI4/bDMfWrfplXzBz3+zWuQHQ4T+UbL7kRuYzodcMPS96bJ22MxqaU0Qmc0OM4a
+	2XauS2qAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dHc-0007fk-2n; Tue, 27 Aug 2019 15:21:20 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1i2dK2-00005W-Fy; Tue, 27 Aug 2019 15:23:50 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dHQ-0007fK-2b
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:21:09 +0000
-X-Originating-IP: 86.207.98.53
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: gregory.clement@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 3E6BC20018;
- Tue, 27 Aug 2019 15:20:56 +0000 (UTC)
-From: Gregory CLEMENT <gregory.clement@bootlin.com>
-To: Miquel Raynal <miquel.raynal@bootlin.com>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH 05/20] arm64: dts: marvell: Prepare the introduction of
- AP807 based SoCs
-In-Reply-To: <20190806145500.24109-6-miquel.raynal@bootlin.com>
-References: <20190806145500.24109-1-miquel.raynal@bootlin.com>
- <20190806145500.24109-6-miquel.raynal@bootlin.com>
-Date: Tue, 27 Aug 2019 17:20:55 +0200
-Message-ID: <87d0gqzlbc.fsf@FE-laptop>
+ id 1i2dJu-0008W5-1a
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:23:43 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x7RFLUt5007886; Tue, 27 Aug 2019 17:23:36 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=SMKi/mX7zvq/yrjJa5DU8JTV4hHp8R0QThyzkk9s3nA=;
+ b=VbqIUTEVJwBhsOXMzWDDM0WvEpGE8M1Fpzxc2dYPMy6ExSX4mLoDAaBLGp0xoV3psUrN
+ mrc3zFMXTWIe16z1EzNMiMSfbFZy7ftoqLjmFYBILsTiBut8g6JZQd5nEI98DH322Wln
+ ASDN4IZp3FXfucqYou5miezHC83yJBffg2S5FNlcIPC+HGTat3x7bXkz7KJgtCJ+aBGI
+ VmJ/Iloca7rnS74AbeTEj9+CiJosfGB28SXarYrcEHbXI/W8pmIhK9hTQd83Y8HhjuMO
+ grAuIuqZ2Mwmgsu4JYZvPXmKNXB4OZtpVs2GtNYceuB59H8KhZJ8NoMxsvftLAo9WGkC 6w== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2ujtcbjk3r-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Tue, 27 Aug 2019 17:23:36 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 768AE24;
+ Tue, 27 Aug 2019 15:23:32 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A90C72AC1B6;
+ Tue, 27 Aug 2019 17:23:31 +0200 (CEST)
+Received: from lmecxl0912.lme.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
+ (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 27 Aug
+ 2019 17:23:31 +0200
+Subject: Re: [PATCH] Documentation: add link to stm32mp157 docs
+To: Jonathan Corbet <corbet@lwn.net>, Gerald BAEZA <gerald.baeza@st.com>
+References: <1566908347-92201-1-git-send-email-gerald.baeza@st.com>
+ <20190827074825.64a28e88@lwn.net>
+From: Alexandre Torgue <alexandre.torgue@st.com>
+Message-ID: <5257eff7-418b-8e94-1ced-30718dd3f5dc@st.com>
+Date: Tue, 27 Aug 2019 17:23:30 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190827074825.64a28e88@lwn.net>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.44]
+X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
+ (10.75.127.8)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-08-27_03:, , signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_082108_269822_D3AFDC97 
-X-CRM114-Status: GOOD (  13.80  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190827_082342_378482_D0463207 
+X-CRM114-Status: GOOD (  16.84  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ low trust [91.207.212.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,78 +97,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Yan Markman <ymarkman@marvell.com>,
- Antoine Tenart <antoine.tenart@bootlin.com>,
- Grzegorz Jaszczyk <jaz@semihalf.com>,
- Maxime Chevallier <maxime.chevallier@bootlin.com>,
- Nadav Haklai <nadavh@marvell.com>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>,
- Konstantin Porotchkin <kostap@marvell.com>,
- Stefan Chulski <stefanc@marvell.com>, Marcin Wojtas <mw@semihalf.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Miquel,
+Hi Jonathan,
 
-> From: Konstantin Porotchkin <kostap@marvell.com>
->
-> Prepare the support for Marvell AP807 die. This die is very similar to
-> AP806 but uses different DDR PHY. AP807 is a major component of CN9130
-> SoC series.
->
-> Signed-off-by: Konstantin Porotchkin <kostap@marvell.com>
-> Signed-off-by: Miquel Raynal <miquel.raynal@bootlin.com>
-> ---
->  arch/arm64/boot/dts/marvell/armada-ap806.dtsi | 448 +----------------
->  arch/arm64/boot/dts/marvell/armada-ap80x.dtsi | 456 ++++++++++++++++++
->  2 files changed, 458 insertions(+), 446 deletions(-)
->  create mode 100644 arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
->
-> diff --git a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-> index a23ddd46efc5..cdadb28f287e 100644
-> --- a/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-> +++ b/arch/arm64/boot/dts/marvell/armada-ap806.dtsi
-> @@ -5,454 +5,10 @@
->   * Device Tree file for Marvell Armada AP806.
->   */
->  
-> -#include <dt-bindings/interrupt-controller/arm-gic.h>
-> -#include <dt-bindings/thermal/thermal.h>
-> -
-> -/dts-v1/;
-> +#define AP_NAME		ap806
+On 8/27/19 3:48 PM, Jonathan Corbet wrote:
+> On Tue, 27 Aug 2019 12:19:32 +0000
+> Gerald BAEZA <gerald.baeza@st.com> wrote:
+> 
+>> Link to the online stm32mp157 documentation added
+>> in the overview.
+>>
+>> Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
+>> ---
+>>   Documentation/arm/stm32/stm32mp157-overview.rst | 6 ++++++
+>>   1 file changed, 6 insertions(+)
+>>
+>> diff --git a/Documentation/arm/stm32/stm32mp157-overview.rst b/Documentation/arm/stm32/stm32mp157-overview.rst
+>> index f62fdc8..8d5a476 100644
+>> --- a/Documentation/arm/stm32/stm32mp157-overview.rst
+>> +++ b/Documentation/arm/stm32/stm32mp157-overview.rst
+>> @@ -14,6 +14,12 @@ It features:
+>>   - Standard connectivity, widely inherited from the STM32 MCU family
+>>   - Comprehensive security support
+>>   
+>> +Resources
+>> +---------
+>> +
+>> +Datasheet and reference manual are publicly available on ST website:
+>> +.. _STM32MP157: https://www.st.com/en/microcontrollers-microprocessors/stm32mp157.html
+>> +
+> 
+> Adding the URL is a fine idea.  But you don't need the extra syntax to
+> create a link if you're not going to actually make a link out of it.  So
+> I'd take the ".. _STM32MP157:" part out and life will be good.
+> 
 
-I didn't find where AP_NAME is used.
+We also did it for older stm32 product. Idea was to not have the "full" 
+address but just a shortcut of the link when html file is read. It maybe 
+makes no sens ? (if yes we will have to update older stm32 overview :))
 
-> +#include "armada-ap80x.dtsi"
-[...]
-
-> diff --git a/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
-> new file mode 100644
-> index 000000000000..c44cd7c64bf6
-> --- /dev/null
-> +++ b/arch/arm64/boot/dts/marvell/armada-ap80x.dtsi
-
-[...]
+thanks
+Alex
 
 
-> +	ap806 {
-
-This file will be used for ap806 and for ap807 but the ap name will be
-the same for both varirant?
-
-Shouldn't you use the AP_NAME here?
-
-Gregory
-
--- 
-Gregory Clement, Bootlin
-Embedded Linux and Kernel engineering
-http://bootlin.com
+> Thanks,
+> 
+> jon
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
