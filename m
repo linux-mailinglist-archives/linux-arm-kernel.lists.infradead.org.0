@@ -2,52 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2E3BC9DF87
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 09:55:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23CE29E039
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 10:01:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Message-ID:References:In-Reply-To:Subject:To:From:
-	Date:MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KzfivNOy9fsGePIpyC777rGyycTNcMxzumVlAfO4CQk=; b=EcyLKeZ/UzaTMbDd/9wMgVvFF
-	vye0z5iw9Im8uBlQfWF+oDUdnWMcdfNBTaxeR4KWf6stBLULk1inpZl6K8USZCsbQa7cSg/DH0Skl
-	v+NHXnFM0GrSAQ3znJn2sCBWpr3kPTYMhIu/45AjTfHIJa4AEBPaIOB40becxhCgKbz7rMEK9IwqC
-	3g1mJjmjy/wGmVkOOXhBJwbYJZtB8Gb9RrQdjgORRtIBT53GF1pvCzu+MF0d5nN6RQE+eJO+X83t9
-	MJuTZcl6pB57NUqYF2LbKCQcFcVBIT3oFEU8hMFfhwTpd4QKGu/TdQJxqfJM5oyGDLVzSTOI1hQtB
-	nlX0F2c2A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lipjEQYY1tq2Gi7oy38nloYP68cDdORVmmC7FnoU8kE=; b=CKBfi9HtJ86uMw
+	y7IyTBzdZfD9ACINYxD1pXmznjgPYkh75ot2axUYAF6KChL5+RF35ZyhXR3l6DiRtnKR41rGv4dX9
+	x0p6UAIseo3YVfSAij/V7H1kDdtQUpNUCo1+yr7jD4GGNps0c9aguA4ppk0ohbKsT9451WfdUgfrO
+	+Dg3Qcc+TuCgAjprDODiLPhZRE+86BGJKpMorQWcubgH/XW4joX6AtUiqBQapkAMLQjlUR4fNqPLz
+	q1zuZn5FDeJsDg0R/zPVwQl0GYu2hjGeHxVztHPZQwLAC+Jhnj0ZbIso0jb/19icFhkonkGjTtrA9
+	yNRtNvCOf7dnTI5QsYjg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2WKI-0004BG-CI; Tue, 27 Aug 2019 07:55:38 +0000
-Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2WK3-0004A4-LD
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 07:55:25 +0000
-Received: from webmail.promanet.nl (edge2.prtnl [192.168.1.170])
- by sparta (Postfix) with ESMTP id EE15344A009E;
- Tue, 27 Aug 2019 09:57:15 +0200 (CEST)
+	id 1i2WQ8-0007oz-Fw; Tue, 27 Aug 2019 08:01:40 +0000
+Received: from mail-ed1-f65.google.com ([209.85.208.65])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2WPu-0007oZ-DY
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 08:01:28 +0000
+Received: by mail-ed1-f65.google.com with SMTP id m44so30118618edd.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 01:01:25 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Aj/M9A/pRvOgZCbXpj3T4Q2/WP9XPh0HT/hjIq8gM3E=;
+ b=jR1EntCRvwApZD5xO4wYxTlXCLIHhI5NbNf1J0Q6uXA7MX1wYtAZ1y+cL8UfixD9Z5
+ jrG+gg3csuqX8slj77oaKf3sjOUqzvFlcmyr6zpIQS5FuQZKHDUGj3cSQPqPjs4zawoH
+ fUSNHz9FD3YmIuVQHzlCAWxaek2q69+DmWzWKLEpkWu4IglEsMkohMpSmcJDLgImvbp/
+ Onbr7s57xy6A2Khqxp4KZBXZpDCzbxlu4eB4UENnw5ZoptpQtG7Uvzx3hr59/mScN/ZN
+ o7K8h/O5XqkVzzEAN1Dy3uLo3oTaKt313KBdU/faySO6X2VYoJ/YfIZy3Sk4Cypk9RTI
+ GE9A==
+X-Gm-Message-State: APjAAAUmyDzpLeh9we0nioyfB8egwKuj33LD0+aw+VXwP2nYlWiNfXTr
+ 317rzvZ//iQ6a7U5IanmZ8aLR6K65+E=
+X-Google-Smtp-Source: APXvYqyX7CgARhyfkriSkWm0DDO6AFXnWNaGWz3q+smiGiF8EP7M2Urp9TpHPrHJVHVIw270w0briw==
+X-Received: by 2002:a17:906:7e58:: with SMTP id
+ z24mr20625240ejr.251.1566892884271; 
+ Tue, 27 Aug 2019 01:01:24 -0700 (PDT)
+Received: from mail-wr1-f46.google.com (mail-wr1-f46.google.com.
+ [209.85.221.46])
+ by smtp.gmail.com with ESMTPSA id m26sm1824775edd.19.2019.08.27.01.01.23
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
+Received: by mail-wr1-f46.google.com with SMTP id t16so17780364wra.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
+X-Received: by 2002:adf:e941:: with SMTP id m1mr2132834wrn.279.1566892883607; 
+ Tue, 27 Aug 2019 01:01:23 -0700 (PDT)
 MIME-Version: 1.0
-Date: Tue, 27 Aug 2019 09:55:18 +0200
-From: robin <robin@protonic.nl>
-To: Robin Gong <yibin.gong@nxp.com>
-Subject: Re: [PATCH] input: keyboard: snvs_pwrkey: Send press and release
- event for i.MX6 S,DL and Q
-In-Reply-To: <VE1PR04MB6638754916357F551502102589A00@VE1PR04MB6638.eurprd04.prod.outlook.com>
-References: <20190823123002.10448-1-robin@protonic.nl>
- <VE1PR04MB6638754916357F551502102589A00@VE1PR04MB6638.eurprd04.prod.outlook.com>
-Message-ID: <83c033a20f5f2e3ce15525a1efd072bb@protonic.nl>
-X-Sender: robin@protonic.nl
-User-Agent: Roundcube Webmail/1.3.6
+References: <20190826180734.15801-1-codekipper@gmail.com>
+ <20190826180734.15801-2-codekipper@gmail.com>
+ <CAGb2v651jVp+J2eyWh7vw-yHmFTVy4eaMjHV0FvOF17C5_Hswg@mail.gmail.com>
+ <CAEKpxBmCg4AkqKM-O3C76gto+mPWyEdDbviAmRJ8PxLOOMTJ7w@mail.gmail.com>
+In-Reply-To: <CAEKpxBmCg4AkqKM-O3C76gto+mPWyEdDbviAmRJ8PxLOOMTJ7w@mail.gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 27 Aug 2019 16:01:12 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64VNZ0oyD_760uNccwJb7MKngSooWB72M+d1DfT4-djog@mail.gmail.com>
+Message-ID: <CAGb2v64VNZ0oyD_760uNccwJb7MKngSooWB72M+d1DfT4-djog@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v6 1/3] ASoC: sun4i-i2s: incorrect regmap
+ for A83T
+To: Code Kipper <codekipper@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_005524_050670_E9FAE5B3 
-X-CRM114-Status: GOOD (  12.74  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_010126_462533_FB57229D 
+X-CRM114-Status: GOOD (  35.54  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.65 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.208.65 listed in wl.mailspike.net]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,125 +100,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>, linux-input@vger.kernel.org,
- Adam Ford <aford173@gmail.com>, Fabio Estevam <festevam@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-08-27 08:17, Robin Gong wrote:
-> On Fri, Aug 23, 2019 at 02:30:02PM +0200, Robin van der Gracht wrote:>
->> The older generation i.MX6 processors send a powerdown request 
->> interrupt
->> if the powerkey is released before a hard shutdown (5 second press). 
->> This
->> should allow software to bring down the SoC safely.
->> 
->> For this driver to work as a regular powerkey with the older SoCs, we 
->> need to
->> send a keypress AND release when we get the powerdown request 
->> interrupt.
-> Please clarify here more clearly that because there is NO press
-> interrupt triggered
-> but only release interrupt on elder i.mx6 processors and that HW issue
-> fixed from
-> i.mx6sx.
+On Tue, Aug 27, 2019 at 1:55 PM Code Kipper <codekipper@gmail.com> wrote:
+>
+> On Tue, 27 Aug 2019 at 06:13, Chen-Yu Tsai <wens@csie.org> wrote:
+> >
+> > On Tue, Aug 27, 2019 at 2:07 AM <codekipper@gmail.com> wrote:
+> > >
+> > > From: Marcus Cooper <codekipper@gmail.com>
+> > >
+> > > The regmap configuration is set up for the legacy block on the
+> > > A83T whereas it uses the new block with a larger register map.
+> >
+> > Looking at the code Allwinner previously released [1], that doesn't seem to be
+> > the case. Keep in mind that the register map shown in the user manual is for
+> > the TDM interface, which we don't actually support right now.
+>
+> Should it matter what we support right now?, the block according to the user
+> manual shows the bigger range. I don't have a A83T device and from what I
 
-ACK
+There are a total of four I2S controllers on the A83T. Currently three of them
+are listed in the dtsi file, which are _not_ the one shown in the user manual.
+The one shown is the fourth one, which is the TDM controller.
 
->> 
->> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
->> ---
->>  arch/arm/boot/dts/imx6qdl.dtsi       |  2 +-
->>  arch/arm/boot/dts/imx6sll.dtsi       |  2 +-
->>  arch/arm/boot/dts/imx6sx.dtsi        |  2 +-
->>  arch/arm/boot/dts/imx6ul.dtsi        |  2 +-
->>  arch/arm/boot/dts/imx7s.dtsi         |  2 +-
-> As Shawn talked, please keep the original "fsl,sec-v4.0-pwrkey", just 
-> add
-> 'imx6qdl-snvs-pwrkey' for elder i.mx6 processor i.mx6q/dl/sl, thus no 
-> need
-> to touch other newer processor's dts.
+It's not like we haven't seen this before. IIRC the A64 also had two variants
+of the I2S interface. The one coupled with the audio codec was different from
+the others.
 
-ACK
+> gather not many users do. But the compatible for the H3 has been removed
+> and replaced with the settings for the A83T which also has default settings in
+> registers further up than SUNXI_RXCHMAP.
 
-> 
->> 
->>  static void imx_imx_snvs_check_for_events(struct timer_list *t) @@ 
->> -67,13
->> +85,23 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void
->> *dev_id)  {
->>  	struct platform_device *pdev = dev_id;
->>  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
->> +	struct input_dev *input = pdata->input;
->>  	u32 lp_status;
->> 
->> -	pm_wakeup_event(pdata->input->dev.parent, 0);
->> +	pm_wakeup_event(input->dev.parent, 0);
->> 
->>  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
->> -	if (lp_status & SNVS_LPSR_SPO)
->> -		mod_timer(&pdata->check_timer, jiffies +
->> msecs_to_jiffies(DEBOUNCE_TIME));
->> +	if (lp_status & SNVS_LPSR_SPO) {
->> +		if (pdata->hwtype == IMX6QDL_SNVS) {
->> +			input_report_key(input, pdata->keycode, 1);
->> +			input_report_key(input, pdata->keycode, 0);
->> +			input_sync(input);
->> +			pm_relax(input->dev.parent);
-> Could you move the above input event report steps into
-> imx_imx_snvs_check_for_events()
-> as before? That make code better to understand and less operation in 
-> ISR.
+I'll sync up with Maxime on this.
 
-I placed it here to avoid the unnessesairy debounce delay (since thats 
-already
-implemented in hardware).
+> >
+> > The file shows the base address as 0x01c22800, and the last defined register
+> > is SUNXI_RXCHMAP at 0x3c.
+> >
+> > The I2S driver [2] also shows that it is the old register map size, but with
+> > TX_FIFO and INT_STA swapped around. This might mean that it would need a
+> > separate regmap_config, as the read/write callbacks need to be changed to
+> > fit the swapped registers.
+> >
+> > Finally, the TDM driver [3], which matches the TDM section in the manual, shows
+> > a larger register map.
+> >
+> > A83T is SUN8IW6, while SUN8IW7 refers to the H3.
+>
+> Since when have we trusted Allwinner code?, the TDM labelled block
+> clearly supports
 
-I do agree with your arguments so I'll move emitting the events to
-imx_imx_snvs_check_for_events().
+Since they haven't listed the I2S block in the user manual, so that is what we
+have to go by.
 
-Is it ok if I keep the conditional, but instead of emitting the events,
-schedule imx_imx_snvs_check_for_events() immidiatly to avoid the 
-debounce,
-or should I choose clarity over the 30 ms delay?
+The TDM section in the user manual only lists the block at 0x1c23000. The memory
+map says DAUDIO-[012] for addresses 0x1c22000, 0x1c22400, 0x1c22800, and TDM for
+address 0x1c23000. One would assume this meant these are somewhat different.
 
->> +		} else {
->> +			mod_timer(&pdata->check_timer,
->> +				jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
->> +		}
->> +	}
->> 
->>  	/* clear SPO status */
->>  	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO); @@
->> -88,11 +116,24 @@ static void imx_snvs_pwrkey_act(void *pdata)
->>  	del_timer_sync(&pd->check_timer);
->>  }
->> 
->> +static const struct of_device_id imx_snvs_pwrkey_ids[] = {
->> +	{
->> +		.compatible = "fsl,imx6sx-sec-v4.0-pwrkey",
->> +		.data = &imx_snvs_devtype[IMX6SX_SNVS],
->> +	}, {
->> +		.compatible = "fsl,imx6qdl-sec-v4.0-pwrkey",
->> +		.data = &imx_snvs_devtype[IMX6QDL_SNVS],
-> No ' IMX6QDL_SNVS ' defined in your patch or am I missing?
+> I2S. The biggest use case for this block is getting HDMI audio working
+> on the newer
 
-I added an enum 'imx_snvs_hwtype' that defines both IMX6SX_SNVS and 
-IMX6QDL_SNVS.
+I understand that.
 
->> +	},
->> +	{ /* sentinel */ }
->> +};
->> +MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
->> --
->> 2.20.1
+> devices(LibreELEC nightlies has a user base of over 300) and I've tested this on
+> numerous set ups over the last couple of years.
+
+Tested on the H3, correct?
+
+> Failing that reverting (3e9acd7ac693: "ASoC: sun4i-i2s: Remove
+> duplicated quirks structure")
+> would help.
+
+I'll take a look. IIRC it worked with the old layout, with the two registers
+swapped, playing standard 48 KHz / 16 bit audio when I added supported for
+the A83T. Then again maybe the stars were perfectly aligned. At the very least
+we could separate A83T and H3 as you suggested.
+
+ChenYu
+
+
+> BR,
+> CK
+> >
+> > ChenYu
+> >
+> > [1] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/hdmiaudio/sunxi-hdmipcm.h
+> > [2] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/i2s0/sunxi-i2s0.h
+> > [3] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/daudio0/sunxi-daudio0.h
+> >
+> > > Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
+> > > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> > > ---
+> > >  sound/soc/sunxi/sun4i-i2s.c | 2 +-
+> > >  1 file changed, 1 insertion(+), 1 deletion(-)
+> > >
+> > > diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+> > > index 57bf2a33753e..34575a8aa9f6 100644
+> > > --- a/sound/soc/sunxi/sun4i-i2s.c
+> > > +++ b/sound/soc/sunxi/sun4i-i2s.c
+> > > @@ -1100,7 +1100,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+> > >  static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
+> > >         .has_reset              = true,
+> > >         .reg_offset_txdata      = SUN8I_I2S_FIFO_TX_REG,
+> > > -       .sun4i_i2s_regmap       = &sun4i_i2s_regmap_config,
+> > > +       .sun4i_i2s_regmap       = &sun8i_i2s_regmap_config,
+> > >         .field_clkdiv_mclk_en   = REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
+> > >         .field_fmt_wss          = REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
+> > >         .field_fmt_sr           = REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
+> > > --
+> > > 2.23.0
+> > >
+> > > --
+> > > You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> > > To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> > > To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190826180734.15801-2-codekipper%40gmail.com.
+>
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/CAEKpxBmCg4AkqKM-O3C76gto%2BmPWyEdDbviAmRJ8PxLOOMTJ7w%40mail.gmail.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
