@@ -2,77 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7E5519E3CB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:18:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB8069E410
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:24:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rtAGnGVEJD13F06l/NPLqS6NPIa2nN1bq6DsZB28hiE=; b=eyHuvhWIy6KawI
-	Xv9Bh2kf30/FnPSW8XyzOIGL1Zhm54Tuy9AvRn3gBGNqDiZIhzIRaZH9oD6DITC82pEFmlNopAbYT
-	qjSaK7U5645V0NWGe3XIWFRJ8CCGhInnlrTrFbvb3xDlNJfTNL+6haxmrdAv0+o+Z2CL1u8kkiu7K
-	0NZbB2lUm4Dqs72+S0OJj+ro2qGmvNzg68M9ogHkmI1SvGlelYRbTq9awNBvZxgjolawRGkLOn/RS
-	aowxKUf1QD3MaT4Cgwu1UqIczDxtl4R75LYRNoYe/sN8qZKxzLiU7BMZ1iEETK4UvydxCugrjQX/K
-	mF5tdgeSh9FswzGwox9A==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F1EHwK7g1HE8jPuYDUSEJXTywcdg2aeyBg/3CobBrmc=; b=RFILxJTEgQiGHh
+	eAh8nylRSLLfG5g3BrdWwLFk1kB7hcS3zVodwfkGmvBDEG0uKqoDs/SftHyjbSJtKoIC/9Gp7R2A1
+	ZO/+Tg4Awx7zzlm96tNTrkoyr3Q8+cbIq6XX/D3rNP70fPsE87fm8I4MVSKhHhUdBbDLpv2NiTfg7
+	KXLQIN0mquYRvWJuYJcH2/KyvDK/u/BuAc7R3+zz7oRUNZ/ZlZ3dH+A1IsVYs7frpFJNfhXTuJum7
+	uWRaF0Ecpg7QowsmYEq9IJMzIMO7skalGpwfZ+IcoztFT6nYni7ua52cJH3T6bCwc8z2BuEGwDHGZ
+	VZ61QIRvkjP7gM4JFgNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2XcX-0008Se-Im; Tue, 27 Aug 2019 09:18:33 +0000
-Received: from mail-ot1-f66.google.com ([209.85.210.66])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Xc5-0008SF-Lq
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:18:07 +0000
-Received: by mail-ot1-f66.google.com with SMTP id w4so17965787ote.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 02:18:04 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=nhT1Rd3Lj1UELV0LVFye/yoAPnbJ5QOFnr3bTqW/MP0=;
- b=eSL2ylzoRavp0kDIX7dlty/0BXmUFf3tPG09af+CeCWsorz7RRIVdaE37BKlGGoPrK
- mGninknsZmsFFffuqczL+SHR/E7uaQN7QppI+sRd+AF5jGOqybvL8wZXYNc1IkXyaCXg
- HL2w5wyK5e8cD8297Y2gtipa2goe+VPYJEaUu/eHOF1BLgir1xt5R1byuF50Jmtg3RRb
- JmYaicI3Lw7pAehUlnV8ljFV+NCJ4HNkhOqj81u0vcatBECtKnIF1esqEFHVuwpM0J2t
- WTyoEHfVxwhWWlHULNpRYX9OrRA5nmkJ02FvynG6ydu2IdObkM994CagKPti11v7Z9Pz
- hzQA==
-X-Gm-Message-State: APjAAAVpCi82r7NMQLL4xNuvLfUa2AwwQf5zTGhJMOCOuDncVeBaARuE
- n8lLvLHUXdWvMMyNik9fTrbmt5h70LG+L2isXuc=
-X-Google-Smtp-Source: APXvYqwFViP1qbcFMRhaF/ExVaw43p6ehTGxxsw0pX25FAJsnmhcf6UkL24tDYawFwgVn841oUSayrAX0uCEl5n71L4=
-X-Received: by 2002:a9d:7a90:: with SMTP id l16mr19232407otn.297.1566897484288; 
- Tue, 27 Aug 2019 02:18:04 -0700 (PDT)
+	id 1i2XiJ-0001wN-Uu; Tue, 27 Aug 2019 09:24:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2Xhz-0001ur-N7; Tue, 27 Aug 2019 09:24:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6FFB3337;
+ Tue, 27 Aug 2019 02:24:10 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 508D93F718; Tue, 27 Aug 2019 02:24:09 -0700 (PDT)
+Subject: Re: [PATCH v1 0/6] Allow kexec reboot for GICv3 and device tree
+To: Pavel Tatashin <pasha.tatashin@soleen.com>
+References: <20190826190056.27854-1-pasha.tatashin@soleen.com>
+ <20190826201313.246208e9@why>
+ <CA+CK2bAS-jDwY-qKfZQD8TbvyAhS1+rBvcxGqkR4BHd5NR5BGQ@mail.gmail.com>
+ <d7461fb3-0f6d-8abf-084d-ce0be1f1a18d@kernel.org>
+ <CA+CK2bAk4Xb_hxh2KLxWKa8ogM-jO1MpREmc02TmUMpdJ2ZbSA@mail.gmail.com>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <86282c48-bc69-f745-92c2-9df2b92ad6bd@kernel.org>
+Date: Tue, 27 Aug 2019 10:24:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190823062452.127528-1-hsinyi@chromium.org>
- <20190823062452.127528-3-hsinyi@chromium.org>
- <20190823154158.wgcnxfzpcttpnhga@willie-the-truck>
-In-Reply-To: <20190823154158.wgcnxfzpcttpnhga@willie-the-truck>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Tue, 27 Aug 2019 11:17:53 +0200
-Message-ID: <CAMuHMdXkKomZm_5dhmYd3ryy7PCygA1JBRnpJVvaCXm8nXvTxw@mail.gmail.com>
-Subject: Re: [PATCH v10 2/3] fdt: add support for rng-seed
-To: Will Deacon <will@kernel.org>, Hsin-Yi Wang <hsinyi@chromium.org>
+In-Reply-To: <CA+CK2bAk4Xb_hxh2KLxWKa8ogM-jO1MpREmc02TmUMpdJ2ZbSA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_021805_714741_AB92BC41 
-X-CRM114-Status: GOOD (  18.13  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190827_022411_842975_B5EE5D92 
+X-CRM114-Status: GOOD (  23.65  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.66 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.210.66 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,87 +65,106 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Mukesh Ojha <mojha@codeaurora.org>,
- Grzegorz Halat <ghalat@redhat.com>, "H . Peter Anvin" <hpa@zytor.com>,
- Guenter Roeck <groeck@chromium.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Rob Herring <robh@kernel.org>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>, Yury Norov <ynorov@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Aaro Koskinen <aaro.koskinen@nokia.com>, Ingo Molnar <mingo@redhat.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Waiman Long <longman@redhat.com>,
- "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>, Wei Li <liwei391@huawei.com>,
- Alexey Dobriyan <adobriyan@gmail.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Len Brown <len.brown@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Rik van Riel <riel@surriel.com>,
- Stephen Boyd <swboyd@chromium.org>, Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Mike Rapoport <rppt@linux.vnet.ibm.com>, Borislav Petkov <bp@alien8.de>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, Theodore Tso <tytso@mit.edu>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Marcelo Tosatti <mtosatti@redhat.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
- Armijn Hemel <armijn@tjaldur.nl>, Jiri Kosina <jkosina@suse.cz>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Tim Chen <tim.c.chen@linux.intel.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ James Morris <jmorris@namei.org>, LKML <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will, Hsin-Yi,
+On 27/08/2019 09:53, Pavel Tatashin wrote:
+>>> Running Linux without EFI is common, and there are scenarios which
+>>> make it appropriate. As I understand most of embedded linux do not
+>>> have EFI enabled, and thus I do not see a reason why we would not
+>>> support a first class feature of Linux (kexec) on non-EFI bootloaders.
+>>
+>> Define "most". All the arm64 systems I have around (and trust me, that's
+>> quite a number of them) can either use u-boot, which has more than
+>> enough EFI support to use this functionality, or use EDK-II natively.
+> 
+> OK. Is this the most common configuration in the embedded ARM64
+> devices currently deployed: phones, cameras, consoles, players, etc?
 
-On Fri, Aug 23, 2019 at 5:42 PM Will Deacon <will@kernel.org> wrote:
-> On Fri, Aug 23, 2019 at 02:24:51PM +0800, Hsin-Yi Wang wrote:
-> > Introducing a chosen node, rng-seed, which is an entropy that can be
-> > passed to kernel called very early to increase initial device
-> > randomness. Bootloader should provide this entropy and the value is
-> > read from /chosen/rng-seed in DT.
-> >
-> > Obtain of_fdt_crc32 for CRC check after early_init_dt_scan_nodes(),
-> > since early_init_dt_scan_chosen() would modify fdt to erase rng-seed.
-> >
-> > Add a new interface add_bootloader_randomness() for rng-seed use case.
-> > Depends on whether the seed is trustworthy, rng seed would be passed to
-> > add_hwgenerator_randomness(). Otherwise it would be passed to
-> > add_device_randomness(). Decision is controlled by kernel config
-> > RANDOM_TRUST_BOOTLOADER.
-> >
-> > Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
-> > Reviewed-by: Stephen Boyd <swboyd@chromium.org>
-> > Reviewed-by: Rob Herring <robh@kernel.org>
-> > ---
-> > Change from v9:
-> > * reword kconfig
-> > * use IS_ENABLED for config
->
-> Given that these aren't functional changes, I've kept Ted's ack from v9
-> and I'll queue these via arm64 assuming they pass testing.
+Which one of these has kexec as a requirement?
 
-This is now commit 428826f5358c922d ("fdt: add support for rng-seed")
-in arm64/for-next/core, and causes the following regression on arm32
-(e.g. r8a7791/koelsch, and sh73a0/kzm9g):
+>>> We (Microsoft) have a small highly secure device with a high uptime
+>>> requirement. The device also has PCIe and thus GICv3. The update for
+>>
+>> PCIe doesn't imply GICv3 at all.
+> 
+> My impression was that without PCIe GICv3 is rarely used, and this
+> could be the reason why this problem is not seen outside of larger
+> machines which normally have EFI enabled.
 
-    OF: fdt: not creating '/sys/firmware/fdt': CRC check failed
+Wong impression. All the combinations exist and are wildly deployed.
 
-Seems to work fine on arm64 (r8a7795/h3-salvator-xs), though.
+>>> this device relies on kexec. For a number of reasons, it was decided
+>>> to use U-Boot and Linux without EFI enabled. One of those reasons is
+>>> to improve boot performance, enabling EFI in U-Boot alone reduces the
+>>> boot performance by half a second. Our total reboot budget is under a
+>>> second which makes that half a second unacceptable. Also, adding EFI
+>>> support to kernel increases its size and there are security
+>>> implications from enabling more code both in U-Boot and Linux.
+>>
+>> You're are missing the point. kexec with EFI has 0 overhead (no
+>> non-kernel EFI code gets executed), doesn't impact your time budget, and
+>> only relies on a single in-memory table. This can be pretty trivially
+>> provided by the dumbest EFI shim.
+> 
+> Thanks, this makes sense that the Linux boot time won't be affected. I
+> have not tested how u-boot was affected, but was told 0.5 second
+> longer to start.
 
-Gr{oetje,eeting}s,
+So you haven't even tried? :-(
 
-                        Geert
+> 
+>> All you are describing above is a set of self imposed limitations in
+>> your bootloader, which you are fully in control of. So instead of
+>> reinventing a square wheel, I suggest you adopt the existing implementation.
+> 
+> I am not sure this analogy is correct, I do not think that non-EFI
+> enabled kernels became legacy.
 
+non-EFI systems always had reduced functionality, such as not being able
+to use runtime services.
+
+> 
+>> Another reason not to do this is interoperability: I want to be able to
+>> kexec whatever Linux kernel I want, without having to cope with all
+>> flavours of the same functionality. Effectively, the EFI table is a
+>> private ABI between two Linux kernels. We're not changing it.
+> 
+> This is exactly the problem: by having this region defined in signed
+> DTB file we reduce the amount of communication between the kernels.
+> Passing modified EFI Table causes us to pass more information from the
+> first kernel indefinitely through updates. Thus, increases a chance
+> for a security compromise.
+
+Nothing says that it has to be modified. For what it's worth, you could
+perform the allocation in your bootloader once and for all, configure
+the GIC redistributors and enable LPIs there, and pass the EFI
+reservation to the first kernel. The security argument is a fallacy.
+
+> We are not changing EFI ABI between
+> kernels, it will stay as is. All this code does is enables kernels
+> that do not have EFI table communication between them a way to do
+> kexec updates with reduced amount of data exchange.
+
+And to do that, you're adding yet another ABI we have to support, and
+creating havoc in the kexec chain (kernel 1 knows about the DT hack,
+kernel 2 doesn't, panic follows). My answer to this is *no*. We already
+have a flexible interface that allows you to do what you want, and I'm
+not adding another one.
+
+Thanks,
+
+	M.
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
