@@ -2,57 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C37E9E5FE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:44:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D5819E605
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:46:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=l38wK0Xm/Lt3MQy2b44xMepKEYR90u1WcHaFYi0iyys=; b=BxOPgJuKTA8/pwcOM6AKjacbb
-	wS9PoAIUQ1bO5C5gq4JmrGTLwxi2RIlmOI/B+0ejRZNwMbZGomYft/YFhSsk5Bq6k6G+K89WHXMvO
-	DwP/I1uCl34F77/4fMgYdNp0FD+DTa9ItM3mEpb85Z2/3nXACLD631tuHGH17wLwBxMT51a8u7nYH
-	pznfrJ74Ki6lMHkwdn35+s+GRvv9EmNgd7IeyxpLXPSbB7B50ueCev/8c1Rh6cCTWWPXbBMA7W53K
-	XV7VEHBrvB2DRiU7d6yf+1NwAUv05N6TpIHV8/kZEEO1Est7zM8hM43FH0/0MbCMKvqH5VIbp9bzF
-	zyd8vUvWQ==;
+	 bh=ahFp9B3QdJd8gDqgV9BMhJTHn+m5zQyxbgBu7m8esOw=; b=qQdvMov4DmSEXjapiwEiHtRl+
+	vqHSymQXOj4Chs98bWsURC8HL+osf+l8p0oofCbN/INx4lhCIEMeajcQCP1HtqoOpgliX3BJ3QWn7
+	u6rzKwMFz8PwGlnYs2YrvYWyg2PIT9T5RqRJb3bmwN2H5ApbyoSycYbZ3WaXi/ka5MPBnyq3XojWu
+	SHYVT9W9giS+B+dyE1Y45mQXt2FKhOjQZ3qDxgo7U/KvEnmC5eZ7n7ptowSrwzhibiAoGT9N8YJOG
+	hkuRvGhDpw4wMpoj/a/5GjFDY/5kJ5sYSNHxKqt6/UqNff/F6VEpzM5mD/rLB5K+nukcmvDMlk+Eg
+	e60KBTx4w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2YxO-0003T4-PF; Tue, 27 Aug 2019 10:44:10 +0000
+	id 1i2Yzl-0004x6-GP; Tue, 27 Aug 2019 10:46:37 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2YxD-0003Sl-Sx
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:44:01 +0000
+ id 1i2YzV-0004wg-Gj
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:46:22 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
  MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=UWpP6ASANjGbwqBx1gdjtA+jZ6LbnLc6oEyLnl6i6zA=; b=jEwtKJ1Y2lIRNkHGplE6Ps3ZH
- 0JGFaedxuxOerP9ta8l3ibZ4633GzaanL+q2VhxSGuait022o7wFIUr9b1zdoh0GXJOG0hBrbXokg
- WB4IbMiMo9efixMQ6kj9pR/dzrY83khLeOo/TXZRbPC/nWk6RoOTnNoKL2xTxie/dtXb4=;
+ bh=8QAAUf3vEixa4AQLyanZm3bk3o3NCepVwowzlteGrV8=; b=SpcTXMiQRD7y+zEJj7wHEMuF4
+ BdHm2bdibtEv5B+rAJ0/EF+oWbDSmWg9KZTTH95faBeQs4OseJpdk1lTxb4kOQMe/faiAgyE9jVPL
+ v3iJ12dlMyxSwM0jmxfpZoy9dG7xoOY4qvJ+kJnde+0Xempz1BfkDPGyZejBx0KdfnbCM=;
 Received: from [92.54.175.117] (helo=fitzroy.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1i2Yx6-0007sZ-Tm; Tue, 27 Aug 2019 10:43:52 +0000
+ id 1i2YzP-0007t4-Tr; Tue, 27 Aug 2019 10:46:15 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 6A743D02CE6; Tue, 27 Aug 2019 11:43:52 +0100 (BST)
-Date: Tue, 27 Aug 2019 11:43:52 +0100
+ id 8B4A3D02CE6; Tue, 27 Aug 2019 11:46:15 +0100 (BST)
+Date: Tue, 27 Aug 2019 11:46:15 +0100
 From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH 1/2] Revert "ASoC: sun4i-i2s: Remove duplicated quirks
- structure"
-Message-ID: <20190827104352.GY23391@sirena.co.uk>
-References: <20190827093206.17919-1-mripard@kernel.org>
+To: Chen-Yu Tsai <wens@csie.org>
+Subject: Re: Applied "ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on
+ newer SoCs" to the asoc tree
+Message-ID: <20190827104615.GZ23391@sirena.co.uk>
+References: <0e5b4abf06cd3202354315201c6af44caeb20236.1566242458.git-series.maxime.ripard@bootlin.com>
+ <20190820174105.96899274314F@ypsilon.sirena.org.uk>
+ <CAGb2v64vzcZbXqfW27cgobpQ-AXQjb2zanqotAR0ezw+6KCdpw@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190827093206.17919-1-mripard@kernel.org>
+In-Reply-To: <CAGb2v64vzcZbXqfW27cgobpQ-AXQjb2zanqotAR0ezw+6KCdpw@mail.gmail.com>
 X-Cookie: Don't SANFORIZE me!!
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_034359_936182_06D91EF6 
-X-CRM114-Status: GOOD (  11.35  )
+X-CRM114-CacheID: sfid-20190827_034621_560370_93E340FF 
+X-CRM114-Status: GOOD (  10.62  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -78,57 +80,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
- linux-kernel@vger.kernel.org, codekipper@gmail.com,
- Chen-Yu Tsai <wens@csie.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2686477927154271554=="
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Marcus Cooper <codekipper@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Content-Type: multipart/mixed; boundary="===============6843387399915410799=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2686477927154271554==
+--===============6843387399915410799==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="15k5Fuw+yLfT1d9X"
+	protocol="application/pgp-signature"; boundary="lIC76ItX9S6XOZ/S"
 Content-Disposition: inline
 
 
---15k5Fuw+yLfT1d9X
+--lIC76ItX9S6XOZ/S
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
 
-On Tue, Aug 27, 2019 at 11:32:05AM +0200, Maxime Ripard wrote:
-> From: Maxime Ripard <maxime.ripard@bootlin.com>
->=20
-> This reverts commit 3e9acd7ac6933cdc20c441bbf9a38ed9e42e1490.
->=20
-> It turns out that while one I2S controller is described in the A83t
-> datasheet, the driver supports another, undocumented, one that has been
-> inherited from the older SoCs, while the documented one uses the new
-> design.
+On Tue, Aug 27, 2019 at 05:25:21PM +0800, Chen-Yu Tsai wrote:
 
-Please use subject lines matching the style for the subsystem.  This
-makes it easier for people to identify relevant patches.
+> > From: Marcus Cooper <codekipper@gmail.com>
 
---15k5Fuw+yLfT1d9X
+> The authorship of this patch looks to be wrong. Maybe it's a tooling issue.
+> I imagine it might have happened if Maxime created the patches using
+> `git format-patch` with his @bootlin.com address, then sent them with his
+> @kernel.org address, and `git send-email` swapped out the "From:" header
+> and prepended it to the body.
+
+No idea.  In any case it's kind of hard to fix at this point
+since there's a merge in the way.  This is why I like using
+branches for things but Linus doesn't :/
+
+> Either way the "From:" line looks odd in the commit log.
+
+This is what git format-patch does when sending stuff via e-mail
+if the author is different from the sender, it uses that to
+override things.
+
+--lIC76ItX9S6XOZ/S
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1lCWUACgkQJNaLcl1U
-h9BE5wf/e1I8LfUK6KLnXqxYzxIjCX6f4JtBiqFI99GurXQD/tNK1q7Ldszv3Cwc
-diESenhKUbt+tMgtus6JWeI71/T2BN6A1fewE6n5rhLl/tny4kmlcIlBsZIPV2z6
-WFmdU15AGyRSRBIRkQwGYBxA5ViTMQqeWKXtCenIkxypv06TsBqQr047rvlgFdEf
-anti8BIGziPLJtyCkpU/iCV151N9K5priltDgw0FKN0nogcyUAUWXcaAjbQi0kQe
-FYtUKi/Rl3XQKqGkL4h4Z80VTlXbq60QH1npUmR8Y0WpecEci92PJ3iOmqciwfe9
-sbKc1Q/++txkY4XUgNv+RDvt9Q4/zg==
-=bQV/
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1lCfYACgkQJNaLcl1U
+h9Di7ggAgNoZ8rQn7YvVm4cejhwJBcdMuUs1+pBMAGoZh58gwfOMXjpmjeBhjc/F
+tSA0tLaf56ov+6K+icWnoYNv3uAMWBA1jimgQTS/ZOPTnfNPQ94/StKIHQKDxj+U
+o4MwOkNdSc/ilIGdzRYa9mbTszAjTcB8zylCWd8ONcxTM8RxADVVlVSNXinS7ZnI
+cslI9umNwU7+S8WoO7Q5gdk0cOHWmEjW12kgv6LsT6GyLrdlY08Nylb+uaLX+cQP
+Tfoym0mSqCbh5/yCHO5tffAuvsMTUdWw+Pid75EkdaY/u4zmnn0+4D5n64a/wfmi
+o2fP8Rqk1GMMBWKc42wqfjqulKd53A==
+=onS9
 -----END PGP SIGNATURE-----
 
---15k5Fuw+yLfT1d9X--
+--lIC76ItX9S6XOZ/S--
 
 
---===============2686477927154271554==
+--===============6843387399915410799==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -139,5 +150,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2686477927154271554==--
+--===============6843387399915410799==--
 
