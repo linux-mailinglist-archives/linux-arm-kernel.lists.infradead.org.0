@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 834149E414
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:25:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A42B19E41A
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 11:26:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QECBnuFz+jB8FwKdP8ie2V3rdXzfqUHYmd8zkRO2/9Q=; b=KppFOvS7+fSlEE
-	jsR/pFzyulAohQ8GgmIGtYcuH8m80oQ/nigyO6gdRIVUV2ME9kYRFyoz+RLAGfIoDPanHgUM7IcPb
-	9Y4xzKpR986JJOvSebPZnfwNNy0Xa51zt7ihTQBFs6vNzwYm6RtRMmplzRnTw5SqZHo8GrqqWGzO3
-	e3hj+YscgqLKVNW8NShlvJJfX/9I0jVjfY2OyrMnyfLdwx+BkFtHhT0CdYym7lPVY36fjvNeJbpt3
-	M/UESV4CMvgzOJ63EVDc8+2YnznZxK2770S+WMD4X3H/4pZEikCKUNgg62cllYXfJTaKgtGSI0xU3
-	kuAeHz8wNl21Y/g4ObMw==;
+	List-Owner; bh=rYg0XRRVhOdx5qEctbvv+AaccjVXWqaVoCkqgiBkgoM=; b=jdXnAn2erN5qEU
+	1TSValJFqbeueStT2J8IVFZe3dawBjDr9SJMX5J8nyF9lon2iEZUcvLSlRo0G0+X62CXK+trB3/dC
+	hiT/nBFN/15dxSxix2fsBio3PMszByGUjbcI8CF/h2ckCPhcpPn8k0o1qyYeYuendA66yC0wfo+1A
+	HlxYTkGaUuI6kot6gXdSLVH23VmzFFHFNye9piZU2WG6oTLaSQrGrCn9qb0UPshL7KWe8FLr8JJAX
+	FFulpVP4JtqndPMH4KVzwA1kHkaf+dxzrbZ4TchD7kR9jvJR9auF/krsPzow3ZZG1FG+3ja7jaRJ2
+	namLhsPaY0C/x4jJW/0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Xj3-0002NQ-8f; Tue, 27 Aug 2019 09:25:17 +0000
-Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
+	id 1i2Xjg-0003jB-Qn; Tue, 27 Aug 2019 09:25:57 +0000
+Received: from mail-ed1-f68.google.com ([209.85.208.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Xil-0002Ef-QN
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:25:01 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id CA33742ECC;
- Tue, 27 Aug 2019 09:24:57 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
- content-transfer-encoding:mime-version:user-agent:content-type
- :content-type:organization:references:in-reply-to:date:date:from
- :from:subject:subject:message-id:received:received:received; s=
- mta-01; t=1566897896; x=1568712297; bh=m1oceRiF1Qn5bpG3Kcq7B21nL
- l0SDA1suLrzuRV2RYc=; b=QNwHTQH6Jdn9Kgs9RTfRZNE6geyuX8ZoE5YgCjSFv
- zPxnaVeQA02q/7LwHDTCh233tUyfe3F1UCUOohyoG+1zO3G0Z3U6q3faEywoX/Jd
- fivRSfSAod/yPoImQLJgOT0ef+bWyenioM7KckGVab4ZiQKOAFFSwfJjgeIE+YVk
- uk=
-X-Virus-Scanned: amavisd-new at yadro.com
-Received: from mta-01.yadro.com ([127.0.0.1])
- by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id B_j679UsMczu; Tue, 27 Aug 2019 12:24:56 +0300 (MSK)
-Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
- [172.17.10.102])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id 2DC3E42ECA;
- Tue, 27 Aug 2019 12:24:55 +0300 (MSK)
-Received: from localhost.localdomain (172.17.15.69) by
- T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
- 15.1.669.32; Tue, 27 Aug 2019 12:24:54 +0300
-Message-ID: <818746d20661b51914a7802dcbe0081352900b05.camel@yadro.com>
-Subject: Re: [PATCH v2 3/4] watchdog/aspeed: add support for dual boot
-From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
-To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
- <wim@linux-watchdog.org>
-Date: Tue, 27 Aug 2019 12:24:45 +0300
-In-Reply-To: <0df27d36-b45f-2059-6ead-a09ceb4b7605@roeck-us.net>
-References: <20190826104636.19324-1-i.mikhaylov@yadro.com>
- <20190826104636.19324-4-i.mikhaylov@yadro.com>
- <0df27d36-b45f-2059-6ead-a09ceb4b7605@roeck-us.net>
-Organization: YADRO
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1i2XjM-0003hx-1D
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 09:25:38 +0000
+Received: by mail-ed1-f68.google.com with SMTP id f22so30438694edt.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 02:25:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=v1Hq21GWlHfVsAHB0YA3+1WJiGcX5YVFh0QLDfo8rZM=;
+ b=GPdaBhMgR0GiBSCj3KBcJJuhBZgR4BLa7Z8+jakyvW0tvw43LXviFGzGuzwoh+jI3f
+ BzdypFL/E499ZNAMiluxwlsu2lKVgHTNJ2yB5ZSmovOSHBYckxzJr3Xrk147pAN7wBWO
+ ebIOELX4d7SYmm0wrVLhv5Cos/9fVAXWLNxRSUQMD8+uLFrFtdpPeLYe/xnA0WDv0KsV
+ N1iU0VqcgyWawkcEy7J517ftCnqLWBxxWjye5Ub+J52MBJ4Uv3TlYM+zuYgZaJ50fSzv
+ rlmtesCbFfyb8v79wlndxWhNkfDZ/ZAMlzfXj81YifpjorD115DCSEI+fGQJN+ycQoLQ
+ uarw==
+X-Gm-Message-State: APjAAAXwe1O1KLLIHon1rY//awfe7IXCwIQ8bpYG/W7h1ardm3YQCnVq
+ nRqri7ISuHawFBdQ8bGRtLSdKxanN0k=
+X-Google-Smtp-Source: APXvYqyQrtOlIy8H/Wc0aVpb7ScZbCDZ1m3OfffgdSj0Ub/LeyuQ+4a18Bj+Q6JhN8LDTUweDqA+mQ==
+X-Received: by 2002:aa7:c552:: with SMTP id s18mr23686508edr.0.1566897933840; 
+ Tue, 27 Aug 2019 02:25:33 -0700 (PDT)
+Received: from mail-wr1-f53.google.com (mail-wr1-f53.google.com.
+ [209.85.221.53])
+ by smtp.gmail.com with ESMTPSA id w10sm3400566ejv.88.2019.08.27.02.25.33
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 27 Aug 2019 02:25:33 -0700 (PDT)
+Received: by mail-wr1-f53.google.com with SMTP id u16so18054507wrr.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 02:25:33 -0700 (PDT)
+X-Received: by 2002:adf:e941:: with SMTP id m1mr2612297wrn.279.1566897933029; 
+ Tue, 27 Aug 2019 02:25:33 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [172.17.15.69]
-X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
- T-EXCH-02.corp.yadro.com (172.17.10.102)
+References: <0e5b4abf06cd3202354315201c6af44caeb20236.1566242458.git-series.maxime.ripard@bootlin.com>
+ <20190820174105.96899274314F@ypsilon.sirena.org.uk>
+In-Reply-To: <20190820174105.96899274314F@ypsilon.sirena.org.uk>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 27 Aug 2019 17:25:21 +0800
+X-Gmail-Original-Message-ID: <CAGb2v64vzcZbXqfW27cgobpQ-AXQjb2zanqotAR0ezw+6KCdpw@mail.gmail.com>
+Message-ID: <CAGb2v64vzcZbXqfW27cgobpQ-AXQjb2zanqotAR0ezw+6KCdpw@mail.gmail.com>
+Subject: Re: Applied "ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer
+ SoCs" to the asoc tree
+To: Mark Brown <broonie@kernel.org>, Maxime Ripard <maxime.ripard@bootlin.com>,
+ Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_022500_232053_1E5BF3BF 
-X-CRM114-Status: GOOD (  21.29  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_022536_071965_C12C803E 
+X-CRM114-Status: GOOD (  20.85  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.68 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,82 +96,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org, Alexander
- Amelkin <a.amelkin@yadro.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org
+Cc: Marcus Cooper <codekipper@gmail.com>,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-26 at 17:14 -0700, Guenter Roeck wrote:
-> > +/*
-> > + * At alternate side the 'access_cs0' sysfs node provides:
-> > + *   ast2400: a way to get access to the primary SPI flash chip at CS0
-> > + *            after booting from the alternate chip at CS1.
-> > + *   ast2500: a way to restore the normal address mapping from
-> > + *            (CS0->CS1, CS1->CS0) to (CS0->CS0, CS1->CS1).
-> > + *
-> > + * Clearing the boot code selection and timeout counter also resets to the
-> > + * initial state the chip select line mapping. When the SoC is in normal
-> > + * mapping state (i.e. booted from CS0), clearing those bits does nothing
-> > for
-> > + * both versions of the SoC. For alternate boot mode (booted from CS1 due
-> > to
-> > + * wdt2 expiration) the behavior differs as described above.
-> > + *
-> The above needs to be in the sysfs attribute documentation as well.
+Hi,
 
-My apologies but I didn't find any suitable, only watchdog parameters with
-dtbindings file, where should I put it? Documentation/watchdog/aspeed-wdt-
-sysfs.rst?
+On Wed, Aug 21, 2019 at 1:41 AM Mark Brown <broonie@kernel.org> wrote:
+>
+> The patch
+>
+>    ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs
+>
+> has been applied to the asoc tree at
+>
+>    https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
+>
+> All being well this means that it will be integrated into the linux-next
+> tree (usually sometime in the next 24 hours) and sent to Linus during
+> the next merge window (or sooner if it is a bug fix), however if
+> problems are discovered then the patch may be dropped or reverted.
+>
+> You may get further e-mails resulting from automated or manual testing
+> and review of the tree, please engage with people reporting problems and
+> send followup patches addressing any issues that are reported if needed.
+>
+> If any updates are required or you are submitting further changes they
+> should be sent as incremental updates against current git, existing
+> patches will not be replaced.
+>
+> Please add any relevant lists and maintainers to the CCs when replying
+> to this mail.
+>
+> Thanks,
+> Mark
+>
+> From c1d3a921d72bd21f266ca28c15213fbe78160a4b Mon Sep 17 00:00:00 2001
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+> Date: Mon, 19 Aug 2019 21:25:16 +0200
+> Subject: [PATCH] ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs
+>
+> From: Marcus Cooper <codekipper@gmail.com>
 
-> > + * This option can be used with wdt2 (watchdog1) only.
-> 
-> This implies a specific watchdog numbering which is not guaranteed.
-> Someone might implement a system with some external watchdog.
-> 
-> > + */
-> > +static DEVICE_ATTR_RW(access_cs0);
-> > +
-> > +static struct attribute *bswitch_attrs[] = {
-> > +	&dev_attr_access_cs0.attr,
-> > +	NULL
-> > +};
-> > +ATTRIBUTE_GROUPS(bswitch);
-> > +
-> >   static const struct watchdog_ops aspeed_wdt_ops = {
-> >   	.start		= aspeed_wdt_start,
-> >   	.stop		= aspeed_wdt_stop,
-> > @@ -306,9 +359,16 @@ static int aspeed_wdt_probe(struct platform_device
-> > *pdev)
-> >   	}
-> >   
-> >   	status = readl(wdt->base + WDT_TIMEOUT_STATUS);
-> > -	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY)
-> > +	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY) {
-> >   		wdt->wdd.bootstatus = WDIOF_CARDRESET;
-> >   
-> > +		if (of_device_is_compatible(np, "aspeed,ast2400-wdt") ||
-> > +			of_device_is_compatible(np, "aspeed,ast2500-wdt"))
-> > +			wdt->wdd.groups = bswitch_groups;
+The authorship of this patch looks to be wrong. Maybe it's a tooling issue.
+I imagine it might have happened if Maxime created the patches using
+`git format-patch` with his @bootlin.com address, then sent them with his
+@kernel.org address, and `git send-email` swapped out the "From:" header
+and prepended it to the body.
 
-> Kind of odd that the attribute only exists if the system booted from the
-> second flash, but if that is what you want I won't object. Just make sure
-> that this is explained properly.
-Perhaps dts configuration option would be better solution for it then? "force-
-cs0-switch" as example? Also, if it would be an option, dtbindings/wdt file for
-documentation will be the right place for it. Usage of this at side 0 will not
-get any good/bad results, it just makes user confused, so I decided to put it
-only at side 1. It works only for ast2400/2500 board unfortunately, for 2600
-there is big difference in switching mechanism. Any other thoughts how to make
-it better?
+Either way the "From:" line looks odd in the commit log.
 
-Thanks.
+ChenYu
 
+> The clock division dividers have changed between the older (A10/A31) and
+> newer (H3, A64, etc) SoCs.
+>
+> While this was addressed through an offset on some SoCs, it was missing
+> some dividers as well, so the support wasn't perfect. Let's introduce a
+> pointer in the quirk structure for the divider calculation functions to use
+> so we can have the proper range now.
+>
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> [Maxime: Fix the commit log, use a field in the quirk structure]
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+> Link: https://lore.kernel.org/r/0e5b4abf06cd3202354315201c6af44caeb20236.1566242458.git-series.maxime.ripard@bootlin.com
+> Signed-off-by: Mark Brown <broonie@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
