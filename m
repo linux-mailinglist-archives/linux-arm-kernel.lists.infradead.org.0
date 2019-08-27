@@ -2,49 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 089559EF56
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:49:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19C9E9EF7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5b+KXNN/mraBxOV2UQlt2pM7JBBfxPxYE12QU9JApsc=; b=JZ+dUDCOUe076b
-	EzICBcXSPwQ3jApfpviVf3+AV7WlQ9eTgYSyIfmKZZULveN4c+3Z9Hr1twFPuE82SErLy838XaE+r
-	TdJnrQDGUS+xj2sfCLaErtUTbWgMfqWLoiIrpxc7J2Z3B9trgfSkgl6WJKvTGumQPfjIO2YxHGkhU
-	gGXeieg7RoM10O2tOgNSV2vWZc6ey5/U0o2icIH50jT/OhLIoFJdCZxunut55udLVrAiFRwKFqYtv
-	FmnCMmGA/iBwYy+xKdz7EaBM1GQ3pH5iUvQwO8xt4PZ4UGf5AMLt4DCOVW8GFxEJnYPSJ0l4yRu0O
-	HezYgLG9GDqhnpYcaCiQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=DnaU4eFhog2TmExDkC+wv4hvZ81rShTzreVaRNxHRIk=; b=DgB4UTGiNyICoc
+	IcbKL3Jfid+EtqjLfWOkK2YksS8BwRzch4z9jM2rhN42M+DC9gnx4QUmCdsL9cW+4z5zokhDHblSD
+	ru11c7zeWFXqWW15ucYHriuTMJn5PGx4UfW81MaDixSUtDT5nPR7CIPsaeQxC5t4Ajb7SyfT89mvC
+	WgkE6Z2j0AaGA9fp/21kBzn0ReV/QCk/oLS929eW2k4MENADJH1onqqdm1HLPOXCblm9iq4ianZby
+	owkPEKf4Fltz17YX5egKH8yrcW02ox5emfebjQMIar/Q7WDChW2aBqTshaHERAGIfnVzzY+VinIga
+	1EoKNhXMoT1O9N4v/9/Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dib-0002OO-F6; Tue, 27 Aug 2019 15:49:13 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
+	id 1i2dpm-0005Vi-4A; Tue, 27 Aug 2019 15:56:38 +0000
+Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2diR-0002Nh-VZ
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:49:06 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id 213D828C771
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-To: soc@kernel.org
-Subject: [PATCH] arm/arm64: defconfig: Update configs to use the new CROS_EC
- options
-Date: Tue, 27 Aug 2019 17:48:51 +0200
-Message-Id: <20190827154851.10486-1-enric.balletbo@collabora.com>
-X-Mailer: git-send-email 2.20.1
+ id 1i2dpc-0005VK-VS
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:56:30 +0000
+Received: by mail-oi1-f195.google.com with SMTP id p127so6738623oic.8
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 08:56:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=496l2D/NBnu+OvAkK9jRIei3uNVRt46Ohb23zKW6VBA=;
+ b=pfs9h7FJv6TfFIIlh7jstFid2VY6fq3sN/6gpDwMuhw58PxCrcq7EQiq1f8zjjgbeR
+ ++bgzLE33ak6j3UzjyrRQ9nzTBX3Jp/RZ9T7DJkB7wQRIEg6gXwUE2kf6OyGw2pZ93Qt
+ ZY2JZ7rbZwtwcBP3rOOpc9hANIOOZQqdHK/n1TFb0n0CVyOr1bVNtA9W5i/TamG34Jgo
+ +WADQSMdmts7jTKCn7Zjb4tarv8VLl8eDgGDLIn1lFgpndD6L7s/2PBsBwlr/7/SPILm
+ 1LcEUOD451cVaJkOMUjX7e3Z2LOdtU3r7uMtIqmEOlXCPOEFV2a6FDs/dl94p5AH8/Tg
+ 2XAw==
+X-Gm-Message-State: APjAAAW3w/uzl0G0QZIK94vNSqTOvpWtqvVBEZ4uJcgfMaSFhBGtcGXo
+ HeJOy0ry5KYXYVSiiSfdTA==
+X-Google-Smtp-Source: APXvYqw99eOThTzexUEoPloxhW15jSlo6SFvfq/fyqIVqp8VzElz20lzUAUloqaV3S+Cnxsg4g40dw==
+X-Received: by 2002:aca:c6d8:: with SMTP id w207mr15904130oif.94.1566921387977; 
+ Tue, 27 Aug 2019 08:56:27 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id u5sm4384898oic.45.2019.08.27.08.56.27
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 08:56:27 -0700 (PDT)
+Date: Tue, 27 Aug 2019 10:56:26 -0500
+From: Rob Herring <robh@kernel.org>
+To: =?iso-8859-1?Q?Andr=E9?= Draszik <git@andred.net>
+Subject: Re: [PATCH 2/2] dt-bindings: imx6q-pcie: add
+ "fsl,pcie-phy-refclk-internal" for i.MX7D
+Message-ID: <20190827155626.GA29948@bogus>
+References: <20190813103759.38358-1-git@andred.net>
+ <20190813103759.38358-2-git@andred.net>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190813103759.38358-2-git@andred.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_084904_277855_38F8F458 
-X-CRM114-Status: GOOD (  13.77  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190827_085629_016810_62C782F2 
+X-CRM114-Status: GOOD (  16.35  )
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.195 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,162 +93,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: gwendal@chromium.org, kernel@collabora.com,
- Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Miquel Raynal <miquel.raynal@bootlin.com>, groeck@chromium.org,
- Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>, linux-samsung-soc@vger.kernel.org,
- Anson Huang <Anson.Huang@nxp.com>, lee.jones@linaro.org,
- Daniel Lezcano <daniel.lezcano@linaro.org>,
- Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
- Jonathan Hunter <jonathanh@nvidia.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Chanwoo Choi <cw00.choi@samsung.com>, Kukjin Kim <kgene@kernel.org>,
- Jagan Teki <jagan@amarulasolutions.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, Arnd Bergmann <arnd@arndb.de>,
- Robert Jarzmik <robert.jarzmik@free.fr>, linux-tegra@vger.kernel.org,
- Simon Horman <horms+renesas@verge.net.au>,
- Fabrice Gasnier <fabrice.gasnier@st.com>, bleung@chromium.org,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- =?UTF-8?q?Yannick=20Fertr=C3=A9?= <yannick.fertre@st.com>,
- Dinh Nguyen <dinguyen@kernel.org>, Sudeep Holla <sudeep.holla@arm.com>,
- Olof Johansson <olof@lixom.net>, Shawn Guo <shawnguo@kernel.org>,
- Daniel Mack <daniel@zonque.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Richard Zhu <hongxing.zhu@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-kernel@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>, linux-pci@vger.kernel.org,
+ Bjorn Helgaas <bhelgaas@google.com>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Recently we refactored the CrOS EC drivers moving part of the code from
-the MFD subsystem to the platform chrome subsystem. During this change
-we needed to rename some config options, so, update the defconfigs
-accordingly.
+On Tue, Aug 13, 2019 at 11:37:59AM +0100, Andr=E9 Draszik wrote:
+> The i.MX7D variant of the IP can use either an external
+> crystal oscillator input or an internal clock input as
+> a reference clock input for the PCIe PHY.
+> =
 
-Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
-Reviewed-by: Gwendal Grignou <gwendal@chromium.org>
-Tested-by: Gwendal Grignou <gwendal@chromium.org>
----
-Dear all,
+> Document the optional property 'fsl,pcie-phy-refclk-internal'
+> =
 
-This is basically a resend of [1] in order to get patch into the arm-soc
-patchwork and can be merged independently of the series. The patch was
-originally sent as part of the these series [2] but as defconfig changes
-often cause merge conflicts the maintainers prefer to have this merged
-through the arm-soc tree. My bad was not including the soc ML from the
-begining, so sorry about that.
+> Signed-off-by: Andr=E9 Draszik <git@andred.net>
+> Cc: Richard Zhu <hongxing.zhu@nxp.com>
+> Cc: Lucas Stach <l.stach@pengutronix.de>
+> Cc: Bjorn Helgaas <bhelgaas@google.com>
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Mark Rutland <mark.rutland@arm.com>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Sascha Hauer <s.hauer@pengutronix.de>
+> Cc: Pengutronix Kernel Team <kernel@pengutronix.de>
+> Cc: Fabio Estevam <festevam@gmail.com>
+> Cc: NXP Linux Team <linux-imx@nxp.com>
+> Cc: linux-pci@vger.kernel.org
+> Cc: linux-arm-kernel@lists.infradead.org
+> Cc: devicetree@vger.kernel.org
+> Cc: linux-kernel@vger.kernel.org
+> ---
+>  Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt | 5 +++++
+>  1 file changed, 5 insertions(+)
+> =
 
-Thanks,
- Enric
+> diff --git a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt b/D=
+ocumentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
+> index a7f5f5afa0e6..985d7083df9f 100644
+> --- a/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
+> +++ b/Documentation/devicetree/bindings/pci/fsl,imx6q-pcie.txt
+> @@ -56,6 +56,11 @@ Additional required properties for imx7d-pcie and imx8=
+mq-pcie:
+>  	       - "turnoff"
+>  - fsl,imx7d-pcie-phy: A phandle to an fsl,imx7d-pcie-phy node.
 
-[1] https://lkml.org/lkml/2019/8/23/518
-[2] https://lkml.org/lkml/2019/8/23/475
+Not sure how this got in, but why is the phy binding not used here?
 
- arch/arm/configs/exynos_defconfig   | 6 +++++-
- arch/arm/configs/multi_v7_defconfig | 6 ++++--
- arch/arm/configs/pxa_defconfig      | 4 +++-
- arch/arm/configs/tegra_defconfig    | 2 +-
- arch/arm64/configs/defconfig        | 6 ++++--
- 5 files changed, 17 insertions(+), 7 deletions(-)
+>  =
 
-diff --git a/arch/arm/configs/exynos_defconfig b/arch/arm/configs/exynos_defconfig
-index 2e6a863d25aa..d29029f534ec 100644
---- a/arch/arm/configs/exynos_defconfig
-+++ b/arch/arm/configs/exynos_defconfig
-@@ -154,7 +154,11 @@ CONFIG_CPU_THERMAL=y
- CONFIG_THERMAL_EMULATION=y
- CONFIG_WATCHDOG=y
- CONFIG_S3C2410_WATCHDOG=y
--CONFIG_MFD_CROS_EC=y
-+CONFIG_MFD_CROS_EC_DEV=y
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=y
-+CONFIG_CROS_EC_I2C=y
-+CONFIG_CROS_EC_SPI=y
- CONFIG_MFD_MAX14577=y
- CONFIG_MFD_MAX77686=y
- CONFIG_MFD_MAX77693=y
-diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 6a40bc2ef271..0e9e70badf88 100644
---- a/arch/arm/configs/multi_v7_defconfig
-+++ b/arch/arm/configs/multi_v7_defconfig
-@@ -511,10 +511,12 @@ CONFIG_MFD_BCM590XX=y
- CONFIG_MFD_AC100=y
- CONFIG_MFD_AXP20X_I2C=y
- CONFIG_MFD_AXP20X_RSB=y
--CONFIG_MFD_CROS_EC=m
-+CONFIG_MFD_CROS_EC_DEV=m
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=m
- CONFIG_CROS_EC_I2C=m
- CONFIG_CROS_EC_SPI=m
--CONFIG_MFD_CROS_EC_CHARDEV=m
-+CONFIG_CROS_EC_CHARDEV=m
- CONFIG_MFD_DA9063=m
- CONFIG_MFD_MAX14577=y
- CONFIG_MFD_MAX77686=y
-diff --git a/arch/arm/configs/pxa_defconfig b/arch/arm/configs/pxa_defconfig
-index 787c3f9be414..635bf7dec53c 100644
---- a/arch/arm/configs/pxa_defconfig
-+++ b/arch/arm/configs/pxa_defconfig
-@@ -393,7 +393,9 @@ CONFIG_SA1100_WATCHDOG=m
- CONFIG_MFD_AS3711=y
- CONFIG_MFD_BCM590XX=m
- CONFIG_MFD_AXP20X=y
--CONFIG_MFD_CROS_EC=m
-+CONFIG_MFD_CROS_EC_DEV=m
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=m
- CONFIG_CROS_EC_I2C=m
- CONFIG_CROS_EC_SPI=m
- CONFIG_MFD_ASIC3=y
-diff --git a/arch/arm/configs/tegra_defconfig b/arch/arm/configs/tegra_defconfig
-index 8f5c6a5b444c..061037012335 100644
---- a/arch/arm/configs/tegra_defconfig
-+++ b/arch/arm/configs/tegra_defconfig
-@@ -147,7 +147,7 @@ CONFIG_SENSORS_LM95245=y
- CONFIG_WATCHDOG=y
- CONFIG_TEGRA_WATCHDOG=y
- CONFIG_MFD_AS3722=y
--CONFIG_MFD_CROS_EC=y
-+CONFIG_MFD_CROS_EC_DEV=y
- CONFIG_MFD_MAX8907=y
- CONFIG_MFD_STMPE=y
- CONFIG_MFD_PALMAS=y
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 0e58ef02880c..c4df1999fe0d 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -457,8 +457,7 @@ CONFIG_MFD_ALTERA_SYSMGR=y
- CONFIG_MFD_BD9571MWV=y
- CONFIG_MFD_AXP20X_I2C=y
- CONFIG_MFD_AXP20X_RSB=y
--CONFIG_MFD_CROS_EC=y
--CONFIG_MFD_CROS_EC_CHARDEV=m
-+CONFIG_MFD_CROS_EC_DEV=y
- CONFIG_MFD_EXYNOS_LPASS=m
- CONFIG_MFD_HI6421_PMIC=y
- CONFIG_MFD_HI655X_PMIC=y
-@@ -668,8 +667,11 @@ CONFIG_VIRTIO_BALLOON=y
- CONFIG_VIRTIO_MMIO=y
- CONFIG_XEN_GNTDEV=y
- CONFIG_XEN_GRANT_DEV_ALLOC=y
-+CONFIG_CHROME_PLATFORMS=y
-+CONFIG_CROS_EC=y
- CONFIG_CROS_EC_I2C=y
- CONFIG_CROS_EC_SPI=y
-+CONFIG_CROS_EC_CHARDEV=m
- CONFIG_COMMON_CLK_RK808=y
- CONFIG_COMMON_CLK_SCPI=y
- CONFIG_COMMON_CLK_CS2000_CP=y
--- 
-2.20.1
+> +Additional optional properties for imx7d-pcie:
+> +- fsl,pcie-phy-refclk-internal: If present then an internal PLL input is=
+ used
+> +  as PCIe PHY reference clock source. By default an external ocsillator =
+input
+> +  is used.
 
+Can't the clock binding and maybe 'assigned-clocks' be used here? =
+
+
+Also, this is a property of the PHY, so it belongs in the PHY's node.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
