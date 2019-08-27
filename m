@@ -2,64 +2,103 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7B3F9E846
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 14:46:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D4D69E894
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:06:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=erShJ8ubp9CefA2FYTX0L4/3clZ7tROacih1y9GhKbQ=; b=ZDLFQ2/nGGZnkap0SU7x+2sSu
-	WJxjZ//nEnZ4d/F7LbjLcW5Aag7Zx4wVY3eYj4sHfR6SwbcYXi9jQIdgQUuHjnR2Xqs/8CL62lxhZ
-	y4HVotvoLgTLoEbjbsW3fdd18jCv8JFK1g5EyQvRoqWWRr8tIPB2A4u2x8z13LB6wKB+wLmBXBXjO
-	JgRZFtB1anvqLl2DVWtfIFrbkCiSHLwYXeFyeXNoZ78+ODSC5s1A+ALHbCdEVJMIzyJdR0OJjcno9
-	gTssw1DjZ9FEumHwbcJVcsYzj9bmlAWhnqWIJTF1aH/WO/mDvIKHbHzJv7+lwfaBiG3RsYAzK6tIi
-	uV66UVrQw==;
+	 bh=vfUknUP85dEb87xM6sf7DBZi+hEh1rhtenTiU14R+T4=; b=PhPSo5wNvavYI1hTzZJskmcKB
+	bTOQekloZAf/Vg8GBEUYvGauSLdmrfZ9UotcQzwZHVtir9H06flvm892VKH0LjaSwcVZnvM/VatVR
+	Ud3p/LjBcverbrXVg2v2r97s9+tuljW5eykrKhxwVQ5WSoVm/Io+YJ/c052T8B5xTV5DUvevxhRBJ
+	jVQMlOjB35reY7iMMGUoQDnXW62NukrjlNtCK7aOpoqVd5QTuKww+brtJi0KQHSVUqyYwa7oZhNgN
+	9HlC53erFKIQ3kP9ZHtBJNHz2XPTH2a58Q0Iw901ubOl4GtrlKzBdIO2O8gQCYx02NsiuBUCt2vfm
+	GU2SUF8Ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2arh-0007e2-OS; Tue, 27 Aug 2019 12:46:25 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1i2bBN-00068m-K3; Tue, 27 Aug 2019 13:06:45 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2arW-0007bb-6L
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 12:46:16 +0000
-Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 041F6D3CA078F0D5976C;
- Tue, 27 Aug 2019 20:45:57 +0800 (CST)
-Received: from [127.0.0.1] (10.184.12.158) by DGGEMS410-HUB.china.huawei.com
- (10.3.19.210) with Microsoft SMTP Server id 14.3.439.0; Tue, 27 Aug 2019
- 20:45:45 +0800
-Subject: Re: [PATCH v3 10/10] arm64: Retrieve stolen time as paravirtualized
- guest
-To: Steven Price <steven.price@arm.com>, Marc Zyngier <maz@kernel.org>, "Will
- Deacon" <will@kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <kvmarm@lists.cs.columbia.edu>
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-11-steven.price@arm.com>
- <6040a45c-fc39-a33e-c6a4-7baa586c247c@huawei.com>
- <29cd1304-6b4d-05ef-3c08-6b4ba769c8fa@arm.com>
-From: Zenghui Yu <yuzenghui@huawei.com>
-Message-ID: <21c73195-4cf7-8e3f-f188-ba8bfcb4dd41@huawei.com>
-Date: Tue, 27 Aug 2019 20:43:40 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:64.0) Gecko/20100101
- Thunderbird/64.0
+ id 1i2bBD-00068O-KD
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:06:37 +0000
+Received: by mail-pg1-x544.google.com with SMTP id m3so12645245pgv.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 06:06:35 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=tLfakLGpMLvdTV8QFc4nFi+HIp0PsQAUDM5NCWw4kOM=;
+ b=e3RW4O/bkBNjJRXt0syqTSuQGa6iNaNuqgXq1e20CmuXTlkyv4RT1GXqxjJswj3P9n
+ /YdtWylwjfbPGSAQdoXp4eYTIbehmw1D9qGRsg1gTqCMVaKrxKQWjCdN86PKqUq51kRq
+ NR8qAB0zKrdjK75IhJeRlJgDOAXQNeFdgAjdFD4dBsx4aN9OEFmUQFHpIvf8vtA0Bj70
+ ket1ALJGUasj0Ii86eSbQCX2dj2wHIOF1zoAwi0pGp63B+/MuqFU13+jrGuTeNXLRXKG
+ 6OQqyleuALUIjqcKCCtWtnbGPvmSg1mzEQWWArfw4basGrT1oA/gbONb+qvQ5t4qTte8
+ UQDQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:subject:to:cc:references:from:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=tLfakLGpMLvdTV8QFc4nFi+HIp0PsQAUDM5NCWw4kOM=;
+ b=OtiCyjfzwK58OxefD/ogH7/1//qsji/7S7RGN5UJs0Q8fcu0MonY/pnWlZ7F7VZTyd
+ tnTD9GWsX7QAgGI6YKZbrpcFHUhqAakqkkxrV7BTEfi2/G0HMEzLRAoTzgmJSAvmxeZP
+ 0FzWu0ipsvgqroBtFGqwxI9KR8GfZTrqrxBXWkM3abF6xJQ9PSqKy5Aa3gxSoRvxBgTp
+ KFRq+BI4vuipZBJqFzWCeq+gakJZGX3ZHstY8//BvFNFbWA5Ks8A6w5zscU6ukJBIqJ0
+ ixVGAOxBVgjbSKNxLxrImhuL4H702XO71GmN6ZamPhAxyJrbQKq4iElC/oomQAhtGpLC
+ Eg0g==
+X-Gm-Message-State: APjAAAVcAdSlwwSDkUdfokehnKfPL2Yr9INA/TiBrhfmP305z80NnOpx
+ H6a+ycoemU3mYwb1Sb+1fmVyzY2z
+X-Google-Smtp-Source: APXvYqwfc3SZsT1Lj8EgzY5d72Zcg5rMHFxdArytviyXSiZ1V1oA2QmZOxx6LeKLWB7fM8fNGtzyfw==
+X-Received: by 2002:a63:c203:: with SMTP id b3mr21289785pgd.450.1566911194546; 
+ Tue, 27 Aug 2019 06:06:34 -0700 (PDT)
+Received: from server.roeck-us.net
+ (108-223-40-66.lightspeed.sntcca.sbcglobal.net. [108.223.40.66])
+ by smtp.gmail.com with ESMTPSA id a23sm11467191pfc.71.2019.08.27.06.06.31
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 27 Aug 2019 06:06:32 -0700 (PDT)
+Subject: Re: [PATCH v2 3/4] watchdog/aspeed: add support for dual boot
+To: Ivan Mikhaylov <i.mikhaylov@yadro.com>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>
+References: <20190826104636.19324-1-i.mikhaylov@yadro.com>
+ <20190826104636.19324-4-i.mikhaylov@yadro.com>
+ <0df27d36-b45f-2059-6ead-a09ceb4b7605@roeck-us.net>
+ <818746d20661b51914a7802dcbe0081352900b05.camel@yadro.com>
+From: Guenter Roeck <linux@roeck-us.net>
+Message-ID: <d46685d9-c6d2-46af-67aa-844d2b0296a9@roeck-us.net>
+Date: Tue, 27 Aug 2019 06:06:30 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <29cd1304-6b4d-05ef-3c08-6b4ba769c8fa@arm.com>
+In-Reply-To: <818746d20661b51914a7802dcbe0081352900b05.camel@yadro.com>
 Content-Language: en-US
-X-Originating-IP: [10.184.12.158]
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_054614_944822_DE925F38 
-X-CRM114-Status: GOOD (  20.61  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190827_060635_667824_0B24C5E9 
+X-CRM114-Status: GOOD (  22.47  )
+X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,144 +110,101 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, Paolo Bonzini <pbonzini@redhat.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
+ Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
+ Alexander Amelkin <a.amelkin@yadro.com>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMjAxOS84LzIzIDIyOjIyLCBTdGV2ZW4gUHJpY2Ugd3JvdGU6Cj4gT24gMjMvMDgvMjAxOSAx
-Mjo0NSwgWmVuZ2h1aSBZdSB3cm90ZToKPj4gSGkgU3RldmVuLAo+Pgo+PiBPbiAyMDE5LzgvMjEg
-MjM6MzYsIFN0ZXZlbiBQcmljZSB3cm90ZToKPj4+IEVuYWJsZSBwYXJhdmlydHVhbGl6YXRpb24g
-ZmVhdHVyZXMgd2hlbiBydW5uaW5nIHVuZGVyIGEgaHlwZXJ2aXNvcgo+Pj4gc3VwcG9ydGluZyB0
-aGUgUFZfVElNRV9TVCBoeXBlcmNhbGwuCj4+Pgo+Pj4gRm9yIGVhY2ggKHYpQ1BVLCB3ZSBhc2sg
-dGhlIGh5cGVydmlzb3IgZm9yIHRoZSBsb2NhdGlvbiBvZiBhIHNoYXJlZAo+Pj4gcGFnZSB3aGlj
-aCB0aGUgaHlwZXJ2aXNvciB3aWxsIHVzZSB0byByZXBvcnQgc3RvbGVuIHRpbWUgdG8gdXMuIFdl
-IHNldAo+Pj4gcHZfdGltZV9vcHMgdG8gdGhlIHN0b2xlbiB0aW1lIGZ1bmN0aW9uIHdoaWNoIHNp
-bXBseSByZWFkcyB0aGUgc3RvbGVuCj4+PiB2YWx1ZSBmcm9tIHRoZSBzaGFyZWQgcGFnZSBmb3Ig
-YSBWQ1BVLiBXZSBndWFyYW50ZWUgc2luZ2xlLWNvcHkKPj4+IGF0b21pY2l0eSB1c2luZyBSRUFE
-X09OQ0Ugd2hpY2ggbWVhbnMgd2UgY2FuIGFsc28gcmVhZCB0aGUgc3RvbGVuCj4+PiB0aW1lIGZv
-ciBhbm90aGVyIFZDUFUgdGhhbiB0aGUgY3VycmVudGx5IHJ1bm5pbmcgb25lIHdoaWxlIGl0IGlz
-Cj4+PiBwb3RlbnRpYWxseSBiZWluZyB1cGRhdGVkIGJ5IHRoZSBoeXBlcnZpc29yLgo+Pj4KPj4+
-IFNpZ25lZC1vZmYtYnk6IFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFybS5jb20+Cj4+PiAt
-LS0KPj4+ICDCoCBhcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BhcmF2aXJ0LmggfMKgwqAgOSArLQo+
-Pj4gIMKgIGFyY2gvYXJtNjQva2VybmVsL3BhcmF2aXJ0LmPCoMKgwqDCoMKgIHwgMTQ4ICsrKysr
-KysrKysrKysrKysrKysrKysrKysrKysrKwo+Pj4gIMKgIGFyY2gvYXJtNjQva2VybmVsL3RpbWUu
-Y8KgwqDCoMKgwqDCoMKgwqDCoCB8wqDCoCAzICsKPj4+ICDCoCBpbmNsdWRlL2xpbnV4L2NwdWhv
-dHBsdWcuaMKgwqDCoMKgwqDCoMKgIHzCoMKgIDEgKwo+Pj4gIMKgIDQgZmlsZXMgY2hhbmdlZCwg
-MTYwIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvYXJj
-aC9hcm02NC9pbmNsdWRlL2FzbS9wYXJhdmlydC5oCj4+PiBiL2FyY2gvYXJtNjQvaW5jbHVkZS9h
-c20vcGFyYXZpcnQuaAo+Pj4gaW5kZXggNzk5ZDlkZDZmN2NjLi4xMjVjMjZjNDI5MDIgMTAwNjQ0
-Cj4+PiAtLS0gYS9hcmNoL2FybTY0L2luY2x1ZGUvYXNtL3BhcmF2aXJ0LmgKPj4+ICsrKyBiL2Fy
-Y2gvYXJtNjQvaW5jbHVkZS9hc20vcGFyYXZpcnQuaAo+Pj4gQEAgLTIxLDYgKzIxLDEzIEBAIHN0
-YXRpYyBpbmxpbmUgdTY0IHBhcmF2aXJ0X3N0ZWFsX2Nsb2NrKGludCBjcHUpCj4+PiAgwqAgewo+
-Pj4gIMKgwqDCoMKgwqAgcmV0dXJuIHB2X29wcy50aW1lLnN0ZWFsX2Nsb2NrKGNwdSk7Cj4+PiAg
-wqAgfQo+Pj4gLSNlbmRpZgo+Pj4gKwo+Pj4gK2ludCBfX2luaXQga3ZtX2d1ZXN0X2luaXQodm9p
-ZCk7Cj4+PiArCj4+PiArI2Vsc2UKPj4+ICsKPj4+ICsjZGVmaW5lIGt2bV9ndWVzdF9pbml0KCkK
-Pj4+ICsKPj4+ICsjZW5kaWYgLy8gQ09ORklHX1BBUkFWSVJUCj4+PiAgwqAgwqAgI2VuZGlmCj4+
-PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm02NC9rZXJuZWwvcGFyYXZpcnQuYyBiL2FyY2gvYXJtNjQv
-a2VybmVsL3BhcmF2aXJ0LmMKPj4+IGluZGV4IDRjZmVkOTFmZTI1Ni4uZWE4ZGJiYmQzMjkzIDEw
-MDY0NAo+Pj4gLS0tIGEvYXJjaC9hcm02NC9rZXJuZWwvcGFyYXZpcnQuYwo+Pj4gKysrIGIvYXJj
-aC9hcm02NC9rZXJuZWwvcGFyYXZpcnQuYwo+Pj4gQEAgLTYsMTMgKzYsMTYxIEBACj4+PiAgwqDC
-oCAqIEF1dGhvcjogU3RlZmFubyBTdGFiZWxsaW5pIDxzdGVmYW5vLnN0YWJlbGxpbmlAZXUuY2l0
-cml4LmNvbT4KPj4+ICDCoMKgICovCj4+PiAgwqAgKyNkZWZpbmUgcHJfZm10KGZtdCkgImt2bWFy
-bS1wdjogIiBmbXQKPj4+ICsKPj4+ICsjaW5jbHVkZSA8bGludXgvYXJtLXNtY2NjLmg+Cj4+PiAr
-I2luY2x1ZGUgPGxpbnV4L2NwdWhvdHBsdWcuaD4KPj4+ICDCoCAjaW5jbHVkZSA8bGludXgvZXhw
-b3J0Lmg+Cj4+PiArI2luY2x1ZGUgPGxpbnV4L2lvLmg+Cj4+PiAgwqAgI2luY2x1ZGUgPGxpbnV4
-L2p1bXBfbGFiZWwuaD4KPj4+ICsjaW5jbHVkZSA8bGludXgvcHJpbnRrLmg+Cj4+PiArI2luY2x1
-ZGUgPGxpbnV4L3BzY2kuaD4KPj4+ICsjaW5jbHVkZSA8bGludXgvcmVib290Lmg+Cj4+PiArI2lu
-Y2x1ZGUgPGxpbnV4L3NsYWIuaD4KPj4+ICDCoCAjaW5jbHVkZSA8bGludXgvdHlwZXMuaD4KPj4+
-ICsKPj4+ICDCoCAjaW5jbHVkZSA8YXNtL3BhcmF2aXJ0Lmg+Cj4+PiArI2luY2x1ZGUgPGFzbS9w
-dmNsb2NrLWFiaS5oPgo+Pj4gKyNpbmNsdWRlIDxhc20vc21wX3BsYXQuaD4KPj4+ICDCoCDCoCBz
-dHJ1Y3Qgc3RhdGljX2tleSBwYXJhdmlydF9zdGVhbF9lbmFibGVkOwo+Pj4gIMKgIHN0cnVjdCBz
-dGF0aWNfa2V5IHBhcmF2aXJ0X3N0ZWFsX3JxX2VuYWJsZWQ7Cj4+PiAgwqAgwqAgc3RydWN0IHBh
-cmF2aXJ0X3BhdGNoX3RlbXBsYXRlIHB2X29wczsKPj4+ICDCoCBFWFBPUlRfU1lNQk9MX0dQTChw
-dl9vcHMpOwo+Pj4gKwo+Pj4gK3N0cnVjdCBrdm1hcm1fc3RvbGVuX3RpbWVfcmVnaW9uIHsKPj4+
-ICvCoMKgwqAgc3RydWN0IHB2Y2xvY2tfdmNwdV9zdG9sZW5fdGltZSAqa2FkZHI7Cj4+PiArfTsK
-Pj4+ICsKPj4+ICtzdGF0aWMgREVGSU5FX1BFUl9DUFUoc3RydWN0IGt2bWFybV9zdG9sZW5fdGlt
-ZV9yZWdpb24sCj4+PiBzdG9sZW5fdGltZV9yZWdpb24pOwo+Pj4gKwo+Pj4gK3N0YXRpYyBib29s
-IHN0ZWFsX2FjYyA9IHRydWU7Cj4+PiArc3RhdGljIGludCBfX2luaXQgcGFyc2Vfbm9fc3RlYWxh
-Y2MoY2hhciAqYXJnKQo+Pj4gK3sKPj4+ICvCoMKgwqAgc3RlYWxfYWNjID0gZmFsc2U7Cj4+PiAr
-wqDCoMKgIHJldHVybiAwOwo+Pj4gK30KPj4+ICsKPj4+ICtlYXJseV9wYXJhbSgibm8tc3RlYWwt
-YWNjIiwgcGFyc2Vfbm9fc3RlYWxhY2MpOwo+Pj4gKwo+Pj4gKy8qIHJldHVybiBzdG9sZW4gdGlt
-ZSBpbiBucyBieSBhc2tpbmcgdGhlIGh5cGVydmlzb3IgKi8KPj4+ICtzdGF0aWMgdTY0IGt2bV9z
-dGVhbF9jbG9jayhpbnQgY3B1KQo+Pj4gK3sKPj4+ICvCoMKgwqAgc3RydWN0IGt2bWFybV9zdG9s
-ZW5fdGltZV9yZWdpb24gKnJlZzsKPj4+ICsKPj4+ICvCoMKgwqAgcmVnID0gcGVyX2NwdV9wdHIo
-JnN0b2xlbl90aW1lX3JlZ2lvbiwgY3B1KTsKPj4+ICvCoMKgwqAgaWYgKCFyZWctPmthZGRyKSB7
-Cj4+PiArwqDCoMKgwqDCoMKgwqAgcHJfd2Fybl9vbmNlKCJzdG9sZW4gdGltZSBlbmFibGVkIGJ1
-dCBub3QgY29uZmlndXJlZCBmb3IgY3B1Cj4+PiAlZFxuIiwKPj4+ICvCoMKgwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoCBjcHUpOwo+Pj4gK8KgwqDCoMKgwqDCoMKgIHJldHVybiAwOwo+Pj4g
-K8KgwqDCoCB9Cj4+PiArCj4+PiArwqDCoMKgIHJldHVybiBsZTY0X3RvX2NwdShSRUFEX09OQ0Uo
-cmVnLT5rYWRkci0+c3RvbGVuX3RpbWUpKTsKPj4+ICt9Cj4+PiArCj4+PiArc3RhdGljIGludCBk
-aXNhYmxlX3N0b2xlbl90aW1lX2N1cnJlbnRfY3B1KHZvaWQpCj4+PiArewo+Pj4gK8KgwqDCoCBz
-dHJ1Y3Qga3ZtYXJtX3N0b2xlbl90aW1lX3JlZ2lvbiAqcmVnOwo+Pj4gKwo+Pj4gK8KgwqDCoCBy
-ZWcgPSB0aGlzX2NwdV9wdHIoJnN0b2xlbl90aW1lX3JlZ2lvbik7Cj4+PiArwqDCoMKgIGlmICgh
-cmVnLT5rYWRkcikKPj4+ICvCoMKgwqDCoMKgwqDCoCByZXR1cm4gMDsKPj4+ICsKPj4+ICvCoMKg
-wqAgbWVtdW5tYXAocmVnLT5rYWRkcik7Cj4+PiArwqDCoMKgIG1lbXNldChyZWcsIDAsIHNpemVv
-ZigqcmVnKSk7Cj4+PiArCj4+PiArwqDCoMKgIHJldHVybiAwOwo+Pj4gK30KPj4+ICsKPj4+ICtz
-dGF0aWMgaW50IHN0b2xlbl90aW1lX2R5aW5nX2NwdSh1bnNpZ25lZCBpbnQgY3B1KQo+Pj4gK3sK
-Pj4+ICvCoMKgwqAgcmV0dXJuIGRpc2FibGVfc3RvbGVuX3RpbWVfY3VycmVudF9jcHUoKTsKPj4+
-ICt9Cj4+PiArCj4+PiArc3RhdGljIGludCBpbml0X3N0b2xlbl90aW1lX2NwdSh1bnNpZ25lZCBp
-bnQgY3B1KQo+Pj4gK3sKPj4+ICvCoMKgwqAgc3RydWN0IGt2bWFybV9zdG9sZW5fdGltZV9yZWdp
-b24gKnJlZzsKPj4+ICvCoMKgwqAgc3RydWN0IGFybV9zbWNjY19yZXMgcmVzOwo+Pj4gKwo+Pj4g
-K8KgwqDCoCByZWcgPSB0aGlzX2NwdV9wdHIoJnN0b2xlbl90aW1lX3JlZ2lvbik7Cj4+PiArCj4+
-PiArwqDCoMKgIGFybV9zbWNjY18xXzFfaW52b2tlKEFSTV9TTUNDQ19IVl9QVl9USU1FX1NULCAm
-cmVzKTsKPj4+ICsKPj4+ICvCoMKgwqAgaWYgKChsb25nKXJlcy5hMCA8IDApCj4+PiArwqDCoMKg
-wqDCoMKgwqAgcmV0dXJuIC1FSU5WQUw7Cj4+PiArCj4+PiArwqDCoMKgIHJlZy0+a2FkZHIgPSBt
-ZW1yZW1hcChyZXMuYTAsCj4+PiArwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBz
-aXplb2Yoc3RydWN0IHB2Y2xvY2tfdmNwdV9zdG9sZW5fdGltZSksCj4+PiArwqDCoMKgwqDCoMKg
-wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCBNRU1SRU1BUF9XQik7Cj4+Cj4+IGNwdWhwIGNhbGxiYWNr
-cyBjYW4gYmUgaW52b2tlZCBpbiBhdG9taWMgY29udGV4dCAoc2VlOgo+PiAgwqDCoMKgwqBzZWNv
-bmRhcnlfc3RhcnRfa2VybmVsIC0+Cj4+ICDCoMKgwqDCoG5vdGlmeV9jcHVfc3RhcnRpbmcgLT4K
-Pj4gIMKgwqDCoMKgaW52b2tlIGNhbGxiYWNrcyksCj4+IGJ1dCBtZW1yZW1hcCBtaWdodCBzbGVl
-cC4uLgo+Pgo+PiBUcnkgdG8gcnVuIGEgREVCVUdfQVRPTUlDX1NMRUVQIGVuYWJsZWQgUFYgZ3Vl
-c3QsIEkgZ3Vlc3Mgd2Ugd2lsbCBiZQo+PiBncmVldGVkIGJ5IHRoZSBTbGVlcC1pbi1BdG9taWMt
-Q29udGV4dCBCVUcuwqAgV2UgbmVlZCBhbiBhbHRlcm5hdGl2ZQo+PiBoZXJlPwo+IAo+IEFjdHVh
-bGx5IEkgaGFkIHJ1biBERUJVR19BVE9NSUNfU0xFRVAgYW5kIG5vdCBzZWVuIGFueSBpc3N1ZS4g
-QnV0IEkKPiB0aGluayB0aGF0J3MgYmVjYXVzZSBvZiB0aGUgd2F5IEkndmUgY29uZmlndXJlZCB0
-aGUgcmVnaW9uIGluIG15IGt2bXRvb2wKPiBjaGFuZ2VzLiBJJ20gaGl0dGluZyB0aGUgcGF0aCB3
-aGVyZSB0aGUgbWVtb3J5IHJlZ2lvbiBpcyBpbiB0aGUgbGluZWFyCj4gbWFwIG9mIHRoZSBrZXJu
-ZWwgYW5kIHNvIG5vIGFjdHVhbCByZW1hcHBpbmcgaXMgbmVlZGVkIGFuZCBoZW5jZQo+IG1lbXJl
-bWFwIGRvZXNuJ3Qgc2xlZXAgKHRoZSBzaGFyZWQgc3RydWN0dXJlIGlzIGluIGEgcmVzZXJ2ZWQg
-cmVnaW9uIG9mCj4gUkFNKS4KPiAKPiBCdXQgZXZlbiBjaGFuZ2luZyB0aGUgbWVtb3J5IGxheW91
-dCBvZiB0aGUgZ3Vlc3Qgc28gdGhlIGNhbGwgZ29lcyBpbnRvCj4gaW9yZW1hcF9wYWdlX3Jhbmdl
-KCkgKHdoaWNoIGNvbnRhaW5zIGEgbWlnaHRfc2xlZXAoKSkgSSdtIG5vdCBzZWVpbmcgYW55Cj4g
-cHJvYmxlbXMuCgpFbW0sIEkgaGl0IHRoaXMgU0FDIEJVRyB3aGVuIHRlc3RpbmcgeW91ciBWMSB3
-aXRoIHRoZSBrdm10b29sIGNoYW5nZXMKeW91J3ZlIHByb3ZpZGVkLCBidXQgZm9yZ290IHRvIHJl
-cG9ydCBpdCBhdCB0aGF0IHRpbWUuICBJIGdvIGJhY2sgdG8gVjEKYW5kIGdldCB0aGUgZm9sbG93
-aW5nIGNhbGwgdHJhY2U6CgpbICAgIDAuMTIwMTEzXSBCVUc6IHNsZWVwaW5nIGZ1bmN0aW9uIGNh
-bGxlZCBmcm9tIGludmFsaWQgY29udGV4dCBhdCAKbW0vc2xhYi5oOjUwMQpbICAgIDAuMTIwMTE4
-XSBpbl9hdG9taWMoKTogMSwgaXJxc19kaXNhYmxlZCgpOiAxMjgsIHBpZDogMCwgbmFtZTogc3dh
-cHBlci8xClsgICAgMC4xMjAxMjJdIG5vIGxvY2tzIGhlbGQgYnkgc3dhcHBlci8xLzAuClsgICAg
-MC4xMjAxMjZdIGlycSBldmVudCBzdGFtcDogMApbICAgIDAuMTIwMTM1XSBoYXJkaXJxcyBsYXN0
-ICBlbmFibGVkIGF0ICgwKTogWzwwMDAwMDAwMDAwMDAwMDAwPl0gMHgwClsgICAgMC4xMjAxNDVd
-IGhhcmRpcnFzIGxhc3QgZGlzYWJsZWQgYXQgKDApOiBbPGZmZmYyMDAwMTAxMTNiNDA+XSAKY29w
-eV9wcm9jZXNzKzB4ODcwLzB4Mjg3OApbICAgIDAuMTIwMTUyXSBzb2Z0aXJxcyBsYXN0ICBlbmFi
-bGVkIGF0ICgwKTogWzxmZmZmMjAwMDEwMTEzYjQwPl0gCmNvcHlfcHJvY2VzcysweDg3MC8weDI4
-NzgKWyAgICAwLjEyMDE1N10gc29mdGlycXMgbGFzdCBkaXNhYmxlZCBhdCAoMCk6IFs8MDAwMDAw
-MDAwMDAwMDAwMD5dIDB4MApbICAgIDAuMTIwMTY0XSBDUFU6IDEgUElEOiAwIENvbW06IHN3YXBw
-ZXIvMSBOb3QgdGFpbnRlZCA1LjMuMC1yYzYrICMyClsgICAgMC4xMjAxNjhdIEhhcmR3YXJlIG5h
-bWU6IGxpbnV4LGR1bW15LXZpcnQgKERUKQpbICAgIDAuMTIwMTczXSBDYWxsIHRyYWNlOgpbICAg
-IDAuMTIwMTc5XSAgZHVtcF9iYWNrdHJhY2UrMHgwLzB4MjUwClsgICAgMC4xMjAxODRdICBzaG93
-X3N0YWNrKzB4MjQvMHgzMApbICAgIDAuMTIwMTkyXSAgZHVtcF9zdGFjaysweDEyMC8weDE3NApb
-ICAgIDAuMTIwMTk4XSAgX19fbWlnaHRfc2xlZXArMHgxYjAvMHgyODAKWyAgICAwLjEyMDIwM10g
-IF9fbWlnaHRfc2xlZXArMHg4MC8weGYwClsgICAgMC4xMjAyMDldICBrbWVtX2NhY2hlX2FsbG9j
-X25vZGVfdHJhY2UrMHgzMGMvMHgzYzgKWyAgICAwLjEyMDIxNl0gIF9fZ2V0X3ZtX2FyZWFfbm9k
-ZSsweDljLzB4MjA4ClsgICAgMC4xMjAyMjFdICBnZXRfdm1fYXJlYV9jYWxsZXIrMHg1OC8weDY4
-ClsgICAgMC4xMjAyMjddICBfX2lvcmVtYXBfY2FsbGVyKzB4NzgvMHgxMjAKWyAgICAwLjEyMDIz
-M10gIGlvcmVtYXBfY2FjaGUrMHhmMC8weDFhOApbICAgIDAuMTIwMjQwXSAgbWVtcmVtYXArMHgx
-NTQvMHgzYjgKWyAgICAwLjEyMDI0NV0gIGluaXRfc3RvbGVuX3RpbWVfY3B1KzB4OTQvMHgxNTAK
-WyAgICAwLjEyMDI1MV0gIGNwdWhwX2ludm9rZV9jYWxsYmFjaysweDEyYy8weDEyZjgKWyAgICAw
-LjEyMDI1N10gIG5vdGlmeV9jcHVfc3RhcnRpbmcrMHhhMC8weGMwClsgICAgMC4xMjAyNjNdICBz
-ZWNvbmRhcnlfc3RhcnRfa2VybmVsKzB4MWQ0LzB4MzI4CgpCdXQgdGhpbmdzIG1heSBoYXZlIGNo
-YW5nZWQgYmVjYXVzZSB3ZSdyZSB0YWxraW5nIGFib3V0IFYzIG5vdy4uLgpJIHdpbGwgZGlnIGl0
-IGEgYml0IGRlZXBlci4KCj4gQW0gSSBtaXNzaW5nIHNvbWV0aGluZz8gSSBoYXZlIHRvIGFkbWl0
-IEkgZG9uJ3QgZW50aXJlbHkgZm9sbG93IHRoZQo+IGVhcmx5IHN0YXJ0IHVwIC0gcGVyaGFwcyBp
-dCdzIGEgc2ltcGxlIGFzIERFQlVHX0FUT01JQ19TTEVFUCBkb2Vzbid0Cj4gd29yayB0aGlzIGVh
-cmx5IGluIGJvb3Q/CgpJIHRoaW5rIGl0IHNob3VsZCB3b3JrLgoKClRoYW5rcywKemVuZ2h1aQoK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+On 8/27/19 2:24 AM, Ivan Mikhaylov wrote:
+> On Mon, 2019-08-26 at 17:14 -0700, Guenter Roeck wrote:
+>>> +/*
+>>> + * At alternate side the 'access_cs0' sysfs node provides:
+>>> + *   ast2400: a way to get access to the primary SPI flash chip at CS0
+>>> + *            after booting from the alternate chip at CS1.
+>>> + *   ast2500: a way to restore the normal address mapping from
+>>> + *            (CS0->CS1, CS1->CS0) to (CS0->CS0, CS1->CS1).
+>>> + *
+>>> + * Clearing the boot code selection and timeout counter also resets to the
+>>> + * initial state the chip select line mapping. When the SoC is in normal
+>>> + * mapping state (i.e. booted from CS0), clearing those bits does nothing
+>>> for
+>>> + * both versions of the SoC. For alternate boot mode (booted from CS1 due
+>>> to
+>>> + * wdt2 expiration) the behavior differs as described above.
+>>> + *
+>> The above needs to be in the sysfs attribute documentation as well.
+> 
+> My apologies but I didn't find any suitable, only watchdog parameters with
+> dtbindings file, where should I put it? Documentation/watchdog/aspeed-wdt-
+> sysfs.rst?
+> 
+
+Documentation/ABI/testing/sysfs-class-watchdog
+
+Guenter
+
+>>> + * This option can be used with wdt2 (watchdog1) only.
+>>
+>> This implies a specific watchdog numbering which is not guaranteed.
+>> Someone might implement a system with some external watchdog.
+>>
+>>> + */
+>>> +static DEVICE_ATTR_RW(access_cs0);
+>>> +
+>>> +static struct attribute *bswitch_attrs[] = {
+>>> +	&dev_attr_access_cs0.attr,
+>>> +	NULL
+>>> +};
+>>> +ATTRIBUTE_GROUPS(bswitch);
+>>> +
+>>>    static const struct watchdog_ops aspeed_wdt_ops = {
+>>>    	.start		= aspeed_wdt_start,
+>>>    	.stop		= aspeed_wdt_stop,
+>>> @@ -306,9 +359,16 @@ static int aspeed_wdt_probe(struct platform_device
+>>> *pdev)
+>>>    	}
+>>>    
+>>>    	status = readl(wdt->base + WDT_TIMEOUT_STATUS);
+>>> -	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY)
+>>> +	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY) {
+>>>    		wdt->wdd.bootstatus = WDIOF_CARDRESET;
+>>>    
+>>> +		if (of_device_is_compatible(np, "aspeed,ast2400-wdt") ||
+>>> +			of_device_is_compatible(np, "aspeed,ast2500-wdt"))
+>>> +			wdt->wdd.groups = bswitch_groups;
+> 
+>> Kind of odd that the attribute only exists if the system booted from the
+>> second flash, but if that is what you want I won't object. Just make sure
+>> that this is explained properly.
+> Perhaps dts configuration option would be better solution for it then? "force-
+> cs0-switch" as example? Also, if it would be an option, dtbindings/wdt file for
+
+You said earlier that this can not be done automatically but _must_ be done
+from user space after the system has booted. Otherwise you could just
+automatically switch to cs0 when the driver probes.
+
+As I said, all I am asking for is proper documentation.
+
+Guenter
+
+> documentation will be the right place for it. Usage of this at side 0 will not
+> get any good/bad results, it just makes user confused, so I decided to put it
+> only at side 1. It works only for ast2400/2500 board unfortunately, for 2600
+> there is big difference in switching mechanism. Any other thoughts how to make
+> it better?
+> 
+> Thanks.
+> 
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
