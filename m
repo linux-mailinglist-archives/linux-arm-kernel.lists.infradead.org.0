@@ -2,55 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ACBDA9F3A2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 21:58:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C1CF9F3A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 21:58:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=f04smpmkZ0G8BsJJGl5/FF3JfkVRV4RPjnnsRYe7a94=; b=BLk
-	HndBIbxoxx4sfWLnbVExKY5D1LzuY/syNERihTLXa2MUnOuGrCleRd5PczxhBb1DkMsoh9IDjwhVh
-	bDQbmTtDMGcOmhZD2zZX81y5ccJ6YHEVNPE0PlJ+VxqyJFxFBYlbn7QDwyRcz52UZNtuQukdU+jED
-	KG4q8gQfDRq0T4f+sqFIG19jA14P5QLWX6GxWqL5w+6RiLswzbhAWIw9HLXyNSeKf7wyeB7yPvb6l
-	9mMkb6ic4RRRWjalPmZgr/rRNsZHXN5pAyR2FS6+6vMzgGOKfHj0oyeb1O4EZ2pLGMGRE9spTwYPx
-	xnReI3Hk+4nxbpDgN5BV1huurbzlkig==;
+	References:List-Owner; bh=IHxGXBM2qR8ks0J8r9SEb4MBPh46DxG9NTURRlWGTsA=; b=h/Q
+	+NONnfgyO5sK5Xf0LY2fF71FYUxmEDncYI5xDS2rdT3o9BXgLNtoBy3XYtmtoyoc8CERfP9tFG9nV
+	Y3ekXWTy4+uC81/XmLveLux+5tpF8wx406/DM0PtF/hiN7J3DHnxnROxp+9R06tdJmpEghymDjlZt
+	JmtslexBVkGahZWwOmL8bgAOspJKY//MKJZukOWXFli81bVe8RGu7/Vxh6SxivjqbKu9ODq1XTkSp
+	cYwVa+cxF12zW4XK/RREd3T1FwOGFw69giMRH9SKwPeMSwW9D8zT4v6w0UQsThP4BxIV8YNGIduca
+	4zg+nD5Ix29JlkuJGKkKYZh866J73FA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2hbl-0006yA-N3; Tue, 27 Aug 2019 19:58:25 +0000
+	id 1i2hc6-0007AX-Gp; Tue, 27 Aug 2019 19:58:46 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2hbe-0006xZ-0L
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 19:58:19 +0000
+ id 1i2hbf-0006xq-Uy
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 19:58:21 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=OaThH/jNUV4FZgiVTkaECXCFgxAkV/6nLC1gNMp4aE4=; b=j5Fu6wEkIkf1
- UPl+xL48N0ATGFIFtpB6+5w1wfct/0XAwMsAaS+gxEd2BJm0c+WKKWd0oDHoQ16LPubCc4K9geZLx
- yWVqFCxMalcU2ZwrRjN955ZopjEpZKg2G5kmcEwsttqlF7rNWCvCI556USMqiJ1+QR0ABY+8Bh3iS
- llz5M=;
+ List-Archive; bh=/qq4Y8bgfDjBd2xqdj5sv4QiznVJqZN+/Lozc9RwR5E=; b=Gi5oISGCh/oI
+ GprUbjlaXZCFLLFg3JuKxdywxtf2lz0E+PAPGdj5+XYYsGcpby6yklfPwo+7FTKup4v5Frq+F3amv
+ NvaHu33EeoBiAqGJ8GJabWTQ9GReaFRnEArhUucuNK687AWeHqjjAjwbzOmWMex6I2nOgoLYDxOHn
+ QJnoY=;
 Received: from 188.28.18.107.threembb.co.uk ([188.28.18.107]
  helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.org.uk>)
- id 1i2hbY-0001CV-JE; Tue, 27 Aug 2019 19:58:13 +0000
+ id 1i2hbY-0001CW-U0; Tue, 27 Aug 2019 19:58:13 +0000
 Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id 5748AD02CE9; Tue, 27 Aug 2019 20:58:10 +0100 (BST)
+ id 6AED8D02CEA; Tue, 27 Aug 2019 20:58:10 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
-To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Applied "ASoC: sun4i: Revert A83t description" to the asoc tree
-In-Reply-To: <20190827123131.29129-2-mripard@kernel.org>
+To: Wei Yongjun <weiyongjun1@huawei.com>
+Subject: Applied "ASoC: SOF: imx8: Fix return value check in imx8_probe()" to
+ the asoc tree
+In-Reply-To: <20190826120003.183279-1-weiyongjun1@huawei.com>
 X-Patchwork-Hint: ignore
-Message-Id: <20190827195810.5748AD02CE9@fitzroy.sirena.org.uk>
+Message-Id: <20190827195810.6AED8D02CEA@fitzroy.sirena.org.uk>
 Date: Tue, 27 Aug 2019 20:58:10 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_125818_047488_A47D1A46 
-X-CRM114-Status: GOOD (  15.45  )
+X-CRM114-CacheID: sfid-20190827_125820_004171_38E5DC90 
+X-CRM114-Status: GOOD (  14.82  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -76,10 +77,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, lgirdwood@gmail.com,
- Maxime Ripard <mripard@kernel.org>, linux-kernel@vger.kernel.org,
- codekipper@gmail.com, Chen-Yu Tsai <wens@csie.org>,
- Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+Cc: alsa-devel@alsa-project.org, Pengutronix@sirena.org.uk,
+ linux-kernel@vger.kernel.org, Sascha Hauer <s.hauer@pengutronix.de>,
+ Takashi Iwai <tiwai@suse.com>, kernel-janitors@vger.kernel.org,
+ Liam Girdwood <lgirdwood@gmail.com>, Jaroslav Kysela <perex@perex.cz>,
+ Mark Brown <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -88,7 +91,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: sun4i: Revert A83t description
+   ASoC: SOF: imx8: Fix return value check in imx8_probe()
 
 has been applied to the asoc tree at
 
@@ -113,72 +116,41 @@ to this mail.
 Thanks,
 Mark
 
-From 9ec05d4723bf83dd272cef5ccf508e5fe4d30fa3 Mon Sep 17 00:00:00 2001
-From: Maxime Ripard <maxime.ripard@bootlin.com>
-Date: Tue, 27 Aug 2019 14:31:31 +0200
-Subject: [PATCH] ASoC: sun4i: Revert A83t description
+From 393151c211006cc5ac6af26ecd9982dd916a8104 Mon Sep 17 00:00:00 2001
+From: Wei Yongjun <weiyongjun1@huawei.com>
+Date: Mon, 26 Aug 2019 12:00:03 +0000
+Subject: [PATCH] ASoC: SOF: imx8: Fix return value check in imx8_probe()
 
-The last set of reworks included some fixes to change the A83t behaviour
-and "fix" it.
+In case of error, the function devm_ioremap_wc() returns NULL pointer
+not ERR_PTR(). The IS_ERR() test in the return value check should be
+replaced with NULL test.
 
-It turns out that the controller described in the datasheet and the one
-supported here are not the same, yet the A83t has the two of them, and the
-one supported in the driver wasn't the one described in the datasheet.
-
-Fix this by reintroducing the proper quirks.
-
-Fixes: 69e450e50ca6 ("ASoC: sun4i-i2s: Fix the LRCK period on A83t")
-Fixes: bf943d527987 ("ASoC: sun4i-i2s: Fix MCLK Enable bit offset on A83t")
-Fixes: 2e04fc4dbf50 ("ASoC: sun4i-i2s: Fix WSS and SR fields for the A83t")
-Fixes: 515fcfbc7736 ("ASoC: sun4i-i2s: Fix LRCK and BCLK polarity offsets on newer SoCs")
-Fixes: c1d3a921d72b ("ASoC: sun4i-i2s: Fix the MCLK and BCLK dividers on newer SoCs")
-Fixes: fb19739d7f68 ("ASoC: sun4i-i2s: Use module clock as BCLK parent on newer SoCs")
-Fixes: 71137bcd0a9a ("ASoC: sun4i-i2s: Move the format configuration to a callback")
-Fixes: d70be625f25a ("ASoC: sun4i-i2s: Move the channel configuration to a callback")
-Reported-by: Chen-Yu Tsai <wens@csie.org>
-Tested-by: Chen-Yu Tsai <wens@csie.org>
-Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Link: https://lore.kernel.org/r/20190827123131.29129-2-mripard@kernel.org
+Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
+Signed-off-by: Wei Yongjun <weiyongjun1@huawei.com>
+Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+Link: https://lore.kernel.org/r/20190826120003.183279-1-weiyongjun1@huawei.com
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- sound/soc/sunxi/sun4i-i2s.c | 24 ++++++++++++------------
- 1 file changed, 12 insertions(+), 12 deletions(-)
+ sound/soc/sof/imx/imx8.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
-diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
-index a6a3f772fdf0..d0a8d5810c0a 100644
---- a/sound/soc/sunxi/sun4i-i2s.c
-+++ b/sound/soc/sunxi/sun4i-i2s.c
-@@ -1106,18 +1106,18 @@ static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
- 	.has_reset		= true,
- 	.reg_offset_txdata	= SUN8I_I2S_FIFO_TX_REG,
- 	.sun4i_i2s_regmap	= &sun4i_i2s_regmap_config,
--	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
--	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
--	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
--	.bclk_dividers		= sun8i_i2s_clk_div,
--	.num_bclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.mclk_dividers		= sun8i_i2s_clk_div,
--	.num_mclk_dividers	= ARRAY_SIZE(sun8i_i2s_clk_div),
--	.get_bclk_parent_rate	= sun8i_i2s_get_bclk_parent_rate,
--	.get_sr			= sun8i_i2s_get_sr_wss,
--	.get_wss		= sun8i_i2s_get_sr_wss,
--	.set_chan_cfg		= sun8i_i2s_set_chan_cfg,
--	.set_fmt		= sun8i_i2s_set_soc_fmt,
-+	.field_clkdiv_mclk_en	= REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 7, 7),
-+	.field_fmt_wss		= REG_FIELD(SUN4I_I2S_FMT0_REG, 2, 3),
-+	.field_fmt_sr		= REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 5),
-+	.bclk_dividers		= sun4i_i2s_bclk_div,
-+	.num_bclk_dividers	= ARRAY_SIZE(sun4i_i2s_bclk_div),
-+	.mclk_dividers		= sun4i_i2s_mclk_div,
-+	.num_mclk_dividers	= ARRAY_SIZE(sun4i_i2s_mclk_div),
-+	.get_bclk_parent_rate	= sun4i_i2s_get_bclk_parent_rate,
-+	.get_sr			= sun4i_i2s_get_sr,
-+	.get_wss		= sun4i_i2s_get_wss,
-+	.set_chan_cfg		= sun4i_i2s_set_chan_cfg,
-+	.set_fmt		= sun4i_i2s_set_soc_fmt,
- };
- 
- static const struct sun4i_i2s_quirks sun8i_h3_i2s_quirks = {
+diff --git a/sound/soc/sof/imx/imx8.c b/sound/soc/sof/imx/imx8.c
+index 640472491037..c9d849ced54a 100644
+--- a/sound/soc/sof/imx/imx8.c
++++ b/sound/soc/sof/imx/imx8.c
+@@ -296,10 +296,10 @@ static int imx8_probe(struct snd_sof_dev *sdev)
+ 	sdev->bar[SOF_FW_BLK_TYPE_SRAM] = devm_ioremap_wc(sdev->dev, res.start,
+ 							  res.end - res.start +
+ 							  1);
+-	if (IS_ERR(sdev->bar[SOF_FW_BLK_TYPE_SRAM])) {
++	if (!sdev->bar[SOF_FW_BLK_TYPE_SRAM]) {
+ 		dev_err(sdev->dev, "failed to ioremap mem 0x%x size 0x%x\n",
+ 			base, size);
+-		ret = PTR_ERR(sdev->bar[SOF_FW_BLK_TYPE_SRAM]);
++		ret = -ENOMEM;
+ 		goto exit_pdev_unregister;
+ 	}
+ 	sdev->mailbox_bar = SOF_FW_BLK_TYPE_SRAM;
 -- 
 2.20.1
 
