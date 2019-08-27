@@ -2,90 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C83A9EC66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59C269EC82
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:26:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0li3nCtiQ/85M2rH6mMXZrBnk33nayTSZQ8zwWNEeJ4=; b=b91Xj7F6vtXn/ViEp9wXhGxJh
-	om95Rs7l+AswfsxFKsYJaFVBIecHWaeoANfjtVb1kqQCUooASKNWwv5YWBb/mIJGstPCLKjGD1pa5
-	mD5TUZRx5Xo+HpnDD98EGG5Q50hPq9KEsJjpk/+/8DrlpvhOc5MgOwqDNTytbApGIOpSB9qSEquMa
-	KcIhxl9mdcFyfNNb794MUpLblM+0RvdjxeU4V4WHagVpaOdz+fbpsJNAFTGnVP9lPDbVFNHlGXX3y
-	ytn9zIuZspgmN/CI4/bDMfWrfplXzBz3+zWuQHQ4T+UbL7kRuYzodcMPS96bJ22MxqaU0Qmc0OM4a
-	2XauS2qAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1J2MMJAA4UoQu9jHzFamN80agzENBYg18d/dW4BQZpY=; b=Hha6pdK7itQgnQ
+	R3nMsRORQo2OtctrhltBBJ9ecG2aEvE0g8kElQhQUiQxK20EEaNW4dN7zkhYLhj0XRUncZ1z63CES
+	cLNNIIMxyWieiivbTx2uDxnwAukDhxirp+Mo6o079xBFTsQsgx6bPpFajBckwnMZqeoCSEApnO2yf
+	b0jUx5hFNCPtXQpIAQJC9caI+znBzKhGEmAHkyfZfD5De8cfyuCMrHXB7J51nTN+Bxj+53zzAlSvB
+	RcAGSNHZUctCp+H/P0i6Xud3zpDE1/Yv/6lgtSajkWTQiFbxo/aDoKPyf5mrnkr5n4nySxTsKpnNg
+	i9znyIUZu4sLtGzor5uA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2dK2-00005W-Fy; Tue, 27 Aug 2019 15:23:50 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1i2dMb-0001fq-SV; Tue, 27 Aug 2019 15:26:29 +0000
+Received: from mail-ot1-f68.google.com ([209.85.210.68])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2dJu-0008W5-1a
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:23:43 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
- x7RFLUt5007886; Tue, 27 Aug 2019 17:23:36 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=subject : to : cc :
- references : from : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=STMicroelectronics;
- bh=SMKi/mX7zvq/yrjJa5DU8JTV4hHp8R0QThyzkk9s3nA=;
- b=VbqIUTEVJwBhsOXMzWDDM0WvEpGE8M1Fpzxc2dYPMy6ExSX4mLoDAaBLGp0xoV3psUrN
- mrc3zFMXTWIe16z1EzNMiMSfbFZy7ftoqLjmFYBILsTiBut8g6JZQd5nEI98DH322Wln
- ASDN4IZp3FXfucqYou5miezHC83yJBffg2S5FNlcIPC+HGTat3x7bXkz7KJgtCJ+aBGI
- VmJ/Iloca7rnS74AbeTEj9+CiJosfGB28SXarYrcEHbXI/W8pmIhK9hTQd83Y8HhjuMO
- grAuIuqZ2Mwmgsu4JYZvPXmKNXB4OZtpVs2GtNYceuB59H8KhZJ8NoMxsvftLAo9WGkC 6w== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2ujtcbjk3r-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Tue, 27 Aug 2019 17:23:36 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 768AE24;
- Tue, 27 Aug 2019 15:23:32 +0000 (GMT)
-Received: from Webmail-eu.st.com (sfhdag3node2.st.com [10.75.127.8])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id A90C72AC1B6;
- Tue, 27 Aug 2019 17:23:31 +0200 (CEST)
-Received: from lmecxl0912.lme.st.com (10.75.127.44) by SFHDAG3NODE2.st.com
- (10.75.127.8) with Microsoft SMTP Server (TLS) id 15.0.1347.2; Tue, 27 Aug
- 2019 17:23:31 +0200
-Subject: Re: [PATCH] Documentation: add link to stm32mp157 docs
-To: Jonathan Corbet <corbet@lwn.net>, Gerald BAEZA <gerald.baeza@st.com>
-References: <1566908347-92201-1-git-send-email-gerald.baeza@st.com>
- <20190827074825.64a28e88@lwn.net>
-From: Alexandre Torgue <alexandre.torgue@st.com>
-Message-ID: <5257eff7-418b-8e94-1ced-30718dd3f5dc@st.com>
-Date: Tue, 27 Aug 2019 17:23:30 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i2dMT-0001fN-1Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:26:22 +0000
+Received: by mail-ot1-f68.google.com with SMTP id k18so19068871otr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 08:26:20 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Cx5A9kmsqXyCRtIPjR+drsX0vo8kNVTlvMzHwdHDI2U=;
+ b=hxyrz0iceiyKoszykQlTJs3oLqddD1vZeP+y988DrbWmdP+NXGiSFbhtQRB8HvBmNs
+ c6JFTh0zpejRbT3A7XaZmvCxDU9izHbXkKUD+n9mSauo/jXPMUWrZd0BUx0AjOMXiFbR
+ D+kNC/X0SWb8pxW85RN+X/t1Ckmg/3U2MCruDXnxGaHM4CgeIFphhev2mdfsGud/jxeP
+ rhWAWDKMK8QAXG1SIcG66ZClxoAbbVezOFhMt8Ht6mNNYxUwAq6nM7Du4+3XS4sg5wCF
+ 4zgltNdZexvZjNVGEAQEm0jwBx7hiKrw7XLqyAHlfLnSv8hMqcUeZhbcdRr8WdHaOOmr
+ CF9w==
+X-Gm-Message-State: APjAAAUKGzfrVgdkNC7LKik2R89DzpzDTTcCKi2W1TlClXABPKcALhDx
+ cqT/0TYfusV5cTmuJIbqtw==
+X-Google-Smtp-Source: APXvYqwSeY1/zyQlliXFGLvmROu9EUOrSjDGZJ/u1Ovb3jw9fy9cQ2GnzE/ll0sd4/G7GJ44D+KuNA==
+X-Received: by 2002:a05:6830:42:: with SMTP id
+ d2mr19950752otp.123.1566919579411; 
+ Tue, 27 Aug 2019 08:26:19 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id i16sm5354376otc.65.2019.08.27.08.26.18
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 08:26:18 -0700 (PDT)
+Date: Tue, 27 Aug 2019 10:26:17 -0500
+From: Rob Herring <robh@kernel.org>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH v5 10/18] dt-bindings: thermal: add binding document for
+ h3 thermal controller
+Message-ID: <20190827152617.GA24677@bogus>
+References: <20190810052829.6032-1-tiny.windzz@gmail.com>
+ <20190810052829.6032-11-tiny.windzz@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190827074825.64a28e88@lwn.net>
-Content-Language: en-US
-X-Originating-IP: [10.75.127.44]
-X-ClientProxiedBy: SFHDAG1NODE3.st.com (10.75.127.3) To SFHDAG3NODE2.st.com
- (10.75.127.8)
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
- definitions=2019-08-27_03:, , signatures=0
+Content-Disposition: inline
+In-Reply-To: <20190810052829.6032-11-tiny.windzz@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_082342_378482_D0463207 
-X-CRM114-Status: GOOD (  16.84  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190827_082621_083138_303425F8 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.210.68 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.68 listed in wl.mailspike.net]
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,64 +95,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ maxime.ripard@bootlin.com, gregkh@linuxfoundation.org,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ Yangtao Li <tiny.windzz@gmail.com>, wens@csie.org, robh+dt@kernel.org,
+ Jonathan.Cameron@huawei.com, mchehab+samsung@kernel.org, rui.zhang@intel.com,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jonathan,
-
-On 8/27/19 3:48 PM, Jonathan Corbet wrote:
-> On Tue, 27 Aug 2019 12:19:32 +0000
-> Gerald BAEZA <gerald.baeza@st.com> wrote:
+On Sat, 10 Aug 2019 05:28:21 +0000, Yangtao Li wrote:
+> This patch adds binding document for allwinner h3 thermal controller.
 > 
->> Link to the online stm32mp157 documentation added
->> in the overview.
->>
->> Signed-off-by: Gerald Baeza <gerald.baeza@st.com>
->> ---
->>   Documentation/arm/stm32/stm32mp157-overview.rst | 6 ++++++
->>   1 file changed, 6 insertions(+)
->>
->> diff --git a/Documentation/arm/stm32/stm32mp157-overview.rst b/Documentation/arm/stm32/stm32mp157-overview.rst
->> index f62fdc8..8d5a476 100644
->> --- a/Documentation/arm/stm32/stm32mp157-overview.rst
->> +++ b/Documentation/arm/stm32/stm32mp157-overview.rst
->> @@ -14,6 +14,12 @@ It features:
->>   - Standard connectivity, widely inherited from the STM32 MCU family
->>   - Comprehensive security support
->>   
->> +Resources
->> +---------
->> +
->> +Datasheet and reference manual are publicly available on ST website:
->> +.. _STM32MP157: https://www.st.com/en/microcontrollers-microprocessors/stm32mp157.html
->> +
-> 
-> Adding the URL is a fine idea.  But you don't need the extra syntax to
-> create a link if you're not going to actually make a link out of it.  So
-> I'd take the ".. _STM32MP157:" part out and life will be good.
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  .../bindings/thermal/sun8i-thermal.yaml       | 81 ++++++++++++++++++-
+>  1 file changed, 78 insertions(+), 3 deletions(-)
 > 
 
-We also did it for older stm32 product. Idea was to not have the "full" 
-address but just a shortcut of the link when html file is read. It maybe 
-makes no sens ? (if yes we will have to update older stm32 overview :))
-
-thanks
-Alex
-
-
-> Thanks,
-> 
-> jon
-> 
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
