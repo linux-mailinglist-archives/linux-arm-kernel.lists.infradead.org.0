@@ -2,75 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E23E59EA1A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:51:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB86A9EA1B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:51:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zWta+vc7FT7mRo5XLUij2ocZNFoX8HnhPjOm1gyYdvs=; b=Pr0CFdgJY7j7/I
-	b2imJnzXfQ2Q8EHfUfy2arCDM7YmhwQx9EMnp6I3murOejX5MAoZp6JoBp2I5Uziylq7F12S3awSQ
-	eAzprhPU3v7l+82AYTZ34wsAJjZdr3crDlV8RXTCrRKHpOOXmNouXwjEFCYMRxKjxvbJBf31Jt4J/
-	LIxgeCZx+1XwJI8001v8mfvJJSm2jX+FCO5AUh3P9DQsEI0GvLFOKuCHQHo2quzBPNH1nUJpUNKkm
-	saBmbhjt6NvzO40HYuNjJ7jZMPT7/nXTbLZwoe6g0fzLbcZ80p9wxHc6mmgnlSKtQ60LdRMou1Tnv
-	Lc6t7y1PU3qFjG/9eeuQ==;
+	List-Owner; bh=eD9KHaRFGkGRwh8F2SkmfSStwK8JOnbMixGXhxSRCbA=; b=SQICdxxOZ02Job
+	OF+9JtxdsjlhQ9etX2PP/E4bCRmqDfBClaZ+4Q/9JK2Bde3vMC7UHihuYluNTY87+UKSA5DGp7DRO
+	Wc/Q5+frpJ9dQM58flHGB9JbOJLu0RIo6wzfhdhDvVyn9YdVxK4+7mCx45B/7XRL/uoyhnM0egTMU
+	m/rcnfS0vqyGk0aFvquxiEgL/FTPamtdVyVbQHtk8d7066qA8gAR2vwaFm9cqVHHaD2ZdTQpRQdJG
+	9gJ4lY3Ub4Ch/8i4tlQ02Wqtr8ZIxjBF7NSmngQVfTid4PBHqd4XTyqttYqoVbH2wyIYL/C5g2Jvs
+	rHym5Fo2PeutDpwg1vug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2bsg-0007yP-8O; Tue, 27 Aug 2019 13:51:30 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1i2bsv-0008BW-65; Tue, 27 Aug 2019 13:51:45 +0000
+Received: from mail-vs1-xe41.google.com ([2607:f8b0:4864:20::e41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2brc-0006oK-9Z
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:50:26 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id q16so13498057vsm.2
+ id 1i2brg-0006xc-CV
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:50:32 +0000
+Received: by mail-vs1-xe41.google.com with SMTP id y62so13485150vsb.6
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 06:50:23 -0700 (PDT)
+ Tue, 27 Aug 2019 06:50:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Guoi8CEbmiEQL58vlM08bbKsHwcExynBojoPctnPZQ0=;
- b=RNPb/Pp8yJsUTuHGjh2jKkjRQX2ljYb0W/XDYEKzB+FhQFV/R9HrN1fiHznv3QWbKj
- Sfd084Ajkfy+zKTBO5aQ2HlSsn9KYya3GZOoRN3sYZH5EVfrOacXSA/eLCUABkDBHKXZ
- HgqNEhQmz+aS3sqpEDAM2LtMimWH6XbNE2mBn+KZLBTctvkTxjSop/G8s5bxTh87Pmg2
- A1wtOHfHfMQHdDckfH10h05OH6i8sQIEV+tUZMfc5hVtF6P2OBv1dYt6xLONVHGNsDU2
- bS1kXes0awjw9J6ilPUG5rjU9w2U5rtdNq2fBPyBxzS1s68byE4UVzQKn5aIaggg37LH
- sg0A==
+ :cc; bh=9nTdAXMkkDWuizv1tysprjOJ2R0IJRbo/lx0RTYg+gg=;
+ b=lRFCIPmx30bbAcvZ3ja1zoN/Q3+vSqfaVYAcaCKhScS9+a4YuFNPLRxB9y5OIZW+Iu
+ 6pa5Iu/6QsGXgoEY5AB8deRH2GTZgetkr0vkJL6dpQ4V0cl0AHjU48W6ayhzWNXsgMuL
+ /3GYi+XhaOw8Wi5LXWnKjn6WgGak6tZhmxOIZWPfBop/ZWYefWw46yN0SAPYQCBO7WMN
+ zMJvjGTPUCviMFP2pVUsoXeG//iGiUMhfuVu2czaHGlLoJAO/pbzLBl48LxnmKEsmfZk
+ bmfQvPvgwX4m9OyGWFQNO5nK+jZ2umhflxqFk4orYXIMuiKov8bBIoNu34lHmvkenMS2
+ lx9A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Guoi8CEbmiEQL58vlM08bbKsHwcExynBojoPctnPZQ0=;
- b=c0K+0qK/p9Uo4BvEsGXuOdRqq0cA2YjF/z9MPLu5KB1wXqZvIPLMSHd7BfIwhJ3g3R
- xID6HIREYeNoLzwR8t4QLWwvwP+ms69pzrE6Y1rnjF6dLJthbXxjn7cIiqfN0As6nMe/
- UbVYfmV7dcX54MdFSke0D2Tn4N5jXr/T81do0ztMmYBCxdrbozEVpQa9B3bHF0OqgFFs
- lcrGTKu/fF3eozgwuG5tlifn4TG5Ir5vH90RfWg2LA0ptzdzK/t8876u1VWP0nk/abX3
- HxPO+tSv8yR+plUXB+lI7V3k8nHb/8pJhG0nf1Yj9DA5ErpUT3Ou4wAdsn8KPRwsyiz5
- I/IQ==
-X-Gm-Message-State: APjAAAXeHOfHsr9OWHpEpPPyljLOJcqh5pkFLgkT4GfndjH6HvBGZxYP
- lqG0hEJPc8TYbQMAiBKvv16PH5/jTcW5qAg2CatMtg==
-X-Google-Smtp-Source: APXvYqzncKmxLayhEBMLlhwrVoNiyd8CgMvPymu/cA3tDurKWXmJDQS8p/pR1gGiwmMXm8tlrZoSHbCz53D4HFxX4k4=
-X-Received: by 2002:a67:347:: with SMTP id 68mr13733195vsd.35.1566913822835;
- Tue, 27 Aug 2019 06:50:22 -0700 (PDT)
+ bh=9nTdAXMkkDWuizv1tysprjOJ2R0IJRbo/lx0RTYg+gg=;
+ b=KvB4zxKgrix7demctysQglIG1qXTgH987Xux2atDC+KrlgbCr6Ar8BI/pHaXbtjt+n
+ 2kxYvmJoFSX1KzBFRuxJi2EpXw+Gwi+GLsJe6i7zPmMjNuBg14rXU6ia5oDlxIBDQbgX
+ RwJO6+Iu6hnkGeboWk3Rs5r/wtIr/0jCpwXJ5BeWuY8heqvskcIktlhePfYpv0yjx9Bj
+ KtdmzYAVzt/J//kYs0P2wGH5EGsGalMwAKMdT0+TkgTwZ/bAhFT7Sbe0lf7nS9rp+RIC
+ oPvdc+GZR/tVNy0H279Hr28sey3pHgSCsB8h09MdrZtIZSvAfhORPv3hA7VxFtPIO5N3
+ VQDA==
+X-Gm-Message-State: APjAAAWAl0QRFH/QIIJp6efZywSt7c/aGeWHEU/fGFWRkAreOagCq3F7
+ Df8K5ppYOAH+SHonZw+ewpzBiFOri4b3hK2/iWToIA==
+X-Google-Smtp-Source: APXvYqxuL5QLvtpihYjZI5CsVwD6jsXto4QZa31USkmsbOyid71SgorLhwLsMkfjsVyq/LxIIJYnJj5VAXPG3DJ54S8=
+X-Received: by 2002:a67:32c5:: with SMTP id
+ y188mr13651472vsy.191.1566913827420; 
+ Tue, 27 Aug 2019 06:50:27 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190826072800.38413-1-vadivel.muruganx.ramuthevar@linux.intel.com>
-In-Reply-To: <20190826072800.38413-1-vadivel.muruganx.ramuthevar@linux.intel.com>
+ <20190826072800.38413-2-vadivel.muruganx.ramuthevar@linux.intel.com>
+In-Reply-To: <20190826072800.38413-2-vadivel.muruganx.ramuthevar@linux.intel.com>
 From: Ulf Hansson <ulf.hansson@linaro.org>
-Date: Tue, 27 Aug 2019 15:49:46 +0200
-Message-ID: <CAPDyKFpsvZ+LEwY91LiSExgm=4g=BhWNpkkJMniBNff+qch-QA@mail.gmail.com>
-Subject: Re: [PATCH v1 1/2] dt-bindings: mmc: sdhci-of-arasan: Add new
- compatible for Intel LGM eMMC
+Date: Tue, 27 Aug 2019 15:49:49 +0200
+Message-ID: <CAPDyKFrPoPqnh3_23P=wGO+QrUE9ogJzC6xgzy+0QeyuyeO=HQ@mail.gmail.com>
+Subject: Re: [PATCH v1 2/2] mmc: sdhci-of-arasan: Add Support for Intel LGM
+ eMMC
 To: "Ramuthevar,
  Vadivel MuruganX" <vadivel.muruganx.ramuthevar@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_065024_685847_C00E1E82 
-X-CRM114-Status: GOOD (  16.34  )
+X-CRM114-CacheID: sfid-20190827_065028_528034_E6121CD1 
+X-CRM114-Status: GOOD (  16.71  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e41 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -107,12 +109,16 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Mon, 26 Aug 2019 at 09:28, Ramuthevar,Vadivel MuruganX
 <vadivel.muruganx.ramuthevar@linux.intel.com> wrote:
 >
-> From: Ramuthevar Vadivel Murugan <vadivel.muruganx.ramuthevar@linux.intel.com>
+> From: Ramuthevar Vadivel Muruganx <vadivel.muruganx.ramuthevar@linux.intel.com>
 >
-> Add a new compatible to use the sdhc-arasan host controller driver
-> with the eMMC PHY on Intel's Lightning Mountain SoC.
+> The current arasan sdhci PHY configuration isn't compatible
+> with the PHY on Intel's LGM(Lightning Mountain) SoC devices.
 >
-> Signed-off-by: Ramuthevar Vadivel Murugan <vadivel.muruganx.ramuthevar@linux.intel.com>
+> Therefore, add a new compatible, to adapt the Intel's LGM
+> eMMC PHY with arasan-sdhc controller to configure the PHY.
+>
+> Signed-off-by: Ramuthevar Vadivel Muruganx <vadivel.muruganx.ramuthevar@linux.intel.com>
+
 
 Applied for next, thanks!
 
@@ -121,41 +127,49 @@ Uffe
 
 
 > ---
->  Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 17 +++++++++++++++++
->  1 file changed, 17 insertions(+)
+>  drivers/mmc/host/sdhci-of-arasan.c | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
 >
-> diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> index 1edbb049cccb..7ca0aa7ccc0b 100644
-> --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
-> @@ -17,6 +17,8 @@ Required Properties:
->        For this device it is strongly suggested to include arasan,soc-ctl-syscon.
->      - "ti,am654-sdhci-5.1", "arasan,sdhci-5.1": TI AM654 MMC PHY
->         Note: This binding has been deprecated and moved to [5].
-> +    - "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1": Intel LGM eMMC PHY
-> +      For this device it is strongly suggested to include arasan,soc-ctl-syscon.
+> diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
+> index b12abf9b15f2..7023cbec4017 100644
+> --- a/drivers/mmc/host/sdhci-of-arasan.c
+> +++ b/drivers/mmc/host/sdhci-of-arasan.c
+> @@ -114,6 +114,12 @@ static const struct sdhci_arasan_soc_ctl_map rk3399_soc_ctl_map = {
+>         .hiword_update = true,
+>  };
 >
->    [5] Documentation/devicetree/bindings/mmc/sdhci-am654.txt
->
-> @@ -80,3 +82,18 @@ Example:
->                 phy-names = "phy_arasan";
->                 #clock-cells = <0>;
->         };
+> +static const struct sdhci_arasan_soc_ctl_map intel_lgm_emmc_soc_ctl_map = {
+> +       .baseclkfreq = { .reg = 0xa0, .width = 8, .shift = 2 },
+> +       .clockmultiplier = { .reg = 0, .width = -1, .shift = -1 },
+> +       .hiword_update = false,
+> +};
 > +
-> +       emmc: sdhci@ec700000 {
-> +               compatible = "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1";
-> +               reg = <0xec700000 0x300>;
-> +               interrupt-parent = <&ioapic1>;
-> +               interrupts = <44 1>;
-> +               clocks = <&cgu0 LGM_CLK_EMMC5>, <&cgu0 LGM_CLK_NGI>,
-> +                        <&cgu0 LGM_GCLK_EMMC>;
-> +               clock-names = "clk_xin", "clk_ahb", "gate";
-> +               clock-output-names = "emmc_cardclock";
-> +               #clock-cells = <0>;
-> +               phys = <&emmc_phy>;
-> +               phy-names = "phy_arasan";
-> +               arasan,soc-ctl-syscon = <&sysconf>;
-> +       };
+>  /**
+>   * sdhci_arasan_syscon_write - Write to a field in soc_ctl registers
+>   *
+> @@ -373,6 +379,11 @@ static struct sdhci_arasan_of_data sdhci_arasan_rk3399_data = {
+>         .pdata = &sdhci_arasan_cqe_pdata,
+>  };
+>
+> +static struct sdhci_arasan_of_data intel_lgm_emmc_data = {
+> +       .soc_ctl_map = &intel_lgm_emmc_soc_ctl_map,
+> +       .pdata = &sdhci_arasan_cqe_pdata,
+> +};
+> +
+>  #ifdef CONFIG_PM_SLEEP
+>  /**
+>   * sdhci_arasan_suspend - Suspend method for the driver
+> @@ -474,6 +485,10 @@ static const struct of_device_id sdhci_arasan_of_match[] = {
+>                 .compatible = "rockchip,rk3399-sdhci-5.1",
+>                 .data = &sdhci_arasan_rk3399_data,
+>         },
+> +       {
+> +               .compatible = "intel,lgm-sdhci-5.1-emmc",
+> +               .data = &intel_lgm_emmc_data,
+> +       },
+>         /* Generic compatible below here */
+>         {
+>                 .compatible = "arasan,sdhci-8.9a",
 > --
 > 2.11.0
 >
