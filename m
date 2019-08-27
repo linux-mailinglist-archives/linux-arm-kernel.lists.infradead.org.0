@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81A879E636
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:56:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A39549E637
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 12:56:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pT1cERw0wUZywp3AA+cSBACg+GabNDhO8KoEeJJ1GF0=; b=DLJOCysae9JVOO
-	KczQ41OX5fdiZnH7n98DnKwY4UFPW9dqjtY13TyUS04/aPUFa7V6ToBSqf5BQjY++2llBZ16XTnz2
-	SAYIAcdp580xY1EyIk3veNiz6xdJbGtkYBRQe6qLEWjfBkaj0p+c9Yn4V7y6tJMr0dmOIRIt70/Xq
-	zM0n9Wjtt5BeijZNo5chOPqjhdOXEqTxQttaSe2p+sSqKJC0PSXuwoES+CtewBacdTI3u5TCAv+8i
-	aozwdDre6S07YuSmVEISDatyepyrfTxfBCMWG7i4vjvpZfc5FBHoqmxZY4+xAI8BBKE70lx65BgoP
-	jMGppRoAYrYCP0cAvQXg==;
+	List-Owner; bh=Q3NCHe4sd2ym6UBKWGJFuO/wipKF1guHd6FqFH+Qi+Y=; b=rmo7eXjuvQgnhR
+	wt9PDzU2LvaE65XYumJ7QoFZMPbROIMfYP40oMUrs+iT3sy2A1u8y4uDuZJkjH/iniPGRQYTZa6CE
+	OEl/EWC8X3xWAW0JMfNNWmwRpGNcc7jaTi/QcuaTG0BCMU3WVlkLe2PCN/dqNMmRzEbH6XZ6Nc36B
+	pwQxqLs+NVDtrJNB3FFxktEZqicZ3Wgp7wssVl/vwHWHHp4DUxLGfB6KFocN7KXNoORZh1JaJ6spD
+	Dh0ljem3vw3LIzq33xk/771GVMv74Y1OvzwsFF2DCSxEsJTxJuSeRjUlBC4uCtcupXtPSUHUdItoX
+	gj+KARM1jeSIUdtK49Vw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2Z97-0000Ya-A2; Tue, 27 Aug 2019 10:56:18 +0000
-Received: from mail-qt1-x844.google.com ([2607:f8b0:4864:20::844])
+	id 1i2Z9Y-0000nK-WA; Tue, 27 Aug 2019 10:56:45 +0000
+Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Z8S-0000YG-F3
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:55:37 +0000
-Received: by mail-qt1-x844.google.com with SMTP id k13so20752351qtm.12
+ id 1i2Z8p-0000ez-Uc
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 10:56:02 +0000
+Received: by mail-lj1-x242.google.com with SMTP id z17so18056289ljz.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 03:55:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ Tue, 27 Aug 2019 03:55:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=xBBSaRfs9g20vYjbM6T4XZsAtcZKTiaViIXzxXMhEok=;
- b=EccDfglS7oeUty7JIpmxBdjnAlVVAiQJ6uHYJW4XKSK9eBlVBtsy/RRvpPSksELMQS
- pQhPDK8A45NTHQHBztsrJzKW1EQ2cdpJdB/bTLYMOIJ36R3a+JIX/l5g8ApT0BBi6DSZ
- kDUwXmwS/1BYpYPYpDobe+BQ1XllfEHfrtoIE8nOa6UwJ7xuuQx7vFfGrWW1pHOC0JzO
- Qf1dvFtvvufYbNML4SJCENX6YAktMdnN0+YSdiT5EF5FIe/G1G1g9IeWEEFgxV2r+8+f
- hO6wLKdfgFMp8mYAhn0BRF7kerHDTw7Q1b/MMLylCuvKlLvQgNnYoIYOK9AJbUirzZUA
- nKrg==
+ :cc; bh=wq/U2uqRcLoFz7h5fswTveJreTohoqdRqnhzH4lXvVc=;
+ b=NqNrQmQF1TMINxnG3tXMC6N5lSsJnysRJ2K4cMrSNhSxsvBEaXWJi9hcdMosgflzuj
+ FCBt/kJFLNjNFxuovam6nPV8YMSq07JTyoks0a12zNst31Hu/OGjLsRQnmnk1u95vL8q
+ 96rtvTczjT2qyj0J5j+n2gVnXJiyMoxyl0gQYV9ANzRPa+zfFMBoVKLhcSm8IYrhujwS
+ pucH7orz6GYQ98O8FpJXrIVLkQxoTmG40eyJ8t4D4x49aEERcS6lSRbxVwxNB7ZkJn3q
+ q7pgDqiayFM2B6KfTf4GFJXxI/QfLb9Z65Qyd1G85gHlazbmKo/koDG+OvWDpGLLPzqd
+ jMPg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=xBBSaRfs9g20vYjbM6T4XZsAtcZKTiaViIXzxXMhEok=;
- b=JcUKEX9OZCVt6ELYQcnn85NuPfkO/wKg2O2QNw/0NZhuaXzkn7FNI6kJTNbjc82faA
- wM1u74HDjev9V/l3PHdrjg5bLiLOwqK/WAinZ43XAiI2iiNXpCXKv6wEQuwVQIKL6Vmb
- 2u6G+eYOYihOsKkTJ440ILOLTrmGNxkffPUbfWJyGh0Tvfvy6L9ZOmXi+GU2i/QS0cwz
- aK13yQnTiwe22yAmbdDKzcgcB7WmPOtW9T2+NqwcGrdZxZj80RP3+EdT632eHV1nXhzw
- 7nMRC2JFrkJIF7YkWWbjGPbT8aWtvR7GqRCjZ6x+t6xFr6hA7TzAf2kh8DZTR7v3DgtF
- GWgA==
-X-Gm-Message-State: APjAAAUOa5kupQTEFCOqWWiGDXzvpGxL/EJAkQfVMharah17qVR+Fy8Z
- K8MKxER/1fzmhvGvNDA6oIBRfvmIkt6GHA0HnQQOiQ==
-X-Google-Smtp-Source: APXvYqy+ShF2vGWcpzN0/kSiwwARIB3GywOkPU223WrZEcvw8T5gACDtgzkzIiunHVeHtRnrdsBb4spmqIabuQTxtfg=
-X-Received: by 2002:a0c:e711:: with SMTP id d17mr12583071qvn.174.1566903335249; 
- Tue, 27 Aug 2019 03:55:35 -0700 (PDT)
+ bh=wq/U2uqRcLoFz7h5fswTveJreTohoqdRqnhzH4lXvVc=;
+ b=XEQScRsPbr2aSqGVxwS3dhYKZOqTagxNJTGJ9cz6ux7noqP5RbrGRZ9Lxn5Lv/bem1
+ gD9A8lazoGwPBRYhIUHnPaux7saoy2MtC1REaD2mOWuZa13GY/rn2Ns82/ZSwvP5ccuY
+ EQ2TVLBDFuGB/3jpKbo2VTZGQzAiwRJrll0/8KMVSGLB7qMAmixE82UQxN4aVjuTUCcP
+ RquX9Yz9thduFs6kRCGSoSsZH90/cN5dyaZaHUixyQdKDraJt97VGi/YLtdC7hNIYuDM
+ MEEqHrY1xMx89L5YHcSn0v1OAMYaiFbb7ijjJx80TKOFmo5LQQOnjIcTFPD9brlU9gY/
+ sh4g==
+X-Gm-Message-State: APjAAAXH5EnB0CPMYwy/6ksnjHwrNFTDpLhkJBiHyfdlIhppZWoEoZX7
+ hbD1T9w8UFu+Y1sxQZW3na1NCr0c0VLIiW2CT5A=
+X-Google-Smtp-Source: APXvYqzJByXIYwML49GNgKStE890AUBK1DvwMnysuxEQMAxx+kxsF/bgtN7N1xuNGViTj1IJJw3i7Lf8ckkaj1at2EY=
+X-Received: by 2002:a2e:3c12:: with SMTP id j18mr12914274lja.50.1566903358224; 
+ Tue, 27 Aug 2019 03:55:58 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190819205720.24457-1-mike.leach@linaro.org>
- <20190819205720.24457-4-mike.leach@linaro.org>
- <20190826225949.GC24690@xps15>
-In-Reply-To: <20190826225949.GC24690@xps15>
-From: Mike Leach <mike.leach@linaro.org>
-Date: Tue, 27 Aug 2019 11:55:24 +0100
-Message-ID: <CAJ9a7VgAYwCONqwJHTb9QunN0Q4R3E82kxzpSJXV9kv2dpRnHw@mail.gmail.com>
-Subject: Re: [PATCH 3/8] coresight: etm4x: Add missing API to set EL match on
- address filters
-To: Mathieu Poirier <mathieu.poirier@linaro.org>
+References: <20190826180734.15801-1-codekipper@gmail.com>
+ <20190826180734.15801-3-codekipper@gmail.com>
+ <20190827093429.fkh4cqbygxxyvkk3@flea>
+In-Reply-To: <20190827093429.fkh4cqbygxxyvkk3@flea>
+From: Code Kipper <codekipper@gmail.com>
+Date: Tue, 27 Aug 2019 12:55:46 +0200
+Message-ID: <CAEKpxBmpNk=QPnOqCX7cWCV8qvxqhgEVT2AWhwGUmFMRyoF50g@mail.gmail.com>
+Subject: Re: [PATCH v6 2/3] ASoC: sun4i-i2s: Add regmap field to sign extend
+ sample
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_035536_510074_7CADEC34 
-X-CRM114-Status: GOOD (  22.23  )
+X-CRM114-CacheID: sfid-20190827_035600_116532_4D16944A 
+X-CRM114-Status: GOOD (  16.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:844 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:242 listed in]
  [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (codekipper[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -93,129 +95,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Coresight ML <coresight@lists.linaro.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- "Suzuki K. Poulose" <suzuki.poulose@arm.com>
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Mathieu,
-
-On Mon, 26 Aug 2019 at 23:59, Mathieu Poirier
-<mathieu.poirier@linaro.org> wrote:
+On Tue, 27 Aug 2019 at 11:34, Maxime Ripard <mripard@kernel.org> wrote:
 >
-> On Mon, Aug 19, 2019 at 09:57:15PM +0100, Mike Leach wrote:
-> > TRCACATRn registers have match bits for secure and non-secure exception
-> > levels which are not accessible by the sysfs API.
-> > This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
+> On Mon, Aug 26, 2019 at 08:07:33PM +0200, codekipper@gmail.com wrote:
+> > From: Marcus Cooper <codekipper@gmail.com>
 > >
-> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
-> > ---
-> >  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++++
-> >  1 file changed, 39 insertions(+)
+> > On the newer SoCs such as the H3 and A64 this is set by default
+> > to transfer a 0 after each sample in each slot. However the A10
+> > and A20 SoCs that this driver was developed on had a default
+> > setting where it padded the audio gain with zeros.
 > >
-> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > index fa1d6a938f6c..7eab5d7d0b62 100644
-> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-> > @@ -1233,6 +1233,44 @@ static ssize_t addr_context_store(struct device *dev,
-> >  }
-> >  static DEVICE_ATTR_RW(addr_context);
+> > This isn't a problem whilst we have only support for 16bit audio
+> > but with larger sample resolution rates in the pipeline then SEXT
+> > bits should be cleared so that they also pad at the LSB. Without
+> > this the audio gets distorted.
 > >
-> > +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
-> > +                                   struct device_attribute *attr,
-> > +                                   char *buf)
-> > +{
-> > +     u8 idx;
-> > +     unsigned long val;
-> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > +     struct etmv4_config *config = &drvdata->config;
-> > +
-> > +     spin_lock(&drvdata->spinlock);
-> > +     idx = config->addr_idx;
-> > +     val = BMVAL(config->addr_acc[idx], 14, 8);
-> > +     spin_unlock(&drvdata->spinlock);
-> > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
-> > +}
-> > +
-> > +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
-> > +                                    struct device_attribute *attr,
-> > +                                    const char *buf, size_t size)
-> > +{
-> > +     u8 idx;
-> > +     unsigned long val;
-> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
-> > +     struct etmv4_config *config = &drvdata->config;
-> > +
-> > +     if (kstrtoul(buf, 16, &val))
-> > +             return -EINVAL;
-> > +
-> > +     spin_lock(&drvdata->spinlock);
-> > +     idx = config->addr_idx;
-> > +     /* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8] */
-> > +     config->addr_acc[idx] &= ~(GENMASK(14, 8));
-> > +     config->addr_acc[idx] |= (val << 8);
-> > +     spin_unlock(&drvdata->spinlock);
-> > +     return size;
-> > +}
-> > +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
-> > +
-> >  static ssize_t seq_idx_show(struct device *dev,
-> >                           struct device_attribute *attr,
-> >                           char *buf)
-> > @@ -2038,6 +2076,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
-> >       &dev_attr_addr_stop.attr,
-> >       &dev_attr_addr_ctxtype.attr,
-> >       &dev_attr_addr_context.attr,
-> > +     &dev_attr_addr_exlevel_s_ns.attr,
-> >       &dev_attr_seq_idx.attr,
-> >       &dev_attr_seq_state.attr,
-> >       &dev_attr_seq_event.attr,
+> > Signed-off-by: Marcus Cooper <codekipper@gmail.com>
 >
-> I'm ok with this patch but the new entry needs to be documented in [1].
-
-It is in a later patch.
-
->   But
-> before moving forward with that I'm wondering if this is the way to go.  Would
-> it be better to consolidate type, ctxtype, context and exlevel_s_ns in a single
-> entry, say addr_acc_type?  We'd shed a fair amount of code and make it more
-> simple for users to configure.
+> If anything, I'd like to have less regmap_fields rather than more of
+> them. This is pretty easy to add to one of the callbacks, especially
+> since the field itself has been completely reworked from one
+> generation to the other.
 >
-
-It will mean the user has less writes to do - but is it really simpler
-to understand?
-
-At present each feature takes the input value and interprets / shifts
-it to set the relevant bits in the address comparator control
-registers (context type being a string input rather than bit values).
-
-The alternative is to require the user to understand the bit values -
-which they may well do if they are referring to the ETM docs to
-program in this detail, and provide a correct input value for their
-requirements.
-
-My addition adds to the API, rather than changes it, but if you prefer
-we could go with an update to a single feature to control this value
-in the comparator control registers.
-
-Mike
-
+ACK
+That's fine....I've been doing that with the patches which follow this.
+CK
+> Maxime
 >
-> [1]. Documentation/ABI/testing/sysfs-bus-coresight-devices-etm4x
->
-> > --
-> > 2.17.1
-> >
-
-
-
--- 
-Mike Leach
-Principal Engineer, ARM Ltd.
-Manchester Design Centre. UK
+> --
+> Maxime Ripard, Bootlin
+> Embedded Linux and Kernel engineering
+> https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
