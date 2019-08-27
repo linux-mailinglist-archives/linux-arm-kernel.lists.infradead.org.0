@@ -2,73 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21F2B9F0EA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 18:56:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D06E99F122
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 19:06:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsdSFuz7jTMwuN17YwMK+BB0J3WySWafUjyjr0EVwN8=; b=JGOddyPGpJS8m1
-	usMyB70W4PQNeKiWVDXPqyOTwVImMp11hfihBZs12bshEkpxpna781GWVYwyh8Nx4oRPA5m5jx01R
-	UVfyZkvt3RxzgxsRJjptPhDZPW19MBdzuWfij0Nck3/GkShA/dPtR+MCxm72O4aEMawv5b0HcyDNP
-	NeWis4aqeHrlqD5s3IhlhyrNDpq2GzX3BsoVZ+z/831b3y0vHqWP1kuz+MNH1u7ywby6+ywXlFIXj
-	MJTA4cz1n+sKcwFU9TO/LZMybwthoLTEhQLmZ1NGEFfW6XAjmU6YVkDlX9RWhNZvLPmWkW4gXaOJF
-	q/HkH5bTJSGuDXf20N5w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=eLAfYu0qgLMaaLsyBz81aR67+oEjNwip9hle+oJxsrA=; b=om9
+	8oSVNW7ENr2m92dlDRSvzJ9wgZ8eQb1B9nD8DBKZcbHcDa41B4V+TfztFa7w4/ng2Dfsp3utDtHSw
+	Ud0lD76ope3v9BeHCWQk5MB/mPow6C1RsnMMj2vob/5lXgVxkIiD2DLePokvkewmjwafFx57d/I95
+	Ki4LdfP9rjYxQ/Fkdwi4tfhA/LrcCk9wcwUv4bBKPjPVOL3ppHQ+l1+IcEzkiWDheWRbAjD6u7W8x
+	yameac2Zil5vUrUZmgqxUgE4cFPLAhf0OHV8kSvQ3Nb+2xFEPGIEZJvk3mb5OcaRhp3cBteR9W3zV
+	fQnljd5YnjVlb4KIqi287PUu4QG7Utw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2elG-0007Ad-Jk; Tue, 27 Aug 2019 16:56:02 +0000
-Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
+	id 1i2eun-00087R-3p; Tue, 27 Aug 2019 17:05:53 +0000
+Received: from mout.gmx.net ([212.227.15.18])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2ekD-00052r-C6
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 16:54:59 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id 3774F41209;
- Tue, 27 Aug 2019 16:54:54 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
- content-type:content-type:content-transfer-encoding:mime-version
- :references:in-reply-to:x-mailer:message-id:date:date:subject
- :subject:from:from:received:received:received; s=mta-01; t=
- 1566924893; x=1568739294; bh=87VA5h5waSDTUF2CVQN/4Wwh9JYi5VNM4bl
- aFGLhSMY=; b=gMdBm7HVXlGC8jRakgwY2WAmkhPtPeYsZxpqkbunuWfvgC23B86
- B6SKzMVsvtgEgU8t7dTVDIU71OEUnd34+SzHiHqNMDwJJVbxdyoVSDttK8S7y803
- dv+JmJcjATJuvoLmntstZDQFdUu00tZPXMju/cdk4igODmobcHHGY6eQ=
-X-Virus-Scanned: amavisd-new at yadro.com
-Received: from mta-01.yadro.com ([127.0.0.1])
- by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id DE_cOhyTE2_a; Tue, 27 Aug 2019 19:54:53 +0300 (MSK)
-Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
- [172.17.10.102])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id 0C98E42ECA;
- Tue, 27 Aug 2019 19:54:53 +0300 (MSK)
-Received: from localhost.dev.yadro.com (172.17.15.69) by
- T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
- 15.1.669.32; Tue, 27 Aug 2019 19:54:52 +0300
-From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
-To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
- <wim@linux-watchdog.org>
-Subject: [PATCH v3 4/4] aspeed/watchdog: Add access_cs0 option for alt-boot
-Date: Tue, 27 Aug 2019 19:54:26 +0300
-Message-ID: <20190827165426.17037-5-i.mikhaylov@yadro.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190827165426.17037-1-i.mikhaylov@yadro.com>
-References: <20190827165426.17037-1-i.mikhaylov@yadro.com>
-MIME-Version: 1.0
-X-Originating-IP: [172.17.15.69]
-X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
- T-EXCH-02.corp.yadro.com (172.17.10.102)
+ id 1i2eu4-0006Ru-FB
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 17:05:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1566925495;
+ bh=qthJNrtuM8pBdEZZab622Syq/04SnshDxQ2PcFBexUI=;
+ h=X-UI-Sender-Class:From:To:Cc:Subject:Date;
+ b=O1NRNbF7UROsPwOAEuNmwj0fy5YwPUg+6aoazddAVyJM29gCdaJxpRW5jfpzR9OHS
+ 9AfQ9q1ctLb7l1nodx/hfMwDteO7cyVi0krBLkZzI2M0hJeqrPXr5pZqih9k9fOfm2
+ ilHPgQpiqHaBlYg9mnZJ6pZ9GEnyRWBuwynjPLHk=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from localhost.localdomain ([37.4.249.106]) by mail.gmx.com
+ (mrgmx003 [212.227.17.190]) with ESMTPSA (Nemesis) id
+ 0MBFUT-1hsSHa1YRR-00AEF4; Tue, 27 Aug 2019 19:04:55 +0200
+From: Stefan Wahren <wahrenst@gmx.net>
+To: Wolfram Sang <wsa@the-dreams.de>, Eric Anholt <eric@anholt.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>
+Subject: [PATCH 0/3] i2c: bcm2835: Add bcm2711 support
+Date: Tue, 27 Aug 2019 19:04:13 +0200
+Message-Id: <1566925456-5928-1-git-send-email-wahrenst@gmx.net>
+X-Mailer: git-send-email 2.7.4
+X-Provags-ID: V03:K1:LhDBa2yNwC3zkMWXPUedjbf8o6AioAbq0LbLHZXwEo4aC7tYQzD
+ Xb0XKxS9Pc6pBNqha0wpQe1Vv/YmmI+VyPE4aIz5aWbPGnn44srnLfJR0S98Pm4xGuAWbNU
+ Q9H4qh2WHP0qEJ0vS9itbiRGd0oISVrPGvq+I7d+zlBe70j4o0/hPx+3b1BfObqkAvTioUm
+ Y3+4NjEbnmWQIZAG9bHBg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:qmYvDv6WUOU=:h+Hwczhx1xkpsbYEl+DZKl
+ HKBg15n2enyQOAj5Ympa83hDK1jNjBr4UTotsJ+wQ014+Iuxv1fceEu/udwt5ms9Jbu3yaXR/
+ DtcYG/FqhqFChFhaJPOQidi5J86W1la7onT5yyZaIx7I9g1rj0FgV6k3TFsEO3Eku5fWrKTzK
+ A+MLffIBZmnW5175eaxYm9mSgwBt35jNQL04a1C8rdMJgMXotLX8hl6/7JDqGl+TWK3NYvW0m
+ B+5kGeYdOWmXRjSsp74t7Nwei4zINiPvhdD+Uz9QFkyMgtH2wBNS/aEXdOy+Va9m/NmkAS+lq
+ 496awv4i3MaKf25ScX/K2nMndZVCwXJlk5MinGvO6O+9jRnBOJClwBvOISPMwnRKkeOFZ811G
+ sKiX8+rCXCCpOKOEpUCjcqh0kihj+4bEdGXysYUEBho7gyAK/+FKzbvh275Qs442vIXD7SkaR
+ vAoTJ0BFiUEXrs9/MoY26WQFZmI9pNTtJ6tNvf0itGhEN8oA3SEr+TpPnSQ8uFfTOrl/vD4+Y
+ p3lLI3IBCn16WebelkM+QWoOvnsCRSQXkx1qKS09qbRQG7FfFk3Qgu+luCblXQCJC1VQWuajq
+ xIS5uYBXY74k+3gTawsJBS7OL4NSdKR6PZtT+tDF1kGK3pYAHEPbGk1YhseEE23w0D+e9oxPm
+ cGN+r/cQUjvwVQpEWhHS96cTcFYBDibTmmBq9/vdsY2CVskZScViKq+YoVWriSkTFnK59qya7
+ saODvF8aACGP08VR1yOklrGIVe3ZKhQr9Gqx6tE93X+HChSZ+o0pxYaS05pf2So0MHui1nlXg
+ crmjmpfg+VotbkQakYcCjFF+TWsY3BlI9jlw4VhLNZ7nVQzUlbOpIRWBuuvrpwrRd9+R496Vi
+ b3XIvwGyH4KALjCif+ZH8sIVlBIfPvzO+d3mfB9J8qY83pdF2/60mhp9deNsteHoA6WvxLqWz
+ UWryfFRNg2gHGvwFpQiTfgra+PnXEn2AsTEVG2Uw/3rUxiTXTou3/g3QaN2eCAMIYJm9sI3ef
+ 8f71tI3UrxOI2g18iWVFW3SqnoCHUpditduo08unh3j9m/YLlIaKXrLpK/ghSsPjQ1VtYfEuV
+ rf9PUN082GiNn1sT3/UuQZZ0zQ0/Dai1kKiTQ341tS95lUmKQmGqoBRmWPyWavoE8WZ3ydwsl
+ Hft1PsltlDajD4fMserQdzDzYYdx9jEBjJkIrv3tKcmYYQjg==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_095457_771423_83A2F33D 
-X-CRM114-Status: GOOD (  13.75  )
+X-CRM114-CacheID: sfid-20190827_100508_903488_AFF1ACFD 
+X-CRM114-Status: UNSURE (   9.59  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.15.18 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -89,68 +98,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- Alexander Amelkin <a.amelkin@yadro.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Ivan Mikhaylov <i.mikhaylov@yadro.com>, linux-arm-kernel@lists.infradead.org
+Cc: linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Stefan Wahren <wahrenst@gmx.net>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The option for the ast2400/2500 to get access to CS0 at runtime.
+This series has been split out of the recent Raspberry Pi 4 support
+series [1]. I hope patch 1 and 2 have a chance to get into Linux 5.4.
 
-Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
----
- .../ABI/testing/sysfs-class-watchdog          | 34 +++++++++++++++++++
- 1 file changed, 34 insertions(+)
+Changes since split:
+- add Rob's and Eric's Reviewed-by
+- address Wolfram's comment regarding of_device_get_match_data
+- add patch to distinguish the many interfaces on bcm2711
 
-diff --git a/Documentation/ABI/testing/sysfs-class-watchdog b/Documentation/ABI/testing/sysfs-class-watchdog
-index 6317ade5ad19..675f9b537661 100644
---- a/Documentation/ABI/testing/sysfs-class-watchdog
-+++ b/Documentation/ABI/testing/sysfs-class-watchdog
-@@ -72,3 +72,37 @@ Description:
- 		It is a read/write file. When read, the currently assigned
- 		pretimeout governor is returned.  When written, it sets
- 		the pretimeout governor.
-+
-+What:		/sys/class/watchdog/watchdog1/access_cs0
-+Date:		August 2019
-+Contact:	Ivan Mikhaylov <i.mikhaylov@yadro.com>,
-+		Alexander Amelkin <a.amelkin@yadro.com>
-+Description:
-+		It is a read/write file. This attribute exists only if the
-+		system has booted from the alternate flash chip due to
-+		expiration of a watchdog timer of AST2400/AST2500 when
-+		alternate boot function was enabled with 'aspeed,alt-boot'
-+		devicetree option for that watchdog or with an appropriate
-+		h/w strapping (for WDT2 only).
-+
-+		At alternate flash the 'access_cs0' sysfs node provides:
-+			ast2400: a way to get access to the primary SPI flash
-+				chip at CS0 after booting from the alternate
-+				chip at CS1.
-+			ast2500: a way to restore the normal address mapping
-+				from (CS0->CS1, CS1->CS0) to (CS0->CS0,
-+				CS1->CS1).
-+
-+		Clearing the boot code selection and timeout counter also
-+		resets to the initial state the chip select line mapping. When
-+		the SoC is in normal mapping state (i.e. booted from CS0),
-+		clearing those bits does nothing for both versions of the SoC.
-+		For alternate boot mode (booted from CS1 due to wdt2
-+		expiration) the behavior differs as described above.
-+
-+		This option can be used with wdt2 (watchdog1) only.
-+
-+		When read, the current status of the boot code selection is
-+		shown. When written with any non-zero value, it clears
-+		the boot code selection and the timeout counter, which results
-+		in chipselect reset for AST2400/AST2500.
--- 
-2.20.1
+[1] - https://marc.info/?linux-arm-kernel&m=3D156571347332483
+
+Stefan Wahren (3):
+  dt-bindings: i2c: bcm2835: Add brcm,bcm2711 compatible
+  i2c: bcm2835: Avoid clk stretch quirk for BCM2711
+  i2c: bcm2835: Add full name of devicetree node to adapter name
+
+ Documentation/devicetree/bindings/i2c/brcm,bcm2835-i2c.txt |  4 +++-
+ drivers/i2c/busses/i2c-bcm2835.c                           | 11 +++++++----
+ 2 files changed, 10 insertions(+), 5 deletions(-)
+
+--
+2.7.4
 
 
 _______________________________________________
