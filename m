@@ -2,66 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 790089DC55
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 06:12:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC0929DC57
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 06:13:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IDKV7XWysHzBTJf//YK8cBt5FYrd4Wts+Z6lrEh5/sY=; b=a9MRTCTB/iOyDk
-	6+e7iGaKtGLEt/DyTWsvYuk4FhgOeYCgBgXVSrqgGNlEB+7noozGhvZljoHDg7kOgUvSbA09gEPVJ
-	00otbXwjrsjFkFmtrFsjOsHx5lGegS6b1kdcElPZrgyUdYc9zCg4E8vSl4at7KfZJlmvy/qD/VjOr
-	ln7GCFcsvI8tHpY8J8Oieys+22K3P4/9B12OElBoZTF61NZq5IcaifL4KLA+zjj4A7nuSveyJGu1R
-	xJivdamfWowXl3ExNXAG0VLdGKGbtGaQRGXsPXvOLOLwU+ArqI6tDxwpTVMtosm0lZ5Ur9qtL6LHL
-	20czi2MYuXtPh/KTV11g==;
+	List-Owner; bh=nXwHTjO9FcFZQ2StBInjbQN9Bqe9mxHU8o812n9o9U8=; b=QZFEf9S2jsdGq4
+	EOgG+P2J8wU/JMiB3tdPaIemjO/UTG46U1yMSufGNqpdOFzS6aXiUNKFNBQZKlw/n0cb/t8j6lHf5
+	ysYP/8Aa3YO45F7/eaoa/OUSDiwzrgR3OKVuMGe5cFWUPWwjqGnWdaeuUhBafVStiFAErnILdxa+l
+	4CLniRuA5qfOXmshNBYeJKae2qVXJUai+XDsq7N1bKA1purbccxNtuXddnWI6lEFEOwyy1vtatYPx
+	AhY7GPseqAR6C2cS3z9kdpKfHJk+k9NRHFF4zJI0ksiCPg4yOv4zmQg2ork6OmwBp5V8fq4Ns6JOo
+	TGvVp3oT1Xmt7DwQuMWA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2SqJ-0005ey-Ty; Tue, 27 Aug 2019 04:12:28 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i2SrK-0006FG-5o; Tue, 27 Aug 2019 04:13:30 +0000
+Received: from mail-ed1-f66.google.com ([209.85.208.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2Sq7-0005dW-14; Tue, 27 Aug 2019 04:12:16 +0000
-X-UUID: 1a53754495b241e0819e5eb5f1694f05-20190826
-X-UUID: 1a53754495b241e0819e5eb5f1694f05-20190826
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <bibby.hsieh@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1483707969; Mon, 26 Aug 2019 20:12:18 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 26 Aug 2019 21:12:17 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 27 Aug 2019 12:12:10 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 27 Aug 2019 12:12:10 +0800
-Message-ID: <1566879121.29523.8.camel@mtksdaap41>
-Subject: Re: [RESEND, PATCH v13 09/12] soc: mediatek: cmdq: define the
- instruction struct
-From: Bibby Hsieh <bibby.hsieh@mediatek.com>
-To: Matthias Brugger <matthias.bgg@gmail.com>
-Date: Tue, 27 Aug 2019 12:12:01 +0800
-In-Reply-To: <486deaa3-d139-d4af-e0cf-e324b3270f3b@gmail.com>
-References: <20190820084932.22282-1-bibby.hsieh@mediatek.com>
- <20190820084932.22282-10-bibby.hsieh@mediatek.com>
- <486deaa3-d139-d4af-e0cf-e324b3270f3b@gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i2Sr8-0006Da-JJ
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 04:13:20 +0000
+Received: by mail-ed1-f66.google.com with SMTP id t50so29485981edd.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 26 Aug 2019 21:13:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=F5cHZyGdjYh3gEAKmcObYNldhgaeKgV4aSEBGnXJjJM=;
+ b=E6mHYIZSuvuZcQqgfZOdp+vBjNENecvoeYn2RiGojtnUHFwJ+/JBUi5sdbhUdSCVGO
+ 6lql8iI8UVJKVl/hhklKna8wk9SlliHF/RNS4mK5Xa1oO0XPoKCYNr2nFBIYBUaXR6CZ
+ k+yZa0WhLij2rh7arsvL5wkWSRBWy+B9HEqi448v0TFJqYotuB2IvPFKOeCbju7uHfhN
+ yTpRqT+8utfTrxeLDWieym6IwAviPbMKb5NEmUu/0srLW08nqQVw4tOctYRFlbg17c+J
+ GaHBvxvZZpSrO55yeeid551/whiU6b67lGYThdwDmBhvvau1PwoXJ0ebvj+5KcDgcKbt
+ 9l0w==
+X-Gm-Message-State: APjAAAXSo5VY6/nkOJqFt/Nbo11mmZLkuHv3dcDNcdPUinYbxXHpMW8J
+ BxeITKeN/3LAaYbMYZPl86MZ18GihP4=
+X-Google-Smtp-Source: APXvYqz3RJpBJa37slmQX8Ok8HGaHlEGo4FC5eb0C+tglSN8mt0IsK3asggsaLhWRG9cohTfPetXbQ==
+X-Received: by 2002:a50:bb42:: with SMTP id y60mr22403498ede.129.1566879196011; 
+ Mon, 26 Aug 2019 21:13:16 -0700 (PDT)
+Received: from mail-wm1-f44.google.com (mail-wm1-f44.google.com.
+ [209.85.128.44])
+ by smtp.gmail.com with ESMTPSA id h38sm1728551eda.58.2019.08.26.21.13.15
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 26 Aug 2019 21:13:15 -0700 (PDT)
+Received: by mail-wm1-f44.google.com with SMTP id l2so1476724wmg.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 26 Aug 2019 21:13:15 -0700 (PDT)
+X-Received: by 2002:a7b:c21a:: with SMTP id x26mr23286711wmi.61.1566879195343; 
+ Mon, 26 Aug 2019 21:13:15 -0700 (PDT)
 MIME-Version: 1.0
-X-MTK: N
+References: <20190826180734.15801-1-codekipper@gmail.com>
+ <20190826180734.15801-2-codekipper@gmail.com>
+In-Reply-To: <20190826180734.15801-2-codekipper@gmail.com>
+From: Chen-Yu Tsai <wens@csie.org>
+Date: Tue, 27 Aug 2019 12:13:04 +0800
+X-Gmail-Original-Message-ID: <CAGb2v651jVp+J2eyWh7vw-yHmFTVy4eaMjHV0FvOF17C5_Hswg@mail.gmail.com>
+Message-ID: <CAGb2v651jVp+J2eyWh7vw-yHmFTVy4eaMjHV0FvOF17C5_Hswg@mail.gmail.com>
+Subject: Re: [linux-sunxi] [PATCH v6 1/3] ASoC: sun4i-i2s: incorrect regmap
+ for A83T
+To: Code Kipper <codekipper@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190826_211215_080610_082F148E 
-X-CRM114-Status: GOOD (  26.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190826_211318_638775_3E6ABCD6 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.208.66 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (wens213[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wens213[at]gmail.com)
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,270 +95,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
- Daoyuan Huang <daoyuan.huang@mediatek.com>, Sascha
- Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
- linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
- Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT Shen <yt.shen@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Houlong Wei <houlong.wei@mediatek.com>, Sascha
- Hauer <kernel@pengutronix.de>, CK HU <ck.hu@mediatek.com>,
- Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
- linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
+Cc: Linux-ALSA <alsa-devel@alsa-project.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Maxime Ripard <mripard@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ "Andrea Venturi \(pers\)" <be17068@iperbole.bo.it>,
+ linux-sunxi <linux-sunxi@googlegroups.com>, Mark Brown <broonie@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-08-23 at 15:50 +0200, Matthias Brugger wrote:
-> 
-> On 20/08/2019 10:49, Bibby Hsieh wrote:
-> > Define an instruction structure for gce driver to append command.
-> > This structure can make the client's code more readability.
-> > 
-> > Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> > Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> > ---
-> >  drivers/soc/mediatek/mtk-cmdq-helper.c   | 106 +++++++++++++++--------
-> >  include/linux/mailbox/mtk-cmdq-mailbox.h |   2 +
-> >  2 files changed, 74 insertions(+), 34 deletions(-)
-> > 
-> > diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > index 7aa0517ff2f3..e3d5b0be8e79 100644
-> > --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> > @@ -9,12 +9,24 @@
-> >  #include <linux/mailbox_controller.h>
-> >  #include <linux/soc/mediatek/mtk-cmdq.h>
-> >  
-> > -#define CMDQ_ARG_A_WRITE_MASK	0xffff
-> >  #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
-> >  #define CMDQ_EOC_IRQ_EN		BIT(0)
-> >  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
-> >  				<< 32 | CMDQ_EOC_IRQ_EN)
-> >  
-> > +struct cmdq_instruction {
-> > +	union {
-> > +		u32 value;
-> > +		u32 mask;
-> > +	};
-> > +	union {
-> > +		u16 offset;
-> > +		u16 event;
-> > +	};
-> > +	u8 subsys;
-> > +	u8 op;
-> > +};
-> > +
-> >  static void cmdq_client_timeout(struct timer_list *t)
-> >  {
-> >  	struct cmdq_client *client = from_timer(client, t, timer);
-> > @@ -110,10 +122,8 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt)
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_destroy);
-> >  
-> > -static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
-> > -				   u32 arg_a, u32 arg_b)
-> > +static struct cmdq_instruction *cmdq_pkt_append_command(struct cmdq_pkt *pkt)
-> >  {
-> > -	u64 *cmd_ptr;
-> >  
-> >  	if (unlikely(pkt->cmd_buf_size + CMDQ_INST_SIZE > pkt->buf_size)) {
-> >  		/*
-> > @@ -127,81 +137,109 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
-> >  		pkt->cmd_buf_size += CMDQ_INST_SIZE;
-> >  		WARN_ONCE(1, "%s: buffer size %u is too small !\n",
-> >  			__func__, (u32)pkt->buf_size);
-> > -		return -ENOMEM;
-> > +		return NULL;
-> >  	}
-> > -	cmd_ptr = pkt->va_base + pkt->cmd_buf_size;
-> > -	(*cmd_ptr) = (u64)((code << CMDQ_OP_CODE_SHIFT) | arg_a) << 32 | arg_b;
-> > +
-> > +	*(u64 *)(pkt->va_base + pkt->cmd_buf_size) = 0;>  	pkt->cmd_buf_size += CMDQ_INST_SIZE;
-> >  
-> > -	return 0;
-> > +	return pkt->va_base + pkt->cmd_buf_size - CMDQ_INST_SIZE;
-> >  }
-> >  
-> >  int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
-> >  {
-> > -	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
-> > -		    (subsys << CMDQ_SUBSYS_SHIFT);
-> > +	struct cmdq_instruction *inst;
-> > +
-> > +	inst = cmdq_pkt_append_command(pkt);
-> > +	if (!inst)
-> > +		return -ENOMEM;
-> > +
-> > +	inst->op = CMDQ_CODE_WRITE;
-> > +	inst->value = value;
-> > +	inst->offset = offset;
-> > +	inst->subsys = subsys;
-> >  
-> 
-> I can see that using cmdq_instruction will make the code more readable, but I
-> dislike the approach that cmdq_pkt_append_command returns a pointer where we
-> write the instruction to. Better we pass inst to cmdq_pkt_append_command() and
-> write it there to cmd_ptr.
-> 
-> I think this way we can get rid of explicitly setting the memory to zero:
-> *(u64 *)(pkt->va_base + pkt->cmd_buf_size) = 0;
-> 
-> And if we pass the inst to the append_command we don't have to change the return
-> value handling of cmdq_pkt_append_command(), which makes the patch easier to
-> understand.
+On Tue, Aug 27, 2019 at 2:07 AM <codekipper@gmail.com> wrote:
+>
+> From: Marcus Cooper <codekipper@gmail.com>
+>
+> The regmap configuration is set up for the legacy block on the
+> A83T whereas it uses the new block with a larger register map.
 
-Ok, I will change and resend it.
+Looking at the code Allwinner previously released [1], that doesn't seem to be
+the case. Keep in mind that the register map shown in the user manual is for
+the TDM interface, which we don't actually support right now.
 
-> 
-> > -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WRITE, arg_a, value);
-> > +	return 0;
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_write);
-> >  
-> >  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
-> >  			u16 offset, u32 value, u32 mask)
-> >  {
-> > -	u32 offset_mask = offset;
-> > -	int err = 0;
-> > +	struct cmdq_instruction *inst;
-> > +	u16 offset_mask = offset;
-> >  
-> >  	if (mask != 0xffffffff) {
-> > -		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
-> > +		inst = cmdq_pkt_append_command(pkt);
-> > +		if (!inst)
-> > +			return -ENOMEM;
-> > +
-> > +		inst->op = CMDQ_CODE_MASK;
-> > +		inst->mask = ~mask;
-> >  		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
-> >  	}
-> > -	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
-> >  
-> > -	return err;
-> > +	return cmdq_pkt_write(pkt, subsys, offset_mask, value);
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_write_mask);
-> >  
-> >  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
-> >  {
-> > -	u32 arg_b;
-> > +	struct cmdq_instruction *inst;
-> >  
-> >  	if (event >= CMDQ_MAX_EVENT)
-> >  		return -EINVAL;
-> >  
-> > -	/*
-> > -	 * WFE arg_b
-> > -	 * bit 0-11: wait value
-> > -	 * bit 15: 1 - wait, 0 - no wait
-> > -	 * bit 16-27: update value
-> > -	 * bit 31: 1 - update, 0 - no update
-> > -	 */
-> 
-> I have no strong opinion of CMDQ_WFE_OPTION but if you want to introduce it,
-> then please copy the comment over to include/linux/mailbox/mtk-cmdq-mailbox.h
+The file shows the base address as 0x01c22800, and the last defined register
+is SUNXI_RXCHMAP at 0x3c.
 
-Ok. let's move the descriptions to header.
-> 
-> Just one question, why did you call it _OPTION? It's not really expressive for me.
+The I2S driver [2] also shows that it is the old register map size, but with
+TX_FIFO and INT_STA swapped around. This might mean that it would need a
+separate regmap_config, as the read/write callbacks need to be changed to
+fit the swapped registers.
 
-Actually, _OPTION is come from our hardware design name...
+Finally, the TDM driver [3], which matches the TDM section in the manual, shows
+a larger register map.
 
-> 
-> > -	arg_b = CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | CMDQ_WFE_WAIT_VALUE;
-> > +	inst = cmdq_pkt_append_command(pkt);
-> > +	if (!inst)
-> > +		return -ENOMEM;
-> > +
-> > +	inst->op = CMDQ_CODE_WFE;
-> > +	inst->value = CMDQ_WFE_OPTION;
-> > +	inst->event = event;
-> >  
-> > -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event, arg_b);
-> > +	return 0;
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_wfe);
-> >  
-> >  int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
-> >  {
-> > +	struct cmdq_instruction *inst;
-> > +
-> >  	if (event >= CMDQ_MAX_EVENT)
-> >  		return -EINVAL;
-> >  
-> > -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event,
-> > -				       CMDQ_WFE_UPDATE);
-> > +	inst = cmdq_pkt_append_command(pkt);
-> > +	if (!inst)
-> > +		return -ENOMEM;
-> > +
-> > +	inst->op = CMDQ_CODE_WFE;
-> > +	inst->value = CMDQ_WFE_UPDATE;
-> > +	inst->event = event;
-> > +
-> > +	return 0;
-> >  }
-> >  EXPORT_SYMBOL(cmdq_pkt_clear_event);
-> >  
-> >  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
-> >  {
-> > -	int err;
-> > +	struct cmdq_instruction *inst;
-> > +
-> > +	inst = cmdq_pkt_append_command(pkt);
-> > +	if (!inst)
-> > +		return -ENOMEM;
-> >  
-> > -	/* insert EOC and generate IRQ for each command iteration */
-> 
-> Please don't delete the comment.
-> 
-> > -	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_EOC, 0, CMDQ_EOC_IRQ_EN);
-> > +	inst->op = CMDQ_CODE_EOC;
-> > +	inst->value = CMDQ_EOC_IRQ_EN;
-> >  
-> > -	/* JUMP to end */
-> 
-> Same here.
-> 
-> Regards,
-> Matthias
-> 
-> > -	err |= cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
-> > +	inst = cmdq_pkt_append_command(pkt);
-> > +	if (!inst)
-> > +		return -ENOMEM;
-> > +
-> > +	inst->op = CMDQ_CODE_JUMP;
-> > +	inst->value = CMDQ_JUMP_PASS;
-> >  
-> > -	return err;
-> > +	return 0;
-> >  }
-> >  
-> >  static void cmdq_pkt_flush_async_cb(struct cmdq_cb_data data)
-> > diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > index 911475da7a53..c8adedefaf42 100644
-> > --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> > @@ -19,6 +19,8 @@
-> >  #define CMDQ_WFE_UPDATE			BIT(31)
-> >  #define CMDQ_WFE_WAIT			BIT(15)
-> >  #define CMDQ_WFE_WAIT_VALUE		0x1
-> > +#define CMDQ_WFE_OPTION			(CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | \
-> > +					CMDQ_WFE_WAIT_VALUE)
-> >  /** cmdq event maximum */
-> >  #define CMDQ_MAX_EVENT			0x3ff
-> >  
-> > 
+A83T is SUN8IW6, while SUN8IW7 refers to the H3.
 
--- 
-Bibby
+ChenYu
 
+[1] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/hdmiaudio/sunxi-hdmipcm.h
+[2] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/i2s0/sunxi-i2s0.h
+[3] https://github.com/allwinner-zh/linux-3.4-sunxi/blob/master/sound/soc/sunxi/daudio0/sunxi-daudio0.h
+
+> Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> ---
+>  sound/soc/sunxi/sun4i-i2s.c | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/sound/soc/sunxi/sun4i-i2s.c b/sound/soc/sunxi/sun4i-i2s.c
+> index 57bf2a33753e..34575a8aa9f6 100644
+> --- a/sound/soc/sunxi/sun4i-i2s.c
+> +++ b/sound/soc/sunxi/sun4i-i2s.c
+> @@ -1100,7 +1100,7 @@ static const struct sun4i_i2s_quirks sun6i_a31_i2s_quirks = {
+>  static const struct sun4i_i2s_quirks sun8i_a83t_i2s_quirks = {
+>         .has_reset              = true,
+>         .reg_offset_txdata      = SUN8I_I2S_FIFO_TX_REG,
+> -       .sun4i_i2s_regmap       = &sun4i_i2s_regmap_config,
+> +       .sun4i_i2s_regmap       = &sun8i_i2s_regmap_config,
+>         .field_clkdiv_mclk_en   = REG_FIELD(SUN4I_I2S_CLK_DIV_REG, 8, 8),
+>         .field_fmt_wss          = REG_FIELD(SUN4I_I2S_FMT0_REG, 0, 2),
+>         .field_fmt_sr           = REG_FIELD(SUN4I_I2S_FMT0_REG, 4, 6),
+> --
+> 2.23.0
+>
+> --
+> You received this message because you are subscribed to the Google Groups "linux-sunxi" group.
+> To unsubscribe from this group and stop receiving emails from it, send an email to linux-sunxi+unsubscribe@googlegroups.com.
+> To view this discussion on the web, visit https://groups.google.com/d/msgid/linux-sunxi/20190826180734.15801-2-codekipper%40gmail.com.
 
 _______________________________________________
 linux-arm-kernel mailing list
