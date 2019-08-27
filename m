@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68DDB9E65E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 13:03:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163459E677
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 13:09:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Dd/ws0Tf5vosCczpUZcbMZNw7Ot/hGCaV5cTxz/RIgI=; b=rFMmGVCKI7DDLn
-	Bh72K3l6Z1q75bYaBcvgcuNcK6LfPtFxwNluA3vXK2qTeJrgsfzNNS1K5qC3lG4Rb7HmBIuooxBxK
-	wwYAkxsrXFdDVHoxIVh99f0tgxGFTQ5txsv0syDnwVKPCaON8Au1TG693yxFlwhueatI/PW54eBKg
-	Xh5MEi95gNhnnfOvGf8WCBuDU1Db5p1fxFQcrQmuvjAVqGDk8B4osgtX5Gq56mQQ1v5NjImz89jeE
-	h8YywfOy1o0J/AXm0zitW+GX8S1/cLAnQFZUJAlYnBRdIrIo/AHmt2RG0H4zhALkRduYXnDDGoToo
-	YV6oJimytaPOFqBo6PBg==;
+	List-Owner; bh=0ePbjuXiPFN/xdi58TGiZiNay8d2ZruD+o4XIfSkSnc=; b=iFTKmg8qQP0FmC
+	pSyJ6GKcOORmKzJXH3tXANdQI/Jbm76z9Zx7Bh7TLk3DXZke9Z5sBNFB/QMs266jDhFc9KUDVh3Bs
+	S0twC4N8FT2Q2ByAt6HEdryhBc45yyuyk145npPy2GjMhXBQPh7Zxq3/vGZ8lAd9Z1xGV+3+9n3qg
+	Y5+fHmhKbi3mT5dFXrSLbMmqSTABcMWrrfxawnooFr48NHr1xXPwDE7K52tmWKK/nWCKP+r4UJaxi
+	ms3CR4I7sNQYPktHNshIrXbk9iibkX4o43VWz88Heqhm2wv89q4oUlfqSoGCH4HD0sLcy93zpYOZZ
+	rHOGFm5GXkelUiJTsHIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2ZFg-000320-Ab; Tue, 27 Aug 2019 11:03:04 +0000
+	id 1i2ZLO-0005MF-0A; Tue, 27 Aug 2019 11:08:58 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2ZFJ-0002t5-Ap
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 11:02:42 +0000
+ id 1i2ZL5-0005Ls-9b
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 11:08:40 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8B17C360;
- Tue, 27 Aug 2019 04:02:37 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 80E1E28;
+ Tue, 27 Aug 2019 04:08:38 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1AB263F718;
- Tue, 27 Aug 2019 04:02:36 -0700 (PDT)
-Date: Tue, 27 Aug 2019 12:02:35 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0FAC73F718;
+ Tue, 27 Aug 2019 04:08:37 -0700 (PDT)
+Date: Tue, 27 Aug 2019 12:08:36 +0100
 From: Mark Rutland <mark.rutland@arm.com>
-To: Noam Camus <noamikong@gmail.com>
-Subject: Re: Changing default kernel load address
-Message-ID: <20190827110234.GB8000@lakrids.cambridge.arm.com>
-References: <CABhetiwRF2Gq3HeG_QNT6t3GtCNJzedeenn6vQC_0FYr5Ee+mA@mail.gmail.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [BOOTWRAPPER PATCH] Enable TME for lower exception levels
+Message-ID: <20190827110835.GC8000@lakrids.cambridge.arm.com>
+References: <20190823145015.15974-1-will@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CABhetiwRF2Gq3HeG_QNT6t3GtCNJzedeenn6vQC_0FYr5Ee+mA@mail.gmail.com>
+In-Reply-To: <20190823145015.15974-1-will@kernel.org>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_040241_590577_5CC88324 
-X-CRM114-Status: GOOD (  12.39  )
+X-CRM114-CacheID: sfid-20190827_040839_375725_E8E15824 
+X-CRM114-Status: GOOD (  13.82  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,38 +67,41 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Aug 26, 2019 at 08:12:27PM +0300, Noam Camus wrote:
-> Hi,
+On Fri, Aug 23, 2019 at 03:50:15PM +0100, Will Deacon wrote:
+> By default, TME is not available to exception levels below EL3, so
+> enable it in SCR_EL3 if we detect that it is implemented.
 > 
-> I wish to change an arm64 machine kernel load address and I hope this
-> forum can assist.
-> 
-> In my current setup the KERNEL_START macro (_text) equals 128.5MB:
-> KIMAGE_VADDR=128MB
-> TEXT_OFFSET=512KB
-> 
-> I wish to change kernel load address to reside on my internal RAM
-> which locates beyond 4GB.
+> Signed-off-by: Will Deacon <will@kernel.org>
 
-You shouldn't need to modify anything; the kernel can be loaded at any
-2MiB-aligned physical address + TEXT_OFFSET. KERNEL_START and
-KIMAGE_VADDR are virtual addresses and don't require a specific physical
-address.
+Applied, thanks!
 
-Please see:
-
-  https://www.kernel.org/doc/html/latest/arm64/booting.html
-
-> Can someone tell what changes I need to do so kernel load address will
-> be above 4GB.
-> 
-> Note: I use FIT image to provide U-Boot the kernel Load address.
-
-I don't know how FIT works, but the U-Boot "booti" command should do the
-right thing if given an arm64 kernel Image.
-
-Thanks,
 Mark.
+
+> ---
+>  arch/aarch64/boot.S | 7 +++++++
+>  1 file changed, 7 insertions(+)
+> 
+> diff --git a/arch/aarch64/boot.S b/arch/aarch64/boot.S
+> index 74705cded338..c2fe92c90297 100644
+> --- a/arch/aarch64/boot.S
+> +++ b/arch/aarch64/boot.S
+> @@ -48,6 +48,13 @@ _start:
+>  	orr	x0, x0, #(1 << 16)		// AP key enable
+>  	orr	x0, x0, #(1 << 17)		// AP insn enable
+>  1:
+> +	/* Enable TME if present */
+> +	mrs	x1, id_aa64isar0_el1
+> +	ubfx	x1, x1, #24, #4
+> +	cbz	x1, 1f
+> +
+> +	orr	x0, x0, #(1 << 34)		// TME enable
+> +1:
+>  #ifndef KERNEL_32
+>  	orr	x0, x0, #(1 << 10)		// 64-bit EL2
+>  #endif
+> -- 
+> 2.11.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
