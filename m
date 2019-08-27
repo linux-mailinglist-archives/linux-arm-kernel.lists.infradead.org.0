@@ -2,56 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 428099EA0B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:50:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32AE69EA19
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 15:51:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=vNBhpYsKILdFGA3lPtE4FzO2BrMzdkvlcr8HpCT4EnA=; b=sTD3LFn9kWuN7L
-	x0Hm4I6D5QgTS4QF0CxPyv4aN30gyCYwmGAcmO9GwlvpJ6v7Fq1m4Q0zICgiIDh8vGLhKHBTSC0t2
-	uj32UfymVJgIEYxvuky5ghDOEjXViJba87FJiBfNLUWKIrEKd8yAiZ/CVDxhXiyimIaTtIi1OaEVt
-	y0zGLhw0xgsoEaADraeUCH2dZESPicOpQqmndBaWq5B8vgxZq6V6h0rWohIaV4Zza1wiloyf6cLXx
-	i9XtC+N7C5x9b/V5Wkp7QvPvQC1b8OBDXJDevLSg1zwDSWH5cfl95gU6sWhQuBYx7YQBmyopazwl/
-	cm2w0T8PoJ3A5KhouFrw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rEbdYGEKeoIuq1W6YFkxpdD4+LK76eAzWuFL7Oafzm0=; b=orpeGuyiGGmeRP
+	APaNGxX+G8Kfk06XS4H2Syubbd4mU82jahEc4bZS/SLP2t0si/FvyMAGCUJUTQ6rruyKxzP71rsYd
+	tFA1ZOoBHPDRbEEtdbNapdIl/M5VQaStVrWTa0cAOvQlE+ooSfZfsP7nzUsM5VbmeUFVQwBnTcUji
+	FA2Um4hBQjoXoMa7MDQt2gx4J3kk7+nYT/GWSPrHjs0VhBQNhtIhobp9OyOuZQEMOPQbg2qTQ2pSp
+	Bx3DFlMz/xP1zEX8HGhOJzF/XUlJkNLKbziCRLYAmWs8C7mIdtQmnhOWiuG/Xyk0h91IR3R8B0Unz
+	DOMTgmh87PzeM26s1CMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2brZ-0005K9-AE; Tue, 27 Aug 2019 13:50:21 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1i2bsO-0007UZ-9M; Tue, 27 Aug 2019 13:51:12 +0000
+Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2brC-0005Af-1U; Tue, 27 Aug 2019 13:49:59 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id 4594A793FE86C1EFFE65;
- Tue, 27 Aug 2019 21:49:55 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Tue, 27 Aug 2019
- 21:49:45 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <andrew@lunn.ch>, <f.fainelli@gmail.com>, <hkallweit1@gmail.com>,
- <davem@davemloft.net>, <khilman@baylibre.com>
-Subject: [PATCH net-next] phy: mdio-mux-meson-g12a: use
- devm_platform_ioremap_resource() to simplify code
-Date: Tue, 27 Aug 2019 21:49:40 +0800
-Message-ID: <20190827134940.14944-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1i2brY-0006kU-Jy
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 13:50:22 +0000
+Received: by mail-vs1-xe43.google.com with SMTP id b187so13474915vsc.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 06:50:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Azqn8B8zEoK6qeo0gqFEO5Y6U0l3RHxOtMnA5UrW9xo=;
+ b=S1KWANYd3hxj20Oktt/812hJNXbDjSq+iPYkPPc2E0UYVq1fPky1u8+0m7jBg5Qjsu
+ 9saaDiWsSk4C8ciJjV6vtKC78MxSVKTNzdP982jnw2N/G8BpDzqPlr8nffUPXrF0A1pK
+ ptEiM0eRGUZHJCu9UxuZkDRv75hDXvbeqpB7J7f6Bu8mWSP1mf5PW6de3EGQH6LDOdLU
+ NuaDp6E1e5rMaQpoxVA6l/lPkC2bnH8xfK6WpgUUcG0Oo3jjCr0WIfP26jhk+RgHKM4C
+ r+Eq5tnea8njJrkwp+1DEfxMt7F0Vuf4R0p7KVhTzeoTFopw9bSjA0Rk0eSiGj5Gk+7U
+ hhtA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Azqn8B8zEoK6qeo0gqFEO5Y6U0l3RHxOtMnA5UrW9xo=;
+ b=kb55hfhfbNHXBakjZoGAEnPXemTjbf45wpWWiM+0fbz70VZXS3QdkeTyKUAjwGtNlx
+ dfTB+CCB0Suz1iXxgBJfGjiFFz6ED4gI3QnCtLXK9rOx3/1oUivY85zLb6Vm7Fp0ckXZ
+ x5TMPXW1bIR5gbXLgQJ4dUFcAfCIXoxKdYDNP/XPX+capoNYSF9H/3mKznKC410SjwcM
+ kSKHvxvojTVnm4kex/xA+BviWO3GTZXKrS3Rm8tOwPBSVxk4GT8s7SKusW89U17bsTiv
+ q2kUg4xnR6JSodaAQ6Sepx6ezPhiEXqxiF+FpFauDZK6oBRXtw3d2ryQt4hWSurktgs4
+ nqmg==
+X-Gm-Message-State: APjAAAVNirgv39Vj3tdoX0MJ5CwU4BT1N+5jINa3u/FIGRLHGd7blxD+
+ 4QTw86IKWWrh+Ga3Rps3BbvAftfSFgxIfa6XNVXWfg==
+X-Google-Smtp-Source: APXvYqx1yncYH92Ikl/BgP+ETxGhkpBu01ffZ2ej/nlflY0sLbDKUCylNmbGeeDyd6Kvh74U3dWYaZ9FdZniZqF64rY=
+X-Received: by 2002:a67:e287:: with SMTP id g7mr13476377vsf.200.1566913819149; 
+ Tue, 27 Aug 2019 06:50:19 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+References: <20190826120013.183435-1-weiyongjun1@huawei.com>
+ <20190826130343.GA23584@kadam>
+ <629128e7-cc91-412f-8946-668fac2eb3b9@www.fastmail.com>
+ <alpine.DEB.2.21.1908270845410.2537@hadrien>
+In-Reply-To: <alpine.DEB.2.21.1908270845410.2537@hadrien>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Tue, 27 Aug 2019 15:49:43 +0200
+Message-ID: <CAPDyKFqXLG7VCh+9oQQ4HD=6dHQLY1PHEkmC+atnB-zDntKULA@mail.gmail.com>
+Subject: Re: [PATCH -next] mmc: aspeed: Fix return value check in
+ aspeed_sdc_probe()
+To: Julia Lawall <julia.lawall@lip6.fr>,
+ Dan Carpenter <dan.carpenter@oracle.com>, 
+ Andrew Jeffery <andrew@aj.id.au>, Wei Yongjun <weiyongjun1@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_064958_272275_1E88C098 
-X-CRM114-Status: UNSURE (   8.11  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190827_065021_097823_956CCFB3 
+X-CRM114-Status: GOOD (  16.11  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,49 +96,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-amlogic@lists.infradead.org
+Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ linux-mmc <linux-mmc@vger.kernel.org>, kernel-janitors@vger.kernel.org,
+ Adrian Hunter <adrian.hunter@intel.com>, Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+On Tue, 27 Aug 2019 at 02:47, Julia Lawall <julia.lawall@lip6.fr> wrote:
+>
+>
+>
+> On Tue, 27 Aug 2019, Andrew Jeffery wrote:
+>
+> >
+> >
+> > On Mon, 26 Aug 2019, at 22:34, Dan Carpenter wrote:
+> > > > Fixes: 09eed7fffd33 ("mmc: Add support for the ASPEED SD controller")
+> > >                         ^^^^
+> > > When we're adding new files, could we use the prefix for the new driver
+> > > instead of just the subsystem?  "mmc: aspeed: Add new driver"?
+> > > Otherwise it's tricky to know what people want for the driver.
+> >
+> > I don't have any issue with the request, but I don't understand this last
+> > bit. What do you mean by "it's tricky to know what people want for the
+> > driver"?
+>
+> There is no obvious algorithm that tells how to go from a file name to an
+> appropriate subject line prefix.
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- drivers/net/phy/mdio-mux-meson-g12a.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+For MMC we normally use the name of the host driver file (excluding
+".c") as part of the prefix.
 
-diff --git a/drivers/net/phy/mdio-mux-meson-g12a.c b/drivers/net/phy/mdio-mux-meson-g12a.c
-index 6644762..7a9ad54 100644
---- a/drivers/net/phy/mdio-mux-meson-g12a.c
-+++ b/drivers/net/phy/mdio-mux-meson-g12a.c
-@@ -302,7 +302,6 @@ static int g12a_mdio_mux_probe(struct platform_device *pdev)
- {
- 	struct device *dev = &pdev->dev;
- 	struct g12a_mdio_mux *priv;
--	struct resource *res;
- 	int ret;
- 
- 	priv = devm_kzalloc(dev, sizeof(*priv), GFP_KERNEL);
-@@ -311,8 +310,7 @@ static int g12a_mdio_mux_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, priv);
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	priv->regs = devm_ioremap_resource(dev, res);
-+	priv->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(priv->regs))
- 		return PTR_ERR(priv->regs);
- 
--- 
-2.7.4
+For this case that means I amended the header into: mmc:
+sdhci-of-aspeed: Fix return value check in aspeed_sdc_probe() and
+applied it for next.
 
+I also took the liberty to change this for the other related patches
+for the "aspeed" driver to follow the same pattern.
 
+Kind regards
+Uffe
 
 _______________________________________________
 linux-arm-kernel mailing list
