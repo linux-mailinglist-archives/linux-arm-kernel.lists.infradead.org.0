@@ -2,85 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 046DC9F404
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 22:25:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F11CF9F40F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 22:27:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mWX1kcr0hxnQVChMEfhUAmsw7dEsoSnv8e45cPHdZnU=; b=KKk3YXTqJofp86
-	s1Gbs+6CZVJ1QLXKA/1Fmma85af34Qu5A1RWv7vM5baH42iLdsmlDvLeoZhnkmgdt2ZKSUnkkmFw3
-	VZS9wLictJJlMt42OOT2fNfrxj662BCSR/9/ccvGTU2lUSmARLb6ag52m2qclJs4KKobcfb6npORT
-	eD8W0yAQSFIFLGMmk+YCQudVDbD0lC3kTkC+gy0eSb3yUIcAxCC6VK+BybXWB46osAitEmVV5U2gH
-	w2CmKOI2AK8r0D8w5dtAwL1a5FcdrPcmbjcD57M0cgL0WZwb8Bf5SCrKnV52FNVMqyzKPwvGE+kEc
-	QZhisvXAxyPBm2G6ealQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=VE+TOyWgRdhJxHfoCQUrecl/MYfLPiC3PyQKq7AHqng=; b=ifmx0TAsJ4hvgG
+	gXUwO3jvyLIEKnTdQFRusdL14E/tgcoenNpWOtAqAyVYmUjwHWFyMZSMtGWPyUXyPSNDq5JPxS9tj
+	vXvQBSvUopPUOy2yqabMucSPxzEZ9wv142LJayv97l96YcNByTgCxo7q4dNUiV8ZuDXTblk2ojPQ9
+	s3g0TerTblChNXagH3hdpJF54vJWcufewovMn4vs0YDuQIfxMAE4ky2k0dmnwMsDLNy7dAB0Gusgx
+	BwQaFEVJhHNC1XmyAWD2sOVB0kcCwf0TvA+PPrZ+0rNX4BOviveWdGI26Z+iG6kRuQznoVwobSupG
+	sei/8/kC0mLSl4qZn58A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2i1m-00086E-GF; Tue, 27 Aug 2019 20:25:18 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1i2i39-0008NQ-UI; Tue, 27 Aug 2019 20:26:44 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2i1e-00085t-QD
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 20:25:12 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7RKP70B093527;
- Tue, 27 Aug 2019 15:25:07 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1566937507;
- bh=gEFdEpF3+WHvpWSJY5udGgk0X9B9uxOZiubUNpvloVw=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=gcOryOkGkUDvclbsETxSdDLvTp8FonXjm/u4yweBik1ycTS8nZcVasBirRn4DeKBN
- 4DFdcUTmNi8isNNyhJxCTXIirpZLs+VBkjAVsjsarVL93BGGH2IEHH1+IjQyuKEAty
- jOs/TJeujygUh250pCOKKxZH7xsIXLHgtic7mSvY=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7RKP7RV064462
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 27 Aug 2019 15:25:07 -0500
-Received: from DFLE107.ent.ti.com (10.64.6.28) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 27
- Aug 2019 15:25:06 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE107.ent.ti.com
- (10.64.6.28) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 27 Aug 2019 15:25:06 -0500
-Received: from [128.247.58.153] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7RKP6DQ070466;
- Tue, 27 Aug 2019 15:25:06 -0500
-Subject: Re: [PATCH] rpmsg: virtio_rpmsg_bus: replace "%p" with "%pK"
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20181024011909.21674-1-s-anna@ti.com>
- <40831f80-1e36-66ca-b8e5-684d46ba167e@ti.com> <20190827051007.GK1263@builder>
-From: Suman Anna <s-anna@ti.com>
-Message-ID: <8d36d695-dd66-c21f-f49e-f6dc3dbdfc5a@ti.com>
-Date: Tue, 27 Aug 2019 15:25:06 -0500
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1i2i2q-0008Ml-0Q
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 20:26:25 +0000
+Received: by mail-oi1-f194.google.com with SMTP id y8so274749oih.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 13:26:23 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bJafdp9XsI7mzj3hJGruH3bP4YYXWdgduJkXKPlsaeA=;
+ b=Ign4uLE8LgK+mnhSUC3xMlZgvRTkH+1TRvRYRIZhgORGEjulrzLBt6cBg7I2wa+TfG
+ DnfnGDAde9AxfHK58X0IRnEM/Top8bl2LtZFYor8Zys1In7k5+VrxnKP4+I9qR3Oc3To
+ 5veZpgLbhTt6qFUoJ3i/TLiIwTd/4uh3wELRTRyD6c7EvpY4U7FdOFy0Oj2HGSWtRgwX
+ K7rEE/S6Cm6v0sMnyigeNNGNabOR9c5/gNv+P3luz8efUuqyvpywc1df+hpmIwMsTL+Z
+ 7U+aduDP62zHwrU6bQgQvrSzfFPPoN/qhUPneA7Fp0ZVfY6Ze1k3q2s49jQPSOfJZI9e
+ MBmA==
+X-Gm-Message-State: APjAAAWNXg6TRZUECTdF9VQ9fGTYa9SIoxJeUaLxtImShL3XmLAB190v
+ RcoMP7KXo6+yOOw1Ed0ZoA==
+X-Google-Smtp-Source: APXvYqyKie8vatTjl5awxYMdKBNp12v/B6SKJjd+ugH9yGwI/S8MRo4Z3W0w2zAQDAC2/ZrDzebOpg==
+X-Received: by 2002:aca:5152:: with SMTP id f79mr393628oib.124.1566937582955; 
+ Tue, 27 Aug 2019 13:26:22 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id r13sm73551oic.56.2019.08.27.13.26.22
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 27 Aug 2019 13:26:22 -0700 (PDT)
+Date: Tue, 27 Aug 2019 15:26:21 -0500
+From: Rob Herring <robh@kernel.org>
+To: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+Subject: Re: [PATCH v3 6/7] dt-bindings: serial: Document Freescale LINFlexD
+ UART
+Message-ID: <20190827202621.GA703@bogus>
+References: <20190823191115.18490-1-stefan-gabriel.mirea@nxp.com>
+ <20190823191115.18490-7-stefan-gabriel.mirea@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <20190827051007.GK1263@builder>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <20190823191115.18490-7-stefan-gabriel.mirea@nxp.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_132510_955283_73B9D0BE 
-X-CRM114-Status: GOOD (  18.27  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190827_132624_111501_BC162F24 
+X-CRM114-Status: UNSURE (   9.78  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,78 +91,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org, linux-remoteproc@vger.kernel.org,
- linux-kernel@vger.kernel.org, Loic Pallardy <loic.pallardy@st.com>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "corbet@lwn.net" <corbet@lwn.net>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "jslaby@suse.com" <jslaby@suse.com>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>, Cosmin Stefan Stoica <cosmin.stoica@nxp.com>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>,
+ "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Larisa Ileana Grigore <larisa.grigore@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Bjorn,
-
-On 8/27/19 12:10 AM, Bjorn Andersson wrote:
-> On Fri 09 Aug 13:25 PDT 2019, Suman Anna wrote:
+On Fri, 23 Aug 2019 19:11:40 +0000, Stefan-gabriel Mirea wrote:
+> From: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
 > 
->> Hi Bjorn,
->>
+> Add documentation for the serial communication interface module (LINFlexD),
+> found in two instances on S32V234.
 > 
-> Hi Suman
+> Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+> Signed-off-by: Larisa Grigore <Larisa.Grigore@nxp.com>
+> Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
+> ---
+>  .../bindings/serial/fsl,s32-linflexuart.txt   | 22 +++++++++++++++++++
+>  1 file changed, 22 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
 > 
->> On 10/23/18 8:19 PM, Suman Anna wrote:
->>> The virtio_rpmsg_bus driver uses the "%p" format-specifier for
->>> printing the vring buffer address. This prints only a hashed
->>> pointer even for previliged users. Use "%pK" instead so that
->>> the address can be printed during debug using kptr_restrict
->>> sysctl.
->>
->> Seems to have been lost among the patches, can you pick up this trivial
->> patch for 5.4? Should apply cleanly on the latest HEAD as well.
->>
-> 
-> I share Andrew's question regarding what benefit you have from knowing
-> this value. Should we not just remove the va from the print? Or do you
-> actually have a use case for it?.
 
-I mainly use it during debug when comparing against kernel_page_tables
-and vmallocinfo. The pools that we use are not always guaranteed to be
-from linear memory, and behavior changes when using with CMA or DMA pools.
-
-Note that usage of %pK does not leak the addresses automatically, but
-atleast enables me to get the values when needed. The changes also bring
-the usage in rpmsg core in sync with the remoteproc core.
-
-regards
-Suman
-
-> 
-> Regards,
-> Bjorn
-> 
->> regards
->> Suman
->>
->>>
->>> Signed-off-by: Suman Anna <s-anna@ti.com>
->>> ---
->>>  drivers/rpmsg/virtio_rpmsg_bus.c | 2 +-
->>>  1 file changed, 1 insertion(+), 1 deletion(-)
->>>
->>> diff --git a/drivers/rpmsg/virtio_rpmsg_bus.c b/drivers/rpmsg/virtio_rpmsg_bus.c
->>> index f29dee731026..1345f373a1a0 100644
->>> --- a/drivers/rpmsg/virtio_rpmsg_bus.c
->>> +++ b/drivers/rpmsg/virtio_rpmsg_bus.c
->>> @@ -950,7 +950,7 @@ static int rpmsg_probe(struct virtio_device *vdev)
->>>  		goto vqs_del;
->>>  	}
->>>  
->>> -	dev_dbg(&vdev->dev, "buffers: va %p, dma %pad\n",
->>> +	dev_dbg(&vdev->dev, "buffers: va %pK, dma %pad\n",
->>>  		bufs_va, &vrp->bufs_dma);
->>>  
->>>  	/* half of the buffers is dedicated for RX */
->>>
->>
-
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
