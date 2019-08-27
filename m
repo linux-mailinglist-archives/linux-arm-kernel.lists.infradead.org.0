@@ -2,87 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 970779EF2A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:40:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A2879EF4F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 27 Aug 2019 17:47:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=TEpOl3IWpn/ISBAmaDJUNhKBMDr9ZMsN9u3DdVuKiDo=; b=onCHDgp1oj19f4b2OrJn+JBXF
-	YHJkoU2OOhEneNFUvRnUkIC0RG+89LRXkDsotr2SZotuv90UW3IgoYyFiywnWTfYF+aw65YK4yHBd
-	6GvlOVlJVsJtYNL4l5IE1PU6hoQx6fNr4yh/LlMxJ/z/jiN36BdvK2H0+8UtfQ6cI6K2qYhqI6nCE
-	QgFfnWaIl2LOKHnT9u30KiQjf+lSrw04I1A5jPqwEa4UOQDWDHxNZXv9wmyGtX0PxvO0Ry/gXmEGd
-	9PjoviIyl6kEA9wvk4SpOZH8bl9FIhY6SKHx28aQm3avr7SP0agqq1VoCbwKRc3QPLgrN639DjaUs
-	KksJHm6qQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FOjj2oAd7WHfhx/1XB0HJSATftyXdkvO+JBh5owXuX0=; b=FkCyvrGrbyCxUL
+	HlcDgsHJFJUbuL0ogNlvQHsTrCCoZ1S06ZSCa+GO2YWbU9YTeWgr0CaEdZSaXf5SzRH8sNovOusLv
+	fY4R8EBoC5nXJFujwNeZkeGmbCNt+I30RBYxL4GP2L3Tbx7LHk+QioUBPTAW7BlOZvvSdL+rTuY9b
+	eFFmCtKTw8y6ug8gz5ep7N/ouJ1ATDKU/Zbde+aVe50VcizODsz8yRxFHhrCL/SpSm8j+cc0axDPz
+	oIkls9fJEaNMfOHnb9y0RGznyka4shAseIMKMT3pDBLDrpYx4dzW1NZQjCbTgFTIY6vqAFiybQaWB
+	6MmqyOvOlR+24D9JZuTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2daQ-000077-Rc; Tue, 27 Aug 2019 15:40:46 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2daH-00006L-NU
- for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:40:40 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d654ef40000>; Tue, 27 Aug 2019 08:40:36 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Tue, 27 Aug 2019 08:40:36 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Tue, 27 Aug 2019 08:40:36 -0700
-Received: from [10.25.73.29] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 27 Aug
- 2019 15:40:31 +0000
-Subject: Re: [PATCH 3/6] PCI: tegra: Add support to configure sideband pins
-To: Andrew Murray <andrew.murray@arm.com>
+	id 1i2dh4-000264-Mi; Tue, 27 Aug 2019 15:47:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2dgu-00023f-RQ
+ for linux-arm-kernel@lists.infradead.org; Tue, 27 Aug 2019 15:47:30 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0A5C7337;
+ Tue, 27 Aug 2019 08:47:28 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 598D23F59C;
+ Tue, 27 Aug 2019 08:47:27 -0700 (PDT)
+Date: Tue, 27 Aug 2019 16:47:25 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Vidya Sagar <vidyas@nvidia.com>
+Subject: Re: [PATCH 6/6] PCI: tegra: Add support to enable slot regulators
+Message-ID: <20190827154725.GP14582@e119886-lin.cambridge.arm.com>
 References: <20190826073143.4582-1-vidyas@nvidia.com>
- <20190826073143.4582-4-vidyas@nvidia.com>
- <20190827153029.GO14582@e119886-lin.cambridge.arm.com>
-X-Nvconfidentiality: public
-From: Vidya Sagar <vidyas@nvidia.com>
-Message-ID: <9fe2fc1b-8fdf-e8cf-e5fd-36b536b28889@nvidia.com>
-Date: Tue, 27 Aug 2019 21:10:28 +0530
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ <20190826073143.4582-7-vidyas@nvidia.com>
 MIME-Version: 1.0
-In-Reply-To: <20190827153029.GO14582@e119886-lin.cambridge.arm.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1566920436; bh=RALnJDAwbfk7yCMD7+TxIj1eEVtiHxWVO6vHKCUuBi8=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=mvMWZvETEIcF0IIS5rVUnIAxOSb5My1zfvk5h7A3mQQRyRJA4Mdtbv6b9G5zO32lA
- j4AUZpoFq6IL2McN7KJ1T10QB5rfNho12CWdDXbE7EbjkJLkNThxJc/k5twNPxFUJr
- WBNOTYWNTx5XwLJGgGxHVPJBPv0M8YgyeunmlqJXhHNvYGLNp5keRL6c5m7GuLG0sx
- /KiNJ69Q9Kp2WpBjHCNHcteKBDy48ilm9DxtyKep3np4Oq26DMi7/E7pMhZ9pV03yV
- wE4YjC5voMooSW8OPx6ScwI/mkncEJ/0FcUyFU7wPjj/XM/TFmvt/IuZe/YJPzX8+4
- dPeKc4wmiaIHw==
+Content-Disposition: inline
+In-Reply-To: <20190826073143.4582-7-vidyas@nvidia.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_084037_782142_6A2BDDB0 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190827_084728_976550_133C5B53 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,56 +68,144 @@ Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
  thierry.reding@gmail.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
  digetx@gmail.com, jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org,
  sagar.tv@gmail.com
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/27/2019 9:00 PM, Andrew Murray wrote:
-> On Mon, Aug 26, 2019 at 01:01:40PM +0530, Vidya Sagar wrote:
->> Add support to configure sideband signal pins when information is present
->> in respective controller's device-tree node.
->>
->> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
->> ---
->>   drivers/pci/controller/dwc/pcie-tegra194.c | 6 ++++++
->>   1 file changed, 6 insertions(+)
->>
->> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
->> index fc0dbeb31d78..8a27b25893c9 100644
->> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
->> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
->> @@ -1308,6 +1308,12 @@ static int tegra_pcie_config_rp(struct tegra_pcie_dw *pcie)
->>   		return ret;
->>   	}
->>   
->> +	ret = pinctrl_pm_select_default_state(pcie->dev);
->> +	if (ret < 0) {
->> +		dev_err(pcie->dev, "Failed to configure sideband pins\n");
+On Mon, Aug 26, 2019 at 01:01:43PM +0530, Vidya Sagar wrote:
+> Add support to get regulator information of 3.3V and 12V supplies of a PCIe
+> slot from the respective controller's device-tree node and enable those
+> supplies. This is required in platforms like p2972-0000 where the supplies
+> to x16 slot owned by C5 controller need to be enabled before attempting to
+> enumerate the devices.
 > 
-> I think you can just use dev instead of pcie->dev here.
-Yup. I can use just 'dev' here.
+> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+> ---
+>  drivers/pci/controller/dwc/pcie-tegra194.c | 65 ++++++++++++++++++++++
+>  1 file changed, 65 insertions(+)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
+> index 8a27b25893c9..97de2151a738 100644
+> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
+> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
+> @@ -278,6 +278,8 @@ struct tegra_pcie_dw {
+>  	u32 aspm_l0s_enter_lat;
+>  
+>  	struct regulator *pex_ctl_supply;
+> +	struct regulator *slot_ctl_3v3;
+> +	struct regulator *slot_ctl_12v;
+>  
+>  	unsigned int phy_count;
+>  	struct phy **phys;
+> @@ -1047,6 +1049,59 @@ static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
+>  	}
+>  }
+>  
+> +static void tegra_pcie_get_slot_regulators(struct tegra_pcie_dw *pcie)
+> +{
+> +	pcie->slot_ctl_3v3 = devm_regulator_get_optional(pcie->dev, "vpcie3v3");
+> +	if (IS_ERR(pcie->slot_ctl_3v3))
+> +		pcie->slot_ctl_3v3 = NULL;
+> +
+> +	pcie->slot_ctl_12v = devm_regulator_get_optional(pcie->dev, "vpcie12v");
+> +	if (IS_ERR(pcie->slot_ctl_12v))
+> +		pcie->slot_ctl_12v = NULL;
 
-> 
->> +		return ret;
-> 
-> Don't you need to pm_runtime_put_sync and pm_runtime_disable here?
-Yup. Thanks for catching it. I'll address it in next patch series.
+Do these need to take into consideration -EPROBE_DEFER?
 
-> 
-> Thanks,
-> 
-> Andrew Murray
-> 
->> +	}
->> +
->>   	tegra_pcie_init_controller(pcie);
->>   
->>   	pcie->link_state = tegra_pcie_dw_link_up(&pcie->pci);
->> -- 
->> 2.17.1
->>
+Thanks,
 
+Andrew Murray
+
+> +}
+> +
+> +static int tegra_pcie_enable_slot_regulators(struct tegra_pcie_dw *pcie)
+> +{
+> +	int ret;
+> +
+> +	if (pcie->slot_ctl_3v3) {
+> +		ret = regulator_enable(pcie->slot_ctl_3v3);
+> +		if (ret < 0) {
+> +			dev_err(pcie->dev,
+> +				"Failed to enable 3V3 slot supply: %d\n", ret);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	if (pcie->slot_ctl_12v) {
+> +		ret = regulator_enable(pcie->slot_ctl_12v);
+> +		if (ret < 0) {
+> +			dev_err(pcie->dev,
+> +				"Failed to enable 12V slot supply: %d\n", ret);
+> +			if (pcie->slot_ctl_3v3)
+> +				regulator_disable(pcie->slot_ctl_3v3);
+> +			return ret;
+> +		}
+> +	}
+> +
+> +	/*
+> +	 * According to PCI Express Card Electromechanical Specification
+> +	 * Revision 1.1, Table-2.4, T_PVPERL (Power stable to PERST# inactive)
+> +	 * should be a minimum of 100ms.
+> +	 */
+> +	msleep(100);
+> +
+> +	return 0;
+> +}
+> +
+> +static void tegra_pcie_disable_slot_regulators(struct tegra_pcie_dw *pcie)
+> +{
+> +	if (pcie->slot_ctl_12v)
+> +		regulator_disable(pcie->slot_ctl_12v);
+> +	if (pcie->slot_ctl_3v3)
+> +		regulator_disable(pcie->slot_ctl_3v3);
+> +}
+> +
+>  static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+>  					bool en_hw_hot_rst)
+>  {
+> @@ -1060,6 +1115,10 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+>  		return ret;
+>  	}
+>  
+> +	ret = tegra_pcie_enable_slot_regulators(pcie);
+> +	if (ret < 0)
+> +		goto fail_slot_reg_en;
+> +
+>  	ret = regulator_enable(pcie->pex_ctl_supply);
+>  	if (ret < 0) {
+>  		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
+> @@ -1142,6 +1201,8 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
+>  fail_core_clk:
+>  	regulator_disable(pcie->pex_ctl_supply);
+>  fail_reg_en:
+> +	tegra_pcie_disable_slot_regulators(pcie);
+> +fail_slot_reg_en:
+>  	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+>  
+>  	return ret;
+> @@ -1174,6 +1235,8 @@ static int __deinit_controller(struct tegra_pcie_dw *pcie)
+>  		return ret;
+>  	}
+>  
+> +	tegra_pcie_disable_slot_regulators(pcie);
+> +
+>  	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
+>  	if (ret) {
+>  		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
+> @@ -1372,6 +1435,8 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
+>  		return ret;
+>  	}
+>  
+> +	tegra_pcie_get_slot_regulators(pcie);
+> +
+>  	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
+>  	if (IS_ERR(pcie->pex_ctl_supply)) {
+>  		dev_err(dev, "Failed to get regulator: %ld\n",
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
