@@ -2,55 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B772A026B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:01:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF182A0272
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:03:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WBNX/tDZvQ5/vr7ZHvi+U0B1tE8iqs8xpDOtVkefweA=; b=SzylSSlO7f0l4F
-	dOSzEvcNFrXXywtm6Y+M+f7h7nGyPhZuYRLjEAVI3acDIxs/q2Xe6g5wlByQ+5uJLZxAPtamHeiSR
-	I46za3/ATdSydjk8fk+Gb79y6OIg1c/JXEG1kNt1bGIoYwWQC87UMS/fKr1H8iVk7lZRcGYhhkugc
-	SyfhmIJd4H5WOL0yB7OxITZvsqHAauuGAjviO4xeFe3pGfVNJAXmDaDHHUVJbRIydO9dzjqjlWhrK
-	/ODO/XTcnrRLhiZ2XlLzu3iTIbd89FYDNHLb3MiWntZutmZPS692c7NPwbbwJ6EuQHJYeuMdqaOD8
-	WxKEfEptlFu881qsQ3QA==;
+	List-Owner; bh=Wryet1qdi9r9ejVTnT/aMO8xhMSEwW1dZXyeGKijK6k=; b=h7kTDR+MJfz6zu
+	WmV08NYDfex01jExaIkIHfbHvGYh5qjVMMtP410q06+yaxQSY/UF9gMf96c4UG2bJBj1mrviS9Y1j
+	Al1tVTJaRI1H9SIs4QJK5ecIaUVD8S0vYHEnhb/5BHu0D7qMs6f3gQtfpLTVO14FKpKQXVeURHcfP
+	fQNhNZq6Y+5ohwPOXO2YMU40Dzd4/WhGBbX9AJ3eThP2xmjA+iAIU2jJVECnkE8PRDA88lyVxiQS6
+	nWB69T4gB2ZeEIjzB4u9whv2XaljYhfGczaQTHOYlGnhplGRE9rA0x8IlHL5dIboBEmJ9Ossyfp0R
+	Lv7+uxaQ3ndOC3fKEJ2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xZv-0001zb-Hd; Wed, 28 Aug 2019 13:01:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xZj-0001zF-SM
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:01:25 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62D65344;
- Wed, 28 Aug 2019 06:01:21 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB5EE3F246;
- Wed, 28 Aug 2019 06:01:20 -0700 (PDT)
-Date: Wed, 28 Aug 2019 14:01:19 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v3 2/5] arm64: Use correct ll/sc atomic constraints
-Message-ID: <20190828130118.GW14582@e119886-lin.cambridge.arm.com>
-References: <20190812143625.42745-1-andrew.murray@arm.com>
- <20190812143625.42745-3-andrew.murray@arm.com>
- <20190822153223.GB33080@lakrids.cambridge.arm.com>
+	id 1i2xbP-0002RL-48; Wed, 28 Aug 2019 13:03:07 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2xbC-0002Hg-Lb
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:02:56 +0000
+Received: by mail-qt1-f194.google.com with SMTP id b11so2834819qtp.10
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 28 Aug 2019 06:02:54 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=IGBGJGSXKu1XI7QCTZRx+ka85VzBENyC+3JcanBjN3E=;
+ b=Rkd3EU34O9KhN9WJO3THDpHpzm6/N4vt97f76VirN2XBO1XqwN0X35AATfG2TrEIPo
+ KagBO2KGp/s1heyZo6LvkxBtQHFcjZR2R7x4ykxhEor9Qe6rJMy7XKlyTQ0tQr8VeY5t
+ ZgjRHAYwgL0nb95SaBQ74Q6pgObGmWR4u4LivREXmHVwmi3zC9FcVKqq6zDWS2ptASNH
+ DuDC2ED4824tmSb4yI3ZARkHTsCv+MOeEbRUv7kDWMchfH5YI7tZvQ/sNYVA2RrzhOIh
+ reBSfrYhFP+pr3uC4El1OepD66UDgdQqn3FygGrd4JDL1Ox8rdXyps7d66Y8O5dpOoEU
+ P8Lw==
+X-Gm-Message-State: APjAAAVrA9Ta/sA+wVXeRkeas5rKyXFyro5+fjj3qzju3yHBbKtjLdjU
+ g9d39LwZGXXwAAkhBRRP46zSIqvvtHNlusBAAto=
+X-Google-Smtp-Source: APXvYqwFs2+ff1HO4EmjqAOCzKXa7tMdrsXizeCnfMrVB5CqO4/vjsoIDKOUj+3CtQPhIKsdnKwWMimhgoCxxhSPV9c=
+X-Received: by 2002:ac8:239d:: with SMTP id q29mr4036253qtq.304.1566997372955; 
+ Wed, 28 Aug 2019 06:02:52 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190822153223.GB33080@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+References: <20190808212234.2213262-1-arnd@arndb.de>
+ <20190808212234.2213262-15-arnd@arndb.de>
+ <20190813103605.GL52127@atomide.com>
+ <CAK8P3a0E+QUn9wcP5Obv-FitWyXCFwcp+oPConeO2p-NV1rqsw@mail.gmail.com>
+ <20190813181158.GA26798@darkstar.musicnaut.iki.fi>
+ <CAK8P3a0LjKrc+7c5Ht9OL7LfYyLnG9=y7u+w24ujA1xAid_yCQ@mail.gmail.com>
+ <20190814074918.GA52127@atomide.com>
+ <CAK8P3a3k_HOGqzMGjtc+7NSaK0Bsa_vxxRFLzY8aP6ev4wa9iA@mail.gmail.com>
+ <20190816083403.GB1952@darkstar.musicnaut.iki.fi>
+ <CAK8P3a3jqNxoihQ+UFvOZMg=AcF2yzHXs5ay6X1TZX8L3zQ3rg@mail.gmail.com>
+ <20190827190453.GJ30291@darkstar.musicnaut.iki.fi>
+In-Reply-To: <20190827190453.GJ30291@darkstar.musicnaut.iki.fi>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 28 Aug 2019 15:02:36 +0200
+Message-ID: <CAK8P3a1PeBMRuweAmzrTQC85CmwdZPirG3HPg9aJ99p2U7zknQ@mail.gmail.com>
+Subject: Re: [PATCH 14/22] ARM: omap1: use pci_ioremap_io() for omap_cf
+To: Aaro Koskinen <aaro.koskinen@iki.fi>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_060124_090994_D2396193 
-X-CRM114-Status: GOOD (  25.84  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_060254_709545_53AD2C74 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,152 +92,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Tony Lindgren <tony@atomide.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Dominik Brodowski <linux@dominikbrodowski.net>,
+ Tomi Valkeinen <tomi.valkeinen@ti.com>,
+ linux-omap <linux-omap@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 22, 2019 at 04:32:23PM +0100, Mark Rutland wrote:
-> Hi Andrew,
-> 
-> On Mon, Aug 12, 2019 at 03:36:22PM +0100, Andrew Murray wrote:
-> > For many of the ll/sc atomic operations we use the 'I' machine constraint
-> > regardless to the instruction used - this may not be optimal.
+On Tue, Aug 27, 2019 at 9:05 PM Aaro Koskinen <aaro.koskinen@iki.fi> wrote:
+> On Tue, Aug 27, 2019 at 06:33:01PM +0200, Arnd Bergmann wrote:
+> > On Fri, Aug 16, 2019 at 10:34 AM Aaro Koskinen <aaro.koskinen@iki.fi> wrote:
+> > > However with earlyprintk it seems to hang as soon as kernel tries to print
+> > > something. So something goes wrong with early DEBUG_LL mapping code when
+> > > CONFIG_DEBUG_UART_VIRT=0xff000000 is used?
 > >
-> > Let's add an additional parameter to the ATOMIC_xx macros that allows the
-> > caller to specify an appropriate machine constraint.
-> > 
-> > Let's also improve __CMPXCHG_CASE by replacing the 'K' constraint with a
-> > caller provided constraint. Please note that whilst we would like to use
-> > the 'K' constraint on 32 bit operations, we choose not to provide any
-> > constraint to avoid a GCC bug which results in a build error.
-> > 
-> > Earlier versions of GCC (no later than 8.1.0) appear to incorrectly handle
-> > the 'K' constraint for the value 4294967295.
-> 
-> From reading the above, it's difficult to discern what's a fix and
-> what's an improvement, and I think we need to be more explicit about
-> that. It would also be helpful to have the necessary context up-front.
-> 
-> How about:
-> 
-> | The A64 ISA accepts distinct (but overlapping) ranges of immediates for:
-> | 
-> | * add arithmetic instructions ('I' machine constraint)
-> | * sub arithmetic instructions ('J' machine constraint)
-> | * 32-bit logical instructions ('K' machine constraint)
-> | * 64-bit logical instructions ('L' machine constraint)
-> | 
-> | ... but we currently use the 'I' constraint for many atomic operations
-> | using sub or logical instructions, which is not always valid.
-> | 
-> | When CONFIG_ARM64_LSE_ATOMICS is not set, this allows invalid immediates
-> | to be passed to instructions, potentially resulting in a build failure.
-> | When CONFIG_ARM64_LSE_ATOMICS is selected the out-of-line ll/sc atomics
-> | always use a register as they have no visibility of the value passed by
-> | the caller.
-> |
-> | This patch adds a constraint parameter to the ATOMIC_xx and
-> | __CMPXCHG_CASE macros so that we can pass appropriate constraints for
-> | each case, with uses updated accordingly.
-> | 
-> | Unfortunately prior to GCC 8.1.0 the 'K' constraint erroneously accepted
-> | 0xffffffff, so we must instead force the use of a register.
+> > I just redid the calculation and came out with the same address, so I
+> > don't think I put the wrong one there. The address also does not
+> > conflict with the PCI mapping, and the address is the same one that
+> > is installed later, so that should also be fine.
+> >
+> > Are you sure you used the correct address in the .config file? If you
+> > ran 'make oldconfig', the virtual address would not be changed here
+> > as I just modify the default for a fresh 'make omap1_defconfig'
+> > run or similar.
+>
+> Yes... You should be able to try this out also in QEMU to see the hang:
 
-Looks great - I'll adopt this, thanks for writing it.
+Haven't tried yet, but I took a look at the dump:
 
->  
-> Given we haven't had any bug reports, I'm not sure whether this needs a
-> Fixes tag or Cc stable. This has been a latent issue for a long time,
-> but upstream code doesn't seem to have tickled it.
+> $ qemu-system-arm -M sx1 -kernel sx1-zImage -nographic
+>
+> [ Hangs silently, press Ctrl-a c to enter monitor. ]
+>
+> QEMU 4.1.0 monitor - type 'help' for more information
+> (qemu) info registers
+> R00=c0379de1 R01=0000005b R02=00000000 R03=ff000000
+> R04=00000000 R05=00000031 R06=c038f119 R07=00000000
+> R08=00000000 R09=c038f50e R10=600001d3 R11=00000001
+> R12=00000010 R13=c0379de0 R14=c000e07c R15=c000dfcc
+> PSR=000001d3 ---- A svc32
+> FPSCR: 00000000
+>
+> from System.map:
+> c000df7c T printascii
+> c000dfe0 T printch
 
-Yes I guess this is more a correctness issue rather than a reproducible bug
-in upstream code. I won't add a fixes tag or CC to stable.
+Ok, that is clearly the "busyloop" macro in
+arch/arm/include/debug/8250.S, checking if the data got sent.
 
-> 
-> [...]
-> 
-> > -ATOMIC_OPS(and, and)
-> > -ATOMIC_OPS(andnot, bic)
-> > -ATOMIC_OPS(or, orr)
-> > -ATOMIC_OPS(xor, eor)
-> > +ATOMIC_OPS(and, and, K)
-> > +ATOMIC_OPS(andnot, bic, )
-> > +ATOMIC_OPS(or, orr, K)
-> > +ATOMIC_OPS(xor, eor, K)
-> 
-> Surely it's not safe to use the K constraint here, either? AFAICT code
-> like:
-> 
->   atomic_xor(~0, &atom);
-> 
-> ... would suffer from the same problem as described for cmpxchg.
+The 'r2' register contains zero, so UART_LSR_TEMT and
+UART_LSR_THRE are not set, but presumably the mapping
+was installed right since you did not get a page fault.
 
-Thanks for spotting this.
+I assume you checked that the uart output wasn't already broken
+by one of the earlier patches, right?
 
-Yes, I think the resolution here (and for any 32bit bitmask immediate) is to
-drop the constraint.
+Also, looking at arch/arm/mach-omap1/include/mach/uncompress.h
+it seems that SX1 normally uses UART3, not UART1.
+Is that different in qemu?
 
-Do you agree that we should drop the 'K' constraint for both orr and eor
-above?
-
-> 
-> [...]
-> 
-> > -ATOMIC64_OPS(and, and)
-> > -ATOMIC64_OPS(andnot, bic)
-> > -ATOMIC64_OPS(or, orr)
-> > -ATOMIC64_OPS(xor, eor)
-> > +ATOMIC64_OPS(and, and, K)
-> > +ATOMIC64_OPS(andnot, bic, )
-> > +ATOMIC64_OPS(or, orr, K)
-> > +ATOMIC64_OPS(xor, eor, K)
-> 
-> Shouldn't these be 'L'?
-> 
-> IIUC K is a subset of L, so if that's deliberate we should call that out
-> explicitly...
-
-Oooh yes that's wrong. I guess the atomic64_[and,or,xor] are rarely called
-in the kernel which perhaps is why the compiler hasn't shouted at me.
-
-Do you agree that the and, orr and eor should all be 'L' instead of 'K'?
-
-> 
-> > +__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
-> > +__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
-> > +__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
-> > +__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
-> > +__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
-> > +__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
-> > +__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
-> > +__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
-> > +__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
-> > +__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
-> > +__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
-> > +__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
-> > +__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
-> > +__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
-> > +__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
-> > +__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
-> 
-> ... but these uses imply that's not the case.
-
-Yup, so I can leave these as they are.
-
-Phew - thanks for the review.
-
-Andrew Murray
-
-> 
-> Otherwise this looks good to me.
-> 
-> Thanks,
-> Mark.
+        Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
