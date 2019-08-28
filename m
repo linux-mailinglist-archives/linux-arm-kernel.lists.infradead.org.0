@@ -2,60 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1B26A06F3
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 18:08:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58894A0705
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 18:13:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7EV58+xTijv3Ofo2W3RDA45Bng8+Uk5FHrlUaThGpoA=; b=BWcysVYVnM0UOT
-	PjPjBgu5di9wylnpmuqlP3aZmjuSM+9Vb3jpSQ48ntAOCRwpxNsp/0sIP09L+alSlYhzg0JSy5dPW
-	cn46esjzvyhfCEExE+O/cVb2vRdY7nwdm7mddSxr3frDMBjwC+MaiMH4RQbMYkQOcm1tpWsHUXoSu
-	ewJTSLNvl4WVGNqUsvE8LMS5HnQRSPPPQ0qgeOLyXiutJp+xyzQ8bFyf6Upb4Vdm5aidpCbi3TN6q
-	17s6gmX+m9y7C+yM3PZLc8oZ3JJRR3CTmggyFSkHk3356B4gmESHvVMNP860TkfYWG3jdwO4JiTHY
-	u7ji3VSNdtcadkii1Dxw==;
+	List-Owner; bh=8cZqIQPdP8chGiBEyM/vFOy//iYM6GdYLLPJR3xpoo4=; b=KKIPmn/md3wBgY
+	ALjG0bInZZdgbEtK/wnjhD/ZMC7beA+GltXdTa0CSYijREmoyaFWRFdT0hOaWXzEOXWxiYbX8NX6o
+	jTPa2mXNGLX2+IMugRU71iQkZsUgy8sw9l4wIjmTYNAMq7JFzgAymEb+cJB75PLR+cU28PZZC94VY
+	0GIY4AIGeRLQgNyVUC0IWl0hgsRpztSx4KVbtX+VONxVIe5C17XNRw2Ik68vQT3EVemovapAWDWCP
+	UQYm3e4W/fysrq/0Bqkt3+ePAKowXUNgIUwrk5ovCFUouGtstKrDdt4C2504ngBf3JDwFjAzPX8TU
+	FbqipMqWug3j8Jq9RDSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i30Ul-0001yo-3R; Wed, 28 Aug 2019 16:08:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i30UU-0001yP-UU
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 16:08:12 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F9CD28;
- Wed, 28 Aug 2019 09:08:08 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 496C53F59C;
- Wed, 28 Aug 2019 09:08:07 -0700 (PDT)
-Date: Wed, 28 Aug 2019 17:08:05 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
- predictor against aliasing attacks
-Message-ID: <20190828160804.GB42408@lakrids.cambridge.arm.com>
-References: <cover.1562908074.git.viresh.kumar@linaro.org>
- <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
- <20190731164556.GI39768@lakrids.cambridge.arm.com>
- <20190801052011.2hrei36v4zntyfn5@vireshk-i7>
- <20190806121816.GD475@lakrids.cambridge.arm.com>
- <20190808120600.qhbhopvp4e5w33at@vireshk-i7>
+	id 1i30ZR-0003uR-BY; Wed, 28 Aug 2019 16:13:17 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i30ZD-0003tx-90
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 16:13:05 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8CFDF20828;
+ Wed, 28 Aug 2019 16:13:00 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567008781;
+ bh=HqrBhiKqWjQX4dFN5T5Ap5MOVi6uLuKfUH92vCuqnNU=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=I1/TPQxrt7DwtjZiUnrv0BZtkBuwtARMu5FWDI7sbTL2SU85mZvnW5ZKiFNruw3zx
+ dWWtwECcxxvT0qxLYtxsga2Q8S02Gbb2ruLMnrMiXBhg9pNjF+lgT83m+kK2RXe2MZ
+ +ftcWYRVbg36kpNPKLOeHEP8gC50rXFHpqOm8v7c=
+Date: Wed, 28 Aug 2019 17:12:57 +0100
+From: Will Deacon <will@kernel.org>
+To: Nicholas Piggin <npiggin@gmail.com>
+Subject: Re: [PATCH 0/6] Fix TLB invalidation on arm64
+Message-ID: <20190828161256.uevoohval4sko24m@willie-the-truck>
+References: <20190827131818.14724-1-will@kernel.org>
+ <1566947104.2uma6s0pl1.astroid@bobo.none>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190808120600.qhbhopvp4e5w33at@vireshk-i7>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <1566947104.2uma6s0pl1.astroid@bobo.none>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_090811_032069_DBF552CD 
-X-CRM114-Status: GOOD (  14.66  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_091304_123753_AF6AAC63 
+X-CRM114-Status: GOOD (  34.14  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,50 +77,186 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
+Cc: linux-arch@vger.kernel.org, Mark Rutland <mark.rutland@arm.com>,
+ Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Marc Zyngier <maz@kernel.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 08, 2019 at 05:36:00PM +0530, Viresh Kumar wrote:
-> On 06-08-19, 13:18, Mark Rutland wrote:
-> > Upstream and in v4.9, the meltdown patches came before the spectre
-> > patches, and doing this in the opposite order causes context problems
-> > like the above.
+Hi Nick,
+
+On Wed, Aug 28, 2019 at 10:35:24AM +1000, Nicholas Piggin wrote:
+> Will Deacon's on August 27, 2019 11:18 pm:
+> > So far, so good, but the final piece of the puzzle isn't quite so rosy.
 > > 
-> > Given that, I think it would be less surprising to do the meltdown
-> > backport first, though I apprecaite that's more work to get these
-> > patches in. :/
+> > *** Other architecture maintainers -- start here! ***
+> > 
+> > In the case that one CPU maps a page and then sets a flag to tell another
+> > CPU:
+> > 
+> > 	CPU 0
+> > 	-----
+> > 
+> > 	MOV	X0, <valid pte>
+> > 	STR	X0, [Xptep]	// Store new PTE to page table
+> > 	DSB	ISHST
+> > 	ISB
+> > 	MOV	X1, #1
+> > 	STR	X1, [Xflag]	// Set the flag
+> > 
+> > 	CPU 1
+> > 	-----
+> > 
+> > loop:	LDAR	X0, [Xflag]	// Poll flag with Acquire semantics
+> > 	CBZ	X0, loop
+> > 	LDR	X1, [X2]	// Translates using the new PTE
+> > 
+> > then the final load on CPU 1 can raise a translation fault for the same
+> > reasons as mentioned at the start of this description.
 > 
-> I attempted meltdown backport in the last two days and the amount of
-> extra patches to be backported is enormous. And I am not sure if
-> everything is alright as well now, and things will greatly rely on
-> reviews from you for it.
+> powerpc's ptesync instruction is defined to order MMU memory accesses on
+> all other CPUs. ptesync does not go out to the fabric though. How does
+> it work then?
 > 
-> For this series, what about just backporting for now to account for
-> CSV3 ? And attempting meltdown backport separately later ?
+> Because the MMU coherency problem (at least we have) is not that the
+> load will begin to "partially" execute ahead of the store, enough to
+> kick off a table walk that goes ahead of the store, but not so much
+> that it violates the regular CPU barriers. It's just that the loads
+> from the MMU don't participate in the LSU pipeline, they don't snoop
+> the store queues aren't inserted into load queues so the regular
+> memory barrier instructions won't see stores from other threads cuasing
+> ordering violations.
 > 
-> 179a56f6f9fb arm64: Take into account ID_AA64PFR0_EL1.CSV3
+> In your first example, if powerpc just has a normal memory barrier
+> there instead of a ptesync, it could all execute completely
+> non-speculatively and in-order but still cause a fault, because the
+> table walker's loads didn't see the store in the store queue.
 
-I don't think that buys us anything; that's still going to cause some
-context problems (e.g. for commit 179a56f6f9fb itself), and still means
-that the v4.4 backport differs from all the others.
+Ah, so I think this is where our DSB comes in, as opposed to our usual
+DMB. DMB provides ordering guarantees and is generally the only barrier
+instruction you need for shared memory communication. DSB, on the other
+hand, has additional properties such as making page-table updates visible
+to the table walker and completing pending TLB invalidation.
 
-If it's really not feasible to do the meltdown patches first, then I
-reluctantly agree that we should just do the spectre bits alone if there
-aren't major changes that have to be made to entry.S and friends as a
-result.
+So in practice, DSB is likely to drain the store buffer to ensure that
+pending page-table writes are visible at L1, which is coherent with all
+CPUs (and their page-table walkers).
 
-Could you send a v3 (of just the spectre bits) with the changes
-requested so far?
+> From the other side of the fabric you have no such problem. The table
+> walker is cache coherent apart from the local stores, so we don't need a 
+> special barrier on the other side. That's why ptesync doesn't broadcast.
 
-Thanks,
-Mark.
+Curious: but do you need to do anything extra to take into account
+instruction fetch on remote CPUs if you're mapping an executable page?
+We added an IPI to flush_icache_range() in 3b8c9f1cdfc5 to handle this,
+because our broadcast I-cache maintenance doesn't force a pipeline flush
+for remote CPUs (and may even execute as a NOP on recent cores).
+
+> I would be surprised if ARM's issue is different, but interested to 
+> hear if it is.
+
+If you take the four scenarios of Map/Unmap for the UP/SMP cases:
+
+	Map+UP		// Some sort of fence instruction (DSB;ISB/ptesync)
+	Map+SMP		// Same as above
+	Unmap+UP	// Local TLB invalidation
+	Unmap+SMP	// Broadcast TLB invalidation
+
+then the most interesting case is Map+SMP, where one CPU transitions a PTE
+from invalid to valid and executes its DSB;ISB/PTESYNC sequence without
+affecting the remote CPU. That's what I'm trying to get at in my example
+below:
+
+> > 	CPU 0				CPU 1
+> > 	-----				-----
+> > 	spin_lock(&lock);		spin_lock(&lock);
+> > 	set_fixmap(0, paddr, prot);	if (mapped)
+> > 	mapped = true;				foo = *fix_to_virt(0);
+> > 	spin_unlock(&lock);		spin_unlock(&lock);
+> > 
+> > could fault.
+> 
+> This is kind of a different issue, or part of a wider one at least.
+> Consider speculative execution more generally, any branch mispredict can 
+> send us off to crazy town executing instructions using nonsense register
+> values. CPU0 does not have to be in the picture, or any kernel page 
+> table modification at all, CPU1 alone will be doing speculative loads 
+> wildly all over the kernel address space and trying to access pages with
+> no pte.
+> 
+> Yet we don't have to flush TLB when creating a new kernel mapping, and
+> we don't get spurious kernel faults. The page table walker won't
+> install negative entries, at least not "architectural" i.e., that cause
+> faults and require flushing. My guess is ARM is similar, or you would 
+> have seen bigger problems by now?
+
+Right, we don't allow negative (invalid) entries to be cached in the TLB,
+but CPUs can effectively cache the result of a translation for a load/store
+instruction whilst that instruction flows down the pipe after its virtual
+address is known. /That/ caching is not restricted to valid translations.
+For example, if we just take a simple message passing example where we have
+two global variables: a 'mapped' flag (initialised to zero) and a pointer
+(initialised to point at a page that is not yet mapped):
+
+[please excuse the mess I've made of your assembly language]
+
+	CPU 0
+
+	// Set PTE which maps the page pointed to by pointer
+	stw	r5, 0(r4)
+	ptesync
+	lwsync
+
+	// Set 'mapped' flag to 1
+	li	r9, 1
+	stb	r9, 0(r3)
+
+
+	CPU 1
+
+	// Poll for 'mapped' flag to be set
+loop:	lbz	r9, 0(r3)
+	lwsync
+	cmpdi	cr7, r0, 0
+	beq	cr7, loop
+
+	// Dereference pointer
+	lwz	r4, 0(r5)
+
+
+So in this example, I think it's surprising that CPU 1's dereference of
+'pointer' can fault. The way this happens on arm64 is that CPU 1 can
+translate the 'pointer' dereference before the load of the 'mapped' flag has
+returned its data. The walker may come back with a fault, but then if the
+flag data later comes back as 1, the fault will be taken when the lwz
+commits. In other words, translation table walks can occur out-of-order
+with respect to the accesses they are translating for, even in the presence
+of memory barriers.
+
+In practice, I think this kind of code sequence is unusual and triggering
+the problem relies on CPU 1 knowing the virtual address it's going to
+dereference before it's actually mapped. However, this could conceivably
+happen with the fixmap and possibly also if the page-table itself was
+being written concurrently using cmpxchg(), in which case you might use
+the actual pte value in the same way as the 'mapped' flag above.
+
+But yes, adding the spurious fault handler is belt and braces, which is
+why I've kept a WARN_RATELIMIT() in there if it ever triggers.
+
+> If you have CPU0 doing a ro->rw upgrade on a kernel PTE, then it may
+> be possible another CPU1 would speculatively install a ro TLB and then
+> spurious fault on it when attempting to store to it. But no amount of
+> barriers would help because CPU1 could have picked up that TLB any time
+> in the past.
+
+Transitioning from ro->rw requires TLB invalidation, and so that falls
+into the Unmap+SMP combination which I'm not worried about because it
+doesn't pose a problem for us.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
