@@ -2,92 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B8AD9F76F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 02:36:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 111AB9F7D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 03:29:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:MIME-Version:In-Reply-To:
-	References:To:Subject:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5UP8JcpZl3SEQR3hyAOU3KyMX2QLLwMhBWnCR9ACISQ=; b=BO92UVw3xpwwRh
-	G8TXNyhGvDV8w/vHd/I1Laf45YGdYDWM+sGG1xCbmPM8i/DZhkhuFBFnqv5Rm5CDZ2QqVkCfpr4iW
-	wYW+UfjohdDik74UatDNqOguj4XNm8v+9BE7UYEZbWAOyKGedL5huHxYEtLaq8cjx9IJpctiP1ljN
-	xtqcODcUk9t53lc3l6mPCwyidn4vALpqDwlCr3ySHZXqjXv9k3hvF+F4759OiIN7fSidCk8qOj768
-	gIpxxby3IDtr0F8AP+flHq3n10zgOCAbHf4/ttSZmc12mxuXzzU6NbbZ1yjurk82TuLtWzBv61+MA
-	fGq847H6oP68cFpRI+7w==;
+	List-Owner; bh=6i5Xz8cpdLoCBBxUE79w2srrTAFUEmEiQQvKWVl3e3Q=; b=hcGqszb4XIsc8O
+	PQYY5Rb0BnlxThPzZYF402X7adkK3cwsSVqm2tXtNSZ3+ckSBKMRdGvRFaGmMbcltuCWrdSjpg9+x
+	VAdXFrylc7Y7kNF7H2kX3C6inTl6GUu/HFtC61sUMHF1qr8XlIa8q/lxTUKIN4vdzJBEBTsUpc3HH
+	BVI5k0PFVJmD3dgxeYz108UiWpT1AVWDRDki7HjXgFAHxWfcnnOETOmAfHgyB1EvrQXBOeV97eR4X
+	hGtKRzC48itAYPAMTF4yvgGPvbhIgPFRKJKUmwK4iU0IrVGfn1lNNrsSykdgAsGUsh2JQs5cHrxXR
+	gdlzVCen+8xhrPcOkyXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2lwp-0000JA-MU; Wed, 28 Aug 2019 00:36:27 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i2mll-0006BL-Pl; Wed, 28 Aug 2019 01:29:05 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2lwh-0000Ik-B1
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 00:36:20 +0000
-Received: by mail-pl1-x644.google.com with SMTP id w11so352109plp.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 27 Aug 2019 17:36:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:subject:to:cc:references:in-reply-to:mime-version
- :user-agent:message-id:content-transfer-encoding;
- bh=wmS7FrQPukUY1SYRxTvvzLc7Vj+es0c1WkGNt9QAu3k=;
- b=MuaJswhO/hYBUjfZZyVJFR8oyAZKM/ig0OP3rDwDqD2YbiFFuNppsaq3UZL7LKvHSd
- 2CKADiqfXNIj465C67ssRe2UTuIm3LtfLmZZfRpIO8kBQk1IJyhWxnki0866529lnm4P
- q+Velb3UI33KVOGRGEv8/33hFidA9ZMm7qqJZbPy87mtKNoARL57Co5X/3p1yZMF46+f
- +/1PyUysWkZKjFNhMC1MSgSB9+sy1V+jUOsJJlDlof6wK+00WRcsi4P+KhaXJNNP3xwo
- 4REAB02FOxOmpT2HdckqeEFeYXeQZSrStRmvzYEzcbly6xBuFVi4metk4sjQO6EfMKXe
- 14Og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:subject:to:cc:references:in-reply-to
- :mime-version:user-agent:message-id:content-transfer-encoding;
- bh=wmS7FrQPukUY1SYRxTvvzLc7Vj+es0c1WkGNt9QAu3k=;
- b=cWw6TLpJ9iauu+sLhWWdkujGsh4pJgidDxAFftRluyZmVvIgIo5J7vwiqAhZui8WDR
- a+JCp2jTXNx9/RWjILi7CQ0HUS1YmUyuz0wE7GL0tYHo+9hYVJy+FDG6VyOVBfxW/V1G
- ZSfutCGadpl9JLT5mFcfCGzs+ou1U8v1IQuJalEdLn7aCX8RCpe+IMzNz5UgtXN7232/
- RpZ5zlGoQJdhb7JF7byvg186LBU6w2gMTpvWW9HHK8C3mbQSZkCUJ7iktJrtufIodcua
- aavGDokosuFvtkIVi6DLoGMVk4+onn1Cu0eLM+W91cxuWs00lQ75X23DaKjx7sBnKwWv
- DIPw==
-X-Gm-Message-State: APjAAAV3bJS8CXx0l0qt984gFVHyh9URtUl8a2dGh0zgDCCvrK2+evik
- u11E/ceAwLzO7EtCh6kJNmJp8N8H
-X-Google-Smtp-Source: APXvYqzAFp57WI5nRoBPJ95nSs4zG2MftKEUTRq3QXaFnRUDFp9tT6Esous8OROyD9OqLE2OC3fy3A==
-X-Received: by 2002:a17:902:d686:: with SMTP id
- v6mr1695246ply.134.1566952577795; 
- Tue, 27 Aug 2019 17:36:17 -0700 (PDT)
-Received: from localhost (14-202-91-55.tpgi.com.au. [14.202.91.55])
- by smtp.gmail.com with ESMTPSA id m34sm351963pje.5.2019.08.27.17.36.16
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 27 Aug 2019 17:36:17 -0700 (PDT)
-Date: Wed, 28 Aug 2019 10:35:24 +1000
-From: Nicholas Piggin <npiggin@gmail.com>
-Subject: Re: [PATCH 0/6] Fix TLB invalidation on arm64
-To: linux-arm-kernel@lists.infradead.org, Will Deacon <will@kernel.org>
-References: <20190827131818.14724-1-will@kernel.org>
-In-Reply-To: <20190827131818.14724-1-will@kernel.org>
+ id 1i2mlE-0006Au-OF; Wed, 28 Aug 2019 01:28:34 +0000
+X-UUID: e4c7103cfdce4f87bcd3c47496ae02d3-20190827
+X-UUID: e4c7103cfdce4f87bcd3c47496ae02d3-20190827
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1211277978; Tue, 27 Aug 2019 17:28:28 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 27 Aug 2019 18:28:26 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
+ (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Wed, 28 Aug 2019 09:28:24 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 28 Aug 2019 09:28:23 +0800
+Message-ID: <1566955695.7317.17.camel@mhfsdcap03>
+Subject: Re: [PATCH next v10 03/11] dt-bindings: usb: add binding for USB
+ GPIO based connection detection driver
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Wed, 28 Aug 2019 09:28:15 +0800
+In-Reply-To: <20190827183154.GA10374@bogus>
+References: <1566547041-20804-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1566547041-20804-4-git-send-email-chunfeng.yun@mediatek.com>
+ <20190827183154.GA10374@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-User-Agent: astroid/0.15.0 (https://github.com/astroidmail/astroid)
-Message-Id: <1566947104.2uma6s0pl1.astroid@bobo.none>
+X-TM-SNTS-SMTP: 259D35EFF30C0616C1A211BC45937CDECB94215148384FD745984477FEA65A402000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_173619_384100_C7DFC3F4 
-X-CRM114-Status: GOOD (  24.41  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190827_182832_796198_D36696C3 
+X-CRM114-Status: GOOD (  23.67  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (npiggin[at]gmail.com)
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,142 +76,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
- Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Marc Zyngier <maz@kernel.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Hans de Goede <hdegoede@redhat.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
+ Sridharan <badhri@google.com>, Andy
+ Shevchenko <andy.shevchenko@gmail.com>, linux-mediatek@lists.infradead.org,
+ Min Guo <min.guo@mediatek.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, Nagarjuna Kristam <nkristam@nvidia.com>,
+ Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Will Deacon's on August 27, 2019 11:18 pm:
-> can actually raise a translation fault on the load instruction because the
-> translation can be performed speculatively before the page table update and
-> then marked as "faulting" by the CPU. For user PTEs, this is ok because we
-> can handle the spurious fault, but for kernel PTEs and intermediate table
-> entries this results in a panic().
-
-powerpc sounds like it has the same coherency issue with stores vs loads 
-from the MMU's page table walker, and a barrier called ptesync to order 
-them.
-
-> We can fix this by reverting 24fe1b0efad4fcdd, but the fun doesn't stop
-> there. If we consider the unmap case, then a similar constraint applies to
-> ordering subsequent memory accesses after the completion of the TLB
-> invalidation, so we also need to add an ISB instruction to
-> __flush_tlb_kernel_pgtable(). For user addresses, the exception return
-> provides the necessary context synchronisation.
+On Tue, 2019-08-27 at 13:31 -0500, Rob Herring wrote:
+> On Fri, Aug 23, 2019 at 03:57:13PM +0800, Chunfeng Yun wrote:
+> > It's used to support dual role switch via GPIO when use Type-B
+> > receptacle, typically the USB ID pin is connected to an input
+> > GPIO, and also used to enable/disable device when the USB Vbus
+> > pin is connected to an input GPIO.
+> > 
+> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+> > ---
+> > v9~v10 no changes
+> > 
+> > v8 changes:
+> >  1. rename the title
+> >  2. change the compatible as "linux,usb-conn-gpio" instead of
+> >     "linux,typeb-conn-gpio"
 > 
-> This then raises an interesting question: if an ISB is required after a TLBI
-> instruction to prevent speculative translation of subsequent instructions,
-> how is this speculation prevented on concurrent CPUs that receive the
-> broadcast TLB invalidation message? Sending and completing a broadcast TLB
-> invalidation message does not imply execution of an ISB on the remote CPU,
-> however it /does/ require that the remote CPU will no longer make use of any
-> old translations because otherwise we wouldn't be able to guarantee that an
-> unmapped page could no longer be modified. In this regard, receiving a TLB
-> invalidation is in some ways stronger than sending one (where you need the
-> ISB).
+> I don't think that is an improvement. How about 'gpio-usb-b-connector' 
+> to be consistent.
+Ok
 
-Similar with powerpc's tlbie, sender requires extra barriers!
-
-> So far, so good, but the final piece of the puzzle isn't quite so rosy.
 > 
-> *** Other architecture maintainers -- start here! ***
+> > 
+> > v7 changes:
+> >  1. add description for device only mode
+> > 
+> > v6 changes:
+> >  1. remove status and port nodes in example
+> >  2. make vbus-supply as optional property
+> > 
+> > v5 changes:
+> >  1. treat type-B connector as child device of USB controller's, but not
+> >     as a separate virtual device, suggested by Rob
+> >  2. put connector's port node under connector node, suggested by Rob
+> > 
+> > v4 no changes
+> > 
+> > v3 changes:
+> >  1. treat type-B connector as a virtual device, but not child device of
+> >     USB controller's
+> > 
+> > v2 changes:
+> >   1. new patch to make binding clear suggested by Hans
+> > ---
+> >  .../devicetree/bindings/usb/usb-conn-gpio.txt | 31 +++++++++++++++++++
+> >  1 file changed, 31 insertions(+)
+> >  create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> > 
+> > diff --git a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> > new file mode 100644
+> > index 000000000000..d4d107fedc22
+> > --- /dev/null
+> > +++ b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+> > @@ -0,0 +1,31 @@
+> > +USB GPIO Based Connection Detection
+> > +
+> > +This is typically used to switch dual role mode from the USB ID pin connected
+> > +to an input GPIO, and also used to enable/disable device mode from the USB
+> > +Vbus pin connected to an input GPIO.
+> > +
+> > +Required properties:
+> > +- compatible : should include "linux,usb-conn-gpio" and "usb-b-connector".
+> > +- id-gpios, vbus-gpios : input gpios, either one of them must be present,
+> > +	and both can be present as well.
+> > +	see connector/usb-connector.txt
+> > +
+> > +Optional properties:
+> > +- vbus-supply : can be present if needed when supports dual role mode.
+> > +	see connector/usb-connector.txt
+> > +
+> > +- Sub-nodes:
+> > +	- port : can be present.
+> > +		see graph.txt
+> > +
+> > +Example:
+> > +
+> > +&mtu3 {
+> > +	connector {
+> > +		compatible = "linux,usb-conn-gpio", "usb-b-connector";
+> > +		label = "micro-USB";
 > 
-> In the case that one CPU maps a page and then sets a flag to tell another
-> CPU:
+> 'label' is for a human identifying a particular connector when there are 
+> multiple (of the same type). So not a great example here.
+Got it, will remove it
+
+Thanks a lot
 > 
-> 	CPU 0
-> 	-----
-> 
-> 	MOV	X0, <valid pte>
-> 	STR	X0, [Xptep]	// Store new PTE to page table
-> 	DSB	ISHST
-> 	ISB
-> 	MOV	X1, #1
-> 	STR	X1, [Xflag]	// Set the flag
-> 
-> 	CPU 1
-> 	-----
-> 
-> loop:	LDAR	X0, [Xflag]	// Poll flag with Acquire semantics
-> 	CBZ	X0, loop
-> 	LDR	X1, [X2]	// Translates using the new PTE
-> 
-> then the final load on CPU 1 can raise a translation fault for the same
-> reasons as mentioned at the start of this description.
+> > +		type = "micro";
+> > +		id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
+> > +		vbus-supply = <&usb_p0_vbus>;
+> > +	};
+> > +};
+> > -- 
+> > 2.23.0
+> > 
 
-powerpc's ptesync instruction is defined to order MMU memory accesses on
-all other CPUs. ptesync does not go out to the fabric though. How does
-it work then?
 
-Because the MMU coherency problem (at least we have) is not that the
-load will begin to "partially" execute ahead of the store, enough to
-kick off a table walk that goes ahead of the store, but not so much
-that it violates the regular CPU barriers. It's just that the loads
-from the MMU don't participate in the LSU pipeline, they don't snoop
-the store queues aren't inserted into load queues so the regular
-memory barrier instructions won't see stores from other threads cuasing
-ordering violations.
-
-In your first example, if powerpc just has a normal memory barrier
-there instead of a ptesync, it could all execute completely
-non-speculatively and in-order but still cause a fault, because the
-table walker's loads didn't see the store in the store queue.
-
-From the other side of the fabric you have no such problem. The table
-walker is cache coherent apart from the local stores, so we don't need a 
-special barrier on the other side. That's why ptesync doesn't broadcast.
-
-I would be surprised if ARM's issue is different, but interested to 
-hear if it is.
-
-> In reality, code
-> such as:
-> 
-> 	CPU 0				CPU 1
-> 	-----				-----
-> 	spin_lock(&lock);		spin_lock(&lock);
-> 	*ptr = vmalloc(size);		if (*ptr)
-> 	spin_unlock(&lock);			foo = **ptr;
-> 					spin_unlock(&lock);
-> 
-> will not trigger the fault because there is an address dependency on
-> CPU1 which prevents the speculative translation. However, more exotic
-> code where the virtual address is known ahead of time, such as:
-> 
-> 	CPU 0				CPU 1
-> 	-----				-----
-> 	spin_lock(&lock);		spin_lock(&lock);
-> 	set_fixmap(0, paddr, prot);	if (mapped)
-> 	mapped = true;				foo = *fix_to_virt(0);
-> 	spin_unlock(&lock);		spin_unlock(&lock);
-> 
-> could fault.
-
-This is kind of a different issue, or part of a wider one at least.
-Consider speculative execution more generally, any branch mispredict can 
-send us off to crazy town executing instructions using nonsense register
-values. CPU0 does not have to be in the picture, or any kernel page 
-table modification at all, CPU1 alone will be doing speculative loads 
-wildly all over the kernel address space and trying to access pages with
-no pte.
-
-Yet we don't have to flush TLB when creating a new kernel mapping, and
-we don't get spurious kernel faults. The page table walker won't
-install negative entries, at least not "architectural" i.e., that cause
-faults and require flushing. My guess is ARM is similar, or you would 
-have seen bigger problems by now?
-
-If you have CPU0 doing a ro->rw upgrade on a kernel PTE, then it may
-be possible another CPU1 would speculatively install a ro TLB and then
-spurious fault on it when attempting to store to it. But no amount of
-barriers would help because CPU1 could have picked up that TLB any time
-in the past.
-
-Thanks,
-Nick
 
 _______________________________________________
 linux-arm-kernel mailing list
