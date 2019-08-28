@@ -2,67 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5030A0B48
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 22:24:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 17951A0B3B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 22:22:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
-	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C3XLFAJ0kpPh6O7+SDzyaIFK6ZCdYlFCRpON474QnDo=; b=UDBdux4O8k6mRw
-	yFgrukI/dW+ad+n2FK1Jm0lW1etMSmcA8hgj+H6WMnF1FR5hj5Ae0JzrqSyWGbYWrDKGbR/QWwurS
-	5mBv/FUOa3zFoIZT+huHTfWw/cbcwmkhDoSwbDO1PZMf81Jkn7+D3e5+9EntRG66oKZgSuLcqXrEc
-	dBapCAbyybst9G/bvRqfxldF7RPlqsCabRM3wqRTQkCSs2/WvAzP5wDcF/C+VAxjB7wHX9d5BCVWk
-	uh83aMjMCaLVWE5x0Q6TeFuQcfKY+oMS25G4A2OYrQGbfgp5pmsYoP2rS5WXXNfMcykyoloORNkrB
-	vqA6rPx/7hvaVx6X1QgQ==;
+	List-Owner; bh=WPYtWim7MVItrQkULT0tfdYyCKotPrEvDu8bd2auhBo=; b=KfP070sTSrbM+E
+	cCaP4+vkuowB4fu1kTwAMYSinWzCvOLOTDfCyQhmYbXzznptZRe0Q9OvN0B3noXdPYzmunfg1pO/O
+	upkXz5RgwnySatE542sCa0XQlhKck7EXOjiwQOAlHivyx5s27Pw4SpsgirJC7xUOGgs7XdV2FhaW1
+	c8aEC9npQtsZveWlYW1JNnN+KKMgI8f1gRuVkABaLhW8zDB2OG+VrNrGtFCy1XDHF3o8H5204fcun
+	62V5ArXPJ5RFLqHH7Msk7ryji7cyBv2U7zogP7lgMZrWJt+0y5TCg2VDQtBfWkdJXz41sHaSwxmwR
+	uNrAiAbdNj277fEW858Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i34UI-0006yE-2U; Wed, 28 Aug 2019 20:24:14 +0000
-Received: from venus.catern.com ([68.183.49.163])
+	id 1i34SU-0006YI-Ls; Wed, 28 Aug 2019 20:22:22 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i34U7-0006xn-9K
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 20:24:04 +0000
-Received-SPF: Pass (mailfrom) identity=mailfrom; client-ip=34.206.19.101;
- helo=localhost; envelope-from=sbaugh@catern.com; receiver=<UNKNOWN> 
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=catern.com; s=mail;
- t=1567023434; bh=0ywMFKjMwE/uBXqaIPb34y8Q/aLLCmGU3C97TLkQvwo=;
- h=From:To:Cc:Subject:In-Reply-To:References:Date;
- b=REuwdRN9P9zoh6DHSLiK1nqu3i2wNZqBJCILEt+4b0yiKxgb0XYUJwKX2wRNDyDWc
- JukKo1pvC54OaIX4CqMGz3OuGJLGPRfZ0csrkVnGcnxMd6oby8HYrRP9EeNU+sPgW7
- McVdUazYCiNEMo/74xDeTcyWeiOv6iN9cpLaK4n8=
-Received: from localhost (ec2-34-206-19-101.compute-1.amazonaws.com
- [34.206.19.101])
- by venus.catern.com (Postfix) with ESMTPSA id 0564E2C2971;
- Wed, 28 Aug 2019 20:17:13 +0000 (UTC)
-From: Spencer Baugh <sbaugh@catern.com>
-To: Jeff Layton <jlayton@kernel.org>, linux-fsdevel@vger.kernel.org
-Subject: Re: [PATCH RESEND v11 7/8] open: openat2(2) syscall
-In-Reply-To: <4da231cd52880991d8a038adb8fbb2ef3d724db9.camel@kernel.org>
-References: <20190820033406.29796-1-cyphar@cyphar.com>
- <20190820033406.29796-8-cyphar@cyphar.com> <854l2366zp.fsf@catern.com>
- <4da231cd52880991d8a038adb8fbb2ef3d724db9.camel@kernel.org>
-Date: Wed, 28 Aug 2019 20:17:07 +0000
-Message-ID: <85y2zd3v0c.fsf@catern.com>
+ id 1i34SM-0006Xk-Eq
+ for linux-arm-kernel@bombadil.infradead.org; Wed, 28 Aug 2019 20:22:14 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=mwIgPQ0U3pATqGjKmjCsEUAR/LGRI1zRVmHzmqKpcRg=; b=RB0oTYlvA2IQNd3qJl8isI2WT
+ RUyvvAI3wkbClmP2fEOKoGkwShGWlCZqcyDd1McA3cuUg+OvSyZWr1J6FvtItYd7iP0ADRFVrXDro
+ 1aWyvdx68WrUhpkuOLFtylQL4SZveG7EPia4mcsUtc9ktp7SPrPC8HX0Yyb9sAUnqCJXdKsJpFW2u
+ 2RE2pDyeI1iVxbP1sZKW05S+xPXRMj5rAHoChSscooXyAxSS2ol7nFWle/SwnQO2WMO9R0ONO6rIZ
+ qJI0VhNCkJhbVpxrOW4eDyZ0jNdFNGlTLzUwFS0WVsUFf+UQhLXHJWlnwVwWdHW2fytFXXrB7jdCj
+ q2p5R66mg==;
+Received: from [179.182.3.211] (helo=sandy.ghostprotocols.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1i34SK-0000Z2-GE; Wed, 28 Aug 2019 20:22:12 +0000
+Received: by sandy.ghostprotocols.net (Postfix, from userid 1000)
+ id E5D50119; Wed, 28 Aug 2019 17:22:05 -0300 (BRT)
+Date: Wed, 28 Aug 2019 17:22:05 -0300
+From: Arnaldo Carvalho de Melo <acme@redhat.com>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH 0/5] perf: Treat perf_event_paranoid and kptr_restrict
+ like the kernel does it
+Message-ID: <20190828202205.GG2053@redhat.com>
+References: <1566869956-7154-1-git-send-email-ilubashe@akamai.com>
+ <CANLsYkwZm9ehopjDMXNw-3JOj8MPeT_shPPJBOeLNe7BUtibmA@mail.gmail.com>
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_132403_388470_1E1BFABE 
-X-CRM114-Status: GOOD (  13.41  )
-X-Spam-Score: 2.3 (++)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.3 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+Content-Disposition: inline
+In-Reply-To: <CANLsYkwZm9ehopjDMXNw-3JOj8MPeT_shPPJBOeLNe7BUtibmA@mail.gmail.com>
+X-Url: http://acmel.wordpress.com
+User-Agent: Mutt/1.5.20 (2009-12-10)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,63 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-api@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, linuxppc-dev@ozlabs.org,
- linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki Poulouse <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Alexey Budankov <alexey.budankov@linux.intel.com>,
+ Igor Lubashev <ilubashe@akamai.com>, James Morris <jmorris@namei.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Peter Zijlstra <peterz@infradead.org>, Jiri Olsa <jolsa@kernel.org>,
+ Namhyung Kim <namhyung@kernel.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Jeff Layton <jlayton@kernel.org> writes:
-> On Mon, 2019-08-26 at 19:50 +0000, sbaugh@catern.com wrote:
->> Aleksa Sarai <cyphar@cyphar.com> writes:
->> > To this end, we introduce the openat2(2) syscall. It provides all of the
->> > features of openat(2) through the @how->flags argument, but also
->> > also provides a new @how->resolve argument which exposes RESOLVE_* flags
->> > that map to our new LOOKUP_* flags. It also eliminates the long-standing
->> > ugliness of variadic-open(2) by embedding it in a struct.
->> 
->> I don't like this usage of a structure in memory to pass arguments that
->> would fit in registers. This would be quite inconvenient for me as a
->> userspace developer.
->> 
->> Others have brought up issues with this: the issue of seccomp, and the
->> issue of mismatch between the userspace interface and the kernel
->> interface, are the most important for me. I want to add another,
->> admittedly somewhat niche, concern.
->> 
->> This interfaces requires a program to allocate memory (even on the
->> stack) just to pass arguments to the kernel which could be passed
->> without allocating that memory. That makes it more difficult and less
->> efficient to use this syscall in any case where memory is not so easily
->> allocatable: such as early program startup or assembly, where the stack
->> may be limited in size or not even available yet, or when injecting a
->> syscall while ptracing.
->> 
->> A struct-passing interface was needed for clone, since we ran out of
->> registers; but we have not run out of registers yet for openat, so it
->> would be nice to avoid this if we can. We can always expand later...
->> 
->
-> We can't really expand later like you suggest.
->
-> Suppose in a couple of years that we need to add some new argument to
-> openat2 that isn't just a new flag. If all these values are passed by
-> individual arguments, you can't add one later without adding yet another
-> syscall.
+Em Wed, Aug 28, 2019 at 01:31:21PM -0600, Mathieu Poirier escreveu:
+> On Mon, 26 Aug 2019 at 19:40, Igor Lubashev <ilubashe@akamai.com> wrote:
+> > Igor Lubashev (5):
+> >   perf event: Check ref_reloc_sym before using it
+> >   perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid checks
+> >   perf util: kernel profiling is disallowed only when perf_event_paranoid > 1
+> >   perf symbols: Use CAP_SYSLOG with kptr_restrict checks
+> >   perf: warn that perf_event_paranoid can restrict kernel symbols
 
-Sure we can. This new syscall doesn't need to use all 6 available
-arguments. It can enforce that the unused ones are 0. Then if we
-eventually run out of flags and need to switch to pass arguments via
-struct, we can just use one of the unused arguments for that purpose.
+> >  tools/perf/arch/arm/util/cs-etm.c    |  3 ++-
+ 
+> For the coresight part:
+ 
+> Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org>
+ 
+> >  tools/perf/arch/arm64/util/arm-spe.c |  3 ++-
+> >  tools/perf/arch/x86/util/intel-bts.c |  3 ++-
+> >  tools/perf/arch/x86/util/intel-pt.c  |  2 +-
+> >  tools/perf/builtin-record.c          |  2 +-
+> >  tools/perf/builtin-top.c             |  2 +-
+> >  tools/perf/builtin-trace.c           |  2 +-
+> >  tools/perf/util/event.c              |  7 ++++---
+> >  tools/perf/util/evsel.c              |  2 +-
+> >  tools/perf/util/symbol.c             | 15 ++++++++++++---
+> >  10 files changed, 27 insertions(+), 14 deletions(-)
+> 
+> For the set:
+> 
+> Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 
-Even if we used all 6 arguments, in the worst-case scenario, the last
-flag we add could change the interpretation of some other argument so it
-can be used to pass a pointer to a struct.
+Thanks, updated the patches with your tags,
+
+- Arnaldo
 
 _______________________________________________
 linux-arm-kernel mailing list
