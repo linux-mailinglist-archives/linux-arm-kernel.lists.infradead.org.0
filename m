@@ -2,66 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 806189FFC5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:25:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D69C19FFC2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:25:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=u/pTf+KyY10GEW0LrfZ+JULTWuKSr/y0ZfootXCh1Xo=; b=N6UbsxYM/XVHz4
-	Tlhji7FUSUJuhg2rwF8puMWagpoSlxpwJm8S3/WI6Pftl/88P4fowr2CEWJ7KMlBY3yKU1agYWVcv
-	9io6gFC8kFrkYx6wip0yW6L6JIdTVCDskwvzQSGFJAdJCQv30BvqRP2acYcX4cm9OGqUl01/oIyKx
-	zvIQc7cWJZgOpzNWD2YH4Co1pkWmzqxpTVb4HmFm8yIlUJCz7choJWS5QQM+rU7pAlDzxazn/lSZ6
-	2dPkfWiJO2Zdr5nRKoaFDEnjnmQ5NmjyYZqsmti4kW7opkE1HVkKOu5cBKTXgTWd1++/2dOKndIsx
-	zyohNRFFWl2z8v9w78OA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=93OZCKioMLxC4vxT9KMEnOCYPnXLq+97uq69LMH5P40=; b=twyLv4GiNhFT7Y
+	hHZn41KOumcaRxgcfvlwe4la0CVk6SU3ZO+VU+x1Ff1I5dqg1+5PpXfFMTtI35avVN7T7SAma1KRn
+	m+QB4PoFTnJEMdkgt73Cs8KaBFSl08D3tNBv2KS07kRc6lfj3hIRX6FnVGevb7DHNRxYOC52SFs7J
+	QFFhtgUPJl/099mxFn9z1jKlHmiM5SDEjaF1nDWeK6ef4/zMzF8jH3ZhSz7JVja6mwHw6lIDUn4uu
+	KjV4ttA0l3DIJEjNazm23ydbrp3zINB4ratTBq0cVH+McLTrseSdzKA6lJJZSbdYPDMLgwnModp0u
+	7u7qjNCbIMGEyQSWaTgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2v8r-0004ls-0Y; Wed, 28 Aug 2019 10:25:29 +0000
+	id 1i2v8b-0003JJ-4x; Wed, 28 Aug 2019 10:25:13 +0000
 Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2v7k-0002vU-51
+ id 1i2v7k-0002vy-5t
  for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:24:22 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id 8A9BC42ECA;
- Wed, 28 Aug 2019 10:24:17 +0000 (UTC)
+ by mta-01.yadro.com (Postfix) with ESMTP id B2AF442ECC;
+ Wed, 28 Aug 2019 10:24:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
  content-type:content-type:content-transfer-encoding:mime-version
- :x-mailer:message-id:date:date:subject:subject:from:from
- :received:received:received; s=mta-01; t=1566987856; x=
- 1568802257; bh=Z6gOnxcpev6cYIQbp+Z/8lEArpM2TigF6DeTVeb0yng=; b=k
- wmQFRM/I89DOCih7PaiIHF4zHrTVZ+bsn/DPLjtA63cNXJn5mCciiyogFMzZsn9S
- jY+Tdzv83e/f5H+J1QgAUObu7EkT6z5D42Rlykfb4MiRYnfIteHHtyJN0xfp/DER
- XbYXeIaBX0RMsL3Y3VAnYlCLWnX7kaBxxf+nvpmrvY=
+ :references:in-reply-to:x-mailer:message-id:date:date:subject
+ :subject:from:from:received:received:received; s=mta-01; t=
+ 1566987857; x=1568802258; bh=mEhEh6gAJzPJESzZ96RxoI02+oLNMejWhrw
+ LDGL5SN0=; b=kKOabCZVeDyfKrSCli9AkXX2Agt3eD3zzw2mcblcZTYGiS1H9Wn
+ HTxaSHs0GO5StyQtHNTvtzOjH8GVPxf2ojsZeGerV4OWL9qDH/ZFNa6+N54WEvvP
+ xHv1cEw2wCjtefWPgQu1iATdxLHQhC5IiewfNk0YpLIn9Qw0gSnu2VBk=
 X-Virus-Scanned: amavisd-new at yadro.com
 Received: from mta-01.yadro.com ([127.0.0.1])
  by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id ljMMtvMPotI3; Wed, 28 Aug 2019 13:24:16 +0300 (MSK)
+ with ESMTP id g55r3vv1PqKs; Wed, 28 Aug 2019 13:24:17 +0300 (MSK)
 Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
  [172.17.10.102])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id A91F9404CB;
- Wed, 28 Aug 2019 13:24:14 +0300 (MSK)
+ by mta-01.yadro.com (Postfix) with ESMTPS id C344742E7D;
+ Wed, 28 Aug 2019 13:24:16 +0300 (MSK)
 Received: from localhost.dev.yadro.com (172.17.15.69) by
  T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
- 15.1.669.32; Wed, 28 Aug 2019 13:24:13 +0300
+ 15.1.669.32; Wed, 28 Aug 2019 13:24:16 +0300
 From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
  <wim@linux-watchdog.org>
-Subject: [PATCH v4 0/4] add dual-boot support
-Date: Wed, 28 Aug 2019 13:23:58 +0300
-Message-ID: <20190828102402.13155-1-i.mikhaylov@yadro.com>
+Subject: [PATCH v4 1/4] vesnin: add wdt2 section with alt-boot option
+Date: Wed, 28 Aug 2019 13:23:59 +0300
+Message-ID: <20190828102402.13155-2-i.mikhaylov@yadro.com>
 X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190828102402.13155-1-i.mikhaylov@yadro.com>
+References: <20190828102402.13155-1-i.mikhaylov@yadro.com>
 MIME-Version: 1.0
 X-Originating-IP: [172.17.15.69]
 X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
  T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_032420_683507_47C5562A 
-X-CRM114-Status: GOOD (  11.16  )
+X-CRM114-CacheID: sfid-20190828_032420_472009_80031370 
+X-CRM114-Status: UNSURE (   8.49  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -98,40 +101,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ASPEED SoCs support dual-boot feature for SPI Flash.
-When strapped appropriately, the SoC starts wdt2 (/dev/watchdog1)
-and if within a minute it is not disabled, it goes off and reboots
-the SoC from an alternate SPI Flash chip by changing CS0 controls
-to actually drive CS1 line.
+Adds wdt2 section with 'alt-boot' option into dts for vesnin.
 
-When booted from alternate chip, in order to access the main chip
-at CS0, the user must reset the appropriate bit in the watchdog
-hardware. There is no interface that would allow to do that from
-an embedded firmware startup script.
+Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
+---
+ arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-This commit implements support for that feature:
-
-* Enable 'alt-boot' option for wdt2
-
-* Enable secondary SPI flash chip
-
-* Make it possible to get access to the primary SPI flash chip at CS0
-  after booting from the alternate chip at CS1. A sysfs interface is added
-  to provide an easy way for embedded firmware startup scripts to clear
-  the chip select bit to gain access to the primary flash chip in order
-  to allow for recovery of its contents.
-
-Ivan Mikhaylov (4):
-  vesnin: add wdt2 section with alt-boot option
-  vesnin: add secondary SPI flash chip
-  watchdog/aspeed: add support for dual boot
-  aspeed/watchdog: Add access_cs0 option for alt-boot
-
- .../ABI/testing/sysfs-class-watchdog          | 34 ++++++++++
- arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts   | 12 ++++
- drivers/watchdog/aspeed_wdt.c                 | 65 ++++++++++++++++++-
- 3 files changed, 110 insertions(+), 1 deletion(-)
-
+diff --git a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+index 0b9e29c3212e..2ee26c86a32e 100644
+--- a/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
++++ b/arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts
+@@ -222,3 +222,7 @@
+ &vuart {
+ 	status = "okay";
+ };
++
++&wdt2 {
++	aspeed,alt-boot;
++};
 -- 
 2.20.1
 
