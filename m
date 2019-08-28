@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A78789FBAB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 09:27:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A48469FBAF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 09:28:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XKlZ1HvJAFRyH8HuCnP5Qz7XzVFJL/P6KbtROza6KVo=; b=sIBTJEb1t/9Ljm
-	kyO3gXBXr2CBZoFKcPnxy/f06Y0ny26RpFshK+IX83wT0iX1xVou9yqVldLYikjZ1UDMbOnDoTzJ8
-	CObOJutQq3pE2pP4SyG7jF2/kvN/kyvZFtKaHCLwrchjxyF/4v3EjI/XgamDmIr/y445illyXyZg4
-	+D+H4axS13ylIHqBKQ0y5gAftIAChZXAWchkEiksFKluxzaVOUmN0P/UgaSHuQCYFZX7w8EnWyK6g
-	2SyJZn4i+mbve/hV7hwUdfgq9uI+1BjrQzX0aipiKDrYJ/ZUhyeBl/NQoSn8FAqFRbVIOqYMqqCS8
-	IaW3Tyrz3lPeO50V1BAA==;
+	List-Owner; bh=tAPKM5VAK7RcbmQqjdaJCBjZDCr80Dm1F78gRzwtbp4=; b=PZxy+VvTpkcnDM
+	Qtbf8SmqQWZA8G4ns6hyH/jsIPJuO6I0+qxD0+TrXVmFTdzO7I8ymMhCrU8NTngMw2iRujm+Ar3OM
+	iyuZwB/OaZtcSXSdcmFcckZ7ewNED1mglFij70LU0WQR8BeBJTs3aCYrShCqij5TlxQwiYQxSQNso
+	bpOmvp4WMhl1rEH68ZlT2adkpXbME2oJorK1lHCO9/By81ViSx9Bp3SoG+0/b246jyfsQzDmp5EVY
+	UK8UQVOb9oj351TXPmpJKIyqwtROhvV1wVsRzW5R6nSq9jxe3EbGNFyyONlAZIRTaE2E0UCp24rSy
+	g2HWO2Z1MZ6JlavDaa3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2sMb-0004fq-Qk; Wed, 28 Aug 2019 07:27:29 +0000
+	id 1i2sNV-0005Sb-KC; Wed, 28 Aug 2019 07:28:25 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2sM4-0004Mm-MO
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 07:26:58 +0000
+ id 1i2sM8-0004O8-Kp
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 07:27:02 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id A2A66D8243;
- Wed, 28 Aug 2019 09:26:52 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 2C2D8D8242;
+ Wed, 28 Aug 2019 09:26:59 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id R5b8ogL_FOtz; Wed, 28 Aug 2019 09:26:40 +0200 (CEST)
+ with ESMTP id tIPPGnGMCsN7; Wed, 28 Aug 2019 09:26:40 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 4C0B7D8304;
+ by zimbra.v3.sk (Postfix) with ESMTP id C1792D8305;
  Wed, 28 Aug 2019 09:26:39 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id vzay8Ov0hJIL; Wed, 28 Aug 2019 09:26:36 +0200 (CEST)
+ with ESMTP id 2L3KDr55dI5W; Wed, 28 Aug 2019 09:26:37 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 02D3FD82F8;
- Wed, 28 Aug 2019 09:26:35 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 41643D82F9;
+ Wed, 28 Aug 2019 09:26:36 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: Olof Johansson <olof@lixom.net>
-Subject: [PATCH v3 1/6] ARM: dts: mmp2: trivial whitespace fix
-Date: Wed, 28 Aug 2019 09:26:24 +0200
-Message-Id: <20190828072629.285760-2-lkundrak@v3.sk>
+Subject: [PATCH v3 2/6] ARM: dts: mmp2: fix the SPI nodes
+Date: Wed, 28 Aug 2019 09:26:25 +0200
+Message-Id: <20190828072629.285760-3-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190828072629.285760-1-lkundrak@v3.sk>
 References: <20190828072629.285760-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_002656_886238_0374483C 
-X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-CacheID: sfid-20190828_002700_852750_BD077E95 
+X-CRM114-Status: UNSURE (   8.10  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,27 +80,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-A missing space before a curly brace.
+The SPI bus has a single address cell and not size cells.
+
+Also, dtc thinks the SPI nodes are preferrably called "spi" and it is
+right to think so.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 Acked-by: Pavel Machek <pavel@ucw.cz>
 ---
- arch/arm/boot/dts/mmp2.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm/boot/dts/mmp2.dtsi | 16 ++++++++++++----
+ 1 file changed, 12 insertions(+), 4 deletions(-)
 
 diff --git a/arch/arm/boot/dts/mmp2.dtsi b/arch/arm/boot/dts/mmp2.dtsi
-index b6f40743e07b0..50b6c38b39cc3 100644
+index 50b6c38b39cc3..e64639ce57a91 100644
 --- a/arch/arm/boot/dts/mmp2.dtsi
 +++ b/arch/arm/boot/dts/mmp2.dtsi
-@@ -379,7 +379,7 @@
+@@ -346,35 +346,43 @@
+ 				status = "disabled";
+ 			};
+ 
+-			ssp1: ssp@d4035000 {
++			ssp1: spi@d4035000 {
+ 				compatible = "marvell,mmp2-ssp";
+ 				reg = <0xd4035000 0x1000>;
+ 				clocks = <&soc_clocks MMP2_CLK_SSP0>;
+ 				interrupts = <0>;
++				#address-cells = <1>;
++				#size-cells = <0>;
+ 				status = "disabled";
+ 			};
+ 
+-			ssp2: ssp@d4036000 {
++			ssp2: spi@d4036000 {
+ 				compatible = "marvell,mmp2-ssp";
+ 				reg = <0xd4036000 0x1000>;
+ 				clocks = <&soc_clocks MMP2_CLK_SSP1>;
+ 				interrupts = <1>;
++				#address-cells = <1>;
++				#size-cells = <0>;
+ 				status = "disabled";
+ 			};
+ 
+-			ssp3: ssp@d4037000 {
++			ssp3: spi@d4037000 {
+ 				compatible = "marvell,mmp2-ssp";
+ 				reg = <0xd4037000 0x1000>;
+ 				clocks = <&soc_clocks MMP2_CLK_SSP2>;
+ 				interrupts = <20>;
++				#address-cells = <1>;
++				#size-cells = <0>;
+ 				status = "disabled";
+ 			};
+ 
+-			ssp4: ssp@d4039000 {
++			ssp4: spi@d4039000 {
+ 				compatible = "marvell,mmp2-ssp";
+ 				reg = <0xd4039000 0x1000>;
+ 				clocks = <&soc_clocks MMP2_CLK_SSP3>;
+ 				interrupts = <21>;
++				#address-cells = <1>;
++				#size-cells = <0>;
+ 				status = "disabled";
  			};
  		};
- 
--		soc_clocks: clocks{
-+		soc_clocks: clocks {
- 			compatible = "marvell,mmp2-clock";
- 			reg = <0xd4050000 0x1000>,
- 			      <0xd4282800 0x400>,
 -- 
 2.21.0
 
