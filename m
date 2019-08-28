@@ -2,52 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E24BEA012D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:00:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0499A0134
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:01:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=89q5dAMBww1RKT3vEHavNb0nrGe63K3Wye1Y7omTbzc=; b=o5G
-	ZhIebclmkDloudMGYaURbunfZQ1cSE98WUAW3HfBTdFPZ6r1ZJTYhBQMC+5q9tR56dmYcXCbfeplo
-	o370nme0e0fJEGX3AoQhpbGTrVscduLxOiLaRhXUwmE5voY8P4SurIMGCK/2jdo3KAh9h+Ty6m60P
-	Uxk58YpPR3/mfRWkOrmHUu06yO75mCByraoWz2gj5oD5IrYQgtPPlEnZROs40EV84R04+TiXYxLye
-	bPMkxGkuQs8Z513ZXrdmcD8BdHysgh1n05ZWt8uc7U7iZG2kWxL2L6T25FD6Dx0P6dArEYaxGKatx
-	PVRKLlOzZOlhpl7TNBUaha4DewNTegw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=/JHoNb9b+KXk1kCvgyjbNRZotGSas+ONAbhpXnCBtmQ=; b=pbfwufl4Sa4ogj5/qr7qfHNb+W
+	PZPOm8d8k2rotmeOGMinweyf8DHZQfs0E8NMnW4FgJy0I6A+avOsWJxI8MkUV2o+tr2458U2Ai1bL
+	dCPlKF+BIE26viMMcJvRbMXBzvqP7CX7OBC7SkJBO575/vFbhFLY6cyDyhNWwPtVouOkgSPZ2PNkb
+	knLTx6ctHbgKKRQk6YjyE8NqGkGCQBBrNNAH68cuPVtXY8NygQuXrbOiPgvqVg5Xj77PggPNFC96O
+	dUeMUx3O6F2NgqvhxJq0Ji+pmY15u+ygMY56PhOIfQ6ip90nyejtn3b5HLGpq+RyZUEpdXk2qRTd4
+	GmTG1uBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2wcQ-0005cK-RT; Wed, 28 Aug 2019 12:00:07 +0000
-Received: from albert.telenet-ops.be ([2a02:1800:110:4::f00:1a])
+	id 1i2wdH-0007Xp-4Q; Wed, 28 Aug 2019 12:00:59 +0000
+Received: from xavier.telenet-ops.be ([2a02:1800:120:4::f00:14])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2wbF-0004m0-8h
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 11:58:56 +0000
-Received: from ramsan ([84.194.98.4]) by albert.telenet-ops.be with bizsmtp
- id ubyi2000505gfCL06byiqE; Wed, 28 Aug 2019 13:58:44 +0200
+ id 1i2wbG-0004m9-25
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 11:58:57 +0000
+Received: from ramsan ([84.194.98.4]) by xavier.telenet-ops.be with bizsmtp
+ id ubyi2000e05gfCL01byipu; Wed, 28 Aug 2019 13:58:45 +0200
 Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i2wb4-0008As-3X; Wed, 28 Aug 2019 13:58:42 +0200
+ id 1i2wb4-0008As-Ef; Wed, 28 Aug 2019 13:58:42 +0200
 Received: from geert by rox.of.borg with local (Exim 4.90_1)
  (envelope-from <geert@linux-m68k.org>)
- id 1i2wFQ-0001kT-69; Wed, 28 Aug 2019 13:36:20 +0200
+ id 1i2wFQ-0001kV-7N; Wed, 28 Aug 2019 13:36:20 +0200
 From: Geert Uytterhoeven <geert+renesas@glider.be>
 To: Magnus Damm <magnus.damm@gmail.com>
-Subject: [PATCH v2 0/7] soc: renesas: rcar-gen3-sysc: Fix power request
- conflicts
-Date: Wed, 28 Aug 2019 13:36:11 +0200
-Message-Id: <20190828113618.6672-1-geert+renesas@glider.be>
+Subject: [PATCH v2 1/7] soc: renesas: rcar-sysc: Prepare for fixing power
+ request conflicts
+Date: Wed, 28 Aug 2019 13:36:12 +0200
+Message-Id: <20190828113618.6672-2-geert+renesas@glider.be>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190828113618.6672-1-geert+renesas@glider.be>
+References: <20190828113618.6672-1-geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_045853_467561_2146D591 
-X-CRM114-Status: GOOD (  10.54  )
+X-CRM114-CacheID: sfid-20190828_045854_785753_919E7B00 
+X-CRM114-Status: GOOD (  12.90  )
 X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a02:1800:110:4:0:0:f00:1a listed in]
+ low trust [2a02:1800:120:4:0:0:f00:14 listed in]
  [list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
@@ -73,8 +76,6 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-	Hi all,
-
 Recent R-Car Gen3 SoCs added an External Request Mask Register to the
 System Controller (SYSC).  This register allows to mask external power
 requests for CPU or 3DG domains, to prevent conflicts between powering
@@ -82,72 +83,91 @@ off CPU cores or the 3D Graphics Engine, and changing the state of
 another power domain through SYSC, which could lead to CPG state machine
 lock-ups.
 
-This patch series starts making use of this register.  Note that the
+Add support for making use of this register.  Take into account that the
 register is optional, and that its location and contents are
 SoC-specific.
 
-This was inspired by a patch in the BSP by Dien Pham
-<dien.pham.ry@renesas.com>.
+Note that the issue fixed by this cannot happen in the upstream kernel,
+as upstream has no support for graphics acceleration yet.  SoCs lacking
+the External Request Mask Register may need a different mitigation in
+the future.
 
-Note that the issue fixed cannot happen in the upstream kernel, as
-upstream has no support for graphics acceleration yet.  SoCs lacking the
-External Request Mask Register may need a different mitigation in the
-future.
+Inspired by a patch in the BSP by Dien Pham <dien.pham.ry@renesas.com>.
 
-Changes compared to v1[1]:
-  - Improve description of cover letter and first patch.
+Signed-off-by: Geert Uytterhoeven <geert+renesas@glider.be>
+---
+v2:
+  - Improve patch description.
+---
+ drivers/soc/renesas/rcar-sysc.c | 16 ++++++++++++++++
+ drivers/soc/renesas/rcar-sysc.h |  3 +++
+ 2 files changed, 19 insertions(+)
 
-Changes compared to RFC[2]:
-  - Rebased.
-
-This has been boot-tested on R-Car H3 ES1.0, H3 ES2.0, M3-W ES1.0, M3-N,
-V3M, and E3 (only the last 3 have this register!), and regression-tested
-on R-Car Gen2.
-
-This has not been tested on R-Car H3 ES3.0, M3-W ES2.0, and V3H.
-
-For your convenience, this series is available in the
-topic/rcar3-sysc-extmask-v2 branch of my renesas-drivers git repository at
-git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git.
-
-Thanks for your comments!
-
-[1] Not posted, but included in yesterday's renesas-drivers-2019-08-27-v5.3-rc6
-[2] "[RFC PATCH 0/7] soc: renesas: rcar-gen3-sysc: Fix power request conflicts"
-    (https://lore.kernel.org/linux-renesas-soc/20181205155028.14335-1-geert+renesas@glider.be/)
+diff --git a/drivers/soc/renesas/rcar-sysc.c b/drivers/soc/renesas/rcar-sysc.c
+index 59b5e6b102722a6d..176de145f4230fbd 100644
+--- a/drivers/soc/renesas/rcar-sysc.c
++++ b/drivers/soc/renesas/rcar-sysc.c
+@@ -63,6 +63,7 @@ struct rcar_sysc_ch {
  
-Geert Uytterhoeven (7):
-  soc: renesas: rcar-sysc: Prepare for fixing power request conflicts
-  soc: renesas: r8a7795-sysc: Fix power request conflicts
-  soc: renesas: r8a7796-sysc: Fix power request conflicts
-  soc: renesas: r8a77965-sysc: Fix power request conflicts
-  soc: renesas: r8a77970-sysc: Fix power request conflicts
-  soc: renesas: r8a77980-sysc: Fix power request conflicts
-  soc: renesas: r8a77990-sysc: Fix power request conflicts
-
- drivers/soc/renesas/r8a7795-sysc.c  | 32 ++++++++++++++++++++++++-----
- drivers/soc/renesas/r8a7796-sysc.c  | 22 +++++++++++++++++++-
- drivers/soc/renesas/r8a77965-sysc.c |  3 +++
- drivers/soc/renesas/r8a77970-sysc.c |  3 +++
- drivers/soc/renesas/r8a77980-sysc.c |  3 +++
- drivers/soc/renesas/r8a77990-sysc.c |  3 +++
- drivers/soc/renesas/rcar-sysc.c     | 16 +++++++++++++++
- drivers/soc/renesas/rcar-sysc.h     |  7 +++++--
- 8 files changed, 81 insertions(+), 8 deletions(-)
-
+ static void __iomem *rcar_sysc_base;
+ static DEFINE_SPINLOCK(rcar_sysc_lock); /* SMP CPUs + I/O devices */
++static u32 rcar_sysc_extmask_offs, rcar_sysc_extmask_val;
+ 
+ static int rcar_sysc_pwr_on_off(const struct rcar_sysc_ch *sysc_ch, bool on)
+ {
+@@ -105,6 +106,14 @@ static int rcar_sysc_power(const struct rcar_sysc_ch *sysc_ch, bool on)
+ 
+ 	spin_lock_irqsave(&rcar_sysc_lock, flags);
+ 
++	/*
++	 * Mask external power requests for CPU or 3DG domains
++	 */
++	if (rcar_sysc_extmask_val) {
++		iowrite32(rcar_sysc_extmask_val,
++			  rcar_sysc_base + rcar_sysc_extmask_offs);
++	}
++
+ 	/*
+ 	 * The interrupt source needs to be enabled, but masked, to prevent the
+ 	 * CPU from receiving it.
+@@ -148,6 +157,9 @@ static int rcar_sysc_power(const struct rcar_sysc_ch *sysc_ch, bool on)
+ 	iowrite32(isr_mask, rcar_sysc_base + SYSCISCR);
+ 
+  out:
++	if (rcar_sysc_extmask_val)
++		iowrite32(0, rcar_sysc_base + rcar_sysc_extmask_offs);
++
+ 	spin_unlock_irqrestore(&rcar_sysc_lock, flags);
+ 
+ 	pr_debug("sysc power %s domain %d: %08x -> %d\n", on ? "on" : "off",
+@@ -360,6 +372,10 @@ static int __init rcar_sysc_pd_init(void)
+ 
+ 	rcar_sysc_base = base;
+ 
++	/* Optional External Request Mask Register */
++	rcar_sysc_extmask_offs = info->extmask_offs;
++	rcar_sysc_extmask_val = info->extmask_val;
++
+ 	domains = kzalloc(sizeof(*domains), GFP_KERNEL);
+ 	if (!domains) {
+ 		error = -ENOMEM;
+diff --git a/drivers/soc/renesas/rcar-sysc.h b/drivers/soc/renesas/rcar-sysc.h
+index 485520a5b295c13e..21ee3ff8620bbafe 100644
+--- a/drivers/soc/renesas/rcar-sysc.h
++++ b/drivers/soc/renesas/rcar-sysc.h
+@@ -44,6 +44,9 @@ struct rcar_sysc_info {
+ 	int (*init)(void);	/* Optional */
+ 	const struct rcar_sysc_area *areas;
+ 	unsigned int num_areas;
++	/* Optional External Request Mask Register */
++	u32 extmask_offs;	/* SYSCEXTMASK register offset */
++	u32 extmask_val;	/* SYSCEXTMASK register mask value */
+ };
+ 
+ extern const struct rcar_sysc_info r8a7743_sysc_info;
 -- 
 2.17.1
 
-Gr{oetje,eeting}s,
-
-						Geert
-
---
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
-
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
