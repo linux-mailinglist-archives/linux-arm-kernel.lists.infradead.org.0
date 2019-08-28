@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 058939FAAF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 08:38:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B734F9FAA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 08:38:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hS+0juf53hXBoIZX17vSjlLFbnSBUNCxFT7MUJPBC1I=; b=bkLqdbGh+nyG5Z
-	29LJfUJf/YBuoblGNThUVNSMfirFQ2JVpTcBrJeTbnX7LIT0w7/pljeb0mecS8r/mwn1arwy1Im+J
-	eX6K69QX4iK1ss5DxUwaBgEJJrsM5f9gUmsRp+43Br86R1PE08G1u8dTCEPTciDzYIli0pUL3NJhT
-	edDzmTlOEtfmbBz/bP7ilOquNmXgntPkNSxe2eaiDnpKqhfR22TqrejUC2VbiRDExIuY/0AXe7vR6
-	KVAoSWNFQik4UtK58dcvL6nxE/oDcfv8gQg87+qmewFdAxLZstS6ue1gvAh+oCphV2KpgnBIDBjip
-	zGibajPS7nQ5rTADXhgg==;
+	List-Owner; bh=YGjXJHafBnq99Gx29DDmtLD67i3wOqmxxQe6rcG+cmg=; b=nRNggLt3++b5J1
+	OXDUacxL2W6GxG38qAwPf/0Xxazv1ySge5wij+AV3zpvoLwk1Cj+8Y4pCVIxLuzwZEZq+3PJ5x5K6
+	s29VOJf7oeEd87gqbunscOAJcGTpITuvcCfcg4wAyeVLLjLkMOXZA8IAZRdJlT2bcWcP/i1thBa82
+	CL9ooWNRpPx/L+GG5z6aRk1RE9VyLcHugj201QgOWaUJo/kd1c1H3/O2VgERy3DawlcCqzIh2pKJu
+	VPoSv9kR1MKEgWRFdm6CfvNCYTPmKi29Bd2uJszH6K1cwekwpu0Alew+2cT7D3ZHzboIbnfdua9vz
+	fJ/wJMm6Og3YcfXBBpuA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2rbb-00013h-IR; Wed, 28 Aug 2019 06:38:55 +0000
+	id 1i2raj-0000Ga-PJ; Wed, 28 Aug 2019 06:38:02 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2raI-0008Ul-P3; Wed, 28 Aug 2019 06:37:36 +0000
-X-UUID: 5f062449cab745d7a271b0ec7bc02c23-20190827
-X-UUID: 5f062449cab745d7a271b0ec7bc02c23-20190827
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1i2raG-0008Th-4f; Wed, 28 Aug 2019 06:37:33 +0000
+X-UUID: 6ec78164e83344aabd3b9748dcb859b3-20190827
+X-UUID: 6ec78164e83344aabd3b9748dcb859b3-20190827
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <vic.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 168680646; Tue, 27 Aug 2019 22:37:33 -0800
-Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 27 Aug 2019 23:37:31 -0700
+ with ESMTP id 272787459; Tue, 27 Aug 2019 22:37:35 -0800
+Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 27 Aug 2019 23:37:34 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 28 Aug 2019 14:37:29 +0800
+ mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 14:37:30 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 28 Aug 2019 14:37:29 +0800
+ Frontend Transport; Wed, 28 Aug 2019 14:37:30 +0800
 From: Vic Wu <vic.wu@mediatek.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>
-Subject: [PATCH 4/5] crypto: mediatek: add support to OFB/CFB mode
-Date: Wed, 28 Aug 2019 14:37:15 +0800
-Message-ID: <20190828063716.22689-4-vic.wu@mediatek.com>
+Subject: [PATCH 5/5] crypto: mediatek: fix incorrect crypto key setting
+Date: Wed, 28 Aug 2019 14:37:16 +0800
+Message-ID: <20190828063716.22689-5-vic.wu@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190828063716.22689-1-vic.wu@mediatek.com>
 References: <20190828063716.22689-1-vic.wu@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 35CDEC2E700C3C70C1FFCDB3BFD448C152E15438D182B8786A1F96DEDA58D39F2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_233734_837137_46C06B0D 
-X-CRM114-Status: GOOD (  10.94  )
+X-CRM114-CacheID: sfid-20190827_233732_191214_4A19A088 
+X-CRM114-Status: UNSURE (   9.44  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -80,157 +80,57 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Ryder Lee <ryder.lee@mediatek.com>
+Record crypto key to context during setkey and set the key to
+transform state buffer in encrypt/decrypt process.
 
-This patch adds support to OFB/CFB mode.
-
-Signed-off-by: Ryder Lee <ryder.lee@mediatek.com>
 Signed-off-by: Vic Wu <vic.wu@mediatek.com>
 ---
- drivers/crypto/mediatek/mtk-aes.c | 85 ++++++++++++++++++++++++++++---
- 1 file changed, 78 insertions(+), 7 deletions(-)
+ drivers/crypto/mediatek/mtk-aes.c | 11 ++++++-----
+ 1 file changed, 6 insertions(+), 5 deletions(-)
 
 diff --git a/drivers/crypto/mediatek/mtk-aes.c b/drivers/crypto/mediatek/mtk-aes.c
-index 425d7f3f..9eeb8b8d 100644
+index 9eeb8b8d..05f21dc8 100644
 --- a/drivers/crypto/mediatek/mtk-aes.c
 +++ b/drivers/crypto/mediatek/mtk-aes.c
-@@ -25,7 +25,7 @@
+@@ -107,6 +107,7 @@ struct mtk_aes_reqctx {
+ struct mtk_aes_base_ctx {
+ 	struct mtk_cryp *cryp;
+ 	u32 keylen;
++	__le32 key[12];
+ 	__le32 keymode;
  
- #define AES_CT_CTRL_HDR		cpu_to_le32(0x00220000)
+ 	mtk_aes_fn start;
+@@ -541,6 +542,8 @@ static int mtk_aes_handle_queue(struct mtk_cryp *cryp, u8 id,
+ 		backlog->complete(backlog, -EINPROGRESS);
  
--/* AES-CBC/ECB/CTR command token */
-+/* AES-CBC/ECB/CTR/OFB/CFB command token */
- #define AES_CMD0		cpu_to_le32(0x05000000)
- #define AES_CMD1		cpu_to_le32(0x2d060000)
- #define AES_CMD2		cpu_to_le32(0xe4a63806)
-@@ -52,6 +52,8 @@
- /* AES transform information word 1 fields */
- #define AES_TFM_ECB		cpu_to_le32(0x0 << 0)
- #define AES_TFM_CBC		cpu_to_le32(0x1 << 0)
-+#define AES_TFM_OFB		cpu_to_le32(0x4 << 0)
-+#define AES_TFM_CFB128		cpu_to_le32(0x5 << 0)
- #define AES_TFM_CTR_INIT	cpu_to_le32(0x2 << 0)	/* init counter to 1 */
- #define AES_TFM_CTR_LOAD	cpu_to_le32(0x6 << 0)	/* load/reuse counter */
- #define AES_TFM_3IV		cpu_to_le32(0x7 << 5)	/* using IV 0-2 */
-@@ -60,13 +62,15 @@
- #define AES_TFM_ENC_HASH	cpu_to_le32(0x1 << 17)
+ 	ctx = crypto_tfm_ctx(areq->tfm);
++	/* Write key into state buffer */
++	memcpy(ctx->info.state, ctx->key, sizeof(ctx->key));
  
- /* AES flags */
--#define AES_FLAGS_CIPHER_MSK	GENMASK(2, 0)
-+#define AES_FLAGS_CIPHER_MSK	GENMASK(4, 0)
- #define AES_FLAGS_ECB		BIT(0)
- #define AES_FLAGS_CBC		BIT(1)
- #define AES_FLAGS_CTR		BIT(2)
--#define AES_FLAGS_GCM		BIT(3)
--#define AES_FLAGS_ENCRYPT	BIT(4)
--#define AES_FLAGS_BUSY		BIT(5)
-+#define AES_FLAGS_OFB		BIT(3)
-+#define AES_FLAGS_CFB128	BIT(4)
-+#define AES_FLAGS_GCM		BIT(5)
-+#define AES_FLAGS_ENCRYPT	BIT(6)
-+#define AES_FLAGS_BUSY		BIT(7)
- 
- #define AES_AUTH_TAG_ERR	cpu_to_le32(BIT(26))
- 
-@@ -412,7 +416,7 @@ exit:
- 	return mtk_aes_complete(cryp, aes, -EINVAL);
- }
- 
--/* Initialize transform information of CBC/ECB/CTR mode */
-+/* Initialize transform information of CBC/ECB/CTR/OFB/CFB mode */
- static void mtk_aes_info_init(struct mtk_cryp *cryp, struct mtk_aes_rec *aes,
- 			      size_t len)
- {
-@@ -441,7 +445,12 @@ static void mtk_aes_info_init(struct mtk_cryp *cryp, struct mtk_aes_rec *aes,
- 	case AES_FLAGS_CTR:
- 		info->tfm[1] = AES_TFM_CTR_LOAD;
- 		goto ctr;
--
-+	case AES_FLAGS_OFB:
-+		info->tfm[1] = AES_TFM_OFB;
-+		break;
-+	case AES_FLAGS_CFB128:
-+		info->tfm[1] = AES_TFM_CFB128;
-+		break;
- 	default:
- 		/* Should not happen... */
- 		return;
-@@ -704,6 +713,26 @@ static int mtk_aes_ctr_decrypt(struct ablkcipher_request *req)
- 	return mtk_aes_crypt(req, AES_FLAGS_CTR);
- }
- 
-+static int mtk_aes_ofb_encrypt(struct ablkcipher_request *req)
-+{
-+	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_OFB);
-+}
-+
-+static int mtk_aes_ofb_decrypt(struct ablkcipher_request *req)
-+{
-+	return mtk_aes_crypt(req, AES_FLAGS_OFB);
-+}
-+
-+static int mtk_aes_cfb_encrypt(struct ablkcipher_request *req)
-+{
-+	return mtk_aes_crypt(req, AES_FLAGS_ENCRYPT | AES_FLAGS_CFB128);
-+}
-+
-+static int mtk_aes_cfb_decrypt(struct ablkcipher_request *req)
-+{
-+	return mtk_aes_crypt(req, AES_FLAGS_CFB128);
-+}
-+
- static int mtk_aes_cra_init(struct crypto_tfm *tfm)
- {
- 	struct mtk_aes_ctx *ctx = crypto_tfm_ctx(tfm);
-@@ -785,6 +814,48 @@ static struct crypto_alg aes_algs[] = {
- 		.decrypt	= mtk_aes_ctr_decrypt,
+ 	aes->areq = areq;
+ 	aes->ctx = ctx;
+@@ -660,7 +663,7 @@ static int mtk_aes_setkey(struct crypto_ablkcipher *tfm,
  	}
- },
-+{
-+	.cra_name		= "ofb(aes)",
-+	.cra_driver_name	= "ofb-aes-mtk",
-+	.cra_priority		= 400,
-+	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
-+				  CRYPTO_ALG_ASYNC,
-+	.cra_init		= mtk_aes_cra_init,
-+	.cra_blocksize		= 1,
-+	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
-+	.cra_alignmask		= 0xf,
-+	.cra_type		= &crypto_ablkcipher_type,
-+	.cra_module		= THIS_MODULE,
-+	.cra_u.ablkcipher = {
-+		.min_keysize	= AES_MIN_KEY_SIZE,
-+		.max_keysize	= AES_MAX_KEY_SIZE,
-+		.ivsize		= AES_BLOCK_SIZE,
-+		.setkey		= mtk_aes_setkey,
-+		.encrypt	= mtk_aes_ofb_encrypt,
-+		.decrypt	= mtk_aes_ofb_decrypt,
-+	}
-+},
-+{
-+	.cra_name		= "cfb(aes)",
-+	.cra_driver_name	= "cfb-aes-mtk",
-+	.cra_priority		= 400,
-+	.cra_flags		= CRYPTO_ALG_TYPE_ABLKCIPHER |
-+				  CRYPTO_ALG_ASYNC,
-+	.cra_init		= mtk_aes_cra_init,
-+	.cra_blocksize		= 1,
-+	.cra_ctxsize		= sizeof(struct mtk_aes_ctx),
-+	.cra_alignmask		= 0xf,
-+	.cra_type		= &crypto_ablkcipher_type,
-+	.cra_module		= THIS_MODULE,
-+	.cra_u.ablkcipher = {
-+		.min_keysize	= AES_MIN_KEY_SIZE,
-+		.max_keysize	= AES_MAX_KEY_SIZE,
-+		.ivsize		= AES_BLOCK_SIZE,
-+		.setkey		= mtk_aes_setkey,
-+		.encrypt	= mtk_aes_cfb_encrypt,
-+		.decrypt	= mtk_aes_cfb_decrypt,
-+	}
-+},
- };
  
- static inline struct mtk_aes_gcm_ctx *
+ 	ctx->keylen = SIZE_IN_WORDS(keylen);
+-	mtk_aes_write_state_le(ctx->info.state, (const u32 *)key, keylen);
++	mtk_aes_write_state_le(ctx->key, (const u32 *)key, keylen);
+ 
+ 	return 0;
+ }
+@@ -1093,10 +1096,8 @@ static int mtk_aes_gcm_setkey(struct crypto_aead *aead, const u8 *key,
+ 	if (err)
+ 		goto out;
+ 
+-	/* Write key into state buffer */
+-	mtk_aes_write_state_le(ctx->info.state, (const u32 *)key, keylen);
+-	/* Write key(H) into state buffer */
+-	mtk_aes_write_state_be(ctx->info.state + ctx->keylen, data->hash,
++	mtk_aes_write_state_le(ctx->key, (const u32 *)key, keylen);
++	mtk_aes_write_state_be(ctx->key + ctx->keylen, data->hash,
+ 			       AES_BLOCK_SIZE);
+ out:
+ 	kzfree(data);
 -- 
 2.17.1
 
