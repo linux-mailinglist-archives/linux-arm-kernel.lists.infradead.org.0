@@ -2,50 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18112A0641
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 17:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4DA02A0662
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 17:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HWKV8HB9MryciiHouEbqV+sE9jom4t9vqrZkektLfzA=; b=kvyU6BVkZm8+T/
-	mLQxzWmCu4FLufWr3dNBcwc+HA9NyGFVAcYEYdiWe49WKLpNW3EypOPvpFNWY8wNeBCzIyzsrfD8r
-	SmG7qOIesBGdxCE3etC9zGQ4QhbSIpBPvAz+KygJSmPkozHAViusJNfYGY4yyZPooKT/0973Ki0PX
-	XuJHOM67CCzDvL10cCKJeP4zspheT5u0F6Od4GrzC8b/P2FbXme8yoQ6y+/i/9Qv4gKag6WrhgTDQ
-	gMT3VbXvN1NhaPeRVe4IGfIevJQNruKr9vIMH85wTENV1bWu2wIJ1u0DVqYyAoUpE6sylSIWq14P4
-	HAk3C+OgRK2QmETiQdnQ==;
+	List-Owner; bh=zI+sERvCmu+sbgBn9JyH8f3g1V/4Q/nRxtyQ41c0pwc=; b=NoU5YHBto6Ismv
+	bdit0Ud/e3S68X+bc4NP4N6EKlkz5TNq8LnkHOL9BTQ7YpsL1gJCAH0GQqwgGuabYOVNzZwF4jbKP
+	PPlEeXxMVn2/z2pME1uN6HbU3AHnOFVZnxadr0OrnJ0C5iu1ZFdymSabrtFgenohW/E766MK/xu32
+	YTA5XdXUQ8PceqIrL2+xYMUTlpNiNZ2qosCRSQ8wenNUTdaFsgJ0EAoe5LuZrmO4OJdxHFu1mASfZ
+	zO3g7BszN5UGDjzD9/kNlhZ8HeXnheua8nHb5n1XX+EofOAzSnic1p7kzcz8F2DFAYwLyJa8naV35
+	V6oARG2JL8LbRYI939fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2zpv-0005pF-3I; Wed, 28 Aug 2019 15:26:15 +0000
+	id 1i2zwS-0007WP-QS; Wed, 28 Aug 2019 15:33:00 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2zpZ-0005oE-Rd
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 15:25:56 +0000
+ id 1i2zwG-0007Vm-9H; Wed, 28 Aug 2019 15:32:49 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D038F28;
- Wed, 28 Aug 2019 08:25:50 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CDEEE3F59C;
- Wed, 28 Aug 2019 08:25:49 -0700 (PDT)
-Date: Wed, 28 Aug 2019 16:25:40 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v3 2/5] arm64: Use correct ll/sc atomic constraints
-Message-ID: <20190828152540.GA42408@lakrids.cambridge.arm.com>
-References: <20190812143625.42745-1-andrew.murray@arm.com>
- <20190812143625.42745-3-andrew.murray@arm.com>
- <20190822153223.GB33080@lakrids.cambridge.arm.com>
- <20190828130118.GW14582@e119886-lin.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B538D28;
+ Wed, 28 Aug 2019 08:32:46 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 27B523F59C;
+ Wed, 28 Aug 2019 08:32:45 -0700 (PDT)
+Date: Wed, 28 Aug 2019 16:32:44 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH] PCI: rockchip: Properly handle optional regulators
+Message-ID: <20190828153243.GZ14582@e119886-lin.cambridge.arm.com>
+References: <20190828150737.30285-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190828130118.GW14582@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190828150737.30285-1-thierry.reding@gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_082553_975899_F7B5AA18 
-X-CRM114-Status: GOOD (  28.99  )
+X-CRM114-CacheID: sfid-20190828_083248_416896_C8651502 
+X-CRM114-Status: GOOD (  22.46  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,156 +59,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Heiko Stuebner <heiko@sntech.de>, linux-pci@vger.kernel.org,
+ Shawn Lin <shawn.lin@rock-chips.com>, Vidya Sagar <vidyas@nvidia.com>,
+ linux-rockchip@lists.infradead.org, Bjorn Helgaas <bhelgaas@google.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 02:01:19PM +0100, Andrew Murray wrote:
-> On Thu, Aug 22, 2019 at 04:32:23PM +0100, Mark Rutland wrote:
-> > Hi Andrew,
-> > 
-> > On Mon, Aug 12, 2019 at 03:36:22PM +0100, Andrew Murray wrote:
-> > > For many of the ll/sc atomic operations we use the 'I' machine constraint
-> > > regardless to the instruction used - this may not be optimal.
-> > >
-> > > Let's add an additional parameter to the ATOMIC_xx macros that allows the
-> > > caller to specify an appropriate machine constraint.
-> > > 
-> > > Let's also improve __CMPXCHG_CASE by replacing the 'K' constraint with a
-> > > caller provided constraint. Please note that whilst we would like to use
-> > > the 'K' constraint on 32 bit operations, we choose not to provide any
-> > > constraint to avoid a GCC bug which results in a build error.
-> > > 
-> > > Earlier versions of GCC (no later than 8.1.0) appear to incorrectly handle
-> > > the 'K' constraint for the value 4294967295.
-> > 
-> > From reading the above, it's difficult to discern what's a fix and
-> > what's an improvement, and I think we need to be more explicit about
-> > that. It would also be helpful to have the necessary context up-front.
-> > 
-> > How about:
-> > 
-> > | The A64 ISA accepts distinct (but overlapping) ranges of immediates for:
-> > | 
-> > | * add arithmetic instructions ('I' machine constraint)
-> > | * sub arithmetic instructions ('J' machine constraint)
-> > | * 32-bit logical instructions ('K' machine constraint)
-> > | * 64-bit logical instructions ('L' machine constraint)
-> > | 
-> > | ... but we currently use the 'I' constraint for many atomic operations
-> > | using sub or logical instructions, which is not always valid.
-> > | 
-> > | When CONFIG_ARM64_LSE_ATOMICS is not set, this allows invalid immediates
-> > | to be passed to instructions, potentially resulting in a build failure.
-> > | When CONFIG_ARM64_LSE_ATOMICS is selected the out-of-line ll/sc atomics
-> > | always use a register as they have no visibility of the value passed by
-> > | the caller.
-> > |
-> > | This patch adds a constraint parameter to the ATOMIC_xx and
-> > | __CMPXCHG_CASE macros so that we can pass appropriate constraints for
-> > | each case, with uses updated accordingly.
-> > | 
-> > | Unfortunately prior to GCC 8.1.0 the 'K' constraint erroneously accepted
-> > | 0xffffffff, so we must instead force the use of a register.
+On Wed, Aug 28, 2019 at 05:07:37PM +0200, Thierry Reding wrote:
+> From: Thierry Reding <treding@nvidia.com>
 > 
-> Looks great - I'll adopt this, thanks for writing it.
-
-Cool. :)
-
-> > Given we haven't had any bug reports, I'm not sure whether this needs a
-> > Fixes tag or Cc stable. This has been a latent issue for a long time,
-> > but upstream code doesn't seem to have tickled it.
+> regulator_get_optional() can fail for a number of reasons besides probe
+> deferral. It can for example return -ENOMEM if it runs out of memory as
+> it tries to allocate data structures. Propagating only -EPROBE_DEFER is
+> problematic because it results in these legitimately fatal errors being
+> treated as "regulator not specified in DT".
 > 
-> Yes I guess this is more a correctness issue rather than a reproducible bug
-> in upstream code. I won't add a fixes tag or CC to stable.
-
-Sounds good to me.
-
-> > [...]
-> > 
-> > > -ATOMIC_OPS(and, and)
-> > > -ATOMIC_OPS(andnot, bic)
-> > > -ATOMIC_OPS(or, orr)
-> > > -ATOMIC_OPS(xor, eor)
-> > > +ATOMIC_OPS(and, and, K)
-> > > +ATOMIC_OPS(andnot, bic, )
-> > > +ATOMIC_OPS(or, orr, K)
-> > > +ATOMIC_OPS(xor, eor, K)
-> > 
-> > Surely it's not safe to use the K constraint here, either? AFAICT code
-> > like:
-> > 
-> >   atomic_xor(~0, &atom);
-> > 
-> > ... would suffer from the same problem as described for cmpxchg.
+> What we really want is to ignore the optional regulators only if they
+> have not been specified in DT. regulator_get_optional() returns -ENODEV
+> in this case, so that's the special case that we need to handle. So we
+> propagate all errors, except -ENODEV, so that real failures will still
+> cause the driver to fail probe.
 > 
-> Thanks for spotting this.
+> Signed-off-by: Thierry Reding <treding@nvidia.com>
+> ---
+>  drivers/pci/controller/pcie-rockchip-host.c | 16 ++++++++--------
+>  1 file changed, 8 insertions(+), 8 deletions(-)
 > 
-> Yes, I think the resolution here (and for any 32bit bitmask immediate) is to
-> drop the constraint.
+> diff --git a/drivers/pci/controller/pcie-rockchip-host.c b/drivers/pci/controller/pcie-rockchip-host.c
+> index 8d20f1793a61..ef8e677ce9d1 100644
+> --- a/drivers/pci/controller/pcie-rockchip-host.c
+> +++ b/drivers/pci/controller/pcie-rockchip-host.c
+> @@ -608,29 +608,29 @@ static int rockchip_pcie_parse_host_dt(struct rockchip_pcie *rockchip)
+>  
+>  	rockchip->vpcie12v = devm_regulator_get_optional(dev, "vpcie12v");
+>  	if (IS_ERR(rockchip->vpcie12v)) {
+> -		if (PTR_ERR(rockchip->vpcie12v) == -EPROBE_DEFER)
+> -			return -EPROBE_DEFER;
+> +		if (PTR_ERR(rockchip->vpcie12v) != -ENODEV)
+> +			return PTR_ERR(rockchip->vpcie12v);
+>  		dev_info(dev, "no vpcie12v regulator found\n");
+
+In the event that -ENODEV is returned - we don't set vpcie12v to NULL, however
+it seems that this is OK as vpcie12v is tested with IS_ERR before use everywhere
+else in this file.
+
+By the way it looks like this patch pattern could be applied right across the
+kernel, there are also others in PCI: pci-imx6 and pcie-histb.c - not sure if
+you wanted to fix those up too.
+
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+
+>  	}
+>  
+>  	rockchip->vpcie3v3 = devm_regulator_get_optional(dev, "vpcie3v3");
+>  	if (IS_ERR(rockchip->vpcie3v3)) {
+> -		if (PTR_ERR(rockchip->vpcie3v3) == -EPROBE_DEFER)
+> -			return -EPROBE_DEFER;
+> +		if (PTR_ERR(rockchip->vpcie3v3) != -ENODEV)
+> +			return PTR_ERR(rockchip->vpcie3v3);
+>  		dev_info(dev, "no vpcie3v3 regulator found\n");
+>  	}
+>  
+>  	rockchip->vpcie1v8 = devm_regulator_get_optional(dev, "vpcie1v8");
+>  	if (IS_ERR(rockchip->vpcie1v8)) {
+> -		if (PTR_ERR(rockchip->vpcie1v8) == -EPROBE_DEFER)
+> -			return -EPROBE_DEFER;
+> +		if (PTR_ERR(rockchip->vpcie1v8) != -ENODEV)
+> +			return PTR_ERR(rockchip->vpcie1v8);
+>  		dev_info(dev, "no vpcie1v8 regulator found\n");
+>  	}
+>  
+>  	rockchip->vpcie0v9 = devm_regulator_get_optional(dev, "vpcie0v9");
+>  	if (IS_ERR(rockchip->vpcie0v9)) {
+> -		if (PTR_ERR(rockchip->vpcie0v9) == -EPROBE_DEFER)
+> -			return -EPROBE_DEFER;
+> +		if (PTR_ERR(rockchip->vpcie0v9) != -ENODEV)
+> +			return PTR_ERR(rockchip->vpcie0v9);
+>  		dev_info(dev, "no vpcie0v9 regulator found\n");
+>  	}
+>  
+> -- 
+> 2.22.0
 > 
-> Do you agree that we should drop the 'K' constraint for both orr and eor
-> above?
-
-Yes, I think we should drop the 'K' for all the 32-bit logical ops.
-
-> > [...]
-> > 
-> > > -ATOMIC64_OPS(and, and)
-> > > -ATOMIC64_OPS(andnot, bic)
-> > > -ATOMIC64_OPS(or, orr)
-> > > -ATOMIC64_OPS(xor, eor)
-> > > +ATOMIC64_OPS(and, and, K)
-> > > +ATOMIC64_OPS(andnot, bic, )
-> > > +ATOMIC64_OPS(or, orr, K)
-> > > +ATOMIC64_OPS(xor, eor, K)
-> > 
-> > Shouldn't these be 'L'?
-> > 
-> > IIUC K is a subset of L, so if that's deliberate we should call that out
-> > explicitly...
-> 
-> Oooh yes that's wrong. I guess the atomic64_[and,or,xor] are rarely called
-> in the kernel which perhaps is why the compiler hasn't shouted at me.
-> 
-> Do you agree that the and, orr and eor should all be 'L' instead of 'K'?
-
-Yes, I think all the 64-bit logical ops should all use 'L'.
-
-I did a quick local test, and the 'L' constraint seems to correctly
-reject ~0UL (i.e. it doesn't seem to have a similar bug to the 'K'
-constraint).
-
-> > > +__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
-> > > +__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
-> > > +__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
-> > > +__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
-> > > +__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
-> > > +__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
-> > > +__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
-> > > +__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
-> > > +__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
-> > > +__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
-> > > +__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
-> > > +__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
-> > > +__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
-> > > +__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
-> > > +__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
-> > > +__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
-> > 
-> > ... but these uses imply that's not the case.
-> 
-> Yup, so I can leave these as they are.
-
-Yup; sounds good.
-
-Thanks,
-Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
