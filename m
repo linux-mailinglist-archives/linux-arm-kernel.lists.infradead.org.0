@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35A83A0245
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:53:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 488DBA0243
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:53:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=si/kEoCfzqcgh0n6ZsR5n3Hk5suD1MNT+jEFrUzM7VA=; b=evcFJtSmGnJYZu
-	hzGle0ATYO+SSV1m0NxdJgyGHBsbIaFXHEw12p8E3EBa4a2Y+dLK91MeJ1aCCxmiZQ9x/iPng0Vf2
-	VHznWLdGjRet9cHWBbDm58efSqKpRhMRv6mkqmX9Y+Q4jTTjyWU6lFEoy3W3VJmYEqaZcWPSnNG70
-	125k6MaIapcG4iF9u6vpOxSDXPHEOKRsthsXfMr8cGFjuNlAi84dxroiP3ZlrAkoQs3pzVIGTDkoQ
-	spitK45AwE/uOVTbkUPc8p1hxfapAS0FM676DEQZSwnkqhlhruMpZ3vMCmoCbnVdEXCNuPDUoX/S6
-	GbBYEbcU5suaPTCrBElQ==;
+	List-Owner; bh=SXhxPZ4nVNwgi4yLZaOJDAsrCNXy8HC/FsWPkGem3ps=; b=s7cinO+Y2Q8fcU
+	7+Q3QUplqoxQ6It9OWomGQnOVxQk7LvdguAVWgz0TLZbaGe3/n+vg8RqMGjlYq9vFvsWWskCzLDtg
+	MN/Kip6fY/LB3Lm5MCKxnnNhWoyrPD2jyWuQyVxbhPQ1k0nXGxrUNkf4TU0ut7ztI2Dc6oFK9a+gD
+	ATCVnAfQ+Cb0bjL4yJfqBhh99UWoHA0qhM8/Ci6K+ULPMFcyjfhVE2lCFLxpai+78qhNt5ddS4qVI
+	iHC850lzNLD1loSOE0azbcfHUN3u087XIqA0mvsWKzNYIgsFZRHv5Bn88JWQ5XG4i593M/tpcxA7Y
+	Pctx29olmd9FkWD8bSiw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xSB-0006Lw-I7; Wed, 28 Aug 2019 12:53:35 +0000
+	id 1i2xRd-0005qN-Hv; Wed, 28 Aug 2019 12:53:01 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xR2-0005YI-AR
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:52:26 +0000
+ id 1i2xQw-0005Si-QL
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:52:20 +0000
 Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
  [86.250.200.211])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 79EBA22CF5;
- Wed, 28 Aug 2019 12:52:23 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id F0C7B22CF5;
+ Wed, 28 Aug 2019 12:52:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566996744;
- bh=eJWFrJG0WakHVrL4+BcPNRmqiL0piPTN4ll/Cp4d71Q=;
+ s=default; t=1566996738;
+ bh=3e7gHni99nwSUnp2CZ88bKew4+kna+vhgl/WHKgEs/A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=zDsuz5rgYTmdAMBFCNrit4Ymn0Ahjjax3KCeYNDiDDGiAAWDBOzUXoWlVZG9X/Q6Q
- Z3VEj7fabCf12dytyFNyPOAGdVY0/omxvaeiXpKqpTCqmu1DVybsgbFzjzCBQcF/kT
- AP/BzbkTdtHN13f0L5nmdjEWyXlCek3oHUwDXaos=
+ b=oWwZEFNHKzB7hvnP0fqdesJCgvh+YMMtWrxDECi9Yb3GRj8pR7+qvNqZ8xKYBRdkA
+ p9lS/u+1cQXYQyMDEdyAjM9hcWpeQXoA3LEgWKsCEHlCm/ng+ppEbrJxgKxJfuoJxX
+ qzC1HOGvD8kGZlEqhh7viTQiIAXGlIzG8PGtiTdQ=
 From: Maxime Ripard <mripard@kernel.org>
 To: Mark Brown <broonie@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Rob Herring <robh+dt@kernel.org>,
  Frank Rowand <frowand.list@gmail.com>
-Subject: [PATCH v2 3/5] ASoC: dt-bindings: Convert Allwinner A33 codec to a
- schema
-Date: Wed, 28 Aug 2019 14:52:07 +0200
-Message-Id: <20190828125209.28173-3-mripard@kernel.org>
+Subject: [PATCH v2 4/5] ASoC: dt-bindings: Convert Allwinner A23 analog codec
+ to a schema
+Date: Wed, 28 Aug 2019 14:52:08 +0200
+Message-Id: <20190828125209.28173-4-mripard@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190828125209.28173-1-mripard@kernel.org>
 References: <20190828125209.28173-1-mripard@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_055224_639455_49F6E827 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20190828_055218_975519_E70644BA 
+X-CRM114-Status: GOOD (  14.33  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,7 +89,8 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Maxime Ripard <maxime.ripard@bootlin.com>
 
-The Allwinner A33 SoC have an embedded audio codec that is supported in Linux,
+The Allwinner A23 SoC and later have an embedded audio codec that uses a
+separate controller to drive its analog part, which is supported in Linux,
 with a matching Device Tree binding.
 
 Now that we have the DT validation in place, let's convert the device tree
@@ -102,144 +103,79 @@ Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 Changes from v1:
   - Fix subject prefix
 ---
- .../sound/allwinner,sun8i-a33-codec.yaml      | 57 +++++++++++++++++
- .../bindings/sound/sun8i-a33-codec.txt        | 63 -------------------
- 2 files changed, 57 insertions(+), 63 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
- delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
+ .../allwinner,sun8i-a23-codec-analog.yaml     | 38 +++++++++++++++++++
+ .../bindings/sound/sun8i-codec-analog.txt     | 17 ---------
+ 2 files changed, 38 insertions(+), 17 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+ delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
 
-diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
 new file mode 100644
-index 000000000000..5e7cc05bbff1
+index 000000000000..832779389cbd
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
-@@ -0,0 +1,57 @@
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
+@@ -0,0 +1,38 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a33-codec.yaml#
++$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a23-codec-analog.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Allwinner A33 Codec Device Tree Bindings
++title: Allwinner A23 Analog Codec Device Tree Bindings
 +
 +maintainers:
 +  - Chen-Yu Tsai <wens@csie.org>
 +  - Maxime Ripard <maxime.ripard@bootlin.com>
 +
 +properties:
-+  "#sound-dai-cells":
-+    const: 0
-+
 +  compatible:
-+    const: allwinner,sun8i-a33-codec
++    oneOf:
++      # FIXME: This is documented in the PRCM binding, but needs to be
++      # migrated here at some point
++      # - const: allwinner,sun8i-a23-codec-analog
++      - const: allwinner,sun8i-h3-codec-analog
++      - const: allwinner,sun8i-v3s-codec-analog
 +
 +  reg:
 +    maxItems: 1
 +
-+  interrupts:
-+    maxItems: 1
-+
-+  clocks:
-+    items:
-+      - description: Bus Clock
-+      - description: Module Clock
-+
-+  clock-names:
-+    items:
-+      - const: bus
-+      - const: mod
-+
 +required:
-+  - "#sound-dai-cells"
 +  - compatible
 +  - reg
-+  - interrupts
-+  - clocks
-+  - clock-names
 +
 +additionalProperties: false
 +
 +examples:
 +  - |
-+    audio-codec@1c22e00 {
-+      #sound-dai-cells = <0>;
-+      compatible = "allwinner,sun8i-a33-codec";
-+      reg = <0x01c22e00 0x400>;
-+      interrupts = <0 29 4>;
-+      clocks = <&ccu 47>, <&ccu 92>;
-+      clock-names = "bus", "mod";
++    codec_analog: codec-analog@1f015c0 {
++      compatible = "allwinner,sun8i-h3-codec-analog";
++      reg = <0x01f015c0 0x4>;
 +    };
 +
 +...
-diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
+diff --git a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt b/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
 deleted file mode 100644
-index 7ecf6bd60d27..000000000000
---- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
+index 07356758bd91..000000000000
+--- a/Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
 +++ /dev/null
-@@ -1,63 +0,0 @@
--Allwinner SUN8I audio codec
--------------------------------------
--
--On Sun8i-A33 SoCs, the audio is separated in different parts:
--	  - A DAI driver. It uses the "sun4i-i2s" driver which is
--	  documented here:
--	  Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
--	  - An analog part of the codec which is handled as PRCM registers.
--	  See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
--	  - An digital part of the codec which is documented in this current
--	  binding documentation.
--	  - And finally, an audio card which links all the above components.
--	  The simple-audio card will be used.
--	  See Documentation/devicetree/bindings/sound/simple-card.txt
--
--This bindings documentation exposes Sun8i codec (digital part).
+@@ -1,17 +0,0 @@
+-* Allwinner Codec Analog Controls
 -
 -Required properties:
--- compatible: must be "allwinner,sun8i-a33-codec"
+-- compatible: must be one of the following compatibles:
+-		- "allwinner,sun8i-a23-codec-analog"
+-		- "allwinner,sun8i-h3-codec-analog"
+-		- "allwinner,sun8i-v3s-codec-analog"
+-
+-Required properties if not a sub-node of the PRCM node:
 -- reg: must contain the registers location and length
--- interrupts: must contain the codec interrupt
--- clocks: a list of phandle + clock-specifer pairs, one for each entry
--  in clock-names.
--- clock-names: should contain followings:
--   - "bus": the parent APB clock for this controller
--   - "mod": the parent module clock
 -
--Here is an example to add a sound card and the codec binding on sun8i SoCs that
--are similar to A33 using simple-card:
--
--	sound {
--		compatible = "simple-audio-card";
--		simple-audio-card,name = "sun8i-a33-audio";
--		simple-audio-card,format = "i2s";
--		simple-audio-card,frame-master = <&link_codec>;
--		simple-audio-card,bitclock-master = <&link_codec>;
--		simple-audio-card,mclk-fs = <512>;
--		simple-audio-card,aux-devs = <&codec_analog>;
--		simple-audio-card,routing =
--				"Left DAC", "Digital Left DAC",
--				"Right DAC", "Digital Right DAC";
--
--		simple-audio-card,cpu {
--			sound-dai = <&dai>;
--		};
--
--		link_codec: simple-audio-card,codec {
--			sound-dai = <&codec>;
--		};
--
--	soc@1c00000 {
--		[...]
--
--		audio-codec@1c22e00 {
--			#sound-dai-cells = <0>;
--			compatible = "allwinner,sun8i-a33-codec";
--			reg = <0x01c22e00 0x400>;
--			interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
--			clocks = <&ccu CLK_BUS_CODEC>, <&ccu CLK_AC_DIG>;
--			clock-names = "bus", "mod";
--		};
+-Example:
+-prcm: prcm@1f01400 {
+-	codec_analog: codec-analog {
+-		compatible = "allwinner,sun8i-a23-codec-analog";
 -	};
--
+-};
 -- 
 2.21.0
 
