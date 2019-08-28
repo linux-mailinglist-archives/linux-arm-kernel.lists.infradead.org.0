@@ -2,87 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A151AA0194
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:25:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6BA8A01BD
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:30:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9DiYvkfs9foF9oXGZfj/9JmnweuWi75HelZocBRieEs=; b=ZTIGWwuU10m6Ku
-	y9wZMpEXBVyi/YzRScOXGidSN8/ntGMMZYk2+vCxue0oyp9s2cE2VCXJW8wQVUdONz/OLLkukqhA7
-	z01u3BZU1CblB+HVsL22zktSAHHpFuvo7a5IwHCIu1F8LaDbXsgWfQxfC1DWTVrj+b7l+/gbULB8m
-	WooIqThXiTdZRfHCj2zrfT2gZdJmB7JK4F2wu6mohcgRmZFiehpBjlQ1WfYFnnsgfuV6uRRxh6gUP
-	HvTxGaF5S6+PmjAvuEgiFOVUArymv4cEvn9hhMj9QskCCoIMY883shMF68J/j5SqxhzlK1nekH1Ri
-	P8sj2BnYpx0lbjguTDnA==;
+	List-Owner; bh=6n6CiDw02MRwfXQwku45mzjTFxBSxJQE23Y3wgK2FT4=; b=XyEz8gVfr6pGg4
+	XYBu/dvjOm01N2WrDr5KBNUFvSvqi4coIPIfTEWog/1eZYaGP8UzXiDiZA7rYo0JDgJqUlCxRxhCb
+	YVpGWdKjhq0HBpOyaBHyfBsbhiIDqrFx5N2bYYrcUC/2f1yYYmNjJPnZ5+XBZz6kGOQDN2BDJvURI
+	HCDnm7vVhNM8VDbIJNd7FJfBrXqL8wcCnqhSbgmYADci7DA6gkzpMy+epTnex1AraM1ZD6N1+BLkI
+	h2P8jZP84fgevsaWEaQxQjjYkG2MneZggkfWkXDS3Tkai5KTqhL4lUge1qPbr+kn4stud5EmMhaOY
+	4CFNZE9MjqLkpkKLmUmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2x0K-0000ln-Lx; Wed, 28 Aug 2019 12:24:48 +0000
-Received: from conssluserg-05.nifty.com ([210.131.2.90])
+	id 1i2x5K-00031O-KB; Wed, 28 Aug 2019 12:29:58 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2x09-0000lP-Dj
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:24:39 +0000
-Received: from mail-ua1-f54.google.com (mail-ua1-f54.google.com
- [209.85.222.54]) (authenticated)
- by conssluserg-05.nifty.com with ESMTP id x7SCOKsN031422
- for <linux-arm-kernel@lists.infradead.org>; Wed, 28 Aug 2019 21:24:21 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-05.nifty.com x7SCOKsN031422
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1566995061;
- bh=QGwpmYKpkBfkJkR52bVEAkpX4zw0mwzUiEGIdCDkwxA=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=uqNGtZWnszkj+EI17b6cYBIkgLT1pNqqjZ5vvXHhv3nOtkGhMLE3vL239iHJx8xOz
- TSdYOHpkebqzZFAStQTcerRGirstT0XYJoVthR/5RvSg8EwIXbfT0K4YHHjnM2D9df
- JXXCqO9Sr2ZFEdHKD7gxA7eX9ABdy7xMFqUuoAjc4LZbh1oHbeSw+NQJ4Ce2UY37OL
- 1txXvkAUycDvn0IT3BeWg+7kqZstKdDcVVmHGUVKjLtz+pcmN6rubDhCpA5S2OJHzV
- Tbrl68C67rXttDBFRWfYe+B8o+XbJ2QlQQ11l4eNvd1Y5ZXbdFZLM/YI9cfIW6ibm1
- bz9Dqz+XAfrPw==
-X-Nifty-SrcIP: [209.85.222.54]
-Received: by mail-ua1-f54.google.com with SMTP id x2so748501uar.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 05:24:21 -0700 (PDT)
-X-Gm-Message-State: APjAAAVaRbYmIyzCDx/75J3mb9vv4Fh8Tqo3R9EnuuecKF5r0RMoDhVJ
- L8TwDYeMXORP36Tp09Jf+2IxyLST9405WHN0AFw=
-X-Google-Smtp-Source: APXvYqzOQYU2Q+Xq/DN7mTcKzBb0P1kiiE+ggL4N1BaGeuzN90KCZ6nzT8nGJkbkDhur/ilmD52mrtpqBPxR1Kulykg=
-X-Received: by 2002:ab0:442:: with SMTP id 60mr1554937uav.109.1566995060173;
- Wed, 28 Aug 2019 05:24:20 -0700 (PDT)
+ id 1i2x4M-0002Lx-Op; Wed, 28 Aug 2019 12:29:00 +0000
+X-UUID: 829c9f604ab64baaacfad5980bd965b0-20190828
+X-UUID: 829c9f604ab64baaacfad5980bd965b0-20190828
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <henryc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1350764421; Wed, 28 Aug 2019 04:29:01 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 05:29:00 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 20:28:58 +0800
+Received: from mtksdaap41.mediatek.inc (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 28 Aug 2019 20:28:58 +0800
+From: Henry Chen <henryc.chen@mediatek.com>
+To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>, Viresh Kumar
+ <vireshk@kernel.org>, Stephen Boyd <swboyd@chromium.org>, Ryan Case
+ <ryandcase@chromium.org>
+Subject: [PATCH V3 04/10] arm64: dts: mt8183: add performance state support of
+ scpsys
+Date: Wed, 28 Aug 2019 20:28:42 +0800
+Message-ID: <1566995328-15158-5-git-send-email-henryc.chen@mediatek.com>
+X-Mailer: git-send-email 1.9.1
+In-Reply-To: <1566995328-15158-1-git-send-email-henryc.chen@mediatek.com>
+References: <1566995328-15158-1-git-send-email-henryc.chen@mediatek.com>
 MIME-Version: 1.0
-References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
- <20190506223334.1834-3-nicoleotsuka@gmail.com>
- <CAK7LNARacEorb38mVBw_V-Zvz-znWgBma1AP1-z_5B_xZU4ogg@mail.gmail.com>
- <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
- <20190825011025.GA23410@lst.de>
- <CAK7LNAQb1ZHr=DiHLNeNRaQExMuXdDOV4sFghoGbco_Q=Qzb8g@mail.gmail.com>
- <20190826073320.GA11712@lst.de>
- <CAK7LNATYOLEboUTO4qPx2z7cqwDrHBO1HFHG8VzZEJ15STv+nw@mail.gmail.com>
- <20190827075021.GA953@lst.de>
- <CAK7LNAQZ+bueZZzSoMADmgLjWNvijHRV=wLQzN_kvLG3b5Uu+w@mail.gmail.com>
- <20190827115541.GB5921@lst.de>
- <CAK7LNAQ_nQcBt=xH1-h+=co85mTxFgbe+_46Gu4LaNsDSm+kYA@mail.gmail.com>
-In-Reply-To: <CAK7LNAQ_nQcBt=xH1-h+=co85mTxFgbe+_46Gu4LaNsDSm+kYA@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Wed, 28 Aug 2019 21:23:43 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATvz=TTe+3OyLrtUqDuTUTn1dg9Sk-t3BD_OFZfViCPMw@mail.gmail.com>
-Message-ID: <CAK7LNATvz=TTe+3OyLrtUqDuTUTn1dg9Sk-t3BD_OFZfViCPMw@mail.gmail.com>
-Subject: Re: [PATCH v2 2/2] dma-contiguous: Use fallback alloc_pages for
- single pages
-To: Christoph Hellwig <hch@lst.de>
+X-TM-SNTS-SMTP: 10D13BFB56F081C114B106C0DBB1CD118FC6552153BCB6FE09CCA6277A5ACEB12000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_052437_797438_B02B213D 
-X-CRM114-Status: GOOD (  18.49  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190828_052858_810381_D7E45C2F 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.90 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,71 +76,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Ulf Hansson <ulf.hansson@linaro.org>, Tony Lindgren <tony@atomide.com>,
- Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Max Filippov <jcmvbkbc@gmail.com>, Marek Szyprowski <m.szyprowski@samsung.com>,
- Stephen Rothwell <sfr@canb.auug.org.au>, Joerg Roedel <joro@8bytes.org>,
- Russell King <linux@armlinux.org.uk>, Thierry Reding <treding@nvidia.com>,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Nicolin Chen <nicoleotsuka@gmail.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Chris Zankel <chris@zankel.net>,
- Wolfram Sang <wsa+renesas@sang-engineering.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-mmc <linux-mmc@vger.kernel.org>,
- Adrian Hunter <adrian.hunter@intel.com>, iommu@lists.linux-foundation.org,
- iamjoonsoo.kim@lge.com, Robin Murphy <robin.murphy@arm.com>
+Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ Nicolas Boichat <drinkcat@google.com>, linux-kernel@vger.kernel.org, Henry
+ Chen <henryc.chen@mediatek.com>, Fan Chen <fan.chen@mediatek.com>,
+ devicetree@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 7:53 PM Masahiro Yamada
-<yamada.masahiro@socionext.com> wrote:
->
-> Hi Christoph,
->
-> On Tue, Aug 27, 2019 at 8:55 PM Christoph Hellwig <hch@lst.de> wrote:
-> >
-> > On Tue, Aug 27, 2019 at 06:03:14PM +0900, Masahiro Yamada wrote:
-> > > Yes, this makes my driver working again
-> > > when CONFIG_DMA_CMA=y.
-> > >
-> > >
-> > > If I apply the following, my driver gets back working
-> > > irrespective of CONFIG_DMA_CMA.
-> >
-> > That sounds a lot like the device simply isn't 64-bit DMA capable, and
-> > previously always got CMA allocations under the limit it actually
-> > supported.  I suggest that you submit this quirk to the mmc maintainers.
->
->
-> I tested v5.2 and my MMC host controller works with
-> dma_address that exceeds 32-bit physical address.
->
-> So, I believe my MMC device is 64-bit DMA capable.
->
-> I am still looking into the code
-> to find out what was changed.
+Add support for performance state of scpsys on mt8183 platform.
 
+Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
+---
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
 
-I retract this comment.
-
-Prior to bd2e75633c8012fc8a7431c82fda66237133bf7e,
-the descriptor table for ADMA is placed within the
-32-bit phys address range, not exceeds the 32-bit limit.
-
-Probably, my device is not 64-bit capable.
-
-I will talk to the hardware engineer,
-and check the hardware spec just in case.
-
-Thanks.
-
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index 66aaa07..a58999f 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -10,6 +10,7 @@
+ #include <dt-bindings/interrupt-controller/irq.h>
+ #include <dt-bindings/power/mt8183-power.h>
+ #include "mt8183-pinfunc.h"
++#include <dt-bindings/soc/mtk,dvfsrc.h>
+ 
+ / {
+ 	compatible = "mediatek,mt8183";
+@@ -293,6 +294,26 @@
+ 				      "vpu-3", "vpu-4", "vpu-5";
+ 			infracfg = <&infracfg>;
+ 			smi_comm = <&smi_common>;
++			operating-points-v2 = <&dvfsrc_opp_table>;
++			dvfsrc_opp_table: opp-table {
++				compatible = "operating-points-v2-level";
++
++				dvfsrc_vol_min: opp1 {
++					opp,level = <MT8183_DVFSRC_LEVEL_1>;
++				};
++
++				dvfsrc_freq_medium: opp2 {
++					opp,level = <MT8183_DVFSRC_LEVEL_2>;
++				};
++
++				dvfsrc_freq_max: opp3 {
++					opp,level = <MT8183_DVFSRC_LEVEL_3>;
++				};
++
++				dvfsrc_vol_max: opp4 {
++					opp,level = <MT8183_DVFSRC_LEVEL_4>;
++				};
++			};
+ 		};
+ 
+ 		apmixedsys: syscon@1000c000 {
 -- 
-Best Regards
-Masahiro Yamada
+1.9.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
