@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5BE309FA79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 08:22:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE8479FA6C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 08:22:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BSepSP9kuUAqjozd9Uo6nnIOCmhg+9W7wfaRulv/5d4=; b=SUTe39UPLnXs32
-	CvLjMFw68wiERTwUHk63L7JQrpToP5R3j8vYlmk3P5EKxzn1c+bhmHl0TbrAW2yN+KKGmdIolDqmk
-	ahFzVBQjrI9LXQUqzHg94ZntbYEGF1xNz1VEUpfL0vDz8o5CrhsIUelWW0jWMXUm2AYaUP6Xyt61U
-	0v+MvOrf77Th2/aJr1kntxMIlr3EcXw+hcW//mf2/Fk2qgRhJcllKH1YaZ7pkybqgNUOi3JQz77lQ
-	kcr6OywtFHwtEzsvQpyfeONLkxtp4RdN0T3+ccOrOMV6SLfPcAKbkCOlbtOojBgdn0Xsz/4IimH3o
-	bVuzFErcTkLDs0O7Vaeg==;
+	List-Owner; bh=U+SIrWcJrqWY3nnR/izX9NMgVC4QWM0CING10pc1T0Q=; b=EvBIP10CuH39/G
+	yW5QJzq9scjoiPhWBxIiVRg8xda2zXZz2w9ApkkdXp9NO/XCQcpZ3jpd+qDqVVz2EDpz4hjW2Jj0N
+	n5phNAhWJPm+otE9dkEkQUPwIyQ46ahguhqXp78/rq/3pzHsSEbRapOmZsiOWK/g+rOXrBTrCbPsm
+	sKN1wb3HjTZxZ/HGMbqLv7IH1kvwWy5CjLvvW4UlP+0gKnOPaqWFchicfQzuVY4ZGsmYhl6LBZI+N
+	lyNF0gx1I12sZ7hbFzO7RE8SnRvwndF95WzosWcnu+0m1IpdCbKbULzYYsgOPUkOBUEW4GSobSthZ
+	G2e1hFe16eDfZx11sI7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2rM4-0002x6-E6; Wed, 28 Aug 2019 06:22:52 +0000
+	id 1i2rLM-0002H7-Mm; Wed, 28 Aug 2019 06:22:09 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2rKm-0001xu-8k; Wed, 28 Aug 2019 06:21:33 +0000
-X-UUID: a464bd810cda4194beaf43c24d0bb163-20190827
-X-UUID: a464bd810cda4194beaf43c24d0bb163-20190827
+ id 1i2rKk-0001xu-QM; Wed, 28 Aug 2019 06:21:32 +0000
+X-UUID: d4353635475b4591b54ecce04bf12ca2-20190827
+X-UUID: d4353635475b4591b54ecce04bf12ca2-20190827
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1016979789; Tue, 27 Aug 2019 22:21:35 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ with ESMTP id 978503221; Tue, 27 Aug 2019 22:21:35 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Tue, 27 Aug 2019 23:21:33 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 28 Aug 2019 14:21:29 +0800
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 14:21:30 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 28 Aug 2019 14:21:28 +0800
+ Transport; Wed, 28 Aug 2019 14:21:29 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>, Rob Herring
  <robh+dt@kernel.org>
-Subject: [PATCH 1/6] dt-bindings: usb: mtu3: support USB wakeup for MT8183
-Date: Wed, 28 Aug 2019 14:20:56 +0800
-Message-ID: <1566973261-21677-2-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH 2/6] dt-bindings: usb: mtk-xhci: support USB wakeup for MT8183
+Date: Wed, 28 Aug 2019 14:20:57 +0800
+Message-ID: <1566973261-21677-3-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1566973261-21677-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1566973261-21677-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 016255A62A63438166739990B92FE5DD07955CE1DE28E47E33C85143683AA5C32000:8
+X-TM-SNTS-SMTP: 7A8E78A98213916A519E4FFC6FA317F5D9F3827F0D7922F0EE7092A2A8DD73FD2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_232132_325103_9706B4FA 
-X-CRM114-Status: GOOD (  11.21  )
+X-CRM114-CacheID: sfid-20190827_232130_869183_9A49EBB2 
+X-CRM114-Status: GOOD (  11.00  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -89,14 +89,14 @@ Support USB wakeup by ip-sleep mode for MT8183
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
- Documentation/devicetree/bindings/usb/mediatek,mtu3.txt | 1 +
+ Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt | 1 +
  1 file changed, 1 insertion(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-index 3382b5cb471d..ed954bedcd2f 100644
---- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-+++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
-@@ -48,6 +48,7 @@ Optional properties:
+diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
+index 266c2d917a28..9a0a9eb0456f 100644
+--- a/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
++++ b/Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
+@@ -41,6 +41,7 @@ Optional properties:
  	"wakeup-source", and has two arguments:
  	- the first one : register base address of the glue layer in syscon;
  	- the second one : hardware version of the glue layer
