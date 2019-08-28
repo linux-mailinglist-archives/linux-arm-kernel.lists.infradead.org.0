@@ -2,191 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B1D729FEBD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:43:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 020C89FECC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:44:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jDwQDTNvT25ALz8hJKfL3+WVrvw6WBcoKHG3Cr4EOAY=; b=NLmEhSYZRNOusX
-	ZVx1vzFqhVIRFabaUP/0e32IybkmFEH2V6PvcIEYBewAIhd8bSBugalsli3/heEcFNYeJd34rWxi6
-	eSoE/8uCUJLoiAeV8OnB0/AkfzE387SeC1XvrwzL6DmA9k5jC6iSCxhHNRtMMfFRXOpuEA+gMvpSx
-	1m6OiXQgisDy3PkTwv5MyvB+qbennEr2yTn9WjgYoVubFoWxWKJNtzlD0HYiO5qCWUPu+Hxhh9US9
-	GHPNqRibJP+OhCTu7bgPUrSrueJTiKlYOkA7NMphSgUYll5sWWEeIinqehxESJVFQ07H5KpGj30dI
-	3UG2jiE98/Yen2ncMhgQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=FCChv3QtJ2rCxw3kWCB1E30jz3XDUFDMFVwvl5vngDE=; b=d78LKxDBQFr/uIjXNda43Lpkr
+	Y6emS3fxQRFiBrwOWnYtMVK7DNOnkraDAVnnv83f4WkFGLTXq5mUBbMc4Eh4BlkkvMmZgLu1FWEnz
+	VM8taHmTq6hg+OJuFiRH1MrTe0x8chLtI3L+jWtW3S4xB1q6/JddJI6jiR8I5SLNpmLH50G1zVSgd
+	OEHskuMe/KyfWE0TRz5EoBya5g2s/1pWYOw5CVIOPCbRM2ImzA6KVGQaasGPsgmGip2KhTDUIcgzJ
+	zrx8C9V+A9odDKhGNpspl4UWVz9UsYI9NGoKhpxal4bwo+DAcRtnvLMOja5CrkF39vpGqNyMZnY4W
+	/LpapKvQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2uUG-0001V6-8i; Wed, 28 Aug 2019 09:43:32 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1i2uVK-0001zq-My; Wed, 28 Aug 2019 09:44:39 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2uU3-0001Tt-Rl; Wed, 28 Aug 2019 09:43:21 +0000
-Received: by mail-ed1-x541.google.com with SMTP id z51so2227761edz.13;
- Wed, 28 Aug 2019 02:43:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=KX41i1WhIYhU45WlM2JOv87y3yDnNDkdr2vkLR1ngbA=;
- b=SB3JDahoi8GaaB4kIiKflxk1L51N5jZfRIeMe01Pjq+Qs2y7JQ2pBZ9/nccRo0RG8F
- SDk30PIbA0a5XxTct2e9gvzWEKYcNVyfnpZn4YeC2q+G1SgO5oRbYNn+b2kRWbjyQUZo
- ZppdV3tXyqnBQ0/pI8x/i7vnEX07IUGkDwVtJwllhOsbLRpUJ2W5pp01OC4/18+VQtg+
- R72PuTITZ1aJza22jD5Aj1WL9jum0LD0kyynA3U2xUrF6cpOogL4Y0ZHV9hzABNi8eCh
- 3seYMvqlZdfehKTyxuylfrG0PR/z01bG+FCtKpOiU8pKWUAZ+SFOGwHZi4rCaNbrmBui
- 94eg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=KX41i1WhIYhU45WlM2JOv87y3yDnNDkdr2vkLR1ngbA=;
- b=qcZhZqOv8y9LAJpuH6VESmKr72dye7Fg+vlVxb2d0LZCP1thz3YxN2zX8U8RTVN+iq
- hMzV+dNV9H2UJh68Cn4FOxoGNqK5u/OLhBbPQmPPpopmGtzuBwN2J56Ku7BxUGf6fLwS
- t96QwIF1KxrbLpHfm0CgvqPT5Lfcm+iaBaEcBhtBHYu+cdIyb6wvWgrWUP3ejTHiStmz
- FHs1bViEExPbDIdeW7a379hDWR+tGpK8I0zr6U2zim7SuYL4hSC8zOb39FCqKuOqYpl4
- WM6Ll4Gpo/yRE0zjgXe3AQHMRkGn/juuo6SOYZjuGk+URCfbigRhAahbfPklfw5OjqWw
- pWUA==
-X-Gm-Message-State: APjAAAWQTKavnkphhSo8mTkSqgUSFjb0mr/q0KPpuNAuU8N90AZkFX9Z
- +tKQAOFnU9qPGO3ZvKNRnQA=
-X-Google-Smtp-Source: APXvYqzwZCKKNWRU1mM2pi8xbeB4p8qn84OZzLqOAVp+hd/sZUqHKipqA29FwjPpJ8CzIoWQ9hNuUQ==
-X-Received: by 2002:a17:906:4b44:: with SMTP id
- j4mr2274810ejv.139.1566985398311; 
- Wed, 28 Aug 2019 02:43:18 -0700 (PDT)
-Received: from ziggy.stardust ([95.169.228.146])
- by smtp.gmail.com with ESMTPSA id a3sm300500eje.90.2019.08.28.02.43.16
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 28 Aug 2019 02:43:17 -0700 (PDT)
-Subject: Re: [PATCH v7 03/13] soc: mediatek: Refactor polling timeout and
- documentation
-To: Weiyi Lu <weiyi.lu@mediatek.com>, Nicolas Boichat
- <drinkcat@chromium.org>, Rob Herring <robh@kernel.org>
-References: <1566983506-26598-1-git-send-email-weiyi.lu@mediatek.com>
- <1566983506-26598-4-git-send-email-weiyi.lu@mediatek.com>
-From: Matthias Brugger <matthias.bgg@gmail.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <3a61ccce-1c88-5e7f-77ad-afce071a656b@gmail.com>
-Date: Wed, 28 Aug 2019 11:43:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i2uV3-0001yd-ML; Wed, 28 Aug 2019 09:44:23 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 7A77DAD26;
+ Wed, 28 Aug 2019 09:44:16 +0000 (UTC)
+Message-ID: <5271f3041cf16ec06a8266b0072f294384280f54.camel@suse.de>
+Subject: Re: [PATCH v2 01/11] asm-generic: add dma_zone_size
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Christoph Hellwig <hch@lst.de>
+Date: Wed, 28 Aug 2019 11:44:12 +0200
+In-Reply-To: <027272c27398b950f207101a2c5dbc07a30a36bc.camel@suse.de>
+References: <20190820145821.27214-1-nsaenzjulienne@suse.de>
+ <20190820145821.27214-2-nsaenzjulienne@suse.de>
+ <20190826070939.GD11331@lst.de>
+ <027272c27398b950f207101a2c5dbc07a30a36bc.camel@suse.de>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-In-Reply-To: <1566983506-26598-4-git-send-email-weiyi.lu@mediatek.com>
-Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_024319_895561_6A3E6DE6 
-X-CRM114-Status: GOOD (  15.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190828_024422_020942_DA698A0E 
+X-CRM114-Status: GOOD (  21.65  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matthias.bgg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -198,64 +61,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
- linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: catalin.marinas@arm.com, eric@anholt.net, linux-riscv@lists.infradead.org,
+ frowand.list@gmail.com, m.szyprowski@samsung.com, linux-arch@vger.kernel.org,
+ f.fainelli@gmail.com, will@kernel.org, devicetree@vger.kernel.org,
+ Arnd Bergmann <arnd@arndb.de>, marc.zyngier@arm.com, robh+dt@kernel.org,
+ linux-rpi-kernel@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ phill@raspberryi.org, mbrugger@suse.com, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ wahrenst@gmx.net, akpm@linux-foundation.org,
+ Robin Murphy <robin.murphy@arm.com>
+Content-Type: multipart/mixed; boundary="===============5329971225774385760=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+--===============5329971225774385760==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-HuE7CYEmA0DlmwKJIinl"
 
-On 28/08/2019 11:11, Weiyi Lu wrote:
-> Use USEC_PER_SEC to indicate the polling timeout directly.
-> And add documentation of scp_domain_data.
-> 
-> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
-> ---
 
-Queued for v5.4-next/soc
-Thanks!
+--=-HuE7CYEmA0DlmwKJIinl
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
 
->  drivers/soc/mediatek/mtk-scpsys.c | 13 ++++++++++++-
->  1 file changed, 12 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
-> index 503222d..e97fc0e 100644
-> --- a/drivers/soc/mediatek/mtk-scpsys.c
-> +++ b/drivers/soc/mediatek/mtk-scpsys.c
-> @@ -21,7 +21,7 @@
->  #include <dt-bindings/power/mt8173-power.h>
->  
->  #define MTK_POLL_DELAY_US   10
-> -#define MTK_POLL_TIMEOUT    (jiffies_to_usecs(HZ))
-> +#define MTK_POLL_TIMEOUT    USEC_PER_SEC
->  
->  #define MTK_SCPD_ACTIVE_WAKEUP		BIT(0)
->  #define MTK_SCPD_FWAIT_SRAM		BIT(1)
-> @@ -108,6 +108,17 @@ enum clk_id {
->  
->  #define MAX_CLKS	3
->  
-> +/**
-> + * struct scp_domain_data - scp domain data for power on/off flow
-> + * @name: The domain name.
-> + * @sta_mask: The mask for power on/off status bit.
-> + * @ctl_offs: The offset for main power control register.
-> + * @sram_pdn_bits: The mask for sram power control bits.
-> + * @sram_pdn_ack_bits: The mask for sram power control acked bits.
-> + * @bus_prot_mask: The mask for single step bus protection.
-> + * @clk_id: The basic clocks required by this power domain.
-> + * @caps: The flag for active wake-up action.
-> + */
->  struct scp_domain_data {
->  	const char *name;
->  	u32 sta_mask;
-> 
+On Mon, 2019-08-26 at 15:46 +0200, Nicolas Saenz Julienne wrote:
+> On Mon, 2019-08-26 at 09:09 +0200, Christoph Hellwig wrote:
+> > On Tue, Aug 20, 2019 at 04:58:09PM +0200, Nicolas Saenz Julienne wrote:
+> > > Some architectures have platform specific DMA addressing limitations.
+> > > This will allow for hardware description code to provide the constrai=
+nts
+> > > in a generic manner, so as for arch code to properly setup it's memor=
+y
+> > > zones and DMA mask.
+> >=20
+> > I know this just spreads the arm code, but I still kinda hate it.
+>=20
+> Rob's main concern was finding a way to pass the constraint from HW defin=
+ition
+> to arch without widening fdt's architecture specific function surface. I'=
+d say
+> it's fair to argue that having a generic mechanism makes sense as it'll n=
+ow
+> traverse multiple archs and subsystems.
+>=20
+> I get adding globals like this is not very appealing, yet I went with it =
+as it
+> was the easier to integrate with arm's code. Any alternative suggestions?
+>=20
+> > MAX_DMA_ADDRESS is such an oddly defined concepts.  We have the mm
+> > code that uses it to start allocating after the dma zones, but
+> > I think that would better be done using a function returning
+> > 1 << max(zone_dma_bits, 32) or so.  Then we have about a handful
+> > of drivers using it that all seem rather bogus, and one of which
+> > I think are usable on arm64.
+>=20
+> Is it safe to assume DMA limitations will always be a power of 2? I ask a=
+s
+> RPi4
+> kinda isn't: ZONE_DMA is 0x3c000000 bytes big, I'm approximating the zone=
+ mask
+> to 30 as [0x3c000000 0x3fffffff] isn't defined as memory so it's unlikely=
+ that
+> we=C2=B4ll encounter buffers there. But I don't know how it could affect =
+mm
+> initialization code.
+>=20
+> This also rules out 'zone_dma_bits' as a mechanism to pass ZONE_DMA's siz=
+e
+> from
+> HW definition code to arch's.
+
+Hi Christoph,
+I gave it a thought and think this whole MAX_DMA_ADDRESS topic falls out of=
+ the
+scope of the series. I agree it's something that we should get rid of, but
+fixing it isn't going to affect the overall enhancement intended here.  I'd
+rather focus on how are we going to pass the DMA zone data into the arch co=
+de
+and fix MAX_DMA_ADDRESS on another series.
+
+Regards,
+Nicolas
+
+
+--=-HuE7CYEmA0DlmwKJIinl
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1mTOwACgkQlfZmHno8
+x/5rEQf/a0hgCNBuEJW0dF6JOgmq1B1AUgrpu1lR5mCYvRYKaWrIH0GEWk7/DMYN
+5P/0pfK8WcmvSuTsH3kAL9FVcqCF1fm+KHxDUfHg0WM4TbfF/SNx8nzM0thhMSGg
+vcgA6AP1aXP4wkqXKPhjga2uBewFfdD02TKqIvsSKEXAUge69kAkVjSAy/Sz8Rj9
+NUwJ6GbY5Clul7ZkO6eRe39K/bnmICJytZCvmxas+x3YQN5eiml9ooPhHoCa48l1
+tzjKhxg5VSCVPYdvIdauSRDsuHKcYzezXiaX/mX8Rz6h2/4bWbX9/Lt9Y5UZyikO
+2DdZK0hdYuTCw2X0qHF5x4sS1s9Tew==
+=HHcK
+-----END PGP SIGNATURE-----
+
+--=-HuE7CYEmA0DlmwKJIinl--
+
+
+
+--===============5329971225774385760==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5329971225774385760==--
+
+
