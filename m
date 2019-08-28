@@ -2,77 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7912BA03C0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:52:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 96F92A03C1
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:52:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ee1sT5F3Rd81CahufZydEG61PddtxawHsGZajqYK1Gw=; b=GV3+NR9MYwLV1F
-	RKUfEAqVqEudCm0WpEPFbYfk797HNu2958A5Xz6+41OaHHOt/W2wVhWiun8EF7cjFhVdeKFZc/aWY
-	5kjpqfJofMc7zb3urxoh4seK0MUJX/Ils5MxfkHehCuPfRB1l/hgMI25Fvytm1CKmTMzj99+UaKLu
-	duKWG4Bu1lzKW2noCX0aNzVZczdZ8fp/MdZGg2Cg6qjnXmTnSj8Gm1Bf1RzGUsChSiNrs5BjHWmuB
-	DgFl93TZeJ0oL4ujdoT6d4by7LvLGSGwHjETnuLhyy4S3IHyrD5aTm1b8PNmgv6RoGViyXRwp+e3C
-	4sFXJPKqg7IkW1RWTURg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4cEgBh2++V4pMcsfAygJTMMSmbjvCNVtUcmozxWMJ9M=; b=OQ/yaJTUB1Gpnz
+	DKfWvF4x+K57nvVrQsAAQAEt5/+Dj5qnCrgnYm4UDVGTPl3TVT9LReoyhL0aZX7YE7xjzsXJ36CSx
+	7+t9qEzhJlwF5ng+pedpniv+y443v+SQFnHxNwpxyJ9UnvDs5sCSwFQ9qmMUgiv0PuBKi58dr1w0j
+	McT0GtGGGdlbux/n0JU+p8gU5AwTsSV82/3kmJvdleUM7zFAR4X6CDn7JlYHkClZNFWgKUbXIy9B7
+	tFJOYfIsyqXzoc6UgT9OEmCv8D2D1zzrUgf9l3Ayvwly9Yg/8JoDAUq+MK5XloxQCUnZzF1y1yZtr
+	tZM5H6XnjfqldLo2dZug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2yNH-00089e-Tw; Wed, 28 Aug 2019 13:52:36 +0000
-Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+	id 1i2yNW-0008Jf-IR; Wed, 28 Aug 2019 13:52:50 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2yN8-00089E-3W
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:52:27 +0000
-Received: by mail-lj1-x243.google.com with SMTP id u15so2670652ljl.3
+ id 1i2yNB-00089d-FT
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:52:30 +0000
+Received: by mail-lj1-x244.google.com with SMTP id x4so2654730ljj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 06:52:25 -0700 (PDT)
+ Wed, 28 Aug 2019 06:52:28 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ayALL3LMbMoVxrUHMO+WrqD6ib90Fw2a/5PK1PmVhs0=;
- b=foh5FkH4ZuL/RddNZ90l3iYKzgFL7V/ukrVnrTdBOT3C25dqHeNeNNPPrdqMsnIPyj
- ac6KqqOKYXuJwcC+36YblFed9r0RcCKopyo7Ah16RkQFG8/X1YDyLSJbRk7vPUl2AMOH
- hT0ZspAxGG5910vUmeN7gABcaaB/31cPWPtERlZWcO7iX60rzxI4mXd6EJWiXSpZy+eh
- cSKkoT2bPQLqf8ventGF1tDyIkNwsVwhVfeZXqF9CDwY4oVUV/7Ukf7Ht28eAmlJrFhD
- GYQ962RHWkOgBzb3uBzx75wm1l8k4iBMFJ0hoGEq3r+YnaXI5Nkk55sBZG88X94EVmIG
- QsCw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=JbG6jJQvBJeaRROn5cSdMAWxjj90yAkON1FqLiEV5e4=;
+ b=M0lzAeg3zpgaKJMB1fYmv2qqukischh4ie+jOgKhlIiZJePSCug8mbdn1BlfdxRg9s
+ pzBvzSnJizwYfYbJ7GKWsCPEUDZD8XkTWgcfpfGL3aQigI9SLZIdorqTDP9d9u1qOGNc
+ 4C50n9/nSA3iK0xc5KA5z7EC08DyRnP4A8qfOXGitJEQIrCt3ovw+RDDMVU7UpPFUGGb
+ +PZ8z8YgujTJQJaaklabhJMMY5MWiYISNavdsHIb7xeTlhTKQ1DbHz+J35EUP+86i8Xf
+ zDS6kbINxDvfNyWS7vUtVUyLFURE0Eqb9bfsMzgLxayN0tSwpaZhjwQU+ZPh44Vjum3q
+ h5MA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ayALL3LMbMoVxrUHMO+WrqD6ib90Fw2a/5PK1PmVhs0=;
- b=DjDvAdx2lDuDQsu/IkJvt6+XRu2/J7K/56ZF+bxH2Y5rwDMu6KGUBoAmAtkelQhwQX
- vR5sdZdIr1ATzB/XgazlK9xKPg4ZPrZSfCMx7wrNnbp6UjoA717BKBjjnQVLNvFwaZ2Q
- r/uLvVUkF0rfk8z6D9HiblHHTdbl9q23j8Jm6SX4CUE39Ah44WbM4X7jyD5AdJshRMT9
- 4q4AlRZ+YmKyO1ZAg0ygUz6AtZ4vumiHIrY1+vUxnaYZwa7sE1eYZqfJ1VryZJvK5OzH
- 2kyAcspAryVmDDYrBFTwre2Y2zz40+n9X1haf3WpCp8PZWyL9ArXMDx85c4kJlrLC0cW
- orzQ==
-X-Gm-Message-State: APjAAAUdbmXhFKaVKOlW5fieyBqUiuKq6PmoeaMh5vr43QAaSBNVD3CI
- a0eln0lSCSKd1dKXV4lynXF4QACsZ7M=
-X-Google-Smtp-Source: APXvYqwa6Zfr7TgG85dohSQcItkcMQuuqY2PXSoTv02oFSNW/ziRnVpiymiQy3B/ScKdvA7fZMynVg==
-X-Received: by 2002:a2e:8658:: with SMTP id i24mr894039ljj.188.1567000343873; 
- Wed, 28 Aug 2019 06:52:23 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=JbG6jJQvBJeaRROn5cSdMAWxjj90yAkON1FqLiEV5e4=;
+ b=NJCH9As5ttKzFP1l/ZPV3D2gcsYMtT/ppKzlamllbgm2bxzYphADOredSIvORWzY4o
+ Q0PjwKBWf/JrPGpL6NWpwN0r6qNohkHMGQxyys7+dF7P7CT4oonCRsQzD6Z59BDJe25+
+ l8IzR143HJamxrkQyrOVfebxmktOuK/clhlsg7g0babVFZx6Hcl37ulXnZE9CVaL7X5f
+ WoZwAWuDiw4bGAV4vkVFcApYutYQahkeMaG57JTCsFtIrgmlTI6RzOqfPVb1USV+255A
+ kiwPZPxZ0R2Pjk25iyt9Zh4pz0AxVv7FA/SlrIlGopfQdksQzYFcQF4fdgzxIpQgu1TW
+ nCdg==
+X-Gm-Message-State: APjAAAVq++CQXeHzdTCHGRQEyOtSmBAiQigb/MkoR2y8aHPddzco7C1X
+ gF9q0EJu7/AXkMrttYPErmTdw1sADbk=
+X-Google-Smtp-Source: APXvYqygBg1Kfl2DkkPAxhC7xMhW/rdULEQ4DFiUwxoRdDJFcF9I01cuLVO/YOaU72GYkBW+oLMMjg==
+X-Received: by 2002:a2e:8455:: with SMTP id u21mr2071958ljh.20.1567000347488; 
+ Wed, 28 Aug 2019 06:52:27 -0700 (PDT)
 Received: from genomnajs.ideon.se ([85.235.10.227])
- by smtp.gmail.com with ESMTPSA id f19sm854709lfk.43.2019.08.28.06.52.22
+ by smtp.gmail.com with ESMTPSA id f19sm854709lfk.43.2019.08.28.06.52.26
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 28 Aug 2019 06:52:22 -0700 (PDT)
+ Wed, 28 Aug 2019 06:52:26 -0700 (PDT)
 From: Linus Walleij <linus.walleij@linaro.org>
 To: linux-arm-kernel@lists.infradead.org, Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH 1/2] ARM: dts: ux500: Fix up the thermal nodes
-Date: Wed, 28 Aug 2019 15:52:17 +0200
-Message-Id: <20190828135218.7307-1-linus.walleij@linaro.org>
+Subject: [PATCH 2/2] ARM: dts: ux500: Update thermal zone
+Date: Wed, 28 Aug 2019 15:52:18 +0200
+Message-Id: <20190828135218.7307-2-linus.walleij@linaro.org>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190828135218.7307-1-linus.walleij@linaro.org>
+References: <20190828135218.7307-1-linus.walleij@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_065226_154695_476131B3 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20190828_065229_531260_E9AF842A 
+X-CRM114-Status: GOOD (  15.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,72 +103,106 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The thermal driver for the DB8500 was never properly converted
-to device tree, the node should definitely be activated for
-all board variants so move this down into the main SoC
-DTSI, and default on.
+After moving the DB8500 thermal driver to use device tree
+we define the default thermal zone for the Ux500 in the
+device tree replacing the oldstyle hardcoded trigger
+points.
 
-Cc: Daniel Lezcano <daniel.lezcano@linaro.org>
+This default thermal zone utilizes the cpufreq driver
+(using the generic OF cpufreq back-end) as a passive
+cooling device, and defines a critical trip point when
+the temperature goes above 85 degrees celsius which will
+(hopefully) make the system shut down if the temperature
+cannot be controlled.
+
+This default policy can later be augmented for specific
+subdevices if these have tighter temperature conditions.
+
+After this patch we get:
+
+/sys/class/thermal/thermal_zone0 (CPU thermal zone)
+This reports the rough temperature and trip points
+from the thermal zone in the device tree.
+
+By executing two yes > /dev/null & jobs fully utilizing
+the two CPU cores we can notice the temperature climbing
+in the thermal zone in response and falling when we kill
+the jobs.
+
+/syc/class/thermal/cooling_device0 (cpufreq cooling)
+this reports all 4 available cpufreq frequencies as
+states.
+
+Suggested-by: Daniel Lezcano <daniel.lezcano@linaro.org>
 Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
 ---
- arch/arm/boot/dts/ste-dbx5x0.dtsi  | 22 +++++++++++++++++++++-
- arch/arm/boot/dts/ste-snowball.dts | 29 -----------------------------
- 2 files changed, 21 insertions(+), 30 deletions(-)
+ arch/arm/boot/dts/ste-dbx5x0.dtsi | 57 +++++++++++++++++++------------
+ 1 file changed, 36 insertions(+), 21 deletions(-)
 
 diff --git a/arch/arm/boot/dts/ste-dbx5x0.dtsi b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-index b1a31134f860..7953eea7c486 100644
+index 7953eea7c486..9ee50f339e7a 100644
 --- a/arch/arm/boot/dts/ste-dbx5x0.dtsi
 +++ b/arch/arm/boot/dts/ste-dbx5x0.dtsi
-@@ -505,10 +505,30 @@
- 			thermal@801573c0 {
- 				compatible = "stericsson,db8500-thermal";
- 				reg = <0x801573c0 0x40>;
-+				interrupt-parent = <&prcmu>;
- 				interrupts = <21 IRQ_TYPE_LEVEL_HIGH>,
- 					     <22 IRQ_TYPE_LEVEL_HIGH>;
- 				interrupt-names = "IRQ_HOTMON_LOW", "IRQ_HOTMON_HIGH";
--				status = "disabled";
-+				num-trips = <4>;
-+
-+				trip0-temp = <70000>;
-+				trip0-type = "active";
-+				trip0-cdev-num = <1>;
-+				trip0-cdev-name0 = "thermal-cpufreq-0";
-+
-+				trip1-temp = <75000>;
-+				trip1-type = "active";
-+				trip1-cdev-num = <1>;
-+				trip1-cdev-name0 = "thermal-cpufreq-0";
-+
-+				trip2-temp = <80000>;
-+				trip2-type = "active";
-+				trip2-cdev-num = <1>;
-+				trip2-cdev-name0 = "thermal-cpufreq-0";
-+
-+				trip3-temp = <85000>;
-+				trip3-type = "critical";
-+				trip3-cdev-num = <0>;
- 			};
- 
- 			db8500-prcmu-regulators {
-diff --git a/arch/arm/boot/dts/ste-snowball.dts b/arch/arm/boot/dts/ste-snowball.dts
-index 3428290644ba..064e8abec954 100644
---- a/arch/arm/boot/dts/ste-snowball.dts
-+++ b/arch/arm/boot/dts/ste-snowball.dts
-@@ -376,40 +376,11 @@
- 			pinctrl-0 = <&ssp0_snowball_mode>;
+@@ -44,6 +44,7 @@
+ 			clocks = <&prcmu_clk PRCMU_ARMSS>;
+ 			clock-names = "cpu";
+ 			clock-latency = <20000>;
++			#cooling-cells = <2>;
  		};
+ 		CPU1: cpu@301 {
+ 			device_type = "cpu";
+@@ -52,6 +53,39 @@
+ 		};
+ 	};
  
--		cpufreq-cooling {
--			status = "okay";
--		};
--
- 		prcmu@80157000 {
- 			cpufreq {
- 				status = "okay";
++	thermal-zones {
++		/*
++		 * Thermal zone for the SoC, using the thermal sensor in the
++		 * PRCMU for temperature and the cpufreq driver for passive
++		 * cooling.
++		 */
++		cpu_thermal: cpu-thermal {
++			polling-delay-passive = <0>;
++			polling-delay = <1000>;
++
++			thermal-sensors = <&thermal>;
++
++			trips {
++				cpu_alert: cpu-alert {
++					temperature = <70000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++				cpu-crit {
++					temperature = <85000>;
++					hysteresis = <0>;
++					type = "critical";
++				};
++			};
++
++			cooling-maps {
++				trip = <&cpu_alert>;
++				cooling-device = <&CPU0 0 2>;
++				contribution = <100>;
++			};
++		};
++	};
++
+ 	soc {
+ 		#address-cells = <1>;
+ 		#size-cells = <1>;
+@@ -502,33 +536,14 @@
+ 				reg = <0x80157450 0xC>;
  			};
  
 -			thermal@801573c0 {
++			thermal: thermal@801573c0 {
+ 				compatible = "stericsson,db8500-thermal";
+ 				reg = <0x801573c0 0x40>;
+ 				interrupt-parent = <&prcmu>;
+ 				interrupts = <21 IRQ_TYPE_LEVEL_HIGH>,
+ 					     <22 IRQ_TYPE_LEVEL_HIGH>;
+ 				interrupt-names = "IRQ_HOTMON_LOW", "IRQ_HOTMON_HIGH";
 -				num-trips = <4>;
 -
 -				trip0-temp = <70000>;
@@ -187,13 +223,10 @@ index 3428290644ba..064e8abec954 100644
 -				trip3-temp = <85000>;
 -				trip3-type = "critical";
 -				trip3-cdev-num = <0>;
--
--				status = "okay";
--			};
--
- 			ab8500 {
- 				ab8500-gpio {
- 					/*
++				#thermal-sensor-cells = <0>;
+ 			};
+ 
+ 			db8500-prcmu-regulators {
 -- 
 2.21.0
 
