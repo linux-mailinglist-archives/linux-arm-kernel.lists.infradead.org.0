@@ -2,83 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DE82BA087F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 19:31:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63E22A0884
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 19:33:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=MHBaxtgRmO74TfApAVXWaBGyBkSXzfTUvpsL4xBWXw0=; b=QAjNZsJy1k9WiC
-	MzNzwvLOuzwGBnkFgc933WJpsx3dpXQfNjKvI0AXQGTCmfTuVCb/uBtvBhBHrjMWVSC8j9z4kFK2Q
-	ZvTLHao2tlkXlOvaoOyUd++qmy98bvFEdxI7znhrOQkcnWSnYqrG8B8jiGdMBMDzkRhnxkzFpN7h0
-	d7GMXCMvpyXavkB0h6o83artCIkYGJRyDAhzI6FOSj/YltzwAFEJmm/KpeGN5L+D3IJ4u/SxwgyCj
-	QlaC9cx2blDXeKjG3vM3roDWhF524ylXe+KSOAt1X4lNBM5unge3Hr7j7tAs/7fEY3rtz+LUxizmE
-	kgH7MxSE57g29bNppgMQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=THCqMQlXZYEGXANtr0dcAWqc8Dh24L4qv30O6o5kwLc=; b=siZuiUhih2MbND
+	TNNeRisBAQEFBmKi6vAypfNGWYpWce9iCCkS8Hgyus/Xz0BY0vv4HyABJwc53j3vwlzlDJLoHTRiN
+	bf0wmfkzCHpqnfmb7clkN3QqVOXmoBbULvjL+Cn+iM4SCHwG3jO1Ss+59roRIlKR/0qBJJ4hGobUR
+	uF7660SHPcxZmLYI2YhPHSOoYt6g7CZyT+1dIeOUdxR5glUTMKMNNqPGKFAYrq5NYnRixjQMqahTg
+	emI6K9KtH8ZoWLnsEa9cjZAIVBkKI1dTgMVOTAOECB6/0VLtFyabOzwzq06AIVYILMypU8XhutRZ2
+	G0X/bjhWOKiaiR75e5MA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i31me-0007Eo-1z; Wed, 28 Aug 2019 17:31:00 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1i31oS-0007Xw-C8; Wed, 28 Aug 2019 17:32:52 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i31lH-00052b-Sy
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 17:29:37 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d66ba010001>; Wed, 28 Aug 2019 10:29:37 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Wed, 28 Aug 2019 10:29:35 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Wed, 28 Aug 2019 10:29:35 -0700
-Received: from HQMAIL110.nvidia.com (172.18.146.15) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 28 Aug
- 2019 17:29:35 +0000
-Received: from HQMAIL109.nvidia.com (172.20.187.15) by hqmail110.nvidia.com
- (172.18.146.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 28 Aug
- 2019 17:29:35 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Wed, 28 Aug 2019 17:29:34 +0000
-Received: from vidyas-desktop.nvidia.com (Not Verified[10.24.37.38]) by
- hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d66b9fa0000>; Wed, 28 Aug 2019 10:29:34 -0700
-From: Vidya Sagar <vidyas@nvidia.com>
-To: <lorenzo.pieralisi@arm.com>, <bhelgaas@google.com>, <robh+dt@kernel.org>, 
- <thierry.reding@gmail.com>, <jonathanh@nvidia.com>, <andrew.murray@arm.com>
-Subject: [PATCH V3 6/6] arm64: tegra: Add PCIe slot supply information in
- p2972-0000 platform
-Date: Wed, 28 Aug 2019 22:58:50 +0530
-Message-ID: <20190828172850.19871-7-vidyas@nvidia.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190828172850.19871-1-vidyas@nvidia.com>
-References: <20190828172850.19871-1-vidyas@nvidia.com>
-X-NVConfidentiality: public
+ id 1i31oF-0007Xc-6o
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 17:32:40 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id E5F3222CF8;
+ Wed, 28 Aug 2019 17:32:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567013558;
+ bh=g4OCrTwVa9bGHj9tnxdp3jF6CcqJ8f1XiF9bSopoU3g=;
+ h=Date:From:To:Cc:Subject:From;
+ b=a3rf4aOlbouRot3H7YWNOPjdMdjcSi4kuaOwn9XEDNdNwloLChRW0NRPbuHXR9PXS
+ C6MgP0i2QWJTMl2Pk08Rc1N/ScAAM4oPGmcweVwXtZ/63yqisTC31BDdQGAwJFmL4V
+ GPPOqjrUiOAnRHK07SzjdAwi+63PljkdrwKkNN/A=
+Date: Wed, 28 Aug 2019 18:32:33 +0100
+From: Will Deacon <will@kernel.org>
+To: torvalds@linux-foundation.org
+Subject: [GIT PULL] arm64: Fixes for -rc7
+Message-ID: <20190828173233.zqwm5nd4p5xa4jxi@willie-the-truck>
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1567013377; bh=pqenOE/Va6ZccwLf8/ZCtakjRCrDvI5bZnar6GjXaYE=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- In-Reply-To:References:X-NVConfidentiality:MIME-Version:
- Content-Type;
- b=Zxu+zqpoWxxbZwxEbY6fRhF1p0oN39Mz8qXzcjZkrUsb3xAlI46nkOIVN36SRn4mS
- JAyBR922LYR0RNBasYMcItyRlKGZOnhY2P0JAgxu/j8ec8A3EeXGtKWlVNyOfQA4vX
- Whb82J/tEtD/8cYe6YBAmK3ijeCEEEyWeM0cOBplFjF+BykjINIOnbC01nnbSwaZQ4
- 3eo1evbA3bAO3o9WMqka7257ml61Nr29dgRoOC/yq48OtphbmDemnLxFN4KBxEJxS2
- 5JnEfDhygAmB/j3ip/PNEyPourAeOiz4lVQRTLJr6GDhR7wGgPa93m90SRf3j4UR9/
- h4GeNzZXX+rSg==
+Content-Disposition: inline
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_102936_016869_BE507414 
-X-CRM114-Status: UNSURE (   7.95  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190828_103239_273353_AD6C23FA 
+X-CRM114-Status: GOOD (  10.17  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -98,86 +74,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, vidyas@nvidia.com, linux-kernel@vger.kernel.org,
- mperttunen@nvidia.com, linux-pci@vger.kernel.org, linux-tegra@vger.kernel.org,
- digetx@gmail.com, kishon@ti.com, linux-arm-kernel@lists.infradead.org,
- sagar.tv@gmail.com
+Cc: kvm@vger.kernel.org, rkrcmar@redhat.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add 3.3V and 12V supplies regulators information of x16 PCIe slot in
-p2972-0000 platform which is owned by C5 controller and also enable C5
-controller.
+Hi Linus,
 
-Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
----
-V3:
-* None
+Hot on the heels of our last set of fixes are a few more for -rc7. Two
+of them are fixing issues with our virtual interrupt controller
+implementation in KVM/arm, while the other is a longstanding but
+straightforward kallsyms fix which was been acked by Masami and resolves
+an initialisation failure in kprobes observed on arm64.
 
-V2:
-* None
+Please pull, thanks.
 
- .../arm64/boot/dts/nvidia/tegra194-p2888.dtsi | 24 +++++++++++++++++++
- .../boot/dts/nvidia/tegra194-p2972-0000.dts   |  4 +++-
- 2 files changed, 27 insertions(+), 1 deletion(-)
+Will
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-index 62e07e1197cc..4c38426a6969 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194-p2888.dtsi
-@@ -289,5 +289,29 @@
- 			gpio = <&gpio TEGRA194_MAIN_GPIO(A, 3) GPIO_ACTIVE_HIGH>;
- 			enable-active-high;
- 		};
-+
-+		vdd_3v3_pcie: regulator@2 {
-+			compatible = "regulator-fixed";
-+			reg = <2>;
-+
-+			regulator-name = "PEX_3V3";
-+			regulator-min-microvolt = <3300000>;
-+			regulator-max-microvolt = <3300000>;
-+			gpio = <&gpio TEGRA194_MAIN_GPIO(Z, 2) GPIO_ACTIVE_HIGH>;
-+			regulator-boot-on;
-+			enable-active-high;
-+		};
-+
-+		vdd_12v_pcie: regulator@3 {
-+			compatible = "regulator-fixed";
-+			reg = <3>;
-+
-+			regulator-name = "VDD_12V";
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			gpio = <&gpio TEGRA194_MAIN_GPIO(A, 1) GPIO_ACTIVE_LOW>;
-+			regulator-boot-on;
-+			enable-active-low;
-+		};
- 	};
- };
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-index 23597d53c9c9..d47cd8c4dd24 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-+++ b/arch/arm64/boot/dts/nvidia/tegra194-p2972-0000.dts
-@@ -93,9 +93,11 @@
- 	};
- 
- 	pcie@141a0000 {
--		status = "disabled";
-+		status = "okay";
- 
- 		vddio-pex-ctl-supply = <&vdd_1v8ao>;
-+		vpcie3v3-supply = <&vdd_3v3_pcie>;
-+		vpcie12v-supply = <&vdd_12v_pcie>;
- 
- 		phys = <&p2u_nvhs_0>, <&p2u_nvhs_1>, <&p2u_nvhs_2>,
- 		       <&p2u_nvhs_3>, <&p2u_nvhs_4>, <&p2u_nvhs_5>,
--- 
-2.17.1
+--->8
 
+The following changes since commit b6143d10d23ebb4a77af311e8b8b7f019d0163e6:
+
+  arm64: ftrace: Ensure module ftrace trampoline is coherent with I-side (2019-08-16 17:40:03 +0100)
+
+are available in the git repository at:
+
+  git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
+
+for you to fetch changes up to 82e40f558de566fdee214bec68096bbd5e64a6a4:
+
+  KVM: arm/arm64: vgic-v2: Handle SGI bits in GICD_I{S,C}PENDR0 as WI (2019-08-28 11:21:42 +0100)
+
+----------------------------------------------------------------
+arm64 fixes for -rc7
+
+- Fix GICv2 emulation bug (KVM)
+
+- Fix deadlock in virtual GIC interrupt injection code (KVM)
+
+- Fix kprobes blacklist init failure due to broken kallsyms lookup
+
+----------------------------------------------------------------
+Heyi Guo (1):
+      KVM: arm/arm64: vgic: Fix potential deadlock when ap_list is long
+
+Marc Zyngier (2):
+      kallsyms: Don't let kallsyms_lookup_size_offset() fail on retrieving the first symbol
+      KVM: arm/arm64: vgic-v2: Handle SGI bits in GICD_I{S,C}PENDR0 as WI
+
+ kernel/kallsyms.c             |  6 ++++--
+ virt/kvm/arm/vgic/vgic-mmio.c | 18 ++++++++++++++++++
+ virt/kvm/arm/vgic/vgic-v2.c   |  5 ++++-
+ virt/kvm/arm/vgic/vgic-v3.c   |  5 ++++-
+ virt/kvm/arm/vgic/vgic.c      |  7 +++++++
+ 5 files changed, 37 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
