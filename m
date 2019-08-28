@@ -2,69 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 111AB9F7D0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 03:29:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54E609F7D8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 03:33:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6i5Xz8cpdLoCBBxUE79w2srrTAFUEmEiQQvKWVl3e3Q=; b=hcGqszb4XIsc8O
-	PQYY5Rb0BnlxThPzZYF402X7adkK3cwsSVqm2tXtNSZ3+ckSBKMRdGvRFaGmMbcltuCWrdSjpg9+x
-	VAdXFrylc7Y7kNF7H2kX3C6inTl6GUu/HFtC61sUMHF1qr8XlIa8q/lxTUKIN4vdzJBEBTsUpc3HH
-	BVI5k0PFVJmD3dgxeYz108UiWpT1AVWDRDki7HjXgFAHxWfcnnOETOmAfHgyB1EvrQXBOeV97eR4X
-	hGtKRzC48itAYPAMTF4yvgGPvbhIgPFRKJKUmwK4iU0IrVGfn1lNNrsSykdgAsGUsh2JQs5cHrxXR
-	gdlzVCen+8xhrPcOkyXQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=fzjz1Iwgp/jZXTVSeQMgAGTOjEqlJ44f63KknAxIVBg=; b=sV8UUHrRVf6RWmmp/BcL9ayGv
+	zr93q/cwRwZBxOdhiPzzm1gd4EcxtEaW+QUX6vNG3rzbjI2MoauoLlktk/kr+x76+8XIYC+9SZb7Y
+	4DahW8FX1UQoQC/LWw6kvsx5qCpwoXQ0IF/v0OXI3r/JnugKWL3VMjXqP3mjFYZEBZV58DqKCOqAX
+	wpI0LmL4MpbN97YWfF7GzFw4Il95lFai4xXLY7qBaiEQ6/ZTgbiyHlvivbMs0t2k3F5rIOclFvta1
+	lkqBtA7+EGs8qvTGnBxxSqk+tyRk+qw5cOx3ad23V647TEo/bOK2GLTSojZuF7CmC3knmk0bP+Gu9
+	pqvFyTkbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2mll-0006BL-Pl; Wed, 28 Aug 2019 01:29:05 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i2mqA-0007rM-1w; Wed, 28 Aug 2019 01:33:38 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2mlE-0006Au-OF; Wed, 28 Aug 2019 01:28:34 +0000
-X-UUID: e4c7103cfdce4f87bcd3c47496ae02d3-20190827
-X-UUID: e4c7103cfdce4f87bcd3c47496ae02d3-20190827
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <chunfeng.yun@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1211277978; Tue, 27 Aug 2019 17:28:28 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 27 Aug 2019 18:28:26 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Wed, 28 Aug 2019 09:28:24 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 28 Aug 2019 09:28:23 +0800
-Message-ID: <1566955695.7317.17.camel@mhfsdcap03>
-Subject: Re: [PATCH next v10 03/11] dt-bindings: usb: add binding for USB
- GPIO based connection detection driver
-From: Chunfeng Yun <chunfeng.yun@mediatek.com>
-To: Rob Herring <robh@kernel.org>
-Date: Wed, 28 Aug 2019 09:28:15 +0800
-In-Reply-To: <20190827183154.GA10374@bogus>
-References: <1566547041-20804-1-git-send-email-chunfeng.yun@mediatek.com>
- <1566547041-20804-4-git-send-email-chunfeng.yun@mediatek.com>
- <20190827183154.GA10374@bogus>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i2mps-0007qN-BX
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 01:33:21 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga005.jf.intel.com ([10.7.209.41])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 27 Aug 2019 18:33:18 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,439,1559545200"; d="scan'208";a="355955307"
+Received: from linux.intel.com ([10.54.29.200])
+ by orsmga005.jf.intel.com with ESMTP; 27 Aug 2019 18:33:18 -0700
+Received: from [10.226.38.21] (vramuthx-mobl1.gar.corp.intel.com
+ [10.226.38.21])
+ by linux.intel.com (Postfix) with ESMTP id 484585800BD;
+ Tue, 27 Aug 2019 18:33:15 -0700 (PDT)
+Subject: Re: [PATCH v1 1/2] dt-bindings: mmc: sdhci-of-arasan: Add new
+ compatible for Intel LGM eMMC
+To: Ulf Hansson <ulf.hansson@linaro.org>
+References: <20190826072800.38413-1-vadivel.muruganx.ramuthevar@linux.intel.com>
+ <CAPDyKFpsvZ+LEwY91LiSExgm=4g=BhWNpkkJMniBNff+qch-QA@mail.gmail.com>
+From: "Ramuthevar, Vadivel MuruganX"
+ <vadivel.muruganx.ramuthevar@linux.intel.com>
+Message-ID: <32e50682-9f5a-e0d2-f2d4-a72d0bb35f17@linux.intel.com>
+Date: Wed, 28 Aug 2019 09:33:14 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 259D35EFF30C0616C1A211BC45937CDECB94215148384FD745984477FEA65A402000:8
-X-MTK: N
+In-Reply-To: <CAPDyKFpsvZ+LEwY91LiSExgm=4g=BhWNpkkJMniBNff+qch-QA@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_182832_796198_D36696C3 
-X-CRM114-Status: GOOD (  23.67  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190827_183320_437148_022C6B0C 
+X-CRM114-Status: GOOD (  19.25  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,119 +73,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Heikki Krogerus <heikki.krogerus@linux.intel.com>,
- Hans de Goede <hdegoede@redhat.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Biju Das <biju.das@bp.renesas.com>, Badhri Jagan
- Sridharan <badhri@google.com>, Andy
- Shevchenko <andy.shevchenko@gmail.com>, linux-mediatek@lists.infradead.org,
- Min Guo <min.guo@mediatek.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, Nagarjuna Kristam <nkristam@nvidia.com>,
- Adam Thomson <Adam.Thomson.Opensource@diasemi.com>,
- linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
+ qi-ming.wu@intel.com, andriy.shevchenko@intel.com, cheol.yong.kim@intel.com,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Michal Simek <michal.simek@xilinx.com>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-08-27 at 13:31 -0500, Rob Herring wrote:
-> On Fri, Aug 23, 2019 at 03:57:13PM +0800, Chunfeng Yun wrote:
-> > It's used to support dual role switch via GPIO when use Type-B
-> > receptacle, typically the USB ID pin is connected to an input
-> > GPIO, and also used to enable/disable device when the USB Vbus
-> > pin is connected to an input GPIO.
-> > 
-> > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-> > ---
-> > v9~v10 no changes
-> > 
-> > v8 changes:
-> >  1. rename the title
-> >  2. change the compatible as "linux,usb-conn-gpio" instead of
-> >     "linux,typeb-conn-gpio"
-> 
-> I don't think that is an improvement. How about 'gpio-usb-b-connector' 
-> to be consistent.
-Ok
+Hi Ulf,
 
-> 
-> > 
-> > v7 changes:
-> >  1. add description for device only mode
-> > 
-> > v6 changes:
-> >  1. remove status and port nodes in example
-> >  2. make vbus-supply as optional property
-> > 
-> > v5 changes:
-> >  1. treat type-B connector as child device of USB controller's, but not
-> >     as a separate virtual device, suggested by Rob
-> >  2. put connector's port node under connector node, suggested by Rob
-> > 
-> > v4 no changes
-> > 
-> > v3 changes:
-> >  1. treat type-B connector as a virtual device, but not child device of
-> >     USB controller's
-> > 
-> > v2 changes:
-> >   1. new patch to make binding clear suggested by Hans
-> > ---
-> >  .../devicetree/bindings/usb/usb-conn-gpio.txt | 31 +++++++++++++++++++
-> >  1 file changed, 31 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
-> > 
-> > diff --git a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
-> > new file mode 100644
-> > index 000000000000..d4d107fedc22
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
-> > @@ -0,0 +1,31 @@
-> > +USB GPIO Based Connection Detection
-> > +
-> > +This is typically used to switch dual role mode from the USB ID pin connected
-> > +to an input GPIO, and also used to enable/disable device mode from the USB
-> > +Vbus pin connected to an input GPIO.
-> > +
-> > +Required properties:
-> > +- compatible : should include "linux,usb-conn-gpio" and "usb-b-connector".
-> > +- id-gpios, vbus-gpios : input gpios, either one of them must be present,
-> > +	and both can be present as well.
-> > +	see connector/usb-connector.txt
-> > +
-> > +Optional properties:
-> > +- vbus-supply : can be present if needed when supports dual role mode.
-> > +	see connector/usb-connector.txt
-> > +
-> > +- Sub-nodes:
-> > +	- port : can be present.
-> > +		see graph.txt
-> > +
-> > +Example:
-> > +
-> > +&mtu3 {
-> > +	connector {
-> > +		compatible = "linux,usb-conn-gpio", "usb-b-connector";
-> > +		label = "micro-USB";
-> 
-> 'label' is for a human identifying a particular connector when there are 
-> multiple (of the same type). So not a great example here.
-Got it, will remove it
+On 27/8/2019 9:49 PM, Ulf Hansson wrote:
+> On Mon, 26 Aug 2019 at 09:28, Ramuthevar,Vadivel MuruganX
+> <vadivel.muruganx.ramuthevar@linux.intel.com> wrote:
+>> From: Ramuthevar Vadivel Murugan <vadivel.muruganx.ramuthevar@linux.intel.com>
+>>
+>> Add a new compatible to use the sdhc-arasan host controller driver
+>> with the eMMC PHY on Intel's Lightning Mountain SoC.
+>>
+>> Signed-off-by: Ramuthevar Vadivel Murugan <vadivel.muruganx.ramuthevar@linux.intel.com>
+> Applied for next, thanks!
+>
+> Kind regards
+> Uffe
 
-Thanks a lot
-> 
-> > +		type = "micro";
-> > +		id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
-> > +		vbus-supply = <&usb_p0_vbus>;
-> > +	};
-> > +};
-> > -- 
-> > 2.23.0
-> > 
+Thank you so much for review and applied for next.
 
-
+Best Regards
+Vadivel
+>
+>> ---
+>>   Documentation/devicetree/bindings/mmc/arasan,sdhci.txt | 17 +++++++++++++++++
+>>   1 file changed, 17 insertions(+)
+>>
+>> diff --git a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+>> index 1edbb049cccb..7ca0aa7ccc0b 100644
+>> --- a/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+>> +++ b/Documentation/devicetree/bindings/mmc/arasan,sdhci.txt
+>> @@ -17,6 +17,8 @@ Required Properties:
+>>         For this device it is strongly suggested to include arasan,soc-ctl-syscon.
+>>       - "ti,am654-sdhci-5.1", "arasan,sdhci-5.1": TI AM654 MMC PHY
+>>          Note: This binding has been deprecated and moved to [5].
+>> +    - "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1": Intel LGM eMMC PHY
+>> +      For this device it is strongly suggested to include arasan,soc-ctl-syscon.
+>>
+>>     [5] Documentation/devicetree/bindings/mmc/sdhci-am654.txt
+>>
+>> @@ -80,3 +82,18 @@ Example:
+>>                  phy-names = "phy_arasan";
+>>                  #clock-cells = <0>;
+>>          };
+>> +
+>> +       emmc: sdhci@ec700000 {
+>> +               compatible = "intel,lgm-sdhci-5.1-emmc", "arasan,sdhci-5.1";
+>> +               reg = <0xec700000 0x300>;
+>> +               interrupt-parent = <&ioapic1>;
+>> +               interrupts = <44 1>;
+>> +               clocks = <&cgu0 LGM_CLK_EMMC5>, <&cgu0 LGM_CLK_NGI>,
+>> +                        <&cgu0 LGM_GCLK_EMMC>;
+>> +               clock-names = "clk_xin", "clk_ahb", "gate";
+>> +               clock-output-names = "emmc_cardclock";
+>> +               #clock-cells = <0>;
+>> +               phys = <&emmc_phy>;
+>> +               phy-names = "phy_arasan";
+>> +               arasan,soc-ctl-syscon = <&sysconf>;
+>> +       };
+>> --
+>> 2.11.0
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
