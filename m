@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C92F9FFCC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF38F9FFCF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:26:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OGze58oESnRY3u8A+XoumsTmhlRvFNaCn8W8+sPD6+k=; b=XI7ZeY9E5i9iy3
-	4RAfQJuHAmOFvSe6lvdBEj/EOaEv81b0JSuvkEvaoFf/PygmsifeMI57CFEgHIFa5nZWaEO5U8odg
-	doxenwKFj/Dfk5s8CDuhsVb6xLSGZne5H5zzTMQqeymZ9essl9tK/uGZCIEZwqYh3AWJJ1SKM5NrQ
-	QzDVVR2GAVpU5mMTJ5Pb6s8qa6XRuqRV7WZfzf2mTOHoJgRLRuMKrEpsd/OFNGeQnpZaEIlRtxWrt
-	9qUbwlhGcT1jEhU3hEb2frShzRfeTOdMj3pC7xGXOgpqDgxKTaSvQXb55HWsCWoKyEiXGKNfHVLVx
-	mUhspjT8Ib7ZjNVyM6Ew==;
+	List-Owner; bh=EsdSFuz7jTMwuN17YwMK+BB0J3WySWafUjyjr0EVwN8=; b=U+GbUmZ3+f8Ybi
+	QNKsmx7uJWC1I9j5r5VTgEu6uz37G+/PP5FX/j6TBvfInkd0wacMVxwJo/FhcyK1fH5XuyEwcuaHI
+	vLXu/3nzAvnLKGTCiTh8R/aEHT1pXBYeo9JuMxr0vW4HMuvv5Uf1AogEKeA2Iko5tDLKs9pb9OdNY
+	kwse9s2IoLRN5T+GW94qVg5JQu+tkJEJV8lLpbQJ2Dj8gTvy9ZRvu9eqMVP1SUMfvPOOdhb6emFh8
+	lBVdeuMIh83UzdotyySoaiADogjMUW75exg7NAJ4vi6Kdk3nSwl9CAhw8nAVB150dPG6Mm2W35C/Q
+	5txt729DW+TR/SUKYqIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2v9O-0005HL-Rq; Wed, 28 Aug 2019 10:26:03 +0000
+	id 1i2v9f-0005UT-1V; Wed, 28 Aug 2019 10:26:19 +0000
 Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2v7l-0002xL-Us
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:24:24 +0000
+ id 1i2v7n-0002y3-Ex
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:24:27 +0000
 Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id 7F8A742ECD;
- Wed, 28 Aug 2019 10:24:20 +0000 (UTC)
+ by mta-01.yadro.com (Postfix) with ESMTP id 07E1F42ECE;
+ Wed, 28 Aug 2019 10:24:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
  content-type:content-type:content-transfer-encoding:mime-version
  :references:in-reply-to:x-mailer:message-id:date:date:subject
  :subject:from:from:received:received:received; s=mta-01; t=
- 1566987859; x=1568802260; bh=HJZyEVApdw1Mju6dqt61w539MuWoTZM60B1
- 9nvgkkt8=; b=BOdFlclPmsB0fpH2LPSCgTuBa3meuJWyDi8eOFKQ0jvchmZAK5p
- exW4ZNo6XlaX7exdgEc6Vg85UXQQtX9LAQdIqCqE1Qzivkt8lqOG+T6HWcjTdWCT
- F0bMYRHCayX4PGAsKaCT9mJwXtACUd2vtdz6H0/lMNK13vL3BLpv5LwA=
+ 1566987860; x=1568802261; bh=87VA5h5waSDTUF2CVQN/4Wwh9JYi5VNM4bl
+ aFGLhSMY=; b=ftjErji2haH19AzZFUWJf73ObDZba5bpxrSSs758XIdfDgACCZk
+ jPlBP+oacojsvpJcH/Aq0ofG5bq36R++M4CPVB+RcmRQYJxUXVx26Iyk/bGeYABI
+ 10uOLFbik5rkwD2UUHG7HkcmPXm+H/zjYStNE9UUWOOxCX8ZpzlFMMas=
 X-Virus-Scanned: amavisd-new at yadro.com
 Received: from mta-01.yadro.com ([127.0.0.1])
  by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id N_qy3AKWzIFk; Wed, 28 Aug 2019 13:24:19 +0300 (MSK)
+ with ESMTP id maoMV8-Mbqiy; Wed, 28 Aug 2019 13:24:20 +0300 (MSK)
 Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
  [172.17.10.102])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
  (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id 54A31404CB;
- Wed, 28 Aug 2019 13:24:19 +0300 (MSK)
+ by mta-01.yadro.com (Postfix) with ESMTPS id D90F3404CB;
+ Wed, 28 Aug 2019 13:24:20 +0300 (MSK)
 Received: from localhost.dev.yadro.com (172.17.15.69) by
  T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
  (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
- 15.1.669.32; Wed, 28 Aug 2019 13:24:18 +0300
+ 15.1.669.32; Wed, 28 Aug 2019 13:24:20 +0300
 From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
  <wim@linux-watchdog.org>
-Subject: [PATCH v4 3/4] watchdog/aspeed: add support for dual boot
-Date: Wed, 28 Aug 2019 13:24:01 +0300
-Message-ID: <20190828102402.13155-4-i.mikhaylov@yadro.com>
+Subject: [PATCH v4 4/4] aspeed/watchdog: Add access_cs0 option for alt-boot
+Date: Wed, 28 Aug 2019 13:24:02 +0300
+Message-ID: <20190828102402.13155-5-i.mikhaylov@yadro.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190828102402.13155-1-i.mikhaylov@yadro.com>
 References: <20190828102402.13155-1-i.mikhaylov@yadro.com>
@@ -62,8 +62,8 @@ X-Originating-IP: [172.17.15.69]
 X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
  T-EXCH-02.corp.yadro.com (172.17.10.102)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_032422_571522_5BE3BE9B 
-X-CRM114-Status: GOOD (  16.76  )
+X-CRM114-CacheID: sfid-20190828_032424_453868_7C86A8A5 
+X-CRM114-Status: GOOD (  13.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -100,113 +100,55 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Set WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION into WDT_CLEAR_TIMEOUT_STATUS
-to clear out boot code source and re-enable access to the primary SPI flash
-chip while booted via wdt2 from the alternate chip.
-
-AST2400 datasheet says:
-"In the 2nd flash booting mode, all the address mapping to CS0# would be
-re-directed to CS1#. And CS0# is not accessible under this mode. To access
-CS0#, firmware should clear the 2nd boot mode register in the WDT2 status
-register WDT30.bit[1]."
+The option for the ast2400/2500 to get access to CS0 at runtime.
 
 Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
 ---
- drivers/watchdog/aspeed_wdt.c | 65 ++++++++++++++++++++++++++++++++++-
- 1 file changed, 64 insertions(+), 1 deletion(-)
+ .../ABI/testing/sysfs-class-watchdog          | 34 +++++++++++++++++++
+ 1 file changed, 34 insertions(+)
 
-diff --git a/drivers/watchdog/aspeed_wdt.c b/drivers/watchdog/aspeed_wdt.c
-index cc71861e033a..125dbd349b00 100644
---- a/drivers/watchdog/aspeed_wdt.c
-+++ b/drivers/watchdog/aspeed_wdt.c
-@@ -53,6 +53,8 @@ MODULE_DEVICE_TABLE(of, aspeed_wdt_of_table);
- #define   WDT_CTRL_ENABLE		BIT(0)
- #define WDT_TIMEOUT_STATUS	0x10
- #define   WDT_TIMEOUT_STATUS_BOOT_SECONDARY	BIT(1)
-+#define WDT_CLEAR_TIMEOUT_STATUS	0x14
-+#define   WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION	BIT(0)
- 
- /*
-  * WDT_RESET_WIDTH controls the characteristics of the external pulse (if
-@@ -165,6 +167,60 @@ static int aspeed_wdt_restart(struct watchdog_device *wdd,
- 	return 0;
- }
- 
-+/* access_cs0 shows if cs0 is accessible, hence the reverted bit */
-+static ssize_t access_cs0_show(struct device *dev,
-+			       struct device_attribute *attr, char *buf)
-+{
-+	struct aspeed_wdt *wdt = dev_get_drvdata(dev);
-+	u32 status = readl(wdt->base + WDT_TIMEOUT_STATUS);
+diff --git a/Documentation/ABI/testing/sysfs-class-watchdog b/Documentation/ABI/testing/sysfs-class-watchdog
+index 6317ade5ad19..675f9b537661 100644
+--- a/Documentation/ABI/testing/sysfs-class-watchdog
++++ b/Documentation/ABI/testing/sysfs-class-watchdog
+@@ -72,3 +72,37 @@ Description:
+ 		It is a read/write file. When read, the currently assigned
+ 		pretimeout governor is returned.  When written, it sets
+ 		the pretimeout governor.
 +
-+	return sprintf(buf, "%u\n",
-+		      !(status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY));
-+}
++What:		/sys/class/watchdog/watchdog1/access_cs0
++Date:		August 2019
++Contact:	Ivan Mikhaylov <i.mikhaylov@yadro.com>,
++		Alexander Amelkin <a.amelkin@yadro.com>
++Description:
++		It is a read/write file. This attribute exists only if the
++		system has booted from the alternate flash chip due to
++		expiration of a watchdog timer of AST2400/AST2500 when
++		alternate boot function was enabled with 'aspeed,alt-boot'
++		devicetree option for that watchdog or with an appropriate
++		h/w strapping (for WDT2 only).
 +
-+static ssize_t access_cs0_store(struct device *dev,
-+				struct device_attribute *attr, const char *buf,
-+				size_t size)
-+{
-+	struct aspeed_wdt *wdt = dev_get_drvdata(dev);
-+	unsigned long val;
++		At alternate flash the 'access_cs0' sysfs node provides:
++			ast2400: a way to get access to the primary SPI flash
++				chip at CS0 after booting from the alternate
++				chip at CS1.
++			ast2500: a way to restore the normal address mapping
++				from (CS0->CS1, CS1->CS0) to (CS0->CS0,
++				CS1->CS1).
 +
-+	if (kstrtoul(buf, 10, &val))
-+		return -EINVAL;
++		Clearing the boot code selection and timeout counter also
++		resets to the initial state the chip select line mapping. When
++		the SoC is in normal mapping state (i.e. booted from CS0),
++		clearing those bits does nothing for both versions of the SoC.
++		For alternate boot mode (booted from CS1 due to wdt2
++		expiration) the behavior differs as described above.
 +
-+	if (val)
-+		writel(WDT_CLEAR_TIMEOUT_AND_BOOT_CODE_SELECTION,
-+		       wdt->base + WDT_CLEAR_TIMEOUT_STATUS);
++		This option can be used with wdt2 (watchdog1) only.
 +
-+	return size;
-+}
-+
-+/*
-+ * This attribute exists only if the system has booted from the alternate
-+ * flash with 'alt-boot' option.
-+ *
-+ * At alternate flash the 'access_cs0' sysfs node provides:
-+ *   ast2400: a way to get access to the primary SPI flash chip at CS0
-+ *            after booting from the alternate chip at CS1.
-+ *   ast2500: a way to restore the normal address mapping from
-+ *            (CS0->CS1, CS1->CS0) to (CS0->CS0, CS1->CS1).
-+ *
-+ * Clearing the boot code selection and timeout counter also resets to the
-+ * initial state the chip select line mapping. When the SoC is in normal
-+ * mapping state (i.e. booted from CS0), clearing those bits does nothing for
-+ * both versions of the SoC. For alternate boot mode (booted from CS1 due to
-+ * wdt2 expiration) the behavior differs as described above.
-+ *
-+ * This option can be used with wdt2 (watchdog1) only.
-+ */
-+static DEVICE_ATTR_RW(access_cs0);
-+
-+static struct attribute *bswitch_attrs[] = {
-+	&dev_attr_access_cs0.attr,
-+	NULL
-+};
-+ATTRIBUTE_GROUPS(bswitch);
-+
- static const struct watchdog_ops aspeed_wdt_ops = {
- 	.start		= aspeed_wdt_start,
- 	.stop		= aspeed_wdt_stop,
-@@ -306,9 +362,16 @@ static int aspeed_wdt_probe(struct platform_device *pdev)
- 	}
- 
- 	status = readl(wdt->base + WDT_TIMEOUT_STATUS);
--	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY)
-+	if (status & WDT_TIMEOUT_STATUS_BOOT_SECONDARY) {
- 		wdt->wdd.bootstatus = WDIOF_CARDRESET;
- 
-+		if (of_device_is_compatible(np, "aspeed,ast2400-wdt") ||
-+		    of_device_is_compatible(np, "aspeed,ast2500-wdt"))
-+			wdt->wdd.groups = bswitch_groups;
-+	}
-+
-+	dev_set_drvdata(dev, wdt);
-+
- 	return devm_watchdog_register_device(dev, &wdt->wdd);
- }
- 
++		When read, the current status of the boot code selection is
++		shown. When written with any non-zero value, it clears
++		the boot code selection and the timeout counter, which results
++		in chipselect reset for AST2400/AST2500.
 -- 
 2.20.1
 
