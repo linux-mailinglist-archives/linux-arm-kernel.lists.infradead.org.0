@@ -2,62 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1442FA0205
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:40:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E447BA0206
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:41:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Z+juxzH5AKsGpiLHnuCGSeT4qZvMiHEbNCHWF4JDkU=; b=lud2UlK9sZ4/mi
-	r0o12NGWOOZJhwgn1WgPrIwN9tKwX9lnF1l8sMTm1UcG9ToTZG4cJHS/gaFdOuL93KX1wwT+P4T6L
-	S96rJBHMW6e81Y0kGg1TQcWoLuP0TG7ZqK24lob6aOZ4z2w40Ms1qGEfV2yOySASnvRfMuwf15qyC
-	D4DK3DbPtggVUxdE92CRksG+TO0lmJl5WwowbyD/mAqeyBqKVWySpsxdOXDTQEvNdyRHIllcbHfCS
-	XeRQC6/CpYy0t5gp417eVNfmpvTMGnq/dWrr9mkt5FI6GsluRuUF86Q0tclKI511npD4+BAmTgtTE
-	oPAtfJbKt0y3YyWuI9Ew==;
+	List-Owner; bh=ov+cPd7NJ5pU640c++1NGkjXvt5t1yYkQLnvmVXC/Kw=; b=rQQ9pwlA29CQLU
+	15qTv/VOIU1EkBetuSGF/J67hMjz4Lk9z54hyrkjz19oPM547KtvFV1uchyqmX71NgAO6w7sVy42f
+	zq9KTcLQWuezytFoDBXCbTZtBeckzk2Xj+uWUh5BbCiKeu3C6lQ/7n1jXZjGzUOd0lA+gNFB4kWMB
+	IFDurApSf2kgw5M7+cazOuVx4PJD7IzVkXHHiWxrsTU4LkcXuVyeCFYQcxHy78xSKk8gI+Q0T1JOg
+	sTxBz8Ey9p5QesxYEtFp+yvC8svXOPs4jT40TeecE32UvflL8us87j2pSjMUtzelEhzTqDAW4GnnJ
+	IKDbh0xc2Oikuu9jOjgA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xFh-0001ay-GB; Wed, 28 Aug 2019 12:40:41 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1i2xGG-0001pe-Ou; Wed, 28 Aug 2019 12:41:17 +0000
+Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xFV-0001a9-ET
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:40:30 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 Aug 2019 05:40:27 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,441,1559545200"; d="scan'208";a="210152703"
-Received: from deyangko-mobl.ccr.corp.intel.com ([10.249.168.35])
- by fmsmga002.fm.intel.com with ESMTP; 28 Aug 2019 05:40:23 -0700
-Message-ID: <63b8753a2a58688e75f6e03c46c84a064a123d85.camel@intel.com>
-Subject: Re: [PATCH v5 03/18] thermal: fix indentation in makefile
-From: Zhang Rui <rui.zhang@intel.com>
-To: Yangtao Li <tiny.windzz@gmail.com>, edubezval@gmail.com, 
- daniel.lezcano@linaro.org, robh+dt@kernel.org, mark.rutland@arm.com, 
- maxime.ripard@bootlin.com, wens@csie.org, mchehab+samsung@kernel.org, 
- davem@davemloft.net, gregkh@linuxfoundation.org,
- Jonathan.Cameron@huawei.com,  nicolas.ferre@microchip.com
-Date: Wed, 28 Aug 2019 20:40:33 +0800
-In-Reply-To: <20190810052829.6032-4-tiny.windzz@gmail.com>
-References: <20190810052829.6032-1-tiny.windzz@gmail.com>
- <20190810052829.6032-4-tiny.windzz@gmail.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1i2xG1-0001pH-Gv
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:41:03 +0000
+Received: by mail-qk1-x744.google.com with SMTP id p13so2177962qkg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 28 Aug 2019 05:41:00 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=zYGt6recImU5WvPTV8qExNayLqLyVIWo2aHxymGJHgk=;
+ b=DNHWJCgPkUGZEfSpsnjDqtiWqfaB8AKB5BtrqKdU1KX/lidWSERLBc6jzMMxQGJCh7
+ 2bEHZb6vGXHugGJ0H2ki5JOP2kOUMbgyKGC30kPIrrXhnmTEPUVpk5sg9V9ZtgLmUGfo
+ H7V5VVcKCsFuUD4l1LcUwB7NajHWUm+1Kxa5w85RCnfxiUCtGimmACp28N3vngV7+8Hf
+ iuatra0Sx+Klp1OjTbUIzqkl/94zC2sNTFZavIPmBgzrxB3Zx7XSjNomSqOeDI0J3mBb
+ iL0dDYgtLXl3WfI8+mfUGAIhpHng7BUWcIyDhkeHWUDiHRXVcBYfKU13i/ZbtZtOfbEK
+ UM+g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=zYGt6recImU5WvPTV8qExNayLqLyVIWo2aHxymGJHgk=;
+ b=PFNDZLDzxIGKZfD67d31OwqTX4g4vJWL7xHHDK7oVzSrKNv1ByZ56iAoDMA0jC2iC7
+ FNfNPHfXDHJhDv6cSUHjaffJ4XKfoM8SSmh8cp8l+zY1n2duP2XbQvKBDBmk59TWMaAh
+ BtmnFSRNCCiMIXK9FTtJOZz+Dk2z6zPnUuGiDTD5WJ6Zm/pht4LabnskKqnQbGI/SG6E
+ fqsDX3V48pdjg8Jmg2PJZffv9Xwo9A7teFoKZlHTCpOpJopshtq+Lqxy0zgQIpBXCNpQ
+ y+BCZdD3RCaERwcI36a7dJiHJCB0auro3ARD3LC4jk1zoJMmbGhtVXB7QRhGBNj4hqOh
+ deXQ==
+X-Gm-Message-State: APjAAAWXmLzeMx+R3mK0AgWE6/GlConj7XEghPb/wMqOrBTbK036CHxS
+ Cs3w/rdGknsV8o4k2XnyI+8il2enMjws71PEBMkPfw==
+X-Google-Smtp-Source: APXvYqwbbPGssh2DuzjSbdGwusjyFtrK6PhGiyBzNkD6fgWZZHMt0ZaO0pco/fjLcnorFVUx9jxMMOkViG2HRQDwFqE=
+X-Received: by 2002:a37:ad19:: with SMTP id f25mr3430527qkm.118.1566996060124; 
+ Wed, 28 Aug 2019 05:41:00 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-5-mike.leach@linaro.org>
+ <20190828031750.GD26133@leoy-ThinkPad-X240s>
+In-Reply-To: <20190828031750.GD26133@leoy-ThinkPad-X240s>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Wed, 28 Aug 2019 13:40:49 +0100
+Message-ID: <CAJ9a7Vjf_ooPVqT3egifJXEtVJKEe-PKrjh+myqimkOJDNMDdQ@mail.gmail.com>
+Subject: Re: [PATCH 4/8] coresight: etm4x: Fix issues with start-stop logic.
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_054029_526549_5AAE3741 
-X-CRM114-Status: GOOD (  13.67  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190828_054101_630851_8D5E13AB 
+X-CRM114-Status: GOOD (  23.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,68 +92,163 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-pm@vger.kernel.org
+Cc: Coresight ML <coresight@lists.linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, 2019-08-10 at 05:28 +0000, Yangtao Li wrote:
-> To unify code style.
-> 
-> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+Hi Leo,
 
-the later patches in this series does not change Makefile.
-So this seems to be a cleanup patch independent of this patch set.
-It's better to remove this patch from this patch series.
+On Wed, 28 Aug 2019 at 04:18, Leo Yan <leo.yan@linaro.org> wrote:
+>
+> Hi Mike,
+>
+> On Mon, Aug 19, 2019 at 09:57:16PM +0100, Mike Leach wrote:
+> > Fixes the following issues when using the ETMv4 start-stop logic.
+> >
+> > 1) Setting a start or a stop address should not automatically set the
+> > start-stop status to 'on'. The value set by the user in 'mode' must
+> > be respected or start instances could be missed.
+> > 2) Missing API for controlling TRCVIPCSSCTLR - start stop control by
+> > PE comparators.
+> > 3) Default ETM configuration sets a trace all range, and correctly sets
+> > the start-stop status bit. This was not being correctly reflected in
+> > the 'mode' parameter.
+> >
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > ---
+> >  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++--
+> >  drivers/hwtracing/coresight/coresight-etm4x.c |  1 +
+> >  2 files changed, 36 insertions(+), 4 deletions(-)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > index 7eab5d7d0b62..3bcc260c9e55 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > @@ -217,6 +217,7 @@ static ssize_t reset_store(struct device *dev,
+> >
+> >       /* No start-stop filtering for ViewInst */
+> >       config->vissctlr = 0x0;
+> > +     config->vipcssctlr = 0x0;
+> >
+> >       /* Disable seq events */
+> >       for (i = 0; i < drvdata->nrseqstate-1; i++)
+> > @@ -1059,8 +1060,6 @@ static ssize_t addr_start_store(struct device *dev,
+> >       config->addr_val[idx] = (u64)val;
+> >       config->addr_type[idx] = ETM_ADDR_TYPE_START;
+> >       config->vissctlr |= BIT(idx);
+> > -     /* SSSTATUS, bit[9] - turn on start/stop logic */
+> > -     config->vinst_ctrl |= BIT(9);
+> >       spin_unlock(&drvdata->spinlock);
+> >       return size;
+> >  }
+> > @@ -1116,8 +1115,6 @@ static ssize_t addr_stop_store(struct device *dev,
+> >       config->addr_val[idx] = (u64)val;
+> >       config->addr_type[idx] = ETM_ADDR_TYPE_STOP;
+> >       config->vissctlr |= BIT(idx + 16);
+> > -     /* SSSTATUS, bit[9] - turn on start/stop logic */
+> > -     config->vinst_ctrl |= BIT(9);
+> >       spin_unlock(&drvdata->spinlock);
+> >       return size;
+> >  }
+> > @@ -1271,6 +1268,39 @@ static ssize_t addr_exlevel_s_ns_store(struct device *dev,
+> >  }
+> >  static DEVICE_ATTR_RW(addr_exlevel_s_ns);
+> >
+> > +static ssize_t vinst_pe_cmp_start_stop_show(struct device *dev,
+> > +                                         struct device_attribute *attr,
+> > +                                         char *buf)
+> > +{
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     if (!drvdata->nr_pe_cmp)
+> > +             return -EINVAL;
+> > +     val = config->vipcssctlr;
+> > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+> > +}
+> > +static ssize_t vinst_pe_cmp_start_stop_store(struct device *dev,
+> > +                                          struct device_attribute *attr,
+> > +                                          const char *buf, size_t size)
+> > +{
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     if (kstrtoul(buf, 16, &val))
+> > +             return -EINVAL;
+> > +     if (!drvdata->nr_pe_cmp)
+> > +             return -EINVAL;
+> > +
+> > +     spin_lock(&drvdata->spinlock);
+> > +     config->vipcssctlr = val;
+> > +     spin_unlock(&drvdata->spinlock);
+>
+> I don't find the code to set 'config->vipcssctlr' into hardware register
+> TRCVIPCSSCTLR.
+>
 
-thanks,
-rui
-> ---
->  drivers/thermal/Makefile | 8 ++++----
->  1 file changed, 4 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
-> index fa6f8b206281..d7eafb5ef8ef 100644
-> --- a/drivers/thermal/Makefile
-> +++ b/drivers/thermal/Makefile
-> @@ -5,7 +5,7 @@
->  
->  obj-$(CONFIG_THERMAL)		+= thermal_sys.o
->  thermal_sys-y			+= thermal_core.o
-> thermal_sysfs.o \
-> -					thermal_helpers.o
-> +				   thermal_helpers.o
->  
->  # interface to/from other layers providing sensors
->  thermal_sys-$(CONFIG_THERMAL_HWMON)		+= thermal_hwmon.o
-> @@ -25,11 +25,11 @@ thermal_sys-$(CONFIG_CPU_THERMAL)	+=
-> cpu_cooling.o
->  thermal_sys-$(CONFIG_CLOCK_THERMAL)	+= clock_cooling.o
->  
->  # devfreq cooling
-> -thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
-> +thermal_sys-$(CONFIG_DEVFREQ_THERMAL) 	+= devfreq_cooling.o
->  
->  # platform thermal drivers
->  obj-y				+= broadcom/
-> -obj-$(CONFIG_THERMAL_MMIO)		+= thermal_mmio.o
-> +obj-$(CONFIG_THERMAL_MMIO)	+= thermal_mmio.o
->  obj-$(CONFIG_SPEAR_THERMAL)	+= spear_thermal.o
->  obj-$(CONFIG_SUN8I_THERMAL)     += sun8i_thermal.o
->  obj-$(CONFIG_ROCKCHIP_THERMAL)	+= rockchip_thermal.o
-> @@ -50,7 +50,7 @@ obj-$(CONFIG_TI_SOC_THERMAL)	+= ti-soc-
-> thermal/
->  obj-y				+= st/
->  obj-$(CONFIG_QCOM_TSENS)	+= qcom/
->  obj-y				+= tegra/
-> -obj-$(CONFIG_HISI_THERMAL)     += hisi_thermal.o
-> +obj-$(CONFIG_HISI_THERMAL)     	+= hisi_thermal.o
->  obj-$(CONFIG_MTK_THERMAL)	+= mtk_thermal.o
->  obj-$(CONFIG_GENERIC_ADC_THERMAL)	+= thermal-generic-adc.o
->  obj-$(CONFIG_ZX2967_THERMAL)	+= zx2967_thermal.o
+This is in coresight-etm4x.c, etm4_enable_hw(), ll 126-127
 
+> And based on the register definition, here we also should clamp the
+> value for START/STOP?
+>
+
+Unimplemented fields are RES0 - there is no issue with writing these -
+they will remain RES0.  (ETM arch spec, section 7.2.1)
+
+Thanks
+
+Mike
+
+> Thanks,
+> Leo Yan
+>
+> > +     return size;
+> > +}
+> > +static DEVICE_ATTR_RW(vinst_pe_cmp_start_stop);
+> > +
+> >  static ssize_t seq_idx_show(struct device *dev,
+> >                           struct device_attribute *attr,
+> >                           char *buf)
+> > @@ -2077,6 +2107,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
+> >       &dev_attr_addr_ctxtype.attr,
+> >       &dev_attr_addr_context.attr,
+> >       &dev_attr_addr_exlevel_s_ns.attr,
+> > +     &dev_attr_vinst_pe_cmp_start_stop.attr,
+> >       &dev_attr_seq_idx.attr,
+> >       &dev_attr_seq_state.attr,
+> >       &dev_attr_seq_event.attr,
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > index 52b8876de157..d8b078d0cc7f 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+> > @@ -868,6 +868,7 @@ static void etm4_set_default_filter(struct etmv4_config *config)
+> >        * in the started state
+> >        */
+> >       config->vinst_ctrl |= BIT(9);
+> > +     config->mode |= ETM_MODE_VIEWINST_STARTSTOP;
+> >
+> >       /* No start-stop filtering for ViewInst */
+> >       config->vissctlr = 0x0;
+> > --
+> > 2.17.1
+> >
+> > _______________________________________________
+> > CoreSight mailing list
+> > CoreSight@lists.linaro.org
+> > https://lists.linaro.org/mailman/listinfo/coresight
+
+
+
+-- 
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
