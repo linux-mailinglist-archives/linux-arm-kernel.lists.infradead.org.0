@@ -2,127 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3CA2D9FD52
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 10:40:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B228A9FD8A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 10:55:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hXV3hvxj8TujXgc3K1F/4EznuuYvyuyoHsvrylreEJM=; b=ZrVEA/K+vRIwnJ
-	KeQpgRdqJ1V199FXqa+KDhh/r2EhWX6UXZo4LghzhktZwuXwIV3rkYanntvGZW0sCOiP7JMFCpgmT
-	+rZO76X2kySCbki0ucteuM7JU0Ee8jEkTzG0reR3PAowK7XllAe+GLPI0M+oOCVYwEp0bb6LLFahz
-	PTwWNk1M8JW/rpteWGtTpLGNjq+BeIq5JoFCeoZoBnFK978+6B3td88US/W09CgOSp2mP3XJYqtF0
-	9TsoD3dsaQVxXjlMrG9DmW5xm0v30RaP6Maq7q1G43tjxi+xMhJfQebg6sFHinws1EEi5Nh7q1k8I
-	i6bYorz7i6TazOlqjsDQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ikrRS5VOK4/EJkoXL0gk0LIcDihRAm2nQQyfBy4ic6w=; b=psr
+	C1euxbWxZUkUxWrZm9dkx41bIZNt/PDjGdfmB+cp49oBef/XPQ/YAfJvk0Wv+MyCELgmSJqP12bPe
+	dT+q/StAZBHbIzvvvHt1CH8WRhSs0oONCvTts8B12Rj3wAgWkIfm8QUf/FDOeTdD0t32d5z9dvC7U
+	Q79QjIWw4+/rET3Y3A9G2clA26+PbGDaL8bUO4WeIDJde+mjUKhTek3LmzB4Q61sHjMZRC4ycl6x1
+	BIH2qu+s+fSFPRSXFPZ5hp5Mek0cjl0ap5Ybj1M8BH4zdH2ASENoLA4pgJq41b/xJy/77Uba8jmMk
+	B3SxbaBmhVFoTQ1nzOrCc7FYRIYlCtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2tV6-0004uQ-BL; Wed, 28 Aug 2019 08:40:20 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1i2tjZ-00027l-Ny; Wed, 28 Aug 2019 08:55:17 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2tUn-0004Wm-6R
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 08:40:02 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190828083955euoutp0200d32ee2e883291118c92634167f36c5~-CXWPocb10747307473euoutp027
+ id 1i2tjL-0001Ty-Os
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 08:55:05 +0000
+Received: by mail-pg1-x544.google.com with SMTP id u17so1095044pgi.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 08:39:55 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190828083955euoutp0200d32ee2e883291118c92634167f36c5~-CXWPocb10747307473euoutp027
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566981595;
- bh=nCO1CGbNKa5rvO48tD1eLJmbBQi/YQi3un/pIVM1ksQ=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=GyUvhO6HUlrozwZ+TG0uHeVIsHhZiuw7lkq26iTfRYh/mXQq/HVm2f0FZ4Q2Brefi
- /go/dCadcvFZSwQaJ4kn/7fqD7oQyo9qjS24MxWdthRrAkgHTAx+NJqdHM7UHBHp5L
- S0CF7Js9555sE7kx4Y1RZlliA8d1Tv4DUheaz7QA=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190828083955eucas1p2c5ef161d4b0934ff1def119ebe330278~-CXVc2gpu2348323483eucas1p2z;
- Wed, 28 Aug 2019 08:39:55 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 0A.DD.04374.ADD366D5; Wed, 28
- Aug 2019 09:39:54 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190828083954eucas1p2b8dc8e6d795b984ec607a7e49911ff2b~-CXUm5jQe2349023490eucas1p2h;
- Wed, 28 Aug 2019 08:39:54 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190828083953eusmtrp1093ab1005f1cbb6474ace28275f78049~-CXUYPHem2582525825eusmtrp1x;
- Wed, 28 Aug 2019 08:39:53 +0000 (GMT)
-X-AuditID: cbfec7f5-4ddff70000001116-b1-5d663dda61d3
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id D7.07.04117.9DD366D5; Wed, 28
- Aug 2019 09:39:53 +0100 (BST)
-Received: from [106.120.51.75] (unknown [106.120.51.75]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190828083953eusmtip198a24422c79bd0cf39db371dda376fb4~-CXTs6pHN0415604156eusmtip1z;
- Wed, 28 Aug 2019 08:39:53 +0000 (GMT)
-Subject: Re: [PATCH v7 9/9] drm: exynos: exynos_hdmi: use
- cec_notifier_conn_(un)register
-To: Dariusz Marcinkiewicz <darekm@google.com>,
- dri-devel@lists.freedesktop.org, linux-media@vger.kernel.org,
- hverkuil-cisco@xs4all.nl
-From: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Message-ID: <6bbfb6f8-15c2-9ad2-8857-898f4c6435a3@samsung.com>
-Date: Wed, 28 Aug 2019 10:39:51 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190814104520.6001-10-darekm@google.com>
-Content-Language: en-GB
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+3bO2Y7D6WkavqybDfujIs2MOmVZQcSBIIIoYyW27KTSZrbT
- uhJ5AfGy6XJRuVatErR102XzVkZqDZMaUoQpa5JCqUnknGBeltuZ5H+/532f93veFz4Sk/4g
- ZGRm1hlWk6VUyYVi3P5u4uPanm0nUtZ1F8fS+o8dAtpnv4rRlY6HiP7s/S2kuypcOF3uNuD0
- z29dOF3WP4zRTmeNiP6Q90tE2/q/EPSnJrOQ1tW8IOibzhYBfdM4KNwRzrwat+CMxaZlbNYi
- IVM/3kcw7hKHgHleeYUprbMixmNbxrz3ekT7QhTircdZVeZZVhOXdFScca15lMhuCz1vnviJ
- 5aAqcTEKIYHaAK6rPYJiJCalVDUCS25xUIwheGvXI154EPwqdKK5EXf+oIhvVCG4Wz8UFCMI
- XDN/cL8rglLAtOuR0N+IpIoQPNCPBwRGVWCQ224Q+F1CKh70b0sD70qoJDB+MBN+xqmVMGOb
- CNQXUYdgtK+N4D0LoaNiIJAQQm0Coy434MGoKMgbe0jwvBzqR8yYPwyoIhKG/74KLr4L7M52
- Ic8RMOSoE/G8BDqNOpwfyEega+4V8cKAwO2wBKcToc3RNRtBzkasgmdNcX4Eaif0vVDxGAbd
- Iwv5HcKg3H4D48sSKCyQ8m/EwKT1hoBnGZQM+HADkpvmXWaad41p3jWm/7EWhFtRFKvl1Oks
- l5DFnovllGpOm5Uem3ZKbUOz369zxuFtQC1Tx1oRRSJ5qKQwnE2REsqz3AV1KwISk0dKvsfM
- liTHlRcusppTqRqtiuVa0WISl0dJLi3oOyyl0pVn2JMsm81q5roCMkSWg0JtUUeTahWjntKc
- 38k1BUmENe70Cvflgarke3dueauv9ywzNEq96w5M/tn7MmUqc+nmg7UmRVnbYEWe6xz96MmT
- L0OpTRunDkfXDdsOJnZz62WNr/fcr6a2xzyd7k+IeOxTR2fcbX1sUPs+NfjSCm/3Kr6uMTX9
- OJJt3r3/zZb+khw5zmUo41djGk75D83/noN6AwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrJIsWRmVeSWpSXmKPExsVy+t/xu7o3bdNiDV7M0bPoPXeSyeL/tonM
- FkuOr2S0uPL1PZvFxZl3WSwm3Z/AYvHi3kUWi/7Hr5ktzp/fwG5xtukNu8Wmx9dYLS7vmsNm
- 0bNhK6vFjPP7mCxmTH7J5sDvsffbAhaPBZtKPTat6mTz2P7tAavH/e7jTB6bl9R79G1Zxejx
- eZOcx6mvn9kDOKP0bIryS0tSFTLyi0tslaINLYz0DC0t9IxMLPUMjc1jrYxMlfTtbFJSczLL
- Uov07RL0Mqbs/sRacJinYs7PF8wNjMu5uhg5OSQETCTuN79k72Lk4hASWMoo8fHhHcYuRg6g
- hJTE/BYliBphiT/Xutggal4zSnzfso8RJCEsECXx9+5qsISIQCejxK47t1lAHGaBmcwSu1b0
- QI3dxijxZ8kWVpAWNgFDid6jfWDtvAJ2EpPPzgGLswioSvzb9BMsLioQIXF4xyyoGkGJkzOf
- sIDYnALmEpN7GsHizALqEn/mXWKGsMUlmr6sZIWw5SW2v53DPIFRaBaS9llIWmYhaZmFpGUB
- I8sqRpHU0uLc9NxiI73ixNzi0rx0veT83E2MwGjfduznlh2MXe+CDzEKcDAq8fB28KfGCrEm
- lhVX5h5ilOBgVhLhfaQCFOJNSaysSi3Kjy8qzUktPsRoCvTcRGYp0eR8YCLKK4k3NDU0t7A0
- NDc2NzazUBLn7RA4GCMkkJ5YkpqdmlqQWgTTx8TBKdXAWHk/8qHuefNNd5nnltxWXRTqWXXl
- y2nn3wfm7brHqOHCeant5InlAk7si0tEVi09KF/4ZqOfC+P5kBei//tM4j9HL0+68izsilSt
- /jzR4IYXEoeWcXqFRU75ylH0TVdjzkZ1ZptntxK0jj3dbphVotGx/j27adNijwOdrae2mmVq
- Cx+LmLwnQYmlOCPRUIu5qDgRAAkeheoMAwAA
-X-CMS-MailID: 20190828083954eucas1p2b8dc8e6d795b984ec607a7e49911ff2b
-X-Msg-Generator: CA
-X-RootMTR: 20190814104630epcas3p44755443f37e78b2613f7dda35d71bb71
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190814104630epcas3p44755443f37e78b2613f7dda35d71bb71
-References: <20190814104520.6001-1-darekm@google.com>
- <CGME20190814104630epcas3p44755443f37e78b2613f7dda35d71bb71@epcas3p4.samsung.com>
- <20190814104520.6001-10-darekm@google.com>
+ Wed, 28 Aug 2019 01:55:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=ZLhox3MGYU3vCPS8rU4RE1IvC0ssD0tDNzjTJYofQ/w=;
+ b=In1ofVVkExdB/56av3bUTO7avmdkFk/Pqr0JvQXtiAgUAfC2H8Rx0juj7UBNDrFfF7
+ mkpDwsuMPI+mgcWm4y66DB3z3GDqQXCk/goKJbknEzXrWSQnyL9lwR3wHQ79x7Q51a27
+ GXz2PmbWzsZvywqAGjIKFzooojw8P1cChYuMY=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=ZLhox3MGYU3vCPS8rU4RE1IvC0ssD0tDNzjTJYofQ/w=;
+ b=ZVl+mJX+oVpYCZyPATvRp2hzGQuVVDX2S4fdMNE+2Ax3P2SXNZw7SKe+4YURKt0nty
+ WOjugNtYeBJ/jHFJpzq2tHrjfkoGymF8cuNZochdPFyBo+KZBdvzO6QfYihXnEBtow3V
+ 3KQ07JG38z1RKD1Q2hOD4XHVpEAH1T7RyYSW5/sJJPidSq4/Mot3KtQ1QDMuaWQJZNQ9
+ 7AuGDd6LAac/m5fYW2/Deo3I+Dl74AukP2kz3+U9eIRt6fdUtPLWWOponNgmGekYrhpV
+ U3Lynu9opKJ/8b/OMrMz//GAbxPXFuIggom7aom3YsE1zG3E0JqTJ59VvJIgwyxqCSFY
+ yTpQ==
+X-Gm-Message-State: APjAAAWBu163GAm+LD55MuzDf26dUK6CDF2H7xFoboylNTQqoQkduzUJ
+ 0MZLbvh/WymT5X4fUg9GBXR7og==
+X-Google-Smtp-Source: APXvYqytDZtQ/1TFhyJ4wMqNxJBsNjny0aOoAimJi3RhZ1BROAWcLL8bfzDNHGtwKRyViN7YtxaPaw==
+X-Received: by 2002:a17:90a:fe0e:: with SMTP id
+ ck14mr3113158pjb.78.1566982502193; 
+ Wed, 28 Aug 2019 01:55:02 -0700 (PDT)
+Received: from mannams-OptiPlex-7010.dhcp.broadcom.net ([192.19.234.250])
+ by smtp.gmail.com with ESMTPSA id z189sm2431386pfb.137.2019.08.28.01.54.57
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Wed, 28 Aug 2019 01:55:01 -0700 (PDT)
+From: Srinath Mannam <srinath.mannam@broadcom.com>
+To: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v2 0/6] PAXB INTx support with proper model
+Date: Wed, 28 Aug 2019 14:24:42 +0530
+Message-Id: <1566982488-9673-1-git-send-email-srinath.mannam@broadcom.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_014001_387210_98A9DF90 
-X-CRM114-Status: GOOD (  18.34  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190828_015503_822903_26A50512 
+X-CRM114-Status: GOOD (  11.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -142,70 +93,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Joonyoung Shim <jy0922.shim@samsung.com>,
- David Airlie <airlied@linux.ie>, Seung-Woo Kim <sw0312.kim@samsung.com>,
- linux-kernel@vger.kernel.org, Krzysztof Kozlowski <krzk@kernel.org>,
- Inki Dae <inki.dae@samsung.com>, Kyungmin Park <kyungmin.park@samsung.com>,
- Kukjin Kim <kgene@kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Srinath Mannam <srinath.mannam@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/14/19 12:45, Dariusz Marcinkiewicz wrote:
-> Use the new cec_notifier_conn_(un)register() functions to
-> (un)register the notifier for the HDMI connector, and fill in
-> the cec_connector_info.
-> 
-> Changes since v2:
-> 	- removed unnecessary call to invalidate phys address before
-> 	deregistering the notifier,
-> 	- use cec_notifier_phys_addr_invalidate instead of setting
-> 	invalid address on a notifier.
-> 
-> Signed-off-by: Dariusz Marcinkiewicz <darekm@google.com>
-> Tested-by: Hans Verkuil <hverkuil-cisco@xs4all.nl>
+This patch series adds PCIe legacy interrupt (INTx) support to the iProc
+PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
+INTB, INTC, INTD share the same interrupt line connected to the GIC
+in the system. This is now modeled by using its own IRQ domain.
 
-Reviewed-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Also update all relevant devicetree files to adapt to the new model.
 
-> diff --git a/drivers/gpu/drm/exynos/exynos_hdmi.c b/drivers/gpu/drm/exynos/exynos_hdmi.c
-> index bc1565f1822ab..d532b468d9af5 100644
-> --- a/drivers/gpu/drm/exynos/exynos_hdmi.c
-> +++ b/drivers/gpu/drm/exynos/exynos_hdmi.c
+This patch set is based on Linux-5.2-rc4.
 
-> @@ -2006,12 +2020,6 @@ static int hdmi_probe(struct platform_device *pdev)
->  		}
->  	}
->  
-> -	hdata->notifier = cec_notifier_get(&pdev->dev);
-> -	if (hdata->notifier == NULL) {
-> -		ret = -ENOMEM;
-> -		goto err_hdmiphy;
-> -	}
-> -
->  	pm_runtime_enable(dev);
->  
->  	audio_infoframe = &hdata->audio.infoframe;
-> @@ -2023,7 +2031,7 @@ static int hdmi_probe(struct platform_device *pdev)
->  
->  	ret = hdmi_register_audio_device(hdata);
->  	if (ret)
-> -		goto err_notifier_put;
-> +		goto err_runtime_disable;
+Changes from v1:
+  - Addressed Rob, Lorenzo, Arnd's comments
+    - Used child node for interrupt controller.
+  - Addressed Andy Shevchenko's comments
+    - Replaced while loop with do-while.
 
+Ray Jui (6):
+  dt-bindings: pci: Update iProc PCI binding for INTx support
+  PCI: iproc: Add INTx support with better modeling
+  arm: dts: Change PCIe INTx mapping for Cygnus
+  arm: dts: Change PCIe INTx mapping for NSP
+  arm: dts: Change PCIe INTx mapping for HR2
+  arm64: dts: Change PCIe INTx mapping for NS2
 
-> -err_notifier_put:
-> -	cec_notifier_put(hdata->notifier);
-> +err_runtime_disable:
->  	pm_runtime_disable(dev);
-
-nit: I think err_rpm_disable or err_pm_runtime_disable could be better 
-     label names.
+ .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++++--
+ arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++++-
+ arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++++-
+ arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++++--
+ arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++++-
+ drivers/pci/controller/pcie-iproc.c                | 100 ++++++++++++++++++++-
+ drivers/pci/controller/pcie-iproc.h                |   6 ++
+ 7 files changed, 260 insertions(+), 27 deletions(-)
 
 -- 
-Thanks,
-Sylwester
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
