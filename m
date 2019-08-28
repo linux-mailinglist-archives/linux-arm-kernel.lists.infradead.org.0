@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50F4FA0159
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:10:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0DA2A015A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:11:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,107 +11,106 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=ySOFdR6zttrGq9unzNRpzia5n0lA0HQqfs0uUC6NL4U=; b=nRAvlR014hAulX03NPMxxnz+3t
-	iX0H+47i2rGO4+mBM1bXkS55CxFM0q5ZGhaa9u6CatwENFDwXAd463JX+75tD9/Y/dPeCmjdc8m2n
-	IMwTvyKyS+ZvDWTqJPi3lv+g0myIqe1a2YF20Arbyu9SKtSD3bl+icKnb6XfIXJwDSWSStqofacw7
-	foYcWk6sTZtREn4ToM6P3rV5aIWPGSG59996AMID36WFBZDym9tiqXNQwrp56+Ehjlm5+ReP3U4wv
-	RG+O7ajJlguOZtU6Idqlg/HX0et1GRXze5M9H4kohp9pB3vznmlicZiGoz8DZAzpgiqORtTUVROJL
-	lT6LjxiQ==;
+	bh=YD3VSm9G/lNxhC79/yCQS5JT5OG2dCjUXz/vaYLSPWs=; b=VAxDLV9CkmbLFyg+ejmvUyggcS
+	1oUp7kVYX/gXN26E6OhVA2IxreMDHCmyqXzN2irEZ9LhHyFl4j4IKx1xfoF/cYGavS3+pjXRu6mC1
+	//GL/+f6k7HB6UPloWFZItSHzuNO+KLrleG5PGt8xzdhACB/R23rZVSzfvkfMkRUWQ8VYwRZXgmYu
+	awgoqiYJgv7y+xLA+4JzqslAvDfDjFmuLG7asaBrwllbsh5kwLyWGcV4Akt1pPaxMjO2ff8f/sG7H
+	Vu0DYogHhA8sSpvnEcQmpwFxKv9sWUZMVcsVO3Lwi3niC4oRU1dw7VfmYVp7x0pioGbKk6TXgxcZ3
+	vg9OHeCw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2wmW-00057W-T0; Wed, 28 Aug 2019 12:10:33 +0000
-Received: from mailout2.w1.samsung.com ([210.118.77.12])
+	id 1i2wmq-0005Hm-15; Wed, 28 Aug 2019 12:10:52 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2wmF-00056B-Ld
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:10:17 +0000
+ id 1i2wmG-00056F-AI
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:10:18 +0000
 Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190828121013euoutp027eb78a9239321299bbae83f1e4b1f096~-FO9hYn-a3275532755euoutp02G
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190828121014euoutp01cd5f60cf74acdfd59c08812a38fe80c0~-FO9zgEb_2263522635euoutp01I
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 12:10:13 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
- 20190828121013euoutp027eb78a9239321299bbae83f1e4b1f096~-FO9hYn-a3275532755euoutp02G
+ Wed, 28 Aug 2019 12:10:14 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190828121014euoutp01cd5f60cf74acdfd59c08812a38fe80c0~-FO9zgEb_2263522635euoutp01I
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566994213;
- bh=cwl8LiQ3L23ajplbU6nEElKWlsR5T+hJrjuLNZahQM4=;
+ s=mail20170921; t=1566994214;
+ bh=hbM0dbFub5dilWQZiDNc2NPkK2MLXSDTzGjKbpMBxSE=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=Cr1a8fwOe9fS2r71Z8Aej0c1YDppvVlLIrPSJ+LUee07UDyPb0EmB1biQvBPM/MSN
- hRk9sHtK9hnEXzHaic39IE7tTHuDoKs3/ErmCixOLjDXQWBXJk5OXm7ZoI8gvpAL8i
- p6YxDO/S23mlOrAeRg5dy0Ozzdv4Ut6xIZFn+F9Y=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ b=XVATmfynSyy1mZpqjvEIeSj9MpTiGl23a0nbUc/iQ6LDauU/AtvrIIC7rw2m0lncc
+ vy60Rl3t3/kwtAHIjUkdtdK8heCaosFn9w4pTPfrLL3yDQGYiIyBjJraJelwEPbEeP
+ oxg+5Zdp7M+q3Mo0SPUPGTsRqW8IBjbBCfbJT+NI=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190828121012eucas1p294596f4bc354c9a763530f886dcc0167~-FO8xMbEI1356313563eucas1p2l;
+ 20190828121013eucas1p28be42cd0efb247cc6dd3b28843a5737c~-FO9WQFBB1354913549eucas1p2v;
+ Wed, 28 Aug 2019 12:10:13 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id BC.0D.04469.52F666D5; Wed, 28
+ Aug 2019 13:10:13 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2~-FO8c_mhh1358913589eucas1p2n;
  Wed, 28 Aug 2019 12:10:12 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id EC.0D.04374.42F666D5; Wed, 28
- Aug 2019 13:10:12 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
- 20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11~-FO8AdfJ12730927309eucas1p1U;
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190828121012eusmtrp12adbbc9cffea5fb75aef9cdbb408447e~-FO8OlbDH1908619086eusmtrp1i;
  Wed, 28 Aug 2019 12:10:12 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190828121011eusmtrp2414f2f20728718b823ab82b9d166bf84~-FO7ycf1h1346013460eusmtrp2E;
- Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
-X-AuditID: cbfec7f5-4f7ff70000001116-3b-5d666f242839
+X-AuditID: cbfec7f2-54fff70000001175-2d-5d666f2577fc
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 89.03.04166.32F666D5; Wed, 28
- Aug 2019 13:10:11 +0100 (BST)
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 8B.C4.04117.42F666D5; Wed, 28
+ Aug 2019 13:10:12 +0100 (BST)
 Received: from AMDC2765.DIGITAL.local (unknown [106.120.51.73]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190828121011eusmtip1679343d1fe73ad3f1873b0802628d60b~-FO7cLPx32343323433eusmtip1V;
+ 20190828121011eusmtip14396855e7a74917cc1c4810e0db3ce3c~-FO7zicJ42336023360eusmtip1X;
  Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
 From: Marek Szyprowski <m.szyprowski@samsung.com>
 To: linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 1/2] ARM: dts: exynos: Add support ARM architected timers
- on Exynos5
-Date: Wed, 28 Aug 2019 14:10:04 +0200
-Message-Id: <20190828121005.29368-2-m.szyprowski@samsung.com>
+Subject: [PATCH v3 2/2] ARM: exynos: Enable support for ARM architected timers
+Date: Wed, 28 Aug 2019 14:10:05 +0200
+Message-Id: <20190828121005.29368-3-m.szyprowski@samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190828121005.29368-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrGIsWRmVeSWpSXmKPExsWy7djP87oq+WmxBn83KFlsnLGe1eL6l+es
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrKIsWRmVeSWpSXmKPExsWy7djPc7qq+WmxBr9u8VhsnLGe1eL6l+es
  FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoLpuU
- 1JzMstQifbsErowd/44yFjwQqmjpbGZsYLzF38XIwSEhYCIx80RhFyMXh5DACkaJn8deMkI4
- Xxgltv2+ww7hfGaUWLRgO2sXIydYx7XG+WwQieWMEq9aD7DBtUzY8oYJpIpNwFCi620XG4gt
- IuAtMfnMX7BRzAJXGSWWXvvEApIQFoiU2PP6KSPIISwCqhJPJ4eAhHkFbCVmvZ/PDLFNXmL1
- hgNgNqeAncShTZ0sIHMkBJ6zSWzY0sECUeQi0f75P9R5whKvjm9hh7BlJP7vnM8E0dDMKPHw
- 3Fp2CKeHUeJy0wxGiCpricPHL7KCXMEsoCmxfpc+RNhR4vWvTYyQUOKTuPFWECTMDGRO2jad
- GSLMK9HRJgRRrSYx6/g6uLUHL1yCut9D4sHe59AwncgosaNjM/sERvlZCMsWMDKuYhRPLS3O
- TU8tNs5LLdcrTswtLs1L10vOz93ECEwNp/8d/7qDcd+fpEOMAhyMSjy8CclpsUKsiWXFlbmH
- GCU4mJVEeB+ppMYK8aYkVlalFuXHF5XmpBYfYpTmYFES561meBAtJJCeWJKanZpakFoEk2Xi
- 4JRqYGzQfSGzobzwS3hDs7Jep8oS7UMyW9jSPeeJxYnxfQk9KeLOu6k7/2uc+4nN0oyMem5y
- M+Zb8KwItD6w5nDvzgsNhlrqVd4rT0dqcFqZOe487Rn3INz5fKzIdv7N9kELZj598bj+Hq/8
- p+1/r3zJ8jqxYAlfj7PWlq72lZPd3k9w2/H6aODK00osxRmJhlrMRcWJAJJ3USUJAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrGLMWRmVeSWpSXmKPExsVy+t/xu7rK+WmxBtNfGllsnLGe1eL6l+es
+ 1JzMstQifbsEroxbn36xFRxiq7j74DRbA+N+1i5GTg4JAROJT2/bmboYuTiEBFYwSjydf4QN
+ wvnCKLFkyxdmCOczo8TS2VcYYVpWTL/OCJFYziixZf1tRriWXRu/gFWxCRhKdL3tYgOxRQS8
+ JSaf+csOUsQscBVo1LVPLF2MHBzCAgESh17wgdSwCKhKbPr7gg0kzCtgKzG1wwtimbzE6g0H
+ mEFsTgE7iUObOllAxkgIPGeTWHz9EBtEkYvE64Mnoa4Tlnh1fAs7hC0jcXpyD1RDM6PEw3Nr
+ 2SGcHkaJy00zoDqsJQ4fv8gKsplZQFNi/S59EFNCwFFi0nU1CJNP4sZbQZBiZiBz0rbpzBBh
+ XomONiGIGWoSs46vg9t68MIlZgjbQ6JrQjcLJHgmMkpMmzeBfQKj/CyEXQsYGVcxiqeWFuem
+ pxYb5qWW6xUn5haX5qXrJefnbmIEJobT/45/2sH49VLSIUYBDkYlHl6OxLRYIdbEsuLK3EOM
+ EhzMSiK8j1RSY4V4UxIrq1KL8uOLSnNSiw8xSnOwKInzVjM8iBYSSE8sSc1OTS1ILYLJMnFw
+ SjUwarZ3N5zfc++M9PrHLEtf5l/ozw9zeHLlwpLkObpne52u7eQ/ctDzoMOLXVOXCtY+cZlt
+ KyQvNnmdwIydsxvf95Q3RE7yZGZTynj+7vOCW4vW7n12JIAzSbBQwk38rdemn3YXw61tZJ4e
+ 0Z3nJvOzwMVW7pbAk7BwNr06VfYHNx/lOhjuu7esRImlOCPRUIu5qDgRACW2E2sIAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrKLMWRmVeSWpSXmKPExsVy+t/xu7oq+WmxBrcvCVhsnLGe1eL6l+es
  FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoPZui
- /NKSVIWM/OISW6VoQwsjPUNLCz0jE0s9Q2PzWCsjUyV9O5uU1JzMstQifbsEvYwd/44yFjwQ
- qmjpbGZsYLzF38XIySEhYCJxrXE+WxcjF4eQwFJGicPfd7FCJGQkTk5rgLKFJf5c64Iq+sQo
- cWrrRiaQBJuAoUTXW5AEJ4eIgK/E4zcrWUBsZoGbjBI772iA2MIC4RIv92xl7mLk4GARUJV4
- OjkEJMwrYCsx6/18Zoj58hKrNxwAszkF7CQObeoEGyMEVPPg2S7GCYx8CxgZVjGKpJYW56bn
- FhvqFSfmFpfmpesl5+duYgSG6bZjPzfvYLy0MfgQowAHoxIPb0JyWqwQa2JZcWXuIUYJDmYl
- Ed5HKqmxQrwpiZVVqUX58UWlOanFhxhNgW6ayCwlmpwPjKG8knhDU0NzC0tDc2NzYzMLJXHe
- DoGDMUIC6YklqdmpqQWpRTB9TBycUg2M0bM2WlawPLdTVLx0VMrZNHnxBeu9lc7L/0+6eOBo
- rLrNhkeatqtjQ6+tnxuY8CjTSY/dxvLrj+M+k3/yK2rtX3lkZYdLd/q9qXtSYuJnmG6dl973
- meOCRPXu4t32rqlXr3s1/hcvCdzUkH798om3lfs2bDoa4ajqeieKa0Ws25yljvWtigJsSizF
- GYmGWsxFxYkA3Si0sGkCAAA=
-X-CMS-MailID: 20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11
+ /NKSVIWM/OISW6VoQwsjPUNLCz0jE0s9Q2PzWCsjUyV9O5uU1JzMstQifbsEvYxbn36xFRxi
+ q7j74DRbA+N+1i5GTg4JAROJFdOvM3YxcnEICSxllHj2YC4LREJG4uS0BqgiYYk/17rYIIo+
+ MUpc/vWXGSTBJmAo0fUWJMHJISLgK/H4zUqwZmaBm4wSO+9odDFycAgL+En8nsgEEmYRUJXY
+ 9PcFG0iYV8BWYmqHF8R4eYnVGw6ATeQUsJM4tKkTbIoQUMmDZ7sYJzDyLWBkWMUoklpanJue
+ W2ykV5yYW1yal66XnJ+7iREYpNuO/dyyg7HrXfAhRgEORiUe3oTktFgh1sSy4srcQ4wSHMxK
+ IryPVFJjhXhTEiurUovy44tKc1KLDzGaAt00kVlKNDkfGEF5JfGGpobmFpaG5sbmxmYWSuK8
+ HQIHY4QE0hNLUrNTUwtSi2D6mDg4pRoY05wuinC0FkR8yd19kOeOS0xEhPPP1squTN+zhy/k
+ PXnLeeLuitfGay+v2TPxdH3p/T3VfK5fVmjoLax+X3RobX//zfi5/Z0VndOjDivzlDz15HnS
+ cPXwuf0H7ps8FvulOPGka53mCb2dVoaft902Wfwrcsn6H8oWSx5d9png0Tk76btZVvivaCWW
+ 4oxEQy3mouJEAIVY0HNoAgAA
+X-CMS-MailID: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
 X-Msg-Generator: CA
-X-RootMTR: 20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11
+X-RootMTR: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11
+X-CMS-RootMailID: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
 References: <20190828121005.29368-1-m.szyprowski@samsung.com>
- <CGME20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11@eucas1p1.samsung.com>
+ <CGME20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2@eucas1p2.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_051015_914617_8FD8191C 
-X-CRM114-Status: GOOD (  14.16  )
+X-CRM114-CacheID: sfid-20190828_051016_498976_BA2CC3D9 
+X-CRM114-Status: GOOD (  11.48  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.12 listed in list.dnswl.org]
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -143,74 +142,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-All CortexA7/A15 based Exynos5 SoCs have ARM architected timers, so enable
-support for them directly in the base dtsi. None of the known firmware
-properly configures CNTFRQ arch timer register, so force clock frequency
-to 24MHz, which is the only configuration supported by the remaining
-clock drivers so far.
-
-Stock firmware for Peach Pit and Pi Chromebooks also doesn't reset
-properly other arch timer registers, so add respective properties
-indicating that. Other Exynos5-based boards behaves correctly in this area,
-what finally allows to enable support for KVM-based virtualization.
+ARM architected timer can be used together with Exynos MultiCore Timer
+driver, so enable support for it. Support for ARM architected timers is
+essential for enabling proper KVM support.
 
 Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
 ---
- arch/arm/boot/dts/exynos5420-peach-pit.dts | 4 ++++
- arch/arm/boot/dts/exynos54xx.dtsi          | 9 +++++++++
- arch/arm/boot/dts/exynos5800-peach-pi.dts  | 4 ++++
- 3 files changed, 17 insertions(+)
+ arch/arm/mach-exynos/Kconfig | 1 +
+ 1 file changed, 1 insertion(+)
 
-diff --git a/arch/arm/boot/dts/exynos5420-peach-pit.dts b/arch/arm/boot/dts/exynos5420-peach-pit.dts
-index f78db6809cca..77e08a4c7300 100644
---- a/arch/arm/boot/dts/exynos5420-peach-pit.dts
-+++ b/arch/arm/boot/dts/exynos5420-peach-pit.dts
-@@ -1064,6 +1064,10 @@
- 	status = "okay";
- };
- 
-+&timer {
-+	arm,cpu-registers-not-fw-configured;
-+};
-+
- &tmu_cpu0 {
- 	vtmu-supply = <&ldo10_reg>;
- };
-diff --git a/arch/arm/boot/dts/exynos54xx.dtsi b/arch/arm/boot/dts/exynos54xx.dtsi
-index 9c3b63b7cac6..02d34957cd83 100644
---- a/arch/arm/boot/dts/exynos54xx.dtsi
-+++ b/arch/arm/boot/dts/exynos54xx.dtsi
-@@ -45,6 +45,15 @@
- 		status = "disabled";
- 	};
- 
-+	timer: timer {
-+		compatible = "arm,armv7-timer";
-+		interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 11 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 10 (GIC_CPU_MASK_SIMPLE(4) | IRQ_TYPE_LEVEL_LOW)>;
-+		clock-frequency = <24000000>;
-+	};
-+
- 	soc: soc {
- 		sysram@2020000 {
- 			compatible = "mmio-sram";
-diff --git a/arch/arm/boot/dts/exynos5800-peach-pi.dts b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-index e0f470fe54c8..5e8cec736444 100644
---- a/arch/arm/boot/dts/exynos5800-peach-pi.dts
-+++ b/arch/arm/boot/dts/exynos5800-peach-pi.dts
-@@ -1033,6 +1033,10 @@
- 	status = "okay";
- };
- 
-+&timer {
-+	arm,cpu-registers-not-fw-configured;
-+};
-+
- &tmu_cpu0 {
- 	vtmu-supply = <&ldo10_reg>;
- };
+diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
+index f83786640f94..9dab1f50a02f 100644
+--- a/arch/arm/mach-exynos/Kconfig
++++ b/arch/arm/mach-exynos/Kconfig
+@@ -19,6 +19,7 @@ menuconfig ARCH_EXYNOS
+ 	select EXYNOS_SROM
+ 	select EXYNOS_PM_DOMAINS if PM_GENERIC_DOMAINS
+ 	select GPIOLIB
++	select HAVE_ARM_ARCH_TIMER if ARCH_EXYNOS5 && VIRTUALIZATION
+ 	select HAVE_ARM_SCU if SMP
+ 	select HAVE_S3C2410_I2C if I2C
+ 	select HAVE_S3C2410_WATCHDOG if WATCHDOG
 -- 
 2.17.1
 
