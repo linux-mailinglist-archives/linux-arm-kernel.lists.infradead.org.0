@@ -2,132 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 720C29FCD9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 10:23:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2843C9FD2A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 10:33:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:To:Subject:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QTCXGhRw7PcpKbEaW/gTDL3VJY5ghRSr9isXgwpVdAY=; b=Lu/HgfvxZnAVa7
-	P1C4HHBuh5nTHhEgZMw0V8ELbLmJ9qTFmhT/HPlbMvyCqYAKkjHUJvrhjzN9SxhvivokfvaLW3X2Y
-	xZXZ4yypYsqyPRbZa4vjmGCWJMIjuL4yPooQtsr7u/VUadVReehXQeeH/IWLxuqkPOVNmxsU/KUru
-	NZdAFgY21ohG9lyyYI4mdzmr07Bw33h73ptPJaeUGfcDgsLEnpuvenieVGtHCipLZHef/TNn2o0vK
-	yLEtHzAL0TwhPXLr3tfD1U5bIzt1giBRl+V4BTa10b4NkPrXHLbaAc1nEwrQlAvyeSmCQcLbnP5L1
-	51WYe7/t1c2ebueC42/g==;
+	List-Owner; bh=yBt60j+ByxSqxQuUt7ZeNO3PUtQYuEz1y294Efsbd34=; b=qWyPlF9xhePSAh
+	lyCiemp2p3u554HoGRvl28Xxs/VrTDS459kIva60/r+5Oo3i62jdmtUDAtUmDlGB6SBWwLMby6U4/
+	NO6OMKNRRSEw+3XzRZJr7jo1o6cGeswOfIjUv/R9j26fiLGud3IE8xVNVmvOliPS2NJwOjJDHN5jT
+	/yxLJ7V6+G7Od6vq24nd7v8xAdzPQ08ZCvGM6tn/OLBX3hH1vNwK5qjKyJGIt8pltElXhafqojzvn
+	D/hJdKhwHVJothuG+hO2mgw66UcMZ7qJJmFLD8cKJ947trLJ4RVwQOMe2bh8KbbhhhfEI1tvkcOGp
+	8au4ay/WMeVWmU1bTLlw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2tEH-0006N5-QD; Wed, 28 Aug 2019 08:22:57 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1i2tOI-0002TQ-BQ; Wed, 28 Aug 2019 08:33:18 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2tE3-0006LP-WB
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 08:22:45 +0000
-Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190828082241euoutp011e5b375bc0b6733a2df5077a99859ef5~-CISmrIcj0823808238euoutp01r
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 08:22:41 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190828082241euoutp011e5b375bc0b6733a2df5077a99859ef5~-CISmrIcj0823808238euoutp01r
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566980561;
- bh=ezN90ha61wMUtzkxioQJBYo3kcbKcHVJc2ZzvthJ9CM=;
- h=From:Subject:To:Cc:Date:In-Reply-To:References:From;
- b=ncVsqjrKpwY7WZBgIh9/WYJ21/Gd5/ztex6kLh+yRGUMXg3Zeu9rjHKUmphMxvLn+
- RyD1kcU63rcE5Ub1XTosW6B7HOgur0lXgSpceb2KnkztP9pjXzixhep4fVyay7TXVY
- SMbjGZSCRHdN32S5B533BbqrIYGnnTzm70KjH1TU=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
- eucas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190828082240eucas1p1d9d51125f5315e2c4c051be78ed62045~-CISHcS801983319833eucas1p1S;
- Wed, 28 Aug 2019 08:22:40 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 4B.AA.04374.0D9366D5; Wed, 28
- Aug 2019 09:22:40 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190828082239eucas1p28be9c8ec6002f12d646cd3364d79dfba~-CIRRTY5U0583105831eucas1p2F;
- Wed, 28 Aug 2019 08:22:39 +0000 (GMT)
-Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190828082239eusmtrp220e751afd1ae4c07a1e5dd654db64c30~-CIRDS4Fy1794617946eusmtrp25;
- Wed, 28 Aug 2019 08:22:39 +0000 (GMT)
-X-AuditID: cbfec7f5-4ddff70000001116-11-5d6639d06381
-Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
- eusmgms1.samsung.com (EUCPMTA) with SMTP id 30.22.04166.FC9366D5; Wed, 28
- Aug 2019 09:22:39 +0100 (BST)
-Received: from [106.120.50.63] (unknown [106.120.50.63]) by
- eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190828082239eusmtip22e934fdac1fd2df51bea9d848310a617~-CIQtceI22322823228eusmtip21;
- Wed, 28 Aug 2019 08:22:39 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: [PATCH v2 2/2] ARM: exynos: Enable support for ARM architected
- timers
-To: Marc Zyngier <maz@kernel.org>
-Message-ID: <1ade54c6-aaf9-f536-484e-a2a50f443a03@samsung.com>
-Date: Wed, 28 Aug 2019 10:22:37 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i2tNw-0002RH-87; Wed, 28 Aug 2019 08:32:58 +0000
+X-UUID: 21542a7a968e47939bc50bf205fc52ee-20190828
+X-UUID: 21542a7a968e47939bc50bf205fc52ee-20190828
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 276950135; Wed, 28 Aug 2019 00:32:58 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 01:32:56 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 28 Aug 2019 16:32:53 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 28 Aug 2019 16:32:53 +0800
+Message-ID: <1566981166.31833.21.camel@mtksdaap41>
+Subject: Re: [RESEND, PATCH v13 11/12] soc: mediatek: cmdq: add
+ cmdq_dev_get_client_reg function
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: Matthias Brugger <matthias.bgg@gmail.com>
+Date: Wed, 28 Aug 2019 16:32:46 +0800
+In-Reply-To: <f8945f1b-aaa7-4f4a-59e5-8e817aeb46ae@gmail.com>
+References: <20190820084932.22282-1-bibby.hsieh@mediatek.com>
+ <20190820084932.22282-12-bibby.hsieh@mediatek.com>
+ <ccd3782e-b1bb-7887-f4a5-d7774183c7b7@gmail.com>
+ <1566878368.29523.1.camel@mtksdaap41>
+ <f8945f1b-aaa7-4f4a-59e5-8e817aeb46ae@gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <d286053b6f4b4783d0638dc2dbd5858e@www.loen.fr>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprPKsWRmVeSWpSXmKPExsWy7djP87oXLNNiDdo3iFlsnLGe1eL6l+es
- FufPb2C32PT4GqvFjPP7mCx2zjnJ6sDmsWlVJ5vH5iX1Hn1bVjF6fN4kF8ASxWWTkpqTWZZa
- pG+XwJXx4a5fwXPximcrjzA1MB4R7mLk5JAQMJH4++UiSxcjF4eQwApGiYPfjjNCOF8YJTZM
- /8YM4XxmlFi6aTtTFyMHWMuvliKI+HJGiR8tjewQzltGiWPPjzCCzGUTMJToetvFBmILC4RI
- zN56lgXEFhFQlPh04STYCmaBS4wS+w5OA2vgFbCT+LdkM5jNIqAqMa+llx3EFhWIkdj5pocZ
- okZQ4uTMJ2CDOAWsJY58fQlWwywgL7H97RxmCFtc4taT+UwQzy1jl/i61gbCdpGYdPsBC4Qt
- LPHq+BZ2CFtG4v9OkHouILuZUeLhubXsEE4Po8TlphmMEFXWEoePX2QF+Z9ZQFNi/S59iLCj
- xObNHeyQYOGTuPFWEOIGPolJ26YzQ4R5JTrahCCq1SRmHV8Ht/bghUvMExiVZiH5bBaSb2Yh
- +WYWwt4FjCyrGMVTS4tz01OLjfNSy/WKE3OLS/PS9ZLzczcxApPN6X/Hv+5g3Pcn6RCjAAej
- Eg9vB39qrBBrYllxZe4hRgkOZiUR3kcqQCHelMTKqtSi/Pii0pzU4kOM0hwsSuK81QwPooUE
- 0hNLUrNTUwtSi2CyTBycUg2MtTy9x/ml/dzmP9Odd+OO95n1cYsNtPa/nVNo/elyreCzGS+N
- ix0LV156efqK9v7Nn/bkNV+Kqn561IjjlFtYReSnmKg1On8nfhWofJJS80B4jobsrT0RpzcX
- Se7esG/N9Dbde/GH7psoXp+7f3rLnJPL+S+d1LrnE+Zit1j96r7MlfYHBXM3CyixFGckGmox
- FxUnAgB6/kP+MgMAAA==
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrIIsWRmVeSWpSXmKPExsVy+t/xe7rnLdNiDQ59k7HYOGM9q8X1L89Z
- Lc6f38BusenxNVaLGef3MVnsnHOS1YHNY9OqTjaPzUvqPfq2rGL0+LxJLoAlSs+mKL+0JFUh
- I7+4xFYp2tDCSM/Q0kLPyMRSz9DYPNbKyFRJ384mJTUnsyy1SN8uQS/jw12/gufiFc9WHmFq
- YDwi3MXIwSEhYCLxq6Woi5GLQ0hgKaPEw3WzmbsYOYHiMhInpzWwQtjCEn+udbFBFL1mlNi2
- +jAbSIJNwFCi620XmC0sECIxe+tZFhBbREBR4tOFk4wgDcwCVxglJt/bwg6SEBL4wijx7VMV
- iM0rYCfxb8lmRhCbRUBVYl5LL1iNqECMxL4z29khagQlTs58AjaUU8Ba4sjXl2BxZgEziXmb
- HzJD2PIS29/OgbLFJW49mc80gVFoFpL2WUhaZiFpmYWkZQEjyypGkdTS4tz03GJDveLE3OLS
- vHS95PzcTYzA6Np27OfmHYyXNgYfYhTgYFTi4e3gT40VYk0sK67MPcQowcGsJML7SAUoxJuS
- WFmVWpQfX1Sak1p8iNEU6LmJzFKiyfnAyM8riTc0NTS3sDQ0NzY3NrNQEuftEDgYIySQnliS
- mp2aWpBaBNPHxMEp1cA465LT45d5l4LaGqff3JqltKrlS73v/NBbxgqdXk4ycvm/l15JWRhY
- JXxq3nuOUA9VF83WgLOHemXOxSTcu+6cIH+77dWiJTWz3y4vjNTaoaSyY17/ZL1d+lxWP/0/
- T+ZatfzE/ls8GRVf5+Tcr2CN0NS8p37p4JlvO33XTd61yG5l10m7hw93K7EUZyQaajEXFScC
- ALNA9JnEAgAA
-X-CMS-MailID: 20190828082239eucas1p28be9c8ec6002f12d646cd3364d79dfba
-X-Msg-Generator: CA
-X-RootMTR: 20190826103203eucas1p2d67b0ef44758eb06252b340f7751701a
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190826103203eucas1p2d67b0ef44758eb06252b340f7751701a
-References: <20190826103142.3477-1-m.szyprowski@samsung.com>
- <CGME20190826103203eucas1p2d67b0ef44758eb06252b340f7751701a@eucas1p2.samsung.com>
- <20190826103142.3477-4-m.szyprowski@samsung.com>
- <d286053b6f4b4783d0638dc2dbd5858e@www.loen.fr>
+X-TM-SNTS-SMTP: 3A49F78DCF6A33DAF3FCCD33C1485A7F22BDB34F6B84E8949B1A3282971FEA442000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_012244_258588_41D9C56D 
-X-CRM114-Status: GOOD (  13.69  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190828_013256_304091_0C512396 
+X-CRM114-Status: GOOD (  24.44  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -139,80 +76,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chanwoo Choi <cw00.choi@samsung.com>, linux-samsung-soc@vger.kernel.org,
- Krzysztof Kozlowski <krzk@kernel.org>, linux-arm-kernel@lists.infradead.org,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Cc: devicetree@vger.kernel.org, Nicolas Boichat <drinkcat@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>, srv_heupstream@mediatek.com,
+ Daoyuan Huang <daoyuan.huang@mediatek.com>, Sascha
+ Hauer <s.hauer@pengutronix.de>, Jassi Brar <jassisinghbrar@gmail.com>,
+ linux-kernel@vger.kernel.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Dennis-YC Hsieh <dennis-yc.hsieh@mediatek.com>, YT Shen <yt.shen@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Houlong Wei <houlong.wei@mediatek.com>, Sascha
+ Hauer <kernel@pengutronix.de>, CK HU <ck.hu@mediatek.com>,
+ Jiaguang Zhang <jiaguang.zhang@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org, ginny.chen@mediatek.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Marc,
+On Tue, 2019-08-27 at 12:13 +0200, Matthias Brugger wrote:
+> 
+> On 27/08/2019 05:59, Bibby Hsieh wrote:
+> > On Fri, 2019-08-23 at 16:21 +0200, Matthias Brugger wrote:
+> >>
+> >> On 20/08/2019 10:49, Bibby Hsieh wrote:
+> >>> GCE cannot know the register base address, this function
+> >>> can help cmdq client to get the cmdq_client_reg structure.
+> >>>
+> >>> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> >>> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> >>> ---
+> >>>  drivers/soc/mediatek/mtk-cmdq-helper.c | 29 ++++++++++++++++++++++++++
+> >>>  include/linux/soc/mediatek/mtk-cmdq.h  | 21 +++++++++++++++++++
+> >>>  2 files changed, 50 insertions(+)
+> >>>
+> >>> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>> index c53f8476c68d..80f75a1075b4 100644
+> >>> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> >>> @@ -27,6 +27,35 @@ struct cmdq_instruction {
+> >>>  	u8 op;
+> >>>  };
+> >>>  
+> >>> +int cmdq_dev_get_client_reg(struct device *dev,
+> >>> +			    struct cmdq_client_reg *client_reg, int idx)
+> >>> +{
+> >>
+> >> Can't we do/call this in cmdq_mbox_create parsing the number of gce-client-reg
+> >> properties we have and allocating these using a pointer to cmdq_client_reg in
+> >> cmdq_client?
+> >> We will have to free the pointer then in cmdq_mbox_destroy.
+> >>
+> >> Regards,
+> >> Matthias
+> > 
+> > I don't think we need to keep the cmdq_client_reg in cmdq_client
+> > structure.
+> > Because our client will have own data structure, they will copy the
+> > client_reg information into their own structure.
+> > 
+> > In the design now, we do not allocate the cmdq_client_reg, client pass
+> > the cmdq_client_reg pointer into this API.
+> > Client will destroy the pointer after they get the information they
+> > want.
+> > 
+> 
+> My point wasn't so much about the lifecycle of the object, but the fact that we
+> add another call, which can be already full-filled by a necessary previous call
+> to cmdq_mbox_create. So I would prefer to add the information gathering for
+> cmdq_client_reg in this call, and let it live there for the time cmdq_client
+> lives. In the end we are talking about 40 bits of memory.
+> 
 
-On 2019-08-26 12:49, Marc Zyngier wrote:
-> On 2019-08-26 11:31, Marek Szyprowski wrote:
->> ARM architected timer can be used together with Exynos MultiCore Timer
->> driver, so enable support for it. Support for ARM architected timers is
->> essential for enabling proper KVM support.
->
-> How can you say that this is to "enable KVM support", while in the 
-> previous
-> patch, you set "arm,cpu-registers-not-fw-configured" which implies 
-> that you're
-> booting in secure mode with the timer's CP15 registers left to 
-> undefined values?
+Thanks for the comments. :D
 
-Thanks for asking a good question!
+Actually, I'm working for developing the chandes for MTK DRM apply cmdq
+interface.
+For MTK DRM, all the components included in MTK_CRTC use one mailbox
+channel. According to [1], we create mailbox channel by mmsys device
+node after get all the informations (include cmdq_client_reg) about
+every device node of display components respectively. Please refer to
+[2], [3] and [4], I'm going to upstream them recently.
 
-I've did my KVM research mainly on Exynos5422-based OdroidXU3/XU4 boards 
-family. After some recently merged patches they all now boot correctly 
-in HYP mode.
+If create mailbox channel and get the cmdq_client_reg in the same device
+node, your suggestion is good for me.
+But from display and mdp's viewpoint now, I don't think it is convenient
+for them.
 
-On all of those boards arch timers are indeed partially not configured 
-(CNTFRQ is zero). I was convinced that this also requires adding 
-"arm,cpu-registers-not-fw-configured" property to make timers fully 
-operational, but it looks that this only disables VDSO on arm32 and 
-switches to phys timers if booted in SVC mode.
+So I still prefer separate this function out of cmdq_mbox_create.:D
 
-I've checked and KVM works fine on the mentioned boards regardless of 
-the "arm,cpu-registers-not-fw-configured" property. The only issue is 
-the lack of proper value in CNTFRQ register, what requires patching 
-timer node by adding "clock-frequency = <24000000>" property also to the 
-guest dtb.
 
-I've did my test of KVM with QEMU emulator version 3.1.0 (Debian 
-1:3.1+dfsg-8) virtualizing vexpress-a15 machine, with patched 
-vexpress-v2p-ca15-tc1.dtb and the following command line on OdroidXU3:
+[1]
+https://elixir.bootlin.com/linux/latest/source/arch/arm64/boot/dts/mediatek/mt8173.dtsi#907
+[2] get cmdq_client_reg in mtk_ddp_comp_init()
+https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/1746354/12/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c#431
+[3] create mailbox channel in mtk_drm_crtc_create()
+https://chromium-review.googlesource.com/c/chromiumos/third_party/kernel/+/1746354/12/drivers/gpu/drm/mediatek/mtk_drm_crtc.c#814
+[4] After component_bind_all(), the mtk_drm_crtc_create will be called 
+https://chromium.googlesource.com/chromiumos/third_party/kernel/+/e15c2dc6ceb4810a2090cd11a512932095866559/drivers/gpu/drm/mediatek/mtk_drm_drv.c#452
 
-taskset 0x30 qemu-system-arm -M vexpress-a15 -smp 2 -cpu host 
--enable-kvm -m 512 -kernel zImage -dtb vexpress-v2p-ca15-tc1.dtb -append 
-"console=ttyAMA0 root=/dev/vda rw rootwait" -serial stdio -display none 
--monitor null -device virtio-blk-device,drive=virtio-blk -drive 
-file=rootfs.raw,id=virtio-blk,if=none,format=raw -netdev user,id=user 
--device virtio-net-device,netdev=user
+Thanks.
+Bibby
 
-Then I've checked other boards that are capable of running in HYP mode. 
-Exynos5250 Arndale board with mainline uboot boots to HYP fine. 
-Exynos5250-based Snow Chromebook with stock bootloader boots only to SVC 
-mode. There exists a way to upgrade uboot to enable HYP, but this 
-requires HW fix to enable write access to nvram. Both boards however 
-also don't configure CNTFRQ register, but otherwise the arch timer 
-registers seems to be configured fine (virt counters are in sync between 
-CPUs).
-
-The last group of boards are Exynos5420-based Pit and Exynos5800-based 
-Pi Chromebooks. In theory they are capable in running HYP mode with a 
-patched bootloader, but stock bootloader boots only to SVC. They also 
-truly don't have arch timer registers correctly configured, as virt 
-timers are out of sync between CPUs.
-
-I will send v3 with "arm,cpu-registers-not-fw-configured" property moved 
-from the timer nodes in dtsi files to respective effected boards.
-
-Best regards
--- 
-Marek Szyprowski, PhD
-Samsung R&D Institute Poland
+> Regards,
+> Matthias
+> 
+> > Thanks for the comments so much.
+> > 
+> > Bibby
+> > 
+> >>
+> >>> +	struct of_phandle_args spec;
+> >>> +	int err;
+> >>> +
+> >>> +	if (!client_reg)
+> >>> +		return -ENOENT;
+> >>> +
+> >>> +	err = of_parse_phandle_with_fixed_args(dev->of_node,
+> >>> +					       "mediatek,gce-client-reg",
+> >>> +					       3, idx, &spec);
+> >>> +	if (err < 0) {
+> >>> +		dev_err(dev,
+> >>> +			"error %d can't parse gce-client-reg property (%d)",
+> >>> +			err, idx);
+> >>> +
+> >>> +		return err;
+> >>> +	}
+> >>> +
+> >>> +	client_reg->subsys = (u8)spec.args[0];
+> >>> +	client_reg->offset = (u16)spec.args[1];
+> >>> +	client_reg->size = (u16)spec.args[2];
+> >>> +	of_node_put(spec.np);
+> >>> +
+> >>> +	return 0;
+> >>> +}
+> >>> +EXPORT_SYMBOL(cmdq_dev_get_client_reg);
+> >>> +
+> >>>  static void cmdq_client_timeout(struct timer_list *t)
+> >>>  {
+> >>>  	struct cmdq_client *client = from_timer(client, t, timer);
+> >>> diff --git a/include/linux/soc/mediatek/mtk-cmdq.h b/include/linux/soc/mediatek/mtk-cmdq.h
+> >>> index a345870a6d10..02ddd60b212f 100644
+> >>> --- a/include/linux/soc/mediatek/mtk-cmdq.h
+> >>> +++ b/include/linux/soc/mediatek/mtk-cmdq.h
+> >>> @@ -15,6 +15,12 @@
+> >>>  
+> >>>  struct cmdq_pkt;
+> >>>  
+> >>> +struct cmdq_client_reg {
+> >>> +	u8 subsys;
+> >>> +	u16 offset;
+> >>> +	u16 size;
+> >>> +};
+> >>> +
+> >>>  struct cmdq_client {
+> >>>  	spinlock_t lock;
+> >>>  	u32 pkt_cnt;
+> >>> @@ -24,6 +30,21 @@ struct cmdq_client {
+> >>>  	u32 timeout_ms; /* in unit of microsecond */
+> >>>  };
+> >>>  
+> >>> +/**
+> >>> + * cmdq_dev_get_client_reg() - parse cmdq client reg from the device
+> >>> + *			       node of CMDQ client
+> >>> + * @dev:	device of CMDQ mailbox client
+> >>> + * @client_reg: CMDQ client reg pointer
+> >>> + * @idx:	the index of desired reg
+> >>> + *
+> >>> + * Return: 0 for success; else the error code is returned
+> >>> + *
+> >>> + * Help CMDQ client parsing the cmdq client reg
+> >>> + * from the device node of CMDQ client.
+> >>> + */
+> >>> +int cmdq_dev_get_client_reg(struct device *dev,
+> >>> +			    struct cmdq_client_reg *client_reg, int idx);
+> >>> +
+> >>>  /**
+> >>>   * cmdq_mbox_create() - create CMDQ mailbox client and channel
+> >>>   * @dev:	device of CMDQ mailbox client
+> >>>
+> > 
+> > 
 
 
 _______________________________________________
