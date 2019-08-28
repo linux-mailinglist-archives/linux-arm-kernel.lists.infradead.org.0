@@ -2,82 +2,154 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF38F9FFCF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:26:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D3D7D9FFD2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:26:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EsdSFuz7jTMwuN17YwMK+BB0J3WySWafUjyjr0EVwN8=; b=U+GbUmZ3+f8Ybi
-	QNKsmx7uJWC1I9j5r5VTgEu6uz37G+/PP5FX/j6TBvfInkd0wacMVxwJo/FhcyK1fH5XuyEwcuaHI
-	vLXu/3nzAvnLKGTCiTh8R/aEHT1pXBYeo9JuMxr0vW4HMuvv5Uf1AogEKeA2Iko5tDLKs9pb9OdNY
-	kwse9s2IoLRN5T+GW94qVg5JQu+tkJEJV8lLpbQJ2Dj8gTvy9ZRvu9eqMVP1SUMfvPOOdhb6emFh8
-	lBVdeuMIh83UzdotyySoaiADogjMUW75exg7NAJ4vi6Kdk3nSwl9CAhw8nAVB150dPG6Mm2W35C/Q
-	5txt729DW+TR/SUKYqIA==;
+	List-Owner; bh=480tYdGyyEng9wAs9yWblc3siksDXpWeisTTOnX2m+k=; b=ICfYdIyAQGiSnh
+	ANiKWABZmz0NA8E8YdTPA8+FWFZs7A3de/+fRVXMcIeRvbMnK8KuqiWmaWiI8tmU2P7m71Npa942k
+	9Jtf2JGdym+jerV7TABo10d6kdBii7vv5uKZvCm3EtKc6O717Xa2b/j2PAqbPnGBN5vOYokoTcFtC
+	FZM5xlk6n3BCuLDqqeVDZTSGDg2BP7/jMT72jcyNoBk7XmHltbBhExYL7gzlqJKa/js7MTzPGjFZL
+	SaTx49+Aag51qwgBBiTZUz7Ktg17y4WEmKXa1F1hR0oL5/PM7Td7RWzeZDkpQy4J3t4qye5A91B0c
+	TXf/nyHVnnjXZRAnQG7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2v9f-0005UT-1V; Wed, 28 Aug 2019 10:26:19 +0000
-Received: from mta-02.yadro.com ([89.207.88.252] helo=mta-01.yadro.com)
+	id 1i2vAB-0005xL-7y; Wed, 28 Aug 2019 10:26:51 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2v7n-0002y3-Ex
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:24:27 +0000
-Received: from localhost (unknown [127.0.0.1])
- by mta-01.yadro.com (Postfix) with ESMTP id 07E1F42ECE;
- Wed, 28 Aug 2019 10:24:22 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=yadro.com; h=
- content-type:content-type:content-transfer-encoding:mime-version
- :references:in-reply-to:x-mailer:message-id:date:date:subject
- :subject:from:from:received:received:received; s=mta-01; t=
- 1566987860; x=1568802261; bh=87VA5h5waSDTUF2CVQN/4Wwh9JYi5VNM4bl
- aFGLhSMY=; b=ftjErji2haH19AzZFUWJf73ObDZba5bpxrSSs758XIdfDgACCZk
- jPlBP+oacojsvpJcH/Aq0ofG5bq36R++M4CPVB+RcmRQYJxUXVx26Iyk/bGeYABI
- 10uOLFbik5rkwD2UUHG7HkcmPXm+H/zjYStNE9UUWOOxCX8ZpzlFMMas=
-X-Virus-Scanned: amavisd-new at yadro.com
-Received: from mta-01.yadro.com ([127.0.0.1])
- by localhost (mta-01.yadro.com [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id maoMV8-Mbqiy; Wed, 28 Aug 2019 13:24:20 +0300 (MSK)
-Received: from T-EXCH-02.corp.yadro.com (t-exch-02.corp.yadro.com
- [172.17.10.102])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-SHA384 (256/256 bits))
- (No client certificate requested)
- by mta-01.yadro.com (Postfix) with ESMTPS id D90F3404CB;
- Wed, 28 Aug 2019 13:24:20 +0300 (MSK)
-Received: from localhost.dev.yadro.com (172.17.15.69) by
- T-EXCH-02.corp.yadro.com (172.17.10.102) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384_P384) id
- 15.1.669.32; Wed, 28 Aug 2019 13:24:20 +0300
-From: Ivan Mikhaylov <i.mikhaylov@yadro.com>
-To: Guenter Roeck <linux@roeck-us.net>, Wim Van Sebroeck
- <wim@linux-watchdog.org>
-Subject: [PATCH v4 4/4] aspeed/watchdog: Add access_cs0 option for alt-boot
-Date: Wed, 28 Aug 2019 13:24:02 +0300
-Message-ID: <20190828102402.13155-5-i.mikhaylov@yadro.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190828102402.13155-1-i.mikhaylov@yadro.com>
-References: <20190828102402.13155-1-i.mikhaylov@yadro.com>
+ id 1i2v9i-0005jx-2h
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:26:23 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: E6r/PQdmO31n+Qc8VsnIp5iv4Sdcg5KwZF24MxpvWlvLG2pvSY4zfSL/1rVxgcdBIdGeZWxgzC
+ TSexgAUlYJGF6cnQgo1ZWJYkV/3kMfy+lvD8mHP6SwLoz3jiNY5RLPJuFVpe/EdK+EF0bGQrsG
+ 2U2HMCUtfxCDZFjgIpegtTBLNGfGlO4tI+Xfmk+yHHd+D9KDPCuPNiCTGzt903YhieZLuVLB/d
+ mYxAT+46N44onCY/IOZbMalwZEc9Q7Msu+Nz5QEf4JEEHjuCCENDnqqhhSrQCjpigHIkEAk0wT
+ Hpo=
+X-IronPort-AV: E=Sophos;i="5.64,440,1559545200"; d="scan'208";a="46903512"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 28 Aug 2019 03:26:20 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 28 Aug 2019 03:26:19 -0700
+Received: from NAM03-CO1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 28 Aug 2019 03:26:19 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=I4vYMurnLRunC3031/wiwduMf7xvb+iA3ubEJAU+8193mWWCyTSh1eXvOSM4keA+5PL83w1i/7jBQPQYgSnZP+KCYuMfdJ92oNZ2cUvXtxDSzh6VpT1GJtHnVBkwBpgQAJzl5VDLyx8IPUPhWjxzNTxzlnO3kzboZUlSVUWHMNItlgGAO1J9B/Jvc4mIeiPRwH169Di5vy3biLfS0kMNN8GBqeelppx4cznaJKZ2DyzcIY/b1tCqzUXniHykdUUaVDHymHA5FxMDJz3EqX0V3rYLIGhpHUMPnvcFu9ZQRubmiRrRrglRt+EARb4oXo+w3Rd5ANT5P/DVH990sBFK/Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=exbS2ahhWnhCIcddIKThWxbVxt3HYCRT4g9tsE+AgLI=;
+ b=BxLW6a2vUCNfu/DnQ134yrU07/pL4hEN+2mXndACCDUPNCPZDxUxxRuczzxVEFZxq6RGXVfg4wL5A6DK7JQXs1JyHU/8b90sH3pQ8cSjMHA9hrTmaby/p5wfmSQ5e7A5oMvVeEgnEWf+6bmvwMaUMvxnNfYfN2yXjZ9UNeWBJOPfy7a0Rm0J9yzyGbDaSalvxAGKbTprGLe7iHmYlLmbn4JeHWqlVVkTAteB9lBuzvFKz/uVD7T0p7Jie3hRc/ZH8efJ9zqfp9aE27m6A0Zpe+EXuoCluDfVDfGdwc1h3Y4d9heFfw8hgjq5c3fUZzyFXcozaLCdx8R6RM6N4JmbMg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=exbS2ahhWnhCIcddIKThWxbVxt3HYCRT4g9tsE+AgLI=;
+ b=Bh0PqwHMgB8gC5kZu6ilxTXn2ILdcr2Ra9dUo/cqk9RYaFN27uxgThnmlc39kzcdtZ1xM8lB9RIZjeFpJ3ufy8HSKNLSh8mvFvzk5oqDRyy3TSqo+0bvprwT11u0Cet+le4QDrIbeSu9gezmcs1qN3Rp8PJW4a+G97oYByMM+bA=
+Received: from MWHPR11MB1549.namprd11.prod.outlook.com (10.172.54.17) by
+ MWHPR11MB1454.namprd11.prod.outlook.com (10.172.54.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.19; Wed, 28 Aug 2019 10:26:18 +0000
+Received: from MWHPR11MB1549.namprd11.prod.outlook.com
+ ([fe80::9596:8d2b:63e5:9a36]) by MWHPR11MB1549.namprd11.prod.outlook.com
+ ([fe80::9596:8d2b:63e5:9a36%3]) with mapi id 15.20.2199.021; Wed, 28 Aug 2019
+ 10:26:18 +0000
+From: <Claudiu.Beznea@microchip.com>
+To: <uwe@kleine-koenig.org>, <thierry.reding@gmail.com>
+Subject: Re: [PATCH v2 6/6] pwm: atmel: implement .get_state()
+Thread-Topic: [PATCH v2 6/6] pwm: atmel: implement .get_state()
+Thread-Index: AQHVXYsB0dfa//veNkO80NfMXm4q9A==
+Date: Wed, 28 Aug 2019 10:26:18 +0000
+Message-ID: <8da4ef26-872f-beaf-b5cb-9d8cb93a2ce9@microchip.com>
+References: <20190824001041.11007-1-uwe@kleine-koenig.org>
+ <20190824001041.11007-7-uwe@kleine-koenig.org>
+In-Reply-To: <20190824001041.11007-7-uwe@kleine-koenig.org>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1PR10CA0109.EURPRD10.PROD.OUTLOOK.COM
+ (2603:10a6:803:28::38) To MWHPR11MB1549.namprd11.prod.outlook.com
+ (2603:10b6:301:c::17)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tagtoolbar-keys: D20190828132609155
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 28dc8361-200d-44d6-29df-08d72ba229ae
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR11MB1454; 
+x-ms-traffictypediagnostic: MWHPR11MB1454:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR11MB14544EFF9065C38CA1C93C8587A30@MWHPR11MB1454.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 014304E855
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(39860400002)(366004)(396003)(346002)(376002)(136003)(189003)(199004)(476003)(66066001)(7736002)(305945005)(25786009)(66574012)(86362001)(66946007)(66556008)(66476007)(478600001)(64756008)(26005)(102836004)(76176011)(8936002)(2906002)(14454004)(186003)(486006)(4326008)(71200400001)(71190400001)(66446008)(6116002)(316002)(31686004)(5660300002)(3846002)(8676002)(110136005)(81156014)(81166006)(52116002)(99286004)(229853002)(6486002)(54906003)(11346002)(36756003)(53546011)(6512007)(6506007)(386003)(2616005)(6436002)(446003)(256004)(6246003)(53936002)(14444005)(31696002)(142923001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1454;
+ H:MWHPR11MB1549.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: bDzV+sYkpJWrMZ4Bjs8QiXnxb4eJDNQ/NhECsaqjDUNFh/LT1mzAxzZro2YB4eTjMm9AkNEkcpoDzFV6LBCN7GjO3NpU1sme+45lfiOA155DgEUZ/k1/90dGGwtFne/rQHTD0xmCm70Umm+6DAAAc39KgyHZSEtWZnsBZk5kD/VErFa1OJ6/NLNEC0lf0XIV885nO4UvR8+R20LNqPTahQQp7+7w13hrsHJ7NU2+rfl4uOH3Pn4hdkGhHg5ZQzEd5XXVzva4aO42wR9dqEFvVZHkMPBH/LSOObyhmAg4aJGsEXKhWIq/AO9aomgQYgp9FZQYrcwV6fbRFiStwj2bh1EDQ9Q3kDoxr9CW2JO6GRosj0Fx8zfCZKUreKk4o6oK92mdesqRB8edTB6dbTVWkWCxIduuU4ISDHv1I2x38ic=
+Content-ID: <F5B7CFECC7B0094FB3579B1E4A09AC42@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-X-Originating-IP: [172.17.15.69]
-X-ClientProxiedBy: T-EXCH-01.corp.yadro.com (172.17.10.101) To
- T-EXCH-02.corp.yadro.com (172.17.10.102)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 28dc8361-200d-44d6-29df-08d72ba229ae
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Aug 2019 10:26:18.4119 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: lCXDc/NWVpdpfr+5ixt6VX5v7ie/Zpq3Cp7rU8zzD7e8LgZE/6Ym4oL3NkrXMiJT/wBcywLEowb+b/7761FS11z88FhTSshGMAadVVz1qFo=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1454
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_032424_453868_7C86A8A5 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190828_032622_288474_F7FD76F5 
+X-CRM114-Status: GOOD (  19.13  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,71 +161,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-watchdog@vger.kernel.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- Alexander Amelkin <a.amelkin@yadro.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- Ivan Mikhaylov <i.mikhaylov@yadro.com>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
+ Ludovic.Desroches@microchip.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The option for the ast2400/2500 to get access to CS0 at runtime.
-
-Signed-off-by: Ivan Mikhaylov <i.mikhaylov@yadro.com>
----
- .../ABI/testing/sysfs-class-watchdog          | 34 +++++++++++++++++++
- 1 file changed, 34 insertions(+)
-
-diff --git a/Documentation/ABI/testing/sysfs-class-watchdog b/Documentation/ABI/testing/sysfs-class-watchdog
-index 6317ade5ad19..675f9b537661 100644
---- a/Documentation/ABI/testing/sysfs-class-watchdog
-+++ b/Documentation/ABI/testing/sysfs-class-watchdog
-@@ -72,3 +72,37 @@ Description:
- 		It is a read/write file. When read, the currently assigned
- 		pretimeout governor is returned.  When written, it sets
- 		the pretimeout governor.
-+
-+What:		/sys/class/watchdog/watchdog1/access_cs0
-+Date:		August 2019
-+Contact:	Ivan Mikhaylov <i.mikhaylov@yadro.com>,
-+		Alexander Amelkin <a.amelkin@yadro.com>
-+Description:
-+		It is a read/write file. This attribute exists only if the
-+		system has booted from the alternate flash chip due to
-+		expiration of a watchdog timer of AST2400/AST2500 when
-+		alternate boot function was enabled with 'aspeed,alt-boot'
-+		devicetree option for that watchdog or with an appropriate
-+		h/w strapping (for WDT2 only).
-+
-+		At alternate flash the 'access_cs0' sysfs node provides:
-+			ast2400: a way to get access to the primary SPI flash
-+				chip at CS0 after booting from the alternate
-+				chip at CS1.
-+			ast2500: a way to restore the normal address mapping
-+				from (CS0->CS1, CS1->CS0) to (CS0->CS0,
-+				CS1->CS1).
-+
-+		Clearing the boot code selection and timeout counter also
-+		resets to the initial state the chip select line mapping. When
-+		the SoC is in normal mapping state (i.e. booted from CS0),
-+		clearing those bits does nothing for both versions of the SoC.
-+		For alternate boot mode (booted from CS1 due to wdt2
-+		expiration) the behavior differs as described above.
-+
-+		This option can be used with wdt2 (watchdog1) only.
-+
-+		When read, the current status of the boot code selection is
-+		shown. When written with any non-zero value, it clears
-+		the boot code selection and the timeout counter, which results
-+		in chipselect reset for AST2400/AST2500.
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCk9uIDI0LjA4LjIwMTkgMDM6MTAsIFV3ZSBLbGVpbmUtS8O2bmlnIHdyb3RlOg0KPiBFeHRl
+cm5hbCBFLU1haWwNCj4gDQo+IA0KPiBUaGlzIGZ1bmN0aW9uIHJlYWRzIGJhY2sgdGhlIGNvbmZp
+Z3VyZWQgcGFyYW1ldGVycyBmcm9tIHRoZSBoYXJkd2FyZS4gQXMNCj4gLmFwcGx5IHJvdW5kcyBk
+b3duIChtb3N0bHkpIEknbSByb3VuZGluZyB1cCBpbiAuZ2V0X3N0YXRlKCkgdG8gYWNoaWV2ZQ0K
+PiB0aGF0IGFwcGx5aW5nIGEgc3RhdGUganVzdCByZWFkIGZyb20gaGFyZHdhcmUgaXMgYSBuby1v
+cC4NCg0KU2luY2UgdGhpcyByZWFkIGlzIG9ubHkgYXQgcHJvYmluZywgYXQgbGVhc3QgZm9yIHRo
+ZSBtb21lbnQsIGFuZCwgYXMgZmFyIGFzDQpJIHJlbWVtYmVyLCB0aGUgaWRlYSB3LyAuZ2V0X3N0
+YXRlIHdhcyB0byByZWZsZWN0IGluIExpbnV4IHRoZSBzdGF0ZXMgb2YNClBXTXMgdGhhdCB3ZXJl
+IHNldHVwIGJlZm9yZSBMaW51eCB0YWtlcyBjb250cm9sIChlLmcuIFBXTXMgc2V0dXAgaW4NCmJv
+b3Rsb2FkZXJzKSBJIHRoaW5rIGl0IHdvdWxkIG5vIHByb2JsZW0gaWYgaXQgd291bGQgYmUgbm8t
+b3BzIGluIHRoaXMNCnNjZW5hcmlvLiBJbiBjYXNlIG9mIHJ1bi10aW1lIHN0YXRlIHJldHJpZXZh
+bCwgcHdtX2dldF9zdGF0ZSgpIHNob3VsZCBiZQ0KZW5vdWdoLiBJZiBvbmUgd291bGQgZ2V0IHRo
+ZSBzdGF0ZSBwcmV2aW91c2x5IHNhdmVkIHcvIHRoaXMgLmdldF9zdGF0ZSBBUEkNCmhlL3NoZSB3
+b3VsZCBjaGFuZ2UgaXQsIHRoZW4gaXQgd291bGQgYXBwbHkgdGhlIGNoYW5nZXMgdG8gdGhlIGhh
+cmR3YXJlLiBObw0KY2hhbmdlcyBvZiBQV00gc3RhdGUgd291bGQgYmUgYW55d2F5IHNraXBwZWQg
+ZnJvbSB0aGUgYmVnaW5uaW5nLCBpbg0KcHdtX2FwcGx5X3N0YXRlKCkgYnkgdGhpcyBjb2RlOg0K
+DQogICAgICAgIGlmIChzdGF0ZS0+cGVyaW9kID09IHB3bS0+c3RhdGUucGVyaW9kICYmDQogICAg
+ICAgICAgICBzdGF0ZS0+ZHV0eV9jeWNsZSA9PSBwd20tPnN0YXRlLmR1dHlfY3ljbGUgJiYNCgkg
+ICAgc3RhdGUtPnBvbGFyaXR5ID09IHB3bS0+c3RhdGUucG9sYXJpdHkgJiYNCiAgICAgICAgICAg
+IHN0YXRlLT5lbmFibGVkID09IHB3bS0+c3RhdGUuZW5hYmxlZCkNCgkJcmV0dXJuIDA7DQoNCkJ1
+dCBtYXliZSBJJ20gbWlzc2luZyBzb21ldGhpbmcuDQoNCj4gDQo+IFNpZ25lZC1vZmYtYnk6IFV3
+ZSBLbGVpbmUtS8O2bmlnIDx1d2VAa2xlaW5lLWtvZW5pZy5vcmc+DQo+IC0tLQ0KPiBOZXcgaW4g
+djINCj4gDQo+ICBkcml2ZXJzL3B3bS9wd20tYXRtZWwuYyB8IDM5ICsrKysrKysrKysrKysrKysr
+KysrKysrKysrKysrKysrKysrKysrKw0KPiAgMSBmaWxlIGNoYW5nZWQsIDM5IGluc2VydGlvbnMo
+KykNCj4gDQo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL3B3bS9wd20tYXRtZWwuYyBiL2RyaXZlcnMv
+cHdtL3B3bS1hdG1lbC5jDQo+IGluZGV4IDE1MmMyYjdkZDZkZi4uZjc4ODUwMWFiNmNhIDEwMDY0
+NA0KPiAtLS0gYS9kcml2ZXJzL3B3bS9wd20tYXRtZWwuYw0KPiArKysgYi9kcml2ZXJzL3B3bS9w
+d20tYXRtZWwuYw0KPiBAQCAtMjk1LDggKzI5NSw0NyBAQCBzdGF0aWMgaW50IGF0bWVsX3B3bV9h
+cHBseShzdHJ1Y3QgcHdtX2NoaXAgKmNoaXAsIHN0cnVjdCBwd21fZGV2aWNlICpwd20sDQo+ICAJ
+cmV0dXJuIDA7DQo+ICB9DQo+ICANCj4gK3N0YXRpYyB2b2lkIGF0bWVsX3B3bV9nZXRfc3RhdGUo
+c3RydWN0IHB3bV9jaGlwICpjaGlwLCBzdHJ1Y3QgcHdtX2RldmljZSAqcHdtLA0KPiArCQkJCXN0
+cnVjdCBwd21fc3RhdGUgKnN0YXRlKQ0KPiArew0KPiArCXN0cnVjdCBhdG1lbF9wd21fY2hpcCAq
+YXRtZWxfcHdtID0gdG9fYXRtZWxfcHdtX2NoaXAoY2hpcCk7DQo+ICsJdTMyIHNyLCBjbXI7DQo+
+ICsNCj4gKwlzciA9IGF0bWVsX3B3bV9yZWFkbChhdG1lbF9wd20sIFBXTV9TUik7DQo+ICsJY21y
+ID0gYXRtZWxfcHdtX2NoX3JlYWRsKGF0bWVsX3B3bSwgcHdtLT5od3B3bSwgUFdNX0NNUik7DQo+
+ICsNCj4gKwlpZiAoc3IgJiAoMSA8PCBwd20tPmh3cHdtKSkgew0KPiArCQl1bnNpZ25lZCBsb25n
+IHJhdGUgPSBjbGtfZ2V0X3JhdGUoYXRtZWxfcHdtLT5jbGspOw0KPiArCQl1MzIgY2R0eSwgY3By
+ZCwgcHJlczsgDQoNClRoZXJlIGlzIGEgd2hpdGVzcGFjZSBhdCB0aGUgZW5kIG9mIHRoaXMgbGlu
+ZS4NCg0KPiArCQl1NjQgdG1wOw0KPiArDQo+ICsJCXByZXMgPSBjbXIgJiBQV01fQ01SX0NQUkVf
+TVNLOw0KPiArDQo+ICsJCWNwcmQgPSBhdG1lbF9wd21fY2hfcmVhZGwoYXRtZWxfcHdtLCBwd20t
+Pmh3cHdtLCBhdG1lbF9wd20tPmRhdGEtPnJlZ3MucGVyaW9kKTsNCg0KSWYgdGhpcyBpcyBwb3Nz
+aWJsZSwgcGxlYXNlIHRyeSB0byBrZWVwIGl0IGF0IDgwIGNoYXJzIHBlciBsaW5lLiBJbiBteQ0K
+b3BpbmlvbiB0aGlzIHN0aWxsIGxvb2tzIGdvb2Q6DQoJCWNwcmQgPSBhdG1lbF9wd21fY2hfcmVh
+ZGwoYXRtZWxfcHdtLCBwd20tPmh3cHdtLA0KCQkJCQkgIGF0bWVsX3B3bS0+ZGF0YS0+cmVncy5w
+ZXJpb2QpOw0KDQo+ICsJCXRtcCA9ICh1NjQpY3ByZCAqIE5TRUNfUEVSX1NFQzsNCj4gKwkJdG1w
+IDw8PSBwcmVzOw0KPiArCQlzdGF0ZS0+cGVyaW9kID0gRElWNjRfVTY0X1JPVU5EX1VQKHRtcCwg
+cmF0ZSk7DQo+ICsNCj4gKwkJY2R0eSA9IGF0bWVsX3B3bV9jaF9yZWFkbChhdG1lbF9wd20sIHB3
+bS0+aHdwd20sIGF0bWVsX3B3bS0+ZGF0YS0+cmVncy5kdXR5KTsNCg0KRGl0dG8uDQoNCj4gKwkJ
+dG1wID0gKHU2NCljZHR5ICogTlNFQ19QRVJfU0VDOw0KPiArCQl0bXAgPDw9IHByZXM7DQo+ICsJ
+CXN0YXRlLT5kdXR5X2N5Y2xlID0gRElWNjRfVTY0X1JPVU5EX1VQKHRtcCwgcmF0ZSk7DQo+ICsN
+Cj4gKwkJc3RhdGUtPmVuYWJsZWQgPSB0cnVlOw0KPiArCX0gZWxzZSB7DQo+ICsJCXN0YXRlLT5l
+bmFibGVkID0gZmFsc2U7DQo+ICsJfQ0KPiArDQo+ICsJaWYgKGNtciAmIFBXTV9DTVJfQ1BPTCkN
+Cj4gKwkJc3RhdGUtPnBvbGFyaXR5ID0gUFdNX1BPTEFSSVRZX0lOVkVSU0VEOw0KPiArCWVsc2UN
+Cj4gKwkJc3RhdGUtPnBvbGFyaXR5ID0gUFdNX1BPTEFSSVRZX05PUk1BTDsNCj4gKw0KPiArfQ0K
+PiArDQo+ICBzdGF0aWMgY29uc3Qgc3RydWN0IHB3bV9vcHMgYXRtZWxfcHdtX29wcyA9IHsNCj4g
+IAkuYXBwbHkgPSBhdG1lbF9wd21fYXBwbHksDQo+ICsJLmdldF9zdGF0ZSA9IGF0bWVsX3B3bV9n
+ZXRfc3RhdGUsDQo+ICAJLm93bmVyID0gVEhJU19NT0RVTEUsDQo+ICB9Ow0KDQpPdGhlciB0aGFu
+IHRoZSBtaW5vciB0aGluZ3MgYWJvdmUsDQpBY2tlZC1ieTogQ2xhdWRpdSBCZXpuZWEgPGNsYXVk
+aXUuYmV6bmVhQG1pY3JvY2hpcC5jb20+DQoNCj4gIA0KPiANCl9fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0
+CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFk
+ZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
