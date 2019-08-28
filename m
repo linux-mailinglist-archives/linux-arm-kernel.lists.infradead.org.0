@@ -2,40 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEDC5A0999
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 20:35:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0114A099D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 20:35:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=7DjQy6VRcsDPJexRvBpkePKQ/ymw8tRSQ2SxyuBvYVA=; b=MbiRFYSy9TjF8I
-	L4dZ6MQ4ZTXnt4ro5a+vyC7nSm3hX8J4N2hhrUQEJc5gM0gBthqS4Z7q82rJmjozTWq6g3DORco+J
-	xjxxWmyqkS0bhjMGg1YiMfAYT5q8Ujxn6SGesRpQk+HAC6SNvg3Z+CwQkPxs+VtSKaO6INuCSHDDj
-	nIQYfG4wSDuyzMaXaJ3Cvi2uCydUHEobjhJUOsgChFsmLlWT4O4VdiSrq+z8vKuH15Q8QygHosdk1
-	nZg3TVI2GmLjk3QXZqSwJ2YWOobARmqqP2aa/zdKiF8VTmV/LeHtM92r9h+xA6m+fu3n3WoQ2pXeC
-	eNcfohn/1YKUhEp2ai7A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kPvrjTiM/AJJvWKDeye4uXPGLlhB/QCuZ29m2TRaGmw=; b=FHmx95oeRkSv0g
+	5yIlJbsIbW7K09F1v0kLT2SwsZQko42xeCxk3eYXewj3FntjraHVMZV6zUoxEdgLmy74dI2CatSfd
+	o5X1+/Au/QotN9XQ8iHaccygwgCFzf1U+Efv3r31jUiI9yE++tLpEO44MrGefWdbDRbEMfq6sNed1
+	3L3knbauywdbjTvuUs/LpCWNTXRye718OMHAFbEHBQV79CYbXiMCrXNehUyhkP3sExRPA3UUQrLoB
+	opdTKEh+iNRa4Uv2F2qzmiQLu2umFwjoegR727EwXyZKMRwhZjtGifjMfzhlBJ9R5roGEyIS4j/ai
+	+POZrHykDTG8KqK+vBLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i32mn-0004tC-HG; Wed, 28 Aug 2019 18:35:13 +0000
+	id 1i32n2-0006Fx-HS; Wed, 28 Aug 2019 18:35:28 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i32mW-0004se-VQ
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 18:34:58 +0000
+ id 1i32mY-0004sq-1f
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 18:34:59 +0000
 Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id 0FEC88162;
- Wed, 28 Aug 2019 18:35:25 +0000 (UTC)
+ by muru.com (Postfix) with ESMTP id 3CD6681DD;
+ Wed, 28 Aug 2019 18:35:27 +0000 (UTC)
 From: Tony Lindgren <tony@atomide.com>
 To: soc@kernel.org
-Subject: [GIT PULL 1/4] soc changes for omap variants for v5.4
-Date: Wed, 28 Aug 2019 11:34:49 -0700
-Message-Id: <pull-1567016893-318461@atomide.com>
+Subject: [GIT PULL 2/4] more ti-sysc driver changes for v5.4
+Date: Wed, 28 Aug 2019 11:34:50 -0700
+Message-Id: <pull-1567016893-318461@atomide.com-2>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <pull-1567016893-318461@atomide.com>
+References: <pull-1567016893-318461@atomide.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_113457_047788_90A39495 
-X-CRM114-Status: UNSURE (   9.12  )
+X-CRM114-CacheID: sfid-20190828_113458_122062_88F9C5D0 
+X-CRM114-Status: UNSURE (   8.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,42 +68,37 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: "Tony Lindgren" <tony@atomide.com>
 
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+The following changes since commit c8a738f4cfaeccce40b171aca6da5fc45433ce60:
 
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+  bus: ti-sysc: remove set but not used variable 'quirks' (2019-08-13 04:40:11 -0700)
 
 are available in the Git repository at:
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.4/soc-signed
+  git://git.kernel.org/pub/scm/linux/kernel/git/tmlind/linux-omap tags/omap-for-v5.4/ti-sysc-part2-signed
 
-for you to fetch changes up to 50f57ef83d836d727902a6a7e70cca61b0d02655:
+for you to fetch changes up to 7edd00f71f4b91ca31dbfa08926495fe5e77aab4:
 
-  ARM: OMAP2+: Delete an unnecessary kfree() call in omap_hsmmc_pdata_init() (2019-08-26 08:59:48 -0700)
-
-----------------------------------------------------------------
-SoC changes for omap variants for v5.4
-
-The first change moves platform-specific asm-offsets.h to arch/arm/mach-omap2
-to fix iessu with parallel build with CONFIG_IKHEADERS, and the second change
-removes a useless kfree.
-
-Note that the first change causes a trivial merge conflict with the iommu
-changes for arch/arm/mach-omap2/Makefile.
+  bus: ti-sysc: Detect d2d when debug is enabled (2019-08-26 08:33:25 -0700)
 
 ----------------------------------------------------------------
-Markus Elfring (1):
-      ARM: OMAP2+: Delete an unnecessary kfree() call in omap_hsmmc_pdata_init()
+more ti-sysc driver changes for omap variants for v5.4
 
-Masahiro Yamada (1):
-      ARM: OMAP2+: move platform-specific asm-offset.h to arch/arm/mach-omap2
+Few changes mostly to deal with sgx SoC glue quirk for omap36xx that
+is needed for the related sgx SoC glue dts branch. The other changes
+are to simplify sysc_check_one_child() sysc_check_children() to be void
+functions, and detect d2d module when debugging is enabled.
 
- arch/arm/mach-omap2/.gitignore  | 1 +
- arch/arm/mach-omap2/Makefile    | 5 +++--
- arch/arm/mach-omap2/hsmmc.c     | 4 +---
- arch/arm/mach-omap2/sleep33xx.S | 2 +-
- arch/arm/mach-omap2/sleep43xx.S | 2 +-
- 5 files changed, 7 insertions(+), 7 deletions(-)
- create mode 100644 arch/arm/mach-omap2/.gitignore
+----------------------------------------------------------------
+Nishka Dasgupta (1):
+      bus: ti-sysc: Change return types of functions
+
+Tony Lindgren (2):
+      bus: ti-sysc: Add module enable quirk for SGX on omap36xx
+      bus: ti-sysc: Detect d2d when debug is enabled
+
+ drivers/bus/ti-sysc.c                 | 45 ++++++++++++++++++++++-------------
+ include/linux/platform_data/ti-sysc.h |  1 +
+ 2 files changed, 30 insertions(+), 16 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
