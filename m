@@ -2,62 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58179A0247
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:54:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE4FCA0251
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:57:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=p4p2AW3ae17P7Ws7vF0Fp/zce8elTB7nTC22FnVgkpc=; b=VETGOiOr03MMr+QmRLIvbtrwr
-	E+YoR+edlcXbDnYNfV5URJuO/hh1L93vwfWjrXwV3d1Sqi/aVEDA0TqIeZAy0NL0nk79v7fhN0dAZ
-	x0+cxc8iMVontyjsL9FytwV/Wq9TiluxCKcSvkAWcj58pjSbof79iBK7sSrpoP6iYTLnHHj6LWUI0
-	eD9vH4kV595JH+X3hPEkIRoznQiEMKWTeBCUhQ+41ALDvFOhdzDhY27Bo8uFVOUO0XQ2XPX7Jdk9/
-	E8kxIIOxxlsCsphdW0uF2Lwn9q4etUuYGWy7hZtwDDtGDqTFeUUUyJSKZbV6xpgIKwpBW6qXHGNyZ
-	pCjONz0zw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Zz85zfSooNnqnAOgUYwKNP0+bNV7YtS4c5JF7faYM1E=; b=QLHPrzbAvWQq4h
+	fAElZwjIbURX1fAvmi0+lsepHYAFbdeuVl7OU/mU8+JjWqticQ1+V5ctl0pEhicUSUPP7v+zPAh9A
+	PWfs+t/Om0dP3Gjb7ymZWMbrKDj+Shy6Q7R7MgonX1WSfWdXeyViwuwvTRUVOg6OWX+pYHB+kwsFs
+	lA+Y4IHPJua4R3nK244q9rRMb0ts4jm/KsgaaGnBk5If5Dvzo3Q5FaQeeFW6S0Un8yMEaPj/2flOR
+	W/w6ELwge8j+w6zPofyLOCkWkSaipVCvLaACnDw4MZzRqmiBIcZ643KGLksaR0z7Y1GmVPfuuYo57
+	FXxRKpgonVc+vrEMiWUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xSd-0006p1-TN; Wed, 28 Aug 2019 12:54:03 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i2xVr-0008U6-Qm; Wed, 28 Aug 2019 12:57:24 +0000
+Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xRR-0005uK-Kl
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:52:51 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C85D122DA7;
- Wed, 28 Aug 2019 12:52:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566996769;
- bh=pWrQgmISDkbqSBxXp7l8VKfrAdsJraHRh2Qj6d4vPWo=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=VnLmHsw/scI8JLANLRg4jxD21qcb3AVY8M5amBfOqQTwnWdHt7b0mSUhW8Sz9+kWD
- seKxiOVLboAYrylCrJfL5wNUNfLYIKOtKX3CX/9ZDesEd1klWnPUnyzB7WmewXKsRD
- 8UIbnI++kdXt/YTa39V3Admt9sVNhhB3Ms2thNiQ=
-Date: Wed, 28 Aug 2019 14:52:46 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH 3/5] dt-bindings: sound: Convert Allwinner A33 codec to a
- schema
-Message-ID: <20190828125246.zy7ucra7dkiw4ia7@flea>
-References: <20190827142547.14577-1-mripard@kernel.org>
- <20190827142547.14577-3-mripard@kernel.org>
- <CAGb2v67tEgtD9PEus0TaPQg9969L_7dn2c4GFZSioR1AtxBpmQ@mail.gmail.com>
+ id 1i2xVh-0008Tm-JZ
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:57:15 +0000
+Received: by mail-qt1-x843.google.com with SMTP id u34so2853265qte.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 28 Aug 2019 05:57:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=o1DwZzEtFbDqE+HotFGGh4Yfc3ybukBgxMhxavQT+kM=;
+ b=Ic9IwM42CLt7bvMtH9xFcb5LZqdzf74aHXU7VwlFM9UAwSINFUp8nrya7NtTN1nl04
+ 121s7ggsh8a7al+ftVHvAzL3G847qQLqSqecVs4HomdkFeNK8YthCokHOrWTtriixoke
+ 1PQRksI9o/u8aPws9nBw2Zu415LAHiNm5ezldbsO3hF680jc71H5g0I16Ir74Z86g16d
+ 8r+UweelvrEUn59KnGRtv4TyoQBWfwAqM4Z73gA/jiCjqla5ZdUz58BRILqpxLUvPqGJ
+ 486m8+QwLhH+fR4UOnxs4ikmQ7tMcw9exd/vABRaZ25kgU1dk5wA12j2bKJviLqpg7Xd
+ iWZg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=o1DwZzEtFbDqE+HotFGGh4Yfc3ybukBgxMhxavQT+kM=;
+ b=AJQLEZ7rCW/SidEms5IQqAhuRTSnvQCI7viTh5B16rvmbubyWRqTC+6K/6ELx8GKKd
+ yAski5ELKxRJo504XKY7Rf8tb2xhMZ76ocifM/9SBWCWwTJVoB9Jy/PvtqmnxbqRUMrU
+ H3zy35FzYWwKnz6TITRb/MnoSqsjxlitU52hBTtDf8Wzh6Q7mh1XGJFwTeBPZrzBvg91
+ Ne9tdgMQvy6Q0c9MFjMOPIzIakEueSbnVXtsRn0MKTf7IhX+YgvNVB06jbQIAVBr+r2i
+ dk/xsRqewmcaowZBDg4SRPr/tufcebOx+ZC59m9mhCJmgtgeQca0+YMY4jLQh89fTgjx
+ dmmQ==
+X-Gm-Message-State: APjAAAX0TDb4iwMQtD2tVxC/0aA1BVNYcZv1IU/MqDbyqYu0DrYDvbsx
+ BB1fhyiIE3LJnDyX2Jt6E/LsrIR+LZL1vu5+SdA6DA==
+X-Google-Smtp-Source: APXvYqxKWf3JSzlqsz66v/Zgfpf4ovDaMdB862VtXEjqKFUuOpZjhTSnRZjznxSc/2+bzSFPBPOpGpTmc2d8hYXtpaU=
+X-Received: by 2002:ac8:51c4:: with SMTP id d4mr4045194qtn.176.1566997030605; 
+ Wed, 28 Aug 2019 05:57:10 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v67tEgtD9PEus0TaPQg9969L_7dn2c4GFZSioR1AtxBpmQ@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-6-mike.leach@linaro.org>
+ <20190828033654.GE26133@leoy-ThinkPad-X240s>
+In-Reply-To: <20190828033654.GE26133@leoy-ThinkPad-X240s>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Wed, 28 Aug 2019 13:56:59 +0100
+Message-ID: <CAJ9a7VhtTCW3_eGOrBi76-QgVhthKCtuA5FzXCSy9rQXvrc3bQ@mail.gmail.com>
+Subject: Re: [PATCH 5/8] coresight: etm4x: Improve usability of sysfs API.
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_055249_854861_36C11BA2 
-X-CRM114-Status: GOOD (  25.62  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190828_055713_654207_E799D874 
+X-CRM114-Status: GOOD (  25.50  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -67,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,195 +92,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Brown <broonie@kernel.org>,
- Frank Rowand <frowand.list@gmail.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5540322501219056388=="
+Cc: Coresight ML <coresight@lists.linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Mathieu, Leo,
 
---===============5540322501219056388==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="asta7q4d6eqzmvrk"
-Content-Disposition: inline
+Will split & fix comments.
 
+Thanks
 
---asta7q4d6eqzmvrk
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+Mike
 
-Hi,
-
-On Tue, Aug 27, 2019 at 10:29:33PM +0800, Chen-Yu Tsai wrote:
-> On Tue, Aug 27, 2019 at 10:25 PM Maxime Ripard <mripard@kernel.org> wrote:
-> >
-> > From: Maxime Ripard <maxime.ripard@bootlin.com>
-> >
-> > The Allwinner A33 SoC have an embedded audio codec that is supported in Linux,
-> > with a matching Device Tree binding.
-> >
-> > Now that we have the DT validation in place, let's convert the device tree
-> > bindings for that controller over to a YAML schemas.
-> >
-> > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> > ---
-> >  .../sound/allwinner,sun8i-a33-codec.yaml      | 57 +++++++++++++++++
-> >  .../bindings/sound/sun8i-a33-codec.txt        | 63 -------------------
-> >  2 files changed, 57 insertions(+), 63 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
-> >  delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-> >
-> > diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
-> > new file mode 100644
-> > index 000000000000..5e7cc05bbff1
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
-> > @@ -0,0 +1,57 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a33-codec.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Allwinner A33 Codec Device Tree Bindings
-> > +
-> > +maintainers:
-> > +  - Chen-Yu Tsai <wens@csie.org>
-> > +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> > +
-> > +properties:
-> > +  "#sound-dai-cells":
-> > +    const: 0
-> > +
-> > +  compatible:
-> > +    const: allwinner,sun8i-a33-codec
-> > +
-> > +  reg:
-> > +    maxItems: 1
-> > +
-> > +  interrupts:
-> > +    maxItems: 1
-> > +
-> > +  clocks:
-> > +    items:
-> > +      - description: Bus Clock
-> > +      - description: Module Clock
-> > +
-> > +  clock-names:
-> > +    items:
-> > +      - const: bus
-> > +      - const: mod
-> > +
-> > +required:
-> > +  - "#sound-dai-cells"
-> > +  - compatible
-> > +  - reg
-> > +  - interrupts
-> > +  - clocks
-> > +  - clock-names
-> > +
-> > +additionalProperties: false
-> > +
-> > +examples:
-> > +  - |
-> > +    audio-codec@1c22e00 {
-> > +      #sound-dai-cells = <0>;
-> > +      compatible = "allwinner,sun8i-a33-codec";
-> > +      reg = <0x01c22e00 0x400>;
-> > +      interrupts = <0 29 4>;
-> > +      clocks = <&ccu 47>, <&ccu 92>;
-> > +      clock-names = "bus", "mod";
-> > +    };
-> > +
-> > +...
-> > diff --git a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt b/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-> > deleted file mode 100644
-> > index 7ecf6bd60d27..000000000000
-> > --- a/Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
-> > +++ /dev/null
-> > @@ -1,63 +0,0 @@
-> > -Allwinner SUN8I audio codec
-> > -------------------------------------
-> > -
-> > -On Sun8i-A33 SoCs, the audio is separated in different parts:
-> > -         - A DAI driver. It uses the "sun4i-i2s" driver which is
-> > -         documented here:
-> > -         Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-i2s.yaml
-> > -         - An analog part of the codec which is handled as PRCM registers.
-> > -         See Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
-> > -         - An digital part of the codec which is documented in this current
-> > -         binding documentation.
-> > -         - And finally, an audio card which links all the above components.
-> > -         The simple-audio card will be used.
-> > -         See Documentation/devicetree/bindings/sound/simple-card.txt
-> > -
-> > -This bindings documentation exposes Sun8i codec (digital part).
-> > -
-> > -Required properties:
-> > -- compatible: must be "allwinner,sun8i-a33-codec"
-> > -- reg: must contain the registers location and length
-> > -- interrupts: must contain the codec interrupt
-> > -- clocks: a list of phandle + clock-specifer pairs, one for each entry
-> > -  in clock-names.
-> > -- clock-names: should contain followings:
-> > -   - "bus": the parent APB clock for this controller
-> > -   - "mod": the parent module clock
-> > -
-> > -Here is an example to add a sound card and the codec binding on sun8i SoCs that
-> > -are similar to A33 using simple-card:
-> > -
-> > -       sound {
-> > -               compatible = "simple-audio-card";
-> > -               simple-audio-card,name = "sun8i-a33-audio";
-> > -               simple-audio-card,format = "i2s";
-> > -               simple-audio-card,frame-master = <&link_codec>;
-> > -               simple-audio-card,bitclock-master = <&link_codec>;
-> > -               simple-audio-card,mclk-fs = <512>;
-> > -               simple-audio-card,aux-devs = <&codec_analog>;
-> > -               simple-audio-card,routing =
-> > -                               "Left DAC", "Digital Left DAC",
-> > -                               "Right DAC", "Digital Right DAC";
+On Wed, 28 Aug 2019 at 04:37, Leo Yan <leo.yan@linaro.org> wrote:
 >
-> At some point we should start listing the endpoints available for routing?
+> On Mon, Aug 19, 2019 at 09:57:17PM +0100, Mike Leach wrote:
+> > Some changes to make the sysfs programming more intuitive.
+> >
+> > 1) Setting include / exclude on a range had to be done by setting
+> > the bit in 'mode' before setting the range. However, setting this
+> > bit also had the effect of altering the current range as well.
+> >
+> > Changed to only set include / exclude setting of a range at the point of
+> > setting that range. Either use a 3rd input parameter as the include exclude
+> > value, or if not present use the current value of 'mode'. Do not change
+> > current range when 'mode' changes.
+> >
+> > 2) Context ID and VM ID masks required 2 value inputs, even when the
+> > second value is ignored as insufficient CID / VMID comparators are
+> > implemented.
+> > Permit a single value to be used if that is sufficient to cover all
+> > implemented comparators.
+> >
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > ---
+> >  .../coresight/coresight-etm4x-sysfs.c         | 24 +++++++++++++------
+> >  1 file changed, 17 insertions(+), 7 deletions(-)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > index 3bcc260c9e55..baac5b48b7ac 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > @@ -297,8 +297,6 @@ static ssize_t mode_store(struct device *dev,
+> >
+> >       spin_lock(&drvdata->spinlock);
+> >       config->mode = val & ETMv4_MODE_ALL;
+> > -     etm4_set_mode_exclude(drvdata,
+> > -                           config->mode & ETM_MODE_EXCLUDE ? true : false);
+> >
+> >       if (drvdata->instrp0 == true) {
+> >               /* start by clearing instruction P0 field */
+> > @@ -972,8 +970,12 @@ static ssize_t addr_range_store(struct device *dev,
+> >       unsigned long val1, val2;
+> >       struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> >       struct etmv4_config *config = &drvdata->config;
+> > +     int elements, exclude;
+> >
+> > -     if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> > +     elements = sscanf(buf, "%lx %lx %x", &val1, &val2, &exclude);
+> > +
+> > +     /*  exclude is optional, but need at least two parameter */
+> > +     if (elements < 2)
+> >               return -EINVAL;
+> >       /* lower address comparator cannot have a higher address value */
+> >       if (val1 > val2)
+> > @@ -1001,9 +1003,11 @@ static ssize_t addr_range_store(struct device *dev,
+> >       /*
+> >        * Program include or exclude control bits for vinst or vdata
+> >        * whenever we change addr comparators to ETM_ADDR_TYPE_RANGE
+> > +      * use supplied value, or default to bit set in 'mode'
+> >        */
+> > -     etm4_set_mode_exclude(drvdata,
+> > -                           config->mode & ETM_MODE_EXCLUDE ? true : false);
+> > +     if (elements != 3)
+> > +             exclude = config->mode & ETM_MODE_EXCLUDE;
+> > +     etm4_set_mode_exclude(drvdata, exclude ? true : false);
+> >
+> >       spin_unlock(&drvdata->spinlock);
+> >       return size;
+> > @@ -1787,6 +1791,7 @@ static ssize_t ctxid_masks_store(struct device *dev,
+> >       unsigned long val1, val2, mask;
+> >       struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> >       struct etmv4_config *config = &drvdata->config;
+> > +     int nr_inputs;
+> >
+> >       /*
+> >        * Don't use contextID tracing if coming from a PID namespace.  See
+> > @@ -1802,7 +1807,9 @@ static ssize_t ctxid_masks_store(struct device *dev,
+> >        */
+> >       if (!drvdata->ctxid_size || !drvdata->numcidc)
+> >               return -EINVAL;
+> > -     if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> > +     /* one mask if < 4 comparators, two for up to 8 */
+>
+> One maks is <= 4 comparators.
+>
+> > +     nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
+> > +     if ((drvdata->numcidc > 4) && (nr_inputs != 2))
+> >               return -EINVAL;
+> >
+> >       spin_lock(&drvdata->spinlock);
+> > @@ -1976,6 +1983,7 @@ static ssize_t vmid_masks_store(struct device *dev,
+> >       unsigned long val1, val2, mask;
+> >       struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> >       struct etmv4_config *config = &drvdata->config;
+> > +     int nr_inputs;
+> >
+> >       /*
+> >        * only implemented when vmid tracing is enabled, i.e. at least one
+> > @@ -1983,7 +1991,9 @@ static ssize_t vmid_masks_store(struct device *dev,
+> >        */
+> >       if (!drvdata->vmid_size || !drvdata->numvmidc)
+> >               return -EINVAL;
+> > -     if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> > +     /* one mask if < 4 comparators, two for up to 8 */
+>
+> One maks is <= 4 comparators.
+>
+> > +     nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
+> > +     if ((drvdata->numvmidc > 4) && (nr_inputs != 2))
+> >               return -EINVAL;
+> >
+> >       spin_lock(&drvdata->spinlock);
+> > --
+> > 2.17.1
+> >
+> > _______________________________________________
+> > CoreSight mailing list
+> > CoreSight@lists.linaro.org
+> > https://lists.linaro.org/mailman/listinfo/coresight
 
-Yeah, we should do that. I'm not sure how easy it would be using the
-schemas though.
-
-Maxime
-
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
-
---asta7q4d6eqzmvrk
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXWZ5HgAKCRDj7w1vZxhR
-xXkPAP45zvC7zUeQS2lM/nuzMIyZuUlKZcv+ZSPsCmK5nymqtQD/Zgsn1N/j/WrL
-6VwTMy3hqtsI1G18kLcl6eq/vQdYsAw=
-=pJOp
------END PGP SIGNATURE-----
-
---asta7q4d6eqzmvrk--
 
 
---===============5540322501219056388==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5540322501219056388==--
-
