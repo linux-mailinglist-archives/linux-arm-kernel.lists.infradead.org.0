@@ -2,129 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFDCF9F8CB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 05:34:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F2A569F8D0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 05:37:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GLPYXFDlGdirK10pL+KixxzF0ybzsFkED59QpXTbGeE=; b=EFAb7TPtxgh/wo
-	mmtkbOaf5CSabQaEesqza6pE7yILfxi5vH9Zf55SEefCbjNY8kv0ooLDiTVj/oSci64nEXPa32CMd
-	AjbFwdkOlIfRTBw8udVvCE25ex+Nw5IkGAkIvfbb7O5ldpQi+mCiWIsDuPCgHbQMLJIzducz9ITu1
-	zE7E7JtUploRsjTYEtVtAPCw2uZXFfU30R9/C9lYhphQJfdtckwGdN7nGwYiDQ2iOe2fj31XcLPuc
-	8KlPGA8ZS6iOeS44V950JeadYdheOeixJDS3k5dXTawj1zvK4udYTE8Lj2zDqKQUToMzuIMC9wVMn
-	BTTExrq5fqwRJGeSA04A==;
+	List-Owner; bh=39u0NQ4F9/mZSSVp05jwLAdkHh/XZJrcawC0rORxpY0=; b=phpObPf0/2wS++
+	5ObvYPl2Sq3/wz60YLlGczIdik3y8bOmv1QIFlJbGtyD0NZ4WP+oID7J6L8Ho3CF/cB05aDArK0gA
+	+9qJapVpVL7HhM8tnUOGHyN+G4LIor1V8omZ04yJu6G+MUhGW6j3f8LuP4VeJZUXV3JZkBxycNaM2
+	RVy4TpGSNGNRkSeG6yjLivX/OfKrZas2JNQ7oOZ27QbQbz4HcLg99bcwoBmEU5YIKlCcVpLKPUM7H
+	jSnMzbsU8VPk497GWaKftL6fV+kgL8WCg+0wTOJ2ZoKp6n3MLisGXAJ8KxPvdfpX7pW8d8JXj47Zo
+	clr8JkX6DTI+SgUwmvDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2oir-0006Gp-SW; Wed, 28 Aug 2019 03:34:13 +0000
-Received: from mail-eopbgr680130.outbound.protection.outlook.com
- ([40.107.68.130] helo=NAM04-BN3-obe.outbound.protection.outlook.com)
+	id 1i2oly-0007xg-VO; Wed, 28 Aug 2019 03:37:26 +0000
+Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2oig-0006GV-5a
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 03:34:03 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=eVeWzvlWHvcBw2NpBLQMwzQkemGWr6a9JVN+OQyWIjqTT9yfBk2/8i5ejzZG655VKFzwE6RIzCDxkd0Ww395EteTI/6NSE3PWL4OhdPu+necxYBT5Rt20mpnIcVZhlZ9AvSuz0eKKN3Pe72/W/uPrwZGC0kH3kdIgz9U01cQ3ugaOruo2z7KjmmMSCGGvpaJZz2ESrDgpdEXEDGbj+UYbvh9zDGGFuJAMV5fUSplramAGnWjJNThcq332XnN10eLQ855Goh9PFJ16dz2b2HVdoj/g9aiJXCv1jbVsxaLEi4ZiG0K2mzuGYdg0kf073J0mcAJ4Mhj8joMHru8BzJcVg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FS1L3rsQGfFeNKHOGgPsLUtZP9N+fdtdluU9yHkAEL8=;
- b=Ju1ETHFJEuDttGkS+I6VETikTJuj/b7rP12tc0OSLdQxddMVrmY77uHddthMNnwcG00RtdcbqmTaW8VkdXqhEBjMb61XyeNzISrBHnBNQrzE/Mk2bLhCKvKsxSsUduU8/3mXuWg3ZVwnQUAXIOGUuVdcpVzNUDmoM1gInw6Ysw+bQiobhz0oB/mct5OAZAxoCqm3rgbqNkmhav33SiKirgL3sTMlmF9r/b68EVcD/1YDo4Oth5r5uIkHRqIN68rCuhaOLyZJBbXvwyEP9LZL7zj/BrPXu2uMc7DW5VmRwp0yPCo7UAEXTdBnZBxLDKBdhHUyhx7cXwTNWzVoAC97Yg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microsoft.com; dmarc=pass action=none
- header.from=microsoft.com; dkim=pass header.d=microsoft.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com;
- s=selector1;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=FS1L3rsQGfFeNKHOGgPsLUtZP9N+fdtdluU9yHkAEL8=;
- b=Fz7QnOBrMu1IrUYN4WqPSNumzF7XHz8CR7Z8GKVBRL8XjmSEYzIiYMJ3NyrbobEwfVQ6aKrFu7SGhV9pWItHGAYwDgArCobH0RlsZTCTcqENUK9BFxaxWXoebjO9Gd4fX32cqDe94baIK+yJ/7EAjz/a+hexnIMkCJcKLAHG8hg=
-Received: from DM5PR21MB0137.namprd21.prod.outlook.com (10.173.173.12) by
- DM5PR21MB0170.namprd21.prod.outlook.com (10.173.173.21) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2241.3; Wed, 28 Aug 2019 03:33:58 +0000
-Received: from DM5PR21MB0137.namprd21.prod.outlook.com
- ([fe80::c437:6219:efcc:fb8a]) by DM5PR21MB0137.namprd21.prod.outlook.com
- ([fe80::c437:6219:efcc:fb8a%7]) with mapi id 15.20.2241.000; Wed, 28 Aug 2019
- 03:33:58 +0000
-From: Michael Kelley <mikelley@microsoft.com>
-To: "will.deacon@arm.com" <will.deacon@arm.com>, "catalin.marinas@arm.com"
- <catalin.marinas@arm.com>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "gregkh@linuxfoundation.org"
- <gregkh@linuxfoundation.org>, "linux-kernel@vger.kernel.org"
- <linux-kernel@vger.kernel.org>, "linux-hyperv@vger.kernel.org"
- <linux-hyperv@vger.kernel.org>, "devel@linuxdriverproject.org"
- <devel@linuxdriverproject.org>, "olaf@aepfle.de" <olaf@aepfle.de>,
- "apw@canonical.com" <apw@canonical.com>, vkuznets <vkuznets@redhat.com>,
- "jasowang@redhat.com" <jasowang@redhat.com>, "marcelo.cerri@canonical.com"
- <marcelo.cerri@canonical.com>, KY Srinivasan <kys@microsoft.com>
-Subject: RE: [PATCH v4 0/8] Enable Linux guests on Hyper-V on ARM64
-Thread-Topic: [PATCH v4 0/8] Enable Linux guests on Hyper-V on ARM64
-Thread-Index: AQHVTJXUFtv+Ew2tU0qrx4VqyHzNjKcQCEKw
-Date: Wed, 28 Aug 2019 03:33:58 +0000
-Message-ID: <DM5PR21MB01372CD06B64AA668A65D18CD7A30@DM5PR21MB0137.namprd21.prod.outlook.com>
-References: <1565122133-9086-1-git-send-email-mikelley@microsoft.com>
-In-Reply-To: <1565122133-9086-1-git-send-email-mikelley@microsoft.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Enabled=True;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SiteId=72f988bf-86f1-41af-91ab-2d7cd011db47;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Owner=mikelley@ntdev.microsoft.com;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_SetDate=2019-08-28T03:33:55.9748967Z;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Name=General;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_ActionId=47f122f0-5357-4ad2-964b-c033be97f336;
- MSIP_Label_f42aa342-8706-4288-bd11-ebb85995028c_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=mikelley@microsoft.com; 
-x-originating-ip: [24.22.167.197]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8d784ab6-b9ae-43e2-5edf-08d72b688faa
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DM5PR21MB0170; 
-x-ms-traffictypediagnostic: DM5PR21MB0170:|DM5PR21MB0170:|DM5PR21MB0170:
-x-ms-exchange-transport-forked: True
-x-ld-processed: 72f988bf-86f1-41af-91ab-2d7cd011db47,ExtAddr
-x-microsoft-antispam-prvs: <DM5PR21MB0170EB3FD8702E59CB35AF3CD7A30@DM5PR21MB0170.namprd21.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 014304E855
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(136003)(366004)(376002)(39860400002)(346002)(396003)(199004)(189003)(53936002)(71190400001)(7736002)(1511001)(71200400001)(55016002)(66066001)(86362001)(81156014)(81166006)(6436002)(8676002)(9686003)(5660300002)(6116002)(64756008)(66946007)(186003)(66556008)(8936002)(76116006)(66446008)(6506007)(7696005)(2501003)(33656002)(10090500001)(74316002)(2906002)(22452003)(8990500004)(76176011)(486006)(6246003)(2201001)(110136005)(25786009)(26005)(476003)(6636002)(66476007)(7416002)(446003)(102836004)(3846002)(14444005)(14454004)(4326008)(99286004)(229853002)(11346002)(305945005)(52536014)(10290500003)(54906003)(256004)(316002)(478600001)(921003)(1121003);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DM5PR21MB0170;
- H:DM5PR21MB0137.namprd21.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: microsoft.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: g289PjByq/L+98eVurs98T+zF18V/ZAcRRhwkydFL+hkuzfvlWEZuyx9dPzb7N02dt4JA33U6Ku4N1Wu5ETrJ8rdJo4Q/BgzI2OojjN96NLcwQVmbm5bUVIG7EVR4dktat8Jq/H5Jp2oKkDZ43Or1tBqylvWd/Y/pv8gycfOSksvms1hj3tT4Zd1KCPIP+xg/Yu7GcvXZdHBRxuaKfuDQAdD0wcSBoWm48fMFMgD6D92ZSDiQGi3vDAXBvEDQ14vQFfUHlFtTBNpORN6YBEGaCGfBO+Rgd6F/966JX70oJM9Y/yPtq/lmN1kJAJMq4RX+Rm1gpgCfeYd0zDN9FM3Ir4LSeCgxm+nTBGBQIpgVarbvamaXv9LnOLluCtxr6G2vzhHUI7+njSzhEcK7IqVKhqBKK2xC/gtRX/h6ZzFxa0=
+ id 1i2olg-0007xM-Gr
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 03:37:10 +0000
+Received: by mail-yb1-xb43.google.com with SMTP id z2so325233ybp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 27 Aug 2019 20:37:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=AuJa5Vfg5EQI1i/shse/hmsosaU5AWNPjfUsK2HfU8U=;
+ b=lww9sAT1cPIbiFjJnKB020O9MDa0cMSskw+7VOQDt8vA2KCEZLe8zVkDIcB4msA+X5
+ aaoVU1WgbWaPvIjwpNkyGuzDgVtRSFeBSrEKFtyDkQttL6v5cctO4WPnY4Xo+wqOGiHT
+ pg0Pq+xUcX+YPqm9PaG7GThcbMxQK/agsjv+KgqJiEqzEoYr8nyBV/3lcl0Zp7ZFtfSQ
+ oazIVIFW2eXIUr5H5qCOJZcEvM0KVAtYnxyUrHegOfHTFCdS+OhlqDfwiriLv6r6hDrz
+ yazy5Xj9kshqSr/Q7SBj9RX0kZ7IfsN1QS0LnWWS3P/54nnNJFpwjHpLQLVQr0Lf+to3
+ +v8w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=AuJa5Vfg5EQI1i/shse/hmsosaU5AWNPjfUsK2HfU8U=;
+ b=TKTUHeTrOizridC1LM+mfgy6/dn4U5YdljiO4WTI+w+pOZ9D5avTPSRRDA7RFFr7Zn
+ NKHSOt/u4fEMwMwFw7Nr+BBX2sJsyW4o9MokmRgqWfn4tdSs5TncuFq6bAh8KvTwgObX
+ PO+cwn+ZOp3ymHR1h+urYd+SlFyHq5FOlLfHkomf6n4anChQnB5wC2B4jskhIm+ONiUe
+ Jj7UPJVK6dbOmF2LF58brnWkmhYAhi82uySrAuyi53vqPx6L/nDVGUIfg1AdHI8BQgfq
+ h9aLlc++B2yYO2dLVW/tVvB3+GazQ8fTjBufNqyAZr6vAIlp8yCAP+K31xk6bit+z0d5
+ v5vg==
+X-Gm-Message-State: APjAAAWbTLe89D5k9JNPRxiiFpCnp5YVUjXdmPm8DXM8LUuANB9iDomS
+ FzdQC/wkzECDH5Tz3tc8GgYwuGpIRhNgIw==
+X-Google-Smtp-Source: APXvYqwD6I4ymP9yLEEsuQ4T3BvWg7BzCR6IB4oIbyPZGoKW4/zSmpjR1Ga4xy2Uakc99wsWBe64ug==
+X-Received: by 2002:a5b:401:: with SMTP id m1mr1465226ybp.189.1566963427660;
+ Tue, 27 Aug 2019 20:37:07 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li1320-244.members.linode.com.
+ [45.79.221.244])
+ by smtp.gmail.com with ESMTPSA id w206sm276464ywc.51.2019.08.27.20.37.00
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 27 Aug 2019 20:37:06 -0700 (PDT)
+Date: Wed, 28 Aug 2019 11:36:54 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mike Leach <mike.leach@linaro.org>
+Subject: Re: [PATCH 5/8] coresight: etm4x: Improve usability of sysfs API.
+Message-ID: <20190828033654.GE26133@leoy-ThinkPad-X240s>
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-6-mike.leach@linaro.org>
 MIME-Version: 1.0
-X-OriginatorOrg: microsoft.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8d784ab6-b9ae-43e2-5edf-08d72b688faa
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Aug 2019 03:33:58.1125 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 72f988bf-86f1-41af-91ab-2d7cd011db47
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: hH88CJDhuH7RDy2/RkYAkQVhLC3xEjAHJis53gB8/BxdqETpCLxW58d/+96cGCmpUscFjukCEEkUu/9EpFzfYiF/pjAByzeN7OzK8PiMEnw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR21MB0170
+Content-Disposition: inline
+In-Reply-To: <20190819205720.24457-6-mike.leach@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_203402_297273_B5E2FB62 
-X-CRM114-Status: GOOD (  11.36  )
+X-CRM114-CacheID: sfid-20190827_203708_622848_E1054AD4 
+X-CRM114-Status: GOOD (  25.77  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.68.130 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -132,7 +88,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -144,43 +99,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sunil Muthuswamy <sunilmut@microsoft.com>,
- "boqun.feng" <boqun.feng@gmail.com>
+Cc: coresight@lists.linaro.org, linux-arm-kernel@lists.infradead.org,
+ mathieu.poirier@linaro.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Michael Kelley <mikelley@microsoft.com>  Sent: Tuesday, August 6, 2019 1:31 PM
+On Mon, Aug 19, 2019 at 09:57:17PM +0100, Mike Leach wrote:
+> Some changes to make the sysfs programming more intuitive.
 > 
-> This series enables Linux guests running on Hyper-V on ARM64
-> hardware. New ARM64-specific code in arch/arm64/hyperv initializes
-> Hyper-V, including its interrupts and hypercall mechanism.
-> Existing architecture independent drivers for Hyper-V's VMbus and
-> synthetic devices just work when built for ARM64. Hyper-V code is
-> built and included in the image and modules only if CONFIG_HYPERV
-> is enabled.
+> 1) Setting include / exclude on a range had to be done by setting
+> the bit in 'mode' before setting the range. However, setting this
+> bit also had the effect of altering the current range as well.
 > 
-> The eight patches are organized as follows:
-> 1) Add include files that define the Hyper-V interface as
->    described in the Hyper-V Top Level Functional Spec (TLFS), plus
->    additional definitions specific to Linux running on Hyper-V.
+> Changed to only set include / exclude setting of a range at the point of
+> setting that range. Either use a 3rd input parameter as the include exclude
+> value, or if not present use the current value of 'mode'. Do not change
+> current range when 'mode' changes.
 > 
-> 2 thru 6) Add core Hyper-V support on ARM64, including hypercalls,
->    interrupt handlers, kexec & panic handlers, and core hypervisor
->    initialization.
+> 2) Context ID and VM ID masks required 2 value inputs, even when the
+> second value is ignored as insufficient CID / VMID comparators are
+> implemented.
+> Permit a single value to be used if that is sufficient to cover all
+> implemented comparators.
 > 
-> 7) Update the existing VMbus driver to generalize interrupt
->    management across x86/x64 and ARM64.
+> Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> ---
+>  .../coresight/coresight-etm4x-sysfs.c         | 24 +++++++++++++------
+>  1 file changed, 17 insertions(+), 7 deletions(-)
 > 
-> 8) Make CONFIG_HYPERV selectable on ARM64 in addition to x86/x64.
-> 
+> diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> index 3bcc260c9e55..baac5b48b7ac 100644
+> --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> @@ -297,8 +297,6 @@ static ssize_t mode_store(struct device *dev,
+>  
+>  	spin_lock(&drvdata->spinlock);
+>  	config->mode = val & ETMv4_MODE_ALL;
+> -	etm4_set_mode_exclude(drvdata,
+> -			      config->mode & ETM_MODE_EXCLUDE ? true : false);
+>  
+>  	if (drvdata->instrp0 == true) {
+>  		/* start by clearing instruction P0 field */
+> @@ -972,8 +970,12 @@ static ssize_t addr_range_store(struct device *dev,
+>  	unsigned long val1, val2;
+>  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+>  	struct etmv4_config *config = &drvdata->config;
+> +	int elements, exclude;
+>  
+> -	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> +	elements = sscanf(buf, "%lx %lx %x", &val1, &val2, &exclude);
+> +
+> +	/*  exclude is optional, but need at least two parameter */
+> +	if (elements < 2)
+>  		return -EINVAL;
+>  	/* lower address comparator cannot have a higher address value */
+>  	if (val1 > val2)
+> @@ -1001,9 +1003,11 @@ static ssize_t addr_range_store(struct device *dev,
+>  	/*
+>  	 * Program include or exclude control bits for vinst or vdata
+>  	 * whenever we change addr comparators to ETM_ADDR_TYPE_RANGE
+> +	 * use supplied value, or default to bit set in 'mode'
+>  	 */
+> -	etm4_set_mode_exclude(drvdata,
+> -			      config->mode & ETM_MODE_EXCLUDE ? true : false);
+> +	if (elements != 3)
+> +		exclude = config->mode & ETM_MODE_EXCLUDE;
+> +	etm4_set_mode_exclude(drvdata, exclude ? true : false);
+>  
+>  	spin_unlock(&drvdata->spinlock);
+>  	return size;
+> @@ -1787,6 +1791,7 @@ static ssize_t ctxid_masks_store(struct device *dev,
+>  	unsigned long val1, val2, mask;
+>  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+>  	struct etmv4_config *config = &drvdata->config;
+> +	int nr_inputs;
+>  
+>  	/*
+>  	 * Don't use contextID tracing if coming from a PID namespace.  See
+> @@ -1802,7 +1807,9 @@ static ssize_t ctxid_masks_store(struct device *dev,
+>  	 */
+>  	if (!drvdata->ctxid_size || !drvdata->numcidc)
+>  		return -EINVAL;
+> -	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> +	/* one mask if < 4 comparators, two for up to 8 */
 
-I'm hoping to get some feedback from the ARM64 maintainers on this
-series.  Previous feedback has been incorporated, so it should be
-close to being able to go in.
+One maks is <= 4 comparators.
 
-Michael
+> +	nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
+> +	if ((drvdata->numcidc > 4) && (nr_inputs != 2))
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> @@ -1976,6 +1983,7 @@ static ssize_t vmid_masks_store(struct device *dev,
+>  	unsigned long val1, val2, mask;
+>  	struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+>  	struct etmv4_config *config = &drvdata->config;
+> +	int nr_inputs;
+>  
+>  	/*
+>  	 * only implemented when vmid tracing is enabled, i.e. at least one
+> @@ -1983,7 +1991,9 @@ static ssize_t vmid_masks_store(struct device *dev,
+>  	 */
+>  	if (!drvdata->vmid_size || !drvdata->numvmidc)
+>  		return -EINVAL;
+> -	if (sscanf(buf, "%lx %lx", &val1, &val2) != 2)
+> +	/* one mask if < 4 comparators, two for up to 8 */
+
+One maks is <= 4 comparators.
+
+> +	nr_inputs = sscanf(buf, "%lx %lx", &val1, &val2);
+> +	if ((drvdata->numvmidc > 4) && (nr_inputs != 2))
+>  		return -EINVAL;
+>  
+>  	spin_lock(&drvdata->spinlock);
+> -- 
+> 2.17.1
+> 
+> _______________________________________________
+> CoreSight mailing list
+> CoreSight@lists.linaro.org
+> https://lists.linaro.org/mailman/listinfo/coresight
 
 _______________________________________________
 linux-arm-kernel mailing list
