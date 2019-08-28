@@ -2,81 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42BB69FE4A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:18:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 825A69FE4B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:18:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JmWWE3eNf5voqlU0RSvC23w3ZCOilM+a8b7G2JmBMUg=; b=MsEuNfLngtV72r
-	9UIGm380mxuFxfqyDFzaMEFnxqaDAXYGyt+KRw8BVDprnE4bWJsHXTz4wBxjWeTvFiTiL5ivzBRKY
-	+SwiF4ZOnxvQDClgtjRWTzSGabTx7hWz9hLCh8Mbs45O6JYytMOIDDNzmgNn18RPG1ZRv4HOm+4fN
-	prDPMZw/CKW17/qVkBb4kqnAJpfl3pDBM2UL7Xph9ajqyGoxfmUQ7kbr1NSWa3C/xIMWjwR/zxXKq
-	wiuQLi5JY6vNSTg18Z45AVIg1G/HA+aUa+Yt1A/ElNT4rnXsowCmHGCjYW2hIAfgz1pi+C6FCURcr
-	t3w7M5aaZRQhlNkP8oqg==;
+	List-Owner; bh=QuVLidAeiXUoThFavw8hKa2Kd1fEk9bzURrIn/+qxZ8=; b=KyGoVi/B/KAN5e
+	sW9nGWWcrTBVlEmzsj+4u6Xiv1JoYNvWjoAfraSODeRZgQWPINMCs8NXSWXurr3UCMTGSbkif2UEy
+	8DjJqhX/ossyLrt9qGW2MqvxUWsLmMPc1S1WJBROYIdH8FgKy0wTu6BVAixZgakaX9y7kzwwYKUEu
+	qSPLsk3hP54fnjC/Jof+JpCD+DOO8efgHCHLptcQuRjV9vu6J22HBZqITVWWFn7cpdSdmcQASsOTJ
+	lDHfJ8PyGjE8Vh3CbtOtk+remvEjOqcrUN64otc1tuXhFrevcKq3fPvKhU1aZ9aXKK2hxcvK8Wa/Q
+	61KbfkiJaBB76kPzIfLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2u5u-00081E-Ms; Wed, 28 Aug 2019 09:18:22 +0000
-Received: from mga18.intel.com ([134.134.136.126])
+	id 1i2u6A-0008Eu-SO; Wed, 28 Aug 2019 09:18:39 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2u1q-0003zh-6U
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:14:12 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga006.fm.intel.com ([10.253.24.20])
- by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 Aug 2019 02:14:08 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,440,1559545200"; d="scan'208";a="381218667"
-Received: from deyangko-mobl.ccr.corp.intel.com ([10.249.168.35])
- by fmsmga006.fm.intel.com with ESMTP; 28 Aug 2019 02:14:00 -0700
-Message-ID: <ff3fd0ab2ba659e98070760be8e7c0f223e921f9.camel@intel.com>
-Subject: Re: [PATCH V15 1/5] dt-bindings: fsl: scu: add thermal binding
-From: Zhang Rui <rui.zhang@intel.com>
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>,  "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "corbet@lwn.net" <corbet@lwn.net>,  "shawnguo@kernel.org"
- <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, 
- "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
- <festevam@gmail.com>,  "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will.deacon@arm.com" <will.deacon@arm.com>,  "edubezval@gmail.com"
- <edubezval@gmail.com>, "daniel.lezcano@linaro.org"
- <daniel.lezcano@linaro.org>,  Aisheng Dong <aisheng.dong@nxp.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Peng Fan
- <peng.fan@nxp.com>, "mchehab+samsung@kernel.org"
- <mchehab+samsung@kernel.org>,  "linux@roeck-us.net" <linux@roeck-us.net>,
- Daniel Baluta <daniel.baluta@nxp.com>,  "maxime.ripard@bootlin.com"
- <maxime.ripard@bootlin.com>, "horms+renesas@verge.net.au"
- <horms+renesas@verge.net.au>, "olof@lixom.net" <olof@lixom.net>, 
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>, Leonard Crestez
- <leonard.crestez@nxp.com>,  "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
- <linux-pm@vger.kernel.org>
-Date: Wed, 28 Aug 2019 17:14:09 +0800
-In-Reply-To: <DB3PR0402MB39162EB555CD7AE75D58C582F5C60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <20190618021820.14885-1-Anson.Huang@nxp.com>
- <DB3PR0402MB39162C5B5AF828B127DD871EF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
- <DB3PR0402MB39162EB555CD7AE75D58C582F5C60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+ id 1i2u3h-0006ZX-Vk
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:16:08 +0000
+Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1i2u3T-0004Lz-Hh; Wed, 28 Aug 2019 11:15:51 +0200
+Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
+ (envelope-from <mfe@pengutronix.de>)
+ id 1i2u3S-000616-ES; Wed, 28 Aug 2019 11:15:50 +0200
+Date: Wed, 28 Aug 2019 11:15:50 +0200
+From: Marco Felsch <m.felsch@pengutronix.de>
+To: Robin van der Gracht <robin@protonic.nl>
+Subject: Re: [PATCH v2 1/2] input: keyboard: snvs_pwrkey: Send key events for
+ i.MX6 S, DL and Q
+Message-ID: <20190828091550.pdc57wanu6twew5p@pengutronix.de>
+References: <20190827123216.32728-1-robin@protonic.nl>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190827123216.32728-1-robin@protonic.nl>
+X-Sent-From: Pengutronix Hildesheim
+X-URL: http://www.pengutronix.de/
+X-IRC: #ptxdist @freenode
+X-Accept-Language: de,en
+X-Accept-Content-Type: text/plain
+X-Uptime: 10:06:38 up 102 days, 14:24, 64 users,  load average: 0.12, 0.14,
+ 0.08
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
+X-SA-Exim-Mail-From: mfe@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_021410_397132_0E9FA775 
-X-CRM114-Status: GOOD (  23.02  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190828_021606_716866_ABBD8225 
+X-CRM114-Status: GOOD (  33.19  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -90,100 +75,241 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree @ vger . kernel . org" <devicetree@vger.kernel.org>,
+ Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
+ Robin Gong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel @ lists . infradead . org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Anson,
+Hi Robin,
 
-We're missing ACK from the maintainers for patch 4/5 and 5/5, if we
-want to shipped the patch via thermal tree.
+thanks for the patch.
 
-For patch 2/5, as it introduces a new API for OF_THERMAL, I'd like to
-get Eduardo' feedback before taking them.
-
-thanks,
-rui
-
-On Wed, 2019-07-24 at 03:16 +0000, Anson Huang wrote:
-> Ping...
+On 19-08-27 14:32, Robin van der Gracht wrote:
+> The first generation i.MX6 processors does not send an interrupt when the
+> power key is pressed. It sends a power down request interrupt if the key is
+> released before a hard shutdown (5 second press). This should allow
+> software to bring down the SoC safely.
 > 
-> > Hi, Daniel/Rui/Eduardo
-> > 	Could you please take a look at this patch series?
-> > 
-> > Anson
-> > 
-> > > From: Anson Huang <Anson.Huang@nxp.com>
-> > > 
-> > > NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as
-> > > system
-> > > controller, the system controller is in charge of system power,
-> > > clock
-> > > and thermal sensors etc. management, Linux kernel has to
-> > > communicate
-> > > with system controller via MU (message unit) IPC to get
-> > > temperature
-> > > from thermal sensors, this patch adds binding doc for i.MX system
-> > > controller thermal driver.
-> > > 
-> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-> > > Reviewed-by: Rob Herring <robh@kernel.org>
-> > > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
-> > > ---
-> > > No change.
-> > > ---
-> > >  .../devicetree/bindings/arm/freescale/fsl,scu.txt        | 16
-> > 
-> > ++++++++++++++++
-> > >  1 file changed, 16 insertions(+)
-> > > 
-> > > diff --git
-> > > a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > > b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > > index a575e42..fc3844e 100644
-> > > --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-> > > @@ -155,6 +155,17 @@ Required properties:
-> > >  Optional properties:
-> > >  - timeout-sec: contains the watchdog timeout in seconds.
-> > > 
-> > > +Thermal bindings based on SCU Message Protocol
-> > > +------------------------------------------------------------
-> > > +
-> > > +Required properties:
-> > > +- compatible:			Should be :
-> > > +				  "fsl,imx8qxp-sc-thermal"
-> > > +				followed by "fsl,imx-sc-thermal";
-> > > +
-> > > +- #thermal-sensor-cells:	See
-> > > Documentation/devicetree/bindings/thermal/thermal.txt
-> > > +				for a description.
-> > > +
-> > >  Example (imx8qxp):
-> > >  -------------
-> > >  aliases {
-> > > @@ -222,6 +233,11 @@ firmware {
-> > >  			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-
-> > > wdt";
-> > >  			timeout-sec = <60>;
-> > >  		};
-> > > +
-> > > +		tsens: thermal-sensor {
-> > > +			compatible = "fsl,imx8qxp-sc-thermal",
-> > > "fsl,imx-sc-
-> > > thermal";
-> > > +			#thermal-sensor-cells = <1>;
-> > > +		};
-> > >  	};
-> > >  };
-> > > 
-> > > --
-> > > 2.7.4
+> For this driver to work as a regular power key with the older SoCs, we need
+> to send a keypress AND release when we get the power down request irq.
+> 
+> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
+> ---
+>  .../devicetree/bindings/crypto/fsl-sec4.txt   | 16 ++++--
+>  drivers/input/keyboard/Kconfig                |  2 +-
+>  drivers/input/keyboard/snvs_pwrkey.c          | 52 ++++++++++++++++---
+
+Can we split this so the dt-bindings are a standalone patch? IMHO this
+is the usual way because the maintainer can squash them on there needs.
+Also it would be cool to document the changes. A common place for
+changes is after the '---' or on the cover-letter.
+
+>  3 files changed, 57 insertions(+), 13 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+> index 2fe245ca816a..e4fbb9797082 100644
+> --- a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+> +++ b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
+> @@ -420,14 +420,22 @@ EXAMPLE
+>  =====================================================================
+>  System ON/OFF key driver
+>  
+> -  The snvs-pwrkey is designed to enable POWER key function which controlled
+> -  by SNVS ONOFF, the driver can report the status of POWER key and wakeup
+> -  system if pressed after system suspend.
+> +  The snvs-pwrkey is designed to enable POWER key function which is controlled
+> +  by SNVS ONOFF. It can wakeup the system if pressed after system suspend.
+> +
+> +  There are two generations of SVNS pwrkey hardware. The first generation is
+> +  included in i.MX6 Solo, DualLite and Quad processors. The second generation
+> +  is included in i.MX6 SoloX and newer SoCs.
+> +
+> +  Second generation SNVS can detect and report the status of POWER key, but the
+> +  first generation can only detect a key release and so emits an instantaneous
+> +  press and release event when the key is released.
+>  
+>    - compatible:
+>        Usage: required
+>        Value type: <string>
+> -      Definition: Mush include "fsl,sec-v4.0-pwrkey".
+> +      Definition: Must include "fsl,sec-v4.0-pwrkey" for i.MX6 SoloX and newer
+> +	   or "fsl,imx6qdl-snvs-pwrkey" for older SoCs.
+>  
+>    - interrupts:
+>        Usage: required
+> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+> index 7c4f19dab34f..937e58da5ce1 100644
+> --- a/drivers/input/keyboard/Kconfig
+> +++ b/drivers/input/keyboard/Kconfig
+> @@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
+>  	depends on OF
+>  	help
+>  	  This is the snvs powerkey driver for the Freescale i.MX application
+> -	  processors that are newer than i.MX6 SX.
+> +	  processors.
+>  
+>  	  To compile this driver as a module, choose M here; the
+>  	  module will be called snvs_pwrkey.
+> diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
+> index 5342d8d45f81..d71c44733103 100644
+> --- a/drivers/input/keyboard/snvs_pwrkey.c
+> +++ b/drivers/input/keyboard/snvs_pwrkey.c
+> @@ -29,6 +29,11 @@
+>  #define DEBOUNCE_TIME 30
+>  #define REPEAT_INTERVAL 60
+>  
+> +enum imx_snvs_hwtype {
+> +	IMX6SX_SNVS,	/* i.MX6 SoloX and newer */
+> +	IMX6QDL_SNVS,	/* i.MX6 Solo, DualLite and Quad */
+> +};
+> +
+>  struct pwrkey_drv_data {
+>  	struct regmap *snvs;
+>  	int irq;
+> @@ -37,14 +42,41 @@ struct pwrkey_drv_data {
+>  	int wakeup;
+>  	struct timer_list check_timer;
+>  	struct input_dev *input;
+> +	enum imx_snvs_hwtype hwtype;
+>  };
+>  
+> +static const struct of_device_id imx_snvs_pwrkey_ids[] = {
+> +	{
+> +		.compatible = "fsl,sec-v4.0-pwrkey",
+> +		.data = (const void *)IMX6SX_SNVS,
+> +	},
+> +	{
+> +		.compatible = "fsl,imx6qdl-snvs-pwrkey",
+> +		.data = (const void *)IMX6QDL_SNVS,
+> +	},
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
+
+Can we keep this on the original place if you are using ...
+
+> +
+>  static void imx_imx_snvs_check_for_events(struct timer_list *t)
+>  {
+>  	struct pwrkey_drv_data *pdata = from_timer(pdata, t, check_timer);
+>  	struct input_dev *input = pdata->input;
+>  	u32 state;
+>  
+> +	if (pdata->hwtype == IMX6QDL_SNVS) {
+> +		/*
+> +		 * The first generation i.MX6 SoCs only sends an interrupt on
+> +		 * button release. To mimic power-key usage, we'll prepend a
+> +		 * press event.
+> +		 */
+> +		input_report_key(input, pdata->keycode, 1);
+
+Missing input_sync() here?
+
+> +		input_report_key(input, pdata->keycode, 0);
+> +		input_sync(input);
+> +		pm_relax(input->dev.parent);
+> +		return;
+> +	}
+> +
+>  	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
+>  	state = state & SNVS_HPSR_BTN ? 1 : 0;
+>  
+> @@ -67,13 +99,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
+>  {
+>  	struct platform_device *pdev = dev_id;
+>  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
+> +	unsigned long expire = jiffies;
+>  	u32 lp_status;
+>  
+>  	pm_wakeup_event(pdata->input->dev.parent, 0);
+>  
+>  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
+> -	if (lp_status & SNVS_LPSR_SPO)
+> -		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
+> +	if (lp_status & SNVS_LPSR_SPO) {
+> +		if (pdata->hwtype == IMX6SX_SNVS)
+> +			expire += msecs_to_jiffies(DEBOUNCE_TIME);
+> +		mod_timer(&pdata->check_timer, expire);
+
+Is this desired because the timer gets triggered earlier.
+
+> +	}
+>  
+>  	/* clear SPO status */
+>  	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
+> @@ -93,6 +129,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+>  	struct pwrkey_drv_data *pdata = NULL;
+>  	struct input_dev *input = NULL;
+>  	struct device_node *np;
+> +	const struct of_device_id *match;
+>  	int error;
+>  
+>  	/* Get SNVS register Page */
+> @@ -100,6 +137,10 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+>  	if (!np)
+>  		return -ENODEV;
+>  
+> +	match = of_match_node(imx_snvs_pwrkey_ids, np);
+> +	if (!match)
+> +		return -ENODEV;
+
+... of_device_get_match_data() here. While reading the rm it seems that
+the snvs block has a dedicated version register. IMHO this could be a
+better way to apply the change also to existing devices with old
+firmware.
+
+Regards,
+  Marco
+
+
+> +
+>  	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+>  	if (!pdata)
+>  		return -ENOMEM;
+> @@ -115,6 +156,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+>  		dev_warn(&pdev->dev, "KEY_POWER without setting in dts\n");
+>  	}
+>  
+> +	pdata->hwtype = (enum imx_snvs_hwtype)match->data;
+>  	pdata->wakeup = of_property_read_bool(np, "wakeup-source");
+>  
+>  	pdata->irq = platform_get_irq(pdev, 0);
+> @@ -175,12 +217,6 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+>  	return 0;
+>  }
+>  
+> -static const struct of_device_id imx_snvs_pwrkey_ids[] = {
+> -	{ .compatible = "fsl,sec-v4.0-pwrkey" },
+> -	{ /* sentinel */ }
+> -};
+> -MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
+> -
+>  static struct platform_driver imx_snvs_pwrkey_driver = {
+>  	.driver = {
+>  		.name = "snvs_pwrkey",
+> -- 
+> 2.20.1
+> 
 > 
 > 
 
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
