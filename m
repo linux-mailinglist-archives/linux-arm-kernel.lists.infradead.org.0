@@ -2,68 +2,142 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 825A69FE4B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:18:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8061F9FE51
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:21:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QuVLidAeiXUoThFavw8hKa2Kd1fEk9bzURrIn/+qxZ8=; b=KyGoVi/B/KAN5e
-	sW9nGWWcrTBVlEmzsj+4u6Xiv1JoYNvWjoAfraSODeRZgQWPINMCs8NXSWXurr3UCMTGSbkif2UEy
-	8DjJqhX/ossyLrt9qGW2MqvxUWsLmMPc1S1WJBROYIdH8FgKy0wTu6BVAixZgakaX9y7kzwwYKUEu
-	qSPLsk3hP54fnjC/Jof+JpCD+DOO8efgHCHLptcQuRjV9vu6J22HBZqITVWWFn7cpdSdmcQASsOTJ
-	lDHfJ8PyGjE8Vh3CbtOtk+remvEjOqcrUN64otc1tuXhFrevcKq3fPvKhU1aZ9aXKK2hxcvK8Wa/Q
-	61KbfkiJaBB76kPzIfLQ==;
+	List-Owner; bh=vhpygvXtocpl1npsysyNrk8SIbQN4IkNn3H0VaPW83o=; b=Gi1P3wC1/uEINu
+	Pm7T1IxwHEQvy5S4KYRiggGiMHXi2WS2QcR5YvTUdX6Bi9qboHnvyG7FUafD9kKbVyOIO9umyk0yC
+	Q/EGMw+/0qY0sseXwEfjTpIg9F58Q8sEpkbPOJI9PtuZ75+6NuZhgyLkbsE7Fmly8Yqqy5zv6Vjpv
+	1XKdPtjNg1vnxwOdIVYbuU/opP2a+FI91JCnYTjafdKcht8TOM/2t5LYC6goiZoi5jRLBaawkOLVf
+	p6yVX9iezdOtPoovFwX1DA+5EcHsqOBMWeiyKXVL6/UnXFfoelZucHDzX3Yw/uund/cj0SSJmL+ZF
+	4ZrJoiwotk5nnaVqmCTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2u6A-0008Eu-SO; Wed, 28 Aug 2019 09:18:39 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i2u8s-0001gF-9j; Wed, 28 Aug 2019 09:21:26 +0000
+Received: from mail-eopbgr00055.outbound.protection.outlook.com ([40.107.0.55]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2u3h-0006ZX-Vk
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:16:08 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1i2u3T-0004Lz-Hh; Wed, 28 Aug 2019 11:15:51 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1i2u3S-000616-ES; Wed, 28 Aug 2019 11:15:50 +0200
-Date: Wed, 28 Aug 2019 11:15:50 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Robin van der Gracht <robin@protonic.nl>
-Subject: Re: [PATCH v2 1/2] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Message-ID: <20190828091550.pdc57wanu6twew5p@pengutronix.de>
-References: <20190827123216.32728-1-robin@protonic.nl>
+ id 1i2u8X-0001fI-6s
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:21:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HpgXS7uP0ghnmwTpy80fa1m9mXzW8qi80M7jw4tmMcFqUj3pj2dqNA8IY+P6EDsniyl752X/+A70fUz30ok06y/LLIZZ8a2f1VLKWwxpzGYMx6lFin2H7sKC7xlgoc2e8svPdhuZXnc+9dUHVvR3Fkj+1NbB3XhW+X8yW0fjg7fJCHoxBd4ZmcDMAmG0Y6GvJY9Ri4PNoXIhByqBictj6du+eVLX6NT+ipQkcSsQUE87xXFVEGyV7WY79YElT0y1Y3JvZpqZbsmcp3lbi4NSuGYgJJCiJ71ruhkERviIqUV7z9irI+H1nR+n5iCyJPEa8F64OWIO0SO1sSG+CzB8gQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xKL2IsxJZOdhH7Q0shhslGeeIbmY3oWF+h7HeDZwG1U=;
+ b=d8OaJWWrXmasbeaAyxM609zsQ1kBpxZs+scDnMRrK9Pwj8hjSty2aaj5sTTiVLcZGctMdPf+b4tC/hqEHAM0yUi8H4uUMDPTj/D/Oje4H74ijP23bozljoJqF88sBCGCYd4916dvRslaU5/Tx9vXxtAORIYJSIW5O+F/+y6Rb/eQG6LABjvJL36nM7C1RlcpnsD/aTFzU52j+hDjGwu80akrrBRTbTQi42ZdliyRv5ZO8bkL8fCEbDe1XXpoVt6oZ8cn+9Tua5lDGmyg26vG7PX1zdc4MFw2+U7enGeql/IZmq1ExbBQrRPZ7vAqhFLvvWeILbsKj8+bDsFUuIw4Jw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=xKL2IsxJZOdhH7Q0shhslGeeIbmY3oWF+h7HeDZwG1U=;
+ b=WRrAvkH53Qk/fBvXka1c1dRKONpYZdaWaf83mH+TARAdcCZpbNkHeMVKo/InqYR/scu+VGu/5L8j5ml61caOADky/Bh/ZyhUtI5KPy0+OgK4GTuEahq/zCS4KyXwwGvZBkbGUkJDAcVCL5uXC2LrcuCHtfSwDgeFyQo0wACftuA=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3947.eurprd04.prod.outlook.com (52.134.67.147) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.19; Wed, 28 Aug 2019 09:20:58 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2199.021; Wed, 28 Aug 2019
+ 09:20:58 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Zhang Rui <rui.zhang@intel.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "corbet@lwn.net" <corbet@lwn.net>, "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>, "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>, "edubezval@gmail.com"
+ <edubezval@gmail.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>, Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Peng Fan
+ <peng.fan@nxp.com>, "mchehab+samsung@kernel.org"
+ <mchehab+samsung@kernel.org>, "linux@roeck-us.net" <linux@roeck-us.net>,
+ Daniel Baluta <daniel.baluta@nxp.com>, "maxime.ripard@bootlin.com"
+ <maxime.ripard@bootlin.com>, "horms+renesas@verge.net.au"
+ <horms+renesas@verge.net.au>, "olof@lixom.net" <olof@lixom.net>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>, Leonard Crestez
+ <leonard.crestez@nxp.com>, "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Subject: RE: [PATCH V15 1/5] dt-bindings: fsl: scu: add thermal binding
+Thread-Topic: [PATCH V15 1/5] dt-bindings: fsl: scu: add thermal binding
+Thread-Index: AQHVJXvnLQPj9qjL2U2LZTWuyBDONqaqeq9ggC7WvJCAN2WDgIAAARuQ
+Date: Wed, 28 Aug 2019 09:20:58 +0000
+Message-ID: <DB3PR0402MB3916DF85E27F417C0A0BD93CF5A30@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190618021820.14885-1-Anson.Huang@nxp.com>
+ <DB3PR0402MB39162C5B5AF828B127DD871EF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39162EB555CD7AE75D58C582F5C60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <ff3fd0ab2ba659e98070760be8e7c0f223e921f9.camel@intel.com>
+In-Reply-To: <ff3fd0ab2ba659e98070760be8e7c0f223e921f9.camel@intel.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 9a2f4b00-a6c0-4126-97ed-08d72b990989
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3947; 
+x-ms-traffictypediagnostic: DB3PR0402MB3947:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB3947D6264273B572F855CA76F5A30@DB3PR0402MB3947.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 014304E855
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(346002)(376002)(39860400002)(136003)(366004)(189003)(199004)(476003)(2906002)(66446008)(64756008)(9686003)(74316002)(2501003)(486006)(6246003)(44832011)(66556008)(55016002)(5660300002)(66476007)(11346002)(66946007)(478600001)(53936002)(316002)(71190400001)(71200400001)(102836004)(305945005)(7736002)(186003)(26005)(76116006)(446003)(7696005)(2201001)(81166006)(81156014)(14444005)(256004)(8676002)(66066001)(110136005)(6436002)(25786009)(52536014)(33656002)(7416002)(4326008)(86362001)(4744005)(3846002)(6506007)(229853002)(8936002)(6116002)(14454004)(99286004)(76176011)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3947;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: MXQzO9/Z9glsvEFDq0wUK3RvqHgIDcxt9tAn+zmWV0ewXQTVm5IoryLxlf72KGBeemctx8rEOdTmKalVc61JgItnwW6JxPo0ZT1NZAZoBLvBnuM4HMDUYVop8w1+O8xIToAaFVWd85agJMdK3cuDCZjgSbuVzqgqPxYjxZOnjfmXvoXZc9dn2OKNnVvCkTaYLY64gKBGxf2Mi7hZjyYwqSCNHJ09eZ+QpI7VsIOw8AiX+E9Y1y1LOsKiEDCjm+ihXD/QeX3CowHph2qXyUlQkIhZHyJeu1RexozYuvl7dShiVWfGFbRzIfC3QXz0P8LA7QXtdFrAhXqfTtHCW7FOUwFa7a8i2nos9TYsfDJ83d6nIVC9YKeT4B/pUhOHuA9Ht7tesMcJh+GD/Yl0HNkTKnd9gqTQrh275tRM7Ssfolg=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190827123216.32728-1-robin@protonic.nl>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 10:06:38 up 102 days, 14:24, 64 users,  load average: 0.12, 0.14,
- 0.08
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 9a2f4b00-a6c0-4126-97ed-08d72b990989
+X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Aug 2019 09:20:58.5188 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: KavFyoMBK0926nykUjpW50qdbm5X/xiArMNLBsTzpiN2+05y/+Muk25/Z30UmuKQMlyo7NoSZlk6rMyOE2nHyg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3947
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_021606_716866_ABBD8225 
-X-CRM114-Status: GOOD (  33.19  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_022105_250345_FBBABBAE 
+X-CRM114-Status: UNSURE (   9.58  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.0.55 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,241 +149,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree @ vger . kernel . org" <devicetree@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
- Robin Gong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+Hi, Rui
 
-thanks for the patch.
-
-On 19-08-27 14:32, Robin van der Gracht wrote:
-> The first generation i.MX6 processors does not send an interrupt when the
-> power key is pressed. It sends a power down request interrupt if the key is
-> released before a hard shutdown (5 second press). This should allow
-> software to bring down the SoC safely.
+> Subject: Re: [PATCH V15 1/5] dt-bindings: fsl: scu: add thermal binding
 > 
-> For this driver to work as a regular power key with the older SoCs, we need
-> to send a keypress AND release when we get the power down request irq.
+> Hi, Anson,
 > 
-> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
-> ---
->  .../devicetree/bindings/crypto/fsl-sec4.txt   | 16 ++++--
->  drivers/input/keyboard/Kconfig                |  2 +-
->  drivers/input/keyboard/snvs_pwrkey.c          | 52 ++++++++++++++++---
+> We're missing ACK from the maintainers for patch 4/5 and 5/5, if we want to
+> shipped the patch via thermal tree.
 
-Can we split this so the dt-bindings are a standalone patch? IMHO this
-is the usual way because the maintainer can squash them on there needs.
-Also it would be cool to document the changes. A common place for
-changes is after the '---' or on the cover-letter.
+I think 4/5 and 5/5 can be taken by Shawn Guo once the driver part is taken, he
+normally do it in this way, once driver and dt-binding are taken, I will notify him.
 
->  3 files changed, 57 insertions(+), 13 deletions(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> index 2fe245ca816a..e4fbb9797082 100644
-> --- a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> +++ b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> @@ -420,14 +420,22 @@ EXAMPLE
->  =====================================================================
->  System ON/OFF key driver
->  
-> -  The snvs-pwrkey is designed to enable POWER key function which controlled
-> -  by SNVS ONOFF, the driver can report the status of POWER key and wakeup
-> -  system if pressed after system suspend.
-> +  The snvs-pwrkey is designed to enable POWER key function which is controlled
-> +  by SNVS ONOFF. It can wakeup the system if pressed after system suspend.
-> +
-> +  There are two generations of SVNS pwrkey hardware. The first generation is
-> +  included in i.MX6 Solo, DualLite and Quad processors. The second generation
-> +  is included in i.MX6 SoloX and newer SoCs.
-> +
-> +  Second generation SNVS can detect and report the status of POWER key, but the
-> +  first generation can only detect a key release and so emits an instantaneous
-> +  press and release event when the key is released.
->  
->    - compatible:
->        Usage: required
->        Value type: <string>
-> -      Definition: Mush include "fsl,sec-v4.0-pwrkey".
-> +      Definition: Must include "fsl,sec-v4.0-pwrkey" for i.MX6 SoloX and newer
-> +	   or "fsl,imx6qdl-snvs-pwrkey" for older SoCs.
->  
->    - interrupts:
->        Usage: required
-> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-> index 7c4f19dab34f..937e58da5ce1 100644
-> --- a/drivers/input/keyboard/Kconfig
-> +++ b/drivers/input/keyboard/Kconfig
-> @@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
->  	depends on OF
->  	help
->  	  This is the snvs powerkey driver for the Freescale i.MX application
-> -	  processors that are newer than i.MX6 SX.
-> +	  processors.
->  
->  	  To compile this driver as a module, choose M here; the
->  	  module will be called snvs_pwrkey.
-> diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
-> index 5342d8d45f81..d71c44733103 100644
-> --- a/drivers/input/keyboard/snvs_pwrkey.c
-> +++ b/drivers/input/keyboard/snvs_pwrkey.c
-> @@ -29,6 +29,11 @@
->  #define DEBOUNCE_TIME 30
->  #define REPEAT_INTERVAL 60
->  
-> +enum imx_snvs_hwtype {
-> +	IMX6SX_SNVS,	/* i.MX6 SoloX and newer */
-> +	IMX6QDL_SNVS,	/* i.MX6 Solo, DualLite and Quad */
-> +};
-> +
->  struct pwrkey_drv_data {
->  	struct regmap *snvs;
->  	int irq;
-> @@ -37,14 +42,41 @@ struct pwrkey_drv_data {
->  	int wakeup;
->  	struct timer_list check_timer;
->  	struct input_dev *input;
-> +	enum imx_snvs_hwtype hwtype;
->  };
->  
-> +static const struct of_device_id imx_snvs_pwrkey_ids[] = {
-> +	{
-> +		.compatible = "fsl,sec-v4.0-pwrkey",
-> +		.data = (const void *)IMX6SX_SNVS,
-> +	},
-> +	{
-> +		.compatible = "fsl,imx6qdl-snvs-pwrkey",
-> +		.data = (const void *)IMX6QDL_SNVS,
-> +	},
-> +	{ /* sentinel */ },
-> +};
-> +MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
+> For patch 2/5, as it introduces a new API for OF_THERMAL, I'd like to get
+> Eduardo' feedback before taking them.
 
-Can we keep this on the original place if you are using ...
+OK, NOT sure when he can take a look at it, we are kind of pending on this for some
+time, let's wait. If you have chance to talk to him, please help ask for help from him about
+this patch series, thanks a lot!
 
-> +
->  static void imx_imx_snvs_check_for_events(struct timer_list *t)
->  {
->  	struct pwrkey_drv_data *pdata = from_timer(pdata, t, check_timer);
->  	struct input_dev *input = pdata->input;
->  	u32 state;
->  
-> +	if (pdata->hwtype == IMX6QDL_SNVS) {
-> +		/*
-> +		 * The first generation i.MX6 SoCs only sends an interrupt on
-> +		 * button release. To mimic power-key usage, we'll prepend a
-> +		 * press event.
-> +		 */
-> +		input_report_key(input, pdata->keycode, 1);
+thanks,
+Anson
 
-Missing input_sync() here?
-
-> +		input_report_key(input, pdata->keycode, 0);
-> +		input_sync(input);
-> +		pm_relax(input->dev.parent);
-> +		return;
-> +	}
-> +
->  	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
->  	state = state & SNVS_HPSR_BTN ? 1 : 0;
->  
-> @@ -67,13 +99,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
->  {
->  	struct platform_device *pdev = dev_id;
->  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
-> +	unsigned long expire = jiffies;
->  	u32 lp_status;
->  
->  	pm_wakeup_event(pdata->input->dev.parent, 0);
->  
->  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
-> -	if (lp_status & SNVS_LPSR_SPO)
-> -		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
-> +	if (lp_status & SNVS_LPSR_SPO) {
-> +		if (pdata->hwtype == IMX6SX_SNVS)
-> +			expire += msecs_to_jiffies(DEBOUNCE_TIME);
-> +		mod_timer(&pdata->check_timer, expire);
-
-Is this desired because the timer gets triggered earlier.
-
-> +	}
->  
->  	/* clear SPO status */
->  	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
-> @@ -93,6 +129,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  	struct pwrkey_drv_data *pdata = NULL;
->  	struct input_dev *input = NULL;
->  	struct device_node *np;
-> +	const struct of_device_id *match;
->  	int error;
->  
->  	/* Get SNVS register Page */
-> @@ -100,6 +137,10 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  	if (!np)
->  		return -ENODEV;
->  
-> +	match = of_match_node(imx_snvs_pwrkey_ids, np);
-> +	if (!match)
-> +		return -ENODEV;
-
-... of_device_get_match_data() here. While reading the rm it seems that
-the snvs block has a dedicated version register. IMHO this could be a
-better way to apply the change also to existing devices with old
-firmware.
-
-Regards,
-  Marco
-
-
-> +
->  	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
->  	if (!pdata)
->  		return -ENOMEM;
-> @@ -115,6 +156,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  		dev_warn(&pdev->dev, "KEY_POWER without setting in dts\n");
->  	}
->  
-> +	pdata->hwtype = (enum imx_snvs_hwtype)match->data;
->  	pdata->wakeup = of_property_read_bool(np, "wakeup-source");
->  
->  	pdata->irq = platform_get_irq(pdev, 0);
-> @@ -175,12 +217,6 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
->  	return 0;
->  }
->  
-> -static const struct of_device_id imx_snvs_pwrkey_ids[] = {
-> -	{ .compatible = "fsl,sec-v4.0-pwrkey" },
-> -	{ /* sentinel */ }
-> -};
-> -MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
-> -
->  static struct platform_driver imx_snvs_pwrkey_driver = {
->  	.driver = {
->  		.name = "snvs_pwrkey",
-> -- 
-> 2.20.1
-> 
-> 
-> 
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
