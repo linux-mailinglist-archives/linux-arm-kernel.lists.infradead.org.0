@@ -2,66 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 265CB9FE47
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:17:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42BB69FE4A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:18:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5xCbCfzn1BKedpgnT7MpNLCHDpS++SDtC9Tqi8/tpBc=; b=Zf2lb5H0LTYdSA
-	4KhNi8gL6qhF7l2xepstMwPJyL/Q7yU2BJwquXHaxu+uA1M/f9lXnrP0ZkKw3mquyuRDxAsbgieOf
-	ukmOvYXuRY3vPCGlEHutywIo0ymk3cscQtKnctOHwdzGh3Ag+zeOuzhdKY+duKFp7HmMTBXTZmN/m
-	M4GW4CXC2JO4oV4up5L0oPz2c/Aoy756/ICechOeL8bgAsGheHxfeyH32lVJSzNU0qL+RChvrI9ky
-	WSlKi6BPnbTRx8y7hsmAdPevsa3WAdv3c2bYpX1nAtxPp6ZkXICTQ4Ui71zLpKC0B6o6frD8l2aN2
-	hG08E8nIMRLCbMf0mdfA==;
+	List-Owner; bh=JmWWE3eNf5voqlU0RSvC23w3ZCOilM+a8b7G2JmBMUg=; b=MsEuNfLngtV72r
+	9UIGm380mxuFxfqyDFzaMEFnxqaDAXYGyt+KRw8BVDprnE4bWJsHXTz4wBxjWeTvFiTiL5ivzBRKY
+	+SwiF4ZOnxvQDClgtjRWTzSGabTx7hWz9hLCh8Mbs45O6JYytMOIDDNzmgNn18RPG1ZRv4HOm+4fN
+	prDPMZw/CKW17/qVkBb4kqnAJpfl3pDBM2UL7Xph9ajqyGoxfmUQ7kbr1NSWa3C/xIMWjwR/zxXKq
+	wiuQLi5JY6vNSTg18Z45AVIg1G/HA+aUa+Yt1A/ElNT4rnXsowCmHGCjYW2hIAfgz1pi+C6FCURcr
+	t3w7M5aaZRQhlNkP8oqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2u5L-0007aX-0m; Wed, 28 Aug 2019 09:17:47 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i2u5u-00081E-Ms; Wed, 28 Aug 2019 09:18:22 +0000
+Received: from mga18.intel.com ([134.134.136.126])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2u04-0002a0-Te; Wed, 28 Aug 2019 09:12:22 +0000
-X-UUID: 026be4c680ba47b7be8210c89b5ae2d0-20190828
-X-UUID: 026be4c680ba47b7be8210c89b5ae2d0-20190828
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <weiyi.lu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1895009971; Wed, 28 Aug 2019 01:12:22 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 28 Aug 2019 02:12:21 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 28 Aug 2019 17:12:05 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 28 Aug 2019 17:12:05 +0800
-From: Weiyi Lu <weiyi.lu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>, Matthias Brugger
- <matthias.bgg@gmail.com>, Rob Herring <robh@kernel.org>
-Subject: [PATCH v7 13/13] arm64: dts: Add power controller device node of
- MT8183
-Date: Wed, 28 Aug 2019 17:11:46 +0800
-Message-ID: <1566983506-26598-14-git-send-email-weiyi.lu@mediatek.com>
-X-Mailer: git-send-email 1.8.1.1.dirty
-In-Reply-To: <1566983506-26598-1-git-send-email-weiyi.lu@mediatek.com>
-References: <1566983506-26598-1-git-send-email-weiyi.lu@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1i2u1q-0003zh-6U
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:14:12 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from fmsmga006.fm.intel.com ([10.253.24.20])
+ by orsmga106.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 28 Aug 2019 02:14:08 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,440,1559545200"; d="scan'208";a="381218667"
+Received: from deyangko-mobl.ccr.corp.intel.com ([10.249.168.35])
+ by fmsmga006.fm.intel.com with ESMTP; 28 Aug 2019 02:14:00 -0700
+Message-ID: <ff3fd0ab2ba659e98070760be8e7c0f223e921f9.camel@intel.com>
+Subject: Re: [PATCH V15 1/5] dt-bindings: fsl: scu: add thermal binding
+From: Zhang Rui <rui.zhang@intel.com>
+To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>,  "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "corbet@lwn.net" <corbet@lwn.net>,  "shawnguo@kernel.org"
+ <shawnguo@kernel.org>, "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, 
+ "kernel@pengutronix.de" <kernel@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>,  "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will.deacon@arm.com" <will.deacon@arm.com>,  "edubezval@gmail.com"
+ <edubezval@gmail.com>, "daniel.lezcano@linaro.org"
+ <daniel.lezcano@linaro.org>,  Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>, Peng Fan
+ <peng.fan@nxp.com>, "mchehab+samsung@kernel.org"
+ <mchehab+samsung@kernel.org>,  "linux@roeck-us.net" <linux@roeck-us.net>,
+ Daniel Baluta <daniel.baluta@nxp.com>,  "maxime.ripard@bootlin.com"
+ <maxime.ripard@bootlin.com>, "horms+renesas@verge.net.au"
+ <horms+renesas@verge.net.au>, "olof@lixom.net" <olof@lixom.net>, 
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>, Leonard Crestez
+ <leonard.crestez@nxp.com>,  "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "linux-pm@vger.kernel.org"
+ <linux-pm@vger.kernel.org>
+Date: Wed, 28 Aug 2019 17:14:09 +0800
+In-Reply-To: <DB3PR0402MB39162EB555CD7AE75D58C582F5C60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <20190618021820.14885-1-Anson.Huang@nxp.com>
+ <DB3PR0402MB39162C5B5AF828B127DD871EF5E00@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+ <DB3PR0402MB39162EB555CD7AE75D58C582F5C60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_021220_971769_E140DF61 
-X-CRM114-Status: UNSURE (   8.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_021410_397132_0E9FA775 
+X-CRM114-Status: GOOD (  23.02  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [134.134.136.126 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,113 +90,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: James Liao <jamesjj.liao@mediatek.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
- srv_heupstream@mediatek.com, linux-kernel@vger.kernel.org,
- Fan Chen <fan.chen@mediatek.com>, linux-mediatek@lists.infradead.org,
- Yong Wu <yong.wu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add power controller node and smi-common node for MT8183
-In scpsys node, it contains clocks and regmapping of
-infracfg and smi-common for bus protection.
+Hi, Anson,
 
-Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
----
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 62 ++++++++++++++++++++++++++++++++
- 1 file changed, 62 insertions(+)
+We're missing ACK from the maintainers for patch 4/5 and 5/5, if we
+want to shipped the patch via thermal tree.
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index c2749c4..66aaa07 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -8,6 +8,7 @@
- #include <dt-bindings/clock/mt8183-clk.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/power/mt8183-power.h>
- #include "mt8183-pinfunc.h"
- 
- / {
-@@ -238,6 +239,62 @@
- 			#interrupt-cells = <2>;
- 		};
- 
-+		scpsys: syscon@10006000 {
-+			compatible = "mediatek,mt8183-scpsys", "syscon";
-+			#power-domain-cells = <1>;
-+			reg = <0 0x10006000 0 0x1000>;
-+			clocks = <&topckgen CLK_TOP_MUX_AUD_INTBUS>,
-+				 <&infracfg CLK_INFRA_AUDIO>,
-+				 <&infracfg CLK_INFRA_AUDIO_26M_BCLK>,
-+				 <&topckgen CLK_TOP_MUX_MFG>,
-+				 <&topckgen CLK_TOP_MUX_MM>,
-+				 <&topckgen CLK_TOP_MUX_CAM>,
-+				 <&topckgen CLK_TOP_MUX_IMG>,
-+				 <&topckgen CLK_TOP_MUX_IPU_IF>,
-+				 <&topckgen CLK_TOP_MUX_DSP>,
-+				 <&topckgen CLK_TOP_MUX_DSP1>,
-+				 <&topckgen CLK_TOP_MUX_DSP2>,
-+				 <&mmsys CLK_MM_SMI_COMMON>,
-+				 <&mmsys CLK_MM_SMI_LARB0>,
-+				 <&mmsys CLK_MM_SMI_LARB1>,
-+				 <&mmsys CLK_MM_GALS_COMM0>,
-+				 <&mmsys CLK_MM_GALS_COMM1>,
-+				 <&mmsys CLK_MM_GALS_CCU2MM>,
-+				 <&mmsys CLK_MM_GALS_IPU12MM>,
-+				 <&mmsys CLK_MM_GALS_IMG2MM>,
-+				 <&mmsys CLK_MM_GALS_CAM2MM>,
-+				 <&mmsys CLK_MM_GALS_IPU2MM>,
-+				 <&imgsys CLK_IMG_LARB5>,
-+				 <&imgsys CLK_IMG_LARB2>,
-+				 <&camsys CLK_CAM_LARB6>,
-+				 <&camsys CLK_CAM_LARB3>,
-+				 <&camsys CLK_CAM_SENINF>,
-+				 <&camsys CLK_CAM_CAMSV0>,
-+				 <&camsys CLK_CAM_CAMSV1>,
-+				 <&camsys CLK_CAM_CAMSV2>,
-+				 <&camsys CLK_CAM_CCU>,
-+				 <&ipu_conn CLK_IPU_CONN_IPU>,
-+				 <&ipu_conn CLK_IPU_CONN_AHB>,
-+				 <&ipu_conn CLK_IPU_CONN_AXI>,
-+				 <&ipu_conn CLK_IPU_CONN_ISP>,
-+				 <&ipu_conn CLK_IPU_CONN_CAM_ADL>,
-+				 <&ipu_conn CLK_IPU_CONN_IMG_ADL>;
-+			clock-names = "audio", "audio1", "audio2",
-+				      "mfg", "mm", "cam",
-+				      "isp", "vpu", "vpu1",
-+				      "vpu2", "vpu3", "mm-0",
-+				      "mm-1", "mm-2", "mm-3",
-+				      "mm-4", "mm-5", "mm-6",
-+				      "mm-7", "mm-8", "mm-9",
-+				      "isp-0", "isp-1", "cam-0",
-+				      "cam-1", "cam-2", "cam-3",
-+				      "cam-4", "cam-5", "cam-6",
-+				      "vpu-0", "vpu-1", "vpu-2",
-+				      "vpu-3", "vpu-4", "vpu-5";
-+			infracfg = <&infracfg>;
-+			smi_comm = <&smi_common>;
-+		};
-+
- 		apmixedsys: syscon@1000c000 {
- 			compatible = "mediatek,mt8183-apmixedsys", "syscon";
- 			reg = <0 0x1000c000 0 0x1000>;
-@@ -396,6 +453,11 @@
- 			#clock-cells = <1>;
- 		};
- 
-+		smi_common: smi@14019000 {
-+			compatible = "mediatek,mt8183-smi-common", "syscon";
-+			reg = <0 0x14019000 0 0x1000>;
-+		};
-+
- 		imgsys: syscon@15020000 {
- 			compatible = "mediatek,mt8183-imgsys", "syscon";
- 			reg = <0 0x15020000 0 0x1000>;
--- 
-1.8.1.1.dirty
+For patch 2/5, as it introduces a new API for OF_THERMAL, I'd like to
+get Eduardo' feedback before taking them.
+
+thanks,
+rui
+
+On Wed, 2019-07-24 at 03:16 +0000, Anson Huang wrote:
+> Ping...
+> 
+> > Hi, Daniel/Rui/Eduardo
+> > 	Could you please take a look at this patch series?
+> > 
+> > Anson
+> > 
+> > > From: Anson Huang <Anson.Huang@nxp.com>
+> > > 
+> > > NXP i.MX8QXP is an ARMv8 SoC with a Cortex-M4 core inside as
+> > > system
+> > > controller, the system controller is in charge of system power,
+> > > clock
+> > > and thermal sensors etc. management, Linux kernel has to
+> > > communicate
+> > > with system controller via MU (message unit) IPC to get
+> > > temperature
+> > > from thermal sensors, this patch adds binding doc for i.MX system
+> > > controller thermal driver.
+> > > 
+> > > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> > > Reviewed-by: Rob Herring <robh@kernel.org>
+> > > Reviewed-by: Dong Aisheng <aisheng.dong@nxp.com>
+> > > ---
+> > > No change.
+> > > ---
+> > >  .../devicetree/bindings/arm/freescale/fsl,scu.txt        | 16
+> > 
+> > ++++++++++++++++
+> > >  1 file changed, 16 insertions(+)
+> > > 
+> > > diff --git
+> > > a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > index a575e42..fc3844e 100644
+> > > --- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > +++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
+> > > @@ -155,6 +155,17 @@ Required properties:
+> > >  Optional properties:
+> > >  - timeout-sec: contains the watchdog timeout in seconds.
+> > > 
+> > > +Thermal bindings based on SCU Message Protocol
+> > > +------------------------------------------------------------
+> > > +
+> > > +Required properties:
+> > > +- compatible:			Should be :
+> > > +				  "fsl,imx8qxp-sc-thermal"
+> > > +				followed by "fsl,imx-sc-thermal";
+> > > +
+> > > +- #thermal-sensor-cells:	See
+> > > Documentation/devicetree/bindings/thermal/thermal.txt
+> > > +				for a description.
+> > > +
+> > >  Example (imx8qxp):
+> > >  -------------
+> > >  aliases {
+> > > @@ -222,6 +233,11 @@ firmware {
+> > >  			compatible = "fsl,imx8qxp-sc-wdt", "fsl,imx-sc-
+> > > wdt";
+> > >  			timeout-sec = <60>;
+> > >  		};
+> > > +
+> > > +		tsens: thermal-sensor {
+> > > +			compatible = "fsl,imx8qxp-sc-thermal",
+> > > "fsl,imx-sc-
+> > > thermal";
+> > > +			#thermal-sensor-cells = <1>;
+> > > +		};
+> > >  	};
+> > >  };
+> > > 
+> > > --
+> > > 2.7.4
+> 
+> 
 
 
 _______________________________________________
