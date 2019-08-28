@@ -2,69 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 770C99FEE4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 11:51:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B61529FF12
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:04:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QtgZ2uEzafSchZGFMI0Rt/5wEjJDddvqQUQn0lwmb4c=; b=Q1QTjMAizmrvqH
-	+Dgv7BHRkJZGIzr351BBrj/dzE1ZtklFVK9E5JqRq/oIBREec4m6mT4fUugeZEgfOrV1W0nr94VtY
-	avmUHAdiFV04D+Jf8S8revsuB7QrnJk4eV5S0DQ3yCo1w7N5s9VaIvHHXVk0E/3ckCj9bL5o58Hzr
-	8zUqKIA7UyjN/8S3U0ziUStjl7dQqszjKuT8Z0hJtzr4slEXEOIbL6Dg59T35+ambmKqomLtmK7YA
-	My99VnGeHiwYNL3F4RFgBmaFBzfUhf3Zfnyd/XlgLkNxRKGc6qT4hlhdZuCs+BNKxI/zBRgAltOZv
-	RFnKKqR2NZKIIWh4Y4mg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=vMNnvAMORLN1BT3YT7KLl5X9FRUDnREdFs9DdokCI8k=; b=aehZRftTf4LV2jpgJlmduIAHk
+	vIL649TYCup7ZNGSvn77nMf5I19pCp3cp546cUIQMOUrACfpi8lQxL48caAWnqhZXvbiDW6lfmJ27
+	Vf2GqadloCXRdApYOeeX1M2sym6TMIu0iplMSpso1R1lc1kJTCpc1Q00xGlw2M3ZTkrasEoPhoG+h
+	Y4vLvsjWLHQJlSDWxoKQRbEhOOVJ/uIuJHBchmMdl3TQM3pHokdzX3fWxVsbI1Xvk3Qhtg9HiPJdJ
+	5OLtBDX0I7nL6mLaPQU7sW5Kik46HXgLJjDrybe0CLVmqNwVR+cZ1kXm0a4gcbMbPZvtYLxcGnpD/
+	kihwgpNTw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2ucL-0006TZ-Ge; Wed, 28 Aug 2019 09:51:53 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i2uoQ-0001Xr-AX; Wed, 28 Aug 2019 10:04:22 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2uc9-0006T2-5M
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 09:51:42 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2E3082173E;
- Wed, 28 Aug 2019 09:51:39 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1566985900;
- bh=MX6dipyp3EqWQEbsdB11o0NuKEe0qLf+oSWJ4ppNB10=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=KL13N5KEMXOQhds38WwnWjcsBfCdyqS7dyDdvuPvMFbT8yGSWyTKqCrFKXfIPq59D
- tFJEYDj74LgKrW3H2VAVkw559RGNF+JHxbDs5AUAaxJsJfIqccWBpPLVz7wWLtMwAd
- MCWGNiLGg3COw8Vs/r9v1wAaDKbzeknVfOQh+KP8=
-Date: Wed, 28 Aug 2019 10:51:35 +0100
-From: Will Deacon <will@kernel.org>
-To: Joakim Zhang <qiangqing.zhang@nxp.com>
-Subject: Re: [PATCH V8 1/3] perf: imx8_ddr_perf: add AXI ID filter support
-Message-ID: <20190828095135.gsyqwor7tea2radn@willie-the-truck>
-References: <20190828030305.7190-1-qiangqing.zhang@nxp.com>
+ id 1i2uoF-0001XT-Pm
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 10:04:13 +0000
+Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d66519a0000>; Wed, 28 Aug 2019 03:04:10 -0700
+Received: from hqmail.nvidia.com ([172.20.161.6])
+ by hqpgpgate101.nvidia.com (PGP Universal service);
+ Wed, 28 Aug 2019 03:04:10 -0700
+X-PGP-Universal: processed;
+ by hqpgpgate101.nvidia.com on Wed, 28 Aug 2019 03:04:10 -0700
+Received: from DRHQMAIL107.nvidia.com (10.27.9.16) by HQMAIL105.nvidia.com
+ (172.20.187.12) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 28 Aug
+ 2019 10:04:09 +0000
+Received: from [10.24.46.191] (10.124.1.5) by DRHQMAIL107.nvidia.com
+ (10.27.9.16) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 28 Aug
+ 2019 10:04:04 +0000
+Subject: Re: [PATCH 0/6] PCI: tegra: Enable PCIe C5 controller of Tegra194 in
+ p2972-0000 platform
+To: Thierry Reding <thierry.reding@gmail.com>
+References: <20190826073143.4582-1-vidyas@nvidia.com>
+ <20190828091028.GB2917@ulmo>
+X-Nvconfidentiality: public
+From: Vidya Sagar <vidyas@nvidia.com>
+Message-ID: <57b55bde-0f59-27ef-8bd3-13408d6d4493@nvidia.com>
+Date: Wed, 28 Aug 2019 15:34:02 +0530
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190828030305.7190-1-qiangqing.zhang@nxp.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190828091028.GB2917@ulmo>
+X-Originating-IP: [10.124.1.5]
+X-ClientProxiedBy: HQMAIL105.nvidia.com (172.20.187.12) To
+ DRHQMAIL107.nvidia.com (10.27.9.16)
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_025141_250309_016CF70D 
-X-CRM114-Status: GOOD (  30.12  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190828_030411_850689_000161B0 
+X-CRM114-Status: GOOD (  13.96  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,145 +77,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Frank Li <frank.li@nxp.com>,
- "robin.murphy@arm.com" <robin.murphy@arm.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
+ mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
+ gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
+ linux-tegra@vger.kernel.org, robh+dt@kernel.org, linux-pci@vger.kernel.org,
+ bhelgaas@google.com, digetx@gmail.com, jonathanh@nvidia.com,
+ linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBBdWcgMjgsIDIwMTkgYXQgMDM6MDU6MzZBTSArMDAwMCwgSm9ha2ltIFpoYW5nIHdy
-b3RlOgo+IEFYSSBmaWx0ZXJpbmcgaXMgdXNlZCBieSBDU1YgbW9kZXMgMHg0MSBhbmQgMHg0MiB0
-byBjb3VudCByZWFkcyBvcgo+IHdyaXRlcyB3aXRoIGFuIEFSSUQgb3IgQVdJRCBtYXRjaGluZyBm
-aWx0ZXIgc2V0dGluZy4gR3JhbnVsYXJpdHkgaXMgYXQKPiBzdWJzeXN0ZW0gbGV2ZWwuIEltcGxl
-bWVudGF0aW9uIGRvZXMgbm90IGFsbG93IGZpbHRyaW5nIGJldHdlZW4gbWFzdGVycwo+IHdpdGhp
-biBhIHN1YnN5c3RlbS4gRmlsdGVyIGlzIGRlZmluZWQgd2l0aCAyIGNvbmZpZ3VyYXRpb24gcGFy
-YW1ldGVycy4KPiAKPiAtLUFYSV9JRCBkZWZpbmVzIEF4SUQgbWF0Y2hpbmcgdmFsdWUKPiAtLUFY
-SV9NQVNLSU5HIGRlZmluZXMgd2hpY2ggYml0cyBvZiBBeElEIGFyZSBtZWFuaW5nZnVsIGZvciB0
-aGUgbWF0Y2hpbmcKPiAJMO+8mmNvcnJlc3BvbmRpbmcgYml0IGlzIG1hc2tlZAo+IAkxOiBjb3Jy
-ZXNwb25kaW5nIGJpdCBpcyBub3QgbWFza2VkLCBpLmUuIHVzZWQgdG8gZG8gdGhlIG1hdGNoaW5n
-Cj4gCj4gV2hlbiBub24tbWFza2VkIGJpdHMgYXJlIG1hdGNoaW5nIGNvcnJlc3BvbmRpbmcgQVhJ
-X0lEIGJpdHMgdGhlbiBjb3VudGVyCj4gaXMgaW5jcmVtZW50ZWQuIFRoaXMgZmlsdGVyIGFsbG93
-cyBjb3VudGluZyByZWFkIG9yIHdyaXRlIGFjY2VzcyBmcm9tIGEKPiBzdWJzeXN0ZW0gb3IgbXVs
-dGlwbGUgc3Vic3lzdGVtcy4KPiAKPiBQZXJmIGNvdW50ZXIgaXMgaW5jcmVtZW50ZWQgaWYgQXhJ
-RCAmJiBBWElfTUFTS0lORyA9PSBBWElfSUQgJiYgQVhJX01BU0tJTkcKPiAKPiBBWElfSUQgYW5k
-IEFYSV9NQVNLSU5HIGFyZSBtYXBwZWQgb24gRFBDUjEgcmVnaXN0ZXIgaW4gcGVyZm9ybWFuY2Ug
-Y291bnRlci4KPiAKPiBSZWFkIGFuZCB3cml0ZSBBWEkgSUQgZmlsdGVyIHNob3VsZCB3cml0ZSBz
-YW1lIHZhbHVlIHRvIERQQ1IxIGlmIHdhbnQgdG8KPiBzcGVjaWZ5IGF0IHRoZSBzYW1lIHRpbWUg
-YXMgdGhpcyBmaWx0ZXIgaXMgc2hhcmVkIGJldHdlZW4gY291bnRlcnMuCj4gCj4gZS5nLgo+IHBl
-cmYgc3RhdCAtYSAtZSBpbXg4X2RkcjAvYXhpZC1yZWFkLGF4aV9tYXNrPTB4TU1NTSxheGlfaWQ9
-MHhERERELyBjbWQKPiBwZXJmIHN0YXQgLWEgLWUgaW14OF9kZHIwL2F4aWQtd3JpdGUsYXhpX21h
-c2s9MHhNTU1NLGF4aV9pZD0weEREREQvIGNtZAo+IAo+IE5PVEU6IGF4aV9tYXNrIGlzIGludmVy
-dGVkIGluIHVzZXJzcGFjZShpLmUuIHNldCBiaXRzIGFyZSBiaXRzIHRvIG1hc2spLCBhbmQKPiBp
-dCB3aWxsIGJlIHJldmVydGVkIGluIGRyaXZlciBhdXRvbWF0aWNhbGx5LiBzbyB0aGF0IHRoZSB1
-c2VyIGNhbiBqdXN0IHNwZWNpZnkKPiBheGlfaWQgdG8gbW9uaXRvciBhIHNwZWNpZmljIGlkLCBy
-YXRoZXIgdGhhbiBoYXZpbmcgdG8gc3BlY2lmeSBheGlfbWFzay4KPiBlLmcuCj4gcGVyZiBzdGF0
-IC1hIC1lIGlteDhfZGRyMC9heGlkLXJlYWQsYXhpX2lkPTB4MTIvIGNtZCwgd2hpY2ggd2lsbCBt
-b25pdG9yIEFSSUQ9MHgxMgo+IAo+IENoYW5nZUxvZzoKPiBWMSAtPiBWMjoKPiAJKiBhZGQgZXJy
-b3IgbG9nIGlmIHVzZXIgc3BlY2lmaWVzIHJlYWQvd3JpdGUgQVhJIElEIGZpbHRlciBhdAo+IAl0
-aGUgc2FtZSB0aW1lLgo+IAkqIG9mX2RldmljZV9nZXRfbWF0Y2hfZGF0YSgpIGluc3RlYWQgb2Yg
-b2ZfbWF0Y2hfZGV2aWNlKCksIGFuZAo+IAlyZW1vdmUgdGhlIGNoZWNrIG9mIHJldHVybiB2YWx1
-ZS4KPiBWMiAtPiBWMzoKPiAJKiBtb3ZlIHRoZSBBWEkgSUQgY2hlY2sgdG8gZXZlbnRfYWRkKCku
-Cj4gCSogYWRkIHN1cHBvcnQgZm9yIHNhbWUgdmFsdWUgb2YgYXhpX2lkLgo+IFYzIC0+IFY0Ogo+
-IAkqIG1vdmUgdGhlIEFYSSBJRCBjaGVjayB0byBldmVudF9pbml0KCkuCj4gVjQgLT4gVjU6Cj4g
-CSogcmVqZWN0IGV2ZW50IGdyb3VwIGlmIEFYSSBJRCBub3QgY29uc2lzdGVudCBpbiBldmVudF9p
-bml0KCkuCj4gVjUgLT4gVjY6Cj4gCSogY2hhbmdlIHRoZSBldmVudCBuYW1lOiBheGktaWQtcmVh
-ZC0+YXhpZC1yZWFkOwo+IAlheGktaWQtd3JpdGUtPmF4aWQtd3JpdGUKPiAJKiBhZGQgYW5vdGhl
-ciBoZWxwZXI6IGRkcl9wZXJmX2ZpbHRlcnNfY29tcGF0aWJsZSgpCj4gCSogZHJvcCB0aGUgZGV2
-X2RiZygpCj4gVjYgLT4gVjc6Cj4gCSogcmV2ZXJ0IEFYSV9NQVNLSU5HIGF0IGRyaXZlci4KPiBW
-NyAtPiBWODoKPiAJKiBzZXBhcmF0ZSBheGlfaWQgdG8gYXhpX21hc2sgYW5kIGF4aV9pZCB0aGVz
-ZSB0d28gZmlsZWRzLgoKTml0OiBwbGVhc2UgZG9uJ3QgaW5jbHVkZSB0aGUgQ2hhbmdlTG9nIGlu
-IHRoZSBjb21taXQgbWVzc2FnZSAod2UgZG9uJ3QKd2FudCB0byBpbmNsdWRlIHRoaXMgaW4gdGhl
-IGxpbnV4IGhpc3RvcnkpLiBJbnN0ZWFkIHN0aWNrIGl0IGFmdGVyIHRoZQpjdXQuCgo+IFNpZ25l
-ZC1vZmYtYnk6IEpvYWtpbSBaaGFuZyA8cWlhbmdxaW5nLnpoYW5nQG54cC5jb20+Cj4gLS0tCj4g
-IGRyaXZlcnMvcGVyZi9mc2xfaW14OF9kZHJfcGVyZi5jIHwgNzIgKysrKysrKysrKysrKysrKysr
-KysrKysrKysrKysrKy0KPiAgMSBmaWxlIGNoYW5nZWQsIDcwIGluc2VydGlvbnMoKyksIDIgZGVs
-ZXRpb25zKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvcGVyZi9mc2xfaW14OF9kZHJfcGVy
-Zi5jIGIvZHJpdmVycy9wZXJmL2ZzbF9pbXg4X2Rkcl9wZXJmLmMKPiBpbmRleCAwZTMzMTBkYmIx
-NDUuLmU5YmY5NTZmNDM0ZCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL3BlcmYvZnNsX2lteDhfZGRy
-X3BlcmYuYwo+ICsrKyBiL2RyaXZlcnMvcGVyZi9mc2xfaW14OF9kZHJfcGVyZi5jCj4gQEAgLTM1
-LDYgKzM1LDggQEAKPiAgI2RlZmluZSBFVkVOVF9DWUNMRVNfQ09VTlRFUgkwCj4gICNkZWZpbmUg
-TlVNX0NPVU5URVJTCQk0Cj4gIAo+ICsjZGVmaW5lIEFYSV9NQVNLSU5HX1JFVkVSVAkweGZmZmYw
-MDAwCS8qIEFYSV9NQVNLSU5HKE1TQiAxNmJpdHMpICsgQVhJX0lEKExTQiAxNmJpdHMpICovCj4g
-Kwo+ICAjZGVmaW5lIHRvX2Rkcl9wbXUocCkJCWNvbnRhaW5lcl9vZihwLCBzdHJ1Y3QgZGRyX3Bt
-dSwgcG11KQo+ICAKPiAgI2RlZmluZSBERFJfUEVSRl9ERVZfTkFNRQkiaW14OF9kZHIiCj4gQEAg
-LTQyLDkgKzQ0LDIyIEBACj4gIAo+ICBzdGF0aWMgREVGSU5FX0lEQShkZHJfaWRhKTsKPiAgCj4g
-Ky8qIEREUiBQZXJmIGhhcmR3YXJlIGZlYXR1cmUgKi8KPiArI2RlZmluZSBERFJfQ0FQX0FYSV9J
-RF9GSUxURVIgICAgICAgICAgMHgxICAgICAvKiBzdXBwb3J0IEFYSSBJRCBmaWx0ZXIgKi8KPiAr
-Cj4gK3N0cnVjdCBmc2xfZGRyX2RldnR5cGVfZGF0YSB7Cj4gKwl1bnNpZ25lZCBpbnQgcXVpcmtz
-OyAgICAvKiBxdWlya3MgbmVlZGVkIGZvciBkaWZmZXJlbnQgRERSIFBlcmYgY29yZSAqLwo+ICt9
-Owo+ICsKPiArc3RhdGljIGNvbnN0IHN0cnVjdCBmc2xfZGRyX2RldnR5cGVfZGF0YSBpbXg4X2Rl
-dnR5cGVfZGF0YTsKPiArCj4gK3N0YXRpYyBjb25zdCBzdHJ1Y3QgZnNsX2Rkcl9kZXZ0eXBlX2Rh
-dGEgaW14OG1fZGV2dHlwZV9kYXRhID0gewo+ICsJLnF1aXJrcyA9IEREUl9DQVBfQVhJX0lEX0ZJ
-TFRFUiwKPiArfTsKPiArCj4gIHN0YXRpYyBjb25zdCBzdHJ1Y3Qgb2ZfZGV2aWNlX2lkIGlteF9k
-ZHJfcG11X2R0X2lkc1tdID0gewo+IC0JeyAuY29tcGF0aWJsZSA9ICJmc2wsaW14OC1kZHItcG11
-Iix9LAo+IC0JeyAuY29tcGF0aWJsZSA9ICJmc2wsaW14OG0tZGRyLXBtdSIsfSwKPiArCXsgLmNv
-bXBhdGlibGUgPSAiZnNsLGlteDgtZGRyLXBtdSIsIC5kYXRhID0gJmlteDhfZGV2dHlwZV9kYXRh
-fSwKPiArCXsgLmNvbXBhdGlibGUgPSAiZnNsLGlteDhtLWRkci1wbXUiLCAuZGF0YSA9ICZpbXg4
-bV9kZXZ0eXBlX2RhdGF9LAo+ICAJeyAvKiBzZW50aW5lbCAqLyB9Cj4gIH07Cj4gIE1PRFVMRV9E
-RVZJQ0VfVEFCTEUob2YsIGlteF9kZHJfcG11X2R0X2lkcyk7Cj4gQEAgLTU4LDYgKzczLDcgQEAg
-c3RydWN0IGRkcl9wbXUgewo+ICAJc3RydWN0IHBlcmZfZXZlbnQgKmV2ZW50c1tOVU1fQ09VTlRF
-UlNdOwo+ICAJaW50IGFjdGl2ZV9ldmVudHM7Cj4gIAllbnVtIGNwdWhwX3N0YXRlIGNwdWhwX3N0
-YXRlOwo+ICsJY29uc3Qgc3RydWN0IGZzbF9kZHJfZGV2dHlwZV9kYXRhICpkZXZ0eXBlX2RhdGE7
-Cj4gIAlpbnQgaXJxOwo+ICAJaW50IGlkOwo+ICB9Owo+IEBAIC0xMjksNiArMTQ1LDggQEAgc3Rh
-dGljIHN0cnVjdCBhdHRyaWJ1dGUgKmRkcl9wZXJmX2V2ZW50c19hdHRyc1tdID0gewo+ICAJSU1Y
-OF9ERFJfUE1VX0VWRU5UX0FUVFIocmVmcmVzaCwgMHgzNyksCj4gIAlJTVg4X0REUl9QTVVfRVZF
-TlRfQVRUUih3cml0ZSwgMHgzOCksCj4gIAlJTVg4X0REUl9QTVVfRVZFTlRfQVRUUihyYXctaGF6
-YXJkLCAweDM5KSwKPiArCUlNWDhfRERSX1BNVV9FVkVOVF9BVFRSKGF4aWQtcmVhZCwgMHg0MSks
-Cj4gKwlJTVg4X0REUl9QTVVfRVZFTlRfQVRUUihheGlkLXdyaXRlLCAweDQyKSwKPiAgCU5VTEws
-Cj4gIH07Cj4gIAo+IEBAIC0xMzgsOSArMTU2LDEzIEBAIHN0YXRpYyBzdHJ1Y3QgYXR0cmlidXRl
-X2dyb3VwIGRkcl9wZXJmX2V2ZW50c19hdHRyX2dyb3VwID0gewo+ICB9Owo+ICAKPiAgUE1VX0ZP
-Uk1BVF9BVFRSKGV2ZW50LCAiY29uZmlnOjAtNyIpOwo+ICtQTVVfRk9STUFUX0FUVFIoYXhpX2lk
-LCAiY29uZmlnMTowLTE1Iik7Cj4gK1BNVV9GT1JNQVRfQVRUUihheGlfbWFzaywgImNvbmZpZzE6
-MTYtMzEiKTsKPiAgCj4gIHN0YXRpYyBzdHJ1Y3QgYXR0cmlidXRlICpkZHJfcGVyZl9mb3JtYXRf
-YXR0cnNbXSA9IHsKPiAgCSZmb3JtYXRfYXR0cl9ldmVudC5hdHRyLAo+ICsJJmZvcm1hdF9hdHRy
-X2F4aV9pZC5hdHRyLAo+ICsJJmZvcm1hdF9hdHRyX2F4aV9tYXNrLmF0dHIsCj4gIAlOVUxMLAo+
-ICB9Owo+ICAKPiBAQCAtMTkwLDYgKzIxMiwyNiBAQCBzdGF0aWMgdTMyIGRkcl9wZXJmX3JlYWRf
-Y291bnRlcihzdHJ1Y3QgZGRyX3BtdSAqcG11LCBpbnQgY291bnRlcikKPiAgCXJldHVybiByZWFk
-bF9yZWxheGVkKHBtdS0+YmFzZSArIENPVU5URVJfUkVBRCArIGNvdW50ZXIgKiA0KTsKPiAgfQo+
-ICAKPiArc3RhdGljIGJvb2wgZGRyX3BlcmZfaXNfZmlsdGVyZWQoc3RydWN0IHBlcmZfZXZlbnQg
-KmV2ZW50KQo+ICt7Cj4gKwlyZXR1cm4gZXZlbnQtPmF0dHIuY29uZmlnID09IDB4NDEgfHwgZXZl
-bnQtPmF0dHIuY29uZmlnID09IDB4NDI7Cj4gK30KPiArCj4gK3N0YXRpYyB1MzIgZGRyX3BlcmZf
-ZmlsdGVyX3ZhbChzdHJ1Y3QgcGVyZl9ldmVudCAqZXZlbnQpCj4gK3sKPiArCXJldHVybiBldmVu
-dC0+YXR0ci5jb25maWcxOwo+ICt9Cj4gKwo+ICtzdGF0aWMgYm9vbCBkZHJfcGVyZl9maWx0ZXJz
-X2NvbXBhdGlibGUoc3RydWN0IHBlcmZfZXZlbnQgKmEsCj4gKwkJCQkJc3RydWN0IHBlcmZfZXZl
-bnQgKmIpCj4gK3sKPiArCWlmICghZGRyX3BlcmZfaXNfZmlsdGVyZWQoYSkpCj4gKwkJcmV0dXJu
-IHRydWU7Cj4gKwlpZiAoIWRkcl9wZXJmX2lzX2ZpbHRlcmVkKGIpKQo+ICsJCXJldHVybiB0cnVl
-Owo+ICsJcmV0dXJuIGRkcl9wZXJmX2ZpbHRlcl92YWwoYSkgPT0gZGRyX3BlcmZfZmlsdGVyX3Zh
-bChiKTsKPiArfQo+ICsKPiAgc3RhdGljIGludCBkZHJfcGVyZl9ldmVudF9pbml0KHN0cnVjdCBw
-ZXJmX2V2ZW50ICpldmVudCkKPiAgewo+ICAJc3RydWN0IGRkcl9wbXUgKnBtdSA9IHRvX2Rkcl9w
-bXUoZXZlbnQtPnBtdSk7Cj4gQEAgLTIxNiw2ICsyNTgsMTUgQEAgc3RhdGljIGludCBkZHJfcGVy
-Zl9ldmVudF9pbml0KHN0cnVjdCBwZXJmX2V2ZW50ICpldmVudCkKPiAgCQkJIWlzX3NvZnR3YXJl
-X2V2ZW50KGV2ZW50LT5ncm91cF9sZWFkZXIpKQo+ICAJCXJldHVybiAtRUlOVkFMOwo+ICAKPiAr
-CWlmIChwbXUtPmRldnR5cGVfZGF0YS0+cXVpcmtzICYgRERSX0NBUF9BWElfSURfRklMVEVSKSB7
-Cj4gKwkJaWYgKCFkZHJfcGVyZl9maWx0ZXJzX2NvbXBhdGlibGUoZXZlbnQsIGV2ZW50LT5ncm91
-cF9sZWFkZXIpKQo+ICsJCQlyZXR1cm4gLUVJTlZBTDsKPiArCQlmb3JfZWFjaF9zaWJsaW5nX2V2
-ZW50KHNpYmxpbmcsIGV2ZW50LT5ncm91cF9sZWFkZXIpIHsKPiArCQkJaWYgKCFkZHJfcGVyZl9m
-aWx0ZXJzX2NvbXBhdGlibGUoZXZlbnQsIHNpYmxpbmcpKQo+ICsJCQkJcmV0dXJuIC1FSU5WQUw7
-Cj4gKwkJfQo+ICsJfQo+ICsKPiAgCWZvcl9lYWNoX3NpYmxpbmdfZXZlbnQoc2libGluZywgZXZl
-bnQtPmdyb3VwX2xlYWRlcikgewo+ICAJCWlmIChzaWJsaW5nLT5wbXUgIT0gZXZlbnQtPnBtdSAm
-Jgo+ICAJCQkJIWlzX3NvZnR3YXJlX2V2ZW50KHNpYmxpbmcpKQo+IEBAIC0yODgsNiArMzM5LDIx
-IEBAIHN0YXRpYyBpbnQgZGRyX3BlcmZfZXZlbnRfYWRkKHN0cnVjdCBwZXJmX2V2ZW50ICpldmVu
-dCwgaW50IGZsYWdzKQo+ICAJc3RydWN0IGh3X3BlcmZfZXZlbnQgKmh3YyA9ICZldmVudC0+aHc7
-Cj4gIAlpbnQgY291bnRlcjsKPiAgCWludCBjZmcgPSBldmVudC0+YXR0ci5jb25maWc7Cj4gKwlp
-bnQgY2ZnMSA9IGV2ZW50LT5hdHRyLmNvbmZpZzE7Cj4gKwo+ICsJaWYgKHBtdS0+ZGV2dHlwZV9k
-YXRhLT5xdWlya3MgJiBERFJfQ0FQX0FYSV9JRF9GSUxURVIpIHsKPiArCQlpbnQgaTsKPiArCj4g
-KwkJZm9yIChpID0gMTsgaSA8IE5VTV9DT1VOVEVSUzsgaSsrKSB7Cj4gKwkJCWlmIChwbXUtPmV2
-ZW50c1tpXSAmJgo+ICsJCQkgICAgIWRkcl9wZXJmX2ZpbHRlcnNfY29tcGF0aWJsZShldmVudCwg
-cG11LT5ldmVudHNbaV0pKQo+ICsJCQkJcmV0dXJuIC1FSU5WQUw7Cj4gKwkJfQo+ICsKPiArCQkv
-KiByZXZlcnQgYXhpIGlkIG1hc2tpbmcoYXhpX21hc2spIHZhbHVlICovCj4gKwkJY2ZnMSBePSBB
-WElfTUFTS0lOR19SRVZFUlQ7Cj4gKwkJd3JpdGVsKGNmZzEsIHBtdS0+YmFzZSArIENPVU5URVJf
-RFBDUjEpOwoKSSB3YXMgYWJvdXQgdG8gcXVldWUgdGhpcyB1cCwgYnV0IHRoZW4gSSB3b25kZXJl
-ZCBhYm91dCB0aGUgZm9sbG93aW5nCnNpdHVhdGlvbjoKCgktIEkgYWRkIGEgZmlsdGVyZWQgZXZl
-bnQgdG8gYSBncm91cCAoc2F5IDB4NDEpIHdpdGggYSBmaWx0ZXIgb2YgMAoJICAod2hpY2ggdGhl
-IGRyaXZlciBpbnZlcnRzIHRvIDB4ZmZmZikKCgktIEkgdGhlbiBhZGQgYSBub24tZmlsdGVyZWQg
-ZXZlbnQgKHNheSAweDQwKSBidXQgY29uZmlnMSBpcyBzZXQKCSAgdG8gMHhmZmZmMDAwMAoKV29u
-J3QgdGhlIGxvZ2ljIGFib3ZlIHJlc3VsdCBpbiB1cyBjb3JydXB0aW5nIERQQ1IxIGFuZCBjbG9i
-YmVyaW5nIHRoZQpmaWx0ZXIgZm9yIHRoZSBmaXJzdCBldmVudD8gV2hhdCBhbSBJIG1pc3Npbmc/
-CgpJIHRoaW5rIHlvdSBzaG91bGQgb25seSBwcm9ncmFtIERQQ1IxIGZvciBmaWx0ZXJlZCBldmVu
-dHMuCgpXaWxsCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-XwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmlu
-ZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9s
-aW51eC1hcm0ta2VybmVsCg==
+On 8/28/2019 2:40 PM, Thierry Reding wrote:
+> On Mon, Aug 26, 2019 at 01:01:37PM +0530, Vidya Sagar wrote:
+>> This patch series enables Tegra194's C5 controller which owns x16 slot in
+>> p2972-0000 platform. C5 controller's PERST# and CLKREQ# are not configured as
+>> output and bi-directional signals by default and hence they need to be
+>> configured explicitly. Also, x16 slot's 3.3V and 12V supplies are controlled
+>> through GPIOs and hence they need to be enabled through regulator framework.
+>> This patch series adds required infrastructural support to address both the
+>> aforementioned requirements.
+>> Testing done on p2972-0000 platform
+>> - Able to enumerate devices connected to x16 slot (owned by C5 controller)
+>> - Enumerated device's functionality verified
+>> - Suspend-Resume sequence is verified with device connected to x16 slot
+>>
+>> Vidya Sagar (6):
+>>    dt-bindings: PCI: tegra: Add sideband pins configuration entries
+>>    arm64: tegra: Add configuration for PCIe C5 sideband signals
+>>    PCI: tegra: Add support to configure sideband pins
+>>    dt-bindings: PCI: tegra: Add PCIe slot supplies regulator entries
+>>    arm64: tegra: Add PCIe slot supply information in p2972-0000 platform
+>>    PCI: tegra: Add support to enable slot regulators
+> 
+> Hi Vidya,
+> 
+> when you resend with review comments addressed, can you please reorder
+> the patches slightly? I think it's more natural to order them like this:
+> 
+>      dt-bindings: PCI: tegra: Add sideband pins configuration entries
+>      PCI: tegra: Add support to configure sideband pins
+>      dt-bindings: PCI: tegra: Add PCIe slot supplies regulator entries
+>      PCI: tegra: Add support to enable slot regulators
+>      arm64: tegra: Add configuration for PCIe C5 sideband signals
+>      arm64: tegra: Add PCIe slot supply information in p2972-0000 platform
+> 
+> Or perhaps even like this:
+> 
+>      dt-bindings: PCI: tegra: Add sideband pins configuration entries
+>      dt-bindings: PCI: tegra: Add PCIe slot supplies regulator entries
+>      PCI: tegra: Add support to configure sideband pins
+>      PCI: tegra: Add support to enable slot regulators
+>      arm64: tegra: Add configuration for PCIe C5 sideband signals
+>      arm64: tegra: Add PCIe slot supply information in p2972-0000 platform
+> 
+> That makes it more obvious that patches 1-2 need an Acked-by from Rob
+> and patches 1-4 need to go through Lorenzo's tree and that I'll pick up
+> patches 5-6.Sure.
+I'll do that.
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
+	t=1566986650; bh=fKSn9tEu0u/7kvehjleUQGVzZJJHx0MojZ9eQ2aJqWM=;
+	h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
+	 Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
+	 X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
+	 Content-Transfer-Encoding;
+	b=aSDWQiNYeJefaP3hT1F2Kc9CSOb6AJPVC1NOPnn4rLtaj7EOJb+j70r/h4+I3bKEk
+	 N6siO4F51Zz49OC3S0601fPefcag3AJZZQEdvrpk3pIhqGZ+62QMXTeG4f7t/ETsLY
+	 TPYf5ksG6Kb8vxeUEAY6ATiHOIhjJhbLjRn/uJ/Oat+8ZRv3VgTOtujSHpzsKf1rTz
+	 gJZbRa8GsOlGBEvMoc7xxgRDx1/GzUqaHw8T8GqLV/JDOW9qNy44TVpHkk4Exc7g5+
+	 bM5zCyghflgpfG+ZMzbwZEkd1b4gDyPfxYL2J+AzEjgQyVsBSU6+nXSjJg65VfzSd6
+	 bM8cWEfkmyeMA==
+
+Thanks,
+Vidya Sagar
+
+> 
+> Thierry
+> 
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
