@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E8E9A098F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 20:34:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C65AA0991
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 20:34:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,77 +11,77 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oZZyedgSJKD4SscXJqs6H1blT2wtQfSJSqyYnrOk1ao=; b=qaVzq44T2Hv0fRapYcylys+k6+
-	Dxn5/c8bcvs+rvnavMi1bKb5auoLKVHfbyWmPUbWAy99khpJSp+sN/EpRWMAj49wynT9aswbJda7z
-	JqsQg6NDrtci35fC5XrAJctS5lkxrShuO/YlGC9yhNfT9eNH2xj0jLRXulCvUdz5kkZypEOmswyq5
-	g/3F4qlBaddBzFemTubjX70FDBbC9C5QYu+mvkv8YfFt+bbCTPtxlZA2DHgsDBp1gRr5Jnrymyfus
-	19pMD1K4vm1fBf+G7Ih5r4KT2SueyZ8X8lw+X9zZLXmNV+hTeBaCkuWesNk7KEplA4FELg0Fe7Y71
-	KQnmv5oA==;
+	bh=j1jNAXhx0vlRkDSE6T8fUzxDVoqNYUHUqqN21fxMYUI=; b=m+HVjZcEfqLEf0Xvsk6/T3L7ZC
+	tuGR4j7dFGXmLl9awY4ftRSv7yChsvgrTr8pQ3rs2VvuDWxovWM3DJ13KjtevugwcTGHmCPt7anih
+	JV9iHUVtK4y1NGNZ20dENmwD7mpxn+bUQv1VsU+S995+6jgBEPoUE4oTqD+ozuUJnCRWs80yzutAZ
+	1oly4A1qycsiWXxrYh2XpiTqt18tddT9b4b1dmtKMc4MCjfPhMY5tp7Ecle/gov/PF9ODkPfScOce
+	FxX+efEQiVhF3v8u5533HPnqAg2NsZUCRfuGoz68U3gETsktzeNh/i+3Pw3je1MlRpnSFP05LJdc6
+	LrVGgoNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i32m2-0004O1-2C; Wed, 28 Aug 2019 18:34:26 +0000
+	id 1i32mG-0004bf-V0; Wed, 28 Aug 2019 18:34:41 +0000
 Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i32lc-0004AV-0B
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 18:34:01 +0000
-Received: by mail-io1-xd43.google.com with SMTP id l7so1548160ioj.6
+ id 1i32ld-0004Ar-2l
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 18:34:02 +0000
+Received: by mail-io1-xd43.google.com with SMTP id q12so1576134iog.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 11:33:59 -0700 (PDT)
+ Wed, 28 Aug 2019 11:34:01 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=/MCZVi6gjQnZzoBjDSkBgdTOk/6xTGkg3e6v7Fw/HG0=;
- b=MX5SyXOUxD2vJG2x6hKpHKvhGuMWvvBTWHZYjsUQdx6ZY2viicTRwtxSMD47wa409Y
- JvjUa55W/633dQyDYaHCNrSZaGRJiuUBZI1QWPRsuzKDmHjhzvvdJMPP1PvLHlbLyzfb
- uTpB7933v3IBYa5I21x2OLWbVDNUaEeXtqqRddXuxYe0nJoPKa98DxVssomiX5cpmAkF
- 5JGLTXeujpJLuSz1lnxVv9oLt5cq9HBSKjlptjjOvbKtPv2TSyy4rfp6PkccRZQhDyTc
- YHctd6QYUvP6r4TrPlet9Vg+cePEAlqG3oKvy2/1u/D14R3D/KvPafvJ20gfnfagcZ+X
- +gkg==
+ bh=ozNw3NE1JUp9pX6ogvfav5i5ZnpDbmV+xKm3jf0X7EE=;
+ b=IdtBb0rvJE9GLEHE60C0qDVcDivvz1Dix/CyDeIeh2jbe1FHOAffT0qEnxaHIw+usM
+ gjjciUsJ679hhWLvdLUHPj8J2xDuuHVVL1DZqdzFCYX687nMI0ipAJHvKv9jed4n4Rf7
+ f2wQ+WzWA/X6M4EG/3vUOm4MHFTymmvQjm5gWIVklDPYbCtaGLMidTfrChAdpQj5ZnmJ
+ j+AW1WxIZuYOpZbJ7lxNes5xL6CHVh/RS1oUDwqG0FrHFVa3jvh7TwkN7TkdkGeEIU/m
+ 32IieWFw5cVG0oLUlXDFktNea/U1B/iIPD8UILrKPEWMFNWYKi/tqFU5hxc3VvBjVJWr
+ EYDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=/MCZVi6gjQnZzoBjDSkBgdTOk/6xTGkg3e6v7Fw/HG0=;
- b=VuEXcAMn3IGci4Xwp4YmlmmcsTLfCRAYwKA0de5j4g48daeDeYWRBizhBYeeMnkggH
- LzhZJ7GPlkLGd5PE4YczsnpjIZmL2rlRjWxY1AsySdm8YCqdA2cerGezRvJv49u15SOh
- 5eB5eIKFpH+Oj+k5KInz5Z2ZBsbBqroMiaq+ld9znRGEC0HMdSVQ4UPyWc1ZJXTXKHYJ
- PpHmWgIh7BOMxsDeprpjW5kMuPuSMAOscJjVgjbAo4R0rA5r8CU9Eqs1Px8NOstHiOIa
- BasaWYvcI2Ay0ZVN9gxIyqpXb03fcTVwz0I6zZ640uuj0Wu6c08PF8pSzrsBPuGbQ1aI
- MUnw==
-X-Gm-Message-State: APjAAAU2V1mYZI+jce7d5DIA9JcS4bdApGKV4tmayy9uWC0k83YC6X/1
- WTKOLZ0JDKpI8p6EXRIoVM0=
-X-Google-Smtp-Source: APXvYqzmuCBqbBBlo0qBs8s6y7oPoSyp9ckKM7QjXTCJ6WTRe6Z523OcD2B18vcA1COotQmCvdcC8g==
-X-Received: by 2002:a6b:ea02:: with SMTP id m2mr5943823ioc.155.1567017238874; 
- Wed, 28 Aug 2019 11:33:58 -0700 (PDT)
+ bh=ozNw3NE1JUp9pX6ogvfav5i5ZnpDbmV+xKm3jf0X7EE=;
+ b=fh7dsSziTRQUnO+TnKD2iY+HfW8EVunG2PsTT7r9IyurfWy8aR2GRc7GmT1gFY+mkB
+ iozlrcy1qMG3LUFf1d54e8ejhLesPtF/gGJEcdSHKXlrQqrSyKtimZ+Ir3bYvjV9H7Hw
+ 1UyfLnNVHKtkhhbCUtYJP2qZu1pTGgEbD9kmjr1l7o9f/VEt88c8HwncHlmlbc4Wuz2C
+ U2+5QwoYbOZHrQ+KXN3tNNAloOAVwxMRYxkZ0zZjRgc8qu4i9oKUpVtkcoEw8p3T20S2
+ u7Bo/7Ee3ZnjTYxdJnvq1PJPON/KPeNQLRxXISoNSMymO4LNcYbk8mVHI+yOqyzAwzS+
+ Dvtw==
+X-Gm-Message-State: APjAAAXVeo+1omi7dngT0vhwpmGPzTALNXrqPqfF144VTIWfQiD9sLG5
+ qIoCbRak9nlPLU58tt28JOE=
+X-Google-Smtp-Source: APXvYqwoFvpIV1gSugWa+3bteD7X9nYd2/H9p8V+wAO7w9aMkOxysmMwfOPC+IGkS5Bsdt0+TlVjPQ==
+X-Received: by 2002:a6b:710a:: with SMTP id q10mr1869231iog.273.1567017240350; 
+ Wed, 28 Aug 2019 11:34:00 -0700 (PDT)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id o3sm2494650ioo.74.2019.08.28.11.33.57
+ by smtp.gmail.com with ESMTPSA id o3sm2494650ioo.74.2019.08.28.11.33.59
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 28 Aug 2019 11:33:58 -0700 (PDT)
+ Wed, 28 Aug 2019 11:33:59 -0700 (PDT)
 From: Adam Ford <aford173@gmail.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 2/3] ARM: dts: logicpd-torpedo-baseboard: Fix missing video
-Date: Wed, 28 Aug 2019 13:33:50 -0500
-Message-Id: <20190828183351.822-2-aford173@gmail.com>
+Subject: [PATCH 3/3] ARM: dts: am3517-evm: Fix missing video
+Date: Wed, 28 Aug 2019 13:33:51 -0500
+Message-Id: <20190828183351.822-3-aford173@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190828183351.822-1-aford173@gmail.com>
 References: <20190828183351.822-1-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_113400_049757_E8239E10 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20190828_113401_123326_F95D8DC7 
+X-CRM114-Status: GOOD (  14.93  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (aford173[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
- [list.dnswl.org]
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -112,56 +112,35 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 A previous commit removed the panel-dpi driver, which made the
-Torpedo video stop working because it relied on the dpi driver
-for setting video timings.  Now that the simple-panel driver is
-available in omap2plus, this patch migrates the Torpedo dev kits
+video on the AM3517-evm stop working because it relied on the dpi
+driver for setting video timings.  Now that the simple-panel driver
+is available in omap2plus, this patch migrates the am3517-evm
 to use a similar panel and remove the manual timing requirements.
 
 Fixes: 8bf4b1621178 ("drm/omap: Remove panel-dpi driver")
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 
-diff --git a/arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi b/arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi
-index 642e809e757a..449cc7616da6 100644
---- a/arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi
-+++ b/arch/arm/boot/dts/logicpd-torpedo-baseboard.dtsi
-@@ -108,7 +108,6 @@
- &dss {
- 	status = "ok";
- 	vdds_dsi-supply = <&vpll2>;
--	vdda_video-supply = <&video_reg>;
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&dss_dpi_pins1>;
- 	port {
-@@ -124,44 +123,20 @@
- 		display0 = &lcd0;
+diff --git a/arch/arm/boot/dts/am3517-evm.dts b/arch/arm/boot/dts/am3517-evm.dts
+index ebfe28c2f544..a1fd3e63e86e 100644
+--- a/arch/arm/boot/dts/am3517-evm.dts
++++ b/arch/arm/boot/dts/am3517-evm.dts
+@@ -124,10 +124,11 @@
  	};
  
--	video_reg: video_reg {
--		pinctrl-names = "default";
--		pinctrl-0 = <&panel_pwr_pins>;
--		compatible = "regulator-fixed";
--		regulator-name = "fixed-supply";
--		regulator-min-microvolt = <3300000>;
--		regulator-max-microvolt = <3300000>;
--		gpio = <&gpio5 27 GPIO_ACTIVE_HIGH>;	/* gpio155, lcd INI */
--	};
--
- 	lcd0: display {
+ 	lcd0: display@0 {
 -		compatible = "panel-dpi";
 +		/* This isn't the exact LCD, but the timings meet spec */
 +		/* To make it work, set CONFIG_OMAP2_DSS_MIN_FCK_PER_PCK=4 */
 +		compatible = "newhaven,nhd-4.3-480272ef-atxl";
  		label = "15";
 -		status = "okay";
--		/* default-on; */
- 		pinctrl-names = "default";
--
-+		pinctrl-0 = <&panel_pwr_pins>;
+-		pinctrl-names = "default";
 +		backlight = <&bl>;
-+		enable-gpios = <&gpio5 27 GPIO_ACTIVE_HIGH>;
- 		port {
- 			lcd_in: endpoint {
+ 		enable-gpios = <&gpio6 16 GPIO_ACTIVE_HIGH>;	/* gpio176, lcd INI */
+ 		vcc-supply = <&vdd_io_reg>;
+ 
+@@ -136,22 +137,6 @@
  				remote-endpoint = <&dpi_out>;
  			};
  		};
