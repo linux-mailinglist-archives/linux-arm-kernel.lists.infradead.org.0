@@ -2,56 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8849EA0150
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:09:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 356ADA015B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:11:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=viF8aK9QFxRvnzXfbHVXVoVb/lJVJilsQwBl7mCuDCQ=; b=V8MNZZ5SDVPeop
-	KxTEeyNXeZqEJRDSc+CIrSdiCOd87k0qeWBDIpSmCtgP1KYXBzeUTEQocBN4uCgS7L9gjydCYpSxq
-	2LyUV8b5ltT57LRQ1aLUM6t9kw8fIV3skpughtNq45mxikFn2lFNa90E++lolJ8WOWi8Z89tziRON
-	vIGRVutNfpZNHjdhPbPcnZ0oHGLQvcbyQ1eE5O0ZSC5JLaUm6QFUIh1c/b1VT7N8/0qEe20GusJre
-	jMozA1VFUyG14n+Et+8TQtcUI6aUPJH22LIb3VBtHyBd+5tBdKVnlcGJW3cSCMO+ajAcD1Mp2xlCs
-	+UIKLLXOsrQlQoONwhng==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	In-Reply-To:List-Owner; bh=ghSRfdT6RLU6OFq39Qeg4j3TsqVszqdS+hZ30s2jMOE=; b=nl
+	KbpGdnKh24XnPJJc3hGPZhY6gjdVN5LYoSlqwEOksScY124DkQf18dKx38WOJzqqfnYChZwySOm6q
+	jGAlxI3yCsYTzPXsnwi6Y0HjvsnsbtVUdmwAsGGouphK5cgRGA3QX5gCTShFx8owouk69YcjMvK+h
+	eElltj60BnK8minrhXK9WAcN6UXYiRWNJSFrv9oxqRGmCH8DCoLlBhxNbNhddZYYWxrNBWDmPdJvY
+	S/uYGLXld8RnNuQgskRXaVlA9zkNqYVsq2Uh9hBNRyfXteefju2WXvudvKbuLBvggqTscZ2HJN74j
+	LLQaZZikKcSCgi7TDVxu9NLq9bug24ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2wlf-0003PP-DE; Wed, 28 Aug 2019 12:09:39 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i2wlL-0003Or-Ig
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:09:21 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2CA1D344;
- Wed, 28 Aug 2019 05:09:18 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AE7EA3F246;
- Wed, 28 Aug 2019 05:09:16 -0700 (PDT)
-Subject: Re: [PATCH v3 01/10] KVM: arm64: Document PV-time interface
-To: Christoffer Dall <christoffer.dall@arm.com>
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-2-steven.price@arm.com>
- <20190827085706.GB6541@e113682-lin.lund.arm.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <37eaf54b-8a22-8483-a372-419bfa1475f1@arm.com>
-Date: Wed, 28 Aug 2019 13:09:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190827085706.GB6541@e113682-lin.lund.arm.com>
-Content-Language: en-GB
+	id 1i2wn4-0005Vk-Gh; Wed, 28 Aug 2019 12:11:06 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2wmF-000560-Ld
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:10:17 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190828121013euoutp0268380c902bc8e119049405e98ba62691~-FO9Nr4IS3225332253euoutp02y
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 28 Aug 2019 12:10:13 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190828121013euoutp0268380c902bc8e119049405e98ba62691~-FO9Nr4IS3225332253euoutp02y
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1566994213;
+ bh=qxg4eKkn9BtPXnVTuj1QUTi1vX7GlxQmt1hcIeadHos=;
+ h=From:To:Cc:Subject:Date:References:From;
+ b=bRTWTw4wzxEHkrMo2WUEvkFhTku57hHpM3J7ai2LEk3KW9IpnQrrOuolVGbRlT9LJ
+ l3qfXG1GDdQ0FeTdkq+yNjRX0mbKY6JbnXfWRY/sPxyRrQu8vrIKqjIPk9UvFiVsxR
+ /mb7XVhAuIoKQrHf0JGMBS/wwmJs24m9O13g2xUU=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190828121012eucas1p11c684a21fd49b1eaaa47f78e7ebbd3b3~-FO8jpyTh2730927309eucas1p1V;
+ Wed, 28 Aug 2019 12:10:12 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 6C.0D.04374.42F666D5; Wed, 28
+ Aug 2019 13:10:12 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190828121011eucas1p1ff9b23536aaa79643e5fca10c02db9a0~-FO7uoFwD0721107211eucas1p1d;
+ Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190828121011eusmtrp294f9b067602613913ea20be078a736da~-FO7gjFKS1346013460eusmtrp2D;
+ Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
+X-AuditID: cbfec7f5-4ddff70000001116-3a-5d666f24c9ad
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id D8.03.04166.32F666D5; Wed, 28
+ Aug 2019 13:10:11 +0100 (BST)
+Received: from AMDC2765.DIGITAL.local (unknown [106.120.51.73]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190828121011eusmtip1126e4504de7131131ceab2154ae52630~-FO7FHqHR2349323493eusmtip1j;
+ Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+To: linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v3 0/2] Exynos SoCs: enable support for ARM Architected Timers
+Date: Wed, 28 Aug 2019 14:10:03 +0200
+Message-Id: <20190828121005.29368-1-m.szyprowski@samsung.com>
+X-Mailer: git-send-email 2.17.1
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrJIsWRmVeSWpSXmKPExsWy7djP87oq+WmxBnfeillsnLGe1eL6l+es
+ FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoLpuU
+ 1JzMstQifbsErox9vw4zF5zgq1izXKmB8TF3FyMnh4SAicSjbevYuhi5OIQEVjBKfDx2hwXC
+ +cIo0fm2jQnC+cwo8fXBDlaYlpmPD0AlljNKLF3exwbXcn/veRaQKjYBQ4mut11sILaIgLfE
+ 5DN/2UGKmAWuAnVc+wRUxMEhLBAgMbvNA6SGRUBV4tm268wgNq+ArUT/tY1MENvkJVZvOMAM
+ 0ishcIJN4t/WzewQCReJz2eXQhUJS7w6vgUqLiPxf+d8JoiGZkaJh+fWskM4PYwSl5tmMEJU
+ WUscPn6RFeQKZgFNifW79CHCjhKt9yexgYQlBPgkbrwVBAkzA5mTtk1nhgjzSnS0CUFUq0nM
+ Or4Obu3BC5eYIWwPifYV+8FsIYFYiRVLfzNOYJSbhbBrASPjKkbx1NLi3PTUYuO81HK94sTc
+ 4tK8dL3k/NxNjMAEcPrf8a87GPf9STrEKMDBqMTDm5CcFivEmlhWXJl7iFGCg1lJhPeRSmqs
+ EG9KYmVValF+fFFpTmrxIUZpDhYlcd5qhgfRQgLpiSWp2ampBalFMFkmDk6pBsaq8xf/P1jl
+ yVm/YPX3mR/W7tst6fQhWWTXruBtyy7ua5kdKf7yqvkelyaxvtvXb0fvUnN81L7J/KbHp6p+
+ L7n1/neF12gIMYVeyVwxZQufd7z3Ak6rvc/l2Db9Nu8vX2g0g/fQjivaWnLbprD7vW+bqBqW
+ t9s1fP3HBb7vNrs6lvxhkv97a8VCJZbijERDLeai4kQA55TycPwCAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrHLMWRmVeSWpSXmKPExsVy+t/xu7rK+WmxBjvWS1tsnLGe1eL6l+es
+ FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoPZui
+ /NKSVIWM/OISW6VoQwsjPUNLCz0jE0s9Q2PzWCsjUyV9O5uU1JzMstQifbsEvYx9vw4zF5zg
+ q1izXKmB8TF3FyMnh4SAicTMxweYuhi5OIQEljJKnD58lwkiISNxcloDK4QtLPHnWhcbRNEn
+ RokVN/rYQRJsAoYSXW9BEpwcIgK+Eo/frGQBsZkFbjJK7LyjAWILC/hJ/G9YAlbPIqAq8Wzb
+ dWYQm1fAVqL/2kaoZfISqzccYJ7AyLOAkWEVo0hqaXFuem6xoV5xYm5xaV66XnJ+7iZGYNht
+ O/Zz8w7GSxuDDzEKcDAq8fAmJKfFCrEmlhVX5h5ilOBgVhLhfaSSGivEm5JYWZValB9fVJqT
+ WnyI0RRo+URmKdHkfGBM5JXEG5oamltYGpobmxubWSiJ83YIHIwREkhPLEnNTk0tSC2C6WPi
+ 4JRqYGRMs74T/zpEdtt5Hjej/iXWYQeUnqXf9pda1d05939dmamlbci6AoUbOhumxhk2vtVf
+ 3ejNy125X6hs2ylmq3Sbf4e7kxTVDZhUiwS//nK8fmiZ87y5jYzzYzU1H/y52ruH7WjdQcM9
+ dUFl12ODtj7m5rnjdL7kdqlamMtSvbMuyeyxp85cVmIpzkg01GIuKk4EAPX6TBlRAgAA
+X-CMS-MailID: 20190828121011eucas1p1ff9b23536aaa79643e5fca10c02db9a0
+X-Msg-Generator: CA
+X-RootMTR: 20190828121011eucas1p1ff9b23536aaa79643e5fca10c02db9a0
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190828121011eucas1p1ff9b23536aaa79643e5fca10c02db9a0
+References: <CGME20190828121011eucas1p1ff9b23536aaa79643e5fca10c02db9a0@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_050919_704202_770D03BF 
-X-CRM114-Status: GOOD (  30.87  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_051015_911959_58248C0C 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,185 +128,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
- linux-arm-kernel@lists.infradead.org
+Cc: Chanwoo Choi <cw00.choi@samsung.com>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 27/08/2019 09:57, Christoffer Dall wrote:
-> On Wed, Aug 21, 2019 at 04:36:47PM +0100, Steven Price wrote:
->> Introduce a paravirtualization interface for KVM/arm64 based on the
->> "Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
->>
->> This only adds the details about "Stolen Time" as the details of "Live
->> Physical Time" have not been fully agreed.
->>
->> User space can specify a reserved area of memory for the guest and
->> inform KVM to populate the memory with information on time that the host
->> kernel has stolen from the guest.
->>
->> A hypercall interface is provided for the guest to interrogate the
->> hypervisor's support for this interface and the location of the shared
->> memory structures.
->>
->> Signed-off-by: Steven Price <steven.price@arm.com>
->> ---
->>  Documentation/virt/kvm/arm/pvtime.txt | 100 ++++++++++++++++++++++++++
->>  1 file changed, 100 insertions(+)
->>  create mode 100644 Documentation/virt/kvm/arm/pvtime.txt
->>
->> diff --git a/Documentation/virt/kvm/arm/pvtime.txt b/Documentation/virt/kvm/arm/pvtime.txt
->> new file mode 100644
->> index 000000000000..1ceb118694e7
->> --- /dev/null
->> +++ b/Documentation/virt/kvm/arm/pvtime.txt
->> @@ -0,0 +1,100 @@
->> +Paravirtualized time support for arm64
->> +======================================
->> +
->> +Arm specification DEN0057/A defined a standard for paravirtualised time
->> +support for AArch64 guests:
->> +
->> +https://developer.arm.com/docs/den0057/a
->> +
->> +KVM/arm64 implements the stolen time part of this specification by providing
->> +some hypervisor service calls to support a paravirtualized guest obtaining a
->> +view of the amount of time stolen from its execution.
->> +
->> +Two new SMCCC compatible hypercalls are defined:
->> +
->> +PV_FEATURES 0xC5000020
->> +PV_TIME_ST  0xC5000022
->> +
->> +These are only available in the SMC64/HVC64 calling convention as
->> +paravirtualized time is not available to 32 bit Arm guests. The existence of
->> +the PV_FEATURES hypercall should be probed using the SMCCC 1.1 ARCH_FEATURES
->> +mechanism before calling it.
->> +
->> +PV_FEATURES
->> +    Function ID:  (uint32)  : 0xC5000020
->> +    PV_func_id:   (uint32)  : Either PV_TIME_LPT or PV_TIME_ST
->> +    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
->> +                              PV-time feature is supported by the hypervisor.
->> +
->> +PV_TIME_ST
->> +    Function ID:  (uint32)  : 0xC5000022
->> +    Return value: (int64)   : IPA of the stolen time data structure for this
->> +                              (V)CPU. On failure:
->> +                              NOT_SUPPORTED (-1)
->> +
->> +The IPA returned by PV_TIME_ST should be mapped by the guest as normal memory
->> +with inner and outer write back caching attributes, in the inner shareable
->> +domain. A total of 16 bytes from the IPA returned are guaranteed to be
->> +meaningfully filled by the hypervisor (see structure below).
->> +
->> +PV_TIME_ST returns the structure for the calling VCPU.
->> +
->> +Stolen Time
->> +-----------
->> +
->> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
->> +
->> +  Field       | Byte Length | Byte Offset | Description
->> +  ----------- | ----------- | ----------- | --------------------------
->> +  Revision    |      4      |      0      | Must be 0 for version 0.1
->> +  Attributes  |      4      |      4      | Must be 0
->> +  Stolen time |      8      |      8      | Stolen time in unsigned
->> +              |             |             | nanoseconds indicating how
->> +              |             |             | much time this VCPU thread
->> +              |             |             | was involuntarily not
->> +              |             |             | running on a physical CPU.
->> +
->> +The structure will be updated by the hypervisor prior to scheduling a VCPU. It
->> +will be present within a reserved region of the normal memory given to the
->> +guest. The guest should not attempt to write into this memory. There is a
->> +structure per VCPU of the guest.
->> +
->> +User space interface
->> +====================
->> +
->> +User space can request that KVM provide the paravirtualized time interface to
->> +a guest by creating a KVM_DEV_TYPE_ARM_PV_TIME device, for example:
->> +
->> +    struct kvm_create_device pvtime_device = {
->> +            .type = KVM_DEV_TYPE_ARM_PV_TIME,
->> +            .attr = 0,
->> +            .flags = 0,
->> +    };
->> +
->> +    pvtime_fd = ioctl(vm_fd, KVM_CREATE_DEVICE, &pvtime_device);
->> +
->> +Creation of the device should be done after creating the vCPUs of the virtual
->> +machine.
->> +
->> +The IPA of the structures must be given to KVM. This is the base address
->> +of an array of stolen time structures (one for each VCPU). The base address
->> +must be page aligned. The size must be at least 64 * number of VCPUs and be a
->> +multiple of PAGE_SIZE.
->> +
->> +The memory for these structures should be added to the guest in the usual
->> +manner (e.g. using KVM_SET_USER_MEMORY_REGION).
->> +
->> +For example:
->> +
->> +    struct kvm_dev_arm_st_region region = {
->> +            .gpa = <IPA of guest base address>,
->> +            .size = <size in bytes>
->> +    };
-> 
-> This feel fragile; how are you handling userspace creating VCPUs after
-> setting this up,
+Dear All,
 
-In this case as long as the structures all fit within the region created
-VCPUs can be created/destroyed at will. If the VCPU index is too high
-then the kernel will bail out in kvm_update_stolen_time() so the
-structure will not be written. I consider this case as user space
-messing up, so beyond protecting the host from the mess, user space gets
-to keep the pieces.
+ARM Architected Timers are present in all CortexA7/A15 based Samsung
+Exynos SoCs. So far they were not enabled, because there were some issues
+related to their initialization. Samsung Exynos SoCs used custom timer
+hardware - Exynos MultiCore Timer. It turned out that enabling MCT it is
+also needed to get ARM Architected Timers working, because they both
+share some common hardware blocks (global system counter).
 
-> the GPA overlapping guest memory, etc.
+This patchset enables support for ARM Architected Timer driver together
+with a standard Exynos MultiCore Timer driver, which is kept as a default
+timer source on ARM 32bit platforms. Support for ARM architected timers
+is essential for enabling proper KVM support on those platforms.
 
-Again, the (host) kernel is protected against this, but clearly this
-will end badly for the guest.
+Best regards
+Marek Szyprowski
+Samsung R&D Institute Poland
 
-> Is the
-> philosophy here that the VMM can mess up the VM if it wants, but that
-> this should never lead attacks on the host (we better hope not) and so
-> we don't care?
 
-Yes. For things like GPA overlapping guest memory it's not really the
-host's position to work out what is "guest memory". It's quite possible
-that user space could decide to place the stolen time structures right
-in the middle of guest memory - it's just up to user space to inform the
-guest what memory is usable. Obviously the expectation is that the
-shared structures would be positioned "out of the way" in GPA space in
-any normal arrangement.
+Changelog:
 
-> It seems to me setting the IPA per vcpu throught the VCPU device would
-> avoid a lot of these issues.  See
-> Documentation/virt/kvm/devices/vcpu.txt.
+v3:
+- checked the status of arch timer registers on all Exynos5 SoCs,
+  dropped 'not-fw-configured' property on most of them as requested
+  by Marc Zyngier
+- dropped enabling arch timers on Exynos3250, as there is no benefit from
+  that (none of the Exynos3250-based board boots in HYP mode)
 
-That is certainly a possibility, I'm not really sure what the benefit is
-though? It would still lead to corner cases:
+v2: https://www.spinics.net/lists/arm-kernel/msg751017.html
+- dropped MCT patches (merged to v5.1)
+- dropped timer priority change patch (merged to v5.3)
 
- * What if only some VCPUs had stolen time setup on them?
- * What if multiple VCPUs pointed to the same location?
- * The structures can still overlap with guest memory
+v1: https://www.spinics.net/lists/arm-kernel/msg751018.html
+- initial version, covers some MCT patches previously sent as a timer
+  rework for Exynos5433
 
-It's also more work to setup in user space with the only "benefit" being
-that user space could choose to organise the structures however it sees
-fit (e.g. no need for them to be contiguous in memory). But I'm not sure
-I see a use case for that flexibility.
 
-Perhaps there's some benefit I'm not seeing?
+Patch summary:
 
-Steve
+Marek Szyprowski (2):
+  ARM: dts: exynos: Add support ARM architected timers on Exynos5
+  ARM: exynos: Enable support for ARM architected timers
+
+ arch/arm/boot/dts/exynos5420-peach-pit.dts | 4 ++++
+ arch/arm/boot/dts/exynos54xx.dtsi          | 9 +++++++++
+ arch/arm/boot/dts/exynos5800-peach-pi.dts  | 4 ++++
+ arch/arm/mach-exynos/Kconfig               | 1 +
+ 4 files changed, 18 insertions(+)
+
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
