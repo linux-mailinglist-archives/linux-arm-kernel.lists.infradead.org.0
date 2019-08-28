@@ -2,91 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1437BA02B8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:10:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4144DA02CE
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:13:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C5kbgs+0EC7yPwt9mdjTdp2OAbTEjMiSd7VyTxo2Y5c=; b=rN3mLEVwcuVTFs
-	S3XEA0lq3kGEK7OwAHqjZm0W91gjWeNKvYUk8g1LWkt0TwRkEeqEG9543MhE/xoaL+pDEZHodBN9I
-	ELcIcmlHtM79mHDvp+Jc53LwKJP1wUuFNeQ0dy2IpDC8sXoJcmlKFdEbiJs4I5z2EeXdgXAMkk+Ig
-	UsNVoepFdxWie8BOUdn3dJzJNSxpKhUSpAFCAKXVnnkX8o+ASDWXIuUswVqaMEGoqODdz0JRyvYyk
-	R79iy3rfW2rx7OSnOVn76z3QAMTq4d8Co0ybXN616cqxxb3zxRWka4B/kZsMu0Q3zCm6PzMXGhvLo
-	QJHwv4x/u3U9ifRjVhkQ==;
+	References:List-Owner; bh=tmK6Db53w+9G+oNL3rV3HYKCTA6TQ5E7t7xoP01goeQ=; b=jRl
+	C4ZZESy/WJ17h7i3dfkHYUM+UvvPnaYCZ35xdbHi7e2ZhxCeu2MRlbRHlzQ0XluBmP8w8aPANUIKK
+	608IJxv5vlX1uMz4Aw/t19b97UKit2qC+QjAliUC048mdY9WI1jG+TaHV8XfCjsX8zafgUi/TXJwm
+	PdtASQHbCLS7IAi69E43e91eUWc78dt5x2GnRPQ/td5WNYa6cUVa0KFri6LKisOOw54BvzFxQKWXE
+	E0L/lJn2dRugWUkIar91izh3fP90559ir4bhj4CfHnv+8jjzkVxuODymxzWZVyQMGg8+2vKNCzXvC
+	DwTdwpy0T6xzz7t8JjW0AhbSsafvN3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xib-0005sm-5g; Wed, 28 Aug 2019 13:10:33 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i2xlc-0008K2-5v; Wed, 28 Aug 2019 13:13:40 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xi6-00055o-Cc
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:10:04 +0000
-Received: by mail-wm1-x341.google.com with SMTP id 10so2729750wmp.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 06:10:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amarulasolutions.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=wawS8xHIKDb0yPoC13oIm4eE9WGYFE8ZkCGqZ4KzmTM=;
- b=PgjblIhbdFAoU3mBjgZWNpRi1Yqomxe6F3clcVQZyP6C62dsakkJq5kdJSnjnCCi0I
- ddkWfKQhekpCR724odl/5CUYO8pqUncytVCi0Rp2w1xzVM/NZbmW/6y7xjvPJEnR1Ax8
- OMAMkhBgh7lozq30WG4loq5m5KRXXyBP59w4c=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=wawS8xHIKDb0yPoC13oIm4eE9WGYFE8ZkCGqZ4KzmTM=;
- b=eAyhuLYL0E3laffc7Ca4uNzCf6F4PKCzyYi5F6uzya3AHiiavqbzT2/I4nn8dvy9B9
- mNjthVxe/Kh7HEHh365kw8AfYPIT/yp2UZks+DZQFwjWfIrWd7UIst09a2NdnLc5EfiP
- U17grJrWuRCBLW2difmNvN8I/+qKVgvMv03nc4sYIvhV/HvZ4/QnjlyufQYlKhtEaHhG
- BskuM+V5I1JFGPaPw5jqI0TUcQ2eOTknwovaPbEqKJNV2ISWvBwTyO4DTr6IrPB7Ku4b
- kNH/vwAMBxNFYhDosfylNot7gLrOVSqiTUeGl6yfxIzfdtS2Try0eJLQlhGDphDdoUJ5
- wfiw==
-X-Gm-Message-State: APjAAAV6xX47TOAxiqTXj8xigjLiXmvr9ox2nvUwIY6+RdhVY6xYPEw8
- CketOGDh1bd9vtlhB3E29b8fSiJoxbubC9L+c9teWg==
-X-Google-Smtp-Source: APXvYqzHlo1pAR56FBB/a/t3ecF/t59BjU8pZKjoSHTRON8xG/LvVhsLqjrZtCcYmUBx0eLLgy0DRgyXce4TJdKmHSY=
-X-Received: by 2002:a1c:f910:: with SMTP id x16mr4643906wmh.69.1566997799727; 
- Wed, 28 Aug 2019 06:09:59 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190711100100.cty3s6rs3w27low6@flea>
- <CAOf5uw=3fiMuhcj3kDtCaGNTsxHKRrYb79MXZ+yUZtmf0jU10A@mail.gmail.com>
- <20190720065830.zn3txpyduakywcva@flea>
- <CAMty3ZDE1xiNgHVLihH378dY5szzkr14V-fwLZdvPs12tY+G1A@mail.gmail.com>
- <20190720093202.6fn6xmhvsgawscnu@flea>
- <CAMty3ZDpOA1mD77t3RB6hEG7o3+ws8y64m1DU8=3HdZ4zy4AUw@mail.gmail.com>
- <20190724090513.vqnlmya3nqkl6pmu@flea>
- <CAOf5uwkvCs62zHcUoFuJwau_ZZFdnVf8ua6JY_wzUb9m8rLTTw@mail.gmail.com>
- <20190813060502.teeevudz6cjn35tl@flea>
- <CAOf5uw=RcBHibiq735NiX452Jde4ZL7PpfwH+Pkc=hARJBudUw@mail.gmail.com>
- <20190828130341.s5z76wejulwdgxlc@flea>
-In-Reply-To: <20190828130341.s5z76wejulwdgxlc@flea>
-From: Michael Nazzareno Trimarchi <michael@amarulasolutions.com>
-Date: Wed, 28 Aug 2019 15:09:47 +0200
-Message-ID: <CAOf5uwmT3-xn=nNeU-acKj8ZGSABEsUtOniPX9WuHe5gqp0BCg@mail.gmail.com>
-Subject: Re: [PATCH v6 11/22] clk: sunxi-ng: a64: Add minimum rate for PLL_MIPI
-To: Maxime Ripard <maxime.ripard@bootlin.com>
+ id 1i2xlH-000868-Ga; Wed, 28 Aug 2019 13:13:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=woN0ROv6PEXEIBeXbMtG9fMT0AAS31dCjTPW4/LOwcQ=; b=GveDK0oHvlef
+ HIK+JLwZf26sdMswa3IIbWO1vO9hTEEb38i2SV2cTz02bB7/4k3EKIHme7chBFpdpq19l6SVR5Rtz
+ fqvCgOT15R4vBNiBbvzadp6oFhxvi0ljLAvyP3/n034doNzNXbU2UETamdPUXxKH992z8XvKF3xub
+ HJYMQ=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i2xlB-0004HH-0S; Wed, 28 Aug 2019 13:13:13 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 7F3332742B9F; Wed, 28 Aug 2019 14:13:12 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Subject: Applied "regulator: Add document for MT6358 regulator" to the
+ regulator tree
+In-Reply-To: <1566531931-9772-6-git-send-email-hsin-hsiung.wang@mediatek.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190828131312.7F3332742B9F@ypsilon.sirena.org.uk>
+Date: Wed, 28 Aug 2019 14:13:12 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_061002_582048_8223F4FD 
-X-CRM114-Status: GOOD (  49.83  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190828_061319_804002_262889C8 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,307 +75,433 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, David Airlie <airlied@linux.ie>,
- Michael Turquette <mturquette@baylibre.com>,
- linux-sunxi <linux-sunxi@googlegroups.com>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- dri-devel <dri-devel@lists.freedesktop.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Jagan Teki <jagan@amarulasolutions.com>,
- Daniel Vetter <daniel@ffwll.ch>,
- linux-amarula <linux-amarula@amarulasolutions.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: Kate Stewart <kstewart@linuxfoundation.org>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>, srv_heupstream@mediatek.com,
+ devicetree@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sean Wang <sean.wang@mediatek.com>, Liam Girdwood <lgirdwood@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-kernel@vger.kernel.org,
+ Richard Fontana <rfontana@redhat.com>, Mark Brown <broonie@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>, Eddie Huang <eddie.huang@mediatek.com>,
+ Lee Jones <lee.jones@linaro.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org, linux-rtc@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime
+The patch
 
-On Wed, Aug 28, 2019 at 3:03 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
->
-> Hi,
->
-> On Thu, Aug 15, 2019 at 02:25:57PM +0200, Michael Nazzareno Trimarchi wrote:
-> > On Tue, Aug 13, 2019 at 8:05 AM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > On Mon, Jul 29, 2019 at 08:59:04AM +0200, Michael Nazzareno Trimarchi wrote:
-> > > > Hi
-> > > >
-> > > > On Wed, Jul 24, 2019 at 11:05 AM Maxime Ripard
-> > > > <maxime.ripard@bootlin.com> wrote:
-> > > > >
-> > > > > On Mon, Jul 22, 2019 at 03:51:04PM +0530, Jagan Teki wrote:
-> > > > > > Hi Maxime,
-> > > > > >
-> > > > > > On Sat, Jul 20, 2019 at 3:02 PM Maxime Ripard <maxime.ripard@bootlin.com> wrote:
-> > > > > > >
-> > > > > > > On Sat, Jul 20, 2019 at 12:46:27PM +0530, Jagan Teki wrote:
-> > > > > > > > On Sat, Jul 20, 2019 at 12:28 PM Maxime Ripard
-> > > > > > > > <maxime.ripard@bootlin.com> wrote:
-> > > > > > > > >
-> > > > > > > > > On Thu, Jul 11, 2019 at 07:43:16PM +0200, Michael Nazzareno Trimarchi wrote:
-> > > > > > > > > > > > tcon-pixel clock is the rate that you want to achive on display side
-> > > > > > > > > > > > and if you have 4 lanes 32bit or lanes and different bit number that
-> > > > > > > > > > > > you need to have a clock that is able to put outside bits and speed
-> > > > > > > > > > > > equal to pixel-clock * bits / lanes. so If you want a pixel-clock of
-> > > > > > > > > > > > 40 mhz and you have 32bits and 4 lanes you need to have a clock of
-> > > > > > > > > > > > 40 * 32 / 4 in no-burst mode. I think that this is done but most of
-> > > > > > > > > > > > the display.
-> > > > > > > > > > >
-> > > > > > > > > > > So this is what the issue is then?
-> > > > > > > > > > >
-> > > > > > > > > > > This one does make sense, and you should just change the rate in the
-> > > > > > > > > > > call to clk_set_rate in sun4i_tcon0_mode_set_cpu.
-> > > > > > > > > > >
-> > > > > > > > > > > I'm still wondering why that hasn't been brought up in either the
-> > > > > > > > > > > discussion or the commit log before though.
-> > > > > > > > > > >
-> > > > > > > > > > Something like this?
-> > > > > > > > > >
-> > > > > > > > > > drivers/gpu/drm/sun4i/sun4i_tcon.c     | 20 +++++++++++---------
-> > > > > > > > > >  drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h |  2 --
-> > > > > > > > > >  2 files changed, 11 insertions(+), 11 deletions(-)
-> > > > > > > > > >
-> > > > > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > > > > > > > b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > > > > > > > index 64c43ee6bd92..42560d5c327c 100644
-> > > > > > > > > > --- a/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > > > > > > > +++ b/drivers/gpu/drm/sun4i/sun4i_tcon.c
-> > > > > > > > > > @@ -263,10 +263,11 @@ static int sun4i_tcon_get_clk_delay(const struct
-> > > > > > > > > > drm_display_mode *mode,
-> > > > > > > > > >  }
-> > > > > > > > > >
-> > > > > > > > > >  static void sun4i_tcon0_mode_set_common(struct sun4i_tcon *tcon,
-> > > > > > > > > > -                                       const struct drm_display_mode *mode)
-> > > > > > > > > > +                                       const struct drm_display_mode *mode,
-> > > > > > > > > > +                                       u32 tcon_mul)
-> > > > > > > > > >  {
-> > > > > > > > > >         /* Configure the dot clock */
-> > > > > > > > > > -       clk_set_rate(tcon->dclk, mode->crtc_clock * 1000);
-> > > > > > > > > > +       clk_set_rate(tcon->dclk, mode->crtc_clock * tcon_mul * 1000);
-> > > > > > > > > >
-> > > > > > > > > >         /* Set the resolution */
-> > > > > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_BASIC0_REG,
-> > > > > > > > > > @@ -335,12 +336,13 @@ static void sun4i_tcon0_mode_set_cpu(struct
-> > > > > > > > > > sun4i_tcon *tcon,
-> > > > > > > > > >         u8 bpp = mipi_dsi_pixel_format_to_bpp(device->format);
-> > > > > > > > > >         u8 lanes = device->lanes;
-> > > > > > > > > >         u32 block_space, start_delay;
-> > > > > > > > > > -       u32 tcon_div;
-> > > > > > > > > > +       u32 tcon_div, tcon_mul;
-> > > > > > > > > >
-> > > > > > > > > > -       tcon->dclk_min_div = SUN6I_DSI_TCON_DIV;
-> > > > > > > > > > -       tcon->dclk_max_div = SUN6I_DSI_TCON_DIV;
-> > > > > > > > > > +       tcon->dclk_min_div = 4;
-> > > > > > > > > > +       tcon->dclk_max_div = 127;
-> > > > > > > > > >
-> > > > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > > > > > > > > +       tcon_mul = bpp / lanes;
-> > > > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, tcon_mul);
-> > > > > > > > > >
-> > > > > > > > > >         /* Set dithering if needed */
-> > > > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
-> > > > > > > > > > @@ -366,7 +368,7 @@ static void sun4i_tcon0_mode_set_cpu(struct
-> > > > > > > > > > sun4i_tcon *tcon,
-> > > > > > > > > >          */
-> > > > > > > > > >         regmap_read(tcon->regs, SUN4I_TCON0_DCLK_REG, &tcon_div);
-> > > > > > > > > >         tcon_div &= GENMASK(6, 0);
-> > > > > > > > > > -       block_space = mode->htotal * bpp / (tcon_div * lanes);
-> > > > > > > > > > +       block_space = mode->htotal * tcon_div * tcon_mul;
-> > > > > > > > > >         block_space -= mode->hdisplay + 40;
-> > > > > > > > > >
-> > > > > > > > > >         regmap_write(tcon->regs, SUN4I_TCON0_CPU_TRI0_REG,
-> > > > > > > > > > @@ -408,7 +410,7 @@ static void sun4i_tcon0_mode_set_lvds(struct
-> > > > > > > > > > sun4i_tcon *tcon,
-> > > > > > > > > >
-> > > > > > > > > >         tcon->dclk_min_div = 7;
-> > > > > > > > > >         tcon->dclk_max_div = 7;
-> > > > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
-> > > > > > > > > >
-> > > > > > > > > >         /* Set dithering if needed */
-> > > > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, sun4i_tcon_get_connector(encoder));
-> > > > > > > > > > @@ -487,7 +489,7 @@ static void sun4i_tcon0_mode_set_rgb(struct
-> > > > > > > > > > sun4i_tcon *tcon,
-> > > > > > > > > >
-> > > > > > > > > >         tcon->dclk_min_div = 6;
-> > > > > > > > > >         tcon->dclk_max_div = 127;
-> > > > > > > > > > -       sun4i_tcon0_mode_set_common(tcon, mode);
-> > > > > > > > > > +       sun4i_tcon0_mode_set_common(tcon, mode, 1);
-> > > > > > > > > >
-> > > > > > > > > >         /* Set dithering if needed */
-> > > > > > > > > >         sun4i_tcon0_mode_set_dithering(tcon, connector);
-> > > > > > > > > > diff --git a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > > > > > > > > b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > > > > > > > > index 5c3ad5be0690..a07090579f84 100644
-> > > > > > > > > > --- a/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > > > > > > > > +++ b/drivers/gpu/drm/sun4i/sun6i_mipi_dsi.h
-> > > > > > > > > > @@ -13,8 +13,6 @@
-> > > > > > > > > >  #include <drm/drm_encoder.h>
-> > > > > > > > > >  #include <drm/drm_mipi_dsi.h>
-> > > > > > > > > >
-> > > > > > > > > > -#define SUN6I_DSI_TCON_DIV     4
-> > > > > > > > > > -
-> > > > > > > > > >  struct sun6i_dsi {
-> > > > > > > > > >         struct drm_connector    connector;
-> > > > > > > > > >         struct drm_encoder      encoder;
-> > > > > > > > >
-> > > > > > > > > I had more something like this in mind:
-> > > > > > > > > http://code.bulix.org/nlp5a4-803511
-> > > > > > > >
-> > > > > > > > Worth to look at it. was it working on your panel? meanwhile I will check it.
-> > > > > > >
-> > > > > > > I haven't tested it.
-> > > > > > >
-> > > > > > > > We have updated with below change [1], seems working on but is
-> > > > > > > > actually checking the each divider as before start with 4... till 127.
-> > > > > > > >
-> > > > > > > > This new approach, is start looking the best divider from 4.. based on
-> > > > > > > > the idea vs rounded it will ended up best divider like [2]
-> > > > > > >
-> > > > > > > But why?
-> > > > > > >
-> > > > > > > I mean, it's not like it's the first time I'm asking this...
-> > > > > > >
-> > > > > > > If the issue is what Micheal described, then the divider has nothing
-> > > > > > > to do with it. We've had that discussion over and over again.
-> > > > > >
-> > > > > > This is what Michael is mentioned in above mail "tcon-pixel clock is
-> > > > > > the rate that you want to achive on display side and if you have 4
-> > > > > > lanes 32bit or lanes and different bit number that you need to have
-> > > > > > a clock that is able to put outside bits and speed equal to
-> > > > > > pixel-clock * bits / lanes. so If you want a pixel-clock of 40 mhz
-> > > > > > and you have 32bits and 4 lanes you need to have a clock of 40 * 32
-> > > > > > / 4 in no-burst mode. "
-> > > > >
-> > > > > Yeah, so we need to change the clock rate.
-> > > > >
-> > > > > > He is trying to manage the bpp/lanes into dclk_mul (in last mail)
-> > > > > > and it can multiply with pixel clock which is rate argument in
-> > > > > > sun4i_dclk_round_rate.
-> > > > > >
-> > > > > > The solution I have mentioned in dclk_min, max is bpp/lanes also
-> > > > > > multiple rate in dotclock sun4i_dclk_round_rate.
-> > > > > >
-> > > > > > In both cases the overall pll_rate depends on dividers, the one that I
-> > > > > > have on this patch is based on BSP and the Michael one is more generic
-> > > > > > way so-that it can not to touch other functionalities and looping
-> > > > > > dividers to find the best one.
-> > > > > >
-> > > > > > If dclk_min/max is bpp/lanes then dotclock directly using divider 6
-> > > > > > (assuming 24-bit and 4 lanes) and return the pll_rate and divider 6
-> > > > > > associated.
-> > > > > >
-> > > > > > if dclk_mul is bpp/lanes, on Michael new change, the dividers start
-> > > > > > with 4 and end with 127 but the constant ideal rate which rate *
-> > > > > > bpp/lanes but the loop from sun4i_dclk_round_rate computed the divider
-> > > > > > as 6 only, ie what I'm mentioned on the above mail.
-> > > > >
-> > > > > We've been over this a couple of times already.
-> > > > >
-> > > > > The clock is generated like this:
-> > > > >
-> > > > > PLL -> TCON Module Clock -> TCON DCLK
-> > > > >
-> > > > > You want the TCON DCLK to be at the pixel clock rate * bpp /
-> > > > > lanes. Fine, that makes sense.
-> > > > >
-> > > > > Except that the patch you've sent, instead of changing the rate
-> > > > > itself, changes the ratio between the module clock and DCLK.
-> > > > >
-> > > > > And this is where the issue lies. First, from a logical viewpoint, it
-> > > > > doesn't make sense. If you want to change the clock rate, then just do
-> > > > > it. Don't hack around the multipliers trying to fall back to something
-> > > > > that works for you.
-> > > > >
-> > > > > Then, the ratio itself needs to be set to 4. This is the part that
-> > > > > we've discussed way too many times already, but in the Allwinner BSP,
-> > > > > that ratio is hardcoded to 4, and we've had panels that need it at
-> > > > > that value.
-> > > > >
-> > > > > So, what you want to do is to have:
-> > > > >
-> > > > > TCON DCLK = pixel clock * bpp / lanes
-> > > > > TCON Module Clock = DCLK * 4
-> > > > > PLL = Module Clock * Module Clock Divider (which I believe is 1 in most cases)
-> > > >
-> > > >   pll-mipi                       1        1        1   178200000
-> > > >    0     0  50000
-> > > >           tcon0                       2        2        1   178200000
-> > > >         0     0  50000
-> > > >              tcon-pixel-clock         1        1        1    29700000
-> > > >         0     0  50000
-> > >
-> > > Is this before or after your patches?
-> > >
-> >
-> > This is just an example of clock tree to be clear to everyone how they
-> > are connected
-> >
-> > > > This is an english problem from my side:
-> > > > tcon-pixel-clock is DCLK
-> > > > tcon0 must be tcon-pixel-clock * bpp / lanes, because the logic need to
-> > > > put a bit every cycle.
-> > >
-> > > Again, I'm not saying this is wrong, but each time I've looked at it
-> > > the BSP was using a 4 divider between the tcon module clock and the
-> > > dotclock.
-> >
-> > We have tested on 4-5 displays. Well I don't care on bsp but I care
-> > about if it works and if other SoC has similar approach on clock
-> > calculation.
->
-> Well, it's also breaking another panel.
->
+   regulator: Add document for MT6358 regulator
 
-Agree but I need to have the panel. Do you know if we have users of this panel?
-I don't want to break the users off course. Can I have your clk_tree
-dbg of your devices
-the panel datasheet?
+has been applied to the regulator tree at
 
-> > > So, please prove me wrong here.
-> >
-> > Having only 10 pages of documentation is a bit difficult.
->
-> The BSP source code will be a fine example too.
->
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.4
 
-Do you have any contact in allwinner?
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Let's be this last email, I don't want to bother the people more.
-After I get the panel
-info and datasheet I will come back if I found a solution that does not break it
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-Michael
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> > > > One solution can be:
-> > > > - set_rate_exclusive to tcon0 and calculate as display pixel clock *
-> > > > bpp  / lanes
-> > >
-> > > I'm not sure what set_rate_exclusive has to do with it. I mean, it's a
-> > > good idea to use it, but it shouldn't really change anything to the
-> > > discussion.
-> >
-> > Well, this will just do a minimal change on source code and put the constrains
-> > to the tcon0
->
-> I agree, but again, this has nothing to do with the current discussion.
->
-> Maxime
->
-> --
-> Maxime Ripard, Bootlin
-> Embedded Linux and Kernel engineering
-> https://bootlin.com
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
+Thanks,
+Mark
 
+From fa00eb4eb2361ffc594bd9c6d78c585e7112c5dc Mon Sep 17 00:00:00 2001
+From: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Date: Fri, 23 Aug 2019 11:45:26 +0800
+Subject: [PATCH] regulator: Add document for MT6358 regulator
 
+add dt-binding document for MediaTek MT6358 PMIC
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+Signed-off-by: Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>
+Link: https://lore.kernel.org/r/1566531931-9772-6-git-send-email-hsin-hsiung.wang@mediatek.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ .../bindings/regulator/mt6358-regulator.txt   | 358 ++++++++++++++++++
+ 1 file changed, 358 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/regulator/mt6358-regulator.txt
+
+diff --git a/Documentation/devicetree/bindings/regulator/mt6358-regulator.txt b/Documentation/devicetree/bindings/regulator/mt6358-regulator.txt
+new file mode 100644
+index 000000000000..9a90a92f2d7e
+--- /dev/null
++++ b/Documentation/devicetree/bindings/regulator/mt6358-regulator.txt
+@@ -0,0 +1,358 @@
++MediaTek MT6358 Regulator
++
++All voltage regulators provided by the MT6358 PMIC are described as the
++subnodes of the MT6358 regulators node. Each regulator is named according
++to its regulator type, buck_<name> and ldo_<name>. The definition for each
++of these nodes is defined using the standard binding for regulators at
++Documentation/devicetree/bindings/regulator/regulator.txt.
++
++The valid names for regulators are::
++BUCK:
++  buck_vdram1, buck_vcore, buck_vpa, buck_vproc11, buck_vproc12, buck_vgpu,
++  buck_vs2, buck_vmodem, buck_vs1
++LDO:
++  ldo_vdram2, ldo_vsim1, ldo_vibr, ldo_vrf12, ldo_vio18, ldo_vusb, ldo_vcamio,
++  ldo_vcamd, ldo_vcn18, ldo_vfe28, ldo_vsram_proc11, ldo_vcn28, ldo_vsram_others,
++  ldo_vsram_gpu, ldo_vxo22, ldo_vefuse, ldo_vaux18, ldo_vmch, ldo_vbif28,
++  ldo_vsram_proc12, ldo_vcama1, ldo_vemc, ldo_vio28, ldo_va12, ldo_vrf18,
++  ldo_vcn33_bt, ldo_vcn33_wifi, ldo_vcama2, ldo_vmc, ldo_vldo28, ldo_vaud28,
++  ldo_vsim2
++
++Example:
++
++	pmic {
++		compatible = "mediatek,mt6358";
++
++		mt6358regulator: mt6358regulator {
++			compatible = "mediatek,mt6358-regulator";
++
++			mt6358_vdram1_reg: buck_vdram1 {
++				regulator-compatible = "buck_vdram1";
++				regulator-name = "vdram1";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <2087500>;
++				regulator-ramp-delay = <12500>;
++				regulator-enable-ramp-delay = <0>;
++				regulator-always-on;
++			};
++
++			mt6358_vcore_reg: buck_vcore {
++				regulator-name = "vcore";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <200>;
++				regulator-always-on;
++			};
++
++			mt6358_vpa_reg: buck_vpa {
++				regulator-name = "vpa";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <3650000>;
++				regulator-ramp-delay = <50000>;
++				regulator-enable-ramp-delay = <250>;
++			};
++
++			mt6358_vproc11_reg: buck_vproc11 {
++				regulator-name = "vproc11";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <200>;
++				regulator-always-on;
++			};
++
++			mt6358_vproc12_reg: buck_vproc12 {
++				regulator-name = "vproc12";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <200>;
++				regulator-always-on;
++			};
++
++			mt6358_vgpu_reg: buck_vgpu {
++				regulator-name = "vgpu";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <200>;
++			};
++
++			mt6358_vs2_reg: buck_vs2 {
++				regulator-name = "vs2";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <2087500>;
++				regulator-ramp-delay = <12500>;
++				regulator-enable-ramp-delay = <0>;
++				regulator-always-on;
++			};
++
++			mt6358_vmodem_reg: buck_vmodem {
++				regulator-name = "vmodem";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <900>;
++				regulator-always-on;
++			};
++
++			mt6358_vs1_reg: buck_vs1 {
++				regulator-name = "vs1";
++				regulator-min-microvolt = <1000000>;
++				regulator-max-microvolt = <2587500>;
++				regulator-ramp-delay = <12500>;
++				regulator-enable-ramp-delay = <0>;
++				regulator-always-on;
++			};
++
++			mt6358_vdram2_reg: ldo_vdram2 {
++				regulator-name = "vdram2";
++				regulator-min-microvolt = <600000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <3300>;
++			};
++
++			mt6358_vsim1_reg: ldo_vsim1 {
++				regulator-name = "vsim1";
++				regulator-min-microvolt = <1700000>;
++				regulator-max-microvolt = <3100000>;
++				regulator-enable-ramp-delay = <540>;
++			};
++
++			mt6358_vibr_reg: ldo_vibr {
++				regulator-name = "vibr";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <60>;
++			};
++
++			mt6358_vrf12_reg: ldo_vrf12 {
++				compatible = "regulator-fixed";
++				regulator-name = "vrf12";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1200000>;
++				regulator-enable-ramp-delay = <120>;
++			};
++
++			mt6358_vio18_reg: ldo_vio18 {
++				compatible = "regulator-fixed";
++				regulator-name = "vio18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <2700>;
++				regulator-always-on;
++			};
++
++			mt6358_vusb_reg: ldo_vusb {
++				regulator-name = "vusb";
++				regulator-min-microvolt = <3000000>;
++				regulator-max-microvolt = <3100000>;
++				regulator-enable-ramp-delay = <270>;
++				regulator-always-on;
++			};
++
++			mt6358_vcamio_reg: ldo_vcamio {
++				compatible = "regulator-fixed";
++				regulator-name = "vcamio";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vcamd_reg: ldo_vcamd {
++				regulator-name = "vcamd";
++				regulator-min-microvolt = <900000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vcn18_reg: ldo_vcn18 {
++				compatible = "regulator-fixed";
++				regulator-name = "vcn18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vfe28_reg: ldo_vfe28 {
++				compatible = "regulator-fixed";
++				regulator-name = "vfe28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vsram_proc11_reg: ldo_vsram_proc11 {
++				regulator-name = "vsram_proc11";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <240>;
++				regulator-always-on;
++			};
++
++			mt6358_vcn28_reg: ldo_vcn28 {
++				compatible = "regulator-fixed";
++				regulator-name = "vcn28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vsram_others_reg: ldo_vsram_others {
++				regulator-name = "vsram_others";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <240>;
++				regulator-always-on;
++			};
++
++			mt6358_vsram_gpu_reg: ldo_vsram_gpu {
++				regulator-name = "vsram_gpu";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <240>;
++			};
++
++			mt6358_vxo22_reg: ldo_vxo22 {
++				compatible = "regulator-fixed";
++				regulator-name = "vxo22";
++				regulator-min-microvolt = <2200000>;
++				regulator-max-microvolt = <2200000>;
++				regulator-enable-ramp-delay = <120>;
++				regulator-always-on;
++			};
++
++			mt6358_vefuse_reg: ldo_vefuse {
++				regulator-name = "vefuse";
++				regulator-min-microvolt = <1700000>;
++				regulator-max-microvolt = <1900000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vaux18_reg: ldo_vaux18 {
++				compatible = "regulator-fixed";
++				regulator-name = "vaux18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vmch_reg: ldo_vmch {
++				regulator-name = "vmch";
++				regulator-min-microvolt = <2900000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <60>;
++			};
++
++			mt6358_vbif28_reg: ldo_vbif28 {
++				compatible = "regulator-fixed";
++				regulator-name = "vbif28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vsram_proc12_reg: ldo_vsram_proc12 {
++				regulator-name = "vsram_proc12";
++				regulator-min-microvolt = <500000>;
++				regulator-max-microvolt = <1293750>;
++				regulator-ramp-delay = <6250>;
++				regulator-enable-ramp-delay = <240>;
++				regulator-always-on;
++			};
++
++			mt6358_vcama1_reg: ldo_vcama1 {
++				regulator-name = "vcama1";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vemc_reg: ldo_vemc {
++				regulator-name = "vemc";
++				regulator-min-microvolt = <2900000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <60>;
++				regulator-always-on;
++			};
++
++			mt6358_vio28_reg: ldo_vio28 {
++				compatible = "regulator-fixed";
++				regulator-name = "vio28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_va12_reg: ldo_va12 {
++				compatible = "regulator-fixed";
++				regulator-name = "va12";
++				regulator-min-microvolt = <1200000>;
++				regulator-max-microvolt = <1200000>;
++				regulator-enable-ramp-delay = <270>;
++				regulator-always-on;
++			};
++
++			mt6358_vrf18_reg: ldo_vrf18 {
++				compatible = "regulator-fixed";
++				regulator-name = "vrf18";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <1800000>;
++				regulator-enable-ramp-delay = <120>;
++			};
++
++			mt6358_vcn33_bt_reg: ldo_vcn33_bt {
++				regulator-name = "vcn33_bt";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3500000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vcn33_wifi_reg: ldo_vcn33_wifi {
++				regulator-name = "vcn33_wifi";
++				regulator-min-microvolt = <3300000>;
++				regulator-max-microvolt = <3500000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vcama2_reg: ldo_vcama2 {
++				regulator-name = "vcama2";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vmc_reg: ldo_vmc {
++				regulator-name = "vmc";
++				regulator-min-microvolt = <1800000>;
++				regulator-max-microvolt = <3300000>;
++				regulator-enable-ramp-delay = <60>;
++			};
++
++			mt6358_vldo28_reg: ldo_vldo28 {
++				regulator-name = "vldo28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <3000000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vaud28_reg: ldo_vaud28 {
++				compatible = "regulator-fixed";
++				regulator-name = "vaud28";
++				regulator-min-microvolt = <2800000>;
++				regulator-max-microvolt = <2800000>;
++				regulator-enable-ramp-delay = <270>;
++			};
++
++			mt6358_vsim2_reg: ldo_vsim2 {
++				regulator-name = "vsim2";
++				regulator-min-microvolt = <1700000>;
++				regulator-max-microvolt = <3100000>;
++				regulator-enable-ramp-delay = <540>;
++			};
++		};
++	};
 -- 
-| Michael Nazzareno Trimarchi                     Amarula Solutions BV |
-| COO  -  Founder                                      Cruquiuskade 47 |
-| +31(0)851119172                                 Amsterdam 1018 AM NL |
-|                  [`as] http://www.amarulasolutions.com               |
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
