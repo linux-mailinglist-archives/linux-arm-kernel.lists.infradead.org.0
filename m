@@ -2,57 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63256A0689
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 17:44:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5833DA06C2
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 17:56:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ieUUTuX6j/EFNPK3Y2rF0b+mgC8RvyRxjR1hyxeRU08=; b=P71LhsuDXqsAPF
-	dDG922KwoA+37v7x34o/z/aH68Si/Q5Rtuxb8P5cg/0mhsUwW9nCpYD5hab1oPRCiGpT6SAZFgMWI
-	75DIwwJoDyl3/VBK216bYAOMQQqTBkSH13T8OdtOtRVc547PEMHVHV2Pkr5CtHvgXBOmcbK6lQ6WW
-	c+PchQaKwBp8P4zOnzNWWGFxsybOz58J4dwPeSye7iT2p6vtCRleVqsGmv4HIjBsw6LLKN4Qyt2vo
-	LXBuMG5nf/TMSaaRK4zkDlpyV+0nl9yxpQSNa8G1aOCrWwuSFLKC7DWTJtaUXlBWJk3hVFzwsQEq5
-	Wqid84KROK85JCafQxhg==;
+	List-Owner; bh=HSRejY/IPv/i3uaHyzBvbZHY5fjqf0llHOKx57GdUTI=; b=VGRi8Mk2wv62ZD
+	uqV/uRc0EY9bAd7k6gSqFsCfsIgRDoJEr2AsOai+2mtN46Z22ezYvaXEsvqFmpLdXIwVARRprOb8E
+	KSiuvmGi9eUO9oGJ/E0HGjClIIXKsGctEZXBXTjiMzJRzz+ZkeTMa3z/nx1g6dpPyI8tqZy/+QSsp
+	oUMK91/uOtkwT9fBNQs7I4ow3NR3gGJyasMxId/rZ7T1JDwkKXXJK86LYODquU5TFUfMSDKV3TLHA
+	wfSUtjQCpoxbX3w9iMjeDM/V3AILpkKqYpdqJTwWdpaXaKFltV6DhQ76/kat1xAcT5jIp2k729YjT
+	jIYMplEt2kUZK+jz40QQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i307j-0002WM-TU; Wed, 28 Aug 2019 15:44:40 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i307V-0002Vk-IR
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 15:44:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E1A7728;
- Wed, 28 Aug 2019 08:44:24 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 559043F59C;
- Wed, 28 Aug 2019 08:44:24 -0700 (PDT)
-Date: Wed, 28 Aug 2019 16:44:22 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH v3 2/5] arm64: Use correct ll/sc atomic constraints
-Message-ID: <20190828154422.GA14582@e119886-lin.cambridge.arm.com>
-References: <20190812143625.42745-1-andrew.murray@arm.com>
- <20190812143625.42745-3-andrew.murray@arm.com>
- <20190822153223.GB33080@lakrids.cambridge.arm.com>
- <20190828130118.GW14582@e119886-lin.cambridge.arm.com>
- <20190828152540.GA42408@lakrids.cambridge.arm.com>
+	id 1i30In-0007KK-FO; Wed, 28 Aug 2019 15:56:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i30Ia-0007J7-Mk
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 15:55:54 +0000
+Received: from tleilax.poochiereds.net
+ (68-20-15-154.lightspeed.rlghnc.sbcglobal.net [68.20.15.154])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 765322064A;
+ Wed, 28 Aug 2019 15:55:48 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567007749;
+ bh=tm23iPOHz5qNiVmbKBRthv6o0H14qpr8dY7bd4MTQKs=;
+ h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
+ b=pqTccn5JcnucNCAhPvukewbhK7LnqfZiA1JhrrT1FDFY4mCrVB8AZyQ8GN7mLjP8y
+ 7s9EDdOPkKuIVFWDEaVrPbihjrm8teyPYUCsz+WciUJXkEpW4kr0ySk55f/ASUGrn8
+ zpEFoJeA5Hy5XDMtaE0vrkdWUVKHa2wWQhJO2xxg=
+Message-ID: <4da231cd52880991d8a038adb8fbb2ef3d724db9.camel@kernel.org>
+Subject: Re: [PATCH RESEND v11 7/8] open: openat2(2) syscall
+From: Jeff Layton <jlayton@kernel.org>
+To: sbaugh@catern.com, linux-fsdevel@vger.kernel.org
+Date: Wed, 28 Aug 2019 11:55:47 -0400
+In-Reply-To: <854l2366zp.fsf@catern.com>
+References: <20190820033406.29796-1-cyphar@cyphar.com>
+ <20190820033406.29796-8-cyphar@cyphar.com> <854l2366zp.fsf@catern.com>
+User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190828152540.GA42408@lakrids.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_084425_694381_B8789284 
-X-CRM114-Status: GOOD (  31.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190828_085552_766294_04D6F40B 
+X-CRM114-Status: GOOD (  19.07  )
+X-Spam-Score: -2.7 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,173 +78,60 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
- Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
+Cc: linux-arch@vger.kernel.org, linux-ia64@vger.kernel.org,
+ linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-api@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-mips@vger.kernel.org, linuxppc-dev@ozlabs.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 04:25:40PM +0100, Mark Rutland wrote:
-> On Wed, Aug 28, 2019 at 02:01:19PM +0100, Andrew Murray wrote:
-> > On Thu, Aug 22, 2019 at 04:32:23PM +0100, Mark Rutland wrote:
-> > > Hi Andrew,
-> > > 
-> > > On Mon, Aug 12, 2019 at 03:36:22PM +0100, Andrew Murray wrote:
-> > > > For many of the ll/sc atomic operations we use the 'I' machine constraint
-> > > > regardless to the instruction used - this may not be optimal.
-> > > >
-> > > > Let's add an additional parameter to the ATOMIC_xx macros that allows the
-> > > > caller to specify an appropriate machine constraint.
-> > > > 
-> > > > Let's also improve __CMPXCHG_CASE by replacing the 'K' constraint with a
-> > > > caller provided constraint. Please note that whilst we would like to use
-> > > > the 'K' constraint on 32 bit operations, we choose not to provide any
-> > > > constraint to avoid a GCC bug which results in a build error.
-> > > > 
-> > > > Earlier versions of GCC (no later than 8.1.0) appear to incorrectly handle
-> > > > the 'K' constraint for the value 4294967295.
-> > > 
-> > > From reading the above, it's difficult to discern what's a fix and
-> > > what's an improvement, and I think we need to be more explicit about
-> > > that. It would also be helpful to have the necessary context up-front.
-> > > 
-> > > How about:
-> > > 
-> > > | The A64 ISA accepts distinct (but overlapping) ranges of immediates for:
-> > > | 
-> > > | * add arithmetic instructions ('I' machine constraint)
-> > > | * sub arithmetic instructions ('J' machine constraint)
-> > > | * 32-bit logical instructions ('K' machine constraint)
-> > > | * 64-bit logical instructions ('L' machine constraint)
-> > > | 
-> > > | ... but we currently use the 'I' constraint for many atomic operations
-> > > | using sub or logical instructions, which is not always valid.
-> > > | 
-> > > | When CONFIG_ARM64_LSE_ATOMICS is not set, this allows invalid immediates
-> > > | to be passed to instructions, potentially resulting in a build failure.
-> > > | When CONFIG_ARM64_LSE_ATOMICS is selected the out-of-line ll/sc atomics
-> > > | always use a register as they have no visibility of the value passed by
-> > > | the caller.
-> > > |
-> > > | This patch adds a constraint parameter to the ATOMIC_xx and
-> > > | __CMPXCHG_CASE macros so that we can pass appropriate constraints for
-> > > | each case, with uses updated accordingly.
-> > > | 
-> > > | Unfortunately prior to GCC 8.1.0 the 'K' constraint erroneously accepted
-> > > | 0xffffffff, so we must instead force the use of a register.
-> > 
-> > Looks great - I'll adopt this, thanks for writing it.
+On Mon, 2019-08-26 at 19:50 +0000, sbaugh@catern.com wrote:
+> Aleksa Sarai <cyphar@cyphar.com> writes:
+> > To this end, we introduce the openat2(2) syscall. It provides all of the
+> > features of openat(2) through the @how->flags argument, but also
+> > also provides a new @how->resolve argument which exposes RESOLVE_* flags
+> > that map to our new LOOKUP_* flags. It also eliminates the long-standing
+> > ugliness of variadic-open(2) by embedding it in a struct.
 > 
-> Cool. :)
+> I don't like this usage of a structure in memory to pass arguments that
+> would fit in registers. This would be quite inconvenient for me as a
+> userspace developer.
 > 
-> > > Given we haven't had any bug reports, I'm not sure whether this needs a
-> > > Fixes tag or Cc stable. This has been a latent issue for a long time,
-> > > but upstream code doesn't seem to have tickled it.
-> > 
-> > Yes I guess this is more a correctness issue rather than a reproducible bug
-> > in upstream code. I won't add a fixes tag or CC to stable.
+> Others have brought up issues with this: the issue of seccomp, and the
+> issue of mismatch between the userspace interface and the kernel
+> interface, are the most important for me. I want to add another,
+> admittedly somewhat niche, concern.
 > 
-> Sounds good to me.
+> This interfaces requires a program to allocate memory (even on the
+> stack) just to pass arguments to the kernel which could be passed
+> without allocating that memory. That makes it more difficult and less
+> efficient to use this syscall in any case where memory is not so easily
+> allocatable: such as early program startup or assembly, where the stack
+> may be limited in size or not even available yet, or when injecting a
+> syscall while ptracing.
 > 
-> > > [...]
-> > > 
-> > > > -ATOMIC_OPS(and, and)
-> > > > -ATOMIC_OPS(andnot, bic)
-> > > > -ATOMIC_OPS(or, orr)
-> > > > -ATOMIC_OPS(xor, eor)
-> > > > +ATOMIC_OPS(and, and, K)
-> > > > +ATOMIC_OPS(andnot, bic, )
-> > > > +ATOMIC_OPS(or, orr, K)
-> > > > +ATOMIC_OPS(xor, eor, K)
-> > > 
-> > > Surely it's not safe to use the K constraint here, either? AFAICT code
-> > > like:
-> > > 
-> > >   atomic_xor(~0, &atom);
-> > > 
-> > > ... would suffer from the same problem as described for cmpxchg.
-> > 
-> > Thanks for spotting this.
-> > 
-> > Yes, I think the resolution here (and for any 32bit bitmask immediate) is to
-> > drop the constraint.
-> > 
-> > Do you agree that we should drop the 'K' constraint for both orr and eor
-> > above?
+> A struct-passing interface was needed for clone, since we ran out of
+> registers; but we have not run out of registers yet for openat, so it
+> would be nice to avoid this if we can. We can always expand later...
 > 
-> Yes, I think we should drop the 'K' for all the 32-bit logical ops.
 
-Ah yes, I keep getting 'and' and 'add' mixed up. OK I'll drop 'K' from all
-the above.
+We can't really expand later like you suggest.
 
-> 
-> > > [...]
-> > > 
-> > > > -ATOMIC64_OPS(and, and)
-> > > > -ATOMIC64_OPS(andnot, bic)
-> > > > -ATOMIC64_OPS(or, orr)
-> > > > -ATOMIC64_OPS(xor, eor)
-> > > > +ATOMIC64_OPS(and, and, K)
-> > > > +ATOMIC64_OPS(andnot, bic, )
-> > > > +ATOMIC64_OPS(or, orr, K)
-> > > > +ATOMIC64_OPS(xor, eor, K)
-> > > 
-> > > Shouldn't these be 'L'?
-> > > 
-> > > IIUC K is a subset of L, so if that's deliberate we should call that out
-> > > explicitly...
-> > 
-> > Oooh yes that's wrong. I guess the atomic64_[and,or,xor] are rarely called
-> > in the kernel which perhaps is why the compiler hasn't shouted at me.
-> > 
-> > Do you agree that the and, orr and eor should all be 'L' instead of 'K'?
-> 
-> Yes, I think all the 64-bit logical ops should all use 'L'.
+Suppose in a couple of years that we need to add some new argument to
+openat2 that isn't just a new flag. If all these values are passed by
+individual arguments, you can't add one later without adding yet another
+syscall.
 
-With the exception of bic? I don't think there is an appropriate constraint
-for this (it requires an 8 bit immediate).
+Using a struct for this allows this to be extended later, OTOH. You can
+extend it, and add a flag that tells the kernel that it can access the
+new field. No new syscall required.
+-- 
+Jeff Layton <jlayton@kernel.org>
 
-> 
-> I did a quick local test, and the 'L' constraint seems to correctly
-> reject ~0UL (i.e. it doesn't seem to have a similar bug to the 'K'
-> constraint).
-
-Yes, if I recall correctly the issue was only with 'K'.
-
-> 
-> > > > +__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
-> > > > +__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
-> > > > +__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
-> > > > +__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
-> > > > +__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
-> > > > +__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
-> > > > +__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
-> > > > +__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
-> > > > +__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
-> > > > +__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
-> > > > +__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
-> > > > +__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
-> > > > +__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
-> > > > +__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
-> > > > +__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
-> > > > +__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
-> > > 
-> > > ... but these uses imply that's not the case.
-> > 
-> > Yup, so I can leave these as they are.
-> 
-> Yup; sounds good.
-
-Thanks,
-
-Andrew Murray
-
-> 
-> Thanks,
-> Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
