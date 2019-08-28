@@ -2,117 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0DA2A015A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:11:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90B28A015E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:11:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=YD3VSm9G/lNxhC79/yCQS5JT5OG2dCjUXz/vaYLSPWs=; b=VAxDLV9CkmbLFyg+ejmvUyggcS
-	1oUp7kVYX/gXN26E6OhVA2IxreMDHCmyqXzN2irEZ9LhHyFl4j4IKx1xfoF/cYGavS3+pjXRu6mC1
-	//GL/+f6k7HB6UPloWFZItSHzuNO+KLrleG5PGt8xzdhACB/R23rZVSzfvkfMkRUWQ8VYwRZXgmYu
-	awgoqiYJgv7y+xLA+4JzqslAvDfDjFmuLG7asaBrwllbsh5kwLyWGcV4Akt1pPaxMjO2ff8f/sG7H
-	Vu0DYogHhA8sSpvnEcQmpwFxKv9sWUZMVcsVO3Lwi3niC4oRU1dw7VfmYVp7x0pioGbKk6TXgxcZ3
-	vg9OHeCw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=/oRJozFQXuGHtb5cpFQsM6zhEy8v7QSObtB4VV14Smw=; b=XbR1YYfciPZQuc
+	wcthIWfgJrTQ+jkKmgAWqDtRh2zO/N0iOC+kGo2iBGf43nXBRuCFXlsICsin96I1PT7IeN1cubCuL
+	6BYjt0RzUnEHFMzcH8p/Csip6AQhOD9hP3veZ9ZDCccCexyT/G9XN5sySOxmBkr9TfvxKe2zuUZWp
+	rQ3iFHqU7HOlmbmsvmcmNn3uONkjlq1/pMrMG/P0nJwEyDmrKFMlT0r84xBxrRdFdKSTwYbTEjqiV
+	xJ29J4DUzitl579e8v4KWZZdqKBwYpmMLA9gzeXkbaHclSNMxJTB8p6bGk7pgtna+Q8BjuKKokHKE
+	N2E+0okprR20DiMArYzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2wmq-0005Hm-15; Wed, 28 Aug 2019 12:10:52 +0000
-Received: from mailout1.w1.samsung.com ([210.118.77.11])
+	id 1i2wnd-0005zU-8H; Wed, 28 Aug 2019 12:11:41 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2wmG-00056F-AI
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:10:18 +0000
-Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
- by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190828121014euoutp01cd5f60cf74acdfd59c08812a38fe80c0~-FO9zgEb_2263522635euoutp01I
+ id 1i2wn9-0005tK-9J
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:11:13 +0000
+Received: by mail-qk1-x742.google.com with SMTP id d23so2151542qko.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 12:10:14 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190828121014euoutp01cd5f60cf74acdfd59c08812a38fe80c0~-FO9zgEb_2263522635euoutp01I
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566994214;
- bh=hbM0dbFub5dilWQZiDNc2NPkK2MLXSDTzGjKbpMBxSE=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=XVATmfynSyy1mZpqjvEIeSj9MpTiGl23a0nbUc/iQ6LDauU/AtvrIIC7rw2m0lncc
- vy60Rl3t3/kwtAHIjUkdtdK8heCaosFn9w4pTPfrLL3yDQGYiIyBjJraJelwEPbEeP
- oxg+5Zdp7M+q3Mo0SPUPGTsRqW8IBjbBCfbJT+NI=
-Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190828121013eucas1p28be42cd0efb247cc6dd3b28843a5737c~-FO9WQFBB1354913549eucas1p2v;
- Wed, 28 Aug 2019 12:10:13 +0000 (GMT)
-Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
- eusmges1new.samsung.com (EUCPMTA) with SMTP id BC.0D.04469.52F666D5; Wed, 28
- Aug 2019 13:10:13 +0100 (BST)
-Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2~-FO8c_mhh1358913589eucas1p2n;
- Wed, 28 Aug 2019 12:10:12 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
- 20190828121012eusmtrp12adbbc9cffea5fb75aef9cdbb408447e~-FO8OlbDH1908619086eusmtrp1i;
- Wed, 28 Aug 2019 12:10:12 +0000 (GMT)
-X-AuditID: cbfec7f2-54fff70000001175-2d-5d666f2577fc
-Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 8B.C4.04117.42F666D5; Wed, 28
- Aug 2019 13:10:12 +0100 (BST)
-Received: from AMDC2765.DIGITAL.local (unknown [106.120.51.73]) by
- eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190828121011eusmtip14396855e7a74917cc1c4810e0db3ce3c~-FO7zicJ42336023360eusmtip1X;
- Wed, 28 Aug 2019 12:10:11 +0000 (GMT)
-From: Marek Szyprowski <m.szyprowski@samsung.com>
-To: linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v3 2/2] ARM: exynos: Enable support for ARM architected timers
-Date: Wed, 28 Aug 2019 14:10:05 +0200
-Message-Id: <20190828121005.29368-3-m.szyprowski@samsung.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190828121005.29368-1-m.szyprowski@samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFvrKIsWRmVeSWpSXmKPExsWy7djPc7qq+WmxBr9u8VhsnLGe1eL6l+es
- FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoLpuU
- 1JzMstQifbsEroxbn36xFRxiq7j74DRbA+N+1i5GTg4JAROJT2/bmboYuTiEBFYwSjydf4QN
- wvnCKLFkyxdmCOczo8TS2VcYYVpWTL/OCJFYziixZf1tRriWXRu/gFWxCRhKdL3tYgOxRQS8
- JSaf+csOUsQscBVo1LVPLF2MHBzCAgESh17wgdSwCKhKbPr7gg0kzCtgKzG1wwtimbzE6g0H
- mEFsTgE7iUObOllAxkgIPGeTWHz9EBtEkYvE64Mnoa4Tlnh1fAs7hC0jcXpyD1RDM6PEw3Nr
- 2SGcHkaJy00zoDqsJQ4fv8gKsplZQFNi/S59EFNCwFFi0nU1CJNP4sZbQZBiZiBz0rbpzBBh
- XomONiGIGWoSs46vg9t68MIlZgjbQ6JrQjcLJHgmMkpMmzeBfQKj/CyEXQsYGVcxiqeWFuem
- pxYb5qWW6xUn5haX5qXrJefnbmIEJobT/45/2sH49VLSIUYBDkYlHl6OxLRYIdbEsuLK3EOM
- EhzMSiK8j1RSY4V4UxIrq1KL8uOLSnNSiw8xSnOwKInzVjM8iBYSSE8sSc1OTS1ILYLJMnFw
- SjUwarZ3N5zfc++M9PrHLEtf5l/ozw9zeHLlwpLkObpne52u7eQ/ctDzoMOLXVOXCtY+cZlt
- KyQvNnmdwIydsxvf95Q3RE7yZGZTynj+7vOCW4vW7n12JIAzSbBQwk38rdemn3YXw61tZJ4e
- 0Z3nJvOzwMVW7pbAk7BwNr06VfYHNx/lOhjuu7esRImlOCPRUIu5qDgRACW2E2sIAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFrrKLMWRmVeSWpSXmKPExsVy+t/xu7oq+WmxBrcvCVhsnLGe1eL6l+es
- FufPb2C32PT4GqvFjPP7mCzWHrnLbrFzzklWB3aPTas62Tw2L6n36NuyitHj8ya5AJYoPZui
- /NKSVIWM/OISW6VoQwsjPUNLCz0jE0s9Q2PzWCsjUyV9O5uU1JzMstQifbsEvYxbn36xFRxi
- q7j74DRbA+N+1i5GTg4JAROJFdOvM3YxcnEICSxllHj2YC4LREJG4uS0BqgiYYk/17rYIIo+
- MUpc/vWXGSTBJmAo0fUWJMHJISLgK/H4zUqwZmaBm4wSO+9odDFycAgL+En8nsgEEmYRUJXY
- 9PcFG0iYV8BWYmqHF8R4eYnVGw6ATeQUsJM4tKkTbIoQUMmDZ7sYJzDyLWBkWMUoklpanJue
- W2ykV5yYW1yal66XnJ+7iREYpNuO/dyyg7HrXfAhRgEORiUe3oTktFgh1sSy4srcQ4wSHMxK
- IryPVFJjhXhTEiurUovy44tKc1KLDzGaAt00kVlKNDkfGEF5JfGGpobmFpaG5sbmxmYWSuK8
- HQIHY4QE0hNLUrNTUwtSi2D6mDg4pRoY05wuinC0FkR8yd19kOeOS0xEhPPP1squTN+zhy/k
- PXnLeeLuitfGay+v2TPxdH3p/T3VfK5fVmjoLax+X3RobX//zfi5/Z0VndOjDivzlDz15HnS
- cPXwuf0H7ps8FvulOPGka53mCb2dVoaft902Wfwrcsn6H8oWSx5d9png0Tk76btZVvivaCWW
- 4oxEQy3mouJEAIVY0HNoAgAA
-X-CMS-MailID: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
-X-Msg-Generator: CA
-X-RootMTR: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
-X-EPHeader: CA
-CMS-TYPE: 201P
-X-CMS-RootMailID: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
-References: <20190828121005.29368-1-m.szyprowski@samsung.com>
- <CGME20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2@eucas1p2.samsung.com>
+ Wed, 28 Aug 2019 05:11:10 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=ffiL5a7whRuz8warYvykMMFhxIcHS70D6usDR2s/5ts=;
+ b=RilfHf7t8QMdo85b9L86oSvV1hF+t25i3a8Ss41HvJjFKnEQeZsdGb3zyNKudfWDiy
+ pmnkvBoms2RuNQQh0rVocWD1usQVglPoWZAz/RYHsYyf3YzN+6ierptf6I0PHyXl/+q7
+ T1QmrszfGnqbHV4cXENPWHeeWHpnCpUdjQRA1qXJmwMbFBdB//W8MU68S0/jlg292LDm
+ e25bFtFyD4GbY0EL6p1Jmu7z858JN1HnobEvKaQawZC/HRQJo6P5eOCuWa3Y8SN5Ezmw
+ Tw1CIJHG4/bPJGRlok17pHtMEIWR3eh1PHAmSVdXcSma56ycZIbimXuvLMhtNX0xRFvS
+ t03w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=ffiL5a7whRuz8warYvykMMFhxIcHS70D6usDR2s/5ts=;
+ b=PnRllefF1tZNZNW1zFGADNw5tlJarmvF1+NHM5ae/m7t1oD64nIPyuA+khp4ewMq+m
+ gtxTGFMCvG4a/Ag0KSBYQtnYZ8JCrmiJzYoS5vqVtuc1MIL51gukL7EtrHqN4pzYE9bz
+ FpI+MEBmjtfkFr0hQXjRVfhqRtPe+hPwYTNZpVAjB6I+Yvf8tXUk9EeZsXpne+PIr8AL
+ VssnXNbpBB/pDQmUNaquZO8Qi4bqUkqeyYonG9oYQ93VG6DUo4x0U64EbTacykaEWZO9
+ 3PjZBTtvNTU46IAnrzXOYGfbHBO5EOSxLGO2klq9nRD+Rd5KPEwBB8XiwSzG87A4gaWy
+ P6SA==
+X-Gm-Message-State: APjAAAWlkS6btBDrG7OOnlYBSoqZiN9c0gjz/BraGTJK8cZyDxalSF0H
+ eYKPF0foanu5OB9Y8mFJuPFEweynxXYaX2x6/ya9TA==
+X-Google-Smtp-Source: APXvYqy6goH/v1nichpYtzTn7mk48xGn/v6SYNHD53C3YulT7VHRcTKd+zHkzn0d4gI5xdouJmz3CHUQU9cUckAK4sY=
+X-Received: by 2002:a37:4d90:: with SMTP id a138mr3487970qkb.128.1566994269271; 
+ Wed, 28 Aug 2019 05:11:09 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190819205720.24457-1-mike.leach@linaro.org>
+ <20190819205720.24457-4-mike.leach@linaro.org>
+ <20190828025313.GC26133@leoy-ThinkPad-X240s>
+In-Reply-To: <20190828025313.GC26133@leoy-ThinkPad-X240s>
+From: Mike Leach <mike.leach@linaro.org>
+Date: Wed, 28 Aug 2019 13:10:58 +0100
+Message-ID: <CAJ9a7ViFinOHBTSf0W6G0B-nd6HYfjr3aNqHaAqDEbsjLkO+Jg@mail.gmail.com>
+Subject: Re: [PATCH 3/8] coresight: etm4x: Add missing API to set EL match on
+ address filters
+To: Leo Yan <leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_051016_498976_BA2CC3D9 
-X-CRM114-Status: GOOD (  11.48  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190828_051111_349350_AE534B79 
+X-CRM114-Status: GOOD (  20.92  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [210.118.77.11 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -120,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -132,40 +93,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chanwoo Choi <cw00.choi@samsung.com>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
- Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>
-MIME-Version: 1.0
+Cc: Coresight ML <coresight@lists.linaro.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Mathieu Poirier <mathieu.poirier@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-ARM architected timer can be used together with Exynos MultiCore Timer
-driver, so enable support for it. Support for ARM architected timers is
-essential for enabling proper KVM support.
+Hi Leo,
 
-Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
----
- arch/arm/mach-exynos/Kconfig | 1 +
- 1 file changed, 1 insertion(+)
+On Wed, 28 Aug 2019 at 03:53, Leo Yan <leo.yan@linaro.org> wrote:
+>
+> On Mon, Aug 19, 2019 at 09:57:15PM +0100, Mike Leach wrote:
+> > TRCACATRn registers have match bits for secure and non-secure exception
+> > levels which are not accessible by the sysfs API.
+> > This adds a new sysfs parameter to enable this - addr_exlevel_s_ns.
+> >
+> > Signed-off-by: Mike Leach <mike.leach@linaro.org>
+> > ---
+> >  .../coresight/coresight-etm4x-sysfs.c         | 39 +++++++++++++++++++
+> >  1 file changed, 39 insertions(+)
+> >
+> > diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > index fa1d6a938f6c..7eab5d7d0b62 100644
+> > --- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > +++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
+> > @@ -1233,6 +1233,44 @@ static ssize_t addr_context_store(struct device *dev,
+> >  }
+> >  static DEVICE_ATTR_RW(addr_context);
+> >
+> > +static ssize_t addr_exlevel_s_ns_show(struct device *dev,
+> > +                                   struct device_attribute *attr,
+> > +                                   char *buf)
+> > +{
+> > +     u8 idx;
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     spin_lock(&drvdata->spinlock);
+> > +     idx = config->addr_idx;
+> > +     val = BMVAL(config->addr_acc[idx], 14, 8);
+> > +     spin_unlock(&drvdata->spinlock);
+> > +     return scnprintf(buf, PAGE_SIZE, "%#lx\n", val);
+> > +}
+> > +
+> > +static ssize_t addr_exlevel_s_ns_store(struct device *dev,
+> > +                                    struct device_attribute *attr,
+> > +                                    const char *buf, size_t size)
+> > +{
+> > +     u8 idx;
+> > +     unsigned long val;
+> > +     struct etmv4_drvdata *drvdata = dev_get_drvdata(dev->parent);
+> > +     struct etmv4_config *config = &drvdata->config;
+> > +
+> > +     if (kstrtoul(buf, 16, &val))
+> > +             return -EINVAL;
+> > +
+> > +     spin_lock(&drvdata->spinlock);
+> > +     idx = config->addr_idx;
+> > +     /* clear Exlevel_ns & Exlevel_s bits[14:12, 11:8] */
+> > +     config->addr_acc[idx] &= ~(GENMASK(14, 8));
+> > +     config->addr_acc[idx] |= (val << 8);
+>
+> I think it needs to check if 'val' is out of bound, which only can have
+> value which is less than 7 bits (finally set for bit 8 to bit 14).
+>
 
-diff --git a/arch/arm/mach-exynos/Kconfig b/arch/arm/mach-exynos/Kconfig
-index f83786640f94..9dab1f50a02f 100644
---- a/arch/arm/mach-exynos/Kconfig
-+++ b/arch/arm/mach-exynos/Kconfig
-@@ -19,6 +19,7 @@ menuconfig ARCH_EXYNOS
- 	select EXYNOS_SROM
- 	select EXYNOS_PM_DOMAINS if PM_GENERIC_DOMAINS
- 	select GPIOLIB
-+	select HAVE_ARM_ARCH_TIMER if ARCH_EXYNOS5 && VIRTUALIZATION
- 	select HAVE_ARM_SCU if SMP
- 	select HAVE_S3C2410_I2C if I2C
- 	select HAVE_S3C2410_WATCHDOG if WATCHDOG
+Agreed.
+
+> Just curious, if the CPU runs in non-secure mode (e.g. NS-EL1 in
+> kernel mode), does it have permission to access EXLEVEL_S field?  I
+> don't see the spec give info for this.
+>
+
+This field can be accessed in NS mode - the permissions for tracing
+secure state are given in the authentication signals - this register
+only controls matching in particular states.
+If there is no permission to trace secure state, then the EXLEVEL_S
+field will have no effect as trace will automatically be disabled
+should the PE transit to secure state.
+
+Thanks
+
+Mike
+
+> Thanks,
+> Leo Yan
+>
+> > +     spin_unlock(&drvdata->spinlock);
+> > +     return size;
+> > +}
+> > +static DEVICE_ATTR_RW(addr_exlevel_s_ns);
+> > +
+> >  static ssize_t seq_idx_show(struct device *dev,
+> >                           struct device_attribute *attr,
+> >                           char *buf)
+> > @@ -2038,6 +2076,7 @@ static struct attribute *coresight_etmv4_attrs[] = {
+> >       &dev_attr_addr_stop.attr,
+> >       &dev_attr_addr_ctxtype.attr,
+> >       &dev_attr_addr_context.attr,
+> > +     &dev_attr_addr_exlevel_s_ns.attr,
+> >       &dev_attr_seq_idx.attr,
+> >       &dev_attr_seq_state.attr,
+> >       &dev_attr_seq_event.attr,
+> > --
+> > 2.17.1
+> >
+> > _______________________________________________
+> > CoreSight mailing list
+> > CoreSight@lists.linaro.org
+> > https://lists.linaro.org/mailman/listinfo/coresight
+
+
+
 -- 
-2.17.1
-
+Mike Leach
+Principal Engineer, ARM Ltd.
+Manchester Design Centre. UK
 
 _______________________________________________
 linux-arm-kernel mailing list
