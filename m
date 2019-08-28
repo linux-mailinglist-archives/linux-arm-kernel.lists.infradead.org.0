@@ -2,66 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DFBA59F7DC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 03:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 63B1E9F7E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 03:36:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=VO0qbO2lpn4yBHwyvu9wOiKUDagr7kMSSpHRP2CE81g=; b=cWO6ZCxfve/oBrjT74L4UEtz8
-	x8X/cfz1d4fxNzgGxR2uGudbuHNU0wYaM0v03Cg1qgGqaCCEguIUglBu63M8//IbS79VNmz49VVx1
-	wincyhkXmzY6iZkwLjgpeRIXtaxLMCNSJe0e1fz7JAp7pWvUUiIOtYDxWrtsU1+kvFTwEcZCo/RQ5
-	4W0nru41nY/w8kNRVLvcq2XoLL7XhtA7ETaxcn7GEhQYAzj/N0vjsiwXnOwSOLbpAs0q+fvuj1fzk
-	S6pFKLYeUkNb7PHKMBMsZ+xUpB7qsHz8NPaCdyekDpF7bB699r4c4mFg2Tn89W4jZMGruPkG+cs2J
-	YWBbewOLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=j6/g0I6B99ZoYJZMLFvfqzJswV//4MAwjRObFEtx5VI=; b=a+Z
+	ew6QSY0gvhPglvDMuYayIPRayWjBm7buKnRgBKkUn/GxiKhjOTKQ3f/0XO1y7C4BtcMHOBsBDs3Xf
+	Q7hBQepdwym/v8H1QO18xwfugPZb4RquYGYA/D4sdARpfupyfdm3flIJbcSp8ThD99AhZWJnRvdVb
+	Zi9/tGdo3ocXFGKAgaZzvSanTgdTC+ZZD2DFKzwTXnB5cLOaUkQRz1/yHh1bpSbJCOjjksM+jl9E6
+	VkdHt/aLAC5vRhfFkkC9Hv/q3Cgc/qmckOBNG1/ZALsEjyNPOqoSMLtYaqlIA9BFG8TeJNbuEh98q
+	QzpEzu5YRA71M3yU8zvbJW1t7rLr5WQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2mr6-00085t-R3; Wed, 28 Aug 2019 01:34:37 +0000
-Received: from mga01.intel.com ([192.55.52.88])
+	id 1i2msu-00016O-Vo; Wed, 28 Aug 2019 01:36:29 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2mqr-00085R-F5
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 01:34:22 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from fmsmga002.fm.intel.com ([10.253.24.26])
- by fmsmga101.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 27 Aug 2019 18:34:19 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,439,1559545200"; d="scan'208";a="209956217"
-Received: from linux.intel.com ([10.54.29.200])
- by fmsmga002.fm.intel.com with ESMTP; 27 Aug 2019 18:34:19 -0700
-Received: from [10.226.38.21] (vramuthx-mobl1.gar.corp.intel.com
- [10.226.38.21])
- by linux.intel.com (Postfix) with ESMTP id 90C1E580375;
- Tue, 27 Aug 2019 18:34:16 -0700 (PDT)
-Subject: Re: [PATCH v1 2/2] mmc: sdhci-of-arasan: Add Support for Intel LGM
- eMMC
-To: Ulf Hansson <ulf.hansson@linaro.org>
-References: <20190826072800.38413-1-vadivel.muruganx.ramuthevar@linux.intel.com>
- <20190826072800.38413-2-vadivel.muruganx.ramuthevar@linux.intel.com>
- <CAPDyKFrPoPqnh3_23P=wGO+QrUE9ogJzC6xgzy+0QeyuyeO=HQ@mail.gmail.com>
-From: "Ramuthevar, Vadivel MuruganX"
- <vadivel.muruganx.ramuthevar@linux.intel.com>
-Message-ID: <373e55ab-c76b-7657-bd47-1a5efc75a062@linux.intel.com>
-Date: Wed, 28 Aug 2019 09:34:15 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <CAPDyKFrPoPqnh3_23P=wGO+QrUE9ogJzC6xgzy+0QeyuyeO=HQ@mail.gmail.com>
-Content-Language: en-US
+ id 1i2msf-000151-8J
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 01:36:16 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 47AE71A064D;
+ Wed, 28 Aug 2019 03:36:09 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 163DD1A064B;
+ Wed, 28 Aug 2019 03:36:00 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C36D2402E7;
+ Wed, 28 Aug 2019 09:35:48 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: wim@linux-watchdog.org, linux@roeck-us.net, robh+dt@kernel.org,
+ mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ kernel@pengutronix.de, festevam@gmail.com, linux@armlinux.org.uk,
+ otavio@ossystems.com.br, leonard.crestez@nxp.com,
+ u.kleine-koenig@pengutronix.de, schnitzeltony@gmail.com,
+ jan.tuerk@emtrion.com, linux-watchdog@vger.kernel.org,
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V5 1/4] dt-bindings: watchdog: Add i.MX7ULP bindings
+Date: Wed, 28 Aug 2019 09:35:00 -0400
+Message-Id: <1566999303-18795-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_183421_519229_A266C598 
-X-CRM114-Status: GOOD (  18.92  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190827_183613_439010_EDF5932B 
+X-CRM114-Status: UNSURE (   7.37  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [192.55.52.88 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
+ 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -74,89 +73,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- qi-ming.wu@intel.com, andriy.shevchenko@intel.com, cheol.yong.kim@intel.com,
- "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
- Michal Simek <michal.simek@xilinx.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Adrian Hunter <adrian.hunter@intel.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Ulf,
+Add the watchdog bindings for Freescale i.MX7ULP.
 
-On 27/8/2019 9:49 PM, Ulf Hansson wrote:
-> On Mon, 26 Aug 2019 at 09:28, Ramuthevar,Vadivel MuruganX
-> <vadivel.muruganx.ramuthevar@linux.intel.com> wrote:
->> From: Ramuthevar Vadivel Muruganx <vadivel.muruganx.ramuthevar@linux.intel.com>
->>
->> The current arasan sdhci PHY configuration isn't compatible
->> with the PHY on Intel's LGM(Lightning Mountain) SoC devices.
->>
->> Therefore, add a new compatible, to adapt the Intel's LGM
->> eMMC PHY with arasan-sdhc controller to configure the PHY.
->>
->> Signed-off-by: Ramuthevar Vadivel Muruganx <vadivel.muruganx.ramuthevar@linux.intel.com>
->
-> Applied for next, thanks!
->
-> Kind regards
-> Uffe
->
-Thank you so much for review and applied for next.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+Reviewed-by: Rob Herring <rohb@kernel.org>
+---
+Changes since V4:
+	- improve watchdog node name.
+---
+ .../bindings/watchdog/fsl-imx7ulp-wdt.txt          | 22 ++++++++++++++++++++++
+ 1 file changed, 22 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
 
-Best Regards
-Vadivel
->> ---
->>   drivers/mmc/host/sdhci-of-arasan.c | 15 +++++++++++++++
->>   1 file changed, 15 insertions(+)
->>
->> diff --git a/drivers/mmc/host/sdhci-of-arasan.c b/drivers/mmc/host/sdhci-of-arasan.c
->> index b12abf9b15f2..7023cbec4017 100644
->> --- a/drivers/mmc/host/sdhci-of-arasan.c
->> +++ b/drivers/mmc/host/sdhci-of-arasan.c
->> @@ -114,6 +114,12 @@ static const struct sdhci_arasan_soc_ctl_map rk3399_soc_ctl_map = {
->>          .hiword_update = true,
->>   };
->>
->> +static const struct sdhci_arasan_soc_ctl_map intel_lgm_emmc_soc_ctl_map = {
->> +       .baseclkfreq = { .reg = 0xa0, .width = 8, .shift = 2 },
->> +       .clockmultiplier = { .reg = 0, .width = -1, .shift = -1 },
->> +       .hiword_update = false,
->> +};
->> +
->>   /**
->>    * sdhci_arasan_syscon_write - Write to a field in soc_ctl registers
->>    *
->> @@ -373,6 +379,11 @@ static struct sdhci_arasan_of_data sdhci_arasan_rk3399_data = {
->>          .pdata = &sdhci_arasan_cqe_pdata,
->>   };
->>
->> +static struct sdhci_arasan_of_data intel_lgm_emmc_data = {
->> +       .soc_ctl_map = &intel_lgm_emmc_soc_ctl_map,
->> +       .pdata = &sdhci_arasan_cqe_pdata,
->> +};
->> +
->>   #ifdef CONFIG_PM_SLEEP
->>   /**
->>    * sdhci_arasan_suspend - Suspend method for the driver
->> @@ -474,6 +485,10 @@ static const struct of_device_id sdhci_arasan_of_match[] = {
->>                  .compatible = "rockchip,rk3399-sdhci-5.1",
->>                  .data = &sdhci_arasan_rk3399_data,
->>          },
->> +       {
->> +               .compatible = "intel,lgm-sdhci-5.1-emmc",
->> +               .data = &intel_lgm_emmc_data,
->> +       },
->>          /* Generic compatible below here */
->>          {
->>                  .compatible = "arasan,sdhci-8.9a",
->> --
->> 2.11.0
->>
+diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
+new file mode 100644
+index 0000000..f902508
+--- /dev/null
++++ b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
+@@ -0,0 +1,22 @@
++* Freescale i.MX7ULP Watchdog Timer (WDT) Controller
++
++Required properties:
++- compatible : Should be "fsl,imx7ulp-wdt"
++- reg : Should contain WDT registers location and length
++- interrupts : Should contain WDT interrupt
++- clocks: Should contain a phandle pointing to the gated peripheral clock.
++
++Optional properties:
++- timeout-sec : Contains the watchdog timeout in seconds
++
++Examples:
++
++wdog1: watchdog@403d0000 {
++	compatible = "fsl,imx7ulp-wdt";
++	reg = <0x403d0000 0x10000>;
++	interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
++	clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
++	assigned-clocks = <&pcc2 IMX7ULP_CLK_WDG1>;
++	assigned-clocks-parents = <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>;
++	timeout-sec = <40>;
++};
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
