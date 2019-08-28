@@ -2,71 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5833DA06C2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 17:56:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1B26A06F3
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 18:08:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HSRejY/IPv/i3uaHyzBvbZHY5fjqf0llHOKx57GdUTI=; b=VGRi8Mk2wv62ZD
-	uqV/uRc0EY9bAd7k6gSqFsCfsIgRDoJEr2AsOai+2mtN46Z22ezYvaXEsvqFmpLdXIwVARRprOb8E
-	KSiuvmGi9eUO9oGJ/E0HGjClIIXKsGctEZXBXTjiMzJRzz+ZkeTMa3z/nx1g6dpPyI8tqZy/+QSsp
-	oUMK91/uOtkwT9fBNQs7I4ow3NR3gGJyasMxId/rZ7T1JDwkKXXJK86LYODquU5TFUfMSDKV3TLHA
-	wfSUtjQCpoxbX3w9iMjeDM/V3AILpkKqYpdqJTwWdpaXaKFltV6DhQ76/kat1xAcT5jIp2k729YjT
-	jIYMplEt2kUZK+jz40QQ==;
+	List-Owner; bh=7EV58+xTijv3Ofo2W3RDA45Bng8+Uk5FHrlUaThGpoA=; b=BWcysVYVnM0UOT
+	PjPjBgu5di9wylnpmuqlP3aZmjuSM+9Vb3jpSQ48ntAOCRwpxNsp/0sIP09L+alSlYhzg0JSy5dPW
+	cn46esjzvyhfCEExE+O/cVb2vRdY7nwdm7mddSxr3frDMBjwC+MaiMH4RQbMYkQOcm1tpWsHUXoSu
+	ewJTSLNvl4WVGNqUsvE8LMS5HnQRSPPPQ0qgeOLyXiutJp+xyzQ8bFyf6Upb4Vdm5aidpCbi3TN6q
+	17s6gmX+m9y7C+yM3PZLc8oZ3JJRR3CTmggyFSkHk3356B4gmESHvVMNP860TkfYWG3jdwO4JiTHY
+	u7ji3VSNdtcadkii1Dxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i30In-0007KK-FO; Wed, 28 Aug 2019 15:56:05 +0000
-Received: from mail.kernel.org ([198.145.29.99])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i30Ia-0007J7-Mk
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 15:55:54 +0000
-Received: from tleilax.poochiereds.net
- (68-20-15-154.lightspeed.rlghnc.sbcglobal.net [68.20.15.154])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 765322064A;
- Wed, 28 Aug 2019 15:55:48 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567007749;
- bh=tm23iPOHz5qNiVmbKBRthv6o0H14qpr8dY7bd4MTQKs=;
- h=Subject:From:To:Cc:Date:In-Reply-To:References:From;
- b=pqTccn5JcnucNCAhPvukewbhK7LnqfZiA1JhrrT1FDFY4mCrVB8AZyQ8GN7mLjP8y
- 7s9EDdOPkKuIVFWDEaVrPbihjrm8teyPYUCsz+WciUJXkEpW4kr0ySk55f/ASUGrn8
- zpEFoJeA5Hy5XDMtaE0vrkdWUVKHa2wWQhJO2xxg=
-Message-ID: <4da231cd52880991d8a038adb8fbb2ef3d724db9.camel@kernel.org>
-Subject: Re: [PATCH RESEND v11 7/8] open: openat2(2) syscall
-From: Jeff Layton <jlayton@kernel.org>
-To: sbaugh@catern.com, linux-fsdevel@vger.kernel.org
-Date: Wed, 28 Aug 2019 11:55:47 -0400
-In-Reply-To: <854l2366zp.fsf@catern.com>
-References: <20190820033406.29796-1-cyphar@cyphar.com>
- <20190820033406.29796-8-cyphar@cyphar.com> <854l2366zp.fsf@catern.com>
-User-Agent: Evolution 3.32.4 (3.32.4-1.fc30) 
+	id 1i30Ul-0001yo-3R; Wed, 28 Aug 2019 16:08:27 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i30UU-0001yP-UU
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 16:08:12 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9F9CD28;
+ Wed, 28 Aug 2019 09:08:08 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 496C53F59C;
+ Wed, 28 Aug 2019 09:08:07 -0700 (PDT)
+Date: Wed, 28 Aug 2019 17:08:05 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH v4.4 V2 24/43] arm64: Add skeleton to harden the branch
+ predictor against aliasing attacks
+Message-ID: <20190828160804.GB42408@lakrids.cambridge.arm.com>
+References: <cover.1562908074.git.viresh.kumar@linaro.org>
+ <4349161f0ed572bbc6bff64bad94aa96d07b27ff.1562908075.git.viresh.kumar@linaro.org>
+ <20190731164556.GI39768@lakrids.cambridge.arm.com>
+ <20190801052011.2hrei36v4zntyfn5@vireshk-i7>
+ <20190806121816.GD475@lakrids.cambridge.arm.com>
+ <20190808120600.qhbhopvp4e5w33at@vireshk-i7>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190808120600.qhbhopvp4e5w33at@vireshk-i7>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_085552_766294_04D6F40B 
-X-CRM114-Status: GOOD (  19.07  )
-X-Spam-Score: -2.7 (--)
+X-CRM114-CacheID: sfid-20190828_090811_032069_DBF552CD 
+X-CRM114-Status: GOOD (  14.66  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 2.5 SUSPICIOUS_RECIPS      Similar addresses in recipient list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,60 +67,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, linux-ia64@vger.kernel.org,
- linux-parisc@vger.kernel.org, linux-sh@vger.kernel.org,
- linux-api@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-mips@vger.kernel.org, linuxppc-dev@ozlabs.org,
- linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-26 at 19:50 +0000, sbaugh@catern.com wrote:
-> Aleksa Sarai <cyphar@cyphar.com> writes:
-> > To this end, we introduce the openat2(2) syscall. It provides all of the
-> > features of openat(2) through the @how->flags argument, but also
-> > also provides a new @how->resolve argument which exposes RESOLVE_* flags
-> > that map to our new LOOKUP_* flags. It also eliminates the long-standing
-> > ugliness of variadic-open(2) by embedding it in a struct.
+On Thu, Aug 08, 2019 at 05:36:00PM +0530, Viresh Kumar wrote:
+> On 06-08-19, 13:18, Mark Rutland wrote:
+> > Upstream and in v4.9, the meltdown patches came before the spectre
+> > patches, and doing this in the opposite order causes context problems
+> > like the above.
+> > 
+> > Given that, I think it would be less surprising to do the meltdown
+> > backport first, though I apprecaite that's more work to get these
+> > patches in. :/
 > 
-> I don't like this usage of a structure in memory to pass arguments that
-> would fit in registers. This would be quite inconvenient for me as a
-> userspace developer.
+> I attempted meltdown backport in the last two days and the amount of
+> extra patches to be backported is enormous. And I am not sure if
+> everything is alright as well now, and things will greatly rely on
+> reviews from you for it.
 > 
-> Others have brought up issues with this: the issue of seccomp, and the
-> issue of mismatch between the userspace interface and the kernel
-> interface, are the most important for me. I want to add another,
-> admittedly somewhat niche, concern.
+> For this series, what about just backporting for now to account for
+> CSV3 ? And attempting meltdown backport separately later ?
 > 
-> This interfaces requires a program to allocate memory (even on the
-> stack) just to pass arguments to the kernel which could be passed
-> without allocating that memory. That makes it more difficult and less
-> efficient to use this syscall in any case where memory is not so easily
-> allocatable: such as early program startup or assembly, where the stack
-> may be limited in size or not even available yet, or when injecting a
-> syscall while ptracing.
-> 
-> A struct-passing interface was needed for clone, since we ran out of
-> registers; but we have not run out of registers yet for openat, so it
-> would be nice to avoid this if we can. We can always expand later...
-> 
+> 179a56f6f9fb arm64: Take into account ID_AA64PFR0_EL1.CSV3
 
-We can't really expand later like you suggest.
+I don't think that buys us anything; that's still going to cause some
+context problems (e.g. for commit 179a56f6f9fb itself), and still means
+that the v4.4 backport differs from all the others.
 
-Suppose in a couple of years that we need to add some new argument to
-openat2 that isn't just a new flag. If all these values are passed by
-individual arguments, you can't add one later without adding yet another
-syscall.
+If it's really not feasible to do the meltdown patches first, then I
+reluctantly agree that we should just do the spectre bits alone if there
+aren't major changes that have to be made to entry.S and friends as a
+result.
 
-Using a struct for this allows this to be extended later, OTOH. You can
-extend it, and add a flag that tells the kernel that it can access the
-new field. No new syscall required.
--- 
-Jeff Layton <jlayton@kernel.org>
+Could you send a v3 (of just the spectre bits) with the changes
+requested so far?
 
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
