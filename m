@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1C91CA047F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 16:15:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 76750A0494
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 16:16:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HX/gcmnIMqXZBcyPGlp4f6ifmO8wSF/fB7ed+GBHIOg=; b=YwqfbomMgTq0c7
-	TErRML4/NwgyGxMSSizfvx3GtI+XcO6rhUDC2yZekAoEP5yMZpT/qLhdGTaLwtl/8EkwSs0ozPtFF
-	AhOUE8TbFI1eQLVzwb4NEXlwCraLEuONZ8590F9gV6QX4F/hBEpvPMQU86dDSobEiPZcDk5UL82rM
-	Jt08JjEMl3FAMaXpNc/PYJV9XpBvX0tuuY4d7LiYWkNxxBva0kE4F4F1yiVGCgrkV9MM7pH8z5mlg
-	46Jsg90dS94lu6NdH1UnGFFui6jUBWgxAi00cWGgdh3bmcywMcT5XFeSi014dhUimVJpVF+PE38gM
-	j5XVY63o07LkZiuBdl7A==;
+	List-Owner; bh=yArwlDb05bvLAX7ZUTPyP56X7sIX0/xtFGAJrnXns9g=; b=liQFDorthMmHc0
+	mTF5OTep9OapTp/AFPw315HhGJm1v1mxceYGRBKkgxiT0nHsLKogazp3FyPg06zskQHHpD8VvkBhs
+	xIoCiOm3MxHTta0l0OLt7VHh2fKFz3AmSu7yaZVdncp9gM9Hg81kVcVhrtytc6upvZfgRrf8vCE1l
+	WlBJ5QMkovd8todDDN9V4hIK0w9CZDQIbXdB6LqHPQvOD6EBg0xLk1COSJJxANASq2tbpHkzIMUzm
+	a0dcTBV5TzoRVPcWepyC+acUZvvR3ve+b3ccclew/L3NpERwSvoo7we+9TMROBWhTAXmJr/Kk9mRF
+	I4fflPCTJlIiw9y5xk2w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2yjp-00025i-Gr; Wed, 28 Aug 2019 14:15:53 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1i2ykT-0002Pb-0G; Wed, 28 Aug 2019 14:16:33 +0000
+Received: from mail-qk1-x742.google.com ([2607:f8b0:4864:20::742])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2yjd-000257-AO
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 14:15:43 +0000
-Received: by mail-qt1-x841.google.com with SMTP id q64so3160513qtd.5
+ id 1i2yk6-0002Ol-TL
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 14:16:12 +0000
+Received: by mail-qk1-x742.google.com with SMTP id g17so2499999qkk.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 07:15:40 -0700 (PDT)
+ Wed, 28 Aug 2019 07:16:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Ap/Cm+u1DjsmoSGJn+7UdP1qyu4V/MqMRJNVuJDCIWQ=;
- b=IWMef2Q+LL6ApZuR9F8vmQwVg2R3Wp04JbwDqM4IOYjH26mS/x8SY1/ZkurI6E9wUv
- ZVUPxJi5Jwx+7kW78YvzgxxfVL31HnTkwVHi15q7NARKfwjmRM0O3vx3g8j7qaTEqlJz
- L6QFiQrjHrpFXLrNzeP576ZJXQtVGI9cCkGyWOikajvDHjsUORBO/swTD0fOXcNJY3Xg
- wZu0qENV17GCrz/VwpicU0+U7iFBQEQ2pxZHGEU1m2ntn5SbMJ2fw7EqsPIWsZawaCTn
- 6rB5TnvnrrFLpHzpWmi4ne10FQ8IJrBt2TGpANx1ZYmluZRyHlX3xNVnTZ/W+GZH4Oaf
- rUCQ==
+ :cc; bh=JAFt1swzD6UH/QPlFR7e6f/l0G2PJ+bbbQD4Ay8Fbog=;
+ b=AT8ntwQcZukILfK/wBx1qq359Vx7n4vo0wW8J8Cf9xjF2GdjBsB3wNLcLTRQ+nHH+v
+ 8p7KIrn0jHQ3Y/cpCsMG53ht4O+6drpj1Zsla40YV5IxyTfibyqO/KqwWP3SKqCl+4cJ
+ bbzgiEXaHW38O3HHeNZWtDbhUUY+tvEngYBtjRDwTPXluQOyFueWAaEWusjHNd59Giwq
+ vFVI1FNI06ZCnf8De0Ey0iVacqrGMGh2gb3v3IV3XIVDnEWNBQU3LSiEg8v/iggSRi5M
+ bZC3HK2sJ2V8y7bhqesyuKFMuQU7E7nCJr6GqiZ2bmy0gDwTb8bBmCnRdv2jGihpucTu
+ wD9Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Ap/Cm+u1DjsmoSGJn+7UdP1qyu4V/MqMRJNVuJDCIWQ=;
- b=QruSm533XlPngI12686j7iLzb5tBjSOd5MFUE6e9UvfjkERPkvKalikgbcy35Yyr9H
- k4asuh79cHMYcu/+LnzMcFpcWWEz/QFn17kJecbfd1efO1pDto9p6DIH/5LmOY6zRS5x
- ngdrz6zUN/SSvrDRnMNU9zROg/RkP8oen3kJ8ZBywvCiYMmLzketanczlGMYILcG+xPl
- 2BuBhFXpnYqHVIr147S4FGcg4TRapGp1f1gfamHMP6mdrGJ2RTMZiOx6RDtfBjmH4hxH
- ag3fdSEQnUOmCOx0VODYCXFaDjAMmyErBbF9AM5Ap/vdlC8mNCLIGJW/q6Fczq1psO4g
- soqQ==
-X-Gm-Message-State: APjAAAV+QZa9i1ri1xO4J0KB8PftwNh6CmAiql+LMVNWxlWX1AWx1FIZ
- WMmvHeqUxX6lsBHGcM2jG2u7DiEWzntrYwcJTs62Xh1a
-X-Google-Smtp-Source: APXvYqzsS4n5TWHSBz9UbE+s/yqc825FR6a1YbEDpO2HfsnbYtZhJWvn4rSlXWcKxfwLQzAlrYpmCv5PNjFwxtMve2U=
-X-Received: by 2002:a0c:e711:: with SMTP id d17mr2878148qvn.174.1567001739914; 
- Wed, 28 Aug 2019 07:15:39 -0700 (PDT)
+ bh=JAFt1swzD6UH/QPlFR7e6f/l0G2PJ+bbbQD4Ay8Fbog=;
+ b=jDoeYFNm6ugND7Z/PJHLC6Nk8FoXkwTBdSZCHL2K8E68i7AhkyNx5yC34W7XBYmeUS
+ E9wAid3HhlOAJBOv1uNjdP0qAm52tSG5LWB65lDd8gc3my4Z+iXcvgZTAUt5SZ34Vct4
+ HJGP91WXUhxUFGDB3QIfyxUY+quj3wSsCc6iCOzVlU5gvmvIhgoJ7SYO3rJFGkD22Ss+
+ 74blUijm0ThipPTEAr8nO23TnFhA8gGU61ACeVyxK/3quIezvi8My4GXR0qD7wcumBQj
+ UlgWHDZADbW2Ya7IJ4NpDhxqRlfA3+8l1h1hW6uubhbqRxO+g6ZEfro0wKQFGBNP4IXt
+ rxbg==
+X-Gm-Message-State: APjAAAX3w/gcJMs9viLGcRc9nFWWzUv3AYR1Nkj1q8GK9GdKAVcv3tEQ
+ qN1b5dChtPAP4Z/69Sc+cWhFCJ7TZuBzlgRFxkAULw==
+X-Google-Smtp-Source: APXvYqz9WGIL4oYlMSNDpRcIekT0TGX7RTGbrDHHXrKmFSHUzEZ/vffakhNR2NuhxWz61dDGAz9vIio9yUWyz8ec1wo=
+X-Received: by 2002:a37:4d16:: with SMTP id a22mr4183194qkb.482.1567001769888; 
+ Wed, 28 Aug 2019 07:16:09 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190819205720.24457-1-mike.leach@linaro.org>
  <20190819205720.24457-8-mike.leach@linaro.org>
- <20190828051847.GG26133@leoy-ThinkPad-X240s>
-In-Reply-To: <20190828051847.GG26133@leoy-ThinkPad-X240s>
+ <20190827222718.GC14958@xps15>
+In-Reply-To: <20190827222718.GC14958@xps15>
 From: Mike Leach <mike.leach@linaro.org>
-Date: Wed, 28 Aug 2019 15:15:28 +0100
-Message-ID: <CAJ9a7VgH+tZMRZJjkiT6X9md97Wq4nJP=ZkDN0iM0sdGNeCpPQ@mail.gmail.com>
+Date: Wed, 28 Aug 2019 15:15:59 +0100
+Message-ID: <CAJ9a7VjnvOPhdX3+Vn_h8WRB4-zO7cMmBdSUuX79kyhTYFRGYQ@mail.gmail.com>
 Subject: Re: [PATCH 7/8] coresight: etm4x: Add missing single-shot control API
  to sysfs
-To: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_071541_420559_4A4F5A11 
-X-CRM114-Status: GOOD (  25.88  )
+X-CRM114-CacheID: sfid-20190828_071610_949024_11514912 
+X-CRM114-Status: GOOD (  23.14  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:742 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -95,15 +95,16 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Coresight ML <coresight@lists.linaro.org>,
  linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
- Mathieu Poirier <mathieu.poirier@linaro.org>
+ "Suzuki K. Poulose" <suzuki.poulose@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-HI Leo,
+Hi,
 
-On Wed, 28 Aug 2019 at 06:18, Leo Yan <leo.yan@linaro.org> wrote:
+On Tue, 27 Aug 2019 at 23:27, Mathieu Poirier
+<mathieu.poirier@linaro.org> wrote:
 >
 > On Mon, Aug 19, 2019 at 09:57:19PM +0100, Mike Leach wrote:
 > > An API to control single-shot comparator operation was missing from sysfs.
@@ -194,10 +195,6 @@ On Wed, 28 Aug 2019 at 06:18, Leo Yan <leo.yan@linaro.org> wrote:
 > > +     config->ss_ctrl[idx] = val & GENMASK(24, 0);
 > > +     /* must clear bit 31 in related status register on programming */
 > > +     config->ss_status[idx] &= ~BIT(31);
->
-> Since function etm4_enable_hw() will clear ss_status's bit 31 when
-> program TRCSSCSRn, so is here redundant to clear bit 31?
->
 > > +     spin_unlock(&drvdata->spinlock);
 > > +     return size;
 > > +}
@@ -246,32 +243,17 @@ On Wed, 28 Aug 2019 at 06:18, Leo Yan <leo.yan@linaro.org> wrote:
 > > +     spin_lock(&drvdata->spinlock);
 > > +     idx = config->ss_idx;
 > > +     config->ss_ctrl[idx] = val & GENMASK(7, 0);
-> > +     /* must clear bit 31 in related status register on programming */
-> > +     config->ss_status[idx] &= ~BIT(31);
 >
-> Same question for if it's redundant to clear bit 31?
->
-> Thanks,
-> Leo Yan
+>         config->ss_pe_cmp[idx] = val & GENMASK(7, 0);
 >
 
-The sysfs representation is not the current state of these registers,
-but the values that will be programmed on enabling the hardware. We do
-not write anything to hardware immediately.
-So from a sysfs perspective, the bit clear is reflected in the status
-register here to recognise that it will be programmed as cleared.
-
-Should the same registers be set from a different path - e.g. perf,
-then the status will automatically be cleared each time the hw is
-enabled.
-
-Regards
+Good spot, Thanks
 
 Mike
 
 
-
-
+> > +     /* must clear bit 31 in related status register on programming */
+> > +     config->ss_status[idx] &= ~BIT(31);
 > > +     spin_unlock(&drvdata->spinlock);
 > > +     return size;
 > > +}
@@ -389,14 +371,10 @@ Mike
 > > --
 > > 2.17.1
 > >
-> > _______________________________________________
-> > CoreSight mailing list
-> > CoreSight@lists.linaro.org
-> > https://lists.linaro.org/mailman/listinfo/coresight
 
 
 
--- 
+--
 Mike Leach
 Principal Engineer, ARM Ltd.
 Manchester Design Centre. UK
