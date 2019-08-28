@@ -2,128 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 217679F843
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 04:21:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22619F85A
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 04:30:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:MIME-Version:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=nSsAs8m9WcJTBzOqj3frX/A2mTNWfLVEZb4WKBG3dh4=; b=qu/5L/Ko6LYMuy
-	ruQv3pSqBViwUM9c5O+37XaPZ+cGR0NrPHCt4T7L8/MtVTMam0OLrMSBtdfudmvnRJbCzUD2pflhO
-	HfpEq9a5/no83rWAm4fWz5wFccaP2GfVxGAH5FJ7M/CtVyYjSMfdX5DrExas4Hjgrj7kyuI0yfKNY
-	LqZXMPG6aQhciEkxt7H1uo9/EfjnbsmVW99zsRyNIwgNEL4Qrvi8skPKWiLn/sji6C6TdLM1sWa0x
-	mSTs/LyKicc6Ryyb8cLsxigp5DwgU1oASHekDWuf7vbcm8Aypy+mzMANkpMZjaEG7/gzFFgs7HcQJ
-	vEJAp9jjgxQ2Vqs18OPA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:
+	References:In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=iJav9d13JnZ7mMVaYk6Q0Kw1EX8qppvW0QMC5UyjqjE=; b=qbNPEIA0ixLx6b/tyaCVYxpvqM
+	1oR1UErxKVOtDXK3v7skCbDuGtp1cqZ7S99xnshnEHmKW93YlS3U+dECykNi2ZxyniYWpe+vxgHml
+	cf1sJf8bKpLQn5Apm6axPDF0L8QZPvb/+HhVNdD2nouhpGaCqt4iktiqxp7xdtY+XUloFuKmdyk7C
+	0bVhpQ0gg2Hxr8zTyQNk0rfKjk1gt2TH3K+NQb/bQFr5XqXgS/m3LBzHid5yGaZZT6Ew2tWNQAdW0
+	ZYam7euCp/0Ku2a79by8fX+ki/aaDDIlKxD+gQI1UrPDHvGosSFMcqh+ee8oRMZIcnsNPzWfoRFpC
+	WCwsrbBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2naH-0007sS-Ev; Wed, 28 Aug 2019 02:21:17 +0000
-Received: from mailout1.samsung.com ([203.254.224.24])
+	id 1i2nif-0001Fi-Oo; Wed, 28 Aug 2019 02:29:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2na3-0007qj-CG
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 02:21:05 +0000
-Received: from epcas2p3.samsung.com (unknown [182.195.41.55])
- by mailout1.samsung.com (KnoxPortal) with ESMTP id
- 20190828022057epoutp015f3aea1feeae775b6e4fafc7717c44db~_9MdN9Eie2999229992epoutp01t
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 02:20:57 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.samsung.com
- 20190828022057epoutp015f3aea1feeae775b6e4fafc7717c44db~_9MdN9Eie2999229992epoutp01t
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1566958857;
- bh=2Id8G/Xn6V06sAdZYXMptUi6MUxaX2z3h414AQSi5/I=;
- h=From:To:Cc:Subject:Date:References:From;
- b=k98yVcHoY5eRWy55whZ8rcavcrMGw1LpHMDptIqy9vdMw+WVazwzt15mo01XkRRd9
- 7l4/CVj1LA+KD2X9zJQ7pDyqu9or8QDc9Y8Ar0ut0xku1LRrop+z5Ki0aMLe43HoyD
- 3N5pbfTIZQ6BYehWU3Hx+E4IXA0zFrHfzsrXO79E=
-Received: from epsnrtp5.localdomain (unknown [182.195.42.166]) by
- epcas2p4.samsung.com (KnoxPortal) with ESMTP id
- 20190828022056epcas2p488315cc4e34969caaecc606d9bbd2c6e~_9Mc2Raic1168911689epcas2p4l;
- Wed, 28 Aug 2019 02:20:56 +0000 (GMT)
-Received: from epsmges2p1.samsung.com (unknown [182.195.40.181]) by
- epsnrtp5.localdomain (Postfix) with ESMTP id 46J8c74t4rzMqYkf; Wed, 28 Aug
- 2019 02:20:55 +0000 (GMT)
-Received: from epcas2p3.samsung.com ( [182.195.41.55]) by
- epsmges2p1.samsung.com (Symantec Messaging Gateway) with SMTP id
- 36.C7.04156.705E56D5; Wed, 28 Aug 2019 11:20:55 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas2p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190828022055epcas2p25525077d0a5a3fa5a2027bac06a10bc1~_9MbUtf8v2048620486epcas2p2Q;
- Wed, 28 Aug 2019 02:20:55 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190828022055epsmtrp247236feb1b81a6eaa608658d164e62a4~_9MbTgesT1110211102epsmtrp2U;
- Wed, 28 Aug 2019 02:20:55 +0000 (GMT)
-X-AuditID: b6c32a45-ddfff7000000103c-c4-5d65e5073e36
-Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- F0.33.03706.605E56D5; Wed, 28 Aug 2019 11:20:55 +0900 (KST)
-Received: from KORDO035251 (unknown [12.36.165.204]) by epsmtip1.samsung.com
- (KnoxPortal) with ESMTPA id
- 20190828022054epsmtip1cb959d74740696d9b606a29b76e0110e~_9MbAmhuG2545625456epsmtip1A;
- Wed, 28 Aug 2019 02:20:54 +0000 (GMT)
-From: "boojin.kim" <boojin.kim@samsung.com>
-To: "'Theodore Y. Ts'o'" <tytso@mit.edu>
-Subject: Re: [PATCH 5/9] block: support diskcipher
-Date: Wed, 28 Aug 2019 11:20:53 +0900
-Message-ID: <009301d55d47$38606400$a9212c00$@samsung.com>
-MIME-Version: 1.0
-X-Mailer: Microsoft Outlook 14.0
-Thread-Index: AdVdRkQ7u+BKrKHPSQuBNN28o4N3VA==
-Content-Language: ko
-X-Brightmail-Tracker: H4sIAAAAAAAAA01Tf0wbZRjOd3e9OybFs6vus6LrThYdE9arFj50qNG5XbL9gb+iMc56KZcW
- 7a/0WjbUbATXUhiRQXRuhbG5GeNgla3UjQzKXGGSOqBOZGEEt8QxDKBsApuBiNr2WOS/53m+
- 5/ne9/3efDSu+pzS0CV2t+iyC1aWXEGc7l6Xn0PdELfrWnqy0O05P4Faf/geRy2/1JLo4mf9
- GGqM7yFQZLpBgYKdf+No72QmGmsN4Gh4wadAtdencBSPn6RQ6PplBYqMrEfXrs5j6GDTKIl+
- OroFTTbdIVBnJEagwbONJOr5txagA/EuDPlO3QbIWzNPod7gG88/yIePX8H4PW07+NPfreUH
- +z18qLmK5Ecvd5J825e7+Y4jsxhf0XcB5292DZH8J+FmwM+GHilKf8u60SIKxaJLK9pNjuIS
- u7mQ3fqq8UWjIU/H5XAFKJ/V2gWbWMhu2laUs7nEmpid1ZYKVk9CKhIkid3w7EaXw+MWtRaH
- 5C5kRWex1clxzlxJsEkeuznX5LA9zel0ekPC+a7VUn/1EOWsTN/Zd7hWUQ4uplUDmobMUzBY
- KVaDFbSKaQfw5/EmhUxmALw5vI+UyZ0E8VaAuwlveIusRwD8bfhPXCYTAJ7/ay4RT6NJZj1s
- 620GSaxmHodDi/Opa3HmHwqOzUSJ5MFKRg+91XuxJCaYtXCi6hKWrKBkCuCl/auTspK5D8YO
- jqXsOLManvmjEU9iyGhhe/9UqiE1kwuPjr8iW9SwocqX6gcyixQcb/ATsn8T/NgbWcquhJO9
- YUrGGjg7HSFlvBsOfXWMksM1APYt+JZMT8LAeGWqGM6sg61nN8gP8SjsGVlqLQP6uxcpWVZC
- v08lB7PgoZlBTJY18FbNLlnmYThcD/aBNYFlMwaWzRhYNkzg/7JHANEMHhCdks0sSnont3zT
- IZD6FNkvtYMDA9uigKEBm6703ytuVymEUqnMFgWQxlm18teshKQsFso+EF0Oo8tjFaUoMCQ2
- UIdr7jc5El/M7jZyBn1enq7AgAx5esSuUrbdc+VtFWMW3OL7ougUXXdzGJ2mKQdm9e/PFMRj
- 773zBV9v6lKSE4+Fdg3MVVyYek5SKp6IvRms40syMn5sObHq/EM7TOdOZkd21tVrz2WWWSYa
- Tk1jU4dBJy2xr58IfXvmNZtpf0UpZ87vuHGreyBmffiFeJeR+Kaj91prJhoJlleXfXpsob0n
- mv91KTg++mHN1o/EzJdZQrIIXDbukoT/AJPWV5kqBAAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrGIsWRmVeSWpSXmKPExsWy7bCSnC7709RYg94Ki69fOlgs1p86xmyx
- +m4/m8XpqWeZLOacb2Gx2PtuNqvF2j1/mC26X8lYPFk/i9nixq82Vov+x6+ZLc6f38Busenx
- NVaLvbe0Le7f+8lkMXPeHTaLS4vcLV7N+8ZisWfvSRaLy7vmsFkc+d/PaDHj/D4mi7aNXxkt
- Wnt+slscXxvuIOmxZeVNJo+WzeUe2w6oelw+W+qxaVUnm8eda3vYPDYvqffYveAzk0fTmaPM
- Hu/3XWXz6NuyitHj8ya5AJ4oLpuU1JzMstQifbsEroxJ9+ayF7TzVJyZ38/awHias4uRg0NC
- wESidYt7FyMXh5DAbkaJkzPfsHYxcgLFpSS2tu9hhrCFJe63HAGLCwk8Z5T43FQAYrMJaEts
- Pr6KEcQWEdCQuPr3J1gNs8A0DoldH8RBbGEBI4nWrm4mEJtFQFXiZedFJpC9vAKWEhenyYOE
- eQUEgdY+YQEJMwvoSbRtZISYIi+x/e0cqAsUJHacfc0IUiICVLLoWRBEiYjE7M425gmMgrOQ
- DJqFMGgWkkGzkHQsYGRZxSiZWlCcm55bbFhgmJdarlecmFtcmpeul5yfu4kRHPtamjsYLy+J
- P8QowMGoxMPbwZ8aK8SaWFZcmXuIUYKDWUmE95EKUIg3JbGyKrUoP76oNCe1+BCjNAeLkjjv
- 07xjkUIC6YklqdmpqQWpRTBZJg5OqQbGCe6KPu0piqufKnP1tu34wfCOpXqGoZpO67oI2VcH
- eqz4CosPzjLUeH51hWb/iW3c2p8WGrj7dMxw+SJmk/ti5rSjDMePZCbVPPVd3qPhWBbPHjtv
- ZbFB6qVNv9OePpv046uo851LB0VeyiS+PenWVX+k+d80Jp7Pto/8NjFKWcr4L715Z/M0JZbi
- jERDLeai4kQAn059LPkCAAA=
-X-CMS-MailID: 20190828022055epcas2p25525077d0a5a3fa5a2027bac06a10bc1
-X-Msg-Generator: CA
-X-Sendblock-Type: AUTO_CONFIDENTIAL
-CMS-TYPE: 102P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20190828022055epcas2p25525077d0a5a3fa5a2027bac06a10bc1
-References: <CGME20190828022055epcas2p25525077d0a5a3fa5a2027bac06a10bc1@epcas2p2.samsung.com>
+ id 1i2niN-0001FO-3V
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 02:29:40 +0000
+Received: from localhost (unknown [40.117.208.15])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A97992173E;
+ Wed, 28 Aug 2019 02:29:36 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1566959376;
+ bh=0uflqG7PzKmn3DfOCePtKJB4PS27A7Scw4BVKd4qE+8=;
+ h=Date:From:To:To:To:Cc:Cc:Cc:Subject:In-Reply-To:References:From;
+ b=t5wXFWOnBSKZNpAQVw1ycpHrG86Xf2BVuwMf7sPLAObNGUAZs+LJN/kMVHu25j56J
+ dhAX5bGqlLzfj5HAs230gbnl7hg5N6/G/eNbBoFylhJjmd4Vl632sMn+JQsmZPD4QC
+ L4uq6HHazggt9RzmLErZ/BxJi58NNeA5Kerpd4RA=
+Date: Wed, 28 Aug 2019 02:29:35 +0000
+From: Sasha Levin <sashal@kernel.org>
+To: Sasha Levin <sashal@kernel.org>
+To: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH 1/6] Revert "arm64: Remove unnecessary ISBs from set_{pte,
+ pmd, pud}"
+In-Reply-To: <20190827131818.14724-2-will@kernel.org>
+References: <20190827131818.14724-2-will@kernel.org>
+Message-Id: <20190828022936.A97992173E@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190827_192103_590237_BF125E47 
-X-CRM114-Status: GOOD (  18.61  )
+X-CRM114-CacheID: sfid-20190827_192939_169660_989C9377 
+X-CRM114-Status: UNSURE (   7.24  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.24 listed in list.dnswl.org]
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -143,61 +78,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: 'Ulf
- Hansson' <ulf.hansson@linaro.org>, 'Mike Snitzer' <snitzer@redhat.com>,
- dm-devel@redhat.com, 'Andreas Dilger' <adilger.kernel@dilger.ca>,
- 'Alasdair Kergon' <agk@redhat.com>, 'Eric Biggers' <ebiggers@kernel.org>,
- linux-samsung-soc@vger.kernel.org, 'Herbert Xu' <herbert@gondor.apana.org.au>,
- 'Krzysztof Kozlowski' <krzk@kernel.org>,
- 'Jaehoon Chung' <jh80.chung@samsung.com>, 'Kukjin Kim' <kgene@kernel.org>,
- linux-ext4@vger.kernel.org, 'Chao Yu' <chao@kernel.org>,
- linux-block@vger.kernel.org, linux-fscrypt@vger.kernel.org,
- 'Jaegeuk Kim' <jaegeuk@kernel.org>, linux-arm-kernel@lists.infradead.org,
- 'Jens Axboe' <axboe@kernel.dk>, 'Theodore Ts'o' <tytso@mit.edu>,
- linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-f2fs-devel@lists.sourceforge.net, linux-crypto@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, "'David S. Miller'" <davem@davemloft.net>
+Cc: linux-arch@vger.kernel.org, , Will Deacon <will@kernel.org>,
+ stable@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 05:33:33PM +0900, boojin.kim wrote:
->
-> Hi Boojin,
->
-> I think the important thing to realize here is that there are a large
-> number of hardware devices for which the keyslot manager *is* needed.
-> And from the upstream kernel's perspective, supporting two different
-> schemes for supporting the inline encryption feature is more
-> complexity than just supporting one which is general enough to support
-> a wider variety of hardware devices.
->
-> If you want somethig which is only good for the hardware platform you
-> are charged to support, that's fine if it's only going to be in a
-> Samsung-specific kernel.  But if your goal is to get something that
-> works upstream, especially if it requires changes in core layers of
-> the kernel, it's important that it's general enough to support most,
-> if not all, if the hardware devices in the industry.
->
-> Regards,
+Hi,
 
-I understood your reply.
-But, Please consider the diskcipher isn't just for FMP. 
-The UFS in Samsung SoC also has UFS ICE. This UFS ICE can be registered 
-as an algorithm of diskcipher like FMP.
+[This is an automated email]
 
-Following is my opinion to introduce diskcipher.
-I think the common feature of ICE like FMP and UFS ICE, 
-is 'exposing cipher text to storage".
-And, Crypto test is also important for ICE.  Diskcipher supports
-the common feature of ICE. 
-I think specific functions for each ICE such as the key control of UFS ICE
-and the writing crypto table of FMP can be processed at algorithm level.
+This commit has been processed because it contains a "Fixes:" tag,
+fixing commit: 24fe1b0efad4 arm64: Remove unnecessary ISBs from set_{pte,pmd,pud}.
 
-Thanks for your reply.
-Boojin Kim.
+The bot has tested the following trees: v5.2.10, v4.19.68.
 
+v5.2.10: Build OK!
+v4.19.68: Failed to apply! Possible dependencies:
+    0795edaf3f1f ("arm64: pgtable: Implement p[mu]d_valid() and check in set_p[mu]d()")
+
+
+NOTE: The patch will not be queued to stable trees until it is upstream.
+
+How should we proceed with this patch?
+
+--
+Thanks,
+Sasha
 
 _______________________________________________
 linux-arm-kernel mailing list
