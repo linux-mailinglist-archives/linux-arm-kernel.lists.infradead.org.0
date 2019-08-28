@@ -2,158 +2,189 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5070C9FF9D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:20:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C65BC9FFA9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 12:23:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oYHNCR+B6I0XT0KKYEyEc8EQUMyooSc89ARnHtbbmoY=; b=GmDe4QDFB1mvfq
-	Qy+IQhuQrpmG+PUF9Wv35dsecHTmgIJB7K9S85DL9CnObF6dC90gRb5XHc47plvUiSugNpkuouyFa
-	3GdEjj0sdA5PHfz1oVMSmOmL+GgGPs/bI7QzVGrVN2FG/iAY+nYlbieluE9Y+xlbeCs91ARdERspr
-	Tsdx7jWGCYFs8QiB9qlpH9nj5VBHdF/ESWRDe/j4d6eSflhScHYh7hkEfxYtUuroCieskqyim86ok
-	Y2NFs6tNQ83AXbYEC5htutXvQC0AxODkrQdistJkycVjPFNuixA1xdYvNEMAAqOVI+fYzmXkOyKnN
-	2ozAuAFyWNYClnmAtj2A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=02UpCwfzDiAWneybxpOxmuq6V+Al9R2mQlNBMa1CEaA=; b=Mc/lIW+itrIppt
+	RWIjAsjyDw+Wcb/dagjI4edVkU9TQ+aUecba6h5USc45C/Uu5SMpIG+JTXxNXt0Hp/eyJAeGD9/M0
+	2WZpRQs27hWwgtXOtzJdth7Yz/K+P2Ts/QwCTRkKSXPUndewWSLbSUUQsqNMX7IJyo40MEjGoFMbR
+	B5PFuOiQjwy05OSQ71Rfp2i18Fc/Y/D7feYUDU1lgGNUDIoN+dYrVoG7AJ+3GgXZ9+xlgdT5330md
+	RPFSwwjCH52iPLhZ0jh8iagwoeORKeR1di0j9nb8hOKy9ET8qDndO9MVqvoRQni05Ll/3pGMgSjmk
+	B1p5rNwqH7usORq1+qqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2v46-00013W-OU; Wed, 28 Aug 2019 10:20:34 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1i2v6X-0002C5-A8; Wed, 28 Aug 2019 10:23:05 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2v3n-000131-Ou; Wed, 28 Aug 2019 10:20:17 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Tudor.Ambarus@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="Tudor.Ambarus@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Tudor.Ambarus@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Tudor.Ambarus@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: Dr1c/fVYZbyvlG/T1T9K6ZljGGy9vfYc0WILr7BIIfb62lA4nEOsUz34APACHtIL1SwLXUIbnJ
- sn6A15Kb+cwu4YaUgG28ady3g9z0W7/InQ6M8yN7I37Ml8go4XLa1GEQhwtll19+ktAK+2a+Ih
- yR0+aiJAqXg9LEaC1B3nq7ZuR+ny5JOf7MwHuQ07UnWEuMFgYFOyf6i3viuWVWQaqa0SKvTjCl
- dg9PdqCR3BXoVFP/vFp5099PlX0Cvl3ESmGrqBFWy4QKslI2UhgRdCwMoKuoramOmeno+ScXAW
- VxE=
-X-IronPort-AV: E=Sophos;i="5.64,440,1559545200"; d="scan'208";a="46839166"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 28 Aug 2019 03:20:13 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 28 Aug 2019 03:20:13 -0700
-Received: from NAM02-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256) id 15.1.1713.5 via Frontend
- Transport; Wed, 28 Aug 2019 03:20:12 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=R1NkyIjc3iRgDy1760cE7ot91AxGQjA4UR3trp+Jq0+XIHOi0EtWoJDGxL+ZKK4U4L3MvA/NKzZxZCC5AbpbKj92F4stLZMFDeXMvuA4pl0ySMjPnFiW6qPsdCPgrpXJuL3Bevmb2dcdrAnyM+op7q+IS9MQw204LxvTii0rVTN0C6MYttnKmshvaV5gFUC2yH7VJbYL7V+lLdAOqWCOv0PNfHljk3kbfL4POcsEz+rSVBS8WbKnasuxF/QAJ1DetfrM3UOTahzuV3Sr0RQUbKNmUPvkD4F3twJ1s7rvfdqDhN5Gs3rIAGBf0HIDdTHwJKBWADwvRNOkLqnJnItejg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3aS+nfAfNSmMWmncMtavycpmYG1KzVlyMZ+jyoGN1k0=;
- b=n5FvkA8Xw1xrWoS3ztPad1uGrmQ9y9wUQdj5amjFF0wZfIopMa3PCil9fkvS+RPL/MBbmGriRHxPCAimk+vzHcF8JLkX6oxap2emNVqT0BioBb1M94uZpMuS0WQESmZCufAaJa8qUuI0p0eyCpLLaLp1L55/qmGzeOSsG4zQAXLB/8YOnI6XHGYLd7Wk6lLRDOjVqnqvPZRGk24XmX85JvqI2xVsGHhrxFKMsEHFr7taH5d8mriSFic1Ef5Ji06QgXAZRWQnmnnm2mhZAklkGJSPdWx8CoF4E2u2FVOuFOXL5CkcVX2KXpfk8JwR6khJGfEvYTBdG0hNXBgZl88Tpg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=3aS+nfAfNSmMWmncMtavycpmYG1KzVlyMZ+jyoGN1k0=;
- b=e4vUV6rgtbBv2tpgLRQZcuOeqIPMsFEX7zqMnz64KVVoZ5R/HSaFVKqd9zh+1SpII/ltv1TuwUHOkpzNDzqGfhBNTJIg1hKccAFB9+YsOd6FVCb9JpJv4yQf8OZ4Yj8PzkrQ1UXbzYEdI/Krlmx1tc0YNMo3Forad7BrVi4Q8A0=
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com (52.135.39.157) by
- MN2PR11MB3727.namprd11.prod.outlook.com (20.178.252.13) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.21; Wed, 28 Aug 2019 10:20:12 +0000
-Received: from MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::70c3:e929:4da2:60a5]) by MN2PR11MB4448.namprd11.prod.outlook.com
- ([fe80::70c3:e929:4da2:60a5%7]) with mapi id 15.20.2199.021; Wed, 28 Aug 2019
- 10:20:12 +0000
-From: <Tudor.Ambarus@microchip.com>
-To: <nishkadg.linux@gmail.com>, <marek.vasut@gmail.com>,
- <dwmw2@infradead.org>, <computersforpeace@gmail.com>,
- <miquel.raynal@bootlin.com>, <richard@nod.at>, <vigneshr@ti.com>,
- <joel@jms.id.au>, <andrew@aj.id.au>, <linux-mtd@lists.infradead.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-aspeed@lists.ozlabs.org>
-Subject: Re: [PATCH] mtd: spi-nor: aspeed-smc: Add of_node_put()
-Thread-Topic: [PATCH] mtd: spi-nor: aspeed-smc: Add of_node_put()
-Thread-Index: AQHVTb4VASkIRT72fUW6SyhLcwXSAacQeNWA
-Date: Wed, 28 Aug 2019 10:20:11 +0000
-Message-ID: <96475f82-066c-ff67-3ea9-1fec64eef021@microchip.com>
-References: <20190808075104.15928-1-nishkadg.linux@gmail.com>
-In-Reply-To: <20190808075104.15928-1-nishkadg.linux@gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0102CA0041.eurprd01.prod.exchangelabs.com
- (2603:10a6:803::18) To MN2PR11MB4448.namprd11.prod.outlook.com
- (2603:10b6:208:193::29)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 43a6a3ab-f03a-44b7-c072-08d72ba14f43
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:MN2PR11MB3727; 
-x-ms-traffictypediagnostic: MN2PR11MB3727:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <MN2PR11MB3727E5D48FBC4BB4256F763AF0A30@MN2PR11MB3727.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:4714;
-x-forefront-prvs: 014304E855
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39860400002)(396003)(366004)(346002)(376002)(136003)(189003)(199004)(446003)(4744005)(6246003)(11346002)(76176011)(2616005)(6436002)(2201001)(6306002)(25786009)(5660300002)(36756003)(99286004)(6506007)(6486002)(316002)(6512007)(14444005)(256004)(2501003)(486006)(53936002)(2906002)(476003)(52116002)(66066001)(71190400001)(229853002)(102836004)(186003)(478600001)(81156014)(81166006)(110136005)(8676002)(966005)(86362001)(26005)(66446008)(64756008)(66556008)(66476007)(305945005)(6116002)(14454004)(7416002)(3846002)(31696002)(7736002)(8936002)(66946007)(71200400001)(31686004)(53546011)(386003)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:MN2PR11MB3727;
- H:MN2PR11MB4448.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: bOhrFAWOF9WuG0e7fHXc2N0EUgixEEcwCWwsypcq/JYmOddYKV1Al/Qwf1ZDGjgaPrm8dqAPJgyPtsjUslalQTqBfpwB/4sl4EnBYSFqTfyjAx3KPdHG8yLLVjILIkhUamc/7fqVJUECfeo2JeqPA2zaIc9X6OrjSc+KcD3Os+KZTkEQEaA5fZlZuThnrioFXDpnSvWYBJwWLEQ97sgh9AnHOEDD34GBIUSrG9+jIsAeyq3CSl8gd5P9rJOb4+BjMlSjOhNNZDvLxe+ukpkzYQZqpo+sq8DjL9qFu//RErt41QLxckLBs5nieeoB9FvCugPzoXmYqERe0HvkGEwMn6LVZ1vmj0dzpS6ee7Dj8FJQfADbbQltDbWbrKMV17javqdXAJ9Z0+Hh6C2ljrb6bEWD9S81/dGutLpY2ZJxf5Q=
-x-ms-exchange-transport-forked: True
-Content-ID: <0265766D62590C46AC174EF2A1C7DCEF@namprd11.prod.outlook.com>
+ id 1i2v6J-0002AX-DE; Wed, 28 Aug 2019 10:22:53 +0000
+Received: by mail-ed1-x543.google.com with SMTP id w5so2391233edl.8;
+ Wed, 28 Aug 2019 03:22:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=TluT6OUbvy60InunIVgzisQRXNrTEJL9yWsQxD4N54U=;
+ b=OWF0vXILtjT95V0W0gOzyzPx9aEaTvacNFfJQXYJFvK5JNuFmXUf04ShFGoVUoONw3
+ ZJmekyN8tlpXUw6Ovu59NWjfetsoYB0shuBtaNbbs8BVndz6je3zan3J0lNW1CcEa7Y7
+ 50v19HMC/lECgzsP0Mvp0Y4xP5kvDvcsYMaB3XhGMa8m85cqzWMlTARTieXM7+6MlHq5
+ 7jpAr88pZfiKasZFSqbCWRiIZc4ewSJUrhJ1LCw3a7VsU+Qm6qf5BWrXmxQiFCYknIPu
+ KYhUcRp3X1gKrk3EAShKMVp5SCpWuu64hD3Yb8D/AmGxgKJVyQxRc9CVMcApamGuiVDb
+ bQ6Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=TluT6OUbvy60InunIVgzisQRXNrTEJL9yWsQxD4N54U=;
+ b=o5oEXRRm3DrwUYBbhvoLEqdyqB6nLkjb5sDe7JboFD8NzdDMiDq5fLIN6V/S10An1E
+ b55Q9qyDoRv17bxu3x5z8iNNtkdOBYihyOPyPVWgNt5d2ap4bSx7FJsmPfUZmRpJ759E
+ TqCUWYc6SPJpzjsNJ1IRaOX35IVuwabCb4UrnhXFrAZdvUexj1Znkge9mlrBwnPVm28d
+ h/7HB+L/Adugy/Ud3b0UR3uAd1zgKuR2FORDEHKD9RuzawC5j/Bvs1bJTjP5waO/V15T
+ hC/sP1gmIMT+b7jKeB+WCAnl2lQ77ZtsDAg2bz2qBAjKVk4JgxV7uKKnNXlI9YsWe1/c
+ K8qA==
+X-Gm-Message-State: APjAAAU3fJiz5ZCG7ezWk4QleJwcDOK2kUkzd01JUH4z3AwiWG7jowD1
+ J8/1fyYUJ3QvwgwPlztojbw=
+X-Google-Smtp-Source: APXvYqyB8ERiCjUFYwL7hnnsb5Vrkw8Yy9jPGq6PFMYL0fkg/G/ggk6TrDUV52+6JPl7GjAC952RhQ==
+X-Received: by 2002:a50:fa8a:: with SMTP id w10mr3100164edr.247.1566987769605; 
+ Wed, 28 Aug 2019 03:22:49 -0700 (PDT)
+Received: from ziggy.stardust ([95.169.228.146])
+ by smtp.gmail.com with ESMTPSA id o26sm319235ejb.58.2019.08.28.03.22.47
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 28 Aug 2019 03:22:48 -0700 (PDT)
+Subject: Re: [PATCH v7 06/13] soc: mediatek: Refactor sram control
+To: Weiyi Lu <weiyi.lu@mediatek.com>, Nicolas Boichat
+ <drinkcat@chromium.org>, Rob Herring <robh@kernel.org>
+References: <1566983506-26598-1-git-send-email-weiyi.lu@mediatek.com>
+ <1566983506-26598-7-git-send-email-weiyi.lu@mediatek.com>
+From: Matthias Brugger <matthias.bgg@gmail.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ jrHWeQEI2ucSKsNa8FllDmG/fQ==
+Message-ID: <d9462fa7-3395-347d-da44-8ff86713fd6d@gmail.com>
+Date: Wed, 28 Aug 2019 12:22:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 43a6a3ab-f03a-44b7-c072-08d72ba14f43
-X-MS-Exchange-CrossTenant-originalarrivaltime: 28 Aug 2019 10:20:11.9861 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: lvIk2VStxMATCYQj4HYQAuKWbZoMYN9getF0EvEeMIbPtyceBTeVQ/KdbuyB8sJrGc9IsQ+ACEq2x9NCXiEgO4psSb0qKWmmEmoY7IuMEbw=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR11MB3727
+In-Reply-To: <1566983506-26598-7-git-send-email-weiyi.lu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_032015_846841_DACFB5CC 
-X-CRM114-Status: UNSURE (   9.05  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190828_032251_473026_16CF6756 
+X-CRM114-Status: GOOD (  23.97  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (matthias.bgg[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -165,6 +196,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: James Liao <jamesjj.liao@mediatek.com>, srv_heupstream@mediatek.com,
+ linux-kernel@vger.kernel.org, Fan Chen <fan.chen@mediatek.com>,
+ linux-mediatek@lists.infradead.org, Yong Wu <yong.wu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -172,29 +207,189 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 08/08/2019 10:51 AM, Nishka Dasgupta wrote:
-> External E-Mail
+On 28/08/2019 11:11, Weiyi Lu wrote:
+> Put sram enable and disable control in separate functions.
 > 
-> 
-> Each iteration of for_each_available_child_of_node puts the previous
-> node, but in the case of a break from the middle of the loop, there is
-> no put, thus causing a memory leak. Upon termination of the loop
-> (whether by break or a natural exit), either ret will have a non-zero
-> value or child will be NULL. Hence add an of_node_put() that will
-> execute only when ret has a non-zero value, as calling of_node_put() on
-> a possible NULL value does not cause any further issues.
-> Issue found with Coccinelle.
-> 
-> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
-> ---
->  drivers/mtd/spi-nor/aspeed-smc.c | 4 +++-
->  1 file changed, 3 insertions(+), 1 deletion(-)
-> 
-Applied to https://git.kernel.org/pub/scm/linux/kernel/git/mtd/linux.git,
-spi-nor/next branch.
+> Signed-off-by: Weiyi Lu <weiyi.lu@mediatek.com>
+> Reviewed-by: Nicolas Boichat <drinkcat@chromium.org>
+
+Applied with the following changes made to your patch:
+
+diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+index ad0f6199cd0c..603262d547c3 100644
+--- a/drivers/soc/mediatek/mtk-scpsys.c
++++ b/drivers/soc/mediatek/mtk-scpsys.c
+@@ -236,7 +236,8 @@ static int scpsys_sram_enable(struct scp_domain *scpd, void
+__iomem *ctl_addr)
+        u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+        int tmp;
+
+-       val = readl(ctl_addr) & ~scpd->data->sram_pdn_bits;
++       val = readl(ctl_addr);
++       val &= ~scpd->data->sram_pdn_bits;
+        writel(val, ctl_addr);
+
+        /* Either wait until SRAM_PDN_ACK all 0 or have a force wait */
+@@ -265,7 +266,8 @@ static int scpsys_sram_disable(struct scp_domain *scpd, void
+__iomem *ctl_addr)
+        u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+        int tmp;
+
+-       val = readl(ctl_addr) | scpd->data->sram_pdn_bits;
++       val = readl(ctl_addr);
++       vale |= scpd->data->sram_pdn_bits;
+        writel(val, ctl_addr);
+
+        /* Either wait until SRAM_PDN_ACK all 1 or 0 */
+@@ -357,7 +359,8 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+                goto out;
+
+        /* subsys power off */
+-       val = readl(ctl_addr) | PWR_ISO_BIT;
++       val = readl(ctl_addr);
++       val |= PWR_ISO_BIT;
+        writel(val, ctl_addr);
+
+        val &= ~PWR_RST_B_BIT;
+
+Hope that is OK for you (and I didn't made any mistake). If you see any problem,
+please let me know.
 
 Thanks,
-ta
+Matthias
+
+> ---
+>  drivers/soc/mediatek/mtk-scpsys.c | 79 +++++++++++++++++++++++++--------------
+>  1 file changed, 51 insertions(+), 28 deletions(-)
+> 
+> diff --git a/drivers/soc/mediatek/mtk-scpsys.c b/drivers/soc/mediatek/mtk-scpsys.c
+> index 73e4a1a..ad0f619 100644
+> --- a/drivers/soc/mediatek/mtk-scpsys.c
+> +++ b/drivers/soc/mediatek/mtk-scpsys.c
+> @@ -230,12 +230,55 @@ static int scpsys_clk_enable(struct clk *clk[], int max_num)
+>  	return ret;
+>  }
+>  
+> +static int scpsys_sram_enable(struct scp_domain *scpd, void __iomem *ctl_addr)
+> +{
+> +	u32 val;
+> +	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+> +	int tmp;
+> +
+> +	val = readl(ctl_addr) & ~scpd->data->sram_pdn_bits;
+> +	writel(val, ctl_addr);
+> +
+> +	/* Either wait until SRAM_PDN_ACK all 0 or have a force wait */
+> +	if (MTK_SCPD_CAPS(scpd, MTK_SCPD_FWAIT_SRAM)) {
+> +		/*
+> +		 * Currently, MTK_SCPD_FWAIT_SRAM is necessary only for
+> +		 * MT7622_POWER_DOMAIN_WB and thus just a trivial setup
+> +		 * is applied here.
+> +		 */
+> +		usleep_range(12000, 12100);
+> +	} else {
+> +		/* Either wait until SRAM_PDN_ACK all 1 or 0 */
+> +		int ret = readl_poll_timeout(ctl_addr, tmp,
+> +				(tmp & pdn_ack) == 0,
+> +				MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+> +		if (ret < 0)
+> +			return ret;
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int scpsys_sram_disable(struct scp_domain *scpd, void __iomem *ctl_addr)
+> +{
+> +	u32 val;
+> +	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+> +	int tmp;
+> +
+> +	val = readl(ctl_addr) | scpd->data->sram_pdn_bits;
+> +	writel(val, ctl_addr);
+> +
+> +	/* Either wait until SRAM_PDN_ACK all 1 or 0 */
+> +	return readl_poll_timeout(ctl_addr, tmp,
+> +			(tmp & pdn_ack) == pdn_ack,
+> +			MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+> +}
+> +
+>  static int scpsys_power_on(struct generic_pm_domain *genpd)
+>  {
+>  	struct scp_domain *scpd = container_of(genpd, struct scp_domain, genpd);
+>  	struct scp *scp = scpd->scp;
+>  	void __iomem *ctl_addr = scp->base + scpd->data->ctl_offs;
+> -	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+>  	u32 val;
+>  	int ret, tmp;
+>  
+> @@ -247,6 +290,7 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+>  	if (ret)
+>  		goto err_clk;
+>  
+> +	/* subsys power on */
+>  	val = readl(ctl_addr);
+>  	val |= PWR_ON_BIT;
+>  	writel(val, ctl_addr);
+> @@ -268,24 +312,9 @@ static int scpsys_power_on(struct generic_pm_domain *genpd)
+>  	val |= PWR_RST_B_BIT;
+>  	writel(val, ctl_addr);
+>  
+> -	val &= ~scpd->data->sram_pdn_bits;
+> -	writel(val, ctl_addr);
+> -
+> -	/* Either wait until SRAM_PDN_ACK all 0 or have a force wait */
+> -	if (MTK_SCPD_CAPS(scpd, MTK_SCPD_FWAIT_SRAM)) {
+> -		/*
+> -		 * Currently, MTK_SCPD_FWAIT_SRAM is necessary only for
+> -		 * MT7622_POWER_DOMAIN_WB and thus just a trivial setup is
+> -		 * applied here.
+> -		 */
+> -		usleep_range(12000, 12100);
+> -
+> -	} else {
+> -		ret = readl_poll_timeout(ctl_addr, tmp, (tmp & pdn_ack) == 0,
+> -					 MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+> -		if (ret < 0)
+> -			goto err_pwr_ack;
+> -	}
+> +	ret = scpsys_sram_enable(scpd, ctl_addr);
+> +	if (ret < 0)
+> +		goto err_pwr_ack;
+>  
+>  	if (scpd->data->bus_prot_mask) {
+>  		ret = mtk_infracfg_clear_bus_protection(scp->infracfg,
+> @@ -312,7 +341,6 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+>  	struct scp_domain *scpd = container_of(genpd, struct scp_domain, genpd);
+>  	struct scp *scp = scpd->scp;
+>  	void __iomem *ctl_addr = scp->base + scpd->data->ctl_offs;
+> -	u32 pdn_ack = scpd->data->sram_pdn_ack_bits;
+>  	u32 val;
+>  	int ret, tmp;
+>  
+> @@ -324,17 +352,12 @@ static int scpsys_power_off(struct generic_pm_domain *genpd)
+>  			goto out;
+>  	}
+>  
+> -	val = readl(ctl_addr);
+> -	val |= scpd->data->sram_pdn_bits;
+> -	writel(val, ctl_addr);
+> -
+> -	/* wait until SRAM_PDN_ACK all 1 */
+> -	ret = readl_poll_timeout(ctl_addr, tmp, (tmp & pdn_ack) == pdn_ack,
+> -				 MTK_POLL_DELAY_US, MTK_POLL_TIMEOUT);
+> +	ret = scpsys_sram_disable(scpd, ctl_addr);
+>  	if (ret < 0)
+>  		goto out;
+>  
+> -	val |= PWR_ISO_BIT;
+> +	/* subsys power off */
+> +	val = readl(ctl_addr) | PWR_ISO_BIT;
+>  	writel(val, ctl_addr);
+>  
+>  	val &= ~PWR_RST_B_BIT;
+> 
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
