@@ -2,60 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E18B0A0258
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 14:59:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B772A026B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 15:01:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yzzEfLejLhyKfGCF/nHDoDuvBVOMGceDYqm8ugqeU58=; b=LTmrhfoqnZtfdk
-	Tegk/9Y97sUKm5K1Net69RM3BhfE5YA/jOODzCu9M70TPR6XQKI43kgDdrwFj8GfSK/fd6OBxyhRW
-	P7vx4N62Nk5XuRKyPU/czOPUSn8cSLiLtbBdR++rQ1do4c422XY/86Ie/EE4zj229s/FOcIiEXhdE
-	j8FQu62nT4iNTTTwnPTLox3VASev4i5hGwhW9XkjTEEP1bfYBacvDnGskPh1q8BpIfVWZQIzZXEFm
-	ild9ERew5f5puoW6RvzjcMZAV+FZOX1GkEDDFuQODmoTO/FMo3jR2GSNg+R865n1XHq7drP2gRiQT
-	dbGPtji5BIh921v73k+A==;
+	List-Owner; bh=WBNX/tDZvQ5/vr7ZHvi+U0B1tE8iqs8xpDOtVkefweA=; b=SzylSSlO7f0l4F
+	dOSzEvcNFrXXywtm6Y+M+f7h7nGyPhZuYRLjEAVI3acDIxs/q2Xe6g5wlByQ+5uJLZxAPtamHeiSR
+	I46za3/ATdSydjk8fk+Gb79y6OIg1c/JXEG1kNt1bGIoYwWQC87UMS/fKr1H8iVk7lZRcGYhhkugc
+	SyfhmIJd4H5WOL0yB7OxITZvsqHAauuGAjviO4xeFe3pGfVNJAXmDaDHHUVJbRIydO9dzjqjlWhrK
+	/ODO/XTcnrRLhiZ2XlLzu3iTIbd89FYDNHLb3MiWntZutmZPS692c7NPwbbwJ6EuQHJYeuMdqaOD8
+	WxKEfEptlFu881qsQ3QA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i2xXP-0000Q2-BC; Wed, 28 Aug 2019 12:58:59 +0000
-Received: from mga02.intel.com ([134.134.136.20])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i2xX8-0000PD-OI
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 12:58:49 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 28 Aug 2019 05:58:41 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,441,1559545200"; d="scan'208";a="174901717"
-Received: from deyangko-mobl.ccr.corp.intel.com ([10.249.168.35])
- by orsmga008.jf.intel.com with ESMTP; 28 Aug 2019 05:58:37 -0700
-Message-ID: <ebfd68984103084d63cf01a80cfa9538a1a15baf.camel@intel.com>
-Subject: Re: [PATCH v7 4/4] thermal: cpu_cooling: Migrate to using the EM
- framework
-From: Zhang Rui <rui.zhang@intel.com>
-To: Quentin Perret <quentin.perret@arm.com>, edubezval@gmail.com, 
- javi.merino@kernel.org, viresh.kumar@linaro.org, amit.kachhap@gmail.com, 
- rjw@rjwysocki.net, catalin.marinas@arm.com, will@kernel.org, 
- daniel.lezcano@linaro.org
-Date: Wed, 28 Aug 2019 20:58:47 +0800
-In-Reply-To: <20190812084235.21440-5-quentin.perret@arm.com>
-References: <20190812084235.21440-1-quentin.perret@arm.com>
- <20190812084235.21440-5-quentin.perret@arm.com>
-X-Mailer: Evolution 3.28.5-0ubuntu0.18.04.1 
-Mime-Version: 1.0
+	id 1i2xZv-0001zb-Hd; Wed, 28 Aug 2019 13:01:35 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i2xZj-0001zF-SM
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 13:01:25 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 62D65344;
+ Wed, 28 Aug 2019 06:01:21 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CB5EE3F246;
+ Wed, 28 Aug 2019 06:01:20 -0700 (PDT)
+Date: Wed, 28 Aug 2019 14:01:19 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Mark Rutland <mark.rutland@arm.com>
+Subject: Re: [PATCH v3 2/5] arm64: Use correct ll/sc atomic constraints
+Message-ID: <20190828130118.GW14582@e119886-lin.cambridge.arm.com>
+References: <20190812143625.42745-1-andrew.murray@arm.com>
+ <20190812143625.42745-3-andrew.murray@arm.com>
+ <20190822153223.GB33080@lakrids.cambridge.arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190822153223.GB33080@lakrids.cambridge.arm.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_055847_768138_4D6CC48B 
-X-CRM114-Status: GOOD (  38.96  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190828_060124_090994_D2396193 
+X-CRM114-Status: GOOD (  25.84  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,562 +62,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, mka@chromium.org,
- ionela.voinescu@arm.com, dietmar.eggemann@arm.com,
+Cc: Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Boqun Feng <boqun.feng@gmail.com>,
+ Will Deacon <will.deacon@arm.com>, Ard.Biesheuvel@arm.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 2019-08-12 at 09:42 +0100, Quentin Perret wrote:
-> The newly introduced Energy Model framework manages power cost tables
-> in
-> a generic way. Moreover, it supports several types of models since
-> the
-> tables can come from DT or firmware (through SCMI) for example. On
-> the
-> other hand, the cpu_cooling subsystem manages its own power cost
-> tables
-> using only DT data.
+On Thu, Aug 22, 2019 at 04:32:23PM +0100, Mark Rutland wrote:
+> Hi Andrew,
 > 
-> In order to avoid the duplication of data in the kernel, and in order
-> to
-> enable IPA with EMs coming from more than just DT, remove the private
-> tables from cpu_cooling.c and migrate it to using the centralized EM
-> framework. Doing so should have no visible functional impact for
-> existing users of IPA since:
+> On Mon, Aug 12, 2019 at 03:36:22PM +0100, Andrew Murray wrote:
+> > For many of the ll/sc atomic operations we use the 'I' machine constraint
+> > regardless to the instruction used - this may not be optimal.
+> >
+> > Let's add an additional parameter to the ATOMIC_xx macros that allows the
+> > caller to specify an appropriate machine constraint.
+> > 
+> > Let's also improve __CMPXCHG_CASE by replacing the 'K' constraint with a
+> > caller provided constraint. Please note that whilst we would like to use
+> > the 'K' constraint on 32 bit operations, we choose not to provide any
+> > constraint to avoid a GCC bug which results in a build error.
+> > 
+> > Earlier versions of GCC (no later than 8.1.0) appear to incorrectly handle
+> > the 'K' constraint for the value 4294967295.
 > 
->  - recent extenstions to the the PM_OPP infrastructure enable the
->    registration of EMs in PM_EM using the DT property used by IPA;
+> From reading the above, it's difficult to discern what's a fix and
+> what's an improvement, and I think we need to be more explicit about
+> that. It would also be helpful to have the necessary context up-front.
 > 
->  - the existing upstream cpufreq drivers marked with the
->    'CPUFREQ_IS_COOLING_DEV' flag all use the aforementioned PM_OPP
->    infrastructure, which means they all support PM_EM. The only two
->    exceptions are qoriq-cpufreq which doesn't in fact use an EM and
->    scmi-cpufreq which doesn't use DT for power costs.
+> How about:
 > 
-> For existing users of cpu_cooling, PM_EM tables will contain the
-> exact
-> same power values that IPA used to compute on its own until now. The
-> only new dependency for them is to compile in CONFIG_ENERGY_MODEL.
-> 
-> The case where the thermal subsystem is used without an Energy Model
-> (cpufreq_cooling_ops) is handled by looking directly at CPUFreq's
-> frequency table which is already a dependency for cpu_cooling.c
-> anyway.
-> Since the thermal framework expects the cooling states in a
-> particular
-> order, bail out whenever the CPUFreq table is unsorted, since that is
-> fairly uncommon in general, and there are currently no users of
-> cpu_cooling for this use-case.
-> 
-> Acked-by: Daniel Lezcano <daniel.lezcano@linaro.org>
-> Acked-by: Viresh Kumar <viresh.kumar@linaro.org>
-> Signed-off-by: Quentin Perret <quentin.perret@arm.com>
+> | The A64 ISA accepts distinct (but overlapping) ranges of immediates for:
+> | 
+> | * add arithmetic instructions ('I' machine constraint)
+> | * sub arithmetic instructions ('J' machine constraint)
+> | * 32-bit logical instructions ('K' machine constraint)
+> | * 64-bit logical instructions ('L' machine constraint)
+> | 
+> | ... but we currently use the 'I' constraint for many atomic operations
+> | using sub or logical instructions, which is not always valid.
+> | 
+> | When CONFIG_ARM64_LSE_ATOMICS is not set, this allows invalid immediates
+> | to be passed to instructions, potentially resulting in a build failure.
+> | When CONFIG_ARM64_LSE_ATOMICS is selected the out-of-line ll/sc atomics
+> | always use a register as they have no visibility of the value passed by
+> | the caller.
+> |
+> | This patch adds a constraint parameter to the ATOMIC_xx and
+> | __CMPXCHG_CASE macros so that we can pass appropriate constraints for
+> | each case, with uses updated accordingly.
+> | 
+> | Unfortunately prior to GCC 8.1.0 the 'K' constraint erroneously accepted
+> | 0xffffffff, so we must instead force the use of a register.
 
-this patch has coding style problems, please check the checkpatch.pl
-output.
-total: 5 errors, 17 warnings, 413 lines checked
+Looks great - I'll adopt this, thanks for writing it.
 
-thanks,
-rui
-> ---
->  drivers/thermal/Kconfig       |   1 +
->  drivers/thermal/cpu_cooling.c | 250 ++++++++++++------------------
-> ----
->  2 files changed, 91 insertions(+), 160 deletions(-)
+>  
+> Given we haven't had any bug reports, I'm not sure whether this needs a
+> Fixes tag or Cc stable. This has been a latent issue for a long time,
+> but upstream code doesn't seem to have tickled it.
+
+Yes I guess this is more a correctness issue rather than a reproducible bug
+in upstream code. I won't add a fixes tag or CC to stable.
+
 > 
-> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
-> index 9966364a6deb..340853a3ca48 100644
-> --- a/drivers/thermal/Kconfig
-> +++ b/drivers/thermal/Kconfig
-> @@ -144,6 +144,7 @@ config THERMAL_GOV_USER_SPACE
->  
->  config THERMAL_GOV_POWER_ALLOCATOR
->  	bool "Power allocator thermal governor"
-> +	depends on ENERGY_MODEL
->  	help
->  	  Enable this to manage platform thermals by dynamically
->  	  allocating and limiting power to devices.
-> diff --git a/drivers/thermal/cpu_cooling.c
-> b/drivers/thermal/cpu_cooling.c
-> index 498f59ab64b2..83486775e593 100644
-> --- a/drivers/thermal/cpu_cooling.c
-> +++ b/drivers/thermal/cpu_cooling.c
-> @@ -19,6 +19,7 @@
->  #include <linux/slab.h>
->  #include <linux/cpu.h>
->  #include <linux/cpu_cooling.h>
-> +#include <linux/energy_model.h>
->  
->  #include <trace/events/thermal.h>
->  
-> @@ -36,21 +37,6 @@
->   *	...
->   */
->  
-> -/**
-> - * struct freq_table - frequency table along with power entries
-> - * @frequency:	frequency in KHz
-> - * @power:	power in mW
-> - *
-> - * This structure is built when the cooling device registers and
-> helps
-> - * in translating frequency to power and vice versa.
-> - */
-> -struct freq_table {
-> -	u32 frequency;
-> -#ifdef CONFIG_THERMAL_GOV_POWER_ALLOCATOR
-> -	u32 power;
-> -#endif
-> -};
-> -
->  /**
->   * struct time_in_idle - Idle time stats
->   * @time: previous reading of the absolute time that this cpu was
-> idle
-> @@ -72,7 +58,7 @@ struct time_in_idle {
->   *	frequency.
->   * @max_level: maximum cooling level. One less than total number of
-> valid
->   *	cpufreq frequencies.
-> - * @freq_table: Freq table in descending order of frequencies
-> + * @em: Reference on the Energy Model of the device
->   * @cdev: thermal_cooling_device pointer to keep track of the
->   *	registered cooling device.
->   * @policy: cpufreq policy.
-> @@ -88,7 +74,7 @@ struct cpufreq_cooling_device {
->  	unsigned int cpufreq_state;
->  	unsigned int clipped_freq;
->  	unsigned int max_level;
-> -	struct freq_table *freq_table;	/* In descending order */
-> +	struct em_perf_domain *em;
->  	struct cpufreq_policy *policy;
->  	struct list_head node;
->  	struct time_in_idle *idle_time;
-> @@ -162,114 +148,40 @@ static int cpufreq_thermal_notifier(struct
-> notifier_block *nb,
->  static unsigned long get_level(struct cpufreq_cooling_device
-> *cpufreq_cdev,
->  			       unsigned int freq)
->  {
-> -	struct freq_table *freq_table = cpufreq_cdev->freq_table;
-> -	unsigned long level;
-> +	int i;
->  
-> -	for (level = 1; level <= cpufreq_cdev->max_level; level++)
-> -		if (freq > freq_table[level].frequency)
-> +	for (i = cpufreq_cdev->max_level - 1; i >= 0; i--) {
-> +		if (freq > cpufreq_cdev->em->table[i].frequency)
->  			break;
-> -
-> -	return level - 1;
-> -}
-> -
-> -/**
-> - * update_freq_table() - Update the freq table with power numbers
-> - * @cpufreq_cdev:	the cpufreq cooling device in which to update
-> the table
-> - * @capacitance: dynamic power coefficient for these cpus
-> - *
-> - * Update the freq table with power numbers.  This table will be
-> used in
-> - * cpu_power_to_freq() and cpu_freq_to_power() to convert between
-> power and
-> - * frequency efficiently.  Power is stored in mW, frequency in
-> KHz.  The
-> - * resulting table is in descending order.
-> - *
-> - * Return: 0 on success, -EINVAL if there are no OPPs for any CPUs,
-> - * or -ENOMEM if we run out of memory.
-> - */
-> -static int update_freq_table(struct cpufreq_cooling_device
-> *cpufreq_cdev,
-> -			     u32 capacitance)
-> -{
-> -	struct freq_table *freq_table = cpufreq_cdev->freq_table;
-> -	struct dev_pm_opp *opp;
-> -	struct device *dev = NULL;
-> -	int num_opps = 0, cpu = cpufreq_cdev->policy->cpu, i;
-> -
-> -	dev = get_cpu_device(cpu);
-> -	if (unlikely(!dev)) {
-> -		pr_warn("No cpu device for cpu %d\n", cpu);
-> -		return -ENODEV;
-> -	}
-> -
-> -	num_opps = dev_pm_opp_get_opp_count(dev);
-> -	if (num_opps < 0)
-> -		return num_opps;
-> -
-> -	/*
-> -	 * The cpufreq table is also built from the OPP table and so
-> the count
-> -	 * should match.
-> -	 */
-> -	if (num_opps != cpufreq_cdev->max_level + 1) {
-> -		dev_warn(dev, "Number of OPPs not matching with
-> max_levels\n");
-> -		return -EINVAL;
-> -	}
-> -
-> -	for (i = 0; i <= cpufreq_cdev->max_level; i++) {
-> -		unsigned long freq = freq_table[i].frequency * 1000;
-> -		u32 freq_mhz = freq_table[i].frequency / 1000;
-> -		u64 power;
-> -		u32 voltage_mv;
-> -
-> -		/*
-> -		 * Find ceil frequency as 'freq' may be slightly lower
-> than OPP
-> -		 * freq due to truncation while converting to kHz.
-> -		 */
-> -		opp = dev_pm_opp_find_freq_ceil(dev, &freq);
-> -		if (IS_ERR(opp)) {
-> -			dev_err(dev, "failed to get opp for %lu
-> frequency\n",
-> -				freq);
-> -			return -EINVAL;
-> -		}
-> -
-> -		voltage_mv = dev_pm_opp_get_voltage(opp) / 1000;
-> -		dev_pm_opp_put(opp);
-> -
-> -		/*
-> -		 * Do the multiplication with MHz and millivolt so as
-> -		 * to not overflow.
-> -		 */
-> -		power = (u64)capacitance * freq_mhz * voltage_mv *
-> voltage_mv;
-> -		do_div(power, 1000000000);
-> -
-> -		/* power is stored in mW */
-> -		freq_table[i].power = power;
->  	}
->  
-> -	return 0;
-> +	return cpufreq_cdev->max_level - i - 1;
->  }
->  
->  static u32 cpu_freq_to_power(struct cpufreq_cooling_device
-> *cpufreq_cdev,
->  			     u32 freq)
->  {
->  	int i;
-> -	struct freq_table *freq_table = cpufreq_cdev->freq_table;
->  
-> -	for (i = 1; i <= cpufreq_cdev->max_level; i++)
-> -		if (freq > freq_table[i].frequency)
-> +	for (i = cpufreq_cdev->max_level - 1; i >= 0; i--) {
-> +		if (freq > cpufreq_cdev->em->table[i].frequency)
->  			break;
-> +	}
->  
-> -	return freq_table[i - 1].power;
-> +	return cpufreq_cdev->em->table[i + 1].power;
->  }
->  
->  static u32 cpu_power_to_freq(struct cpufreq_cooling_device
-> *cpufreq_cdev,
->  			     u32 power)
->  {
->  	int i;
-> -	struct freq_table *freq_table = cpufreq_cdev->freq_table;
->  
-> -	for (i = 1; i <= cpufreq_cdev->max_level; i++)
-> -		if (power > freq_table[i].power)
-> +	for (i = cpufreq_cdev->max_level - 1; i >= 0; i--) {
-> +		if (power > cpufreq_cdev->em->table[i].power)
->  			break;
-> +	}
->  
-> -	return freq_table[i - 1].frequency;
-> +	return cpufreq_cdev->em->table[i + 1].frequency;
->  }
->  
->  /**
-> @@ -410,7 +322,7 @@ static int cpufreq_state2power(struct
-> thermal_cooling_device *cdev,
->  			       struct thermal_zone_device *tz,
->  			       unsigned long state, u32 *power)
->  {
-> -	unsigned int freq, num_cpus;
-> +	unsigned int freq, num_cpus, idx;
->  	struct cpufreq_cooling_device *cpufreq_cdev = cdev->devdata;
->  
->  	/* Request state should be less than max_level */
-> @@ -419,7 +331,8 @@ static int cpufreq_state2power(struct
-> thermal_cooling_device *cdev,
->  
->  	num_cpus = cpumask_weight(cpufreq_cdev->policy->cpus);
->  
-> -	freq = cpufreq_cdev->freq_table[state].frequency;
-> +	idx = cpufreq_cdev->max_level - state;
-> +	freq = cpufreq_cdev->em->table[idx].frequency;
->  	*power = cpu_freq_to_power(cpufreq_cdev, freq) * num_cpus;
->  
->  	return 0;
-> @@ -463,8 +376,60 @@ static int cpufreq_power2state(struct
-> thermal_cooling_device *cdev,
->  				      power);
->  	return 0;
->  }
-> +
-> +static inline bool em_is_sane(struct cpufreq_cooling_device
-> *cpufreq_cdev,
-> +			      struct em_perf_domain *em) {
-> +	struct cpufreq_policy *policy;
-> +	unsigned int nr_levels;
-> +
-> +	if (!em)
-> +		return false;
-> +
-> +	policy = cpufreq_cdev->policy;
-> +	if (!cpumask_equal(policy->related_cpus, to_cpumask(em->cpus))) 
-> {
-> +		pr_err("The span of pd %*pbl is misaligned with cpufreq
-> policy %*pbl\n",
-> +			cpumask_pr_args(to_cpumask(em->cpus)),
-> +			cpumask_pr_args(policy->related_cpus));
-> +		return false;
-> +	}
-> +
-> +	nr_levels = cpufreq_cdev->max_level + 1;
-> +	if (em->nr_cap_states != nr_levels) {
-> +		pr_err("The number of cap states in pd %*pbl (%u)
-> doesn't match the number of cooling levels (%u)\n",
-> +			cpumask_pr_args(to_cpumask(em->cpus)),
-> +			em->nr_cap_states, nr_levels);
-> +		return false;
-> +	}
-> +
-> +	return true;
-> +}
->  #endif /* CONFIG_THERMAL_GOV_POWER_ALLOCATOR */
->  
-> +static unsigned int get_state_freq(struct cpufreq_cooling_device
-> *cpufreq_cdev,
-> +                             unsigned long state)
-> +{
-> +       struct cpufreq_policy *policy;
-> +       unsigned long idx;
-> +
-> +#ifdef CONFIG_THERMAL_GOV_POWER_ALLOCATOR
-> +       /* Use the Energy Model table if available */
-> +       if (cpufreq_cdev->em) {
-> +               idx = cpufreq_cdev->max_level - state;
-> +               return cpufreq_cdev->em->table[idx].frequency;
-> +       }
-> +#endif
-> +
-> +       /* Otherwise, fallback on the CPUFreq table */
-> +       policy = cpufreq_cdev->policy;
-> +       if (policy->freq_table_sorted ==
-> CPUFREQ_TABLE_SORTED_ASCENDING)
-> +               idx = cpufreq_cdev->max_level - state;
-> +       else
-> +               idx = state;
-> +
-> +       return policy->freq_table[idx].frequency;
-> +}
-> +
-> +
->  /* cpufreq cooling device callback functions are defined below */
->  
->  /**
-> @@ -530,7 +495,7 @@ static int cpufreq_set_cur_state(struct
-> thermal_cooling_device *cdev,
->  	if (cpufreq_cdev->cpufreq_state == state)
->  		return 0;
->  
-> -	clip_freq = cpufreq_cdev->freq_table[state].frequency;
-> +	clip_freq = get_state_freq(cpufreq_cdev, state);
->  	cpufreq_cdev->cpufreq_state = state;
->  	cpufreq_cdev->clipped_freq = clip_freq;
->  
-> @@ -552,26 +517,12 @@ static struct notifier_block
-> thermal_cpufreq_notifier_block = {
->  	.notifier_call = cpufreq_thermal_notifier,
->  };
->  
-> -static unsigned int find_next_max(struct cpufreq_frequency_table
-> *table,
-> -				  unsigned int prev_max)
-> -{
-> -	struct cpufreq_frequency_table *pos;
-> -	unsigned int max = 0;
-> -
-> -	cpufreq_for_each_valid_entry(pos, table) {
-> -		if (pos->frequency > max && pos->frequency < prev_max)
-> -			max = pos->frequency;
-> -	}
-> -
-> -	return max;
-> -}
-> -
->  /**
->   * __cpufreq_cooling_register - helper function to create cpufreq
-> cooling device
->   * @np: a valid struct device_node to the cooling device device tree
-> node
->   * @policy: cpufreq policy
->   * Normally this should be same as cpufreq policy->related_cpus.
-> - * @capacitance: dynamic power coefficient for these cpus
-> + * @em: Energy Model of the cpufreq policy
->   *
->   * This interface function registers the cpufreq cooling device with
-> the name
->   * "thermal-cpufreq-%x". This api can support multiple instances of
-> cpufreq
-> @@ -583,12 +534,13 @@ static unsigned int find_next_max(struct
-> cpufreq_frequency_table *table,
->   */
->  static struct thermal_cooling_device *
->  __cpufreq_cooling_register(struct device_node *np,
-> -			struct cpufreq_policy *policy, u32 capacitance)
-> +			struct cpufreq_policy *policy,
-> +			struct em_perf_domain *em)
->  {
->  	struct thermal_cooling_device *cdev;
->  	struct cpufreq_cooling_device *cpufreq_cdev;
->  	char dev_name[THERMAL_NAME_LENGTH];
-> -	unsigned int freq, i, num_cpus;
-> +	unsigned int i, num_cpus;
->  	int ret;
->  	struct thermal_cooling_device_ops *cooling_ops;
->  	bool first;
-> @@ -622,55 +574,38 @@ __cpufreq_cooling_register(struct device_node
-> *np,
->  	/* max_level is an index, not a counter */
->  	cpufreq_cdev->max_level = i - 1;
->  
-> -	cpufreq_cdev->freq_table = kmalloc_array(i,
-> -					sizeof(*cpufreq_cdev-
-> >freq_table),
-> -					GFP_KERNEL);
-> -	if (!cpufreq_cdev->freq_table) {
-> -		cdev = ERR_PTR(-ENOMEM);
-> -		goto free_idle_time;
-> -	}
-> -
->  	ret = ida_simple_get(&cpufreq_ida, 0, 0, GFP_KERNEL);
->  	if (ret < 0) {
->  		cdev = ERR_PTR(ret);
-> -		goto free_table;
-> +		goto free_idle_time;
->  	}
->  	cpufreq_cdev->id = ret;
->  
->  	snprintf(dev_name, sizeof(dev_name), "thermal-cpufreq-%d",
->  		 cpufreq_cdev->id);
->  
-> -	/* Fill freq-table in descending order of frequencies */
-> -	for (i = 0, freq = -1; i <= cpufreq_cdev->max_level; i++) {
-> -		freq = find_next_max(policy->freq_table, freq);
-> -		cpufreq_cdev->freq_table[i].frequency = freq;
-> -
-> -		/* Warn for duplicate entries */
-> -		if (!freq)
-> -			pr_warn("%s: table has duplicate entries\n",
-> __func__);
-> -		else
-> -			pr_debug("%s: freq:%u KHz\n", __func__, freq);
-> -	}
-> -
->  	cooling_ops = &cpufreq_cooling_ops;
->  #ifdef CONFIG_THERMAL_GOV_POWER_ALLOCATOR
-> -	if (capacitance) {
-> -		ret = update_freq_table(cpufreq_cdev, capacitance);
-> -		if (ret) {
-> -			cdev = ERR_PTR(ret);
-> -			goto remove_ida;
-> -		}
-> +	if (em_is_sane(cpufreq_cdev, em)) {
-> +		cpufreq_cdev->em = em;
->  		cooling_ops->get_requested_power =
-> cpufreq_get_requested_power;
->  		cooling_ops->state2power = cpufreq_state2power;
->  		cooling_ops->power2state = cpufreq_power2state;
-> -	}
-> +	} else
->  #endif
-> +	if (policy->freq_table_sorted == CPUFREQ_TABLE_UNSORTED) {
-> +		pr_err("%s: unsorted frequency tables are not
-> supported\n",
-> +				__func__);
-> +		cdev = ERR_PTR(-EINVAL);
-> +		goto remove_ida;
-> +	}
-> +
->  	cdev = thermal_of_cooling_device_register(np, dev_name,
-> cpufreq_cdev,
->  						  cooling_ops);
->  	if (IS_ERR(cdev))
->  		goto remove_ida;
->  
-> -	cpufreq_cdev->clipped_freq = cpufreq_cdev-
-> >freq_table[0].frequency;
-> +	cpufreq_cdev->clipped_freq = get_state_freq(cpufreq_cdev, 0);
->  
->  	mutex_lock(&cooling_list_lock);
->  	/* Register the notifier for first cpufreq cooling device */
-> @@ -686,8 +621,6 @@ __cpufreq_cooling_register(struct device_node
-> *np,
->  
->  remove_ida:
->  	ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
-> -free_table:
-> -	kfree(cpufreq_cdev->freq_table);
->  free_idle_time:
->  	kfree(cpufreq_cdev->idle_time);
->  free_cdev:
-> @@ -709,7 +642,7 @@ __cpufreq_cooling_register(struct device_node
-> *np,
->  struct thermal_cooling_device *
->  cpufreq_cooling_register(struct cpufreq_policy *policy)
->  {
-> -	return __cpufreq_cooling_register(NULL, policy, 0);
-> +	return __cpufreq_cooling_register(NULL, policy, NULL);
->  }
->  EXPORT_SYMBOL_GPL(cpufreq_cooling_register);
->  
-> @@ -737,7 +670,6 @@ of_cpufreq_cooling_register(struct cpufreq_policy
-> *policy)
->  {
->  	struct device_node *np = of_get_cpu_node(policy->cpu, NULL);
->  	struct thermal_cooling_device *cdev = NULL;
-> -	u32 capacitance = 0;
->  
->  	if (!np) {
->  		pr_err("cpu_cooling: OF node not available for
-> cpu%d\n",
-> @@ -746,10 +678,9 @@ of_cpufreq_cooling_register(struct
-> cpufreq_policy *policy)
->  	}
->  
->  	if (of_find_property(np, "#cooling-cells", NULL)) {
-> -		of_property_read_u32(np, "dynamic-power-coefficient",
-> -				     &capacitance);
-> +		struct em_perf_domain *em = em_cpu_get(policy->cpu);
->  
-> -		cdev = __cpufreq_cooling_register(np, policy,
-> capacitance);
-> +		cdev = __cpufreq_cooling_register(np, policy, em);
->  		if (IS_ERR(cdev)) {
->  			pr_err("cpu_cooling: cpu%d failed to register
-> as cooling device: %ld\n",
->  			       policy->cpu, PTR_ERR(cdev));
-> @@ -791,7 +722,6 @@ void cpufreq_cooling_unregister(struct
-> thermal_cooling_device *cdev)
->  	thermal_cooling_device_unregister(cdev);
->  	ida_simple_remove(&cpufreq_ida, cpufreq_cdev->id);
->  	kfree(cpufreq_cdev->idle_time);
-> -	kfree(cpufreq_cdev->freq_table);
->  	kfree(cpufreq_cdev);
->  }
->  EXPORT_SYMBOL_GPL(cpufreq_cooling_unregister);
+> [...]
+> 
+> > -ATOMIC_OPS(and, and)
+> > -ATOMIC_OPS(andnot, bic)
+> > -ATOMIC_OPS(or, orr)
+> > -ATOMIC_OPS(xor, eor)
+> > +ATOMIC_OPS(and, and, K)
+> > +ATOMIC_OPS(andnot, bic, )
+> > +ATOMIC_OPS(or, orr, K)
+> > +ATOMIC_OPS(xor, eor, K)
+> 
+> Surely it's not safe to use the K constraint here, either? AFAICT code
+> like:
+> 
+>   atomic_xor(~0, &atom);
+> 
+> ... would suffer from the same problem as described for cmpxchg.
 
+Thanks for spotting this.
+
+Yes, I think the resolution here (and for any 32bit bitmask immediate) is to
+drop the constraint.
+
+Do you agree that we should drop the 'K' constraint for both orr and eor
+above?
+
+> 
+> [...]
+> 
+> > -ATOMIC64_OPS(and, and)
+> > -ATOMIC64_OPS(andnot, bic)
+> > -ATOMIC64_OPS(or, orr)
+> > -ATOMIC64_OPS(xor, eor)
+> > +ATOMIC64_OPS(and, and, K)
+> > +ATOMIC64_OPS(andnot, bic, )
+> > +ATOMIC64_OPS(or, orr, K)
+> > +ATOMIC64_OPS(xor, eor, K)
+> 
+> Shouldn't these be 'L'?
+> 
+> IIUC K is a subset of L, so if that's deliberate we should call that out
+> explicitly...
+
+Oooh yes that's wrong. I guess the atomic64_[and,or,xor] are rarely called
+in the kernel which perhaps is why the compiler hasn't shouted at me.
+
+Do you agree that the and, orr and eor should all be 'L' instead of 'K'?
+
+> 
+> > +__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
+> > +__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
+> > +__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
+> > +__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
+> > +__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
+> > +__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
+> > +__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
+> > +__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
+> > +__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
+> > +__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
+> > +__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
+> > +__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
+> > +__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
+> > +__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
+> > +__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
+> > +__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
+> 
+> ... but these uses imply that's not the case.
+
+Yup, so I can leave these as they are.
+
+Phew - thanks for the review.
+
+Andrew Murray
+
+> 
+> Otherwise this looks good to me.
+> 
+> Thanks,
+> Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
