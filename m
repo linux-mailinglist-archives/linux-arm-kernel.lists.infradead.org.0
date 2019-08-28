@@ -2,49 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4377EA08C4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 19:39:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34B8BA08D9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 28 Aug 2019 19:45:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=n03s8lA1Gh66tR0LuFyfGTdFATA044s5N4OaUF01Nzs=; b=X40
-	t8Mhw8w8uFBG1EvVJz6UfPS0sZ40/fqHoENX9v/hCT8tAcHnuy6wT4fMQXWZar2Tw5bYj3CWW7K6u
-	GczCGmwHcSCVY/AOjmpEDqRDuJfq+ceH4sxPsTVchq/M0RepuAqRSC87ZbsfAdxg8eyVlE/2m9+39
-	FtQKMXQ3O5EHxFnGxP3WjvJ3pLaUK+cOCWDYeUKHFJc3dokTE/5uEQlu26cIBgAwKWLLOnoPCSnvf
-	+Jw1jWBAMb3VEsBErA+MGKDCP/WXBmbpwG61UvpzGYQqqN6n47cEdBmjZP95GYJDZdvUC6vnHzYJ9
-	RMkXm9D+Fwo89vAmIXXz/yPkdq+Zkkg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:Date:Message-Id:
+	References:In-Reply-To:From:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gBTV0gBvxYJgBwbKirG3NLmJ9pLuRhTNdpLTGH01k6Y=; b=E5zwLdPuxkxpoi
+	rTWtJJILRX09rj7Gzp2GuW9tP7WN7gzWLkbVgvWTNjud2KYm+qdik5e+sX8jfH6yWk5Oy8661Uyq8
+	QgsgMB+P/hHbykYpYmdPmLX07ValP3PchTK2PaHnXgdNV5EqRqF3y0LyWL/kUk96Um3CjfGF/8HMs
+	Qnwg1KeeekKe7ioYgf624jUmV1f7bMbqhbPWqjFK9/8lvc0JEJ4LIW+sCBrprTkkLFX+l+rageD0J
+	2x817oPYvtGkXssNzUGDH98w2clvjOlTFA06LsDtjFL2bvKsOjFeZ4J9daiHy0RKXnELUsw5pjlrc
+	q4X3nZLVrPLz8ri568sQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i31uQ-00029p-CO; Wed, 28 Aug 2019 17:39:02 +0000
+	id 1i320W-0004ya-4z; Wed, 28 Aug 2019 17:45:20 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i31uD-00029U-EU
- for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 17:38:50 +0000
-Received: from sstabellini-ThinkPad-T480s.xilinx.com
- (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 69D4F2077B;
- Wed, 28 Aug 2019 17:38:48 +0000 (UTC)
+ id 1i320K-0004s7-4p
+ for linux-arm-kernel@lists.infradead.org; Wed, 28 Aug 2019 17:45:09 +0000
+Subject: Re: [GIT PULL] arm64: Fixes for -rc7
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567013928;
- bh=RIt/H8XgVifTEhugC1lEufb4AZAcq59OXKgKcWpAXrM=;
- h=From:To:Cc:Subject:Date:From;
- b=mFFmsoI2WrO9CnnAGYaAzhzpXYFxVVg9B1B5BCL83R/9wuur9d4dRBFfL8iMMd4hi
- W+BLxOuQOCNffysulPuuGslQVUWOHw/40PAdmxLOV9uTxovYH9PTbypJI5oSdu+TUL
- pr+4j0JgPlICgAjAu0M7l4Q5vmQfBvVbBboU8gl0=
-From: Stefano Stabellini <sstabellini@kernel.org>
-To: will@kernel.org
-Subject: [PATCH] arm-smmu: check for generic bindings first
-Date: Wed, 28 Aug 2019 10:38:37 -0700
-Message-Id: <20190828173837.29617-1-sstabellini@kernel.org>
-X-Mailer: git-send-email 2.17.1
+ s=default; t=1567014307;
+ bh=hc0bjImHvnq/IxCT5s4NZI7gpFd6msv+Pulf0AYrCR4=;
+ h=From:In-Reply-To:References:Date:To:Cc:From;
+ b=Oe2zFU4HpEJT04R+CubK1ZvFncH0jBu+Vkbguy2huLOriKL/CTUcTaDPCYgaKJKei
+ XVVJ3CUe00SyErsxbyAewrvodXJBzCciVlNo6Q9/Q8x3yallMOeG/uPT2Uo9GHA5NK
+ qqSIR8ONUMBj7/2inMxN8JMfs5yti7gQAUwK25iE=
+From: pr-tracker-bot@kernel.org
+In-Reply-To: <20190828173233.zqwm5nd4p5xa4jxi@willie-the-truck>
+References: <20190828173233.zqwm5nd4p5xa4jxi@willie-the-truck>
+X-PR-Tracked-List-Id: <linux-kernel.vger.kernel.org>
+X-PR-Tracked-Message-Id: <20190828173233.zqwm5nd4p5xa4jxi@willie-the-truck>
+X-PR-Tracked-Remote: git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git
+ tags/arm64-fixes
+X-PR-Tracked-Commit-Id: 82e40f558de566fdee214bec68096bbd5e64a6a4
+X-PR-Merge-Tree: torvalds/linux.git
+X-PR-Merge-Refname: refs/heads/master
+X-PR-Merge-Commit-Id: 9cf6b756cdf2cd38b8b0dac2567f7c6daf5e79d5
+Message-Id: <156701430762.19174.2439398136739791001.pr-tracker-bot@kernel.org>
+Date: Wed, 28 Aug 2019 17:45:07 +0000
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_103849_520962_37437CBD 
-X-CRM114-Status: GOOD (  18.24  )
+X-CRM114-CacheID: sfid-20190828_104508_215934_A29BE7C7 
+X-CRM114-Status: UNSURE (   1.69  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -73,9 +77,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sstabellini@kernel.org, linux-kernel@vger.kernel.org,
- michal.simek@xilinx.com, git@xilinx.com,
- Stefano Stabellini <stefano.stabellini@xilinx.com>, robin.murphy@arm.com,
+Cc: kvm@vger.kernel.org, rkrcmar@redhat.com, marc.zyngier@arm.com,
+ catalin.marinas@arm.com, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ torvalds@linux-foundation.org, kvmarm@lists.cs.columbia.edu,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -83,91 +87,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stefano Stabellini <stefano.stabellini@xilinx.com>
+The pull request you sent on Wed, 28 Aug 2019 18:32:33 +0100:
 
-Today, the arm-smmu driver checks for mmu-masters on device tree, the
-legacy property, if it is absent it assumes that we are using the new
-bindings. If it is present it assumes that we are using the legacy
-bindings. All arm-smmus need to use the same bindings: legacy or new.
+> git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git tags/arm64-fixes
 
-There are two issues with this:
+has been merged into torvalds/linux.git:
+https://git.kernel.org/torvalds/c/9cf6b756cdf2cd38b8b0dac2567f7c6daf5e79d5
 
-- we are not actually checking for the new bindings explicitly
-It would be better to have an explicit check for the new bindings rather
-than assuming we must be using the new if the old are not there.
+Thank you!
 
-- old and new bindings cannot coexist
-It would be nice to be able to provide both old and new bindings so
-that software that hasn't been updated yet is still able to get IOMMU
-information from the legacy bindings while at the same time newer
-software can get the latest information via the new bindings. (Xen has
-not been updated to use the new binding yet for instance.) The current
-code breaks under these circumstances because if the old bindings are
-present, the new are not even checked.
-
-This patch changes the scheme by checking for #iommu-cells, which is
-only present with the new bindings, before checking for mmu-masters.
-The new bindings are always favored when present. All SMMUs still need
-to use the same bindings: mix-and-matching new and old bindings between
-different SMMUs is not allowed.
-
-Signed-off-by: Stefano Stabellini <stefano.stabellini@xilinx.com>
----
-
-Let me know if you'd like me to turn the two using_*_binding variables
-into a single one.
-
-Also, please note that this is not meant as an excuse not to get Xen
-updated to use the new binding.
-
- drivers/iommu/arm-smmu.c | 22 +++++++++++++---------
- 1 file changed, 13 insertions(+), 9 deletions(-)
-
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index 64977c131ee6..79b518ff215c 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -2118,7 +2118,7 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
- {
- 	const struct arm_smmu_match_data *data;
- 	struct device *dev = &pdev->dev;
--	bool legacy_binding;
-+	bool legacy_binding, generic_binding;
- 
- 	if (of_property_read_u32(dev->of_node, "#global-interrupts",
- 				 &smmu->num_global_irqs)) {
-@@ -2132,16 +2132,20 @@ static int arm_smmu_device_dt_probe(struct platform_device *pdev,
- 
- 	parse_driver_options(smmu);
- 
--	legacy_binding = of_find_property(dev->of_node, "mmu-masters", NULL);
--	if (legacy_binding && !using_generic_binding) {
--		if (!using_legacy_binding)
--			pr_notice("deprecated \"mmu-masters\" DT property in use; DMA API support unavailable\n");
--		using_legacy_binding = true;
--	} else if (!legacy_binding && !using_legacy_binding) {
-+	generic_binding = of_find_property(dev->of_node, "#iommu-cells", NULL);
-+	if (generic_binding && !using_legacy_binding) {
- 		using_generic_binding = true;
- 	} else {
--		dev_err(dev, "not probing due to mismatched DT properties\n");
--		return -ENODEV;
-+		legacy_binding = of_find_property(dev->of_node, "mmu-masters",
-+						  NULL);
-+		if (legacy_binding && !using_generic_binding) {
-+			if (!using_legacy_binding)
-+				pr_notice("deprecated \"mmu-masters\" DT property in use; DMA API support unavailable\n");
-+			using_legacy_binding = true;
-+		} else {
-+			dev_err(dev, "not probing due to mismatched DT properties\n");
-+			return -ENODEV;
-+		}
- 	}
- 
- 	if (of_dma_is_coherent(dev->of_node))
 -- 
-2.17.1
-
+Deet-doot-dot, I am a bot.
+https://korg.wiki.kernel.org/userdoc/prtracker
 
 _______________________________________________
 linux-arm-kernel mailing list
