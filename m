@@ -2,87 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B335A1079
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 06:30:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB8FFA1080
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 06:37:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=c3sM2Occws0f+sRXKCkJiu+VoYuv9j4/mrOgHA/Nil0=; b=GE7yWSnj8k15bp
-	wMVWkTNKuK9D9OVg1RXKZly4qtzW0ko/Pn38LtD6WyrKBMc9McqMwdVO671KsV7Uvkcg1T0k/rWYi
-	lnQLAk6c7zGnTcm801u0krOSNDjvdid+/en9G4V6IsxNP8WnqXXwGRqx+S9y8MRIDvI5kkA2GwbX9
-	Fq+PkdNbPDdJEu7LnUwrcxOP39nZdcN16OpVMJ7stvoTk5Bq1+GNUWfmm86JxCsrMO8WmdHu945eH
-	x7GEk0EWiIO4+Huo1CpL7ZM6Qr3BRmklw5onCE4lxEDbSE3rX+OhUuGJBeNQ40NTiUy2inu3z/OwV
-	Wgoq7kv9RAiH8Fk9Jyrw==;
+	List-Owner; bh=Qyp2fIvp67v60TDVDi51OcdwrZPyKgtI4UYn53f/lkY=; b=PU7fMGL/dxBHeO
+	AhkJwmQ4X0SEhWtlR6zPv1h3OaQ5ZcUHuEnAeAG2n5xpho2a8nfZPvsCuMRu6BnoYrY6OvQ6aa5b+
+	9x2+imTswgb2Gg15JuZDluej78DxvzT0uVO9idvTbEJ1uZHKVgjn9QwQvz11Ae8xv9OoJLozgWg7s
+	qpfgTuvOwAxZVW0rmL72kOeYJP/ypoAKiOWztrV3tALoPRn7NG/0K1Evdwowv31QnBF4W7FL/ZwcZ
+	trFoZDl0gacdG3j4O5ZV15JdQFPno1ay/aPQBhAk9vYqjWCdOVgZ5olisYj6QbNNueCEMBpAI7rnp
+	H+g/GOvbNjSkdu77d37w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3C4p-0000fz-2r; Thu, 29 Aug 2019 04:30:27 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
+	id 1i3CBi-0002OB-Mq; Thu, 29 Aug 2019 04:37:34 +0000
+Received: from antares.kleine-koenig.org ([94.130.110.236])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3C4c-0000er-Tg
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 04:30:16 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n4so896339pgv.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 21:30:14 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WjPTSP9KK2QsqjmhzaDx1khiUa3+dCf9cZMoVMaAshk=;
- b=MMK7O5IUDss97+ZReyNXw062RBZnNuHPYc45XAcCIE0DL5/DB+mNF+5x81uwfZZ9fh
- LrEZ3DrQ4CCRN2P4AHfiQxbBoS/6fKM2ZqMmGV4BBMpM31+fR4kYqVAjtWFGBilNpbqJ
- XVYy0EPLnGvGvc2zVSJPSyF8gdUOu4Vu4gvIg=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=WjPTSP9KK2QsqjmhzaDx1khiUa3+dCf9cZMoVMaAshk=;
- b=d3I0vf8neiWpFZ6kJge14mrwd598rD7z69q9tXuDp6Qzw76uaesM1Cvx6zGZ78GR2G
- TcvAHmgwJxP6WGQVudzgUasFguCzg1aesMgoklsRfXqo82bMRrSPK3iNKFI/Ruz/MvPF
- /c2nu5fYuektMI4y5vU9fwLsg8YMerTyIKmLpZs2xzVSr4WVOeR/kx97CR6RcdXOpWcx
- EZMdMFj7pqowhWpEPb9xmh8giJWGNV59/IReIlQAAvy1pif3/gpMsbww95oYNXtO+IOP
- Z2qmh+1WRA3DM6k7hHqE8w+fzpQBPLSc9Gpi+WIqW5BxFL4OT5ES4t9ZEGQRgoI42/8d
- Xwyw==
-X-Gm-Message-State: APjAAAUrs5hv/R6ch9qMqbZCmsL8TV4Iw2JbOUiOki3ZoGdDGL7pMDoG
- wStPCQqiE2BIJU7RyEl7qmS89Q==
-X-Google-Smtp-Source: APXvYqyPaVF6cNmZOG33dRsz6I4yq7+2LHI4Ys4JgoXMTN5eZVkbgzvy71GI5pd6/ByGdtUhZbRStg==
-X-Received: by 2002:a17:90a:2525:: with SMTP id
- j34mr8022406pje.11.1567053013589; 
- Wed, 28 Aug 2019 21:30:13 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id s72sm717756pgc.92.2019.08.28.21.30.09
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 28 Aug 2019 21:30:12 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-Date: Thu, 29 Aug 2019 12:29:57 +0800
-Message-Id: <20190829042957.150929-1-cychiang@chromium.org>
-X-Mailer: git-send-email 2.23.0.187.g17f5b7556c-goog
+ id 1i3CBY-0002NQ-Mq
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 04:37:26 +0000
+Received: by antares.kleine-koenig.org (Postfix, from userid 1000)
+ id D512B7891D8; Thu, 29 Aug 2019 06:37:22 +0200 (CEST)
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Jiri Slaby <jslaby@suse.com>
+Subject: [PATCH] [RFC] tty/serial: imx: make use of format specifier %dE
+Date: Thu, 29 Aug 2019 06:37:16 +0200
+Message-Id: <20190829043716.5223-1-uwe@kleine-koenig.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_213014_960038_3C15F5F3 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190828_213725_041738_0BC711B8 
+X-CRM114-Status: GOOD (  14.11  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
+ no trust [94.130.110.236 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,62 +56,121 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, tzungbi@chromium.org, zhengxing@rock-chips.com,
- kuninori.morimoto.gx@renesas.com, a.hajda@samsung.com, airlied@linux.ie,
- jeffy.chen@rock-chips.com, dianders@chromium.org,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com,
- linux-rockchip@lists.infradead.org, eddie.cai@rock-chips.com,
- Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
- enric.balletbo@collabora.com, dgreid@chromium.org, sam@ravnborg.org,
- linux-arm-kernel@lists.infradead.org, cychiang@chromium.org
+Cc: Jani Nikula <jani.nikula@linux.intel.com>, Petr Mladek <pmladek@suse.com>,
+ linux-serial@vger.kernel.org, Jonathan Corbet <corbet@lwn.net>,
+ Shawn Guo <shawnguo@kernel.org>, linux-doc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Steven Rostedt <rostedt@goodmis.org>,
+ Enrico Weigelt <lkml@metux.net>, NXP Linux Team <linux-imx@nxp.com>,
+ kernel@pengutronix.de, Andrew Morton <akpm@linux-foundation.org>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In the designware databook, the sequence of enabling audio clock and
-setting format is not clearly specified.
-Currently, audio clock is enabled in the end of hw_param ops after
-setting format.
+I created a patch that teaches printk et al to emit a symbolic error
+name for an error valued integer[1]. With that applied
 
-On some monitors, there is a possibility that audio does not come out.
-Fix this by enabling audio clock in audio_startup ops
-before hw_param ops setting format.
+	dev_err(&pdev->dev, "failed to get ipg clk: %dE\n", ret);
 
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+emits
+
+	... failed to get ipg clk: EPROBE_DEFER
+
+if ret is -EPROBE_DEFER. Petr Mladek (i.e. one of the printk
+maintainers) had concerns if this would be well received and worth the
+effort. He asked to present it to a few subsystems. So for now, this
+patch converting the imx UART driver shouldn't be applied yet but it
+would be great to get some feedback about if you think that being able
+to easily printk (for example) "EIO" instead of "-5" is a good idea.
+Would it help you? Do you think it helps your users?
+
+Thanks
+Uwe
+
+[1] https://lkml.org/lkml/2019/8/27/1456
 ---
- drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+ drivers/tty/serial/imx.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-index 5cbb71a866d5..08b4adbb1ddc 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-@@ -69,6 +69,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
- 	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
- 	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
+diff --git a/drivers/tty/serial/imx.c b/drivers/tty/serial/imx.c
+index 57d6e6ba556e..a3dbb9378e8b 100644
+--- a/drivers/tty/serial/imx.c
++++ b/drivers/tty/serial/imx.c
+@@ -2143,7 +2143,7 @@ static int imx_uart_probe_dt(struct imx_port *sport,
  
-+	return 0;
-+}
-+
-+static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
-+{
-+	struct dw_hdmi_i2s_audio_data *audio = data;
-+	struct dw_hdmi *hdmi = audio->hdmi;
-+
- 	dw_hdmi_audio_enable(hdmi);
+ 	ret = of_alias_get_id(np, "serial");
+ 	if (ret < 0) {
+-		dev_err(&pdev->dev, "failed to get alias id, errno %d\n", ret);
++		dev_err(&pdev->dev, "failed to get alias id, error %dE\n", ret);
+ 		return ret;
+ 	}
+ 	sport->port.line = ret;
+@@ -2236,14 +2236,14 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 	sport->clk_ipg = devm_clk_get(&pdev->dev, "ipg");
+ 	if (IS_ERR(sport->clk_ipg)) {
+ 		ret = PTR_ERR(sport->clk_ipg);
+-		dev_err(&pdev->dev, "failed to get ipg clk: %d\n", ret);
++		dev_err(&pdev->dev, "failed to get ipg clk: %dE\n", ret);
+ 		return ret;
+ 	}
  
- 	return 0;
-@@ -105,6 +113,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
- }
+ 	sport->clk_per = devm_clk_get(&pdev->dev, "per");
+ 	if (IS_ERR(sport->clk_per)) {
+ 		ret = PTR_ERR(sport->clk_per);
+-		dev_err(&pdev->dev, "failed to get per clk: %d\n", ret);
++		dev_err(&pdev->dev, "failed to get per clk: %dE\n", ret);
+ 		return ret;
+ 	}
  
- static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
-+	.audio_startup = dw_hdmi_i2s_audio_startup,
- 	.hw_params	= dw_hdmi_i2s_hw_params,
- 	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
- 	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+@@ -2252,7 +2252,7 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 	/* For register access, we only need to enable the ipg clock. */
+ 	ret = clk_prepare_enable(sport->clk_ipg);
+ 	if (ret) {
+-		dev_err(&pdev->dev, "failed to enable per clk: %d\n", ret);
++		dev_err(&pdev->dev, "failed to enable per clk: %dE\n", ret);
+ 		return ret;
+ 	}
+ 
+@@ -2330,7 +2330,7 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 		ret = devm_request_irq(&pdev->dev, rxirq, imx_uart_rxint, 0,
+ 				       dev_name(&pdev->dev), sport);
+ 		if (ret) {
+-			dev_err(&pdev->dev, "failed to request rx irq: %d\n",
++			dev_err(&pdev->dev, "failed to request rx irq: %dE\n",
+ 				ret);
+ 			return ret;
+ 		}
+@@ -2338,7 +2338,7 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 		ret = devm_request_irq(&pdev->dev, txirq, imx_uart_txint, 0,
+ 				       dev_name(&pdev->dev), sport);
+ 		if (ret) {
+-			dev_err(&pdev->dev, "failed to request tx irq: %d\n",
++			dev_err(&pdev->dev, "failed to request tx irq: %dE\n",
+ 				ret);
+ 			return ret;
+ 		}
+@@ -2346,7 +2346,7 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 		ret = devm_request_irq(&pdev->dev, rtsirq, imx_uart_rtsint, 0,
+ 				       dev_name(&pdev->dev), sport);
+ 		if (ret) {
+-			dev_err(&pdev->dev, "failed to request rts irq: %d\n",
++			dev_err(&pdev->dev, "failed to request rts irq: %dE\n",
+ 				ret);
+ 			return ret;
+ 		}
+@@ -2354,7 +2354,7 @@ static int imx_uart_probe(struct platform_device *pdev)
+ 		ret = devm_request_irq(&pdev->dev, rxirq, imx_uart_int, 0,
+ 				       dev_name(&pdev->dev), sport);
+ 		if (ret) {
+-			dev_err(&pdev->dev, "failed to request irq: %d\n", ret);
++			dev_err(&pdev->dev, "failed to request irq: %dE\n", ret);
+ 			return ret;
+ 		}
+ 	}
 -- 
-2.23.0.187.g17f5b7556c-goog
+2.23.0
 
 
 _______________________________________________
