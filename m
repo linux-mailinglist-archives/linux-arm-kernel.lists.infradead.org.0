@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58328A29F1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:42:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53C3DA29F5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:43:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5bE2RoE+yXHGtJluSooYWeYufX4YZsad2m5cavPNxMw=; b=T14q2A6ukF8lKY
-	fVofFmneUGZIlM+2yPqTsEnG1cNu3XRwhOX2xVHbjX2aXNI3T7jl9ytjYrHExO2ovA0+R+Lg9MsUh
-	db5Z/gikgAtIIomxStWDhMupd+YngddcalD+oesHuxMQXDIoEK33/qhMs374StDcE0uC4IB8//CQu
-	Le3wjnv/xZDX3LKFFb6oXjXIRMcT7e4B1nL5A2G9EECaWaoVhcx1TEZzm9Acon655pgsuEXcjWy3V
-	uOw+G1T/+cbGbccArnShkkIW9KzV2DsoWnQwqHNukhKvawD9VDxSpr5q+CWJfVPawyOtb3U5+MbqP
-	N5u2U69KMZ2WNIja4xQA==;
+	List-Owner; bh=qq5Qv8rVNiLnW9MoA3oq6yC3J1XoTEg3hByct9DOLXs=; b=gQVPbqpmvp1pG/
+	6HKfTzSQ8qFAUGxMyGoqDhn9laRmEQFiAtCmA6n8/XkL7soh0FJxsj5sTDzIIVtJix6st0hz8GRYj
+	iJR6aKSNyiLSxehHO9PQ2tvynL3MjhuOdCpv0TD2f8kptAlmJa9VbO6I2T84ajYVK3HDXYiVa41+h
+	aubqUrOKNeah9GL3/Vw41AvlKD4/DFsyzTidnNw96mFI77DRVwg92ib1jATK3/iuZeP3j3bYuZPRc
+	9ej8JJsfUgzoge7TyCkF3HsrPMGCz0CvP55rdYt8S8QJ30D9d36KIezt2owr3caTte1FIMTQaDwA9
+	lfiTHt62FWhD/jYQf5RQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3T7s-0006gZ-Ct; Thu, 29 Aug 2019 22:42:44 +0000
+	id 1i3T86-0007Av-Gu; Thu, 29 Aug 2019 22:42:58 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3T7L-0006Ns-Fn
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:42:13 +0000
+ id 1i3T7X-0006ac-6S
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:42:24 +0000
 Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A39D32189D;
- Thu, 29 Aug 2019 22:42:10 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6E98322CF5;
+ Thu, 29 Aug 2019 22:42:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567118531;
- bh=xHkEUC70NyhQrdUtUwDNpqvFabXbH4FNTzDPXPE1tqY=;
+ s=default; t=1567118542;
+ bh=jsdNyMNS/9pCKUS4waHlGlAetK7kzg37QE3T5eJP7R4=;
  h=Date:From:To:cc:Subject:In-Reply-To:References:From;
- b=LG+7fN41BbkQDRJj56NLA6759Otnvnf3nvVutDii10+eEzLBlDeRKXwPCpCclCsiA
- Cl7GH+XwZzjeaHNfXrbRV8R+5ceePqFPWCu9iGGxmTfFsCxbnOr/pXW9XZEEsWSbYn
- rrnwK2ejARhZqSJAQfOT6+NQJikZVzm+uVGT9078=
-Date: Thu, 29 Aug 2019 15:42:10 -0700 (PDT)
+ b=sZ3f60S6o/hx1D+PzQj9Usp9jWfLr+K8KaWvP5+V3mJz4L40jUh100neirWk+vVmj
+ YKlbuibzZMwhUulE4H2bjLpkf4FOc80VYWYDgzKFyGxmUJuS8zlad8T1Z6ieOmqxJE
+ qDNi4a4/0L5kh0AgFCnknxJrA67Oa2Q1AxnuqogU=
+Date: Thu, 29 Aug 2019 15:42:21 -0700 (PDT)
 From: Stefano Stabellini <sstabellini@kernel.org>
 X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 04/11] xen/arm: remove xen_dma_ops
-In-Reply-To: <20190826121944.515-5-hch@lst.de>
-Message-ID: <alpine.DEB.2.21.1908281458070.8175@sstabellini-ThinkPad-T480s>
-References: <20190826121944.515-1-hch@lst.de> <20190826121944.515-5-hch@lst.de>
+Subject: Re: [PATCH 05/11] xen: remove the exports for
+ xen_{create,destroy}_contiguous_region
+In-Reply-To: <20190826121944.515-6-hch@lst.de>
+Message-ID: <alpine.DEB.2.21.1908281459000.8175@sstabellini-ThinkPad-T480s>
+References: <20190826121944.515-1-hch@lst.de> <20190826121944.515-6-hch@lst.de>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_154211_685585_8F32AE53 
-X-CRM114-Status: GOOD (  15.30  )
+X-CRM114-CacheID: sfid-20190829_154223_517713_573E1F28 
+X-CRM114-Status: GOOD (  12.78  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,8 +77,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Grall <julien.grall@arm.com>,
- Stefano Stabellini <sstabellini@kernel.org>,
+Cc: Stefano Stabellini <sstabellini@kernel.org>,
  Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, x86@kernel.org,
  linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
  xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
@@ -87,97 +87,56 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Mon, 26 Aug 2019, Christoph Hellwig wrote:
-> arm and arm64 can just use xen_swiotlb_dma_ops directly like x86, no
-> need for a pointer indirection.
+> These routines are only used by swiotlb-xen, which cannot be modular.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
-> Reviewed-by: Julien Grall <julien.grall@arm.com>
 
 Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 
 
 > ---
->  arch/arm/mm/dma-mapping.c    | 3 ++-
->  arch/arm/xen/mm.c            | 4 ----
->  arch/arm64/mm/dma-mapping.c  | 3 ++-
->  include/xen/arm/hypervisor.h | 2 --
->  4 files changed, 4 insertions(+), 8 deletions(-)
+>  arch/arm/xen/mm.c     | 2 --
+>  arch/x86/xen/mmu_pv.c | 2 --
+>  2 files changed, 4 deletions(-)
 > 
-> diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-> index 738097396445..2661cad36359 100644
-> --- a/arch/arm/mm/dma-mapping.c
-> +++ b/arch/arm/mm/dma-mapping.c
-> @@ -35,6 +35,7 @@
->  #include <asm/mach/map.h>
->  #include <asm/system_info.h>
->  #include <asm/dma-contiguous.h>
-> +#include <xen/swiotlb-xen.h>
->  
->  #include "dma.h"
->  #include "mm.h"
-> @@ -2360,7 +2361,7 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
->  
->  #ifdef CONFIG_XEN
->  	if (xen_initial_domain())
-> -		dev->dma_ops = xen_dma_ops;
-> +		dev->dma_ops = &xen_swiotlb_dma_ops;
->  #endif
->  	dev->archdata.dma_ops_setup = true;
->  }
 > diff --git a/arch/arm/xen/mm.c b/arch/arm/xen/mm.c
-> index 14210ebdea1a..9b3a6c0ca681 100644
+> index 9b3a6c0ca681..b7d53415532b 100644
 > --- a/arch/arm/xen/mm.c
 > +++ b/arch/arm/xen/mm.c
-> @@ -163,16 +163,12 @@ void xen_destroy_contiguous_region(phys_addr_t pstart, unsigned int order)
+> @@ -155,13 +155,11 @@ int xen_create_contiguous_region(phys_addr_t pstart, unsigned int order,
+>  	*dma_handle = pstart;
+>  	return 0;
 >  }
->  EXPORT_SYMBOL_GPL(xen_destroy_contiguous_region);
+> -EXPORT_SYMBOL_GPL(xen_create_contiguous_region);
 >  
-> -const struct dma_map_ops *xen_dma_ops;
-> -EXPORT_SYMBOL(xen_dma_ops);
-> -
+>  void xen_destroy_contiguous_region(phys_addr_t pstart, unsigned int order)
+>  {
+>  	return;
+>  }
+> -EXPORT_SYMBOL_GPL(xen_destroy_contiguous_region);
+>  
 >  int __init xen_mm_init(void)
 >  {
->  	struct gnttab_cache_flush cflush;
->  	if (!xen_initial_domain())
->  		return 0;
->  	xen_swiotlb_init(1, false);
-> -	xen_dma_ops = &xen_swiotlb_dma_ops;
->  
->  	cflush.op = 0;
->  	cflush.a.dev_bus_addr = 0;
-> diff --git a/arch/arm64/mm/dma-mapping.c b/arch/arm64/mm/dma-mapping.c
-> index bd2b039f43a6..4b244a037349 100644
-> --- a/arch/arm64/mm/dma-mapping.c
-> +++ b/arch/arm64/mm/dma-mapping.c
-> @@ -8,6 +8,7 @@
->  #include <linux/cache.h>
->  #include <linux/dma-noncoherent.h>
->  #include <linux/dma-iommu.h>
-> +#include <xen/swiotlb-xen.h>
->  
->  #include <asm/cacheflush.h>
->  
-> @@ -64,6 +65,6 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
->  
->  #ifdef CONFIG_XEN
->  	if (xen_initial_domain())
-> -		dev->dma_ops = xen_dma_ops;
-> +		dev->dma_ops = &xen_swiotlb_dma_ops;
->  #endif
+> diff --git a/arch/x86/xen/mmu_pv.c b/arch/x86/xen/mmu_pv.c
+> index 26e8b326966d..c8dbee62ec2a 100644
+> --- a/arch/x86/xen/mmu_pv.c
+> +++ b/arch/x86/xen/mmu_pv.c
+> @@ -2625,7 +2625,6 @@ int xen_create_contiguous_region(phys_addr_t pstart, unsigned int order,
+>  	*dma_handle = virt_to_machine(vstart).maddr;
+>  	return success ? 0 : -ENOMEM;
 >  }
-> diff --git a/include/xen/arm/hypervisor.h b/include/xen/arm/hypervisor.h
-> index 2982571f7cc1..43ef24dd030e 100644
-> --- a/include/xen/arm/hypervisor.h
-> +++ b/include/xen/arm/hypervisor.h
-> @@ -19,8 +19,6 @@ static inline enum paravirt_lazy_mode paravirt_get_lazy_mode(void)
->  	return PARAVIRT_LAZY_NONE;
->  }
+> -EXPORT_SYMBOL_GPL(xen_create_contiguous_region);
 >  
-> -extern const struct dma_map_ops *xen_dma_ops;
-> -
->  #ifdef CONFIG_XEN
->  void __init xen_early_init(void);
->  #else
+>  void xen_destroy_contiguous_region(phys_addr_t pstart, unsigned int order)
+>  {
+> @@ -2660,7 +2659,6 @@ void xen_destroy_contiguous_region(phys_addr_t pstart, unsigned int order)
+>  
+>  	spin_unlock_irqrestore(&xen_reservation_lock, flags);
+>  }
+> -EXPORT_SYMBOL_GPL(xen_destroy_contiguous_region);
+>  
+>  static noinline void xen_flush_tlb_all(void)
+>  {
 > -- 
 > 2.20.1
 > 
