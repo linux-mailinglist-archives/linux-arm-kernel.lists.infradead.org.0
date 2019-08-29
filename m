@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BA610A280B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:32:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1BD00A280C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:32:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Kr1sWXtmg3zLHHdg/HDj6tfISDXx6fa61jakNnOZis8=; b=hiOyAjcEropNnqX/VsYTkojlXk
-	ENsCWj3mtArAEa/hhs0CtEarl+bzExIlBcA0ipJl3/FbQUxKXGN+k62W2YrHVli7e4NKhbGLYhN8S
-	Bqfs5qseQlBB93g9Z2p7sSr+/SoWnBZrnAIRL/D/VOXqf1jRLZJB1jzVbG++F3FwpoebSqIpOdGvl
-	bERofPpgwHA+Bhs8cgseqRASWCPVKu8AkD3h+CWl1mMQc/3Pw8tDCPoNvtwTfpqtRh+yhxLrAcTFt
-	HPcrqpw0hYG40eh3GrZwgXW/1HGzDJHyH1qYcGqSo1F+NWD7Gx+W9WZrJFy+xyBMyfACgbYSxIxu3
-	3NGDVmVA==;
+	bh=TS93avKJvo63j5LHxjcPAo4cDxMtXWAQzXF7lS4YGQg=; b=QtgB1VxdLBQisTgKtdIJOUuXv0
+	/HyJERWWp5FQioKlzE8KhQG4haplrLMXPkYIB8NgZSlF9CmTS5GbBVqLGAyKt8ZjLneTGKTKogx6p
+	bJYxyKWDHCUZZTAUu9XswNGxTa9+WMHHi1T2iETlN8gNIBDeZdQ1t52xssyGZCrOPa4kz/t04pQnY
+	tpXLAkz0Vr7hBZ/SvihMFon4vjJ0iutNfYmZ9uvkfme1agBflluLZkDy7dREy8ZqKZONctEOc5Rd8
+	u7YdQ51yiCSHBsU8RcHCmsBQBNmwDoZcIdX7DOUbzwkUvre+3igzkpNuXP7rjUYtWHj7uLUy8RD4l
+	GxrLIy8w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R5T-0007u7-3w; Thu, 29 Aug 2019 20:32:07 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1i3R5h-00086y-Io; Thu, 29 Aug 2019 20:32:22 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2N-0003ox-5S
+ id 1i3R2N-0003pj-Vn
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:57 +0000
-Received: by mail-pl1-x643.google.com with SMTP id o3so2103218plb.13
+Received: by mail-pg1-x544.google.com with SMTP id n190so2209758pgn.0
  for <linux-arm-kernel@lists.infradead.org>;
  Thu, 29 Aug 2019 13:28:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=m79oRnRrEr4qP8mVMU/76dpiarnntehXpScT0RVwif0=;
- b=Taa04c2VVm1QUnj+0gP+YRVeG4PBUTpzKpjZUNVPWhjceX8wBxp/R/XZjwGo6Q+oRB
- 9NwdkGftTaAuSVz2wz4/0hfXjOkUmCVItSsqXKHnpvJREvnq/cZfOvgRB2Hg91w2vAkR
- guSjY3y1skyEFN2/WLDPPvLnJThATjR20sgE4J8Eh9Y1lc8GulexOWquWyKHDvSrAq+W
- xPQV4eJ2CC+84VRAkkRNT9Cp6d+oHlcEmzGTSR5rmMZR4qx8PBDYeL5BbVPriUGlobrr
- Y/Pl5d7l5n6B4cQjJ4TqPAfewtve+Uw5h5CNnYaN5837I/uKYuhrIqaps9nq6yiz8eP8
- cMrA==
+ bh=dht/RUc4+DcZjMSx1Gk9ynHax5PcdbOKL1DeXRBmap4=;
+ b=QKloUu+1WWB2hyO1EX6mdPu62V1PWog2BPnolZQihlcG+CHyvuVJtsnZKn3wYSfEYg
+ 229ucIvdqCoSDdbAKslXiQWRs9KQzanRlq3NiWWSvyiVnD9kNWqRTxCWSL1OBt8KI0Se
+ yxYzhK7by4/tTmW75M6Jj31Sl6TxNFCt8tMvWijWGQ6P3ahDw6GrvkN3HQkCn6bPpaan
+ tf3cdny6TEQzrKSKFzJc0zX9jS92PjBih2qVQsLWW9ovPr0NwtyVx+rONtDBJk4cOZad
+ +FtRcM4musLa2u7/DRziLkRcafbCygfPNyqFKxZ6Dc10Qh/+L3U6++ghG+Kio1Uk1pZf
+ 6dSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=m79oRnRrEr4qP8mVMU/76dpiarnntehXpScT0RVwif0=;
- b=n6MnMLSDtyOfhfGU713mzTb4dz6Z6U/Ffa5ap2f7ZLNELrCEw0p2CwMXU0a/qb5wpz
- iMS72IEVskxErSd+vyPOCuMVcr+SCdgcr/sx1+acQtqe4UZNgQiCn9Mg4EEua7rCERpf
- UklhSCiLcy5nMBXbeA9Md8DqmRbq8rnFcpUZZ7EUTxpZyBpwRyDMJzKNNtXOiywkwegx
- YLz9JpbbmOmRWmA+YjvqFrrXAFofnKoGCVyW7qC3Qg+l28hj14liwVPCbwJJnVHwriRP
- ilZ3w+VKlJHscaiHH2dezsf67Vx3IH3imA50bVQBvPSZFsdNk1oJ3AKnTTag1CGTfb72
- FIlA==
-X-Gm-Message-State: APjAAAUWAUV+7XQd992rMjq1Y6HC+Qr/1XUYvc10fSOmVl3xR80LdBtc
- FWIrgge/kbkkpjv+EK3hHMjzQ1mZ084=
-X-Google-Smtp-Source: APXvYqwll5nTXFWczC0ZvzmJjKVimClwUqzosGWa5wWBhaihnhgLNeeNmId/FHQJ6QFY1HrDWh5Qpg==
-X-Received: by 2002:a17:902:6bc7:: with SMTP id
- m7mr12172902plt.60.1567110534704; 
- Thu, 29 Aug 2019 13:28:54 -0700 (PDT)
+ bh=dht/RUc4+DcZjMSx1Gk9ynHax5PcdbOKL1DeXRBmap4=;
+ b=qUrIOV5uIBIZIiHEYkFdq/pmz1o3S7BUa1Q3kY12f7YLEky5yy+WXUh+R05Er7+f1O
+ SaLodohVW3YY1rLEnVyLh7vSX2HJiizHALHInPDKY0mqeafzxRuDW1F4spX9vP4AA4VV
+ vNI8a/OK2SSQLevls7xZSjmVVXVtglGrhE+SDNrU0IFDh76EAAjMdSPmtnASHM34vZb4
+ Q6oq1IFks8Hz31ET/gM6XGZ+YJUoxGpf2qRg2TR7vKzo/dTRgOgTSKYs9xrOMXwx4Z7y
+ Arp2qWPA66loxU5mMYguMhpIchaQSM/ao4tDmHR99yk1IDQ67ZgqizjUua09ybL8ayl9
+ e67w==
+X-Gm-Message-State: APjAAAWOAmh9fn0NMAJCX8Tut40l95dSCCOCNHZWfH1iCU25T1qsp7MW
+ ISABe8VhH6parxrDMUgMq1TuyQ==
+X-Google-Smtp-Source: APXvYqzLumVsarjdlWeQXqwDjH4Q986hSSVbQNJGdBqjMNSf4CRq3QPvnQDqRktXf4kPWyLyRo1dwQ==
+X-Received: by 2002:a63:2264:: with SMTP id t36mr9560463pgm.87.1567110535406; 
+ Thu, 29 Aug 2019 13:28:55 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.53
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:54 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:55 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 12/17] coresight: etm4x: improve clarity of etm4_os_unlock
- comment
-Date: Thu, 29 Aug 2019 14:28:37 -0600
-Message-Id: <20190829202842.580-13-mathieu.poirier@linaro.org>
+Subject: [PATCH 13/17] coresight: tmc-etr: Fix updating buffer in not-snapshot
+ mode.
+Date: Thu, 29 Aug 2019 14:28:38 -0600
+Message-Id: <20190829202842.580-14-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132855_408705_FB50FF4C 
-X-CRM114-Status: GOOD (  12.08  )
+X-CRM114-CacheID: sfid-20190829_132856_113445_4C262B44 
+X-CRM114-Status: GOOD (  13.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -105,36 +104,82 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrew Murray <andrew.murray@arm.com>
+From: Yabin Cui <yabinc@google.com>
 
-To improve clarity, let's update the comment for etm4_os_unlock
-to use the name of the register as per the ETM architecture
-specification.
+TMC etr always copies all available data to perf aux buffer, which
+may exceed the available space in perf aux buffer. It isn't suitable
+for not-snapshot mode, because:
+1) It may overwrite previously written data.
+2) It may make the perf_event_mmap_page->aux_head report having more
+or less data than the reality.
 
-The existing comment is also misleading as it suggests any value
-written to TRCOSLAR unlocks the trace registers, however it must
-be '0' - let's also correct this.
+So change to only copy the latest data fitting the available space in
+perf aux buffer.
 
-Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+Signed-off-by: Yabin Cui <yabinc@google.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../hwtracing/coresight/coresight-tmc-etr.c    | 18 +++++++++++-------
+ 1 file changed, 11 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index 615bdbf7c9b7..a128b5063f46 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -48,7 +48,7 @@ static enum cpuhp_state hp_online;
- 
- static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+index 2246c1e6744a..f835a3c78b37 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+@@ -1414,9 +1414,10 @@ static void tmc_free_etr_buffer(void *config)
+  * tmc_etr_sync_perf_buffer: Copy the actual trace data from the hardware
+  * buffer to the perf ring buffer.
+  */
+-static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
++static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf,
++				     unsigned long to_copy)
  {
--	/* Writing any value to ETMOSLAR unlocks the trace registers */
-+	/* Writing 0 to TRCOSLAR unlocks the trace registers */
- 	writel_relaxed(0x0, drvdata->base + TRCOSLAR);
- 	drvdata->os_unlock = true;
- 	isb();
+-	long bytes, to_copy;
++	long bytes;
+ 	long pg_idx, pg_offset, src_offset;
+ 	unsigned long head = etr_perf->head;
+ 	char **dst_pages, *src_buf;
+@@ -1426,8 +1427,7 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
+ 	pg_idx = head >> PAGE_SHIFT;
+ 	pg_offset = head & (PAGE_SIZE - 1);
+ 	dst_pages = (char **)etr_perf->pages;
+-	src_offset = etr_buf->offset;
+-	to_copy = etr_buf->len;
++	src_offset = etr_buf->offset + etr_buf->len - to_copy;
+ 
+ 	while (to_copy > 0) {
+ 		/*
+@@ -1438,6 +1438,8 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
+ 		 *  3) what is available in the destination page.
+ 		 * in one iteration.
+ 		 */
++		if (src_offset >= etr_buf->size)
++			src_offset -= etr_buf->size;
+ 		bytes = tmc_etr_buf_get_data(etr_buf, src_offset, to_copy,
+ 					     &src_buf);
+ 		if (WARN_ON_ONCE(bytes <= 0))
+@@ -1458,8 +1460,6 @@ static void tmc_etr_sync_perf_buffer(struct etr_perf_buffer *etr_perf)
+ 
+ 		/* Move source pointers */
+ 		src_offset += bytes;
+-		if (src_offset >= etr_buf->size)
+-			src_offset -= etr_buf->size;
+ 	}
+ }
+ 
+@@ -1505,7 +1505,11 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
+ 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
+ 
+ 	size = etr_buf->len;
+-	tmc_etr_sync_perf_buffer(etr_perf);
++	if (!etr_perf->snapshot && size > handle->size) {
++		size = handle->size;
++		lost = true;
++	}
++	tmc_etr_sync_perf_buffer(etr_perf, size);
+ 
+ 	/*
+ 	 * In snapshot mode we simply increment the head by the number of byte
 -- 
 2.17.1
 
