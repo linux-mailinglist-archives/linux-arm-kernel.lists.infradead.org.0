@@ -2,101 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53031A1F9B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:47:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CF14FA1FA5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:49:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mMuOnCohfUjCFyo9oPOd7dIO2Tth9203+oaUNnGx05Q=; b=Hj8S+jhVx3et14
-	G7e7KBPS6ad3BHhqj9w8TvaX7zAT278zaRlcFvHspQtNgaTAyqvZwPiTnaO0OOiQNXZrDNnuzV+mV
-	RC9D0YOEImBwAVanehX5jyndSKMuQT4DEnxKavSY0ljz3on96V7PFZyDLUolYfTVcJtzTFeyWSVK/
-	BmqbXSFlRlwHLkFRTi7Qi5ho06fnnT3aB0m31w47ZnBAM6tbDkwAwmGYnqIhv5FW8HivxDhk/mCrb
-	zAaaBzHPf1dxmovUqyTRiDOpn0joYFL1Z59+jiZLIRHK2fuBG3ny/3TOxUhwEKHZ0zVj+LCxBzy54
-	96Pg/SlyOMCLm1IbDeHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=QkL+BvYuurOfMH0yfwLLUwVRkSClyo3nfz0EkrrtEgs=; b=TCnLJ8buYdVaJW
+	EPAdxbpbPYkTxLDyTJ6no49n7IwtUMAvSy5pw4uredwjlZ7+kfDzTDiwrlv3RN68FOaVJflWdo/2P
+	/FFLJRhnDgdLIlKUm0dkTPcgHnDkyYrvoT/Vstzi8+1aDkdqeG+swRAzsf8fmwuHwGl5eyYTXxDqF
+	0XnY/YsrFHpwUZbLjjBPgOTGfxBoQVvlCXTh/V8KQRgWUAjmSe6Hrz3QmXEjBeZW1yvu4Irseg4rw
+	5G1OZqG9fyj44M4LcYGtdhJon6EM3uQJNttINjKzzH0YYshSDeet3/MQpMcOHXSzYU74auyPfcauZ
+	4SjS2nsP2+Rbi5QTzaiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Mdu-0000zT-Rp; Thu, 29 Aug 2019 15:47:22 +0000
-Received: from outgoing-auth-1.mit.edu ([18.9.28.11] helo=outgoing.mit.edu)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MdU-0000vv-RQ
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:46:58 +0000
-Received: from callcc.thunk.org (guestnat-104-133-0-111.corp.google.com
- [104.133.0.111] (may be forged)) (authenticated bits=0)
- (User authenticated as tytso@ATHENA.MIT.EDU)
- by outgoing.mit.edu (8.14.7/8.12.4) with ESMTP id x7TFj59e005976
- (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Thu, 29 Aug 2019 11:45:07 -0400
-Received: by callcc.thunk.org (Postfix, from userid 15806)
- id 3F15242049E; Thu, 29 Aug 2019 11:45:05 -0400 (EDT)
-Date: Thu, 29 Aug 2019 11:45:05 -0400
-From: "Theodore Y. Ts'o" <tytso@mit.edu>
-To: Hsin-Yi Wang <hsinyi@chromium.org>
-Subject: Re: [PATCH v9 2/3] fdt: add support for rng-seed
-Message-ID: <20190829154505.GB10779@mit.edu>
-Mail-Followup-To: "Theodore Y. Ts'o" <tytso@mit.edu>,
- Hsin-Yi Wang <hsinyi@chromium.org>,
- Kees Cook <keescook@chromium.org>,
- Stephen Boyd <swboyd@chromium.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>, 
- Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- Ingo Molnar <mingo@redhat.com>, Borislav Petkov <bp@alien8.de>,
- "H . Peter Anvin" <hpa@zytor.com>,
- "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>,
- Kate Stewart <kstewart@linuxfoundation.org>,
- "David S . Miller" <davem@davemloft.net>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- Arnd Bergmann <arnd@arndb.de>, Marc Zyngier <maz@kernel.org>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Wei Li <liwei391@huawei.com>,
- Anders Roxell <anders.roxell@linaro.org>,
- Rob Herring <robh@kernel.org>,
- Aaro Koskinen <aaro.koskinen@nokia.com>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Tim Chen <tim.c.chen@linux.intel.com>,
- Rik van Riel <riel@surriel.com>, Waiman Long <longman@redhat.com>,
- Marcelo Tosatti <mtosatti@redhat.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Armijn Hemel <armijn@tjaldur.nl>,
- Grzegorz Halat <ghalat@redhat.com>, Len Brown <len.brown@intel.com>,
- Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Guenter Roeck <groeck@chromium.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Alexey Dobriyan <adobriyan@gmail.com>,
- Yury Norov <ynorov@marvell.com>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Jiri Kosina <jkosina@suse.cz>,
- Mukesh Ojha <mojha@codeaurora.org>,
- lkml <linux-kernel@vger.kernel.org>
-References: <20190822071522.143986-1-hsinyi@chromium.org>
- <20190822071522.143986-3-hsinyi@chromium.org>
- <5d5ed368.1c69fb81.419fc.0803@mx.google.com>
- <201908241203.92CC0BE8@keescook>
- <CAJMQK-iDoPxbFUH3JUeJ7SehCptZOnjKZiUoFd1PqLjDdGHujA@mail.gmail.com>
+	id 1i3MfY-0001YT-Ti; Thu, 29 Aug 2019 15:49:04 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3MfC-0001Xl-HA
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE9EF28;
+ Thu, 29 Aug 2019 08:48:41 -0700 (PDT)
+Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 582AE3F718;
+ Thu, 29 Aug 2019 08:48:40 -0700 (PDT)
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v5 00/10] arm64: avoid out-of-line ll/sc atomics
+Date: Thu, 29 Aug 2019 16:48:24 +0100
+Message-Id: <20190829154834.26547-1-will@kernel.org>
+X-Mailer: git-send-email 2.11.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAJMQK-iDoPxbFUH3JUeJ7SehCptZOnjKZiUoFd1PqLjDdGHujA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084657_125271_CF31BE62 
-X-CRM114-Status: GOOD (  17.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190829_084842_618825_79073D22 
+X-CRM114-Status: GOOD (  16.53  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [18.9.28.11 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -108,71 +58,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Kate Stewart <kstewart@linuxfoundation.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Mukesh Ojha <mojha@codeaurora.org>,
- Grzegorz Halat <ghalat@redhat.com>, "H . Peter Anvin" <hpa@zytor.com>,
- Guenter Roeck <groeck@chromium.org>, Will Deacon <will@kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>, Rob Herring <robh@kernel.org>,
- Daniel Thompson <daniel.thompson@linaro.org>,
- Anders Roxell <anders.roxell@linaro.org>, Yury Norov <ynorov@marvell.com>,
- Marc Zyngier <maz@kernel.org>, Russell King <linux@armlinux.org.uk>,
- Aaro Koskinen <aaro.koskinen@nokia.com>, Ingo Molnar <mingo@redhat.com>,
- Viresh Kumar <viresh.kumar@linaro.org>, Waiman Long <longman@redhat.com>,
- "Paul E . McKenney" <paulmck@linux.vnet.ibm.com>, Wei Li <liwei391@huawei.com>,
- Alexey Dobriyan <adobriyan@gmail.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Len Brown <len.brown@intel.com>, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Rik van Riel <riel@surriel.com>,
- Stephen Boyd <swboyd@chromium.org>, Shaokun Zhang <zhangshaokun@hisilicon.com>,
- Mike Rapoport <rppt@linux.vnet.ibm.com>, Borislav Petkov <bp@alien8.de>,
- Josh Poimboeuf <jpoimboe@redhat.com>, Thomas Gleixner <tglx@linutronix.de>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Marcelo Tosatti <mtosatti@redhat.com>, lkml <linux-kernel@vger.kernel.org>,
- Armijn Hemel <armijn@tjaldur.nl>, Jiri Kosina <jkosina@suse.cz>,
- Mathieu Desnoyers <mathieu.desnoyers@efficios.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Tim Chen <tim.c.chen@linux.intel.com>,
- "David S . Miller" <davem@davemloft.net>
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ ndesaulniers@google.com, robin.murphy@arm.com, Ard.Biesheuvel@arm.com,
+ andrew.murray@arm.com, natechancellor@gmail.com, Will Deacon <will@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 06:03:57PM +0800, Hsin-Yi Wang wrote:
-> On Thu, Aug 29, 2019 at 1:36 AM Kees Cook <keescook@chromium.org> wrote:
-> >
-> > Can this please be a boot param (with the default controlled by the
-> > CONFIG)? See how CONFIG_RANDOM_TRUST_CPU is wired up...
-> >
->
-> Currently rng-seed read and added in setup_arch() -->
-> setup_machine_fdt().. -> early_init_dt_scan_chosen(), which is earlier
-> than parse_early_param() that initializes early_param.
-> 
-> If we want to set it as a boot param, add_bootloader_randomness() can
-> only be called after parse_early_param(). The seed can't be directly
-> added to pool after it's read in. We need to store into global
-> variable and load it later.
-> If this seems okay then I'll add a patch for this. Thanks
+Hi all,
 
-I thought about asking for this, but we really want to do this as
-early as possible, so that it can be used by KASLR and other services
-that are run super early.  Also, whether or not we can trust the
-bootloader is going to be a system-level thing.  This should probably
-be defaulted to off, and only enabled by the system integrator if they
-are 100%, positively sure, that the entire system is one where we can
-trust the source of randomness which the bootloader is using --- or
-for that matter, that the bootloader is trustworthy!
+This is a version five of the patches previously posted by Andrew here:
 
-Is it really going to be that useful for a random system administrator
-to be able to flip this on or off from the command line?  Hopefully
-there will be an easy way to configure the firmware or the bootloader
-to simply not supply entropy, if for some reason it's not trustworthy.
+  v4: http://lkml.kernel.org/r/20190828175009.15457-1-andrew.murray@arm.com
 
-   	      	     	      	     - Ted
+The reason I'm posting this is because I spotted an issue with the above
+when queuing it for 5.4 and fixing it ended up with me spinning a few
+patches on top.
+
+The basic problem is that by implementing our atomic routines using a
+static key to select between the LL/SC and LSE variant, we rely on
+CONFIG_JUMP_LABEL and therefore CC_HAS_ASM_GOTO because otherwise the
+static key implementation itself is implementing using atomic routines,
+which leads to complete disaster.
+
+This patch series builds on top of Andrew's patches, with the following
+changes:
+
+  * Tidying up the header files in preparation for...
+  * ...making LSE depend on JUMP_LABEL
+  * Support for the 'K' constraint when it looks like it works
+  * Minor massaging of commit logs
+
+This means that LSE atomics are not available for in-kernel use when
+building with a version of clang without 'asm goto' support. I really
+don't see a way around this, but I've been told that clang-9 should
+have this support so that's at least something.
+
+Will
+
+Cc: Ard.Biesheuvel@arm.com
+Cc: peterz@infradead.org
+Cc: andrew.murray@arm.com
+Cc: mark.rutland@arm.com
+Cc: catalin.marinas@arm.com
+Cc: robin.murphy@arm.com
+Cc: ndesaulniers@google.com
+Cc: natechancellor@gmail.com
+
+--->8
+
+Andrew Murray (5):
+  jump_label: Don't warn on __exit jump entries
+  arm64: Use correct ll/sc atomic constraints
+  arm64: atomics: avoid out-of-line ll/sc atomics
+  arm64: avoid using hard-coded registers for LSE atomics
+  arm64: atomics: Remove atomic_ll_sc compilation unit
+
+Will Deacon (5):
+  arm64: lse: Remove unused 'alt_lse' assembly macro
+  arm64: asm: Kill 'asm/atomic_arch.h'
+  arm64: lse: Make ARM64_LSE_ATOMICS depend on JUMP_LABEL
+  arm64: atomics: Undefine internal macros after use
+  arm64: atomics: Use K constraint when toolchain appears to support it
+
+ arch/arm64/Kconfig                    |   1 +
+ arch/arm64/Makefile                   |   9 +-
+ arch/arm64/include/asm/atomic.h       |  93 +++++++-
+ arch/arm64/include/asm/atomic_ll_sc.h | 215 +++++++++---------
+ arch/arm64/include/asm/atomic_lse.h   | 395 ++++++++++++----------------------
+ arch/arm64/include/asm/cmpxchg.h      |  45 +++-
+ arch/arm64/include/asm/lse.h          |  49 ++---
+ arch/arm64/lib/Makefile               |  19 --
+ arch/arm64/lib/atomic_ll_sc.c         |   3 -
+ kernel/jump_label.c                   |   4 +-
+ 10 files changed, 413 insertions(+), 420 deletions(-)
+ delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
+
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
