@@ -2,80 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFA17A1815
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:19:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6C75A1824
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:19:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=67moJxgmArT/C1+rCOHyCK6evmXG0LYpOo9YMKpy1sc=; b=m2VTQTNFvW1QgI
-	vMcBSl+JRNU5H4/9VvofBQw/XptpWpRfEbsvDIKNB2lDBHm0RWtssBI6OcC2p1U/TbR6bFJ5vl2Ro
-	32aqXTDmwVNU+Ws93yFlDO+XcEUiKp8e7Yi7bCPX5K/JCU2aHGnGOwwP3jw7DJP7dpFMMobpIawqG
-	WoiLtF5S7KClczWwL+1Mh/B5ZjIMPDTNDSCkepP7Wogws2ooDNitYCRO+57FdmaHdBU1+A3Th1fa+
-	njjZ/xL/c0+2AKPAQvJElnS1HzXuUuL4VG1kRmie21ZW3tJ7uJ3wurVjpRaRWgXi84k2iQt5ypnaJ
-	P/dxyExMfm3AHfG56jRA==;
+	List-Owner; bh=CvKbnLMAB56WX/qwLS/xG7CS6oA2p+QnNnDRoHtlO98=; b=n4sb6DHg5Z2MQU
+	RlUF8gwhzDyhoMe4xmxatPw+wO6CTSU2lm2j0de/t2RNyAxFzEHX5Uq7G/CvHY2JP11LLlZEfJvbE
+	pXxRZBYQyPMrgEm7Jgj3/ZZNXJRk9u0jHj+JXv4z8OdLsUTp4LWu1fzXsWBFf24tJriLeSDYc81ck
+	jhdZB5HS3amFOXeH3RMFFa8xl6ig/Q252o62FEswZtWkWdwwobA1xXPJt31UkJoXELlhE5I0dn283
+	jc8e5RFqUj9uW0Ap3pOtBBHOodZV5pBwYg2Vl1YbiCAeRZ0gP/j/Yvtl12HgaceLHjvCLNGpThy+b
+	h5evxe8SGq9XqNDZI3nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3ISh-0001Bf-Fd; Thu, 29 Aug 2019 11:19:31 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1i3ISz-0001TC-Qe; Thu, 29 Aug 2019 11:19:50 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3IRG-0000Cy-T9
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:18:04 +0000
-Received: by mail-ed1-x542.google.com with SMTP id s49so3676036edb.1
+ id 1i3IRI-0000FH-Q8
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:18:06 +0000
+Received: by mail-ed1-x544.google.com with SMTP id t50so3670547edd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:18:02 -0700 (PDT)
+ Thu, 29 Aug 2019 04:18:04 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=zCsgPCFvt5f0JhV5AAX71J7KrOE6T7Mwp2HnksazGlw=;
- b=o9IDb9wxTMVYl4Pw8eOl4MN8lrxcZAgdJUKaGojaGYK4aXQr34VjDZVfYu/QzbxvqH
- jcCWwyi0BumBzhg17grPUPMX9d7OIgI5av0bWjFUbC977dHLo8th+91iEI5NqBvmCODo
- 2I3V9bM1lkU74SfOvgyAH+sAwFQaQIwE71r0I8lfv/K+OUYHnZS9/sjDBKzPpsDxCoCn
- WgY397r5bRinjlufn59iqnqRz6E+fEu4qAdIk6TUiefpKTyqVSbCUYkNOe3WtgxV1IBt
- qYjcwXUI9MXenjs8NrD+DbvJhsyZkQBDBJupkrQjvHkmXTxgcdrcmmtuR0K+kKiHNVj1
- gkmg==
+ bh=cjixq+s7ZD6fFiV9g8QRBxU/OWNAVY/P4LPyIACEzEM=;
+ b=djC2H5JFeHWERoQFSNo6K1Buv/HAY/zdTZ/Vy9BLHhv70G1BP5aEHIemdlQWFvLK0t
+ 3RSHU3+QDvVjBRH6rmndTQFisShBSy2rXVQU/0CyVBy93HiUWngryqj8oTbKIdj6Vnpz
+ sNXUippKE5z0M2ZtM+fW6KuMBLAdoZNiZD6qsjd/JWY1vRPgY0j28/rH0E6Idert9w7d
+ sS2fZojsKu+F+CaN8iGeU4WiMl20abUTFNRMZ2XUCm9qApaELu6NPAdSB6YiqFtgC0ZA
+ 1lVSgZoDWeqEdOzemcXFc9s7dX1wZPrqyNfi+GQQTYnagocsIo/CfeeTtfPlcX3yRrKD
+ +5dg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=zCsgPCFvt5f0JhV5AAX71J7KrOE6T7Mwp2HnksazGlw=;
- b=eGiprkfwu5NdiWXLZn93yTnarTbWqh1zV70BbERKG9O22eOuKC/XCdyKCAZ4YI+vhn
- Q+9uO83ZYMr5MaCk4gQIp+4DSzpDMNvwHzUyAuyoLdh+0S8/msJ3vQgODeN7uQ70HN5c
- LsYzhblB+AXiSBG0JosMjNmbc5GtMwf7TrT5G/VS3q3mHasKz6dLeIDn+/HWm2xYwRY5
- JcGc6J0F2k45ZeKPsfop4GYwZWXMvo2p+rMWhHu6bWklWrjytYUxIxd4dw48QszLVvko
- WURfkhtxx1nSWo2NvcaqbixHJHekf0c5xteeikt2FXoo/SlMU1ymHaKWted+WTOA2GSH
- Emdw==
-X-Gm-Message-State: APjAAAWkFpRDIFiYCa67EV4844sQYEiOzwNmIjxSIZc9UEuYgY/jmW1f
- Qc/VuWtK+c0TKa2ZkRvI5zk=
-X-Google-Smtp-Source: APXvYqwM8CVbq0FXN38b8oxKuaYKC/x8VDD3uqRU7eQrkpe6K2cwtpE+e448Jg8Ofr+6OyhLfBDXpw==
-X-Received: by 2002:a17:906:6bc4:: with SMTP id
- t4mr7875881ejs.256.1567077481688; 
- Thu, 29 Aug 2019 04:18:01 -0700 (PDT)
+ bh=cjixq+s7ZD6fFiV9g8QRBxU/OWNAVY/P4LPyIACEzEM=;
+ b=p4yJOlg0mdgYsyoljLAz5corazcavYaumdTz0Vm8/v0q7sIqRk16fQyDtJe0XI1q/J
+ EAPn6KJuhKGH5x2Dv6oogObmS/If1wn+Q2gKDSzOsXAIZoQ+h4//7iGKnXgHqeK0ZZ2J
+ woCpzPDwiAsQibBd+DWjKLGe63jVmcIkI1pTvl1AdWshPWjetGSoTAp9P16LR+ntCf7+
+ mXP/1No/cCqpMkcwwi8NYN+NUcqhsyFdFx3+1Ohbrph7YxP4HKjk47M2bzetFChzUZjB
+ qyfdJgNisNcak5zXsAGb+iHfvO5N6fR2/0qfr/4ReTjRUroXn8VXOC4+Llv8p282Edhx
+ U2HQ==
+X-Gm-Message-State: APjAAAWl136/tpJlyfN+IhNnnjk+c0POj7rw/wCU/8NOLbq/LSEv2Esc
+ unADMZ632kTjh90hpyOUJP0=
+X-Google-Smtp-Source: APXvYqwZIsELufro/apZKANBvYbuav5XunBjAgaDShMq6vd+vYkJ2aickX4Wp+WCq2PXzJ9kM5tq1A==
+X-Received: by 2002:a50:9401:: with SMTP id p1mr8952979eda.189.1567077483603; 
+ Thu, 29 Aug 2019 04:18:03 -0700 (PDT)
 Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id n93sm215670edc.5.2019.08.29.04.18.00
+ by smtp.gmail.com with ESMTPSA id y9sm388439eds.49.2019.08.29.04.18.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 04:18:00 -0700 (PDT)
+ Thu, 29 Aug 2019 04:18:02 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Joerg Roedel <joro@8bytes.org>
-Subject: [PATCH 4/5] iommu: intel: Use iommu_put_resv_regions_simple()
-Date: Thu, 29 Aug 2019 13:17:51 +0200
-Message-Id: <20190829111752.17513-5-thierry.reding@gmail.com>
+Subject: [PATCH 5/5] iommu: virt: Use iommu_put_resv_regions_simple()
+Date: Thu, 29 Aug 2019 13:17:52 +0200
+Message-Id: <20190829111752.17513-6-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190829111752.17513-1-thierry.reding@gmail.com>
 References: <20190829111752.17513-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_041803_186928_F511ACE3 
-X-CRM114-Status: GOOD (  12.26  )
+X-CRM114-CacheID: sfid-20190829_041804_947619_4A00B202 
+X-CRM114-Status: GOOD (  12.52  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -113,22 +112,22 @@ From: Thierry Reding <treding@nvidia.com>
 
 Use the new standard function instead of open-coding it.
 
-Cc: David Woodhouse <dwmw2@infradead.org>
+Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
+Cc: virtualization@lists.linux-foundation.org
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/iommu/intel-iommu.c | 11 +----------
- 1 file changed, 1 insertion(+), 10 deletions(-)
+ drivers/iommu/virtio-iommu.c | 14 +++-----------
+ 1 file changed, 3 insertions(+), 11 deletions(-)
 
-diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-index 4658cda6f3d2..2fe5da41c786 100644
---- a/drivers/iommu/intel-iommu.c
-+++ b/drivers/iommu/intel-iommu.c
-@@ -5386,15 +5386,6 @@ static void intel_iommu_get_resv_regions(struct device *device,
- 	list_add_tail(&reg->list, head);
+diff --git a/drivers/iommu/virtio-iommu.c b/drivers/iommu/virtio-iommu.c
+index 3ea9d7682999..bc3c7ab7f996 100644
+--- a/drivers/iommu/virtio-iommu.c
++++ b/drivers/iommu/virtio-iommu.c
+@@ -838,14 +838,6 @@ static void viommu_get_resv_regions(struct device *dev, struct list_head *head)
+ 	iommu_dma_get_resv_regions(dev, head);
  }
  
--static void intel_iommu_put_resv_regions(struct device *dev,
--					 struct list_head *head)
+-static void viommu_put_resv_regions(struct device *dev, struct list_head *head)
 -{
 -	struct iommu_resv_region *entry, *next;
 -
@@ -136,18 +135,36 @@ index 4658cda6f3d2..2fe5da41c786 100644
 -		kfree(entry);
 -}
 -
- int intel_iommu_enable_pasid(struct intel_iommu *iommu, struct device *dev)
- {
- 	struct device_domain_info *info;
-@@ -5629,7 +5620,7 @@ const struct iommu_ops intel_iommu_ops = {
- 	.add_device		= intel_iommu_add_device,
- 	.remove_device		= intel_iommu_remove_device,
- 	.get_resv_regions	= intel_iommu_get_resv_regions,
--	.put_resv_regions	= intel_iommu_put_resv_regions,
+ static struct iommu_ops viommu_ops;
+ static struct virtio_driver virtio_iommu_drv;
+ 
+@@ -915,7 +907,7 @@ static int viommu_add_device(struct device *dev)
+ err_unlink_dev:
+ 	iommu_device_unlink(&viommu->iommu, dev);
+ err_free_dev:
+-	viommu_put_resv_regions(dev, &vdev->resv_regions);
++	iommu_put_resv_regions_simple(dev, &vdev->resv_regions);
+ 	kfree(vdev);
+ 
+ 	return ret;
+@@ -933,7 +925,7 @@ static void viommu_remove_device(struct device *dev)
+ 
+ 	iommu_group_remove_device(dev);
+ 	iommu_device_unlink(&vdev->viommu->iommu, dev);
+-	viommu_put_resv_regions(dev, &vdev->resv_regions);
++	iommu_put_resv_regions_simple(dev, &vdev->resv_regions);
+ 	kfree(vdev);
+ }
+ 
+@@ -962,7 +954,7 @@ static struct iommu_ops viommu_ops = {
+ 	.remove_device		= viommu_remove_device,
+ 	.device_group		= viommu_device_group,
+ 	.get_resv_regions	= viommu_get_resv_regions,
+-	.put_resv_regions	= viommu_put_resv_regions,
 +	.put_resv_regions	= iommu_put_resv_regions_simple,
- 	.apply_resv_region	= intel_iommu_apply_resv_region,
- 	.device_group		= pci_device_group,
- 	.dev_has_feat		= intel_iommu_dev_has_feat,
+ 	.of_xlate		= viommu_of_xlate,
+ };
+ 
 -- 
 2.22.0
 
