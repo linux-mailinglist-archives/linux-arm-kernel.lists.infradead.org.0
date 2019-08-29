@@ -2,73 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 108A4A2A7A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 01:03:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4429DA2A80
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 01:04:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
 	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xP2/odQooWTQSOeBuHJzgAkMMNYNXRQ7IOn7+/Hgsos=; b=PBRV4Lvg4EMVi6
-	NXy/Oe7HLHD2+Nw29wFYn4Qezy+2wQbdflMH1rXv3yjk3bJB8U69JzHmcggToQCJsIvZnU5vyVUmM
-	0zx2BnwJOmcLoErOXelDH3A+9Rhzs3Meb6zXCdGalb9mQpbvtI7O/JRqPMEZGS9fV7MK4nvlA02i9
-	oE96LKUlmRFPmXmvZ4U3prtTknb4+ZkrKSja4uEtDUxLo1BbvMnGIGIA03ksD9/z76jnbzcu/MCLy
-	f1IaoiVRqX699TlqDUnkeroL9wt6tbEwZIZ892838TFmMoeWuKCd0CIiUlGsVE2+CUuZskQN18kCn
-	JrUECV9LcXB8z8ypB/aw==;
+	List-Owner; bh=TD+jZHcbCYTwZUM26iWcs9OuT26haVyq1iXnsX5yAeA=; b=q/VJb4ViX3jsVi
+	7Lem6ysSrrp/CDoKgawSlP2JAIkRiQw+bx94RH4BlT9aLmsf4K9FjlfrLIqCRy64RJoUTDpuWlTxD
+	dYPTQgxCD/9JF7KmysCs23wBoPfoo/pDfZvMJlstSKVHEnhjq+sLHumllpanUq09GjbZkYqyWeesG
+	VqetC+MpEKUmkCre8ZkgaCcQf72QAqqMrwD3wJ79SHyiYFHhh0UTBK8w47mU3XsN4+Z9G6J3/xPj0
+	1+kZbvt9+Us7QmYIEbmsHGT9sGGsuuOp1s3OG2iwUawDP0VKiR/+G2bU1meUPqAriyJDUXKswednr
+	HJMYIw8wR0sAZ6ntyMBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3TSI-0000sM-86; Thu, 29 Aug 2019 23:03:50 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i3TSw-0001BD-DS; Thu, 29 Aug 2019 23:04:30 +0000
+Received: from mail-pf1-x42f.google.com ([2607:f8b0:4864:20::42f])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3TS8-0000rP-M9
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 23:03:42 +0000
-Received: by mail-pl1-x641.google.com with SMTP id f19so2329742plr.3
+ id 1i3TSj-00019X-5k
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 23:04:18 +0000
+Received: by mail-pf1-x42f.google.com with SMTP id g2so3164960pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 16:03:40 -0700 (PDT)
+ Thu, 29 Aug 2019 16:04:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:in-reply-to:references:date:message-id
- :mime-version; bh=9YyWUF96nwE5mShasDD/q0vy2KUwpho+jHAD/EggO/w=;
- b=E3fc+EbesE2EnnhcCkWNr8OeFmAiwB31tGtH4vMsizr2rJN5JhNxgrjqQjoCpMGs5s
- H+KUxXhqWFilM9t6kGV1egEdo6P8RfV3nLFoXUFcn1xJyPw4voXgSqZuRtSrWdevm/dY
- gF4y1CwkCYrculoIZcBjcc+6FfLqDrdODlxFXaBQskrV1KDFp2+WFp7XBQJ1CojMfkuc
- a6Gw8mcXGXMgKWd8rup3ZWQo4YBcJQCYRSSMHmqCj6RGE418K+fIOBytns/WZHqJa/Sr
- 2akE1oNntrr98DnrZTp5Unlf7MBdhOouoMnmTgsVlItUcfk1VOQ1nWQ9lRsbL/BdDe6I
- 475Q==
+ :mime-version; bh=FG/ioGopL1SooQzlLZXuG7hdqG/bkCBcJofUFHkolmg=;
+ b=h2CJ1+aIMh3unx0pf8iBb6SvhrJQVxa2DFreHB0teMQjrJqwTwiFwbR8I+r3I4VzV7
+ mf0KYg3iY5D+E2SrONUnlbzAQKXcXo2/puy2wWh0Vc7M5QG+C73z4pECJ/c5I2vWByKk
+ BnoVBTygCXl1jBBO5CXsBPQeQtRKvLgcZnnoxz+IP5O9P9hSW51IYPOIixi89dcEqTrW
+ iJR7MR6tBH1ZOdDMl+JxuGlMkBxnVPlxpZbGp8UIemqy/4CqmzO0314XxNDV4lotbxsW
+ SXkSDfLthe1nnJB4NX5ARX0d4nzecdgfrvmu4YD90y59Wu617qhKtqzlCKkVd2/xecdS
+ BGCg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
  :message-id:mime-version;
- bh=9YyWUF96nwE5mShasDD/q0vy2KUwpho+jHAD/EggO/w=;
- b=tyjPMK4NWz6H5sXD248zNkv2o3RoMN6ZrgywnKOLg9Qe81Fz8po9HaJDFZMS+VCEug
- Anw67PKKqd3N3vJRoiAob0vWgXiHz01a7G/Pu31pLesTAGYmpJILm0BbMVU39mfjuAht
- Q2d3DvoVkLnifi0gD1+FH4lf9n6/d8fX50za97yql3vloMezYfDrtvkyHxW3giG990OM
- dEWrWJQC+IYklHBh7D6pjMety0qWPOS8BosD/FmJHLlSURykDUPJD3BHcyRHclyjgyXj
- uQzVWc458c+gQyb5gtoMrmgb66OivdlhX08wxkEngyx8pHnI8H63sNcW3uWDTDJ+pWm/
- acYw==
-X-Gm-Message-State: APjAAAUIBTbUWvlsBvev9HIuBTo5AP6A8FIkiibzhUTiHk7wfXYg+ERu
- TZuYpgasZ7x1dIqPBer6t/ryvQ==
-X-Google-Smtp-Source: APXvYqzsxpgvCbGnvWog6IzW12Snn8x1XyrwztFdkSvGC6j6ot+16ICVrd51JSm5Q5xuqVBXFpTAZg==
-X-Received: by 2002:a17:902:7616:: with SMTP id
- k22mr12347002pll.315.1567119819497; 
- Thu, 29 Aug 2019 16:03:39 -0700 (PDT)
+ bh=FG/ioGopL1SooQzlLZXuG7hdqG/bkCBcJofUFHkolmg=;
+ b=Tt5rkv/3HuF2kzd8wNbKfJAYMK8Sv2Z2ZDuNFHET5n+whVbxG+ivx9jMFzc7GvX01U
+ KSwpSMkr9QO6daMPb44my6hyk+1Dfc3rw3hBsCvWL+YW3NpJ+RnFiTshKPBlrh9Hcfv3
+ AjCdUkeIJ9F1rkQ82uIch5tWADf92sZN8WGHzm6X7IlK4xICSDam9ErwGXKBTCXn2GBh
+ aAtEwLVegOyk8A36SL7sgSbNgdVsiJEid8EuMPprwDKE7QSaBK6ZauWnD3lPeH317dxg
+ NaPBhdwaAbW2HVgJo0NBSGqhJvlqy+MKSgt4NIlS2YC+FO+sdqfvixYHxvFMabwE4uEf
+ r4Ug==
+X-Gm-Message-State: APjAAAXwM2iqp3YNgBV+tYIehOP/MDhH4ydBP8wgUMDLTGbmODXE3x49
+ KezJFT1Hb6G2U/yOkGjsV2QVLw==
+X-Google-Smtp-Source: APXvYqx5LlLHmbmdfmqbBXXwfgn/o7hvFhyiIl4i9+q9RGmzrXl7DGO/xohGJpuHOjW/ZvmmiZelPg==
+X-Received: by 2002:aa7:8219:: with SMTP id k25mr14687532pfi.72.1567119856246; 
+ Thu, 29 Aug 2019 16:04:16 -0700 (PDT)
 Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
  [71.197.186.152])
- by smtp.gmail.com with ESMTPSA id v145sm4676778pfc.31.2019.08.29.16.03.38
+ by smtp.gmail.com with ESMTPSA id p10sm3363807pjr.14.2019.08.29.16.04.15
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 29 Aug 2019 16:03:38 -0700 (PDT)
+ Thu, 29 Aug 2019 16:04:15 -0700 (PDT)
 From: Kevin Hilman <khilman@baylibre.com>
 To: arm@kernel.org, soc@kernel.org
-Subject: Re: [GIT PULL] soc: amlogic: updates for v5.4 (round 2)
-In-Reply-To: <7ho907rfsf.fsf@baylibre.com>
-References: <7ho907rfsf.fsf@baylibre.com>
-Date: Thu, 29 Aug 2019 16:03:38 -0700
-Message-ID: <7hsgpjo9px.fsf@baylibre.com>
+Subject: Re: [GIT PULL] arm64: dts: Amlogic updates for v5.4 (round 2)
+In-Reply-To: <7h4l1zrf84.fsf@baylibre.com>
+References: <7h4l1zrf84.fsf@baylibre.com>
+Date: Thu, 29 Aug 2019 16:04:15 -0700
+Message-ID: <7ho907o9ow.fsf@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_160340_720789_098EFFD6 
-X-CRM114-Status: UNSURE (   9.62  )
+X-CRM114-CacheID: sfid-20190829_160417_211212_1F284AF8 
+X-CRM114-Status: UNSURE (   7.45  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -76,7 +75,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:42f listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -102,25 +101,19 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Kevin Hilman <khilman@baylibre.com> writes:
 
-> The following changes since commit 49ed86f503be80aac158a567c4cfd31cf1cd181e:
+> Hello Arnd, Olof,
 >
->   soc: amlogic: meson-gx-socinfo: Add of_node_put() before return (2019-08-20 14:53:33 -0700)
+> Another (final) round of 64-bit DT updates for Amlogic SoCs for v5.4.
+> Highlights are in the tag description, but of note is a tag pulled in
+> from the clock tree due to a handful of new clocks used for DVFS and
+> power domains.
 >
-> are available in the Git repository at:
->
->   https://git.kernel.org/pub/scm/linux/kernel/git/khilman/linux-amlogic.git tags/amlogic-drivers-2
->
-> for you to fetch changes up to eef3c2ba0a42a6aa709828e968b64bd11f4aeb19:
->
->   soc: amlogic: Add support for Everything-Else power domains controller (2019-08-28 14:29:37 -0700)
->
-> ----------------------------------------------------------------
-> soc: amlogic: updates for v5.4 (round 2)
-> - add power domain controller
->
-> ----------------------------------------------------------------
+> Please pull.
 
-Please ignore.  I messed up some dependencies.  I'll respin/resend.
+Actually, please ignore.  I messed up some dependencies between this an
+the drivers PR.  Will respin/resend.
+
+Thanks,
 
 Kevin
 
