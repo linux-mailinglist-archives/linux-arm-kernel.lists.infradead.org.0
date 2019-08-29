@@ -2,117 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C6EAA148F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:20:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7168A14A6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:23:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jfxWlW/DGROe36zT5mjWo+OOG1nFfe+EDnix8eKsQOo=; b=tKBpmdCt4op5yh
-	833vTYF4nlKwRbfJBqBS1BlqSBtffulAcZHQRGFHetzjvAweoJURLiQGmHEKTpL2fZkKqx7CBWNma
-	An6zJiNzbIrfk0GWpKkqhpm5otPKie9bjDjKXZyFFtO4hkN53AnX7r7Koxe0LRni1CgynRCi2+LT3
-	akKK9g0UXHnR5sgAC3r9KL4pIdyi+QcMUym+KuhcnZ562Pzw4HflpB6SJLqFpw6YaJIRWY+NNnry2
-	8O01urYQo3L9bg9r1dwX98sraWCz9asrjwvQ/l+NKjod0z9ljhej7EAbyNW60tB5VjZTkDF+hjvQm
-	+iFQvzdVR7g1y8PD3D8g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=oXWzTClJ6q1/buv33L5QeuNKS8WYP1pfWa9oGZOYF+I=; b=CaTY5Y0HBHZusT
+	BNBwPayXzm9pq91V9t0TFV9mw88+eoFdkk+VN0daczmNo1Ayq5mdBikHpsZL4YydMS0km6l5Uep0P
+	kYCQQ3AI6jKu07byt8L9WB553MG7BCpW469RKbgHuXO8uPqeGwzAkHTRqeG8NmX7D4gqMf5wxG7zo
+	pQDcTpR3L2qw0cptV7LeHELIiJc9vJA98gnUwizHbygT4EXIKzDrcxy3BnQqS8GHG5OKo7jVISrFv
+	YZbJcMF1KitsAXCB9NJP+RywrX6RERq9WmSlrPdA4WfMX1nkDchYL4m7Fs5MQr2fuq9tB7h/u5CLv
+	as8uSOhzAIvAuL51Vwxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Gao-0007FZ-F7; Thu, 29 Aug 2019 09:19:46 +0000
-Received: from mail-eopbgr20058.outbound.protection.outlook.com ([40.107.2.58]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1i3GeI-0000dS-OI; Thu, 29 Aug 2019 09:23:23 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3GaX-0007FC-8V
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 09:19:31 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LEhKXu6ZOSqpxdM+UbyORssKFyj4Rk1EEK1piF/ojMdVl269VmqjRK7+k0fZOoVGmRLR5kP3euVM1E/bvi5e4rIKd5axMXkZ1E10+3GzZu10tW3O+Ii5aBxmT6wSXKE3/faj5CyE7A79b8oWYg3jT0ltakaVGv4hyAemakNokq5fhZ5hCjS/RZsF6CqTtcbfQ2FSlh3D8dfobDXzzLmPCt52rHaRag5b/Bi8NmD84+K6epiHM1H4cFdF0LBTUkwReST+lHLvofWg8YOz6kCifLgf+rSb/ldH0TIOHmgX646zLU5o8PgM6IKCdclqY0+MBJyEydQmfl/SLUx8Xdvdrw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cKQ+It/Y1qKp0sE9paqVHUB6QbjZql3P5qY7HLr6bzE=;
- b=Nly3uMCO8tqToQ248JTeukP6Lhv12Bf37WHsMCVAe14fyKrV+ycj9FR06aFtCRDzpZcTdpCywuyVihkmsfop37M6GyPUV3pbIpq++gqz9Fk7Cfoo/JAYNRTM//LPlbCJe32/i1hWKDrsX/v6kiRTFaBJ5hQWi2oNFI7/AfQ+DKs4/MOTIk3n8EhTNlgfzOyLuS8Lr/yp2dqqkztbS1UmqZbmXI7BbDJd+2PjTLiO7d1qzpYiLKqMT4OdtTtVunP3G+Ap1ORpBR2bMJ0rQrpQdhFhq2P3WFnt89UdhUv/t6YDATVl7XCUu0Hns6ccJG7klT7yJaAxLbcUXH/GQzbFeQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cKQ+It/Y1qKp0sE9paqVHUB6QbjZql3P5qY7HLr6bzE=;
- b=i4oIrHDJtxSV4ujxBCTr6siZotREHYg/FYO8I2aj+46OVTM3MM8U9YJUAOZPhNmFPLblZjYANzu7vVLcwiw0k99bqNOLZzuTSg6Lfnk7QSpuYK5Q7ipdFoDV8nNpUDWWZ07M4P5Q2E4JBLAiTlDDjMtiRcleNCKVumKFrsk+wLQ=
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com (10.173.255.158) by
- AM5PR04MB3267.eurprd04.prod.outlook.com (10.173.255.148) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.20; Thu, 29 Aug 2019 09:19:24 +0000
-Received: from AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::5dd3:ddc9:411a:db41]) by AM5PR04MB3299.eurprd04.prod.outlook.com
- ([fe80::5dd3:ddc9:411a:db41%3]) with mapi id 15.20.2220.013; Thu, 29 Aug 2019
- 09:19:24 +0000
-From: Xiaowei Bao <xiaowei.bao@nxp.com>
-To: Rob Herring <robh@kernel.org>
-Subject: RE: [PATCH v2 04/10] dt-bindings: pci: layerscape-pci: add compatible
- strings for ls1088a and ls2088a
-Thread-Topic: [PATCH v2 04/10] dt-bindings: pci: layerscape-pci: add
- compatible strings for ls1088a and ls2088a
-Thread-Index: AQHVWN1ZOdHJPAlxM0KCMq+jo3exvqcPmykAgAJIbeA=
-Date: Thu, 29 Aug 2019 09:19:24 +0000
-Message-ID: <AM5PR04MB32990FE14E5B60D4C66A9E5DF5A20@AM5PR04MB3299.eurprd04.prod.outlook.com>
-References: <20190822112242.16309-1-xiaowei.bao@nxp.com>
- <20190822112242.16309-4-xiaowei.bao@nxp.com> <20190827222617.GA16361@bogus>
-In-Reply-To: <20190827222617.GA16361@bogus>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=xiaowei.bao@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: cb4fc085-4fbf-46c7-d599-08d72c61fbec
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:AM5PR04MB3267; 
-x-ms-traffictypediagnostic: AM5PR04MB3267:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM5PR04MB3267C6493C2D25E73BB3A711F5A20@AM5PR04MB3267.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:7219;
-x-forefront-prvs: 0144B30E41
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(376002)(136003)(396003)(346002)(39860400002)(13464003)(199004)(189003)(81156014)(229853002)(54906003)(76176011)(6916009)(53936002)(14454004)(86362001)(44832011)(76116006)(7416002)(25786009)(7696005)(6506007)(316002)(4326008)(3846002)(99286004)(6116002)(71190400001)(66946007)(64756008)(66556008)(66476007)(478600001)(6436002)(102836004)(55016002)(14444005)(8676002)(53546011)(71200400001)(2906002)(305945005)(33656002)(6246003)(66446008)(26005)(476003)(5660300002)(11346002)(7736002)(186003)(256004)(81166006)(52536014)(74316002)(486006)(446003)(66066001)(9686003)(8936002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM5PR04MB3267;
- H:AM5PR04MB3299.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Vbzr+TaMD21VAFlizswxqJdb+5c0BvO18zw5U/bLcn/y4HwdMrocB7O2YMyhyPrblKlFa3WJibOh9gzrZmJyoehnRPcT7BVViLIayCTHVTnM4TBgJjjr7X8nw/TwYHX/aWIMFxz+QcUZCxYCQo7UEE2KqE3nyXTsaCRbiFSnB26SVQD9F7dzMQxIz57i0Lr02OSZfKV4FS9fgVdJhAeD5pF1VH5o833unTOLKWht/b8BTE2WmDn32uBfucu+yIIP/CNx9gx8Qnb0yJggZ1jUXBH2o5Lfc0RuoRHJDjM3etePtYLFV5c0SAgUPAZQInptfxYWGEJA6bURqhuepzN2oqZZejWvnBuopl+2jwA7A1lL1Rs6FasKE/XjMds74QiYEvb4U49jZOvQbAItuOzUZYp5CxTETc1O8uPura/3H4k=
+ id 1i3Ge3-0000c6-PT; Thu, 29 Aug 2019 09:23:09 +0000
+X-UUID: d75bbba9372340598ead63c6e029411e-20190829
+X-UUID: d75bbba9372340598ead63c6e029411e-20190829
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 261645994; Thu, 29 Aug 2019 01:23:09 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 02:23:07 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 17:23:04 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 29 Aug 2019 17:23:03 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
+ <gregkh@linuxfoundation.org>, Biju Das <biju.das@bp.renesas.com>
+Subject: [PATCH next v11 00/11] add USB GPIO based connection detection driver
+Date: Thu, 29 Aug 2019 17:22:27 +0800
+Message-ID: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: cb4fc085-4fbf-46c7-d599-08d72c61fbec
-X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 09:19:24.4607 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 85B/XSfp/KfH1wKV13mFK/eyzptQRAbGoUpC1Rej9uo5F6oW3daTRKwX0cAAsPfrWzBOAH0DYujfUt+u/W/66g==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5PR04MB3267
+X-TM-SNTS-SMTP: CF72600A8E3B74F2B4A3F789FB7C5C6E97A9154F3CEFE5ADBB3278660AD8AFB82000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_021929_307229_79FEF464 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_022307_833902_671F320F 
+X-CRM114-Status: GOOD (  14.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.58 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -124,64 +70,171 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>, Roy Zang <roy.zang@nxp.com>,
- "arnd@arndb.de" <arnd@arndb.de>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-pci@vger.kernel.org" <linux-pci@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "kishon@ti.com" <kishon@ti.com>, "M.h. Lian" <minghuan.lian@nxp.com>,
- "gustavo.pimentel@synopsys.com" <gustavo.pimentel@synopsys.com>,
- "jingoohan1@gmail.com" <jingoohan1@gmail.com>,
- "bhelgaas@google.com" <bhelgaas@google.com>,
- "andrew.murray@arm.com" <andrew.murray@arm.com>, Leo Li <leoyang.li@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>, Mingkai Hu <mingkai.hu@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="gb2312"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Hans de Goede <hdegoede@redhat.com>,
+ Heikki Krogerus <heikki.krogerus@linux.intel.com>,
+ Badhri Jagan Sridharan <badhri@google.com>,
+ Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>, Andy
+ Shevchenko <andy.shevchenko@gmail.com>, linux-mediatek@lists.infradead.org,
+ Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Nagarjuna Kristam <nkristam@nvidia.com>, Adam
+ Thomson <Adam.Thomson.Opensource@diasemi.com>,
+ linux-arm-kernel@lists.infradead.org, Li Jun <jun.li@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCj4gLS0tLS1PcmlnaW5hbCBNZXNzYWdlLS0tLS0NCj4gRnJvbTogUm9iIEhlcnJpbmcgPHJv
-YmhAa2VybmVsLm9yZz4NCj4gU2VudDogMjAxOcTqONTCMjjI1SA2OjI2DQo+IFRvOiBYaWFvd2Vp
-IEJhbyA8eGlhb3dlaS5iYW9AbnhwLmNvbT4NCj4gQ2M6IGJoZWxnYWFzQGdvb2dsZS5jb207IG1h
-cmsucnV0bGFuZEBhcm0uY29tOyBzaGF3bmd1b0BrZXJuZWwub3JnOw0KPiBMZW8gTGkgPGxlb3lh
-bmcubGlAbnhwLmNvbT47IGtpc2hvbkB0aS5jb207IGxvcmVuem8ucGllcmFsaXNpQGFybS5jbzsN
-Cj4gYXJuZEBhcm5kYi5kZTsgZ3JlZ2toQGxpbnV4Zm91bmRhdGlvbi5vcmc7IE0uaC4gTGlhbg0K
-PiA8bWluZ2h1YW4ubGlhbkBueHAuY29tPjsgTWluZ2thaSBIdSA8bWluZ2thaS5odUBueHAuY29t
-PjsgUm95IFphbmcNCj4gPHJveS56YW5nQG54cC5jb20+OyBqaW5nb29oYW4xQGdtYWlsLmNvbTsN
-Cj4gZ3VzdGF2by5waW1lbnRlbEBzeW5vcHN5cy5jb207IGxpbnV4LXBjaUB2Z2VyLmtlcm5lbC5v
-cmc7DQo+IGRldmljZXRyZWVAdmdlci5rZXJuZWwub3JnOyBsaW51eC1rZXJuZWxAdmdlci5rZXJu
-ZWwub3JnOw0KPiBsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmc7IGxpbnV4cHBj
-LWRldkBsaXN0cy5vemxhYnMub3JnOw0KPiBhbmRyZXcubXVycmF5QGFybS5jb20NCj4gU3ViamVj
-dDogUmU6IFtQQVRDSCB2MiAwNC8xMF0gZHQtYmluZGluZ3M6IHBjaTogbGF5ZXJzY2FwZS1wY2k6
-IGFkZCBjb21wYXRpYmxlDQo+IHN0cmluZ3MgZm9yIGxzMTA4OGEgYW5kIGxzMjA4OGENCj4gDQo+
-IE9uIFRodSwgQXVnIDIyLCAyMDE5IGF0IDA3OjIyOjM2UE0gKzA4MDAsIFhpYW93ZWkgQmFvIHdy
-b3RlOg0KPiA+IEFkZCBjb21wYXRpYmxlIHN0cmluZ3MgZm9yIGxzMTA4OGEgYW5kIGxzMjA4OGEu
-DQo+ID4NCj4gPiBTaWduZWQtb2ZmLWJ5OiBYaWFvd2VpIEJhbyA8eGlhb3dlaS5iYW9AbnhwLmNv
-bT4NCj4gPiAtLS0NCj4gPiB2MjoNCj4gPiAgLSBObyBjaGFuZ2UuDQo+ID4NCj4gPiAgRG9jdW1l
-bnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL3BjaS9sYXllcnNjYXBlLXBjaS50eHQgfCA1ICsr
-KystDQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCA0IGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkN
-Cj4gPg0KPiA+IGRpZmYgLS1naXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mv
-cGNpL2xheWVyc2NhcGUtcGNpLnR4dA0KPiA+IGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
-bmRpbmdzL3BjaS9sYXllcnNjYXBlLXBjaS50eHQNCj4gPiBpbmRleCBlMjBjZWFhLi4xNmY1OTJl
-IDEwMDY0NA0KPiA+IC0tLSBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9wY2kv
-bGF5ZXJzY2FwZS1wY2kudHh0DQo+ID4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
-bmRpbmdzL3BjaS9sYXllcnNjYXBlLXBjaS50eHQNCj4gPiBAQCAtMjIsNyArMjIsMTAgQEAgUmVx
-dWlyZWQgcHJvcGVydGllczoNCj4gPiAgICAgICAgICAiZnNsLGxzMTA0M2EtcGNpZSINCj4gPiAg
-ICAgICAgICAiZnNsLGxzMTAxMmEtcGNpZSINCj4gPiAgICBFUCBtb2RlOg0KPiA+IC0JImZzbCxs
-czEwNDZhLXBjaWUtZXAiLCAiZnNsLGxzLXBjaWUtZXAiDQo+ID4gKwkiZnNsLGxzLXBjaWUtZXAi
-DQo+IA0KPiBXYXNuJ3QgdGhpcyBhIGZhbGxiYWNrPyBFYWNoIGxpbmUgc2hvdWxkIGJlIG9uZSB2
-YWxpZCBjb21iaW5hdGlvbiBvZg0KPiBjb21wYXRpYmxlIHN0cmluZ3MuDQoNClRoYW5rcywgZ290
-IGl0LCBJIHdpbGwgbW9kaWZ5IGl0IGluIG5leHQgdmVyc2lvbiBwYXRjaC4NCg0KVGhhbmtzIA0K
-WGlhb3dlaQ0KDQo+IA0KPiA+ICsJImZzbCxsczEwNDZhLXBjaWUtZXAiDQo+ID4gKwkiZnNsLGxz
-MTA4OGEtcGNpZS1lcCINCj4gPiArCSJmc2wsbHMyMDg4YS1wY2llLWVwIg0KPiA+ICAtIHJlZzog
-YmFzZSBhZGRyZXNzZXMgYW5kIGxlbmd0aHMgb2YgdGhlIFBDSWUgY29udHJvbGxlciByZWdpc3Rl
-ciBibG9ja3MuDQo+ID4gIC0gaW50ZXJydXB0czogQSBsaXN0IG9mIGludGVycnVwdCBvdXRwdXRz
-IG9mIHRoZSBjb250cm9sbGVyLiBNdXN0IGNvbnRhaW4gYW4NCj4gPiAgICBlbnRyeSBmb3IgZWFj
-aCBlbnRyeSBpbiB0aGUgaW50ZXJydXB0LW5hbWVzIHByb3BlcnR5Lg0KPiA+IC0tDQo+ID4gMi45
-LjUNCj4gPg0KX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18K
-bGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZy
-YWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGlu
-dXgtYXJtLWtlcm5lbAo=
+Because the USB Connector is introduced and the requirement of
+usb-connector.txt binding, the old way using extcon to support
+USB Dual-Role switch is now deprecated, meanwhile there is no
+available common driver when use Type-B connector, typically
+using an input GPIO to detect USB ID pin.
+This patch series introduce a USB GPIO based connection detection
+driver and try to replace the function provided by extcon-usb-gpio
+driver.
+
+v11 changes:
+  1. add Reviewed-by Linus for [02/11] ad [03/11]
+  2. change compatible as "gpio-usb-b-connector", and remove label
+    in example suggested by Rob
+
+NOTE: based on the following series
+ https://lore.kernel.org/patchwork/patch/1103630/
+ [v3,1/7] drivers: Introduce device lookup variants by name
+
+ they are already in:
+ https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git/log/drivers/base/core.c?h=driver-core-next
+
+v10 changes:
+  1. revert commit log changes of [06/11] and [07/11]
+
+v9 changes:
+  1. replace signed-off-by by suggested-by Heikki
+  2. add reviewed-by Linus
+  3. use class_find_device_by_fwnode() introduced by series [1]
+
+[1]:
+ https://lore.kernel.org/patchwork/patch/1103630/
+ [v3,1/7] drivers: Introduce device lookup variants by name
+
+ they are already in:
+ https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git/log/drivers/base/core.c?h=driver-core-next
+
+v8 changes:
+  1. rename the driver's name suggested by Heikki
+  2. move the driver from usb/roles/ into usb/common/ suggested by Heikki
+  3. introduce Kconfig for usb common core to add the new driver
+  4. modify binding of the driver 
+  5. rename the subject title
+
+v7 changes:
+  1. [5/10]: add signed-off-by Chunfeng
+  2. [6/10]: add signed-off-by Chunfeng
+  3. [6/10]: depends on linux-next of Rafael's tree [1]
+  4. [7/10]: add signed-off-by Chunfeng and tested-by Biju
+  5. [9/10]: add tested-by Nagarjuna, and remove DEV_PMS_OPS suggested by Andy
+
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git/log/?h=linux-next
+
+v6 changes:
+  1. merge [1] and [2] into this series
+  2. don't use graph anymore to find usb-role-switch
+  3. abandon [3] and introduce three patches (6, 7, 8 in this series)
+     to rebuild APIs getting usb-role-switch
+
+  [1]: [v3] dt-binding: usb: add usb-role-switch property
+       https://patchwork.kernel.org/patch/10934835/
+  [2]: [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
+       https://patchwork.kernel.org/patch/10909971/
+
+  [3]: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
+
+v5 changes:
+  1. remove linux/of.h and put usb_role_switch when error happens,
+     suggested by Biju
+  2. treat Type-B connector as USB controller's child, but not as
+     a virtual device, suggested by Rob
+  3. provide and use generic property "usb-role-switch", see [1],
+     suggested by Rob
+
+  Note: this series still depends on [2]
+
+  [1]: [v3] dt-binding: usb: add usb-role-switch property
+       https://patchwork.kernel.org/patch/10934835/
+  [2]: [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
+       https://patchwork.kernel.org/patch/10909971/
+
+v4 changes:
+  1. use switch_fwnode_match() to find fwnode suggested by Heikki
+  2. assign fwnode member of usb_role_switch struct suggested by Heikki
+  3. make [4/6] depend on [2]
+  3. remove linux/gpio.h suggested by Linus
+  4. put node when error happens
+
+  [4/6] usb: roles: add API to get usb_role_switch by node
+  [2] [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
+    https://patchwork.kernel.org/patch/10909971/
+
+v3 changes:
+  1. add GPIO direction, and use fixed-regulator for GPIO controlled
+    VBUS regulator suggested by Rob;
+  2. rebuild fwnode_usb_role_switch_get() suggested by Andy and Heikki
+  3. treat the type-B connector as a virtual device;
+  4. change file name of driver again
+  5. select USB_ROLE_SWITCH in mtu3/Kconfig suggested by Heikki
+  6. rename ssusb_mode_manual_switch() to ssusb_mode_switch()
+
+v2 changes:
+ 1. make binding clear, and add a extra compatible suggested by Hans
+
+Chunfeng Yun (8):
+  dt-binding: usb: add usb-role-switch property
+  dt-bindings: connector: add optional properties for Type-B
+  dt-bindings: usb: add binding for USB GPIO based connection detection
+    driver
+  dt-bindings: usb: mtu3: add properties about USB Role Switch
+  usb: roles: get usb-role-switch from parent
+  usb: common: create Kconfig file
+  usb: common: add USB GPIO based connection detection driver
+  usb: mtu3: register a USB Role Switch for dual role mode
+
+Heikki Krogerus (2):
+  device connection: Add fwnode_connection_find_match()
+  usb: roles: Add fwnode_usb_role_switch_get() function
+
+Yu Chen (1):
+  usb: roles: Introduce stubs for the exiting functions in role.h
+
+ .../bindings/connector/usb-connector.txt      |  14 +
+ .../devicetree/bindings/usb/generic.txt       |   4 +
+ .../devicetree/bindings/usb/mediatek,mtu3.txt |  10 +
+ .../devicetree/bindings/usb/usb-conn-gpio.txt |  30 ++
+ drivers/base/devcon.c                         |  43 ++-
+ drivers/usb/Kconfig                           |  35 +--
+ drivers/usb/common/Kconfig                    |  51 ++++
+ drivers/usb/common/Makefile                   |   1 +
+ drivers/usb/common/usb-conn-gpio.c            | 284 ++++++++++++++++++
+ drivers/usb/mtu3/Kconfig                      |   1 +
+ drivers/usb/mtu3/mtu3.h                       |   5 +
+ drivers/usb/mtu3/mtu3_debugfs.c               |   4 +-
+ drivers/usb/mtu3/mtu3_dr.c                    |  48 ++-
+ drivers/usb/mtu3/mtu3_dr.h                    |   6 +-
+ drivers/usb/mtu3/mtu3_plat.c                  |   3 +-
+ drivers/usb/roles/class.c                     |  41 ++-
+ include/linux/device.h                        |  10 +-
+ include/linux/usb/role.h                      |  37 +++
+ 18 files changed, 569 insertions(+), 58 deletions(-)
+ create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+ create mode 100644 drivers/usb/common/Kconfig
+ create mode 100644 drivers/usb/common/usb-conn-gpio.c
+
+-- 
+2.23.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
