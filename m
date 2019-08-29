@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8A91A18EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:36:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA781A18EF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:37:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BzPMhrFXGXOlk8TywbHUNZU5N0LGvRG5V1LZIu9o7EM=; b=JDDSLBabdoSzUG
-	Sr2SCSzbL7rH7SOFD+iA23/dhZvPdUJke8wYpf66R5AVuLXWzhmWqwKmihBXmWTGaf2DKCgQSZAFf
-	vD6dnSoAiqRmbUhBXNdwzXVsqHdlvmEPFeFIKcsFFtX1/BlhxKqCIDvxeSMBMGUNQC8yv9sJdtnmf
-	aK4/ClXbyeZaRjVYocV0BFTwEHR6vXvetMOeoyTY1Au7RE9FoEOmU7LvNrfUaCjmglvdHukC+d8KP
-	u0NN3YieT2qn2Ek5VnhmqvM0ChNTDD+1ZnoUlRcsjG+CeddEkW4CAk5DnoyauTeOh2Ut7RYct3kiM
-	VAlMlWIJ0gmmxmoTMuuw==;
+	List-Owner; bh=1rbnN/NBu8aeJONIAaZ+ex0+xnT4Jeg4MmV0OlGUhJ0=; b=Tm8j5aNMCk6j+p
+	yj31NHdlOJaWRZMqmP/Pmpbx4HrTQUOxQapIOLGveGGPKZpQHEHzhTFxYfIKkMuQxwJ33SCoV4bJW
+	u0R9pbSHHJFPHBm+5zQLNax77Od2N7atrF0lU8YWBuUzkzVvN8My2Uz8FlNFIprku1P+aPjH7S7Hk
+	/xsQvls9XOld3XybwPK6ZDm8AZaRMfjlHL7PXwBW/aBxhQoL8Xlo3g2RBcFZOqnupu7EUED/7qwMh
+	4XYTZQqiVa1+rzT8DRK33zHDThDPa8MVLNAbkUSgcwnhINOENM+RW6Zg+w4sLSR1t6i8B6KBmD8eb
+	p/phDJLncB2p5SqenlIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IjS-0007KO-On; Thu, 29 Aug 2019 11:36:50 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i3Iji-0007aH-EW; Thu, 29 Aug 2019 11:37:06 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ihm-00059V-Fb
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:35:09 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e11so1447708pga.5
+ id 1i3Ihp-0005PO-Ik
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:35:12 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d3so1461855plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:35:06 -0700 (PDT)
+ Thu, 29 Aug 2019 04:35:08 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
- b=Xf1eInn9bQckSytjmO3NZ5/eRTeKWleC2WOGzywPePMbSDrayr5Mvoh1hJJ887odiD
- +uxT7jS9wwYMnJs+l8+wkk+nrt7MjwJhkrzIxqo5TPyhhYIhJqUcSnUt1oHQurOV8I0D
- PnDttS+g1ESZBtPXTLFjE4Go5uctTdGolkIWNPXVhwhp4iDHldgEpjd+1oceDm2jOPE1
- W+s+s4ne77To9Cwp3NuAv/YSwYJ1V/DAaz+vkR4cK0rxOa0W4vE9G9/QI22rQxrq6+nL
- 9eyE3wvQitkt67/4NRHaOY4izkTpKZ9zJkDWO5JPe8b86kEXl8PWIPfXeehgxMgfXAdA
- gy4A==
+ bh=1IdhsUs/fdllTh2EJ+ScRqWrO1uX9GsPUvP6PugnTR0=;
+ b=nxI85UwxnbVBJqSbq8Ywtoc623bVciPB583W6cIvsNcR9oBenNkMhgmn56N8dl7tHE
+ HCJXonvD30tGaKZHMMV+hUfBy0X963d3yoXUwEU4wjSg1Z72lbwKhxPibPpL4vvKT/sr
+ d9eU0YSkgUUaRy9GZaJXXWZccVQd7hOExhRb4tLvsZBKRmh5CCx4FM+iAh/eQCsKLWWp
+ FIY3VPxy1ObVuPcERjVujhSRX3z9hbu98dIF01oxC51utQfIXqj2ZtYwJ+WWA85tkvl2
+ 4cF/61lyqS+8CzAr/GFd2AGhz0eitx64Llmj8Bs0pXoci4lMlRg6vnKzxGxcF7afafI0
+ OAOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=oplH30x1zLW/kw5XTQuFI7s72sVvdi1RahKBb4zAIVI=;
- b=cjsatKzGVCvfA3Kzns6mjbfFP2sASC19V3daGkF8wE87EWz012YojDbZfTi8iFbDdg
- ew5R5EdbZy7P1qzscVfa9LeDzWkoGRR47lEGViJV4N9V26EF6fqvshjydyuhUFNSui9a
- oU6p2UEgJ2mtTlEEYEVUBvb6zfj0KL7NkNHyCaP0ULw58FXZIqtclOFJBxJmiLNIUmly
- csSRVc+DV6xYHI6CGkn8/AbIJDy2D1o8EyQhWZ8E3Ybzf2U1HCIlppR8xUVThMPgJMKX
- U0UlUJmq7bsOVIJ1XpTB50gcDm/w81TYS/NRSHMuvJH6xOL8P2LIyBZvSqiHckqmSw8J
- lcig==
-X-Gm-Message-State: APjAAAUy+xOXwJExk7Nkj1vchIW8xu8HHsFA4MilcATevmfofRq1N2bQ
- 4oKNkKysTHi6/kIU+6KRfdr6mg==
-X-Google-Smtp-Source: APXvYqyPp6Af2woejDXifmiwTFcO10cRM9AxOIZl5XK9s7/OHnjwlap+4+uUEbC5/+ahBYM/O6VUwg==
-X-Received: by 2002:a17:90b:14c:: with SMTP id
- em12mr9062547pjb.22.1567078505451; 
- Thu, 29 Aug 2019 04:35:05 -0700 (PDT)
+ bh=1IdhsUs/fdllTh2EJ+ScRqWrO1uX9GsPUvP6PugnTR0=;
+ b=H9SzKpDRXVRJe+1xiRdbBpo/YCsnLD7jPnzsINO7LVvN/8JhxEh0nvqrdPskA0TPqW
+ dpmn5l5jQ1ncmxjTSD2XJZiF8q1CyiDO4dVFuHC6BkvOsOIiL0buG4GkxNEmISQcK2bl
+ Pi8HwKzErFUw8NvFYFJuBearljMaNCMfE2hLHgCJ49RnVBbdj25hQPpYQz+GYMxNJCCd
+ m2t4MgqNfTh/hngrmFUlG1uDj4EKWfIY4yC07Qbr/+6LrbVOgXmMjzI/XTYK44jC8TAv
+ Sh3vvitbAonBO649PoH36fmfaJZvH23h5iSBjRSVs8+qkPNSJGn2xBXaQlGguSKpC5Sk
+ NMoQ==
+X-Gm-Message-State: APjAAAU5BGS+R1ZiMOVgXNxRbNNTIBd4BAWxqjU0Ou7xTGO2ACfDo7/a
+ BjOwCF47b6bNE61fwpWYb8gYMw==
+X-Google-Smtp-Source: APXvYqzj9QSx3MtgHt1qHIKICzNCPI0f7DNQySSHpINOygIRFz1OPV0EPaWQ+yDXuf1zgDx8qUKSew==
+X-Received: by 2002:a17:902:f217:: with SMTP id
+ gn23mr9333792plb.21.1567078508102; 
+ Thu, 29 Aug 2019 04:35:08 -0700 (PDT)
 Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id k14sm2591617pfi.98.2019.08.29.04.35.04
+ by smtp.gmail.com with ESMTPSA id u18sm2794235pfl.29.2019.08.29.04.35.07
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:35:04 -0700 (PDT)
+ Thu, 29 Aug 2019 04:35:07 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH ARM64 v4.4 V3 05/44] arm64: Use pointer masking to limit
- uaccess speculation
-Date: Thu, 29 Aug 2019 17:03:50 +0530
-Message-Id: <f26c719baa5df560360fb3bbb7483385dd5cb821.1567077734.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM64 v4.4 V3 06/44] arm64: entry: Ensure branch through
+ syscall table is bounded under speculation
+Date: Thu, 29 Aug 2019 17:03:51 +0530
+Message-Id: <093a9777605bdd2ab2c33948a4e7a3fbb275de4d.1567077734.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
 References: <cover.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_043506_716329_F3C5F811 
-X-CRM114-Status: GOOD (  13.35  )
+X-CRM114-CacheID: sfid-20190829_043509_897993_3A74DD8E 
+X-CRM114-Status: GOOD (  10.96  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,84 +109,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Robin Murphy <robin.murphy@arm.com>
+From: Will Deacon <will.deacon@arm.com>
 
-commit 4d8efc2d5ee4c9ccfeb29ee8afd47a8660d0c0ce upstream.
+commit 6314d90e64936c584f300a52ef173603fb2461b5 upstream.
 
-Similarly to x86, mitigate speculation past an access_ok() check by
-masking the pointer against the address limit before use.
+In a similar manner to array_index_mask_nospec, this patch introduces an
+assembly macro (mask_nospec64) which can be used to bound a value under
+speculation. This macro is then used to ensure that the indirect branch
+through the syscall table is bounded under speculation, with out-of-range
+addresses speculating as calls to sys_io_setup (0).
 
-Even if we don't expect speculative writes per se, it is plausible that
-a CPU may still speculate at least as far as fetching a cache line for
-writing, hence we also harden put_user() and clear_user() for peace of
-mind.
-
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+Reviewed-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: use existing scno & sc_nr definitions ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/include/asm/uaccess.h | 26 +++++++++++++++++++++++---
- 1 file changed, 23 insertions(+), 3 deletions(-)
+ arch/arm64/include/asm/assembler.h | 11 +++++++++++
+ arch/arm64/kernel/entry.S          |  1 +
+ 2 files changed, 12 insertions(+)
 
-diff --git a/arch/arm64/include/asm/uaccess.h b/arch/arm64/include/asm/uaccess.h
-index c625cc5531fc..75363d723262 100644
---- a/arch/arm64/include/asm/uaccess.h
-+++ b/arch/arm64/include/asm/uaccess.h
-@@ -121,6 +121,26 @@ static inline unsigned long __range_ok(unsigned long addr, unsigned long size)
- #define access_ok(type, addr, size)	__range_ok((unsigned long)(addr), size)
- #define user_addr_max			get_fs
+diff --git a/arch/arm64/include/asm/assembler.h b/arch/arm64/include/asm/assembler.h
+index 683c2875278f..2b30363a3a89 100644
+--- a/arch/arm64/include/asm/assembler.h
++++ b/arch/arm64/include/asm/assembler.h
+@@ -102,6 +102,17 @@
+ 	hint	#20
+ 	.endm
  
 +/*
-+ * Sanitise a uaccess pointer such that it becomes NULL if above the
-+ * current addr_limit.
++ * Sanitise a 64-bit bounded index wrt speculation, returning zero if out
++ * of bounds.
 + */
-+#define uaccess_mask_ptr(ptr) (__typeof__(ptr))__uaccess_mask_ptr(ptr)
-+static inline void __user *__uaccess_mask_ptr(const void __user *ptr)
-+{
-+	void __user *safe_ptr;
++	.macro	mask_nospec64, idx, limit, tmp
++	sub	\tmp, \idx, \limit
++	bic	\tmp, \tmp, \idx
++	and	\idx, \idx, \tmp, asr #63
++	csdb
++	.endm
 +
-+	asm volatile(
-+	"	bics	xzr, %1, %2\n"
-+	"	csel	%0, %1, xzr, eq\n"
-+	: "=&r" (safe_ptr)
-+	: "r" (ptr), "r" (current_thread_info()->addr_limit)
-+	: "cc");
-+
-+	csdb();
-+	return safe_ptr;
-+}
-+
- /*
-  * The "__xxx" versions of the user access functions do not verify the address
-  * space - it must have been done previously with a separate "access_ok()"
-@@ -193,7 +213,7 @@ do {									\
- 	__typeof__(*(ptr)) __user *__p = (ptr);				\
- 	might_fault();							\
- 	access_ok(VERIFY_READ, __p, sizeof(*__p)) ?			\
--		__get_user((x), __p) :					\
-+		__p = uaccess_mask_ptr(__p), __get_user((x), __p) :	\
- 		((x) = 0, -EFAULT);					\
- })
- 
-@@ -259,7 +279,7 @@ do {									\
- 	__typeof__(*(ptr)) __user *__p = (ptr);				\
- 	might_fault();							\
- 	access_ok(VERIFY_WRITE, __p, sizeof(*__p)) ?			\
--		__put_user((x), __p) :					\
-+		__p = uaccess_mask_ptr(__p), __put_user((x), __p) :	\
- 		-EFAULT;						\
- })
- 
-@@ -297,7 +317,7 @@ static inline unsigned long __must_check copy_in_user(void __user *to, const voi
- static inline unsigned long __must_check clear_user(void __user *to, unsigned long n)
- {
- 	if (access_ok(VERIFY_WRITE, to, n))
--		n = __clear_user(to, n);
-+		n = __clear_user(__uaccess_mask_ptr(to), n);
- 	return n;
- }
- 
+ #define USER(l, x...)				\
+ 9999:	x;					\
+ 	.section __ex_table,"a";		\
+diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+index 4c5013b09dcb..e6aec982dea9 100644
+--- a/arch/arm64/kernel/entry.S
++++ b/arch/arm64/kernel/entry.S
+@@ -697,6 +697,7 @@ el0_svc_naked:					// compat entry point
+ 	b.ne	__sys_trace
+ 	cmp     scno, sc_nr                     // check upper syscall limit
+ 	b.hs	ni_sys
++	mask_nospec64 scno, sc_nr, x19	// enforce bounds for syscall number
+ 	ldr	x16, [stbl, scno, lsl #3]	// address in the syscall table
+ 	blr	x16				// call sys_* routine
+ 	b	ret_fast_syscall
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
