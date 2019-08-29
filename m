@@ -1,87 +1,58 @@
 Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org>
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
-Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5D844A1BB7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:43:58 +0200 (CEST)
+Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
+	by mail.lfdr.de (Postfix) with ESMTPS id CC632A1C30
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:59:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7GBoTq89BeSE2p+sI48QzhoGZJY+hLBc44LvGy8siII=; b=Pnmc43WUfTmBv5
-	74uywRWdBrYOuwsemjqJqLapAmNfRX97UJ163YEvZ47BzzwTGl/mMOw1gbTuz1iKJngZVz5tgmrTH
-	TRLvqTI9TwnLI0EGK6+W+pEd0L4QbIzKAIH6eZ3mb9F6ywYRX38qfoLb72b7MLKp+kmgJCXqxTPbX
-	hPxXkd3MoOrOwVsSCda6VC8psFPL2usZht2GFCZH/HI8g59mdl0+swcdGTNdoNUvt9OcShDyXUp/r
-	D0nZ01QHHxlGN+fB6U+d/aodn1mkL8q4qBAoKuvQaE45wBRq1E1MXdXCOPJl5CBZdAA8ScDEYUvkb
-	RWgWZiaLix3GZIvHoaBg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PJd/+Ryphdudbr9mNaPOBaggCpYd+p2fHfHQbVh1P4s=; b=T89v/wzAprTOjF
+	i6+o3gfEY7bDA8H0RrrxDQKpceekhkecXlcwrsmkIoDgjd6qs+tLajqd33gPHXPG8b8HJRV7BMQ+W
+	LC59H5oU9lAdgh+C2XHuvUuaZUKeLfEvGz9DuknD0q1XpwYjgjBHjymh0CZYnVcdbCbb6cn1XV9kd
+	ZRt9JKJ2EZBE8viOcctc5jpxDgYOvg6h6xkJG7E7myvPmUVk9/oKPSSACauZ46n28TGfRiTOzy0/r
+	AxIw+E0+eBk6kNDLLoUWUs6hZKuhoUww4cCwF03EtRGS7uLdEm0xxpRfHIiY2cO1X0l75BZI2AepY
+	GgqKuDuaZ4o9iGl6YQEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3KiL-0005Tx-Vq; Thu, 29 Aug 2019 13:43:50 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i3KvQ-00035a-4M; Thu, 29 Aug 2019 13:57:20 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ki9-0005S8-57
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 13:43:38 +0000
-Received: by mail-pg1-x543.google.com with SMTP id x15so1611103pgg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 06:43:36 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=8zPNbZDUiMhdq/ieedCuYewAeGQ+edqxjj6irK3rFuk=;
- b=ny1BJU7zHymSjrJnVno3H/+nPslnl3iVcEUY5179US9gDUYOyLuRNAjYuQGBGrRbdz
- l6GaK7U8gzf/eNTky7FvG4KCJeuTL2DuAFVVXeSCC6YCrX2v74Sg+oegZLOPn3OzZlZ2
- D5NyAOxMPjx/prwMNsL6bH1+O4sDRi/P3/K9jCwezfp14ZnPDl6sHvA5RYGYLdeaMvqT
- BUvDIh3lvVkC/yR3hCUhGHj+HQC8QzqX0kEwWpd6BRYnEuxdjBCj+lZfggxx7WT8O6DV
- oXC1MUGfOsEHujAL+drJYZqE+JiGuSPIri1oB2E6fXwWFpnxm0p7end0wbsy89dD4qda
- VLhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=8zPNbZDUiMhdq/ieedCuYewAeGQ+edqxjj6irK3rFuk=;
- b=U5ktLzRTfGvDdNf6HfCsRmOrxfy0Cux2WjVn7mVxR/JRTKlCylab/cD6auKIjhHt2E
- ZkOL21eVdps7ZzUV1QZ51jop28MV/u6ArOJ7bkvH5aFyiK1GiMDqfUVcq3d2G48MVmvm
- P5sEritCBvn9NwsusE7Gk6rD1vUJhex+wJVaaMmkNMKaDr+wjMvkrionlbDlZg423YeE
- zGghvJjLsGvyMG8P7twYZa/2HaX8xUiXPqqqww1yIQahlMxGXtALZJkEsCvIHp414uMy
- yjgPxRElFOfUQBsOr7vNSlwSpNH2q+f0orW6q8YLar+AXtz+vjCt1pwCdOyqXGH/9Yo+
- DyBQ==
-X-Gm-Message-State: APjAAAUn4oJR6uZOiEVsRrJD/a1egl//67UJ3OGf0dNu5aHNMLRzOLpR
- iWdQhY+li7qo1/m+wng/rzYjiAKbOVWJ9tMAN1c=
-X-Google-Smtp-Source: APXvYqxBEzf1LYRCXKjSqfC3G4XRdlGyv3ix/Ro7ebl58PTSdhxOhn+Rmk9ARuIu9ZzwXYUK2aPiBTZDBQEnefAnMoU=
-X-Received: by 2002:a63:1020:: with SMTP id f32mr8694066pgl.203.1567086215455; 
- Thu, 29 Aug 2019 06:43:35 -0700 (PDT)
+ id 1i3Kv4-00030k-Ab
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 13:57:00 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 4149C28D4FB
+Subject: Re: [PATCH] arm/arm64: defconfig: Update configs to use the new
+ CROS_EC options
+To: Arnd Bergmann <arnd@arndb.de>
+References: <20190827154851.10486-1-enric.balletbo@collabora.com>
+ <20190827161045.GC26807@tuxbook-pro>
+ <CAK8P3a2h2gUhxcVgD5JhR1Uo4qUSuG5yp4RCrAxevNmyD4ZRTA@mail.gmail.com>
+ <2db6cde1-9e7f-8b1c-f2e4-80bdd2478d28@collabora.com>
+ <CAK8P3a3zYpgouGAibyMjDykZmy+ABnx6AD2cYpHnXq9Zsw2V=w@mail.gmail.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <1fe8c0df-5e2d-6b6f-2a21-025a00b86f01@collabora.com>
+Date: Thu, 29 Aug 2019 15:56:49 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190829043716.5223-1-uwe@kleine-koenig.org>
-In-Reply-To: <20190829043716.5223-1-uwe@kleine-koenig.org>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Thu, 29 Aug 2019 16:43:24 +0300
-Message-ID: <CAHp75VeV8jDP1uP3HtkJ+j7+SbkB50cs4V9tJ+j9tS6icO95FQ@mail.gmail.com>
-Subject: Re: [PATCH] [RFC] tty/serial: imx: make use of format specifier %dE
-To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <uwe@kleine-koenig.org>
+In-Reply-To: <CAK8P3a3zYpgouGAibyMjDykZmy+ABnx6AD2cYpHnXq9Zsw2V=w@mail.gmail.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_064337_198136_964361D8 
-X-CRM114-Status: GOOD (  14.73  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_065658_622822_971888B6 
+X-CRM114-Status: GOOD (  22.16  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andy.shevchenko[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,41 +64,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jani Nikula <jani.nikula@linux.intel.com>, Petr Mladek <pmladek@suse.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jonathan Corbet <corbet@lwn.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Documentation List <linux-doc@vger.kernel.org>,
+Cc: Gwendal Grignou <gwendal@chromium.org>,
+ Collabora kernel ML <kernel@collabora.com>,
+ Geert Uytterhoeven <geert+renesas@glider.be>, Tony Lindgren <tony@atomide.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bjorn Andersson <bjorn.andersson@linaro.org>,
+ Thierry Reding <thierry.reding@gmail.com>,
+ Miquel Raynal <miquel.raynal@bootlin.com>, Guenter Roeck <groeck@chromium.org>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Will Deacon <will@kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ Maxime Ripard <maxime.ripard@bootlin.com>,
+ "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
+ <linux-samsung-soc@vger.kernel.org>, Anson Huang <Anson.Huang@nxp.com>,
+ Lee Jones <lee.jones@linaro.org>, Dan iel Lezcano <daniel.lezcano@linaro.org>,
+ Russell King <linux@armlinux.org.uk>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
+ Chanwoo Choi <cw00.choi@samsung.com>, Kukjin Kim <kgene@kernel.org>,
+ Jagan Teki <jagan@amarulasolutions.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Robert Jarzmik <robert.jarzmik@free.fr>, SoC Team <soc@kernel.org>,
+ "open list:TEGRA ARCHITECTURE SUPPORT" <linux-tegra@vger.kernel.org>,
+ Simon Horman <horms+renesas@verge.net.au>,
+ Fabrice Gasnier <fabrice.gasnier@st.com>, Benson Leung <bleung@chromium.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
  Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>, Enrico Weigelt <lkml@metux.net>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Yannick Fertr? <yannick.fertre@st.com>, Dinh Nguyen <dinguyen@kernel.org>,
+ Sudeep Holla <sudeep.holla@arm.com>, Olof Johansson <olof@lixom.net>,
+ Shawn Guo <shawnguo@kernel.org>, Daniel Mack <daniel@zonque.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCBBdWcgMjksIDIwMTkgYXQgNzo0MCBBTSBVd2UgS2xlaW5lLUvDtm5pZyA8dXdlQGts
-ZWluZS1rb2VuaWcub3JnPiB3cm90ZToKPgo+IEkgY3JlYXRlZCBhIHBhdGNoIHRoYXQgdGVhY2hl
-cyBwcmludGsgZXQgYWwgdG8gZW1pdCBhIHN5bWJvbGljIGVycm9yCj4gbmFtZSBmb3IgYW4gZXJy
-b3IgdmFsdWVkIGludGVnZXJbMV0uIFdpdGggdGhhdCBhcHBsaWVkCj4KPiAgICAgICAgIGRldl9l
-cnIoJnBkZXYtPmRldiwgImZhaWxlZCB0byBnZXQgaXBnIGNsazogJWRFXG4iLCByZXQpOwo+Cj4g
-ZW1pdHMKPgo+ICAgICAgICAgLi4uIGZhaWxlZCB0byBnZXQgaXBnIGNsazogRVBST0JFX0RFRkVS
-Cj4KPiBpZiByZXQgaXMgLUVQUk9CRV9ERUZFUi4gUGV0ciBNbGFkZWsgKGkuZS4gb25lIG9mIHRo
-ZSBwcmludGsKPiBtYWludGFpbmVycykgaGFkIGNvbmNlcm5zIGlmIHRoaXMgd291bGQgYmUgd2Vs
-bCByZWNlaXZlZCBhbmQgd29ydGggdGhlCj4gZWZmb3J0LiBIZSBhc2tlZCB0byBwcmVzZW50IGl0
-IHRvIGEgZmV3IHN1YnN5c3RlbXMuIFNvIGZvciBub3csIHRoaXMKPiBwYXRjaCBjb252ZXJ0aW5n
-IHRoZSBpbXggVUFSVCBkcml2ZXIgc2hvdWxkbid0IGJlIGFwcGxpZWQgeWV0IGJ1dCBpdAo+IHdv
-dWxkIGJlIGdyZWF0IHRvIGdldCBzb21lIGZlZWRiYWNrIGFib3V0IGlmIHlvdSB0aGluayB0aGF0
-IGJlaW5nIGFibGUKPiB0byBlYXNpbHkgcHJpbnRrIChmb3IgZXhhbXBsZSkgIkVJTyIgaW5zdGVh
-ZCBvZiAiLTUiIGlzIGEgZ29vZCBpZGVhLgoKPiBXb3VsZCBpdCBoZWxwIHlvdT8gRG8geW91IHRo
-aW5rIGl0IGhlbHBzIHlvdXIgdXNlcnM/CgpObywgaXQgbWFrZXMgc2Vuc2Ugb25seSBmb3IgZGVi
-dWcgd2hlcmUgdGhlIHVzZXIgaXMgc3VwcG9zZWQgdG8gYmUKZGV2ZWxvcGVyIGFuZCB0aHVzIG5l
-ZWRzIGFueXdheSB0byBrbm93IGNvZGUgYmFzZSBiZXR0ZXIgdGhhbiBhdmVyYWdlLgoKCi0tIApX
-aXRoIEJlc3QgUmVnYXJkcywKQW5keSBTaGV2Y2hlbmtvCgpfX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdAps
-aW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVh
-ZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+
+On 28/8/19 14:09, Arnd Bergmann wrote:
+> On Wed, Aug 28, 2019 at 12:10 PM Enric Balletbo i Serra
+> <enric.balletbo@collabora.com> wrote:
+>> On 27/8/19 18:12, Arnd Bergmann wrote:
+>>> On Tue, Aug 27, 2019 at 6:08 PM Bjorn Andersson
+>>> <bjorn.andersson@linaro.org> wrote:
+>>>>
+>>>> On Tue 27 Aug 08:48 PDT 2019, Enric Balletbo i Serra wrote:
+>>>>
+>>>>> Recently we refactored the CrOS EC drivers moving part of the code from
+>>>>> the MFD subsystem to the platform chrome subsystem. During this change
+>>>>> we needed to rename some config options, so, update the defconfigs
+>>>>> accordingly.
+>>>>>
+>>>>> Signed-off-by: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+>>>>> Acked-by: Krzysztof Kozlowski <krzk@kernel.org>
+>>>>> Reviewed-by: Gwendal Grignou <gwendal@chromium.org>
+>>>>> Tested-by: Gwendal Grignou <gwendal@chromium.org>
+>>>>
+>>>> Can we make the entries in the generic arm64 defconfig modules?
+>>>
+>>> Good idea.
+>>>
+>>> Actually I would prefer to have all of them as modules for consistency,
+>>> if at all possible.
+>>>
+>>
+>> It is very common boot Chromebooks from an USB device, the EC needs to be
+>> built-in in order to boot from these devices, otherwise you should use an
+>> initramfs. I'd like to avoid forcing people to build an initramfs just to boot
+>> from these devices if possible, in fact, my usual workflow is without initramfs,
+>> and knowing that with the default defconfig just should boot helps a lot sometimes.
+>>
+>> Note that, it's not the case for EC subdevices, these are already build as modules.
+> 
+> Ok, fair enough, let's leave it built-in then.
+> 
+>> BTW, Lee asked if this patch should be squashed with the patches that really
+>> renames the config options to help bisect ability, I don't have a hard opinion
+>> as I don't usually run the config option between bisection steps, so please let
+>> me know what do you prefer and I'll respin the patches ASAP if that's the case.
+> 
+> I'm not usually worried about bisection in defconfig changes, since like you
+> say most commonly one would not run 'make defconfig' betweens the
+> bisection steps.
+> 
+> If we really care about it, we could keep a symbol like this
+> in drivers/platform/chrome/Kconfig for one release:
+> 
+> config CONFIG_MFD_CROS_EC
+>         tristate "Enable ChromeOS Embedded Controller"
+>         select CROS_EC
+>         select CHROME_PLATFORMS
+>         select CONFIG_MFD_CROS_EC_DEV
+>         help
+>            This is a transitional Kconfig option and will be removed
+>            after everyone enables the parts individually.
+> 
+
+Not sure if really makes sense do this and tbh and don't have a hard opinion, so
+I'll let the final decision to the soc/mfd maintainers. Just let me know and
+I'll respin the patches with that if you really want.
+
+Thanks,
+ Enric
+
+>       Arnd
+> 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
