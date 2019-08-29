@@ -2,148 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFC0AA221A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 19:21:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48609A22A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 19:46:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hROsw3tpyUb8E/NWzGuOampzGr8lS+26MreP57dy/dU=; b=RnOVCtYau1mVoIcWzuWiboa3Y
-	WA2H7grPKKbnvB9LhGqBvVNeI4Kzw7d8jAv+7uQSnjsHM0ukP8M6FKGbN3tGVqhQMcqcAAS42aqLs
-	ZLH6vr4bKdKlz9DTVFaUfuvzEpmsdDXJsx+9p3lGMjcWICwlO6Fk42MM4Dxn8CWgpqUMyqCg2EtFV
-	aCQyEbA0DBQhcZFhyYIb1yV9027FLGjY5cnLID9ZElMmuVNYGFSt+s46J29vE39nTiuhalZtE84jk
-	qNxu9454Lj8AUon3L6fjUurpH+k5VMqpcXG5Nvw6agjVJPQGb4TAQeWtmLJMrSpjkPz0mdtvd9qZm
-	FZhoqKLCw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Z3fi4+LulT42lwsbMNmAg64lU357t7YwfGWMcXXJLZg=; b=quhRRYUPzTqN3f
+	cidUUfQNfLOm8OspMzciroVv0WKxvFOe3QVA0YOIguSUHTujeJSSNL8RseasX+DrAOyy8piRBegKT
+	wnjZxe69lJ45gFxntJ2OTwqsKwQu8qLMS1cYIKgSEVaEO4LcL1/7JXgqpkH+C+auZ7RGADkj4sXoV
+	Kdf85gAKzVOZWpJ4ukqFQmi7nOp2xeOmCqI16qm35s/5vIZGQuLe6745p5BhuFXsZt/sqiMMDHwdW
+	VJDgPybzIQZorWZVc+u4kCa8IklrHVGP061b1/XEiJFkHPkQ+9dmw+lGCcTALFjTBhMBg2tKTeQWc
+	+nyj0WD6iuLP30XxCRuw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3O7F-0005Cj-6A; Thu, 29 Aug 2019 17:21:45 +0000
-Received: from antares.kleine-koenig.org ([2a01:4f8:c0c:3a97::2])
+	id 1i3OV7-0004cC-4P; Thu, 29 Aug 2019 17:46:25 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3O70-0005CA-RC
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 17:21:32 +0000
-Received: from localhost (localhost [127.0.0.1])
- by antares.kleine-koenig.org (Postfix) with ESMTP id A114978A324;
- Thu, 29 Aug 2019 19:21:27 +0200 (CEST)
-Received: from antares.kleine-koenig.org ([127.0.0.1])
- by localhost (antares.kleine-koenig.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id DwwTnSgMPVsP; Thu, 29 Aug 2019 19:20:02 +0200 (CEST)
-Received: from [172.18.85.69] (unknown [46.183.103.8])
- by antares.kleine-koenig.org (Postfix) with ESMTPSA;
- Thu, 29 Aug 2019 19:19:55 +0200 (CEST)
-Subject: Re: [PATCH] [RFC] tty/serial: imx: make use of format specifier %dE
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-References: <20190829043716.5223-1-uwe@kleine-koenig.org>
- <CAHp75VeV8jDP1uP3HtkJ+j7+SbkB50cs4V9tJ+j9tS6icO95FQ@mail.gmail.com>
-From: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <uwe@kleine-koenig.org>
-Openpgp: preference=signencrypt
-Autocrypt: addr=uwe@kleine-koenig.org; prefer-encrypt=mutual; keydata=
- mQINBEwXmCYBEACoJSJcKIlkQcTYia0ymmMOBk2veFoy/a0LlqGUEjQ4WECBL19F2BYX1dSp
- 5/ZdfKuV605usI6oq4x6k/LKmqZDl6YnqW/YmN/iZVCRunBRfvpTlL4lcNUu5Va/4GBRzBRr
- rrIhCIVL5zMV6hKywhHKTdOHVSZRftf+eRSBwENKXahmfOMDmekyf585etDPdzkFrLHNVFOC
- sFOU0gCK0uVPyY0LH13eo4qEEMi88RCOfwYCFQqKXDdo41DWoDPB5OGCMaphIx9wC/nvtdcv
- MowsGde5iGgmHWK6sdC/O/xaV7fnz1sJzoJB1eT91LkGbdGxsLAT6nqlaNJiJtiBoRhscguV
- xVbn/I9mnUu7bLmTFBEAlaQGU/J7uQ4w94FXfosNGROt/otqltetMZlPbNvNhKnXv8U6eRyA
- P3ZMKTJa4hGr3UdYdt4+MIiHcsANWp8T7oLYVxRbHPXPG49IURnhXUoGbscZmpptWcl29ebo
- qCxL9n3KIyUT3ZB1xHbW3Sk/Dqzf52tQOxZubzrpUJ8zaGIwYVUjfcPFwf3R3zrQvJq7mI4S
- ddNIE8w3WJOPXDOYx7GjOa+IubhSpCrr74NbN8q9oS3hnsqWw16i3HSUuPuYeZo1t6D5p/mX
- EVyZ2QrS1kGgGi7bmlQMSFkb6g1T8aWSYuX3PBYq2VntnWAXPwARAQABtClVd2UgS2xlaW5l
- LUvDtm5pZyA8dXdlQGtsZWluZS1rb2VuaWcub3JnPokCVwQTAQoAQQIbAwULCQgHAwUVCgkI
- CwUWAgMBAAIeAQIXgAIZARYhBA0lEfMiv6scFYAma+Lc3ZEyZpvWBQJdD2/6BQkaXdlUAAoJ
- EOLc3ZEyZpvWXJIQAItguVGhM5bXhr+T5Dq8tUPUzfEE2agVUhtwNUG1HEqF9Ex5PRRauCN5
- YW318C3MRWgQepr8q2xgQ+Ih1Irl8GCVLh0vIIZRd8DbDSKBiPC0orKkHU4WgX48xl0WVnLS
- hUOt2bk1Vv5twB1a19f6W5ww1x0roxrNtAbDpPB/z0siynnqdQSeiJe+TbPwGT5eginTRiC6
- hf+QGOz2jl0HQBmzabI+IWUuyZqb1kG78U1Si33N8GXCGrHzAKOtGI/7vzqlLGulMcWIRxkP
- U0Yg9FeH033ko16d8g2R2VPaP3ntm0KYaJngrbiTKGj7OXxUSASC7lBY7zf1UzJQYSU9TRrz
- 3XZ/4GEDkfQL0M9rPjWBj3HbwtQzURhL4QjC77Zi1OKT8TXrDGOoO8q6Th1y8ipaKOhAakUb
- ywZMCZi1RqOf53RnAquRApHfpu1I+W/iDtI51wZsuolqRlYd/nAbvzKt7SFG6V+ZeV9df6/x
- V3kS2NkNawy/dDqwJWA3gTHX1SEu2y04/qOyH/CR6sLEozQnqxVS343TJxyfJYW7TCwrDz0i
- jEFcy+xyyqvPn0Yc5zp2CnLKiB5JyV3mnz8qJVP0QfWUKKI6740m/1U9nDQYttGlklxgayLJ
- KoEG/FYxEe1m93U8anvxb4IULSHTgfCHpSJjLeVJVXUffH2g3CYAuQINBEwXmCYBEACy0K1x
- eE1wybOmpgwyw4c/W4KY25CjfXucBt00neNb24pVKNGUWScnsUsqDfA+7iOJ+CAahRhDGmba
- O0hZ/NZbEKbhXYCVsc2OOVrmT2+FgnYiWLntMGKGOLqGO8QprLpaXSy5tJP2/UWQix+tgKHa
- DENz7nJVff5WF0zdlKeMOIJYmraWLelsrEFlw/OUfKWjm30pnivNUacVIC/dIXiwz9mykYdk
- spEQhU2aSBr99oE87UUyf4BIgvB4Vy316i0o+WdEWCY361Yu02AWvHlUhjj/kDyiY8WxYGKQ
- JWAw6K+CVDtefLMVQ+l+A4V/3YgC+aHCw8ab2ZhXXSobcHv0K9plOrGR/3J6fIybf5RYgiZ6
- 6qh7WErPhVuXx3+btYehuPnf2eNHIBb6wrLJo/yWP3lWaUFag7cshMvw5CkoN948+dJWQed8
- HM0fDb2hNMtBn52Sb3Q8ZZTrNYJXfyFq5W1+W2W5Z9aJT+4A5Fyecpzmc7dy97yA7Q4FB8z5
- WOu+g03vGtrA29dvFdxM9pJJzKz4FOS/I8rkjfmXxBxUdDAbg8NHN56Cw1aBJktup3W1Pa0u
- 2FgbgpFUZVDZ+RqtjwlFLyMmDaO7K1zhxEu9kg02SBImtrVSJZKQMOWwZJPUNBEcidU8yQeT
- +J+7AnI/Y1X7RzcwTRP6JRc4vw4Z4QARAQABiQI9BCgBCgAnBQJUsvI/IB0Dc3VwZXJzZWVk
- ZWQgYnkgc3Via2V5IDU3QzkxQkM3AAoJEOLc3ZEyZpvWD8sQAJ3kMYdHHqIXYvL6ogIv3HzC
- E3nba4tPv+z/zj8s31G0VlEXdqc54nCQbvsWO1jYkDV+eqGhT3zr8V/55GyDkMEqw8Q6D00w
- q4BLVj4W64ciUUb+uQT19JCoL6uvewdBP7W86UMH2OhnSX4J1Asm1xjOTIszsUlYD0+ztt9O
- gXyUxQ26mOnpTSuc7LSdLqK94QB34IS8keVNxZGdPnh9LxpZFFdZTK1jbvCA0gESsAsQ90sJ
- zbnF0E0m3HFYFiY+E66ntz0Nbo68IKw9jY0zvR56Qi5s/uBFfcZeBAWesG8xKMy4zZanLMwy
- euZWor+X3pbH5FtpobGr0oyiH4XBGlMNWnXAo69rdig+ah4SOl9WFKn33PJTTlWXyaE+FxOg
- whT7bJpPns8i2u8jmbxlC5jpP8+8cSfDkdBhBxsecpsMLF5bIAqhoxfRxETL+xtuPdOEgH6K
- j/Ia3geiBfUPrLka93TE3EECn89WcD6XvcyRW95otrjK+Svnro4Xzi0zd0mP1Wwq4dA4Zfb4
- j3YDAOjhGzDeSUqbhVttgsHc99fPvuMrjQUk3x9Lc0/ZbbCZfCa5Xk8lopi/oT6mJoj9Hj05
- 78Aktvt+0Ayqo7DmXUNZZq1Jpt3CCUCzj1E8ICHdHh3NG6HGbhbTQ96WfpBwXOOPZiWLWZzT
- 4FzrwLLox8wTiQIfBBgBAgAJBQJMF5gmAhsMAAoJEOLc3ZEyZpvW0oAP/inNe6AHKjSobhqB
- kvUmue4p/XtuIvt2yxmcKBgPSASNsL3TD2OFGJaJVtfnGem2YnKkVQseP90S1FqABG5LarDQ
- eOdYSLdFYsGGLJ9PwXlvze3reEDoPLVu4c+W2dRPKWXa3aaX6Szjech3MD2bdAoTHb3vo+zR
- LykVSqUuNI450ddsR6/ffTuHBJRM4SicC9fQZN6po/yZT937FH0igZKcNrqgJWfUp6+EQUov
- RhZoloGLuancqg1ALGem0VRfmlhAQaNBGunyihHOFHXfEbchJseP6x9GY1rxHH85p49crTNx
- MOWaDFL33iN8kDkcAuuyz87uWU0fiM3LpezU8x9Oby+M3dYYpDkcKzkNA2y5OCHsCMU9w7f8
- kF2tFCjEpd+YV9rNaab8Kp9WRCAnEWJrtPkGuKU1HvWFc0qdsQZndZwiup3a9L2EAIbkPPwX
- QN2PlYsFF1qYs88WxuB9/bs8UtxYTnYKUBNlpm9q1olWn9J8GReUpAnULaZQKbhaxbYq5s2N
- 5vYKsOh0zWegOiTuOTdL2N8XsGlCFXhxG45+8JvpLyNiphyxvqoz/z9FKu3pxZKWeiumGvdJ
- 17GTDy7w0q0oPdh7WzKwqKQIBeP+YNLcrZoIUdhxBArYPRRhlRMTCAC+Yt4ZVf9TAC3NLNWM
- Dod7CGaNlDcIRwM0Rk0EuQENBFSy4J0BCAChpWdVkN0BTfe/zV6WhbbAasnFPvnOwT6j8y5B
- leuz+6XACLG63ogBu/4bfQdZgdHIC1ebI9XazMSovCfBTSn7qlu2R/yYrJ2UxwvDkiS2LuLA
- GEWfTwyimFr8/4QeTfy/Y0dWLCSqNlGg9r+GFxS8Ybnrur4Vrfw+4QoQs51MoKGTkR4BMdeJ
- SlL04cByBAEA6Hra88kr13ApWOSHcRkKRvj7ZCmBH2+GnnbdNm3AlrEtLvepHSODvngfePMX
- NHjtp4iw0Vkbv+s9XEhtC6bryD8AJahoaV94w2cQz48fSjPD8JfZjgrN+J7PyUDPTugmQC0m
- oPi7HtHxloHtbX5BABEBAAGJA0QEGAEKAA8FAlSy4J0CGwIFCQlmAYABKQkQ4tzdkTJmm9bA
- XSAEGQEKAAYFAlSy4J0ACgkQwfwUeK3K7AlrIgf+JLyPvo17xE6Jn6OOOTh9+t/QAJq3VV0/
- xIyctFqK6v/gnFG/7f5zQKex5ThCesfZ3+zBk98wyVVmG5ToIYn67Egkv/rGDxnOdT5ABWcW
- QcjSCanfD6qFELDwsiLVKmoBLGCu+WcQkL5+LeUwU4oxor7aQlgrIIogJRBA4YdFlSV+JMYn
- Czww4GpFA11RktykHCW3QuX+iOrJuvFtG1AKHiFzv4asivhFCWfrxiujkLpX/3e4iFN5lyD1
- 2C7JsFDI5GM6uDOFaQKiYyqGZ6mnHQuqX7EioYuEJVR7jmkezLqlI26Hb/5quZADFhbnyGe2
- 0FLQR3oSPVy24wRFq8U+sdqUD/9dN10/SNSFyAnJp6CJo55G4zeAallIwfvh+5i1yVd/8Kh6
- Rvuq/KO2uUB+bxNXgsmdmQt3nWBcJAs3r78kf8UFsnvLxTP673EEcakVAx1S1nieTrh8bzAz
- XkBYDKEPRXKzXjgidVPWLBQVbGZ66lCfpW2t/T8fxlZG4dq5zTU2j8cvA2RS4K8j/xiedA4P
- 6lnpV1DjTqnDfATAmJXX4oWleO2cvvao9BhqstktBjz79PMQqRD+L56q6t0X08y8WIDLdtRk
- mmVWGq2I6gR7y3CjTFmuO3sFcqVh+TwWEaqrrJ/MN/yyrNgJsFWozxdqAf55z8IJg5boi1ZY
- cdeKPFRKj5t5B1DwbobQIgZSAoUiQzy9g6MrKYpv/2tDMONK5mdPS43JZ0+Z7keID6r8Hj86
- Byrrn/UaxEAg0Hn2NmG6sRs2fIJ3ehpThw1+ed9YwoasoPk5fLAgxsDXgRgJY07+J4QdwAtj
- Dh8N26hPPYyx+9O2qAzUVtfoiWsib7AXCbKd+34pn67DDYWGCJgtjsTrNh2da5loEd+8TuD0
- y1xvczPXkaJmQ8mIo2ENO5btEpLXSZGZJHLRFI5tGj4ZWThjyVZb777VH5EFfUJQiZfJ/Aav
- 64qcY4NspxGZpdYuZOWmWU780nKx6kpqPx+10HZgqWcJZRlgfMk+pnwhhhd2r7kBDQRUsuKV
- AQgAwDnqedPDXwF03G61x3u5yJfPITSe4LRjxroxk7XZ3k2SO37DPaJA7J0BZG/Kyoc82Ymi
- wcYAGqHm7HeqqAhLzVfl++XK8/fCpwfHdnnQqlRxLrG+y3gDkEWYyZd/+YSbmGFxh1rou8Em
- e4tsHhqmINRA0wDuHr4Yx3rduYpW2VYjnCvdPJL3osLPjjs+NZN9oVn6Q4fhLoP2h60cAQ4r
- Q+3/a/gAC3It3SF4UKCl3TWydTdEzNh43rxIMIyjrD+Wm/F0NA9TLwS4sOhZTBUCJT2fKNBh
- KCWhO720RZF6HSmwQqfJza+Z4zN7NGtnDTX9su0ufQkwr34dsy76CDEqNQARAQABiQIlBBgB
- CgAPBQJUsuKVAhsMBQkJZgGAAAoJEOLc3ZEyZpvWuOQQAJSvLehOMf21aC2RPVhWmCFibOnR
- qRM4iGypKEERWxagNwjqx8YrL+dsu7o/aWwjG1CvfaHDFQ78CBj/xBGw8XheODpvS3Z/ERGv
- NivQ8HK0MWIIQZ85U5gj1h0Ls0LBeRkTOPRe6jUmjyzeWnMa/5wXaXsxZKE2n49ai5m+gL9/
- 3sBXsBCsWxhVqn+lq7c5GEhxGJHvCDX5TcXdOC63Mcek4hKRbSYGkj1QYJV/WF9cLwvU3XI8
- nrGDGX8IWaJr6GxTWCeYs5uWU70cg2TRKHM4SCveZyeizz4YRXYjvZTIent6TUKmxdMLBAC2
- gI3H+75QRrflG5po1F+Uhbmd5BHLcAgvMUc58YaXYCwI6fY1/Q9zIpM1CHUPe4lZN5XUIA4S
- VBYi6Yvx82qA97KZfHsyvLwR56NMl/1b5dbQwl6eoM/JH4GgXDEh0NmPdE/MnQM7svxsB7xp
- 8kNRLpvtXNxp6SZUcf7u6vIwvlcrYMeDIaxf4dZSAuFwurOQtVP0gERKFSh1oMI+I0wXeMbO
- pN3/t3AK3zD7ZykqMstza/jYFEK1gNj7UhnvazBhMaMhCEt8rNqr5/dbgvAD/biSZO6wZrn7
- hCaye/ulWpSqZSdx+G9GkTn05lsuHu9zfTwY6B0A6nlrqQSR/yWPvSq1Ud6IOZY1alq7ZSag
- kC8vBDJg
-Message-ID: <4f20fbee-db57-5db6-eddb-7e22647423b6@kleine-koenig.org>
-Date: Thu, 29 Aug 2019 19:19:40 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+ id 1i3OUu-0004bn-L9
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 17:46:14 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q139so2530978pfc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 29 Aug 2019 10:46:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=dlNh3CU9zUygg8M/DXWKalX8ddV4N35odwGZUzr3mhM=;
+ b=rVSu7C8otZ/Tuk3VPzGaexCfQZ0yo4as2sP9tUMYuD2dBk6/bFkrtsNCAm8Q5laeGL
+ uVeKz3CbX1mGMsVcL7H26N1mxK0f4d3+LntCS8qmpTtrlajRJzw3h6p/xc3o5Q5UHFDc
+ 0oK0X1aXymIikxXE4VfPWhy1MO4Nu7howfRRy+C+2kaptzF4+Xy+jczNyq0t9gWuG1LP
+ 6NgmbktyTzuVMJw2s6/RRLMGII+3eu/Xag+kXDnsdhKU6kNh2Ay54OEvPFxTJkFwyHed
+ c8CQwVgok/nF08VuOrsDyJ5S2r/L7L8dYD48AQK+zHtAiKHHeh2hyscrLwtGkFZ23/hv
+ Xm2w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=dlNh3CU9zUygg8M/DXWKalX8ddV4N35odwGZUzr3mhM=;
+ b=WLT0RwY9o/+odMkbLb/qPT+gY188LivAa6lA3a/NwmRn8HId+pwFJ4YMhjm5Ex52n8
+ qnEreABvni6XitlkUWZMjUz3lqKrcUcsS6psWoqEuPE5KFNdyG622gPbjFjFJj9iNG6W
+ tFBB6LNUx+pIwjFZJU6eP+/GfrjvK+oW6JrFSCdc/35ky5vUYktGdmOP3GmgZyTOdY9I
+ SL021ih5s01xywaH9jNhFLLrAK1SPXrMBpA38DRtCAmmB5q6Pe+vCRoqxZ+dhfNy0F0M
+ ILxnLlb5xVH2SZi1pTWN6WDHZ5fZDXGf3K8p/QICIkn9crnVn0Jlpd/2PUeZktfei+OC
+ Dd9g==
+X-Gm-Message-State: APjAAAUoALOLS0wXHr1HmY/oA13s8j7/lCIRM/Sx4fdPUnV1uuJWQYO0
+ 4TTQENdrTTpV3VXq2HMn/WkMuwl941zo/5NBgts3D/6in4M=
+X-Google-Smtp-Source: APXvYqwMdMa6a00vpAVCXOlt4BFzZjbbV3KdEcN8UqZYAy+eMHZYvM+xbcdHA80pImhva158rU2hGOImyRKsln7uae4=
+X-Received: by 2002:a17:90a:c20f:: with SMTP id
+ e15mr11001360pjt.123.1567100768675; 
+ Thu, 29 Aug 2019 10:46:08 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAHp75VeV8jDP1uP3HtkJ+j7+SbkB50cs4V9tJ+j9tS6icO95FQ@mail.gmail.com>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-11-will@kernel.org>
+ <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+In-Reply-To: <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Thu, 29 Aug 2019 10:45:57 -0700
+Message-ID: <CAKwvOdkaCTQ92hUe823Y14xo_Gft4vsRGgimHc8QPUBCbbAOrQ@mail.gmail.com>
+Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_102131_198971_278EB5EC 
-X-CRM114-Status: GOOD (  15.52  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190829_104612_720968_C461C98D 
+X-CRM114-Status: GOOD (  18.44  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -155,131 +100,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jani Nikula <jani.nikula@linux.intel.com>, Petr Mladek <pmladek@suse.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- Jonathan Corbet <corbet@lwn.net>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Documentation List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Steven Rostedt <rostedt@goodmis.org>, Enrico Weigelt <lkml@metux.net>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Jiri Slaby <jslaby@suse.com>, Shawn Guo <shawnguo@kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, Fabio Estevam <festevam@gmail.com>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
-Content-Type: multipart/mixed; boundary="===============4099736928718546886=="
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Ard.Biesheuvel@arm.com,
+ andrew.murray@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---===============4099736928718546886==
-Content-Type: multipart/signed; micalg=pgp-sha512;
- protocol="application/pgp-signature";
- boundary="TMR6u8im72eYSCShEMtiHt1FAiuY5cipI"
+On Thu, Aug 29, 2019 at 9:55 AM Will Deacon <will@kernel.org> wrote:
+>
+> On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
+> > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> > index 95091f72228b..7fa042f5444e 100644
+> > --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> > @@ -23,6 +23,10 @@ asm_ops "\n"                                                               \
+> >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+> >  #endif
+> >
+> > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> > +#define K
+> > +#endif
+>
+> Bah, I need to use something like __stringify when the constraint is used
+> in order for this to get expanded properly. Updated diff below.
+>
+> Will
 
-This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
---TMR6u8im72eYSCShEMtiHt1FAiuY5cipI
-Content-Type: multipart/mixed; boundary="pLErzazZJatJFSZc5KxPtwYzLkL1zAfoI";
- protected-headers="v1"
-From: =?UTF-8?Q?Uwe_Kleine-K=c3=b6nig?= <uwe@kleine-koenig.org>
-To: Andy Shevchenko <andy.shevchenko@gmail.com>
-Cc: Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Jiri Slaby <jslaby@suse.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>, Fabio Estevam <festevam@gmail.com>,
- NXP Linux Team <linux-imx@nxp.com>,
- "open list:SERIAL DRIVERS" <linux-serial@vger.kernel.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
- Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Steven Rostedt <rostedt@goodmis.org>,
- Andrew Morton <akpm@linux-foundation.org>,
- Jani Nikula <jani.nikula@linux.intel.com>, Enrico Weigelt <lkml@metux.net>,
- Jonathan Corbet <corbet@lwn.net>,
- Linux Documentation List <linux-doc@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>
-Message-ID: <4f20fbee-db57-5db6-eddb-7e22647423b6@kleine-koenig.org>
-Subject: Re: [PATCH] [RFC] tty/serial: imx: make use of format specifier %dE
-References: <20190829043716.5223-1-uwe@kleine-koenig.org>
- <CAHp75VeV8jDP1uP3HtkJ+j7+SbkB50cs4V9tJ+j9tS6icO95FQ@mail.gmail.com>
-In-Reply-To: <CAHp75VeV8jDP1uP3HtkJ+j7+SbkB50cs4V9tJ+j9tS6icO95FQ@mail.gmail.com>
+Hi Will, thanks for cc'ing me on the patch set.  I'd be happy to help
+test w/ Clang.  Would you mind pushing this set with the below diff to
+a publicly available tree+branch I can pull from?  (I haven't yet
+figured out how to download multiple diff's from gmail rather than 1
+by 1, and TBH I'd rather just use git).
 
---pLErzazZJatJFSZc5KxPtwYzLkL1zAfoI
-Content-Type: text/plain; charset=utf-8
-Content-Language: en-US
-Content-Transfer-Encoding: quoted-printable
+>
+> --->8
+>
+> diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+> index 61de992bbea3..0cef056b5fb1 100644
+> --- a/arch/arm64/Makefile
+> +++ b/arch/arm64/Makefile
+> @@ -39,6 +39,12 @@ $(warning LSE atomics not supported by binutils)
+>    endif
+>  endif
+>
+> +cc_has_k_constraint := $(call try-run,echo                             \
+> +       'int main(void) {                                               \
+> +               asm volatile("and w0, w0, %w0" :: "K" (4294967295));    \
+> +               return 0;                                               \
+> +       }' | $(CC) -S -x c -o "$$TMP" -,,-DCONFIG_CC_HAS_K_CONSTRAINT=1)
+> +
+>  ifeq ($(CONFIG_ARM64), y)
+>  brokengasinst := $(call as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n,,-DCONFIG_BROKEN_GAS_INST=1)
+>
+> @@ -63,7 +69,8 @@ ifeq ($(CONFIG_GENERIC_COMPAT_VDSO), y)
+>    endif
+>  endif
+>
+> -KBUILD_CFLAGS  += -mgeneral-regs-only $(lseinstr) $(brokengasinst) $(compat_vdso)
+> +KBUILD_CFLAGS  += -mgeneral-regs-only $(lseinstr) $(brokengasinst)     \
+> +                  $(compat_vdso) $(cc_has_k_constraint)
+>  KBUILD_CFLAGS  += -fno-asynchronous-unwind-tables
+>  KBUILD_CFLAGS  += $(call cc-disable-warning, psabi)
+>  KBUILD_AFLAGS  += $(lseinstr) $(brokengasinst) $(compat_vdso)
+> diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> index 95091f72228b..7b012148bfd6 100644
+> --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> @@ -10,6 +10,8 @@
+>  #ifndef __ASM_ATOMIC_LL_SC_H
+>  #define __ASM_ATOMIC_LL_SC_H
+>
+> +#include <linux/stringify.h>
+> +
+>  #if IS_ENABLED(CONFIG_ARM64_LSE_ATOMICS) && IS_ENABLED(CONFIG_AS_LSE)
+>  #define __LL_SC_FALLBACK(asm_ops)                                      \
+>  "      b       3f\n"                                                   \
+> @@ -23,6 +25,10 @@ asm_ops "\n"                                                         \
+>  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+>  #endif
+>
+> +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> +#define K
+> +#endif
+> +
+>  /*
+>   * AArch64 UP and SMP safe atomic ops.  We use load exclusive and
+>   * store exclusive to ensure that these are atomic.  We may loop
+> @@ -44,7 +50,7 @@ __ll_sc_atomic_##op(int i, atomic_t *v)                                       \
+>  "      stxr    %w1, %w0, %2\n"                                         \
+>  "      cbnz    %w1, 1b\n")                                             \
+>         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
+> -       : #constraint "r" (i));                                         \
+> +       : __stringify(constraint) "r" (i));                             \
+>  }
+>
+>  #define ATOMIC_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+> @@ -63,7 +69,7 @@ __ll_sc_atomic_##op##_return##name(int i, atomic_t *v)                        \
+>  "      cbnz    %w1, 1b\n"                                              \
+>  "      " #mb )                                                         \
+>         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
+> -       : #constraint "r" (i)                                           \
+> +       : __stringify(constraint) "r" (i)                               \
+>         : cl);                                                          \
+>                                                                         \
+>         return result;                                                  \
+> @@ -85,7 +91,7 @@ __ll_sc_atomic_fetch_##op##name(int i, atomic_t *v)                   \
+>  "      cbnz    %w2, 1b\n"                                              \
+>  "      " #mb )                                                         \
+>         : "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)   \
+> -       : #constraint "r" (i)                                           \
+> +       : __stringify(constraint) "r" (i)                               \
+>         : cl);                                                          \
+>                                                                         \
+>         return result;                                                  \
+> @@ -113,10 +119,15 @@ ATOMIC_OPS(sub, sub, J)
+>         ATOMIC_FETCH_OP (_acquire,        , a,  , "memory", __VA_ARGS__)\
+>         ATOMIC_FETCH_OP (_release,        ,  , l, "memory", __VA_ARGS__)
+>
+> -ATOMIC_OPS(and, and, )
+> +ATOMIC_OPS(and, and, K)
+> +ATOMIC_OPS(or, orr, K)
+> +ATOMIC_OPS(xor, eor, K)
+> +/*
+> + * GAS converts the mysterious and undocumented BIC (immediate) alias to
+> + * an AND (immediate) instruction with the immediate inverted. We don't
+> + * have a constraint for this, so fall back to register.
+> + */
+>  ATOMIC_OPS(andnot, bic, )
+> -ATOMIC_OPS(or, orr, )
+> -ATOMIC_OPS(xor, eor, )
+>
+>  #undef ATOMIC_OPS
+>  #undef ATOMIC_FETCH_OP
+> @@ -138,7 +149,7 @@ __ll_sc_atomic64_##op(s64 i, atomic64_t *v)                         \
+>  "      stxr    %w1, %0, %2\n"                                          \
+>  "      cbnz    %w1, 1b")                                               \
+>         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
+> -       : #constraint "r" (i));                                         \
+> +       : __stringify(constraint) "r" (i));                             \
+>  }
+>
+>  #define ATOMIC64_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+> @@ -157,7 +168,7 @@ __ll_sc_atomic64_##op##_return##name(s64 i, atomic64_t *v)          \
+>  "      cbnz    %w1, 1b\n"                                              \
+>  "      " #mb )                                                         \
+>         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
+> -       : #constraint "r" (i)                                           \
+> +       : __stringify(constraint) "r" (i)                               \
+>         : cl);                                                          \
+>                                                                         \
+>         return result;                                                  \
+> @@ -179,7 +190,7 @@ __ll_sc_atomic64_fetch_##op##name(s64 i, atomic64_t *v)             \
+>  "      cbnz    %w2, 1b\n"                                              \
+>  "      " #mb )                                                         \
+>         : "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)   \
+> -       : #constraint "r" (i)                                           \
+> +       : __stringify(constraint) "r" (i)                               \
+>         : cl);                                                          \
+>                                                                         \
+>         return result;                                                  \
+> @@ -208,9 +219,14 @@ ATOMIC64_OPS(sub, sub, J)
+>         ATOMIC64_FETCH_OP (_release,,  , l, "memory", __VA_ARGS__)
+>
+>  ATOMIC64_OPS(and, and, L)
+> -ATOMIC64_OPS(andnot, bic, )
+>  ATOMIC64_OPS(or, orr, L)
+>  ATOMIC64_OPS(xor, eor, L)
+> +/*
+> + * GAS converts the mysterious and undocumented BIC (immediate) alias to
+> + * an AND (immediate) instruction with the immediate inverted. We don't
+> + * have a constraint for this, so fall back to register.
+> + */
+> +ATOMIC64_OPS(andnot, bic, )
+>
+>  #undef ATOMIC64_OPS
+>  #undef ATOMIC64_FETCH_OP
+> @@ -269,7 +285,7 @@ __ll_sc__cmpxchg_case_##name##sz(volatile void *ptr,                        \
+>         "2:")                                                           \
+>         : [tmp] "=&r" (tmp), [oldval] "=&r" (oldval),                   \
+>           [v] "+Q" (*(u##sz *)ptr)                                      \
+> -       : [old] #constraint "r" (old), [new] "r" (new)                  \
+> +       : [old] __stringify(constraint) "r" (old), [new] "r" (new)      \
+>         : cl);                                                          \
+>                                                                         \
+>         return oldval;                                                  \
+> @@ -280,21 +296,21 @@ __ll_sc__cmpxchg_case_##name##sz(volatile void *ptr,                      \
+>   * handle the 'K' constraint for the value 4294967295 - thus we use no
+>   * constraint for 32 bit operations.
+>   */
+> -__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
+> -__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
+> -__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
+> +__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , K)
+> +__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , K)
+> +__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , K)
+>  __CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
+> -__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
+> -__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
+> -__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
+> +__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", K)
+> +__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", K)
+> +__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", K)
+>  __CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
+> -__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
+> -__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
+> -__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
+> +__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", K)
+> +__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", K)
+> +__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", K)
+>  __CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
+> -__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
+> -__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
+> -__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
+> +__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", K)
+> +__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", K)
+> +__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", K)
+>  __CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
+>
+>  #undef __CMPXCHG_CASE
+> @@ -332,5 +348,6 @@ __CMPXCHG_DBL(   ,        ,  ,         )
+>  __CMPXCHG_DBL(_mb, dmb ish, l, "memory")
+>
+>  #undef __CMPXCHG_DBL
+> +#undef K
+>
+>  #endif /* __ASM_ATOMIC_LL_SC_H */
 
-On 8/29/19 3:43 PM, Andy Shevchenko wrote:
-> On Thu, Aug 29, 2019 at 7:40 AM Uwe Kleine-K=C3=B6nig <uwe@kleine-koeni=
-g.org> wrote:
->>
->> I created a patch that teaches printk et al to emit a symbolic error
->> name for an error valued integer[1]. With that applied
->>
->>         dev_err(&pdev->dev, "failed to get ipg clk: %dE\n", ret);
->>
->> emits
->>
->>         ... failed to get ipg clk: EPROBE_DEFER
->>
->> if ret is -EPROBE_DEFER. Petr Mladek (i.e. one of the printk
->> maintainers) had concerns if this would be well received and worth the=
-
->> effort. He asked to present it to a few subsystems. So for now, this
->> patch converting the imx UART driver shouldn't be applied yet but it
->> would be great to get some feedback about if you think that being able=
-
->> to easily printk (for example) "EIO" instead of "-5" is a good idea.
->=20
->> Would it help you? Do you think it helps your users?
->=20
-> No, it makes sense only for debug where the user is supposed to be
-> developer and thus needs anyway to know code base better than average.
-
-Would you go so far as to claim that
-
-	... failed to get ipg clk: -517
-
-is better sometimes than the same message with a named error? I'd say it
-is never better and in some cases worse because readers who don't
-understand what -EPROBE_DEFER means won't understand -517 either. So
-there is net win.
-
-Best regards
-Uwe
 
 
---pLErzazZJatJFSZc5KxPtwYzLkL1zAfoI--
-
---TMR6u8im72eYSCShEMtiHt1FAiuY5cipI
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: OpenPGP digital signature
-Content-Disposition: attachment; filename="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCgAdFiEEfnIqFpAYrP8+dKQLwfwUeK3K7AkFAl1oCSwACgkQwfwUeK3K
-7AnB+Af/YOXi02psCmkUympK1Pvep54r+CHsOl5j8kaw4oHirKDCbCpjPrZdM8Ud
-FpzWE9hwPej1pZe9g3fgSCAaCxPnH6Ep+rbwI00QDtkCpFDDZPbRKrGm/BsCC1Qn
-TiGuL+afSLtxm5A/kCO81JItJZynrhbZY+SLL4c1c1xd4CwxMU367IjhYs4dO2FJ
-bfktrrY8EfRjqkIGV5GNBYB86FF8AQZGL+DSQZpYtnFbNobhbsyT7vqN0bFQUV0/
-fJ/Bm6kc1hElJ15zeS2XxIsddd5Gnp6GuSfGvWUUQ4BIfWhgLfTociNaIvLsZIJt
-CDTGnL1O5OASP3OFOJ+h2dXSFo8WVA==
-=/87R
------END PGP SIGNATURE-----
-
---TMR6u8im72eYSCShEMtiHt1FAiuY5cipI--
-
-
---===============4099736928718546886==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4099736928718546886==--
-
