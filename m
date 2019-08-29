@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A6D6A27F7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:30:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBD27A27FC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:30:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=nXOLwF6RasaIZS6ySye6/FQmqcRK4RJNZM32pfC3tXQ=; b=YYI2vWhMwwvX+u/gi4Cg0AU95+
-	SbMMBDJadruvnzXexE9Mtkl9yNMXDlnFk5YTWmgdAcHMn69kuz3hKJ/St5sE499HQdyGtMIf9OuA9
-	DtbvN4PGoYqTcjqegnrkWtwfkFhbRfRn8fosSRmRsDTVFonyNo0riR2sd5X7zs7oTEFt+NYns1nhH
-	OSFrxA8YagAOO0w5B7I7kKtKWENaxE0/6pGyr4B92Igh4xF8tjUQBUKRwOEf5nBDPR5AEn3EhBz5Q
-	qQUuDtEzf2nB7iHdEaX6HCl5jervZHlcc1koIYxSq9Z8GZI281lnj3WxKi+uZ2h1WQu8YRsqjZhZP
-	tm6wBfDA==;
+	bh=o65atp3EHhFJ24S4NwnibqG/+RKA6Jhrg6+dK8qPyos=; b=pZd8iO31ZlIjKWlq1tCGTd7WFf
+	vEhRuhppTzyRZtEcl1a4onsiYKIHxvk0/4lOkZRb1Ztf6JD9ISD/HAPUMCA6M3wONA/Nzf0OLsIwb
+	YaWNszXF5lCmrB3pUIR2T30RR/CryO2oUb2lmXqw2IO51va8YlB/NbvWRF7vJGGlzvSz1pQlHyrhm
+	k3e3aSkicOKZr6sifc56hd9MY0clnVgZjEaLMtMjBZNebiJOdGpM9MB/GGEckk04hS4XVSRiOl2sf
+	BeEIvxNPJsRVwWYrFQV+GWSydCS/bYYCuJesxETt+nWWOKiLBVRsiYivEC+4bB3ONBxEQI39ulnMl
+	RXe2tY7A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R3V-0004kG-SW; Thu, 29 Aug 2019 20:30:06 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i3R3p-0005hA-2N; Thu, 29 Aug 2019 20:30:25 +0000
+Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2F-0003fr-LF
+ id 1i3R2G-0003gn-Io
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:49 +0000
-Received: by mail-pg1-x544.google.com with SMTP id o13so2176400pgp.12
+Received: by mail-pg1-x541.google.com with SMTP id k3so2179393pgb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:47 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=bVJOPZuGL3hFw3YCjN9nuKypVgI+bDnUYt2M16Fs5tI=;
- b=j7fG4JFrXfi+EBRurr6UCyqYugEHYjEpeXWvnWi5X6+F0p1pjAvwq+898TGeBBVN1w
- aG36vW8X9cVNlgyqC2M8tnvAuQswqcGcPXnW4wUHksCV+26FBgzsv63b8MdP5WU3G1tr
- cS//6FSA6n9/xzkQBjVFNWvwXO6f238pxu3JpYSqn3l/m7H423/1A2496g7Jn7+FnD/2
- hfv8JccWjMcPtQJIOMgen9FVWIrrM5iAhofjLT8AZKOSfyWoj9qMyzRmIJ1UYKsMGod9
- Nu2FpHMqWLXN3EFSfiAzKBTu7LHo/p4+S/ogXmBVA7hQmomFMdyUGY5no6FJIc0UhxiX
- b0sA==
+ bh=Kp6bWICVzcD1vRMYLxKwPKSzCM3AbPwuHgbbnTiMIUM=;
+ b=oVF0y4nwLWJJEuvvOzTSKviTM0sbi+lXRLt6VxlUw+99TlF+OGKYlIe5SPmJlfw4UK
+ dZ3zXkPZbJ/VeHkvtKDP7pcCfZTaYQKftGdMibVJ83MEIol4lqF1BpRaAXX+ouK4TRGz
+ 6Gg9Sul5o8k0kfg/Xe4d0xnZln+aQvsWXsYeDpsV+ZajEe8Wmvhzmisyhf1AITOgOQrz
+ /Oo3ZAsVQAKPyDhiNTpglRT07LVHFfhOltup+1zFir81LCHJmpi/KRplSufldEuZEn0p
+ Ygmw+7YUDAGXNpK3LWNsaiQWvfHaALCHuuzmcR4Vv1QD6trVryGmxkQ+ukSHOennQR8l
+ XPZg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=bVJOPZuGL3hFw3YCjN9nuKypVgI+bDnUYt2M16Fs5tI=;
- b=NUBUevoBlGCXpfrEMRd2Tb0wew4l19+Dj8GCv8s6evcT2KiXS8jIlUYSrqo4ezFUbF
- LBURMdBc3FGfumbidiFDPTxgkaokbO6YPvJv8rN2HBrqQKGl3tIMhyLdql43ojKKIuXb
- vnfRrKFD9vskXqZjPs3IUg5zb63O5MbzXY+MJBlJqQsba2ZgS1TquPpz2Not4pzDyc5p
- 0xk2eqfKXbnFOzPXflnUierxO+Z8Wtolkzp1bGwmsPpel65dPOPUkedeSuhXIJoZfonz
- 9k2OC+PT1KRU5cS5DS1X0WQmGKesTdTAvsG8552+UlqQaHq9hkH96WhumuBcxjbk7BBY
- GxTA==
-X-Gm-Message-State: APjAAAWv9BYO2sQbwa/XmLlgbYpmI7Rho91FUpJ2l+X08yM6xNsP+Mr+
- HHM6IRt1QrNBElHgT+Ku3u9l8A==
-X-Google-Smtp-Source: APXvYqx2SWdumhPkH5P3gln1VTA5Gs82OL7mLLrZL7mJUvwTSPLtsScdi8xmqLuKBVriYCt+dSX14w==
-X-Received: by 2002:a17:90a:c404:: with SMTP id
- i4mr11802060pjt.81.1567110526780; 
- Thu, 29 Aug 2019 13:28:46 -0700 (PDT)
+ bh=Kp6bWICVzcD1vRMYLxKwPKSzCM3AbPwuHgbbnTiMIUM=;
+ b=ohA28ZhlOdXf6COli/590YrLBbuvm1PSvMflHg+Ojf0aihjhoraJXDV/ElqlWs3PCW
+ H7J2TIjeoNSvx4e38sdFNCDfuMVql4k8MD1KIx5c+Y0lKD5ua+ZGcfbYHM7In2g2L1Db
+ o9ZpypXpOvjbKKhtocHY49OjPfCn4D7Avh79F8487c1esOqoz9wbcrYPHNxmW4fyHiD+
+ m1i4mP3CnmcmAhKmrN4CCdQAWikbheGN+9VGppGkV+JY1ZTf1JSjOaD0RGWQR08augF9
+ /eLORMihvHXqSZNfc7LG1RNFZJh4i2VK7YoPEOZsOkKPBK3Qc/zezMFs/ts72uqX79hu
+ A6Fg==
+X-Gm-Message-State: APjAAAUo7o2qXlI4OFEmWQ+WIVbVh0AP3YX7sVmgHlctAwHYwk0TU25r
+ b4wCCKMWTkfDpFjJ/Ivf+Mj7f087uQ0=
+X-Google-Smtp-Source: APXvYqyLIDIrWiwlmeOL7xbftwvKDLTvfL8Kl7uOXyBWKuQ2LiGHI5n3peVWp0D/kjYHVlLAbC3ttA==
+X-Received: by 2002:a63:5048:: with SMTP id q8mr9808567pgl.446.1567110527555; 
+ Thu, 29 Aug 2019 13:28:47 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.45
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:46 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:47 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 04/17] coresight: etr_buf: Consolidate refcount initialization
-Date: Thu, 29 Aug 2019 14:28:29 -0600
-Message-Id: <20190829202842.580-5-mathieu.poirier@linaro.org>
+Subject: [PATCH 05/17] coresight: tmc-etr: Handle memory errors
+Date: Thu, 29 Aug 2019 14:28:30 -0600
+Message-Id: <20190829202842.580-6-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132847_747444_B566217B 
-X-CRM114-Status: GOOD (  11.24  )
+X-CRM114-CacheID: sfid-20190829_132848_632183_81C8E183 
+X-CRM114-Status: GOOD (  12.24  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -106,58 +105,55 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-We now use refcounts for the etr_buf users. Let us initialize it
-while we allocate it.
+We have so far ignored the memory errors, assuming that we have perfect
+hardware and driver. Let us handle the memory errors reported by the
+TMC ETR in status and truncate the buffer.
 
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+[Removed ASCII smiley face from changelog]
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc-etr.c | 13 ++-----------
- 1 file changed, 2 insertions(+), 11 deletions(-)
+ drivers/hwtracing/coresight/coresight-tmc-etr.c | 13 +++++++++++++
+ drivers/hwtracing/coresight/coresight-tmc.h     |  1 +
+ 2 files changed, 14 insertions(+)
 
 diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-index 17006705287a..3116d1f28e66 100644
+index 3116d1f28e66..2246c1e6744a 100644
 --- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
 +++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
-@@ -871,6 +871,7 @@ static struct etr_buf *tmc_alloc_etr_buf(struct tmc_drvdata *drvdata,
- 		return ERR_PTR(rc);
- 	}
+@@ -928,6 +928,19 @@ static void tmc_sync_etr_buf(struct tmc_drvdata *drvdata)
+ 	rrp = tmc_read_rrp(drvdata);
+ 	rwp = tmc_read_rwp(drvdata);
+ 	status = readl_relaxed(drvdata->base + TMC_STS);
++
++	/*
++	 * If there were memory errors in the session, truncate the
++	 * buffer.
++	 */
++	if (WARN_ON_ONCE(status & TMC_STS_MEMERR)) {
++		dev_dbg(&drvdata->csdev->dev,
++			"tmc memory error detected, truncating buffer\n");
++		etr_buf->len = 0;
++		etr_buf->full = 0;
++		return;
++	}
++
+ 	etr_buf->full = status & TMC_STS_FULL;
  
-+	refcount_set(&etr_buf->refcount, 1);
- 	dev_dbg(dev, "allocated buffer of size %ldKB in mode %d\n",
- 		(unsigned long)size >> 10, etr_buf->mode);
- 	return etr_buf;
-@@ -1263,8 +1264,6 @@ get_perf_etr_buf_cpu_wide(struct tmc_drvdata *drvdata,
- 	if (IS_ERR(etr_buf))
- 		return etr_buf;
- 
--	refcount_set(&etr_buf->refcount, 1);
--
- 	/* Now that we have a buffer, add it to the IDR. */
- 	mutex_lock(&drvdata->idr_mutex);
- 	ret = idr_alloc(&drvdata->idr, etr_buf, pid, pid + 1, GFP_KERNEL);
-@@ -1291,19 +1290,11 @@ get_perf_etr_buf_per_thread(struct tmc_drvdata *drvdata,
- 			    struct perf_event *event, int nr_pages,
- 			    void **pages, bool snapshot)
- {
--	struct etr_buf *etr_buf;
--
- 	/*
- 	 * In per-thread mode the etr_buf isn't shared, so just go ahead
- 	 * with memory allocation.
- 	 */
--	etr_buf = alloc_etr_buf(drvdata, event, nr_pages, pages, snapshot);
--	if (IS_ERR(etr_buf))
--		goto out;
--
--	refcount_set(&etr_buf->refcount, 1);
--out:
--	return etr_buf;
-+	return alloc_etr_buf(drvdata, event, nr_pages, pages, snapshot);
- }
- 
- static struct etr_buf *
+ 	WARN_ON(!etr_buf->ops || !etr_buf->ops->sync);
+diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
+index 1ed50411cc3c..95d2e2747970 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc.h
++++ b/drivers/hwtracing/coresight/coresight-tmc.h
+@@ -47,6 +47,7 @@
+ #define TMC_STS_TMCREADY_BIT	2
+ #define TMC_STS_FULL		BIT(0)
+ #define TMC_STS_TRIGGERED	BIT(1)
++#define TMC_STS_MEMERR		BIT(5)
+ /*
+  * TMC_AXICTL - 0x110
+  *
 -- 
 2.17.1
 
