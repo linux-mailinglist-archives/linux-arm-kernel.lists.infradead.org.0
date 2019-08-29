@@ -2,65 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 175EAA1EE8
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:24:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A433A1F40
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:32:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jCq/eji1ztfKwVj5TKYy4Qog0oHx4yOVdI/tfueNEic=; b=aojDnzvKnRV1Ly
-	fq3hAKkI/Y2xM3lOg8OucCWayD87ESuc/XdPnVDDOI7/4XIFttqzXMYylE0QT6k07HZkHghALDBnJ
-	UJ8Az1gaVvkomqoI5OiMKQb9y1PXyhe3Wi1x2vYyAprMDRfwm3bncvhNSpclWrITBNsCy+P0nw5Yw
-	oUdDJbSFILoOmmxtnjAy+bX/k6AkliXAxsCVlRLFZmiewDkGNuePutmsQyN1qeK7N0tfVQ34gvP+F
-	bOmmUbwZl40KoasIPx6PvK0CEBd7YLD30ggFROqlEvHCeB4PE75PeeVbhMVVUC9K5Bs6r947dneJC
-	97OIYqDUpAhauZKVC3aw==;
+	List-Owner; bh=4HVehUtG0/+s5DgSjmTu9KBHCLUURYNWk49FCpYGnkE=; b=RWNOJ5qNNIVWQC
+	AS9sm1Ki5zvTnFWeOWB5VQ1x97oMXbkMvl8aRN2IybHr+xfvUq34l77OGvK6XoR+0aoxPl4Lqj5yB
+	zcEo6QQrD0Zp4LOG4XWem4Eb2iJC1NPkyf04s5WwLpP6MWfdJcqJOd71vJ/SgDVOaF9rmNCEtyCTf
+	dDWckigKHK+3WNi1NYBSqbJ2SiEwQZc9J1nH5gLwydg9WZ0HzUG9FZLzXRpzEdGKfGIWzylrKrGhN
+	no46jbB/iHlsjf0oB2ymcLZ4cVPf3rEYM2oUAyZwySBMPg55yYPLUdz/jauP/+qyfD/FRfd5ww2oo
+	EB2onJn1I+OfSHTWf7iQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MHQ-0007M0-V1; Thu, 29 Aug 2019 15:24:09 +0000
+	id 1i3MPU-000344-GL; Thu, 29 Aug 2019 15:32:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MGj-0007Km-SC
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:23:27 +0000
-Received: from mail-wm1-f54.google.com (mail-wm1-f54.google.com
- [209.85.128.54])
+ id 1i3MIV-0000ll-GI
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:25:18 +0000
+Received: from mail-wm1-f49.google.com (mail-wm1-f49.google.com
+ [209.85.128.49])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B5C9522CED
+ by mail.kernel.org (Postfix) with ESMTPSA id E5D2623430
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 15:23:24 +0000 (UTC)
+ Thu, 29 Aug 2019 15:25:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567092205;
- bh=2+HFlzM/yfynG5ANvTwsYTNcTosDJEfLB1NO1x5eKc8=;
+ s=default; t=1567092315;
+ bh=izoNkph/QjwkRYkXPZQmm9ytluYnjBoc9TYsmIgqnSU=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=GAVnAPkSxjpWAZC93k6hMInjPRKhvc39VTMjooTTdWO7dn7yisl64tavG1j2Q2ZLU
- MPrSp8U6Vp6wzEg8iWg3R11+R4lOJYRZ6GR2hzR0ihp2fXafPxntv2PlfPsUBCso/C
- z+0HR98BCFWc7g/gTOZ9HLJZmXNUr9gddpHfPWcA=
-Received: by mail-wm1-f54.google.com with SMTP id n2so2900244wmk.4
+ b=iUFipIVZ1HFIrEALnAF/EnoEcF209ZLWvRC4PEWbszkw/lCP9Yvj37ci8J+w7/hxQ
+ zi/3IdAUX14zyQDtjJ0thyL4mPt5cSWzBq103mHEZpUO2EBt91zBEDCvu4xzO9SOzg
+ 6Vbq+bL+ekh6s4QH3C1lVJ97BVS4YmMDzILHOYCc=
+Received: by mail-wm1-f49.google.com with SMTP id n2so2906137wmk.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 08:23:24 -0700 (PDT)
-X-Gm-Message-State: APjAAAUI6evSkUN3cm6D2b5mnZywpgDqLb6o/hJGHA2C4zrVL1aGvcxS
- iR+QBFPIVEUqwcE82zhGiiPE4gWvUvLObBnBnh/3SQ==
-X-Google-Smtp-Source: APXvYqxvavrhFMLKkvBENomgDKP8QLeedIChXt62FYtW3S9te9FAf4UqqaK8w3TWd/JOSNU9JURf6QE1EcsgN2GtvFA=
+ Thu, 29 Aug 2019 08:25:14 -0700 (PDT)
+X-Gm-Message-State: APjAAAUU49xRZjHHOEwva4q2tiCfk8gBGWhAExJeWVM411GeiMDRE/zR
+ Ai+8CUlrg+4wdjnU7kQmjM1gJ4LKRVcWDtUtsmVg7A==
+X-Google-Smtp-Source: APXvYqw9u1fu+EHt/4WAojvjLjQ7rKpFezaEHESzZAnb7jZ2raRq1MIbYw3eQuXsuFrZUlLqFJAlw9hQa1Rszg/FXvs=
 X-Received: by 2002:a05:600c:22d7:: with SMTP id
- 23mr12797740wmg.0.1567092203251; 
- Thu, 29 Aug 2019 08:23:23 -0700 (PDT)
+ 23mr12807622wmg.0.1567092313279; 
+ Thu, 29 Aug 2019 08:25:13 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190829111843.41003-1-vincenzo.frascino@arm.com>
- <20190829111843.41003-3-vincenzo.frascino@arm.com>
-In-Reply-To: <20190829111843.41003-3-vincenzo.frascino@arm.com>
+ <20190829111843.41003-5-vincenzo.frascino@arm.com>
+In-Reply-To: <20190829111843.41003-5-vincenzo.frascino@arm.com>
 From: Andy Lutomirski <luto@kernel.org>
-Date: Thu, 29 Aug 2019 08:23:11 -0700
-X-Gmail-Original-Message-ID: <CALCETrWNbMhYwpsKtutCTW4M7rMmOF0YUy-k1QgGEpY-Gd1xQw@mail.gmail.com>
-Message-ID: <CALCETrWNbMhYwpsKtutCTW4M7rMmOF0YUy-k1QgGEpY-Gd1xQw@mail.gmail.com>
-Subject: Re: [PATCH 2/7] lib: vdso: Build 32 bit specific functions in the
- right context
+Date: Thu, 29 Aug 2019 08:25:02 -0700
+X-Gmail-Original-Message-ID: <CALCETrVprrrR3TSVSAnHfLW4HDQG=gcVrdjmsk6ss6Z3+vKOBg@mail.gmail.com>
+Message-ID: <CALCETrVprrrR3TSVSAnHfLW4HDQG=gcVrdjmsk6ss6Z3+vKOBg@mail.gmail.com>
+Subject: Re: [PATCH 4/7] lib: vdso: Remove VDSO_HAS_32BIT_FALLBACK
 To: Vincenzo Frascino <vincenzo.frascino@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_082326_163849_A4953062 
-X-CRM114-Status: UNSURE (   9.49  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_082516_145306_FA91586A 
+X-CRM114-Status: GOOD (  19.62  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,15 +102,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 On Thu, Aug 29, 2019 at 4:19 AM Vincenzo Frascino
 <vincenzo.frascino@arm.com> wrote:
 >
-> clock_gettime32 and clock_getres_time32 should be compiled only with a
-> 32 bit vdso library.
+> VDSO_HAS_32BIT_FALLBACK was introduced to address a regression which
+> caused seccomp to deny access to the applications to clock_gettime64()
+> and clock_getres64() because they are not enabled in the existing
+> filters.
 >
-> Exclude these symbols when BUILD_VDSO32 is not defined.
+> The purpose of VDSO_HAS_32BIT_FALLBACK was to simplify the conditional
+> implementation of __cvdso_clock_get*time32() variants.
+>
+> Now that all the architectures that support the generic vDSO library
+> have been converted to support the 32 bit fallbacks the conditional
+> can be removed.
+>
+> Cc: Thomas Gleixner <tglx@linutronix.de>
+> CC: Andy Lutomirski <luto@kernel.org>
+> References: c60a32ea4f45 ("lib/vdso/32: Provide legacy syscall fallbacks")
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> ---
+>  lib/vdso/gettimeofday.c | 10 ----------
+>  1 file changed, 10 deletions(-)
+>
+> diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
+> index a86e89e6dedc..2c4b311c226d 100644
+> --- a/lib/vdso/gettimeofday.c
+> +++ b/lib/vdso/gettimeofday.c
+> @@ -126,13 +126,8 @@ __cvdso_clock_gettime32(clockid_t clock, struct old_timespec32 *res)
+>
+>         ret = __cvdso_clock_gettime_common(clock, &ts);
+>
+> -#ifdef VDSO_HAS_32BIT_FALLBACK
+>         if (unlikely(ret))
+>                 return clock_gettime32_fallback(clock, res);
+> -#else
+> -       if (unlikely(ret))
+> -               ret = clock_gettime_fallback(clock, &ts);
+> -#endif
+>
+>         if (likely(!ret)) {
+>                 res->tv_sec = ts.tv_sec;
 
-Reviewed-by: Andy Lutomirski <luto@kernel.org>
+I think you could have a little follow-up patch to remove the if
+statement -- by the time you get here, it's guaranteed that ret == 0.
 
-BTW, this is a great patch: it's either correct or it won't build.  I
-like patches like that.
+--Andy
 
 _______________________________________________
 linux-arm-kernel mailing list
