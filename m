@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE594A1846
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:21:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57DD9A1847
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:21:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oXnyFdaOVbr6B59FNHSUerNC+9V6YTUJQVD3qRcWoXg=; b=szYUSM2cLWffTq
-	MlxFVLY4yEgAQiPYmSWHy5JWn66cX37/9mxMbxRSRC3OqxHUVkvceG245kGJZ2RPsTYgzG4FRU0Gw
-	U0ghj8LoXvu/ILGfzAhUjtpvMdIfKG4jt5DrWN7k46UBIqlx5q4qbRjOh3/XDhMeApZ6ksW7756eY
-	6fPP5OwbECr/w8GjvjTNY9Ki2mPQopkq9oxvmvMWsa7KivUMyCMeSSCEO59E3GoBfubBUVYbThsI/
-	Cw/TYtYVpeJOXUvA9a4K5weAxZsZoqq+hxXuM7820cqgGWob+swfvL+PqI5MDw1Q29dmWn2OtQzvB
-	LvDx3UO26BVUZhPsCgzQ==;
+	List-Owner; bh=ti3WE93yhMMuREgzu+HrZcuJ9SYfhW/nYVAJEmlgOpY=; b=M1da70kSWqtTbO
+	U7OwvTQvvIBYDJvYCjGktJ86FrCq7vyo/lRyTVx6HeXoXdk1VTWC3RIXeCfBFaTHgm7ttMDomOruN
+	gLxE0xVg850XzMfwWdkl0EtSEmW9meuf8/ngplhohBtoVS+Ia/gKRZf22OAw+OOIRXTS2eSYCH84+
+	/AicZPF0fBu6BAipfe4nYPgeSerJNX1AWH/rC9z81SblX3TiYOwRx94DLwGNZjlqgUoZvBQUxmNfS
+	38GdL29Hep7FZJXyLOYWHzIbsZu5P1ydmszam01DqtDL3Q9nj4gZvaN94JRicfTL4rUwYPHywCec+
+	eq7OxFnUVcrSobMxOG1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IUH-0003lT-81; Thu, 29 Aug 2019 11:21:09 +0000
+	id 1i3IUX-0003za-3h; Thu, 29 Aug 2019 11:21:25 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3ISP-0001Bg-CJ
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:19:15 +0000
+ id 1i3ISR-0001Dg-AV
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:19:16 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1B13115AB;
- Thu, 29 Aug 2019 04:19:13 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E194A15AD;
+ Thu, 29 Aug 2019 04:19:14 -0700 (PDT)
 Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
  [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A109F3F59C;
- Thu, 29 Aug 2019 04:19:11 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 546C63F59C;
+ Thu, 29 Aug 2019 04:19:13 -0700 (PDT)
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
 To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org
-Subject: [PATCH 3/7] mips: compat: vdso: Use legacy syscalls as fallback
-Date: Thu, 29 Aug 2019 12:18:39 +0100
-Message-Id: <20190829111843.41003-4-vincenzo.frascino@arm.com>
+Subject: [PATCH 4/7] lib: vdso: Remove VDSO_HAS_32BIT_FALLBACK
+Date: Thu, 29 Aug 2019 12:18:40 +0100
+Message-Id: <20190829111843.41003-5-vincenzo.frascino@arm.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190829111843.41003-1-vincenzo.frascino@arm.com>
 References: <20190829111843.41003-1-vincenzo.frascino@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_041913_567240_899323E2 
-X-CRM114-Status: UNSURE (   9.60  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_041915_462329_33565511 
+X-CRM114-Status: GOOD (  10.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,92 +68,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The generic VDSO implementation uses the Y2038 safe clock_gettime64() and
-clock_getres_time64() syscalls as fallback for 32bit VDSO. This breaks
-seccomp setups because these syscalls might be not (yet) allowed.
+VDSO_HAS_32BIT_FALLBACK was introduced to address a regression which
+caused seccomp to deny access to the applications to clock_gettime64()
+and clock_getres64() because they are not enabled in the existing
+filters.
 
-Implement the 32bit variants which use the legacy syscalls and select the
-variant in the core library.
+The purpose of VDSO_HAS_32BIT_FALLBACK was to simplify the conditional
+implementation of __cvdso_clock_get*time32() variants.
 
-The 64bit time variants are not removed because they are required for the
-time64 based vdso accessors.
+Now that all the architectures that support the generic vDSO library
+have been converted to support the 32 bit fallbacks the conditional
+can be removed.
 
-Cc: Paul Burton <paul.burton@mips.com>
-Fixes: 00b26474c2f1 ("lib/vdso: Provide generic VDSO implementation")
+Cc: Thomas Gleixner <tglx@linutronix.de>
+CC: Andy Lutomirski <luto@kernel.org>
+References: c60a32ea4f45 ("lib/vdso/32: Provide legacy syscall fallbacks")
 Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
 ---
- arch/mips/include/asm/vdso/gettimeofday.h | 45 +++++++++++++++++++++++
- arch/mips/vdso/config-n32-o32-env.c       |  1 +
- 2 files changed, 46 insertions(+)
+ lib/vdso/gettimeofday.c | 10 ----------
+ 1 file changed, 10 deletions(-)
 
-diff --git a/arch/mips/include/asm/vdso/gettimeofday.h b/arch/mips/include/asm/vdso/gettimeofday.h
-index c59fe08b0347..e78462e8ca2e 100644
---- a/arch/mips/include/asm/vdso/gettimeofday.h
-+++ b/arch/mips/include/asm/vdso/gettimeofday.h
-@@ -105,6 +105,51 @@ static __always_inline int clock_getres_fallback(
- 	return error ? -ret : ret;
- }
+diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
+index a86e89e6dedc..2c4b311c226d 100644
+--- a/lib/vdso/gettimeofday.c
++++ b/lib/vdso/gettimeofday.c
+@@ -126,13 +126,8 @@ __cvdso_clock_gettime32(clockid_t clock, struct old_timespec32 *res)
  
-+#if _MIPS_SIM != _MIPS_SIM_ABI64
-+
-+#define VDSO_HAS_32BIT_FALLBACK	1
-+
-+static __always_inline long clock_gettime32_fallback(
-+					clockid_t _clkid,
-+					struct old_timespec32 *_ts)
-+{
-+	register struct old_timespec32 *ts asm("a1") = _ts;
-+	register clockid_t clkid asm("a0") = _clkid;
-+	register long ret asm("v0");
-+	register long nr asm("v0") = __NR_clock_gettime;
-+	register long error asm("a3");
-+
-+	asm volatile(
-+	"       syscall\n"
-+	: "=r" (ret), "=r" (error)
-+	: "r" (clkid), "r" (ts), "r" (nr)
-+	: "$1", "$3", "$8", "$9", "$10", "$11", "$12", "$13",
-+	  "$14", "$15", "$24", "$25", "hi", "lo", "memory");
-+
-+	return error ? -ret : ret;
-+}
-+
-+static __always_inline int clock_getres32_fallback(
-+					clockid_t _clkid,
-+					struct old_timespec32 *_ts)
-+{
-+	register struct old_timespec32 *ts asm("a1") = _ts;
-+	register clockid_t clkid asm("a0") = _clkid;
-+	register long ret asm("v0");
-+	register long nr asm("v0") = __NR_clock_getres;
-+	register long error asm("a3");
-+
-+	asm volatile(
-+	"       syscall\n"
-+	: "=r" (ret), "=r" (error)
-+	: "r" (clkid), "r" (ts), "r" (nr)
-+	: "$1", "$3", "$8", "$9", "$10", "$11", "$12", "$13",
-+	  "$14", "$15", "$24", "$25", "hi", "lo", "memory");
-+
-+	return error ? -ret : ret;
-+}
-+#endif
-+
- #ifdef CONFIG_CSRC_R4K
+ 	ret = __cvdso_clock_gettime_common(clock, &ts);
  
- static __always_inline u64 read_r4k_count(void)
-diff --git a/arch/mips/vdso/config-n32-o32-env.c b/arch/mips/vdso/config-n32-o32-env.c
-index 7f8d957abd4a..0011a632aef2 100644
---- a/arch/mips/vdso/config-n32-o32-env.c
-+++ b/arch/mips/vdso/config-n32-o32-env.c
-@@ -10,6 +10,7 @@
-  */
- #undef CONFIG_64BIT
+-#ifdef VDSO_HAS_32BIT_FALLBACK
+ 	if (unlikely(ret))
+ 		return clock_gettime32_fallback(clock, res);
+-#else
+-	if (unlikely(ret))
+-		ret = clock_gettime_fallback(clock, &ts);
+-#endif
  
-+#define BUILD_VDSO32
- #define CONFIG_32BIT 1
- #define CONFIG_GENERIC_ATOMIC64 1
- #define BUILD_VDSO32_64
+ 	if (likely(!ret)) {
+ 		res->tv_sec = ts.tv_sec;
+@@ -240,13 +235,8 @@ __cvdso_clock_getres_time32(clockid_t clock, struct old_timespec32 *res)
+ 
+ 	ret = __cvdso_clock_getres_common(clock, &ts);
+ 
+-#ifdef VDSO_HAS_32BIT_FALLBACK
+ 	if (unlikely(ret))
+ 		return clock_getres32_fallback(clock, res);
+-#else
+-	if (unlikely(ret))
+-		ret = clock_getres_fallback(clock, &ts);
+-#endif
+ 
+ 	if (likely(!ret)) {
+ 		res->tv_sec = ts.tv_sec;
 -- 
 2.23.0
 
