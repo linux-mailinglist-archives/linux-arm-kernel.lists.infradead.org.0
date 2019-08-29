@@ -2,59 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7168A14A6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 19F77A14A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:23:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=oXWzTClJ6q1/buv33L5QeuNKS8WYP1pfWa9oGZOYF+I=; b=CaTY5Y0HBHZusT
-	BNBwPayXzm9pq91V9t0TFV9mw88+eoFdkk+VN0daczmNo1Ayq5mdBikHpsZL4YydMS0km6l5Uep0P
-	kYCQQ3AI6jKu07byt8L9WB553MG7BCpW469RKbgHuXO8uPqeGwzAkHTRqeG8NmX7D4gqMf5wxG7zo
-	pQDcTpR3L2qw0cptV7LeHELIiJc9vJA98gnUwizHbygT4EXIKzDrcxy3BnQqS8GHG5OKo7jVISrFv
-	YZbJcMF1KitsAXCB9NJP+RywrX6RERq9WmSlrPdA4WfMX1nkDchYL4m7Fs5MQr2fuq9tB7h/u5CLv
-	as8uSOhzAIvAuL51Vwxg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=dOjp2uEeNOH0b4BIErWnx6AzJRFpibHH+k2i9F70etQ=; b=M/9G4KNyhaP7gt
+	LbuiZEK5tN2h3ddfJZSD1uLKc9OBxMjZ8OJ7K6HkfowvnNJWKm+7P9Ej9aUz35u0phzZljDBetPXc
+	g8+0KsBRRjeWXHpSgUvA533z63Yrn8cPMilQunIMd5UznOqzCRe5BHaKArGkWmjMapODs/KUU8GZX
+	ZmS+yFLpu0o3wkte2nN2QJH+P697O3ZACEAHksSuk+NIExON7TWFvOaF3osFOpf5MmpN3iINJ9Tql
+	DD+T32QPkpDmRAwQcF4HwTQg30/o3oz2BY6dYpOzFZU6izyjdv1WGPCGpNG+uISkW1H6nkttRdh0S
+	23hoV2yTJPp/o1hLjqaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3GeI-0000dS-OI; Thu, 29 Aug 2019 09:23:23 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i3Gee-0000t3-BO; Thu, 29 Aug 2019 09:23:44 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ge3-0000c6-PT; Thu, 29 Aug 2019 09:23:09 +0000
-X-UUID: d75bbba9372340598ead63c6e029411e-20190829
-X-UUID: d75bbba9372340598ead63c6e029411e-20190829
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1i3Ge4-0000c8-3P; Thu, 29 Aug 2019 09:23:09 +0000
+X-UUID: f8f94fa2ea0845a9bc60740ea17c4258-20190829
+X-UUID: f8f94fa2ea0845a9bc60740ea17c4258-20190829
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 261645994; Thu, 29 Aug 2019 01:23:09 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ with ESMTP id 554082548; Thu, 29 Aug 2019 01:23:10 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
  MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 02:23:07 -0700
+ 15.0.1395.4; Thu, 29 Aug 2019 02:23:08 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 17:23:04 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 17:23:06 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 29 Aug 2019 17:23:03 +0800
+ Transport; Thu, 29 Aug 2019 17:23:04 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Biju Das <biju.das@bp.renesas.com>
-Subject: [PATCH next v11 00/11] add USB GPIO based connection detection driver
-Date: Thu, 29 Aug 2019 17:22:27 +0800
-Message-ID: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH next v11 01/11] dt-binding: usb: add usb-role-switch property
+Date: Thu, 29 Aug 2019 17:22:28 +0800
+Message-ID: <1567070558-29417-2-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
+In-Reply-To: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
+References: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: CF72600A8E3B74F2B4A3F789FB7C5C6E97A9154F3CEFE5ADBB3278660AD8AFB82000:8
+X-TM-SNTS-SMTP: 6188CDD0170EA958A65BD996F30BB0DC41416F50EEBF65FBA886EA51E3BD7E412000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_022307_833902_671F320F 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20190829_022308_142644_08AD7214 
+X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -75,7 +80,8 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Heikki Krogerus <heikki.krogerus@linux.intel.com>,
  Badhri Jagan Sridharan <badhri@google.com>,
  Linus Walleij <linus.walleij@linaro.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>, Andy
+ Yu Chen <chenyu56@huawei.com>, linux-kernel@vger.kernel.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Andy
  Shevchenko <andy.shevchenko@gmail.com>, linux-mediatek@lists.infradead.org,
  Min Guo <min.guo@mediatek.com>, Chunfeng Yun <chunfeng.yun@mediatek.com>,
  Nagarjuna Kristam <nkristam@nvidia.com>, Adam
@@ -86,150 +92,63 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Because the USB Connector is introduced and the requirement of
-usb-connector.txt binding, the old way using extcon to support
-USB Dual-Role switch is now deprecated, meanwhile there is no
-available common driver when use Type-B connector, typically
-using an input GPIO to detect USB ID pin.
-This patch series introduce a USB GPIO based connection detection
-driver and try to replace the function provided by extcon-usb-gpio
-driver.
+Add a property usb-role-switch to tell the driver that use
+USB Role Switch framework to handle the role switch,
+it's useful when the driver has already supported other ways,
+such as extcon framework etc.
 
-v11 changes:
-  1. add Reviewed-by Linus for [02/11] ad [03/11]
-  2. change compatible as "gpio-usb-b-connector", and remove label
-    in example suggested by Rob
+Cc: Biju Das <biju.das@bp.renesas.com>
+Cc: Yu Chen <chenyu56@huawei.com>
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Heikki Krogerus <heikki.krogerus@linux.intel.com>
+---
+v7~v11: no changes
 
-NOTE: based on the following series
- https://lore.kernel.org/patchwork/patch/1103630/
- [v3,1/7] drivers: Introduce device lookup variants by name
+v6:
+    1. merge into this series patch
+    2. add Reviewed-by
 
- they are already in:
- https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git/log/drivers/base/core.c?h=driver-core-next
+(no v4, v5)
 
-v10 changes:
-  1. revert commit log changes of [06/11] and [07/11]
+v3:
+    add property type, modify description suggested by Heikki
 
-v9 changes:
-  1. replace signed-off-by by suggested-by Heikki
-  2. add reviewed-by Linus
-  3. use class_find_device_by_fwnode() introduced by series [1]
+v2:
+    describe it in terms of h/w functionality suggested by Rob
 
-[1]:
- https://lore.kernel.org/patchwork/patch/1103630/
- [v3,1/7] drivers: Introduce device lookup variants by name
+v1:
+    the property is discussed in:
+    [v2,2/7] dt-bindings: usb: renesas_usb3: add usb-role-switch property
+    https://patchwork.kernel.org/patch/10852497/
 
- they are already in:
- https://git.kernel.org/pub/scm/linux/kernel/git/gregkh/driver-core.git/log/drivers/base/core.c?h=driver-core-next
+    Mediatek and Hisilicon also try to use it:
+    [v4,3/6] dt-bindings: usb: mtu3: add properties about USB Role Switch
+    https://patchwork.kernel.org/patch/10918385/
+    [v4,6/6] usb: mtu3: register a USB Role Switch for dual role mode
+    https://patchwork.kernel.org/patch/10918367/
 
-v8 changes:
-  1. rename the driver's name suggested by Heikki
-  2. move the driver from usb/roles/ into usb/common/ suggested by Heikki
-  3. introduce Kconfig for usb common core to add the new driver
-  4. modify binding of the driver 
-  5. rename the subject title
+    [v6,10/13] usb: dwc3: Registering a role switch in the DRD code
+    https://patchwork.kernel.org/patch/10909981/
+---
+ Documentation/devicetree/bindings/usb/generic.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-v7 changes:
-  1. [5/10]: add signed-off-by Chunfeng
-  2. [6/10]: add signed-off-by Chunfeng
-  3. [6/10]: depends on linux-next of Rafael's tree [1]
-  4. [7/10]: add signed-off-by Chunfeng and tested-by Biju
-  5. [9/10]: add tested-by Nagarjuna, and remove DEV_PMS_OPS suggested by Andy
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/rafael/linux-pm.git/log/?h=linux-next
-
-v6 changes:
-  1. merge [1] and [2] into this series
-  2. don't use graph anymore to find usb-role-switch
-  3. abandon [3] and introduce three patches (6, 7, 8 in this series)
-     to rebuild APIs getting usb-role-switch
-
-  [1]: [v3] dt-binding: usb: add usb-role-switch property
-       https://patchwork.kernel.org/patch/10934835/
-  [2]: [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
-       https://patchwork.kernel.org/patch/10909971/
-
-  [3]: [PATCH v5 4/6] usb: roles: add API to get usb_role_switch by node
-
-v5 changes:
-  1. remove linux/of.h and put usb_role_switch when error happens,
-     suggested by Biju
-  2. treat Type-B connector as USB controller's child, but not as
-     a virtual device, suggested by Rob
-  3. provide and use generic property "usb-role-switch", see [1],
-     suggested by Rob
-
-  Note: this series still depends on [2]
-
-  [1]: [v3] dt-binding: usb: add usb-role-switch property
-       https://patchwork.kernel.org/patch/10934835/
-  [2]: [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
-       https://patchwork.kernel.org/patch/10909971/
-
-v4 changes:
-  1. use switch_fwnode_match() to find fwnode suggested by Heikki
-  2. assign fwnode member of usb_role_switch struct suggested by Heikki
-  3. make [4/6] depend on [2]
-  3. remove linux/gpio.h suggested by Linus
-  4. put node when error happens
-
-  [4/6] usb: roles: add API to get usb_role_switch by node
-  [2] [v6,08/13] usb: roles: Introduce stubs for the exiting functions in role.h
-    https://patchwork.kernel.org/patch/10909971/
-
-v3 changes:
-  1. add GPIO direction, and use fixed-regulator for GPIO controlled
-    VBUS regulator suggested by Rob;
-  2. rebuild fwnode_usb_role_switch_get() suggested by Andy and Heikki
-  3. treat the type-B connector as a virtual device;
-  4. change file name of driver again
-  5. select USB_ROLE_SWITCH in mtu3/Kconfig suggested by Heikki
-  6. rename ssusb_mode_manual_switch() to ssusb_mode_switch()
-
-v2 changes:
- 1. make binding clear, and add a extra compatible suggested by Hans
-
-Chunfeng Yun (8):
-  dt-binding: usb: add usb-role-switch property
-  dt-bindings: connector: add optional properties for Type-B
-  dt-bindings: usb: add binding for USB GPIO based connection detection
-    driver
-  dt-bindings: usb: mtu3: add properties about USB Role Switch
-  usb: roles: get usb-role-switch from parent
-  usb: common: create Kconfig file
-  usb: common: add USB GPIO based connection detection driver
-  usb: mtu3: register a USB Role Switch for dual role mode
-
-Heikki Krogerus (2):
-  device connection: Add fwnode_connection_find_match()
-  usb: roles: Add fwnode_usb_role_switch_get() function
-
-Yu Chen (1):
-  usb: roles: Introduce stubs for the exiting functions in role.h
-
- .../bindings/connector/usb-connector.txt      |  14 +
- .../devicetree/bindings/usb/generic.txt       |   4 +
- .../devicetree/bindings/usb/mediatek,mtu3.txt |  10 +
- .../devicetree/bindings/usb/usb-conn-gpio.txt |  30 ++
- drivers/base/devcon.c                         |  43 ++-
- drivers/usb/Kconfig                           |  35 +--
- drivers/usb/common/Kconfig                    |  51 ++++
- drivers/usb/common/Makefile                   |   1 +
- drivers/usb/common/usb-conn-gpio.c            | 284 ++++++++++++++++++
- drivers/usb/mtu3/Kconfig                      |   1 +
- drivers/usb/mtu3/mtu3.h                       |   5 +
- drivers/usb/mtu3/mtu3_debugfs.c               |   4 +-
- drivers/usb/mtu3/mtu3_dr.c                    |  48 ++-
- drivers/usb/mtu3/mtu3_dr.h                    |   6 +-
- drivers/usb/mtu3/mtu3_plat.c                  |   3 +-
- drivers/usb/roles/class.c                     |  41 ++-
- include/linux/device.h                        |  10 +-
- include/linux/usb/role.h                      |  37 +++
- 18 files changed, 569 insertions(+), 58 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
- create mode 100644 drivers/usb/common/Kconfig
- create mode 100644 drivers/usb/common/usb-conn-gpio.c
-
+diff --git a/Documentation/devicetree/bindings/usb/generic.txt b/Documentation/devicetree/bindings/usb/generic.txt
+index 0a74ab8dfdc2..cf5a1ad456e6 100644
+--- a/Documentation/devicetree/bindings/usb/generic.txt
++++ b/Documentation/devicetree/bindings/usb/generic.txt
+@@ -30,6 +30,10 @@ Optional properties:
+ 			optional for OTG device.
+  - adp-disable: tells OTG controllers we want to disable OTG ADP, ADP is
+ 			optional for OTG device.
++ - usb-role-switch: boolean, indicates that the device is capable of assigning
++			the USB data role (USB host or USB device) for a given
++			USB connector, such as Type-C, Type-B(micro).
++			see connector/usb-connector.txt.
+ 
+ This is an attribute to a USB controller such as:
+ 
 -- 
 2.23.0
 
