@@ -2,55 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8A73A2012
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:53:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B559A2024
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:57:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7mnT5yjKoQMXFwuH+Wx7Ap+veRviG+aLx5sMpAwSHG4=; b=jpwj7hdFPgGiw/
-	l1ke5o0I25KZCWmAX/OimacXHdJqZpMGOHhtJb1Vdqc4Gtzy9q7D1t2VFkrWszMGqKUmcatDWnmAf
-	PWiqXZnPHchI0l/b1XxM+n78jL422ny79ovObS5jz6wxQsFhjPO8gaC0Pg0xhonvJLWnDXUbjHR4y
-	vGBvDNM1owQfe0Zh1sfGdeCspvLxkRIVg5M0VuGrkWVhh1HaYTcr0A53JtSXglFb9pZhA+6GHPSlc
-	+jZrwzg/w51yTW/icWtuwlYpCLL9Ika80UC3b1Rb1S3a6c6f7v+BIjWEhw/WLqgGQmRLLvhAj35O1
-	ChVpzS3pxoy0E6Axyong==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=fbF9l9HOT0RDWrja8qu20Ht1lCKtB3ZOoWezs7mDioM=; b=epu7mai3TGimOV
+	8dfukcBGSxTmZWXCUFOG4MfRmRPAu8/aox7wDge2itChmLw0pjEHwxtgFSwdJWNPIC/IdDikhjdCC
+	jxv3mIZwXsK8d0kRbR58fngX+JRipiLNvU/QTaZMuH08SZQtRT5MDEYYGhFKq1GLULgILOCaIyEDy
+	1oY8XCjEN1NDvVelmjjfRYyiHX6tqEdRgT9qF5D53RO4wZWJGISJ7oneX9uuAIsChFfvPlyp967J/
+	DoRl9OrDaagYFtNz9CjbCc9h4ACJyN8C5fOPr3bMIl1Z6uGAeq67qe6ExgCYKIB03IOEf6XarmPY6
+	NoelmoVxNK+OEeB+VWhA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Mjo-0005kV-0O; Thu, 29 Aug 2019 15:53:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfT-0001hS-1T
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:49:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 78C1815AB;
- Thu, 29 Aug 2019 08:48:58 -0700 (PDT)
-Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2495F3F738;
- Thu, 29 Aug 2019 08:48:57 -0700 (PDT)
-Subject: Re: [PATCH 2/7] lib: vdso: Build 32 bit specific functions in the
- right context
-To: Andy Lutomirski <luto@kernel.org>
-References: <20190829111843.41003-1-vincenzo.frascino@arm.com>
- <20190829111843.41003-3-vincenzo.frascino@arm.com>
- <CALCETrWNbMhYwpsKtutCTW4M7rMmOF0YUy-k1QgGEpY-Gd1xQw@mail.gmail.com>
-From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <91cf55b4-63a1-9548-c7e0-c4dfa350b687@arm.com>
-Date: Thu, 29 Aug 2019 16:48:55 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i3Mnd-0007vF-4i; Thu, 29 Aug 2019 15:57:25 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3MnM-0007uq-8w
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:57:09 +0000
+Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id B153B67A863;
+ Thu, 29 Aug 2019 17:49:23 +0200 (CEST)
+Received: from DDESAB0033.kontron.local (10.228.0.137) by
+ sntmail14r.snt-is.com (10.203.32.184) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Thu, 29 Aug 2019 17:49:22 +0200
+From: Thomas Schaefer <thomas.schaefer@kontron.com>
+To: <thomas.schaefer@kontron.com>, <shawnguo@kernel.org>,
+ <s.hauer@pengutronix.de>, <kernel@pengutronix.de>, <festevam@gmail.com>,
+ <linux-imx@nxp.com>, <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
+Date: Thu, 29 Aug 2019 17:49:13 +0200
+Message-ID: <20190829154913.2049-1-thomas.schaefer@kontron.com>
+X-Mailer: git-send-email 2.22.0.windows.1
 MIME-Version: 1.0
-In-Reply-To: <CALCETrWNbMhYwpsKtutCTW4M7rMmOF0YUy-k1QgGEpY-Gd1xQw@mail.gmail.com>
-Content-Language: en-US
+X-Originating-IP: [10.228.0.137]
+X-ClientProxiedBy: sntmail14r.snt-is.com (10.203.32.184) To
+ sntmail14r.snt-is.com (10.203.32.184)
+X-C2ProcessedOrg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: B153B67A863.A9974
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: thomas.schaefer@kontron.com
+X-SnT-MailScanner-To: festevam@gmail.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ s.hauer@pengutronix.de, shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084859_280041_F0D240AB 
-X-CRM114-Status: GOOD (  13.08  )
+X-CRM114-CacheID: sfid-20190829_085708_485811_56D51B95 
+X-CRM114-Status: GOOD (  11.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.69 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,38 +78,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>, LKML <linux-kernel@vger.kernel.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- Thomas Gleixner <tglx@linutronix.de>, Mark Salyzyn <salyzyn@android.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/08/2019 16:23, Andy Lutomirski wrote:
-> On Thu, Aug 29, 2019 at 4:19 AM Vincenzo Frascino
-> <vincenzo.frascino@arm.com> wrote:
->>
->> clock_gettime32 and clock_getres_time32 should be compiled only with a
->> 32 bit vdso library.
->>
->> Exclude these symbols when BUILD_VDSO32 is not defined.
-> 
-> Reviewed-by: Andy Lutomirski <luto@kernel.org>
-> 
-> BTW, this is a great patch: it's either correct or it won't build.  I
-> like patches like that.
-> 
+Currently the size parameter in the reg property of usbotg and
+usbh nodes in imx7s and imx7d dts includes is set to 0x200 which
+is wrong for the i.MX7 CPU. According to reference manual, spacing
+of USB controller registers is 0x10000 instead.
 
-Thanks :)
+This patch will fix this and set the 'size' to 0x10000.
 
+Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
+---
+ arch/arm/boot/dts/imx7d.dtsi | 2 +-
+ arch/arm/boot/dts/imx7s.dtsi | 4 ++--
+ 2 files changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/arch/arm/boot/dts/imx7d.dtsi b/arch/arm/boot/dts/imx7d.dtsi
+index 42528d2812a2..f1b098d28b6e 100644
+--- a/arch/arm/boot/dts/imx7d.dtsi
++++ b/arch/arm/boot/dts/imx7d.dtsi
+@@ -117,7 +117,7 @@
+ &aips3 {
+ 	usbotg2: usb@30b20000 {
+ 		compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+-		reg = <0x30b20000 0x200>;
++		reg = <0x30b20000 0x10000>;
+ 		interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+ 		clocks = <&clks IMX7D_USB_CTRL_CLK>;
+ 		fsl,usbphy = <&usbphynop2>;
+diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
+index c1a4fff5ceda..9e25fccf33f0 100644
+--- a/arch/arm/boot/dts/imx7s.dtsi
++++ b/arch/arm/boot/dts/imx7s.dtsi
+@@ -1088,7 +1088,7 @@
+ 
+ 			usbotg1: usb@30b10000 {
+ 				compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+-				reg = <0x30b10000 0x200>;
++				reg = <0x30b10000 0x10000>;
+ 				interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clks IMX7D_USB_CTRL_CLK>;
+ 				fsl,usbphy = <&usbphynop1>;
+@@ -1099,7 +1099,7 @@
+ 
+ 			usbh: usb@30b30000 {
+ 				compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+-				reg = <0x30b30000 0x200>;
++				reg = <0x30b30000 0x10000>;
+ 				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+ 				clocks = <&clks IMX7D_USB_CTRL_CLK>;
+ 				fsl,usbphy = <&usbphynop3>;
 -- 
-Regards,
-Vincenzo
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
