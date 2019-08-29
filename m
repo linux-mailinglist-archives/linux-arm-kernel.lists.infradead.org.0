@@ -2,96 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CFBF0A1248
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 09:06:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0F16A124B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 09:07:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1bu02RTx5iDoRrp7q0GME653ZIJ/K7w39QC2RMKkvrQ=; b=rqjzBxIAP2AgRX
-	gIWveYJu/CTDkzgMUuXPespXhI1uPvP/25UynmnbX1t8MiIsqxXRitmyxjTPT0Co3WA0h3Amc7lv8
-	O/zkIg05HYynEfXGcGMalzxcnHLS7sLBe1nLfCCKkom9PIGAvNMzJCLV4N3+LgW9eNjUkNkS+7s2G
-	R7hpV7a24JSBR3eKSY4DLzmhoE967/kmihMuMZQzoXAyRpr8wNZVjahHJL0bPqmOp0pqCrBjlY0E8
-	GMxIXIwglJ7CYirTL69VtDz2pMLo5sWQmsQE+m2BFPmnMMttqPNpEC4Ek774IOGGoaKWtCPxq+LbD
-	zms9B+qsPvjoTeGCbbyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WyiKCzuggFy2dV7kCdAsAeh9KtaGHs3amp3AWJVoCjE=; b=Rw7cuxNsORmayJ
+	J17N2QCTeVByGkOGmF9G4CCaUH1v6VmLJelv9GJ1tkBywbrajeYmmnUOXP5VcCezMEP/3lTRrExy9
+	yDH62y0HJsCaFZZo/PO1Zj0VxB6QfatX3Y3iNykssyy4+PL8x52Z4FidHyOxljMeddWLauHmSBp6y
+	ciDG5frUf79h1bbSUKxh3dK5VHh6yAPJ5Znb7Q+/wPoBmSRc6GEZvkgfTkSUCIWbgVHwwZ22EgCjO
+	noydhW/x3ufou0uTr8zal6SFk2VMpzdBTQzmaK8tPtdjWM398pzkFn1QgeH+eS/0kxtL/EFmv1KbO
+	ZQqoebtLZs2BnS8Ex+Og==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3EVP-0008Db-Nz; Thu, 29 Aug 2019 07:06:04 +0000
-Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
+	id 1i3EWd-0000CT-O1; Thu, 29 Aug 2019 07:07:20 +0000
+Received: from mail-cys01nam02on0617.outbound.protection.outlook.com
+ ([2a01:111:f400:fe45::617]
+ helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3ETL-0006iz-10
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 07:04:08 +0000
-Received: by mail-wm1-x341.google.com with SMTP id r17so3425246wme.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 00:03:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=syJN1AElda7xhPvOw/vcy1dd6HyoWfY83SuIugcFyfE=;
- b=ApuYI+m8YDXZXFm3JiiYl7767qTRfvwsIUrqU1BtJ2d3ovZVEMt+HLDjKOOIG8qu1y
- H1FIhI5XqpMsPJWwcN+FJL3SMafk+HnnOisnkhs5CTX06OlcP+lctgbMQMQQYPjf1kx/
- m70NRulYPkKyxLP8brmSIv3W7/6N6Npa5ffSDDSuHslYCMPxVrwrHpAj+hoRisd4261N
- sB/bzFTQm+B4HQkAOUQUfWZFcJkFLStqshAbLDIVaNiR32aBlPSG0x9Rl2K87crpsTpj
- bexhAjHtp/q0EQLl/PHc8wg2+Zpw+bIXy3QmloUGO50Kzh0ZWLkQ6PsZw8NWcPyTf/yE
- 3L+w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=syJN1AElda7xhPvOw/vcy1dd6HyoWfY83SuIugcFyfE=;
- b=jFLDEEnWJuviJiR9xCzlPLTKV4YS8rbPBG74Hsfr6lc3nrhFcaCljJiPGsdfM6ybMF
- 2RdwHLyF2w+43nnt6kwyETFsRWmFxvNobwIlBvJ85w6eqbqGRFbPKrfW7dgaXSVG8QoD
- Tq2U8X65b+Da9qn61+jRFUKKKcfN/4fD8IAFLIQDQu5EC4YiJaAmsz7qrcFhBAXnK9QM
- WoXBrspo/PqQEA2NwRWIkoYrNZCWfSyyXXkBrXDgMkLeGGF4z3dcwR5KwbbKSPT59GeQ
- 2+JbxQaFGQT0Vwe7HukZcF0P6rEBpKYT0Uva+vnSE1uCbXzU2TWkf0yaTKJpDOPn5vi5
- p8rA==
-X-Gm-Message-State: APjAAAXktUUPjzo5Ej/MT/tXVlMdpZNcF5W46AXtwvj6nGsp6xct+ftN
- QxDE2khldvCr/hheyFDNayQITg==
-X-Google-Smtp-Source: APXvYqya0CiL9G1moyvmqQVNqGgkib/s77qe7jypGG/sh++aoSP0FKfRPFNRmI03bw4m+Sn596Ij4g==
-X-Received: by 2002:a7b:ce8f:: with SMTP id q15mr2906912wmj.154.1567062231241; 
- Thu, 29 Aug 2019 00:03:51 -0700 (PDT)
-Received: from [192.168.1.6] (124.red-83-36-179.dynamicip.rima-tde.net.
- [83.36.179.124])
- by smtp.gmail.com with ESMTPSA id n14sm4299285wra.75.2019.08.29.00.03.49
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 00:03:50 -0700 (PDT)
-Subject: Re: [PATCH v4 3/4] dt-bindings: Add Qualcomm USB SuperSpeed PHY
- bindings
-To: Bjorn Andersson <bjorn.andersson@linaro.org>
-References: <20190207111734.24171-1-jorge.ramirez-ortiz@linaro.org>
- <20190207111734.24171-4-jorge.ramirez-ortiz@linaro.org>
- <20190223165218.GB572@tuxbook-pro>
-From: Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>
-Message-ID: <6dc0957d-5806-7643-4454-966015865d38@linaro.org>
-Date: Thu, 29 Aug 2019 09:03:48 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.2.1
-MIME-Version: 1.0
-In-Reply-To: <20190223165218.GB572@tuxbook-pro>
+ id 1i3EVf-000076-D3
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 07:06:21 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=F7rUgn8n9PLJ2RCxN+znGewLOFYelGJqKC4QQmGLhe3czE/8bLBA6YyuubeHFQ6w68wQGtT3/d8lg2o+fbowV6GnPYzwrlj+Q83f6giopUChI6BzCM+1grLrE3i+uzwcVLJ/VOK05Fau1cXbAvWyoWnSNlbzXlLojf2MEZ3BlnKfTB2Qyae1niHOV9MDExspe173tSHqgUMghKWyROuZOZ4K4MNgH5mC/sfEqdSVOzjnGUT7THHuT70HJ/d8tjPVVAiuDg6i0DtLDJa7Vp3tOZ1yMuDI+xJhNKfI1oS8VEcuOSkc6yvxliYeAjbhhVwB53nlj4ZSZo5tQDe8Pb0mLQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BhjqkoP+cfgrle1wujUhgUnrxijhKHag89STP5ESqIQ=;
+ b=Vmd4x1JpRtmtRtNYZsKdG83dsrxIyLU1eHiMXdujmGJDle1Dsy/QgczfizZgS6TSWho/u9so8f2WGO/BYVKkqNNxhsmo5AbFysALV/YIKKr9gtrhaQ2wyf93YrWLr/IWMS7ol5bkLvGR+dwj7laNimgu0KKdZkildapq58l446pQq1bWFzXyodDYYN7iQke709tFbAnR+LJRDS6LjoS7bQ298lMJ/vczs3B03Q1/cenNUqofgr3xjuedRlu6g/939DtWcEgoghda2D3vT/SccroygMyp37tyhPNeodeG3KY3xWaRFAqGTOjGnNDDT73hf8zU8yej1NiOnCVUpFAjuQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=synaptics.com; dmarc=pass action=none
+ header.from=synaptics.com; dkim=pass header.d=synaptics.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=Synaptics.onmicrosoft.com; s=selector2-Synaptics-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BhjqkoP+cfgrle1wujUhgUnrxijhKHag89STP5ESqIQ=;
+ b=hGwbx72J8WJIPTYa7h7tghXAWQGA9Juhaq+sC3Qa7XNxxGk08OHnOYwjDx44om5QMWBqcviTCYn4TJa71mYNf/LS7X1FmYNVJC9B3BlvmQRWB6P8XDnf7Gk6njlcpvCpp3eSpWeNwDXsn0usOWOGj4lBOgUlYqE7/gpqsG/CdH0=
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com (20.179.92.152) by
+ BYAPR03MB4615.namprd03.prod.outlook.com (20.179.90.204) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.21; Thu, 29 Aug 2019 07:06:14 +0000
+Received: from BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::391b:4d0f:a377:41c]) by BYAPR03MB4773.namprd03.prod.outlook.com
+ ([fe80::391b:4d0f:a377:41c%4]) with mapi id 15.20.2220.013; Thu, 29 Aug 2019
+ 07:06:14 +0000
+From: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+To: Steven Rostedt <rostedt@goodmis.org>, Ingo Molnar <mingo@redhat.com>,
+ Russell King <linux@armlinux.org.uk>
+Subject: Re: [PATCH v3] ARM: ftrace: remove mcount(),ftrace_caller_old() and
+ ftrace_call_old()
+Thread-Topic: [PATCH v3] ARM: ftrace: remove mcount(), ftrace_caller_old() and
+ ftrace_call_old()
+Thread-Index: AQHVWZ46Zhc7nRpNpE6gOQZveSAqyqcRuhEA
+Date: Thu, 29 Aug 2019 07:06:14 +0000
+Message-ID: <20190829145450.0c0f79ee@xhacker.debian>
+References: <20190823182239.20f9a656@xhacker.debian>
+In-Reply-To: <20190823182239.20f9a656@xhacker.debian>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [124.74.246.114]
+x-clientproxiedby: TY2PR01CA0041.jpnprd01.prod.outlook.com
+ (2603:1096:404:ce::29) To BYAPR03MB4773.namprd03.prod.outlook.com
+ (2603:10b6:a03:134::24)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Jisheng.Zhang@synaptics.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 403d50d5-6e35-4b3b-79a2-08d72c4f615f
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR03MB4615; 
+x-ms-traffictypediagnostic: BYAPR03MB4615:
+x-microsoft-antispam-prvs: <BYAPR03MB4615B1C499880BA23612201AEDA20@BYAPR03MB4615.namprd03.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:1002;
+x-forefront-prvs: 0144B30E41
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(366004)(396003)(136003)(376002)(346002)(39860400002)(199004)(189003)(446003)(99286004)(66946007)(11346002)(476003)(66446008)(64756008)(66556008)(66476007)(66066001)(8936002)(81166006)(8676002)(486006)(81156014)(478600001)(316002)(50226002)(14454004)(71190400001)(102836004)(1076003)(305945005)(386003)(110136005)(6506007)(7736002)(256004)(5660300002)(86362001)(54906003)(53936002)(6246003)(71200400001)(52116002)(186003)(9686003)(6512007)(229853002)(26005)(3846002)(6486002)(6116002)(6436002)(76176011)(25786009)(4326008)(2906002)(39210200001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB4615;
+ H:BYAPR03MB4773.namprd03.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:0; MX:1; 
+received-spf: None (protection.outlook.com: synaptics.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: uqddwuvsiIzFbYBHiRNz0mbrYMh6TeEdy3ln2qS1X1uaMuW+3uw12k/E3/RABf/K5G6ll6WW13ShHMgPeegWtw6L5bccyA1zwdeFra3tWgZ5xSxE0eSSvwf4Qh6xjM+dmYgOc5ja/p11L/z6UbHWi9m5XiAYdrFBziZY2HQqUXKdvZFxcWL+kVpA2QlDfDE8fr2QjdgAFn7DdsWF7nODnT4YFONXIJK1hL7XOcKc7ISIa4A4j3IZ48dz3evhLfiP8syjjNXx7KXhldldNkB9O9Yt798BYDyakLzZx9wllrkzvVJw74AhCyAoRHQltGg27xFB/wbemaBhSJkiPtIn3tDYBDEsamX9VJbkaYOYN8lDnV71TJzc8qwDkjvatzEqOIOA1nSUihApFZbSsz/2xp+ds9fwjaNI3A5CStnAPU4=
+x-ms-exchange-transport-forked: True
+Content-ID: <D637AF53FFE02A4399732A3695A09051@namprd03.prod.outlook.com>
+MIME-Version: 1.0
+X-OriginatorOrg: synaptics.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 403d50d5-6e35-4b3b-79a2-08d72c4f615f
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 07:06:14.5858 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 335d1fbc-2124-4173-9863-17e7051a2a0e
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: f75y4odESQK25U9EN+ypGTMoAn/n3R1Qg+hLePVxnBU9W/D2OTtunPyQ6H3SvQ1Flt68H/XSDDkqdlbqf7oxQg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB4615
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_000358_200090_84AE8582 
-X-CRM114-Status: GOOD (  20.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_000619_749077_24AF8424 
+X-CRM114-Status: GOOD (  12.70  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:341 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,153 +125,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, robh@kernel.org, jackp@codeaurora.org, kishon@ti.com,
- gregkh@linuxfoundation.org, linux-usb@vger.kernel.org,
- khasim.mohammed@linaro.org, linux-kernel@vger.kernel.org, swboyd@chromium.org,
- devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- andy.gross@linaro.org, shawn.guo@linaro.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2/23/19 17:52, Bjorn Andersson wrote:
-> On Thu 07 Feb 03:17 PST 2019, Jorge Ramirez-Ortiz wrote:
-> 
->> Binding description for Qualcomm's Synopsys 1.0.0 SuperSpeed phy
->> controller embedded in QCS404.
->>
->> Based on Sriharsha Allenki's <sallenki@codeaurora.org> original
->> definitions.
->>
->> Signed-off-by: Jorge Ramirez-Ortiz <jorge.ramirez-ortiz@linaro.org>
->> ---
->>  .../bindings/phy/qcom,snps-usb-ssphy.txt      | 79 +++++++++++++++++++
->>  1 file changed, 79 insertions(+)
->>  create mode 100644 Documentation/devicetree/bindings/phy/qcom,snps-usb-ssphy.txt
->>
->> diff --git a/Documentation/devicetree/bindings/phy/qcom,snps-usb-ssphy.txt b/Documentation/devicetree/bindings/phy/qcom,snps-usb-ssphy.txt
->> new file mode 100644
->> index 000000000000..354e6f9cef62
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/phy/qcom,snps-usb-ssphy.txt
->> @@ -0,0 +1,79 @@
->> +Qualcomm Synopsys 1.0.0 SS phy controller
->> +===========================================
->> +
->> +Qualcomm 1.0.0 SS phy controller supports SuperSpeed USB connectivity on
->> +some Qualcomm platforms.
->> +
->> +Required properties:
->> +
->> +- compatible:
->> +    Value type: <string>
->> +    Definition: Should contain "qcom,snps-usb-ssphy".
-> 
-> Per Rob's request make this:
-> 
-> Should contain "qcom,qcs404-snps-usb-ssphy" and "qcom,snps-usb-ssphy"
+Hi Russell,
 
-ok
+On Fri, 23 Aug 2019 18:22:39 +0800 Jisheng Zhang wrote:
+
+> Commit d3c61619568c ("ARM: 8788/1: ftrace: remove old mcount support")
+> removed the old mcount support, but forget to remove these three
+> declarations. This patch removes them.
+
+May I put this patch into your patch system?
+
+thanks
 
 > 
-> You can then leave the driver matching on qcom,snps-usb-ssphy for now
-> and if we ever find this to be incompatible with other platforms we can
-> make the driver match on the platform-specific compatible.
-
-ok
-
+> Signed-off-by: Jisheng Zhang <Jisheng.Zhang@synaptics.com>
+> ---
 > 
->> +
->> +- reg:
->> +    Value type: <prop-encoded-array>
->> +    Definition: USB PHY base address and length of the register map.
->> +
->> +- #phy-cells:
->> +    Value type: <u32>
->> +    Definition: Should be 0. See phy/phy-bindings.txt for details.
->> +
->> +- clocks:
->> +    Value type: <prop-encoded-array>
->> +    Definition: See clock-bindings.txt section "consumers". List of
->> +		 three clock specifiers for reference, phy core and
->> +		 pipe clocks.
->> +
->> +- clock-names:
->> +    Value type: <string>
->> +    Definition: Names of the clocks in 1-1 correspondence with the "clocks"
->> +		 property. Must contain "ref", "phy" and "pipe".
->> +
->> +- vdd-supply:
->> +    Value type: <phandle>
->> +    Definition: phandle to the regulator VDD supply node.
->> +
->> +- vdda1p8-supply:
->> +    Value type: <phandle>
->> +    Definition: phandle to the regulator 1.8V supply node.
->> +
->> +Optional properties:
->> +
->> +- resets:
->> +    Value type: <prop-encoded-array>
->> +    Definition: See reset.txt section "consumers". Specifiers for COM and
->> +		 PHY resets.
->> +
->> +- reset-names:
->> +    Value type: <string>
->> +    Definition: Names of the resets in 1-1 correspondence with the "resets"
->> +		 property. Must contain "com" and "phy" if the property is
->> +		 specified.
->> +
->> +Required child nodes:
->> +
->> +- usb connector node as defined in bindings/connector/usb-connector.txt
->> +  containing the property vbus-supply.
->> +
->> +Example:
->> +
->> +usb3_phy: usb3-phy@78000 {
->> +	compatible = "qcom,snps-usb-ssphy";
->> +	reg = <0x78000 0x400>;
->> +	#phy-cells = <0>;
->> +	clocks = <&rpmcc RPM_SMD_LN_BB_CLK>,
->> +		 <&gcc GCC_USB_HS_PHY_CFG_AHB_CLK>,
->> +		 <&gcc GCC_USB3_PHY_PIPE_CLK>;
->> +	clock-names = "ref", "phy", "pipe";
->> +	resets = <&gcc GCC_USB3_PHY_BCR>,
->> +		 <&gcc GCC_USB3PHY_PHY_BCR>;
->> +	reset-names = "com", "phy";
->> +	vdd-supply = <&vreg_l3_1p05>;
->> +	vdda1p8-supply = <&vreg_l5_1p8>;
->> +	usb3_c_connector: usb3-c-connector {
+> Changes since v2:
+>   - really remove mcount() declaration too. I made a mistake when sending out v2
 > 
-> The USB-C connector is attached both to the HS and SS PHYs, so I think
-> you should represent this external to this node and use of_graph to
-> query it.
-
-but AFAICS we wont be able to retrieve the vbux-supply from an external
-node (that interface does not exist).
-
-rob, do you have a suggestion?
-
+> Changes since v1:
+>   - remove mcount() declaration too
 > 
-> So the connector should look similar to example 2 in
-> connector/usb-connector.txt.
+>  arch/arm/include/asm/ftrace.h | 4 ----
+>  1 file changed, 4 deletions(-)
 > 
-> Regards,
-> Bjorn
-> 
->> +		compatible = "usb-c-connector";
->> +		label = "USB-C";
->> +		type = "micro";
->> +		vbus-supply = <&usb3_vbus_reg>;
->> +	};
->> +};
->> -- 
->> 2.20.1
->>
-> 
+> diff --git a/arch/arm/include/asm/ftrace.h b/arch/arm/include/asm/ftrace.h
+> index 18b0197f2384..48ec1d0337da 100644
+> --- a/arch/arm/include/asm/ftrace.h
+> +++ b/arch/arm/include/asm/ftrace.h
+> @@ -11,7 +11,6 @@
+>  #define MCOUNT_INSN_SIZE	4 /* sizeof mcount call */
+>  
+>  #ifndef __ASSEMBLY__
+> -extern void mcount(void);
+>  extern void __gnu_mcount_nc(void);
+>  
+>  #ifdef CONFIG_DYNAMIC_FTRACE
+> @@ -23,9 +22,6 @@ static inline unsigned long ftrace_call_adjust(unsigned long addr)
+>  	/* With Thumb-2, the recorded addresses have the lsb set */
+>  	return addr & ~1;
+>  }
+> -
+> -extern void ftrace_caller_old(void);
+> -extern void ftrace_call_old(void);
+>  #endif
+>  
+>  #endif
 
 
 _______________________________________________
