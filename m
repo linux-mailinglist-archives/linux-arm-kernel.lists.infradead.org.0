@@ -2,79 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2B9AA299C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:20:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9D22A299D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:20:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hkprmchhyxZz1YTqHdXOIIp3HYviDndSsP/4L5rF6Ws=; b=dfj4YLrroKBjF/
-	aJJpLbO40ielVG6y7oOUCCT0vbiGcHjo//2+ep3AdlHcULsuNPoEvu57QuOfyS/9o3euWm8vlFuvo
-	LS/QQ1+yjeRRvZFw3NeeYa7Qqg6OXunjf1LsiVugu9ieCcvZmxjvXNHoqHIBGOkds+JH+9GbLY+Wn
-	6FVKyxgTqN/xv6DvZKP/FKPcB0sQrIblKRnGiCPr5fKit9RdYjL6EcFK/62cQH/XcIzKwyB53BPm6
-	Fh/GDQmT5gtJQSP572+acU9HZ278MPgDukn+M3bFRE2Ym9DFhhrMieIl+FbKc50NywznDBGWhiYIn
-	IiEWl522U4a34VwPWxYw==;
+	List-Owner; bh=3Y/dUy+dTCtNpcPSUYhzRXMGtvSn/LG/xyoe9PT35/A=; b=EZhU1P5mcCaZD/
+	34jrEsALes1/YXZDh+emNRi2LZqcmJXjx+EITKESgZJGyJJ+pMVo59/VGJGkypXfy1/onYYcoIREc
+	RkHYj4zf9zVFlFFqSW1PsbLllRuvTTUsx/ZJTTvXGcId+V8JQ2T3j5m6lTsUgWFNYPdQ1GDgYQLW4
+	VpeqQ66TgGF4dC/5z9wAgBNE4g8XE6CGOf04hpdDczBH/+yYAurNo1HoPmUJbb/ixnNVTvNrbmiEO
+	nVvZ0tw7oe5dgS1MqUUFeqGdXphfc2zJ5c8g+iBJPQ0QX5DmXXKzKyZR+LRwdcDHtVrco9ZUBp9dV
+	p9X8coxH7Azndr5Awbdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Slo-0005hF-4m; Thu, 29 Aug 2019 22:19:56 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
+	id 1i3Sm8-0005vs-8F; Thu, 29 Aug 2019 22:20:16 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3SlE-0005Hs-JB
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:19:22 +0000
-Received: by mail-ed1-x542.google.com with SMTP id f22so5759528edt.4
+ id 1i3SlG-0005K1-FU
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:19:23 +0000
+Received: by mail-ed1-x541.google.com with SMTP id x19so5694291eda.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 15:19:20 -0700 (PDT)
+ Thu, 29 Aug 2019 15:19:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=x2JwQdeRTi/hgvGya3SUXcpdHr3AMqxRJmguZS0isiI=;
- b=fMa8asTWe3nSoojjF5UDYpkAusc9bGVrfnq4cudtFqiVUelRztmeD7OuWQKxzoBXwx
- 31u1L7vI++hZTMQ47Cb4n3eWOWFS3yRw6it7V+ZuDsG/3w5sZNAnMmdUoF99lJ4OFWOc
- iSt1s/nEHqAt4zCXl3Jcjyc+w2uaoviZBz0wPekdN6m/NLl4W3WyaNMghBvKm3Phrrx+
- nJBEQc3dnvdDZWh8oFIUFkuEvwL+LzVHToO6mxrQjEVRnCu52xh3jUaElrgtD8yQlh7H
- 2fhzzSaZIsDhIKiaax8xCXs3RA33p7wIVm5REaWKX5Tqm9fTRLhr2EMUFjw5OHnHGi+P
- Z7Bw==
+ bh=YWWE4IVBHvnoWLCLZVIdhXONrKHwnBndvWwW8Ly/oag=;
+ b=CDeCvURHjL/QvJ+JzQh7tQWSKSlqeaR+U1GRH5VNsZypiAr9UJG8f2CRiww4T9qnIN
+ 8kova/7Nf052viUJOC/QQ6QRWdgMcXd/pYDHAQJMfXrFKIbYS/fJWQdoVuaKFDjcnTD2
+ Ab7mwQzRZx6NBZFahqZccVil49TEcdIhcIFrjwp9T/k5q8VXsHrokxuZla167EZ2bBKB
+ 034EJaQ9J3b2vDvNi8b0q43pkdXGXK7Wef0cknVm/uunrUhmXm5VnVAg8dJnUNezaIax
+ b454k/aXfrG8X+JXCkdDIkHVVF0E+cPyNLv9xMB8hwkHKsjKKn3HoP6IXetbbKilfr17
+ YG6w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=x2JwQdeRTi/hgvGya3SUXcpdHr3AMqxRJmguZS0isiI=;
- b=AV0A//1iHhFkCZ1gm7rTr86k9IP11S2Ha2dAKSllKpJe9yIOc+8sHL2KESTFa0ukxs
- Ms9r2C0qrIt3WILs/WyuwsjGoX91P2x18J+lbI5685I8LoL8QBFqO4uTMDgZb1kzwnxq
- uWxczSxyMbaB2c4p57dvl7AFsThzkSB8T788EJ+RDw87CZlbO2RPVMzKHnddgEPshxUb
- sw4IGyl8MIlvv1BWuh1dGL0HyrctxMIZaqAgKmu13Qht5LLayrvzDwb0LF1Mik5UUbme
- focqs4BcNa2gESQGs8yUREeGHfmZ5BvfLwmeTR7vXhMFZ5bqWD0nhF0fABWEdLsrD1SU
- UCzA==
-X-Gm-Message-State: APjAAAXo4EP6QbbdZc0gn/Aj13crsp0c6NRYtbLrJeF/SwgVYTxepo+b
- E0kW/4T0TjQGaL6g586qhMY=
-X-Google-Smtp-Source: APXvYqwik/R8aKuqwauXQpDwXaxK1s18HWAuCScBbXbtHsQGzOZ3r99hcz+f+N0tH0yqRkCq7bWnhQ==
-X-Received: by 2002:a50:b62b:: with SMTP id b40mr12750324ede.56.1567117159053; 
- Thu, 29 Aug 2019 15:19:19 -0700 (PDT)
+ bh=YWWE4IVBHvnoWLCLZVIdhXONrKHwnBndvWwW8Ly/oag=;
+ b=KFbJ7Jy8FEFLCfoEi7vrh/Tko3Lu2kcduNwqvGaWEA9R5wupRIAKsRqkgoMjfEswDk
+ JzxMOKOSMUlUgzEf34O4NvLVz3IUvJegre1k3AYQy16p6CblAY/3ARqiDQm2AxlwSHYS
+ Jd+96FKCRkSv94TFbYMadYLk20Efgi5aiWL5k6G2UuLOON+u2s6Q2eH40pAp96IHrH73
+ 3C5+lyTwfa5spvVJ1KYp1BNzk3pnMXbTPJXxmuexSuuwfxymmTt2d3MeiQ4BWYoAcKO2
+ 5UgxkSLVlPA56KeH3AxSYS1JoLPPQoGncXDsulb3AW9BNqHUFg9BV8iU+lnThnudexql
+ LydQ==
+X-Gm-Message-State: APjAAAUCpUSgjOuXYcuOsRvJzBKYnAuo6jRZb9IIl8WKhYSIJrnEd5D8
+ 1m2TTWRcj8fPdtZPr3+wWsY=
+X-Google-Smtp-Source: APXvYqwMwzPHARuYWpo0KwSH4bLFC3MhIdvUeMONlOnt5JZW69A/p+LuCw6K+N1EW6+xLGLdyRXIbg==
+X-Received: by 2002:a05:6402:1446:: with SMTP id
+ d6mr12728144edx.102.1567117160874; 
+ Thu, 29 Aug 2019 15:19:20 -0700 (PDT)
 Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id f24sm662138edt.82.2019.08.29.15.19.17
+ by smtp.gmail.com with ESMTPSA id d21sm670705edv.57.2019.08.29.15.19.19
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 15:19:17 -0700 (PDT)
+ Thu, 29 Aug 2019 15:19:19 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 2/7] soc/tegra: fuse: Implement nvmem device
-Date: Fri, 30 Aug 2019 00:19:06 +0200
-Message-Id: <20190829221911.24876-3-thierry.reding@gmail.com>
+Subject: [PATCH 3/7] soc/tegra: fuse: Add cell information
+Date: Fri, 30 Aug 2019 00:19:07 +0200
+Message-Id: <20190829221911.24876-4-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190829221911.24876-1-thierry.reding@gmail.com>
 References: <20190829221911.24876-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_151920_741076_ECBBEC79 
-X-CRM114-Status: GOOD (  15.65  )
+X-CRM114-CacheID: sfid-20190829_151922_545917_88B78E2D 
+X-CRM114-Status: UNSURE (   9.93  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -107,158 +109,121 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The nvmem framework provides a generic infrastructure and API to access
-the type of information stored in fuses such as the Tegra FUSE block.
-
-Implement an nvmem device that can be used to access the information in
-a more generic way to decouple consumers from the custom Tegra API and
-to add a more formal way of creating the dependency between the FUSE
-device and the consumers.
+Create nvmem cells for all the fuses currently used by consumers.
 
 Signed-off-by: Thierry Reding <treding@nvidia.com>
 ---
- drivers/soc/tegra/fuse/fuse-tegra.c | 82 ++++++++++++-----------------
- drivers/soc/tegra/fuse/fuse.h       |  3 ++
- 2 files changed, 38 insertions(+), 47 deletions(-)
+ drivers/soc/tegra/fuse/fuse-tegra.c | 90 +++++++++++++++++++++++++++++
+ 1 file changed, 90 insertions(+)
 
 diff --git a/drivers/soc/tegra/fuse/fuse-tegra.c b/drivers/soc/tegra/fuse/fuse-tegra.c
-index 6617a4bd11bb..3ce2138b278b 100644
+index 3ce2138b278b..c6c6a7746046 100644
 --- a/drivers/soc/tegra/fuse/fuse-tegra.c
 +++ b/drivers/soc/tegra/fuse/fuse-tegra.c
-@@ -8,6 +8,8 @@
- #include <linux/kobject.h>
- #include <linux/init.h>
- #include <linux/io.h>
-+#include <linux/nvmem-consumer.h>
-+#include <linux/nvmem-provider.h>
- #include <linux/of.h>
- #include <linux/of_address.h>
- #include <linux/platform_device.h>
-@@ -31,50 +33,6 @@ static const char *tegra_revision_name[TEGRA_REVISION_MAX] = {
- 	[TEGRA_REVISION_A04]     = "A04",
- };
+@@ -86,6 +86,94 @@ static int tegra_fuse_read(void *priv, unsigned int offset, void *value,
+ 	return 0;
+ }
  
--static u8 fuse_readb(struct tegra_fuse *fuse, unsigned int offset)
--{
--	u32 val;
--
--	val = fuse->read(fuse, round_down(offset, 4));
--	val >>= (offset % 4) * 8;
--	val &= 0xff;
--
--	return val;
--}
--
--static ssize_t fuse_read(struct file *fd, struct kobject *kobj,
--			 struct bin_attribute *attr, char *buf,
--			 loff_t pos, size_t size)
--{
--	struct device *dev = kobj_to_dev(kobj);
--	struct tegra_fuse *fuse = dev_get_drvdata(dev);
--	int i;
--
--	if (pos < 0 || pos >= attr->size)
--		return 0;
--
--	if (size > attr->size - pos)
--		size = attr->size - pos;
--
--	for (i = 0; i < size; i++)
--		buf[i] = fuse_readb(fuse, pos + i);
--
--	return i;
--}
--
--static struct bin_attribute fuse_bin_attr = {
--	.attr = { .name = "fuse", .mode = S_IRUGO, },
--	.read = fuse_read,
--};
--
--static int tegra_fuse_create_sysfs(struct device *dev, unsigned int size,
--				   const struct tegra_fuse_info *info)
--{
--	fuse_bin_attr.size = size;
--
--	return device_create_bin_file(dev, &fuse_bin_attr);
--}
--
- static const struct of_device_id car_match[] __initconst = {
- 	{ .compatible = "nvidia,tegra20-car", },
- 	{ .compatible = "nvidia,tegra30-car", },
-@@ -115,9 +73,23 @@ static const struct of_device_id tegra_fuse_match[] = {
- 	{ /* sentinel */ }
- };
- 
-+static int tegra_fuse_read(void *priv, unsigned int offset, void *value,
-+			   size_t bytes)
-+{
-+	unsigned int count = bytes / 4, i;
-+	struct tegra_fuse *fuse = priv;
-+	u32 *buffer = value;
-+
-+	for (i = 0; i < count; i++)
-+		buffer[i] = fuse->read(fuse, offset + i * 4);
-+
-+	return 0;
-+}
++static const struct nvmem_cell_info tegra_fuse_cells[] = {
++	{
++		.name = "tsensor-cpu1",
++		.offset = 0x084,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-cpu2",
++		.offset = 0x088,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-cpu0",
++		.offset = 0x098,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "xusb-pad-calibration",
++		.offset = 0x0f0,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-cpu3",
++		.offset = 0x12c,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "sata-calibration",
++		.offset = 0x124,
++		.bytes = 1,
++		.bit_offset = 0,
++		.nbits = 2,
++	}, {
++		.name = "tsensor-gpu",
++		.offset = 0x154,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-mem0",
++		.offset = 0x158,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-mem1",
++		.offset = 0x15c,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-pllx",
++		.offset = 0x160,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-common",
++		.offset = 0x180,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "tsensor-realignment",
++		.offset = 0x1fc,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "gpu-calibration",
++		.offset = 0x204,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	}, {
++		.name = "xusb-pad-calibration-ext",
++		.offset = 0x250,
++		.bytes = 4,
++		.bit_offset = 0,
++		.nbits = 32,
++	},
++};
 +
  static int tegra_fuse_probe(struct platform_device *pdev)
  {
  	void __iomem *base = fuse->base;
-+	struct nvmem_config nvmem;
- 	struct resource *res;
- 	int err;
- 
-@@ -150,9 +122,25 @@ static int tegra_fuse_probe(struct platform_device *pdev)
- 			goto restore;
- 	}
- 
--	if (tegra_fuse_create_sysfs(&pdev->dev, fuse->soc->info->size,
--				    fuse->soc->info)) {
--		err = -ENODEV;
-+	memset(&nvmem, 0, sizeof(nvmem));
-+	nvmem.dev = &pdev->dev;
-+	nvmem.name = "fuse";
-+	nvmem.id = -1;
-+	nvmem.owner = THIS_MODULE;
-+	nvmem.type = NVMEM_TYPE_OTP;
-+	nvmem.read_only = true;
-+	nvmem.root_only = true;
-+	nvmem.reg_read = tegra_fuse_read;
-+	nvmem.size = fuse->soc->info->size;
-+	nvmem.word_size = 4;
-+	nvmem.stride = 4;
-+	nvmem.priv = fuse;
-+
-+	fuse->nvmem = devm_nvmem_register(&pdev->dev, &nvmem);
-+	if (IS_ERR(fuse->nvmem)) {
-+		err = PTR_ERR(fuse->nvmem);
-+		dev_err(&pdev->dev, "failed to register NVMEM device: %d\n",
-+			err);
- 		goto restore;
- 	}
- 
-diff --git a/drivers/soc/tegra/fuse/fuse.h b/drivers/soc/tegra/fuse/fuse.h
-index 7230cb330503..32bf6c070ae7 100644
---- a/drivers/soc/tegra/fuse/fuse.h
-+++ b/drivers/soc/tegra/fuse/fuse.h
-@@ -13,6 +13,7 @@
- #include <linux/dmaengine.h>
- #include <linux/types.h>
- 
-+struct nvmem_device;
- struct tegra_fuse;
- 
- struct tegra_fuse_info {
-@@ -48,6 +49,8 @@ struct tegra_fuse {
- 		dma_addr_t phys;
- 		u32 *virt;
- 	} apbdma;
-+
-+	struct nvmem_device *nvmem;
- };
- 
- void tegra_init_revision(void);
+@@ -127,6 +215,8 @@ static int tegra_fuse_probe(struct platform_device *pdev)
+ 	nvmem.name = "fuse";
+ 	nvmem.id = -1;
+ 	nvmem.owner = THIS_MODULE;
++	nvmem.cells = tegra_fuse_cells;
++	nvmem.ncells = ARRAY_SIZE(tegra_fuse_cells);
+ 	nvmem.type = NVMEM_TYPE_OTP;
+ 	nvmem.read_only = true;
+ 	nvmem.root_only = true;
 -- 
 2.22.0
 
