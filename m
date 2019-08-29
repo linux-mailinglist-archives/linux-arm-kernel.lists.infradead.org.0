@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23742A27F3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:29:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B0389A27F4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:29:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,70 +11,70 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KQcz9vOAt7NWb6uQFN+F2vdYVUNCFJKEc06r/FDKd+k=; b=ctbo5pFQBdu//Y+y41//Il4iIz
-	eZ5U05d3BfYIhxplVdtFLyiWUdHo8Q2k8RzxncrRU8S4vJcoF9FtzZzChGlfwAL4/L8B3IdZcRVSu
-	0nR5F1wElaMxDGq8Inrsi70KhWZDcLVfs44er+Kr7ogrOOzbc92G4p6fpjh3svmOCXs6+HOt8tq6A
-	eWlMYXoAdaL28x+ExlGcsMWG/XZQP2yzgxZvDj9ppsamBcuDdNWL/OILh9qvPgJMpvXFuhsmbuGi0
-	JGUr4SUBgndBJUPZsCRUIApWaWmsRVRj2Qxa9XVPNZ4xRkJ91lxSKmWv2X3xFCfMipqSLTlyVTSeF
-	YeW+YdLg==;
+	bh=kP4ugWUq2f05ZjjxatKTIlIT8VX8A3zkxSIPAcyPvEk=; b=pNXM7eaH60gkDb3KfsNy5wUaG0
+	k30ah272BPnSna+/lIvWOfMwpyxEJafy6ZhfRlWfoMhxSL3IlBUW8J39vmGdhTBS0o/yOAdomj3+q
+	ukOqE0ZMN2w73XoHgfqUEUAAYSG3lCQWGK4mv0L9pQMk4orJ+wQKbMxOMoDQrNBQKleJadC50ktpD
+	BPG1ORI2C4gXlD12CLvit27rDXpwTYHfwiR19SerBL6Dv62E+0U4QRrdFkgItf25sgfCfiYs8iRX9
+	LilnC2dvc6C+AjVprmShm7Kl6U0ADweU0LEhxZqkPUzZ3OLkGSW6ak/QAEnSvyNKm+Q596fc4eSaa
+	7uZXE3rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R2h-0003uX-Lg; Thu, 29 Aug 2019 20:29:15 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i3R2x-00047u-9C; Thu, 29 Aug 2019 20:29:31 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2C-0003eZ-Oa
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:46 +0000
-Received: by mail-pg1-x543.google.com with SMTP id p3so2180114pgb.9
+ id 1i3R2D-0003f0-Tu
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:47 +0000
+Received: by mail-pg1-x542.google.com with SMTP id m3so2172463pgv.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:44 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:45 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=e1rfzPi9lka2rztuAHcYlD7FftmyaSElRH5Zdr494kI=;
- b=YQOxkttEKLeumqIAVS1RxL0jOYy08PVdunK/nWSCAxox+i/OpwRzYeJTXkNL1bAMXS
- /I9Wm4yqPIPQ9HGKpBPPG8UUtEKYgHM51mgRyBleeUgOveLyz0JYG1xjxSLL1sMl9BPs
- bH5prYB/dRpOzpUwomDE9n48xHewJ4LnFLB6nl8li83JGcBwrTdhLBuYur1DibNmNuLW
- NreSJHmJUbwWvRH7CIjPIT4uRK7P9JYceGLUCsgC6OA9vDVMJsWw/DQxwhjFDGjDXuBN
- PWrwjUBQuyMtvBjHGwsiQ4c0ekYh8NQYw/6dF7NcK+2l0JcKbpVpo2Yr8emucD/o9DIx
- 7LbA==
+ bh=dd1S70qC4Knnjc76mO421DIbTiN8oBwUIOYstjye2mk=;
+ b=Pc++9X36Fn6GsIKNwfs8pIxgKhCIJGcSkZYc9b7eXYU5EumnFAg9sgQA+rwPissMum
+ uAhtU4uweGmCL2Q7tCAczWelyne48d6cOpNi2CSfZTDFMqNOmpuvxKWxl8cwbqKCItDs
+ BnJ5eoRMMmJMuylP+LhjnMww2qcV7qvdct9zRwjszRlQoKWsPrR/oyH5YKvUYFlcjCOL
+ Tn9fOFN+d7SnBECaM0WvNiyFUEdII9ydJuKcqrwEzlPbMCEVT12GPikucNIT2lbtS3YG
+ ifccZxptzYYtUppkwsvzaIepfa+6wLcMbhUF7WbqeM54T1zjYJQIfsQNN/K05SJSvmoz
+ cGSQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=e1rfzPi9lka2rztuAHcYlD7FftmyaSElRH5Zdr494kI=;
- b=BnO6CWik4cbln/fFjDHSg7aHIL3jfw5milSIEtRYEqkxz9UKfzMh1pufyc3Iyp/6E/
- bIQY+clGq9kEseUT2wSO7PHoGsK4rypGI2G6Q4lK4c3eBLvuz+xeJHjbUWUyfeKD+Qbl
- d+VBra/BxqGDFn8Ss9Evf9v12CkFAT5O81J0OqLHiB23rAr8WKlfUucgkc0/KSI5HAMU
- qagG8p2XSsYgr30dyDxL0fdv7rDvNquJfY8FdDNVWtG0wmG05ub0kpXWzp9wAEIOnSq7
- CP2fkHC2WiZKG8l00c21JDmd+R8Bdw6DXy4hH01qurAmeksIIX1tqxuM7M1RhWy8a9dp
- 318g==
-X-Gm-Message-State: APjAAAW7Pf/3VMLiykAocNT6rkmlwlX4O5rA3c+fGkxyfhkWC+dmxuPP
- GSvmGwUU27hFcVOZ1ELkyaF9CgKmd9I=
-X-Google-Smtp-Source: APXvYqzc7a/xEbOcqP6mq9R+xh9Rsal8HVpsyZnImbOs+EkhfYKj+eJYHEsOMWYOE4XCsJfV2nPmVw==
-X-Received: by 2002:a62:6045:: with SMTP id u66mr13428464pfb.261.1567110524184; 
- Thu, 29 Aug 2019 13:28:44 -0700 (PDT)
+ bh=dd1S70qC4Knnjc76mO421DIbTiN8oBwUIOYstjye2mk=;
+ b=TVS8k2PRxu7Uh+tjrT6hxGg+A7TZIDQYoUlIVDn+IY3XqHNUMLOtTP/miG8bGIaoeT
+ IQkXKBwYdZmv0Vyrhz08CXf9exAiAT0TvU1IVQcKTsvJpLHOu398NjjoKO1QjTMM3UM/
+ TRA64UqAgF6joTO7F1ilUapN3wBAPVnskayvwc1Hj0vmf1iRb9qOm0OdsJ7FuvbDpA4B
+ JPr3eOodiZUU87XmzXt94r/juqCH6JobQv0MXiZebkZfHqZwRGjPFx0j7xgW2DrnhBjP
+ +iR6XjmBTR+ooB2nRO+8F9FBPzT0fPETAh6c4FUxCNtyiUZ76AH5uO5TDJKQkt3cI6lT
+ xiHQ==
+X-Gm-Message-State: APjAAAV4zIUK46YJs+zeMKp94wlpCJVNDg82Vfy25hNhDwV6u60bdToX
+ uOYoL8paOf87tgQ4loniy7AZwQ==
+X-Google-Smtp-Source: APXvYqxiVRGeki3ncOVglHSsTvSGUld2+NK9vKmQImBX2vw0VqPHK18BtZT8Bce0NVtpQ7Mg+enYFA==
+X-Received: by 2002:a65:5cca:: with SMTP id b10mr10223773pgt.365.1567110525003; 
+ Thu, 29 Aug 2019 13:28:45 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.43
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.44
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:43 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:44 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 01/17] coresight: etm4x: Two function calls less
-Date: Thu, 29 Aug 2019 14:28:26 -0600
-Message-Id: <20190829202842.580-2-mathieu.poirier@linaro.org>
+Subject: [PATCH 02/17] coresight: etm4x: Add ETM PIDs for SDM845 and MSM8996
+Date: Thu, 29 Aug 2019 14:28:27 -0600
+Message-Id: <20190829202842.580-3-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132844_795477_FC6AC094 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190829_132845_963498_3D19B8AE 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,50 +103,46 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Markus Elfring <elfring@users.sourceforge.net>
+From: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
 
-Avoid an extra function call in two function implementations
-by using a ternary operator instead of a conditional statement.
+Instead of overriding the peripheral id(PID) check in AMBA
+by hardcoding them in DT, add the PIDs to the ETM4x driver.
+Here we use Unique Component Identifier(UCI) for MSM8996
+since the ETM and CPU debug module shares the same PIDs.
+SDM845 does not support CPU debug module.
 
-This issue was detected by using the Coccinelle software.
-
-Signed-off-by: Markus Elfring <elfring@users.sourceforge.net>
+Signed-off-by: Sai Prakash Ranjan <saiprakash.ranjan@codeaurora.org>
+Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm4x-sysfs.c | 13 ++++---------
- 1 file changed, 4 insertions(+), 9 deletions(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 14 +++++++++-----
+ 1 file changed, 9 insertions(+), 5 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-index a0365e23678e..219c10eb752c 100644
---- a/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-+++ b/drivers/hwtracing/coresight/coresight-etm4x-sysfs.c
-@@ -296,11 +296,8 @@ static ssize_t mode_store(struct device *dev,
+diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
+index 7bcac8896fc1..28bcc0e58d7a 100644
+--- a/drivers/hwtracing/coresight/coresight-etm4x.c
++++ b/drivers/hwtracing/coresight/coresight-etm4x.c
+@@ -1192,11 +1192,15 @@ static struct amba_cs_uci_id uci_id_etm4[] = {
+ };
  
- 	spin_lock(&drvdata->spinlock);
- 	config->mode = val & ETMv4_MODE_ALL;
--
--	if (config->mode & ETM_MODE_EXCLUDE)
--		etm4_set_mode_exclude(drvdata, true);
--	else
--		etm4_set_mode_exclude(drvdata, false);
-+	etm4_set_mode_exclude(drvdata,
-+			      config->mode & ETM_MODE_EXCLUDE ? true : false);
+ static const struct amba_id etm4_ids[] = {
+-	CS_AMBA_ID(0x000bb95d),		/* Cortex-A53 */
+-	CS_AMBA_ID(0x000bb95e),		/* Cortex-A57 */
+-	CS_AMBA_ID(0x000bb95a),		/* Cortex-A72 */
+-	CS_AMBA_ID(0x000bb959),		/* Cortex-A73 */
+-	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),	/* Cortex-A35 */
++	CS_AMBA_ID(0x000bb95d),			/* Cortex-A53 */
++	CS_AMBA_ID(0x000bb95e),			/* Cortex-A57 */
++	CS_AMBA_ID(0x000bb95a),			/* Cortex-A72 */
++	CS_AMBA_ID(0x000bb959),			/* Cortex-A73 */
++	CS_AMBA_UCI_ID(0x000bb9da, uci_id_etm4),/* Cortex-A35 */
++	CS_AMBA_UCI_ID(0x000f0205, uci_id_etm4),/* Qualcomm Kryo */
++	CS_AMBA_UCI_ID(0x000f0211, uci_id_etm4),/* Qualcomm Kryo */
++	CS_AMBA_ID(0x000bb802),			/* Qualcomm Kryo 385 Cortex-A55 */
++	CS_AMBA_ID(0x000bb803),			/* Qualcomm Kryo 385 Cortex-A75 */
+ 	{},
+ };
  
- 	if (drvdata->instrp0 == true) {
- 		/* start by clearing instruction P0 field */
-@@ -999,10 +996,8 @@ static ssize_t addr_range_store(struct device *dev,
- 	 * Program include or exclude control bits for vinst or vdata
- 	 * whenever we change addr comparators to ETM_ADDR_TYPE_RANGE
- 	 */
--	if (config->mode & ETM_MODE_EXCLUDE)
--		etm4_set_mode_exclude(drvdata, true);
--	else
--		etm4_set_mode_exclude(drvdata, false);
-+	etm4_set_mode_exclude(drvdata,
-+			      config->mode & ETM_MODE_EXCLUDE ? true : false);
- 
- 	spin_unlock(&drvdata->spinlock);
- 	return size;
 -- 
 2.17.1
 
