@@ -2,78 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42138A17F6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:18:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24581A17FD
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:18:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=docUHH79ILoyVeBKvoQdshyNSBI8BQQv2I2V/SD8OJU=; b=jYPISwaAQm13e4
-	u8jtEsN394LlWzRIQmQ8nOKcPi+iux7hk+RjINkkqC5zPWMg4yf0e4WeidMAou6oBc3kGn18ipn44
-	e/pvBFcIRdF3q+oyDiSmJ06pdDe0fIOPT9oJLVS5qSEnXGH0cRVB/Bx8gu4SfzV5z/qTTpDXuheUs
-	/yhIsQ7VVoe2WuzrgfZgShdrDD8TROW3i6g5LQtdakJNddaiPSoBDGoaF1URO75VwWlxLBl0h3Gmo
-	Y4YdIyEkfg6HhvORSh+Wmi/zqwT7M7EUDVEl3KbfNCG1/4UAY3yDykY/8zjUhEZG2N4w7ApxmiNrn
-	sLeot7z14IBAGBHXT8qQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3qwNLZStMHF0OfsFbQUeuTssAHXlalaksPzvHI9epN8=; b=cWHaLryWgqXE8m
+	kTxzQGqxnZjH8po3rOl9WTot0j91HCmWmiAxriHA+npC4Ck7IAszj0IQGz3wKD7PeDMA2PBoomg+X
+	D//IjQbqnmrtm2zpGjsZBSEIpw7DEanaZJ+ZYwYWdoVJxXU0t8Vzf0z6h3uVl/FL9NTa0D6wnZXpg
+	SxtK1H1ozn2AIl2bAFoEKbPtxwlicTUK5Aq/DcWZfto31Mb0XpwP/lUEDc09Fksw1aEmEt1iKQs+g
+	q1wg6qMYmHf8tIICBwACjzEWQO/XJhrLFqPT9ePqX85HkC0pqeI+5cPY2fPA3z0z8RkeHOYwLc6dr
+	flrkx/PbPCOBginB+Epg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IRM-00007Z-KB; Thu, 29 Aug 2019 11:18:08 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i3IRo-0000QW-4j; Thu, 29 Aug 2019 11:18:36 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3IR9-00007A-GU
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:17:56 +0000
-Received: by mail-ed1-x544.google.com with SMTP id x19so3589523eda.12
+ id 1i3IRB-00007U-Kt
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:17:59 +0000
+Received: by mail-ed1-x542.google.com with SMTP id g24so3665108edu.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:17:55 -0700 (PDT)
+ Thu, 29 Aug 2019 04:17:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Qw9TI/oO75bsTCfpr+cHjs+CGmEWrEJqDhW1Nr5mPhI=;
- b=S8Ri4oDngL/CuKTznOuFJut4kaqtLc9m6OEPBmcrmC9PTg98R4l6Ntojeqare4DfFw
- Ue+QAiofTOSeEn3E0/BxjOQLgEcmVTFzWxXf/RbFaYze8UQYLYXsmo8idr+2My4VQVHO
- xiQyF7kbM5iv+RsDvCU/qFLiwosQ4qE2PgBErmbwLqhtHhVnhy9ZxvLpK5PvWZK8+ra5
- TqQdfoKN+BbrZfXu4iysVRj4aZPP5GWU7rDJ2seuoGic6i98kGKTZABTaRT9p4b2Clsk
- wvL2evwLuZbxEu0B6knoORNMtSB0oGq3Ul3kTNAEVFmJUdo/iu0piqtwO8RTCzpdtAta
- +sNA==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=fWFDdsSRIYNKrRBdDSN7KSj6FUeTwnbHluq8rixbTiU=;
+ b=QK7F3ESU41SJHkKfAxVhUhnoObCMRcjDeVy8XBXAejYxpeOt+AeNnLB5DhxnGzPZTP
+ 2SVCtoiYV0imTE3QaoiCdK93Uwz0ghTmT7C4bje7vpBjSbEj461Af+y8MbSZYrnR6OJc
+ 90jH6lwG2R68n8P70gZi9ZMrBnrrvn3X/lr7gT8ZcpnVRJWvoUB3IsrVky/rmi5AEBSW
+ uWKkPfVSMlrHQs78MPEAgySdqXX9uf6SRW4UXQWzrh58WYWx7THUHN3dpksbqXawdh+D
+ SVcbZtPGdWRnNhIS7772iNUia2YtTK4d3vb0INvBEj7VNgQecAAkl7abEQ0zMCnH3ec2
+ RGpQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=Qw9TI/oO75bsTCfpr+cHjs+CGmEWrEJqDhW1Nr5mPhI=;
- b=XwcQeZPW8GRIi5MccJ9oujTIHF4jauDrnFkZ8a7vB3AtLw+6gcUk8ccjqoBTd0aAAl
- UadU2L7S0v93sWlXovpk68VIs16npL+N/qeXTrMsZMfA3bi6ju4p62eTu3DX31rqcbed
- 1Jnob9kpuY1W0HK8Iz3gnbjIgfJIymCKfjlAfr4jo0KRQkmFeZrpZy1lZfExBtPXUgSN
- 7D/omtHuVh7VnG0jCW7RI6s5Y475VZwEWaDfVnS7EJeVXVoFrjHz4BPigcCmOONkzX+O
- OdAqdHDeVx6LlRKg76SD1ZB91yPgnYWBUSeztNbdZR1Q6zdsZFmHAMQgvOBfBJufGloq
- nmCw==
-X-Gm-Message-State: APjAAAXviLg6yBBC82e+5ivYK0m2WbdYG7FJy4y0LN1WHUvfBf+/2ESD
- UuN0ZNSaOgoWfU65lm86bxw=
-X-Google-Smtp-Source: APXvYqzf3VpKDNdxCgnDwyw+83rYA047IH5YU4ry9v57vAHMKEZsuLCcwInPPOQgF729h0A10YkaTw==
-X-Received: by 2002:aa7:c81a:: with SMTP id a26mr9175586edt.26.1567077473918; 
- Thu, 29 Aug 2019 04:17:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=fWFDdsSRIYNKrRBdDSN7KSj6FUeTwnbHluq8rixbTiU=;
+ b=IjZsKDOvqHjHd1bJmTVQCw0QK2adFHcCLkjUnpq4TZv0QaAjvPlgHOVjbp5Gozoxhl
+ uSaVWix3vTYm8QKERRYR6z/nRF8kFlJXkT3Vp9LcapxsDwSfWloZErBEShRsvIlU30/o
+ YG2QKOg1MEmZTkyxhi6IuSo7fPeOliYv6CPYfc544HqLRPug0irQahM3Lqoi+vzBT6RT
+ jKbfm68ycRP9+j/GhqFXIWLRjxDFhfgUmjgE2uow+7/H/x/O2uqCoooERDc6dFbIugl2
+ MAVFU5QI6qVZxfyE28IjNnJxT7IXE2asWT1M35rKOUjvypir+fPeYThDVgTxJeJHKr9+
+ svcw==
+X-Gm-Message-State: APjAAAVSgQ6D/DvoptmyTD/cIoDSABCkF/Th+fxPmBkeKPq58c0gCRP8
+ 22xWt+HLEzkTHbAKYF5z1V0=
+X-Google-Smtp-Source: APXvYqwUQQWr7opeC82ffN614dN4qfpRwQm9wEqpQ2QRcIIdZGIO8kDGPJZeUP/x70eq+7DhXC+pxw==
+X-Received: by 2002:a50:c19a:: with SMTP id m26mr9023066edf.184.1567077476308; 
+ Thu, 29 Aug 2019 04:17:56 -0700 (PDT)
 Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id y19sm385592edu.90.2019.08.29.04.17.52
+ by smtp.gmail.com with ESMTPSA id a16sm341890ejr.10.2019.08.29.04.17.54
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 04:17:53 -0700 (PDT)
+ Thu, 29 Aug 2019 04:17:54 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Joerg Roedel <joro@8bytes.org>
-Subject: [PATCH 0/5] iommu: Implement iommu_put_resv_regions_simple()
-Date: Thu, 29 Aug 2019 13:17:47 +0200
-Message-Id: <20190829111752.17513-1-thierry.reding@gmail.com>
+Subject: [PATCH 1/5] iommu: Implement iommu_put_resv_regions_simple()
+Date: Thu, 29 Aug 2019 13:17:48 +0200
+Message-Id: <20190829111752.17513-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190829111752.17513-1-thierry.reding@gmail.com>
+References: <20190829111752.17513-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_041755_551297_C24C745B 
-X-CRM114-Status: UNSURE (   8.22  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_041757_685774_F9C6F0DD 
+X-CRM114-Status: GOOD (  10.60  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -109,29 +110,59 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-Most IOMMU drivers only need to free the memory allocated for each
-reserved region. Instead of open-coding the loop to do this in each
-driver, extract the code into a common function that can be used by
-all these drivers.
+Implement a generic function for removing reserved regions. This can be
+used by drivers that don't do anything fancy with these regions other
+than allocating memory for them.
 
-Thierry
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/iommu/iommu.c | 19 +++++++++++++++++++
+ include/linux/iommu.h |  2 ++
+ 2 files changed, 21 insertions(+)
 
-Thierry Reding (5):
-  iommu: Implement iommu_put_resv_regions_simple()
-  iommu: arm: Use iommu_put_resv_regions_simple()
-  iommu: amd: Use iommu_put_resv_regions_simple()
-  iommu: intel: Use iommu_put_resv_regions_simple()
-  iommu: virt: Use iommu_put_resv_regions_simple()
-
- drivers/iommu/amd_iommu.c    | 11 +----------
- drivers/iommu/arm-smmu-v3.c  | 11 +----------
- drivers/iommu/arm-smmu.c     | 11 +----------
- drivers/iommu/intel-iommu.c  | 11 +----------
- drivers/iommu/iommu.c        | 19 +++++++++++++++++++
- drivers/iommu/virtio-iommu.c | 14 +++-----------
- include/linux/iommu.h        |  2 ++
- 7 files changed, 28 insertions(+), 51 deletions(-)
-
+diff --git a/drivers/iommu/iommu.c b/drivers/iommu/iommu.c
+index 0f585b614657..73a2a6b13507 100644
+--- a/drivers/iommu/iommu.c
++++ b/drivers/iommu/iommu.c
+@@ -2170,6 +2170,25 @@ void iommu_put_resv_regions(struct device *dev, struct list_head *list)
+ 		ops->put_resv_regions(dev, list);
+ }
+ 
++/**
++ * iommu_put_resv_regions_simple - Reserved region driver helper
++ * @dev: device for which to free reserved regions
++ * @list: reserved region list for device
++ *
++ * IOMMU drivers can use this to implement their .put_resv_regions() callback
++ * for simple reservations. Memory allocated for each reserved region will be
++ * freed. If an IOMMU driver allocates additional resources per region, it is
++ * going to have to implement a custom callback.
++ */
++void iommu_put_resv_regions_simple(struct device *dev, struct list_head *list)
++{
++	struct iommu_resv_region *entry, *next;
++
++	list_for_each_entry_safe(entry, next, list, list)
++		kfree(entry);
++}
++EXPORT_SYMBOL(iommu_put_resv_regions_simple);
++
+ struct iommu_resv_region *iommu_alloc_resv_region(phys_addr_t start,
+ 						  size_t length, int prot,
+ 						  enum iommu_resv_type type)
+diff --git a/include/linux/iommu.h b/include/linux/iommu.h
+index 29bac5345563..d9c91e37ac2e 100644
+--- a/include/linux/iommu.h
++++ b/include/linux/iommu.h
+@@ -434,6 +434,8 @@ extern void iommu_set_fault_handler(struct iommu_domain *domain,
+ 
+ extern void iommu_get_resv_regions(struct device *dev, struct list_head *list);
+ extern void iommu_put_resv_regions(struct device *dev, struct list_head *list);
++extern void iommu_put_resv_regions_simple(struct device *dev,
++					  struct list_head *list);
+ extern int iommu_request_dm_for_dev(struct device *dev);
+ extern int iommu_request_dma_domain_for_dev(struct device *dev);
+ extern void iommu_set_default_passthrough(bool cmd_line);
 -- 
 2.22.0
 
