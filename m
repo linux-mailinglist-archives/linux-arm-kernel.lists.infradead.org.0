@@ -2,44 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF14FA1FA5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:49:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E085DA1FAC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:49:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=QkL+BvYuurOfMH0yfwLLUwVRkSClyo3nfz0EkrrtEgs=; b=TCnLJ8buYdVaJW
-	EPAdxbpbPYkTxLDyTJ6no49n7IwtUMAvSy5pw4uredwjlZ7+kfDzTDiwrlv3RN68FOaVJflWdo/2P
-	/FFLJRhnDgdLIlKUm0dkTPcgHnDkyYrvoT/Vstzi8+1aDkdqeG+swRAzsf8fmwuHwGl5eyYTXxDqF
-	0XnY/YsrFHpwUZbLjjBPgOTGfxBoQVvlCXTh/V8KQRgWUAjmSe6Hrz3QmXEjBeZW1yvu4Irseg4rw
-	5G1OZqG9fyj44M4LcYGtdhJon6EM3uQJNttINjKzzH0YYshSDeet3/MQpMcOHXSzYU74auyPfcauZ
-	4SjS2nsP2+Rbi5QTzaiQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=YxMjt8TzVX8l/FUjHVtidu7UegBdfi4LXXyPid6JSHs=; b=qSNmnrcX8RRWIBkMAd00H/F9tN
+	ttgUc6lSEbCyIuz8bz5sQUO1WLUhTF6uDcFXfQIBkFmHiifi63XTG7YYChxF1ABLl9EEgdNnXXb0j
+	N99ubXQ6HRBHHgU0GwJjQClqi9bDSBSKY8PYhvl1WDMyfHFpshEjNdNM2Mejz4p1mEomfvk+e+b4o
+	enivLIb1QyX4T2swpng/0XNMqfFxrIPA1RELXxI5VBw+FnAIMH7H4DxwxoOgu2RBFcxUiEF8ofR8C
+	TJRBzJ5riGhF8mMq3B+qfTmRlakSl3BGtR/sJ71VkY3tbrtbrNTb980Y9saDkV6WboockvKV/dEPG
+	PQpel2fg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MfY-0001YT-Ti; Thu, 29 Aug 2019 15:49:04 +0000
+	id 1i3Mg0-0001tn-9X; Thu, 29 Aug 2019 15:49:32 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfC-0001Xl-HA
+ id 1i3MfD-0001Y1-GE
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:44 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AE9EF28;
- Thu, 29 Aug 2019 08:48:41 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40EF0337;
+ Thu, 29 Aug 2019 08:48:43 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 582AE3F718;
- Thu, 29 Aug 2019 08:48:40 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E137D3F718;
+ Thu, 29 Aug 2019 08:48:41 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 00/10] arm64: avoid out-of-line ll/sc atomics
-Date: Thu, 29 Aug 2019 16:48:24 +0100
-Message-Id: <20190829154834.26547-1-will@kernel.org>
+Subject: [PATCH v5 01/10] jump_label: Don't warn on __exit jump entries
+Date: Thu, 29 Aug 2019 16:48:25 +0100
+Message-Id: <20190829154834.26547-2-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
-MIME-Version: 1.0
+In-Reply-To: <20190829154834.26547-1-will@kernel.org>
+References: <20190829154834.26547-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084842_618825_79073D22 
-X-CRM114-Status: GOOD (  16.53  )
+X-CRM114-CacheID: sfid-20190829_084843_586742_A59DA86F 
+X-CRM114-Status: GOOD (  11.09  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -61,80 +63,54 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
  ndesaulniers@google.com, robin.murphy@arm.com, Ard.Biesheuvel@arm.com,
  andrew.murray@arm.com, natechancellor@gmail.com, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi all,
+From: Andrew Murray <andrew.murray@arm.com>
 
-This is a version five of the patches previously posted by Andrew here:
+On architectures that discard .exit.* sections at runtime, a
+warning is printed for each jump label that is used within an
+in-kernel __exit annotated function:
 
-  v4: http://lkml.kernel.org/r/20190828175009.15457-1-andrew.murray@arm.com
+can't patch jump_label at ehci_hcd_cleanup+0x8/0x3c
+WARNING: CPU: 0 PID: 1 at kernel/jump_label.c:410 __jump_label_update+0x12c/0x138
 
-The reason I'm posting this is because I spotted an issue with the above
-when queuing it for 5.4 and fixing it ended up with me spinning a few
-patches on top.
+As these functions will never get executed (they are free'd along
+with the rest of initmem) - we do not need to patch them and should
+not display any warnings.
 
-The basic problem is that by implementing our atomic routines using a
-static key to select between the LL/SC and LSE variant, we rely on
-CONFIG_JUMP_LABEL and therefore CC_HAS_ASM_GOTO because otherwise the
-static key implementation itself is implementing using atomic routines,
-which leads to complete disaster.
+The warning is displayed because the test required to satisfy
+jump_entry_is_init is based on init_section_contains (__init_begin to
+__init_end) whereas the test in __jump_label_update is based on
+init_kernel_text (_sinittext to _einittext) via kernel_text_address).
 
-This patch series builds on top of Andrew's patches, with the following
-changes:
+Fixes: 19483677684b ("jump_label: Annotate entries that operate on __init code earlier")
+Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
+Acked-by: Mark Rutland <mark.rutland@arm.com>
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ kernel/jump_label.c | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-  * Tidying up the header files in preparation for...
-  * ...making LSE depend on JUMP_LABEL
-  * Support for the 'K' constraint when it looks like it works
-  * Minor massaging of commit logs
-
-This means that LSE atomics are not available for in-kernel use when
-building with a version of clang without 'asm goto' support. I really
-don't see a way around this, but I've been told that clang-9 should
-have this support so that's at least something.
-
-Will
-
-Cc: Ard.Biesheuvel@arm.com
-Cc: peterz@infradead.org
-Cc: andrew.murray@arm.com
-Cc: mark.rutland@arm.com
-Cc: catalin.marinas@arm.com
-Cc: robin.murphy@arm.com
-Cc: ndesaulniers@google.com
-Cc: natechancellor@gmail.com
-
---->8
-
-Andrew Murray (5):
-  jump_label: Don't warn on __exit jump entries
-  arm64: Use correct ll/sc atomic constraints
-  arm64: atomics: avoid out-of-line ll/sc atomics
-  arm64: avoid using hard-coded registers for LSE atomics
-  arm64: atomics: Remove atomic_ll_sc compilation unit
-
-Will Deacon (5):
-  arm64: lse: Remove unused 'alt_lse' assembly macro
-  arm64: asm: Kill 'asm/atomic_arch.h'
-  arm64: lse: Make ARM64_LSE_ATOMICS depend on JUMP_LABEL
-  arm64: atomics: Undefine internal macros after use
-  arm64: atomics: Use K constraint when toolchain appears to support it
-
- arch/arm64/Kconfig                    |   1 +
- arch/arm64/Makefile                   |   9 +-
- arch/arm64/include/asm/atomic.h       |  93 +++++++-
- arch/arm64/include/asm/atomic_ll_sc.h | 215 +++++++++---------
- arch/arm64/include/asm/atomic_lse.h   | 395 ++++++++++++----------------------
- arch/arm64/include/asm/cmpxchg.h      |  45 +++-
- arch/arm64/include/asm/lse.h          |  49 ++---
- arch/arm64/lib/Makefile               |  19 --
- arch/arm64/lib/atomic_ll_sc.c         |   3 -
- kernel/jump_label.c                   |   4 +-
- 10 files changed, 413 insertions(+), 420 deletions(-)
- delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
-
+diff --git a/kernel/jump_label.c b/kernel/jump_label.c
+index df3008419a1d..cdb3ffab128b 100644
+--- a/kernel/jump_label.c
++++ b/kernel/jump_label.c
+@@ -407,7 +407,9 @@ static bool jump_label_can_update(struct jump_entry *entry, bool init)
+ 		return false;
+ 
+ 	if (!kernel_text_address(jump_entry_code(entry))) {
+-		WARN_ONCE(1, "can't patch jump_label at %pS", (void *)jump_entry_code(entry));
++		WARN_ONCE(!jump_entry_is_init(entry),
++			  "can't patch jump_label at %pS",
++			  (void *)jump_entry_code(entry));
+ 		return false;
+ 	}
+ 
 -- 
 2.11.0
 
