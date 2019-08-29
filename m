@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9F43A1919
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:43:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 365B0A191C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:44:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Imh/jYgm5FaNUXYYGGGczw9tY8VCLoJ/RsxoMe84hBs=; b=ow6hkE45PBQWZj
-	momvHb4uqi/cQBzJRlE5or470nFViK0v8yid4xDm+u1OFOwMFOOOHBr2XwWwD30aX+d+EgWYvXXHT
-	8FukKMWLmO3vN/sGRVIpo0l36+8eWg++aS+aeWobB70pfwGXTIw1z2eqZQAnYZogv5jYdqqcSZYRL
-	4zyA+8DZh4C5bnUh1zDSVQKEnjg136sYpV/iKgcYz/keSgNvZNJ6xGnKJM7FZ4nNMKptLpbmOlw6i
-	8TQ1mtd9DTIdrbSByGrkGRlYP814n+RXZ1ZYJgtwK+KS+SDm4aMnZUxE2vGeQLKgg58JoMi63Vz8j
-	qAZwfbi2xH0h1uduBE8Q==;
+	List-Owner; bh=F2j9T1rrKLHsAq7FYzZ3To3yxuuTGP8zVcB/0qYpK7s=; b=W4sJapMvMcaJ57
+	I/5ZWZqULxWzlZoDFgt11ThLFDzgCCDm7Y1ixx5Yj76rpae9Qth7FMzo50O3oOvua5ZQe+orrRaWG
+	ioxbMuEs1SzW353NfXpBk32SJtxfqsCCUubrZjyUO6YozqotpQvI2xMZJFAhY/e5/UcgVmgcsbcSf
+	LqRAfyABFZEfDHZ/gDBzI3gBHRtn6y6auljGQCRihJcDPqhoxSq3VunZvUKqqGYH7LwRjO75LWTP9
+	pXYEiZcOl5Wj8LQRuug5KGW7omP5ufCxQBjHBt7q89n/Q31w1bukerfBwL9yRrOG6+bbXlHO1FSaN
+	pBfwkVlIiDFsODYeDMow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Iq5-0005JK-Dx; Thu, 29 Aug 2019 11:43:41 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i3IqI-0005XB-KH; Thu, 29 Aug 2019 11:43:54 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Iij-0006wg-CG
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:07 +0000
-Received: by mail-pl1-x644.google.com with SMTP id y8so1437197plr.12
+ id 1i3Iil-0006yJ-SU
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:09 +0000
+Received: by mail-pl1-x643.google.com with SMTP id az1so471676plb.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:36:05 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:07 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=y6GazOWQm4IOOc6xrMbLHqM6mIdOvxmzg2BIOtMFGqg=;
- b=LyNvyEL50rTrdkIjipcrLCUtIh4hp0sPiDDZNm2ss9LdOgbQO2Z5KQJOoEpkvAXgJp
- 2QpodfuPyGGaNRQadqdv3j4PfCLK26hknY1obYrHuUurdxwNueTidXsjcit+3hLKtwUU
- YJlmFFKYU1L5PDFxZLaGsjkMsWjdNOHI9EBneFPah8x5LtE4AejBca8qWlYGVNSlThKx
- ni6xB0phzYbDpMgrCZkMABWszq7FpzhMhJTOv8FHHzGtpsLIE82jHJ+YifCYESWcpIRk
- l6ayd71M7UMDayZrv68qBPQeQtbsYENCskRHqqVefLjRudwLeNUS4vpNxFHaYW0av0Wo
- zolQ==
+ bh=kL4bvpTkIxzXH8Y5LirqPgKQFts/fgCJz2Uk/H1BBsA=;
+ b=uQR2nK9Abh6tvSTERRD5xBq9uwIxsZobXq4VEfEob3EK6BxdIufTOc5Wx3Y/FVU4uc
+ JWR1NrqBH7lUEVzldljV3kwsB+S09nQFWAzzaR3VX9uxPnRn8IXDKjrv2CwTLnMaYHYb
+ /Oz0Ek425YEemXc/7qOYG6eSOdf2MaBTXINhNAnGlqFpjO/CPx6xeW4x0phOm4w4AAnU
+ MhjlHro4CJmTRlEKwdlqXVEI9OZZvBTPuJbLamLy9gPjCo8VToC1yGgADlXvtZjfOZ+b
+ io0G7yJ1Xb4O27IQJpP/v2qJpHKzTFev0xrvzTrIGNbhswhr+mNOJcu8WS95sQRWCZb8
+ blkg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=y6GazOWQm4IOOc6xrMbLHqM6mIdOvxmzg2BIOtMFGqg=;
- b=WL+m+g2gPcaVBJHrrC1NcIWKZcY90mtyAsiQvxyLm0P+SNKL3w6chVFhQ1s6doX+0m
- a9+O5kszLtwhMS9zap1HJwUcY5+dtrJxSHIvsPtInvao+ms+lX/dyZQbBcYxZ5wh6AR2
- /JVO9IpOqPdQQP5YdFl1CyxS3DEVJuA6boMaw97eSXo/gLgAuxXnpwPiZfYXAJIDtayl
- 9rm3JAVdOI0qUySUUF6xLRWKsofQOAtoSX6thFSMD8BJJ6kYQLfvoDRmIp3B3+T6wD6d
- a6OIYAjv0tn2ndKIfxdzgjpyGpSXxis29sZfYFmspdoeVWbsvU9FyNseVSjk0dXIq4a8
- 0fBA==
-X-Gm-Message-State: APjAAAXIITgC3HZ2TGVE5VfbAt6j187O1XJg/by7kCpGnShnvX45KZiq
- 8I0u7V00Hy3daKnfL91lnM+lmg==
-X-Google-Smtp-Source: APXvYqylU6VlJeIPHMWviGMFk9YcyO6Wnq/64uLquncZiKttj/4gMdRzMRgHYQuDzEEIjF7963d3Tw==
-X-Received: by 2002:a17:902:fa5:: with SMTP id
- 34mr9509568plz.285.1567078564877; 
- Thu, 29 Aug 2019 04:36:04 -0700 (PDT)
+ bh=kL4bvpTkIxzXH8Y5LirqPgKQFts/fgCJz2Uk/H1BBsA=;
+ b=t0spP8YvRgy9Mx966inLcxsbvyIO2adtzYxWKkjcK315yKjrRjthxhq9cSochJ7A0z
+ YJRUBKyHLDajeywLVfGHSs7fHjcjDT9enfVi+fKsxXj3Ai4HcGVyh6OxPtAuOaMQ/2fG
+ p256SiQxzszPQUIMeQiirX5FT4+x0Us8nCExfU4tD0mVNXrqI/jU5HvXssAN2I8X2XS7
+ edFjJ98Zlj3yXxc3Fs85WNNPGZ/mSRk8E9ceoWPfzAOx8TbqfxwoTofb/x4lpVf9nwfc
+ KyIWZ3Nz4sdN7VH7sp1zd7tiZ1mssinpDiIM4OPc5cLB0fMlnDwMmJ8OdsAY0uPpd/5p
+ oIlA==
+X-Gm-Message-State: APjAAAUiLGxWCKORrUCxsxHaTAeA0CU6kBWX4n7CVY4eQiJ8dgoql9Zc
+ 27EGQ6uZMSGGfkc8q1uNlbhXOA==
+X-Google-Smtp-Source: APXvYqy8YFh1mdMBf+OANfN4ae8Bqd8t4rFFIx82JCvQqRVm6LVGN3pK+l2vSa6Ykosu0quhrTgqxg==
+X-Received: by 2002:a17:902:7c8b:: with SMTP id
+ y11mr9687584pll.259.1567078567353; 
+ Thu, 29 Aug 2019 04:36:07 -0700 (PDT)
 Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id 4sm3138639pfe.76.2019.08.29.04.36.03
+ by smtp.gmail.com with ESMTPSA id g14sm2587953pfo.41.2019.08.29.04.36.06
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:36:04 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:06 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH ARM64 v4.4 V3 27/44] arm64: entry: Apply BP hardening for
- high-priority synchronous exceptions
-Date: Thu, 29 Aug 2019 17:04:12 +0530
-Message-Id: <711165f3d8dce609dfb777b3705fe1b58ca237cf.1567077734.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM64 v4.4 V3 28/44] arm64: entry: Apply BP hardening for
+ suspicious interrupts from EL0
+Date: Thu, 29 Aug 2019 17:04:13 +0530
+Message-Id: <16be0cb9c5bbcff5cfe74cf8d47c5a4084e45b5e.1567077734.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
 References: <cover.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_043605_540274_9CCD3F61 
-X-CRM114-Status: GOOD (  12.83  )
+X-CRM114-CacheID: sfid-20190829_043608_479331_596B8EAB 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,67 +111,58 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Will Deacon <will.deacon@arm.com>
 
-commit 5dfc6ed27710c42cbc15db5c0d4475699991da0a upstream.
+commit 30d88c0e3ace625a92eead9ca0ad94093a8f59fe upstream.
 
-Software-step and PC alignment fault exceptions have higher priority than
-instruction abort exceptions, so apply the BP hardening hooks there too
-if the user PC appears to reside in kernel space.
+It is possible to take an IRQ from EL0 following a branch to a kernel
+address in such a way that the IRQ is prioritised over the instruction
+abort. Whilst an attacker would need to get the stars to align here,
+it might be sufficient with enough calibration so perform BP hardening
+in the rare case that we see a kernel address in the ELR when handling
+an IRQ from EL0.
 
 Reported-by: Dan Hettena <dhettena@nvidia.com>
 Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ v4.4: Resolved rebase conflicts ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kernel/entry.S | 6 ++++--
- arch/arm64/mm/fault.c     | 9 +++++++++
- 2 files changed, 13 insertions(+), 2 deletions(-)
+ arch/arm64/kernel/entry.S | 5 +++++
+ arch/arm64/mm/fault.c     | 6 ++++++
+ 2 files changed, 11 insertions(+)
 
 diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 05bfc71639fc..42a141f01f3b 100644
+index 42a141f01f3b..1548be9732ce 100644
 --- a/arch/arm64/kernel/entry.S
 +++ b/arch/arm64/kernel/entry.S
-@@ -530,8 +530,10 @@ ENDPROC(el1_irq)
- 	 * Stack or PC alignment exception handling
- 	 */
- 	mrs	x26, far_el1
--	// enable interrupts before calling the main handler
--	enable_dbg_and_irq
-+	enable_dbg
-+#ifdef CONFIG_TRACE_IRQFLAGS
-+	bl	trace_hardirqs_off
-+#endif
+@@ -582,6 +582,11 @@ ENDPROC(el0_sync)
+ #endif
+ 
  	ct_user_exit
- 	mov	x0, x26
- 	mov	x1, x25
++#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
++	tbz	x22, #55, 1f
++	bl	do_el0_irq_bp_hardening
++1:
++#endif
+ 	irq_handler
+ 
+ #ifdef CONFIG_TRACE_IRQFLAGS
 diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 1878c881a247..082f385b6592 100644
+index 082f385b6592..9ff48d083c4c 100644
 --- a/arch/arm64/mm/fault.c
 +++ b/arch/arm64/mm/fault.c
-@@ -561,6 +561,12 @@ asmlinkage void __exception do_sp_pc_abort(unsigned long addr,
- 	struct siginfo info;
- 	struct task_struct *tsk = current;
+@@ -535,6 +535,12 @@ asmlinkage void __exception do_mem_abort(unsigned long addr, unsigned int esr,
+ 	arm64_notify_die("", regs, &info, esr);
+ }
  
-+	if (user_mode(regs)) {
-+		if (instruction_pointer(regs) > TASK_SIZE)
-+			arm64_apply_bp_hardening();
-+		local_irq_enable();
-+	}
++asmlinkage void __exception do_el0_irq_bp_hardening(void)
++{
++	/* PC has already been checked in entry.S */
++	arm64_apply_bp_hardening();
++}
 +
- 	if (show_unhandled_signals && unhandled_signal(tsk, SIGBUS))
- 		pr_info_ratelimited("%s[%d]: %s exception: pc=%p sp=%p\n",
- 				    tsk->comm, task_pid_nr(tsk),
-@@ -621,6 +627,9 @@ asmlinkage int __exception do_debug_exception(unsigned long addr_if_watchpoint,
- 	if (interrupts_enabled(regs))
- 		trace_hardirqs_off();
- 
-+	if (user_mode(regs) && instruction_pointer(regs) > TASK_SIZE)
-+		arm64_apply_bp_hardening();
-+
- 	if (!inf->fn(addr_if_watchpoint, esr, regs)) {
- 		rv = 1;
- 	} else {
+ asmlinkage void __exception do_el0_ia_bp_hardening(unsigned long addr,
+ 						   unsigned int esr,
+ 						   struct pt_regs *regs)
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
