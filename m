@@ -2,82 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 365B0A191C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1577BA191D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:44:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F2j9T1rrKLHsAq7FYzZ3To3yxuuTGP8zVcB/0qYpK7s=; b=W4sJapMvMcaJ57
-	I/5ZWZqULxWzlZoDFgt11ThLFDzgCCDm7Y1ixx5Yj76rpae9Qth7FMzo50O3oOvua5ZQe+orrRaWG
-	ioxbMuEs1SzW353NfXpBk32SJtxfqsCCUubrZjyUO6YozqotpQvI2xMZJFAhY/e5/UcgVmgcsbcSf
-	LqRAfyABFZEfDHZ/gDBzI3gBHRtn6y6auljGQCRihJcDPqhoxSq3VunZvUKqqGYH7LwRjO75LWTP9
-	pXYEiZcOl5Wj8LQRuug5KGW7omP5ufCxQBjHBt7q89n/Q31w1bukerfBwL9yRrOG6+bbXlHO1FSaN
-	pBfwkVlIiDFsODYeDMow==;
+	List-Owner; bh=kqQCVBK4XsUKPzPFHTcQNcV+ZJxLN+2v4NoSsBhKWfU=; b=nNuh1l11IYhXtz
+	UtqBzBMTbH4zi1gssSAapRJY1Q8TnToy+mc/hWYITXn5kWkqJ3VP4OFSjuaVviMFB7FRFg4O1bVb5
+	7ou3HSEDSOtYgMO0upAK3YSnMR3VoYaCRV8QxR8SRwmHz3AVOsjkfpwRFBL0zlK2md+tgiYaeX3tF
+	jDt8bOhhj/myjh3s0w09h23A+RUlXrtP7fatumGcoXAo5tPA5dQx5CHiRsBfEtuqrSPevjmRBkVPV
+	4JI7npEx21G9RHqz0S+Z/fUT3hJE+RylvjAW0TqKmAp9AJT9t4OqMT+YXbcUGB595NPN1FAkZcALc
+	FXUwB3OAZy7OckRNcoaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IqI-0005XB-KH; Thu, 29 Aug 2019 11:43:54 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1i3IqW-0005ku-Sm; Thu, 29 Aug 2019 11:44:09 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Iil-0006yJ-SU
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:09 +0000
-Received: by mail-pl1-x643.google.com with SMTP id az1so471676plb.6
+ id 1i3Iio-00070f-NY
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:13 +0000
+Received: by mail-pf1-x443.google.com with SMTP id v12so1850831pfn.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:36:07 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:10 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=kL4bvpTkIxzXH8Y5LirqPgKQFts/fgCJz2Uk/H1BBsA=;
- b=uQR2nK9Abh6tvSTERRD5xBq9uwIxsZobXq4VEfEob3EK6BxdIufTOc5Wx3Y/FVU4uc
- JWR1NrqBH7lUEVzldljV3kwsB+S09nQFWAzzaR3VX9uxPnRn8IXDKjrv2CwTLnMaYHYb
- /Oz0Ek425YEemXc/7qOYG6eSOdf2MaBTXINhNAnGlqFpjO/CPx6xeW4x0phOm4w4AAnU
- MhjlHro4CJmTRlEKwdlqXVEI9OZZvBTPuJbLamLy9gPjCo8VToC1yGgADlXvtZjfOZ+b
- io0G7yJ1Xb4O27IQJpP/v2qJpHKzTFev0xrvzTrIGNbhswhr+mNOJcu8WS95sQRWCZb8
- blkg==
+ bh=D7dDso9mEizkFlSNIpcQXEVsYMAg+0dXCi9osCif4dQ=;
+ b=ARrmgjAQyWJ3A4H4QgsubRRxM85gcS37EsYBleh0p2pXl6UY9hbPYZcOyuJR3mVRa9
+ +QWoqI+LoqVQna7nhm7rI1cOu0XOtVBblELb8gpt7GtH7GBQ0foQJEzZIzr88uCClaBz
+ qqFVG+I6NBY9BKoxQvSXqR735A5i1oKRwChtj3giEyO112Yb7ZenwG7LdlyGoK36dazL
+ i3RsOyEsdSdbIKPtB6BV3CiElXyPRHj2rPUdopOYNYkggTMGIbFMNZn4/cQOvl5+Lalf
+ aTpS/LgRJqgkQBfqjcrbCbJO0To4tgT8DZMiY8o1G3IakSjVFzJigRQkKNepKEymVTz/
+ shNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=kL4bvpTkIxzXH8Y5LirqPgKQFts/fgCJz2Uk/H1BBsA=;
- b=t0spP8YvRgy9Mx966inLcxsbvyIO2adtzYxWKkjcK315yKjrRjthxhq9cSochJ7A0z
- YJRUBKyHLDajeywLVfGHSs7fHjcjDT9enfVi+fKsxXj3Ai4HcGVyh6OxPtAuOaMQ/2fG
- p256SiQxzszPQUIMeQiirX5FT4+x0Us8nCExfU4tD0mVNXrqI/jU5HvXssAN2I8X2XS7
- edFjJ98Zlj3yXxc3Fs85WNNPGZ/mSRk8E9ceoWPfzAOx8TbqfxwoTofb/x4lpVf9nwfc
- KyIWZ3Nz4sdN7VH7sp1zd7tiZ1mssinpDiIM4OPc5cLB0fMlnDwMmJ8OdsAY0uPpd/5p
- oIlA==
-X-Gm-Message-State: APjAAAUiLGxWCKORrUCxsxHaTAeA0CU6kBWX4n7CVY4eQiJ8dgoql9Zc
- 27EGQ6uZMSGGfkc8q1uNlbhXOA==
-X-Google-Smtp-Source: APXvYqy8YFh1mdMBf+OANfN4ae8Bqd8t4rFFIx82JCvQqRVm6LVGN3pK+l2vSa6Ykosu0quhrTgqxg==
-X-Received: by 2002:a17:902:7c8b:: with SMTP id
- y11mr9687584pll.259.1567078567353; 
- Thu, 29 Aug 2019 04:36:07 -0700 (PDT)
+ bh=D7dDso9mEizkFlSNIpcQXEVsYMAg+0dXCi9osCif4dQ=;
+ b=epOFWJU2DB91kaEbevTinzDg/iKxvks14SyXpIgJX3nfUJ+xUnQtXSyDUZMeha/ik6
+ 4ouYkc+/995ale837StcuWtORZqyWl9Ffy2D+TBBPjyHiPfo9AOkQSnvEo8ZCPoZXzKT
+ M3cWZMzoZTHuNefVPktoqNJmy+aF5BMzXyOwl7ZSz0LHHfNjLVWGwGsaH2K+zqSBmLLl
+ KTMYl/14QdSEMO9BZfA4oZFNO0GdCUpavi6A/wZWx5GHfFpC9UdmMtxQoZc15TWxpMoh
+ 02EMY8g1NfryF9EmmNGJMu/Jho3TDPraIU9soOhWbnWs0zetfgbcpCgri2FtaAPUEatF
+ M0nA==
+X-Gm-Message-State: APjAAAVDDRbT3d6FBQwNdj06HW5Am6iiIsS6kKy+K+6zhTad+K7c6x0k
+ fMfj3rq/zrETA6K2Dxt0lCfyDQ==
+X-Google-Smtp-Source: APXvYqyKCagpxOr1sVZtXw0tQn2B2kM7k2upAkKJrVKCRIE4bO3JT3iMpRghGhGOZed8ZpAd44rKhw==
+X-Received: by 2002:a63:20a:: with SMTP id 10mr7790456pgc.226.1567078570025;
+ Thu, 29 Aug 2019 04:36:10 -0700 (PDT)
 Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id g14sm2587953pfo.41.2019.08.29.04.36.06
+ by smtp.gmail.com with ESMTPSA id y14sm1899716pge.7.2019.08.29.04.36.08
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:36:06 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:09 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH ARM64 v4.4 V3 28/44] arm64: entry: Apply BP hardening for
- suspicious interrupts from EL0
-Date: Thu, 29 Aug 2019 17:04:13 +0530
-Message-Id: <16be0cb9c5bbcff5cfe74cf8d47c5a4084e45b5e.1567077734.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM64 v4.4 V3 29/44] arm64: cputype: Add missing MIDR values
+ for Cortex-A72 and Cortex-A75
+Date: Thu, 29 Aug 2019 17:04:14 +0530
+Message-Id: <6b46a425ec244a76a7cebf5e1cdfa6e1d0a6c7a8.1567077734.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
 References: <cover.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_043608_479331_596B8EAB 
-X-CRM114-Status: GOOD (  11.59  )
+X-CRM114-CacheID: sfid-20190829_043610_975611_7888DECB 
+X-CRM114-Status: UNSURE (   8.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -111,58 +111,44 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Will Deacon <will.deacon@arm.com>
 
-commit 30d88c0e3ace625a92eead9ca0ad94093a8f59fe upstream.
+commit a65d219fe5dc7887fd5ca04c2ac3e9a34feb8dfc upstream.
 
-It is possible to take an IRQ from EL0 following a branch to a kernel
-address in such a way that the IRQ is prioritised over the instruction
-abort. Whilst an attacker would need to get the stars to align here,
-it might be sufficient with enough calibration so perform BP hardening
-in the rare case that we see a kernel address in the ELR when handling
-an IRQ from EL0.
+Hook up MIDR values for the Cortex-A72 and Cortex-A75 CPUs, since they
+will soon need MIDR matches for hardening the branch predictor.
 
-Reported-by: Dan Hettena <dhettena@nvidia.com>
-Reviewed-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Will Deacon <will.deacon@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
+[ v4.4: Add A73 values as well ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- arch/arm64/kernel/entry.S | 5 +++++
- arch/arm64/mm/fault.c     | 6 ++++++
- 2 files changed, 11 insertions(+)
+ arch/arm64/include/asm/cputype.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
-index 42a141f01f3b..1548be9732ce 100644
---- a/arch/arm64/kernel/entry.S
-+++ b/arch/arm64/kernel/entry.S
-@@ -582,6 +582,11 @@ ENDPROC(el0_sync)
- #endif
+diff --git a/arch/arm64/include/asm/cputype.h b/arch/arm64/include/asm/cputype.h
+index f43e10cfeda2..2a1f44646048 100644
+--- a/arch/arm64/include/asm/cputype.h
++++ b/arch/arm64/include/asm/cputype.h
+@@ -77,14 +77,20 @@
+ #define ARM_CPU_PART_AEM_V8		0xD0F
+ #define ARM_CPU_PART_FOUNDATION		0xD00
+ #define ARM_CPU_PART_CORTEX_A57		0xD07
++#define ARM_CPU_PART_CORTEX_A72		0xD08
+ #define ARM_CPU_PART_CORTEX_A53		0xD03
+ #define ARM_CPU_PART_CORTEX_A55		0xD05
++#define ARM_CPU_PART_CORTEX_A73		0xD09
++#define ARM_CPU_PART_CORTEX_A75		0xD0A
  
- 	ct_user_exit
-+#ifdef CONFIG_HARDEN_BRANCH_PREDICTOR
-+	tbz	x22, #55, 1f
-+	bl	do_el0_irq_bp_hardening
-+1:
-+#endif
- 	irq_handler
+ #define APM_CPU_PART_POTENZA		0x000
  
- #ifdef CONFIG_TRACE_IRQFLAGS
-diff --git a/arch/arm64/mm/fault.c b/arch/arm64/mm/fault.c
-index 082f385b6592..9ff48d083c4c 100644
---- a/arch/arm64/mm/fault.c
-+++ b/arch/arm64/mm/fault.c
-@@ -535,6 +535,12 @@ asmlinkage void __exception do_mem_abort(unsigned long addr, unsigned int esr,
- 	arm64_notify_die("", regs, &info, esr);
- }
+ #define CAVIUM_CPU_PART_THUNDERX	0x0A1
  
-+asmlinkage void __exception do_el0_irq_bp_hardening(void)
-+{
-+	/* PC has already been checked in entry.S */
-+	arm64_apply_bp_hardening();
-+}
-+
- asmlinkage void __exception do_el0_ia_bp_hardening(unsigned long addr,
- 						   unsigned int esr,
- 						   struct pt_regs *regs)
+ #define MIDR_CORTEX_A55 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A55)
++#define MIDR_CORTEX_A72 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A72)
++#define MIDR_CORTEX_A73 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A73)
++#define MIDR_CORTEX_A75 MIDR_CPU_PART(ARM_CPU_IMP_ARM, ARM_CPU_PART_CORTEX_A75)
+ 
+ #ifndef __ASSEMBLY__
+ 
 -- 
 2.21.0.rc0.269.g1a574e7a288b
 
