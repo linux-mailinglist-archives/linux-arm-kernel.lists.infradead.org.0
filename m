@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F9EEA280E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:32:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4D54A280F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:33:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,71 +11,71 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=pQXmWw/v0dXZb8ulqL+J5iswLiezTtebuw9FdTowNIc=; b=YxalVxL6fImcZCgbRw0RexAt9M
-	Jb4QLIr+85E4kqkBz/B5oeqz9IyAaqx3r9zPcbLbON+IcEhNl7BQ9FdETnoY/xF0EL4n3f3cAv8C7
-	JHjZfV1otHkVwpylJ323Qb8YlpT1Vxf+4LFkqa+CY1cIMXU/2oI9lEYxWPRLnXcwLW3001//3YAT1
-	mMr6eDyfoMRRc4c69K6nZz0NClm6V6oSLjmv5V6oy04k2xRBD/65brceQjJ9Bf7buR9FaxIbk/hRi
-	6uFY5i2juaEaVmWNOS1cAKlnTb8WRs1wKDyMSrvSRPWOCysvdvpfC5jUtsq2ggOD1kIl/mbZcbKuG
-	UsMcN+4A==;
+	bh=abcuc+UQZK8tE0PTami2yajttWjfotrEhofyG8HqUNc=; b=C+MAebwM9Z0DDbBO/aVsDqpcZJ
+	ukua9Vfhv3q9dK4PfgoI+WeRjjIlyzqHiII1XE30SDR4WnjMu76a/4wqstbYaTLXrY1s2VrejMSWx
+	AZost09EaJwhLS+9covS8yzxOWnt0Hi7kLkrRW2EqNFa6wR/USjvUD0l32It8hCbeni+8du0dh8Yo
+	joMpXPiQoU4Zcd5Fm3kxVQTEWWepyyeYxzI7PGs9Jf47gixKt4/3evJhvQddevRtE4EvyuNw8FJQ9
+	3nIkAEE+2zNDwSqNYDU+0lXy0q3Z3jsCTEQrE4koqTHTlNl3Y9/rJuyVkr7BjCAIy16xA8820pMnO
+	0maXTYfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R69-000062-7W; Thu, 29 Aug 2019 20:32:49 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1i3R6M-0000KZ-7s; Thu, 29 Aug 2019 20:33:02 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2Q-0003sW-HH
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:29:00 +0000
-Received: by mail-pf1-x442.google.com with SMTP id w26so2837144pfq.12
+ id 1i3R2R-0003tY-8x
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:29:01 +0000
+Received: by mail-pg1-x542.google.com with SMTP id u17so2192959pgi.6
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:58 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:59 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=E6JJPDmvISX991Wh+NJW8zwoICYYRk5QMIwlhnt3CGg=;
- b=zuLKb5Kwu59QP18+LohC8fxu31X9MGkRLi4sOAryHBSlKK71nBfZ8/rhAPwp3TxzBP
- ifuDvwW9s/3/3CJ+mQGBKYp/4ZcMcRgbO4biVflJ34GlGs1WC+7qigIqeq+oD2Wmo/Lg
- /EOY7kNIvrvMrfvufovvnaRJ/GmX/DcuyrN9f2oFjIyCfkJd0CVlpywcUtNkoFzbyX04
- bauAb1q1On7LhyPMF+bkZjj7hMfc+GTzDSbLnVfYmWDnBWjznqDJ9ZSH+Bs0QjwY2MGA
- J8HbZTu69yBgB2t+/1VsMVL7GJgdGk9LbEbmWK3JgZixvBl/qR6pcP5oDYVrImOWfngT
- ExSQ==
+ bh=+Z3NPWauWgqkbAtaaZA1LMl/05vfVy1Sm0Y1RvvWJNM=;
+ b=ldKueGDnjf1aV9chhRpVQoaP6mJfnsqgRVWouu0i5X418/0TxiyUb6zvDZkucs/eJd
+ 42d/GnKGMaRfc/DuARvZ2yfDxmPaKL7EAtN8l5MLr4MxRbk7bVzBtfJWl19kA8E3/s46
+ JbF2tgRlyFGk0BbdsSe+Cyl9T7S/PqdwWuZJQhk9NyhoW74AqxnH1ktuU4yQBpGbgV3+
+ 0EhMzfHYnj/dHrRcb+X09+qajHRJFbwfBtmv5SlOVLSeuxRXXZZig4wjwVLkQ7UoLb7d
+ aV5LJR5hqfyPNl5RXf0KeJgJWn/495dYllnSHrqN9sIdWkX1EUZF6VPVCHCBdKv92RuG
+ bwpw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=E6JJPDmvISX991Wh+NJW8zwoICYYRk5QMIwlhnt3CGg=;
- b=L5cveAZCEn8Y1ut4NnlHjsagwglMRtK9Btt9SfBDO01ShixXmBEwe3mTPvcEH9PJkE
- us3bKVJopsB9BnJlC8wt0ngZ5C5PsnKMp6NOi/zWJHv6GyLfrRQisQpZFWPj+aq5r7oP
- fmAG5+Cu0T2sb95diDC8fWO/Zzb7lgfOyF17K9vUB7QjMZYoNksHgiEiV4NV8AcR26pG
- 1AYoGmiNTfHOdHhSXuqFUN9Vp9ZjkxPHQxif5PuBf3lgNfSQ9IAJBsmu/VPi6yw5SF3E
- Puw5k7cGD8KHittRZi29IlLdLB5VTCWuqTFgdmqCIxNE7v8JWHW2TdJWKWhPnn08tJsw
- ePmw==
-X-Gm-Message-State: APjAAAV7T0JbJThkctmjWb8xPbPv0+HrdySeuQ/X0B4OKLFVrmTa3oVz
- faRU3H6ix9ldmwJ6mnJzk31l8QNnf/A=
-X-Google-Smtp-Source: APXvYqxpXbXRC4EmUBxFTrlHoSF6YCdKHrNTCHRs7FfRzMVzvj6/n2B98LpvIm/x1GIJ2h1Zgdm3gA==
-X-Received: by 2002:a65:6108:: with SMTP id z8mr9980441pgu.289.1567110537766; 
- Thu, 29 Aug 2019 13:28:57 -0700 (PDT)
+ bh=+Z3NPWauWgqkbAtaaZA1LMl/05vfVy1Sm0Y1RvvWJNM=;
+ b=TkCaTFYwCYa++pf6pDQMdtzth8xDVU31exoompbpChsYtpwPydBcHHqIytAEGsG/k2
+ TRLm4uQErcWf09wfCMM7cL3uqfO1BiyoTyD4AjSw5s9thHpQnUAeiy46FgorodJUspFO
+ L6XqPsd0IU83fvriSZHcA4k+r0rA/RCPn0CIqx4lshjwPsJHy5U8aFxbFNlH/TjWQx1Q
+ 7HaI2SQqp7xwjGuaUJRwteeFsInj1B96IVprIStyViqc0kRH8dMOtqZkUBltGVgfcW35
+ S1akRREEhb5XR+guItmYxbbmTOwKJf3Gi4H5+V9Of65ob7PZud6NVC62/xfvXpiQDFDA
+ KoXA==
+X-Gm-Message-State: APjAAAV5PS80yea/aJOJEi/Bhr2k0ffAxmDucaUeBWQxbmyxeOzA02ly
+ FADygmiYV2M6+014QxtQkv2tHg==
+X-Google-Smtp-Source: APXvYqw6fKuYNcSWl6VZ8txCpcbpn/DEO4p1VN/o1K12yzCs74gVEgOPraGOIo3rgs+N47bHqjykdg==
+X-Received: by 2002:a63:10a:: with SMTP id 10mr10095873pgb.281.1567110538599; 
+ Thu, 29 Aug 2019 13:28:58 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.56
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.57
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:57 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:58 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 15/17] coresight: tmc: Make memory width mask computation into
- a function
-Date: Thu, 29 Aug 2019 14:28:40 -0600
-Message-Id: <20190829202842.580-16-mathieu.poirier@linaro.org>
+Subject: [PATCH 16/17] coresight: tmc-etr: Decouple buffer sync and barrier
+ packet insertion
+Date: Thu, 29 Aug 2019 14:28:41 -0600
+Message-Id: <20190829202842.580-17-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132858_642837_C5797250 
-X-CRM114-Status: GOOD (  15.41  )
+X-CRM114-CacheID: sfid-20190829_132859_542025_D94D10FE 
+X-CRM114-Status: GOOD (  12.83  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -104,105 +104,76 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make the computation of a memory mask representing the width of the memory
-bus into a function so that it can be re-used by the ETR driver.
+If less space is available in the perf ring buffer than the ETR buffer,
+barrier packets inserted in the trace stream by tmc_sync_etr_buf() are
+skipped over when the head of the buffer is moved forward, resulting in
+traces that can't be decoded.
+
+This patch decouples the process of syncing ETR buffers and the addition
+of barrier packets in order to perform the latter once the offset in the
+trace buffer has been properly computed.
 
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 Reviewed-by: Leo Yan <leo.yan@linaro.org>
 ---
- .../hwtracing/coresight/coresight-tmc-etf.c   | 23 ++-------------
- drivers/hwtracing/coresight/coresight-tmc.c   | 28 +++++++++++++++++++
- drivers/hwtracing/coresight/coresight-tmc.h   |  1 +
- 3 files changed, 31 insertions(+), 21 deletions(-)
+ .../hwtracing/coresight/coresight-tmc-etr.c    | 18 ++++++++++++------
+ 1 file changed, 12 insertions(+), 6 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc-etf.c b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-index 23b7ff00af5c..807416b75ecc 100644
---- a/drivers/hwtracing/coresight/coresight-tmc-etf.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc-etf.c
-@@ -479,30 +479,11 @@ static unsigned long tmc_update_etf_buffer(struct coresight_device *csdev,
- 	 * traces.
- 	 */
- 	if (!buf->snapshot && to_read > handle->size) {
--		u32 mask = 0;
--
--		/*
--		 * The value written to RRP must be byte-address aligned to
--		 * the width of the trace memory databus _and_ to a frame
--		 * boundary (16 byte), whichever is the biggest. For example,
--		 * for 32-bit, 64-bit and 128-bit wide trace memory, the four
--		 * LSBs must be 0s. For 256-bit wide trace memory, the five
--		 * LSBs must be 0s.
--		 */
--		switch (drvdata->memwidth) {
--		case TMC_MEM_INTF_WIDTH_32BITS:
--		case TMC_MEM_INTF_WIDTH_64BITS:
--		case TMC_MEM_INTF_WIDTH_128BITS:
--			mask = GENMASK(31, 4);
--			break;
--		case TMC_MEM_INTF_WIDTH_256BITS:
--			mask = GENMASK(31, 5);
--			break;
--		}
-+		u32 mask = tmc_get_memwidth_mask(drvdata);
+diff --git a/drivers/hwtracing/coresight/coresight-tmc-etr.c b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+index 4f000a03152e..bae47272de98 100644
+--- a/drivers/hwtracing/coresight/coresight-tmc-etr.c
++++ b/drivers/hwtracing/coresight/coresight-tmc-etr.c
+@@ -946,10 +946,6 @@ static void tmc_sync_etr_buf(struct tmc_drvdata *drvdata)
+ 	WARN_ON(!etr_buf->ops || !etr_buf->ops->sync);
  
- 		/*
- 		 * Make sure the new size is aligned in accordance with the
--		 * requirement explained above.
-+		 * requirement explained in function tmc_get_memwidth_mask().
- 		 */
- 		to_read = handle->size & mask;
- 		/* Move the RAM read pointer up */
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-index 3055bf8e2236..1cf82fa58289 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc.c
-@@ -70,6 +70,34 @@ void tmc_disable_hw(struct tmc_drvdata *drvdata)
- 	writel_relaxed(0x0, drvdata->base + TMC_CTL);
+ 	etr_buf->ops->sync(etr_buf, rrp, rwp);
+-
+-	/* Insert barrier packets at the beginning, if there was an overflow */
+-	if (etr_buf->full)
+-		tmc_etr_buf_insert_barrier_packet(etr_buf, etr_buf->offset);
  }
  
-+u32 tmc_get_memwidth_mask(struct tmc_drvdata *drvdata)
-+{
-+	u32 mask = 0;
-+
-+	/*
-+	 * When moving RRP or an offset address forward, the new values must
-+	 * be byte-address aligned to the width of the trace memory databus
-+	 * _and_ to a frame boundary (16 byte), whichever is the biggest. For
-+	 * example, for 32-bit, 64-bit and 128-bit wide trace memory, the four
-+	 * LSBs must be 0s. For 256-bit wide trace memory, the five LSBs must
-+	 * be 0s.
-+	 */
-+	switch (drvdata->memwidth) {
-+	case TMC_MEM_INTF_WIDTH_32BITS:
-+	/* fallthrough */
-+	case TMC_MEM_INTF_WIDTH_64BITS:
-+	/* fallthrough */
-+	case TMC_MEM_INTF_WIDTH_128BITS:
-+		mask = GENMASK(31, 4);
-+		break;
-+	case TMC_MEM_INTF_WIDTH_256BITS:
-+		mask = GENMASK(31, 5);
-+		break;
-+	}
-+
-+	return mask;
-+}
-+
- static int tmc_read_prepare(struct tmc_drvdata *drvdata)
- {
- 	int ret = 0;
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
-index 9dbcdf453e22..71de978575f3 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.h
-+++ b/drivers/hwtracing/coresight/coresight-tmc.h
-@@ -255,6 +255,7 @@ void tmc_wait_for_tmcready(struct tmc_drvdata *drvdata);
- void tmc_flush_and_stop(struct tmc_drvdata *drvdata);
- void tmc_enable_hw(struct tmc_drvdata *drvdata);
- void tmc_disable_hw(struct tmc_drvdata *drvdata);
-+u32 tmc_get_memwidth_mask(struct tmc_drvdata *drvdata);
+ static void __tmc_etr_enable_hw(struct tmc_drvdata *drvdata)
+@@ -1086,6 +1082,13 @@ static void tmc_etr_sync_sysfs_buf(struct tmc_drvdata *drvdata)
+ 		drvdata->sysfs_buf = NULL;
+ 	} else {
+ 		tmc_sync_etr_buf(drvdata);
++		/*
++		 * Insert barrier packets at the beginning, if there was
++		 * an overflow.
++		 */
++		if (etr_buf->full)
++			tmc_etr_buf_insert_barrier_packet(etr_buf,
++							  etr_buf->offset);
+ 	}
+ }
  
- /* ETB/ETF functions */
- int tmc_read_prepare_etb(struct tmc_drvdata *drvdata);
+@@ -1502,11 +1505,16 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
+ 	CS_LOCK(drvdata->base);
+ 	spin_unlock_irqrestore(&drvdata->spinlock, flags);
+ 
++	lost = etr_buf->full;
+ 	size = etr_buf->len;
+ 	if (!etr_perf->snapshot && size > handle->size) {
+ 		size = handle->size;
+ 		lost = true;
+ 	}
++
++	/* Insert barrier packets at the beginning, if there was an overflow */
++	if (lost)
++		tmc_etr_buf_insert_barrier_packet(etr_buf, etr_buf->offset);
+ 	tmc_etr_sync_perf_buffer(etr_perf, size);
+ 
+ 	/*
+@@ -1517,8 +1525,6 @@ tmc_update_etr_buffer(struct coresight_device *csdev,
+ 	 */
+ 	if (etr_perf->snapshot)
+ 		handle->head += size;
+-
+-	lost |= etr_buf->full;
+ out:
+ 	/*
+ 	 * Don't set the TRUNCATED flag in snapshot mode because 1) the
 -- 
 2.17.1
 
