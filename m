@@ -2,64 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DC7CA14CD
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:24:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 578BAA14CF
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:25:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mkvj98pb/4Wi5X85Epm0aUpk98v0avXFTz5TLGm6ft8=; b=ek6r/j6401oYfO
-	DP9D4bTqYPW8VbqBD/Q2m6XuX5Vxglcsm21i2YPjoZFFaxH02wuC3wi38rZvvWGcZMramyQ1aT4LL
-	F+ROKMzRLkXTpGTmPByuVMPyM95Wfft8fp2nKPUBuwSYLCMXKW13kMkwS8efElCL42hL9t6WI5hcD
-	Iks+5qCksxp5KNbKVEk1B3NwILlHSYi92G4trezwlSNhs3lyW5GoLJT+tKwswdXa5UCp3WiN0e5bG
-	/T1ksPOn7ha9JgLuFHignPIvIi+UOICCnJMJ60y+lBqXvsAa8RZvvPHfNz/IjvluHb+mPYh5wnP+K
-	THIgtnHUaMFFxplNBULQ==;
+	List-Owner; bh=wMGYN++4TbqU6DcppuYpjAFwpy1fsROvovNzgsX7A5M=; b=YDRpZqGBPfOP2i
+	w+wewzxkTSyE0NVtMmGLnRYpH8zw6JcuYcGEnbd+APNw5h0ZXIlyjAaHlX1Zy/enkcICTzLgOVhnQ
+	seDu18xzlt1SeLiW4agbr1cjr2vXOxQq+ivMQY224H0kPMpfHneIGvFU/G2TwiC8FfkU0hlj3BeYF
+	P57PLh6S3O7uMv99NJi3eMcoiZJdi5eI2npNRT6LcifYj5YiGnz5zlmm/u+UIZfbc80Hkzuf7R89E
+	46XHiZAa6Fg/w96jypsFrNi79lEUVRw0QKjp5tuFWLGtzDUHvLScQDTwu2OHv/84lsjeQ0LxknT5c
+	LhlERpaX/lPLAym3amVw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3GfL-0001UM-S3; Thu, 29 Aug 2019 09:24:28 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i3Gfi-0001oG-TB; Thu, 29 Aug 2019 09:24:51 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ge4-0000co-V4; Thu, 29 Aug 2019 09:23:11 +0000
-X-UUID: b34ad91b1a2d40cc9a0e1e38fa37205d-20190829
-X-UUID: b34ad91b1a2d40cc9a0e1e38fa37205d-20190829
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ id 1i3Ge7-0000eX-Mz; Thu, 29 Aug 2019 09:23:13 +0000
+X-UUID: b5cf684f16174592a7a916e89e922243-20190829
+X-UUID: b5cf684f16174592a7a916e89e922243-20190829
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 706074893; Thu, 29 Aug 2019 01:23:13 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ with ESMTP id 64907415; Thu, 29 Aug 2019 01:23:14 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 02:23:11 -0700
+ 15.0.1395.4; Thu, 29 Aug 2019 02:23:13 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 17:23:09 +0800
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 17:23:10 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 29 Aug 2019 17:23:08 +0800
+ Transport; Thu, 29 Aug 2019 17:23:09 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Rob Herring <robh+dt@kernel.org>, Greg Kroah-Hartman
  <gregkh@linuxfoundation.org>, Biju Das <biju.das@bp.renesas.com>
-Subject: [PATCH next v11 03/11] dt-bindings: usb: add binding for USB GPIO
- based connection detection driver
-Date: Thu, 29 Aug 2019 17:22:30 +0800
-Message-ID: <1567070558-29417-4-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH next v11 04/11] dt-bindings: usb: mtu3: add properties about
+ USB Role Switch
+Date: Thu, 29 Aug 2019 17:22:31 +0800
+Message-ID: <1567070558-29417-5-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1567070558-29417-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B59DAFD410BA8AF279F9E0A9B2672EA1E00E8BAC821020BD5225B94C965F85A12000:8
+X-TM-SNTS-SMTP: FE159E78FF34A3174D0F86F9B6F1DA395EBB173AEF3A60E4C3C67225EABD0B9E2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_022308_998340_46CDC566 
-X-CRM114-Status: GOOD (  12.61  )
+X-CRM114-CacheID: sfid-20190829_022311_798723_00990E2D 
+X-CRM114-Status: GOOD (  12.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -91,87 +89,68 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-It's used to support dual role switch via GPIO when use Type-B
-receptacle, typically the USB ID pin is connected to an input
-GPIO, and also used to enable/disable device when the USB Vbus
-pin is connected to an input GPIO.
+Now the USB Role Switch is supported, so add properties about it,
+and modify some description related.
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
+Reviewed-by: Rob Herring <robh@kernel.org>
 ---
-v11 changes:
- 1. add Reviewed-by Linus
- 2. change compatible as "gpio-usb-b-connector", and remove label
-    in example suggested by Rob
-
-v9~v10 no changes
-
-v8 changes:
- 1. rename the title
- 2. change the compatible as "linux,usb-conn-gpio" instead of
-    "linux,typeb-conn-gpio"
-
-v7 changes:
- 1. add description for device only mode
-
-v6 changes:
- 1. remove status and port nodes in example
- 2. make vbus-supply as optional property
+v6~v11 no changes
 
 v5 changes:
- 1. treat type-B connector as child device of USB controller's, but not
-    as a separate virtual device, suggested by Rob
- 2. put connector's port node under connector node, suggested by Rob
+ 1. modify decription about extcon and vbus-supply properties
+ 2. make this patch depend on [1]
+
+ [1]: [v3] dt-binding: usb: add usb-role-switch property
+      https://patchwork.kernel.org/patch/10934835/
 
 v4 no changes
-
-v3 changes:
- 1. treat type-B connector as a virtual device, but not child device of
-    USB controller's
+v3 no changes
 
 v2 changes:
-  1. new patch to make binding clear suggested by Hans
+  1. fix typo
+  2. refer new binding about connector property
 ---
- .../devicetree/bindings/usb/usb-conn-gpio.txt | 30 +++++++++++++++++++
- 1 file changed, 30 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
+ .../devicetree/bindings/usb/mediatek,mtu3.txt          | 10 ++++++++++
+ 1 file changed, 10 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
-new file mode 100644
-index 000000000000..3d05ae56cb0d
---- /dev/null
-+++ b/Documentation/devicetree/bindings/usb/usb-conn-gpio.txt
-@@ -0,0 +1,30 @@
-+USB GPIO Based Connection Detection
+diff --git a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
+index 3382b5cb471d..3a8300205cdb 100644
+--- a/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
++++ b/Documentation/devicetree/bindings/usb/mediatek,mtu3.txt
+@@ -28,8 +28,13 @@ Optional properties:
+ 	parent's address space
+  - extcon : external connector for vbus and idpin changes detection, needed
+ 	when supports dual-role mode.
++	it's considered valid for compatibility reasons, not allowed for
++	new bindings, and use "usb-role-switch" property instead.
+  - vbus-supply : reference to the VBUS regulator, needed when supports
+ 	dual-role mode.
++	it's considered valid for compatibility reasons, not allowed for
++	new bindings, and put into a usb-connector node.
++	see connector/usb-connector.txt.
+  - pinctrl-names : a pinctrl state named "default" is optional, and need be
+ 	defined if auto drd switch is enabled, that means the property dr_mode
+ 	is set as "otg", and meanwhile the property "mediatek,enable-manual-drd"
+@@ -39,6 +44,8 @@ Optional properties:
+ 
+  - maximum-speed : valid arguments are "super-speed", "high-speed" and
+ 	"full-speed"; refer to usb/generic.txt
++ - usb-role-switch : use USB Role Switch to support dual-role switch, but
++	not extcon; see usb/generic.txt.
+  - enable-manual-drd : supports manual dual-role switch via debugfs; usually
+ 	used when receptacle is TYPE-A and also wants to support dual-role
+ 	mode.
+@@ -61,6 +68,9 @@ The xhci should be added as subnode to mtu3 as shown in the following example
+ if host mode is enabled. The DT binding details of xhci can be found in:
+ Documentation/devicetree/bindings/usb/mediatek,mtk-xhci.txt
+ 
++The port would be added as subnode if use "usb-role-switch" property.
++	see graph.txt
 +
-+This is typically used to switch dual role mode from the USB ID pin connected
-+to an input GPIO, and also used to enable/disable device mode from the USB
-+Vbus pin connected to an input GPIO.
-+
-+Required properties:
-+- compatible : should include "gpio-usb-b-connector" and "usb-b-connector".
-+- id-gpios, vbus-gpios : input gpios, either one of them must be present,
-+	and both can be present as well.
-+	see connector/usb-connector.txt
-+
-+Optional properties:
-+- vbus-supply : can be present if needed when supports dual role mode.
-+	see connector/usb-connector.txt
-+
-+- Sub-nodes:
-+	- port : can be present.
-+		see graph.txt
-+
-+Example:
-+
-+&mtu3 {
-+	connector {
-+		compatible = "gpio-usb-b-connector", "usb-b-connector";
-+		type = "micro";
-+		id-gpios = <&pio 12 GPIO_ACTIVE_HIGH>;
-+		vbus-supply = <&usb_p0_vbus>;
-+	};
-+};
+ Example:
+ ssusb: usb@11271000 {
+ 	compatible = "mediatek,mt8173-mtu3";
 -- 
 2.23.0
 
