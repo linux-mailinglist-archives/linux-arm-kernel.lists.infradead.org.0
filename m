@@ -2,81 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C03BA1928
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10A9EA1927
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:46:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=omxFKkPj3yeX66G+BQ9myurZnQJtPMEODMip6b24S9U=; b=dUyuDwE+GY0P5j
-	gv5xphfhFkixHhvF4yHt72vx9F+v0eihjzVoNhiD0V5o6gWC2brTATcq862jnLpgLod2rpIyQxd14
-	hiLcb6ThgrnXUWikTzE7HJPp8YWPNDfbAInC4gX7yqZwiNJK2jU0JgEjXgq5ELKqZKKCmVIvjx6ml
-	8OJyJHM63VXF5AWXyeL9wCAIXE5KbohgyJw1V+NrZDvIsiQew4OBQ7Ff2N6jWsHG5F4UaX5Fqdr3x
-	xoq7RxJBrfcN+mlLe1d36qHbufmQdIg9oPjLOOKUey2ihnBkVpz3rEnUyWldJzSn0+8Qr5MjGVNL6
-	79UBvNzXH+p+0imeZJ6w==;
+	List-Owner; bh=UbGw2Z0SAnNn5mN3/FzeLpCQGz32aKJ/L+1xY+rI7a4=; b=mGdkUyPfU2cVbJ
+	cy/VuzETCHw2vFWB7eWN/l25QY8febx38h/L4NTWmhTAVDZ+pK8cCB3/A9Il6f/LGlJK+Gcrwr84t
+	Xd1BP56oyhfTK89nhIiYxj4H7s4eqhZk/INSyWLMNWmH9YNhoU7jN6oS6s1Jq94KXeE481bxts4Ks
+	FYcyG6GRJcH59RCkk+czn3XtujYlz9CK5UB9b93mHzP+Qq1cBI0D2fVs5N2FnT/z8NQcxgROtZD+S
+	zygHivAcWPFknZ72tT6+d6DC1VFEmiokqPLvRHIZQy5IAlOKjTLVj8NyzHsTRJWNlnQoMLtKKPkjy
+	U8sGnMl2gJu3J3Ucr/XQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IsR-0000NG-NC; Thu, 29 Aug 2019 11:46:07 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i3IsE-00009U-CI; Thu, 29 Aug 2019 11:45:54 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Ij7-0007HJ-PR
+ id 1i3Ij9-0007JW-Jc
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:33 +0000
-Received: by mail-pg1-x541.google.com with SMTP id e11so1449485pga.5
+Received: by mail-pf1-x441.google.com with SMTP id g2so1888367pfq.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:36:29 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=FDb8snX7fHtHRXPBtLwcic7/q7BlhqslXapsBvvT9m4=;
- b=MxVDtRC9Y4lv4jG9hpAos0s+xIe/ARHMDGnoPf/99+Afqj27WqVXGxDp3whA9QF9rj
- zy6wvMMqo4wV7qE94YEu6uNAYmR1PdZl7H1LI3+jvKB3HAGDQVz2VXLAu5QxQQce/tBe
- tijrc9X0p0SFXFGpn7D1/0Vt2zlF/lfu/jfnPZBOego/s4nfxvYu+221uEN/M+F0kZIQ
- i62nKBUOyZX4z8HEn4x2m79tYCUbVRXtoorbzSgzRr+smMy30rrjJW+3cMfV3nV4jg9R
- RxjZkvAcYmnbOSd/PLmZv80PXkXR0tDFpIGhFn5lfhXWdkjuEyokQp/zUJDuKEjCWkcj
- mPwQ==
+ bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
+ b=HgYnyGY4Rvd7slKtSgD2nVDXkz275HIQ36S3JKlkT4lokdLsPwPgvEl64gMOtQhwoR
+ BCCxQ+H8X4Q+NI9D0eL8DYKBL/D6asVeu/EasBxUJowSJkoZH1OWjViiWuabjArYWvxb
+ JyBBiReJRZcnDI2MUi4QOmTpU7cwrvuG+CKHjEZt4AwbbvERYwCk+KslDSJq+IZ5qrDo
+ Lhs2nja4pa1NBi/PzS5RBmkR4KhGIicqAWPrDVId+QPTpBD48VQ2aU3ImZ+honyRF5lK
+ Mufu0YHo7Tumu/1P9ZdZS6SiFlTgbuXwyrghtoZuVcxDypApPLumFMO6kc7c9ez0a6WL
+ 9GAw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=FDb8snX7fHtHRXPBtLwcic7/q7BlhqslXapsBvvT9m4=;
- b=d1V/ZQxZ83t8jVdat+KZRb7nehYXu3nir0dSsbEL5ZVJ26G/dyWDYWK2hO87W6uZMK
- rz8026irgbfcb8GBxhYl7KneuzITse4MvEbCOFEmJ3VGW1qklxWiHVFAGndi28fM0F4y
- djhqlaWN+31WGLKG+r3tMwwsxB6LdKeMrpfzAH1Hvsn2mJ2yrsGmtoDCzvsUolZGVJSX
- HSwNSLOLVedfId9pGDsP2JxKYeL4s0ME2eoBaWZ9R4nVxE9VP0kMLNMOZ+P/DYg0gcWm
- va1RmrZWZE35lhGlehNj/Ch8VnhPNZYW2laNMXgCFx6BVgjkuxju7rYxBfLZ5S4tKRQ+
- WCzw==
-X-Gm-Message-State: APjAAAWHEyPPjKpqJVAEI3EZpXea1adKF10Kq8cPrEkPJQUsS+O653Sk
- yed259N8qNi9TuoIa3Me2uYSuw==
-X-Google-Smtp-Source: APXvYqyH8cMp3WI3VBt9ncmvLARVo/vLVagqPQxUJLvSZXGXVCuTfpF8P7BWJIc9lHP6S0Bj2H1TKA==
-X-Received: by 2002:a65:6850:: with SMTP id q16mr6555728pgt.423.1567078588390; 
- Thu, 29 Aug 2019 04:36:28 -0700 (PDT)
+ bh=z7GSqiJ6aBNFVvBBcZiH2v3S1Pbs9vo106t8SFNGIe4=;
+ b=iAc3iViVMPkuvMudDU0X50Xbe6S2PmXfiN5sMzKvD6Z1Zss3Osmo+QRdYStsLGbSM6
+ AWNGVQnDVRuVtBbcHKsk0Qh09XkGUHNbnzJB+BvembW5hKafBl4C76RY/8SFFJIVmYkC
+ JhqKjBb9P8F1hBi87nNiMj0kgIJN80uHNC4ROFXILzrCbeUt4D1BqvnCkRSEsrrMRz5r
+ G2MljtbHb741n+d4MTbrVxeN4KhA0kk7DzqVOpOh6x4661l9f9ZfAAYCty2WRvNKVbM3
+ GIkoRScJxFzIGxnsIiBrHBo+LlvHor2b8y9wdPBmG+kt9lfxRoM0EodBc1finJQOO3I+
+ zBvQ==
+X-Gm-Message-State: APjAAAVKpti4HwUFfb2PWmPJu9JyTzCqaf68PtqTy9F8WV+aIg0SN64i
+ S4VCT9bkgj9Aj1TCzQptLTMhpA==
+X-Google-Smtp-Source: APXvYqzmk7md9jQJV+ApWtMrsLlocKHDNdnxUDcrnOu1rs1/rBoLz9mL+zo3xlPKf8O+tfPSI4BZ/Q==
+X-Received: by 2002:a65:68c8:: with SMTP id k8mr7774608pgt.192.1567078591024; 
+ Thu, 29 Aug 2019 04:36:31 -0700 (PDT)
 Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id e9sm3945514pfh.155.2019.08.29.04.36.27
+ by smtp.gmail.com with ESMTPSA id t4sm3412949pfd.109.2019.08.29.04.36.30
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:36:27 -0700 (PDT)
+ Thu, 29 Aug 2019 04:36:30 -0700 (PDT)
 From: Viresh Kumar <viresh.kumar@linaro.org>
 To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>,
  Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH ARM64 v4.4 V3 36/44] arm/arm64: KVM: Advertise SMCCC v1.1
-Date: Thu, 29 Aug 2019 17:04:21 +0530
-Message-Id: <b3927577b8837116f55cc21a028377d97f79cf30.1567077734.git.viresh.kumar@linaro.org>
+Subject: [PATCH ARM64 v4.4 V3 37/44] arm64: KVM: Report
+ SMCCC_ARCH_WORKAROUND_1 BP hardening support
+Date: Thu, 29 Aug 2019 17:04:22 +0530
+Message-Id: <d41b4ecd51a3337b41c41b67c4adc704f7a766ed.1567077734.git.viresh.kumar@linaro.org>
 X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
 In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
 References: <cover.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_043629_915317_9DF852C7 
-X-CRM114-Status: UNSURE (   9.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_043631_915435_A520CD8B 
+X-CRM114-Status: GOOD (  10.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -110,44 +110,38 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Marc Zyngier <marc.zyngier@arm.com>
 
-commit 09e6be12effdb33bf7210c8867bbd213b66a499e upstream.
+commit 6167ec5c9145cdf493722dfd80a5d48bafc4a18a upstream.
 
-The new SMC Calling Convention (v1.1) allows for a reduced overhead
-when calling into the firmware, and provides a new feature discovery
-mechanism.
+A new feature of SMCCC 1.1 is that it offers firmware-based CPU
+workarounds. In particular, SMCCC_ARCH_WORKAROUND_1 provides
+BP hardening for CVE-2017-5715.
 
-Make it visible to KVM guests.
+If the host has some mitigation for this issue, report that
+we deal with it using SMCCC_ARCH_WORKAROUND_1, as we apply the
+host workaround on every guest exit.
 
 Tested-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 Reviewed-by: Christoffer Dall <christoffer.dall@linaro.org>
 Signed-off-by: Marc Zyngier <marc.zyngier@arm.com>
 Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-[ Viresh: Picked only arm-smccc.h changes ]
+[ Viresh: Picked on only arm-smccc.h changes ]
 Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 ---
- include/linux/arm-smccc.h | 13 +++++++++++++
- 1 file changed, 13 insertions(+)
+ include/linux/arm-smccc.h | 5 +++++
+ 1 file changed, 5 insertions(+)
 
 diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
-index 611d10580340..da9f3916f9a9 100644
+index da9f3916f9a9..1f02e4045a9e 100644
 --- a/include/linux/arm-smccc.h
 +++ b/include/linux/arm-smccc.h
-@@ -60,6 +60,19 @@
- #define ARM_SMCCC_OWNER_TRUSTED_OS	50
- #define ARM_SMCCC_OWNER_TRUSTED_OS_END	63
+@@ -73,6 +73,11 @@
+ 			   ARM_SMCCC_SMC_32,				\
+ 			   0, 1)
  
-+#define ARM_SMCCC_VERSION_1_0		0x10000
-+#define ARM_SMCCC_VERSION_1_1		0x10001
-+
-+#define ARM_SMCCC_VERSION_FUNC_ID					\
++#define ARM_SMCCC_ARCH_WORKAROUND_1					\
 +	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
 +			   ARM_SMCCC_SMC_32,				\
-+			   0, 0)
-+
-+#define ARM_SMCCC_ARCH_FEATURES_FUNC_ID					\
-+	ARM_SMCCC_CALL_VAL(ARM_SMCCC_FAST_CALL,				\
-+			   ARM_SMCCC_SMC_32,				\
-+			   0, 1)
++			   0, 0x8000)
 +
  #ifndef __ASSEMBLY__
  
