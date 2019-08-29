@@ -2,77 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A121A2997
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:19:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF0E6A299A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:19:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=shnTg/AiYRpuhI+9wTgfer8ls0s2Y+koMOzTeVPf678=; b=c1hDJXrV+VUZ3J
-	0/r96ATCxQiFYHnvKpXMkRq3Kt0UNix8sa2T/qDNwebEFIjldeWOcLDa/mHaZwhz2i7hthK9lY5En
-	27WcjmWqeHqxXQxKfvXyaN/SVEpVAHjmw1D27WlBBBHbZFI5dHsSBfvXNmz7kJva297zpwglbgXgd
-	KYNvp5n5rVou6LXVn8jr7qjEmF/L92fY1BguBs24F+7jjH/UfMcN7axFdlyXVMoIritr/HtlHuLD6
-	mL1TvyB8uA9RFwL2AJurSpksDbAfnUkaXN9yny3ibSSSpzKVQfQY32Q8YgqFy45q4Sq8LOKrvt+XY
-	onHtcqdGQ4g8WCdly7EQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qH0vaX0VgB3B8zSYHUlwxenzTS1lOtFsRNmxBBaJHJk=; b=J4XblCfWJ91RXL
+	adP9Z9GieKD2CFW+1RgxT2jIycxkLEjlQRh97NWEES6CMRP0PCGeqyFmB6GooqtqvhkCjvO8TRcES
+	/xjlafIHpOA9Losq/1GKHEPtYX6E1RHcPs1OAFR1VjQCsP1FTg3F2/m9t6A05qWVr0y+fIB2lySXr
+	hr1KdSME3IKvP09Woq0br3mVWSvMEXnPZUbBOYzqpdyE4nP1Y5u4Sycqv6IsyCYk66823uoDD3Ekr
+	lj8/A8zzDeyspIa+KP5yU0RbjDKZMQWDqEVqZzA29xJRXL0hdrknIY54QROyP9QvfnUFBZ9fKKHVo
+	Ed+3cQ8+8xQj3yDyDxDw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3SlK-0005H9-Op; Thu, 29 Aug 2019 22:19:26 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1i3Sla-0005TU-9q; Thu, 29 Aug 2019 22:19:42 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3SlA-0005GU-EU
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:19:17 +0000
-Received: by mail-ed1-x543.google.com with SMTP id a21so5710117edt.11
+ id 1i3SlC-0005Gm-GT
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:19:19 +0000
+Received: by mail-ed1-x544.google.com with SMTP id t50so5773569edd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 15:19:16 -0700 (PDT)
+ Thu, 29 Aug 2019 15:19:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8/8WQyIgycnOeWzso8bRkFscVIfCDPQrAJMk5OTdiO0=;
- b=hf0z98o+qLl320eTFsvGEG0HuVQc7VmzREvRNXScZnFtaqhQtnAC5p8+ArjI5FFNUr
- dYJQvw+smb5nHepbtcYZ4cdwMedHuEwjIOo0dgoJQqccdacvR1mGE5ELmW/hUbMSS2vz
- 3HVeR2qSvVIpBk3I6YwKEmopzAl+0PzvHFCziRBUM2L5Atz4sVuLg4uhxT2aLAWt/3Kz
- sr8Z7oCS68bNYcSFPSq8GXR6/7C9p2BhXDTe+bRqYVQ9GfnyHklYFxeFypasaj1p+5Y/
- S0vlvXYO5gBLaqG4sLCopOw1+7xhfrF/8bvbLPaMRJ/kQ2rx3yP5dOs/FOAJH4IDvee3
- rKMw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=VNjUP90KurMD9/uJH4oScsWAEfGbvaidcWJA5f95CqQ=;
+ b=oRIUbZfFbDwGoeJw9Jd45gao5NUkp59Nnmio+2nZTD8zotsl+Iogct9ye7fsoOPO1I
+ wqXxLwTC4Ke2n/muYmK7FcagIQzwrl71Yybji4GWVK2iCqwKYRQzEstsQAmcw+ChYI6V
+ hceEDfUhTp1e3N7qAWwHmv1Uo7qabvXGBAcWUA9XCd8NkkTtXc8ZnWZv/DHxxnT5pDrv
+ YZxzXdTy91xdJtNSsCnIeN9+ne9nnGEeQUWScg0iv7tb53HUJwy5Htyhsxjn+AmF0KFC
+ /mrIqC6o+IYKd95pb3JuzlavgHMShiItBkPXEJrIdLBOu8Yl2qpigEKqpY+KojnqP4XU
+ Ua2Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=8/8WQyIgycnOeWzso8bRkFscVIfCDPQrAJMk5OTdiO0=;
- b=mT7lH+bfrcjf2cD6OP9eDZRM8HAz/LZxf0K0Y6P04OfSXFaXTY1fUkI3+Dgk/Ommb4
- h5kHdBLlF7h09Xa7hTo4Un8tyCLCOiwVoQQjfnYzkwumulK+NJIt7VGzM26wSUexXJnT
- +HhpwFtrmyVTQp/K0YkfiKc9KWRJreGa84ZtMES5GZ/UPnfmFadxykvsk0O/OW0F0VTF
- IbZ7p4EejTxGrkyRYsPdmOlgrKyO29GXES78HWV2HrNMhH4mqE4szq3xCwhCKxJGOL53
- EDgpd1zW35C5ywK/38oQjXj651Cma5+FqyxfVgw0iR2zbVdftYh11BTEI0dYrVyOMWuC
- GHtQ==
-X-Gm-Message-State: APjAAAWflQeq5PrDZDqH1AQQhf61sWpQE6ZGgEeTyiqquu3UkW34Rmp1
- YunYb3A+2abvJ7hKT3Z+x74=
-X-Google-Smtp-Source: APXvYqwdaLetoW06qWHrg42mkiSvAhpZ4E6lIjat9gqFx0UbFFBNwst/VZbJ7U6V6Gn2F6VAtFVm2w==
-X-Received: by 2002:aa7:d80d:: with SMTP id v13mr7006500edq.168.1567117154945; 
- Thu, 29 Aug 2019 15:19:14 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=VNjUP90KurMD9/uJH4oScsWAEfGbvaidcWJA5f95CqQ=;
+ b=G5RDugvpSasDdE51OxEwmjx0g1yv79jkEgyWibDwf0nDZwl9cQpzXnbAQfJX2375OZ
+ 8/95hF9+Zl1w2tXKpO5YykCDOIMnG5NbCenUXEmUvBYqQ28JHNzQotWv5zMefj7aywzD
+ Fagr25CsmmO2DLIdJ1RB5ODMFeETq8ANR7oSTWywVSRS0ZioPp8xFrd1Y9jlWyYesg//
+ 3G+zHYJZ97YE7cgFY38tF0AQDOrm6EfPBNppxz3BN84i+sKAJ/43/oGQs1B4cJ7kAOP8
+ sY+rbrNPwXqlh5U6I2wCpBakl+oEzI/VFhHDQAISEdMdVSvWMRVeEFNWDwt7fGrS4Jjd
+ 4DGw==
+X-Gm-Message-State: APjAAAUeLvOFMh9xwL+sUBWcRnhDYG3a+RcdtjgsSnGgJ/K5E+xJus6n
+ n/yHnrdh3v+ujfiSMN4Aknc=
+X-Google-Smtp-Source: APXvYqy+GwqVf9tzEp92CGoDtVDnq9MLCVLT8c0gDboF3zfO88SpaLUknILjwH6tPEv6REpbIEhAiQ==
+X-Received: by 2002:a17:906:a3c4:: with SMTP id
+ ca4mr10291373ejb.5.1567117157037; 
+ Thu, 29 Aug 2019 15:19:17 -0700 (PDT)
 Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id x42sm672008edm.77.2019.08.29.15.19.12
+ by smtp.gmail.com with ESMTPSA id o26sm545677ejb.58.2019.08.29.15.19.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 15:19:13 -0700 (PDT)
+ Thu, 29 Aug 2019 15:19:15 -0700 (PDT)
 From: Thierry Reding <thierry.reding@gmail.com>
 To: Thierry Reding <thierry.reding@gmail.com>
-Subject: [PATCH 0/7] Replace Tegra FUSE API by nvmem API
-Date: Fri, 30 Aug 2019 00:19:04 +0200
-Message-Id: <20190829221911.24876-1-thierry.reding@gmail.com>
+Subject: [PATCH 1/7] soc/tegra: fuse: Restore base on sysfs failure
+Date: Fri, 30 Aug 2019 00:19:05 +0200
+Message-Id: <20190829221911.24876-2-thierry.reding@gmail.com>
 X-Mailer: git-send-email 2.22.0
+In-Reply-To: <20190829221911.24876-1-thierry.reding@gmail.com>
+References: <20190829221911.24876-1-thierry.reding@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_151916_488893_D73B9A54 
-X-CRM114-Status: GOOD (  11.33  )
+X-CRM114-CacheID: sfid-20190829_151918_548768_9F13A6D0 
+X-CRM114-Status: GOOD (  13.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (thierry.reding[at]gmail.com)
@@ -105,48 +108,49 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Thierry Reding <treding@nvidia.com>
 
-The nvmem API provides a generic API to retrieve the kind of information
-currently retrieved using the custom Tegra FUSE API. Convert the Tegra
-FUSE driver to be an nvmem provider and export cells used by existing
-drivers.
+Make sure to also restore the register base address on sysfs
+registration failure.
 
-The three non-SoC drivers included in this series are meant to serve as
-examples for how to use this. I'm not Cc'ing them to the subsystem
-maintainers because the idea is to first merge the soc/tegra patches and
-after that convert the consumers. Once the first patches are applied, I
-will send out the consumers conversion patches to the respective
-subsystems.
+Signed-off-by: Thierry Reding <treding@nvidia.com>
+---
+ drivers/soc/tegra/fuse/fuse-tegra.c | 16 ++++++++++------
+ 1 file changed, 10 insertions(+), 6 deletions(-)
 
-What's not included in this series is a cleanup patch that finally
-removes the custom Tegra FUSE API. I'll follow up with that once these
-patches have been applied.
-
-Thierry
-
-Thierry Reding (7):
-  soc/tegra: fuse: Restore base on sysfs failure
-  soc/tegra: fuse: Implement nvmem device
-  soc/tegra: fuse: Add cell information
-  soc/tegra: fuse: Register cell lookups for compatibility
-  drm/nouveau: tegra: Use nvmem API
-  phy: tegra: xusb: Use nvmem API
-  thermal: tegra: Use nvmem API
-
- .../gpu/drm/nouveau/nvkm/subdev/clk/gm20b.c   |  12 +-
- drivers/phy/tegra/xusb-tegra124.c             |  10 +-
- drivers/phy/tegra/xusb-tegra186.c             |   7 +-
- drivers/phy/tegra/xusb-tegra210.c             |  10 +-
- drivers/soc/tegra/fuse/fuse-tegra.c           | 193 +++++++++++++-----
- drivers/soc/tegra/fuse/fuse-tegra30.c         | 154 ++++++++++++++
- drivers/soc/tegra/fuse/fuse.h                 |   8 +
- drivers/thermal/tegra/soctherm-fuse.c         |  19 +-
- drivers/thermal/tegra/soctherm.c              |   4 +-
- drivers/thermal/tegra/soctherm.h              |   9 +-
- drivers/thermal/tegra/tegra124-soctherm.c     |   8 -
- drivers/thermal/tegra/tegra132-soctherm.c     |   8 -
- drivers/thermal/tegra/tegra210-soctherm.c     |   8 -
- 13 files changed, 344 insertions(+), 106 deletions(-)
-
+diff --git a/drivers/soc/tegra/fuse/fuse-tegra.c b/drivers/soc/tegra/fuse/fuse-tegra.c
+index 3eb44e65b326..6617a4bd11bb 100644
+--- a/drivers/soc/tegra/fuse/fuse-tegra.c
++++ b/drivers/soc/tegra/fuse/fuse-tegra.c
+@@ -146,20 +146,24 @@ static int tegra_fuse_probe(struct platform_device *pdev)
+ 
+ 	if (fuse->soc->probe) {
+ 		err = fuse->soc->probe(fuse);
+-		if (err < 0) {
+-			fuse->base = base;
+-			return err;
+-		}
++		if (err < 0)
++			goto restore;
+ 	}
+ 
+ 	if (tegra_fuse_create_sysfs(&pdev->dev, fuse->soc->info->size,
+-				    fuse->soc->info))
+-		return -ENODEV;
++				    fuse->soc->info)) {
++		err = -ENODEV;
++		goto restore;
++	}
+ 
+ 	/* release the early I/O memory mapping */
+ 	iounmap(base);
+ 
+ 	return 0;
++
++restore:
++	fuse->base = base;
++	return err;
+ }
+ 
+ static struct platform_driver tegra_fuse_driver = {
 -- 
 2.22.0
 
