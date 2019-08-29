@@ -2,60 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86F3EA1E46
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:04:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADA3CA1E53
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:06:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AA12Mmnx12SdAX2gcPF9ajgGPIyM8BnoWQEnJmu3Ujw=; b=gcEBRF8yDXsmDU
-	0z/CYlpCIX8ypUA7Jofw/IMZ5VGU8THNT7pUCbWF/5WUZq3VgEHpoASpTRWzvxf0h/mjqFwHAGSI1
-	eMkPHRo8VcJLKpVXxB4MmFQ23JnmMIoZ2d9+1mUXtWrooitdHqx2KVqvormoA30/h4cotCN/Fgc3Y
-	/EPw6gWbTU0QBOQdzjrZ4d8jJhqaXmSFSjbD7onRfyXbgeweaGUu1ub9DykpZzK+KB7ZBWk+1JmZo
-	la5+HiF+aqa2GRbN7P6B3FEv+gtYEh9sP1VNMbMX9vyOSWrHXeeDFfCaiJ3HtqVwMJD2K5r5DkZ7Z
-	BPPvVwtt49XtD0Om7xBg==;
+	List-Owner; bh=XglLLd707KEv13NFYvSEkdAQ5RtRXsbRJD2Wc06uWCY=; b=drlpZmItlQEUBq
+	qxOq32W2mhH+wh3NbteoPdkHgUSyHSANsEH+iQKoBd7a7BDDmUMPPXMBErrfa8fE2uqKWtaeAiz9i
+	mZlahf5/0f9VWZn7fDAOgdjSMk8RdNzslkjFBMlbUJs5r0+VduCAouUvXQxGTULht9Avaixqkgi/0
+	yCNoy4jVSmjb0QgA1+kaDEIYtjDfp7g33lYabSkNlv3sF78CDUm189I49Fgh+Npws3GXN9Kl0tzcj
+	kJXOrYoOnFTqzU5IgkwDn1zQtE4NvrHek/Q/Dko193o+nIJtc8OgIXPVVWhFhetjc9lSq6bqOE/Rd
+	WD7theEyi3JsvfpjnbnA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Lyb-0004kJ-QS; Thu, 29 Aug 2019 15:04:41 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i3Lzk-0006VC-Sj; Thu, 29 Aug 2019 15:05:52 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Llk-0005jT-RJ; Thu, 29 Aug 2019 14:51:26 +0000
-X-UUID: d932c053da83423e84f3181d1307b8f5-20190829
-X-UUID: d932c053da83423e84f3181d1307b8f5-20190829
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ id 1i3Lll-0005pI-J1; Thu, 29 Aug 2019 14:51:27 +0000
+X-UUID: 8c1fe3f2e7544f3b83d21e86f8dae110-20190829
+X-UUID: 8c1fe3f2e7544f3b83d21e86f8dae110-20190829
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <yongqiang.niu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1027160217; Thu, 29 Aug 2019 06:51:24 -0800
+ with ESMTP id 1123469289; Thu, 29 Aug 2019 06:51:26 -0800
 Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 07:51:23 -0700
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 07:51:25 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
  mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 22:51:22 +0800
+ 15.0.1395.4; Thu, 29 Aug 2019 22:51:23 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
  Transport; Thu, 29 Aug 2019 22:51:22 +0800
 From: <yongqiang.niu@mediatek.com>
 To: CK Hu <ck.hu@mediatek.com>, Philipp Zabel <p.zabel@pengutronix.de>, "Rob
  Herring" <robh+dt@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>
-Subject: [PATCH v5, 17/32] drm/mediatek: add component DITHER
-Date: Thu, 29 Aug 2019 22:50:39 +0800
-Message-ID: <1567090254-15566-18-git-send-email-yongqiang.niu@mediatek.com>
+Subject: [PATCH v5, 18/32] drm/mediatek: add gmc_bits for ovl private data
+Date: Thu, 29 Aug 2019 22:50:40 +0800
+Message-ID: <1567090254-15566-19-git-send-email-yongqiang.niu@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
 References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_075125_058341_CF2D9235 
-X-CRM114-Status: GOOD (  10.20  )
+X-CRM114-CacheID: sfid-20190829_075125_707401_34A43253 
+X-CRM114-Status: GOOD (  12.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -83,106 +85,79 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Yongqiang Niu <yongqiang.niu@mediatek.com>
 
-This patch add component DITHER
+This patch add gmc_bits for ovl private data
+GMC register was set RDMA ultra and pre-ultra threshold.
+10bit GMC register define is different with other SOC, gmc_thrshd_l not
+used.
 
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 Reviewed-by: CK Hu <ck.hu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 32 +++++++++++++++++++++++++++++
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  2 ++
- 2 files changed, 34 insertions(+)
+ drivers/gpu/drm/mediatek/mtk_disp_ovl.c | 23 +++++++++++++++++++++--
+ 1 file changed, 21 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index af8e872..8fea985 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -39,6 +39,12 @@
- #define CCORR_RELAY_MODE			BIT(0)
- #define DISP_CCORR_SIZE				0x0030
+diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+index c4f07c2..82eaefd 100644
+--- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
++++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
+@@ -31,7 +31,9 @@
+ #define DISP_REG_OVL_ADDR_MT8173		0x0f40
+ #define DISP_REG_OVL_ADDR(ovl, n)		((ovl)->data->addr + 0x20 * (n))
  
-+#define DISP_DITHER_EN				0x0000
-+#define DITHER_EN				BIT(0)
-+#define DISP_DITHER_CFG				0x0020
-+#define DITHER_RELAY_MODE			BIT(0)
-+#define DISP_DITHER_SIZE			0x0030
-+
- #define DISP_GAMMA_EN				0x0000
- #define DISP_GAMMA_CFG				0x0020
- #define DISP_GAMMA_SIZE				0x0030
-@@ -147,6 +153,24 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 	writel_relaxed(0x0, comp->regs + DISP_CCORR_EN);
- }
+-#define	OVL_RDMA_MEM_GMC	0x40402020
++#define GMC_THRESHOLD_BITS	16
++#define GMC_THRESHOLD_HIGH	((1 << GMC_THRESHOLD_BITS) / 4)
++#define GMC_THRESHOLD_LOW	((1 << GMC_THRESHOLD_BITS) / 8)
  
-+static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
-+			      unsigned int h, unsigned int vrefresh,
-+			      unsigned int bpc)
-+{
-+	writel(h << 16 | w, comp->regs + DISP_DITHER_SIZE);
-+	writel(DITHER_RELAY_MODE, comp->regs + DISP_DITHER_CFG);
-+}
-+
-+static void mtk_dither_start(struct mtk_ddp_comp *comp)
-+{
-+	writel(DITHER_EN, comp->regs + DISP_DITHER_EN);
-+}
-+
-+static void mtk_dither_stop(struct mtk_ddp_comp *comp)
-+{
-+	writel_relaxed(0x0, comp->regs + DISP_DITHER_EN);
-+}
-+
- static void mtk_gamma_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int h, unsigned int vrefresh,
- 			     unsigned int bpc)
-@@ -201,6 +225,12 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	.stop = mtk_ccorr_stop,
+ #define OVL_CON_BYTE_SWAP	BIT(24)
+ #define OVL_CON_MTX_YUV_TO_RGB	(6 << 16)
+@@ -49,6 +51,7 @@
+ 
+ struct mtk_disp_ovl_data {
+ 	unsigned int addr;
++	unsigned int gmc_bits;
+ 	bool fmt_rgb565_is_0;
  };
  
-+static const struct mtk_ddp_comp_funcs ddp_dither = {
-+	.config = mtk_dither_config,
-+	.start = mtk_dither_start,
-+	.stop = mtk_dither_stop,
-+};
+@@ -132,9 +135,23 @@ static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
+ static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
+ {
+ 	unsigned int reg;
++	unsigned int gmc_thrshd_l;
++	unsigned int gmc_thrshd_h;
++	unsigned int gmc_value;
++	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
+ 
+ 	writel(0x1, comp->regs + DISP_REG_OVL_RDMA_CTRL(idx));
+-	writel(OVL_RDMA_MEM_GMC, comp->regs + DISP_REG_OVL_RDMA_GMC(idx));
 +
- static const struct mtk_ddp_comp_funcs ddp_gamma = {
- 	.gamma_set = mtk_gamma_set,
- 	.config = mtk_gamma_config,
-@@ -226,6 +256,7 @@ static void mtk_gamma_set(struct mtk_ddp_comp *comp,
- 	[MTK_DISP_CCORR] = "ccorr",
- 	[MTK_DISP_AAL] = "aal",
- 	[MTK_DISP_GAMMA] = "gamma",
-+	[MTK_DISP_DITHER] = "dither",
- 	[MTK_DISP_UFOE] = "ufoe",
- 	[MTK_DSI] = "dsi",
- 	[MTK_DPI] = "dpi",
-@@ -248,6 +279,7 @@ struct mtk_ddp_comp_match {
- 	[DDP_COMPONENT_CCORR]	= { MTK_DISP_CCORR,	0, &ddp_ccorr },
- 	[DDP_COMPONENT_COLOR0]	= { MTK_DISP_COLOR,	0, NULL },
- 	[DDP_COMPONENT_COLOR1]	= { MTK_DISP_COLOR,	1, NULL },
-+	[DDP_COMPONENT_DITHER]	= { MTK_DISP_DITHER,	0, &ddp_dither },
- 	[DDP_COMPONENT_DPI0]	= { MTK_DPI,		0, NULL },
- 	[DDP_COMPONENT_DPI1]	= { MTK_DPI,		1, NULL },
- 	[DDP_COMPONENT_DSI0]	= { MTK_DSI,		0, NULL },
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 962d14a..85e096a 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -22,6 +22,7 @@ enum mtk_ddp_comp_type {
- 	MTK_DISP_WDMA,
- 	MTK_DISP_COLOR,
- 	MTK_DISP_CCORR,
-+	MTK_DISP_DITHER,
- 	MTK_DISP_AAL,
- 	MTK_DISP_GAMMA,
- 	MTK_DISP_UFOE,
-@@ -41,6 +42,7 @@ enum mtk_ddp_comp_id {
- 	DDP_COMPONENT_CCORR,
- 	DDP_COMPONENT_COLOR0,
- 	DDP_COMPONENT_COLOR1,
-+	DDP_COMPONENT_DITHER,
- 	DDP_COMPONENT_DPI0,
- 	DDP_COMPONENT_DPI1,
- 	DDP_COMPONENT_DSI0,
++	gmc_thrshd_l = GMC_THRESHOLD_LOW >>
++		      (GMC_THRESHOLD_BITS - ovl->data->gmc_bits);
++	gmc_thrshd_h = GMC_THRESHOLD_HIGH >>
++		      (GMC_THRESHOLD_BITS - ovl->data->gmc_bits);
++	if (ovl->data->gmc_bits == 10)
++		gmc_value = gmc_thrshd_h | gmc_thrshd_h << 16;
++	else
++		gmc_value = gmc_thrshd_l | gmc_thrshd_l << 8 |
++			    gmc_thrshd_h << 16 | gmc_thrshd_h << 24;
++	writel(gmc_value, comp->regs + DISP_REG_OVL_RDMA_GMC(idx));
+ 
+ 	reg = readl(comp->regs + DISP_REG_OVL_SRC_CON);
+ 	reg = reg | BIT(idx);
+@@ -316,11 +333,13 @@ static int mtk_disp_ovl_remove(struct platform_device *pdev)
+ 
+ static const struct mtk_disp_ovl_data mt2701_ovl_driver_data = {
+ 	.addr = DISP_REG_OVL_ADDR_MT2701,
++	.gmc_bits = 8,
+ 	.fmt_rgb565_is_0 = false,
+ };
+ 
+ static const struct mtk_disp_ovl_data mt8173_ovl_driver_data = {
+ 	.addr = DISP_REG_OVL_ADDR_MT8173,
++	.gmc_bits = 8,
+ 	.fmt_rgb565_is_0 = true,
+ };
+ 
 -- 
 1.8.1.1.dirty
 
