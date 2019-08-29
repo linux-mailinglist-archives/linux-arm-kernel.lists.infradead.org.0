@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9204EA280A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:32:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA610A280B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:32:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=FrudU1iu4sM8CPMjqBhjltbVGR/mnseBjO7LfP/b7FY=; b=SfTTHJazeeXnXifHe9hCg0D831
-	ohcHkSi/vNO46qexZNrL+bADPkSpN7WFdSriJYqw3gXKDqsgubUGtODB/XtndtiaGcB9Tv9FXXFiS
-	ldc6r+ijK9hw3GFyXlAchT6o8SGaCw8w7dky1F/rWyHqGjhMwAaOkEUxg/tgNrT1ANarca+3m25Zy
-	u4DRM1idnL0MY5FRAFj9u114r8UXP6xZhhzXe8RxafL5Lhj33skxdAYN7dRgxMBzzJv2R7RGbgZ6+
-	s74X8aUUFf4bHCZNBNAui4A/HEUR2yYJubty9HMvGx2Fo4FcwjYY1W+hSKrxk5AfyAvDah/ti/mxO
-	8mTDZg6w==;
+	bh=Kr1sWXtmg3zLHHdg/HDj6tfISDXx6fa61jakNnOZis8=; b=hiOyAjcEropNnqX/VsYTkojlXk
+	ENsCWj3mtArAEa/hhs0CtEarl+bzExIlBcA0ipJl3/FbQUxKXGN+k62W2YrHVli7e4NKhbGLYhN8S
+	Bqfs5qseQlBB93g9Z2p7sSr+/SoWnBZrnAIRL/D/VOXqf1jRLZJB1jzVbG++F3FwpoebSqIpOdGvl
+	bERofPpgwHA+Bhs8cgseqRASWCPVKu8AkD3h+CWl1mMQc/3Pw8tDCPoNvtwTfpqtRh+yhxLrAcTFt
+	HPcrqpw0hYG40eh3GrZwgXW/1HGzDJHyH1qYcGqSo1F+NWD7Gx+W9WZrJFy+xyBMyfACgbYSxIxu3
+	3NGDVmVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R5G-0007gd-VF; Thu, 29 Aug 2019 20:31:55 +0000
+	id 1i3R5T-0007u7-3w; Thu, 29 Aug 2019 20:32:07 +0000
 Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2M-0003nj-Q4
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:56 +0000
-Received: by mail-pl1-x643.google.com with SMTP id f19so2133873plr.3
+ id 1i3R2N-0003ox-5S
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:57 +0000
+Received: by mail-pl1-x643.google.com with SMTP id o3so2103218plb.13
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:54 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=b5zJyHlGDBqJC4HV7eqiak/P9biAFuBrVePMCjU9nus=;
- b=VTwS4Mc0pVj27mlJ5xepGnvcaqPh/UJCcP/KLu6p9ra7So8wPeYMCmrxsZnHIJ0OrY
- f7vpEzs9HwB+ffsTuYmT+qIyVhoakqVTO6HYZThv3dw/m5S3wp/TbPcrcg8IFxUCys9y
- qritYw3DHoK8arwDK9wzF1I34qsPAMGoMuSVdTtJg+DFFc6OmbMESaUGBdLO8K2fm7iB
- 4xtkPXWLUsTIcRjV84fO9ZJ2pUog7X/V/YRuFwasVUugkZIefWNRgEtxy0m/9EjGdu7z
- YAHR5a5jVQn6facq2dLwz8HsdIWfpm1lGZypRCGb8Y73mwRecvThVRuU7p4Y9bSqysqV
- wOUA==
+ bh=m79oRnRrEr4qP8mVMU/76dpiarnntehXpScT0RVwif0=;
+ b=Taa04c2VVm1QUnj+0gP+YRVeG4PBUTpzKpjZUNVPWhjceX8wBxp/R/XZjwGo6Q+oRB
+ 9NwdkGftTaAuSVz2wz4/0hfXjOkUmCVItSsqXKHnpvJREvnq/cZfOvgRB2Hg91w2vAkR
+ guSjY3y1skyEFN2/WLDPPvLnJThATjR20sgE4J8Eh9Y1lc8GulexOWquWyKHDvSrAq+W
+ xPQV4eJ2CC+84VRAkkRNT9Cp6d+oHlcEmzGTSR5rmMZR4qx8PBDYeL5BbVPriUGlobrr
+ Y/Pl5d7l5n6B4cQjJ4TqPAfewtve+Uw5h5CNnYaN5837I/uKYuhrIqaps9nq6yiz8eP8
+ cMrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=b5zJyHlGDBqJC4HV7eqiak/P9biAFuBrVePMCjU9nus=;
- b=fBTqLIgys9DtQ1fwukjt8Gjyx5kKZdwIDJIrZAKiUYCE7Lz7R0uQun4s6XRrU9woAj
- wZlA3QPhi2ULa9KT0ggz51gKbLhHR3OSPkSXEdSvB9ipYLrXYA1KHRn99X6fsncJvvmM
- AETsBcZYMvEba/6xz4UcyAwQEBCzDSFUi97BE/K8/PUZ2LTckHpk91wCPOfplHlJcEDN
- dfa2So3FQgmTH3QYgGF3XCwg0LHg4z8kQnTN1wdyaWJfqgWFZx2gMGnLQAGSbKQjg1Ry
- LmkNy7QZevGgUr4q2ljKnffNsFATmT6qdCFYRRCApr2AHJEgiCRQSq0/AD8tu0xAsya5
- 79dw==
-X-Gm-Message-State: APjAAAXFtv9O7WnB92WCWWp7fLRbsaNI0J1/c/zp6109CSX6VQFE6aHI
- lAzk39jMi9Nf3F10uFRzzhLV1w==
-X-Google-Smtp-Source: APXvYqxj8IoMZ8U7Kq3keglcixLYKy0eYCesSSj31JynTzBtpDYoGp8Tqj280M9iNofK0Jq/bKMUWA==
-X-Received: by 2002:a17:902:2f05:: with SMTP id
- s5mr11991108plb.170.1567110533892; 
- Thu, 29 Aug 2019 13:28:53 -0700 (PDT)
+ bh=m79oRnRrEr4qP8mVMU/76dpiarnntehXpScT0RVwif0=;
+ b=n6MnMLSDtyOfhfGU713mzTb4dz6Z6U/Ffa5ap2f7ZLNELrCEw0p2CwMXU0a/qb5wpz
+ iMS72IEVskxErSd+vyPOCuMVcr+SCdgcr/sx1+acQtqe4UZNgQiCn9Mg4EEua7rCERpf
+ UklhSCiLcy5nMBXbeA9Md8DqmRbq8rnFcpUZZ7EUTxpZyBpwRyDMJzKNNtXOiywkwegx
+ YLz9JpbbmOmRWmA+YjvqFrrXAFofnKoGCVyW7qC3Qg+l28hj14liwVPCbwJJnVHwriRP
+ ilZ3w+VKlJHscaiHH2dezsf67Vx3IH3imA50bVQBvPSZFsdNk1oJ3AKnTTag1CGTfb72
+ FIlA==
+X-Gm-Message-State: APjAAAUWAUV+7XQd992rMjq1Y6HC+Qr/1XUYvc10fSOmVl3xR80LdBtc
+ FWIrgge/kbkkpjv+EK3hHMjzQ1mZ084=
+X-Google-Smtp-Source: APXvYqwll5nTXFWczC0ZvzmJjKVimClwUqzosGWa5wWBhaihnhgLNeeNmId/FHQJ6QFY1HrDWh5Qpg==
+X-Received: by 2002:a17:902:6bc7:: with SMTP id
+ m7mr12172902plt.60.1567110534704; 
+ Thu, 29 Aug 2019 13:28:54 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
  by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.53
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:53 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:54 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 11/17] coresight: etm4x: use module_param instead of
- module_param_named
-Date: Thu, 29 Aug 2019 14:28:36 -0600
-Message-Id: <20190829202842.580-12-mathieu.poirier@linaro.org>
+Subject: [PATCH 12/17] coresight: etm4x: improve clarity of etm4_os_unlock
+ comment
+Date: Thu, 29 Aug 2019 14:28:37 -0600
+Message-Id: <20190829202842.580-13-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132854_927040_A1C500CB 
-X-CRM114-Status: GOOD (  10.79  )
+X-CRM114-CacheID: sfid-20190829_132855_408705_FB50FF4C 
+X-CRM114-Status: GOOD (  12.08  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,34 +107,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrew Murray <andrew.murray@arm.com>
 
-Given that the user-exposed module parameter for 'boot_enable' matches
-the variable that it sets, let's use module_param instead of
-module_param_named.
+To improve clarity, let's update the comment for etm4_os_unlock
+to use the name of the register as per the ETM architecture
+specification.
 
-Let's also use octal permissions (checkpatch recommends this) and
-provide a module parameter description.
+The existing comment is also misleading as it suggests any value
+written to TRCOSLAR unlocks the trace registers, however it must
+be '0' - let's also correct this.
 
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-etm4x.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/hwtracing/coresight/coresight-etm4x.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/drivers/hwtracing/coresight/coresight-etm4x.c b/drivers/hwtracing/coresight/coresight-etm4x.c
-index ec9468880c71..615bdbf7c9b7 100644
+index 615bdbf7c9b7..a128b5063f46 100644
 --- a/drivers/hwtracing/coresight/coresight-etm4x.c
 +++ b/drivers/hwtracing/coresight/coresight-etm4x.c
-@@ -34,7 +34,8 @@
- #include "coresight-etm-perf.h"
+@@ -48,7 +48,7 @@ static enum cpuhp_state hp_online;
  
- static int boot_enable;
--module_param_named(boot_enable, boot_enable, int, S_IRUGO);
-+module_param(boot_enable, int, 0444);
-+MODULE_PARM_DESC(boot_enable, "Enable tracing on boot");
- 
- /* The number of ETMv4 currently registered */
- static int etm4_count;
+ static void etm4_os_unlock(struct etmv4_drvdata *drvdata)
+ {
+-	/* Writing any value to ETMOSLAR unlocks the trace registers */
++	/* Writing 0 to TRCOSLAR unlocks the trace registers */
+ 	writel_relaxed(0x0, drvdata->base + TRCOSLAR);
+ 	drvdata->os_unlock = true;
+ 	isb();
 -- 
 2.17.1
 
