@@ -2,91 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6C75A1824
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:19:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1D284A1832
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:20:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CvKbnLMAB56WX/qwLS/xG7CS6oA2p+QnNnDRoHtlO98=; b=n4sb6DHg5Z2MQU
-	RlUF8gwhzDyhoMe4xmxatPw+wO6CTSU2lm2j0de/t2RNyAxFzEHX5Uq7G/CvHY2JP11LLlZEfJvbE
-	pXxRZBYQyPMrgEm7Jgj3/ZZNXJRk9u0jHj+JXv4z8OdLsUTp4LWu1fzXsWBFf24tJriLeSDYc81ck
-	jhdZB5HS3amFOXeH3RMFFa8xl6ig/Q252o62FEswZtWkWdwwobA1xXPJt31UkJoXELlhE5I0dn283
-	jc8e5RFqUj9uW0Ap3pOtBBHOodZV5pBwYg2Vl1YbiCAeRZ0gP/j/Yvtl12HgaceLHjvCLNGpThy+b
-	h5evxe8SGq9XqNDZI3nQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qBrJQ/FJUlM/QJh8B3+Q+6bXOqfv4FURKdURm0Rct2s=; b=I14oL/1S6x9AtL
+	9+Wy6o4eE1pUmtfBglBqGXoB0zim5v4Jk5Bu0GZmR80eqo+qmdSW49O8H8cdqFzOtxEYcG8HWP98X
+	l7D6ROtugQUGComAgomMSPjKT6RC2FLsSxZqpRU+tDjqus2H615ul7PTFKJpYN4hyEzuSVQokcyiL
+	63DZJqXdkpO6TZNLEcwmxTZb89GC3dZEuN4LeXg/CWmNAfOX4pqE9HYDBllVRrHo2o7BlP3ysSOCf
+	L17IniLSmI/CIyu4xZYWrADzls2bivbtmUcS0PKppFwg1EPM+eH6GlrLxVttWi+eYd4snwwRMEWDJ
+	Po8PjvQKtHrLcaxp5Oxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3ISz-0001TC-Qe; Thu, 29 Aug 2019 11:19:50 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3IRI-0000FH-Q8
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:18:06 +0000
-Received: by mail-ed1-x544.google.com with SMTP id t50so3670547edd.2
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:18:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=cjixq+s7ZD6fFiV9g8QRBxU/OWNAVY/P4LPyIACEzEM=;
- b=djC2H5JFeHWERoQFSNo6K1Buv/HAY/zdTZ/Vy9BLHhv70G1BP5aEHIemdlQWFvLK0t
- 3RSHU3+QDvVjBRH6rmndTQFisShBSy2rXVQU/0CyVBy93HiUWngryqj8oTbKIdj6Vnpz
- sNXUippKE5z0M2ZtM+fW6KuMBLAdoZNiZD6qsjd/JWY1vRPgY0j28/rH0E6Idert9w7d
- sS2fZojsKu+F+CaN8iGeU4WiMl20abUTFNRMZ2XUCm9qApaELu6NPAdSB6YiqFtgC0ZA
- 1lVSgZoDWeqEdOzemcXFc9s7dX1wZPrqyNfi+GQQTYnagocsIo/CfeeTtfPlcX3yRrKD
- +5dg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=cjixq+s7ZD6fFiV9g8QRBxU/OWNAVY/P4LPyIACEzEM=;
- b=p4yJOlg0mdgYsyoljLAz5corazcavYaumdTz0Vm8/v0q7sIqRk16fQyDtJe0XI1q/J
- EAPn6KJuhKGH5x2Dv6oogObmS/If1wn+Q2gKDSzOsXAIZoQ+h4//7iGKnXgHqeK0ZZ2J
- woCpzPDwiAsQibBd+DWjKLGe63jVmcIkI1pTvl1AdWshPWjetGSoTAp9P16LR+ntCf7+
- mXP/1No/cCqpMkcwwi8NYN+NUcqhsyFdFx3+1Ohbrph7YxP4HKjk47M2bzetFChzUZjB
- qyfdJgNisNcak5zXsAGb+iHfvO5N6fR2/0qfr/4ReTjRUroXn8VXOC4+Llv8p282Edhx
- U2HQ==
-X-Gm-Message-State: APjAAAWl136/tpJlyfN+IhNnnjk+c0POj7rw/wCU/8NOLbq/LSEv2Esc
- unADMZ632kTjh90hpyOUJP0=
-X-Google-Smtp-Source: APXvYqwZIsELufro/apZKANBvYbuav5XunBjAgaDShMq6vd+vYkJ2aickX4Wp+WCq2PXzJ9kM5tq1A==
-X-Received: by 2002:a50:9401:: with SMTP id p1mr8952979eda.189.1567077483603; 
- Thu, 29 Aug 2019 04:18:03 -0700 (PDT)
-Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id y9sm388439eds.49.2019.08.29.04.18.02
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 04:18:02 -0700 (PDT)
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Joerg Roedel <joro@8bytes.org>
-Subject: [PATCH 5/5] iommu: virt: Use iommu_put_resv_regions_simple()
-Date: Thu, 29 Aug 2019 13:17:52 +0200
-Message-Id: <20190829111752.17513-6-thierry.reding@gmail.com>
-X-Mailer: git-send-email 2.22.0
-In-Reply-To: <20190829111752.17513-1-thierry.reding@gmail.com>
-References: <20190829111752.17513-1-thierry.reding@gmail.com>
+	id 1i3ITT-0001pL-M3; Thu, 29 Aug 2019 11:20:19 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3ISB-0000xo-Vp
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:19:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 843BF1570;
+ Thu, 29 Aug 2019 04:18:57 -0700 (PDT)
+Received: from e119884-lin.cambridge.arm.com (e119884-lin.cambridge.arm.com
+ [10.1.196.72])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 13D983F59C;
+ Thu, 29 Aug 2019 04:18:55 -0700 (PDT)
+From: Vincenzo Frascino <vincenzo.frascino@arm.com>
+To: linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org
+Subject: [PATCH 0/7] vdso: Complete the conversion to 32bit syscalls
+Date: Thu, 29 Aug 2019 12:18:36 +0100
+Message-Id: <20190829111843.41003-1-vincenzo.frascino@arm.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_041804_947619_4A00B202 
-X-CRM114-Status: GOOD (  12.52  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_041900_203606_5B39F863 
+X-CRM114-Status: UNSURE (   8.82  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,75 +60,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>,
- Will Deacon <will@kernel.org>, linux-kernel@vger.kernel.org,
- virtualization@lists.linux-foundation.org, iommu@lists.linux-foundation.org,
- Robin Murphy <robin.murphy@arm.com>, David Woodhouse <dwmw2@infradead.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, 0x7f454c46@gmail.com, salyzyn@android.com,
+ paul.burton@mips.com, luto@kernel.org, tglx@linutronix.de, will@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Thierry Reding <treding@nvidia.com>
+This patch series is a follow up to "lib/vdso, x86/vdso: Fix fallout
+from generic VDSO conversion" [1].
 
-Use the new standard function instead of open-coding it.
+The main purpose is to complete the 32bit vDSOs conversion to use the
+legacy 32bit syscalls as a fallback. With the conversion of all the
+architectures present in -next complete, this patch series removes as
+well the conditional choice in between 32 and 64 bit for 32bit vDSOs.
 
-Cc: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Cc: virtualization@lists.linux-foundation.org
-Signed-off-by: Thierry Reding <treding@nvidia.com>
----
- drivers/iommu/virtio-iommu.c | 14 +++-----------
- 1 file changed, 3 insertions(+), 11 deletions(-)
+This series has been rebased on linux-next/master.
 
-diff --git a/drivers/iommu/virtio-iommu.c b/drivers/iommu/virtio-iommu.c
-index 3ea9d7682999..bc3c7ab7f996 100644
---- a/drivers/iommu/virtio-iommu.c
-+++ b/drivers/iommu/virtio-iommu.c
-@@ -838,14 +838,6 @@ static void viommu_get_resv_regions(struct device *dev, struct list_head *head)
- 	iommu_dma_get_resv_regions(dev, head);
- }
- 
--static void viommu_put_resv_regions(struct device *dev, struct list_head *head)
--{
--	struct iommu_resv_region *entry, *next;
--
--	list_for_each_entry_safe(entry, next, head, list)
--		kfree(entry);
--}
--
- static struct iommu_ops viommu_ops;
- static struct virtio_driver virtio_iommu_drv;
- 
-@@ -915,7 +907,7 @@ static int viommu_add_device(struct device *dev)
- err_unlink_dev:
- 	iommu_device_unlink(&viommu->iommu, dev);
- err_free_dev:
--	viommu_put_resv_regions(dev, &vdev->resv_regions);
-+	iommu_put_resv_regions_simple(dev, &vdev->resv_regions);
- 	kfree(vdev);
- 
- 	return ret;
-@@ -933,7 +925,7 @@ static void viommu_remove_device(struct device *dev)
- 
- 	iommu_group_remove_device(dev);
- 	iommu_device_unlink(&vdev->viommu->iommu, dev);
--	viommu_put_resv_regions(dev, &vdev->resv_regions);
-+	iommu_put_resv_regions_simple(dev, &vdev->resv_regions);
- 	kfree(vdev);
- }
- 
-@@ -962,7 +954,7 @@ static struct iommu_ops viommu_ops = {
- 	.remove_device		= viommu_remove_device,
- 	.device_group		= viommu_device_group,
- 	.get_resv_regions	= viommu_get_resv_regions,
--	.put_resv_regions	= viommu_put_resv_regions,
-+	.put_resv_regions	= iommu_put_resv_regions_simple,
- 	.of_xlate		= viommu_of_xlate,
- };
- 
+[1] https://lkml.org/lkml/2019/7/28/86
+
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+Cc: Paul Burton <paul.burton@mips.com>
+Cc: Thomas Gleixner <tglx@linutronix.de>
+Cc: Dmitry Safonov <0x7f454c46@gmail.com>
+Cc: Andy Lutomirski <luto@kernel.org>
+Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+
+Vincenzo Frascino (7):
+  arm64: compat: vdso: Expose BUILD_VDSO32
+  lib: vdso: Build 32 bit specific functions in the right context
+  mips: compat: vdso: Use legacy syscalls as fallback
+  lib: vdso: Remove VDSO_HAS_32BIT_FALLBACK
+  arm64: compat: vdso: Remove unused VDSO_HAS_32BIT_FALLBACK
+  mips: vdso: Remove unused VDSO_HAS_32BIT_FALLBACK
+  x86: vdso: Remove unused VDSO_HAS_32BIT_FALLBACK
+
+ .../include/asm/vdso/compat_gettimeofday.h    |  2 +-
+ arch/mips/include/asm/vdso/gettimeofday.h     | 43 +++++++++++++++++++
+ arch/mips/vdso/config-n32-o32-env.c           |  1 +
+ arch/x86/include/asm/vdso/gettimeofday.h      |  2 -
+ lib/vdso/gettimeofday.c                       | 14 ++----
+ 5 files changed, 49 insertions(+), 13 deletions(-)
+
 -- 
-2.22.0
+2.23.0
 
 
 _______________________________________________
