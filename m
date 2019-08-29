@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 39923A2A3F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:49:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8590A2A40
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 00:49:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
 	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3cGM36eU91XrnaAyb371IPTrYgcG+j/BXS6pDAQ3WtI=; b=ckRRHnat0WgA9M
-	SISZf6TIKf6Qihz3u6ym/3zs+khSuzhirCpdCIJYsHvXbthLPUiWLtUGO8LSipGW9iaOp3cP5/lO2
-	4KwnUf9sHangC+jCjlpIelrKQoeZu2RjLo9Wy91whT8LOts73+k68nv5Fy0+l25kDAXM0cDrS0igo
-	bkoXu0rOdCl26bP2NdSAoTWh/u3UwDllpIZAGwJUCVPVnW0Pp7J9bBGo2VOsASIRR9n+ARFZSz2Np
-	YeZ1rJBoisrBh23eM3Z8Nh+qQOi9wUhwPGY1wDKXZaAnMbITgzWJomml9U3bj+1oC+FApijQhJflY
-	lYOWm69ocZJJPOOcocmg==;
+	List-Owner; bh=aArs1JiCOSgMENPtNkJM/4GFVctpbDrwssVaEkfYPko=; b=CYYACyJA+A9Yoh
+	BZ/6oR8yegsiEb4A7ULJPovS7OJjds62319cNV7jNZiCumYChdHR1kWAHCCdYhhPrnbFuV1WT3/UN
+	dABN8qLI8GVG+e5e61qMdszOE7bZ7JiVk+mHTgFh2mCBvmYxfgdbQT0EV8BrX9G01fjECE9ghiHO2
+	b6b04Bk9wmrPaLbqTKXhIoBoys7pOOxKqFecWjbEwzoL23Yha9rodWxH9rriHy0cONenVZdp/Od5O
+	IYGw7z6mn/ySGUrbAmvrzcdxxOkOe/wsyS+4In/V/YZJSQwhpFoEW8FNsl4QSezS7jyXB198n0pDT
+	lWjam83l1BaeBXbzSyPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3TEC-0003UC-Fa; Thu, 29 Aug 2019 22:49:16 +0000
+	id 1i3TET-0003nf-6o; Thu, 29 Aug 2019 22:49:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3TCz-0002VJ-J2
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:48:03 +0000
+ id 1i3TDA-0002fR-IO
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 22:48:14 +0000
 Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AC0992173E;
- Thu, 29 Aug 2019 22:48:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A476C21874;
+ Thu, 29 Aug 2019 22:48:11 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567118881;
- bh=AF7KaaN0SPHZVCzMo4I0QlziT4Dc084NALpVNTE66xw=;
+ s=default; t=1567118892;
+ bh=qahLSZidWBqyiJ9KPLWGgOnki/Ohn0lpoN98VUjbdJo=;
  h=Date:From:To:cc:Subject:In-Reply-To:References:From;
- b=iThSoqqrWY1rBHxgi2xpVYpYO5u/qkuBWYnStULaaLWA7uxqFPq1k2ifNvRpQjCsx
- oSUbcFoQVW+Q2dWM8uumjkvHntXywq9XuABVd8lVFeKIULhiYmtzH1Oa21ErYKv5Q2
- UmYWrhepeTu37larup9+65efIBZ3rbyjcLiAAXV4=
-Date: Thu, 29 Aug 2019 15:48:00 -0700 (PDT)
+ b=lox9/f+oJeZihIIKB+HOTjYdPrpnsEmbhUNTlvyPbLyIuqorYqCD/5ugnctXNXr5S
+ h9zmT10Nj3xoPfMfmjrctVtlI6lWBTjpTEDIPjzV13CX8jSzyEDs3QtOFIQ8vJWNJn
+ iP9g2neD8o6CjtcvfTYgSj6BBKHMbvfVJOT8Yk/g=
+Date: Thu, 29 Aug 2019 15:48:11 -0700 (PDT)
 From: Stefano Stabellini <sstabellini@kernel.org>
 X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
 To: Christoph Hellwig <hch@lst.de>
-Subject: Re: [PATCH 09/11] swiotlb-xen: remove page-coherent.h
-In-Reply-To: <20190826121944.515-10-hch@lst.de>
-Message-ID: <alpine.DEB.2.21.1908281526280.8175@sstabellini-ThinkPad-T480s>
+Subject: Re: [PATCH 10/11] swiotlb-xen: merge xen_unmap_single into
+ xen_swiotlb_unmap_page
+In-Reply-To: <20190826121944.515-11-hch@lst.de>
+Message-ID: <alpine.DEB.2.21.1908281526470.8175@sstabellini-ThinkPad-T480s>
 References: <20190826121944.515-1-hch@lst.de>
- <20190826121944.515-10-hch@lst.de>
+ <20190826121944.515-11-hch@lst.de>
 User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_154801_772885_57B4298E 
-X-CRM114-Status: GOOD (  15.80  )
+X-CRM114-CacheID: sfid-20190829_154812_662806_852729CB 
+X-CRM114-Status: GOOD (  14.73  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -87,123 +88,55 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Mon, 26 Aug 2019, Christoph Hellwig wrote:
-> The only thing left of page-coherent.h is two functions implemented by
-> the architecture for non-coherent DMA support that are never called for
-> fully coherent architectures.  Just move the prototypes for those to
-> swiotlb-xen.h instead.
+> No need for a no-op wrapper.
 > 
 > Signed-off-by: Christoph Hellwig <hch@lst.de>
 
 Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 
-
 > ---
->  arch/arm/include/asm/xen/page-coherent.h   |  2 --
->  arch/arm64/include/asm/xen/page-coherent.h |  2 --
->  arch/x86/include/asm/xen/page-coherent.h   | 11 -----------
->  drivers/xen/swiotlb-xen.c                  |  3 ---
->  include/Kbuild                             |  1 -
->  include/xen/arm/page-coherent.h            | 10 ----------
->  include/xen/swiotlb-xen.h                  |  6 ++++++
->  7 files changed, 6 insertions(+), 29 deletions(-)
->  delete mode 100644 arch/arm/include/asm/xen/page-coherent.h
->  delete mode 100644 arch/arm64/include/asm/xen/page-coherent.h
->  delete mode 100644 arch/x86/include/asm/xen/page-coherent.h
->  delete mode 100644 include/xen/arm/page-coherent.h
+>  drivers/xen/swiotlb-xen.c | 15 ++++-----------
+>  1 file changed, 4 insertions(+), 11 deletions(-)
 > 
-> diff --git a/arch/arm/include/asm/xen/page-coherent.h b/arch/arm/include/asm/xen/page-coherent.h
-> deleted file mode 100644
-> index 27e984977402..000000000000
-> --- a/arch/arm/include/asm/xen/page-coherent.h
-> +++ /dev/null
-> @@ -1,2 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -#include <xen/arm/page-coherent.h>
-> diff --git a/arch/arm64/include/asm/xen/page-coherent.h b/arch/arm64/include/asm/xen/page-coherent.h
-> deleted file mode 100644
-> index 27e984977402..000000000000
-> --- a/arch/arm64/include/asm/xen/page-coherent.h
-> +++ /dev/null
-> @@ -1,2 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -#include <xen/arm/page-coherent.h>
-> diff --git a/arch/x86/include/asm/xen/page-coherent.h b/arch/x86/include/asm/xen/page-coherent.h
-> deleted file mode 100644
-> index c9c8398a31ff..000000000000
-> --- a/arch/x86/include/asm/xen/page-coherent.h
-> +++ /dev/null
-> @@ -1,11 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -#ifndef _ASM_X86_XEN_PAGE_COHERENT_H
-> -#define _ASM_X86_XEN_PAGE_COHERENT_H
-> -
-> -static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
-> -		dma_addr_t handle, size_t size, enum dma_data_direction dir) { }
-> -
-> -static inline void xen_dma_sync_single_for_device(struct device *hwdev,
-> -		dma_addr_t handle, size_t size, enum dma_data_direction dir) { }
-> -
-> -#endif /* _ASM_X86_XEN_PAGE_COHERENT_H */
 > diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
-> index a642e284f1e2..95911ff9c11c 100644
+> index 95911ff9c11c..384304a77020 100644
 > --- a/drivers/xen/swiotlb-xen.c
 > +++ b/drivers/xen/swiotlb-xen.c
-> @@ -35,9 +35,6 @@
->  #include <xen/xen-ops.h>
->  #include <xen/hvc-console.h>
+> @@ -414,9 +414,8 @@ static dma_addr_t xen_swiotlb_map_page(struct device *dev, struct page *page,
+>   * After this call, reads by the cpu to the buffer are guaranteed to see
+>   * whatever the device wrote there.
+>   */
+> -static void xen_unmap_single(struct device *hwdev, dma_addr_t dev_addr,
+> -			     size_t size, enum dma_data_direction dir,
+> -			     unsigned long attrs)
+> +static void xen_swiotlb_unmap_page(struct device *hwdev, dma_addr_t dev_addr,
+> +		size_t size, enum dma_data_direction dir, unsigned long attrs)
+>  {
+>  	phys_addr_t paddr = xen_bus_to_phys(dev_addr);
 >  
-> -#include <asm/dma-mapping.h>
-> -#include <asm/xen/page-coherent.h>
-> -
->  #include <trace/events/swiotlb.h>
->  /*
->   * Used to do a quick range check in swiotlb_tbl_unmap_single and
-> diff --git a/include/Kbuild b/include/Kbuild
-> index c38f0d46b267..cce5cf6abf89 100644
-> --- a/include/Kbuild
-> +++ b/include/Kbuild
-> @@ -1189,7 +1189,6 @@ header-test-			+= video/vga.h
->  header-test-			+= video/w100fb.h
->  header-test-			+= xen/acpi.h
->  header-test-			+= xen/arm/hypercall.h
-> -header-test-			+= xen/arm/page-coherent.h
->  header-test-			+= xen/arm/page.h
->  header-test-			+= xen/balloon.h
->  header-test-			+= xen/events.h
-> diff --git a/include/xen/arm/page-coherent.h b/include/xen/arm/page-coherent.h
-> deleted file mode 100644
-> index 635492d41ebe..000000000000
-> --- a/include/xen/arm/page-coherent.h
-> +++ /dev/null
-> @@ -1,10 +0,0 @@
-> -/* SPDX-License-Identifier: GPL-2.0 */
-> -#ifndef _XEN_ARM_PAGE_COHERENT_H
-> -#define _XEN_ARM_PAGE_COHERENT_H
-> -
-> -void xen_dma_sync_for_cpu(struct device *dev, dma_addr_t handle,
-> -		phys_addr_t paddr, size_t size, enum dma_data_direction dir);
-> -void xen_dma_sync_for_device(struct device *dev, dma_addr_t handle,
-> -		phys_addr_t paddr, size_t size, enum dma_data_direction dir);
-> -
-> -#endif /* _XEN_ARM_PAGE_COHERENT_H */
-> diff --git a/include/xen/swiotlb-xen.h b/include/xen/swiotlb-xen.h
-> index 5e4b83f83dbc..a7c642872568 100644
-> --- a/include/xen/swiotlb-xen.h
-> +++ b/include/xen/swiotlb-xen.h
-> @@ -2,8 +2,14 @@
->  #ifndef __LINUX_SWIOTLB_XEN_H
->  #define __LINUX_SWIOTLB_XEN_H
+> @@ -430,13 +429,6 @@ static void xen_unmap_single(struct device *hwdev, dma_addr_t dev_addr,
+>  		swiotlb_tbl_unmap_single(hwdev, paddr, size, dir, attrs);
+>  }
 >  
-> +#include <linux/dma-mapping.h>
->  #include <linux/swiotlb.h>
+> -static void xen_swiotlb_unmap_page(struct device *hwdev, dma_addr_t dev_addr,
+> -			    size_t size, enum dma_data_direction dir,
+> -			    unsigned long attrs)
+> -{
+> -	xen_unmap_single(hwdev, dev_addr, size, dir, attrs);
+> -}
+> -
+>  static void
+>  xen_swiotlb_sync_single_for_cpu(struct device *dev, dma_addr_t dma_addr,
+>  		size_t size, enum dma_data_direction dir)
+> @@ -477,7 +469,8 @@ xen_swiotlb_unmap_sg(struct device *hwdev, struct scatterlist *sgl, int nelems,
+>  	BUG_ON(dir == DMA_NONE);
 >  
-> +void xen_dma_sync_for_cpu(struct device *dev, dma_addr_t handle,
-> +		phys_addr_t paddr, size_t size, enum dma_data_direction dir);
-> +void xen_dma_sync_for_device(struct device *dev, dma_addr_t handle,
-> +		phys_addr_t paddr, size_t size, enum dma_data_direction dir);
-> +
->  extern int xen_swiotlb_init(int verbose, bool early);
->  extern const struct dma_map_ops xen_swiotlb_dma_ops;
+>  	for_each_sg(sgl, sg, nelems, i)
+> -		xen_unmap_single(hwdev, sg->dma_address, sg_dma_len(sg), dir, attrs);
+> +		xen_swiotlb_unmap_page(hwdev, sg->dma_address, sg_dma_len(sg),
+> +				dir, attrs);
+>  
+>  }
 >  
 > -- 
 > 2.20.1
