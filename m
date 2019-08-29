@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E085DA1FAC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:49:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6529CA1FB4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:50:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=YxMjt8TzVX8l/FUjHVtidu7UegBdfi4LXXyPid6JSHs=; b=qSNmnrcX8RRWIBkMAd00H/F9tN
-	ttgUc6lSEbCyIuz8bz5sQUO1WLUhTF6uDcFXfQIBkFmHiifi63XTG7YYChxF1ABLl9EEgdNnXXb0j
-	N99ubXQ6HRBHHgU0GwJjQClqi9bDSBSKY8PYhvl1WDMyfHFpshEjNdNM2Mejz4p1mEomfvk+e+b4o
-	enivLIb1QyX4T2swpng/0XNMqfFxrIPA1RELXxI5VBw+FnAIMH7H4DxwxoOgu2RBFcxUiEF8ofR8C
-	TJRBzJ5riGhF8mMq3B+qfTmRlakSl3BGtR/sJ71VkY3tbrtbrNTb980Y9saDkV6WboockvKV/dEPG
-	PQpel2fg==;
+	bh=Zgg341ud+TTivkgisk74/B/MxbyFCqo0A2g4jJMhC78=; b=QN8LZtqFWJa+NwNctjBJG5C9gU
+	Y2alO60G3u2pSeeE4cY28yGyLdpyfT7WtGb8C36XXwV/Xvv7cZrleOejTA55fCncJ1X3Z9BimiBX/
+	RiUdSFqdFJtoRNLyNzfvwRzU6eZ4Nsu2fuRX/UlChqiU5PhPlfAE8Xi/KiEZDjyIGI88YXh5XG2q8
+	MpPhKXrYlMREKc1MwdPdemUrm7lC1smIndk7osSvYWOX+EDKuZ+RiIunlq5CsqmSMZ8J8bO7mM2BJ
+	1f8FXyF+UQG2hBARDruCtS5/1i6o8DstxXVBeUr5lyfGQIuioWgOpnN6pNai6lwXUbF5nTDs9mM4C
+	3vs1j6Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Mg0-0001tn-9X; Thu, 29 Aug 2019 15:49:32 +0000
+	id 1i3MgO-0002A4-8O; Thu, 29 Aug 2019 15:49:56 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfD-0001Y1-GE
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:44 +0000
+ id 1i3MfF-0001Yg-JK
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:47 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 40EF0337;
- Thu, 29 Aug 2019 08:48:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CB1431570;
+ Thu, 29 Aug 2019 08:48:44 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id E137D3F718;
- Thu, 29 Aug 2019 08:48:41 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 772133F718;
+ Thu, 29 Aug 2019 08:48:43 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 01/10] jump_label: Don't warn on __exit jump entries
-Date: Thu, 29 Aug 2019 16:48:25 +0100
-Message-Id: <20190829154834.26547-2-will@kernel.org>
+Subject: [PATCH v5 02/10] arm64: Use correct ll/sc atomic constraints
+Date: Thu, 29 Aug 2019 16:48:26 +0100
+Message-Id: <20190829154834.26547-3-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190829154834.26547-1-will@kernel.org>
 References: <20190829154834.26547-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084843_586742_A59DA86F 
-X-CRM114-Status: GOOD (  11.09  )
+X-CRM114-CacheID: sfid-20190829_084845_809785_1297B8A6 
+X-CRM114-Status: GOOD (  11.67  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -71,45 +71,248 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Andrew Murray <andrew.murray@arm.com>
 
-On architectures that discard .exit.* sections at runtime, a
-warning is printed for each jump label that is used within an
-in-kernel __exit annotated function:
+The A64 ISA accepts distinct (but overlapping) ranges of immediates for:
 
-can't patch jump_label at ehci_hcd_cleanup+0x8/0x3c
-WARNING: CPU: 0 PID: 1 at kernel/jump_label.c:410 __jump_label_update+0x12c/0x138
+ * add arithmetic instructions ('I' machine constraint)
+ * sub arithmetic instructions ('J' machine constraint)
+ * 32-bit logical instructions ('K' machine constraint)
+ * 64-bit logical instructions ('L' machine constraint)
 
-As these functions will never get executed (they are free'd along
-with the rest of initmem) - we do not need to patch them and should
-not display any warnings.
+... but we currently use the 'I' constraint for many atomic operations
+using sub or logical instructions, which is not always valid.
 
-The warning is displayed because the test required to satisfy
-jump_entry_is_init is based on init_section_contains (__init_begin to
-__init_end) whereas the test in __jump_label_update is based on
-init_kernel_text (_sinittext to _einittext) via kernel_text_address).
+When CONFIG_ARM64_LSE_ATOMICS is not set, this allows invalid immediates
+to be passed to instructions, potentially resulting in a build failure.
+When CONFIG_ARM64_LSE_ATOMICS is selected the out-of-line ll/sc atomics
+always use a register as they have no visibility of the value passed by
+the caller.
 
-Fixes: 19483677684b ("jump_label: Annotate entries that operate on __init code earlier")
+This patch adds a constraint parameter to the ATOMIC_xx and
+__CMPXCHG_CASE macros so that we can pass appropriate constraints for
+each case, with uses updated accordingly.
+
+Unfortunately prior to GCC 8.1.0 the 'K' constraint erroneously accepted
+'4294967295', so we must instead force the use of a register.
+
 Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-Acked-by: Peter Zijlstra (Intel) <peterz@infradead.org>
-Acked-by: Mark Rutland <mark.rutland@arm.com>
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- kernel/jump_label.c | 4 +++-
- 1 file changed, 3 insertions(+), 1 deletion(-)
+ arch/arm64/include/asm/atomic_ll_sc.h | 89 ++++++++++++++++++-----------------
+ 1 file changed, 47 insertions(+), 42 deletions(-)
 
-diff --git a/kernel/jump_label.c b/kernel/jump_label.c
-index df3008419a1d..cdb3ffab128b 100644
---- a/kernel/jump_label.c
-+++ b/kernel/jump_label.c
-@@ -407,7 +407,9 @@ static bool jump_label_can_update(struct jump_entry *entry, bool init)
- 		return false;
+diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+index c8c850bc3dfb..6dd011e0b434 100644
+--- a/arch/arm64/include/asm/atomic_ll_sc.h
++++ b/arch/arm64/include/asm/atomic_ll_sc.h
+@@ -26,7 +26,7 @@
+  * (the optimize attribute silently ignores these options).
+  */
  
- 	if (!kernel_text_address(jump_entry_code(entry))) {
--		WARN_ONCE(1, "can't patch jump_label at %pS", (void *)jump_entry_code(entry));
-+		WARN_ONCE(!jump_entry_is_init(entry),
-+			  "can't patch jump_label at %pS",
-+			  (void *)jump_entry_code(entry));
- 		return false;
- 	}
+-#define ATOMIC_OP(op, asm_op)						\
++#define ATOMIC_OP(op, asm_op, constraint)				\
+ __LL_SC_INLINE void							\
+ __LL_SC_PREFIX(arch_atomic_##op(int i, atomic_t *v))			\
+ {									\
+@@ -40,11 +40,11 @@ __LL_SC_PREFIX(arch_atomic_##op(int i, atomic_t *v))			\
+ "	stxr	%w1, %w0, %2\n"						\
+ "	cbnz	%w1, 1b"						\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: "Ir" (i));							\
++	: #constraint "r" (i));						\
+ }									\
+ __LL_SC_EXPORT(arch_atomic_##op);
+ 
+-#define ATOMIC_OP_RETURN(name, mb, acq, rel, cl, op, asm_op)		\
++#define ATOMIC_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+ __LL_SC_INLINE int							\
+ __LL_SC_PREFIX(arch_atomic_##op##_return##name(int i, atomic_t *v))	\
+ {									\
+@@ -59,14 +59,14 @@ __LL_SC_PREFIX(arch_atomic_##op##_return##name(int i, atomic_t *v))	\
+ "	cbnz	%w1, 1b\n"						\
+ "	" #mb								\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: "Ir" (i)							\
++	: #constraint "r" (i)						\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+ }									\
+ __LL_SC_EXPORT(arch_atomic_##op##_return##name);
+ 
+-#define ATOMIC_FETCH_OP(name, mb, acq, rel, cl, op, asm_op)		\
++#define ATOMIC_FETCH_OP(name, mb, acq, rel, cl, op, asm_op, constraint)	\
+ __LL_SC_INLINE int							\
+ __LL_SC_PREFIX(arch_atomic_fetch_##op##name(int i, atomic_t *v))	\
+ {									\
+@@ -81,7 +81,7 @@ __LL_SC_PREFIX(arch_atomic_fetch_##op##name(int i, atomic_t *v))	\
+ "	cbnz	%w2, 1b\n"						\
+ "	" #mb								\
+ 	: "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)	\
+-	: "Ir" (i)							\
++	: #constraint "r" (i)						\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -99,8 +99,8 @@ __LL_SC_EXPORT(arch_atomic_fetch_##op##name);
+ 	ATOMIC_FETCH_OP (_acquire,        , a,  , "memory", __VA_ARGS__)\
+ 	ATOMIC_FETCH_OP (_release,        ,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC_OPS(add, add)
+-ATOMIC_OPS(sub, sub)
++ATOMIC_OPS(add, add, I)
++ATOMIC_OPS(sub, sub, J)
+ 
+ #undef ATOMIC_OPS
+ #define ATOMIC_OPS(...)							\
+@@ -110,17 +110,17 @@ ATOMIC_OPS(sub, sub)
+ 	ATOMIC_FETCH_OP (_acquire,        , a,  , "memory", __VA_ARGS__)\
+ 	ATOMIC_FETCH_OP (_release,        ,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC_OPS(and, and)
+-ATOMIC_OPS(andnot, bic)
+-ATOMIC_OPS(or, orr)
+-ATOMIC_OPS(xor, eor)
++ATOMIC_OPS(and, and, )
++ATOMIC_OPS(andnot, bic, )
++ATOMIC_OPS(or, orr, )
++ATOMIC_OPS(xor, eor, )
+ 
+ #undef ATOMIC_OPS
+ #undef ATOMIC_FETCH_OP
+ #undef ATOMIC_OP_RETURN
+ #undef ATOMIC_OP
+ 
+-#define ATOMIC64_OP(op, asm_op)						\
++#define ATOMIC64_OP(op, asm_op, constraint)				\
+ __LL_SC_INLINE void							\
+ __LL_SC_PREFIX(arch_atomic64_##op(s64 i, atomic64_t *v))		\
+ {									\
+@@ -134,11 +134,11 @@ __LL_SC_PREFIX(arch_atomic64_##op(s64 i, atomic64_t *v))		\
+ "	stxr	%w1, %0, %2\n"						\
+ "	cbnz	%w1, 1b"						\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: "Ir" (i));							\
++	: #constraint "r" (i));						\
+ }									\
+ __LL_SC_EXPORT(arch_atomic64_##op);
+ 
+-#define ATOMIC64_OP_RETURN(name, mb, acq, rel, cl, op, asm_op)		\
++#define ATOMIC64_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+ __LL_SC_INLINE s64							\
+ __LL_SC_PREFIX(arch_atomic64_##op##_return##name(s64 i, atomic64_t *v))\
+ {									\
+@@ -153,14 +153,14 @@ __LL_SC_PREFIX(arch_atomic64_##op##_return##name(s64 i, atomic64_t *v))\
+ "	cbnz	%w1, 1b\n"						\
+ "	" #mb								\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: "Ir" (i)							\
++	: #constraint "r" (i)						\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+ }									\
+ __LL_SC_EXPORT(arch_atomic64_##op##_return##name);
+ 
+-#define ATOMIC64_FETCH_OP(name, mb, acq, rel, cl, op, asm_op)		\
++#define ATOMIC64_FETCH_OP(name, mb, acq, rel, cl, op, asm_op, constraint)\
+ __LL_SC_INLINE s64							\
+ __LL_SC_PREFIX(arch_atomic64_fetch_##op##name(s64 i, atomic64_t *v))	\
+ {									\
+@@ -175,7 +175,7 @@ __LL_SC_PREFIX(arch_atomic64_fetch_##op##name(s64 i, atomic64_t *v))	\
+ "	cbnz	%w2, 1b\n"						\
+ "	" #mb								\
+ 	: "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)	\
+-	: "Ir" (i)							\
++	: #constraint "r" (i)						\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -193,8 +193,8 @@ __LL_SC_EXPORT(arch_atomic64_fetch_##op##name);
+ 	ATOMIC64_FETCH_OP (_acquire,, a,  , "memory", __VA_ARGS__)	\
+ 	ATOMIC64_FETCH_OP (_release,,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC64_OPS(add, add)
+-ATOMIC64_OPS(sub, sub)
++ATOMIC64_OPS(add, add, I)
++ATOMIC64_OPS(sub, sub, J)
+ 
+ #undef ATOMIC64_OPS
+ #define ATOMIC64_OPS(...)						\
+@@ -204,10 +204,10 @@ ATOMIC64_OPS(sub, sub)
+ 	ATOMIC64_FETCH_OP (_acquire,, a,  , "memory", __VA_ARGS__)	\
+ 	ATOMIC64_FETCH_OP (_release,,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC64_OPS(and, and)
+-ATOMIC64_OPS(andnot, bic)
+-ATOMIC64_OPS(or, orr)
+-ATOMIC64_OPS(xor, eor)
++ATOMIC64_OPS(and, and, L)
++ATOMIC64_OPS(andnot, bic, )
++ATOMIC64_OPS(or, orr, L)
++ATOMIC64_OPS(xor, eor, L)
+ 
+ #undef ATOMIC64_OPS
+ #undef ATOMIC64_FETCH_OP
+@@ -237,7 +237,7 @@ __LL_SC_PREFIX(arch_atomic64_dec_if_positive(atomic64_t *v))
+ }
+ __LL_SC_EXPORT(arch_atomic64_dec_if_positive);
+ 
+-#define __CMPXCHG_CASE(w, sfx, name, sz, mb, acq, rel, cl)		\
++#define __CMPXCHG_CASE(w, sfx, name, sz, mb, acq, rel, cl, constraint)	\
+ __LL_SC_INLINE u##sz							\
+ __LL_SC_PREFIX(__cmpxchg_case_##name##sz(volatile void *ptr,		\
+ 					 unsigned long old,		\
+@@ -265,29 +265,34 @@ __LL_SC_PREFIX(__cmpxchg_case_##name##sz(volatile void *ptr,		\
+ 	"2:"								\
+ 	: [tmp] "=&r" (tmp), [oldval] "=&r" (oldval),			\
+ 	  [v] "+Q" (*(u##sz *)ptr)					\
+-	: [old] "Kr" (old), [new] "r" (new)				\
++	: [old] #constraint "r" (old), [new] "r" (new)			\
+ 	: cl);								\
+ 									\
+ 	return oldval;							\
+ }									\
+ __LL_SC_EXPORT(__cmpxchg_case_##name##sz);
+ 
+-__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         )
+-__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         )
+-__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         )
+-__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         )
+-__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory")
+-__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory")
+-__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory")
+-__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory")
+-__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory")
+-__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory")
+-__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory")
+-__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory")
+-__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory")
+-__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory")
+-__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory")
+-__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory")
++/*
++ * Earlier versions of GCC (no later than 8.1.0) appear to incorrectly
++ * handle the 'K' constraint for the value 4294967295 - thus we use no
++ * constraint for 32 bit operations.
++ */
++__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
++__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
++__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
++__CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
++__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
++__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
++__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
++__CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
++__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
++__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
++__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
++__CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
++__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
++__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
++__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
++__CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
+ 
+ #undef __CMPXCHG_CASE
  
 -- 
 2.11.0
