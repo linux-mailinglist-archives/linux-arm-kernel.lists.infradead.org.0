@@ -2,91 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99643A153C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 11:58:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5007A1553
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 12:02:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=248LJXdbdsxlRHFvrjhTRhQVhxfSWc0aj/zLJTRjQqY=; b=OZY2ITlvtrgdbP
-	eaXAty/mHZZAoQYEp+mGGYKMg5OuHnOaqL8QsINcxY7BZUVnBg59WeNvtxulVp7zqvxHkCM5s3vyq
-	QvEBrl/dlsCKNxlCQtGT1aDJRwyk7fTEcSVt5iqZsAOLL2mwQdLNrBZ7cqisCKZMbUp3vNGz+qzGd
-	1v7xe36+mC+7G46COJtGLJVASVXL0WY0hjd3QDs/Lo4jbA3kejdH/jQ01lXNwJet3DHHqE1yp5iuT
-	AmMHSbXivZKrNaPQcwTc3teoDeBgLCZr4vizjRENNzNipMirw0vIXu6oQuOUgHuNIWPhctYbYGDJq
-	OWjd6DmzTYinakAP0dTg==;
+	List-Owner; bh=pFjy2LQWvPMEl1/MPBnYjB9oewgBJQunDpUtCatM8Ik=; b=Ln6Mn287/9EGHj
+	Tx/IpgFcv4nvr3BWzkUSLbfXrJ3hWIRpHaT2p/ONBo7tb+1BPI5K1opoz10etK3U2YVaLzL2gkjL/
+	PDdazolkWSKAF5gU+A1HtA/FPhnrTRcNxuqbWAFMVN2nWO67xQRFKO87HhEARgYnw4++uLZ9VX+pK
+	5TRh0I7qKPwEJ4LOtbmoyNhRg2qLH79fwVEaCjXncrg4rv70XpMeigqmvCCAVpjWiSaPdi6POLc5j
+	E2udaC2yJ1BjRW6RrXQEys0VvsmCfEIyNa1GH5u6RpHCnsB/psFSKzQRrrkxIlZe5VRZSncAJMYsb
+	L0PhoxDHdLH0XOFT5eSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3HBk-00070t-PB; Thu, 29 Aug 2019 09:57:56 +0000
-Received: from mail-yb1-xb44.google.com ([2607:f8b0:4864:20::b44])
+	id 1i3HFn-0000E6-2q; Thu, 29 Aug 2019 10:02:07 +0000
+Received: from mail-eopbgr130048.outbound.protection.outlook.com
+ ([40.107.13.48] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3HBY-00070L-Em
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 09:57:46 +0000
-Received: by mail-yb1-xb44.google.com with SMTP id u32so967941ybi.12
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 02:57:41 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ISl2iKyaWD2+8GZkMSQ0qKIH02qSJLjTEU8jAfUr+rU=;
- b=k7FXeZNu42B/KLMaEv7nz+hIcxwo/BZoAgo3XbhGFrgEK6HjPy0Hc/h3/cMK7wJ8ut
- F3c7eXDBXZSwNe5evjbFnoUC3TY77zLH68g756m1QzFRtk84a4/lkpvIDh13XWTSu7fS
- hu6bmdMtRiupJEZarCuJS+IN/xkoNT6jAdOesWkOauOuyHL3oLUDDVj3Js7Zd7CURSxj
- 3cJmS2s+ZHCfLi+IBfe9miiRijXy5jeG6ezKW6V/AeHpmJzM+a11j8jyjFLpn6O09BGk
- 9i6CoRAr2Vl0Wr5icNRCZd+v29dRpq/QfxzEFMIx4BdwZRR5lwmNf4y2C1IVptgnSkf6
- g+Nw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ISl2iKyaWD2+8GZkMSQ0qKIH02qSJLjTEU8jAfUr+rU=;
- b=bAePapCnDva5yxiBIsXMoAW9J/gbTYSvKRVTMPFQp2jAywbSQ2bVRGWiV88Cr27LXA
- AgdB379tRor7Ue9FC+vvIgENhAw4yju6GQ8WZ4dNshCwP3JiKAIzruFCWa1dYUvWbvge
- dckMfW/TFf8P2mEH/MpnWll0iBHLTaqHb4/iwVlSWRMMznjoPSHEqCM/9ktrbzqOimkY
- DH7KulAIGRYnNOJ9Ds88t3E1Tv+Eeav0X50A7J/bmrJm4SkYloocdMi/u4A59UhXqq9G
- z5JFhHjPjbwm9TP3dU0NmQ2ebNdTEfwgr2ADlqpiCXyKOI/hTNiJiCZJFbH8S2kLxZHb
- x07A==
-X-Gm-Message-State: APjAAAX9ZWA5fG2jpXtA9V4gsFhOl1Mg2JKc2proGBKyLpC8RTEIF9Ut
- kYv2l5uosnsf0PixuJJxGX2p0g==
-X-Google-Smtp-Source: APXvYqy+S+BbWJ8TsKJZ4za59tW0wJipOu5WuI0dhL2NA/mZ0kpYe/VhXaaxlRXSMGvhzgvC5br6xQ==
-X-Received: by 2002:a25:5d0f:: with SMTP id r15mr6048540ybb.59.1567072660740; 
- Thu, 29 Aug 2019 02:57:40 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li1320-244.members.linode.com.
- [45.79.221.244])
- by smtp.gmail.com with ESMTPSA id l15sm387568ywk.72.2019.08.29.02.57.37
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 29 Aug 2019 02:57:39 -0700 (PDT)
-Date: Thu, 29 Aug 2019 17:57:33 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: Will Deacon <will@kernel.org>, rmk+kernel@armlinux.org.uk
-Subject: Re: [arm:for-next 13/25] include/linux/error-injection.h:7:10: fatal
- error: asm/error-injection.h: No such file or directory
-Message-ID: <20190829095733.GE10583@leoy-ThinkPad-X240s>
-References: <201908290809.FsnDYulr%lkp@intel.com>
- <20190829064310.GC10583@leoy-ThinkPad-X240s>
- <20190829083159.a3ywiivey3u4kxwf@willie-the-truck>
+ id 1i3HFY-0000Dg-4w
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 10:01:53 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=N3GXfLbVmI8QxffjjpvywKpGEP1wZYQyg+e1p3QvU8ONuSZNLfqR+sal41UlRP6mcET28ZRUL87leegjxSP2BBkTG3wwhym9CwILWIr296sVvNjdL4RPzCa2Gjh5E5FDFriLUXUVjOdtFD/H647hU/oNuqWtySRRfrTKXwDq896SRuh4E3RnQfikeFRksz9vgsbG0hzAZkhyjaczJ4UZKUXmMF1Bxxsy0D6dV0IiaFuJil6Bl3l1CJ3ivP2WCvoz4juY6jsF/dsBz0mQbX3e5ZTiYpp6n0OAnM9MiigIRF1/maZK7IVezWESDaTImQkoy12PownxshdE7v2LJjf7vw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XHF5o7WCLXio8EuF9KeFSuDJPE1eGkDeWnl5zHc2QQo=;
+ b=m/+u+xRhhHMVxDSqiTGzG3puExKn2U8LSpwLrOndw936BIcolnDZiceacIL6AECCwKA8vPh2XR0RpF5C4fIqGFHw2tdXcJ69tt1eP75pT129L/r/46MrKLWHDQEizrS6l1SuzHtjDYmM45l5tFcYMlbPKV/eQQeiqgcyespgTQlUPyyGvGIRkoP0zcGlnJIcZ3G0AvKuHwj5BcOXoRIjLBBDpUtK4O9iv0pHOuTIVGytimw4Lz1cPS4P7iyrJNZn/p0iyZnpT64ZMSQMQktUaBtcmWu3wce/aExoSswbxvplgLmfLXN6tk1V96Sn7WApo1aiHZrfe/8V1C9ruL9dkQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kococonnector.com; dmarc=pass action=none
+ header.from=kococonnector.com; dkim=pass header.d=kococonnector.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=KoCoConnector.onmicrosoft.com; s=selector2-KoCoConnector-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=XHF5o7WCLXio8EuF9KeFSuDJPE1eGkDeWnl5zHc2QQo=;
+ b=LxwRc3V+Ch7q/J12dpzgU3p9W8hyOVeDZN6MWtFg/aHeSWRg4qtYvVi9gu4W0wJfJ2fS0hHzFmk6pbLAtE+Py1CyAMRkv/ZFXH7Z597rKuKaSdo2+1FRKoSHpP8Jd4ymYBzoJaPwDU4cHL1Nfdziu02VwnPUEftmAPpB/qRt7KI=
+Received: from HE1PR0902MB2075.eurprd09.prod.outlook.com (10.170.255.17) by
+ HE1PR0902MB1753.eurprd09.prod.outlook.com (10.171.97.20) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.18; Thu, 29 Aug 2019 10:01:46 +0000
+Received: from HE1PR0902MB2075.eurprd09.prod.outlook.com
+ ([fe80::3914:9799:b8a4:e891]) by HE1PR0902MB2075.eurprd09.prod.outlook.com
+ ([fe80::3914:9799:b8a4:e891%3]) with mapi id 15.20.2199.021; Thu, 29 Aug 2019
+ 10:01:45 +0000
+From: Oliver Graute <oliver.graute@kococonnector.com>
+To: Dong Aisheng <aisheng.dong@nxp.com>
+Subject: Re: [PATCH v3 01/11] dt-bindings: firmware: imx-scu: new binding to
+ parse clocks from device tree
+Thread-Topic: [PATCH v3 01/11] dt-bindings: firmware: imx-scu: new binding to
+ parse clocks from device tree
+Thread-Index: AQHVXlDCj1UcA2HR9UqRNdBbxYJSJg==
+Date: Thu, 29 Aug 2019 10:01:45 +0000
+Message-ID: <20190829094624.GC18928@optiplex>
+References: <1563289265-10977-1-git-send-email-aisheng.dong@nxp.com>
+ <1563289265-10977-2-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1563289265-10977-2-git-send-email-aisheng.dong@nxp.com>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LO2P123CA0002.GBRP123.PROD.OUTLOOK.COM
+ (2603:10a6:600:a6::14) To HE1PR0902MB2075.eurprd09.prod.outlook.com
+ (2603:10a6:7:1e::17)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=oliver.graute@kococonnector.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [193.47.161.132]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1f72a3e2-98de-4798-3790-08d72c67e516
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:HE1PR0902MB1753; 
+x-ms-traffictypediagnostic: HE1PR0902MB1753:
+x-microsoft-antispam-prvs: <HE1PR0902MB1753D3CAE60521DC2AF94438EBA20@HE1PR0902MB1753.eurprd09.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7691;
+x-forefront-prvs: 0144B30E41
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(7916004)(136003)(346002)(376002)(366004)(39830400003)(396003)(199004)(189003)(81156014)(81166006)(6512007)(9686003)(476003)(11346002)(76176011)(386003)(6506007)(102836004)(25786009)(53936002)(6246003)(4326008)(3846002)(6116002)(486006)(256004)(14444005)(44832011)(446003)(99286004)(2906002)(6436002)(7416002)(508600001)(6916009)(8676002)(7736002)(1076003)(305945005)(33656002)(316002)(86362001)(33716001)(54906003)(66446008)(64756008)(66556008)(66476007)(66946007)(71200400001)(71190400001)(186003)(52116002)(26005)(5660300002)(6486002)(229853002)(14454004)(66066001)(8936002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:HE1PR0902MB1753;
+ H:HE1PR0902MB2075.eurprd09.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: kococonnector.com does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 2q/8hHroWZNlW3iDxxccm0y7qv6y77mQTfMkSyWqVMB/HS6oJNOgUNTUNtCp4nflNLby9fpEJC6NgJbZF3nArA1+2zUM9er3ciau1TE3kJ8dv36bNh26G1RZq1Gp/oMZMwvwcrTB59Ok8L8yGj+y5KGK+ldIIgt+ZAi8KCnQoLdh+RuiDvRUqxygYhQXxioesT+Ob+jBj84WRJpMkn84I84jX2MJ5PIW+D8c/uvgbQm4Rb5cewhwmqeFJLktKyu3G1SEDjmnVsow56Kog/QruzFPOtsWRilHw/SO13UFsmnmO5dM4k65uaR5WV1grQgMX2EbI7hFa+oi5G3ORAqm77t/tyzMxlUatCF4qXxgUS4ToBkekC/jCDp5xXS34evR60fBeU3i53sWA6zBVU9+GL4+lqkEmtpOu6hPRO8cYGE=
+x-ms-exchange-transport-forked: True
+Content-ID: <701C1D21AA60824F951B836EAA177A09@eurprd09.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190829083159.a3ywiivey3u4kxwf@willie-the-truck>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: kococonnector.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1f72a3e2-98de-4798-3790-08d72c67e516
+X-MS-Exchange-CrossTenant-originalarrivaltime: 29 Aug 2019 10:01:45.4114 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 59845429-0644-4099-bd7e-17fba65a2f2b
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: y+xMs3mxOUeU9MOUsnjv3tZTnUl6j/h+m5bDMy7dbh8fPkFWHNLtAV/fzAYzkoePT40gUBVUf6wdPTtTpKWnE1TovBo+qEW2B0sspVR/Ncs=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: HE1PR0902MB1753
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_025744_503047_90CB282D 
-X-CRM114-Status: GOOD (  22.99  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_030152_245508_4DEDAAC0 
+X-CRM114-Status: GOOD (  12.43  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b44 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.13.48 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,75 +125,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>, linux-arm-kernel@lists.infradead.org,
- kbuild-all@01.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "sboyd@kernel.org" <sboyd@kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ Rob Herring <robh+dt@kernel.org>, "linux-imx@nxp.com" <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "fabio.estevam@nxp.com" <fabio.estevam@nxp.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Will,
+On 16/07/19, Dong Aisheng wrote:
+> There's a few limitations on the original one cell clock binding
+> (#clock-cells = <1>) that we have to define some SW clock IDs for device
+> tree to reference. This may cause troubles if we want to use common
+> clock IDs for multi platforms support when the clock of those platforms
+> are mostly the same.
+> e.g. Current clock IDs name are defined with SS prefix.
+> 
+> However the device may reside in different SS across CPUs, that means the
+> SS prefix may not valid anymore for a new SoC. Furthermore, the device
+> availability of those clocks may also vary a bit.
+> 
+> For such situation, we want to eliminate the using of SW Clock IDs and
+> change to use a more close to HW one instead.
+> For SCU clocks usage, only two params required: Resource id + Clock Type.
+> Both parameters are platform independent. So we could use two cells binding
+> to pass those parameters,
+> 
+> Cc: Rob Herring <robh+dt@kernel.org>
+> Cc: Stephen Boyd <sboyd@kernel.org>
+> Cc: Shawn Guo <shawnguo@kernel.org>
+> Cc: Sascha Hauer <kernel@pengutronix.de>
+> Cc: Michael Turquette <mturquette@baylibre.com>
+> Cc: devicetree@vger.kernel.org
+> Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 
-On Thu, Aug 29, 2019 at 09:32:00AM +0100, Will Deacon wrote:
-> [ Move RMK to To: ]
-> 
-> On Thu, Aug 29, 2019 at 02:43:10PM +0800, Leo Yan wrote:
-> > On Thu, Aug 29, 2019 at 08:49:16AM +0800, kbuild test robot wrote:
-> > > tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git for-next
-> > > head:   d0d54dc04e37be14a9e51d9a2e431f302948e99d
-> > > commit: 566c290c6498b2fdc04a54556c4e8747f0298c7b [13/25] ARM: 8899/1: arm/arm64: Add support for function error injection
-> > > config: arm-allmodconfig (attached as .config)
-> > > compiler: arm-linux-gnueabi-gcc (GCC) 7.4.0
-> > > reproduce:
-> > >         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
-> > >         chmod +x ~/bin/make.cross
-> > >         git checkout 566c290c6498b2fdc04a54556c4e8747f0298c7b
-> > >         # save the attached .config to linux build tree
-> > >         GCC_VERSION=7.4.0 make.cross ARCH=arm 
-> > > 
-> > > If you fix the issue, kindly add following tag
-> > > Reported-by: kbuild test robot <lkp@intel.com>
-> > > 
-> > > All errors (new ones prefixed by >>):
-> > > 
-> > >    In file included from include/linux/module.h:22:0,
-> > >                     from drivers/pps/pps.c:11:
-> > > >> include/linux/error-injection.h:7:10: fatal error: asm/error-injection.h: No such file or directory
-> > >     #include <asm/error-injection.h>
-> > >              ^~~~~~~~~~~~~~~~~~~~~~~
-> > >    compilation terminated.
-> > 
-> > This building error is caused by there have a dependent patch:
-> > error-injection: Consolidate override function definition
-> > https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/error-injection&id=45880f7b7b19e043ce0aaa4cb7d05369425c82fa
-> 
-> Ah, I guess you put the ARM patch into the patch system without reference to
-> the core parts?
+This Patch series (v3) is running fine for some weeks on my iMX8QM Board.
 
-Yes, this is exactly what I did.  Sorry I only put the ARM patch and
-didn't give out the whole context.
+So feel free to use my Tag:
 
-> > This patch has been picked up by Will in one of arm64's next branch:
-> > https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/error-injection
-> > 
-> > I don't know what's the best practice for the dependency between
-> > two branches, if need me to follow up anything, please let me know.
-> 
-> The for-next/error-injection branch here:
-> 
-> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/error-injection
-> 
-> is stable, so I suppose either:
-> 
->    * That could be pulled into the ARM tree, or
->    * The ARM part could wait until the core stuff has landed in mainline, or
->    * I could take the ARM patch via the arm64 tree if Russell is ok with it
-
-Thanks for these options.  I'd like to know what's Russell's decision,
-then I will look closely to know what I should follow up or not.
-
-Thanks,
-Leo Yan
+Tested-by: Oliver Graute <oliver.graute@kococonnector.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
