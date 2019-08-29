@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C72FA2738
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 21:24:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D51B1A2743
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 21:26:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ImbwXHSDVHwxsR2RoDhVmRSNlO+07uZM9C39bYj9inM=; b=nHhRvabTVLpsrZ
-	By8lys69yogW3eB1emE5bsNQNtGxoPQsUb3r8WZc52j6vw4bTIrYutq8apeue1TCtnIn8Lun8LPXM
-	9SacIhNXaNFIGpLyfF03k5NOl4o8W5wHEyDq2AsNA6+3KyATHxrHGDUDBfeFSp3JBputMLRXFHxGC
-	7dhPu/Nt3TLhS8QAUgkz7uRdwPisqNULiKD46TpfQT9fdz+ekDEga/KZtjE+aujdavglWAddaxSYz
-	qf8TP6cJ24aRxHZjzJkvZwfjFwbqY9pRob3t83vB+cLjHot/nLT6K+3ajTKCSLoJa0clSrqELIvlD
-	ygesefY2A91rCE5f7fCQ==;
+	List-Owner; bh=1YvpL7eHnbKa0sKjkiYbeEmIy/Tpcm+ofgDa6Mj1Ugg=; b=GeULTjUUtqz1M9
+	9JQHAq8Ar1eXa1olaRnHQIPiMmnLd8Y05BJy6GguZW0w5ymoISLaIIV9B01iPJ+q4O2TwL2e1TYOT
+	2Y8xVRSUmZQ0X5WJ0NaQuf7O87gTe9CyFU1BIMIhdMxzysvDxY4d7HKrHwXYRbsm2D5w293tuCJhi
+	+wLNfNh3iXuPGk6YAt65xG2RWZP9OJsdkGWO4NR2Gahs7mc3u3mmDc1omgfTBflmBpbdq7cMViD9c
+	TJ0F0CkdrZE5XKyybKbwG0Vy13COrQfSP25sQLtrb5xCWpuKE/z+/Bw9bW1hv6FzSCViRC67/7hk3
+	VcSFmEU2oAZacGaOlWfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Q1Q-0008F9-QE; Thu, 29 Aug 2019 19:23:52 +0000
+	id 1i3Q3W-0001Hh-Rd; Thu, 29 Aug 2019 19:26:02 +0000
 Received: from mail-oi1-f195.google.com ([209.85.167.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Q1H-0008El-JP; Thu, 29 Aug 2019 19:23:44 +0000
-Received: by mail-oi1-f195.google.com with SMTP id v12so3436940oic.12;
- Thu, 29 Aug 2019 12:23:43 -0700 (PDT)
+ id 1i3Q3M-0001HD-9K; Thu, 29 Aug 2019 19:25:53 +0000
+Received: by mail-oi1-f195.google.com with SMTP id a127so3490128oii.2;
+ Thu, 29 Aug 2019 12:25:52 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=awB7Qev2kte00T2ifUulW7uJN/+Y8eVNRqAUedJCoug=;
- b=Q95BaT+1F6/oc84ULn/ESkbKc5+dZ/GvAEVvvtrPQt2mXJ3LGWn72sCR+rBGb1MIMh
- dqhd2WGOgq0FXInu9Y0A6Q2+3PvP6dwOVF5Qwi2wrkBle0ZATVKEw9SJwbhaXercmwkF
- dHZ97wJ9rZIRXcW8x4TOLeBJcO0TLRfQxv1yQhW93D4XZS/uwR7t4SsrVl9LMWr7AIFX
- FhOziv4tMjvfp2tCFn14sNH/gsD8gBXu2sKRsXgTCojTk+DJOf4qfdRjG0t7fmkZiaX/
- r9kd4gLJ/uw6loCROaySjfrH2WUlT+LIyRZt6KDg5JakP4CJiOhiav1u0vaKFD2lCnI8
- /Z2w==
-X-Gm-Message-State: APjAAAXL5X/0Ovwj+H99wEeylpNNsb+0Xzn+F3xNsC9HI7BlKqx4+VTe
- +/xXP3OOrye4KiKxirw/3g==
-X-Google-Smtp-Source: APXvYqxKBNcCX2Vcs4btyyWNLLy+0CXp/jm5HlmQq9eqINvWH7Jql4eAMiRJysKxAactJJBh/j9HhQ==
-X-Received: by 2002:aca:dd8a:: with SMTP id u132mr7196217oig.150.1567106622407; 
- Thu, 29 Aug 2019 12:23:42 -0700 (PDT)
+ bh=lZ2BYe42I9MJ0wayu5k+436nxyRI7BnkkEeIXJqYPPY=;
+ b=pUVZ4mmObUUVEGu9cJ9TaAOStLSdmLZgMs2dqHWQIkrgx3Z4eRnwWmyYZX/M1IrrYV
+ QeelKj6aV2KE7VzOf4SWGN5tDcOoTFNwIXfC6ZGJ+3aa+TDpuIh4JSE/UTo5aBDnKdUh
+ O5/x1ttdF3BNUeK6ysoxm3JsKSI7jJK1KbWeOE8UxEZX+ctHQVUQ1DQO0NvJfPvZhrMJ
+ xKc/M8/uf2yQ5OAfhiwfltJD+Y8lxw+9TLwAaOB5CencO3C3a9+2u4CZkKK5ZoeslcGf
+ vLj2BxFGJjV7/LDHLtZX0HW7IPrnUlm5zSdjEbHwtOqH9hF8vDnD0khm65uRCyeDng/+
+ rk0w==
+X-Gm-Message-State: APjAAAVm20AGgg9cvXsUg8Vqz9iqQ+e9Vsvh8O57rF9tbOH/6OXPc5Mh
+ 83GxOiGYJ/TIaIj38Se2Ww==
+X-Google-Smtp-Source: APXvYqxg9o4u0friAhLIFb1wO376me4+33exQL8RzM7lAtGBzLxeG67AR60+ryEQemuydVobqBKytA==
+X-Received: by 2002:a54:4893:: with SMTP id r19mr7711912oic.91.1567106751513; 
+ Thu, 29 Aug 2019 12:25:51 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id n17sm1107111otl.21.2019.08.29.12.23.41
+ by smtp.gmail.com with ESMTPSA id z26sm839164oih.16.2019.08.29.12.25.50
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 12:23:41 -0700 (PDT)
-Date: Thu, 29 Aug 2019 14:23:41 -0500
+ Thu, 29 Aug 2019 12:25:51 -0700 (PDT)
+Date: Thu, 29 Aug 2019 14:25:50 -0500
 From: Rob Herring <robh@kernel.org>
 To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH 01/11] dt-bindings: phy-mtk-tphy: add two optional
- properties for u2phy
-Message-ID: <20190829192341.GA26293@bogus>
+Subject: Re: [PATCH 02/11] dt-bindings: phy-mtk-tphy: make the ref clock
+ optional
+Message-ID: <20190829192550.GA29881@bogus>
 References: <e99c0d7a55869a4425250c601b80a3331c9d0976.1566542696.git.chunfeng.yun@mediatek.com>
+ <a31d78484b64f853a16e7dcb16fae9fc0de45ebb.1566542696.git.chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <e99c0d7a55869a4425250c601b80a3331c9d0976.1566542696.git.chunfeng.yun@mediatek.com>
+In-Reply-To: <a31d78484b64f853a16e7dcb16fae9fc0de45ebb.1566542696.git.chunfeng.yun@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_122343_641256_2FFDC03D 
-X-CRM114-Status: GOOD (  13.45  )
+X-CRM114-CacheID: sfid-20190829_122552_328143_84E8B353 
+X-CRM114-Status: GOOD (  16.31  )
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
@@ -98,34 +99,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 03:00:08PM +0800, Chunfeng Yun wrote:
-> Add two optional properties, one for J-K test, another for disconnect
-> threshold, both of them can be used to debug disconnection issues.
-
-Testing and debug properties aren't really things that belong in DT.
-
+On Fri, Aug 23, 2019 at 03:00:09PM +0800, Chunfeng Yun wrote:
+> Make the ref clock optional, then we no need refer to a fixed-clock
+> in DTS anymore when the clock of USB3 PHY comes from oscillator
+> directly
 > 
 > Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
->  Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt | 2 ++
->  1 file changed, 2 insertions(+)
+>  .../devicetree/bindings/phy/phy-mtk-tphy.txt        | 13 +++++++------
+>  1 file changed, 7 insertions(+), 6 deletions(-)
 > 
 > diff --git a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-> index a5f7a4f0dbc1..d5b327f85fa2 100644
+> index d5b327f85fa2..1c18bf10b2fe 100644
 > --- a/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
 > +++ b/Documentation/devicetree/bindings/phy/phy-mtk-tphy.txt
-> @@ -52,6 +52,8 @@ Optional properties (PHY_TYPE_USB2 port (child) node):
+> @@ -34,12 +34,6 @@ Optional properties (controller (parent) node):
+>  
+>  Required properties (port (child) node):
+>  - reg		: address and length of the register set for the port.
+> -- clocks	: a list of phandle + clock-specifier pairs, one for each
+> -		  entry in clock-names
+> -- clock-names	: must contain
+> -		  "ref": 48M reference clock for HighSpeed analog phy; and 26M
+> -			reference clock for SuperSpeed analog phy, sometimes is
+> -			24M, 25M or 27M, depended on platform.
+>  - #phy-cells	: should be 1 (See second example)
+>  		  cell after port phandle is phy type from:
+>  			- PHY_TYPE_USB2
+> @@ -48,6 +42,13 @@ Required properties (port (child) node):
+>  			- PHY_TYPE_SATA
+>  
+>  Optional properties (PHY_TYPE_USB2 port (child) node):
+> +- clocks	: a list of phandle + clock-specifier pairs, one for each
+> +		  entry in clock-names
+> +- clock-names	: may contain
+> +		  "ref": 48M reference clock for HighSpeed anolog phy; and 26M
+> +			reference clock for SuperSpeed anolog phy, sometimes is
+> +			24M, 25M or 27M, depended on platform.
+
+How do you know the frequency when it is not present?
+
+> +
+>  - mediatek,eye-src	: u32, the value of slew rate calibrate
 >  - mediatek,eye-vrt	: u32, the selection of VRT reference voltage
 >  - mediatek,eye-term	: u32, the selection of HS_TX TERM reference voltage
->  - mediatek,bc12	: bool, enable BC12 of u2phy if support it
-> +- mediatek,discth	: u32, the voltage of disconnect threshold
-> +- mediatek,intr	: u32, the value of internal R (resistance)
-
-These need units as defined in property-units.txt.
-
->  
->  Example:
->  
 > -- 
 > 2.23.0
 > 
