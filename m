@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13780A2802
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:31:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C408A2803
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:31:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,65 +11,64 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=KXtwdd+m5wGRBFDjFS2bHk+UQtjlJYc9qmTYeAdlhto=; b=G8OHBpLppxarFlsaKpF/JM9ebY
-	UGSqaPth8prOOzA/JMXld8RbWaza319P1im5Zrmk73dDgIdiHEKYpIOSx7Dtt55gtyVmXNy19q9cX
-	QHKji+IHY9w9JQrplfOIfhOGqx5s7O8R9qBCpKFu4tZ1lzARp5PTaSQbT1oKchwzMM5kodyWdFqXW
-	5Xz1y/9J3lI622ZOfiOXHXRjQoXUmskBCuZTqbrXHE1/v93h5WJWi3P45qBPu8aD07l0LjffrgU1T
-	Jg/E8ruv0QouF6a043nB/WsD6AcHqTIfj5nHcRpPpEiO7RB/gGEXolt2ziYFU1eps7OaSEmiusH8p
-	4B6DC35A==;
+	bh=jHcu5J1/flpxAc/DNFCAfIejsaf99gVCn5iXV1tpsyE=; b=nak7xinHVO40nJ/K3o9R/4JSHa
+	xuSuKKMNzdG35iLaixE41SJnD/SXkj/0SMnTnB/bWkOwhctX4Yrj2JMluYuCZRKdD9H7zBY0djBz7
+	TsMIOosdYjm38wqiCHqWaRQtDwVsxgkkARU2WalchmmAHhZ7bupoER41YquRhw0FDsyCHPQs+DWFl
+	/VAiRgV2YSGXdNezfxrBcN6vYiNt8K3KcT9sg/4BqTpfgLXIO4uqwEeYRlq+sEQKIqIqcT39BhlCZ
+	Z3ukKG0cInQ1o1Pg4ge3ctnarEi3q1ArgF4/Vwmsry19BkVuUeJzURY7uZItIis/pMCjKCdjxT55f
+	DZ5QZhjA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R4K-0006lw-KJ; Thu, 29 Aug 2019 20:30:56 +0000
+	id 1i3R4Y-00072z-KK; Thu, 29 Aug 2019 20:31:10 +0000
 Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2J-0003kY-S6
+ id 1i3R2K-0003lW-9n
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:53 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y1so2108252plp.9
+Received: by mail-pl1-x642.google.com with SMTP id t14so2106100plr.11
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:51 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:52 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=lyxWH3I3xY93jZ4BZY/ubIbJwypjoTC/XYUq8klqrrE=;
- b=uwPm6+WepLLVw9NK0vv9RrcqjSJtEG75HZzxAJb/nZdiaoLMmdbAbeAkFLc9IhWyVs
- st82gr4ibHZfTFaHKUyBPp6UoseQwRVKGw9ZHo0ruYUkqzb3Rfdchij5v6hOlCdBcs5T
- pwchOPonhBlZaBuIgp2C53lbQoeX/yhZWoqJBS+kGWi71KGAB16hrPTu/7F1MJ9sQet9
- ul7zwQvGewFY9GhewCsevbSkpSexZPJoDHephat/Nf7y5hhjUKHjafDcjGr7rXZxehVF
- wgBmhPVHo9zECnEBd/rrETqHTE4x9sbPeRFDyp9m54TbeS4bpZWd+eR82S5ryvHjHDKf
- TYDg==
+ bh=fgl0Hv4m6rVTvvPn7h0hS8xrcpwpLx1YzEBPcCkf+ys=;
+ b=orm9xnFJCpi8wDGJk0uyFFfZKCq+Fbl+O9elJjERIeHAexYHEEx1pgODYqCli+PcUQ
+ d++sRKyIwnHIF0qRQosMrwnRh5cdATg7Cs7BOteZZyWBm/XupNtqaSJRu+sb//biSuAW
+ 4AB33zrmPGZZDrbQyXoILC9j0TyOOA5IXjFzKB8xDrb9zu2zMyT1vR1JH0WNx0XRpnYz
+ BvgmIRDwyx7TI4WVThGXyARNcBOzC23K3DEWNhERb/+P+0S+y3zTAEmb+V8dd4Bal2if
+ 5U1zpLayOGHjdzXjvX+7BuG6mgIwjk/7zVBV31zNR860mCNMmK/2+KeEbCbMx0DVzZyx
+ Mkfw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=lyxWH3I3xY93jZ4BZY/ubIbJwypjoTC/XYUq8klqrrE=;
- b=E0k01pWHaePXBwOwE9fvLJVx+OckKoRV7Pe3B5Imj2Q7AKdEa1G3g7WUA2FeLH1J9I
- CKL06Ckn32JJ4sx1j7tK+iLmD8D7/BqyrgdEJWwL3E6sxynTVYjQE0lqKhWfhTj1ORD1
- T1IT2s8bXXTSFs+OBUUT13SufxaiB2gSI2VyLWd25B1GLWFJODynu+yLiBgKqDFvw61Q
- VIAn14k5n1GA6NJZhAnpHfUTxD3c2+IUqHYFoeYS0BGBkwoi4oy6sQDf/Ouh4xwk/kDJ
- F3WmRe7f9n//405J5KrQl0nAUXF4VtCFFWPsGMAgj0AFdPTsiLYHgwSrHoaGDJbnKK0s
- LjTQ==
-X-Gm-Message-State: APjAAAWPr0H/RMgEoAaPslDjcXnCt90TZPKN8AU/wmGG2twcJDFf6B4r
- z5oU2veXsG6kKqRvYSMTbt5VNGEZQE4=
-X-Google-Smtp-Source: APXvYqzZBZPQkCKu5r8gutDcTabY3R70X7SezfOnBcXV6eViVIkPDkWSjJJ0k0BpsxEEjOi/eIyKnQ==
-X-Received: by 2002:a17:902:9895:: with SMTP id
- s21mr11789126plp.255.1567110531000; 
+ bh=fgl0Hv4m6rVTvvPn7h0hS8xrcpwpLx1YzEBPcCkf+ys=;
+ b=EXhcs9mmlxie5WG8zCo5hvduRhljXay9Mfqoj+FYZ3iBai4VcUsRgI561G09BXL9Xs
+ I5CtHeGFoqiLGX7TcF7nYc4eHry4QDEMKNjInNWFU2MOvaaaGXW1DeW/WOyWomlWIN7w
+ wU1hc6JKsmzhPwdHl4eqT7Xy2tO5KA9tQ9vo7r2DjTkAqo8VzEHX67wPNNMiWuy3+bC2
+ IcTZv+F9C6zE6iCCf5v+56F8sEx+GvGrJgKPD6vi7KCO3r8HXxohVR7sGCwwvp7OaPKf
+ zrQJf18WwWZvr3UM0Jpc2nHndyouFTl4cIa1XD30/GtDo98CXV6BsmtVMOA8ceFBSCSn
+ XuoQ==
+X-Gm-Message-State: APjAAAUC9ekuDeF1+UZL+P+teMZ+Ov2Y/bsliqRuf7EuLAcJMbx9Nagi
+ PYV7hAHG/C0Ww8zRm7+1tENwK2FkGAU=
+X-Google-Smtp-Source: APXvYqzt1TuCeOImHpdiZz1vDMArvUJzWVRXiMct7jJkjezkPy9Jr8R1mKZxf5cxjgg1bKCwojWCRA==
+X-Received: by 2002:a17:902:542:: with SMTP id
+ 60mr11520149plf.272.1567110531751; 
  Thu, 29 Aug 2019 13:28:51 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.48
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:49 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:51 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 07/17] coresight: Convert pr_warn to dev_warn for obsolete
- bindings
-Date: Thu, 29 Aug 2019 14:28:32 -0600
-Message-Id: <20190829202842.580-8-mathieu.poirier@linaro.org>
+Subject: [PATCH 08/17] coresight: acpi: Static funnel support
+Date: Thu, 29 Aug 2019 14:28:33 -0600
+Message-Id: <20190829202842.580-9-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132851_956453_51D460B0 
-X-CRM114-Status: GOOD (  11.50  )
+X-CRM114-CacheID: sfid-20190829_132852_419242_EC18DD36 
+X-CRM114-Status: GOOD (  10.59  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -107,46 +106,50 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-We warn the users of obsolete bindings in the DT for coresight replicator
-and funnel drivers. However we use pr_warn_once() which doesn't give a clue
-about which device it is bound to. Let us use dev_warn_once() to give the
-context.
+The ACPI bindings for CoreSight has been updated to add the device
+id for non-programmable CoreSight funnels (aka static funnels) as of
+v1.1 [0]. Add the ACPI id for static funnels in the driver.
 
-Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
+[0] https://static.docs.arm.com/den0067/a/DEN0067_CoreSight_ACPI_1.1.pdf
+
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-funnel.c     | 2 +-
- drivers/hwtracing/coresight/coresight-replicator.c | 3 ++-
- 2 files changed, 3 insertions(+), 2 deletions(-)
+ drivers/hwtracing/coresight/coresight-funnel.c | 9 +++++++++
+ 1 file changed, 9 insertions(+)
 
 diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
-index fa97cb9ab4f9..84ca30f4e5ec 100644
+index 84ca30f4e5ec..05f7896c3a01 100644
 --- a/drivers/hwtracing/coresight/coresight-funnel.c
 +++ b/drivers/hwtracing/coresight/coresight-funnel.c
-@@ -192,7 +192,7 @@ static int funnel_probe(struct device *dev, struct resource *res)
+@@ -5,6 +5,7 @@
+  * Description: CoreSight Funnel driver
+  */
  
- 	if (is_of_node(dev_fwnode(dev)) &&
- 	    of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
--		pr_warn_once("Uses OBSOLETE CoreSight funnel binding\n");
-+		dev_warn_once(dev, "Uses OBSOLETE CoreSight funnel binding\n");
++#include <linux/acpi.h>
+ #include <linux/kernel.h>
+ #include <linux/init.h>
+ #include <linux/types.h>
+@@ -302,11 +303,19 @@ static const struct of_device_id static_funnel_match[] = {
+ 	{}
+ };
  
- 	desc.name = coresight_alloc_device_name(&funnel_devs, dev);
- 	if (!desc.name)
-diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
-index b7d6d59d56db..b29ba640eb25 100644
---- a/drivers/hwtracing/coresight/coresight-replicator.c
-+++ b/drivers/hwtracing/coresight/coresight-replicator.c
-@@ -184,7 +184,8 @@ static int replicator_probe(struct device *dev, struct resource *res)
- 
- 	if (is_of_node(dev_fwnode(dev)) &&
- 	    of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
--		pr_warn_once("Uses OBSOLETE CoreSight replicator binding\n");
-+		dev_warn_once(dev,
-+			      "Uses OBSOLETE CoreSight replicator binding\n");
- 
- 	desc.name = coresight_alloc_device_name(&replicator_devs, dev);
- 	if (!desc.name)
++#ifdef CONFIG_ACPI
++static const struct acpi_device_id static_funnel_ids[] = {
++	{"ARMHC9FE", 0},
++	{},
++};
++#endif
++
+ static struct platform_driver static_funnel_driver = {
+ 	.probe          = static_funnel_probe,
+ 	.driver         = {
+ 		.name   = "coresight-static-funnel",
+ 		.of_match_table = static_funnel_match,
++		.acpi_match_table = ACPI_PTR(static_funnel_ids),
+ 		.pm	= &funnel_dev_pm_ops,
+ 		.suppress_bind_attrs = true,
+ 	},
 -- 
 2.17.1
 
