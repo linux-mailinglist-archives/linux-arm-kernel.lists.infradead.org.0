@@ -2,49 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 38B20A2013
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:54:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7310A2015
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:54:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Huca35Bf3w1d5zqWCcQjLwVNatJzMNdMWcJjblKx3a0=; b=VtsCTJpcozDup9
-	mZK7RhNOwUNzYh/av7H5OCRScQaID/nR56qUfeb6b6031X/ETGa25LDOBhFIBieofAlyREHhnwsDk
-	HDfUrUwl8iH6AYQGM646BuqOVEbsSRLyOMmbOitmcabeBUfO2I80vCi1czYCjT1WrpHJEwyFk4Tgc
-	fPO1mN9F+LVpGY7gDiPaIPNPt6eV256P1erCEVFafYiJM4ASCqtrk/vQuTLZ865E3wq+QJCuDsH+U
-	1BLNrv9fXhINmP2hg7tsBT8v9irk0IZBaYyUVMGo7QLHxMeWMyfGaiqmWY6rv+R+OGPQswPe5CZzt
-	cpKNvkYvZ6uFWBtGfWSQ==;
+	List-Owner; bh=dGEYWacJB6GN7iU+xdNh+5su7FpDK0v+sbADMxa32TM=; b=gLyi91ZSf84HDI
+	ZQTFS+bvQc0MK7y9dzGJNGKyfap6SzKxvFSrPyaySQ6UVwOA9XmpR/UZan3/bPgYVbDLWOQtfYJjn
+	SPIKxI5VvUMRzX7vZKYtdDNc2wfnH0oBD2iAeo9MsjMaKq87PfOgrwqk/OvG5ukjg9U+7pX1eXMVe
+	0P2d8fEnh3pvFGMPFRXoO45G6xaaRRG11azQkrrywhYN59fQOqaX1RD1kA1Q7zcRMd7VplMAhznO+
+	py1qboWBRT5w+uFZ2wGpw/QdvPdDfFbKVz0NjGgnddJEVajJZqoYXdd2ioD7hAmA0ffj32RF6LwN2
+	pB9g9A/rRafS+2AxFUUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MkB-000626-R2; Thu, 29 Aug 2019 15:53:52 +0000
+	id 1i3MkU-0006Hs-BA; Thu, 29 Aug 2019 15:54:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Mi2-0004bn-Qt
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:51:40 +0000
+ id 1i3Mj1-0005OY-N2
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:52:41 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 29E9828;
- Thu, 29 Aug 2019 08:51:38 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1145D28;
+ Thu, 29 Aug 2019 08:52:39 -0700 (PDT)
 Received: from [10.1.196.72] (e119884-lin.cambridge.arm.com [10.1.196.72])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7D34B3F718;
- Thu, 29 Aug 2019 08:51:36 -0700 (PDT)
-Subject: Re: [PATCH 4/7] lib: vdso: Remove VDSO_HAS_32BIT_FALLBACK
-To: Andy Lutomirski <luto@kernel.org>
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B0F633F718;
+ Thu, 29 Aug 2019 08:52:37 -0700 (PDT)
+Subject: Re: [PATCH 5/7] arm64: compat: vdso: Remove unused
+ VDSO_HAS_32BIT_FALLBACK
+To: Thomas Gleixner <tglx@linutronix.de>
 References: <20190829111843.41003-1-vincenzo.frascino@arm.com>
- <20190829111843.41003-5-vincenzo.frascino@arm.com>
- <CALCETrVprrrR3TSVSAnHfLW4HDQG=gcVrdjmsk6ss6Z3+vKOBg@mail.gmail.com>
+ <20190829111843.41003-6-vincenzo.frascino@arm.com>
+ <alpine.DEB.2.21.1908291420060.1938@nanos.tec.linutronix.de>
 From: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Message-ID: <77d5c414-77c4-49e9-3541-772c74a4735d@arm.com>
-Date: Thu, 29 Aug 2019 16:51:34 +0100
+Message-ID: <100cf343-1cac-84d9-3a4f-5de801fc4482@arm.com>
+Date: Thu, 29 Aug 2019 16:52:34 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CALCETrVprrrR3TSVSAnHfLW4HDQG=gcVrdjmsk6ss6Z3+vKOBg@mail.gmail.com>
+In-Reply-To: <alpine.DEB.2.21.1908291420060.1938@nanos.tec.linutronix.de>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_085139_035209_6557D49C 
-X-CRM114-Status: GOOD (  18.51  )
+X-CRM114-CacheID: sfid-20190829_085239_876779_6E789362 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,68 +64,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch <linux-arch@vger.kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Dmitry Safonov <0x7f454c46@gmail.com>, LKML <linux-kernel@vger.kernel.org>,
- linux-mips@vger.kernel.org, Paul Burton <paul.burton@mips.com>,
- Thomas Gleixner <tglx@linutronix.de>, Mark Salyzyn <salyzyn@android.com>,
- Will Deacon <will@kernel.org>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arch@vger.kernel.org, catalin.marinas@arm.com, 0x7f454c46@gmail.com,
+ linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org, paul.burton@mips.com,
+ luto@kernel.org, salyzyn@android.com, will@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/08/2019 16:25, Andy Lutomirski wrote:
-> On Thu, Aug 29, 2019 at 4:19 AM Vincenzo Frascino
-> <vincenzo.frascino@arm.com> wrote:
->>
->> VDSO_HAS_32BIT_FALLBACK was introduced to address a regression which
->> caused seccomp to deny access to the applications to clock_gettime64()
->> and clock_getres64() because they are not enabled in the existing
->> filters.
->>
->> The purpose of VDSO_HAS_32BIT_FALLBACK was to simplify the conditional
->> implementation of __cvdso_clock_get*time32() variants.
->>
->> Now that all the architectures that support the generic vDSO library
->> have been converted to support the 32 bit fallbacks the conditional
->> can be removed.
->>
->> Cc: Thomas Gleixner <tglx@linutronix.de>
->> CC: Andy Lutomirski <luto@kernel.org>
->> References: c60a32ea4f45 ("lib/vdso/32: Provide legacy syscall fallbacks")
->> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
->> ---
->>  lib/vdso/gettimeofday.c | 10 ----------
->>  1 file changed, 10 deletions(-)
->>
->> diff --git a/lib/vdso/gettimeofday.c b/lib/vdso/gettimeofday.c
->> index a86e89e6dedc..2c4b311c226d 100644
->> --- a/lib/vdso/gettimeofday.c
->> +++ b/lib/vdso/gettimeofday.c
->> @@ -126,13 +126,8 @@ __cvdso_clock_gettime32(clockid_t clock, struct old_timespec32 *res)
->>
->>         ret = __cvdso_clock_gettime_common(clock, &ts);
->>
->> -#ifdef VDSO_HAS_32BIT_FALLBACK
->>         if (unlikely(ret))
->>                 return clock_gettime32_fallback(clock, res);
->> -#else
->> -       if (unlikely(ret))
->> -               ret = clock_gettime_fallback(clock, &ts);
->> -#endif
->>
->>         if (likely(!ret)) {
->>                 res->tv_sec = ts.tv_sec;
+On 29/08/2019 13:21, Thomas Gleixner wrote:
+> On Thu, 29 Aug 2019, Vincenzo Frascino wrote:
 > 
-> I think you could have a little follow-up patch to remove the if
-> statement -- by the time you get here, it's guaranteed that ret == 0.
+>> As a consequence of Commit 623fa33f7bd6 ("lib:vdso: Remove
+> 
+> -ENOSUCH commit ....
+> 
+> Just say:
+> 
+> VDSO_HAS_32BIT_FALLBACK has been removed from the core ....
 >
 
-Thanks, I will add a new patch that does that to v2 (with a comment).
+Thanks Thomas, I will fix it in v2.
 
-> --Andy
+> Thanks,
+> 
+> 	tglx
 > 
 
 -- 
