@@ -2,94 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 216EDA2934
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 23:51:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD9FFA293D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 23:54:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
-	Date:References:From:Subject:To:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Keqe3RCJba+D7vaM8+JKBdvfIc3tXAJVXoPZGWFkjT4=; b=S9Z6crz5Fk2dnm
-	dptAgu9M+Svi80iMkLBxmf2cSdh9oWmFxqRlA97GQ5eoH8m61bCpo2V6X3p8g23VcP2hlo+e57dvl
-	m+Pf22BmqkHhmF7m5Iogv9ofgSYVRI1R8/iHInKqHm4wC84kBcmD53oZ4s9Ltr+mAcqG6JbYMoTaG
-	tBiJ7REDOeGr+YnJA4LJC1e5tNq5SeZRV0tp1cu5Wutsk0b7OAjkMO4Y2NpsVHjZtlEbPw2XsozE8
-	LabC9Jhib/VWSzQLRcLiRXIciIixKxGoRFe1ndH0g4jmEpuBzK7Iq1vc69gy4AJYRYVC4Qe3c3Wlt
-	o4OxUWV5VopMYZqRpraQ==;
+	List-Owner; bh=IhVabE9XqOAAylo8e44w3JVZyGX5X+HxXo90UMgGYvI=; b=OpryzMomh7mrRE
+	zzu03AD529unhyNUazxcsy3n7+AvnV2c72avnvks8HElv5j8XdYM9eKMxFA/4JYvgtVp8AyEau7O7
+	GlyXbUj10efifKwp/QqlCsPfM5qJ0o9uSpAATzifGOFJHIPV0HA0CwMpbrRuVKxdMD1aDJkfJyP3W
+	/7iAJtXfQG8KHjvyCCTlkqicdv8Bmwg361wa3OBuBSV9acqdqVEE4mZMONCzLZzc03hoauF3gunjD
+	J0Kzgq73OrDicwmvzxXPcTG1SbEoK/hVlsq9SN/y7NbA0f2TpDYAuNAatXoGR33bb2Lf/o4vskApm
+	aduUZbfD4E8KS+GfOruA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3SJn-0002Vt-GO; Thu, 29 Aug 2019 21:50:59 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1i3SMn-00030o-56; Thu, 29 Aug 2019 21:54:05 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3SJY-0002Uh-TH; Thu, 29 Aug 2019 21:50:46 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7TLnNWY191122;
- Thu, 29 Aug 2019 21:50:31 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=to : cc : subject :
- from : references : date : in-reply-to : message-id : mime-version :
- content-type; s=corp-2019-08-05;
- bh=KpPsLX+1ojIga2DpGQDW3oXjRXDKrjZ9SfCNKPVlJcc=;
- b=grOjDSR+ATGwOIVeipQFe7F5bjIJcHSYFhI8TADwzq/XLCY010DoicWeEOubqCEI+zZd
- X7+J0PviOd3WHyeOFfblxSLGCUpPLf0/cJMVmJ+i88t1Ropf80jNDJ4bIsGFCF9F969s
- HlGaxWjs+n9Jw5PvCrGJxA4mnzLIIlOI7Cl4/IdmhZUKM50Q40miC0NnIBCTb9O5GQ6a
- rMrPkpsD9NeilG9ShBhWNMezacsdZhekXdgNNk6uAk3Fq2hONYu11jkm+h68QGc2AxxU
- alg7Ih2Ee4iY8pzbbPfoGmXiGjzos4RZg+f0d5VNfZ2rq3ZRHSBXuudcuwdAf8YFRk8R 2g== 
-Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
- by userp2120.oracle.com with ESMTP id 2uppr9r296-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 29 Aug 2019 21:50:31 +0000
-Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
- by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7TLnYRq069081;
- Thu, 29 Aug 2019 21:50:31 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by userp3020.oracle.com with ESMTP id 2upkrfgd42-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Thu, 29 Aug 2019 21:50:31 +0000
-Received: from abhmp0001.oracle.com (abhmp0001.oracle.com [141.146.116.7])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x7TLoS5u025488;
- Thu, 29 Aug 2019 21:50:29 GMT
-Received: from ca-mkp.ca.oracle.com (/10.159.214.123)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Thu, 29 Aug 2019 14:50:28 -0700
-To: Stanley Chu <stanley.chu@mediatek.com>
-Subject: Re: [PATCH v3] scsi: ufs: fix broken hba->outstanding_tasks
-From: "Martin K. Petersen" <martin.petersen@oracle.com>
-Organization: Oracle Corporation
-References: <1566222208-19890-1-git-send-email-stanley.chu@mediatek.com>
-Date: Thu, 29 Aug 2019 17:50:24 -0400
-In-Reply-To: <1566222208-19890-1-git-send-email-stanley.chu@mediatek.com>
- (Stanley Chu's message of "Mon, 19 Aug 2019 21:43:28 +0800")
-Message-ID: <yq17e6vsktb.fsf@oracle.com>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1.92 (gnu/linux)
+ id 1i3SMc-00030V-7A
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 21:53:55 +0000
+Received: from brain-police (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8ED15208C2;
+ Thu, 29 Aug 2019 21:53:51 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567115633;
+ bh=tfvxCZ4oyuxgoY18SS51EelDk6RtlZHt1ZzY0quaE5Y=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=stqN+T3bOU8tVdPCV+Yxyx92v5vrVwiYq4Ys4aL1ATD/pbEmeUkyBJXiWnvfJXUOU
+ 1Qa3vSKwIOMaBRRIS1Rp2zYipVh22qhxKjHGr7X6dqnRjQCGp2w9B+0jl0nRDz5C97
+ R7ROX4bw2u1YmVGDynaxJQ5iCYw8vFn+UQNFRN2w=
+Date: Thu, 29 Aug 2019 22:53:48 +0100
+From: Will Deacon <will@kernel.org>
+To: Nick Desaulniers <ndesaulniers@google.com>
+Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+Message-ID: <20190829215347.GB2404@brain-police>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-11-will@kernel.org>
+ <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+ <CAKwvOdkaCTQ92hUe823Y14xo_Gft4vsRGgimHc8QPUBCbbAOrQ@mail.gmail.com>
 MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9364
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=877
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1908290217
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9364
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=944 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1908290217
+Content-Disposition: inline
+In-Reply-To: <CAKwvOdkaCTQ92hUe823Y14xo_Gft4vsRGgimHc8QPUBCbbAOrQ@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_145044_980802_E44DF70F 
-X-CRM114-Status: GOOD (  12.46  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190829_145354_282245_7D9B6EBC 
+X-CRM114-Status: GOOD (  15.41  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,8 +68,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -111,28 +80,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-scsi@vger.kernel.org, martin.petersen@oracle.com,
- marc.w.gonzalez@free.fr, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, evgreen@chromium.org, avri.altman@wdc.com,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- alim.akhtar@samsung.com, matthias.bgg@gmail.com, pedrom.sousa@synopsys.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Ard.Biesheuvel@arm.com,
+ andrew.murray@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Aug 29, 2019 at 10:45:57AM -0700, Nick Desaulniers wrote:
+> On Thu, Aug 29, 2019 at 9:55 AM Will Deacon <will@kernel.org> wrote:
+> >
+> > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
+> > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > index 95091f72228b..7fa042f5444e 100644
+> > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > @@ -23,6 +23,10 @@ asm_ops "\n"                                                               \
+> > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+> > >  #endif
+> > >
+> > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> > > +#define K
+> > > +#endif
+> >
+> > Bah, I need to use something like __stringify when the constraint is used
+> > in order for this to get expanded properly. Updated diff below.
+> >
+> > Will
+> 
+> Hi Will, thanks for cc'ing me on the patch set.  I'd be happy to help
+> test w/ Clang.  Would you mind pushing this set with the below diff to
+> a publicly available tree+branch I can pull from?  (I haven't yet
+> figured out how to download multiple diff's from gmail rather than 1
+> by 1, and TBH I'd rather just use git).
 
-Stanley,
+Sorry, of course. I should've mentioned this in the cover letter:
 
-> Currently bits in hba->outstanding_tasks are cleared only after their
-> corresponding task management commands are successfully done by
-> __ufshcd_issue_tm_cmd().
+https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/atomics
 
-Applied to 5.4/scsi-queue. Thank you!
+FWIW, I did test (defconfig + boot) with clang, but this does mean that LSE
+atomics are disabled for that configuration when asm goto is not supported.
 
--- 
-Martin K. Petersen	Oracle Linux Engineering
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
