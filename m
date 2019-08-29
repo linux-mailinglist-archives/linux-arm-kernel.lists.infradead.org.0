@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F017A1B67
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:28:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95930A1B96
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:37:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=BtjhOi5JtXW+LnK7GMgjkBCEjpEIFKBfxfEZFEX0D4k=; b=uvrNugzJJ4gy/0
-	Os2YCyc7QES60nBWVLJJJxkuckygqG3eqJywe0lj5ofiXucon7oONsnGoSUUyzqCuoT8YlBf5wbVd
-	zAQ2PVr811alyogAhX2xY+dnC8Sd0QoCM51H6epotne1TtfvRekCDgmMxSzWaGwGG6sry6j7424lN
-	LMbvuMMaOhZI0W9OfFj+zWdAVdUOFtZEuNZnzqUTZ+c7OGQItBpvH9HNTEP1Ud6ebaaGXpdNBCUYq
-	Dh0rxGRVZI5pRUXQvIi26uUlt7s/FpB7KV7LeT1OO4JrjlMnxVPdxvXdxYwH7nOtE/G9SJm/0edGf
-	0n8T4xAZVE9YnmPFt8kw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=fIOVplI39J7rZYO/PT40r0DuHP7WvW84xP0smdLbbuE=; b=rL0CG+fQhPFuDT
+	An3tigWuTJGe4OyVPX4sYmovundIPXyFQhlVgNEvastbCPgamxSenJ4tWbTCcPkh1Vd/91p1cj/hj
+	I1raz4kbPZaHKehF96e7vawozuyOF8dQhG8bk77VSzLAhm/SFno9v/iyRabkw/eFL+9Ye8a2OgKeT
+	xx30wxJldaTHpEMQFQAtaDdx7H61s0LoWE4eUCclRQnzCcCbAF8aQKi4nylM4x8bsAUrskiw6Jowl
+	9n93/HLi4kwgovbQQ02EGXypodkzzC8UUSEYdASm9fE9DdmJj/VfIgb4qx91nVvmRnk/1GYPmvRbb
+	MVQkdxSkc+RrY1QEaV4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3KT2-0000fl-8p; Thu, 29 Aug 2019 13:28:00 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1i3Kc7-0003cZ-C4; Thu, 29 Aug 2019 13:37:23 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3KSd-0000dw-Sd
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 13:27:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id u16so3476115wrr.0
+ id 1i3Kbp-0003ae-W9
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 13:37:07 +0000
+Received: by mail-ua1-x944.google.com with SMTP id m8so1163527uap.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 06:27:32 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ObZxzVUzRVJkzuGbqaSj0zLHjJYTKVhbZ4DRyEiw5iM=;
- b=V+GRa2DvQOlLn0X+4NST+cS1WZ4h3PtMrz76coZnLJl7sJ0s9T6gbOS9+Tbs3b9Ntk
- 8ghDZm6ofJrbfDX+jkkWoqRsCsFjNWULiUOthNoB9SIWFeGduuPxoSqp90V8+hUWxKBu
- FdrwiKzfHq8mwi+ONQPyptIpRWkIAo6ji0DiGNoFxexuWDtCL9+0oD+X8fZTr0UQK8nR
- Ca7zaolB5j1QD7H8bNSZHjQfRVf6dgdYugvY8uL0YQWBtLLXpY8BwcwSgnfo1PKAn2Jo
- 4t08AAgTQS17cFRVCDs1hgrJfq4OkNhcJG2zCPKUAFIvu3kJh4bw4mAxb+SbL8M0vHgG
- VMIA==
+ Thu, 29 Aug 2019 06:37:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VoycuwM03PAMoYB7LC8b4YSa3oTRgt158KShkM1cXKQ=;
+ b=zKgu0Jl4DlvWeQzglf9VPPVkVjkJuw4LSkmT+pELc19VL8JHSvF1cXxTazR+CrZKKr
+ kCKva4b0mB1m11diTo57wSNo45Olb6PZAJ9MJQFkQ9yVFAuSd2k0u3LBqbauDprRPNQ/
+ aJIlTmkMU61yn3ZDe4r1wBrDPkK9guE6hwr+NIl8Z8P1Ql0aZaijF0sATF21E99eR39v
+ WrYTJUr3d3ot/wHi7f49JTlZhShwYMK1yvSVT9G3kmmwWgzaIUFbdbuq98bWRlS4/55u
+ 6C4AqN2+/uw0MAuG40eXp0w6XNwSJ1YHaW+xBYhE0f0VcARxF6IRgR4b2ubMxBBfGaOc
+ sRUg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=ObZxzVUzRVJkzuGbqaSj0zLHjJYTKVhbZ4DRyEiw5iM=;
- b=fdJdQHahiUzDPUjlmwkumymsM7L9XKuNHNhMW5d2sKkAbgH2jHQJP5VZN69DVyEsKI
- 9iIsxzM/WEipLxnxHslkUJ5hDSXlJqchISh1OrvFragJ69gaEHZYeb+YvQcmntFTCWHZ
- xfw9k2JrNY+Daf8ZpsqCTKfCUgmg2xGuB/qTXmB98sbV34hDFE52gA3Gx8uooLvkdJRC
- hg8HeRJtyO69mkDmDetrXF63keT4uA0y+dVzEOZ7qaryMq4a+roNufuNGsYGc4XsgTww
- CgaVcJ5Unrl0CiF47St1niriclVNPDaNRb4EHzhJ2/RgZTxzRlmP+znrTs2cymxAVBQg
- 3JYw==
-X-Gm-Message-State: APjAAAWheCQFTEpGbDnJxNkjpK1rAkePC5OPzJeBifvA7aab6QxPICDV
- kOw6qV1xd4GL30W8IKuFsrpkAg==
-X-Google-Smtp-Source: APXvYqyOHXWpdSBnIHcSQVNTV28gpUMVgF6m5ArVN54Ou1BYOV7RZWWE14x6SLW7DnHo3o6yeQTnYA==
-X-Received: by 2002:a5d:658d:: with SMTP id q13mr4108312wru.78.1567085250674; 
- Thu, 29 Aug 2019 06:27:30 -0700 (PDT)
-Received: from bender.baylibre.local
- (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id c62sm2420823wme.20.2019.08.29.06.27.29
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 06:27:30 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: khilman@baylibre.com
-Subject: [PATCH] arm64: dts: meson-sm1-sei610: add stdout-path property back
-Date: Thu, 29 Aug 2019 15:27:28 +0200
-Message-Id: <20190829132728.20042-1-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.22.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VoycuwM03PAMoYB7LC8b4YSa3oTRgt158KShkM1cXKQ=;
+ b=q67iQlPm3+6K18cqIbm5alTgVOdSv8iUL4y/dDpsh77HR4WCW6Vk4DbvLDKaIA+ZCo
+ sKMLNLVHAYNNq0Q9omLxPjccXuUymUJlckz2R6bW5tEVV0ql92gne71vJbIw8QYxj83M
+ r3DUah+T1ZLrihaL9BF+nb9cIuI/2adkjJgfdDG/bH3i5+jGtWvASB8H2Q2ni7Zy0u3d
+ 4w3AZrcaO7feQOiYBAwC0qsJpPJV4Zxs4X5kq2bwOOSILA0muS1PJb/ZxguTQD+Bl3zr
+ /fz6DNGY2WpSYB3QdXS3SogYA70nOcfOvVT7cP2B/UTbcj5mZqtbR51HDH3OdlshCR1A
+ v0SQ==
+X-Gm-Message-State: APjAAAUrQsc2yyGUzc+yGyO/BuUjqUoPz9F4P3U7mSu1zliVIosTkVgt
+ oAbKxLPY8NrrZmObuz17PgpiQvVdPgFHF+l1WkzTqA==
+X-Google-Smtp-Source: APXvYqw5PMEM/AaXKseVFjiJDB4qE632N2Eh8ohpX17hqRNF3TeDatpY+W6xb/csgdhA+MJBYjRRNsuLKGcO5K48bSs=
+X-Received: by 2002:ab0:6883:: with SMTP id t3mr4939055uar.104.1567085824135; 
+ Thu, 29 Aug 2019 06:37:04 -0700 (PDT)
 MIME-Version: 1.0
+References: <1566985524-22749-1-git-send-email-yong.mao@mediatek.com>
+ <1566985524-22749-2-git-send-email-yong.mao@mediatek.com>
+In-Reply-To: <1566985524-22749-2-git-send-email-yong.mao@mediatek.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 29 Aug 2019 15:36:28 +0200
+Message-ID: <CAPDyKFqgO7fwybn1nYcf14jiHswM+T7fqY1BuSvx5AubYA6F=A@mail.gmail.com>
+Subject: Re: [PATCH v2] mmc: mediatek: enable SDIO IRQ low level trigger
+ function
+To: Yong Mao <yong.mao@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_062735_952776_EFF05F1A 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190829_063706_063007_5BF792E2 
+X-CRM114-Status: GOOD (  14.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -93,42 +92,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-amlogic@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Neil Armstrong <narmstrong@baylibre.com>
+Cc: srv_heupstream <srv_heupstream@mediatek.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-mediatek@lists.infradead.org, Chaotian Jing <chaotian.jing@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The commit d4609acce187 ("arm64: dts: meson-sm1-sei610: enable DVFS")
-incorrectly removed the chosen node and the stdout-path property.
+On Wed, 28 Aug 2019 at 11:45, Yong Mao <yong.mao@mediatek.com> wrote:
+>
+> From: yong mao <yong.mao@mediatek.com>
+>
+> SDIO IRQ is not defaultly triggered by low level,
+> but by falling edge. It needs to set related register
+> to enable SDIO IRQ low level trigger function.
+> Otherwise the SDIO IRQ may be lost in some specail condition.
+>
+> Signed-off-by: Yong Mao <yong.mao@mediatek.com>
+> Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
 
-Add these back.
+Applied for next, thanks!
 
-Fixes: d4609acce187 ("arm64: dts: meson-sm1-sei610: enable DVFS")
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts | 4 ++++
- 1 file changed, 4 insertions(+)
+Kind regards
+Uffe
 
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-index e1cac880b02c..3435aaa4e8db 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-sei610.dts
-@@ -19,6 +19,10 @@
- 		ethernet0 = &ethmac;
- 	};
- 
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+
- 	emmc_pwrseq: emmc-pwrseq {
- 		compatible = "mmc-pwrseq-emmc";
- 		reset-gpios = <&gpio BOOT_12 GPIO_ACTIVE_LOW>;
--- 
-2.22.0
-
+> ---
+>  drivers/mmc/host/mtk-sd.c | 2 ++
+>  1 file changed, 2 insertions(+)
+>
+> diff --git a/drivers/mmc/host/mtk-sd.c b/drivers/mmc/host/mtk-sd.c
+> index 33f4b63..585f0c7 100644
+> --- a/drivers/mmc/host/mtk-sd.c
+> +++ b/drivers/mmc/host/mtk-sd.c
+> @@ -192,6 +192,7 @@
+>  #define SDC_STS_CMDBUSY         (0x1 << 1)     /* RW */
+>  #define SDC_STS_SWR_COMPL       (0x1 << 31)    /* RW */
+>
+> +#define SDC_DAT1_IRQ_TRIGGER   (0x1 << 19)     /* RW */
+>  /* SDC_ADV_CFG0 mask */
+>  #define SDC_RX_ENHANCE_EN      (0x1 << 20)     /* RW */
+>
+> @@ -1568,6 +1569,7 @@ static void msdc_init_hw(struct msdc_host *host)
+>
+>         /* Config SDIO device detect interrupt function */
+>         sdr_clr_bits(host->base + SDC_CFG, SDC_CFG_SDIOIDE);
+> +       sdr_set_bits(host->base + SDC_ADV_CFG0, SDC_DAT1_IRQ_TRIGGER);
+>
+>         /* Configure to default data timeout */
+>         sdr_set_field(host->base + SDC_CFG, SDC_CFG_DTOC, 3);
+> --
+> 1.9.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
