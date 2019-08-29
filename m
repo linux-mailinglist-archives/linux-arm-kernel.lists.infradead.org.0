@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 91288A2000
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:52:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF63AA200E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:53:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KmISbt0Rcwo97ZnZOWv3j6kJQrXbIpKm5uzcR37ig6A=; b=mie4sBaHfEA5a5
-	k0p2QSnSnC/SmScrA3sL+N0v+bSf1BteZsiDearuiVGdMu6fCSa675xpRe/A9dfBp7bsE3hisnRgq
-	IhMCFrmDys4euTxxOpoxAVjBFzIFCKzyCYyqSkxc4JR7KFJr41X4Dwt1nd4x9yH4uxKGc/ojZvgzp
-	fQeqqTp6BsDuB3CFsxmzteCg64ncAa9dMjv1+XcpSyqgrkLj9P6z+P9edub8vMujtMe6QT2yNcRfp
-	GBA2g7g4HjHvMuZafcPwKI5HynKxB9cyhQuCTz8STH9XcDV4rK2xv7DIFZTqrXkFwXkn92hk/1vzP
-	8cBCh0i67w3C3Iru0Q1w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=JjImDC0ARqAXpOzOiRDvNXW+4+CfKxh1ZuGLTq39J5U=; b=lxLifYWNFUrDmJrZgrkGaAW+ex
+	YQDH6MLH397A/wPrF92ZsIwEex9KJdxJv2d+A+l9C4liB6yk67bO3WR2ef4mAsurNOvGIDq7JrA4a
+	UtSaWZAcQ0zQmXG7LFKf6icesyPwMUC0rsOjtW9pnEIyvWMoy07cPxz74F3MDgyDT73wJr8sYeyry
+	n6Kh6WQjDwJYnLOgN3GDzkju5lJaYWkdODH0j2Edg7jV4s48g4jU/zeBnfgwtF4C3oEgq/cfy/Agr
+	De+1ENxL8kaFVsb3kBgNSPWNHVYnb+CdATLDYkp/HPOXL80esjebCkD9bnjeZGDPF7m4bQ/gjzFgZ
+	FQ/0wY4g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Min-0004yP-80; Thu, 29 Aug 2019 15:52:25 +0000
+	id 1i3MjT-0005Vh-R3; Thu, 29 Aug 2019 15:53:08 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfO-0001cD-FP
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:56 +0000
+ id 1i3MfQ-0001hS-E8
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:58 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 58DB028;
- Thu, 29 Aug 2019 08:48:54 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E26BC337;
+ Thu, 29 Aug 2019 08:48:55 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 0521B3F718;
- Thu, 29 Aug 2019 08:48:52 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8E6793F718;
+ Thu, 29 Aug 2019 08:48:54 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 08/10] arm64: lse: Make ARM64_LSE_ATOMICS depend on
- JUMP_LABEL
-Date: Thu, 29 Aug 2019 16:48:32 +0100
-Message-Id: <20190829154834.26547-9-will@kernel.org>
+Subject: [PATCH v5 09/10] arm64: atomics: Undefine internal macros after use
+Date: Thu, 29 Aug 2019 16:48:33 +0100
+Message-Id: <20190829154834.26547-10-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190829154834.26547-1-will@kernel.org>
 References: <20190829154834.26547-1-will@kernel.org>
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084855_255764_D48577E3 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20190829_084856_640880_ABA2CBA4 
+X-CRM114-Status: UNSURE (   8.97  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -64,48 +64,88 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
  ndesaulniers@google.com, robin.murphy@arm.com, Ard.Biesheuvel@arm.com,
  andrew.murray@arm.com, natechancellor@gmail.com, Will Deacon <will@kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U3VwcG9ydCBmb3IgTFNFIGF0b21pYyBpbnN0cnVjdGlvbnMgKENPTkZJR19BUk02NF9MU0VfQVRP
-TUlDUykgcmVsaWVzIG9uCmEgc3RhdGljIGtleSB0byBzZWxlY3QgYmV0d2VlbiB0aGUgbGVnYWN5
-IExML1NDIGltcGxlbWVudGF0aW9uIHdoaWNoIGlzCmF2YWlsYWJsZSBvbiBhbGwgYXJtNjQgQ1BV
-cyBhbmQgdGhlIHN1cGVyLWR1cGVyIExTRSBpbXBsZW1lbnRhdGlvbiB3aGljaAppcyBhdmFpbGFi
-bGUgb24gQ1BVcyBpbXBsZW1lbnRpbmcgdjguMSBhbmQgbGF0ZXIuCgpVbmZvcnR1bmF0ZWx5LCB3
-aGVuIGJ1aWxkaW5nIGEga2VybmVsIHdpdGggQ09ORklHX0pVTVBfTEFCRUwgZGlzYWJsZWQKKGUu
-Zy4gYmVjYXVzZSB0aGUgdG9vbGNoYWluIGRvZXNuJ3Qgc3VwcG9ydCAnYXNtIGdvdG8nKSwgdGhl
-IHN0YXRpYyBrZXkKaW5zaWRlIHRoZSBhdG9taWNzIGNvZGUgdHJpZXMgdG8gdXNlIGF0b21pY3Mg
-aXRzZWxmLiBUaGlzIHJlc3VsdHMgaW4gYQptZXNzIG9mIGNpcmN1bGFyIGluY2x1ZGVzIGFuZCBh
-IGJ1aWxkIGZhaWx1cmU6CgpJbiBmaWxlIGluY2x1ZGVkIGZyb20gLi9hcmNoL2FybTY0L2luY2x1
-ZGUvYXNtL2xzZS5oOjExLAogICAgICAgICAgICAgICAgIGZyb20gLi9hcmNoL2FybTY0L2luY2x1
-ZGUvYXNtL2F0b21pYy5oOjE2LAogICAgICAgICAgICAgICAgIGZyb20gLi9pbmNsdWRlL2xpbnV4
-L2F0b21pYy5oOjcsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvYXNtLWdlbmVyaWMv
-Yml0b3BzL2F0b21pYy5oOjUsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2FyY2gvYXJtNjQvaW5j
-bHVkZS9hc20vYml0b3BzLmg6MjYsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGlu
-dXgvYml0b3BzLmg6MTksCiAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGludXgva2Vy
-bmVsLmg6MTIsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvYXNtLWdlbmVyaWMvYnVn
-Lmg6MTgsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2FyY2gvYXJtNjQvaW5jbHVkZS9hc20vYnVn
-Lmg6MjYsCiAgICAgICAgICAgICAgICAgZnJvbSAuL2luY2x1ZGUvbGludXgvYnVnLmg6NSwKICAg
-ICAgICAgICAgICAgICBmcm9tIC4vaW5jbHVkZS9saW51eC9wYWdlLWZsYWdzLmg6MTAsCiAgICAg
-ICAgICAgICAgICAgZnJvbSBrZXJuZWwvYm91bmRzLmM6MTA6Ci4vaW5jbHVkZS9saW51eC9qdW1w
-X2xhYmVsLmg6IEluIGZ1bmN0aW9uIOKAmHN0YXRpY19rZXlfY291bnTigJk6Ci4vaW5jbHVkZS9s
-aW51eC9qdW1wX2xhYmVsLmg6MjU0Ojk6IGVycm9yOiBpbXBsaWNpdCBkZWNsYXJhdGlvbiBvZiBm
-dW5jdGlvbiDigJhhdG9taWNfcmVhZOKAmSBbLVdlcnJvcj1pbXBsaWNpdC1mdW5jdGlvbi1kZWNs
-YXJhdGlvbl0KICByZXR1cm4gYXRvbWljX3JlYWQoJmtleS0+ZW5hYmxlZCk7CiAgICAgICAgIF5+
-fn5+fn5+fn5+CgpbIC4uLiBtb3JlIG9mIHRoZSBzYW1lIC4uLiBdCgpTaW5jZSBMU0UgYXRvbWlj
-IGluc3RydWN0aW9ucyBhcmUgbm90IGNyaXRpY2FsIHRvIHRoZSBvcGVyYXRpb24gb2YgdGhlCmtl
-cm5lbCwgbWFrZSB0aGVtIGRlcGVuZCBvbiBKVU1QX0xBQkVMIGF0IGNvbXBpbGUgdGltZS4KClNp
-Z25lZC1vZmYtYnk6IFdpbGwgRGVhY29uIDx3aWxsQGtlcm5lbC5vcmc+Ci0tLQogYXJjaC9hcm02
-NC9LY29uZmlnIHwgMSArCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCmRpZmYgLS1n
-aXQgYS9hcmNoL2FybTY0L0tjb25maWcgYi9hcmNoL2FybTY0L0tjb25maWcKaW5kZXggM2FkY2Vj
-MDViMWY2Li4yNzQwNWFjOTQyMjggMTAwNjQ0Ci0tLSBhL2FyY2gvYXJtNjQvS2NvbmZpZworKysg
-Yi9hcmNoL2FybTY0L0tjb25maWcKQEAgLTEyNjMsNiArMTI2Myw3IEBAIGNvbmZpZyBBUk02NF9Q
-QU4KIAogY29uZmlnIEFSTTY0X0xTRV9BVE9NSUNTCiAJYm9vbCAiQXRvbWljIGluc3RydWN0aW9u
-cyIKKwlkZXBlbmRzIG9uIEpVTVBfTEFCRUwKIAlkZWZhdWx0IHkKIAloZWxwCiAJICBBcyBwYXJ0
-IG9mIHRoZSBMYXJnZSBTeXN0ZW0gRXh0ZW5zaW9ucywgQVJNdjguMSBpbnRyb2R1Y2VzIG5ldwot
-LSAKMi4xMS4wCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5p
-bmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8v
-bGludXgtYXJtLWtlcm5lbAo=
+We use a bunch of internal macros when constructing our atomic and
+cmpxchg routines in order to save on boilerplate. Avoid exposing these
+directly to users of the header files.
+
+Signed-off-by: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/atomic.h  | 7 +++++++
+ arch/arm64/include/asm/cmpxchg.h | 4 ++++
+ 2 files changed, 11 insertions(+)
+
+diff --git a/arch/arm64/include/asm/atomic.h b/arch/arm64/include/asm/atomic.h
+index 7c334337674d..916e5a6d5454 100644
+--- a/arch/arm64/include/asm/atomic.h
++++ b/arch/arm64/include/asm/atomic.h
+@@ -32,6 +32,7 @@ ATOMIC_OP(atomic_add)
+ ATOMIC_OP(atomic_and)
+ ATOMIC_OP(atomic_sub)
+ 
++#undef ATOMIC_OP
+ 
+ #define ATOMIC_FETCH_OP(name, op)					\
+ static inline int arch_##op##name(int i, atomic_t *v)			\
+@@ -54,6 +55,8 @@ ATOMIC_FETCH_OPS(atomic_fetch_sub)
+ ATOMIC_FETCH_OPS(atomic_add_return)
+ ATOMIC_FETCH_OPS(atomic_sub_return)
+ 
++#undef ATOMIC_FETCH_OP
++#undef ATOMIC_FETCH_OPS
+ 
+ #define ATOMIC64_OP(op)							\
+ static inline void arch_##op(long i, atomic64_t *v)			\
+@@ -68,6 +71,7 @@ ATOMIC64_OP(atomic64_add)
+ ATOMIC64_OP(atomic64_and)
+ ATOMIC64_OP(atomic64_sub)
+ 
++#undef ATOMIC64_OP
+ 
+ #define ATOMIC64_FETCH_OP(name, op)					\
+ static inline long arch_##op##name(long i, atomic64_t *v)		\
+@@ -90,6 +94,9 @@ ATOMIC64_FETCH_OPS(atomic64_fetch_sub)
+ ATOMIC64_FETCH_OPS(atomic64_add_return)
+ ATOMIC64_FETCH_OPS(atomic64_sub_return)
+ 
++#undef ATOMIC64_FETCH_OP
++#undef ATOMIC64_FETCH_OPS
++
+ static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
+ {
+ 	return __lse_ll_sc_body(atomic64_dec_if_positive, v);
+diff --git a/arch/arm64/include/asm/cmpxchg.h b/arch/arm64/include/asm/cmpxchg.h
+index afaba73e0b2c..a1398f2f9994 100644
+--- a/arch/arm64/include/asm/cmpxchg.h
++++ b/arch/arm64/include/asm/cmpxchg.h
+@@ -129,6 +129,8 @@ __CMPXCHG_CASE(mb_, 16)
+ __CMPXCHG_CASE(mb_, 32)
+ __CMPXCHG_CASE(mb_, 64)
+ 
++#undef __CMPXCHG_CASE
++
+ #define __CMPXCHG_DBL(name)						\
+ static inline long __cmpxchg_double##name(unsigned long old1,		\
+ 					 unsigned long old2,		\
+@@ -143,6 +145,8 @@ static inline long __cmpxchg_double##name(unsigned long old1,		\
+ __CMPXCHG_DBL(   )
+ __CMPXCHG_DBL(_mb)
+ 
++#undef __CMPXCHG_DBL
++
+ #define __CMPXCHG_GEN(sfx)						\
+ static inline unsigned long __cmpxchg##sfx(volatile void *ptr,		\
+ 					   unsigned long old,		\
+-- 
+2.11.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
