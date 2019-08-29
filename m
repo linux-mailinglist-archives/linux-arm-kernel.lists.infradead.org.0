@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BF63AA200E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:53:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E1FDA200D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:52:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=JjImDC0ARqAXpOzOiRDvNXW+4+CfKxh1ZuGLTq39J5U=; b=lxLifYWNFUrDmJrZgrkGaAW+ex
-	YQDH6MLH397A/wPrF92ZsIwEex9KJdxJv2d+A+l9C4liB6yk67bO3WR2ef4mAsurNOvGIDq7JrA4a
-	UtSaWZAcQ0zQmXG7LFKf6icesyPwMUC0rsOjtW9pnEIyvWMoy07cPxz74F3MDgyDT73wJr8sYeyry
-	n6Kh6WQjDwJYnLOgN3GDzkju5lJaYWkdODH0j2Edg7jV4s48g4jU/zeBnfgwtF4C3oEgq/cfy/Agr
-	De+1ENxL8kaFVsb3kBgNSPWNHVYnb+CdATLDYkp/HPOXL80esjebCkD9bnjeZGDPF7m4bQ/gjzFgZ
-	FQ/0wY4g==;
+	bh=EvK0ZPn1wK7qSZR8XfLX4pMT0owATqAeKwBnA0XoOOY=; b=JE4FJVWyTO+HAAkEwnJLF5yK5M
+	XJGbHYmHic5cZqL2FC4rCQHshwhqkCjNn5R0sPHX6jj7zOiAuLYnbpTVFE/AgGRUy5+3sW8h3yv78
+	aOip18K00qBQ2pUVUjAs80S0CGUV4h6nMAauIGflRzYf3aloLfOioMopuYhB4HGWKCcFNIRv3xjiK
+	A4EU2GjdGGXNYgjkk2VKoQlYGHqnlwiD20ukavhWZy3sh2mjmQsp3Hnhlt54/PhpCKHRry7NLFa8q
+	tArYOR+i5MPKo3SW8iO7mqxHQNmrIgWgd9h5JDQyYfEYl4kw4CyJ40kD06CLFzo6NY3urwQcfXbVR
+	1XTjjDBQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MjT-0005Vh-R3; Thu, 29 Aug 2019 15:53:08 +0000
+	id 1i3Mj7-0005F9-PG; Thu, 29 Aug 2019 15:52:46 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfQ-0001hS-E8
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:58 +0000
+ id 1i3MfR-0001j8-Pn
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E26BC337;
- Thu, 29 Aug 2019 08:48:55 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 778F01570;
+ Thu, 29 Aug 2019 08:48:57 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8E6793F718;
- Thu, 29 Aug 2019 08:48:54 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 2420F3F718;
+ Thu, 29 Aug 2019 08:48:56 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 09/10] arm64: atomics: Undefine internal macros after use
-Date: Thu, 29 Aug 2019 16:48:33 +0100
-Message-Id: <20190829154834.26547-10-will@kernel.org>
+Subject: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+Date: Thu, 29 Aug 2019 16:48:34 +0100
+Message-Id: <20190829154834.26547-11-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190829154834.26547-1-will@kernel.org>
 References: <20190829154834.26547-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084856_640880_ABA2CBA4 
-X-CRM114-Status: UNSURE (   8.97  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_084858_026158_277EC677 
+X-CRM114-Status: GOOD (  12.42  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,77 +70,141 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We use a bunch of internal macros when constructing our atomic and
-cmpxchg routines in order to save on boilerplate. Avoid exposing these
-directly to users of the header files.
+The 'K' constraint is a documented AArch64 machine constraint supported
+by GCC for matching integer constants that can be used with a 32-bit
+logical instruction. Unfortunately, some released compilers erroneously
+accept the immediate '4294967295' for this constraint, which is later
+refused by GAS at assembly time. This had led us to avoid the use of
+the 'K' constraint altogether.
+
+Instead, detect whether the compiler is up to the job when building the
+kernel and pass the 'K' constraint to our 32-bit atomic macros when it
+appears to be supported.
 
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/include/asm/atomic.h  | 7 +++++++
- arch/arm64/include/asm/cmpxchg.h | 4 ++++
- 2 files changed, 11 insertions(+)
+ arch/arm64/Makefile                   |  9 ++++++-
+ arch/arm64/include/asm/atomic_ll_sc.h | 47 +++++++++++++++++++++++------------
+ 2 files changed, 39 insertions(+), 17 deletions(-)
 
-diff --git a/arch/arm64/include/asm/atomic.h b/arch/arm64/include/asm/atomic.h
-index 7c334337674d..916e5a6d5454 100644
---- a/arch/arm64/include/asm/atomic.h
-+++ b/arch/arm64/include/asm/atomic.h
-@@ -32,6 +32,7 @@ ATOMIC_OP(atomic_add)
- ATOMIC_OP(atomic_and)
- ATOMIC_OP(atomic_sub)
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 61de992bbea3..0cef056b5fb1 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -39,6 +39,12 @@ $(warning LSE atomics not supported by binutils)
+   endif
+ endif
  
-+#undef ATOMIC_OP
- 
- #define ATOMIC_FETCH_OP(name, op)					\
- static inline int arch_##op##name(int i, atomic_t *v)			\
-@@ -54,6 +55,8 @@ ATOMIC_FETCH_OPS(atomic_fetch_sub)
- ATOMIC_FETCH_OPS(atomic_add_return)
- ATOMIC_FETCH_OPS(atomic_sub_return)
- 
-+#undef ATOMIC_FETCH_OP
-+#undef ATOMIC_FETCH_OPS
- 
- #define ATOMIC64_OP(op)							\
- static inline void arch_##op(long i, atomic64_t *v)			\
-@@ -68,6 +71,7 @@ ATOMIC64_OP(atomic64_add)
- ATOMIC64_OP(atomic64_and)
- ATOMIC64_OP(atomic64_sub)
- 
-+#undef ATOMIC64_OP
- 
- #define ATOMIC64_FETCH_OP(name, op)					\
- static inline long arch_##op##name(long i, atomic64_t *v)		\
-@@ -90,6 +94,9 @@ ATOMIC64_FETCH_OPS(atomic64_fetch_sub)
- ATOMIC64_FETCH_OPS(atomic64_add_return)
- ATOMIC64_FETCH_OPS(atomic64_sub_return)
- 
-+#undef ATOMIC64_FETCH_OP
-+#undef ATOMIC64_FETCH_OPS
++cc_has_k_constraint := $(call try-run,echo				\
++	'int main(void) {						\
++		asm volatile("and w0, w0, %w0" :: "K" (4294967295));	\
++		return 0;						\
++	}' | $(CC) -S -x c -o "$$TMP" -,,-DCONFIG_CC_HAS_K_CONSTRAINT=1)
 +
- static inline long arch_atomic64_dec_if_positive(atomic64_t *v)
- {
- 	return __lse_ll_sc_body(atomic64_dec_if_positive, v);
-diff --git a/arch/arm64/include/asm/cmpxchg.h b/arch/arm64/include/asm/cmpxchg.h
-index afaba73e0b2c..a1398f2f9994 100644
---- a/arch/arm64/include/asm/cmpxchg.h
-+++ b/arch/arm64/include/asm/cmpxchg.h
-@@ -129,6 +129,8 @@ __CMPXCHG_CASE(mb_, 16)
- __CMPXCHG_CASE(mb_, 32)
- __CMPXCHG_CASE(mb_, 64)
+ ifeq ($(CONFIG_ARM64), y)
+ brokengasinst := $(call as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n,,-DCONFIG_BROKEN_GAS_INST=1)
  
-+#undef __CMPXCHG_CASE
-+
- #define __CMPXCHG_DBL(name)						\
- static inline long __cmpxchg_double##name(unsigned long old1,		\
- 					 unsigned long old2,		\
-@@ -143,6 +145,8 @@ static inline long __cmpxchg_double##name(unsigned long old1,		\
- __CMPXCHG_DBL(   )
- __CMPXCHG_DBL(_mb)
+@@ -63,7 +69,8 @@ ifeq ($(CONFIG_GENERIC_COMPAT_VDSO), y)
+   endif
+ endif
  
-+#undef __CMPXCHG_DBL
+-KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst) $(compat_vdso)
++KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
++		   $(compat_vdso) $(cc_has_k_constraint)
+ KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
+ KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+ KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
+diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+index 95091f72228b..7fa042f5444e 100644
+--- a/arch/arm64/include/asm/atomic_ll_sc.h
++++ b/arch/arm64/include/asm/atomic_ll_sc.h
+@@ -23,6 +23,10 @@ asm_ops "\n"								\
+ #define __LL_SC_FALLBACK(asm_ops) asm_ops
+ #endif
+ 
++#ifndef CONFIG_CC_HAS_K_CONSTRAINT
++#define K
++#endif
 +
- #define __CMPXCHG_GEN(sfx)						\
- static inline unsigned long __cmpxchg##sfx(volatile void *ptr,		\
- 					   unsigned long old,		\
+ /*
+  * AArch64 UP and SMP safe atomic ops.  We use load exclusive and
+  * store exclusive to ensure that these are atomic.  We may loop
+@@ -113,10 +117,15 @@ ATOMIC_OPS(sub, sub, J)
+ 	ATOMIC_FETCH_OP (_acquire,        , a,  , "memory", __VA_ARGS__)\
+ 	ATOMIC_FETCH_OP (_release,        ,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC_OPS(and, and, )
++ATOMIC_OPS(and, and, K)
++ATOMIC_OPS(or, orr, K)
++ATOMIC_OPS(xor, eor, K)
++/*
++ * GAS converts the mysterious and undocumented BIC (immediate) alias to
++ * an AND (immediate) instruction with the immediate inverted. We don't
++ * have a constraint for this, so fall back to register.
++ */
+ ATOMIC_OPS(andnot, bic, )
+-ATOMIC_OPS(or, orr, )
+-ATOMIC_OPS(xor, eor, )
+ 
+ #undef ATOMIC_OPS
+ #undef ATOMIC_FETCH_OP
+@@ -208,9 +217,14 @@ ATOMIC64_OPS(sub, sub, J)
+ 	ATOMIC64_FETCH_OP (_release,,  , l, "memory", __VA_ARGS__)
+ 
+ ATOMIC64_OPS(and, and, L)
+-ATOMIC64_OPS(andnot, bic, )
+ ATOMIC64_OPS(or, orr, L)
+ ATOMIC64_OPS(xor, eor, L)
++/*
++ * GAS converts the mysterious and undocumented BIC (immediate) alias to
++ * an AND (immediate) instruction with the immediate inverted. We don't
++ * have a constraint for this, so fall back to register.
++ */
++ATOMIC64_OPS(andnot, bic, )
+ 
+ #undef ATOMIC64_OPS
+ #undef ATOMIC64_FETCH_OP
+@@ -280,21 +294,21 @@ __ll_sc__cmpxchg_case_##name##sz(volatile void *ptr,			\
+  * handle the 'K' constraint for the value 4294967295 - thus we use no
+  * constraint for 32 bit operations.
+  */
+-__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
+-__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
+-__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
++__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , K)
++__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , K)
++__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , K)
+ __CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
+-__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
+-__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
+-__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
++__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", K)
++__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", K)
++__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", K)
+ __CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
+-__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
+-__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
+-__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
++__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", K)
++__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", K)
++__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", K)
+ __CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
+-__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
+-__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
+-__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
++__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", K)
++__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", K)
++__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", K)
+ __CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
+ 
+ #undef __CMPXCHG_CASE
+@@ -332,5 +346,6 @@ __CMPXCHG_DBL(   ,        ,  ,         )
+ __CMPXCHG_DBL(_mb, dmb ish, l, "memory")
+ 
+ #undef __CMPXCHG_DBL
++#undef K
+ 
+ #endif	/* __ASM_ATOMIC_LL_SC_H */
 -- 
 2.11.0
 
