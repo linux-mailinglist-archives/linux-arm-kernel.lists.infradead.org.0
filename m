@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E98CBA1FE3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:51:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01593A1FD0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=xtWDKcIcuCg1Tk/faMqiUz2sA9KjPTrvInWaFuO4hNY=; b=ACDMpMZHN+RFc0xAMIYLRfRdZY
-	qtE8OnBI7Yuuz4aZdLiuUaYXnTyUmmD7pf6hPZjRn+GB32oOu0Kr+rKdLs608wn9mr7fTl/9/yG2z
-	qba+3O2vt+LkTJjuqJ4hR+bDm5ooJKZs4fuaZ/qZQzRD3Hk4TDhThrLA24NssrxgkgIZCzi3qWcAF
-	RU1oq7LlYabpnPbddQgpAJVc8jbC5I0SQ07IEH9LGPFWGnAoxhlBZQB6tBS+TAl1XkY/qyxAnTfAw
-	yHQTzLrEE3ZWl8gWd+sNFiLndGxV8/5wf2e6fYCJCi6E8tm6198g9Igui3Vp1YqRm/l+QflLYvWYj
-	A+CqkxaA==;
+	bh=Vs8p8iuatpTiDdVptdDoRJxEN2BKgZhSP0FlrE5iMq8=; b=m1xsf9qunOWwBNfPL4fqg9y+Hg
+	9rv3xynZmwg3zb8v/DFE/GuppzqopEZElVUca9ETOxa88Tufy4VtOvQ9UnKsUXIAGogIFeJMmvlWt
+	9fFbQC+1apWBaPWfjU9RI/WsV4r1xbq4UMx8qK5qBmucGWJzdXqsStH/DKtkN6up8pFI+jhog83yS
+	egwMO+0sLrd86fuyBuealPlVjTjq0sKipyDAvo+3zZBlZmwDVT3tZIvfQo3GYt+6fc+aPQp2iPAuQ
+	GgPJmMiIcAPSt2h0x9B9YxVhz330q98fX/rNmNUvpO1BMdWK0a2eU+DWdsKP6hR826Fmzf9ZzLwHr
+	Vpazls/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Mi4-0004PA-0c; Thu, 29 Aug 2019 15:51:40 +0000
+	id 1i3Mhj-00045Y-P5; Thu, 29 Aug 2019 15:51:20 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MfJ-0001cD-Sg
+ id 1i3MfL-0001Yg-HE
  for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:48:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9855815BE;
- Thu, 29 Aug 2019 08:48:49 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3822B165C;
+ Thu, 29 Aug 2019 08:48:51 -0700 (PDT)
 Received: from fuggles.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 447903F718;
- Thu, 29 Aug 2019 08:48:48 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id CE01C3F718;
+ Thu, 29 Aug 2019 08:48:49 -0700 (PDT)
 From: Will Deacon <will@kernel.org>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v5 05/10] arm64: atomics: Remove atomic_ll_sc compilation unit
-Date: Thu, 29 Aug 2019 16:48:29 +0100
-Message-Id: <20190829154834.26547-6-will@kernel.org>
+Subject: [PATCH v5 06/10] arm64: lse: Remove unused 'alt_lse' assembly macro
+Date: Thu, 29 Aug 2019 16:48:30 +0100
+Message-Id: <20190829154834.26547-7-will@kernel.org>
 X-Mailer: git-send-email 2.11.0
 In-Reply-To: <20190829154834.26547-1-will@kernel.org>
 References: <20190829154834.26547-1-will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_084850_042972_CE53D825 
-X-CRM114-Status: UNSURE (   9.49  )
+X-CRM114-CacheID: sfid-20190829_084851_718379_C69329C3 
+X-CRM114-Status: UNSURE (   8.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,60 +70,59 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Andrew Murray <andrew.murray@arm.com>
+The 'alt_lse' assembly macro has been unused since 7c8fc35dfc32
+("locking/atomics/arm64: Replace our atomic/lock bitop implementations
+with asm-generic").
 
-We no longer fall back to out-of-line atomics on systems with
-CONFIG_ARM64_LSE_ATOMICS where ARM64_HAS_LSE_ATOMICS is not set.
+Remove it.
 
-Remove the unused compilation unit which provided these symbols.
-
-Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 Signed-off-by: Will Deacon <will@kernel.org>
 ---
- arch/arm64/lib/Makefile       | 19 -------------------
- arch/arm64/lib/atomic_ll_sc.c |  3 ---
- 2 files changed, 22 deletions(-)
- delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
+ arch/arm64/include/asm/lse.h | 22 ----------------------
+ 1 file changed, 22 deletions(-)
 
-diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
-index 33c2a4abda04..f10809ef1690 100644
---- a/arch/arm64/lib/Makefile
-+++ b/arch/arm64/lib/Makefile
-@@ -11,25 +11,6 @@ CFLAGS_REMOVE_xor-neon.o	+= -mgeneral-regs-only
- CFLAGS_xor-neon.o		+= -ffreestanding
- endif
+diff --git a/arch/arm64/include/asm/lse.h b/arch/arm64/include/asm/lse.h
+index 52b80846d1b7..08e818e53ed7 100644
+--- a/arch/arm64/include/asm/lse.h
++++ b/arch/arm64/include/asm/lse.h
+@@ -10,37 +10,15 @@
+ #include <asm/alternative.h>
+ #include <asm/cpucaps.h>
  
--# Tell the compiler to treat all general purpose registers (with the
--# exception of the IP registers, which are already handled by the caller
--# in case of a PLT) as callee-saved, which allows for efficient runtime
--# patching of the bl instruction in the caller with an atomic instruction
--# when supported by the CPU. Result and argument registers are handled
--# correctly, based on the function prototype.
--lib-$(CONFIG_ARM64_LSE_ATOMICS) += atomic_ll_sc.o
--CFLAGS_atomic_ll_sc.o	:= -ffixed-x1 -ffixed-x2        		\
--		   -ffixed-x3 -ffixed-x4 -ffixed-x5 -ffixed-x6		\
--		   -ffixed-x7 -fcall-saved-x8 -fcall-saved-x9		\
--		   -fcall-saved-x10 -fcall-saved-x11 -fcall-saved-x12	\
--		   -fcall-saved-x13 -fcall-saved-x14 -fcall-saved-x15	\
--		   -fcall-saved-x18 -fomit-frame-pointer
--CFLAGS_REMOVE_atomic_ll_sc.o := $(CC_FLAGS_FTRACE)
--GCOV_PROFILE_atomic_ll_sc.o	:= n
--KASAN_SANITIZE_atomic_ll_sc.o	:= n
--KCOV_INSTRUMENT_atomic_ll_sc.o	:= n
--UBSAN_SANITIZE_atomic_ll_sc.o	:= n
+-#ifdef __ASSEMBLER__
 -
- lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
+-.arch_extension	lse
+-
+-.macro alt_lse, llsc, lse
+-	alternative_insn "\llsc", "\lse", ARM64_HAS_LSE_ATOMICS
+-.endm
+-
+-#else	/* __ASSEMBLER__ */
+-
+ __asm__(".arch_extension	lse");
  
- obj-$(CONFIG_CRC32) += crc32.o
-diff --git a/arch/arm64/lib/atomic_ll_sc.c b/arch/arm64/lib/atomic_ll_sc.c
-deleted file mode 100644
-index b0c538b0da28..000000000000
---- a/arch/arm64/lib/atomic_ll_sc.c
-+++ /dev/null
-@@ -1,3 +0,0 @@
--#include <asm/atomic.h>
--#define __ARM64_IN_ATOMIC_IMPL
--#include <asm/atomic_ll_sc.h>
+-
+ /* In-line patching at runtime */
+ #define ARM64_LSE_ATOMIC_INSN(llsc, lse)				\
+ 	ALTERNATIVE(llsc, lse, ARM64_HAS_LSE_ATOMICS)
+ 
+-#endif	/* __ASSEMBLER__ */
+ #else	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
+ 
+-#ifdef __ASSEMBLER__
+-
+-.macro alt_lse, llsc, lse
+-	\llsc
+-.endm
+-
+-#else	/* __ASSEMBLER__ */
+-
+-
+ #define ARM64_LSE_ATOMIC_INSN(llsc, lse)	llsc
+ 
+-#endif	/* __ASSEMBLER__ */
+ #endif	/* CONFIG_AS_LSE && CONFIG_ARM64_LSE_ATOMICS */
+ #endif	/* __ASM_LSE_H */
 -- 
 2.11.0
 
