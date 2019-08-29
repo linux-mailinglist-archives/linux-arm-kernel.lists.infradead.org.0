@@ -2,61 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 69F0CA2044
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 18:01:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A003A20A4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 18:18:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k8rKf5O3KYczRpkbOISa5kvaQB1yLz+tpkTccTONBnA=; b=GoqGo5P08shJ2q
-	k04kmQJ8BnQMbHqQGMUzSbFTNT12PqiHGsuRHBpw8yffiTpRfIzQhwoinZ7DtAs3UY8Xst9OkD1HT
-	hzuUmtdf6a4kFYvpyGnCjELxIuVOPA93EXWHTEt4AQK7iKeP8GmaTMAy+czO6TqoT/BOXWKb5v4OG
-	XxqmoW6YkB/5PmuUTa3PBBoHC5896eLTjHmrgKsgi2W4H1wH02TY29Dh2GEnxFQqGIO5HPweKNlbW
-	MTRUWA7ZczCWU4K3xdGpyXmItZBl7WOmLW+19bIaYAxnrvO6A8AyA56vWvsEluwgZmwUotpu1MT2K
-	ug/bTOStI13nsHB+Oy1Q==;
+	List-Owner; bh=inh1Z3u60YlaEbQ77BAtL4oIIoRIE0q2t6NZQxbdCaU=; b=svuvjGLPfSz/LN
+	+SFzJ808mfmfLPlD/at0uxnCcHqBU/uB1LjbXRqb1g+o2W4ghUb0VshqGME57uBsip+RhE3ze+JhC
+	mAMSKTdCqg3FruDnJny5kYFyLQSoiz12Q2chusaQiRbvSJTL/gnPGQH0gvJmvjmPeo8k/m6skUnCT
+	62Dq+8OurILbCiq3PGbLDjCd326PIgcHS8pQbCD9DfdwlQBS2yUJeTsavU7YxD0n11V3rrS9X6tAM
+	OstTz6pWU6hslZl8GOgJnUAsbwmWMlk9wmeRw8POWkqwWkOb0I5lcvaMEzHnO6kxpjMXWpcXrb4hW
+	YdbxZuZlSvjv5j7mH0cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Mrf-0001Wn-OL; Thu, 29 Aug 2019 16:01:35 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MrO-0001Vj-4D
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 16:01:19 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1i3MrI-0006wM-2k; Thu, 29 Aug 2019 18:01:12 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1i3MrG-0008Hy-VH; Thu, 29 Aug 2019 18:01:10 +0200
-Date: Thu, 29 Aug 2019 18:01:10 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: Fabio Estevam <festevam@gmail.com>
-Subject: Re: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
-Message-ID: <20190829160110.6z223tmrckgx4c6b@pengutronix.de>
-References: <20190829154913.2049-1-thomas.schaefer@kontron.com>
- <CAOMZO5BOYrpedOSH9fbBZkDj7n2dcVj8cG5h2U=mvw17F9hu5A@mail.gmail.com>
+	id 1i3N8D-00070a-NL; Thu, 29 Aug 2019 16:18:41 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3N81-00070F-RJ
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 16:18:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66406337;
+ Thu, 29 Aug 2019 09:18:27 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 112D43F59C;
+ Thu, 29 Aug 2019 09:18:25 -0700 (PDT)
+Date: Thu, 29 Aug 2019 17:18:20 +0100
+From: Mark Rutland <mark.rutland@arm.com>
+To: Viresh Kumar <viresh.kumar@linaro.org>
+Subject: Re: [PATCH ARM64 v4.4 V3 00/44] V4.4 backport of arm64 Spectre patches
+Message-ID: <20190829161820.GA44947@lakrids.cambridge.arm.com>
+References: <cover.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAOMZO5BOYrpedOSH9fbBZkDj7n2dcVj8cG5h2U=mvw17F9hu5A@mail.gmail.com>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 18:00:46 up 103 days, 22:18, 63 users,  load average: 0.36, 0.13,
- 0.04
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
+User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_090118_176561_72A6BFA2 
-X-CRM114-Status: GOOD (  16.41  )
+X-CRM114-CacheID: sfid-20190829_091829_930200_542FB07C 
+X-CRM114-Status: GOOD (  12.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,59 +61,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <peter.chen@nxp.com>, Sascha Hauer <s.hauer@pengutronix.de>,
- Thomas Schaefer <thomas.schaefer@kontron.com>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Julien Thierry <Julien.Thierry@arm.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
+ Russell King <rmk+kernel@arm.linux.org.uk>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 19-08-29 12:58, Fabio Estevam wrote:
-> Hi Thomas,
-> 
-> [Adding Peter Chen]
-> 
-> On Thu, Aug 29, 2019 at 12:49 PM Thomas Schaefer
-> <thomas.schaefer@kontron.com> wrote:
-> >
-> > Currently the size parameter in the reg property of usbotg and
-> > usbh nodes in imx7s and imx7d dts includes is set to 0x200 which
-> > is wrong for the i.MX7 CPU. According to reference manual, spacing
-> > of USB controller registers is 0x10000 instead.
-> >
-> > This patch will fix this and set the 'size' to 0x10000.
-> >
-> > Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
-> 
-> Thanks for the patch.
-> 
-> I would suggest adding one more sentence in the commit log explaining
-> that this size mismatch caused real world problems in U-Boot.
-> 
-> This way it makes clear that this change was not done merely upon
-> inspection, but it fixes a real bug instead.
+On Thu, Aug 29, 2019 at 05:03:45PM +0530, Viresh Kumar wrote:
+> Hello,
 
-Do we need a fixes tag too?
+Hi Viresh,
 
-Regards,
-  Marco
-
-
-> Thanks,
+> This series backports arm64 spectre patches to v4.4 stable kernel. I
+> have started this backport with Mark Rutland's backport of Spectre to
+> 4.9 [1] and tried applying the upstream version of them over 4.4 and
+> resolved conflicts by checking how they have been resolved in 4.9.
 > 
-> Fabio Estevam
-> 
-> 
+> The KVM changes are mostly dropped as the KVM code in v4.4 is quite
+> different and it makes backport more complex. This was suggested by the
+> ARM team.
 
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+I'm reviewing this backport now, but it's going to take me a few days to
+get through the entire series, so please don't be surprised if I'm quiet
+until the middle of next week.
+
+If I spot any issues I'll reply immediately, but please poke if I
+haven't said anything by Wednesday.
+
+Thanks,
+Mark.
 
 _______________________________________________
 linux-arm-kernel mailing list
