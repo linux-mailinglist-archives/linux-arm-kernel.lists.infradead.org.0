@@ -2,71 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0D4B7A2721
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 21:16:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ACAB1A2724
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 21:17:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NM2nT0c926Xz3EKnmyaz+8+IJF3bbMqcj3WnwPMzFGU=; b=Dkd/FQYnJYRYq9
-	ZTIYKwfViDM5i0pUzH6Pf3vyV1slrlbTl2mkXZifeGxG+rlGBBJeCFDgTiTlYr8Bs4pg1OBCJJris
-	rWlf2HZhZKI+TL//WFnBuAs/wvWqgbvZ0raVAZu8S9gL2vMAKhmOWTa3ttSkIBJzfbIRbOuuyd/n0
-	7kFEKtYsJJnPD9cG7tbK9FQZX9ULgOyw+4rEjPy66kaNzEvx2Bn0/DbMTlLAnlF2ckxtqb+77UP+H
-	zrPHgrgkYgJfDIpgS4QtcnsxQp0STwQug4mWp+uSp7Ongwk/y9beYS2NADC1QRUYpj0HSq76GY15/
-	SuOy4mQhl2v7Nxg61Zdw==;
+	List-Owner; bh=pwx628rvacAh/9aOSQv2qzwVgDOf4/CvjCHOvqKgQ+Y=; b=fNrLLNnOomswcf
+	b3e73jfRabqaqwmQsBzCC0mRbBx6BZcmf9L2hFb+UMx9FhHeNUsUv3D9fUsHQ6U3KkERb7cRjsCLc
+	fLrOWJ18AMTkLSo4JHTlTY33Rqif1C7aSGHPxA2lchbCAIiJtI354hHg3OMLMNwP4JsQDv24fPezL
+	0Y4/DA9h7dQ5pmBZLUMcvOR3h+bhYT7DL2g6ePQZsL4uKQ/4LE6Xyf6d9wynGJ/LSnqvedwL6rzF7
+	jwySI5UdjkXra7AVKVA3TSokPW8nmjp/wQC1VME11Rx6MrGB8kAd39f/7VjObBSKphmZLEzonYl1e
+	i98LoBJ59ubrDXu0p/bg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3PuY-0005r1-9T; Thu, 29 Aug 2019 19:16:46 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1i3Pus-00064N-DC; Thu, 29 Aug 2019 19:17:06 +0000
+Received: from mail-ot1-f65.google.com ([209.85.210.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3PuM-0005q5-0G; Thu, 29 Aug 2019 19:16:35 +0000
-Received: by mail-ot1-f67.google.com with SMTP id m24so4507011otp.12;
- Thu, 29 Aug 2019 12:16:33 -0700 (PDT)
+ id 1i3PuU-0005vw-Gh; Thu, 29 Aug 2019 19:16:43 +0000
+Received: by mail-ot1-f65.google.com with SMTP id 100so4574917otn.2;
+ Thu, 29 Aug 2019 12:16:42 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=qXXfSWb8r+ekX6AnOeZMT+WDuuUjHIsf04zXphaqwHY=;
- b=ivWGJeGRotIt/Cx0Rzy5DbyZPf699PXaAGNoAg2OevTpCAl6cB5Ft+tmbwls1MjUe9
- aZEpz5h7eLBcku3eW4EM54dnZSjUAR0CF6pjCnyLAY2Rl+1ZNHi4cKktIZZXqoQPqi1k
- HSRrvdpn1lhLa8gMIUgPThd9MdVzC99hVQGB2EL94rUbWpxnx9h3rcJqO3xIfnAqIxzD
- 7sPq8Y81PkUk/F+3PlvqE7jd6UOudGj6MSUk0bfxdqil12w7zvKtd5e8cU23w1WMcqyZ
- lJ5yNauy8Tfifplo0J/ZtM5yTDFG5KyzeVcE25cEzq0yf9wCw2HS8VpJW98zvFVFlRch
- e9+w==
-X-Gm-Message-State: APjAAAUg1UCJsNquB8FWd/MDuKTXE8cZQ4uxfM7cmEb8jdCeU+AilXxp
- sETBhL8uLRIXiOp8fnCAAQ==
-X-Google-Smtp-Source: APXvYqw3wayppmtwe4suZgP9c/BFmJes13dE7GUWcARKQZLPrkt0xRRa40WAmFF2sKNFSuU8OEACug==
-X-Received: by 2002:a05:6830:1345:: with SMTP id
- r5mr9441701otq.158.1567106192618; 
- Thu, 29 Aug 2019 12:16:32 -0700 (PDT)
+ bh=F5mi1nP24C4HDFRh6fdf/ps2HQjngM3tY75i7SznJm0=;
+ b=j4/duY/bP/8wXO2wHVbSXjKC28cPLv5Wf7guIESD8n2PKVj+o46l5vkVrCyPLY9vO7
+ yvlPvjXpSIRKwb1Nn68U8qqAtJ7iOuQ6ya6W46hdwBz42jq+jMFZTYsM9fjO26AktZZc
+ LjRXi+/NGssGjy4XOsC7/M24AFHYC1K9co7qVsh3m8x3pFpJIFA1OS0L2iMByk5tQt/4
+ hPVPBkdTOW6/PAm1DNfYAk9qFiNNsLrPpy0hOrYObddrVoX8N2umVEStYQD/yhlgb4oy
+ gPbXnV9y4TQgk8fiFtOzjwyNDh3XNcQTUEi/TPWEy+wUe8GaIghJkSCcvegIEW1rJS2y
+ eZJQ==
+X-Gm-Message-State: APjAAAWbd8iLzVpkMqSUX4MR6JtYaprlPtzLWidS8S1T99zLEo2S/qXK
+ pcaLLRa6QepuITJq4nt3tw==
+X-Google-Smtp-Source: APXvYqzlwbv36ZyaxAhri1jX+/W0xd5toeYw80HuVeTBAP03TtFgxz2umcWIojobopVFLMFOTYT4nw==
+X-Received: by 2002:a05:6830:1209:: with SMTP id
+ r9mr558071otp.128.1567106201477; 
+ Thu, 29 Aug 2019 12:16:41 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id q85sm931405oic.52.2019.08.29.12.16.31
+ by smtp.gmail.com with ESMTPSA id e52sm328209ote.39.2019.08.29.12.16.40
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 12:16:31 -0700 (PDT)
-Date: Thu, 29 Aug 2019 14:16:31 -0500
+ Thu, 29 Aug 2019 12:16:41 -0700 (PDT)
+Date: Thu, 29 Aug 2019 14:16:40 -0500
 From: Rob Herring <robh@kernel.org>
 To: Henry Chen <henryc.chen@mediatek.com>
-Subject: Re: [PATCH V3 01/10] dt-bindings: soc: Add dvfsrc driver bindings
-Message-ID: <20190829191631.GA15714@bogus>
+Subject: Re: [PATCH V3 02/10] dt-bindings: soc: Add opp table on scpsys
+ bindings
+Message-ID: <20190829191640.GB15714@bogus>
 References: <1566995328-15158-1-git-send-email-henryc.chen@mediatek.com>
- <1566995328-15158-2-git-send-email-henryc.chen@mediatek.com>
+ <1566995328-15158-3-git-send-email-henryc.chen@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566995328-15158-2-git-send-email-henryc.chen@mediatek.com>
+In-Reply-To: <1566995328-15158-3-git-send-email-henryc.chen@mediatek.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_121634_043230_E8B2642D 
-X-CRM114-Status: GOOD (  10.34  )
+X-CRM114-CacheID: sfid-20190829_121642_712548_112A7016 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
+ no trust [209.85.210.65 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,16 +103,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 28 Aug 2019 20:28:39 +0800, Henry Chen wrote:
-> Document the binding for enabling dvfsrc on MediaTek SoC.
+On Wed, 28 Aug 2019 20:28:40 +0800, Henry Chen wrote:
+> Add opp table on scpsys dt-bindings for Mediatek SoC.
 > 
 > Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
 > ---
->  .../devicetree/bindings/soc/mediatek/dvfsrc.txt    | 23 ++++++++++++++++++++++
->  include/dt-bindings/soc/mtk,dvfsrc.h               | 14 +++++++++++++
->  2 files changed, 37 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
->  create mode 100644 include/dt-bindings/soc/mtk,dvfsrc.h
+>  .../devicetree/bindings/soc/mediatek/scpsys.txt    | 42 ++++++++++++++++++++++
+>  1 file changed, 42 insertions(+)
 > 
 
 Please add Acked-by/Reviewed-by tags when posting new versions. However,
