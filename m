@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1F16A1F60
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:39:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABB31A1F8D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 17:45:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LBBZF1WJHg+xn2LYKflVJ2U8sGhr6hdKOzyqXMgZN2k=; b=syahQnZIp2ggHl
-	11MSv2JHdgCLogctolkHd7P3ScnWnUy2oZIzFOQ5C0zZKnIjR97+yJTI/NSdsBDPkCVyBsKZ5gf/b
-	4Im0RaCg9nIApkPLQAh+KLbfFpOm67V69+wuADNv/ISL/BFykFSNYu3DpeOTiAgtqokWWlm/Wz7rg
-	fMR2ETO9p6RZ6OvUyS3MaKuxSftKm0wHbihMdVapwvcs7ZsLFzcXltcpVuJ5Kfa9wg1FfdtAk2Ddc
-	EVncxHtoUMIbxcHyATQ3s67QH7om7hidONiEaAexsZBCk6cv5+v/2AoaOkpcn6vmbERtTU9HBIGZy
-	4C2K9GfFPL0BtYLnfAgg==;
+	List-Owner; bh=dF6kJqigcyv97GuBk22+bRKxX1+sKB5kaita1BUv8mU=; b=WfRT457y1uHTAK
+	93ziGCnLthORHlGTIMC7yrk/AZE7l5EGIzeMmMwrqHNI1vix/YRpMvDbBryYitJK4mvGgBgbvInsI
+	hc3sTWKbQAVKIEslgRQZS3ePXMirkkf8FuNj5g/YjZhKqdSXJgZPCOUKfsECuCO0SoWNMK+CT4zy0
+	Qwwhb9MEYJzg0nfr400eApX+755Bfuyius6VOt7LF8Q1oCM2l9yj9XIC+Rxz1gD+hbBE4ELAd/6Os
+	oDPRNTGVNpgSEfhujmRSt0QdLRmYvUp6klIVqMdEVP8J/dk7pbmZetITpBhBaMi86y7iieJopnzdP
+	OniZm3k8X+quEMtbxEMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3MWC-0005nq-5R; Thu, 29 Aug 2019 15:39:24 +0000
-Received: from verein.lst.de ([213.95.11.211])
+	id 1i3Mc4-00006G-6z; Thu, 29 Aug 2019 15:45:28 +0000
+Received: from ms.lwn.net ([45.79.88.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3MVH-0005mx-7w
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:38:28 +0000
-Received: by verein.lst.de (Postfix, from userid 2407)
- id 904E468B20; Thu, 29 Aug 2019 17:38:23 +0200 (CEST)
-Date: Thu, 29 Aug 2019 17:38:23 +0200
-From: Christoph Hellwig <hch@lst.de>
-To: iommu@lists.linux-foundation.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
-Subject: Re: remove default fallbacks in dma_map_ops v3
-Message-ID: <20190829153823.GA20459@lst.de>
-References: <20190808160005.10325-1-hch@lst.de>
+ id 1i3Mbi-0007d0-B4
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 15:45:07 +0000
+Received: from lwn.net (localhost [127.0.0.1])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by ms.lwn.net (Postfix) with ESMTPSA id 272F02CF;
+ Thu, 29 Aug 2019 15:44:59 +0000 (UTC)
+Date: Thu, 29 Aug 2019 09:44:58 -0600
+From: Jonathan Corbet <corbet@lwn.net>
+To: Alexandre Torgue <alexandre.torgue@st.com>
+Subject: Re: [PATCH] Documentation: add link to stm32mp157 docs
+Message-ID: <20190829094458.590884ba@lwn.net>
+In-Reply-To: <5257eff7-418b-8e94-1ced-30718dd3f5dc@st.com>
+References: <1566908347-92201-1-git-send-email-gerald.baeza@st.com>
+ <20190827074825.64a28e88@lwn.net>
+ <5257eff7-418b-8e94-1ced-30718dd3f5dc@st.com>
+Organization: LWN.net
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190808160005.10325-1-hch@lst.de>
-User-Agent: Mutt/1.5.17 (2007-11-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_083827_549649_7ECB92B0 
-X-CRM114-Status: UNSURE (   5.67  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_084506_398529_0879001A 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [213.95.11.211 listed in list.dnswl.org]
+ no trust [45.79.88.28 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,21 +62,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-xtensa@linux-xtensa.org, Michal Simek <monstr@monstr.eu>,
- Vladimir Murzin <vladimir.murzin@arm.com>, linux-parisc@vger.kernel.org,
- linux-sh@vger.kernel.org, Takashi Iwai <tiwai@suse.de>,
- Robin Murphy <robin.murphy@arm.com>, Helge Deller <deller@gmx.de>,
- x86@kernel.org, linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
- linuxppc-dev@lists.ozlabs.org, linux-arm-kernel@lists.infradead.org
+Cc: "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "mcoquelin.stm32@gmail.com" <mcoquelin.stm32@gmail.com>,
+ Gerald BAEZA <gerald.baeza@st.com>,
+ "linux-stm32@st-md-mailman.stormreply.com"
+ <linux-stm32@st-md-mailman.stormreply.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I've applied this to the dma-mapping for-next tree now.
+On Tue, 27 Aug 2019 17:23:30 +0200
+Alexandre Torgue <alexandre.torgue@st.com> wrote:
 
-If there are any issues with the parisc patch I'll happily take
-incremental patches.
+> >> +Datasheet and reference manual are publicly available on ST website:
+> >> +.. _STM32MP157: https://www.st.com/en/microcontrollers-microprocessors/stm32mp157.html
+> >> +  
+> > 
+> > Adding the URL is a fine idea.  But you don't need the extra syntax to
+> > create a link if you're not going to actually make a link out of it.  So
+> > I'd take the ".. _STM32MP157:" part out and life will be good.
+> >   
+> 
+> We also did it for older stm32 product. Idea was to not have the "full" 
+> address but just a shortcut of the link when html file is read. It maybe 
+> makes no sens ? (if yes we will have to update older stm32 overview :))
+
+Did you actually run it through Sphinx to see what you get?  If I
+understand the effect you're after, you want something like this:
+
+  The datasheet and reference manual are publicly available on
+  STM32MP157_.
+
+  .. _STM32MP157: https://www.st.com/en/microcontrollers-microprocessors/stm32mp157.html
+
+IOW you have to actually *use* the label you are setting up.  That's a fine
+way to do it, I guess, though I'm not really convinced it's better than
+just putting the URL in directly.
+
+Thanks,
+
+jon
 
 _______________________________________________
 linux-arm-kernel mailing list
