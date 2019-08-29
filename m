@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0EE2A2800
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:30:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 13780A2802
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:31:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,72 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=h/KJDz6e6mnjeCv4zg4sQ/ZKHUJbiO8IWqQuA0GruNU=; b=nLywuNFZodWcN61e33mE4AKjF+
-	VJFwLGENo+wts2Inzf5N57VYje5IIpHqBSJNu4B8F/cjWgjcLzf4uEjK8dfndeFsp1PJmjhvYEcjL
-	In35d0SGPj5nYraEIUcIZf7Zq9boO4/X8/0Fcy1jIj4pMMVEDv6HCpi3onduaTso/QVvNTAMKWpTU
-	+VKtYWGexCTxmV49iLABH/eyOV1GRanWLdoiWqERgZigdKWotY3hIDoLhM5RTlaI33gS9kmHwAh2C
-	suMgyQx7FtXN6gBLz7x96MRegfX62U5YLGklrhOKrfYPP0v2EuW1RNXkCIgHA3O6f+yZoJVLaz0ca
-	2CholK/w==;
+	bh=KXtwdd+m5wGRBFDjFS2bHk+UQtjlJYc9qmTYeAdlhto=; b=G8OHBpLppxarFlsaKpF/JM9ebY
+	UGSqaPth8prOOzA/JMXld8RbWaza319P1im5Zrmk73dDgIdiHEKYpIOSx7Dtt55gtyVmXNy19q9cX
+	QHKji+IHY9w9JQrplfOIfhOGqx5s7O8R9qBCpKFu4tZ1lzARp5PTaSQbT1oKchwzMM5kodyWdFqXW
+	5Xz1y/9J3lI622ZOfiOXHXRjQoXUmskBCuZTqbrXHE1/v93h5WJWi3P45qBPu8aD07l0LjffrgU1T
+	Jg/E8ruv0QouF6a043nB/WsD6AcHqTIfj5nHcRpPpEiO7RB/gGEXolt2ziYFU1eps7OaSEmiusH8p
+	4B6DC35A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3R44-0006Wx-TX; Thu, 29 Aug 2019 20:30:41 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i3R4K-0006lw-KJ; Thu, 29 Aug 2019 20:30:56 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3R2H-0003i4-8f
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:50 +0000
-Received: by mail-pg1-x541.google.com with SMTP id o13so2176466pgp.12
+ id 1i3R2J-0003kY-S6
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:28:53 +0000
+Received: by mail-pl1-x642.google.com with SMTP id y1so2108252plp.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 13:28:49 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:51 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=ZtRE4tzSco72o3chGVIv73hx7TWJtztIiSnwQVUxI1k=;
- b=kiWgybCn9+Eqc0p4UHrd4vH+aGKXMB6h7MH5kykSab88spNCj9cU7I/yBlnnTXKwWa
- B/5WhbbqtonBDVeiuRMok8md+smiS30ZRW6jz2zU9y+zG0joy1HBc/QoLLn/NxZ2+UpV
- 4uYKIdB+mvC33EqfsvOWoF0NOcdP8zTn3KcJEoxdihWdQZ4u4NQZSOqfQbHUWEKt1dwV
- imY371VQnFZTH3t2wqggVkF4vFckPI4MQ0f8bdTWO0RX7/4NJVvWyjKpHA+PhAX3RDtB
- 8Da8Irnb/XuHlcK22wkFFioEWxOOVOocA0NFe21gIreLZhlRR8bv7YLNkcrliECgBoXx
- PoiA==
+ bh=lyxWH3I3xY93jZ4BZY/ubIbJwypjoTC/XYUq8klqrrE=;
+ b=uwPm6+WepLLVw9NK0vv9RrcqjSJtEG75HZzxAJb/nZdiaoLMmdbAbeAkFLc9IhWyVs
+ st82gr4ibHZfTFaHKUyBPp6UoseQwRVKGw9ZHo0ruYUkqzb3Rfdchij5v6hOlCdBcs5T
+ pwchOPonhBlZaBuIgp2C53lbQoeX/yhZWoqJBS+kGWi71KGAB16hrPTu/7F1MJ9sQet9
+ ul7zwQvGewFY9GhewCsevbSkpSexZPJoDHephat/Nf7y5hhjUKHjafDcjGr7rXZxehVF
+ wgBmhPVHo9zECnEBd/rrETqHTE4x9sbPeRFDyp9m54TbeS4bpZWd+eR82S5ryvHjHDKf
+ TYDg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=ZtRE4tzSco72o3chGVIv73hx7TWJtztIiSnwQVUxI1k=;
- b=S+wJ4KSy9wq9xKvQB+jFn7mjYB3T5I4PmdMnVIqUcqDQjlIL68+PtApNYAgrmH33Zu
- Rd2hEHwyuYnDykCzxqFqMQcCBei1++3cacgs7OssgCILRBeaplG4yNE9O2PgSjgO2Q3z
- Q92IGn6sS9U0CLpnqaqvv2wdIuAv1Dg4w80G+bQLTWqS+uKGMXQ+wIAPbCssDc7x45N5
- r/Wf3HAeZYsshpBfA7s+s+2kulSPT9f8xzRdtmr05S8Lvp+BCVz0rUuJqf8Lc1YKUQ/k
- PRxXJ0JXzL6YNtp5riVE5BoCvnTpFhxpBENevbmegemOJQKgQrkw7uLDl1RlwTR24aRL
- te0Q==
-X-Gm-Message-State: APjAAAVQ+Qxkps5OYLJUy/5Y2J4bOTiXyfd0l2WKokBg4aLq2s6x0Lqw
- OYbFWz35xnNiZFBOpKyrJ++EOZXko/4=
-X-Google-Smtp-Source: APXvYqyOu4Np2Xs4Y4D91Y9VQdAV4MGZhdU9B8smzcH3E0RHUzEEFL52KfM/qo0jHGRtpVa31ipvVQ==
-X-Received: by 2002:a17:90a:e502:: with SMTP id
- t2mr11875721pjy.104.1567110528791; 
- Thu, 29 Aug 2019 13:28:48 -0700 (PDT)
+ bh=lyxWH3I3xY93jZ4BZY/ubIbJwypjoTC/XYUq8klqrrE=;
+ b=E0k01pWHaePXBwOwE9fvLJVx+OckKoRV7Pe3B5Imj2Q7AKdEa1G3g7WUA2FeLH1J9I
+ CKL06Ckn32JJ4sx1j7tK+iLmD8D7/BqyrgdEJWwL3E6sxynTVYjQE0lqKhWfhTj1ORD1
+ T1IT2s8bXXTSFs+OBUUT13SufxaiB2gSI2VyLWd25B1GLWFJODynu+yLiBgKqDFvw61Q
+ VIAn14k5n1GA6NJZhAnpHfUTxD3c2+IUqHYFoeYS0BGBkwoi4oy6sQDf/Ouh4xwk/kDJ
+ F3WmRe7f9n//405J5KrQl0nAUXF4VtCFFWPsGMAgj0AFdPTsiLYHgwSrHoaGDJbnKK0s
+ LjTQ==
+X-Gm-Message-State: APjAAAWPr0H/RMgEoAaPslDjcXnCt90TZPKN8AU/wmGG2twcJDFf6B4r
+ z5oU2veXsG6kKqRvYSMTbt5VNGEZQE4=
+X-Google-Smtp-Source: APXvYqzZBZPQkCKu5r8gutDcTabY3R70X7SezfOnBcXV6eViVIkPDkWSjJJ0k0BpsxEEjOi/eIyKnQ==
+X-Received: by 2002:a17:902:9895:: with SMTP id
+ s21mr11789126plp.255.1567110531000; 
+ Thu, 29 Aug 2019 13:28:51 -0700 (PDT)
 Received: from xps15.cg.shawcable.net (S0106002369de4dac.cg.shawcable.net.
  [68.147.8.254])
- by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.47
+ by smtp.gmail.com with ESMTPSA id k64sm3620947pgk.74.2019.08.29.13.28.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 13:28:48 -0700 (PDT)
+ Thu, 29 Aug 2019 13:28:49 -0700 (PDT)
 From: Mathieu Poirier <mathieu.poirier@linaro.org>
 To: gregkh@linuxfoundation.org
-Subject: [PATCH 06/17] coresight: tmc-etr: Check if non-secure access is
- enabled
-Date: Thu, 29 Aug 2019 14:28:31 -0600
-Message-Id: <20190829202842.580-7-mathieu.poirier@linaro.org>
+Subject: [PATCH 07/17] coresight: Convert pr_warn to dev_warn for obsolete
+ bindings
+Date: Thu, 29 Aug 2019 14:28:32 -0600
+Message-Id: <20190829202842.580-8-mathieu.poirier@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190829202842.580-1-mathieu.poirier@linaro.org>
 References: <20190829202842.580-1-mathieu.poirier@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_132849_314848_024C9473 
-X-CRM114-Status: GOOD (  12.34  )
+X-CRM114-CacheID: sfid-20190829_132851_956453_51D460B0 
+X-CRM114-Status: GOOD (  11.50  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,84 +107,46 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
 
-CoreSight TMC-ETR must have the non-secure invasive debug access
-enabled for use by self-hosted tracing. Without it, there is no
-point in enabling the ETR. So, let us check it in the TMC_AUTHSTATUS
-register and fail the probe if it is disabled.
+We warn the users of obsolete bindings in the DT for coresight replicator
+and funnel drivers. However we use pr_warn_once() which doesn't give a clue
+about which device it is bound to. Let us use dev_warn_once() to give the
+context.
 
 Cc: Mathieu Poirier <mathieu.poirier@linaro.org>
 Signed-off-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 Signed-off-by: Mathieu Poirier <mathieu.poirier@linaro.org>
 ---
- drivers/hwtracing/coresight/coresight-tmc.c | 12 ++++++++++++
- drivers/hwtracing/coresight/coresight-tmc.h |  3 +++
- 2 files changed, 15 insertions(+)
+ drivers/hwtracing/coresight/coresight-funnel.c     | 2 +-
+ drivers/hwtracing/coresight/coresight-replicator.c | 3 ++-
+ 2 files changed, 3 insertions(+), 2 deletions(-)
 
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.c b/drivers/hwtracing/coresight/coresight-tmc.c
-index be37aff573b4..3055bf8e2236 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.c
-+++ b/drivers/hwtracing/coresight/coresight-tmc.c
-@@ -236,6 +236,7 @@ coresight_tmc_reg(ffcr, TMC_FFCR);
- coresight_tmc_reg(mode, TMC_MODE);
- coresight_tmc_reg(pscr, TMC_PSCR);
- coresight_tmc_reg(axictl, TMC_AXICTL);
-+coresight_tmc_reg(authstatus, TMC_AUTHSTATUS);
- coresight_tmc_reg(devid, CORESIGHT_DEVID);
- coresight_tmc_reg64(rrp, TMC_RRP, TMC_RRPHI);
- coresight_tmc_reg64(rwp, TMC_RWP, TMC_RWPHI);
-@@ -255,6 +256,7 @@ static struct attribute *coresight_tmc_mgmt_attrs[] = {
- 	&dev_attr_devid.attr,
- 	&dev_attr_dba.attr,
- 	&dev_attr_axictl.attr,
-+	&dev_attr_authstatus.attr,
- 	NULL,
- };
+diff --git a/drivers/hwtracing/coresight/coresight-funnel.c b/drivers/hwtracing/coresight/coresight-funnel.c
+index fa97cb9ab4f9..84ca30f4e5ec 100644
+--- a/drivers/hwtracing/coresight/coresight-funnel.c
++++ b/drivers/hwtracing/coresight/coresight-funnel.c
+@@ -192,7 +192,7 @@ static int funnel_probe(struct device *dev, struct resource *res)
  
-@@ -342,6 +344,13 @@ static inline bool tmc_etr_can_use_sg(struct device *dev)
- 	return fwnode_property_present(dev->fwnode, "arm,scatter-gather");
- }
+ 	if (is_of_node(dev_fwnode(dev)) &&
+ 	    of_device_is_compatible(dev->of_node, "arm,coresight-funnel"))
+-		pr_warn_once("Uses OBSOLETE CoreSight funnel binding\n");
++		dev_warn_once(dev, "Uses OBSOLETE CoreSight funnel binding\n");
  
-+static inline bool tmc_etr_has_non_secure_access(struct tmc_drvdata *drvdata)
-+{
-+	u32 auth = readl_relaxed(drvdata->base + TMC_AUTHSTATUS);
-+
-+	return (auth & TMC_AUTH_NSID_MASK) == 0x3;
-+}
-+
- /* Detect and initialise the capabilities of a TMC ETR */
- static int tmc_etr_setup_caps(struct device *parent, u32 devid, void *dev_caps)
- {
-@@ -349,6 +358,9 @@ static int tmc_etr_setup_caps(struct device *parent, u32 devid, void *dev_caps)
- 	u32 dma_mask = 0;
- 	struct tmc_drvdata *drvdata = dev_get_drvdata(parent);
+ 	desc.name = coresight_alloc_device_name(&funnel_devs, dev);
+ 	if (!desc.name)
+diff --git a/drivers/hwtracing/coresight/coresight-replicator.c b/drivers/hwtracing/coresight/coresight-replicator.c
+index b7d6d59d56db..b29ba640eb25 100644
+--- a/drivers/hwtracing/coresight/coresight-replicator.c
++++ b/drivers/hwtracing/coresight/coresight-replicator.c
+@@ -184,7 +184,8 @@ static int replicator_probe(struct device *dev, struct resource *res)
  
-+	if (!tmc_etr_has_non_secure_access(drvdata))
-+		return -EACCES;
-+
- 	/* Set the unadvertised capabilities */
- 	tmc_etr_init_caps(drvdata, (u32)(unsigned long)dev_caps);
+ 	if (is_of_node(dev_fwnode(dev)) &&
+ 	    of_device_is_compatible(dev->of_node, "arm,coresight-replicator"))
+-		pr_warn_once("Uses OBSOLETE CoreSight replicator binding\n");
++		dev_warn_once(dev,
++			      "Uses OBSOLETE CoreSight replicator binding\n");
  
-diff --git a/drivers/hwtracing/coresight/coresight-tmc.h b/drivers/hwtracing/coresight/coresight-tmc.h
-index 95d2e2747970..4c59f2a4ad0e 100644
---- a/drivers/hwtracing/coresight/coresight-tmc.h
-+++ b/drivers/hwtracing/coresight/coresight-tmc.h
-@@ -39,6 +39,7 @@
- #define TMC_ITATBCTR2		0xef0
- #define TMC_ITATBCTR1		0xef4
- #define TMC_ITATBCTR0		0xef8
-+#define TMC_AUTHSTATUS		0xfb8
- 
- /* register description */
- /* TMC_CTL - 0x020 */
-@@ -90,6 +91,8 @@
- #define TMC_DEVID_AXIAW_SHIFT	17
- #define TMC_DEVID_AXIAW_MASK	0x7f
- 
-+#define TMC_AUTH_NSID_MASK	GENMASK(1, 0)
-+
- enum tmc_config_type {
- 	TMC_CONFIG_TYPE_ETB,
- 	TMC_CONFIG_TYPE_ETR,
+ 	desc.name = coresight_alloc_device_name(&replicator_devs, dev);
+ 	if (!desc.name)
 -- 
 2.17.1
 
