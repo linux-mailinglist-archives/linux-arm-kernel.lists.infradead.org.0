@@ -2,93 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E0FDAA1981
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 14:03:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 725C0A19DA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 14:16:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=8tj2iM2E0tbYTjU9P2OF7O3sG3jH8P+qwOotnOl0RNk=; b=h2bg2xa5+BOjoT4eg5IfsZIAB
-	BMIFwhxHu46FCnIx+jh9MSUCvUnZQGAQasqVThc2uNfBtjy7v9m1JCII5h6J1hAm0aK9aIEhdLgiT
-	2J/K0ozs6khed+q+HUz5jY8yst6AcxMyeGA5WiV/jF9NX8Vh9D753f3FQbJYrmZkQcE0RVpkxiKzM
-	QNwi1y+YV6fM9dTTdTkXJvGsnZMsk9AeKD24ZRt/XHpKJ9JzPUL1FsfGYz/jmSToORN59cefie/Bw
-	EsdJ2I0VVECEtgNpCr3buxk7gXBvc/k5dsJ4Xh6pTbxNg4YjZ8qEmPn5+SAEgBFLRiBHKWmfBpDms
-	VGndi+Z9Q==;
+	 bh=CrXgEVAFmRQ+xhWSoU0k4UiaD/AAlyjP73ZEinU86DI=; b=sM57ACFLUH9s+JXidJkxXm0VK
+	L7S1YJrYBL7CneA2GrqPEGgG5GDmBK6AdjdjnzhqLq+hDHkPsdJhtzLi9QprHKP2ZjVP4w1GjbpHm
+	7sHs9mthr7pdlhuoiI8JyERH8RTbsR7jEDglUbIR7zv5XSXdjurp+x4nR7pu6B0FuoYxliI2J4KkN
+	WVSsIpCr11zkj8O55qGE/dyMKcyirgMWCgygiwI05idddx6k5M9gjNTgQA8mQgIPxaNGmwoV1SwIo
+	zHZlc69eLkup+CB4Y4kU805cJFs7z4UYlr4tM2DmNpIglFpea2Z4RHSFPU/B/g7Gbkl1S9J95+yYf
+	AdsQurB3g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3J9U-0004Nk-JB; Thu, 29 Aug 2019 12:03:44 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i3JLg-0000mV-Ej; Thu, 29 Aug 2019 12:16:20 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3J9K-0004Mu-9W
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 12:03:35 +0000
-Received: by mail-ed1-x544.google.com with SMTP id h8so3787509edv.7
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 05:03:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=HC/6ZRZxQ7B5ep/47mrpg+acl95CprVZcHVqWh2iGp4=;
- b=CZ5isuAnl2qiOdBcJGTg+2OxOzs4UgciMTbbX9B3oye1Xl6cDATQyhYTTK5MILsNAt
- gjXHRCmObHw5rBRRgiZOI+/5SyCu5qVS+1G2EMnYMajc5/jRv3WTGkVqVEcfeo0JK91W
- C+UpQlAtMWF51DpDFo5QELlcFuR/cw6Ml4g7a3hjuigOmnPvWgLP4vh91OiWBsUBMK/B
- eqHywPSVeYt+rNPVF6K6QbZMrdwPObfoS7BwZA/5YpBiINlCdxJLzFURQ2h7NCHdYmch
- Ulsc5Azg5406hVlTzAdAQJ0lQ2aSORDJ8x/tbrwcNdVJAC2h12p9Wi8uVrpegydkwvV5
- iqWw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=HC/6ZRZxQ7B5ep/47mrpg+acl95CprVZcHVqWh2iGp4=;
- b=Ts0I+TtUbmhLaBCJpG1pFlUIC0vQz8yfDBHt2hoCT/iiVWRjgS1ixtzLFOxcDkUKqv
- DIr8R1arI7RIr8EXXNQhj1oqhA3AkWosLolg3AolCUPbxMPfrP7pK3wNOreOF89QaFKD
- ePZHbyKaWlwVJ0dxxenPjiRsohyG4KdxwW3xbEwXlzKDIzUma0ajxT8zSxgnC7899DCd
- /v5KLShGYmDj5pG+9Y4XQvEMf5QRL1Hnnre9uImupGp6OvBLPtg/aEbrWf48QPVuxQul
- ynX0NATQdR+IAj7B6ppmV1HLKSLUj0ks5PeN43E8GSjdduAV/QlpZFV3rcC0kPkOzmkr
- MRvA==
-X-Gm-Message-State: APjAAAVeEXxfaNaDj+Mefd6iQOOu5Jf+YTxE1StXtebg8TMeCiDGpeAV
- KaKgiYF3loxQMCWp5zRqeF8=
-X-Google-Smtp-Source: APXvYqySs/VqsSqJJBCJaCpwyKBYzvRJ3QSOgddlozsP6MDDfKle9c8EoWsfW0CM/wT3Nf3CMel9+g==
-X-Received: by 2002:a50:fc12:: with SMTP id i18mr9544917edr.23.1567080212005; 
- Thu, 29 Aug 2019 05:03:32 -0700 (PDT)
-Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id j2sm355111ejj.34.2019.08.29.05.03.30
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 05:03:30 -0700 (PDT)
-Date: Thu, 29 Aug 2019 14:03:29 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V3 2/6] dt-bindings: PCI: tegra: Add PCIe slot supplies
- regulator entries
-Message-ID: <20190829120329.GC13187@ulmo>
-References: <20190828172850.19871-1-vidyas@nvidia.com>
- <20190828172850.19871-3-vidyas@nvidia.com>
+ id 1i3JLW-0000ll-Cp
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 12:16:12 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 2ACB4A1069;
+ Thu, 29 Aug 2019 14:16:02 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter02.heinlein-hosting.de (spamfilter02.heinlein-hosting.de
+ [80.241.56.116]) (amavisd-new, port 10030)
+ with ESMTP id WXJzDwa0kR9t; Thu, 29 Aug 2019 14:15:51 +0200 (CEST)
+Date: Thu, 29 Aug 2019 22:15:27 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Daniel Colascione <dancol@google.com>
+Subject: Re: [PATCH RESEND v11 7/8] open: openat2(2) syscall
+Message-ID: <20190829121527.u2uvdyeatme5cgkb@yavin>
+References: <20190820033406.29796-1-cyphar@cyphar.com>
+ <20190820033406.29796-8-cyphar@cyphar.com>
+ <CAKOZuesfxRBJe314rkTKXtjXdz6ki3uAUBYVbu5Q2rd3=ADphQ@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190828172850.19871-3-vidyas@nvidia.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <CAKOZuesfxRBJe314rkTKXtjXdz6ki3uAUBYVbu5Q2rd3=ADphQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_050334_362347_5F43C4A4 
-X-CRM114-Status: GOOD (  16.77  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_051610_740333_D9AEFA96 
+X-CRM114-Status: GOOD (  31.73  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,132 +68,149 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- linux-tegra@vger.kernel.org, robh+dt@kernel.org, linux-pci@vger.kernel.org,
- bhelgaas@google.com, andrew.murray@arm.com, digetx@gmail.com,
- jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============4103421238000919064=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ Linux FS Devel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============2678391275293013118=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4103421238000919064==
+--===============2678391275293013118==
 Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="4ZLFUWh1odzi/v6L"
+	protocol="application/pgp-signature"; boundary="ys4y6f5eyfdosi3x"
 Content-Disposition: inline
 
 
---4ZLFUWh1odzi/v6L
+--ys4y6f5eyfdosi3x
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Wed, Aug 28, 2019 at 10:58:46PM +0530, Vidya Sagar wrote:
-> Add optional bindings "vpcie3v3-supply" and "vpcie12v-supply" to describe
-> regulators of a PCIe slot's supplies 3.3V and 12V provided the platform
-> is designed to have regulator controlled slot supplies.
+On 2019-08-24, Daniel Colascione <dancol@google.com> wrote:
+> On Mon, Aug 19, 2019 at 8:37 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
+> >
+> > The most obvious syscall to add support for the new LOOKUP_* scoping
+> > flags would be openat(2). However, there are a few reasons why this is
+> > not the best course of action:
+> >
+> >  * The new LOOKUP_* flags are intended to be security features, and
+> >    openat(2) will silently ignore all unknown flags. This means that
+> >    users would need to avoid foot-gunning themselves constantly when
+> >    using this interface if it were part of openat(2). This can be fixed
+> >    by having userspace libraries handle this for users[1], but should be
+> >    avoided if possible.
+> >
+> >  * Resolution scoping feels like a different operation to the existing
+> >    O_* flags. And since openat(2) has limited flag space, it seems to be
+> >    quite wasteful to clutter it with 5 flags that are all
+> >    resolution-related. Arguably O_NOFOLLOW is also a resolution flag but
+> >    its entire purpose is to error out if you encounter a trailing
+> >    symlink -- not to scope resolution.
+> >
+> >  * Other systems would be able to reimplement this syscall allowing for
+> >    cross-OS standardisation rather than being hidden amongst O_* flags
+> >    which may result in it not being used by all the parties that might
+> >    want to use it (file servers, web servers, container runtimes, etc).
+> >
+> >  * It gives us the opportunity to iterate on the O_PATH interface. In
+> >    particular, the new @how->upgrade_mask field for fd re-opening is
+> >    only possible because we have a clean slate without needing to re-use
+> >    the ACC_MODE flag design nor the existing openat(2) @mode semantics.
+> >
+> > To this end, we introduce the openat2(2) syscall. It provides all of the
+> > features of openat(2) through the @how->flags argument, but also
+> > also provides a new @how->resolve argument which exposes RESOLVE_* flags
+> > that map to our new LOOKUP_* flags. It also eliminates the long-standing
+> > ugliness of variadic-open(2) by embedding it in a struct.
+> >
+> > In order to allow for userspace to lock down their usage of file
+> > descriptor re-opening, openat2(2) has the ability for users to disallow
+> > certain re-opening modes through @how->upgrade_mask. At the moment,
+> > there is no UPGRADE_NOEXEC. The open_how struct is padded to 64 bytes
+> > for future extensions (all of the reserved bits must be zeroed).
 >=20
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> ---
-> V3:
-> * None
->=20
-> V2:
-> * None
->=20
->  .../devicetree/bindings/pci/nvidia,tegra194-pcie.txt      | 8 ++++++++
->  1 file changed, 8 insertions(+)
->=20
-> diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.t=
-xt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> index 0ac1b867ac24..b739f92da58e 100644
-> --- a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> +++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> @@ -104,6 +104,12 @@ Optional properties:
->     specified in microseconds
->  - nvidia,aspm-l0s-entrance-latency-us: ASPM L0s entrance latency to be
->     specified in microseconds
-> +- vpcie3v3-supply: A phandle to the regulator node that supplies 3.3V to=
- the slot
-> +  if the platform has one such slot. (Ex:- x16 slot owned by C5 controll=
-er
-> +  in p2972-0000 platform).
-> +- vpcie12v-supply: A phandle to the regulator node that supplies 12V to =
-the slot
-> +  if the platform has one such slot. (Ex:- x16 slot owned by C5 controll=
-er
-> +  in p2972-0000 platform).
+> Why pad the structure when new functionality (perhaps accommodated via
+> a larger structure) could be signaled by passing a new flag? Adding
+> reserved fields to a structure with a size embedded in the ABI makes a
+> lot of sense --- e.g., pthread_mutex_t can't grow. But this structure
+> can grow, so the reservation seems needless to me.
 
-There's an ongoing discussion regarding the use of optional power
-supplies and I'm wondering if we're not abusing this here. Why exactly
-are these regulators optional?
+Quite a few folks have said that ->reserved is either unnecessary or
+too big. I will be changing this, though I am not clear what the best
+way of extending the structure is. If anyone has a strong opinion on
+this (or an alternative to the ones listed below), please chime in. I
+don't have any really strong attachment to this aspect of the API.
 
-The distinction is somewhat subtle, but the other way to look at
-modelling this in DT is that the supplies are in fact required, but may
-be connected to an always-on regulator with a fixed voltage. Or in some
-cases they may also be shorted to ground. In both cases the PCI
-controller, or rather the slot that the controller connects to, actually
-"requires" the supplies, it's just that we can get away without
-describing them because they can't be controlled anyway.
+There appear to be a few ways we can do it (that all have precedence
+with other syscalls):
 
-Looking at the PCI connector pinout for PCI Express, I do see a bunch of
-+3.3 V and +12 V pins. To me that indicates that the 3.3 V and 12 V
-supplies are indeed required for PCI slots. I'm not sure about devices
-that are directly connected to the PCI controller, though. I'll need to
-go look at some schematics to get a better understanding of these.
+ 1. Use O_* flags to indicate extensions.
+ 2. A separate "version" field that is incremented when we change.
+ 3. Add a size_t argument to openat2(2).
+ 4. Reserve space (as in this patchset).
 
-Bottom line: I'm wondering if we shouldn't really make these supplies
-mandatory and in case where we don't care either just leave them away
-(the regulator framework will supply a dummy regulator in that case) or
-hook them up to a fixed regulator if that matches the hardware design.
+(My personal preference would be (3), followed closely by (2).)
 
-Any thoughts?
+The main problem with (1) is that it pollutes the open(2) and openat(2)
+syscalls with new O_* flags, which is probably not a good API decision
+(syscall flags are already "bad" enough, let's not throw a bunch of
+no-ops into the mix).
 
-Thierry
+(2) is mostly fine except for a slight issue of ergonomics (glibc would
+have to auto-fill the version field or make wrappers in order to make it
+easier to use sanely). But this does have the benefit that we could
+re-arrange fields (not that this is something we'd want to do anyway).
 
-> =20
->  Examples:
->  =3D=3D=3D=3D=3D=3D=3D=3D=3D
-> @@ -156,6 +162,8 @@ Tegra194:
->  			  0xc2000000 0x18 0x00000000 0x18 0x00000000 0x4 0x00000000>;  /* pre=
-fetchable memory (16GB) */
-> =20
->  		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> +		vpcie3v3-supply =3D <&vdd_3v3_pcie>;
-> +		vpcie12v-supply =3D <&vdd_12v_pcie>;
-> =20
->  		phys =3D <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
->  		       <&p2u_hsio_5>;
-> --=20
-> 2.17.1
->=20
+Both (1) and (2) have the problem that the "struct version" is inside
+the struct so we'd need to copy_from_user() twice. This isn't the end of
+the world, it just feels a bit less clean than is ideal. (3) fixes that
+problem, at the cost of making the API slightly more cumbersome to use
+directly (though again glibc could wrap that away).
 
---4ZLFUWh1odzi/v6L
+And the downsides of (4) are pretty well discussed already.
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--ys4y6f5eyfdosi3x
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl1nvw4ACgkQ3SOs138+
-s6GI6w/+IG7mTCrwYZe0LN6qzkC7/2R7QVuV631kPcoyzIRoQZLYGkdNvI5EAfzF
-8NgV3IpZAIxJDeZl7slSZdXcrCF92OFxy77koBFKQncXlSc/YHKymyXx2trZLzmf
-b7+aO8xnOxaSfHCfdKPVQTndq2piK9APoyTtuVnE9mmgqEGQoEv7N4QiSMx8NabA
-q0MVvrA9l5ibiQ13lfw6QX8iT4txZ17yWQ4wcMSXOOSSnmGkxZq8kOr3OVzahIYY
-ibogwwQPEcV1Auz2TRyVdG4ZftKx21iflj+m/2sbiduh9l3p+aEuB8WIV6T2MbBk
-vXfiC+bWlOUsWpZlb+zb3zOHjte3/53YbVkrgXvdlE+66VYKK/Ok2uAnq9t9RDvT
-swdhH98bWTviSxfdvT3TXKcxX9DT1sI+4rQPqvEO5E2taflYw0VlVGklSMmZqy57
-BApIVrZoh1r0OKgVrTSr/VBkT0yVki8SyKBvH9UzKG42NDf9FNhLeg9ey5UOACZO
-A/ujEXHDjpqyTZmVlo0orYOvKB6qsaM3LS5PQD1FrIjSwFVqVWMPkGeVqZ0OE9za
-tT/v4MGRz9v7GSDTEqAYmTsVhjEzd8h2fuTsdykqxKmMlbTHohS1QVUj4MBkSwcB
-O6cGc3uLm1i5x+0980a+k7CXqmm5ooEcsRspCdi4egaGQdN1jRs=
-=CA6J
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXWfB2wAKCRCdlLljIbnQ
+EljcAQC+BitddeHjv2a9yspU0gLaZB6nn8UBahZIqiE8+4xUoAEAuibGdlSM4ag8
+ZYal7PGiNelUZH1S6GPHj1bvVNNGOQ0=
+=OczH
 -----END PGP SIGNATURE-----
 
---4ZLFUWh1odzi/v6L--
+--ys4y6f5eyfdosi3x--
 
 
---===============4103421238000919064==
+--===============2678391275293013118==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -236,5 +221,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4103421238000919064==--
+--===============2678391275293013118==--
 
