@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [198.137.202.133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49308A1D6F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 16:43:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DE345A1D72
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 16:44:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o7CqMiypKMMMBFo9eqiPARegSSiI339jOUq7umU2ZeY=; b=mn9+lz32UL1Z97
-	lxXkqYJdKgjlj0M0PA2D+t1stIclWxbUcNFV7fvRStNa0LuN44LudpQZKfO34FC+psphLuDE7XptI
-	mJWhDuOn6x5sjqYQtuZosLCR9ncHZ5ZgcAgNDw82DefI7UBc231Az91MV0z3BoC3xfbUU7DO4Mhz2
-	FPfBeD4M6FegbkPB2eaT3hSUlR76pb+tnvqL93rhsdbEzOb5YhlW4iHWMqh7mrCmAE+IAkoe+YzG1
-	QIb8V2mTNnsdsUzvj9RORlvxzUOrNeRcDJePXkDncqv1tR40oAhv1lSNAxW+K7ti+JRmSsAU/ATAH
-	9eMfwdJOPllYtlTpnrcA==;
+	List-Owner; bh=ob2UbNHhr02SRfiGdWIEfBJNmBh+fjwTrqtIBcVek6E=; b=DWmNC1X49eQGJn
+	bJpE8YRPN/ohzWm50jtdHl8+Id+tye05g9yBsINiX4Kf5OmWgWlcceJcA3NQHp3rd62Y5L+p8XmS5
+	kez7wXBJWAOUD8JP2DN4p46gG5HRFLzGV21Cby8Mn7Fs+FIhlROgykGoY8VgnlaDURDbw5DNzjZY+
+	1fen7cc2OolHg7K2ecuq1crW42DHKbGTnxelvrPelnZ70alJqdjHALSf/rEHvLq85y7XK61IsqIIZ
+	VaT7q/hQyH2wVlrIyGiy81e0SY/Y/aJv34YX2M+HEClutBCm2M41fL5wh581l6/vy/UdrS95y8SO5
+	ZzDWq2sOe0zqKH0Z28pg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Ldw-0001sB-Dh; Thu, 29 Aug 2019 14:43:20 +0000
+	id 1i3Led-000269-Tr; Thu, 29 Aug 2019 14:44:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3LaZ-0008Iq-UL
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 14:39:54 +0000
+ id 1i3Lad-0008KU-AD
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 14:39:57 +0000
 Received: from quaco.ghostprotocols.net (unknown [179.97.35.50])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id ADA492341B;
- Thu, 29 Aug 2019 14:39:47 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8AAB823426;
+ Thu, 29 Aug 2019 14:39:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567089591;
- bh=eYjq6GUXpRYwgKHl/LiHXRqmXoJV3CT31W26/C70iDM=;
+ s=default; t=1567089594;
+ bh=TochmD8e7qzqFLR0WCPOK49a7FZE2iB3hCnR623HysY=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=04m8JHHWi/iiVzDc0izQaftbw8yY0DBgbtTriY6areeoD+GdE1G4+Inz7WB1Ghjh5
- 86bvKCXICTEtyGH8AdON9BbdGeFXpBCKaqtoOc1G7xuA/eBrtWJBJyLi6NEDIU4VRY
- TKfLq2sYkl4dZJfrpWzFzrHU60yZ5W/HYmtd8KXU=
+ b=MHb+YqYZ+60lmJgO25DJPhW/tocErLs2GmdmguqP7VVgb2yoVFm+Ss3H7x/sALLOf
+ 4/FlmUVMLsyMTmZaJq6ZCFYOXs6mC4rr04+wn1Th2vyA/im/MpAi1GA8o2LIcpdf0g
+ 4E53zwssAc8nYmeeHwqANZEajFDENHhKw7gz1dOQ=
 From: Arnaldo Carvalho de Melo <acme@kernel.org>
 To: Ingo Molnar <mingo@kernel.org>,
 	Thomas Gleixner <tglx@linutronix.de>
-Subject: [PATCH 03/37] perf tools: Use CAP_SYS_ADMIN with perf_event_paranoid
- checks
-Date: Thu, 29 Aug 2019 11:38:43 -0300
-Message-Id: <20190829143917.29745-4-acme@kernel.org>
+Subject: [PATCH 04/37] perf evsel: Kernel profiling is disallowed only when
+ perf_event_paranoid > 1
+Date: Thu, 29 Aug 2019 11:38:44 -0300
+Message-Id: <20190829143917.29745-5-acme@kernel.org>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190829143917.29745-1-acme@kernel.org>
 References: <20190829143917.29745-1-acme@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_073952_568983_E813A0D9 
-X-CRM114-Status: GOOD (  11.95  )
+X-CRM114-CacheID: sfid-20190829_073955_403480_C6B31A63 
+X-CRM114-Status: GOOD (  11.59  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,117 +93,114 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Igor Lubashev <ilubashe@akamai.com>
 
-The kernel is using CAP_SYS_ADMIN instead of euid==0 to override
-perf_event_paranoid check. Make perf do the same.
+Perf was too restrictive about sysctl kernel.perf_event_paranoid. The
+kernel only disallows profiling when perf_event_paranoid > 1. Make perf
+do the same.
 
-Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
-Acked-by: Jiri Olsa <jolsa@kernel.org>
+Committer testing:
+
+For a non-root user:
+
+  $ id
+  uid=1000(acme) gid=1000(acme) groups=1000(acme),10(wheel) context=unconfined_u:unconfined_r:unconfined_t:s0-s0:c0.c1023
+  $
+
+Before:
+
+We were restricting it to just userspace (:u suffix) even for a
+workload started by the user:
+
+  $ perf record sleep 1
+  [ perf record: Woken up 1 times to write data ]
+  [ perf record: Captured and wrote 0.001 MB perf.data (8 samples) ]
+  $ perf evlist
+  cycles:u
+  $ perf evlist -v
+  cycles:u: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, exclude_kernel: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
+  $ perf report --stdio
+  # To display the perf.data header info, please use --header/--header-only options.
+  #
+  # Total Lost Samples: 0
+  #
+  # Samples: 8  of event 'cycles:u'
+  # Event count (approx.): 1040396
+  #
+  # Overhead  Command  Shared Object     Symbol
+  # ........  .......  ................  ......................
+  #
+      68.36%  sleep    libc-2.29.so      [.] _dl_addr
+      27.33%  sleep    ld-2.29.so        [.] dl_main
+       3.80%  sleep    ld-2.29.so        [.] _dl_setup_hash
+  #
+  # (Tip: Order by the overhead of source file name and line number: perf report -s srcline)
+  #
+  $
+  $
+
+After:
+
+When the kernel allows profiling the kernel in that scenario:
+
+  $ perf record sleep 1
+  [ perf record: Woken up 1 times to write data ]
+  [ perf record: Captured and wrote 0.023 MB perf.data (11 samples) ]
+  $ perf evlist
+  cycles
+  $ perf evlist -v
+  cycles: size: 112, { sample_period, sample_freq }: 4000, sample_type: IP|TID|TIME|PERIOD, read_format: ID, disabled: 1, inherit: 1, mmap: 1, comm: 1, freq: 1, enable_on_exec: 1, task: 1, precise_ip: 3, sample_id_all: 1, exclude_guest: 1, mmap2: 1, comm_exec: 1, ksymbol: 1, bpf_event: 1
+  $
+  $ perf report --stdio
+  # To display the perf.data header info, please use --header/--header-only options.
+  #
+  # Total Lost Samples: 0
+  #
+  # Samples: 11  of event 'cycles'
+  # Event count (approx.): 1601964
+  #
+  # Overhead  Command  Shared Object     Symbol
+  # ........  .......  ................  ..........................
+  #
+      28.14%  sleep    [kernel.vmlinux]  [k] __rb_erase_color
+      27.21%  sleep    [kernel.vmlinux]  [k] unmap_page_range
+      27.20%  sleep    ld-2.29.so        [.] __tunable_get_val
+      15.24%  sleep    [kernel.vmlinux]  [k] thp_get_unmapped_area
+       1.96%  perf     [kernel.vmlinux]  [k] perf_event_exec
+       0.22%  perf     [kernel.vmlinux]  [k] native_sched_clock
+       0.02%  perf     [kernel.vmlinux]  [k] intel_bts_enable_local
+       0.00%  perf     [kernel.vmlinux]  [k] native_write_msr
+  #
+  # (Tip: Boolean options have negative forms, e.g.: perf report --no-children)
+  #
+  $
+
+Reported-by: Arnaldo Carvalho de Melo <acme@redhat.com>
+Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+Tested-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 Tested-by: Mathieu Poirier <mathieu.poirier@linaro.org>
-Reviewed-by: Mathieu Poirier <mathieu.poirier@linaro.org> # coresight part
 Cc: Alexander Shishkin <alexander.shishkin@linux.intel.com>
 Cc: Alexey Budankov <alexey.budankov@linux.intel.com>
 Cc: James Morris <jmorris@namei.org>
+Cc: Jiri Olsa <jolsa@kernel.org>
 Cc: Namhyung Kim <namhyung@kernel.org>
 Cc: Peter Zijlstra <peterz@infradead.org>
 Cc: Suzuki Poulouse <suzuki.poulose@arm.com>
 Cc: linux-arm-kernel@lists.infradead.org
-Link: http://lkml.kernel.org/r/1566869956-7154-3-git-send-email-ilubashe@akamai.com
-Signed-off-by: Igor Lubashev <ilubashe@akamai.com>
+Link: http://lkml.kernel.org/r/1566869956-7154-4-git-send-email-ilubashe@akamai.com
 Signed-off-by: Arnaldo Carvalho de Melo <acme@redhat.com>
 ---
- tools/perf/arch/arm/util/cs-etm.c    | 3 ++-
- tools/perf/arch/arm64/util/arm-spe.c | 3 ++-
- tools/perf/arch/x86/util/intel-bts.c | 3 ++-
- tools/perf/arch/x86/util/intel-pt.c  | 2 +-
- tools/perf/util/evsel.c              | 2 +-
- 5 files changed, 8 insertions(+), 5 deletions(-)
+ tools/perf/util/evsel.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/tools/perf/arch/arm/util/cs-etm.c b/tools/perf/arch/arm/util/cs-etm.c
-index a185dab2d903..5d856edc412b 100644
---- a/tools/perf/arch/arm/util/cs-etm.c
-+++ b/tools/perf/arch/arm/util/cs-etm.c
-@@ -18,6 +18,7 @@
- #include "../../util/record.h"
- #include "../../util/auxtrace.h"
- #include "../../util/cpumap.h"
-+#include "../../util/event.h"
- #include "../../util/evlist.h"
- #include "../../util/evsel.h"
- #include "../../util/pmu.h"
-@@ -254,7 +255,7 @@ static int cs_etm_recording_options(struct auxtrace_record *itr,
- 	struct perf_pmu *cs_etm_pmu = ptr->cs_etm_pmu;
- 	struct evsel *evsel, *cs_etm_evsel = NULL;
- 	struct perf_cpu_map *cpus = evlist->core.cpus;
--	bool privileged = (geteuid() == 0 || perf_event_paranoid() < 0);
-+	bool privileged = perf_event_paranoid_check(-1);
- 	int err = 0;
- 
- 	ptr->evlist = evlist;
-diff --git a/tools/perf/arch/arm64/util/arm-spe.c b/tools/perf/arch/arm64/util/arm-spe.c
-index cdd5c0c84183..c7b38f09260f 100644
---- a/tools/perf/arch/arm64/util/arm-spe.c
-+++ b/tools/perf/arch/arm64/util/arm-spe.c
-@@ -12,6 +12,7 @@
- #include <time.h>
- 
- #include "../../util/cpumap.h"
-+#include "../../util/event.h"
- #include "../../util/evsel.h"
- #include "../../util/evlist.h"
- #include "../../util/session.h"
-@@ -67,7 +68,7 @@ static int arm_spe_recording_options(struct auxtrace_record *itr,
- 			container_of(itr, struct arm_spe_recording, itr);
- 	struct perf_pmu *arm_spe_pmu = sper->arm_spe_pmu;
- 	struct evsel *evsel, *arm_spe_evsel = NULL;
--	bool privileged = geteuid() == 0 || perf_event_paranoid() < 0;
-+	bool privileged = perf_event_paranoid_check(-1);
- 	struct evsel *tracking_evsel;
- 	int err;
- 
-diff --git a/tools/perf/arch/x86/util/intel-bts.c b/tools/perf/arch/x86/util/intel-bts.c
-index 1f2cf612bc9c..16d26ea701ad 100644
---- a/tools/perf/arch/x86/util/intel-bts.c
-+++ b/tools/perf/arch/x86/util/intel-bts.c
-@@ -12,6 +12,7 @@
- #include <linux/zalloc.h>
- 
- #include "../../util/cpumap.h"
-+#include "../../util/event.h"
- #include "../../util/evsel.h"
- #include "../../util/evlist.h"
- #include "../../util/session.h"
-@@ -108,7 +109,7 @@ static int intel_bts_recording_options(struct auxtrace_record *itr,
- 	struct perf_pmu *intel_bts_pmu = btsr->intel_bts_pmu;
- 	struct evsel *evsel, *intel_bts_evsel = NULL;
- 	const struct perf_cpu_map *cpus = evlist->core.cpus;
--	bool privileged = geteuid() == 0 || perf_event_paranoid() < 0;
-+	bool privileged = perf_event_paranoid_check(-1);
- 
- 	btsr->evlist = evlist;
- 	btsr->snapshot_mode = opts->auxtrace_snapshot_mode;
-diff --git a/tools/perf/arch/x86/util/intel-pt.c b/tools/perf/arch/x86/util/intel-pt.c
-index 44cfe72c1a4c..746981c82a16 100644
---- a/tools/perf/arch/x86/util/intel-pt.c
-+++ b/tools/perf/arch/x86/util/intel-pt.c
-@@ -579,7 +579,7 @@ static int intel_pt_recording_options(struct auxtrace_record *itr,
- 	bool have_timing_info, need_immediate = false;
- 	struct evsel *evsel, *intel_pt_evsel = NULL;
- 	const struct perf_cpu_map *cpus = evlist->core.cpus;
--	bool privileged = geteuid() == 0 || perf_event_paranoid() < 0;
-+	bool privileged = perf_event_paranoid_check(-1);
- 	u64 tsc_bit;
- 	int err;
- 
 diff --git a/tools/perf/util/evsel.c b/tools/perf/util/evsel.c
-index fa676355559e..7c704b8f0e5c 100644
+index 7c704b8f0e5c..d4540bfe4574 100644
 --- a/tools/perf/util/evsel.c
 +++ b/tools/perf/util/evsel.c
 @@ -282,7 +282,7 @@ struct evsel *perf_evsel__new_idx(struct perf_event_attr *attr, int idx)
  
  static bool perf_event_can_profile_kernel(void)
  {
--	return geteuid() == 0 || perf_event_paranoid() == -1;
-+	return perf_event_paranoid_check(-1);
+-	return perf_event_paranoid_check(-1);
++	return perf_event_paranoid_check(1);
  }
  
  struct evsel *perf_evsel__new_cycles(bool precise)
