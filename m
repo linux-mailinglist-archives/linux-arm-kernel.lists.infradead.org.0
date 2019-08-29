@@ -2,81 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8F33A193B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:48:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B141BA1942
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:48:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QEyOhIh6jn1G4FFCKmRcBgUq3clX2HV7zBmBKtrFTTE=; b=JbmrLdmE+jR5pl
-	sWvweiWlNUVuylHGEKjnNzHJiXRyGf4TaVDxKy9Fs38YQJMuXRgruuUb/DVMRAbvZz1ClhZgvlbkn
-	AdtGztU+VmCj5qbz9C7aJLfsJvTaRq57lhvILAqShIQsDTvzEyEvBjojmqUBIqZC3AOAoRjfHdszf
-	QkhDQ/GeNK97Kt/MWjPa1TAYTpUrsKdGg8rBcISZpXae3bZztNxppBcQ2cW0f8ZCdUOMNi/yTPXs6
-	eBOd4vf35UkyV6GKBdFdfoRL4VFgbLSPp/6DZdnzQ+Cxjak0rlfuMI0ypQr/EVxEdvk6I6b4ur+NQ
-	J/rJld29sL0NWHVZsyNw==;
+	List-Owner; bh=BAm3pGDhbSLo6M72mjMJE1nW+pLSk6JePUXRcoviM1M=; b=fYcQTMTqw/Ge4o
+	vt/JbUZdJv6hxsww9kIpr+0CeMJ0UVzsq7u0gI2J0dqk9Rz76CsqYD14fpRPGFOQN7+ydBFSKc9xp
+	vTSZGNhtV8HGMxc3akxPgq6dCAbg9oSlJwT1YrtT+Weas6iAkK2SznE9G42WEgSgjmyHpKkBWE3/3
+	Cwh2qzhIUJYDyOERZigZpLUbuX2jx3CSHUwIjCj+7jDnutP3BS71LQaCDp12ChrBJ2FX7SQYNoiIT
+	xTlo/U751z36Yrzdg1piP8BnJa7ASaNSlmDhNOXgP2kbEmKj263XZQ2FgbruBH3ob8jU5xBw6yvdd
+	T91IQls+534aYqAqtdIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IuA-0001yj-Nq; Thu, 29 Aug 2019 11:47:54 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i3Iuq-0002hy-0O; Thu, 29 Aug 2019 11:48:36 +0000
+Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3IjR-0007YY-Sp
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:36:51 +0000
-Received: by mail-pf1-x443.google.com with SMTP id v12so1851777pfn.10
+ id 1i3IkU-0008P0-TI
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:37:56 +0000
+Received: by mail-vs1-xe42.google.com with SMTP id b187so2159743vsc.9
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:36:49 -0700 (PDT)
+ Thu, 29 Aug 2019 04:37:53 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
- b=BKnkcJFk3MNXaOvdRyUnOTInsQxotc+5YsfNlBmVE3T89BFUfb0e4L8sFQDeK284l7
- /r4udJ6Sl2cdNixjixGH9bWI5UzZINAkYnN28hma252vuenUeUXIxzaFH2k6tCsNYgsq
- XIiGjsb9f5cHpGVLf0Zi6zL9cwSFVhPlSqbh828PdaAkEgVxOMDq2rt0Jm4Cp3tO+hew
- ksi7yWvIqiYq1hEPUSUrvV61FY55xhOKcLozcHwPv/WTJ1bRQYuBuaroIfcmg0qLl38F
- ojLlMS0ilQ1bLD2QDrzeIs927PecMnilw0p3Z0BWBCNBtwz9O08SyUgwW79XOxF7V8+w
- uA3w==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=steHU9JTMpLHW7sybl9YQfRLR82mnhptlWwdqUe7Zcg=;
+ b=fYlC8+bWZqR6XAfZhhKThI98qPivkoDILLJEWVCGUmMcEVDNau268nO678oYz2Haq6
+ bmMtC4uuUu3KJg6bIbm5+boLwf+l8EkdFDEQDvPVjopj0wqLRln09CPb2ryMq76qUEjk
+ JZkDX9bIbdu1BwxXgbD/qS8oHYFHEAEgRhmzN8sr/2fnePykHkgDXvor4Gj3bzeixJGZ
+ /J5QdyYN1k9gZ83TBf1D2dDUqsjB0C7nWqGs/1GulojlUH4Z/N9Zg1T2OW4XVRrM+kRs
+ BBBRW0dxsRpNuV+fNa6bWBpNGxJaiZOH8Yr29ngIVQQugS2pmpPIaUUsxUDI5stbThRr
+ SUYg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=PDeednBQHQCWJxR0NKh3z84Gd8kBTabHNB90hamsE18=;
- b=NySeJ8YNp7wT4w2t3kbov7W5BqVLCm0tN6yBI/bkeClv6pQD7Zw++QBb3pUEvOtHvK
- E6bXktIE5gvuT5WrkmpJ280RfQg9ViF36ue8N7bRP4XfSLstgutbxbcFba+s08tcE8B5
- zi4xVn43mwe/dmUg598NZ4FtUJyy/z7a817QPgnJhprfYu4M4MPjYZ+SoTn7UVLpp0FD
- BFgX1Quq8e8zka275bc8znMRrQlLEsnxMCUNhKIfpWLcUVwpry3FIeXCF7RUDuzg5b85
- x6/7/M7ojLRr5OOZ26/aGNhje6xG3qOnh5NUsFXIGh8yCXKQKwx+MihQNGUUl8rWJBF5
- EqkQ==
-X-Gm-Message-State: APjAAAV5nWQWsu0/FMqQyEeCTZ++/PyyAmY8YXdj+UE/EUQCd7UdVaDH
- gB/L3zjhsxYkkEqpQuW0Fm9Zbw==
-X-Google-Smtp-Source: APXvYqzfTJ4KTAhULOXeqjcaWdsEDWsfY43W4OVpdguRKP0hjHTtCfnJmiRO8UFi+bPmQIHEQeZURQ==
-X-Received: by 2002:aa7:81c1:: with SMTP id c1mr10453368pfn.78.1567078609375; 
- Thu, 29 Aug 2019 04:36:49 -0700 (PDT)
-Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id k25sm5884224pgt.53.2019.08.29.04.36.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:36:48 -0700 (PDT)
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: stable@vger.kernel.org, Julien Thierry <Julien.Thierry@arm.com>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH ARM64 v4.4 V3 44/44] arm64: futex: Mask __user pointers prior
- to dereference
-Date: Thu, 29 Aug 2019 17:04:29 +0530
-Message-Id: <965d727955b4a45ac1f12e67c6a433110ef94871.1567077734.git.viresh.kumar@linaro.org>
-X-Mailer: git-send-email 2.21.0.rc0.269.g1a574e7a288b
-In-Reply-To: <cover.1567077734.git.viresh.kumar@linaro.org>
-References: <cover.1567077734.git.viresh.kumar@linaro.org>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=steHU9JTMpLHW7sybl9YQfRLR82mnhptlWwdqUe7Zcg=;
+ b=qyvLd+/64YDaIhx6hUIRtym7sMISl6fPt3Tc1LnwIAxANbAiiFdiYXCh3xtAhKgAve
+ +T13ZvREhbu3v4IviM1L8KPU08wZMkdl9vaHe2gdyCfvfPk+vopFHiNCMwfVNab6AoQ3
+ /TzxFAWJSyNWjAMxo6EcsXwc4zjkAMypYXs4tlJqxmGWkgZRIj91PHEkB/WlMwTO0gyZ
+ yCnmcGs+lg1AVYkqnTysVxQYSM+L79XpVH07iL9gjQIwzRpfT3EcTo1nwZgzpPYhQ1uy
+ GMXK1Dw7hddLcvR4KQ0UC64sBUAXA+FsJCSo8yk44CwkEYhzn0pfgVExhVMo6SBuRcyJ
+ s0Dw==
+X-Gm-Message-State: APjAAAXxgRNLSSIBcpALjbjL8/MA2cqkaktHLl3N0RMglu6oIBGa4md9
+ Llpd1N8WZQVmxHb8/jUEwZdc4djpGzxaK8p5ZA9w5Q==
+X-Google-Smtp-Source: APXvYqwNRXIaneirGcWLGuYXd/YuixR4X36HnLqF4jth7rfkzeHfTgzi9mMgWpVzP8+sp931Sn93UV23G6KlVGudVsg=
+X-Received: by 2002:a67:fe4e:: with SMTP id m14mr5337390vsr.34.1567078671028; 
+ Thu, 29 Aug 2019 04:37:51 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190825150558.15173-1-alejandro.gonzalez.correo@gmail.com>
+ <CAPDyKFr5opD2yBXmFRBY-9oA_3ShVv0GPFRO8Q_8TEiT+z2pQA@mail.gmail.com>
+ <f84d62b7-da00-f2bd-36e9-972435080bfe@gmail.com>
+In-Reply-To: <f84d62b7-da00-f2bd-36e9-972435080bfe@gmail.com>
+From: Ulf Hansson <ulf.hansson@linaro.org>
+Date: Thu, 29 Aug 2019 13:37:14 +0200
+Message-ID: <CAPDyKFp420OaeoedkR=KuX1EMNwOvCkCfJHZPRDXhVz-w8J0mg@mail.gmail.com>
+Subject: Re: [PATCH] mmc: sunxi: fix unusuable eMMC on some H6 boards by
+ disabling DDR
+To: =?UTF-8?Q?Alejandro_Gonz=C3=A1lez?= <alejandro.gonzalez.correo@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_043649_988994_DE1A6AE4 
-X-CRM114-Status: GOOD (  11.52  )
+X-CRM114-CacheID: sfid-20190829_043754_968685_3F37FD13 
+X-CRM114-Status: GOOD (  13.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -98,73 +94,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <marc.zyngier@arm.com>, Viresh Kumar <viresh.kumar@linaro.org>,
- Will Deacon <will.deacon@arm.com>, mark.brown@arm.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Maxime Ripard <maxime.ripard@bootlin.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ linux-sunxi <linux-sunxi@googlegroups.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Will Deacon <will.deacon@arm.com>
-
-commit 91b2d3442f6a44dce875670d702af22737ad5eff upstream.
-
-The arm64 futex code has some explicit dereferencing of user pointers
-where performing atomic operations in response to a futex command. This
-patch uses masking to limit any speculative futex operations to within
-the user address space.
-
-Signed-off-by: Will Deacon <will.deacon@arm.com>
-Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
----
- arch/arm64/include/asm/futex.h | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
-
-diff --git a/arch/arm64/include/asm/futex.h b/arch/arm64/include/asm/futex.h
-index 34d4d2e2f561..8ab6e83cb629 100644
---- a/arch/arm64/include/asm/futex.h
-+++ b/arch/arm64/include/asm/futex.h
-@@ -53,9 +53,10 @@
- 	: "memory")
- 
- static inline int
--arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
-+arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *_uaddr)
- {
- 	int oldval = 0, ret, tmp;
-+	u32 __user *uaddr = __uaccess_mask_ptr(_uaddr);
- 
- 	pagefault_disable();
- 
-@@ -93,15 +94,17 @@ arch_futex_atomic_op_inuser(int op, int oparg, int *oval, u32 __user *uaddr)
- }
- 
- static inline int
--futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *uaddr,
-+futex_atomic_cmpxchg_inatomic(u32 *uval, u32 __user *_uaddr,
- 			      u32 oldval, u32 newval)
- {
- 	int ret = 0;
- 	u32 val, tmp;
-+	u32 __user *uaddr;
- 
--	if (!access_ok(VERIFY_WRITE, uaddr, sizeof(u32)))
-+	if (!access_ok(VERIFY_WRITE, _uaddr, sizeof(u32)))
- 		return -EFAULT;
- 
-+	uaddr = __uaccess_mask_ptr(_uaddr);
- 	asm volatile("// futex_atomic_cmpxchg_inatomic\n"
- ALTERNATIVE("nop", SET_PSTATE_PAN(0), ARM64_HAS_PAN, CONFIG_ARM64_PAN)
- "	prfm	pstl1strm, %2\n"
--- 
-2.21.0.rc0.269.g1a574e7a288b
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyOCBBdWcgMjAxOSBhdCAxMjo1MiwgQWxlamFuZHJvIEdvbnrDoWxlego8YWxlamFu
+ZHJvLmdvbnphbGV6LmNvcnJlb0BnbWFpbC5jb20+IHdyb3RlOgo+Cj4gRWwgMjcvOC8xOSBhIGxh
+cyAxNToyNCwgVWxmIEhhbnNzb24gZXNjcmliacOzOj4gQXNzdW1pbmcgdGhpcyBzaG91bGQgZ28g
+c3RhYmxlIGFzIHdlbGw/IFBlcmhhcHMgeW91IGNhbiBmaW5kIGEKPiA+IHJlbGV2YW50IGNvbW1p
+dCB0aGF0IHdlIGNhbiBwdXQgYXMgYSBmaXhlcyB0YWcgYXMgd2VsbD8KPiA+Cj4gPiBLaW5kIHJl
+Z2FyZHMKPiA+IFVmZmUKPgo+IFRoZSBtb3N0IHJlbGV2YW50IGNvbW1pdCBJJ3ZlIGZvdW5kIHRo
+YXQgaXMgcmVsYXRlZCB0byBlbmFibGluZyBERFIgc3BlZWRzCj4gb24gSDYgYm9hcmRzIGlzIHRo
+aXMgb25lOiBodHRwczovL2dpdGh1Yi5jb20vdG9ydmFsZHMvbGludXgvY29tbWl0LzA3YmFmYzFl
+MzUzNmE0ZTNjNDIyZGJkMTMzNDE2ODhiNTRmMTU5YmIgLgo+IEJ1dCBpdCBkb2Vzbid0IGFkZHJl
+c3MgdGhlIEg2IFNvQyBzcGVjaWZpY2FsbHksIHNvIEkgZG91YnRlZCB3aGV0aGVyIGl0IHdvdWxk
+Cj4gYmUgYXBwcm9waWF0ZSB0byBtYXJrIHRoaXMgcGF0Y2ggYXMgZml4aW5nIGl0LCBhbmQgb3B0
+ZWQgdG8gbm90IGRvIGl0LiBJIGRvbid0Cj4gbWluZCBhZGRpbmcgdGhhdCB0YWcgaWYgaXQncyBh
+cHByb3BpYXRlLCB0aG91Z2ggOi0pCgpIYXJkIHRvIHNheSB3aGF0IG1ha2VzIHNlbnNlIGhlcmUs
+IGJ1dCBob3cgYWJvdXQgcGlja2luZyB0aGlzIGJlbG93IGluc3RlYWQ/CgpGaXhlczogMGEyM2Yx
+YWQ4OGZjICgiZHQtYmluZGluZzogbW1jOiBzdW54aTogYWRkIEg2IGNvbXBhdGlibGUgKHdpdGgK
+QTY0IGZhbGxiYWNrKSIpCgo+Cj4gT24gdGhlIG90aGVyIGhhbmQsIEknbSBub3Qgc3VyZSB0aGF0
+IEkgdW5kZXJzdG9vZCBjb3JyZWN0bHkgd2hhdCBkbyB5b3UgbWVhbiBieQo+IHRoaXMgcGF0Y2gg
+Z29pbmcgc3RhYmxlLCBidXQgSSBtaWdodCBzYXkgdGhlIGNoYW5nZXMgdGhlbXNlbHZlcyBhcmUg
+c3RhYmxlIGFuZCB3b3JrLgo+IFRoZSBvbmx5IGRvd25zaWRlIEkgY2FuIHRoaW5rIG9mIHRvIHRo
+ZW0gaXMgdGhhdCB0aGV5IGFyZSBhIGtpbmQgb2Ygd29ya2Fyb3VuZCB0aGF0Cj4gcmVkdWNlcyBw
+ZXJmb3JtYW5jZSBvbiBINiBib2FyZHMgYW5kL29yIGVNTUMgbm90IGFmZmVjdGVkIGJ5IHRoaXMg
+cHJvYmxlbSAoYXJlIHRoZXJlCj4gYW55PyksIHVubGVzcyBkZXZpY2UgdHJlZXMgYXJlIGNoYW5n
+ZWQuCgpBZGRpbmcgYSBzdGFibGUgdGFnIGFuZCBhIGZpeGVzIHRhZyBmb3IgdGhlIGNvbW1pdCwg
+bWFrZXMgbWFpbnRhaW5lcnMKb2Ygc3RhYmxlIGtlcm5lbHMgdG8gdHJ5IHRvIGJhY2twb3J0IHRo
+aXMgY29tbWl0IGFuZCBmaXggdGhlIHByb2JsZW0KZm9yICJvbGRlciIga2VybmVscy4KCktpbmQg
+cmVnYXJkcwpVZmZlCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
+LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
+by9saW51eC1hcm0ta2VybmVsCg==
