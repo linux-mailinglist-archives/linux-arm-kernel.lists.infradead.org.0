@@ -2,88 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8970FA1946
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:49:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08333A1953
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 13:49:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iVX5/DBoSXcDrp8xmON5zSXdnzOSg+NJ3dJhOqQJpTc=; b=F9R61Iteklwhle
-	gx7sSS2D7NNObsshH5ioh8NUdnwcIs0X9FirgixZE0hbttyK3ZLYfGo6JZtIJbWbkjFLR7QEOgc1h
-	hnQKlO/Hja0Q/flm+E+znd2BqWP01kvmOSFTpjFTEmwxahxCrKU3qBcb+gZK7ecsu2XDDo3p4F+in
-	rFBRP7lwEXjCgFde8EkihkoGHGRpLIBIxbTEkuTkLycGOzo2u3NxgjEH99aAKAFqjTS7chIPenA9x
-	iqvgvcndpQepPbzf0X0+iiLvip9XXLrB15aBdRF2bUE1m4sngQCaphYJDMGrhENa52ZBRjwZ89O4j
-	IGQqTkd6UghgKL4E3QeA==;
+	List-Owner; bh=E6wb/UO3XC+p9El6MxwiXQOEgWa+2UxqsytQNfNfgXY=; b=aMrqThE0boenWb
+	w8WBEQicNkGEl8wYwfNg2GKV+tw2MbUnL0ZWfMN1pXPcmxM18vfcRTF8jD93TDa+TwooMQsa892ST
+	KvH4v0y9b2/KE0hVdI9TU/E5FDlhJ/VEJSi6SKrqGEfURr8Q6vENO2TSNboMGPYBjgGvRP/C1BTa6
+	eL2cWkSQMeGZA1wVzFCwYIdcVH2s8114Zftc5NlWKaUqJwlhWLaIhgH40F1Zh0lp0dL0rF7pMC3nv
+	gW66XASCVfRh1iWTP1Q6mnftsg549ewVT+/l5YDwfx5tpbhxoB+1juP9ScYFTe+NGTUXJxyKeZxVQ
+	vKdswe9LLcgoGcLoGKOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3IvJ-0003By-41; Thu, 29 Aug 2019 11:49:05 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i3IvZ-0003WN-4X; Thu, 29 Aug 2019 11:49:21 +0000
+Received: from conssluserg-03.nifty.com ([210.131.2.82])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3Img-0002ST-E7
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:40:16 +0000
-Received: by mail-pf1-x441.google.com with SMTP id i30so1862164pfk.9
+ id 1i3Ism-0000ru-7W
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 11:46:30 +0000
+Received: from mail-vs1-f48.google.com (mail-vs1-f48.google.com
+ [209.85.217.48]) (authenticated)
+ by conssluserg-03.nifty.com with ESMTP id x7TBk4v1010353
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 29 Aug 2019 20:46:05 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-03.nifty.com x7TBk4v1010353
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1567079165;
+ bh=jJHAKRHFRUzF/5jWYYKHoeNpyJFG8X4zd/Hk645vV1s=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=FR2lZSyoTN0KEKnwc4pXOJULo6oFfgZ4oMDCJPqQws/UAF4tOiv/G9gNRRlylUM70
+ /HDF76gpmnV29LClsim6CYan+gHWKmIA8zouhAArtdeWnHkYTEMTO3z57gkZ3RE3Op
+ H7XCYN867bK/c/Y5yxEzevUmbQQZl/KsaJVUX5btY2kuTwUsSnkq8pe8glDLnzmBUX
+ wGy7fvvpxBxmpu+H8gSnB/sVHwtepY0c/dM7R9TYoiuVHjMI+oPn1gmhIYcNEolY/O
+ 2SgUdaZ+jrxcE/PuE8ualfGbOt9kOfSxoKrDoWDRaPTeFu7b+bN7zstzTpQLPM8W5w
+ 5j6MuK6hAKafQ==
+X-Nifty-SrcIP: [209.85.217.48]
+Received: by mail-vs1-f48.google.com with SMTP id 62so2182886vsl.5
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 04:40:10 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=NYPdFLxnP2SpVPuKchfoNl7WNRTdf28Sddkoq+zSktk=;
- b=Ip9Rj1WgWixO0eEXukO7vDK+ZT/ww9GvUEQkD4LC64n0/0Qc8GDEpoiJuF0HhCPuHv
- 8k4jneSJtvEEBym3sMHR53AkA3eg71HYWuNxXW1CcXtubN79R/IgzxxMfWiolR6p76mJ
- RjT3LqZ8+4eLAnLRK0mUAkZvRBlAjc5cHW/67Mk1xB4JqrGKuXSDRUSAqoGeI+vFf12T
- KA592ORTLduKPak+3fJDP31m5Q3P9d2+SPjjxhWGqlOA6xMEpymJ+Y1tqS7eJD8fFxp3
- 3grDR3y9gQgOb/Z2rRaY8jXXMc0dRwtsv0403OLzRGTji/E1Fsrui/kqBTZ5Z56MRqN4
- oE5A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=NYPdFLxnP2SpVPuKchfoNl7WNRTdf28Sddkoq+zSktk=;
- b=NqNRCHwr+tQ5sKtOY1Msr/YrjuBXeS5NmiJWJtWi5peLzJcVyn+Y7vP/2rgG8XsyEY
- 4Ic0CS3aB+FdEb5QB1oQr/Aoni1bFWvyMFoN3osR6SZRpHWXBnmc/k6oqxKMg2K6xvxh
- I7m6dXD+GRgn/zrLzrf7BQ36Vn/hdqDaOa8aAothQV3eNNuPUW6NDC54NRgRxpZuymgf
- V14/y7MxJDuVbHlqCbe70wyJ6NyfjKH2EO+XiGIGdF2tTvVZcTYXJmSBXfWUBLe8poNG
- DJLCQhzS2RbVTGtqI2MqH7z97KAjeicyCMNN8KGz4Bc7e3lGTgKzvf5w32e9z1+BKdg8
- pU7Q==
-X-Gm-Message-State: APjAAAVAr4lQuK1D6T/8jrntLZBoVQFME03mrMvDe5p1XxH8VWcRWwqB
- GDmqPg95ehx7yrnyQ6f9Uul+PQ==
-X-Google-Smtp-Source: APXvYqzEAzoTB6eQRNtv7b/1zJHW4m8QqYQpqNOMdCVDQ9YzPCbag3DRbr3h+bUoBTWPo4qrzC12pA==
-X-Received: by 2002:a65:50c5:: with SMTP id s5mr7913573pgp.368.1567078809383; 
- Thu, 29 Aug 2019 04:40:09 -0700 (PDT)
-Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id a18sm3924333pfn.156.2019.08.29.04.40.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 29 Aug 2019 04:40:08 -0700 (PDT)
-Date: Thu, 29 Aug 2019 17:10:06 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: stable@vger.kernel.org
-Subject: Re: [PATCH ARM32 v4.4 V2 00/47] V4.4 backport of arm32 Spectre patches
-Message-ID: <20190829114006.ptxnynqcetqbprbm@vireshk-i7>
-References: <cover.1564646727.git.viresh.kumar@linaro.org>
+ Thu, 29 Aug 2019 04:46:05 -0700 (PDT)
+X-Gm-Message-State: APjAAAVGY9vRWmd17NZ8ESxHmR7RQxUfeVANqZheVSN3nJuUYsMIgZ8L
+ o9VP9111nhPY8FtuaWWaNGibhwbYyT8HVZXk24E=
+X-Google-Smtp-Source: APXvYqySzvmeE9kiWjvNGM1iaAxnZ+QgH8m0ESiSIlhk3/0sUZoqbPgAj7pYaewNuKSsBX5H2zvSqil85IeqcrkN9II=
+X-Received: by 2002:a67:fe12:: with SMTP id l18mr5139562vsr.54.1567079164044; 
+ Thu, 29 Aug 2019 04:46:04 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cover.1564646727.git.viresh.kumar@linaro.org>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <20190506223334.1834-1-nicoleotsuka@gmail.com>
+ <20190506223334.1834-3-nicoleotsuka@gmail.com>
+ <CAK7LNARacEorb38mVBw_V-Zvz-znWgBma1AP1-z_5B_xZU4ogg@mail.gmail.com>
+ <CAK7LNAQfYBCoChMV=MOwcUyVoqRkrPWs7DaWdzDqjBe18gGiAQ@mail.gmail.com>
+ <20190825011025.GA23410@lst.de>
+ <CAK7LNAQb1ZHr=DiHLNeNRaQExMuXdDOV4sFghoGbco_Q=Qzb8g@mail.gmail.com>
+ <20190826073320.GA11712@lst.de>
+ <CAK7LNATYOLEboUTO4qPx2z7cqwDrHBO1HFHG8VzZEJ15STv+nw@mail.gmail.com>
+ <20190827075021.GA953@lst.de>
+ <CAK7LNAQZ+bueZZzSoMADmgLjWNvijHRV=wLQzN_kvLG3b5Uu+w@mail.gmail.com>
+ <20190827115541.GB5921@lst.de>
+ <CAK7LNAQ_nQcBt=xH1-h+=co85mTxFgbe+_46Gu4LaNsDSm+kYA@mail.gmail.com>
+ <CAK7LNATvz=TTe+3OyLrtUqDuTUTn1dg9Sk-t3BD_OFZfViCPMw@mail.gmail.com>
+In-Reply-To: <CAK7LNATvz=TTe+3OyLrtUqDuTUTn1dg9Sk-t3BD_OFZfViCPMw@mail.gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Thu, 29 Aug 2019 20:45:27 +0900
+X-Gmail-Original-Message-ID: <CAK7LNASs2qkpGY_BkL--hvmKm3FJ9sEK4+v5VVYc1_CrowAB4w@mail.gmail.com>
+Message-ID: <CAK7LNASs2qkpGY_BkL--hvmKm3FJ9sEK4+v5VVYc1_CrowAB4w@mail.gmail.com>
+Subject: Re: [PATCH v2 2/2] dma-contiguous: Use fallback alloc_pages for
+ single pages
+To: Christoph Hellwig <hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_044010_687325_59D2ADB8 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_044628_516164_D2BDD177 
+X-CRM114-Status: GOOD (  20.92  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
+ no trust [210.131.2.82 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -98,32 +95,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Julien Thierry <Julien.Thierry@arm.com>, Marc Zyngier <marc.zyngier@arm.com>,
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, Tony Lindgren <tony@atomide.com>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will.deacon@arm.com>,
- mark.brown@arm.com, guohanjun@huawei.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Max Filippov <jcmvbkbc@gmail.com>, Marek Szyprowski <m.szyprowski@samsung.com>,
+ Stephen Rothwell <sfr@canb.auug.org.au>, Joerg Roedel <joro@8bytes.org>,
+ Russell King <linux@armlinux.org.uk>, Thierry Reding <treding@nvidia.com>,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Nicolin Chen <nicoleotsuka@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>,
+ Chris Zankel <chris@zankel.net>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ David Woodhouse <dwmw2@infradead.org>, linux-mmc <linux-mmc@vger.kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, iommu@lists.linux-foundation.org,
+ iamjoonsoo.kim@lge.com, Robin Murphy <robin.murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 01-08-19, 13:45, Viresh Kumar wrote:
-> Hello,
-> 
-> Here is an attempt to backport arm32 spectre patches to v4.4 stable
-> tree. This was last tried around an year back by David Long [1]. He was
-> backporting only a subset (18) of patches and this series include a lot
-> of other patches present in Russell's spectre branch.
+On Wed, Aug 28, 2019 at 9:23 PM Masahiro Yamada
+<yamada.masahiro@socionext.com> wrote:
+>
+> On Wed, Aug 28, 2019 at 7:53 PM Masahiro Yamada
+> <yamada.masahiro@socionext.com> wrote:
+> >
+> > Hi Christoph,
+> >
+> > On Tue, Aug 27, 2019 at 8:55 PM Christoph Hellwig <hch@lst.de> wrote:
+> > >
+> > > On Tue, Aug 27, 2019 at 06:03:14PM +0900, Masahiro Yamada wrote:
+> > > > Yes, this makes my driver working again
+> > > > when CONFIG_DMA_CMA=y.
+> > > >
+> > > >
+> > > > If I apply the following, my driver gets back working
+> > > > irrespective of CONFIG_DMA_CMA.
+> > >
+> > > That sounds a lot like the device simply isn't 64-bit DMA capable, and
+> > > previously always got CMA allocations under the limit it actually
+> > > supported.  I suggest that you submit this quirk to the mmc maintainers.
+> >
+> >
+> > I tested v5.2 and my MMC host controller works with
+> > dma_address that exceeds 32-bit physical address.
+> >
+> > So, I believe my MMC device is 64-bit DMA capable.
+> >
+> > I am still looking into the code
+> > to find out what was changed.
+>
+>
+> I retract this comment.
+>
+> Prior to bd2e75633c8012fc8a7431c82fda66237133bf7e,
+> the descriptor table for ADMA is placed within the
+> 32-bit phys address range, not exceeds the 32-bit limit.
+>
+> Probably, my device is not 64-bit capable.
+>
+> I will talk to the hardware engineer,
+> and check the hardware spec just in case.
+>
 
-It's been almost 4 weeks since the first post on this. Can someone
-please help with reviews ?
 
-thanks.
+After looking more into my hardware,
+I found out how to fix my driver:
+https://lore.kernel.org/patchwork/patch/1121600/
+
+
 
 -- 
-viresh
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
