@@ -2,70 +2,144 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CFEEA1377
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 10:17:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 64ADFA13A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 10:28:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9OsP/3/kxoh7WMUvxAyWdXey8ho4E15ANUV3TIYkKgc=; b=HS2l0PPoFLNurR
-	HwPjt9ansK+CpJlKRTYX+jNKu0Qtx/uky2/Q24eAaFQlq37+QNv0fnUIHOqjSfNv/ZeM4Ut/y214R
-	xKIxjRMhT6KvbDA9YF2hHlDSGPVjCFTp547XNmzWahaykezlNylj/il1aHD071A5HKm6HTgX6f6Iw
-	nwPPFMZW+mrHdbjlQi4p/mbt9nG5HZL8QElbrlMUcSyiyzuTNhfjtXe9EWyjjNbj237dc9dTpgyzu
-	9BPmOuYHL677mt7JUoBLM8KJPxwpHJNtfw4Myt//pQ9GiYppncu7SrDQtWTnLPO17hhOpiA4yYOpL
-	zy5lzYmVH+IgwgZx3Nvg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NikrqSoU9uq6f4IS4G+A4AA5yfh7MxnR2UmXATuTwMw=; b=AmBApHSVryz0s0
+	y7hQNdo+4MeFcTLbE3zwrxQWcgoiqRUD8FNAyTAU+JcFa+J1XeOgZPiozyk9Ci520hkVQlkWZGS0k
+	yVtxqr4Bi5TaifttelYxXvkTsp7lpzdPVVf+Wa0p4WDsuWpmF/gAjIQEUxbNzBtF2kDu2lekrOQQ3
+	EapGtb3lClVw9sXTrvs1Mouab0hJ2HwqrVZKjgFrgDBaYGihYlmWevPGJfKEVYAvFbdGWQuggxsqV
+	lXBE4y8dqzPNa6Rr+yBC5zDPgWHNfGsHt43LMjgjog1bTA+3rClPdtYxZEoJmGXJ9PO7+u37SR/Xn
+	Ge4k9DW5j26GSWMbU0VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3Fcf-0003AE-FG; Thu, 29 Aug 2019 08:17:37 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i3Fn2-0006EH-KE; Thu, 29 Aug 2019 08:28:20 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3FcQ-00039H-E6
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 08:17:24 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <mfe@pengutronix.de>)
- id 1i3FcG-0000XF-QW; Thu, 29 Aug 2019 10:17:12 +0200
-Received: from mfe by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <mfe@pengutronix.de>)
- id 1i3FcG-00015O-AG; Thu, 29 Aug 2019 10:17:12 +0200
-Date: Thu, 29 Aug 2019 10:17:12 +0200
-From: Marco Felsch <m.felsch@pengutronix.de>
-To: robin <robin@protonic.nl>
-Subject: Re: [PATCH v2 1/2] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Message-ID: <20190829081712.timamprawezzbesn@pengutronix.de>
-References: <20190827123216.32728-1-robin@protonic.nl>
- <20190828091550.pdc57wanu6twew5p@pengutronix.de>
- <6d353af709ea545cc34abca5c40674e3@protonic.nl>
+ id 1i3Fmq-0006CZ-8s
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 08:28:10 +0000
+Received: by mail-wr1-x441.google.com with SMTP id b16so2450982wrq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 29 Aug 2019 01:28:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=CcH8S6mcl9XC4eQag+I2TqcIX7okr0gHsoQ3xqAOqmI=;
+ b=iFur9JMY0lJLohdyPHJHP3xON311PiV7KcfFbFp15tSdZevNZUNUy5lOkv5iVstetb
+ lNQysnJuKJo2ZAnYiAJjGGUajvvhis4JlXRxk9eCbrUbYJJGbUktDGtH2d0cwewyB5t/
+ 3CErl8NDZDPxJ9dGJLNRELfV6Ufh/e7SyA3aOGObh6JDFyh75GPtZ9zqSuK33M7IqMJW
+ 4UAZka4JwUd7//LzbH2bR1rG9g0iJhaBAhgO52vM/YatVE//a+1Omi1qZ8YUuuRRqv8e
+ D5p4JU11xzJALxgRKVwLExkExGu/7hsbluyB89msHl44fK5D1lS2SIZ23Z5EBaHvjxkt
+ ki6A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=CcH8S6mcl9XC4eQag+I2TqcIX7okr0gHsoQ3xqAOqmI=;
+ b=HpL0e/MUZiAxBAo9AbRkHXt2T+WdMTg2VZ3rOJ8M8F/kXGG+TXEV9TpKGEvOEmbnTa
+ +Dvio8vzKyZ0gdQZfU+IwqK5TyZqoXught6WVMnA1n6lirgOo+2DANIuqJt1zAsp6mDg
+ n7ZzCrXDRRM5YxmJVGUSN9+i/lTUZjIu6JHug88eYMVeTSP6VGrMmOepJZQB5bC7Adlb
+ 1M5JzQSq9EtlM3JzFt4NWqXvGqpQPGAoLKQWeIKnwiYL3VP4Eb0968FVlt9qjcsnwOVj
+ 8AIFK6YlCVbwI7B0LoZijxyfjegWMOO+tV5/UbQNLxAUu0tJaxoU1AKIG6NMCmpJXpU8
+ AZZQ==
+X-Gm-Message-State: APjAAAUOs8jhtVHIsqD2POhi7Unsr3QiXnli3WV+GluPYtwwd1kiT03y
+ Y7EFL64/4Ub4Yro+VaWIzwuqKG5JB317DQ==
+X-Google-Smtp-Source: APXvYqwJliYCGmU0lF2xxGLowTfgOGMmmQpb1L201aa3+n6oM4g/xGVOnrj7gr6c7crih7WHq+7KCA==
+X-Received: by 2002:adf:f206:: with SMTP id p6mr10184785wro.216.1567067284342; 
+ Thu, 29 Aug 2019 01:28:04 -0700 (PDT)
+Received: from [192.168.1.62] (176-150-251-154.abo.bbox.fr. [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id
+ a192sm2247911wma.1.2019.08.29.01.28.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 29 Aug 2019 01:28:03 -0700 (PDT)
+Subject: Re: [PATCHv1 0/3] Odroid c2 missing regulator linking
+To: Anand Moon <linux.amoon@gmail.com>, Rob Herring <robh+dt@kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jerome Brunet <jbrunet@baylibre.com>, Kevin Hilman <khilman@baylibre.com>
+References: <20190828202723.1145-1-linux.amoon@gmail.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <8c40f334-c723-b524-857c-73734b7d0827@baylibre.com>
+Date: Thu, 29 Aug 2019 10:28:02 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <6d353af709ea545cc34abca5c40674e3@protonic.nl>
-X-Sent-From: Pengutronix Hildesheim
-X-URL: http://www.pengutronix.de/
-X-IRC: #ptxdist @freenode
-X-Accept-Language: de,en
-X-Accept-Content-Type: text/plain
-X-Uptime: 09:54:24 up 103 days, 14:12, 63 users,  load average: 0.06, 0.01,
- 0.00
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: mfe@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+In-Reply-To: <20190828202723.1145-1-linux.amoon@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_011722_635431_B2764094 
-X-CRM114-Status: GOOD (  42.64  )
+X-CRM114-CacheID: sfid-20190829_012808_342711_4B602082 
+X-CRM114-Status: GOOD (  13.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,312 +151,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree @ vger . kernel . org" <devicetree@vger.kernel.org>,
- Fabio Estevam <festevam@gmail.com>, Adam Ford <aford173@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- Dmitry Torokhov <dmitry.torokhov@gmail.com>,
- "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
- Robin Gong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+On 28/08/2019 22:27, Anand Moon wrote:
+> Below small changes help re-configure or fix missing inter linking
+> of regulator node.
+> 
+> Changes based top on my prevoius series.
 
-On 19-08-29 09:24, robin wrote:
-> Hi Marco,
-> 
-> On 2019-08-28 11:15, Marco Felsch wrote:
-> > Hi Robin,
-> > 
-> > thanks for the patch.
-> > 
-> > On 19-08-27 14:32, Robin van der Gracht wrote:
-> > > The first generation i.MX6 processors does not send an interrupt
-> > > when the
-> > > power key is pressed. It sends a power down request interrupt if the
-> > > key is
-> > > released before a hard shutdown (5 second press). This should allow
-> > > software to bring down the SoC safely.
-> > > 
-> > > For this driver to work as a regular power key with the older SoCs,
-> > > we need
-> > > to send a keypress AND release when we get the power down request irq.
-> > > 
-> > > Signed-off-by: Robin van der Gracht <robin@protonic.nl>
-> > > ---
-> > >  .../devicetree/bindings/crypto/fsl-sec4.txt   | 16 ++++--
-> > >  drivers/input/keyboard/Kconfig                |  2 +-
-> > >  drivers/input/keyboard/snvs_pwrkey.c          | 52
-> > > ++++++++++++++++---
-> > 
-> > Can we split this so the dt-bindings are a standalone patch? IMHO this
-> > is the usual way because the maintainer can squash them on there needs.
-> 
-> Not sure what you mean, do you want me to make a separate patch for the
-> devicetree binding documentation here?
-
-Yes.
-
-> > Also it would be cool to document the changes. A common place for
-> > changes is after the '---' or on the cover-letter.
-> 
-> Agreed!
-> 
-> v1 -> v2:
->  - Nolonger altering the existing compatible string, just add a second one.
->  - Moved the event emiting work out of the irq handler to the timer handler.
->  - Assign hwtype directly to of_device_id->data instead of a struct
->    platform_device_id entry which has it's .driver_data set to hwtype.
->  - Document the new device tree binding.
->  - Update commit message to make more clear why we want to make this change.
-> 
-> > 
-> > >  3 files changed, 57 insertions(+), 13 deletions(-)
-> > > 
-> > > diff --git a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> > > b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> > > index 2fe245ca816a..e4fbb9797082 100644
-> > > --- a/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> > > +++ b/Documentation/devicetree/bindings/crypto/fsl-sec4.txt
-> > > @@ -420,14 +420,22 @@ EXAMPLE
-> > >  =====================================================================
-> > >  System ON/OFF key driver
-> > > 
-> > > -  The snvs-pwrkey is designed to enable POWER key function which
-> > > controlled
-> > > -  by SNVS ONOFF, the driver can report the status of POWER key and
-> > > wakeup
-> > > -  system if pressed after system suspend.
-> > > +  The snvs-pwrkey is designed to enable POWER key function which is
-> > > controlled
-> > > +  by SNVS ONOFF. It can wakeup the system if pressed after system
-> > > suspend.
-> > > +
-> > > +  There are two generations of SVNS pwrkey hardware. The first
-> > > generation is
-> > > +  included in i.MX6 Solo, DualLite and Quad processors. The second
-> > > generation
-> > > +  is included in i.MX6 SoloX and newer SoCs.
-> > > +
-> > > +  Second generation SNVS can detect and report the status of POWER
-> > > key, but the
-> > > +  first generation can only detect a key release and so emits an
-> > > instantaneous
-> > > +  press and release event when the key is released.
-> > > 
-> > >    - compatible:
-> > >        Usage: required
-> > >        Value type: <string>
-> > > -      Definition: Mush include "fsl,sec-v4.0-pwrkey".
-> > > +      Definition: Must include "fsl,sec-v4.0-pwrkey" for i.MX6
-> > > SoloX and newer
-> > > +	   or "fsl,imx6qdl-snvs-pwrkey" for older SoCs.
-> > > 
-> > >    - interrupts:
-> > >        Usage: required
-> > > diff --git a/drivers/input/keyboard/Kconfig
-> > > b/drivers/input/keyboard/Kconfig
-> > > index 7c4f19dab34f..937e58da5ce1 100644
-> > > --- a/drivers/input/keyboard/Kconfig
-> > > +++ b/drivers/input/keyboard/Kconfig
-> > > @@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
-> > >  	depends on OF
-> > >  	help
-> > >  	  This is the snvs powerkey driver for the Freescale i.MX
-> > > application
-> > > -	  processors that are newer than i.MX6 SX.
-> > > +	  processors.
-> > > 
-> > >  	  To compile this driver as a module, choose M here; the
-> > >  	  module will be called snvs_pwrkey.
-> > > diff --git a/drivers/input/keyboard/snvs_pwrkey.c
-> > > b/drivers/input/keyboard/snvs_pwrkey.c
-> > > index 5342d8d45f81..d71c44733103 100644
-> > > --- a/drivers/input/keyboard/snvs_pwrkey.c
-> > > +++ b/drivers/input/keyboard/snvs_pwrkey.c
-> > > @@ -29,6 +29,11 @@
-> > >  #define DEBOUNCE_TIME 30
-> > >  #define REPEAT_INTERVAL 60
-> > > 
-> > > +enum imx_snvs_hwtype {
-> > > +	IMX6SX_SNVS,	/* i.MX6 SoloX and newer */
-> > > +	IMX6QDL_SNVS,	/* i.MX6 Solo, DualLite and Quad */
-> > > +};
-> > > +
-> > >  struct pwrkey_drv_data {
-> > >  	struct regmap *snvs;
-> > >  	int irq;
-> > > @@ -37,14 +42,41 @@ struct pwrkey_drv_data {
-> > >  	int wakeup;
-> > >  	struct timer_list check_timer;
-> > >  	struct input_dev *input;
-> > > +	enum imx_snvs_hwtype hwtype;
-> > >  };
-> > > 
-> > > +static const struct of_device_id imx_snvs_pwrkey_ids[] = {
-> > > +	{
-> > > +		.compatible = "fsl,sec-v4.0-pwrkey",
-> > > +		.data = (const void *)IMX6SX_SNVS,
-> > > +	},
-> > > +	{
-> > > +		.compatible = "fsl,imx6qdl-snvs-pwrkey",
-> > > +		.data = (const void *)IMX6QDL_SNVS,
-> > > +	},
-> > > +	{ /* sentinel */ },
-> > > +};
-> > > +MODULE_DEVICE_TABLE(of, imx_snvs_pwrkey_ids);
-> > 
-> > Can we keep this on the original place if you are using ...
-> > 
-> > > +
-> > >  static void imx_imx_snvs_check_for_events(struct timer_list *t)
-> > >  {
-> > >  	struct pwrkey_drv_data *pdata = from_timer(pdata, t, check_timer);
-> > >  	struct input_dev *input = pdata->input;
-> > >  	u32 state;
-> > > 
-> > > +	if (pdata->hwtype == IMX6QDL_SNVS) {
-> > > +		/*
-> > > +		 * The first generation i.MX6 SoCs only sends an interrupt on
-> > > +		 * button release. To mimic power-key usage, we'll prepend a
-> > > +		 * press event.
-> > > +		 */
-> > > +		input_report_key(input, pdata->keycode, 1);
-> > 
-> > Missing input_sync() here?
-> 
-> Yes you are right. Odd that systemd powerkey handling didn't complain.
-> 
-> > 
-> > > +		input_report_key(input, pdata->keycode, 0);
-> > > +		input_sync(input);
-> > > +		pm_relax(input->dev.parent);
-> > > +		return;
-> > > +	}
-> > > +
-> > >  	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
-> > >  	state = state & SNVS_HPSR_BTN ? 1 : 0;
-> > > 
-> > > @@ -67,13 +99,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int
-> > > irq, void *dev_id)
-> > >  {
-> > >  	struct platform_device *pdev = dev_id;
-> > >  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
-> > > +	unsigned long expire = jiffies;
-> > >  	u32 lp_status;
-> > > 
-> > >  	pm_wakeup_event(pdata->input->dev.parent, 0);
-> > > 
-> > >  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
-> > > -	if (lp_status & SNVS_LPSR_SPO)
-> > > -		mod_timer(&pdata->check_timer, jiffies +
-> > > msecs_to_jiffies(DEBOUNCE_TIME));
-> > > +	if (lp_status & SNVS_LPSR_SPO) {
-> > > +		if (pdata->hwtype == IMX6SX_SNVS)
-> > > +			expire += msecs_to_jiffies(DEBOUNCE_TIME);
-> > > +		mod_timer(&pdata->check_timer, expire);
-> > 
-> > Is this desired because the timer gets triggered earlier.
-> 
-> Yes, since the first generation has debounce implemented in hardware,
-> we dont need to add another one.
-> 
-> Now looking at it, maybe I should change the conditional to:
-> 
-> if (pdata->hwtype != IMX6QDL_SNVS)
->         expire += msecs_to_jiffies(DEBOUNCE_TIME);
-> 
-> to make this more clear.
-
-Maybe we should add:
-
-  if (pdata->hwtype != IMX6QDL_SNVS)
-          expire = jiffies + msecs_to_jiffies(DEBOUNCE_TIME);
-
-So we can ensure the correct DEBOUNCE time for the other SoC's.
+For the serie:
+Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 
 > 
-> > 
-> > > +	}
-> > > 
-> > >  	/* clear SPO status */
-> > >  	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
-> > > @@ -93,6 +129,7 @@ static int imx_snvs_pwrkey_probe(struct
-> > > platform_device *pdev)
-> > >  	struct pwrkey_drv_data *pdata = NULL;
-> > >  	struct input_dev *input = NULL;
-> > >  	struct device_node *np;
-> > > +	const struct of_device_id *match;
-> > >  	int error;
-> > > 
-> > >  	/* Get SNVS register Page */
-> > > @@ -100,6 +137,10 @@ static int imx_snvs_pwrkey_probe(struct
-> > > platform_device *pdev)
-> > >  	if (!np)
-> > >  		return -ENODEV;
-> > > 
-> > > +	match = of_match_node(imx_snvs_pwrkey_ids, np);
-> > > +	if (!match)
-> > > +		return -ENODEV;
-> > 
-> > ... of_device_get_match_data() here.
+> [0] https://patchwork.kernel.org/cover/11113091/
 > 
-> of_device_get_match_data() returns NULL on error. In this case, because I
-> assigned integer values to the .data pointers, casting NULL back to an
-> integer will result in a valid hwtype.
+> TOOD: Add support for DVFS GXBB odroid board in next series.
+
+I'm curious how you will do this !
+
 > 
-> I could declare a special struct with a 'quirks' field like they did in the
-> flexcan diver: 'drivers/net/can/flexcan.c'.
+> Best Regards
+> -Anand
 > 
-> Use of_device_get_match_data() to get it, and define a quirk like:
-> SNVS_QUIRK_NO_BTN_PRESS_IRQ. This might also improve readability.
-
-IMHO we don't need that check because of:
-
-8<-----------------------------
-  ...
-
-  np = pdev->dev.of_node
-  if (!np)
-  	return -ENODEV;
-
-  ...
-8<-----------------------------
-
-So we can asign it directly.
-
-> > While reading the rm it seems that
-> > the snvs block has a dedicated version register. IMHO this could be a
-> > better way to apply the change also to existing devices with old
-> > firmware.
+> Anand Moon (3):
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to P5V0
+>     regulator
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to
+>     VDDIO_AO3V3 regulator
+>   arm64: dts: meson: odroid-c2: Add missing regulator linked to HDMI
+>     supply
 > 
-> I thought the same thing, and fully agree with you. However I do not have
-> a way to determine which versions are out there. Since I couldn't find any
-> documentation on this, and I only have i.MX6 S/DL, D/Q and UL laying around.
-
-@NXP Kernel Team
-Can we get some more information here?
-
-Regards,
-  Marco
-
-> Regards,
-> Robin van der Gracht
+>  .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 44 ++++++++++++++++---
+>  1 file changed, 38 insertions(+), 6 deletions(-)
 > 
 
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
