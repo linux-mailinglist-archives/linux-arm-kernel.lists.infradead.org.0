@@ -2,76 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A148EA22B0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 19:48:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC4A4A22DB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 19:56:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o5DKJprHZbeZH2Iqso9uWKXALseRYdjw/td5AerKz30=; b=rHAmbQ9qksFuzf
-	7U9L1NSXUl3KnUuAcmuHb331PTVHLPxTlfykiLMHJuX3yN9gDSkZrbkU+gSgAybKW1ulMQwb28AHL
-	/5P+bsOcItYND/USJxrNv8bBK4UoUOf+sEnjOz94gjPFUlIu63b5TZCBaAVKeC7YMoym6aVUrAB/h
-	C5k/CdXFRhOq441ZXonwATCOyh0TTDj6bJ1i4/OIgNhO0fgE+O+PI9ZKOzgYiRU1IGRCKRLk572Mi
-	Y9bJ3GrsmV4CTlDGxpiNIwny25PCdBH3y8FNHiXyteGIO0NO70E7Tk/+WRd2ztLxkYp8Yd0gq0pHV
-	knDgp0talh8WkRiJ2MIw==;
+	List-Owner; bh=vEocuK8S0YpvyUC/0SECxHMm+fdIbX0geZ3BoOvRm3U=; b=Fxj3L3AdM7GFz5
+	GpfwBHHUWwp1xsYOPmTC019SGafuOsOggs3/6FsbUilK81VbiRsUvb+ItNK2jYbjfbPdLVid+w+8Z
+	x3/N0f/+Oh/fOhaw7/m2Whp7LvyBFidyAVzsz6/LazFrFeLX+nh/j7s9cUdH4Ez7epBKeLcOxlste
+	wnBQJTZdeHzzFWZUY30HSCuQhn0t+gxL+YrLpSlI1cLolIvXlI5Ozgxo8P5P670sjwt6GwO1559HS
+	CEiQKCaFp8HYsgkrB2Nr0rt010oykm+WStMXWb/qLMJZWGVkqdfiWLwnCfwEEiaLti94Hif4+NZW5
+	mPjIb8VqSJ17jxjbaFqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3OWh-0004wo-1L; Thu, 29 Aug 2019 17:48:03 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i3OeJ-00005R-8D; Thu, 29 Aug 2019 17:55:55 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3OWR-0004wQ-9M
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 17:47:48 +0000
-Received: by mail-pf1-x441.google.com with SMTP id 26so195742pfp.9
+ id 1i3Oe5-00004y-AQ
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 17:55:42 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y9so2576574pfl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 10:47:47 -0700 (PDT)
+ Thu, 29 Aug 2019 10:55:41 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=0xvDFXohsTBiXQteUhF//5H4PlMVw/jPy8bTloT6sZ0=;
- b=fFRWa3CUxlEe4Zp3arLzv0l9uJ5VFCXzlxp7hwuyHTspodZ4d0KlP1SEtSURGaGnDD
- NpjlV4bLNpEZ9dYCXXrLvBBUwpbpLSVGgy2n1j5Kno7RuIHtWFph5O7jqi8wzHVHUfgh
- hHB+twcs0O8tbyltexBmXk7tgghg35kUiw3WmGt0BCJuvNJd7OwQTPRMQ6hjgUBP6Ca5
- bKbNxsIlwDYjUgro8pvYejc07lknU8/m+1dBYI0PMmQbk94cvhK96H+zyQQt+GOowZuZ
- kb/v5PDZO17NN+6W8/x5TMRQ6xU8J1p8NxwRZl395l/VonfFwVkTyw9ONPzKU4KjaIzM
- XK2Q==
+ :cc; bh=nTiBhHkHMJRRmQp07hUV0eTzQBNN9VPe28f+dHC32dM=;
+ b=NS3pQoXOlk00UmrmHrPEqnCHWkBOdmybZhoBYlRrrTrQU4XeHRJlHepqqzCHaudweq
+ nozNVhD6dU3HvOMUJoSosGKcZo6Wml/oo8lo9ByhvBDc9FIAZvk+KRHuZ1v9VevA9gLk
+ td8G6R4rcfnAMfcTDBIonCHxcHaG5Vb3j4Emd0gBswHlS687CitNrP2YSbdbSgYfBIxt
+ 2DQY8vQG8buTm7B9zF8YNNBk4101xhrLsWIaZYvYPWwpNqmfPN8qFw0wV9R/FG12jye6
+ JzcEXtr3XUPcJxQSIG5ggs3ue0i0/ZPXIsurvTwkPoc92xzUuSmx4H0wzpdohrk1GZOq
+ If6A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0xvDFXohsTBiXQteUhF//5H4PlMVw/jPy8bTloT6sZ0=;
- b=NhmDcsyfIT0jOmEq0QrvS8+x7X38U5DM2CjAui294pgjRInPgieELc+y8K1j12R+gt
- 5U7anjTvAc/rgGRQ6fxln2INRWShrP+/Uz/wkwg//7MOhDNtA8ceXFOfN/aUVPeoJ2XW
- aafrWaD2r2/D91HUi6jjOuZeDwm5GbEgu4W6Dj0Ko7xhRIRO9s5shT9YgGQhmIA+SM3H
- NPXI+LfyTUt6KXRy0xuzfRs/xA5Nqav3ZY2keetEdAR1meXBIpSilN3SoQmOW8Q5tKFO
- WCSAYLpORpnjaE7DeYJUR6pZJfukLasALyciaJY3C+ENwTKe3A0iAiHA5oNILrerGtUt
- Rtmg==
-X-Gm-Message-State: APjAAAWmWWvSos8sfHZvNWCItrBm+s2oFGKaEJm1EajNi7XV6uFsT1n1
- lW+YkH2p7c2LjaTuJM6TU6d7irmJxvdddhpo1voajA==
-X-Google-Smtp-Source: APXvYqxq90no7VcBcm4J1ASuW3u/DGByPmO36ANysRUYdi9XY8JNfjdFRB3JuVAqolGWEE6gOnsE3jSeweKXDDtJGOY=
-X-Received: by 2002:a17:90a:3ae7:: with SMTP id
- b94mr11295208pjc.73.1567100866053; 
- Thu, 29 Aug 2019 10:47:46 -0700 (PDT)
+ bh=nTiBhHkHMJRRmQp07hUV0eTzQBNN9VPe28f+dHC32dM=;
+ b=oawEnx3HjzFKwCv/HzRUF+EpgICYsKRq4bAt3kPP1u2h2aCNrspDrhPuRcU0ZaXLre
+ wcQa64SL79g9SV8If4yeA1gkMnXdlPRKHSqD0tYXSRPUMYykRlIPUsU6uyTibwD1Jmnf
+ 6z48cFeFiUoJ8n3S/E+F6PwgcKQ+GExG//ET+WS5laiiRjSI/EeRpyEABJWqtnkc6gX/
+ 6D0Lzr6iuY0XrzEVUj+9lRunbGSVesAZ+KIeOaTpRYjFcVVcAjzsLYO1uz9HVjLas2ma
+ lIGFhZCtYL2bARGX/lCZM1fe6kTj3TSvSjlfIEKU14OBy+u/HhY0ujen+rjzigIWNW2Z
+ 8gkg==
+X-Gm-Message-State: APjAAAUgjF0+JoxbEzLRSduKaP6bH6y6ApHNPaY5SV6agUr4/YmLkK7r
+ lE62KhtUGTZD8CBhlhODVALNqwkgJqi6/Tgqe0AGS8VSdeM=
+X-Google-Smtp-Source: APXvYqwmiSojdNKlubI2KCVcr3kC3Pv2OqAeJD8KlOzXov8+oindrhkau4GKVBYmSkoU6p6dVPaOPeMV5OZOmuzhjtg=
+X-Received: by 2002:a62:cec4:: with SMTP id y187mr12922205pfg.84.1567101339951; 
+ Thu, 29 Aug 2019 10:55:39 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-6-will@kernel.org>
-In-Reply-To: <20190829154834.26547-6-will@kernel.org>
+References: <20190829062635.45609-1-natechancellor@gmail.com>
+In-Reply-To: <20190829062635.45609-1-natechancellor@gmail.com>
 From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Thu, 29 Aug 2019 10:47:34 -0700
-Message-ID: <CAKwvOdmRa+cc7tEzHrOwcDt28OmAHEWiysy64FzJCU6d25k5QQ@mail.gmail.com>
-Subject: Re: [PATCH v5 05/10] arm64: atomics: Remove atomic_ll_sc compilation
- unit
-To: Will Deacon <will@kernel.org>
+Date: Thu, 29 Aug 2019 10:55:28 -0700
+Message-ID: <CAKwvOdkXSWE+_JCZsuQdkCSrK5pJSp9n_Cd27asFP0mHBfHg6w@mail.gmail.com>
+Subject: Re: [PATCH] ARM: Emit __gnu_mcount_nc when using Clang 10.0.0 or newer
+To: Nathan Chancellor <natechancellor@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_104747_356702_E9933DCB 
-X-CRM114-Status: GOOD (  16.24  )
+X-CRM114-CacheID: sfid-20190829_105541_388480_0B02CA49 
+X-CRM114-Status: GOOD (  20.75  )
 X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
@@ -99,79 +96,85 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Tri Vo <trong@android.com>,
- Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Ard.Biesheuvel@arm.com,
- andrew.murray@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>,
+Cc: Arnd Bergmann <arnd@arndb.de>, Russell King <linux@armlinux.org.uk>,
+ Stefan Agner <stefan@agner.ch>, LKML <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Matthias Kaehlcke <mka@chromium.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 8:48 AM Will Deacon <will@kernel.org> wrote:
+On Wed, Aug 28, 2019 at 11:27 PM Nathan Chancellor
+<natechancellor@gmail.com> wrote:
 >
-> From: Andrew Murray <andrew.murray@arm.com>
+> Currently, multi_v7_defconfig + CONFIG_FUNCTION_TRACER fails to build
+> with clang:
 >
-> We no longer fall back to out-of-line atomics on systems with
-> CONFIG_ARM64_LSE_ATOMICS where ARM64_HAS_LSE_ATOMICS is not set.
+> arm-linux-gnueabi-ld: kernel/softirq.o: in function `_local_bh_enable':
+> softirq.c:(.text+0x504): undefined reference to `mcount'
+> arm-linux-gnueabi-ld: kernel/softirq.o: in function `__local_bh_enable_ip':
+> softirq.c:(.text+0x58c): undefined reference to `mcount'
+> arm-linux-gnueabi-ld: kernel/softirq.o: in function `do_softirq':
+> softirq.c:(.text+0x6c8): undefined reference to `mcount'
+> arm-linux-gnueabi-ld: kernel/softirq.o: in function `irq_enter':
+> softirq.c:(.text+0x75c): undefined reference to `mcount'
+> arm-linux-gnueabi-ld: kernel/softirq.o: in function `irq_exit':
+> softirq.c:(.text+0x840): undefined reference to `mcount'
+> arm-linux-gnueabi-ld: kernel/softirq.o:softirq.c:(.text+0xa50): more undefined references to `mcount' follow
 >
-> Remove the unused compilation unit which provided these symbols.
+> clang can emit a working mcount symbol, __gnu_mcount_nc, when
+> '-meabi gnu' is passed to it. Until r369147 in LLVM, this was
+> broken and caused the kernel not to boot because the calling
+> convention was not correct. Now that it is fixed, add this to
+> the command line when clang is 10.0.0 or newer so everything
+> works properly.
 >
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> Signed-off-by: Will Deacon <will@kernel.org>
+> Link: https://github.com/ClangBuiltLinux/linux/issues/35
+> Link: https://bugs.llvm.org/show_bug.cgi?id=33845
+> Link: https://github.com/llvm/llvm-project/commit/16fa8b09702378bacfa3d07081afe6b353b99e60
+> Signed-off-by: Nathan Chancellor <natechancellor@gmail.com>
 > ---
->  arch/arm64/lib/Makefile       | 19 -------------------
->  arch/arm64/lib/atomic_ll_sc.c |  3 ---
->  2 files changed, 22 deletions(-)
->  delete mode 100644 arch/arm64/lib/atomic_ll_sc.c
+>  arch/arm/Makefile | 6 ++++++
+>  1 file changed, 6 insertions(+)
 >
-> diff --git a/arch/arm64/lib/Makefile b/arch/arm64/lib/Makefile
-> index 33c2a4abda04..f10809ef1690 100644
-> --- a/arch/arm64/lib/Makefile
-> +++ b/arch/arm64/lib/Makefile
-> @@ -11,25 +11,6 @@ CFLAGS_REMOVE_xor-neon.o     += -mgeneral-regs-only
->  CFLAGS_xor-neon.o              += -ffreestanding
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index c3624ca6c0bc..7b5a26a866fc 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -112,6 +112,12 @@ ifeq ($(CONFIG_ARM_UNWIND),y)
+>  CFLAGS_ABI     +=-funwind-tables
 >  endif
 >
-> -# Tell the compiler to treat all general purpose registers (with the
-> -# exception of the IP registers, which are already handled by the caller
-> -# in case of a PLT) as callee-saved, which allows for efficient runtime
-> -# patching of the bl instruction in the caller with an atomic instruction
-> -# when supported by the CPU. Result and argument registers are handled
-> -# correctly, based on the function prototype.
-> -lib-$(CONFIG_ARM64_LSE_ATOMICS) += atomic_ll_sc.o
-> -CFLAGS_atomic_ll_sc.o  := -ffixed-x1 -ffixed-x2                        \
-> -                  -ffixed-x3 -ffixed-x4 -ffixed-x5 -ffixed-x6          \
-> -                  -ffixed-x7 -fcall-saved-x8 -fcall-saved-x9           \
-> -                  -fcall-saved-x10 -fcall-saved-x11 -fcall-saved-x12   \
-> -                  -fcall-saved-x13 -fcall-saved-x14 -fcall-saved-x15   \
-> -                  -fcall-saved-x18 -fomit-frame-pointer
+> +ifeq ($(CONFIG_CC_IS_CLANG),y)
+> +ifeq ($(shell test $(CONFIG_CLANG_VERSION) -ge 100000; echo $$?),0)
+> +CFLAGS_ABI     +=-meabi gnu
+> +endif
+> +endif
+> +
 
-+ Tri (who implemented support for -fcall-saved-x*, -ffixed-x* in
-Clang).  I won't be sad to see the use of these flags go.
+Thanks for the patch!  I think this is one of the final issues w/ 32b
+ARM configs when building w/ Clang.
 
-> -CFLAGS_REMOVE_atomic_ll_sc.o := $(CC_FLAGS_FTRACE)
-> -GCOV_PROFILE_atomic_ll_sc.o    := n
-> -KASAN_SANITIZE_atomic_ll_sc.o  := n
-> -KCOV_INSTRUMENT_atomic_ll_sc.o := n
-> -UBSAN_SANITIZE_atomic_ll_sc.o  := n
-> -
->  lib-$(CONFIG_ARCH_HAS_UACCESS_FLUSHCACHE) += uaccess_flushcache.o
+I'm not super enthused about the version check.  The flag is indeed
+not recognized by GCC, but I think it would actually be more concise
+with $(cc-option) and no compiler or version check.
+
+Further, I think that the working __gnu_mcount_nc in Clang would
+better be represented as marking the arch/arm/KConfig option for
+CONFIG_FUNCTION_TRACER for dependent on a version of Clang greater
+than or equal to Clang 10, not conditionally adding this flag. (We
+should always add the flag when supported, IMO.  __gnu_mcount_nc's
+calling convention being broken is orthogonal to the choice of
+__gnu_mcount_nc vs mcount, and it's the former's that should be
+checked, not the latter as in this patch.
+
+>  # Accept old syntax despite ".syntax unified"
+>  AFLAGS_NOWARN  :=$(call as-option,-Wa$(comma)-mno-warn-deprecated,-Wa$(comma)-W)
 >
->  obj-$(CONFIG_CRC32) += crc32.o
-> diff --git a/arch/arm64/lib/atomic_ll_sc.c b/arch/arm64/lib/atomic_ll_sc.c
-> deleted file mode 100644
-> index b0c538b0da28..000000000000
-> --- a/arch/arm64/lib/atomic_ll_sc.c
-> +++ /dev/null
-> @@ -1,3 +0,0 @@
-> -#include <asm/atomic.h>
-> -#define __ARM64_IN_ATOMIC_IMPL
-> -#include <asm/atomic_ll_sc.h>
 > --
-> 2.11.0
+> 2.23.0
 >
 
 
