@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6218A2830
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0261AA283B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 22:42:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=aXEhIL1tHLYB8tVmgYNAy2zjrPlQCf21P7cWh4NmbpI=; b=noh876ZA6wXzqm51GDOs3b2cx
-	5oYlA/GcXX72tWf0DOzAjJ84sb2JIWsFvkMCfTK1+B4m9DoHw+O0xVCEzoFJDhDU7FO6ilDE/pHqq
-	stzZ9xSGQq5gDEoVORtFN3+08W89gZ9CaekCrVbTpfdDF5O++n0WZGNi9gR7FXX6bYwF2Xj99vmK6
-	+zTDpWn6iJRJMI2ddq/1++L4Yx594OSKyVbszljJ/9J8INj2OsQhU0MMt97i4XdBYZdIJ19IRNMxU
-	sOZ0wdI5l98SWdN8BaYEZM/lq3Yvyg5JKxtSNJZ6qb7KaOgRPFBm5IdveOIGEL1XMN09pO94uP+bH
-	8Y/W9Wxfw==;
+	 bh=1Yp2CulWDimgQmxXiz3Bx1KMSQB85FdFgs+UQMfMHKM=; b=NT5eDezzy3NRYwxo98EyE6T4W
+	d+tJ+LShgBnBoLjJM7QtmUJsgze1Cwv0bFxQAslnjL64k71SIdfGqoBL12wSH/YFWyXlU64YgiX3e
+	OOAgrkpWhypbFoUjXBOhVp+0Hfdf4nwk/0Du/LiwSO3Gu6XhQlgRx2L87e/FZSva695o/ENqqwNYA
+	k6f0Rw0jC3vYC7z9/pHq07LNWbvCOeuK1L9bv/UWBWgxchNiPt1iNucq+drZSA2qfUPWpiFLIxf4P
+	hY6BN05DB8rKQRChkY0tFxEH9WG0hrFnPjkSbDuUkkONPwCbeXjASnkz/PWVyAT7f/khemgnUyDSC
+	/Rfm7dviQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3RCV-0002Sz-Ky; Thu, 29 Aug 2019 20:39:23 +0000
+	id 1i3RFC-00047q-9j; Thu, 29 Aug 2019 20:42:10 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3RCL-0002Sb-T0
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:39:15 +0000
+ id 1i3RF1-00047S-Hf
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 20:42:00 +0000
 Received: from localhost (p54B33070.dip0.t-ipconnect.de [84.179.48.112])
- by pokefinder.org (Postfix) with ESMTPSA id 1426E2C001C;
- Thu, 29 Aug 2019 22:39:13 +0200 (CEST)
-Date: Thu, 29 Aug 2019 22:39:12 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id C83F22C001C;
+ Thu, 29 Aug 2019 22:41:58 +0200 (CEST)
+Date: Thu, 29 Aug 2019 22:41:58 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
-To: Uwe =?utf-8?Q?Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
-Subject: Re: [PATCH] [RFC] i2c: imx: make use of format specifier %dE
-Message-ID: <20190829203912.GU3740@ninjato>
-References: <20190829042905.4850-1-uwe@kleine-koenig.org>
+To: Ray Jui <ray.jui@broadcom.com>
+Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
+Message-ID: <20190829204158.GV3740@ninjato>
+References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+ <a2b0ccc1-63d5-177d-2b54-d79c65057907@broadcom.com>
 MIME-Version: 1.0
-In-Reply-To: <20190829042905.4850-1-uwe@kleine-koenig.org>
+In-Reply-To: <a2b0ccc1-63d5-177d-2b54-d79c65057907@broadcom.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_133914_090858_5473B1CC 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20190829_134159_735094_FE126E14 
+X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -58,90 +60,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jani Nikula <jani.nikula@linux.intel.com>, Petr Mladek <pmladek@suse.com>,
- Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
- Jonathan Corbet <corbet@lwn.net>, Shawn Guo <shawnguo@kernel.org>,
- linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
- Steven Rostedt <rostedt@goodmis.org>, Oleksij Rempel <linux@rempel-privat.de>,
- Enrico Weigelt <lkml@metux.net>, linux-i2c@vger.kernel.org,
- kernel@pengutronix.de, Andrew Morton <akpm@linux-foundation.org>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org,
- NXP Linux Team <linux-imx@nxp.com>
-Content-Type: multipart/mixed; boundary="===============0828287274735500309=="
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lori Hikichi <lori.hikichi@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Shivaraj Shetty <sshetty1@broadcom.com>,
+ Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5837218413217287186=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0828287274735500309==
+--===============5837218413217287186==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="8Tx+BDMK09J610+l"
+	protocol="application/pgp-signature"; boundary="o3Y+93sjbn8Tp8J9"
 Content-Disposition: inline
 
 
---8Tx+BDMK09J610+l
-Content-Type: text/plain; charset=utf-8
+--o3Y+93sjbn8Tp8J9
+Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Aug 29, 2019 at 06:29:05AM +0200, Uwe Kleine-K=C3=B6nig wrote:
-> I created a patch that teaches printk et al to emit a symbolic error
-> name for an error valued integer[1]. With that applied
+
+> Given that my name is also on the Signed-off-by since I helped to rewrite
+> part of the patch, I'm not going to add my Reviewed-by tag here.
 >=20
-> 	dev_err(&pdev->dev, "can't enable I2C clock, ret=3D%dE\n", ret);
->=20
-> emits
->=20
-> 	... can't enable I2C clock, ret=3DEIO
->=20
-> if ret is -EIO. Petr Mladek (i.e. one of the printk maintainers) had
-> concerns if this would be well received and worth the effort. He asked
-> to present it to a few subsystems. So for now, this patch converting the
-> i2c-imx driver shouldn't be applied yet but it would be great to get
-> some feedback about if you think that being able to easily printk (for
-> example) "EIO" instead of "-5" is a good idea. Would it help you? Do you
-> think it helps your users?
+> Please help to review.
 
-Yes, it would help me. And users, too, I am quite sure. For me, if I mix
-up two numbers while debugging, I am hunting ghosts for a while until I
-realize my mistake. So:
-
-Acked-by: Wolfram Sang <wsa@the-dreams.de>
-
-I think the main drawback is that ERRORCODES in vsprintf.c now need
-maintenance, but I think it is worth the effort. I'd be interested in
-the overhead in size this causes, but I also think it is worth the
-effort. (It could even be compiled out if we have some generic Kconfig
-symbol for smaller kernels).
-
-Thanks,
-
-   Wolfram
+Outstanding iproc patches are next in my queue.
 
 
---8Tx+BDMK09J610+l
+--o3Y+93sjbn8Tp8J9
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1oN+wACgkQFA3kzBSg
-KbaAsw/+KQeS89gkyeBgAuyg+ZnDAtyMHwIHqkX4EkYR3abYoCEQARebjkC5PomS
-r9Ie2ueeR8sZe2MjpIds7ajUq/VwCb7oSstIWsS7mpiQsFDmMH7UxrpeuUdL6yP9
-3DxNgaIfKpf7kw/AbOMU0KBtb28tzG8qkw7+iGu6W7U5/H7XCGHTmHm0a5K2sEvk
-ajZxyXeaXGZL4Y5EYyTRK+p4Allrr169BsOzh2oZhnn0WGxgC0S5Afkq3WcCs8gr
-id+80az2VZ7wZkDklu2/c3TO5PkROViHnAISfXtqeyrD7fqnEhpsH4aX7iEuSed+
-GSa67N0uMO+0Pap/5Y+CgXazG1EGgc3UYUywgxLw9vRneNy6yXLTZ3S375Xb3GOF
-L3BOqOW2lbVchDr9t+igYPEIWH63DEWfyrVZyWR0BfXWCkNQhjOM3r+9X7YvXdQG
-fTu0Jwxt8sEHcaug7L0PDEGfU3ym/lcGSwiJSKSc1bwVbthJSpDtgfnY8B+KU+1x
-q/cXdcP1CLOykl1FGJ4YeGP+cVoNYDRd61DkU6hY44vVdZ+ZgoEKnz2wr4w2JDzb
-3SLqPQpu7SBw/YmmFWliCfbKhiPxhWlyZfNh/qRYj/k4gEVfW/SGyQ5odeFLRY5P
-lE64DMYszcabfUgh0QGiE78PeeekqZd0kyIRLKWytvfN5YXHKTI=
-=XXiC
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1oOJYACgkQFA3kzBSg
+KbbbyBAAjquRkJJZCHvzp6ow/QsO6YcL0zRxe7eofXkwatruJwf6SEPIuUOoqc7s
+OCrfJ+EhvBm3O4BV2GT0uNHGfCTVpBhPYaNzO66eFK4ZUg3ekuvh+qyAMZtMnjl+
+YW4BNxwhHtBfwXBsuJum1xoU0Z7+gyoGrShOKYutdrrEWZGa0Fi7CcwOtonTz1Ag
+6aEv8Yg8V56bpIOeNij6YeVi0aRSzFehUbdHMK6LzhY8bEcVPx8es7rKiKLYP5QX
+zRc+axs98l/CaS4lp+ZIfm/hnSY0NhyJvNWucb2o7pYHK0j5GpclyR3mvGhiVEpT
+TOMCLuXzjMl2x2BPcj19V4RnmbuQj6VlRr2aic895xqfaq47IjP59pzdzdW/2MWR
+5fkmZu01ioFDKkNcvpHS6ugFsHyu21Bx85f48VJPaAGCAD9Ib25xF2yXkIXnvgJ7
+MupHsMQNg4/6UX8+FsR0YYLeJ+SoIVaPFunEj1r/fy+u1Dx8x+We1pDp0T6wPVYm
++Ph5VgIb3r2m/ZXCjf9Obn8mGYGnKO9+urh4E4h2nwS7pNTH+BYp6dvokK1vDjYe
+HITJ8jc7GHep6D4OpnJqQWn34Qio4kAZPOSur6pNgHEaig+shY/8gw1sL+4ae21E
+afLD0ZgRF8BSFx5A8QMi17YGWvwN/hRK8rACO+c0x502U+7Upgw=
+=oQ7R
 -----END PGP SIGNATURE-----
 
---8Tx+BDMK09J610+l--
+--o3Y+93sjbn8Tp8J9--
 
 
---===============0828287274735500309==
+--===============5837218413217287186==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -152,5 +127,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0828287274735500309==--
+--===============5837218413217287186==--
 
