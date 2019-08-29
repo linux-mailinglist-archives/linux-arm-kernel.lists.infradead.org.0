@@ -2,86 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C06F1A2123
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 18:41:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3013FA2184
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 18:55:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=W0KJqoPMRWvqbgAKNN5Rk72JrJBEocTINT+qxNPnvV8=; b=oXg0dkTiDZsqyAbtshcsV37qK
-	yCHzQptvG79EWLSwxSaiiXsdvR7pPLxerwnXskXAjy5AfOS/sgNaWLc+ZGULlHpY2XBJQ2qfb7tiu
-	8ynvMlQJout8yaKgMoPMq09LDhPJla+Tr0Hcd5Caq2vfjv5nU2FnEIsLw7K0DYXlSpdVqzDMFzP6t
-	Andcj7V+/Rnt7TNX7Wa3WvBqKw6sUdQUuaqqmRNVUytNSm7HOgk6K+hY9rRPzFQzo2yrUvz+AOLf3
-	BCYB86faldSxi3AAUnMF3VYqZK/YXQ9kHCrA6czXxrpHiVjTiYg7UxHk9CuWQRfudgtbD6Fp80Sd/
-	Sf5RewkBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8ZGSQ67jpnPqdWqfmKSDkOKBFJJF59l83AXXXNITbi4=; b=cYWU6DMd0pU3Xi
+	Wa1ZVLkQ8S4sJWNrE+LPRQ/T+BEUeTH/5P8UPiYxJEmMISWSjJGEqS5aNqMwE1OLbBo+WAEz0D+uI
+	U2szfgmmO0ghTTlb63N6FXYDvxyticPBDkwnQGhCyUOe8kw436HKEn7WT2TxeJS1br+kZZHCPVNAM
+	YukBxWNlXlSV7GneS5BIen9LOYtiES1i4RovwN6sSOkYAmvRti3MJmhf4d7e6y/BzIAoJk3sUNrMe
+	WR6VailsPZVVatvvyWefH+1ntGiqRwG+NnokIKvg8CeCazSCHfaDkAT7g6iVMAkJG7u06pfMJCLi6
+	yjdXKkTXHr0B7NC+ScQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3NUP-000791-Qy; Thu, 29 Aug 2019 16:41:37 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i3Nhf-00036E-Lk; Thu, 29 Aug 2019 16:55:19 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3NU8-000779-JU
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 16:41:23 +0000
-Received: by mail-wr1-x444.google.com with SMTP id e16so4133123wro.5
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 09:41:20 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=7yR+2btUdVZzugNInICo4vnQNuN1EMp975yLN+tXmcs=;
- b=Nr51xhgt9tORYUWvBQQm95aMApchSwYclJnaXP/uN2D3PCnFROMeV96h47hEqCZtFq
- jd2Mp/8M0EoSfJLApxXhqm7cUoLqCSUjbOCu48TbMNufS9t2Ml1/z58Lx25+PKfbjP6/
- DtSUtMiXvQtBXJsxgNxyU2xGgSRI6WA+/wJjYWLVncs+CxNLYXP2mwhO/HekUlslp9eM
- rng+dCtd6tZ9lwQdaQhIyMEUVZT2vPtf26jsE03Xx7+4GaH8VvIyyM49gErUvkyyhqOM
- MoTnitGGbFgUyQXNCpqvElfqYeV+iPo2B6+BrC7Y1o8jWndezMS2efOabGZwIHbtleeX
- OjTw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=7yR+2btUdVZzugNInICo4vnQNuN1EMp975yLN+tXmcs=;
- b=PiY3PYZLoOEWi5fF9wQp9NCpaOsAE7845OrVZSBluFBM76dVYpL0z8Dpa55P13INcg
- mD60YC7iPo7mxNPIQyLbkgB6LwedDoMTDeLWprAebC3Sr4jVngp+4p4/Z8A5ud39iL3j
- uz4UH1q/U40qCVegTqiVjGKHGG3aBopugipoLltr6KQLJBQLn7q2Qw1glWM214W8csTc
- ZiwkmjNm5owcWeFchUn2+/zn8DXTd/yfB1XovXkxk+iyKR1/Dk3gbGv++c0BTRv4tppE
- vALrCbgfUhuXN/ur7NG0JjuY0/TtV+J22fnRKPzqHvjElF8ouWjYuSxoNgLhpybGft5r
- 06AQ==
-X-Gm-Message-State: APjAAAVIwutAMKL7+LYxpakeDLFYkHYF+3MKYEDeVOwGN5jeoSrjdUxB
- FwwdTNYNsNPHm6rU0D63Yo0=
-X-Google-Smtp-Source: APXvYqzH/Fb2rRJgC7QIBqkUDelILLM7o7FXNLzJWMFGznShGN50OrlVbmIDnTmkWuRLO1lAUsOcRA==
-X-Received: by 2002:adf:ee41:: with SMTP id w1mr12591389wro.102.1567096878914; 
- Thu, 29 Aug 2019 09:41:18 -0700 (PDT)
-Received: from localhost (pD9E51890.dip0.t-ipconnect.de. [217.229.24.144])
- by smtp.gmail.com with ESMTPSA id s64sm6260070wmf.16.2019.08.29.09.41.17
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 09:41:17 -0700 (PDT)
-Date: Thu, 29 Aug 2019 18:41:15 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V3 2/6] dt-bindings: PCI: tegra: Add PCIe slot supplies
- regulator entries
-Message-ID: <20190829164115.GD19842@ulmo>
-References: <20190828172850.19871-1-vidyas@nvidia.com>
- <20190828172850.19871-3-vidyas@nvidia.com>
- <20190829120329.GC13187@ulmo>
- <cd106d64-e06c-e7a2-d807-f5f080625363@nvidia.com>
+ id 1i3NhP-0002gS-Hy
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 16:55:05 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7AC6720828;
+ Thu, 29 Aug 2019 16:55:01 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567097703;
+ bh=/VTgbZqdE2KMU8VisDcl8s8EF6ypZ7TNvgYIDy5tZdE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=jS3sqQ778fYS240NKDFpTxHWBWVe7hFFi1k3zKFcvGz5Xnjmh3iCdDKzpa27XO2vp
+ 2RGaZ1hqiXMrZapXGLcHAtfyd3GMMEQGX1831EXMbvzU/9tj4um/DDhmGNP9e3luhx
+ Od9ofHNAHxDD5kk8aKOcCiJ25RhNlnhLRsfRTLaw=
+Date: Thu, 29 Aug 2019 17:54:58 +0100
+From: Will Deacon <will@kernel.org>
+To: linux-arm-kernel@lists.infradead.org
+Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+Message-ID: <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-11-will@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <cd106d64-e06c-e7a2-d807-f5f080625363@nvidia.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+Content-Disposition: inline
+In-Reply-To: <20190829154834.26547-11-will@kernel.org>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_094120_669440_427CC709 
-X-CRM114-Status: GOOD (  27.85  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190829_095503_655257_9643B487 
+X-CRM114-Status: GOOD (  13.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -91,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,171 +78,226 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org, kishon@ti.com,
- linux-tegra@vger.kernel.org, robh+dt@kernel.org, linux-pci@vger.kernel.org,
- bhelgaas@google.com, andrew.murray@arm.com, digetx@gmail.com,
- jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org, sagar.tv@gmail.com
-Content-Type: multipart/mixed; boundary="===============4411853027515207452=="
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ ndesaulniers@google.com, Ard.Biesheuvel@arm.com, andrew.murray@arm.com,
+ natechancellor@gmail.com, robin.murphy@arm.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
+> diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> index 95091f72228b..7fa042f5444e 100644
+> --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> @@ -23,6 +23,10 @@ asm_ops "\n"								\
+>  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+>  #endif
+>  
+> +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> +#define K
+> +#endif
 
---===============4411853027515207452==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="DiL7RhKs8rK9YGuF"
-Content-Disposition: inline
+Bah, I need to use something like __stringify when the constraint is used
+in order for this to get expanded properly. Updated diff below.
 
+Will
 
---DiL7RhKs8rK9YGuF
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+--->8
 
-On Thu, Aug 29, 2019 at 08:48:39PM +0530, Vidya Sagar wrote:
-> On 8/29/2019 5:33 PM, Thierry Reding wrote:
-> > On Wed, Aug 28, 2019 at 10:58:46PM +0530, Vidya Sagar wrote:
-> > > Add optional bindings "vpcie3v3-supply" and "vpcie12v-supply" to desc=
-ribe
-> > > regulators of a PCIe slot's supplies 3.3V and 12V provided the platfo=
-rm
-> > > is designed to have regulator controlled slot supplies.
-> > >=20
-> > > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
-> > > ---
-> > > V3:
-> > > * None
-> > >=20
-> > > V2:
-> > > * None
-> > >=20
-> > >   .../devicetree/bindings/pci/nvidia,tegra194-pcie.txt      | 8 +++++=
-+++
-> > >   1 file changed, 8 insertions(+)
-> > >=20
-> > > diff --git a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pc=
-ie.txt b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> > > index 0ac1b867ac24..b739f92da58e 100644
-> > > --- a/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> > > +++ b/Documentation/devicetree/bindings/pci/nvidia,tegra194-pcie.txt
-> > > @@ -104,6 +104,12 @@ Optional properties:
-> > >      specified in microseconds
-> > >   - nvidia,aspm-l0s-entrance-latency-us: ASPM L0s entrance latency to=
- be
-> > >      specified in microseconds
-> > > +- vpcie3v3-supply: A phandle to the regulator node that supplies 3.3=
-V to the slot
-> > > +  if the platform has one such slot. (Ex:- x16 slot owned by C5 cont=
-roller
-> > > +  in p2972-0000 platform).
-> > > +- vpcie12v-supply: A phandle to the regulator node that supplies 12V=
- to the slot
-> > > +  if the platform has one such slot. (Ex:- x16 slot owned by C5 cont=
-roller
-> > > +  in p2972-0000 platform).
-> >=20
-> > There's an ongoing discussion regarding the use of optional power
-> > supplies and I'm wondering if we're not abusing this here. Why exactly
-> > are these regulators optional?
-> I made them optional because, the number and type of supplies typically d=
-epend on the
-> kind of slot the controller is owning. If it is a CEM slot, then, it need=
-s 3.3V & 12V
-> supplies and if it is an M.2 Key-E/M slot, it needs only 3.3V supply. Als=
-o, if there are
-> on-board PCIe endpoint devices, supplies may vary again from vendor to ve=
-ndor.
-> Considering all these, I made them optional instead of mandatory.
-> Also, I agree that regulator framework supplies a dummy regulator if we m=
-ake them mandatory
-> but doesn't supply one, but it does so with a warning print in the log wh=
-ich I feel is
-> an unwanted alert and to avoid that one has to supply dummy/fixed regulat=
-ors which again
-> seems an overkill when all of this can be addressed by making slot regula=
-tors optional.
-
-Okay. That sounds like a good reason to make these optional indeed.
-There is no way for the PCI controller to know exactly which regulators
-will be needed. The only case where it is known is that of the regular
-PCIe slot where the 3.3 V and 12 V are mandatory. But since it isn't
-always a standard PCIe slot that the controller drives, I think optional
-is okay in this case.
-
-Thierry
-
-> > The distinction is somewhat subtle, but the other way to look at
-> > modelling this in DT is that the supplies are in fact required, but may
-> > be connected to an always-on regulator with a fixed voltage. Or in some
-> > cases they may also be shorted to ground. In both cases the PCI
-> > controller, or rather the slot that the controller connects to, actually
-> > "requires" the supplies, it's just that we can get away without
-> > describing them because they can't be controlled anyway.
-> >=20
-> > Looking at the PCI connector pinout for PCI Express, I do see a bunch of
-> > +3.3 V and +12 V pins. To me that indicates that the 3.3 V and 12 V
-> > supplies are indeed required for PCI slots. I'm not sure about devices
-> > that are directly connected to the PCI controller, though. I'll need to
-> > go look at some schematics to get a better understanding of these.
-> >=20
-> > Bottom line: I'm wondering if we shouldn't really make these supplies
-> > mandatory and in case where we don't care either just leave them away
-> > (the regulator framework will supply a dummy regulator in that case) or
-> > hook them up to a fixed regulator if that matches the hardware design.
-> >=20
-> > Any thoughts?
-> >=20
-> > Thierry
-> >=20
-> > >   Examples:
-> > >   =3D=3D=3D=3D=3D=3D=3D=3D=3D
-> > > @@ -156,6 +162,8 @@ Tegra194:
-> > >   			  0xc2000000 0x18 0x00000000 0x18 0x00000000 0x4 0x00000000>;  /=
-* prefetchable memory (16GB) */
-> > >   		vddio-pex-ctl-supply =3D <&vdd_1v8ao>;
-> > > +		vpcie3v3-supply =3D <&vdd_3v3_pcie>;
-> > > +		vpcie12v-supply =3D <&vdd_12v_pcie>;
-> > >   		phys =3D <&p2u_hsio_2>, <&p2u_hsio_3>, <&p2u_hsio_4>,
-> > >   		       <&p2u_hsio_5>;
-> > > --=20
-> > > 2.17.1
-> > >=20
->=20
-
---DiL7RhKs8rK9YGuF
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl1oACkACgkQ3SOs138+
-s6EGvw//aC8g/p1/uH6bQaFYayqHbvSXJkcs+qLM1pXP6sQs+Y78dkyd0bFY5d3I
-eWq7JMsg5syZh6vKYm8rYUQoOvmhKvgGJ2ICfXTe5Jj9F3pS2pK6PCcF3OpZIopk
-N9rsnpwUm/N5966NBkZyikA9iQat2EPJXSJA917kV8bAhs2uu4/xxBO2joG9GLPb
-hWD6EtgywvtYlRhpJ7irFlVjJ8VOj5j3zUi6ZpedMrtU8Bx/llbz+1bnrvyVlMjY
-HtcN2ndkRacf4nwu8/nB5GIzucOAE6jiKmwjpfv0PwV1GHkj8QggDZ6U8YEK98i3
-cYBL2iGlQw+k3dJgPl5poUrHmyHxvphHt3eEnrbOqXwe3jFtC/z4cKtc0d2h0omo
-5OQzeXZ9DNP26b2NvCkz/JCQlSGzlCp6M/MiJQu4Iu53DTAR9S2T650QG4s/hMVF
-cBujoyFuAc9rXwB+uxrkHHcHZZFNXDTawC8LQJgWIAfa5v8bhgfWKdaHbjhb0Bee
-R7fHHclqVSU2J1K6cRJ1d1daqme8VloCxg+eClg72UxXXnEPqRPP/PJS7tyX9Dzp
-uJMC4JfgRu+xShFywcXH9oif3ufSqHBnfIUiWNnKefLu5w6Y3Fg10nj5Shj0k0UL
-Jjk6JzRLE/h8QkgmNs49r3r7NkjzFfm4GZ5xBC0n/VAeVRxxW/8=
-=RTQ7
------END PGP SIGNATURE-----
-
---DiL7RhKs8rK9YGuF--
-
-
---===============4411853027515207452==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+diff --git a/arch/arm64/Makefile b/arch/arm64/Makefile
+index 61de992bbea3..0cef056b5fb1 100644
+--- a/arch/arm64/Makefile
++++ b/arch/arm64/Makefile
+@@ -39,6 +39,12 @@ $(warning LSE atomics not supported by binutils)
+   endif
+ endif
+ 
++cc_has_k_constraint := $(call try-run,echo				\
++	'int main(void) {						\
++		asm volatile("and w0, w0, %w0" :: "K" (4294967295));	\
++		return 0;						\
++	}' | $(CC) -S -x c -o "$$TMP" -,,-DCONFIG_CC_HAS_K_CONSTRAINT=1)
++
+ ifeq ($(CONFIG_ARM64), y)
+ brokengasinst := $(call as-instr,1:\n.inst 0\n.rept . - 1b\n\nnop\n.endr\n,,-DCONFIG_BROKEN_GAS_INST=1)
+ 
+@@ -63,7 +69,8 @@ ifeq ($(CONFIG_GENERIC_COMPAT_VDSO), y)
+   endif
+ endif
+ 
+-KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst) $(compat_vdso)
++KBUILD_CFLAGS	+= -mgeneral-regs-only $(lseinstr) $(brokengasinst)	\
++		   $(compat_vdso) $(cc_has_k_constraint)
+ KBUILD_CFLAGS	+= -fno-asynchronous-unwind-tables
+ KBUILD_CFLAGS	+= $(call cc-disable-warning, psabi)
+ KBUILD_AFLAGS	+= $(lseinstr) $(brokengasinst) $(compat_vdso)
+diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+index 95091f72228b..7b012148bfd6 100644
+--- a/arch/arm64/include/asm/atomic_ll_sc.h
++++ b/arch/arm64/include/asm/atomic_ll_sc.h
+@@ -10,6 +10,8 @@
+ #ifndef __ASM_ATOMIC_LL_SC_H
+ #define __ASM_ATOMIC_LL_SC_H
+ 
++#include <linux/stringify.h>
++
+ #if IS_ENABLED(CONFIG_ARM64_LSE_ATOMICS) && IS_ENABLED(CONFIG_AS_LSE)
+ #define __LL_SC_FALLBACK(asm_ops)					\
+ "	b	3f\n"							\
+@@ -23,6 +25,10 @@ asm_ops "\n"								\
+ #define __LL_SC_FALLBACK(asm_ops) asm_ops
+ #endif
+ 
++#ifndef CONFIG_CC_HAS_K_CONSTRAINT
++#define K
++#endif
++
+ /*
+  * AArch64 UP and SMP safe atomic ops.  We use load exclusive and
+  * store exclusive to ensure that these are atomic.  We may loop
+@@ -44,7 +50,7 @@ __ll_sc_atomic_##op(int i, atomic_t *v)					\
+ "	stxr	%w1, %w0, %2\n"						\
+ "	cbnz	%w1, 1b\n")						\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: #constraint "r" (i));						\
++	: __stringify(constraint) "r" (i));				\
+ }
+ 
+ #define ATOMIC_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+@@ -63,7 +69,7 @@ __ll_sc_atomic_##op##_return##name(int i, atomic_t *v)			\
+ "	cbnz	%w1, 1b\n"						\
+ "	" #mb )								\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: #constraint "r" (i)						\
++	: __stringify(constraint) "r" (i)				\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -85,7 +91,7 @@ __ll_sc_atomic_fetch_##op##name(int i, atomic_t *v)			\
+ "	cbnz	%w2, 1b\n"						\
+ "	" #mb )								\
+ 	: "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)	\
+-	: #constraint "r" (i)						\
++	: __stringify(constraint) "r" (i)				\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -113,10 +119,15 @@ ATOMIC_OPS(sub, sub, J)
+ 	ATOMIC_FETCH_OP (_acquire,        , a,  , "memory", __VA_ARGS__)\
+ 	ATOMIC_FETCH_OP (_release,        ,  , l, "memory", __VA_ARGS__)
+ 
+-ATOMIC_OPS(and, and, )
++ATOMIC_OPS(and, and, K)
++ATOMIC_OPS(or, orr, K)
++ATOMIC_OPS(xor, eor, K)
++/*
++ * GAS converts the mysterious and undocumented BIC (immediate) alias to
++ * an AND (immediate) instruction with the immediate inverted. We don't
++ * have a constraint for this, so fall back to register.
++ */
+ ATOMIC_OPS(andnot, bic, )
+-ATOMIC_OPS(or, orr, )
+-ATOMIC_OPS(xor, eor, )
+ 
+ #undef ATOMIC_OPS
+ #undef ATOMIC_FETCH_OP
+@@ -138,7 +149,7 @@ __ll_sc_atomic64_##op(s64 i, atomic64_t *v)				\
+ "	stxr	%w1, %0, %2\n"						\
+ "	cbnz	%w1, 1b")						\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: #constraint "r" (i));						\
++	: __stringify(constraint) "r" (i));				\
+ }
+ 
+ #define ATOMIC64_OP_RETURN(name, mb, acq, rel, cl, op, asm_op, constraint)\
+@@ -157,7 +168,7 @@ __ll_sc_atomic64_##op##_return##name(s64 i, atomic64_t *v)		\
+ "	cbnz	%w1, 1b\n"						\
+ "	" #mb )								\
+ 	: "=&r" (result), "=&r" (tmp), "+Q" (v->counter)		\
+-	: #constraint "r" (i)						\
++	: __stringify(constraint) "r" (i)				\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -179,7 +190,7 @@ __ll_sc_atomic64_fetch_##op##name(s64 i, atomic64_t *v)		\
+ "	cbnz	%w2, 1b\n"						\
+ "	" #mb )								\
+ 	: "=&r" (result), "=&r" (val), "=&r" (tmp), "+Q" (v->counter)	\
+-	: #constraint "r" (i)						\
++	: __stringify(constraint) "r" (i)				\
+ 	: cl);								\
+ 									\
+ 	return result;							\
+@@ -208,9 +219,14 @@ ATOMIC64_OPS(sub, sub, J)
+ 	ATOMIC64_FETCH_OP (_release,,  , l, "memory", __VA_ARGS__)
+ 
+ ATOMIC64_OPS(and, and, L)
+-ATOMIC64_OPS(andnot, bic, )
+ ATOMIC64_OPS(or, orr, L)
+ ATOMIC64_OPS(xor, eor, L)
++/*
++ * GAS converts the mysterious and undocumented BIC (immediate) alias to
++ * an AND (immediate) instruction with the immediate inverted. We don't
++ * have a constraint for this, so fall back to register.
++ */
++ATOMIC64_OPS(andnot, bic, )
+ 
+ #undef ATOMIC64_OPS
+ #undef ATOMIC64_FETCH_OP
+@@ -269,7 +285,7 @@ __ll_sc__cmpxchg_case_##name##sz(volatile void *ptr,			\
+ 	"2:")								\
+ 	: [tmp] "=&r" (tmp), [oldval] "=&r" (oldval),			\
+ 	  [v] "+Q" (*(u##sz *)ptr)					\
+-	: [old] #constraint "r" (old), [new] "r" (new)			\
++	: [old] __stringify(constraint) "r" (old), [new] "r" (new)	\
+ 	: cl);								\
+ 									\
+ 	return oldval;							\
+@@ -280,21 +296,21 @@ __ll_sc__cmpxchg_case_##name##sz(volatile void *ptr,			\
+  * handle the 'K' constraint for the value 4294967295 - thus we use no
+  * constraint for 32 bit operations.
+  */
+-__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , )
+-__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , )
+-__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , )
++__CMPXCHG_CASE(w, b,     ,  8,        ,  ,  ,         , K)
++__CMPXCHG_CASE(w, h,     , 16,        ,  ,  ,         , K)
++__CMPXCHG_CASE(w,  ,     , 32,        ,  ,  ,         , K)
+ __CMPXCHG_CASE( ,  ,     , 64,        ,  ,  ,         , L)
+-__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", )
+-__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", )
+-__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", )
++__CMPXCHG_CASE(w, b, acq_,  8,        , a,  , "memory", K)
++__CMPXCHG_CASE(w, h, acq_, 16,        , a,  , "memory", K)
++__CMPXCHG_CASE(w,  , acq_, 32,        , a,  , "memory", K)
+ __CMPXCHG_CASE( ,  , acq_, 64,        , a,  , "memory", L)
+-__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", )
+-__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", )
+-__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", )
++__CMPXCHG_CASE(w, b, rel_,  8,        ,  , l, "memory", K)
++__CMPXCHG_CASE(w, h, rel_, 16,        ,  , l, "memory", K)
++__CMPXCHG_CASE(w,  , rel_, 32,        ,  , l, "memory", K)
+ __CMPXCHG_CASE( ,  , rel_, 64,        ,  , l, "memory", L)
+-__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", )
+-__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", )
+-__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", )
++__CMPXCHG_CASE(w, b,  mb_,  8, dmb ish,  , l, "memory", K)
++__CMPXCHG_CASE(w, h,  mb_, 16, dmb ish,  , l, "memory", K)
++__CMPXCHG_CASE(w,  ,  mb_, 32, dmb ish,  , l, "memory", K)
+ __CMPXCHG_CASE( ,  ,  mb_, 64, dmb ish,  , l, "memory", L)
+ 
+ #undef __CMPXCHG_CASE
+@@ -332,5 +348,6 @@ __CMPXCHG_DBL(   ,        ,  ,         )
+ __CMPXCHG_DBL(_mb, dmb ish, l, "memory")
+ 
+ #undef __CMPXCHG_DBL
++#undef K
+ 
+ #endif	/* __ASM_ATOMIC_LL_SC_H */
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4411853027515207452==--
-
