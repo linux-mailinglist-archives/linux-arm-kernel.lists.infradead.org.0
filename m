@@ -2,65 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E60AFA1B28
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:15:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD417A1B41
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 15:19:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:
-	In-Reply-To:Date:To:From:Subject:Message-ID:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AjztnZq2DZbvB2GLYJBiQR1q4iZlbKG1LewYuOz1Xj0=; b=HX+oDhX0AxyTrB
-	ZhhlXT1l1b9qeNHDNJZKHJqAvAj9gH4wYAeFqIY1c8cUZEYGmFShw1FayZrReqvg/flByGq05nW8D
-	nwxP8+NE5BpEAOV3IIRy6WOtDI0nYsAeWIKNmdec7y9tb8OdQ1VQBYje1ceI+VZe+QL6orgFJ5wHa
-	Yt6gFTN00wqs6eftQff1/SsZbzKChZyVOvz93kNG+DAQgz3z1mUFdVF2NAOv89PzzsedVMdNVIXm2
-	Tk82kcOVPAyCuZJF4pIXwoEsFxAhum+THRwEntQj8fh9KDU7/dFLApoTsOXkx9U5i/PPMjzCjmbMy
-	ist4ILAFBmIalTcEM32w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=sxHQx/DkfZHzAHFniChaLRqOFSPvLrLJKEawlmw7mDA=; b=H2xDJX7r29RyTlyOtsmOmxg19
+	NknfOW29oHPvjhX7aSNNJ65V76Za33H68mZhCAoYQIi+yZqJy3Uvxd8DMjTN29HcIYhxUiFUKomqG
+	PQ8DXDcnI3AXBCW7C+gcQeNKOijSaqB3lls4ncbpNDa+a8BbBL1DWxlQcDrK6gP9KThjmFEtrxvRG
+	gVRVVO8t7IarMo9R/2x8zkNLB4mNWMtzYusbbQC1UbatmRIaRPrO5UKQujJueCWs14p9iEbEystuC
+	myJBy/ds4Iy3i6TTE+XbGjXN/PjoS+Xwz3I8VT266+jdZXhHZnmBSgAEwyPgBt33bwnV/joGgJNJq
+	ru5PX5Q3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3KH1-0004ke-Dl; Thu, 29 Aug 2019 13:15:35 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i3KLB-0005Tm-Sb; Thu, 29 Aug 2019 13:19:54 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3KGm-0004kF-Vm; Thu, 29 Aug 2019 13:15:22 +0000
-X-UUID: 32f0c27d7edd419780c1a36707c9f4b7-20190829
-X-UUID: 32f0c27d7edd419780c1a36707c9f4b7-20190829
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <yongqiang.niu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1006156088; Thu, 29 Aug 2019 05:15:24 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 06:15:22 -0700
-Received: from MTKCAS32.mediatek.inc (172.27.4.184) by mtkmbs01n1.mediatek.inc
- (172.21.101.68) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 29 Aug 2019 21:15:14 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 29 Aug 2019 21:15:14 +0800
-Message-ID: <1567084508.30648.4.camel@mhfsdcap03>
-Subject: Re: [PATCH v4, 23/33] drm/mediatek: add ovl0/ovl_2l0 usecase
-From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-To: CK Hu <ck.hu@mediatek.com>
-Date: Thu, 29 Aug 2019 21:15:08 +0800
-In-Reply-To: <1563346064.29169.24.camel@mtksdaap41>
-References: <1562625253-29254-1-git-send-email-yongqiang.niu@mediatek.com>
- <1562625253-29254-24-git-send-email-yongqiang.niu@mediatek.com>
- <1563346064.29169.24.camel@mtksdaap41>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i3KKz-0005Sv-6B
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 13:19:43 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id C76B2A10EE;
+ Thu, 29 Aug 2019 15:19:33 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id YERUiiJJutp0; Thu, 29 Aug 2019 15:19:27 +0200 (CEST)
+Date: Thu, 29 Aug 2019 23:19:04 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH RESEND v11 7/8] open: openat2(2) syscall
+Message-ID: <20190829131904.bkbalbtqt6j3gwcp@yavin>
+References: <20190820033406.29796-1-cyphar@cyphar.com>
+ <20190820033406.29796-8-cyphar@cyphar.com>
+ <CAKOZuesfxRBJe314rkTKXtjXdz6ki3uAUBYVbu5Q2rd3=ADphQ@mail.gmail.com>
+ <20190829121527.u2uvdyeatme5cgkb@yavin>
+ <899401fa-ff0a-2ce9-8826-09904efab2d2@rasmusvillemoes.dk>
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <899401fa-ff0a-2ce9-8826-09904efab2d2@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_061521_035146_52BBA741 
-X-CRM114-Status: GOOD (  21.11  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190829_061941_538327_D39C4C2A 
+X-CRM114-Status: GOOD (  25.21  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,140 +68,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: yongqiang.niu@mediatek.com
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexei Starovoitov <ast@kernel.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ David Howells <dhowells@redhat.com>,
+ "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Daniel Colascione <dancol@google.com>, Aleksa Sarai <asarai@suse.de>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ Tycho Andersen <tycho@tycho.ws>, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
+ linuxppc-dev@lists.ozlabs.org, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, Linux FS Devel <linux-fsdevel@vger.kernel.org>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============0422691359096373979=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-07-17 at 14:47 +0800, CK Hu wrote:
-> Hi, Yongqiang:
-> 
-> On Tue, 2019-07-09 at 06:34 +0800, yongqiang.niu@mediatek.com wrote:
-> > From: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > 
-> > This patch add ovl0/ovl_2l0 usecase
-> > in ovl->ovl_2l0 direct link usecase:
-> > 1. the crtc support layer number will 4+2
-> > 2. ovl_2l0 background color input select ovl0 when crtc init
-> > and disable it when crtc finish
-> > 3. config ovl_2l0 layer, if crtc config layer number is
-> > bigger than ovl0 support layers(max is 4)
-> > 
-> > Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> > ---
-> >  drivers/gpu/drm/mediatek/mtk_drm_crtc.c | 38 +++++++++++++++++++++++++++++++--
-> >  1 file changed, 36 insertions(+), 2 deletions(-)
-> > 
-> > diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > index 5eac376..9ee9ce2 100644
-> > --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> > @@ -282,6 +282,15 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
-> >  
-> >  	for (i = 0; i < mtk_crtc->ddp_comp_nr; i++) {
-> >  		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[i];
-> > +		enum mtk_ddp_comp_id prev;
-> > +
-> > +		if (i > 0)
-> > +			prev = mtk_crtc->ddp_comp[i - 1]->id;
-> > +		else
-> > +			prev = DDP_COMPONENT_ID_MAX;
-> > +
-> > +		if (prev == DDP_COMPONENT_OVL0)
-> > +			mtk_ddp_comp_bgclr_in_on(comp);
-> 
-> I does not like to use a specific component id to check, that is not
-> general. For now, you could simply call mtk_ddp_comp_bgclr_in_on(comp);
-> for all component because only ovl_2l has implemented it.
-> 
-> Regards,
-> CK
-> 
 
-both OVL0 and OVL_2L0 has the function mtk_ddp_comp_bgclr_in_on
-
-> >  
-> >  		mtk_ddp_comp_config(comp, width, height, vrefresh, bpc);
-> >  		mtk_ddp_comp_start(comp);
-> > @@ -291,9 +300,18 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
-> >  	for (i = 0; i < mtk_crtc->layer_nr; i++) {
-> >  		struct drm_plane *plane = &mtk_crtc->planes[i];
-> >  		struct mtk_plane_state *plane_state;
-> > +		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> > +		unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
-> > +		unsigned int local_layer;
-> >  
-> >  		plane_state = to_mtk_plane_state(plane->state);
-> > -		mtk_ddp_comp_layer_config(mtk_crtc->ddp_comp[0], i,
-> > +
-> > +		if (i >= comp_layer_nr) {
-> > +			comp = mtk_crtc->ddp_comp[1];
-> > +			local_layer = i - comp_layer_nr;
-> > +		} else
-> > +			local_layer = i;
-> > +		mtk_ddp_comp_layer_config(comp , local_layer,
-> >  					  plane_state);
-> >  	}
-> >  
-> > @@ -319,6 +337,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
-> >  					   mtk_crtc->ddp_comp[i]->id);
-> >  	mtk_disp_mutex_disable(mtk_crtc->mutex);
-> >  	for (i = 0; i < mtk_crtc->ddp_comp_nr - 1; i++) {
-> > +		mtk_ddp_comp_bgclr_in_off(mtk_crtc->ddp_comp[i]);
-> >  		mtk_ddp_remove_comp_from_path(mtk_crtc->config_regs,
-> >  					      mtk_crtc->mmsys_reg_data,
-> >  					      mtk_crtc->ddp_comp[i]->id,
-> > @@ -339,6 +358,8 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
-> >  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> >  	unsigned int i;
-> > +	unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
-> > +	unsigned int local_layer;
-> >  
-> >  	/*
-> >  	 * TODO: instead of updating the registers here, we should prepare
-> > @@ -361,7 +382,14 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
-> >  			plane_state = to_mtk_plane_state(plane->state);
-> >  
-> >  			if (plane_state->pending.config) {
-> > -				mtk_ddp_comp_layer_config(comp, i, plane_state);
-> > +				if (i >= comp_layer_nr) {
-> > +					comp = mtk_crtc->ddp_comp[1];
-> > +					local_layer = i - comp_layer_nr;
-> > +				} else
-> > +					local_layer = i;
-> > +
-> > +				mtk_ddp_comp_layer_config(comp, local_layer,
-> > +							  plane_state);
-> >  				plane_state->pending.config = false;
-> >  			}
-> >  		}
-> > @@ -592,6 +620,12 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
-> >  	}
-> >  
-> >  	mtk_crtc->layer_nr = mtk_ddp_comp_layer_nr(mtk_crtc->ddp_comp[0]);
-> > +	if (mtk_crtc->ddp_comp_nr > 1) {
-> > +		struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[1];
-> > +
-> > +		if (comp->funcs->bgclr_in_on)
-> > +			mtk_crtc->layer_nr += mtk_ddp_comp_layer_nr(comp);
-> > +	}
-> >  	mtk_crtc->planes = devm_kcalloc(dev, mtk_crtc->layer_nr,
-> >  					sizeof(struct drm_plane),
-> >  					GFP_KERNEL);
-> 
-> 
+--===============0422691359096373979==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="itirvnprc6jjrbl3"
+Content-Disposition: inline
 
 
+--itirvnprc6jjrbl3
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On 2019-08-29, Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
+> On 29/08/2019 14.15, Aleksa Sarai wrote:
+> > On 2019-08-24, Daniel Colascione <dancol@google.com> wrote:
+>=20
+> >> Why pad the structure when new functionality (perhaps accommodated via
+> >> a larger structure) could be signaled by passing a new flag? Adding
+> >> reserved fields to a structure with a size embedded in the ABI makes a
+> >> lot of sense --- e.g., pthread_mutex_t can't grow. But this structure
+> >> can grow, so the reservation seems needless to me.
+> >=20
+> > Quite a few folks have said that ->reserved is either unnecessary or
+> > too big. I will be changing this, though I am not clear what the best
+> > way of extending the structure is. If anyone has a strong opinion on
+> > this (or an alternative to the ones listed below), please chime in. I
+> > don't have any really strong attachment to this aspect of the API.
+> >=20
+> > There appear to be a few ways we can do it (that all have precedence
+> > with other syscalls):
+> >=20
+> >  1. Use O_* flags to indicate extensions.
+> >  2. A separate "version" field that is incremented when we change.
+> >  3. Add a size_t argument to openat2(2).
+> >  4. Reserve space (as in this patchset).
+> >=20
+> > (My personal preference would be (3), followed closely by (2).)
+>=20
+> 3, definitely, and instead of having to invent a new scheme for every
+> new syscall, make that the default pattern by providing a helper
+
+Sure (though hopefully I don't need to immediately go and refactor all
+the existing size_t syscalls). I will be presenting about this patchset
+at the containers microconference at LPC (in a few weeks), so I'll hold
+of on any API-related rewrites until after that.
+
+> int __copy_abi_struct(void *kernel, size_t ksize, const void __user
+> *user, size_t usize)
+> {
+> 	size_t copy =3D min(ksize, usize);
+>=20
+> 	if (copy_from_user(kernel, user, copy))
+> 		return -EFAULT;
+>=20
+> 	if (usize > ksize) {
+> 		/* maybe a separate "return user_is_zero(user + ksize, usize -
+> ksize);" helper */
+> 		char c;
+> 		user +=3D ksize;
+> 		usize -=3D ksize;
+> 		while (usize--) {
+> 			if (get_user(c, user++))
+> 				return -EFAULT;
+> 			if (c)
+> 				return -EINVAL;
+
+This part would probably be better done with memchr_inv() and
+copy_from_user() (and probably should put an upper limit on usize), but
+I get what you mean.
+
+> 		}
+> 	} else if (ksize > usize) {
+> 		memset(kernel + usize, 0, ksize - usize);
+> 	}
+> 	return 0;
+> }
+> #define copy_abi_struct(kernel, user, usize)	\
+> 	__copy_abi_struct(kernel, sizeof(*kernel), user, usize)
+>
+> > Both (1) and (2) have the problem that the "struct version" is inside
+> > the struct so we'd need to copy_from_user() twice. This isn't the end of
+> > the world, it just feels a bit less clean than is ideal. (3) fixes that
+> > problem, at the cost of making the API slightly more cumbersome to use
+> > directly (though again glibc could wrap that away).
+>=20
+> I don't see how 3 is cumbersome to use directly. Userspace code does
+> struct openat_of_the_day args =3D {.field1 =3D x, .field3 =3D y} and pass=
+es
+> &args, sizeof(args). What does glibc need to do beyond its usual munging
+> of the userspace ABI registers to the syscall ABI registers?
+
+I'd argue that
+
+    ret =3D openat2(AT_FDCWD, "foo", &how, sizeof(how)); // (3)
+
+is slightly less pretty than
+
+    ret =3D openat2(AT_FDCWD, "foo", &how); // (1), (2), (4)
+
+But it's not really that bad. Forget I said anything.
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--itirvnprc6jjrbl3
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXWfQxQAKCRCdlLljIbnQ
+EoMSAP9J0uy3xcD3flC3cANph5LKQ2g0JWnMb61ew5LWDORVogD/UGWciY+tdPiy
+YNHs2UcBt9SEH1MNpEIgf2GN6RoyaQI=
+=ne2z
+-----END PGP SIGNATURE-----
+
+--itirvnprc6jjrbl3--
+
+
+--===============0422691359096373979==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============0422691359096373979==--
+
