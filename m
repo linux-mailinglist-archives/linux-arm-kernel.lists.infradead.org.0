@@ -2,84 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABF7FA11ED
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 08:43:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20DDDA1229
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 29 Aug 2019 08:58:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SWhx1UY9AFB+BDQp9+GBD4A9lwAkz/Dm2vPrusGk27M=; b=pVIKLynkTpaVZ9
-	Ik1SAE9j1SOdDSyP5CwkK7IhK3D+l7BFK5XS3b3tmVpafYRteH3n4v+yiAhU1Pv6P3Qo8oJlAqPok
-	UVExbEzk/KZ4/HC17vhqBmTF176yoBwTLfMAXnJG/bJah2eU0X4acbJdhWc/p4OWg8NPDtiibllMi
-	8xhQOWYrjPnp4BRaOsdoIB0Uq4R45s1GeMuQm/5sB2gxwqZ9zWPflOp4gkzQHZdWIrX9JDDi6h+2f
-	9CezjT8gmri9Gp6kLFpfX/qPBx5hxHuxhlpGvYkue54JWoGVnFI1tou2RJFUhsf/lPLZNjT1jYMMi
-	7MvTHo+X0Gygx+be5QtA==;
+	List-Owner; bh=rpnj4wwQmY2aV1ETwqEiPyuoYIkzISY8KxUm6l9SJdc=; b=KcDTiqF7eD2fYJ
+	NFEGuYqHMJE0lsmFhCg3zPd4w7vSbHQK1jleG1YAzeruwLiGgS70DcEwMCtLBoevKHiDHjc0YegCu
+	hjcET93bR+9JfPin1uqnVzyWGPldgzjyN6VVUETf9RBggl3IISv85lkbbmUYCUBFeHBi/PtqLvk5p
+	U03VdJv+2nWLF1UPZz8vF918rq3wQ8JswqIqgUV4YRMQroJyq+T1P4foBAZ2MO4+/c/+NgAQY2cVh
+	tFpHLaUrPhJjxfTdYdkCDv7u5SIPFF/BoIaPwLa8Nqqawoe4eJQMKsdapvMwf/vFIWkf/nfjPqhbt
+	WVC3/GB8Cgpc2/jSRCtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3E9Z-0000NA-TG; Thu, 29 Aug 2019 06:43:29 +0000
-Received: from mail-yw1-xc2b.google.com ([2607:f8b0:4864:20::c2b])
+	id 1i3EOM-00051m-Du; Thu, 29 Aug 2019 06:58:46 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3E9P-0000Mi-3m
- for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 06:43:20 +0000
-Received: by mail-yw1-xc2b.google.com with SMTP id u141so783440ywe.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 28 Aug 2019 23:43:18 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=Ohsp9R0iDzGBNjfj3NvgmAdcX6+omVgNShVoJ2V3b9Y=;
- b=NM1Bw/5XZWLEvDV472pQ8cdfBris9s23ecPcpeH5ZrPMONlk6VdZXIFhbHBXvhJkAG
- /Mv3din8JNzt4g1M//RRfTRSfvju0qzXz4CjkR70gFAP3gD+DdrGv9LK5FnPc+RdWK2+
- mgEzfcRwwI+DntvvJkzOIXlIKML1m571BjWoSxZi5oyyojRFRJfgE8rG3qikz6SJeTEZ
- W8z4ohG6Fyf3Aav2+3PYrb1CJoE7/EOAli+bt/R0P8sYi17wGh2PkeF4+zGfgUhVghQm
- wK1QFlQhNtJQbXuo2TxWOjzSayHDjsXVHCJG/GJIvbm3S3mLB3Hf7iNexx1fT4hixhXd
- gw1A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Ohsp9R0iDzGBNjfj3NvgmAdcX6+omVgNShVoJ2V3b9Y=;
- b=PfGbp71dc+1Si/xSOOL7X68KG3qqPGVBbUk+0GLy6uaF9U5chAyfjZysg62L6i15QL
- uubSk0ZA172p5SdRmpYtM7STAbHWnOqLNrLbpmAtTxeHWyUt/RGDEQ7mflg3OcN9ryWi
- V3u64hFMC+TRf/IsJLfVci5TUOykRPVuz0bua7dVMsc2yvxqsZ37LWdvflftyxkY2mBT
- d/NOIgd5SsS7uO8lfwQEYtZLb4iQJWBLSXN/uCmnlZc/PDBG9KurbK91ny5m0tLCjBnN
- g3IGINhaRx6tcFQCnJBZZLnV4Ufa0GJbY/6UKSUv7Mh7p+gjF9VBJbddV8gDoEkSAcpB
- TesQ==
-X-Gm-Message-State: APjAAAUIPiQyALq7SIOp47JC3KOr3cHsX1HXZnoVipDbYY+iBDojx/Fc
- bCtWIOUR2M+o+2d336a8vLp7jg==
-X-Google-Smtp-Source: APXvYqxUW3bgRQMvTAuKyl+jI8w30Ew/2ZrIS5MISrev+vSsPx2fSixhuZME4au120vXWGI3NRNqow==
-X-Received: by 2002:a81:a909:: with SMTP id g9mr1801464ywh.190.1567060997610; 
- Wed, 28 Aug 2019 23:43:17 -0700 (PDT)
-Received: from leoy-ThinkPad-X240s (li1320-244.members.linode.com.
- [45.79.221.244])
- by smtp.gmail.com with ESMTPSA id j20sm387975ywa.106.2019.08.28.23.43.14
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 28 Aug 2019 23:43:16 -0700 (PDT)
-Date: Thu, 29 Aug 2019 14:43:10 +0800
-From: Leo Yan <leo.yan@linaro.org>
-To: kbuild test robot <lkp@intel.com>
-Subject: Re: [arm:for-next 13/25] include/linux/error-injection.h:7:10: fatal
- error: asm/error-injection.h: No such file or directory
-Message-ID: <20190829064310.GC10583@leoy-ThinkPad-X240s>
-References: <201908290809.FsnDYulr%lkp@intel.com>
+ id 1i3EOD-00050y-44
+ for linux-arm-kernel@lists.infradead.org; Thu, 29 Aug 2019 06:58:39 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=gD1AMkI8FpRbArgAWS2NSX6iE7kz1rPPHG4idT8fdBw=; b=xZX4jG1YMmq087sHk0zLDOE4A
+ 2vh6QhH5yMkwjsM9Kp11ycPtWMPsStMqPB1gsYmPeQdU38/CrelMbY3AY5qXGh7tbpAdjCZ5KHE9/
+ NmqwyVPivxGrlgR4xRYn/lBEzt1XreknQwkBCd86UmMXaL8QSc1ODlJX4myltGfVg4M2B5CVqY38z
+ pc/rLqCT7mUNevoTr9erFmiC8W79S+0INBApxqn5Zk0xTuH2xN+DZo1BXELzkj+YUQa9XvNKFtlIO
+ kQUMZ2cg1Rvls+xM+2ms7dtOLb7ist29TMzT3KiqClUBUwKBE+MQhKWB/UVb/SCAkH+k2lga92QD6
+ K+kDl6+Jw==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39344)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i3ENH-0007HG-J3; Thu, 29 Aug 2019 07:57:39 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i3EN7-0007UX-9P; Thu, 29 Aug 2019 07:57:29 +0100
+Date: Thu, 29 Aug 2019 07:57:29 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v2 3/3] arm: Add support for function error injection
+Message-ID: <20190829065729.GU13294@shell.armlinux.org.uk>
+References: <20190806100015.11256-1-leo.yan@linaro.org>
+ <20190806100015.11256-4-leo.yan@linaro.org>
+ <20190819091808.GB5599@leoy-ThinkPad-X240s>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <201908290809.FsnDYulr%lkp@intel.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <20190819091808.GB5599@leoy-ThinkPad-X240s>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190828_234319_213333_8BD0B04F 
-X-CRM114-Status: GOOD (  16.72  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190828_235837_326666_84E64F67 
+X-CRM114-Status: GOOD (  25.24  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:c2b listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -99,70 +88,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Russell King <rmk+kernel@armlinux.org.uk>, Will Deacon <will@kernel.org>,
- kbuild-all@01.org, linux-arm-kernel@lists.infradead.org
+Cc: Song Liu <songliubraving@fb.com>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Alexei Starovoitov <ast@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Paul Mackerras <paulus@samba.org>, "H. Peter Anvin" <hpa@zytor.com>,
+ Will Deacon <will@kernel.org>, linux-arch@vger.kernel.org,
+ Daniel Borkmann <daniel@iogearbox.net>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, clang-built-linux@googlegroups.com,
+ Ingo Molnar <mingo@redhat.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Yonghong Song <yhs@fb.com>, "Naveen N. Rao" <naveen.n.rao@linux.vnet.ibm.com>,
+ Arnd Bergmann <arnd@arndb.de>, Borislav Petkov <bp@alien8.de>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
+ Masami Hiramatsu <mhiramat@kernel.org>, bpf@vger.kernel.org,
+ linuxppc-dev@lists.ozlabs.org, Martin KaFai Lau <kafai@fb.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Russell,
+I'm sorry, I can't apply this, it produces loads of:
 
-On Thu, Aug 29, 2019 at 08:49:16AM +0800, kbuild test robot wrote:
-> tree:   git://git.armlinux.org.uk/~rmk/linux-arm.git for-next
-> head:   d0d54dc04e37be14a9e51d9a2e431f302948e99d
-> commit: 566c290c6498b2fdc04a54556c4e8747f0298c7b [13/25] ARM: 8899/1: arm/arm64: Add support for function error injection
-> config: arm-allmodconfig (attached as .config)
-> compiler: arm-linux-gnueabi-gcc (GCC) 7.4.0
-> reproduce:
->         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
->         chmod +x ~/bin/make.cross
->         git checkout 566c290c6498b2fdc04a54556c4e8747f0298c7b
->         # save the attached .config to linux build tree
->         GCC_VERSION=7.4.0 make.cross ARCH=arm 
+include/linux/error-injection.h:7:10: fatal error: asm/error-injection.h: No such file or directory
+
+Since your patch 1 has been merged by the ARM64 people, I can't take
+it until next cycle.
+
+On Mon, Aug 19, 2019 at 05:18:08PM +0800, Leo Yan wrote:
+> Hi Russell,
 > 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
+> On Tue, Aug 06, 2019 at 06:00:15PM +0800, Leo Yan wrote:
+> > This patch implements arm specific functions regs_set_return_value() and
+> > override_function_with_return() to support function error injection.
+> > 
+> > In the exception flow, it updates pt_regs::ARM_pc with pt_regs::ARM_lr
+> > so can override the probed function return.
 > 
-> All errors (new ones prefixed by >>):
+> Gentle ping ...  Could you review this patch?
 > 
->    In file included from include/linux/module.h:22:0,
->                     from drivers/pps/pps.c:11:
-> >> include/linux/error-injection.h:7:10: fatal error: asm/error-injection.h: No such file or directory
->     #include <asm/error-injection.h>
->              ^~~~~~~~~~~~~~~~~~~~~~~
->    compilation terminated.
-
-This building error is caused by there have a dependent patch:
-error-injection: Consolidate override function definition
-https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/commit/?h=for-next/error-injection&id=45880f7b7b19e043ce0aaa4cb7d05369425c82fa
-
-This patch has been picked up by Will in one of arm64's next branch:
-https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/error-injection
-
-I don't know what's the best practice for the dependency between
-two branches, if need me to follow up anything, please let me know.
-
-Thanks,
-Leo.
-
-> vim +7 include/linux/error-injection.h
+> Thanks,
+> Leo.
 > 
-> 540adea3809f61 Masami Hiramatsu 2018-01-13  6  
-> 540adea3809f61 Masami Hiramatsu 2018-01-13 @7  #include <asm/error-injection.h>
-> 540adea3809f61 Masami Hiramatsu 2018-01-13  8  
+> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> > ---
+> >  arch/arm/Kconfig              |  1 +
+> >  arch/arm/include/asm/ptrace.h |  5 +++++
+> >  arch/arm/lib/Makefile         |  2 ++
+> >  arch/arm/lib/error-inject.c   | 19 +++++++++++++++++++
+> >  4 files changed, 27 insertions(+)
+> >  create mode 100644 arch/arm/lib/error-inject.c
+> > 
+> > diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+> > index 33b00579beff..2d3d44a037f6 100644
+> > --- a/arch/arm/Kconfig
+> > +++ b/arch/arm/Kconfig
+> > @@ -77,6 +77,7 @@ config ARM
+> >  	select HAVE_EXIT_THREAD
+> >  	select HAVE_FAST_GUP if ARM_LPAE
+> >  	select HAVE_FTRACE_MCOUNT_RECORD if !XIP_KERNEL
+> > +	select HAVE_FUNCTION_ERROR_INJECTION if !THUMB2_KERNEL
+> >  	select HAVE_FUNCTION_GRAPH_TRACER if !THUMB2_KERNEL && !CC_IS_CLANG
+> >  	select HAVE_FUNCTION_TRACER if !XIP_KERNEL
+> >  	select HAVE_GCC_PLUGINS
+> > diff --git a/arch/arm/include/asm/ptrace.h b/arch/arm/include/asm/ptrace.h
+> > index 91d6b7856be4..3b41f37b361a 100644
+> > --- a/arch/arm/include/asm/ptrace.h
+> > +++ b/arch/arm/include/asm/ptrace.h
+> > @@ -89,6 +89,11 @@ static inline long regs_return_value(struct pt_regs *regs)
+> >  	return regs->ARM_r0;
+> >  }
+> >  
+> > +static inline void regs_set_return_value(struct pt_regs *regs, unsigned long rc)
+> > +{
+> > +	regs->ARM_r0 = rc;
+> > +}
+> > +
+> >  #define instruction_pointer(regs)	(regs)->ARM_pc
+> >  
+> >  #ifdef CONFIG_THUMB2_KERNEL
+> > diff --git a/arch/arm/lib/Makefile b/arch/arm/lib/Makefile
+> > index b25c54585048..8f56484a7156 100644
+> > --- a/arch/arm/lib/Makefile
+> > +++ b/arch/arm/lib/Makefile
+> > @@ -42,3 +42,5 @@ ifeq ($(CONFIG_KERNEL_MODE_NEON),y)
+> >    CFLAGS_xor-neon.o		+= $(NEON_FLAGS)
+> >    obj-$(CONFIG_XOR_BLOCKS)	+= xor-neon.o
+> >  endif
+> > +
+> > +obj-$(CONFIG_FUNCTION_ERROR_INJECTION) += error-inject.o
+> > diff --git a/arch/arm/lib/error-inject.c b/arch/arm/lib/error-inject.c
+> > new file mode 100644
+> > index 000000000000..2d696dc94893
+> > --- /dev/null
+> > +++ b/arch/arm/lib/error-inject.c
+> > @@ -0,0 +1,19 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +
+> > +#include <linux/error-injection.h>
+> > +#include <linux/kprobes.h>
+> > +
+> > +void override_function_with_return(struct pt_regs *regs)
+> > +{
+> > +	/*
+> > +	 * 'regs' represents the state on entry of a predefined function in
+> > +	 * the kernel/module and which is captured on a kprobe.
+> > +	 *
+> > +	 * 'regs->ARM_lr' contains the the link register for the probed
+> > +	 * function, when kprobe returns back from exception it will override
+> > +	 * the end of probed function and directly return to the predefined
+> > +	 * function's caller.
+> > +	 */
+> > +	instruction_pointer_set(regs, regs->ARM_lr);
+> > +}
+> > +NOKPROBE_SYMBOL(override_function_with_return);
+> > -- 
+> > 2.17.1
+> > 
 > 
-> :::::: The code at line 7 was first introduced by commit
-> :::::: 540adea3809f61115d2a1ea4ed6e627613452ba1 error-injection: Separate error-injection from kprobe
-> 
-> :::::: TO: Masami Hiramatsu <mhiramat@kernel.org>
-> :::::: CC: Alexei Starovoitov <ast@kernel.org>
-> 
-> ---
-> 0-DAY kernel test infrastructure                Open Source Technology Center
-> https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
 
-
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
