@@ -2,89 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C4A6A31D3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:07:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0AEF5A31DA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:08:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pngGG9RJ92tancpbTiOP08UsNZsHoQ1jgULaP7woD6k=; b=SFcPh1w5Jovf0A
-	BGiGYDGQd2RV6QqyvIKTde6feCmSYhUDGKZ0sD7D3ATuJreLPqauMFcijHdMIAwIxC165EC4hC/o0
-	H84ppm33yWRzOdi9WldfzjhY70o5RvR8pfZMfDvZcH1BZDAjb+q0SbEg4XFZ8JoZJQPOzdS6QnC6a
-	KC69uaeQJIc/lq1L/dcuPyrwiZAIJT+FRYdeAqZUCz4lhZ/Hs6ScIYNhsKrDJFhu/hrpIIO7CoT4H
-	XjRSFNdsIi5NK0DbCCNFUEv0NVop6CLl/DKz0mxuq/MxkQRqrP1QLKA0HQwVqOl/wFCxluelTZvT6
-	p4g5m/4asPmsiC53r1NQ==;
+	List-Owner; bh=WLdWMdjUaK8WcX1TFOpE5n0fGRJBH+t8ii1rJ/fS4EY=; b=NAtVp7dnLDXvYu
+	r8IKEVYkHGjNPP19Q76IE+xjDAUZGlsOHEkasuCD0+hnyJ0UlMA7w3B0ufaRapyrHiVzCE5jCdyMz
+	IW6z6suEZvzwfeXaJVEqbe7VIlpUt/+PXSdNFucWAaIn0n/TV9U80R7jkfkFmSgY/pbQLZt64EFXv
+	OTmtMFGh03ewhs55bQLfXEZOH00sj1ImrABqSOPB3Twc0FN63vnZHAdvuvH4L6YeyRcXprlYWd1XD
+	RSAq1PeoRBF2Ua4Rui2nq5Wlj9eNMIR86Ww3riogCQf92JEe4mgIrYfq2WRtfBaEfOXQ7OzMjZKtz
+	RGfm7OYATazU9uQoEDYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3bwM-0008UZ-Cw; Fri, 30 Aug 2019 08:07:26 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1i3bx6-0000Wa-3G; Fri, 30 Aug 2019 08:08:12 +0000
+Received: from mail-eopbgr130087.outbound.protection.outlook.com
+ ([40.107.13.87] helo=EUR01-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3bwA-0008Tj-PR
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:07:16 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id D576521F85;
- Fri, 30 Aug 2019 04:07:13 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Fri, 30 Aug 2019 04:07:13 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=mo3FGA/ipO1SkoDh6reUgvlvk0/ODyc
- GbN5cHOI6jnw=; b=n0aPpAguaYco15CyvLywybHNtVAc7mwuO0pzWP7wvOL4Fmd
- OHnEHaQlsdNU43xwYceWhMfk0QCz/vRpljxyPR10myZhHJVk1Gr7/KPCeBw5+CB4
- rsIfQB2bGMlSGIbOzvzO7vyDNrcKKDaPmgLmiH7MG+t/IxiusWysKBHZ029vMFcN
- S0Krms1cHcWwhachZ/SpXZzfkmlkZF79rP4Qr8E27Q3n/Z1j98vaCGU6p79BPDR9
- YW4gOcuI7qdImGvS8MxiEbUtER2pPj407Y70L9vm7zalsX0X89TSMuUzW3duN31X
- Xfw1iYF40TOZLCIUFXCq+eaK5gC5HLZOeg/97eQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=mo3FGA
- /ipO1SkoDh6reUgvlvk0/ODycGbN5cHOI6jnw=; b=mzkzZvd0ilqrs1ghrHg095
- 4/hgqzJqavdRgmvLYcfAaOMtjE21M6bmrY8A/BqbnnO7QQL9hvuA5TecsbcOfe/V
- YZKBAdep8xDUafpohYs2i9/D5XRepasXcqyTCbd0K/eAQLBxjxzkIJknsY7GW5O2
- 0N0mDb965foTBJlGEkAl+iOuj2rCcHh8y6StPCCCHky2JP0vrae2plX8QDxSElVz
- 253LLLn8I4cVWNb2iXN6ynFFrVDF6I6sfTLAMjVhM+qft/OTohxwxCer6uRxOygk
- UOdiBZIc+QqdHxumWzsNMRE1Fu2ZFSPpZEpAo+kxlAOkC/Jp0kLg1ofv9vb4XplQ
- ==
-X-ME-Sender: <xms:MNloXTYaESaR0JSN118H7OZG185uey1gsSKEmiVHTMutfzqTQg_J9A>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeifedguddvhecutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmd
- enucfjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehn
- ughrvgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrg
- hrrghmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushht
- vghrufhiiigvpedt
-X-ME-Proxy: <xmx:MNloXT-po1mRFzcl375CIW70RgDLvtoMWD7LT-XdpGLI1cV0WAUcCw>
- <xmx:MNloXcSQnVT8SQGscGN27QMrZG3RRnEyPrYhFmMEP1bc10tTn7cExg>
- <xmx:MNloXVf0fHcgZhm7rUT-VcyoCr5kRV23qDXo6iioTUw0zOrr7TyHAw>
- <xmx:MdloXXgLtRc6wEEsmbh66N09Tq0Y2R7LAtKNg-C-z3TQJ0m21n2U6A>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id B2443E00A3; Fri, 30 Aug 2019 04:07:12 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-154-gfa7592a-fmstable-20190829v1
-Mime-Version: 1.0
-Message-Id: <6feca359-34ce-445e-87bf-62fa063d785f@www.fastmail.com>
-In-Reply-To: <CAPDyKFrKXfB1F2dh63KrkCiKGbmbBWaAM16vJqtQncnF4YctQw@mail.gmail.com>
-References: <20190830074644.10936-1-andrew@aj.id.au>
- <20190830074644.10936-2-andrew@aj.id.au>
- <CAPDyKFrKXfB1F2dh63KrkCiKGbmbBWaAM16vJqtQncnF4YctQw@mail.gmail.com>
-Date: Fri, 30 Aug 2019 17:37:34 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Ulf Hansson" <ulf.hansson@linaro.org>
-Subject: =?UTF-8?Q?Re:_[PATCH_1/2]_mmc:_sdhci-of-aspeed:_Uphold_clocks-on_post-co?=
- =?UTF-8?Q?ndition_of_set=5Fclock()?=
+ id 1i3bwt-0000Vh-Du
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:08:00 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=g+iwBA7DTDveOsjBTnEzXDZHZH8txQr+7/dTW4XmRdUpiqzg/jhUPW5LG8mEP4KYAjl06syky+qYpF8PwTsGHH5nk8HZmU+VHFEfq045BfCMbtEAqbYBK/ssfkzZveykbRLkTs4RKiQCndzusIDyKYTrJDhOtoG07HvCgRHD4chdUbKsd2KhwM1sQx/H9bR7HZg12/dizWUGyi5BGQEMJmapcgSSLOAIdUGkaNv+dpxiUyru6U715t2Y9U/ylb1mmfytaajFZagreh6yfS6SfiOD1d044zuGN23M1sQ3qZ89Uf6jNQL9JP92CyJIIIIHY7fEa1dpnRkGQ2uRzDhAWA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dIwXLysodLL3RNmu1O1KFSIu6PDF1pKJ1mg/GZ4oDDY=;
+ b=YdZhosR/LNzb57jL0ySxH6XuSZ+TQ+z7VOtJlLsIsrBkSj3L1QUDq6AdQNt4bvp5x5Zoe2/PC4XZ4T3DaQ1mcUIJHQy9QV8gyPsTVvHP2eZXFfVedyVFuXrrw+9E4u7VDFzvPsUddzdcnmbRJOV+Vn35HL7CG/0YahHt47ajH/HG2wEqX0PAjwcEdgBLglPe8naRUa1s0hxWL+0QDFnxKgA6cJrcHS1Nh95vJZ4kMW/ByS7QY6Otbd3/+18JSrj5NhKk2UKJxqdI7cCZRaWejbOUtJC881cUmp5aAN+n5qHJDw8sfEMgifm4GOiyVS/IKAkH3W434qtC975azPOVAA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dIwXLysodLL3RNmu1O1KFSIu6PDF1pKJ1mg/GZ4oDDY=;
+ b=UX008spDYcPFSbZ6nHHSXeMhgBBG5xkV3lB6GKUyQBETPBVv83VKOo+EVjlvMPqC1kXQrG3gvUFuGv7QCDnUF6Hc3C6ewWQkDlI/rOe0Usvx2p6W6JOJrcyR9MlXtjN3Z2AVQqM3zHGyRKzWdJtBkhpqdvdQbLRFhPoxbi/YrkM=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB5585.eurprd04.prod.outlook.com (20.178.203.22) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.18; Fri, 30 Aug 2019 08:07:56 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::5d98:e1f4:aa72:16b4]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::5d98:e1f4:aa72:16b4%4]) with mapi id 15.20.2178.023; Fri, 30 Aug 2019
+ 08:07:55 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: Jassi Brar <jassisinghbrar@gmail.com>
+Subject: RE: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+ SMC/HVC mailbox
+Thread-Topic: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+ SMC/HVC mailbox
+Thread-Index: AQHVXU0YJPArUxY1ok6XlIUgkri4VacTNWSAgAAFe+CAABGfAIAAAKjwgAAICwCAAAHRcA==
+Date: Fri, 30 Aug 2019 08:07:55 +0000
+Message-ID: <AM0PR04MB448133D1F4C887A82C679CEB88BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
+ <1567004515-3567-2-git-send-email-peng.fan@nxp.com>
+ <CABb+yY2tRjazjaogpM7irqgTD+PdwsfqCxk5hP-_czrET3V5xQ@mail.gmail.com>
+ <AM0PR04MB4481785CABB44A8C71CFB8D788BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CABb+yY2TREpO7+TFcGgsgQrkmMWwFAgtuJ4GnLPPQ+GEBuh07w@mail.gmail.com>
+ <AM0PR04MB448161C632722DF10989008088BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CABb+yY2SrMF8e1iLyLqb-rJyBx4ajA0hZ6D=LFtuMNtXYjgccA@mail.gmail.com>
+In-Reply-To: <CABb+yY2SrMF8e1iLyLqb-rJyBx4ajA0hZ6D=LFtuMNtXYjgccA@mail.gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 649f8b80-c565-4a99-4593-08d72d212a17
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB5585; 
+x-ms-traffictypediagnostic: AM0PR04MB5585:|AM0PR04MB5585:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB5585612F629D492464F593DE88BD0@AM0PR04MB5585.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-forefront-prvs: 0145758B1D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(376002)(366004)(136003)(39860400002)(396003)(346002)(199004)(189003)(9686003)(55016002)(99286004)(53936002)(66946007)(6436002)(53546011)(6506007)(25786009)(54906003)(52536014)(5660300002)(64756008)(66446008)(76116006)(66556008)(66476007)(11346002)(66066001)(486006)(476003)(6246003)(44832011)(7696005)(256004)(478600001)(71190400001)(71200400001)(76176011)(2906002)(6116002)(86362001)(446003)(15650500001)(33656002)(3846002)(8936002)(316002)(4326008)(1411001)(186003)(8676002)(14454004)(229853002)(81156014)(102836004)(26005)(81166006)(7736002)(305945005)(74316002)(6916009);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB5585;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: +XxdmS0lEmVdwsGjqy58QpJBq9ZrPe2tWU/L0jKwoRCPQKNiXnPpLovgKINGwHPHmql8RCpcPNkPg+IxFhyqvnL0s47DZcaHF6lyFfUofy3FrdffdGSomm3o6zAgKWGHQYxVr9FTMxgnY3aMGGlKlDPKKXIj2v7GWnxikyLEmCJB/lFC0qrtBTBndYIEfhwwU9Cop22Zto0sNtbcOTZexDQtzKqcC9kfx5StwrhuL6jAePb+4t/pN8Bh/3eqzLNYUk3adJ2daF/nSCOe4QmaTf5jyPu9fUll7zeiVjm9efeldiE5igjXVqz7/UiPtELSEQ6vOdZx8iPG/GHP3pLfzJtwyIPRvYEe+TvzEG18Cfa9JiPTkYlgteN9PJu7zho/pC+PF/XMVClxEQxc4xe4iaR2kHNPzxJkvDrcBf22kZY=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 649f8b80-c565-4a99-4593-08d72d212a17
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Aug 2019 08:07:55.8544 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 2CuvJf6wW5bFVz0omVGva47sxdXLKSASOBmWxLdnZYMA/G7YGBr2QrDwXHBJAsep8WGX4iDVaOsbgXEGEBclXQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB5585
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_010714_967456_9FB8F77E 
-X-CRM114-Status: GOOD (  12.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190830_010759_465894_AB237CC6 
+X-CRM114-Status: GOOD (  18.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.13.87 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -105,60 +129,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- linux-mmc <linux-mmc@vger.kernel.org>, openbmc@lists.ozlabs.org,
- Ryan Chen <ryanchen.aspeed@gmail.com>, Adrian Hunter <adrian.hunter@intel.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On Fri, 30 Aug 2019, at 17:31, Ulf Hansson wrote:
-> On Fri, 30 Aug 2019 at 09:46, Andrew Jeffery <andrew@aj.id.au> wrote:
-> >
-> > The early-exit didn't seem to matter on the AST2500, but on the AST2600
-> > the SD clock genuinely may not be running on entry to
-> > aspeed_sdhci_set_clock(). Remove the early exit to ensure we always run
-> > sdhci_enable_clk().
-> >
-> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> > ---
-> >  drivers/mmc/host/sdhci-of-aspeed.c | 3 ---
-> >  1 file changed, 3 deletions(-)
-> >
-> > diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-> > index d5acb5afc50f..a9175ca85696 100644
-> > --- a/drivers/mmc/host/sdhci-of-aspeed.c
-> > +++ b/drivers/mmc/host/sdhci-of-aspeed.c
-> > @@ -55,9 +55,6 @@ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
-> >         int div;
-> >         u16 clk;
-> >
-> > -       if (clock == host->clock)
-> > -               return;
-> > -
-> >         sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
-> >
-> >         if (clock == 0)
-> > --
-> > 2.20.1
-> >
+> Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+> SMC/HVC mailbox
 > 
-> Further down in aspeed_sdhci_set_clock() you should probably also
-> remove the assignment of host->clock = clock, as that is already
-> managed by sdhci_set_ios().
+> On Fri, Aug 30, 2019 at 2:37 AM Peng Fan <peng.fan@nxp.com> wrote:
+> >
+> > Hi Jassi,
+> >
+> > > Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc
+> > > for the ARM SMC/HVC mailbox
+> > >
+> > > On Fri, Aug 30, 2019 at 1:28 AM Peng Fan <peng.fan@nxp.com> wrote:
+> > >
+> > > > > > +examples:
+> > > > > > +  - |
+> > > > > > +    sram@910000 {
+> > > > > > +      compatible = "mmio-sram";
+> > > > > > +      reg = <0x0 0x93f000 0x0 0x1000>;
+> > > > > > +      #address-cells = <1>;
+> > > > > > +      #size-cells = <1>;
+> > > > > > +      ranges = <0 0x0 0x93f000 0x1000>;
+> > > > > > +
+> > > > > > +      cpu_scp_lpri: scp-shmem@0 {
+> > > > > > +        compatible = "arm,scmi-shmem";
+> > > > > > +        reg = <0x0 0x200>;
+> > > > > > +      };
+> > > > > > +
+> > > > > > +      cpu_scp_hpri: scp-shmem@200 {
+> > > > > > +        compatible = "arm,scmi-shmem";
+> > > > > > +        reg = <0x200 0x200>;
+> > > > > > +      };
+> > > > > > +    };
+> > > > > > +
+> > > > > > +    firmware {
+> > > > > > +      smc_mbox: mailbox {
+> > > > > > +        #mbox-cells = <1>;
+> > > > > > +        compatible = "arm,smc-mbox";
+> > > > > > +        method = "smc";
+> > > > > > +        arm,num-chans = <0x2>;
+> > > > > > +        transports = "mem";
+> > > > > > +        /* Optional */
+> > > > > > +        arm,func-ids = <0xc20000fe>, <0xc20000ff>;
+> > > > > >
+> > > > > SMC/HVC is synchronously(block) running in "secure mode", i.e,
+> > > > > there can only be one instance running platform wide. Right?
+> > > >
+> > > > I think there could be channel for TEE, and channel for Linux.
+> > > > For virtualization case, there could be dedicated channel for each VM.
+> > > >
+> > > I am talking from Linux pov. Functions 0xfe and 0xff above, can't
+> > > both be active at the same time, right?
+> >
+> > If I get your point correctly,
+> > On UP, both could not be active. On SMP, tx/rx could be both active,
+> > anyway this depends on secure firmware and Linux firmware design.
+> >
+> > Do you have any suggestions about arm,func-ids here?
+> >
+> I was thinking if this is just an instruction, why can't each channel be
+> represented as a controller, i.e, have exactly one func-id per controller node.
+> Define as many controllers as you need channels ?
 
-Ah, I'll fix that in a v2 once I have your thoughts on patch 2/2.
+I am ok, this could make driver code simpler. Something as below?
 
-Thanks for the lightning quick feedback!
+    smc_tx_mbox: tx_mbox {
+      #mbox-cells = <0>;
+      compatible = "arm,smc-mbox";
+      method = "smc";
+      transports = "mem";
+      arm,func-id = <0xc20000fe>;
+    };
 
-Andrew
+    smc_rx_mbox: rx_mbox {
+      #mbox-cells = <0>;
+      compatible = "arm,smc-mbox";
+      method = "smc";
+      transports = "mem";
+      arm,func-id = <0xc20000ff>;
+    };
 
+    firmware {
+      scmi {
+        compatible = "arm,scmi";
+        mboxes = <&smc_tx_mbox>, <&smc_rx_mbox 1>;
+        mbox-names = "tx", "rx";
+        shmem = <&cpu_scp_lpri>, <&cpu_scp_hpri>;
+      };
+    };
+
+Thanks,
+Peng.
+
+> 
+> -j
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
