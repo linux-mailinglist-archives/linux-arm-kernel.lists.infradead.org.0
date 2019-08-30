@@ -2,56 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3B366A4029
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:10:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E19A8A402C
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:11:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WdU9oxbnTbF3LDCc+i1qrw90DTtSXT29N7c0huiqpR0=; b=ftxmCusPC/5QAq
-	SbFylkdlHucy70ZkVTNRPffUZyFb+XUDPU68TG+yDgi6Sf5rmNqCrIlRgxw1exC5qHRfgGShkxoTX
-	2Gz0brtyooChq8X4fz+xffrvy4jds4klER5GcePKWp9kZr3ysAT3vxjGD8k5yZg2YkRFkvxOs7ETG
-	V1V1LWGEE9zd0+4YPhxbqzUq1OV1tnRqJkQi2rNHI4Fgheufhm7/deH1TjlrIZK9caBebx3DfsHNI
-	01zh3ckA9BR5kSqvU1sadG4IF5Pb5nn/N0qHin5qpBsrRZcwR8LcnaSlJ2PwNB6lK4kV2NTia1a1t
-	LSzAPy4xz4NkdqE9Krgw==;
+	List-Owner; bh=RtZT0YzesA6YZHyxf8xsJFYWjGivqG1NOqXeblrSAL8=; b=pv2p9BRv9TVC5U
+	XmfagmNEUyACXq1xy/uTde3vT6lSlRJk+jXUoOa6wHcI5Olm/6xyRYkncXNFXeVnp04Ka6qYlW5vm
+	gE3S5WYxoMjmGkqXSpmF6Ey9i6J/fJcrV1x7FZ+SjZaa4bu7lKnhXFocmyEXVB1OxWAQH5Pv/QD+P
+	PDXgR3uTrzdj5NcUXckfsBrQBkYdOmi6GeRXIm8EaTZxEsmB6mAcZvqj0VSWRJRX1g/7Jt3IP4pX1
+	BYRA2THmudO72muxF7OAHb4nPbq2pf4AGYRqrWJluQ1ac4jTh50BRGxuR0u+n/od1LQx9DvJs/woo
+	5BHvAaqdFjonFcjqztfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3p6P-0002UR-IS; Fri, 30 Aug 2019 22:10:41 +0000
+	id 1i3p6t-0002w5-UZ; Fri, 30 Aug 2019 22:11:12 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3p4T-0008Ie-OC
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:08:43 +0000
+ id 1i3p4b-0008Pn-1c
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:08:51 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id E227ED8801;
- Sat, 31 Aug 2019 00:08:39 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id 52D51D87E7;
+ Sat, 31 Aug 2019 00:08:47 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id b4Sn4zkpKYvK; Sat, 31 Aug 2019 00:08:15 +0200 (CEST)
+ with ESMTP id CvhPEaUgcc89; Sat, 31 Aug 2019 00:08:21 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id D5063D87EB;
- Sat, 31 Aug 2019 00:07:59 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id D3008D87E1;
+ Sat, 31 Aug 2019 00:08:00 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id wxZjFVremg4k; Sat, 31 Aug 2019 00:07:55 +0200 (CEST)
+ with ESMTP id ShqfBR8zablj; Sat, 31 Aug 2019 00:07:56 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 39EF0D87EA;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id 91806D87EC;
  Sat, 31 Aug 2019 00:07:51 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: "To : Olof Johansson" <olof@lixom.net>
-Subject: [PATCH v3 08/16] ARM: mmp: map the PGU as well
-Date: Sat, 31 Aug 2019 00:07:35 +0200
-Message-Id: <20190830220743.439670-9-lkundrak@v3.sk>
+Subject: [PATCH v3 09/16] ARM: mmp: DT: convert timer driver to use
+ TIMER_OF_DECLARE
+Date: Sat, 31 Aug 2019 00:07:36 +0200
+Message-Id: <20190830220743.439670-10-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
 In-Reply-To: <20190830220743.439670-1-lkundrak@v3.sk>
 References: <20190830220743.439670-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_150842_295282_206C9E68 
-X-CRM114-Status: GOOD (  11.31  )
+X-CRM114-CacheID: sfid-20190830_150849_811838_B430A562 
+X-CRM114-Status: GOOD (  13.67  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -82,96 +83,138 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The MMP2 and later includes a system control unit in this area. We'll need
-that to initialize the secondary core on MMP3.
+This makes things just a tiny bit simpler.
 
 Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
 ---
- arch/arm/mach-mmp/addr-map.h |  7 +++++++
- arch/arm/mach-mmp/common.c   | 15 +++++++++++++++
- arch/arm/mach-mmp/common.h   |  1 +
- arch/arm/mach-mmp/mmp2-dt.c  |  2 +-
- 4 files changed, 24 insertions(+), 1 deletion(-)
+ arch/arm/mach-mmp/mmp-dt.c  |  5 ++---
+ arch/arm/mach-mmp/mmp2-dt.c |  5 ++---
+ arch/arm/mach-mmp/time.c    | 38 +++++++++++--------------------------
+ 3 files changed, 15 insertions(+), 33 deletions(-)
 
-diff --git a/arch/arm/mach-mmp/addr-map.h b/arch/arm/mach-mmp/addr-map.h
-index 25edf6a92276e..3dc2f0b0ecba5 100644
---- a/arch/arm/mach-mmp/addr-map.h
-+++ b/arch/arm/mach-mmp/addr-map.h
-@@ -20,6 +20,10 @@
- #define AXI_VIRT_BASE		IOMEM(0xfe200000)
- #define AXI_PHYS_SIZE		0x00200000
+diff --git a/arch/arm/mach-mmp/mmp-dt.c b/arch/arm/mach-mmp/mmp-dt.c
+index 35559792d5cca..91214996acecc 100644
+--- a/arch/arm/mach-mmp/mmp-dt.c
++++ b/arch/arm/mach-mmp/mmp-dt.c
+@@ -9,14 +9,13 @@
+ #include <linux/irqchip.h>
+ #include <linux/of_platform.h>
+ #include <linux/clk-provider.h>
++#include <linux/clocksource.h>
+ #include <asm/mach/arch.h>
+ #include <asm/mach/time.h>
+ #include <asm/hardware/cache-tauros2.h>
  
-+#define PGU_PHYS_BASE		0xe0000000
-+#define PGU_VIRT_BASE		IOMEM(0xfe400000)
-+#define PGU_PHYS_SIZE		0x00100000
-+
- /* Static Memory Controller - Chip Select 0 and 1 */
- #define SMC_CS0_PHYS_BASE	0x80000000
- #define SMC_CS0_PHYS_SIZE	0x10000000
-@@ -38,4 +42,7 @@
- #define CIU_VIRT_BASE		(AXI_VIRT_BASE + 0x82c00)
- #define CIU_REG(x)		(CIU_VIRT_BASE + (x))
+ #include "common.h"
  
-+#define SCU_VIRT_BASE		(PGU_VIRT_BASE)
-+#define SCU_REG(x)		(SCU_VIRT_BASE + (x))
-+
- #endif /* __ASM_MACH_ADDR_MAP_H */
-diff --git a/arch/arm/mach-mmp/common.c b/arch/arm/mach-mmp/common.c
-index 6684abc7708bd..2ee08c78e8bc9 100644
---- a/arch/arm/mach-mmp/common.c
-+++ b/arch/arm/mach-mmp/common.c
-@@ -36,6 +36,15 @@ static struct map_desc standard_io_desc[] __initdata = {
- 	},
- };
- 
-+static struct map_desc mmp2_io_desc[] __initdata = {
-+	{
-+		.pfn		= __phys_to_pfn(PGU_PHYS_BASE),
-+		.virtual	= (unsigned long)PGU_VIRT_BASE,
-+		.length		= PGU_PHYS_SIZE,
-+		.type		= MT_DEVICE,
-+	},
-+};
-+
- void __init mmp_map_io(void)
- {
- 	iotable_init(standard_io_desc, ARRAY_SIZE(standard_io_desc));
-@@ -44,6 +53,12 @@ void __init mmp_map_io(void)
- 	mmp_chip_id = __raw_readl(MMP_CHIPID);
+-extern void __init mmp_dt_init_timer(void);
+-
+ static const char *const pxa168_dt_board_compat[] __initconst = {
+ 	"mrvl,pxa168-aspenite",
+ 	NULL,
+@@ -32,8 +31,8 @@ static void __init mmp_init_time(void)
+ #ifdef CONFIG_CACHE_TAUROS2
+ 	tauros2_init(0);
+ #endif
+-	mmp_dt_init_timer();
+ 	of_clk_init(NULL);
++	timer_probe();
  }
  
-+void __init mmp2_map_io(void)
-+{
-+	mmp_map_io();
-+	iotable_init(mmp2_io_desc, ARRAY_SIZE(mmp2_io_desc));
-+}
-+
- void mmp_restart(enum reboot_mode mode, const char *cmd)
- {
- 	soft_restart(0);
-diff --git a/arch/arm/mach-mmp/common.h b/arch/arm/mach-mmp/common.h
-index 483b8b6d3005a..ed56b3f15b45e 100644
---- a/arch/arm/mach-mmp/common.h
-+++ b/arch/arm/mach-mmp/common.h
-@@ -5,4 +5,5 @@
- extern void mmp_timer_init(int irq, unsigned long rate);
- 
- extern void __init mmp_map_io(void);
-+extern void __init mmp2_map_io(void);
- extern void mmp_restart(enum reboot_mode, const char *);
+ DT_MACHINE_START(PXA168_DT, "Marvell PXA168 (Device Tree Support)")
 diff --git a/arch/arm/mach-mmp/mmp2-dt.c b/arch/arm/mach-mmp/mmp2-dt.c
-index 305a9daba6d68..8eec881191f4b 100644
+index 8eec881191f4b..510c762ddc484 100644
 --- a/arch/arm/mach-mmp/mmp2-dt.c
 +++ b/arch/arm/mach-mmp/mmp2-dt.c
-@@ -33,7 +33,7 @@ static const char *const mmp2_dt_board_compat[] __initconst = {
- };
+@@ -10,21 +10,20 @@
+ #include <linux/irqchip.h>
+ #include <linux/of_platform.h>
+ #include <linux/clk-provider.h>
++#include <linux/clocksource.h>
+ #include <asm/mach/arch.h>
+ #include <asm/mach/time.h>
+ #include <asm/hardware/cache-tauros2.h>
  
- DT_MACHINE_START(MMP2_DT, "Marvell MMP2 (Device Tree Support)")
--	.map_io		= mmp_map_io,
-+	.map_io		= mmp2_map_io,
- 	.init_time	= mmp_init_time,
- 	.dt_compat	= mmp2_dt_board_compat,
- MACHINE_END
+ #include "common.h"
+ 
+-extern void __init mmp_dt_init_timer(void);
+-
+ static void __init mmp_init_time(void)
+ {
+ #ifdef CONFIG_CACHE_TAUROS2
+ 	tauros2_init(0);
+ #endif
+ 	of_clk_init(NULL);
+-	mmp_dt_init_timer();
++	timer_probe();
+ }
+ 
+ static const char *const mmp2_dt_board_compat[] __initconst = {
+diff --git a/arch/arm/mach-mmp/time.c b/arch/arm/mach-mmp/time.c
+index 483df32583be6..3f6fd0be00512 100644
+--- a/arch/arm/mach-mmp/time.c
++++ b/arch/arm/mach-mmp/time.c
+@@ -195,30 +195,17 @@ void __init mmp_timer_init(int irq, unsigned long rate)
+ 	clockevents_config_and_register(&ckevt, rate, MIN_DELTA, MAX_DELTA);
+ }
+ 
+-#ifdef CONFIG_OF
+-static const struct of_device_id mmp_timer_dt_ids[] = {
+-	{ .compatible = "mrvl,mmp-timer", },
+-	{}
+-};
+-
+-void __init mmp_dt_init_timer(void)
++static int __init mmp_dt_init_timer(struct device_node *np)
+ {
+-	struct device_node *np;
+ 	struct clk *clk;
+ 	int irq, ret;
+ 	unsigned long rate;
+ 
+-	np = of_find_matching_node(NULL, mmp_timer_dt_ids);
+-	if (!np) {
+-		ret = -ENODEV;
+-		goto out;
+-	}
+-
+ 	clk = of_clk_get(np, 0);
+ 	if (!IS_ERR(clk)) {
+ 		ret = clk_prepare_enable(clk);
+ 		if (ret)
+-			goto out;
++			return ret;
+ 		rate = clk_get_rate(clk) / 2;
+ 	} else if (cpu_is_pj4()) {
+ 		rate = 6500000;
+@@ -227,18 +214,15 @@ void __init mmp_dt_init_timer(void)
+ 	}
+ 
+ 	irq = irq_of_parse_and_map(np, 0);
+-	if (!irq) {
+-		ret = -EINVAL;
+-		goto out;
+-	}
++	if (!irq)
++		return -EINVAL;
++
+ 	mmp_timer_base = of_iomap(np, 0);
+-	if (!mmp_timer_base) {
+-		ret = -ENOMEM;
+-		goto out;
+-	}
++	if (!mmp_timer_base)
++		return -ENOMEM;
++
+ 	mmp_timer_init(irq, rate);
+-	return;
+-out:
+-	pr_err("Failed to get timer from device tree with error:%d\n", ret);
++	return 0;
+ }
+-#endif
++
++TIMER_OF_DECLARE(mmp_timer, "mrvl,mmp-timer", mmp_dt_init_timer);
 -- 
 2.21.0
 
