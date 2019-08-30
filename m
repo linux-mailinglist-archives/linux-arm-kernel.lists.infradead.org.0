@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19E95A2FC7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 08:25:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51F41A2FCB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 08:25:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=w25dYGSLlbKAtyJYFK4R1/bbaQMuRSMY+G/Tr7w18Sg=; b=u1Q
-	w+XVIT+qVY9t7W8fGbbZL+VpPa8s/HeRCf2IXQEBWI5CuCVC8EMf/K7yqilkwy2jireIEXEG2Fj+E
-	411b89UXNvo8Ca81W1uPYtITDdpl1vAZlce2DoXfg1w+q1uFtXnrXq4VV+P5XqBQq/n3Vcg87Kyvq
-	9a5WLnaUUroOiaDG3f7RMsfcbJtnOyKgvgQWaoGqSBQ9+IJqH6pLR76dji7x5+j9u/VowEQp41F/N
-	x4bR6nn9nrO4oPww2xg1fYomOKt+vmz7KeFZUrzfKYc71Ns8l7ZXzt7+nNnbZJ3iVGzMmYoDXQ5kI
-	8Ha36NrqXQoeUrOtBIeyCP6BjidKVAg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=H4vl9PAXCV2WPzPJ1Y8XO1Yle+v2bBLzuxUPR0JSbro=; b=hgQrREsZL76sGutRnTB0rGRf9E
+	moot5n8Qsbz81ekiUMkAWnyyjgJYSCCuK+3vri0XL8/Qf9vvVfM83CKSCDGm9S2P/xO1/VvsB9tAF
+	Z7GKB+bNSju8My+0KDv8d6SfRVL0+QZbAkdvvnR+wL5ChTVrcDVtA51asWZCSKR1x3XK5SnGHZPOI
+	IRpTPENPUuNMNYcUoe6BuuHF4b1vFNQS6vYH9EWadbiG8fz/s91FT8FWOJQkPFuIxsqzFNWRkEPo1
+	8HqlnRIvnr0V2GSGwPa7JVKtBZ3CNAMrtDZ2ouqizHV7a8obJ7ABVLfMKjmZYq0A7WaoTK7JKdr/G
+	cxsf4c3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3aLI-0008QG-2c; Fri, 30 Aug 2019 06:25:04 +0000
-Received: from mail-yb1-xb43.google.com ([2607:f8b0:4864:20::b43])
+	id 1i3aLe-0000ZR-Ka; Fri, 30 Aug 2019 06:25:26 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3aKz-0008PB-TC
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 06:24:47 +0000
-Received: by mail-yb1-xb43.google.com with SMTP id y21so2068719ybi.11
+ id 1i3aL3-0008QF-Lh
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 06:24:51 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id e65so2041346ywh.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 23:24:44 -0700 (PDT)
+ Thu, 29 Aug 2019 23:24:49 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=CRg35i2KWpjsknTISfFxKQ/QZUyPHEq1p0YfyQly9p0=;
- b=JmcG7+8VBeJwdkL0srCfVuUiYENIyP2RgEaDEDY8NlPmzkibNggOUAP8bHIerZq4nH
- TytJBi2hvzuYvRS6ch+1FHJWP/9ZRoF+dSl1pwpgi01MAwvT+VUoJCFToIJq1k1dQInV
- NPJgo9t/Rrr4MGBBe8a5sfo/jCEVSLdYVySTe8YfkvTBQy/5eyaYRFB+ysOcpdhBcFSC
- vEgfu88Q+EQivdqkzfHQkPQWR+klffAdPQoZM/sIvDVO3m1CIKkqghA35Jz+wf9tJ00K
- VW+kuu2Maubrh4ZKtnq+mOWHW1YbTdlfLc9g7Gng9Vx4Z6Xi9OBTmKCwxsMH8F+9k2j3
- 4mNQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=OXG5Krp0+0YHinlseDtdKmGPRzdmcPPxpIaorK0Sd/U=;
+ b=YHEXZXd6sRfhS4BLjTBmyXis4Z3lNVzZFsvLaN6IeIVjVYDTmD4veeHZo7dGHtMe83
+ pPMJfxluP/5bGXyNRyXc8H1hGniUvoDg3qZ4wSycHg6O4NplPwDCUfsLg/ZdyIOUEXfE
+ GhmISYvHcc+pqp7h2e6WfUpV8hclsnlEeFlmQ0fGdiozLihG6lPt64bRmO3k+89jaW+Z
+ pEbLeoR7wiM0U1IojVKnaQ3kZo6w3vnphGTEhHN8xT/QKOq6MxIfQyWtufypvpLBzgG/
+ 4UwrAcFrA6umJeFVNY1hqqdyJ1cfnKLPo3StT75wvOuXb4QnnWgfBe67FNwv4+Mp4gEY
+ 9wug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=CRg35i2KWpjsknTISfFxKQ/QZUyPHEq1p0YfyQly9p0=;
- b=fCFjvc2PiVK6B2xdivJXfpyCh7tXejwJhIzHuVNX92MnG16B6B6japxUeG3ZjnxKr+
- lX4/O5f6Fs0SoO4GtyKX8VryskUDlLlmtD+NJJcY4CGwb8AcM8cUPCeS6cirsEKIGrbV
- IKM5henZWwojDnjCBlJvViAbW8uo1dukebQ9y+ntbOxY477hgxJ/aBBJf87+xoaXKvUb
- AQdZTLPj04JEzXBIQYjbLxO8gerXgxDiudfJ0bjAH80L71/V/ai/kVM9ma9fLfB8CBpD
- w1PLkMxet90EICICzDJe+GhQtURyqd8e5LBgJqQUQDYXffGDXtSSyyGZp3a/fBMV4uoH
- ptjQ==
-X-Gm-Message-State: APjAAAVGaBF5g28Xys90A0k/Kd+gmsHxaY2uJYg6anenVyiIbCI13or6
- pYIKrel8+0yJi1cxoyoV7TNV4g==
-X-Google-Smtp-Source: APXvYqwlWNQGDdaoHm4ruUISqYzX0oZ1tMA0KTcAcnI6CC8hmRUBISY9eT6FQ8g7u2ShnwUYBrJG3Q==
-X-Received: by 2002:a25:7904:: with SMTP id u4mr9798468ybc.73.1567146283332;
- Thu, 29 Aug 2019 23:24:43 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=OXG5Krp0+0YHinlseDtdKmGPRzdmcPPxpIaorK0Sd/U=;
+ b=CMeHVy6TneeHTzZu+WTk3ljCH68ufz7tTIavRTgLfBsCXOcmVfJK2bjRRLg4H9fYEZ
+ rVJ1BGpaxY49WYpVM+WzqdHtkwxi+2Ij1hS8/GD5T6BFJzZ+HEaDurpEMqzMz3CxGp4E
+ R0sfdLpL/zBNtyBGDZnOsWjRyLABG/FgXBGdRedBWY9t7ARpUvPLDOY6Q1nMdio75Ywm
+ b5GyU5KGcG2NjsFlEugSjOEWvdYD33yRv+LGI/SdCIEwBiWbac7sx2I4W/6VSU8uBncA
+ 9fX5kGsl0Bst2kj1E0evAz2w5lN381l2lk/5vvtHv3lnhI6QVXlBf29vDgMe92VHKUbx
+ P/IQ==
+X-Gm-Message-State: APjAAAXjfSBPY0JBInkXiYBwiuxvPxhA9uWnvYG56X23rBbJIAmfcKPT
+ D0SvrMbDjzdCuNRZ3vfSOt6WfA==
+X-Google-Smtp-Source: APXvYqz67vqqy5rGYmWF/4BuddczksgMWXcyQXd0kAabISPC5eC7+OWMjXoeCtH6cBGH5sHTou3oCA==
+X-Received: by 2002:a0d:dd51:: with SMTP id g78mr9844096ywe.102.1567146288582; 
+ Thu, 29 Aug 2019 23:24:48 -0700 (PDT)
 Received: from localhost.localdomain (li1320-244.members.linode.com.
  [45.79.221.244])
- by smtp.gmail.com with ESMTPSA id r193sm976784ywe.8.2019.08.29.23.24.38
+ by smtp.gmail.com with ESMTPSA id r193sm976784ywe.8.2019.08.29.23.24.43
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 23:24:42 -0700 (PDT)
+ Thu, 29 Aug 2019 23:24:48 -0700 (PDT)
 From: Leo Yan <leo.yan@linaro.org>
 To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  Mathieu Poirier <mathieu.poirier@linaro.org>,
@@ -64,21 +66,22 @@ To: Arnaldo Carvalho de Melo <acme@kernel.org>,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
  Mike Leach <mike.leach@linaro.org>, Robert Walker <Robert.Walker@arm.com>,
  Adrian Hunter <adrian.hunter@intel.com>
-Subject: [PATCH v1 0/3] perf cs-etm: Add support for callchain
-Date: Fri, 30 Aug 2019 14:24:18 +0800
-Message-Id: <20190830062421.31275-1-leo.yan@linaro.org>
+Subject: [PATCH v1 1/3] perf cs-etm: Refactor instruction size handling
+Date: Fri, 30 Aug 2019 14:24:19 +0800
+Message-Id: <20190830062421.31275-2-leo.yan@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190830062421.31275-1-leo.yan@linaro.org>
+References: <20190830062421.31275-1-leo.yan@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_232445_975645_10B83044 
-X-CRM114-Status: UNSURE (   7.23  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_232449_727474_A8C2781D 
+X-CRM114-Status: GOOD (  14.43  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:b43 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,66 +110,96 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch seris adds support for instruction sample's callchain.
+There has several code pieces need to know the instruction size, but
+now every place calculates the instruction size separately.
 
-Patch 01 is to refactor the instruction size calculation; patch 02
-is to add thread stack and callchain support; patch 03 is a minor fixing
-for instruction sample generation thus the instruction sample can be
-alignment with the callchain generation.
+This patch refactors to create a new function cs_etm__instr_size() as
+a central place to analyze the instruction length based on ISA type
+and instruction value.
 
-Before:
+Signed-off-by: Leo Yan <leo.yan@linaro.org>
+---
+ tools/perf/util/cs-etm.c | 44 +++++++++++++++++++++++++++-------------
+ 1 file changed, 30 insertions(+), 14 deletions(-)
 
-  # perf script --itrace=g16l64i100
-            main  1579        100      instructions:  ffff0000102137f0 group_sched_in+0xb0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-            main  1579        100      instructions:  ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
-
-  [...]
-
-After:
-
-  # perf script --itrace=g16l64i100
-
-  main  1579        100      instructions: 
-          ffff0000102137f0 group_sched_in+0xb0 ([kernel.kallsyms])
-
-  main  1579        100      instructions: 
-          ffff000010213b78 flexible_sched_in+0xf0 ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions: 
-          ffff0000102135ac event_sched_in.isra.57+0x74 ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions: 
-          ffff000010219344 perf_swevent_add+0x6c ([kernel.kallsyms])
-          ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  main  1579        100      instructions: 
-          ffff000010214854 perf_event_update_userpage+0x4c ([kernel.kallsyms])
-          ffff000010219360 perf_swevent_add+0x88 ([kernel.kallsyms])
-          ffff0000102135f4 event_sched_in.isra.57+0xbc ([kernel.kallsyms])
-          ffff0000102137a0 group_sched_in+0x60 ([kernel.kallsyms])
-          ffff000010213b84 flexible_sched_in+0xfc ([kernel.kallsyms])
-          ffff00001020c0b4 visit_groups_merge+0x12c ([kernel.kallsyms])
-
-  [...]
-
-Leo Yan (3):
-  perf cs-etm: Refactor instruction size handling
-  perf cs-etm: Add callchain to instruction sample
-  perf cs-etm: Correct the packet usage for instruction sample
-
- tools/perf/util/cs-etm.c | 122 +++++++++++++++++++++++++++++++++------
- 1 file changed, 105 insertions(+), 17 deletions(-)
-
+diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+index b3a5daaf1a8f..882a0718033d 100644
+--- a/tools/perf/util/cs-etm.c
++++ b/tools/perf/util/cs-etm.c
+@@ -914,6 +914,26 @@ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
+ 	return ((instrBytes[1] & 0xF8) >= 0xE8) ? 4 : 2;
+ }
+ 
++static inline int cs_etm__instr_size(struct cs_etm_queue *etmq,
++				     u8 trace_chan_id,
++				     enum cs_etm_isa isa,
++				     u64 addr)
++{
++	int insn_len;
++
++	/*
++	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
++	 * cs_etm__t32_instr_size().
++	 */
++	if (isa == CS_ETM_ISA_T32)
++		insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id, addr);
++	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
++	else
++		insn_len = 4;
++
++	return insn_len;
++}
++
+ static inline u64 cs_etm__first_executed_instr(struct cs_etm_packet *packet)
+ {
+ 	/* Returns 0 for the CS_ETM_DISCONTINUITY packet */
+@@ -938,19 +958,23 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+ 				     const struct cs_etm_packet *packet,
+ 				     u64 offset)
+ {
++	int insn_len;
++
+ 	if (packet->isa == CS_ETM_ISA_T32) {
+ 		u64 addr = packet->start_addr;
+ 
+ 		while (offset > 0) {
+-			addr += cs_etm__t32_instr_size(etmq,
+-						       trace_chan_id, addr);
++			addr += cs_etm__instr_size(etmq, trace_chan_id,
++						   packet->isa, addr);
+ 			offset--;
+ 		}
+ 		return addr;
+ 	}
+ 
+-	/* Assume a 4 byte instruction size (A32/A64) */
+-	return packet->start_addr + offset * 4;
++	/* Return instruction size for A32/A64 */
++	insn_len = cs_etm__instr_size(etmq, trace_chan_id,
++				      packet->isa, packet->start_addr);
++	return packet->start_addr + offset * insn_len;
+ }
+ 
+ static void cs_etm__update_last_branch_rb(struct cs_etm_queue *etmq,
+@@ -1090,16 +1114,8 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
+ 		return;
+ 	}
+ 
+-	/*
+-	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
+-	 * cs_etm__t32_instr_size().
+-	 */
+-	if (packet->isa == CS_ETM_ISA_T32)
+-		sample->insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
+-							  sample->ip);
+-	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+-	else
+-		sample->insn_len = 4;
++	sample->insn_len = cs_etm__instr_size(etmq, trace_chan_id,
++					      packet->isa, sample->ip);
+ 
+ 	cs_etm__mem_access(etmq, trace_chan_id, sample->ip,
+ 			   sample->insn_len, (void *)sample->insn);
 -- 
 2.17.1
 
