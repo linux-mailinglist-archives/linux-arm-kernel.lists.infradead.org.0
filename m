@@ -2,92 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB061A3EA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 21:47:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CBB67A3EA2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 21:47:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
-	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8CuhktNWDyKD9ne6RJNKwXxSpdbpyxQZ9jzi4JLe5IA=; b=b4voARKU95Y+hn
-	18NtvUBV64uokld+0ZMUPvpTSPdAx2oXZM2SY+EKtTA53eJoFf+vGFtCS0dtyZ4CQEXyKbZ/85PMC
-	ricxCKFqrk3gcn6H4sMugzK806DHslcsGPOOFUmTCW6JEK2xAl/JVJciNrRQn6bEZUrY3UTpP4ABp
-	zDRGDKI5Dk3s9b8iPdAIzwJxjHIGN/lNv4Y+OwjAVIiXrnJjYGVWjhHAQDea622NkWsmcMPflcuiF
-	hRUe1jkaTR5G52cC+QX5n/3IvFIJucYCN7vdGzpznZvP/GF9z3Abc8sfcBi7U48PSroRRz2Slis8n
-	15lr1GaHmn3DLI5RPMtA==;
+	List-Owner; bh=oLaC5oFa4INFdWSN30mFE2QTX5wzmUz83Nsu26ybQrI=; b=cCOsNB4vTIjJ6B
+	4pOjvT3KiYwWjfmAFChMSHpJMbVn++2WkUwevuoWokE2JGNSvwq8+4XKYDP6y00lDiXq3e+vapxnf
+	zFhCnk9v/4opl0Y5jjEfhZ8CJ8T/o4rmKXPlAbmvdAZ9+pA33CO5VhrbKMHD2rrblqJQhiRw+OVz3
+	FdeXnZy9p7ysQhuP67VHm8ybID3U+t2adA4H9QPHXFw7NGQ+7LYS1yNXu/nBArJMd/dfQAqqdAsML
+	62gbF3GMTx/TJH7DnWFYJKUCAkIKxL+820ZkGKey8+KSTt7ykWONXWSFYKGZGlVoWDICG/m4husTK
+	hGjlylxL1jJph/2lJJ9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3mrI-0004XG-Cc; Fri, 30 Aug 2019 19:46:56 +0000
-Received: from out03.mta.xmission.com ([166.70.13.233])
+	id 1i3mrb-0004jl-6F; Fri, 30 Aug 2019 19:47:15 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3mr8-0004Vb-Nf
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 19:46:48 +0000
-Received: from in02.mta.xmission.com ([166.70.13.52])
- by out03.mta.xmission.com with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1i3mqo-0002rY-QA; Fri, 30 Aug 2019 13:46:26 -0600
-Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
- helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
- (envelope-from <ebiederm@xmission.com>)
- id 1i3mqC-0002tz-B5; Fri, 30 Aug 2019 13:46:26 -0600
-From: ebiederm@xmission.com (Eric W. Biederman)
-To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
- <20190830133522.GZ13294@shell.armlinux.org.uk>
-Date: Fri, 30 Aug 2019 14:45:36 -0500
-In-Reply-To: <20190830133522.GZ13294@shell.armlinux.org.uk> (Russell King's
- message of "Fri, 30 Aug 2019 14:35:22 +0100")
-Message-ID: <87d0gmwi73.fsf@x220.int.ebiederm.org>
-User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
+ id 1i3mrM-0004fG-BQ
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 19:47:02 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 21F09B03C;
+ Fri, 30 Aug 2019 19:46:56 +0000 (UTC)
+From: Michal Suchanek <msuchanek@suse.de>
+To: linux-arch@vger.kernel.org
+Subject: [PATCH] Revert "asm-generic: Remove unneeded __ARCH_WANT_SYS_LLSEEK
+ macro"
+Date: Fri, 30 Aug 2019 21:46:51 +0200
+Message-Id: <20190830194651.31043-1-msuchanek@suse.de>
+X-Mailer: git-send-email 2.22.0
+In-Reply-To: <bb6d25c6baae315d05b571d8c508f0e8fa90027c.1567188299.git.msuchanek@suse.de>
+References: <bb6d25c6baae315d05b571d8c508f0e8fa90027c.1567188299.git.msuchanek@suse.de>
 MIME-Version: 1.0
-X-XM-SPF: eid=1i3mqC-0002tz-B5; ; ; mid=<87d0gmwi73.fsf@x220.int.ebiederm.org>;
- ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
- frm=ebiederm@xmission.com; ; ; spf=neutral
-X-XM-AID: U2FsdGVkX18NMO9dKN/ZIv2eAbj5eODKvFQtgC+w5Xg=
-X-SA-Exim-Connect-IP: 68.227.160.95
-X-SA-Exim-Mail-From: ebiederm@xmission.com
-X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa01.xmission.com
-X-Spam-Level: 
-X-Spam-Status: No, score=-0.2 required=8.0 tests=ALL_TRUSTED,BAYES_50,
- DCC_CHECK_NEGATIVE,T_TM2_M_HEADER_IN_MSG autolearn=disabled
- version=3.4.2
-X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
- *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
- *      [score: 0.4966]
- *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
- * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
- *      [sa01 1397; Body=1 Fuz1=1 Fuz2=1]
-X-Spam-DCC: XMission; sa01 1397; Body=1 Fuz1=1 Fuz2=1 
-X-Spam-Combo: ;Russell King - ARM Linux admin <linux@armlinux.org.uk>
-X-Spam-Relay-Country: 
-X-Spam-Timing: total 28028 ms - load_scoreonly_sql: 0.03 (0.0%),
- signal_user_changed: 15020 (53.6%), b_tie_ro: 20027 (71.5%), parse:
- 1.04 (0.0%), extract_message_metadata: 15 (0.1%), get_uri_detail_list:
- 2.1 (0.0%), tests_pri_-1000: 11 (0.0%), tests_pri_-950: 1.01 (0.0%),
- tests_pri_-900: 0.86 (0.0%), tests_pri_-90: 20 (0.1%), check_bayes: 19
- (0.1%), b_tokenize: 6 (0.0%), b_tok_get_all: 7 (0.0%), b_comp_prob:
- 1.57 (0.0%), b_tok_touch_all: 3.0 (0.0%), b_finish: 0.56 (0.0%),
- tests_pri_0: 228 (0.8%), check_dkim_signature: 0.39 (0.0%),
- check_dkim_adsp: 2.1 (0.0%), poll_dns_idle: 7704 (27.5%),
- tests_pri_10: 1.67 (0.0%), tests_pri_500: 7718 (27.5%), rewrite_mail:
- 0.00 (0.0%)
-Subject: Re: [PATCH] arm: fix page faults in do_alignment
-X-Spam-Flag: No
-X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
-X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_124646_802984_8B7C278C 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190830_124700_685393_E73FCF7B 
+X-CRM114-Status: GOOD (  14.97  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [166.70.13.233 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -101,94 +60,259 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- Jing Xiangfeng <jingxiangfeng@huawei.com>, linux-mm@kvack.org,
- sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
- linux-arm-kernel@lists.infradead.org
+Cc: Rich Felker <dalias@libc.org>, linux-sh@vger.kernel.org,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
+ "James E.J. Bottomley" <James.Bottomley@HansenPartnership.com>,
+ Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
+ "H. Peter Anvin" <hpa@zytor.com>, sparclinux@vger.kernel.org,
+ Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
+ linux-s390@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Yoshinori Sato <ysato@users.sourceforge.jp>,
+ Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
+ x86@kernel.org, Russell King <linux@armlinux.org.uk>,
+ Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
+ Geert Uytterhoeven <geert@linux-m68k.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
+ Firoz Khan <firoz.khan@linaro.org>, Michal Suchanek <msuchanek@suse.de>,
+ linux-xtensa@linux-xtensa.org, Vasily Gorbik <gor@linux.ibm.com>,
+ linux-m68k@lists.linux-m68k.org, Borislav Petkov <bp@alien8.de>,
+ Alexander Viro <viro@zeniv.linux.org.uk>, David Howells <dhowells@redhat.com>,
+ Thomas Gleixner <tglx@linutronix.de>, Christian Brauner <christian@brauner.io>,
+ Chris Zankel <chris@zankel.net>, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ linux-kernel@vger.kernel.org, Ralf Baechle <ralf@linux-mips.org>,
+ Paul Burton <paul.burton@mips.com>, linux-fsdevel@vger.kernel.org,
+ Paul Mackerras <paulus@samba.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
+This reverts commit caf6f9c8a326cffd1d4b3ff3f1cfba75d159d70b.
 
-> On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
->> The function do_alignment can handle misaligned address for user and
->> kernel space. If it is a userspace access, do_alignment may fail on
->> a low-memory situation, because page faults are disabled in
->> probe_kernel_address.
->> 
->> Fix this by using __copy_from_user stead of probe_kernel_address.
->> 
->> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
->> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
->
-> NAK.
->
-> The "scheduling while atomic warning in alignment handling code" is
-> caused by fixing up the page fault while trying to handle the
-> mis-alignment fault generated from an instruction in atomic context.
->
-> Your patch re-introduces that bug.
+Maybe it was needed after all.
 
-And the patch that fixed scheduling while atomic apparently introduced a
-regression.  Admittedly a regression that took 6 years to track down but
-still.
+When CONFIG_COMPAT is disabled on ppc64 the kernel does not build.
 
-So it looks like the code needs to do something like:
+There is resistance to both removing the llseek syscall from the 64bit
+syscall tables and building the llseek interface unconditionally.
 
-diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
-index 04b36436cbc0..5e2b8623851e 100644
---- a/arch/arm/mm/alignment.c
-+++ b/arch/arm/mm/alignment.c
-@@ -784,6 +784,9 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
+Link: https://lore.kernel.org/lkml/20190828151552.GA16855@infradead.org/
+Link: https://lore.kernel.org/lkml/20190829214319.498c7de2@naga/
+
+Signed-off-by: Michal Suchanek <msuchanek@suse.de>
+---
+ arch/arm/include/asm/unistd.h        |  1 +
+ arch/arm64/include/asm/unistd.h      |  1 +
+ arch/csky/include/asm/unistd.h       |  2 +-
+ arch/m68k/include/asm/unistd.h       |  1 +
+ arch/microblaze/include/asm/unistd.h |  1 +
+ arch/mips/include/asm/unistd.h       |  1 +
+ arch/parisc/include/asm/unistd.h     |  1 +
+ arch/powerpc/include/asm/unistd.h    |  1 +
+ arch/s390/include/asm/unistd.h       |  1 +
+ arch/sh/include/asm/unistd.h         |  1 +
+ arch/sparc/include/asm/unistd.h      |  1 +
+ arch/x86/include/asm/unistd.h        |  1 +
+ arch/xtensa/include/asm/unistd.h     |  1 +
+ fs/read_write.c                      |  2 +-
+ include/asm-generic/unistd.h         | 12 ++++++++++++
+ 15 files changed, 26 insertions(+), 2 deletions(-)
+ create mode 100644 include/asm-generic/unistd.h
+
+diff --git a/arch/arm/include/asm/unistd.h b/arch/arm/include/asm/unistd.h
+index 3676e82cf95c..e35ec8100a21 100644
+--- a/arch/arm/include/asm/unistd.h
++++ b/arch/arm/include/asm/unistd.h
+@@ -18,6 +18,7 @@
+ #define __ARCH_WANT_SYS_GETHOSTNAME
+ #define __ARCH_WANT_SYS_PAUSE
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_SIGPENDING
+ #define __ARCH_WANT_SYS_SIGPROCMASK
+diff --git a/arch/arm64/include/asm/unistd.h b/arch/arm64/include/asm/unistd.h
+index 2629a68b8724..2c9d8d91e347 100644
+--- a/arch/arm64/include/asm/unistd.h
++++ b/arch/arm64/include/asm/unistd.h
+@@ -7,6 +7,7 @@
+ #define __ARCH_WANT_SYS_GETHOSTNAME
+ #define __ARCH_WANT_SYS_PAUSE
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_SIGPENDING
+ #define __ARCH_WANT_SYS_SIGPROCMASK
+diff --git a/arch/csky/include/asm/unistd.h b/arch/csky/include/asm/unistd.h
+index da7a18295615..bee8ba8309e7 100644
+--- a/arch/csky/include/asm/unistd.h
++++ b/arch/csky/include/asm/unistd.h
+@@ -1,6 +1,6 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+ // Copyright (C) 2018 Hangzhou C-SKY Microsystems co.,ltd.
  
- 	instrptr = instruction_pointer(regs);
+-#include <uapi/asm/unistd.h>
++#include <asm-generic/unistd.h>
  
-+	if (user_mode(regs))
-+		goto user;
+ #define NR_syscalls (__NR_syscalls)
+diff --git a/arch/m68k/include/asm/unistd.h b/arch/m68k/include/asm/unistd.h
+index 2e0047cf86f8..54c04eb4495a 100644
+--- a/arch/m68k/include/asm/unistd.h
++++ b/arch/m68k/include/asm/unistd.h
+@@ -21,6 +21,7 @@
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLD_GETRLIMIT
+ #define __ARCH_WANT_SYS_OLD_MMAP
+diff --git a/arch/microblaze/include/asm/unistd.h b/arch/microblaze/include/asm/unistd.h
+index d79d35ac6253..c5fcbce1f997 100644
+--- a/arch/microblaze/include/asm/unistd.h
++++ b/arch/microblaze/include/asm/unistd.h
+@@ -27,6 +27,7 @@
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ /* #define __ARCH_WANT_SYS_OLD_GETRLIMIT */
+ #define __ARCH_WANT_SYS_OLDUMOUNT
+diff --git a/arch/mips/include/asm/unistd.h b/arch/mips/include/asm/unistd.h
+index 071053ece677..8e8c7cab95ca 100644
+--- a/arch/mips/include/asm/unistd.h
++++ b/arch/mips/include/asm/unistd.h
+@@ -38,6 +38,7 @@
+ #define __ARCH_WANT_SYS_WAITPID
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLD_UNAME
+ #define __ARCH_WANT_SYS_OLDUMOUNT
+diff --git a/arch/parisc/include/asm/unistd.h b/arch/parisc/include/asm/unistd.h
+index cd438e4150f6..29bd46381f2e 100644
+--- a/arch/parisc/include/asm/unistd.h
++++ b/arch/parisc/include/asm/unistd.h
+@@ -159,6 +159,7 @@ type name(type1 arg1, type2 arg2, type3 arg3, type4 arg4, type5 arg5)	\
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLDUMOUNT
+ #define __ARCH_WANT_SYS_SIGPENDING
+diff --git a/arch/powerpc/include/asm/unistd.h b/arch/powerpc/include/asm/unistd.h
+index b0720c7c3fcf..700fcdac2e3c 100644
+--- a/arch/powerpc/include/asm/unistd.h
++++ b/arch/powerpc/include/asm/unistd.h
+@@ -31,6 +31,7 @@
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLD_GETRLIMIT
+ #define __ARCH_WANT_SYS_OLD_UNAME
+diff --git a/arch/s390/include/asm/unistd.h b/arch/s390/include/asm/unistd.h
+index 9e9f75ef046a..52e9e2fe3768 100644
+--- a/arch/s390/include/asm/unistd.h
++++ b/arch/s390/include/asm/unistd.h
+@@ -21,6 +21,7 @@
+ #define __ARCH_WANT_SYS_IPC
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLD_GETRLIMIT
+ #define __ARCH_WANT_SYS_OLD_MMAP
+diff --git a/arch/sh/include/asm/unistd.h b/arch/sh/include/asm/unistd.h
+index 9c7d9d9999c6..4899b6b72f1a 100644
+--- a/arch/sh/include/asm/unistd.h
++++ b/arch/sh/include/asm/unistd.h
+@@ -22,6 +22,7 @@
+ # define __ARCH_WANT_SYS_SOCKETCALL
+ # define __ARCH_WANT_SYS_FADVISE64
+ # define __ARCH_WANT_SYS_GETPGRP
++# define __ARCH_WANT_SYS_LLSEEK
+ # define __ARCH_WANT_SYS_NICE
+ # define __ARCH_WANT_SYS_OLD_GETRLIMIT
+ # define __ARCH_WANT_SYS_OLD_UNAME
+diff --git a/arch/sparc/include/asm/unistd.h b/arch/sparc/include/asm/unistd.h
+index 1e66278ba4a5..7edfc208e2af 100644
+--- a/arch/sparc/include/asm/unistd.h
++++ b/arch/sparc/include/asm/unistd.h
+@@ -36,6 +36,7 @@
+ #define __ARCH_WANT_SYS_SOCKETCALL
+ #define __ARCH_WANT_SYS_FADVISE64
+ #define __ARCH_WANT_SYS_GETPGRP
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_NICE
+ #define __ARCH_WANT_SYS_OLDUMOUNT
+ #define __ARCH_WANT_SYS_SIGPENDING
+diff --git a/arch/x86/include/asm/unistd.h b/arch/x86/include/asm/unistd.h
+index 097589753fec..9e5a1748b4ce 100644
+--- a/arch/x86/include/asm/unistd.h
++++ b/arch/x86/include/asm/unistd.h
+@@ -39,6 +39,7 @@
+ # define __ARCH_WANT_SYS_FADVISE64
+ # define __ARCH_WANT_SYS_GETHOSTNAME
+ # define __ARCH_WANT_SYS_GETPGRP
++# define __ARCH_WANT_SYS_LLSEEK
+ # define __ARCH_WANT_SYS_NICE
+ # define __ARCH_WANT_SYS_OLDUMOUNT
+ # define __ARCH_WANT_SYS_OLD_GETRLIMIT
+diff --git a/arch/xtensa/include/asm/unistd.h b/arch/xtensa/include/asm/unistd.h
+index b52236245e51..9fd236a7825e 100644
+--- a/arch/xtensa/include/asm/unistd.h
++++ b/arch/xtensa/include/asm/unistd.h
+@@ -9,6 +9,7 @@
+ #define __ARCH_WANT_NEW_STAT
+ #define __ARCH_WANT_STAT64
+ #define __ARCH_WANT_SYS_UTIME32
++#define __ARCH_WANT_SYS_LLSEEK
+ #define __ARCH_WANT_SYS_GETPGRP
+ 
+ #define NR_syscalls				__NR_syscalls
+diff --git a/fs/read_write.c b/fs/read_write.c
+index 5bbf587f5bc1..2f3c4bb138c4 100644
+--- a/fs/read_write.c
++++ b/fs/read_write.c
+@@ -331,7 +331,7 @@ COMPAT_SYSCALL_DEFINE3(lseek, unsigned int, fd, compat_off_t, offset, unsigned i
+ }
+ #endif
+ 
+-#if !defined(CONFIG_64BIT) || defined(CONFIG_COMPAT)
++#ifdef __ARCH_WANT_SYS_LLSEEK
+ SYSCALL_DEFINE5(llseek, unsigned int, fd, unsigned long, offset_high,
+ 		unsigned long, offset_low, loff_t __user *, result,
+ 		unsigned int, whence)
+diff --git a/include/asm-generic/unistd.h b/include/asm-generic/unistd.h
+new file mode 100644
+index 000000000000..ea74eca8463f
+--- /dev/null
++++ b/include/asm-generic/unistd.h
+@@ -0,0 +1,12 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++#include <uapi/asm-generic/unistd.h>
++#include <linux/export.h>
 +
- 	if (thumb_mode(regs)) {
- 		u16 *ptr = (u16 *)(instrptr & ~1);
- 		fault = probe_kernel_address(ptr, tinstr);
-@@ -933,6 +936,34 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
- 	return 1;
- 
-  user:
-+	if (thumb_mode(regs)) {
-+		u16 *ptr = (u16 *)(instrptr & ~1);
-+		fault = get_user(tinstr, ptr);
-+		tinstr = __mem_to_opcode_thumb16(tinstr);
-+		if (!fault) {
-+			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
-+			    IS_T32(tinstr)) {
-+				/* Thumb-2 32-bit */
-+				u16 tinst2 = 0;
-+				fault = get_user(ptr + 1, tinst2);
-+				tinst2 = __mem_to_opcode_thumb16(tinst2);
-+				instr = __opcode_thumb32_compose(tinstr, tinst2);
-+				thumb2_32b = 1;
-+			} else {
-+				isize = 2;
-+				instr = thumb2arm(tinstr);
-+			}
-+		}
-+	} else {
-+		fault = get_user(instr, (u32*)instrptr);
-+		instr = __mem_to_opcode_arm(instr);
-+	}
-+
-+	if (fault) {
-+		type = TYPE_FAULT;
-+		goto bad_or_fault;
-+	}
-+
- 	ai_user += 1;
- 
- 	if (ai_usermode & UM_WARN)
++/*
++ * These are required system calls, we should
++ * invert the logic eventually and let them
++ * be selected by default.
++ */
++#if __BITS_PER_LONG == 32
++#define __ARCH_WANT_SYS_LLSEEK
++#endif
+-- 
+2.22.0
 
-Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
