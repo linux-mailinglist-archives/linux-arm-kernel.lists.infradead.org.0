@@ -2,68 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87416A32BF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:36:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E7EEA32C3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:39:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I3NMxvBklfj/182VSNkNHlo+OyGC9s8kmjUCfJ5K1E8=; b=uQVbaJ5WnjLprM
-	alioPPjvu0i8bTfGsXQsQHlag8wAVww2nsJjOjNdqnXzyS0OhTtRGnwNUotzcKxwfrJB4T+epi1hZ
-	LjSVeswESomkisIDkZDlcDWDC//j+bI4Q3TkeQjhvi5jfoU6krjM+440hIORKceneNn7P64rQZIql
-	2Q+UvDdorI09MOwkpqOxSqQpBp/HSJATrB1zQ1XjtOgh2yVbWyeu4gENpRqxvidjeN4fK8OQ2VLkZ
-	Kodtgltl6JEReHDQwUuV0gcIEHsV0oy0DKD1OVyaINg00ABCk/QC7ARrGCoJq7dK9zTggbpY/s2/R
-	vzTCK62dJEwOBofrI/MQ==;
+	List-Owner; bh=qZRp39Anp/309Yb1GEJZ3/bbKqRdyDobjdx6b1s3nGw=; b=Jifa0tteFtxiec
+	jGvwmC2kdOBJio0D8C8OfYYY8EL+GkI/EyCqSSN8BrfSeZolh1rNJwvU/+SqIclq8jSWXxKTOdiIY
+	llvExdrJJnvX2RTAIujXIkNyd6WQSVM5QjeyBBjD2Fbt7DsPr7ro+3IqPs1E/ewomKZ/Rf/e9K432
+	gtztjLmhp3GLCYBA5l7J7GYKKiatzk5BHp13f/6g87Za4wEKF2h17v8EO1phmA+AfWNXxS1m84kKn
+	sS9QDkehaOuHXQ4JCoy4bqk47Q1cLFrrL27kFPIfvCFpR/6L6tbhXb6eX+AuUIcvEOlvejuH/Obp2
+	74IVXbb/PbBpBphKD5/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3cOL-0004i4-57; Fri, 30 Aug 2019 08:36:21 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i3cRZ-0006CG-FL; Fri, 30 Aug 2019 08:39:41 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3cO6-0004h4-IG; Fri, 30 Aug 2019 08:36:08 +0000
-X-UUID: afe819a577dd4724a9064817be893338-20190830
-X-UUID: afe819a577dd4724a9064817be893338-20190830
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 472908768; Fri, 30 Aug 2019 00:36:04 -0800
-Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 30 Aug 2019 01:36:03 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 30 Aug 2019 16:35:55 +0800
-Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 30 Aug 2019 16:35:55 +0800
-Message-ID: <1567154150.13325.2.camel@mtksdaap41>
-Subject: Re: [PATCH 1/2] drm/mediatek: Only block updates to CRTCs that have
- a pending update
-From: CK Hu <ck.hu@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Fri, 30 Aug 2019 16:35:50 +0800
-In-Reply-To: <20190830073819.16566-2-bibby.hsieh@mediatek.com>
-References: <20190830073819.16566-1-bibby.hsieh@mediatek.com>
- <20190830073819.16566-2-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i3cRN-00062c-DV
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:39:31 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id DEC91AF9F;
+ Fri, 30 Aug 2019 08:39:26 +0000 (UTC)
+Date: Fri, 30 Aug 2019 10:39:25 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Yunsheng Lin <linyunsheng@huawei.com>
+Subject: Re: [PATCH] arm64: numa: check the node id before accessing
+ node_to_cpumask_map
+Message-ID: <20190830083925.GV28313@dhcp22.suse.cz>
+References: <1567131991-189761-1-git-send-email-linyunsheng@huawei.com>
+ <20190830055528.GO28313@dhcp22.suse.cz>
+ <49b86da7-f114-27c2-463a-9bf5082ac197@huawei.com>
+ <20190830064421.GS28313@dhcp22.suse.cz>
+ <740cae36-f1a9-4d20-e4ea-3100076de533@huawei.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 6A96CFC89D33F5FA5F20A3018DA500853F5365A8A16AA1784E06D7C60982FE4B2000:8
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <740cae36-f1a9-4d20-e4ea-3100076de533@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_013606_612954_9F81D7AD 
-X-CRM114-Status: GOOD (  26.47  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_013929_749882_0B7391D4 
+X-CRM114-Status: GOOD (  32.63  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,412 +65,193 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: drinkcat@chromium.org, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
- dri-devel@lists.freedesktop.org, tfiga@chromium.org,
- YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
- linux-mediatek@lists.infradead.org, Daniel Kurtz <djkurtz@chromium.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: tglx@linutronix.de, anshuman.khandual@arm.com, robin.murphy@arm.com,
+ linuxarm@huawei.com, linux-kernel@vger.kernel.org, rppt@linux.ibm.com,
+ cai@lca.pw, akpm@linux-foundation.org, will@kernel.org, adobriyan@gmail.com,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Bibby:
-
-On Fri, 2019-08-30 at 15:38 +0800, Bibby Hsieh wrote:
-> Currently we use a single mutex to allow only a single atomic
-> update at a time. In truth, though, we really only want to
-> ensure that only a single atomic update is allowed per CRTC.
+On Fri 30-08-19 16:08:14, Yunsheng Lin wrote:
+> On 2019/8/30 14:44, Michal Hocko wrote:
+> > On Fri 30-08-19 14:35:26, Yunsheng Lin wrote:
+> >> On 2019/8/30 13:55, Michal Hocko wrote:
+> >>> On Fri 30-08-19 10:26:31, Yunsheng Lin wrote:
+> >>>> Some buggy bios may not set the device' numa id, and dev_to_node
+> >>>> will return -1, which may cause global-out-of-bounds error
+> >>>> detected by KASAN.
+> >>>
+> >>> Why should we workaround a buggy bios like that? Is it so widespread and
+> >>> no BIOS update available? Also, why is this arm64 specific?
+> >>
+> >> For our case, there is BIOS update available. I just thought it might
+> >> be better to protect from this case when BIOS has not implemented the
+> >> device' numa id setting feature or the feature from BIOS has some bug.
+> >>
+> >> It is not arm64 specific, right now I only have arm64 board. If it is
+> >> ok to protect this from the buggy BIOS, maybe all other arch can be
+> >> changed too.
+> > 
+> > If we are to really care then this should be consistent among
+> > architectures IMHO. But I am not really sure this is really worth it.
+> > The code is quite old and I do not really remember any reports. 
 > 
-> In other words, for each atomic update, we only block if there
-> is a pending update for the CRTCs involved, and don't block if
-> there are only pending updates for other CRTCs.
-
-I don't know why this patch is so complicated. The original problem is
-that one mutex for whole drm would block different crtc. So I think each
-crtc has its own mutex would solve this problem and we need not the
-event waiting. Do I miss something?
-
-Regards,
-CK
-
+> It is only detected by enabling KASAN, the system seems to run fine without
+> any visible error if KASAN is disabled. Maybe there is why no report has
+> been seen?
 > 
-> Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
+> Also according to Section 6.2.14 from ACPI spec 6.3 [1], the setting of proximity
+> domain is optional, as below:
 > 
-> Signed-off-by: Daniel Kurtz <djkurtz@chromium.org>
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  14 +-
->  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 182 +++++++++++++++++++++---
->  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  12 +-
->  3 files changed, 184 insertions(+), 24 deletions(-)
+> This optional object is used to describe proximity domain
+> associations within a machine. _PXM evaluates to an integer
+> that identifies a device as belonging to a Proximity Domain
+> defined in the System Resource Affinity Table (SRAT).
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index b55970a2869d..7697b40baac0 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -5,6 +5,7 @@
->  
->  #include <asm/barrier.h>
->  #include <drm/drmP.h>
-> +#include <drm/drm_atomic.h>
->  #include <drm/drm_atomic_helper.h>
->  #include <drm/drm_plane_helper.h>
->  #include <drm/drm_probe_helper.h>
-> @@ -45,6 +46,8 @@ struct mtk_drm_crtc {
->  	struct mtk_disp_mutex		*mutex;
->  	unsigned int			ddp_comp_nr;
->  	struct mtk_ddp_comp		**ddp_comp;
-> +
-> +	struct drm_crtc_state		*old_crtc_state;
->  };
->  
->  struct mtk_crtc_state {
-> @@ -343,6 +346,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
->  static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
->  {
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> +	struct drm_atomic_state *atomic_state = mtk_crtc->old_crtc_state->state;
->  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
->  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
->  	unsigned int i;
-> @@ -382,6 +386,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
->  			}
->  		}
->  		mtk_crtc->pending_planes = false;
-> +		mtk_atomic_state_put_queue(atomic_state);
->  	}
->  }
->  
-> @@ -451,6 +456,7 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
->  static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
->  				      struct drm_crtc_state *old_crtc_state)
->  {
-> +	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
->  	struct mtk_drm_private *priv = crtc->dev->dev_private;
->  	unsigned int pending_planes = 0;
-> @@ -469,8 +475,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
->  			pending_planes |= BIT(i);
->  		}
->  	}
-> -	if (pending_planes)
-> +
-> +	if (pending_planes) {
->  		mtk_crtc->pending_planes = true;
-> +		drm_atomic_state_get(old_atomic_state);
-> +		mtk_crtc->old_crtc_state = old_crtc_state;
-> +	}
-> +
->  	if (crtc->state->color_mgmt_changed)
->  		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
->  			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
-> @@ -526,6 +537,7 @@ static int mtk_drm_crtc_init(struct drm_device *drm,
->  
->  void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
->  {
-> +
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
->  	struct mtk_drm_private *priv = crtc->dev->dev_private;
->  
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> index c0928b69dc43..b0308a3a7483 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
-> @@ -31,11 +31,120 @@
->  #define DRIVER_MAJOR 1
->  #define DRIVER_MINOR 0
->  
-> -static void mtk_atomic_schedule(struct mtk_drm_private *private,
-> +struct mtk_atomic_state {
-> +	struct drm_atomic_state base;
-> +	struct list_head list;
-> +	struct work_struct work;
-> +};
-> +
-> +static inline struct mtk_atomic_state *to_mtk_state(struct drm_atomic_state *s)
-> +{
-> +	return container_of(s, struct mtk_atomic_state, base);
-> +}
-> +
-> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state)
-> +{
-> +	struct drm_device *drm = state->dev;
-> +	struct mtk_drm_private *mtk_drm = drm->dev_private;
-> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
-> +	unsigned long flags;
-> +
-> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> +	list_add_tail(&mtk_state->list, &mtk_drm->unreference.list);
-> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> +
-> +	schedule_work(&mtk_drm->unreference.work);
-> +}
-> +
-> +static uint32_t mtk_atomic_crtc_mask(struct drm_device *drm,
-> +				     struct drm_atomic_state *state)
-> +{
-> +	uint32_t crtc_mask;
-> +	int i;
-> +
-> +	for (i = 0, crtc_mask = 0; i < drm->mode_config.num_crtc; i++) {
-> +		struct drm_crtc *crtc = state->crtcs[i].ptr;
-> +
-> +		if (crtc)
-> +			crtc_mask |= (1 << drm_crtc_index(crtc));
-> +	}
-> +
-> +	return crtc_mask;
-> +}
-> +
-> +/*
-> + * Block until specified crtcs are no longer pending update, and atomically
-> + * mark them as pending update.
-> + */
-> +static int mtk_atomic_get_crtcs(struct drm_device *drm,
-> +				struct drm_atomic_state *state)
-> +{
-> +	struct mtk_drm_private *private = drm->dev_private;
-> +	uint32_t crtc_mask;
-> +	int ret;
-> +
-> +	crtc_mask = mtk_atomic_crtc_mask(drm, state);
-> +
-> +	/*
-> +	 * Wait for all pending updates to complete for the set of crtcs being
-> +	 * changed in this atomic commit
-> +	 */
-> +	spin_lock(&private->commit.crtcs_event.lock);
-> +	ret = wait_event_interruptible_locked(private->commit.crtcs_event,
-> +			!(private->commit.crtcs & crtc_mask));
-> +	if (ret == 0)
-> +		private->commit.crtcs |= crtc_mask;
-> +	spin_unlock(&private->commit.crtcs_event.lock);
-> +
-> +	return ret;
-> +}
-> +
-> +/*
-> + * Mark specified crtcs as no longer pending update.
-> + */
-> +static void mtk_atomic_put_crtcs(struct drm_device *drm,
-> +				 struct drm_atomic_state *state)
-> +{
-> +	struct mtk_drm_private *private = drm->dev_private;
-> +	uint32_t crtc_mask;
-> +
-> +	crtc_mask = mtk_atomic_crtc_mask(drm, state);
-> +
-> +	spin_lock(&private->commit.crtcs_event.lock);
-> +	private->commit.crtcs &= ~crtc_mask;
-> +	wake_up_all_locked(&private->commit.crtcs_event);
-> +	spin_unlock(&private->commit.crtcs_event.lock);
-> +}
-> +
-> +static void mtk_unreference_work(struct work_struct *work)
-> +{
-> +	struct mtk_drm_private *mtk_drm = container_of(work,
-> +			struct mtk_drm_private, unreference.work);
-> +	unsigned long flags;
-> +	struct mtk_atomic_state *state, *tmp;
-> +
-> +	/*
-> +	 * framebuffers cannot be unreferenced in atomic context.
-> +	 * Therefore, only hold the spinlock when iterating unreference_list,
-> +	 * and drop it when doing the unreference.
-> +	 */
-> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> +	list_for_each_entry_safe(state, tmp, &mtk_drm->unreference.list, list) {
-> +		list_del(&state->list);
-> +		spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> +		drm_atomic_state_put(&state->base);
-> +		spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
-> +	}
-> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
-> +}
-> +
-> +
-> +static void mtk_atomic_schedule(struct drm_device *drm,
->  				struct drm_atomic_state *state)
->  {
-> -	private->commit.state = state;
-> -	schedule_work(&private->commit.work);
-> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
-> +
-> +	schedule_work(&mtk_state->work);
->  }
->  
->  static void mtk_atomic_wait_for_fences(struct drm_atomic_state *state)
-> @@ -48,13 +157,10 @@ static void mtk_atomic_wait_for_fences(struct drm_atomic_state *state)
->  		mtk_fb_wait(new_plane_state->fb);
->  }
->  
-> -static void mtk_atomic_complete(struct mtk_drm_private *private,
-> +static void mtk_atomic_complete(struct drm_device *drm,
->  				struct drm_atomic_state *state)
->  {
-> -	struct drm_device *drm = private->drm;
-> -
->  	mtk_atomic_wait_for_fences(state);
-> -
->  	/*
->  	 * Mediatek drm supports runtime PM, so plane registers cannot be
->  	 * written when their crtc is disabled.
-> @@ -77,53 +183,86 @@ static void mtk_atomic_complete(struct mtk_drm_private *private,
->  	drm_atomic_helper_wait_for_vblanks(drm, state);
->  
->  	drm_atomic_helper_cleanup_planes(drm, state);
-> +	mtk_atomic_put_crtcs(drm, state);
-> +
->  	drm_atomic_state_put(state);
->  }
->  
->  static void mtk_atomic_work(struct work_struct *work)
->  {
-> -	struct mtk_drm_private *private = container_of(work,
-> -			struct mtk_drm_private, commit.work);
-> +	struct mtk_atomic_state *mtk_state = container_of(work,
-> +			struct mtk_atomic_state, work);
-> +	struct drm_atomic_state *state = &mtk_state->base;
-> +	struct drm_device *drm = state->dev;
->  
-> -	mtk_atomic_complete(private, private->commit.state);
-> +	mtk_atomic_complete(drm, state);
->  }
->  
->  static int mtk_atomic_commit(struct drm_device *drm,
->  			     struct drm_atomic_state *state,
->  			     bool async)
->  {
-> -	struct mtk_drm_private *private = drm->dev_private;
->  	int ret;
->  
->  	ret = drm_atomic_helper_prepare_planes(drm, state);
->  	if (ret)
->  		return ret;
->  
-> -	mutex_lock(&private->commit.lock);
-> -	flush_work(&private->commit.work);
-> +	ret = mtk_atomic_get_crtcs(drm, state);
-> +	if (ret) {
-> +		drm_atomic_helper_cleanup_planes(drm, state);
-> +		return ret;
-> +	}
->  
->  	ret = drm_atomic_helper_swap_state(state, true);
->  	if (ret) {
-> -		mutex_unlock(&private->commit.lock);
->  		drm_atomic_helper_cleanup_planes(drm, state);
->  		return ret;
->  	}
->  
->  	drm_atomic_state_get(state);
->  	if (async)
-> -		mtk_atomic_schedule(private, state);
-> +		mtk_atomic_schedule(drm, state);
->  	else
-> -		mtk_atomic_complete(private, state);
-> -
-> -	mutex_unlock(&private->commit.lock);
-> +		mtk_atomic_complete(drm, state);
->  
->  	return 0;
->  }
->  
-> +static struct drm_atomic_state *mtk_drm_atomic_state_alloc(
-> +		struct drm_device *dev)
-> +{
-> +	struct mtk_atomic_state *mtk_state;
-> +
-> +	mtk_state = kzalloc(sizeof(*mtk_state), GFP_KERNEL);
-> +	if (!mtk_state)
-> +		return NULL;
-> +
-> +	if (drm_atomic_state_init(dev, &mtk_state->base) < 0) {
-> +		kfree(mtk_state);
-> +		return NULL;
-> +	}
-> +
-> +	INIT_LIST_HEAD(&mtk_state->list);
-> +	INIT_WORK(&mtk_state->work, mtk_atomic_work);
-> +
-> +	return &mtk_state->base;
-> +}
-> +
-> +static void mtk_drm_atomic_state_free(struct drm_atomic_state *state)
-> +{
-> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
-> +
-> +	drm_atomic_state_default_release(state);
-> +	kfree(mtk_state);
-> +}
-> +
->  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
->  	.fb_create = mtk_drm_mode_fb_create,
->  	.atomic_check = drm_atomic_helper_check,
->  	.atomic_commit = mtk_atomic_commit,
-> +	.atomic_state_alloc = mtk_drm_atomic_state_alloc,
-> +	.atomic_state_free = mtk_drm_atomic_state_free
->  };
->  
->  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
-> @@ -319,6 +458,11 @@ static int mtk_drm_kms_init(struct drm_device *drm)
->  	drm_kms_helper_poll_init(drm);
->  	drm_mode_config_reset(drm);
->  
-> +	INIT_WORK(&private->unreference.work, mtk_unreference_work);
-> +	INIT_LIST_HEAD(&private->unreference.list);
-> +	spin_lock_init(&private->unreference.lock);
-> +	init_waitqueue_head(&private->commit.crtcs_event);
-> +
->  	return 0;
->  
->  err_component_unbind:
-> @@ -504,8 +648,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
->  	if (!private)
->  		return -ENOMEM;
->  
-> -	mutex_init(&private->commit.lock);
-> -	INIT_WORK(&private->commit.work, mtk_atomic_work);
->  	private->data = of_device_get_match_data(dev);
->  
->  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> index 823ba4081c18..0934f83b860d 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
-> @@ -48,12 +48,16 @@ struct mtk_drm_private {
->  	const struct mtk_mmsys_driver_data *data;
->  
->  	struct {
-> -		struct drm_atomic_state *state;
-> -		struct work_struct work;
-> -		struct mutex lock;
-> +		uint32_t crtcs;
-> +		wait_queue_head_t crtcs_event;
->  	} commit;
->  
->  	struct drm_atomic_state *suspend_state;
-> +	struct {
-> +		struct work_struct	work;
-> +		struct list_head	list;
-> +		spinlock_t		lock;
-> +	} unreference;
->  };
->  
->  extern struct platform_driver mtk_ddp_driver;
-> @@ -64,4 +68,6 @@ extern struct platform_driver mtk_dpi_driver;
->  extern struct platform_driver mtk_dsi_driver;
->  extern struct platform_driver mtk_mipi_tx_driver;
->  
-> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state);
-> +
->  #endif /* MTK_DRM_DRV_H */
+> 
+> Do you think it is ok to resend the fix with above clarification and below
+> log:
 
+OK, if the specification really allows to provide NUMA_NO_NODE (-1) then
+the code really has to be prepared for that. And ideally all arches
+should deal with that.
 
+> [   42.970381] ==================================================================
+> [   42.977595] BUG: KASAN: global-out-of-bounds in __bitmap_weight+0x48/0xb0
+> [   42.984370] Read of size 8 at addr ffff20008cdf8790 by task kworker/0:1/13
+> [   42.991230]
+> [   42.992712] CPU: 0 PID: 13 Comm: kworker/0:1 Tainted: G           O      5.2.0-rc4-g8bde06a-dirty #3
+> [   43.001830] Hardware name: Huawei TaiShan 2280 V2/BC82AMDA, BIOS TA BIOS 2280-A CS V2.B050.01 08/08/2019
+> [   43.011298] Workqueue: events work_for_cpu_fn
+> [   43.015643] Call trace:
+> [   43.018078]  dump_backtrace+0x0/0x1e8
+> [   43.021727]  show_stack+0x14/0x20
+> [   43.025031]  dump_stack+0xc4/0xfc
+> [   43.028335]  print_address_description+0x178/0x270
+> [   43.033113]  __kasan_report+0x164/0x1b8
+> [   43.036936]  kasan_report+0xc/0x18
+> [   43.040325]  __asan_load8+0x84/0xa8
+> [   43.043801]  __bitmap_weight+0x48/0xb0
+> [   43.047552]  hclge_init_ae_dev+0x988/0x1e78 [hclge]
+> [   43.052418]  hnae3_register_ae_dev+0xcc/0x278 [hnae3]
+> [   43.057467]  hns3_probe+0xe0/0x120 [hns3]
+> [   43.061464]  local_pci_probe+0x74/0xf0
+> [   43.065200]  work_for_cpu_fn+0x2c/0x48
+> [   43.068937]  process_one_work+0x3c0/0x878
+> [   43.072934]  worker_thread+0x400/0x670
+> [   43.076670]  kthread+0x1b0/0x1b8
+> [   43.079885]  ret_from_fork+0x10/0x18
+> [   43.083446]
+> [   43.084925] The buggy address belongs to the variable:
+> [   43.090052]  numa_distance+0x30/0x40
+> [   43.093613]
+> [   43.095091] Memory state around the buggy address:
+> [   43.099870]  ffff20008cdf8680: fa fa fa fa 04 fa fa fa fa fa fa fa 00 00 fa fa
+> [   43.107078]  ffff20008cdf8700: fa fa fa fa 04 fa fa fa fa fa fa fa 00 fa fa fa
+> [   43.114286] >ffff20008cdf8780: fa fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
+> [   43.121494]                          ^
+> [   43.125230]  ffff20008cdf8800: 01 fa fa fa fa fa fa fa 04 fa fa fa fa fa fa fa
+> [   43.132439]  ffff20008cdf8880: fa fa fa fa fa fa fa fa 00 00 fa fa fa fa fa fa
+> [   43.139646] ==================================================================
+> 
+> 
+> > 
+> >>>> This patch changes cpumask_of_node to return cpu_none_mask if the
+> >>>> node is not valid, and sync the cpumask_of_node between the
+> >>>> cpumask_of_node function in numa.h and numa.c.
+> >>>
+> >>> Why?
+> >>
+> >> When CONFIG_DEBUG_PER_CPU_MAPS is defined, the cpumask_of_node() in
+> >> numa.c is used, if not, the cpumask_of_node() in numa.h is used.
+> >>
+> >> I am not sure why there is difference between them, and it is there
+> >> when since the below commit:
+> >> 1a2db300348b ("arm64, numa: Add NUMA support for arm64 platforms.")
+> >>
+> >> I synced them to keep them consistent whether CONFIG_DEBUG_PER_CPU_MAPS
+> >> is defined.
+> > 
+> > Such a change should be made in a separate patch with a full
+> > clarification/justification. From the above it is still not clear why
+> > this is needed though.
+> 
+> Ok.
+> 
+> How about:
+> 
+> Currently there are different implementations of cpumask_of_node() depend
+> on the arch, for example:
+> 
+> ia64:
+> #define cpumask_of_node(node) ((node) == -1 ?				\
+> 			       cpu_all_mask :				\
+> 			       &node_to_cpu_mask[node])
+> 
+> 
+> alpha:
+> static const struct cpumask *cpumask_of_node(int node)
+> {
+> 	int cpu;
+> 
+> 	if (node == NUMA_NO_NODE)
+> 		return cpu_all_mask;
+> 
+> 	cpumask_clear(&node_to_cpumask_map[node]);
+> 
+> 	for_each_online_cpu(cpu) {
+> 		if (cpu_to_node(cpu) == node)
+> 			cpumask_set_cpu(cpu, node_to_cpumask_map[node]);
+> 	}
+> 
+> 	return &node_to_cpumask_map[node];
+> }
+> 
+> Even for the same arch, there are two implementations depend on the
+> CONFIG_DEBUG_PER_CPU_MAPS configuration.
+> 
+> arm64/x86 without CONFIG_DEBUG_PER_CPU_MAPS:
+> static inline const struct cpumask *cpumask_of_node(int node)
+> {
+> 	return node_to_cpumask_map[node];
+> }
+> 
+> arm64/x86 with CONFIG_DEBUG_PER_CPU_MAPS:
+> const struct cpumask *cpumask_of_node(int node)
+> {
+> 	if (WARN_ON(node >= nr_node_ids))
+> 		return cpu_none_mask;
+> 
+> 	if (WARN_ON(node_to_cpumask_map[node] == NULL))
+> 		return cpu_online_mask;
+> 
+> 	return node_to_cpumask_map[node];
+> }
+> 
+> It seems the cpumask_of_node with CONFIG_DEBUG_PER_CPU_MAPS is used
+> to catch the erorr case and give a warning to user when node id is not
+> valid.
+
+Yeah the config help text
+config DEBUG_PER_CPU_MAPS
+        bool "Debug access to per_cpu maps"
+        depends on DEBUG_KERNEL
+        depends on SMP
+        help
+          Say Y to verify that the per_cpu map being accessed has
+          been set up. This adds a fair amount of code to kernel memory
+          and decreases performance.
+
+          Say N if unsure.
+
+suggests that this is intentionally hidden behind a config so a normal
+path shouldn't really duplicate it. If those checks make sense in
+general then the config option should be dropped I think.
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
