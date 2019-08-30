@@ -2,26 +2,26 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3CB7A3B75
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:06:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C928A3B6A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:06:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
 	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=ENh9+uOt6s8jmfWmGXoRQ4o3XJagVvoU+LS9kgeq1SA=; b=GPA
-	x2ktrvC8ns2mpCswdZTYu6iT+ZkSxbf045mtIShVAAvihBUzLAhwAb6Zo4rdZp+2qsx2iawPV6xPk
-	y2ea4NUtjOR4jLcwhQzNkcngDE++IQ9WH8aliNct8ZNeHmZWzuivfmm08QJmxDwLGuIq2KSUH4vpA
-	ouPXyxpBXEwAq+BBa20a6+0YSaKUrqEN7FaZNB3XFhVjj03wQO+OqWtr30ARwUYOunU7Oo97RnDEc
-	AmxURIdMhZeY90TyqMu5hnKZoq05SOYsJmhzdaKmlzmCGT6RxxR4shljL68TubfhWmU5ZOouPe3e5
-	uzp1HeRoEZBUpby7/eAM4nk/99cQSaA==;
+	References:List-Owner; bh=v2oS6zKmpneNAeKwcJqj6rhCc6mcfvv3KRiQLT7wySk=; b=ri5
+	FLeItciiDX584H7Y8P+3FIhD/YONUyqDpBfrBX9w6aRi5ENrZWbkATHKogLOu9DIGJR/bJKEZB5Xl
+	EUA+8gNLsChSSbtjG3wBHcIG3uyz56V9FzuO4Z5/gxXMyydvsGTErhd3DfYyJl3QZu1+7TqoO/+yX
+	u81fFShM/e1V/k++E9NAJOKlKPRKuTMLE+pVIf4vfQtrMJSoNF/hPOocr0zxIPufVzZW0abf1yFmG
+	Q1jh+WACAgf0u5LTxFRAow59nSEMoaUu25tCmiP5Z9HILnS64va+cOcHh48huj8iDjyjzFHdczqUK
+	ifBSdqGrf4V+7tiEuR78L/RNL5ytDRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3jQJ-0005Mk-C8; Fri, 30 Aug 2019 16:06:51 +0000
+	id 1i3jQ2-00059I-Gi; Fri, 30 Aug 2019 16:06:34 +0000
 Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3jPj-00052o-GW
+ id 1i3jPj-00052v-GG
  for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:06:17 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
@@ -29,30 +29,30 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
  List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=uTQeEEYIJhC5tbPfUST4PEt+2kXGnfovRSLhPtWx96o=; b=I2DWabrGuEwq
- olvrLYhLWDgnKzTuw2SaAmTxADjTjGVpu9I451lQI+6aUbyCJpENSArCxdMp04x/qRd5/ZXjSEgE1
- BNGSQEkd5xkBPC+ACLeVoTU0OCjsz3CLWK0pCPyu3yQ7cfV/W/S8OSNbW5Bm2SBNl9RqJZiHu4ggP
- BnkkY=;
+ List-Archive; bh=9ebJwu7EOXBPskA4zH2UXwKyoD+aeQJw7WuvqJssUrk=; b=VOthHBaTOtSZ
+ 1hDi/x81cvI3Q8tKjR6mxBsVlqTZ3KVgrfwPzRMQZZAALa2dJScAAB3Jl9pFjmyDdLaFbkRm4A1a2
+ +3DqWwtBwVMP0lqGM4jyVI930RPqFQItSMS93TFv+bxq/kvq2qjaFHff5qOWDw7qv/QrIAxfNa+cz
+ f1Qq8=;
 Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
  ([82.37.168.47] helo=ypsilon.sirena.org.uk)
  by heliosphere.sirena.org.uk with esmtpsa
  (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
  (envelope-from <broonie@sirena.co.uk>)
- id 1i3jPc-00078x-BR; Fri, 30 Aug 2019 16:06:08 +0000
+ id 1i3jPc-00078y-BU; Fri, 30 Aug 2019 16:06:08 +0000
 Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id 772D52742B61; Fri, 30 Aug 2019 17:06:07 +0100 (BST)
+ id D19712742CA1; Fri, 30 Aug 2019 17:06:07 +0100 (BST)
 From: Mark Brown <broonie@kernel.org>
 To: Maxime Ripard <maxime.ripard@bootlin.com>
-Subject: Applied "ASoC: dt-bindings: Convert Allwinner A64 analog codec to a
- schema" to the asoc tree
-In-Reply-To: <20190828125209.28173-5-mripard@kernel.org>
+Subject: Applied "ASoC: dt-bindings: sun4i-spdif: Fix dma-names warning" to
+ the asoc tree
+In-Reply-To: <20190828125209.28173-1-mripard@kernel.org>
 X-Patchwork-Hint: ignore
-Message-Id: <20190830160607.772D52742B61@ypsilon.sirena.org.uk>
+Message-Id: <20190830160607.D19712742CA1@ypsilon.sirena.org.uk>
 Date: Fri, 30 Aug 2019 17:06:07 +0100 (BST)
 X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_090615_617256_02A89CD5 
-X-CRM114-Status: GOOD (  16.03  )
+X-CRM114-CacheID: sfid-20190830_090615_634130_4031B928 
+X-CRM114-Status: GOOD (  14.24  )
 X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.2 points)
@@ -89,7 +89,7 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 The patch
 
-   ASoC: dt-bindings: Convert Allwinner A64 analog codec to a schema
+   ASoC: dt-bindings: sun4i-spdif: Fix dma-names warning
 
 has been applied to the asoc tree at
 
@@ -114,95 +114,41 @@ to this mail.
 Thanks,
 Mark
 
-From 497144a5b7af12097c09b0ca30409ee7122499a0 Mon Sep 17 00:00:00 2001
+From 1a8e7cdfa4f5872bf0c202d09bff6628aba6b9f6 Mon Sep 17 00:00:00 2001
 From: Maxime Ripard <maxime.ripard@bootlin.com>
-Date: Wed, 28 Aug 2019 14:52:09 +0200
-Subject: [PATCH] ASoC: dt-bindings: Convert Allwinner A64 analog codec to a
- schema
+Date: Wed, 28 Aug 2019 14:52:05 +0200
+Subject: [PATCH] ASoC: dt-bindings: sun4i-spdif: Fix dma-names warning
 
-The Allwinner A64 SoC has an embedded audio codec that uses a separate
-controller to drive its analog part, which is supported in Linux, with a
-matching Device Tree binding.
+Even though the H6 compatible has been properly added, the exeption for the
+number of DMA channels hasn't been updated, leading in a validation
+warning.
 
-Now that we have the DT validation in place, let's convert the device tree
-bindings for that controller over to a YAML schemas.
+Fix this.
 
+Fixes: b20453031472 ("dt-bindings: sound: sun4i-spdif: Add Allwinner H6 compatible")
 Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-Link: https://lore.kernel.org/r/20190828125209.28173-5-mripard@kernel.org
+Link: https://lore.kernel.org/r/20190828125209.28173-1-mripard@kernel.org
 Reviewed-by: Rob Herring <robh@kernel.org>
 Signed-off-by: Mark Brown <broonie@kernel.org>
 ---
- .../allwinner,sun50i-a64-codec-analog.yaml    | 39 +++++++++++++++++++
- .../bindings/sound/sun50i-codec-analog.txt    | 14 -------
- 2 files changed, 39 insertions(+), 14 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
- delete mode 100644 Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
+ .../devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml  | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
-new file mode 100644
-index 000000000000..f290eb72a878
---- /dev/null
-+++ b/Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
-@@ -0,0 +1,39 @@
-+# SPDX-License-Identifier: GPL-2.0
-+%YAML 1.2
-+---
-+$id: http://devicetree.org/schemas/sound/allwinner,sun50i-a64-codec-analog.yaml#
-+$schema: http://devicetree.org/meta-schemas/core.yaml#
-+
-+title: Allwinner A64 Analog Codec Device Tree Bindings
-+
-+maintainers:
-+  - Chen-Yu Tsai <wens@csie.org>
-+  - Maxime Ripard <maxime.ripard@bootlin.com>
-+
-+properties:
-+  compatible:
-+    const: allwinner,sun50i-a64-codec-analog
-+
-+  reg:
-+    maxItems: 1
-+
-+  cpvdd-supply:
-+    description:
-+      Regulator for the headphone amplifier
-+
-+required:
-+  - compatible
-+  - reg
-+  - cpvdd-supply
-+
-+additionalProperties: false
-+
-+examples:
-+  - |
-+    codec_analog: codec-analog@1f015c0 {
-+      compatible = "allwinner,sun50i-a64-codec-analog";
-+      reg = <0x01f015c0 0x4>;
-+      cpvdd-supply = <&reg_eldo1>;
-+    };
-+
-+...
-diff --git a/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt b/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
-deleted file mode 100644
-index 056a098495cc..000000000000
---- a/Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
-+++ /dev/null
-@@ -1,14 +0,0 @@
--* Allwinner A64 Codec Analog Controls
--
--Required properties:
--- compatible: must be one of the following compatibles:
--		- "allwinner,sun50i-a64-codec-analog"
--- reg: must contain the registers location and length
--- cpvdd-supply: Regulator supply for the headphone amplifier
--
--Example:
--	codec_analog: codec-analog@1f015c0 {
--		compatible = "allwinner,sun50i-a64-codec-analog";
--		reg = <0x01f015c0 0x4>;
--		cpvdd-supply = <&reg_eldo1>;
--	};
+diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+index e0284d8c3b63..38d4cede0860 100644
+--- a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
++++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml
+@@ -70,7 +70,9 @@ allOf:
+       properties:
+         compatible:
+           contains:
+-            const: allwinner,sun8i-h3-spdif
++            enum:
++              - allwinner,sun8i-h3-spdif
++              - allwinner,sun50i-h6-spdif
+ 
+     then:
+       properties:
 -- 
 2.20.1
 
