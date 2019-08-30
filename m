@@ -2,45 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3CC4A352B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:46:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34998A352E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oUS+gXfL8lts/jAHRhzBRXE2ysjAjUAr9fjoD1TA4cA=; b=lFFqlpgAr9pV97
-	okn42B0DI7cPCCcEQrV0VEfM4S3gHVp6eyAb3kEzhm/FEzGLMz01truFVlMSPK2y8wqnIYeWRgQ3k
-	k3CdIDNsmssvtk0kGkHO+fIAwiefQVJ4sW8wRRJYSl+XgSOe0pa7LoTXcH0Y76VZYSBvLJr2ayqlp
-	XOdRYZLLGceNzW+SNTBtmbenofEOcFftwEoIIzzkera3laDEyqdsmP16Dsc5CX9/8D2SYVwQx6eaK
-	5nRC2JtiTO9a+xj5RI7mdlPYECVm/knSaNplPKPS19o2jeGccfaSGvgPYqihB+3vDH5O5UF0K7c4h
-	jj8cC0EtDKs24Dmv+zMg==;
+	List-Owner; bh=st5TSaXXJBVBTeUbDG6i/ubM5V1XVbdIYG7INyy3E0Q=; b=kluvLLrQqQkivY
+	vQjXg5GXqF6FkUqYwpIJwq6FNWdreFDO1vZIb7Er/mWudgrd7YPpMxafF62FGsuC0ee/1ysxwFTmF
+	E5gtZOtxZhG3lINy99ur1UWnkq+fWuYveMQzw6RrzmhOeeSEvWoEtXVBfUKzE+h86nJOiJm+8DmzC
+	DLyNod6+JhmS0nflPvsGaWo9JsQysD3ATrbqkZ3qfe0gNYjDwsEAQywkIYE7wtnF5cSCg/Wh0Amlj
+	EadRGgypaNMlBDxfBnCH2D7AogFUL3wRzTcKdCDpFGaFgOk5FiNLkxqPrLuqZCjc5ES3Z+PeUHB6B
+	NZLvTk74XcLJHeaL5uIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3ePk-00032n-N5; Fri, 30 Aug 2019 10:45:56 +0000
+	id 1i3eQ6-0003Se-Fv; Fri, 30 Aug 2019 10:46:18 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3ePJ-0002eq-Cg
+ id 1i3ePK-0002fN-HY
  for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 10:45:31 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7EDBA1596;
- Fri, 30 Aug 2019 03:45:28 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCC931597;
+ Fri, 30 Aug 2019 03:45:29 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 6F9823F718;
- Fri, 30 Aug 2019 03:45:27 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BD0DA3F718;
+ Fri, 30 Aug 2019 03:45:28 -0700 (PDT)
 From: Guillaume Gardet <guillaume.gardet@arm.com>
 To: linux-samsung-soc@vger.kernel.org
-Subject: [PATCH V3 3/5] arm: dts: exynos: snow: Enable GPU/Mali T604 node
-Date: Fri, 30 Aug 2019 12:45:00 +0200
-Message-Id: <20190830104502.7128-4-guillaume.gardet@arm.com>
+Subject: [PATCH V3 4/5] arm: dts: exynos: arndale: Enable GPU/Mali T604 node
+Date: Fri, 30 Aug 2019 12:45:01 +0200
+Message-Id: <20190830104502.7128-5-guillaume.gardet@arm.com>
 X-Mailer: git-send-email 2.22.1
 In-Reply-To: <20190830104502.7128-1-guillaume.gardet@arm.com>
 References: <20190725083433.6505-1-guillaume.gardet@arm.com>
  <20190830104502.7128-1-guillaume.gardet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_034529_468679_29359642 
+X-CRM114-CacheID: sfid-20190830_034530_621279_46A9684E 
 X-CRM114-Status: UNSURE (   9.55  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
@@ -69,8 +69,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tested with kmscube and some glmark2* tests on Chromebook snow.
-Frequency adapts with load.
+Tested with kmscube and some glmark2* tests on arndale board.
 
 Signed-off-by: Guillaume Gardet <guillaume.gardet@arm.com>
 
@@ -82,14 +81,14 @@ Cc: linux-arm-kernel@lists.infradead.org
 V3 changes:
   * new file
 
- arch/arm/boot/dts/exynos5250-snow-common.dtsi | 5 +++++
+ arch/arm/boot/dts/exynos5250-arndale.dts | 5 +++++
  1 file changed, 5 insertions(+)
 
-diff --git a/arch/arm/boot/dts/exynos5250-snow-common.dtsi b/arch/arm/boot/dts/exynos5250-snow-common.dtsi
-index fd9226d3b207..c952a615148e 100644
---- a/arch/arm/boot/dts/exynos5250-snow-common.dtsi
-+++ b/arch/arm/boot/dts/exynos5250-snow-common.dtsi
-@@ -529,6 +529,11 @@
+diff --git a/arch/arm/boot/dts/exynos5250-arndale.dts b/arch/arm/boot/dts/exynos5250-arndale.dts
+index dc6fa6fe83f1..cf5a758f1927 100644
+--- a/arch/arm/boot/dts/exynos5250-arndale.dts
++++ b/arch/arm/boot/dts/exynos5250-arndale.dts
+@@ -543,6 +543,11 @@
  	status = "okay";
  };
  
