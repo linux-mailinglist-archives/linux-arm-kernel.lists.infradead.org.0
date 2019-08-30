@@ -2,63 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 24651A4034
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:12:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E571A4091
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:29:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=84lTIESC3FSpMpQyV1/fPB8Q3C10GfrwW4bx4oPNG9E=; b=IDXSByEsT1oVok
-	S0PSSq0mHF7NnoVjalaDISy8T3g+Itdnj9CT9w28oqM7ZK09attizuN4tHKGka48gcgp09kWLbmIM
-	BKLil3SykcsZkbkiSkfFlEksWemfAkAEHWjdVaUu3y5p51SxaYJbW4zn4zxwxAVtKVVlVlQ9xq23g
-	KVXiO0gVGtqxBVJOx6wY2PPOsOmhKzFa0OHXlgkdFfNY+rXftReniCpMcjckes+ELaAiLrpA+mzop
-	Rr3WDkqOHGpfJvizdLso/vmlU9qaGqxopQL5tjEYbpDMd0Z7ufj+fxMyR/LWgzNwx6se8mHLQ8RpZ
-	0z0T8YoHA2EsSVCaGwUA==;
+	List-Owner; bh=swlnTdF65hPeGskxRNSuQ7G+60v7FM4Fi57TiLu6Vio=; b=L8SSEwU8I5yLUo
+	vrR/LSsla50u4wT8CLgzqJqyv3DL9JG3xdejZVA5teuvjwFfkblh1iHIJH+y5x6hPKbHdykrQFdrN
+	qvdFSjPc9FzJuKn1T+vStmtBxkOgxC2t8Phf9d4MHzcpJHkA0WqUcA8/AfBWnc9gluS0Ff/puwbz/
+	jLxm42UlvEqNMU9pVR0vHSHrI4w9OfaMBo/YVVBnv7EP01/3Tf/Am5C8HiDejWHz1meNo+oWVCGM0
+	L/YUmQxFsFoR1dJUrBlFEY/4FaVfjgtH2SFKRcAEeaTEIRJFrLuA6qv5U7UOSsSf3CjeTRS7IeFwy
+	99zDsA8R7juz1oi4I33g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3p8C-0004J8-Vu; Fri, 30 Aug 2019 22:12:33 +0000
-Received: from shell.v3.sk ([90.176.6.54])
+	id 1i3pOy-00019X-4V; Fri, 30 Aug 2019 22:29:52 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3p4z-0000Ks-MH
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:09:19 +0000
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id F2B44D87F2;
- Sat, 31 Aug 2019 00:09:11 +0200 (CEST)
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id 8kSbS11p4SBx; Sat, 31 Aug 2019 00:08:25 +0200 (CEST)
-Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 98475D87EC;
- Sat, 31 Aug 2019 00:08:06 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at zimbra.v3.sk
-Received: from shell.v3.sk ([127.0.0.1])
- by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id 2YsIOZak8TFw; Sat, 31 Aug 2019 00:08:01 +0200 (CEST)
-Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
- [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 7FBB6D87F6;
- Sat, 31 Aug 2019 00:07:54 +0200 (CEST)
-From: Lubomir Rintel <lkundrak@v3.sk>
-To: "To : Olof Johansson" <olof@lixom.net>
-Subject: [PATCH v3 16/16] ARM: dts: mmp3: Add MMP3 SoC dts file
-Date: Sat, 31 Aug 2019 00:07:43 +0200
-Message-Id: <20190830220743.439670-17-lkundrak@v3.sk>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190830220743.439670-1-lkundrak@v3.sk>
-References: <20190830220743.439670-1-lkundrak@v3.sk>
+ id 1i3pOm-00018g-SJ
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:29:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=BWWRszBDY8GYUUZj497FcR9Z0dm6vMXF/gAZdr1ItkU=; b=folcv0CYTG/fwfjtFT9od8gVs
+ LmEkdhrber88LNPUMfbnmY4rZ5fcd6bEa4DdOxmDoMu8xDExn/Ah5NsTeoI67i87J4KX+zvMgMHIb
+ Ws9JXOfrWIwDKAxjHZQtmgeB4RYPXtOCted2vh317YUbPEILBPMVpm3trknP9hAJMv6/Y2wgPA+WP
+ wNCmXpqm4dfbnsqB6hRtF87ZAG3KuEF6wLqrmulnjvI4Q/59G99z2HxGzlO9ADkFfPthetXTJumhD
+ 23Mnjr5oNCzxiwqoWuV2HZnjQQPp2jL64KL9cYbdk5DXvRG6sWjdB3OTqaVm3UT3YlCBvws4YFgZW
+ XWmelzPCA==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39464)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i3pOJ-00013m-HY; Fri, 30 Aug 2019 23:29:11 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i3pOE-0000Tw-MP; Fri, 30 Aug 2019 23:29:06 +0100
+Date: Fri, 30 Aug 2019 23:29:06 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+Subject: Re: [PATCH] arm: fix page faults in do_alignment
+Message-ID: <20190830222906.GH13294@shell.armlinux.org.uk>
+References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
+ <20190830133522.GZ13294@shell.armlinux.org.uk>
+ <87d0gmwi73.fsf@x220.int.ebiederm.org>
+ <20190830203052.GG13294@shell.armlinux.org.uk>
+ <87y2zav01z.fsf@x220.int.ebiederm.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <87y2zav01z.fsf@x220.int.ebiederm.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_150914_139421_D55DE3D6 
-X-CRM114-Status: GOOD (  10.85  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_152940_911671_0E424ED0 
+X-CRM114-Status: GOOD (  26.18  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,571 +90,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
- Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- Lubomir Rintel <lkundrak@v3.sk>, "Cc : Rob Herring" <robh+dt@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
+Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ Jing Xiangfeng <jingxiangfeng@huawei.com>, linux-mm@kvack.org,
+ sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Describes most of the hardware found on Marvell MMP3, aka PXA2128, aka
-Armada 620. Missing bits are the LCD controller, HSIC controllers,
-Audio and GPU. Will be completed once bindings and drivers settle.
+On Fri, Aug 30, 2019 at 04:02:48PM -0500, Eric W. Biederman wrote:
+> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
+> 
+> > On Fri, Aug 30, 2019 at 02:45:36PM -0500, Eric W. Biederman wrote:
+> >> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
+> >> 
+> >> > On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
+> >> >> The function do_alignment can handle misaligned address for user and
+> >> >> kernel space. If it is a userspace access, do_alignment may fail on
+> >> >> a low-memory situation, because page faults are disabled in
+> >> >> probe_kernel_address.
+> >> >> 
+> >> >> Fix this by using __copy_from_user stead of probe_kernel_address.
+> >> >> 
+> >> >> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
+> >> >> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
+> >> >
+> >> > NAK.
+> >> >
+> >> > The "scheduling while atomic warning in alignment handling code" is
+> >> > caused by fixing up the page fault while trying to handle the
+> >> > mis-alignment fault generated from an instruction in atomic context.
+> >> >
+> >> > Your patch re-introduces that bug.
+> >> 
+> >> And the patch that fixed scheduling while atomic apparently introduced a
+> >> regression.  Admittedly a regression that took 6 years to track down but
+> >> still.
+> >
+> > Right, and given the number of years, we are trading one regression for
+> > a different regression.  If we revert to the original code where we
+> > fix up, we will end up with people complaining about a "new" regression
+> > caused by reverting the previous fix.  Follow this policy and we just
+> > end up constantly reverting the previous revert.
+> >
+> > The window is very small - the page in question will have had to have
+> > instructions read from it immediately prior to the handler being entered,
+> > and would have had to be made "old" before subsequently being unmapped.
+> 
+> > Rather than excessively complicating the code and making it even more
+> > inefficient (as in your patch), we could instead retry executing the
+> > instruction when we discover that the page is unavailable, which should
+> > cause the page to be paged back in.
+> 
+> My patch does not introduce any inefficiencies.  It onlys moves the
+> check for user_mode up a bit.  My patch did duplicate the code.
+> 
+> > If the page really is unavailable, the prefetch abort should cause a
+> > SEGV to be raised, otherwise the re-execution should replace the page.
+> >
+> > The danger to that approach is we page it back in, and it gets paged
+> > back out before we're able to read the instruction indefinitely.
+> 
+> I would think either a little code duplication or a function that looks
+> at user_mode(regs) and picks the appropriate kind of copy to do would be
+> the best way to go.  Because what needs to happen in the two cases for
+> reading the instruction are almost completely different.
 
-Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
----
- arch/arm/boot/dts/mmp3.dtsi | 534 ++++++++++++++++++++++++++++++++++++
- 1 file changed, 534 insertions(+)
- create mode 100644 arch/arm/boot/dts/mmp3.dtsi
+That is what I mean.  I'd prefer to avoid that with the large chunk of
+code.  How about instead adding a local replacement for
+probe_kernel_address() that just sorts out the reading, rather than
+duplicating all the code to deal with thumb fixup. 
 
-diff --git a/arch/arm/boot/dts/mmp3.dtsi b/arch/arm/boot/dts/mmp3.dtsi
-new file mode 100644
-index 0000000000000..5a6275257ebdd
---- /dev/null
-+++ b/arch/arm/boot/dts/mmp3.dtsi
-@@ -0,0 +1,534 @@
-+// SPDX-License-Identifier: GPL-2.0+ OR MIT
-+/*
-+ *  Copyright (C) 2019 Lubomir Rintel <lkundrak@v3.sk>
-+ */
-+
-+#include <dt-bindings/clock/marvell,mmp2.h>
-+#include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+/ {
-+	#address-cells = <1>;
-+	#size-cells = <1>;
-+
-+	aliases {
-+		serial0 = &uart1;
-+		serial1 = &uart2;
-+		serial2 = &uart3;
-+		serial3 = &uart4;
-+	};
-+
-+	cpus {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		enable-method = "marvell,mmp3-smp";
-+
-+		cpu@0 {
-+			compatible = "marvell,pj4b";
-+			device_type = "cpu";
-+			next-level-cache = <&l2>;
-+			reg = <0>;
-+		};
-+
-+		cpu@1 {
-+			compatible = "marvell,pj4b";
-+			device_type = "cpu";
-+			next-level-cache = <&l2>;
-+			reg = <1>;
-+		};
-+	};
-+
-+	soc {
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		compatible = "simple-bus";
-+		interrupt-parent = <&gic>;
-+		ranges;
-+
-+		axi@d4200000 {
-+			compatible = "simple-bus";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			reg = <0xd4200000 0x00200000>;
-+			ranges;
-+
-+			interrupt-controller@d4282000 {
-+				compatible = "marvell,mmp3-intc";
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0xd4282000 0x1000>,
-+				      <0xd4284000 0x100>;
-+				mrvl,intc-nr-irqs = <64>;
-+			};
-+
-+			pmic_mux: interrupt-controller@d4282150 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 4 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x150 0x4>, <0x168 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <4>;
-+			};
-+
-+			rtc_mux: interrupt-controller@d4282154 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 5 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x154 0x4>, <0x16c 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <2>;
-+			};
-+
-+			hsi3_mux: interrupt-controller@d42821bc {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 6 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1bc 0x4>, <0x1a4 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <3>;
-+			};
-+
-+			gpu_mux: interrupt-controller@d42821c0 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 8 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1c0 0x4>, <0x1a8 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <3>;
-+			};
-+
-+			twsi_mux: interrupt-controller@d4282158 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 17 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x158 0x4>, <0x170 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <5>;
-+			};
-+
-+			hsi2_mux: interrupt-controller@d42821c4 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 18 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1c4 0x4>, <0x1ac 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <2>;
-+			};
-+
-+			dxo_mux: interrupt-controller@d42821c8 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1c8 0x4>, <0x1b0 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <2>;
-+			};
-+
-+			misc1_mux: interrupt-controller@d428215c {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 35 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x15c 0x4>, <0x174 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <31>;
-+			};
-+
-+			ci_mux: interrupt-controller@d42821cc {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1cc 0x4>, <0x1b4 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <2>;
-+			};
-+
-+			ssp_mux: interrupt-controller@d4282160 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 51 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x160 0x4>, <0x178 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <2>;
-+			};
-+
-+			hsi1_mux: interrupt-controller@d4282184 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x184 0x4>, <0x17c 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <4>;
-+			};
-+
-+			misc2_mux: interrupt-controller@d4282188 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 57 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x188 0x4>, <0x180 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <20>;
-+			};
-+
-+			hsi0_mux: interrupt-controller@d42821d0 {
-+				compatible = "mrvl,mmp2-mux-intc";
-+				interrupts = <GIC_SPI 58 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-controller;
-+				#interrupt-cells = <1>;
-+				reg = <0x1d0 0x4>, <0x1b8 0x4>;
-+				reg-names = "mux status", "mux mask";
-+				mrvl,intc-nr-irqs = <5>;
-+			};
-+
-+			usb_otg_phy0: usb-otg-phy@d4207000 {
-+				compatible = "marvell,mmp3-usb-phy";
-+				reg = <0xd4207000 0x40>;
-+				#phy-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			usb_otg0: usb-otg@d4208000 {
-+				compatible = "marvell,pxau2o-ehci";
-+				reg = <0xd4208000 0x200>;
-+				interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_USB>;
-+				clock-names = "USBCLK";
-+				phys = <&usb_otg_phy0>;
-+				phy-names = "usb";
-+				status = "disabled";
-+			};
-+
-+			mmc1: mmc@d4280000 {
-+				compatible = "mrvl,pxav3-mmc";
-+				reg = <0xd4280000 0x120>;
-+				clocks = <&soc_clocks MMP2_CLK_SDH0>;
-+				clock-names = "io";
-+				interrupts = <GIC_SPI 39 IRQ_TYPE_LEVEL_HIGH>;
-+				status = "disabled";
-+			};
-+
-+			mmc2: mmc@d4280800 {
-+				compatible = "mrvl,pxav3-mmc";
-+				reg = <0xd4280800 0x120>;
-+				clocks = <&soc_clocks MMP2_CLK_SDH1>;
-+				clock-names = "io";
-+				interrupts = <GIC_SPI 52 IRQ_TYPE_LEVEL_HIGH>;
-+				status = "disabled";
-+			};
-+
-+			mmc3: mmc@d4281000 {
-+				compatible = "mrvl,pxav3-mmc";
-+				reg = <0xd4281000 0x120>;
-+				clocks = <&soc_clocks MMP2_CLK_SDH2>;
-+				clock-names = "io";
-+				interrupts = <GIC_SPI 53 IRQ_TYPE_LEVEL_HIGH>;
-+				status = "disabled";
-+			};
-+
-+			mmc4: mmc@d4281800 {
-+				compatible = "mrvl,pxav3-mmc";
-+				reg = <0xd4281800 0x120>;
-+				clocks = <&soc_clocks MMP2_CLK_SDH3>;
-+				clock-names = "io";
-+				interrupts = <GIC_SPI 54 IRQ_TYPE_LEVEL_HIGH>;
-+				status = "disabled";
-+			};
-+
-+			camera0: camera@d420a000 {
-+				compatible = "marvell,mmp2-ccic";
-+				reg = <0xd420a000 0x800>;
-+				interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_CCIC0>;
-+				clock-names = "axi";
-+				#clock-cells = <0>;
-+				clock-output-names = "mclk";
-+				status = "disabled";
-+			};
-+
-+			camera1: camera@d420a800 {
-+				compatible = "marvell,mmp2-ccic";
-+				reg = <0xd420a800 0x800>;
-+				interrupts = <GIC_SPI 30 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_CCIC1>;
-+				clock-names = "axi";
-+				#clock-cells = <0>;
-+				clock-output-names = "mclk";
-+				status = "disabled";
-+			};
-+		};
-+
-+		apb@d4000000 {
-+			compatible = "simple-bus";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			reg = <0xd4000000 0x00200000>;
-+			ranges;
-+
-+			timer: timer@d4014000 {
-+				compatible = "mrvl,mmp-timer";
-+				reg = <0xd4014000 0x100>;
-+				interrupts = <GIC_SPI 13 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_TIMER>;
-+			};
-+
-+			uart1: uart@d4030000 {
-+				compatible = "mrvl,mmp-uart";
-+				reg = <0xd4030000 0x1000>;
-+				interrupts = <GIC_SPI 27 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_UART0>;
-+				resets = <&soc_clocks MMP2_CLK_UART0>;
-+				reg-shift = <2>;
-+				status = "disabled";
-+			};
-+
-+			uart2: uart@d4017000 {
-+				compatible = "mrvl,mmp-uart";
-+				reg = <0xd4017000 0x1000>;
-+				interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_UART1>;
-+				resets = <&soc_clocks MMP2_CLK_UART1>;
-+				reg-shift = <2>;
-+				status = "disabled";
-+			};
-+
-+			uart3: uart@d4018000 {
-+				compatible = "mrvl,mmp-uart";
-+				reg = <0xd4018000 0x1000>;
-+				interrupts = <GIC_SPI 24 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_UART2>;
-+				resets = <&soc_clocks MMP2_CLK_UART2>;
-+				reg-shift = <2>;
-+				status = "disabled";
-+			};
-+
-+			uart4: uart@d4016000 {
-+				compatible = "mrvl,mmp-uart";
-+				reg = <0xd4016000 0x1000>;
-+				interrupts = <GIC_SPI 46 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_UART3>;
-+				resets = <&soc_clocks MMP2_CLK_UART3>;
-+				reg-shift = <2>;
-+				status = "disabled";
-+			};
-+
-+			gpio: gpio@d4019000 {
-+				compatible = "marvell,mmp2-gpio";
-+				#address-cells = <1>;
-+				#size-cells = <1>;
-+				reg = <0xd4019000 0x1000>;
-+				gpio-controller;
-+				#gpio-cells = <2>;
-+				interrupts = <GIC_SPI 49 IRQ_TYPE_LEVEL_HIGH>;
-+				interrupt-names = "gpio_mux";
-+				clocks = <&soc_clocks MMP2_CLK_GPIO>;
-+				resets = <&soc_clocks MMP2_CLK_GPIO>;
-+				interrupt-controller;
-+				#interrupt-cells = <2>;
-+				ranges;
-+
-+				gcb0: gpio@d4019000 {
-+					reg = <0xd4019000 0x4>;
-+				};
-+
-+				gcb1: gpio@d4019004 {
-+					reg = <0xd4019004 0x4>;
-+				};
-+
-+				gcb2: gpio@d4019008 {
-+					reg = <0xd4019008 0x4>;
-+				};
-+
-+				gcb3: gpio@d4019100 {
-+					reg = <0xd4019100 0x4>;
-+				};
-+
-+				gcb4: gpio@d4019104 {
-+					reg = <0xd4019104 0x4>;
-+				};
-+
-+				gcb5: gpio@d4019108 {
-+					reg = <0xd4019108 0x4>;
-+				};
-+			};
-+
-+			twsi1: i2c@d4011000 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4011000 0x1000>;
-+				interrupts = <GIC_SPI 7 IRQ_TYPE_LEVEL_HIGH>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI0>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI0>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				mrvl,i2c-fast-mode;
-+				status = "disabled";
-+			};
-+
-+			twsi2: i2c@d4031000 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4031000 0x1000>;
-+				interrupt-parent = <&twsi_mux>;
-+				interrupts = <0>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI1>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI1>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			twsi3: i2c@d4032000 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4032000 0x1000>;
-+				interrupt-parent = <&twsi_mux>;
-+				interrupts = <1>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI2>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI2>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			twsi4: i2c@d4033000 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4033000 0x1000>;
-+				interrupt-parent = <&twsi_mux>;
-+				interrupts = <2>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI3>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI3>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+
-+			twsi5: i2c@d4033800 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4033800 0x1000>;
-+				interrupt-parent = <&twsi_mux>;
-+				interrupts = <3>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI4>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI4>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			twsi6: i2c@d4034000 {
-+				compatible = "mrvl,mmp-twsi";
-+				reg = <0xd4034000 0x1000>;
-+				interrupt-parent = <&twsi_mux>;
-+				interrupts = <4>;
-+				clocks = <&soc_clocks MMP2_CLK_TWSI5>;
-+				resets = <&soc_clocks MMP2_CLK_TWSI5>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			rtc: rtc@d4010000 {
-+				compatible = "mrvl,mmp-rtc";
-+				reg = <0xd4010000 0x1000>;
-+				interrupts = <1 0>;
-+				interrupt-names = "rtc 1Hz", "rtc alarm";
-+				interrupt-parent = <&rtc_mux>;
-+				clocks = <&soc_clocks MMP2_CLK_RTC>;
-+				resets = <&soc_clocks MMP2_CLK_RTC>;
-+				status = "disabled";
-+			};
-+
-+			ssp1: spi@d4035000 {
-+				compatible = "marvell,mmp2-ssp";
-+				reg = <0xd4035000 0x1000>;
-+				clocks = <&soc_clocks MMP2_CLK_SSP0>;
-+				interrupts = <GIC_SPI 0 IRQ_TYPE_LEVEL_HIGH>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			ssp2: spi@d4036000 {
-+				compatible = "marvell,mmp2-ssp";
-+				reg = <0xd4036000 0x1000>;
-+				clocks = <&soc_clocks MMP2_CLK_SSP1>;
-+				interrupts = <GIC_SPI 1 IRQ_TYPE_LEVEL_HIGH>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			ssp3: spi@d4037000 {
-+				compatible = "marvell,mmp2-ssp";
-+				reg = <0xd4037000 0x1000>;
-+				clocks = <&soc_clocks MMP2_CLK_SSP2>;
-+				interrupts = <GIC_SPI 20 IRQ_TYPE_LEVEL_HIGH>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+
-+			ssp4: spi@d4039000 {
-+				compatible = "marvell,mmp2-ssp";
-+				reg = <0xd4039000 0x1000>;
-+				clocks = <&soc_clocks MMP2_CLK_SSP3>;
-+				interrupts = <GIC_SPI 21 IRQ_TYPE_LEVEL_HIGH>;
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+				status = "disabled";
-+			};
-+		};
-+
-+		l2: l2-cache-controller@d0020000 {
-+			compatible = "marvell,tauros3-cache", "arm,pl310-cache";
-+			reg = <0xd0020000 0x1000>;
-+			cache-unified;
-+			cache-level = <2>;
-+		};
-+
-+		soc_clocks: clocks {
-+			compatible = "marvell,mmp2-clock";
-+			reg = <0xd4050000 0x1000>,
-+			      <0xd4282800 0x400>,
-+			      <0xd4015000 0x1000>;
-+			reg-names = "mpmu", "apmu", "apbc";
-+			#clock-cells = <1>;
-+			#reset-cells = <1>;
-+			#power-domain-cells = <1>;
-+		};
-+
-+		snoop-control-unit@e0000000 {
-+			compatible = "arm,arm11mp-scu";
-+			reg = <0xe0000000 0x100>;
-+		};
-+
-+		gic: interrupt-controller@e0001000 {
-+			compatible = "arm,arm11mp-gic";
-+			interrupt-controller;
-+			#interrupt-cells = <3>;
-+			reg = <0xe0001000 0x1000>,
-+			      <0xe0000100 0x100>;
-+		};
-+
-+		local-timer@e0000600 {
-+			compatible = "arm,arm11mp-twd-timer";
-+			interrupts = <GIC_PPI 13 (GIC_CPU_MASK_SIMPLE(2) |
-+						  IRQ_TYPE_EDGE_RISING)>;
-+			reg = <0xe0000600 0x20>;
-+		};
-+
-+		watchdog@2c000620 {
-+			compatible = "arm,arm11mp-twd-wdt";
-+			reg = <0xe0000620 0x20>;
-+			interrupts = <GIC_PPI 14 (GIC_CPU_MASK_SIMPLE(2) |
-+						  IRQ_TYPE_EDGE_RISING)>;
-+		};
-+	};
-+};
+> > However, as it's impossible for me to contact the submitter, anything
+> > I do will be poking about in the dark and without any way to validate
+> > that it does fix the problem, so I think apart from reviewing of any
+> > patches, there's not much I can do.
+> 
+> I didn't realize your emails to him were bouncing.  That is odd.  Mine
+> don't appear to be.
+
+Hmm, so the fact I posted publically in reply to my reply with the MTA
+bounce message didn't give you a clue?
+
 -- 
-2.21.0
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
