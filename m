@@ -2,90 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCC19A317E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:47:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 40A99A319B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:52:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5k4zYLVG5LbP8ZYZIv0VQ5QWnUreAMnFHdckTXM+8AE=; b=SJv9ODPPSjSXBt
-	cocSb7WbX6BHLynJrvA2jM9Eaziko2lheNNHQf98tlOjoeXlD760N7vFj4Wlz6idTzqfpzeRKZDLO
-	1MzbNLMCZTM9fSWaZrtobwxpHh6JuDkirVNSwPRrexT+KJ0ZCCxC0xgJlFJlINlkF17FQykOWIzTd
-	nJqMJ/jRe1wK8rhTLiBEB2bS8yBDRhf4jdVYz6IIr1yHJUJ2gxqThdvRZ8gfL5UHDdEzJznhMazLm
-	dfeH9SieRuiPGaGUSd/YOWm7zYwYqbO+7f5DOqKnDnKiqIRPxGMMD92JLaVKZROxVj7H/mSQ8vHLo
-	swZ3p6YxEDsKQi4KVJuA==;
+	List-Owner; bh=bAvyxFMe4XS0e3lDdLkknC1Qj/Rv8+N/VFGVsFBEExQ=; b=vAWGqEOX9UUslv
+	FizFZLjIOJ1wdRU+Kaj9wwYsz73PsvcrD7Xcovls2YnjVVnab4+yUYlR4eFaw8wZuTqb8oJf4mtlJ
+	gdnmbw7AgpSxee/3z2bHvHh/bbEtIrYsVQ3ZMIufr1aApSs1DKXAkP5Gt1wwzhtcNAha73qsX8RMA
+	xR+/NAUJzZ8DR3aLmi62ADyjBwhT3qJTy6XKZlPvruNVuIlTZu5VUj787LxmXmEoNB/C6N1idX17N
+	0UK9YreVn4bJf9+JkM88UImPyZlsZVZP3lAs+UDc5dALeMtQ6a528v8iw6ltN6r6hTWW53G59sqau
+	mFyFPy17dHjh5lNB/vLQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3bd2-0008EP-8y; Fri, 30 Aug 2019 07:47:28 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1i3bi0-0001OJ-Eg; Fri, 30 Aug 2019 07:52:36 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3bcK-0007oq-JW
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:46:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 5D68120A34;
- Fri, 30 Aug 2019 03:46:42 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Fri, 30 Aug 2019 03:46:42 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=2Kccgmz9rjelR
- IO9aczulPQlBm48n9tsTFBim9C8Ml0=; b=Gm2vqLZREqLxAukDM2yV1i9iRpLfD
- kGEaAs8Or3YMclJd02jJ/gWPn+ixd82VkTgoIgv5rDbSoh0tdu9mMFLCIrQabSrJ
- t0JP8ZnYtiJ7/4tEZQUDc0kFBR1qxJWYRk7/GB9QxKhX4u4MFvRKHJ50ICU1NhU9
- dhepCKIw+dM3jSCVp844BFWK6iHbN2W1VYtCLwClOFwQQNE67MgI7qAvTPSba8QU
- 0tM/q00t2Jahn1e2zEayOEgmHDitp158M6csj43vdXwF+W+R+vba5dUBdLL0mhn8
- DJVpWUzhp83qi+hDZGgIwPw/NTY5u47E9SAEWLCUEgo5cDVhyUjVT2FSw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=2Kccgmz9rjelRIO9aczulPQlBm48n9tsTFBim9C8Ml0=; b=gGd/ZFur
- YFw1xQhxP0fenQwUuAJeUJ9AT7Z86GjJCtNWV7jp8s2f0OkCFjrDM54UheVpcvhA
- VBzzRGbtOQb+/1r/SxJwf42YPfQA6ysXEI+xvwkYrkLF1SQwTV52NYQzv/5sTsAo
- sfiVJ8QFx8FsiWHdAap09KGlbxeZXoQUCWFzykDBG3YiQQc5yJKRbbgFJsd2ivEH
- Ypp33OTOT6dKZMNtCAP725KG4t6IyMokaVXRRKA2C2x3xXr9NyHrt4oss/tUg9Hq
- TL0L19WM5fXfTXS63dx2y9VDgY2OaJta9h2zTC2h4jnXonPISmh74ck7S7FnJ4nD
- xv+ILEoNi1cRdg==
-X-ME-Sender: <xms:YtRoXW5coA30Yg9-8ujHS4OCJT0dOkZzBQESCUuxdq7GRpB5lXvL7w>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeifedguddvudcutefuodetggdotefrod
- ftvfcurfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfgh
- necuuegrihhlohhuthemuceftddtnecunecujfgurhephffvufffkffojghfggfgsedtke
- ertdertddtnecuhfhrohhmpeetnhgurhgvficulfgvfhhfvghrhicuoegrnhgurhgvfies
- rghjrdhiugdrrghuqeenucfkphepvddtfedrheejrddvudehrddujeeknecurfgrrhgrmh
- epmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgvrhfu
- ihiivgeptd
-X-ME-Proxy: <xmx:YtRoXbRhpxaTEEZY-MQ__dgsXKyp9mTTATLlEPrVUWABIn62YcCMMQ>
- <xmx:YtRoXTNUZEAS98Uur4qxtkIG_a9MjoqWPBx_bxYHmqq5YwORKn_O6Q>
- <xmx:YtRoXZrikDXWjnbU3CF2bWYcvLIjwdhp-Ddty2rbYsBMqKZvAP1GkA>
- <xmx:YtRoXcKKvyBVr4a9so2vV2qm05RAkgmdr1XO74g7wKsXnf_UUOgNmg>
-Received: from localhost.localdomain (203-57-215-178.dyn.iinet.net.au
- [203.57.215.178])
- by mail.messagingengine.com (Postfix) with ESMTPA id 14361D60057;
- Fri, 30 Aug 2019 03:46:38 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-mmc@vger.kernel.org
-Subject: [PATCH 2/2] mmc: sdhci-of-aspeed: Allow max-frequency limitation of
- SDCLK
-Date: Fri, 30 Aug 2019 17:16:44 +0930
-Message-Id: <20190830074644.10936-3-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190830074644.10936-1-andrew@aj.id.au>
-References: <20190830074644.10936-1-andrew@aj.id.au>
+ id 1i3bhq-0001O0-8Y
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:52:27 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id D61CA2070B;
+ Fri, 30 Aug 2019 07:52:23 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567151545;
+ bh=XxIlB6heV8zthfQt9IfztarXS2aRQzwh39zufHV/Dag=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=dEJHifiMfkPyJnTbidakpqp2Z5zTv7GwrL7aZJ0NL8AUk+boccjaFt4Pw8XE1Nemf
+ YoUNja3y/rmyo/UsRPuj/VP6vxD/YBlzhV/vlnendD3MfGbEW4VaMGXffvRmJ6oX7Z
+ Yu05kP+JDBRmPhfLkGWwusNSCzFFK5cJGMe0+rAA=
+Date: Fri, 30 Aug 2019 08:52:20 +0100
+From: Will Deacon <will@kernel.org>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+Message-ID: <20190830075220.6xyyctvgd2ssrsjf@willie-the-truck>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-11-will@kernel.org>
+ <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+ <20190830000803.GR14582@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190830000803.GR14582@e119886-lin.cambridge.arm.com>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_004644_781191_EF576A82 
-X-CRM114-Status: GOOD (  11.92  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190830_005226_347909_43FDDCC4 
+X-CRM114-Status: GOOD (  21.03  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,83 +80,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- ryanchen.aspeed@gmail.com, adrian.hunter@intel.com,
- linux-kernel@vger.kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ ndesaulniers@google.com, Ard.Biesheuvel@arm.com, natechancellor@gmail.com,
+ robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a get_max_clock() handler to sdhci-of-aspeed to report f_max as the
-maximum clock rate if it is set. This enables artificial limitation of
-the bus speed via max-frequency in the devicetree for e.g. the AST2600
-evaluation board where I am seeing errors at 200MHz.
+On Fri, Aug 30, 2019 at 01:08:03AM +0100, Andrew Murray wrote:
+> On Thu, Aug 29, 2019 at 05:54:58PM +0100, Will Deacon wrote:
+> > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
+> > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > index 95091f72228b..7fa042f5444e 100644
+> > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > @@ -23,6 +23,10 @@ asm_ops "\n"								\
+> > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+> > >  #endif
+> > >  
+> > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> > > +#define K
+> > > +#endif
+> > 
+> > Bah, I need to use something like __stringify when the constraint is used
+> > in order for this to get expanded properly. Updated diff below.
+> 
+> I don't think the changes in your updated diff are required. We successfully
+> combine 'asm_op' with the remainder of the assembly string without using
+>  __stringify, and this is no different to how the original patch combined
+> 'constraint' with "r".
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
- drivers/mmc/host/sdhci-of-aspeed.c | 20 ++++++++++++++++++--
- 1 file changed, 18 insertions(+), 2 deletions(-)
+It's a hack: __stringify expands its arguments, so I figured I may as well
+use that rather than do it manually with an extra macro.
 
-diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-index a9175ca85696..5cc00abcd71f 100644
---- a/drivers/mmc/host/sdhci-of-aspeed.c
-+++ b/drivers/mmc/host/sdhci-of-aspeed.c
-@@ -52,16 +52,24 @@ static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
- 
- static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
- {
-+	struct sdhci_pltfm_host *pltfm_host;
-+	unsigned long parent;
- 	int div;
- 	u16 clk;
- 
-+	pltfm_host = sdhci_priv(host);
-+	parent = clk_get_rate(pltfm_host->clk);
-+
- 	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
- 
- 	if (clock == 0)
- 		goto out;
- 
-+	if (WARN_ON(clock > host->max_clk))
-+		clock = host->max_clk;
-+
- 	for (div = 1; div < 256; div *= 2) {
--		if ((host->max_clk / div) <= clock)
-+		if ((parent / div) <= clock)
- 			break;
- 	}
- 	div >>= 1;
-@@ -74,6 +82,14 @@ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
- 	host->clock = clock;
- }
- 
-+static unsigned int aspeed_sdhci_get_max_clock(struct sdhci_host *host)
-+{
-+	if (host->mmc->f_max)
-+		return host->mmc->f_max;
-+
-+	return sdhci_pltfm_clk_get_max_clock(host);
-+}
-+
- static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
- {
- 	struct sdhci_pltfm_host *pltfm_priv;
-@@ -100,7 +116,7 @@ static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
- 
- static const struct sdhci_ops aspeed_sdhci_ops = {
- 	.set_clock = aspeed_sdhci_set_clock,
--	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
-+	.get_max_clock = aspeed_sdhci_get_max_clock,
- 	.set_bus_width = aspeed_sdhci_set_bus_width,
- 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
- 	.reset = sdhci_reset,
--- 
-2.20.1
+> You can verify this by looking at the preprocessed .i files generated with
+> something like:
+> 
+> make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- drivers/spi/spi-rockchip.i
+> 
+> I see no difference (with GCC 7.3.1) between the original approach and your
+> use of __stringify. Incidentally you end up with "K" "r" instead of "Kr" but
+> it seems to have the desired effect (e.g. supress/emit out of range errors).
+> I have a couple of macros that resolves this to "Kr" but I don't think it's
+> necessary.
+> 
+> Did you find that it didn't work without your changes? I found it hard to
+> reproduce the out-of-range errors until I made the following change, I could
+> then easily see the effect of changing the constraint:
+> 
+>         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
+> -       : #constraint "r" (i));                                         \
+> +       : #constraint) "r" (4294967295));                                               \
+>  }
 
+Without the __stringify I get a compilation failure when building
+kernel/panic.o because it tries to cmpxchg a 32-bit variable with -1
+(PANIC_CPU_INVALID). Looking at panic.s, I see that constraint parameter
+isn't being expanded. For example if I do:
+
+  #ifndef CONFIG_CC_HAS_K_CONSTRAINT
+  #define INVALID_CONSTRAINT
+  #else
+  #define INVALID_CONSTRAINT	K
+  #endif
+
+and then pass INVALID_CONSTRAINT to the generator macros, we'll end up
+with INVALID_CONSTRAINT in the .s file and gas will barf.
+
+The reason I didn't see this initially is because my silly testcase had
+a typo and was using atomic_add instead of atomic_and.
+
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
