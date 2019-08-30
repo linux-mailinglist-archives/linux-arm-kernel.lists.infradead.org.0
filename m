@@ -2,89 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE497A3055
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:07:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4CA56A3075
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:13:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=fHWFM1sEAp5v4xp4bhx96ghgbz9Sq8rDK8LfsobDlQI=; b=Fo2mYQhJ4CIkPZwuKuLn7ZmCl
-	qffxgZEY086zYQYNbcuIHrh0xV7AdeJS4xXbWI9bXHc6VFr3x3mu2aZFL4rS2k6ygaod0E3hLT1HN
-	nxxYl472ygp9ChTeFKbRRu7LJKxxIEHDoR1Av7mdje5bCGSlPe+gpdk4TbTYjDnisYd/ZX9W8XZYp
-	vMvLVHsfdOebg4MEV/UpEFM360DMmwx32hf1EOkpq2NwoUuMsu20qyVYS4eyn9GEaV+8yXujP1lSX
-	Zoq0xpHef0OIY16u/77KhgrLashW4qMPW4BXQdOu4JOWtUQrhiS7+uUbaa7gzxLj/Wr5xfOqrdgjK
-	w4yjRPhFQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WmeUJD0a/IXY2iMU/PViIuCkWsbU0aOAXjVj2Vr8c5s=; b=AO4gFi3qfuzs+t
+	pw3OlbeiNGoaWqhRik1rAIekXvckxDYSoS0QhyKePBUZ9BJlQaZbKdiZ4c3DivkFlTyvMlokiXzJA
+	hZKyxiZQ+POSaUlbyEP3y8TJRpqjc8sTlYu5m/FiMOkMfY5CGS0XYLwj4IaL6Otr4WTHUYM/L8EfI
+	iKjScohHhdbj9n/U67P8/7M/KSfyyvJx/x5wYcxO5bE1YzlS91nZvY//Y8pKwixmlBi65d6VK54V0
+	XXnEAXOpppgSWjJcboEMm2m4zoAA3NInd75x6Y0Y02EkNptezpteEq6xwpMC2HJDqTHOQMVQ6dX8+
+	84IFfCBvhtczQbKLVqKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3b0U-0000FG-D1; Fri, 30 Aug 2019 07:07:38 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1i3b68-0004UT-4g; Fri, 30 Aug 2019 07:13:28 +0000
+Received: from skedge04.snt-world.com ([91.208.41.69])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3awn-0000EZ-F8
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:04:09 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7U73gmm042113;
- Fri, 30 Aug 2019 02:03:42 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567148622;
- bh=TvjLDefDv40s29fEzH3g7fQslYok3FADT3UXIgYvbVU=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=yhw24j2hc2Ms0XnG/Bp8FBmgwPVDGfO0uIh6twc+Fscewu9zYFZBzEm/DEvAZN203
- NpfFlnv2Zo8Hn1x1dPhedDpQAxKybR+MMI+uGCSXproeQ+qczo5ORw9mjfbX+WRMzf
- lWQKKBacNX/GTi9O+xu1pqo4EBrJVWzCA4tiYnhE=
-Received: from DFLE112.ent.ti.com (dfle112.ent.ti.com [10.64.6.33])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7U73gZ0045863
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 30 Aug 2019 02:03:42 -0500
-Received: from DFLE111.ent.ti.com (10.64.6.32) by DFLE112.ent.ti.com
- (10.64.6.33) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 30
- Aug 2019 02:03:41 -0500
-Received: from fllv0039.itg.ti.com (10.64.41.19) by DFLE111.ent.ti.com
- (10.64.6.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 30 Aug 2019 02:03:41 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0039.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7U73ddp074448;
- Fri, 30 Aug 2019 02:03:39 -0500
-Subject: Re: [PATCHv2 05/11] soc: ti: omap-prm: sync func clock status with
- resets
-To: Philipp Zabel <p.zabel@pengutronix.de>, <ssantosh@kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-omap@vger.kernel.org>,
- <robh+dt@kernel.org>
-References: <20190828071941.32378-1-t-kristo@ti.com>
- <20190828071941.32378-6-t-kristo@ti.com>
- <1567085114.5345.12.camel@pengutronix.de>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <7725d643-42ac-c3c1-9b07-ce2631fdb3c4@ti.com>
-Date: Fri, 30 Aug 2019 10:03:38 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i3b4Y-0003fb-9M
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:11:52 +0000
+Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by skedge04.snt-world.com (Postfix) with ESMTPS id C7C6667A904;
+ Fri, 30 Aug 2019 09:11:42 +0200 (CEST)
+Received: from sntmail14r.snt-is.com (10.203.32.184) by sntmail14r.snt-is.com
+ (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 30 Aug
+ 2019 09:11:42 +0200
+Received: from sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8]) by
+ sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8%3]) with mapi id
+ 15.01.1713.004; Fri, 30 Aug 2019 09:11:42 +0200
+From: Thomas Schaefer <Thomas.Schaefer@kontron.com>
+To: Peter Chen <peter.chen@nxp.com>
+Subject: AW: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
+Thread-Topic: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
+Thread-Index: AQHVXoFUdokxKz8Ei0Gedpn3mUjvkacS1eQAgABrfiA=
+Date: Fri, 30 Aug 2019 07:11:42 +0000
+Message-ID: <b227eb4da9214b33b44f33b2a84f4205@kontron.com>
+References: <20190829154913.2049-1-thomas.schaefer@kontron.com>
+ <20190830022539.GA1146@b29397-desktop>
+In-Reply-To: <20190830022539.GA1146@b29397-desktop>
+Accept-Language: en-US
+Content-Language: de-DE
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [10.228.0.137]
+x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
 MIME-Version: 1.0
-In-Reply-To: <1567085114.5345.12.camel@pengutronix.de>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-SnT-MailScanner-Information: Please contact the ISP for more information
+X-SnT-MailScanner-ID: C7C6667A904.AA526
+X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
+ Provider for details
+X-SnT-MailScanner-SpamCheck: 
+X-SnT-MailScanner-From: thomas.schaefer@kontron.com
+X-SnT-MailScanner-To: festevam@gmail.com, kernel@pengutronix.de,
+ linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
+ marex@denx.de, peter.chen@nxp.com, s.hauer@pengutronix.de,
+ shawnguo@kernel.org
+X-Spam-Status: No
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_000355_034606_1639E4F2 
-X-CRM114-Status: GOOD (  18.56  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190830_001150_788193_057CC9B7 
+X-CRM114-Status: GOOD (  17.33  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [91.208.41.69 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,139 +86,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tony@atomide.com, devicetree@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: "marex@denx.de" <marex@denx.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/08/2019 16:25, Philipp Zabel wrote:
-> On Wed, 2019-08-28 at 10:19 +0300, Tero Kristo wrote:
->> Hardware reset signals are tightly coupled with associated clocks, and
->> basically de-asserting a reset won't succeed properly if the clock is
->> not enabled, and vice-versa. Also, disabling a clock won't fully succeed
->> if the associated hardware resets are not asserted. Add status sync
->> functionality between these two for TI drivers so that the situations
->> can be handled properly without generating any timeouts.
->>
->> Signed-off-by: Tero Kristo <t-kristo@ti.com>
->> ---
->>   drivers/soc/ti/omap_prm.c | 36 ++++++++++++++++++++++++++++++++++++
->>   1 file changed, 36 insertions(+)
->>
->> diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
->> index 38998ce19c71..e876bad8f8d5 100644
->> --- a/drivers/soc/ti/omap_prm.c
->> +++ b/drivers/soc/ti/omap_prm.c
->> @@ -15,6 +15,8 @@
->>   #include <linux/platform_device.h>
->>   #include <linux/reset-controller.h>
->>   #include <linux/delay.h>
->> +#include <linux/clk.h>
->> +#include <linux/clk/ti.h>
->>   
->>   #include <linux/platform_data/ti-prm.h>
->>   
->> @@ -42,7 +44,9 @@ struct omap_reset_data {
->>   	struct reset_controller_dev rcdev;
->>   	struct omap_prm *prm;
->>   	struct clockdomain *clkdm;
->> +	struct clk *clk;
->>   	struct device *dev;
->> +	u32 mask;
->>   };
->>   
->>   #define to_omap_reset_data(p) container_of((p), struct omap_reset_data, rcdev)
->> @@ -102,6 +106,8 @@ static int omap_reset_assert(struct reset_controller_dev *rcdev,
->>   	v |= 1 << id;
->>   	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
->>   
->> +	ti_clk_notify_resets(reset->clk, v == reset->mask);
->> +
->>   	return 0;
->>   }
->>   
->> @@ -163,9 +169,19 @@ static int omap_reset_deassert(struct reset_controller_dev *rcdev,
->>   	v &= ~(1 << id);
->>   	writel_relaxed(v, reset->prm->base + reset->prm->data->rstctrl);
->>   
->> +	ti_clk_notify_resets(reset->clk, v == reset->mask);
->> +
->>   	if (!has_rstst)
->>   		goto exit;
->>   
->> +	/* If associated clock is disabled, we can't poll completion status */
->> +	if (reset->clk) {
->> +		struct clk_hw *hw = __clk_get_hw(reset->clk);
->> +
->> +		if (!clk_hw_is_enabled(hw))
->> +			return ret;
->> +	}
->> +
->>   	/* wait for the status to be set */
->>   	while (1) {
->>   		v = readl_relaxed(reset->prm->base + reset->prm->data->rstst);
->> @@ -199,8 +215,10 @@ static int omap_prm_reset_init(struct platform_device *pdev,
->>   			       struct omap_prm *prm)
->>   {
->>   	struct omap_reset_data *reset;
->> +	const struct omap_rst_map *map;
->>   	struct ti_prm_platform_data *pdata = dev_get_platdata(&pdev->dev);
->>   	char buf[32];
->> +	u32 v;
->>   
->>   	/*
->>   	 * Check if we have controllable resets. If either rstctrl is non-zero
->> @@ -215,6 +233,10 @@ static int omap_prm_reset_init(struct platform_device *pdev,
->>   	    !pdata->clkdm_allow_idle)
->>   		return -EINVAL;
->>   
->> +	map = prm->data->rstmap;
->> +	if (!map)
->> +		return -EINVAL;
-> 
-> Can this actually happen?
+-----Urspr=FCngliche Nachricht-----
+Von: Peter Chen <peter.chen@nxp.com> =
 
-It can, if user writes bad data to the omap_prm_data structs. Without 
-this check it would make the probe crash which is bad.
+Gesendet: Freitag, 30. August 2019 04:26
+> On 19-08-29 17:49:13, Thomas Schaefer wrote:
+> > Currently the size parameter in the reg property of usbotg and usbh =
 
-> 
->> +
->>   	reset = devm_kzalloc(&pdev->dev, sizeof(*reset), GFP_KERNEL);
->>   	if (!reset)
->>   		return -ENOMEM;
->> @@ -224,6 +246,10 @@ static int omap_prm_reset_init(struct platform_device *pdev,
->>   	reset->rcdev.of_node = pdev->dev.of_node;
->>   	reset->rcdev.nr_resets = OMAP_MAX_RESETS;
->>   	reset->dev = &pdev->dev;
->> +	reset->clk = of_clk_get(pdev->dev.of_node, 0);
->> +
->> +	if (IS_ERR(reset->clk))
->> +		reset->clk = NULL;
-> 
-> Maybe only ignore -ENOENT?
+> > nodes in imx7s and imx7d dts includes is set to 0x200 which is wrong =
 
-Yeah, I can modify this.
+> > for the i.MX7 CPU. According to reference manual, spacing of USB =
 
-> 
->>   	reset->prm = prm;
->>   
->> @@ -234,6 +260,16 @@ static int omap_prm_reset_init(struct platform_device *pdev,
->>   	if (!reset->clkdm)
->>   		return -EINVAL;
->>   
->> +	while (map->rst >= 0) {
->> +		reset->mask |= BIT(map->rst);
->> +		map++;
->> +	}
-> 
-> With this, you could use reset->mask to simplify _is_valid_reset.
+> > controller registers is 0x10000 instead.
+> > =
 
-True, let me re-write it.
+> > This patch will fix this and set the 'size' to 0x10000.
+> > =
 
--Tero
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+> > Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
+> > ---
+> >  arch/arm/boot/dts/imx7d.dtsi | 2 +-
+> >  arch/arm/boot/dts/imx7s.dtsi | 4 ++--
+> >  2 files changed, 3 insertions(+), 3 deletions(-)
+> > =
+
+> > diff --git a/arch/arm/boot/dts/imx7d.dtsi =
+
+> > b/arch/arm/boot/dts/imx7d.dtsi index 42528d2812a2..f1b098d28b6e 100644
+> > --- a/arch/arm/boot/dts/imx7d.dtsi
+> > +++ b/arch/arm/boot/dts/imx7d.dtsi
+> > @@ -117,7 +117,7 @@
+> >  &aips3 {
+> >  	usbotg2: usb@30b20000 {
+> >  		compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
+> > -		reg =3D <0x30b20000 0x200>;
+> > +		reg =3D <0x30b20000 0x10000>;
+> >  		interrupts =3D <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+> >  		clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
+> >  		fsl,usbphy =3D <&usbphynop2>;
+> > diff --git a/arch/arm/boot/dts/imx7s.dtsi =
+
+> > b/arch/arm/boot/dts/imx7s.dtsi index c1a4fff5ceda..9e25fccf33f0 100644
+> > --- a/arch/arm/boot/dts/imx7s.dtsi
+> > +++ b/arch/arm/boot/dts/imx7s.dtsi
+> > @@ -1088,7 +1088,7 @@
+> >  =
+
+> >  			usbotg1: usb@30b10000 {
+> >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
+> > -				reg =3D <0x30b10000 0x200>;
+> > +				reg =3D <0x30b10000 0x10000>;
+> >  				interrupts =3D <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+> >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
+> >  				fsl,usbphy =3D <&usbphynop1>;
+> > @@ -1099,7 +1099,7 @@
+> >  =
+
+> >  			usbh: usb@30b30000 {
+> >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
+> > -				reg =3D <0x30b30000 0x200>;
+> > +				reg =3D <0x30b30000 0x10000>;
+> >  				interrupts =3D <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+> >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
+> >  				fsl,usbphy =3D <&usbphynop3>;
+> =
+
+> Hi Thomos,
+> =
+
+> The core controller range is 0x200, from offset 0x200, it is non-core reg=
+ister, which is used by usbmisc. Fabio said you met problem at u-boot for t=
+his size, what's the problem about it?
+> =
+
+> Thanks,
+> Peter
+
+Hi Peter,
+
+When porting one of our i.MX7 based modules to u-boot v2019.07, I found tha=
+t scanning USB with 'usb start' crashes when trying to scan the _second_ co=
+ntroller enabled in the device tree (the first controller was detected prop=
+erly). After some investigation I found that the problem was introduced wit=
+h Marek Vasuts 'usb: ehci-mx6: Fix bus enumeration for DM case' (u-boot com=
+mit 501547cec1f7f0438cae388a104ff60f18576c01). This patch uses the 'reg' pr=
+operty in the usbotg and usbh nodes to calculate the device index number fo=
+r the driver.
+
+Actually, controller range on i.MX6 is 0x200, thus the calculation is corre=
+ct for i.MX6, but on i.MX7 the base addresses of the controller registers d=
+iffer by 0x10000 and calculation will fail if more than one USB controller =
+is enabled in the device tree. This is why I suggested to fix this problem =
+in the imx7s and imx7d device tree include files.
+
+Added Marek to this thread.
+
+Best regards,
+Thomas
 
 _______________________________________________
 linux-arm-kernel mailing list
