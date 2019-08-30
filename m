@@ -2,45 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EFAA4A3529
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:45:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8181DA3527
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:45:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZOq5o56cQ3Dzmad9IX7x8Ka8t/Lp25LdegDTQoYnQ58=; b=ZZQLIwB/3sauYH
-	LDRjNnA2BnTgEOuB04E9wdowxub6Or7LK9DxCZbZMXlXiYy+rZBc9SzwYayIVTAilxLI1IEiE8El2
-	FXDZiMuLCGOxZxyRWx2Chk63NVZfs48/3OhI45jbUtiLioOSeDOfmVcTkegucF3UILcTOLowhPFeb
-	gLzSjhAnLfb/Au/Zxb8TLif43Mm7tC523z3FOguO3FM2n4/Dd32XiznOFDNeN2UhaOee3qO7mbBBk
-	iqfxyRWn68wMRmW7KvHdA3TBRWS2f8NMqtlAZXIXK8A03Ae39N7c63lbzwSHvwgPi3u/byT381f4x
-	r7AyWwEd53JOxAY5xrNg==;
+	List-Owner; bh=9QkJ7o4dSSPsBh7wWfOCaPIlHClZ5grHoHQIJF0hplQ=; b=W+x1CUJ3ifH0nn
+	oMW6fuYjoun+dWstLalJ4GzncafwtU+goqOypOw+aOsj4BBCZI6PkICTHZlc03Bl4kNTatrEnYHC9
+	V2/Y2wj42/RuZFhwZBKouypVjragL7VOJIn8G5V4OMkmjLDvpodgx5wnmVw92+mBJKm8+vagsCSDu
+	otlFmdzaJQ+InFMatKPKoDUYQknd9FXomTDBHla7XxMMxbh00IbhLQPKDlNSiWmkrjGapytwBkfUl
+	e00JBPZcQ40Z3wTmELnnShOmsXJESPO8J4kK16CW6UrKUVdDaslBK3sALb9onfQ5GTwX/Wz70xnFQ
+	f+0aXbAAXm8Rz0ajHNaw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3ePa-0002n2-9s; Fri, 30 Aug 2019 10:45:46 +0000
+	id 1i3ePP-0002fh-U2; Fri, 30 Aug 2019 10:45:35 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3ePJ-0002eQ-44
+ id 1i3ePI-0002eR-U9
  for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 10:45:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 966FC337;
- Fri, 30 Aug 2019 03:45:24 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id E3951344;
+ Fri, 30 Aug 2019 03:45:25 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 8AA143F718;
- Fri, 30 Aug 2019 03:45:23 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id D384E3F718;
+ Fri, 30 Aug 2019 03:45:24 -0700 (PDT)
 From: Guillaume Gardet <guillaume.gardet@arm.com>
 To: linux-samsung-soc@vger.kernel.org
-Subject: [PATCH V3 0/4] Add GPU/Mali T604 node to arndale and snow (exynos5250)
-Date: Fri, 30 Aug 2019 12:44:57 +0200
-Message-Id: <20190830104502.7128-1-guillaume.gardet@arm.com>
+Subject: [PATCH V3 1/5] dt-bindings: gpu: mali-midgard: Add samsung exynos5250
+ compatible
+Date: Fri, 30 Aug 2019 12:44:58 +0200
+Message-Id: <20190830104502.7128-2-guillaume.gardet@arm.com>
 X-Mailer: git-send-email 2.22.1
-In-Reply-To: <20190725083433.6505-1-guillaume.gardet@arm.com>
+In-Reply-To: <20190830104502.7128-1-guillaume.gardet@arm.com>
 References: <20190725083433.6505-1-guillaume.gardet@arm.com>
+ <20190830104502.7128-1-guillaume.gardet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_034529_205372_9EDDEEDA 
-X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-CacheID: sfid-20190830_034529_019510_9B11129C 
+X-CRM114-Status: UNSURE (   9.37  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -68,45 +70,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add nodes for GPU (Mali T604) to Exynos5250.
-Tested with kmscube and some glmark2* tests on Chromebook snow and
-arndale board.
+Add "samsung,exynos5250-mali" binding.
 
-V3 changes:
-  * change clock name from 'g3d' to 'core'
-  * disable node by default in exynos5250.dtsi
-  * move dt-bindings before node addition in device tree
-  * enable node for arndale and snow, with mali-supply, separetly
-  * add patch to fix min/max values for buck4 regulator for gpu
-    on arndale board
-
-V2 changes: 
-  * move mali node as /soc sub-node
-  * move gpu_opp_table as mali sub-node
-  * minor style updates
-  * test on arndale board
-  * enable by default
-  * add dt bindings, in a separate patch
-
+Signed-off-by: Guillaume Gardet <guillaume.gardet@arm.com>
 
 Cc: Kukjin Kim <kgene@kernel.org>
 Cc: Krzysztof Kozlowski <krzk@kernel.org>
 Cc: Marek Szyprowski <m.szyprowski@samsung.com>
 Cc: linux-arm-kernel@lists.infradead.org
+---
+V3 changes:
+  * add dt-bindings before node in device tree
+V2 changes:
+  * new file
 
-Guillaume Gardet (5):
-  dt-bindings: gpu: mali-midgard: Add samsung exynos5250 compatible
-  arm: dts: exynos: Add GPU/Mali T604 node to exynos5250
-  arm: dts: exynos: snow: Enable GPU/Mali T604 node
-  arm: dts: exynos: arndale: Enable GPU/Mali T604 node
-  arm: dts: exynos: arndale: Fix min/max for buck4 regulator for gpu
+ Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
- .../bindings/gpu/arm,mali-midgard.txt         |  1 +
- arch/arm/boot/dts/exynos5250-arndale.dts      |  9 +++-
- arch/arm/boot/dts/exynos5250-snow-common.dtsi |  5 ++
- arch/arm/boot/dts/exynos5250.dtsi             | 47 +++++++++++++++++++
- 4 files changed, 60 insertions(+), 2 deletions(-)
-
+diff --git a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
+index 9b298edec5b2..bdd1396d9cc3 100644
+--- a/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
++++ b/Documentation/devicetree/bindings/gpu/arm,mali-midgard.txt
+@@ -17,6 +17,7 @@ Required properties:
+   * which must be preceded by one of the following vendor specifics:
+     + "allwinner,sun50i-h6-mali"
+     + "amlogic,meson-gxm-mali"
++    + "samsung,exynos5250-mali"
+     + "samsung,exynos5433-mali"
+     + "rockchip,rk3288-mali"
+     + "rockchip,rk3399-mali"
 -- 
 2.22.1
 
