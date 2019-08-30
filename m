@@ -2,73 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C9F4A37AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 15:20:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97E81A37BB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 15:26:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=69cC3eKokNEazFVQFQp1xMA0IkWzydICIoJ/45lX5+Y=; b=eaabeQU7sFbuL1
-	wEgIlICzbH7PNi6I1YBxeln4JMqBhPi9y5dAlI26MHD6kEJyMRK9GHOHVHCJEy4lLR2a+FdBOUtaw
-	VJXn8Xn15CKoLPA+ND8GwFe4FUvB7Be9Sv4r8sgvOtqveyFTZjLVDA1WBf1BrT2U6RElaj2kiijTp
-	xsQmadDVIukgkid/kP1geH9H7P6vWpaq/iyFC4F0iefhpnnZuUAgTZBjw2iYJdJV4bI/RTRT74O60
-	YpR4uE8Rr+9V3pMWOrRuxXKMz8LuWrFvo0k6O8S57TW5azfCPEVdN9gvEMW2r0FdG7UKqVs19ZIqe
-	shb5QaRits+4GpZBIyig==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=159x2Zg50pG2XE1pjGmeE+FxiEsL6Pzz3nLjDyA1JUM=; b=IwzbNJXG9RDI+u
+	Qv/n70JU0Z7gjwOKageIoP6AwT5ugtz5ZTZsePzgu/zDuPtDqDhZYlFsvINHkw+xKbjMg+GlYUZlN
+	OYA3YxG6kL+Y97krKXpdUx2hxq0YWY5Bfol2J6pIPoJORbCsXPNeiKaVJ7il3FKi5us5xTJ0hMbYp
+	Uq9oEfFiD5Mriq6vfV3DHLTI4SLhSzpqWsoGOkAs11tCsSbXoqAMn9zt+UX0FbjNTGSJJU5Js25gb
+	PLHrX/RpMPzJbR3bkc73hQRvAszMG8/mBf2ue05aDn3bQyZylx8PfmpSH70aAWdf2qrLKLofquv+z
+	O4hmwfUeS9+wmOB9NXOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3gpd-0000D0-7k; Fri, 30 Aug 2019 13:20:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i3gud-0001rE-4Z; Fri, 30 Aug 2019 13:25:59 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3gpR-0000Cb-Kt
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 13:20:39 +0000
-Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
- [86.250.200.211])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E0A72186A;
- Fri, 30 Aug 2019 13:20:36 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567171237;
- bh=SK7MIU26ekdFufN9wFcNBBpMKeHmFfdUbjP+h2nZYvI=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=kwwbxERsPTczwEsIdSPds2TKEG8g1kxDybF1PiA0Z0k+fDM25ivomVokZGGEPDksp
- V5RitlF0EmcbfhMrs9eRJRJvkJNLgEqIMUh1urS042x+/5RNzhWrXyLQOLdO8LwvzU
- U8zyEwOecd8CSGBUqh2E+L94YyODq2KLxmWw6Pco=
-Date: Fri, 30 Aug 2019 15:20:34 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Marcel Holtmann <marcel@holtmann.org>
-Subject: Re: [RESEND PATCH 0/5] Add bluetooth support for Orange Pi 3
-Message-ID: <20190830132034.u65arlv7umh64lx6@flea>
-References: <20190823103139.17687-1-megous@megous.com>
- <5524D5E9-FA82-4244-A91F-78CF1C3FB3FB@holtmann.org>
- <20190830092104.odipmbflounqpffo@flea>
- <D02B89FB-F8C0-40AD-A99A-6C1B4FEB72A0@holtmann.org>
+ id 1i3guO-0001pT-OL
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 13:25:47 +0000
+Received: from DGGEMS410-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 14283D940CB8D64295D9;
+ Fri, 30 Aug 2019 21:25:33 +0800 (CST)
+Received: from RH5885H-V3.huawei.com (10.90.53.225) by
+ DGGEMS410-HUB.china.huawei.com (10.3.19.210) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 30 Aug 2019 21:25:24 +0800
+From: Jing Xiangfeng <jingxiangfeng@huawei.com>
+To: <linux@armlinux.org.uk>, <ebiederm@xmission.com>,
+ <kstewart@linuxfoundation.org>, <gregkh@linuxfoundation.org>,
+ <gustavo@embeddedor.com>, <bhelgaas@google.com>, <jingxiangfeng@huawei.com>,
+ <tglx@linutronix.de>, <sakari.ailus@linux.intel.com>
+Subject: [PATCH] arm: fix page faults in do_alignment
+Date: Fri, 30 Aug 2019 21:31:17 +0800
+Message-ID: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <D02B89FB-F8C0-40AD-A99A-6C1B4FEB72A0@holtmann.org>
-User-Agent: NeoMutt/20180716
+X-Originating-IP: [10.90.53.225]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_062037_712203_C82050F5 
-X-CRM114-Status: GOOD (  19.60  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190830_062545_341953_8EAB108B 
+X-CRM114-Status: GOOD (  10.09  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,74 +64,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: megous@megous.com, Mark Rutland <mark.rutland@arm.com>,
- Johan Hedberg <johan.hedberg@gmail.com>, devicetree@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, "David S. Miller" <davem@davemloft.net>,
+Cc: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 02:43:48PM +0200, Marcel Holtmann wrote:
-> >>> (Resend to add missing lists, sorry for the noise.)
-> >>>
-> >>> This series implements bluetooth support for Xunlong Orange Pi 3 board.
-> >>>
-> >>> The board uses AP6256 WiFi/BT 5.0 chip.
-> >>>
-> >>> Summary of changes:
-> >>>
-> >>> - add more delay to let initialize the chip
-> >>> - let the kernel detect firmware file path
-> >>> - add new compatible and update dt-bindings
-> >>> - update Orange Pi 3 / H6 DTS
-> >>>
-> >>> Please take a look.
-> >>>
-> >>> thank you and regards,
-> >>> Ondrej Jirman
-> >>>
-> >>> Ondrej Jirman (5):
-> >>> dt-bindings: net: Add compatible for BCM4345C5 bluetooth device
-> >>> bluetooth: bcm: Add support for loading firmware for BCM4345C5
-> >>> bluetooth: hci_bcm: Give more time to come out of reset
-> >>> arm64: dts: allwinner: h6: Add pin configs for uart1
-> >>> arm64: dts: allwinner: orange-pi-3: Enable UART1 / Bluetooth
-> >>>
-> >>> .../bindings/net/broadcom-bluetooth.txt       |  1 +
-> >>> .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 19 +++++++++++++++++++
-> >>> arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 10 ++++++++++
-> >>> drivers/bluetooth/btbcm.c                     |  3 +++
-> >>> drivers/bluetooth/hci_bcm.c                   |  3 ++-
-> >>> 5 files changed, 35 insertions(+), 1 deletion(-)
-> >>
-> >> all 5 patches have been applied to bluetooth-next tree.
-> >
-> > The DTS patches (last 2) should go through the arm-soc tree, can you
-> > drop them?
->
-> why is that? We have included DTS changes for Bluetooth devices
-> directly all the time. What is different with this hardware?
+The function do_alignment can handle misaligned address for user and
+kernel space. If it is a userspace access, do_alignment may fail on
+a low-memory situation, because page faults are disabled in
+probe_kernel_address.
 
-I guess some maintainers are more relaxed with it than we are then,
-but for the why, well, it's the usual reasons, the most immediate one
-being that it reduces to a minimum the conflicts between trees.
+Fix this by using __copy_from_user stead of probe_kernel_address.
 
-The other being that it's not really usual to merge patches supposed
-to be handled by another maintainer without (at least) his
-consent. I'm pretty sure you would have asked the same request if I
-would have merged the bluetooth patches through my tree without
-notice.
+Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
+Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
+---
+ arch/arm/mm/alignment.c | 16 +++++++++++++---
+ 1 file changed, 13 insertions(+), 3 deletions(-)
 
-Maxime
+diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
+index 04b3643..2ccabd3 100644
+--- a/arch/arm/mm/alignment.c
++++ b/arch/arm/mm/alignment.c
+@@ -774,6 +774,7 @@ static ssize_t alignment_proc_write(struct file *file, const char __user *buffer
+ 	unsigned long instr = 0, instrptr;
+ 	int (*handler)(unsigned long addr, unsigned long instr, struct pt_regs *regs);
+ 	unsigned int type;
++	mm_segment_t fs;
+ 	unsigned int fault;
+ 	u16 tinstr = 0;
+ 	int isize = 4;
+@@ -784,16 +785,22 @@ static ssize_t alignment_proc_write(struct file *file, const char __user *buffer
+ 
+ 	instrptr = instruction_pointer(regs);
+ 
++	fs = get_fs();
++	set_fs(KERNEL_DS);
+ 	if (thumb_mode(regs)) {
+ 		u16 *ptr = (u16 *)(instrptr & ~1);
+-		fault = probe_kernel_address(ptr, tinstr);
++		fault = __copy_from_user(tinstr,
++				(__force const void __user *)ptr,
++				sizeof(tinstr));
+ 		tinstr = __mem_to_opcode_thumb16(tinstr);
+ 		if (!fault) {
+ 			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
+ 			    IS_T32(tinstr)) {
+ 				/* Thumb-2 32-bit */
+ 				u16 tinst2 = 0;
+-				fault = probe_kernel_address(ptr + 1, tinst2);
++				fault = __copy_from_user(tinst2,
++						(__force const void __user *)(ptr+1),
++						sizeof(tinst2));
+ 				tinst2 = __mem_to_opcode_thumb16(tinst2);
+ 				instr = __opcode_thumb32_compose(tinstr, tinst2);
+ 				thumb2_32b = 1;
+@@ -803,10 +810,13 @@ static ssize_t alignment_proc_write(struct file *file, const char __user *buffer
+ 			}
+ 		}
+ 	} else {
+-		fault = probe_kernel_address((void *)instrptr, instr);
++		fault = __copy_from_user(instr,
++				(__force const void __user *)instrptr,
++				sizeof(instr));
+ 		instr = __mem_to_opcode_arm(instr);
+ 	}
+ 
++	set_fs(fs);
+ 	if (fault) {
+ 		type = TYPE_FAULT;
+ 		goto bad_or_fault;
+-- 
+1.8.3.1
 
---
-Maxime Ripard, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
