@@ -2,81 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96B4BA35D7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 13:37:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 57C22A35E9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 13:45:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hsEbWVGgFxXpwmkKoHuFAdmXveehKjQKe8W+W0/G/Bw=; b=jhRF801cGfD5KA
-	LzGi5dpAHdNFa1ATuGLac3akz3ivFQIeMGl4ADDyKmPosFd5UecPfNOKSQP7xmqykjUeM6KJ8hEpA
-	4Mc5BpbT2Bh97nthp/q5YNNHe/vVnK1s8i6uvhVgTGyYTb3KSwjthCvPv9OOHlKm+mYbChp2toUjz
-	iRCEVJ8srVvUWrTtaWT4SytI4YTFZvmD+LFHlAbhEvUVh4Tc51D12O0W4Tmhaog0CpJH5rWXrrxFH
-	NDR87Rd3sUQ4pvJp5FoHzGS6QBRp8cE/JUkpfSQQNEPY0FCqfftgRufgvaOFZbws0BvVIXKTAIiWP
-	3Pd6x+1PUKc6NymBt8Ag==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5WOGy/Uu5hSGoCYY5ruDOL0wviGWfHXboa9/7O45D+g=; b=Z5qyNsmjihrrBoR+82czA+0Sm
+	GSBLH35QeX9q27OeZclzSaYEYRqv/DU4dh572snI3TAfGB9aGYDnkIofR6nb+gjuOMJKTHYt2le0r
+	fBQPp5mG6meFaADrRkmsn+1mvM1PGy46ZRfE9CBSW2Ms7HN+qxEGnXcACbOMABDBxqk06n5d0hNuh
+	1ol+EVdC/w9jm3biSCSmNokn6oW/yey0RcYSpTesvvnYIbkexdr4FqoLnGEvuAysOe4NXvAAsOLIu
+	Pt2FpF/Few2rggVi2uIKnXb4IvU7TV/CKfDcsfJeQjK+gBTY2Df2TQ0BYKsBmnScwqh/YQFApuszy
+	K/M32jVlQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3fE0-0002b6-3L; Fri, 30 Aug 2019 11:37:52 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1i3fL9-0005bE-9k; Fri, 30 Aug 2019 11:45:15 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3fDt-0002ag-4Y
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 11:37:47 +0000
-Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id A671D67A8DA;
- Fri, 30 Aug 2019 13:37:41 +0200 (CEST)
-Received: from sntmail14r.snt-is.com (10.203.32.184) by sntmail14r.snt-is.com
- (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 30 Aug
- 2019 13:37:41 +0200
-Received: from sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8]) by
- sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8%3]) with mapi id
- 15.01.1713.004; Fri, 30 Aug 2019 13:37:41 +0200
-From: Thomas Schaefer <Thomas.Schaefer@kontron.com>
-To: Peter Chen <peter.chen@nxp.com>
-Subject: AW: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
-Thread-Topic: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
-Thread-Index: AQHVXoFUdokxKz8Ei0Gedpn3mUjvkacS1eQAgABrfiCAAAwdgIAAQ0hg
-Date: Fri, 30 Aug 2019 11:37:41 +0000
-Message-ID: <ac85e371bc3b4a62b49f2c83745a6aa7@kontron.com>
-References: <20190829154913.2049-1-thomas.schaefer@kontron.com>
- <20190830022539.GA1146@b29397-desktop>
- <b227eb4da9214b33b44f33b2a84f4205@kontron.com>
- <20190830093345.GA25865@b29397-desktop>
-In-Reply-To: <20190830093345.GA25865@b29397-desktop>
-Accept-Language: en-US
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.228.0.137]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+ id 1i3fL3-0005O2-Ef
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 11:45:10 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=CadVpplwVADEGUMaV44Yr02WNCKjS5HQb+wLfMCybs8=; b=UGmbbQ88FNLbZfxFjM3A0cMHt
+ TaIyi9zVfjiD4eA4fWwgul7Vt43hIahRefpwbkX96EUCZTFz4H3E3wT1SwxNmwK3aKENVVM+r53QH
+ V3x2dAW8tbipYwEtRYz8JqCm3eHGyqR7cHjg267upTxE4j/WAA4vTlOO7vnCOcbVwgOUA=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i3fKs-0006IC-Ir; Fri, 30 Aug 2019 11:44:58 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id AF78F2742B61; Fri, 30 Aug 2019 12:44:57 +0100 (BST)
+Date: Fri, 30 Aug 2019 12:44:57 +0100
+From: Mark Brown <broonie@kernel.org>
+To: codekipper@gmail.com
+Subject: Re: [PATCH] ASoC: sun4i-i2s: incorrect regmap for A83t
+Message-ID: <20190830114457.GB5182@sirena.co.uk>
+References: <20190821162320.28653-1-codekipper@gmail.com>
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: A671D67A8DA.AE265
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: thomas.schaefer@kontron.com
-X-SnT-MailScanner-To: festevam@gmail.com, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- marex@denx.de, peter.chen@nxp.com, s.hauer@pengutronix.de,
- shawnguo@kernel.org
-X-Spam-Status: No
+In-Reply-To: <20190821162320.28653-1-codekipper@gmail.com>
+X-Cookie: Send some filthy mail.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_043745_511254_DD1B941F 
-X-CRM114-Status: GOOD (  21.28  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_044509_502128_6A90720D 
+X-CRM114-Status: UNSURE (   7.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,152 +77,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marex@denx.de" <marex@denx.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: alsa-devel@alsa-project.org, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, mripard@kernel.org, lgirdwood@gmail.com,
+ be17068@iperbole.bo.it, wens@csie.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6540465046780412407=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
------Urspr=FCngliche Nachricht-----
-Von: Peter Chen <peter.chen@nxp.com> =
 
-Gesendet: Freitag, 30. August 2019 11:34
-> On 19-08-30 07:11:42, Thomas Schaefer wrote:
-> > -----Urspr=FCngliche Nachricht-----
-> > Von: Peter Chen <peter.chen@nxp.com>
-> > Gesendet: Freitag, 30. August 2019 04:26
-> > > On 19-08-29 17:49:13, Thomas Schaefer wrote:
-> > > > Currently the size parameter in the reg property of usbotg and =
+--===============6540465046780412407==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="2B/JsCI69OhZNC5r"
+Content-Disposition: inline
 
-> > > > usbh nodes in imx7s and imx7d dts includes is set to 0x200 which =
 
-> > > > is wrong for the i.MX7 CPU. According to reference manual, spacing =
+--2B/JsCI69OhZNC5r
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> > > > of USB controller registers is 0x10000 instead.
-> > > > =
+On Wed, Aug 21, 2019 at 06:23:20PM +0200, codekipper@gmail.com wrote:
+> From: Marcus Cooper <codekipper@gmail.com>
+>=20
+> Fixes: 21faaea1343f ("ASoC: sun4i-i2s: Add support for A83T")
+> Signed-off-by: Marcus Cooper <codekipper@gmail.com>
+> ---
 
-> > > > This patch will fix this and set the 'size' to 0x10000.
-> > > > =
+This doesn't apply against current code, please check and resend.
 
-> > > > Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
-> > > > ---
-> > > >  arch/arm/boot/dts/imx7d.dtsi | 2 +-  arch/arm/boot/dts/imx7s.dtsi =
+--2B/JsCI69OhZNC5r
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> > > > | 4 ++--
-> > > >  2 files changed, 3 insertions(+), 3 deletions(-)
-> > > > =
+-----BEGIN PGP SIGNATURE-----
 
-> > > > diff --git a/arch/arm/boot/dts/imx7d.dtsi =
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1pDDgACgkQJNaLcl1U
+h9BCoQf/W0mCzcRW3NldO/WLGdATE7AdgyPsicKChjYVaeDuLtVqG9DYuWwozZci
+YSfNIM3/lZh43VMgLDNxpnn5tpHFtt0EgdV/bDu/HyqVYU4c0ggzyDcLOP6WlMtP
+fg/jqzCUNlhyFntMh/z9f7ucofEh0CmCHWiZNTSTz9Cd23HuNK4yqdqQGdpRDWSU
+YB2NiAEFg3SAwqFie2W8m7kqy6oznKq4LPZZCK8lQwovwnV1ewsvjoAee+uv8i2/
+kjIQzeRO10yai4eUwoM6uecsEV/uc7t30gGEbzXLjqeagtYA64bRSiXunO1hP65q
+no0bDJN4bQSY79n4G3XxV47omRg40w==
+=KsOX
+-----END PGP SIGNATURE-----
 
-> > > > b/arch/arm/boot/dts/imx7d.dtsi index 42528d2812a2..f1b098d28b6e =
+--2B/JsCI69OhZNC5r--
 
-> > > > 100644
-> > > > --- a/arch/arm/boot/dts/imx7d.dtsi
-> > > > +++ b/arch/arm/boot/dts/imx7d.dtsi
-> > > > @@ -117,7 +117,7 @@
-> > > >  &aips3 {
-> > > >  	usbotg2: usb@30b20000 {
-> > > >  		compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > > > -		reg =3D <0x30b20000 0x200>;
-> > > > +		reg =3D <0x30b20000 0x10000>;
-> > > >  		interrupts =3D <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-> > > >  		clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> > > >  		fsl,usbphy =3D <&usbphynop2>;
-> > > > diff --git a/arch/arm/boot/dts/imx7s.dtsi =
 
-> > > > b/arch/arm/boot/dts/imx7s.dtsi index c1a4fff5ceda..9e25fccf33f0 =
-
-> > > > 100644
-> > > > --- a/arch/arm/boot/dts/imx7s.dtsi
-> > > > +++ b/arch/arm/boot/dts/imx7s.dtsi
-> > > > @@ -1088,7 +1088,7 @@
-> > > >  =
-
-> > > >  			usbotg1: usb@30b10000 {
-> > > >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > > > -				reg =3D <0x30b10000 0x200>;
-> > > > +				reg =3D <0x30b10000 0x10000>;
-> > > >  				interrupts =3D <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-> > > >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> > > >  				fsl,usbphy =3D <&usbphynop1>;
-> > > > @@ -1099,7 +1099,7 @@
-> > > >  =
-
-> > > >  			usbh: usb@30b30000 {
-> > > >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > > > -				reg =3D <0x30b30000 0x200>;
-> > > > +				reg =3D <0x30b30000 0x10000>;
-> > > >  				interrupts =3D <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-> > > >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> > > >  				fsl,usbphy =3D <&usbphynop3>;
-> > > =
-
-> > > Hi Thomos,
-> > > =
-
-> > > The core controller range is 0x200, from offset 0x200, it is non-core=
- register, which is used by usbmisc. Fabio said you met problem at u-boot f=
-or this size, what's the problem about it?
-> > > =
-
-> > > Thanks,
-> > > Peter
-> > =
-
-> > Hi Peter,
-> > =
-
-> > When porting one of our i.MX7 based modules to u-boot v2019.07, I found=
- that scanning USB with 'usb start' crashes when trying to scan the _second=
-_ controller enabled in the device tree (the first controller was detected =
-properly). After some investigation I found that the problem was introduced=
- with Marek Vasuts 'usb: ehci-mx6: Fix bus enumeration for DM case' (u-boot=
- commit 501547cec1f7f0438cae388a104ff60f18576c01). This patch uses the 'reg=
-' property in the usbotg and usbh nodes to calculate the device index numbe=
-r for the driver.
-> > =
-
-> > Actually, controller range on i.MX6 is 0x200, thus the calculation is c=
-orrect for i.MX6, but on i.MX7 the base addresses of the controller registe=
-rs differ by 0x10000 and calculation will fail if more than one USB control=
-ler is enabled in the device tree. This is why I suggested to fix this prob=
-lem in the imx7s and imx7d device tree include files.
-> > =
-
-> =
-
-> At dts, each USB controller has its reg property to describe its base add=
-ress, we do not need additional calculation.
-> =
-
-> For controller index, it is only needed for imx6 since we share non-core =
-register from 0x800 among controllers. From imx7, we have dedicate non-core=
- region for each controller, it can be described at dts well.
-> =
-
-> At dts, we use usbmisc to describe the non core part, and the related Lin=
-ux code is at drivers/usb/chipidea/usbmisc_imx.c
-> =
-
-> -- =
-
-> =
-
-> Thanks,
-> Peter Chen
->
-
-OK. Understood. This is not the right place to fix this problem in u-boot.
-
-Thomas
+--===============6540465046780412407==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6540465046780412407==--
+
