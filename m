@@ -2,63 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B589A3A89
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:40:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFE54A3A9B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:42:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DgHBLdxorQYmXRGTKfwqqNPxzefZSsjn0ZDplkU+5qc=; b=HhrjZjp6eXOB/N
-	EHzMKqLl5YvE+qNCqcZS+T/VVq/Ei+LtOwwydUMIfQWSn9TjgOEAIZOav6SBptv44X6jzMEN6S98H
-	wzPqNxchSDfN/r6YoXbn6VZWownt4saiW+XgC/Xnzpup6JyInpYIUQmyzrIlxNTu4Y7Q9O+y2D4r/
-	UGyRiFDHKSW2acptr1SPi8cFwq9U3znS4UBytJvkNE1fLeNaS9my6vWe57xODjexc78xUb9YPnGUG
-	+zfPcN8hN3yyXmo/4xq95f2uRDPdaTIdhZ3W2YCIatZOZySKm9CZYDIj/vd6tM2UDugsbCYCKUgFJ
-	eOhhgRtkjZBl4i6JTdBw==;
+	List-Owner; bh=KhGq10GIWrL9vCO4wkoTFF+Zc1/9KhVSDTpBv7v4mKw=; b=VOqrcNufI22BT0
+	SLq7GgyVuVVY0lbDhMtTWWMz+R2T9+22HJ2nqVIW81kaC8RZ0aKBCA0pYO/twbtkx4f6+6Ps/6p6U
+	G3i9YWL8hZ2w75O7M9gqww58HFaCd7Bw/U6A84fikMxSblBiMPJyCkA7hEXApLikYaNiGah45HIws
+	h1B6AY044iVIFD/+++ityPUXpl69sCX2oye+xxuCL7/hMgALyD8DYYqpyLOiDinq+6k9lqJtckjhS
+	Y+xao36moMermXoiOibPTttUxC2YfK8SpZrHbvyZPM5VCQkDIxz3804q/4jZEa7yoxEVTlNPhGLhN
+	vQLT8A60PeL6hwYCVGdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3j0h-0002at-Dt; Fri, 30 Aug 2019 15:40:23 +0000
+	id 1i3j2O-00034M-H4; Fri, 30 Aug 2019 15:42:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3j0W-0002aH-Mn
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:40:14 +0000
-Received: from mail-qk1-f171.google.com (mail-qk1-f171.google.com
- [209.85.222.171])
+ id 1i3j2E-00033t-8F
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:41:59 +0000
+Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
+ [209.85.222.181])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 417F223407
+ by mail.kernel.org (Postfix) with ESMTPSA id CAEC22342C
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 15:40:12 +0000 (UTC)
+ Fri, 30 Aug 2019 15:41:57 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567179612;
- bh=CUBbtf0vFE1nde+pP9wjLrp16M7oNNsE0ztDeDpMvyo=;
+ s=default; t=1567179717;
+ bh=lsv2HRJcjTPCOFeqJ4kraE6eDC6maYXr6PJXlqUCXaw=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=Q9KQy+YNdu84KhVBk69egisbxRYLE/HKPlOTSlqZe57iWo9vMXok3Nmyx+Idugazf
- uov3Haq9DUc0OtxaHeHBGe5ogz0Y8J9pO6LPBo/1lZFqnddceSidF0FScV55z/uHN4
- jpB3TKCjA5zLCiBX0VbnE/apd1nrB3bQSyCG3Tz4=
-Received: by mail-qk1-f171.google.com with SMTP id u190so6523706qkh.5
+ b=oBz2Tae3hdCx6RiJE6e45gTAvbSObmBRsWEQzcAIaH4OfYdj1Bwv0vHUi6REFP2LQ
+ 6bH7KOZUI5o5kzfIK74iLaIyT5z0ZxGRpET9Vtq3CuX8I/MGq14AwF2ACzqcSyp6ry
+ n7lDiVUgjAxr55lcJd4zoTsHIs2rN8eUIX84j6FE=
+Received: by mail-qk1-f181.google.com with SMTP id f13so6442037qkm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 08:40:12 -0700 (PDT)
-X-Gm-Message-State: APjAAAXA0peW3V8im8+1L4qKQ+YUCbckKMu2MWHb0rbZNIN/RSvBKxKN
- eMb9yOhnyVKUQiJdfejJd5+ZoPLjXEb3+GMSeg==
-X-Google-Smtp-Source: APXvYqz2kJmiA9uqtucgQvwHXjcvlcKaTwpYdryTknADMy0ucjESEufasarQtlB0mHHN2UX16jnnn8whJSasvKnnXPA=
-X-Received: by 2002:a37:8905:: with SMTP id l5mr16254270qkd.152.1567179611442; 
- Fri, 30 Aug 2019 08:40:11 -0700 (PDT)
+ Fri, 30 Aug 2019 08:41:57 -0700 (PDT)
+X-Gm-Message-State: APjAAAV3ForIdtPNDsPTxTGPnucLNsvQsDWLoznUakuNX/qewApAK2vv
+ kpEKZW32+FBj9uwr+G3QuZOp0Z7f9LPqEBmwtw==
+X-Google-Smtp-Source: APXvYqx9Je0tyYggCCfvH9K5Yx8giZ/vSqa+dRS9Eg9xmRkJhQxAfUT6bndfMmkl21JD4YuSVXy8kryHoASXVusLWWo=
+X-Received: by 2002:ae9:e212:: with SMTP id c18mr10022345qkc.254.1567179716986; 
+ Fri, 30 Aug 2019 08:41:56 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190828125209.28173-1-mripard@kernel.org>
- <20190828125209.28173-4-mripard@kernel.org>
-In-Reply-To: <20190828125209.28173-4-mripard@kernel.org>
+ <20190828125209.28173-3-mripard@kernel.org>
+In-Reply-To: <20190828125209.28173-3-mripard@kernel.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 30 Aug 2019 10:39:59 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqLMvKUu0hp6rSGn=KtPHGe++r4dYyAZcDfLgy16pUi2Bg@mail.gmail.com>
-Message-ID: <CAL_JsqLMvKUu0hp6rSGn=KtPHGe++r4dYyAZcDfLgy16pUi2Bg@mail.gmail.com>
-Subject: Re: [PATCH v2 4/5] ASoC: dt-bindings: Convert Allwinner A23 analog
- codec to a schema
+Date: Fri, 30 Aug 2019 10:41:45 -0500
+X-Gmail-Original-Message-ID: <CAL_Jsq+ZQy02-3TOyagfdtsxFJkMkSiQh0-o1MpcbgvuM_e8oQ@mail.gmail.com>
+Message-ID: <CAL_Jsq+ZQy02-3TOyagfdtsxFJkMkSiQh0-o1MpcbgvuM_e8oQ@mail.gmail.com>
+Subject: Re: [PATCH v2 3/5] ASoC: dt-bindings: Convert Allwinner A33 codec to
+ a schema
 To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_084012_786321_0D4F0E8C 
-X-CRM114-Status: GOOD (  20.08  )
+X-CRM114-CacheID: sfid-20190830_084158_316402_F3A3A133 
+X-CRM114-Status: GOOD (  14.29  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,8 +102,7 @@ On Wed, Aug 28, 2019 at 7:52 AM Maxime Ripard <mripard@kernel.org> wrote:
 >
 > From: Maxime Ripard <maxime.ripard@bootlin.com>
 >
-> The Allwinner A23 SoC and later have an embedded audio codec that uses a
-> separate controller to drive its analog part, which is supported in Linux,
+> The Allwinner A33 SoC have an embedded audio codec that is supported in Linux,
 > with a matching Device Tree binding.
 >
 > Now that we have the DT validation in place, let's convert the device tree
@@ -116,59 +115,13 @@ On Wed, Aug 28, 2019 at 7:52 AM Maxime Ripard <mripard@kernel.org> wrote:
 > Changes from v1:
 >   - Fix subject prefix
 > ---
->  .../allwinner,sun8i-a23-codec-analog.yaml     | 38 +++++++++++++++++++
->  .../bindings/sound/sun8i-codec-analog.txt     | 17 ---------
->  2 files changed, 38 insertions(+), 17 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
->  delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-codec-analog.txt
->
-> diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
-> new file mode 100644
-> index 000000000000..832779389cbd
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/sound/allwinner,sun8i-a23-codec-analog.yaml
-> @@ -0,0 +1,38 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/sound/allwinner,sun8i-a23-codec-analog.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner A23 Analog Codec Device Tree Bindings
-> +
-> +maintainers:
-> +  - Chen-Yu Tsai <wens@csie.org>
-> +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      # FIXME: This is documented in the PRCM binding, but needs to be
-> +      # migrated here at some point
-> +      # - const: allwinner,sun8i-a23-codec-analog
-> +      - const: allwinner,sun8i-h3-codec-analog
-> +      - const: allwinner,sun8i-v3s-codec-analog
+>  .../sound/allwinner,sun8i-a33-codec.yaml      | 57 +++++++++++++++++
+>  .../bindings/sound/sun8i-a33-codec.txt        | 63 -------------------
+>  2 files changed, 57 insertions(+), 63 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun8i-a33-codec.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/sound/sun8i-a33-codec.txt
 
-enum is nicer than oneOf+const.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +required:
-> +  - compatible
-> +  - reg
-> +
-> +additionalProperties: false
-> +
-> +examples:
-> +  - |
-> +    codec_analog: codec-analog@1f015c0 {
-> +      compatible = "allwinner,sun8i-h3-codec-analog";
-> +      reg = <0x01f015c0 0x4>;
-> +    };
-> +
-> +...
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
