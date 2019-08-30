@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5229BA2BE0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 02:52:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0C16A2BE1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 02:52:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,67 +11,65 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WI3UGNm8tlTAreMP3fn5YlpxLUOMHBjiwqhBllFEH30=; b=qEpHjDjndn0pwMwkf4qQe5QQJ+
-	Ob0KktNWmVIlfsNOIglOVmIYIx6Xh5ypSbQiS3osLUsDUt84ZJmftqBw6fPxmRneZlbdnV7ucUum/
-	T5JNkzfeuTOULAzo71GvvIL5GHaVPbmEkdi3+no4uPAAI1qUh5Ehx4fXL9rvFwHiuv2rMaSkq/dfT
-	zdTlCQ362pgbAvocyrdxnvYXaMiVvmh7WH9hXdLxzbL1cTMVN3QRK5z66MfLmwKjJQb35e7hS56rG
-	R8i76NcaLDyGxG9Tmu0c+7nO6MvtxGc7w7ir3jrUJygP6O06p4vyoYu6mGpCa1w+BI3mamk7fvDa0
-	gAbpw51A==;
+	bh=/8C6+sjST09q327YcAiiR5y7I9m5TwpkXhXo4Zika8Q=; b=lkHqCQHVfeydoorWlW8JmxmJPH
+	Jph8cUgwZvQUav4VYiLIYc4AzkqhhPUvyBXDk6UndQv3kHnLMlVlEqCLIVi4T22ixO0SQPbpcLD4L
+	Te5/ROgZAul6Ss4jqicL4qzRSSgxq/pIMzOceUgs+uvhgHHDw1bRZc7wVWx8cGy16QUA6EGXxASsn
+	6UQRSkr7ANeKZu6nFq1nlkRREx93urY7VXEMeZpHDZx4SOl7K+vI8QJEyC3jLapxDzYwDVp0RdQ2P
+	/q9nRSt6sK9c+6viTL2pmha1wZbnovILRyf+j0X26xAcp/gfIZ2qQs88g86rJIDkCIIF9AQC0obj5
+	3ZpCzmNg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3V9S-0002ak-9m; Fri, 30 Aug 2019 00:52:30 +0000
+	id 1i3V9j-0002p5-Ts; Fri, 30 Aug 2019 00:52:48 +0000
 Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3V7p-0001PK-EE
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 00:50:51 +0000
-Received: by mail-lj1-x242.google.com with SMTP id x4so4815985ljj.6
+ id 1i3V7q-0001Qs-Uu
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 00:50:52 +0000
+Received: by mail-lj1-x242.google.com with SMTP id h15so4785721ljg.10
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 17:50:49 -0700 (PDT)
+ Thu, 29 Aug 2019 17:50:50 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=XM+El1wyypVfaXfQc7FxTfECR5DYv9zUGiXmgC/VC5g=;
- b=OmaVkDBxJbEbiNuH6B/lkHNi7X3Ced5VCYrN4v0FOemALIxV7B1RR9GTxi+wIA+o7S
- SBNyfehZvn7LwSQMr71oX1EDAOy9VvdgFs/9kHugoMQYd2qS/DSS2mvw8yXRcG/xHDV5
- 0mJnXZcKmURGOdcozYB23tdigAAVVt6MHRP2J5RqtdSKEIJwvommRUF3YZCu8WcJ+ZRQ
- 9xYKzJ+pyiAczzLTKz6YMx84NzIkCgZakeJ1s58kckrg9aSB/Vdpg5FlpqJZCT257v3w
- UK5VqvNfJ4lXH3Sy/1qHZ5bEXEsMC6tIogRp0+fgccQf0ld0ru8mbbg+8L8dATJfDqle
- zUkA==
+ bh=jGmbuQhjfybpgV20Mr6h/vZA852gJhY9ROLsc2sx8l8=;
+ b=pWeUz6Fu6QfaqIpkcQ5NkN8S1IH2Rw5H5SVVq3jN6Pe8GO4Z0AVQ8kjAJ1nWq/suUY
+ iy5IGz6OJY/dKJgiOzw4G0pKMu1jIKXgSEsnZrYt8T+GOll/c7PoRUL0YOgbZSy9nloJ
+ xQxd5OltyxyzW8UXtE9De6EMr0kC0GBlbZxjYBn+ldgJ4QDJW8JzaEcfhzz1wiSK9Dz5
+ oXvnGjkb0/kodZDij7wbzY6bjZCsk+fZ1wdt4Hs8Okzlc+qRp1IHk7T8NLEWCvIR0xTc
+ MloaK1lal5Wj6DiZQlLT3eOYVu3I68zMpgnlI+8rf0f0TnmBXaCq/zCKadOxwP6syzE7
+ hEMw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=XM+El1wyypVfaXfQc7FxTfECR5DYv9zUGiXmgC/VC5g=;
- b=OqWF79Vv6ygU4J0maMtP2lx01PhTXuvVIL1kuYqeoMtR9ZIqdqgS0bQognWfld5BnG
- PZ6WmpRx5kznmU+S8wKlYNuN3LNVAGGWuekvsXvQUAugNgKLEY5bWQtEY2pAs+37NezM
- WjFXoLumm3tWSzB7qhV7yNc8eXdQeXVqUDHB7Xqw7jBYoUjfP8YKvCt+SfTUHKN3hLzq
- RBykKq6J0WahnXlKDkpbPrkmbZGY/X/HCEAs8XBhMUsdi84PMr/SFfRuoOy2iLfzzu/m
- kr+MgjDcIO902KL6QVPl7z8g4FHM2k/kP1yAAFdFPGzrnCrpDxLOSFGMN8/XQ291DBDO
- zT9g==
-X-Gm-Message-State: APjAAAUftyMJ481odK4ApAT5K2MQsgSiDIKp5hkCDgs6E3/vXioX6EK6
- FAvGq7JxOuBHtQ2ynFkom9+lqw==
-X-Google-Smtp-Source: APXvYqzmBCVvXKFOXoBDuj58+fjrCfnA51PDqBxjQDtiM9x+Qz3HalHYI72Y8f2Nsv+B0cm1QW0ySg==
-X-Received: by 2002:a2e:85d4:: with SMTP id h20mr7058874ljj.134.1567126248121; 
- Thu, 29 Aug 2019 17:50:48 -0700 (PDT)
+ bh=jGmbuQhjfybpgV20Mr6h/vZA852gJhY9ROLsc2sx8l8=;
+ b=gw93o7OqALHRDnEt4+QR20KBQyStyeJYAfJrLOqpUoGcWhQRUZv8OdBatOyGrAeSRe
+ YZ9L6dh++OUhB4Gc/rCrV4T85HLPLF398DTCWIjdCEY3dUoQwVpyUWSeGvpQX2h/mpYb
+ jiXHzKkc1ISQL6iCZV6pqCow11bYSp7rz0TEGtMf9/r7wcaXhaOrLufP1sTQqflSSutu
+ dyKj0VyJ7X/INTAAVzAWPTRoK4axeWvKLEDvnsyYejW2cHESyxWoTqxoO4afphjEin1q
+ BwUxcmBzELuyal8cqsg30Dnnz7bexKD1woK5n2AnW49JvR/EC6iaqy0UXopHMZmUvkmV
+ ZJkA==
+X-Gm-Message-State: APjAAAVjwQORe1KlGvU0aEqxPQ+bEJlOSTSVe9MsJ3trpZjWNr/1fxIP
+ EsQYB+VRo1APxcClRsaveICENA==
+X-Google-Smtp-Source: APXvYqzI74aR/DPSKUQJi5BEbDzth7mLHwQxtSOpKT4d/woWDnrSZxBkUNITdgyD5sT4M1zqAQ6tfw==
+X-Received: by 2002:a2e:b004:: with SMTP id y4mr6683248ljk.124.1567126249466; 
+ Thu, 29 Aug 2019 17:50:49 -0700 (PDT)
 Received: from localhost.localdomain (168-200-94-178.pool.ukrtel.net.
  [178.94.200.168])
- by smtp.gmail.com with ESMTPSA id f19sm628149lfk.43.2019.08.29.17.50.46
+ by smtp.gmail.com with ESMTPSA id f19sm628149lfk.43.2019.08.29.17.50.48
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 17:50:47 -0700 (PDT)
+ Thu, 29 Aug 2019 17:50:48 -0700 (PDT)
 From: Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>
 To: linux@armlinux.org.uk, ast@kernel.org, daniel@iogearbox.net, yhs@fb.com,
  davem@davemloft.net, jakub.kicinski@netronome.com, hawk@kernel.org,
  john.fastabend@gmail.com
-Subject: [PATCH RFC bpf-next 05/10] samples: bpf: Makefile: use vars from
- KBUILD_CFLAGS to handle linux headers
-Date: Fri, 30 Aug 2019 03:50:32 +0300
-Message-Id: <20190830005037.24004-6-ivan.khoronzhuk@linaro.org>
+Subject: [PATCH RFC bpf-next 06/10] samples: bpf: makefile: fix HDR_PROBE
+Date: Fri, 30 Aug 2019 03:50:33 +0300
+Message-Id: <20190830005037.24004-7-ivan.khoronzhuk@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190830005037.24004-1-ivan.khoronzhuk@linaro.org>
 References: <20190830005037.24004-1-ivan.khoronzhuk@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_175049_483265_1D90B197 
-X-CRM114-Status: UNSURE (   8.51  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190829_175051_011963_EAA7B964 
+X-CRM114-Status: GOOD (  11.64  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -109,34 +107,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The kernel headers are reused from samples bpf, and autoconf.h is not
-enough to reflect complete configuration for clang. One of such
-configurations is __LINUX_ARM_ARCH__ min version used as instruction
-set selector. In another case an error like "SMP is not
-supported" for arm and others errors are issued and final object is
-not correct.
+echo should be replace on echo -e to handle \n correctly, but instead,
+replace it on printf as some systems can't handle echo -e.
+
+Signed-off-by: Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>
 ---
- samples/bpf/Makefile | 7 +++++++
- 1 file changed, 7 insertions(+)
+ samples/bpf/Makefile | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/samples/bpf/Makefile b/samples/bpf/Makefile
-index cdd742c05200..9232efa2b1b3 100644
+index 9232efa2b1b3..043f9cc14cdd 100644
 --- a/samples/bpf/Makefile
 +++ b/samples/bpf/Makefile
-@@ -186,6 +186,13 @@ HOSTLDLIBS_map_perf_test	+= -lrt
- HOSTLDLIBS_test_overhead	+= -lrt
- HOSTLDLIBS_xdpsock		+= -pthread
+@@ -208,7 +208,7 @@ endif
  
-+# Strip all expet -D options needed to handle linux headers
-+# for arm it's __LINUX_ARM_ARCH__ and potentially others fork vars
-+D_OPTIONS = $(shell echo "$(KBUILD_CFLAGS) " | sed 's/[[:blank:]]/\n/g' | \
-+	sed '/^-D/!d' | tr '\n' ' ')
-+
-+CLANG_EXTRA_CFLAGS += $(D_OPTIONS)
-+
- # Allows pointing LLC/CLANG to a LLVM backend with bpf support, redefine on cmdline:
- #  make samples/bpf/ LLC=~/git/llvm/build/bin/llc CLANG=~/git/llvm/build/bin/clang
- LLC ?= llc
+ # Don't evaluate probes and warnings if we need to run make recursively
+ ifneq ($(src),)
+-HDR_PROBE := $(shell echo "\#include <linux/types.h>\n struct list_head { int a; }; int main() { return 0; }" | \
++HDR_PROBE := $(shell printf "\#include <linux/types.h>\n struct list_head { int a; }; int main() { return 0; }" | \
+ 	$(HOSTCC) $(KBUILD_HOSTCFLAGS) -x c - -o /dev/null 2>/dev/null && \
+ 	echo okay)
+ 
 -- 
 2.17.1
 
