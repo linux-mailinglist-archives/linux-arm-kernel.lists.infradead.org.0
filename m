@@ -2,63 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CEBF2A3AA1
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:42:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50C27A3AA6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:43:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eWidBvpYcx9PHVkwy4l1o4NDQBiQMKS0sbnb2yCYzJA=; b=loGNkhZejVLYI9
-	IUFn3t7SJbNIWU/fOyiqkkckDJKwE5Ee9PhijeRd1n5aa1B8A+DTVwhngq7kgGJIUxYLRoA1sKpc+
-	17JoietLWK33Rv1/APf5RsUg/tyedBHG6LMSSfawq4ASDPWVNH7gNAwbgilyqCA7gxMulP+cjjuyj
-	maH3ilyRE84zEYf3WJYo9oewcw/uNwN4KQJvt1xx2ZGhzyA/aYZ6iJH9g+s0Cfx100Bdfany95eX+
-	WKmOd/r4j25qcdSv+z6vf402lV1QB8lxziXdUSnrZ2IKZ79/ID7VdUmjUXIzsiRWpuhTj8aEHyJGQ
-	GvTW/aI85H8lNpLIydYg==;
+	List-Owner; bh=tv9PnraiN51EsIIhsphNIapGcyesuV+Hz3L4e4AzU9U=; b=U5W4+5flFQKmHp
+	MSZHEnJlIqfw4/4JjgSR0bFSjST4QNl/nuaQeVkJB0vFrc+JKY2JtL+rjBwIBSbF0JppPPCVILltM
+	iSctgX6w5+TMiSc5S1WUO5GkzITTuYxzMbD/s0JG777BvEuXW1lnDFznDY1sk3gQ1VeSBvlIdT0p8
+	NbOJN64kCsbT9IEa4e3mooP8cM4G2BXVeR1fABjwCY+CbjQ6vfosjbuCP4ZgET823ifZgVejkGlD5
+	xyxjQBA2PC6ts+SogF9TuqlZ8It+3nlULcr2lnHGki0gr9uvo3wBaP0H+NJUHvNwtMrLmvnWOrIbj
+	5PJ/Fdifdy0WUm1kNnXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3j31-0003KA-6D; Fri, 30 Aug 2019 15:42:47 +0000
+	id 1i3j3O-0003Ye-Sc; Fri, 30 Aug 2019 15:43:10 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3j2m-0003JS-8U
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:42:33 +0000
-Received: from mail-qt1-f178.google.com (mail-qt1-f178.google.com
- [209.85.160.178])
+ id 1i3j37-0003XN-BW
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:42:54 +0000
+Received: from mail-qt1-f174.google.com (mail-qt1-f174.google.com
+ [209.85.160.174])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9DD242342A
+ by mail.kernel.org (Postfix) with ESMTPSA id E439C23429
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 15:42:31 +0000 (UTC)
+ Fri, 30 Aug 2019 15:42:52 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567179751;
- bh=rjS27z1lBNhCEThrZ0kRF0f2b7v4SWdYVwASALBqm7Y=;
+ s=default; t=1567179773;
+ bh=SjF+r0sRfSw6guTPuHirWIwopvlcS/mInacUNuCDDCA=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OO5kl0tpPfjShjhR6s2bDqoUlEMqS5fbn+z6GfVIp97MAo550syQk1WnY71NzWEd3
- QR+DaJVTCupCau1tgKTb6Ywl6eia1MEpIJ20UNOsZDGp6D0KHbDRYzF/qckNMovc7/
- uFeUE6mNBqeL5c4bK2+7vXzmoLX0SJl5HLXKvw/c=
-Received: by mail-qt1-f178.google.com with SMTP id t12so8027062qtp.9
+ b=DM1CXlk1CMfyPGG+0KfVCNMQGXt7kL6/zsk9Vb3449Al86pJsn6TSalEvXkUtHuzn
+ b11LJRp6XB3YsulP4B8pzRz9DudGUcUlJV/mtIvvRYPNXsdwNkGrioCMtzSilJ1tCB
+ 0lSAXuF1GBwBeDXKDif2Bn5lXm6RoGN3QwI5rrYk=
+Received: by mail-qt1-f174.google.com with SMTP id z4so8075098qtc.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 08:42:31 -0700 (PDT)
-X-Gm-Message-State: APjAAAVrWHSJV+zf46aTJ44eFrC/DMd3PDBSkcziBRmUscKKuNxE7wtx
- ND3uKD9aFHGI1zCZpCAT0VnYYC5Tgarsl/R2zA==
-X-Google-Smtp-Source: APXvYqxBnsuq9Cl2AYxJ3+2RNMJO5TFFSdIRuxFvXYjoIaLcgogQZmTxJVQow0WheBHwlDr5sYneLYlM9P1u/GoXMGg=
-X-Received: by 2002:ac8:6b05:: with SMTP id w5mr221266qts.136.1567179750860;
- Fri, 30 Aug 2019 08:42:30 -0700 (PDT)
+ Fri, 30 Aug 2019 08:42:52 -0700 (PDT)
+X-Gm-Message-State: APjAAAUUUIZ0KqwKyTFdTeD1A9Sd2FEq7ThlifbTohrMYQtRcvdUM/Yz
+ LbDK/HAk3osL7N3pWyIZQ1BOJJPNGLSLbB4MXQ==
+X-Google-Smtp-Source: APXvYqzXCHsQQOsvgsiISFEf/Zttwtxmy7SUxWU0aJkqVW9uY0SYjqHWdC/KWYvM+YsA8KFQRpWU9v+qwwnvZLkjrU4=
+X-Received: by 2002:aed:24f4:: with SMTP id u49mr16280140qtc.110.1567179772161; 
+ Fri, 30 Aug 2019 08:42:52 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190828125209.28173-1-mripard@kernel.org>
- <20190828125209.28173-5-mripard@kernel.org>
-In-Reply-To: <20190828125209.28173-5-mripard@kernel.org>
+In-Reply-To: <20190828125209.28173-1-mripard@kernel.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 30 Aug 2019 10:42:19 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqL7nE8+XK0m+1UKCUypkkgb4Nky7ternsx0zkTxiSejRw@mail.gmail.com>
-Message-ID: <CAL_JsqL7nE8+XK0m+1UKCUypkkgb4Nky7ternsx0zkTxiSejRw@mail.gmail.com>
-Subject: Re: [PATCH v2 5/5] ASoC: dt-bindings: Convert Allwinner A64 analog
- codec to a schema
+Date: Fri, 30 Aug 2019 10:42:40 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJBs_vmqbe9DmEjNJR3YO6-3mnyxrTbYq0b++0eGJnU3w@mail.gmail.com>
+Message-ID: <CAL_JsqJBs_vmqbe9DmEjNJR3YO6-3mnyxrTbYq0b++0eGJnU3w@mail.gmail.com>
+Subject: Re: [PATCH v2 1/5] ASoC: dt-bindings: sun4i-spdif: Fix dma-names
+ warning
 To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_084232_318827_086FC230 
-X-CRM114-Status: GOOD (  15.06  )
+X-CRM114-CacheID: sfid-20190830_084253_865931_8C6894CE 
+X-CRM114-Status: GOOD (  14.39  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -102,13 +101,13 @@ On Wed, Aug 28, 2019 at 7:52 AM Maxime Ripard <mripard@kernel.org> wrote:
 >
 > From: Maxime Ripard <maxime.ripard@bootlin.com>
 >
-> The Allwinner A64 SoC has an embedded audio codec that uses a separate
-> controller to drive its analog part, which is supported in Linux, with a
-> matching Device Tree binding.
+> Even though the H6 compatible has been properly added, the exeption for the
+> number of DMA channels hasn't been updated, leading in a validation
+> warning.
 >
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for that controller over to a YAML schemas.
+> Fix this.
 >
+> Fixes: b20453031472 ("dt-bindings: sound: sun4i-spdif: Add Allwinner H6 compatible")
 > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
 >
 > ---
@@ -116,11 +115,8 @@ On Wed, Aug 28, 2019 at 7:52 AM Maxime Ripard <mripard@kernel.org> wrote:
 > Changes from v1:
 >   - Fix subject prefix
 > ---
->  .../allwinner,sun50i-a64-codec-analog.yaml    | 39 +++++++++++++++++++
->  .../bindings/sound/sun50i-codec-analog.txt    | 14 -------
->  2 files changed, 39 insertions(+), 14 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun50i-a64-codec-analog.yaml
->  delete mode 100644 Documentation/devicetree/bindings/sound/sun50i-codec-analog.txt
+>  .../devicetree/bindings/sound/allwinner,sun4i-a10-spdif.yaml  | 4 +++-
+>  1 file changed, 3 insertions(+), 1 deletion(-)
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
