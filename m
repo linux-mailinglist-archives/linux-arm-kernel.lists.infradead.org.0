@@ -2,49 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EC887A342E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 11:40:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4757DA3431
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 11:40:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oxwbZT7Akc/mCUAf1Udw42O39t0biN7eo9C1kcSfK58=; b=ofoFTxP51L1d21
-	YIOXkZTv4TajguAj+061EfWZ6q9VDgMQlTgMgLpptzpE1yoF8sG1YSto+Kd5HgHRj/gIhMLufrXkR
-	Ld4j9cV9vq/SV7EyIg8r07eTODgzz+2Q2Bnk1JUBvwUX5LWktTRTHzmXsIMvnvmpxSfVYw02oNFgJ
-	BJ+xaXoxbWBUWiZkG5qZeWoqqS4d2kenMemHjgNHcPAKLr0xX9Ov2H6J04E63GTSXU9193sJ2GS+d
-	pPCKyk4wETNRnnuHt54WMVfu9IDRDtmBwrkOxhx5jbMvWxAI6qmUt3YaHxBqQTnZebWfvAuK20bHg
-	J6qu4ls9o8qJR4Ux5rnA==;
+	List-Owner; bh=VyWhcrUvuM3EKE4c+hO52Zdo8XSAXf2UVObtZ0S7E60=; b=qX9halAA3um9xQ
+	hD7TDgQhhpL/Ko3P333Nmylt/s8o73uWExg3cf2eimbYRnWuXTseTyDN16gyypCWsG1jyqJ+f7v3D
+	hAD/WvK92KNTQVoq8cEMRm+zqdbVNQb2EYNOIS5qdClzsUUCjU0rRmyGZjbhdvB/l4uH0hZw7f/gA
+	r980ziH4KIIcFBBMpYb5nVHIY3t2okl1uxIbJfqp5dPQJlKeeastprxuXwmqKatjBDeTu/95dKoZK
+	Xj0W/UekPrnbGjHWNVZxbNJYBR9FrZLmZXhKOL7K4YWMbe4reWfRIMQB4D7SnNO8vlhCEkbTXSCTy
+	rU4i+vlUdoN4uAE5rNXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3dOH-0001Sz-EQ; Fri, 30 Aug 2019 09:40:21 +0000
+	id 1i3dOT-00025r-LQ; Fri, 30 Aug 2019 09:40:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3dO1-00011t-A9
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 09:40:07 +0000
+ id 1i3dOB-0001z5-Ge
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 09:40:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4F7D3344;
- Fri, 30 Aug 2019 02:40:04 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3F77E344;
+ Fri, 30 Aug 2019 02:40:15 -0700 (PDT)
 Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
  [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F048A3F718;
- Fri, 30 Aug 2019 02:40:02 -0700 (PDT)
-Date: Fri, 30 Aug 2019 10:40:00 +0100
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DFBE43F718;
+ Fri, 30 Aug 2019 02:40:13 -0700 (PDT)
+Date: Fri, 30 Aug 2019 10:40:11 +0100
 From: Mark Rutland <mark.rutland@arm.com>
 To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH ARM64 v4.4 V3 02/44] arm64: Implement
- array_index_mask_nospec()
-Message-ID: <20190830094000.GB46475@lakrids.cambridge.arm.com>
+Subject: Re: [PATCH ARM64 v4.4 V3 03/44] arm64: move TASK_* definitions to
+ <asm/processor.h>
+Message-ID: <20190830094011.GC46475@lakrids.cambridge.arm.com>
 References: <cover.1567077734.git.viresh.kumar@linaro.org>
- <a01785b993e2b39864ee0cab09695ae23a02b2f5.1567077734.git.viresh.kumar@linaro.org>
+ <687d13717c9736bc33b9128bd09371fc0453fbdd.1567077734.git.viresh.kumar@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <a01785b993e2b39864ee0cab09695ae23a02b2f5.1567077734.git.viresh.kumar@linaro.org>
+In-Reply-To: <687d13717c9736bc33b9128bd09371fc0453fbdd.1567077734.git.viresh.kumar@linaro.org>
 User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_024005_446897_3DA65591 
-X-CRM114-Status: GOOD (  16.35  )
+X-CRM114-CacheID: sfid-20190830_024015_666655_81B82C1F 
+X-CRM114-Status: GOOD (  17.69  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,23 +73,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 05:03:47PM +0530, Viresh Kumar wrote:
-> From: Robin Murphy <robin.murphy@arm.com>
+On Thu, Aug 29, 2019 at 05:03:48PM +0530, Viresh Kumar wrote:
+> From: Yury Norov <ynorov@caviumnetworks.com>
 > 
-> commit 022620eed3d0bc4bf2027326f599f5ad71c2ea3f upstream.
+> commit eef94a3d09aab437c8c254de942d8b1aa76455e2 upstream.
 > 
-> Provide an optimised, assembly implementation of array_index_mask_nospec()
-> for arm64 so that the compiler is not in a position to transform the code
-> in ways which affect its ability to inhibit speculation (e.g. by introducing
-> conditional branches).
+> ILP32 series [1] introduces the dependency on <asm/is_compat.h> for
+> TASK_SIZE macro. Which in turn requires <asm/thread_info.h>, and
+> <asm/thread_info.h> include <asm/memory.h>, giving a circular dependency,
+> because TASK_SIZE is currently located in <asm/memory.h>.
 > 
-> This is similar to the sequence used by x86, modulo architectural differences
-> in the carry/borrow flags.
+> In other architectures, TASK_SIZE is defined in <asm/processor.h>, and
+> moving TASK_SIZE there fixes the problem.
 > 
-> Reviewed-by: Mark Rutland <mark.rutland@arm.com>
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> Discussion: https://patchwork.kernel.org/patch/9929107/
+> 
+> [1] https://github.com/norov/linux/tree/ilp32-next
+> 
+> CC: Will Deacon <will.deacon@arm.com>
+> CC: Laura Abbott <labbott@redhat.com>
+> Cc: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+> Cc: Catalin Marinas <catalin.marinas@arm.com>
+> Cc: James Morse <james.morse@arm.com>
+> Suggested-by: Mark Rutland <mark.rutland@arm.com>
+> Signed-off-by: Yury Norov <ynorov@caviumnetworks.com>
 > Signed-off-by: Will Deacon <will.deacon@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
 > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
 
 Reviewed-by: Mark Rutland <mark.rutland@arm.com> [v4.4 backport]
@@ -97,41 +105,101 @@ Reviewed-by: Mark Rutland <mark.rutland@arm.com> [v4.4 backport]
 Mark.
 
 > ---
->  arch/arm64/include/asm/barrier.h | 21 +++++++++++++++++++++
->  1 file changed, 21 insertions(+)
+>  arch/arm64/include/asm/memory.h    | 15 ---------------
+>  arch/arm64/include/asm/processor.h | 21 +++++++++++++++++++++
+>  arch/arm64/kernel/entry.S          |  2 +-
+>  3 files changed, 22 insertions(+), 16 deletions(-)
 > 
-> diff --git a/arch/arm64/include/asm/barrier.h b/arch/arm64/include/asm/barrier.h
-> index 574486634c62..7c25e3e11b6d 100644
-> --- a/arch/arm64/include/asm/barrier.h
-> +++ b/arch/arm64/include/asm/barrier.h
-> @@ -37,6 +37,27 @@
->  #define dma_rmb()	dmb(oshld)
->  #define dma_wmb()	dmb(oshst)
+> diff --git a/arch/arm64/include/asm/memory.h b/arch/arm64/include/asm/memory.h
+> index b42b930cc19a..959a1e9188fe 100644
+> --- a/arch/arm64/include/asm/memory.h
+> +++ b/arch/arm64/include/asm/memory.h
+> @@ -43,8 +43,6 @@
+>   *		 (VA_BITS - 1))
+>   * VA_BITS - the maximum number of bits for virtual addresses.
+>   * VA_START - the first kernel virtual address.
+> - * TASK_SIZE - the maximum size of a user space task.
+> - * TASK_UNMAPPED_BASE - the lower boundary of the mmap VM area.
+>   * The module space lives between the addresses given by TASK_SIZE
+>   * and PAGE_OFFSET - it must be within 128MB of the kernel text.
+>   */
+> @@ -58,19 +56,6 @@
+>  #define PCI_IO_END		(MODULES_VADDR - SZ_2M)
+>  #define PCI_IO_START		(PCI_IO_END - PCI_IO_SIZE)
+>  #define FIXADDR_TOP		(PCI_IO_START - SZ_2M)
+> -#define TASK_SIZE_64		(UL(1) << VA_BITS)
+> -
+> -#ifdef CONFIG_COMPAT
+> -#define TASK_SIZE_32		UL(0x100000000)
+> -#define TASK_SIZE		(test_thread_flag(TIF_32BIT) ? \
+> -				TASK_SIZE_32 : TASK_SIZE_64)
+> -#define TASK_SIZE_OF(tsk)	(test_tsk_thread_flag(tsk, TIF_32BIT) ? \
+> -				TASK_SIZE_32 : TASK_SIZE_64)
+> -#else
+> -#define TASK_SIZE		TASK_SIZE_64
+> -#endif /* CONFIG_COMPAT */
+> -
+> -#define TASK_UNMAPPED_BASE	(PAGE_ALIGN(TASK_SIZE / 4))
 >  
+>  /*
+>   * Physical vs virtual RAM address space conversion.  These are
+> diff --git a/arch/arm64/include/asm/processor.h b/arch/arm64/include/asm/processor.h
+> index d08559528927..75d9ef6c457c 100644
+> --- a/arch/arm64/include/asm/processor.h
+> +++ b/arch/arm64/include/asm/processor.h
+> @@ -19,6 +19,10 @@
+>  #ifndef __ASM_PROCESSOR_H
+>  #define __ASM_PROCESSOR_H
+>  
+> +#define TASK_SIZE_64		(UL(1) << VA_BITS)
+> +
+> +#ifndef __ASSEMBLY__
+> +
+>  /*
+>   * Default implementation of macro that returns current
+>   * instruction pointer ("program counter").
+> @@ -36,6 +40,22 @@
+>  #include <asm/types.h>
+>  
+>  #ifdef __KERNEL__
 > +/*
-> + * Generate a mask for array_index__nospec() that is ~0UL when 0 <= idx < sz
-> + * and 0 otherwise.
+> + * TASK_SIZE - the maximum size of a user space task.
+> + * TASK_UNMAPPED_BASE - the lower boundary of the mmap VM area.
 > + */
-> +#define array_index_mask_nospec array_index_mask_nospec
-> +static inline unsigned long array_index_mask_nospec(unsigned long idx,
-> +						    unsigned long sz)
-> +{
-> +	unsigned long mask;
+> +#ifdef CONFIG_COMPAT
+> +#define TASK_SIZE_32		UL(0x100000000)
+> +#define TASK_SIZE		(test_thread_flag(TIF_32BIT) ? \
+> +				TASK_SIZE_32 : TASK_SIZE_64)
+> +#define TASK_SIZE_OF(tsk)	(test_tsk_thread_flag(tsk, TIF_32BIT) ? \
+> +				TASK_SIZE_32 : TASK_SIZE_64)
+> +#else
+> +#define TASK_SIZE		TASK_SIZE_64
+> +#endif /* CONFIG_COMPAT */
 > +
-> +	asm volatile(
-> +	"	cmp	%1, %2\n"
-> +	"	sbc	%0, xzr, xzr\n"
-> +	: "=r" (mask)
-> +	: "r" (idx), "Ir" (sz)
-> +	: "cc");
+> +#define TASK_UNMAPPED_BASE	(PAGE_ALIGN(TASK_SIZE / 4))
 > +
-> +	csdb();
-> +	return mask;
-> +}
-> +
->  #define smp_mb()	dmb(ish)
->  #define smp_rmb()	dmb(ishld)
->  #define smp_wmb()	dmb(ishst)
+>  #define STACK_TOP_MAX		TASK_SIZE_64
+>  #ifdef CONFIG_COMPAT
+>  #define AARCH32_VECTORS_BASE	0xffff0000
+> @@ -188,4 +208,5 @@ static inline void spin_lock_prefetch(const void *x)
+>  
+>  int cpu_enable_pan(void *__unused);
+>  
+> +#endif /* __ASSEMBLY__ */
+>  #endif /* __ASM_PROCESSOR_H */
+> diff --git a/arch/arm64/kernel/entry.S b/arch/arm64/kernel/entry.S
+> index 586326981769..c849be9231bb 100644
+> --- a/arch/arm64/kernel/entry.S
+> +++ b/arch/arm64/kernel/entry.S
+> @@ -27,7 +27,7 @@
+>  #include <asm/cpufeature.h>
+>  #include <asm/errno.h>
+>  #include <asm/esr.h>
+> -#include <asm/memory.h>
+> +#include <asm/processor.h>
+>  #include <asm/thread_info.h>
+>  #include <asm/asm-uaccess.h>
+>  #include <asm/unistd.h>
 > -- 
 > 2.21.0.rc0.269.g1a574e7a288b
 > 
