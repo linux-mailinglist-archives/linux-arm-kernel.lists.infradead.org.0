@@ -2,55 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE044A3F93
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 23:17:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AB5DA3FDB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 23:45:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xr6J6ooNr4fm4RtAwVLWukP9Y3O7B94oeLyqEnhnPLk=; b=uGx5Grgk1KL4Fy
-	ZQv/2ILcfHev/BWLfmb9zw8JHroyFr/tOR44bNVvxyD8yRwTSrLMPVPS83iPblKRWMRdQPNN7+2UU
-	48pQt9Qla8W+z5yvaGSsqvvYNHChqgCPBgGQDaTqjGIJ0OBvWZZGZy1+JljPH8zJ/UZtb4OTZYd7/
-	uz5cRHJaVtIv+17k/OmVlSDZo5+tBTuXjG7FPdI3U3nsRKRKFyMQqgjnYF3mBTgQKa9CUSf4Ukb/6
-	U7xnMkz9rOzqx94kCmcZVsKMrcVyueI6e8vd1RwZmiA7YqYFeC8ecaboY01cRNFC0aTb0l5XC4Clt
-	dHRB1YzClvZO7oYfSUTQ==;
+	List-Owner; bh=/YW/rIwJe4neYclGeLOyV7ySk8yxMwwW8IQNaouhBLs=; b=SThYddSRUY1dPW
+	HzG1boGkGFl4qXYCnRTcY1zvJp2ccqs7uWUJFOGRZ6WlHlF94V2/yFBP2R0sqrBKoFtWDm7iqJgMV
+	SBNeG81Zp0grV/YRQckgzBVuAiT4PUjzvgRQ38rPXx9q2wff+lPzsbieJXgISPTklJjL1CDPPLGDS
+	tMXMsOXYXgtmTjL84O9TrUAhcKp818/0K8rGwOUcb6xxtAWC8gWsMRkcUsWKQeYxmS/HRZeG30wZb
+	g9mAizf/gyye/TBufYSHmDZH3DMitTucjmuGHK8viLGv8g3DtM++3qKXTDNyxAvC4TZ0wgPck+jF0
+	42HzOsNIU4Wagel44Vfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3oHD-0000qn-He; Fri, 30 Aug 2019 21:17:47 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1i3ohz-00017u-BS; Fri, 30 Aug 2019 21:45:27 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3oH1-0000py-HN; Fri, 30 Aug 2019 21:17:36 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id E0D70154FE29B;
- Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
-Date: Fri, 30 Aug 2019 14:17:28 -0700 (PDT)
-Message-Id: <20190830.141728.336807562506579224.davem@davemloft.net>
-To: wens@kernel.org
-Subject: Re: [PATCH netdev] net: stmmac: dwmac-rk: Don't fail if phy
- regulator is absent
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <20190829031724.20865-1-wens@kernel.org>
-References: <20190829031724.20865-1-wens@kernel.org>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Fri, 30 Aug 2019 14:17:29 -0700 (PDT)
+ id 1i3oho-000179-Kc; Fri, 30 Aug 2019 21:45:17 +0000
+Received: by mail-pl1-x641.google.com with SMTP id f19so3942404plr.3;
+ Fri, 30 Aug 2019 14:45:15 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=CyAnPYKlnqoE6HYrk4XrrLs/lfWC1furlwMXZwIbdJM=;
+ b=Ey9XQvoj8H/Rnwv8NzD/KreDQNAtk/Y1mAfNtWWSPWRvpRHkSG3qzrkTUiyqzLyy8y
+ FhYeM7nvgl239YS8plycKvLT74pvzlcX8njCo82d73vUDrqGOQIz8oARAkP7UKilrwM5
+ NDqVYaJdxQw5YtmBNy2VGaqetGKnvddyuLZTFzzrXm1WRH2hh5P7VzQIaPjNRzRh/cM8
+ +iOgz2nm0iGcnxDUVyloWrKJlS93KDGv8twzcGSeFsCL8uqXFf9uQEZtHNVy3yjgG/aD
+ DEMAEjrPTZxgLBaKb3rpS25bBzOjAWuXx/Z+kiRAvu2tepHCjzQrK3HOb0q7by4MMmYW
+ wmeg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CyAnPYKlnqoE6HYrk4XrrLs/lfWC1furlwMXZwIbdJM=;
+ b=ODvSA5qdsZaZhgbRTv9iw0WGl0VNj0iklI7EU4caHdVITiuRuPvNQYw6VmqssmdQGE
+ zMQfBRTIo9uQLjPXai1W7oS3uYJ6kpzgo9bMOkJnQTA7ugdnlf68WGQychpvhD52Zbxq
+ jqJmg+pDiGBkhh7Zs4AnukzJvHRBZYqdPtsrQkclNgs8+OA2Ig+XdSTdg6bUY90WscJ7
+ 3Hvv0Ku74Q8nlYxIlugN4ais81OOO+zfCIHh2Y++GhL61LaAaUEyuvRL/tbDhremf+8m
+ kqP+j3knDL8KojJgVNOnSUmD43e4F1on3IWWEIt3vN6+OrNDI5FnbmHC6YMx5IACoCh9
+ nyHw==
+X-Gm-Message-State: APjAAAXEyNUE8OmAo732naP4GTwIIQVAY0ZiAg6fwSoLF7SlKhvME0OK
+ kyt7hd9oRxlai3Qb25Q5/LY=
+X-Google-Smtp-Source: APXvYqzQSc6jNbxZKUcovD9FZLciwfGuo7Kt2wn5aZSHSDm6zSKrBIeIlpBZCEWXRcfFUHXs7Afe6Q==
+X-Received: by 2002:a17:902:9b8f:: with SMTP id
+ y15mr18714988plp.194.1567201515169; 
+ Fri, 30 Aug 2019 14:45:15 -0700 (PDT)
+Received: from localhost (g75.222-224-160.ppp.wakwak.ne.jp. [222.224.160.75])
+ by smtp.gmail.com with ESMTPSA id
+ q69sm5777108pjb.0.2019.08.30.14.45.14
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 30 Aug 2019 14:45:14 -0700 (PDT)
+Date: Sat, 31 Aug 2019 06:45:12 +0900
+From: Stafford Horne <shorne@gmail.com>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 05/26] openrisc: map as uncached in ioremap
+Message-ID: <20190830214512.GX24874@lianli.shorne-pla.net>
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-6-hch@lst.de>
+ <20190823135539.GC24874@lianli.shorne-pla.net>
+ <20190830160705.GF26887@lst.de>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190830160705.GF26887@lst.de>
+User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_141735_579938_F8217B80 
-X-CRM114-Status: GOOD (  10.32  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_144516_705322_E1A58ABD 
+X-CRM114-Status: GOOD (  13.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (shorne[at]gmail.com)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,39 +102,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- wens@csie.org, joabreu@synopsys.com, peppe.cavallaro@st.com,
- linux-arm-kernel@lists.infradead.org, heiko@sntech.de
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Chen-Yu Tsai <wens@kernel.org>
-Date: Thu, 29 Aug 2019 11:17:24 +0800
-
-> From: Chen-Yu Tsai <wens@csie.org>
+On Fri, Aug 30, 2019 at 06:07:05PM +0200, Christoph Hellwig wrote:
+> On Fri, Aug 23, 2019 at 10:55:39PM +0900, Stafford Horne wrote:
+> > On Sat, Aug 17, 2019 at 09:32:32AM +0200, Christoph Hellwig wrote:
+> > > Openrisc is the only architecture not mapping ioremap as uncached,
+> > > which has been the default since the Linux 2.6.x days.  Switch it
+> > > over to implement uncached semantics by default.
+> > > 
+> > > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> > > ---
+> > >  arch/openrisc/include/asm/io.h      | 20 +++-----------------
+> > >  arch/openrisc/include/asm/pgtable.h |  2 +-
+> > >  arch/openrisc/mm/ioremap.c          |  8 ++++----
+> > >  3 files changed, 8 insertions(+), 22 deletions(-)
+> > 
+> > Acked-by: Stafford Horne <shorne@gmail.com>
 > 
-> The devicetree binding lists the phy phy as optional. As such, the
-> driver should not bail out if it can't find a regulator. Instead it
-> should just skip the remaining regulator related code and continue
-> on normally.
-> 
-> Skip the remainder of phy_power_on() if a regulator supply isn't
-> available. This also gets rid of the bogus return code.
-> 
-> Fixes: 2e12f536635f ("net: stmmac: dwmac-rk: Use standard devicetree property for phy regulator")
-> Signed-off-by: Chen-Yu Tsai <wens@csie.org>
+> Can you send this one to Linus for 5.4?  That would help with the
+> possibility to remove ioremap_nocache after that.
 
-Applied and queued up for -stable.
+Sure, I will pick this up.
 
-> On a separate note, maybe we should add this file to the Rockchip
-> entry in MAINTAINERS?
-
-Yes, probably.
-
-Thanks.
+-Stafford
 
 _______________________________________________
 linux-arm-kernel mailing list
