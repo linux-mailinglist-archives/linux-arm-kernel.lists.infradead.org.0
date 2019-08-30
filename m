@@ -2,63 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40A99A319B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:52:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AF691A319E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:53:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bAvyxFMe4XS0e3lDdLkknC1Qj/Rv8+N/VFGVsFBEExQ=; b=vAWGqEOX9UUslv
-	FizFZLjIOJ1wdRU+Kaj9wwYsz73PsvcrD7Xcovls2YnjVVnab4+yUYlR4eFaw8wZuTqb8oJf4mtlJ
-	gdnmbw7AgpSxee/3z2bHvHh/bbEtIrYsVQ3ZMIufr1aApSs1DKXAkP5Gt1wwzhtcNAha73qsX8RMA
-	xR+/NAUJzZ8DR3aLmi62ADyjBwhT3qJTy6XKZlPvruNVuIlTZu5VUj787LxmXmEoNB/C6N1idX17N
-	0UK9YreVn4bJf9+JkM88UImPyZlsZVZP3lAs+UDc5dALeMtQ6a528v8iw6ltN6r6hTWW53G59sqau
-	mFyFPy17dHjh5lNB/vLQ==;
+	List-Owner; bh=M9Ch9o0/S7DtgDyq0w2raW1CncD2c9Xrm3Mm2E4OpGY=; b=E9NhIUKnJOmUpF
+	1taUu4jsc3zzRHWGdmQhHM2cFYF49Ku58JpEpzWGyXbnxUfMSKXd0SXv+tYlb69mSjVooDH1uJN1s
+	O5VpbbYnnmcWokXkwW/7vcbHyGy5+7WJD1gymJqFGkVDVwu/fdldQgz5KoF/r5KFbJ/REggSkDOun
+	SReLsnYrHK+8ZdPQbYXhkVIvfJ4lUlANYZXqHSgiTelEg9Nk3RHJ5+p3ifwSD4OeAg7Ddb5oRDnEG
+	5q++azFy9rZTccDydDamNaLqcDVfN17znMsRLtE3JP5IEh87uVKY1na/5zFQqCGfTqapDEfM+sBBk
+	XkIamKiCUFpNs4Attv/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3bi0-0001OJ-Eg; Fri, 30 Aug 2019 07:52:36 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i3biY-0001c6-Tp; Fri, 30 Aug 2019 07:53:10 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3bhq-0001O0-8Y
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:52:27 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D61CA2070B;
- Fri, 30 Aug 2019 07:52:23 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567151545;
- bh=XxIlB6heV8zthfQt9IfztarXS2aRQzwh39zufHV/Dag=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=dEJHifiMfkPyJnTbidakpqp2Z5zTv7GwrL7aZJ0NL8AUk+boccjaFt4Pw8XE1Nemf
- YoUNja3y/rmyo/UsRPuj/VP6vxD/YBlzhV/vlnendD3MfGbEW4VaMGXffvRmJ6oX7Z
- Yu05kP+JDBRmPhfLkGWwusNSCzFFK5cJGMe0+rAA=
-Date: Fri, 30 Aug 2019 08:52:20 +0100
-From: Will Deacon <will@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
- appears to support it
-Message-ID: <20190830075220.6xyyctvgd2ssrsjf@willie-the-truck>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-11-will@kernel.org>
- <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
- <20190830000803.GR14582@e119886-lin.cambridge.arm.com>
+ id 1i3biG-0001bD-IX
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:52:53 +0000
+Received: by mail-io1-xd44.google.com with SMTP id d25so9713003iob.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 00:52:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=seOfZY8E9V8LAq9iFiH8rIsovSOi3J9Kn5HK9Pe9dT0=;
+ b=pi0qaK8xrhzeSNZR1sW1g2NxUcg2TWC1pxlDvOLT4BraWo0mC2LKPARENHylbYQK00
+ CmHIL0JyMyL4qblKksLvduPxOebrXQ5/2IV/K4AxFD8sCPx0HknjGu9kGpuNcjSTaWn+
+ WwjtLXGhAmgqbLwu5TcPZhY6S4l2ivV2iSI+rFwrUPn4/gjG588atx/SJqxUwKfScSlT
+ r6s2N2Ym4rOOCfDW95S2/ooqezcP1HTAC7QW2ph52eeKlojjDSemmqYxyG91POrwxsFh
+ gO7P96Jazx26FzuSOZP7IUnsCDqsTS67AMc94Ur8MyEH4qw7SSQuabf7PbmpVpm+yaLW
+ bKcw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=seOfZY8E9V8LAq9iFiH8rIsovSOi3J9Kn5HK9Pe9dT0=;
+ b=kz25b1OAw3/0PV+M4aNTyMNrVgFXXMo2PtkhmcbGA8Of+lMolK6oefmdpzMwH8sUmy
+ jFuuWDwuyJq0gL0/939EtBIvvpwHIug0dLvutYA3xuhBjaheGEBz5rB2byp8f5Tc4FI8
+ 7kVoHTxADgjG5MwgL9Ws2GDKshttFeaxndFw/hzbBfRpEvmaXQ4bqyR5BVVV+KwaCUEV
+ QSH+sUX3t/cGfLnMUhY30BAjjzhfrEi6TaJZK3FubDF/aERMgDHwAEE0H4z2ZTGMHzmX
+ 90MhOOUvDGiBbI7JWDShS7vVz7p5IXxJp7LMqCHSzOo5sd3epm/GpLqCVHBIO4V+6rTT
+ b1tw==
+X-Gm-Message-State: APjAAAWjokThWkCD93b8AYMjqbbhhzW/LZO4K9UK74M5OgZedk7pcWEb
+ ZEsXe3FlUp+yaMiYEfS0XRdGOz8wltXbY1eB7CCLvQ==
+X-Google-Smtp-Source: APXvYqyK3/xKO/LsIQrSgVRrAhBUX11IoBGyPGLJu5Azl4D58IpKNhO0XKvks/BAOd9dtKtu2lAAlWNaXpr9Ijnz6UM=
+X-Received: by 2002:a5e:8c0a:: with SMTP id n10mr12862989ioj.69.1567151571826; 
+ Fri, 30 Aug 2019 00:52:51 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190830000803.GR14582@e119886-lin.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
+ <1567004515-3567-2-git-send-email-peng.fan@nxp.com>
+ <CABb+yY2tRjazjaogpM7irqgTD+PdwsfqCxk5hP-_czrET3V5xQ@mail.gmail.com>
+ <AM0PR04MB4481785CABB44A8C71CFB8D788BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+ <CABb+yY2TREpO7+TFcGgsgQrkmMWwFAgtuJ4GnLPPQ+GEBuh07w@mail.gmail.com>
+ <AM0PR04MB448161C632722DF10989008088BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+In-Reply-To: <AM0PR04MB448161C632722DF10989008088BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Fri, 30 Aug 2019 02:52:40 -0500
+Message-ID: <CABb+yY2SrMF8e1iLyLqb-rJyBx4ajA0hZ6D=LFtuMNtXYjgccA@mail.gmail.com>
+Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+ SMC/HVC mailbox
+To: Peng Fan <peng.fan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_005226_347909_43FDDCC4 
-X-CRM114-Status: GOOD (  21.03  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190830_005252_633663_1D6D480C 
+X-CRM114-Status: GOOD (  15.08  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jassisinghbrar[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -68,7 +87,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,78 +98,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com, natechancellor@gmail.com,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "andre.przywara@arm.com" <andre.przywara@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 01:08:03AM +0100, Andrew Murray wrote:
-> On Thu, Aug 29, 2019 at 05:54:58PM +0100, Will Deacon wrote:
-> > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
-> > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > index 95091f72228b..7fa042f5444e 100644
-> > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
-> > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > @@ -23,6 +23,10 @@ asm_ops "\n"								\
-> > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
-> > >  #endif
-> > >  
-> > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
-> > > +#define K
-> > > +#endif
-> > 
-> > Bah, I need to use something like __stringify when the constraint is used
-> > in order for this to get expanded properly. Updated diff below.
-> 
-> I don't think the changes in your updated diff are required. We successfully
-> combine 'asm_op' with the remainder of the assembly string without using
->  __stringify, and this is no different to how the original patch combined
-> 'constraint' with "r".
+On Fri, Aug 30, 2019 at 2:37 AM Peng Fan <peng.fan@nxp.com> wrote:
+>
+> Hi Jassi,
+>
+> > Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+> > SMC/HVC mailbox
+> >
+> > On Fri, Aug 30, 2019 at 1:28 AM Peng Fan <peng.fan@nxp.com> wrote:
+> >
+> > > > > +examples:
+> > > > > +  - |
+> > > > > +    sram@910000 {
+> > > > > +      compatible = "mmio-sram";
+> > > > > +      reg = <0x0 0x93f000 0x0 0x1000>;
+> > > > > +      #address-cells = <1>;
+> > > > > +      #size-cells = <1>;
+> > > > > +      ranges = <0 0x0 0x93f000 0x1000>;
+> > > > > +
+> > > > > +      cpu_scp_lpri: scp-shmem@0 {
+> > > > > +        compatible = "arm,scmi-shmem";
+> > > > > +        reg = <0x0 0x200>;
+> > > > > +      };
+> > > > > +
+> > > > > +      cpu_scp_hpri: scp-shmem@200 {
+> > > > > +        compatible = "arm,scmi-shmem";
+> > > > > +        reg = <0x200 0x200>;
+> > > > > +      };
+> > > > > +    };
+> > > > > +
+> > > > > +    firmware {
+> > > > > +      smc_mbox: mailbox {
+> > > > > +        #mbox-cells = <1>;
+> > > > > +        compatible = "arm,smc-mbox";
+> > > > > +        method = "smc";
+> > > > > +        arm,num-chans = <0x2>;
+> > > > > +        transports = "mem";
+> > > > > +        /* Optional */
+> > > > > +        arm,func-ids = <0xc20000fe>, <0xc20000ff>;
+> > > > >
+> > > > SMC/HVC is synchronously(block) running in "secure mode", i.e, there
+> > > > can only be one instance running platform wide. Right?
+> > >
+> > > I think there could be channel for TEE, and channel for Linux.
+> > > For virtualization case, there could be dedicated channel for each VM.
+> > >
+> > I am talking from Linux pov. Functions 0xfe and 0xff above, can't both be
+> > active at the same time, right?
+>
+> If I get your point correctly,
+> On UP, both could not be active. On SMP, tx/rx could be both active, anyway
+> this depends on secure firmware and Linux firmware design.
+>
+> Do you have any suggestions about arm,func-ids here?
+>
+I was thinking if this is just an instruction, why can't each channel
+be represented as a controller, i.e, have exactly one func-id per
+controller node. Define as many controllers as you need channels ?
 
-It's a hack: __stringify expands its arguments, so I figured I may as well
-use that rather than do it manually with an extra macro.
-
-> You can verify this by looking at the preprocessed .i files generated with
-> something like:
-> 
-> make ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- drivers/spi/spi-rockchip.i
-> 
-> I see no difference (with GCC 7.3.1) between the original approach and your
-> use of __stringify. Incidentally you end up with "K" "r" instead of "Kr" but
-> it seems to have the desired effect (e.g. supress/emit out of range errors).
-> I have a couple of macros that resolves this to "Kr" but I don't think it's
-> necessary.
-> 
-> Did you find that it didn't work without your changes? I found it hard to
-> reproduce the out-of-range errors until I made the following change, I could
-> then easily see the effect of changing the constraint:
-> 
->         : "=&r" (result), "=&r" (tmp), "+Q" (v->counter)                \
-> -       : #constraint "r" (i));                                         \
-> +       : #constraint) "r" (4294967295));                                               \
->  }
-
-Without the __stringify I get a compilation failure when building
-kernel/panic.o because it tries to cmpxchg a 32-bit variable with -1
-(PANIC_CPU_INVALID). Looking at panic.s, I see that constraint parameter
-isn't being expanded. For example if I do:
-
-  #ifndef CONFIG_CC_HAS_K_CONSTRAINT
-  #define INVALID_CONSTRAINT
-  #else
-  #define INVALID_CONSTRAINT	K
-  #endif
-
-and then pass INVALID_CONSTRAINT to the generator macros, we'll end up
-with INVALID_CONSTRAINT in the .s file and gas will barf.
-
-The reason I didn't see this initially is because my silly testcase had
-a typo and was using atomic_add instead of atomic_and.
-
-Will
+-j
 
 _______________________________________________
 linux-arm-kernel mailing list
