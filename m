@@ -2,80 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C231BA3C96
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:51:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B59C6A3C9C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:51:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sgLxC6ulLM7gxwJCRU0eFaJ+bpWmDf+mEjG6uQb4ohI=; b=ehU6W//rgbZ1JL
-	TAXfpOG/1cwJ7Ak6yMrJg7unmtZZVq2aJCyUu5MGT0vPOrUU7EG7exz2Au3vflQukuU/XgLh7cm7V
-	ryzGI1XOYnvUUJuevWGyeYkaQcCYuSuH0XbAg+6y29BJKSJZScMxphXVAsmI3huEcCnxR9yta0DHk
-	dKjFUEOiL2ipt+Iptz8Dlhmq9TiTrY6pdc2r3v54uCftQalBAyN8JZ4fq0j9DZN9EZSNZl5j8OrdR
-	xuXzpb9QdwiwEqjDK50f+MNo0tgo5B5Y3aGkaFE4xg3bTW9mVbx/Mq2cyq1y/yogWVHM2k7bRkWZA
-	vMGWyGoui1zVhCUyIYgQ==;
+	List-Owner; bh=G6xFCzfLdzj/3m3KXc7jlZlhmXv1GJNkfFSAhsBk8P4=; b=UZVACa31d7JFK1
+	4nNI0RUfH2uW1eEZ+IJAhgtqDQP95De+AcUIrKoYxl2AD0QwK+2DEaXIEVGO5Ak19i86gN2Om8bho
+	dQe5D6te0A+CmolrIilxvMkNnaXzOwAsRWP5pCZ7lIk/9HrLNsecrvBg2jrf69XAJacTQNvQngaka
+	7LXchDzgD13TqV/ek6ARt4azMCo+T7MCzeHdgxMe4N46fM0br4Lezbf0rDxQj+bc1CKXYJ9qjk3wr
+	8/dpq0IhFkvtkweUYDtRwKFBpogbJuo6qfcCDqMROOWQGYV1lb0mzRxftXdcawLyyAGH4W0cBNZXj
+	n95HhI7/4JeJsTbFFLgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3k6w-0001VA-CQ; Fri, 30 Aug 2019 16:50:54 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i3k7p-00022a-Ud; Fri, 30 Aug 2019 16:51:49 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3k6j-0001UN-Aj
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:50:45 +0000
-Received: by mail-pg1-x541.google.com with SMTP id w10so3820731pgj.7
+ id 1i3k7c-000215-DX
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:51:38 +0000
+Received: by mail-pg1-x543.google.com with SMTP id k3so3805444pgb.10
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 09:50:41 -0700 (PDT)
+ Fri, 30 Aug 2019 09:51:36 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=nqfT7eZ0CXpXVrfmG81oa7a8nZF6Zf13T/nqKKsF2O0=;
- b=MF9HamXAu6O6AeDyFP7lWY51cLBOJ4eQqFrA1lSaje1yy/pdsf6D/L0xVOHkdzasaj
- 1CHEn9YW4h9sYmMdYiq05gloGwL9se4oMZFFu8Jlg90fkE37QXDVDGGFyl7XyslEIn5a
- K8gIFU1v4pBVBzNxE9fMy8x1oUG3317bGu0Y9s1NaYlc8ObEd7KLXkiJC8O2M5CwYdoc
- z/rBJNGDc7fHWpgnQpsBJfP/7/lcBulXY/pnSnBodFbZwD5qFeXF7pG0xN+kXj7Jan4H
- WIwkjKcO5j+oC4qZcM8d0f9XhyuSHry8sJ9S0Jzoi0kRNfpy9eFWvBmr3IKLQXiN7E3u
- M1bQ==
+ bh=5UvLflpx3EFUk8awi6+Qwa1WTYo8pN5eMoyD4pclgbg=;
+ b=N8EPn+vzOA+GhoEEs5XiLil81WPdHoR6+pX9z/KFtoYZR4fJeaPy0QBXjVjhdMtEyo
+ T+RjsDLMHBtjdmy51QZpEbvs6Ipn0F0G77vytFQ3qC/poan6IW2Zylf3Qk/fAoBJ9aVV
+ 5v6qHxktKW2/4lcSvNgHYp+4/NcrsPttgQrr/X+7JjSKjk2qqpl4IKPhWxe2wJt0Dheu
+ gwi50GDZJHDuoNQQOgI1G7T31N3eqtoNBADvaLcFdaaGH1QJujok7wWVhNPXeiaBbI/D
+ yIVS0LwuQc60MvCtTSjedFncywoPSvFDDSQ1m6XY/CIBPI8fRoWQaGO+YwCbSmC3OCLq
+ 5O1A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=nqfT7eZ0CXpXVrfmG81oa7a8nZF6Zf13T/nqKKsF2O0=;
- b=E+6QBL0q4u6CIEP/hGflChH04MjTj4ay1nqZ1KcFMYc5aPMZ1YWEn30dxN+0o8C//Z
- 3Zo1YVIVpmtIpuXsilqiTODMgJ9RQIe4XLVA7xguP83SRMp3PtiAIxA4iAlJn6PKdByB
- 4tzhPdOMQwthri8DpLgbXYZx3NaO86JfHOq3yyKPOsgKt2PtcXK/rpkuIz1zbWcpGoO6
- DjY6Dm9UphjzKcbp4KhIl1+gdHxiXcoLe1cdFzEJ1cLUiwC/5lAdODaH8TRz6KsJAfvT
- 8KutbzbQeKqn9WdpL7OuqPR4sVtpDaGHkb7RiGr5lZY+1f1jperAe7fxLhVt3+PPP/Ap
- /Dww==
-X-Gm-Message-State: APjAAAXIIuoibMobZESvqza0Og4JSpj5srfc6frhqpqQPVuDGIrb+IN4
- zU+VP0f9UD21zhFE8Ct+f1A=
-X-Google-Smtp-Source: APXvYqwNDY3snOtA/jlKXRD/VBDeAWTcnjqNQA/GCd/SbuM3PPO9MCKET8gJON/LCe4Awj6GhOMQkg==
-X-Received: by 2002:a63:d23:: with SMTP id c35mr13719466pgl.376.1567183840533; 
- Fri, 30 Aug 2019 09:50:40 -0700 (PDT)
+ bh=5UvLflpx3EFUk8awi6+Qwa1WTYo8pN5eMoyD4pclgbg=;
+ b=uXwBjkK93GElhcqD9UVAxzYnOvkoz3mIzNpvo16u1nF44NWEeAqsBbbvUeA0CIoTdn
+ iAyY35gtNikIfxSHVpQQQipZfud901Vwu0ZuFztSfGfA6h9s23C6uI+cPcJt2kh/iVSu
+ qt/cgh6FxT1i77xXroPkUK6Ehg7Fb9SrNsh1R44RBjZRrD0kRBabU4qilc/cy1mrCoQT
+ pNj0WAV0GBZ63G/09Su71LprbMadL2nvF0K/KklbMcVNSf6EQz795d6iBqx2JnQT479G
+ oHc/s3KSyg74goO/Uwxjw5/sZ4kOqbMjBbqXFUES2u6cdHDB79G7FINtjZbOfFJyyYZq
+ JHUg==
+X-Gm-Message-State: APjAAAX8qdCYpzf4DBTRXnuS+J9ig2/Sa7QBvw9uYyWMy12uFj1RccJz
+ UgejcS5Zho8wuxecHW/FNXk=
+X-Google-Smtp-Source: APXvYqzebjfyVF+OCeCIs9yCVw/y2P3l9c1XT+KftFbAz5C4IjOMQK1TgqXTqZNOTQpKxRFuNgXKiA==
+X-Received: by 2002:aa7:96ee:: with SMTP id i14mr19347137pfq.217.1567183895693; 
+ Fri, 30 Aug 2019 09:51:35 -0700 (PDT)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id w20sm9788175pfn.72.2019.08.30.09.50.39
+ by smtp.gmail.com with ESMTPSA id g14sm6946317pfo.41.2019.08.30.09.51.35
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 30 Aug 2019 09:50:40 -0700 (PDT)
-Date: Fri, 30 Aug 2019 09:50:39 -0700
+ Fri, 30 Aug 2019 09:51:35 -0700 (PDT)
+Date: Fri, 30 Aug 2019 09:51:34 -0700
 From: Guenter Roeck <linux@roeck-us.net>
 To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V4 1/4] dt-bindings: watchdog: Add i.MX7ULP bindings
-Message-ID: <20190830165039.GF7911@roeck-us.net>
-References: <1566441463-11911-1-git-send-email-Anson.Huang@nxp.com>
+Subject: Re: [PATCH V5 1/4] dt-bindings: watchdog: Add i.MX7ULP bindings
+Message-ID: <20190830165134.GG7911@roeck-us.net>
+References: <1566999303-18795-1-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1566441463-11911-1-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <1566999303-18795-1-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_095044_648130_547BAC56 
-X-CRM114-Status: GOOD (  15.47  )
+X-CRM114-CacheID: sfid-20190830_095136_454878_7BBDCF2E 
+X-CRM114-Status: GOOD (  15.49  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
  in digit (groeck7[at]gmail.com)
@@ -115,17 +115,19 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 10:37:40PM -0400, Anson Huang wrote:
+On Wed, Aug 28, 2019 at 09:35:00AM -0400, Anson Huang wrote:
 > Add the watchdog bindings for Freescale i.MX7ULP.
 > 
 > Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> Reviewed-by: Rob Herring <rohb@kernel.org>
 
-With the change requested by Rob:
+Missed this version. For the record:
 
 Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
 > ---
-> No changes.
+> Changes since V4:
+> 	- improve watchdog node name.
 > ---
 >  .../bindings/watchdog/fsl-imx7ulp-wdt.txt          | 22 ++++++++++++++++++++++
 >  1 file changed, 22 insertions(+)
@@ -133,7 +135,7 @@ Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 > 
 > diff --git a/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
 > new file mode 100644
-> index 0000000..d83fc5c
+> index 0000000..f902508
 > --- /dev/null
 > +++ b/Documentation/devicetree/bindings/watchdog/fsl-imx7ulp-wdt.txt
 > @@ -0,0 +1,22 @@
@@ -150,7 +152,7 @@ Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 > +
 > +Examples:
 > +
-> +wdog1: wdog@403d0000 {
+> +wdog1: watchdog@403d0000 {
 > +	compatible = "fsl,imx7ulp-wdt";
 > +	reg = <0x403d0000 0x10000>;
 > +	interrupts = <GIC_SPI 55 IRQ_TYPE_LEVEL_HIGH>;
