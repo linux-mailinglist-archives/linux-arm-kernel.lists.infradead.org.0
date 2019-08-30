@@ -2,46 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34998A352E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:46:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0764A352F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 12:46:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=st5TSaXXJBVBTeUbDG6i/ubM5V1XVbdIYG7INyy3E0Q=; b=kluvLLrQqQkivY
-	vQjXg5GXqF6FkUqYwpIJwq6FNWdreFDO1vZIb7Er/mWudgrd7YPpMxafF62FGsuC0ee/1ysxwFTmF
-	E5gtZOtxZhG3lINy99ur1UWnkq+fWuYveMQzw6RrzmhOeeSEvWoEtXVBfUKzE+h86nJOiJm+8DmzC
-	DLyNod6+JhmS0nflPvsGaWo9JsQysD3ATrbqkZ3qfe0gNYjDwsEAQywkIYE7wtnF5cSCg/Wh0Amlj
-	EadRGgypaNMlBDxfBnCH2D7AogFUL3wRzTcKdCDpFGaFgOk5FiNLkxqPrLuqZCjc5ES3Z+PeUHB6B
-	NZLvTk74XcLJHeaL5uIA==;
+	List-Owner; bh=LK2OAEO1/j4hoo6TNySN1DEKiFBmsRTBHLWRsi8yJLk=; b=KeFHzdHiDgLEG2
+	k9a6s3ALs2gREEnDwTFOZQ3IMDTMrRs87hTh0h9c9vYmILQUc3qN8JBmLk5LvpbbgcSVRX0ucej2w
+	IpBmgFf4GsLj+9hUtcTx+BnKcP6CT1MwRKfowS+U87Uo0I7RF01EmsnKlCaW7CtHG5I1CKo+ePhdr
+	ivxU5QiYmEa3jsiq/QTEYbGw5WTC4LbiTyxk9JBbl8J3/6P4LXbW8C5TjXTTHt245MR6xhELGUk6s
+	6XOQ2RhFFBnbASgDhCR8QdWUsr15DcLQqY23mgwz4XSlMMLXAF39EOeFQrJcmIt0ZHCUYGPIAn1FG
+	IdNwkdpAwdD70BwB1smQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3eQ6-0003Se-Fv; Fri, 30 Aug 2019 10:46:18 +0000
+	id 1i3eQE-0003gm-9E; Fri, 30 Aug 2019 10:46:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3ePK-0002fN-HY
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 10:45:31 +0000
+ id 1i3ePL-0002fz-Vd
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 10:45:33 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CCC931597;
- Fri, 30 Aug 2019 03:45:29 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 24C5D337;
+ Fri, 30 Aug 2019 03:45:31 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id BD0DA3F718;
- Fri, 30 Aug 2019 03:45:28 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 14BFD3F718;
+ Fri, 30 Aug 2019 03:45:29 -0700 (PDT)
 From: Guillaume Gardet <guillaume.gardet@arm.com>
 To: linux-samsung-soc@vger.kernel.org
-Subject: [PATCH V3 4/5] arm: dts: exynos: arndale: Enable GPU/Mali T604 node
-Date: Fri, 30 Aug 2019 12:45:01 +0200
-Message-Id: <20190830104502.7128-5-guillaume.gardet@arm.com>
+Subject: [PATCH V3 5/5] arm: dts: exynos: arndale: Fix min/max for buck4
+ regulator for gpu
+Date: Fri, 30 Aug 2019 12:45:02 +0200
+Message-Id: <20190830104502.7128-6-guillaume.gardet@arm.com>
 X-Mailer: git-send-email 2.22.1
 In-Reply-To: <20190830104502.7128-1-guillaume.gardet@arm.com>
 References: <20190725083433.6505-1-guillaume.gardet@arm.com>
  <20190830104502.7128-1-guillaume.gardet@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_034530_621279_46A9684E 
-X-CRM114-Status: UNSURE (   9.55  )
+X-CRM114-CacheID: sfid-20190830_034532_059591_B7E3259E 
+X-CRM114-Status: UNSURE (   9.88  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -69,7 +70,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Tested with kmscube and some glmark2* tests on arndale board.
+Required to have gpu opp working properly.
 
 Signed-off-by: Guillaume Gardet <guillaume.gardet@arm.com>
 
@@ -81,25 +82,24 @@ Cc: linux-arm-kernel@lists.infradead.org
 V3 changes:
   * new file
 
- arch/arm/boot/dts/exynos5250-arndale.dts | 5 +++++
- 1 file changed, 5 insertions(+)
+ arch/arm/boot/dts/exynos5250-arndale.dts | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/arch/arm/boot/dts/exynos5250-arndale.dts b/arch/arm/boot/dts/exynos5250-arndale.dts
-index dc6fa6fe83f1..cf5a758f1927 100644
+index cf5a758f1927..6fcb78a354fe 100644
 --- a/arch/arm/boot/dts/exynos5250-arndale.dts
 +++ b/arch/arm/boot/dts/exynos5250-arndale.dts
-@@ -543,6 +543,11 @@
- 	status = "okay";
- };
+@@ -461,8 +461,8 @@
  
-+&mali {
-+	mali-supply = <&buck4_reg>;
-+	status = "okay";
-+};
-+
- &mixer {
- 	status = "okay";
- };
+ 			buck4_reg: BUCK4 {
+ 				regulator-name = "vdd_g3d";
+-				regulator-min-microvolt = <1000000>;
+-				regulator-max-microvolt = <1000000>;
++				regulator-min-microvolt = <850000>;
++				regulator-max-microvolt = <1300000>;
+ 				regulator-always-on;
+ 				regulator-boot-on;
+ 				op_mode = <1>;
 -- 
 2.22.1
 
