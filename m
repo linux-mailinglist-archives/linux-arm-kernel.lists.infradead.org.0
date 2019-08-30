@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 709F4A2BDE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 02:51:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48C4AA2BDF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 02:52:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,66 +11,66 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kK4aIYkRhjGx0lRlrvmWulYiytZaFZqLePU9rMr7TvM=; b=ZZwhjLQKMj8PBXnrItb+8cyQbr
-	jML17lFSVbqM/4qKY3EAvSkiUbeNpi+GqRh+TlWqP/QOtyVbfBAWI92h5g7tjMYjdTAz7JXFf1qY0
-	jqaKPynFRBMwcbfHJbps9dORhZ4ZNfYo9o1pmDRrH5jLzaOm6c7J/grQQfTWQHo2lSW5Uc91bhySn
-	FCivd8I5x+5l7qE+qtDD9ahiQbEWLt6DanZ3nJX6K/LjgZA3qjrxvA08tnE5T+nCRMLBAiuexNgCC
-	GlfaHFG/gWKxfknAhhVOh4H2iduDjiPlMwbW+4ubvXHH7gNEjkgeIAs8PApxVHlO/EShPFbWn2dx5
-	laYMX6ew==;
+	bh=lkQH8zL+N7toJK7awPE2+ZD6Z2mYs7g0LbefKsACui4=; b=TCDJBDPy15h4Jmwmf85HZsVG99
+	z2D0/o5zqHYXmCgN7TTx1shuslI19mCiwMpEqUxrzmQjPSCh9Wq/adfRRe024EMP6Q4Ut3LqkTHTl
+	iC4Xm8r0CVBWAflaG01dTZ01SL6yokZ1y083ujEhV1/J1/ww6j+aa/2DWjP0bPuqYPmTidH4czPU4
+	zkB/A5FPQVpcQEcpm0uTgiXUDKSTL4NQoMm78fedMRkhbuSpyHF1SK9J/4l/BgI3OALLrfs9plrTC
+	aYm94u29kvulcGXtY/cXxIzSpzpNmd0mkRPVKDoWANcVvh0gwvVfMWCcSpb+9Uvhgk86ITzIuRGz6
+	E1jPsmAA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3V8r-00027D-PM; Fri, 30 Aug 2019 00:51:53 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
+	id 1i3V9C-0002Lh-Pg; Fri, 30 Aug 2019 00:52:14 +0000
+Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3V7n-0001Mu-0g
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 00:50:48 +0000
-Received: by mail-lj1-x244.google.com with SMTP id h15so4785629ljg.10
+ id 1i3V7o-0001O6-Q7
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 00:50:50 +0000
+Received: by mail-lf1-x142.google.com with SMTP id g9so4001600lfb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 29 Aug 2019 17:50:46 -0700 (PDT)
+ Thu, 29 Aug 2019 17:50:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=baF6/BEW5KEVo2LOFkZZTRTkQs3Veu82MyQ6XaftpOU=;
- b=biPM7KPdLtnr+xQRNp5xESVEeouLUJKehD24Gd9ioxx2OUh6OIbrndSWFIo+qFylSI
- kWdpwF+J69U+3pO4IuT7c63y1CwY11q0cXDK5OXsQnG4N+5QSF0rdTNyreizSd4oQ8ux
- Am84VUumVDcjZ1RoEaa413ZVsTrv4I2GuzRZa59p3t9MedXqHlG7BxfFeXGP1smCN1Rm
- pj+FEwpD4ZadSIML4/3wTI9ldsdEy1/4SBL2pH8rHBRmKHSJVdGhBCPlnrs46hM1tr7p
- VF5+0TZbcNTyjM8g81MSG9ZbEwNHniA392B0IqMVwrg9G2ma9dMcEqh7oNjuVlu+1z81
- Z/3A==
+ bh=Q+vZM4cZektdF572TqWkVl3QkOoJAXjpmJXjWwwbKzE=;
+ b=LEYfqXzZUPeIuy93SH8GAssQsvlBou/hIWteBhvmXq1F9JVWj2wTkzeZdfRJclvOXa
+ Ml9kVrTIeDyM2A/3eaEvzVK9/pGt5qEqzLTWvJqdBmLcHkvvh07Ut09wAvSKXrIMNobx
+ r2RNchETr9Z4KWTcRDbMNJ6rLBGv3sDWxx1Z8Z5O54FYC/zPoXMdoQJR1eWto+H3GBER
+ DlMphrpkhbPZGMzNxrWnt0/mC94HVFKOY0k+/6wVxcaRK9ftaqDrp/Dypqjz3DpeV74s
+ 5LHndEkamECTgyLl93XSkTDSnp9E79AvMzRJuicO+St87f2BsjM+kyYugZH0KcXkbFhW
+ G9ig==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=baF6/BEW5KEVo2LOFkZZTRTkQs3Veu82MyQ6XaftpOU=;
- b=TVHPT4BIuzQ+E/tW4+8xPSr/K6Eh1vbtlTOzGbUVkLZcyWnUheX+NeZ1HvUPdoT6TW
- n6Hq6Dxq/2vLYZPkS2xNhwMVYAiK7chwKw2i+djP8uI3ctiTSlKCW3ll41B184asnXs6
- d0no5aMo9WDiTZqm2NmGnZL/6Ob8ONOqRrhwJVExnr8ffWY6UU/TAZ7Yq4Suj3tlefkg
- VvkJczy+SIdf6HSA6IjT3M6Y73E1hfET/xkHxavBEnP9hz7jV/yAjWH3yK9pxyO3yRL5
- eqCLJ1TvRLCfbczrOInbPwe5t+GycMbUXZDXgunoxZ9Xi+AAFf+PbdFTAZpTYDabEQEb
- Jb4g==
-X-Gm-Message-State: APjAAAWVIrI02h0E6wGsDVfd1sVIQwCX9Vfj4NrV7+6B0H61jmQPbYBY
- DNCNRxkgUqEz9tWFu4wb3tbv2w==
-X-Google-Smtp-Source: APXvYqwlf7D/N+8AETmyrADFpsR/4uDHEHGgehGXXJJxn9PraZ2fAYxITTtvWqzPcr0SP5k+C+brcg==
-X-Received: by 2002:a2e:900c:: with SMTP id h12mr6901426ljg.151.1567126245707; 
- Thu, 29 Aug 2019 17:50:45 -0700 (PDT)
+ bh=Q+vZM4cZektdF572TqWkVl3QkOoJAXjpmJXjWwwbKzE=;
+ b=OIdPm/oFqbRXvmIOKSob0OKwBGGyI+DnNngN/7nWtz145nnNJ+jV1LQyfMApldVTAz
+ PBTEznkGmOflqn8vv7V5RaUOkZ/VY83tseCHwc3u7f77PobbPhKf2ycTdFTsIxu20waM
+ 3KVxWfxCal2poo3OmdICv/mKeHN4hPbALy3ZpkMbkGOdBAIS3EkT3HHMLg83Al7Ag20y
+ MAJGb1XqSdLNT+HWpKbh5F99E538gjhcicULFDn+nh1RnLf7P9Ku0MYO2YFBXGfAYYv0
+ USIU5Q4gFAVaMg942c5oIkNUVRspdU4TxGrXRAYm2iiTWJFDV3DFt8tQ06gdomNZkflt
+ Aazg==
+X-Gm-Message-State: APjAAAUAlqaew8Obeeiv67wzg0Zm4kVkr3PK7J8P74+vxFZCf9KkKLzO
+ 2PpMsHIlttD7++xBRdiRu6KOMg==
+X-Google-Smtp-Source: APXvYqyihXTROPMaQ2wywc9lmAKFZbgnRCz1760bakTi1cPbibvD2WXzoa2W4G39kM/s/BUv/T280g==
+X-Received: by 2002:a19:ae0b:: with SMTP id f11mr2637945lfc.28.1567126246924; 
+ Thu, 29 Aug 2019 17:50:46 -0700 (PDT)
 Received: from localhost.localdomain (168-200-94-178.pool.ukrtel.net.
  [178.94.200.168])
- by smtp.gmail.com with ESMTPSA id f19sm628149lfk.43.2019.08.29.17.50.44
+ by smtp.gmail.com with ESMTPSA id f19sm628149lfk.43.2019.08.29.17.50.45
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 29 Aug 2019 17:50:45 -0700 (PDT)
+ Thu, 29 Aug 2019 17:50:46 -0700 (PDT)
 From: Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>
 To: linux@armlinux.org.uk, ast@kernel.org, daniel@iogearbox.net, yhs@fb.com,
  davem@davemloft.net, jakub.kicinski@netronome.com, hawk@kernel.org,
  john.fastabend@gmail.com
-Subject: [PATCH RFC bpf-next 03/10] libbpf: Makefile: add C/CXX/LDFLAGS to
- libbpf.so and test_libpf targets
-Date: Fri, 30 Aug 2019 03:50:30 +0300
-Message-Id: <20190830005037.24004-4-ivan.khoronzhuk@linaro.org>
+Subject: [PATCH RFC bpf-next 04/10] samples: bpf: use own EXTRA_CFLAGS for
+ clang commands
+Date: Fri, 30 Aug 2019 03:50:31 +0300
+Message-Id: <20190830005037.24004-5-ivan.khoronzhuk@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190830005037.24004-1-ivan.khoronzhuk@linaro.org>
 References: <20190830005037.24004-1-ivan.khoronzhuk@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_175047_059215_FE5FDAE3 
-X-CRM114-Status: UNSURE (   9.66  )
+X-CRM114-CacheID: sfid-20190829_175048_957151_5713C17F 
+X-CRM114-Status: UNSURE (   9.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -78,7 +78,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:142 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -109,52 +109,42 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-In case of LDFLAGS and EXTRA_CC flags there is no way to pass them
-correctly to build command, for instance when --sysroot is used or
-external libraries are used, like -lelf. In follow patches this is
-used for samples/bpf cross-compiling.
+It can overlap with CFLAGS used for libraries built with gcc if
+not now then in following patches. Correct it here for simplicity.
 
 Signed-off-by: Ivan Khoronzhuk <ivan.khoronzhuk@linaro.org>
 ---
- tools/lib/bpf/Makefile | 11 ++++++++---
- 1 file changed, 8 insertions(+), 3 deletions(-)
+ samples/bpf/Makefile | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
 
-diff --git a/tools/lib/bpf/Makefile b/tools/lib/bpf/Makefile
-index 844f6cd79c03..d606d249e334 100644
---- a/tools/lib/bpf/Makefile
-+++ b/tools/lib/bpf/Makefile
-@@ -99,6 +99,10 @@ else
-   CFLAGS := -g -Wall
+diff --git a/samples/bpf/Makefile b/samples/bpf/Makefile
+index a2953357927e..cdd742c05200 100644
+--- a/samples/bpf/Makefile
++++ b/samples/bpf/Makefile
+@@ -219,10 +219,10 @@ BTF_LLVM_PROBE := $(shell echo "int main() { return 0; }" | \
+ 			  /bin/rm -f ./llvm_btf_verify.o)
+ 
+ ifneq ($(BTF_LLVM_PROBE),)
+-	EXTRA_CFLAGS += -g
++	CLANG_EXTRA_CFLAGS += -g
+ else
+ ifneq ($(and $(BTF_LLC_PROBE),$(BTF_PAHOLE_PROBE),$(BTF_OBJCOPY_PROBE)),)
+-	EXTRA_CFLAGS += -g
++	CLANG_EXTRA_CFLAGS += -g
+ 	LLC_FLAGS += -mattr=dwarfris
+ 	DWARF2BTF = y
  endif
- 
-+ifdef EXTRA_CXXFLAGS
-+  CXXFLAGS := $(EXTRA_CXXFLAGS)
-+endif
-+
- ifeq ($(feature-libelf-mmap), 1)
-   override CFLAGS += -DHAVE_LIBELF_MMAP_SUPPORT
- endif
-@@ -179,8 +183,9 @@ $(BPF_IN): force elfdep bpfdep
- $(OUTPUT)libbpf.so: $(OUTPUT)libbpf.so.$(LIBBPF_VERSION)
- 
- $(OUTPUT)libbpf.so.$(LIBBPF_VERSION): $(BPF_IN)
--	$(QUIET_LINK)$(CC) --shared -Wl,-soname,libbpf.so.$(VERSION) \
--				    -Wl,--version-script=$(VERSION_SCRIPT) $^ -lelf -o $@
-+	$(QUIET_LINK)$(CC) $(LDFLAGS) \
-+		--shared -Wl,-soname,libbpf.so.$(VERSION) \
-+		-Wl,--version-script=$(VERSION_SCRIPT) $^ -lelf -o $@
- 	@ln -sf $(@F) $(OUTPUT)libbpf.so
- 	@ln -sf $(@F) $(OUTPUT)libbpf.so.$(VERSION)
- 
-@@ -188,7 +193,7 @@ $(OUTPUT)libbpf.a: $(BPF_IN)
- 	$(QUIET_LINK)$(RM) $@; $(AR) rcs $@ $^
- 
- $(OUTPUT)test_libbpf: test_libbpf.cpp $(OUTPUT)libbpf.a
--	$(QUIET_LINK)$(CXX) $(INCLUDES) $^ -lelf -o $@
-+	$(QUIET_LINK)$(CXX) $(CXXFLAGS) $(LDFLAGS) $(INCLUDES) $^ -lelf -o $@
- 
- $(OUTPUT)libbpf.pc:
- 	$(QUIET_GEN)sed -e "s|@PREFIX@|$(prefix)|" \
+@@ -281,8 +281,8 @@ $(obj)/hbm_edt_kern.o: $(src)/hbm.h $(src)/hbm_kern.h
+ # useless for BPF samples.
+ $(obj)/%.o: $(src)/%.c
+ 	@echo "  CLANG-bpf " $@
+-	$(Q)$(CLANG) $(NOSTDINC_FLAGS) $(LINUXINCLUDE) $(EXTRA_CFLAGS) -I$(obj) \
+-		-I$(srctree)/tools/testing/selftests/bpf/ \
++	$(Q)$(CLANG) $(NOSTDINC_FLAGS) $(LINUXINCLUDE) $(CLANG_EXTRA_CFLAGS) \
++		-I$(obj) -I$(srctree)/tools/testing/selftests/bpf/ \
+ 		-D__KERNEL__ -D__BPF_TRACING__ -Wno-unused-value -Wno-pointer-sign \
+ 		-D__TARGET_ARCH_$(SRCARCH) -Wno-compare-distinct-pointer-types \
+ 		-Wno-gnu-variable-sized-type-not-at-end \
 -- 
 2.17.1
 
