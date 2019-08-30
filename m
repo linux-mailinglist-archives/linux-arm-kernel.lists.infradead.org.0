@@ -2,95 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F07F3A3C19
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:34:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 08195A3C44
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:41:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DQubalrK03EaqjJPFG0Qx95fbcyubGDyMtCDnADZswY=; b=oMkhnu2CkT/ouF
-	i1tvC4CtiTn73w7ZPuCcWN4O2DB9qXZOAJe8lNBfJ+AVqpuaOnqwJRGSkyFNfOYJDECRUZJJvqm9x
-	ZprQ4ttsHPxGjzoCyhdfkYmAg2/K7Vx0+dizsFl7fip5H59YDwwj+bwZZE/OiQBiIBP0XeY54paol
-	q6V9tmpah5/3klIvoQQYSQ2JvIPNFKZMYHH582CSxISHUvOzHzuANPvQgxFi8/5capOuQYzzsv5LB
-	WRo9J7SpaT3wxA+m2vwL1Dpeod/wRuZ7WXTHkpTrYqofJu6ckbG3YfOvfZBxfQp/kNM/z5vST0BJm
-	rJcRJO5eNCcPImIX5ARQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kgVnzOkNFn8WkIwHnaY0/FvtZhpRX0nUUSGEHseCG5A=; b=jPahG8bjPlB2mZ
+	siPVj305y9XoS0VoVogUlAAF9KnOjEQBjrsx0GFIrt4MA7fyD5i+FZlqwHmmZ3sqFmPC+91Y7dYdB
+	mUmCdEsz/g99oV+68CnjytyRtNksaCCdnHNTjoImwld+eMFFgaymNK6zDejSJt2daK1jt09LTghbN
+	SSM+xhOnUX+640qiGkwMyojLGIThTEzDGOd9cfwYHZctnH0+XprdONwz1ZIYdrYkmQw0ruGdysVCQ
+	IkkSH26u+HwyU6MFs+0qvhdpnDrjXF+24vj0MHHP7QTbn9fKctz/nGLRradUgFpWQEgDWkrXW8eL8
+	lbJzTkFO2vpR/Ax739SQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3jr9-000817-MF; Fri, 30 Aug 2019 16:34:35 +0000
-Received: from mail-lj1-x241.google.com ([2a00:1450:4864:20::241])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3jqx-00080U-Sa
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:34:25 +0000
-Received: by mail-lj1-x241.google.com with SMTP id l14so7044016ljj.9
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 09:34:23 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IjdkwsKSf2VRq5W1pF0YFvlLHvkAKLdWUUMauCVdd1k=;
- b=cZ97VWp463OQmkWYxTJ3976yRGFL44HW3ecfvAYbV7yurzSFFe5/p6MB3LHoNqdarN
- R/fxSaFNSs360fZmHMPWTChJym4lYPeKwQcycWe+7oBNP0/w5DXo7BCLGzCvzSMeRcI0
- PMrJnck7KEGRpprtR2Wfi/laL2lQscD73tsCo=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=IjdkwsKSf2VRq5W1pF0YFvlLHvkAKLdWUUMauCVdd1k=;
- b=Kbh8HQFFL0polDj34x6oX9SPFXdzILUan3jF5ZKaHvwrNTuu4XI4kJwFxgnvKHAHKY
- ElmBiQOaob0TXCbRy9mRSZnQoNRLonRUZozlgTneGLnrgtHxNyhU9vTyCSUN/HGAtVxr
- zW57lt9wX9XLiyLd8DWcVaIAsCFZOwvt/zCAsgjcanbXFo/6D7Vw+vQlrf68/7+vuCnd
- sTMvVjPNWYgeVUEfyBmVObslUYSvDs641uZk0B1ZRBb5shdIx3bsP5yQTnOMCDfL20Go
- yRmxgCsxu+f6bsiVayMJo4Fq54u+6mIoMs1EKbhnOAkYDAmLGvVR7PK1QlhstN6SIRPy
- vy7w==
-X-Gm-Message-State: APjAAAVKhRnamZJ6lp6HpeCVufKUNsbj328p0KCBBDkoqTfaVlndH74m
- 8PPvGIPpaFCwlIYhrxcRhgMtlDDsoCQ=
-X-Google-Smtp-Source: APXvYqy4E8uIb+2z+kMTcYezrDv4kRE55MGQKhN+difzV8zApbeKqvbka1rR9AOYVptscVrnEbNdEw==
-X-Received: by 2002:a05:651c:1023:: with SMTP id
- w3mr8638776ljm.94.1567182861272; 
- Fri, 30 Aug 2019 09:34:21 -0700 (PDT)
-Received: from mail-lf1-f52.google.com (mail-lf1-f52.google.com.
- [209.85.167.52])
- by smtp.gmail.com with ESMTPSA id r16sm922824lji.33.2019.08.30.09.34.20
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Fri, 30 Aug 2019 09:34:20 -0700 (PDT)
-Received: by mail-lf1-f52.google.com with SMTP id q27so5788644lfo.10
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 09:34:20 -0700 (PDT)
-X-Received: by 2002:ac2:4c12:: with SMTP id t18mr10064627lfq.134.1567182859940; 
- Fri, 30 Aug 2019 09:34:19 -0700 (PDT)
+	id 1i3jxJ-0002df-EF; Fri, 30 Aug 2019 16:40:57 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3jx9-0002dH-BY
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:40:49 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A347F344;
+ Fri, 30 Aug 2019 09:40:46 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EC5C73F718;
+ Fri, 30 Aug 2019 09:40:45 -0700 (PDT)
+Subject: Re: [PATCH v3 00/11] Add arm64/signal initial kselftest support
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190813162254.GX10425@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <b4c9cb22-6e08-8096-addb-4ac267fc0a84@arm.com>
+Date: Fri, 30 Aug 2019 17:40:42 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <CAK8P3a2OZPybUQ=2xXcF4Qft-Gpe3a1mvgPncJZugETnaOxsvw@mail.gmail.com>
-In-Reply-To: <CAK8P3a2OZPybUQ=2xXcF4Qft-Gpe3a1mvgPncJZugETnaOxsvw@mail.gmail.com>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Fri, 30 Aug 2019 09:34:04 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wgq71zNZtcb7vAsgb0EEozJsBDrLC0L+91tmMCBG=8FiQ@mail.gmail.com>
-Message-ID: <CAHk-=wgq71zNZtcb7vAsgb0EEozJsBDrLC0L+91tmMCBG=8FiQ@mail.gmail.com>
-Subject: Re: [GIT PULL] ARM: SoC fixes for Linux-5.3
-To: Arnd Bergmann <arnd@arndb.de>
+In-Reply-To: <20190813162254.GX10425@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_093423_940175_88E85B4F 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190830_094047_443631_DA6E34EB 
+X-CRM114-Status: GOOD (  23.00  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:241 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,27 +62,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Tony Lindgren <tony@atomide.com>, SoC Team <soc@kernel.org>,
- John Garry <john.garry@huawei.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 9:26 AM Arnd Bergmann <arnd@arndb.de> wrote:
->
->   git://git.kernel.org/pub/scm/linux/kernel/git/arm/arm-soc.git armsoc-fixes
->
-> for you to fetch changes up to 7a6c9dbb36a415c5901313fc89871fd19f533656:
+Hi
 
-Nope. That's a stale tag for me, pointing to commit 7bd9d465140a. Your
-old pull request from end of July, it looks like.
+On 13/08/2019 17:22, Dave Martin wrote:
+> On Fri, Aug 02, 2019 at 06:02:49PM +0100, Cristian Marussi wrote:
+>> Hi
+>>
+>> this patchset aims to add the initial arch-specific arm64 support to
+>> kselftest starting with signals-related test-cases.
+>> A common internal test-case layout is proposed which then it is anyway
+>> wired-up to the toplevel kselftest Makefile, so that it should be possible
+>> at the end to run it on an arm64 target in the usual way with KSFT.
+> 
+> The tests look like a reasonable base overall and something that we can
+> extend later as needed.
+> 
+> There are various minor things that need attention -- see my comments on
+> the individual patches.  Apart for some things that can be factored out,
+> I don't think any of it involves redesign.
+> 
+> 
+> A few general comments:
+> 
+>  * Please wrap all commit messages to <= 75 chars, and follow the other
+>    guidelines about commit messages in
+>    Documentation/process/submitting-patches.rst).
+> 
+>  * Remember to run scripts/checkpatch.pl on your patches.  Currently
+>    various issues are reported: they should mostly be trivial to fix.
+>    checkpatch does report some false positives, but most of the warnings
+>    I see look relevant.
+> 
 
-Forgot to push out? Or forgot to use "-f" to overwrite the old tag?
+Thanks for the review. I addressed latest issues in V4, published now.
 
-                    Linus
+I kept tests verbose (outputting to stderr) as of now.
+Removed as a whole standalone build/run.
+
+Thanks
+
+Cristian
+
+>  * If you like, you can add an Author: line alongside the copyright
+>    notice in new files that you create.  (You'll see this elsewhere in
+>    the kernel if you grep.)
+> 
+> One general stylistic issue (IMHO):
+> 
+>  * Try to avoid inventing names for things that have no established
+>    name (for example "magic0" to mean "magic number 0").
+> 
+>    The risk is that the reader wastes time grepping for the definition,
+>    when really the text should be read at face value.  It's best to use
+>    all caps just for #define names, abbreviations, and other things
+>    that are customarily capitalised (like "CPU" etc.).  Other words
+>    containing underscores may resemble variable / function names, and
+>    may cause confusion of there is no actual variable or function with
+>    that name.
+> 
+>    I don't think it's worth heavily reworking the patches for this, but
+>    it's something to bear in mind.
+> 
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
