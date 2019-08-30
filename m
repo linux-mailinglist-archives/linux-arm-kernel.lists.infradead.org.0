@@ -2,58 +2,98 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E7EEA32C3
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:39:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 626ECA32C9
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:41:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qZRp39Anp/309Yb1GEJZ3/bbKqRdyDobjdx6b1s3nGw=; b=Jifa0tteFtxiec
-	jGvwmC2kdOBJio0D8C8OfYYY8EL+GkI/EyCqSSN8BrfSeZolh1rNJwvU/+SqIclq8jSWXxKTOdiIY
-	llvExdrJJnvX2RTAIujXIkNyd6WQSVM5QjeyBBjD2Fbt7DsPr7ro+3IqPs1E/ewomKZ/Rf/e9K432
-	gtztjLmhp3GLCYBA5l7J7GYKKiatzk5BHp13f/6g87Za4wEKF2h17v8EO1phmA+AfWNXxS1m84kKn
-	sS9QDkehaOuHXQ4JCoy4bqk47Q1cLFrrL27kFPIfvCFpR/6L6tbhXb6eX+AuUIcvEOlvejuH/Obp2
-	74IVXbb/PbBpBphKD5/g==;
+	List-Owner; bh=BT9A/87dvI7ZwNBB1QUtS9LQ+SQLVNerX/CGIHfluhI=; b=Py0vrwyyiIkVph
+	TFaPX3by59PUouUeqPGh1ZjZsIzDhitzQqktfy9VLlSkMOExAhI3GKbvcjeYZRm60Z3sRvH1ZXtMN
+	fRaQU2/UeW29GaBnONFfLaLn3R/x7m3C4BXrTrcqEeEWrn8FG4b1xOmgxOGrC+lsws8gOeRUFru/3
+	sHD/trUVWhb7+uXGiZjI0Y6HDrIcEQHoUmI/mE8gjnNSlzqtiKKDet0F/GBhKI/sp9swei9YBQHX7
+	T0V0+rUZRFv4SgrOVbSkIZqNIFWeeEQkvNuk97Q6mAolFAXybaY6GbfHDLYz7PlQCJ/yIJ9PCaMlX
+	h63b5WrHQIqDTOTclnYg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3cRZ-0006CG-FL; Fri, 30 Aug 2019 08:39:41 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i3cTZ-0008EX-8S; Fri, 30 Aug 2019 08:41:45 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3cRN-00062c-DV
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:39:31 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id DEC91AF9F;
- Fri, 30 Aug 2019 08:39:26 +0000 (UTC)
-Date: Fri, 30 Aug 2019 10:39:25 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Yunsheng Lin <linyunsheng@huawei.com>
-Subject: Re: [PATCH] arm64: numa: check the node id before accessing
- node_to_cpumask_map
-Message-ID: <20190830083925.GV28313@dhcp22.suse.cz>
-References: <1567131991-189761-1-git-send-email-linyunsheng@huawei.com>
- <20190830055528.GO28313@dhcp22.suse.cz>
- <49b86da7-f114-27c2-463a-9bf5082ac197@huawei.com>
- <20190830064421.GS28313@dhcp22.suse.cz>
- <740cae36-f1a9-4d20-e4ea-3100076de533@huawei.com>
+ id 1i3cTJ-0008EC-4i
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:41:30 +0000
+Received: by mail-ed1-x544.google.com with SMTP id s49so7156265edb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 01:41:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=MGj+QywDGNf8RU3nCUVn2rf2R0NrS9Bl2cO6UU8tnf4=;
+ b=PcpUATAZqIbcoiaTwXtDmO79nO8QPwiLKkXhTdCUd+g/ecm3aSuMclMb5g6Lvo05Wd
+ ljsTYFTC1jeYre6R42iRA/ldxSqG6Rdy1Ql1kdT8ZE/p5Lgth47Oo8BlJbiDzUdMMarf
+ JiNVgF3T/M0BgRvufmGswlA8JGLWAkaPgtB0Q=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=MGj+QywDGNf8RU3nCUVn2rf2R0NrS9Bl2cO6UU8tnf4=;
+ b=nqM1H5VfIZhZbFCfg5tjTahUOZ0gNMpVj5yCiFXNMkE4sup5KQdc3ET2EgDQN7zQfz
+ 1mqMeUsChXG8xwSWtSYtGv8AYeqY1DsrplAQ77XC0QoVei/qPh9+oOSm7s6+KII8aJtG
+ AESdCqkaFdd3QeDpcJLsKX4UkRgo55dcZxfWqio7O6X3/VX/4rJx2AMxDAB98QXOFaID
+ 0FYM9/zOZ50pMN66Oj6SqHgfO86fY/ONlRYm8B/HVnKMkuomDPInT73AuVuTy5j7J635
+ 1Uc84nMa457DZ8CBRAKnkS5KqQFBLVKLl2xryGzRdNsqSilZ2hlBiK6racb+8ugQIjqX
+ pvPQ==
+X-Gm-Message-State: APjAAAUajxPxK9/R9dQi+rly7E8gDWrDcf38OwE0KJNXzmnIY7K48eLy
+ 4cBhH39UZwWOxShRQ7Y7zHmOCnyeru4=
+X-Google-Smtp-Source: APXvYqwjIetPJwqVw4ACQzz/BGgNHxmriRb8K32PzTjM4ACRF2fgBWR+/fezTb70BUjlNWyQdfiAuQ==
+X-Received: by 2002:a17:906:248a:: with SMTP id
+ e10mr11658247ejb.248.1567154487392; 
+ Fri, 30 Aug 2019 01:41:27 -0700 (PDT)
+Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com.
+ [209.85.128.53])
+ by smtp.gmail.com with ESMTPSA id k12sm880569edr.84.2019.08.30.01.41.27
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 30 Aug 2019 01:41:27 -0700 (PDT)
+Received: by mail-wm1-f53.google.com with SMTP id k2so4957264wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 01:41:27 -0700 (PDT)
+X-Received: by 2002:a1c:cf88:: with SMTP id f130mr16973336wmg.10.1567154046354; 
+ Fri, 30 Aug 2019 01:34:06 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <740cae36-f1a9-4d20-e4ea-3100076de533@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org> <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+In-Reply-To: <1566957625.20680.33.camel@mtksdccf07>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Fri, 30 Aug 2019 17:33:53 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+Message-ID: <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+To: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_013929_749882_0B7391D4 
-X-CRM114-Status: GOOD (  32.63  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190830_014129_188946_32FEA0D3 
+X-CRM114-Status: GOOD (  37.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,193 +105,321 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tglx@linutronix.de, anshuman.khandual@arm.com, robin.murphy@arm.com,
- linuxarm@huawei.com, linux-kernel@vger.kernel.org, rppt@linux.ibm.com,
- cai@lca.pw, akpm@linux-foundation.org, will@kernel.org, adobriyan@gmail.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
+ "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ =?UTF-8?B?UG8tWWFuZyBIdWFuZyAo6buD5p+P6Zm9KQ==?= <po-yang.huang@mediatek.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
+ =?UTF-8?B?U2ogSHVhbmcgKOm7g+S/oeeSiyk=?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri 30-08-19 16:08:14, Yunsheng Lin wrote:
-> On 2019/8/30 14:44, Michal Hocko wrote:
-> > On Fri 30-08-19 14:35:26, Yunsheng Lin wrote:
-> >> On 2019/8/30 13:55, Michal Hocko wrote:
-> >>> On Fri 30-08-19 10:26:31, Yunsheng Lin wrote:
-> >>>> Some buggy bios may not set the device' numa id, and dev_to_node
-> >>>> will return -1, which may cause global-out-of-bounds error
-> >>>> detected by KASAN.
-> >>>
-> >>> Why should we workaround a buggy bios like that? Is it so widespread and
-> >>> no BIOS update available? Also, why is this arm64 specific?
-> >>
-> >> For our case, there is BIOS update available. I just thought it might
-> >> be better to protect from this case when BIOS has not implemented the
-> >> device' numa id setting feature or the feature from BIOS has some bug.
-> >>
-> >> It is not arm64 specific, right now I only have arm64 board. If it is
-> >> ok to protect this from the buggy BIOS, maybe all other arch can be
-> >> changed too.
-> > 
-> > If we are to really care then this should be consistent among
-> > architectures IMHO. But I am not really sure this is really worth it.
-> > The code is quite old and I do not really remember any reports. 
-> 
-> It is only detected by enabling KASAN, the system seems to run fine without
-> any visible error if KASAN is disabled. Maybe there is why no report has
-> been seen?
-> 
-> Also according to Section 6.2.14 from ACPI spec 6.3 [1], the setting of proximity
-> domain is optional, as below:
-> 
-> This optional object is used to describe proximity domain
-> associations within a machine. _PXM evaluates to an integer
-> that identifies a device as belonging to a Proximity Domain
-> defined in the System Resource Affinity Table (SRAT).
-> 
-> 
-> Do you think it is ok to resend the fix with above clarification and below
-> log:
+On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+<Jerry-ch.Chen@mediatek.com> wrote:
+>
+> Hi Tomasz,
+>
+> On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > Hi Jerry,
+> >
+> > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > <Jerry-ch.Chen@mediatek.com> wrote:
+> > >
+> > > Hi Tomasz,
+> > >
+> > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > Hi Jerry,
+> > > >
+> > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+> > > > > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > > > >
+> > > > > This patch adds the driver of Face Detection (FD) unit in
+> > > > > Mediatek camera system, providing face detection function.
+> > > > >
+> > > > > The mtk-isp directory will contain drivers for multiple IP
+> > > > > blocks found in Mediatek ISP system. It will include ISP Pass 1
+> > > > > driver (CAM), sensor interface driver, DIP driver and face
+> > > > > detection driver.
+> > > > >
+> > > > > Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
+> > > > > ---
+> > > > >  drivers/media/platform/Makefile               |    2 +
+> > > > >  drivers/media/platform/mtk-isp/fd/Makefile    |    5 +
+> > > > >  drivers/media/platform/mtk-isp/fd/mtk_fd.h    |  157 +++
+> > > > >  drivers/media/platform/mtk-isp/fd/mtk_fd_40.c | 1259 +++++++++++++++++++++++++
+> > > > >  include/uapi/linux/v4l2-controls.h            |    4 +
+> > > > >  5 files changed, 1427 insertions(+)
+> > > > >  create mode 100644 drivers/media/platform/mtk-isp/fd/Makefile
+> > > > >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd.h
+> > > > >  create mode 100644 drivers/media/platform/mtk-isp/fd/mtk_fd_40.c
+> > > > >
+> > > >
+> > > > Thanks for the patch! I finally got a chance to fully review the code. Sorry
+> > > > for the delay. Please check my comments inline.
+> > > >
+> > > I appreciate your comments.
+> > > I've fixed most of the comments and verifying them,
+> > > Sorry for the delay, here is the reply.
+> > >
+> >
+> > Thanks for replying to all the comments, it's very helpful. I'll snip
+> > the parts that I don't have any further comments.
+> >
+> > [snip]
+> >
+> > > > > +   if (usercount == 1) {
+> > > > > +           pm_runtime_get_sync(&fd_dev->pdev->dev);
+> > > > > +           if (mtk_fd_hw_enable(fd_hw)) {
+> > > > > +                   pm_runtime_put_sync(&fd_dev->pdev->dev);
+> > > > > +                   atomic_dec_return(&fd_hw->fd_user_cnt);
+> > > > > +                   mutex_unlock(&fd_hw->fd_hw_lock);
+> > > > > +                   return -EINVAL;
+> > > > > +           }
+> > > > > +   }
+> > > >
+> > > > This is a simple mem-to-mem device, so there is no reason to keep it active
+> > > > all the time it's streaming. Please just get the runtime PM counter when
+> > > > queuing a job to the hardware and release it when the job finishes.
+> > > >
+> > > > I guess we might still want to do the costly operations like rproc_boot()
+> > > > when we start streaming, though.
+> > > >
+> > > Do you mean by moving the pm_runtime_get/put stuff to the job execution
+> > > and job finish place?
+> >
+> > Yes.
+> >
+> > > the rproc_boot() operation will be done here.
+> > >
+> >
+> > How much time does the rproc_boot() operation take?
+> >
+>
+> About 0.7~1.3ms, average 0.8ms (14 measurements)
+>
 
-OK, if the specification really allows to provide NUMA_NO_NODE (-1) then
-the code really has to be prepared for that. And ideally all arches
-should deal with that.
+Okay, I think we may want to call it when we start streaming then.
 
-> [   42.970381] ==================================================================
-> [   42.977595] BUG: KASAN: global-out-of-bounds in __bitmap_weight+0x48/0xb0
-> [   42.984370] Read of size 8 at addr ffff20008cdf8790 by task kworker/0:1/13
-> [   42.991230]
-> [   42.992712] CPU: 0 PID: 13 Comm: kworker/0:1 Tainted: G           O      5.2.0-rc4-g8bde06a-dirty #3
-> [   43.001830] Hardware name: Huawei TaiShan 2280 V2/BC82AMDA, BIOS TA BIOS 2280-A CS V2.B050.01 08/08/2019
-> [   43.011298] Workqueue: events work_for_cpu_fn
-> [   43.015643] Call trace:
-> [   43.018078]  dump_backtrace+0x0/0x1e8
-> [   43.021727]  show_stack+0x14/0x20
-> [   43.025031]  dump_stack+0xc4/0xfc
-> [   43.028335]  print_address_description+0x178/0x270
-> [   43.033113]  __kasan_report+0x164/0x1b8
-> [   43.036936]  kasan_report+0xc/0x18
-> [   43.040325]  __asan_load8+0x84/0xa8
-> [   43.043801]  __bitmap_weight+0x48/0xb0
-> [   43.047552]  hclge_init_ae_dev+0x988/0x1e78 [hclge]
-> [   43.052418]  hnae3_register_ae_dev+0xcc/0x278 [hnae3]
-> [   43.057467]  hns3_probe+0xe0/0x120 [hns3]
-> [   43.061464]  local_pci_probe+0x74/0xf0
-> [   43.065200]  work_for_cpu_fn+0x2c/0x48
-> [   43.068937]  process_one_work+0x3c0/0x878
-> [   43.072934]  worker_thread+0x400/0x670
-> [   43.076670]  kthread+0x1b0/0x1b8
-> [   43.079885]  ret_from_fork+0x10/0x18
-> [   43.083446]
-> [   43.084925] The buggy address belongs to the variable:
-> [   43.090052]  numa_distance+0x30/0x40
-> [   43.093613]
-> [   43.095091] Memory state around the buggy address:
-> [   43.099870]  ffff20008cdf8680: fa fa fa fa 04 fa fa fa fa fa fa fa 00 00 fa fa
-> [   43.107078]  ffff20008cdf8700: fa fa fa fa 04 fa fa fa fa fa fa fa 00 fa fa fa
-> [   43.114286] >ffff20008cdf8780: fa fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
-> [   43.121494]                          ^
-> [   43.125230]  ffff20008cdf8800: 01 fa fa fa fa fa fa fa 04 fa fa fa fa fa fa fa
-> [   43.132439]  ffff20008cdf8880: fa fa fa fa fa fa fa fa 00 00 fa fa fa fa fa fa
-> [   43.139646] ==================================================================
-> 
-> 
-> > 
-> >>>> This patch changes cpumask_of_node to return cpu_none_mask if the
-> >>>> node is not valid, and sync the cpumask_of_node between the
-> >>>> cpumask_of_node function in numa.h and numa.c.
-> >>>
-> >>> Why?
-> >>
-> >> When CONFIG_DEBUG_PER_CPU_MAPS is defined, the cpumask_of_node() in
-> >> numa.c is used, if not, the cpumask_of_node() in numa.h is used.
-> >>
-> >> I am not sure why there is difference between them, and it is there
-> >> when since the below commit:
-> >> 1a2db300348b ("arm64, numa: Add NUMA support for arm64 platforms.")
-> >>
-> >> I synced them to keep them consistent whether CONFIG_DEBUG_PER_CPU_MAPS
-> >> is defined.
-> > 
-> > Such a change should be made in a separate patch with a full
-> > clarification/justification. From the above it is still not clear why
-> > this is needed though.
-> 
-> Ok.
-> 
-> How about:
-> 
-> Currently there are different implementations of cpumask_of_node() depend
-> on the arch, for example:
-> 
-> ia64:
-> #define cpumask_of_node(node) ((node) == -1 ?				\
-> 			       cpu_all_mask :				\
-> 			       &node_to_cpu_mask[node])
-> 
-> 
-> alpha:
-> static const struct cpumask *cpumask_of_node(int node)
+[snip]
+
+> > > > > +static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
+> > > > > +                             unsigned int *num_buffers,
+> > > > > +                             unsigned int *num_planes,
+> > > > > +                             unsigned int sizes[],
+> > > > > +                             struct device *alloc_devs[])
+> > > > > +{
+> > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > +   struct device *dev = ctx->dev;
+> > > > > +   unsigned int size;
+> > > > > +
+> > > > > +   switch (vq->type) {
+> > > > > +   case V4L2_BUF_TYPE_META_CAPTURE:
+> > > > > +           size = ctx->dst_fmt.buffersize;
+> > > > > +           break;
+> > > > > +   case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+> > > > > +           size = ctx->src_fmt.plane_fmt[0].sizeimage;
+> > > > > +           break;
+> > > > > +   default:
+> > > > > +           dev_err(dev, "invalid queue type: %d\n", vq->type);
+> > > >
+> > > > We should need to handle this.
+> > > >
+> > > Do you mean by giving a size instead of return -EINVAL?
+> > >
+> >
+> > Sorry, typo. I meant we shouldn't need to handle it, because we can't
+> > get any other queue type here.
+> >
+>
+> Ok, I see, I will remove it.
+> also, this function will be updated as following due to the 2 plane
+> case.
+>
+> static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
+>                                   unsigned int *num_buffers,
+>                                   unsigned int *num_planes,
+>                                   unsigned int sizes[],
+>                                   struct device *alloc_devs[])
 > {
-> 	int cpu;
-> 
-> 	if (node == NUMA_NO_NODE)
-> 		return cpu_all_mask;
-> 
-> 	cpumask_clear(&node_to_cpumask_map[node]);
-> 
-> 	for_each_online_cpu(cpu) {
-> 		if (cpu_to_node(cpu) == node)
-> 			cpumask_set_cpu(cpu, node_to_cpumask_map[node]);
-> 	}
-> 
-> 	return &node_to_cpumask_map[node];
+>         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+>         struct device *dev = ctx->dev;
+>         unsigned int size[2];
+>
+>         switch (vq->type) {
+>         case V4L2_BUF_TYPE_META_CAPTURE:
+>                 size[0] = ctx->dst_fmt.buffersize;
+>                 break;
+>         case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+>                 size[0] = ctx->src_fmt.plane_fmt[0].sizeimage;
+>                 if (*num_planes == 2)
+>                         size[1] = ctx->src_fmt.plane_fmt[1].sizeimage;
+>                 break;
+>         }
+>
+>         if (*num_planes == 1) {
+>                 if (sizes[0] < size[0])
+>                         return -EINVAL;
+>         } else if (*num_planes == 2) {
+>                 if ((sizes[0] < size[0]) && (sizes[1] < size[1]))
+>                         return -EINVAL;
+
+Can we just use a loop here and combine the 2 cases above?
+
+Also, we need to fail with -EINVAL if *num_planes is > 2.
+
+>         } else {
+>                 *num_planes = 1;
+>                 sizes[0] = size[0];
+
+This should be the case if *num_planes == 0 and the number of planes
+and sizes should match the currently active format.
+
+>         }
+>
+>         return 0;
 > }
-> 
-> Even for the same arch, there are two implementations depend on the
-> CONFIG_DEBUG_PER_CPU_MAPS configuration.
-> 
-> arm64/x86 without CONFIG_DEBUG_PER_CPU_MAPS:
-> static inline const struct cpumask *cpumask_of_node(int node)
+>
+> > [snip]
+> >
+> > > > > +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > +{
+> > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > +   struct vb2_buffer *vb;
+> > > >
+> > > > How do we guarantee here that the hardware isn't still accessing the buffers
+> > > > removed below?
+> > > >
+> > > Maybe we can check the driver state flag and aborting the unfinished
+> > > jobs?
+> > > (fd_hw->state == FD_ENQ)
+> > >
+> >
+> > Yes, we need to either cancel or wait for the currently processing
+> > job. It depends on hardware capabilities, but cancelling is generally
+> > preferred for the lower latency.
+> >
+> Ok, it the state is ENQ, then we can disable the FD hw by controlling
+> the registers.
+>
+> for example:
+>         writel(0x0, fd->fd_base + FD_HW_ENABLE);
+>         writel(0x0, fd->fd_base + FD_INT_EN);
+>
+
+What's exactly the effect of writing 0 to FD_HW_ENABLE?
+
+[snip]
+
+> > > > > +}
+> > > > > +
+> > > > > +static void mtk_fd_vb2_request_complete(struct vb2_buffer *vb)
+> > > > > +{
+> > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vb->vb2_queue);
+> > > > > +
+> > > > > +   v4l2_ctrl_request_complete(vb->req_obj.req, &ctx->hdl);
+> > > > > +}
+> > > > > +
+> > > > > +static void mtk_fd_fill_pixfmt_mp(struct v4l2_pix_format_mplane *dfmt,
+> > > > > +                             const struct v4l2_pix_format_mplane *sfmt)
+> > > > > +{
+> > > > > +   dfmt->width = sfmt->width;
+> > > > > +   dfmt->height = sfmt->height;
+> > > > > +   dfmt->pixelformat = sfmt->pixelformat;
+> > > > > +   dfmt->field = sfmt->field;
+> > > > > +   dfmt->colorspace = sfmt->colorspace;
+> > > > > +   dfmt->num_planes = sfmt->num_planes;
+> > > > > +
+> > > > > +   /* Use default */
+> > > > > +   dfmt->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
+> > > > > +   dfmt->quantization = V4L2_QUANTIZATION_DEFAULT;
+> > > > > +   dfmt->xfer_func =
+> > > > > +           V4L2_MAP_XFER_FUNC_DEFAULT(dfmt->colorspace);
+> > > > > +   dfmt->plane_fmt[0].bytesperline = dfmt->width * 2;
+> > > > > +   dfmt->plane_fmt[0].sizeimage =
+> > > > > +           dfmt->height * dfmt->plane_fmt[0].bytesperline;
+> > > > > +   memset(dfmt->reserved, 0, sizeof(dfmt->reserved));
+> > > > > +}
+> > > >
+> > > > Could we unify this function with mtk_fd_m2m_try_fmt_out_mp()? That function
+> > > > should be almost directly reusable for the default format initialization +/-
+> > > > the arguments passed to it.
+> > > >
+> > > Ok, I will try to reuse it as following:
+> > >
+> > > static void mtk_fd_fill_pixfmt_mp(struct v4l2_pix_format_mplane *dfmt,
+> > >   const struct v4l2_pix_format_mplane *sfmt)
+> > > {
+> > > dfmt->field = V4L2_FIELD_NONE;
+> > > dfmt->colorspace = V4L2_COLORSPACE_BT2020;
+> > > dfmt->num_planes = sfmt->num_planes;
+> > > dfmt->ycbcr_enc = V4L2_YCBCR_ENC_DEFAULT;
+> > > dfmt->quantization = V4L2_QUANTIZATION_DEFAULT;
+> > > dfmt->xfer_func =
+> > > V4L2_MAP_XFER_FUNC_DEFAULT(dfmt->colorspace);
+> > >
+> > > /* Keep user setting as possible */
+> > > dfmt->width = clamp(dfmt->width,
+> > >     MTK_FD_OUTPUT_MIN_WIDTH,
+> > >     MTK_FD_OUTPUT_MAX_WIDTH);
+> > > dfmt->height = clamp(dfmt->height,
+> > >      MTK_FD_OUTPUT_MIN_HEIGHT,
+> > >      MTK_FD_OUTPUT_MAX_HEIGHT);
+> > >
+> > > if (sfmt->num_planes == 2) {
+> > > /* NV16M and NV61M has 1 byte per pixel */
+> > > dfmt->plane_fmt[0].bytesperline = dfmt->width;
+> > > dfmt->plane_fmt[1].bytesperline = dfmt->width;
+> > > } else {
+> > > /* 2 bytes per pixel */
+> > > dfmt->plane_fmt[0].bytesperline = dfmt->width * 2;
+> > > }
+> > >
+> > > dfmt->plane_fmt[0].sizeimage =
+> > > dfmt->height * dfmt->plane_fmt[0].bytesperline;
+> > > }
+> >
+> > How would the implementation of TRY_FMT look in this case?
+> >
+>
+> It will be looked like:
+>
+> static int mtk_fd_try_fmt_out_mp(struct file *file,
+>                                      void *fh,
+>                                      struct v4l2_format *f)
 > {
-> 	return node_to_cpumask_map[node];
+>         struct v4l2_pix_format_mplane *pix_mp = &f->fmt.pix_mp;
+>         const struct v4l2_pix_format_mplane *fmt;
+>
+>         fmt = mtk_fd_find_fmt(pix_mp->pixelformat);
+>         if (!fmt)
+>                 fmt = &mtk_fd_img_fmts[0];      /* Get default img fmt */
+>
+>         mtk_fd_fill_pixfmt_mp(pix_mp, fmt);
+>         return 0;
 > }
-> 
-> arm64/x86 with CONFIG_DEBUG_PER_CPU_MAPS:
-> const struct cpumask *cpumask_of_node(int node)
-> {
-> 	if (WARN_ON(node >= nr_node_ids))
-> 		return cpu_none_mask;
-> 
-> 	if (WARN_ON(node_to_cpumask_map[node] == NULL))
-> 		return cpu_online_mask;
-> 
-> 	return node_to_cpumask_map[node];
-> }
-> 
-> It seems the cpumask_of_node with CONFIG_DEBUG_PER_CPU_MAPS is used
-> to catch the erorr case and give a warning to user when node id is not
-> valid.
+>
 
-Yeah the config help text
-config DEBUG_PER_CPU_MAPS
-        bool "Debug access to per_cpu maps"
-        depends on DEBUG_KERNEL
-        depends on SMP
-        help
-          Say Y to verify that the per_cpu map being accessed has
-          been set up. This adds a fair amount of code to kernel memory
-          and decreases performance.
+Okay, thanks!
 
-          Say N if unsure.
-
-suggests that this is intentionally hidden behind a config so a normal
-path shouldn't really duplicate it. If those checks make sense in
-general then the config option should be dropped I think.
--- 
-Michal Hocko
-SUSE Labs
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
