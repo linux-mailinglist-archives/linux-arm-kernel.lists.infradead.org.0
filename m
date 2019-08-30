@@ -2,79 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5216A3F12
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 22:38:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7510FA3F3A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 22:58:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0P4Mg6ukoVZ/ii37+BojPD1EyYR1p+sT66SfPGU388k=; b=b+PQK7AETUTM67
-	ziwEejEmUZuqRfIJ0Pe99Ym+VhCR+FagNJQe8gaYX1EuGvsUA0JYF9beo+BpPPTBXVbtR4gqHsAJP
-	EBk7vce0R5jjkpStcw69zfRNY2UZmxKmcCoTw4eMun6X6vf5UrFaSLp/Lo74Ey6I+P/yN76VdfYnx
-	p9Bvc7anq4I8dEH4/c3oHkvPjuBaanLRt0iiXwpL43tc0V8fPlCBTDxh2Ou3NO7nmpzXZKcfo/cef
-	YrKtgQFWIfzgwHXhdXrTjQgK+NNyvR1jTzTnFdjyviLhHjddaFii447rhDh+M8PDW5ygOQ3PDgtWZ
-	ifrFHLaz4KPy8nYeafLw==;
+	List-Owner; bh=GTl+kcEJRn7tDwJHiGclgQRSs/cdGD2ZMV+1To3DaHA=; b=r5IPdC++i6p6yQ
+	HmIRYw26go+a4OC+Uyg3YT6IdORUxJ9IJEXBW3wRfDGyXfhvi5rmYBPob02FprDzUDnEFpP8hvOvN
+	ZR9mHrNW3zuooKOIHIKtuR4btO8IVSlT8GSAdCVaJkLjmYV5kFreo+Eyxsyc5s8VIyKIP2seG5Pzs
+	LlPuYkByxLxGIRLAsBO89SZsMWQqQwOOIylxV5mb+RUH8Th1ElkkuGLtK/dQLbjfP696RzQEO0Tf7
+	OIgp8QnTSAkDOWiSlHR28Jf62Fi0JCxPNQuaS89Ir4b7Da4PFOxHG45B1llQRm/g7eH/Ir9QwbYqZ
+	e7l6olfOe2bAt7qwbu6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3neu-0003N9-VO; Fri, 30 Aug 2019 20:38:12 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1i3nyL-0000rC-Ge; Fri, 30 Aug 2019 20:58:17 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3nej-0003Mm-JO
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 20:38:02 +0000
-Received: by mail-qt1-f194.google.com with SMTP id b2so5582681qtq.5
+ id 1i3nyA-0000ql-Sj
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 20:58:08 +0000
+Received: by mail-pl1-x642.google.com with SMTP id d3so3901948plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 13:38:01 -0700 (PDT)
+ Fri, 30 Aug 2019 13:58:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=mFxD0MZFYY42RaJBDLF2GUwHXm8serVqmuEey6UlVzc=;
+ b=qVkbQO/bnO2wUTgnzZBpolohEmUMkuPGvQfUfIoDu6D6fK/F3ymP2WyYqFFawzPLM7
+ L6T1i+ulXO0nxQLbnTR27ZLqlwybt7R0O+AxE/HsxQkU6JXrEEFxghZyQvjH7cCsYb2h
+ DpvtBiWzTBngh8OODfmaK58cBG3qHtMBi71XZObz/YOspvdPovP1fsfyNAhgnD0FNUNE
+ YgerOxatvWM3Pqgajqq0lZQxmJrUCSoFX48rJCgZeDHPX9IHa/d6I+kV2ds1fB7DUc6Q
+ AowerXpB6jiniNeowtGQfJTARSuQXg7D1Ej/jw7un4sex4z+6SP1sUBx1ikYEc7K/ijP
+ 4+dw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=l2S+wnciTIE2+Vapkd9mAIufXJ8QwtBWmdVgddLBucw=;
- b=WJXWRyh2eDHHiMVtIfEZOFyPVRu2FWWveHMLR4BZGUfwW2/lls34qpPR4g/C4isgwp
- GVszOqpnWYmvBeYlReLeptn5vhxSTGqTkcJmzV2UILMybMAKw4AtJ9Ds1P6RnOKYjLCs
- rHXuNkj8V8h3fIybE47/TwWv0U1Qm/W4GyAyUSWRfeE0XctOmmsKoW2ily9LLcB/d7xH
- 3yxE/1N+VIYGEcsvs5nFAFotLSyiar+2nVRdtYqCGxeaMLuLK9wV3YsCGX7MCj7ZQNjX
- EgJLDNqpvEpY00QYWWXhPlt523Qr6ZHBSrW50MInEQ6i85GY7IoiZQMtx1Gw7Wh/tYVa
- t8cg==
-X-Gm-Message-State: APjAAAVtSVs7GTF98Irc1YT+R4VtXqAnR1R3M2InUnXqB5+olMzVpHVL
- nTxZVK34vSHwiO9PA20YGUOrMsQIbZmHZvsx9PU=
-X-Google-Smtp-Source: APXvYqwtNMpNjOd1HtJ8sOpmwxGcNvBnMfM6zhXSKSJK4ULJROOvXNbKx16SmaRfjOCM1TgLQruyn5cyAJe5Ery0vHs=
-X-Received: by 2002:aed:2842:: with SMTP id r60mr7893403qtd.142.1567197480529; 
- Fri, 30 Aug 2019 13:38:00 -0700 (PDT)
+ :message-id:subject:to:cc;
+ bh=mFxD0MZFYY42RaJBDLF2GUwHXm8serVqmuEey6UlVzc=;
+ b=FAbNqsOUfem1MSRHXrxCKpyJHtXkmaTxbunPL6XcNC7RPXVAcY1oSGY5+a83QEjMYp
+ YKTRgbc1pGYEE9ACxe1QmJ+1ehky5GTY/85SMpXsXxWmmr4jI4J069z0DkP3i6dWrvoY
+ yiRAZ3Xf+GzWwicSChJoL6S0L+SzoMWRNjd+z3sUk116QeC81WRZC++g4+W/+tsT3NBk
+ Ce/yKdxRh3e6UDxFKrBMMeV43bgOfsKfdhsEGOYiT4boU8tXAVB4j6T+0DQfiEb3ofh6
+ 9JO7GpvQrHX1uIlfg/hN0KOfAXQPOs/sw0pJ5V9FUuuuCHB/yQeX7TSk8HErNSteZXOx
+ 8X8Q==
+X-Gm-Message-State: APjAAAWBj5c1lr2ZrJUQ4wab/Gn1o53KgCYJ+L0v47Y7TJs+rEByyAEc
+ f5sfqpps6mKcNo91EizT6/Mv1x2pbjSnG2iLA6tbJQ77FJ4=
+X-Google-Smtp-Source: APXvYqyP/8DiBmLKF87W6JpgVn6TuJxLivCLp5MpVOGpP9aBHJ0wDjfiNGtZqU9WqFTeeR89HKguuorK5nEM5zvw+YE=
+X-Received: by 2002:a17:902:a9c3:: with SMTP id
+ b3mr17522272plr.179.1567198682077; 
+ Fri, 30 Aug 2019 13:58:02 -0700 (PDT)
 MIME-Version: 1.0
-References: <bb6d25c6baae315d05b571d8c508f0e8fa90027c.1567188299.git.msuchanek@suse.de>
- <20190830194651.31043-1-msuchanek@suse.de>
- <CAK8P3a16=ktJm5B3c5-XS7SqVuHBY5+E2FwVUqbdOdWK-AUgSA@mail.gmail.com>
- <20190830221315.4b3b8a74@kitsune.suse.cz>
-In-Reply-To: <20190830221315.4b3b8a74@kitsune.suse.cz>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Fri, 30 Aug 2019 22:37:44 +0200
-Message-ID: <CAK8P3a1nGnB3GWEAso9MKW5HuxuB9ez46HZgS=GX-odtJuAMWQ@mail.gmail.com>
-Subject: Re: [PATCH] Revert "asm-generic: Remove unneeded
- __ARCH_WANT_SYS_LLSEEK macro"
-To: =?UTF-8?Q?Michal_Such=C3=A1nek?= <msuchanek@suse.de>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-11-will@kernel.org>
+ <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
+ <CAKwvOdkaCTQ92hUe823Y14xo_Gft4vsRGgimHc8QPUBCbbAOrQ@mail.gmail.com>
+ <20190829215347.GB2404@brain-police>
+In-Reply-To: <20190829215347.GB2404@brain-police>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 30 Aug 2019 13:57:50 -0700
+Message-ID: <CAKwvOdnxssMgeYKpEHJ-k5Ahhah=3qny7zvwBmXJsUyCKShMiw@mail.gmail.com>
+Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
+ appears to support it
+To: Will Deacon <will@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_133801_639983_B9E52748 
-X-CRM114-Status: GOOD (  13.75  )
-X-Spam-Score: 0.5 (/)
+X-CRM114-CacheID: sfid-20190830_135806_955666_558B6A0E 
+X-CRM114-Status: GOOD (  17.32  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,62 +102,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Linux-sh list <linux-sh@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux <sparclinux@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- the arch/x86 maintainers <x86@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Firoz Khan <firoz.khan@linaro.org>, linux-xtensa@linux-xtensa.org,
- Vasily Gorbik <gor@linux.ibm.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>, Borislav Petkov <bp@alien8.de>,
- Alexander Viro <viro@zeniv.linux.org.uk>, David Howells <dhowells@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, Christian Brauner <christian@brauner.io>,
- Chris Zankel <chris@zankel.net>, Michal Simek <monstr@monstr.eu>,
- Parisc List <linux-parisc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
- Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>,
- "David S. Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Ard.Biesheuvel@arm.com,
+ andrew.murray@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
+ Robin Murphy <robin.murphy@arm.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBBdWcgMzAsIDIwMTkgYXQgMTA6MTMgUE0gTWljaGFsIFN1Y2jDoW5layA8bXN1Y2hh
-bmVrQHN1c2UuZGU+IHdyb3RlOgo+IE9uIEZyaSwgMzAgQXVnIDIwMTkgMjE6NTQ6NDMgKzAyMDAK
-PiBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRiLmRlPiB3cm90ZToKPiA+ID4gaW5kZXggNWJiZjU4
-N2Y1YmMxLi4yZjNjNGJiMTM4YzQgMTAwNjQ0Cj4gPiA+IC0tLSBhL2ZzL3JlYWRfd3JpdGUuYwo+
-ID4gPiArKysgYi9mcy9yZWFkX3dyaXRlLmMKPiA+ID4gQEAgLTMzMSw3ICszMzEsNyBAQCBDT01Q
-QVRfU1lTQ0FMTF9ERUZJTkUzKGxzZWVrLCB1bnNpZ25lZCBpbnQsIGZkLCBjb21wYXRfb2ZmX3Qs
-IG9mZnNldCwgdW5zaWduZWQgaQo+ID4gPiAgfQo+ID4gPiAgI2VuZGlmCj4gPiA+Cj4gPiA+IC0j
-aWYgIWRlZmluZWQoQ09ORklHXzY0QklUKSB8fCBkZWZpbmVkKENPTkZJR19DT01QQVQpCj4gPiA+
-ICsjaWZkZWYgX19BUkNIX1dBTlRfU1lTX0xMU0VFSwo+ID4gPiAgU1lTQ0FMTF9ERUZJTkU1KGxs
-c2VlaywgdW5zaWduZWQgaW50LCBmZCwgdW5zaWduZWQgbG9uZywgb2Zmc2V0X2hpZ2gsCj4gPiA+
-ICAgICAgICAgICAgICAgICB1bnNpZ25lZCBsb25nLCBvZmZzZXRfbG93LCBsb2ZmX3QgX191c2Vy
-ICosIHJlc3VsdCwKPiA+ID4gICAgICAgICAgICAgICAgIHVuc2lnbmVkIGludCwgd2hlbmNlKQo+
-ID4KPiA+IEhvd2V2ZXIsIG9ubHkgcmV2ZXJ0aW5nIHRoZSBwYXRjaCB3aWxsIG5vdyBicmVhayBh
-bGwgbmV3bHkgYWRkZWQKPiA+IDMyLWJpdCBhcmNoaXRlY3R1cmVzIHRoYXQgZG9uJ3QgZGVmaW5l
-IF9fQVJDSF9XQU5UX1NZU19MTFNFRUs6Cj4gPiBhdCBsZWFzdCBuZHMzMiBhbmQgcmlzY3YzMiBj
-b21lIHRvIG1pbmQsIG5vdCBzdXJlIGlmIHRoZXJlIGlzIGFub3RoZXIuCj4KPiBBRkFJQ1QgbmRz
-MzIgbmV2ZXIgaGFkIHRoZSBzeXNjYWxsLiBJdHMgaGVhZGVycyB3ZXJlIGFkZGVkIHdpdGhvdXQK
-PiBfX0FSQ0hfV0FOVF9TWVNfTExTRUVLIGJlZm9yZSB0aGUgZGVmaW5lIHdhcyByZW1vdmVkLgoK
-bmRzMzIgZ290IGl0IGZyb20gaW5jbHVkZS9hc20tZ2VuZXJpYy91bmlzdGQuaAoKICAgICAgICBB
-cm5kCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
-eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
-ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
-cm0ta2VybmVsCg==
+On Thu, Aug 29, 2019 at 2:53 PM Will Deacon <will@kernel.org> wrote:
+>
+> On Thu, Aug 29, 2019 at 10:45:57AM -0700, Nick Desaulniers wrote:
+> > On Thu, Aug 29, 2019 at 9:55 AM Will Deacon <will@kernel.org> wrote:
+> > >
+> > > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
+> > > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > > index 95091f72228b..7fa042f5444e 100644
+> > > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
+> > > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
+> > > > @@ -23,6 +23,10 @@ asm_ops "\n"                                                               \
+> > > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
+> > > >  #endif
+> > > >
+> > > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
+> > > > +#define K
+> > > > +#endif
+> > >
+> > > Bah, I need to use something like __stringify when the constraint is used
+> > > in order for this to get expanded properly. Updated diff below.
+> > >
+> > > Will
+> >
+> > Hi Will, thanks for cc'ing me on the patch set.  I'd be happy to help
+> > test w/ Clang.  Would you mind pushing this set with the below diff to
+> > a publicly available tree+branch I can pull from?  (I haven't yet
+> > figured out how to download multiple diff's from gmail rather than 1
+> > by 1, and TBH I'd rather just use git).
+>
+> Sorry, of course. I should've mentioned this in the cover letter:
+>
+> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/atomics
+>
+> FWIW, I did test (defconfig + boot) with clang, but this does mean that LSE
+> atomics are disabled for that configuration when asm goto is not supported.
+>
+> Will
+
+Thanks, just curious if you (or anyone else on the list) has the QEMU
+recipe handy to test on a virtual machine that has ll/sc instructions,
+and one that does not?  I'm guessing testing the default machine would
+not exercise the code path where these instructions have been added?
+
+-- 
+Thanks,
+~Nick Desaulniers
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
