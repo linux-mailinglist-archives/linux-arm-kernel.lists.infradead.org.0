@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65F3EA309C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:17:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B5E2FA30AC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:18:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XrIUddlqVkYjuzokY+S+I3uORYgvW4dqUlGYcVy2hF8=; b=TWJySpqD+VR0y1
-	EqqNJ47ZfdFpWpc5M2/yqaMmSCeG7Jpx9CkmT3uJotdmWQnwXuY7/ss1gCGcrRsd9DFbS50GO+fL9
-	aJGJeKpO68MFsUmYvbj8fgUkUwp0jkff8u1VrYDz8O7ku1UkmGZ2F9cAnwX8I/Z1YvKe56h9jrU81
-	UsUPLd8MAEQbyG9jC88n/NnQRntzqPBAtwOureKsflmpIa7e5CCMUD8uvYBpEO9vaWdCHO6Y9cMOp
-	PDm7EBl3XDbIyvTYV6FwtdIUbctJpFAtdVsk8mJUBMciVwSjTS5xRVnSqCeJmPkB9g4khMkPVqsB9
-	OR9pIrC2knyOiHMlvZqw==;
+	List-Owner; bh=azCxCxmDWrYqIif+rNOLNt2Y5VJrLhtLZnJ8jRG5HlQ=; b=XqTeqGD3V0xSvc
+	XYh506ol10pDTH9n+ryvz4+JWBO0dGnUvotlKGlDfig0tuf5kwwCMieXmNX3TGUQy/mEm9VgRsK5P
+	uJvm4G/y7ajwdAqSPo27drc/oZ66wGlaQBXpu1zgfT8NcW4jGrGeXnFKUtdoktpoXK7uXx/ddkHR4
+	tZCevR8Hw3XpqnJ9cUEM7pXxnivTaUZbU33wtZLpZn2IsHfwj7HbgJhQW4VTtfJMQ5necGW7mgRMO
+	zQ/4qktmO051i1uwf7Y5gj4ipYAwa6GTN7irPDPTlXHJYcFF3X8s6HAcNi+ElMFGUfs/PI3NR4HpV
+	GY0jGjV0HFS1m13R+gCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3bA5-0007I4-CO; Fri, 30 Aug 2019 07:17:33 +0000
+	id 1i3bAl-0007oE-6p; Fri, 30 Aug 2019 07:18:15 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3b7p-00064N-Qj; Fri, 30 Aug 2019 07:15:15 +0000
-X-UUID: 7e7860d887f64640a06778a06ff52f29-20190829
-X-UUID: 7e7860d887f64640a06778a06ff52f29-20190829
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ id 1i3b7r-00063u-7q; Fri, 30 Aug 2019 07:15:16 +0000
+X-UUID: 6bf16d4b334c409f9a45be37fbc25b6a-20190829
+X-UUID: 6bf16d4b334c409f9a45be37fbc25b6a-20190829
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1869524435; Thu, 29 Aug 2019 23:15:15 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 1144150941; Thu, 29 Aug 2019 23:15:15 -0800
+Received: from MTKMBS31N2.mediatek.inc (172.27.4.87) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Fri, 30 Aug 2019 00:15:13 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 30 Aug 2019 15:15:10 +0800
+ MTKMBS31N2.mediatek.inc (172.27.4.87) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 30 Aug 2019 15:15:12 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 30 Aug 2019 15:15:10 +0800
+ Transport; Fri, 30 Aug 2019 15:15:11 +0800
 From: Chunfeng Yun <chunfeng.yun@mediatek.com>
 To: Kishon Vijay Abraham I <kishon@ti.com>, Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v2 06/11] phy: phy-mtk-tphy: add a property for disconnect
- threshold
-Date: Fri, 30 Aug 2019 15:14:53 +0800
-Message-ID: <1567149298-29366-6-git-send-email-chunfeng.yun@mediatek.com>
+Subject: [PATCH v2 07/11] phy: phy-mtk-tphy: add a property for internal
+ resistance
+Date: Fri, 30 Aug 2019 15:14:54 +0800
+Message-ID: <1567149298-29366-7-git-send-email-chunfeng.yun@mediatek.com>
 X-Mailer: git-send-email 1.8.1.1.dirty
 In-Reply-To: <1567149298-29366-1-git-send-email-chunfeng.yun@mediatek.com>
 References: <1567149298-29366-1-git-send-email-chunfeng.yun@mediatek.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 6A71AF3BEA7E972AF931C07E34D964CB256695F593C2FCAD9E0CFB8C7070BD502000:8
+X-TM-SNTS-SMTP: 834C7419890F937B712D8392FFA5D5591185D56AFA8CC7F2DC249C6CEB6B51CA2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_001513_865972_74EF9594 
-X-CRM114-Status: GOOD (  12.54  )
+X-CRM114-CacheID: sfid-20190830_001515_286697_62062B3D 
+X-CRM114-Status: GOOD (  12.39  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -81,65 +81,67 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This is used to tune the threshold of disconnect
+This is used to tune internal resistance for J-K test
 
 Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 ---
 v2: no changes
 ---
- drivers/phy/mediatek/phy-mtk-tphy.c | 17 +++++++++++++++--
- 1 file changed, 15 insertions(+), 2 deletions(-)
+ drivers/phy/mediatek/phy-mtk-tphy.c | 16 ++++++++++++++--
+ 1 file changed, 14 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/phy/mediatek/phy-mtk-tphy.c b/drivers/phy/mediatek/phy-mtk-tphy.c
-index cb2ed3b25068..5afe33621dbc 100644
+index 5afe33621dbc..4a2dc92f10f5 100644
 --- a/drivers/phy/mediatek/phy-mtk-tphy.c
 +++ b/drivers/phy/mediatek/phy-mtk-tphy.c
-@@ -60,6 +60,8 @@
- #define U3P_USBPHYACR6		0x018
- #define PA6_RG_U2_BC11_SW_EN		BIT(23)
- #define PA6_RG_U2_OTG_VBUSCMP_EN	BIT(20)
-+#define PA6_RG_U2_DISCTH		GENMASK(7, 4)
-+#define PA6_RG_U2_DISCTH_VAL(x)	((0xf & (x)) << 4)
- #define PA6_RG_U2_SQTH		GENMASK(3, 0)
- #define PA6_RG_U2_SQTH_VAL(x)	(0xf & (x))
+@@ -43,6 +43,8 @@
+ #define PA0_RG_USB20_INTR_EN		BIT(5)
  
-@@ -300,6 +302,7 @@ struct mtk_phy_instance {
+ #define U3P_USBPHYACR1		0x004
++#define PA1_RG_INTR_CAL		GENMASK(23, 19)
++#define PA1_RG_INTR_CAL_VAL(x)	((0x1f & (x)) << 19)
+ #define PA1_RG_VRT_SEL			GENMASK(14, 12)
+ #define PA1_RG_VRT_SEL_VAL(x)	((0x7 & (x)) << 12)
+ #define PA1_RG_TERM_SEL		GENMASK(10, 8)
+@@ -302,6 +304,7 @@ struct mtk_phy_instance {
  	int eye_src;
  	int eye_vrt;
  	int eye_term;
-+	int discth;
++	int intr;
+ 	int discth;
  	bool bc12_en;
  };
- 
-@@ -850,9 +853,12 @@ static void phy_parse_property(struct mtk_tphy *tphy,
+@@ -853,12 +856,14 @@ static void phy_parse_property(struct mtk_tphy *tphy,
  				 &instance->eye_vrt);
  	device_property_read_u32(dev, "mediatek,eye-term",
  				 &instance->eye_term);
--	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d\n",
-+	device_property_read_u32(dev, "mediatek,discth",
-+				 &instance->discth);
-+	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, disc:%d\n",
++	device_property_read_u32(dev, "mediatek,intr",
++				 &instance->intr);
+ 	device_property_read_u32(dev, "mediatek,discth",
+ 				 &instance->discth);
+-	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, disc:%d\n",
++	dev_dbg(dev, "bc12:%d, src:%d, vrt:%d, term:%d, intr:%d, disc:%d\n",
  		instance->bc12_en, instance->eye_src,
--		instance->eye_vrt, instance->eye_term);
-+		instance->eye_vrt, instance->eye_term,
-+		instance->discth);
+ 		instance->eye_vrt, instance->eye_term,
+-		instance->discth);
++		instance->intr, instance->discth);
  }
  
  static void u2_phy_props_set(struct mtk_tphy *tphy,
-@@ -888,6 +894,13 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
- 		tmp |= PA1_RG_TERM_SEL_VAL(instance->eye_term);
+@@ -895,6 +900,13 @@ static void u2_phy_props_set(struct mtk_tphy *tphy,
  		writel(tmp, com + U3P_USBPHYACR1);
  	}
-+
-+	if (instance->discth) {
-+		tmp = readl(com + U3P_USBPHYACR6);
-+		tmp &= ~PA6_RG_U2_DISCTH;
-+		tmp |= PA6_RG_U2_DISCTH_VAL(instance->discth);
-+		writel(tmp, com + U3P_USBPHYACR6);
-+	}
- }
  
- static int mtk_phy_init(struct phy *phy)
++	if (instance->intr) {
++		tmp = readl(com + U3P_USBPHYACR1);
++		tmp &= ~PA1_RG_INTR_CAL;
++		tmp |= PA1_RG_INTR_CAL_VAL(instance->intr);
++		writel(tmp, com + U3P_USBPHYACR1);
++	}
++
+ 	if (instance->discth) {
+ 		tmp = readl(com + U3P_USBPHYACR6);
+ 		tmp &= ~PA6_RG_U2_DISCTH;
 -- 
 2.23.0
 
