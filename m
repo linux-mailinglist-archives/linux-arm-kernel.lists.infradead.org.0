@@ -2,79 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4CA56A3075
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:13:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1A0FFA3064
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:11:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WmeUJD0a/IXY2iMU/PViIuCkWsbU0aOAXjVj2Vr8c5s=; b=AO4gFi3qfuzs+t
-	pw3OlbeiNGoaWqhRik1rAIekXvckxDYSoS0QhyKePBUZ9BJlQaZbKdiZ4c3DivkFlTyvMlokiXzJA
-	hZKyxiZQ+POSaUlbyEP3y8TJRpqjc8sTlYu5m/FiMOkMfY5CGS0XYLwj4IaL6Otr4WTHUYM/L8EfI
-	iKjScohHhdbj9n/U67P8/7M/KSfyyvJx/x5wYcxO5bE1YzlS91nZvY//Y8pKwixmlBi65d6VK54V0
-	XXnEAXOpppgSWjJcboEMm2m4zoAA3NInd75x6Y0Y02EkNptezpteEq6xwpMC2HJDqTHOQMVQ6dX8+
-	84IFfCBvhtczQbKLVqKQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=lFlKeyGA6e8j9Jmmj3+XtaiNu9967bTvJiRNBY9TnIo=; b=kOAxZST8/17+8/
+	3L7+Tec+s93ul4WdUnRN7Kye1+6QQ3331DBRDYd3eeyDNn+QB69fAeTLLi7ZFOHirP1BFeENEJFBz
+	W9WbVaXZrEKBBsx0/ycNWD5r9jXezH9sbqQ/D4sQgQ16cHpSt3hXxpxnMtIgdppLRSepCebnP+MMi
+	zFqhVKp49JEEv98BYSg9cv97aVx+KgnSI+tgudowUkTrCqBZkUeJ+wtDmQK9A/ZsLx2J/GnwF0koy
+	TN5ljqahduXlz+6PP1I01/UaZWnipputaPw4CEg4MnuCqKyqdxE8J6IcmQ9XYwtwYhqpqYF6s9s0Y
+	zHvQAuQ/KGoLVdwXujjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3b68-0004UT-4g; Fri, 30 Aug 2019 07:13:28 +0000
-Received: from skedge04.snt-world.com ([91.208.41.69])
+	id 1i3b4E-0003Lh-1p; Fri, 30 Aug 2019 07:11:30 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3b4Y-0003fb-9M
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 07:11:52 +0000
-Received: from sntmail14r.snt-is.com (unknown [10.203.32.184])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by skedge04.snt-world.com (Postfix) with ESMTPS id C7C6667A904;
- Fri, 30 Aug 2019 09:11:42 +0200 (CEST)
-Received: from sntmail14r.snt-is.com (10.203.32.184) by sntmail14r.snt-is.com
- (10.203.32.184) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5; Fri, 30 Aug
- 2019 09:11:42 +0200
-Received: from sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8]) by
- sntmail14r.snt-is.com ([fe80::c8f3:eae9:52c2:11a8%3]) with mapi id
- 15.01.1713.004; Fri, 30 Aug 2019 09:11:42 +0200
-From: Thomas Schaefer <Thomas.Schaefer@kontron.com>
-To: Peter Chen <peter.chen@nxp.com>
-Subject: AW: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
-Thread-Topic: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
-Thread-Index: AQHVXoFUdokxKz8Ei0Gedpn3mUjvkacS1eQAgABrfiA=
-Date: Fri, 30 Aug 2019 07:11:42 +0000
-Message-ID: <b227eb4da9214b33b44f33b2a84f4205@kontron.com>
-References: <20190829154913.2049-1-thomas.schaefer@kontron.com>
- <20190830022539.GA1146@b29397-desktop>
-In-Reply-To: <20190830022539.GA1146@b29397-desktop>
-Accept-Language: en-US
-Content-Language: de-DE
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [10.228.0.137]
-x-c2processedorg: 51b406b7-48a2-4d03-b652-521f56ac89f3
+ id 1i3b1m-0001nP-5n; Fri, 30 Aug 2019 07:09:00 +0000
+Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id DD2446750602CC9594D0;
+ Fri, 30 Aug 2019 15:08:55 +0800 (CST)
+Received: from localhost.localdomain.localdomain (10.175.113.25) by
+ DGGEMS401-HUB.china.huawei.com (10.3.19.201) with Microsoft SMTP Server id
+ 14.3.439.0; Fri, 30 Aug 2019 15:08:47 +0800
+From: Chen Zhou <chenzhou10@huawei.com>
+To: <tglx@linutronix.de>, <mingo@redhat.com>, <catalin.marinas@arm.com>,
+ <will@kernel.org>, <james.morse@arm.com>, <dyoung@redhat.com>,
+ <bhsharma@redhat.com>
+Subject: [PATCH v6 0/4] support reserving crashkernel above 4G on arm64 kdump
+Date: Fri, 30 Aug 2019 15:11:56 +0800
+Message-ID: <20190830071200.56169-1-chenzhou10@huawei.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-X-SnT-MailScanner-Information: Please contact the ISP for more information
-X-SnT-MailScanner-ID: C7C6667A904.AA526
-X-SnT-MailScanner: Not scanned: please contact your Internet E-Mail Service
- Provider for details
-X-SnT-MailScanner-SpamCheck: 
-X-SnT-MailScanner-From: thomas.schaefer@kontron.com
-X-SnT-MailScanner-To: festevam@gmail.com, kernel@pengutronix.de,
- linux-arm-kernel@lists.infradead.org, linux-imx@nxp.com,
- marex@denx.de, peter.chen@nxp.com, s.hauer@pengutronix.de,
- shawnguo@kernel.org
-X-Spam-Status: No
+X-Originating-IP: [10.175.113.25]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_001150_788193_057CC9B7 
-X-CRM114-Status: GOOD (  17.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_000858_684856_F4DFD233 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [91.208.41.69 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,115 +63,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marex@denx.de" <marex@denx.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Chen Zhou <chenzhou10@huawei.com>, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, horms@verge.net.au, guohanjun@huawei.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
------Urspr=FCngliche Nachricht-----
-Von: Peter Chen <peter.chen@nxp.com> =
+I am busy with other things, so it was a long time before this version was
+released.
 
-Gesendet: Freitag, 30. August 2019 04:26
-> On 19-08-29 17:49:13, Thomas Schaefer wrote:
-> > Currently the size parameter in the reg property of usbotg and usbh =
+This patch series enable reserving crashkernel above 4G in arm64.
 
-> > nodes in imx7s and imx7d dts includes is set to 0x200 which is wrong =
+There are following issues in arm64 kdump:
+1. We use crashkernel=X to reserve crashkernel below 4G, which will fail
+when there is no enough low memory.
+2. Currently, crashkernel=Y@X can be used to reserve crashkernel above 4G,
+in this case, if swiotlb or DMA buffers are requierd, crash dump kernel
+will boot failure because there is no low memory available for allocation.
 
-> > for the i.MX7 CPU. According to reference manual, spacing of USB =
+To solve these issues, introduce crashkernel=X,low to reserve specified
+size low memory.
+Crashkernel=X tries to reserve memory for the crash dump kernel under
+4G. If crashkernel=Y,low is specified simultaneously, reserve spcified
+size low memory for crash kdump kernel devices firstly and then reserve
+memory above 4G.
 
-> > controller registers is 0x10000 instead.
-> > =
+When crashkernel is reserved above 4G in memory, that is, crashkernel=X,low
+is specified simultaneously, kernel should reserve specified size low memory
+for crash dump kernel devices. So there may be two crash kernel regions, one
+is below 4G, the other is above 4G.
+In order to distinct from the high region and make no effect to the use of
+kexec-tools, rename the low region as "Crash kernel (low)", and add DT property
+"linux,low-memory-range" to crash dump kernel's dtb to pass the low region.
 
-> > This patch will fix this and set the 'size' to 0x10000.
-> > =
+Besides, we need to modify kexec-tools:
+arm64: kdump: add another DT property to crash dump kernel's dtb(see [1])
 
-> > Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
-> > ---
-> >  arch/arm/boot/dts/imx7d.dtsi | 2 +-
-> >  arch/arm/boot/dts/imx7s.dtsi | 4 ++--
-> >  2 files changed, 3 insertions(+), 3 deletions(-)
-> > =
+The previous changes and discussions can be retrieved from:
 
-> > diff --git a/arch/arm/boot/dts/imx7d.dtsi =
+Changes since [v5]
+- Move reserve_crashkernel_low() into kernel/crash_core.c.
+- Delete crashkernel=X,high.
+- Modify crashkernel=X,low.
+If crashkernel=X,low is specified simultaneously, reserve spcified size low
+memory for crash kdump kernel devices firstly and then reserve memory above 4G.
+In addition, rename crashk_low_res as "Crash kernel (low)" for arm64, and then
+pass to crash dump kernel by DT property "linux,low-memory-range".
+- Update Documentation/admin-guide/kdump/kdump.rst.
 
-> > b/arch/arm/boot/dts/imx7d.dtsi index 42528d2812a2..f1b098d28b6e 100644
-> > --- a/arch/arm/boot/dts/imx7d.dtsi
-> > +++ b/arch/arm/boot/dts/imx7d.dtsi
-> > @@ -117,7 +117,7 @@
-> >  &aips3 {
-> >  	usbotg2: usb@30b20000 {
-> >  		compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > -		reg =3D <0x30b20000 0x200>;
-> > +		reg =3D <0x30b20000 0x10000>;
-> >  		interrupts =3D <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-> >  		clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> >  		fsl,usbphy =3D <&usbphynop2>;
-> > diff --git a/arch/arm/boot/dts/imx7s.dtsi =
+Changes since [v4]
+- Reimplement memblock_cap_memory_ranges for multiple ranges by Mike.
 
-> > b/arch/arm/boot/dts/imx7s.dtsi index c1a4fff5ceda..9e25fccf33f0 100644
-> > --- a/arch/arm/boot/dts/imx7s.dtsi
-> > +++ b/arch/arm/boot/dts/imx7s.dtsi
-> > @@ -1088,7 +1088,7 @@
-> >  =
+Changes since [v3]
+- Add memblock_cap_memory_ranges back for multiple ranges.
+- Fix some compiling warnings.
 
-> >  			usbotg1: usb@30b10000 {
-> >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > -				reg =3D <0x30b10000 0x200>;
-> > +				reg =3D <0x30b10000 0x10000>;
-> >  				interrupts =3D <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-> >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> >  				fsl,usbphy =3D <&usbphynop1>;
-> > @@ -1099,7 +1099,7 @@
-> >  =
+Changes since [v2]
+- Split patch "arm64: kdump: support reserving crashkernel above 4G" as
+two. Put "move reserve_crashkernel_low() into kexec_core.c" in a separate
+patch.
 
-> >  			usbh: usb@30b30000 {
-> >  				compatible =3D "fsl,imx7d-usb", "fsl,imx27-usb";
-> > -				reg =3D <0x30b30000 0x200>;
-> > +				reg =3D <0x30b30000 0x10000>;
-> >  				interrupts =3D <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
-> >  				clocks =3D <&clks IMX7D_USB_CTRL_CLK>;
-> >  				fsl,usbphy =3D <&usbphynop3>;
-> =
+Changes since [v1]:
+- Move common reserve_crashkernel_low() code into kernel/kexec_core.c.
+- Remove memblock_cap_memory_ranges() i added in v1 and implement that
+in fdt_enforce_memory_region().
+There are at most two crash kernel regions, for two crash kernel regions
+case, we cap the memory range [min(regs[*].start), max(regs[*].end)]
+and then remove the memory range in the middle.
 
-> Hi Thomos,
-> =
+[1]: http://lists.infradead.org/pipermail/kexec/2019-August/023569.html
+[v1]: https://lkml.org/lkml/2019/4/2/1174
+[v2]: https://lkml.org/lkml/2019/4/9/86
+[v3]: https://lkml.org/lkml/2019/4/9/306
+[v4]: https://lkml.org/lkml/2019/4/15/273
+[v5]: https://lkml.org/lkml/2019/5/6/1360
 
-> The core controller range is 0x200, from offset 0x200, it is non-core reg=
-ister, which is used by usbmisc. Fabio said you met problem at u-boot for t=
-his size, what's the problem about it?
-> =
+Chen Zhou (4):
+  x86: kdump: move reserve_crashkernel_low() into crash_core.c
+  arm64: kdump: reserve crashkenel above 4G for crash dump kernel
+  arm64: kdump: add memory for devices by DT property, low-memory-range
+  kdump: update Documentation about crashkernel on arm64
 
-> Thanks,
-> Peter
+ Documentation/admin-guide/kdump/kdump.rst       | 13 ++++-
+ Documentation/admin-guide/kernel-parameters.txt | 12 ++++-
+ arch/arm64/include/asm/kexec.h                  |  3 ++
+ arch/arm64/kernel/setup.c                       |  8 ++-
+ arch/arm64/mm/init.c                            | 61 +++++++++++++++++++++--
+ arch/x86/include/asm/kexec.h                    |  3 ++
+ arch/x86/kernel/setup.c                         | 65 +++----------------------
+ include/linux/crash_core.h                      |  4 ++
+ include/linux/kexec.h                           |  1 -
+ kernel/crash_core.c                             | 65 +++++++++++++++++++++++++
+ 10 files changed, 168 insertions(+), 67 deletions(-)
 
-Hi Peter,
+-- 
+2.7.4
 
-When porting one of our i.MX7 based modules to u-boot v2019.07, I found tha=
-t scanning USB with 'usb start' crashes when trying to scan the _second_ co=
-ntroller enabled in the device tree (the first controller was detected prop=
-erly). After some investigation I found that the problem was introduced wit=
-h Marek Vasuts 'usb: ehci-mx6: Fix bus enumeration for DM case' (u-boot com=
-mit 501547cec1f7f0438cae388a104ff60f18576c01). This patch uses the 'reg' pr=
-operty in the usbotg and usbh nodes to calculate the device index number fo=
-r the driver.
-
-Actually, controller range on i.MX6 is 0x200, thus the calculation is corre=
-ct for i.MX6, but on i.MX7 the base addresses of the controller registers d=
-iffer by 0x10000 and calculation will fail if more than one USB controller =
-is enabled in the device tree. This is why I suggested to fix this problem =
-in the imx7s and imx7d device tree include files.
-
-Added Marek to this thread.
-
-Best regards,
-Thomas
 
 _______________________________________________
 linux-arm-kernel mailing list
