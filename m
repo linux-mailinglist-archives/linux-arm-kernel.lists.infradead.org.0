@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 85DB0A32EE
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:43:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AA1BEA32EF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:43:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fvqRIX6+8rp+EghGXrNRPrKuJeDw8yosjEgXt98QP7s=; b=GSHqtENVscAwpO
-	GmWtt1f13qN3bNgt9zTwpGiW/o6s10XeRVqOg5SQVDFd4V1hrPpzEXW0AIyXG/SxiSi2BSp+GtFV3
-	2tmGcGTHQmga3HiK1RKCGBvCjJEp073nfxOvcJ3A2pBY7ADjwT37Sx781Y/DAYwTEgs9K3w5pbNHG
-	VbnH4i7OJZ1FAuAue73BqoYl1aQcokMPB4i/iOxMYB1YagesczgYElycl8RBbWjvBr5k0Zi6cvLl3
-	dypJDLDbs4Vkbpf3nYkbThtlej+8DbAmJHKILHCC6kNV/rg6sifFhubgdd6p8+8casBItMT/HyRHn
-	urCEpECO50An2deBLAIw==;
+	List-Owner; bh=0NhgEGuOO18NuGpc40QXAg4+iHHk/VDFRH5/KKYax0k=; b=aBfkcexL/bTwr4
+	d3XyX/qqi5+upMhGq712cRgX0qJk6x8XIovYzlUrT5CgnzZHkI5J54eHY0TVmwvi9antLlrElBwgX
+	5ObSo7n8lGFx/dyvw7y00Fzz+59lVg8wr3L17YxqUrHJUFtX9+ceclitpVnAYaQ7+kLFDUWqhtbOe
+	x6BVjDYhg6lEIGIafX3yewfy+W+0iGjcNMYWtNzoaL2tfFRFGrCv0T+WFxWmA/IC7mtGS3x2BtGbw
+	2H4HP7RgEw/AekbLnhhCZtQXyTQCKj1MDTylTX//SAKYcSUGPjr51dkc/JThxHAcp9ujoWYLQa2c7
+	9PLzudd5NKfjIVIxPylA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3cVJ-0000IZ-Vs; Fri, 30 Aug 2019 08:43:34 +0000
+	id 1i3cVZ-0000ZE-SP; Fri, 30 Aug 2019 08:43:50 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3cUu-0008WV-1j
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:43:09 +0000
+ id 1i3cUv-00007N-W8
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:43:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D0577360;
- Fri, 30 Aug 2019 01:43:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6BF69344;
+ Fri, 30 Aug 2019 01:43:09 -0700 (PDT)
 Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
  [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id ABA2F3F718;
- Fri, 30 Aug 2019 01:43:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 12B163F718;
+ Fri, 30 Aug 2019 01:43:06 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v4 01/10] KVM: arm64: Document PV-time interface
-Date: Fri, 30 Aug 2019 09:42:46 +0100
-Message-Id: <20190830084255.55113-2-steven.price@arm.com>
+Subject: [PATCH v4 02/10] KVM: arm/arm64: Factor out hypercall handling from
+ PSCI code
+Date: Fri, 30 Aug 2019 09:42:47 +0100
+Message-Id: <20190830084255.55113-3-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190830084255.55113-1-steven.price@arm.com>
 References: <20190830084255.55113-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_014308_178443_D2EFF6DA 
-X-CRM114-Status: GOOD (  18.17  )
+X-CRM114-CacheID: sfid-20190830_014310_342827_83B5D402 
+X-CRM114-Status: GOOD (  16.35  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,7 +62,8 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-kernel@vger.kernel.org,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Christoffer Dall <christoffer.dall@arm.com>, linux-kernel@vger.kernel.org,
  kvm@vger.kernel.org,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
  Catalin Marinas <catalin.marinas@arm.com>,
@@ -74,119 +76,334 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Introduce a paravirtualization interface for KVM/arm64 based on the
-"Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
+From: Christoffer Dall <christoffer.dall@arm.com>
 
-This only adds the details about "Stolen Time" as the details of "Live
-Physical Time" have not been fully agreed.
+We currently intertwine the KVM PSCI implementation with the general
+dispatch of hypercall handling, which makes perfect sense because PSCI
+is the only category of hypercalls we support.
 
-User space can specify a reserved area of memory for the guest and
-inform KVM to populate the memory with information on time that the host
-kernel has stolen from the guest.
+However, as we are about to support additional hypercalls, factor out
+this functionality into a separate hypercall handler file.
 
-A hypercall interface is provided for the guest to interrogate the
-hypervisor's support for this interface and the location of the shared
-memory structures.
-
+Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
+[steven.price@arm.com: rebased]
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- Documentation/virt/kvm/arm/pvtime.txt   | 64 +++++++++++++++++++++++++
- Documentation/virt/kvm/devices/vcpu.txt | 14 ++++++
- 2 files changed, 78 insertions(+)
- create mode 100644 Documentation/virt/kvm/arm/pvtime.txt
+ arch/arm/kvm/Makefile        |  2 +-
+ arch/arm/kvm/handle_exit.c   |  2 +-
+ arch/arm64/kvm/Makefile      |  1 +
+ arch/arm64/kvm/handle_exit.c |  4 +-
+ include/kvm/arm_hypercalls.h | 43 ++++++++++++++++++
+ include/kvm/arm_psci.h       |  2 +-
+ virt/kvm/arm/hypercalls.c    | 59 +++++++++++++++++++++++++
+ virt/kvm/arm/psci.c          | 84 +-----------------------------------
+ 8 files changed, 110 insertions(+), 87 deletions(-)
+ create mode 100644 include/kvm/arm_hypercalls.h
+ create mode 100644 virt/kvm/arm/hypercalls.c
 
-diff --git a/Documentation/virt/kvm/arm/pvtime.txt b/Documentation/virt/kvm/arm/pvtime.txt
+diff --git a/arch/arm/kvm/Makefile b/arch/arm/kvm/Makefile
+index 531e59f5be9c..ef4d01088efc 100644
+--- a/arch/arm/kvm/Makefile
++++ b/arch/arm/kvm/Makefile
+@@ -23,7 +23,7 @@ obj-y += kvm-arm.o init.o interrupts.o
+ obj-y += handle_exit.o guest.o emulate.o reset.o
+ obj-y += coproc.o coproc_a15.o coproc_a7.o   vgic-v3-coproc.o
+ obj-y += $(KVM)/arm/arm.o $(KVM)/arm/mmu.o $(KVM)/arm/mmio.o
+-obj-y += $(KVM)/arm/psci.o $(KVM)/arm/perf.o
++obj-y += $(KVM)/arm/psci.o $(KVM)/arm/perf.o $(KVM)/arm/hypercalls.o
+ obj-y += $(KVM)/arm/aarch32.o
+ 
+ obj-y += $(KVM)/arm/vgic/vgic.o
+diff --git a/arch/arm/kvm/handle_exit.c b/arch/arm/kvm/handle_exit.c
+index 2a6a1394d26e..e58a89d2f13f 100644
+--- a/arch/arm/kvm/handle_exit.c
++++ b/arch/arm/kvm/handle_exit.c
+@@ -9,7 +9,7 @@
+ #include <asm/kvm_emulate.h>
+ #include <asm/kvm_coproc.h>
+ #include <asm/kvm_mmu.h>
+-#include <kvm/arm_psci.h>
++#include <kvm/arm_hypercalls.h>
+ #include <trace/events/kvm.h>
+ 
+ #include "trace.h"
+diff --git a/arch/arm64/kvm/Makefile b/arch/arm64/kvm/Makefile
+index 3ac1a64d2fb9..73dce4d47d47 100644
+--- a/arch/arm64/kvm/Makefile
++++ b/arch/arm64/kvm/Makefile
+@@ -13,6 +13,7 @@ obj-$(CONFIG_KVM_ARM_HOST) += hyp/
+ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/kvm_main.o $(KVM)/coalesced_mmio.o $(KVM)/eventfd.o $(KVM)/vfio.o
+ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/arm.o $(KVM)/arm/mmu.o $(KVM)/arm/mmio.o
+ kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/psci.o $(KVM)/arm/perf.o
++kvm-$(CONFIG_KVM_ARM_HOST) += $(KVM)/arm/hypercalls.o
+ 
+ kvm-$(CONFIG_KVM_ARM_HOST) += inject_fault.o regmap.o va_layout.o
+ kvm-$(CONFIG_KVM_ARM_HOST) += hyp.o hyp-init.o handle_exit.o
+diff --git a/arch/arm64/kvm/handle_exit.c b/arch/arm64/kvm/handle_exit.c
+index 706cca23f0d2..aacfc55de44c 100644
+--- a/arch/arm64/kvm/handle_exit.c
++++ b/arch/arm64/kvm/handle_exit.c
+@@ -11,8 +11,6 @@
+ #include <linux/kvm.h>
+ #include <linux/kvm_host.h>
+ 
+-#include <kvm/arm_psci.h>
+-
+ #include <asm/esr.h>
+ #include <asm/exception.h>
+ #include <asm/kvm_asm.h>
+@@ -22,6 +20,8 @@
+ #include <asm/debug-monitors.h>
+ #include <asm/traps.h>
+ 
++#include <kvm/arm_hypercalls.h>
++
+ #define CREATE_TRACE_POINTS
+ #include "trace.h"
+ 
+diff --git a/include/kvm/arm_hypercalls.h b/include/kvm/arm_hypercalls.h
 new file mode 100644
-index 000000000000..dda3f0f855b9
+index 000000000000..0e2509d27910
 --- /dev/null
-+++ b/Documentation/virt/kvm/arm/pvtime.txt
-@@ -0,0 +1,64 @@
-+Paravirtualized time support for arm64
-+======================================
++++ b/include/kvm/arm_hypercalls.h
+@@ -0,0 +1,43 @@
++/* SPDX-License-Identifier: GPL-2.0 */
++/* Copyright (C) 2019 Arm Ltd. */
 +
-+Arm specification DEN0057/A defined a standard for paravirtualised time
-+support for AArch64 guests:
++#ifndef __KVM_ARM_HYPERCALLS_H
++#define __KVM_ARM_HYPERCALLS_H
 +
-+https://developer.arm.com/docs/den0057/a
++#include <asm/kvm_emulate.h>
 +
-+KVM/arm64 implements the stolen time part of this specification by providing
-+some hypervisor service calls to support a paravirtualized guest obtaining a
-+view of the amount of time stolen from its execution.
++int kvm_hvc_call_handler(struct kvm_vcpu *vcpu);
 +
-+Two new SMCCC compatible hypercalls are defined:
++static inline u32 smccc_get_function(struct kvm_vcpu *vcpu)
++{
++	return vcpu_get_reg(vcpu, 0);
++}
 +
-+PV_FEATURES 0xC5000020
-+PV_TIME_ST  0xC5000022
++static inline unsigned long smccc_get_arg1(struct kvm_vcpu *vcpu)
++{
++	return vcpu_get_reg(vcpu, 1);
++}
 +
-+These are only available in the SMC64/HVC64 calling convention as
-+paravirtualized time is not available to 32 bit Arm guests. The existence of
-+the PV_FEATURES hypercall should be probed using the SMCCC 1.1 ARCH_FEATURES
-+mechanism before calling it.
++static inline unsigned long smccc_get_arg2(struct kvm_vcpu *vcpu)
++{
++	return vcpu_get_reg(vcpu, 2);
++}
 +
-+PV_FEATURES
-+    Function ID:  (uint32)  : 0xC5000020
-+    PV_func_id:   (uint32)  : Either PV_TIME_LPT or PV_TIME_ST
-+    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
-+                              PV-time feature is supported by the hypervisor.
++static inline unsigned long smccc_get_arg3(struct kvm_vcpu *vcpu)
++{
++	return vcpu_get_reg(vcpu, 3);
++}
 +
-+PV_TIME_ST
-+    Function ID:  (uint32)  : 0xC5000022
-+    Return value: (int64)   : IPA of the stolen time data structure for this
-+                              VCPU. On failure:
-+                              NOT_SUPPORTED (-1)
++static inline void smccc_set_retval(struct kvm_vcpu *vcpu,
++				    unsigned long a0,
++				    unsigned long a1,
++				    unsigned long a2,
++				    unsigned long a3)
++{
++	vcpu_set_reg(vcpu, 0, a0);
++	vcpu_set_reg(vcpu, 1, a1);
++	vcpu_set_reg(vcpu, 2, a2);
++	vcpu_set_reg(vcpu, 3, a3);
++}
 +
-+The IPA returned by PV_TIME_ST should be mapped by the guest as normal memory
-+with inner and outer write back caching attributes, in the inner shareable
-+domain. A total of 16 bytes from the IPA returned are guaranteed to be
-+meaningfully filled by the hypervisor (see structure below).
++#endif
+diff --git a/include/kvm/arm_psci.h b/include/kvm/arm_psci.h
+index 632e78bdef4d..5b58bd2fe088 100644
+--- a/include/kvm/arm_psci.h
++++ b/include/kvm/arm_psci.h
+@@ -40,7 +40,7 @@ static inline int kvm_psci_version(struct kvm_vcpu *vcpu, struct kvm *kvm)
+ }
+ 
+ 
+-int kvm_hvc_call_handler(struct kvm_vcpu *vcpu);
++int kvm_psci_call(struct kvm_vcpu *vcpu);
+ 
+ struct kvm_one_reg;
+ 
+diff --git a/virt/kvm/arm/hypercalls.c b/virt/kvm/arm/hypercalls.c
+new file mode 100644
+index 000000000000..f875241bd030
+--- /dev/null
++++ b/virt/kvm/arm/hypercalls.c
+@@ -0,0 +1,59 @@
++// SPDX-License-Identifier: GPL-2.0
++// Copyright (C) 2019 Arm Ltd.
 +
-+PV_TIME_ST returns the structure for the calling VCPU.
++#include <linux/arm-smccc.h>
++#include <linux/kvm_host.h>
 +
-+Stolen Time
-+-----------
++#include <asm/kvm_emulate.h>
 +
-+The structure pointed to by the PV_TIME_ST hypercall is as follows:
++#include <kvm/arm_hypercalls.h>
++#include <kvm/arm_psci.h>
 +
-+  Field       | Byte Length | Byte Offset | Description
-+  ----------- | ----------- | ----------- | --------------------------
-+  Revision    |      4      |      0      | Must be 0 for version 0.1
-+  Attributes  |      4      |      4      | Must be 0
-+  Stolen time |      8      |      8      | Stolen time in unsigned
-+              |             |             | nanoseconds indicating how
-+              |             |             | much time this VCPU thread
-+              |             |             | was involuntarily not
-+              |             |             | running on a physical CPU.
++int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
++{
++	u32 func_id = smccc_get_function(vcpu);
++	u32 val = SMCCC_RET_NOT_SUPPORTED;
++	u32 feature;
 +
-+The structure will be updated by the hypervisor prior to scheduling a VCPU. It
-+will be present within a reserved region of the normal memory given to the
-+guest. The guest should not attempt to write into this memory. There is a
-+structure per VCPU of the guest.
++	switch (func_id) {
++	case ARM_SMCCC_VERSION_FUNC_ID:
++		val = ARM_SMCCC_VERSION_1_1;
++		break;
++	case ARM_SMCCC_ARCH_FEATURES_FUNC_ID:
++		feature = smccc_get_arg1(vcpu);
++		switch (feature) {
++		case ARM_SMCCC_ARCH_WORKAROUND_1:
++			switch (kvm_arm_harden_branch_predictor()) {
++			case KVM_BP_HARDEN_UNKNOWN:
++				break;
++			case KVM_BP_HARDEN_WA_NEEDED:
++				val = SMCCC_RET_SUCCESS;
++				break;
++			case KVM_BP_HARDEN_NOT_REQUIRED:
++				val = SMCCC_RET_NOT_REQUIRED;
++				break;
++			}
++			break;
++		case ARM_SMCCC_ARCH_WORKAROUND_2:
++			switch (kvm_arm_have_ssbd()) {
++			case KVM_SSBD_FORCE_DISABLE:
++			case KVM_SSBD_UNKNOWN:
++				break;
++			case KVM_SSBD_KERNEL:
++				val = SMCCC_RET_SUCCESS;
++				break;
++			case KVM_SSBD_FORCE_ENABLE:
++			case KVM_SSBD_MITIGATED:
++				val = SMCCC_RET_NOT_REQUIRED;
++				break;
++			}
++			break;
++		}
++		break;
++	default:
++		return kvm_psci_call(vcpu);
++	}
 +
-+For the user space interface see Documentation/virt/kvm/devices/vcpu.txt
-+section "3. GROUP: KVM_ARM_VCPU_PVTIME_CTRL".
-+
-diff --git a/Documentation/virt/kvm/devices/vcpu.txt b/Documentation/virt/kvm/devices/vcpu.txt
-index 2b5dab16c4f2..896777f76f36 100644
---- a/Documentation/virt/kvm/devices/vcpu.txt
-+++ b/Documentation/virt/kvm/devices/vcpu.txt
-@@ -60,3 +60,17 @@ time to use the number provided for a given timer, overwriting any previously
- configured values on other VCPUs.  Userspace should configure the interrupt
- numbers on at least one VCPU after creating all VCPUs and before running any
- VCPUs.
-+
-+3. GROUP: KVM_ARM_VCPU_PVTIME_CTRL
-+Architectures: ARM64
-+
-+3.1 ATTRIBUTE: KVM_ARM_VCPU_PVTIME_SET_IPA
-+Parameters: 64-bit base address
-+Returns: -ENXIO:  Stolen time not implemented
-+         -EEXIST: Base address already set for this VCPU
-+         -EINVAL: Base address not 64 byte aligned
-+
-+Specifies the base address of the stolen time structure for this VCPU. The
-+base address must be 64 byte aligned and exist within a valid guest memory
-+region. See Documentation/virt/kvm/arm/pvtime.txt for more information
-+including the layout of the stolen time structure.
++	smccc_set_retval(vcpu, val, 0, 0, 0);
++	return 1;
++}
+diff --git a/virt/kvm/arm/psci.c b/virt/kvm/arm/psci.c
+index 87927f7e1ee7..17e2bdd4b76f 100644
+--- a/virt/kvm/arm/psci.c
++++ b/virt/kvm/arm/psci.c
+@@ -15,6 +15,7 @@
+ #include <asm/kvm_host.h>
+ 
+ #include <kvm/arm_psci.h>
++#include <kvm/arm_hypercalls.h>
+ 
+ /*
+  * This is an implementation of the Power State Coordination Interface
+@@ -23,38 +24,6 @@
+ 
+ #define AFFINITY_MASK(level)	~((0x1UL << ((level) * MPIDR_LEVEL_BITS)) - 1)
+ 
+-static u32 smccc_get_function(struct kvm_vcpu *vcpu)
+-{
+-	return vcpu_get_reg(vcpu, 0);
+-}
+-
+-static unsigned long smccc_get_arg1(struct kvm_vcpu *vcpu)
+-{
+-	return vcpu_get_reg(vcpu, 1);
+-}
+-
+-static unsigned long smccc_get_arg2(struct kvm_vcpu *vcpu)
+-{
+-	return vcpu_get_reg(vcpu, 2);
+-}
+-
+-static unsigned long smccc_get_arg3(struct kvm_vcpu *vcpu)
+-{
+-	return vcpu_get_reg(vcpu, 3);
+-}
+-
+-static void smccc_set_retval(struct kvm_vcpu *vcpu,
+-			     unsigned long a0,
+-			     unsigned long a1,
+-			     unsigned long a2,
+-			     unsigned long a3)
+-{
+-	vcpu_set_reg(vcpu, 0, a0);
+-	vcpu_set_reg(vcpu, 1, a1);
+-	vcpu_set_reg(vcpu, 2, a2);
+-	vcpu_set_reg(vcpu, 3, a3);
+-}
+-
+ static unsigned long psci_affinity_mask(unsigned long affinity_level)
+ {
+ 	if (affinity_level <= 3)
+@@ -373,7 +342,7 @@ static int kvm_psci_0_1_call(struct kvm_vcpu *vcpu)
+  * Errors:
+  * -EINVAL: Unrecognized PSCI function
+  */
+-static int kvm_psci_call(struct kvm_vcpu *vcpu)
++int kvm_psci_call(struct kvm_vcpu *vcpu)
+ {
+ 	switch (kvm_psci_version(vcpu, vcpu->kvm)) {
+ 	case KVM_ARM_PSCI_1_0:
+@@ -387,55 +356,6 @@ static int kvm_psci_call(struct kvm_vcpu *vcpu)
+ 	};
+ }
+ 
+-int kvm_hvc_call_handler(struct kvm_vcpu *vcpu)
+-{
+-	u32 func_id = smccc_get_function(vcpu);
+-	u32 val = SMCCC_RET_NOT_SUPPORTED;
+-	u32 feature;
+-
+-	switch (func_id) {
+-	case ARM_SMCCC_VERSION_FUNC_ID:
+-		val = ARM_SMCCC_VERSION_1_1;
+-		break;
+-	case ARM_SMCCC_ARCH_FEATURES_FUNC_ID:
+-		feature = smccc_get_arg1(vcpu);
+-		switch(feature) {
+-		case ARM_SMCCC_ARCH_WORKAROUND_1:
+-			switch (kvm_arm_harden_branch_predictor()) {
+-			case KVM_BP_HARDEN_UNKNOWN:
+-				break;
+-			case KVM_BP_HARDEN_WA_NEEDED:
+-				val = SMCCC_RET_SUCCESS;
+-				break;
+-			case KVM_BP_HARDEN_NOT_REQUIRED:
+-				val = SMCCC_RET_NOT_REQUIRED;
+-				break;
+-			}
+-			break;
+-		case ARM_SMCCC_ARCH_WORKAROUND_2:
+-			switch (kvm_arm_have_ssbd()) {
+-			case KVM_SSBD_FORCE_DISABLE:
+-			case KVM_SSBD_UNKNOWN:
+-				break;
+-			case KVM_SSBD_KERNEL:
+-				val = SMCCC_RET_SUCCESS;
+-				break;
+-			case KVM_SSBD_FORCE_ENABLE:
+-			case KVM_SSBD_MITIGATED:
+-				val = SMCCC_RET_NOT_REQUIRED;
+-				break;
+-			}
+-			break;
+-		}
+-		break;
+-	default:
+-		return kvm_psci_call(vcpu);
+-	}
+-
+-	smccc_set_retval(vcpu, val, 0, 0, 0);
+-	return 1;
+-}
+-
+ int kvm_arm_get_fw_num_regs(struct kvm_vcpu *vcpu)
+ {
+ 	return 3;		/* PSCI version and two workaround registers */
 -- 
 2.20.1
 
