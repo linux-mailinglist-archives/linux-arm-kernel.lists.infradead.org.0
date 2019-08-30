@@ -2,60 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 162D0A3621
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 13:58:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DCD94A365B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:08:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kc60WX3GlFXH+BCZiFeUbui6RPQydw5kv3l1ec4t6JU=; b=rh8dpY7IZ2gnrv
-	9PhB3U9XpuHZ1xQe67Rpk62MVo8YG7BunaQqIY/6Ni5BOH6syT+oWgHwullfTuvlea0ZJQfp7ZtDF
-	+zoN4k9hRpNVU8z5rvzGspfTomCca8nmSWO/CijJ6YiZdYuaNK6OMa13A/sNhSmQr1ruGbY4wWsas
-	ma416iabveJNEe0lmw6yJVCqmnY+pjGNV6ijkfZOFe5wOWY1QHT33LQZyLtTi2f2Ojl9G9qHkr2V4
-	1ThpPEg+6wGX53AuSdWwOaosXxdm+8W4IrjVCHAxbzjirUJGV6q7a4/fyC9XTlzrZsqhmuhc4nZeV
-	d4hK23hf7wQ65rqi2TxQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=/TmxDPgVvu4/YES5eKAQlw0YARSuLxih7L00bgrLjC0=; b=WEjNC6IEsBEIBGdqRRpvMGf6d
+	uE2iNKOAgTC2Z2QidkjWx2zD/k48U4XYz70bn9Xz6Z66/jgwSiX8TJ2833NOQz5orIErZUYpTiCG3
+	4ESWz77hz+gkD8tX7hy4tLPR9mm0BHoGBBTaHf5CBd7GLfbeMuvexxFPzuyLlKCgwuUOFesnBQJ3Q
+	ttl0pR5tPlhfj4x8UFrgePyGoJJFzkJxP/OOVyZp9Kc1Fqe5+ACMnw9hohMTSKPL4vsjFw4ur0VOV
+	3WcCsad/uShJBC56IJPjSrK5zp5T6xxEnMARsqHLuarvcW94hB5RrieDd71uP/JAleRVo6tDT4QQb
+	iD4Fp+o7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3fXU-0000UL-94; Fri, 30 Aug 2019 11:58:00 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3fXM-0000Tx-LY
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 11:57:54 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C2D1D337;
- Fri, 30 Aug 2019 04:57:51 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 37F633F246;
- Fri, 30 Aug 2019 04:57:51 -0700 (PDT)
-Date: Fri, 30 Aug 2019 12:57:49 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
- appears to support it
-Message-ID: <20190830115749.GU14582@e119886-lin.cambridge.arm.com>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-11-will@kernel.org>
- <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
- <20190830000803.GR14582@e119886-lin.cambridge.arm.com>
- <20190830075220.6xyyctvgd2ssrsjf@willie-the-truck>
- <20190830091155.GS14582@e119886-lin.cambridge.arm.com>
- <20190830101716.b4orwol66q4l2kxy@willie-the-truck>
+	id 1i3fhV-0003f4-Sq; Fri, 30 Aug 2019 12:08:21 +0000
+Received: from mail.kapsi.fi ([2001:67c:1be8::25])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3fhN-0003eA-CU
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:08:15 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed; d=kapsi.fi;
+ s=20161220; h=Content-Transfer-Encoding:Content-Type:In-Reply-To:
+ MIME-Version:Date:Message-ID:From:References:Cc:To:Subject:Sender:Reply-To:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=jLbS4wyC9BOXRvnGDvAgUlr1i1hEqcJjCnRO9VKhPUc=; b=BZpl7Ngf+S2Bt6nSPZh/NN47MA
+ CZo5IsxbxOIhPbRsCUEEAISIcFO9gYpQ5qCF2AiymXNKNbg9f4BeKsz6+6KLYQKq45AcyCuJ7j/RF
+ M5527anW5eKFWCBEMx8mneRbUBEDSHZ9Mv8tf0bfNx/s65Gf8jmvMppB5Vz72aX+gMlW/dLe+Jtqd
+ eVM48GhC4uk0sljorhX3Hd1lR2p0z3iVFGOHDp7eSEO1Jwr3J7ADSYKNRYlwNJXcFGb2W4xx7XzL7
+ loNQMDQEi191AvmYShK+cStNx6k99tOI6d/n/q70xO2q7cwuFZ0IddHyhhx21Tr+rMzZKchGnUeF7
+ DkDDuyJQ==;
+Received: from [193.209.96.43] (helo=[10.21.26.179])
+ by mail.kapsi.fi with esmtpsa (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128)
+ (Exim 4.89) (envelope-from <cyndis@kapsi.fi>)
+ id 1i3fh8-0001wS-Ip; Fri, 30 Aug 2019 15:07:58 +0300
+Subject: Re: [PATCH 2/7] dt-bindings: arm-smmu: Add binding for nvidia, smmu-v2
+To: Krishna Reddy <vdumpa@nvidia.com>
+References: <1567118827-26358-1-git-send-email-vdumpa@nvidia.com>
+ <1567118827-26358-3-git-send-email-vdumpa@nvidia.com>
+From: Mikko Perttunen <cyndis@kapsi.fi>
+Message-ID: <86cc6861-08e6-7e16-cb85-93de0aa62087@kapsi.fi>
+Date: Fri, 30 Aug 2019 15:07:58 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190830101716.b4orwol66q4l2kxy@willie-the-truck>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <1567118827-26358-3-git-send-email-vdumpa@nvidia.com>
+Content-Language: en-US
+X-SA-Exim-Connect-IP: 193.209.96.43
+X-SA-Exim-Mail-From: cyndis@kapsi.fi
+X-SA-Exim-Scanned: No (on mail.kapsi.fi); SAEximRunCond expanded to false
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_045752_799111_96C3B03F 
-X-CRM114-Status: GOOD (  30.98  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_050813_593424_E7F8F1C5 
+X-CRM114-Status: GOOD (  14.25  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:1be8:0:0:0:0:25 listed in] [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,117 +84,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com, natechancellor@gmail.com,
- robin.murphy@arm.com, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: snikam@nvidia.com, thomasz@nvidia.com, jtukkinen@nvidia.com,
+ mperttunen@nvidia.com, praithatha@nvidia.com, iommu@lists.linux-foundation.org,
+ linux-kernel@vger.kernel.org, talho@nvidia.com, olof@lixom.net,
+ yhsu@nvidia.com, linux-tegra@vger.kernel.org, treding@nvidia.com,
+ avanbrunt@nvidia.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 11:17:16AM +0100, Will Deacon wrote:
-> On Fri, Aug 30, 2019 at 10:11:55AM +0100, Andrew Murray wrote:
-> > On Fri, Aug 30, 2019 at 08:52:20AM +0100, Will Deacon wrote:
-> > > On Fri, Aug 30, 2019 at 01:08:03AM +0100, Andrew Murray wrote:
-> > > > On Thu, Aug 29, 2019 at 05:54:58PM +0100, Will Deacon wrote:
-> > > > > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
-> > > > > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > > > index 95091f72228b..7fa042f5444e 100644
-> > > > > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > > > @@ -23,6 +23,10 @@ asm_ops "\n"								\
-> > > > > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
-> > > > > >  #endif
-> > 
-> > I downloaded your original patches and tried them, and also got the
-> > build error. After playing with this I think something isn't quite right...
-> > 
-> > This is your current test:
-> > 
-> >  echo 'int main(void) {asm volatile("and w0, w0, %w0" :: "K" (4294967295)); return 0; }' |  aarch64-linux-gnu-gcc -S -x c  - ; echo $?
-> > 
-> > But on my machine this returns 0, i.e. no error. If I drop the -S:
-> > 
-> >  echo 'int main(void) {asm volatile("and w0, w0, %w0" :: "K" (4294967295)); return 0; }' |  aarch64-linux-gnu-gcc -x c  - ; echo $?
-> > 
-> > Then this returns 1.
-> > 
-> > So I guess the -S flag or something similar is needed.
+On 30.8.2019 1.47, Krishna Reddy wrote:
+> Add binding doc for Nvidia's smmu-v2 implementation.
 > 
-> This seems correct to me, and is the reason we pass -S in the Makefile. Why
-> are you dropping it?
+> Signed-off-by: Krishna Reddy <vdumpa@nvidia.com>
+> ---
+>   Documentation/devicetree/bindings/iommu/arm,smmu.txt | 1 +
+>   1 file changed, 1 insertion(+)
 > 
-> In the first case, the (broken) compiler is emitted an assembly file
-> containing "and w0, w0, 4294967295", and so we will not define
-> CONFIG_CC_HAS_K_CONSTRAINT.
-> 
-> In the second case, you're passing the bad assembly file to GAS, which
-> rejects it.
-> 
-> > > > > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
-> > > > > > +#define K
-> > > > > > +#endif
-> > 
-> > Also, isn't this the wrong way around?
-> 
-> No. If the compiler doesn't support the K constraint, then we get:
-> 
-> 	[old] "" "r" (old)
-> 
-> because we've defined K as being nothing. Otherwise, we get:
-> 
-> 	[old] "K" "r" (old)
-> 
-> because K isn't defined as anything.
-> 
-> > It looks like when using $(call try-run,echo - it's the last argument that is
-> > used when the condition is false. Thus at present we seem to be setting 
-> > CONFIG_CC_HAS_K_CONSTRAINT when 'K' is broken.
-> 
-> No. We set CONFIG_CC_HAS_K_CONSTRAINT when the compiler fails to generate
-> an assembly file with the invalid immediate.
-> 
-> > > Without the __stringify I get a compilation failure when building
-> > > kernel/panic.o because it tries to cmpxchg a 32-bit variable with -1
-> > > (PANIC_CPU_INVALID). Looking at panic.s, I see that constraint parameter
-> > > isn't being expanded. For example if I do:
-> > > 
-> > >   #ifndef CONFIG_CC_HAS_K_CONSTRAINT
-> > >   #define INVALID_CONSTRAINT
-> > >   #else
-> > >   #define INVALID_CONSTRAINT	K
-> > >   #endif
-> > > 
-> > > and then pass INVALID_CONSTRAINT to the generator macros, we'll end up
-> > > with INVALID_CONSTRAINT in the .s file and gas will barf.
-> > 
-> > This still isn't an issue for me. Your patches cause the build to fail because
-> > it's using the K flag - if I invert the CONFIG_CC_HAS_K_CONSTRAINT test then
-> > it builds correctly (because it expands the K to nothing).
-> 
-> That doesn't make any sense :/ Is this after you've dropped the -S
-> parameter?
+> diff --git a/Documentation/devicetree/bindings/iommu/arm,smmu.txt b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> index 3133f3b..0de3759 100644
+> --- a/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> +++ b/Documentation/devicetree/bindings/iommu/arm,smmu.txt
+> @@ -17,6 +17,7 @@ conditions.
+>                           "arm,mmu-401"
+>                           "arm,mmu-500"
+>                           "cavium,smmu-v2"
+> +                        "nidia,smmu-v2"
 
-As discussed on IRC, all my issues were due to not applying the extra
-__stringify patch of yours and getting confused about intermediates. Thanks
-for your time and patience!
+nvidia
 
-I'm satisfied this works (with your extra patch), so again:
+Mikko
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
-
-
+>                           "qcom,smmu-v2"
+>   
+>                     depending on the particular implementation and/or the
 > 
-> If you think there's a bug, please can you send a patch? However, inverting
-> the check breaks the build for me. Which toolchain are you using?
-> 
-> > If there is an issue with the expansion of constraint, shouldn't we also
-> > __stringify 'asm_op'?
-> 
-> It would be harmless, but there's no need because asm_op doesn't ever
-> require further expansion.
-> 
-> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
