@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F5DCA39A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 16:55:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3738CA39AB
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 16:56:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tjSwkSRn6+Wc8VMB9cCamAk+fjnC9Bm4e4I61HHpEIA=; b=FgV1rA835i2KZV
-	n6srB6ogZANzh+/hNL8jMNpj6Fsn3nBS9NYE3U+3t8Vvua2P5wnivys5tFXpwtoyOwogG0p5B2MIw
-	pXzdJPaL3ie/XKQZTbbbLE8FAtrJwjedZaTzakToUmwFdJ0QBDxOufETOLOo+C/zNVKPUwnZ+gOTX
-	gyVGGnpx181DjC6i2vnadDa9jbHz7pn9Ly1yW4LRaJEa1xTvn24z4hVD7+FPl1Y/LpkfxlUW69H5H
-	7hUKJ1nsd29uGW54PucRvVC4Rz8w9dL7kY88nChIj7m+AFgBtBajo+fh9vCnI4Zv7vMF9OTeyOOFW
-	n4Nqj1oObEk94Lkb2gtw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LN3LfdufTu7HjI68IIqSmzNRjbSGegXS6IUjFIySQiI=; b=Jb+pWM29D8Qjhf
+	cC39l91GKltLWcz4Fm99DE5GLheBVlxiVZEixegelK3phR9UIyTTia2lrQqFfr66fciMN/l8KkOYA
+	KD/zU+VcC5Sggy9ZiJbd7FCES9AJBJojh8O0G/rD8+t08Zy1yRftajchpMjzDTJFBl9Tdkses2aCz
+	y41FVciNsz2njGXyW2DncUaECaHbQlEfyOQhiwHTOM1GsKkU4qpI0lyNINWgOSJH0nGWEpUtudm01
+	/HOOozFIYiERGIEMqx+qOFlNsGzLaLXCMioBFr7qD91UkgDOiJV5WBlpOrHUNXFaTDLxXvyDYgMH8
+	7+zCLROxUPDg3exVqBsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3iJ8-00028h-8g; Fri, 30 Aug 2019 14:55:22 +0000
+	id 1i3iK0-0002QG-4f; Fri, 30 Aug 2019 14:56:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3iIt-0001pe-Ut; Fri, 30 Aug 2019 14:55:09 +0000
+ id 1i3iJd-0002Pk-Qm
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 14:55:56 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C500F344;
- Fri, 30 Aug 2019 07:55:05 -0700 (PDT)
-Received: from e107158-lin.cambridge.arm.com (e107158-lin.cambridge.arm.com
- [10.1.194.52])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A0C2E3F703;
- Fri, 30 Aug 2019 07:55:04 -0700 (PDT)
-Date: Fri, 30 Aug 2019 15:55:02 +0100
-From: Qais Yousef <qais.yousef@arm.com>
-To: Valentin Schneider <valentin.schneider@arm.com>
-Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
-Message-ID: <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
-References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
- <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5EF86344;
+ Fri, 30 Aug 2019 07:55:53 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id AB8053F703;
+ Fri, 30 Aug 2019 07:55:52 -0700 (PDT)
+Subject: Re: [PATCH v3 08/11] kselftest: arm64: fake_sigreturn_missing_fpsimd
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190802170300.20662-9-cristian.marussi@arm.com>
+ <20190813162622.GF10425@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <35f30b95-5b0b-52f0-5b73-954713f0682d@arm.com>
+Date: Fri, 30 Aug 2019 15:55:49 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
-User-Agent: NeoMutt/20171215
+In-Reply-To: <20190813162622.GF10425@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_075508_041848_5AE90E32 
-X-CRM114-Status: GOOD (  17.89  )
+X-CRM114-CacheID: sfid-20190830_075554_904668_FB030B5C 
+X-CRM114-Status: GOOD (  15.49  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,71 +63,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
- linux-kernel@vger.kernel.org, Jing-Ting Wu <jing-ting.wu@mediatek.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- linux-arm-kernel@lists.infradead.org
+Cc: andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/29/19 11:38, Valentin Schneider wrote:
-> On 29/08/2019 04:15, Jing-Ting Wu wrote:
-> > At original linux design, RT & CFS scheduler are independent.
-> > Current RT task placement policy will select the first cpu in
-> > lowest_mask, even if the first CPU is running a CFS task.
-> > This may put RT task to a running cpu and let CFS task runnable.
-> > 
-> > So we select idle cpu in lowest_mask first to avoid preempting
-> > CFS task.
-> > 
+Hi
+
+On 13/08/2019 17:26, Dave Martin wrote:
+> On Fri, Aug 02, 2019 at 06:02:57PM +0100, Cristian Marussi wrote:
+>> Added a simple fake_sigreturn testcase which builds a ucontext_t
 > 
-> Regarding the RT & CFS thing, that's working as intended. RT is a whole
-> class above CFS, it shouldn't have to worry about CFS.
+> Add
+Ok
+
 > 
-> On the other side of things, CFS does worry about RT. We have the concept
-> of RT-pressure in the CFS scheduler, where RT tasks will reduce a CPU's
-> capacity (see fair.c::scale_rt_capacity()).
+>> without the required fpsimd_context and place it onto the stack.
+>> Expects a SIGSEGV on test PASS.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>>  .../arm64/signal/testcases/.gitignore         |  1 +
+>>  .../testcases/fake_sigreturn_missing_fpsimd.c | 44 +++++++++++++++++++
+>>  2 files changed, 45 insertions(+)
+>>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+>>
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> index cf2a73599818..17d1c5e73319 100644
+>> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> @@ -6,3 +6,4 @@ mangle_pstate_invalid_mode_el3
+>>  mangle_pstate_ssbs_regs
+>>  fake_sigreturn_bad_magic
+>>  fake_sigreturn_bad_size_for_magic0
+>> +fake_sigreturn_missing_fpsimd
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+>> new file mode 100644
+>> index 000000000000..b8dd57ce6844
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_missing_fpsimd.c
+>> @@ -0,0 +1,44 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/* Copyright (C) 2019 ARM Limited */
+>> +
 > 
-> CPU capacity is looked at on CFS wakeup (see wake_cap() and
-> find_idlest_cpu()), and the periodic load balancer tries to spread load
-> over capacity, so it'll tend to put less things on CPUs that are also
-> running RT tasks.
+> signal.h?
 > 
-> If RT were to start avoiding rqs with CFS tasks, we'd end up with a nasty
-> situation were both are avoiding each other. It's even more striking when
-> you see that RT pressure is done with a rq-wide RT util_avg, which
-> *doesn't* get migrated when a RT task migrates. So if you decide to move
-> a RT task to an idle CPU "B" because CPU "A" had runnable CFS tasks, the
-> CFS scheduler will keep seeing CPU "B" as not significantly RT-pressured
-> while that util_avg signal ramps up, whereas it would correctly see CPU
-> "A" as RT-pressured if the RT task previously ran there.
+Ok
+>> +#include <stdio.h>
+>> +#include <ucontext.h>
+>> +
+>> +#include "test_signals_utils.h"
+>> +#include "testcases.h"
+>> +
+>> +struct fake_sigframe sf;
+>> +
+>> +static int fake_sigreturn_missing_fpsimd_run(struct tdescr *td,
+>> +					     siginfo_t *si, ucontext_t *uc)
+>> +{
+>> +	size_t resv_sz, offset;
+>> +	struct _aarch64_ctx *head = GET_SF_RESV_HEAD(sf);
+>> +
+>> +	/* just to fill the ucontext_t with something real */
+>> +	if (!get_current_context(td, &sf.uc))
+>> +		return 1;
+>> +
+>> +	resv_sz = GET_SF_RESV_SIZE(sf);
+>> +	head = get_header(head, FPSIMD_MAGIC, resv_sz, &offset);
+>> +	/* just give up and timeout if still not enough space */
+>> +	if (head && resv_sz - offset >= HDR_SZ) {
+>> +		fprintf(stderr, "Mangling template header. Spare space:%zd\n",
+>> +			resv_sz - offset);
+>> +		/* Just overwrite fpsmid_context */
+>> +		write_terminator_record(head);
+>> +
+>> +		ASSERT_BAD_CONTEXT(&sf.uc);
+>> +		fake_sigreturn(&sf, sizeof(sf), 16);
+>> +	}
+>> +
+>> +	return 1;
+>> +}
 > 
-> So overall I think this is the wrong approach.
+> [...]
+> 
+> Seems reasonable otherwise.
+> 
+> Cheers
+> ---Dave
+> 
 
-I like the idea, but yeah tend to agree the current approach might not be
-enough.
-
-I think the major problem here is that on generic systems where CFS is a first
-class citizen, RT tasks can be hostile to them - not always necessarily for a
-good reason.
-
-To further complicate the matter, even among CFS tasks we can't tell which are
-more important than the others - though hopefully latency-nice proposal will
-make the situation better.
-
-So I agree we have a problem here, but I think this patch is just a temporary
-band aid and we need to do better. Though I have no concrete suggestion yet on
-how to do that.
-
-Another thing I couldn't quantify yet how common and how severe this problem is
-yet. Jing-Ting, if you can share the details of your use case that'd be great.
-
-Cheers
-
---
-Qais Yousef
 
 _______________________________________________
 linux-arm-kernel mailing list
