@@ -2,92 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54594A39E6
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:08:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23126A3A0E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 17:11:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=d5+2asKOhNcS9YCf+WyZBNqLuSRHWvryr9uvZUAftqs=; b=OQQSc+sbqf114N
-	1VEeUNyEKdaehmsiQm8VEU4rg73Mnhsb2sVQdVz2eb0tPJ7B52iXdIG8MpKYrqNu4wXN35fmzSRlj
-	OmRRNFkhlx4S+7hXlOvoZl2dLM+n98e87Cz1G2iLpexuTRddt/67nZ6faKFs+/DBuXU/56FRaSpZr
-	XjNbF78uWYLZ3baJ6MZ5VxhnQr0pD90kBXAQHjIMVG7332Hf9g4pXydwzbebVevCBMCmcYd0D3jtb
-	uAXIq7Eu93jbz51TeY7b53Vugya9brJiF6N6PAQ59hV2j6za1DZE/cOg9gbEE7biwc6769JRkVr35
-	A7sGqfyX6Gf84MyOBctQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=1I2o7IV3LLGhbn9m3VeW+kOxfOiy/ybPLQ1kTYVGK4A=; b=RCUpN9XnzKFmiA
+	aUmK81honw1xfEY1R/05TXdeXuNo0I5eFdSzRxpswDlnDB4O5XzYuEUT7lDMkU/YknE2fIvC8/QGN
+	/qbT99I5jKYWwNB8lH4ZBE68u5gRgr3BDazetUBKt5n8hsE1wOhw3TpW4Zt5kedIvsnigdBObUD9p
+	NXtaWOrTtC9k51eJVtTgF32BUwaVTK+BNNDxyDL6+2MvVi+bNWisJRAAWcEe4+WhtTVGoL0HxTWkQ
+	fBar+ORp1Ybc9+UwZ1EEGTK7AdRYCQ8GpqFpQ9QlWA93oV8WJXEfzQtxfsQNUi1dphW/AFDAFUxKA
+	M+h0GvXvjbHJCtxVYDvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3iVX-0006HN-Bd; Fri, 30 Aug 2019 15:08:11 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3iVM-0006H2-1k
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:08:01 +0000
-Received: by mail-wr1-x442.google.com with SMTP id g7so7348138wrx.2
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 08:07:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0pAZWJp00xZ1ls1Af08EI7mW5qet6OlsQR65F0SwZhs=;
- b=Uhod1U8XJp5hvgo/TUndU/vB/K3LqXxuAeZVAeuRIVdGOfTHzNRkOwN4osOc40UuE5
- 1zbifQ3t/DupGF//0a//lbZHwzoTo6QVboCPsr+tvklkQoTjH1/FYdaux2SjAfGCOpZ0
- aaXT7pAXocMPWV0Xg9GtrbNyGi3SmspC4gJtWpFECD2jINQg8+kDPQEGXlrAPljAZ6MO
- Bdigb/DGLDuPQjYHP6+nOeEcj4fW4+9AgzYdVUBteNpxJsrnLzwx/E63kRUe2CI/0SzE
- heoO2mGCnXSSOoKS6wS0YDpnRrp6s8F65jBfDu0Q/tvSU+1uM06S/GMYkDzLMDPtR3BH
- HskQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :mime-version:content-transfer-encoding;
- bh=0pAZWJp00xZ1ls1Af08EI7mW5qet6OlsQR65F0SwZhs=;
- b=kU5WJi4QXtXT0wPQ1NBzexJ3r02UilwlqxftAip7sl9QXsItrmkUEVua5cPkcHyGem
- 0fw6DUVWJGE6ELfxOhJSr3++zVaYItOL9qFHO+3FTUMANdsNh2gclLX5Cp2gePhRl49q
- G49KAG/5JHmSlXGYdrN/Y2c1aXXSso9k7WsMpqZYLJk60eSqxFdlrWjqw4AbXIcoWICS
- +5aAbpfoAk+C4VIUy9rqoCgWrJW9D4+KSqhN9YIpwuKBl53zOktxImCEKse3PcV+w8tX
- WgTbzJtOg5nA85B9jJBVT9iaLcUust9DgJ806k6Z++u5o/8x8mBpwHhTR5tA8hQ9QlnI
- 10CA==
-X-Gm-Message-State: APjAAAVDSurK2AFzRu39a+hZbg4eLcGBnLkEPY52bLhr8QNmnQWNFit2
- gYBnjnpk23HSHkxVq5hnnBE=
-X-Google-Smtp-Source: APXvYqzHQGc0Wx4HRiZiz1ofDsxcHrSk8e6DnIqmyFNiH0txU8A57/I3wSP5Sr5aEeWTtm785SC13w==
-X-Received: by 2002:adf:f507:: with SMTP id q7mr19297657wro.210.1567177678081; 
- Fri, 30 Aug 2019 08:07:58 -0700 (PDT)
-Received: from localhost.localdomain (ip5b4096c3.dynamic.kabel-deutschland.de.
- [91.64.150.195])
- by smtp.gmail.com with ESMTPSA id 16sm8270956wmx.45.2019.08.30.08.07.56
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 30 Aug 2019 08:07:57 -0700 (PDT)
-From: Krzysztof Wilczynski <kw@linux.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: [PATCH] PCI: Move ATS declarations to linux/pci.h
-Date: Fri, 30 Aug 2019 17:07:56 +0200
-Message-Id: <20190830150756.21305-1-kw@linux.com>
-X-Mailer: git-send-email 2.22.1
+	id 1i3iYj-0007uK-Pi; Fri, 30 Aug 2019 15:11:29 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3iYY-0007tu-2x
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 15:11:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B5FF8344;
+ Fri, 30 Aug 2019 08:11:16 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DAFFC3F703;
+ Fri, 30 Aug 2019 08:11:15 -0700 (PDT)
+Subject: Re: [PATCH v3 09/11] kselftest: arm64:
+ fake_sigreturn_duplicated_fpsimd
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190802170300.20662-10-cristian.marussi@arm.com>
+ <20190813162633.GG10425@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <303594b8-9cb5-5271-0a10-6c9eec0fa6e8@arm.com>
+Date: Fri, 30 Aug 2019 16:11:14 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190813162633.GG10425@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_080800_121787_363CDA02 
-X-CRM114-Status: GOOD (  13.24  )
-X-Spam-Score: 0.4 (/)
+X-CRM114-CacheID: sfid-20190830_081118_219991_80B1677B 
+X-CRM114-Status: GOOD (  16.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kswilczynski[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,264 +64,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Will Deacon <will@kernel.org>, Joerg Roedel <joro@8bytes.org>,
- linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
- linux-pci@vger.kernel.org, Robin Murphy <robin.murphy@arm.com>,
- David Woodhouse <dwmw2@infradead.org>, linux-arm-kernel@lists.infradead.org
+Cc: andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Move ATS function prototypes from include/linux/pci-ats.h to
-include/linux/pci.h so users only need to include <linux/pci.h>:
+On 13/08/2019 17:26, Dave Martin wrote:
+> On Fri, Aug 02, 2019 at 06:02:58PM +0100, Cristian Marussi wrote:
+>> Added a simple fake_sigreturn testcase which builds a ucontext_t
+> 
+> Add
 
-Realted to PRI capability:
+Ok
+> 
+>> with an anomalous additional fpsimd_context and place it onto the stack.
+>> Expects a SIGSEGV on test PASS.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>>  .../arm64/signal/testcases/.gitignore         |  1 +
+>>  .../fake_sigreturn_duplicated_fpsimd.c        | 62 +++++++++++++++++++
+>>  2 files changed, 63 insertions(+)
+>>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
+>>
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/.gitignore b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> index 17d1c5e73319..94f9baaf638c 100644
+>> --- a/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/.gitignore
+>> @@ -7,3 +7,4 @@ mangle_pstate_ssbs_regs
+>>  fake_sigreturn_bad_magic
+>>  fake_sigreturn_bad_size_for_magic0
+>>  fake_sigreturn_missing_fpsimd
+>> +fake_sigreturn_duplicated_fpsimd
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
+>> new file mode 100644
+>> index 000000000000..09af7a0f8776
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
+>> @@ -0,0 +1,62 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/* Copyright (C) 2019 ARM Limited */
+>> +
+> 
+> signal.h?
+Ok
+> 
+>> +#include <stdio.h>
+>> +#include <ucontext.h>
+>> +
+>> +#include "test_signals_utils.h"
+>> +#include "testcases.h"
+>> +
+>> +struct fake_sigframe sf;
+>> +
+>> +static int fake_sigreturn_duplicated_fpsimd_run(struct tdescr *td,
+>> +						siginfo_t *si, ucontext_t *uc)
+>> +{
+>> +	size_t resv_sz, offset;
+>> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
+>> +
+>> +	/* just to fill the ucontext_t with something real */
+>> +	if (!get_current_context(td, &sf.uc))
+>> +		return 1;
+>> +
+>> +	resv_sz = GET_SF_RESV_SIZE(sf);
+>> +	/*
+>> +	 * find the terminator, preserving existing headers
+>> +	 * and verify amount of spare room in __reserved area.
+>> +	 */
+>> +	head = get_terminator(shead, resv_sz, &offset);
+>> +	/*
+>> +	 * try stripping extra_context header when low on space:
+>> +	 * we need at least space for one additional fpsimd_context
+>> +	 */
+>> +	if (head && resv_sz - offset < sizeof(struct fpsimd_context)) {
+>> +		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
+>> +			resv_sz - offset);
+>> +		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offset);
+>> +	}
+>> +
+>> +	/* just give up and timeout if still not enough space */
+>> +	if (head &&
+>> +	    resv_sz - offset >= sizeof(struct fpsimd_context) + HDR_SZ) {
+>> +		fprintf(stderr, "Mangling template header. Spare space:%zd\n",
+>> +			resv_sz - offset);
+>> +		/* Add a spurios fpsimd_context */
+>> +		head->magic = FPSIMD_MAGIC;
+>> +		head->size = sizeof(struct fpsimd_context);
+>> +		/* and terminate */
+>> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
+>> +
+>> +		ASSERT_BAD_CONTEXT(&sf.uc);
+>> +		fake_sigreturn(&sf, sizeof(sf), 16);
+>> +	}
+>> +
+>> +	return 1;
+>> +}
+> 
 
-  pci_enable_pri()
-  pci_disable_pri()
-  pci_restore_pri_state()
-  pci_reset_pri()
+I'll convert to use new helper get_starting_head() to make space in __reserved.
 
-Related to PASID capability:
+Cheers
 
-  pci_enable_pasid()
-  pci_disable_pasid()
-  pci_restore_pasid_state()
-  pci_pasid_features()
-  pci_max_pasids()
-  pci_prg_resp_pasid_required()
+Cristian
 
-No functional changes intended.
-
-Signed-off-by: Krzysztof Wilczynski <kw@linux.com>
----
- drivers/iommu/amd_iommu.c   |  1 -
- drivers/iommu/arm-smmu-v3.c |  1 -
- drivers/iommu/intel-iommu.c |  1 -
- drivers/iommu/intel-pasid.c |  1 -
- drivers/iommu/intel-svm.c   |  1 -
- drivers/pci/ats.c           |  1 -
- drivers/pci/pci.c           |  1 -
- include/linux/pci-ats.h     | 77 -------------------------------------
- include/linux/pci.h         | 34 ++++++++++++++++
- 9 files changed, 34 insertions(+), 84 deletions(-)
- delete mode 100644 include/linux/pci-ats.h
-
-diff --git a/drivers/iommu/amd_iommu.c b/drivers/iommu/amd_iommu.c
-index 04a9f8443344..d43913386915 100644
---- a/drivers/iommu/amd_iommu.c
-+++ b/drivers/iommu/amd_iommu.c
-@@ -13,7 +13,6 @@
- #include <linux/acpi.h>
- #include <linux/amba/bus.h>
- #include <linux/platform_device.h>
--#include <linux/pci-ats.h>
- #include <linux/bitmap.h>
- #include <linux/slab.h>
- #include <linux/debugfs.h>
-diff --git a/drivers/iommu/arm-smmu-v3.c b/drivers/iommu/arm-smmu-v3.c
-index 0ad6d34d1e96..3bd9455efc39 100644
---- a/drivers/iommu/arm-smmu-v3.c
-+++ b/drivers/iommu/arm-smmu-v3.c
-@@ -29,7 +29,6 @@
- #include <linux/of_iommu.h>
- #include <linux/of_platform.h>
- #include <linux/pci.h>
--#include <linux/pci-ats.h>
- #include <linux/platform_device.h>
- 
- #include <linux/amba/bus.h>
-diff --git a/drivers/iommu/intel-iommu.c b/drivers/iommu/intel-iommu.c
-index 4658cda6f3d2..362845b5c88a 100644
---- a/drivers/iommu/intel-iommu.c
-+++ b/drivers/iommu/intel-iommu.c
-@@ -35,7 +35,6 @@
- #include <linux/syscore_ops.h>
- #include <linux/tboot.h>
- #include <linux/dmi.h>
--#include <linux/pci-ats.h>
- #include <linux/memblock.h>
- #include <linux/dma-contiguous.h>
- #include <linux/dma-direct.h>
-diff --git a/drivers/iommu/intel-pasid.c b/drivers/iommu/intel-pasid.c
-index 040a445be300..f670315afa67 100644
---- a/drivers/iommu/intel-pasid.c
-+++ b/drivers/iommu/intel-pasid.c
-@@ -16,7 +16,6 @@
- #include <linux/iommu.h>
- #include <linux/memory.h>
- #include <linux/pci.h>
--#include <linux/pci-ats.h>
- #include <linux/spinlock.h>
- 
- #include "intel-pasid.h"
-diff --git a/drivers/iommu/intel-svm.c b/drivers/iommu/intel-svm.c
-index 780de0caafe8..ee9dfc84f925 100644
---- a/drivers/iommu/intel-svm.c
-+++ b/drivers/iommu/intel-svm.c
-@@ -13,7 +13,6 @@
- #include <linux/intel-svm.h>
- #include <linux/rculist.h>
- #include <linux/pci.h>
--#include <linux/pci-ats.h>
- #include <linux/dmar.h>
- #include <linux/interrupt.h>
- #include <linux/mm_types.h>
-diff --git a/drivers/pci/ats.c b/drivers/pci/ats.c
-index e18499243f84..3f5fb2d4a763 100644
---- a/drivers/pci/ats.c
-+++ b/drivers/pci/ats.c
-@@ -10,7 +10,6 @@
-  */
- 
- #include <linux/export.h>
--#include <linux/pci-ats.h>
- #include <linux/pci.h>
- #include <linux/slab.h>
- 
-diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
-index f20a3de57d21..c8f2a05e6b37 100644
---- a/drivers/pci/pci.c
-+++ b/drivers/pci/pci.c
-@@ -29,7 +29,6 @@
- #include <linux/pm_runtime.h>
- #include <linux/pci_hotplug.h>
- #include <linux/vmalloc.h>
--#include <linux/pci-ats.h>
- #include <asm/setup.h>
- #include <asm/dma.h>
- #include <linux/aer.h>
-diff --git a/include/linux/pci-ats.h b/include/linux/pci-ats.h
-deleted file mode 100644
-index 1ebb88e7c184..000000000000
---- a/include/linux/pci-ats.h
-+++ /dev/null
-@@ -1,77 +0,0 @@
--/* SPDX-License-Identifier: GPL-2.0 */
--#ifndef LINUX_PCI_ATS_H
--#define LINUX_PCI_ATS_H
--
--#include <linux/pci.h>
--
--#ifdef CONFIG_PCI_PRI
--
--int pci_enable_pri(struct pci_dev *pdev, u32 reqs);
--void pci_disable_pri(struct pci_dev *pdev);
--void pci_restore_pri_state(struct pci_dev *pdev);
--int pci_reset_pri(struct pci_dev *pdev);
--
--#else /* CONFIG_PCI_PRI */
--
--static inline int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
--{
--	return -ENODEV;
--}
--
--static inline void pci_disable_pri(struct pci_dev *pdev)
--{
--}
--
--static inline void pci_restore_pri_state(struct pci_dev *pdev)
--{
--}
--
--static inline int pci_reset_pri(struct pci_dev *pdev)
--{
--	return -ENODEV;
--}
--
--#endif /* CONFIG_PCI_PRI */
--
--#ifdef CONFIG_PCI_PASID
--
--int pci_enable_pasid(struct pci_dev *pdev, int features);
--void pci_disable_pasid(struct pci_dev *pdev);
--void pci_restore_pasid_state(struct pci_dev *pdev);
--int pci_pasid_features(struct pci_dev *pdev);
--int pci_max_pasids(struct pci_dev *pdev);
--int pci_prg_resp_pasid_required(struct pci_dev *pdev);
--
--#else  /* CONFIG_PCI_PASID */
--
--static inline int pci_enable_pasid(struct pci_dev *pdev, int features)
--{
--	return -EINVAL;
--}
--
--static inline void pci_disable_pasid(struct pci_dev *pdev)
--{
--}
--
--static inline void pci_restore_pasid_state(struct pci_dev *pdev)
--{
--}
--
--static inline int pci_pasid_features(struct pci_dev *pdev)
--{
--	return -EINVAL;
--}
--
--static inline int pci_max_pasids(struct pci_dev *pdev)
--{
--	return -EINVAL;
--}
--
--static inline int pci_prg_resp_pasid_required(struct pci_dev *pdev)
--{
--	return 0;
--}
--#endif /* CONFIG_PCI_PASID */
--
--
--#endif /* LINUX_PCI_ATS_H*/
-diff --git a/include/linux/pci.h b/include/linux/pci.h
-index 463486016290..8ac142801890 100644
---- a/include/linux/pci.h
-+++ b/include/linux/pci.h
-@@ -2349,6 +2349,40 @@ static inline bool pci_is_thunderbolt_attached(struct pci_dev *pdev)
- void pci_uevent_ers(struct pci_dev *pdev, enum  pci_ers_result err_type);
- #endif
- 
-+#ifdef CONFIG_PCI_PRI
-+int pci_enable_pri(struct pci_dev *pdev, u32 reqs);
-+void pci_disable_pri(struct pci_dev *pdev);
-+void pci_restore_pri_state(struct pci_dev *pdev);
-+int pci_reset_pri(struct pci_dev *pdev);
-+#else /* CONFIG_PCI_PRI */
-+static inline int pci_enable_pri(struct pci_dev *pdev, u32 reqs)
-+{ return -ENODEV; }
-+static inline void pci_disable_pri(struct pci_dev *pdev) { }
-+static inline void pci_restore_pri_state(struct pci_dev *pdev) { }
-+static inline int pci_reset_pri(struct pci_dev *pdev)
-+{ return -ENODEV; }
-+#endif /* CONFIG_PCI_PRI */
-+
-+#ifdef CONFIG_PCI_PASID
-+int pci_enable_pasid(struct pci_dev *pdev, int features);
-+void pci_disable_pasid(struct pci_dev *pdev);
-+void pci_restore_pasid_state(struct pci_dev *pdev);
-+int pci_pasid_features(struct pci_dev *pdev);
-+int pci_max_pasids(struct pci_dev *pdev);
-+int pci_prg_resp_pasid_required(struct pci_dev *pdev);
-+#else  /* CONFIG_PCI_PASID */
-+static inline int pci_enable_pasid(struct pci_dev *pdev, int features)
-+{ return -EINVAL; }
-+static inline void pci_disable_pasid(struct pci_dev *pdev) { }
-+static inline void pci_restore_pasid_state(struct pci_dev *pdev) { }
-+static inline int pci_pasid_features(struct pci_dev *pdev)
-+{ return -EINVAL; }
-+static inline int pci_max_pasids(struct pci_dev *pdev)
-+{ return -EINVAL; }
-+static inline int pci_prg_resp_pasid_required(struct pci_dev *pdev)
-+{ return 0; }
-+#endif /* CONFIG_PCI_PASID */
-+
- /* Provide the legacy pci_dma_* API */
- #include <linux/pci-dma-compat.h>
- 
--- 
-2.22.1
+> [...]
+> 
+> Otherwise looks ok.
+> 
+> Cheers
+> ---Dave
+> 
 
 
 _______________________________________________
