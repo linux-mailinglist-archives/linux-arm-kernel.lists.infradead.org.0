@@ -2,54 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8396BA3701
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:44:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6A31FA373B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:55:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:References:Message-Id:Date:
-	In-Reply-To:From:Subject:Mime-Version:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7otter05N/waINYDQ0aOohMr6gHzr4yM3jV35Z1YSS8=; b=F5i5WAd5xllYEm
-	WifqSZUoavcVA6vpfoL9WL2I0e5y2fJP8XXornOHM3Gmk7JGK8L5YqDVNhDE2eRRbhSdukMRqb7dB
-	fS9vEtXt5XozxNzYjSXhgAxaVhlHe+TLQDDcODcQ/wwm6xrOTL809KGl1E9UBz4vYBnu19NaDb2cJ
-	LcqEk/kINoVpL5FYxr16xR4enHWygB50XfPzPzbCsKb9DLA2Eub+TrJRtjw5AxEykkWvnb3KJYdZd
-	o77Qsw4TmMOR2mJOnH0Gsk+80cuxHVvcx84hZCjO6xlJfyODl2wVYR4adlhWZvE9DjN+dXGR77yqa
-	5xz15riIIfw0eutQzm4A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=g0Afy3PnbWjFzHj463VUvvnd+aJck3Zn77AZ24ld8P4=; b=eA5
+	H3sWgOHyFoe3Se/apY5bCf75VNFfUHyw3vtrXruhfihb5+WRSucuiYM8SLMyV3jAAi7C863In9h0B
+	mXk2Kf2cY6bUujF4kYeebxYrXhLj9qnOkWiTl3eAGd1wsZEnXF0S8w6AmBa4/FPoecLVtZZDE4uRO
+	G/s/qL7KIH6NubrSPdyWcecmmLDn5b+TcNeOBXNmmJ11R7/yk7LQRkAD6OyPReAy4eJJt3TRxm5++
+	3mqp05uPVfiCnt+8o5GqTXeYW0vyCJY7r2CDqETjrXUrzUcSN4SceetGlQm/qxYUnVSn7Jqf3/I+S
+	mDSvUixDiM/20PWFWDCo3j80IwfwjBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3gGB-0001Kj-7t; Fri, 30 Aug 2019 12:44:11 +0000
-Received: from coyote.holtmann.net ([212.227.132.17] helo=mail.holtmann.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3gFu-0001Jl-Fa
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:43:56 +0000
-Received: from marcel-macbook.fritz.box (p4FEFC580.dip0.t-ipconnect.de
- [79.239.197.128])
- by mail.holtmann.org (Postfix) with ESMTPSA id 17EFACECDE;
- Fri, 30 Aug 2019 14:52:35 +0200 (CEST)
-Mime-Version: 1.0 (Mac OS X Mail 12.4 \(3445.104.11\))
-Subject: Re: [RESEND PATCH 0/5] Add bluetooth support for Orange Pi 3
-From: Marcel Holtmann <marcel@holtmann.org>
-In-Reply-To: <20190830092104.odipmbflounqpffo@flea>
-Date: Fri, 30 Aug 2019 14:43:48 +0200
-Message-Id: <D02B89FB-F8C0-40AD-A99A-6C1B4FEB72A0@holtmann.org>
-References: <20190823103139.17687-1-megous@megous.com>
- <5524D5E9-FA82-4244-A91F-78CF1C3FB3FB@holtmann.org>
- <20190830092104.odipmbflounqpffo@flea>
-To: Maxime Ripard <mripard@kernel.org>
-X-Mailer: Apple Mail (2.3445.104.11)
+	id 1i3gQm-0004cO-QK; Fri, 30 Aug 2019 12:55:08 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3gQY-0004bS-91
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:54:55 +0000
+Received: by mail-pf1-x443.google.com with SMTP id b24so4640472pfp.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 05:54:52 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=NNZTN+WQXt07/j/McJZ3KBjtoeBvNNmWQ056voTxfiM=;
+ b=r3LMGzyx+ZvjV8GlVBxtzk0bSXmI6YPya2Z+VV787v/dxqRkzUSdqMoJr3BP/AdXVA
+ yOnUJHMm3fo/9FzNz4iSp4X/yzVvvt3EeiWmaukn9gwfHM5aicnJ7AU4RGFV2l11U3Oe
+ Msk6MV2Zi4Sl8E3T+prgYG0386TuPMJmAomxuDqwrrQrodGaE/Qwoe9IuXCPda7DDdwW
+ zJ1WvxDn2Cu1wEtI6UvZ0mwgUew0vK4Ba8z4RbiMBYHQUUNyss2N86wQ9exXNIyR+J7V
+ 36fws7anJkOwLnvS9xCnLygo5oW3GuTBKwAo+E1vy2qmlt4FS3DHE3MwYOfmHZIvRIRL
+ KoNA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=NNZTN+WQXt07/j/McJZ3KBjtoeBvNNmWQ056voTxfiM=;
+ b=Dy+MzgBzXAmPO6yj5RFM+xoXcNdQrsyP8hzlpTaPE9TBC4ge9tZNPQmKg8IX/TO3en
+ 056gOLaULEUUGEGrKM/6GYQJFdriNEWvdD0K8qBU/vjim77nfhi2+QPXt45kTSyp2PNu
+ YPMhrYl5BiJdEStr4uQd97iA3OqeYN6teCd5In79DWvIKImJvlgnPp+zWjpoO6BUVMfw
+ opcbKEXZCHb8InRMXMk6OU0fTrT3V+tLlgXp6o3r0vlqFx8qREMEjhLBWTeQtN+AiHZH
+ OfbU3YBAX36kCZMXQP4iCgpHNOYdhymhLlZsL6nRcbhBYv0lvsF91BH5Z2L4OthhAwPd
+ DZ9w==
+X-Gm-Message-State: APjAAAWHivGhyi3S29oF3kF4xEQjUzubX2ip54cBEWrKdxJWM+HJFb05
+ y0MzMPWaI7fTauLyoYqsJw8=
+X-Google-Smtp-Source: APXvYqwGtfgFCLtLkW6um+vUd1H1urHTPtZAgLo0Vny3nBbacPkJ9IiTdsOutWgr+AjLqpKq8snq4g==
+X-Received: by 2002:a63:5945:: with SMTP id j5mr12831171pgm.452.1567169692018; 
+ Fri, 30 Aug 2019 05:54:52 -0700 (PDT)
+Received: from localhost.localdomain.com ([115.113.156.3])
+ by smtp.gmail.com with ESMTPSA id e189sm5871043pgc.15.2019.08.30.05.54.47
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 30 Aug 2019 05:54:51 -0700 (PDT)
+From: ganapat <gklkml16@gmail.com>
+X-Google-Original-From: ganapat <ganapat@localhost.localdomain>
+To: linux-doc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH v5 0/2] Add CCPI2 PMU support
+Date: Fri, 30 Aug 2019 18:24:34 +0530
+Message-Id: <20190830125436.16959-1-ganapat@localhost.localdomain>
+X-Mailer: git-send-email 2.9.5
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_054354_671814_7625091C 
-X-CRM114-Status: GOOD (  10.90  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190830_055454_344998_B80388D4 
+X-CRM114-Status: UNSURE (   7.16  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.7 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 1.0 HK_RANDOM_FROM         From username looks random
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.132.17 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (gklkml16[at]gmail.com)
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (gklkml16[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,61 +100,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: megous@megous.com, Mark Rutland <mark.rutland@arm.com>,
- Johan Hedberg <johan.hedberg@gmail.com>, devicetree@vger.kernel.org,
- netdev@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-bluetooth@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, "David S. Miller" <davem@davemloft.net>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, gkulkarni@marvell.com, corbet@lwn.net,
+ jglauber@marvell.com, jnair@marvell.com, rrichter@marvell.com, will@kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Maxime,
+From: Ganapatrao Kulkarni <gkulkarni@marvell.com>
 
->>> (Resend to add missing lists, sorry for the noise.)
->>> 
->>> This series implements bluetooth support for Xunlong Orange Pi 3 board.
->>> 
->>> The board uses AP6256 WiFi/BT 5.0 chip.
->>> 
->>> Summary of changes:
->>> 
->>> - add more delay to let initialize the chip
->>> - let the kernel detect firmware file path
->>> - add new compatible and update dt-bindings
->>> - update Orange Pi 3 / H6 DTS
->>> 
->>> Please take a look.
->>> 
->>> thank you and regards,
->>> Ondrej Jirman
->>> 
->>> Ondrej Jirman (5):
->>> dt-bindings: net: Add compatible for BCM4345C5 bluetooth device
->>> bluetooth: bcm: Add support for loading firmware for BCM4345C5
->>> bluetooth: hci_bcm: Give more time to come out of reset
->>> arm64: dts: allwinner: h6: Add pin configs for uart1
->>> arm64: dts: allwinner: orange-pi-3: Enable UART1 / Bluetooth
->>> 
->>> .../bindings/net/broadcom-bluetooth.txt       |  1 +
->>> .../dts/allwinner/sun50i-h6-orangepi-3.dts    | 19 +++++++++++++++++++
->>> arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  | 10 ++++++++++
->>> drivers/bluetooth/btbcm.c                     |  3 +++
->>> drivers/bluetooth/hci_bcm.c                   |  3 ++-
->>> 5 files changed, 35 insertions(+), 1 deletion(-)
->> 
->> all 5 patches have been applied to bluetooth-next tree.
-> 
-> The DTS patches (last 2) should go through the arm-soc tree, can you
-> drop them?
+Add Cavium Coherent Processor Interconnect (CCPI2) PMU
+support in ThunderX2 Uncore driver.
 
-why is that? We have included DTS changes for Bluetooth devices directly all the time. What is different with this hardware?
+v5:
+	Fixed minor bug of v4 (timer callback fuction
+	was getting initialized to NULL for all PMUs).
 
-Regards
+v4:
+	Update with review comments [2].
+	Changed Counter read to 2 word read since single dword read is misbhehaving(hw issue).
 
-Marcel
+[2] https://lkml.org/lkml/2019/7/23/231
+
+v3: Rebased to 5.3-rc1
+
+v2: Updated with review comments [1]
+
+[1] https://lkml.org/lkml/2019/6/14/965
+
+v1: initial patch
+
+
+Ganapatrao Kulkarni (2):
+  Documentation: perf: Update documentation for ThunderX2 PMU uncore
+    driver
+  drivers/perf: Add CCPI2 PMU support in ThunderX2 UNCORE driver.
+
+ .../admin-guide/perf/thunderx2-pmu.rst        |  20 +-
+ drivers/perf/thunderx2_pmu.c                  | 267 +++++++++++++++---
+ 2 files changed, 245 insertions(+), 42 deletions(-)
+
+-- 
+2.17.1
 
 
 _______________________________________________
