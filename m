@@ -2,66 +2,116 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9107AA2CCD
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 04:24:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B72C0A2CD5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 04:26:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4mY2+se9fF8VKxm/DCQK+XyX+0mQIFeytCERw3GdAcI=; b=unbuIS5yKJHTwT
-	FXG+roTb5ywmJcGOyYLjEW00CFzGwmAFwxQatiSHTgLRVEI+/cAkUIGcj8FdjHYYRm2+hZHTfCQEJ
-	soQPDUPM/KCUgEdj0uP0BHRKPk3WgTr70odUjd9FAggbEgKfxAp7RpLRaKK3+PZO/oxkWJM8apTkh
-	nQLoFlJUEXtcwqDixPgra90HNqNguoa4talyByUKI89Z51sJZi0hx4q6+p62mtzbHUMDCZup0ljI5
-	LIs6K3npZBrPAsKrVTHGzKpZ97rrpYNwKsvK5bs/3Lc/Zo3II2zlO4rMY4hiFx3PmcDhJvGhmz7ac
-	n0IvfKp2VcMrP+CzSlLw==;
+	List-Owner; bh=UgFNUqnUXmkDk/aJl6W+zS/9zuoQ+30MTjGGgLaeOBY=; b=sLa7lEgb9pyZT+
+	c61IL5ePu6583787Y76CeRBDWZPFxhWCVdWMkwCVidpnfWLF3y7C1cUA+jFLBfcb4/42Bw5SimKHM
+	bhdNwCA8j2AvPDZKRzbPDb1tBd7vjyWzsddKkMU8Q52+eqXUZ4vOvVDGwpeskEkylKzdBaahrSj8i
+	s7CNjPWH5wxuHlzOgmKGVSE49HW9vmwHcNxA36A7ObsYpiTXDz1mqtzXTbeRa4zoGpuDMSqUJdUc3
+	kh1+RvRM5OfX6WFx5xyd2ftFGtmOmmhJszo5w1LRmZ78HrByXHq2Bv9H/L7QrlMaGZsXMAivlx6+6
+	ocxsyEdTLk4E4mC5ZQNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3WaA-0007MC-2p; Fri, 30 Aug 2019 02:24:10 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i3Wbv-0000V9-Go; Fri, 30 Aug 2019 02:25:59 +0000
+Received: from mail-eopbgr140058.outbound.protection.outlook.com
+ ([40.107.14.58] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3WZv-0007Ln-Fx; Fri, 30 Aug 2019 02:23:57 +0000
-X-UUID: 6e1a23302ad84c829ce35fb01d183ce0-20190829
-X-UUID: 6e1a23302ad84c829ce35fb01d183ce0-20190829
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <houlong.wei@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1029712838; Thu, 29 Aug 2019 18:23:56 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 29 Aug 2019 19:23:54 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 30 Aug 2019 10:23:49 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 30 Aug 2019 10:23:48 +0800
-Message-ID: <1567131823.24642.4.camel@mhfsdcap03>
-Subject: Re: [PATCH v14 07/10] soc: mediatek: cmdq: define the instruction
- struct
-From: houlong wei <houlong.wei@mediatek.com>
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
-Date: Fri, 30 Aug 2019 10:23:43 +0800
-In-Reply-To: <20190829014817.25482-9-bibby.hsieh@mediatek.com>
-References: <20190829014817.25482-1-bibby.hsieh@mediatek.com>
- <20190829014817.25482-9-bibby.hsieh@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i3Wbh-0000U4-Kc
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 02:25:47 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=HS73P/9Grg272I/LAnvqn7ZnjvgkwRjDqIBAtz33udTtL5g1HY2ZsCaWLCCo98uxjwTB4hKarDsoIbBesQoOtJFt3wgYqTXWpk0L+bGvh/Lz45aJ5Uy74og2yE9b4jjSMrjsZgK5Y+dmj99zf/K2qZlWxJ9i09brIBcX7YlTxIvfKDbgdAtAuV69fR/DaHDZK1ma+XMoiQf4VgI0ecg5wBzMNsofCDAWjH1xyGLmzQGVx7IoYW4nIMurQ7DwfDUqwrZMzNvZzWqqNxhcW0vJiUdlvJaGoZwGRMQnixEWlpI6gEsbZkWIdpw+BRFNWZy/xAHP98OFanWLXr/wSZGtGg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KohN8AGSzhrAautBR1dySztVsWlcMLcWFZyiBA4597I=;
+ b=CjW5UY0cfsNhBfUPuOil4lomhGaMzBoBmYIxeb6DBHIHAgcNyeLPedmg6ebBA1OQYeVoA0R80C9I4RHm95X588Ml5sx+ZHRW13W6xBFvwzYPkzAywC4mwxMhlmq0IT20kIOUj8G04tOXg7tYdMelhNaRfJQK8Kp+MGsjiIkcQMyeuPp1V5kJ9EciCKpexonQvFeyNsDDfADjUM2ox3O/hYOLWIdtZPu82OziX2mKJW9VJjG4KN7aq6DqD2K/Gia4fDiRaNbDbMXcB5eRF2agL7/uriX674P8VRfgQ13aiBmpDUsyt6m0kcNECJLtt3I58tzpvzXq7y4vZjwt8LsPfA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KohN8AGSzhrAautBR1dySztVsWlcMLcWFZyiBA4597I=;
+ b=WcEbpjHRoIJ9MH0cYMmeh3B2ImA3Srp3PM9PS+pKnYlzgQwUdErh46kSl+BfrhY0t52RtG02zpkMI7CxOvN4n/9pJEmCxK2mDCpQeUJEK0QjVMH1oEJ91uHRFu3cE8gEM6HriEL6p1bzjtWBoIWUKHVUIoSPf4HRHlpGtNZTOJc=
+Received: from VI1PR04MB5327.eurprd04.prod.outlook.com (20.177.52.16) by
+ VI1PR04MB6863.eurprd04.prod.outlook.com (52.133.244.215) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2199.20; Fri, 30 Aug 2019 02:25:40 +0000
+Received: from VI1PR04MB5327.eurprd04.prod.outlook.com
+ ([fe80::e039:172d:fe77:320a]) by VI1PR04MB5327.eurprd04.prod.outlook.com
+ ([fe80::e039:172d:fe77:320a%4]) with mapi id 15.20.2220.013; Fri, 30 Aug 2019
+ 02:25:40 +0000
+From: Peter Chen <peter.chen@nxp.com>
+To: =?iso-8859-1?Q?Thomas_Sch=E4fer?= <thomas.schaefer@kontron.com>
+Subject: Re: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
+Thread-Topic: [PATCH] ARM: dts: imx7: fix USB controller 'size' parameter
+Thread-Index: AQHVXoFWvyl/j3PqHU+yZINpJASVyqcS92qA
+Date: Fri, 30 Aug 2019 02:25:40 +0000
+Message-ID: <20190830022539.GA1146@b29397-desktop>
+References: <20190829154913.2049-1-thomas.schaefer@kontron.com>
+In-Reply-To: <20190829154913.2049-1-thomas.schaefer@kontron.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peter.chen@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 29f1562b-e650-4e32-ddd8-08d72cf159e7
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VI1PR04MB6863; 
+x-ms-traffictypediagnostic: VI1PR04MB6863:
+x-ld-processed: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635,ExtAddr
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR04MB6863BC43160B6A85311EE5C38BBD0@VI1PR04MB6863.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4941;
+x-forefront-prvs: 0145758B1D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(7916004)(39860400002)(396003)(376002)(366004)(346002)(136003)(189003)(199004)(25786009)(76176011)(99286004)(3846002)(6116002)(6916009)(8936002)(5660300002)(91956017)(76116006)(66066001)(71190400001)(71200400001)(64756008)(66476007)(66556008)(66946007)(229853002)(14454004)(53546011)(6506007)(102836004)(9686003)(6512007)(26005)(44832011)(186003)(8676002)(53936002)(66446008)(478600001)(81166006)(86362001)(6436002)(6486002)(4326008)(6246003)(316002)(256004)(486006)(33716001)(476003)(2906002)(33656002)(7736002)(446003)(11346002)(54906003)(81156014)(305945005)(1076003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB6863;
+ H:VI1PR04MB5327.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: EWsiI1g9aoxckmnFDm5GgZgaQXohZQrGj0g8kZNQ/UlgeOglTwfVnZhYMZ7yxlTB7TO96aTKElJkK0G6/pcHLQ86nxuc3yR+ip/XjQiRmE8DgTVUxdWOdoSPdZA4dJF1q4Oo7FLzl2UfKVbq4l8Q4fJqw6qiPSYSWWAluD6TyPgp56VtLnhpzKmyIB2tNfmdB0nREE3yALh2I8pOvurDxKqL1o2YYxoJhr2dW6I2QOOnMhU5eYXbLX/Ce3M3T+5mc7ZtaEN8G9UeaRjV9FRg62LZl5LICWyHNQUt81furLT6azV1hA2f6hcuzU9+saWMKTwtiiulu/8CBKcCeEhv3hoqc3REDugVabfwmGS4GR5jKaye5P4/Z+2vT+XulbgDySpMHYVoKMbrMjqX4FcFHNhsTTsSTC+4bDan7eLmAFA=
+Content-ID: <6C06C22DCBE6A242BB6DA7E7E3FA9468@eurprd04.prod.outlook.com>
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 12636E4DEB4769029CE24443B391F3E200D9807E82F84E9F8E69B09A8C990E5C2000:8
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 29f1562b-e650-4e32-ddd8-08d72cf159e7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Aug 2019 02:25:40.1356 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: I8CVl/XI4Zj91ooq6bIC+hQaoYi3lGQpui2/DZZ6dtj1G7/HmCytsjJQceMF3CYcmWwHjjSAruzEFxiDhLpfvA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB6863
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_192355_541087_7CF83763 
-X-CRM114-Status: GOOD (  17.50  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190829_192545_846684_E64F08EC 
+X-CRM114-Status: GOOD (  15.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.14.58 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,221 +123,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Nicolas Boichat <drinkcat@chromium.org>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Jassi Brar <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- houlong.wei@mediatek.com,
- Dennis-YC Hsieh =?UTF-8?Q?=28=E8=AC=9D=E5=AE=87=E5=93=B2=29?=
- <Dennis-YC.Hsieh@mediatek.com>,
- CK Hu =?UTF-8?Q?=28=E8=83=A1=E4=BF=8A=E5=85=89=29?= <ck.hu@mediatek.com>,
- Rob Herring <robh+dt@kernel.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 2019-08-29 at 09:48 +0800, Bibby Hsieh wrote:
-> Define an instruction structure for gce driver to append command.
-> This structure can make the client's code more readability.
+On 19-08-29 17:49:13, Thomas Schaefer wrote:
+> Currently the size parameter in the reg property of usbotg and
+> usbh nodes in imx7s and imx7d dts includes is set to 0x200 which
+> is wrong for the i.MX7 CPU. According to reference manual, spacing
+> of USB controller registers is 0x10000 instead.
 > 
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> Reviewed-by: CK Hu <ck.hu@mediatek.com>
-> Reviewed-by: Houlong Wei <houlong.wei@mediatek.com>
+> This patch will fix this and set the 'size' to 0x10000.
+> 
+> Signed-off-by: Thomas Schaefer <thomas.schaefer@kontron.com>
 > ---
->  drivers/soc/mediatek/mtk-cmdq-helper.c   | 77 ++++++++++++++++--------
->  include/linux/mailbox/mtk-cmdq-mailbox.h | 10 +++
->  2 files changed, 61 insertions(+), 26 deletions(-)
+>  arch/arm/boot/dts/imx7d.dtsi | 2 +-
+>  arch/arm/boot/dts/imx7s.dtsi | 4 ++--
+>  2 files changed, 3 insertions(+), 3 deletions(-)
 > 
-> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> index 7aa0517ff2f3..9472526ab076 100644
-> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
-> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
-> @@ -9,12 +9,24 @@
->  #include <linux/mailbox_controller.h>
->  #include <linux/soc/mediatek/mtk-cmdq.h>
+> diff --git a/arch/arm/boot/dts/imx7d.dtsi b/arch/arm/boot/dts/imx7d.dtsi
+> index 42528d2812a2..f1b098d28b6e 100644
+> --- a/arch/arm/boot/dts/imx7d.dtsi
+> +++ b/arch/arm/boot/dts/imx7d.dtsi
+> @@ -117,7 +117,7 @@
+>  &aips3 {
+>  	usbotg2: usb@30b20000 {
+>  		compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+> -		reg = <0x30b20000 0x200>;
+> +		reg = <0x30b20000 0x10000>;
+>  		interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
+>  		clocks = <&clks IMX7D_USB_CTRL_CLK>;
+>  		fsl,usbphy = <&usbphynop2>;
+> diff --git a/arch/arm/boot/dts/imx7s.dtsi b/arch/arm/boot/dts/imx7s.dtsi
+> index c1a4fff5ceda..9e25fccf33f0 100644
+> --- a/arch/arm/boot/dts/imx7s.dtsi
+> +++ b/arch/arm/boot/dts/imx7s.dtsi
+> @@ -1088,7 +1088,7 @@
 >  
-> -#define CMDQ_ARG_A_WRITE_MASK	0xffff
->  #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
->  #define CMDQ_EOC_IRQ_EN		BIT(0)
->  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
->  				<< 32 | CMDQ_EOC_IRQ_EN)
+>  			usbotg1: usb@30b10000 {
+>  				compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+> -				reg = <0x30b10000 0x200>;
+> +				reg = <0x30b10000 0x10000>;
+>  				interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
+>  				clocks = <&clks IMX7D_USB_CTRL_CLK>;
+>  				fsl,usbphy = <&usbphynop1>;
+> @@ -1099,7 +1099,7 @@
 >  
-> +struct cmdq_instruction {
-> +	union {
-> +		u32 value;
-> +		u32 mask;
-> +	};
-> +	union {
-> +		u16 offset;
-> +		u16 event;
-> +	};
-> +	u8 subsys;
-> +	u8 op;
-> +};
-> +
->  static void cmdq_client_timeout(struct timer_list *t)
->  {
->  	struct cmdq_client *client = from_timer(client, t, timer);
-> @@ -110,10 +122,10 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt)
->  }
->  EXPORT_SYMBOL(cmdq_pkt_destroy);
->  
-> -static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
-> -				   u32 arg_a, u32 arg_b)
-> +static int cmdq_pkt_append_command(struct cmdq_pkt *pkt,
-> +				   struct cmdq_instruction inst)
+>  			usbh: usb@30b30000 {
+>  				compatible = "fsl,imx7d-usb", "fsl,imx27-usb";
+> -				reg = <0x30b30000 0x200>;
+> +				reg = <0x30b30000 0x10000>;
+>  				interrupts = <GIC_SPI 40 IRQ_TYPE_LEVEL_HIGH>;
+>  				clocks = <&clks IMX7D_USB_CTRL_CLK>;
+>  				fsl,usbphy = <&usbphynop3>;
 
-Can we use 'struct cmdq_instruction *inst' instead of 'struct
-cmdq_instruction inst' to reduce stack memory consumption a bit?
+Hi Thomos,
 
->  {
-> -	u64 *cmd_ptr;
-> +	struct cmdq_instruction *cmd_ptr;
->  
->  	if (unlikely(pkt->cmd_buf_size + CMDQ_INST_SIZE > pkt->buf_size)) {
->  		/*
-> @@ -129,8 +141,9 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
->  			__func__, (u32)pkt->buf_size);
->  		return -ENOMEM;
->  	}
-> +
->  	cmd_ptr = pkt->va_base + pkt->cmd_buf_size;
-> -	(*cmd_ptr) = (u64)((code << CMDQ_OP_CODE_SHIFT) | arg_a) << 32 | arg_b;
-> +	*cmd_ptr = inst;
->  	pkt->cmd_buf_size += CMDQ_INST_SIZE;
->  
->  	return 0;
-> @@ -138,24 +151,31 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
->  
->  int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
->  {
-> -	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
-> -		    (subsys << CMDQ_SUBSYS_SHIFT);
-> +	struct cmdq_instruction inst;
-> +
-> +	inst.op = CMDQ_CODE_WRITE;
-> +	inst.value = value;
-> +	inst.offset = offset;
-> +	inst.subsys = subsys;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WRITE, arg_a, value);
-> +	return cmdq_pkt_append_command(pkt, inst);
->  }
->  EXPORT_SYMBOL(cmdq_pkt_write);
->  
->  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
->  			u16 offset, u32 value, u32 mask)
->  {
-> -	u32 offset_mask = offset;
-> +	struct cmdq_instruction inst = { {0} };
-> +	u16 offset_mask = offset;
->  	int err = 0;
->  
->  	if (mask != 0xffffffff) {
-> -		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
-> +		inst.op = CMDQ_CODE_MASK;
-> +		inst.mask = ~mask;
-> +		err = cmdq_pkt_append_command(pkt, inst);
->  		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
->  	}
-> -	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
-> +	err |= cmdq_pkt_write(pkt, subsys, offset_mask, value);
->  
->  	return err;
->  }
-> @@ -163,43 +183,48 @@ EXPORT_SYMBOL(cmdq_pkt_write_mask);
->  
->  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
->  {
-> -	u32 arg_b;
-> +	struct cmdq_instruction inst = { {0} };
->  
->  	if (event >= CMDQ_MAX_EVENT)
->  		return -EINVAL;
->  
-> -	/*
-> -	 * WFE arg_b
-> -	 * bit 0-11: wait value
-> -	 * bit 15: 1 - wait, 0 - no wait
-> -	 * bit 16-27: update value
-> -	 * bit 31: 1 - update, 0 - no update
-> -	 */
-> -	arg_b = CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | CMDQ_WFE_WAIT_VALUE;
-> +	inst.op = CMDQ_CODE_WFE;
-> +	inst.value = CMDQ_WFE_OPTION;
-> +	inst.event = event;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event, arg_b);
-> +	return cmdq_pkt_append_command(pkt, inst);
->  }
->  EXPORT_SYMBOL(cmdq_pkt_wfe);
->  
->  int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
->  {
-> +	struct cmdq_instruction inst = { {0} };
-> +
->  	if (event >= CMDQ_MAX_EVENT)
->  		return -EINVAL;
->  
-> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event,
-> -				       CMDQ_WFE_UPDATE);
-> +	inst.op = CMDQ_CODE_WFE;
-> +	inst.value = CMDQ_WFE_UPDATE;
-> +	inst.event = event;
-> +
-> +	return cmdq_pkt_append_command(pkt, inst);
->  }
->  EXPORT_SYMBOL(cmdq_pkt_clear_event);
->  
->  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
->  {
-> -	int err;
-> +	struct cmdq_instruction inst = { {0} };
-> +	int err = 0;
->  
->  	/* insert EOC and generate IRQ for each command iteration */
-> -	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_EOC, 0, CMDQ_EOC_IRQ_EN);
-> +	inst.op = CMDQ_CODE_EOC;
-> +	inst.value = CMDQ_EOC_IRQ_EN;
-> +	err = cmdq_pkt_append_command(pkt, inst);
->  
->  	/* JUMP to end */
-> -	err |= cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
-> +	inst.op = CMDQ_CODE_JUMP;
-> +	inst.value = CMDQ_JUMP_PASS;
-> +	err |= cmdq_pkt_append_command(pkt, inst);
->  
->  	return err;
->  }
-> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> index e6f54ef6698b..678760548791 100644
-> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
-> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
-> @@ -20,6 +20,16 @@
->  #define CMDQ_WFE_WAIT			BIT(15)
->  #define CMDQ_WFE_WAIT_VALUE		0x1
->  
-> +/*
-> + * WFE arg_b
-> + * bit 0-11: wait value
-> + * bit 15: 1 - wait, 0 - no wait
-> + * bit 16-27: update value
-> + * bit 31: 1 - update, 0 - no update
-> + */
-> +#define CMDQ_WFE_OPTION			(CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | \
-> +					CMDQ_WFE_WAIT_VALUE)
-> +
->  /** cmdq event maximum */
->  #define CMDQ_MAX_EVENT			0x3ff
->  
+The core controller range is 0x200, from offset 0x200, it is
+non-core register, which is used by usbmisc. Fabio said you
+met problem at u-boot for this size, what's the problem about
+it?
 
-
-
+Thanks,
+Peter
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
