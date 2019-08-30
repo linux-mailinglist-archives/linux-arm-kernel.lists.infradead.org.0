@@ -2,95 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7510FA3F3A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 22:58:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23D58A3F4D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 23:03:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:MIME-Version:Message-ID:
+	In-Reply-To:Date:References:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GTl+kcEJRn7tDwJHiGclgQRSs/cdGD2ZMV+1To3DaHA=; b=r5IPdC++i6p6yQ
-	HmIRYw26go+a4OC+Uyg3YT6IdORUxJ9IJEXBW3wRfDGyXfhvi5rmYBPob02FprDzUDnEFpP8hvOvN
-	ZR9mHrNW3zuooKOIHIKtuR4btO8IVSlT8GSAdCVaJkLjmYV5kFreo+Eyxsyc5s8VIyKIP2seG5Pzs
-	LlPuYkByxLxGIRLAsBO89SZsMWQqQwOOIylxV5mb+RUH8Th1ElkkuGLtK/dQLbjfP696RzQEO0Tf7
-	OIgp8QnTSAkDOWiSlHR28Jf62Fi0JCxPNQuaS89Ir4b7Da4PFOxHG45B1llQRm/g7eH/Ir9QwbYqZ
-	e7l6olfOe2bAt7qwbu6w==;
+	List-Owner; bh=PvoxtF7KBvXe/7HJVeLibXLZMoeihSPgezZsLn+omCQ=; b=okG7xpmyhi4n0Y
+	8x1fI5htGoS9N4WC6YdI8focTjpoHEKIX0a3QsZTFzjwgLSwahkRlqv3zMl1MB4fCLCoJDiLLhIe+
+	tuDSGKrnYPQM/xck6KOMTdpzi7xfGI0VFeWWCXcJ2PCv15rkpfBqP1XmSo+xJcBpztKTH9nxpD6sf
+	pkBCscfC0QD/WwW0E7Lc3I5S/yNyRR/inIohRbEuTPGVpFo+mPluLPKzF++P8fbLoTgispv1/FdeD
+	nV+/G0upL7NtO1Oh+RQyOlhHBAu03R/3Iqc0eucdfUeHZFSLudNjF7TDZUX/u5lmNNRTBCuKf1ydH
+	R7e7nfVqinNYjIobiYqw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3nyL-0000rC-Ge; Fri, 30 Aug 2019 20:58:17 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1i3o36-0002VT-Cj; Fri, 30 Aug 2019 21:03:12 +0000
+Received: from out02.mta.xmission.com ([166.70.13.232])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3nyA-0000ql-Sj
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 20:58:08 +0000
-Received: by mail-pl1-x642.google.com with SMTP id d3so3901948plr.1
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 13:58:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=mFxD0MZFYY42RaJBDLF2GUwHXm8serVqmuEey6UlVzc=;
- b=qVkbQO/bnO2wUTgnzZBpolohEmUMkuPGvQfUfIoDu6D6fK/F3ymP2WyYqFFawzPLM7
- L6T1i+ulXO0nxQLbnTR27ZLqlwybt7R0O+AxE/HsxQkU6JXrEEFxghZyQvjH7cCsYb2h
- DpvtBiWzTBngh8OODfmaK58cBG3qHtMBi71XZObz/YOspvdPovP1fsfyNAhgnD0FNUNE
- YgerOxatvWM3Pqgajqq0lZQxmJrUCSoFX48rJCgZeDHPX9IHa/d6I+kV2ds1fB7DUc6Q
- AowerXpB6jiniNeowtGQfJTARSuQXg7D1Ej/jw7un4sex4z+6SP1sUBx1ikYEc7K/ijP
- 4+dw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=mFxD0MZFYY42RaJBDLF2GUwHXm8serVqmuEey6UlVzc=;
- b=FAbNqsOUfem1MSRHXrxCKpyJHtXkmaTxbunPL6XcNC7RPXVAcY1oSGY5+a83QEjMYp
- YKTRgbc1pGYEE9ACxe1QmJ+1ehky5GTY/85SMpXsXxWmmr4jI4J069z0DkP3i6dWrvoY
- yiRAZ3Xf+GzWwicSChJoL6S0L+SzoMWRNjd+z3sUk116QeC81WRZC++g4+W/+tsT3NBk
- Ce/yKdxRh3e6UDxFKrBMMeV43bgOfsKfdhsEGOYiT4boU8tXAVB4j6T+0DQfiEb3ofh6
- 9JO7GpvQrHX1uIlfg/hN0KOfAXQPOs/sw0pJ5V9FUuuuCHB/yQeX7TSk8HErNSteZXOx
- 8X8Q==
-X-Gm-Message-State: APjAAAWBj5c1lr2ZrJUQ4wab/Gn1o53KgCYJ+L0v47Y7TJs+rEByyAEc
- f5sfqpps6mKcNo91EizT6/Mv1x2pbjSnG2iLA6tbJQ77FJ4=
-X-Google-Smtp-Source: APXvYqyP/8DiBmLKF87W6JpgVn6TuJxLivCLp5MpVOGpP9aBHJ0wDjfiNGtZqU9WqFTeeR89HKguuorK5nEM5zvw+YE=
-X-Received: by 2002:a17:902:a9c3:: with SMTP id
- b3mr17522272plr.179.1567198682077; 
- Fri, 30 Aug 2019 13:58:02 -0700 (PDT)
+ id 1i3o2x-0002V8-6U
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 21:03:04 +0000
+Received: from in02.mta.xmission.com ([166.70.13.52])
+ by out02.mta.xmission.com with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1i3o2v-0000Ro-4X; Fri, 30 Aug 2019 15:03:01 -0600
+Received: from ip68-227-160-95.om.om.cox.net ([68.227.160.95]
+ helo=x220.xmission.com) by in02.mta.xmission.com with esmtpsa
+ (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.87)
+ (envelope-from <ebiederm@xmission.com>)
+ id 1i3o2t-0005hU-RB; Fri, 30 Aug 2019 15:03:00 -0600
+From: ebiederm@xmission.com (Eric W. Biederman)
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
+ <20190830133522.GZ13294@shell.armlinux.org.uk>
+ <87d0gmwi73.fsf@x220.int.ebiederm.org>
+ <20190830203052.GG13294@shell.armlinux.org.uk>
+Date: Fri, 30 Aug 2019 16:02:48 -0500
+In-Reply-To: <20190830203052.GG13294@shell.armlinux.org.uk> (Russell King's
+ message of "Fri, 30 Aug 2019 21:30:52 +0100")
+Message-ID: <87y2zav01z.fsf@x220.int.ebiederm.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.1 (gnu/linux)
 MIME-Version: 1.0
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-11-will@kernel.org>
- <20190829165457.grindfmgpdpsbt4i@willie-the-truck>
- <CAKwvOdkaCTQ92hUe823Y14xo_Gft4vsRGgimHc8QPUBCbbAOrQ@mail.gmail.com>
- <20190829215347.GB2404@brain-police>
-In-Reply-To: <20190829215347.GB2404@brain-police>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Fri, 30 Aug 2019 13:57:50 -0700
-Message-ID: <CAKwvOdnxssMgeYKpEHJ-k5Ahhah=3qny7zvwBmXJsUyCKShMiw@mail.gmail.com>
-Subject: Re: [PATCH v5 10/10] arm64: atomics: Use K constraint when toolchain
- appears to support it
-To: Will Deacon <will@kernel.org>
+X-XM-SPF: eid=1i3o2t-0005hU-RB; ; ; mid=<87y2zav01z.fsf@x220.int.ebiederm.org>;
+ ; ; hst=in02.mta.xmission.com; ; ; ip=68.227.160.95; ; ;
+ frm=ebiederm@xmission.com; ; ; spf=neutral
+X-XM-AID: U2FsdGVkX1+heHAgu8YHz0osGVnQTuDyPwc40LRgIbA=
+X-SA-Exim-Connect-IP: 68.227.160.95
+X-SA-Exim-Mail-From: ebiederm@xmission.com
+X-Spam-Checker-Version: SpamAssassin 3.4.2 (2018-09-13) on sa03.xmission.com
+X-Spam-Level: 
+X-Spam-Status: No, score=0.4 required=8.0 tests=ALL_TRUSTED,BAYES_50,
+ DCC_CHECK_NEGATIVE,FVGT_m_MULTI_ODD,T_TM2_M_HEADER_IN_MSG,
+ T_XMDrugObfuBody_14 autolearn=disabled version=3.4.2
+X-Spam-Report: * -1.0 ALL_TRUSTED Passed through trusted hosts only via SMTP
+ *  0.8 BAYES_50 BODY: Bayes spam probability is 40 to 60%
+ *      [score: 0.4981]
+ *  0.0 T_TM2_M_HEADER_IN_MSG BODY: No description available.
+ * -0.0 DCC_CHECK_NEGATIVE Not listed in DCC
+ *      [sa03 1397; Body=1 Fuz1=1 Fuz2=1]
+ *  0.4 FVGT_m_MULTI_ODD Contains multiple odd letter combinations
+ *  0.2 T_XMDrugObfuBody_14 obfuscated drug references
+X-Spam-DCC: XMission; sa03 1397; Body=1 Fuz1=1 Fuz2=1 
+X-Spam-Combo: ;Russell King - ARM Linux admin <linux@armlinux.org.uk>
+X-Spam-Relay-Country: 
+X-Spam-Timing: total 792 ms - load_scoreonly_sql: 0.04 (0.0%),
+ signal_user_changed: 3.1 (0.4%), b_tie_ro: 2.2 (0.3%), parse: 1.05
+ (0.1%), extract_message_metadata: 16 (2.0%), get_uri_detail_list: 2.9
+ (0.4%), tests_pri_-1000: 10 (1.3%), tests_pri_-950: 1.07 (0.1%),
+ tests_pri_-900: 0.84 (0.1%), tests_pri_-90: 24 (3.0%), check_bayes: 22
+ (2.8%), b_tokenize: 6 (0.8%), b_tok_get_all: 8 (1.0%), b_comp_prob:
+ 2.3 (0.3%), b_tok_touch_all: 3.4 (0.4%), b_finish: 0.65 (0.1%),
+ tests_pri_0: 308 (38.9%), check_dkim_signature: 0.38 (0.0%),
+ check_dkim_adsp: 3.2 (0.4%), poll_dns_idle: 410 (51.8%), tests_pri_10:
+ 1.80 (0.2%), tests_pri_500: 423 (53.5%), rewrite_mail: 0.00 (0.0%)
+Subject: Re: [PATCH] arm: fix page faults in do_alignment
+X-Spam-Flag: No
+X-SA-Exim-Version: 4.2.1 (built Thu, 05 May 2016 13:38:54 -0600)
+X-SA-Exim-Scanned: Yes (on in02.mta.xmission.com)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_135806_955666_558B6A0E 
-X-CRM114-Status: GOOD (  17.32  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190830_140303_269440_0804142E 
+X-CRM114-Status: GOOD (  20.46  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [166.70.13.232 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,62 +104,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Ard.Biesheuvel@arm.com,
- andrew.murray@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
- Robin Murphy <robin.murphy@arm.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ Jing Xiangfeng <jingxiangfeng@huawei.com>, linux-mm@kvack.org,
+ sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 2:53 PM Will Deacon <will@kernel.org> wrote:
->
-> On Thu, Aug 29, 2019 at 10:45:57AM -0700, Nick Desaulniers wrote:
-> > On Thu, Aug 29, 2019 at 9:55 AM Will Deacon <will@kernel.org> wrote:
-> > >
-> > > On Thu, Aug 29, 2019 at 04:48:34PM +0100, Will Deacon wrote:
-> > > > diff --git a/arch/arm64/include/asm/atomic_ll_sc.h b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > index 95091f72228b..7fa042f5444e 100644
-> > > > --- a/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > +++ b/arch/arm64/include/asm/atomic_ll_sc.h
-> > > > @@ -23,6 +23,10 @@ asm_ops "\n"                                                               \
-> > > >  #define __LL_SC_FALLBACK(asm_ops) asm_ops
-> > > >  #endif
-> > > >
-> > > > +#ifndef CONFIG_CC_HAS_K_CONSTRAINT
-> > > > +#define K
-> > > > +#endif
-> > >
-> > > Bah, I need to use something like __stringify when the constraint is used
-> > > in order for this to get expanded properly. Updated diff below.
-> > >
-> > > Will
-> >
-> > Hi Will, thanks for cc'ing me on the patch set.  I'd be happy to help
-> > test w/ Clang.  Would you mind pushing this set with the below diff to
-> > a publicly available tree+branch I can pull from?  (I haven't yet
-> > figured out how to download multiple diff's from gmail rather than 1
-> > by 1, and TBH I'd rather just use git).
->
-> Sorry, of course. I should've mentioned this in the cover letter:
->
-> https://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git/log/?h=for-next/atomics
->
-> FWIW, I did test (defconfig + boot) with clang, but this does mean that LSE
-> atomics are disabled for that configuration when asm goto is not supported.
->
-> Will
+Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
 
-Thanks, just curious if you (or anyone else on the list) has the QEMU
-recipe handy to test on a virtual machine that has ll/sc instructions,
-and one that does not?  I'm guessing testing the default machine would
-not exercise the code path where these instructions have been added?
+> On Fri, Aug 30, 2019 at 02:45:36PM -0500, Eric W. Biederman wrote:
+>> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
+>> 
+>> > On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
+>> >> The function do_alignment can handle misaligned address for user and
+>> >> kernel space. If it is a userspace access, do_alignment may fail on
+>> >> a low-memory situation, because page faults are disabled in
+>> >> probe_kernel_address.
+>> >> 
+>> >> Fix this by using __copy_from_user stead of probe_kernel_address.
+>> >> 
+>> >> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
+>> >> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
+>> >
+>> > NAK.
+>> >
+>> > The "scheduling while atomic warning in alignment handling code" is
+>> > caused by fixing up the page fault while trying to handle the
+>> > mis-alignment fault generated from an instruction in atomic context.
+>> >
+>> > Your patch re-introduces that bug.
+>> 
+>> And the patch that fixed scheduling while atomic apparently introduced a
+>> regression.  Admittedly a regression that took 6 years to track down but
+>> still.
+>
+> Right, and given the number of years, we are trading one regression for
+> a different regression.  If we revert to the original code where we
+> fix up, we will end up with people complaining about a "new" regression
+> caused by reverting the previous fix.  Follow this policy and we just
+> end up constantly reverting the previous revert.
+>
+> The window is very small - the page in question will have had to have
+> instructions read from it immediately prior to the handler being entered,
+> and would have had to be made "old" before subsequently being unmapped.
 
--- 
-Thanks,
-~Nick Desaulniers
+> Rather than excessively complicating the code and making it even more
+> inefficient (as in your patch), we could instead retry executing the
+> instruction when we discover that the page is unavailable, which should
+> cause the page to be paged back in.
+
+My patch does not introduce any inefficiencies.  It onlys moves the
+check for user_mode up a bit.  My patch did duplicate the code.
+
+> If the page really is unavailable, the prefetch abort should cause a
+> SEGV to be raised, otherwise the re-execution should replace the page.
+>
+> The danger to that approach is we page it back in, and it gets paged
+> back out before we're able to read the instruction indefinitely.
+
+I would think either a little code duplication or a function that looks
+at user_mode(regs) and picks the appropriate kind of copy to do would be
+the best way to go.  Because what needs to happen in the two cases for
+reading the instruction are almost completely different.
+
+> However, as it's impossible for me to contact the submitter, anything
+> I do will be poking about in the dark and without any way to validate
+> that it does fix the problem, so I think apart from reviewing of any
+> patches, there's not much I can do.
+
+I didn't realize your emails to him were bouncing.  That is odd.  Mine
+don't appear to be.
+
+Eric
 
 _______________________________________________
 linux-arm-kernel mailing list
