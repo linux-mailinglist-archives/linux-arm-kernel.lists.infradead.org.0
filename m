@@ -2,57 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9D553A3ED9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 22:13:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4F634A3F04
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 22:31:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=koI7m3U+O9QNimvjeIXBuNgvSu27p6HDUZam/s0VXis=; b=GHWN6kft6LSekX
-	+tBsMWzaiNAlrw4JfDmDE3HCi6XlDZdruyLzc4ne3zEpDf8wDjCYxxYUXYy24smtl1QH0/66ndSSa
-	bP8SaZk+PhlzQjnIZcWYmWVO2KzCiS6GsgL4MvXrCDZWH9l0lRFZBqmMivQSG81gumFU569PuzjB/
-	OoB7cOrWbycUw4NVHlrg9bYZjpnP4Q29E03gV8nfXtCWSVqb9x/8zVINmkFgdzRRcBxFhfmGq9U1C
-	k2NfCpiNAoepffuDzflHnOXafQRFemprXTQssqzZURK3OgUvLA05Kahi6eZ1DXlPre9ztt+LURakL
-	N1b4qutqtZHeYMGUcG7w==;
+	List-Owner; bh=886EugbCyCQHHf//EDVbpCIKIS0xiRbum5dqPrLjPvA=; b=ejgWWSMac+O16w
+	t9yoPs67Y7g2Fm40nA0/toMPSzKyO61m9odckD6yjfhKxkupBuCTBJsEPLNmG1nsb1tbGv2kcVARs
+	ts/yj71gcAsh4QvqNOBREQiuTXkAVGzcVC6z7DnEpe4noG9Wriv6FCShdaIiN1Fz+q/0rKPlxQFQn
+	1YrS6XqPlnDdpN1yfdRgE1HPwD4TJGs4BAiWQD2s//tciuzlsQHfTSSVAnfvcg1cIQLrtiB5jza16
+	aWqonUvbOWXJ/eHQGWrhyk4tdsFIC+l0pjFIHS1Y869hGBF/y0cOxCQk3x+FfISvcl38QZ7XPTFzU
+	5T3GEVEmDN0Z9DKA55yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3nH3-000471-Rz; Fri, 30 Aug 2019 20:13:33 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i3nYY-0001j8-MS; Fri, 30 Aug 2019 20:31:38 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3nGq-00046f-6Y
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 20:13:22 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 1BD59ACC3;
- Fri, 30 Aug 2019 20:13:18 +0000 (UTC)
-Date: Fri, 30 Aug 2019 22:13:15 +0200
-From: Michal =?UTF-8?B?U3VjaMOhbmVr?= <msuchanek@suse.de>
-To: Arnd Bergmann <arnd@arndb.de>
-Subject: Re: [PATCH] Revert "asm-generic: Remove unneeded
- __ARCH_WANT_SYS_LLSEEK macro"
-Message-ID: <20190830221315.4b3b8a74@kitsune.suse.cz>
-In-Reply-To: <CAK8P3a16=ktJm5B3c5-XS7SqVuHBY5+E2FwVUqbdOdWK-AUgSA@mail.gmail.com>
-References: <bb6d25c6baae315d05b571d8c508f0e8fa90027c.1567188299.git.msuchanek@suse.de>
- <20190830194651.31043-1-msuchanek@suse.de>
- <CAK8P3a16=ktJm5B3c5-XS7SqVuHBY5+E2FwVUqbdOdWK-AUgSA@mail.gmail.com>
-Organization: SUSE Linux
-X-Mailer: Claws Mail 3.17.1 (GTK+ 2.24.32; x86_64-suse-linux-gnu)
+ id 1i3nYP-0001iQ-0z
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 20:31:30 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=G81S00ak0iTh6ncTJpTj7KNc/WBOF1FWlEXXOPN/t0w=; b=JEE1bJ9lA/X9HwwUO/pEriXmr
+ vrUzeFcjyw7bUtJIXrLLQFNRv0mzvcGkOgor6R2/9wfw8+nr95J+9d3ug803jjdw8mDrfNfhEzlL0
+ iRZ6JkzEi0LvVfQvV8cQLGI3yuV3z62dlrWpSIE5DpQmKFkECFTBptVwjt2Do3DmsxntmSVNpH4fO
+ Jqa1LdTsAU3NRxMpKhMNBRyCji8EjHXIVcUGkUAASygDEDSTICrQhJ/q2vQagFEK7qHFKTo5pi2d/
+ B3+wc7gaRNEXQDlcMNCPS4aBGeFd+H0WCOzXEvh0qph5UJcMw7G6Yzz30upmJdKiJXzUxzTgaUf2w
+ w27uGAcpQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39462)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i3nXv-0000XF-2k; Fri, 30 Aug 2019 21:30:59 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i3nXo-0000Q9-M8; Fri, 30 Aug 2019 21:30:52 +0100
+Date: Fri, 30 Aug 2019 21:30:52 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: "Eric W. Biederman" <ebiederm@xmission.com>
+Subject: Re: [PATCH] arm: fix page faults in do_alignment
+Message-ID: <20190830203052.GG13294@shell.armlinux.org.uk>
+References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
+ <20190830133522.GZ13294@shell.armlinux.org.uk>
+ <87d0gmwi73.fsf@x220.int.ebiederm.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <87d0gmwi73.fsf@x220.int.ebiederm.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_131320_534350_14854366 
-X-CRM114-Status: GOOD (  19.77  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190830_133129_229521_B99FBE04 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,101 +88,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rich Felker <dalias@libc.org>, Linux-sh list <linux-sh@vger.kernel.org>,
- Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- Heiko Carstens <heiko.carstens@de.ibm.com>, linux-mips@vger.kernel.org,
- "James E.J. Bottomley" <James.Bottomley@hansenpartnership.com>,
- Max Filippov <jcmvbkbc@gmail.com>, Guo Ren <guoren@kernel.org>,
- "H. Peter Anvin" <hpa@zytor.com>, sparclinux <sparclinux@vger.kernel.org>,
- Vincenzo Frascino <vincenzo.frascino@arm.com>, Will Deacon <will@kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>,
- Yoshinori Sato <ysato@users.sourceforge.jp>,
- Michael Ellerman <mpe@ellerman.id.au>, Helge Deller <deller@gmx.de>,
- the arch/x86 maintainers <x86@kernel.org>,
- Russell King <linux@armlinux.org.uk>,
- Christian Borntraeger <borntraeger@de.ibm.com>, Ingo Molnar <mingo@redhat.com>,
- Geert Uytterhoeven <geert@linux-m68k.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, James Hogan <jhogan@kernel.org>,
- Firoz Khan <firoz.khan@linaro.org>, linux-xtensa@linux-xtensa.org,
- Vasily Gorbik <gor@linux.ibm.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>, Borislav Petkov <bp@alien8.de>,
- Alexander Viro <viro@zeniv.linux.org.uk>, David Howells <dhowells@redhat.com>,
- Thomas Gleixner <tglx@linutronix.de>, Christian Brauner <christian@brauner.io>,
- Chris Zankel <chris@zankel.net>, Michal Simek <monstr@monstr.eu>,
- Parisc List <linux-parisc@vger.kernel.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Ralf Baechle <ralf@linux-mips.org>, Paul Burton <paul.burton@mips.com>,
- Linux FS-devel Mailing List <linux-fsdevel@vger.kernel.org>,
- Paul Mackerras <paulus@samba.org>,
- linuxppc-dev <linuxppc-dev@lists.ozlabs.org>, "David S.
- Miller" <davem@davemloft.net>
+Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
+ Jing Xiangfeng <jingxiangfeng@huawei.com>, linux-mm@kvack.org,
+ sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 30 Aug 2019 21:54:43 +0200
-Arnd Bergmann <arnd@arndb.de> wrote:
-
-> On Fri, Aug 30, 2019 at 9:46 PM Michal Suchanek <msuchanek@suse.de> wrote:
-> >
-> > This reverts commit caf6f9c8a326cffd1d4b3ff3f1cfba75d159d70b.
-> >
-> > Maybe it was needed after all.
-> >
-> > When CONFIG_COMPAT is disabled on ppc64 the kernel does not build.
-> >
-> > There is resistance to both removing the llseek syscall from the 64bit
-> > syscall tables and building the llseek interface unconditionally.
-> >
-> > Link: https://lore.kernel.org/lkml/20190828151552.GA16855@infradead.org/
-> > Link: https://lore.kernel.org/lkml/20190829214319.498c7de2@naga/
-> >
-> > Signed-off-by: Michal Suchanek <msuchanek@suse.de>  
+On Fri, Aug 30, 2019 at 02:45:36PM -0500, Eric W. Biederman wrote:
+> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
 > 
-> This seems like the right idea in principle.
-> 
-> > index 5bbf587f5bc1..2f3c4bb138c4 100644
-> > --- a/fs/read_write.c
-> > +++ b/fs/read_write.c
-> > @@ -331,7 +331,7 @@ COMPAT_SYSCALL_DEFINE3(lseek, unsigned int, fd, compat_off_t, offset, unsigned i
-> >  }
-> >  #endif
+> > On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
+> >> The function do_alignment can handle misaligned address for user and
+> >> kernel space. If it is a userspace access, do_alignment may fail on
+> >> a low-memory situation, because page faults are disabled in
+> >> probe_kernel_address.
+> >> 
+> >> Fix this by using __copy_from_user stead of probe_kernel_address.
+> >> 
+> >> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
+> >> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
 > >
-> > -#if !defined(CONFIG_64BIT) || defined(CONFIG_COMPAT)
-> > +#ifdef __ARCH_WANT_SYS_LLSEEK
-> >  SYSCALL_DEFINE5(llseek, unsigned int, fd, unsigned long, offset_high,
-> >                 unsigned long, offset_low, loff_t __user *, result,
-> >                 unsigned int, whence)  
+> > NAK.
+> >
+> > The "scheduling while atomic warning in alignment handling code" is
+> > caused by fixing up the page fault while trying to handle the
+> > mis-alignment fault generated from an instruction in atomic context.
+> >
+> > Your patch re-introduces that bug.
 > 
-> However, only reverting the patch will now break all newly added
-> 32-bit architectures that don't define __ARCH_WANT_SYS_LLSEEK:
-> at least nds32 and riscv32 come to mind, not sure if there is another.
+> And the patch that fixed scheduling while atomic apparently introduced a
+> regression.  Admittedly a regression that took 6 years to track down but
+> still.
 
-AFAICT nds32 never had the syscall. Its headers were added without
-__ARCH_WANT_SYS_LLSEEK before the define was removed.
+Right, and given the number of years, we are trading one regression for
+a different regression.  If we revert to the original code where we
+fix up, we will end up with people complaining about a "new" regression
+caused by reverting the previous fix.  Follow this policy and we just
+end up constantly reverting the previous revert.
 
-The new architecture csky should be handled.
+The window is very small - the page in question will have had to have
+instructions read from it immediately prior to the handler being entered,
+and would have had to be made "old" before subsequently being unmapped.
 
-> 
-> I think the easiest way however would be to combine the two checks
-> above and make it
-> 
-> #if !defined(CONFIG_64BIT) || defined(CONFIG_COMPAT) ||
-> defined(__ARCH_WANT_SYS_LLSEEK)
-> 
-> and then only set __ARCH_WANT_SYS_LLSEEK for powerpc.
+Rather than excessively complicating the code and making it even more
+inefficient (as in your patch), we could instead retry executing the
+instruction when we discover that the page is unavailable, which should
+cause the page to be paged back in.
 
-Yes, that limits the use of __ARCH_WANT_SYS_LLSEEK, does not require
-resurrecting the old headers, and may fix some architectures like nds32
-that forgot to add it.
+If the page really is unavailable, the prefetch abort should cause a
+SEGV to be raised, otherwise the re-execution should replace the page.
 
-Thanks
+The danger to that approach is we page it back in, and it gets paged
+back out before we're able to read the instruction indefinitely.
 
-Michal
+However, as it's impossible for me to contact the submitter, anything
+I do will be poking about in the dark and without any way to validate
+that it does fix the problem, so I think apart from reviewing of any
+patches, there's not much I can do.
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
