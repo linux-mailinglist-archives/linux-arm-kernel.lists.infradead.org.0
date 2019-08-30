@@ -2,76 +2,126 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E571A4091
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:29:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A295A408F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:29:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=swlnTdF65hPeGskxRNSuQ7G+60v7FM4Fi57TiLu6Vio=; b=L8SSEwU8I5yLUo
-	vrR/LSsla50u4wT8CLgzqJqyv3DL9JG3xdejZVA5teuvjwFfkblh1iHIJH+y5x6hPKbHdykrQFdrN
-	qvdFSjPc9FzJuKn1T+vStmtBxkOgxC2t8Phf9d4MHzcpJHkA0WqUcA8/AfBWnc9gluS0Ff/puwbz/
-	jLxm42UlvEqNMU9pVR0vHSHrI4w9OfaMBo/YVVBnv7EP01/3Tf/Am5C8HiDejWHz1meNo+oWVCGM0
-	L/YUmQxFsFoR1dJUrBlFEY/4FaVfjgtH2SFKRcAEeaTEIRJFrLuA6qv5U7UOSsSf3CjeTRS7IeFwy
-	99zDsA8R7juz1oi4I33g==;
+	List-Owner; bh=Hqekidmj/a4kjPTygVFqirOdEe3BE8gTAIo3aIyt6J0=; b=uZkVZYt89s8Mlh
+	uySUH3IAnJ1srGj2tykIopppmYmbpR6w7L8ypVqxIt8RzAAfCoCI/qCpoRqFJ7j3r8VE4RcL6Y//Y
+	OIj81xzuWBVfyukPSDqOZHFgiTlv/iT6Kwa4mP8M06b24pY0vgqkxZAC94MsU9UjpuUrBR8coXhfA
+	ngWdUf7wP7jFfI3Ukm4w8CBYf1tN6Ox6B+5f+GL5mZWwCLRSUDIush+To/fu6oF3B18OiZS74iW69
+	Qhe1gyfvJT3hXFICR1xoD6ePH2XNIJRWrLtOJ4oFoQt7hpgb5zm8SbNeYRKLGHptzoBQPJbt/wSiG
+	2qUAaamUFwcRHFMhI3aA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3pOy-00019X-4V; Fri, 30 Aug 2019 22:29:52 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1i3pOA-0000qE-Mx; Fri, 30 Aug 2019 22:29:02 +0000
+Received: from mx2.ucr.edu ([138.23.62.3])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3pOm-00018g-SJ
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:29:42 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=BWWRszBDY8GYUUZj497FcR9Z0dm6vMXF/gAZdr1ItkU=; b=folcv0CYTG/fwfjtFT9od8gVs
- LmEkdhrber88LNPUMfbnmY4rZ5fcd6bEa4DdOxmDoMu8xDExn/Ah5NsTeoI67i87J4KX+zvMgMHIb
- Ws9JXOfrWIwDKAxjHZQtmgeB4RYPXtOCted2vh317YUbPEILBPMVpm3trknP9hAJMv6/Y2wgPA+WP
- wNCmXpqm4dfbnsqB6hRtF87ZAG3KuEF6wLqrmulnjvI4Q/59G99z2HxGzlO9ADkFfPthetXTJumhD
- 23Mnjr5oNCzxiwqoWuV2HZnjQQPp2jL64KL9cYbdk5DXvRG6sWjdB3OTqaVm3UT3YlCBvws4YFgZW
- XWmelzPCA==;
-Received: from shell.armlinux.org.uk
- ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39464)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i3pOJ-00013m-HY; Fri, 30 Aug 2019 23:29:11 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i3pOE-0000Tw-MP; Fri, 30 Aug 2019 23:29:06 +0100
-Date: Fri, 30 Aug 2019 23:29:06 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: "Eric W. Biederman" <ebiederm@xmission.com>
-Subject: Re: [PATCH] arm: fix page faults in do_alignment
-Message-ID: <20190830222906.GH13294@shell.armlinux.org.uk>
-References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
- <20190830133522.GZ13294@shell.armlinux.org.uk>
- <87d0gmwi73.fsf@x220.int.ebiederm.org>
- <20190830203052.GG13294@shell.armlinux.org.uk>
- <87y2zav01z.fsf@x220.int.ebiederm.org>
+ id 1i3pO1-0000pq-8G
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:28:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=ucr.edu; i=@ucr.edu; q=dns/txt; s=selector3;
+ t=1567204133; x=1598740133;
+ h=mime-version:references:in-reply-to:from:date:message-id:
+ subject:to:cc; bh=wgVygESRDZ4+rg/c5sOJBi+QyyM3UkHfyRMFo8KoCxI=;
+ b=LsQjKAj/PCAjki1t1x1XkjyBXHpD7XeuzBrCT4JNfCWC37wiNErWiakD
+ +WL6pZhVwLb7mMq1lFpbCD8OoOi7QcPrQaj72kAZhSEn/wJqUbBzJ2RlF
+ aVjGDF9+IWtFKl8F14dr7agp9EUsBK/8IatPjUikZq+3U0vB3jsMNd1z2
+ SD1esGDXnrTzaUfQ9EOhdT/O+kSFO3oaNPUZaXCPG8uEDc49CqVBABCWu
+ fVsBn7Gy4MmnvBPhPx126DYHn0FYq8v8Qcx4baCYbTPGmaF8WuhF5ReLw
+ wEbwPyVRXJshsANUTuZwWELcMEFs1T0qllnwnht1Ro/Bb5rGAtg++cSgo Q==;
+IronPort-SDR: FHt80YGvEFw9T+5PHRowIVI85fAWvJabApy9nt4DfOk7LRYGg+OJ7YxDPpGfkKXMyt28c346LY
+ ogCgLOj+Ead0c7iPwnYS3fRJttvd4EjiN9Gpycb5OQwt2mn+eN6ZIhyg60E+sTRFtb6TZYWSwp
+ Aq4r3r4qm/b5Y52oGMz04RVQrpmNataBrcIkQAT8mVK8JcPpUnPq7q5508twQBcf9iOBML3qnq
+ OJ/iRxFKMBJShvY/WueLymladsU4FAYTXqnpYULNc0Bti9EDdqdon6FU/M6ILE2SdIrxj4HGbH
+ 3xg=
+IronPort-PHdr: =?us-ascii?q?9a23=3Am/1KgRxcjbE5LqjXCy+O+j09IxM/srCxBDY+r6?=
+ =?us-ascii?q?Qd1OMUIJqq85mqBkHD//Il1AaPAdyBrasa1qGO4ujJYi8p2d65qncMcZhBBV?=
+ =?us-ascii?q?cuqP49uEgeOvODElDxN/XwbiY3T4xoXV5h+GynYwAOQJ6tL1LdrWev4jEMBx?=
+ =?us-ascii?q?7xKRR6JvjvGo7Vks+7y/2+94fcbglVmjaxe65+IRS2oAneqsUbhZZpJ7osxB?=
+ =?us-ascii?q?fOvnZGYfldy3lyJVKUkRb858Ow84Bm/i9Npf8v9NNOXLvjcaggQrNWEDopM2?=
+ =?us-ascii?q?Yu5M32rhbDVheA5mEdUmoNjBVFBRXO4QzgUZfwtiv6sfd92DWfMMbrQ704RS?=
+ =?us-ascii?q?iu4qF2QxLzliwJKyA2/33WisxojaJUvhShpwBkw4XJZI2ZLedycr/Bcd8fQ2?=
+ =?us-ascii?q?dKQ8RfWDFbAo6kYIQPAegOM+ZWoYf+ulUAswexCBKwBO/z0DJEmmP60bE43u?=
+ =?us-ascii?q?knDArI3BYgH9ULsHnMrtr1NaYTUeCozKnP0D7MbPNW1i386IPVdR0gofCNXb?=
+ =?us-ascii?q?JqfsrQ1UUjCw3Ig06NqYP5JTOZzPoCvHWG7+d5U++klm0pqxlprzSx2sshjp?=
+ =?us-ascii?q?PFi4EVx1ze6Cl0wYQ4Kce6RUJnZ9OvDYFeuDuAN4RsR8MvW2RouCEnxbIYoZ?=
+ =?us-ascii?q?O7Zy0KyIg/xx7YdvyHb5CE4hL9W+aVJjd1nHdld6i+hxa26ESgzuP8WtSt3F?=
+ =?us-ascii?q?ZErCdJjsPAtn8K1xzU5ciHTuVy8l291jaI0gDf8uBEIUYqmqrHM5Mt3KI8m5?=
+ =?us-ascii?q?4JvUnAHiL6glj6ga6Ue0k++OWk9/zrYrD8qZ+dM490hBv+MqMrmsGnAeU5Mw?=
+ =?us-ascii?q?gOUHKa+eigyLHu81b0QKhWgf0siKXWro3VJdkDqq6jHwBVypoj6wq4Dzq+1N?=
+ =?us-ascii?q?QYnH8HLE9KeR6elYfpIVTOLOn7DfihmVSslilkx/TdM73lA5XNNWTDkKz7cb?=
+ =?us-ascii?q?Z87U5cxhAzwspC6J1KEL4OPej/WkjrtNzXXVcFNFmYyvjmBJ1Y14caVHjHVq?=
+ =?us-ascii?q?OQLq7XmVOB+O8qJ+6CeMkTtSqreNY/4Pu7vH4rmUIaNZup1JpfPGGqHv1nex?=
+ =?us-ascii?q?3CSWfnmJEMHXpc7Vl2d/DjlFDXCW0bXH21Ra9po2hjUI8=3D?=
+X-IronPort-Anti-Spam-Filtered: true
+X-IronPort-Anti-Spam-Result: =?us-ascii?q?A2EPAACKoWldf0anVdFmHAEBAQQBAQc?=
+ =?us-ascii?q?EAQGBUwcBAQsBg1YzKoQhiByGcIIPk3aFJIF7AQgBAQEOLwEBhD8CgmEjNAk?=
+ =?us-ascii?q?OAgMIAQEFAQEBAQEGBAEBAhABAQkLCwgnhUOCOikBgmcBAQEBAxIRVhALCwM?=
+ =?us-ascii?q?GAQMCAh8HAgIiEgEFARwGEyKFC6FogQM8iySBMohvAQgMgUkSeigBi3eCF4N?=
+ =?us-ascii?q?uNT6HT4JYBIEuAQEBjUCHFJYJAQYCgg0UjCuILBuYYi2mIg8hgS+CETMaJX8?=
+ =?us-ascii?q?GZ4FOgnqOLSIwjzgBAQ?=
+X-IPAS-Result: =?us-ascii?q?A2EPAACKoWldf0anVdFmHAEBAQQBAQcEAQGBUwcBAQsBg?=
+ =?us-ascii?q?1YzKoQhiByGcIIPk3aFJIF7AQgBAQEOLwEBhD8CgmEjNAkOAgMIAQEFAQEBA?=
+ =?us-ascii?q?QEGBAEBAhABAQkLCwgnhUOCOikBgmcBAQEBAxIRVhALCwMGAQMCAh8HAgIiE?=
+ =?us-ascii?q?gEFARwGEyKFC6FogQM8iySBMohvAQgMgUkSeigBi3eCF4NuNT6HT4JYBIEuA?=
+ =?us-ascii?q?QEBjUCHFJYJAQYCgg0UjCuILBuYYi2mIg8hgS+CETMaJX8GZ4FOgnqOLSIwj?=
+ =?us-ascii?q?zgBAQ?=
+X-IronPort-AV: E=Sophos;i="5.64,447,1559545200"; 
+   d="scan'208";a="5435366"
+Received: from mail-lf1-f70.google.com ([209.85.167.70])
+ by smtp2.ucr.edu with ESMTP/TLS/ECDHE-RSA-AES256-GCM-SHA384;
+ 30 Aug 2019 15:28:37 -0700
+Received: by mail-lf1-f70.google.com with SMTP id q29so1858326lfd.16
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 15:28:37 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/OqUmnBUo2TwngZckoAVX/16b3P4Ti0vmh5QbNPt/qI=;
+ b=PKIyqoasxyb9Wvpcr0vSCLC1MTTZ6Td9+RqEcFJtOE4gT36rhCALI3WO0H4LHlNKGb
+ 1glalQgbwfgwcLDHP1uFWC3sRDFmn86Hsjxp70TjiAlfWZg3hPRcgoROB1c0IZeDpV40
+ SDoTHaF9bl3YB2CROO9CowLzH8SGsAWgq5wdN6AAf/djnaqLHx/tdl9XwM/xNiVaxauG
+ 16/IgFXH5w04DOVyZuBnS0NwYv60753qZXmhC6fk9TwTNSgR3ChP1KukJvWAijM1QVTV
+ 0GULF9m0qkjmSY9mRPacV4MWvQE/QhPucK1bWTcmDC020VzwphDU/gVtYiWDbU/wuInh
+ XM3g==
+X-Gm-Message-State: APjAAAVSIRnH2eiJl29/rPKoMpmUgbcW5GZh9UiX70Z8oMEpvtg4hVMP
+ MrDA5ev0NY6WVTMwIKBk4c7dBpzLqfv9ggARquydrOiOwJeytlO7Om/fU6VnIunn3fzwXykeW3M
+ Hv6XPLHTykuR3oSRsYbcu4EJV8FtEKjHBaLVamlGAUA0+p6MQRVJS
+X-Received: by 2002:a05:6512:304:: with SMTP id
+ t4mr11134399lfp.15.1567204115688; 
+ Fri, 30 Aug 2019 15:28:35 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqwa33Y9Bu9hA8LxhW9Vg/wJim85Pk0no7AsHr9XFg9pLsGspx5AJcu+yjlmeSKNUIJl9tL56jCgdsQd0GJsEII=
+X-Received: by 2002:a05:6512:304:: with SMTP id
+ t4mr11134392lfp.15.1567204115524; 
+ Fri, 30 Aug 2019 15:28:35 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <87y2zav01z.fsf@x220.int.ebiederm.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <20190207174623.16712-1-yzhai003@ucr.edu>
+ <20190208.230117.1867217574108955553.davem@davemloft.net>
+In-Reply-To: <20190208.230117.1867217574108955553.davem@davemloft.net>
+From: Yizhuo Zhai <yzhai003@ucr.edu>
+Date: Fri, 30 Aug 2019 15:29:07 -0700
+Message-ID: <CABvMjLRzuUVh7FxVQj2O40Sbr+VygwSG8spMv0fW2RZVvaJ8rQ@mail.gmail.com>
+Subject: Re: [PATCH] net: stmmac: Variable "val" in function
+ sun8i_dwmac_set_syscon() could be uninitialized
+To: David Miller <davem@davemloft.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_152940_911671_0E424ED0 
-X-CRM114-Status: GOOD (  26.18  )
+X-CRM114-CacheID: sfid-20190830_152853_328630_54A58298 
+X-CRM114-Status: GOOD (  11.55  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ medium trust [138.23.62.3 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -90,94 +140,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org,
- Jing Xiangfeng <jingxiangfeng@huawei.com>, linux-mm@kvack.org,
- sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
+Cc: Chengyu Song <csong@cs.ucr.edu>, Alexandre Torgue <alexandre.torgue@st.com>,
+ netdev@vger.kernel.org, Zhiyun Qian <zhiyunq@cs.ucr.edu>,
+ linux-kernel@vger.kernel.org, Chen-Yu Tsai <wens@csie.org>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ Maxime Ripard <maxime.ripard@free-electrons.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 04:02:48PM -0500, Eric W. Biederman wrote:
-> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
-> 
-> > On Fri, Aug 30, 2019 at 02:45:36PM -0500, Eric W. Biederman wrote:
-> >> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
-> >> 
-> >> > On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
-> >> >> The function do_alignment can handle misaligned address for user and
-> >> >> kernel space. If it is a userspace access, do_alignment may fail on
-> >> >> a low-memory situation, because page faults are disabled in
-> >> >> probe_kernel_address.
-> >> >> 
-> >> >> Fix this by using __copy_from_user stead of probe_kernel_address.
-> >> >> 
-> >> >> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
-> >> >> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
-> >> >
-> >> > NAK.
-> >> >
-> >> > The "scheduling while atomic warning in alignment handling code" is
-> >> > caused by fixing up the page fault while trying to handle the
-> >> > mis-alignment fault generated from an instruction in atomic context.
-> >> >
-> >> > Your patch re-introduces that bug.
-> >> 
-> >> And the patch that fixed scheduling while atomic apparently introduced a
-> >> regression.  Admittedly a regression that took 6 years to track down but
-> >> still.
+Hi David:
+
+Thanks for your feedback, this patch should work for v4.14.
+
+
+On Fri, Feb 8, 2019 at 11:01 PM David Miller <davem@davemloft.net> wrote:
+>
+> From: Yizhuo <yzhai003@ucr.edu>
+> Date: Thu,  7 Feb 2019 09:46:23 -0800
+>
+> > In function sun8i_dwmac_set_syscon(), local variable "val" could
+> > be uninitialized if function regmap_read() returns -EINVAL.
+> > However, it will be used directly in the if statement, which
+> > is potentially unsafe.
 > >
-> > Right, and given the number of years, we are trading one regression for
-> > a different regression.  If we revert to the original code where we
-> > fix up, we will end up with people complaining about a "new" regression
-> > caused by reverting the previous fix.  Follow this policy and we just
-> > end up constantly reverting the previous revert.
-> >
-> > The window is very small - the page in question will have had to have
-> > instructions read from it immediately prior to the handler being entered,
-> > and would have had to be made "old" before subsequently being unmapped.
-> 
-> > Rather than excessively complicating the code and making it even more
-> > inefficient (as in your patch), we could instead retry executing the
-> > instruction when we discover that the page is unavailable, which should
-> > cause the page to be paged back in.
-> 
-> My patch does not introduce any inefficiencies.  It onlys moves the
-> check for user_mode up a bit.  My patch did duplicate the code.
-> 
-> > If the page really is unavailable, the prefetch abort should cause a
-> > SEGV to be raised, otherwise the re-execution should replace the page.
-> >
-> > The danger to that approach is we page it back in, and it gets paged
-> > back out before we're able to read the instruction indefinitely.
-> 
-> I would think either a little code duplication or a function that looks
-> at user_mode(regs) and picks the appropriate kind of copy to do would be
-> the best way to go.  Because what needs to happen in the two cases for
-> reading the instruction are almost completely different.
+> > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+>
+> This doesn't apply to any of my trees.
 
-That is what I mean.  I'd prefer to avoid that with the large chunk of
-code.  How about instead adding a local replacement for
-probe_kernel_address() that just sorts out the reading, rather than
-duplicating all the code to deal with thumb fixup. 
 
-> > However, as it's impossible for me to contact the submitter, anything
-> > I do will be poking about in the dark and without any way to validate
-> > that it does fix the problem, so I think apart from reviewing of any
-> > patches, there's not much I can do.
-> 
-> I didn't realize your emails to him were bouncing.  That is odd.  Mine
-> don't appear to be.
 
-Hmm, so the fact I posted publically in reply to my reply with the MTA
-bounce message didn't give you a clue?
+--
+Kind Regards,
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Yizhuo Zhai
+
+Computer Science, Graduate Student
+University of California, Riverside
 
 _______________________________________________
 linux-arm-kernel mailing list
