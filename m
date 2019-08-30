@@ -2,54 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3EAC2A401E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:08:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 15975A4020
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 00:09:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=im0wy6WQPk9Qh8ZEvij7hoUBY6/QLUH5pVNSoHcsrIM=; b=ugM4CNW+IeILEM
-	lviEhh+Hj2vHl0eunSpuYYWjFWhkUlfDseTbUtnbbOK0apEUoBKQ9/gGrEWGjFRHpkUsZVH5xAMPo
-	kcdYQTErJLPrx0MwktcifeA1aopTC01N08W8GR40js8q+ZLlxGbZZ/O7/jz7c19zLp/7dfRhJ7i/j
-	jrUW25ASA4tgPk60rmF/JbIH8sAapNun4o88tfgYGit8EmkX3WBVzbw/ZEVaz9vyBvN8W9r6ZxiMg
-	GqHWj7KittbvwMbRDaPyHY0hoVISOHHG8bK9MlraUX2ztKcavN65ZF8UemTqhEvq2283aTkfOmwj4
-	3q5aM0QKzS8p83f0JoXg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=n/WK37YpyV8D17D2rWOvtnKkfTIQG9U638chY1h/Bu4=; b=G56PJIVkOGuuLh
+	9HJWOjlAlg49h5MmNCiIwwnPgfk7Ef4I2XE7FxDt3y8UqvnfHSgKDjieFapOSQas6nIYKPLRYKFGy
+	E8FlM6bZgmg5pr8ifDGIjkVRYCIyGGJpL00AqEnfmfAKgpABxCjpJMpBHJZYErGlBX4KDsexKoWzI
+	fiembt0eQKBm8uNASlVENQmuKrgnEAc28y/9m7mvbuO0uA/H3XzEszBITGkQZOALfNZdw/x8r9qZk
+	qUxfWtRrTYMQxzHz9x1Hj010kgFNKby4o64bNiLli33Y1SB0tyHuLeCbH3whbtf5YgmntfRN+Zow4
+	HeAm79OhTagKlip2OZFA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3p4H-0007xu-4b; Fri, 30 Aug 2019 22:08:29 +0000
+	id 1i3p4l-0008NL-LU; Fri, 30 Aug 2019 22:08:59 +0000
 Received: from shell.v3.sk ([90.176.6.54])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3p46-0007xV-5s
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:08:19 +0000
+ id 1i3p49-0007xv-In
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 22:08:22 +0000
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 1767CD87E9;
- Sat, 31 Aug 2019 00:08:10 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id D6ECCD87FF;
+ Sat, 31 Aug 2019 00:08:19 +0200 (CEST)
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id a5rZfM7YaGHz; Sat, 31 Aug 2019 00:07:55 +0200 (CEST)
+ with ESMTP id C3kuJiEXwUJ6; Sat, 31 Aug 2019 00:08:04 +0200 (CEST)
 Received: from localhost (localhost [127.0.0.1])
- by zimbra.v3.sk (Postfix) with ESMTP id 74FFAD87F5;
- Sat, 31 Aug 2019 00:07:53 +0200 (CEST)
+ by zimbra.v3.sk (Postfix) with ESMTP id CB78BD87C5;
+ Sat, 31 Aug 2019 00:07:55 +0200 (CEST)
 X-Virus-Scanned: amavisd-new at zimbra.v3.sk
 Received: from shell.v3.sk ([127.0.0.1])
  by localhost (zimbra.v3.sk [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id GBElljx_XOIP; Sat, 31 Aug 2019 00:07:49 +0200 (CEST)
+ with ESMTP id mRokGr1j66Mp; Sat, 31 Aug 2019 00:07:49 +0200 (CEST)
 Received: from belphegor.brq.redhat.com (nat-pool-brq-t.redhat.com
  [213.175.37.10])
- by zimbra.v3.sk (Postfix) with ESMTPSA id 37B4CD87C5;
+ by zimbra.v3.sk (Postfix) with ESMTPSA id BEB35D87E1;
  Sat, 31 Aug 2019 00:07:48 +0200 (CEST)
 From: Lubomir Rintel <lkundrak@v3.sk>
 To: "To : Olof Johansson" <olof@lixom.net>
-Subject: [PATCH v3 00/16] Initial support for Marvell MMP3 SoC
-Date: Sat, 31 Aug 2019 00:07:27 +0200
-Message-Id: <20190830220743.439670-1-lkundrak@v3.sk>
+Subject: [PATCH v3 01/16] dt-bindings: arm: cpu: Add Marvell MMP3 SMP enable
+ method
+Date: Sat, 31 Aug 2019 00:07:28 +0200
+Message-Id: <20190830220743.439670-2-lkundrak@v3.sk>
 X-Mailer: git-send-email 2.21.0
+In-Reply-To: <20190830220743.439670-1-lkundrak@v3.sk>
+References: <20190830220743.439670-1-lkundrak@v3.sk>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_150818_375109_86CC997E 
-X-CRM114-Status: UNSURE (   5.47  )
+X-CRM114-CacheID: sfid-20190830_150821_792639_6E6D703F 
+X-CRM114-Status: UNSURE (   8.17  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -70,30 +73,44 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- linux-kernel@vger.kernel.org, Michael Turquette <mturquette@baylibre.com>,
+ Jason Cooper <jason@lakedaemon.net>, Rob Herring <robh@kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-kernel@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>,
  Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
- "Cc : Rob Herring" <robh+dt@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+ Lubomir Rintel <lkundrak@v3.sk>, "Cc : Rob Herring" <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, 
+Add the enable method for the second PJ4B core of the Marvell MMP3 SoC.
 
-this is the third spin of a patch set that adds support for the Marvell
-MMP3 processor, that I'd eventually love to see land in the Arm SoC
-tree. MMP3 is used in OLPC XO-4 laptops, Panasonic Toughpad FZ-A1 tablet
-and Dell Wyse 3020/Tx0D thin clients. 
+Signed-off-by: Lubomir Rintel <lkundrak@v3.sk>
+Reviewed-by: Rob Herring <robh@kernel.org>
 
-Compared to v2, there's a handful of fixes in response to reviews. Four
-irqchip patches have been removed because they've been applied to the
-irqchip-next tree. Details in individual patches.
- 
-Thank you
-Lubo
+---
+Changes since v1:
+- Add Rob's Reviewed-by tag
 
+ Documentation/devicetree/bindings/arm/cpus.yaml | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/Documentation/devicetree/bindings/arm/cpus.yaml b/Documentation/devicetree/bindings/arm/cpus.yaml
+index aa40b074b8648..fcba84e32e68a 100644
+--- a/Documentation/devicetree/bindings/arm/cpus.yaml
++++ b/Documentation/devicetree/bindings/arm/cpus.yaml
+@@ -186,6 +186,7 @@ properties:
+               - marvell,armada-390-smp
+               - marvell,armada-xp-smp
+               - marvell,98dx3236-smp
++              - marvell,mmp3-smp
+               - mediatek,mt6589-smp
+               - mediatek,mt81xx-tz-smp
+               - qcom,gcc-msm8660
+-- 
+2.21.0
 
 
 _______________________________________________
