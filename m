@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BDEF1A2CC4
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 04:21:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9107AA2CCD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 04:24:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=BC9kvXG1Wrap6x5loUGw5LJUcS8Jl/pTlDKzOd/Pyxg=; b=L1RYqSxzvAJ69fc/oKtZHQYKz
-	iH+hXwSqJ9AX9NakQIilb5Uu8goKq5pxQs2H/x36U7EGdLCLzoNDgPye+4ioz6dFNkYcs1kX+RKoI
-	f2KKZXtawgZdxdXeiJBRtykLHSNk6VrvQ5O7n1Fakq7hAnNlti1IwcNTEd1xOwFz1RWcgrVF+6U1o
-	cH4IUmipxKhwPKNGA0vss+kOqyonkhPQsNYchOZXl9Bthkf3fcrcQh6uWov5/1CkHz2GZbAPYtNDQ
-	rEW62R6Wm+IPmZG717QBdcabbGGcpxjguILMOFEaJC2HnsoA+WQlir2kJHvAqLdz9Sn0IAV6ofjY8
-	72BOFu7Wg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4mY2+se9fF8VKxm/DCQK+XyX+0mQIFeytCERw3GdAcI=; b=unbuIS5yKJHTwT
+	FXG+roTb5ywmJcGOyYLjEW00CFzGwmAFwxQatiSHTgLRVEI+/cAkUIGcj8FdjHYYRm2+hZHTfCQEJ
+	soQPDUPM/KCUgEdj0uP0BHRKPk3WgTr70odUjd9FAggbEgKfxAp7RpLRaKK3+PZO/oxkWJM8apTkh
+	nQLoFlJUEXtcwqDixPgra90HNqNguoa4talyByUKI89Z51sJZi0hx4q6+p62mtzbHUMDCZup0ljI5
+	LIs6K3npZBrPAsKrVTHGzKpZ97rrpYNwKsvK5bs/3Lc/Zo3II2zlO4rMY4hiFx3PmcDhJvGhmz7ac
+	n0IvfKp2VcMrP+CzSlLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3WXq-00071N-Do; Fri, 30 Aug 2019 02:21:47 +0000
-Received: from hqemgate16.nvidia.com ([216.228.121.65])
+	id 1i3WaA-0007MC-2p; Fri, 30 Aug 2019 02:24:10 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3WXB-00070y-Tk; Fri, 30 Aug 2019 02:21:07 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate16.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d6888110001>; Thu, 29 Aug 2019 19:21:05 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Thu, 29 Aug 2019 19:21:04 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Thu, 29 Aug 2019 19:21:04 -0700
-Received: from [10.110.48.201] (10.124.1.5) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 30 Aug
- 2019 02:21:03 +0000
-Subject: Re: [PATCH v3 00/39] put_user_pages(): miscellaneous call sites
-To: Mike Marshall <hubcap@omnibond.com>
-References: <20190807013340.9706-1-jhubbard@nvidia.com>
- <912eb2bd-4102-05c1-5571-c261617ad30b@nvidia.com>
- <CAOg9mSQKGDywcMde2DE42diUS7J8m74Hdv+xp_PJhC39EXZQuw@mail.gmail.com>
-X-Nvconfidentiality: public
-From: John Hubbard <jhubbard@nvidia.com>
-Message-ID: <d453f865-2224-ed53-a2f4-f43d574c130a@nvidia.com>
-Date: Thu, 29 Aug 2019 19:21:03 -0700
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i3WZv-0007Ln-Fx; Fri, 30 Aug 2019 02:23:57 +0000
+X-UUID: 6e1a23302ad84c829ce35fb01d183ce0-20190829
+X-UUID: 6e1a23302ad84c829ce35fb01d183ce0-20190829
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <houlong.wei@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1029712838; Thu, 29 Aug 2019 18:23:56 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 19:23:54 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 30 Aug 2019 10:23:49 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 30 Aug 2019 10:23:48 +0800
+Message-ID: <1567131823.24642.4.camel@mhfsdcap03>
+Subject: Re: [PATCH v14 07/10] soc: mediatek: cmdq: define the instruction
+ struct
+From: houlong wei <houlong.wei@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 30 Aug 2019 10:23:43 +0800
+In-Reply-To: <20190829014817.25482-9-bibby.hsieh@mediatek.com>
+References: <20190829014817.25482-1-bibby.hsieh@mediatek.com>
+ <20190829014817.25482-9-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <CAOg9mSQKGDywcMde2DE42diUS7J8m74Hdv+xp_PJhC39EXZQuw@mail.gmail.com>
-X-Originating-IP: [10.124.1.5]
-X-ClientProxiedBy: HQMAIL111.nvidia.com (172.20.187.18) To
- HQMAIL107.nvidia.com (172.20.187.13)
-Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1567131665; bh=ws5caXaEY0X3GX3egw6JsJDC0L7OwnIAHkDMK9ZQcE4=;
- h=X-PGP-Universal:Subject:To:CC:References:X-Nvconfidentiality:From:
- Message-ID:Date:User-Agent:MIME-Version:In-Reply-To:
- X-Originating-IP:X-ClientProxiedBy:Content-Type:Content-Language:
- Content-Transfer-Encoding;
- b=dIUKOH913DAYlocN1x3OWKU66rYzbsvcqMg6XurXOtfsQm0mTaQq0ufL9HiRQjmKf
- MYeR8XR6MbUy9f2nOHFjitJW5jxjU59hEwD2KYzGMRBc0+P+o4b2mkzUliEchFZQzm
- D0OR0ZfFBCp6cKpnoBGakw3Ch1supTeIz+DcDxFqgzxBAMqXWQoRbk0Sq3VWx6u9tp
- 6uURi8FKe6XveWY1U9zok9s2um/SF43+51Cnxqw5q2h2Dtp4kEwxNonMDqxzAcZjDx
- HfyaHZc2XUvwuRV5WZb7Ki3OlH/mp5QHGx5CtmwXtp2TNme1r3iXAZgXDKrycQZylt
- qlPWiGD9ap9bQ==
+X-TM-SNTS-SMTP: 12636E4DEB4769029CE24443B391F3E200D9807E82F84E9F8E69B09A8C990E5C2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190829_192105_992231_80C3F5FD 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190829_192355_541087_7CF83763 
+X-CRM114-Status: GOOD (  17.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.65 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,100 +73,220 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-fbdev@vger.kernel.org, Jan Kara <jack@suse.cz>, kvm@vger.kernel.org,
- Dave Hansen <dave.hansen@linux.intel.com>, Dave Chinner <david@fromorbit.com>,
- dri-devel@lists.freedesktop.org, linux-mm <linux-mm@kvack.org>,
- sparclinux@vger.kernel.org, Ira Weiny <ira.weiny@intel.com>,
- Dan Williams <dan.j.williams@intel.com>, devel@driverdev.osuosl.org,
- rds-devel@oss.oracle.com, linux-rdma@vger.kernel.org, x86@kernel.org,
- amd-gfx@lists.freedesktop.org, Christoph Hellwig <hch@infradead.org>,
- Jason Gunthorpe <jgg@ziepe.ca>, xen-devel@lists.xenproject.org,
- devel@lists.orangefs.org, linux-media@vger.kernel.org,
- intel-gfx@lists.freedesktop.org, john.hubbard@gmail.com,
- linux-block@vger.kernel.org,
- =?UTF-8?B?SsOpcsO0bWUgR2xpc3Nl?= <jglisse@redhat.com>,
- linux-rpi-kernel@lists.infradead.org, ceph-devel <ceph-devel@vger.kernel.org>,
- linux-arm-kernel@lists.infradead.org,
- Linux NFS Mailing List <linux-nfs@vger.kernel.org>, netdev@vger.kernel.org,
- LKML <linux-kernel@vger.kernel.org>, linux-xfs@vger.kernel.org,
- linux-crypto@vger.kernel.org, linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Nicolas Boichat <drinkcat@chromium.org>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Jassi Brar <jassisinghbrar@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ houlong.wei@mediatek.com,
+ Dennis-YC Hsieh =?UTF-8?Q?=28=E8=AC=9D=E5=AE=87=E5=93=B2=29?=
+ <Dennis-YC.Hsieh@mediatek.com>,
+ CK Hu =?UTF-8?Q?=28=E8=83=A1=E4=BF=8A=E5=85=89=29?= <ck.hu@mediatek.com>,
+ Rob Herring <robh+dt@kernel.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 8/29/2019 6:29 PM, Mike Marshall wrote:
-> Hi John...
+On Thu, 2019-08-29 at 09:48 +0800, Bibby Hsieh wrote:
+> Define an instruction structure for gce driver to append command.
+> This structure can make the client's code more readability.
 > 
-> I added this patch series on top of Linux 5.3rc6 and ran
-> xfstests with no regressions...
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> Reviewed-by: CK Hu <ck.hu@mediatek.com>
+> Reviewed-by: Houlong Wei <houlong.wei@mediatek.com>
+> ---
+>  drivers/soc/mediatek/mtk-cmdq-helper.c   | 77 ++++++++++++++++--------
+>  include/linux/mailbox/mtk-cmdq-mailbox.h | 10 +++
+>  2 files changed, 61 insertions(+), 26 deletions(-)
 > 
-> Acked-by: Mike Marshall <hubcap@omnibond.com>
-> 
+> diff --git a/drivers/soc/mediatek/mtk-cmdq-helper.c b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> index 7aa0517ff2f3..9472526ab076 100644
+> --- a/drivers/soc/mediatek/mtk-cmdq-helper.c
+> +++ b/drivers/soc/mediatek/mtk-cmdq-helper.c
+> @@ -9,12 +9,24 @@
+>  #include <linux/mailbox_controller.h>
+>  #include <linux/soc/mediatek/mtk-cmdq.h>
+>  
+> -#define CMDQ_ARG_A_WRITE_MASK	0xffff
+>  #define CMDQ_WRITE_ENABLE_MASK	BIT(0)
+>  #define CMDQ_EOC_IRQ_EN		BIT(0)
+>  #define CMDQ_EOC_CMD		((u64)((CMDQ_CODE_EOC << CMDQ_OP_CODE_SHIFT)) \
+>  				<< 32 | CMDQ_EOC_IRQ_EN)
+>  
+> +struct cmdq_instruction {
+> +	union {
+> +		u32 value;
+> +		u32 mask;
+> +	};
+> +	union {
+> +		u16 offset;
+> +		u16 event;
+> +	};
+> +	u8 subsys;
+> +	u8 op;
+> +};
+> +
+>  static void cmdq_client_timeout(struct timer_list *t)
+>  {
+>  	struct cmdq_client *client = from_timer(client, t, timer);
+> @@ -110,10 +122,10 @@ void cmdq_pkt_destroy(struct cmdq_pkt *pkt)
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_destroy);
+>  
+> -static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
+> -				   u32 arg_a, u32 arg_b)
+> +static int cmdq_pkt_append_command(struct cmdq_pkt *pkt,
+> +				   struct cmdq_instruction inst)
 
-Hi Mike (and I hope Ira and others are reading as well, because
-I'm making a bunch of claims further down),
+Can we use 'struct cmdq_instruction *inst' instead of 'struct
+cmdq_instruction inst' to reduce stack memory consumption a bit?
 
-That's great news, thanks for running that test suite and for
-the report and the ACK.
+>  {
+> -	u64 *cmd_ptr;
+> +	struct cmdq_instruction *cmd_ptr;
+>  
+>  	if (unlikely(pkt->cmd_buf_size + CMDQ_INST_SIZE > pkt->buf_size)) {
+>  		/*
+> @@ -129,8 +141,9 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
+>  			__func__, (u32)pkt->buf_size);
+>  		return -ENOMEM;
+>  	}
+> +
+>  	cmd_ptr = pkt->va_base + pkt->cmd_buf_size;
+> -	(*cmd_ptr) = (u64)((code << CMDQ_OP_CODE_SHIFT) | arg_a) << 32 | arg_b;
+> +	*cmd_ptr = inst;
+>  	pkt->cmd_buf_size += CMDQ_INST_SIZE;
+>  
+>  	return 0;
+> @@ -138,24 +151,31 @@ static int cmdq_pkt_append_command(struct cmdq_pkt *pkt, enum cmdq_code code,
+>  
+>  int cmdq_pkt_write(struct cmdq_pkt *pkt, u8 subsys, u16 offset, u32 value)
+>  {
+> -	u32 arg_a = (offset & CMDQ_ARG_A_WRITE_MASK) |
+> -		    (subsys << CMDQ_SUBSYS_SHIFT);
+> +	struct cmdq_instruction inst;
+> +
+> +	inst.op = CMDQ_CODE_WRITE;
+> +	inst.value = value;
+> +	inst.offset = offset;
+> +	inst.subsys = subsys;
+>  
+> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WRITE, arg_a, value);
+> +	return cmdq_pkt_append_command(pkt, inst);
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_write);
+>  
+>  int cmdq_pkt_write_mask(struct cmdq_pkt *pkt, u8 subsys,
+>  			u16 offset, u32 value, u32 mask)
+>  {
+> -	u32 offset_mask = offset;
+> +	struct cmdq_instruction inst = { {0} };
+> +	u16 offset_mask = offset;
+>  	int err = 0;
+>  
+>  	if (mask != 0xffffffff) {
+> -		err = cmdq_pkt_append_command(pkt, CMDQ_CODE_MASK, 0, ~mask);
+> +		inst.op = CMDQ_CODE_MASK;
+> +		inst.mask = ~mask;
+> +		err = cmdq_pkt_append_command(pkt, inst);
+>  		offset_mask |= CMDQ_WRITE_ENABLE_MASK;
+>  	}
+> -	err |= cmdq_pkt_write(pkt, value, subsys, offset_mask);
+> +	err |= cmdq_pkt_write(pkt, subsys, offset_mask, value);
+>  
+>  	return err;
+>  }
+> @@ -163,43 +183,48 @@ EXPORT_SYMBOL(cmdq_pkt_write_mask);
+>  
+>  int cmdq_pkt_wfe(struct cmdq_pkt *pkt, u16 event)
+>  {
+> -	u32 arg_b;
+> +	struct cmdq_instruction inst = { {0} };
+>  
+>  	if (event >= CMDQ_MAX_EVENT)
+>  		return -EINVAL;
+>  
+> -	/*
+> -	 * WFE arg_b
+> -	 * bit 0-11: wait value
+> -	 * bit 15: 1 - wait, 0 - no wait
+> -	 * bit 16-27: update value
+> -	 * bit 31: 1 - update, 0 - no update
+> -	 */
+> -	arg_b = CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | CMDQ_WFE_WAIT_VALUE;
+> +	inst.op = CMDQ_CODE_WFE;
+> +	inst.value = CMDQ_WFE_OPTION;
+> +	inst.event = event;
+>  
+> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event, arg_b);
+> +	return cmdq_pkt_append_command(pkt, inst);
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_wfe);
+>  
+>  int cmdq_pkt_clear_event(struct cmdq_pkt *pkt, u16 event)
+>  {
+> +	struct cmdq_instruction inst = { {0} };
+> +
+>  	if (event >= CMDQ_MAX_EVENT)
+>  		return -EINVAL;
+>  
+> -	return cmdq_pkt_append_command(pkt, CMDQ_CODE_WFE, event,
+> -				       CMDQ_WFE_UPDATE);
+> +	inst.op = CMDQ_CODE_WFE;
+> +	inst.value = CMDQ_WFE_UPDATE;
+> +	inst.event = event;
+> +
+> +	return cmdq_pkt_append_command(pkt, inst);
+>  }
+>  EXPORT_SYMBOL(cmdq_pkt_clear_event);
+>  
+>  static int cmdq_pkt_finalize(struct cmdq_pkt *pkt)
+>  {
+> -	int err;
+> +	struct cmdq_instruction inst = { {0} };
+> +	int err = 0;
+>  
+>  	/* insert EOC and generate IRQ for each command iteration */
+> -	err = cmdq_pkt_append_command(pkt, CMDQ_CODE_EOC, 0, CMDQ_EOC_IRQ_EN);
+> +	inst.op = CMDQ_CODE_EOC;
+> +	inst.value = CMDQ_EOC_IRQ_EN;
+> +	err = cmdq_pkt_append_command(pkt, inst);
+>  
+>  	/* JUMP to end */
+> -	err |= cmdq_pkt_append_command(pkt, CMDQ_CODE_JUMP, 0, CMDQ_JUMP_PASS);
+> +	inst.op = CMDQ_CODE_JUMP;
+> +	inst.value = CMDQ_JUMP_PASS;
+> +	err |= cmdq_pkt_append_command(pkt, inst);
+>  
+>  	return err;
+>  }
+> diff --git a/include/linux/mailbox/mtk-cmdq-mailbox.h b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> index e6f54ef6698b..678760548791 100644
+> --- a/include/linux/mailbox/mtk-cmdq-mailbox.h
+> +++ b/include/linux/mailbox/mtk-cmdq-mailbox.h
+> @@ -20,6 +20,16 @@
+>  #define CMDQ_WFE_WAIT			BIT(15)
+>  #define CMDQ_WFE_WAIT_VALUE		0x1
+>  
+> +/*
+> + * WFE arg_b
+> + * bit 0-11: wait value
+> + * bit 15: 1 - wait, 0 - no wait
+> + * bit 16-27: update value
+> + * bit 31: 1 - update, 0 - no update
+> + */
+> +#define CMDQ_WFE_OPTION			(CMDQ_WFE_UPDATE | CMDQ_WFE_WAIT | \
+> +					CMDQ_WFE_WAIT_VALUE)
+> +
+>  /** cmdq event maximum */
+>  #define CMDQ_MAX_EVENT			0x3ff
+>  
 
-There is an interesting pause right now, due to the fact that
-we've made some tentative decisions about gup pinning, that affect
-the call sites. A key decision is that only pages that were
-requested via FOLL_PIN, will require put_user_page*() to release
-them. There are 4 main cases, which were first explained by Jan
-Kara and Vlastimil Babka, and are now written up in my FOLL_PIN
-patch [1].
 
-So, what that means for this series is that:
-
-1. Some call sites (mlock.c for example, and a lot of the mm/ files
-in fact, and more) will not be converted: some of these patches will
-get dropped, especially in mm/.
-
-2. Call sites that do DirectIO or RDMA will need to set FOLL_PIN, and
-will also need to call put_user_page().
-
-3. Call sites that do RDMA will need to set FOLL_LONGTERM *and* FOLL_PIN,
-
-    3.a. ...and will at least in some cases need to provide a link to a
-    vaddr_pin object, and thus back to a struct file*...maybe. Still
-    under discussion.
-
-4. It's desirable to keep FOLL_* flags (or at least FOLL_PIN) internal
-to the gup() calls. That implies using a wrapper call such as Ira's
-vaddr_pin_[user]_pages(), instead of gup(), and vaddr_unpin_[user]_pages()
-instead of put_user_page*().
-
-5. We don't want to churn the call sites unnecessarily.
-
-With that in mind, I've taken another pass through all these patches
-and narrowed it down to:
-
-     a) 12 call sites that I'd like to convert soon, but even those
-        really look cleaner with a full conversion to a wrapper call
-        similar to (identical to?) vaddr_pin_[user]_pages(), probably
-        just the FOLL_PIN only variant (not FOLL_LONGTERM). That
-        wrapper call is not ready yet, though.
-
-     b) Some more call sites that require both FOLL_PIN and FOLL_LONGTERM.
-        Definitely will wait to use the wrapper calls for these, because
-        they may also require hooking up to a struct file*.
-
-     c) A few more that were already applied, which is fine, because they
-        show where to convert, and simplify a few sites anyway. But they'll
-        need follow-on changes to, one way or another, set FOLL_PIN.
-
-     d) And of course a few sites whose patches get dropped, as mentioned
-        above.
-
-[1] https://lore.kernel.org/r/20190821040727.19650-3-jhubbard@nvidia.com
-
-thanks,
--- 
-John Hubbard
-NVIDIA
 
 _______________________________________________
 linux-arm-kernel mailing list
