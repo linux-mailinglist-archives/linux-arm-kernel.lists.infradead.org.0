@@ -2,158 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25BE2A3E44
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 21:16:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42FA0A3E57
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 21:24:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hdbTOxUbO/r3cPKs6WUk7pKyats6ov6mvcPiEaIFj98=; b=dhGl7BmN8VZj0n
-	QVAS3qQVeP7fzyTXo2f0PIBtcTGDdX+Yl/mz78PIE8l4ht1lqsH8/JwLmYXuZY2GHlH4vBURWWxbH
-	uw3qaolthIQKbGqH5cuT1WQliod1XM+fvpQgtnpdnazNlOH0lp79mwcBFWCBcFEWOnedEKiKKlBVw
-	VPfxEkjZ7zi7NNO/hZgo/I1Rb9Fyi6Hh7vtQ9Oei7glzMORV3Gu5XuylUB2zr/iwMhDpChvQiUOYA
-	GQftiGo3XmkFlqoRD/Q+cLxbZyXiBWnEwNHH7NUOD/ECyaFCrfQTjD/3HcPcyUgPEy3P0/8Rte4hX
-	gDZzhgEY531IHebz8eeg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sYkCwPetdewOQmb40vhknRQN2lSQJAxgKCsE8BZCgVI=; b=SqAvjRNNraGvB2
+	517IEqYXutjOv6uFzsWaUgF1cllw0ejfPA3eyc47Mz//ynKTVuVwUbHxfQ4Y+gBbnZnO3eobPhIcr
+	1f/T+XW+n7zdfv7MlP1jBVoBMNdonZo139RDMvsR9k2e0ve3/h5WsT+PMdeA7brYhkGr1ql7Rg27u
+	HhK+1fibAIWTBaaQcXFwocYN+DiYTuVQHzwrRXV3XnuwUr7GsRYg1h9IXLyOOD4ZgOrM20Npq0Sos
+	ncOPCIjyG8l1H0uMJTWyrJx9v3nhHBnMgc6hJUrdyLCB17e6FtTPVN/hAV1BoaljoMoHpZh5Z+N2P
+	/ROtQ0i+b37osr54w44g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3mO8-0000Uh-JS; Fri, 30 Aug 2019 19:16:48 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1i3mVL-0005rR-8G; Fri, 30 Aug 2019 19:24:15 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3mNy-0000UB-Ok
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 19:16:40 +0000
-Received: from hqpgpgate102.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d6976160000>; Fri, 30 Aug 2019 12:16:38 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate102.nvidia.com (PGP Universal service);
- Fri, 30 Aug 2019 12:16:36 -0700
-X-PGP-Universal: processed;
- by hqpgpgate102.nvidia.com on Fri, 30 Aug 2019 12:16:36 -0700
-Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL107.nvidia.com
- (172.20.187.13) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 30 Aug
- 2019 19:16:35 +0000
-Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Fri, 30 Aug
- 2019 19:16:35 +0000
-Received: from NAM04-CO1-obe.outbound.protection.outlook.com (104.47.45.59) by
- HQMAIL109.nvidia.com (172.20.187.15) with Microsoft SMTP Server
- (TLS) id
- 15.0.1473.3 via Frontend Transport; Fri, 30 Aug 2019 19:16:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=LeB4m000gAjz/ktlxPOG1uen7E+OHOM6LixyjGfwfWuCzD71aQt6BQufODqbtPn2Zawo32ZjTptaV5PVFAMJUQr26hWErf7hGbqspZYSZ9BzadrLS0ApLd4aTQ76fyJoxI7570OgZFhXV+ZYk6a1ZWfLSC8CfFXXFv9R5MHmICRe7LI7GxksKDqMRLKpwuQWGWQ/AlZjtYeMbtwvWfM5s2+vhCETpGgN+YS9MnReem+r8FUwPHvSX+wre+0qZQrCMQ02e70iyn8Fa17WK2lg9wAkK9vaeXp2X5IkgdQqUS6sc94kfwwZa0/dDklgpMT8/u0fErvQ/0b2E1/SV3u87g==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=UqFbOfHlHxl+PHSSdHh256Wvxcc8/fJG63tSzVGI4p0=;
- b=SLuZRwIYWJQ2+iHxhRdpQUZ/Ifd4PZ0zcDJitOUL00A/qVU31y50L/gJj97rw0ZJ6fR6a5KBpfwqTwP19urdun9H1c9WfLD+Q5N7K1AZ249cP1C+sarGawed+OPcOf0oZDAhJ0TN2naRFdMWll9fsUKKXkuZW5liOKzVDBDFtJck+lhnhg4G1njIwtbsKxF0WQtDRSHcWLzKpycXp9BPh/PCHVmkFk4WR5zFTg66w1Yq9r0NSun30jUc37WzsGZnrtTYOnyYx543DK4psBbOYjVoUaoPr5EdvBM8Gj1KXFLpexpS9ZyikqVlViJ0fNOjcCL65CLOevfkA9psMfv1Mw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nvidia.com; dmarc=pass action=none header.from=nvidia.com;
- dkim=pass header.d=nvidia.com; arc=none
-Received: from BYAPR12MB2710.namprd12.prod.outlook.com (20.177.124.11) by
- BYAPR12MB3302.namprd12.prod.outlook.com (20.179.93.223) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2178.18; Fri, 30 Aug 2019 19:16:34 +0000
-Received: from BYAPR12MB2710.namprd12.prod.outlook.com
- ([fe80::60a8:9757:8be2:2c56]) by BYAPR12MB2710.namprd12.prod.outlook.com
- ([fe80::60a8:9757:8be2:2c56%6]) with mapi id 15.20.2220.013; Fri, 30 Aug 2019
- 19:16:34 +0000
-From: Krishna Reddy <vdumpa@nvidia.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: RE: [PATCH 4/7] iommu/arm-smmu: Add global/context fault
- implementation hooks
-Thread-Topic: [PATCH 4/7] iommu/arm-smmu: Add global/context fault
- implementation hooks
-Thread-Index: AQHVXruKZbtcs6ei/UWKtdObCjFLnacTi3OAgACDQrA=
-Date: Fri, 30 Aug 2019 19:16:34 +0000
-Message-ID: <BYAPR12MB27106FD6B6CC9E148B65EC00B3BD0@BYAPR12MB2710.namprd12.prod.outlook.com>
-References: <1567118827-26358-1-git-send-email-vdumpa@nvidia.com>
- <1567118827-26358-5-git-send-email-vdumpa@nvidia.com>
- <20190830111707.GD23902@ulmo>
-In-Reply-To: <20190830111707.GD23902@ulmo>
-Accept-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-msip_labels: MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_Enabled=True;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_SiteId=43083d15-7273-40c1-b7db-39efd9ccc17a;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_Owner=VDUMPA@nvidia.com;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_SetDate=2019-08-30T19:16:31.2138242Z;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_Name=Unrestricted;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_Application=Microsoft Azure
- Information Protection;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_ActionId=b0a80692-08dd-4053-81e6-c9ad30e09d0b;
- MSIP_Label_6b558183-044c-4105-8d9c-cea02a2a3d86_Extended_MSFT_Method=Automatic
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=vdumpa@nvidia.com; 
-x-originating-ip: [216.228.112.21]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: fd8bd4a6-5fda-49f7-3e61-08d72d7e9285
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:BYAPR12MB3302; 
-x-ms-traffictypediagnostic: BYAPR12MB3302:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <BYAPR12MB33025AA63FDB763F7AB8BCDEB3BD0@BYAPR12MB3302.namprd12.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 0145758B1D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(39850400004)(136003)(376002)(366004)(396003)(346002)(189003)(199004)(7736002)(5660300002)(66476007)(6116002)(2906002)(54906003)(86362001)(9686003)(14454004)(4326008)(4744005)(66066001)(71190400001)(25786009)(476003)(71200400001)(316002)(478600001)(6916009)(256004)(53936002)(33656002)(14444005)(81166006)(6246003)(76116006)(446003)(7696005)(186003)(99286004)(55016002)(66946007)(6436002)(66446008)(102836004)(229853002)(64756008)(8936002)(76176011)(8676002)(3846002)(52536014)(6506007)(11346002)(486006)(305945005)(74316002)(81156014)(26005)(66556008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR12MB3302;
- H:BYAPR12MB2710.namprd12.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nvidia.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: hThOQPOD4UyBBJDssS49O8vPXdX/+3YtkJW0M/AEFvuna3eei0/SSWzR+Y3Y6n9xta8K58e4UT3oF/7lEKPoy2SrzkiJVIREHvgkPBUmi3vU3xqwEsx6qBJs8proKyXkm2SDLOGto0iO6KG+pzd0YccRnrRUI2sQzhg6vW7TUOe9AGKQsguGNeM+9VWQgXkNQaKG4gJKSOpGMYH/X+SotWh7sIJB6ITsvVDuamdNaU8HAx0t1FCCk0WNJOEi5ddfJkamfCiGjlknqdr71l/LZTPUAGlR1OdsggcyyAQlVOhXU9oEt6ArUGJqVHm3B2MFRrvz30jV98S4rkKQ6VxDiuFPlAwIoyfH6uuFx5DY0XiOkNEfSuF3mXIFN9U0ye2KC2ooBNiHQcQDB2uuQYLoxmABRocC8NWnDEwjHx0zJFI=
+ id 1i3mV9-0005r7-1P
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 19:24:05 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7UJNtii072563;
+ Fri, 30 Aug 2019 14:23:55 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1567193035;
+ bh=BRGq9rtIEX6J8dTXlS0C++xR15x6pyi8E6jSLrRs14I=;
+ h=From:Subject:To:CC:References:Date:In-Reply-To;
+ b=fHj/GBDnhOHKpgGT75zWtw+YhojiFjS6l4HgW1ii7b8oWCxYDv8epvw5P/Czw9AOh
+ kHq3LvFUd8J/vOlpgRBA4E4qhiJR1490P6G8vI6SBV50UrJQgLZKXqoSe+1BJ2ALiV
+ CHBTsFaBsjx+dD2hD/1l5sZfqGjK2uk5Y6E28fSw=
+Received: from DLEE100.ent.ti.com (dlee100.ent.ti.com [157.170.170.30])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7UJNtAp128741
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Fri, 30 Aug 2019 14:23:55 -0500
+Received: from DLEE111.ent.ti.com (157.170.170.22) by DLEE100.ent.ti.com
+ (157.170.170.30) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 30
+ Aug 2019 14:23:55 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE111.ent.ti.com
+ (157.170.170.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Fri, 30 Aug 2019 14:23:55 -0500
+Received: from [10.250.95.88] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7UJNsJY104679;
+ Fri, 30 Aug 2019 14:23:54 -0500
+From: "Andrew F. Davis" <afd@ti.com>
+Subject: Re: [PATCH] arm64: use x22 to save boot exception level
+To: Mark Rutland <mark.rutland@arm.com>
+References: <20190828173318.12428-1-afd@ti.com>
+ <20190829094720.GA44575@lakrids.cambridge.arm.com>
+Message-ID: <511d200c-9294-e562-5ba5-4f061965395d@ti.com>
+Date: Fri, 30 Aug 2019 15:23:53 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: fd8bd4a6-5fda-49f7-3e61-08d72d7e9285
-X-MS-Exchange-CrossTenant-originalarrivaltime: 30 Aug 2019 19:16:34.1580 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 43083d15-7273-40c1-b7db-39efd9ccc17a
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ua89oU9l2jLakWNC86UDmgNC2QsrinsJJdMFzYabhIc1RA/fqeDWmahRTxGjr/dz7uTqBBX38ZeR54Pyh3Ctkw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR12MB3302
-X-OriginatorOrg: Nvidia.com
+In-Reply-To: <20190829094720.GA44575@lakrids.cambridge.arm.com>
 Content-Language: en-US
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1567192598; bh=UqFbOfHlHxl+PHSSdHh256Wvxcc8/fJG63tSzVGI4p0=;
- h=X-PGP-Universal:ARC-Seal:ARC-Message-Signature:
- ARC-Authentication-Results:From:To:CC:Subject:Thread-Topic:
- Thread-Index:Date:Message-ID:References:In-Reply-To:
- Accept-Language:X-MS-Has-Attach:X-MS-TNEF-Correlator:msip_labels:
- authentication-results:x-originating-ip:x-ms-publictraffictype:
- x-ms-office365-filtering-correlation-id:x-microsoft-antispam:
- x-ms-traffictypediagnostic:x-ms-exchange-transport-forked:
- x-microsoft-antispam-prvs:x-ms-oob-tlc-oobclassifiers:
- x-forefront-prvs:x-forefront-antispam-report:received-spf:
- x-ms-exchange-senderadcheck:x-microsoft-antispam-message-info:
- MIME-Version:X-MS-Exchange-CrossTenant-Network-Message-Id:
- X-MS-Exchange-CrossTenant-originalarrivaltime:
- X-MS-Exchange-CrossTenant-fromentityheader:
- X-MS-Exchange-CrossTenant-id:X-MS-Exchange-CrossTenant-mailboxtype:
- X-MS-Exchange-CrossTenant-userprincipalname:
- X-MS-Exchange-Transport-CrossTenantHeadersStamped:X-OriginatorOrg:
- Content-Language:Content-Type:Content-Transfer-Encoding;
- b=WcOLvSMP/HN4EkQuZ5sh/9j2Cz12E6x5uQxWqWsq0CtUfrk/4lECssd/b78fndLy0
- DWhyXOdYxXhonEyJ7GRMKY5xYzw5/kT/FPvd8eyf75VH/aOXvFKoiEig84IMQ4xpCW
- 0I0C2P0R5hFBiGG95RrCQJWiIxoLn8ExuTKa7MmWLDqlPwWsKDZ6zlIXomoPeKBef4
- YewkKMgBI1TjDjzTax0eOsi+9QVAlr5gJk5rV6bUcFmxMDtICE0LWdP2VjMUPjfvwA
- MrXWQyJN5y34nYM/16mbgKzmI+lO99KqzuLAuY9qE8LfPW45sh1FM0sSYHLF1OyyjQ
- STnf4FY0pbn6w==
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_121638_825215_79E4E019 
-X-CRM114-Status: UNSURE (   5.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190830_122403_212695_0AC54C0D 
+X-CRM114-Status: GOOD (  33.30  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -173,41 +92,243 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Sachin Nikam <Snikam@nvidia.com>,
- "Thomas Zeng \(SW-TEGRA\)" <thomasz@nvidia.com>,
- Juha Tukkinen <jtukkinen@nvidia.com>, Mikko Perttunen <mperttunen@nvidia.com>,
- Pritesh Raithatha <praithatha@nvidia.com>, "joro@8bytes.org" <joro@8bytes.org>,
- "will.deacon@arm.com" <will.deacon@arm.com>,
- "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Timo Alho <talho@nvidia.com>, "olof@lixom.net" <olof@lixom.net>, Yu-Huan
- Hsu <YHsu@nvidia.com>,
- "linux-tegra@vger.kernel.org" <linux-tegra@vger.kernel.org>,
- Thierry Reding <treding@nvidia.com>, Robin Murphy <robin.murphy@arm.com>,
- Alexander Van Brunt <avanbrunt@nvidia.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Nishanth Menon <nm@ti.com>, Matthew Leach <matthew.leach@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ Tero Kristo <t-kristo@ti.com>, Will Deacon <will@kernel.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->> +static irqreturn_t nsmmu_context_fault_inst(int irq,
->> +					    struct arm_smmu_device *smmu,
->> +					    int idx, int inst);
+On 8/29/19 5:47 AM, Mark Rutland wrote:
+> Hi Andrew,
+> 
+> On Wed, Aug 28, 2019 at 01:33:18PM -0400, Andrew F. Davis wrote:
+>> The exception level in which the kernel was entered needs to be saved for
+>> later. We do this by writing the exception level to memory. As this data
+>> is written with the MMU/cache off it will bypass any cache, after this we
+>> invalidate the address so that later reads from cacheable mappings do not
+>> read a stale cache line. The side effect of this invalidate is any
+>> existing cache line for this address in the same coherency domain will be
+>> cleaned and written into memory, possibly overwriting the data we just
+>> wrote. As this memory is treated as cacheable by already running cores it
+>> on not architecturally safe to perform any non-caching accesses to this
+>> memory anyway.
+> 
+> Are you seeing an issue in practice here, or is this something that
+> you've found by inspection?
+> 
 
->More of these signed integers that could be unsigned. Also why the need to predeclare this? Can you not just put the definition of the function up here?
+We are seeing an actual issue. And I do have a good idea what is causing
+it, let me answer your questions on the system then I'll explain below.
 
-The singed integers are based on original function prototype from arm-smmu.c.  inst can be updated to unsigned.
-This is because I was checking context faults from global fault handler as well.  This can avoided by using interrupt lines of all the instances across global and context irq entries.  Let me update.
- 
-> +	if (smmu->impl->global_fault)
-> +		return smmu->impl->global_fault(irq, smmu);
->>... and here about the extra level of indirection.
+> If this is an issue in practice, can you tell me more about the system,
+> i.e.
+> 
+> - Which CPU models do you see this with?
 
-Fixing in next version.
+A53s
 
--KR
+> - Do you see this with the boot CPU, secondaries, or both?
 
+Both
+
+> - Do you have a system-level cache? If so, which model?
+
+Yes, Custom design, Datasheet has some more details if needed:
+http://www.ti.com/product/AM6548
+
+> - Do you see this on bare-metal?
+
+Not tested
+
+> - Do you see this under a hypervisor? If so, which hypervisor?
+> 
+
+Not tested
+
+> We place __boot_cpu_mode in the .mmuoff.data.write section, which is
+> only written with the MMU off (i.e. with non-cacheable accesses), such
+> that the cached copy should always be clean and shouldn't be written
+> back. Your description sounds like you're seeing a write-back, which is
+> surprising and may indicate a bug elsewhere.
+> 
+> Depending on what exactly you're seeing, this could also be an issue for
+> __early_cpu_boot_status and the early page table creation, so I'd like
+> to understand that better.
+> 
+
+We are seeing is a write-back from L3 cache. Our bootloader writes the
+kernel image with caches on, then after turning off caching but before
+handing off to Linux it clean/invalidates all cache lines by set/way.
+This cleans out the L1/L2 but leaves dirty lines in L3. Our platform
+doesn't really have a good way to clean L3 as it only provides cache
+maintenance operations by VA, not by line, so we would need to clean
+every VA address manually..
+
+Also want to point out, although this isn't a problem for most platforms
+what this code does here, with writing to a location as non-cacheable,
+is not architecturally safe as the running cores that do the reads have
+this section marked as cacheable when they read, therefor you have
+mismatched attributes. When this happens like this according to the ARM
+ARM we should do a cache invalidate after the write *and* before the
+read, which we do not do.
+
+I would like to work this fix from the U-Boot side also, but in parallel
+I would like to reduce the mismatched attributes as much as possible on
+the kernel side like done here. So yes, we still will have issue with
+__early_cpu_boot_status, but that only seems to be needed in the failure
+to boot case, I'd like to fix that up as well at some later point.
+
+As for early page table, since U-Boot doesn't write anything to those
+addresses (__boot_cpu_mode is in the data section and so written by the
+loader), they seem to be safe for now (I can break them by writing to
+all memory locations to dirty up the caches).
+
+Thanks,
+Andrew
+
+> Thanks,
+> Mark.
+> 
+>> Lets avoid these issues altogether by moving the writing of the boot
+>> exception level to after MMU/caching has been enabled. Saving the boot
+>> state in unused register x22 until we can safely and coherently write out
+>> this data.
+>>
+>> As the data is not written with the MMU off anymore we move the variable
+>> definition out of this section and into a regular C code data section.
+>>
+>> Signed-off-by: Andrew F. Davis <afd@ti.com>
+>> ---
+>>  arch/arm64/kernel/head.S | 31 +++++++++++--------------------
+>>  arch/arm64/kernel/smp.c  | 10 ++++++++++
+>>  2 files changed, 21 insertions(+), 20 deletions(-)
+>>
+>> diff --git a/arch/arm64/kernel/head.S b/arch/arm64/kernel/head.S
+>> index 2cdacd1c141b..4c71493742c5 100644
+>> --- a/arch/arm64/kernel/head.S
+>> +++ b/arch/arm64/kernel/head.S
+>> @@ -99,6 +99,7 @@ pe_header:
+>>  	 *
+>>  	 *  Register   Scope                      Purpose
+>>  	 *  x21        stext() .. start_kernel()  FDT pointer passed at boot in x0
+>> +	 *  x22        stext() .. start_kernel()  exception level core was booted
+>>  	 *  x23        stext() .. start_kernel()  physical misalignment/KASLR offset
+>>  	 *  x28        __create_page_tables()     callee preserved temp register
+>>  	 *  x19/x20    __primary_switch()         callee preserved temp registers
+>> @@ -108,7 +109,6 @@ ENTRY(stext)
+>>  	bl	el2_setup			// Drop to EL1, w0=cpu_boot_mode
+>>  	adrp	x23, __PHYS_OFFSET
+>>  	and	x23, x23, MIN_KIMG_ALIGN - 1	// KASLR offset, defaults to 0
+>> -	bl	set_cpu_boot_mode_flag
+>>  	bl	__create_page_tables
+>>  	/*
+>>  	 * The following calls CPU setup code, see arch/arm64/mm/proc.S for
+>> @@ -428,6 +428,8 @@ __primary_switched:
+>>  	sub	x4, x4, x0			// the kernel virtual and
+>>  	str_l	x4, kimage_voffset, x5		// physical mappings
+>>  
+>> +	bl	set_cpu_boot_mode_flag
+>> +
+>>  	// Clear BSS
+>>  	adr_l	x0, __bss_start
+>>  	mov	x1, xzr
+>> @@ -470,7 +472,7 @@ EXPORT_SYMBOL(kimage_vaddr)
+>>   * If we're fortunate enough to boot at EL2, ensure that the world is
+>>   * sane before dropping to EL1.
+>>   *
+>> - * Returns either BOOT_CPU_MODE_EL1 or BOOT_CPU_MODE_EL2 in w0 if
+>> + * Returns either BOOT_CPU_MODE_EL1 or BOOT_CPU_MODE_EL2 in w22 if
+>>   * booted in EL1 or EL2 respectively.
+>>   */
+>>  ENTRY(el2_setup)
+>> @@ -480,7 +482,7 @@ ENTRY(el2_setup)
+>>  	b.eq	1f
+>>  	mov_q	x0, (SCTLR_EL1_RES1 | ENDIAN_SET_EL1)
+>>  	msr	sctlr_el1, x0
+>> -	mov	w0, #BOOT_CPU_MODE_EL1		// This cpu booted in EL1
+>> +	mov	w22, #BOOT_CPU_MODE_EL1		// This cpu booted in EL1
+>>  	isb
+>>  	ret
+>>  
+>> @@ -593,7 +595,7 @@ set_hcr:
+>>  
+>>  	cbz	x2, install_el2_stub
+>>  
+>> -	mov	w0, #BOOT_CPU_MODE_EL2		// This CPU booted in EL2
+>> +	mov	w22, #BOOT_CPU_MODE_EL2		// This CPU booted in EL2
+>>  	isb
+>>  	ret
+>>  
+>> @@ -632,7 +634,7 @@ install_el2_stub:
+>>  		      PSR_MODE_EL1h)
+>>  	msr	spsr_el2, x0
+>>  	msr	elr_el2, lr
+>> -	mov	w0, #BOOT_CPU_MODE_EL2		// This CPU booted in EL2
+>> +	mov	w22, #BOOT_CPU_MODE_EL2		// This CPU booted in EL2
+>>  	eret
+>>  ENDPROC(el2_setup)
+>>  
+>> @@ -642,12 +644,10 @@ ENDPROC(el2_setup)
+>>   */
+>>  set_cpu_boot_mode_flag:
+>>  	adr_l	x1, __boot_cpu_mode
+>> -	cmp	w0, #BOOT_CPU_MODE_EL2
+>> +	cmp	w22, #BOOT_CPU_MODE_EL2
+>>  	b.ne	1f
+>> -	add	x1, x1, #4
+>> -1:	str	w0, [x1]			// This CPU has booted in EL1
+>> -	dmb	sy
+>> -	dc	ivac, x1			// Invalidate potentially stale cache line
+>> +	add	x1, x1, #4			// This CPU has booted in EL2
+>> +1:	str	w22, [x1]
+>>  	ret
+>>  ENDPROC(set_cpu_boot_mode_flag)
+>>  
+>> @@ -658,16 +658,7 @@ ENDPROC(set_cpu_boot_mode_flag)
+>>   * sufficient alignment that the CWG doesn't overlap another section.
+>>   */
+>>  	.pushsection ".mmuoff.data.write", "aw"
+>> -/*
+>> - * We need to find out the CPU boot mode long after boot, so we need to
+>> - * store it in a writable variable.
+>> - *
+>> - * This is not in .bss, because we set it sufficiently early that the boot-time
+>> - * zeroing of .bss would clobber it.
+>> - */
+>> -ENTRY(__boot_cpu_mode)
+>> -	.long	BOOT_CPU_MODE_EL2
+>> -	.long	BOOT_CPU_MODE_EL1
+>> +
+>>  /*
+>>   * The booting CPU updates the failed status @__early_cpu_boot_status,
+>>   * with MMU turned off.
+>> diff --git a/arch/arm64/kernel/smp.c b/arch/arm64/kernel/smp.c
+>> index 018a33e01b0e..66bdcaf61a46 100644
+>> --- a/arch/arm64/kernel/smp.c
+>> +++ b/arch/arm64/kernel/smp.c
+>> @@ -65,6 +65,16 @@ struct secondary_data secondary_data;
+>>  /* Number of CPUs which aren't online, but looping in kernel text. */
+>>  int cpus_stuck_in_kernel;
+>>  
+>> +/*
+>> + * We need to find out the CPU boot mode long after boot, so we need to
+>> + * store it in a writable variable in early boot. Any core started in
+>> + * EL1 will write that to the first location, EL2 to the second. After
+>> + * all cores are started this allows us to check that all cores started
+>> + * in the same mode.
+>> + */
+>> +u32 __boot_cpu_mode[2] = { BOOT_CPU_MODE_EL2, BOOT_CPU_MODE_EL1 };
+>> +EXPORT_SYMBOL(__boot_cpu_mode);
+>> +
+>>  enum ipi_msg_type {
+>>  	IPI_RESCHEDULE,
+>>  	IPI_CALL_FUNC,
+>> -- 
+>> 2.17.1
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
