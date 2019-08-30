@@ -2,56 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 12CAAA32BA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:35:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87416A32BF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:36:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rwqMxGRtHAY11gxXgLnXHdUZ2dvfhWn3vbDBf+jQBxI=; b=Y3+b9eSpgfc9bg
-	YCb6XnNCDGga0NIVwGrylukS3OSlYr91DxtccDAVUtL1CyY/XIlMoJGo06LXC1YfQez0kIlQZhwyr
-	Qe2MLiwLlFpy76XKn6goOfSEfIZAsIxfoapPrq26TeJTm+jhXCU6w1oozTrDeSBuJZ53x8j40Ya3X
-	I3mGxGLzK1s7k4h8ugZDtwWHhBWYFXT5cIs1g6oX9RvV3L8bi3Ca8e7C9TPS9QRqfYykj6IEyBlYG
-	jXX4JahpMbAX7Y5hFptQz8RvnrRcoD0VeCFIFIfgELyTT92VU6EGnFwEwBgU5P1ruvDxx2E76EX2e
-	i7mbW7wpeFDHs3IHNNkg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=I3NMxvBklfj/182VSNkNHlo+OyGC9s8kmjUCfJ5K1E8=; b=uQVbaJ5WnjLprM
+	alioPPjvu0i8bTfGsXQsQHlag8wAVww2nsJjOjNdqnXzyS0OhTtRGnwNUotzcKxwfrJB4T+epi1hZ
+	LjSVeswESomkisIDkZDlcDWDC//j+bI4Q3TkeQjhvi5jfoU6krjM+440hIORKceneNn7P64rQZIql
+	2Q+UvDdorI09MOwkpqOxSqQpBp/HSJATrB1zQ1XjtOgh2yVbWyeu4gENpRqxvidjeN4fK8OQ2VLkZ
+	Kodtgltl6JEReHDQwUuV0gcIEHsV0oy0DKD1OVyaINg00ABCk/QC7ARrGCoJq7dK9zTggbpY/s2/R
+	vzTCK62dJEwOBofrI/MQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3cNZ-0004OB-PX; Fri, 30 Aug 2019 08:35:34 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3cNK-0004NP-UY
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:35:20 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BE18D344;
- Fri, 30 Aug 2019 01:35:17 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 689183F718;
- Fri, 30 Aug 2019 01:35:16 -0700 (PDT)
-Subject: Re: [PATCH v3 01/10] KVM: arm64: Document PV-time interface
-To: Andrew Jones <drjones@redhat.com>
-References: <20190821153656.33429-1-steven.price@arm.com>
- <20190821153656.33429-2-steven.price@arm.com>
- <20190829171548.xfk7i2bwnwl4w2po@kamzik.brq.redhat.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <22fc60f0-e3d5-900d-c067-007c39485ba9@arm.com>
-Date: Fri, 30 Aug 2019 09:35:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i3cOL-0004i4-57; Fri, 30 Aug 2019 08:36:21 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3cO6-0004h4-IG; Fri, 30 Aug 2019 08:36:08 +0000
+X-UUID: afe819a577dd4724a9064817be893338-20190830
+X-UUID: afe819a577dd4724a9064817be893338-20190830
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 472908768; Fri, 30 Aug 2019 00:36:04 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 30 Aug 2019 01:36:03 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 30 Aug 2019 16:35:55 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 30 Aug 2019 16:35:55 +0800
+Message-ID: <1567154150.13325.2.camel@mtksdaap41>
+Subject: Re: [PATCH 1/2] drm/mediatek: Only block updates to CRTCs that have
+ a pending update
+From: CK Hu <ck.hu@mediatek.com>
+To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 30 Aug 2019 16:35:50 +0800
+In-Reply-To: <20190830073819.16566-2-bibby.hsieh@mediatek.com>
+References: <20190830073819.16566-1-bibby.hsieh@mediatek.com>
+ <20190830073819.16566-2-bibby.hsieh@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20190829171548.xfk7i2bwnwl4w2po@kamzik.brq.redhat.com>
-Content-Language: en-GB
+X-TM-SNTS-SMTP: 6A96CFC89D33F5FA5F20A3018DA500853F5365A8A16AA1784E06D7C60982FE4B2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_013519_077846_9639ECF6 
-X-CRM114-Status: GOOD (  30.80  )
+X-CRM114-CacheID: sfid-20190830_013606_612954_9F81D7AD 
+X-CRM114-Status: GOOD (  26.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,208 +75,411 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- Marc Zyngier <maz@kernel.org>, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>,
- Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
- Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+Cc: drinkcat@chromium.org, David Airlie <airlied@linux.ie>,
+ Daniel Vetter <daniel.vetter@ffwll.ch>, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, tfiga@chromium.org,
+ YT Shen <yt.shen@mediatek.com>, Thierry Reding <thierry.reding@gmail.com>,
+ linux-mediatek@lists.infradead.org, Daniel Kurtz <djkurtz@chromium.org>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 29/08/2019 18:15, Andrew Jones wrote:
-> On Wed, Aug 21, 2019 at 04:36:47PM +0100, Steven Price wrote:
->> Introduce a paravirtualization interface for KVM/arm64 based on the
->> "Arm Paravirtualized Time for Arm-Base Systems" specification DEN 0057A.
->>
->> This only adds the details about "Stolen Time" as the details of "Live
->> Physical Time" have not been fully agreed.
->>
->> User space can specify a reserved area of memory for the guest and
->> inform KVM to populate the memory with information on time that the host
->> kernel has stolen from the guest.
->>
->> A hypercall interface is provided for the guest to interrogate the
->> hypervisor's support for this interface and the location of the shared
->> memory structures.
->>
->> Signed-off-by: Steven Price <steven.price@arm.com>
->> ---
->>  Documentation/virt/kvm/arm/pvtime.txt | 100 ++++++++++++++++++++++++++
->>  1 file changed, 100 insertions(+)
->>  create mode 100644 Documentation/virt/kvm/arm/pvtime.txt
->>
->> diff --git a/Documentation/virt/kvm/arm/pvtime.txt b/Documentation/virt/kvm/arm/pvtime.txt
->> new file mode 100644
->> index 000000000000..1ceb118694e7
->> --- /dev/null
->> +++ b/Documentation/virt/kvm/arm/pvtime.txt
->> @@ -0,0 +1,100 @@
->> +Paravirtualized time support for arm64
->> +======================================
->> +
->> +Arm specification DEN0057/A defined a standard for paravirtualised time
->> +support for AArch64 guests:
->> +
->> +https://developer.arm.com/docs/den0057/a
->> +
->> +KVM/arm64 implements the stolen time part of this specification by providing
->> +some hypervisor service calls to support a paravirtualized guest obtaining a
->> +view of the amount of time stolen from its execution.
->> +
->> +Two new SMCCC compatible hypercalls are defined:
->> +
->> +PV_FEATURES 0xC5000020
->> +PV_TIME_ST  0xC5000022
->> +
->> +These are only available in the SMC64/HVC64 calling convention as
->> +paravirtualized time is not available to 32 bit Arm guests. The existence of
->> +the PV_FEATURES hypercall should be probed using the SMCCC 1.1 ARCH_FEATURES
->> +mechanism before calling it.
->> +
->> +PV_FEATURES
->> +    Function ID:  (uint32)  : 0xC5000020
->> +    PV_func_id:   (uint32)  : Either PV_TIME_LPT or PV_TIME_ST
->> +    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
->> +                              PV-time feature is supported by the hypervisor.
->> +
->> +PV_TIME_ST
->> +    Function ID:  (uint32)  : 0xC5000022
->> +    Return value: (int64)   : IPA of the stolen time data structure for this
->> +                              (V)CPU. On failure:
+Hi, Bibby:
+
+On Fri, 2019-08-30 at 15:38 +0800, Bibby Hsieh wrote:
+> Currently we use a single mutex to allow only a single atomic
+> update at a time. In truth, though, we really only want to
+> ensure that only a single atomic update is allowed per CRTC.
 > 
-> Why the () around the V in VCPU?
+> In other words, for each atomic update, we only block if there
+> is a pending update for the CRTCs involved, and don't block if
+> there are only pending updates for other CRTCs.
 
-There's nothing preventing the same mechanism being used without the
-virtualisation of CPUs. For example a hypervisor like Jailhouse could
-implement this interface even though there the CPU isn't being
-virtualised but is being handed over to the guest. Equally it is
-possible for firmware to provide the same mechanism (using the SMC64
-calling convention).
+I don't know why this patch is so complicated. The original problem is
+that one mutex for whole drm would block different crtc. So I think each
+crtc has its own mutex would solve this problem and we need not the
+event waiting. Do I miss something?
 
-Admittedly that's a little confusing here because the rest of this
-document is talking about KVM's implementation and normal hypervisors.
-So I'll drop the brackets.
+Regards,
+CK
 
->> +                              NOT_SUPPORTED (-1)
->> +
->> +The IPA returned by PV_TIME_ST should be mapped by the guest as normal memory
->> +with inner and outer write back caching attributes, in the inner shareable
->> +domain. A total of 16 bytes from the IPA returned are guaranteed to be
->> +meaningfully filled by the hypervisor (see structure below).
->> +
->> +PV_TIME_ST returns the structure for the calling VCPU.
 > 
-> The above sentence seems redundant here.
-
-It is an important detail that each VCPU must use PV_TIME_ST to fetch
-the address of the structure for that VCPU. E.g. It could have been
-implemented so that the hypercall took a VCPU number. So while redundant
-I do feel it's worth pointing this out explicitly.
-
->> +
->> +Stolen Time
->> +-----------
->> +
->> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
->> +
->> +  Field       | Byte Length | Byte Offset | Description
->> +  ----------- | ----------- | ----------- | --------------------------
->> +  Revision    |      4      |      0      | Must be 0 for version 0.1
->> +  Attributes  |      4      |      4      | Must be 0
->> +  Stolen time |      8      |      8      | Stolen time in unsigned
->> +              |             |             | nanoseconds indicating how
->> +              |             |             | much time this VCPU thread
->> +              |             |             | was involuntarily not
->> +              |             |             | running on a physical CPU.
->> +
->> +The structure will be updated by the hypervisor prior to scheduling a VCPU. It
->> +will be present within a reserved region of the normal memory given to the
->> +guest. The guest should not attempt to write into this memory. There is a
->> +structure per VCPU of the guest.
->> +
->> +User space interface
->> +====================
->> +
->> +User space can request that KVM provide the paravirtualized time interface to
->> +a guest by creating a KVM_DEV_TYPE_ARM_PV_TIME device, for example:
->> +
->> +    struct kvm_create_device pvtime_device = {
->> +            .type = KVM_DEV_TYPE_ARM_PV_TIME,
->> +            .attr = 0,
->> +            .flags = 0,
->> +    };
->> +
->> +    pvtime_fd = ioctl(vm_fd, KVM_CREATE_DEVICE, &pvtime_device);
+> Fixes: 119f5173628a ("drm/mediatek: Add DRM Driver for Mediatek SoC MT8173.")
 > 
-> The ioctl doesn't return the fd. If the ioctl returns zero the fd will be
-> in pvtime_device.fd.
-
-Good catch - I'm not sure quite why I wrote that. Anyway I've agreed to
-change the interface to operate on the VCPU device instead so this text
-is rewritten completely.
-
->> +
->> +Creation of the device should be done after creating the vCPUs of the virtual
->> +machine.
+> Signed-off-by: Daniel Kurtz <djkurtz@chromium.org>
+> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_crtc.c |  14 +-
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.c  | 182 +++++++++++++++++++++---
+>  drivers/gpu/drm/mediatek/mtk_drm_drv.h  |  12 +-
+>  3 files changed, 184 insertions(+), 24 deletions(-)
 > 
-> Or else what? Will an error be reported in that case?
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> index b55970a2869d..7697b40baac0 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+> @@ -5,6 +5,7 @@
+>  
+>  #include <asm/barrier.h>
+>  #include <drm/drmP.h>
+> +#include <drm/drm_atomic.h>
+>  #include <drm/drm_atomic_helper.h>
+>  #include <drm/drm_plane_helper.h>
+>  #include <drm/drm_probe_helper.h>
+> @@ -45,6 +46,8 @@ struct mtk_drm_crtc {
+>  	struct mtk_disp_mutex		*mutex;
+>  	unsigned int			ddp_comp_nr;
+>  	struct mtk_ddp_comp		**ddp_comp;
+> +
+> +	struct drm_crtc_state		*old_crtc_state;
+>  };
+>  
+>  struct mtk_crtc_state {
+> @@ -343,6 +346,7 @@ static void mtk_crtc_ddp_hw_fini(struct mtk_drm_crtc *mtk_crtc)
+>  static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  {
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+> +	struct drm_atomic_state *atomic_state = mtk_crtc->old_crtc_state->state;
+>  	struct mtk_crtc_state *state = to_mtk_crtc_state(mtk_crtc->base.state);
+>  	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
+>  	unsigned int i;
+> @@ -382,6 +386,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+>  			}
+>  		}
+>  		mtk_crtc->pending_planes = false;
+> +		mtk_atomic_state_put_queue(atomic_state);
+>  	}
+>  }
+>  
+> @@ -451,6 +456,7 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+>  static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+>  				      struct drm_crtc_state *old_crtc_state)
+>  {
+> +	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+>  	struct mtk_drm_private *priv = crtc->dev->dev_private;
+>  	unsigned int pending_planes = 0;
+> @@ -469,8 +475,13 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+>  			pending_planes |= BIT(i);
+>  		}
+>  	}
+> -	if (pending_planes)
+> +
+> +	if (pending_planes) {
+>  		mtk_crtc->pending_planes = true;
+> +		drm_atomic_state_get(old_atomic_state);
+> +		mtk_crtc->old_crtc_state = old_crtc_state;
+> +	}
+> +
+>  	if (crtc->state->color_mgmt_changed)
+>  		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+>  			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
+> @@ -526,6 +537,7 @@ static int mtk_drm_crtc_init(struct drm_device *drm,
+>  
+>  void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
+>  {
+> +
+>  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+>  	struct mtk_drm_private *priv = crtc->dev->dev_private;
+>  
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.c b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> index c0928b69dc43..b0308a3a7483 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.c
+> @@ -31,11 +31,120 @@
+>  #define DRIVER_MAJOR 1
+>  #define DRIVER_MINOR 0
+>  
+> -static void mtk_atomic_schedule(struct mtk_drm_private *private,
+> +struct mtk_atomic_state {
+> +	struct drm_atomic_state base;
+> +	struct list_head list;
+> +	struct work_struct work;
+> +};
+> +
+> +static inline struct mtk_atomic_state *to_mtk_state(struct drm_atomic_state *s)
+> +{
+> +	return container_of(s, struct mtk_atomic_state, base);
+> +}
+> +
+> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state)
+> +{
+> +	struct drm_device *drm = state->dev;
+> +	struct mtk_drm_private *mtk_drm = drm->dev_private;
+> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
+> +	unsigned long flags;
+> +
+> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	list_add_tail(&mtk_state->list, &mtk_drm->unreference.list);
+> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +
+> +	schedule_work(&mtk_drm->unreference.work);
+> +}
+> +
+> +static uint32_t mtk_atomic_crtc_mask(struct drm_device *drm,
+> +				     struct drm_atomic_state *state)
+> +{
+> +	uint32_t crtc_mask;
+> +	int i;
+> +
+> +	for (i = 0, crtc_mask = 0; i < drm->mode_config.num_crtc; i++) {
+> +		struct drm_crtc *crtc = state->crtcs[i].ptr;
+> +
+> +		if (crtc)
+> +			crtc_mask |= (1 << drm_crtc_index(crtc));
+> +	}
+> +
+> +	return crtc_mask;
+> +}
+> +
+> +/*
+> + * Block until specified crtcs are no longer pending update, and atomically
+> + * mark them as pending update.
+> + */
+> +static int mtk_atomic_get_crtcs(struct drm_device *drm,
+> +				struct drm_atomic_state *state)
+> +{
+> +	struct mtk_drm_private *private = drm->dev_private;
+> +	uint32_t crtc_mask;
+> +	int ret;
+> +
+> +	crtc_mask = mtk_atomic_crtc_mask(drm, state);
+> +
+> +	/*
+> +	 * Wait for all pending updates to complete for the set of crtcs being
+> +	 * changed in this atomic commit
+> +	 */
+> +	spin_lock(&private->commit.crtcs_event.lock);
+> +	ret = wait_event_interruptible_locked(private->commit.crtcs_event,
+> +			!(private->commit.crtcs & crtc_mask));
+> +	if (ret == 0)
+> +		private->commit.crtcs |= crtc_mask;
+> +	spin_unlock(&private->commit.crtcs_event.lock);
+> +
+> +	return ret;
+> +}
+> +
+> +/*
+> + * Mark specified crtcs as no longer pending update.
+> + */
+> +static void mtk_atomic_put_crtcs(struct drm_device *drm,
+> +				 struct drm_atomic_state *state)
+> +{
+> +	struct mtk_drm_private *private = drm->dev_private;
+> +	uint32_t crtc_mask;
+> +
+> +	crtc_mask = mtk_atomic_crtc_mask(drm, state);
+> +
+> +	spin_lock(&private->commit.crtcs_event.lock);
+> +	private->commit.crtcs &= ~crtc_mask;
+> +	wake_up_all_locked(&private->commit.crtcs_event);
+> +	spin_unlock(&private->commit.crtcs_event.lock);
+> +}
+> +
+> +static void mtk_unreference_work(struct work_struct *work)
+> +{
+> +	struct mtk_drm_private *mtk_drm = container_of(work,
+> +			struct mtk_drm_private, unreference.work);
+> +	unsigned long flags;
+> +	struct mtk_atomic_state *state, *tmp;
+> +
+> +	/*
+> +	 * framebuffers cannot be unreferenced in atomic context.
+> +	 * Therefore, only hold the spinlock when iterating unreference_list,
+> +	 * and drop it when doing the unreference.
+> +	 */
+> +	spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	list_for_each_entry_safe(state, tmp, &mtk_drm->unreference.list, list) {
+> +		list_del(&state->list);
+> +		spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +		drm_atomic_state_put(&state->base);
+> +		spin_lock_irqsave(&mtk_drm->unreference.lock, flags);
+> +	}
+> +	spin_unlock_irqrestore(&mtk_drm->unreference.lock, flags);
+> +}
+> +
+> +
+> +static void mtk_atomic_schedule(struct drm_device *drm,
+>  				struct drm_atomic_state *state)
+>  {
+> -	private->commit.state = state;
+> -	schedule_work(&private->commit.work);
+> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
+> +
+> +	schedule_work(&mtk_state->work);
+>  }
+>  
+>  static void mtk_atomic_wait_for_fences(struct drm_atomic_state *state)
+> @@ -48,13 +157,10 @@ static void mtk_atomic_wait_for_fences(struct drm_atomic_state *state)
+>  		mtk_fb_wait(new_plane_state->fb);
+>  }
+>  
+> -static void mtk_atomic_complete(struct mtk_drm_private *private,
+> +static void mtk_atomic_complete(struct drm_device *drm,
+>  				struct drm_atomic_state *state)
+>  {
+> -	struct drm_device *drm = private->drm;
+> -
+>  	mtk_atomic_wait_for_fences(state);
+> -
+>  	/*
+>  	 * Mediatek drm supports runtime PM, so plane registers cannot be
+>  	 * written when their crtc is disabled.
+> @@ -77,53 +183,86 @@ static void mtk_atomic_complete(struct mtk_drm_private *private,
+>  	drm_atomic_helper_wait_for_vblanks(drm, state);
+>  
+>  	drm_atomic_helper_cleanup_planes(drm, state);
+> +	mtk_atomic_put_crtcs(drm, state);
+> +
+>  	drm_atomic_state_put(state);
+>  }
+>  
+>  static void mtk_atomic_work(struct work_struct *work)
+>  {
+> -	struct mtk_drm_private *private = container_of(work,
+> -			struct mtk_drm_private, commit.work);
+> +	struct mtk_atomic_state *mtk_state = container_of(work,
+> +			struct mtk_atomic_state, work);
+> +	struct drm_atomic_state *state = &mtk_state->base;
+> +	struct drm_device *drm = state->dev;
+>  
+> -	mtk_atomic_complete(private, private->commit.state);
+> +	mtk_atomic_complete(drm, state);
+>  }
+>  
+>  static int mtk_atomic_commit(struct drm_device *drm,
+>  			     struct drm_atomic_state *state,
+>  			     bool async)
+>  {
+> -	struct mtk_drm_private *private = drm->dev_private;
+>  	int ret;
+>  
+>  	ret = drm_atomic_helper_prepare_planes(drm, state);
+>  	if (ret)
+>  		return ret;
+>  
+> -	mutex_lock(&private->commit.lock);
+> -	flush_work(&private->commit.work);
+> +	ret = mtk_atomic_get_crtcs(drm, state);
+> +	if (ret) {
+> +		drm_atomic_helper_cleanup_planes(drm, state);
+> +		return ret;
+> +	}
+>  
+>  	ret = drm_atomic_helper_swap_state(state, true);
+>  	if (ret) {
+> -		mutex_unlock(&private->commit.lock);
+>  		drm_atomic_helper_cleanup_planes(drm, state);
+>  		return ret;
+>  	}
+>  
+>  	drm_atomic_state_get(state);
+>  	if (async)
+> -		mtk_atomic_schedule(private, state);
+> +		mtk_atomic_schedule(drm, state);
+>  	else
+> -		mtk_atomic_complete(private, state);
+> -
+> -	mutex_unlock(&private->commit.lock);
+> +		mtk_atomic_complete(drm, state);
+>  
+>  	return 0;
+>  }
+>  
+> +static struct drm_atomic_state *mtk_drm_atomic_state_alloc(
+> +		struct drm_device *dev)
+> +{
+> +	struct mtk_atomic_state *mtk_state;
+> +
+> +	mtk_state = kzalloc(sizeof(*mtk_state), GFP_KERNEL);
+> +	if (!mtk_state)
+> +		return NULL;
+> +
+> +	if (drm_atomic_state_init(dev, &mtk_state->base) < 0) {
+> +		kfree(mtk_state);
+> +		return NULL;
+> +	}
+> +
+> +	INIT_LIST_HEAD(&mtk_state->list);
+> +	INIT_WORK(&mtk_state->work, mtk_atomic_work);
+> +
+> +	return &mtk_state->base;
+> +}
+> +
+> +static void mtk_drm_atomic_state_free(struct drm_atomic_state *state)
+> +{
+> +	struct mtk_atomic_state *mtk_state = to_mtk_state(state);
+> +
+> +	drm_atomic_state_default_release(state);
+> +	kfree(mtk_state);
+> +}
+> +
+>  static const struct drm_mode_config_funcs mtk_drm_mode_config_funcs = {
+>  	.fb_create = mtk_drm_mode_fb_create,
+>  	.atomic_check = drm_atomic_helper_check,
+>  	.atomic_commit = mtk_atomic_commit,
+> +	.atomic_state_alloc = mtk_drm_atomic_state_alloc,
+> +	.atomic_state_free = mtk_drm_atomic_state_free
+>  };
+>  
+>  static const enum mtk_ddp_comp_id mt2701_mtk_ddp_main[] = {
+> @@ -319,6 +458,11 @@ static int mtk_drm_kms_init(struct drm_device *drm)
+>  	drm_kms_helper_poll_init(drm);
+>  	drm_mode_config_reset(drm);
+>  
+> +	INIT_WORK(&private->unreference.work, mtk_unreference_work);
+> +	INIT_LIST_HEAD(&private->unreference.list);
+> +	spin_lock_init(&private->unreference.lock);
+> +	init_waitqueue_head(&private->commit.crtcs_event);
+> +
+>  	return 0;
+>  
+>  err_component_unbind:
+> @@ -504,8 +648,6 @@ static int mtk_drm_probe(struct platform_device *pdev)
+>  	if (!private)
+>  		return -ENOMEM;
+>  
+> -	mutex_init(&private->commit.lock);
+> -	INIT_WORK(&private->commit.work, mtk_atomic_work);
+>  	private->data = of_device_get_match_data(dev);
+>  
+>  	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_drv.h b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> index 823ba4081c18..0934f83b860d 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_drv.h
+> @@ -48,12 +48,16 @@ struct mtk_drm_private {
+>  	const struct mtk_mmsys_driver_data *data;
+>  
+>  	struct {
+> -		struct drm_atomic_state *state;
+> -		struct work_struct work;
+> -		struct mutex lock;
+> +		uint32_t crtcs;
+> +		wait_queue_head_t crtcs_event;
+>  	} commit;
+>  
+>  	struct drm_atomic_state *suspend_state;
+> +	struct {
+> +		struct work_struct	work;
+> +		struct list_head	list;
+> +		spinlock_t		lock;
+> +	} unreference;
+>  };
+>  
+>  extern struct platform_driver mtk_ddp_driver;
+> @@ -64,4 +68,6 @@ extern struct platform_driver mtk_dpi_driver;
+>  extern struct platform_driver mtk_dsi_driver;
+>  extern struct platform_driver mtk_mipi_tx_driver;
+>  
+> +void mtk_atomic_state_put_queue(struct drm_atomic_state *state);
+> +
+>  #endif /* MTK_DRM_DRV_H */
 
-This is now enforced by calling the ioctl on the VCPU device, so it's
-impossible to do in the wrong order.
-
->> +
->> +The IPA of the structures must be given to KVM. This is the base address
->> +of an array of stolen time structures (one for each VCPU). The base address
->> +must be page aligned. The size must be at least 64 * number of VCPUs and be a
->> +multiple of PAGE_SIZE.
->> +
->> +The memory for these structures should be added to the guest in the usual
->> +manner (e.g. using KVM_SET_USER_MEMORY_REGION).
-> 
-> Above it says the guest shouldn't attempt to write the memory. Should
-> KVM_MEM_READONLY be used with KVM_SET_USER_MEMORY_REGION for it?
-
-That is optional - the specification states the guest must not attempt
-to write to it - so marking it read-only for the guest should work fine
-with a conforming guest. But it's not required.
-
->> +
->> +For example:
->> +
->> +    struct kvm_dev_arm_st_region region = {
->> +            .gpa = <IPA of guest base address>,
->> +            .size = <size in bytes>
->> +    };
->> +
->> +    struct kvm_device_attr st_base = {
->> +            .group = KVM_DEV_ARM_PV_TIME_PADDR,
-> 
-> This is KVM_DEV_ARM_PV_TIME_REGION in the code.
-
-Gah - I obviously missed that when I refactored to define the region
-rather than just the base address. Anyway this has all changed (again)
-because each VCPU has its own base address so the size is no longer
-necessary.
-
-Thanks for the review,
-
-Steve
-
->> +            .attr = KVM_DEV_ARM_PV_TIME_ST,
->> +            .addr = (u64)&region
->> +    };
->> +
->> +    ioctl(pvtime_fd, KVM_SET_DEVICE_ATTR, &st_base);
->> -- 
->> 2.20.1
->>
-> 
-> Thanks,
-> drew 
-> 
 
 
 _______________________________________________
