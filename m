@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4D891A32F5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:45:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0027CA330E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 10:45:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jwgswOEFvY70ksFYMPSUJIvfnF5lwlzRN5dNdlRUg6E=; b=LQs1Ial+nTczDf
-	5ZzWn4lL/F0MS+x30ex0lzFTLofdpHk9bwz8YjMC4q11s3bN84w/10JUofFS44CSmXF+eT9b/JQD1
-	i2294zresy5oKP4Gbib+LXDNBLqcUE7wrpDTzikTLvUq5axwtp/z2r8G93HGXZgkSAGVcf2na7P6R
-	Butg0iQqDhPa7PAomb5EGfMPS2VFFUMy+YB/acABrZnPCrq9Q2t5vMQkyb8wlIPPKsm5RaFo6oyoz
-	uRJ1DL106kDl8hCoUJaNx9xqh31oz0zZF8xN5YeVzed8MKv3Q9tU/gc3Pd9KesHfhsKALQN/BQhYK
-	pmHdBr+Wr4GkuTA9HCsg==;
+	List-Owner; bh=Uhy2R/o7iEmNHfic3lEWhju+sW3HH/HOTjsTrQlilyk=; b=FTzgJuiUFf6XNX
+	bpbFpEySJWz7pKSHVmI+8LiwF0J/EBpKSiBVTvHSRJeonMttsKsinLMcCVyH9pDp1BAzDGFV1A11D
+	WjKeeooJFc2sKZoyxRGcxJxensMgAwC29O7f64G3tfK+ghW7AUOwaVfOfFRKnZK1ACtdfH/RcVK5e
+	1w9UTaS5e9XzUE+RAWYud5YXzK4bxwN7qw+Sbsg/AcH88d9NtsImMOxK70mivC7nlBF67GProPeMX
+	3TLf7s1VxhNHr21ovyCd2urw9B/uJhmRdxgju/QllO2Y6s1aVgr9YjyUPwmmgVWBEfI85tzhu6FeB
+	O5cGGdVVoDNTk7lUfMmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3cWh-0001bj-L1; Fri, 30 Aug 2019 08:44:59 +0000
+	id 1i3cWz-0001pu-9v; Fri, 30 Aug 2019 08:45:17 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3cV6-0000JM-7d
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:43:21 +0000
+ id 1i3cV7-0000LE-NX
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 08:43:23 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id F14C2344;
- Fri, 30 Aug 2019 01:43:18 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 55599360;
+ Fri, 30 Aug 2019 01:43:21 -0700 (PDT)
 Received: from e112269-lin.arm.com (e112269-lin.cambridge.arm.com
  [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D46BB3F718;
- Fri, 30 Aug 2019 01:43:16 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3C7083F718;
+ Fri, 30 Aug 2019 01:43:19 -0700 (PDT)
 From: Steven Price <steven.price@arm.com>
 To: Marc Zyngier <maz@kernel.org>, Will Deacon <will@kernel.org>,
  linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu
-Subject: [PATCH v4 06/10] KVM: Allow kvm_device_ops to be const
-Date: Fri, 30 Aug 2019 09:42:51 +0100
-Message-Id: <20190830084255.55113-7-steven.price@arm.com>
+Subject: [PATCH v4 07/10] KVM: arm64: Provide VCPU attributes for stolen time
+Date: Fri, 30 Aug 2019 09:42:52 +0100
+Message-Id: <20190830084255.55113-8-steven.price@arm.com>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190830084255.55113-1-steven.price@arm.com>
 References: <20190830084255.55113-1-steven.price@arm.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_014320_397445_9EE907DB 
-X-CRM114-Status: GOOD (  12.03  )
+X-CRM114-CacheID: sfid-20190830_014322_096303_BB6BD7C6 
+X-CRM114-Status: GOOD (  12.66  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,69 +74,167 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Currently a kvm_device_ops structure cannot be const without triggering
-compiler warnings. However the structure doesn't need to be written to
-and, by marking it const, it can be read-only in memory. Add some more
-const keywords to allow this.
+Allow user space to inform the KVM host where in the physical memory
+map the paravirtualized time structures should be located.
+
+User space can set an attribute on the VCPU providing the IPA base
+address of the stolen time structure for that VCPU. This must be
+repeated for every VCPU in the VM.
+
+The address is given in terms of the physical address visible to
+the guest and must be 64 byte aligned. The guest will discover the
+address via a hypercall.
 
 Signed-off-by: Steven Price <steven.price@arm.com>
 ---
- include/linux/kvm_host.h | 4 ++--
- virt/kvm/kvm_main.c      | 6 +++---
- 2 files changed, 5 insertions(+), 5 deletions(-)
+ arch/arm64/include/asm/kvm_host.h |  7 +++++
+ arch/arm64/include/uapi/asm/kvm.h |  2 ++
+ arch/arm64/kvm/guest.c            |  9 ++++++
+ include/uapi/linux/kvm.h          |  2 ++
+ virt/kvm/arm/pvtime.c             | 47 +++++++++++++++++++++++++++++++
+ 5 files changed, 67 insertions(+)
 
-diff --git a/include/linux/kvm_host.h b/include/linux/kvm_host.h
-index bf0ae1825b9c..4e65f7566913 100644
---- a/include/linux/kvm_host.h
-+++ b/include/linux/kvm_host.h
-@@ -1260,7 +1260,7 @@ extern unsigned int halt_poll_ns_grow_start;
- extern unsigned int halt_poll_ns_shrink;
+diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
+index 1697e63f6dd8..6af16b29a41f 100644
+--- a/arch/arm64/include/asm/kvm_host.h
++++ b/arch/arm64/include/asm/kvm_host.h
+@@ -489,6 +489,13 @@ long kvm_hypercall_pv_features(struct kvm_vcpu *vcpu);
+ long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu);
+ int kvm_update_stolen_time(struct kvm_vcpu *vcpu, bool init);
  
- struct kvm_device {
--	struct kvm_device_ops *ops;
-+	const struct kvm_device_ops *ops;
- 	struct kvm *kvm;
- 	void *private;
- 	struct list_head vm_node;
-@@ -1313,7 +1313,7 @@ struct kvm_device_ops {
- void kvm_device_get(struct kvm_device *dev);
- void kvm_device_put(struct kvm_device *dev);
- struct kvm_device *kvm_device_from_filp(struct file *filp);
--int kvm_register_device_ops(struct kvm_device_ops *ops, u32 type);
-+int kvm_register_device_ops(const struct kvm_device_ops *ops, u32 type);
- void kvm_unregister_device_ops(u32 type);
++int kvm_arm_pvtime_set_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr);
++int kvm_arm_pvtime_get_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr);
++int kvm_arm_pvtime_has_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr);
++
+ static inline void kvm_arm_pvtime_vcpu_init(struct kvm_vcpu_arch *vcpu_arch)
+ {
+ 	vcpu_arch->steal.base = GPA_INVALID;
+diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+index 9a507716ae2f..bde9f165ad3a 100644
+--- a/arch/arm64/include/uapi/asm/kvm.h
++++ b/arch/arm64/include/uapi/asm/kvm.h
+@@ -323,6 +323,8 @@ struct kvm_vcpu_events {
+ #define KVM_ARM_VCPU_TIMER_CTRL		1
+ #define   KVM_ARM_VCPU_TIMER_IRQ_VTIMER		0
+ #define   KVM_ARM_VCPU_TIMER_IRQ_PTIMER		1
++#define KVM_ARM_VCPU_PVTIME_CTRL	2
++#define   KVM_ARM_VCPU_PVTIME_SET_IPA	0
  
- extern struct kvm_device_ops kvm_mpic_ops;
-diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
-index c6a91b044d8d..75488ebb87c9 100644
---- a/virt/kvm/kvm_main.c
-+++ b/virt/kvm/kvm_main.c
-@@ -3046,14 +3046,14 @@ struct kvm_device *kvm_device_from_filp(struct file *filp)
- 	return filp->private_data;
- }
- 
--static struct kvm_device_ops *kvm_device_ops_table[KVM_DEV_TYPE_MAX] = {
-+static const struct kvm_device_ops *kvm_device_ops_table[KVM_DEV_TYPE_MAX] = {
- #ifdef CONFIG_KVM_MPIC
- 	[KVM_DEV_TYPE_FSL_MPIC_20]	= &kvm_mpic_ops,
- 	[KVM_DEV_TYPE_FSL_MPIC_42]	= &kvm_mpic_ops,
- #endif
+ /* KVM_IRQ_LINE irq field index values */
+ #define KVM_ARM_IRQ_TYPE_SHIFT		24
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index dfd626447482..d3ac9d2fd405 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -858,6 +858,9 @@ int kvm_arm_vcpu_arch_set_attr(struct kvm_vcpu *vcpu,
+ 	case KVM_ARM_VCPU_TIMER_CTRL:
+ 		ret = kvm_arm_timer_set_attr(vcpu, attr);
+ 		break;
++	case KVM_ARM_VCPU_PVTIME_CTRL:
++		ret = kvm_arm_pvtime_set_attr(vcpu, attr);
++		break;
+ 	default:
+ 		ret = -ENXIO;
+ 		break;
+@@ -878,6 +881,9 @@ int kvm_arm_vcpu_arch_get_attr(struct kvm_vcpu *vcpu,
+ 	case KVM_ARM_VCPU_TIMER_CTRL:
+ 		ret = kvm_arm_timer_get_attr(vcpu, attr);
+ 		break;
++	case KVM_ARM_VCPU_PVTIME_CTRL:
++		ret = kvm_arm_pvtime_get_attr(vcpu, attr);
++		break;
+ 	default:
+ 		ret = -ENXIO;
+ 		break;
+@@ -898,6 +904,9 @@ int kvm_arm_vcpu_arch_has_attr(struct kvm_vcpu *vcpu,
+ 	case KVM_ARM_VCPU_TIMER_CTRL:
+ 		ret = kvm_arm_timer_has_attr(vcpu, attr);
+ 		break;
++	case KVM_ARM_VCPU_PVTIME_CTRL:
++		ret = kvm_arm_pvtime_has_attr(vcpu, attr);
++		break;
+ 	default:
+ 		ret = -ENXIO;
+ 		break;
+diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
+index 5e3f12d5359e..265156a984f2 100644
+--- a/include/uapi/linux/kvm.h
++++ b/include/uapi/linux/kvm.h
+@@ -1222,6 +1222,8 @@ enum kvm_device_type {
+ #define KVM_DEV_TYPE_ARM_VGIC_ITS	KVM_DEV_TYPE_ARM_VGIC_ITS
+ 	KVM_DEV_TYPE_XIVE,
+ #define KVM_DEV_TYPE_XIVE		KVM_DEV_TYPE_XIVE
++	KVM_DEV_TYPE_ARM_PV_TIME,
++#define KVM_DEV_TYPE_ARM_PV_TIME	KVM_DEV_TYPE_ARM_PV_TIME
+ 	KVM_DEV_TYPE_MAX,
  };
  
--int kvm_register_device_ops(struct kvm_device_ops *ops, u32 type)
-+int kvm_register_device_ops(const struct kvm_device_ops *ops, u32 type)
- {
- 	if (type >= ARRAY_SIZE(kvm_device_ops_table))
- 		return -ENOSPC;
-@@ -3074,7 +3074,7 @@ void kvm_unregister_device_ops(u32 type)
- static int kvm_ioctl_create_device(struct kvm *kvm,
- 				   struct kvm_create_device *cd)
- {
--	struct kvm_device_ops *ops = NULL;
-+	const struct kvm_device_ops *ops = NULL;
- 	struct kvm_device *dev;
- 	bool test = cd->flags & KVM_CREATE_DEVICE_TEST;
- 	int type;
+diff --git a/virt/kvm/arm/pvtime.c b/virt/kvm/arm/pvtime.c
+index d9d0dbc6994b..7b1834b98a68 100644
+--- a/virt/kvm/arm/pvtime.c
++++ b/virt/kvm/arm/pvtime.c
+@@ -2,7 +2,9 @@
+ // Copyright (C) 2019 Arm Ltd.
+ 
+ #include <linux/arm-smccc.h>
++#include <linux/kvm_host.h>
+ 
++#include <asm/kvm_mmu.h>
+ #include <asm/pvclock-abi.h>
+ 
+ #include <kvm/arm_hypercalls.h>
+@@ -75,3 +77,48 @@ long kvm_hypercall_stolen_time(struct kvm_vcpu *vcpu)
+ 
+ 	return vcpu->arch.steal.base;
+ }
++
++int kvm_arm_pvtime_set_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr)
++{
++	u64 __user *user = (u64 __user *)attr->addr;
++	u64 ipa;
++
++	if (attr->attr != KVM_ARM_VCPU_PVTIME_SET_IPA)
++		return -ENXIO;
++
++	if (get_user(ipa, user))
++		return -EFAULT;
++	if (ipa & 63)
++		return -EINVAL;
++	if (vcpu->arch.steal.base != GPA_INVALID)
++		return -EEXIST;
++	vcpu->arch.steal.base = ipa;
++	return 0;
++}
++
++int kvm_arm_pvtime_get_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr)
++{
++	u64 __user *user = (u64 __user *)attr->addr;
++	u64 ipa;
++
++	if (attr->attr != KVM_ARM_VCPU_PVTIME_SET_IPA)
++		return -ENXIO;
++
++	ipa = vcpu->arch.steal.base;
++
++	if (put_user(ipa, user))
++		return -EFAULT;
++	return 0;
++}
++
++int kvm_arm_pvtime_has_attr(struct kvm_vcpu *vcpu,
++			    struct kvm_device_attr *attr)
++{
++	switch (attr->attr) {
++	case KVM_ARM_VCPU_PVTIME_SET_IPA:
++		return 0;
++	}
++	return -ENXIO;
++}
 -- 
 2.20.1
 
