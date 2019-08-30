@@ -2,35 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51CFFA2FF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 08:31:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC77EA2FF5
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 08:31:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OkkGtIZxbITegRdgLbc3KOKqjICT7REMqRnlUpbIAfs=; b=GaWpIoGW/0+eXT
-	JszmrhbdkvUsae3UlG0AX0rA0svHn1d1AaZIjWfO6awnLvNno5nKd2uZUS3UdmTLoRjWoqfEk73L7
-	e++KsMIcZFo7UGG+41mQUpDB+X+FwTxqFXj/DSpih/PcMypooF7AEmo3V1qYmTtWSlMYp6RzBwKFJ
-	77OT35V+OHgSCLPMI2FWSVTlemHsNIjKN3Fe7O4RSVwQFCyeS0o0+9mWdy7WVlfQLOyQIlxHBcfpH
-	1svmdVMHA8dtHospPbQ/SYs9w2ucu24t+hxi0xkbbp7RZvjFWE7bzSqgL3sBcuFCKrGfdVGcHOUdY
-	MYnfV4E+Vbm0ojXUL/Ww==;
+	List-Owner; bh=SRGeR9md+QV0XOSW9Baqf/2tNAAAPRR2rokQNnYsdBA=; b=L1Mt8ovknjP9rX
+	ftpHjQ5OWLqfhspMzogzoOsxJln6uhZt9swz73RHtd8XnIQmto/YzqF+wFN7UKe6R8jqD9Y4M6LOM
+	VDhtbXYBurhIENusW1+WCD514ZUek20LVbXozNAEiuem3DYBKfk2toDLqyphvRd00eYsC+qTcfcQd
+	KjitCRrOGTT9NGb8/aeNQjRA0Fx8eNwvnrOEjvH5KfFH0mCafMxIn1CkCbqTPQflYFuoLRf6JewDL
+	Jp+Si9kr4Kqie9T4WmnvwusGtu3vShfqPGMo3sygR27g5WHs66yMk9pRnk+6swyJeonKU4YvECBBG
+	OyqI/f/iK4BT5bwsiOig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3aR1-0004y3-1r; Fri, 30 Aug 2019 06:30:59 +0000
-Received: from [93.83.86.253] (helo=localhost)
- by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i3aPj-0002vk-8g; Fri, 30 Aug 2019 06:29:40 +0000
-From: Christoph Hellwig <hch@lst.de>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH 4/4] arm: remove wrappers for the generic dma remap helpers
-Date: Fri, 30 Aug 2019 08:29:24 +0200
-Message-Id: <20190830062924.21714-5-hch@lst.de>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190830062924.21714-1-hch@lst.de>
-References: <20190830062924.21714-1-hch@lst.de>
+	id 1i3aRU-0005D0-Sp; Fri, 30 Aug 2019 06:31:29 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i3aQy-0005AM-ME; Fri, 30 Aug 2019 06:30:59 +0000
+X-UUID: 5f29f082be9e4fcdb871f633f39d262e-20190829
+X-UUID: 5f29f082be9e4fcdb871f633f39d262e-20190829
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <ck.hu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1167954889; Thu, 29 Aug 2019 22:31:00 -0800
+Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 29 Aug 2019 23:30:58 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ MTKMBS31N1.mediatek.inc (172.27.4.69) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 30 Aug 2019 14:30:53 +0800
+Received: from [172.21.77.4] (172.21.77.4) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 30 Aug 2019 14:30:53 +0800
+Message-ID: <1567146647.5942.19.camel@mtksdaap41>
+Subject: Re: [PATCH v5, 28/32] drm/mediatek: add connection from OVL_2L0 to
+ RDMA0
+From: CK Hu <ck.hu@mediatek.com>
+To: <yongqiang.niu@mediatek.com>
+Date: Fri, 30 Aug 2019 14:30:47 +0800
+In-Reply-To: <1567090254-15566-29-git-send-email-yongqiang.niu@mediatek.com>
+References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
+ <1567090254-15566-29-git-send-email-yongqiang.niu@mediatek.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 4CE476717C2C671C40EAF66D9332FFD3A6FB89C3A2A75C9C0B564E557C4AD3FA2000:8
+X-MTK: N
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190829_233056_966749_2691C50B 
+X-CRM114-Status: GOOD (  13.22  )
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -42,108 +73,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-xtensa@linux-xtensa.org, linux-kernel@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-mm@kvack.org,
- Robin Murphy <robin.murphy@arm.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
+ linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Daniel Vetter <daniel@ffwll.ch>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove a few tiny wrappers around the generic dma remap code.
+Hi, Yongqiang:
 
-Signed-off-by: Christoph Hellwig <hch@lst.de>
----
- arch/arm/mm/dma-mapping.c | 32 +++++---------------------------
- 1 file changed, 5 insertions(+), 27 deletions(-)
+On Thu, 2019-08-29 at 22:50 +0800, yongqiang.niu@mediatek.com wrote:
+> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> 
+> this patch add add connection from OVL_2L0 to RDMA0
 
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index d07e5c865557..8cb57f1664b2 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -336,18 +336,6 @@ static void *__alloc_remap_buffer(struct device *dev, size_t size, gfp_t gfp,
- 				 pgprot_t prot, struct page **ret_page,
- 				 const void *caller, bool want_vaddr);
- 
--static void *
--__dma_alloc_remap(struct page *page, size_t size, gfp_t gfp, pgprot_t prot,
--	const void *caller)
--{
--	return dma_common_contiguous_remap(page, size, prot, caller);
--}
--
--static void __dma_free_remap(void *cpu_addr, size_t size)
--{
--	dma_common_free_remap(cpu_addr, size);
--}
--
- #define DEFAULT_DMA_COHERENT_POOL_SIZE	SZ_256K
- static struct gen_pool *atomic_pool __ro_after_init;
- 
-@@ -503,7 +491,7 @@ static void *__alloc_remap_buffer(struct device *dev, size_t size, gfp_t gfp,
- 	if (!want_vaddr)
- 		goto out;
- 
--	ptr = __dma_alloc_remap(page, size, gfp, prot, caller);
-+	ptr = dma_common_contiguous_remap(page, size, prot, caller);
- 	if (!ptr) {
- 		__dma_free_buffer(page, size);
- 		return NULL;
-@@ -570,7 +558,7 @@ static void *__alloc_from_contiguous(struct device *dev, size_t size,
- 		goto out;
- 
- 	if (PageHighMem(page)) {
--		ptr = __dma_alloc_remap(page, size, GFP_KERNEL, prot, caller);
-+		ptr = dma_common_contiguous_remap(page, size, prot, caller);
- 		if (!ptr) {
- 			dma_release_from_contiguous(dev, page, count);
- 			return NULL;
-@@ -590,7 +578,7 @@ static void __free_from_contiguous(struct device *dev, struct page *page,
- {
- 	if (want_vaddr) {
- 		if (PageHighMem(page))
--			__dma_free_remap(cpu_addr, size);
-+			dma_common_free_remap(cpu_addr, size);
- 		else
- 			__dma_remap(page, size, PAGE_KERNEL);
- 	}
-@@ -682,7 +670,7 @@ static void *remap_allocator_alloc(struct arm_dma_alloc_args *args,
- static void remap_allocator_free(struct arm_dma_free_args *args)
- {
- 	if (args->want_vaddr)
--		__dma_free_remap(args->cpu_addr, args->size);
-+		dma_common_free_remap(args->cpu_addr, args->size);
- 
- 	__dma_free_buffer(args->page, args->size);
- }
-@@ -1365,16 +1353,6 @@ static int __iommu_free_buffer(struct device *dev, struct page **pages,
- 	return 0;
- }
- 
--/*
-- * Create a CPU mapping for a specified pages
-- */
--static void *
--__iommu_alloc_remap(struct page **pages, size_t size, gfp_t gfp, pgprot_t prot,
--		    const void *caller)
--{
--	return dma_common_pages_remap(pages, size, prot, caller);
--}
--
- /*
-  * Create a mapping in device IO address space for specified pages
-  */
-@@ -1526,7 +1504,7 @@ static void *__arm_iommu_alloc_attrs(struct device *dev, size_t size,
- 	if (attrs & DMA_ATTR_NO_KERNEL_MAPPING)
- 		return pages;
- 
--	addr = __iommu_alloc_remap(pages, size, gfp, prot,
-+	addr = dma_common_pages_remap(pages, size, prot,
- 				   __builtin_return_address(0));
- 	if (!addr)
- 		goto err_mapping;
--- 
-2.20.1
+Reviewed-by: CK Hu <ck.hu@mediatek.com>
+
+> 
+> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> ---
+>  drivers/gpu/drm/mediatek/mtk_drm_ddp.c | 14 ++++++++++++++
+>  1 file changed, 14 insertions(+)
+> 
+> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> index aa6173b..943e114 100644
+> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp.c
+> @@ -33,6 +33,12 @@
+>  #define DISP_REG_CONFIG_DSI_SEL			0x050
+>  #define DISP_REG_CONFIG_DPI_SEL			0x064
+>  
+> +#define MT8183_DISP_OVL0_2L_MOUT_EN		0xf04
+> +#define MT8183_DISP_PATH0_SEL_IN		0xf24
+> +
+> +#define OVL0_2L_MOUT_EN_DISP_PATH0			BIT(0)
+> +#define DISP_PATH0_SEL_IN_OVL0_2L			0x1
+> +
+>  #define MT2701_DISP_MUTEX0_MOD0			0x2c
+>  #define MT2701_DISP_MUTEX0_SOF0			0x30
+>  
+> @@ -307,6 +313,10 @@ static unsigned int mtk_ddp_mout_en(const struct mtk_mmsys_reg_data *data,
+>  	} else if (cur == DDP_COMPONENT_OVL0 && next == DDP_COMPONENT_OVL_2L0) {
+>  		*addr = data->ovl0_mout_en;
+>  		value = OVL0_MOUT_EN_OVL0_2L;
+> +	} else if (cur == DDP_COMPONENT_OVL_2L0 &&
+> +		   next == DDP_COMPONENT_RDMA0) {
+> +		*addr = MT8183_DISP_OVL0_2L_MOUT_EN;
+> +		value = OVL0_2L_MOUT_EN_DISP_PATH0;
+>  	} else {
+>  		value = 0;
+>  	}
+> @@ -366,6 +376,10 @@ static unsigned int mtk_ddp_sel_in(const struct mtk_mmsys_reg_data *data,
+>  	} else if (cur == DDP_COMPONENT_BLS && next == DDP_COMPONENT_DSI0) {
+>  		*addr = DISP_REG_CONFIG_DSI_SEL;
+>  		value = DSI_SEL_IN_BLS;
+> +	} else if (cur == DDP_COMPONENT_OVL_2L0 &&
+> +		   next == DDP_COMPONENT_RDMA0) {
+> +		*addr = MT8183_DISP_PATH0_SEL_IN;
+> +		value = DISP_PATH0_SEL_IN_OVL0_2L;
+>  	} else {
+>  		value = 0;
+>  	}
+
 
 
 _______________________________________________
