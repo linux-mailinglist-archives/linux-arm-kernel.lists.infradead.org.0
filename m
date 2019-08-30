@@ -2,97 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13182A3C91
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:50:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1AEADA3C98
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:51:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9Fqva+nx0vMX1y4nMhATfoUs9jHYUGKlv0hsnnvm5Pc=; b=lWYbGSTo9EjeEH
-	dMXiximxlhtaHAzUAaFTOTsmwgKydpaJjbLzfoI/k9iWuTX+yB93ewB64VHsM/UZIwqd5+rz7gR4o
-	kzL4nPK+prcm72SZdvjsfkN9Z9jpif/G6SUgRLrSoWR+2E6YGBsIG8Jj3G6YYNvLvF1xFrOpthXEU
-	Dw0a15Z4iKPAH0wLXyEps4dv3vvgoO1KveWepvr9wTuLa3+MloNxgpGLlURICf+klyy3cy/bsuDwQ
-	u+2toDCfTOKwNklqBGWW9Cj+kbQG6pUHLzKWAZ3PdhWa0voH4vNxtEwuDcCJyt47OxobAEqk1w+r5
-	EKoxZh6rXSClA0FQLgFw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=DJB79VL7Webgl0cnk+6ZyQViqM5mZlkSL+AV+MALN40=; b=MJ7S464rpqJw7fbgI4sE/eA9N
+	gDiKJ1D75sBdwekQElcJhMjnzCdoTG7dVhMpynpv3E7JVh00f2ixCcLxsLByC6BlCpQLe40LraeXk
+	vd9qmOXhMN1ssiyDwNCmm9iOtibxjfoRBYeLvocGoejrK53WRidRyZ5YX9VF9Y36PS4V7epfwRZhP
+	UTkZxLwroQW1X4/CJrj3EhFtXtL2fFF5Yo1xL5Ijz7jzWd5fpuZnoy9oWIilBgpO7BeSr3kPkkLhW
+	d8oFWlZA+JOjBBPSfBEL8hs2zd8ghQpxT5+YnyAcuTGIIjaY8v05Z2nz0mcKGbXQB7w6a2t3xsu22
+	P74vKtsMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3k6C-0008VU-Fk; Fri, 30 Aug 2019 16:50:08 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i3k7F-0001hn-Dn; Fri, 30 Aug 2019 16:51:13 +0000
+Received: from userp2130.oracle.com ([156.151.31.86])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3k5t-0008VB-HQ
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:49:51 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q139so4970632pfc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 09:49:49 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=qbpfzmALTW17ZlL1SFdtNKihZ+JnkvnR1FEeYTOzQCU=;
- b=qS/Y0BkxqieZBjMcdEy+w9qTCzCHtKn1OyHlyNVC1ppJcOIZsahz2ZWrTFztrFarqu
- dlr5/UNC6P4llIYn+MCWYa5GJwv2j62a3pDbtEXGFG4eS3gucqcPO1d6qsBmWz+kfM4E
- lxZTtOfDuxMeFOVKZxIIymnj4976TdjIIiOXEP94F8GzbKcvdsIdzVGpT/NwPVde+A+k
- 9Hewn2/tKucNYtEaK1EaVDDhiAtfvRMqBlMRPeLEQDL6q3eP56upSVphAMDW4gvj2+mw
- CHmdKXg1lC6koKnGq3H3L2VlFdrLnI0AjXN/cl3+EokeQ3maV97njQiz/S3FI8Cqzedk
- Wbig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=qbpfzmALTW17ZlL1SFdtNKihZ+JnkvnR1FEeYTOzQCU=;
- b=dCLnS/vsJv5ALLJhbL4Y8mCeTU9poqQq61tJ+Hnh/zs1vzYZJva1SkzRQ8QmGhunHr
- t8kri/p7ezjfXZuaQjQbeA2sT1JjQ+lXabsGaT9Ag6ekxBScd6b3G8NRMIDWOrjEEsKl
- dUnIXqB6cZ+fr+iGbUqIfkbQ97PB3M+oFxmQVDB4b3WD8C5MjNlHadW3sY9vPdCphqXs
- uEc2eU3hoIK/0iflJaXETaM2gDHuaQyiuEhpOknAx9DOdLfYltRmQpyvp2YfhEWmgZkt
- NkonWstl+Kz06CcTNrxcR1ALWk+7l54k+mwGzI+ppMLKTzRhr83NEbYlGRsF86Qo83OP
- puJw==
-X-Gm-Message-State: APjAAAWHbjoaSzchkvJF35X7fwumSNVHjlf6yv6PAIEXFtcNIcNZRszg
- tpL+p//RNo2xXQC4+4T3X0g=
-X-Google-Smtp-Source: APXvYqzcrcwCyE4KcbARDBmdkB8wnJ422h2jkEnmmw6DCIOVAYhGKcc+BX5v/6plIFT8XkALIfP/kw==
-X-Received: by 2002:a65:430b:: with SMTP id j11mr13596490pgq.383.1567183788866; 
- Fri, 30 Aug 2019 09:49:48 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id 67sm7751559pjo.29.2019.08.30.09.49.48
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 30 Aug 2019 09:49:48 -0700 (PDT)
-Date: Fri, 30 Aug 2019 09:49:47 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Anson Huang <Anson.Huang@nxp.com>
-Subject: Re: [PATCH V4 2/4] watchdog: Add i.MX7ULP watchdog support
-Message-ID: <20190830164947.GE7911@roeck-us.net>
-References: <1566441463-11911-1-git-send-email-Anson.Huang@nxp.com>
- <1566441463-11911-2-git-send-email-Anson.Huang@nxp.com>
+ id 1i3k6v-0001ZD-6P
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:50:54 +0000
+Received: from pps.filterd (userp2130.oracle.com [127.0.0.1])
+ by userp2130.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7UGnFlb018778;
+ Fri, 30 Aug 2019 16:50:46 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=4W6MfuEHcSxRT7yJ6X9e/Gz29oowuWAtaR9pBiOjmXg=;
+ b=d8hQCtSVlz9uq1VUzH2ddO4k6scROOdpIfPxB+u4ltjbyMV95KYjKXK0uncwx0S55Bjd
+ 0d6kfYpDLLzM+JYHfe0919XfmiKx1z6VglHwdnqc4vx7vS4vyCVeAqcpWqwh7i6OtD2q
+ VFUAkQbtYr+BTypU4e5xKna3pIp8OJBvbXayCxjZSdC0BS9JM6D7hIgWfw5nRZLr1Obp
+ tEOT9GSxgyI8JnGv8MhIoHUOZvlh61j3KzpfiL7CakTxIZ/QyXq1cAgB2366chsDyCtD
+ qGRHlsy6Kwe5ov0F6i3Awuzb4ek/nC0It9v8MXo8NTlKM/DVG/DFK2uFMB4Rn8AKqlNP BA== 
+Received: from userp3020.oracle.com (userp3020.oracle.com [156.151.31.79])
+ by userp2130.oracle.com with ESMTP id 2uq7ngr063-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 30 Aug 2019 16:50:46 +0000
+Received: from pps.filterd (userp3020.oracle.com [127.0.0.1])
+ by userp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x7UGmTPm039008;
+ Fri, 30 Aug 2019 16:50:46 GMT
+Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
+ by userp3020.oracle.com with ESMTP id 2upkrgke9s-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 30 Aug 2019 16:50:46 +0000
+Received: from abhmp0018.oracle.com (abhmp0018.oracle.com [141.146.116.24])
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x7UGogNa022354;
+ Fri, 30 Aug 2019 16:50:43 GMT
+Received: from [10.209.243.89] (/10.209.243.89)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 30 Aug 2019 09:50:41 -0700
+Subject: Re: [PATCHv3 00/10] soc: ti: add OMAP PRM driver (for reset)
+To: Tero Kristo <t-kristo@ti.com>, ssantosh@kernel.org,
+ linux-omap@vger.kernel.org, tony@atomide.com, s-anna@ti.com,
+ p.zabel@pengutronix.de
+References: <20190830121816.30034-1-t-kristo@ti.com>
+From: santosh.shilimkar@oracle.com
+Organization: Oracle Corporation
+Message-ID: <f7d6a2fb-175c-361b-00ff-ddde67700daa@oracle.com>
+Date: Fri, 30 Aug 2019 09:50:33 -0700
+User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
+ Gecko/20100101 Thunderbird/60.7.2
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1566441463-11911-2-git-send-email-Anson.Huang@nxp.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+In-Reply-To: <20190830121816.30034-1-t-kristo@ti.com>
+Content-Language: en-US
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9365
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1906280000 definitions=main-1908300164
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9365
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1011
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
+ definitions=main-1908300164
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_094949_577586_F7B839CC 
-X-CRM114-Status: GOOD (  28.56  )
-X-Spam-Score: 0.6 (/)
+X-CRM114-CacheID: sfid-20190830_095053_386988_B21D6F6C 
+X-CRM114-Status: GOOD (  17.07  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.6 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [156.151.31.86 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,331 +113,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, leonard.crestez@nxp.com,
- schnitzeltony@gmail.com, linux-watchdog@vger.kernel.org,
- otavio@ossystems.com.br, festevam@gmail.com, s.hauer@pengutronix.de,
- jan.tuerk@emtrion.com, linux@armlinux.org.uk, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, Linux-imx@nxp.com, kernel@pengutronix.de,
- u.kleine-koenig@pengutronix.de, wim@linux-watchdog.org, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 10:37:41PM -0400, Anson Huang wrote:
-> The i.MX7ULP Watchdog Timer (WDOG) module is an independent timer
-> that is available for system use.
-> It provides a safety feature to ensure that software is executing
-> as planned and that the CPU is not stuck in an infinite loop or
-> executing unintended code. If the WDOG module is not serviced
-> (refreshed) within a certain period, it resets the MCU.
+On 8/30/19 5:18 AM, Tero Kristo wrote:
+> Hi,
 > 
-> Add driver support for i.MX7ULP watchdog.
+> V3 of the series, ended up re-sending the whole series as I squashed one
+> patch from v2 and because of that the ordering has changed a bit. Changes
+> in v3 contain fixes for the comments from Philipp Zabel.
 > 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+> - added spinlock to protect register writes
+> - added own xlate function to prevent bad reset IDs to be registered
+> - use mask for the valid reset detection instead of parsing reset map
+> - fixed reset status bit handling
+> - used iopoll macro instead of handwritten poll loop for timeouts
+> - squashed patch #6 into #4 from v2 of the series
+> - some other minor fixes.
+> 
+> This series still depends on the clk driver changes for the reset<->clk
+> syncing [1].
+> 
+This has to wait for another merge window. It will also take care of 
+dependencies landing in mainline. Will push this to linux-next as
+soon as v5.4-rc1 is out. Please remind me in case you don't see it
+in next after 5.4-rc1.
 
-Reviewed-by: Guenter Roeck <linux@roeck-us.net>
-
-> ---
-> Changes since V3:
-> 	- pass clk directly for reset action to avoid dereference from structure;
-> 	- use constant instead of variable for wdog clock rate, as it is fixed as 1KHz.
-> ---
->  drivers/watchdog/Kconfig       |  13 +++
->  drivers/watchdog/Makefile      |   1 +
->  drivers/watchdog/imx7ulp_wdt.c | 243 +++++++++++++++++++++++++++++++++++++++++
->  3 files changed, 257 insertions(+)
->  create mode 100644 drivers/watchdog/imx7ulp_wdt.c
-> 
-> diff --git a/drivers/watchdog/Kconfig b/drivers/watchdog/Kconfig
-> index a8f5c81..d68e5b5 100644
-> --- a/drivers/watchdog/Kconfig
-> +++ b/drivers/watchdog/Kconfig
-> @@ -724,6 +724,19 @@ config IMX_SC_WDT
->  	  To compile this driver as a module, choose M here: the
->  	  module will be called imx_sc_wdt.
->  
-> +config IMX7ULP_WDT
-> +	tristate "IMX7ULP Watchdog"
-> +	depends on ARCH_MXC || COMPILE_TEST
-> +	select WATCHDOG_CORE
-> +	help
-> +	  This is the driver for the hardware watchdog on the Freescale
-> +	  IMX7ULP and later processors. If you have one of these
-> +	  processors and wish to have watchdog support enabled,
-> +	  say Y, otherwise say N.
-> +
-> +	  To compile this driver as a module, choose M here: the
-> +	  module will be called imx7ulp_wdt.
-> +
->  config UX500_WATCHDOG
->  	tristate "ST-Ericsson Ux500 watchdog"
->  	depends on MFD_DB8500_PRCMU
-> diff --git a/drivers/watchdog/Makefile b/drivers/watchdog/Makefile
-> index b5a0aed..2ee352b 100644
-> --- a/drivers/watchdog/Makefile
-> +++ b/drivers/watchdog/Makefile
-> @@ -67,6 +67,7 @@ obj-$(CONFIG_TS4800_WATCHDOG) += ts4800_wdt.o
->  obj-$(CONFIG_TS72XX_WATCHDOG) += ts72xx_wdt.o
->  obj-$(CONFIG_IMX2_WDT) += imx2_wdt.o
->  obj-$(CONFIG_IMX_SC_WDT) += imx_sc_wdt.o
-> +obj-$(CONFIG_IMX7ULP_WDT) += imx7ulp_wdt.o
->  obj-$(CONFIG_UX500_WATCHDOG) += ux500_wdt.o
->  obj-$(CONFIG_RETU_WATCHDOG) += retu_wdt.o
->  obj-$(CONFIG_BCM2835_WDT) += bcm2835_wdt.o
-> diff --git a/drivers/watchdog/imx7ulp_wdt.c b/drivers/watchdog/imx7ulp_wdt.c
-> new file mode 100644
-> index 0000000..5ce5102
-> --- /dev/null
-> +++ b/drivers/watchdog/imx7ulp_wdt.c
-> @@ -0,0 +1,243 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <linux/clk.h>
-> +#include <linux/init.h>
-> +#include <linux/io.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/reboot.h>
-> +#include <linux/watchdog.h>
-> +
-> +#define WDOG_CS			0x0
-> +#define WDOG_CS_CMD32EN		BIT(13)
-> +#define WDOG_CS_ULK		BIT(11)
-> +#define WDOG_CS_RCS		BIT(10)
-> +#define WDOG_CS_EN		BIT(7)
-> +#define WDOG_CS_UPDATE		BIT(5)
-> +
-> +#define WDOG_CNT	0x4
-> +#define WDOG_TOVAL	0x8
-> +
-> +#define REFRESH_SEQ0	0xA602
-> +#define REFRESH_SEQ1	0xB480
-> +#define REFRESH		((REFRESH_SEQ1 << 16) | REFRESH_SEQ0)
-> +
-> +#define UNLOCK_SEQ0	0xC520
-> +#define UNLOCK_SEQ1	0xD928
-> +#define UNLOCK		((UNLOCK_SEQ1 << 16) | UNLOCK_SEQ0)
-> +
-> +#define DEFAULT_TIMEOUT	60
-> +#define MAX_TIMEOUT	128
-> +#define WDOG_CLOCK_RATE	1000
-> +
-> +static bool nowayout = WATCHDOG_NOWAYOUT;
-> +module_param(nowayout, bool, 0000);
-> +MODULE_PARM_DESC(nowayout, "Watchdog cannot be stopped once started (default="
-> +		 __MODULE_STRING(WATCHDOG_NOWAYOUT) ")");
-> +
-> +struct imx7ulp_wdt_device {
-> +	struct notifier_block restart_handler;
-> +	struct watchdog_device wdd;
-> +	void __iomem *base;
-> +	struct clk *clk;
-> +};
-> +
-> +static inline void imx7ulp_wdt_enable(void __iomem *base, bool enable)
-> +{
-> +	u32 val = readl(base + WDOG_CS);
-> +
-> +	writel(UNLOCK, base + WDOG_CNT);
-> +	if (enable)
-> +		writel(val | WDOG_CS_EN, base + WDOG_CS);
-> +	else
-> +		writel(val & ~WDOG_CS_EN, base + WDOG_CS);
-> +}
-> +
-> +static inline bool imx7ulp_wdt_is_enabled(void __iomem *base)
-> +{
-> +	u32 val = readl(base + WDOG_CS);
-> +
-> +	return val & WDOG_CS_EN;
-> +}
-> +
-> +static int imx7ulp_wdt_ping(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	writel(REFRESH, wdt->base + WDOG_CNT);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_start(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, true);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_stop(struct watchdog_device *wdog)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +
-> +	imx7ulp_wdt_enable(wdt->base, false);
-> +
-> +	return 0;
-> +}
-> +
-> +static int imx7ulp_wdt_set_timeout(struct watchdog_device *wdog,
-> +				   unsigned int timeout)
-> +{
-> +	struct imx7ulp_wdt_device *wdt = watchdog_get_drvdata(wdog);
-> +	u32 val = WDOG_CLOCK_RATE * timeout;
-> +
-> +	writel(UNLOCK, wdt->base + WDOG_CNT);
-> +	writel(val, wdt->base + WDOG_TOVAL);
-> +
-> +	wdog->timeout = timeout;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct watchdog_ops imx7ulp_wdt_ops = {
-> +	.owner = THIS_MODULE,
-> +	.start = imx7ulp_wdt_start,
-> +	.stop  = imx7ulp_wdt_stop,
-> +	.ping  = imx7ulp_wdt_ping,
-> +	.set_timeout = imx7ulp_wdt_set_timeout,
-> +};
-> +
-> +static const struct watchdog_info imx7ulp_wdt_info = {
-> +	.identity = "i.MX7ULP watchdog timer",
-> +	.options  = WDIOF_SETTIMEOUT | WDIOF_KEEPALIVEPING |
-> +		    WDIOF_MAGICCLOSE,
-> +};
-> +
-> +static inline void imx7ulp_wdt_init(void __iomem *base, unsigned int timeout)
-> +{
-> +	u32 val;
-> +
-> +	/* unlock the wdog for reconfiguration */
-> +	writel_relaxed(UNLOCK_SEQ0, base + WDOG_CNT);
-> +	writel_relaxed(UNLOCK_SEQ1, base + WDOG_CNT);
-> +
-> +	/* set an initial timeout value in TOVAL */
-> +	writel(timeout, base + WDOG_TOVAL);
-> +	/* enable 32bit command sequence and reconfigure */
-> +	val = BIT(13) | BIT(8) | BIT(5);
-> +	writel(val, base + WDOG_CS);
-> +}
-> +
-> +static void imx7ulp_wdt_action(void *data)
-> +{
-> +	clk_disable_unprepare(data);
-> +}
-> +
-> +static int imx7ulp_wdt_probe(struct platform_device *pdev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt;
-> +	struct device *dev = &pdev->dev;
-> +	struct watchdog_device *wdog;
-> +	int ret;
-> +
-> +	imx7ulp_wdt = devm_kzalloc(dev, sizeof(*imx7ulp_wdt), GFP_KERNEL);
-> +	if (!imx7ulp_wdt)
-> +		return -ENOMEM;
-> +
-> +	platform_set_drvdata(pdev, imx7ulp_wdt);
-> +
-> +	imx7ulp_wdt->base = devm_platform_ioremap_resource(pdev, 0);
-> +	if (IS_ERR(imx7ulp_wdt->base))
-> +		return PTR_ERR(imx7ulp_wdt->base);
-> +
-> +	imx7ulp_wdt->clk = devm_clk_get(dev, NULL);
-> +	if (IS_ERR(imx7ulp_wdt->clk)) {
-> +		dev_err(dev, "Failed to get watchdog clock\n");
-> +		return PTR_ERR(imx7ulp_wdt->clk);
-> +	}
-> +
-> +	ret = clk_prepare_enable(imx7ulp_wdt->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	ret = devm_add_action_or_reset(dev, imx7ulp_wdt_action, imx7ulp_wdt->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	wdog = &imx7ulp_wdt->wdd;
-> +	wdog->info = &imx7ulp_wdt_info;
-> +	wdog->ops = &imx7ulp_wdt_ops;
-> +	wdog->min_timeout = 1;
-> +	wdog->max_timeout = MAX_TIMEOUT;
-> +	wdog->parent = dev;
-> +	wdog->timeout = DEFAULT_TIMEOUT;
-> +
-> +	watchdog_init_timeout(wdog, 0, dev);
-> +	watchdog_stop_on_reboot(wdog);
-> +	watchdog_stop_on_unregister(wdog);
-> +	watchdog_set_drvdata(wdog, imx7ulp_wdt);
-> +	imx7ulp_wdt_init(imx7ulp_wdt->base, wdog->timeout * WDOG_CLOCK_RATE);
-> +
-> +	return devm_watchdog_register_device(dev, wdog);
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_suspend(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_stop(&imx7ulp_wdt->wdd);
-> +
-> +	clk_disable_unprepare(imx7ulp_wdt->clk);
-> +
-> +	return 0;
-> +}
-> +
-> +static int __maybe_unused imx7ulp_wdt_resume(struct device *dev)
-> +{
-> +	struct imx7ulp_wdt_device *imx7ulp_wdt = dev_get_drvdata(dev);
-> +	u32 timeout = imx7ulp_wdt->wdd.timeout * WDOG_CLOCK_RATE;
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(imx7ulp_wdt->clk);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (imx7ulp_wdt_is_enabled(imx7ulp_wdt->base))
-> +		imx7ulp_wdt_init(imx7ulp_wdt->base, timeout);
-> +
-> +	if (watchdog_active(&imx7ulp_wdt->wdd))
-> +		imx7ulp_wdt_start(&imx7ulp_wdt->wdd);
-> +
-> +	return 0;
-> +}
-> +
-> +static SIMPLE_DEV_PM_OPS(imx7ulp_wdt_pm_ops, imx7ulp_wdt_suspend,
-> +			 imx7ulp_wdt_resume);
-> +
-> +static const struct of_device_id imx7ulp_wdt_dt_ids[] = {
-> +	{ .compatible = "fsl,imx7ulp-wdt", },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, imx7ulp_wdt_dt_ids);
-> +
-> +static struct platform_driver imx7ulp_wdt_driver = {
-> +	.probe		= imx7ulp_wdt_probe,
-> +	.driver		= {
-> +		.name	= "imx7ulp-wdt",
-> +		.pm	= &imx7ulp_wdt_pm_ops,
-> +		.of_match_table = imx7ulp_wdt_dt_ids,
-> +	},
-> +};
-> +module_platform_driver(imx7ulp_wdt_driver);
-> +
-> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
-> +MODULE_DESCRIPTION("Freescale i.MX7ULP watchdog driver");
-> +MODULE_LICENSE("GPL v2");
-> -- 
-> 2.7.4
-> 
+Regards,
+Snatosh
 
 _______________________________________________
 linux-arm-kernel mailing list
