@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83703A3167
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:44:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9F571A3162
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 09:43:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qbSNQpDSzTCsC0RhY7wFzt9/n6Uja4gPkdPINt9S8hg=; b=OFyzvRvxB8kEBI
-	Gp+77kJIupZBA9B1wDnHKfVImZVq4isaNTHnJ1iTH7W/xyrZvmuyQUYFwFRF6jE9QdsY3ti3KlH29
-	PkN19fPY58S4UZaMsBWvLSssuoMeDgTSGSa5XFRu0fJRReTyhL34XLqVBsp1uOUz5jjXEWeN71rT2
-	TQ7pSaC3dMKJHhmKGETPCmKRs4xk6+RxOwwKWv2VJFN7OO2xPk28iMwLM79shOt93nI0uNvidSQRT
-	pCpKHKFTBUIDQpJU9PPfc8S9hycJb+oyh6TUEpTfV0zHPnih6nlz+MqR0+NylLpp2p30J2jUiz5pZ
-	5BFuwkH8lKliR3tqj3ag==;
+	List-Owner; bh=onSRooUZh/X0sy9HSmXgTwqfHcc53ISTIiCBm593kkg=; b=lfnpJna+47PPUR
+	yRSrb8fJOPvGCNX4fLOU+pYY6flYWeIJLEWgzAOL7vkFNVZHUqQeYVgTvQR2BokEY42fgLi8dIZoC
+	rKMLASvFJDYnF0Vs1MATUVyzqZ8bRi6EGnC9nFFcUioCNEwCE/mSgpa8k1zwY7agqDmSFm4mTNFbg
+	D2ta3IogKRAUFadC0fcolJvZN8iQ3lMe2vnuTont6L/pZ4U6Xd8vWhnr85PzpA/RMW+qKm+99GB5o
+	iWICtY68vTa2PjmRYtfKUMqqdObjbnG/VZy51DVlrqeAJtwFh0YQrFDYe1HoN1wkEjly/wr4Ie20q
+	Id4v2GUuS7OjGU5oMOSg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3bZq-0005m3-Sa; Fri, 30 Aug 2019 07:44:11 +0000
+	id 1i3bZM-0005J3-4T; Fri, 30 Aug 2019 07:43:40 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3bWz-0003Eq-Rs; Fri, 30 Aug 2019 07:41:16 +0000
-X-UUID: 289061180681422a8ede0cbfb3a806f6-20190829
-X-UUID: 289061180681422a8ede0cbfb3a806f6-20190829
+ id 1i3bWy-0003GE-PV; Fri, 30 Aug 2019 07:41:15 +0000
+X-UUID: 72d151654f0b42dcb6f70f37b6f77097-20190829
+X-UUID: 72d151654f0b42dcb6f70f37b6f77097-20190829
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <bibby.hsieh@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1184679385; Thu, 29 Aug 2019 23:41:13 -0800
-Received: from mtkmbs05n1.mediatek.inc (172.21.101.15) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ with ESMTP id 1036169662; Thu, 29 Aug 2019 23:41:13 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Fri, 30 Aug 2019 00:41:12 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs05n1.mediatek.inc (172.21.101.15) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Fri, 30 Aug 2019 15:41:10 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,17 +41,17 @@ From: Bibby Hsieh <bibby.hsieh@mediatek.com>
 To: David Airlie <airlied@linux.ie>, Matthias Brugger
  <matthias.bgg@gmail.com>, Daniel Vetter <daniel.vetter@ffwll.ch>,
  <dri-devel@lists.freedesktop.org>, <linux-mediatek@lists.infradead.org>
-Subject: [PATCH 1/2] drm/mediatek: Support CMDQ interface in ddp component
-Date: Fri, 30 Aug 2019 15:41:02 +0800
-Message-ID: <20190830074103.16671-2-bibby.hsieh@mediatek.com>
+Subject: [PATCH 2/2] drm/mediatek: Apply CMDQ control flow
+Date: Fri, 30 Aug 2019 15:41:03 +0800
+Message-ID: <20190830074103.16671-3-bibby.hsieh@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190830074103.16671-1-bibby.hsieh@mediatek.com>
 References: <20190830074103.16671-1-bibby.hsieh@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_004114_062892_AEA06550 
-X-CRM114-Status: GOOD (  12.00  )
+X-CRM114-CacheID: sfid-20190830_004112_902042_864E5FAD 
+X-CRM114-Status: GOOD (  16.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,12 +85,13 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The CMDQ (Command Queue) in MT8183 is used to help
+Unlike other SoCs, MT8183 does not have "shadow"
+registers for performaing an atomic video mode
+set or page flip at vblank/vsync.
+
+The CMDQ (Commend Queue) in MT8183 is used to help
 update all relevant display controller registers
 with critical time limation.
-This patch add cmdq interface in ddp_comp interface,
-let all ddp_comp interface can support cpu/cmdq function
-at the same time.
 
 Signed-off-by: YT Shen <yt.shen@mediatek.com>
 Signed-off-by: CK Hu <ck.hu@mediatek.com>
@@ -98,638 +99,408 @@ Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
 Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
 Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
 ---
- drivers/gpu/drm/mediatek/mtk_disp_color.c   |   7 +-
- drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  78 +++++++-------
- drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  66 ++++++------
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c | 110 ++++++++++++++------
- drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  53 ++++++----
- 5 files changed, 187 insertions(+), 127 deletions(-)
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 190 +++++++++++++++++---
+ drivers/gpu/drm/mediatek/mtk_drm_crtc.h     |   2 +
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c |  34 ++++
+ drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |   2 +
+ drivers/gpu/drm/mediatek/mtk_drm_plane.c    |   4 +
+ 5 files changed, 206 insertions(+), 26 deletions(-)
 
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_color.c b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-index f33d98b356d6..c5d3e3cf8ad5 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_color.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_color.c
-@@ -9,6 +9,7 @@
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+index 092e502ed27b..329ca5a14c39 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
+@@ -10,7 +10,9 @@
+ #include <drm/drm_plane_helper.h>
+ #include <drm/drm_probe_helper.h>
+ #include <linux/clk.h>
++#include <linux/of_address.h>
+ #include <linux/pm_runtime.h>
 +#include <linux/soc/mediatek/mtk-cmdq.h>
  
- #include "mtk_drm_crtc.h"
- #include "mtk_drm_ddp_comp.h"
-@@ -45,12 +46,12 @@ static inline struct mtk_disp_color *comp_to_color(struct mtk_ddp_comp *comp)
- 
- static void mtk_color_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int h, unsigned int vrefresh,
--			     unsigned int bpc)
-+			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	struct mtk_disp_color *color = comp_to_color(comp);
- 
--	writel(w, comp->regs + DISP_COLOR_WIDTH(color));
--	writel(h, comp->regs + DISP_COLOR_HEIGHT(color));
-+	mtk_ddp_write(cmdq_pkt, w, comp, DISP_COLOR_WIDTH(color));
-+	mtk_ddp_write(cmdq_pkt, h, comp, DISP_COLOR_HEIGHT(color));
- }
- 
- static void mtk_color_start(struct mtk_ddp_comp *comp)
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-index 94c80c215c6e..f11c785199d3 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-@@ -9,6 +9,7 @@
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
-+#include <linux/soc/mediatek/mtk-cmdq.h>
- 
- #include "mtk_drm_crtc.h"
- #include "mtk_drm_ddp_comp.h"
-@@ -120,14 +121,15 @@ static void mtk_ovl_stop(struct mtk_ddp_comp *comp)
- 
- static void mtk_ovl_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			   unsigned int h, unsigned int vrefresh,
--			   unsigned int bpc)
-+			   unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	if (w != 0 && h != 0)
--		writel_relaxed(h << 16 | w, comp->regs + DISP_REG_OVL_ROI_SIZE);
--	writel_relaxed(0x0, comp->regs + DISP_REG_OVL_ROI_BGCLR);
-+		mtk_ddp_write_relaxed(cmdq_pkt, h << 16 | w, comp,
-+		DISP_REG_OVL_ROI_SIZE);
-+	mtk_ddp_write_relaxed(cmdq_pkt, 0x0, comp, DISP_REG_OVL_ROI_BGCLR);
- 
--	writel(0x1, comp->regs + DISP_REG_OVL_RST);
--	writel(0x0, comp->regs + DISP_REG_OVL_RST);
-+	mtk_ddp_write(cmdq_pkt, 0x1, comp, DISP_REG_OVL_RST);
-+	mtk_ddp_write(cmdq_pkt, 0x0, comp, DISP_REG_OVL_RST);
- }
- 
- static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
-@@ -137,7 +139,8 @@ static unsigned int mtk_ovl_layer_nr(struct mtk_ddp_comp *comp)
- 	return ovl->data->layer_nr;
- }
- 
--static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
-+static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx,
-+			     struct cmdq_pkt *cmdq_pkt)
- {
- 	unsigned int reg;
- 	unsigned int gmc_thrshd_l;
-@@ -145,8 +148,8 @@ static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
- 	unsigned int gmc_value;
- 	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
- 
--	writel(0x1, comp->regs + DISP_REG_OVL_RDMA_CTRL(idx));
--
-+	mtk_ddp_write(cmdq_pkt, 0x1, comp,
-+		      DISP_REG_OVL_RDMA_CTRL(idx));
- 	gmc_thrshd_l = GMC_THRESHOLD_LOW >>
- 		      (GMC_THRESHOLD_BITS - ovl->data->gmc_bits);
- 	gmc_thrshd_h = GMC_THRESHOLD_HIGH >>
-@@ -156,22 +159,19 @@ static void mtk_ovl_layer_on(struct mtk_ddp_comp *comp, unsigned int idx)
- 	else
- 		gmc_value = gmc_thrshd_l | gmc_thrshd_l << 8 |
- 			    gmc_thrshd_h << 16 | gmc_thrshd_h << 24;
--	writel(gmc_value, comp->regs + DISP_REG_OVL_RDMA_GMC(idx));
--
--	reg = readl(comp->regs + DISP_REG_OVL_SRC_CON);
--	reg = reg | BIT(idx);
--	writel(reg, comp->regs + DISP_REG_OVL_SRC_CON);
-+	mtk_ddp_write(cmdq_pkt, gmc_value,
-+		      comp, DISP_REG_OVL_RDMA_GMC(idx));
-+	mtk_ddp_write_mask(cmdq_pkt, BIT(idx), comp,
-+			    DISP_REG_OVL_SRC_CON, BIT(idx));
- }
- 
--static void mtk_ovl_layer_off(struct mtk_ddp_comp *comp, unsigned int idx)
-+static void mtk_ovl_layer_off(struct mtk_ddp_comp *comp, unsigned int idx,
-+			      struct cmdq_pkt *cmdq_pkt)
- {
--	unsigned int reg;
--
--	reg = readl(comp->regs + DISP_REG_OVL_SRC_CON);
--	reg = reg & ~BIT(idx);
--	writel(reg, comp->regs + DISP_REG_OVL_SRC_CON);
--
--	writel(0x0, comp->regs + DISP_REG_OVL_RDMA_CTRL(idx));
-+	mtk_ddp_write_mask(cmdq_pkt, 0, comp,
-+			    DISP_REG_OVL_SRC_CON, BIT(idx));
-+	mtk_ddp_write(cmdq_pkt, 0, comp,
-+		       DISP_REG_OVL_RDMA_CTRL(idx));
- }
- 
- static unsigned int ovl_fmt_convert(struct mtk_disp_ovl *ovl, unsigned int fmt)
-@@ -211,7 +211,8 @@ static unsigned int ovl_fmt_convert(struct mtk_disp_ovl *ovl, unsigned int fmt)
- }
- 
- static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
--				 struct mtk_plane_state *state)
-+				 struct mtk_plane_state *state,
-+				 struct cmdq_pkt *cmdq_pkt)
- {
- 	struct mtk_disp_ovl *ovl = comp_to_ovl(comp);
- 	struct mtk_plane_pending_state *pending = &state->pending;
-@@ -223,38 +224,37 @@ static void mtk_ovl_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 	unsigned int con;
- 
- 	if (!pending->enable)
--		mtk_ovl_layer_off(comp, idx);
-+		mtk_ovl_layer_off(comp, idx, cmdq_pkt);
- 
- 	con = ovl_fmt_convert(ovl, fmt);
- 	if (idx != 0)
- 		con |= OVL_CON_AEN | OVL_CON_ALPHA;
- 
--	writel_relaxed(con, comp->regs + DISP_REG_OVL_CON(idx));
--	writel_relaxed(pitch, comp->regs + DISP_REG_OVL_PITCH(idx));
--	writel_relaxed(src_size, comp->regs + DISP_REG_OVL_SRC_SIZE(idx));
--	writel_relaxed(offset, comp->regs + DISP_REG_OVL_OFFSET(idx));
--	writel_relaxed(addr, comp->regs + DISP_REG_OVL_ADDR(ovl, idx));
-+	mtk_ddp_write_relaxed(cmdq_pkt, con, comp,
-+			      DISP_REG_OVL_CON(idx));
-+	mtk_ddp_write_relaxed(cmdq_pkt, pitch, comp,
-+			      DISP_REG_OVL_PITCH(idx));
-+	mtk_ddp_write_relaxed(cmdq_pkt, src_size, comp,
-+			      DISP_REG_OVL_SRC_SIZE(idx));
-+	mtk_ddp_write_relaxed(cmdq_pkt, offset, comp,
-+			      DISP_REG_OVL_OFFSET(idx));
-+	mtk_ddp_write_relaxed(cmdq_pkt, addr, comp,
-+			      DISP_REG_OVL_ADDR(ovl, idx));
- 
- 	if (pending->enable)
--		mtk_ovl_layer_on(comp, idx);
-+		mtk_ovl_layer_on(comp, idx, cmdq_pkt);
- }
- 
- static void mtk_ovl_bgclr_in_on(struct mtk_ddp_comp *comp)
- {
--	unsigned int reg;
--
--	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
--	reg = reg | OVL_BGCLR_SEL_IN;
--	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+	mtk_ddp_write_mask(NULL, OVL_BGCLR_SEL_IN, comp,
-+			   DISP_REG_OVL_DATAPATH_CON, OVL_BGCLR_SEL_IN);
- }
- 
- static void mtk_ovl_bgclr_in_off(struct mtk_ddp_comp *comp)
- {
--	unsigned int reg;
--
--	reg = readl(comp->regs + DISP_REG_OVL_DATAPATH_CON);
--	reg = reg & ~OVL_BGCLR_SEL_IN;
--	writel(reg, comp->regs + DISP_REG_OVL_DATAPATH_CON);
-+	mtk_ddp_write_mask(NULL, 0, comp,
-+			   DISP_REG_OVL_DATAPATH_CON, OVL_BGCLR_SEL_IN);
- }
- 
- static const struct mtk_ddp_comp_funcs mtk_disp_ovl_funcs = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-index 24945fec00b1..6df372dac3e3 100644
---- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-+++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-@@ -9,6 +9,7 @@
- #include <linux/of_device.h>
- #include <linux/of_irq.h>
- #include <linux/platform_device.h>
-+#include <linux/soc/mediatek/mtk-cmdq.h>
- 
- #include "mtk_drm_crtc.h"
- #include "mtk_drm_ddp_comp.h"
-@@ -86,23 +87,14 @@ static irqreturn_t mtk_disp_rdma_irq_handler(int irq, void *dev_id)
- 	return IRQ_HANDLED;
- }
- 
--static void rdma_update_bits(struct mtk_ddp_comp *comp, unsigned int reg,
--			     unsigned int mask, unsigned int val)
--{
--	unsigned int tmp = readl(comp->regs + reg);
--
--	tmp = (tmp & ~mask) | (val & mask);
--	writel(tmp, comp->regs + reg);
--}
--
- static void mtk_rdma_enable_vblank(struct mtk_ddp_comp *comp,
- 				   struct drm_crtc *crtc)
- {
- 	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
- 
- 	rdma->crtc = crtc;
--	rdma_update_bits(comp, DISP_REG_RDMA_INT_ENABLE, RDMA_FRAME_END_INT,
--			 RDMA_FRAME_END_INT);
-+	mtk_ddp_write_mask(NULL, RDMA_FRAME_END_INT, comp,
-+			   DISP_REG_RDMA_INT_ENABLE, RDMA_FRAME_END_INT);
- }
- 
- static void mtk_rdma_disable_vblank(struct mtk_ddp_comp *comp)
-@@ -110,31 +102,35 @@ static void mtk_rdma_disable_vblank(struct mtk_ddp_comp *comp)
- 	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
- 
- 	rdma->crtc = NULL;
--	rdma_update_bits(comp, DISP_REG_RDMA_INT_ENABLE, RDMA_FRAME_END_INT, 0);
-+	mtk_ddp_write_mask(NULL, 0, comp,
-+			   DISP_REG_RDMA_INT_ENABLE, RDMA_FRAME_END_INT);
- }
- 
- static void mtk_rdma_start(struct mtk_ddp_comp *comp)
- {
--	rdma_update_bits(comp, DISP_REG_RDMA_GLOBAL_CON, RDMA_ENGINE_EN,
--			 RDMA_ENGINE_EN);
-+	mtk_ddp_write_mask(NULL, RDMA_ENGINE_EN, comp,
-+			   DISP_REG_RDMA_GLOBAL_CON, RDMA_ENGINE_EN);
- }
- 
- static void mtk_rdma_stop(struct mtk_ddp_comp *comp)
- {
--	rdma_update_bits(comp, DISP_REG_RDMA_GLOBAL_CON, RDMA_ENGINE_EN, 0);
-+	mtk_ddp_write_mask(NULL, 0, comp,
-+			   DISP_REG_RDMA_GLOBAL_CON, RDMA_ENGINE_EN);
- }
- 
- static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
- 			    unsigned int height, unsigned int vrefresh,
--			    unsigned int bpc)
-+			    unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
- 	unsigned int threshold;
- 	unsigned int reg;
- 	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
- 	u32 rdma_fifo_size;
- 
--	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0, 0xfff, width);
--	rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_1, 0xfffff, height);
-+	mtk_ddp_write_mask(cmdq_pkt, width, comp,
-+			    DISP_REG_RDMA_SIZE_CON_0, 0xfff);
-+	mtk_ddp_write_mask(cmdq_pkt, height, comp,
-+			    DISP_REG_RDMA_SIZE_CON_1, 0xfffff);
- 
- 	if (rdma->fifo_size)
- 		rdma_fifo_size = rdma->fifo_size;
-@@ -151,7 +147,7 @@ static void mtk_rdma_config(struct mtk_ddp_comp *comp, unsigned int width,
- 	reg = RDMA_FIFO_UNDERFLOW_EN |
- 	      RDMA_FIFO_PSEUDO_SIZE(rdma_fifo_size) |
- 	      RDMA_OUTPUT_VALID_FIFO_THRESHOLD(threshold);
--	writel(reg, comp->regs + DISP_REG_RDMA_FIFO_CON);
-+	mtk_ddp_write(cmdq_pkt, reg, comp, DISP_REG_RDMA_FIFO_CON);
- }
- 
- static unsigned int rdma_fmt_convert(struct mtk_disp_rdma *rdma,
-@@ -197,7 +193,8 @@ static unsigned int mtk_rdma_layer_nr(struct mtk_ddp_comp *comp)
- }
- 
- static void mtk_rdma_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
--				  struct mtk_plane_state *state)
-+				  struct mtk_plane_state *state,
-+				  struct cmdq_pkt *cmdq_pkt)
- {
- 	struct mtk_disp_rdma *rdma = comp_to_rdma(comp);
- 	struct mtk_plane_pending_state *pending = &state->pending;
-@@ -207,24 +204,27 @@ static void mtk_rdma_layer_config(struct mtk_ddp_comp *comp, unsigned int idx,
- 	unsigned int con;
- 
- 	con = rdma_fmt_convert(rdma, fmt);
--	writel_relaxed(con, comp->regs + DISP_RDMA_MEM_CON);
-+	mtk_ddp_write_relaxed(cmdq_pkt, con, comp, DISP_RDMA_MEM_CON);
- 
- 	if (fmt == DRM_FORMAT_UYVY || fmt == DRM_FORMAT_YUYV) {
--		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
--				 RDMA_MATRIX_ENABLE, RDMA_MATRIX_ENABLE);
--		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
--				 RDMA_MATRIX_INT_MTX_SEL,
--				 RDMA_MATRIX_INT_MTX_BT601_to_RGB);
-+		mtk_ddp_write_mask(cmdq_pkt, RDMA_MATRIX_ENABLE, comp,
-+				   DISP_REG_RDMA_SIZE_CON_0,
-+				   RDMA_MATRIX_ENABLE);
-+		mtk_ddp_write_mask(cmdq_pkt, RDMA_MATRIX_INT_MTX_BT601_to_RGB,
-+				   comp, DISP_REG_RDMA_SIZE_CON_0,
-+				   RDMA_MATRIX_INT_MTX_SEL);
- 	} else {
--		rdma_update_bits(comp, DISP_REG_RDMA_SIZE_CON_0,
--				 RDMA_MATRIX_ENABLE, 0);
-+		mtk_ddp_write_mask(cmdq_pkt, 0, comp,
-+				   DISP_REG_RDMA_SIZE_CON_0,
-+				   RDMA_MATRIX_ENABLE);
- 	}
-+	mtk_ddp_write_relaxed(cmdq_pkt, addr, comp, DISP_RDMA_MEM_START_ADDR);
-+	mtk_ddp_write_relaxed(cmdq_pkt, pitch, comp, DISP_RDMA_MEM_SRC_PITCH);
-+	mtk_ddp_write(cmdq_pkt, RDMA_MEM_GMC, comp,
-+		      DISP_RDMA_MEM_GMC_SETTING_0);
-+	mtk_ddp_write_mask(cmdq_pkt, RDMA_MODE_MEMORY, comp,
-+			   DISP_REG_RDMA_GLOBAL_CON, RDMA_MODE_MEMORY);
- 
--	writel_relaxed(addr, comp->regs + DISP_RDMA_MEM_START_ADDR);
--	writel_relaxed(pitch, comp->regs + DISP_RDMA_MEM_SRC_PITCH);
--	writel(RDMA_MEM_GMC, comp->regs + DISP_RDMA_MEM_GMC_SETTING_0);
--	rdma_update_bits(comp, DISP_REG_RDMA_GLOBAL_CON,
--			 RDMA_MODE_MEMORY, RDMA_MODE_MEMORY);
- }
- 
- static const struct mtk_ddp_comp_funcs mtk_disp_rdma_funcs = {
-diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-index 8fea98578bc8..76416c1cbb28 100644
---- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-+++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-@@ -13,6 +13,7 @@
- #include <linux/of_platform.h>
- #include <linux/platform_device.h>
- #include <drm/drmP.h>
-+#include <linux/soc/mediatek/mtk-cmdq.h>
  #include "mtk_drm_drv.h"
- #include "mtk_drm_plane.h"
- #include "mtk_drm_ddp_comp.h"
-@@ -76,36 +77,76 @@
- #define DITHER_ADD_LSHIFT_G(x)			(((x) & 0x7) << 4)
- #define DITHER_ADD_RSHIFT_G(x)			(((x) & 0x7) << 0)
+ #include "mtk_drm_crtc.h"
+@@ -41,6 +43,10 @@ struct mtk_drm_crtc {
+ 	unsigned int			layer_nr;
+ 	bool				pending_planes;
+ 	bool                            cursor_update;
++
++	struct cmdq_client		*cmdq_client;
++	u32				cmdq_event;
++
+ 	void __iomem			*config_regs;
+ 	const struct mtk_mmsys_reg_data *mmsys_reg_data;
+ 	struct mtk_disp_mutex		*mutex;
+@@ -57,6 +63,12 @@ struct mtk_crtc_state {
+ 	unsigned int			pending_width;
+ 	unsigned int			pending_height;
+ 	unsigned int			pending_vrefresh;
++	struct cmdq_pkt			*cmdq_handle;
++};
++
++struct mtk_cmdq_cb_data {
++	struct drm_crtc_state		*state;
++	struct cmdq_pkt			*cmdq_handle;
+ };
  
-+void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-+		   struct mtk_ddp_comp *comp, unsigned int offset)
+ static inline struct mtk_drm_crtc *to_mtk_crtc(struct drm_crtc *c)
+@@ -208,6 +220,46 @@ static void mtk_crtc_ddp_clk_disable(struct mtk_drm_crtc *mtk_crtc)
+ 		clk_disable_unprepare(mtk_crtc->ddp_comp[i]->clk);
+ }
+ 
++static void ddp_cmdq_cursor_cb(struct cmdq_cb_data data)
 +{
-+	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt)
-+		cmdq_pkt_write(cmdq_pkt, comp->subsys,
-+			       comp->regs_pa + offset, value);
-+	else
-+		writel(value, comp->regs + offset);
++
++#if IS_ENABLED(CONFIG_MTK_CMDQ)
++	struct mtk_cmdq_cb_data *cb_data = data.data;
++
++	DRM_DEBUG_DRIVER("%s\n", __func__);
++
++	cmdq_pkt_destroy(cb_data->cmdq_handle);
++	kfree(cb_data);
++#endif
++
 +}
 +
-+void mtk_ddp_write_relaxed(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-+			   struct mtk_ddp_comp *comp,
-+			   unsigned int offset)
++static void ddp_cmdq_cb(struct cmdq_cb_data data)
 +{
-+	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt)
-+		cmdq_pkt_write(cmdq_pkt, comp->subsys,
-+			       comp->regs_pa + offset, value);
-+	else
-+		writel_relaxed(value, comp->regs + offset);
-+}
 +
-+void mtk_ddp_write_mask(struct cmdq_pkt *cmdq_pkt,
-+			unsigned int value,
-+			struct mtk_ddp_comp *comp,
-+			unsigned int offset,
-+			unsigned int mask)
-+{
-+	if (IS_ENABLED(CONFIG_MTK_CMDQ) && cmdq_pkt) {
-+		cmdq_pkt_write_mask(cmdq_pkt, comp->subsys,
-+				    comp->regs_pa + offset, value, mask);
-+	} else {
-+		u32 tmp = readl(comp->regs + offset);
++#if IS_ENABLED(CONFIG_MTK_CMDQ)
++	struct mtk_cmdq_cb_data *cb_data = data.data;
++	struct drm_crtc_state *crtc_state = cb_data->state;
++	struct drm_atomic_state *atomic_state = crtc_state->state;
++	struct drm_crtc *crtc = crtc_state->crtc;
++	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
 +
-+		tmp = (tmp & ~mask) | (value & mask);
-+		writel(tmp, comp->regs + offset);
++	DRM_DEBUG_DRIVER("%s\n", __func__);
++
++	if (mtk_crtc->pending_needs_vblank) {
++		/* cmdq_vblank_event must be read after cmdq_needs_event */
++		smp_rmb();
++
++		mtk_drm_crtc_finish_page_flip(mtk_crtc);
++		mtk_crtc->pending_needs_vblank = false;
 +	}
++	mtk_atomic_state_put_queue(atomic_state);
++	cmdq_pkt_destroy(cb_data->cmdq_handle);
++	kfree(cb_data);
++#endif
++
 +}
 +
- void mtk_dither_set(struct mtk_ddp_comp *comp, unsigned int bpc,
--		    unsigned int CFG)
-+		    unsigned int CFG, struct cmdq_pkt *cmdq_pkt)
+ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
  {
- 	/* If bpc equal to 0, the dithering function didn't be enabled */
- 	if (bpc == 0)
+ 	struct drm_crtc *crtc = &mtk_crtc->base;
+@@ -283,7 +335,8 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 		if (prev == DDP_COMPONENT_OVL0)
+ 			mtk_ddp_comp_bgclr_in_on(comp);
+ 
+-		mtk_ddp_comp_config(comp, width, height, vrefresh, bpc);
++		mtk_ddp_comp_config(comp, width, height,
++				    vrefresh, bpc, NULL);
+ 		mtk_ddp_comp_start(comp);
+ 	}
+ 
+@@ -303,7 +356,7 @@ static int mtk_crtc_ddp_hw_init(struct mtk_drm_crtc *mtk_crtc)
+ 		} else
+ 			local_layer = i;
+ 		mtk_ddp_comp_layer_config(comp, local_layer,
+-					  plane_state);
++					  plane_state, NULL);
+ 	}
+ 
+ 	return 0;
+@@ -361,7 +414,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 	if (state->pending_config) {
+ 		mtk_ddp_comp_config(comp, state->pending_width,
+ 				    state->pending_height,
+-				    state->pending_vrefresh, 0);
++				    state->pending_vrefresh, 0, NULL);
+ 
+ 		state->pending_config = false;
+ 	}
+@@ -381,7 +434,7 @@ static void mtk_crtc_ddp_config(struct drm_crtc *crtc)
+ 					local_layer = i;
+ 
+ 				mtk_ddp_comp_layer_config(comp, local_layer,
+-							  plane_state);
++							  plane_state, NULL);
+ 				plane_state->pending.config = false;
+ 			}
+ 		}
+@@ -405,26 +458,69 @@ void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
  		return;
  
- 	if (bpc >= MTK_MIN_BPC) {
--		writel(0, comp->regs + DISP_DITHER_5);
--		writel(0, comp->regs + DISP_DITHER_7);
--		writel(DITHER_LSB_ERR_SHIFT_R(MTK_MAX_BPC - bpc) |
--		       DITHER_ADD_LSHIFT_R(MTK_MAX_BPC - bpc) |
--		       DITHER_NEW_BIT_MODE,
--		       comp->regs + DISP_DITHER_15);
--		writel(DITHER_LSB_ERR_SHIFT_B(MTK_MAX_BPC - bpc) |
--		       DITHER_ADD_LSHIFT_B(MTK_MAX_BPC - bpc) |
--		       DITHER_LSB_ERR_SHIFT_G(MTK_MAX_BPC - bpc) |
--		       DITHER_ADD_LSHIFT_G(MTK_MAX_BPC - bpc),
--		       comp->regs + DISP_DITHER_16);
--		writel(DISP_DITHERING, comp->regs + CFG);
-+		mtk_ddp_write(cmdq_pkt, 0, comp, DISP_DITHER_5);
-+		mtk_ddp_write(cmdq_pkt, 0, comp, DISP_DITHER_7);
-+		mtk_ddp_write(cmdq_pkt,
-+			      DITHER_LSB_ERR_SHIFT_R(MTK_MAX_BPC - bpc) |
-+			      DITHER_ADD_LSHIFT_R(MTK_MAX_BPC - bpc) |
-+			      DITHER_NEW_BIT_MODE,
-+			      comp, DISP_DITHER_15);
-+		mtk_ddp_write(cmdq_pkt,
-+			      DITHER_LSB_ERR_SHIFT_B(MTK_MAX_BPC - bpc) |
-+			      DITHER_ADD_LSHIFT_B(MTK_MAX_BPC - bpc) |
-+			      DITHER_LSB_ERR_SHIFT_G(MTK_MAX_BPC - bpc) |
-+			      DITHER_ADD_LSHIFT_G(MTK_MAX_BPC - bpc),
-+			      comp, DISP_DITHER_16);
-+		mtk_ddp_write(cmdq_pkt, DISP_DITHERING, comp, CFG);
- 	}
- }
+ 	mutex_lock(&priv->hw_lock);
+-	plane_helper_funcs->atomic_update(plane, plane_state);
+-	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+-		struct drm_plane *plane = &mtk_crtc->planes[i];
+-		struct mtk_plane_state *plane_state;
++	if (IS_ENABLED(CONFIG_MTK_CMDQ) && mtk_crtc->cmdq_client) {
++		struct mtk_crtc_state *mtk_crtc_state =
++				to_mtk_crtc_state(crtc->state);
++		struct mtk_cmdq_cb_data *cb_data;
++
++		mtk_crtc_state->cmdq_handle =
++				cmdq_pkt_create(mtk_crtc->cmdq_client,
++						PAGE_SIZE);
++		cmdq_pkt_clear_event(mtk_crtc_state->cmdq_handle,
++				     mtk_crtc->cmdq_event);
++		cmdq_pkt_wfe(mtk_crtc_state->cmdq_handle, mtk_crtc->cmdq_event);
++		plane_helper_funcs->atomic_update(plane, plane_state);
++		cb_data = kmalloc(sizeof(*cb_data), GFP_KERNEL);
++		cb_data->cmdq_handle = mtk_crtc_state->cmdq_handle;
++		cmdq_pkt_flush_async(mtk_crtc_state->cmdq_handle,
++				     ddp_cmdq_cursor_cb, cb_data);
++	} else {
++		plane_helper_funcs->atomic_update(plane, plane_state);
  
- static void mtk_od_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			  unsigned int h, unsigned int vrefresh,
--			  unsigned int bpc)
-+			  unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
--	writel(w << 16 | h, comp->regs + DISP_OD_SIZE);
--	writel(OD_RELAYMODE, comp->regs + DISP_OD_CFG);
--	mtk_dither_set(comp, bpc, DISP_OD_CFG);
-+	mtk_ddp_write(cmdq_pkt, w << 16 | h, comp, DISP_OD_SIZE);
-+	mtk_ddp_write(cmdq_pkt, OD_RELAYMODE, comp, DISP_OD_CFG);
-+	mtk_dither_set(comp, bpc, DISP_OD_CFG, cmdq_pkt);
- }
- 
- static void mtk_od_start(struct mtk_ddp_comp *comp)
-@@ -120,9 +161,9 @@ static void mtk_ufoe_start(struct mtk_ddp_comp *comp)
- 
- static void mtk_aal_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			   unsigned int h, unsigned int vrefresh,
--			   unsigned int bpc)
-+			   unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
--	writel(h << 16 | w, comp->regs + DISP_AAL_SIZE);
-+	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_AAL_SIZE);
- }
- 
- static void mtk_aal_start(struct mtk_ddp_comp *comp)
-@@ -137,10 +178,10 @@ static void mtk_aal_stop(struct mtk_ddp_comp *comp)
- 
- static void mtk_ccorr_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int h, unsigned int vrefresh,
--			     unsigned int bpc)
-+			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
--	writel(h << 16 | w, comp->regs + DISP_CCORR_SIZE);
--	writel(CCORR_RELAY_MODE, comp->regs + DISP_CCORR_CFG);
-+	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_CCORR_SIZE);
-+	mtk_ddp_write(cmdq_pkt, CCORR_RELAY_MODE, comp, DISP_CCORR_CFG);
- }
- 
- static void mtk_ccorr_start(struct mtk_ddp_comp *comp)
-@@ -155,10 +196,10 @@ static void mtk_ccorr_stop(struct mtk_ddp_comp *comp)
- 
- static void mtk_dither_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			      unsigned int h, unsigned int vrefresh,
--			      unsigned int bpc)
-+			      unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
--	writel(h << 16 | w, comp->regs + DISP_DITHER_SIZE);
--	writel(DITHER_RELAY_MODE, comp->regs + DISP_DITHER_CFG);
-+	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_DITHER_SIZE);
-+	mtk_ddp_write(cmdq_pkt, DITHER_RELAY_MODE, comp, DISP_DITHER_CFG);
- }
- 
- static void mtk_dither_start(struct mtk_ddp_comp *comp)
-@@ -173,10 +214,10 @@ static void mtk_dither_stop(struct mtk_ddp_comp *comp)
- 
- static void mtk_gamma_config(struct mtk_ddp_comp *comp, unsigned int w,
- 			     unsigned int h, unsigned int vrefresh,
--			     unsigned int bpc)
-+			     unsigned int bpc, struct cmdq_pkt *cmdq_pkt)
- {
--	writel(h << 16 | w, comp->regs + DISP_GAMMA_SIZE);
--	mtk_dither_set(comp, bpc, DISP_GAMMA_CFG);
-+	mtk_ddp_write(cmdq_pkt, h << 16 | w, comp, DISP_GAMMA_SIZE);
-+	mtk_dither_set(comp, bpc, DISP_GAMMA_CFG, cmdq_pkt);
- }
- 
- static void mtk_gamma_start(struct mtk_ddp_comp *comp)
-@@ -190,24 +231,25 @@ static void mtk_gamma_stop(struct mtk_ddp_comp *comp)
- }
- 
- static void mtk_gamma_set(struct mtk_ddp_comp *comp,
--			  struct drm_crtc_state *state)
-+			  struct drm_crtc_state *state,
-+			  struct cmdq_pkt *cmdq_pkt)
- {
--	unsigned int i, reg;
-+	unsigned int i;
- 	struct drm_color_lut *lut;
- 	void __iomem *lut_base;
- 	u32 word;
- 
- 	if (state->gamma_lut) {
--		reg = readl(comp->regs + DISP_GAMMA_CFG);
--		reg = reg | GAMMA_LUT_EN;
--		writel(reg, comp->regs + DISP_GAMMA_CFG);
-+		mtk_ddp_write_mask(cmdq_pkt, GAMMA_LUT_EN, comp,
-+				   DISP_GAMMA_CFG, GAMMA_LUT_EN);
- 		lut_base = comp->regs + DISP_GAMMA_LUT;
- 		lut = (struct drm_color_lut *)state->gamma_lut->data;
- 		for (i = 0; i < MTK_LUT_SIZE; i++) {
- 			word = (((lut[i].red >> 6) & LUT_10BIT_MASK) << 20) +
- 				(((lut[i].green >> 6) & LUT_10BIT_MASK) << 10) +
- 				((lut[i].blue >> 6) & LUT_10BIT_MASK);
--			writel(word, (lut_base + i * 4));
-+			mtk_ddp_write(cmdq_pkt, word, comp,
-+				      (unsigned int)(lut_base + i * 4));
+-		plane_state = to_mtk_plane_state(plane->state);
+-		if (plane_state->pending.dirty) {
+-			plane_state->pending.config = true;
+-			plane_state->pending.dirty = false;
++		for (i = 0; i < mtk_crtc->layer_nr; i++) {
++			struct drm_plane *plane = &mtk_crtc->planes[i];
++			struct mtk_plane_state *plane_state;
++
++			plane_state = to_mtk_plane_state(plane->state);
++			if (plane_state->pending.dirty) {
++				plane_state->pending.config = true;
++				plane_state->pending.dirty = false;
++			}
++		}
++		mtk_crtc->pending_planes = true;
++		mtk_crtc->cursor_update = true;
++		if (priv->data->shadow_register) {
++			mtk_disp_mutex_acquire(mtk_crtc->mutex);
++			mtk_crtc_ddp_config(crtc);
++			mtk_disp_mutex_release(mtk_crtc->mutex);
  		}
  	}
+-	mtk_crtc->pending_planes = true;
+-	mtk_crtc->cursor_update = true;
++	mutex_unlock(&priv->hw_lock);
++}
+ 
+-	if (priv->data->shadow_register) {
+-		mtk_disp_mutex_acquire(mtk_crtc->mutex);
+-		mtk_crtc_ddp_config(crtc);
+-		mtk_disp_mutex_release(mtk_crtc->mutex);
++void mtk_drm_crtc_plane_update(struct drm_crtc *crtc, struct drm_plane *plane,
++			       struct mtk_plane_state *state)
++{
++	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
++	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
++	struct drm_crtc_state *crtc_state = crtc->state;
++	struct mtk_crtc_state *mtk_crtc_state = to_mtk_crtc_state(crtc_state);
++	struct cmdq_pkt *cmdq_handle = mtk_crtc_state->cmdq_handle;
++	unsigned int comp_layer_nr = mtk_ddp_comp_layer_nr(comp);
++	unsigned int local_layer;
++	unsigned int plane_index = plane - mtk_crtc->planes;
++
++	DRM_DEBUG_DRIVER("%s\n", __func__);
++	if (mtk_crtc->cmdq_client) {
++		if (plane_index >= comp_layer_nr) {
++			comp = mtk_crtc->ddp_comp[1];
++			local_layer = plane_index - comp_layer_nr;
++		} else {
++			local_layer = plane_index;
++		}
++		mtk_ddp_comp_layer_config(comp, local_layer, state,
++					  cmdq_handle);
+ 	}
+-	mutex_unlock(&priv->hw_lock);
  }
+ 
+ static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
+@@ -487,6 +583,15 @@ static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
+ 		WARN_ON(drm_crtc_vblank_get(crtc) != 0);
+ 		mtk_crtc->event = state->base.event;
+ 		state->base.event = NULL;
++		/* Make sure the above parameter is set before update */
++		smp_wmb();
++		mtk_crtc->pending_needs_vblank = true;
++	}
++	if (IS_ENABLED(CONFIG_MTK_CMDQ) && mtk_crtc->cmdq_client) {
++		state->cmdq_handle = cmdq_pkt_create(mtk_crtc->cmdq_client,
++						     PAGE_SIZE);
++		cmdq_pkt_clear_event(state->cmdq_handle, mtk_crtc->cmdq_event);
++		cmdq_pkt_wfe(state->cmdq_handle, mtk_crtc->cmdq_event);
+ 	}
+ }
+ 
+@@ -494,13 +599,29 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+ 				      struct drm_crtc_state *old_crtc_state)
+ {
+ 	struct drm_atomic_state *old_atomic_state = old_crtc_state->state;
++	struct drm_crtc_state *crtc_state = crtc->state;
++	struct mtk_crtc_state *state = to_mtk_crtc_state(crtc_state);
++	struct cmdq_pkt *cmdq_handle = state->cmdq_handle;
+ 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+ 	struct mtk_drm_private *priv = crtc->dev->dev_private;
++	struct mtk_cmdq_cb_data *cb_data;
+ 	unsigned int pending_planes = 0;
+ 	int i;
+ 
+-	if (mtk_crtc->event)
+-		mtk_crtc->pending_needs_vblank = true;
++	DRM_DEBUG_DRIVER("[CRTC:%u] [STATE:%p(%p)->%p(%p)]\n", crtc->base.id,
++			 old_crtc_state, old_crtc_state->state,
++			 crtc_state, crtc_state->state);
++
++	if (IS_ENABLED(CONFIG_MTK_CMDQ) && mtk_crtc->cmdq_client) {
++		drm_atomic_state_get(old_atomic_state);
++		cb_data = kmalloc(sizeof(*cb_data), GFP_KERNEL);
++		cb_data->state = old_crtc_state;
++		cb_data->cmdq_handle = cmdq_handle;
++		cmdq_pkt_flush_async(cmdq_handle, ddp_cmdq_cb, cb_data);
++
++		return;
++	}
++
+ 	for (i = 0; i < mtk_crtc->layer_nr; i++) {
+ 		struct drm_plane *plane = &mtk_crtc->planes[i];
+ 		struct mtk_plane_state *plane_state;
+@@ -521,7 +642,8 @@ static void mtk_drm_crtc_atomic_flush(struct drm_crtc *crtc,
+ 
+ 	if (crtc->state->color_mgmt_changed)
+ 		for (i = 0; i < mtk_crtc->ddp_comp_nr; i++)
+-			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i], crtc->state);
++			mtk_ddp_gamma_set(mtk_crtc->ddp_comp[i],
++					  crtc->state, NULL);
+ 
+ 	if (priv->data->shadow_register) {
+ 		mtk_disp_mutex_acquire(mtk_crtc->mutex);
+@@ -578,10 +700,13 @@ void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp)
+ 	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
+ 	struct mtk_drm_private *priv = crtc->dev->dev_private;
+ 
+-	if (!priv->data->shadow_register)
+-		mtk_crtc_ddp_config(crtc);
+-
+-	mtk_drm_finish_page_flip(mtk_crtc);
++	if (mtk_crtc->cmdq_client) {
++		drm_crtc_handle_vblank(crtc);
++	} else {
++		if (!priv->data->shadow_register)
++			mtk_crtc_ddp_config(crtc);
++		mtk_drm_finish_page_flip(mtk_crtc);
++	}
+ }
+ 
+ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+@@ -678,5 +803,18 @@ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 	drm_crtc_enable_color_mgmt(&mtk_crtc->base, 0, false, MTK_LUT_SIZE);
+ 	priv->num_pipes++;
+ 
++	if (IS_ENABLED(CONFIG_MTK_CMDQ)) {
++		mtk_crtc->cmdq_client = cmdq_mbox_create(dev,
++				drm_crtc_index(&mtk_crtc->base), 2000);
++		of_property_read_u32_index(dev->of_node, "mediatek,gce-events",
++					   drm_crtc_index(&mtk_crtc->base),
++					   &mtk_crtc->cmdq_event);
++		if (IS_ERR(mtk_crtc->cmdq_client)) {
++			dev_dbg(dev, "mtk_crtc %d failed to create mailbox client, writing register by CPU now\n",
++				drm_crtc_index(&mtk_crtc->base));
++			mtk_crtc->cmdq_client = NULL;
++		}
++	}
++
+ 	return 0;
+ }
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+index 46e903be68ec..6b2423c88416 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
++++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.h
+@@ -19,6 +19,8 @@ void mtk_crtc_ddp_irq(struct drm_crtc *crtc, struct mtk_ddp_comp *comp);
+ int mtk_drm_crtc_create(struct drm_device *drm_dev,
+ 			const enum mtk_ddp_comp_id *path,
+ 			unsigned int path_len);
++void mtk_drm_crtc_plane_update(struct drm_crtc *crtc, struct drm_plane *plane,
++			       struct mtk_plane_state *state);
+ void mtk_drm_crtc_cursor_update(struct drm_crtc *crtc, struct drm_plane *plane,
+ 				struct drm_plane_state *plane_state);
+ 
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+index 76416c1cbb28..056ebc6a8199 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
+@@ -395,6 +395,40 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
+ 	if (IS_ERR(comp->clk))
+ 		return PTR_ERR(comp->clk);
+ 
++	if (IS_ENABLED(CONFIG_MTK_CMDQ)) {
++		struct platform_device *comp_pdev;
++		struct resource res;
++		struct cmdq_client_reg *cmdq_reg;
++		int ret = 0;
++
++		if (of_address_to_resource(node, 0, &res) != 0) {
++			dev_err(dev, "Missing reg in %s node\n",
++				node->full_name);
++			return -EINVAL;
++		}
++		comp->regs_pa = res.start;
++
++		comp_pdev = of_find_device_by_node(node);
++		if (!comp_pdev) {
++			dev_warn(dev, "Waiting for component device %s\n",
++				 node->full_name);
++			return -EPROBE_DEFER;
++		}
++
++		cmdq_reg = kzalloc(sizeof(*cmdq_reg), GFP_KERNEL);
++		if (!cmdq_reg)
++			return -EINVAL;
++
++		ret = cmdq_dev_get_client_reg(&comp_pdev->dev, cmdq_reg, 0);
++		if (ret != 0)
++			dev_dbg(&comp_pdev->dev,
++				"get mediatek,gce-client-reg fail!\n");
++		else
++			comp->subsys = cmdq_reg->subsys;
++
++		kfree(cmdq_reg);
++	}
++
+ 	return 0;
+ }
+ 
 diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-index 268d416081da..6bbc35f92815 100644
+index 6bbc35f92815..0faec2dad5a3 100644
 --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
 +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-@@ -69,21 +69,26 @@ enum mtk_ddp_comp_id {
+@@ -99,6 +99,8 @@ struct mtk_ddp_comp {
+ 	int irq;
+ 	enum mtk_ddp_comp_id id;
+ 	const struct mtk_ddp_comp_funcs *funcs;
++	resource_size_t regs_pa;
++	u8 subsys;
  };
- 
- struct mtk_ddp_comp;
--
-+struct cmdq_pkt;
- struct mtk_ddp_comp_funcs {
- 	void (*config)(struct mtk_ddp_comp *comp, unsigned int w,
--		       unsigned int h, unsigned int vrefresh, unsigned int bpc);
-+		       unsigned int h, unsigned int vrefresh,
-+		       unsigned int bpc, struct cmdq_pkt *cmdq_pkt);
- 	void (*start)(struct mtk_ddp_comp *comp);
- 	void (*stop)(struct mtk_ddp_comp *comp);
- 	void (*enable_vblank)(struct mtk_ddp_comp *comp, struct drm_crtc *crtc);
- 	void (*disable_vblank)(struct mtk_ddp_comp *comp);
- 	unsigned int (*layer_nr)(struct mtk_ddp_comp *comp);
--	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx);
--	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx);
-+	void (*layer_on)(struct mtk_ddp_comp *comp, unsigned int idx,
-+			 struct cmdq_pkt *cmdq_pkt);
-+	void (*layer_off)(struct mtk_ddp_comp *comp, unsigned int idx,
-+			  struct cmdq_pkt *cmdq_pkt);
- 	void (*layer_config)(struct mtk_ddp_comp *comp, unsigned int idx,
--			     struct mtk_plane_state *state);
-+			     struct mtk_plane_state *state,
-+			     struct cmdq_pkt *cmdq_pkt);
- 	void (*gamma_set)(struct mtk_ddp_comp *comp,
--			  struct drm_crtc_state *state);
-+			  struct drm_crtc_state *state,
-+			  struct cmdq_pkt *cmdq_pkt);
- 	void (*bgclr_in_on)(struct mtk_ddp_comp *comp);
- 	void (*bgclr_in_off)(struct mtk_ddp_comp *comp);
- };
-@@ -98,10 +103,11 @@ struct mtk_ddp_comp {
  
  static inline void mtk_ddp_comp_config(struct mtk_ddp_comp *comp,
- 				       unsigned int w, unsigned int h,
--				       unsigned int vrefresh, unsigned int bpc)
-+				       unsigned int vrefresh, unsigned int bpc,
-+				       struct cmdq_pkt *cmdq_pkt)
- {
- 	if (comp->funcs && comp->funcs->config)
--		comp->funcs->config(comp, w, h, vrefresh, bpc);
-+		comp->funcs->config(comp, w, h, vrefresh, bpc, cmdq_pkt);
+diff --git a/drivers/gpu/drm/mediatek/mtk_drm_plane.c b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+index 59dbdaf07425..ef46c0f43039 100644
+--- a/drivers/gpu/drm/mediatek/mtk_drm_plane.c
++++ b/drivers/gpu/drm/mediatek/mtk_drm_plane.c
+@@ -202,6 +202,8 @@ static void mtk_plane_atomic_update(struct drm_plane *plane,
+ 	state->pending.height = drm_rect_height(&plane->state->dst);
+ 	wmb(); /* Make sure the above parameters are set before update */
+ 	state->pending.dirty = true;
++
++	mtk_drm_crtc_plane_update(crtc, plane, state);
  }
  
- static inline void mtk_ddp_comp_start(struct mtk_ddp_comp *comp)
-@@ -138,32 +144,36 @@ static inline unsigned int mtk_ddp_comp_layer_nr(struct mtk_ddp_comp *comp)
+ static void mtk_plane_atomic_disable(struct drm_plane *plane,
+@@ -212,6 +214,8 @@ static void mtk_plane_atomic_disable(struct drm_plane *plane,
+ 	state->pending.enable = false;
+ 	wmb(); /* Make sure the above parameter is set before update */
+ 	state->pending.dirty = true;
++	/* Fetch CRTC from old plane state when disabling. */
++	mtk_drm_crtc_plane_update(old_state->crtc, plane, state);
  }
  
- static inline void mtk_ddp_comp_layer_on(struct mtk_ddp_comp *comp,
--					 unsigned int idx)
-+					 unsigned int idx,
-+					 struct cmdq_pkt *cmdq_pkt)
- {
- 	if (comp->funcs && comp->funcs->layer_on)
--		comp->funcs->layer_on(comp, idx);
-+		comp->funcs->layer_on(comp, idx, cmdq_pkt);
- }
- 
- static inline void mtk_ddp_comp_layer_off(struct mtk_ddp_comp *comp,
--					  unsigned int idx)
-+					  unsigned int idx,
-+					  struct cmdq_pkt *cmdq_pkt)
- {
- 	if (comp->funcs && comp->funcs->layer_off)
--		comp->funcs->layer_off(comp, idx);
-+		comp->funcs->layer_off(comp, idx, cmdq_pkt);
- }
- 
- static inline void mtk_ddp_comp_layer_config(struct mtk_ddp_comp *comp,
- 					     unsigned int idx,
--					     struct mtk_plane_state *state)
-+					     struct mtk_plane_state *state,
-+					     struct cmdq_pkt *cmdq_pkt)
- {
- 	if (comp->funcs && comp->funcs->layer_config)
--		comp->funcs->layer_config(comp, idx, state);
-+		comp->funcs->layer_config(comp, idx, state, cmdq_pkt);
- }
- 
- static inline void mtk_ddp_gamma_set(struct mtk_ddp_comp *comp,
--				     struct drm_crtc_state *state)
-+				     struct drm_crtc_state *state,
-+				     struct cmdq_pkt *cmdq_pkt)
- {
- 	if (comp->funcs && comp->funcs->gamma_set)
--		comp->funcs->gamma_set(comp, state);
-+		comp->funcs->gamma_set(comp, state, cmdq_pkt);
- }
- 
- static inline void mtk_ddp_comp_bgclr_in_on(struct mtk_ddp_comp *comp)
-@@ -186,6 +196,13 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *comp_node,
- int mtk_ddp_comp_register(struct drm_device *drm, struct mtk_ddp_comp *comp);
- void mtk_ddp_comp_unregister(struct drm_device *drm, struct mtk_ddp_comp *comp);
- void mtk_dither_set(struct mtk_ddp_comp *comp, unsigned int bpc,
--		    unsigned int CFG);
--
-+		    unsigned int CFG, struct cmdq_pkt *cmdq_pkt);
-+enum mtk_ddp_comp_type mtk_ddp_comp_get_type(enum mtk_ddp_comp_id comp_id);
-+void mtk_ddp_write(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-+		   struct mtk_ddp_comp *comp, unsigned int offset);
-+void mtk_ddp_write_relaxed(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-+			   struct mtk_ddp_comp *comp, unsigned int offset);
-+void mtk_ddp_write_mask(struct cmdq_pkt *cmdq_pkt, unsigned int value,
-+			struct mtk_ddp_comp *comp, unsigned int offset,
-+			unsigned int mask);
- #endif /* MTK_DRM_DDP_COMP_H */
+ static const struct drm_plane_helper_funcs mtk_plane_helper_funcs = {
 -- 
 2.18.0
 
