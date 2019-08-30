@@ -2,84 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0EA71A36AB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:20:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E67C5A36CD
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:29:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dzYn2IwZqYCdJXp+/mI7kVORHlqkBZgFofSWEzJvDPo=; b=bKLCOwhbagYSqc
-	xdpeaABb5Qg7H9/49pZ2U6P2I2Q2sS9l9G2ZlITulp0vreXu8DCJb8qcq6l49MzPnmXStATVXX05S
-	MT2jWUs5zGs2QX/mGuyCoW2BL1m0uJwV7mrpgSv27bYFozPb0aWQksx77ktOYCSrIAXipMgi71kuQ
-	TB+OKEiiTFyrOGPMz6u1CxT2PD0xdJrRXTeqg7MnT4euZUBcG9loncx+R6cDwdJ73/mhGnZaXPqm8
-	areqCmNTf5QEH4M0WhMoek4afyWmRm0LcTI/9SmJQZeKXUgfl6ikeF7uaWweBI0iHEQvpEEygDdw4
-	qBGmSD0LtcrHqrpiqRJA==;
+	List-Owner; bh=e0OA/bHLHvagqYhtYlD5gPFWeQSpirJzySkCBUsKOJA=; b=qrfXAv7Lr8Tj5G
+	pSc1QUJ8eP/i7UjOgVTReABxHOTJl8Yqc3usCGU4gnNDy33Zj0hH0qmBDkKQbeFpiXq9t92c4u2UG
+	m3FGlH3A39iAiGROW96KcRxuLJee4t72IAW1SIub40qYc7tu5eDVWFtFC2DXqlLgIGPwtpj0i6Daz
+	LB6boeMrhDN769hojK5N/gGMGMwg+JHU+9pGpVTZdtdZeSamCdRyayP3gGCYmuRHtUiD8Lyz5GJOv
+	HW/IfJ0aIsWMeSsC7zNALac5Zn4dcR9Wzh5UC/kIaCfbvCli8H0rtLtMgoOKSUIQUZLgLtdAVrS5h
+	5iq6SwRrBL1O7+9SxPiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3ftV-0002vI-7X; Fri, 30 Aug 2019 12:20:45 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1i3g27-0004zj-QI; Fri, 30 Aug 2019 12:29:39 +0000
+Received: from mail-qk1-f194.google.com ([209.85.222.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3frf-0008Gk-CW
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:18:53 +0000
-Received: from fllv0034.itg.ti.com ([10.64.40.246])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x7UCImAK013329;
- Fri, 30 Aug 2019 07:18:48 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567167528;
- bh=q6uzw5vqoIuhn6+C2iD6BtNQh0n3/Xa+SZtfI3ZMIFI=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=Eabp0LSS2Kzm/Npyjfeqtu2iKHevGa0O6jF7MvZyMyaNP5hclp1Dn1e+9RtdlYeMw
- Y49NEDFQj66dSeontP6qfJZEnupPAX9ewCLIITuNNtr8sSB/AlNP0kgkabNjXpmxVi
- 8iny7vHyNryK3qZSkEOJ95kf0yVuACTqXL0fxm18=
-Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
- by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x7UCIm91016345
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Fri, 30 Aug 2019 07:18:48 -0500
-Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE115.ent.ti.com
- (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 30
- Aug 2019 07:18:48 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE106.ent.ti.com
- (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 30 Aug 2019 07:18:48 -0500
-Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x7UCIP6Q083824;
- Fri, 30 Aug 2019 07:18:46 -0500
-From: Tero Kristo <t-kristo@ti.com>
-To: <ssantosh@kernel.org>, <linux-omap@vger.kernel.org>, <tony@atomide.com>,
- <s-anna@ti.com>, <p.zabel@pengutronix.de>
-Subject: [PATCHv3 10/10] soc: ti: omap-prm: add omap5 PRM data
-Date: Fri, 30 Aug 2019 15:18:16 +0300
-Message-ID: <20190830121816.30034-11-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190830121816.30034-1-t-kristo@ti.com>
-References: <20190830121816.30034-1-t-kristo@ti.com>
+ id 1i3g21-0004yu-8D
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:29:34 +0000
+Received: by mail-qk1-f194.google.com with SMTP id f13so5870757qkm.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 30 Aug 2019 05:29:32 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=UIrlR9vtJ1E/DTegVRZZ9qCNH5Gta5MlLllJAAd5X9M=;
+ b=BY15ZOseLb+9YC9QuVvj9ZmVLMuTuP+EG2MIhOqU6pXC2WhAUbPQD31o7Q0d6oM+88
+ AHM+DzrKypl7cDxo0nEtBFI+UColjdSg+IT+iyTvja0djEaamV9ZCArLonkXqgAhp1KJ
+ ESXP4zl6OqF5GBcgpKa7OWk1e4RNBL/dVsPjL13MrLa70oV8vDRS3gOaikKcAaNmjGn4
+ KaPojSt5TJevu3RkuYk/cRmFuPlVuGroQedAGemGh0lPfypT4mIvY7yA5l6TLdbK8x2G
+ bLyzvzaSzIrZDni+pH9Hxzw1NxOEL/Lmdp7zIprU1xecvWjKjI6AX6LLPlUe3hvTWPIE
+ MC5A==
+X-Gm-Message-State: APjAAAW47wuKAYZcoSM1lYE1k4/EM5I1oabW4/qGJT/6bfhu+CDp6ZzQ
+ kY8h4gy1xOu35KMUKJSGZ0F161TQE5lygjALX1M=
+X-Google-Smtp-Source: APXvYqyJGIFhpE0otdDhC4Pc3eq2BVlXTjeHLMVZ0m7XbxfNxzW0+co1DqNfPTfujGLShw6DRiYHMZgkGOul+9nf/gU=
+X-Received: by 2002:a05:620a:b:: with SMTP id
+ j11mr15321103qki.352.1567168171671; 
+ Fri, 30 Aug 2019 05:29:31 -0700 (PDT)
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+References: <20190830092738.7ea1abd0@canb.auug.org.au>
+In-Reply-To: <20190830092738.7ea1abd0@canb.auug.org.au>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Fri, 30 Aug 2019 14:29:15 +0200
+Message-ID: <CAK8P3a2zc-hp_oE1+Q+RTugxeVPPc3jyrdceQ4+8t4Zw_=vHUA@mail.gmail.com>
+Subject: Re: linux-next: manual merge of the arm-soc tree with the arm tree
+To: Stephen Rothwell <sfr@canb.auug.org.au>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_051851_938109_B9B0EE04 
-X-CRM114-Status: GOOD (  10.46  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190830_052933_295177_7A5264D7 
+X-CRM114-Status: GOOD (  11.76  )
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.194 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.2 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,52 +82,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Olof Johansson <olof@lixom.net>, Nathan Chancellor <natechancellor@gmail.com>,
+ ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PRM instance data for omap5 family of SoCs. Initially this is just
-used to provide reset support.
+On Fri, Aug 30, 2019 at 1:27 AM Stephen Rothwell <sfr@canb.auug.org.au> wrote:
+>
+> Hi all,
+>
+> Today's linux-next merge of the arm-soc tree got a conflict in:
+>
+>   arch/arm/mach-iop13xx/pci.c
+>
+> between commit:
+>
+>   4af014984273 ("ARM: 8871/1: iop13xx: Simplify iop13xx_atu{e,x}_pci_status checks")
+>
+> from the arm tree and commit:
+>
+>   59d3ae9a5bf6 ("ARM: remove Intel iop33x and iop13xx support")
+>
+> from the arm-soc tree.
+>
+> I fixed it up (the latter removed the file, so I did that) and can
+> carry the fix as necessary. This is now fixed as far as linux-next is
+> concerned, but any non trivial conflicts should be mentioned to your
+> upstream maintainer when your tree is submitted for merging.  You may
+> also want to consider cooperating with the maintainer of the conflicting
+> tree to minimise any particularly complex conflicts.
 
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
----
- drivers/soc/ti/omap_prm.c | 9 +++++++++
- 1 file changed, 9 insertions(+)
+Yes, that's good. Russell, you could drop the patch from your tree if
+you like, or let Linus handle the trivial conflict.
 
-diff --git a/drivers/soc/ti/omap_prm.c b/drivers/soc/ti/omap_prm.c
-index 216a4b69a6c9..6363923e77f2 100644
---- a/drivers/soc/ti/omap_prm.c
-+++ b/drivers/soc/ti/omap_prm.c
-@@ -87,6 +87,14 @@ static const struct omap_prm_data omap4_prm_data[] = {
- 	{ },
- };
- 
-+static const struct omap_prm_data omap5_prm_data[] = {
-+	{ .name = "dsp", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
-+	{ .name = "core", .base = 0x4ae06700, .rstctrl = 0x210, .rstst = 0x214, .clkdm_name = "ipu", .rstmap = rst_map_012 },
-+	{ .name = "iva", .base = 0x4ae07200, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_012 },
-+	{ .name = "device", .base = 0x4ae07c00, .rstctrl = 0x0, .rstst = 0x4, .rstmap = rst_map_01, .flags = OMAP_PRM_HAS_RSTCTRL | OMAP_PRM_HAS_NO_CLKDM },
-+	{ },
-+};
-+
- static const struct omap_prm_data dra7_prm_data[] = {
- 	{ .name = "dsp1", .base = 0x4ae06400, .rstctrl = 0x10, .rstst = 0x14, .rstmap = rst_map_01 },
- 	{ .name = "ipu", .base = 0x4ae06500, .rstctrl = 0x10, .rstst = 0x14, .clkdm_name = "ipu1", .rstmap = rst_map_012 },
-@@ -139,6 +147,7 @@ static const struct omap_prm_data am4_prm_data[] = {
- 
- static const struct of_device_id omap_prm_id_table[] = {
- 	{ .compatible = "ti,omap4-prm-inst", .data = omap4_prm_data },
-+	{ .compatible = "ti,omap5-prm-inst", .data = omap5_prm_data },
- 	{ .compatible = "ti,dra7-prm-inst", .data = dra7_prm_data },
- 	{ .compatible = "ti,am3-prm-inst", .data = am3_prm_data },
- 	{ .compatible = "ti,am4-prm-inst", .data = am4_prm_data },
--- 
-2.17.1
-
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
