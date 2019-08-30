@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31E64A3C85
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:48:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AD3B6A3C86
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 18:49:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=sM3BFKh4trl67ZFfbHA0fG3ZuCB5rKo9B16XaoQXg0E=; b=aKSjyGaixidRcn
-	YCUSDm29dfOmzAGvc4GHOAGKkQTrvZELvvKLHKAw42L/l+n8pYw0+2rSwxTpYKsjrMUKQJ3Bbs8cc
-	IDo3cRlGNWN6XjwADws797BcL0kl//RIDI6e1i7gmbZUpnxNvMslUyc/uhrSrUI4Jq29mTA8nINTj
-	LBxoEfC5aKtiXnMiWqwtv4R08OTlkEOXSIJ4FeYc5Oteg4JZNudNw8RjigAJejowq+TyVWY37D2cx
-	42hyg8BiaN7Vwvg6YCbKQFi1bjx9mR7FP4U4U50mQoRqT7+mlXAolQ6J8vth+wzEVKKulxe3K2MUi
-	3eqgLkygvLlRoQn9f+aw==;
+	List-Owner; bh=04BsSlL12TBp+eq2luwJlUHtDVM83fe4HCNBpXt4dAw=; b=WRh12Rf9UiYr22
+	DejnkC8uyN7PabdFOOVNgfS5LInzfQ8iYqgfhGaYg7GSS6r2gbhEZFEj7gNOKA32oX3HFVTMrhAS2
+	Zy/LJ/F28dYFsKLUhOtvYyFZD1kMZ6Stc2OWMdCBi8nfiG6A2TQcDGPmBp04v9LdU8nVHXTDZU1nc
+	FlpvkvvpDIFAJrCHSdCuv2Ln5Yi5WQt7TssDezRpXqRgeormx57l0l8/JAe2/JwFpItnwrZHO5xpy
+	0ZXQVIV/eXIKc0M365dpeKlxZpXKoHqThJYUoQTUxZ00oSPONy0zKp6TrXCRZnZWT0HjJtrMxK3FR
+	P4XmhrBwIcOhmVafVW8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3k4u-0007hi-2i; Fri, 30 Aug 2019 16:48:48 +0000
+	id 1i3k5B-0007vm-SN; Fri, 30 Aug 2019 16:49:06 +0000
 Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3k4W-0007b0-I8
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:48:26 +0000
-Received: by mail-pf1-x442.google.com with SMTP id c81so4972802pfc.11
+ id 1i3k4f-0007hj-3n
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 16:48:34 +0000
+Received: by mail-pf1-x442.google.com with SMTP id y9so4992343pfl.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 30 Aug 2019 09:48:23 -0700 (PDT)
+ Fri, 30 Aug 2019 09:48:33 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=sender:date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=X7EDJjP3/P5ucP5sd8p8wuc1drYUxSpuIcMdq/6dO0M=;
- b=Sddob+AJCKGltY0Zsrisq3Z1TRnqs0+05kJFI4B56UHJuVOSilol58uW+WFEBOjc5m
- W8aV5M/V5Sl2Jl+w/HGeek+X4CpCFoXvfyYd2lY5dNnJDhDfN9IRI5pq+MgGa5xaKvv6
- nCh9ja4loFd0AZwPpLePl+oIiTlwFwSWc5gMqa9IYSblkDtCtRpmu9NopAepr5hg0g+K
- O4LPrd1EhLbsJ270lkPEPWjrsl9vhVsYXsc8JzZTQFEkCVZzN+Xyzpgq7hpckewbiGIC
- EjA+391h5NZlNiX5C6k7y44+xV/82NDK+G7Sts48BBNMm5SQeY5Lfp5ERBj0iGEPy9Ny
- Fdcw==
+ bh=NoWyd+lYQBmF9GqrvMJmB3YO9IYLD77A1CH88ORAoIg=;
+ b=mTo/FR4fkrBzWT0O3+62g9Qp/hu9V6F1vWpyevQS1U9veZ8PigBugh7Xu1/yiPzzxX
+ y9aB+4fBmnT7mM/glcGZtAVaeYan5GUG5/xptUWu12q1Rvw/joHk66SdWEa0lXrRCk+S
+ XVJwC1Zr06N2YjnCW+zQGNsE+Qw5srI4SuSk35x1eeNmPHLDZJQGgm+234XBXtDzM1HJ
+ WM3KeWm6aQ//qFhLgX2e5x+WAVmwKv8sBhVBZ372c3sx516h4Zt+5It8lgwnS35ZVEsT
+ fwVXRVOTpSdG9TjXUJiyPD1u54XnITkFFz7PzM5yCxiOUVhgt6sCEfNGMFOs+ZdBxKQZ
+ s7jg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
  :references:mime-version:content-disposition:in-reply-to:user-agent;
- bh=X7EDJjP3/P5ucP5sd8p8wuc1drYUxSpuIcMdq/6dO0M=;
- b=COQtO4lt02slgiZdzkVJKE9bo0fDxrWVIy9PHiP6zgLuN8J36z5LOPy+uToBwSRuRA
- Z0TqAsZ/PRzG4k0mtYSoz34q/bK1oPT2eVcIioxRVP6+O3d0l2Xz+fFuKRPHHVP5Q7yU
- FVinKD+bS0f6rh0BdH5dv3v/5eBan3RAKTh/NKigHUsEEsDd9l4EfUiotWN1Erx40q7X
- aAshfaRQFc/Ivn9Gu8VvoHnlk80/iwGT7C2X6uRnuLeLgfy8S1llfUYffAOYcNPuA9Qz
- 8DafpbXOayAF64bzvZiA8IU+TaksxVI8PPsR5RUgstP3Rf48/c+b6SeGn5JlSbuHFMzr
- uO+w==
-X-Gm-Message-State: APjAAAW/5FZ6ZoO5UHpTe8b7G7JiJpO9Y5wL81jDy0WUzTKRo+XYlzYT
- kylNxK8xaztzrbQ9EPC194E=
-X-Google-Smtp-Source: APXvYqzPPf2dUoFRMdmXRU3rc61sMZX9+mXPDGqgD+nEdBzoVzjxT08cS8auaqYT6Wxdf0dEv0wl+g==
-X-Received: by 2002:aa7:9524:: with SMTP id c4mr19821409pfp.225.1567183703055; 
- Fri, 30 Aug 2019 09:48:23 -0700 (PDT)
+ bh=NoWyd+lYQBmF9GqrvMJmB3YO9IYLD77A1CH88ORAoIg=;
+ b=Ecu/3q7Eeh69heEZa/38/eZ8enZfVP49wxnbN3uC9EpOCxxSZ7VaH8qQm8rj+ZX0iX
+ OsZwQFgkBXlE2PcSkeMT6k5r+Dv5lR3pEnBbVLeu/4q1XrX9+MvSIF/tAaGYg6o2hBAh
+ IfDp0BS/4PXb3iLBlxfWUEsWeq64OPMpR4yRxsEoXmB/Z5GUweIDqwDrrObCIvbbklnW
+ 1hr2wPJl5UsSw5Qy91b/6sv67QxlZbUmU3rYNTG4lALk9ES8cixwWRM53DMOSTDxH7p6
+ lfnQH5LDIycBqBvrgddSaWEA0z2k2NypsH/NC0blidvU+aIvBW9ZTYe5osfKBbuo4oPM
+ Wkbw==
+X-Gm-Message-State: APjAAAV8TKKzDEfutZGEQ7u7tVOVc6M0loEJ2vz8L0iC0Udu7q8RNF8n
+ h4y+Hd8IlfZPEAA2Q96LqTg=
+X-Google-Smtp-Source: APXvYqxoPmqdngw2RvRJzBNod1E2jSVJcIABHSzC/kOkClI3TWyveYCid6Dk7zA39Rc8F2LTKQAPow==
+X-Received: by 2002:aa7:8488:: with SMTP id u8mr19621731pfn.229.1567183712754; 
+ Fri, 30 Aug 2019 09:48:32 -0700 (PDT)
 Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id q4sm6952325pff.183.2019.08.30.09.48.22
+ by smtp.gmail.com with ESMTPSA id b14sm6882699pfo.15.2019.08.30.09.48.32
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 30 Aug 2019 09:48:22 -0700 (PDT)
-Date: Fri, 30 Aug 2019 09:48:21 -0700
+ Fri, 30 Aug 2019 09:48:32 -0700 (PDT)
+Date: Fri, 30 Aug 2019 09:48:31 -0700
 From: Guenter Roeck <linux@roeck-us.net>
 To: Maxime Ripard <mripard@kernel.org>
-Subject: Re: [PATCH RESEND v2 2/6] dt-bindings: watchdog: Convert Allwinner
- watchdog to a schema
-Message-ID: <20190830164821.GB7911@roeck-us.net>
+Subject: Re: [PATCH RESEND v2 3/6] dt-bindings: watchdog: sun4i: Add the
+ watchdog interrupts
+Message-ID: <20190830164831.GC7911@roeck-us.net>
 References: <20190821143835.7294-1-mripard@kernel.org>
- <20190821143835.7294-2-mripard@kernel.org>
+ <20190821143835.7294-3-mripard@kernel.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190821143835.7294-2-mripard@kernel.org>
+In-Reply-To: <20190821143835.7294-3-mripard@kernel.org>
 User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_094824_698318_68CE6B72 
-X-CRM114-Status: GOOD (  19.62  )
+X-CRM114-CacheID: sfid-20190830_094833_337688_81115CD9 
+X-CRM114-Status: GOOD (  17.49  )
 X-Spam-Score: 0.6 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.6 points)
@@ -115,114 +115,51 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 04:38:31PM +0200, Maxime Ripard wrote:
+On Wed, Aug 21, 2019 at 04:38:32PM +0200, Maxime Ripard wrote:
 > From: Maxime Ripard <maxime.ripard@bootlin.com>
 > 
-> The Allwinner SoCs have a watchdog supported in Linux, with a matching
-> Device Tree binding.
+> The Allwinner watchdog has an interrupt, either shared or dedicated
+> depending on the SoC, that has been described in some DT, but not all of
+> them.
 > 
-> Now that we have the DT validation in place, let's convert the device tree
-> bindings for that controller over to a YAML schemas.
+> The binding is also completely missing that description. Let's add that
+> property to be consistent.
 > 
 > Reviewed-by: Rob Herring <robh@kernel.org>
 > Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
-> 
+
 Reviewed-by: Guenter Roeck <linux@roeck-us.net>
 
 > ---
-> 
-> Changes from v1:
->   - Use generic watchdog schema
->   - Use unevaluatedProperties instead of additionalProperties
-> ---
->  .../watchdog/allwinner,sun4i-a10-wdt.yaml     | 48 +++++++++++++++++++
->  .../bindings/watchdog/sunxi-wdt.txt           | 22 ---------
->  2 files changed, 48 insertions(+), 22 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
->  delete mode 100644 Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt
+>  .../bindings/watchdog/allwinner,sun4i-a10-wdt.yaml           | 5 +++++
+>  1 file changed, 5 insertions(+)
 > 
 > diff --git a/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml b/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
-> new file mode 100644
-> index 000000000000..dc7553f57708
-> --- /dev/null
+> index dc7553f57708..31c95c404619 100644
+> --- a/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
 > +++ b/Documentation/devicetree/bindings/watchdog/allwinner,sun4i-a10-wdt.yaml
-> @@ -0,0 +1,48 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/watchdog/allwinner,sun4i-a10-wdt.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner A10 Watchdog Device Tree Bindings
-> +
-> +allOf:
-> +  - $ref: "watchdog.yaml#"
-> +
-> +maintainers:
-> +  - Chen-Yu Tsai <wens@csie.org>
-> +  - Maxime Ripard <maxime.ripard@bootlin.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: allwinner,sun4i-a10-wdt
-> +      - const: allwinner,sun6i-a31-wdt
-> +      - items:
-> +          - const: allwinner,sun50i-a64-wdt
-> +          - const: allwinner,sun6i-a31-wdt
-> +      - items:
-> +          - const: allwinner,sun50i-h6-wdt
-> +          - const: allwinner,sun6i-a31-wdt
-> +      - items:
-> +          - const: allwinner,suniv-f1c100s-wdt
-> +          - const: allwinner,sun4i-a10-wdt
-> +
-> +  reg:
+> @@ -31,9 +31,13 @@ properties:
+>    reg:
+>      maxItems: 1
+>  
+> +  interrupts:
 > +    maxItems: 1
 > +
-> +required:
-> +  - compatible
-> +  - reg
-> +
-> +unevaluatedProperties: false
-> +
-> +examples:
-> +  - |
-> +    wdt: watchdog@1c20c90 {
-> +        compatible = "allwinner,sun4i-a10-wdt";
-> +        reg = <0x01c20c90 0x10>;
-> +        timeout-sec = <10>;
-> +    };
-> +
-> +...
-> diff --git a/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt b/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt
-> deleted file mode 100644
-> index e65198d82a2b..000000000000
-> --- a/Documentation/devicetree/bindings/watchdog/sunxi-wdt.txt
-> +++ /dev/null
-> @@ -1,22 +0,0 @@
-> -Allwinner SoCs Watchdog timer
-> -
-> -Required properties:
-> -
-> -- compatible : should be one of
-> -	"allwinner,sun4i-a10-wdt"
-> -	"allwinner,sun6i-a31-wdt"
-> -	"allwinner,sun50i-a64-wdt","allwinner,sun6i-a31-wdt"
-> -	"allwinner,sun50i-h6-wdt","allwinner,sun6i-a31-wdt"
-> -	"allwinner,suniv-f1c100s-wdt", "allwinner,sun4i-a10-wdt"
-> -- reg : Specifies base physical address and size of the registers.
-> -
-> -Optional properties:
-> -- timeout-sec : Contains the watchdog timeout in seconds
-> -
-> -Example:
-> -
-> -wdt: watchdog@1c20c90 {
-> -	compatible = "allwinner,sun4i-a10-wdt";
-> -	reg = <0x01c20c90 0x10>;
-> -	timeout-sec = <10>;
-> -};
+>  required:
+>    - compatible
+>    - reg
+> +  - interrupts
+>  
+>  unevaluatedProperties: false
+>  
+> @@ -42,6 +46,7 @@ examples:
+>      wdt: watchdog@1c20c90 {
+>          compatible = "allwinner,sun4i-a10-wdt";
+>          reg = <0x01c20c90 0x10>;
+> +        interrupts = <24>;
+>          timeout-sec = <10>;
+>      };
+>  
 > -- 
 > 2.21.0
 > 
