@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5F7D7A376B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 14:59:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34274A3770
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 30 Aug 2019 15:00:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=6cyo8BicuOeQQ/+seu7U4SiPP/atdTLgd+nSxe+62s4=; b=IKyQ1+a1Dk0U9DBExM9GywnaQ
-	rJTJE8WKfdAoZMG5nOwjw6srl62SnYjyjZ8/clLUR6JTNcDwbHDn/SnCvtA/XKVNWY+fopRB4fv14
-	lcbgKz+AwbqnGCF3JnAJ3O3tKAtU0w7CuWIir3jo9dZJJknFUoC3JzuhMmBPG0VZSfGgLDqehwb4Y
-	0JpahLsBwpD3SCsYEe6KCWKDPtEUfmYTcXoOAKNGBo+ndUjQxd5RghX/9BFHL6djU7m2AO6tr7pVt
-	w2U1unBu8bhKmGO/Z3BqGhZUgk0Esio4pidm8J3k6R3x/C3BFeqoTCh0CbAxyRcGVTYgYIEZmzlqY
-	BZ1hSua1g==;
+	 bh=qb+PPmCYeAO/HEqipZ8Wh/0+QFAzeKegp9tmtpcq5z4=; b=qkQJe/Bbh8eRPJQBuZZYLvFMP
+	AWjB09a7Umss9szkK3lRmYxQcGj0zglonynhcGea7JlicAcdPLPHascdbUnGGhqrpRxEmBI42FdEQ
+	PwnXQ7gXYb+9dt2605QnRorolWnbhFFHLra45ACueHYNJNwL9LcuonP9PpwdlKXJT6Uowh7QeS4dq
+	der4F+P7xCIVvzImCqjkYVHJtX+Jwy+I9IVGo7B8cccfKZQpywDGg2m8FJJ4fAos4519sEi4bBY//
+	l3kRWtvZdrUzi6W9klKJdqoq5se4L/70KziJLmvMARPa52HzyJA4CHdmd989CQQgi1trpHumt8dqn
+	voup1OweQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3gVQ-00080f-A5; Fri, 30 Aug 2019 12:59:56 +0000
+	id 1i3gVr-0008GH-Ps; Fri, 30 Aug 2019 13:00:23 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3gUI-0007Q1-3i
- for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:58:47 +0000
+ id 1i3gVJ-00089k-Ai
+ for linux-arm-kernel@lists.infradead.org; Fri, 30 Aug 2019 12:59:51 +0000
 Received: from localhost (p54B335BE.dip0.t-ipconnect.de [84.179.53.190])
- by pokefinder.org (Postfix) with ESMTPSA id 5A9932C0095;
- Fri, 30 Aug 2019 14:58:45 +0200 (CEST)
-Date: Fri, 30 Aug 2019 14:58:45 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id 9444D2C0095;
+ Fri, 30 Aug 2019 14:59:48 +0200 (CEST)
+Date: Fri, 30 Aug 2019 14:59:48 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-Subject: Re: [PATCH v1 1/2] i2c: iproc: Stop advertising support of SMBUS
- quick cmd
-Message-ID: <20190830125844.GD2870@ninjato>
+Subject: Re: [PATCH v1 2/2] i2c: iproc: Add full name of devicetree node to
+ adapter name
+Message-ID: <20190830125948.GE2870@ninjato>
 References: <1565235473-28461-1-git-send-email-rayagonda.kokatanur@broadcom.com>
- <1565235473-28461-2-git-send-email-rayagonda.kokatanur@broadcom.com>
+ <1565235473-28461-3-git-send-email-rayagonda.kokatanur@broadcom.com>
 MIME-Version: 1.0
-In-Reply-To: <1565235473-28461-2-git-send-email-rayagonda.kokatanur@broadcom.com>
+In-Reply-To: <1565235473-28461-3-git-send-email-rayagonda.kokatanur@broadcom.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_055846_328395_17551BCE 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20190830_055949_533907_5B9A4739 
+X-CRM114-Status: UNSURE (   7.89  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -66,63 +67,71 @@ Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
  Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
  linux-i2c@vger.kernel.org, Ray Jui <ray.jui@broadcom.com>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============4122861188855122164=="
+Content-Type: multipart/mixed; boundary="===============5294725256464821372=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============4122861188855122164==
+--===============5294725256464821372==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="Km1U/tdNT/EmXiR1"
+	protocol="application/pgp-signature"; boundary="5xSkJheCpeK0RUEJ"
 Content-Disposition: inline
 
 
---Km1U/tdNT/EmXiR1
+--5xSkJheCpeK0RUEJ
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-On Thu, Aug 08, 2019 at 09:07:52AM +0530, Rayagonda Kokatanur wrote:
+On Thu, Aug 08, 2019 at 09:07:53AM +0530, Rayagonda Kokatanur wrote:
 > From: Lori Hikichi <lori.hikichi@broadcom.com>
 >=20
-> The driver does not support the SMBUS Quick command so remove the
-> flag that indicates that level of support.
-> By default the i2c_detect tool uses the quick command to try and
-> detect devices at some bus addresses.  If the quick command is used
-> then we will not detect the device, even though it is present.
+> Add the full name of the devicetree node to the adapter name.
+> Without this change, all adapters have the same name making it difficult
+> to distinguish between multiple instances.
+> The most obvious way to see this is to use the utility i2c_detect.
+> e.g. "i2c-detect -l"
 >=20
-> Fixes: e6e5dd3566e0 (i2c: iproc: Add Broadcom iProc I2C Driver)
+> Before
+> i2c-1 i2c Broadcom iProc I2C adapter I2C adapter
+> i2c-0 i2c Broadcom iProc I2C adapter I2C adapter
+>=20
+> After
+> i2c-1 i2c Broadcom iProc (i2c@e0000) I2C adapter
+> i2c-0 i2c Broadcom iProc (i2c@b0000) I2C adapter
+>=20
+> Now it is easy to figure out which adapter maps to a which DT node.
 >=20
 > Signed-off-by: Lori Hikichi <lori.hikichi@broadcom.com>
 > Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 
-Applied to for-current, thanks!
+Applied to for-next, thanks!
 
 
---Km1U/tdNT/EmXiR1
+--5xSkJheCpeK0RUEJ
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1pHYQACgkQFA3kzBSg
-KbYqPw/+L16sbeg6ZouyXIds6l9vBvd5ZpyTng7F7EMmGA5qkOQ7Dxk5gtWfW7xL
-edvDOfUZOeQRw8IAJBTxUDl8Brg3UBnD16skm0aiOlwCFoyrDmCBQ3/BX6q1mFOF
-nbhX0YZRzK+h45anQVsOJ7td7A1F+29EwBu39CZDCbcHzbLmYbOi6/jem4eXZK5I
-r3Mk+DhvQtGeDEQEHE92b3WlUGNTVZswssk/OhF/r0Wzc890BYO6/aK2Ux8oFTnw
-0mf02w49uhjub9+qeX5yq8vKFD1UyYC5wI6QOWJtuJyj9pXcigzA29T628PjShjI
-wlHpGxoVEvzvdi6Ho6wlXwwiz3yNLRT/Hn4fsVDd3os3oHJ8NmFCJqMZMWZv5tyv
-d9CLV9FCW9aCMiEyTcHNhwNVSrig++NVYcZcwpAYZyVqIC8s9QWelBMk2veog66K
-wjreG6p9d5EZXV2y1Uowff31ZUMWColTayrYXMY4u+Gk2y3MuCunH85oFfH2MLEQ
-w6+FS6VVysmJ0YkugyodtVyKIsyYGRcatEYPF1U7MrP67lJLHYw2dnP1JhgrHkx6
-wqmMths0bmxu1xu234RD+IeGfZyM7/EqpKH2mSmGXy1Nu6hdBMZm4XNMEFXDlqO7
-ruZiI7elM4XeMAZppEoW84Ja9HQrvqM2a2KmVXBpORQP2JBghqY=
-=rbvx
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1pHcQACgkQFA3kzBSg
+KbabhRAAqkAUPTyDcgsxg6iBp9wHBqOf4Tvov5KX9lLAKKkdBJPIHlplIbc932uT
+UFFRU/aU4B/IezQYOlq6e3vLCH0gqjXb3lTqUJNEQYxZAFKHZIHjawk8aFeFsRXo
+xaMNNLBzOggSzZSSIRetueIlvz5VK3UiTBR5jNLJ8RKAjEWeP7xSBLn2SJOCgfY5
+U+XLVMWw7MC+URR+0f/JICFexPkf4guujDe40MjLHLziEWUauGpDpAGKyx6n5KYG
+GjSM88vlK8TYmACciAa5avC3HUC2wrzvjoXoSkF57wupss35t3gi5KHaAbOZL4kc
+LocZMGDmEdTxM9aEEqWkeX/z3zH89TNuRIHv49V94OkoWzOpwl2Vxv5iJiapSW8W
+BNxGoI6ELmHx+dOEP3rDwq588XL0i5MlLE+sPHabWZvbUwSdibiUZ6UyuELRv/iV
+ynZLprkU2jQaMnmSflUbPKlfe4g4ugrA7ABySopWjcAZYkOjHmJKYQArmTipH9Zo
+ju7cNo6jhQPxpypMCLWkfrm+fmPQsUWDBtqcIRqyQBFcrtpcdZkww0gHLmo4BQ8L
+7HEgIIameZ2NfJ3S047grLxUz0gwYhYj69v5KwOm+q5sqfaJgGWMs75EsfQ/Gs3Y
+E5sMlpq7v32WuhRu9fRTHCo747TVWh7tYWlihBI+zsUr7Xi8q5A=
+=KZnX
 -----END PGP SIGNATURE-----
 
---Km1U/tdNT/EmXiR1--
+--5xSkJheCpeK0RUEJ--
 
 
---===============4122861188855122164==
+--===============5294725256464821372==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -133,5 +142,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============4122861188855122164==--
+--===============5294725256464821372==--
 
