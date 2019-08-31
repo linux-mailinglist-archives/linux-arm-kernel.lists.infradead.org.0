@@ -2,29 +2,29 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C566A42A2
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 08:01:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9306A42B5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 08:03:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xVwf/axGFdNReYq3PL8b7YecD75mVJuPATeWFXzOr3A=; b=sOWgAgGFoLzYqX
-	WCDqsPE1C9O7OvURzOgs86vzWt7uiwsjQAt/y6/9t2E0z3fjNr+9MOUhRHGA+rM7FjEKOLsoNX2Oo
-	HurWUKafc/rObRIdZIHRz82WoJMWfPhrUmIHqZYos1GFYhK+catIp/7JiH/XAKjdtXIMkBDjHWsLN
-	poPOQr3CfWnyfqretkzQ/+qKdM4IREXF0G7wjvimRz+SgQz9KPfrFBR27C/n5H1bNW4MyDmjY82Gf
-	dHi0ZJ7wORbY/QZOULYHDaT8tvGBH8mG7uy8vZoFK+W8FifN2xEn+a2zi44pA/zFu3Gi7T6XaFcZq
-	X6Os8B5p+4EiFkWU3Hig==;
+	List-Owner; bh=eTgOV6/VH1pPb0GF0w5DdXQdYlgI4Z7Nkz59EcWnSYg=; b=JQAykp1NR0MCrD
+	F9wh2+Z0BoiHiWLtLfrSPz5RIoPmBkz3IK+2AmMafZQC/rvktWlaIaMRL75ZG1y1xF5mf4y+BmgQr
+	bsgdwy3InwqOKJU+PkJ6T66f998oHakyGLLNExngopsHSE0GxvGMxN7Am2Nm4V4vEMDSodrfRuJr3
+	zQvImnN/0yIb8ddu9QD+Ww5A07iyw3dhMoIfT3mnloYXrN7nb3tws69xXMFoY3ssILO2fzSb9nEA/
+	gVnoDNRHjouC9Neuu6FhWWaxOgoBDGsJIBDm7nC4dl9JMEXY+KxCD4XnpLz7clbl6UDX6ugeX+gIi
+	VvEYEgzyrt3IKAEZiipg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3wRl-0006a3-PF; Sat, 31 Aug 2019 06:01:14 +0000
+	id 1i3wTv-0007yX-FQ; Sat, 31 Aug 2019 06:03:28 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3wRP-0006X1-K2
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 06:00:53 +0000
+ id 1i3wRV-0006Ww-Mb
+ for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 06:00:59 +0000
 Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id DFA271D7914D6E80DE7C;
+ by Forcepoint Email with ESMTP id B8999A0606B4FD5A4803;
  Sat, 31 Aug 2019 14:00:41 +0800 (CST)
 Received: from localhost.localdomain (10.67.212.75) by
  DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
@@ -37,10 +37,9 @@ To: <catalin.marinas@arm.com>, <will@kernel.org>, <mingo@redhat.com>,
  <borntraeger@de.ibm.com>, <ysato@users.sourceforge.jp>, <dalias@libc.org>,
  <davem@davemloft.net>, <ralf@linux-mips.org>, <paul.burton@mips.com>,
  <jhogan@kernel.org>, <jiaxun.yang@flygoat.com>, <chenhc@lemote.com>
-Subject: [PATCH v2 4/9] powerpc: numa: check the node id consistently for
- powerpc
-Date: Sat, 31 Aug 2019 13:58:18 +0800
-Message-ID: <1567231103-13237-5-git-send-email-linyunsheng@huawei.com>
+Subject: [PATCH v2 5/9] s390: numa: check the node id consistently for s390
+Date: Sat, 31 Aug 2019 13:58:19 +0800
+Message-ID: <1567231103-13237-6-git-send-email-linyunsheng@huawei.com>
 X-Mailer: git-send-email 2.8.1
 In-Reply-To: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
 References: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
@@ -48,8 +47,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.67.212.75]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_230051_845461_A6CFB681 
-X-CRM114-Status: GOOD (  10.74  )
+X-CRM114-CacheID: sfid-20190830_230058_128402_04872007 
+X-CRM114-Status: GOOD (  11.99  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -104,33 +103,31 @@ node_to_cpumask_map[node]:
 
 Signed-off-by: Yunsheng Lin <linyunsheng@huawei.com>
 ---
- arch/powerpc/include/asm/topology.h | 13 ++++++++++---
- 1 file changed, 10 insertions(+), 3 deletions(-)
+Note node_to_cpumask_map[node] is already a pointer, so
+returning &node_to_cpumask_map[node] does not seem to
+be correct, if this is problem, maybe clean it up in another
+patch.
+---
+ arch/s390/include/asm/topology.h | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
-diff --git a/arch/powerpc/include/asm/topology.h b/arch/powerpc/include/asm/topology.h
-index 2f7e1ea..217dc9b 100644
---- a/arch/powerpc/include/asm/topology.h
-+++ b/arch/powerpc/include/asm/topology.h
-@@ -17,9 +17,16 @@ struct device_node;
- 
- #include <asm/mmzone.h>
- 
--#define cpumask_of_node(node) ((node) == -1 ?				\
--			       cpu_all_mask :				\
--			       node_to_cpumask_map[node])
-+static inline const struct cpumask *cpumask_of_node(int node)
-+{
+diff --git a/arch/s390/include/asm/topology.h b/arch/s390/include/asm/topology.h
+index cca406f..75340ca 100644
+--- a/arch/s390/include/asm/topology.h
++++ b/arch/s390/include/asm/topology.h
+@@ -78,6 +78,12 @@ static inline int cpu_to_node(int cpu)
+ #define cpumask_of_node cpumask_of_node
+ static inline const struct cpumask *cpumask_of_node(int node)
+ {
 +	if (node >= nr_node_ids)
 +		return cpu_none_mask;
 +
 +	if (node < 0 || !node_to_cpumask_map[node])
 +		return cpu_online_mask;
 +
-+	return node_to_cpumask_map[node];
-+}
+ 	return &node_to_cpumask_map[node];
+ }
  
- struct pci_bus;
- #ifdef CONFIG_PCI
 -- 
 2.8.1
 
