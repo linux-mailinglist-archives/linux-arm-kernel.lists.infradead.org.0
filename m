@@ -2,56 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3725BA43B8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 11:49:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C96EFA43C7
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 11:50:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X7XOiQy3Zc6UY4RZan8+ktJzuA64UBXgeeyNhQrakY0=; b=o313XNB6I4FlP8
-	M3fchtI06d+Iy5lWHz2l5ohwCn4b678sQcCaQX3veC82dcTZdWoYu5g3ijK2O/WXG5mm2PZ+0QhKr
-	r8efZ/e9WZrFFvziFE30W2QvA9kYjA0hUeXX9v/nH1R07nbmsk5ZbAVgsdREzH12aKD9oBAOGKcV0
-	/314w6tfCvpxqITJy723ZJw5kETPXlh9J6uf9phJtpSJzbbDCg9mJLLcYa4OsfW/aEG56VL+uQQMb
-	sSynh7w9CWqImEobFEkqaTIm+0oSN9kvy/U9MlU1dvljZIqpkEDzVyx6iwcVroe2pdeVL1hwIM5Qf
-	z2pZiDXa+ayAz3WtHtqQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=SYxqGa7gQPuufwtt/l94E7yjCOBMmu0zNQleQNFn4Cw=; b=TcLG5r96qvh4XK0wi5RMnDjtN
+	Nw4Qlqdlha3OHIi8tkOhAvGvPDuVz2uLwWArIdDGm2GwshEE/rY8L1g33wJgPCiJUH4xI4GtS32GT
+	PtpiEbIqUHhyFbPb5R9Pfj9y4iGFs3HIgWqeFIqpjoVTclUZL/q1/CO2jiVejs3LbXR2Az3lyQxV9
+	szJ/6TV6BKKqQxk0bcPnWfyaTGs8RXoWui1hAdvN4RanP0x7yr3vAigVWjeFtn1brK3ir/Fcb3e/x
+	n3Pk9pL20eWVS6dH3xvdml+8KTxNkHN9/j3orq1S5rCWoNEtIEsBJuRnzW+DzeKCT2UF38sYnY1AW
+	aQJOsgjAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i400T-0002MN-O3; Sat, 31 Aug 2019 09:49:17 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
+	id 1i401F-0002cZ-8b; Sat, 31 Aug 2019 09:50:05 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i3zzv-0002Lw-4A
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 09:48:44 +0000
-Received: from penelope.horms.nl (ip4dab7138.direct-adsl.nl [77.171.113.56])
- by kirsty.vergenet.net (Postfix) with ESMTPA id A4F8E25AE77;
- Sat, 31 Aug 2019 19:48:35 +1000 (AEST)
-Received: by penelope.horms.nl (Postfix, from userid 7100)
- id 76A5BE22BF5; Sat, 31 Aug 2019 11:48:33 +0200 (CEST)
-Date: Sat, 31 Aug 2019 11:48:33 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Geert Uytterhoeven <geert+renesas@glider.be>
-Subject: Re: [PATCH v2 0/7] soc: renesas: rcar-gen3-sysc: Fix power request
- conflicts
-Message-ID: <20190831094833.qhj6otyocnq2di5l@verge.net.au>
-References: <20190828113618.6672-1-geert+renesas@glider.be>
+ id 1i400v-0002bM-2J
+ for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 09:49:47 +0000
+Received: from localhost (p5486C98B.dip0.t-ipconnect.de [84.134.201.139])
+ by pokefinder.org (Postfix) with ESMTPSA id 649852C0093;
+ Sat, 31 Aug 2019 11:49:41 +0200 (CEST)
+Date: Sat, 31 Aug 2019 11:49:41 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Ray Jui <ray.jui@broadcom.com>
+Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
+Message-ID: <20190831094940.GA1138@kunai>
+References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+ <20190830125626.GC2870@ninjato>
+ <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190828113618.6672-1-geert+renesas@glider.be>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_024843_315018_8BF2CD05 
-X-CRM114-Status: GOOD (  15.13  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190831_024945_253919_431D64A7 
+X-CRM114-Status: GOOD (  10.28  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,59 +60,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-renesas-soc@vger.kernel.org, Magnus Damm <magnus.damm@gmail.com>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lori Hikichi <lori.hikichi@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Shivaraj Shetty <sshetty1@broadcom.com>,
+ Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7752887759741897122=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 01:36:11PM +0200, Geert Uytterhoeven wrote:
-> 	Hi all,
-> 
-> Recent R-Car Gen3 SoCs added an External Request Mask Register to the
-> System Controller (SYSC).  This register allows to mask external power
-> requests for CPU or 3DG domains, to prevent conflicts between powering
-> off CPU cores or the 3D Graphics Engine, and changing the state of
-> another power domain through SYSC, which could lead to CPG state machine
-> lock-ups.
-> 
-> This patch series starts making use of this register.  Note that the
-> register is optional, and that its location and contents are
-> SoC-specific.
-> 
-> This was inspired by a patch in the BSP by Dien Pham
-> <dien.pham.ry@renesas.com>.
-> 
-> Note that the issue fixed cannot happen in the upstream kernel, as
-> upstream has no support for graphics acceleration yet.  SoCs lacking the
-> External Request Mask Register may need a different mitigation in the
-> future.
-> 
-> Changes compared to v1[1]:
->   - Improve description of cover letter and first patch.
-> 
-> Changes compared to RFC[2]:
->   - Rebased.
-> 
-> This has been boot-tested on R-Car H3 ES1.0, H3 ES2.0, M3-W ES1.0, M3-N,
-> V3M, and E3 (only the last 3 have this register!), and regression-tested
-> on R-Car Gen2.
-> 
-> This has not been tested on R-Car H3 ES3.0, M3-W ES2.0, and V3H.
-> 
-> For your convenience, this series is available in the
-> topic/rcar3-sysc-extmask-v2 branch of my renesas-drivers git repository at
-> git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-drivers.git.
-> 
-> Thanks for your comments!
 
-Looks good to me.
+--===============7752887759741897122==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="AhhlLboLdkugWU4S"
+Content-Disposition: inline
 
-Reviewed-by: Simon Horman <horms+renesas@verge.net.au>
 
+--AhhlLboLdkugWU4S
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+Hi Ray,
+
+> > With all the limitations in place, I wonder if it might be easier to
+> > implement an smbus_xfer callback instead? What is left that makes this
+> > controller more than SMBus and real I2C?
+> >=20
+>=20
+> Right. But what is the implication of using smbus_xfer instead of
+> master_xfer in our driver?
+>=20
+> Does it mean it will break existing functions of the i2c app that our
+> customers developed based on i2cdev (e.g., I2C_RDWR)?
+
+If the customers uses I2C_RDWR (and it cannot be mapped to i2c_smbus_*
+calls) then this is an indication that there is some I2C functionality
+left which the HW can provide. I'd be interested which one, though.
+
+>=20
+> 1) Does
+
+Maybe you wanted to describe it here and it got accidently cut off?
+
+Regards,
+
+   Wolfram
+
+
+--AhhlLboLdkugWU4S
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1qQrAACgkQFA3kzBSg
+KbbmbQ/9E9Ts1/5jZMraYl7CNxsXtWMbdSUWQFyuZDJGvO7UvZz9v7O0Aq9ct/MB
+mMb4lMVP4lLM/y1DMpVmoYoqVXyKPXzvMzGzsB0CMCs5e+XCbWKr1yCaDCLv0/Js
+HNbEe7PC1fuNz/YklNtYvHEe1LjSxf81lFWoLDFGPZ4FkSDcbUAZQkUfe/VpcKbc
+VVhYAQucc6GrBoJ12UMRSWSf3diIkR0CBqKhALZXCnrSLx9cXtTuqA0k7UnN9Piv
+qPZs/I20tTu52RCHXTpjnwFpWMLNuswRIoCWcMR6Vl1Ix6v0TB4NiUpMStk4Pw45
+KD6hdZSPBtFM4uQ04M7wbVFR634PF4mQx7wts+VjFXBe6rxEASwpIq3dMtxVFWgs
+GwZ2tyZDQBT/jqdJi2QyUsKw4UW2R7su3D3+/idNTtoT1JkqwAfsFix283Bcbees
+Kmx1W32dzB7p2G0k2vCWmNWx1CI+Mf/K16H0n2ffyD/5t4vCME7kLeIVcqkYNF7l
+i98hRkYVJm3iecvg2iVr5/y6a7T/V248YJl59WTs7ycb3wqZJib5hQDOmMKeZbmS
+DrKSbdHwlistLsHnatTQxOz8vlHG6ufoAXBy+x3PXs1b+HD21Zh94ugVqgoOHoSm
+xqIQaulWFBYVg6xi2y9ZyEPyKo4KEwBBmNFs4eTCPmSgTvKT3lg=
+=mcNR
+-----END PGP SIGNATURE-----
+
+--AhhlLboLdkugWU4S--
+
+
+--===============7752887759741897122==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7752887759741897122==--
+
