@@ -2,51 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C96EFA43C7
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 11:50:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBF61A43E8
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 12:10:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=SYxqGa7gQPuufwtt/l94E7yjCOBMmu0zNQleQNFn4Cw=; b=TcLG5r96qvh4XK0wi5RMnDjtN
-	Nw4Qlqdlha3OHIi8tkOhAvGvPDuVz2uLwWArIdDGm2GwshEE/rY8L1g33wJgPCiJUH4xI4GtS32GT
-	PtpiEbIqUHhyFbPb5R9Pfj9y4iGFs3HIgWqeFIqpjoVTclUZL/q1/CO2jiVejs3LbXR2Az3lyQxV9
-	szJ/6TV6BKKqQxk0bcPnWfyaTGs8RXoWui1hAdvN4RanP0x7yr3vAigVWjeFtn1brK3ir/Fcb3e/x
-	n3Pk9pL20eWVS6dH3xvdml+8KTxNkHN9/j3orq1S5rCWoNEtIEsBJuRnzW+DzeKCT2UF38sYnY1AW
-	aQJOsgjAQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=gK1shRXB3QuwMIPUamI9WKTHRJ6n1issZz5LpziOYqg=; b=mHHQSiOLl8vpo0
+	ESX/0kPdUfNLAuIKV2UPTANMeipoNLtmkyJ3t3v6DmjQzhgNfkqfcKhSHkHJTqVd6oO4h7AX9pZ8I
+	Y0I30kMKzGjIpSZdBFCfuq5NciloAMHOS3NFjgFL4a8NFjC5G/KcIDz0uVyOycdnt2oe+fzQ73LmF
+	cNsWSkH9dEYHZWd8aH7uQ1QWHWnhqBEyJwGqoR2CtWtTH3UodFWLVU30Wa5ya1opn32a5++UJ06NU
+	5vTEdZs3JKgnztNGJ0ZL2pgH3OL9IMb2oppo+k/mF+WIjRBE8m9hMXFk/r91FSKe6Z6zpERsl4UBr
+	ipKq3dKxoJF0fES4ibUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i401F-0002cZ-8b; Sat, 31 Aug 2019 09:50:05 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i400v-0002bM-2J
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 09:49:47 +0000
-Received: from localhost (p5486C98B.dip0.t-ipconnect.de [84.134.201.139])
- by pokefinder.org (Postfix) with ESMTPSA id 649852C0093;
- Sat, 31 Aug 2019 11:49:41 +0200 (CEST)
-Date: Sat, 31 Aug 2019 11:49:41 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Ray Jui <ray.jui@broadcom.com>
-Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
-Message-ID: <20190831094940.GA1138@kunai>
-References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
- <20190830125626.GC2870@ninjato>
- <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
+	id 1i40L1-0001If-7A; Sat, 31 Aug 2019 10:10:31 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i40Kn-0001G5-Cc
+ for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 10:10:19 +0000
+Received: from DGGEMS407-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id 1A9E488D2CD023DF4C0A;
+ Sat, 31 Aug 2019 18:10:11 +0800 (CST)
+Received: from [127.0.0.1] (10.74.191.121) by DGGEMS407-HUB.china.huawei.com
+ (10.3.19.207) with Microsoft SMTP Server id 14.3.439.0; Sat, 31 Aug 2019
+ 18:10:04 +0800
+Subject: Re: [PATCH v2 2/9] x86: numa: check the node id consistently for x86
+To: Peter Zijlstra <peterz@infradead.org>
+References: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
+ <1567231103-13237-3-git-send-email-linyunsheng@huawei.com>
+ <20190831085539.GG2369@hirez.programming.kicks-ass.net>
+From: Yunsheng Lin <linyunsheng@huawei.com>
+Message-ID: <4d89c688-49e4-a2aa-32ee-65e36edcd913@huawei.com>
+Date: Sat, 31 Aug 2019 18:09:39 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:52.0) Gecko/20100101
+ Thunderbird/52.2.0
 MIME-Version: 1.0
-In-Reply-To: <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190831085539.GG2369@hirez.programming.kicks-ass.net>
+Content-Language: en-US
+X-Originating-IP: [10.74.191.121]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_024945_253919_431D64A7 
-X-CRM114-Status: GOOD (  10.28  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190831_031017_588780_377F65AE 
+X-CRM114-Status: GOOD (  20.18  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -60,90 +67,130 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lori Hikichi <lori.hikichi@broadcom.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7752887759741897122=="
+Cc: dalias@libc.org, linux-sh@vger.kernel.org, catalin.marinas@arm.com,
+ dave.hansen@linux.intel.com, heiko.carstens@de.ibm.com, linuxarm@huawei.com,
+ jiaxun.yang@flygoat.com, linux-mips@vger.kernel.org, mwb@linux.vnet.ibm.com,
+ paulus@samba.org, hpa@zytor.com, sparclinux@vger.kernel.org, chenhc@lemote.com,
+ will@kernel.org, cai@lca.pw, linux-s390@vger.kernel.org,
+ ysato@users.sourceforge.jp, mpe@ellerman.id.au, x86@kernel.org,
+ rppt@linux.ibm.com, borntraeger@de.ibm.com, dledford@redhat.com,
+ mingo@redhat.com, jeffrey.t.kirsher@intel.com, benh@kernel.crashing.org,
+ jhogan@kernel.org, nfont@linux.vnet.ibm.com, mattst88@gmail.com,
+ len.brown@intel.com, gor@linux.ibm.com, anshuman.khandual@arm.com,
+ bp@alien8.de, luto@kernel.org, tglx@linutronix.de,
+ naveen.n.rao@linux.vnet.ibm.com, linux-arm-kernel@lists.infradead.org,
+ rth@twiddle.net, axboe@kernel.dk, linuxppc-dev@lists.ozlabs.org,
+ linux-kernel@vger.kernel.org, ralf@linux-mips.org, tbogendoerfer@suse.de,
+ paul.burton@mips.com, linux-alpha@vger.kernel.org, ink@jurassic.park.msu.ru,
+ akpm@linux-foundation.org, robin.murphy@arm.com, davem@davemloft.net
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============7752887759741897122==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="AhhlLboLdkugWU4S"
-Content-Disposition: inline
 
+On 2019/8/31 16:55, Peter Zijlstra wrote:
+> On Sat, Aug 31, 2019 at 01:58:16PM +0800, Yunsheng Lin wrote:
+>> According to Section 6.2.14 from ACPI spec 6.3 [1], the setting
+>> of proximity domain is optional, as below:
+>>
+>> This optional object is used to describe proximity domain
+>> associations within a machine. _PXM evaluates to an integer
+>> that identifies a device as belonging to a Proximity Domain
+>> defined in the System Resource Affinity Table (SRAT).
+> 
+> That's just words.. what does it actually mean?
 
---AhhlLboLdkugWU4S
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+It means the dev_to_node(dev) may return -1 if the bios does not
+implement the proximity domain feature, user may use that value
+to call cpumask_of_node and cpumask_of_node does not protect itself
+from node id being -1, which causes out of bound access.
 
-Hi Ray,
+> 
+>> This patch checks node id with the below case before returning
+>> node_to_cpumask_map[node]:
+>> 1. if node_id >= nr_node_ids, return cpu_none_mask
+>> 2. if node_id < 0, return cpu_online_mask
+>> 3. if node_to_cpumask_map[node_id] is NULL, return cpu_online_mask
+>>
+>> [1] https://uefi.org/sites/default/files/resources/ACPI_6_3_final_Jan30.pdf
+>>
+>> Signed-off-by: Yunsheng Lin <linyunsheng@huawei.com>
+>> ---
+>>  arch/x86/include/asm/topology.h | 6 ++++++
+>>  arch/x86/mm/numa.c              | 2 +-
+>>  2 files changed, 7 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/x86/include/asm/topology.h b/arch/x86/include/asm/topology.h
+>> index 4b14d23..f36e9c8 100644
+>> --- a/arch/x86/include/asm/topology.h
+>> +++ b/arch/x86/include/asm/topology.h
+>> @@ -69,6 +69,12 @@ extern const struct cpumask *cpumask_of_node(int node);
+>>  /* Returns a pointer to the cpumask of CPUs on Node 'node'. */
+>>  static inline const struct cpumask *cpumask_of_node(int node)
+>>  {
+>> +	if (node >= nr_node_ids)
+>> +		return cpu_none_mask;
+>> +
+>> +	if (node < 0 || !node_to_cpumask_map[node])
+>> +		return cpu_online_mask;
+>> +
+>>  	return node_to_cpumask_map[node];
+>>  }
+>>  #endif
+> 
+> I _reallly_ hate this. Users are expected to use valid numa ids. Now
+> we're adding all this checking to all users. Why do we want to do that?
 
-> > With all the limitations in place, I wonder if it might be easier to
-> > implement an smbus_xfer callback instead? What is left that makes this
-> > controller more than SMBus and real I2C?
-> >=20
->=20
-> Right. But what is the implication of using smbus_xfer instead of
-> master_xfer in our driver?
->=20
-> Does it mean it will break existing functions of the i2c app that our
-> customers developed based on i2cdev (e.g., I2C_RDWR)?
+As above, the dev_to_node(dev) may return -1.
 
-If the customers uses I2C_RDWR (and it cannot be mapped to i2c_smbus_*
-calls) then this is an indication that there is some I2C functionality
-left which the HW can provide. I'd be interested which one, though.
+> 
+> Using '(unsigned)node >= nr_nods_ids' is an error.
 
->=20
-> 1) Does
+'node >= nr_node_ids' can be dropped if all user is expected to not call
+cpumask_of_node with node id greater or equal to nr_nods_ids.
 
-Maybe you wanted to describe it here and it got accidently cut off?
+From what I can see, the problem can be fixed in three place:
+1. Make user dev_to_node return a valid node id even when proximity
+   domain is not set by bios(or node id set by buggy bios is not valid),
+   which may need info from the numa system to make sure it will return
+   a valid node.
 
-Regards,
+2. User that call cpumask_of_node should ensure the node id is valid
+   before calling cpumask_of_node, and user also need some info to
+   make ensure node id is valid.
 
-   Wolfram
+3. Make sure cpumask_of_node deal with invalid node id as this patchset.
 
+Which one do you prefer to make sure node id is valid, or do you
+have any better idea?
 
---AhhlLboLdkugWU4S
-Content-Type: application/pgp-signature; name="signature.asc"
+Any detail advice and suggestion will be very helpful, thanks.
 
------BEGIN PGP SIGNATURE-----
+> 
+>> diff --git a/arch/x86/mm/numa.c b/arch/x86/mm/numa.c
+>> index e6dad60..5e393d2 100644
+>> --- a/arch/x86/mm/numa.c
+>> +++ b/arch/x86/mm/numa.c
+>> @@ -868,7 +868,7 @@ const struct cpumask *cpumask_of_node(int node)
+>>  		dump_stack();
+>>  		return cpu_none_mask;
+>>  	}
+>> -	if (node_to_cpumask_map[node] == NULL) {
+>> +	if (node < 0 || !node_to_cpumask_map[node]) {
+>>  		printk(KERN_WARNING
+>>  			"cpumask_of_node(%d): no node_to_cpumask_map!\n",
+>>  			node);
+>> -- 
+>> 2.8.1
+>>
+> 
+> .
+> 
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1qQrAACgkQFA3kzBSg
-KbbmbQ/9E9Ts1/5jZMraYl7CNxsXtWMbdSUWQFyuZDJGvO7UvZz9v7O0Aq9ct/MB
-mMb4lMVP4lLM/y1DMpVmoYoqVXyKPXzvMzGzsB0CMCs5e+XCbWKr1yCaDCLv0/Js
-HNbEe7PC1fuNz/YklNtYvHEe1LjSxf81lFWoLDFGPZ4FkSDcbUAZQkUfe/VpcKbc
-VVhYAQucc6GrBoJ12UMRSWSf3diIkR0CBqKhALZXCnrSLx9cXtTuqA0k7UnN9Piv
-qPZs/I20tTu52RCHXTpjnwFpWMLNuswRIoCWcMR6Vl1Ix6v0TB4NiUpMStk4Pw45
-KD6hdZSPBtFM4uQ04M7wbVFR634PF4mQx7wts+VjFXBe6rxEASwpIq3dMtxVFWgs
-GwZ2tyZDQBT/jqdJi2QyUsKw4UW2R7su3D3+/idNTtoT1JkqwAfsFix283Bcbees
-Kmx1W32dzB7p2G0k2vCWmNWx1CI+Mf/K16H0n2ffyD/5t4vCME7kLeIVcqkYNF7l
-i98hRkYVJm3iecvg2iVr5/y6a7T/V248YJl59WTs7ycb3wqZJib5hQDOmMKeZbmS
-DrKSbdHwlistLsHnatTQxOz8vlHG6ufoAXBy+x3PXs1b+HD21Zh94ugVqgoOHoSm
-xqIQaulWFBYVg6xi2y9ZyEPyKo4KEwBBmNFs4eTCPmSgTvKT3lg=
-=mcNR
------END PGP SIGNATURE-----
-
---AhhlLboLdkugWU4S--
-
-
---===============7752887759741897122==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7752887759741897122==--
-
