@@ -2,44 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 58026A4464
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 14:18:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E0A53A4468
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 14:19:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=2LYwzLj2iNwmOUZwgqOzAl+Bbx3pC6bactlVJvIhHZk=; b=V9NMS5xJCffJ/qzvjGK9G3Mei
-	+jFqPycOx2U84CQSkOncHqQEiE6gRyrIfmZYVu0sGDBtCBca1QDEJTtk6IhzNcNQ4ByO5mMWxiBYO
-	51rcJw1pZrU9EHY4AMU/qTocoUtHhL/XrAAsT2iBUW8xNwzE2PgGy6vAq2BpXj5hGU3AQT2UXf13P
-	9GXbnl0CfEMV/wGoiFssHtJLeXH3TUR3h/6CD5H6CCsJr1M7WJYM+0e/obVsHhOelgZlGEQ1wBEPZ
-	DJW23lYC11FflglNJiOuzgYZ6POF977xapwwS2YeV2LRvW53NdaLSlhLTJm0Unkssqg1JfmawR8OD
-	FfIcaUF1Q==;
+	 bh=b8/ww4edrAaIlqYTLwRJk12cqGr3ADw+SgdlPvPXsY0=; b=Kcr7LVM/2UKU9NGNFPo5SEtMV
+	Wg/nFt1dZgw5licGis1rpax/Ovo/cKPhLTZFuRMhpynQw7A0yqSAInbGfyX8ZCAnA4SUX+nFlzQuD
+	Qt1DM/25Hq42TLqsRVbA1zdgNNy2Le1wjTyNh0dOdjPr26lILJ/3Ej1wL6ncl65V32efIMd/7yinL
+	lb9fAVXkCFMi4Xp8HrhCn/JR3R0FJugCHF3epesHeMVOTkyp6Eb37R+s6y67CBKXAgbffA3MZr/gc
+	eu5Qz+uK/cFW9513uBHVgIoVUaKaOiNkCTqUBb21a0SBJKUhb3y+3dztdVRXbs4cRxvDppEd0YG+K
+	1Q1GRiJLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i42KT-000560-3d; Sat, 31 Aug 2019 12:18:05 +0000
+	id 1i42MB-0005LC-Ct; Sat, 31 Aug 2019 12:19:51 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i42KG-00055c-Ps
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 12:17:54 +0000
+ id 1i42Lx-0005Ks-IJ
+ for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 12:19:38 +0000
 Received: from localhost (p5486C98B.dip0.t-ipconnect.de [84.134.201.139])
- by pokefinder.org (Postfix) with ESMTPSA id 137752C0093;
- Sat, 31 Aug 2019 14:17:52 +0200 (CEST)
-Date: Sat, 31 Aug 2019 14:17:51 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id CF5272C0093;
+ Sat, 31 Aug 2019 14:19:36 +0200 (CEST)
+Date: Sat, 31 Aug 2019 14:19:36 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v3 5/9] i2c: at91: add support for digital filtering
-Message-ID: <20190831121751.GC1032@ninjato>
+Subject: Re: [PATCH v3 0/9] i2c: add support for filters
+Message-ID: <20190831121936.GD1032@ninjato>
 References: <1562678049-17581-1-git-send-email-eugen.hristev@microchip.com>
- <1562678049-17581-6-git-send-email-eugen.hristev@microchip.com>
- <20190831121308.GB1032@ninjato>
+ <20190712082044.6eteunzehyptsibk@M43218.corp.atmel.com>
+ <867070c3-02c8-da1b-04d9-0a1b628577de@microchip.com>
+ <20190829202817.GT3740@ninjato>
 MIME-Version: 1.0
-In-Reply-To: <20190831121308.GB1032@ninjato>
+In-Reply-To: <20190829202817.GT3740@ninjato>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_051752_991257_AAC27C59 
-X-CRM114-Status: UNSURE (   8.31  )
+X-CRM114-CacheID: sfid-20190831_051937_758829_DEBC2C52 
+X-CRM114-Status: UNSURE (   7.43  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -63,65 +64,59 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- pierre-yves.mordret@st.com, Ludovic.Desroches@microchip.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org, peda@axentia.se,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============2419447968539621890=="
+ pierre-yves.mordret@st.com, robh+dt@kernel.org, linux-i2c@vger.kernel.org,
+ peda@axentia.se, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============5554252711344374912=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============2419447968539621890==
+--===============5554252711344374912==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="t0UkRYy7tHLRMCai"
+	protocol="application/pgp-signature"; boundary="sXc4Kmr5FA7axrvy"
 Content-Disposition: inline
 
 
---t0UkRYy7tHLRMCai
+--sXc4Kmr5FA7axrvy
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
 
-> > +	dev->enable_dig_filt =3D of_property_read_bool(pdev->dev.of_node,
-> > +						     "i2c-dig-filter");
-> > +
+> > What is the plan for this patch series?
 >=20
-> What do you think of the idea to introduce 'flags' to struct i2c_timings
-> and parse the bindings in the core, too? Then you'd have sth like:
->=20
-> 	if (t->flags & I2C_TIMINGS_ANALOG_FILTER)
->=20
-> Would that be useful for you?
+> I hope to review it this weekend and my hope it is good to go for 5.4.
 
-Forgot to say, we can also implement this incrementally to make sure
-your patches land in 5.4 in case you are currently busy with sth else.
+Series looks good basically. Just a few comments for some patches. See
+there.
+
+Thanks!
 
 
---t0UkRYy7tHLRMCai
+--sXc4Kmr5FA7axrvy
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1qZW8ACgkQFA3kzBSg
-KbbcoQ//ZMuUi7Vd6Xj/Gh9IgbGuTbXxjGeoSW+Kts2TbqLIcJHl9A8F8BLOe3OH
-QJRwEMB/NVIpI6XTuQKadhBkKHoI/1n+5jhOJX4P239Lar26V3kXG97WLSNH3kJP
-RJ4q5ZfPRLKzpxlebefRUWntFCadSWmQvztiji0VyQR5wSY3+eJkVhU7ftIKFEpW
-LFMoCI0Gr1eClZM47oZERx9hsilWnacd+y8eLTDoiUmd0yVGx0QO26JNju6zIkuU
-zMAfj51/y0aNN63LIHAp3M4uOxVvLxAWZrhg4nGrbfrEwUIFjWMajM27mnuF8C6R
-jFaK/CUOBUHO1dRRDvPHmFEJThJo7iQ4gR++2r4+ADeoWDP7geMn6uttEs3xRZEU
-HkOvWUDUzxgR0ylv768MU4lUV8eYt5d0kzYEQqcOiBO4eAS7zQ0SaeSLdbrQuIhR
-Vx6Msz70pCaBSQqEckJPlKcmN4fm4vp67wVZdy8jEjNuJIY7j7jVsFEQZkJXfdBq
-tV8yfRFm0C5HZbq5DR0QSF6xqREW/k40aHsPC/7bmyvyzCuA9GiGe3bZCzxoOeuR
-TAmzevIjsE4UfmCrNdqQP/V4E0tZMAbllPgxUlgZYO84EiLn76pKxxlvyt5hp++t
-NlMl1rO/Ne51jtwCVcmGgpkoLtlop2ChAKzhPSGZDMn7aAHdJVU=
-=YVhT
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1qZdgACgkQFA3kzBSg
+KbZsZA//f78QF1bYvAot77Sdun9f88jzno8Z7dYA6QF/uU2GL7npsGzJilGHp0bX
+18ft7DNi86YVPNglhutCWhlLDicMZOTe2fZkqrSX/w574Kq9TKadW4aCaVBkIyhj
+lvFP5lDSVQo9lHaXv+ocopAcFkKLlZ7KivZAXbOCAW9AwYF0l2bSC7FqVyJVYQOY
+8LEfUB0T4ZANnMuN2xn4S3OyTlidykhOy5rF+oppjpesIJ21zjSKwKLKKqz0eD2p
+vP4RcoEYvP+UvswkfMFeQ/nW8sSOOVi0lIpWPkRUwog9rHtZfVov8qd63r4/ftQK
+IEkQDXCmB+0oK5Dgz+FeIS7Hty6oJluLSpxLG1TTZ3W/716j2BrcrcTX7V0EoHGv
+YutKi0SD855I2bSWrk/O+P5Vor13a0oBVsu4WjRFbhO/Fzd3bIcZghILe3ty7um/
+US6WEMXpn0HRFPA2wdeBHfYWwGheN67Eovuxu24aPLF3G9GkTsaN38q4HCLfEZaf
+ofK5L+b2Tmb9O40aaXWIIZ5BwsI8STpT0LA0HS5zUh/j6y+3WRmKAaGA8tjDQUNz
+5GlQwcdvyBe8bsXSAqdFwR3r1mX3G9bC30hm2PX8DyCxQfgV7FJQjns44p3NKfHn
+5wPMNxUVEU2VsilefWifVBUwpdq8UxmPPJamPdY4sygrxOq+GK4=
+=4j4B
 -----END PGP SIGNATURE-----
 
---t0UkRYy7tHLRMCai--
+--sXc4Kmr5FA7axrvy--
 
 
---===============2419447968539621890==
+--===============5554252711344374912==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -132,5 +127,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============2419447968539621890==--
+--===============5554252711344374912==--
 
