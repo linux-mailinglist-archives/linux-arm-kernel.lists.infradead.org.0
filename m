@@ -2,30 +2,30 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19D85A42B8
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 08:04:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E4522A42B6
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 08:03:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=z1ghRu44wH48SaaZ6Rfmr9BCg5gjugmeR1X3zreOTxA=; b=bdbcfsJMYTJ9B6
-	zl/8dlD5zUFJq748mvHWKc1CvOCGIFNbgEjL4vcHpJtKyjkDy9rP/wh/3gkOsDZ49t71Zk0nVZTfh
-	cLbV6pZq8IkY3wew0FDbw6yrbgA2fi1X9t7G/FNAd4+F4TVAc+ILTVrVS8zvFDLzMah+Hv6XmwJjA
-	ZOLy0Y3pznyMalFFLVeTXEmpF46OUgLDhxH0klssvcBChrMyIO+neTTzNjf+7f9OFi6dd4pkqC9sx
-	b4JNKd3ZHjUNvSNo6wLUjcmYi8XKR2MJP9Gvz5l3Q7prxHDC8lRv7hTDwgPmj0FbiKgJlr3cLzMi7
-	o7e6zrReY0zb8RBQjmew==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=k6QODN53tytjyuQPzyv2yKt+G/5eLDcGa1vWmVZWmi0=; b=B8KJeecBkL02MC
+	ltKPhkg1dhWHwxfuNZOiVn7HEcIph6NKJJvLY3ndd7bfsb6wilWNz4wmkXfS0nxhqDEttUwGEmptq
+	+Us3hAItjJfkGwI78mj46ftm9tTS/4yoJiWhr4IzJbVr93uz7nfakIqF5iYOP3dXrB/mk0XnXxuGV
+	MPd/nnLS+aCBBGZ/+mRkT1TGWOghFgjprgtuSLgqkFDYI3WQaU3rFaOIt5MF5XyeBDAmeUCw/+QVX
+	As2ts0lib46riGcVM6GW7O02jJXVUYF8eCEQ6yOSU7GmYkvVGMyVdVenhj+L6GJbKJnJibBHU/LNc
+	B93f1vqMDhvILbjyGbAQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i3wUl-00009h-IW; Sat, 31 Aug 2019 06:04:19 +0000
+	id 1i3wUE-0008Bz-Tn; Sat, 31 Aug 2019 06:03:47 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i3wRY-0006X2-5y
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 06:01:02 +0000
+ id 1i3wRV-0006X7-Le
+ for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 06:00:59 +0000
 Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id F0A4275DC8D547CF3F21;
- Sat, 31 Aug 2019 14:00:41 +0800 (CST)
+ by Forcepoint Email with ESMTP id 0E1E0CC4B3888329B67F;
+ Sat, 31 Aug 2019 14:00:42 +0800 (CST)
 Received: from localhost.localdomain (10.67.212.75) by
  DGGEMS404-HUB.china.huawei.com (10.3.19.204) with Microsoft SMTP Server id
  14.3.439.0; Sat, 31 Aug 2019 14:00:33 +0800
@@ -37,17 +37,18 @@ To: <catalin.marinas@arm.com>, <will@kernel.org>, <mingo@redhat.com>,
  <borntraeger@de.ibm.com>, <ysato@users.sourceforge.jp>, <dalias@libc.org>,
  <davem@davemloft.net>, <ralf@linux-mips.org>, <paul.burton@mips.com>,
  <jhogan@kernel.org>, <jiaxun.yang@flygoat.com>, <chenhc@lemote.com>
-Subject: [PATCH v2 0/9] check the node id consistently across different arches
-Date: Sat, 31 Aug 2019 13:58:14 +0800
-Message-ID: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
+Subject: [PATCH v2 1/9] arm64: numa: check the node id consistently for arm64
+Date: Sat, 31 Aug 2019 13:58:15 +0800
+Message-ID: <1567231103-13237-2-git-send-email-linyunsheng@huawei.com>
 X-Mailer: git-send-email 2.8.1
+In-Reply-To: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
+References: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.67.212.75]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190830_230100_674924_F86064D3 
-X-CRM114-Status: UNSURE (   9.11  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190830_230058_114387_54AC9797 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -84,8 +85,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-According to Section 6.2.14 from ACPI spec 6.3 [1], the
-setting of proximity domain is optional, as below:
+According to Section 6.2.14 from ACPI spec 6.3 [1], the setting
+of proximity domain is optional, as below:
 
 This optional object is used to describe proximity domain
 associations within a machine. _PXM evaluates to an integer
@@ -134,54 +135,48 @@ below:
 [   43.132439]  ffff20008cdf8880: fa fa fa fa fa fa fa fa 00 00 fa fa fa fa fa fa
 [   43.139646] ==================================================================
 
-As suggested [2] by Michal Hocko:
-"if the specification really allows to provide NUMA_NO_NODE (-1) then
-the code really has to be prepared for that. And ideally all arches
-should deal with that."
-
-This patchset checks the node id with the below case consistently
-across different arches in order to be compliant with spec and
-backward compatible as much as possible:
-1. if node_id < 0, return cpu_online_mask
-2. if node_id >= nr_node_ids, return cpu_none_mask
+This patch checks node id with the below case before returning
+node_to_cpumask_map[node]:
+1. if node_id >= nr_node_ids, return cpu_none_mask
+2. if node_id < 0, return cpu_online_mask
 3. if node_to_cpumask_map[node_id] is NULL, return cpu_online_mask
 
-Note:
-1. Only arm64 has been compile tested and tested on real board.
-2. x86 has been compile tested with defconfig.
-3. Other arch has not been compile tested or tested on real board.
+Signed-off-by: Yunsheng Lin <linyunsheng@huawei.com>
+---
+ arch/arm64/include/asm/numa.h | 6 ++++++
+ arch/arm64/mm/numa.c          | 2 +-
+ 2 files changed, 7 insertions(+), 1 deletion(-)
 
-Changelog:
-V2: Change commit log as suggested by Michal Hocko, and make the change to
-    other arches as well.
-
-[1] https://uefi.org/sites/default/files/resources/ACPI_6_3_final_Jan30.pdf
-[2] https://patchwork.kernel.org/patch/11122823/
-
-Yunsheng Lin (9):
-  arm64: numa: check the node id consistently for arm64
-  x86: numa: check the node id consistently for x86
-  alpha: numa: check the node id consistently for alpha
-  powerpc: numa: check the node id consistently for powerpc
-  s390: numa: check the node id consistently for s390
-  sh: numa: check the node id consistently for sh
-  sparc64: numa: check the node id consistently for sparc64
-  mips: numa: check the node id consistently for mips ip27
-  mips: numa: check the node id consistently for mips loongson64
-
- arch/alpha/include/asm/topology.h                |  7 +++++--
- arch/arm64/include/asm/numa.h                    |  6 ++++++
- arch/arm64/mm/numa.c                             |  2 +-
- arch/mips/include/asm/mach-ip27/topology.h       | 15 ++++++++++++---
- arch/mips/include/asm/mach-loongson64/topology.h | 12 +++++++++++-
- arch/powerpc/include/asm/topology.h              | 13 ++++++++++---
- arch/s390/include/asm/topology.h                 |  6 ++++++
- arch/sh/include/asm/topology.h                   | 14 +++++++++++++-
- arch/sparc/include/asm/topology_64.h             | 16 +++++++++++++---
- arch/x86/include/asm/topology.h                  |  6 ++++++
- arch/x86/mm/numa.c                               |  2 +-
- 11 files changed, 84 insertions(+), 15 deletions(-)
-
+diff --git a/arch/arm64/include/asm/numa.h b/arch/arm64/include/asm/numa.h
+index 626ad01..65a0ef6 100644
+--- a/arch/arm64/include/asm/numa.h
++++ b/arch/arm64/include/asm/numa.h
+@@ -25,6 +25,12 @@ const struct cpumask *cpumask_of_node(int node);
+ /* Returns a pointer to the cpumask of CPUs on Node 'node'. */
+ static inline const struct cpumask *cpumask_of_node(int node)
+ {
++	if (node >= nr_node_ids)
++		return cpu_none_mask;
++
++	if (node < 0 || !node_to_cpumask_map[node])
++		return cpu_online_mask;
++
+ 	return node_to_cpumask_map[node];
+ }
+ #endif
+diff --git a/arch/arm64/mm/numa.c b/arch/arm64/mm/numa.c
+index 4f241cc..7eca267 100644
+--- a/arch/arm64/mm/numa.c
++++ b/arch/arm64/mm/numa.c
+@@ -49,7 +49,7 @@ const struct cpumask *cpumask_of_node(int node)
+ 	if (WARN_ON(node >= nr_node_ids))
+ 		return cpu_none_mask;
+ 
+-	if (WARN_ON(node_to_cpumask_map[node] == NULL))
++	if (WARN_ON(node < 0 || !node_to_cpumask_map[node]))
+ 		return cpu_online_mask;
+ 
+ 	return node_to_cpumask_map[node];
 -- 
 2.8.1
 
