@@ -2,52 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C9657A460F
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 22:03:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 97F2BA4681
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 01:05:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vlC2NYCXfCO+i0Il3gitul0gH9ckmG6wYpCiSBfPZ80=; b=RcZdJMvL/aH8d0
-	YaDy+tuz/OROG0nmpo/1/vnUG4Vxg0CdH+RQg2V0mKRwMrWi6dZ+aF1zDkadL8ELspVveu5uAcry/
-	sr6PrlR9wTtGGxt4WtHcKyqqJ+cnDXtFzX9g08wWkdRyHUWbyzvwm4LGM1jRS8e8J9ZeX61VUx65p
-	QrRchFJ+CLTtdyl1kStLzfM4xYaeExNfo9mxuVIsMfU1ZsKz62LTomFV9Cx3c/+BGD/pKbqA4jtY1
-	ajOdo/+VzHyvb37+Z4oDjXh8ROHbdIn9WQztr3rIA5xrTxBlTDIh/poiBArZwKJZYR/xpWM1rdN+y
-	lE+Zgn2llL3YZ1q+FxLw==;
+	List-Owner; bh=uRMmIGVP9+0fcWfyjwwGhKZnwRuDmpTyOZD8WH0FjZs=; b=rk5+W+SKLXFIHi
+	68ffUMhTeb0UCy5mQdO8VEaM+pm/ugKBeh70VxbnA9S5o9zjcFw1yrQCKj+L5RYyBHo1Ky1mNv6aH
+	etr7OhKejarqeZQWZw2P7cZYOh5eeMLsPh02VvjdEWq3FYB8ywivO4i7Wa07XWQ+ShHxIxb8gylha
+	4gJnKfbBzvvDb6uajZwUukQB8AsWLOr/++jHkg9SbRkFA/XBnzbRLYsdIGB4UBJNz9CbDjKtxU/v8
+	2UW3H8ahfMPBJ75TFsz+RPWS8FCdmzvfeAhq66nKR9oPaugpuY3kMAquY3eekDG5NcPHIwSn4a4nI
+	ls3ux9hdC1eQhua2iyGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i49aa-0006RP-Oy; Sat, 31 Aug 2019 20:03:12 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1i4CR4-0001Uh-EI; Sat, 31 Aug 2019 23:05:34 +0000
+Received: from gloria.sntech.de ([185.11.138.130])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i49aN-0006QT-KO
- for linux-arm-kernel@lists.infradead.org; Sat, 31 Aug 2019 20:03:00 +0000
-Received: from localhost (unknown [IPv6:2601:601:9f80:35cd::d71])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 57E3B14BBC0EC;
- Sat, 31 Aug 2019 13:02:53 -0700 (PDT)
-Date: Sat, 31 Aug 2019 13:02:50 -0700 (PDT)
-Message-Id: <20190831.130250.1236116087422472663.davem@davemloft.net>
-To: linyunsheng@huawei.com
-Subject: Re: [PATCH v2 7/9] sparc64: numa: check the node id consistently
- for sparc64
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <0195eb73-99ae-fec2-3e11-2cb9e6677926@huawei.com>
-References: <1567231103-13237-8-git-send-email-linyunsheng@huawei.com>
- <20190830.235337.570776316111294728.davem@davemloft.net>
- <0195eb73-99ae-fec2-3e11-2cb9e6677926@huawei.com>
-X-Mailer: Mew version 6.8 on Emacs 26.1
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Sat, 31 Aug 2019 13:02:54 -0700 (PDT)
+ id 1i4CQY-0000qy-7S; Sat, 31 Aug 2019 23:05:03 +0000
+Received: from [88.128.80.160] (helo=phil.localnet)
+ by gloria.sntech.de with esmtpsa (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256)
+ (Exim 4.89) (envelope-from <heiko@sntech.de>)
+ id 1i4CQJ-0002xc-OE; Sun, 01 Sep 2019 01:04:49 +0200
+From: Heiko Stuebner <heiko@sntech.de>
+To: Elon Zhang <zhangzj@rock-chips.com>
+Subject: Re: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
+ rk3288
+Date: Sun, 01 Sep 2019 01:04:31 +0200
+Message-ID: <3345609.Z0LLm6LDBC@phil>
+In-Reply-To: <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
+References: <20190827071439.14767-1-zhangzj@rock-chips.com>
+ <4806912.UyKsYhR33o@phil>
+ <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_130259_673683_84AFC551 
-X-CRM114-Status: UNSURE (   5.55  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190831_160502_426643_D97A9087 
+X-CRM114-Status: GOOD (  22.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -66,41 +58,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dalias@libc.org, linux-sh@vger.kernel.org, peterz@infradead.org,
- catalin.marinas@arm.com, dave.hansen@linux.intel.com,
- heiko.carstens@de.ibm.com, linuxarm@huawei.com, jiaxun.yang@flygoat.com,
- linux-mips@vger.kernel.org, mwb@linux.vnet.ibm.com, paulus@samba.org,
- hpa@zytor.com, sparclinux@vger.kernel.org, chenhc@lemote.com, will@kernel.org,
- cai@lca.pw, linux-s390@vger.kernel.org, ysato@users.sourceforge.jp,
- mpe@ellerman.id.au, x86@kernel.org, rppt@linux.ibm.com, borntraeger@de.ibm.com,
- dledford@redhat.com, mingo@redhat.com, jeffrey.t.kirsher@intel.com,
- benh@kernel.crashing.org, jhogan@kernel.org, nfont@linux.vnet.ibm.com,
- mattst88@gmail.com, len.brown@intel.com, gor@linux.ibm.com,
- anshuman.khandual@arm.com, bp@alien8.de, luto@kernel.org, tglx@linutronix.de,
- naveen.n.rao@linux.vnet.ibm.com, linux-arm-kernel@lists.infradead.org,
- rth@twiddle.net, axboe@kernel.dk, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, ralf@linux-mips.org, tbogendoerfer@suse.de,
- paul.burton@mips.com, linux-alpha@vger.kernel.org, ink@jurassic.park.msu.ru,
- akpm@linux-foundation.org, robin.murphy@arm.com
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
+ robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunsheng Lin <linyunsheng@huawei.com>
-Date: Sat, 31 Aug 2019 16:57:04 +0800
+Hi Elon,
 
-> Did you mean sparc64 system does not has ACPI, the device's node id will
-> not specified by ACPI, so the ACPI is unrelated here?
+Am Donnerstag, 29. August 2019, 13:31:00 CEST schrieb Elon Zhang:
+> On 8/27/2019 22:28, Heiko Stuebner wrote:
+> > Am Dienstag, 27. August 2019, 09:14:39 CEST schrieb Elon Zhang:
+> >> Not every board needs to enable crypto node, so the node should
+> >> be set default disabled in rk3288.dtsi and enabled in specific
+> >> board dts file.
+> > Can you give a bit more rationale here? There would need to be a very
+> > specific reason because of the following:
+> >
+> > The crypto module is not wired to some board-specific components,
+> > so its usability does not depend on the specific board at all.
+> > Instead every board can just use it out of the box and the devicetree
+> > is supposed to describe the hardware and is _not_ meant as a space
+> > for user configuration.
+> 
+> Right for almost all normal hardware modules but the crypto module was 
+> designed
+> 
+> for secure world. As a result,  the crypto module will become 
+> inaccessible for linux kernel if secure world enable it.
+> 
+> We plan to enable the crypto module in secure world so we should set 
+> crypto module default disabled in linux kernel.
 
-Yes, sparc64 never has and never will have ACPI.
+ok ... I'm halfway convinced ;-) .
 
-This is also true for several other platforms where you have made this
-change.
+The big thing I want to see is that secure setting in the actual firmware.
+Aka right now you probably have that in your Rockchip-specific ATF fork
+and I really want to see the relevant change for public uboot or ATF.
 
-The assumption of your entire patch set is that the semantics of the
-NUMA node ID are somehow completely defined by ACPI semantics.  Which
-is not true.
+I don't necessarily require it to be fully merged before taking this, but
+I really want to see the change either on a mailing list or atf gerrit
+instance [that makes the crypto engine secure only].
+
+Rationale behind this is that we don't care very much about private stuff
+that the general ecosystem doesn't benefit from.
+
+
+Thanks
+Heiko
+
+
+> > So in fact the status property should probably go away completely from
+> > the crypto node, as it's usable out of the box in all cases.
+> >
+> >
+> > Heiko
+> >
+> >
+> >
+> >> Signed-off-by: Elon Zhang <zhangzj@rock-chips.com>
+> >> ---
+> >>   arch/arm/boot/dts/rk3288.dtsi | 2 +-
+> >>   1 file changed, 1 insertion(+), 1 deletion(-)
+> >>
+> >> diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+> >> index cc893e154fe5..d509aa24177c 100644
+> >> --- a/arch/arm/boot/dts/rk3288.dtsi
+> >> +++ b/arch/arm/boot/dts/rk3288.dtsi
+> >> @@ -984,7 +984,7 @@
+> >>   		clock-names = "aclk", "hclk", "sclk", "apb_pclk";
+> >>   		resets = <&cru SRST_CRYPTO>;
+> >>   		reset-names = "crypto-rst";
+> >> -		status = "okay";
+> >> +		status = "disabled";
+> >>   	};
+> >>   
+> >>   	iep_mmu: iommu@ff900800 {
+> >>
+> >
+> >
+> >
+> >
+> >
+> >
+> 
+> 
+> 
+
+
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
