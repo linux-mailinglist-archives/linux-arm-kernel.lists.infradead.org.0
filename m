@@ -2,64 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09999A4538
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 18:13:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8CB2A4554
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 31 Aug 2019 18:30:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=77iB9m442b474S3ht8Txz/oq1zT0xadBuPXknyTXouY=; b=aFfHnT3/3qg6uI
-	3U5BXbUbNZroedEZC1AEBKgrKchCSM/G5zp3JVMsnsVqglfFBGMBIh094hAXb+JBeteSlq5G0KaYM
-	BawKwI0/RC6HZ00Aw78SLxKVrUjn9L0il+OFmfOWwjgA5i27M+WUvMUVfzCj4nmU+LOcYiJNy2cfj
-	W6L6pxWcvP6brwDtoAcBBC8AA6jru4Ujr4hYojfvSkfBHkoPsID+0EKQWDQbskLIoKaX16Bh9DQL4
-	IbRYVGkcZKllqacCnqqTJIs4cSWors7PvIAF40KemSuWbuIt3ZmF9kNuuAqLFwtRPPx4RELieQ/fR
-	iW8tVjgJKHeqxNW60lfQ==;
+	List-Owner; bh=WS4oAgStxuAwz0Am8ZEpWgt+VVQeJtkJmBNcdoSDbyQ=; b=JSSGAk0umxEW2e
+	7SQZW1pzhjpeNd+ZaaGOMDMKlvHI62LIXjfEkexwT6hW3HtF8GBuzO/2HFVlxpt9XU68P3Go9CmK+
+	h4B+IpvHrROkm/uBY6AIBf5y/l7PkhTWUxymgoHoUUMVjQLkhq0cCtYfjKzm+oXRTl+ADYEg3soaX
+	r7Rv/eyY9fWNyV3kZTVCms6syIlKn/cX3ATNNRmbbDI2msWkRDRhyMxwR1dMl2mgnyS4Elg5plKHv
+	Hnzr7rn9+Gvo6k1yff4B/bXzNR0VXQ5HUma2FiMZgxthLEsWVzeSRKPUqcuuM9wy3BSJaWUMMczYw
+	dWwxo8U9K6CZch17ZYMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i460R-0007CS-8t; Sat, 31 Aug 2019 16:13:39 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1i46GH-00034F-4C; Sat, 31 Aug 2019 16:30:01 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i460J-0007CL-8l
- for linux-arm-kernel@bombadil.infradead.org; Sat, 31 Aug 2019 16:13:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
- References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=9z8D9olsBa3hBeUPiIp09Dt+Z4AIzLPp/yvlpDUFHX0=; b=x8AzMV/dBDLgnZtYgd5WXrHZz
- J1Vzd0aVi/Gh9aR1ki4cBa4whG4Q1V/TmJqfGoj1lJq6kJjiuQYZNuorqmnCApb7upfCoptB6gJFD
- /zr79bDqLAuwubXHH8RP3U+PR2AsznxNYYfZ9NHQiCRpZlqAOstpbqBJRljB9ZgYsPWBx+MKFxs80
- ciDeDpUtS+sxAr9TXligHvyLa0o26gzbT/YjybHsFgge8Pvhl9sK46TsDOTJpa2DQeO8FEwa9a+0z
- CL2B8ec8EvIDtdx769upaAGdaagvguVv1uK6k1FG6efrfImifDIpfCuqJdr+/hOsIv+Uv1FL8Ogb7
- CPBOYqZeg==;
-Received: from j217100.upc-j.chello.nl ([24.132.217.100]
- helo=noisy.programming.kicks-ass.net)
- by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i45zj-0003On-Bp; Sat, 31 Aug 2019 16:12:55 +0000
-Received: from hirez.programming.kicks-ass.net
- (hirez.programming.kicks-ass.net [192.168.1.225])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (Client did not present a certificate)
- by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id AF35F301A76;
- Sat, 31 Aug 2019 18:12:12 +0200 (CEST)
-Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
- id ADDA929B399D3; Sat, 31 Aug 2019 18:12:47 +0200 (CEST)
-Date: Sat, 31 Aug 2019 18:12:47 +0200
-From: Peter Zijlstra <peterz@infradead.org>
-To: Yunsheng Lin <linyunsheng@huawei.com>
-Subject: Re: [PATCH v2 2/9] x86: numa: check the node id consistently for x86
-Message-ID: <20190831161247.GM2369@hirez.programming.kicks-ass.net>
-References: <1567231103-13237-1-git-send-email-linyunsheng@huawei.com>
- <1567231103-13237-3-git-send-email-linyunsheng@huawei.com>
- <20190831085539.GG2369@hirez.programming.kicks-ass.net>
- <4d89c688-49e4-a2aa-32ee-65e36edcd913@huawei.com>
+ id 1i46G4-00033V-E8; Sat, 31 Aug 2019 16:29:49 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2253522D37;
+ Sat, 31 Aug 2019 16:29:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567268985;
+ bh=oCFqDXfnxrqpiBFRCwyD8nHXvoMvSjbxCsJhrxHTYqM=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=vX6b95IdsVrDjTXh55KZNhoPNMKUITWlit4Ldb9kHZhxWpNoqZwiOB5EF5DJcLfuZ
+ wmt8nfF1pggofVEAUJWY4K2cI3w83kg0ds8vBO0zGI/+b8iJT5NQEI4dH3G3L57NyD
+ AwNlHxXQFvARoZXdkRSB9gHwMtmjWPnHQrjl8Gx4=
+Date: Sat, 31 Aug 2019 17:29:38 +0100
+From: Will Deacon <will@kernel.org>
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 19/26] arm64: remove __iounmap
+Message-ID: <20190831162937.5ybulvaa4eq7mybs@willie-the-truck>
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-20-hch@lst.de>
+ <20190819073601.4yxjvmyjtpi7tk56@willie-the-truck>
+ <20190830160515.GC26887@lst.de>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <4d89c688-49e4-a2aa-32ee-65e36edcd913@huawei.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190830160515.GC26887@lst.de>
+User-Agent: NeoMutt/20170113 (1.7.2)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190831_092948_503581_DA516278 
+X-CRM114-Status: GOOD (  13.76  )
+X-Spam-Score: -5.2 (-----)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-5.2 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,98 +78,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dalias@libc.org, linux-sh@vger.kernel.org, catalin.marinas@arm.com,
- dave.hansen@linux.intel.com, heiko.carstens@de.ibm.com, linuxarm@huawei.com,
- jiaxun.yang@flygoat.com, linux-mips@vger.kernel.org, mwb@linux.vnet.ibm.com,
- paulus@samba.org, hpa@zytor.com, sparclinux@vger.kernel.org, chenhc@lemote.com,
- will@kernel.org, cai@lca.pw, linux-s390@vger.kernel.org,
- ysato@users.sourceforge.jp, mpe@ellerman.id.au, x86@kernel.org,
- rppt@linux.ibm.com, borntraeger@de.ibm.com, dledford@redhat.com,
- mingo@redhat.com, jeffrey.t.kirsher@intel.com, benh@kernel.crashing.org,
- jhogan@kernel.org, nfont@linux.vnet.ibm.com, mattst88@gmail.com,
- len.brown@intel.com, gor@linux.ibm.com, anshuman.khandual@arm.com,
- bp@alien8.de, luto@kernel.org, tglx@linutronix.de,
- naveen.n.rao@linux.vnet.ibm.com, linux-arm-kernel@lists.infradead.org,
- rth@twiddle.net, axboe@kernel.dk, linuxppc-dev@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, ralf@linux-mips.org, tbogendoerfer@suse.de,
- paul.burton@mips.com, linux-alpha@vger.kernel.org, ink@jurassic.park.msu.ru,
- akpm@linux-foundation.org, robin.murphy@arm.com, davem@davemloft.net
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Guo Ren <guoren@kernel.org>,
+ sparclinux@vger.kernel.org, linux-riscv@lists.infradead.org,
+ Vincent Chen <deanbo422@gmail.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, linux-hexagon@vger.kernel.org, x86@kernel.org,
+ linux-snps-arc@lists.infradead.org, linux-xtensa@linux-xtensa.org,
+ Arnd Bergmann <arnd@arndb.de>, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, Greentime Hu <green.hu@gmail.com>,
+ linux-mtd@lists.infradead.org, Guan Xuetao <gxt@pku.edu.cn>,
+ linux-arm-kernel@lists.infradead.org, Michal Simek <monstr@monstr.eu>,
+ linux-parisc@vger.kernel.org, linux-mips@vger.kernel.org,
+ linux-alpha@vger.kernel.org, nios2-dev@lists.rocketboards.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Aug 31, 2019 at 06:09:39PM +0800, Yunsheng Lin wrote:
-> 
-> 
-> On 2019/8/31 16:55, Peter Zijlstra wrote:
-> > On Sat, Aug 31, 2019 at 01:58:16PM +0800, Yunsheng Lin wrote:
-> >> According to Section 6.2.14 from ACPI spec 6.3 [1], the setting
-> >> of proximity domain is optional, as below:
-> >>
-> >> This optional object is used to describe proximity domain
-> >> associations within a machine. _PXM evaluates to an integer
-> >> that identifies a device as belonging to a Proximity Domain
-> >> defined in the System Resource Affinity Table (SRAT).
+Hi Christoph,
+
+On Fri, Aug 30, 2019 at 06:05:15PM +0200, Christoph Hellwig wrote:
+> On Mon, Aug 19, 2019 at 08:36:02AM +0100, Will Deacon wrote:
+> > On Sat, Aug 17, 2019 at 09:32:46AM +0200, Christoph Hellwig wrote:
+> > > No need to indirect iounmap for arm64.
+> > > 
+> > > Signed-off-by: Christoph Hellwig <hch@lst.de>
+> > > ---
+> > >  arch/arm64/include/asm/io.h | 3 +--
+> > >  arch/arm64/mm/ioremap.c     | 4 ++--
+> > >  2 files changed, 3 insertions(+), 4 deletions(-)
 > > 
-> > That's just words.. what does it actually mean?
-> 
-> It means the dev_to_node(dev) may return -1 if the bios does not
-> implement the proximity domain feature, user may use that value
-> to call cpumask_of_node and cpumask_of_node does not protect itself
-> from node id being -1, which causes out of bound access.
-
-> >> @@ -69,6 +69,12 @@ extern const struct cpumask *cpumask_of_node(int node);
-> >>  /* Returns a pointer to the cpumask of CPUs on Node 'node'. */
-> >>  static inline const struct cpumask *cpumask_of_node(int node)
-> >>  {
-> >> +	if (node >= nr_node_ids)
-> >> +		return cpu_none_mask;
-> >> +
-> >> +	if (node < 0 || !node_to_cpumask_map[node])
-> >> +		return cpu_online_mask;
-> >> +
-> >>  	return node_to_cpumask_map[node];
-> >>  }
-> >>  #endif
+> > Not sure why we did it like this...
 > > 
-> > I _reallly_ hate this. Users are expected to use valid numa ids. Now
-> > we're adding all this checking to all users. Why do we want to do that?
+> > Acked-by: Will Deacon <will@kernel.org>
 > 
-> As above, the dev_to_node(dev) may return -1.
-> 
-> > 
-> > Using '(unsigned)node >= nr_nods_ids' is an error.
-> 
-> 'node >= nr_node_ids' can be dropped if all user is expected to not call
-> cpumask_of_node with node id greater or equal to nr_nods_ids.
+> Can you just pick this one up through the arm64 tree for 5.4?
 
-you copied my typo :-)
+Unfortunately, it doesn't apply because the tree you've based it on has
+removed ioremap_wt(). If you send a version based on mainline, I can
+queue it.
 
-> From what I can see, the problem can be fixed in three place:
-> 1. Make user dev_to_node return a valid node id even when proximity
->    domain is not set by bios(or node id set by buggy bios is not valid),
->    which may need info from the numa system to make sure it will return
->    a valid node.
-> 
-> 2. User that call cpumask_of_node should ensure the node id is valid
->    before calling cpumask_of_node, and user also need some info to
->    make ensure node id is valid.
-> 
-> 3. Make sure cpumask_of_node deal with invalid node id as this patchset.
-> 
-> Which one do you prefer to make sure node id is valid, or do you
-> have any better idea?
-> 
-> Any detail advice and suggestion will be very helpful, thanks.
+Cheers,
 
-1) because even it is not set, the device really does belong to a node.
-It is impossible a device will have magic uniform access to memory when
-CPUs cannot.
-
-2) is already true today, cpumask_of_node() requires a valid node_id.
-
-3) is just wrong and increases overhead for everyone.
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
