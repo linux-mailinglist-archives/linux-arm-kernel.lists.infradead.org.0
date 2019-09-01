@@ -2,65 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C8D85A49C5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 16:15:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26E18A4AFD
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 19:52:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ZpDqBeKPMU02WDUovg1bxbXhFes8/kT0EVqzRXVcgIA=; b=OunHSFpu94gOYj
-	hQItXwLFuZOdIV68CLc8+9hT3n4XKDmH7pcjzq/IjXLIjqkP9eUZIkdzJOUKeIWH3I7GM7aiacqmG
-	5XZR1QSE7v3ZNE/6PLj69B+VvkfJrVhnJPbkg0uyywHIuRc0BGo5tOSVFSdjNgy9LL72I5JnKG9+s
-	xvMRGaZpqxprdJy87ej7bPyGbZjX7UFaPpAWM/V5rFM5Nonwm+PL3g64dKDvcjhISpflA4FVgPAtk
-	zEV8BIia0fai0fFpOpz1d4Q+iTzMO+5GalLRSVAPBqJRI4vhh8uruT5sqbL+v1JYA8QAki3FEh1Qy
-	QQj8ExcNZJTB5KxQw/Aw==;
+	List-Owner; bh=yPd5UgNa0BCzDvPyyuxa6d0uJCax8XALxDHE2CNJ0bI=; b=mSAKAs9EG1H3jd
+	VaVIFg3Sj/+wNbS+d1YXjP4xSnvzJh2pcvwii78I+QBi+SknSYBShsvmzQDjIMAgYOv3IpxgV/fpw
+	2let7XqDTwgr34GHIDnlhLwp81MauYagHl22idFFeeHqQVOpgN5DQn6tA3BLHyDcGeB24nugtErTY
+	ZSqpBwCQJC/aODaMway+BTJ0MZvWDHCaaMKqMhWKEwiz/f9b2xGwFINmv3SGhXxjS6P3/3ujKp0zX
+	Uhs6HB5QKXLzsGDI3TekiA/Rff5DXNCnA7HbtqyKimXYLVqn3x//81786iiEjYVV5TEKD4oofyIpQ
+	qSrH+gLSeFW+biwxIwwg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4QdO-0003Cz-Pf; Sun, 01 Sep 2019 14:15:14 +0000
-Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
+	id 1i4U1H-0002Jz-Rw; Sun, 01 Sep 2019 17:52:08 +0000
+Received: from mail.zeus.flokli.de ([88.198.15.28] helo=zeus.flokli.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4QdA-0003Cn-MG
- for linux-arm-kernel@bombadil.infradead.org; Sun, 01 Sep 2019 14:15:00 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
- Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
- Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
- :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
- List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=J4/Ockjg5uBi5u+myxueJ8OzbByM74uGm8JCd7teVVU=; b=wgt6P/4IR+Q+lMix2WemaQduUY
- 5l9M2PieXgToO6grdlofLU8o+71V2tLkZgKmbB1boc70PRSRhs0NjkXvzasvK79yjK9nW8z8ZFFjt
- 65IxPn/nOQfB0/s9YqQUExnKJ5tmCcj22IAzVdbsNGRS97kVY6btTAsabBipgax9oOBlk+egT5Uvw
- ER4HsJhBei4gsVC65NDRoe/1RwF0wU6Kai0GoXpA8OXSL9uk6BfrzL5SBVjqj8a66f8+RjAYw+9rK
- vCH/lC01gW3Ix5PpLKqvcMoXEh1L//GFo/vIBcDmEW2iEzF0e8oAKKTAakdp/1VQoaJDO/3dmv1TN
- a+ZbjkJQ==;
-Received: from relay11.mail.gandi.net ([217.70.178.231])
- by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4Qd5-0002kl-NS
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 14:14:57 +0000
-Received: from localhost (unknown [88.190.179.123])
- (Authenticated sender: repk@triplefau.lt)
- by relay11.mail.gandi.net (Postfix) with ESMTPSA id BD80E100005;
- Sun,  1 Sep 2019 14:14:10 +0000 (UTC)
-From: Remi Pommarel <repk@triplefau.lt>
-To: Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Bjorn Helgaas <bhelgaas@google.com>
-Subject: [PATCH] PCI: aardvark: Don't rely on jiffies while holding spinlock
-Date: Sun,  1 Sep 2019 16:23:03 +0200
-Message-Id: <20190901142303.27815-1-repk@triplefau.lt>
-X-Mailer: git-send-email 2.20.1
+ id 1i4U0x-0002JJ-1I
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 17:51:48 +0000
+Received: from localhost (unknown [46.114.4.148])
+ (using TLSv1.2 with cipher AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ (Authenticated sender: flokli@flokli.de)
+ by zeus.flokli.de (Postfix) with ESMTPSA id B11DAA46188;
+ Sun,  1 Sep 2019 17:51:40 +0000 (UTC)
+From: Florian Klink <flokli@flokli.de>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH 1/2] ARM: multi_v7_defconfig: enable NET_SCHED
+Date: Sun,  1 Sep 2019 19:51:36 +0200
+Message-Id: <20190901175137.32672-1-flokli@flokli.de>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-X-Spam-Note: CRM114 invocation failed
-X-Spam-Score: -0.7 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
- Content analysis details:   (-0.7 points)
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190901_105147_234162_FDE2E6CF 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.231 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -73,66 +58,27 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pci@vger.kernel.org, Remi Pommarel <repk@triplefau.lt>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Florian Klink <flokli@flokli.de>,
+ =?UTF-8?q?Toke=20H=C3=B8iland-J=C3=B8rgensen?= <toke@toke.dk>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-advk_pcie_wait_pio() can be called while holding a spinlock (from
-pci_bus_read_config_dword()), then depends on jiffies in order to
-timeout while polling on PIO state registers. In the case the PIO
-transaction failed, the timeout will never happen and will also cause
-the cpu to stall.
-
-This decrements a variable and wait instead of using jiffies.
-
-Signed-off-by: Remi Pommarel <repk@triplefau.lt>
----
- drivers/pci/controller/pci-aardvark.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index fc0fe4d4de49..1fa6d04ad7aa 100644
---- a/drivers/pci/controller/pci-aardvark.c
-+++ b/drivers/pci/controller/pci-aardvark.c
-@@ -175,7 +175,8 @@
- 	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
- 	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
- 
--#define PIO_TIMEOUT_MS			1
-+#define PIO_RETRY_CNT			10
-+#define PIO_RETRY_DELAY			100 /* 100 us*/
- 
- #define LINK_WAIT_MAX_RETRIES		10
- #define LINK_WAIT_USLEEP_MIN		90000
-@@ -383,17 +384,16 @@ static void advk_pcie_check_pio_status(struct advk_pcie *pcie)
- static int advk_pcie_wait_pio(struct advk_pcie *pcie)
- {
- 	struct device *dev = &pcie->pdev->dev;
--	unsigned long timeout;
-+	size_t i;
- 
--	timeout = jiffies + msecs_to_jiffies(PIO_TIMEOUT_MS);
--
--	while (time_before(jiffies, timeout)) {
-+	for (i = 0; i < PIO_RETRY_CNT; ++i) {
- 		u32 start, isr;
- 
- 		start = advk_readl(pcie, PIO_START);
- 		isr = advk_readl(pcie, PIO_ISR);
- 		if (!start && isr)
- 			return 0;
-+		udelay(PIO_RETRY_DELAY);
- 	}
- 
- 	dev_err(dev, "config read/write timed out\n");
--- 
-2.20.1
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+VGhpcyBlbmFibGVzIFFvUyBhbmQvb3IgZmFpciBxdWV1ZWluZywgYW5kIGFsbG93cyB0byBidWls
+ZCBhbmQgY29uZmlndXJlCnZhcmlvdXMgc2NoZWR1bGVycy4KClRob3NlIGFyZSB3aWRlbHkgdXNl
+ZCBhbHJlYWR5IGluIGRlc2t0b3Agc3lzdGVtcyBhbmQgcm91dGVycywgYW5kCnByZXNlbnQgaW4g
+eDg2XzY0X2RlZmNvbmZpZyBhcyB3ZWxsLgoKQ2M6IFRva2UgSMO4aWxhbmQtSsO4cmdlbnNlbiA8
+dG9rZUB0b2tlLmRrPgpTaWduZWQtb2ZmLWJ5OiBGbG9yaWFuIEtsaW5rIDxmbG9rbGlAZmxva2xp
+LmRlPgotLS0KIGFyY2gvYXJtL2NvbmZpZ3MvbXVsdGlfdjdfZGVmY29uZmlnIHwgMSArCiAxIGZp
+bGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCmRpZmYgLS1naXQgYS9hcmNoL2FybS9jb25maWdz
+L211bHRpX3Y3X2RlZmNvbmZpZyBiL2FyY2gvYXJtL2NvbmZpZ3MvbXVsdGlfdjdfZGVmY29uZmln
+CmluZGV4IDZhNDBiYzJlZjI3MS4uNzc4MjY1ZjE5YjhmIDEwMDY0NAotLS0gYS9hcmNoL2FybS9j
+b25maWdzL211bHRpX3Y3X2RlZmNvbmZpZworKysgYi9hcmNoL2FybS9jb25maWdzL211bHRpX3Y3
+X2RlZmNvbmZpZwpAQCAtMTMyLDYgKzEzMiw3IEBAIENPTkZJR19NT0RVTEVfVU5MT0FEPXkKIENP
+TkZJR19QQVJUSVRJT05fQURWQU5DRUQ9eQogQ09ORklHX0NNRExJTkVfUEFSVElUSU9OPXkKIENP
+TkZJR19ORVQ9eQorQ09ORklHX05FVF9TQ0hFRD15CiBDT05GSUdfUEFDS0VUPXkKIENPTkZJR19V
+TklYPXkKIENPTkZJR19JTkVUPXkKLS0gCjIuMjIuMAoKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
