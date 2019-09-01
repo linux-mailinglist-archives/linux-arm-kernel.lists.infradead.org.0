@@ -2,48 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 68677A4C3D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 23:13:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D4F1A4C3B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 23:13:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yKLpq7XeLxu7Xnz1Xv2L75rQdH55U2wodiqEfsVYOm8=; b=DpNZaSPw4bLSfx
-	XJvMy5a4Tz6xarfyKlGMmxMih5/PtmCCj3HawLQQczZcOMa77OOmC2Ehn7PqfIfv12ph9tC2A2djT
-	mdUZZ/dL0jh3wpMq9gyC3edTU53V5lGqNdHLrrxQay9xcRKh/t+zLAmhQDHxikLTf9Zy57JyfducX
-	pse8RsEYiVA89JwjUcnVOYc2JDp6wWHGUL0uHpLlPVcMS/XEzPNYJxoSNv1JOxXKj/olhF5nw2IHX
-	9Y3pFMdvIzCF2pV+H37FZ96v23CCgAeQ3JhXPErdUjb743ogAKulRTKOjXj2iEC+lBJQfYj/8dWtv
-	cptZ9O8IOlFsTsz3gAiQ==;
+	List-Owner; bh=8lsjvf6GCs80+9LK5Hjy8jmUZyCNpMJe1/8i3UuF3Mo=; b=pWEk2v/BacEwtO
+	jt4tVVJmVhG2k/eC1ESBLUyojS7c/w6ZFJLMXFrUYU/pvGpRthiR3TJo/7gRnvOwtM1ZwC0SUsa0W
+	/0b4HK4EWy0b/QGloetb5uLw8uhQJwaVd/ib3cm8IXjVFQEPJuHWhqxtGXCtj2h0TY9K/+u+vhLSP
+	QTGc7mQ2gyL0MVJ4laeDo18i/KprB2nteiJvp8ZWBaqeWacyKiRRBGqZQsjN4jsm5SUu3LYZCHrnW
+	ZdLBDJbPEJig6W3ZuKDx7phzPDJ27XISr0KDMfDaE+8N2S2v+/Xu1Vcm70yNEa+feq2ZhL2fUY8VY
+	mwJ8IG/xAbs9zHrKhRFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4XAa-0006q2-Jk; Sun, 01 Sep 2019 21:13:56 +0000
+	id 1i4XA6-0006N8-Oh; Sun, 01 Sep 2019 21:13:26 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4X9h-0006DU-Vb
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 21:13:03 +0000
+ id 1i4X9h-0006D0-IT
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 21:13:02 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EB155360;
- Sun,  1 Sep 2019 14:12:57 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 682191576;
+ Sun,  1 Sep 2019 14:12:59 -0700 (PDT)
 Received: from why.lan (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9A22C3F718;
- Sun,  1 Sep 2019 14:12:56 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3CAF73F718;
+ Sun,  1 Sep 2019 14:12:58 -0700 (PDT)
 From: Marc Zyngier <maz@kernel.org>
 To: kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org,
  kvm@vger.kernel.org
-Subject: [PATCH 1/3] arm64: KVM: Drop hyp_alternate_select for checking for
- ARM64_WORKAROUND_834220
-Date: Sun,  1 Sep 2019 22:12:35 +0100
-Message-Id: <20190901211237.11673-2-maz@kernel.org>
+Subject: [PATCH 2/3] arm64: KVM: Replace hyp_alternate_select with has_vhe()
+Date: Sun,  1 Sep 2019 22:12:36 +0100
+Message-Id: <20190901211237.11673-3-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190901211237.11673-1-maz@kernel.org>
 References: <20190901211237.11673-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_141302_055549_1C0B2623 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190901_141301_735906_0F00C37E 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.0 points)
@@ -70,51 +68,110 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no reason for using hyp_alternate_select when checking
-for ARM64_WORKAROUND_834220, as each of the capabilities is
-also backed by a static key. Just replace the KVM-specific
-construct with cpus_have_const_cap(ARM64_WORKAROUND_834220).
+Given that the TLB invalidation path is pretty rarely used, there
+was never any advantage to using hyp_alternate_select() here.
+has_vhe(), being a glorified static key, is the right tool for
+the job.
+
+Off you go.
 
 Signed-off-by: Marc Zyngier <maz@kernel.org>
 ---
- arch/arm64/kvm/hyp/switch.c | 17 ++---------------
- 1 file changed, 2 insertions(+), 15 deletions(-)
+ arch/arm64/kvm/hyp/tlb.c | 36 ++++++++++++++++++++++--------------
+ 1 file changed, 22 insertions(+), 14 deletions(-)
 
-diff --git a/arch/arm64/kvm/hyp/switch.c b/arch/arm64/kvm/hyp/switch.c
-index adaf266d8de8..a15baca9aca0 100644
---- a/arch/arm64/kvm/hyp/switch.c
-+++ b/arch/arm64/kvm/hyp/switch.c
-@@ -229,20 +229,6 @@ static void __hyp_text __hyp_vgic_restore_state(struct kvm_vcpu *vcpu)
- 	}
+diff --git a/arch/arm64/kvm/hyp/tlb.c b/arch/arm64/kvm/hyp/tlb.c
+index d49a14497715..f61db7f07619 100644
+--- a/arch/arm64/kvm/hyp/tlb.c
++++ b/arch/arm64/kvm/hyp/tlb.c
+@@ -67,10 +67,14 @@ static void __hyp_text __tlb_switch_to_guest_nvhe(struct kvm *kvm,
+ 	isb();
  }
  
--static bool __hyp_text __true_value(void)
--{
--	return true;
--}
--
--static bool __hyp_text __false_value(void)
--{
--	return false;
--}
--
--static hyp_alternate_select(__check_arm_834220,
--			    __false_value, __true_value,
--			    ARM64_WORKAROUND_834220);
--
- static bool __hyp_text __translate_far_to_hpfar(u64 far, u64 *hpfar)
+-static hyp_alternate_select(__tlb_switch_to_guest,
+-			    __tlb_switch_to_guest_nvhe,
+-			    __tlb_switch_to_guest_vhe,
+-			    ARM64_HAS_VIRT_HOST_EXTN);
++static void __hyp_text __tlb_switch_to_guest(struct kvm *kvm,
++					     struct tlb_inv_context *cxt)
++{
++	if (has_vhe())
++		__tlb_switch_to_guest_vhe(kvm, cxt);
++	else
++		__tlb_switch_to_guest_nvhe(kvm, cxt);
++}
+ 
+ static void __hyp_text __tlb_switch_to_host_vhe(struct kvm *kvm,
+ 						struct tlb_inv_context *cxt)
+@@ -98,10 +102,14 @@ static void __hyp_text __tlb_switch_to_host_nvhe(struct kvm *kvm,
+ 	write_sysreg(0, vttbr_el2);
+ }
+ 
+-static hyp_alternate_select(__tlb_switch_to_host,
+-			    __tlb_switch_to_host_nvhe,
+-			    __tlb_switch_to_host_vhe,
+-			    ARM64_HAS_VIRT_HOST_EXTN);
++static void __hyp_text __tlb_switch_to_host(struct kvm *kvm,
++					    struct tlb_inv_context *cxt)
++{
++	if (has_vhe())
++		__tlb_switch_to_host_vhe(kvm, cxt);
++	else
++		__tlb_switch_to_host_nvhe(kvm, cxt);
++}
+ 
+ void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa)
  {
- 	u64 par, tmp;
-@@ -298,7 +284,8 @@ static bool __hyp_text __populate_fault_info(struct kvm_vcpu *vcpu)
- 	 * resolve the IPA using the AT instruction.
- 	 */
- 	if (!(esr & ESR_ELx_S1PTW) &&
--	    (__check_arm_834220()() || (esr & ESR_ELx_FSC_TYPE) == FSC_PERM)) {
-+	    (cpus_have_const_cap(ARM64_WORKAROUND_834220) ||
-+	     (esr & ESR_ELx_FSC_TYPE) == FSC_PERM)) {
- 		if (!__translate_far_to_hpfar(far, &hpfar))
- 			return false;
- 	} else {
+@@ -111,7 +119,7 @@ void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa)
+ 
+ 	/* Switch to requested VMID */
+ 	kvm = kern_hyp_va(kvm);
+-	__tlb_switch_to_guest()(kvm, &cxt);
++	__tlb_switch_to_guest(kvm, &cxt);
+ 
+ 	/*
+ 	 * We could do so much better if we had the VA as well.
+@@ -154,7 +162,7 @@ void __hyp_text __kvm_tlb_flush_vmid_ipa(struct kvm *kvm, phys_addr_t ipa)
+ 	if (!has_vhe() && icache_is_vpipt())
+ 		__flush_icache_all();
+ 
+-	__tlb_switch_to_host()(kvm, &cxt);
++	__tlb_switch_to_host(kvm, &cxt);
+ }
+ 
+ void __hyp_text __kvm_tlb_flush_vmid(struct kvm *kvm)
+@@ -165,13 +173,13 @@ void __hyp_text __kvm_tlb_flush_vmid(struct kvm *kvm)
+ 
+ 	/* Switch to requested VMID */
+ 	kvm = kern_hyp_va(kvm);
+-	__tlb_switch_to_guest()(kvm, &cxt);
++	__tlb_switch_to_guest(kvm, &cxt);
+ 
+ 	__tlbi(vmalls12e1is);
+ 	dsb(ish);
+ 	isb();
+ 
+-	__tlb_switch_to_host()(kvm, &cxt);
++	__tlb_switch_to_host(kvm, &cxt);
+ }
+ 
+ void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu)
+@@ -180,13 +188,13 @@ void __hyp_text __kvm_tlb_flush_local_vmid(struct kvm_vcpu *vcpu)
+ 	struct tlb_inv_context cxt;
+ 
+ 	/* Switch to requested VMID */
+-	__tlb_switch_to_guest()(kvm, &cxt);
++	__tlb_switch_to_guest(kvm, &cxt);
+ 
+ 	__tlbi(vmalle1);
+ 	dsb(nsh);
+ 	isb();
+ 
+-	__tlb_switch_to_host()(kvm, &cxt);
++	__tlb_switch_to_host(kvm, &cxt);
+ }
+ 
+ void __hyp_text __kvm_flush_vm_context(void)
 -- 
 2.20.1
 
