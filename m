@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F6ACA4BF7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 22:37:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EBC28A4BF8
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 22:38:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IiqgX19EdbgFim6U66Cg9QsY+T0CsyFkFooIeSl6CNs=; b=tNfYA1TH58oBR9
-	Aw4H+2wctjVT0oNO5KGqHQWYVbU3I4c+j7aP7/MtqS1OpNd0IeEQbDzdvIyyqns7qnvyBmgpyNpuE
-	j7dHCrwQvlUI+Z0ds8HZacd8ysEVrs0shAs/yHAao0Wbvfvk+K5eCRi6R5URJWQDlTATU2SYmSUhh
-	fIZEmlBthFeQP9YI6EKMvsOXrs980sp8lL7+EQ9imVbKPdHgjeVuwXCZAV1CAXl+lXnz3L9wFdDcx
-	SEgsQ0bFdxgVmNAGtklUS5oMhaSwL3ppU6GhhV/jdZFBPct/o62nAaARdMnHIFL/77WhUgM46CImI
-	z7vz+La0imTh0zaZB9rw==;
+	List-Owner; bh=2g7Q2MHtPQw2rWEkYl1Zc4VFK2nA9lxtaFi1sSp8AxU=; b=RiphMZ0RaIPZYo
+	Js6liz4BkqJ3KgYVMZajLR1g1pcfh23WGCWfbjpgEXGwRyeXQ1Nv9U6L5acKwACvQx0S7dqNe+sQ4
+	CukY2+ibXNuAM7FgtgeHBsXDnPCfL8LgNSd97F0gkSULALwniWzwN+v6v77gGFZKLPlL4r7tly/EF
+	+OloHfXiPrORoWgMCt3tNFO9iEySei0A9lqjf+9AzgISaRDGECBkuX03e3aaVke6B8RVrsiy/U3Ve
+	3DgiOZmZzj0i7f6p51Xy+tnSUZogd1sxXSwuXQC/WC/tjbHfJcC3bdLFvSn9Nau+03yCcvYJtjrzI
+	qoYm3IuTq1F/fXfRMXoA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4Wbc-0004Gp-Tq; Sun, 01 Sep 2019 20:37:49 +0000
+	id 1i4Wbr-0004Ue-2P; Sun, 01 Sep 2019 20:38:03 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4Wa3-0002uq-H7
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 20:36:12 +0000
+ id 1i4Wa7-0002z3-W3
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 20:36:17 +0000
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id E09698BA2D4;
- Sun,  1 Sep 2019 20:36:10 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 6027D309B688;
+ Sun,  1 Sep 2019 20:36:15 +0000 (UTC)
 Received: from shalem.localdomain.com (ovpn-116-36.ams2.redhat.com
  [10.36.116.36])
- by smtp.corp.redhat.com (Postfix) with ESMTP id AF20860606;
- Sun,  1 Sep 2019 20:36:06 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 3426D60606;
+ Sun,  1 Sep 2019 20:36:11 +0000 (UTC)
 From: Hans de Goede <hdegoede@redhat.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>,
  "David S . Miller" <davem@davemloft.net>,
@@ -44,19 +44,18 @@ To: Herbert Xu <herbert@gondor.apana.org.au>,
  Russell King <linux@armlinux.org.uk>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Gilad Ben-Yossef <gilad@benyossef.com>, Atul Gupta <atul.gupta@chelsio.com>
-Subject: [PATCH 7/9] crypto: n2 - Rename arrays to avoid conflict with
- crypto/sha256.h
-Date: Sun,  1 Sep 2019 22:35:30 +0200
-Message-Id: <20190901203532.2615-8-hdegoede@redhat.com>
+Subject: [PATCH 8/9] crypto: sha256 - Merge crypto/sha256.h into crypto/sha.h
+Date: Sun,  1 Sep 2019 22:35:31 +0200
+Message-Id: <20190901203532.2615-9-hdegoede@redhat.com>
 In-Reply-To: <20190901203532.2615-1-hdegoede@redhat.com>
 References: <20190901203532.2615-1-hdegoede@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.68]); Sun, 01 Sep 2019 20:36:11 +0000 (UTC)
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.47]); Sun, 01 Sep 2019 20:36:15 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_133611_624409_16862AFA 
-X-CRM114-Status: GOOD (  14.49  )
+X-CRM114-CacheID: sfid-20190901_133616_093310_CFB960AD 
+X-CRM114-Status: GOOD (  17.36  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -88,83 +87,142 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Rename the sha*_init arrays to n2_sha*_init so that they do not conflict
-with the functions declared in crypto/sha256.h.
-
-Also rename md5_init to n2_md5_init for consistency.
-
-This is a preparation patch for folding crypto/sha256.h into crypto/sha.h.
+The generic sha256 implementation from lib/crypto/sha256.c uses data
+structs defined in crypto/sha.h, so lets move the function prototypes
+there too.
 
 Signed-off-by: Hans de Goede <hdegoede@redhat.com>
 ---
- drivers/crypto/n2_core.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ arch/s390/purgatory/purgatory.c |  2 +-
+ arch/x86/purgatory/purgatory.c  |  2 +-
+ crypto/sha256_generic.c         |  1 -
+ include/crypto/sha.h            | 21 ++++++++++++++++++++
+ include/crypto/sha256.h         | 34 ---------------------------------
+ lib/crypto/sha256.c             |  2 +-
+ 6 files changed, 24 insertions(+), 38 deletions(-)
+ delete mode 100644 include/crypto/sha256.h
 
-diff --git a/drivers/crypto/n2_core.c b/drivers/crypto/n2_core.c
-index 760e72a5893b..c4bf85fc9601 100644
---- a/drivers/crypto/n2_core.c
-+++ b/drivers/crypto/n2_core.c
-@@ -1295,20 +1295,20 @@ struct n2_hash_tmpl {
- 	u8		hmac_type;
- };
+diff --git a/arch/s390/purgatory/purgatory.c b/arch/s390/purgatory/purgatory.c
+index a80c78da9985..0a423bcf6746 100644
+--- a/arch/s390/purgatory/purgatory.c
++++ b/arch/s390/purgatory/purgatory.c
+@@ -9,7 +9,7 @@
  
--static const u32 md5_init[MD5_HASH_WORDS] = {
-+static const u32 n2_md5_init[MD5_HASH_WORDS] = {
- 	cpu_to_le32(MD5_H0),
- 	cpu_to_le32(MD5_H1),
- 	cpu_to_le32(MD5_H2),
- 	cpu_to_le32(MD5_H3),
- };
--static const u32 sha1_init[SHA1_DIGEST_SIZE / 4] = {
-+static const u32 n2_sha1_init[SHA1_DIGEST_SIZE / 4] = {
- 	SHA1_H0, SHA1_H1, SHA1_H2, SHA1_H3, SHA1_H4,
- };
--static const u32 sha256_init[SHA256_DIGEST_SIZE / 4] = {
-+static const u32 n2_sha256_init[SHA256_DIGEST_SIZE / 4] = {
- 	SHA256_H0, SHA256_H1, SHA256_H2, SHA256_H3,
- 	SHA256_H4, SHA256_H5, SHA256_H6, SHA256_H7,
- };
--static const u32 sha224_init[SHA256_DIGEST_SIZE / 4] = {
-+static const u32 n2_sha224_init[SHA256_DIGEST_SIZE / 4] = {
- 	SHA224_H0, SHA224_H1, SHA224_H2, SHA224_H3,
- 	SHA224_H4, SHA224_H5, SHA224_H6, SHA224_H7,
- };
-@@ -1316,7 +1316,7 @@ static const u32 sha224_init[SHA256_DIGEST_SIZE / 4] = {
- static const struct n2_hash_tmpl hash_tmpls[] = {
- 	{ .name		= "md5",
- 	  .hash_zero	= md5_zero_message_hash,
--	  .hash_init	= md5_init,
-+	  .hash_init	= n2_md5_init,
- 	  .auth_type	= AUTH_TYPE_MD5,
- 	  .hmac_type	= AUTH_TYPE_HMAC_MD5,
- 	  .hw_op_hashsz	= MD5_DIGEST_SIZE,
-@@ -1324,7 +1324,7 @@ static const struct n2_hash_tmpl hash_tmpls[] = {
- 	  .block_size	= MD5_HMAC_BLOCK_SIZE },
- 	{ .name		= "sha1",
- 	  .hash_zero	= sha1_zero_message_hash,
--	  .hash_init	= sha1_init,
-+	  .hash_init	= n2_sha1_init,
- 	  .auth_type	= AUTH_TYPE_SHA1,
- 	  .hmac_type	= AUTH_TYPE_HMAC_SHA1,
- 	  .hw_op_hashsz	= SHA1_DIGEST_SIZE,
-@@ -1332,7 +1332,7 @@ static const struct n2_hash_tmpl hash_tmpls[] = {
- 	  .block_size	= SHA1_BLOCK_SIZE },
- 	{ .name		= "sha256",
- 	  .hash_zero	= sha256_zero_message_hash,
--	  .hash_init	= sha256_init,
-+	  .hash_init	= n2_sha256_init,
- 	  .auth_type	= AUTH_TYPE_SHA256,
- 	  .hmac_type	= AUTH_TYPE_HMAC_SHA256,
- 	  .hw_op_hashsz	= SHA256_DIGEST_SIZE,
-@@ -1340,7 +1340,7 @@ static const struct n2_hash_tmpl hash_tmpls[] = {
- 	  .block_size	= SHA256_BLOCK_SIZE },
- 	{ .name		= "sha224",
- 	  .hash_zero	= sha224_zero_message_hash,
--	  .hash_init	= sha224_init,
-+	  .hash_init	= n2_sha224_init,
- 	  .auth_type	= AUTH_TYPE_SHA256,
- 	  .hmac_type	= AUTH_TYPE_RESERVED,
- 	  .hw_op_hashsz	= SHA256_DIGEST_SIZE,
+ #include <linux/kexec.h>
+ #include <linux/string.h>
+-#include <crypto/sha256.h>
++#include <crypto/sha.h>
+ #include <asm/purgatory.h>
+ 
+ int verify_sha256_digest(void)
+diff --git a/arch/x86/purgatory/purgatory.c b/arch/x86/purgatory/purgatory.c
+index 7f90a86eff49..3b95410ff0f8 100644
+--- a/arch/x86/purgatory/purgatory.c
++++ b/arch/x86/purgatory/purgatory.c
+@@ -9,7 +9,7 @@
+  */
+ 
+ #include <linux/bug.h>
+-#include <crypto/sha256.h>
++#include <crypto/sha.h>
+ #include <asm/purgatory.h>
+ 
+ #include "../boot/string.h"
+diff --git a/crypto/sha256_generic.c b/crypto/sha256_generic.c
+index eafd10f9bf86..f2d7095d4f2d 100644
+--- a/crypto/sha256_generic.c
++++ b/crypto/sha256_generic.c
+@@ -13,7 +13,6 @@
+ #include <linux/mm.h>
+ #include <linux/types.h>
+ #include <crypto/sha.h>
+-#include <crypto/sha256.h>
+ #include <crypto/sha256_base.h>
+ #include <asm/byteorder.h>
+ #include <asm/unaligned.h>
+diff --git a/include/crypto/sha.h b/include/crypto/sha.h
+index 8a46202b1857..535955c84187 100644
+--- a/include/crypto/sha.h
++++ b/include/crypto/sha.h
+@@ -112,4 +112,25 @@ extern int crypto_sha512_update(struct shash_desc *desc, const u8 *data,
+ 
+ extern int crypto_sha512_finup(struct shash_desc *desc, const u8 *data,
+ 			       unsigned int len, u8 *hash);
++
++/*
++ * Stand-alone implementation of the SHA256 algorithm. It is designed to
++ * have as little dependencies as possible so it can be used in the
++ * kexec_file purgatory. In other cases you should generally use the
++ * hash APIs from include/crypto/hash.h. Especially when hashing large
++ * amounts of data as those APIs may be hw-accelerated.
++ *
++ * For details see lib/crypto/sha256.c
++ */
++
++extern int sha256_init(struct sha256_state *sctx);
++extern int sha256_update(struct sha256_state *sctx, const u8 *input,
++			 unsigned int length);
++extern int sha256_final(struct sha256_state *sctx, u8 *hash);
++
++extern int sha224_init(struct sha256_state *sctx);
++extern int sha224_update(struct sha256_state *sctx, const u8 *input,
++			 unsigned int length);
++extern int sha224_final(struct sha256_state *sctx, u8 *hash);
++
+ #endif
+diff --git a/include/crypto/sha256.h b/include/crypto/sha256.h
+deleted file mode 100644
+index a75998d65a41..000000000000
+--- a/include/crypto/sha256.h
++++ /dev/null
+@@ -1,34 +0,0 @@
+-/* SPDX-License-Identifier: GPL-2.0-only */
+-/*
+- *  Copyright (C) 2014 Red Hat Inc.
+- *
+- *  Author: Vivek Goyal <vgoyal@redhat.com>
+- */
+-
+-#ifndef SHA256_H
+-#define SHA256_H
+-
+-#include <linux/types.h>
+-#include <crypto/sha.h>
+-
+-/*
+- * Stand-alone implementation of the SHA256 algorithm. It is designed to
+- * have as little dependencies as possible so it can be used in the
+- * kexec_file purgatory. In other cases you should generally use the
+- * hash APIs from include/crypto/hash.h. Especially when hashing large
+- * amounts of data as those APIs may be hw-accelerated.
+- *
+- * For details see lib/crypto/sha256.c
+- */
+-
+-extern int sha256_init(struct sha256_state *sctx);
+-extern int sha256_update(struct sha256_state *sctx, const u8 *input,
+-			 unsigned int length);
+-extern int sha256_final(struct sha256_state *sctx, u8 *hash);
+-
+-extern int sha224_init(struct sha256_state *sctx);
+-extern int sha224_update(struct sha256_state *sctx, const u8 *input,
+-			 unsigned int length);
+-extern int sha224_final(struct sha256_state *sctx, u8 *hash);
+-
+-#endif /* SHA256_H */
+diff --git a/lib/crypto/sha256.c b/lib/crypto/sha256.c
+index 42d75e490a97..220b74c2bbd8 100644
+--- a/lib/crypto/sha256.c
++++ b/lib/crypto/sha256.c
+@@ -15,7 +15,7 @@
+ #include <linux/export.h>
+ #include <linux/module.h>
+ #include <linux/string.h>
+-#include <crypto/sha256.h>
++#include <crypto/sha.h>
+ #include <asm/unaligned.h>
+ 
+ static inline u32 Ch(u32 x, u32 y, u32 z)
 -- 
 2.23.0
 
