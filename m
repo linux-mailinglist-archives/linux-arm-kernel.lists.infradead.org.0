@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFAD1A4BD1
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 22:36:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8845AA4BE3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 22:36:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=dcUr4OLA4w44g9fdTlhn7yVW1kOteHV0lK29Q7tgWmQ=; b=j7r/2SEcNe504X
-	QaGYQESZfRMLvzZ15Heuzp1ezb7t8jKvl6NAMiaaAjYF/m2hAWdt7LLN4qhVrmOGUz7dco/Yukguy
-	AJfxRZUbJof0j9QOV7HOeGOpVlBuc5N8/LjMWZ/ffz04hk+RgwI9s6VTw8y4F+OHjjUICP3a+P5Vg
-	kPCimiEGDuz/iwGpyy+0PjKzEeOFiHyLVGkrGBdfHanzzujlZjqDgXgCcqPBgs6A3fVHAxEVtR5rM
-	lEhZ+sgmlJ/5MzI+33cCv71gnwpn1WmNCTo6/TN0lpUQ79KrLJZvTMFbvPtlGQwHFtHrNG7+t+//z
-	Ph8NXfpKVS2h3H8jcBrw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LeTiZrU0wsqoK4ly7fB2mX9NxHJMWXd2mG9F90iufUE=; b=bvAV5s7p775ldR
+	MdMe3Q81b7IqnjvvSuGyRucBY5GPrIKIOog315j7vgBv97LdlaH1VGntZoOTqUIsdXxk551Yx85XQ
+	+xGyFqIXg71rzWCrkkCUGJ+rns+YUnG3uc/CjNu/Ap7121o5bQj6MWwLMG13bXI+XQWh/+irwd9aZ
+	i0onmWU+zU08KSSMAs/Hat+g+r+uRmSPpMscqrJScdF+qjzeEglQGjRzy5qVVlJNbzG8CN6pC5mcu
+	5v/JhCe3ipjnnnR11o4w5myKIlReO+RgLTmAkUw4NxKKI5KfrzM2onr0GN9WlPaLAZNLWZ1ZLRpSd
+	6fQh8Zm3KxzaekcQgTVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4WZl-0002Tz-UI; Sun, 01 Sep 2019 20:35:54 +0000
+	id 1i4Wa3-0002gJ-Je; Sun, 01 Sep 2019 20:36:11 +0000
 Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4WZZ-0002Ta-9i
- for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 20:35:42 +0000
+ id 1i4WZc-0002UV-Kt
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 20:35:46 +0000
 Received: from smtp.corp.redhat.com (int-mx03.intmail.prod.int.phx2.redhat.com
  [10.5.11.13])
  (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 70E7D4ACA5;
- Sun,  1 Sep 2019 20:35:39 +0000 (UTC)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0144F368DA;
+ Sun,  1 Sep 2019 20:35:44 +0000 (UTC)
 Received: from shalem.localdomain.com (ovpn-116-36.ams2.redhat.com
  [10.36.116.36])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 954FD608C1;
- Sun,  1 Sep 2019 20:35:34 +0000 (UTC)
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B75DE60606;
+ Sun,  1 Sep 2019 20:35:39 +0000 (UTC)
 From: Hans de Goede <hdegoede@redhat.com>
 To: Herbert Xu <herbert@gondor.apana.org.au>,
  "David S . Miller" <davem@davemloft.net>,
@@ -44,16 +44,19 @@ To: Herbert Xu <herbert@gondor.apana.org.au>,
  Russell King <linux@armlinux.org.uk>,
  Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
  Gilad Ben-Yossef <gilad@benyossef.com>, Atul Gupta <atul.gupta@chelsio.com>
-Subject: [PATCH 0/9] crypto: sha256 - Merge crypto/sha256.h into crypto/sha.h
-Date: Sun,  1 Sep 2019 22:35:23 +0200
-Message-Id: <20190901203532.2615-1-hdegoede@redhat.com>
+Subject: [PATCH 1/9] crypto: arm - Rename functions to avoid conflict with
+ crypto/sha256.h
+Date: Sun,  1 Sep 2019 22:35:24 +0200
+Message-Id: <20190901203532.2615-2-hdegoede@redhat.com>
+In-Reply-To: <20190901203532.2615-1-hdegoede@redhat.com>
+References: <20190901203532.2615-1-hdegoede@redhat.com>
 MIME-Version: 1.0
 X-Scanned-By: MIMEDefang 2.79 on 10.5.11.13
 X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
- (mx1.redhat.com [10.5.110.38]); Sun, 01 Sep 2019 20:35:40 +0000 (UTC)
+ (mx1.redhat.com [10.5.110.30]); Sun, 01 Sep 2019 20:35:44 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_133541_358988_CA9DDA5D 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20190901_133544_886269_DA3998D9 
+X-CRM114-Status: GOOD (  15.13  )
 X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.0 points)
@@ -85,29 +88,121 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi All,
+Rename static / file-local functions so that they do not conflict with
+the functions declared in crypto/sha256.h.
 
-As promised here is a follow-up series to my earlier sha256 series.
+This is a preparation patch for folding crypto/sha256.h into crypto/sha.h.
 
-Note I have only compiled and tested this series on x86_64 !! 
+Signed-off-by: Hans de Goede <hdegoede@redhat.com>
+---
+ arch/arm/crypto/sha256_glue.c      |  8 ++++----
+ arch/arm/crypto/sha256_neon_glue.c | 24 ++++++++++++------------
+ 2 files changed, 16 insertions(+), 16 deletions(-)
 
-All changes to architecture specific code on other archs have not even
-been tested to compile! With that said most of these changes were done
-using my editors search - replace function so things should be fine...
-(and FWIW I did do a Kconfig hack to compile test the ccree change).
-
-The first patch in this series rename various file local functions /
-arrays to avoid conflicts with the new include/crypto/sha256.h, followed
-by a patch merging include/crypto/sha256.h into include/crypto/sha.h.
-
-The last patch makes use of this merging to remove a bit more code
-duplication, making sha256_generic use sha256_init and sha224_init from
-lib/crypto/sha256.c. An added advantage of this, is that this gives these
-2 functions coverage by the crypto selftests.
-
-Regards,
-
-Hans
+diff --git a/arch/arm/crypto/sha256_glue.c b/arch/arm/crypto/sha256_glue.c
+index 70efa9656bff..215497f011f2 100644
+--- a/arch/arm/crypto/sha256_glue.c
++++ b/arch/arm/crypto/sha256_glue.c
+@@ -39,7 +39,7 @@ int crypto_sha256_arm_update(struct shash_desc *desc, const u8 *data,
+ }
+ EXPORT_SYMBOL(crypto_sha256_arm_update);
+ 
+-static int sha256_final(struct shash_desc *desc, u8 *out)
++static int crypto_sha256_arm_final(struct shash_desc *desc, u8 *out)
+ {
+ 	sha256_base_do_finalize(desc,
+ 				(sha256_block_fn *)sha256_block_data_order);
+@@ -51,7 +51,7 @@ int crypto_sha256_arm_finup(struct shash_desc *desc, const u8 *data,
+ {
+ 	sha256_base_do_update(desc, data, len,
+ 			      (sha256_block_fn *)sha256_block_data_order);
+-	return sha256_final(desc, out);
++	return crypto_sha256_arm_final(desc, out);
+ }
+ EXPORT_SYMBOL(crypto_sha256_arm_finup);
+ 
+@@ -59,7 +59,7 @@ static struct shash_alg algs[] = { {
+ 	.digestsize	=	SHA256_DIGEST_SIZE,
+ 	.init		=	sha256_base_init,
+ 	.update		=	crypto_sha256_arm_update,
+-	.final		=	sha256_final,
++	.final		=	crypto_sha256_arm_final,
+ 	.finup		=	crypto_sha256_arm_finup,
+ 	.descsize	=	sizeof(struct sha256_state),
+ 	.base		=	{
+@@ -73,7 +73,7 @@ static struct shash_alg algs[] = { {
+ 	.digestsize	=	SHA224_DIGEST_SIZE,
+ 	.init		=	sha224_base_init,
+ 	.update		=	crypto_sha256_arm_update,
+-	.final		=	sha256_final,
++	.final		=	crypto_sha256_arm_final,
+ 	.finup		=	crypto_sha256_arm_finup,
+ 	.descsize	=	sizeof(struct sha256_state),
+ 	.base		=	{
+diff --git a/arch/arm/crypto/sha256_neon_glue.c b/arch/arm/crypto/sha256_neon_glue.c
+index a7ce38a36006..38645e415196 100644
+--- a/arch/arm/crypto/sha256_neon_glue.c
++++ b/arch/arm/crypto/sha256_neon_glue.c
+@@ -25,8 +25,8 @@
+ asmlinkage void sha256_block_data_order_neon(u32 *digest, const void *data,
+ 					     unsigned int num_blks);
+ 
+-static int sha256_update(struct shash_desc *desc, const u8 *data,
+-			 unsigned int len)
++static int crypto_sha256_neon_update(struct shash_desc *desc, const u8 *data,
++				     unsigned int len)
+ {
+ 	struct sha256_state *sctx = shash_desc_ctx(desc);
+ 
+@@ -42,8 +42,8 @@ static int sha256_update(struct shash_desc *desc, const u8 *data,
+ 	return 0;
+ }
+ 
+-static int sha256_finup(struct shash_desc *desc, const u8 *data,
+-			unsigned int len, u8 *out)
++static int crypto_sha256_neon_finup(struct shash_desc *desc, const u8 *data,
++				    unsigned int len, u8 *out)
+ {
+ 	if (!crypto_simd_usable())
+ 		return crypto_sha256_arm_finup(desc, data, len, out);
+@@ -59,17 +59,17 @@ static int sha256_finup(struct shash_desc *desc, const u8 *data,
+ 	return sha256_base_finish(desc, out);
+ }
+ 
+-static int sha256_final(struct shash_desc *desc, u8 *out)
++static int crypto_sha256_neon_final(struct shash_desc *desc, u8 *out)
+ {
+-	return sha256_finup(desc, NULL, 0, out);
++	return crypto_sha256_neon_finup(desc, NULL, 0, out);
+ }
+ 
+ struct shash_alg sha256_neon_algs[] = { {
+ 	.digestsize	=	SHA256_DIGEST_SIZE,
+ 	.init		=	sha256_base_init,
+-	.update		=	sha256_update,
+-	.final		=	sha256_final,
+-	.finup		=	sha256_finup,
++	.update		=	crypto_sha256_neon_update,
++	.final		=	crypto_sha256_neon_final,
++	.finup		=	crypto_sha256_neon_finup,
+ 	.descsize	=	sizeof(struct sha256_state),
+ 	.base		=	{
+ 		.cra_name	=	"sha256",
+@@ -81,9 +81,9 @@ struct shash_alg sha256_neon_algs[] = { {
+ }, {
+ 	.digestsize	=	SHA224_DIGEST_SIZE,
+ 	.init		=	sha224_base_init,
+-	.update		=	sha256_update,
+-	.final		=	sha256_final,
+-	.finup		=	sha256_finup,
++	.update		=	crypto_sha256_neon_update,
++	.final		=	crypto_sha256_neon_final,
++	.finup		=	crypto_sha256_neon_finup,
+ 	.descsize	=	sizeof(struct sha256_state),
+ 	.base		=	{
+ 		.cra_name	=	"sha224",
+-- 
+2.23.0
 
 
 _______________________________________________
