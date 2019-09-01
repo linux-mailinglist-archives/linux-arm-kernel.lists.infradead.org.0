@@ -2,64 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 36539A4694
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 01:49:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 34206A46C2
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  1 Sep 2019 04:07:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:
-	Content-Type:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To
-	:Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=UdtGJth9g5bf1+boPG2w/QZrC0o44Lrm8HSwXOIF7XE=; b=NNa1G6JIAuhXLeWFEV0VbbU2r
-	IeerMu4JiYVQpjP9BONs4lsntkS9iM/Jo3qn4zXeNPiPu6rXPz5nHgI4xfBR181BcfToiiGnpFU9j
-	NCekSNIFFbBiRAGSC0Q0pojZkQ8yBqdWObzAd17FLIzb+heHOVJkcodjb8Hcawl7gwwKhUGpZdb9a
-	d8KMzf0/xwBXuDZmokvAYth1WGmw0pK9QIhhvpjvWSA8MmGJvAo2hZ2UnirHOHr0QeRBKY67Rohr+
-	n9HkpYCIxIbA+bVlZPypXx0yqJB5zTT3g3E0u2VCgGEB4x3fdCKndYm0w2PKuWuon6JrUia9U+ai0
-	ulAEMdaQw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=z3nOXnqMc3ufNlbud51U3GZshyy1lGmXSB9O+akEL8M=; b=DUs6/n8bp5R8EF
+	AvbqESiD0zCohceESH3SK2BIUSE+KA0zZPF1ey6CiH9C1vB46/n9Q9EhiPQPmKlOhKQp2GPnhF+ef
+	LxNR8WA9pwCeI1/rvlqmXff/3TM/OpEMPNuaJm7Tk4BuIpSssr7zA16Yk9qAdmc4dRo0iy0yS5TFN
+	gMOyP+yEhZOsNrxnI2cHofiFowHNMql0DMG75WdvRxkOUgcHbPZXS8Nq7if02cEZk/hXnoCQUHMME
+	4C1asj+TDUOR4qpmwVYlkSID41VqOWawMbiqFUHpc8goBd8lg+2GO4VDxbgUww7lNoqLOOMYXUQ8v
+	Rkm9hgFarVva7IlAuXxQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4D74-0006Cd-KV; Sat, 31 Aug 2019 23:48:59 +0000
-Received: from mga02.intel.com ([134.134.136.20])
+	id 1i4FGw-0002jz-Km; Sun, 01 Sep 2019 02:07:18 +0000
+Received: from vps.xff.cz ([195.181.215.36])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4D6p-0006CD-3g; Sat, 31 Aug 2019 23:48:45 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from fmsmga001.fm.intel.com ([10.253.24.23])
- by orsmga101.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 31 Aug 2019 16:48:41 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,453,1559545200"; 
- d="gz'50?scan'50,208,50";a="198310395"
-Received: from lkp-server01.sh.intel.com (HELO lkp-server01) ([10.239.97.150])
- by fmsmga001.fm.intel.com with ESMTP; 31 Aug 2019 16:48:38 -0700
-Received: from kbuild by lkp-server01 with local (Exim 4.89)
- (envelope-from <lkp@intel.com>)
- id 1i4D6j-0002et-Rp; Sun, 01 Sep 2019 07:48:37 +0800
-Date: Sun, 1 Sep 2019 07:48:30 +0800
-From: kbuild test robot <lkp@intel.com>
-To: Chen Zhou <chenzhou10@huawei.com>
-Subject: Re: [PATCH v6 1/4] x86: kdump: move reserve_crashkernel_low() into
- crash_core.c
-Message-ID: <201909010704.4m9y2sg7%lkp@intel.com>
-References: <20190830071200.56169-2-chenzhou10@huawei.com>
+ id 1i4FGJ-0002in-5b
+ for linux-arm-kernel@lists.infradead.org; Sun, 01 Sep 2019 02:06:42 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
+ t=1567303590; bh=7KhoTyooAwT5WgVvu2mnLRyLJZxigkAs46qZpESqWnY=;
+ h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
+ b=pjILNVNFTzHnNm0cAJTzluqDMnONzOe2A7r2s/aUYMOgNUKB1Z7gqcveOdSyHpsvG
+ nMv4+4c7nVRzNxeLPGwHFMY49sBfn+qKPtlPb+c4zeZObKFUAfSnmWANLhd18hgCxZ
+ ZTXu9XUWJD4YfD2ERuk50dMx1b0xWp5bWaRRhxlc=
+Date: Sun, 1 Sep 2019 04:06:29 +0200
+From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
+To: Yangtao Li <tiny.windzz@gmail.com>
+Subject: Re: [PATCH v5 01/18] thermal: sun8i: add thermal driver for h6
+Message-ID: <20190901020629.lpzkmjpjs5wgu6e7@core.my.home>
+Mail-Followup-To: Yangtao Li <tiny.windzz@gmail.com>, rui.zhang@intel.com,
+ edubezval@gmail.com, daniel.lezcano@linaro.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, maxime.ripard@bootlin.com, wens@csie.org,
+ mchehab+samsung@kernel.org, davem@davemloft.net,
+ gregkh@linuxfoundation.org, Jonathan.Cameron@huawei.com,
+ nicolas.ferre@microchip.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-pm@vger.kernel.org
+References: <20190810052829.6032-1-tiny.windzz@gmail.com>
+ <20190810052829.6032-2-tiny.windzz@gmail.com>
 MIME-Version: 1.0
-Content-Type: multipart/mixed; boundary="7yqc4jqmkddlfw6p"
 Content-Disposition: inline
-In-Reply-To: <20190830071200.56169-2-chenzhou10@huawei.com>
-X-Patchwork-Hint: ignore
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <20190810052829.6032-2-tiny.windzz@gmail.com>
+X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
+ <https://xff.cz/key.txt>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190831_164843_225994_C6E56923 
-X-CRM114-Status: GOOD (  16.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190831_190639_554375_889C87F5 
+X-CRM114-Status: GOOD (  34.06  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,323 +77,540 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: horms@verge.net.au, Chen Zhou <chenzhou10@huawei.com>,
- catalin.marinas@arm.com, bhsharma@redhat.com, dyoung@redhat.com,
- kexec@lists.infradead.org, linux-kernel@vger.kernel.org, mingo@redhat.com,
- james.morse@arm.com, kbuild-all@01.org, guohanjun@huawei.com,
- tglx@linutronix.de, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, linux-pm@vger.kernel.org,
+ maxime.ripard@bootlin.com, gregkh@linuxfoundation.org,
+ daniel.lezcano@linaro.org, linux-kernel@vger.kernel.org, edubezval@gmail.com,
+ wens@csie.org, robh+dt@kernel.org, Jonathan.Cameron@huawei.com,
+ mchehab+samsung@kernel.org, rui.zhang@intel.com, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hello Yangtao,
 
---7yqc4jqmkddlfw6p
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+On Sat, Aug 10, 2019 at 05:28:12AM +0000, Yangtao Li wrote:
+> This patch adds the support for allwinner thermal sensor, within
+> allwinner SoC. It will register sensors for thermal framework
+> and use device tree to bind cooling device.
+> 
+> Signed-off-by: Yangtao Li <tiny.windzz@gmail.com>
+> ---
+>  MAINTAINERS                     |   7 +
+>  drivers/thermal/Kconfig         |  14 ++
+>  drivers/thermal/Makefile        |   1 +
+>  drivers/thermal/sun8i_thermal.c | 399 ++++++++++++++++++++++++++++++++
+>  4 files changed, 421 insertions(+)
+>  create mode 100644 drivers/thermal/sun8i_thermal.c
+> 
+> diff --git a/MAINTAINERS b/MAINTAINERS
+> index 47800d32cfbc..89dc43f4064d 100644
+> --- a/MAINTAINERS
+> +++ b/MAINTAINERS
+> @@ -682,6 +682,13 @@ L:	linux-crypto@vger.kernel.org
+>  S:	Maintained
+>  F:	drivers/crypto/sunxi-ss/
+>  
+> +ALLWINNER THERMAL DRIVER
+> +M:	Yangtao Li <tiny.windzz@gmail.com>
+> +L:	linux-pm@vger.kernel.org
+> +S:	Maintained
+> +F:	Documentation/devicetree/bindings/thermal/sun8i-thermal.yaml
+> +F:	drivers/thermal/sun8i_thermal.c
+> +
+>  ALLWINNER VPU DRIVER
+>  M:	Maxime Ripard <maxime.ripard@bootlin.com>
+>  M:	Paul Kocialkowski <paul.kocialkowski@bootlin.com>
+> diff --git a/drivers/thermal/Kconfig b/drivers/thermal/Kconfig
+> index 9966364a6deb..f8b73b32b92d 100644
+> --- a/drivers/thermal/Kconfig
+> +++ b/drivers/thermal/Kconfig
+> @@ -262,6 +262,20 @@ config SPEAR_THERMAL
+>  	  Enable this to plug the SPEAr thermal sensor driver into the Linux
+>  	  thermal framework.
+>  
+> +config SUN8I_THERMAL
+> +	tristate "Allwinner sun8i thermal driver"
+> +	depends on ARCH_SUNXI || COMPILE_TEST
+> +	depends on HAS_IOMEM
+> +	depends on NVMEM
+> +	depends on OF
+> +	depends on RESET_CONTROLLER
+> +	help
+> +	  Support for the sun8i thermal sensor driver into the Linux thermal
+> +	  framework.
+> +
+> +	  To compile this driver as a module, choose M here: the
+> +	  module will be called sun8i-thermal.
+> +
+>  config ROCKCHIP_THERMAL
+>  	tristate "Rockchip thermal driver"
+>  	depends on ARCH_ROCKCHIP || COMPILE_TEST
+> diff --git a/drivers/thermal/Makefile b/drivers/thermal/Makefile
+> index 74a37c7f847a..fa6f8b206281 100644
+> --- a/drivers/thermal/Makefile
+> +++ b/drivers/thermal/Makefile
+> @@ -31,6 +31,7 @@ thermal_sys-$(CONFIG_DEVFREQ_THERMAL) += devfreq_cooling.o
+>  obj-y				+= broadcom/
+>  obj-$(CONFIG_THERMAL_MMIO)		+= thermal_mmio.o
+>  obj-$(CONFIG_SPEAR_THERMAL)	+= spear_thermal.o
+> +obj-$(CONFIG_SUN8I_THERMAL)     += sun8i_thermal.o
+>  obj-$(CONFIG_ROCKCHIP_THERMAL)	+= rockchip_thermal.o
+>  obj-$(CONFIG_RCAR_THERMAL)	+= rcar_thermal.o
+>  obj-$(CONFIG_RCAR_GEN3_THERMAL)	+= rcar_gen3_thermal.o
+> diff --git a/drivers/thermal/sun8i_thermal.c b/drivers/thermal/sun8i_thermal.c
+> new file mode 100644
+> index 000000000000..2ce36fa3fec3
+> --- /dev/null
+> +++ b/drivers/thermal/sun8i_thermal.c
+> @@ -0,0 +1,399 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Thermal sensor driver for Allwinner SOC
+> + * Copyright (C) 2019 Yangtao Li
+> + *
+> + * Based on the work of Icenowy Zheng <icenowy@aosc.io>
+> + * Based on the work of Ondrej Jirman <megous@megous.com>
+> + * Based on the work of Josef Gajdusek <atx@atx.name>
+> + */
+> +
+> +#include <linux/clk.h>
+> +#include <linux/device.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/module.h>
+> +#include <linux/nvmem-consumer.h>
+> +#include <linux/of_device.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/regmap.h>
+> +#include <linux/reset.h>
+> +#include <linux/slab.h>
+> +#include <linux/thermal.h>
+> +
+> +#define MAX_SENSOR_NUM	4
+> +
+> +#define SUN50I_H6_SENSOR_NUM	2
+> +#define SUN50I_H6_OFFSET	-2794
+> +#define SUN50I_H6_SCALE		-67
+> +
+> +#define FT_TEMP_MASK				GENMASK(11, 0)
+> +#define TEMP_CALIB_MASK				GENMASK(11, 0)
+> +#define TEMP_TO_REG				672
+> +#define CALIBRATE_DEFAULT			0x800
+> +
+> +#define SUN50I_THS_CTRL0			0x00
+> +#define SUN50I_H6_THS_ENABLE			0x04
+> +#define SUN50I_H6_THS_PC			0x08
+> +#define SUN50I_H6_THS_DIC			0x10
+> +#define SUN50I_H6_THS_DIS			0x20
+> +#define SUN50I_H6_THS_MFC			0x30
+> +#define SUN50I_H6_THS_TEMP_CALIB		0xa0
+> +#define SUN50I_H6_THS_TEMP_DATA			0xc0
+> +
+> +#define SUN50I_THS_CTRL0_T_ACQ(x)		((GENMASK(15, 0) & (x)) << 16)
+> +#define SUN50I_THS_FILTER_EN			BIT(2)
+> +#define SUN50I_THS_FILTER_TYPE(x)		(GENMASK(1, 0) & (x))
+> +#define SUN50I_H6_THS_PC_TEMP_PERIOD(x)		((GENMASK(19, 0) & (x)) << 12)
+> +#define SUN50I_H6_THS_DATA_IRQ_STS(x)		BIT(x)
+> +
+> +/* millidegree celsius */
+> +#define SUN50I_H6_FT_DEVIATION			7000
+> +
+> +struct ths_device;
+> +
+> +struct tsensor {
+> +	struct ths_device		*tmdev;
+> +	struct thermal_zone_device	*tzd;
+> +	int				id;
+> +};
+> +
+> +struct ths_device {
+> +	struct device				*dev;
+> +	struct regmap				*regmap;
+> +	struct reset_control			*reset;
+> +	struct clk				*bus_clk;
+> +	struct tsensor				sensor[MAX_SENSOR_NUM];
+> +};
+> +
+> +/* Temp Unit: millidegree Celsius */
+> +static int sun8i_ths_reg2temp(struct ths_device *tmdev,
+> +			      int reg)
+> +{
+> +	return (reg + SUN50I_H6_OFFSET) * SUN50I_H6_SCALE;
+> +}
+> +
+> +static int sun8i_ths_get_temp(void *data, int *temp)
+> +{
+> +	struct tsensor *s = data;
+> +	struct ths_device *tmdev = s->tmdev;
+> +	int val;
+> +
+> +	regmap_read(tmdev->regmap, SUN50I_H6_THS_TEMP_DATA +
+> +		    0x4 * s->id, &val);
+> +
+> +	/* ths have no data yet */
+> +	if (!val)
+> +		return -EAGAIN;
+> +
+> +	*temp = sun8i_ths_reg2temp(tmdev, val);
+> +	/*
+> +	 * XX - According to the original sdk, there are some platforms(rarely)
+> +	 * that add a fixed offset value after calculating the temperature
+> +	 * value. We can't simply put it on the formula for calculating the
+> +	 * temperature above, because the formula for calculating the
+> +	 * temperature above is also used when the sensor is calibrated. If
+> +	 * do this, the correct calibration formula is hard to know.
+> +	 */
+> +	*temp += SUN50I_H6_FT_DEVIATION;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct thermal_zone_of_device_ops ths_ops = {
+> +	.get_temp = sun8i_ths_get_temp,
+> +};
+> +
+> +static const struct regmap_config config = {
+> +	.reg_bits = 32,
+> +	.val_bits = 32,
+> +	.reg_stride = 4,
+> +	.fast_io = true,
+> +};
+> +
+> +static irqreturn_t sun50i_h6_irq_thread(int irq, void *data)
+> +{
+> +	struct ths_device *tmdev = data;
+> +	int i, state;
+> +
+> +	regmap_read(tmdev->regmap, SUN50I_H6_THS_DIS, &state);
+> +
+> +	for (i = 0; i < SUN50I_H6_SENSOR_NUM; i++) {
+> +
+> +		if (state & SUN50I_H6_THS_DATA_IRQ_STS(i)) {
+> +			/* clear data irq pending */
+> +			regmap_write(tmdev->regmap, SUN50I_H6_THS_DIS,
+> +				     SUN50I_H6_THS_DATA_IRQ_STS(i));
+> +
+> +			thermal_zone_device_update(tmdev->sensor[i].tzd,
+> +						   THERMAL_EVENT_UNSPECIFIED);
+> +		}
+> +	}
+> +
+> +	return IRQ_HANDLED;
+> +}
+> +
+> +static int sun50i_ths_calibrate(struct ths_device *tmdev)
+> +{
+> +	struct nvmem_cell *calcell;
+> +	struct device *dev = tmdev->dev;
+> +	u16 *caldata;
+> +	size_t callen;
+> +	int ft_temp;
+> +	int i, ret = 0;
+> +
+> +	calcell = devm_nvmem_cell_get(dev, "calib");
+> +	if (IS_ERR(calcell)) {
+> +		if (PTR_ERR(calcell) == -EPROBE_DEFER)
+> +			return -EPROBE_DEFER;
+> +		/*
+> +		 * Even if the external calibration data stored in sid is
+> +		 * not accessible, the THS hardware can still work, although
+> +		 * the data won't be so accurate.
+> +		 *
+> +		 * The default value of calibration register is 0x800 for
+> +		 * every sensor, and the calibration value is usually 0x7xx
+> +		 * or 0x8xx, so they won't be away from the default value
+> +		 * for a lot.
+> +		 *
+> +		 * So here we do not return error if the calibartion data is
+> +		 * not available, except the probe needs deferring.
+> +		 */
+> +		goto out;
+> +	}
+> +
+> +	caldata = nvmem_cell_read(calcell, &callen);
+> +	if (IS_ERR(caldata)) {
+> +		ret = PTR_ERR(caldata);
+> +		goto out;
+> +	}
+> +
+> +	if (!caldata[0] || callen < 2 + 2 * SUN50I_H6_SENSOR_NUM) {
+> +		ret = -EINVAL;
+> +		goto out_free;
+> +	}
+> +
+> +	/*
+> +	 * efuse layout:
+> +	 *
+> +	 *	0   11  16	 32
+> +	 *	+-------+-------+-------+
+> +	 *	|temp|  |sensor0|sensor1|
+> +	 *	+-------+-------+-------+
+> +	 *
+> +	 * The calibration data on the H6 is the ambient temperature and
+> +	 * sensor values that are filled during the factory test stage.
+> +	 *
+> +	 * The unit of stored FT temperature is 0.1 degreee celusis.
+> +	 * Through the stored ambient temperature and the data read
+> +	 * by the sensor, after a certain calculation, the calibration
+> +	 * value to be compensated can be obtained.
+> +	 */
+> +	ft_temp = caldata[0] & FT_TEMP_MASK;
+> +
+> +	for (i = 0; i < SUN50I_H6_SENSOR_NUM; i++) {
+> +		int reg = (int)caldata[i + 1];
+> +		int sensor_temp = sun8i_ths_reg2temp(tmdev, reg);
+> +		int delta, cdata, offset;
+> +
+> +		/*
+> +		 * To calculate the calibration value:
+> +		 *
+> +		 * X(in Celsius) = Ts - ft_temp
+> +		 * delta = X * 10000 / TEMP_TO_REG
+> +		 * cdata = CALIBRATE_DEFAULT - delta
+> +		 *
+> +		 * cdata: calibration value
+> +		 */
+> +		delta = (sensor_temp - ft_temp * 100) * 10 / TEMP_TO_REG;
+> +		cdata = CALIBRATE_DEFAULT - delta;
+> +		if (cdata & ~TEMP_CALIB_MASK) {
+> +			/*
+> +			 * Calibration value more than 12-bit, but calibration
+> +			 * register is 12-bit. In this case, ths hardware can
+> +			 * still work without calibration, although the data
+> +			 * won't be so accurate.
+> +			 */
+> +			dev_warn(dev, "sensor%d is not calibrated.\n", i);
+> +
+> +			continue;
+> +		}
+> +
+> +		offset = (i % 2) << 4;
+> +		regmap_update_bits(tmdev->regmap,
+> +				   SUN50I_H6_THS_TEMP_CALIB + ((i >> 1) * 4),
+> +				   0xfff << offset,
+> +				   cdata << offset);
+> +	}
+> +
+> +out_free:
+> +	kfree(caldata);
+> +out:
+> +	return ret;
+> +}
+> +
+> +static int sun8i_ths_resource_init(struct ths_device *tmdev)
+> +{
+> +	struct device *dev = tmdev->dev;
+> +	struct platform_device *pdev = to_platform_device(dev);
+> +	struct resource *mem;
+> +	void __iomem *base;
+> +	int ret;
+> +
+> +	mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	base = devm_ioremap_resource(dev, mem);
+> +	if (IS_ERR(base))
+> +		return PTR_ERR(base);
+> +
+> +	tmdev->regmap = devm_regmap_init_mmio(dev, base, &config);
+> +	if (IS_ERR(tmdev->regmap))
+> +		return PTR_ERR(tmdev->regmap);
+> +
+> +	tmdev->reset = devm_reset_control_get(dev, 0);
+> +	if (IS_ERR(tmdev->reset))
+> +		return PTR_ERR(tmdev->reset);
+> +
+> +	tmdev->bus_clk = devm_clk_get(&pdev->dev, "bus");
+> +	if (IS_ERR(tmdev->bus_clk))
+> +		return PTR_ERR(tmdev->bus_clk);
+> +
+> +	ret = reset_control_deassert(tmdev->reset);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = clk_prepare_enable(tmdev->bus_clk);
+> +	if (ret)
+> +		goto assert_reset;
+> +
+> +	ret = sun50i_ths_calibrate(tmdev);
+> +	if (ret)
+> +		goto bus_disable;
+> +
+> +	return 0;
+> +
+> +bus_disable:
+> +	clk_disable_unprepare(tmdev->bus_clk);
+> +assert_reset:
+> +	reset_control_assert(tmdev->reset);
+> +
+> +	return ret;
+> +}
+> +
+> +static int sun50i_h6_thermal_init(struct ths_device *tmdev)
+> +{
+> +	int val;
+> +
+> +	/*
+> +	 * clkin = 24MHz
+> +	 * T acquire = clkin / (x + 1)
+> +	 *           = 20us
+> +	 */
 
-Hi Chen,
+I suggest something along the lines of:
 
-Thank you for the patch! Yet something to improve:
+        /*                                                                                                                                                                                             
+         * T_acq = 20us                                                                                                                                                                                
+         * clkin = 24MHz                                                                                                                                                                               
+         *                                                                                                                                                                                             
+         * x = T_acq * clkin - 1                                                                                                                                                                       
+         *   = 479                                                                                                                                                                                     
+         */       
 
-[auto build test ERROR on linus/master]
-[cannot apply to v5.3-rc6 next-20190830]
-[if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
+Makes it much more clear how the value in SUN50I_THS_CTRL0_T_ACQ was
+arrived at and how to calculate a new one.
 
-url:    https://github.com/0day-ci/linux/commits/Chen-Zhou/support-reserving-crashkernel-above-4G-on-arm64-kdump/20190901-053351
-config: um-i386_defconfig (attached as .config)
-compiler: gcc-7 (Debian 7.4.0-11) 7.4.0
-reproduce:
-        # save the attached .config to linux build tree
-        make ARCH=um SUBARCH=i386
+> +	regmap_write(tmdev->regmap, SUN50I_THS_CTRL0,
+> +		     SUN50I_THS_CTRL0_T_ACQ(479));
+> +	/* average over 4 samples */
+> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_MFC,
+> +		     SUN50I_THS_FILTER_EN |
+> +		     SUN50I_THS_FILTER_TYPE(1));
+> +	/* period = (x + 1) * 4096 / clkin; ~10ms */
 
-If you fix the issue, kindly add following tag
-Reported-by: kbuild test robot <lkp@intel.com>
+As above, here I suggest:
 
-All errors (new ones prefixed by >>):
+        /*
+         * clkin = 24MHz
+         * filter_samples = 4
+         * period = 0.25s
+         *
+         * x = period * clkin / 4096 / filter_samples - 1
+         *   = 365
+         */
 
-   In file included from include/linux/crash_core.h:9:0,
-                    from kernel//printk/printk.c:37:
-   arch/x86/include/asm/kexec.h: In function 'crash_setup_regs':
-   arch/x86/include/asm/kexec.h:88:46: error: 'struct pt_regs' has no member named 'bx'
-      asm volatile("movl %%ebx,%0" : "=m"(newregs->bx));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:89:46: error: 'struct pt_regs' has no member named 'cx'
-      asm volatile("movl %%ecx,%0" : "=m"(newregs->cx));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:90:46: error: 'struct pt_regs' has no member named 'dx'
-      asm volatile("movl %%edx,%0" : "=m"(newregs->dx));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:91:46: error: 'struct pt_regs' has no member named 'si'
-      asm volatile("movl %%esi,%0" : "=m"(newregs->si));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:92:46: error: 'struct pt_regs' has no member named 'di'
-      asm volatile("movl %%edi,%0" : "=m"(newregs->di));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:93:46: error: 'struct pt_regs' has no member named 'bp'
-      asm volatile("movl %%ebp,%0" : "=m"(newregs->bp));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:94:46: error: 'struct pt_regs' has no member named 'ax'
-      asm volatile("movl %%eax,%0" : "=m"(newregs->ax));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:95:46: error: 'struct pt_regs' has no member named 'sp'
-      asm volatile("movl %%esp,%0" : "=m"(newregs->sp));
-                                                 ^~
-   arch/x86/include/asm/kexec.h:96:49: error: 'struct pt_regs' has no member named 'ss'
-      asm volatile("movl %%ss, %%eax;" :"=a"(newregs->ss));
-                                                    ^~
-   arch/x86/include/asm/kexec.h:97:49: error: 'struct pt_regs' has no member named 'cs'
-      asm volatile("movl %%cs, %%eax;" :"=a"(newregs->cs));
-                                                    ^~
->> arch/x86/include/asm/kexec.h:98:49: error: 'struct pt_regs' has no member named 'ds'
-      asm volatile("movl %%ds, %%eax;" :"=a"(newregs->ds));
-                                                    ^~
->> arch/x86/include/asm/kexec.h:99:51: error: 'struct pt_regs' has no member named 'es'; did you mean 'regs'?
-      asm volatile("movl %%es, %%eax;" :"=a"(newregs->es));
-                                                      ^~
-                                                      regs
-   arch/x86/include/asm/kexec.h:100:47: error: 'struct pt_regs' has no member named 'flags'
-      asm volatile("pushfl; popl %0" :"=m"(newregs->flags));
-                                                  ^~
-   arch/x86/include/asm/kexec.h:122:10: error: 'struct pt_regs' has no member named 'ip'
-      newregs->ip = _THIS_IP_;
-             ^~
+Also please change this to 365 from 58. I think 4 readings per second are
+enough. Certainly, 25 are a bit too much.
 
-vim +98 arch/x86/include/asm/kexec.h
+> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_PC,
+> +		     SUN50I_H6_THS_PC_TEMP_PERIOD(58));
+> +	/* enable sensor */
+> +	val = GENMASK(SUN50I_H6_SENSOR_NUM - 1, 0);
+> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_ENABLE, val);
+> +	/* thermal data interrupt enable */
+> +	val = GENMASK(SUN50I_H6_SENSOR_NUM - 1, 0);
+> +	regmap_write(tmdev->regmap, SUN50I_H6_THS_DIC, val);
+> +
+> +	return 0;
+> +}
+> +
+> +static int sun8i_ths_register(struct ths_device *tmdev)
+> +{
+> +	struct thermal_zone_device *tzd;
+> +	int i;
+> +
+> +	for (i = 0; i < SUN50I_H6_SENSOR_NUM; i++) {
+> +		tmdev->sensor[i].tmdev = tmdev;
+> +		tmdev->sensor[i].id = i;
+> +		tmdev->sensor[i].tzd =
+> +			devm_thermal_zone_of_sensor_register(tmdev->dev,
+> +							     i,
+> +							     &tmdev->sensor[i],
+> +							     &ths_ops);
+> +		if (IS_ERR(tmdev->sensor[i].tzd))
+> +			return PTR_ERR(tzd);
 
-dd5f726076cc76 arch/x86/include/asm/kexec.h Vivek Goyal      2014-08-08   75  
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   76  /*
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   77   * This function is responsible for capturing register states if coming
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   78   * via panic otherwise just fix up the ss and sp if coming via kernel
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   79   * mode exception.
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   80   */
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   81  static inline void crash_setup_regs(struct pt_regs *newregs,
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   82  				    struct pt_regs *oldregs)
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   83  {
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   84  	if (oldregs) {
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   85  		memcpy(newregs, oldregs, sizeof(*newregs));
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   86  	} else {
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30   87  #ifdef CONFIG_X86_32
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   88  		asm volatile("movl %%ebx,%0" : "=m"(newregs->bx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   89  		asm volatile("movl %%ecx,%0" : "=m"(newregs->cx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   90  		asm volatile("movl %%edx,%0" : "=m"(newregs->dx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   91  		asm volatile("movl %%esi,%0" : "=m"(newregs->si));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   92  		asm volatile("movl %%edi,%0" : "=m"(newregs->di));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   93  		asm volatile("movl %%ebp,%0" : "=m"(newregs->bp));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   94  		asm volatile("movl %%eax,%0" : "=m"(newregs->ax));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  @95  		asm volatile("movl %%esp,%0" : "=m"(newregs->sp));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  @96  		asm volatile("movl %%ss, %%eax;" :"=a"(newregs->ss));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23   97  		asm volatile("movl %%cs, %%eax;" :"=a"(newregs->cs));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  @98  		asm volatile("movl %%ds, %%eax;" :"=a"(newregs->ds));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  @99  		asm volatile("movl %%es, %%eax;" :"=a"(newregs->es));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  100  		asm volatile("pushfl; popl %0" :"=m"(newregs->flags));
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30  101  #else
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  102  		asm volatile("movq %%rbx,%0" : "=m"(newregs->bx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  103  		asm volatile("movq %%rcx,%0" : "=m"(newregs->cx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  104  		asm volatile("movq %%rdx,%0" : "=m"(newregs->dx));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  105  		asm volatile("movq %%rsi,%0" : "=m"(newregs->si));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  106  		asm volatile("movq %%rdi,%0" : "=m"(newregs->di));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  107  		asm volatile("movq %%rbp,%0" : "=m"(newregs->bp));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  108  		asm volatile("movq %%rax,%0" : "=m"(newregs->ax));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  109  		asm volatile("movq %%rsp,%0" : "=m"(newregs->sp));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  110  		asm volatile("movq %%r8,%0" : "=m"(newregs->r8));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  111  		asm volatile("movq %%r9,%0" : "=m"(newregs->r9));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  112  		asm volatile("movq %%r10,%0" : "=m"(newregs->r10));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  113  		asm volatile("movq %%r11,%0" : "=m"(newregs->r11));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  114  		asm volatile("movq %%r12,%0" : "=m"(newregs->r12));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  115  		asm volatile("movq %%r13,%0" : "=m"(newregs->r13));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  116  		asm volatile("movq %%r14,%0" : "=m"(newregs->r14));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  117  		asm volatile("movq %%r15,%0" : "=m"(newregs->r15));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  118  		asm volatile("movl %%ss, %%eax;" :"=a"(newregs->ss));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  119  		asm volatile("movl %%cs, %%eax;" :"=a"(newregs->cs));
-b69a3f9dc0bbdb include/asm-x86/kexec.h      Joe Perches      2008-03-23  120  		asm volatile("pushfq; popq %0" :"=m"(newregs->flags));
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30  121  #endif
-de0d22e50cd3d5 arch/x86/include/asm/kexec.h Nick Desaulniers 2018-10-30  122  		newregs->ip = _THIS_IP_;
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30  123  	}
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30  124  }
-3c233d1334ffc8 include/asm-x86/kexec.h      Harvey Harrison  2008-01-30  125  
+This should return PTR_ERR(tmdev->sensor[i].tzd). Otherwise this succeeds even
+if tz registration fails, and you get NULL pointer exception tryin to udpate
+nonexisting tz from the interrupt handler.
 
-:::::: The code at line 98 was first introduced by commit
-:::::: b69a3f9dc0bbdbf9278ac5bc8d4b6347c11a701b include/asm-x86/kexec.h: checkpatch cleanups - formatting only
+regards,
+	Ondrej
 
-:::::: TO: Joe Perches <joe@perches.com>
-:::::: CC: Ingo Molnar <mingo@elte.hu>
-
----
-0-DAY kernel test infrastructure                Open Source Technology Center
-https://lists.01.org/pipermail/kbuild-all                   Intel Corporation
-
---7yqc4jqmkddlfw6p
-Content-Type: application/gzip
-Content-Disposition: attachment; filename=".config.gz"
-Content-Transfer-Encoding: base64
-
-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
-
---7yqc4jqmkddlfw6p
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static int sun8i_ths_probe(struct platform_device *pdev)
+> +{
+> +	struct ths_device *tmdev;
+> +	struct device *dev = &pdev->dev;
+> +	int ret, irq;
+> +
+> +	tmdev = devm_kzalloc(dev, sizeof(*tmdev), GFP_KERNEL);
+> +	if (!tmdev)
+> +		return -ENOMEM;
+> +
+> +	tmdev->dev = dev;
+> +	platform_set_drvdata(pdev, tmdev);
+> +
+> +	ret = sun8i_ths_resource_init(tmdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	irq = platform_get_irq(pdev, 0);
+> +	if (irq < 0)
+> +		return irq;
+> +
+> +	ret = sun50i_h6_thermal_init(tmdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	ret = sun8i_ths_register(tmdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	/*
+> +	 * Avoid entering the interrupt handler, the thermal device is not
+> +	 * registered yet, we deffer the registration of the interrupt to
+> +	 * the end.
+> +	 */
+> +	ret = devm_request_threaded_irq(dev, irq, NULL,
+> +					sun50i_h6_irq_thread,
+> +					IRQF_ONESHOT, "ths", tmdev);
+> +	if (ret)
+> +		return ret;
+> +
+> +	return ret;
+> +}
+> +
+> +static int sun8i_ths_remove(struct platform_device *pdev)
+> +{
+> +	struct ths_device *tmdev = platform_get_drvdata(pdev);
+> +
+> +	clk_disable_unprepare(tmdev->bus_clk);
+> +	reset_control_assert(tmdev->reset);
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id of_ths_match[] = {
+> +	{ .compatible = "allwinner,sun50i-h6-ths"},
+> +	{ /* sentinel */ },
+> +};
+> +MODULE_DEVICE_TABLE(of, of_ths_match);
+> +
+> +static struct platform_driver ths_driver = {
+> +	.probe = sun8i_ths_probe,
+> +	.remove = sun8i_ths_remove,
+> +	.driver = {
+> +		.name = "sun8i-thermal",
+> +		.of_match_table = of_ths_match,
+> +	},
+> +};
+> +module_platform_driver(ths_driver);
+> +
+> +MODULE_DESCRIPTION("Thermal sensor driver for Allwinner SOC");
+> +MODULE_LICENSE("GPL v2");
+> -- 
+> 2.17.1
+> 
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---7yqc4jqmkddlfw6p--
-
