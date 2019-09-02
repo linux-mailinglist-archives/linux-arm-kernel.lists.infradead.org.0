@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6F1CA52F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 11:37:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 65F5DA52F9
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 11:39:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
@@ -11,73 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=bs4LqaAesiKjWuBTq9/ibHlzQ4SNltFtHKXf0rGNeOI=; b=VWDSDXNG32RxERRc6vSBQnxrEL
-	EjIB1d7V0VWYPizTdpuFw4mdoBcG2uB3ltyKZ3VtCvRYH7K5sUAPmDW7oPpjs8KcV4M94jL1k0dNZ
-	fqyBRk0iBlRdq+47Uwq5eOpSvsEUU7k3qWKRM8t0sM/q2CvJQWQACZw4hq3yHCv1JR5l3sM8ADEg3
-	AHqfD+tUQF3rR4NCaGEDRNjYxWI67Tz2qQpGL5xZ1sMNR88ftn4W8JKHtEYG3Clomf0OM8fFSkLou
-	b0GkAkOexgyDvChLU61XSyN7wHl/eaQvi3ddgxDB454iohDeb9ZtBIj9+KmROIr4ckH0rcpF4CK3K
-	iQKQGGtg==;
+	bh=hSww+wkWDkTBn+wgqLs/9VHpS9Dj8j5OrlxJCv7zW+A=; b=i5IsG12TfetrRZP06V9Atvvw6g
+	mbzkg3zvNHR+P758S5hcjIZrnp+CKCQEw3cOftuaVgfbkHRgubckuVa7jbOGNouwzp/Qvb18AycV/
+	jEhzb6lzlY3Tq0t5TfyAONaDTcYspX+JrRKljVqRCGhpKHVftXeONDzWLgClKi/b8dUNSdDQgPQHB
+	0Weap4A0kiFT1/7EEOMRjy8e1wpbOULWOUDUfzztBBroUAw25wE0q/RIIo+b58ap4ssVLAraSb7zN
+	pOFOlodpapFR8AGQjtgGxBTTewlaKZ8vNlTJuhpaRuLpVJ6yV1SDaUGAYg0PgfTsyW3GIKrbBXu65
+	rozdkdOQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4ilc-0003HQ-Hc; Mon, 02 Sep 2019 09:36:56 +0000
-Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
+	id 1i4inv-0003ac-4e; Mon, 02 Sep 2019 09:39:19 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4ilG-0003GQ-Px
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 09:36:37 +0000
-Received: by mail-wr1-x443.google.com with SMTP id b16so13249189wrq.9
+ id 1i4ing-0003Zp-76
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 09:39:05 +0000
+Received: by mail-wm1-x344.google.com with SMTP id p13so13892113wmh.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Sep 2019 02:36:32 -0700 (PDT)
+ Mon, 02 Sep 2019 02:39:03 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=references:user-agent:from:to:cc:subject:in-reply-to:date
  :message-id:mime-version;
- bh=7S+vZhVc5zHeiLc/DC6Z2xOOWxBDBUvpp/e3pBI1NHw=;
- b=SdLltcIqfSTbhoDBqB0JMt9oUEV92Oj/pOU/Ob14cQsQPj+tVBpl3Rr/9U2efcxzSw
- G8V7L49e6FUh7X+XY0Pg/NAWU3hPUVh0bflsweMM8+44JIlZC41qyHKccjz9hEOHtKhY
- /QRuBI2cRf2dQ7DB1g4J4239lW7vLw2cgwLL1JxWT7n/w6icES8esjSDU3uL6EVcGoSN
- i+6J3BjMyq3zpw/INszfY/hWVYhfXhS323KJNFt4RJY0spsQRPWWQys/InPvU+ohDXba
- m9DYKI8EqZolY7g8hH/XWLgJB1E0iNyLz/UxqPT+3QFN1mecQQkw6V9VJz79skA3pCjJ
- 44IA==
+ bh=TuI9rd12MfxFCijDCnxps6RQxMfXZ9+gpL/KNKqGJec=;
+ b=MvNFZ1/jbfE4vo5KXjxBEUkydGqOUTy8/La+RmqGYg5z2JPMO4Qd0g2/1gppakerEf
+ R+9Sj7AHvlz/9wAfHYLgtAfERiRSR9JjQa7RSa0vIohbKMR7hJPH87Bgf/jVqZ8nCo2a
+ l71eHN00Xhi7Dnp4J/12HU59pZXlaoSB6fYGx6pWRC6n+SU6CM82+HEnH4AVywthNWtI
+ zG6kcdf3TtKfKoFTLPdQ8PY/9oi24mzPlTBu1oytWaJG7bv8p7JTIL2cXqRivwJuRva4
+ FfZdqgg24TrobN/IjD4hgTjIitilPnkaWpFgJGp7C1epJ8tFPCy0C2MvvdFI4kMzRgnK
+ stkQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:references:user-agent:from:to:cc:subject
  :in-reply-to:date:message-id:mime-version;
- bh=7S+vZhVc5zHeiLc/DC6Z2xOOWxBDBUvpp/e3pBI1NHw=;
- b=XCUDgb+CtgiM1J1gwebXhQB10sVEMW9uAK6zjfpU6aep8SzuO1LLi0IP7alg29BggF
- vxUNEqMfBcFgl37KaaxEMfMKL4ZfpepKuvcO+X8YSKOWVQVVYFeqWZiBr1NIy8Ocnbi6
- QAjFmV79wUKSYYgmDOe0kh89hQKbf3UmpQGHi3gc7od0JivgzFiHgCW+ri5Jwbn0d+ej
- NN6c5o3BPXJpWgTaHr8kbr/Xyv1HEBUjsEwjbNoqwSjtNM3tBn5q5JxGaCdq9NqZGaB2
- G+u1ZJ6LwWCQ6l4d+s+BZ6a4DO/WQHuv7KqmsnOW9WId8/3AP2S8dpatVMyk5+x0ZDtl
- b2sg==
-X-Gm-Message-State: APjAAAXVvd+oygO6WFvE7TwjmfZbUUbMquOlLxDhoVdtXvJP1fablH3T
- IFVBwQluH3hnqtn2+ezRMsA=
-X-Google-Smtp-Source: APXvYqwnZx3UsFw9tXhL1LKY1pc0SI7+G9To5dGcweMEWFrJ8hdLdd2oaTaKuKhIo7cilHZxWPmycw==
-X-Received: by 2002:adf:d187:: with SMTP id v7mr36485204wrc.33.1567416990962; 
- Mon, 02 Sep 2019 02:36:30 -0700 (PDT)
+ bh=TuI9rd12MfxFCijDCnxps6RQxMfXZ9+gpL/KNKqGJec=;
+ b=Uau69RG5QP8jchwFf2qfdwpwyH07tkTq/NbIb2Fl7plX9WhdsVcsXk9cjY6HQM84an
+ fz+tdoRRyy628ABwjb5CR9010hN6EwYq2KedYHFGuzNtdrpEjVWwseegKljC/+9JxtQC
+ zXpqbScjN6Lbg734o5cqvgv1+i6efY+FXWhG8MtedTj6iqWJH/cyQJI3o6wcveBBR3qb
+ vkyDvYnq78WnnkRA1vkP7ICxmNYHQamC2timbXBqJHw9XK8ftKIz0O3RdGilWa7AgBO7
+ jtfcFOkYcr99R/1fET0AjVbXVmj4Re9xoA0j2r6XQP/l1j+HeUkllGHYRDRVUw+HUdYJ
+ JU+Q==
+X-Gm-Message-State: APjAAAXvqguOgMQF7A/cvwN1T8j3zmzuC/g3CohE405kICZGuVRi7mrT
+ FzTjrmbxeBaqNO9pOwN/8G1b4j2p2Mk=
+X-Google-Smtp-Source: APXvYqxLMl9twPuZRaBPGCt6IQrTMUDpWGDiRa+m+TO/WYNNG1GFTxiKSkMi81n2v/MwR6YMiUQ8ZQ==
+X-Received: by 2002:a1c:c909:: with SMTP id f9mr35144152wmb.52.1567417142665; 
+ Mon, 02 Sep 2019 02:39:02 -0700 (PDT)
 Received: from arch-late (87-196-73-69.net.novis.pt. [87.196.73.69])
- by smtp.gmail.com with ESMTPSA id r6sm14586137wmf.0.2019.09.02.02.36.26
+ by smtp.gmail.com with ESMTPSA id t123sm14100440wma.40.2019.09.02.02.39.00
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Sep 2019 02:36:28 -0700 (PDT)
+ Mon, 02 Sep 2019 02:39:01 -0700 (PDT)
 References: <20190805233505.21167-1-slongerbeam@gmail.com>
- <20190805233505.21167-15-slongerbeam@gmail.com>
+ <20190805233505.21167-16-slongerbeam@gmail.com>
 User-agent: mu4e 1.2.0; emacs 27.0.50
 From: Rui Miguel Silva <rmfrfs@gmail.com>
 To: Steve Longerbeam <slongerbeam@gmail.com>
-Subject: Re: [PATCH 14/22] media: imx7-mipi-csis: Create media links in bound
+Subject: Re: [PATCH 15/22] media: imx7-media-csi: Create media links in bound
  notifier
-In-reply-to: <20190805233505.21167-15-slongerbeam@gmail.com>
-Date: Mon, 02 Sep 2019 10:36:20 +0100
-Message-ID: <m3d0gj59bf.fsf@gmail.com>
+In-reply-to: <20190805233505.21167-16-slongerbeam@gmail.com>
+Date: Mon, 02 Sep 2019 10:38:59 +0100
+Message-ID: <m3blw35970.fsf@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_023636_364915_CC1BC148 
-X-CRM114-Status: GOOD (  15.22  )
+X-CRM114-CacheID: sfid-20190902_023904_284227_7473650A 
+X-CRM114-Status: GOOD (  14.76  )
 X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
  1.0 HK_RANDOM_FROM         From username looks random
  0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
@@ -119,90 +119,73 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 Hi Steve,
-Just to let you know that this series no longer apply clean after
-your other series:
-media: imx: Fix subdev unregister/register issues
-
-And since you will need to send a new one, some notes...
-
 On Tue 06 Aug 2019 at 00:34, Steve Longerbeam wrote:
 > Implement a notifier bound op to register media links from the remote
-> sub-device's source pad(s) to the mipi csi-2 receiver sink pad.
+> sub-device's source pad(s) to the CSI sink pad.
 >
 > Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
 > ---
->  drivers/staging/media/imx/imx7-mipi-csis.c | 25 ++++++++++++++++++++++
->  1 file changed, 25 insertions(+)
+>  drivers/staging/media/imx/imx7-media-csi.c | 24 ++++++++++++++++++++++
+>  1 file changed, 24 insertions(+)
 >
-> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
-> index f71d9183cad2..e03b2317a1ac 100644
-> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
-> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
-> @@ -259,6 +259,12 @@ struct csi_state {
->  	bool sink_linked;
+> diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+> index a1c96c52a606..f71ac485f780 100644
+> --- a/drivers/staging/media/imx/imx7-media-csi.c
+> +++ b/drivers/staging/media/imx/imx7-media-csi.c
+> @@ -196,6 +196,11 @@ struct imx7_csi {
+>  	struct completion last_eof_completion;
 >  };
 >
-> +static inline struct csi_state *
-> +notifier_to_csis_state(struct v4l2_async_notifier *n)
+> +static inline struct imx7_csi *notifier_to_dev(struct v4l2_async_notifier *n)
 >
 
-instead of adding this between structs declaration can you move it
-down near the similar converter:
+As the other one add the namespace for the function name:
+imx7_csi_notifier_to_dev
 
-static struct csi_state *mipi_sd_to_csis_state(struct v4l2_subdev *sdev)
-
-and remove the inline since the compiler should do this and add
-namespacing function name like the other functions, something like:
-
-static struct csi_state * mipi_notifier_to_csis_state(struct v4l2_async_notifier *n)
-
-Just to coherency.
-
-Other than this, looks good to me.
+other than this, looks good to me.
 
 Cheers,
-   Rui
-
+  Rui
 > +{
-> +	return container_of(n, struct csi_state, notifier);
+> +	return container_of(n, struct imx7_csi, notifier);
 > +}
 > +
->  struct csis_pix_format {
->  	unsigned int pix_width_alignment;
->  	u32 code;
-> @@ -863,6 +869,23 @@ static int mipi_csis_parse_endpoint(struct device *dev,
->  	return 0;
+>  static u32 imx7_csi_reg_read(struct imx7_csi *csi, unsigned int offset)
+>  {
+>  	return readl(csi->regbase + offset);
+> @@ -1173,6 +1178,23 @@ static int imx7_csi_parse_endpoint(struct device *dev,
+>  	return fwnode_device_is_available(asd->match.fwnode) ? 0 : -EINVAL;
 >  }
 >
-> +static int mipi_csis_notify_bound(struct v4l2_async_notifier *notifier,
-> +				  struct v4l2_subdev *sd,
-> +				  struct v4l2_async_subdev *asd)
+> +static int imx7_csi_notify_bound(struct v4l2_async_notifier *notifier,
+> +				 struct v4l2_subdev *sd,
+> +				 struct v4l2_async_subdev *asd)
 > +{
-> +	struct csi_state *state = notifier_to_csis_state(notifier);
-> +	struct media_pad *sink = &state->mipi_sd.entity.pads[CSIS_PAD_SINK];
+> +	struct imx7_csi *csi = notifier_to_dev(notifier);
+> +	struct media_pad *sink = &csi->sd.entity.pads[IMX7_CSI_PAD_SINK];
 > +
 > +	return media_create_fwnode_pad_links(sink,
-> +					     dev_fwnode(state->mipi_sd.dev),
+> +					     dev_fwnode(csi->sd.dev),
 > +					     &sd->entity,
 > +					     dev_fwnode(sd->dev), 0);
 > +}
 > +
-> +static const struct v4l2_async_notifier_operations mipi_csis_notify_ops = {
-> +	.bound = mipi_csis_notify_bound,
+> +static const struct v4l2_async_notifier_operations imx7_csi_notify_ops = {
+> +	.bound = imx7_csi_notify_bound,
 > +};
 > +
->  static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
->  				 struct platform_device *pdev,
->  				 const struct v4l2_subdev_ops *ops)
-> @@ -895,6 +918,8 @@ static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
+>  static int imx7_csi_probe(struct platform_device *pdev)
+>  {
+>  	struct device *dev = &pdev->dev;
+> @@ -1253,6 +1275,8 @@ static int imx7_csi_probe(struct platform_device *pdev)
 >
->  	v4l2_async_notifier_init(&state->notifier);
+>  	v4l2_async_notifier_init(&csi->notifier);
 >
-> +	state->notifier.ops = &mipi_csis_notify_ops;
+> +	csi->notifier.ops = &imx7_csi_notify_ops;
 > +
->  	ret = v4l2_async_register_fwnode_subdev(mipi_sd, &state->notifier,
+>  	ret = v4l2_async_register_fwnode_subdev(&csi->sd, &csi->notifier,
 >  						sizeof(struct v4l2_async_subdev),
->  						&sink_port, 1,
+>  						NULL, 0,
 
 
 _______________________________________________
