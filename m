@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE6FFA4DB4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:30:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 687ABA4DB6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:30:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=qXITitkGAeysG/kLMBno8SmR6HFyOcSGLHegeWDnzN0=; b=eFEJC8HouBKuVz6QqiomSlMjSm
-	t/sYpQVNhRTzRV2rHEDSD2+nnHGp3DGkJyXSfNjVWPdcnnhOQTsqyS4it21RSoNbEqstPPno3xDKv
-	o7TeKryRkzmkyD9lxpRAdQG/ooGQCVl2cilz6ZAFQQErspRt9gw0vTiY2HcL6KTUEq8ut2+ihsy3z
-	jL/pdt1CgnVwqrA263G44hzka4EUqkVzS7CARcbbugAUvuawtVHnnmsQfD9o5hJ1jmOCzFTzbj141
-	E6cUs/I9dH8NVKetOSFyiKnGoS388bihnB0xmEGPvadBBXPo6+/6cmxZBss2VHAxyozm24cI2xqdz
-	83NcBFqg==;
+	bh=6Qeb7ZQEjFshfBsZyjz8Ut/G2lA8XaNxnPJ3TFbvWiU=; b=bxRvqLk7G86CAjqx0E2BSxQhbN
+	eYvj/So9bNIXYx8RutXC7sompHIXJBkgarB6UpjINtforJU5uBbUgBJllPqq6FpWgzyOYDfxniwN/
+	eaAqDBKmazrWk7UmT8l+7mfXAsjfbzXA6J6TtPt+wi40IR3b6aVzfYu8eXt85+80qKmVoqUlLBO65
+	xN99H2MN+bM38jJSP9yPbjP3VZ5OtHACQUeEEFgLCI8hcEgI7KtAHFZasuqzZwfwlRmBatzXVIQGK
+	OYftqzhX/1aN8n2+5csBqYHokxXqVq9FM5wIMyo6w8nm+fjqYhohH4Gvvdx9KTIXxtNSFJbGKfaAh
+	FMrL3kvw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4d2m-00060B-5O; Mon, 02 Sep 2019 03:30:16 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i4d31-0007Qt-K6; Mon, 02 Sep 2019 03:30:31 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4d0Q-00047E-9E
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:52 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 11B391A064B;
- Mon,  2 Sep 2019 05:27:49 +0200 (CEST)
+ id 1i4d0R-000496-RJ
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:53 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A30A1200668;
+ Mon,  2 Sep 2019 05:27:50 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 4F2C41A064D;
- Mon,  2 Sep 2019 05:27:40 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 20B0B200658;
+ Mon,  2 Sep 2019 05:27:42 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 7C5B94031E;
- Mon,  2 Sep 2019 11:27:29 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 473874031F;
+ Mon,  2 Sep 2019 11:27:31 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  leoyang.li@nxp.com, kishon@ti.com, lorenzo.pieralisi@arm.com,
@@ -42,24 +42,23 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v3 07/11] PCI: layerscape: Modify the way of getting
- capability with different PEX
-Date: Mon,  2 Sep 2019 11:17:12 +0800
-Message-Id: <20190902031716.43195-8-xiaowei.bao@nxp.com>
+Subject: [PATCH v3 08/11] PCI: layerscape: Modify the MSIX to the doorbell mode
+Date: Mon,  2 Sep 2019 11:17:13 +0800
+Message-Id: <20190902031716.43195-9-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_202750_864036_3731ADCA 
-X-CRM114-Status: GOOD (  10.28  )
+X-CRM114-CacheID: sfid-20190901_202752_187686_87D30AB6 
+X-CRM114-Status: GOOD (  10.09  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,103 +80,37 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The different PCIe controller in one board may be have different
-capability of MSI or MSIX, so change the way of getting the MSI
-capability, make it more flexible.
+dw_pcie_ep_raise_msix_irq was never called in the exisitng driver
+before, because the ls1046a platform don't support the MSIX feature
+and msix_capable was always set to false.
+Now that add the ls1088a platform with MSIX support, but the existing
+dw_pcie_ep_raise_msix_irq doesn't work, so use the doorbell method to
+support the MSIX feature.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
-v2:
- - Remove the repeated assignment code.
+v2: 
+ - No change
 v3:
- - Use ep_func msi_cap and msix_cap to decide the msi_capable and
-   msix_capable of pci_epc_features struct.
+ - Modify the commit message make it clearly.
 
- drivers/pci/controller/dwc/pci-layerscape-ep.c | 31 +++++++++++++++++++-------
- 1 file changed, 23 insertions(+), 8 deletions(-)
+ drivers/pci/controller/dwc/pci-layerscape-ep.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
 diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-index a9c552e..1e07287 100644
+index 1e07287..5f0cb99 100644
 --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
 +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-@@ -22,6 +22,7 @@
- 
- struct ls_pcie_ep {
- 	struct dw_pcie		*pci;
-+	struct pci_epc_features	*ls_epc;
- };
- 
- #define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
-@@ -40,26 +41,31 @@ static const struct of_device_id ls_pcie_ep_of_match[] = {
- 	{ },
- };
- 
--static const struct pci_epc_features ls_pcie_epc_features = {
--	.linkup_notifier = false,
--	.msi_capable = true,
--	.msix_capable = false,
--	.bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
--};
--
- static const struct pci_epc_features*
- ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
- {
--	return &ls_pcie_epc_features;
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
-+
-+	return pcie->ls_epc;
- }
- 
- static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
- {
- 	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
-+	struct dw_pcie_ep_func *ep_func;
- 	enum pci_barno bar;
- 
-+	ep_func = dw_pcie_ep_get_func_from_ep(ep, 0);
-+	if (!ep_func)
-+		return;
-+
- 	for (bar = BAR_0; bar <= BAR_5; bar++)
- 		dw_pcie_ep_reset_bar(pci, bar);
-+
-+	pcie->ls_epc->msi_capable = ep_func->msi_cap ? true : false;
-+	pcie->ls_epc->msix_capable = ep_func->msix_cap ? true : false;
- }
- 
- static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
-@@ -119,6 +125,7 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
- 	struct device *dev = &pdev->dev;
- 	struct dw_pcie *pci;
- 	struct ls_pcie_ep *pcie;
-+	struct pci_epc_features *ls_epc;
- 	struct resource *dbi_base;
- 	int ret;
- 
-@@ -130,6 +137,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
- 	if (!pci)
- 		return -ENOMEM;
- 
-+	ls_epc = devm_kzalloc(dev, sizeof(*ls_epc), GFP_KERNEL);
-+	if (!ls_epc)
-+		return -ENOMEM;
-+
- 	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
- 	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
- 	if (IS_ERR(pci->dbi_base))
-@@ -140,6 +151,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
- 	pci->ops = &ls_pcie_ep_ops;
- 	pcie->pci = pci;
- 
-+	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
-+
-+	pcie->ls_epc = ls_epc;
-+
- 	platform_set_drvdata(pdev, pcie);
- 
- 	ret = ls_add_pcie_ep(pcie, pdev);
+@@ -79,7 +79,8 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+ 	case PCI_EPC_IRQ_MSI:
+ 		return dw_pcie_ep_raise_msi_irq(ep, func_no, interrupt_num);
+ 	case PCI_EPC_IRQ_MSIX:
+-		return dw_pcie_ep_raise_msix_irq(ep, func_no, interrupt_num);
++		return dw_pcie_ep_raise_msix_irq_doorbell(ep, func_no,
++							  interrupt_num);
+ 	default:
+ 		dev_err(pci->dev, "UNKNOWN IRQ type\n");
+ 		return -EINVAL;
 -- 
 2.9.5
 
