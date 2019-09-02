@@ -2,76 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D9D91A5A24
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 17:05:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93430A5A2A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 17:07:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6UoSt6hFVT/CTakaEHyX7PHsxdENCbyN//6OYDx4V3w=; b=V/XAbMVN7t8bnp
-	EbEw/4SgkC1eGfDxZTdN7rMzuJ+YcJbNhjRo4L+o54ZYtsuAozYQvg/+4buKbPSl6oB0v9U7FScCI
-	5nJWObGTlhSy73qUiBniMeKBlPzgotWiazVN/h0DAnth56+rv9DLzkkTWwBByiidsTOhqA6PJSLuC
-	ex2ole010lC3Jqv6p/Hg64L0RPnQNqSPegJDhpR2JT4mPel/gcn2gMqrS+YXPHy4JCjoir9aF7s6d
-	rDyZiOJ+bxfbfUrZxG4uO7KtF5/FQ71i/cWpJEVNzssrHBvACgGID1+xmPNh8G0k3O8gp11I5+1o2
-	/a66nprjhJnPxT8eC4Eg==;
+	List-Owner; bh=LYKERZe/cxTxcAy91fmx5CBHyaDaHE2sIyvOE8NMsyk=; b=X+WBBOKGIeLBTg
+	fJzao9uoOSFofoTpWS4NpDu+JuDnbNb9krFwNyj/p4XdqJ9M5s62KNPePDpKxSG2gQiVXZHhzIgaZ
+	hkYVhCDp0Z0iYNgbCHAtn2oy206BHzK5VLpyrQrZuMrlvyZcxkX8qFfvFkpIduTGVsNSOhquwV8W8
+	u18bgpBCzpt7EHh+p2XwcHwwmty01QoiKaxPAld609d2oxlqXGXejXFrgtpSlKy9x+U/hui2c4GNs
+	nzVyuBXIDK0/L0q1oyxj9fEn986epO1HDcy6PhmFEtzdgfTP5o6ixknwK0VjCt3GH0fJk1PB4d4wX
+	k+i3idU20ugIDWuVvT6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4ntT-0007E6-Kk; Mon, 02 Sep 2019 15:05:23 +0000
-Received: from mo6-p01-ob.smtp.rzone.de ([2a01:238:20a:202:5301::9])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4ntI-0007C1-OR
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 15:05:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1567436707;
- s=strato-dkim-0002; d=gerhold.net;
- h=In-Reply-To:References:Message-ID:Subject:Cc:To:From:Date:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=OylVPWNT4QCeYh4e0/iiWwhfYQsrXrzamjILi7qcFfE=;
- b=qUnvt/N54E0kxwm51vBsZQ/H0GBjLUrWXijVoUSjfpBCUEhPiC/CBMKhcA21FHTxSX
- fw/LQc5vUNNFCq7q118DmIgKloMZ7/C4eBSLMV9sfqh0PfrMt1UIKmnSMUHleXwr+bQa
- mE3q65UUusvBvfIgJt8pX85u79FIsCdZF4ICw1WJtftr1XnuGCjPpylH39XbWiRDyjc5
- W3VagooYTbJzlfg06O2xA2yf3tN1BZnz/KTi0gSTa/gUQUeWiSvknd6v9+aTvcpM594o
- W7SXvAUfQdRXXB7MgAja3PqZk9au+/dq7my9++UL94q7kaGWNqAF1nLlWYlrWCc38zPk
- 9+Pg==
-X-RZG-AUTH: ":P3gBZUipdd93FF5ZZvYFPugejmSTVR2nRPhVOQ/OcYgojyw4j34+u26zEIdhPgpHQiVSwjMaBCsF"
-X-RZG-CLASS-ID: mo00
-Received: from gerhold.net by smtp.strato.de (RZmta 44.27.0 DYNA|AUTH)
- with ESMTPSA id 6021c6v82F4wQas
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Mon, 2 Sep 2019 17:04:58 +0200 (CEST)
-Date: Mon, 2 Sep 2019 17:04:51 +0200
-From: Stephan Gerhold <stephan@gerhold.net>
-To: Linus Walleij <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2] drm/mcde: Fix DSI transfers
-Message-ID: <20190902150451.GA10619@gerhold.net>
-References: <20190831075013.21993-1-linus.walleij@linaro.org>
+	id 1i4nvZ-0007Us-VH; Mon, 02 Sep 2019 15:07:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4nvQ-0007Tw-K4
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 15:07:26 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 48268344;
+ Mon,  2 Sep 2019 08:07:23 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 87AED3F59C;
+ Mon,  2 Sep 2019 08:07:22 -0700 (PDT)
+Date: Mon, 2 Sep 2019 16:07:21 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH v3 04/11] PCI: designware-ep: Modify MSI and MSIX CAP way
+ of finding
+Message-ID: <20190902150720.GO9720@e119886-lin.cambridge.arm.com>
+References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
+ <20190902031716.43195-5-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190831075013.21993-1-linus.walleij@linaro.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+In-Reply-To: <20190902031716.43195-5-xiaowei.bao@nxp.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_080513_384963_E874F902 
-X-CRM114-Status: GOOD (  21.93  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190902_080724_751162_00EEE0FA 
+X-CRM114-Status: GOOD (  27.09  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5301:0:0:9 listed in]
- [list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,160 +62,404 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kbuild test robot <lkp@intel.com>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Maarten Lankhorst <maarten.lankhorst@linux.intel.com>,
- dri-devel@lists.freedesktop.org, Sean Paul <sean@poorly.run>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.com,
+ arnd@arndb.de, devicetree@vger.kernel.org, jingoohan1@gmail.com,
+ zhiqiang.hou@nxp.com, linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, minghuan.Lian@nxp.com,
+ robh+dt@kernel.org, gregkh@linuxfoundation.org,
+ linux-arm-kernel@lists.infradead.org, gustavo.pimentel@synopsys.com,
+ leoyang.li@nxp.com, shawnguo@kernel.org, mingkai.hu@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Aug 31, 2019 at 09:50:13AM +0200, Linus Walleij wrote:
-> There were bugs in the DSI transfer (read and write) function
-> as it was only tested with displays ever needing a single byte
-> to be written. Fixed it up and tested so we can now write
-> messages of up to 16 bytes and read up to 4 bytes from the
-> display.
-> 
-> Tested with a Sony ACX424AKP display: this display now self-
-> identifies and can control backlight in command mode.
-> 
-> Cc: Stephan Gerhold <stephan@gerhold.net>
-> Reported-by: kbuild test robot <lkp@intel.com>
-> Fixes: 5fc537bfd000 ("drm/mcde: Add new driver for ST-Ericsson MCDE")
-> Signed-off-by: Linus Walleij <linus.walleij@linaro.org>
-> ---
-> ChangeLog v1->v2:
-> - Fix a print modifier for dev_err() found by the build robot.
-> ---
->  drivers/gpu/drm/mcde/mcde_dsi.c | 70 ++++++++++++++++++++++-----------
->  1 file changed, 47 insertions(+), 23 deletions(-)
-> 
-> diff --git a/drivers/gpu/drm/mcde/mcde_dsi.c b/drivers/gpu/drm/mcde/mcde_dsi.c
-> index 07f7090d08b3..90659d190d78 100644
-> --- a/drivers/gpu/drm/mcde/mcde_dsi.c
-> +++ b/drivers/gpu/drm/mcde/mcde_dsi.c
-> @@ -178,22 +178,26 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
->  	const u32 loop_delay_us = 10; /* us */
->  	const u8 *tx = msg->tx_buf;
->  	u32 loop_counter;
-> -	size_t txlen;
-> +	size_t txlen = msg->tx_len;
-> +	size_t rxlen = msg->rx_len;
->  	u32 val;
->  	int ret;
->  	int i;
->  
-> -	txlen = msg->tx_len;
-> -	if (txlen > 12) {
-> +	if (txlen > 16) {
->  		dev_err(d->dev,
-> -			"dunno how to write more than 12 bytes yet\n");
-> +			"dunno how to write more than 16 bytes yet\n");
-> +		return -EIO;
-> +	}
-> +	if (rxlen > 4) {
-> +		dev_err(d->dev,
-> +			"dunno how to read more than 4 bytes yet\n");
->  		return -EIO;
->  	}
->  
->  	dev_dbg(d->dev,
-> -		"message to channel %d, %zd bytes",
-> -		msg->channel,
-> -		txlen);
-> +		"message to channel %d, write %zd bytes read %zd bytes\n",
-> +		msg->channel, txlen, rxlen);
->  
->  	/* Command "nature" */
->  	if (MCDE_DSI_HOST_IS_READ(msg->type))
-> @@ -210,9 +214,7 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
->  	if (mipi_dsi_packet_format_is_long(msg->type))
->  		val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LONGNOTSHORT;
->  	val |= 0 << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_ID_SHIFT;
-> -	/* Add one to the length for the MIPI DCS command */
-> -	val |= txlen
-> -		<< DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT;
-> +	val |= txlen << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_SIZE_SHIFT;
->  	val |= DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_LP_EN;
->  	val |= msg->type << DSI_DIRECT_CMD_MAIN_SETTINGS_CMD_HEAD_SHIFT;
->  	writel(val, d->regs + DSI_DIRECT_CMD_MAIN_SETTINGS);
-> @@ -249,17 +251,36 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
->  	writel(1, d->regs + DSI_DIRECT_CMD_SEND);
->  
->  	loop_counter = 1000 * 1000 / loop_delay_us;
-> -	while (!(readl(d->regs + DSI_DIRECT_CMD_STS) &
-> -		 DSI_DIRECT_CMD_STS_WRITE_COMPLETED)
-> -	       && --loop_counter)
-> -		usleep_range(loop_delay_us, (loop_delay_us * 3) / 2);
-> -
-> -	if (!loop_counter) {
-> -		dev_err(d->dev, "DSI write timeout!\n");
-> -		return -ETIME;
-> +	if (MCDE_DSI_HOST_IS_READ(msg->type)) {
-> +		/* Read command */
-> +		while (!(readl(d->regs + DSI_DIRECT_CMD_STS) &
-> +			 (DSI_DIRECT_CMD_STS_READ_COMPLETED |
-> +			  DSI_DIRECT_CMD_STS_READ_COMPLETED_WITH_ERR))
-> +		       && --loop_counter)
-> +			usleep_range(loop_delay_us, (loop_delay_us * 3) / 2);
-> +		if (!loop_counter) {
-> +			dev_err(d->dev, "DSI write timeout!\n");
+On Mon, Sep 02, 2019 at 11:17:09AM +0800, Xiaowei Bao wrote:
+> Each PF of EP device should have it's own MSI or MSIX capabitily
+> struct, so create a dw_pcie_ep_func struct and remover the msi_cap
 
-"DSI read timeout!" might be more apppropriate here?
+remover?
 
-> +			return -ETIME;
-> +		}
-> +	} else {
-> +		/* Writing only */
-> +		while (!(readl(d->regs + DSI_DIRECT_CMD_STS) &
-> +			 DSI_DIRECT_CMD_STS_WRITE_COMPLETED)
-> +		       && --loop_counter)
-> +			usleep_range(loop_delay_us, (loop_delay_us * 3) / 2);
+> and msix_cap to this struce, and manage the PFs with a list.
+
+struce?
+
+> 
+> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
+> ---
+> v1:
+>  - This is a new patch, to fix the issue of MSI and MSIX CAP way of
+>    finding.
+> v2:
+>  - No change.
+> v3:
+>  - No change.
+
+This makes it look like you introduced the patch in v1 and haven't
+changed it since.
+
+I think it's more common to have a history like this:
+
+---
+v3:
+ - Introduced new patch, to fix the issue of MSI and MSIX CAP way of
+   finding.
+
+
+> 
+>  drivers/pci/controller/dwc/pcie-designware-ep.c | 135 +++++++++++++++++++++---
+>  drivers/pci/controller/dwc/pcie-designware.h    |  18 +++-
+>  2 files changed, 134 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pcie-designware-ep.c b/drivers/pci/controller/dwc/pcie-designware-ep.c
+> index c3bc7bd..144eb12 100644
+> --- a/drivers/pci/controller/dwc/pcie-designware-ep.c
+> +++ b/drivers/pci/controller/dwc/pcie-designware-ep.c
+> @@ -19,6 +19,19 @@ void dw_pcie_ep_linkup(struct dw_pcie_ep *ep)
+>  	pci_epc_linkup(epc);
+>  }
+>  
+> +struct dw_pcie_ep_func *
+> +dw_pcie_ep_get_func_from_ep(struct dw_pcie_ep *ep, u8 func_no)
+> +{
+> +	struct dw_pcie_ep_func *ep_func;
 > +
-> +		if (!loop_counter) {
-> +			dev_err(d->dev, "DSI write timeout!\n");
-> +			return -ETIME;
-> +		}
->  	}
->  
->  	val = readl(d->regs + DSI_DIRECT_CMD_STS);
-> +	if (val & DSI_DIRECT_CMD_STS_READ_COMPLETED_WITH_ERR) {
-> +		dev_err(d->dev, "read completed with error\n");
-> +		writel(1, d->regs + DSI_DIRECT_CMD_RD_INIT);
-> +		return -EIO;
+> +	list_for_each_entry(ep_func, &ep->func_list, list) {
+> +		if (ep_func->func_no == func_no)
+> +			return ep_func;
 > +	}
->  	if (val & DSI_DIRECT_CMD_STS_ACKNOWLEDGE_WITH_ERR_RECEIVED) {
->  		val >>= DSI_DIRECT_CMD_STS_ACK_VAL_SHIFT;
->  		dev_err(d->dev, "error during transmission: %04x\n",
-> @@ -269,10 +290,7 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
+> +
+> +	return NULL;
+> +}
+> +
+>  static unsigned int dw_pcie_ep_func_select(struct dw_pcie_ep *ep, u8 func_no)
+>  {
+>  	unsigned int func_offset = 0;
+> @@ -59,6 +72,47 @@ void dw_pcie_ep_reset_bar(struct dw_pcie *pci, enum pci_barno bar)
+>  		__dw_pcie_ep_reset_bar(pci, func_no, bar, 0);
+>  }
 >  
->  	if (!MCDE_DSI_HOST_IS_READ(msg->type)) {
->  		/* Return number of bytes written */
-> -		if (mipi_dsi_packet_format_is_long(msg->type))
-> -			ret = 4 + txlen;
-> -		else
-> -			ret = 4;
-> +		ret = txlen;
+> +static u8 __dw_pcie_ep_find_next_cap(struct dw_pcie_ep *ep, u8 func_no,
+> +		u8 cap_ptr, u8 cap)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	unsigned int func_offset = 0;
+> +	u8 cap_id, next_cap_ptr;
+> +	u16 reg;
+> +
+> +	if (!cap_ptr)
+> +		return 0;
+> +
+> +	func_offset = dw_pcie_ep_func_select(ep, func_no);
+> +
+> +	reg = dw_pcie_readw_dbi(pci, func_offset + cap_ptr);
+> +	cap_id = (reg & 0x00ff);
+> +
+> +	if (cap_id > PCI_CAP_ID_MAX)
+> +		return 0;
+> +
+> +	if (cap_id == cap)
+> +		return cap_ptr;
+> +
+> +	next_cap_ptr = (reg & 0xff00) >> 8;
+> +	return __dw_pcie_ep_find_next_cap(ep, func_no, next_cap_ptr, cap);
+> +}
+
+Which tree have you based this patchset on? v5.3-rc3 and pci/dwc both already
+have this function (without the func_no). See beb4641a787d
+("PCI: dwc: Add MSI-X callbacks handler").
+
+> +
+> +static u8 dw_pcie_ep_find_capability(struct dw_pcie_ep *ep, u8 func_no, u8 cap)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	unsigned int func_offset = 0;
+> +	u8 next_cap_ptr;
+> +	u16 reg;
+> +
+> +	func_offset = dw_pcie_ep_func_select(ep, func_no);
+> +
+> +	reg = dw_pcie_readw_dbi(pci, func_offset + PCI_CAPABILITY_LIST);
+> +	next_cap_ptr = (reg & 0x00ff);
+> +
+> +	return __dw_pcie_ep_find_next_cap(ep, func_no, next_cap_ptr, cap);
+> +}
+> +
+>  static int dw_pcie_ep_write_header(struct pci_epc *epc, u8 func_no,
+>  				   struct pci_epf_header *hdr)
+>  {
+> @@ -246,13 +300,18 @@ static int dw_pcie_ep_get_msi(struct pci_epc *epc, u8 func_no)
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+>  	u32 val, reg;
+>  	unsigned int func_offset = 0;
+> +	struct dw_pcie_ep_func *ep_func;
+>  
+> -	if (!ep->msi_cap)
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+> +
+> +	if (!ep_func->msi_cap)
+>  		return -EINVAL;
+>  
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+> -	reg = ep->msi_cap + func_offset + PCI_MSI_FLAGS;
+> +	reg = ep_func->msi_cap + func_offset + PCI_MSI_FLAGS;
+>  	val = dw_pcie_readw_dbi(pci, reg);
+>  	if (!(val & PCI_MSI_FLAGS_ENABLE))
+>  		return -EINVAL;
+> @@ -268,13 +327,18 @@ static int dw_pcie_ep_set_msi(struct pci_epc *epc, u8 func_no, u8 interrupts)
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+>  	u32 val, reg;
+>  	unsigned int func_offset = 0;
+> +	struct dw_pcie_ep_func *ep_func;
+> +
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+>  
+> -	if (!ep->msi_cap)
+> +	if (!ep_func->msi_cap)
+>  		return -EINVAL;
+>  
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+> -	reg = ep->msi_cap + func_offset + PCI_MSI_FLAGS;
+> +	reg = ep_func->msi_cap + func_offset + PCI_MSI_FLAGS;
+>  	val = dw_pcie_readw_dbi(pci, reg);
+>  	val &= ~PCI_MSI_FLAGS_QMASK;
+>  	val |= (interrupts << 1) & PCI_MSI_FLAGS_QMASK;
+> @@ -291,13 +355,18 @@ static int dw_pcie_ep_get_msix(struct pci_epc *epc, u8 func_no)
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+>  	u32 val, reg;
+>  	unsigned int func_offset = 0;
+> +	struct dw_pcie_ep_func *ep_func;
+> +
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+>  
+> -	if (!ep->msix_cap)
+> +	if (!ep_func->msix_cap)
+>  		return -EINVAL;
+>  
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+> -	reg = ep->msix_cap + func_offset + PCI_MSIX_FLAGS;
+> +	reg = ep_func->msix_cap + func_offset + PCI_MSIX_FLAGS;
+>  	val = dw_pcie_readw_dbi(pci, reg);
+>  	if (!(val & PCI_MSIX_FLAGS_ENABLE))
+>  		return -EINVAL;
+> @@ -313,13 +382,18 @@ static int dw_pcie_ep_set_msix(struct pci_epc *epc, u8 func_no, u16 interrupts)
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+>  	u32 val, reg;
+>  	unsigned int func_offset = 0;
+> +	struct dw_pcie_ep_func *ep_func;
+>  
+> -	if (!ep->msix_cap)
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+> +
+> +	if (!ep_func->msix_cap)
+>  		return -EINVAL;
+>  
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+> -	reg = ep->msix_cap + func_offset + PCI_MSIX_FLAGS;
+> +	reg = ep_func->msix_cap + func_offset + PCI_MSIX_FLAGS;
+>  	val = dw_pcie_readw_dbi(pci, reg);
+>  	val &= ~PCI_MSIX_FLAGS_QSIZE;
+>  	val |= interrupts;
+> @@ -404,6 +478,7 @@ int dw_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  			     u8 interrupt_num)
+>  {
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	struct dw_pcie_ep_func *ep_func;
+>  	struct pci_epc *epc = ep->epc;
+>  	unsigned int aligned_offset;
+>  	unsigned int func_offset = 0;
+> @@ -413,25 +488,29 @@ int dw_pcie_ep_raise_msi_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  	bool has_upper;
+>  	int ret;
+>  
+> -	if (!ep->msi_cap)
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+> +
+> +	if (!ep_func->msi_cap)
+>  		return -EINVAL;
+>  
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+>  	/* Raise MSI per the PCI Local Bus Specification Revision 3.0, 6.8.1. */
+> -	reg = ep->msi_cap + func_offset + PCI_MSI_FLAGS;
+> +	reg = ep_func->msi_cap + func_offset + PCI_MSI_FLAGS;
+>  	msg_ctrl = dw_pcie_readw_dbi(pci, reg);
+>  	has_upper = !!(msg_ctrl & PCI_MSI_FLAGS_64BIT);
+> -	reg = ep->msi_cap + func_offset + PCI_MSI_ADDRESS_LO;
+> +	reg = ep_func->msi_cap + func_offset + PCI_MSI_ADDRESS_LO;
+>  	msg_addr_lower = dw_pcie_readl_dbi(pci, reg);
+>  	if (has_upper) {
+> -		reg = ep->msi_cap + func_offset + PCI_MSI_ADDRESS_HI;
+> +		reg = ep_func->msi_cap + func_offset + PCI_MSI_ADDRESS_HI;
+>  		msg_addr_upper = dw_pcie_readl_dbi(pci, reg);
+> -		reg = ep->msi_cap + func_offset + PCI_MSI_DATA_64;
+> +		reg = ep_func->msi_cap + func_offset + PCI_MSI_DATA_64;
+>  		msg_data = dw_pcie_readw_dbi(pci, reg);
 >  	} else {
->  		/* OK this is a read command, get the response */
->  		u32 rdsz;
-> @@ -282,7 +300,13 @@ static ssize_t mcde_dsi_host_transfer(struct mipi_dsi_host *host,
->  		rdsz = readl(d->regs + DSI_DIRECT_CMD_RD_PROPERTY);
->  		rdsz &= DSI_DIRECT_CMD_RD_PROPERTY_RD_SIZE_MASK;
->  		rddat = readl(d->regs + DSI_DIRECT_CMD_RDDAT);
-> -		for (i = 0; i < 4 && i < rdsz; i++)
-> +		if (rdsz < rxlen) {
-> +			dev_err(d->dev, "read error, requested %zd got %d\n",
-> +				msg->rx_len, rdsz);
+>  		msg_addr_upper = 0;
+> -		reg = ep->msi_cap + func_offset + PCI_MSI_DATA_32;
+> +		reg = ep_func->msi_cap + func_offset + PCI_MSI_DATA_32;
+>  		msg_data = dw_pcie_readw_dbi(pci, reg);
+>  	}
+>  	aligned_offset = msg_addr_lower & (epc->mem->page_size - 1);
+> @@ -467,6 +546,7 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  			      u16 interrupt_num)
+>  {
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	struct dw_pcie_ep_func *ep_func;
+>  	struct pci_epc *epc = ep->epc;
+>  	u16 tbl_offset, bir;
+>  	unsigned int func_offset = 0;
+> @@ -477,9 +557,16 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  	void __iomem *msix_tbl;
+>  	int ret;
+>  
+> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, func_no);
+> +	if (!ep_func)
+> +		return -EINVAL;
+> +
+> +	if (!ep_func->msix_cap)
+> +		return -EINVAL;
+> +
+>  	func_offset = dw_pcie_ep_func_select(ep, func_no);
+>  
+> -	reg = ep->msix_cap + func_offset + PCI_MSIX_TABLE;
+> +	reg = ep_func->msix_cap + func_offset + PCI_MSIX_TABLE;
+>  	tbl_offset = dw_pcie_readl_dbi(pci, reg);
+>  	bir = (tbl_offset & PCI_MSIX_TABLE_BIR);
+>  	tbl_offset &= PCI_MSIX_TABLE_OFFSET;
+> @@ -558,6 +645,7 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
+>  	int i;
+>  	int ret;
+>  	u32 reg;
+> +	u8 func_no;
+>  	void *addr;
+>  	unsigned int nbars;
+>  	unsigned int offset;
+> @@ -565,6 +653,9 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
+>  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+>  	struct device *dev = pci->dev;
+>  	struct device_node *np = dev->of_node;
+> +	struct dw_pcie_ep_func *ep_func;
+> +
+> +	INIT_LIST_HEAD(&ep->func_list);
+>  
+>  	if (!pci->dbi_base || !pci->dbi_base2) {
+>  		dev_err(dev, "dbi_base/dbi_base2 is not populated\n");
+> @@ -624,9 +715,19 @@ int dw_pcie_ep_init(struct dw_pcie_ep *ep)
+>  	if (ret < 0)
+>  		epc->max_functions = 1;
+>  
+> -	ep->msi_cap = dw_pcie_find_capability(pci, PCI_CAP_ID_MSI);
+> +	for (func_no = 0; func_no < epc->max_functions; func_no++) {
+> +		ep_func = devm_kzalloc(dev, sizeof(*ep_func), GFP_KERNEL);
+> +		if (!ep_func)
+> +			return -ENOMEM;
+>  
+> -	ep->msix_cap = dw_pcie_find_capability(pci, PCI_CAP_ID_MSIX);
+> +		ep_func->func_no = func_no;
+> +		ep_func->msi_cap = dw_pcie_ep_find_capability(ep, func_no,
+> +							      PCI_CAP_ID_MSI);
+> +		ep_func->msix_cap = dw_pcie_ep_find_capability(ep, func_no,
+> +							       PCI_CAP_ID_MSIX);
+> +
+> +		list_add_tail(&ep_func->list, &ep->func_list);
+> +	}
 
-Using rxlen instead of msg->rx_len would be more consistent
-with the if condition.
+Whilst your patch addresses the issue of giving each function the ability to
+have differing capabilities - I feel that this solution doesn't go deep enough.
 
-These are just minor nitpicks, so with or without changes:
-Reviewed-by: Stephan Gerhold <stephan@gerhold.net>
+In my view the root issue here is that 'struct dw_pcie_ep' represents both a
+EP controller and a *single* EP function. I think that there should be a
+representation for an EP controller and a representation for a EP function
+(i.e. some separation). Thus allowing one EP controller to have many EP
+functions. This isn't too dissimilar to host bridges and their functions.
+Others here may have different views.
+
+It may be unlikely now, but EP functions belonging to the same bit of IP may
+have differing functionality - your approach addresses that for MSI/MSI
+capabilities, but what about other differences?
+
+(It would be really nice as well if an EP controller could provide config
+read/write ops such that existing functions in the core such as
+__pci_find_next_capability could be reused - instead of copying them
+like dw_pcie_ep_find_capability. However I don't think this is feasible.)
+
+Thanks,
+
+Andrew Murray
+
+>  
+>  	if (ep->ops->ep_init)
+>  		ep->ops->ep_init(ep);
+> diff --git a/drivers/pci/controller/dwc/pcie-designware.h b/drivers/pci/controller/dwc/pcie-designware.h
+> index 56789be..a57743c 100644
+> --- a/drivers/pci/controller/dwc/pcie-designware.h
+> +++ b/drivers/pci/controller/dwc/pcie-designware.h
+> @@ -221,8 +221,16 @@ struct dw_pcie_ep_ops {
+>  	unsigned int (*func_conf_select)(struct dw_pcie_ep *ep, u8 func_no);
+>  };
+>  
+> +struct dw_pcie_ep_func {
+> +	struct list_head	list;
+> +	u8			func_no;
+> +	u8			msi_cap;	/* MSI capability offset */
+> +	u8			msix_cap;	/* MSI-X capability offset */
+> +};
+> +
+>  struct dw_pcie_ep {
+>  	struct pci_epc		*epc;
+> +	struct list_head	func_list;
+>  	const struct dw_pcie_ep_ops *ops;
+>  	phys_addr_t		phys_base;
+>  	size_t			addr_size;
+> @@ -235,8 +243,6 @@ struct dw_pcie_ep {
+>  	u32			num_ob_windows;
+>  	void __iomem		*msi_mem;
+>  	phys_addr_t		msi_mem_phys;
+> -	u8			msi_cap;	/* MSI capability offset */
+> -	u8			msix_cap;	/* MSI-X capability offset */
+>  };
+>  
+>  struct dw_pcie_ops {
+> @@ -425,6 +431,8 @@ int dw_pcie_ep_raise_msix_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  int dw_pcie_ep_raise_msix_irq_doorbell(struct dw_pcie_ep *ep, u8 func_no,
+>  				       u16 interrupt_num);
+>  void dw_pcie_ep_reset_bar(struct dw_pcie *pci, enum pci_barno bar);
+> +struct dw_pcie_ep_func *
+> +dw_pcie_ep_get_func_from_ep(struct dw_pcie_ep *ep, u8 func_no);
+>  #else
+>  static inline void dw_pcie_ep_linkup(struct dw_pcie_ep *ep)
+>  {
+> @@ -466,5 +474,11 @@ static inline int dw_pcie_ep_raise_msix_irq_doorbell(struct dw_pcie_ep *ep,
+>  static inline void dw_pcie_ep_reset_bar(struct dw_pcie *pci, enum pci_barno bar)
+>  {
+>  }
+> +
+> +struct dw_pcie_ep_func *
+> +dw_pcie_ep_get_func_from_ep(struct dw_pcie_ep *ep, u8 func_no)
+> +{
+> +	return NULL;
+> +}
+>  #endif
+>  #endif /* _PCIE_DESIGNWARE_H */
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
