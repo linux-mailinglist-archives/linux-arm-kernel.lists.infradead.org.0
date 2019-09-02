@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D193FA50F5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:11:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5EC82A50F2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:11:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NKrcozF8m7mEvWGiGU4IstMPkJsO6xElyS1BvOyTkS0=; b=DeQmzG39JaQFgFF+s2uuVnHaW+
-	lQ1q/XjeNmNGAs7h6N/ZU/obE5mzy6keIYTIEdvslz7jj1xSNfY9LrcBx56BhR/4GMit/9ZVEd1s+
-	BYMEUqlgf51ygU3BxLhYPFKl6vGCVi2pRu+LnReRr+vHxl3ESuIixLBY97TP4EEjII6qa++NeSekG
-	IARm/ae3Sgb8m1wDYGK1fg9qcibLOhkaAMUKG3ka2tFKoH4G5J9enhtHh8kJQB6mBBNnwRjb3f7k5
-	+6MRg521yBwOYJFWUqmfEadfiA2OF11Iekw7C57XgjWo51sfai/I+79JTAnCorQrfbYhStXKpFtnu
-	0LgMM36g==;
+	bh=ieU2v0HHE21HMmAauSsfFZ+/G1t+nAKV+Hi85xxthfQ=; b=pCLfWvHC0ipULil4/tMKrIKwiK
+	kDEcezuqTBVQPNVpJT0zQJAJTnfsVTIiBFOOxYB4Xm9xiGy74y9xcMoZoKwk1uVGK710NdXMz6ktW
+	OeNRrJMV3gVrT4q1KZ1eb7430Fj5ClbKsqhBoK7YzeSPbijk1BxXKnSzsX7Az/KNm0Dw9xQjJimFM
+	mgV2qzflnWgs38KxFVRbUdsl8JTU3VoeGZR/+645wO2zwNjOAM0gjrs4JYeZZXi5k6ZSOQuhgWoMD
+	aAw1QkrtyX54wfrF2Oy739U5H5eRo5JhWfwcOafBOEY35vYNLw2dZiPC0n02NE9X5bkgg0fQkqalK
+	pMlrHW4A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4hRH-00022f-F6; Mon, 02 Sep 2019 08:11:51 +0000
+	id 1i4hQy-0001ok-L5; Mon, 02 Sep 2019 08:11:32 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hPM-0008CF-Cp
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:09:57 +0000
+ id 1i4hPM-0008CC-Cb
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:09:55 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 92267C0436;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id AED08C0438;
  Mon,  2 Sep 2019 08:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567411337; bh=hu2YS9Oelxiw/a+6Er0HIzbWLUC4uM2NmfdyKKUqwaM=;
+ t=1567411337; bh=/MasdnODAJKEeH9TitBj6mYJC/lGR8OKb/0AXAK0+ss=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=I8ouv+mMCRWZAQd34jWVMzGjI/8dCLtZ2dVxeY68H28QJhSkoFzUqmw4WyG+DX0XE
- 73T2ewRC4OIJZ7jb7uu1ZxW2Og5uOZ7R5pLlpQTAlf4JFBh1bddd87r7pgBqxNIoCB
- ASbjH5Qt+MO7Yo8s+oyGenDLrt/nJc4l0AbJpebhjYsSquWcoC573ZuPvDb6nnEnkj
- +Ri49e7l0UVEzEAHZbC4eiU4I0Thq19+yo1awMzvrgkh/sDqMA+sQ6dOosZxBWcQ4j
- US7e9AGRHZ4LlZaj3oL3vkGhio5clqCIyf+dUaxhbD7WXLOvyURyh5kYXn4Flo+FXo
- 7hICYkWN1y1sQ==
+ b=YUT83e9PcMthqHTF3hahkdErxCAMXoCE0ZDhtMpc186kRRBCay/6Ea3Dxo7JsEOGu
+ qFfUiS5ZToKJ+Fox6+bg1IEjaDPgOjlqd4Lm2rt81kC2+emY+a5u3xfZJNwcyEGOdA
+ 4BwA1TjGOeIRCIYuXSnr9rhG74GfVJluss16COhgWzAXIZJydhZGwlROs+OK0l7IW7
+ vCT1i8ycy4lAPDDWwgH1tc9aJURpsIR4mfBTY8KxbbAB+3gVu3EpeantFP/aWnkd27
+ R54D8mO/+gpnAOmCdkYr1A2Q1ZzUcCOQ3oh7aEnTwHkQhxDh2EQCGeMd/pL7euE5By
+ ZBUnz6o4PsNng==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 546A1A0072;
+ by mailhost.synopsys.com (Postfix) with ESMTP id 73665A0078;
  Mon,  2 Sep 2019 08:02:15 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 05/13] net: stmmac: selftests: Add selftest for L3/L4
- Filters
-Date: Mon,  2 Sep 2019 10:01:47 +0200
-Message-Id: <f2b536e9370a448a40fc411712e717d4c605a3f5.1567410970.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 07/13] net: stmmac: selftests: Implement the ARP
+ Offload test
+Date: Mon,  2 Sep 2019 10:01:49 +0200
+Message-Id: <dadd04bc5a62a1467a60f33ac6369159f5528fd5.1567410970.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_010952_481395_8988E792 
-X-CRM114-Status: GOOD (  15.36  )
+X-CRM114-CacheID: sfid-20190902_010952_485536_9F75B4F6 
+X-CRM114-Status: GOOD (  13.89  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,7 +96,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Adds the selftests for L3 and L4 filters with DA/SA/DP/SP support.
+Implement a test for ARP Offload feature.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -111,285 +111,141 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 254 ++++++++++++++++++++-
- 1 file changed, 253 insertions(+), 1 deletion(-)
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 110 +++++++++++++++++++++
+ 1 file changed, 110 insertions(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index d3234338a0ca..8e9d0aeda817 100644
+index 8e9d0aeda817..f531dbe038df 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -164,7 +164,7 @@ static struct sk_buff *stmmac_test_get_udp_skb(struct stmmac_priv *priv,
- 		iplen += sizeof(*uhdr);
- 	ihdr->tot_len = htons(iplen);
- 	ihdr->frag_off = 0;
--	ihdr->saddr = 0;
-+	ihdr->saddr = htonl(attr->ip_src);
- 	ihdr->daddr = htonl(attr->ip_dst);
- 	ihdr->tos = 0;
- 	ihdr->id = 0;
-@@ -1168,6 +1168,234 @@ static int stmmac_test_svlanoff(struct stmmac_priv *priv)
- 	return stmmac_test_vlanoff_common(priv, true);
+@@ -196,6 +196,24 @@ static struct sk_buff *stmmac_test_get_udp_skb(struct stmmac_priv *priv,
+ 	return skb;
  }
  
-+#ifdef CONFIG_NET_CLS_ACT
-+static int __stmmac_test_l3filt(struct stmmac_priv *priv, u32 dst, u32 src,
-+				u32 dst_mask, u32 src_mask)
++static struct sk_buff *stmmac_test_get_arp_skb(struct stmmac_priv *priv,
++					       struct stmmac_packet_attrs *attr)
 +{
-+	struct flow_dissector_key_ipv4_addrs key, mask;
-+	unsigned long dummy_cookie = 0xdeadbeef;
-+	struct flow_dissector dissector = { };
++	__be32 ip_src = htonl(attr->ip_src);
++	__be32 ip_dst = htonl(attr->ip_dst);
++	struct sk_buff *skb = NULL;
++
++	skb = arp_create(ARPOP_REQUEST, ETH_P_ARP, ip_dst, priv->dev, ip_src,
++			 NULL, attr->src, attr->dst);
++	if (!skb)
++		return NULL;
++
++	skb->pkt_type = PACKET_HOST;
++	skb->dev = priv->dev;
++
++	return skb;
++}
++
+ struct stmmac_test_priv {
+ 	struct stmmac_packet_attrs *packet;
+ 	struct packet_type pt;
+@@ -1396,6 +1414,94 @@ static int stmmac_test_l4filt_sa_udp(struct stmmac_priv *priv)
+ 	return __stmmac_test_l4filt(priv, 0, dummy_port, 0, ~0, true);
+ }
+ 
++static int stmmac_test_arp_validate(struct sk_buff *skb,
++				    struct net_device *ndev,
++				    struct packet_type *pt,
++				    struct net_device *orig_ndev)
++{
++	struct stmmac_test_priv *tpriv = pt->af_packet_priv;
++	struct ethhdr *ehdr;
++	struct arphdr *ahdr;
++
++	ehdr = (struct ethhdr *)skb_mac_header(skb);
++	if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->src))
++		goto out;
++
++	ahdr = arp_hdr(skb);
++	if (ahdr->ar_op != htons(ARPOP_REPLY))
++		goto out;
++
++	tpriv->ok = true;
++	complete(&tpriv->comp);
++out:
++	kfree_skb(skb);
++	return 0;
++}
++
++static int stmmac_test_arpoffload(struct stmmac_priv *priv)
++{
++	unsigned char src[ETH_ALEN] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06};
++	unsigned char dst[ETH_ALEN] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
 +	struct stmmac_packet_attrs attr = { };
-+	struct flow_cls_offload cls = { };
-+	struct flow_rule *rule;
++	struct stmmac_test_priv *tpriv;
++	struct sk_buff *skb = NULL;
++	u32 ip_addr = 0xdeadcafe;
++	u32 ip_src = 0xdeadbeef;
 +	int ret;
 +
-+	if (!tc_can_offload(priv->dev))
++	if (!priv->dma_cap.arpoffsel)
 +		return -EOPNOTSUPP;
-+	if (!priv->dma_cap.l3l4fnum)
-+		return -EOPNOTSUPP;
-+	if (priv->rss.enable) {
-+		struct stmmac_rss rss = { .enable = false, };
 +
-+		stmmac_rss_configure(priv, priv->hw, &rss,
-+				     priv->plat->rx_queues_to_use);
-+	}
++	tpriv = kzalloc(sizeof(*tpriv), GFP_KERNEL);
++	if (!tpriv)
++		return -ENOMEM;
 +
-+	dissector.used_keys |= (1 << FLOW_DISSECTOR_KEY_IPV4_ADDRS);
-+	dissector.offset[FLOW_DISSECTOR_KEY_IPV4_ADDRS] = 0;
++	tpriv->ok = false;
++	init_completion(&tpriv->comp);
 +
-+	cls.common.chain_index = 0;
-+	cls.command = FLOW_CLS_REPLACE;
-+	cls.cookie = dummy_cookie;
++	tpriv->pt.type = htons(ETH_P_ARP);
++	tpriv->pt.func = stmmac_test_arp_validate;
++	tpriv->pt.dev = priv->dev;
++	tpriv->pt.af_packet_priv = tpriv;
++	tpriv->packet = &attr;
++	dev_add_pack(&tpriv->pt);
 +
-+	rule = kzalloc(struct_size(rule, action.entries, 1), GFP_KERNEL);
-+	if (!rule) {
++	attr.src = src;
++	attr.ip_src = ip_src;
++	attr.dst = dst;
++	attr.ip_dst = ip_addr;
++
++	skb = stmmac_test_get_arp_skb(priv, &attr);
++	if (!skb) {
 +		ret = -ENOMEM;
-+		goto cleanup_rss;
++		goto cleanup;
 +	}
 +
-+	rule->match.dissector = &dissector;
-+	rule->match.key = (void *)&key;
-+	rule->match.mask = (void *)&mask;
-+
-+	key.src = htonl(src);
-+	key.dst = htonl(dst);
-+	mask.src = src_mask;
-+	mask.dst = dst_mask;
-+
-+	cls.rule = rule;
-+
-+	rule->action.entries[0].id = FLOW_ACTION_DROP;
-+	rule->action.num_entries = 1;
-+
-+	attr.dst = priv->dev->dev_addr;
-+	attr.ip_dst = dst;
-+	attr.ip_src = src;
-+
-+	/* Shall receive packet */
-+	ret = __stmmac_test_loopback(priv, &attr);
++	ret = stmmac_set_arp_offload(priv, priv->hw, true, ip_addr);
 +	if (ret)
-+		goto cleanup_rule;
++		goto cleanup;
 +
-+	ret = stmmac_tc_setup_cls(priv, priv, &cls);
++	ret = dev_set_promiscuity(priv->dev, 1);
 +	if (ret)
-+		goto cleanup_rule;
++		goto cleanup;
 +
-+	/* Shall NOT receive packet */
-+	ret = __stmmac_test_loopback(priv, &attr);
-+	ret = ret ? 0 : -EINVAL;
++	skb_set_queue_mapping(skb, 0);
++	ret = dev_queue_xmit(skb);
++	if (ret)
++		goto cleanup_promisc;
 +
-+	cls.command = FLOW_CLS_DESTROY;
-+	stmmac_tc_setup_cls(priv, priv, &cls);
-+cleanup_rule:
-+	kfree(rule);
-+cleanup_rss:
-+	if (priv->rss.enable) {
-+		stmmac_rss_configure(priv, priv->hw, &priv->rss,
-+				     priv->plat->rx_queues_to_use);
-+	}
++	wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
++	ret = tpriv->ok ? 0 : -ETIMEDOUT;
 +
++cleanup_promisc:
++	dev_set_promiscuity(priv->dev, -1);
++cleanup:
++	stmmac_set_arp_offload(priv, priv->hw, false, 0x0);
++	dev_remove_pack(&tpriv->pt);
++	kfree(tpriv);
 +	return ret;
-+}
-+#else
-+static int __stmmac_test_l3filt(struct stmmac_priv *priv, u32 dst, u32 src,
-+				u32 dst_mask, u32 src_mask)
-+{
-+	return -EOPNOTSUPP;
-+}
-+#endif
-+
-+static int stmmac_test_l3filt_da(struct stmmac_priv *priv)
-+{
-+	u32 addr = 0x10203040;
-+
-+	return __stmmac_test_l3filt(priv, addr, 0, ~0, 0);
-+}
-+
-+static int stmmac_test_l3filt_sa(struct stmmac_priv *priv)
-+{
-+	u32 addr = 0x10203040;
-+
-+	return __stmmac_test_l3filt(priv, 0, addr, 0, ~0);
-+}
-+
-+#ifdef CONFIG_NET_CLS_ACT
-+static int __stmmac_test_l4filt(struct stmmac_priv *priv, u32 dst, u32 src,
-+				u32 dst_mask, u32 src_mask, bool udp)
-+{
-+	struct {
-+		struct flow_dissector_key_basic bkey;
-+		struct flow_dissector_key_ports key;
-+	} __aligned(BITS_PER_LONG / 8) keys;
-+	struct {
-+		struct flow_dissector_key_basic bmask;
-+		struct flow_dissector_key_ports mask;
-+	} __aligned(BITS_PER_LONG / 8) masks;
-+	unsigned long dummy_cookie = 0xdeadbeef;
-+	struct flow_dissector dissector = { };
-+	struct stmmac_packet_attrs attr = { };
-+	struct flow_cls_offload cls = { };
-+	struct flow_rule *rule;
-+	int ret;
-+
-+	if (!tc_can_offload(priv->dev))
-+		return -EOPNOTSUPP;
-+	if (!priv->dma_cap.l3l4fnum)
-+		return -EOPNOTSUPP;
-+	if (priv->rss.enable) {
-+		struct stmmac_rss rss = { .enable = false, };
-+
-+		stmmac_rss_configure(priv, priv->hw, &rss,
-+				     priv->plat->rx_queues_to_use);
-+	}
-+
-+	dissector.used_keys |= (1 << FLOW_DISSECTOR_KEY_BASIC);
-+	dissector.used_keys |= (1 << FLOW_DISSECTOR_KEY_PORTS);
-+	dissector.offset[FLOW_DISSECTOR_KEY_BASIC] = 0;
-+	dissector.offset[FLOW_DISSECTOR_KEY_PORTS] = offsetof(typeof(keys), key);
-+
-+	cls.common.chain_index = 0;
-+	cls.command = FLOW_CLS_REPLACE;
-+	cls.cookie = dummy_cookie;
-+
-+	rule = kzalloc(struct_size(rule, action.entries, 1), GFP_KERNEL);
-+	if (!rule) {
-+		ret = -ENOMEM;
-+		goto cleanup_rss;
-+	}
-+
-+	rule->match.dissector = &dissector;
-+	rule->match.key = (void *)&keys;
-+	rule->match.mask = (void *)&masks;
-+
-+	keys.bkey.ip_proto = udp ? IPPROTO_UDP : IPPROTO_TCP;
-+	keys.key.src = htons(src);
-+	keys.key.dst = htons(dst);
-+	masks.mask.src = src_mask;
-+	masks.mask.dst = dst_mask;
-+
-+	cls.rule = rule;
-+
-+	rule->action.entries[0].id = FLOW_ACTION_DROP;
-+	rule->action.num_entries = 1;
-+
-+	attr.dst = priv->dev->dev_addr;
-+	attr.tcp = !udp;
-+	attr.sport = src;
-+	attr.dport = dst;
-+	attr.ip_dst = 0;
-+
-+	/* Shall receive packet */
-+	ret = __stmmac_test_loopback(priv, &attr);
-+	if (ret)
-+		goto cleanup_rule;
-+
-+	ret = stmmac_tc_setup_cls(priv, priv, &cls);
-+	if (ret)
-+		goto cleanup_rule;
-+
-+	/* Shall NOT receive packet */
-+	ret = __stmmac_test_loopback(priv, &attr);
-+	ret = ret ? 0 : -EINVAL;
-+
-+	cls.command = FLOW_CLS_DESTROY;
-+	stmmac_tc_setup_cls(priv, priv, &cls);
-+cleanup_rule:
-+	kfree(rule);
-+cleanup_rss:
-+	if (priv->rss.enable) {
-+		stmmac_rss_configure(priv, priv->hw, &priv->rss,
-+				     priv->plat->rx_queues_to_use);
-+	}
-+
-+	return ret;
-+}
-+#else
-+static int __stmmac_test_l4filt(struct stmmac_priv *priv, u32 dst, u32 src,
-+				u32 dst_mask, u32 src_mask, bool udp)
-+{
-+	return -EOPNOTSUPP;
-+}
-+#endif
-+
-+static int stmmac_test_l4filt_da_tcp(struct stmmac_priv *priv)
-+{
-+	u16 dummy_port = 0x123;
-+
-+	return __stmmac_test_l4filt(priv, dummy_port, 0, ~0, 0, false);
-+}
-+
-+static int stmmac_test_l4filt_sa_tcp(struct stmmac_priv *priv)
-+{
-+	u16 dummy_port = 0x123;
-+
-+	return __stmmac_test_l4filt(priv, 0, dummy_port, 0, ~0, false);
-+}
-+
-+static int stmmac_test_l4filt_da_udp(struct stmmac_priv *priv)
-+{
-+	u16 dummy_port = 0x123;
-+
-+	return __stmmac_test_l4filt(priv, dummy_port, 0, ~0, 0, true);
-+}
-+
-+static int stmmac_test_l4filt_sa_udp(struct stmmac_priv *priv)
-+{
-+	u16 dummy_port = 0x123;
-+
-+	return __stmmac_test_l4filt(priv, 0, dummy_port, 0, ~0, true);
 +}
 +
  #define STMMAC_LOOPBACK_NONE	0
  #define STMMAC_LOOPBACK_MAC	1
  #define STMMAC_LOOPBACK_PHY	2
-@@ -1253,6 +1481,30 @@ static const struct stmmac_test {
- 		.name = "SVLAN TX Insertion  ",
+@@ -1505,6 +1611,10 @@ static const struct stmmac_test {
+ 		.name = "L4 SA UDP Filtering ",
  		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_svlanoff,
+ 		.fn = stmmac_test_l4filt_sa_udp,
 +	}, {
-+		.name = "L3 DA Filtering     ",
++		.name = "ARP Offload         ",
 +		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l3filt_da,
-+	}, {
-+		.name = "L3 SA Filtering     ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l3filt_sa,
-+	}, {
-+		.name = "L4 DA TCP Filtering ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l4filt_da_tcp,
-+	}, {
-+		.name = "L4 SA TCP Filtering ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l4filt_sa_tcp,
-+	}, {
-+		.name = "L4 DA UDP Filtering ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l4filt_da_udp,
-+	}, {
-+		.name = "L4 SA UDP Filtering ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_l4filt_sa_udp,
++		.fn = stmmac_test_arpoffload,
  	},
  };
  
