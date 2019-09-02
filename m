@@ -2,47 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6315AA5467
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 12:51:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0B187A5477
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 12:53:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wl8B/iAcKXCzYTnGNnyu6pa/QsxUWoQ0fBGG9fUNgx8=; b=ZK9O8vNLfnIM0j
-	G9KuyXvRMB/FfaGNwFYJM6k/g2TVpSIGhREXtuI1m57rAnBSRA9h4Pom36E4r4GMvdtD5GzIrqURr
-	z9tjr5HArkVm3d34+dUSB8QdlIxl3atXWRbf9TCQmFakdRddSE+5kedodjXko/K4e2iUYYUiP0qIM
-	aDdeVdSYNbVT5YDwkzJdlXTICA27RuXi27nbSq3qJ2MyldJbBjCYhW6WeRrlt0sekjh6RW2HhAa3e
-	yjzbijjB6TYIiwxb9kXvCN5sMF18PybDxCP97FWyka99lzMp1W1cfE5o2H8f/ohGDRKLSr2pVC68+
-	7B1LVDZkTrghowAwOa7Q==;
+	List-Owner; bh=g3YxeAPnJFEMZLIQQc8DO6F8Iv3cU5MosqAQxTPVeAU=; b=Be27DLWjtkavzv
+	fvxfCtneDP/iQ1j5y+FqROI2Kkbt5i4knS2GqZoPkploouHg7R0ZHKaHQpUZkKi4Yd1didUiKlkYH
+	q1CJc6jfMwm701ZM0txsnX/k3TDlIy+WA7NpEz97o3LWrt1U332IhSXfRnTkxYr0g5KsNBdyO32Tn
+	AZXAHNH6lgF2/KWVf7+wLVLT3sPgx+xpgy+hAYXmolmw3Fw1euw5u1l2Z62ZEzRwiU83o9lZ2OOoI
+	lZ2xDO037hzJk20EhE5fOAJoz/P/saqqg2Ly7ZiMAofG4NBEVhSZ+875uV5IB/GhsABhSoLWYMBXX
+	1TwBqBpMw7hOOn0LEfBw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4jvV-00018B-2d; Mon, 02 Sep 2019 10:51:13 +0000
+	id 1i4jxu-0001mL-AA; Mon, 02 Sep 2019 10:53:42 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4jvH-000179-SM
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 10:51:01 +0000
+ id 1i4jxh-0001lj-60
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 10:53:30 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 2E7AF28;
- Mon,  2 Sep 2019 03:50:59 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9AA023F246;
- Mon,  2 Sep 2019 03:50:58 -0700 (PDT)
-Date: Mon, 2 Sep 2019 11:50:56 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Remi Pommarel <repk@triplefau.lt>
-Subject: Re: [PATCH] PCI: aardvark: Don't rely on jiffies while holding
- spinlock
-Message-ID: <20190902105056.GF9720@e119886-lin.cambridge.arm.com>
-References: <20190901142303.27815-1-repk@triplefau.lt>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5ACD528;
+ Mon,  2 Sep 2019 03:53:26 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C6DB3F246;
+ Mon,  2 Sep 2019 03:53:25 -0700 (PDT)
+Date: Mon, 2 Sep 2019 11:53:23 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v3 00/11] Add arm64/signal initial kselftest support
+Message-ID: <20190902105322.GL27757@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190813162254.GX10425@arm.com>
+ <b4c9cb22-6e08-8096-addb-4ac267fc0a84@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190901142303.27815-1-repk@triplefau.lt>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <b4c9cb22-6e08-8096-addb-4ac267fc0a84@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_035059_964338_6A737CD4 
-X-CRM114-Status: GOOD (  18.49  )
+X-CRM114-CacheID: sfid-20190902_035329_268145_C4C053E5 
+X-CRM114-Status: GOOD (  21.80  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,69 +62,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Bjorn Helgaas <bhelgaas@google.com>, linux-arm-kernel@lists.infradead.org
+Cc: andreyknvl@google.com, shuah@kernel.org, linux-kselftest@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 01, 2019 at 04:23:03PM +0200, Remi Pommarel wrote:
-> advk_pcie_wait_pio() can be called while holding a spinlock (from
-> pci_bus_read_config_dword()), then depends on jiffies in order to
-> timeout while polling on PIO state registers. In the case the PIO
-> transaction failed, the timeout will never happen and will also cause
-> the cpu to stall.
+On Fri, Aug 30, 2019 at 05:40:42PM +0100, Cristian Marussi wrote:
+> Hi
 > 
-> This decrements a variable and wait instead of using jiffies.
+> On 13/08/2019 17:22, Dave Martin wrote:
+> > On Fri, Aug 02, 2019 at 06:02:49PM +0100, Cristian Marussi wrote:
+> >> Hi
+> >>
+> >> this patchset aims to add the initial arch-specific arm64 support to
+> >> kselftest starting with signals-related test-cases.
+> >> A common internal test-case layout is proposed which then it is anyway
+> >> wired-up to the toplevel kselftest Makefile, so that it should be possible
+> >> at the end to run it on an arm64 target in the usual way with KSFT.
+> > 
+> > The tests look like a reasonable base overall and something that we can
+> > extend later as needed.
+> > 
+> > There are various minor things that need attention -- see my comments on
+> > the individual patches.  Apart for some things that can be factored out,
+> > I don't think any of it involves redesign.
+> > 
+> > 
+> > A few general comments:
+> > 
+> >  * Please wrap all commit messages to <= 75 chars, and follow the other
+> >    guidelines about commit messages in
+> >    Documentation/process/submitting-patches.rst).
+> > 
+> >  * Remember to run scripts/checkpatch.pl on your patches.  Currently
+> >    various issues are reported: they should mostly be trivial to fix.
+> >    checkpatch does report some false positives, but most of the warnings
+> >    I see look relevant.
+> > 
 > 
-> Signed-off-by: Remi Pommarel <repk@triplefau.lt>
+> Thanks for the review. I addressed latest issues in V4, published now.
+> 
+> I kept tests verbose (outputting to stderr) as of now.
+> Removed as a whole standalone build/run.
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+The responses look reasonable, thanks for repost.
 
-> ---
->  drivers/pci/controller/pci-aardvark.c | 10 +++++-----
->  1 file changed, 5 insertions(+), 5 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-> index fc0fe4d4de49..1fa6d04ad7aa 100644
-> --- a/drivers/pci/controller/pci-aardvark.c
-> +++ b/drivers/pci/controller/pci-aardvark.c
-> @@ -175,7 +175,8 @@
->  	(PCIE_CONF_BUS(bus) | PCIE_CONF_DEV(PCI_SLOT(devfn))	| \
->  	 PCIE_CONF_FUNC(PCI_FUNC(devfn)) | PCIE_CONF_REG(where))
->  
-> -#define PIO_TIMEOUT_MS			1
-> +#define PIO_RETRY_CNT			10
-> +#define PIO_RETRY_DELAY			100 /* 100 us*/
->  
->  #define LINK_WAIT_MAX_RETRIES		10
->  #define LINK_WAIT_USLEEP_MIN		90000
-> @@ -383,17 +384,16 @@ static void advk_pcie_check_pio_status(struct advk_pcie *pcie)
->  static int advk_pcie_wait_pio(struct advk_pcie *pcie)
->  {
->  	struct device *dev = &pcie->pdev->dev;
-> -	unsigned long timeout;
-> +	size_t i;
->  
-> -	timeout = jiffies + msecs_to_jiffies(PIO_TIMEOUT_MS);
-> -
-> -	while (time_before(jiffies, timeout)) {
-> +	for (i = 0; i < PIO_RETRY_CNT; ++i) {
->  		u32 start, isr;
->  
->  		start = advk_readl(pcie, PIO_START);
->  		isr = advk_readl(pcie, PIO_ISR);
->  		if (!start && isr)
->  			return 0;
-> +		udelay(PIO_RETRY_DELAY);
->  	}
->  
->  	dev_err(dev, "config read/write timed out\n");
-> -- 
-> 2.20.1
-> 
+I'll take a look.
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
