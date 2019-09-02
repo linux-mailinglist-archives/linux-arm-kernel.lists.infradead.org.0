@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D8E54A54FF
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 13:33:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8F716A54FE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 13:33:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0KLUoBb0ngUylUSiz2XMIEBpnEKwbtzL3DpgONopKoE=; b=u7tH8TTDPZ0xl1I8FuuMicDrX7
-	NOlHXkkuGSLr8LX/j9hOpZPKSpbxAarw9DX2EZRjQRYGOiFNA6PNEdAWiRpgxDfeY33pU+E2/4rB7
-	KjQNl4lztZ9mHilMjypuo1kH1Z/opiobyHwWPz9aQNP+Hw9yrpjgWgxYXSfz5Xs/vP3wiSrItho69
-	tD+jrrSSBgBSXYriJs/RczUBUPLdP3+X3kbbJwUEPIiQvwiSfI+XcDAck1QiljKm+LFwHa6FVz/ar
-	0eJWA9Ak6aORsDmNCNvBSNTLURB4qxGobImdvpZ8Xqk8HReiw7RmUMiO/MQlwk4hJ4CYtpfbQyy+q
-	OPzGPqfw==;
+	bh=6KmP2y23600P9j3hgDI3/11iMA2W9ieu571tT5QkYHU=; b=lw8HMx1WMWViQDXjC87Lb7Onza
+	bhhRmZJDMl8k1mrlb5CWgPxB94rpQgVcKx/1Z0HN3wW7CJ03Ew8wnr5az9qlibg9ZGaGNefOlFYdg
+	Gm6uTuvrg96vo/40izLa5ukAy+/j0OHOW0KgwPIAmjGKWWMdSJmiOyb8tQzSfkaKVX9q/YfG5KhIp
+	+vjP0GXqJvSQd8oxQeeoDnuyACHzQi1uvzQEc/rQtvGeWmA1QPv36FREMJcPXgLiHrY+XhKWB0v3v
+	r/ll28QwApyxcrsPtxokOhuBr8Xti3lnzDBc33vOq3p9m2WxS1QjAAvtrIOujF2+5r0YZiQxRjUD6
+	thf9rHuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4kaF-0008ES-7w; Mon, 02 Sep 2019 11:33:19 +0000
+	id 1i4kZz-0007qd-JM; Mon, 02 Sep 2019 11:33:03 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4kX6-0004Jh-Sv
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 11:30:06 +0000
+ id 1i4kX8-0004nJ-68
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 11:30:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AA0AB28;
- Mon,  2 Sep 2019 04:30:04 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C5DBF360;
+ Mon,  2 Sep 2019 04:30:05 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C28BC3F246;
- Mon,  2 Sep 2019 04:30:03 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id DE1CC3F246;
+ Mon,  2 Sep 2019 04:30:04 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  shuah@kernel.org
-Subject: [PATCH v5 10/11] kselftest: arm64: fake_sigreturn_bad_size
-Date: Mon,  2 Sep 2019 12:29:31 +0100
-Message-Id: <20190902112932.36129-11-cristian.marussi@arm.com>
+Subject: [PATCH v5 11/11] kselftest: arm64: fake_sigreturn_misaligned_sp
+Date: Mon,  2 Sep 2019 12:29:32 +0100
+Message-Id: <20190902112932.36129-12-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190902112932.36129-1-cristian.marussi@arm.com>
 References: <20190902112932.36129-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_043005_123436_8D5FEABE 
-X-CRM114-Status: GOOD (  13.78  )
+X-CRM114-CacheID: sfid-20190902_043006_336121_00FEF713 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,35 +68,34 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a simple fake_sigreturn testcase which builds a ucontext_t with a
-badly sized header that causes a overrun in the __reserved area and
-place it onto the stack. Expects a SIGSEGV on test PASS.
+Add a simple fake_sigreturn testcase which places a valid sigframe on a
+non-16 bytes aligned SP. Expects a SIGSEGV on test PASS.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
 v3 --> v4
 - fix commit
-- missing include
-- using new get_starting_head() helper
+- use new fake_sigreturn misalig_bytes params
+- removed TODO
 - added test description
 ---
- .../testcases/fake_sigreturn_bad_size.c       | 77 +++++++++++++++++++
- 1 file changed, 77 insertions(+)
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+ .../testcases/fake_sigreturn_misaligned_sp.c  | 37 +++++++++++++++++++
+ 1 file changed, 37 insertions(+)
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
 
-diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
 new file mode 100644
-index 000000000000..b1156afdb691
+index 000000000000..1e089e66f9f3
 --- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
-@@ -0,0 +1,77 @@
++++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+@@ -0,0 +1,37 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (C) 2019 ARM Limited
 + *
-+ * Place a fake sigframe on the stack including a bad record overflowing
-+ * the __reserved space: on sigreturn Kernel must spot this attempt and
-+ * the test case is expected to be terminated via SEGV.
++ * Place a fake sigframe on the stack at a misaligned SP: on sigreturn
++ * Kernel must spot this attempt and the test case is expected to be
++ * terminated via SEGV.
 + */
 +
 +#include <signal.h>
@@ -107,65 +106,25 @@ index 000000000000..b1156afdb691
 +
 +struct fake_sigframe sf;
 +
-+#define MIN_SZ_ALIGN	16
-+
-+static int fake_sigreturn_bad_size_run(struct tdescr *td,
-+				       siginfo_t *si, ucontext_t *uc)
++static int fake_sigreturn_misaligned_run(struct tdescr *td,
++					 siginfo_t *si, ucontext_t *uc)
 +{
-+	size_t resv_sz, need_sz, offset;
-+	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
-+
 +	/* just to fill the ucontext_t with something real */
 +	if (!get_current_context(td, &sf.uc))
 +		return 1;
 +
-+	resv_sz = GET_SF_RESV_SIZE(sf);
-+	/* at least HDR_SZ + bad sized esr_context needed */
-+	need_sz = HDR_SZ + sizeof(struct esr_context);
-+	head = get_starting_head(shead, need_sz, resv_sz, &offset);
-+	if (head) {
-+		/*
-+		 * Use an esr_context to build a fake header with a
-+		 * size greater then the free __reserved area minus HDR_SZ;
-+		 * using ESR_MAGIC here since it is not checked for size nor
-+		 * is limited to one instance.
-+		 *
-+		 * At first inject an additional normal esr_context
-+		 */
-+		head->magic = ESR_MAGIC;
-+		head->size = sizeof(struct esr_context);
-+		/* and terminate properly */
-+		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-+		ASSERT_GOOD_CONTEXT(&sf.uc);
-+
-+		/*
-+		 * now mess with fake esr_context size: leaving less space than
-+		 * needed while keeping size value 16-aligned
-+		 *
-+		 * It must trigger a SEGV from Kernel on:
-+		 *
-+		 *	resv_sz - offset < sizeof(*head)
-+		 */
-+		/* at first set the maximum good 16-aligned size */
-+		head->size =
-+			(resv_sz - offset - need_sz + MIN_SZ_ALIGN) & ~0xfUL;
-+		/* plus a bit more of 16-aligned sized stuff */
-+		head->size += MIN_SZ_ALIGN;
-+		/* and terminate properly */
-+		write_terminator_record(GET_RESV_NEXT_HEAD(head));
-+		ASSERT_BAD_CONTEXT(&sf.uc);
-+		fake_sigreturn(&sf, sizeof(sf), 0);
-+	}
++	/* Forcing sigframe on misaligned SP (16 + 3) */
++	fake_sigreturn(&sf, sizeof(sf), 3);
 +
 +	return 1;
 +}
 +
 +struct tdescr tde = {
-+		.name = "FAKE_SIGRETURN_BAD_SIZE",
-+		.descr = "Triggers a sigreturn with a overrun __reserved area",
++		.name = "FAKE_SIGRETURN_MISALIGNED_SP",
++		.descr = "Triggers a sigreturn with a misaligned sigframe",
 +		.sig_ok = SIGSEGV,
 +		.timeout = 3,
-+		.run = fake_sigreturn_bad_size_run,
++		.run = fake_sigreturn_misaligned_run,
 +};
 -- 
 2.17.1
