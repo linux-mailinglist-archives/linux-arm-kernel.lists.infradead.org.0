@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DC2CCA4D3F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 04:07:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 70B2AA4D7D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:17:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QPfAcMYecvSi92o9LfqjfoViWxHmDrNh8Ju3n7Pyidc=; b=cTacJypNPjAOsV
-	0r4TdCqv1AvKU5uWSYidpPULoyCqPay1fRRrIGGFUhyvmwjnk8zAW6A/gadxxHWGMfWBJ6vYAKRUF
-	8yxTRjB6cDnDbkOkWq5QOdkeHuMgsTIyqNYiMaj/PN6bGD+iu49QLKxoBWrIrs94fx31ZWVRN/zNz
-	AMymCYeKECeU7Nr9Ji1JgGfzPsu8Hom+EIGQF+weN3wvqQpniEGBziJlJ1Jd1ClLSHAaWOmxOVjfq
-	WCC1G2HRsdHeckVIgSG3neLWvk2fUIqRaQfElWoU9ZLShc6+1iJ90X0bhAtVcuI/LTkjQlf2xn/Wr
-	mV8zcT1IxyXoUdP+I1hw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=XfEc1wAXrffYztw/dSFqijxP66BWMaXjdfnx9m632Ho=; b=YeGO7Bk7MV+5/w
+	io1RnxyW4o7slXSzA0SRz4T6dXB6aTdZHGfxC1m4CCDSddcoQbzK6pcywuD/8j8jN5+JqR6XyTrD1
+	Y5MrdnQQAP7gnoZSOLjb0qZU8BQA90llZFaxOf1sqtwCsTWRo0l1bbJs9MDoUdAg8x0A2RK86t4+U
+	XQjS/7SN+nijQeptKPZTNGESSgoyt2NjN3RrdBdFFUQulJvGFobzvW/TLXMtftTIZxNjmiRGrHB8F
+	gEyzOmNcEzJ1fFXOhcOFiMNWFxemknw5Gbyn5mqRQ34jkul4TGkn2qQMpPl0UUUyA0L971/0dIF+T
+	ydgGHCqe4N9UweacQH6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4bkx-0004j5-1a; Mon, 02 Sep 2019 02:07:47 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1i4cpo-0000N8-H8; Mon, 02 Sep 2019 03:16:53 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4bkf-0004hI-DD
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 02:07:31 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id q9so2173244vsl.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 01 Sep 2019 19:07:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SteZi7Jc1Qj/ZWEovebsg0xMt+f3c5vmQftu053JsS8=;
- b=lPR+RAf4lLbHFKrG7BKbpxKO2o5PIV6QPEk5yeLJsGuOupELQ4EX6PQ2n7tlyefFjX
- 5TueBZwuZlQptLjVpdiWoRTQzixxBywwaHL2Q/9NxpVlWZua4yL5HvNYQaptM2F6I5gj
- urBmtznxWX5SXt9UN7RdKLsmNWsgswpCy+GTA=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=SteZi7Jc1Qj/ZWEovebsg0xMt+f3c5vmQftu053JsS8=;
- b=OgZ3CMJX/Ppo0B1N882LFQLrUVKgpZyMcjEE2X5r4AYB5bQvC7UY3YIbjcZPReK6Wk
- F4JBJE3rvbbybT4iiJDk9bfFxbD1JOUjaSlW9J0LuJWUxhPySPSpqUQ4Z7UU357F49sR
- SpeM7N+ILE/nYEQYQB8e0HgaobEcimPLjGxIaFr6gprWOSgxXnPSxJYJ5y+0BdLTnW4u
- S6UgNEqXkocfEP3AGLQxn7Ve4XrNplhDeF0XzoLYB7zbloxg/AX4BpuL6Da0WmaZiu5a
- 17MA0FBqKUMbQdclNKNyG8GMFep8u7ISqRFoyTknHALR+wq+OEl8zjiqTEtf2XhRvdYD
- OwCg==
-X-Gm-Message-State: APjAAAXQCSLIIGQwoeJ7cxYBW1oUFsSTy2bew3njLXaZl7KdopOnhL9s
- XVB6XPy8rpbAI6c2gKP5LPzENKXFzkJZNzQHBpnfLg==
-X-Google-Smtp-Source: APXvYqygVljSvGbaEG8FKuJz0otOZOZdwZTpv0TbVOTes8YfHOyxR97RLOewIUCIM3Ih7DIGVB5YrjsGpPU2Agxjvyo=
-X-Received: by 2002:a67:de08:: with SMTP id q8mr4571764vsk.119.1567390042918; 
- Sun, 01 Sep 2019 19:07:22 -0700 (PDT)
+ id 1i4cpN-0000LR-F4; Mon, 02 Sep 2019 03:16:27 +0000
+X-UUID: ca97ec4d37624cfa9f7ebe2d2014c0e8-20190901
+X-UUID: ca97ec4d37624cfa9f7ebe2d2014c0e8-20190901
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 100370282; Sun, 01 Sep 2019 19:16:15 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 1 Sep 2019 20:16:13 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ MTKMBS31DR.mediatek.inc (172.27.6.102) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 2 Sep 2019 11:16:03 +0800
+Received: from localhost.localdomain (10.17.3.153) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 2 Sep 2019 11:16:02 +0800
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Kishon Vijay Abraham I <kishon@ti.com>
+Subject: [PATCH] phy: tegra: xusb: remove unused variable
+Date: Mon, 2 Sep 2019 11:15:59 +0800
+Message-ID: <1567394159-22572-1-git-send-email-chunfeng.yun@mediatek.com>
+X-Mailer: git-send-email 1.8.1.1.dirty
 MIME-Version: 1.0
-References: <20190829042957.150929-1-cychiang@chromium.org>
- <HE1PR06MB4011FA45247F186BB83DFF04ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-In-Reply-To: <HE1PR06MB4011FA45247F186BB83DFF04ACBF0@HE1PR06MB4011.eurprd06.prod.outlook.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Mon, 2 Sep 2019 10:06:55 +0800
-Message-ID: <CAFv8NwLq-cJqj0MB=rzKuqr3g0n3Y-nHor4w8ntiFXytoHpdLw@mail.gmail.com>
-Subject: Re: [PATCH] drm: dw-hdmi-i2s: enable audio clock in audio_startup
-To: Jonas Karlman <jonas@kwiboo.se>
+X-TM-SNTS-SMTP: 307968B2416788B1B95BD1A6EE62647FF047CF3287ABB34F4FA4A9570CD3EF272000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_190729_451194_BCDF99F8 
-X-CRM114-Status: GOOD (  19.83  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190901_201625_508971_497600CF 
+X-CRM114-Status: UNSURE (   8.30  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,108 +72,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jernej Skrabec <jernej.skrabec@siol.net>,
- "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
- "tzungbi@chromium.org" <tzungbi@chromium.org>,
- "kuninori.morimoto.gx@renesas.com" <kuninori.morimoto.gx@renesas.com>,
- "zhengxing@rock-chips.com" <zhengxing@rock-chips.com>,
- "cain.cai@rock-chips.com" <cain.cai@rock-chips.com>,
- "airlied@linux.ie" <airlied@linux.ie>,
- "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
- "dianders@chromium.org" <dianders@chromium.org>,
- Neil Armstrong <narmstrong@baylibre.com>,
- "a.hajda@samsung.com" <a.hajda@samsung.com>,
- "eddie.cai@rock-chips.com" <eddie.cai@rock-chips.com>,
- "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
- "daniel@ffwll.ch" <daniel@ffwll.ch>,
- "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
- "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
- "dgreid@chromium.org" <dgreid@chromium.org>,
- "sam@ravnborg.org" <sam@ravnborg.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: JC Kuo <jckuo@nvidia.com>, linux-kernel@vger.kernel.org,
+ Jonathan Hunter <jonathanh@nvidia.com>,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-tegra@vger.kernel.org,
+ Thierry Reding <thierry.reding@gmail.com>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 1, 2019 at 6:04 PM Jonas Karlman <jonas@kwiboo.se> wrote:
->
-> On 2019-08-29 06:29, Cheng-Yi Chiang wrote:
-> > In the designware databook, the sequence of enabling audio clock and
-> > setting format is not clearly specified.
-> > Currently, audio clock is enabled in the end of hw_param ops after
-> > setting format.
-> >
-> > On some monitors, there is a possibility that audio does not come out.
-> > Fix this by enabling audio clock in audio_startup ops
-> > before hw_param ops setting format.
-> >
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> > ---
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
-> >  1 file changed, 9 insertions(+)
-> >
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > index 5cbb71a866d5..08b4adbb1ddc 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > @@ -69,6 +69,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
-> >       hdmi_write(audio, conf0, HDMI_AUD_CONF0);
-> >       hdmi_write(audio, conf1, HDMI_AUD_CONF1);
-> >
-> > +     return 0;
-> > +}
-> > +
-> > +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
-> > +{
-> > +     struct dw_hdmi_i2s_audio_data *audio = data;
-> > +     struct dw_hdmi *hdmi = audio->hdmi;
-> > +
-> >       dw_hdmi_audio_enable(hdmi);
-> >
-> >       return 0;
-> > @@ -105,6 +113,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
-> >  }
-> >
-> >  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
-> > +     .audio_startup = dw_hdmi_i2s_audio_startup,
->
-> A small white space nit, there should be a tab and not space to align the equal sign above.
+The local variable @priv is set but not used, can be removed
 
-ACK. Will fix in v2.
->
-> Also this patch do not cleanly apply to drm-misc-next or linux-next after
-> fc1ca6e01d0a "drm/bridge: dw-hdmi-i2s: add .get_eld support" was merged.
+Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
+---
+ drivers/phy/tegra/xusb-tegra210.c | 3 ---
+ 1 file changed, 3 deletions(-)
 
-ACK. Will rebase in v2.
->
->
->
->
-> This patch does fix an issue I have observed on my Rockchip devices where audio would not always
-> came out after switching between audio streams having different rate and channels parameters.
-> I used to carry [1] to fix that issue, but this seems like a more sane fix.
->
-> [1] https://github.com/Kwiboo/linux-rockchip/commit/4862e4044532b8b480fa3a0faddc197586623808
->
-> With above fixed,
->
-> Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
+diff --git a/drivers/phy/tegra/xusb-tegra210.c b/drivers/phy/tegra/xusb-tegra210.c
+index 0c0df6897a3b..bc71c897298a 100644
+--- a/drivers/phy/tegra/xusb-tegra210.c
++++ b/drivers/phy/tegra/xusb-tegra210.c
+@@ -1225,13 +1225,10 @@ static int tegra210_hsic_phy_power_on(struct phy *phy)
+ 	struct tegra_xusb_hsic_lane *hsic = to_hsic_lane(lane);
+ 	struct tegra_xusb_hsic_pad *pad = to_hsic_pad(lane->pad);
+ 	struct tegra_xusb_padctl *padctl = lane->pad->padctl;
+-	struct tegra210_xusb_padctl *priv;
+ 	unsigned int index = lane->index;
+ 	u32 value;
+ 	int err;
+ 
+-	priv = to_tegra210_xusb_padctl(padctl);
+-
+ 	err = regulator_enable(pad->supply);
+ 	if (err)
+ 		return err;
+-- 
+2.23.0
 
-
-Thanks a lot!
-
->
->
-> Regards,
-> Jonas
->
-> >       .hw_params      = dw_hdmi_i2s_hw_params,
-> >       .audio_shutdown = dw_hdmi_i2s_audio_shutdown,
-> >       .get_dai_id     = dw_hdmi_i2s_get_dai_id,
->
 
 _______________________________________________
 linux-arm-kernel mailing list
