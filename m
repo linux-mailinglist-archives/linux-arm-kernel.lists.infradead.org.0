@@ -2,53 +2,104 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 790D4A5402
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 12:29:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7482FA540D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 12:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8ZW6ApHaC9By8YRPeRlZabm+XNvao9COnE4dd8EwZa8=; b=V+vo6ux9z4cS05
-	Xl4TpX/ZnUxg9wiF3NwSoF7IxIW//kCpUq+IJwLEOfx8IfNJBdgtYWk7HYUhyrxAg1ysO8HCuhyqC
-	aLNiAPTeLN7oT/mZlnv0weTxWV7dm2s4flD74Ib8RnxOE+htJo8I0VcluuYJhXYvwecFvlbkzK9XY
-	6CpG3z6l3GAH+0qtuX1yt+8R9GXsOK+J5Gt7Wq5efM7EsaMoaVY5Df4bfPrIcEMEHzWtShhl7gm+l
-	yS2LfcUHWs5NrJO14r4m4aLWvQn7ILtkzuDmPs3gMHx0pC2x/++47TzOSajpPvpI64pPxrCI2pIaO
-	078gxBbRcNHJVlXDMn8A==;
+	List-Owner; bh=UNvAZxabi1h7OFXHssgazHcuSGN0AY38XYAsK7WnhWo=; b=N0q2bB3inAIgfL
+	A07t8b3BNFKp6cVBE3joDLnuwdWWdTHPsoKCs+HWulrBONDvnXKH66PMNtmwL/aKy7N2nRf7IbzgY
+	4GQ7VA8r28t6mtZsBYf/s6KdrDKNFQBUQEk80XgbygI8klYr6rP8lHBHUCdbj7Q+uZUg0zTYznA2T
+	zFYeYjlGNxwiZG498lqqU7jXzGQXXEMW2O515ZWwsZnQNejKV6jag6sHc9J1YEBrmcSaWG+gIx71Q
+	KgOcW4Kn5GiNjvJowauN4oGQIsrQKj4rOwCu4/4ZA2v8X+pDIVDd57bA+2SCDylXV1dt1m3EcEa25
+	iu9/5Pq3NBHe/m2XbT3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4jaU-0008VS-2l; Mon, 02 Sep 2019 10:29:30 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4ja2-0008Up-Ta
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 10:29:04 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1ABE128;
- Mon,  2 Sep 2019 03:29:02 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 840AD3F246;
- Mon,  2 Sep 2019 03:29:01 -0700 (PDT)
-Date: Mon, 2 Sep 2019 11:29:00 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Vidya Sagar <vidyas@nvidia.com>
-Subject: Re: [PATCH V3 4/6] PCI: tegra: Add support to enable slot regulators
-Message-ID: <20190902102859.GA9720@e119886-lin.cambridge.arm.com>
-References: <20190828172850.19871-1-vidyas@nvidia.com>
- <20190828172850.19871-5-vidyas@nvidia.com>
+	id 1i4jdo-0001sO-SC; Mon, 02 Sep 2019 10:32:56 +0000
+Received: from mail-oln040092070053.outbound.protection.outlook.com
+ ([40.92.70.53] helo=EUR03-AM5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4jdZ-0001ro-MZ; Mon, 02 Sep 2019 10:32:43 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Q7RL4JzppThEOGuni15BfXQKo4eraxoUWeYC5SS+EC/O6myKg+q0rXwYK03QFGa6qIhvITEsg5SyOOmOHKrIVmPJyfNKKHWv3/zPQR+hA+4t6JQtSTkVFho7a94S//JdUQqgSbytC7pDQE+kDBf4K5BbDDYJQ27TGkaBl16TsOYWgJDnOyAL4+rVdwRTOUr+dqp1au5hiJFtY2T2q63GvCmwuXY9rOftEAVxbhIeDS76rVxl8E421mIIturOK8TRdMRi9ypMLXRcAaLXlZZ/zU+1pDfY3nIj0PDPL1pXE0fWCN/Ucc/p1T1UtYpkpmnLo9hz06fDF954Wy7rCtb9Ag==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=mMy0bYrDmhv8lbTruCvXNPgcPqXv372WjYxd1S80E7s=;
+ b=PqtFtgL9qfsy0+lXQqm0r+aiFCzXFgUKeEHG0vuhKuqsbJWTnpU/8WabxMADJi0tvNEF8iU3AyTPyJdvOpNZh4KADA7pFGOmngtsalc/1M4jgebM2TGfUxLdnRONL1p0GhLjCVB9clb51XFUSjKkNvr95BzCQwX0VRqqqwTupgH/w3H+RbqGIpmtI14qQ0UJWXOd5tNBddYlm/9B9OEjSG0rm4C4rQWBX4Hh5ZvtdIcaB/+sWZEQz9iALGOaw6UePy9r+uAK1EY06msfjXm6YgP6PdkhlHyfTXjPXJSeZQOsUmE/NpBgg7EDslji/8znAj9zGoB/P+4BQaKfwBHuNQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+Received: from AM5EUR03FT032.eop-EUR03.prod.protection.outlook.com
+ (10.152.16.56) by AM5EUR03HT039.eop-EUR03.prod.protection.outlook.com
+ (10.152.17.109) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2220.16; Mon, 2 Sep
+ 2019 10:32:38 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com (10.152.16.60) by
+ AM5EUR03FT032.mail.protection.outlook.com (10.152.16.84) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.20.2220.16 via Frontend Transport; Mon, 2 Sep 2019 10:32:38 +0000
+Received: from HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::1188:7e7d:69b:a036]) by HE1PR06MB4011.eurprd06.prod.outlook.com
+ ([fe80::1188:7e7d:69b:a036%5]) with mapi id 15.20.2220.022; Mon, 2 Sep 2019
+ 10:32:37 +0000
+From: Jonas Karlman <jonas@kwiboo.se>
+To: Neil Armstrong <narmstrong@baylibre.com>, Cheng-Yi Chiang
+ <cychiang@chromium.org>, "linux-kernel@vger.kernel.org"
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH v2] drm: dw-hdmi-i2s: enable audio clock in audio_startup
+Thread-Topic: [PATCH v2] drm: dw-hdmi-i2s: enable audio clock in audio_startup
+Thread-Index: AQHVYUIsW0s7539kVU2Jt4QPypUBOKcYIv4AgAAN9AA=
+Date: Mon, 2 Sep 2019 10:32:37 +0000
+Message-ID: <HE1PR06MB4011E2F58875F30446D902BFACBE0@HE1PR06MB4011.eurprd06.prod.outlook.com>
+References: <20190902035435.44463-1-cychiang@chromium.org>
+ <241fd791-3792-34c8-ac35-a81a0a41070c@baylibre.com>
+In-Reply-To: <241fd791-3792-34c8-ac35-a81a0a41070c@baylibre.com>
+Accept-Language: sv-SE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HE1PR0902CA0020.eurprd09.prod.outlook.com
+ (2603:10a6:3:e5::30) To HE1PR06MB4011.eurprd06.prod.outlook.com
+ (2603:10a6:7:9c::32)
+x-incomingtopheadermarker: OriginalChecksum:11AFA484E24FBB2CDB4BF31F98FE745128D47FBAE604F925178CCA20798AFEF0;
+ UpperCasedChecksum:CEAEE32EF148EBB03EB444A95DF68042F6507D089325A6FC5FE9125E539400DE;
+ SizeAsReceived:8557; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [A8LugvH9kj5T4xfRlk+80mbCfMFbMrmW]
+x-microsoft-original-message-id: <d6fa2d56-335b-e15d-da18-749ea0341fad@kwiboo.se>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119158)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:AM5EUR03HT039; 
+x-ms-traffictypediagnostic: AM5EUR03HT039:
+x-microsoft-antispam-message-info: aPYwSGaRGf/92nAQF7WaYOyubhfYLufZAH+FzJ9zdaNyO4ale39c/SDQ8VerWyS8qfidyZqVm3lWQUxlMf+YMp5pW0YO74TbIMgWC/2ck7aCNT3CyKJ20Wf8vQFlvNnlI8Z1eNL4y0AeZsmrzNHr8rmgL2Wq8nVdVEjB6Jo8ZgQeqi27NodGvdkrcyadRWyZ
+x-ms-exchange-transport-forked: True
+Content-ID: <28AEFB56CC9D7540A050CC1E73674443@eurprd06.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190828172850.19871-5-vidyas@nvidia.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 5f14e6ad-372f-4349-ed8d-08d72f90dfc7
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2019 10:32:37.8279 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM5EUR03HT039
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_032903_105971_C45A69EF 
-X-CRM114-Status: GOOD (  21.03  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_033241_741737_7D02E7C1 
+X-CRM114-Status: GOOD (  13.31  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.70.53 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,173 +112,94 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, lorenzo.pieralisi@arm.com,
- mperttunen@nvidia.com, mmaddireddy@nvidia.com, kthota@nvidia.com,
- gustavo.pimentel@synopsys.com, linux-kernel@vger.kernel.org,
- robh+dt@kernel.org, kishon@ti.com, linux-tegra@vger.kernel.org,
- thierry.reding@gmail.com, linux-pci@vger.kernel.org, bhelgaas@google.com,
- digetx@gmail.com, jonathanh@nvidia.com, linux-arm-kernel@lists.infradead.org,
- sagar.tv@gmail.com
+Cc: "alsa-devel@alsa-project.org" <alsa-devel@alsa-project.org>,
+ "tzungbi@chromium.org" <tzungbi@chromium.org>,
+ "zhengxing@rock-chips.com" <zhengxing@rock-chips.com>,
+ "kuninori.morimoto.gx@renesas.com" <kuninori.morimoto.gx@renesas.com>,
+ "linux-rockchip@lists.infradead.org" <linux-rockchip@lists.infradead.org>,
+ "airlied@linux.ie" <airlied@linux.ie>,
+ "jeffy.chen@rock-chips.com" <jeffy.chen@rock-chips.com>,
+ "dianders@chromium.org" <dianders@chromium.org>,
+ "dri-devel@lists.freedesktop.org" <dri-devel@lists.freedesktop.org>,
+ "cain.cai@rock-chips.com" <cain.cai@rock-chips.com>,
+ "a.hajda@samsung.com" <a.hajda@samsung.com>,
+ "eddie.cai@rock-chips.com" <eddie.cai@rock-chips.com>,
+ "Laurent.pinchart@ideasonboard.com" <Laurent.pinchart@ideasonboard.com>,
+ "daniel@ffwll.ch" <daniel@ffwll.ch>,
+ "enric.balletbo@collabora.com" <enric.balletbo@collabora.com>,
+ "dgreid@chromium.org" <dgreid@chromium.org>,
+ "sam@ravnborg.org" <sam@ravnborg.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 10:58:48PM +0530, Vidya Sagar wrote:
-> Add support to get regulator information of 3.3V and 12V supplies of a PCIe
-> slot from the respective controller's device-tree node and enable those
-> supplies. This is required in platforms like p2972-0000 where the supplies
-> to x16 slot owned by C5 controller need to be enabled before attempting to
-> enumerate the devices.
-> 
-> Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
+On 2019-09-02 11:42, Neil Armstrong wrote:
+> Hi,
+>
+> On 02/09/2019 05:54, Cheng-Yi Chiang wrote:
+>> In the designware databook, the sequence of enabling audio clock and
+>> setting format is not clearly specified.
+>> Currently, audio clock is enabled in the end of hw_param ops after
+>> setting format.
+>>
+>> On some monitors, there is a possibility that audio does not come out.
+>> Fix this by enabling audio clock in audio_startup ops
+>> before hw_param ops setting format.
+>>
+>> Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+>> Reviewed-by: Douglas Anderson <dianders@chromium.org>
+>> Reviewed-by: Jonas Karlman <jonas@kwiboo.se>
+>> Tested-by: Douglas Anderson <dianders@chromium.org>
+>> ---
+>>  Changes from v1:
+>>  1. Move audio_startup to the front of audio_shutdown.
+>>  2. Fix the indentation of audio_startup equal sign using tab.
+>>  3. Rebase the patch on linux-next/master.
+>>  4. Add Reviewed-by and Tested-by fields from dianders@chromium.org.
+>>  5. Add Reviewed-by field from jonas@kwiboo.se.
+>>
+>>  drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c | 9 +++++++++
+>>  1 file changed, 9 insertions(+)
+>>
+>> diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> index 1d15cf9b6821..34d8e837555f 100644
+>> --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
+>> @@ -109,6 +109,14 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
+>>  	hdmi_write(audio, conf0, HDMI_AUD_CONF0);
+>>  	hdmi_write(audio, conf1, HDMI_AUD_CONF1);
+>>  
+>> +	return 0;
+>> +}
+>> +
+>> +static int dw_hdmi_i2s_audio_startup(struct device *dev, void *data)
+>> +{
+>> +	struct dw_hdmi_i2s_audio_data *audio = data;
+>> +	struct dw_hdmi *hdmi = audio->hdmi;
+>> +
+>>  	dw_hdmi_audio_enable(hdmi);
+>>  
+>>  	return 0;
+>> @@ -153,6 +161,7 @@ static int dw_hdmi_i2s_get_dai_id(struct snd_soc_component *component,
+>>  
+>>  static struct hdmi_codec_ops dw_hdmi_i2s_ops = {
+>>  	.hw_params	= dw_hdmi_i2s_hw_params,
+>> +	.audio_startup  = dw_hdmi_i2s_audio_startup,
+>>  	.audio_shutdown	= dw_hdmi_i2s_audio_shutdown,
+>>  	.get_eld	= dw_hdmi_i2s_get_eld,
+>>  	.get_dai_id	= dw_hdmi_i2s_get_dai_id,
+>>
+> Looks sane, Jonas should I apply it now it's rebased ?
 
-Reviewed-by: Andrew Murray <andrew.murray@arm.com>
+Sure, looks sane and compiles without warnings on my build host.
 
-> ---
-> V3:
-> * Added a dev_err() print for failure case of tegra_pcie_get_slot_regulators() API
-> * Modified to make 100ms sleep valid only if at least one of the regulator handles exist
-> 
-> V2:
-> * Addressed review comments from Thierry Reding and Andrew Murray
-> * Handled failure case of devm_regulator_get_optional() for -ENODEV cleanly
-> 
->  drivers/pci/controller/dwc/pcie-tegra194.c | 83 ++++++++++++++++++++++
->  1 file changed, 83 insertions(+)
-> 
-> diff --git a/drivers/pci/controller/dwc/pcie-tegra194.c b/drivers/pci/controller/dwc/pcie-tegra194.c
-> index 77fa6f70bc96..18453cc5e7e4 100644
-> --- a/drivers/pci/controller/dwc/pcie-tegra194.c
-> +++ b/drivers/pci/controller/dwc/pcie-tegra194.c
-> @@ -278,6 +278,8 @@ struct tegra_pcie_dw {
->  	u32 aspm_l0s_enter_lat;
->  
->  	struct regulator *pex_ctl_supply;
-> +	struct regulator *slot_ctl_3v3;
-> +	struct regulator *slot_ctl_12v;
->  
->  	unsigned int phy_count;
->  	struct phy **phys;
-> @@ -1047,6 +1049,73 @@ static void tegra_pcie_downstream_dev_to_D0(struct tegra_pcie_dw *pcie)
->  	}
->  }
->  
-> +static int tegra_pcie_get_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	pcie->slot_ctl_3v3 = devm_regulator_get_optional(pcie->dev, "vpcie3v3");
-> +	if (IS_ERR(pcie->slot_ctl_3v3)) {
-> +		if (PTR_ERR(pcie->slot_ctl_3v3) != -ENODEV)
-> +			return PTR_ERR(pcie->slot_ctl_3v3);
-> +
-> +		pcie->slot_ctl_3v3 = NULL;
-> +	}
-> +
-> +	pcie->slot_ctl_12v = devm_regulator_get_optional(pcie->dev, "vpcie12v");
-> +	if (IS_ERR(pcie->slot_ctl_12v)) {
-> +		if (PTR_ERR(pcie->slot_ctl_12v) != -ENODEV)
-> +			return PTR_ERR(pcie->slot_ctl_12v);
-> +
-> +		pcie->slot_ctl_12v = NULL;
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static int tegra_pcie_enable_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	int ret;
-> +
-> +	if (pcie->slot_ctl_3v3) {
-> +		ret = regulator_enable(pcie->slot_ctl_3v3);
-> +		if (ret < 0) {
-> +			dev_err(pcie->dev,
-> +				"Failed to enable 3.3V slot supply: %d\n", ret);
-> +			return ret;
-> +		}
-> +	}
-> +
-> +	if (pcie->slot_ctl_12v) {
-> +		ret = regulator_enable(pcie->slot_ctl_12v);
-> +		if (ret < 0) {
-> +			dev_err(pcie->dev,
-> +				"Failed to enable 12V slot supply: %d\n", ret);
-> +			goto fail_12v_enable;
-> +		}
-> +	}
-> +
-> +	/*
-> +	 * According to PCI Express Card Electromechanical Specification
-> +	 * Revision 1.1, Table-2.4, T_PVPERL (Power stable to PERST# inactive)
-> +	 * should be a minimum of 100ms.
-> +	 */
-> +	if (pcie->slot_ctl_3v3 || pcie->slot_ctl_12v)
-> +		msleep(100);
-> +
-> +	return 0;
-> +
-> +fail_12v_enable:
-> +	if (pcie->slot_ctl_3v3)
-> +		regulator_disable(pcie->slot_ctl_3v3);
-> +	return ret;
-> +}
-> +
-> +static void tegra_pcie_disable_slot_regulators(struct tegra_pcie_dw *pcie)
-> +{
-> +	if (pcie->slot_ctl_12v)
-> +		regulator_disable(pcie->slot_ctl_12v);
-> +	if (pcie->slot_ctl_3v3)
-> +		regulator_disable(pcie->slot_ctl_3v3);
-> +}
-> +
->  static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  					bool en_hw_hot_rst)
->  {
-> @@ -1060,6 +1129,10 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  		return ret;
->  	}
->  
-> +	ret = tegra_pcie_enable_slot_regulators(pcie);
-> +	if (ret < 0)
-> +		goto fail_slot_reg_en;
-> +
->  	ret = regulator_enable(pcie->pex_ctl_supply);
->  	if (ret < 0) {
->  		dev_err(pcie->dev, "Failed to enable regulator: %d\n", ret);
-> @@ -1142,6 +1215,8 @@ static int tegra_pcie_config_controller(struct tegra_pcie_dw *pcie,
->  fail_core_clk:
->  	regulator_disable(pcie->pex_ctl_supply);
->  fail_reg_en:
-> +	tegra_pcie_disable_slot_regulators(pcie);
-> +fail_slot_reg_en:
->  	tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->  
->  	return ret;
-> @@ -1174,6 +1249,8 @@ static int __deinit_controller(struct tegra_pcie_dw *pcie)
->  		return ret;
->  	}
->  
-> +	tegra_pcie_disable_slot_regulators(pcie);
-> +
->  	ret = tegra_pcie_bpmp_set_ctrl_state(pcie, false);
->  	if (ret) {
->  		dev_err(pcie->dev, "Failed to disable controller %d: %d\n",
-> @@ -1373,6 +1450,12 @@ static int tegra_pcie_dw_probe(struct platform_device *pdev)
->  		return ret;
->  	}
->  
-> +	ret = tegra_pcie_get_slot_regulators(pcie);
-> +	if (ret < 0) {
-> +		dev_err(dev, "Failed to get slot regulators: %d\n", ret);
-> +		return ret;
-> +	}
-> +
->  	pcie->pex_ctl_supply = devm_regulator_get(dev, "vddio-pex-ctl");
->  	if (IS_ERR(pcie->pex_ctl_supply)) {
->  		dev_err(dev, "Failed to get regulator: %ld\n",
-> -- 
-> 2.17.1
-> 
+Regards,
+Jonas
+
+>
+> Neil
 
 _______________________________________________
 linux-arm-kernel mailing list
