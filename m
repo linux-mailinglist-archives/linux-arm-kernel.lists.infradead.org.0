@@ -2,55 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C96A3A5958
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 16:28:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 167B6A5995
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 16:41:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7O+Yjd+F4Acex1nh7XNUFFq57a1yCzzYhDs4GeaJfCw=; b=DN9YeG6bnYbGLO
-	JQ3XpSdhl0sBruP9YO9FtlxMDzK0rMUt6e+LXFefUMrmtwe4qzEBqFtL2+FNeU0aG90IHe1m/xYM1
-	esTcJy53CML9aeaVkxyJhhrE0u9DfGm9Bs6i9V/gofgVmUpajQVMxaaCJ69f1HdIvILYjspCmy3Kp
-	+UNkDIdHmZgnub7tf2STu1ebST8yr8MnAVTnm33dbKUrI6IoAMfShLg85IX0jtRoiZl+yKrToUW5x
-	KU22PFV2Ah8hXGJJ+IlMkrPFxtjCnVb3JSztXbSBMHQwOAWPgBbrVCIMJ+2BiiPL7kDySihOLUAUb
-	0AAoFWBt5q5Et5Q/rOkg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=z0CbdIf/RN+C34CwSyFu8EjweW1b01bdo1BpbvKy0Qg=; b=nQxzjQ9OlxLKt+
+	s50O3WlnvxIjABlFdch+fCYDCtwyiiXzyUQDJdD2K00aIMU6ZdJl5qnlMw0237HD/Wq80+RZiPuzG
+	hWX+vcVQnyzqb05SmlWW9hP53xm9GDePsp+Cl4NeNqYHdmRt3OidFeYqWKu9F97KM06WRP70I51NN
+	70lrJR5YMedUNckv7z78KphUUFOvneMEQre4gagOuh9uaE4TgKH3r7jQS3eMv8+UBYuId39D5cQud
+	iu3AY7pG2tkuI7nI9Azklsulk5zj89bmjE8cGu5fFFx8OwISe4hNk0XTeKAI8uA4QR/tPGsqlbpSW
+	HL6spmethGjNG/gQPDcg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4nJG-0001vw-Sr; Mon, 02 Sep 2019 14:27:58 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4nJ4-0001vb-8J
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 14:27:49 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C67A4344;
- Mon,  2 Sep 2019 07:27:45 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 724073F59C;
- Mon,  2 Sep 2019 07:27:44 -0700 (PDT)
-Date: Mon, 2 Sep 2019 15:27:42 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: Viresh Kumar <viresh.kumar@linaro.org>
-Subject: Re: [PATCH ARM64 v4.4 V3 12/44] arm64: cpufeature: Test 'matches'
- pointer to find the end of the list
-Message-ID: <20190902142741.GB9922@lakrids.cambridge.arm.com>
-References: <cover.1567077734.git.viresh.kumar@linaro.org>
- <617ad445043f040c5ab986b9620b2ba7847b561e.1567077734.git.viresh.kumar@linaro.org>
+	id 1i4nVr-0006Xq-Pb; Mon, 02 Sep 2019 14:40:59 +0000
+Received: from antares.kleine-koenig.org ([94.130.110.236])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4nVj-0006XM-78; Mon, 02 Sep 2019 14:40:52 +0000
+Received: by antares.kleine-koenig.org (Postfix, from userid 1000)
+ id 007B0792C0D; Mon,  2 Sep 2019 16:40:45 +0200 (CEST)
+From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <uwe@kleine-koenig.org>
+To: Thierry Reding <thierry.reding@gmail.com>, Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] pwm: rockchip: set polarity unconditionally in .get_state()
+Date: Mon,  2 Sep 2019 16:39:41 +0200
+Message-Id: <20190902143941.10631-1-uwe@kleine-koenig.org>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <617ad445043f040c5ab986b9620b2ba7847b561e.1567077734.git.viresh.kumar@linaro.org>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_072748_336717_0200132C 
-X-CRM114-Status: GOOD (  20.06  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_074051_409359_BBF3AE3C 
+X-CRM114-Status: UNSURE (   8.87  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [94.130.110.236 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -63,121 +55,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-pwm@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-rockchip@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 05:03:57PM +0530, Viresh Kumar wrote:
-> From: James Morse <james.morse@arm.com>
-> 
-> commit 644c2ae198412c956700e55a2acf80b2541f6aa5 upstream.
-> 
-> CPU feature code uses the desc field as a test to find the end of the list,
-> this means every entry must have a description. This generates noise for
-> entries in the list that aren't really features, but combinations of them.
-> e.g.
-> > CPU features: detected feature: Privileged Access Never
-> > CPU features: detected feature: PAN and not UAO
-> 
-> These combination features are needed for corner cases with alternatives,
-> where cpu features interact.
-> 
-> Change all walkers of the arm64_features[] and arm64_hwcaps[] lists to test
-> 'matches' not 'desc', and only print 'desc' if it is non-NULL.
-> 
-> Signed-off-by: James Morse <james.morse@arm.com>
-> Reviewed-by : Suzuki K Poulose <suzuki.poulose@arm.com>
-> Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> ---
->  arch/arm64/kernel/cpufeature.c | 12 ++++++------
->  1 file changed, 6 insertions(+), 6 deletions(-)
-
-From looking at my 4.9.y/{meltdown,spectre} banches on kernel.org [1,2],
-and chasing the history v4.4..v4.9, there are a number of patches I'd
-expect to have alongside this that I don't spot in this series:
-
-* e3661b128e53ee281e1e7c589a5b647890bd6d7c ("arm64: Allow a capability to be checked on a single CPU")
-* 8f4137588261d7504f4aa022dc9d1a1fd1940e8e ("arm64: Allow checking of a CPU-local erratum")
-* 67948af41f2e6818edeeba5182811c704d484949 ("arm64: capabilities: Handle duplicate entries for a capability")
-* edf298cfce47ab7279d03b5203ae2ef3a58e49db ("arm64: cpufeature: __this_cpu_has_cap() shouldn't stop early")
-
-... which IIUC are necessary for big.LITTLE to work correctly.
-
-Have you verified this for big.LITTLE?
-
-Thanks,
-Mark.
-
-[1] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=stable/4.9.y/meltdown
-[2] https://git.kernel.org/pub/scm/linux/kernel/git/mark/linux.git/log/?h=stable/4.9.y/spectre
-
-> 
-> diff --git a/arch/arm64/kernel/cpufeature.c b/arch/arm64/kernel/cpufeature.c
-> index c1eddc07d996..bdb4cd9ffccf 100644
-> --- a/arch/arm64/kernel/cpufeature.c
-> +++ b/arch/arm64/kernel/cpufeature.c
-> @@ -744,7 +744,7 @@ static void setup_cpu_hwcaps(void)
->  	int i;
->  	const struct arm64_cpu_capabilities *hwcaps = arm64_hwcaps;
->  
-> -	for (i = 0; hwcaps[i].desc; i++)
-> +	for (i = 0; hwcaps[i].matches; i++)
->  		if (hwcaps[i].matches(&hwcaps[i]))
->  			cap_set_hwcap(&hwcaps[i]);
->  }
-> @@ -754,11 +754,11 @@ void update_cpu_capabilities(const struct arm64_cpu_capabilities *caps,
->  {
->  	int i;
->  
-> -	for (i = 0; caps[i].desc; i++) {
-> +	for (i = 0; caps[i].matches; i++) {
->  		if (!caps[i].matches(&caps[i]))
->  			continue;
->  
-> -		if (!cpus_have_cap(caps[i].capability))
-> +		if (!cpus_have_cap(caps[i].capability) && caps[i].desc)
->  			pr_info("%s %s\n", info, caps[i].desc);
->  		cpus_set_cap(caps[i].capability);
->  	}
-> @@ -772,7 +772,7 @@ static void enable_cpu_capabilities(const struct arm64_cpu_capabilities *caps)
->  {
->  	int i;
->  
-> -	for (i = 0; caps[i].desc; i++)
-> +	for (i = 0; caps[i].matches; i++)
->  		if (caps[i].enable && cpus_have_cap(caps[i].capability))
->  			/*
->  			 * Use stop_machine() as it schedules the work allowing
-> @@ -884,7 +884,7 @@ void verify_local_cpu_capabilities(void)
->  		return;
->  
->  	caps = arm64_features;
-> -	for (i = 0; caps[i].desc; i++) {
-> +	for (i = 0; caps[i].matches; i++) {
->  		if (!cpus_have_cap(caps[i].capability) || !caps[i].sys_reg)
->  			continue;
->  		/*
-> @@ -897,7 +897,7 @@ void verify_local_cpu_capabilities(void)
->  			caps[i].enable(NULL);
->  	}
->  
-> -	for (i = 0, caps = arm64_hwcaps; caps[i].desc; i++) {
-> +	for (i = 0, caps = arm64_hwcaps; caps[i].matches; i++) {
->  		if (!cpus_have_hwcap(&caps[i]))
->  			continue;
->  		if (!feature_matches(__raw_read_system_reg(caps[i].sys_reg), &caps[i]))
-> -- 
-> 2.21.0.rc0.269.g1a574e7a288b
-> 
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RG9uJ3QgcmVseSBvbiAqc3RhdGUgYmVpbmcgemVybyBpbml0aWFsaXplZCBhbmQgUFdNX1BPTEFS
+SVRZX05PUk1BTApiZWluZyB6ZXJvLiBTbyBhbHdheXMgYXNzaWduIC5wb2xhcml0eS4KClNpZ25l
+ZC1vZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1d2VAa2xlaW5lLWtvZW5pZy5vcmc+Ci0tLQog
+ZHJpdmVycy9wd20vcHdtLXJvY2tjaGlwLmMgfCA4ICsrKystLS0tCiAxIGZpbGUgY2hhbmdlZCwg
+NCBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygtKQoKZGlmZiAtLWdpdCBhL2RyaXZlcnMvcHdt
+L3B3bS1yb2NrY2hpcC5jIGIvZHJpdmVycy9wd20vcHdtLXJvY2tjaGlwLmMKaW5kZXggNTFiOTZj
+YjdkZDI1Li44ZWIyZGI1OTc0MWQgMTAwNjQ0Ci0tLSBhL2RyaXZlcnMvcHdtL3B3bS1yb2NrY2hp
+cC5jCisrKyBiL2RyaXZlcnMvcHdtL3B3bS1yb2NrY2hpcC5jCkBAIC05MCwxMCArOTAsMTAgQEAg
+c3RhdGljIHZvaWQgcm9ja2NoaXBfcHdtX2dldF9zdGF0ZShzdHJ1Y3QgcHdtX2NoaXAgKmNoaXAs
+CiAJCXN0YXRlLT5lbmFibGVkID0gKCh2YWwgJiBlbmFibGVfY29uZikgPT0gZW5hYmxlX2NvbmYp
+ID8KIAkJCQkgdHJ1ZSA6IGZhbHNlOwogCi0JaWYgKHBjLT5kYXRhLT5zdXBwb3J0c19wb2xhcml0
+eSkgewotCQlpZiAoISh2YWwgJiBQV01fRFVUWV9QT1NJVElWRSkpCi0JCQlzdGF0ZS0+cG9sYXJp
+dHkgPSBQV01fUE9MQVJJVFlfSU5WRVJTRUQ7Ci0JfQorCWlmIChwYy0+ZGF0YS0+c3VwcG9ydHNf
+cG9sYXJpdHkgJiYgISh2YWwgJiBQV01fRFVUWV9QT1NJVElWRSkpCisJCXN0YXRlLT5wb2xhcml0
+eSA9IFBXTV9QT0xBUklUWV9JTlZFUlNFRDsKKwllbHNlCisJCXN0YXRlLT5wb2xhcml0eSA9IFBX
+TV9QT0xBUklUWV9OT1JNQUw7CiAKIAljbGtfZGlzYWJsZShwYy0+cGNsayk7CiB9Ci0tIAoyLjIz
+LjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
