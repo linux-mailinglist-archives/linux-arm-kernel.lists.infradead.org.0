@@ -2,56 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 02835A5AC3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 17:47:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E07A0A5ADA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 17:54:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=X31Wn26Heg8FI5XwxKdA777J4E/3GfgDUEQSrLG5j4c=; b=sVEqvFP537SRFl9uz5fg5OLA8
-	EZe+9lwYwJon/AliLei+mSksAVChSl305vuuSXKSwoAtVWQFLlCJwYY4v7k2Akvea4DFgY2j1ruyr
-	Kw7ljFEdi29Helh7xVpMlxE0Lv8WZJX8owaNTbV2S1d0EmK1iDDzl5SDxDSiCCafpGJmEEannUswz
-	Xbjc9UCQ9JtTGFPfWgaA/RNr+MuLItcOtbRunMYzlg7YplhBh39cplcv7+A2YmWvJueKdNjkxjeM7
-	FfHY4OiuZtlQwu3KCJjIhhUGAfx2HizX3Rc2OXfL+WTH6Hqjo1J6FujMlzeY2Xwz52zTWZBsaxTgK
-	09HadSegw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9KMTluikh4mpGcSVJ502+tWxQiGIfj0mTDsWVGlNEXA=; b=auwrxSZOAQ2sUC
+	4j7f7W5jDKe5bq/sFMlT0wP7mynXOz4N24cdKHFYEYQBAboOqrxPJomJVvbu4W65H/ntyzx7RJ5az
+	U2q3tOyFGVtsv5QvUbiiz3o0glIAZ39m7dWDJbQw6m11PQJIIC3GWQq+Yqbe1oNXQ7noR8WXtl8JN
+	fMzh8eSGLSpZrWw30JVeaMW1GIbRy2uhei5VAt1XpSQFPRaVq16GrR0hVhch4/A3TXlsRcldLmd8W
+	pTbQVkPOqPgyfQ/keQwqqmPPS3WXNL1FLSj4ZWZiXz7xpIILc/d5QdRGlx4eslwYBItqOuG8CHH7z
+	hlSQBy/Zqt0NM74zsD0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4oY9-0006jI-K9; Mon, 02 Sep 2019 15:47:25 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4oY0-0006i7-3s
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 15:47:18 +0000
-Received: from localhost (p54B337C1.dip0.t-ipconnect.de [84.179.55.193])
- by pokefinder.org (Postfix) with ESMTPSA id 983A52C0165;
- Mon,  2 Sep 2019 17:47:12 +0200 (CEST)
-Date: Mon, 2 Sep 2019 17:47:12 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Eugen.Hristev@microchip.com
-Subject: Re: [PATCH v4 2/9] dt-bindings: i2c: add bindings for i2c analog and
- digital filter
-Message-ID: <20190902154712.GA5213@kunai>
-References: <1567418773-2427-1-git-send-email-eugen.hristev@microchip.com>
- <1567418773-2427-3-git-send-email-eugen.hristev@microchip.com>
- <9a9c209c-2fb8-0a4c-4e0a-b04fefda3360@axentia.se>
- <b6528812-65d3-6561-38e7-c0545af900d8@microchip.com>
+	id 1i4of7-00005y-0M; Mon, 02 Sep 2019 15:54:37 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4oex-00005e-NS
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 15:54:28 +0000
+Received: by mail-wm1-f67.google.com with SMTP id k2so13669447wmj.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Sep 2019 08:54:27 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=CDEjyCo5ZOdNRThV6Hb6ycwISVyUSHmo+4YRzMBGWHg=;
+ b=dtou44wi0iv1lp0TuQ53TyphnEiYdG9QtaCfn4OnpPgdybm3akXy8SwA8E0gcNOoYn
+ SVZVr4gEsJrOA9YvAP4K7/QLrCD1fIed17dnNX3lIPRuTLcCxm0t/1hyrs4hXyFm+ylg
+ BhJdsi9dFYFFPPV0qU5aZMMNDTZzAn/SxCV9w54vRIT11tNAJUqi4o/+iMZhf5ZmRTFn
+ 92uMGJ286Gxtw/W0PF/E/mBrrZa7LkhEj5SxLVVMrhSJnzqOzANBH2OF51hMpKlwSexe
+ C1CRroRAIXEkt4KHBC6QkiWPu91WRZKn4YpMfInO+WChjT3uR1FLBd6f9NX5Gydxq5y3
+ JDbQ==
+X-Gm-Message-State: APjAAAVVrAVwqEPWqEb/sgghG+IuCWWBFI62F1QXB+DQLeSjbtNp2sMT
+ CZg/scVY9tC1i3oiEeHLwxA=
+X-Google-Smtp-Source: APXvYqx5FbD9fwB4WVj+9PkR1nusoj7UGQlQJlM6QgP3CAXQpfNCDUCzlNmAdaCWo6vT+tMLowM9zQ==
+X-Received: by 2002:a1c:f50c:: with SMTP id t12mr37157794wmh.49.1567439665822; 
+ Mon, 02 Sep 2019 08:54:25 -0700 (PDT)
+Received: from kozik-lap ([194.230.155.145])
+ by smtp.googlemail.com with ESMTPSA id
+ b194sm34131397wmg.46.2019.09.02.08.54.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 02 Sep 2019 08:54:25 -0700 (PDT)
+Date: Mon, 2 Sep 2019 17:54:23 +0200
+From: Krzysztof Kozlowski <krzk@kernel.org>
+To: Marek Szyprowski <m.szyprowski@samsung.com>
+Subject: Re: [PATCH] ARM: multi_v7_defconfig: Make MAX77802 regulator driver
+ built-in
+Message-ID: <20190902155423.GC9289@kozik-lap>
+References: <CGME20190830130425eucas1p1b6806fad77366797271e70ce8ef4d296@eucas1p1.samsung.com>
+ <20190830130416.10420-1-m.szyprowski@samsung.com>
 MIME-Version: 1.0
-In-Reply-To: <b6528812-65d3-6561-38e7-c0545af900d8@microchip.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20190830130416.10420-1-m.szyprowski@samsung.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_084716_312338_1F5A608A 
-X-CRM114-Status: UNSURE (   5.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190902_085427_762990_1F7F2701 
+X-CRM114-Status: GOOD (  11.80  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.128.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (k.kozlowski.k[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,71 +90,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- alexandre.belloni@bootlin.com, linux-kernel@vger.kernel.org,
- pierre-yves.mordret@st.com, Ludovic.Desroches@microchip.com,
- robh+dt@kernel.org, linux-i2c@vger.kernel.org, peda@axentia.se,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7112490126173641500=="
+Cc: linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Aug 30, 2019 at 03:04:16PM +0200, Marek Szyprowski wrote:
+> Maxim 77802 PMIC is a main PMIC for the following Exynos5 based boards:
+> Odroid XU, Chromebook Pit and Chromebook Pi. Driver for its voltage
+> regulator is needed very early during boot to properly instantiate SD/MMC
+> devices and mount rootfs, so change that driver to be compiled-in.
+> 
+> Signed-off-by: Marek Szyprowski <m.szyprowski@samsung.com>
+> ---
+>  arch/arm/configs/multi_v7_defconfig | 2 +-
 
---===============7112490126173641500==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="envbJBWh7q8WU6mo"
-Content-Disposition: inline
+Thanks, applied.
 
+Best regards,
+Krzysztof
 
---envbJBWh7q8WU6mo
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-Hi Eugen,
-
-> Wolfram, what do you think ?
-
-Yes, the bindings should be generic. Peter's reasoning makes much sense
-to me. I am quite sure if the two of you can work things out, I'll have
-nothing to add.
-
-Thanks,
-
-   Wolfram
-
---envbJBWh7q8WU6mo
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1tOXsACgkQFA3kzBSg
-KbZ7WA/8CbJ1UkV+wsS6wze/wZkPVWdaE81SHoM/BY0/LIXC1uApajeR60OQDs8U
-nrX2j4+7BJyqB9UxW+qfYe5XDbhKeb7a2iL3JNx1hBZgTZ6Gi1O58teEdkWyooD6
-Jxze/jkMdt4GB8862rK7Qg4L6yzOSBVYwenv5zKgyKjcq2T4IciumJ0yY3XkmFQ+
-/q+kYiEPdGdKH8Mt/YQI6emeVSwcBo+ngHSt+6GeIu8P+2RUd5tvWKfx8E3lKIaN
-P5ISf+KG3IEInS09yI5Dzn5mh55VFHIvU3Vg/BDomAJyU5eszjT4ECwplkWRRX64
-eTxFhJfpxhmY+MHDiFsOG16TCS7yQAXFTHiVddvJY4/POL6zfEEHT8Kix8BRDZoR
-z5Q6CBmMXDgHPlMLSs6yJ7vo1A1vguT/kjO1sTeGlmZXQYp0fJt1E5+UtCp3dMvH
-KE5Pj8++x6W3KhUG9oESkckfwFXB1w32uM4uUCcHQV0Z/t/HA289cWxoHuVtG2H6
-PyiR9zuCYU9s4iG72JrlzZmEmo8pxz4df9sy37Xph1ssF9vuBcRDbwoqU+NiuWea
-EDWvL4HeJTUQh6O6rICgDMg8WZXpKDuFzXqHDY3hB31L0TT4qc8kIwRAOoxIKp3/
-EFCJL/jKr+Sr4HiHvP1QN9luY7W/eHKjvZtGEfaby2QO+YeIfEA=
-=4puT
------END PGP SIGNATURE-----
-
---envbJBWh7q8WU6mo--
-
-
---===============7112490126173641500==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7112490126173641500==--
-
