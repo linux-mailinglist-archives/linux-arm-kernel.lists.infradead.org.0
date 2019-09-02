@@ -2,38 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62B4AA5AE3
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 17:57:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4E782A5B05
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 18:02:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TW9kkIa8MtCH/A2h1vrAH4uk6TlCcuEPaQZmvfitjtk=; b=Tm+Cg4N2f0NVjI
-	XoUNoRkP4MUr6NeR0BRFIKPQG5y2k8JYYaDSW/AS0yzhR3ALts29ausD1kdqOx+4yBvseSipeuLp5
-	lX2BE42FyCDZuW4wSDQcKdcSzXq4o8m9V/C9hAWJZlbcXK3BrPdX+2KeD4dsMsjGlhanyw+vyWEa+
-	VK0xvfdSXodrI/CrKEvp0KiK9wpfYq77e2vE+/GVlgT3+AAT+tTxBZaAUGrPIBZyRHCT2MTZcy7sE
-	mDGGKB0KXY4/uEcjcnYZcQim6wjvQ0WD6nE2I4GeZEGPbrcl3o35U0wXj/BVDIFbDYB0wXOXDDK6v
-	AShmKk1PTSL4RAZOIwWg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=YIHQJr8nelG9yeJbIFBkj3zzb9fpUJgxPadhfj55ojw=; b=K9pibafvStD4CB
+	8Rb7CYfH2GV90sZhnSzlFoewk0+ScPoAAe8LEhJnbn9g7o0nRKgQRFwx5LybqeQlrtXgMq/jEEISE
+	N9p+RjkBlbOAV8weJOP2m+vN2JPoCBCRg5nQqsOKeiOae0FGWLKJgWFOIZJGSzlyxiFx21b/pWx8s
+	8pjm7crzmpF+aJ4CiWDn9NdFSsb6Lcihm5xymkJR4orwT4H+zM/3YEmuI1dY5IAfa+01U1H1Jvy35
+	3EQhyOS8+0I3HsFY1hsU+ivgQ6DNdFRuSu19I8wEOOxEeTOX3TjLjfYhPtGhcoSdBI/5QmGL20rOY
+	CJgMFHuusi1X+MvC9bzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4oi4-0002Eh-E7; Mon, 02 Sep 2019 15:57:40 +0000
-Received: from hch by bombadil.infradead.org with local (Exim 4.92 #3 (Red Hat
- Linux)) id 1i4ohw-0002EN-76; Mon, 02 Sep 2019 15:57:32 +0000
-Date: Mon, 2 Sep 2019 08:57:32 -0700
-From: Christoph Hellwig <hch@infradead.org>
-To: Stefano Stabellini <sstabellini@kernel.org>
-Subject: Re: [PATCH V2] arm: xen: mm: use __GPF_DMA32 for arm64
-Message-ID: <20190902155732.GA8311@infradead.org>
-References: <1567175255-1798-1-git-send-email-peng.fan@nxp.com>
- <d7477406-a8a0-5c3c-13dc-2c84e27b8afa@arm.com>
- <20190830085807.GA15771@infradead.org>
- <alpine.DEB.2.21.1908301926500.21347@sstabellini-ThinkPad-T480s>
+	id 1i4omK-0004cO-0V; Mon, 02 Sep 2019 16:02:04 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4olg-0003tl-NM
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 16:01:26 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x82FuY5k013492; Mon, 2 Sep 2019 18:01:06 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=A1tIJTckSXBg8Z/io9D6CqOqXnYC7QIubFt7XKXGFpU=;
+ b=ndt+7K7jTG/ChIkddPX8Q7P6b7hUs+rbtGqCjelcGPTvcbD3hI/mh2ZYAoXZV9z/r/zB
+ IZFIPahF39sWNUBsuvNWrpT00MAroTJIl+vUrIJ449b/pTS2cTf3Jh+kcJ4AHSyaXmqQ
+ RDcWVyqbtTBayLCLJoyLP1TheqHy+QCmCssnFPsYvKwNBhQrB5v+yKXiL0znrMwomioC
+ wseCkKAkrbtuLHlfZAPQ0USz7BKrZu3bwH6DAgjfGfrjO3GotvU+hT65GOyTH4nhlLbw
+ 8BV/uYRqQe5eM0KaOZWnCgVy3Hy71kUP6pdNUVs5C5IgIyIW7XpwibQpTNJn9NocSqFF hw== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2uqenuwenv-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Mon, 02 Sep 2019 18:01:06 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 29F2A4D;
+ Mon,  2 Sep 2019 16:01:00 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 4C7232B6BC5;
+ Mon,  2 Sep 2019 18:01:00 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
+ (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019
+ 18:01:00 +0200
+Received: from localhost (10.201.23.16) by webmail-ga.st.com (10.75.90.48)
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019 18:00:59
+ +0200
+From: Olivier Moysan <olivier.moysan@st.com>
+To: <alexandre.torgue@st.com>, <olof@lixom.net>, <horms+renesas@verge.net.au>, 
+ <arnd@arndb.de>, <krzk@kernel.org>, <yannick.fertre@st.com>,
+ <tony@atomide.com>, <m.szyprowski@samsung.com>,
+ <fabrice.gasnier@st.com>, <enric.balletbo@collabora.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
+ <linux-stm32@st-md-mailman.stormreply.com>
+Subject: [PATCH 0/4] ARM: multi_v7_defconfig: add audio support for
+ stm32mp157a-dk1
+Date: Mon, 2 Sep 2019 18:00:37 +0200
+Message-ID: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <alpine.DEB.2.21.1908301926500.21347@sstabellini-ThinkPad-T480s>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+X-Originating-IP: [10.201.23.16]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-02_06:2019-08-29,2019-09-02 signatures=0
+X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
+X-CRM114-CacheID: sfid-20190902_090125_274652_AE40B5E4 
+X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.9 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.9 points)
+ pts rule name              description
+ ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -45,45 +98,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: jgross@suse.com, Peng Fan <peng.fan@nxp.com>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- Christoph Hellwig <hch@infradead.org>, Julien Grall <Julien.Grall@arm.com>,
- dl-linux-imx <linux-imx@nxp.com>,
- "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
- boris.ostrovsky@oracle.com, nd <nd@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Robin Murphy <Robin.Murphy@arm.com>
+Cc: olivier.moysan@st.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 07:40:42PM -0700, Stefano Stabellini wrote:
-> + Juergen, Boris
-> 
-> On Fri, 30 Aug 2019, Christoph Hellwig wrote:
-> > Can we take a step back and figure out what we want to do here?
-> > 
-> > AFAICS this function allocates memory for the swiotlb-xen buffer,
-> > and that means it must be <= 32-bit addressable to satisfy the DMA API
-> > guarantees.  That means we generally want to use GFP_DMA32 everywhere
-> > that exists, but on systems with odd zones we might want to dip into
-> > GFP_DMA.  This also means swiotlb-xen doesn't actually do the right
-> > thing on x86 at the moment.  So shouldn't we just have one common
-> > routine in swiotlb-xen.c that checks if we have CONFIG_ZONE_DMA32
-> > set, then try GFP_DMA32, and if not check if CONFIG_ZONE_DMA is set
-> > and then try that, else default to GFP_KERNEL?
-> 
-> Yes, for ARM/ARM64 it makes a lot of sense given that dom0 is 1:1 mapped
-> (pseudo-physical == physical).  I'll let Juergen and Boris comment on
-> the x86 side of things, but on x86 PV Dom0 is not 1:1 mapped so
-> GFP_DMA32 is probably not meaningful.
+This patchset adds audio support for stm32mp157a-dk1 board.
 
-But is it actually harmful?  If the GFP_DMA32 doesn't hurt we could
-just use it there.  Or if that seems to ugly we can make the dma
-flags dependents on a XEN_1TO1_MAPPED config option set by arm/arm64.
+Olivier Moysan (4):
+  ARM: multi_v7_defconfig: enable stm32 sai support
+  ARM: multi_v7_defconfig: enable stm32 i2s support
+  ARM: multi_v7_defconfig: enable cs42l51 codec support
+  ARM: multi_v7_defconfig: enable audio graph card support
+
+ arch/arm/configs/multi_v7_defconfig | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
