@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 63C86A54F0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 13:32:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5A994A54F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 13:32:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,38 +11,38 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=x1NLdQFi1pezcOGGckZ+9gcMnvP6BU1fkzsFWayT8ik=; b=bYMoq80yE2VeagJBnRycpHLXVX
-	HlAsAPwPOXoPSXlnnVUikFv7ojfQ2Nbi4aXoeQK+AeKISEFwrHywoxVtgQ1GwJrVi7MTLj8vojwqC
-	HyO5fu1W9LR455YbfPVS4e7cC0ijxqJEqaaVHXCa0IT1mPW8yslfjOKKk5wW2d/eYgLBhAXhbdO+0
-	jmNCdfwayvLUycD4cnBqnCi7IxWbr/H1y7WUkzfu4PgRdP+7OcqxQFfQVJHIiCGTNtA8lGrpOJR2J
-	/CFWViPQw363OCEa+CjibvtYM0BYAT+B/e0JDMlKyKT6uBvxZEJAeCk1MTi5X/pKaw8OQ5E+IHw26
-	G1FjUYpw==;
+	bh=DvdfcNXKIcKe//v2VkjNKxSZ2UddpNZkt0p5Ej5kRw8=; b=T+xBzF6h7q/2vr/KsR4VeldfxX
+	ZTpqV952cqAq5Zqz1xs4sfSPOSSq+jcFjtOQqO30Cl2ovJlmuX+JA//fLolcjgsidsr5RraNq1cNL
+	tj+rxS1gCcfcRgEDGfyWAbYPEQj2uotLGBrUT+X4OB2euKBTYIkdTR3R6kuEQQ+UlgBawkeDqCxQU
+	t0cO4lPIRyi/DI4faYcSjP+BAO9byKk0IA2Wv8a/3rfQUzdG1I/m8/mwitVJvYeOEipGriUSQeTEL
+	T0NjXaUN9iqXBT5Aw+C1uelQtfP2Q37m16tWIsUBk4NRAThmXD7ASgESvfCGhQvq4YVfZH1fotDjs
+	PQ3oP0ig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4kYx-0006ya-5Q; Mon, 02 Sep 2019 11:31:59 +0000
+	id 1i4kZD-0007C3-Nq; Mon, 02 Sep 2019 11:32:15 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4kX2-0004Jh-I7
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 11:30:02 +0000
+ id 1i4kX3-0004JE-R0
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 11:30:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3BA4F28;
- Mon,  2 Sep 2019 04:30:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 64D70360;
+ Mon,  2 Sep 2019 04:30:01 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5452F3F246;
- Mon,  2 Sep 2019 04:29:59 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6FE863F246;
+ Mon,  2 Sep 2019 04:30:00 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  shuah@kernel.org
-Subject: [PATCH v5 06/11] kselftest: arm64: fake_sigreturn_bad_magic
-Date: Mon,  2 Sep 2019 12:29:27 +0100
-Message-Id: <20190902112932.36129-7-cristian.marussi@arm.com>
+Subject: [PATCH v5 07/11] kselftest: arm64: fake_sigreturn_bad_size_for_magic0
+Date: Mon,  2 Sep 2019 12:29:28 +0100
+Message-Id: <20190902112932.36129-8-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190902112932.36129-1-cristian.marussi@arm.com>
 References: <20190902112932.36129-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_043000_691783_26908160 
-X-CRM114-Status: GOOD (  18.22  )
+X-CRM114-CacheID: sfid-20190902_043002_126178_661AA1DC 
+X-CRM114-Status: GOOD (  11.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -68,136 +68,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a simple fake_sigreturn testcase which builds a ucontext_t with a bad
-magic header and place it onto the stack. Expects a SIGSEGV on test PASS.
-
-Introduce a common utility assembly trampoline function to invoke a
-sigreturn while placing the provided sigframe at wanted alignment and
-also an helper to make space when needed inside the sigframe reserved
-area.
+Add a simple fake_sigreturn testcase which builds a ucontext_t with a
+badly sized terminator record and place it onto the stack.
+Expects a SIGSEGV on test PASS.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
 v3 --> v4
 - fix commit
-- fix signal.S, handle misalign requests too
-- remove unneeded comments
 - add signal.h include
-- added get_starting_head() helper
+- using new get_starting_head() helper
 - added test description
 ---
- tools/testing/selftests/arm64/signal/Makefile |  2 +-
- .../testing/selftests/arm64/signal/signals.S  | 62 +++++++++++++++++++
- .../arm64/signal/test_signals_utils.h         |  1 +
- .../testcases/fake_sigreturn_bad_magic.c      | 54 ++++++++++++++++
- .../arm64/signal/testcases/testcases.c        | 28 +++++++++
- .../arm64/signal/testcases/testcases.h        |  4 ++
- 6 files changed, 150 insertions(+), 1 deletion(-)
- create mode 100644 tools/testing/selftests/arm64/signal/signals.S
- create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+ .../fake_sigreturn_bad_size_for_magic0.c      | 49 +++++++++++++++++++
+ 1 file changed, 49 insertions(+)
+ create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
 
-diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
-index f78f5190e3d4..b497cfea4643 100644
---- a/tools/testing/selftests/arm64/signal/Makefile
-+++ b/tools/testing/selftests/arm64/signal/Makefile
-@@ -28,5 +28,5 @@ clean:
- # Common test-unit targets to build common-layout test-cases executables
- # Needs secondary expansion to properly include the testcase c-file in pre-reqs
- .SECONDEXPANSION:
--$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
-+$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c signals.S $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
- 	$(CC) $(CFLAGS) $^ -o $@
-diff --git a/tools/testing/selftests/arm64/signal/signals.S b/tools/testing/selftests/arm64/signal/signals.S
+diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
 new file mode 100644
-index 000000000000..b89fec0d5ba0
+index 000000000000..25017fe18214
 --- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/signals.S
-@@ -0,0 +1,62 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+/* Copyright (C) 2019 ARM Limited */
-+
-+#include <asm/unistd.h>
-+
-+.section        .rodata, "a"
-+call_fmt:
-+	.asciz "Calling sigreturn with fake sigframe sized:%zd at SP @%08lX\n"
-+
-+.text
-+
-+.globl fake_sigreturn
-+
-+/*	fake_sigreturn	x0:&sigframe,  x1:sigframe_size,  x2:misalign_bytes */
-+fake_sigreturn:
-+	mov x20, x0
-+	mov x21, x1
-+	mov x22, x2
-+	mov x23, sp
-+
-+	/* create space on the stack for fake sigframe 16 bytes-aligned */
-+	add x0, x21, #16
-+	bic x0, x0, #15
-+	sub x23, x23, x0
-+	/* any misalignment requested ? */
-+	add x23, x23, x22
-+
-+	ldr x0, =call_fmt
-+	mov x1, x21
-+	mov x2, x23
-+	bl printf
-+
-+	mov sp, x23
-+
-+	/* now fill it with the provided content... */
-+	mov x0, sp
-+	mov x1, x20
-+	mov x2, x21
-+	bl memcpy
-+
-+	/*
-+	 * Here saving a last minute SP to current->token acts as a marker:
-+	 * if we got here, we are successfully faking a sigreturn; in other
-+	 * words we are sure no bad fatal signal has been raised till now
-+	 * for unrelated reasons, so we should consider the possibly observed
-+	 * fatal signal like SEGV coming from Kernel restore_sigframe() and
-+	 * triggered as expected from our test-case.
-+	 * For simplicity this assumes that current field 'token' is laid out
-+	 * as first in struct tdescr
-+	 */
-+	ldr x0, current
-+	str x23, [x0]
-+	/* SP is already pointing back to the just built fake sigframe here */
-+	mov x8, #__NR_rt_sigreturn
-+	svc #0
-+
-+	/*
-+	 * Above sigreturn should not return...looping here leads to a timeout
-+	 * and ensure proper and clean test failure, instead of jumping around
-+	 * on a potentially corrupted stack.
-+	 */
-+	b .
-diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-index ce35be8ebc8e..68930f1e46e5 100644
---- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
-+++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
-@@ -12,4 +12,5 @@ int test_run(struct tdescr *td);
- void test_result(struct tdescr *td);
- 
- bool get_current_context(struct tdescr *td, ucontext_t *dest_uc);
-+int fake_sigreturn(void *sigframe, size_t sz, int misalign_bytes);
- #endif
-diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
-new file mode 100644
-index 000000000000..7fb700b9801b
---- /dev/null
-+++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
-@@ -0,0 +1,54 @@
++++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size_for_magic0.c
+@@ -0,0 +1,49 @@
 +// SPDX-License-Identifier: GPL-2.0
 +/*
 + * Copyright (C) 2019 ARM Limited
 + *
-+ * Place a fake sigframe on the stack including a BAD Unknown magic
-+ * record: on sigreturn Kernel must spot this attempt and the test
-+ * case is expected to be terminated via SEGV.
++ * Place a fake sigframe on the stack including a badly sized terminator
++ * record: on sigreturn Kernel must spot this attempt and the test case
++ * is expected to be terminated via SEGV.
 + */
 +
 +#include <signal.h>
@@ -208,8 +107,8 @@ index 000000000000..7fb700b9801b
 +
 +struct fake_sigframe sf;
 +
-+static int fake_sigreturn_bad_magic_run(struct tdescr *td,
-+					siginfo_t *si, ucontext_t *uc)
++static int fake_sigreturn_bad_size_for_magic0_run(struct tdescr *td,
++						  siginfo_t *si, ucontext_t *uc)
 +{
 +	size_t resv_sz, need_sz;
 +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
@@ -219,17 +118,12 @@ index 000000000000..7fb700b9801b
 +		return 1;
 +
 +	resv_sz = GET_SF_RESV_SIZE(sf);
-+	/* need at least 2*HDR_SZ space: KSFT_BAD_MAGIC + terminator. */
-+	need_sz = HDR_SZ * 2;
++	/* at least HDR_SZ for the badly sized terminator. */
++	need_sz = HDR_SZ;
 +	head = get_starting_head(shead, need_sz, resv_sz, NULL);
 +	if (head) {
-+		/*
-+		 * use a well known NON existent bad magic...something
-+		 * we should pretty sure won't be ever defined in Kernel
-+		 */
-+		head->magic = KSFT_BAD_MAGIC;
++		head->magic = 0;
 +		head->size = HDR_SZ;
-+		write_terminator_record(GET_RESV_NEXT_HEAD(head));
 +
 +		ASSERT_BAD_CONTEXT(&sf.uc);
 +		fake_sigreturn(&sf, sizeof(sf), 0);
@@ -239,61 +133,12 @@ index 000000000000..7fb700b9801b
 +}
 +
 +struct tdescr tde = {
-+		.name = "FAKE_SIGRETURN_BAD_MAGIC",
-+		.descr = "Trigger a sigreturn with a sigframe with a bad magic",
++		.name = "FAKE_SIGRETURN_BAD_SIZE_FOR_TERMINATOR",
++		.descr = "Trigger a sigreturn using non-zero size terminator",
 +		.sig_ok = SIGSEGV,
 +		.timeout = 3,
-+		.run = fake_sigreturn_bad_magic_run,
++		.run = fake_sigreturn_bad_size_for_magic0_run,
 +};
-diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-index 72e3f482b177..2effb8ded935 100644
---- a/tools/testing/selftests/arm64/signal/testcases/testcases.c
-+++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-@@ -149,3 +149,31 @@ bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
- 
- 	return true;
- }
-+
-+struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
-+				       size_t need_sz, size_t resv_sz,
-+				       size_t *offset)
-+{
-+	size_t offs = 0;
-+	struct _aarch64_ctx *head;
-+
-+	head = get_terminator(shead, resv_sz, &offs);
-+	/* not found a terminator...no need to update offset if any */
-+	if (!head)
-+		return head;
-+	if (resv_sz - offs < need_sz) {
-+		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
-+			resv_sz - offs);
-+		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offs);
-+		if (!head || resv_sz - offs < need_sz) {
-+			fprintf(stderr,
-+				"Failed to reclaim space on sigframe.\n");
-+			return NULL;
-+		}
-+	}
-+
-+	fprintf(stderr, "Available space:%zd\n", resv_sz - offs);
-+	if (offset)
-+		*offset = offs;
-+	return head;
-+}
-diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.h b/tools/testing/selftests/arm64/signal/testcases/testcases.h
-index 00618c3202bb..7653f8a64b3d 100644
---- a/tools/testing/selftests/arm64/signal/testcases/testcases.h
-+++ b/tools/testing/selftests/arm64/signal/testcases/testcases.h
-@@ -83,4 +83,8 @@ static inline void write_terminator_record(struct _aarch64_ctx *tail)
- 		tail->size = 0;
- 	}
- }
-+
-+struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
-+				       size_t need_sz, size_t resv_sz,
-+				       size_t *offset);
- #endif
 -- 
 2.17.1
 
