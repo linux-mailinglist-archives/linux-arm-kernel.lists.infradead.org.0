@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C3B98A50ED
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:10:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 518CFA50EE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:10:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=dWApHiyZ0kMOvAnRG7wmlvU+OlI8bqPNn7rCKA4cPes=; b=atYDu2MB1Rqno5Dpm283C2zSTQ
-	pS/PpFX+SvLaMTsPPsdrJLP8NbM2UMJ1kvzOGfFcRBvbawZkJK5+NNdWdSw+54vXo/AZmMEx6lxra
-	dDbBK2e+LrfS5ZXRifFICavKqIkOQRcdHRiHwNGGyncpYWLUjNv4McYXRmwv+IBiUKqDNRyStleVh
-	IkBz0mAXGauc/IwfvgWEBC0JrfAg4yURjOLb1dfpq5irNIZ8u4P0xnuZZcRlA+WANtVmsg6XlAmLo
-	lGs4DsHsdvZrasXfu8dqsEHtYKkBvHMlDha9JHWQVTSR5/9B2rbAFlqEsBWHlNVJnYjqkuSNqaPTu
-	/81a75bw==;
+	bh=wEX52q5KzAKKUTEJic8hatzAU8K6wlQHe2JdeaaCfJE=; b=sO1PbY9SSCvlrWTPEXgcxK4Vfw
+	L/XsGGtj4C0LJ3HdPlxlyvDhqL3mV0/LjLuEcVMWT+mD81x5G7nyn1tIlsg4WXSOQ9+zBklf1FK51
+	9xMdx4I0UuRCb2/LjwR/VM/3Qvo1qzjfZefqmIB0nVtobQ9Vy6mCCeDoY7wHOip3zKBPaekiWy3Uj
+	4alDBb7WCDTZDsSpQNDADTAn/6wp7gg2HKztNA6xgk3b/SgocT2TryxuO3KlbaW50PaJvdmzbQ3vq
+	XzLedwqRdH6xXxrTKZkvgsjP5eRgLTeXSwMG/S66wL28KYV4wGhPf1ztn8miiVt4V2Ji4+bb6rwUX
+	lC5a+kBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4hPw-00018w-1f; Mon, 02 Sep 2019 08:10:28 +0000
+	id 1i4hQC-0001Mc-F5; Mon, 02 Sep 2019 08:10:44 +0000
 Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hPM-0008CD-Cc
+ id 1i4hPM-0008CB-Cc
  for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:09:55 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id D5EB1C0439;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id E19A6C043C;
  Mon,  2 Sep 2019 08:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567411337; bh=i9xcnzMF9fbzhtXBItSqt+iaoB57JVPuXM/inApdYsw=;
+ t=1567411337; bh=kUnsUSFB0cByzmQt7htfHx+DduCnpe7qT0OsPV7U45I=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=WJdpqBgWOqiWE5WWvElUPMX1sjW9Zy0JyMNN0QOH9RqfMIjD716hcYN2a/juJqeRO
- zSgNUWoG7WhFYGYs3P3yRETpDOmZPW4m5GVP1sTzFpwCQJW1zXhouiS9OeNM9E9zNv
- 2t7Mf6yPVPa4keZZhFwOW1u1Ivt59d6IGkO5Pj5x9A0frxNEFGr4wLCRfzHCGUBuul
- +nlX36XjEqZjcibwakI1SfsZ7wRvVe54F33FXKUxqhLW9D3lPR5NODk7nbfVF6kqiW
- rZBfuj+ogakt2TDQwZGRs5hsqPGvzKLK1PioTyAFztaRqQfcSFqrfGi7sMaMi91UlX
- 5n28aOAWfM1Dw==
+ b=VUdIhCtFxFVEE4EHgGGAZG9qAyIsj28SjG9RwjA+XU6CSq7dOvMtRaoSML6irz8Hy
+ 8IgWgYZPrTbIw97epjS20ukv+ep/oNvTS5+NsjF/NP9D4FjpSUO5BLeqrUc+ZstxRJ
+ fCsEdAEyMFN2+BT5jDkZX64DS9BY+08eEc1MFncb+8yc8F22i2GbuS105aGvSOAOCO
+ hQdkfA/HyKTPcl7Wz/XXRcDesIW52bL0BpSPDfa48EDU7j2ubhas9EgjEtTdEW3A0K
+ RTp/tlhL9g5TCikFopgROvBZp2GoRD5F/cRSP6ygN+DaPe9PE9nhyunEE0cf2Rxzca
+ wkZfOL02elR/A==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 7BB78A0079;
+ by mailhost.synopsys.com (Postfix) with ESMTP id AB324A007F;
  Mon,  2 Sep 2019 08:02:15 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 08/13] net: stmmac: Only consider RX error when HW
- Timestamping is not enabled
-Date: Mon,  2 Sep 2019 10:01:50 +0200
-Message-Id: <294057d4ce5713f4f4d389d26e846d42d6fb9d99.1567410970.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 10/13] net: stmmac: xgmac: Correct RAVSEL field
+ interpretation
+Date: Mon,  2 Sep 2019 10:01:52 +0200
+Message-Id: <7c7b82c3bfcb37bf8ff0715b7e371b64cbb170a9.1567410970.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_010952_465815_87D30C1F 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20190902_010952_462363_E1D6B434 
+X-CRM114-Status: GOOD (  12.38  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -96,9 +96,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Only consider that we have an error when HW Timestamping is not enabled
-as this can give false positives due to the fact the RX Timestamping in
-XGMAC and GMAC cores comes from context descriptors.
+RAVSEL means that only RX side is available for AVB features. As we use
+both TX and RX features we need to check if RAVSEL is selected and
+disable AVB if only RX side is available.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -113,25 +113,22 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_main.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-index c59c232aca64..5271c6129f0e 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_main.c
-@@ -3511,9 +3511,10 @@ static int stmmac_rx(struct stmmac_priv *priv, int limit, u32 queue)
- 					&priv->xstats, rx_q->dma_erx + entry);
- 		if (unlikely(status == discard_frame)) {
- 			page_pool_recycle_direct(rx_q->page_pool, buf->page);
--			priv->dev->stats.rx_errors++;
- 			buf->page = NULL;
- 			error = 1;
-+			if (!priv->hwts_rx_en)
-+				priv->dev->stats.rx_errors++;
- 		}
- 
- 		if (unlikely(error && (status & rx_not_ls)))
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+index fd60bf5e0a72..53c4a40d8386 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
+@@ -369,7 +369,7 @@ static void dwxgmac2_get_hw_feature(void __iomem *ioaddr,
+ 	dma_cap->eee = (hw_cap & XGMAC_HWFEAT_EEESEL) >> 13;
+ 	dma_cap->atime_stamp = (hw_cap & XGMAC_HWFEAT_TSSEL) >> 12;
+ 	dma_cap->av = (hw_cap & XGMAC_HWFEAT_AVSEL) >> 11;
+-	dma_cap->av &= (hw_cap & XGMAC_HWFEAT_RAVSEL) >> 10;
++	dma_cap->av &= !(hw_cap & XGMAC_HWFEAT_RAVSEL) >> 10;
+ 	dma_cap->arpoffsel = (hw_cap & XGMAC_HWFEAT_ARPOFFSEL) >> 9;
+ 	dma_cap->rmon = (hw_cap & XGMAC_HWFEAT_MMCSEL) >> 8;
+ 	dma_cap->pmt_magic_frame = (hw_cap & XGMAC_HWFEAT_MGKSEL) >> 7;
 -- 
 2.7.4
 
