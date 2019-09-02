@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 987AEA5AF7
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 18:01:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C8BAA5AFB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 18:01:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BkSJOGyaJkvcUd0S/Qx+r/nwTyVn/M8YEzChMnp8Ffc=; b=cPjZJCckevp6gm
-	xif2LWabh2DuQNqJy5n2aYe6kkfV74aD+C4xPfk9bghF9tjCmgYt9/4jiBZbzUWdQdTuGFLTboDbS
-	U/FPSbKriTVpK1QkRvJI+iOFoHiVBvV54CmPYJLIVSJbtbNvUJn2RCyxsj9G34ZmFY0URTddWr6O2
-	0f6siNZTLWrWVtahE/yvze7F5usutF59nq22ZOBz85/3PNvKZeHxElwdKsjFjX9BGhS3ZZqfKw2l8
-	VKKbUCcmB1evCK52cksKPaxdFvHhnBXwYODQNNp3BXDd+e5VO7r0ZgU7k1fw92EWTwIB56AuEaA8y
-	/S2zcVRXQnxFPRNSHV5g==;
+	List-Owner; bh=mOjHvy5ril7iD/ElVOXaMzcNfTzhCS+IoMdvnaO9s/4=; b=r/HFTCJSnhHn1A
+	d7ceMIOiJQDkoTU2m/+eGctfVDPhwDUNUg9zR3y896OyxCA+gaz2YTd9qh/UE2HwUm9I5mWGKj+R1
+	weMM5rDT+Y/TcDQDu0tu36oIcXlDqFhyNl7NXhcMwOtGs0HxzpELB2/Ki1vJVlTN1zgb//QXaiUGR
+	CmWdCX0zr8vwRJJYRq8ksHLQ2fRs+iD9HJ8czhAqphl9pIH4iczDm495UqRYLC+GaYX3JcbzUhKJZ
+	v6XgRYGQWnS1gLXpDHYuCIFKDJrn88KSJjwj067qs7jcWoz4ikc/U1qCeaSvPU1HmPLjK2AYp3lt/
+	y41b81iKzhS54Wq2BEmg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4olh-0003vT-Kk; Mon, 02 Sep 2019 16:01:25 +0000
+	id 1i4olt-00045c-20; Mon, 02 Sep 2019 16:01:37 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4olY-0003tj-QB
+ id 1i4olY-0003tk-Pe
  for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 16:01:18 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x82FugXt018639; Mon, 2 Sep 2019 18:01:07 +0200
+ x82FugXs018639; Mon, 2 Sep 2019 18:01:07 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=gtUWzIm1qMISzYpgxl9wo61I8N3CwkggXpn2L8jhTyA=;
- b=xQJP7fGr9yQGbdEhj9FQruEssxqIEzxWXxkH7tjvMh8l+s/zf8KGBcx+nKr5aEHZCZU7
- C6ktme0sPdW01kTE2HFcKlBL9z5D1Px7tTLHvOdvXDYYUXRcYZqU3l1UiDTJZ6ChK080
- +1aZH0fz7gd4FcqhxrwX+0W1k+Uv0jvvp0jxRw5z3KoXfQ1uZrt1BAZyswd3YEccluLd
- QaGr0Q37V4N3d9Tm6F3tMr1vEaN6ROKj6RakMerm1u0QUdALTGpNgS6ZPzk2eskpjP5/
- RxUR5+FmMv142li1slJEgryOObnJeUTUY8xvvFQmlrAuOvQsbQseo+JOCERS3dEf5Z5n cA== 
+ bh=/aa56M5YSWRpVt8Ft9iZEe2M6R3uFp9aD8gFFWVnG8o=;
+ b=W0T3hZatOv0zWlkmehLF2oiCW7ELayPNixLUx/TaLDxe2BbiTX6o0aFox4GLzIVpcvpi
+ wXvJzYHojMbVNGbZ2wwty4a0W2pi4VszwBn8vux0V8C6c9RXh4lrszMIghrAhgcHevz7
+ 6zWVj5w9QI5ubr/HNzWHnt6qD/Mteo8fpkGtE4O78rjStRoFWFKIMhNiAVEplmRF9U/c
+ osBBcRHeGADMRYyEX/agLuVI+lDW2av1ogCSCRHAbiunmIqentX+nMOtdBHvmLpv9v9U
+ U+d3hnqFcNlx8Y/dxernxysFPH+PxH+sTSgGmRwBYbP3armE2unZuDrVazLTLNSnA8N+ kg== 
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2uqe19dt3x-1
+ by mx08-00178001.pphosted.com with ESMTP id 2uqe19dt3w-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 02 Sep 2019 18:01:07 +0200
+ Mon, 02 Sep 2019 18:01:06 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id DEA8A50;
- Mon,  2 Sep 2019 16:01:01 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 496502B92D4;
- Mon,  2 Sep 2019 18:01:01 +0200 (CEST)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS21.st.com
- (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019
- 18:01:01 +0200
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id C359224;
+ Mon,  2 Sep 2019 16:01:02 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 7608B2CF15E;
+ Mon,  2 Sep 2019 18:01:02 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019
+ 18:01:02 +0200
 Received: from localhost (10.201.23.16) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019 18:01:00
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019 18:01:01
  +0200
 From: Olivier Moysan <olivier.moysan@st.com>
 To: <alexandre.torgue@st.com>, <olof@lixom.net>, <horms+renesas@verge.net.au>, 
@@ -60,9 +60,9 @@ To: <alexandre.torgue@st.com>, <olof@lixom.net>, <horms+renesas@verge.net.au>,
  <fabrice.gasnier@st.com>, <enric.balletbo@collabora.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-stm32@st-md-mailman.stormreply.com>
-Subject: [PATCH 1/4] ARM: multi_v7_defconfig: enable stm32 sai support
-Date: Mon, 2 Sep 2019 18:00:38 +0200
-Message-ID: <1567440041-19220-2-git-send-email-olivier.moysan@st.com>
+Subject: [PATCH 2/4] ARM: multi_v7_defconfig: enable stm32 i2s support
+Date: Mon, 2 Sep 2019 18:00:39 +0200
+Message-ID: <1567440041-19220-3-git-send-email-olivier.moysan@st.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
 References: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
@@ -71,8 +71,8 @@ X-Originating-IP: [10.201.23.16]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
  definitions=2019-09-02_06:2019-08-29,2019-09-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_090117_188038_2B1D3D4A 
-X-CRM114-Status: GOOD (  12.10  )
+X-CRM114-CacheID: sfid-20190902_090117_190809_2D639706 
+X-CRM114-Status: GOOD (  11.88  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -106,7 +106,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable support for SAI on STM32MP1.
+Enable support for I2S on STM32MP1.
 
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 ---
@@ -114,14 +114,14 @@ Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index c5d37dfafe98..929d13842171 100644
+index 929d13842171..02265e195e50 100644
 --- a/arch/arm/configs/multi_v7_defconfig
 +++ b/arch/arm/configs/multi_v7_defconfig
-@@ -699,6 +699,7 @@ CONFIG_SND_SOC_ODROID=m
- CONFIG_SND_SOC_SH4_FSI=m
+@@ -700,6 +700,7 @@ CONFIG_SND_SOC_SH4_FSI=m
  CONFIG_SND_SOC_RCAR=m
  CONFIG_SND_SOC_STI=m
-+CONFIG_SND_SOC_STM32_SAI=m
+ CONFIG_SND_SOC_STM32_SAI=m
++CONFIG_SND_SOC_STM32_I2S=m
  CONFIG_SND_SUN4I_CODEC=m
  CONFIG_SND_SOC_TEGRA=m
  CONFIG_SND_SOC_TEGRA20_I2S=m
