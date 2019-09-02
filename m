@@ -2,49 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18D8BA5653
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 14:38:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 50DB0A568E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 14:46:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ECeQxCyj3r3ZC6Z1Au35QWnaXY+DjF52hTV7gBHZK88=; b=HH1mOuNYwHXCg3
-	B71Om2RJwEcELl0iI9BpgRzoZkIKlSew1297rnrtSb8gl+53AL+DXdRXbATbulxc6Ylgo5WU38tNS
-	/dvIJ1wtG7fhLhOYX3071HHEF23swFffG1i0/oEvd9IBS1BDTy542VXzDx9gvvxAhYlnWmUYB50lR
-	RregARRDNYgnoNTC++PWnFJd3AGtvcGYV95LCQiAZB4nE30dWxpInR9XSTf7ltgV37V+7EiSgVQV+
-	3zeZgvmh9LCGFXEg46O0VTeAl5QQO+705MwcusNKgLeOeKp4wbOY/L0YjdXsQ3YbHFjhGyNyEABOf
-	8lqmjRbT3pDNAlgJqyPg==;
+	List-Owner; bh=D1jHGiAQmh1NLbgQ75ktGkyyYXj99CeqKy8DpKbn/EA=; b=Ptn/HggVXcOW0z
+	Kex69bhPUz93/p4oopYhBcGlVWx+IPmP+LbEoZuJr0X5VvoEgglBYvV+MC0LuZOsA+xy6uuMEjzSU
+	bq1EVwLM+aGkjsMNSXgBPTDAwls1+IvYtzWwAiA+075ENHJKSQdw9+7/v1Ku014y2C28/jMxEudYm
+	vukauAGRNscaeZm6zojHs4HsyLt7fxZB4H+cYoYqze+wT6BICYGeQuUQKF3lrU3k5OxvrlE0AXdZI
+	Oc+GYzTmZoj/mfEgvRlPLW3+oDm8YVSaaFIcUJq95kX8+Euqscteo/+nF4z21wpsQ8FiIv7OLil+G
+	uxMmZ5jE21Fx7FhPB8YA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4lax-0007U1-I3; Mon, 02 Sep 2019 12:38:07 +0000
+	id 1i4lit-0002CT-8W; Mon, 02 Sep 2019 12:46:19 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4lai-0007Rk-Co
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 12:37:54 +0000
+ id 1i4lig-0002Bo-JB
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 12:46:08 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 50E27337;
- Mon,  2 Sep 2019 05:37:50 -0700 (PDT)
-Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 31B413F246;
- Mon,  2 Sep 2019 05:37:49 -0700 (PDT)
-Date: Mon, 2 Sep 2019 13:37:44 +0100
-From: Mark Rutland <mark.rutland@arm.com>
-To: "Andrew F. Davis" <afd@ti.com>
-Subject: Re: [PATCH] arm64: use x22 to save boot exception level
-Message-ID: <20190902123601.GA8488@lakrids.cambridge.arm.com>
-References: <20190828173318.12428-1-afd@ti.com>
- <20190829094720.GA44575@lakrids.cambridge.arm.com>
- <511d200c-9294-e562-5ba5-4f061965395d@ti.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CBF90337;
+ Mon,  2 Sep 2019 05:46:05 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 1B3C53F246;
+ Mon,  2 Sep 2019 05:46:05 -0700 (PDT)
+Date: Mon, 2 Sep 2019 13:46:03 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Xiaowei Bao <xiaowei.bao@nxp.com>
+Subject: Re: [PATCH v3 09/11] PCI: layerscape: Add EP mode support for
+ ls1088a and ls2088a
+Message-ID: <20190902124603.GJ9720@e119886-lin.cambridge.arm.com>
+References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
+ <20190902031716.43195-10-xiaowei.bao@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <511d200c-9294-e562-5ba5-4f061965395d@ti.com>
-User-Agent: Mutt/1.11.1+11 (2f07cb52) (2018-12-01)
+In-Reply-To: <20190902031716.43195-10-xiaowei.bao@nxp.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_053752_536071_7D6EB9F7 
-X-CRM114-Status: GOOD (  20.44  )
+X-CRM114-CacheID: sfid-20190902_054606_723534_103CC3B8 
+X-CRM114-Status: GOOD (  18.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,74 +62,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Matthew Leach <matthew.leach@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
- Tero Kristo <t-kristo@ti.com>, Will Deacon <will@kernel.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.com,
+ arnd@arndb.de, devicetree@vger.kernel.org, jingoohan1@gmail.com,
+ zhiqiang.hou@nxp.com, linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, minghuan.Lian@nxp.com,
+ robh+dt@kernel.org, gregkh@linuxfoundation.org,
+ linux-arm-kernel@lists.infradead.org, gustavo.pimentel@synopsys.com,
+ leoyang.li@nxp.com, shawnguo@kernel.org, mingkai.hu@nxp.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 03:23:53PM -0400, Andrew F. Davis wrote:
-> On 8/29/19 5:47 AM, Mark Rutland wrote:
-> > On Wed, Aug 28, 2019 at 01:33:18PM -0400, Andrew F. Davis wrote:
-
-> We are seeing is a write-back from L3 cache. Our bootloader writes the
-> kernel image with caches on, then after turning off caching but before
-> handing off to Linux it clean/invalidates all cache lines by set/way.
-> This cleans out the L1/L2 but leaves dirty lines in L3. Our platform
-> doesn't really have a good way to clean L3 as it only provides cache
-> maintenance operations by VA, not by line, so we would need to clean
-> every VA address manually..
-
-Ensuring that the Image is clean to the PoC is required by the arm64
-boot protocol, which states that maintenance by VA may be necessary in
-the presence of a system cache. See:
-
-https://www.kernel.org/doc/html/latest/arm64/booting.html
-
-... which states:
-
-| The MMU must be off. Instruction cache may be on or off. The address
-| range corresponding to the loaded kernel image must be cleaned to the
-| PoC. In the presence of a system cache or other coherent masters with
-| caches enabled, this will typically require cache maintenance by VA
-| rather than set/way operations. 
-
-Please fix your bootloader to meet this requirement. The kernel is not
-in a position to fix this up, e.g. as while the MMU is off instruction
-fetches could fetch stale data from the PoC.
-
-You only need to clean the kernel Image to the PoC, rather than all of
-memory, so you should be able to do that with a loop of DC CVAC
-instructions covering the VA range of the kernel Image.
-
-> Also want to point out, although this isn't a problem for most platforms
-> what this code does here, with writing to a location as non-cacheable,
-> is not architecturally safe as the running cores that do the reads have
-> this section marked as cacheable when they read, therefor you have
-> mismatched attributes. When this happens like this according to the ARM
-> ARM we should do a cache invalidate after the write *and* before the
+On Mon, Sep 02, 2019 at 11:17:14AM +0800, Xiaowei Bao wrote:
+> Add PCIe EP mode support for ls1088a and ls2088a, there are some
+> difference between LS1 and LS2 platform, so refactor the code of
+> the EP driver.
 > 
-> I would like to work this fix from the U-Boot side also, but in parallel
-> I would like to reduce the mismatched attributes as much as possible on
-> the kernel side like done here. So yes, we still will have issue with
-> __early_cpu_boot_status, but that only seems to be needed in the failure
-> to boot case, I'd like to fix that up as well at some later point.
+> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
+> ---
+> v2: 
+>  - This is a new patch for supporting the ls1088a and ls2088a platform.
+> v3:
+>  - Adjust the some struct assignment order in probe function.
+> 
+>  drivers/pci/controller/dwc/pci-layerscape-ep.c | 72 +++++++++++++++++++-------
+>  1 file changed, 53 insertions(+), 19 deletions(-)
+> 
+> diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> index 5f0cb99..723bbe5 100644
+> --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
+> @@ -20,27 +20,29 @@
+>  
+>  #define PCIE_DBI2_OFFSET		0x1000	/* DBI2 base address*/
+>  
+> -struct ls_pcie_ep {
+> -	struct dw_pcie		*pci;
+> -	struct pci_epc_features	*ls_epc;
+> +#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
+> +
+> +struct ls_pcie_ep_drvdata {
+> +	u32				func_offset;
+> +	const struct dw_pcie_ep_ops	*ops;
+> +	const struct dw_pcie_ops	*dw_pcie_ops;
+>  };
+>  
+> -#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
+> +struct ls_pcie_ep {
+> +	struct dw_pcie			*pci;
+> +	struct pci_epc_features		*ls_epc;
+> +	const struct ls_pcie_ep_drvdata *drvdata;
+> +};
+>  
+>  static int ls_pcie_establish_link(struct dw_pcie *pci)
+>  {
+>  	return 0;
+>  }
+>  
+> -static const struct dw_pcie_ops ls_pcie_ep_ops = {
+> +static const struct dw_pcie_ops dw_ls_pcie_ep_ops = {
+>  	.start_link = ls_pcie_establish_link,
+>  };
+>  
+> -static const struct of_device_id ls_pcie_ep_of_match[] = {
+> -	{ .compatible = "fsl,ls-pcie-ep",},
+> -	{ },
+> -};
+> -
+>  static const struct pci_epc_features*
+>  ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
+>  {
+> @@ -87,10 +89,39 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+>  	}
+>  }
+>  
+> -static const struct dw_pcie_ep_ops pcie_ep_ops = {
+> +static unsigned int ls_pcie_ep_func_conf_select(struct dw_pcie_ep *ep,
+> +						u8 func_no)
+> +{
+> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
+> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
+> +
+> +	WARN_ON(func_no && !pcie->drvdata->func_offset);
+> +	return pcie->drvdata->func_offset * func_no;
+> +}
+> +
+> +static const struct dw_pcie_ep_ops ls_pcie_ep_ops = {
+>  	.ep_init = ls_pcie_ep_init,
+>  	.raise_irq = ls_pcie_ep_raise_irq,
+>  	.get_features = ls_pcie_ep_get_features,
+> +	.func_conf_select = ls_pcie_ep_func_conf_select,
+> +};
+> +
+> +static const struct ls_pcie_ep_drvdata ls1_ep_drvdata = {
+> +	.ops = &ls_pcie_ep_ops,
+> +	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
+> +};
+> +
+> +static const struct ls_pcie_ep_drvdata ls2_ep_drvdata = {
+> +	.func_offset = 0x20000,
+> +	.ops = &ls_pcie_ep_ops,
+> +	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
+> +};
+> +
+> +static const struct of_device_id ls_pcie_ep_of_match[] = {
+> +	{ .compatible = "fsl,ls1046a-pcie-ep", .data = &ls1_ep_drvdata },
+> +	{ .compatible = "fsl,ls1088a-pcie-ep", .data = &ls2_ep_drvdata },
+> +	{ .compatible = "fsl,ls2088a-pcie-ep", .data = &ls2_ep_drvdata },
+> +	{ },
 
-If you haven't cleaned the Image to the PoC, there's no guarantee that
-any portion of it can be safely executed with the MMU off, so I don't
-think that makes sense -- please fix your bootloader first.
-
-I am aware that there are potential problems with mismatched attributes,
-the primary issue here being unexpected-data-cache-hit. However, were
-that to occur no amount of cache maintenance can save us in the presence
-of a live cacheable alias. Practically speaking that's mainly a problem
-for virtual environments.
+This removes support for "fsl,ls-pcie-ep" - was that intentional? If you do
+plan to drop it please make sure you explain why in the commit message. See
+also my comments in your dt-binding patch.
 
 Thanks,
-Mark.
+
+Andrew Murray
+
+>  };
+>  
+>  static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+> @@ -103,7 +134,7 @@ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+>  	int ret;
+>  
+>  	ep = &pci->ep;
+> -	ep->ops = &pcie_ep_ops;
+> +	ep->ops = pcie->drvdata->ops;
+>  
+>  	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
+>  	if (!res)
+> @@ -142,20 +173,23 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+>  	if (!ls_epc)
+>  		return -ENOMEM;
+>  
+> -	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+> -	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+> -	if (IS_ERR(pci->dbi_base))
+> -		return PTR_ERR(pci->dbi_base);
+> +	pcie->drvdata = of_device_get_match_data(dev);
+>  
+> -	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
+>  	pci->dev = dev;
+> -	pci->ops = &ls_pcie_ep_ops;
+> -	pcie->pci = pci;
+> +	pci->ops = pcie->drvdata->dw_pcie_ops;
+>  
+>  	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
+>  
+> +	pcie->pci = pci;
+>  	pcie->ls_epc = ls_epc;
+>  
+> +	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+> +	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+> +	if (IS_ERR(pci->dbi_base))
+> +		return PTR_ERR(pci->dbi_base);
+> +
+> +	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
+> +
+>  	platform_set_drvdata(pdev, pcie);
+>  
+>  	ret = ls_add_pcie_ep(pcie, pdev);
+> -- 
+> 2.9.5
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
