@@ -2,75 +2,96 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 95197A5D83
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 23:26:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9831CA5D9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 23:38:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=jv7Vj9rQs+OfqpNI8UkiCq5plb31mQTgRaD77Ej26YE=; b=B1jbIIzTxdsFVu
-	pGXN0dFTZHBqf6gZIy8h/sSkDu4BoGYgZcXnh8vpu6RSnhQJtbk9OJRaU5PaZXQgaupJuam+MOnwz
-	4jx777SMUk1oBYDmzOR62Qh9aFI7XvtiikLYEs+CCeQOSwNXDw5rK7K0YN2Fo01kzo/mlE7r2nLZe
-	DL8QkdkdsFBp+rzWLz/3wo30TWUVxCmSBxFrD8TzZMOSJekZaEKf3kAv+nueTo7LMH3O8OB6kCQvX
-	s6zXuWZvZyW9G0ObQ0BcptQsCP2PhY5o3a82i21yvXie0uVr/MYQ4KsNc1ILKsyeRs21GUq6ZDhqL
-	CtU5GB2mUs7Ccg2HdfgA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9ebazo2BNwfjanyHS4mVmONDPmeZaaPokVliZk23ndU=; b=eHh68iGWCiX3SevteWRti/29H
+	kJfIaqFHLvw8h99rErBs5gJNqNQ8GXzsslkNGrRt9VQsShTWuETSmMuuDFIMokUmzVtrCOG1VjqX5
+	97TTnj7K6kuBdBYG+qwFRG2xbNiB/ug4dzBlrU3VwjSAHBggEmnmzfYdcj8Ar4BUZf3T66gIr+vqQ
+	roXfF6vSgztKI/xIRRoTGMH/tC6D8Nx5CYAU03gamq7a9TDJeRY0JA70d5RQWVVHajRHenCObapbO
+	P48/hoTIoBFyqScec9iSPwpCyHbOgFv0UYXtknbNt7AwMQI8ocnzVQ3rkIxduurV7ba7H9n3PQQr4
+	0FG7R9uRg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4tqT-0008HA-Nf; Mon, 02 Sep 2019 21:26:41 +0000
-Received: from mail-ot1-f67.google.com ([209.85.210.67])
+	id 1i4u1S-0003Np-0C; Mon, 02 Sep 2019 21:38:02 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4tqG-0008Gj-Fz
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 21:26:30 +0000
-Received: by mail-ot1-f67.google.com with SMTP id g16so2837039otp.12
+ id 1i4u1E-0003NE-P7
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 21:37:50 +0000
+Received: by mail-wr1-x442.google.com with SMTP id g7so15298310wrx.2
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Sep 2019 14:26:28 -0700 (PDT)
+ Mon, 02 Sep 2019 14:37:47 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-transfer-encoding:content-language;
+ bh=AzTuyC2UsbNpm6l7U9X8UINePV0sxSWA4lyUt5FUF8I=;
+ b=ACOXOZftMzxnBXf7Mn8TNUGkt5tTRL0PxYAd9HIEyOmhxpyBC2Xs0YAiO2WCsQGZuM
+ 2RyyEMVjxsUXBfHRnbvsgdAJ0Soi7FTywBM7MiTPh/31uIqySyseSdQZ2X+ucXc/NAmB
+ zzx7xB9CHW0AQlMugYjiOAr6J2CMaC4T4CTvmSNc4o6Gmrs3GUD3qiHcaceT2XEampVQ
+ uv3DSFPyxEaoUQHtQj+MFFif6DI37sQ3URILMUTlkVDslod+EUX47nfEHhue5U0gMKpM
+ 4xjaCMmwR/X6+Pc/5og0XwtV56aBpEjjx+8JUbqJ613u7EsgbM4A4Bz6vFeED2fmwLm0
+ PEmw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=51bqbB4DvSXg4Ew2o4zqEia3sJ8jFJPwKkEVreoHOaQ=;
- b=SaO2hxjUwaCIlnO0UXCpgcX6w/Fbic8b2WraGpHBvFCaLwckIbok8Q9ZbDS/p48ZJV
- qqRywRHJ1KKQCKWJkFjkBJmdPUOV47f1V0477TXize/i4/cZNPUtcBSOaHRw2ioKD5Jf
- N4Rr6ETX2128vVzr1jUPDcHeU0GcOGwx03FDKoA9hccTKLie/0RX0zPMWRKgI1w0Miqc
- ac4XD35FMNZwjCdmJAuEY1e2jqLTRfQXPvUSDQTEnvs1sz3dTzWZ0YUQKLFmq6XEB5yi
- Tm+X7J/Yz8vy8F01nnfNDqWYdPJWl02zBFj6FfCkmkAag2lJtAX8q2Jm0aQ27EqfHz2C
- WGDw==
-X-Gm-Message-State: APjAAAUGIf/87uFvbLc893DQ5y6PLLbNMAvH2aTU7pLVHfY7zXDuD6kb
- 6TJ3J9dahPRhIPwfuyZvoRBrzg5Tez34F5aTFPY=
-X-Google-Smtp-Source: APXvYqyUaffwR13IQSYSCljLxByT0+wOU3SzpStZdcxkTWgg2N0HBS0eY/sfMgMZHr4cE6nJGHZFFVvQMXyTWZcajro=
-X-Received: by 2002:a9d:7411:: with SMTP id n17mr5844599otk.118.1567459587215; 
- Mon, 02 Sep 2019 14:26:27 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-transfer-encoding
+ :content-language;
+ bh=AzTuyC2UsbNpm6l7U9X8UINePV0sxSWA4lyUt5FUF8I=;
+ b=KiewoUB9TaIYNkLwHqsEH9CA4Q48bFqyjbJOby3VLK69VQW2jAbmQUYx3j7Gn2e6IF
+ eH5AZWeeRu7/UVgqZRx7Uk3xZjSRQG3hEn7R5jr3Mp82tuv1x0ffJhvf37ZVAjODdIqI
+ 6ukMqr6jNs6KEkJOOYYbSVIOySMMHQbKtMGDdQecm4v+d75KJ5x4hnfMsl4EuqaHHHWX
+ KGExYDN0LwjtJfo4ZrsAyWSe/ZVazn9F1cUft6gSxbS6vAmtojVSd0e5KGFiz776cpQs
+ 41Vjzdwt7zPlfpL4Owhsrj6sPOqYbfNvqQL7/nTcPtOVer96Tn9fnEgUmvIZCx7PWfv5
+ 6akg==
+X-Gm-Message-State: APjAAAXYig+QfHXvIkCwh+m1EdncOrLJBwmXWVnSPIaNQaXi9eQEKEDF
+ s4gpKNYF+YUFSRS6fRzXdQg=
+X-Google-Smtp-Source: APXvYqziqzBEOwGLRmlaO0Yb8EPO9joHZ7A7//D5mVWpDB+g5EX3APsttrwr1cYJsIvfbbQRjE3bKg==
+X-Received: by 2002:adf:f30e:: with SMTP id i14mr24352349wro.288.1567460265983; 
+ Mon, 02 Sep 2019 14:37:45 -0700 (PDT)
+Received: from [172.30.89.46] (sjewanfw1-nat.mentorg.com. [139.181.7.34])
+ by smtp.gmail.com with ESMTPSA id q24sm23219092wmc.3.2019.09.02.14.37.41
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 02 Sep 2019 14:37:45 -0700 (PDT)
+Subject: Re: [PATCH 15/22] media: imx7-media-csi: Create media links in bound
+ notifier
+To: Rui Miguel Silva <rmfrfs@gmail.com>
+References: <20190805233505.21167-1-slongerbeam@gmail.com>
+ <20190805233505.21167-16-slongerbeam@gmail.com> <m3blw35970.fsf@gmail.com>
+From: Steve Longerbeam <slongerbeam@gmail.com>
+Message-ID: <b648b587-110d-8e6a-8b9c-10e8dbb9561e@gmail.com>
+Date: Mon, 2 Sep 2019 14:37:38 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190821145242.2330-1-Jonathan.Cameron@huawei.com>
- <20190821145242.2330-2-Jonathan.Cameron@huawei.com>
-In-Reply-To: <20190821145242.2330-2-Jonathan.Cameron@huawei.com>
-From: "Rafael J. Wysocki" <rafael@kernel.org>
-Date: Mon, 2 Sep 2019 23:26:16 +0200
-Message-ID: <CAJZ5v0ie8s-Ye7PD=xj0nXL228WDqhjJPCs+eV3n6_SAeaQowg@mail.gmail.com>
-Subject: Re: [PATCH 1/4] ACPI: Support Generic Initiator only domains
-To: Jonathan Cameron <Jonathan.Cameron@huawei.com>,
- Dan Williams <dan.j.williams@intel.com>, 
- Keith Busch <keith.busch@intel.com>
+In-Reply-To: <m3blw35970.fsf@gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_142628_536715_56E051C6 
-X-CRM114-Status: GOOD (  24.74  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190902_143748_848214_34C55057 
+X-CRM114-Status: GOOD (  18.10  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rjwysocki[at]gmail.com)
+ provider (slongerbeam[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,207 +103,96 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Linuxarm <linuxarm@huawei.com>,
- Linux Memory Management List <linux-mm@kvack.org>,
- Jerome Glisse <jglisse@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 21, 2019 at 4:53 PM Jonathan Cameron
-<Jonathan.Cameron@huawei.com> wrote:
->
-> Generic Initiators are a new ACPI concept that allows for the
-> description of proximity domains that contain a device which
-> performs memory access (such as a network card) but neither
-> host CPU nor Memory.
->
-> This patch has the parsing code and provides the infrastructure
-> for an architecture to associate these new domains with their
-> nearest memory processing node.
->
-> Signed-off-by: Jonathan Cameron <Jonathan.Cameron@huawei.com>
+Hi Rui,
 
-Dan, Keith, any comments?
+On 9/2/19 2:38 AM, Rui Miguel Silva wrote:
+> Hi Steve,
+> On Tue 06 Aug 2019 at 00:34, Steve Longerbeam wrote:
+>> Implement a notifier bound op to register media links from the remote
+>> sub-device's source pad(s) to the CSI sink pad.
+>>
+>> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+>> ---
+>>   drivers/staging/media/imx/imx7-media-csi.c | 24 ++++++++++++++++++++++
+>>   1 file changed, 24 insertions(+)
+>>
+>> diff --git a/drivers/staging/media/imx/imx7-media-csi.c b/drivers/staging/media/imx/imx7-media-csi.c
+>> index a1c96c52a606..f71ac485f780 100644
+>> --- a/drivers/staging/media/imx/imx7-media-csi.c
+>> +++ b/drivers/staging/media/imx/imx7-media-csi.c
+>> @@ -196,6 +196,11 @@ struct imx7_csi {
+>>   	struct completion last_eof_completion;
+>>   };
+>>
+>> +static inline struct imx7_csi *notifier_to_dev(struct v4l2_async_notifier *n)
+>>
+> As the other one add the namespace for the function name:
+> imx7_csi_notifier_to_dev
+>
+> other than this, looks good to me.
 
-AFAICS this clashes with the series from Dan that rearranges the ACPI
-NUMA related code.
+Thanks for the review. I will make those changes in next rev.
 
-> ---
->  drivers/acpi/numa.c            | 62 +++++++++++++++++++++++++++++++++-
->  drivers/base/node.c            |  3 ++
->  include/asm-generic/topology.h |  3 ++
->  include/linux/nodemask.h       |  1 +
->  include/linux/topology.h       |  7 ++++
->  5 files changed, 75 insertions(+), 1 deletion(-)
+Steve
+
 >
-> diff --git a/drivers/acpi/numa.c b/drivers/acpi/numa.c
-> index eadbf90e65d1..fe34315a9234 100644
-> --- a/drivers/acpi/numa.c
-> +++ b/drivers/acpi/numa.c
-> @@ -170,6 +170,38 @@ acpi_table_print_srat_entry(struct acpi_subtable_header *header)
->                 }
->                 break;
 >
-> +       case ACPI_SRAT_TYPE_GENERIC_AFFINITY:
-> +       {
-> +               struct acpi_srat_generic_affinity *p =
-> +                       (struct acpi_srat_generic_affinity *)header;
-> +               char name[9] = {};
-> +
-> +               if (p->device_handle_type == 0) {
-> +                       /*
-> +                        * For pci devices this may be the only place they
-> +                        * are assigned a proximity domain
-> +                        */
-> +                       pr_debug("SRAT Generic Initiator(Seg:%u BDF:%u) in proximity domain %d %s\n",
-> +                                *(u16 *)(&p->device_handle[0]),
-> +                                *(u16 *)(&p->device_handle[2]),
-> +                                p->proximity_domain,
-> +                                (p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
-> +                               "enabled" : "disabled");
-> +               } else {
-> +                       /*
-> +                        * In this case we can rely on the device having a
-> +                        * proximity domain reference
-> +                        */
-> +                       memcpy(name, p->device_handle, 8);
-> +                       pr_info("SRAT Generic Initiator(HID=%.8s UID=%.4s) in proximity domain %d %s\n",
-> +                               (char *)(&p->device_handle[0]),
-> +                               (char *)(&p->device_handle[8]),
-> +                               p->proximity_domain,
-> +                               (p->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED) ?
-> +                               "enabled" : "disabled");
-> +               }
-> +       }
-> +       break;
->         default:
->                 pr_warn("Found unsupported SRAT entry (type = 0x%x)\n",
->                         header->type);
-> @@ -378,6 +410,32 @@ acpi_parse_gicc_affinity(union acpi_subtable_headers *header,
->         return 0;
->  }
->
-> +static int __init
-> +acpi_parse_gi_affinity(union acpi_subtable_headers *header,
-> +                      const unsigned long end)
-> +{
-> +       struct acpi_srat_generic_affinity *gi_affinity;
-> +       int node;
-> +
-> +       gi_affinity = (struct acpi_srat_generic_affinity *)header;
-> +       if (!gi_affinity)
-> +               return -EINVAL;
-> +       acpi_table_print_srat_entry(&header->common);
-> +
-> +       if (!(gi_affinity->flags & ACPI_SRAT_GENERIC_AFFINITY_ENABLED))
-> +               return -EINVAL;
-> +
-> +       node = acpi_map_pxm_to_node(gi_affinity->proximity_domain);
-> +       if (node == NUMA_NO_NODE || node >= MAX_NUMNODES) {
-> +               pr_err("SRAT: Too many proximity domains.\n");
-> +               return -EINVAL;
-> +       }
-> +       node_set(node, numa_nodes_parsed);
-> +       node_set_state(node, N_GENERIC_INITIATOR);
-> +
-> +       return 0;
-> +}
-> +
->  static int __initdata parsed_numa_memblks;
->
->  static int __init
-> @@ -433,7 +491,7 @@ int __init acpi_numa_init(void)
->
->         /* SRAT: System Resource Affinity Table */
->         if (!acpi_table_parse(ACPI_SIG_SRAT, acpi_parse_srat)) {
-> -               struct acpi_subtable_proc srat_proc[3];
-> +               struct acpi_subtable_proc srat_proc[4];
->
->                 memset(srat_proc, 0, sizeof(srat_proc));
->                 srat_proc[0].id = ACPI_SRAT_TYPE_CPU_AFFINITY;
-> @@ -442,6 +500,8 @@ int __init acpi_numa_init(void)
->                 srat_proc[1].handler = acpi_parse_x2apic_affinity;
->                 srat_proc[2].id = ACPI_SRAT_TYPE_GICC_AFFINITY;
->                 srat_proc[2].handler = acpi_parse_gicc_affinity;
-> +               srat_proc[3].id = ACPI_SRAT_TYPE_GENERIC_AFFINITY;
-> +               srat_proc[3].handler = acpi_parse_gi_affinity;
->
->                 acpi_table_parse_entries_array(ACPI_SIG_SRAT,
->                                         sizeof(struct acpi_table_srat),
-> diff --git a/drivers/base/node.c b/drivers/base/node.c
-> index 75b7e6f6535b..6f60689af5f8 100644
-> --- a/drivers/base/node.c
-> +++ b/drivers/base/node.c
-> @@ -980,6 +980,8 @@ static struct node_attr node_state_attr[] = {
->  #endif
->         [N_MEMORY] = _NODE_ATTR(has_memory, N_MEMORY),
->         [N_CPU] = _NODE_ATTR(has_cpu, N_CPU),
-> +       [N_GENERIC_INITIATOR] = _NODE_ATTR(has_generic_initiator,
-> +                                          N_GENERIC_INITIATOR),
->  };
->
->  static struct attribute *node_state_attrs[] = {
-> @@ -991,6 +993,7 @@ static struct attribute *node_state_attrs[] = {
->  #endif
->         &node_state_attr[N_MEMORY].attr.attr,
->         &node_state_attr[N_CPU].attr.attr,
-> +       &node_state_attr[N_GENERIC_INITIATOR].attr.attr,
->         NULL
->  };
->
-> diff --git a/include/asm-generic/topology.h b/include/asm-generic/topology.h
-> index 238873739550..54d0b4176a45 100644
-> --- a/include/asm-generic/topology.h
-> +++ b/include/asm-generic/topology.h
-> @@ -71,6 +71,9 @@
->  #ifndef set_cpu_numa_mem
->  #define set_cpu_numa_mem(cpu, node)
->  #endif
-> +#ifndef set_gi_numa_mem
-> +#define set_gi_numa_mem(gi, node)
-> +#endif
->
->  #endif /* !CONFIG_NUMA || !CONFIG_HAVE_MEMORYLESS_NODES */
->
-> diff --git a/include/linux/nodemask.h b/include/linux/nodemask.h
-> index 27e7fa36f707..1aebf766fb52 100644
-> --- a/include/linux/nodemask.h
-> +++ b/include/linux/nodemask.h
-> @@ -399,6 +399,7 @@ enum node_states {
->  #endif
->         N_MEMORY,               /* The node has memory(regular, high, movable) */
->         N_CPU,          /* The node has one or more cpus */
-> +       N_GENERIC_INITIATOR,    /* The node is a GI only node */
->         NR_NODE_STATES
->  };
->
-> diff --git a/include/linux/topology.h b/include/linux/topology.h
-> index 47a3e3c08036..2f97754e0508 100644
-> --- a/include/linux/topology.h
-> +++ b/include/linux/topology.h
-> @@ -125,6 +125,13 @@ static inline void set_numa_mem(int node)
->  }
->  #endif
->
-> +#ifndef set_gi_numa_mem
-> +static inline void set_gi_numa_mem(int gi, int node)
-> +{
-> +       _node_numa_mem_[gi] = node;
-> +}
-> +#endif
-> +
->  #ifndef node_to_mem_node
->  static inline int node_to_mem_node(int node)
->  {
-> --
-> 2.20.1
->
+>> +{
+>> +	return container_of(n, struct imx7_csi, notifier);
+>> +}
+>> +
+>>   static u32 imx7_csi_reg_read(struct imx7_csi *csi, unsigned int offset)
+>>   {
+>>   	return readl(csi->regbase + offset);
+>> @@ -1173,6 +1178,23 @@ static int imx7_csi_parse_endpoint(struct device *dev,
+>>   	return fwnode_device_is_available(asd->match.fwnode) ? 0 : -EINVAL;
+>>   }
+>>
+>> +static int imx7_csi_notify_bound(struct v4l2_async_notifier *notifier,
+>> +				 struct v4l2_subdev *sd,
+>> +				 struct v4l2_async_subdev *asd)
+>> +{
+>> +	struct imx7_csi *csi = notifier_to_dev(notifier);
+>> +	struct media_pad *sink = &csi->sd.entity.pads[IMX7_CSI_PAD_SINK];
+>> +
+>> +	return media_create_fwnode_pad_links(sink,
+>> +					     dev_fwnode(csi->sd.dev),
+>> +					     &sd->entity,
+>> +					     dev_fwnode(sd->dev), 0);
+>> +}
+>> +
+>> +static const struct v4l2_async_notifier_operations imx7_csi_notify_ops = {
+>> +	.bound = imx7_csi_notify_bound,
+>> +};
+>> +
+>>   static int imx7_csi_probe(struct platform_device *pdev)
+>>   {
+>>   	struct device *dev = &pdev->dev;
+>> @@ -1253,6 +1275,8 @@ static int imx7_csi_probe(struct platform_device *pdev)
+>>
+>>   	v4l2_async_notifier_init(&csi->notifier);
+>>
+>> +	csi->notifier.ops = &imx7_csi_notify_ops;
+>> +
+>>   	ret = v4l2_async_register_fwnode_subdev(&csi->sd, &csi->notifier,
+>>   						sizeof(struct v4l2_async_subdev),
+>>   						NULL, 0,
+
 
 _______________________________________________
 linux-arm-kernel mailing list
