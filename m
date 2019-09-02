@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8782EA50CE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:04:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AE17EA50AB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:02:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,83 +11,67 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uLF03s0Y3Ni1GpA9Ct2GYSRoMOdA9+w1g2TRJfaC60Y=; b=RgonI+F6a2SgskbWsA+G5sc0LK
-	oQJb18qNv66gI5fK2yzNjIJL7mwBvDbXV0ZeyjpRQvHnRQk/YrYLoW6jYgGGGjnHLE+iqrHW843gT
-	cH9e6VPfzhDmqAC72b5PDgWphlb1gCCKixDRa9cKO5MzzTrEkPKx+NoRdYXV3snKGIzSiKDRD3dgw
-	XVUJK2OszPKsPFxqy510QTt2hsuejShKJSe35OMrXarSybPwtk6Vv7cZFQzr7QqyeSMsM/DxabNJ1
-	I1WGbVaxwii08EaszEIyeaFfs+3F0VGgvnuvyB9vmWDVkGx1lKXpjcDeB3CN3EL7WTbTctREwgMcC
-	EYrzBaGA==;
+	bh=6nnPxuhVDg618m61YIfT/1ulWVWwO9gr77gq75FPaOY=; b=A2KklXeDz5NSLc2Y3yMIpJZYI8
+	U1g7y66j0Ri5hw0HRK+sqmEE4FP7Rzd84vjMYvNT5zhiRzpZOS7qf6lFvbKjNnXhryebI8vH4s5Dx
+	XZ3zhLBf1/NJEKcMz68K0e81GgejugqRu/TZVV3Yd/w8IO4q1xc68M1nifhGiP9HqaD+EoRvDkDS+
+	XEnDIyhnEKIGYrkDaPECw9RATgMVcpofkYVCooG9CvhwzUSGDV9C6KK0jXmupcCAt96d6MEgb2wSP
+	u64sHUTM7habU6ZVrEhYN+EO56ZTSkybfxOo1OtQ7NZAZ4d2e8hZFoPdVLL8kcpzLb0Cp3sR39D9n
+	Mmtfnd5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4hKH-0005Uq-1q; Mon, 02 Sep 2019 08:04:37 +0000
-Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hIH-00049a-Bn
- for linux-arm-kernel@bombadil.infradead.org; Mon, 02 Sep 2019 08:02:33 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=0DMxC2VpMv4xvsgMMnwX+S12tAdCiEe/vY+WfdH0UGo=; b=hOAN57CjdhrTY0AY7saCERXYJ
- qrgBMkNEu7t8ztXAQp2MiJDM+H6UGJkqCPRqVWvmDn72B7uRsNZHF48oE16lp5lVm7vl4zdOG2CzV
- R4zMPZANMkxu+daLCR4s6C99Xr3+yINwp0Nk9+sbJ3EfHa4ttX7bicQzyiSTs9Rpbojj3BlKKxA0X
- zg5zyYZ28eOZCW6RotYY32loBcZ1xjJmU8xqMZ0lw4fzihauIOfWqDgaz17/szTUw7+mI2k0QyeHa
- f0zoAavTSkdwgO/ZXtWUI7jx9P1XA7xgfZNCJ73gYmbM8Dg8A3blU1idiXVAkmu98sEEh9V6gaOub
- y7zq/iPVQ==;
+	id 1i4hII-0003xi-Qn; Mon, 02 Sep 2019 08:02:34 +0000
 Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
- by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hIV-0003ZO-GR
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:02:52 +0000
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4hI3-0003uj-8N
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:02:20 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DD8DCC043B;
- Mon,  2 Sep 2019 08:02:16 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 09E96C03D7;
+ Mon,  2 Sep 2019 08:02:17 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567411337; bh=793MRHdv4DLwQdQr3WJdmtfxyUuhU0fectEqf0N0Y5Y=;
+ t=1567411337; bh=TnBhj8gYd15Wdya0NUlz/4/WhOGI/iqFaYmz/7sZMCQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=a3B8ZYzxCH17QfUXa0xm+zzycE9iJFrOLWrcPD0A5LuaAgNMupDyl3dAAzO+eu+KB
- duDPedszgqvuEzVdA6wv4ZTHY7aCPWvBH8+apX9VH9iivflTOOa6c4mXvql48hqq42
- f5OXVfAm57L+nrt7SV0KR35+oJ7LNpi8D7oEsO9T8oPYgOZcGGh48Qg7kda8tVbI7C
- 5plzqF1gJ5cPqJj9pDgnO1P1Vc1XSSQ5V/Pu19ctjEn+hEijXs6DzadN1NL35YYLDK
- 94s6TC35GL54mcbwS1wtEQZjJg4esAuS9YHuunKfIsAWj5Tyw9Jj0L5+umDHLYcchS
- ZEnQtLBlutEqA==
+ b=OZUC7UKZCeZ5OLvA6Z49pYhPM5qc1gGbQ0CXdVvTZV+QKw2xRmJTudWFdiwLJI4TX
+ vqKn2fHjdPBKpLCRYErQ/Ps/rK1Ye3lRnsIHqK3ArGrNj0HbqZ8bDyQ8B1zVbLdkkl
+ Yb4TCE8h2IBcz4j10PyzKrYX96Kuht3E4ID9cErSyY6R9M423d6Yr5BBRRFwVZHRMo
+ BE1I59HceiRJOQOf5QWNjdfmLXlCVrTYS5RpPJC6bbzRMRC3Gvgp/a66m2voujc5Sh
+ 9OTbcb7Sy2Cf12nSUFNKsqkNaN/U9IY18ciSEsQl6eWNXbFXemwf203qPt4W2z70oV
+ YxKZqvHz+uMXw==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id A38C0A007C;
+ by mailhost.synopsys.com (Postfix) with ESMTP id BAB58A0087;
  Mon,  2 Sep 2019 08:02:15 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 09/13] net: stmmac: ethtool: Let user configure TX
- coalesce without RIWT
-Date: Mon,  2 Sep 2019 10:01:51 +0200
-Message-Id: <851a16ddd28878dbaf932cc05f0dab627189be40.1567410970.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 12/13] net: stmmac: xgmac: Enable RX Jumbo frame
+ support
+Date: Mon,  2 Sep 2019 10:01:54 +0200
+Message-Id: <c7b570f37a47e94b329d97b2c2cf7e444c9676e9.1567410971.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_090248_247018_B8536CC7 
-X-CRM114-Status: GOOD (  14.07  )
+X-CRM114-CacheID: sfid-20190902_010219_341859_EA420A28 
+X-CRM114-Status: GOOD (  12.96  )
 X-Spam-Score: -0.2 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
- Content analysis details:   (-0.2 points, 5.0 required)
+X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -111,8 +95,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When RX Watchdog is disabled its currently not possible to configure TX
-coalesce settings. Let user configure it anyway.
+We are already doing it by default in the TX path so we can also enable
+Jumbo Frame support in the RX path independently of MTU value.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -127,52 +111,53 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c    | 21 +++++++++------------
- 1 file changed, 9 insertions(+), 12 deletions(-)
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h      |  3 ++-
+ drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 11 -----------
+ 2 files changed, 2 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-index 1c450105e5a6..1a768837ca72 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
-@@ -746,8 +746,15 @@ static int stmmac_set_coalesce(struct net_device *dev,
- 	    (ec->tx_max_coalesced_frames_high) || (ec->rate_sample_interval))
- 		return -EOPNOTSUPP;
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+index f942ac975c29..5923ca62d793 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2.h
+@@ -44,7 +44,8 @@
+ #define XGMAC_CONFIG_CST		BIT(2)
+ #define XGMAC_CONFIG_ACS		BIT(1)
+ #define XGMAC_CONFIG_RE			BIT(0)
+-#define XGMAC_CORE_INIT_RX		0
++#define XGMAC_CORE_INIT_RX		(XGMAC_CONFIG_GPSLCE | XGMAC_CONFIG_WD | \
++					 (XGMAC_JUMBO_LEN << XGMAC_CONFIG_GPSL_SHIFT))
+ #define XGMAC_PACKET_FILTER		0x00000008
+ #define XGMAC_FILTER_RA			BIT(31)
+ #define XGMAC_FILTER_IPFE		BIT(20)
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+index 36262ef8b70a..78ac659da279 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
+@@ -15,7 +15,6 @@ static void dwxgmac2_core_init(struct mac_device_info *hw,
+ 			       struct net_device *dev)
+ {
+ 	void __iomem *ioaddr = hw->pcsr;
+-	int mtu = dev->mtu;
+ 	u32 tx, rx;
  
--	if (ec->rx_coalesce_usecs == 0)
--		return -EINVAL;
-+	if (priv->use_riwt && (ec->rx_coalesce_usecs > 0)) {
-+		rx_riwt = stmmac_usec2riwt(ec->rx_coalesce_usecs, priv);
-+
-+		if ((rx_riwt > MAX_DMA_RIWT) || (rx_riwt < MIN_DMA_RIWT))
-+			return -EINVAL;
-+
-+		priv->rx_riwt = rx_riwt;
-+		stmmac_rx_watchdog(priv, priv->ioaddr, priv->rx_riwt, rx_cnt);
-+	}
+ 	tx = readl(ioaddr + XGMAC_TX_CONFIG);
+@@ -24,16 +23,6 @@ static void dwxgmac2_core_init(struct mac_device_info *hw,
+ 	tx |= XGMAC_CORE_INIT_TX;
+ 	rx |= XGMAC_CORE_INIT_RX;
  
- 	if ((ec->tx_coalesce_usecs == 0) &&
- 	    (ec->tx_max_coalesced_frames == 0))
-@@ -757,20 +764,10 @@ static int stmmac_set_coalesce(struct net_device *dev,
- 	    (ec->tx_max_coalesced_frames > STMMAC_TX_MAX_FRAMES))
- 		return -EINVAL;
- 
--	rx_riwt = stmmac_usec2riwt(ec->rx_coalesce_usecs, priv);
+-	if (mtu >= 9000) {
+-		rx |= XGMAC_CONFIG_GPSLCE;
+-		rx |= XGMAC_JUMBO_LEN << XGMAC_CONFIG_GPSL_SHIFT;
+-		rx |= XGMAC_CONFIG_WD;
+-	} else if (mtu > 2000) {
+-		rx |= XGMAC_CONFIG_JE;
+-	} else if (mtu > 1500) {
+-		rx |= XGMAC_CONFIG_S2KP;
+-	}
 -
--	if ((rx_riwt > MAX_DMA_RIWT) || (rx_riwt < MIN_DMA_RIWT))
--		return -EINVAL;
--	else if (!priv->use_riwt)
--		return -EOPNOTSUPP;
--
- 	/* Only copy relevant parameters, ignore all others. */
- 	priv->tx_coal_frames = ec->tx_max_coalesced_frames;
- 	priv->tx_coal_timer = ec->tx_coalesce_usecs;
- 	priv->rx_coal_frames = ec->rx_max_coalesced_frames;
--	priv->rx_riwt = rx_riwt;
--	stmmac_rx_watchdog(priv, priv->ioaddr, priv->rx_riwt, rx_cnt);
--
- 	return 0;
- }
- 
+ 	if (hw->ps) {
+ 		tx |= XGMAC_CONFIG_TE;
+ 		tx &= ~hw->link.speed_mask;
 -- 
 2.7.4
 
