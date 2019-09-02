@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6DF8A57E2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:41:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 451BDA57E4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:41:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,52 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:Subject:From:Date:Message-ID:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2TW3QC76/XzNQYsjfkcO+ABO04ZxXYC4mwUktb33kc8=; b=rraCGg/1tRwrSHMHAQYqw0y00n
-	a3mywlFmBBZQuWRU8p/mzl9cWgNGHsQg69SDimGF38zR5F3jOR/uYYFqTM0W+wnsvzbeFjtlCuc5U
-	KpNzv7GeHmd6bPDy3wfo7zRhcQvclG9KdJh6yzedlVMEOGUCATgmnuBoUAEmQtqbZd1M8DrQk+Ifq
-	nN3goY+cL8x7GZWVqUx01LXJ4CmOCRgy8rOIsUo3+pb2n/acr2iv2pNtn1BTfzILWJhjAcAVYi5oa
-	u8/fshiW7SwHrwpkx2MUi6Te8IdsLBakDuyZ+8/OoZbaA6HXYqYs0MAbxtQ3aKBwIcwVTVfrA49QQ
-	f2he1G5Q==;
+	bh=32l9z4+uKSKu/uwRaFQh7to/GNhHUpeWFJuKxXloSoE=; b=Au3iMkB5O55mDN1i8azlqztYo3
+	blX2+JTQbsUzws/oNuQXqmZkINc19LJ94Mp1Yc5HBagysy0LWZeeGD4vy/dajSAqbEZyOrg6B+C+h
+	PWLm4kWw8V75TgNw6s+ElSTqhczIyjWA6DmuBsPF/16U/gn9HL1GAa5d9ujzz9tEll0acYaLgEZQI
+	GACccEEjzWFpNDsabcmmh3na0P5XixGUdKKSKnJTltQetIodMskhwYVNhWCkl3NcKUta9CSNNsxQF
+	SCe9rFk87sOorkJ/c0TxY+Be3+mBsgCba+jsCa0aT9IB8h1VmCeuuguar3bxRlozPz/mtHrupSa25
+	gJnkptgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4mZl-0004St-19; Mon, 02 Sep 2019 13:40:57 +0000
+	id 1i4ma3-0004jJ-4T; Mon, 02 Sep 2019 13:41:15 +0000
 Received: from mail-wm1-f66.google.com ([209.85.128.66])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4mXq-0001KD-1h; Mon, 02 Sep 2019 13:38:59 +0000
-Received: by mail-wm1-f66.google.com with SMTP id t9so14650301wmi.5;
- Mon, 02 Sep 2019 06:38:57 -0700 (PDT)
+ id 1i4mXw-0001RL-Rv; Mon, 02 Sep 2019 13:39:06 +0000
+Received: by mail-wm1-f66.google.com with SMTP id g207so10660620wmg.5;
+ Mon, 02 Sep 2019 06:39:04 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:date:from:subject:references
  :in-reply-to:cc:cc:to;
- bh=SvhFRmoRlEP5dD+Rd/+9x0kDcEgKUm1JjWNc3Yoeqhs=;
- b=sBq1cj1qjuO8Xtmsmi0D4Fv7cMZy8kNPm6yvqc9Or8Tj9yjrAWS05n9B20q6fHcQz+
- VHBleY12siaiem/XougR4jPfM0maI6xQrIYkTTXj7sU+B1r07sulFtF+onn6SRqPEeX0
- Rz2vsA4OoRp7TmizlxZVEAFVn6ksMaN1JBGusZo3mF3ZBvQJ1Y71yvAA814TJrL/KCeJ
- qYrlTpRYlH1dz2/eqypKRTZcptHDlWvG1hJ1huo9fbUO3JzBtVbMhxJpY0Y8aTTa3hat
- SD0ONO3ttKxPZQMLPCtG5rjM9by9NcrAKyc7Cu+FtMf+UW0XkjftXpJWnrlZ1d/MjAB6
- scOA==
-X-Gm-Message-State: APjAAAVUOot1yPbrUWqefBoMHbhsQbKIQ50tFFua3tw+PR6CMfZ5Vfrv
- ccndIhq2TWhAPAWW8WRrEQ==
-X-Google-Smtp-Source: APXvYqy/kMjM4e+Q7ism1M7S1aJzfHDzEGzfxhVDRiXjrA+3mBmRb6rx1jsTojSZL5vijGvaOhqtsQ==
-X-Received: by 2002:a7b:cd97:: with SMTP id y23mr5529846wmj.74.1567431536779; 
- Mon, 02 Sep 2019 06:38:56 -0700 (PDT)
+ bh=c4HshC9nAsXvh0CM4Xw/Kywl+VsuIg86CWeyWDCZNw8=;
+ b=Ri7Rh+Pgxiqzga7wY0kDUIiDN+oX/7pFO8ZNQts8hoej4MeXkXZETWmixQtI0qobSk
+ xH8l5cKbIzPpWpemSw3RQ6S76RhYstz+hXtDk7VoL2CWo/39B6vbSL7EIy7G5D8RpFIS
+ Y3mYgdxjlWxamRbHz+VrpU2x3EU0ePudCAiIvXcoJmewnDlKlNXFCBVyXxtSS5xJupvz
+ K9M2JCP1QgqHQKurJHNkY4hJGcLTWGJPCJaQt7qoHI3rA8EuWwuHdHlP8IRjXFX5pObY
+ Gu/AKX0UBr14Ox0jwZDkiX8X3CGvHHYMx76RkAcryCV/hw5b9EfaZkFU6QkMRu9l8UZt
+ LhhA==
+X-Gm-Message-State: APjAAAVXl8UZnagVxOticIa1T2pdhiZ9wnnqvF3o4axKN6PkbzyqqZCl
+ J8uTkM5aUQV15t99hlG7/Q==
+X-Google-Smtp-Source: APXvYqwO6HHhku+0rZz6bR1PsEOF/M9tdBQBZMCOO26c8+wfPqrArykir4NPZWmSRZbUxaOgadevqw==
+X-Received: by 2002:a1c:c5cb:: with SMTP id
+ v194mr14382889wmf.108.1567431543614; 
+ Mon, 02 Sep 2019 06:39:03 -0700 (PDT)
 Received: from localhost ([212.187.182.166])
- by smtp.gmail.com with ESMTPSA id z189sm5491333wmc.25.2019.09.02.06.38.55
+ by smtp.gmail.com with ESMTPSA id s12sm3868057wra.82.2019.09.02.06.39.02
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Sep 2019 06:38:56 -0700 (PDT)
-Message-ID: <5d6d1b70.1c69fb81.67069.6e61@mx.google.com>
-Date: Mon, 02 Sep 2019 14:38:55 +0100
+ Mon, 02 Sep 2019 06:39:03 -0700 (PDT)
+Message-ID: <5d6d1b77.1c69fb81.59c07.0f29@mx.google.com>
+Date: Mon, 02 Sep 2019 14:39:02 +0100
 From: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH v5,
- 05/32] dt-bindings: mediatek: add mutex description for mt8183 display
-References: <1567090254-15566-1-git-send-email-yongqiang.niu@mediatek.com>
- <1567090254-15566-6-git-send-email-yongqiang.niu@mediatek.com>
-In-Reply-To: <1567090254-15566-6-git-send-email-yongqiang.niu@mediatek.com>
-To: <yongqiang.niu@mediatek.com>
+Subject: Re: [PATCH v3 1/7] dt-bindings: usb: mtu3: support USB wakeup for
+ MT8183
+References: <1567150854-30033-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1567150854-30033-2-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <1567150854-30033-2-git-send-email-chunfeng.yun@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_063858_244724_CA4E37E6 
-X-CRM114-Status: UNSURE (   8.13  )
+X-CRM114-CacheID: sfid-20190902_063904_925461_46D20765 
+X-CRM114-Status: UNSURE (   8.58  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,26 +88,25 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Philipp Zabel <p.zabel@pengutronix.de>, David Airlie <airlied@linux.ie>,
- linux-kernel@vger.kernel.org, dri-devel@lists.freedesktop.org,
- Yongqiang Niu <yongqiang.niu@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Daniel Vetter <daniel@ffwll.ch>,
- CK Hu <ck.hu@mediatek.com>, linux-arm-kernel@lists.infradead.org
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Chunfeng Yun <chunfeng.yun@mediatek.com>, linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, 29 Aug 2019 22:50:27 +0800, <yongqiang.niu@mediatek.com> wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+On Fri, 30 Aug 2019 15:40:48 +0800, Chunfeng Yun wrote:
+> Support USB wakeup by ip-sleep mode for MT8183
 > 
-> This patch add mutex description for mt8183 display
-> 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
->  Documentation/devicetree/bindings/display/mediatek/mediatek,disp.txt | 1 +
+> v2~v3: no changes
+> ---
+>  Documentation/devicetree/bindings/usb/mediatek,mtu3.txt | 1 +
 >  1 file changed, 1 insertion(+)
 > 
 
