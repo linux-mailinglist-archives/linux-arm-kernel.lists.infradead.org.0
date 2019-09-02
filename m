@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 687ABA4DB6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:30:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A9E0A4DC0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:31:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=6Qeb7ZQEjFshfBsZyjz8Ut/G2lA8XaNxnPJ3TFbvWiU=; b=bxRvqLk7G86CAjqx0E2BSxQhbN
-	eYvj/So9bNIXYx8RutXC7sompHIXJBkgarB6UpjINtforJU5uBbUgBJllPqq6FpWgzyOYDfxniwN/
-	eaAqDBKmazrWk7UmT8l+7mfXAsjfbzXA6J6TtPt+wi40IR3b6aVzfYu8eXt85+80qKmVoqUlLBO65
-	xN99H2MN+bM38jJSP9yPbjP3VZ5OtHACQUeEEFgLCI8hcEgI7KtAHFZasuqzZwfwlRmBatzXVIQGK
-	OYftqzhX/1aN8n2+5csBqYHokxXqVq9FM5wIMyo6w8nm+fjqYhohH4Gvvdx9KTIXxtNSFJbGKfaAh
-	FMrL3kvw==;
+	bh=2LNJ4xCDNSanilNyg4EkRKW6OuV+7yTwWu/BgYUzNns=; b=cj8cGErs7rLRxakqX0NFjP36Eh
+	cmQ/lltku++cQGN7G1HclswXTOLCaeNUcvcr9GDcT6uAKhrgTHLzBVYQDty/VtxnmAidlY9DkUpdU
+	Zb3pUXvcjyLloynHqci4J6Sq7wn2kIFUulEh1AHvGP49RiXj+VveTaA0RTYhQ+/w6hChUC/3WQLf9
+	UoPc0XldEJLhChYiy4vvn4tVUbFOkI6+FcQONXHt4W1p5+K72n0sHAmDD/myVfjLYGZAAlBAnxuyQ
+	5//01aEGrZNYzsKnAavTCdM2bTA/ZkOKrp+Bk/B9YDivt8DHUU42xPItxQgDu9DCnrQ4caOMEOzRO
+	ekifWRsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4d31-0007Qt-K6; Mon, 02 Sep 2019 03:30:31 +0000
+	id 1i4d3M-0007if-OS; Mon, 02 Sep 2019 03:30:52 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4d0R-000496-RJ
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:53 +0000
+ id 1i4d0T-0004Ac-9h
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:55 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A30A1200668;
- Mon,  2 Sep 2019 05:27:50 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 10C90200658;
+ Mon,  2 Sep 2019 05:27:52 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 20B0B200658;
- Mon,  2 Sep 2019 05:27:42 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4CA65200659;
+ Mon,  2 Sep 2019 05:27:43 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 473874031F;
- Mon,  2 Sep 2019 11:27:31 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1AA9340320;
+ Mon,  2 Sep 2019 11:27:33 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  leoyang.li@nxp.com, kishon@ti.com, lorenzo.pieralisi@arm.com,
@@ -42,16 +42,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v3 08/11] PCI: layerscape: Modify the MSIX to the doorbell mode
-Date: Mon,  2 Sep 2019 11:17:13 +0800
-Message-Id: <20190902031716.43195-9-xiaowei.bao@nxp.com>
+Subject: [PATCH v3 09/11] PCI: layerscape: Add EP mode support for ls1088a and
+ ls2088a
+Date: Mon,  2 Sep 2019 11:17:14 +0800
+Message-Id: <20190902031716.43195-10-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_202752_187686_87D30AB6 
-X-CRM114-Status: GOOD (  10.09  )
+X-CRM114-CacheID: sfid-20190901_202753_921430_96DE98B2 
+X-CRM114-Status: GOOD (  11.65  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -80,37 +81,145 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-dw_pcie_ep_raise_msix_irq was never called in the exisitng driver
-before, because the ls1046a platform don't support the MSIX feature
-and msix_capable was always set to false.
-Now that add the ls1088a platform with MSIX support, but the existing
-dw_pcie_ep_raise_msix_irq doesn't work, so use the doorbell method to
-support the MSIX feature.
+Add PCIe EP mode support for ls1088a and ls2088a, there are some
+difference between LS1 and LS2 platform, so refactor the code of
+the EP driver.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
 v2: 
- - No change
+ - This is a new patch for supporting the ls1088a and ls2088a platform.
 v3:
- - Modify the commit message make it clearly.
+ - Adjust the some struct assignment order in probe function.
 
- drivers/pci/controller/dwc/pci-layerscape-ep.c | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ drivers/pci/controller/dwc/pci-layerscape-ep.c | 72 +++++++++++++++++++-------
+ 1 file changed, 53 insertions(+), 19 deletions(-)
 
 diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-index 1e07287..5f0cb99 100644
+index 5f0cb99..723bbe5 100644
 --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
 +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-@@ -79,7 +79,8 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
- 	case PCI_EPC_IRQ_MSI:
- 		return dw_pcie_ep_raise_msi_irq(ep, func_no, interrupt_num);
- 	case PCI_EPC_IRQ_MSIX:
--		return dw_pcie_ep_raise_msix_irq(ep, func_no, interrupt_num);
-+		return dw_pcie_ep_raise_msix_irq_doorbell(ep, func_no,
-+							  interrupt_num);
- 	default:
- 		dev_err(pci->dev, "UNKNOWN IRQ type\n");
- 		return -EINVAL;
+@@ -20,27 +20,29 @@
+ 
+ #define PCIE_DBI2_OFFSET		0x1000	/* DBI2 base address*/
+ 
+-struct ls_pcie_ep {
+-	struct dw_pcie		*pci;
+-	struct pci_epc_features	*ls_epc;
++#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
++
++struct ls_pcie_ep_drvdata {
++	u32				func_offset;
++	const struct dw_pcie_ep_ops	*ops;
++	const struct dw_pcie_ops	*dw_pcie_ops;
+ };
+ 
+-#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
++struct ls_pcie_ep {
++	struct dw_pcie			*pci;
++	struct pci_epc_features		*ls_epc;
++	const struct ls_pcie_ep_drvdata *drvdata;
++};
+ 
+ static int ls_pcie_establish_link(struct dw_pcie *pci)
+ {
+ 	return 0;
+ }
+ 
+-static const struct dw_pcie_ops ls_pcie_ep_ops = {
++static const struct dw_pcie_ops dw_ls_pcie_ep_ops = {
+ 	.start_link = ls_pcie_establish_link,
+ };
+ 
+-static const struct of_device_id ls_pcie_ep_of_match[] = {
+-	{ .compatible = "fsl,ls-pcie-ep",},
+-	{ },
+-};
+-
+ static const struct pci_epc_features*
+ ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
+ {
+@@ -87,10 +89,39 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
+ 	}
+ }
+ 
+-static const struct dw_pcie_ep_ops pcie_ep_ops = {
++static unsigned int ls_pcie_ep_func_conf_select(struct dw_pcie_ep *ep,
++						u8 func_no)
++{
++	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
++	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
++
++	WARN_ON(func_no && !pcie->drvdata->func_offset);
++	return pcie->drvdata->func_offset * func_no;
++}
++
++static const struct dw_pcie_ep_ops ls_pcie_ep_ops = {
+ 	.ep_init = ls_pcie_ep_init,
+ 	.raise_irq = ls_pcie_ep_raise_irq,
+ 	.get_features = ls_pcie_ep_get_features,
++	.func_conf_select = ls_pcie_ep_func_conf_select,
++};
++
++static const struct ls_pcie_ep_drvdata ls1_ep_drvdata = {
++	.ops = &ls_pcie_ep_ops,
++	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
++};
++
++static const struct ls_pcie_ep_drvdata ls2_ep_drvdata = {
++	.func_offset = 0x20000,
++	.ops = &ls_pcie_ep_ops,
++	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
++};
++
++static const struct of_device_id ls_pcie_ep_of_match[] = {
++	{ .compatible = "fsl,ls1046a-pcie-ep", .data = &ls1_ep_drvdata },
++	{ .compatible = "fsl,ls1088a-pcie-ep", .data = &ls2_ep_drvdata },
++	{ .compatible = "fsl,ls2088a-pcie-ep", .data = &ls2_ep_drvdata },
++	{ },
+ };
+ 
+ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+@@ -103,7 +134,7 @@ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
+ 	int ret;
+ 
+ 	ep = &pci->ep;
+-	ep->ops = &pcie_ep_ops;
++	ep->ops = pcie->drvdata->ops;
+ 
+ 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
+ 	if (!res)
+@@ -142,20 +173,23 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
+ 	if (!ls_epc)
+ 		return -ENOMEM;
+ 
+-	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
+-	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
+-	if (IS_ERR(pci->dbi_base))
+-		return PTR_ERR(pci->dbi_base);
++	pcie->drvdata = of_device_get_match_data(dev);
+ 
+-	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
+ 	pci->dev = dev;
+-	pci->ops = &ls_pcie_ep_ops;
+-	pcie->pci = pci;
++	pci->ops = pcie->drvdata->dw_pcie_ops;
+ 
+ 	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
+ 
++	pcie->pci = pci;
+ 	pcie->ls_epc = ls_epc;
+ 
++	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
++	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
++	if (IS_ERR(pci->dbi_base))
++		return PTR_ERR(pci->dbi_base);
++
++	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
++
+ 	platform_set_drvdata(pdev, pcie);
+ 
+ 	ret = ls_add_pcie_ep(pcie, pdev);
 -- 
 2.9.5
 
