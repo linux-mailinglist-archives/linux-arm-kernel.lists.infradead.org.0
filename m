@@ -2,160 +2,178 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D27F9A58F4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 16:15:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E78D3A5905
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 16:17:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2P1EXPMkvI21WjTujwLMUkfbtka4nNapvt7OqvhHuQU=; b=ryVHA5hK/d5Cqo
-	xaAxIoAZsf5Aw416TeSEqwLM6x7Wx87qie5Ylt0fosbsYzzQeky223ovgVt+Eg22unThxwJD9y610
-	6dQ8vYO/c8zr3rTlQPgxYfzqur+vidb8qAI7Q2qfJNBk+oqEJVkJkMMkT1yEOnTlDEsIE2qZ8UdsC
-	U+2+Nyd5ZvDq7Q/5vnG/SanUKjTQt8Fi7WfW5pN0I9U0xeNtDhu6lgF+cStLM7fmcH9+pFYCZXh2n
-	plynxFPUz6YKsCCaq3fkhiSFBqVf5Q1V72/DRwLckPjphspeT7tTxXkz1eOfHbGKqOFkNdNqJAjok
-	bu85V+n0WLz4uOeB85kA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:Reply-To
+	:List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:Date:Message-ID:From:References:To:Subject:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JgflPxg3PoqXQhdOIO/84F/igKCeO5j6wqL8xJXju9M=; b=TICcBPJNIMYvUdQUYBlWWwkJu
+	mvLTfahwbLVrBqFUcRfPycGzKr1PoNcXiADRr9SkrGo7X8O5hb9wrKdYo1L848SOgGlylDYOcb3pA
+	2K4JM20nkCZUZhuYZC1ZcVF7cPJ85gFPUPWTngEpltomsAMSqnskeRLzcECpdef9cHJMQnyRHZu8h
+	1GxNSYnrMTEIFJC5ixPlNOfIjSh5hreKNjHF3HZ+fkjoIEGxjf5Fol1tNeQKFRyytw9+kB70eBORH
+	jwEosPP6tojtFG3sCpzeoU+uoSzd0ZAHbujc8quUEwxWi/EavTS72EK8sNH+xTVlPA6tKViDE3Jut
+	UeIPHpDhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4n7C-0004I9-2h; Mon, 02 Sep 2019 14:15:30 +0000
-Received: from esa3.microchip.iphmx.com ([68.232.153.233])
+	id 1i4n8z-0004tz-Ds; Mon, 02 Sep 2019 14:17:21 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4n71-0004HC-W0
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 14:15:21 +0000
-Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
- Eugen.Hristev@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="Eugen.Hristev@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa3.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
- envelope-from="Eugen.Hristev@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa3.microchip.iphmx.com;
- spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: wBMextQzhoTXQaj4j8sKJYMIkISTNixH4QYgsYgoUkQsfVyyC6X+fi2dc4o5QCTnquAjeXAXiW
- qCGIVAfR0HJ1bpr9pnxpf2wLXNOOlbBQh0iZYUbvdWDipr+X5UEXVk+/klWGKJ5cZkaSHWh40b
- 1QRHMh9K+jrEKGpRHc99yCztJRyxDR5W+RsP7hMkzonN8eeQT8iM4xk65QTDAVFVyYgMQmfwWH
- vAdgrnNLpbcY5e6PnJ0ofMmLRK8W3O5dN3ixfCYsQydrVyz4CejmTtKYdLeDZ2LjqizbamKBVx
- 5vI=
-X-IronPort-AV: E=Sophos;i="5.64,459,1559545200"; d="scan'208";a="47496630"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 02 Sep 2019 07:15:16 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.87.72) by
- chn-vm-ex02.mchp-main.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 2 Sep 2019 07:15:15 -0700
-Received: from NAM03-DM3-obe.outbound.protection.outlook.com (10.10.215.89) by
- email.microchip.com (10.10.87.72) with Microsoft SMTP Server
- (version=TLS1_2, 
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
- Transport; Mon, 2 Sep 2019 07:15:15 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=I9fpHh+WgAlmQmSFWx9nkeBjxPYDe0CLuC7xxJ2bkBRAEpdzgwHAPiaF0WlL8qPZw4ngVge1OMKQRcsFebhxOQzmx8kUOamDKVjd0SztVTLN3HZmInypo3yAeQfV8d/0BIqmR+ueyyTHwcB89wI1W/aG1caRIGZ9lwi8zuzipkr7ROg5XWzHNeGe6owzhcNw6Na/skU8sqhD4N2bZfuvcPw5+9jI6jI7qT+8cKA3tRHDot3LQh1h4mZVbTWAhswmRb7gWeglcwMae2DoK1D64Mjpiqk2LirKQ+QvR8cMHuXNoQ+o+HKQVutQ+C1cPz4xemQtwytoq6w/HDA6gfY3zw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gJk+ykZQp1g9XN8+ufvhyyihfLA51y34YLzRHtS918g=;
- b=DbaWicZc3M5FGBcTffVOhXMrreuJ/YbRCf85a1me4PyryqoN/9RmnC3sOdcIAxOGopHfuQNaW4AEQtHdQdcB0r/GA1Bo8PO3M73d8wGesEhMbEq36RBukz/nQI8ldLFqvFN4X8QvwiHk9oCNMdasJXy40UVWrgnjCv0l7XQrDkwz73WxmMilab9kNk+tVMqlSCDszvabh1J7yxHSqByQBm+ZRUhxPjIt+i9sPOCySqQfPAhyjNTyzxYtyKBV1t/zkPA7T2HrGA9VvQY5xK9P7hWNVPDPx7lF3b9BTVkhrs5YEgbi8wg0egfuTjehB1TjBqTCrUGljj+66SkMYtNcsA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=microchip.com; dmarc=pass action=none
- header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+ id 1i4n8o-0004sS-R6
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 14:17:12 +0000
+Received: by mail-wr1-x444.google.com with SMTP id g7so14233808wrx.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Sep 2019 07:17:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=microchiptechnology.onmicrosoft.com;
- s=selector2-microchiptechnology-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=gJk+ykZQp1g9XN8+ufvhyyihfLA51y34YLzRHtS918g=;
- b=q0o8R0o1RpHI5V060ytVKJkWt6FUTWyce3N0gLgkUeaA6BTijffWn068kY6rcmODZkzvIJ78NHMHF+sf986YOoXoNu6J1y70wC9+/eJjFkOBM5soTX4NQ29juJgP2xZS5aAQMpJgI3i4l+BfJuzyzfzn1AhN36Kr0UKkNDUjeKU=
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
- DM5PR11MB1644.namprd11.prod.outlook.com (10.172.38.15) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.20; Mon, 2 Sep 2019 14:15:14 +0000
-Received: from DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::c457:dc57:6e6f:f4f3]) by DM5PR11MB1242.namprd11.prod.outlook.com
- ([fe80::c457:dc57:6e6f:f4f3%10]) with mapi id 15.20.2220.022; Mon, 2 Sep 2019
- 14:15:14 +0000
-From: <Eugen.Hristev@microchip.com>
-To: <peda@axentia.se>, <wsa@the-dreams.de>, <mark.rutland@arm.com>,
- <Ludovic.Desroches@microchip.com>, <linux-i2c@vger.kernel.org>,
- <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <linux-kernel@vger.kernel.org>, <pierre-yves.mordret@st.com>,
- <alexandre.belloni@bootlin.com>, <robh+dt@kernel.org>
-Subject: Re: [PATCH v4 2/9] dt-bindings: i2c: add bindings for i2c analog and
- digital filter
-Thread-Topic: [PATCH v4 2/9] dt-bindings: i2c: add bindings for i2c analog and
- digital filter
-Thread-Index: AQHVYXbctVkeTzhRG0edAs7kSbS9TqcYNSkAgAA4B4A=
-Date: Mon, 2 Sep 2019 14:15:14 +0000
-Message-ID: <b6528812-65d3-6561-38e7-c0545af900d8@microchip.com>
-References: <1567418773-2427-1-git-send-email-eugen.hristev@microchip.com>
- <1567418773-2427-3-git-send-email-eugen.hristev@microchip.com>
- <9a9c209c-2fb8-0a4c-4e0a-b04fefda3360@axentia.se>
-In-Reply-To: <9a9c209c-2fb8-0a4c-4e0a-b04fefda3360@axentia.se>
-Accept-Language: en-US, ro-RO
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0701CA0069.eurprd07.prod.outlook.com
- (2603:10a6:800:5f::31) To DM5PR11MB1242.namprd11.prod.outlook.com
- (2603:10b6:3:14::8)
-x-ms-exchange-messagesentrepresentingtype: 1
-x-tagtoolbar-keys: D20190902170939569
-x-originating-ip: [94.177.32.156]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: e0817322-2242-4de2-6d74-08d72faff8f8
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DM5PR11MB1644; 
-x-ms-traffictypediagnostic: DM5PR11MB1644:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DM5PR11MB1644FF6E03968D0109FA8C0CE8BE0@DM5PR11MB1644.namprd11.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 01480965DA
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(346002)(396003)(376002)(39860400002)(136003)(366004)(189003)(199004)(8676002)(81166006)(81156014)(99286004)(36756003)(6512007)(316002)(53936002)(6116002)(186003)(26005)(3846002)(14454004)(386003)(2906002)(6246003)(31686004)(66066001)(6306002)(102836004)(966005)(478600001)(6436002)(110136005)(52116002)(6486002)(76176011)(256004)(66946007)(66476007)(71200400001)(2201001)(86362001)(6506007)(53546011)(305945005)(31696002)(229853002)(2501003)(2616005)(11346002)(64756008)(7416002)(5660300002)(486006)(476003)(66446008)(446003)(8936002)(66556008)(25786009)(7736002)(71190400001)(921003)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1644;
- H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: microchip.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: OlNg78jJzGsG8fyFFTdgbdQ1NgsXya3eJRPCDQI9KKO5MLq2b9EtlwzPWOC6Yb52v7Wkrtd+OZ7NhFHEb/oXFYlYByc2Un4SpMUugZc3U2+oAiILXGtRKwDg8u+R9XJVALx3zfEaGyC+yI2+7LxnLLjFNd5DBvJR6N2ISkgN/QTn188gA/ruz/Lp9vx9hQFNnGf36YWO/KG0xkGuhYwE3tDe1U6TN5LpnzHCKpm1P4jHDQwC91ihs0lxvnq1V/uGZ8Xr6IUP/3y3bQ80G7NaX9ScMUpjV49Qg3ajR3s86yRxN9/vLQmIiMA5znCWh+t0W6BtpRfMkd3eM9qOwcivSyVszsJbZdBVoePzI1BZuhACYh7S094LqUqubiusD3d48Ydwq503SWAvyLTq/05RndWlJFbeoJ8NCrzLSMf9wU8=
-Content-ID: <C58BCC47709F1E44BDF4A390A7880894@namprd11.prod.outlook.com>
+ d=monstr-eu.20150623.gappssmtp.com; s=20150623;
+ h=reply-to:subject:to:cc:references:from:openpgp:autocrypt:message-id
+ :date:user-agent:mime-version:in-reply-to;
+ bh=wHLGtYkZTmnf/Q+NJRht7CodjM3w+dg+9ES/vSM0RcI=;
+ b=afYPXPQLzvFAj1lVnwBQn3TA5rDlPS9rxLsQKmLyUEVYYqLvv2di5vklel8nyDuIlj
+ IagBthy5dYLukTgWxTT/3ztKBRs9PTOZ66iuza579Dfj5UnylogGKx0AMzEUMimvbUWZ
+ v0Jple7LvgR/plVjamH/3QMW3Vb3p+g8yC6PXiSurp6qQqqA/N9J6twCJEbcgPkvIwyL
+ WsQO4HxJE3vbkuodjs3S68y25OtneQYX4b8YKVWUaflWKRlIMn5V5CKAAS7VvPy3RMkl
+ oDTh3MMO0lQA3AxaolW6Uh96p9mpUIjQPq9teH1xMncYapsZ1Q7Az7UhWut9STf4/cGK
+ RxUA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:reply-to:subject:to:cc:references:from:openpgp
+ :autocrypt:message-id:date:user-agent:mime-version:in-reply-to;
+ bh=wHLGtYkZTmnf/Q+NJRht7CodjM3w+dg+9ES/vSM0RcI=;
+ b=GqqFNVMz3G1mow2VGbG2hkRnpHeYiLEUzNLJ39ISB7x2zLifvTd3Zh6Pup2aoVDGdl
+ hC3zzEc4LaLG//uigKO3/EA+eLaiA9V79Pchcj/lkdvA2543Fhwuu1vdGYDLMJI9Unzk
+ uIeM4j2UE96dM8Qul6jyleN5YWCjlvoitmyuzcCTw6QVW6z8inf8pU9f4+i7Lx4vZMti
+ TLwpSEebIlvvrVuckdbwZL1BWWpckq3w6wCPasZ9o51/59m4v/l92fHaxTSrNgX9Rtns
+ BSUEsQywMIkhyOUrRs3zPEScJXNVo3wngoQHpu8HowiV1mIW+dmotBVQf3z4FmTPsq4z
+ Nr7Q==
+X-Gm-Message-State: APjAAAULGC1EwXztUlxDrZhOyNIFJGGQUxr5MtPDLOpqrNZXXqPPqcRv
+ gpOkq9glEHq1yVdNIccqr7uylA==
+X-Google-Smtp-Source: APXvYqyShqgEJwFOtJFr9Fq0w6BS1apJDW9A6yIMdA+d8V9PFj9RZCN2SBDb4+Bki1KAn/644PK6KQ==
+X-Received: by 2002:adf:dd04:: with SMTP id a4mr5388204wrm.340.1567433828197; 
+ Mon, 02 Sep 2019 07:17:08 -0700 (PDT)
+Received: from [74.125.133.108] ([149.199.62.131])
+ by smtp.gmail.com with ESMTPSA id r17sm13933233wrt.68.2019.09.02.07.16.58
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 02 Sep 2019 07:17:07 -0700 (PDT)
+Subject: Re: [PATCH 03/26] m68k, microblaze: remove ioremap_fullcache
+To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
+ Guo Ren <guoren@kernel.org>, Greentime Hu <green.hu@gmail.com>,
+ Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ x86@kernel.org
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-4-hch@lst.de>
+From: Michal Simek <monstr@monstr.eu>
+Openpgp: preference=signencrypt
+Autocrypt: addr=monstr@monstr.eu; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <9a11ddb0-0799-c64a-f5aa-0504c564998f@monstr.eu>
+Date: Mon, 2 Sep 2019 16:16:52 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: e0817322-2242-4de2-6d74-08d72faff8f8
-X-MS-Exchange-CrossTenant-originalarrivaltime: 02 Sep 2019 14:15:14.1316 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: wpZ19MZ1TBmbjN5A29U9bknJz2dE9hZDHivk0+3yseLWC0pDB5DlkJ1OLSogwD3DypEbqFZEaqixNcapb+EPhguuCiDP9IzFQc5lgEb6ToQ=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1644
+In-Reply-To: <20190817073253.27819-4-hch@lst.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_071520_147483_F0D84804 
-X-CRM114-Status: GOOD (  14.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190902_071711_028150_696A983A 
+X-CRM114-Status: GOOD (  16.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -170,81 +188,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Reply-To: monstr@monstr.eu
+Cc: linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-parisc@vger.kernel.org,
+ linux-sh@vger.kernel.org, linux-hexagon@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, linux-mips@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ openrisc@lists.librecores.org, linux-mtd@lists.infradead.org,
+ linux-alpha@vger.kernel.org, sparclinux@vger.kernel.org,
+ nios2-dev@lists.rocketboards.org, linux-riscv@lists.infradead.org,
+ linux-snps-arc@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4753553538835135711=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============4753553538835135711==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+ protocol="application/pgp-signature";
+ boundary="sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm"
+
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm
+Content-Type: multipart/mixed; boundary="Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm";
+ protected-headers="v1"
+From: Michal Simek <monstr@monstr.eu>
+Reply-To: monstr@monstr.eu
+To: Christoph Hellwig <hch@lst.de>, Arnd Bergmann <arnd@arndb.de>,
+ Guo Ren <guoren@kernel.org>, Greentime Hu <green.hu@gmail.com>,
+ Vincent Chen <deanbo422@gmail.com>, Guan Xuetao <gxt@pku.edu.cn>,
+ x86@kernel.org
+Cc: linux-alpha@vger.kernel.org, linux-snps-arc@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, linux-hexagon@vger.kernel.org,
+ linux-ia64@vger.kernel.org, linux-m68k@lists.linux-m68k.org,
+ linux-mips@vger.kernel.org, nios2-dev@lists.rocketboards.org,
+ openrisc@lists.librecores.org, linux-parisc@vger.kernel.org,
+ linux-riscv@lists.infradead.org, linux-s390@vger.kernel.org,
+ linux-sh@vger.kernel.org, sparclinux@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, linux-mtd@lists.infradead.org,
+ linux-arch@vger.kernel.org, linux-kernel@vger.kernel.org
+Message-ID: <9a11ddb0-0799-c64a-f5aa-0504c564998f@monstr.eu>
+Subject: Re: [PATCH 03/26] m68k, microblaze: remove ioremap_fullcache
+References: <20190817073253.27819-1-hch@lst.de>
+ <20190817073253.27819-4-hch@lst.de>
+In-Reply-To: <20190817073253.27819-4-hch@lst.de>
+
+--Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
+
+On 17. 08. 19 9:32, Christoph Hellwig wrote:
+> No callers of this function.
+>=20
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
+> ---
+>  arch/m68k/include/asm/kmap.h     | 7 -------
+>  arch/microblaze/include/asm/io.h | 1 -
+>  2 files changed, 8 deletions(-)
+>=20
+> diff --git a/arch/m68k/include/asm/kmap.h b/arch/m68k/include/asm/kmap.=
+h
+> index aac7f045f7f0..03d904fe6087 100644
+> --- a/arch/m68k/include/asm/kmap.h
+> +++ b/arch/m68k/include/asm/kmap.h
+> @@ -43,13 +43,6 @@ static inline void __iomem *ioremap_wt(unsigned long=
+ physaddr,
+>  	return __ioremap(physaddr, size, IOMAP_WRITETHROUGH);
+>  }
+> =20
+> -#define ioremap_fullcache ioremap_fullcache
+> -static inline void __iomem *ioremap_fullcache(unsigned long physaddr,
+> -					      unsigned long size)
+> -{
+> -	return __ioremap(physaddr, size, IOMAP_FULL_CACHING);
+> -}
+> -
+>  #define memset_io memset_io
+>  static inline void memset_io(volatile void __iomem *addr, unsigned cha=
+r val,
+>  			     int count)
+> diff --git a/arch/microblaze/include/asm/io.h b/arch/microblaze/include=
+/asm/io.h
+> index c7968139486f..86c95b2a1ce1 100644
+> --- a/arch/microblaze/include/asm/io.h
+> +++ b/arch/microblaze/include/asm/io.h
+> @@ -40,7 +40,6 @@ extern void iounmap(volatile void __iomem *addr);
+> =20
+>  extern void __iomem *ioremap(phys_addr_t address, unsigned long size);=
+
+>  #define ioremap_nocache(addr, size)		ioremap((addr), (size))
+> -#define ioremap_fullcache(addr, size)		ioremap((addr), (size))
+>  #define ioremap_wc(addr, size)			ioremap((addr), (size))
+>  #define ioremap_wt(addr, size)			ioremap((addr), (size))
+> =20
+>=20
+
+Acked-by: Michal Simek <monstr@monstr.eu> (for Microblaze)
+
+Thanks,
+Michal
+
+--=20
+Michal Simek, Ing. (M.Eng), OpenPGP -> KeyID: FE3D1F91
+w: www.monstr.eu p: +42-0-721842854
+Maintainer of Linux kernel - Xilinx Microblaze
+Maintainer of Linux kernel - Xilinx Zynq ARM and ZynqMP ARM64 SoCs
+U-Boot custodian - Xilinx Microblaze/Zynq/ZynqMP/Versal SoCs
 
 
-On 02.09.2019 13:49, Peter Rosin wrote:
 
-> On 2019-09-02 12:12, Eugen.Hristev@microchip.com wrote:
->> From: Eugen Hristev <eugen.hristev@microchip.com>
->>
->> Some i2c controllers have a built-in digital or analog filter.
->> This is specifically required depending on the hardware PCB/board.
->> Some controllers also allow specifying the maximum width of the
->> spikes that can be filtered. The width length can be specified in nanoseconds.
->>
->> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
->> ---
->>   Documentation/devicetree/bindings/i2c/i2c.txt | 11 +++++++++++
->>   1 file changed, 11 insertions(+)
->>
->> diff --git a/Documentation/devicetree/bindings/i2c/i2c.txt b/Documentation/devicetree/bindings/i2c/i2c.txt
->> index 44efafd..8dbff67 100644
->> --- a/Documentation/devicetree/bindings/i2c/i2c.txt
->> +++ b/Documentation/devicetree/bindings/i2c/i2c.txt
->> @@ -55,6 +55,17 @@ wants to support one of the below features, it should adapt the bindings below.
->>   	Number of nanoseconds the SDA signal takes to fall; t(f) in the I2C
->>   	specification.
->>   
->> +- i2c-analog-filter
->> +	Enable analog filter for i2c lines.
->> +
->> +- i2c-digital-filter
->> +	Enable digital filter for i2c lines.
->> +
->> +- i2c-filter-width-ns
->> +	Width of spikes which can be filtered by either digital or analog
->> +	filters (i2c-analog-filtr or i2c-digital-filtr). This width is specified
-> 
-> filtr -> filter (two instances)
-> 
-> What if you want/need to have different bandwidth for the digital and analog
-> filters? After all, this is a generic binding...
+--Gv98DqTDPDXpgdAS8uye8pnF1A8XQfxBm--
 
-Hi Peter,
+--sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
 
-For our needs, this is enough: the purpose of the filters is to avoid 
-noise on the lines, the noise is as big as it is for the digital and for 
-the analog filters, since we use an absolute measurement for them. So I 
-do not know how useful it would be to make a difference.
+-----BEGIN PGP SIGNATURE-----
 
-Wolfram, what do you think ?
+iF0EARECAB0WIQQbPNTMvXmYlBPRwx7KSWXLKUoMIQUCXW0kVQAKCRDKSWXLKUoM
+IUCIAJ0dq35U3Gq44M2ocYgcj4SW3Em/1wCfajAs22UIYAGzwTZZyZTvB5OFi1I=
+=essT
+-----END PGP SIGNATURE-----
 
-Eugen
+--sxrD5DzuLHXmSTexCf4xoEovzaJstmsXm--
 
 
-> 
-> Cheers,
-> Peter
-> 
->> +	in nanoseconds.
->> +
->>   - interrupts
->>   	interrupts used by the device.
->>   
->>
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
-> 
+--===============4753553538835135711==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4753553538835135711==--
+
