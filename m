@@ -2,55 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87893A57C4
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:38:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83F96A57D1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:39:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=AY01Ez7CftCGr4gLyEmVXuK9fm8ztV1fDeM5aO5Kgzs=; b=KATGj7SkPJ3A3B
-	ShDQIVR3jEpdwTf3x7WguM7Zo7aWPXduvxAu+YGnwYhz2P5rmp4brCQ8dmmq+w6ZA+Dt5J/JO2l7T
-	eCeNnN2YU8D8817hroXSVw6XhHkv9V2rwLy+GzV0Sqm2cWk9zj8F1jHyqS7e9c7pVSLg0ipkGqs9s
-	ZX4N4WZ9mgm+I3iQoKqK5KHQEvdqzMnulUUSDeQQ5S1yNB2VGAlquMegEv8uN0fZAB2zBtXb7Y2mJ
-	w2Wuclkl6Suk7R1DBCmzTLmJWJia5HqLsu/b9f16dbss0C8e74TQ18KVg1xjRRbu6PwgaERlhrqpd
-	55z9NpjqUrNxQGlk1SwQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:
+	References:Subject:From:Date:Message-ID:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=tHmIta4PVc0gRnYzy7LTIsYXl1WthXyPhZDs4WpYSwU=; b=BFIbq3W6X5Ck4ZmJ/QVzxKgAE9
+	HQ3WOmLOrqPMXPSOEmHxCaLWHeutoOUtFJzG1d1PmeNv25pSfKjZIXwA3k4m1fBdUCcgGPN5jFjLa
+	CF5Oyj8GNPCuOkf9XpCKDldGePw7w4z6SeRhMCCo4APIVWc/ibQpjkRNg+W6r99+nlX1PVluMnhvW
+	nVL4w0mfuvG8kE6N1r8sN27stxRuPmhioXXoOs/HyJqljHKl4GLnReKhw5sw96SrVbU0SBBrfFFSo
+	GXN8yXMOg/c5Za66cQpy9VSrQN5cw1kd2+N/DQsjh9RA/TvfcCJWUPCES2tmJEBePnssimB/eg2cE
+	pEPYryGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4mWw-0000oS-9e; Mon, 02 Sep 2019 13:38:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i4mWk-0000ni-QT
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 13:37:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 115A7337;
- Mon,  2 Sep 2019 06:37:50 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 548D23F59C;
- Mon,  2 Sep 2019 06:37:49 -0700 (PDT)
-Date: Mon, 2 Sep 2019 14:37:47 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Xiaowei Bao <xiaowei.bao@nxp.com>
-Subject: Re: [PATCH v3 07/11] PCI: layerscape: Modify the way of getting
- capability with different PEX
-Message-ID: <20190902133747.GN9720@e119886-lin.cambridge.arm.com>
-References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
- <20190902031716.43195-8-xiaowei.bao@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190902031716.43195-8-xiaowei.bao@nxp.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1i4mXp-00018G-Ut; Mon, 02 Sep 2019 13:38:58 +0000
+Received: from mail-wm1-f67.google.com ([209.85.128.67])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4mXc-00016w-Il; Mon, 02 Sep 2019 13:38:45 +0000
+Received: by mail-wm1-f67.google.com with SMTP id g207so10659356wmg.5;
+ Mon, 02 Sep 2019 06:38:43 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:date:from:subject:references
+ :in-reply-to:cc:cc:to;
+ bh=0A2NGMWOy3zEuz3VxC/asQLJTnz9aoB2esNpQEgqd1g=;
+ b=IN/nAH5bz4grYLi0q91AK6ihXxXAZUY+ToXrGgc5R7AJKAHYeQdClvgemXebnwNa42
+ lL3mejWS58+hGvKiuU9vg31OPfjvEprd15MhHfro/Vj036qDm6db8GXMocuevnxFhOSX
+ UqcEUaIHzk/zESIRpOPGQVCbj8n5l3mhszRHIhl8OnINUPfHn4Pp6MRARXa9VRcu4qMk
+ IDr8FdvewZrvsmGtWX/fgLYJG3IrOCKoVI9jlW0dXcdeJ9G6h4Ye518g1IFbnZzODjtL
+ dTpvnieibJAaW/NXY5+ncLzu/WK3aC+wlwNK4iR1lQVfEZnoLZuMIYsC8TiT9zxtXYzv
+ dZJw==
+X-Gm-Message-State: APjAAAU6EQF8/cah9bXJNsG1Flmf8ZMD0pfD+f3YVJ79AvZ/EE4/yLST
+ Q5wzM58fosGqsdgvUUIWTA==
+X-Google-Smtp-Source: APXvYqyryTjFEoAjRiTRD/cveMVvJ62e6tv3eGdxZSToRxqfmTU0cEJbrtDlZV7N6If8HbCiP6JxUw==
+X-Received: by 2002:a7b:cc02:: with SMTP id f2mr34634993wmh.92.1567431522631; 
+ Mon, 02 Sep 2019 06:38:42 -0700 (PDT)
+Received: from localhost ([212.187.182.166])
+ by smtp.gmail.com with ESMTPSA id n2sm9271557wro.52.2019.09.02.06.38.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Sep 2019 06:38:41 -0700 (PDT)
+Message-ID: <5d6d1b61.1c69fb81.735c8.535d@mx.google.com>
+Date: Mon, 02 Sep 2019 14:38:41 +0100
+From: Rob Herring <robh@kernel.org>
+Subject: Re: [PATCH v2 1/2] dt-bindings: clock: mediatek: add pericfg for
+ MT8183
+References: <1566980533-28282-1-git-send-email-chunfeng.yun@mediatek.com>
+In-Reply-To: <1566980533-28282-1-git-send-email-chunfeng.yun@mediatek.com>
+To: Chunfeng Yun <chunfeng.yun@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_063750_947706_0A0B9670 
-X-CRM114-Status: GOOD (  20.04  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_063844_614899_9536D554 
+X-CRM114-Status: UNSURE (   8.47  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.128.67 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.128.67 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,127 +87,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, roy.zang@nxp.com, lorenzo.pieralisi@arm.com,
- arnd@arndb.de, devicetree@vger.kernel.org, jingoohan1@gmail.com,
- zhiqiang.hou@nxp.com, linuxppc-dev@lists.ozlabs.org, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, kishon@ti.com, minghuan.Lian@nxp.com,
- robh+dt@kernel.org, gregkh@linuxfoundation.org,
- linux-arm-kernel@lists.infradead.org, gustavo.pimentel@synopsys.com,
- leoyang.li@nxp.com, shawnguo@kernel.org, mingkai.hu@nxp.com
+Cc: , Mark Rutland <mark.rutland@arm.com>, Ryder Lee <ryder.lee@mediatek.com>,
+ Weiyi Lu <weiyi.lu@mediatek.com>, devicetree@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-clk@vger.kernel.org, Chunfeng Yun <chunfeng.yun@mediatek.com>,
+ Nicolas Boichat <drinkcat@chromium.org>, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Erin Lo <erin.lo@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 02, 2019 at 11:17:12AM +0800, Xiaowei Bao wrote:
-> The different PCIe controller in one board may be have different
-> capability of MSI or MSIX, so change the way of getting the MSI
-> capability, make it more flexible.
+On Wed, 28 Aug 2019 16:22:12 +0800, Chunfeng Yun wrote:
+> This patch adds binding of pericfg for MT8183.
 > 
-> Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
-
-Please see the comments I just made to Kishon's feedback in the thread for
-this patch in series v2.
-
-Thanks,
-
-Andrew Murray
-
+> Signed-off-by: Chunfeng Yun <chunfeng.yun@mediatek.com>
 > ---
-> v2:
->  - Remove the repeated assignment code.
-> v3:
->  - Use ep_func msi_cap and msix_cap to decide the msi_capable and
->    msix_capable of pci_epc_features struct.
+> v2: no changes
+> ---
+>  .../devicetree/bindings/arm/mediatek/mediatek,pericfg.txt        | 1 +
+>  1 file changed, 1 insertion(+)
 > 
->  drivers/pci/controller/dwc/pci-layerscape-ep.c | 31 +++++++++++++++++++-------
->  1 file changed, 23 insertions(+), 8 deletions(-)
-> 
-> diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> index a9c552e..1e07287 100644
-> --- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> +++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-> @@ -22,6 +22,7 @@
->  
->  struct ls_pcie_ep {
->  	struct dw_pcie		*pci;
-> +	struct pci_epc_features	*ls_epc;
->  };
->  
->  #define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
-> @@ -40,26 +41,31 @@ static const struct of_device_id ls_pcie_ep_of_match[] = {
->  	{ },
->  };
->  
-> -static const struct pci_epc_features ls_pcie_epc_features = {
-> -	.linkup_notifier = false,
-> -	.msi_capable = true,
-> -	.msix_capable = false,
-> -	.bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
-> -};
-> -
->  static const struct pci_epc_features*
->  ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
->  {
-> -	return &ls_pcie_epc_features;
-> +	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
-> +
-> +	return pcie->ls_epc;
->  }
->  
->  static void ls_pcie_ep_init(struct dw_pcie_ep *ep)
->  {
->  	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-> +	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
-> +	struct dw_pcie_ep_func *ep_func;
->  	enum pci_barno bar;
->  
-> +	ep_func = dw_pcie_ep_get_func_from_ep(ep, 0);
-> +	if (!ep_func)
-> +		return;
-> +
->  	for (bar = BAR_0; bar <= BAR_5; bar++)
->  		dw_pcie_ep_reset_bar(pci, bar);
-> +
-> +	pcie->ls_epc->msi_capable = ep_func->msi_cap ? true : false;
-> +	pcie->ls_epc->msix_capable = ep_func->msix_cap ? true : false;
->  }
->  
->  static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
-> @@ -119,6 +125,7 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct dw_pcie *pci;
->  	struct ls_pcie_ep *pcie;
-> +	struct pci_epc_features *ls_epc;
->  	struct resource *dbi_base;
->  	int ret;
->  
-> @@ -130,6 +137,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	if (!pci)
->  		return -ENOMEM;
->  
-> +	ls_epc = devm_kzalloc(dev, sizeof(*ls_epc), GFP_KERNEL);
-> +	if (!ls_epc)
-> +		return -ENOMEM;
-> +
->  	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
->  	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
->  	if (IS_ERR(pci->dbi_base))
-> @@ -140,6 +151,10 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
->  	pci->ops = &ls_pcie_ep_ops;
->  	pcie->pci = pci;
->  
-> +	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
-> +
-> +	pcie->ls_epc = ls_epc;
-> +
->  	platform_set_drvdata(pdev, pcie);
->  
->  	ret = ls_add_pcie_ep(pcie, pdev);
-> -- 
-> 2.9.5
-> 
+
+Acked-by: Rob Herring <robh@kernel.org>
+
 
 _______________________________________________
 linux-arm-kernel mailing list
