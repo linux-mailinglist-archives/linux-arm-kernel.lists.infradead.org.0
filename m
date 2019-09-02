@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8A9E0A4DC0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:31:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6D2AA4DB7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:31:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,29 +11,29 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2LNJ4xCDNSanilNyg4EkRKW6OuV+7yTwWu/BgYUzNns=; b=cj8cGErs7rLRxakqX0NFjP36Eh
-	cmQ/lltku++cQGN7G1HclswXTOLCaeNUcvcr9GDcT6uAKhrgTHLzBVYQDty/VtxnmAidlY9DkUpdU
-	Zb3pUXvcjyLloynHqci4J6Sq7wn2kIFUulEh1AHvGP49RiXj+VveTaA0RTYhQ+/w6hChUC/3WQLf9
-	UoPc0XldEJLhChYiy4vvn4tVUbFOkI6+FcQONXHt4W1p5+K72n0sHAmDD/myVfjLYGZAAlBAnxuyQ
-	5//01aEGrZNYzsKnAavTCdM2bTA/ZkOKrp+Bk/B9YDivt8DHUU42xPItxQgDu9DCnrQ4caOMEOzRO
-	ekifWRsQ==;
+	bh=n4GDjP+BSGOK8dSWmT8wJmbJurYYAX/48jTkrEFiQ6M=; b=K2Z9nEEyCiucKbk6rWIrgyrE69
+	j2q7AhfE1VKCGznAWTSk1xWwouH+SHfSdagaxqLgGOR7w8ShZ+uyVkGrfG8CH11pmqGMtRGLXwQAa
+	fDw19793Ucq9iE8A8hk4MHl7P/cy1WDcLVuWynq9nydMlOX0uUHGP/qcl6dWUwajZAFYqTmUT5bvh
+	H3jdW0wWtgiADHfhvoa0oONLYJ/xIwP6ZtIv0dcV+a/v8gPgWWxQfuQWw1hL0yiI1a1+u7hzGsRnL
+	h6dnqVodvwqZCjp5HKgggAnqbqrwNvT3cEkgw8+w0v94ar3aL06K4tofLyGO+lreeYjVB3wxcL4Fc
+	BlOoiE7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4d3M-0007if-OS; Mon, 02 Sep 2019 03:30:52 +0000
+	id 1i4d3b-0007ws-UY; Mon, 02 Sep 2019 03:31:08 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4d0T-0004Ac-9h
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:55 +0000
+ id 1i4d0U-0004Dm-S0
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:27:56 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 10C90200658;
- Mon,  2 Sep 2019 05:27:52 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9FF33200659;
+ Mon,  2 Sep 2019 05:27:53 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4CA65200659;
- Mon,  2 Sep 2019 05:27:43 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 1E687200671;
+ Mon,  2 Sep 2019 05:27:45 +0200 (CEST)
 Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1AA9340320;
- Mon,  2 Sep 2019 11:27:33 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id DD132402FB;
+ Mon,  2 Sep 2019 11:27:34 +0800 (SGT)
 From: Xiaowei Bao <xiaowei.bao@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  leoyang.li@nxp.com, kishon@ti.com, lorenzo.pieralisi@arm.com,
@@ -42,17 +42,17 @@ To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  linux-pci@vger.kernel.org, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linuxppc-dev@lists.ozlabs.org
-Subject: [PATCH v3 09/11] PCI: layerscape: Add EP mode support for ls1088a and
- ls2088a
-Date: Mon,  2 Sep 2019 11:17:14 +0800
-Message-Id: <20190902031716.43195-10-xiaowei.bao@nxp.com>
+Subject: [PATCH v3 10/11] arm64: dts: layerscape: Add PCIe EP node for ls1088a
+Date: Mon,  2 Sep 2019 11:17:15 +0800
+Message-Id: <20190902031716.43195-11-xiaowei.bao@nxp.com>
 X-Mailer: git-send-email 2.9.5
 In-Reply-To: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 References: <20190902031716.43195-1-xiaowei.bao@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_202753_921430_96DE98B2 
-X-CRM114-Status: GOOD (  11.65  )
+X-CRM114-CacheID: sfid-20190901_202755_086552_A14F0159 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -81,145 +81,74 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add PCIe EP mode support for ls1088a and ls2088a, there are some
-difference between LS1 and LS2 platform, so refactor the code of
-the EP driver.
+Add PCIe EP node for ls1088a to support EP mode.
 
 Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 ---
-v2: 
- - This is a new patch for supporting the ls1088a and ls2088a platform.
+v2:
+ - Remove the pf-offset proparty.
 v3:
- - Adjust the some struct assignment order in probe function.
+ - No change.
+ 
+ arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi | 31 ++++++++++++++++++++++++++
+ 1 file changed, 31 insertions(+)
 
- drivers/pci/controller/dwc/pci-layerscape-ep.c | 72 +++++++++++++++++++-------
- 1 file changed, 53 insertions(+), 19 deletions(-)
-
-diff --git a/drivers/pci/controller/dwc/pci-layerscape-ep.c b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-index 5f0cb99..723bbe5 100644
---- a/drivers/pci/controller/dwc/pci-layerscape-ep.c
-+++ b/drivers/pci/controller/dwc/pci-layerscape-ep.c
-@@ -20,27 +20,29 @@
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+index c676d07..da246ab 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1088a.dtsi
+@@ -483,6 +483,17 @@
+ 			status = "disabled";
+ 		};
  
- #define PCIE_DBI2_OFFSET		0x1000	/* DBI2 base address*/
- 
--struct ls_pcie_ep {
--	struct dw_pcie		*pci;
--	struct pci_epc_features	*ls_epc;
-+#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
++		pcie_ep@3400000 {
++			compatible = "fsl,ls1088a-pcie-ep","fsl,ls-pcie-ep";
++			reg = <0x00 0x03400000 0x0 0x00100000
++			       0x20 0x00000000 0x8 0x00000000>;
++			reg-names = "regs", "addr_space";
++			num-ib-windows = <24>;
++			num-ob-windows = <128>;
++			max-functions = /bits/ 8 <2>;
++			status = "disabled";
++		};
 +
-+struct ls_pcie_ep_drvdata {
-+	u32				func_offset;
-+	const struct dw_pcie_ep_ops	*ops;
-+	const struct dw_pcie_ops	*dw_pcie_ops;
- };
+ 		pcie@3500000 {
+ 			compatible = "fsl,ls1088a-pcie";
+ 			reg = <0x00 0x03500000 0x0 0x00100000   /* controller registers */
+@@ -508,6 +519,16 @@
+ 			status = "disabled";
+ 		};
  
--#define to_ls_pcie_ep(x)	dev_get_drvdata((x)->dev)
-+struct ls_pcie_ep {
-+	struct dw_pcie			*pci;
-+	struct pci_epc_features		*ls_epc;
-+	const struct ls_pcie_ep_drvdata *drvdata;
-+};
- 
- static int ls_pcie_establish_link(struct dw_pcie *pci)
- {
- 	return 0;
- }
- 
--static const struct dw_pcie_ops ls_pcie_ep_ops = {
-+static const struct dw_pcie_ops dw_ls_pcie_ep_ops = {
- 	.start_link = ls_pcie_establish_link,
- };
- 
--static const struct of_device_id ls_pcie_ep_of_match[] = {
--	{ .compatible = "fsl,ls-pcie-ep",},
--	{ },
--};
--
- static const struct pci_epc_features*
- ls_pcie_ep_get_features(struct dw_pcie_ep *ep)
- {
-@@ -87,10 +89,39 @@ static int ls_pcie_ep_raise_irq(struct dw_pcie_ep *ep, u8 func_no,
- 	}
- }
- 
--static const struct dw_pcie_ep_ops pcie_ep_ops = {
-+static unsigned int ls_pcie_ep_func_conf_select(struct dw_pcie_ep *ep,
-+						u8 func_no)
-+{
-+	struct dw_pcie *pci = to_dw_pcie_from_ep(ep);
-+	struct ls_pcie_ep *pcie = to_ls_pcie_ep(pci);
++		pcie_ep@3500000 {
++			compatible = "fsl,ls1088a-pcie-ep","fsl,ls-pcie-ep";
++			reg = <0x00 0x03500000 0x0 0x00100000
++			       0x28 0x00000000 0x8 0x00000000>;
++			reg-names = "regs", "addr_space";
++			num-ib-windows = <6>;
++			num-ob-windows = <8>;
++			status = "disabled";
++		};
 +
-+	WARN_ON(func_no && !pcie->drvdata->func_offset);
-+	return pcie->drvdata->func_offset * func_no;
-+}
+ 		pcie@3600000 {
+ 			compatible = "fsl,ls1088a-pcie";
+ 			reg = <0x00 0x03600000 0x0 0x00100000   /* controller registers */
+@@ -533,6 +554,16 @@
+ 			status = "disabled";
+ 		};
+ 
++		pcie_ep@3600000 {
++			compatible = "fsl,ls1088a-pcie-ep","fsl,ls-pcie-ep";
++			reg = <0x00 0x03600000 0x0 0x00100000
++			       0x30 0x00000000 0x8 0x00000000>;
++			reg-names = "regs", "addr_space";
++			num-ib-windows = <6>;
++			num-ob-windows = <8>;
++			status = "disabled";
++		};
 +
-+static const struct dw_pcie_ep_ops ls_pcie_ep_ops = {
- 	.ep_init = ls_pcie_ep_init,
- 	.raise_irq = ls_pcie_ep_raise_irq,
- 	.get_features = ls_pcie_ep_get_features,
-+	.func_conf_select = ls_pcie_ep_func_conf_select,
-+};
-+
-+static const struct ls_pcie_ep_drvdata ls1_ep_drvdata = {
-+	.ops = &ls_pcie_ep_ops,
-+	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
-+};
-+
-+static const struct ls_pcie_ep_drvdata ls2_ep_drvdata = {
-+	.func_offset = 0x20000,
-+	.ops = &ls_pcie_ep_ops,
-+	.dw_pcie_ops = &dw_ls_pcie_ep_ops,
-+};
-+
-+static const struct of_device_id ls_pcie_ep_of_match[] = {
-+	{ .compatible = "fsl,ls1046a-pcie-ep", .data = &ls1_ep_drvdata },
-+	{ .compatible = "fsl,ls1088a-pcie-ep", .data = &ls2_ep_drvdata },
-+	{ .compatible = "fsl,ls2088a-pcie-ep", .data = &ls2_ep_drvdata },
-+	{ },
- };
- 
- static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
-@@ -103,7 +134,7 @@ static int __init ls_add_pcie_ep(struct ls_pcie_ep *pcie,
- 	int ret;
- 
- 	ep = &pci->ep;
--	ep->ops = &pcie_ep_ops;
-+	ep->ops = pcie->drvdata->ops;
- 
- 	res = platform_get_resource_byname(pdev, IORESOURCE_MEM, "addr_space");
- 	if (!res)
-@@ -142,20 +173,23 @@ static int __init ls_pcie_ep_probe(struct platform_device *pdev)
- 	if (!ls_epc)
- 		return -ENOMEM;
- 
--	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
--	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
--	if (IS_ERR(pci->dbi_base))
--		return PTR_ERR(pci->dbi_base);
-+	pcie->drvdata = of_device_get_match_data(dev);
- 
--	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
- 	pci->dev = dev;
--	pci->ops = &ls_pcie_ep_ops;
--	pcie->pci = pci;
-+	pci->ops = pcie->drvdata->dw_pcie_ops;
- 
- 	ls_epc->bar_fixed_64bit = (1 << BAR_2) | (1 << BAR_4),
- 
-+	pcie->pci = pci;
- 	pcie->ls_epc = ls_epc;
- 
-+	dbi_base = platform_get_resource_byname(pdev, IORESOURCE_MEM, "regs");
-+	pci->dbi_base = devm_pci_remap_cfg_resource(dev, dbi_base);
-+	if (IS_ERR(pci->dbi_base))
-+		return PTR_ERR(pci->dbi_base);
-+
-+	pci->dbi_base2 = pci->dbi_base + PCIE_DBI2_OFFSET;
-+
- 	platform_set_drvdata(pdev, pcie);
- 
- 	ret = ls_add_pcie_ep(pcie, pdev);
+ 		smmu: iommu@5000000 {
+ 			compatible = "arm,mmu-500";
+ 			reg = <0 0x5000000 0 0x800000>;
 -- 
 2.9.5
 
