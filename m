@@ -2,62 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id ABDC0A5CDC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 22:06:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 35408A5D12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 22:22:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bbfYgJ+wrQbwww1LN5B4evm5nfHJ6Lre3kIpKI41CBg=; b=CekrI4QyYs57rv
-	WlrcxVPg/zEiHcV4r45qyicdIVlgnZDPSjm1Tve/1EGfqumEzNY+kU4KUSti/jUzKCfWx7a72Rza7
-	acF1WRdGrd5c6Pefd34ntlGWVgp3gXlMRBxZyhryMZAfcMB/LrotMSlwDa/6CnhKYH5kWB61gj0JD
-	202rYj8WVuLLt4kliI1w+Q2XxQLfcXjB7QRvg3Tnd7MzUZayrWkZuZqFPzVLquPbaoR5PLYBvrxEN
-	3oixL/B0FWEzsVWy6jUsb2imDXjC2y1gJDL9BkeRHHFVaZLf6RkvRUscbXWo+aQF+en1MCWn3KZmJ
-	8E01BrG+6KdOVLD/cLIw==;
+	List-Owner; bh=q4/qY2y3lcyxUfgGiJrF1JWOKmYoXoNlk4h/zv4UmYI=; b=fMHurjtoH7sNfB
+	IBIZPOkLq8022NdOZYeLhePeHKoaFb4X8bI1UDNknXIqzg7s0ly71Q5Qq307GwPQnbR8l0zqZscsz
+	1UJ8Ca3q7dQzbadQhEAI7c6t64BBMHg5Fs6yx3VPb+JbQ0WHdqpuMPIVl+NAx6TpUHqiFXQWCT0tb
+	bqygTu4OUFiuweSD94oKYY+M3noOJnCuWxDmxXZA4Slfl+ZCXw7Jawfi07zCoRvi6gM1i7DEVRKGz
+	htZ4tdkf7hfozOrBYDmQvtuy5K8QBUFclKPsRp2ZStSmluUVUj7RnwicQ4p/m2adyGvMEQXCe3nWQ
+	v1I1Hi2g5tAyLJi1UvRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4say-0006w7-6U; Mon, 02 Sep 2019 20:06:36 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i4sqZ-0003Qc-HP; Mon, 02 Sep 2019 20:22:43 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4sae-0006vj-IC
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 20:06:18 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1i4saY-000596-5w; Mon, 02 Sep 2019 22:06:10 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1i4saT-0002Nc-Kv; Mon, 02 Sep 2019 22:06:05 +0200
-Date: Mon, 2 Sep 2019 22:06:05 +0200
-From: Uwe =?iso-8859-1?Q?Kleine-K=F6nig?= <u.kleine-koenig@pengutronix.de>
-To: Claudiu.Beznea@microchip.com
-Subject: Re: [PATCH v2 6/6] pwm: atmel: implement .get_state()
-Message-ID: <20190902200605.2tipkzh3n7ylehku@pengutronix.de>
-References: <20190824001041.11007-1-uwe@kleine-koenig.org>
- <20190824001041.11007-7-uwe@kleine-koenig.org>
- <8da4ef26-872f-beaf-b5cb-9d8cb93a2ce9@microchip.com>
+ id 1i4sqL-0003QR-SU
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 02 Sep 2019 20:22:29 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:Content-Type:
+ MIME-Version:References:In-Reply-To:Message-ID:Subject:Cc:To:From:Date:Sender
+ :Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+ Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:List-Help:
+ List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=09PKBeh+S5bOscyDxiWcbCUO+XIGApH+iTqtdg2eJJk=; b=XIx9H2OO/mRgVVxPS3JcTYdcTp
+ 5np48YOT/qFrQmr7yyLQJoRDpfWzJ6SH3MQeCkb19oacFeIwt2FZkyd6Enhy9+7spPxKcYdzaWCJG
+ EfUWbwGBtDnqRcqU3K8Mfkig6tBWgPPA0EvXXs2E65l/REkA4iJ+rF3PFLCk1wG08tOSv2doF9EEA
+ TAUsyCxISoeMlvFwUrLGZnOvFvhbCRRhk57weTT8fPDLHBabNqxP0BR+4PU1loB8AlXcc/7JlA8te
+ VpxG46g/7tKThxYsNomlqS9rkyDS38Ss/G7QNfKSeJMtizsjMBaO19Xe8C0Li94byLsykQ0ZCREgI
+ HGic4SSQ==;
+Received: from relay11.mail.gandi.net ([217.70.178.231])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i4sqI-0004OE-0I
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 20:22:27 +0000
+Received: from xps13 (unknown [91.224.148.103])
+ (Authenticated sender: miquel.raynal@bootlin.com)
+ by relay11.mail.gandi.net (Postfix) with ESMTPSA id BC238100008;
+ Mon,  2 Sep 2019 20:21:12 +0000 (UTC)
+Date: Mon, 2 Sep 2019 22:21:11 +0200
+From: Miquel Raynal <miquel.raynal@bootlin.com>
+To: Michal Simek <michal.simek@xilinx.com>
+Subject: Re: [PATCH 1/3] ASoC: xlnx: add Xilinx logicPD-I2S FPGA IP support
+Message-ID: <20190902222111.045ede17@xps13>
+In-Reply-To: <df36fc2d-ed62-2556-513d-158a7707d5cd@xilinx.com>
+References: <20190830210607.22644-1-miquel.raynal@bootlin.com>
+ <df36fc2d-ed62-2556-513d-158a7707d5cd@xilinx.com>
+Organization: Bootlin
+X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <8da4ef26-872f-beaf-b5cb-9d8cb93a2ce9@microchip.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_130616_602801_FBB35987 
-X-CRM114-Status: GOOD (  18.85  )
-X-Spam-Score: 0.0 (/)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.231 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,78 +75,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-pwm@vger.kernel.org, alexandre.belloni@bootlin.com,
- Ludovic.Desroches@microchip.com, thierry.reding@gmail.com,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org,
+ Maruthi Srinivas Bayyavarapu <maruthis@xilinx.com>,
+ Takashi Iwai <tiwai@suse.com>, Rob Herring <robh+dt@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, praveenv@xilinx.com,
+ Jaroslav Kysela <perex@perex.cz>, alexandre@bootlin.com,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Claudiu,
-
-On Wed, Aug 28, 2019 at 10:26:18AM +0000, Claudiu.Beznea@microchip.com wrot=
-e:
-> On 24.08.2019 03:10, Uwe Kleine-K=F6nig wrote:
-> > External E-Mail
-> > This function reads back the configured parameters from the hardware. As
-> > .apply rounds down (mostly) I'm rounding up in .get_state() to achieve
-> > that applying a state just read from hardware is a no-op.
-> =
-
-> Since this read is only at probing, at least for the moment, and, as far =
-as
-
-Yes, up to now .get_state() is only called at probing time. There is a
-patch series (by me) on the list that changes that. (Though I'm not
-entirely sure this is a good idea. Will comment my doubts in that thread
-later.)
-
-> I remember, the idea w/ .get_state was to reflect in Linux the states of
-> PWMs that were setup before Linux takes control (e.g. PWMs setup in
-> bootloaders) I think it would no problem if it would be no-ops in this
-> scenario.
-
-IMHO it should be a no-op.
-
-> In case of run-time state retrieval, pwm_get_state() should be
-> enough. If one would get the state previously saved w/ this .get_state API
-> he/she would change it, then it would apply the changes to the hardware. =
-No
-> changes of PWM state would be anyway skipped from the beginning, in
-> pwm_apply_state() by this code:
-> =
-
->         if (state->period =3D=3D pwm->state.period &&
->             state->duty_cycle =3D=3D pwm->state.duty_cycle &&
-> 	    state->polarity =3D=3D pwm->state.polarity &&
->             state->enabled =3D=3D pwm->state.enabled)
-> 		return 0;
-> =
-
-> But maybe I'm missing something.
-
-There is a problem I want to solve generally, not only for the atmel driver.
-
-For example I consider it "expected" that
-
-	s1 =3D pwm_get_state(pwm)
-	pwm_apply_state(pwm, s2)
-	pwm_apply_state(pwm, s1)
-
-ends in the same configuration as it started. For that it is necessary
-(even for the atmel driver with the guard you pointed out above) to
-round up in .get_state if .apply rounds down.
-
-Best regards
-Uwe
-
--- =
-
-Pengutronix e.K.                           | Uwe Kleine-K=F6nig            |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgTWljaGFsLAoKTWljaGFsIFNpbWVrIDxtaWNoYWwuc2ltZWtAeGlsaW54LmNvbT4gd3JvdGUg
+b24gTW9uLCAyIFNlcCAyMDE5CjA5OjM5OjExICswMjAwOgoKPiBIaSBNaXF1ZWwKPiAKPiBPbiAz
+MC4gMDguIDE5IDIzOjA2LCBNaXF1ZWwgUmF5bmFsIHdyb3RlOgo+ID4gVGhpcyBJUCBpcyB2ZXJ5
+IHNpbXBsZSBzbyB0aGlzIGRyaXZlciBtYW5hZ2UgYm90aCB0aGUgREFJIGFuZCB0aGUgUENNCj4g
+PiBzdHJlYW1zLCBoZW5jZSB0aGUgcHJlc2VuY2Ugb2YgYm90aCBjb21wb25lbnRzIGluIHRoaXMg
+ZHJpdmVyLgo+ID4gCj4gPiBUaGVyZSBhcmUgcGxlbnR5IGF2YWlsYWJsZSBpbnRlcnJ1cHRpb25z
+IHdoZW4gY2FwdHVyaW5nIG9yIHBsYXlpbmcKPiA+IGJhY2sgYXVkaW8gdGhhdCBjYW4gYmUgdHJp
+Z2dlcmVkIGJ1dCB0aGUgb25seSBvbmUgdGhhdCBmaXRzIHRoZSBBTFNBCj4gPiBzb3VuZCBzeXN0
+ZW0gaXMgdGhlIFhGRVJfRE9ORSB3aGljaCBpcyB1c2VkIHRvIGJvdW5kIHNvdW5kCj4gPiBwZXJp
+b2RzLiBPdGhlciBpbnRlcnJ1cHRzIGFyZSBtYXNrZWQuIFBsZWFzZSBub3RlIHRoYXQgY2FwdHVy
+ZSBhbmQKPiA+IHBsYXliYWNrIGFyZSBub3QgcG9zc2libGUgYXQgdGhlIHNhbWUgdGltZSB0aG91
+Z2guCj4gPiAKPiA+IENhcHR1cmUgc2VlbXMgdG8gd29yayAoYXQgbGVhc3QgaXQgY3JlYXRlcyBh
+IGZpbGUgd2l0aCBzb21ldGhpbmcKPiA+IGluc2lkZSkgYnV0IEkgaGF2ZSBubyBjYXB0dXJlIG1l
+Y2hhbmlzbSBvbiB0aGUgYm9hcmQgdG8gYWN0dWFsbHkgdGVzdAo+ID4gdGhhdCBpdCB3b3JrcyBj
+b3JyZWN0bHkuCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5y
+YXluYWxAYm9vdGxpbi5jb20+Cj4gPiAtLS0KPiA+IAo+ID4gSGVsbG8sCj4gPiAKPiA+IFRoaXMg
+aXMgbXkgZmlyc3QgY29udHJpYnV0aW9uIGluIHRoZSBzb3VuZCBzdWJzeXN0ZW0sIEkgaG9wZSBJ
+J3ZlCj4gPiB1bmRlcnN0b29kIHRoZSBjb3JlIGJ1dCBJIG1pZ2h0IGJlIGVudGlyZWx5IHdyb25n
+IGFzIHdlbGwsIHNvIHBsZWFzZQo+ID4gZG8gbm90IGhlc2l0YXRlIHRvIGJlIGNyaXRpY2FsIG9u
+IG15IGNob2ljZXMuCj4gPiAKPiA+IFRoYW5rcywKPiA+IE1pcXXDqGwKPiA+IAo+ID4gIHNvdW5k
+L3NvYy94aWxpbngvS2NvbmZpZyAgICAgICAgICAgIHwgICA3ICsKPiA+ICBzb3VuZC9zb2MveGls
+aW54L01ha2VmaWxlICAgICAgICAgICB8ICAgMiArCj4gPiAgc291bmQvc29jL3hpbGlueC94bG54
+LWxvZ2ljcGQtaTJzLmMgfCA0NjggKysrKysrKysrKysrKysrKysrKysrKysrKysrKyAgCj4gCj4g
+V2hhdCBJUCBpcyB0aGlzPwo+IGh0dHBzOi8vd3d3LnhpbGlueC5jb20vcHJvZHVjdHMvaW50ZWxs
+ZWN0dWFsLXByb3BlcnR5L2F1ZGlvLWkycy5odG1sCj4gCj4gaHR0cHM6Ly9naXRodWIuY29tL1hp
+bGlueC9saW51eC14bG54L2Jsb2IvbWFzdGVyL3NvdW5kL3NvYy94aWxpbngveGxueF9pMnMuYwo+
+IAo+IEFueXdheSBJIGFtIGFkZGluZyBQcmF2ZWVuIGFuZCBNYXJ1dGhpIHRvIHRha2UgYSBsb29r
+LgoKQWN0dWFsbHkgSSBoYXZlIGJlZW4gdHJpY2tlZCBieSBhIGRhdGFzaGVldCB3aXRoIHRoZSB3
+cm9uZyB0aXRsZTogdGhpcwppcyBhIExvZ2ljUEQgSVAsIGl0IGlzIG5vdCBmcm9tIFhpbGlueC4g
+SSB3aWxsIHJlc3VibWl0IHdpdGggYSBuZXcKZHJpdmVyIG5hbWUvY29tcGF0aWJsZSBhbmQgYWRk
+IHRoZSByZWxldmFudCBwZW9wbGUuCgpUaGFua3MsCk1pcXXDqGwKCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
