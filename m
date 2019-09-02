@@ -2,97 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C5CCAA4E0D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 06:00:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45DBDA4E3C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 06:13:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZLgLtgpv+tZLSj8poXVN8aumyt9s0shtdnRXKfqOGTc=; b=F8bYfYaC8pb7mE
-	hMfZdNZxfgPsp0AYrd/meYRlcROyYM8fdlxm35yTnxHrcmt+MJ3DxMdkBfdWCroaX1ry9f0Q/8ZUa
-	4IP9rIQAa7iU1mQLRtcCREXBlWpXvglssglcXGD7UWDJ1s/+UXw80avkNIc7wQohP26BZK54FJ11T
-	ofDLoLmZTmxkZ0TSp7bgCDV2HTet5oKvhcUt7arpwQfiq1YaPm+F2jV1oN2SeKi1QIwvhRgxFt6ez
-	y5WKzWir/V2sg0QqPGeJOV/ctIWlJ5GplH920/014HgSCNpkyBgkZta7pZUA5JUhuYTM/wUzF/Uz7
-	GeyQ9I07Swu6du/aVUMw==;
+	List-Owner; bh=snMkLxvHsBRypcUldhOk7wB6YiVICrQ4jc01HtvjElA=; b=SsqXNcVKXJImcx
+	UotL7yQToBWQyv30z7dM00WQxWqJgOxD1KVG02Bs8CmsOS5fvzmmlWPd3dVZRsElwyA6FQlyv1Nsd
+	hthsrukeiJdZyqP2prdAJ0l8zA9LP8zlqxvRw9qlYGgBsQXev2K7vsXnuY03zUo2G6vstfTPVmJrz
+	FtQEtnHifmTVB/IAJa4mMVrIShW4WSTSbjBX5jVySnOr5pBiVE3+PAgkEhpuzn9Oa9xNrUa86SZsz
+	LmWa6afZSuosj7/xryPkJ1vujz2ChVlE/76CoW7uohm5tZt4kxWplRIMezJaog6Y7HVSDb6aEcbQq
+	Vz5uXExr2IKOmftEarlg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4dVT-0001vZ-Ph; Mon, 02 Sep 2019 03:59:55 +0000
-Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
+	id 1i4diN-0006dK-6X; Mon, 02 Sep 2019 04:13:15 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4dUM-00018p-74
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:58:47 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 380EF428;
- Sun,  1 Sep 2019 23:58:45 -0400 (EDT)
-Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Sun, 01 Sep 2019 23:58:45 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
- :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=L4EL0S354nCKb
- obvrleuPdmXpWAwO2XcwtXNi/sy4WI=; b=HARQ7LNhsamaQlUi8XrA9c9XgM4ej
- okbinmIfdkOyLMUHlFVu/WfWYSw/P/uFClhEk5UhKy/7Kh1XOn7o2p5B1ebEEC1m
- wJEf/MehcgXONCbfbtBZ1nNj5IbYQ5nIRaiAusgnk8jZPR1/60lHbifnOBhmTYa2
- 6T5ZTtzpfM3n4J5iU6nMK9EUtaFrXZLXHTjT9+HQioBA43n1DuH4Opn47cNwgSWC
- xRjJ3w3EA18yEURb4nR2onFCWE37RNvHnkNVGEArpcZw0EELLlnFRdHFew3+auG2
- bi/kwJx+YCp9LLCgfZvo7DuNo0C1/KHguKJajkz7Rh56gJ+F/89mfMqzw==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-transfer-encoding:date:from
- :in-reply-to:message-id:mime-version:references:subject:to
- :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=L4EL0S354nCKbobvrleuPdmXpWAwO2XcwtXNi/sy4WI=; b=K/R8LjBG
- ca3yJTTI1ErfnRSgU3X2raDIqDvDc3ZgFGyInGbt36buGSeTaWLQ22NVYJ2T+0Zt
- vUs8RC03tmdAs/BgBE6yjM8xicWuRngV7nIZInFobiYsiOT8QQDeEYyxpAZw8idh
- BjsSig2OcXirUzOkAp61cmsf257yoL0aKNxsJbeWFKPRqF/YvJFMM0zuLjzsMWEg
- fVS9HtWDMO4Y10SUWRUWCOoqY7bbjkpCVBIdQHEQR7xfRjkoOd7lm/4MevUD92fR
- 6NJt+aIsqf25m1FPXScCN7s8BxUIwjNbDHbBP5fcCK7jZcIVm5xlBHvA91s9/n6E
- Gr7ClhgjeKymag==
-X-ME-Sender: <xms:dJNsXS4FYebJUzXj6tQWUvzgWm-jkesn8Ws8e7AChMW2KBfR_wc6Cw>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeiledgjeejucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
- dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
- jhdrihgurdgruheqnecukfhppedvtdefrdehjedrvdduhedrudejkeenucfrrghrrghmpe
- hmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhi
- iigvpeef
-X-ME-Proxy: <xmx:dJNsXeMsWIkZvls6181yCWKzUB2kZBpQ-lMIr2XHPYXkLJt8QKPfwQ>
- <xmx:dJNsXQJs9gqGYmgbdw1I1_rwBwqpW6ZZkPB0QFX-JA9Rn26rC6pX3w>
- <xmx:dJNsXcHe-ta20xQ8kutYalNx7E4OHCXasO3UrAD5cnrE-QjLrXVvlw>
- <xmx:dJNsXYfkF93ocDMrpJ6G9XWLFCNDZm33KA0MKpD-u68-U8yPj3rhRA>
-Received: from localhost.localdomain (203-57-215-178.dyn.iinet.net.au
- [203.57.215.178])
- by mail.messagingengine.com (Postfix) with ESMTPA id D8D6AD60062;
- Sun,  1 Sep 2019 23:58:41 -0400 (EDT)
-From: Andrew Jeffery <andrew@aj.id.au>
-To: linux-mmc@vger.kernel.org
-Subject: [PATCH v2 4/4] mmc: sdhci-of-aspeed: Allow max-frequency limitation
- of SDCLK
-Date: Mon,  2 Sep 2019 13:28:42 +0930
-Message-Id: <20190902035842.2747-5-andrew@aj.id.au>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190902035842.2747-1-andrew@aj.id.au>
-References: <20190902035842.2747-1-andrew@aj.id.au>
+ id 1i4diC-0006cL-PB
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 04:13:06 +0000
+Received: by mail-qk1-x743.google.com with SMTP id 4so11436901qki.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Sun, 01 Sep 2019 21:13:03 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=tEtrc1rdzh/Z7dC3mMEoNjpzKu9VEPrGxsmA4Ux5oa0=;
+ b=dN7IQbc7odvWieIZ5FEdT/iecR2k9co0ZKCiVEoF2+XtJgJEdBx8dxIzOy3zhL02jM
+ Ng4NLHSa7h/5wwE7q5SJd047yMm+wIvJm2pobbFMrlKBydk8kDSkH9Vuy1khb04sb0IG
+ QvFDdo4L8E5TGP0OzMn69C3bccFG0s+t/Y2hM=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=tEtrc1rdzh/Z7dC3mMEoNjpzKu9VEPrGxsmA4Ux5oa0=;
+ b=GNHYh5f/FIqDjEHrg/ZqoTLQt7KFAu6fSTuPg698HuPee0Mi7E4PknOa1NdElrA00Q
+ NjgGpCX8LKLzpIFirlWcvPHDiOVjvq69GIYVHkvJnutROZttSUrMP2sFNn1irAKtwDkq
+ 0vc5q/lkpTuc5W+fisqlusxWlA9xAyQQYubNW5UBb48OjKceCFhWZS0g7AEGF/cV97Cv
+ iBf18+UQjjIqadFaMaBcKiCG7Lk/gP53OgLKWcQJ5jR2eRHvspVk+2DkfWj8qETKjpvc
+ fdsE9q9aEBSWBHYhpadrlmKHtuvV636rkU3oCNhj7wvdfWiIUJx/YODtdDsoqZJ12FtH
+ bIPA==
+X-Gm-Message-State: APjAAAWmXzr1lwiUU9N5RH23mWFmCRwutcvpQu1CbpilIOfrHWhsU7MY
+ FwPFNNGGP+O7+TRetaJeBjPLJgIAsFKJ5WanXMg=
+X-Google-Smtp-Source: APXvYqx0AbdqwDb0w0SXIQPBfCsiY91eO/PaLq21Y0/TBBmbdFC4DKJXXqARBT3GurZhBmBSWqMC8OS98b5LFv7L5rI=
+X-Received: by 2002:a37:4f4c:: with SMTP id d73mr13799291qkb.171.1567397583086; 
+ Sun, 01 Sep 2019 21:13:03 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190902035842.2747-1-andrew@aj.id.au>
+ <20190902035842.2747-2-andrew@aj.id.au>
+In-Reply-To: <20190902035842.2747-2-andrew@aj.id.au>
+From: Joel Stanley <joel@jms.id.au>
+Date: Mon, 2 Sep 2019 04:12:51 +0000
+Message-ID: <CACPK8XfYgEUfaK6rtr+FdEq-Vau6d4wE2Rvfp6Q4G2-kjVLT0g@mail.gmail.com>
+Subject: Re: [PATCH v2 1/4] mmc: sdhci-of-aspeed: Fix link failure for SPARC
+To: Andrew Jeffery <andrew@aj.id.au>, Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_205846_406783_38D26492 
-X-CRM114-Status: GOOD (  12.82  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190901_211304_878262_3DDD578D 
+X-CRM114-Status: GOOD (  19.81  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.20 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (joel.stan[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,82 +92,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: ulf.hansson@linaro.org, linux-aspeed@lists.ozlabs.org,
- Andrew Jeffery <andrew@aj.id.au>, openbmc@lists.ozlabs.org,
- adrian.hunter@intel.com, linux-kernel@vger.kernel.org, joel@jms.id.au,
- linux-arm-kernel@lists.infradead.org
+Cc: Ulf Hansson <ulf.hansson@linaro.org>, kbuild test robot <lkp@intel.com>,
+ linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>, linux-mmc@vger.kernel.org,
+ adrian.hunter@intel.com,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add a get_max_clock() handler to sdhci-of-aspeed to report f_max as the
-maximum clock rate if it is set. This enables artificial limitation of
-the bus speed via max-frequency in the devicetree for e.g. the AST2600
-evaluation board where I was seeing errors at 200MHz.
+On Mon, 2 Sep 2019 at 03:58, Andrew Jeffery <andrew@aj.id.au> wrote:
+>
+> Resolves the following build error reported by the 0-day bot:
+>
+>     ERROR: "of_platform_device_create" [drivers/mmc/host/sdhci-of-aspeed.ko] undefined!
+>
+> SPARC does not set CONFIG_OF_ADDRESS so the symbol is missing. Guard the
+> callsite to maintain build coverage for the rest of the driver.
+>
+> Reported-by: kbuild test robot <lkp@intel.com>
+> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> ---
+>  drivers/mmc/host/sdhci-of-aspeed.c | 38 ++++++++++++++++++++----------
+>  1 file changed, 25 insertions(+), 13 deletions(-)
+>
+> diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
+> index d5acb5afc50f..96ca494752c5 100644
+> --- a/drivers/mmc/host/sdhci-of-aspeed.c
+> +++ b/drivers/mmc/host/sdhci-of-aspeed.c
+> @@ -224,10 +224,30 @@ static struct platform_driver aspeed_sdhci_driver = {
+>         .remove         = aspeed_sdhci_remove,
+>  };
+>
+> -static int aspeed_sdc_probe(struct platform_device *pdev)
+> -
+> +static int aspeed_sdc_create_sdhcis(struct platform_device *pdev)
+>  {
+> +#if defined(CONFIG_OF_ADDRESS)
 
-Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
----
- drivers/mmc/host/sdhci-of-aspeed.c | 20 ++++++++++++++++++--
- 1 file changed, 18 insertions(+), 2 deletions(-)
+This is going to be untested code forever, as no one will be running
+on a chip with this hardware present but OF_ADDRESS disabled.
 
-diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-index c31d74427c49..a8a5341b526c 100644
---- a/drivers/mmc/host/sdhci-of-aspeed.c
-+++ b/drivers/mmc/host/sdhci-of-aspeed.c
-@@ -52,16 +52,24 @@ static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
- 
- static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
- {
-+	struct sdhci_pltfm_host *pltfm_host;
-+	unsigned long parent;
- 	int div;
- 	u16 clk;
- 
-+	pltfm_host = sdhci_priv(host);
-+	parent = clk_get_rate(pltfm_host->clk);
-+
- 	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
- 
- 	if (clock == 0)
- 		return;
- 
-+	if (WARN_ON(clock > host->max_clk))
-+		clock = host->max_clk;
-+
- 	for (div = 1; div < 256; div *= 2) {
--		if ((host->max_clk / div) <= clock)
-+		if ((parent / div) <= clock)
- 			break;
- 	}
- 	div >>= 1;
-@@ -71,6 +79,14 @@ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
- 	sdhci_enable_clk(host, clk);
- }
- 
-+static unsigned int aspeed_sdhci_get_max_clock(struct sdhci_host *host)
-+{
-+	if (host->mmc->f_max)
-+		return host->mmc->f_max;
-+
-+	return sdhci_pltfm_clk_get_max_clock(host);
-+}
-+
- static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
- {
- 	struct sdhci_pltfm_host *pltfm_priv;
-@@ -97,7 +113,7 @@ static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
- 
- static const struct sdhci_ops aspeed_sdhci_ops = {
- 	.set_clock = aspeed_sdhci_set_clock,
--	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
-+	.get_max_clock = aspeed_sdhci_get_max_clock,
- 	.set_bus_width = aspeed_sdhci_set_bus_width,
- 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
- 	.reset = sdhci_reset,
--- 
-2.20.1
+How about we make the driver depend on OF_ADDRESS instead?
 
+Cheers,
+
+Joel
+
+
+
+>         struct device_node *parent, *child;
+> +
+> +       parent = pdev->dev.of_node;
+> +
+> +       for_each_available_child_of_node(parent, child) {
+> +               struct platform_device *cpdev;
+> +
+> +               cpdev = of_platform_device_create(child, NULL, &pdev->dev);
+> +               if (!cpdev) {
+> +                       of_node_put(child);
+> +                       return -ENODEV;
+> +               }
+> +       }
+> +#endif
+> +
+> +       return 0;
+> +}
+> +
+> +static int aspeed_sdc_probe(struct platform_device *pdev)
+> +
+> +{
+>         struct aspeed_sdc *sdc;
+>         int ret;
+>
+> @@ -256,17 +276,9 @@ static int aspeed_sdc_probe(struct platform_device *pdev)
+>
+>         dev_set_drvdata(&pdev->dev, sdc);
+>
+> -       parent = pdev->dev.of_node;
+> -       for_each_available_child_of_node(parent, child) {
+> -               struct platform_device *cpdev;
+> -
+> -               cpdev = of_platform_device_create(child, NULL, &pdev->dev);
+> -               if (!cpdev) {
+> -                       of_node_put(child);
+> -                       ret = -ENODEV;
+> -                       goto err_clk;
+> -               }
+> -       }
+> +       ret = aspeed_sdc_create_sdhcis(pdev);
+> +       if (ret)
+> +               goto err_clk;
+>
+>         return 0;
+>
+> --
+> 2.20.1
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
