@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E1DB5A5B03
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 18:01:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A17CA5B06
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 18:02:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XldOBpzsl7gP7WLiSHpQYzsjN07al9E44BreGKKDssY=; b=pV00GCvMpArn0J
-	asYXG3yUpc6/ld8Ocx6dPz5xMPKTQrhmys1WSEam7SltGqrZn4qIfM4kajE28fGRZXDrryC+J/7dY
-	ZuH6GhbB3FvBnpIoirbokZdWkdeBPwBwVcQyPp5gD1zA4/+1zxzMiikiJqi9QGHoo4Py0AFboMTVu
-	nnqCOyD6Y8xqVJOvlNMi6KeaVxIWMeN4l4Cw5tffBiouQf4CVQOzW7HHf/oMmd5I6sWox9BO75gyh
-	LHKBgJ9rmtHFARjlbjX5W4qMYKrvp5umZ276hUtejaKtx3oos22vVUdDTov45/6KI0/U8zIXnz6Wt
-	0Mr9Eq+SfDrWec3OlTFQ==;
+	List-Owner; bh=THMEQRPRW3DSdgeIuQUL86gKoS3K+Sh99oF24ZNW+n8=; b=mC4ZxNI3pbnuPW
+	Z3tBE3r5D9QNuXukzO6f2MoLhr6JImmJtAvV54WovZckx870a1Cmpe18NX0iu3AHkJwMQEPhA31Yn
+	DAuZFFFhA48t+bkHGpMDpNxTqXGhUb++3FWIBccckFGqjHU1Wb2TlE1LBOeIs0LC/+hvEpWviJLR5
+	p3Fk9u0nXGDXKOuHaxT2wieeY2vwGNlWY2jl/LvgezbLPAOM311au9eIia/JX9j5Sykf9MGMnxbYD
+	AzFABQHsCw0/VbFwds2t1YOU9fsB4naThwY63qskY1AfxAKUFUkIrSq462O3lKTdrGHZn/2Vd2+Kq
+	trFt9hxLhYKisH+rAVtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4om5-0004Li-NN; Mon, 02 Sep 2019 16:01:49 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1i4omU-0004x8-Bk; Mon, 02 Sep 2019 16:02:14 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4olf-0003ti-EG
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 16:01:25 +0000
-Received: from pps.filterd (m0046661.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x82FpZdP025195; Mon, 2 Sep 2019 18:01:07 +0200
+ id 1i4oll-00048z-J8
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 16:01:31 +0000
+Received: from pps.filterd (m0046668.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x82G1NEh013661; Mon, 2 Sep 2019 18:01:24 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
  : date : message-id : in-reply-to : references : mime-version :
  content-type; s=STMicroelectronics;
- bh=xrlRhN7JPPOqfg3FVj66plKLvtdIpfigptlMyrQBYfA=;
- b=UZCQ9RS969vKhs9HkXrczNrsHeUPuzt8P6G3OGj2v19ICNC/IT29ZF79z+yQfqOoHTRx
- ykaVkbLZm3MjE6PmEn+hkMoX4Z4Co7FOfT5++MshhOOXeFg8UCvQYb4m15JyduDlP+kg
- wIZBx2Nb2RfxmfhuMdcoY2CTzGJHVc8iG6f54n/HV8Nm9RJKu0XK8KDntrvbuOR1LEzR
- lMWoMSlSFDqy2kNALr4pTbOcn+fT/uAiD6Yv5KA/8vCclblEybsLw8YQjtchW/tfB2RE
- Taz4qLQvTWDqA4rT92tM4CTwodfi1kVfC88S+4hAsvwZ1MLwzXTFMcNT44Zvr3vhcKiF BA== 
+ bh=n/9J04bMASd91Yvy3ukzh2dvhlV4FPmYy3RQUpNIw6g=;
+ b=tc8HivKwomhriFxrWx2/yMRi933JjZQRofezTwsFF4HKT3Q2Y/yXzPc/RaBolmt3R+20
+ UeWPxSHZH9Yh91ix/A6VJZAIMleeIMHsoKskMMxvC7lMomfYOGuNgg182Te/KrdODZ8u
+ +dN2oSp7/v8a8oWE2ee6D36KS2ND2jFgCbwayyO7XaCciLzmxwykMF+WNWHZwNyuMz3R
+ fL1T8+eOSm3VHwI3Ay/Vg8lSMvKrCoaERHa2JAw045lZg/cGhpZIwrBIaxI7xX1xy5/G
+ NhXyiV+0nHPezHDP+ViJChofBt/w3JQ+shRWqw8FRSG8DKFajBGrxiJ72zk3v9l21s66 mA== 
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2uqfshnc8g-1
+ by mx07-00178001.pphosted.com with ESMTP id 2uqec2ngs8-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Mon, 02 Sep 2019 18:01:07 +0200
+ Mon, 02 Sep 2019 18:01:24 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 2831122;
- Mon,  2 Sep 2019 16:01:04 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas22.st.com [10.75.90.92])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 875F12C1415;
- Mon,  2 Sep 2019 18:01:03 +0200 (CEST)
-Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by Safex1hubcas22.st.com
- (10.75.90.92) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019
- 18:01:03 +0200
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 3784F23;
+ Mon,  2 Sep 2019 16:01:11 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 9596C2CF15F;
+ Mon,  2 Sep 2019 18:01:10 +0200 (CEST)
+Received: from SAFEX1HUBCAS24.st.com (10.75.90.95) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019
+ 18:01:04 +0200
 Received: from localhost (10.201.23.16) by webmail-ga.st.com (10.75.90.48)
- with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019 18:01:02
+ with Microsoft SMTP Server (TLS) id 14.3.439.0; Mon, 2 Sep 2019 18:01:04
  +0200
 From: Olivier Moysan <olivier.moysan@st.com>
 To: <alexandre.torgue@st.com>, <olof@lixom.net>, <horms+renesas@verge.net.au>, 
@@ -60,9 +59,9 @@ To: <alexandre.torgue@st.com>, <olof@lixom.net>, <horms+renesas@verge.net.au>,
  <fabrice.gasnier@st.com>, <enric.balletbo@collabora.com>,
  <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>,
  <linux-stm32@st-md-mailman.stormreply.com>
-Subject: [PATCH 3/4] ARM: multi_v7_defconfig: enable cs42l51 codec support
-Date: Mon, 2 Sep 2019 18:00:40 +0200
-Message-ID: <1567440041-19220-4-git-send-email-olivier.moysan@st.com>
+Subject: [PATCH 4/4] ARM: multi_v7_defconfig: enable audio graph card support
+Date: Mon, 2 Sep 2019 18:00:41 +0200
+Message-ID: <1567440041-19220-5-git-send-email-olivier.moysan@st.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
 References: <1567440041-19220-1-git-send-email-olivier.moysan@st.com>
@@ -71,15 +70,15 @@ X-Originating-IP: [10.201.23.16]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
  definitions=2019-09-02_06:2019-08-29,2019-09-02 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_090123_881234_75A6FF50 
-X-CRM114-Status: GOOD (  11.91  )
+X-CRM114-CacheID: sfid-20190902_090129_943229_02266428 
+X-CRM114-Status: GOOD (  11.71  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -106,7 +105,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable Cirrus CS42L51 audio codec for stm32mp157a-dk1 board.
+Enable audio graph card support for stm32mp157a-dk1 board.
 
 Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
 ---
@@ -114,17 +113,17 @@ Signed-off-by: Olivier Moysan <olivier.moysan@st.com>
  1 file changed, 1 insertion(+)
 
 diff --git a/arch/arm/configs/multi_v7_defconfig b/arch/arm/configs/multi_v7_defconfig
-index 02265e195e50..03a4d93df8c4 100644
+index 03a4d93df8c4..c7104a1c1687 100644
 --- a/arch/arm/configs/multi_v7_defconfig
 +++ b/arch/arm/configs/multi_v7_defconfig
-@@ -714,6 +714,7 @@ CONFIG_SND_SOC_TEGRA_ALC5632=m
- CONFIG_SND_SOC_TEGRA_MAX98090=m
- CONFIG_SND_SOC_AK4642=m
- CONFIG_SND_SOC_CPCAP=m
-+CONFIG_SND_SOC_CS42L51_I2C=m
- CONFIG_SND_SOC_SGTL5000=m
+@@ -719,6 +719,7 @@ CONFIG_SND_SOC_SGTL5000=m
  CONFIG_SND_SOC_SPDIF=m
  CONFIG_SND_SOC_STI_SAS=m
+ CONFIG_SND_SOC_WM8978=m
++CONFIG_SND_AUDIO_GRAPH_CARD=m
+ CONFIG_USB=y
+ CONFIG_USB_OTG=y
+ CONFIG_USB_XHCI_HCD=y
 -- 
 2.7.4
 
