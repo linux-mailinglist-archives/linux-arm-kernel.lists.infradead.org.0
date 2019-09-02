@@ -2,77 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3976EA52E8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 11:36:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6F1CA52F5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 11:37:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqTqMch8KSjPT+fsga5VCWDIVwrI1p2ry2OJcjPvc9g=; b=gNMHRTZ/dwcZPo
-	P66igTIFEGknOuM0OG24RiaBGWBOOPCnIW5pPeYv+KzjJ42Ht5Dbhj1NxuRIu8gtu/T3QBmkD8c++
-	/K7uzj4MBaDf4jnjMOqsmuuuXB3Tw4bOdDSuXsDVDvpf4be8yquWc3x/A2TA/gEOQzy1A8RM2m1bn
-	0qQ96bLpk8t6PuH7EBv8NzWzrB2IFXu9yqmR8rucXk4bAzqe/ICnfXSGugNtfwstbHQ1xzY3d+xqi
-	2iCu+Ztwi/GSAsBbCZM8A9PyTIaw7G3GXhOdT/UUWFHcBrpVvUAvpQcc6oub1lnSkXmn1dLrLJnLO
-	jJyCJ5NNkMGmWay+j56Q==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:
+	In-reply-to:Subject:To:From:References:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=bs4LqaAesiKjWuBTq9/ibHlzQ4SNltFtHKXf0rGNeOI=; b=VWDSDXNG32RxERRc6vSBQnxrEL
+	EjIB1d7V0VWYPizTdpuFw4mdoBcG2uB3ltyKZ3VtCvRYH7K5sUAPmDW7oPpjs8KcV4M94jL1k0dNZ
+	fqyBRk0iBlRdq+47Uwq5eOpSvsEUU7k3qWKRM8t0sM/q2CvJQWQACZw4hq3yHCv1JR5l3sM8ADEg3
+	AHqfD+tUQF3rR4NCaGEDRNjYxWI67Tz2qQpGL5xZ1sMNR88ftn4W8JKHtEYG3Clomf0OM8fFSkLou
+	b0GkAkOexgyDvChLU61XSyN7wHl/eaQvi3ddgxDB454iohDeb9ZtBIj9+KmROIr4ckH0rcpF4CK3K
+	iQKQGGtg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4ikd-0002yV-O7; Mon, 02 Sep 2019 09:35:55 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1i4ilc-0003HQ-Hc; Mon, 02 Sep 2019 09:36:56 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4ikI-0002uG-27
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 09:35:36 +0000
-Received: by mail-qk1-x743.google.com with SMTP id i78so10513295qke.11
+ id 1i4ilG-0003GQ-Px
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 09:36:37 +0000
+Received: by mail-wr1-x443.google.com with SMTP id b16so13249189wrq.9
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Sep 2019 02:35:34 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=vAwnLuMjjeItOOqHHXHJmcc2xpDcbEuHDPmJlUbyfys=;
- b=PlrwvAU2KCgLvuLJeYmq+oXRO6WFqP5OyD8x2GqpXCKWsQyaCQv+JWXDCy8y5BWeL5
- yZzac6WC7sgZDmlZSV40kMzZtSar7DmfkwcY+qjoNz7vl+MVUr94nFmNDMGHou7vDoKr
- 1B1ExfRcC4j2fSK0hHmzHPehXdJFDwqnzCaQhW/eOsqs4lGEkbHklA9K71U7T7O4JMti
- pbLv48onqk/2cqgkxei++KAtZJvLIWmMwfSgVsLTSoWwHjt8/8NELscJ9gkK0q1XeH9Y
- +xXI99gACrkxEuyAEdP6FgWTd0DNtbq57D/lBrP/cMOsKt7I0hyS5ASpzkb9T4Zy86QP
- 4k+A==
+ Mon, 02 Sep 2019 02:36:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=references:user-agent:from:to:cc:subject:in-reply-to:date
+ :message-id:mime-version;
+ bh=7S+vZhVc5zHeiLc/DC6Z2xOOWxBDBUvpp/e3pBI1NHw=;
+ b=SdLltcIqfSTbhoDBqB0JMt9oUEV92Oj/pOU/Ob14cQsQPj+tVBpl3Rr/9U2efcxzSw
+ G8V7L49e6FUh7X+XY0Pg/NAWU3hPUVh0bflsweMM8+44JIlZC41qyHKccjz9hEOHtKhY
+ /QRuBI2cRf2dQ7DB1g4J4239lW7vLw2cgwLL1JxWT7n/w6icES8esjSDU3uL6EVcGoSN
+ i+6J3BjMyq3zpw/INszfY/hWVYhfXhS323KJNFt4RJY0spsQRPWWQys/InPvU+ohDXba
+ m9DYKI8EqZolY7g8hH/XWLgJB1E0iNyLz/UxqPT+3QFN1mecQQkw6V9VJz79skA3pCjJ
+ 44IA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=vAwnLuMjjeItOOqHHXHJmcc2xpDcbEuHDPmJlUbyfys=;
- b=rAGFPbxe/IcDASC7bbo/WbwU9XvZ7O8A1cN9bPO6WrJNh8hf2RvboUXOGe/kbtEG+j
- FL0LS5VYqV6whX/MKEMKcpcVICb/pRM+C5kw/P58YpzEI+dzmS9dxgIpWc7AP9i7esPV
- BwDzCq+q7qsc7HwBoT0Eiyo37hTQwVw6KhDpLTuV+G3XfCFQomq4WSeMKLbpEqFC++Yv
- Gc3fnJ2+YjVmv1ymi8lkhx3DM23rI5X8OMvuQi6zFISriq0YD0+ysNLpEBG8rAg1ZQbk
- PVIxhEy269J3OWuB1BEdvHurXn3MQK3B9Xs+xRGIDw9xUZw+Lh51kOMucVozHBcD3nFE
- v7+w==
-X-Gm-Message-State: APjAAAXz+OzMMif322o1X/PkhvQ7MdC7JqS8snaImnifGjqk4Rzu0Itl
- WmcFRQzBdJh1WRvD7POFbWhVQlReEpiDF6SdCpZ6og==
-X-Google-Smtp-Source: APXvYqwcv2iKNWBzmW6xpbxs7QP7I0kVxvLsIMZ9MSGwXwqDaAyBeeDhkf6dp3c6TQppZmZjMOeNnmx68BmhybQL44Y=
-X-Received: by 2002:a37:813:: with SMTP id 19mr24965528qki.427.1567416933410; 
- Mon, 02 Sep 2019 02:35:33 -0700 (PDT)
+ h=x-gm-message-state:references:user-agent:from:to:cc:subject
+ :in-reply-to:date:message-id:mime-version;
+ bh=7S+vZhVc5zHeiLc/DC6Z2xOOWxBDBUvpp/e3pBI1NHw=;
+ b=XCUDgb+CtgiM1J1gwebXhQB10sVEMW9uAK6zjfpU6aep8SzuO1LLi0IP7alg29BggF
+ vxUNEqMfBcFgl37KaaxEMfMKL4ZfpepKuvcO+X8YSKOWVQVVYFeqWZiBr1NIy8Ocnbi6
+ QAjFmV79wUKSYYgmDOe0kh89hQKbf3UmpQGHi3gc7od0JivgzFiHgCW+ri5Jwbn0d+ej
+ NN6c5o3BPXJpWgTaHr8kbr/Xyv1HEBUjsEwjbNoqwSjtNM3tBn5q5JxGaCdq9NqZGaB2
+ G+u1ZJ6LwWCQ6l4d+s+BZ6a4DO/WQHuv7KqmsnOW9WId8/3AP2S8dpatVMyk5+x0ZDtl
+ b2sg==
+X-Gm-Message-State: APjAAAXVvd+oygO6WFvE7TwjmfZbUUbMquOlLxDhoVdtXvJP1fablH3T
+ IFVBwQluH3hnqtn2+ezRMsA=
+X-Google-Smtp-Source: APXvYqwnZx3UsFw9tXhL1LKY1pc0SI7+G9To5dGcweMEWFrJ8hdLdd2oaTaKuKhIo7cilHZxWPmycw==
+X-Received: by 2002:adf:d187:: with SMTP id v7mr36485204wrc.33.1567416990962; 
+ Mon, 02 Sep 2019 02:36:30 -0700 (PDT)
+Received: from arch-late (87-196-73-69.net.novis.pt. [87.196.73.69])
+ by smtp.gmail.com with ESMTPSA id r6sm14586137wmf.0.2019.09.02.02.36.26
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 02 Sep 2019 02:36:28 -0700 (PDT)
+References: <20190805233505.21167-1-slongerbeam@gmail.com>
+ <20190805233505.21167-15-slongerbeam@gmail.com>
+User-agent: mu4e 1.2.0; emacs 27.0.50
+From: Rui Miguel Silva <rmfrfs@gmail.com>
+To: Steve Longerbeam <slongerbeam@gmail.com>
+Subject: Re: [PATCH 14/22] media: imx7-mipi-csis: Create media links in bound
+ notifier
+In-reply-to: <20190805233505.21167-15-slongerbeam@gmail.com>
+Date: Mon, 02 Sep 2019 10:36:20 +0100
+Message-ID: <m3d0gj59bf.fsf@gmail.com>
 MIME-Version: 1.0
-References: <1564754931-13861-1-git-send-email-yannick.fertre@st.com>
- <50695b37-df51-08d6-a11e-99f9349aa481@st.com>
-In-Reply-To: <50695b37-df51-08d6-a11e-99f9349aa481@st.com>
-From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
-Date: Mon, 2 Sep 2019 11:35:22 +0200
-Message-ID: <CA+M3ks5GaN2-jEHO5-QGGkhYG2U-ExQR4=kNuk0jBxH2BkRGYQ@mail.gmail.com>
-Subject: Re: [PATCH] ARM: dts: stm32: move ltdc pinctrl on stm32mp157a dk1
- board
-To: Philippe CORNU <philippe.cornu@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_023535_049257_4C421F49 
-X-CRM114-Status: GOOD (  14.78  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190902_023636_364915_CC1BC148 
+X-CRM114-Status: GOOD (  15.22  )
+X-Spam-Score: 1.4 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
  [list.dnswl.org]
+ 1.0 HK_RANDOM_FROM         From username looks random
+ 0.6 HK_RANDOM_ENVFROM      Envelope sender username looks random
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (rmfrfs[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -93,51 +103,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Alexandre TORGUE <alexandre.torgue@st.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Yannick FERTRE <yannick.fertre@st.com>, Rob Herring <robh+dt@kernel.org>,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Fabrice GASNIER <fabrice.gasnier@st.com>,
- "linux-stm32@st-md-mailman.stormreply.com"
- <linux-stm32@st-md-mailman.stormreply.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Benjamin GAIGNARD <benjamin.gaignard@st.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "open list:STAGING SUBSYSTEM" <devel@driverdev.osuosl.org>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-KyBkcmktZGV2ZWwgbWFpbGluZyBsaXN0CgpMZSBsdW4uIDIgc2VwdC4gMjAxOSDDoCAxMDo0NSwg
-UGhpbGlwcGUgQ09STlUgPHBoaWxpcHBlLmNvcm51QHN0LmNvbT4gYSDDqWNyaXQgOgo+Cj4gSGkg
-WWFubmljaywKPgo+IE9uIDgvMi8xOSA0OjA4IFBNLCBZYW5uaWNrIEZlcnRyw6kgd3JvdGU6Cj4g
-PiBUaGUgbHRkYyBwaW5jdHJsIG11c3QgYmUgaW4gdGhlIGRpc3BsYXkgY29udHJvbGxlciBub2Rl
-IGFuZAo+ID4gbm90IGluIHRoZSBwZXJpcGhlcmFsIG5vZGUgKGhkbWkgYnJpZGdlKS4KPiA+Cj4g
-PiBTaWduZWQtb2ZmLWJ5OiBZYW5uaWNrIEZlcnRyw6kgPHlhbm5pY2suZmVydHJlQHN0LmNvbT4K
-PiA+IC0tLQo+ID4gICBhcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3YS1kazEuZHRzIHwgNiAr
-KystLS0KPiA+ICAgMSBmaWxlIGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMo
-LSkKPiA+Cj4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3RtMzJtcDE1N2EtZGsx
-LmR0cyBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N0bTMybXAxNTdhLWRrMS5kdHMKPiA+IGluZGV4IGYz
-ZjBlMzcuLjEyODVjZmMgMTAwNjQ0Cj4gPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1w
-MTU3YS1kazEuZHRzCj4gPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9zdG0zMm1wMTU3YS1kazEu
-ZHRzCj4gPiBAQCAtOTksOSArOTksNiBAQAo+ID4gICAgICAgICAgICAgICByZXNldC1ncGlvcyA9
-IDwmZ3Bpb2EgMTAgR1BJT19BQ1RJVkVfTE9XPjsKPiA+ICAgICAgICAgICAgICAgaW50ZXJydXB0
-cyA9IDwxIElSUV9UWVBFX0VER0VfRkFMTElORz47Cj4gPiAgICAgICAgICAgICAgIGludGVycnVw
-dC1wYXJlbnQgPSA8JmdwaW9nPjsKPiA+IC0gICAgICAgICAgICAgcGluY3RybC1uYW1lcyA9ICJk
-ZWZhdWx0IiwgInNsZWVwIjsKPiA+IC0gICAgICAgICAgICAgcGluY3RybC0wID0gPCZsdGRjX3Bp
-bnNfYT47Cj4gPiAtICAgICAgICAgICAgIHBpbmN0cmwtMSA9IDwmbHRkY19waW5zX3NsZWVwX2E+
-Owo+ID4gICAgICAgICAgICAgICBzdGF0dXMgPSAib2theSI7Cj4gPgo+ID4gICAgICAgICAgICAg
-ICBwb3J0cyB7Cj4gPiBAQCAtMjc2LDYgKzI3Myw5IEBACj4gPiAgIH07Cj4gPgo+ID4gICAmbHRk
-YyB7Cj4gPiArICAgICBwaW5jdHJsLW5hbWVzID0gImRlZmF1bHQiLCAic2xlZXAiOwo+ID4gKyAg
-ICAgcGluY3RybC0wID0gPCZsdGRjX3BpbnNfYT47Cj4gPiArICAgICBwaW5jdHJsLTEgPSA8Jmx0
-ZGNfcGluc19zbGVlcF9hPjsKPgo+IFJldmlld2VkLWJ5OiBQaGlsaXBwZSBDb3JudSA8cGhpbGlw
-cGUuY29ybnVAc3QuY29tPgo+Cj4gVGhhbmtzCj4gUGhpbGlwcGUgOikKPgo+ID4gICAgICAgc3Rh
-dHVzID0gIm9rYXkiOwo+ID4KPiA+ICAgICAgIHBvcnQgewo+ID4KPiBfX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwo+IGxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0Cj4gbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCj4gaHR0cDovL2xp
-c3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+Hi Steve,
+Just to let you know that this series no longer apply clean after
+your other series:
+media: imx: Fix subdev unregister/register issues
+
+And since you will need to send a new one, some notes...
+
+On Tue 06 Aug 2019 at 00:34, Steve Longerbeam wrote:
+> Implement a notifier bound op to register media links from the remote
+> sub-device's source pad(s) to the mipi csi-2 receiver sink pad.
+>
+> Signed-off-by: Steve Longerbeam <slongerbeam@gmail.com>
+> ---
+>  drivers/staging/media/imx/imx7-mipi-csis.c | 25 ++++++++++++++++++++++
+>  1 file changed, 25 insertions(+)
+>
+> diff --git a/drivers/staging/media/imx/imx7-mipi-csis.c b/drivers/staging/media/imx/imx7-mipi-csis.c
+> index f71d9183cad2..e03b2317a1ac 100644
+> --- a/drivers/staging/media/imx/imx7-mipi-csis.c
+> +++ b/drivers/staging/media/imx/imx7-mipi-csis.c
+> @@ -259,6 +259,12 @@ struct csi_state {
+>  	bool sink_linked;
+>  };
+>
+> +static inline struct csi_state *
+> +notifier_to_csis_state(struct v4l2_async_notifier *n)
+>
+
+instead of adding this between structs declaration can you move it
+down near the similar converter:
+
+static struct csi_state *mipi_sd_to_csis_state(struct v4l2_subdev *sdev)
+
+and remove the inline since the compiler should do this and add
+namespacing function name like the other functions, something like:
+
+static struct csi_state * mipi_notifier_to_csis_state(struct v4l2_async_notifier *n)
+
+Just to coherency.
+
+Other than this, looks good to me.
+
+Cheers,
+   Rui
+
+> +{
+> +	return container_of(n, struct csi_state, notifier);
+> +}
+> +
+>  struct csis_pix_format {
+>  	unsigned int pix_width_alignment;
+>  	u32 code;
+> @@ -863,6 +869,23 @@ static int mipi_csis_parse_endpoint(struct device *dev,
+>  	return 0;
+>  }
+>
+> +static int mipi_csis_notify_bound(struct v4l2_async_notifier *notifier,
+> +				  struct v4l2_subdev *sd,
+> +				  struct v4l2_async_subdev *asd)
+> +{
+> +	struct csi_state *state = notifier_to_csis_state(notifier);
+> +	struct media_pad *sink = &state->mipi_sd.entity.pads[CSIS_PAD_SINK];
+> +
+> +	return media_create_fwnode_pad_links(sink,
+> +					     dev_fwnode(state->mipi_sd.dev),
+> +					     &sd->entity,
+> +					     dev_fwnode(sd->dev), 0);
+> +}
+> +
+> +static const struct v4l2_async_notifier_operations mipi_csis_notify_ops = {
+> +	.bound = mipi_csis_notify_bound,
+> +};
+> +
+>  static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
+>  				 struct platform_device *pdev,
+>  				 const struct v4l2_subdev_ops *ops)
+> @@ -895,6 +918,8 @@ static int mipi_csis_subdev_init(struct v4l2_subdev *mipi_sd,
+>
+>  	v4l2_async_notifier_init(&state->notifier);
+>
+> +	state->notifier.ops = &mipi_csis_notify_ops;
+> +
+>  	ret = v4l2_async_register_fwnode_subdev(mipi_sd, &state->notifier,
+>  						sizeof(struct v4l2_async_subdev),
+>  						&sink_port, 1,
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
