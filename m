@@ -2,34 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 798F3A570F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:04:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FF09A5717
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:04:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FqDLXry08XtDK1jS9M2SeUx+tTUaTy8GCvapyqOA6Lk=; b=aeuBk0ECQeHcNX
-	iwjyDK7GnqqXCFoXbFOMFkt3cHqMkF6aL5TbXvwjLuxlZJYvEBI6JCunKCnQmSoDo71rPRoYoJfCR
-	NsRKlszPouqULA7UrPx1iG9BCJU/1nHTn/woxtC60EdfBRbn1yknbGsAdjVCPHiVVIvOKEpN/y+Vi
-	+PwlA1OgDxpYCn5THht2RIZzXI6oTXKL16qdYAlESzE9HYqpiZZfIMRE5keKkCIbJMzoygbvZOgZf
-	93xcMN8LD4La+0C+T9pY04op3w0T1zIf7U11oUbhrjLZCGZXM0kwZl4BQxF0hphgoKn5Jey5UKNEP
-	PcNyymvea3GmGRULZ13w==;
+	List-Owner; bh=aYlmwpITUTVN5585sa3TOuO1P+X/U3fhEq1mNkjLGHo=; b=Nsv7WtEyzbWSma
+	4WF9vFRqtExS87ipmoZXpcZDQHVO4OLBlgIhZyav4KtmjYenikBKjCUwyzmk7IXGM4KXE7rWIaq2c
+	gjpGaPCTdTReP5CqBHcsa5pu02hVuHFcYv+xnNB8rvakAX6Spm/UTDT790ziUj4aBEEIpZ6iokE0+
+	5lSNuc1mcm8iciEl5MjRsmTjNxpreQt6ztRkjEMixvt8y+dZ+yyW+JvIxLdZWh+WgzJAoU/RejzRX
+	4r35crTUCo/M1q4q0/bundaWcY0KRxZ+GDzp0glxss0C9e3sMkNtWPsDJ3y5rl+wu7j4TYgng4xSr
+	s8GysbT4i1wlXh68tzAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4m0F-0001Xd-VI; Mon, 02 Sep 2019 13:04:16 +0000
+	id 1i4m0V-0001os-TQ; Mon, 02 Sep 2019 13:04:32 +0000
 Received: from [2001:4bb8:18c:1755:c70:4a89:bc61:2] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i4lzl-0001D1-Tu; Mon, 02 Sep 2019 13:03:46 +0000
+ id 1i4lzo-0001GZ-KZ; Mon, 02 Sep 2019 13:03:49 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Stefano Stabellini <sstabellini@kernel.org>,
  Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, gross@suse.com,
  boris.ostrovsky@oracle.com
-Subject: [PATCH 01/13] xen/arm: use dma-noncoherent.h calls for xen-swiotlb
- cache maintainance
-Date: Mon,  2 Sep 2019 15:03:27 +0200
-Message-Id: <20190902130339.23163-2-hch@lst.de>
+Subject: [PATCH 02/13] xen/arm: consolidate page-coherent.h
+Date: Mon,  2 Sep 2019 15:03:28 +0200
+Message-Id: <20190902130339.23163-3-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190902130339.23163-1-hch@lst.de>
 References: <20190902130339.23163-1-hch@lst.de>
@@ -53,57 +52,206 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Copy the arm64 code that uses the dma-direct/swiotlb helpers for DMA
-on-coherent devices.
+Shared the duplicate arm/arm64 code in include/xen/arm/page-coherent.h.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 ---
- arch/arm/include/asm/device.h            |  3 -
- arch/arm/include/asm/xen/page-coherent.h | 72 +++++++++---------------
- arch/arm/mm/dma-mapping.c                |  8 +--
- drivers/xen/swiotlb-xen.c                | 20 -------
- 4 files changed, 28 insertions(+), 75 deletions(-)
+ arch/arm/include/asm/xen/page-coherent.h   | 75 --------------------
+ arch/arm64/include/asm/xen/page-coherent.h | 75 --------------------
+ include/xen/arm/page-coherent.h            | 80 ++++++++++++++++++++++
+ 3 files changed, 80 insertions(+), 150 deletions(-)
 
-diff --git a/arch/arm/include/asm/device.h b/arch/arm/include/asm/device.h
-index f6955b55c544..c675bc0d5aa8 100644
---- a/arch/arm/include/asm/device.h
-+++ b/arch/arm/include/asm/device.h
-@@ -14,9 +14,6 @@ struct dev_archdata {
- #endif
- #ifdef CONFIG_ARM_DMA_USE_IOMMU
- 	struct dma_iommu_mapping	*mapping;
--#endif
--#ifdef CONFIG_XEN
--	const struct dma_map_ops *dev_dma_ops;
- #endif
- 	unsigned int dma_coherent:1;
- 	unsigned int dma_ops_setup:1;
 diff --git a/arch/arm/include/asm/xen/page-coherent.h b/arch/arm/include/asm/xen/page-coherent.h
-index 2c403e7c782d..602ac02f154c 100644
+index 602ac02f154c..27e984977402 100644
 --- a/arch/arm/include/asm/xen/page-coherent.h
 +++ b/arch/arm/include/asm/xen/page-coherent.h
-@@ -6,23 +6,37 @@
- #include <asm/page.h>
+@@ -1,77 +1,2 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _ASM_ARM_XEN_PAGE_COHERENT_H
+-#define _ASM_ARM_XEN_PAGE_COHERENT_H
+-
+-#include <linux/dma-mapping.h>
+-#include <asm/page.h>
  #include <xen/arm/page-coherent.h>
- 
--static inline const struct dma_map_ops *xen_get_dma_ops(struct device *dev)
+-
+-static inline void *xen_alloc_coherent_pages(struct device *hwdev, size_t size,
+-		dma_addr_t *dma_handle, gfp_t flags, unsigned long attrs)
 -{
--	if (dev && dev->archdata.dev_dma_ops)
--		return dev->archdata.dev_dma_ops;
--	return get_arch_dma_ops(NULL);
+-	return dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
 -}
 -
- static inline void *xen_alloc_coherent_pages(struct device *hwdev, size_t size,
- 		dma_addr_t *dma_handle, gfp_t flags, unsigned long attrs)
- {
--	return xen_get_dma_ops(hwdev)->alloc(hwdev, size, dma_handle, flags, attrs);
-+	return dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
- }
+-static inline void xen_free_coherent_pages(struct device *hwdev, size_t size,
+-		void *cpu_addr, dma_addr_t dma_handle, unsigned long attrs)
+-{
+-	dma_direct_free(hwdev, size, cpu_addr, dma_handle, attrs);
+-}
+-
+-static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
+-		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-
+-	if (pfn_valid(pfn))
+-		dma_direct_sync_single_for_cpu(hwdev, handle, size, dir);
+-	else
+-		__xen_dma_sync_single_for_cpu(hwdev, handle, size, dir);
+-}
+-
+-static inline void xen_dma_sync_single_for_device(struct device *hwdev,
+-		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-	if (pfn_valid(pfn))
+-		dma_direct_sync_single_for_device(hwdev, handle, size, dir);
+-	else
+-		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
+-}
+-
+-static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
+-	     dma_addr_t dev_addr, unsigned long offset, size_t size,
+-	     enum dma_data_direction dir, unsigned long attrs)
+-{
+-	unsigned long page_pfn = page_to_xen_pfn(page);
+-	unsigned long dev_pfn = XEN_PFN_DOWN(dev_addr);
+-	unsigned long compound_pages =
+-		(1<<compound_order(page)) * XEN_PFN_PER_PAGE;
+-	bool local = (page_pfn <= dev_pfn) &&
+-		(dev_pfn - page_pfn < compound_pages);
+-
+-	if (local)
+-		dma_direct_map_page(hwdev, page, offset, size, dir, attrs);
+-	else
+-		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
+-}
+-
+-static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
+-		size_t size, enum dma_data_direction dir, unsigned long attrs)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-	/*
+-	 * Dom0 is mapped 1:1, while the Linux page can be spanned accross
+-	 * multiple Xen page, it's not possible to have a mix of local and
+-	 * foreign Xen page. Dom0 is mapped 1:1, so calling pfn_valid on a
+-	 * foreign mfn will always return false. If the page is local we can
+-	 * safely call the native dma_ops function, otherwise we call the xen
+-	 * specific function.
+-	 */
+-	if (pfn_valid(pfn))
+-		dma_direct_unmap_page(hwdev, handle, size, dir, attrs);
+-	else
+-		__xen_dma_unmap_page(hwdev, handle, size, dir, attrs);
+-}
+-
+-#endif /* _ASM_ARM_XEN_PAGE_COHERENT_H */
+diff --git a/arch/arm64/include/asm/xen/page-coherent.h b/arch/arm64/include/asm/xen/page-coherent.h
+index d88e56b90b93..27e984977402 100644
+--- a/arch/arm64/include/asm/xen/page-coherent.h
++++ b/arch/arm64/include/asm/xen/page-coherent.h
+@@ -1,77 +1,2 @@
+ /* SPDX-License-Identifier: GPL-2.0 */
+-#ifndef _ASM_ARM64_XEN_PAGE_COHERENT_H
+-#define _ASM_ARM64_XEN_PAGE_COHERENT_H
+-
+-#include <linux/dma-mapping.h>
+-#include <asm/page.h>
+ #include <xen/arm/page-coherent.h>
+-
+-static inline void *xen_alloc_coherent_pages(struct device *hwdev, size_t size,
+-		dma_addr_t *dma_handle, gfp_t flags, unsigned long attrs)
+-{
+-	return dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
+-}
+-
+-static inline void xen_free_coherent_pages(struct device *hwdev, size_t size,
+-		void *cpu_addr, dma_addr_t dma_handle, unsigned long attrs)
+-{
+-	dma_direct_free(hwdev, size, cpu_addr, dma_handle, attrs);
+-}
+-
+-static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
+-		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-
+-	if (pfn_valid(pfn))
+-		dma_direct_sync_single_for_cpu(hwdev, handle, size, dir);
+-	else
+-		__xen_dma_sync_single_for_cpu(hwdev, handle, size, dir);
+-}
+-
+-static inline void xen_dma_sync_single_for_device(struct device *hwdev,
+-		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-	if (pfn_valid(pfn))
+-		dma_direct_sync_single_for_device(hwdev, handle, size, dir);
+-	else
+-		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
+-}
+-
+-static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
+-	     dma_addr_t dev_addr, unsigned long offset, size_t size,
+-	     enum dma_data_direction dir, unsigned long attrs)
+-{
+-	unsigned long page_pfn = page_to_xen_pfn(page);
+-	unsigned long dev_pfn = XEN_PFN_DOWN(dev_addr);
+-	unsigned long compound_pages =
+-		(1<<compound_order(page)) * XEN_PFN_PER_PAGE;
+-	bool local = (page_pfn <= dev_pfn) &&
+-		(dev_pfn - page_pfn < compound_pages);
+-
+-	if (local)
+-		dma_direct_map_page(hwdev, page, offset, size, dir, attrs);
+-	else
+-		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
+-}
+-
+-static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
+-		size_t size, enum dma_data_direction dir, unsigned long attrs)
+-{
+-	unsigned long pfn = PFN_DOWN(handle);
+-	/*
+-	 * Dom0 is mapped 1:1, while the Linux page can be spanned accross
+-	 * multiple Xen page, it's not possible to have a mix of local and
+-	 * foreign Xen page. Dom0 is mapped 1:1, so calling pfn_valid on a
+-	 * foreign mfn will always return false. If the page is local we can
+-	 * safely call the native dma_ops function, otherwise we call the xen
+-	 * specific function.
+-	 */
+-	if (pfn_valid(pfn))
+-		dma_direct_unmap_page(hwdev, handle, size, dir, attrs);
+-	else
+-		__xen_dma_unmap_page(hwdev, handle, size, dir, attrs);
+-}
+-
+-#endif /* _ASM_ARM64_XEN_PAGE_COHERENT_H */
+diff --git a/include/xen/arm/page-coherent.h b/include/xen/arm/page-coherent.h
+index 2ca9164a79bf..a840d6949a87 100644
+--- a/include/xen/arm/page-coherent.h
++++ b/include/xen/arm/page-coherent.h
+@@ -2,6 +2,9 @@
+ #ifndef _XEN_ARM_PAGE_COHERENT_H
+ #define _XEN_ARM_PAGE_COHERENT_H
  
- static inline void xen_free_coherent_pages(struct device *hwdev, size_t size,
- 		void *cpu_addr, dma_addr_t dma_handle, unsigned long attrs)
- {
--	xen_get_dma_ops(hwdev)->free(hwdev, size, cpu_addr, dma_handle, attrs);
++#include <linux/dma-mapping.h>
++#include <asm/page.h>
++
+ void __xen_dma_map_page(struct device *hwdev, struct page *page,
+ 	     dma_addr_t dev_addr, unsigned long offset, size_t size,
+ 	     enum dma_data_direction dir, unsigned long attrs);
+@@ -13,4 +16,81 @@ void __xen_dma_sync_single_for_cpu(struct device *hwdev,
+ void __xen_dma_sync_single_for_device(struct device *hwdev,
+ 		dma_addr_t handle, size_t size, enum dma_data_direction dir);
+ 
++static inline void *xen_alloc_coherent_pages(struct device *hwdev, size_t size,
++		dma_addr_t *dma_handle, gfp_t flags, unsigned long attrs)
++{
++	return dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
++}
++
++static inline void xen_free_coherent_pages(struct device *hwdev, size_t size,
++		void *cpu_addr, dma_addr_t dma_handle, unsigned long attrs)
++{
 +	dma_direct_free(hwdev, size, cpu_addr, dma_handle, attrs);
 +}
 +
@@ -126,130 +274,53 @@ index 2c403e7c782d..602ac02f154c 100644
 +		dma_direct_sync_single_for_device(hwdev, handle, size, dir);
 +	else
 +		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
- }
- 
- static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
-@@ -36,17 +50,8 @@ static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
- 	bool local = (page_pfn <= dev_pfn) &&
- 		(dev_pfn - page_pfn < compound_pages);
- 
--	/*
--	 * Dom0 is mapped 1:1, while the Linux page can span across
--	 * multiple Xen pages, it's not possible for it to contain a
--	 * mix of local and foreign Xen pages. So if the first xen_pfn
--	 * == mfn the page is local otherwise it's a foreign page
--	 * grant-mapped in dom0. If the page is local we can safely
--	 * call the native dma_ops function, otherwise we call the xen
--	 * specific function.
--	 */
- 	if (local)
--		xen_get_dma_ops(hwdev)->map_page(hwdev, page, offset, size, dir, attrs);
++}
++
++static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
++	     dma_addr_t dev_addr, unsigned long offset, size_t size,
++	     enum dma_data_direction dir, unsigned long attrs)
++{
++	unsigned long page_pfn = page_to_xen_pfn(page);
++	unsigned long dev_pfn = XEN_PFN_DOWN(dev_addr);
++	unsigned long compound_pages =
++		(1<<compound_order(page)) * XEN_PFN_PER_PAGE;
++	bool local = (page_pfn <= dev_pfn) &&
++		(dev_pfn - page_pfn < compound_pages);
++
++	/*
++	 * Dom0 is mapped 1:1, while the Linux page can span across
++	 * multiple Xen pages, it's not possible for it to contain a
++	 * mix of local and foreign Xen pages. So if the first xen_pfn
++	 * == mfn the page is local otherwise it's a foreign page
++	 * grant-mapped in dom0. If the page is local we can safely
++	 * call the native dma_ops function, otherwise we call the xen
++	 * specific function.
++	 */
++	if (local)
 +		dma_direct_map_page(hwdev, page, offset, size, dir, attrs);
- 	else
- 		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
- }
-@@ -63,33 +68,10 @@ static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
- 	 * safely call the native dma_ops function, otherwise we call the xen
- 	 * specific function.
- 	 */
--	if (pfn_valid(pfn)) {
--		if (xen_get_dma_ops(hwdev)->unmap_page)
--			xen_get_dma_ops(hwdev)->unmap_page(hwdev, handle, size, dir, attrs);
--	} else
++	else
++		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
++}
++
++static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
++		size_t size, enum dma_data_direction dir, unsigned long attrs)
++{
++	unsigned long pfn = PFN_DOWN(handle);
++	/*
++	 * Dom0 is mapped 1:1, while the Linux page can be spanned accross
++	 * multiple Xen page, it's not possible to have a mix of local and
++	 * foreign Xen page. Dom0 is mapped 1:1, so calling pfn_valid on a
++	 * foreign mfn will always return false. If the page is local we can
++	 * safely call the native dma_ops function, otherwise we call the xen
++	 * specific function.
++	 */
 +	if (pfn_valid(pfn))
 +		dma_direct_unmap_page(hwdev, handle, size, dir, attrs);
 +	else
- 		__xen_dma_unmap_page(hwdev, handle, size, dir, attrs);
- }
- 
--static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
--		dma_addr_t handle, size_t size, enum dma_data_direction dir)
--{
--	unsigned long pfn = PFN_DOWN(handle);
--	if (pfn_valid(pfn)) {
--		if (xen_get_dma_ops(hwdev)->sync_single_for_cpu)
--			xen_get_dma_ops(hwdev)->sync_single_for_cpu(hwdev, handle, size, dir);
--	} else
--		__xen_dma_sync_single_for_cpu(hwdev, handle, size, dir);
--}
--
--static inline void xen_dma_sync_single_for_device(struct device *hwdev,
--		dma_addr_t handle, size_t size, enum dma_data_direction dir)
--{
--	unsigned long pfn = PFN_DOWN(handle);
--	if (pfn_valid(pfn)) {
--		if (xen_get_dma_ops(hwdev)->sync_single_for_device)
--			xen_get_dma_ops(hwdev)->sync_single_for_device(hwdev, handle, size, dir);
--	} else
--		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
--}
--
- #endif /* _ASM_ARM_XEN_PAGE_COHERENT_H */
-diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
-index d42557ee69c2..738097396445 100644
---- a/arch/arm/mm/dma-mapping.c
-+++ b/arch/arm/mm/dma-mapping.c
-@@ -1132,10 +1132,6 @@ static const struct dma_map_ops *arm_get_dma_map_ops(bool coherent)
- 	 * 32-bit DMA.
- 	 * Use the generic dma-direct / swiotlb ops code in that case, as that
- 	 * handles bounce buffering for us.
--	 *
--	 * Note: this checks CONFIG_ARM_LPAE instead of CONFIG_SWIOTLB as the
--	 * latter is also selected by the Xen code, but that code for now relies
--	 * on non-NULL dev_dma_ops.  To be cleaned up later.
- 	 */
- 	if (IS_ENABLED(CONFIG_ARM_LPAE))
- 		return NULL;
-@@ -2363,10 +2359,8 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
- 	set_dma_ops(dev, dma_ops);
- 
- #ifdef CONFIG_XEN
--	if (xen_initial_domain()) {
--		dev->archdata.dev_dma_ops = dev->dma_ops;
-+	if (xen_initial_domain())
- 		dev->dma_ops = xen_dma_ops;
--	}
- #endif
- 	dev->archdata.dma_ops_setup = true;
- }
-diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
-index ae1df496bf38..eee86cc7046b 100644
---- a/drivers/xen/swiotlb-xen.c
-+++ b/drivers/xen/swiotlb-xen.c
-@@ -557,11 +557,6 @@ xen_swiotlb_dma_mmap(struct device *dev, struct vm_area_struct *vma,
- 		     void *cpu_addr, dma_addr_t dma_addr, size_t size,
- 		     unsigned long attrs)
- {
--#ifdef CONFIG_ARM
--	if (xen_get_dma_ops(dev)->mmap)
--		return xen_get_dma_ops(dev)->mmap(dev, vma, cpu_addr,
--						    dma_addr, size, attrs);
--#endif
- 	return dma_common_mmap(dev, vma, cpu_addr, dma_addr, size, attrs);
- }
- 
-@@ -574,21 +569,6 @@ xen_swiotlb_get_sgtable(struct device *dev, struct sg_table *sgt,
- 			void *cpu_addr, dma_addr_t handle, size_t size,
- 			unsigned long attrs)
- {
--#ifdef CONFIG_ARM
--	if (xen_get_dma_ops(dev)->get_sgtable) {
--#if 0
--	/*
--	 * This check verifies that the page belongs to the current domain and
--	 * is not one mapped from another domain.
--	 * This check is for debug only, and should not go to production build
--	 */
--		unsigned long bfn = PHYS_PFN(dma_to_phys(dev, handle));
--		BUG_ON (!page_is_ram(bfn));
--#endif
--		return xen_get_dma_ops(dev)->get_sgtable(dev, sgt, cpu_addr,
--							   handle, size, attrs);
--	}
--#endif
- 	return dma_common_get_sgtable(dev, sgt, cpu_addr, handle, size, attrs);
- }
- 
++		__xen_dma_unmap_page(hwdev, handle, size, dir, attrs);
++}
++
+ #endif /* _XEN_ARM_PAGE_COHERENT_H */
 -- 
 2.20.1
 
