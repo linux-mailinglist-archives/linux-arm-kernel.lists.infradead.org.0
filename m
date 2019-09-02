@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A107BA50CD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:04:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8782EA50CE
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 10:04:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,68 +11,69 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=m9PpBzhZKR8jYX7B9eNCBxsUmafA3Yq0CB/x9CNr5Xc=; b=AoVf5hm06ULocb//EKh0L08vaa
-	SMpDrlodl6CZaLPj2M6m/th8XMI57qZ7O2C0tuN4egfJsDTudVibhSZ2bUNBziC83k2ejYu18EqeH
-	W63P3+QACh6kiB26wrVHlFWUzFkrSLWPLEbylIBydjuVJVcip0pUArJ3LTk9ziC0uRa8tiWZlH7//
-	I4DvKMnZMeNzkZk4mbH5ybVM5QRA9crXRFPNE9kUZ9iTkcvUTO3b4Df8ssh/OXNibjSNjvjtWMDR3
-	dKVONfYCNRGRW15Bg8RKpTehLjo7MIpkuS4kfGHFhyPM7j7Jb0edSTBc9ttODxlbawhFxVYV3sZeB
-	h5YdZYpw==;
+	bh=uLF03s0Y3Ni1GpA9Ct2GYSRoMOdA9+w1g2TRJfaC60Y=; b=RgonI+F6a2SgskbWsA+G5sc0LK
+	oQJb18qNv66gI5fK2yzNjIJL7mwBvDbXV0ZeyjpRQvHnRQk/YrYLoW6jYgGGGjnHLE+iqrHW843gT
+	cH9e6VPfzhDmqAC72b5PDgWphlb1gCCKixDRa9cKO5MzzTrEkPKx+NoRdYXV3snKGIzSiKDRD3dgw
+	XVUJK2OszPKsPFxqy510QTt2hsuejShKJSe35OMrXarSybPwtk6Vv7cZFQzr7QqyeSMsM/DxabNJ1
+	I1WGbVaxwii08EaszEIyeaFfs+3F0VGgvnuvyB9vmWDVkGx1lKXpjcDeB3CN3EL7WTbTctREwgMcC
+	EYrzBaGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4hJl-0005GJ-8m; Mon, 02 Sep 2019 08:04:05 +0000
+	id 1i4hKH-0005Uq-1q; Mon, 02 Sep 2019 08:04:37 +0000
 Received: from casper.infradead.org ([2001:8b0:10b:1236::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hIG-00048h-Bq
- for linux-arm-kernel@bombadil.infradead.org; Mon, 02 Sep 2019 08:02:32 +0000
+ id 1i4hIH-00049a-Bn
+ for linux-arm-kernel@bombadil.infradead.org; Mon, 02 Sep 2019 08:02:33 +0000
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
  d=infradead.org; s=casper.20170209; h=References:In-Reply-To:Message-Id:Date:
  Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
  Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
  Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
  List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=Qj1vI0QH66b+JRB2nIb0H1cRKhAPmx5zgqrx6nCAR6A=; b=Il12qRkPB+HiN31p275Dn8E9k
- UFaOUuot5N5CsSwW94L9KXS+ccFzGGjXVJmuxrim4xzECsCDiA2c/CLJmGxRwK7FVmWnhgb53h8CO
- VsVxkF6zvcT2Ys0UFjZW2sGQxhmtrdDEy64pFliGe1LLNstjWFWegzzx7QfI5UFPR3365Xnnym4PD
- uMXle6iUOIy2fvLq9BxRz2I1yQEKb1q4UeDaF1PJ5zZD/E+TWKjLTrzrQMgUBVeaHkRs4JqIF3fnv
- i+ikZ3pAxcWI5BJDXAFi4DXAUlITG2Ic+ShO62PwAMSpfs7N/dSML/0+d7D3ad58cgJQz24fYeVkO
- k6WMxTNPg==;
+ bh=0DMxC2VpMv4xvsgMMnwX+S12tAdCiEe/vY+WfdH0UGo=; b=hOAN57CjdhrTY0AY7saCERXYJ
+ qrgBMkNEu7t8ztXAQp2MiJDM+H6UGJkqCPRqVWvmDn72B7uRsNZHF48oE16lp5lVm7vl4zdOG2CzV
+ R4zMPZANMkxu+daLCR4s6C99Xr3+yINwp0Nk9+sbJ3EfHa4ttX7bicQzyiSTs9Rpbojj3BlKKxA0X
+ zg5zyYZ28eOZCW6RotYY32loBcZ1xjJmU8xqMZ0lw4fzihauIOfWqDgaz17/szTUw7+mI2k0QyeHa
+ f0zoAavTSkdwgO/ZXtWUI7jx9P1XA7xgfZNCJ73gYmbM8Dg8A3blU1idiXVAkmu98sEEh9V6gaOub
+ y7zq/iPVQ==;
 Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
  by casper.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4hIV-0003ZD-Gk
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:02:51 +0000
+ id 1i4hIV-0003ZO-GR
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 08:02:52 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
  [10.225.0.210])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id A4D97C0437;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id DD8DCC043B;
  Mon,  2 Sep 2019 08:02:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567411337; bh=vkwFXbNgXpcsWIBymeTdbdI0d7HHjr+O5myQC7lgDrs=;
+ t=1567411337; bh=793MRHdv4DLwQdQr3WJdmtfxyUuhU0fectEqf0N0Y5Y=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=LIEnTSagSCBwmxKnAPXp3O0++ZlCBB8FAMf9sL7S3+HmictbEZ8LqxS6T2Ph8gRg7
- guM54HwcNUMsx6cllR+BT/c9JRS8CaGf97xe1CALRL926Ph0/PqoN6ZlfaL6OqNh5j
- WWkgGYrQeY6vll0IELIw8IcMnSSx9ImN8S3aOKVyOYb+OF8OgzwzA38zshR8KN5Fzo
- CxCByPHCSViOc7FEbNt9kzpSp7pK6M6oNyImGdnQaysq/8b9tTFNmz6nYPnYPp8kqO
- WzZvGMMg9AI2WFQckTseD4fEj33mh3LZKSUpg7ed718nClB8pM26ysRADTChWwLHYJ
- kNlU+f/FwYVkw==
+ b=a3B8ZYzxCH17QfUXa0xm+zzycE9iJFrOLWrcPD0A5LuaAgNMupDyl3dAAzO+eu+KB
+ duDPedszgqvuEzVdA6wv4ZTHY7aCPWvBH8+apX9VH9iivflTOOa6c4mXvql48hqq42
+ f5OXVfAm57L+nrt7SV0KR35+oJ7LNpi8D7oEsO9T8oPYgOZcGGh48Qg7kda8tVbI7C
+ 5plzqF1gJ5cPqJj9pDgnO1P1Vc1XSSQ5V/Pu19ctjEn+hEijXs6DzadN1NL35YYLDK
+ 94s6TC35GL54mcbwS1wtEQZjJg4esAuS9YHuunKfIsAWj5Tyw9Jj0L5+umDHLYcchS
+ ZEnQtLBlutEqA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 5F5B6A0073;
+ by mailhost.synopsys.com (Postfix) with ESMTP id A38C0A007C;
  Mon,  2 Sep 2019 08:02:15 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 06/13] net: stmmac: xgmac: Implement ARP Offload
-Date: Mon,  2 Sep 2019 10:01:48 +0200
-Message-Id: <91017a44b200aa4596947679f428fd00fefff2fd.1567410970.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 09/13] net: stmmac: ethtool: Let user configure TX
+ coalesce without RIWT
+Date: Mon,  2 Sep 2019 10:01:51 +0200
+Message-Id: <851a16ddd28878dbaf932cc05f0dab627189be40.1567410970.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567410970.git.joabreu@synopsys.com>
 References: <cover.1567410970.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_090248_671940_EC5AC8BD 
-X-CRM114-Status: GOOD (  15.26  )
+X-CRM114-CacheID: sfid-20190902_090248_247018_B8536CC7 
+X-CRM114-Status: GOOD (  14.07  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on casper.infradead.org summary:
  Content analysis details:   (-0.2 points, 5.0 required)
@@ -110,7 +111,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement the ARP Offload feature in XGMAC cores.
+When RX Watchdog is disabled its currently not possible to configure TX
+coalesce settings. Let user configure it anyway.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -125,92 +127,52 @@ Cc: linux-stm32@st-md-mailman.stormreply.com
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/common.h        |  1 +
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c | 17 +++++++++++++++++
- drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c  |  1 +
- drivers/net/ethernet/stmicro/stmmac/hwif.h          |  3 +++
- 4 files changed, 22 insertions(+)
+ .../net/ethernet/stmicro/stmmac/stmmac_ethtool.c    | 21 +++++++++------------
+ 1 file changed, 9 insertions(+), 12 deletions(-)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/common.h b/drivers/net/ethernet/stmicro/stmmac/common.h
-index 19538057c24e..912bbb6515b2 100644
---- a/drivers/net/ethernet/stmicro/stmmac/common.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/common.h
-@@ -361,6 +361,7 @@ struct dma_features {
- 	unsigned int vlins;
- 	unsigned int dvlan;
- 	unsigned int l3l4fnum;
-+	unsigned int arpoffsel;
- };
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
+index 1c450105e5a6..1a768837ca72 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_ethtool.c
+@@ -746,8 +746,15 @@ static int stmmac_set_coalesce(struct net_device *dev,
+ 	    (ec->tx_max_coalesced_frames_high) || (ec->rate_sample_interval))
+ 		return -EOPNOTSUPP;
  
- /* GMAC TX FIFO is 8K, Rx FIFO is 16K */
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-index 9f568b54b339..36262ef8b70a 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_core.c
-@@ -1338,6 +1338,22 @@ static int dwxgmac2_config_l4_filter(struct mac_device_info *hw, u32 filter_no,
+-	if (ec->rx_coalesce_usecs == 0)
+-		return -EINVAL;
++	if (priv->use_riwt && (ec->rx_coalesce_usecs > 0)) {
++		rx_riwt = stmmac_usec2riwt(ec->rx_coalesce_usecs, priv);
++
++		if ((rx_riwt > MAX_DMA_RIWT) || (rx_riwt < MIN_DMA_RIWT))
++			return -EINVAL;
++
++		priv->rx_riwt = rx_riwt;
++		stmmac_rx_watchdog(priv, priv->ioaddr, priv->rx_riwt, rx_cnt);
++	}
+ 
+ 	if ((ec->tx_coalesce_usecs == 0) &&
+ 	    (ec->tx_max_coalesced_frames == 0))
+@@ -757,20 +764,10 @@ static int stmmac_set_coalesce(struct net_device *dev,
+ 	    (ec->tx_max_coalesced_frames > STMMAC_TX_MAX_FRAMES))
+ 		return -EINVAL;
+ 
+-	rx_riwt = stmmac_usec2riwt(ec->rx_coalesce_usecs, priv);
+-
+-	if ((rx_riwt > MAX_DMA_RIWT) || (rx_riwt < MIN_DMA_RIWT))
+-		return -EINVAL;
+-	else if (!priv->use_riwt)
+-		return -EOPNOTSUPP;
+-
+ 	/* Only copy relevant parameters, ignore all others. */
+ 	priv->tx_coal_frames = ec->tx_max_coalesced_frames;
+ 	priv->tx_coal_timer = ec->tx_coalesce_usecs;
+ 	priv->rx_coal_frames = ec->rx_max_coalesced_frames;
+-	priv->rx_riwt = rx_riwt;
+-	stmmac_rx_watchdog(priv, priv->ioaddr, priv->rx_riwt, rx_cnt);
+-
  	return 0;
  }
  
-+static void dwxgmac2_set_arp_offload(struct mac_device_info *hw, bool en,
-+				     u32 addr)
-+{
-+	void __iomem *ioaddr = hw->pcsr;
-+	u32 value;
-+
-+	writel(addr, ioaddr + XGMAC_ARP_ADDR);
-+
-+	value = readl(ioaddr + XGMAC_RX_CONFIG);
-+	if (en)
-+		value |= XGMAC_CONFIG_ARPEN;
-+	else
-+		value &= ~XGMAC_CONFIG_ARPEN;
-+	writel(value, ioaddr + XGMAC_RX_CONFIG);
-+}
-+
- const struct stmmac_ops dwxgmac210_ops = {
- 	.core_init = dwxgmac2_core_init,
- 	.set_mac = dwxgmac2_set_mac,
-@@ -1380,6 +1396,7 @@ const struct stmmac_ops dwxgmac210_ops = {
- 	.enable_vlan = dwxgmac2_enable_vlan,
- 	.config_l3_filter = dwxgmac2_config_l3_filter,
- 	.config_l4_filter = dwxgmac2_config_l4_filter,
-+	.set_arp_offload = dwxgmac2_set_arp_offload,
- };
- 
- int dwxgmac2_setup(struct stmmac_priv *priv)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-index fb0283b15c77..fd60bf5e0a72 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwxgmac2_dma.c
-@@ -370,6 +370,7 @@ static void dwxgmac2_get_hw_feature(void __iomem *ioaddr,
- 	dma_cap->atime_stamp = (hw_cap & XGMAC_HWFEAT_TSSEL) >> 12;
- 	dma_cap->av = (hw_cap & XGMAC_HWFEAT_AVSEL) >> 11;
- 	dma_cap->av &= (hw_cap & XGMAC_HWFEAT_RAVSEL) >> 10;
-+	dma_cap->arpoffsel = (hw_cap & XGMAC_HWFEAT_ARPOFFSEL) >> 9;
- 	dma_cap->rmon = (hw_cap & XGMAC_HWFEAT_MMCSEL) >> 8;
- 	dma_cap->pmt_magic_frame = (hw_cap & XGMAC_HWFEAT_MGKSEL) >> 7;
- 	dma_cap->pmt_remote_wake_up = (hw_cap & XGMAC_HWFEAT_RWKSEL) >> 6;
-diff --git a/drivers/net/ethernet/stmicro/stmmac/hwif.h b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-index 47c8ad9ec671..ddb851d99618 100644
---- a/drivers/net/ethernet/stmicro/stmmac/hwif.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/hwif.h
-@@ -370,6 +370,7 @@ struct stmmac_ops {
- 	int (*config_l4_filter)(struct mac_device_info *hw, u32 filter_no,
- 				bool en, bool udp, bool sa, bool inv,
- 				u32 match);
-+	void (*set_arp_offload)(struct mac_device_info *hw, bool en, u32 addr);
- };
- 
- #define stmmac_core_init(__priv, __args...) \
-@@ -454,6 +455,8 @@ struct stmmac_ops {
- 	stmmac_do_callback(__priv, mac, config_l3_filter, __args)
- #define stmmac_config_l4_filter(__priv, __args...) \
- 	stmmac_do_callback(__priv, mac, config_l4_filter, __args)
-+#define stmmac_set_arp_offload(__priv, __args...) \
-+	stmmac_do_void_callback(__priv, mac, set_arp_offload, __args)
- 
- /* PTP and HW Timer helpers */
- struct stmmac_hwtimestamp {
 -- 
 2.7.4
 
