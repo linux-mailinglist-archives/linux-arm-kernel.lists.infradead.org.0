@@ -2,82 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B9292A4E0B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 05:59:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C5CCAA4E0D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 06:00:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mf+n0rBBBS8A33/ZUsFpkN0TLyIBbI90dTdBVTJNGAU=; b=A2TTsw4ja1vrFJ
-	02+oFDmhJaEsdnrCU4/rYYYcmTBftlGfLXb7XFOkCzWxkmfjIws5WY1/eW0mZ1Op1P6z/4ZnX07J8
-	3dgjXokZPmMpxacKhZZHAOHIwRGja1XsXJMiTbXUEhhhmW9J9yce2o477aYQXXBX/RsbssiEW5OAp
-	ZU6HTGMYGP/xv5n8yzBVyN3Hzp6pHL7r04A9fR7RZilx1EKWwAzOo4bv8Fg+DCJAt4OchuoVGqYX9
-	1XEk8J3ZjMUgI3eGT8n3UOiCl5c8RvjbVihoy8M+ADbNc8Dgi070KvbkIabQXmHpBgF3C5BqDR09+
-	tlijPqwmCiEX0axgxdmw==;
+	List-Owner; bh=ZLgLtgpv+tZLSj8poXVN8aumyt9s0shtdnRXKfqOGTc=; b=F8bYfYaC8pb7mE
+	hMfZdNZxfgPsp0AYrd/meYRlcROyYM8fdlxm35yTnxHrcmt+MJ3DxMdkBfdWCroaX1ry9f0Q/8ZUa
+	4IP9rIQAa7iU1mQLRtcCREXBlWpXvglssglcXGD7UWDJ1s/+UXw80avkNIc7wQohP26BZK54FJ11T
+	ofDLoLmZTmxkZ0TSp7bgCDV2HTet5oKvhcUt7arpwQfiq1YaPm+F2jV1oN2SeKi1QIwvhRgxFt6ez
+	y5WKzWir/V2sg0QqPGeJOV/ctIWlJ5GplH920/014HgSCNpkyBgkZta7pZUA5JUhuYTM/wUzF/Uz7
+	GeyQ9I07Swu6du/aVUMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4dVD-0001hb-7j; Mon, 02 Sep 2019 03:59:39 +0000
+	id 1i4dVT-0001vZ-Ph; Mon, 02 Sep 2019 03:59:55 +0000
 Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4dUI-00015C-SL
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:58:44 +0000
+ id 1i4dUM-00018p-74
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 03:58:47 +0000
 Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id D9442442;
- Sun,  1 Sep 2019 23:58:41 -0400 (EDT)
+ by mailout.west.internal (Postfix) with ESMTP id 380EF428;
+ Sun,  1 Sep 2019 23:58:45 -0400 (EDT)
 Received: from mailfrontend2 ([10.202.2.163])
- by compute4.internal (MEProxy); Sun, 01 Sep 2019 23:58:42 -0400
+ by compute4.internal (MEProxy); Sun, 01 Sep 2019 23:58:45 -0400
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
  :to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding; s=fm3; bh=cXRTfFQqdR5mw
- B60NN4NI3P3V4eAjFwF/U0/J/otK6E=; b=ONhOpoC9IF8BSiaQVMH3A3B3AOlDu
- j4/JaUKkABmMFeJbLh29lGit+W9i+ybx/s8cIOAOYr4uEiTosSLxuikTJA1c6ERc
- iXyqVNz25QN1qFgDPNdMtcU+WbU3lJS58NPwXPz4sp0GV+xPvBeUcck+NV74kYnm
- ckpZBSWRdNninr+QUX6CEh0r3zmos5h26KUuOJvEs9h7dDC1+eOpf7xt80SWrAfP
- 9wZqr8T7S7tR1fHj/LcaEL/BvMTOXz/4vgCrcHk35XkF/ikCGxidp5Ac2XKefChp
- XBeL9zbV61ooK41Wbw6plpbncXJArhkgy8W+m9ancE0h5c/oUDfcyJEHw==
+ :mime-version:content-transfer-encoding; s=fm3; bh=L4EL0S354nCKb
+ obvrleuPdmXpWAwO2XcwtXNi/sy4WI=; b=HARQ7LNhsamaQlUi8XrA9c9XgM4ej
+ okbinmIfdkOyLMUHlFVu/WfWYSw/P/uFClhEk5UhKy/7Kh1XOn7o2p5B1ebEEC1m
+ wJEf/MehcgXONCbfbtBZ1nNj5IbYQ5nIRaiAusgnk8jZPR1/60lHbifnOBhmTYa2
+ 6T5ZTtzpfM3n4J5iU6nMK9EUtaFrXZLXHTjT9+HQioBA43n1DuH4Opn47cNwgSWC
+ xRjJ3w3EA18yEURb4nR2onFCWE37RNvHnkNVGEArpcZw0EELLlnFRdHFew3+auG2
+ bi/kwJx+YCp9LLCgfZvo7DuNo0C1/KHguKJajkz7Rh56gJ+F/89mfMqzw==
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
  messagingengine.com; h=cc:content-transfer-encoding:date:from
  :in-reply-to:message-id:mime-version:references:subject:to
  :x-me-proxy:x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=
- fm3; bh=cXRTfFQqdR5mwB60NN4NI3P3V4eAjFwF/U0/J/otK6E=; b=DFFas02t
- K5cpDViCCTFHLKeIX3I1RX7UceJcb2hnEoX5xVAKA57D4OiwkeVELigkZkphw3yF
- MgzgPbHeLz3XMsjSVWQ3Qrck7q/ObvkWeIU6G8W07rQ2Yp6BV/k/xw4EhYenYNnI
- oJJ31Ls1I/+D7wXyNcU/rjwekUI4wVOP2X91rs08GVFKC3VuscQrxYBD3Bi7v7VK
- SJct1W9vSc+K0HNLdogigUxRaNDUyfGtmBF1qPQovf/AUllrQPJ0d4u6sJSYULME
- Gb3DcytlboS03RW4FHDzkRLf8lLpuG2lQpPrB0O5upucXQYyVy5MDNj7koXPXQ7D
- oQOWnfegzmxNuQ==
-X-ME-Sender: <xms:cZNsXb4cvStDViK3_BF8IJi63hRpdwhHLdaV0U_0t5fs6gyZK5c2RQ>
+ fm3; bh=L4EL0S354nCKbobvrleuPdmXpWAwO2XcwtXNi/sy4WI=; b=K/R8LjBG
+ ca3yJTTI1ErfnRSgU3X2raDIqDvDc3ZgFGyInGbt36buGSeTaWLQ22NVYJ2T+0Zt
+ vUs8RC03tmdAs/BgBE6yjM8xicWuRngV7nIZInFobiYsiOT8QQDeEYyxpAZw8idh
+ BjsSig2OcXirUzOkAp61cmsf257yoL0aKNxsJbeWFKPRqF/YvJFMM0zuLjzsMWEg
+ fVS9HtWDMO4Y10SUWRUWCOoqY7bbjkpCVBIdQHEQR7xfRjkoOd7lm/4MevUD92fR
+ 6NJt+aIsqf25m1FPXScCN7s8BxUIwjNbDHbBP5fcCK7jZcIVm5xlBHvA91s9/n6E
+ Gr7ClhgjeKymag==
+X-ME-Sender: <xms:dJNsXS4FYebJUzXj6tQWUvzgWm-jkesn8Ws8e7AChMW2KBfR_wc6Cw>
 X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudeiledgjeejucetufdoteggodetrfdotf
  fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
  uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgjfhgggfestdekre
  dtredttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegr
  jhdrihgurdgruheqnecukfhppedvtdefrdehjedrvdduhedrudejkeenucfrrghrrghmpe
  hmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhi
- iigvpedu
-X-ME-Proxy: <xmx:cZNsXaQ85ptvz8rXx_IvDWp_GRzHRYdgUv23O_CNKm3qG_zcpBXDlQ>
- <xmx:cZNsXa9nsirAbuKaKjCUyLpj32V4rVumeNQLqs2SI38qWmp36DnbhA>
- <xmx:cZNsXbrdqQo89xoKlGnQtCgb7crW5D2wczsc1TgqDZJ0gcDCKHEUwg>
- <xmx:cZNsXSLAlfWirQAInXClPUIjdPd4yCl-vwWKkTHY12hYLnCJ-oyKFw>
+ iigvpeef
+X-ME-Proxy: <xmx:dJNsXeMsWIkZvls6181yCWKzUB2kZBpQ-lMIr2XHPYXkLJt8QKPfwQ>
+ <xmx:dJNsXQJs9gqGYmgbdw1I1_rwBwqpW6ZZkPB0QFX-JA9Rn26rC6pX3w>
+ <xmx:dJNsXcHe-ta20xQ8kutYalNx7E4OHCXasO3UrAD5cnrE-QjLrXVvlw>
+ <xmx:dJNsXYfkF93ocDMrpJ6G9XWLFCNDZm33KA0MKpD-u68-U8yPj3rhRA>
 Received: from localhost.localdomain (203-57-215-178.dyn.iinet.net.au
  [203.57.215.178])
- by mail.messagingengine.com (Postfix) with ESMTPA id 7A362D6006A;
- Sun,  1 Sep 2019 23:58:38 -0400 (EDT)
+ by mail.messagingengine.com (Postfix) with ESMTPA id D8D6AD60062;
+ Sun,  1 Sep 2019 23:58:41 -0400 (EDT)
 From: Andrew Jeffery <andrew@aj.id.au>
 To: linux-mmc@vger.kernel.org
-Subject: [PATCH v2 3/4] mmc: sdhci-of-aspeed: Uphold clocks-on post-condition
- of set_clock()
-Date: Mon,  2 Sep 2019 13:28:41 +0930
-Message-Id: <20190902035842.2747-4-andrew@aj.id.au>
+Subject: [PATCH v2 4/4] mmc: sdhci-of-aspeed: Allow max-frequency limitation
+ of SDCLK
+Date: Mon,  2 Sep 2019 13:28:42 +0930
+Message-Id: <20190902035842.2747-5-andrew@aj.id.au>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190902035842.2747-1-andrew@aj.id.au>
 References: <20190902035842.2747-1-andrew@aj.id.au>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190901_205842_965458_85E37394 
-X-CRM114-Status: UNSURE (   9.00  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190901_205846_406783_38D26492 
+X-CRM114-Status: GOOD (  12.82  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -114,30 +113,70 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The early-exit didn't seem to matter on the AST2500, but on the AST2600
-the SD clock genuinely may not be running on entry to
-aspeed_sdhci_set_clock(). Remove the early exit to ensure we always run
-sdhci_enable_clk().
+Add a get_max_clock() handler to sdhci-of-aspeed to report f_max as the
+maximum clock rate if it is set. This enables artificial limitation of
+the bus speed via max-frequency in the devicetree for e.g. the AST2600
+evaluation board where I was seeing errors at 200MHz.
 
 Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
 ---
- drivers/mmc/host/sdhci-of-aspeed.c | 3 ---
- 1 file changed, 3 deletions(-)
+ drivers/mmc/host/sdhci-of-aspeed.c | 20 ++++++++++++++++++--
+ 1 file changed, 18 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/mmc/host/sdhci-of-aspeed.c b/drivers/mmc/host/sdhci-of-aspeed.c
-index 213b3dbd49ef..c31d74427c49 100644
+index c31d74427c49..a8a5341b526c 100644
 --- a/drivers/mmc/host/sdhci-of-aspeed.c
 +++ b/drivers/mmc/host/sdhci-of-aspeed.c
-@@ -55,9 +55,6 @@ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
+@@ -52,16 +52,24 @@ static void aspeed_sdc_configure_8bit_mode(struct aspeed_sdc *sdc,
+ 
+ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
+ {
++	struct sdhci_pltfm_host *pltfm_host;
++	unsigned long parent;
  	int div;
  	u16 clk;
  
--	if (clock == host->clock)
--		return;
--
++	pltfm_host = sdhci_priv(host);
++	parent = clk_get_rate(pltfm_host->clk);
++
  	sdhci_writew(host, 0, SDHCI_CLOCK_CONTROL);
  
  	if (clock == 0)
+ 		return;
+ 
++	if (WARN_ON(clock > host->max_clk))
++		clock = host->max_clk;
++
+ 	for (div = 1; div < 256; div *= 2) {
+-		if ((host->max_clk / div) <= clock)
++		if ((parent / div) <= clock)
+ 			break;
+ 	}
+ 	div >>= 1;
+@@ -71,6 +79,14 @@ static void aspeed_sdhci_set_clock(struct sdhci_host *host, unsigned int clock)
+ 	sdhci_enable_clk(host, clk);
+ }
+ 
++static unsigned int aspeed_sdhci_get_max_clock(struct sdhci_host *host)
++{
++	if (host->mmc->f_max)
++		return host->mmc->f_max;
++
++	return sdhci_pltfm_clk_get_max_clock(host);
++}
++
+ static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
+ {
+ 	struct sdhci_pltfm_host *pltfm_priv;
+@@ -97,7 +113,7 @@ static void aspeed_sdhci_set_bus_width(struct sdhci_host *host, int width)
+ 
+ static const struct sdhci_ops aspeed_sdhci_ops = {
+ 	.set_clock = aspeed_sdhci_set_clock,
+-	.get_max_clock = sdhci_pltfm_clk_get_max_clock,
++	.get_max_clock = aspeed_sdhci_get_max_clock,
+ 	.set_bus_width = aspeed_sdhci_set_bus_width,
+ 	.get_timeout_clock = sdhci_pltfm_clk_get_max_clock,
+ 	.reset = sdhci_reset,
 -- 
 2.20.1
 
