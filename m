@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9739CA57DC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:40:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 706B6A57DD
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  2 Sep 2019 15:40:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	References:Subject:From:Date:Message-ID:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=BWGtuMnZrGr3dy3//GbM3xjso7sCmedmqF280XwhfPU=; b=Jcqd9/PN5Ut/ihQAiow/kSemuk
-	lpfEcvKD5TRlHwV1rLpEjg/d+O9Fqq/5hk3NWhXaNLMWUVsmuRLI2q0y0ePocFuqzYtul8VlYz4Hc
-	bXKGcEv4H+GjuSVc004fFk4OeHXPfnU0/RuQP8lRcDmZNwntfXroVY0QjCdjvxsR7yCUkmza65lc8
-	6JqSBofUM8hjBjhR+KskFq3eM75SfeQdX9Id5pychEPuc4DmSor/AfnIrxuDlh3bNtIXFXsUEl5xY
-	YHpOP9rasm80TUYlsrn+Nkf2wrkLhmEdbwwTol+DNboOivnK9ItMKkmFHz4PO1SH8pWP7ehNGEZP1
-	xpThLHsA==;
+	bh=IkJBhp7j08Dy2m5KJkoBR0sWhNOhkB/i5kBXsT1GtkU=; b=k4sJVrQsGEnm+q6asnn1MpxVrn
+	wBTzWF3YepUunte9bKXAljQXPzc7PQtS6GHgmLrhUOt9T6SZ9VHQI5YdUdzYF3z5OFDGZujwpuOHO
+	tEIlVcxcX5u3bY9Ql4qKjGVvW0T+ivHb+HYEIYY54BG0otPGzYW8CbfzHXYeVWRrIgAXs2Vt/y5+4
+	5doDFgyR2eDNR42jUkySGyCSNebxFX56Sc6+tHzl1so7FvfIq30bKTfS98LuyVkDY/29GaYrOFg8o
+	YAQKkY3rX1r8mGHBP34ztuWfYYtgCVdwvZaCT/P1d8/ACAtshQ87y2FkhavqkW6P7lHs20GR6NPvq
+	qZwTX1dg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4mYx-0002Ig-0B; Mon, 02 Sep 2019 13:40:07 +0000
-Received: from mail-wm1-f67.google.com ([209.85.128.67])
+	id 1i4mZD-00034r-Ij; Mon, 02 Sep 2019 13:40:23 +0000
+Received: from mail-wm1-f65.google.com ([209.85.128.65])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4mXk-0001Ct-0q
- for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 13:38:53 +0000
-Received: by mail-wm1-f67.google.com with SMTP id n10so3980725wmj.0
+ id 1i4mXl-0001EV-KO
+ for linux-arm-kernel@lists.infradead.org; Mon, 02 Sep 2019 13:38:54 +0000
+Received: by mail-wm1-f65.google.com with SMTP id c10so2734454wmc.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Sep 2019 06:38:51 -0700 (PDT)
+ Mon, 02 Sep 2019 06:38:53 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:date:from:subject:references
  :in-reply-to:cc:cc:to;
- bh=0G2XADeynFuPjiLzfSNxzmGMI3r/vAlX0cOg51TMaCc=;
- b=TFOLP152hMC3IshAh335J6KMiygQY7LjLriEjx51jQbInPjNB+rPGhY3DR/3luUfQ0
- AndAoEjlpq2TuJgr5EHhcTG09yIIHr/emTInkIMlMbawzlpF45szkNhZTnckXzgsM2em
- t2O6N+zCrzgyza3dwUYKjBEcgf7bxe0+UyPiV3YuXqcBiCHU+rceo76LodH+p91JmgGa
- WxRXEZo/wC9KAvvkk3M6HnoaPps3lWFDfeY6EM0qj0uZxhVTyYsv5mAi0mpq7apN5D86
- 1F+pZUXAZZdHmhLOxdZCl5BoYHDB9O/J+IEGVQVvfePwKCva9gcKH97w8LBi9DTLVE/r
- GCBA==
-X-Gm-Message-State: APjAAAWWcEeik49j7HoOl4N8CkzAwl9mFruh5zAGUq65U1vh9ZK0UGF0
- cAls/uojuQnBg7+pksJZ6Q==
-X-Google-Smtp-Source: APXvYqx1e5Zkxsk3Ce3KB0Mb7arC+lP6QY5ByoQI4X1nqKl5ANCYgQFP9ZkUgXnplhcziaRlN7UGYg==
-X-Received: by 2002:a7b:c407:: with SMTP id k7mr10252310wmi.151.1567431530772; 
- Mon, 02 Sep 2019 06:38:50 -0700 (PDT)
+ bh=MUHGsZO7Q+UL7B/0Bo+ObMbSvRnyd9TzsXp9a78oerg=;
+ b=CyHZSc0kMBQxfHShj95PfiV6kT/3AhMAbR+Jfy7xJbOdPRmypCiqpvQ3Hk+ZiwLZDF
+ HABjpWGnUgoPdOZmOwkgLAELVTPerRW9+K6Zt4IXM7oSZs8GmMoaD3z95l0gRc5aBBGr
+ FndSArle5cztKWHe7OOdX1dF1U8Gd7hOoK25OhaJeAvHnNj85Pzwjno3KDTYGJ6qHQw4
+ L2yTGeoSi5E8iZSBDSLUenAW7t0ozzkU30sKH23+ChOFAr/bGycBVtkZgy7kFzt60dGu
+ aGovpqZTURjY1Lbkv70spbmZ0mgzCdgaDCxNQjQnUqq0aPe7dRHAb8G2fTltJ4Q+8z4c
+ qiNg==
+X-Gm-Message-State: APjAAAXl79gsXz4jSWqer3911EszI3FI7s6p1x+PT1c5ly1ruuRY7RFR
+ Qe55VTR2ll8WvsE0uM8zTA==
+X-Google-Smtp-Source: APXvYqyvLTbczPJL2Kgv5aZwJae8V+vC19nEZctvk8m+po+VCSqy5grfmLXTj04W+bRvfuCa0/8m2A==
+X-Received: by 2002:a7b:c441:: with SMTP id l1mr94851wmi.170.1567431531911;
+ Mon, 02 Sep 2019 06:38:51 -0700 (PDT)
 Received: from localhost ([212.187.182.166])
- by smtp.gmail.com with ESMTPSA id e30sm22061341wra.48.2019.09.02.06.38.49
+ by smtp.gmail.com with ESMTPSA id j18sm12521185wrr.20.2019.09.02.06.38.51
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 02 Sep 2019 06:38:50 -0700 (PDT)
-Message-ID: <5d6d1b6a.1c69fb81.73f8d.ac61@mx.google.com>
-Date: Mon, 02 Sep 2019 14:38:49 +0100
+ Mon, 02 Sep 2019 06:38:51 -0700 (PDT)
+Message-ID: <5d6d1b6b.1c69fb81.37811.4cd5@mx.google.com>
+Date: Mon, 02 Sep 2019 14:38:50 +0100
 From: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH V3 1/6] dt-bindings: PCI: tegra: Add sideband pins
- configuration entries
+Subject: Re: [PATCH V3 2/6] dt-bindings: PCI: tegra: Add PCIe slot supplies
+ regulator entries
 References: <20190828172850.19871-1-vidyas@nvidia.com>
- <20190828172850.19871-2-vidyas@nvidia.com>
-In-Reply-To: <20190828172850.19871-2-vidyas@nvidia.com>
+ <20190828172850.19871-3-vidyas@nvidia.com>
+In-Reply-To: <20190828172850.19871-3-vidyas@nvidia.com>
 To: Vidya Sagar <vidyas@nvidia.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_063852_117794_BD7EC17C 
-X-CRM114-Status: UNSURE (   6.86  )
+X-CRM114-CacheID: sfid-20190902_063853_715497_617E04D9 
+X-CRM114-Status: UNSURE (   7.32  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -66,9 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.128.67 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.128.67 listed in wl.mailspike.net]
+ no trust [209.85.128.65 listed in list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (robherring2[at]gmail.com)
  0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
@@ -103,9 +101,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 28 Aug 2019 22:58:45 +0530, Vidya Sagar wrote:
-> Add optional bindings "pinctrl-names" and "pinctrl-0" to describe pin
-> configuration information of a particular PCIe controller.
+On Wed, 28 Aug 2019 22:58:46 +0530, Vidya Sagar wrote:
+> Add optional bindings "vpcie3v3-supply" and "vpcie12v-supply" to describe
+> regulators of a PCIe slot's supplies 3.3V and 12V provided the platform
+> is designed to have regulator controlled slot supplies.
 > 
 > Signed-off-by: Vidya Sagar <vidyas@nvidia.com>
 > ---
