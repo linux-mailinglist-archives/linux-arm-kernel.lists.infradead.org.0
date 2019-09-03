@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5B171A6ADB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:11:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9248BA6AEB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:13:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gp7NdL4T4F37oXf5buUkHsCnTOSkHAEYLO79McmjHaA=; b=XkOJ7DqeZCZlmE
-	YvOeoralndpYReKf4jgxGrmECELAsJi4DM6nhlLdG/qyq+TwQds4LA383MZYqr0krW1ncEL+YuDRK
-	SbDWDBIzjbIbIJWEimBWEL+9ylyXChsVo90zioCWM95zOlycDYUFYtJKo3t2wh6B9sXoaHTaGS/4X
-	AxI//WkXTtLfe7N6MfnMHAIxpt3TAvsjfhs8JVy+0iZWZHkNydN12PIfxvWaWkYGshGjWrhc0xMbL
-	dJTL3bz3+fMdxCEKnNLCxF8uS6erx/I+p/apFs1VPsoSw87ZlWQAIF4EsGNjyzVpRQjF/vBRpL0XH
-	hrZEsHmy0EgSO1wpWi+g==;
+	List-Owner; bh=yk8TWBB6FcYqryx4HYe9q5oWZ+x12cZjE+RZDmQZNkA=; b=uIv9bLNBPv8TWT
+	e+yN74EC3HVkx4pjoviPjBz8dts5Scb5Mj40XOSSukd3kGCqAMips/77pSahKEU1yByd1rwB8D/r9
+	3hVoKUAMjQC38jQPo2S3U9KoAAvx0DDYgn5Ufx0bxJRW1Cf4SFHlByN/C14Us5mVpLYdlIDNuGmmp
+	uqyKZiS5+5TNS7toU+mQoawP2hkdOJaFDQhSwHi/qPdVsinsr3N+DHROqluCe5s1Bcf5FC6bXyKek
+	bONzVf1x2eO5nDwKu8pwLrIsbKKrxGgXOnDbqb9g9bU8FNwNNgRXANazI3dCi2ZtQnJS0dCNj+hx+
+	eZHhY0w6RNfaC0Nxw8kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i59WL-0005jI-Jg; Tue, 03 Sep 2019 14:10:57 +0000
+	id 1i59YC-00065X-TU; Tue, 03 Sep 2019 14:12:52 +0000
 Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i59W9-0005it-Rw
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:10:47 +0000
-Received: by mail-qt1-f196.google.com with SMTP id a13so20104405qtj.1
+ id 1i59Y2-00064q-24
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:12:43 +0000
+Received: by mail-qt1-f196.google.com with SMTP id b2so16589839qtq.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 07:10:45 -0700 (PDT)
+ Tue, 03 Sep 2019 07:12:41 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=hoVf11RseAATlWZwT4E4nIKkiO8nAhmlYw9PSwRzho8=;
- b=PatIRm4gK7LArNt4bvfOXdCrxyHtXd2DlQc+zyoaevGm1j+pyybLcCnoSvTSdiZY2Y
- JfSdqiEW+UvIT2ncxraPuT80qNaGr2EvA3kwTxDBhwnHJNLk3zOpgY8zbSXTJ7cljaHg
- CcSm6oHlku2CEDQl3xFLWU5FYvQrp58rB6XaukaCJRsmtH/j2lKw/ClHNLYjSdaD/nmJ
- LdJiXiDo0q5dmmWvGXNIFKW3m20F8DQhQOgDWWW13+UsneAJ3MAswIO0TmduZRY/8CEl
- E+t2TRPzp1fgnwtHi1nK3t2Z1mOFN+cp1+2pgwC44PWhdfIsBrRAohncYBGxES9d8E9N
- 3AXw==
-X-Gm-Message-State: APjAAAVbNXrSWIatCrtaUpKOfQFdyanacOfadAUjSstaL/OfowEYg4xS
- zEDEGN47uwym/UdkgDKIoQMMra3zV4fiFUohWIs=
-X-Google-Smtp-Source: APXvYqwrbDl5QrPoYMxgwKGuNkKtb1Alko2IEv7v10IsEML2bO1c8uO2/+OhR88btu5Dc0yTb1kk0iYLKI9ntU2CNyc=
-X-Received: by 2002:a0c:d084:: with SMTP id z4mr13193693qvg.63.1567519844969; 
- Tue, 03 Sep 2019 07:10:44 -0700 (PDT)
+ bh=8vwpc2dCJzlh5VGSs8AHn+BDKp8FmreMQfZLH6JvhsM=;
+ b=I4JGoDxBcMKh9UvYo/PYNNGD3l1O4C6igbThPGsaF1V5ni9Z1mJdhKD5SMPpPk/2N8
+ QusQrAefi/kqiiCXI2qgouARRSIW6MZLe/NOB4Sp0wRhI+ZyAGNy/VTRX8Pj7MFUlN0U
+ 68h+Qse8kP1urQzepdvo6d3gRfGfqWPIxYIbEkkjd9ISDS37jghWM3OT4FTvyArl7t9z
+ BrwCAmdsxcX8RowuSlLe+loMsNUElPcmXyy1k3wcxFqBg4Z3vingHUyxol6/IaStQfMQ
+ SUr+DLda8xnAg7h5W3KXOIQo3rBBouf21bwb6AGBxPWWMpMDCegfmjLSL7G86pg2qi2W
+ YJaQ==
+X-Gm-Message-State: APjAAAVkkKfTWzPAfT+OyY2w2cW5HKZalL4Yuvfz5IddHU3O0NxlDiTq
+ abSj8joKIIhq+AWB4mzE7IrKHyYC3Q+tzrD1u1goVQ==
+X-Google-Smtp-Source: APXvYqzVJYRn0qqe00mNx310RecoZoQ7v/vLoHYJ2P7tyQreb450ERty6dQ3AEHoYwJD8PiAIwQNdnbgrmhB+gb71GI=
+X-Received: by 2002:ac8:32ec:: with SMTP id a41mr3094803qtb.18.1567519961203; 
+ Tue, 03 Sep 2019 07:12:41 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190825153237.28829-1-shawnguo@kernel.org>
- <20190825153237.28829-5-shawnguo@kernel.org>
-In-Reply-To: <20190825153237.28829-5-shawnguo@kernel.org>
+ <20190825153237.28829-6-shawnguo@kernel.org>
+In-Reply-To: <20190825153237.28829-6-shawnguo@kernel.org>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 16:10:28 +0200
-Message-ID: <CAK8P3a0UT714npM1jb5vSvak8jdx30OKyLVp0J=KqhnvA8RgTg@mail.gmail.com>
-Subject: Re: [GIT PULL 5/7] i.MX arm32 device tree changes for 5.4
+Date: Tue, 3 Sep 2019 16:12:25 +0200
+Message-ID: <CAK8P3a3X=y63e35T+y_-rLv1YP2rehDFRZM54-KSP=8osnOQRQ@mail.gmail.com>
+Subject: Re: [GIT PULL 6/7] i.MX arm64 device tree update for 5.4
 To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_071045_904061_54BA30B9 
-X-CRM114-Status: GOOD (  11.01  )
+X-CRM114-CacheID: sfid-20190903_071242_175887_8E354687 
+X-CRM114-Status: GOOD (  10.71  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -94,25 +94,22 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Sun, Aug 25, 2019 at 5:33 PM Shawn Guo <shawnguo@kernel.org> wrote:
->
-
 > ----------------------------------------------------------------
-> i.MX arm32 device tree changes for 5.4:
->  - New board support: ZII i.MX7 RMU2, Kontron i.MX6UL N6310, and
->    PHYTEC phyBOARD-Segin based on i.MX6ULL.
->  - A series from Andrey Smirnov to update vf610-zii boards on I2C
->    pinmux, switch watchdog, GPIO expander IRQ.
->  - Move GIC node into soc node for i.MX6 SoCs.
->  - Add OV5645 camera support for imx6qdl-wandboard board.
->  - Drop unneeded snvs_pwrkey node for imx7d-zii-rpu2 and imx7-colibri.
->  - Use simple-mfd instead of simple-bus for i.MX6 ANATOP.
->  - Move the native-mode property inside the display-timings node for
->    various i.MX25 and i.MX27 boards.
->  - Add EDMA devices for i.MX7ULP SoC.
->  - A series from Stefan Riedmueller to update imx6ul-phytec-segin board
->    on various devices.
->  - Use OF graph to describe the display for opos6uldev board.
->  - Misc random updates on i.MX7/6 boards.
+> i.MX arm64 device tree update for 5.4:
+>  - New board support: i.MX8MQ Nitrogen8m, Hummingboard Pulse,
+>    PICO-PI-IMX8M, i.MX8QXP AI_ML, and LS1046A FRWY board.
+>  - Add gpio-ranges for GPIO devices on i.MX8MQ and i.MX8MM.
+>  - Update OPP table according to latest data sheet and add opp-suspend
+>    to OPP table for i.MX8MQ and i.MX8MM.
+>  - Add IDEL states for i.MX8MM SoC.
+>  - Correct I2C clock divider for Layerscape SoCs.
+>  - Add series alias and LPUART baud clock for i.MX8QXP SoC.
+>  - Add MIPI D-PHY device for i.MX8MQ and enable it on imx8mq-librem5
+>    board.
+>  - Enable USB1 and Type-C support for i.MX8MM EVK board.
+>  - Add Thermal Monitor Unit support for LS1028A SoC.
+>  - Misc small update and correction on Layerscape and i.MX8 support.
+>
 
 Pulled into arm/dt, thanks!
 
