@@ -2,94 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8586DA6273
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:28:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C609FA627C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:30:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=KB9x5qu8zW2hvA49wjv8q+s9HQ/+LIezcN0l/sl35uM=; b=WzYRyM08AmYqlxRQ1epozJcIM
-	hvsBzRngQQmi/OzFinBgihIxzSXsJCCrJ0PMST0KhWfgVzRjjnUJrAYGDV42x/nTAWttEDxiFbvSI
-	HwiScHcQhJBW+2p1UpLdQYhu4Sxpuac4l/0S3b/ay22sE6jEiuNANevb18bEni3ZN+diTO28XD1AX
-	5W69f6sm4AffQ5EM0cp+tCN3ek2qjWKp9JJn5Xiqx/PLBVQounBTScl1Brew0zB6dT7ILQWYXlpWI
-	l5ZTA83/DuhyNK9S/VlshKc+kqhH71eEBb9P3kJ4OWWvD61//2MZTDbho1D4qyUj2yiyi8F6lRSB3
-	C0rzs8PqA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=PG9WMRBENQeeXxso8aOFk6nRbT/cPNCHlH9M35Umc4U=; b=b8EiqZITjB6Nc5
+	dcukthpTnjvANa6sO6adn77ox9nmrx4/gTnbzuUbwc1NrQSEnt0EUjxkGoeynj1mNc0Ga19pR7pWX
+	ND8ZNjWnxhPZFkqGMBK79dyugEluumyp4SbX7KShgxSGkTSIiZpSRhyfzX5T49PVA3cKh64kYwL7U
+	LAP3VUDtEKXCaTfBS65dU0IVdjs+2l/b2b+9E5I9ZBQneGYp/xlE+44xGG35USXSps6jpwnStMh5A
+	NcnS90zK9QE3fpROCTUC4HpdAbHd2r21qlfg93eopX5hYcZvE6DdB84o2jlnT2K6bd6AupFpBufkA
+	F8NR6oo2GY0clateu0EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53FJ-00060f-R1; Tue, 03 Sep 2019 07:28:58 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i53Gz-0007ha-77; Tue, 03 Sep 2019 07:30:41 +0000
+Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53F4-000603-US
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:28:45 +0000
-Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <o.rempel@pengutronix.de>)
- id 1i53F1-0000LY-T2; Tue, 03 Sep 2019 09:28:39 +0200
-Subject: Re: [PATCH V2 2/5] input: keyboard: imx_sc: Add i.MX system
- controller power key support
-To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
- <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
- "will@kernel.org" <will@kernel.org>,
- "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
- Aisheng Dong <aisheng.dong@nxp.com>,
- "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
- Andy Duan <fugang.duan@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- Leonard Crestez <leonard.crestez@nxp.com>,
- "mripard@kernel.org" <mripard@kernel.org>, "olof@lixom.net"
- <olof@lixom.net>, "arnd@arndb.de" <arnd@arndb.de>,
- "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "dinguyen@kernel.org" <dinguyen@kernel.org>,
- "marcin.juszkiewicz@linaro.org" <marcin.juszkiewicz@linaro.org>,
- "stefan@agner.ch" <stefan@agner.ch>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
- "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "ronald@innovation.ch" <ronald@innovation.ch>,
- "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
- Jacky Bai <ping.bai@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>
-References: <1567519424-32271-1-git-send-email-Anson.Huang@nxp.com>
- <1567519424-32271-2-git-send-email-Anson.Huang@nxp.com>
- <6d8dd5df-02da-b4cd-e61d-a4a15d0bf0c8@pengutronix.de>
- <DB3PR0402MB391602C6B425DD7EBFB9AF1DF5B90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-Message-ID: <dbe0ba0a-29bc-ee96-541d-244b3dbf0b81@pengutronix.de>
-Date: Tue, 3 Sep 2019 09:28:36 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i53GT-0007Qr-GN
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:30:13 +0000
+Received: by mail-wr1-x442.google.com with SMTP id b16so16219147wrq.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 00:30:09 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=pSCJycaKVh704Ac0S4neijcFEZ9GmBRQLJR3eMBbbCU=;
+ b=tgRlscW4dUEuVCGbWnPgzT9V8/L4/03gpsjK0WJYLO1GlhohBzsTHDNVvNhUqWJHJF
+ l4kW9qic54u3Tp/nztHukXAIMLr69gPXvNwznen0UWvLlNlaWbueEjHs0ZfwDYl0B89T
+ Q9DdfEFk6qFtx7hgB39DPC34CfIOizzxryX0dBVk7xRj47FeVyxBiICifGjhB5Xrvwj2
+ VaCrafQfyGgkJuvV441WC5KhYspZAv+q6G30TMkR4cLVMkwDPgZaup74kGIwPQIHdmw4
+ cCnBBUCLoKhHBnJUgmOiMQmlTzK9pV7Ok6edfvL7a/sRu7YTVZEhOG9pYuObis2oaL+y
+ 8fag==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=pSCJycaKVh704Ac0S4neijcFEZ9GmBRQLJR3eMBbbCU=;
+ b=HhLvkDl3JVZajeSDOno5B1CM8kbe6EEDioRxWOC0pt37o6r3SrDnevWuh58C7+7lmz
+ OO6xH/Fav7BNg+5mToXtYR4yrl3gp0zITUj2TPR2wXei39e8ifQytX4lkr6mdfMNWpgz
+ D/NL4yT9KTDkWpQyUQUINIR4KT+HsxlsCoLorRho8Hzs/9O2tRBVaA+JoC4SH+DNeFXE
+ Z37UuB4x0TRViHrzhuFmzb1x9GSuukSQ450Odf15tOjbRjgAU/1I0ULtf8dNZCQkFIlI
+ V8wwzHLVaINCTCREJ+5ZXKtbquZ34r2+O+eel6qZARnTApGZQgg6npkcVv9Ip4XXeNTE
+ fXFA==
+X-Gm-Message-State: APjAAAW34pySmgdUU77YOcH/aBDzEDaXfSQsVUrObY50OjYnZYAdighA
+ dYJCJ/+kvcBMB2jIAM73faOx2g==
+X-Google-Smtp-Source: APXvYqz4ooGnpbFcyZaSbyrgA6PANL0nccU1Lisypx0A74u9MR9WVmFK+4ohxfGtbbbqQaeYbOzJHQ==
+X-Received: by 2002:adf:de0d:: with SMTP id b13mr16181290wrm.140.1567495807765; 
+ Tue, 03 Sep 2019 00:30:07 -0700 (PDT)
+Received: from localhost (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr.
+ [90.63.244.31])
+ by smtp.gmail.com with ESMTPSA id t198sm25856153wmt.39.2019.09.03.00.30.07
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Sep 2019 00:30:07 -0700 (PDT)
+From: Jerome Brunet <jbrunet@baylibre.com>
+To: Jianxin Pan <jianxin.pan@amlogic.com>, Kevin Hilman <khilman@baylibre.com>,
+ linux-amlogic@lists.infradead.org
+Subject: Re: [PATCH 4/4] arm64: dts: add support for A1 based Amlogic AD401
+In-Reply-To: <1567493475-75451-5-git-send-email-jianxin.pan@amlogic.com>
+References: <1567493475-75451-1-git-send-email-jianxin.pan@amlogic.com>
+ <1567493475-75451-5-git-send-email-jianxin.pan@amlogic.com>
+Date: Tue, 03 Sep 2019 09:30:06 +0200
+Message-ID: <1jef0xrg5d.fsf@starbuckisacylon.baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <DB3PR0402MB391602C6B425DD7EBFB9AF1DF5B90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
-X-SA-Exim-Mail-From: o.rempel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_002843_160438_6CB0E063 
-X-CRM114-Status: GOOD (  30.45  )
+X-CRM114-CacheID: sfid-20190903_003009_616700_2CD18F61 
+X-CRM114-Status: GOOD (  15.47  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,290 +94,224 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dl-linux-imx <linux-imx@nxp.com>
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ linux-kernel@vger.kernel.org, Qiufang Dai <qiufang.dai@amlogic.com>,
+ Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
+ Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
+ Tao Zeng <tao.zeng@amlogic.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue 03 Sep 2019 at 02:51, Jianxin Pan <jianxin.pan@amlogic.com> wrote:
 
+> Add basic support for the Amlogic A1 based Amlogic AD401 board:
+> which describe components as follows: Reserve Memory, CPU, GIC, IRQ,
+> Timer, UART. It's capable of booting up into the serial console.
+>
+> Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
+> ---
+>  arch/arm64/boot/dts/amlogic/Makefile           |   1 +
+>  arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts |  30 ++++++
+>  arch/arm64/boot/dts/amlogic/meson-a1.dtsi      | 121 +++++++++++++++++++++++++
+>  3 files changed, 152 insertions(+)
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+>  create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+>
+> diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+> index edbf128..1720c45 100644
+> --- a/arch/arm64/boot/dts/amlogic/Makefile
+> +++ b/arch/arm64/boot/dts/amlogic/Makefile
+> @@ -36,3 +36,4 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxm-rbox-pro.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-gxm-vega-s96.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sei610.dtb
+>  dtb-$(CONFIG_ARCH_MESON) += meson-sm1-khadas-vim3l.dtb
+> +dtb-$(CONFIG_ARCH_MESON) += meson-a1-ad401.dtb
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+> new file mode 100644
+> index 00000000..3c05cc0
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+> @@ -0,0 +1,30 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + */
+> +
+> +/dts-v1/;
+> +
+> +#include "meson-a1.dtsi"
+> +
+> +/ {
+> +	compatible = "amlogic,ad401", "amlogic,a1";
+> +	model = "Amlogic Meson A1 AD401 Development Board";
+> +
+> +	aliases {
+> +		serial0 = &uart_AO_B;
+> +	};
 
-On 03.09.19 08:48, Anson Huang wrote:
-> Hi, Oleksij
-> 
->> On 03.09.19 16:03, Anson Huang wrote:
->>> i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
->>> inside, the system controller is in charge of controlling power, clock
->>> and power key etc..
->>>
->>> Adds i.MX system controller power key driver support, Linux kernel has
->>> to communicate with system controller via MU (message unit) IPC to get
->>> power key's status.
->>>
->>> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
->>> ---
->>> Changes since V1:
->>> 	- remove "wakeup-source" property operation, scu power key uses
->> generic scu irq,
->>> 	  no need to have this property for device wakeup operation.
->>> ---
->>>    drivers/input/keyboard/Kconfig         |   7 ++
->>>    drivers/input/keyboard/Makefile        |   1 +
->>>    drivers/input/keyboard/imx_sc_pwrkey.c | 169
->> +++++++++++++++++++++++++++++++++
->>>    3 files changed, 177 insertions(+)
->>>    create mode 100644 drivers/input/keyboard/imx_sc_pwrkey.c
->>>
->>> diff --git a/drivers/input/keyboard/Kconfig
->>> b/drivers/input/keyboard/Kconfig index 2e6d288..3aaeb9c 100644
->>> --- a/drivers/input/keyboard/Kconfig
->>> +++ b/drivers/input/keyboard/Kconfig
->>> @@ -469,6 +469,13 @@ config KEYBOARD_IMX
->>>    	  To compile this driver as a module, choose M here: the
->>>    	  module will be called imx_keypad.
->>>
->>> +config KEYBOARD_IMX_SC_PWRKEY
->>> +	tristate "IMX SCU Power Key Driver"
->>> +	depends on IMX_SCU
->>> +	help
->>> +	  This is the system controller powerkey driver for NXP i.MX SoCs with
->>> +	  system controller inside.
->>
->> The KEY is configurable over devicetree, why is it called PWRKEY? It looks for
->> me as generic SCU key handler.
-> 
-> We always use it as power key, NOT a generic key, as it has HW function designed
-> for power key purpose.
+Newline here please
 
-gpio-key driver is mostly used for power or reboot key. And it is still called gpio-key 
-driver. If it is used for power key only, why is it configurable? I can configure it as 
-KEY_ENTER or some thing different. This driver has not KEY_POWER specific any thing.
+> +	chosen {
+> +		stdout-path = "serial0:115200n8";
+> +	};
 
-> 
->>
->>>    config KEYBOARD_NEWTON
->>>    	tristate "Newton keyboard"
->>>    	select SERIO
->>> diff --git a/drivers/input/keyboard/Makefile
->>> b/drivers/input/keyboard/Makefile index 9510325..9ea5585 100644
->>> --- a/drivers/input/keyboard/Makefile
->>> +++ b/drivers/input/keyboard/Makefile
->>> @@ -29,6 +29,7 @@ obj-$(CONFIG_KEYBOARD_HIL)		+= hil_kbd.o
->>>    obj-$(CONFIG_KEYBOARD_HIL_OLD)		+= hilkbd.o
->>>    obj-$(CONFIG_KEYBOARD_IPAQ_MICRO)	+= ipaq-micro-keys.o
->>>    obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o
->>> +obj-$(CONFIG_KEYBOARD_IMX_SC_PWRKEY)	+= imx_sc_pwrkey.o
->>>    obj-$(CONFIG_KEYBOARD_HP6XX)		+= jornada680_kbd.o
->>>    obj-$(CONFIG_KEYBOARD_HP7XX)		+= jornada720_kbd.o
->>>    obj-$(CONFIG_KEYBOARD_LKKBD)		+= lkkbd.o
->>> diff --git a/drivers/input/keyboard/imx_sc_pwrkey.c
->>> b/drivers/input/keyboard/imx_sc_pwrkey.c
->>> new file mode 100644
->>> index 0000000..53aa9a4
->>> --- /dev/null
->>> +++ b/drivers/input/keyboard/imx_sc_pwrkey.c
->>> @@ -0,0 +1,169 @@
->>> +// SPDX-License-Identifier: GPL-2.0
->>> +/*
->>> + * Copyright 2019 NXP.
->>> + */
->>> +
->>> +#include <linux/device.h>
->>> +#include <linux/err.h>
->>> +#include <linux/firmware/imx/sci.h>
->>> +#include <linux/init.h>
->>> +#include <linux/input.h>
->>> +#include <linux/interrupt.h>
->>> +#include <linux/jiffies.h>
->>> +#include <linux/kernel.h>
->>> +#include <linux/module.h>
->>> +#include <linux/of.h>
->>> +#include <linux/of_address.h>
->>> +#include <linux/platform_device.h>
->>> +
->>> +#define DEBOUNCE_TIME	100
->>> +#define REPEAT_INTERVAL	60
->>> +
->>> +#define SC_IRQ_BUTTON		1
->>> +#define SC_IRQ_GROUP_WAKE	3
->>> +#define IMX_SC_MISC_FUNC_GET_BUTTON_STATUS	18
->>> +
->>> +struct imx_pwrkey_drv_data {
->>> +	int keycode;
->>> +	bool keystate;  /* 1: pressed, 0: release */
->>> +	bool delay_check;
->>> +	struct delayed_work check_work;
->>> +	struct input_dev *input;
->>> +};
->>> +
->>> +struct imx_sc_msg_pwrkey {
->>> +	struct imx_sc_rpc_msg hdr;
->>> +	u8 state;
->>> +};
->>> +static struct imx_pwrkey_drv_data *pdata;
->>
->> Why is it global struct? It seems to be flexible configurable over devicetree.
->> So I would assume it should be able to handle more then one button. Please
->> remove global variables, make it allocatable per OF node.
-> 
-> There is ONLY one button available for SC key, but yes, I think I can make the structure
-> private and get all necessary data from the structure using container_of.
+same
 
-And we will never need more then 640 kB RAM ;)
-https://en.wikiquote.org/wiki/Talk:Bill_Gates
+> +	memory@0 {
+> +		device_type = "memory";
+> +		linux,usable-memory = <0x0 0x0 0x0 0x8000000>;
+> +	};
+> +};
+> +
+> +&uart_AO_B {
+> +	status = "okay";
+> +	/*pinctrl-0 = <&uart_ao_a_pins>;*/
+> +	/*pinctrl-names = "default";*/
 
-> 
->>
->> Please use different name "pdata" is usually used as platform data. Please,
->> use "priv".
-> 
-> OK.
-> 
->>
->>> +static struct imx_sc_ipc *pwrkey_ipc_handle;
->>
->> same as before, no global variables.
-> 
-> Will move it into private platform data structure.
-> 
->>
->>> +
->>> +static int imx_sc_pwrkey_notify(struct notifier_block *nb,
->>> +				unsigned long event, void *group) {
->>> +	if ((event & SC_IRQ_BUTTON) && (*(u8 *)group ==
->> SC_IRQ_GROUP_WAKE)
->>> +	    && !pdata->delay_check) {
->>> +		pdata->delay_check = 1;
->>> +		schedule_delayed_work(&pdata->check_work,
->>> +				      msecs_to_jiffies(REPEAT_INTERVAL));
->>> +	}
->>> +
->>> +	return 0;
->>> +}
->>> +
->>> +static void imx_sc_check_for_events(struct work_struct *work) {
->>> +	struct input_dev *input = pdata->input;
->>> +	struct imx_sc_msg_pwrkey msg;
->>> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
->>> +	bool state;
->>> +
->>> +	hdr->ver = IMX_SC_RPC_VERSION;
->>> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
->>> +	hdr->func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS;
->>> +	hdr->size = 1;
->>> +
->>> +	/*
->>> +	 * Current SCU firmware does NOT have return value for
->>> +	 * this API, that means it is always successful.
->>> +	 */
->>
->> It is not true for the kernel part:
->> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Felixir.
->> bootlin.com%2Flinux%2Flatest%2Fsource%2Fdrivers%2Ffirmware%2Fimx%2F
->> imx-
->> scu.c%23L157&amp;data=02%7C01%7Canson.huang%40nxp.com%7C7a5ed3
->> ef3b2541e61be808d7303810a9%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C
->> 0%7C0%7C637030889669489141&amp;sdata=d3uw6x6WCPeavJu3QYf9o9cxx
->> Rx4mJar04fQFLF9EhE%3D&amp;reserved=0
->>
->> imx_scu_call_rpc() may fail in different ways and provide proper error value.
->> Please use it.
-> 
-> There are about 3 APIs are special, this API is one of them, this API has no return value
-> from SCU FW API, but it has response data from it, so that means if we set the response
-> to false, the stack will be free and mailbox will have NULL pointer issue when response
-> data passed from SCU FW. If we set the response to true, as the SCU FW has no return value,
-> the return value will be the msg->func which will be already failed, that is why we have to skip
-> the return value check. This is one restriction/bug of SCU FW, we will notify SCU FW owner to
-> fix/improve.
+Remove the commented code please
 
-Ok, I see. imx_scu_call_rpc() can return kernel side errors, for example from imx-scu.c 
-framework EINVAL or ETIMEDOUT or what ever error mbox framework may also provide. 
-Aaaannnndd... it can extract an error from SCU package and return it over same way as 
-other errors.
+> +};
+> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+> new file mode 100644
+> index 00000000..b98d648
+> --- /dev/null
+> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+> @@ -0,0 +1,121 @@
+> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
+> +/*
+> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
+> + */
+> +
+> +#include <dt-bindings/interrupt-controller/irq.h>
+> +#include <dt-bindings/interrupt-controller/arm-gic.h>
+> +
+> +/ {
+> +	compatible = "amlogic,a1";
+> +
+> +	interrupt-parent = <&gic>;
+> +	#address-cells = <2>;
+> +	#size-cells = <2>;
+> +
+> +	cpus {
+> +		#address-cells = <0x2>;
+> +		#size-cells = <0x0>;
+> +
+> +		cpu0: cpu@0 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a35";
+> +			reg = <0x0 0x0>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		cpu1: cpu@1 {
+> +			device_type = "cpu";
+> +			compatible = "arm,cortex-a35";
+> +			reg = <0x0 0x1>;
+> +			enable-method = "psci";
+> +			next-level-cache = <&l2>;
+> +		};
+> +
+> +		l2: l2-cache0 {
+> +			compatible = "cache";
+> +		};
+> +	};
 
-And current SCU version has some bugs, so it is providing wrong error value. Soo... as 
-usual the NXP has decided to make the linux kernel a bit more worse to make the SCU 
-firmware happy? Is it what you trying to describe? Really ?! :D
+New line here please
 
-Please. Fix the SCU first. The provide fixed kernel patch.
+With this minor comments adressed, looks good.
 
->>
->>> +	imx_scu_call_rpc(pwrkey_ipc_handle, &msg, true); > +	state =
->> msg.state;
->>
->> the conversation u8 to bool should be done here.
-> 
-> OK.
-> 
->>
->>> +
->>> +	if (!state && !pdata->keystate)
->>> +		state = true;
->>> +
->>> +	if (state ^ pdata->keystate) {
->>> +		pm_wakeup_event(input->dev.parent, 0);
->>> +		pdata->keystate = !!state;
->>
->> 		the state is already bool. Why do you need extra
->> conversations?
-> 
-> Will remove it.
-> 
->>
->>> +		input_event(input, EV_KEY, pdata->keycode, !!state);
->>
->> same here.
-> 
-> Will remove it.
-> 
->>
->>> +		input_sync(input);
->>> +		if (!state)
->>> +			pdata->delay_check = 0;
->>> +		pm_relax(pdata->input->dev.parent);
->>> +	}
->>> +
->>> +	if (state)
->>> +		schedule_delayed_work(&pdata->check_work,
->>> +				      msecs_to_jiffies(DEBOUNCE_TIME)); }
->>> +
->>> +static struct notifier_block imx_sc_pwrkey_notifier = {
->>> +	.notifier_call = imx_sc_pwrkey_notify, };
->>> +
->>> +static int imx_sc_pwrkey_probe(struct platform_device *pdev) {
->>> +	struct device_node *np = pdev->dev.of_node;
->>> +	struct input_dev *input;
->>> +	int ret;
->>> +
->>> +	ret = imx_scu_get_handle(&pwrkey_ipc_handle);
->>> +	if (ret)
->>> +		return ret;
->>> +
->>> +	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
->>> +	if (!pdata)
->>> +		return -ENOMEM;
->>> +
->>> +	if (of_property_read_u32(np, "linux,keycode", &pdata->keycode) > +
->> 		pdata->keycode = KEY_POWER;
->>
->> According binding documentation, linux,keycode is requered parameter, in
->> this case you should fail if it is not set.
-> 
-> Agreed, will add it in V3.
-> 
-> Thanks,
-> Anson.
-> 
+Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
 
-Kind regards,
-Oleksij Rempel
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
+> +	psci {
+> +		compatible = "arm,psci-1.0";
+> +		method = "smc";
+> +	};
+> +
+> +	reserved-memory {
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		linux,cma {
+> +			compatible = "shared-dma-pool";
+> +			reusable;
+> +			size = <0x0 0x800000>;
+> +			alignment = <0x0 0x400000>;
+> +			linux,cma-default;
+> +		};
+> +	};
+> +
+> +	sm: secure-monitor {
+> +		compatible = "amlogic,meson-gxbb-sm";
+> +	};
+> +
+> +	soc {
+> +		compatible = "simple-bus";
+> +		#address-cells = <2>;
+> +		#size-cells = <2>;
+> +		ranges;
+> +
+> +		uart_AO: serial@fe001c00 {
+> +			compatible = "amlogic,meson-gx-uart",
+> +				     "amlogic,meson-ao-uart";
+> +			reg = <0x0 0xfe001c00 0x0 0x18>;
+> +			interrupts = <GIC_SPI 25 IRQ_TYPE_EDGE_RISING>;
+> +			clocks = <&xtal>, <&xtal>, <&xtal>;
+> +			clock-names = "xtal", "pclk", "baud";
+> +			status = "disabled";
+> +		};
+> +
+> +		uart_AO_B: serial@fe002000 {
+> +			compatible = "amlogic,meson-gx-uart",
+> +				     "amlogic,meson-ao-uart";
+> +				     reg = <0x0 0xfe002000 0x0 0x18>;
+> +			interrupts = <GIC_SPI 26 IRQ_TYPE_EDGE_RISING>;
+> +			clocks = <&xtal>, <&xtal>, <&xtal>;
+> +			clock-names = "xtal", "pclk", "baud";
+> +			status = "disabled";
+> +		};
+> +
+> +		gic: interrupt-controller@ff901000 {
+> +			compatible = "arm,gic-400";
+> +			reg = <0x0 0xff901000 0x0 0x1000>,
+> +			      <0x0 0xff902000 0x0 0x2000>,
+> +			      <0x0 0xff904000 0x0 0x2000>,
+> +			      <0x0 0xff906000 0x0 0x2000>;
+> +			interrupt-controller;
+> +			interrupts = <GIC_PPI 9
+> +				(GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_HIGH)>;
+> +			#interrupt-cells = <3>;
+> +			#address-cells = <0>;
+> +		};
+> +	};
+> +
+> +	timer {
+> +		compatible = "arm,armv8-timer";
+> +		interrupts = <GIC_PPI 13
+> +			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 14
+> +			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 11
+> +			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
+> +			     <GIC_PPI 10
+> +			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>;
+> +	};
+> +
+> +	xtal: xtal-clk {
+> +		compatible = "fixed-clock";
+> +		clock-frequency = <24000000>;
+> +		clock-output-names = "xtal";
+> +		#clock-cells = <0>;
+> +	};
+> +};
+> -- 
+> 2.7.4
 
 _______________________________________________
 linux-arm-kernel mailing list
