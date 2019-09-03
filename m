@@ -2,59 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE674A6D9E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 18:09:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ECD3CA6E34
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 18:25:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=f0hbHiqg8/IjAUu3IhmuRHzjUfFGeikiNX4vtlgWSvM=; b=lZw/lH9V3DLSXM
-	UqByvLdiPU+o+rYf11luS5YjxzBAZDyvRaONP8d9ee3djzi333b6uOOZMU3eE8QYoxslA6zgjKhKQ
-	b48hY40zeiqo99aZFm2zmYLZuYwb+3uHQB/7tKeQiaxbxPB3XWQw1Cfg7IOKUGQAQLr5we9MPwn2q
-	EzfalgEenKolEiI2vLaTD0y7NC5+z38+aqcD6u3TMhR4Q4luFvbKJuG8y++/OX9RDa32qWwvgDBaq
-	FakfS9zfSPRgYNyB4PunCezZjqoCiTfGevpTGPg4tYh4JoM4zrZQwUHXUurva8M82eSvrdq0vJ1i4
-	cne4msVmn7nBqPS7TrPQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Em7Dk/ZEvZyGa1QV1p9pQY3fdI+hFNmseVc5cO5Abqs=; b=Di250AdUDm/jC8
+	946IO5UJArQ/Vws4yTZJqGuiliH1fXzzsYSIspx1OC7hSbmZrGIle/BKN1tpg73Bj0KQfBoOHxfm+
+	2q+ONlV5khPI0Y5B2Agus9WLEfUPLa2ACp5xGY7q08DbN3NcuRWAp+e9CdMRTPlHIn8MSuZbql9gs
+	3flMt7/fxRNt6DI96odJ0qQr4yKHU+9kxyubEeVp4qelmdWCLcRiSKvSUY5jqA14TmU+hgl7mS+uW
+	ONHnfIjqorJPC5WoyO/gY41IrSZ3MdFB++MpOCpULGiIXPtZXEyC25q+Dqc47IoSbK7odQUxn4fup
+	Mm+HFpbca4x2ir9W0dag==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5BNL-0002e7-9Q; Tue, 03 Sep 2019 16:09:47 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5BMe-0002ZX-0c
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 16:09:06 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6936360;
- Tue,  3 Sep 2019 09:09:01 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E73123F246;
- Tue,  3 Sep 2019 09:09:00 -0700 (PDT)
-Subject: Re: [PATCH v3 02/11] kselftest: arm64: adds first test and common
- utils
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190802170300.20662-1-cristian.marussi@arm.com>
- <20190802170300.20662-3-cristian.marussi@arm.com>
- <20190813162411.GZ10425@arm.com>
- <a76adb28-00f9-3c32-60e5-bc746db6f2fd@arm.com>
- <20190903153456.GM27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <89bd6f2a-44d1-bff7-34a8-a1a82a6729cc@arm.com>
-Date: Tue, 3 Sep 2019 17:08:57 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i5BcT-0000K9-EX; Tue, 03 Sep 2019 16:25:25 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5BcC-0008WA-Mw
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 16:25:10 +0000
+Received: from sasha-vm.mshome.net (c-73-47-72-35.hsd1.nh.comcast.net
+ [73.47.72.35])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id B8BE923697;
+ Tue,  3 Sep 2019 16:25:05 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567527907;
+ bh=+2NNsCNBQ6TiTocYeIjiV0bftN1POuCUL7N5FbSaiZE=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=jHXjVsmVYOPm6qNbL7bKe58YwMEGPfGouOfwOSFWo+0e0Nl3ywSL4XHlfQ+9nkaAS
+ zA9ChHLgvVeZ+zMQvo8WJdTQ1ST91gUp4SX+BgP73t28RX/KeDTFnGsLQ4+qOmOfYw
+ SwERGLjQSuf/3a5X5eL5ZTlJUwjrqZaFEFHSMACs=
+From: Sasha Levin <sashal@kernel.org>
+To: linux-kernel@vger.kernel.org,
+	stable@vger.kernel.org
+Subject: [PATCH AUTOSEL 5.2 17/23] usb: chipidea: imx: fix EPROBE_DEFER
+ support during driver probe
+Date: Tue,  3 Sep 2019 12:24:18 -0400
+Message-Id: <20190903162424.6877-17-sashal@kernel.org>
+X-Mailer: git-send-email 2.20.1
+In-Reply-To: <20190903162424.6877-1-sashal@kernel.org>
+References: <20190903162424.6877-1-sashal@kernel.org>
 MIME-Version: 1.0
-In-Reply-To: <20190903153456.GM27757@arm.com>
-Content-Language: en-US
+X-stable: review
+X-Patchwork-Hint: Ignore
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_090904_547403_60F853DC 
-X-CRM114-Status: GOOD (  45.01  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_092508_790641_08BC67EF 
+X-CRM114-Status: GOOD (  17.03  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,392 +80,143 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: andreyknvl@google.com, shuah@kernel.org, linux-kselftest@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Peter Chen <Peter.Chen@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ =?UTF-8?q?Andr=C3=A9=20Draszik?= <git@andred.net>,
+ Sascha Hauer <s.hauer@pengutronix.de>, linux-usb@vger.kernel.org,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
-
-On 03/09/2019 16:34, Dave Martin wrote:
-> Hi, responding to some non-trivial comments here where re-work isn't
-> needed -- so we have the right context for the mail thread.
-> 
-> For any remaining nits, I'll comment on the v5 patch.
-> 
-ok
-
-> On Wed, Aug 28, 2019 at 06:34:09PM +0100, Cristian Marussi wrote:
->> Hi
->>
->> On 13/08/2019 17:24, Dave Martin wrote:
-> 
-> [...]
-> 
->>>> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
-> 
-> [...]
-> 
->>>> +# Guessing as best as we can where the Kernel headers
->>>> +# could have been installed depending on ENV config and
->>>> +# type of invocation.
->>>> +ifeq ($(KBUILD_OUTPUT),)
->>>> +khdr_dir = $(top_srcdir)/usr/include
->>>> +else
->>>> +ifeq (0,$(MAKELEVEL))
->>>> +khdr_dir = $(KBUILD_OUTPUT)/usr/include
->>>> +else
->>>> +# the KSFT preferred location when KBUILD_OUTPUT is set
->>>> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
->>>> +endif
->>>> +endif
->>>
->>> When is KBUILD_OUTPUT set / not set?
->>>
->>
->> Depending how the user/CI is configured KSFT installs the kernel
->> headers in different places....here I'm trying to guess where they
->> have been installed by KSFT.
->>
->>>> +
->>>> +CFLAGS += -I$(khdr_dir)
->>>
->>> Do we rely on any non-UAPI headers?  If not, the default should probably
->>> be to rely on the system headers (or toolchain default headers) -- i.e.,
->>> add no -I option at all.
->>
->> I only need updated UAPI headers, but I cannot build without this specific -I..
->> that points to the installed kernel headers directory.
->>
->> As an example it fails with: undefined  HWCAP_SSBS if I remove the -I
->>
->>>
->>> I'm wondering why none of the other kselftests need this header search
->>> logic.
->>>
->>
->> Well... a lot of KSFT tests has something related to headers search in their Makefiles:
->>
->> ../kcmp/Makefile:CFLAGS += -I../../../../usr/include/
->> ../networking/timestamping/Makefile:CFLAGS += -I../../../../../usr/include
->> ../ipc/Makefile:CFLAGS += -I../../../../usr/include/
->> ../memfd/Makefile:CFLAGS += -I../../../../include/uapi/
->> ../memfd/Makefile:CFLAGS += -I../../../../include/
->> ../memfd/Makefile:CFLAGS += -I../../../../usr/include/
->>
->> which seems aimed at doing the same thing, but it is a broken approach
->> as far as I can see since if KBUILD_OUTPUT is set, KSFT will install the
->> headers accordingly, so that the above static includes won't work anymore.
->>
->> Not sure if I'm missing something here, but my understanding was that
->>
->> - some KSFT requires arch specific bits, usually included within the dedicated kernel
->> headers provided with the source itself and installed with make headers_install.
->>
->> and that
->>
->> - such headers can be found naturally, being included from top level libc headers
->> only if:
->>
->> 1. a fully updated toolchain containing updated headers too is available at CROSS_COMPILE=
->>
->> or
->>
->> 2. proper -I options are specified to the compiler to specify where KSFT installed the 
->>   kernel headers related to this kernel and its related KSFT testcases
->>
->> or
->>
->> 3. updated kernel headers were installed on top of the available CROSS_COMPILE toolchain
->>
->> or
->>
->> 4. we are building and running natively, so you can install the kernel headers on
->>    system default path and those will be searched
->>
->>
->> My 'feeling' would have been that in the KSFT scenario we should try to stick with option  2.,
->> in order to be able to run KSFT and run the related testcases, relying just on the shipped
->> Kernel/KSFT and possibly underlying hw features, but not having any dependencies
->> on the toolchain/libc.
->>
->> My question is: what happens on a CI-somewhere if suddenly there's the need to update
->> the toolchain somehow (fully or partially only the headers) to be able to simply
->> build/run the new KSFT included with this Kernel ?; even if we accept this need to update
->> the toochain, where this CI should get/scrap-from these minimum toolchain requirements ?
->> (in an automated manner)
->>
->> If instead we can agree to stick with 2.,  I wonder if this locate-headers mechanism which I introduced
->> here should be in charge of the KSFT framework or if there is something broken in my tests: but 
->> in these regards similar issues seems to affect KSFT arm64 tags tests queued on arm64/for-next
->>
->> https://lkml.org/lkml/2019/8/23/721
-> 
-> Ack, I think we should stick with option 2 for now, but I agree to keep
-> it local to your tests for now to avoid breaking stuff elsewhere.
-> 
-> In general I think that kselftest should always search the installed
-> UAPI headers from the containing kernel tree first, since that's the
-> best way to ensure the headers are 100% up to date.
-> 
-> This may need wider discussion in order to be deployed more widely
-> across kselftest though.
-> 
-
-Yes I agree, in the meantime in V5 I moved such mechanism (2. add -I$(khdr_src)) into the toplevel
-KSFT arm64 Makefile at least so that it transparently works for all arm64 KSFT test families...in fact
-in this way now also KSFT tags tests from Andrey compile fine (without a custom -I ../../../)
-...not sure if it is the proper fix anyway.
-
-> [...]
-> 
->>>> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
-> 
-> [...]
-> 
->>>> + *  "The infrastructure emulates only the following system register space:
->>>> + *   	Op0=3, Op1=0, CRn=0, CRm=0,4,5,6,7
->>>> + */
->>>> +#define get_regval(regname, out) \
->>>> +	asm volatile("mrs %0, " __stringify(regname) : "=r" (out) :: "memory")
->>>> +
->>>> +/* Regs encoding and masks naming copied in from sysreg.h */
->>>> +#define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
->>>> +#define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
->>>
->>> These ID regs are part of armv8.0-a, so we don't need to use the magic
->>> syntax.
->>> mmm... why I found them in non UAPI headers defined as follows ?
->>
->> arch/arm64/include/asm/sysreg.h:#define SYS_ID_AA64MMFR1_EL1            sys_reg(3, 0, 0, 7, 1)
->>
->> anyway I tried to use nonS3 regular sysreg naming (with a reasonably new compiler:
->>
->> /opt/toolchains/gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu/bin/aarch64-linux-gnu-
->>
->> and it fails (only on id_aa64mmfr2_el1) as follows:
->> /tmp/ccqAyE8P.s: Assembler messages:                      
->> /tmp/ccoGrnGc.s:1085: Error: selected processor does not support system register name 'id_aa64mmfr2_el1'
->>
->> In fact this seems to remind me (not totally sure) that this was the reason to use such S3 syntax on this
->> sysregs too.
-> 
-> Ah, it looks like ID_AA64MMFR2_EL1 was added from ARMv8.2-A only.  My
-> bad.
-> 
-> To keep things consistent, I'm fine with keeping the S3_ syntax for
-> everything here.
-> 
->>>> +#define ID_AA64MMFR1_PAN_SHIFT	20
->>>> +#define ID_AA64MMFR2_UAO_SHIFT	4
-> 
-> [...]
-> 
-Not sure if in v5 I fixed only the fixable or left everything as it was...I have to double check.
-
->>>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
-> 
-> [...]
-> 
->>>> +static inline bool are_feats_ok(struct tdescr *td)
->>>> +{
->>>> +	return td ? td->feats_required == td->feats_supported : 0;
->>>
->>> Should this be something like
->>> (td->feats_required & td->feats_supported) == td->feats_required ?
->>>
->>> Otherwise additional supported features that our test doesn't care about
->>> will cause this check to fail.
->>>
->> Yes better.
->>
->>>
->>> Do we really need to check td?
->>>
->>
->> Overly defensive
->>
->>> assert(foo); followed by dereferincing foo is usually a bit pointless
->>> because you'd get a SIGSEGV anyway.
->>>
->>> However, since the tests generate deliberate SIGSEGVs too this could
->>> be confusing -- in which case, having an explicit assert() here does
->>> no harm.
->>>
->> not sure about which assert you refer here
-> 
-> I was persuading myself that my own comment was unnecessary, so don't
-> worry about it.  The code is fine as-is.
-
-ok
-> 
->>>> +}
->>>> +
->>>> +static void default_handler(int signum, siginfo_t *si, void *uc)
->>>> +{
->>>> +	if (current->sig_trig && signum == current->sig_trig) {
->>>> +		fprintf(stderr, "Handling SIG_TRIG\n");
->>>> +		current->triggered = 1;
->>>> +		/* ->run was asserted NON-NULL in test_setup() already */
->>>> +		current->run(current, si, uc);
->>>> +	} else if (signum == SIGILL && !current->initialized) {
->>>> +		/*
->>>> +		 * A SIGILL here while still not initialized means we failed
->>>> +		 * even to asses the existence of features during init
->>>> +		 */
->>>> +		fprintf(stdout,
->>>> +			"Got SIGILL test_init. Marking ALL features UNSUPPORTED.\n");
->>>> +		current->feats_supported = 0;
->>>> +	} else if (current->sig_ok && signum == current->sig_ok) {
->>>> +		/* it's a bug in the test code when this assert fail */
->>>
->>> Why?  Is this because sig_ok is considered acceptable only as an effect
->>> of the test -- i.e., we shouldn't see it if the test hasn't been
->>> triggered yet?
->>
->> This assert would like to ensure that when you receive a sig_ok signal,
->> if a sig_trig was defined != 0, the trigger have been in fact used and processed before
->> receiving this sig_ok here: so you didn't define a signal trigger at all, or, if defined
->> it has been fired to arrive here. I'll add some commenting about this.
-> 
-> OK
-> 
->>>> +		assert(!current->sig_trig || current->triggered);
->>>> +		fprintf(stderr,
->>>> +			"SIG_OK -- SP:%p  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
->>>> +			((ucontext_t *)uc)->uc_mcontext.sp,
->>>> +			si->si_addr, si->si_code, current->token,
->>>> +			current->token - si->si_addr);
->>>> +		/*
->>>> +		 * fake_sigreturn tests, which have sanity_enabled=1, set, at
->>>> +		 * the very last time, the token field to the SP address used
->>>> +		 * to place the fake sigframe: so token==0 means we never made
->>>> +		 * it to the end, segfaulting well-before, and the test is
->>>> +		 * possibly broken.
->>>> +		 */
->>>> +		if (!current->sanity_disabled && !current->token) {
->>>> +			fprintf(stdout,
->>>> +				"current->token ZEROED...test is probably broken!\n");
->>>> +			assert(0);
->>>
->>> In case someone builds with -DNDEBUG, should we add abort()?
->>>
->> Well, in such a case all the test suite is mostly compromised anyway.
->> But you are right, I'll add an abort() at least here when broken tests
->> are detected.
-> 
-> I guess you're right.  The abort() does no harm, anyway.
-> Gone with abort() in v5
-
-> [...]
-> 
->>>> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
-> 
-> [...]
-> 
->>>> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
->>>> +{
->>>> +	bool terminated = false;
->>>> +	size_t offs = 0;
->>>> +	int flags = 0;
->>>> +	struct extra_context *extra = NULL;
->>>> +	struct _aarch64_ctx *head =
->>>> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
->>>> +
->>>> +	if (!err)
->>>> +		return false;
->>>> +	/* Walk till the end terminator verifying __reserved contents */
->>>> +	while (head && !terminated && offs < resv_sz) {
->>>> +		if ((uint64_t)head & 0x0fUL) {
->>>> +			*err = "Misaligned HEAD";
->>>> +			return false;
->>>> +		}
->>>> +
->>>> +		switch (head->magic) {
->>>> +			case 0:
->>>> +				if (head->size)
->>>> +					*err = "Bad size for MAGIC0";
->>>
->>> Or "terminator".  We don't have an actual symbolic name for magic number
->>> 0.  (Arguably it would have been nice to have a name, but we managed
->>> without.)
->>
->> ok
->>>
->>>> +				else
->>>> +					terminated = true;
->>>> +				break;
->>>> +			case FPSIMD_MAGIC:
->>>> +				if (flags & FPSIMD_CTX)
->>>> +					*err = "Multiple FPSIMD_MAGIC";
->>>> +				else if (head->size !=
->>>> +					 sizeof(struct fpsimd_context))
->>>> +					*err = "Bad size for fpsimd_context";
->>>> +				flags |= FPSIMD_CTX;
->>>> +				break;
->>>> +			case ESR_MAGIC:
->>>> +				if (head->size != sizeof(struct esr_context))
->>>> +					fprintf(stderr,
->>>> +						"Bad size for esr_context is not an error...just ignore.\n");
->>>
->>> Why isn't this an error?  Should the kernel ever write an esr_context
->>> with a different size?
->>
->> There is no check on Kernel side:
->>
->>     case ESR_MAGIC:
->>     	/* ignore */
->>         break;
->>
->> so I sticked with that, since this function can be used to validate a
->> Kernel originated sigframe or a crafted one which will be passed down
->> to the Kernel.
-> 
-> I see where you're coming from: I'll comment on the v5 patch instead of
-> here, to make it easier to track any rework.
-> 
-ok
-> [...]
-> 
->>>> +		if (flags & EXTRA_CTX)
->>>> +			if (!validate_extra_context(extra, err))
->>>> +				return false;
->>>
->>> Can we validate the contents of the extra context too?
->>>
->>> Ideally we can use the same code to check __reserved[] and the extra
->>> context.
->>>
->> Do you mean the content pointed by extra->datap ?
->> This extra_context validation routine is generally under review and fixes in a further
->> arm64/signal SVE extensions patch still to be published (and cleaned up):
->> [kselftest: arm64: adds SVE-related signal test], given that EXTRA_CONTEXT can effectively
->> appear only when SVE related instruction are used properly.
->>
->> Should I introduce this and other extra-context related fixes here instead ?
->> (it is hard to test and debug without any triggering SVE instruction though...)
-> 
-> No, it's fine to exclude it for now.
-> 
-> If there's a plan to add it later, that's good enough for me.
-
-ok
-> 
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
-
-Thanks
-
-Cheers 
-
-Cristian
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RnJvbTogQW5kcsOpIERyYXN6aWsgPGdpdEBhbmRyZWQubmV0PgoKSWYgZHJpdmVyIHByb2JlIG5l
+ZWRzIHRvIGJlIGRlZmVycmVkLCBlLmcuIGJlY2F1c2UgY2lfaGRyY19hZGRfZGV2aWNlKCkKaXNu
+J3QgcmVhZHkgeWV0LCB0aGlzIGRyaXZlciBjdXJyZW50bHkgbWlzYmVoYXZlcyBiYWRseToKICAg
+IGEpIHN1Y2Nlc3MgaXMgc3RpbGwgcmVwb3J0ZWQgdG8gdGhlIGRyaXZlciBjb3JlIChtZWFuaW5n
+IGEgMm5kCiAgICAgICBwcm9iZSBhdHRlbXB0IHdpbGwgbmV2ZXIgYmUgZG9uZSksIGxlYXZpbmcg
+dGhlIGRyaXZlciBpbgogICAgICAgYSBkeXNmdW5jdGlvbmFsIHN0YXRlIGFuZCB0aGUgaGFyZHdh
+cmUgdW51c2FibGUKCiAgICBiKSBkcml2ZXIgcmVtb3ZlIC8gc2h1dGRvd24gT09QU2VzOgogICAg
+WyAgMjA2Ljc4NjkxNl0gVW5hYmxlIHRvIGhhbmRsZSBrZXJuZWwgcGFnaW5nIHJlcXVlc3QgYXQg
+dmlydHVhbCBhZGRyZXNzIGZmZmZmZGZmCiAgICBbICAyMDYuNzk0MTQ4XSBwZ2QgPSA4ODBiOWY4
+MgogICAgWyAgMjA2Ljc5Njg5MF0gW2ZmZmZmZGZmXSAqcGdkPWFiZjVlODYxLCAqcHRlPTAwMDAw
+MDAwLCAqcHB0ZT0wMDAwMDAwMAogICAgWyAgMjA2LjgwMzE3OV0gSW50ZXJuYWwgZXJyb3I6IE9v
+cHM6IDM3IFsjMV0gUFJFRU1QVCBTTVAgQVJNCiAgICBbICAyMDYuODA4NTgxXSBNb2R1bGVzIGxp
+bmtlZCBpbjogd2wxOHh4IGV2YnVnCiAgICBbICAyMDYuODEzMzA4XSBDUFU6IDEgUElEOiAxIENv
+bW06IHN5c3RlbWQtc2h1dGRvdyBOb3QgdGFpbnRlZCA0LjE5LjM1K2dmMzQ1YzkzYjQxOTUgIzEK
+ICAgIFsgIDIwNi44MjEwNTNdIEhhcmR3YXJlIG5hbWU6IEZyZWVzY2FsZSBpLk1YNyBEdWFsIChE
+ZXZpY2UgVHJlZSkKICAgIFsgIDIwNi44MjY4MTNdIFBDIGlzIGF0IGNpX2hkcmNfcmVtb3ZlX2Rl
+dmljZSsweDQvMHgyMAogICAgWyAgMjA2LjgzMTY5OV0gTFIgaXMgYXQgY2lfaGRyY19pbXhfcmVt
+b3ZlKzB4MjAvMHhlOAogICAgWyAgMjA2LjgzNjQwN10gcGMgOiBbPDgwNWNkNGIwPl0gICAgbHIg
+OiBbPDgwNWQ2MmNjPl0gICAgcHNyOiAyMDAwMDAxMwogICAgWyAgMjA2Ljg0MjY3OF0gc3AgOiBh
+ODA2YmU0MCAgaXAgOiAwMDAwMDAwMSAgZnAgOiA4MGFkYmQzYwogICAgWyAgMjA2Ljg0NzkwNl0g
+cjEwOiA4MGIxYjc5NCAgcjkgOiA4MGQ1ZGZlMCAgcjggOiBhODE5MmM0NAogICAgWyAgMjA2Ljg1
+MzEzNl0gcjcgOiA4MGRiOTNhMCAgcjYgOiBhODE5MmMxMCAgcjUgOiBhODE5MmMwMCAgcjQgOiBh
+OTNhNGEwMAogICAgWyAgMjA2Ljg1OTY2OF0gcjMgOiAwMDAwMDAwMCAgcjIgOiBhODE5MmNlNCAg
+cjEgOiBmZmZmZmZmZiAgcjAgOiBmZmZmZmRmYgogICAgWyAgMjA2Ljg2NjIwMV0gRmxhZ3M6IG56
+Q3YgIElSUXMgb24gIEZJUXMgb24gIE1vZGUgU1ZDXzMyICBJU0EgQVJNICBTZWdtZW50IG5vbmUK
+ICAgIFsgIDIwNi44NzMzNDFdIENvbnRyb2w6IDEwYzUzODdkICBUYWJsZTogYTllMGMwNmEgIERB
+QzogMDAwMDAwNTEKICAgIFsgIDIwNi44NzkwOTJdIFByb2Nlc3Mgc3lzdGVtZC1zaHV0ZG93IChw
+aWQ6IDEsIHN0YWNrIGxpbWl0ID0gMHhiMjcxMzUzYykKICAgIFsgIDIwNi44ODU2MjRdIFN0YWNr
+OiAoMHhhODA2YmU0MCB0byAweGE4MDZjMDAwKQogICAgWyAgMjA2Ljg4OTk5Ml0gYmU0MDogYTkz
+YTRhMDAgODA1ZDYyY2MgYTgxOTJjMWMgYTgxNzBlMTAgYTgxOTJjMTAgODA0OWE0OTAgODBkMDRk
+MDggMDAwMDAwMDAKICAgIFsgIDIwNi44OTgxNzldIGJlNjA6IDAwMDAwMDAwIDgwZDBkYTJjIGZl
+ZTFkZWFkIDAwMDAwMDAwIGE4MDZhMDAwIDAwMDAwMDU4IDAwMDAwMDAwIDgwMTQ4YjA4CiAgICBb
+ICAyMDYuOTA2MzY2XSBiZTgwOiAwMTIzNDU2NyA4MDE0OGQ4YyBhOTg1ODYwMCAwMDAwMDAwMCAw
+MDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCA4MGQwNGQwOAogICAgWyAgMjA2LjkxNDU1M10gYmVh
+MDogMDAwMDAwMDAgMDAwMDAwMDAgYTgyNzQxZTAgYTk4NTg2MDAgMDAwMDAwMjQgMDAwMDAwMDIg
+YTk4NTg2MDggMDAwMDAwMDUKICAgIFsgIDIwNi45MjI3NDBdIGJlYzA6IDAwMDAwMDFlIDgwMjJj
+MDU4IDAwMDAwMDAwIDAwMDAwMDAwIGE4MDZiZjE0IGE5ODU4NjAwIDAwMDAwMDAwIGE4MDZiZWZj
+CiAgICBbICAyMDYuOTMwOTI3XSBiZWUwOiBhODA2YmY3OCAwMDAwMDAwMCA3ZWUxMmMzMCA4MDIy
+YzE4YyBhODA2YmVmOCBhODA2YmVmYyAwMDAwMDAwMCAwMDAwMDAwMQogICAgWyAgMjA2LjkzOTEx
+NV0gYmYwMDogMDAwMDAwMDAgMDAwMDAwMjQgYTgwNmJmMTQgMDAwMDAwMDUgN2VlMTNiMzQgN2Vl
+MTJjNjggMDAwMDAwMDQgN2VlMTNmMjAKICAgIFsgIDIwNi45NDczMDJdIGJmMjA6IDAwMDAwMDEw
+IDdlZTEyYzdjIDAwMDAwMDA1IDdlZTEyZDA0IDAwMDAwMDBhIDc2ZTdkYzAwIDAwMDAwMDAxIDgw
+ZDBmMTQwCiAgICBbICAyMDYuOTU1NDkwXSBiZjQwOiBhYjYzNzg4MCBhOTc0ZGU0MCA2MDAwMDAx
+MyA4MGQwZjE0MCBhYjYzNzhhMCA4MGQwNGQwOCBhODA4MDQ3MCBhOTg1ODYwMAogICAgWyAgMjA2
+Ljk2MzY3N10gYmY2MDogYTk4NTg2MDAgMDAwMDAwMDAgMDAwMDAwMDAgODAyMmMyNGMgMDAwMDAw
+MDAgODAxNDQzMTAgMDAwMDAwMDAgMDAwMDAwMDAKICAgIFsgIDIwNi45NzE4NjRdIGJmODA6IDgw
+MTAxMjA0IDgwZDA0ZDA4IDAwMDAwMDAwIDgwZDA0ZDA4IDAwMDAwMDAwIDAwMDAwMDAwIDAwMDAw
+MDAzIDAwMDAwMDU4CiAgICBbICAyMDYuOTgwMDUxXSBiZmEwOiA4MDEwMTIwNCA4MDEwMTAwMCAw
+MDAwMDAwMCAwMDAwMDAwMCBmZWUxZGVhZCAyODEyMTk2OSAwMTIzNDU2NyAwMDAwMDAwMAogICAg
+WyAgMjA2Ljk4ODIzN10gYmZjMDogMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDMgMDAwMDAwNTgg
+MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKICAgIFsgIDIwNi45OTY0MjVdIGJm
+ZTA6IDAwNDlmZmIwIDdlZTEzZDU4IDAwNDhhODRiIDc2ZjI0NWE2IDYwMDAwMDMwIGZlZTFkZWFk
+IDAwMDAwMDAwIDAwMDAwMDAwCiAgICBbICAyMDcuMDA0NjIyXSBbPDgwNWNkNGIwPl0gKGNpX2hk
+cmNfcmVtb3ZlX2RldmljZSkgZnJvbSBbPDgwNWQ2MmNjPl0gKGNpX2hkcmNfaW14X3JlbW92ZSsw
+eDIwLzB4ZTgpCiAgICBbICAyMDcuMDEzNTA5XSBbPDgwNWQ2MmNjPl0gKGNpX2hkcmNfaW14X3Jl
+bW92ZSkgZnJvbSBbPDgwNDlhNDkwPl0gKGRldmljZV9zaHV0ZG93bisweDE2Yy8weDIxOCkKICAg
+IFsgIDIwNy4wMjIwNTBdIFs8ODA0OWE0OTA+XSAoZGV2aWNlX3NodXRkb3duKSBmcm9tIFs8ODAx
+NDhiMDg+XSAoa2VybmVsX3Jlc3RhcnQrMHhjLzB4NTApCiAgICBbICAyMDcuMDI5OTgwXSBbPDgw
+MTQ4YjA4Pl0gKGtlcm5lbF9yZXN0YXJ0KSBmcm9tIFs8ODAxNDhkOGM+XSAoc3lzX3JlYm9vdCsw
+eGY0LzB4MWYwKQogICAgWyAgMjA3LjAzNzY0OF0gWzw4MDE0OGQ4Yz5dIChzeXNfcmVib290KSBm
+cm9tIFs8ODAxMDEwMDA+XSAocmV0X2Zhc3Rfc3lzY2FsbCsweDAvMHg1NCkKICAgIFsgIDIwNy4w
+NDUzMDhdIEV4Y2VwdGlvbiBzdGFjaygweGE4MDZiZmE4IHRvIDB4YTgwNmJmZjApCiAgICBbICAy
+MDcuMDUwMzY4XSBiZmEwOiAgICAgICAgICAgICAgICAgICAwMDAwMDAwMCAwMDAwMDAwMCBmZWUx
+ZGVhZCAyODEyMTk2OSAwMTIzNDU2NyAwMDAwMDAwMAogICAgWyAgMjA3LjA1ODU1NF0gYmZjMDog
+MDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDMgMDAwMDAwNTggMDAwMDAwMDAgMDAwMDAwMDAgMDAw
+MDAwMDAgMDAwMDAwMDAKICAgIFsgIDIwNy4wNjY3MzddIGJmZTA6IDAwNDlmZmIwIDdlZTEzZDU4
+IDAwNDhhODRiIDc2ZjI0NWE2CiAgICBbICAyMDcuMDcxNzk5XSBDb2RlOiBlYmZmZmZhOCBlM2Ew
+MDAwMCBlOGJkODAxMCBlOTJkNDAxMCAoZTU5MDQwMDQpCiAgICBbICAyMDcuMDc4MDIxXSAtLS1b
+IGVuZCB0cmFjZSBiZTQ3NDI0ZTNmZDQ2ZTlmIF0tLS0KICAgIFsgIDIwNy4wODI2NDddIEtlcm5l
+bCBwYW5pYyAtIG5vdCBzeW5jaW5nOiBGYXRhbCBleGNlcHRpb24KICAgIFsgIDIwNy4wODc4OTRd
+IC0tLVsgZW5kIEtlcm5lbCBwYW5pYyAtIG5vdCBzeW5jaW5nOiBGYXRhbCBleGNlcHRpb24gXS0t
+LQoKICAgIGMpIHRoZSBlcnJvciBwYXRoIGluIGNvbWJpbmF0aW9uIHdpdGggZHJpdmVyIHJlbW92
+YWwgY2F1c2VzCiAgICAgICBpbWJhbGFuY2VkIGNhbGxzIHRvIHRoZSBjbGtfKigpIGFuZCBwbV8o
+KSogQVBJcwoKYSkgaGFwcGVucyBiZWNhdXNlIHRoZSBvcmlnaW5hbCBpbnRlbmRlZCByZXR1cm4g
+dmFsdWUgaXMKICAgb3ZlcndyaXR0ZW4gKHdpdGggMCkgYnkgdGhlIHJldHVybiBjb2RlIG9mCiAg
+IHJlZ3VsYXRvcl9kaXNhYmxlKCkgaW4gY2lfaGRyY19pbXhfcHJvYmUoKSdzIGVycm9yIHBhdGgK
+YikgaGFwcGVucyBiZWNhdXNlIGNpX3BkZXYgaXMgLUVQUk9CRV9ERUZFUiwgd2hpY2ggY2F1c2Vz
+CiAgIGNpX2hkcmNfcmVtb3ZlX2RldmljZSgpIHRvIE9PUFMKCkZpeCBhKSBieSBiZWluZyBtb3Jl
+IGNhcmVmdWwgaW4gY2lfaGRyY19pbXhfcHJvYmUoKSdzIGVycm9yCnBhdGggYW5kIG5vdCBvdmVy
+d3JpdGluZyB0aGUgcmVhbCBlcnJvciBjb2RlCgpGaXggYikgYnkgY2FsbGluZyB0aGUgcmVzcGVj
+dGl2ZSBjbGVhbnVwIGZ1bmN0aW9ucyBkdXJpbmcKcmVtb3ZlIG9ubHkgd2hlbiBuZWVkZWQgKHdo
+ZW4gY2lfcGRldiAhPSBOVUxMLCBpLmUuIHdoZW4KZXZlcnl0aGluZyB3YXMgaW5pdGlhbGlzZWQg
+Y29ycmVjdGx5KS4gVGhpcyBhbHNvIGhhcyB0aGUKc2lkZSBlZmZlY3Qgb2Ygbm90IGNhdXNpbmcg
+aW1iYWxhbmNlZCBjbGtfKigpIGFuZCBwbV8qKCkKQVBJIGNhbGxzIGFzIHBhcnQgb2YgdGhlIGVy
+cm9yIGNvZGUgcGF0aC4KCkZpeGVzOiA3YzhlODkwOTQxN2UgKCJ1c2I6IGNoaXBpZGVhOiBpbXg6
+IGFkZCBIU0lDIHN1cHBvcnQiKQpTaWduZWQtb2ZmLWJ5OiBBbmRyw6kgRHJhc3ppayA8Z2l0QGFu
+ZHJlZC5uZXQ+CkNjOiBzdGFibGUgPHN0YWJsZUB2Z2VyLmtlcm5lbC5vcmc+CkNDOiBQZXRlciBD
+aGVuIDxQZXRlci5DaGVuQG54cC5jb20+CkNDOiBHcmVnIEtyb2FoLUhhcnRtYW4gPGdyZWdraEBs
+aW51eGZvdW5kYXRpb24ub3JnPgpDQzogU2hhd24gR3VvIDxzaGF3bmd1b0BrZXJuZWwub3JnPgpD
+QzogU2FzY2hhIEhhdWVyIDxzLmhhdWVyQHBlbmd1dHJvbml4LmRlPgpDQzogUGVuZ3V0cm9uaXgg
+S2VybmVsIFRlYW0gPGtlcm5lbEBwZW5ndXRyb25peC5kZT4KQ0M6IEZhYmlvIEVzdGV2YW0gPGZl
+c3RldmFtQGdtYWlsLmNvbT4KQ0M6IE5YUCBMaW51eCBUZWFtIDxsaW51eC1pbXhAbnhwLmNvbT4K
+Q0M6IGxpbnV4LXVzYkB2Z2VyLmtlcm5lbC5vcmcKQ0M6IGxpbnV4LWFybS1rZXJuZWxAbGlzdHMu
+aW5mcmFkZWFkLm9yZwpDQzogbGludXgta2VybmVsQHZnZXIua2VybmVsLm9yZwpMaW5rOiBodHRw
+czovL2xvcmUua2VybmVsLm9yZy9yLzIwMTkwODEwMTUwNzU4LjE3Njk0LTEtZ2l0QGFuZHJlZC5u
+ZXQKU2lnbmVkLW9mZi1ieTogR3JlZyBLcm9haC1IYXJ0bWFuIDxncmVna2hAbGludXhmb3VuZGF0
+aW9uLm9yZz4KLS0tCiBkcml2ZXJzL3VzYi9jaGlwaWRlYS9jaV9oZHJjX2lteC5jIHwgMTkgKysr
+KysrKysrKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDEyIGluc2VydGlvbnMoKyksIDcgZGVs
+ZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvY2hpcGlkZWEvY2lfaGRyY19pbXgu
+YyBiL2RyaXZlcnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMKaW5kZXggYTc2NzA4NTAxMjM2
+ZC4uNWZhYWU5NjczNWU2MiAxMDA2NDQKLS0tIGEvZHJpdmVycy91c2IvY2hpcGlkZWEvY2lfaGRy
+Y19pbXguYworKysgYi9kcml2ZXJzL3VzYi9jaGlwaWRlYS9jaV9oZHJjX2lteC5jCkBAIC00NTMs
+OSArNDUzLDExIEBAIHN0YXRpYyBpbnQgY2lfaGRyY19pbXhfcHJvYmUoc3RydWN0IHBsYXRmb3Jt
+X2RldmljZSAqcGRldikKIAlpbXhfZGlzYWJsZV91bnByZXBhcmVfY2xrcyhkZXYpOwogZGlzYWJs
+ZV9oc2ljX3JlZ3VsYXRvcjoKIAlpZiAoZGF0YS0+aHNpY19wYWRfcmVndWxhdG9yKQotCQlyZXQg
+PSByZWd1bGF0b3JfZGlzYWJsZShkYXRhLT5oc2ljX3BhZF9yZWd1bGF0b3IpOworCQkvKiBkb24n
+dCBvdmVyd3JpdGUgb3JpZ2luYWwgcmV0IChjZi4gRVBST0JFX0RFRkVSKSAqLworCQlyZWd1bGF0
+b3JfZGlzYWJsZShkYXRhLT5oc2ljX3BhZF9yZWd1bGF0b3IpOwogCWlmIChwZGF0YS5mbGFncyAm
+IENJX0hEUkNfUE1RT1MpCiAJCXBtX3Fvc19yZW1vdmVfcmVxdWVzdCgmZGF0YS0+cG1fcW9zX3Jl
+cSk7CisJZGF0YS0+Y2lfcGRldiA9IE5VTEw7CiAJcmV0dXJuIHJldDsKIH0KIApAQCAtNDY4LDE0
+ICs0NzAsMTcgQEAgc3RhdGljIGludCBjaV9oZHJjX2lteF9yZW1vdmUoc3RydWN0IHBsYXRmb3Jt
+X2RldmljZSAqcGRldikKIAkJcG1fcnVudGltZV9kaXNhYmxlKCZwZGV2LT5kZXYpOwogCQlwbV9y
+dW50aW1lX3B1dF9ub2lkbGUoJnBkZXYtPmRldik7CiAJfQotCWNpX2hkcmNfcmVtb3ZlX2Rldmlj
+ZShkYXRhLT5jaV9wZGV2KTsKKwlpZiAoZGF0YS0+Y2lfcGRldikKKwkJY2lfaGRyY19yZW1vdmVf
+ZGV2aWNlKGRhdGEtPmNpX3BkZXYpOwogCWlmIChkYXRhLT5vdmVycmlkZV9waHlfY29udHJvbCkK
+IAkJdXNiX3BoeV9zaHV0ZG93bihkYXRhLT5waHkpOwotCWlteF9kaXNhYmxlX3VucHJlcGFyZV9j
+bGtzKCZwZGV2LT5kZXYpOwotCWlmIChkYXRhLT5wbGF0X2RhdGEtPmZsYWdzICYgQ0lfSERSQ19Q
+TVFPUykKLQkJcG1fcW9zX3JlbW92ZV9yZXF1ZXN0KCZkYXRhLT5wbV9xb3NfcmVxKTsKLQlpZiAo
+ZGF0YS0+aHNpY19wYWRfcmVndWxhdG9yKQotCQlyZWd1bGF0b3JfZGlzYWJsZShkYXRhLT5oc2lj
+X3BhZF9yZWd1bGF0b3IpOworCWlmIChkYXRhLT5jaV9wZGV2KSB7CisJCWlteF9kaXNhYmxlX3Vu
+cHJlcGFyZV9jbGtzKCZwZGV2LT5kZXYpOworCQlpZiAoZGF0YS0+cGxhdF9kYXRhLT5mbGFncyAm
+IENJX0hEUkNfUE1RT1MpCisJCQlwbV9xb3NfcmVtb3ZlX3JlcXVlc3QoJmRhdGEtPnBtX3Fvc19y
+ZXEpOworCQlpZiAoZGF0YS0+aHNpY19wYWRfcmVndWxhdG9yKQorCQkJcmVndWxhdG9yX2Rpc2Fi
+bGUoZGF0YS0+aHNpY19wYWRfcmVndWxhdG9yKTsKKwl9CiAKIAlyZXR1cm4gMDsKIH0KLS0gCjIu
+MjAuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
