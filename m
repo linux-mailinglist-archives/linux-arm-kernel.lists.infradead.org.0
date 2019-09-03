@@ -2,57 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D0A04A63B2
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:17:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C609A63D3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:25:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=izPwNRFqbpJbSpvVwfB9aKOx8AC6OTZ+Rjq4g5IJ2nM=; b=f5cvMbiH6L7iUP
-	NfaG2bgDZFp5nJjw1tm19yRweswbwGs2X8lqR3muYuJ1hDcQVRanHK5WOwJHDKYxO3nhpuBwF0dUE
-	tygsIjxoeizOdHjVLlGEW2z1O+8CzuUxmRLgdkEHWdMg+wG19KdSCU4I/jrUBfV1c9V6O1LGoU1bp
-	lGXQVkN59BbWjTpd+sTG58JRWqYKVEMl7wjvUYVLg1sOvsB/tNraF8eGJHIWpRuhy4G9a+DLdApp6
-	dCEncAfSqa/Ys5PODcz0ZWc3718sVQWP6S1fzkLDMPj/JygQGOChbeejBdedoIi8hPwi3Y2m0YmWq
-	FpFsOELfTEi1kKDi8iyg==;
+	List-Owner; bh=5uv3bQDOCl0tk5/msIV+N7v+vDwMiQgl48Fujo734Kk=; b=EBTGg5XKJXp00v
+	PrbDLASqRSadDLnwfZD54OquhLDzckN+jjYJNUheDp89aEYGKnWisP7WfwLLDHIoUP5nXT85m+0PW
+	09TyU2plD91dP1lvZFFRB9JJhbKsfwv4bMBfDbaoIhPnWbVzTf5lyh0TBIbdv5Ki039HrVL82W05E
+	cm5nUVTJdtOnXCLTKRl9uSm9N58JpZzsPQAU9MdrfgacVLpGPGV1uc8m7NCHh4TBanC4oLaRWwz8w
+	UtUafSsbEwF8tiYY1q408Ya6xzgrLOd6t1AZuksDzzHFL8bm497JS+V4/eMlwuELC2Sl7d0fQu+CS
+	ln7wOMfyvrDL/aL0rTGw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i540G-0002LU-0Y; Tue, 03 Sep 2019 08:17:28 +0000
-Received: from relay12.mail.gandi.net ([217.70.178.232])
+	id 1i5480-0005vS-Sm; Tue, 03 Sep 2019 08:25:29 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5401-0002KZ-Oq
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:17:15 +0000
-Received: from localhost
- (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay12.mail.gandi.net (Postfix) with ESMTPSA id 25DB920001B;
- Tue,  3 Sep 2019 08:16:58 +0000 (UTC)
-Date: Tue, 3 Sep 2019 10:16:58 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Yizhuo Zhai <yzhai003@ucr.edu>
-Subject: Re: [PATCH] clocksource: atmel-st: Variable sr in
- at91rm9200_timer_interrupt() could be uninitialized
-Message-ID: <20190903081658.GK21922@piout.net>
-References: <20190902222946.20548-1-yzhai003@ucr.edu>
- <20190902223650.GJ21922@piout.net>
- <CABvMjLRjeXAmhBwfZZPbmxdENq=FP9rR0Ld=T3veGXF6cjptxA@mail.gmail.com>
+ id 1i547o-0005v8-Kt
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:25:18 +0000
+Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
+ [209.85.160.173])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id A4BD52339D
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue,  3 Sep 2019 08:25:15 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567499115;
+ bh=f3ZXaegcsrrqhqRDRKGqx4s4cVnRArE7RmypILYd+g8=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=wabHV1k5dEyrX/7adpcLxEwW1MB7sdRxtSAl/Q+ixCo+poiVeI7wlb7c8pmEkomba
+ VUBXX9c9bK4EcJ2Rh1xAjjOW6eeil29NeZmenL+Lv7/KjHckb3WHRxEYYillGkJ9G9
+ qLA7PMTnlMqUtaKofcpPZkOnAPIPUWPD0G9OlK5o=
+Received: by mail-qt1-f173.google.com with SMTP id k10so8458252qth.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 01:25:15 -0700 (PDT)
+X-Gm-Message-State: APjAAAVGSvMH8vKHOo0vYuz9BcVuP/Ayyatg8Az5tZCivJibzyh4IgqM
+ VG0C5Killtl4+zDryOB1m+Be9d+X9XD4j/5H9g==
+X-Google-Smtp-Source: APXvYqwIM9DiXxim6rM127j/POM2TKvL5qYklc3Bu+DdP6aV4fnCf6MCR6CZRi7sMcNn4eza859i00dqzSkL7gf1mNo=
+X-Received: by 2002:ac8:28b6:: with SMTP id i51mr8990758qti.143.1567499114797; 
+ Tue, 03 Sep 2019 01:25:14 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CABvMjLRjeXAmhBwfZZPbmxdENq=FP9rR0Ld=T3veGXF6cjptxA@mail.gmail.com>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+References: <20190823145356.6341-1-krzk@kernel.org>
+ <20190823145356.6341-5-krzk@kernel.org>
+ <CAL_JsqJybT41cEqiTriLMywUQj1BtAG_9muJ4=84OkF23y53CA@mail.gmail.com>
+ <CAJKOXPc0SY_8BHMsWLN=1M3VQh41+bdBiH21L4KQPA+iLPYy+A@mail.gmail.com>
+In-Reply-To: <CAJKOXPc0SY_8BHMsWLN=1M3VQh41+bdBiH21L4KQPA+iLPYy+A@mail.gmail.com>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Tue, 3 Sep 2019 09:25:03 +0100
+X-Gmail-Original-Message-ID: <CAL_JsqKdsABWK9Og_f38T9zf3SCFFdhU8WOJ4uJjREantoYvYQ@mail.gmail.com>
+Message-ID: <CAL_JsqKdsABWK9Og_f38T9zf3SCFFdhU8WOJ4uJjREantoYvYQ@mail.gmail.com>
+Subject: Re: [RFC 5/9] dt-bindings: arm: samsung: Convert Exynos PMU bindings
+ to json-schema
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_011713_960738_8C1318C5 
-X-CRM114-Status: GOOD (  20.85  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190903_012516_728179_66F778CA 
+X-CRM114-Status: GOOD (  25.46  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.178.232 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,93 +89,152 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Chengyu Song <csong@cs.ucr.edu>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- Zhiyun Qian <zhiyunq@cs.ucr.edu>, linux-kernel@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Lars-Peter Clausen <lars@metafoo.de>, Arnd Bergmann <arnd@arndb.de>,
+ devicetree@vger.kernel.org,
+ "open list:IIO SUBSYSTEM AND DRIVERS" <linux-iio@vger.kernel.org>,
+ Marek Szyprowski <m.szyprowski@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Tomasz Figa <tomasz.figa@gmail.com>,
+ linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>,
+ Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
+ Olof Johansson <olof@lixom.net>,
+ "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>,
+ notify@kernel.org, Jonathan Cameron <jic23@kernel.org>,
+ =?UTF-8?Q?Pawe=C5=82_Chmiel?= <pawel.mikolaj.chmiel@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/09/2019 22:56:48-0700, Yizhuo Zhai wrote:
-> In function regmap_read(),  there're two places which could make the read fail.
-> 
-> First, if "reg" and  "map->reg_stride" are not aligned, then remap_read() will
-> return -EINVAL without initialize variable "val".
-> 
-
-A quick look at of_syscon_register would show you that this is not
-possible.
-
-> Second, _regmap_read() could also fail and return error code if "val" is not
-> initialized. The caller remap_read() returns the same error code, but
-> at91rm9200_timer_interrupt() does not use this information.
-> 
-
-How would _regmap_read fail exactly?
-
-> On Mon, Sep 2, 2019 at 3:37 PM Alexandre Belloni
-> <alexandre.belloni@bootlin.com> wrote:
+On Tue, Sep 3, 2019 at 8:58 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>
+> On Mon, 26 Aug 2019 at 13:54, Rob Herring <robh+dt@kernel.org> wrote:
 > >
-> > On 02/09/2019 15:29:46-0700, Yizhuo wrote:
-> > > Inside function at91rm9200_timer_interrupt(), variable sr could
-> > > be uninitialized if regmap_read() fails. However, sr is used
-> >
-> > Could you elaborate on how this could fail?
-> >
-> > > to decide the control flow later in the if statement, which is
-> > > potentially unsafe. We could check the return value of
-> > > regmap_read() and print an error here.
+> > On Fri, Aug 23, 2019 at 9:54 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
 > > >
-> > > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+> > > Convert Samsung Exynos Power Management Unit (PMU) bindings to DT schema
+> > > format using json-schema.
+> > >
+> > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
 > > > ---
-> > >  drivers/clocksource/timer-atmel-st.c | 8 +++++++-
-> > >  1 file changed, 7 insertions(+), 1 deletion(-)
-> > >
-> > > diff --git a/drivers/clocksource/timer-atmel-st.c b/drivers/clocksource/timer-atmel-st.c
-> > > index ab0aabfae5f0..061a3f27847e 100644
-> > > --- a/drivers/clocksource/timer-atmel-st.c
-> > > +++ b/drivers/clocksource/timer-atmel-st.c
-> > > @@ -48,8 +48,14 @@ static inline unsigned long read_CRTR(void)
-> > >  static irqreturn_t at91rm9200_timer_interrupt(int irq, void *dev_id)
-> > >  {
-> > >       u32 sr;
-> > > +     int ret;
-> > > +
-> > > +     ret = regmap_read(regmap_st, AT91_ST_SR, &sr);
-> > > +     if (ret) {
-> > > +             pr_err("Fail to read AT91_ST_SR.\n");
-> > > +             return ret;
-> > > +     }
-> > >
-> > > -     regmap_read(regmap_st, AT91_ST_SR, &sr);
-> > >       sr &= irqmask;
-> > >
-> > >       /*
-> > > --
-> > > 2.17.1
-> > >
+> > >  .../devicetree/bindings/arm/samsung/pmu.txt   | 72 --------------
+> > >  .../devicetree/bindings/arm/samsung/pmu.yaml  | 93 +++++++++++++++++++
+> > >  2 files changed, 93 insertions(+), 72 deletions(-)
+> > >  delete mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.txt
+> > >  create mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.yaml
 > >
-> > --
-> > Alexandre Belloni, Bootlin
-> > Embedded Linux and Kernel engineering
-> > https://bootlin.com
-> 
-> 
-> 
-> -- 
-> Kind Regards,
-> 
-> Yizhuo Zhai
-> 
-> Computer Science, Graduate Student
-> University of California, Riverside
+> >
+> > > diff --git a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
+> > > new file mode 100644
+> > > index 000000000000..818c6f3488ef
+> > > --- /dev/null
+> > > +++ b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
+> > > @@ -0,0 +1,93 @@
+> > > +# SPDX-License-Identifier: GPL-2.0
+> > > +%YAML 1.2
+> > > +---
+> > > +$id: http://devicetree.org/schemas/arm/samsung/pmu.yaml#
+> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> > > +
+> > > +title: Samsung Exynos SoC series Power Management Unit (PMU)
+> > > +
+> > > +maintainers:
+> > > +  - Krzysztof Kozlowski <krzk@kernel.org>
+> > > +
+> > > +properties:
+> > > +  compatible:
+> > > +    items:
+> > > +      - enum:
+> > > +          - samsung,exynos3250-pmu
+> > > +          - samsung,exynos4210-pmu
+> > > +          - samsung,exynos4412-pmu
+> > > +          - samsung,exynos5250-pmu
+> > > +          - samsung,exynos5260-pmu
+> > > +          - samsung,exynos5410-pmu
+> > > +          - samsung,exynos5420-pmu
+> > > +          - samsung,exynos5433-pmu
+> > > +          - samsung,exynos7-pmu
+> > > +      - const: syscon
+> > > +
+> > > +  reg:
+> > > +    maxItems: 1
+> > > +
+> > > +  '#clock-cells':
+> > > +    const: 1
+> > > +
+> > > +  clock-names:
+> > > +    description:
+> > > +      list of clock names for particular CLKOUT mux inputs
+> > > +    # TODO: what is the maximum number of elements (mux inputs)?
+> > > +    minItems: 1
+> > > +    maxItems: 32
+> > > +    items:
+> > > +      - enum:
+> >
+> > This isn't correct as you are only defining possible names for the
+> > first item. Drop the '-' (making items a schema instead of a list) and
+> > then it applies to all. However, doing that will cause a meta-schema
+> > error which I need to fix to allow. Or if there's a small set of
+> > possibilities of number of inputs, you can list them under a 'oneOf'
+> > list.
+>
+> Mhmm, I cannot test it or I have an error in the schema. if I
+> understand correctly, this would be:
+>
+>   clock-names:
+>     description:
+>       List of clock names for particular CLKOUT mux inputs
+>     minItems: 1
+>     maxItems: 16
+>     items:
+>       clkout0
+>       clkout1
+>       clkout2
+>       clkout3
+>       clkout4
+>       clkout5
+>       clkout6
+>       clkout7
+>       clkout8
+>       clkout9
+>       clkout10
+>       clkout11
+>       clkout12
+>       clkout13
+>       clkout14
+>       clkout15
+>       clkout16
+>
+> Now it produces the error "ignoring, error in schema 'items'" but
+> maybe it is expected with current meta-schema?
 
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+'make dt_binding_check' will give more detailed errors.
+
+Are the inputs always contiguous 0-N? If so, you want:
+
+items:
+  - const: clkout0
+  - const: clkout1
+  - const: clkout2
+  ...
+
+If you want to express any number and order of strings is valid, then you need:
+
+items:
+  enum:
+    - clkout0
+    - clkout1
+    - clkout2
+
+Doing that is discouraged for bindings though. Currently, it will
+generate an error from the meta-schema, but we could change that.
+
+Rob
 
 _______________________________________________
 linux-arm-kernel mailing list
