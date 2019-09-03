@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96B44A6D31
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:44:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB719A6D66
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:58:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=8AllFhFLnpY2psQJ+yitG5vqh05jqbeW2rHqKT9XT8g=; b=AaP
-	i3MIYBmi/uXIu0ue7k/oLI2sBuvl36TxEoyCXLNADDJBX6x+qnCZp6urAzDQoYC2WUuKxHgPPDvUp
-	agbsL8cremWXVC/64oQdRh6/mK3tTW6876Qs4D00MhA5Uwtwa6YOXBLGmiYp+4eEvluf8pSjcV8XS
-	fwH7+llqKvGNrNr5JSTQtHQpM7m24p5zceZkDWLG+r4BDbvisCeZ0C9OeqDKt5NVHtU98Yf+q0sMm
-	rMcSoVh47C4Zgw2NDQvTdiCUD0blQ3Jm5T+ENNVUwAfHuj5aJPLY8XqdqcY+5fpzWSJDaSyA6nozz
-	nGys1qqsbstIn5qJ/hMVvL54HwJ31gg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=EfVfDWrWrfh4z3OastagBCrrAlaT9L2luCYCQWwF8ZU=; b=HJGmblALJnNtJ/
+	25JS5O+LYGcuodRvr6aZOwdcA9W6Wrp7kSSDE6zFjnOFsi16fvyx9Rz59rmcpmdc3ivn52SAJnIIm
+	yqlLlGPRklYBfFDVxiY2uNLkMnPxZ/WD9k80vBJHuq7439Qun+4LhUuEs/+pS15Ibqk3M/JpD9vFC
+	jmzt92XVcdG/FQG9/I/1CWtWN7qsmvWCjKFISFf5rYrQ5FbGcXD/+LJJkaC+a6Rs7rBgiAlz/zAa0
+	x9Y24GtGEK45twAyPFj59GR8HRb7IU4x7uEq67dd7VbGywl3iijg/Ik9cbyjAFVy2iPFVs8uGkMC6
+	tmmD8p40sNZm1RNYQo5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5AyX-0002bZ-FP; Tue, 03 Sep 2019 15:44:09 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5AyN-0002ai-2U
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:44:00 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id DF1D8AB91;
- Tue,  3 Sep 2019 15:43:54 +0000 (UTC)
-Message-ID: <cf743e0a1571c1748588f088cfd9804e8b55c36b.camel@suse.de>
-Subject: PCIe DMA addressing issues on Raspberry Pi 4
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Rob Herring <robh+dt@kernel.org>, "robin.murphy" <robin.murphy@arm.com>
-Date: Tue, 03 Sep 2019 17:43:52 +0200
-User-Agent: Evolution 3.32.4 
+	id 1i5BCG-0007e4-JF; Tue, 03 Sep 2019 15:58:20 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5BBu-0007dU-0i
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:58:00 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3474C344;
+ Tue,  3 Sep 2019 08:57:56 -0700 (PDT)
+Received: from filthy-habits.cambridge.arm.com
+ (filthy-habits.cambridge.arm.com [10.1.197.61])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D4C6C3F246;
+ Tue,  3 Sep 2019 08:57:54 -0700 (PDT)
+From: Marc Zyngier <maz@kernel.org>
+To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ kvm@vger.kernel.org
+Subject: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
+ driven by vcpu_load/put
+Date: Tue,  3 Sep 2019 16:57:47 +0100
+Message-Id: <20190903155747.219802-1-maz@kernel.org>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_084359_403131_96E742AF 
-X-CRM114-Status: GOOD (  10.96  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190903_085758_408359_9C6F1C33 
+X-CRM114-Status: GOOD (  20.29  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,150 +60,292 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Wahren <stefan.wahren@i2se.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- mbrugger <mbrugger@suse.com>, iommu@lists.linux-foundation.org,
- Christoph Hellwig <hch@lst.de>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============6788917076403552274=="
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
+ James Morse <james.morse@arm.com>, Andrew Murray <Andrew.Murray@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+When the VHE code was reworked, a lot of the vgic stuff was moved around,
+but the GICv4 residency code did stay untouched, meaning that we come
+in and out of residency on each flush/sync, which is obviously suboptimal.
 
---===============6788917076403552274==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-VNc7oUE10RoRira+Huej"
+To address this, let's move things around a bit:
 
+- Residency entry (flush) moves to vcpu_load
+- Residency exit (sync) moves to vcpu_put
+- On blocking (entry to WFI), we "put"
+- On unblocking (exit from WFI, we "load"
 
---=-VNc7oUE10RoRira+Huej
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+Because these can nest (load/block/put/load/unblock/put, for example),
+we now have per-VPE tracking of the residency state.
 
-Hi all, sorry for the long read, I kept it as short as possible.
+Additionally, vgic_v4_put gains a "need doorbell" parameter, which only
+gets set to true when blocking because of a WFI. This allows a finer
+control of the doorbell, which now also gets disabled as soon as
+it gets signaled.
 
-So, the wrapper around the PCIe block available on the Raspberry Pi 4 has a=
- bug
-preventing it from accessing anything beyond the first 3G of ram [1]. I'm
-trying to figure out the best way to integrate this upstream.
+Signed-off-by: Marc Zyngier <maz@kernel.org>
+---
+ drivers/irqchip/irq-gic-v4.c       |  7 +++-
+ include/kvm/arm_vgic.h             |  4 +--
+ include/linux/irqchip/arm-gic-v4.h |  2 ++
+ virt/kvm/arm/arm.c                 | 12 ++++---
+ virt/kvm/arm/vgic/vgic-v3.c        |  4 +++
+ virt/kvm/arm/vgic/vgic-v4.c        | 55 ++++++++++++++----------------
+ virt/kvm/arm/vgic/vgic.c           |  4 ---
+ virt/kvm/arm/vgic/vgic.h           |  2 --
+ 8 files changed, 48 insertions(+), 42 deletions(-)
 
-Note that the only thing behind the PCIe bus is an USB3 chip. The bus is no=
-t
-exposed to users directly.
+diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
+index 563e87ed0766..45969927cc81 100644
+--- a/drivers/irqchip/irq-gic-v4.c
++++ b/drivers/irqchip/irq-gic-v4.c
+@@ -141,12 +141,17 @@ static int its_send_vpe_cmd(struct its_vpe *vpe, struct its_cmd_info *info)
+ int its_schedule_vpe(struct its_vpe *vpe, bool on)
+ {
+ 	struct its_cmd_info info;
++	int ret;
+ 
+ 	WARN_ON(preemptible());
+ 
+ 	info.cmd_type = on ? SCHEDULE_VPE : DESCHEDULE_VPE;
+ 
+-	return its_send_vpe_cmd(vpe, &info);
++	ret = its_send_vpe_cmd(vpe, &info);
++	if (!ret)
++		vpe->resident = on;
++
++	return ret;
+ }
+ 
+ int its_invall_vpe(struct its_vpe *vpe)
+diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+index af4f09c02bf1..4dc58d7a0010 100644
+--- a/include/kvm/arm_vgic.h
++++ b/include/kvm/arm_vgic.h
+@@ -396,7 +396,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int irq,
+ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
+ 				 struct kvm_kernel_irq_routing_entry *irq_entry);
+ 
+-void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
+-void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
++int vgic_v4_load(struct kvm_vcpu *vcpu);
++int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db);
+ 
+ #endif /* __KVM_ARM_VGIC_H */
+diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
+index e6b155713b47..ab1396afe08a 100644
+--- a/include/linux/irqchip/arm-gic-v4.h
++++ b/include/linux/irqchip/arm-gic-v4.h
+@@ -35,6 +35,8 @@ struct its_vpe {
+ 	/* Doorbell interrupt */
+ 	int			irq;
+ 	irq_hw_number_t		vpe_db_lpi;
++	/* VPE resident */
++	bool			resident;
+ 	/* VPE proxy mapping */
+ 	int			vpe_proxy_event;
+ 	/*
+diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+index 35a069815baf..4e69268621b6 100644
+--- a/virt/kvm/arm/arm.c
++++ b/virt/kvm/arm/arm.c
+@@ -321,20 +321,24 @@ void kvm_arch_vcpu_blocking(struct kvm_vcpu *vcpu)
+ 	/*
+ 	 * If we're about to block (most likely because we've just hit a
+ 	 * WFI), we need to sync back the state of the GIC CPU interface
+-	 * so that we have the lastest PMR and group enables. This ensures
++	 * so that we have the latest PMR and group enables. This ensures
+ 	 * that kvm_arch_vcpu_runnable has up-to-date data to decide
+ 	 * whether we have pending interrupts.
++	 *
++	 * For the same reason, we want to tell GICv4 that we need
++	 * doorbells to be signalled, should an interrupt become pending.
+ 	 */
+ 	preempt_disable();
+ 	kvm_vgic_vmcr_sync(vcpu);
++	vgic_v4_put(vcpu, true);
+ 	preempt_enable();
+-
+-	kvm_vgic_v4_enable_doorbell(vcpu);
+ }
+ 
+ void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
+ {
+-	kvm_vgic_v4_disable_doorbell(vcpu);
++	preempt_disable();
++	vgic_v4_load(vcpu);
++	preempt_enable();
+ }
+ 
+ int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
+diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+index 8d69f007dd0c..48307a9eb1d8 100644
+--- a/virt/kvm/arm/vgic/vgic-v3.c
++++ b/virt/kvm/arm/vgic/vgic-v3.c
+@@ -664,6 +664,8 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
+ 
+ 	if (has_vhe())
+ 		__vgic_v3_activate_traps(vcpu);
++
++	WARN_ON(vgic_v4_load(vcpu));
+ }
+ 
+ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
+@@ -676,6 +678,8 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
+ 
+ void vgic_v3_put(struct kvm_vcpu *vcpu)
+ {
++	WARN_ON(vgic_v4_put(vcpu, false));
++
+ 	vgic_v3_vmcr_sync(vcpu);
+ 
+ 	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
+diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
+index 477af6aebb97..3a8a28854b13 100644
+--- a/virt/kvm/arm/vgic/vgic-v4.c
++++ b/virt/kvm/arm/vgic/vgic-v4.c
+@@ -85,6 +85,10 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
+ {
+ 	struct kvm_vcpu *vcpu = info;
+ 
++	/* We got the message, no need to fire again */
++	if (!irqd_irq_disabled(&irq_to_desc(irq)->irq_data))
++		disable_irq_nosync(irq);
++
+ 	vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last = true;
+ 	kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
+ 	kvm_vcpu_kick(vcpu);
+@@ -192,20 +196,30 @@ void vgic_v4_teardown(struct kvm *kvm)
+ 	its_vm->vpes = NULL;
+ }
+ 
+-int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu)
++int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db)
+ {
+-	if (!vgic_supports_direct_msis(vcpu->kvm))
++	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
++	struct irq_desc *desc = irq_to_desc(vpe->irq);
++
++	if (!vgic_supports_direct_msis(vcpu->kvm) || !vpe->resident)
+ 		return 0;
+ 
+-	return its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, false);
++	/*
++	 * If blocking, a doorbell is required. Undo the nested
++	 * disable_irq() calls...
++	 */
++	while (need_db && irqd_irq_disabled(&desc->irq_data))
++		enable_irq(vpe->irq);
++
++	return its_schedule_vpe(vpe, false);
+ }
+ 
+-int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
++int vgic_v4_load(struct kvm_vcpu *vcpu)
+ {
+-	int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
++	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
+ 	int err;
+ 
+-	if (!vgic_supports_direct_msis(vcpu->kvm))
++	if (!vgic_supports_direct_msis(vcpu->kvm) || vpe->resident)
+ 		return 0;
+ 
+ 	/*
+@@ -214,11 +228,14 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
+ 	 * doc in drivers/irqchip/irq-gic-v4.c to understand how this
+ 	 * turns into a VMOVP command at the ITS level.
+ 	 */
+-	err = irq_set_affinity(irq, cpumask_of(smp_processor_id()));
++	err = irq_set_affinity(vpe->irq, cpumask_of(smp_processor_id()));
+ 	if (err)
+ 		return err;
+ 
+-	err = its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, true);
++	/* Disabled the doorbell, as we're about to enter the guest */
++	disable_irq(vpe->irq);
++
++	err = its_schedule_vpe(vpe, true);
+ 	if (err)
+ 		return err;
+ 
+@@ -226,9 +243,7 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
+ 	 * Now that the VPE is resident, let's get rid of a potential
+ 	 * doorbell interrupt that would still be pending.
+ 	 */
+-	err = irq_set_irqchip_state(irq, IRQCHIP_STATE_PENDING, false);
+-
+-	return err;
++	return irq_set_irqchip_state(vpe->irq, IRQCHIP_STATE_PENDING, false);
+ }
+ 
+ static struct vgic_its *vgic_get_its(struct kvm *kvm,
+@@ -335,21 +350,3 @@ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int virq,
+ 	mutex_unlock(&its->its_lock);
+ 	return ret;
+ }
+-
+-void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu)
+-{
+-	if (vgic_supports_direct_msis(vcpu->kvm)) {
+-		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
+-		if (irq)
+-			enable_irq(irq);
+-	}
+-}
+-
+-void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu)
+-{
+-	if (vgic_supports_direct_msis(vcpu->kvm)) {
+-		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
+-		if (irq)
+-			disable_irq(irq);
+-	}
+-}
+diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+index 45a870cb63f5..99b02ca730a8 100644
+--- a/virt/kvm/arm/vgic/vgic.c
++++ b/virt/kvm/arm/vgic/vgic.c
+@@ -857,8 +857,6 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
+ {
+ 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+ 
+-	WARN_ON(vgic_v4_sync_hwstate(vcpu));
+-
+ 	/* An empty ap_list_head implies used_lrs == 0 */
+ 	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
+ 		return;
+@@ -882,8 +880,6 @@ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
+ /* Flush our emulation state into the GIC hardware before entering the guest. */
+ void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
+ {
+-	WARN_ON(vgic_v4_flush_hwstate(vcpu));
+-
+ 	/*
+ 	 * If there are no virtual interrupts active or pending for this
+ 	 * VCPU, then there is no work to do and we can bail out without
+diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
+index 83066a81b16a..c7fefd6b1c80 100644
+--- a/virt/kvm/arm/vgic/vgic.h
++++ b/virt/kvm/arm/vgic/vgic.h
+@@ -316,7 +316,5 @@ void vgic_its_invalidate_cache(struct kvm *kvm);
+ bool vgic_supports_direct_msis(struct kvm *kvm);
+ int vgic_v4_init(struct kvm *kvm);
+ void vgic_v4_teardown(struct kvm *kvm);
+-int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu);
+-int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu);
+ 
+ #endif
+-- 
+2.20.1
 
-I see two options:
-
-- Isolate the PCIe block on it's own interconnect. IMO this could be accept=
-able
-  as it's arguable that the bug is not really in the PCIe block.  I set the
-  interconnect's dma-range size to 2GB instead of 3GB as dma masks don't pl=
-ay
-  well with non power of two DMA constraints:
-
-  buggy-scb {
-	compatible =3D "simple-bus";
-	dma-ranges =3D <0x0 0x00000000 0x0 0x00000000 0x800000000>;
-
-	pcie {
-		compatible =3D "brcm,bcm2711-pcie";
-		dma-ranges =3D <0x02000000 0x0 0x00000000 0x0 0x00000000
-			      0x1 0x00000000>;
-		[...]
-
-	};
-  };
-
-  scb {
-	compatible =3D "simple-bus";
-	dma-ranges =3D <0x0 0x00000000 0x0 0x00000000 0xfc0000000>;
-
-	eth0 {
-		[...]
-	};
-
-	[...]
-  };
-
-  With this setup the PCIe devices should behave correctly as long as they
-  don't play with their own DMA masks.
-
-- Configure PCIe's inbound view of memory taking into account the buggy
-  interconnect:
-
-  scb {
-	compatible =3D "simple-bus";
-	dma-ranges =3D <0x0 0x00000000 0x0 0x00000000 0xfc000000>;
-
-	pcie {
-		compatible =3D "brcm,bcm2711-pcie";
-		dma-ranges =3D <0x02000000 0x0 0x00000000 0x0 0x00000000
-			      0x0 0x80000000>;
-		[...]
-
-	};
-
-	eth0 {
-		[...]
-	};
-
-	[...]
-  };
-
-  The downside of this is that of_dma_configure() doesn't play well with PC=
-I
-  devices. of_dma_configure() expects a device's OF node, yet the PCI core
-  passes the bridge's OF node, as the device has none. The result is
-  of_dma_configure() ignores PCI's dma-ranges. Solving this is not trivial.
-  IMO the simplest solution would be to create a distinct OF node on PCI
-  bridges, child of the actual PCI root complex.  FYI this was already an i=
-ssue
-  some years ago [2].
-
-  This solution also suffers from devices setting their own DMA masks.
-
-If you're curious abot the downstream kernel, they use their custom buffer
-bouncing code, which AFAIK is something we're trying to get rid of.
-
-Any comments? Alternative solutions?
-
-Thanks,
-Nicolas
-
-[1] https://www.spinics.net/lists/arm-kernel/msg740693.html
-[2] https://patchwork.kernel.org/patch/9650345/#20294961
-
-
---=-VNc7oUE10RoRira+Huej
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1uijgACgkQlfZmHno8
-x/4ncwf/bFv3AD0ndtH89sJxuLuYsOfE/0zdO83AOPyEGnYUEp8yPyov0zO43okd
-oQ2rfzZl8jALpzSy936hXZIIcJmWuOaTApRMaf14Rumq/RKR1zIG5e69ZlTskd5s
-/ar4nASgz8/9ShY6LASonoXaTSSkbsOEWhBJPQjrS4Rf/Q9ggnLuzapHI6pDGdrJ
-9DupdCcl7v1+Mfa+erRSGYrNgPWMnt85PaVQT2I+ICwc0UDWDND2hgIbuHsxnBre
-1JFn0x26TIpqUCqegsZxOJOjNCQS+bTvoYzoi/xAhyuMMt+DFR7Jhk+l1TRrB/qs
-x7bWu1wcIdB+gfhyeOrJUjm2qd5nFw==
-=f55V
------END PGP SIGNATURE-----
-
---=-VNc7oUE10RoRira+Huej--
-
-
-
---===============6788917076403552274==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6788917076403552274==--
-
-
