@@ -2,86 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7C62A6267
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:27:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8586DA6273
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:28:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Jaz4WbiwESUFeKBbBKqPAMADHZ8Yos2CtGycE2HhFL8=; b=C8I8HNWl96T7CwupLRENE7RWf
-	sCs1AWTPPryqoyFEuaV2lEJ7uO12TbPDCoauQ462LLVVl5Jw7QsU2FycPUKczkIi+iC4N8t+I35nW
-	bsAb5iD9nu50ivqv3Iljx3B/Si0MSSzDxNbGHS6A+VUNXjVPrENnUGtvxUWMNGxU+TcnkfxhLquOR
-	QzotCvb7k06ctDrB/TCJIaQzOH+iv67JQVr1ax15rVCHM14bJ+9Vj0JswqiW+Lp6HZ4FnVPTAh3vv
-	QpgkmXBvTwC5+A39oMrltTHOowYBY1kqqfUUmpzAG4nq4xItrcX8RnkFiKR4yXJqXBCHEkRXyQROO
-	5rJkdRhAQ==;
+	 bh=KB9x5qu8zW2hvA49wjv8q+s9HQ/+LIezcN0l/sl35uM=; b=WzYRyM08AmYqlxRQ1epozJcIM
+	hvsBzRngQQmi/OzFinBgihIxzSXsJCCrJ0PMST0KhWfgVzRjjnUJrAYGDV42x/nTAWttEDxiFbvSI
+	HwiScHcQhJBW+2p1UpLdQYhu4Sxpuac4l/0S3b/ay22sE6jEiuNANevb18bEni3ZN+diTO28XD1AX
+	5W69f6sm4AffQ5EM0cp+tCN3ek2qjWKp9JJn5Xiqx/PLBVQounBTScl1Brew0zB6dT7ILQWYXlpWI
+	l5ZTA83/DuhyNK9S/VlshKc+kqhH71eEBb9P3kJ4OWWvD61//2MZTDbho1D4qyUj2yiyi8F6lRSB3
+	C0rzs8PqA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53DJ-0005cJ-BV; Tue, 03 Sep 2019 07:26:53 +0000
-Received: from lelv0143.ext.ti.com ([198.47.23.248])
+	id 1i53FJ-00060f-R1; Tue, 03 Sep 2019 07:28:58 +0000
+Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53Cd-0005bo-9n
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:26:13 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x837Pus7129827;
- Tue, 3 Sep 2019 02:25:56 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567495556;
- bh=DTmLVy2ziaAjBJ4cNhFcYLIyv/5BpnQYc8ZCnq8IR9Y=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=SrANXdEFr3BINBZfGGN/JCp6nYyD/6bmihj8iUe3D4ISiL5Xv9FF3xmQUg2GyEeEQ
- kVwPsixx/oquGIU0eTuvlE7yr22TQbOEYFfi5VhBqIQ5Bmh3vS6d3VcPISZLgqyL20
- Y6aE2Qr4ttVQgfLJwYegcNktpGiNdI19RaoAZqzk=
-Received: from DLEE110.ent.ti.com (dlee110.ent.ti.com [157.170.170.21])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x837Putu117512
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Tue, 3 Sep 2019 02:25:56 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE110.ent.ti.com
- (157.170.170.21) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 3 Sep
- 2019 02:25:55 -0500
-Received: from lelv0326.itg.ti.com (10.180.67.84) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Tue, 3 Sep 2019 02:25:55 -0500
-Received: from [127.0.0.1] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x837Prlb110987;
- Tue, 3 Sep 2019 02:25:53 -0500
-Subject: Re: [PATCHv3 01/10] dt-bindings: omap: add new binding for PRM
- instances
-To: Rob Herring <robh@kernel.org>
-References: <20190830121816.30034-1-t-kristo@ti.com>
- <20190830121816.30034-2-t-kristo@ti.com> <20190902042631.GA22055@bogus>
-From: Tero Kristo <t-kristo@ti.com>
-Message-ID: <e8d700cd-8f3c-5cea-a022-b20a595fc1e1@ti.com>
-Date: Tue, 3 Sep 2019 10:25:52 +0300
+ id 1i53F4-000603-US
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:28:45 +0000
+Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
+ by metis.ext.pengutronix.de with esmtps
+ (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
+ (envelope-from <o.rempel@pengutronix.de>)
+ id 1i53F1-0000LY-T2; Tue, 03 Sep 2019 09:28:39 +0200
+Subject: Re: [PATCH V2 2/5] input: keyboard: imx_sc: Add i.MX system
+ controller power key support
+To: Anson Huang <anson.huang@nxp.com>, "robh+dt@kernel.org"
+ <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "dmitry.torokhov@gmail.com" <dmitry.torokhov@gmail.com>,
+ Aisheng Dong <aisheng.dong@nxp.com>,
+ "ulf.hansson@linaro.org" <ulf.hansson@linaro.org>,
+ Andy Duan <fugang.duan@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Daniel Baluta <daniel.baluta@nxp.com>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "mripard@kernel.org" <mripard@kernel.org>, "olof@lixom.net"
+ <olof@lixom.net>, "arnd@arndb.de" <arnd@arndb.de>,
+ "jagan@amarulasolutions.com" <jagan@amarulasolutions.com>,
+ "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
+ "dinguyen@kernel.org" <dinguyen@kernel.org>,
+ "marcin.juszkiewicz@linaro.org" <marcin.juszkiewicz@linaro.org>,
+ "stefan@agner.ch" <stefan@agner.ch>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "andriy.shevchenko@linux.intel.com" <andriy.shevchenko@linux.intel.com>,
+ "yuehaibing@huawei.com" <yuehaibing@huawei.com>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "ronald@innovation.ch" <ronald@innovation.ch>,
+ "m.felsch@pengutronix.de" <m.felsch@pengutronix.de>,
+ Jacky Bai <ping.bai@nxp.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-input@vger.kernel.org" <linux-input@vger.kernel.org>
+References: <1567519424-32271-1-git-send-email-Anson.Huang@nxp.com>
+ <1567519424-32271-2-git-send-email-Anson.Huang@nxp.com>
+ <6d8dd5df-02da-b4cd-e61d-a4a15d0bf0c8@pengutronix.de>
+ <DB3PR0402MB391602C6B425DD7EBFB9AF1DF5B90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Oleksij Rempel <o.rempel@pengutronix.de>
+Message-ID: <dbe0ba0a-29bc-ee96-541d-244b3dbf0b81@pengutronix.de>
+Date: Tue, 3 Sep 2019 09:28:36 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190902042631.GA22055@bogus>
+In-Reply-To: <DB3PR0402MB391602C6B425DD7EBFB9AF1DF5B90@DB3PR0402MB3916.eurprd04.prod.outlook.com>
 Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
+X-SA-Exim-Mail-From: o.rempel@pengutronix.de
+X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
+ SAEximRunCond expanded to false
+X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_002611_472076_9B9797A7 
-X-CRM114-Status: GOOD (  18.56  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190903_002843_160438_6CB0E063 
+X-CRM114-Status: GOOD (  30.45  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,123 +101,290 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, tony@atomide.com, p.zabel@pengutronix.de,
- ssantosh@kernel.org, linux-omap@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: dl-linux-imx <linux-imx@nxp.com>
 Content-Transfer-Encoding: 7bit
 Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/09/2019 16:39, Rob Herring wrote:
-> On Fri, Aug 30, 2019 at 03:18:07PM +0300, Tero Kristo wrote:
->> Add new binding for OMAP PRM (Power and Reset Manager) instances. Each
->> of these will act as a power domain controller and potentially as a reset
->> provider.
+
+
+On 03.09.19 08:48, Anson Huang wrote:
+> Hi, Oleksij
+> 
+>> On 03.09.19 16:03, Anson Huang wrote:
+>>> i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
+>>> inside, the system controller is in charge of controlling power, clock
+>>> and power key etc..
+>>>
+>>> Adds i.MX system controller power key driver support, Linux kernel has
+>>> to communicate with system controller via MU (message unit) IPC to get
+>>> power key's status.
+>>>
+>>> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+>>> ---
+>>> Changes since V1:
+>>> 	- remove "wakeup-source" property operation, scu power key uses
+>> generic scu irq,
+>>> 	  no need to have this property for device wakeup operation.
+>>> ---
+>>>    drivers/input/keyboard/Kconfig         |   7 ++
+>>>    drivers/input/keyboard/Makefile        |   1 +
+>>>    drivers/input/keyboard/imx_sc_pwrkey.c | 169
+>> +++++++++++++++++++++++++++++++++
+>>>    3 files changed, 177 insertions(+)
+>>>    create mode 100644 drivers/input/keyboard/imx_sc_pwrkey.c
+>>>
+>>> diff --git a/drivers/input/keyboard/Kconfig
+>>> b/drivers/input/keyboard/Kconfig index 2e6d288..3aaeb9c 100644
+>>> --- a/drivers/input/keyboard/Kconfig
+>>> +++ b/drivers/input/keyboard/Kconfig
+>>> @@ -469,6 +469,13 @@ config KEYBOARD_IMX
+>>>    	  To compile this driver as a module, choose M here: the
+>>>    	  module will be called imx_keypad.
+>>>
+>>> +config KEYBOARD_IMX_SC_PWRKEY
+>>> +	tristate "IMX SCU Power Key Driver"
+>>> +	depends on IMX_SCU
+>>> +	help
+>>> +	  This is the system controller powerkey driver for NXP i.MX SoCs with
+>>> +	  system controller inside.
 >>
+>> The KEY is configurable over devicetree, why is it called PWRKEY? It looks for
+>> me as generic SCU key handler.
 > 
-> Converting this to schema would be nice.
+> We always use it as power key, NOT a generic key, as it has HW function designed
+> for power key purpose.
 
-Do you have documentation about schema somewhere? Basically what I need 
-to do to fix this.
-
-> 
->> Signed-off-by: Tero Kristo <t-kristo@ti.com>
->> ---
->>   .../devicetree/bindings/arm/omap/prm-inst.txt | 31 +++++++++++++++++++
-> 
-> bindings/reset/
-
-I did not put this under reset, because this is basically a 
-multi-purpose function. Reset just happens to be the first functionality 
-it is going to provide. It will be followed by power domain support 
-later on.
-
-Any thoughts?
+gpio-key driver is mostly used for power or reboot key. And it is still called gpio-key 
+driver. If it is used for power key only, why is it configurable? I can configure it as 
+KEY_ENTER or some thing different. This driver has not KEY_POWER specific any thing.
 
 > 
->>   1 file changed, 31 insertions(+)
->>   create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
 >>
->> diff --git a/Documentation/devicetree/bindings/arm/omap/prm-inst.txt b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
->> new file mode 100644
->> index 000000000000..7c7527c37734
->> --- /dev/null
->> +++ b/Documentation/devicetree/bindings/arm/omap/prm-inst.txt
->> @@ -0,0 +1,31 @@
->> +OMAP PRM instance bindings
->> +
->> +Power and Reset Manager is an IP block on OMAP family of devices which
->> +handle the power domains and their current state, and provide reset
->> +handling for the domains and/or separate IP blocks under the power domain
->> +hierarchy.
->> +
->> +Required properties:
->> +- compatible:	Must be one of:
->> +		"ti,am3-prm-inst"
->> +		"ti,am4-prm-inst"
->> +		"ti,omap4-prm-inst"
->> +		"ti,omap5-prm-inst"
->> +		"ti,dra7-prm-inst"
-> 
-> '-inst' seems a bit redundant.
-
-ti,xyz-prm is already reserved by the parent node of all these.
-
-The hierarchy is basically like this (omap4 as example):
-
-prm: prm@4a306000 {
-   compatible = "ti,omap4-prm";
-   ...
-
-   prm_dsp: prm@400 {
-     compatible = "ti,omap4-prm-inst";
-     ...
-   };
-
-   prm_device: prm@1b00 {
-     compatible = "ti,omap4-prm-inst";
-     ...
-   };
-
-   ...
-};
-
-
-
-> 
->> +- reg:		Contains PRM instance register address range
->> +		(base address and length)
->> +
->> +Optional properties:
->> +- #reset-cells:	Should be 1 if the PRM instance in question supports resets.
->> +- clocks:	Associated clocks for the reset signals if any. Certain reset
->> +		signals can't be toggled properly without functional clock
->> +		being active for them.
->> +
->> +Example:
->> +
->> +prm_dsp2: prm@1b00 {
-> 
-> reset-controller@...
-
-Well, as said, the same node is going to be also power domain provider 
-later on...
-
-> 
->> +	compatible = "ti,dra7-prm-inst";
->> +	reg = <0x1b00 0x40>;
->> +	#reset-cells = <1>;
->> +	clocks = <&dsp2_clkctrl DRA7_DSP2_MMU0_DSP2_CLKCTRL 0>;
->> +};
->> -- 
->> 2.17.1
+>>>    config KEYBOARD_NEWTON
+>>>    	tristate "Newton keyboard"
+>>>    	select SERIO
+>>> diff --git a/drivers/input/keyboard/Makefile
+>>> b/drivers/input/keyboard/Makefile index 9510325..9ea5585 100644
+>>> --- a/drivers/input/keyboard/Makefile
+>>> +++ b/drivers/input/keyboard/Makefile
+>>> @@ -29,6 +29,7 @@ obj-$(CONFIG_KEYBOARD_HIL)		+= hil_kbd.o
+>>>    obj-$(CONFIG_KEYBOARD_HIL_OLD)		+= hilkbd.o
+>>>    obj-$(CONFIG_KEYBOARD_IPAQ_MICRO)	+= ipaq-micro-keys.o
+>>>    obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o
+>>> +obj-$(CONFIG_KEYBOARD_IMX_SC_PWRKEY)	+= imx_sc_pwrkey.o
+>>>    obj-$(CONFIG_KEYBOARD_HP6XX)		+= jornada680_kbd.o
+>>>    obj-$(CONFIG_KEYBOARD_HP7XX)		+= jornada720_kbd.o
+>>>    obj-$(CONFIG_KEYBOARD_LKKBD)		+= lkkbd.o
+>>> diff --git a/drivers/input/keyboard/imx_sc_pwrkey.c
+>>> b/drivers/input/keyboard/imx_sc_pwrkey.c
+>>> new file mode 100644
+>>> index 0000000..53aa9a4
+>>> --- /dev/null
+>>> +++ b/drivers/input/keyboard/imx_sc_pwrkey.c
+>>> @@ -0,0 +1,169 @@
+>>> +// SPDX-License-Identifier: GPL-2.0
+>>> +/*
+>>> + * Copyright 2019 NXP.
+>>> + */
+>>> +
+>>> +#include <linux/device.h>
+>>> +#include <linux/err.h>
+>>> +#include <linux/firmware/imx/sci.h>
+>>> +#include <linux/init.h>
+>>> +#include <linux/input.h>
+>>> +#include <linux/interrupt.h>
+>>> +#include <linux/jiffies.h>
+>>> +#include <linux/kernel.h>
+>>> +#include <linux/module.h>
+>>> +#include <linux/of.h>
+>>> +#include <linux/of_address.h>
+>>> +#include <linux/platform_device.h>
+>>> +
+>>> +#define DEBOUNCE_TIME	100
+>>> +#define REPEAT_INTERVAL	60
+>>> +
+>>> +#define SC_IRQ_BUTTON		1
+>>> +#define SC_IRQ_GROUP_WAKE	3
+>>> +#define IMX_SC_MISC_FUNC_GET_BUTTON_STATUS	18
+>>> +
+>>> +struct imx_pwrkey_drv_data {
+>>> +	int keycode;
+>>> +	bool keystate;  /* 1: pressed, 0: release */
+>>> +	bool delay_check;
+>>> +	struct delayed_work check_work;
+>>> +	struct input_dev *input;
+>>> +};
+>>> +
+>>> +struct imx_sc_msg_pwrkey {
+>>> +	struct imx_sc_rpc_msg hdr;
+>>> +	u8 state;
+>>> +};
+>>> +static struct imx_pwrkey_drv_data *pdata;
 >>
->> --
+>> Why is it global struct? It seems to be flexible configurable over devicetree.
+>> So I would assume it should be able to handle more then one button. Please
+>> remove global variables, make it allocatable per OF node.
+> 
+> There is ONLY one button available for SC key, but yes, I think I can make the structure
+> private and get all necessary data from the structure using container_of.
+
+And we will never need more then 640 kB RAM ;)
+https://en.wikiquote.org/wiki/Talk:Bill_Gates
+
+> 
+>>
+>> Please use different name "pdata" is usually used as platform data. Please,
+>> use "priv".
+> 
+> OK.
+> 
+>>
+>>> +static struct imx_sc_ipc *pwrkey_ipc_handle;
+>>
+>> same as before, no global variables.
+> 
+> Will move it into private platform data structure.
+> 
+>>
+>>> +
+>>> +static int imx_sc_pwrkey_notify(struct notifier_block *nb,
+>>> +				unsigned long event, void *group) {
+>>> +	if ((event & SC_IRQ_BUTTON) && (*(u8 *)group ==
+>> SC_IRQ_GROUP_WAKE)
+>>> +	    && !pdata->delay_check) {
+>>> +		pdata->delay_check = 1;
+>>> +		schedule_delayed_work(&pdata->check_work,
+>>> +				      msecs_to_jiffies(REPEAT_INTERVAL));
+>>> +	}
+>>> +
+>>> +	return 0;
+>>> +}
+>>> +
+>>> +static void imx_sc_check_for_events(struct work_struct *work) {
+>>> +	struct input_dev *input = pdata->input;
+>>> +	struct imx_sc_msg_pwrkey msg;
+>>> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
+>>> +	bool state;
+>>> +
+>>> +	hdr->ver = IMX_SC_RPC_VERSION;
+>>> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
+>>> +	hdr->func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS;
+>>> +	hdr->size = 1;
+>>> +
+>>> +	/*
+>>> +	 * Current SCU firmware does NOT have return value for
+>>> +	 * this API, that means it is always successful.
+>>> +	 */
+>>
+>> It is not true for the kernel part:
+>> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Felixir.
+>> bootlin.com%2Flinux%2Flatest%2Fsource%2Fdrivers%2Ffirmware%2Fimx%2F
+>> imx-
+>> scu.c%23L157&amp;data=02%7C01%7Canson.huang%40nxp.com%7C7a5ed3
+>> ef3b2541e61be808d7303810a9%7C686ea1d3bc2b4c6fa92cd99c5c301635%7C
+>> 0%7C0%7C637030889669489141&amp;sdata=d3uw6x6WCPeavJu3QYf9o9cxx
+>> Rx4mJar04fQFLF9EhE%3D&amp;reserved=0
+>>
+>> imx_scu_call_rpc() may fail in different ways and provide proper error value.
+>> Please use it.
+> 
+> There are about 3 APIs are special, this API is one of them, this API has no return value
+> from SCU FW API, but it has response data from it, so that means if we set the response
+> to false, the stack will be free and mailbox will have NULL pointer issue when response
+> data passed from SCU FW. If we set the response to true, as the SCU FW has no return value,
+> the return value will be the msg->func which will be already failed, that is why we have to skip
+> the return value check. This is one restriction/bug of SCU FW, we will notify SCU FW owner to
+> fix/improve.
+
+Ok, I see. imx_scu_call_rpc() can return kernel side errors, for example from imx-scu.c 
+framework EINVAL or ETIMEDOUT or what ever error mbox framework may also provide. 
+Aaaannnndd... it can extract an error from SCU package and return it over same way as 
+other errors.
+
+And current SCU version has some bugs, so it is providing wrong error value. Soo... as 
+usual the NXP has decided to make the linux kernel a bit more worse to make the SCU 
+firmware happy? Is it what you trying to describe? Really ?! :D
+
+Please. Fix the SCU first. The provide fixed kernel patch.
+
+>>
+>>> +	imx_scu_call_rpc(pwrkey_ipc_handle, &msg, true); > +	state =
+>> msg.state;
+>>
+>> the conversation u8 to bool should be done here.
+> 
+> OK.
+> 
+>>
+>>> +
+>>> +	if (!state && !pdata->keystate)
+>>> +		state = true;
+>>> +
+>>> +	if (state ^ pdata->keystate) {
+>>> +		pm_wakeup_event(input->dev.parent, 0);
+>>> +		pdata->keystate = !!state;
+>>
+>> 		the state is already bool. Why do you need extra
+>> conversations?
+> 
+> Will remove it.
+> 
+>>
+>>> +		input_event(input, EV_KEY, pdata->keycode, !!state);
+>>
+>> same here.
+> 
+> Will remove it.
+> 
+>>
+>>> +		input_sync(input);
+>>> +		if (!state)
+>>> +			pdata->delay_check = 0;
+>>> +		pm_relax(pdata->input->dev.parent);
+>>> +	}
+>>> +
+>>> +	if (state)
+>>> +		schedule_delayed_work(&pdata->check_work,
+>>> +				      msecs_to_jiffies(DEBOUNCE_TIME)); }
+>>> +
+>>> +static struct notifier_block imx_sc_pwrkey_notifier = {
+>>> +	.notifier_call = imx_sc_pwrkey_notify, };
+>>> +
+>>> +static int imx_sc_pwrkey_probe(struct platform_device *pdev) {
+>>> +	struct device_node *np = pdev->dev.of_node;
+>>> +	struct input_dev *input;
+>>> +	int ret;
+>>> +
+>>> +	ret = imx_scu_get_handle(&pwrkey_ipc_handle);
+>>> +	if (ret)
+>>> +		return ret;
+>>> +
+>>> +	pdata = devm_kzalloc(&pdev->dev, sizeof(*pdata), GFP_KERNEL);
+>>> +	if (!pdata)
+>>> +		return -ENOMEM;
+>>> +
+>>> +	if (of_property_read_u32(np, "linux,keycode", &pdata->keycode) > +
+>> 		pdata->keycode = KEY_POWER;
+>>
+>> According binding documentation, linux,keycode is requered parameter, in
+>> this case you should fail if it is not set.
+> 
+> Agreed, will add it in V3.
+> 
+> Thanks,
+> Anson.
 > 
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+Kind regards,
+Oleksij Rempel
+
+-- 
+Pengutronix e.K.                           |                             |
+Industrial Linux Solutions                 | http://www.pengutronix.de/  |
+Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
+Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
 
 _______________________________________________
 linux-arm-kernel mailing list
