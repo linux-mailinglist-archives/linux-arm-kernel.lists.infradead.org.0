@@ -2,60 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F2A87A76AB
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 00:04:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 95F7AA76B0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 00:07:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oTyJjT11h1s4gPEjAF/6UEusAjQtQR3rNMgIJ73BXfo=; b=R4LAOHwX9KeVEU
-	lE0kltbHm3MMc1IH4v8+ZkhOtIBtJ4Rntfdt9SgAoePgtBUfqdZB8O9XsmJEYJGXD5EMf7/RNMaMq
-	QJ4AmfH1lOSp/Mf1C7o1BynO4RXqR2D+TIZ2V3wZgHgNxxZsKnIG+nNJ/XtAbvaUxnZLkLDYaQgXb
-	Xzck1h1SVt1dJjqS2iB7pKW9pRPnnKu1FYGhIAzmjX5dL8A52aD76zFIXh2N3YdR1s/gIk2faeGMP
-	leyWXeVeTDWG4UumCiics1GVQdBuGoLSmTIsaMEpA0PG2qInJxRKM2OTkomqlXbDG9yVw4wU/JURc
-	dk4HM4XK0mZtr1SbiQ2Q==;
+	List-Owner; bh=vR97ZELnYU+6Jrhd6l86Hcp4I+HJIjKQd9CH/d3IApo=; b=YRns8+p45C+70b
+	01xdfsOoO0ob2NQE2nq2wzncaQ8qqk29OKE6VpZj3dX8UZnl0+rEDfqP78EV0lgbTnegEr7A5TXeL
+	zXrrbXwZ/e5G9dDc3Tg1UjODJZGPxXKZXx3ssSwhaluVi37hZ+WA27ZtcmD3yyqiOgO9b/z4rOVik
+	YPdC615syiv1vS6pc3ix9pgoKVaUODQfpcdda5eXgJh3LEo8Qk7cW9/6QY/bdWiUM2gopuy/GrHa0
+	PpyZ7jMGhNO2eMLTNaUQOrCIiJIV8QvBKpe/UCvqQrl8h1Mflws9eT3sv/zYrL6HX/4QtgyJv9Gue
+	0JjrKUJ59kWaKnF092Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5GuZ-0004SE-8Q; Tue, 03 Sep 2019 22:04:27 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5GuO-0004Rs-7Y
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 22:04:17 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BEB46337;
- Tue,  3 Sep 2019 15:04:14 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 35BCF3F718;
- Tue,  3 Sep 2019 15:04:14 -0700 (PDT)
-Date: Tue, 3 Sep 2019 23:04:12 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
-Message-ID: <20190903220412.GU9720@e119886-lin.cambridge.arm.com>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-4-will@kernel.org>
- <20190903060011.GA60737@archlinux-threadripper>
- <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
- <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
- <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
- <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
- <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
+	id 1i5Gxi-0005vM-81; Tue, 03 Sep 2019 22:07:42 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5GxT-0005v1-49
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 22:07:28 +0000
+Received: by mail-pf1-x443.google.com with SMTP id w16so11767319pfn.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 15:07:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=Xyqj5HyWdFbW4BPgeZq1CM5418QyoyNXiQU5VxTQbtc=;
+ b=nsA6l+Ha2FFi4VBb0F0uWiZiigDZwKek/olDL51vD8SpAe8XFT/s4OpuVKir4GbSx4
+ rXcYC1/+VhWmsT2aAz0jiI4lOkSqLWoRZBV+jGc/tAW+VQQF+7gYUcD15KCsiQLT6kzC
+ AEeplgAuLFvEK4J9o/C6X88Rpv0hvWujXLib3Dq9YVCYCMLqKvLfb/Uv4OPQJCw5yXC2
+ 5YAmHCKpXKXEyAIssble4tDsISkB9TRIEJmp0NT0VdKpZap55VBhFIsAOPZ5gTWhTi4A
+ Ll05VUT1pAV/a0hdziLPiqRfi73fvocQBsrH8ilBRE7W5OxmcyDUqUt4DTVKFDkS0yF4
+ k3gg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=Xyqj5HyWdFbW4BPgeZq1CM5418QyoyNXiQU5VxTQbtc=;
+ b=KEM/qjs5wVS8GVyPnZRkB8x4RqnKhM2cE9RcH1F6sjG5S3RMVApn7MC/j3ybquet1L
+ 0+7I/PEq6GMh69Axjqf3I5gJiyP9BtFDmhbnoQV3x9OCYRXkQgPlhkkQprcS4hEmCVSy
+ 0o/ORlA6n8UvF03zamGS9Yy9swRFAW49JE81gUitn1+HFJ5+ADUFKA6WAi5UWkAGuQ9z
+ NQyhEgVVZMzh8sbBRKYWkDltxTYcyf7qCNOFLHGoVKbLEnOUBLC40w6a2st0PJ2vS3Ej
+ GEN9s3mt/qtazgDasRffmUQKmJ1NxMSwmavti3CdXKDFXVA7bOAbDvlZgjt8+f0iy3o2
+ o9Ew==
+X-Gm-Message-State: APjAAAVLeXQ07IbUeozTvtYnQIEN/k0ui8mta6VWizqCDKp6O3ApLnmC
+ Pf/61lPdF90RiFBb3p8ExlufNQ==
+X-Google-Smtp-Source: APXvYqxsSRqBiVf5iRXpEV7HJElzXLdICeegbw39QL0RCNGLwECf6l/l16uZspZ0J4FdMyte/RTmMg==
+X-Received: by 2002:a62:7641:: with SMTP id r62mr41077659pfc.201.1567548446176; 
+ Tue, 03 Sep 2019 15:07:26 -0700 (PDT)
+Received: from xps15 (S0106002369de4dac.cg.shawcable.net. [68.147.8.254])
+ by smtp.gmail.com with ESMTPSA id 74sm3173206pfy.78.2019.09.03.15.07.24
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 03 Sep 2019 15:07:25 -0700 (PDT)
+Date: Tue, 3 Sep 2019 16:07:23 -0600
+From: Mathieu Poirier <mathieu.poirier@linaro.org>
+To: Leo Yan <leo.yan@linaro.org>
+Subject: Re: [PATCH v1 2/3] perf cs-etm: Add callchain to instruction sample
+Message-ID: <20190903220723.GC25787@xps15>
+References: <20190830062421.31275-1-leo.yan@linaro.org>
+ <20190830062421.31275-3-leo.yan@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190830062421.31275-3-leo.yan@linaro.org>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_150416_364368_44CE437A 
-X-CRM114-Status: GOOD (  15.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_150727_200066_52372AC7 
+X-CRM114-Status: GOOD (  23.25  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,153 +98,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
- Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <Robert.Walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 05:37:55PM +0100, Will Deacon wrote:
-> On Tue, Sep 03, 2019 at 04:31:20PM +0100, Andrew Murray wrote:
-> > On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
-> > > On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
-> > > > Does it work if the only thing you change is the toolchain, and use GCC
-> > > > instead? 
-> > > 
-> > > Yup.
-> > 
-> > Also this is Clang generation:
-> > 
-> > ffff8000100f2700 <__ptrace_link>:
-> > ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
-> > ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
-> > ffff8000100f2708:       eb09011f        cmp     x8, x9
-> > ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
-> > ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
-> > ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
-> > ffff8000100f2718:       f9000528        str     x8, [x9, #8]
-> > ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
-> > ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
-> > ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
-> > ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
-> > ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
-> > ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
-> > ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
-> > ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
-> > ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
-> > ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
-> > ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
-> > ffff8000100f2748:       b828005f        stadd   w8, [x2]
-> > ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
-> > ffff8000100f2750:       d65f03c0        ret
-> > ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
-> > ...
-> > 
-> > This looks like the default path (before we write over it) will take you to
-> > the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
-> > least not what we expected to see. Also why 4 branches?
+On Fri, Aug 30, 2019 at 02:24:20PM +0800, Leo Yan wrote:
+> Firstly, this patch adds support for the thread stack; when every branch
+> packet is coming we will push or pop the stack based on the sample
+> flags.
 > 
-> So I reproduced this with a silly atomic_inc wrapper:
-> 
-> void will_atomic_inc(atomic_t *v)
-> {
->         atomic_inc(v);
-> }
-> 
-> Compiles to:
-> 
-> 0000000000000018 <will_atomic_inc>:
->   18:	14000004 	b	28 <will_atomic_inc+0x10>
->   1c:	14000001 	b	20 <will_atomic_inc+0x8>
->   20:	14000005 	b	34 <will_atomic_inc+0x1c>
->   24:	14000001 	b	28 <will_atomic_inc+0x10>
->   28:	52800028 	mov	w8, #0x1                   	// #1
->   2c:	b828001f 	stadd	w8, [x0]
->   30:	d65f03c0 	ret
->   34:	14000027 	b	d0 <dump_kernel_offset+0x60>
->   38:	d65f03c0 	ret
-> 
-> which is going to explode.
+> Secondly, based on the thread stack we can synthesize call chain for the
+> instruction sample, this can be used by itrace option '--itrace=g'.
+>
 
-I've come up with a simple reproducer for this issue:
-
-static bool branch_jump()
-{
-        asm_volatile_goto(
-                "1: b %l[l_yes2]"
-                 : : : : l_yes2);
-
-        return false;
-l_yes2:
-        return true;
-}
-
-static bool branch_test()
-{
-        return (!branch_jump() && !branch_jump());
-}
-
-void andy_test(int *v)
-{
-        if (branch_test())
-                *v = 0xff;
-}
-
-This leads to the following (it shouldn't do anything):
-
-0000000000000000 <andy_test>:
-   0:   14000004        b       10 <andy_test+0x10>
-   4:   14000001        b       8 <andy_test+0x8>
-   8:   14000004        b       18 <andy_test+0x18>
-   c:   14000001        b       10 <andy_test+0x10>
-  10:   52801fe8        mov     w8, #0xff                       // #255
-  14:   b9000008        str     w8, [x0]
-  18:   d65f03c0        ret
-
-The issue goes away with any of the following hunks:
-
-
-@@ -55,7 +55,7 @@ static bool branch_jump()
+In most cases using the word "secondly" is a good indication the patch should be
+split.
  
- static bool branch_test()
- {
--       return (!branch_jump() && !branch_jump());
-+       return (!branch_jump());
- }
- 
- void andy_test(int *v)
-
-
-or:
-
-
-@@ -53,14 +53,10 @@ static bool branch_jump()
-         return true;
- }
- 
--static bool branch_test()
--{
--       return (!branch_jump() && !branch_jump());
--}
- 
- void andy_test(int *v)
- {
--       if (branch_test())
-+       if (!branch_jump() && !branch_jump())
-                *v = 0xff;
- }
-
-
-
-Thanks,
-
-Andrew Murray
-
+> Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> ---
+>  tools/perf/util/cs-etm.c | 74 +++++++++++++++++++++++++++++++++++++++-
+>  1 file changed, 73 insertions(+), 1 deletion(-)
 > 
-> Will
+> diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> index 882a0718033d..ad573d3bd305 100644
+> --- a/tools/perf/util/cs-etm.c
+> +++ b/tools/perf/util/cs-etm.c
+> @@ -17,6 +17,7 @@
+>  #include <stdlib.h>
+>  
+>  #include "auxtrace.h"
+> +#include "callchain.h"
+>  #include "color.h"
+>  #include "cs-etm.h"
+>  #include "cs-etm-decoder/cs-etm-decoder.h"
+> @@ -69,6 +70,7 @@ struct cs_etm_traceid_queue {
+>  	size_t last_branch_pos;
+>  	union perf_event *event_buf;
+>  	struct thread *thread;
+> +	struct ip_callchain *chain;
+>  	struct branch_stack *last_branch;
+>  	struct branch_stack *last_branch_rb;
+>  	struct cs_etm_packet *prev_packet;
+> @@ -246,6 +248,16 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
+>  	if (!tidq->prev_packet)
+>  		goto out_free;
+>  
+> +	if (etm->synth_opts.callchain) {
+> +		size_t sz = sizeof(struct ip_callchain);
+> +
+> +		/* Add 1 to callchain_sz for callchain context */
+> +		sz += (etm->synth_opts.callchain_sz + 1) * sizeof(u64);
+> +		tidq->chain = zalloc(sz);
+> +		if (!tidq->chain)
+> +			goto out_free;
+> +	}
+> +
+>  	if (etm->synth_opts.last_branch) {
+>  		size_t sz = sizeof(struct branch_stack);
+>  
+> @@ -270,6 +282,7 @@ static int cs_etm__init_traceid_queue(struct cs_etm_queue *etmq,
+>  	zfree(&tidq->last_branch);
+>  	zfree(&tidq->prev_packet);
+>  	zfree(&tidq->packet);
+> +	zfree(&tidq->chain);
+>  out:
+>  	return rc;
+>  }
+> @@ -541,6 +554,7 @@ static void cs_etm__free_traceid_queues(struct cs_etm_queue *etmq)
+>  		zfree(&tidq->last_branch_rb);
+>  		zfree(&tidq->prev_packet);
+>  		zfree(&tidq->packet);
+> +		zfree(&tidq->chain);
+>  		zfree(&tidq);
+>  
+>  		/*
+> @@ -1121,6 +1135,41 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
+>  			   sample->insn_len, (void *)sample->insn);
+>  }
+>  
+> +static void cs_etm__add_stack_event(struct cs_etm_queue *etmq,
+> +				    struct cs_etm_traceid_queue *tidq)
+> +{
+> +	struct cs_etm_auxtrace *etm = etmq->etm;
+> +	u8 trace_chan_id = tidq->trace_chan_id;
+> +	int insn_len;
+> +	u64 from_ip, to_ip;
+> +
+> +	if (etm->synth_opts.callchain || etm->synth_opts.thread_stack) {
+> +
+> +		from_ip = cs_etm__last_executed_instr(tidq->prev_packet);
+> +		to_ip = cs_etm__first_executed_instr(tidq->packet);
+> +
+> +		/*
+> +		 * T32 instruction size might be 32-bit or 16-bit, decide by
+> +		 * calling cs_etm__t32_instr_size().
+> +		 */
+> +		if (tidq->prev_packet->isa == CS_ETM_ISA_T32)
+> +			insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
+> +							  from_ip);
+> +		/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+> +		else
+> +			insn_len = 4;
+> +
+> +		thread_stack__event(tidq->thread, tidq->prev_packet->cpu,
+> +				    tidq->prev_packet->flags,
+> +				    from_ip, to_ip, insn_len,
+> +				    etmq->buffer->buffer_nr);
+> +	} else {
+> +		thread_stack__set_trace_nr(tidq->thread,
+> +					   tidq->prev_packet->cpu,
+> +					   etmq->buffer->buffer_nr);
+
+Please add a comment on what the above does.  As a rule of thumb I add a comment
+per addition in a patch in order to help people understand what is happening and
+some of the reasonning behing the code.
+
+> +	}
+> +}
+> +
+>  static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+>  					    struct cs_etm_traceid_queue *tidq,
+>  					    u64 addr, u64 period)
+> @@ -1146,6 +1195,14 @@ static int cs_etm__synth_instruction_sample(struct cs_etm_queue *etmq,
+>  
+>  	cs_etm__copy_insn(etmq, tidq->trace_chan_id, tidq->packet, &sample);
+>  
+> +	if (etm->synth_opts.callchain) {
+> +		thread_stack__sample(tidq->thread, tidq->packet->cpu,
+> +				     tidq->chain,
+> +				     etm->synth_opts.callchain_sz + 1,
+> +				     sample.ip, etm->kernel_start);
+> +		sample.callchain = tidq->chain;
+> +	}
+> +
+>  	if (etm->synth_opts.last_branch) {
+>  		cs_etm__copy_last_branch_rb(etmq, tidq);
+>  		sample.branch_stack = tidq->last_branch;
+> @@ -1329,6 +1386,8 @@ static int cs_etm__synth_events(struct cs_etm_auxtrace *etm,
+>  		attr.sample_type &= ~(u64)PERF_SAMPLE_ADDR;
+>  	}
+>  
+> +	if (etm->synth_opts.callchain)
+> +		attr.sample_type |= PERF_SAMPLE_CALLCHAIN;
+>  	if (etm->synth_opts.last_branch)
+>  		attr.sample_type |= PERF_SAMPLE_BRANCH_STACK;
+>  
+> @@ -1397,6 +1456,9 @@ static int cs_etm__sample(struct cs_etm_queue *etmq,
+>  		tidq->period_instructions = instrs_over;
+>  	}
+>  
+> +	if (tidq->prev_packet->last_instr_taken_branch)
+> +		cs_etm__add_stack_event(etmq, tidq);
+> +
+>  	if (etm->sample_branches) {
+>  		bool generate_sample = false;
+>  
+> @@ -2596,7 +2658,17 @@ int cs_etm__process_auxtrace_info(union perf_event *event,
+>  	} else {
+>  		itrace_synth_opts__set_default(&etm->synth_opts,
+>  				session->itrace_synth_opts->default_no_sample);
+> -		etm->synth_opts.callchain = false;
+> +
+> +		etm->synth_opts.thread_stack =
+> +				session->itrace_synth_opts->thread_stack;
+> +	}
+> +
+> +	if (etm->synth_opts.callchain && !symbol_conf.use_callchain) {
+> +		symbol_conf.use_callchain = true;
+> +		if (callchain_register_param(&callchain_param) < 0) {
+> +			symbol_conf.use_callchain = false;
+> +			etm->synth_opts.callchain = false;
+> +		}
+>  	}
+>  
+>  	err = cs_etm__synth_events(etm, session);
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
