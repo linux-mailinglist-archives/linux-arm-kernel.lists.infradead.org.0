@@ -2,73 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09D50A75FA
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 23:12:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99C43A7607
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 23:15:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vfEGzUzx/LoxuvBTaia6eNL6HZab+DqHQbkJ1SLTbxM=; b=FamFJyS2jfce9Q
-	K5hk2Tm38cUxXnJ5alV23KORfKihp4ueDix7Zr7JrgNrgbudEm5gcJ9n+9H1FQM7WyW6tCBQZ6fXf
-	5TPUkf4WZVuUVOksVFkDiR8h0ujPP/OAsznBgIIBrYbtdblvmoZLALEf3hwGKqErx1gBEZUrnv641
-	XMJKJex7BOf9/LfMOh5Sm/vwFnVcTHR39hH2/3XsoAFIojNtHjuhQTtcy4dD+9x/qfPgu6KgIyTiF
-	AjnBI4QFs140f+RtqIKSKqwkeVeFoGhwafWjeNDFvkp2ARpQMnQ7tP7R/v+zBNPBddersUv5C07RS
-	p0rb7QDWRFtXjmB1Th1A==;
+	List-Owner; bh=q3H264vVj76sua2DjJLSgldySYCDqjia1QUdT6a+NlY=; b=Hu4vzBj/Q93zkt
+	zFJ2xzrmcabcaY0RwXbEFJBoUqarZS4j2Md+eXhDxmY0426jwEgAtw9dVANYi1aHdHftnm4xE4VD7
+	c0unLWVEuTpaNz9YfUIB1irwK2yUv4I23shs+h1CjrPBBfeGVsBoOKt/oJdzDYuPLG71nQaxJJN4Y
+	WPB4lPb6E2dOKLrY7PuRd4F5CNtOiQp3WYxREo3oh8DiJ+60rAibFad75eJbYxXg7rMmzdQwEPmG4
+	5Rcmkf1guBK4wjwz8jB3dRGIRadkgMzjJaF8cwIPV5e/MwrNcWRi4HBjWDxsXsk+99nMntqaWFL1N
+	zDhI0VaZ+Txx+P9itkFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5G6C-00046O-18; Tue, 03 Sep 2019 21:12:24 +0000
-Received: from mail-qt1-f177.google.com ([209.85.160.177])
+	id 1i5G90-0005fF-Ov; Tue, 03 Sep 2019 21:15:18 +0000
+Received: from mail-qk1-f180.google.com ([209.85.222.180])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5G60-00045w-FW
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 21:12:13 +0000
-Received: by mail-qt1-f177.google.com with SMTP id y26so21869735qto.4
+ id 1i5G8q-0005XV-C2
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 21:15:09 +0000
+Received: by mail-qk1-f180.google.com with SMTP id f13so17476395qkm.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 14:12:11 -0700 (PDT)
+ Tue, 03 Sep 2019 14:15:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=ALj24+CT+pJaNLHiDhThCAT8qBrR7lJgfrtxsY9x2Lw=;
- b=sVOOqfoFYDZw6mImCUWKOwnSWiAhdxiqC17H16qP3cg02LvRIO0nYxCJFJ8X6hFyPz
- jTAnRpLIQo8t+i4zxbP7M0vdGJpOYcfH+rfB1YyPfk2ZMKkk1yfeKuhoBCvjIW7gWRjR
- dXrKH6dN3Xz2h0BJLP3mwEOqJb0k3DedpG56bokSar4tHetyTHilUvCZqLTaMBcsoYn2
- PLv+z5B+s3EeGmVWHVNJeML2NZTFyHTE6ChOOhLra8ilatcgz5FdAQjhdb5BTGalKbK9
- bNJNNPPWRgj8YCWEt65XPApohqYFNLY94Lrdaa3WnLXNAuv+L3FKdqmSwM5TZ8o863EY
- cb9A==
-X-Gm-Message-State: APjAAAVexBjMpD2RwRT26RBhx9vze4PkGHLwXRatE5q+9T4ISe8tPRUy
- vCfCMiXC5qLDBoAWS1CX8khT+I9zle0imw1HaLM=
-X-Google-Smtp-Source: APXvYqyWPDIgWmrZjSJZnCB0qr3Jn+X5ZS5cPeP6LQ3epHt1ZTyQrq083Gpgu3VycLwutxEgU0vnsLComt6ieWJHzls=
-X-Received: by 2002:a0c:e74b:: with SMTP id g11mr23130799qvn.62.1567545130828; 
- Tue, 03 Sep 2019 14:12:10 -0700 (PDT)
+ bh=hrlnQyjxLq5CYivE9GlieClIZOPBePod+9zvBBHCe/k=;
+ b=SYjLwWDudcFvs2YtQoxnI8xF1FSoFGf5F4e3JjxEY+QZUGvXuO3pghAKoJ5ZEzmGC0
+ bpT56GzbBMKLWtiUe5Z8xcWi4rpe2wZcdz/NTq76MM52k4JCBn1iiReoXysZp6GPOPMh
+ TQJd23yJFIGXwlMjnWfFLz/x16Qzo1dynmQsSU0jCH4T3NIb7LK8nJP+eYWteWRcagAi
+ iR1OzWPYl08p3UxwErPcyxb0n9DF4NoSIshFVmWVR3Sx1qRY9/8NcSJqe6i9bCR0IZW1
+ oqO4MQofvFK8xxEMSJKrHl2z3UZWMEiDdOVy5/ngRoNCAIRFOz70eed71FQtFp8EBz3Q
+ DfxA==
+X-Gm-Message-State: APjAAAUT+HGpv9iAyn+67H6ei9CyMifMKozW80teliq/S0/yfKNtjjb7
+ yj/W/1E+MHTimdU/gI5gpkIkwZDSxs0RQNcZCJ4=
+X-Google-Smtp-Source: APXvYqy8ue7nYD2A+jriaQr6ZusrM3NzPA8WVpTMH3ZcfOqMcbj+rLuBhXygQZk/LpIuLgv48BQzUGgeHQ3s78vaIjI=
+X-Received: by 2002:a05:620a:b:: with SMTP id
+ j11mr36680871qki.352.1567545306976; 
+ Tue, 03 Sep 2019 14:15:06 -0700 (PDT)
 MIME-Version: 1.0
-References: <8e00ba70-9403-4bf7-2870-a94758e37346@monstr.eu>
-In-Reply-To: <8e00ba70-9403-4bf7-2870-a94758e37346@monstr.eu>
+References: <20190823123643.18799-1-geert+renesas@glider.be>
+ <20190823123643.18799-3-geert+renesas@glider.be>
+In-Reply-To: <20190823123643.18799-3-geert+renesas@glider.be>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 23:11:54 +0200
-Message-ID: <CAK8P3a15728rfKN4u2Zvh2KH+-Tn2ZvBFcOxAFDYA=x_5noQEw@mail.gmail.com>
-Subject: Re: [GIT PULL] ARM: soc: Xilinx SoC changes for v5.4
-To: Michal Simek <monstr@monstr.eu>
+Date: Tue, 3 Sep 2019 23:14:50 +0200
+Message-ID: <CAK8P3a11EfOXfwZ5Xx3vYJwfBGPh=yX73f_=3u7Zmm+hJF6HVg@mail.gmail.com>
+Subject: Re: [PULL 2/5] Renesas ARM SoC updates for v5.4
+To: Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_141212_518091_428C85B6 
-X-CRM114-Status: GOOD (  11.12  )
+X-CRM114-CacheID: sfid-20190903_141508_415452_4865787B 
+X-CRM114-Status: UNSURE (   8.22  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.177 listed in list.dnswl.org]
+ no trust [209.85.222.180 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.177 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,31 +82,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- linux-arm <linux-arm-kernel@lists.infradead.org>
+Cc: Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
+ Linux-Renesas <linux-renesas-soc@vger.kernel.org>, arm-soc <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 3, 2019 at 4:19 PM Michal Simek <monstr@monstr.eu> wrote:
-> ARM: Xilinx Zynq SoC patches for v5.4
+On Fri, Aug 23, 2019 at 2:36 PM Geert Uytterhoeven
+<geert+renesas@glider.be> wrote:
+
+> Renesas ARM SoC updates for v5.4
 >
-> - Fix SMP trampoline code when FORTIFY_SOURCE is enabled
-
-This looks quite hacky, but I don't really have a better idea here either,
-the problem was already in the way it uses ioremap() to map
-what is presumably just RAM. (if it's not RAM, the patch is also
-required for other reasons).
-
- ----------------------------------------------------------------
-> Luis Araneda (2):
->       ARM: zynq: Support smp in thumb mode
->       ARM: zynq: Use memcpy_toio instead of memcpy on smp bring-up
+>   - Low-level debugging support for RZ/A2M.
+>
 
 Pulled into arm/soc, thanks!
 
-      Arnd
+This should be the last of your pull requests for the moment. Can you check that
+everything is there once it hits linux-next (probably Wednesday, I may have just
+missed today).
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
