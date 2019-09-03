@@ -2,145 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8D84BA76E8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 00:26:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54847A7717
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 00:35:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a1KbLLfv3eC2AKyiadCcI+parim6ytmCdGXVU3zte1Y=; b=iu5hSPbT8m+NRf
-	z1nQQGd/6F8rUksagnQvHZ/IfjYvx2Gd5GshuUuMQLWPGujKk6ZZSzgYHF/Ci7oBQMnqUpsbeU+gW
-	xpthY3bQi7EW1lnHfCbu6cECcC9QyeFj9K0Jp3Ty25We+hrMnRrWAkOd5PNej42DuP+Hjaj6m5IMk
-	uN14quwFTi35Oo+qhXuNeYjHlPSkkqa2Bp5kNkG9dixRMKATB/kZCrzyNznRQe9E6mVRvIZdoknZ6
-	wHYvYZ7PBzuBGk6qwRdbfGfMcGs4lkAhL1WJ6p3okvb2jL12z5STEY9Ff84H9/+re1ZddP5WrXKaL
-	nvDSBVgYL6Ilo9UhWKAA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v0IN+6FUOme7LzBtLSk0GZgnv+RAR91I7Vv1SHoZs9A=; b=OVGwkyB1m0JNCG
+	Nz7US6Y8KV/3cAO1eDBTfPld3pcfnDxGWJiwevkdMFjnq2PBShTTptJ45NzVCdTOWzOgB/1xoqkby
+	jqm3Hd4J9689tNEGHQSzx9kysIy6eVCOFY6Ek6pkTUCYU9z2djPn2bafVEqh4VsNQJTJVlaczYME6
+	/REZrb/jPkfx1yFM2fQbzljq9DJAI52PUHx1uEgkMac4BM+KFb/06nHj3s15UbPI9NwgL4oBaY7jH
+	e4d6L6JWnTTJK1Og8v4M4N8JaXDRinRdudIAtnQymLwmmWGXw50HyJV7cO6xb1vC1WDEYdHs/s0+U
+	nxytExkp3/rACxy29zVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5HFf-0005kg-S3; Tue, 03 Sep 2019 22:26:16 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1i5HOm-0000Er-C7; Tue, 03 Sep 2019 22:35:40 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5HFR-0005kD-4O
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 22:26:02 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x83MPIWZ139663;
- Tue, 3 Sep 2019 22:25:58 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=subject : from : to :
- cc : references : message-id : date : mime-version : in-reply-to :
- content-type : content-transfer-encoding; s=corp-2019-08-05;
- bh=XQDjY3b/xPaHzx/8/RuGVxQekrk6kuIAIt4jXo7s6Z4=;
- b=FpQ1j7+x3M2XN9Rgh4eJg2rT64709yyw2tZVJzHycU2YcATyBHUJSOz73Max/ZUH6Y57
- WJ8LKy2klvaWIR2ESYYT+Nn+dog2TAUD77YvfJf/c6XTaUK6DUu18ccxTGPuk5hGp90V
- Iy7mVYKQyVliorMGCCQMc02BvcGM4IA879Hy0/wn2KCtWZ3XO9H5xKYPBehBvV8S4GUt
- BVSKWOoCoSy52lIouxPhDyyQjRJuvZjwOcpf29qCBWlxZGCykY+b1pqyJ9wJY7WnSZRm
- WVAoVCVe6j6vdUy/EGB2IcMeYhuXKdzvzC27vncIJV3dV0mDMzk9s2YH1qO1sItcr/LE CQ== 
-Received: from aserp3030.oracle.com (aserp3030.oracle.com [141.146.126.71])
- by aserp2120.oracle.com with ESMTP id 2ut0xwg02a-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 03 Sep 2019 22:25:58 +0000
-Received: from pps.filterd (aserp3030.oracle.com [127.0.0.1])
- by aserp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x83MNlH0053759;
- Tue, 3 Sep 2019 22:25:58 GMT
-Received: from userv0121.oracle.com (userv0121.oracle.com [156.151.31.72])
- by aserp3030.oracle.com with ESMTP id 2usu514255-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Tue, 03 Sep 2019 22:25:58 +0000
-Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
- by userv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x83MPu2s006169;
- Tue, 3 Sep 2019 22:25:56 GMT
-Received: from bostrovs-us.us.oracle.com (/10.152.32.65)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Tue, 03 Sep 2019 15:25:56 -0700
-Subject: Re: [PATCH 08/13] swiotlb-xen: always use dma-direct helpers to alloc
- coherent pages
-From: Boris Ostrovsky <boris.ostrovsky@oracle.com>
-To: Christoph Hellwig <hch@lst.de>,
- Stefano Stabellini <sstabellini@kernel.org>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Juergen Gross <jgross@suse.com>
-References: <20190902130339.23163-1-hch@lst.de>
- <20190902130339.23163-9-hch@lst.de>
- <5799ca4b-7993-b1c5-73fa-396a560f58e8@oracle.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=boris.ostrovsky@oracle.com; prefer-encrypt=mutual; keydata=
- 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
- Jg6OxFYd01z+a+oL
-Message-ID: <8a7f9e23-ef26-e83b-8d1e-dcd7d233642a@oracle.com>
-Date: Tue, 3 Sep 2019 18:25:54 -0400
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.0
+ id 1i5HOY-0000EV-CC
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 22:35:28 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y22so6172588pfr.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 15:35:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=i18uPvFGZAVZIfmuUXHjXlYGjp82E9WPX/8JA0g1aAY=;
+ b=Fh3GNg2Re3vuyR58X2u+Inu4VpXUz7ev3K/RQ16xjMxBY9A7F5fXRfvgx2iECyJQFt
+ l297aoMzp+oOJJWCdob+f3cEAe2olm+E1VHs4CWhbLl7uMUT3iA9lPSeYf/sOXZ8kkFm
+ JHsUKUAmReDKDMBqnDZpRVATcxXv+nYS7c0BPsR6k/PwkDh6yjcB2p82boSu+ouapaKY
+ Ky0L2Td2y1ZJuw1m4wkvZwqcl3vo2p5dYcZLGh4td6BJN1/Sgyg4+41Pl0OQ/Gdlj761
+ t/AojmjqtxZqzVJEBih3pDhslZ+TWqQEAyJ7kkQPuOfJtG1uoxQ8AYTDdxb/+M6HQNnd
+ QGWQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=i18uPvFGZAVZIfmuUXHjXlYGjp82E9WPX/8JA0g1aAY=;
+ b=fXDm3hYagEnjnFQNtd4KELxWvFtUoje/5SIU2crb+2ulVxUKH/R4PQgxJn8k6m868M
+ Xu0US5/l1fXJgRZY+UCmT32bu+mtQbcBUjLPc09VjcsNdpR4gzq/YjuxaRZ64lQy5A2n
+ o9EQTEHcSwLmQ1z25QDuU8v1w9KqNri6xtV1l/AZxvvpcMdwUbeVRrsWMUC+/sfaksgS
+ hFOgvmqSAX0RRFcisheswwnu0RJ+OhVow9sQ4qMc7c4TE5QStwym043cokYwoxAlt40r
+ otpbdvMKH9S9OQoTZjf8149ptkzr4X7e5jQG6VzdZdYTpAPTzyFQQsHV3EHl986G+waY
+ MYLg==
+X-Gm-Message-State: APjAAAWNOCb8O9dxiqiZ2+9zRF1cI2hBxrW5Fq46tHhd2Vs1bAi1Oli/
+ Tg7rSJWIzUoxiyNIdYh8aXXYSY+lZB+3tE/a5N6sXg==
+X-Google-Smtp-Source: APXvYqxpktL7ovZwTYt/volDrVHbUp3SChpiQGuMrnkiqoJaP94lvMYp+GgEuUTUHGIxALqslt6M1Pg5nVHVcjmOqJw=
+X-Received: by 2002:a65:690b:: with SMTP id s11mr30079225pgq.10.1567550121219; 
+ Tue, 03 Sep 2019 15:35:21 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <5799ca4b-7993-b1c5-73fa-396a560f58e8@oracle.com>
-Content-Language: en-US
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9369
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=862
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1909030223
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9369
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=916 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1909030223
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-4-will@kernel.org>
+ <20190903060011.GA60737@archlinux-threadripper>
+ <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
+ <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
+ <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
+ <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
+ <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
+ <20190903220412.GU9720@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190903220412.GU9720@e119886-lin.cambridge.arm.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Tue, 3 Sep 2019 15:35:10 -0700
+Message-ID: <CAKwvOdnoZQMCc9rWEtQm1PVxUU8bJqaZHO9jcfdODL7mhvRtQQ@mail.gmail.com>
+Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_152601_270342_EC003D77 
-X-CRM114-Status: GOOD (  15.77  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190903_153526_444794_AACBBDB1 
+X-CRM114-Status: GOOD (  23.65  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -148,9 +91,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -162,39 +104,164 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: xen-devel@lists.xenproject.org, iommu@lists.linux-foundation.org,
- x86@kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ Ard.Biesheuvel@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
+ Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-(Now with correct address for Juergen)
+On Tue, Sep 3, 2019 at 3:04 PM Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Tue, Sep 03, 2019 at 05:37:55PM +0100, Will Deacon wrote:
+> > On Tue, Sep 03, 2019 at 04:31:20PM +0100, Andrew Murray wrote:
+> > > On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
+> > > > On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
+> > > > > Does it work if the only thing you change is the toolchain, and use GCC
+> > > > > instead?
+> > > >
+> > > > Yup.
+> > >
+> > > Also this is Clang generation:
+> > >
+> > > ffff8000100f2700 <__ptrace_link>:
+> > > ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
+> > > ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
+> > > ffff8000100f2708:       eb09011f        cmp     x8, x9
+> > > ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
+> > > ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
+> > > ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
+> > > ffff8000100f2718:       f9000528        str     x8, [x9, #8]
+> > > ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
+> > > ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
+> > > ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
+> > > ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
+> > > ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
+> > > ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
+> > > ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
+> > > ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
+> > > ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
+> > > ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
+> > > ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
+> > > ffff8000100f2748:       b828005f        stadd   w8, [x2]
+> > > ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
+> > > ffff8000100f2750:       d65f03c0        ret
+> > > ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
+> > > ...
+> > >
+> > > This looks like the default path (before we write over it) will take you to
+> > > the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
+> > > least not what we expected to see. Also why 4 branches?
+> >
+> > So I reproduced this with a silly atomic_inc wrapper:
+> >
+> > void will_atomic_inc(atomic_t *v)
+> > {
+> >         atomic_inc(v);
+> > }
+> >
+> > Compiles to:
+> >
+> > 0000000000000018 <will_atomic_inc>:
+> >   18: 14000004        b       28 <will_atomic_inc+0x10>
+> >   1c: 14000001        b       20 <will_atomic_inc+0x8>
+> >   20: 14000005        b       34 <will_atomic_inc+0x1c>
+> >   24: 14000001        b       28 <will_atomic_inc+0x10>
+> >   28: 52800028        mov     w8, #0x1                        // #1
+> >   2c: b828001f        stadd   w8, [x0]
+> >   30: d65f03c0        ret
+> >   34: 14000027        b       d0 <dump_kernel_offset+0x60>
+> >   38: d65f03c0        ret
+> >
+> > which is going to explode.
 
-On 9/3/19 6:15 PM, Boris Ostrovsky wrote:
-> On 9/2/19 9:03 AM, Christoph Hellwig wrote:
->> diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
->> index b8808677ae1d..f9dd4cb6e4b3 100644
->> --- a/drivers/xen/swiotlb-xen.c
->> +++ b/drivers/xen/swiotlb-xen.c
->> @@ -299,8 +299,7 @@ xen_swiotlb_alloc_coherent(struct device *hwdev, size_t size,
->>  	 * address. In fact on ARM virt_to_phys only works for kernel direct
->>  	 * mapped RAM memory. Also see comment below.
->>  	 */
->> -	ret = xen_alloc_coherent_pages(hwdev, size, dma_handle, flags, attrs);
->> -
->> +	ret = dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
->
-> If I am reading __dma_direct_alloc_pages() correctly there is a path
-> that will force us to use GFP_DMA32 and as Juergen pointed out in
-> another message that may not be desirable.
->
-> -boris
->
->
->
+Indeed, I can reproduce the hang with `-cpu cortex-a57` and `-cpu
+cortex-a73` in QEMU.  Looks like my qemu (3.1.0) doesn't recognizer
+newer cores, so I might have to build QEMU from source to test the
+v8.2 extension support.
+https://en.wikipedia.org/wiki/Comparison_of_ARMv8-A_cores
 
+>
+> I've come up with a simple reproducer for this issue:
+>
+> static bool branch_jump()
+> {
+>         asm_volatile_goto(
+>                 "1: b %l[l_yes2]"
+>                  : : : : l_yes2);
+>
+>         return false;
+> l_yes2:
+>         return true;
+> }
+>
+> static bool branch_test()
+> {
+>         return (!branch_jump() && !branch_jump());
+> }
+>
+> void andy_test(int *v)
+> {
+>         if (branch_test())
+>                 *v = 0xff;
+> }
+>
+> This leads to the following (it shouldn't do anything):
+>
+> 0000000000000000 <andy_test>:
+>    0:   14000004        b       10 <andy_test+0x10>
+>    4:   14000001        b       8 <andy_test+0x8>
+>    8:   14000004        b       18 <andy_test+0x18>
+>    c:   14000001        b       10 <andy_test+0x10>
+>   10:   52801fe8        mov     w8, #0xff                       // #255
+>   14:   b9000008        str     w8, [x0]
+>   18:   d65f03c0        ret
+>
+> The issue goes away with any of the following hunks:
+>
+>
+> @@ -55,7 +55,7 @@ static bool branch_jump()
+>
+>  static bool branch_test()
+>  {
+> -       return (!branch_jump() && !branch_jump());
+> +       return (!branch_jump());
+>  }
+>
+>  void andy_test(int *v)
+>
+>
+> or:
+>
+>
+> @@ -53,14 +53,10 @@ static bool branch_jump()
+>          return true;
+>  }
+>
+> -static bool branch_test()
+> -{
+> -       return (!branch_jump() && !branch_jump());
+> -}
+>
+>  void andy_test(int *v)
+>  {
+> -       if (branch_test())
+> +       if (!branch_jump() && !branch_jump())
+>                 *v = 0xff;
+>  }
+
+Thanks for the report.  We squashed many bugs related to asm goto, but
+it's difficult to say with 100% certainty that the current
+implementation is bug free.  Simply throwing more exotic forms of
+control flow at it often shake out corner cases.  Thank you very much
+for the reduced test case, and I'll look into getting a fix ready
+hopefully in time to make the clang-9 release train.
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
