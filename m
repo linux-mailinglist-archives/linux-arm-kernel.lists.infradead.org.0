@@ -2,72 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44FCFA663D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 12:06:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4C87EA6675
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 12:19:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hxeNBgYbuzNukFW4e6AZZM9Qs7SAYKIJwyBVOhu4HMA=; b=fbx+Lkdj0Uv3JnRLMGL8jXlx2
-	RrJrgQPJQrQZZMBX9Whjb84E3uDbJKkBzmDnXDkN47yivFm1WHVZ33B9NhQ1SUvEpKeii5ZseT7x8
-	gbBseNbMN1cGHoCO++uKzmlfIL73AukyV8uiUEkZGnHSQ9MkZXCadLucRrvgMijwg9zPW+oyYtYuP
-	RzvCwlp9Obd49gYWDRc0RIYKHY3uvo2zHNmdTOJAl2/zSsjD4nJbKtH1TQRsv/aH5Zxu2g6tACaex
-	OCVoGcukVK158imIFWmGcUAYzKB6JS5w9p4gAUonoRK2GG7epMh7FNVY5FPCN3+BD7VtBxzkW9YBE
-	bF4TIx7ww==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:From:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9bUq4cL8qWtKCfMifM2mwc/AWpZVo71z5zVrxyVd/lU=; b=iW247vU+peEbQg
+	6OfoA3UlHkxXpOqwq5hClMzeGKA0kn8f7zmDX7BX/6m9SPnKp4fHiKecATfCPGSFNRFeB9DT6tMf5
+	i+slrS7UUTd5+zoPeO6Vx4E6SKmbVd6QbZHidOOWhqnJqmQ9CeIWKJI/7THf5+3OWkaUZGUSzugjC
+	40VytyKElgV5hw8jHlEgV8OY/vPkO5pH/xL+Nxv34UJIzrEmT/drDAZ4uLpDi0qbJN+JxcvdEs0MW
+	/6S0TQ7jzy64unc06RFLMtStyuzoa4tSBE3rKbXEQiaxr3QDf/a+47t1J5ljZHhPGUlUzHSEC7Khi
+	m2e5EVzapX/ymbhjAHVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i55hS-00078t-1M; Tue, 03 Sep 2019 10:06:10 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i55uT-00025A-J5; Tue, 03 Sep 2019 10:19:37 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i55hE-000786-Pz
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 10:05:58 +0000
-Received: from soja.hi.pengutronix.de ([2001:67c:670:100:3ad5:47ff:feaf:13da])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_128_GCM_SHA256:128) (Exim 4.92)
- (envelope-from <o.rempel@pengutronix.de>)
- id 1i55hB-0001c2-RC; Tue, 03 Sep 2019 12:05:53 +0200
-Subject: Re: [PATCH V3 2/5] input: keyboard: imx_sc: Add i.MX system
- controller key support
-To: Anson Huang <Anson.Huang@nxp.com>, robh+dt@kernel.org,
- mark.rutland@arm.com, shawnguo@kernel.org, s.hauer@pengutronix.de,
- kernel@pengutronix.de, festevam@gmail.com, catalin.marinas@arm.com,
- will@kernel.org, dmitry.torokhov@gmail.com, aisheng.dong@nxp.com,
- ulf.hansson@linaro.org, fugang.duan@nxp.com, peng.fan@nxp.com,
- daniel.baluta@nxp.com, leonard.crestez@nxp.com, mripard@kernel.org,
- olof@lixom.net, arnd@arndb.de, jagan@amarulasolutions.com,
- bjorn.andersson@linaro.org, dinguyen@kernel.org,
- marcin.juszkiewicz@linaro.org, stefan@agner.ch, gregkh@linuxfoundation.org,
- andriy.shevchenko@linux.intel.com, yuehaibing@huawei.com,
- tglx@linutronix.de, ronald@innovation.ch, m.felsch@pengutronix.de,
- ping.bai@nxp.com, devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-input@vger.kernel.org
-References: <1567546600-21566-1-git-send-email-Anson.Huang@nxp.com>
- <1567546600-21566-2-git-send-email-Anson.Huang@nxp.com>
-From: Oleksij Rempel <o.rempel@pengutronix.de>
-Message-ID: <d98b20a8-17b7-b757-6e1d-89932ddbea88@pengutronix.de>
-Date: Tue, 3 Sep 2019 12:05:48 +0200
+ id 1i55uH-00024e-N5
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 10:19:27 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x83AJJrI043302;
+ Tue, 3 Sep 2019 05:19:19 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1567505959;
+ bh=nRTqcKo/WxW5TqzAmvGzBhBJLV092AmqWAXRSgLL4HQ=;
+ h=Subject:From:To:CC:References:Date:In-Reply-To;
+ b=MAVqHP5rCVzAK7qY2G2VaRwl+Eht1wf++tyKAUBDMpBXY1dqWnkSOasWdWuL3UJH0
+ U1dTBLkeDz1xPdv8fjND7octTCvsoznIQlEEKIsiKu28tOdcGOTTPx52xwX7H2+Mlc
+ 7C8KTXqRqmsSup83zDK3uH75JreICd8llooyx7us=
+Received: from DFLE115.ent.ti.com (dfle115.ent.ti.com [10.64.6.36])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x83AJJXP081861
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 3 Sep 2019 05:19:19 -0500
+Received: from DFLE106.ent.ti.com (10.64.6.27) by DFLE115.ent.ti.com
+ (10.64.6.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 3 Sep
+ 2019 05:19:19 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 3 Sep 2019 05:19:19 -0500
+Received: from [192.168.2.6] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x83AJHVI102032;
+ Tue, 3 Sep 2019 05:19:17 -0500
+Subject: Re: [PATCH 4/5] dt-bindings: dma: ti-edma: Add option for reserved
+ channel ranges
+From: Peter Ujfalusi <peter.ujfalusi@ti.com>
+To: Rob Herring <robh@kernel.org>
+References: <20190823125618.8133-1-peter.ujfalusi@ti.com>
+ <20190823125618.8133-5-peter.ujfalusi@ti.com> <20190829224728.GA1198@bogus>
+ <a4c5688b-cbeb-5059-5351-11d9ae1b25d5@ti.com>
+Message-ID: <15d5dc03-d6ca-f438-f37a-e71298abda95@ti.com>
+Date: Tue, 3 Sep 2019 13:19:45 +0300
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1567546600-21566-2-git-send-email-Anson.Huang@nxp.com>
+In-Reply-To: <a4c5688b-cbeb-5059-5351-11d9ae1b25d5@ti.com>
 Content-Language: en-US
-X-SA-Exim-Connect-IP: 2001:67c:670:100:3ad5:47ff:feaf:13da
-X-SA-Exim-Mail-From: o.rempel@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_030557_002011_62043734 
-X-CRM114-Status: GOOD (  24.44  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_031925_860809_AE309C8C 
+X-CRM114-Status: GOOD (  21.74  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.248 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,265 +94,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux-imx@nxp.com
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ dmaengine@vger.kernel.org, dan.j.williams@intel.com,
+ linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 03.09.19 23:36, Anson Huang wrote:
-> i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
-> inside, the system controller is in charge of controlling power,
-> clock and scu key etc..
-> 
-> Adds i.MX system controller key driver support, Linux kernel has
-> to communicate with system controller via MU (message unit) IPC
-> to get scu key's status.
-> 
-> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
-
-Reviewed-by: Oleksij Rempel <o.rempel@pengutronix.de>
-
-> ---
-> Changes since V2:
-> 	- use private platform data instead of global data;
-> 	- use "key" instead of "pwrkey";
-> 	- fix some data format.
-> ---
->   drivers/input/keyboard/Kconfig      |   7 ++
->   drivers/input/keyboard/Makefile     |   1 +
->   drivers/input/keyboard/imx_sc_key.c | 178 ++++++++++++++++++++++++++++++++++++
->   3 files changed, 186 insertions(+)
->   create mode 100644 drivers/input/keyboard/imx_sc_key.c
-> 
-> diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-> index 2e6d288..607acf2 100644
-> --- a/drivers/input/keyboard/Kconfig
-> +++ b/drivers/input/keyboard/Kconfig
-> @@ -469,6 +469,13 @@ config KEYBOARD_IMX
->   	  To compile this driver as a module, choose M here: the
->   	  module will be called imx_keypad.
->   
-> +config KEYBOARD_IMX_SC_KEY
-> +	tristate "IMX SCU Key Driver"
-> +	depends on IMX_SCU
-> +	help
-> +	  This is the system controller key driver for NXP i.MX SoCs with
-> +	  system controller inside.
-> +
->   config KEYBOARD_NEWTON
->   	tristate "Newton keyboard"
->   	select SERIO
-> diff --git a/drivers/input/keyboard/Makefile b/drivers/input/keyboard/Makefile
-> index 9510325..f5b1752 100644
-> --- a/drivers/input/keyboard/Makefile
-> +++ b/drivers/input/keyboard/Makefile
-> @@ -29,6 +29,7 @@ obj-$(CONFIG_KEYBOARD_HIL)		+= hil_kbd.o
->   obj-$(CONFIG_KEYBOARD_HIL_OLD)		+= hilkbd.o
->   obj-$(CONFIG_KEYBOARD_IPAQ_MICRO)	+= ipaq-micro-keys.o
->   obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o
-> +obj-$(CONFIG_KEYBOARD_IMX_SC_KEY)	+= imx_sc_key.o
->   obj-$(CONFIG_KEYBOARD_HP6XX)		+= jornada680_kbd.o
->   obj-$(CONFIG_KEYBOARD_HP7XX)		+= jornada720_kbd.o
->   obj-$(CONFIG_KEYBOARD_LKKBD)		+= lkkbd.o
-> diff --git a/drivers/input/keyboard/imx_sc_key.c b/drivers/input/keyboard/imx_sc_key.c
-> new file mode 100644
-> index 0000000..e69479b
-> --- /dev/null
-> +++ b/drivers/input/keyboard/imx_sc_key.c
-> @@ -0,0 +1,178 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright 2019 NXP.
-> + */
-> +
-> +#include <linux/device.h>
-> +#include <linux/err.h>
-> +#include <linux/firmware/imx/sci.h>
-> +#include <linux/init.h>
-> +#include <linux/input.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/jiffies.h>
-> +#include <linux/kernel.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/of_address.h>
-> +#include <linux/platform_device.h>
-> +
-> +#define DEBOUNCE_TIME	100
-> +#define REPEAT_INTERVAL	60
-> +
-> +#define SC_IRQ_BUTTON		1
-> +#define SC_IRQ_GROUP_WAKE	3
-> +#define IMX_SC_MISC_FUNC_GET_BUTTON_STATUS	18
-> +
-> +struct imx_key_drv_data {
-> +	int keycode;
-> +	bool keystate;  /* 1: pressed, 0: release */
-> +	bool delay_check;
-> +	struct delayed_work check_work;
-> +	struct input_dev *input;
-> +	struct imx_sc_ipc *key_ipc_handle;
-> +	struct notifier_block key_notifier;
-> +};
-> +
-> +struct imx_sc_msg_key {
-> +	struct imx_sc_rpc_msg hdr;
-> +	u8 state;
-> +};
-> +
-> +static int imx_sc_key_notify(struct notifier_block *nb,
-> +			     unsigned long event, void *group)
-> +{
-> +	struct imx_key_drv_data *priv =
-> +				 container_of(nb,
-> +					      struct imx_key_drv_data,
-> +					      key_notifier);
-> +
-> +	if ((event & SC_IRQ_BUTTON) && (*(u8 *)group == SC_IRQ_GROUP_WAKE)
-> +	    && !priv->delay_check) {
-> +		priv->delay_check = 1;
-> +		schedule_delayed_work(&priv->check_work,
-> +				      msecs_to_jiffies(REPEAT_INTERVAL));
-> +	}
-> +
-> +	return 0;
-> +}
-> +
-> +static void imx_sc_check_for_events(struct work_struct *work)
-> +{
-> +	struct imx_key_drv_data *priv =
-> +				 container_of(work,
-> +					      struct imx_key_drv_data,
-> +					      check_work.work);
-> +	struct input_dev *input = priv->input;
-> +	struct imx_sc_msg_key msg;
-> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
-> +	bool state;
-> +	int ret;
-> +
-> +	hdr->ver = IMX_SC_RPC_VERSION;
-> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
-> +	hdr->func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS;
-> +	hdr->size = 1;
-> +
-> +	ret = imx_scu_call_rpc(priv->key_ipc_handle, &msg, true);
-> +	if (ret) {
-> +		dev_err(&input->dev, "read imx sc key failed, ret %d\n", ret);
-> +		return;
-> +	}
-> +
-> +	state = (bool)msg.state;
-> +
-> +	if (!state && !priv->keystate)
-> +		state = true;
-> +
-> +	if (state ^ priv->keystate) {
-> +		pm_wakeup_event(input->dev.parent, 0);
-> +		priv->keystate = state;
-> +		input_event(input, EV_KEY, priv->keycode, state);
-> +		input_sync(input);
-> +		if (!state)
-> +			priv->delay_check = 0;
-> +		pm_relax(priv->input->dev.parent);
-> +	}
-> +
-> +	if (state)
-> +		schedule_delayed_work(&priv->check_work,
-> +				      msecs_to_jiffies(DEBOUNCE_TIME));
-> +}
-> +
-> +static int imx_sc_key_probe(struct platform_device *pdev)
-> +{
-> +	struct device_node *np = pdev->dev.of_node;
-> +	static struct imx_key_drv_data *priv;
-> +	struct input_dev *input;
-> +	int ret;
-> +
-> +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
-> +	if (!priv)
-> +		return -ENOMEM;
-> +
-> +	ret = imx_scu_get_handle(&priv->key_ipc_handle);
-> +	if (ret)
-> +		return ret;
-> +
-> +	if (of_property_read_u32(np, "linux,keycode", &priv->keycode)) {
-> +		dev_err(&pdev->dev, "missing KEY_POWER in DT\n");
-> +		return -EINVAL;
-> +	}
-> +
-> +	INIT_DELAYED_WORK(&priv->check_work, imx_sc_check_for_events);
-> +
-> +	input = devm_input_allocate_device(&pdev->dev);
-> +	if (!input) {
-> +		dev_err(&pdev->dev, "failed to allocate the input device\n");
-> +		return -ENOMEM;
-> +	}
-> +
-> +	input->name = pdev->name;
-> +	input->phys = "imx-sc-key/input0";
-> +	input->id.bustype = BUS_HOST;
-> +
-> +	input_set_capability(input, EV_KEY, priv->keycode);
-> +
-> +	ret = input_register_device(input);
-> +	if (ret) {
-> +		dev_err(&pdev->dev, "failed to register input device\n");
-> +		return ret;
-> +	}
-> +
-> +	priv->input = input;
-> +	platform_set_drvdata(pdev, priv);
-> +
-> +	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, true);
-> +	if (ret) {
-> +		dev_warn(&pdev->dev, "enable scu group irq failed\n");
-> +		return ret;
-> +	}
-> +
-> +	priv->key_notifier.notifier_call = imx_sc_key_notify;
-> +	ret = imx_scu_irq_register_notifier(&priv->key_notifier);
-> +	if (ret) {
-> +		imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, false);
-> +		dev_warn(&pdev->dev, "register scu notifier failed\n");
-> +	}
-> +
-> +	return ret;
-> +}
-> +
-> +static const struct of_device_id imx_sc_key_ids[] = {
-> +	{ .compatible = "fsl,imx-sc-key" },
-> +	{ /* sentinel */ }
-> +};
-> +MODULE_DEVICE_TABLE(of, imx_sc_key_ids);
-> +
-> +static struct platform_driver imx_sc_key_driver = {
-> +	.driver = {
-> +		.name = "imx-sc-key",
-> +		.of_match_table = imx_sc_key_ids,
-> +	},
-> +	.probe = imx_sc_key_probe,
-> +};
-> +module_platform_driver(imx_sc_key_driver);
-> +
-> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
-> +MODULE_DESCRIPTION("i.MX System Controller Key Driver");
-> +MODULE_LICENSE("GPL v2");
-> 
-
-Kind regards,
-Oleksij Rempel
-
--- 
-Pengutronix e.K.                           |                             |
-Industrial Linux Solutions                 | http://www.pengutronix.de/  |
-Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0    |
-Amtsgericht Hildesheim, HRA 2686           | Fax:   +49-5121-206917-5555 |
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgUm9iLAoKT24gMzAvMDgvMjAxOSA4LjM3LCBQZXRlciBVamZhbHVzaSB3cm90ZToKPiBSb2Is
+Cj4gCj4gT24gMzAvMDgvMjAxOSAxLjQ3LCBSb2IgSGVycmluZyB3cm90ZToKPj4gT24gRnJpLCBB
+dWcgMjMsIDIwMTkgYXQgMDM6NTY6MTdQTSArMDMwMCwgUGV0ZXIgVWpmYWx1c2kgd3JvdGU6Cj4+
+PiBTaW1pbGFybHkgdG8gcGFSQU0gc2xvdHMsIGNoYW5uZWxzIGNhbiBiZSB1c2VkIGJ5IG90aGVy
+IGNvcmVzLgo+Pj4KPj4+IEFkZCBvcHRpb25hbCBwcm9wZXJ0eSB0byBjb25maWd1cmUgdGhlIHJl
+c2VydmVkIGNoYW5uZWwgcmFuZ2VzLgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IFBldGVyIFVqZmFs
+dXNpIDxwZXRlci51amZhbHVzaUB0aS5jb20+Cj4+PiAtLS0KPj4+ICBEb2N1bWVudGF0aW9uL2Rl
+dmljZXRyZWUvYmluZGluZ3MvZG1hL3RpLWVkbWEudHh0IHwgNSArKysrKwo+Pj4gIDEgZmlsZSBj
+aGFuZ2VkLCA1IGluc2VydGlvbnMoKykKPj4+Cj4+PiBkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlv
+bi9kZXZpY2V0cmVlL2JpbmRpbmdzL2RtYS90aS1lZG1hLnR4dCBiL0RvY3VtZW50YXRpb24vZGV2
+aWNldHJlZS9iaW5kaW5ncy9kbWEvdGktZWRtYS50eHQKPj4+IGluZGV4IDRiYmM5NGQ4MjljOC4u
+MTE5ODY4MmFkYTk5IDEwMDY0NAo+Pj4gLS0tIGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2Jp
+bmRpbmdzL2RtYS90aS1lZG1hLnR4dAo+Pj4gKysrIGIvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVl
+L2JpbmRpbmdzL2RtYS90aS1lZG1hLnR4dAo+Pj4gQEAgLTQyLDYgKzQyLDkgQEAgT3B0aW9uYWwg
+cHJvcGVydGllczoKPj4+ICAtIHRpLGVkbWEtcmVzZXJ2ZWQtc2xvdC1yYW5nZXM6IFBhUkFNIHNs
+b3QgcmFuZ2VzIHdoaWNoIHNob3VsZCBub3QgYmUgdXNlZCBieQo+Pj4gIAkJdGhlIGRyaXZlciwg
+dGhleSBhcmUgYWxsb2NhdGVkIHRvIGJlIHVzZWQgYnkgZm9yIGV4YW1wbGUgdGhlCj4+PiAgCQlE
+U1AuIFNlZSBleGFtcGxlLgo+Pj4gKy0gdGksZWRtYS1yZXNlcnZlZC1jaGFuLXJhbmdlczogY2hh
+bm5lbCByYW5nZXMgd2hpY2ggc2hvdWxkIG5vdCBiZSB1c2VkIGJ5Cj4+PiArCQl0aGUgZHJpdmVy
+LCB0aGV5IGFyZSBhbGxvY2F0ZWQgdG8gYmUgdXNlZCBieSBmb3IgZXhhbXBsZSB0aGUKPj4+ICsJ
+CURTUC4gU2VlIGV4YW1wbGUuCj4+Cj4+IEJhc2VkIG9uIHRoZSBvdGhlciB0aHJlYWQsIEkgdGhp
+bmsgZXh0ZW5kaW5nIGRtYS1jaGFubmVsLW1hc2sgdG8gYSAKPj4gdWludDMyLWFycmF5IG1ha2Vz
+IHNlbnNlIGhlcmUuCj4gCj4gWWVzLCB0aGF0IGlzIHRoZSByZWFzb24gSSBoYXZlIGFza2VkIG9u
+IHRoYXQgYW5kIEknbSBpbiBwcm9ncmVzcyBvZgo+IGNvbnZlcnRpbmcgdGhlIGVkbWEgZHJpdmVy
+IHRvIHVzZSB0aGUgZG1hLWNoYW5uZWwtbWFzay4KPiBKdXN0IG5lZWQgdG8gZG8gc29tZSBzaHVm
+ZmxpbmcgaW4gdGhlIGRyaXZlciB0byBnZXQgdGhlIG1hc2sgaW4gYSBmb3JtCj4gdXNhYmxlIGJ5
+IHRoZSBkcml2ZXIuCj4gCj4gSSdsbCBzZW5kIGFuIHVwZGF0ZWQgc2VyaWVzIGVhcmx5IG5leHQg
+d2Vlay4KCkhvdyBzaG91bGQgdGhlIGRtYS1jaGFubmVsLW1hc2sgdWludDMxLWFycmF5IHNob3Vs
+ZCBiZSBkb2N1bWVudGVkIGFuZCB1c2VkPwoKQmFzaWNhbGx5IHNvbWUgRURNQSBoYXZlIDMyLCBz
+b21lIDY0IGNoYW5uZWxzLiBUaGlzIGlzIGZpbmUuCkxldCdzIHNheSBJIHdhbnQgdG8gbWFzayBv
+dXQgY2hhbm5lbCAwLTQgYW5kIDI0LTI3CgpUaGlzIHdvdWxkIGxvb2sgbGlrZSBpbiBjYXNlIG9m
+IEVETUEgd2l0aCAzMiBjaGFubmVsczoKJmVkbWEgewoJLyogY2hhbm5lbCAwLTQgYW5kIDI0LTI3
+IGlzIG5vdCB0byBiZSB1c2VkICovCglkbWEtY2hhbm5lbC1tYXNrID0gPDB4ZjBmZmZmZjA+Owp9
+OwoKSG93IHRoaXMgc2hvdWxkIGxvb2sgbGlrZSBpbiBjYXNlIHdoZW4gSSBoYXZlIDY0IGNoYW5u
+ZWxzPwomZWRtYSB7CgkvKiBjaGFubmVsIDAtNCBhbmQgMjQtMjcgaXMgbm90IHRvIGJlIHVzZWQg
+Ki8KCWRtYS1jaGFubmVsLW1hc2sgPSA8MHhmMGZmZmZmMD4sIDwweGZmZmZmZmZmPjsKfTsKCldo
+ZW4gSSByZWFkIHRoZSB1MzJzIHRoZW4KY2hhbl9tYXNrWzBdIGlzIGZvciBjaGFubmVsIDAtMzEg
+KExTQiBpcyBjaGFubmVsIDApCmNoYW5fbWFrc1sxXSBpcyBmb3IgY2hhbm5lbCAzMi02MyAoTFNC
+IGlzIGNoYW5uZWwgMzIpCgpPcjoKJmVkbWEgewoJLyogY2hhbm5lbCAwLTQgYW5kIDI0LTI3IGlz
+IG5vdCB0byBiZSB1c2VkICovCglkbWEtY2hhbm5lbC1tYXNrID0gPDB4ZmZmZmZmZmY+LCA8MHhm
+MGZmZmZmMD47Cn07CgpjaGFuX21ha3NbMF0gaXMgZm9yIGNoYW5uZWwgMzItNjMgKExTQiBpcyBj
+aGFubmVsIDMyKQpjaGFuX21hc2tbMV0gaXMgZm9yIGNoYW5uZWwgMC0zMSAoTFNCIGlzIGNoYW5u
+ZWwgMCkKCkRvIHlvdSBoYXZlIHBvaW50ZXIgb24gYWxyZWFkeSBlc3RhYmxpc2hlZCBub3Rpb24g
+b24gaG93IHRvIGRvY3VtZW50IGFuZApoYW5kbGUgdGhpcz8KCi0gUMOpdGVyCgpUZXhhcyBJbnN0
+cnVtZW50cyBGaW5sYW5kIE95LCBQb3Jra2FsYW5rYXR1IDIyLCAwMDE4MCBIZWxzaW5raS4KWS10
+dW5udXMvQnVzaW5lc3MgSUQ6IDA2MTU1MjEtNC4gS290aXBhaWtrYS9Eb21pY2lsZTogSGVsc2lu
+a2kKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
+LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
+Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
+bS1rZXJuZWwK
