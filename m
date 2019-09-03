@@ -2,82 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 214B9A7776
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 01:11:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C12D7A7797
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 01:32:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=tKsOsqDvAfEPq6nwY8sg/V8mFTrusmIgXL7wh+dWd7g=; b=Havul9CPH1a3SMuLy7PkZd1lG
-	l73kDQqEye+xfawIfDFBA8Kz3CL3e55rspql+1RuFKE3pUVfLpUDWijvZk8fL8RYm50ni0fxXHWS1
-	/BATfujbtWasTalOoLwgDa/X1HEgoNTLV/bBavtz8kguUH17CYIcF6JeW48mGqxY0u15ZXVQL6EV5
-	NA70RPrp6Uta5+kA6D+EIF0q+1BVSPlByJqNUeeWfh9k5pZGIKPVFiqdTqgBrxfLsM2SGguMt0hNc
-	O9zNSFDhly0U9PJ3pqjUa4a1gHkMfilLNYhNzOZeu1PMERm5p7kCzbyVn4gNArqKtF2wcqziHTFoF
-	EzTTDpi9g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=m1jQz75gz8/QTl1RMU45KgiZkCISS+uqEBaDtscmvL0=; b=jq9rD0k3dYT8Pv
+	p1rmkpChfbsXbExvVmwmyOyiO2z60j1ehVQVzp30m/aXRRYSpSHSaQaRnLNQNS0F1DL/RIwjNTRaK
+	iasiTtuHBm/Xj7AS6PvhhKKxt4saloDk9dslb8nWhzp2p+CyjK0F25SVdw6joZcPPfE5vC1b4dwdO
+	2SpyEoiW1AC5+/hu+1Ycqbkew53SiF3eP3qKtBlpbZJ6bAF5fcEc9sik0uXJiaAzZjG1XSXVWbt9J
+	/qvJPFpJqSGTZ6/YWUco3CAWKG24t8Wkn1iHkFPMXl+CpZb1R3z/gir1jpX6hksR84JZ1QhcD64mV
+	VpGM/4jCWDdxZkvmvdow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Hxa-0003zf-K0; Tue, 03 Sep 2019 23:11:38 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i5IHc-0001DR-Ip; Tue, 03 Sep 2019 23:32:20 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5HxN-0003zD-A8
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 23:11:26 +0000
-Received: by mail-wm1-x342.google.com with SMTP id y135so1114826wmc.1
+ id 1i5IHN-0001D8-PZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 23:32:07 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y22so6276096pfr.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 16:11:24 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=O1IX4sE++65Y4ZZlb31D7PSxnB7F1eURR0p9HiU+wok=;
- b=GN1lxLL77dx6OpxYsAzcRowiCyZNoduNxno0mwMUs5BgtQA4I1tsuuVAT8pEJiIKH5
- aMMRR5iXVzB9nSZaxZCC8Fall2B9JlTkfMxyyrBN4eA3IKq7TYtxWUDC+nyAF5OdaJ+/
- A9LuEnE/5h0F2/mIen8Joti9/624aDslqpLSY=
+ Tue, 03 Sep 2019 16:32:05 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=LfTKMbZe2QVHemXyI/fIb1Ivk454nudy7JvQKOTshZI=;
+ b=hhxlaIHTv3gXPMOEiEPTnhAjD9Y6bAgnhOJMrJaoKWITBLAEEXo3g+Dr2AbD2y2cNW
+ aVavGUpAgsD4jBtLtEdcSxEL4wLAtcHcQKJ+FN+dvjfpwYreNISdkKS6biYVAK6DtoAA
+ Zk0HK2Zi15ceZYkRx0KmoAQUwfHZ/KUWv1S/klYU/mGRS+G98nPqD3x9ggg1VsPL/TRD
+ tan1EttguFZmZzPYbMfKngbDKfMfRPDmpDkOw1ekyVuS2GOV7CzX1zIu+KtLeRFee8U3
+ p7MkywnwKuyKa3RQPnqFQoCteQJuhSKOBDHg/btqO/Wkmv67b/R11k8TlQP68drElMhr
+ MsEA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=O1IX4sE++65Y4ZZlb31D7PSxnB7F1eURR0p9HiU+wok=;
- b=BRvn0dFd11I8aHHmZc2ciPtV7QBrjozRUYGv9rdg978E4/VeqXZZYZq8UAL+GXN1M8
- TJGbssWVWfi2JRdWEKPeImXuigkrcL/CYBeIYG3BQPvFKvbi6Rt8KfbLXXA4JmiR3wmQ
- 3X/BbuS9TpH2ZPA8J6Ut7RPuFLoxx8x6Sf72g0pConMgBQFRYfBjqzNouabKdbcY1Jf2
- IDQ8La0Avpp295TKyBwvVvZ0GQkmkt20ZTn8NPqkLiwaAoUz9pi+sygSQb/AmSwrV2/V
- rMJqt2YKhBMjWJMzUshboqjF3lOAfv1Hs450XwMA/ZGi82smryHZF+s/PbTHxwW7Lh80
- qPCA==
-X-Gm-Message-State: APjAAAWTrJ9jb+PtslCfVX7zfi9TkkwB3wfbx7LSsBTqtZNF4Fus6g/h
- MJ/EHdjBhQV8pshvAyQ/tSSDNA==
-X-Google-Smtp-Source: APXvYqw0nbdYJ7kcbtwu+coOAy8z5E8zaUK+TSpgMcoATdcQSuYsagRGgIBexHatzxh6Gy5qz+Gbzg==
-X-Received: by 2002:a1c:9ec9:: with SMTP id h192mr1877598wme.105.1567552282880; 
- Tue, 03 Sep 2019 16:11:22 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id v6sm1649818wma.24.2019.09.03.16.11.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Tue, 03 Sep 2019 16:11:22 -0700 (PDT)
-Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
-To: Wolfram Sang <wsa@the-dreams.de>
-References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
- <20190830125626.GC2870@ninjato>
- <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
- <20190831094940.GA1138@kunai>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <540c4e2d-0dd5-5260-30b2-e1589b279d71@broadcom.com>
-Date: Tue, 3 Sep 2019 16:11:16 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=LfTKMbZe2QVHemXyI/fIb1Ivk454nudy7JvQKOTshZI=;
+ b=XfuCdEDUiEaHGBa7h3xMvEnVqwZxJCcBdOXsnyotbzk5aE34L2CCkFSnHkrzbTVt/A
+ vxMkvzKuhgH/+mXlp6P0r+l6TV1AnJ2ezQbAXLtMUMyLgqeMQMOgo10Jm11Q7sECi1WH
+ 2hijbnsw4ybM0NtSuqSo4ShhWFSWekFCxjC9sZ3+OqYHiXF8MK2ujbMZGSqmOM/ods/P
+ YrEirL/fZ+cQw2MjNdETTqOjWNRPXz9FxP+/Xj1ncAf59Bdg3R3+QeOItP8kBlxFsOrT
+ I2+JFjmT1LJMF/hBrOwqjiFCH2K7alNfHHEccdV8sj+L91AgTAkj2qhVyWfTHG/v9IY/
+ CKrA==
+X-Gm-Message-State: APjAAAWjRF3VgqBdqcFDUZemADrEkRSXQ1nnqQFAyU9issRREEi13zWl
+ eivxS8EfDiqrVcJ+xxbnzj21Ew==
+X-Google-Smtp-Source: APXvYqzOEVmuwaiwOAKa84Gb6UNz3WotsIqSI/TBfnStU4C0+10SnuM4+VTmlepgJynzri/fsmD3jg==
+X-Received: by 2002:a63:3fc9:: with SMTP id
+ m192mr33069603pga.429.1567553524617; 
+ Tue, 03 Sep 2019 16:32:04 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id a29sm29714392pfr.152.2019.09.03.16.32.02
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 03 Sep 2019 16:32:03 -0700 (PDT)
+Date: Tue, 3 Sep 2019 16:34:10 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: Stephen Boyd <swboyd@chromium.org>
+Subject: Re: [PATCH v4 3/4] dt-bindings: Add Qualcomm USB SuperSpeed PHY
+ bindings
+Message-ID: <20190903233410.GQ26807@tuxbook-pro>
+References: <20190207111734.24171-1-jorge.ramirez-ortiz@linaro.org>
+ <20190207111734.24171-4-jorge.ramirez-ortiz@linaro.org>
+ <20190223165218.GB572@tuxbook-pro>
+ <6dc0957d-5806-7643-4454-966015865d38@linaro.org>
+ <5d694878.1c69fb81.5f13b.ec4f@mx.google.com>
+ <20190830164520.GK26807@tuxbook-pro>
+ <5d696ad2.1c69fb81.977ea.39e5@mx.google.com>
+ <f3584f38-dabc-7e7a-d1cb-84c80ed26215@linaro.org>
+ <20190903173924.GB9754@jackp-linux.qualcomm.com>
+ <5d6edee5.1c69fb81.a3896.1d05@mx.google.com>
 MIME-Version: 1.0
-In-Reply-To: <20190831094940.GA1138@kunai>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <5d6edee5.1c69fb81.a3896.1d05@mx.google.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_161125_356703_EC3FAE4C 
-X-CRM114-Status: GOOD (  17.71  )
+X-CRM114-CacheID: sfid-20190903_163205_836623_2DF52151 
+X-CRM114-Status: GOOD (  33.00  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -88,7 +98,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,65 +109,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Lori Hikichi <lori.hikichi@broadcom.com>,
- Florian Fainelli <f.fainelli@gmail.com>,
- Shivaraj Shetty <sshetty1@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
- Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, robh@kernel.org, Jack Pham <jackp@codeaurora.org>,
+ devicetree@vger.kernel.org, gregkh@linuxfoundation.org,
+ linux-usb@vger.kernel.org, khasim.mohammed@linaro.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, linux-arm-msm@vger.kernel.org,
+ andy.gross@linaro.org, Jorge Ramirez <jorge.ramirez-ortiz@linaro.org>,
+ shawn.guo@linaro.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue 03 Sep 14:45 PDT 2019, Stephen Boyd wrote:
 
-
-On 8/31/19 2:49 AM, Wolfram Sang wrote:
-> Hi Ray,
+> Quoting Jack Pham (2019-09-03 10:39:24)
+> > On Mon, Sep 02, 2019 at 08:23:04AM +0200, Jorge Ramirez wrote:
+> > > On 8/30/19 20:28, Stephen Boyd wrote:
+> > > > Quoting Bjorn Andersson (2019-08-30 09:45:20)
+> > > >> On Fri 30 Aug 09:01 PDT 2019, Stephen Boyd wrote:
+> > > >>
+> > > >>>>>
+> > > >>>>> The USB-C connector is attached both to the HS and SS PHYs, so I think
+> > > >>>>> you should represent this external to this node and use of_graph to
+> > > >>>>> query it.
+> > > >>>>
+> > > >>>> but AFAICS we wont be able to retrieve the vbux-supply from an external
+> > > >>>> node (that interface does not exist).
+> > > >>>>
+> > > >>>> rob, do you have a suggestion?
+> > > >>>
+> > > >>> Shouldn't the vbus supply be in the phy? Or is this a situation where
+> > > >>> the phy itself doesn't have the vbus supply going to it because the PMIC
+> > > >>> gets in the way and handles the vbus for the connector by having the SoC
+> > > >>> communicate with the PMIC about when to turn the vbus on and off, etc?
+> > > >>>
+> > > >>
+> > > >> That's correct, the VBUS comes out of the PMIC and goes directly to the
+> > > >> connector.
+> > > >>
+> > > >> The additional complicating factor here is that the connector is wired
+> > > >> to a USB2 phy as well, so we need to wire up detection and vbus control
+> > > >> to both of them - but I think this will be fine, if we can only figure
+> > > >> out a sane way of getting hold of the vbus-supply.
+> > > >>
+> > > > 
+> > > > Does it really matter to describe this situation though? Maybe it's
+> > > > simpler to throw the vbus supply into the phy and control it from the
+> > > > phy driver, even if it never really goes there. Or put it into the
+> > > > toplevel usb controller?
+> > > > 
+> > > that would work for me - the connector definition seemed a better way to
+> > > explain the connectivity but since we cant retrieve the supply from the
+> > > external node is not of much functional use.
+> > > 
+> > > but please let me know how to proceed. shall I add the supply back to
+> > > the phy?
 > 
->>> With all the limitations in place, I wonder if it might be easier to
->>> implement an smbus_xfer callback instead? What is left that makes this
->>> controller more than SMBus and real I2C?
->>>
->>
->> Right. But what is the implication of using smbus_xfer instead of
->> master_xfer in our driver?
->>
->> Does it mean it will break existing functions of the i2c app that our
->> customers developed based on i2cdev (e.g., I2C_RDWR)?
+> So does the vbus actually go to the phy? I thought it never went there
+> and the power for the phy was different (and possibly lower in voltage).
 > 
-> If the customers uses I2C_RDWR (and it cannot be mapped to i2c_smbus_*
-> calls) then this is an indication that there is some I2C functionality
-> left which the HW can provide. I'd be interested which one, though.
+
+No, the PHYs use different - lower voltage - supplies to operate. VBUS
+is coming from a 5V supply straight to the connector and plug-detect
+logic (which is passive in this design).
+
+> > 
+> > Putting it in the toplevel usb node makes sense to me, since that's
+> > usually the driver that knows when it's switching into host mode and
+> > needs to turn on VBUS. The dwc3-qcom driver & bindings currently don't 
+> > do this but there's precedent in a couple of the other dwc3 "glues"--see
+> > Documentation/devicetree/bindings/usb/{amlogic\,dwc3,omap-usb}.txt
+> > 
+> > One exception is if the PMIC is also USB-PD capable and can do power
+> > role swap, in which case the VBUS control needs to be done by the TCPM,
+> > so that'd be a case where having vbus-supply in the connector node might
+> > make more sense.
+> > 
 > 
->>
->> 1) Does
+> The other way is to implement the code to get the vbus supply out of a
+> connector. Then any driver can do the work if it knows it needs to and
+> we don't have to care that the vbus isn't going somewhere. I suppose
+> that would need an of_regulator_get() sort of API that can get the
+> regulator out of there? Or to make the connector into a struct device
+> that can get the regulator out per some generic connector driver and
+> then pass it through to the USB controller when it asks for it. Maybe
+> try to prototype that out?
 > 
-> Maybe you wanted to describe it here and it got accidently cut off? >
 
-I think you are right that the controller does not seem to support 
-additional I2C features in addition to SMBUS.
+The examples given in the DT bindings describes the connector as a child
+of a PMIC, with of_graph somehow tying it to the various inputs. But in
+these examples vbus is handled by implicitly inside the MFD, where
+extcon is informed about the plug event they toggle vbus as well.
 
-However, my concern of switching to the smbus_xfer API is:
+In our case we have a extcon-usb-gpio to detect mode, which per Jorge's
+proposal will trickle down to the PHY and become a regulator calls on
+either some external regulator or more typically one of the chargers in
+the system.
 
-1) Some customers might have used I2C_RDWR based API from i2cdev. 
-Changing from master_xfer to smbus_xfer may break the existing 
-applications that are already developed.
 
-2) The sound subsystem I2C regmap based implementation seems to be using 
-i2c_ based API instead of smbus_ based API. Does this mean this will 
-also break most of the audio codec drivers with I2C regmap API based usage?
+So if we come up with a struct device for the connector and some API for
+toggling the vbus we're going to have to fairly abstract entities
+representing pretty much the same thing - and in a design with a mux we
+would have a different setup.
 
-Thanks,
-
-Ray
-
-> Regards,
-> 
->     Wolfram
-> 
+Regards,
+Bjorn
 
 _______________________________________________
 linux-arm-kernel mailing list
