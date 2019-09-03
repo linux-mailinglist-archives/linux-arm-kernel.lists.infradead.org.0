@@ -2,59 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 27831A747B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 22:16:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 16E0FA747F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 22:18:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L2gNnaDaqS3UdU3SKOd5EYex3C97HuZXJdjYwtjRSpA=; b=LJUEJtM80i00EA
-	wv2NHmwD6/zrvpc24VAAFhWUsCLw51mNtFXiwXqHXMf6Mk2JXeK4PjD9RiRSlBMlLZgESJuYpupfy
-	BrGPiqTXiblzutwYl3kz1wOUDm8UDBgujWCZtpps3GPbfffE9jUyl906DCWpe4gXkkS2a6BWKn+XK
-	PPjTLjDm8XiUqqNPS+vUGExKdXW47y7TkEbrDQ4fldUFCjM+x4wh/+Dko65Z7Br2IXCZVTHJAS+p1
-	6WyhouZSUBSU4IqSPLTJLWSE/dpd6LgPiMYVkCFRQfHFs8bT2SDnPSH4N6S34E1TXT52ug6R3uofI
-	beFWarM+ruTIOdXIVgkQ==;
+	List-Owner; bh=0bUcjG8As3JPrwg22zWZ4s+V9i44lMaT4BCDVYR12qU=; b=NevwPrPcrHItUa
+	86lqIBUFIHKoO5Zxh3M94suZm/y+xGmToYqbvgKW3SppDSIxJFyaOUM+fqEZw/NbzJQZJDqCKURoa
+	lRoBB0Hg/9TrnRVBBXjpqSNDZQP90qgxIlk5Xt4NZqu+0B50o/wOVjN7Ri+o+1YnLaF/Lwcg9GBHM
+	H7kXXuxbQiTtB3ggayMvLAg7s+TgzceMa4dqmkeyqs17tEeILrliWuJ1nrPeU88WqMUkr9JlOlYgu
+	znbwA4qWHR8Zwp0bQsLc+nzx4Nx4dzEzek99IENjpXazYDfqLQESzWG/iLWMpsRo9GPsiSEqISIXr
+	KcEmbdJrGO5e2UAA1FEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5FEA-0002Ee-RA; Tue, 03 Sep 2019 20:16:34 +0000
-Received: from mail-qk1-f181.google.com ([209.85.222.181])
+	id 1i5FGF-0002V6-NO; Tue, 03 Sep 2019 20:18:43 +0000
+Received: from mail-qt1-f171.google.com ([209.85.160.171])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5FDy-0002Ds-T8
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 20:16:24 +0000
-Received: by mail-qk1-f181.google.com with SMTP id m2so17311942qkd.10
+ id 1i5FG3-0002Up-Qa
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 20:18:33 +0000
+Received: by mail-qt1-f171.google.com with SMTP id t12so21599446qtp.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 13:16:22 -0700 (PDT)
+ Tue, 03 Sep 2019 13:18:31 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=I9L2785C2btxqBJKiEhwb2rjpjRWvRDLJ8LvKhBnR7M=;
- b=CUgiXJZ/99BamKLo4PX1K4JPlT0ZiNb1rNaTmBwTx4hLP5249pDoJMdY7NekdTm8Nm
- SEQGlrMJniYJIK3VlIJvbKEYw5gdufJv6d64okI5y2ghaT2dmlsiHQPF+w0gQBotCW3E
- ti2HXPMxjujIF5ukQFWTuzi6iJomwkErEn9etmwNXJStqDISzgNm8vfDcDvXhv78KFUx
- bOBpBR9ztKygbXDm5AcC94CWLMXumHSmeA0nLLOFebo6CjXnLUv6dg0zwFdRkbdcWrAN
- Ai98t6PUNu10N8o8OBYwxjJb57d2vRb6Wpjgh+swzR61lnveTXSBQl0JtZiN0GDS2HPj
- Vq4Q==
-X-Gm-Message-State: APjAAAU960pDFU8XsYa+hzjqYeCKJ6ojtJpmcVRcjtGVNLo3oaEkioBs
- s8bLgKR78kG6dKkKE2++4mVRg+xSmtHHNUodNMk=
-X-Google-Smtp-Source: APXvYqyCsexWiK7L/aZ31I67kNz7n9fqy5VUIY3KlNYVdon2D0ObdblZSsyJQJcmItPQAQ4GUxvNqwAQOaslFisGvIA=
-X-Received: by 2002:a05:620a:b:: with SMTP id
- j11mr36419743qki.352.1567541781734; 
- Tue, 03 Sep 2019 13:16:21 -0700 (PDT)
+ bh=a1QAathzD1/uAV9fYI7POjmT2TDuxBSa+aSggxWhAY0=;
+ b=ciXKwFcEWbrGORiNw7q2waeFhxVpAo/97+z41Cs8kNfgqRF6AVxQivTwIXhpe3TwJu
+ HvYFVq7Q2cA/HegtGHbP9ORARYyTSBvxQp1HTN5axz8LqQwW89AS4JApWGfGifse91XV
+ O7d5w78J2AvVquPhf0dD16etZIZpwiuue8PRDLJye1N0bLOoSfc06XX1rXxZIelWJc3g
+ rYL3BTbP1EiFhzXUQep74pRJlZ0IimrUKHjQTNbgs+/JFgLnL/XbonaFvRJ6vGXkBlDU
+ yQgHMJDJ6S3yV2Vbu5rp0n7pNnd7vfLrREcaVD9fylSK+KrUiX8rSJ2XAjaw5bZGxgq3
+ M2tg==
+X-Gm-Message-State: APjAAAXuMdS9glkzc4X2R/VFxZKULJqC3pfE1Ku2Mxule/MuQQ85bEFo
+ aPWqCvQEuHCtD+HWdalevC+XkWyIBNCZ9l6Iva03JA==
+X-Google-Smtp-Source: APXvYqwgXExvgTxOl1/O2lfva4kHNuYKWSCt6OFDd799DZaQ+1K+JS/a7srkxQkqG5dpyuZV/0d/Kd31j11hNcaQrV4=
+X-Received: by 2002:ac8:342a:: with SMTP id u39mr13256958qtb.7.1567541910527; 
+ Tue, 03 Sep 2019 13:18:30 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190823123643.18799-1-geert+renesas@glider.be>
- <20190823123643.18799-5-geert+renesas@glider.be>
-In-Reply-To: <20190823123643.18799-5-geert+renesas@glider.be>
+References: <f9edfc8e-19b7-4b6e-897a-35f3bdcc8643.lettre@localhost>
+In-Reply-To: <f9edfc8e-19b7-4b6e-897a-35f3bdcc8643.lettre@localhost>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 22:16:05 +0200
-Message-ID: <CAK8P3a2zDhj_1M0d6t9MFuWCK0kkFVnFtzP7OYE4O47Goy6vdw@mail.gmail.com>
-Subject: Re: [PULL 4/5] Renesas driver updates for v5.4 (take two)
-To: Geert Uytterhoeven <geert+renesas@glider.be>
+Date: Tue, 3 Sep 2019 22:18:14 +0200
+Message-ID: <CAK8P3a3+SSen+BxFkryBJPzECMQ47aw-JQp55kOGQyKVbKLJPw@mail.gmail.com>
+Subject: Re: [GIT PULL] Allwinner Drivers Changes for 5.4
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_131622_937094_88325E1B 
-X-CRM114-Status: UNSURE (   7.91  )
+X-CRM114-CacheID: sfid-20190903_131832_334784_A141D620 
+X-CRM114-Status: UNSURE (   8.63  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -62,13 +60,15 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.181 listed in list.dnswl.org]
+ no trust [209.85.160.171 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.160.171 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -82,22 +82,20 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Simon Horman <horms@verge.net.au>, Magnus Damm <magnus.damm@gmail.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, arm-soc <soc@kernel.org>,
- arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 2:36 PM Geert Uytterhoeven
-<geert+renesas@glider.be> wrote:
-> Renesas driver updates for v5.4 (take two)
+On Fri, Aug 23, 2019 at 4:33 PM Maxime Ripard <mripard@kernel.org> wrote:
+> ----------------------------------------------------------------
+> Allwinner drivers patches for 5.4
 >
->   - Improve "always-on" PM Domain handling on SH/R-Mobile SoCs,
->   - Automatic errata selection for Cortex-A7/A9,
->   - Small fixes and improvements.
->
+> One driver to remove a redundant error message in the Allwinner RSB
+> driver.
+
 
 Pulled into arm/drivers, thanks!
 
