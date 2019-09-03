@@ -2,56 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94D79A6A9A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 15:59:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DF07BA6AA4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:01:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9j2VBwBeF/oA4wSTsSuQ2RxT2ygg7MK2vE6fKUOiez4=; b=S48O6UNpH3BgC5
-	eGdU4RRdSAF4ya/yM5mptiCK2qYmdfcZtqIcYqr3hzNEWbJ6o5QzP932RLGo8B95OTfKmz2Ds9Eil
-	kE+T06zMg1A3fEkXTaQhK8BVedDXlsAxnu5W5+F/npayf+RIXkUW3NhplFUNl9cprkNqhn0WU8XL0
-	Kf5NrVfv6ufuxrgetU7+e4cKOFdL7f2Gh99bc6cOpB3E9fNLGZXmC6X7eTEt5M060UiNCYFzs9XuK
-	0NBr5d9T+LjuS9Y8ASUi3sQhULhstpAeGUEInDNB6dDvb3F+wDUwAz35zzkdr7xcCwU0szJX8s+Mn
-	otAk479Y7LIYzRJ3eHNg==;
+	List-Owner; bh=kFpvB4AvRnaIa3A9UhH0aiG1/VKcW7+HU7ZoLVgzSO8=; b=cym6v1sOf/nJxS
+	dUj76RHkgcH6iGrj7XJvXwFz70goF4e+YykG5+TYjt6RbhqGHJs7DMRqcaVV5V8y3IyJQstRXS8AS
+	8DKms0GZHAbZUuZyRoJ0LZlNwsf0ZiqlgLI9LIjXjzZ2TSvpMo4U+/jTUKuQLv3CJv8NqVftrWKc7
+	B3IaI1bFLE8vMahw98Fla2M+8HbpYfvbqZg3Jz4v8WvSrpY5/MEr4tMr4EhMHGd4fdrqmtQzB7uNj
+	XcKOaTZXDOwhsH+YZZ2DSKx+v6H2/mHz3i5g3G9meCEMEy8L6KDzV44knf/G/gov2EAX+UmMx4U/t
+	Z1IlYUCSFDUq3alUOceg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i59LU-0007uF-LK; Tue, 03 Sep 2019 13:59:44 +0000
-Received: from mail-qk1-f175.google.com ([209.85.222.175])
+	id 1i59Mv-0000yQ-Qq; Tue, 03 Sep 2019 14:01:13 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i59LI-0007tt-BL; Tue, 03 Sep 2019 13:59:33 +0000
-Received: by mail-qk1-f175.google.com with SMTP id f13so15952739qkm.9;
- Tue, 03 Sep 2019 06:59:31 -0700 (PDT)
+ id 1i59Ml-0000xs-57; Tue, 03 Sep 2019 14:01:04 +0000
+Received: by mail-qk1-f196.google.com with SMTP id s18so4986629qkj.3;
+ Tue, 03 Sep 2019 07:01:00 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=0e17as3VR/oC2DAawaVGien76iBfAI0N9aX1yddagwk=;
- b=g0aF0TsKYVSqP4BzsK92FnRN951b5S+hYVzca9UaVHM3SdXaWJNy/aOhAtYMsBY0a3
- ER0zb3ZiokkDIYcoxyEpGTdHyVoc385BiMLoT84btia+1+cszNvFLsViln5m89r25q9T
- ARKZtYMiBB/MLPYrgYBcpt7b9K51wvw1zh3F2NJFJDIKSnEv7HTKm5d9MyJWDha5r7pP
- qyNqNgM2EoK+rozZgxtn5TEtTSF16XsD3qq8HFL922sk6DOe6yHkg7LXES3doY5tB6fj
- ag59KwQL7j/4UcAhSMf93/wXf9ULgV9BN1mzpe6SJQ4tqf0rGfV54PwKckSRVPwy/+26
- GnTA==
-X-Gm-Message-State: APjAAAXQf19TsPmaZwh7tmVlQmY+FHPer40p4KSRl/FyFRMM9eN0zWAI
- e/XT9NaFTYdK/GMHpLJ/btAcF37XMYv2KsFg8Qc=
-X-Google-Smtp-Source: APXvYqzr7Y2nACxjnlza8RHOen7v2iumyOkQyWRsYZGIEbQRqwbFluHY84dRhwjRgGpVYA8d0LG1M+9kGxj9HDZsDww=
-X-Received: by 2002:a05:620a:b:: with SMTP id
- j11mr34471317qki.352.1567519170245; 
- Tue, 03 Sep 2019 06:59:30 -0700 (PDT)
+ bh=vkeTfc7M2XswgLvmLg2L8bchTrQWzutCAt1I7U2Lp9E=;
+ b=WkT7gi09NcleSmtxSUtz653eItVAWi+E7RupngDDeTeO9ly4GoAi2dukQ9sJFPqtD3
+ c2SiVJuAES8F3BstcBjpJmONngPMOGG3IUOhvMXz1F4VUZMP3oyzdqX7VrqGzT4W3jxh
+ 1QHl7WkxEiMfrmJsPUVKZJVveNNkAgZX6VwnQakyytYbyAyhGmCzqcZdI9BXIOXdM9Dt
+ wNeAzzRkxOvZh9/sYxypzrZ83aW0b8u0FxU31OXWhnVo98WG3dZtV34NiU/WSbpGC0Yk
+ 4WHnPWoBm2QdeMRN9c+LUJ6JPV7U6PExw9L8C/eMnQ13qSh32jYjIJ6iBYOCoKO/qqpA
+ pXcg==
+X-Gm-Message-State: APjAAAWP2N9d+3ggcJGOFqKOgdQqMRRwfBzYogeLhWp7gqlv5fIieUWZ
+ 8KjkdWjnNhTGMiNmQ5IRSiMN/zVjgT3MSg+VueA=
+X-Google-Smtp-Source: APXvYqygQ4tSXWucAEiUHsEecpiACDpKvaFBpFIrUG/drKfb0kuPKmXNrvSEhFiYOs+De/YdCIRfTUpG1woz3AgWc64=
+X-Received: by 2002:a37:4b0d:: with SMTP id y13mr33423487qka.3.1567519259214; 
+ Tue, 03 Sep 2019 07:00:59 -0700 (PDT)
 MIME-Version: 1.0
-References: <e236f659-2851-21b8-1873-314cd72ed6be@gmail.com>
-In-Reply-To: <e236f659-2851-21b8-1873-314cd72ed6be@gmail.com>
+References: <def8fb77-fce4-097d-7ae2-8c4670bc09c1@gmail.com>
+In-Reply-To: <def8fb77-fce4-097d-7ae2-8c4670bc09c1@gmail.com>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 15:59:14 +0200
-Message-ID: <CAK8P3a3s+SPF4YpfQUKw5wOhF6hQF2e8J8qsLcC1kmhZY+Ff0w@mail.gmail.com>
-Subject: Re: [GIT PULL] arm: mediatek: dts32 updates for v5.4
+Date: Tue, 3 Sep 2019 16:00:43 +0200
+Message-ID: <CAK8P3a2ta+B=5D3suEfF1UccLSFSbcGs7B3AxvqBSzx=nLfE1w@mail.gmail.com>
+Subject: Re: [GIT PULL] arm64: mediatek: dts64 updates for v5.4
 To: Matthias Brugger <matthias.bgg@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_065932_385128_5E06CFB1 
-X-CRM114-Status: UNSURE (   9.95  )
+X-CRM114-CacheID: sfid-20190903_070103_197836_94CD9300 
+X-CRM114-Status: UNSURE (   7.18  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -59,13 +58,15 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.175 listed in list.dnswl.org]
+ no trust [209.85.222.196 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -81,30 +82,30 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
  "moderated list:ARM/Mediatek SoC support"
- <linux-mediatek@lists.infradead.org>, Ryder Lee <ryder.lee@mediatek.com>,
+ <linux-mediatek@lists.infradead.org>,
+ Hsin-Hsiung Wang <hsin-hsiung.wang@mediatek.com>,
+ Mars Cheng <mars.cheng@mediatek.com>,
  "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 6:40 PM Matthias Brugger <matthias.bgg@gmail.com> wrote:
-
->
->   https://git.kernel.org/pub/scm/linux/kernel/git/matthias.bgg/linux.git/
-> tags/v5.3-next-dts32
->
-> for you to fetch changes up to cc212241df0b8975bb0e6d7f9028405a9c664e49:
->
->   arm: dts: mediatek: add basic support for MT7629 SoC (2019-08-22 11:22:17 +0200)
+On Fri, Aug 23, 2019 at 6:42 PM Matthias Brugger <matthias.bgg@gmail.com> wrote:
+>   dt-bindings: irq: mtk, sysirq: add support for mt6779 (2019-08-23 17:50:07 +0200)
 >
 > ----------------------------------------------------------------
-> add support for the mt7629 reference board
+> mt8183:
+> - fix pwrap interrupt number
+> - add i2c notes
 >
+> dt-bindings:
+> - add compatible for mt6779
+> - add mt6779 uart and sysirq compatible
 
 Pulled into arm/dt, thanks!
 
-      Arnd
+     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
