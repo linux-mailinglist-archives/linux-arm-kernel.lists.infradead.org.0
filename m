@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 924CBA65EF
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 11:44:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A440CA65F1
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 11:44:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JHYWfE/hbMQlbgk1uMjRhwyEJDf3c4ztoG+8xidcou4=; b=FMDHXIUS4/XkJH
-	5bM9DoDn9ZSCL2tpUm7X8Qjy/jLODkWt9CvOEn/UZXK4skEy9sp5uqFPCUITi9gKchN1A9Ke6L2KU
-	WYwT0NLFrIE9ezhw0WTorOrEQK7AMoOoPDJgdSgduNbuL/gQR9rHmbb8XaB2CXK0bLAwfM3BQiQpK
-	2RxDKlTgnLSYD9bUqh1x8xnFmy/M/uIMSrotZBa5O2/EFURJM11dlIBTucPVhAav/PRyB86uP1vwG
-	3Ax+uik6ZmC94nmQXK3F7e2/8Z83lfLQ1FHrltDlAgXURvNfMZwYxv+DIoQ6YBOqiFnrLeiCGcXsw
-	2vdiXRHuzg2tKAZa/2mA==;
+	List-Owner; bh=oiFOPQIc3ItxlD3V8V1NVvAh9KcGLOJWk6cUD7DSmro=; b=ZfruK2mIVH07bb
+	a8yVQTEHPLrTftE3ASbRK6bFLTLpXTZSIj3SfGrOJK4XN0Kk6jaKjTh04CQY28B7ZKZ2FVdydf5a/
+	mpXnyOa8VFA+a5jJG6Lm5SO0aB9QVdkUjbJ+qaNeeS8bQEY+vaqOTWSO6dtgpFgbIksmq7l8/mbOj
+	L6OZX5Rb1oW1/iQ1EPgs11n6CjI6Dlsv1paTV9/DhuOS3S0IediKeXSfaGEICsCJiz28PJY60+/VQ
+	nKuDbFumyRraVHGtXlD8nJw9DIQHBUwdMP3IZ/2JCymfSCEeAa5YDftHKosuD6UOs2uH4wTukjRIF
+	Q5yPa8Gfij9cRfkyAPXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i55MU-0005BY-2q; Tue, 03 Sep 2019 09:44:30 +0000
+	id 1i55Mp-0005Ug-86; Tue, 03 Sep 2019 09:44:51 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i55IF-00010X-QS; Tue, 03 Sep 2019 09:40:11 +0000
-X-UUID: 17ea4b98d76e4bd49d7dec290c7f1061-20190903
-X-UUID: 17ea4b98d76e4bd49d7dec290c7f1061-20190903
+ id 1i55IL-0001Zw-P9; Tue, 03 Sep 2019 09:40:15 +0000
+X-UUID: 5f81d18652bd47b0bcb043c50b211dbb-20190903
+X-UUID: 5f81d18652bd47b0bcb043c50b211dbb-20190903
 Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
  (envelope-from <yong.wu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 961579040; Tue, 03 Sep 2019 01:40:04 -0800
+ with ESMTP id 109815638; Tue, 03 Sep 2019 01:40:11 -0800
 Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Sep 2019 02:40:03 -0700
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Sep 2019 02:40:09 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
  mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 3 Sep 2019 17:40:01 +0800
+ 15.0.1395.4; Tue, 3 Sep 2019 17:40:08 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 3 Sep 2019 17:40:00 +0800
+ Transport; Tue, 3 Sep 2019 17:40:07 +0800
 From: Yong Wu <yong.wu@mediatek.com>
 To: Matthias Brugger <matthias.bgg@gmail.com>, Joerg Roedel <joro@8bytes.org>, 
  Rob Herring <robh+dt@kernel.org>
-Subject: [PATCH v3 13/14] arm: dts: mediatek: Get rid of mediatek,
+Subject: [PATCH v3 14/14] arm64: dts: mediatek: Get rid of mediatek,
  larb for MM nodes
-Date: Tue, 3 Sep 2019 17:37:35 +0800
-Message-ID: <1567503456-24725-14-git-send-email-yong.wu@mediatek.com>
+Date: Tue, 3 Sep 2019 17:37:36 +0800
+Message-ID: <1567503456-24725-15-git-send-email-yong.wu@mediatek.com>
 X-Mailer: git-send-email 1.9.1
 In-Reply-To: <1567503456-24725-1-git-send-email-yong.wu@mediatek.com>
 References: <1567503456-24725-1-git-send-email-yong.wu@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_024008_250172_AB4FFE4D 
-X-CRM114-Status: UNSURE (   9.60  )
+X-CRM114-CacheID: sfid-20190903_024013_960284_DC63631E 
+X-CRM114-Status: UNSURE (   8.86  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -96,34 +96,126 @@ CC: Matthias Brugger <matthias.bgg@gmail.com>
 Signed-off-by: Yong Wu <yong.wu@mediatek.com>
 Reviewed-by: Evan Green <evgreen@chromium.org>
 ---
- arch/arm/boot/dts/mt2701.dtsi | 1 -
- arch/arm/boot/dts/mt7623.dtsi | 1 -
- 2 files changed, 2 deletions(-)
+ arch/arm64/boot/dts/mediatek/mt8173.dtsi | 15 ---------------
+ 1 file changed, 15 deletions(-)
 
-diff --git a/arch/arm/boot/dts/mt2701.dtsi b/arch/arm/boot/dts/mt2701.dtsi
-index 51e1305..57b5de3 100644
---- a/arch/arm/boot/dts/mt2701.dtsi
-+++ b/arch/arm/boot/dts/mt2701.dtsi
-@@ -564,7 +564,6 @@
- 		clock-names = "jpgdec-smi",
- 			      "jpgdec";
- 		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
--		mediatek,larb = <&larb2>;
- 		iommus = <&iommu MT2701_M4U_PORT_JPGDEC_WDMA>,
- 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
- 	};
-diff --git a/arch/arm/boot/dts/mt7623.dtsi b/arch/arm/boot/dts/mt7623.dtsi
-index a79f0b6..cf22c58 100644
---- a/arch/arm/boot/dts/mt7623.dtsi
-+++ b/arch/arm/boot/dts/mt7623.dtsi
-@@ -783,7 +783,6 @@
- 		clock-names = "jpgdec-smi",
- 			      "jpgdec";
- 		power-domains = <&scpsys MT2701_POWER_DOMAIN_ISP>;
--		mediatek,larb = <&larb2>;
- 		iommus = <&iommu MT2701_M4U_PORT_JPGDEC_WDMA>,
- 			 <&iommu MT2701_M4U_PORT_JPGDEC_BSDMA>;
- 	};
+diff --git a/arch/arm64/boot/dts/mediatek/mt8173.dtsi b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+index 15f1842..06e2c09 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8173.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8173.dtsi
+@@ -921,7 +921,6 @@
+ 				 <&mmsys CLK_MM_MUTEX_32K>;
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			iommus = <&iommu M4U_PORT_MDP_RDMA0>;
+-			mediatek,larb = <&larb0>;
+ 			mediatek,vpu = <&vpu>;
+ 		};
+ 
+@@ -932,7 +931,6 @@
+ 				 <&mmsys CLK_MM_MUTEX_32K>;
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			iommus = <&iommu M4U_PORT_MDP_RDMA1>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		mdp_rsz0: rsz@14003000 {
+@@ -962,7 +960,6 @@
+ 			clocks = <&mmsys CLK_MM_MDP_WDMA>;
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			iommus = <&iommu M4U_PORT_MDP_WDMA>;
+-			mediatek,larb = <&larb0>;
+ 		};
+ 
+ 		mdp_wrot0: wrot@14007000 {
+@@ -971,7 +968,6 @@
+ 			clocks = <&mmsys CLK_MM_MDP_WROT0>;
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			iommus = <&iommu M4U_PORT_MDP_WROT0>;
+-			mediatek,larb = <&larb0>;
+ 		};
+ 
+ 		mdp_wrot1: wrot@14008000 {
+@@ -980,7 +976,6 @@
+ 			clocks = <&mmsys CLK_MM_MDP_WROT1>;
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			iommus = <&iommu M4U_PORT_MDP_WROT1>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		ovl0: ovl@1400c000 {
+@@ -990,7 +985,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_OVL0>;
+ 			iommus = <&iommu M4U_PORT_DISP_OVL0>;
+-			mediatek,larb = <&larb0>;
+ 		};
+ 
+ 		ovl1: ovl@1400d000 {
+@@ -1000,7 +994,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_OVL1>;
+ 			iommus = <&iommu M4U_PORT_DISP_OVL1>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		rdma0: rdma@1400e000 {
+@@ -1010,7 +1003,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_RDMA0>;
+ 			iommus = <&iommu M4U_PORT_DISP_RDMA0>;
+-			mediatek,larb = <&larb0>;
+ 		};
+ 
+ 		rdma1: rdma@1400f000 {
+@@ -1020,7 +1012,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_RDMA1>;
+ 			iommus = <&iommu M4U_PORT_DISP_RDMA1>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		rdma2: rdma@14010000 {
+@@ -1030,7 +1021,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_RDMA2>;
+ 			iommus = <&iommu M4U_PORT_DISP_RDMA2>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		wdma0: wdma@14011000 {
+@@ -1040,7 +1030,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_WDMA0>;
+ 			iommus = <&iommu M4U_PORT_DISP_WDMA0>;
+-			mediatek,larb = <&larb0>;
+ 		};
+ 
+ 		wdma1: wdma@14012000 {
+@@ -1050,7 +1039,6 @@
+ 			power-domains = <&scpsys MT8173_POWER_DOMAIN_MM>;
+ 			clocks = <&mmsys CLK_MM_DISP_WDMA1>;
+ 			iommus = <&iommu M4U_PORT_DISP_WDMA1>;
+-			mediatek,larb = <&larb4>;
+ 		};
+ 
+ 		color0: color@14013000 {
+@@ -1294,7 +1282,6 @@
+ 			      <0 0x16027800 0 0x800>,	/* VDEC_HWB */
+ 			      <0 0x16028400 0 0x400>;	/* VDEC_HWG */
+ 			interrupts = <GIC_SPI 204 IRQ_TYPE_LEVEL_LOW>;
+-			mediatek,larb = <&larb1>;
+ 			iommus = <&iommu M4U_PORT_HW_VDEC_MC_EXT>,
+ 				 <&iommu M4U_PORT_HW_VDEC_PP_EXT>,
+ 				 <&iommu M4U_PORT_HW_VDEC_AVC_MV_EXT>,
+@@ -1364,8 +1351,6 @@
+ 			      <0 0x19002000 0 0x1000>;	/* VENC_LT_SYS */
+ 			interrupts = <GIC_SPI 198 IRQ_TYPE_LEVEL_LOW>,
+ 				     <GIC_SPI 202 IRQ_TYPE_LEVEL_LOW>;
+-			mediatek,larb = <&larb3>,
+-					<&larb5>;
+ 			iommus = <&iommu M4U_PORT_VENC_RCPU>,
+ 				 <&iommu M4U_PORT_VENC_REC>,
+ 				 <&iommu M4U_PORT_VENC_BSDMA>,
 -- 
 1.9.1
 
