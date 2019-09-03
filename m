@@ -2,79 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B29DA5FC8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 05:32:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 42A2CA5FCB
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 05:33:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Bb0UqB1Bnq3H5TQYhIGGXCCUjO2f4KKCMv9LuJUSdFw=; b=Rk303mnn8+9e5Q
-	5q1ruDZzfTFBCWoDyzZ65QRAyqOHQsyXR3JYmfpS/pZwcUVsG32FtiUKhI3FN3YJKY5bZ/O6aLIZe
-	j5d7WKi8QeGkcRatrjte40DMeD9LcaT6AzPYiBRtjDh2nV2ae1MwaStnISVaCIgc8R1QSf8GB7BWq
-	wAQyOJHW1liO6b622GGzuLrnAfnJQunx52PyJLzhY78ImD2f+hW3y/tdZC7+0cULbRUJ2ecZmMKKJ
-	UJLEDGfn55FLxtBUhFV9p3WeAHpZaWJhKk0toeN4tCkOhkibFkwIzKoIf8ory8FlM9+fqE8QTZ8lY
-	5x7jgKsyw+X5TzXqXvZg==;
+	List-Owner; bh=EBEt6PwRcrTWmONj2oYBrLWvw0jVVZIwO3SMZbsCKr0=; b=FZpLubFyy6rSiU
+	ikKLrDlkRJljqsI/Q8Ao+gIpELOPA56t7rFTrRbLlE9ck1cC03BlvX73L+p4KFD1PujHG0WeRpmNx
+	Fm3k4GjioM01VuY9630zh4AeaM7vd2QNxirAKojNlqHGTlEGbvXA/C/Zy+cwYVbEX92FywxN9EhQm
+	6O9drVGAjMRRGopTrpLhV7B2AcYHj943LhX1Iy9PAikp+bJOCuvQIF5RyzXb8YliCr4KYJGF4C/on
+	hypLNvVKsETPHxiS4N6u5jKzb/lvDcf1f82bQDM/C15rTAh76iY4i67Iy2tptqprgyiroY6EqT4pq
+	k7SNx5SPaUGkIJk8tnIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4zYC-0003VZ-0S; Tue, 03 Sep 2019 03:32:12 +0000
-Received: from hqemgate15.nvidia.com ([216.228.121.64])
+	id 1i4zZ1-0004MC-T1; Tue, 03 Sep 2019 03:33:03 +0000
+Received: from hqemgate14.nvidia.com ([216.228.121.143])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4zWd-0002Po-Eg
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 03:30:38 +0000
+ id 1i4zWf-0002Qu-1L
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 03:30:39 +0000
 Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate15.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d6dde5d0000>; Mon, 02 Sep 2019 20:30:37 -0700
+ hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
+ id <B5d6dde5a0003>; Mon, 02 Sep 2019 20:30:34 -0700
 Received: from hqmail.nvidia.com ([172.20.161.6])
  by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 02 Sep 2019 20:30:34 -0700
+ Mon, 02 Sep 2019 20:30:33 -0700
 X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 02 Sep 2019 20:30:34 -0700
-Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL111.nvidia.com
- (172.20.187.18) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Sep
- 2019 03:30:34 +0000
-Received: from HQMAIL109.nvidia.com (172.20.187.15) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Sep
+ by hqpgpgate101.nvidia.com on Mon, 02 Sep 2019 20:30:33 -0700
+Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Sep
  2019 03:30:33 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL109.nvidia.com
- (172.20.187.15) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
+Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL101.nvidia.com
+ (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
  Transport; Tue, 3 Sep 2019 03:30:33 +0000
 Received: from vdumpa-ubuntu.nvidia.com (Not Verified[172.17.173.140]) by
  hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d6dde590006>; Mon, 02 Sep 2019 20:30:33 -0700
+ id <B5d6dde590007>; Mon, 02 Sep 2019 20:30:33 -0700
 From: Krishna Reddy <vdumpa@nvidia.com>
 To: 
-Subject: [PATCH v2 6/7] arm64: tegra: Add DT node for T194 SMMU
-Date: Mon, 2 Sep 2019 20:32:07 -0700
-Message-ID: <1567481528-31163-7-git-send-email-vdumpa@nvidia.com>
+Subject: [PATCH v2 7/7] arm64: tegra: enable SMMU for SDHCI and EQOS on T194
+Date: Mon, 2 Sep 2019 20:32:08 -0700
+Message-ID: <1567481528-31163-8-git-send-email-vdumpa@nvidia.com>
 X-Mailer: git-send-email 2.1.4
 In-Reply-To: <1567481528-31163-1-git-send-email-vdumpa@nvidia.com>
 References: <1567481528-31163-1-git-send-email-vdumpa@nvidia.com>
 X-NVConfidentiality: public
 MIME-Version: 1.0
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1567481437; bh=XtOmA58hJ+G6dvipni6QBdKHmjG2Keg8JgbkYtCIx70=;
+ t=1567481434; bh=0qnKv4AL+zgfotB4+aagt14SzZy5B/jdgMadFvnQidE=;
  h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
  In-Reply-To:References:X-NVConfidentiality:MIME-Version:
  Content-Type;
- b=Dt6opVBxcnnEcdlZpY+UADqwDnsen9ThiDNBdyyH9vtIwQcsQJ0An5w4FJkdPjMKG
- pEAugME2n/ypteZGp5jWJ6N1peu/Ftv/8XlZDpbwTGBSdVpwDxLTBSdII4Bm8v40Dp
- PAONo1leXdJ6+tAT4yNvLSJXf/7yvISpYn3hPlLw04iX4G2hIXl6cSckCBT/WK69d2
- sqou8vXvWPX6aj7b2h63XvedwkoMZxV3dndA84xIL3EJiPU3bn56n/160YGFFjM6Q7
- 8B44j5hUpahM5PKtGqv5WexrITAppDI3eJQmZi9SkG6jFHumfk3wxPZ/HBad6K8gBN
- WvBQiNRrEz4VQ==
+ b=V0bCu0jbuj/W8kcfpxyxq7coxrnMd0w/viaMwONQRgvCGIDHdHRQhjQBEeMYdq+82
+ skCGaxdQPnvxDvme2R1maqtb6U3i+21GIr2me8L1drayGPhT/DbmSes00IMZR9NoiX
+ ibD4I7FPjOO4FD2jUc3PsLzWND/4QGBJe53J05x1bHot4QKHfpjBb16M5sv1vJXPPO
+ sW1yWhHkfGASoh/XvSyzE+ujh4ElynGb5HUCQmanp8cPOrynWBHkfqOf2WyHPk2nIL
+ BW6cgF0WrUE1eKIfPn5iTBEnRWLH+CYSupqCQeqS2SRZOWKVUsxPfSPA45obfS/3H0
+ o5in+W58imcxw==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_203035_717266_7D401869 
-X-CRM114-Status: UNSURE (   7.30  )
+X-CRM114-CacheID: sfid-20190902_203037_354582_CE9259ED 
+X-CRM114-Status: UNSURE (   7.53  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -4.4 (----)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-4.4 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.64 listed in list.dnswl.org]
+ high trust [216.228.121.143 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -84,7 +81,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.8 UPPERCASE_50_75        message body is 50-75% uppercase
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -108,101 +104,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add DT node for T194 SMMU to enable SMMU support.
+Enable SMMU translations for SDHCI and EQOS transactions on T194.
 
 Signed-off-by: Krishna Reddy <vdumpa@nvidia.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 77 ++++++++++++++++++++++++++++++++
- 1 file changed, 77 insertions(+)
+ arch/arm64/boot/dts/nvidia/tegra194.dtsi | 4 ++++
+ 1 file changed, 4 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index d906958..5ae3bbf 100644
+index 5ae3bbf..cac3462 100644
 --- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
 +++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -1401,6 +1401,83 @@
- 			  0x82000000 0x0  0x40000000 0x1f 0x40000000 0x0 0xc0000000>; /* non-prefetchable memory (3GB) */
- 	};
+@@ -51,6 +51,7 @@
+ 			clock-names = "master_bus", "slave_bus", "rx", "tx", "ptp_ref";
+ 			resets = <&bpmp TEGRA194_RESET_EQOS>;
+ 			reset-names = "eqos";
++			iommus = <&smmu TEGRA186_SID_EQOS>;
+ 			status = "disabled";
  
-+	smmu: iommu@12000000 {
-+		compatible = "arm,mmu-500","nvidia,tegra194-smmu";
-+		reg = <0 0x12000000 0 0x800000>,
-+		      <0 0x11000000 0 0x800000>,
-+		      <0 0x10000000 0 0x800000>;
-+		interrupts = <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 240 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 240 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>,
-+			     <GIC_SPI 170 IRQ_TYPE_LEVEL_HIGH>;
-+		stream-match-mask = <0x7f80>;
-+		#global-interrupts = <3>;
-+		#iommu-cells = <1>;
-+	};
-+
- 	sysram@40000000 {
- 		compatible = "nvidia,tegra194-sysram", "mmio-sram";
- 		reg = <0x0 0x40000000 0x0 0x50000>;
+ 			snps,write-requests = <1>;
+@@ -381,6 +382,7 @@
+ 			clock-names = "sdhci";
+ 			resets = <&bpmp TEGRA194_RESET_SDMMC1>;
+ 			reset-names = "sdhci";
++			iommus = <&smmu TEGRA186_SID_SDMMC1>;
+ 			nvidia,pad-autocal-pull-up-offset-3v3-timeout =
+ 									<0x07>;
+ 			nvidia,pad-autocal-pull-down-offset-3v3-timeout =
+@@ -403,6 +405,7 @@
+ 			clock-names = "sdhci";
+ 			resets = <&bpmp TEGRA194_RESET_SDMMC3>;
+ 			reset-names = "sdhci";
++			iommus = <&smmu TEGRA186_SID_SDMMC3>;
+ 			nvidia,pad-autocal-pull-up-offset-1v8 = <0x00>;
+ 			nvidia,pad-autocal-pull-down-offset-1v8 = <0x7a>;
+ 			nvidia,pad-autocal-pull-up-offset-3v3-timeout = <0x07>;
+@@ -430,6 +433,7 @@
+ 					  <&bpmp TEGRA194_CLK_PLLC4>;
+ 			resets = <&bpmp TEGRA194_RESET_SDMMC4>;
+ 			reset-names = "sdhci";
++			iommus = <&smmu TEGRA186_SID_SDMMC4>;
+ 			nvidia,pad-autocal-pull-up-offset-hs400 = <0x00>;
+ 			nvidia,pad-autocal-pull-down-offset-hs400 = <0x00>;
+ 			nvidia,pad-autocal-pull-up-offset-1v8-timeout = <0x0a>;
 -- 
 2.1.4
 
