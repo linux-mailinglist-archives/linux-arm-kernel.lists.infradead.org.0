@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54928A6A7E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 15:54:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C266A6A86
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 15:55:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Z6kmdepnptVG5bMehYrKRwNpd9U1XS2aoGi4cOiwsM4=; b=kEcuHCL5HmBKtK
-	z8XrtZEkzxzqzoPTioc6vsLiteIjYUm7bAkANwTpLIlryZ72+Wq8c5bdy3S1+0E4bG3Y07WCHP33r
-	ayR7vFoROnYkDXXgD9IuvEcQMBeZRbC7vCLwsHfGl+bP2EEiJ9EfJXhjpUFwlDaD935MSpg0LRhYi
-	ew49FNLITris5uyKCy4QLCOYrkX8FXpJ49oEMJ0JAHoQd0hYt8kGhw1ae45uj1c7dr62ykrK4UR5w
-	gljBgcrtaGIhqx8zBPjYoHGdNQtgEb/shuvPK1xOOz+E6bc7XHnQfq/G3zWCOcQchwShzdos5Do4r
-	QPRv2H6YOCirKC31omRQ==;
+	List-Owner; bh=eYQcHcrhg9dqIpgXZv67C+4xgOCxKRBSV97uGpgyEf0=; b=p0rfbKNMI47gcw
+	Gv541JtHjeaNMB2Tso0dVnclIOIJ+bjnl7NmO7awezgkbS1QMzft/ghfFxhLJgxNDi1WbkKFotOsA
+	Qy2sPoKFMEf3qZEoYqRWMGQ2OUeqwKmkFm1msEeJwxRmtJWNjlaBrm1/5VMCU5W2Nh19RgdS5Kqln
+	utkTLz4yEsx6yIjcdJX5FYUD1wlqhdNRluvG9B2DXO4TQfDgjH8PFnVbdv1Ls7oUVBbVYTLIK6S7w
+	nzoN14hpaOnXylw9l6VYWZ0U4HIBNg++8zKDLidVyymB8sJlq0K7ueX1B5JoH85vllwNJY8CNOHr1
+	6ucMik2D6nXaZcphtYSQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i59GD-0005Ug-Gs; Tue, 03 Sep 2019 13:54:17 +0000
+	id 1i59Hh-0006vU-ND; Tue, 03 Sep 2019 13:55:49 +0000
 Received: from mail-qk1-f195.google.com ([209.85.222.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i59G1-0005UB-HD
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 13:54:06 +0000
-Received: by mail-qk1-f195.google.com with SMTP id f13so15932916qkm.9
+ id 1i59HU-0006vB-Sw
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 13:55:38 +0000
+Received: by mail-qk1-f195.google.com with SMTP id x134so5851774qkb.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 06:54:05 -0700 (PDT)
+ Tue, 03 Sep 2019 06:55:36 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=/r+3S5C8hYD7S9YEDCgQruxzRt39Gb4thhb4WG02I5A=;
- b=aTr23suPTLhUIN3EcszzqpSTv8aO4GtPsVZmUxIcKFHX16x+ssXrKhqsB6Geo/WsP9
- qjvqKk3+GzcZeahcDV/5ovDhsx0g4t/yeEruWdc9zkImDMBf5I9oXFecD7Ez6O/aq0jv
- Xhx75ypfMhnpeSJ4hfhx4J/6nUWQwFoWnddnenmgE2CEZGKyTHvyJvhTVQt98LrH21KM
- jBqAJwX5rH3ensA6jhwQDr5NhoM9JEeoJthSwD6q7THVY83Q9CFDYmRdo1VMiHgtHFHu
- CyVeqI6M1gy6qfxFmhaT6Of59bS/7lFpMErwzSn+xaocITcIf53RpFi52iMIDcjRefEE
- v7EA==
-X-Gm-Message-State: APjAAAVnoCuLwXf0Sy9Jc+YBXbIi26E4bh0L7xtkS7vlLJkTPPTKsOv2
- gN3ZRvDu9TWC8MEOlgg/U990SuuLIi9x8mK5uSM=
-X-Google-Smtp-Source: APXvYqxGzpSdBJ4axcS6trQA9QY/4BMrVYul7MoCdHAcALPJmwx/FamJG9Y7ywnl9aamIZWZVTOqFdoJ+8wO6JWyS3s=
-X-Received: by 2002:a37:89c4:: with SMTP id l187mr6560886qkd.286.1567518844519; 
- Tue, 03 Sep 2019 06:54:04 -0700 (PDT)
+ bh=W4djG6ZZe2G2gdy6fVGBa6oBSzsWeFZIoEuiRWqzUmw=;
+ b=XCuovjY+nf9yk0OOuAx+bH+MfHuANGXqnikfx9M/dghQTbzIfL4vcPRV0qyY3rCd3i
+ rl2+K5mLO+bGKTL42CQ7tap9RqACjwOhQM7Rs050KSFRyKkVwBjjNzi4cg2eeuzF6S0S
+ 0qxqDIUkZCtKgGCqzCTLUsDGgs9fII296XhoC5V+ipESDVRg/MqHWgb/p9DTeXsDiF9e
+ zJfxkm0uCH09qVKUGg7VFQ4ongEu4OFZvqfgewFaColAVc5d9UxgeDml0VyDLTt95lYN
+ aKrA13XDdAlJBoyTvDgP5w/xBHTecDqZvFMo3ZHHcWZ22EbsNhiCJYnzEnfjy1gHVvo+
+ TPYQ==
+X-Gm-Message-State: APjAAAWV9W/t7mUfUFQTnqWpVJSnShd/qIqMOuRhtIslgMSKRe2QARoy
+ /QHiOkO/twQAr3MW3KrhKuGYwhvF8MwwEgUuwxo=
+X-Google-Smtp-Source: APXvYqw3Wt+AX8S7d8jl6wURQWky6ECg/mMathv3FyXlrtUiM0WRmgwq1DDlinWPFKmXIChVp0x0zHSGiXhF3Dzbs6s=
+X-Received: by 2002:a37:4051:: with SMTP id n78mr32602455qka.138.1567518936107; 
+ Tue, 03 Sep 2019 06:55:36 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190823123643.18799-1-geert+renesas@glider.be>
- <20190823123643.18799-4-geert+renesas@glider.be>
-In-Reply-To: <20190823123643.18799-4-geert+renesas@glider.be>
+ <20190823123643.18799-6-geert+renesas@glider.be>
+In-Reply-To: <20190823123643.18799-6-geert+renesas@glider.be>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 15:53:47 +0200
-Message-ID: <CAK8P3a3uETiLPw74yzUYDTTv0rzedXdhHz8xf4AvSHe59oYrRA@mail.gmail.com>
-Subject: Re: [PULL 3/5] Renesas ARM64 DT updates for v5.4 (take two)
+Date: Tue, 3 Sep 2019 15:55:20 +0200
+Message-ID: <CAK8P3a3_6fDdQRHq63NmZK0zPehTF82X+eQ3K6g6M0WzkXiHCg@mail.gmail.com>
+Subject: Re: [PULL 5/5] Renesas DT binding updates for v5.4 (take two)
 To: Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_065405_573346_02EA30CA 
-X-CRM114-Status: GOOD (  12.19  )
+X-CRM114-CacheID: sfid-20190903_065536_938394_CDED8A5E 
+X-CRM114-Status: GOOD (  11.89  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
@@ -90,34 +90,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 2:36 PM Geert Uytterhoeven
+On Fri, Aug 23, 2019 at 2:37 PM Geert Uytterhoeven
 <geert+renesas@glider.be> wrote:
 >
-> The following changes since commit 0a05b3d7fee511de8a1c9dffc3d86f1df55e1737:
+> The following changes since commit 8cb7ec14188649cf2151464050413e2814fd7cf1:
 >
->   arm64: dts: renesas: ulcb: Sort nodes (2019-07-30 11:25:35 +0200)
+>   dt-bindings: can: rcar_can: Complete documentation for RZ/G2[EM] (2019-07-29 15:36:39 +0200)
 >
 > are available in the Git repository at:
 >
->   git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-arm64-dt-for-v5.4-tag2
+>   git://git.kernel.org/pub/scm/linux/kernel/git/geert/renesas-devel.git tags/renesas-dt-bindings-for-v5.4-tag2
 >
-> for you to fetch changes up to 38290431d56d7d3928ac89e9f8d3d6b3c8df4c6e:
+> for you to fetch changes up to 7ac2d56f783d6d546e89a4e44fb46532667aa7a5:
 >
->   arm64: dts: renesas: Update 'vsps' properties for readability (2019-08-21 14:18:56 +0200)
+>   dt-bindings: can: rcar_can: document r8a77470 support (2019-08-23 14:25:05 +0200)
 >
 > ----------------------------------------------------------------
-> Renesas ARM64 DT updates for v5.4 (take two)
+> Renesas DT binding updates for v5.4 (take two)
 >
->   - Sort nodes in various SoC and board DTSes,
->   - HDMI sound for HiHope RZ/G2M and R-Car M3-N Salvator-X(S) boards,
->   - Limit EtherAVB to 100Mbps on the Ebisu and Draak boards,
->   - Small fixes and improvements.
->
-
+>   - Renesas DT binding doc filename cleanups,
+>   - R-Car Gen3 and RZ/G1 updates for the R-Car CAN and CANFD DT
+>     bindings.
 
 Pulled into arm/dt, thanks!
 
-     Arnd
+      Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
