@@ -2,122 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F9FFA637E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:04:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C58ADA637C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:04:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=U4wAE0Xz62OjoRSzOX2M15q2UFso+afdSOoXBeTHZns=; b=j8R5P64PvFEaf+
-	S4jZrSUy4E8JPhogH4hIeaX9Dc3R0pQAJjX/arKth5EepeFEpie9rLmZHWjociUjPrlZbRdAZRap1
-	fdvApwheqA1wgWGzlbtjNLPyX2uSGHGxMVJ25iPh3g8Tk8cpClyKxU3COQwiYwVz1UFYAv8Hs2f8L
-	cPrbvuy7goqcFsHb9G6ivExF1b+iS3Gfy/uMBAEi8XI1u8s5LywFxTNTgFOvsznbhn3dj92pLeZ4R
-	tvO1zRHzGJZh5RXLvLMSVZo3jD6Ts5aEisK09Dx+TfdA+KLt0tAkIvSj1YfP+/vID2ewjHhrd0dq2
-	YNyGUisHGz0ol7PULvMg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8bNrS1enHBVhSX1VceAdduMKc1AsiBI6d8k7uvzPxyw=; b=Dnc+YCmPRwHO+X
+	TDOdka6hhRZL3BWGciAxLEEjUgfy5GKInZ5GVAG1X/Dpt0Xm6sZbn84i5tiSgdowNexDhPYKsuv8F
+	u9TUhaOI6Q0alqiQ997dZCtnSbNZXHTB0pcGWGqtFWB0uvxK+XTe2SVv46MhSwSCC+D1Pk1sMceXB
+	CuBYXtOVdj+HIZm9aqp/y+2y4i/lg73kB5nXPBjB9kN9xsfYrIlZH4LJ5+r4ZdTSfTbfUUc9cwkE5
+	wKFS5Z0u5u8ABSYIGXxK5u+RnrsxV0iSGk2JEN21Tme+wrEptxaa/hGlCygr4Brs6LDf7WEzaVpsY
+	EwfRY7W3YMezYdNpuP4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53ng-0004V7-LK; Tue, 03 Sep 2019 08:04:28 +0000
-Received: from mail-eopbgr80135.outbound.protection.outlook.com
- ([40.107.8.135] helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1i53nM-0004Fb-96; Tue, 03 Sep 2019 08:04:08 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53nC-0004E0-IK
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:04:00 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=S3W+57ENYAuaA67/05w1PZZIHm+2hzVHoFnNkugpR1xG92IN7HKdoi3XrLiscmBPtx8Z6pdNYOGkuKx/SFPNZnQrwN0FdKDJbdECOJsFFtL4j7N/V9vdp5rIDsuDh1fmHrTCtOFEfCbMea8IYXh0gjajSauzEv4dRCJhUggxP2SQXmPsNYs4968qcIHO84sAAG4gCPEIDwFxtt+blVfZx9klCB8dZa+qYuo4Qmtea/TaSVHIw/He/O5Ee33snbyhRVQrRpciPERmI8fch7EYXixrLg9f0rG+VUOYsytFjZTJBVo112+sV+b/Pxe7iHwwTWGgmrJAUWRg/KRg4TMNew==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nG1Ucz8Xr4Q7OcVvlo1D+dPo6jIOhRVdAT2fr3wp9Ws=;
- b=HMpbUfUDfyb2jVfe3/0iajgYSi1zG0N7ddPHGaqzxHzD64VZ3t4CQjYPOCBC/ErOPMjO9w5fuFCeHXxi6zXm4YnubffGZIXsjGa0xy9zn2r4pFH/c1x5si3dQzb5kNzt1w6RQYQpzpqbXHf1frcwHuosSeL3i7Zs5AkIQtHDUEuDH6roOh6HZjVGlKINQ2er8qxqA4QwB2WJr4XDDe323JGRNno2ecrXjuQRlAYJBl11nrtuoXyr52fZXBSebu5fFfd8i6E++kf8ZeoSXap34l0nfl6LLYZ7JHvnlW8mUJxy9apjTQvRqkq93ivYdf2wla2a3RpfL2//IuFkNMF/BA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
- dkim=pass header.d=toradex.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=nG1Ucz8Xr4Q7OcVvlo1D+dPo6jIOhRVdAT2fr3wp9Ws=;
- b=eUdzVphf2TQAEIUtreOLDljNkApucMtkpTQd5YjYX/1mPvsWS/9V2qVHWVI/NiLKiX118cqWgfHOc+LGcBET5vMrrzPFA2DYNoEh7BJqJGHIPCdtrndx+NL354OjUeBSZkgXZKI2+v2uTGRtTiAc2T6Hq/xcS0pDn4lWeJMjbeU=
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.17.157) by
- VI1PR0502MB4014.eurprd05.prod.outlook.com (52.134.18.33) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.19; Tue, 3 Sep 2019 08:03:46 +0000
-Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::f59f:a307:9c53:63b9]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
- ([fe80::f59f:a307:9c53:63b9%6]) with mapi id 15.20.2220.022; Tue, 3 Sep 2019
- 08:03:46 +0000
-From: Philippe Schenker <philippe.schenker@toradex.com>
-To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Mark Brown
- <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
- <s.hauer@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>
-Subject: [PATCH 0/3] Add new binding regulator-fixed-clock to regulator-fixed
-Thread-Topic: [PATCH 0/3] Add new binding regulator-fixed-clock to
- regulator-fixed
-Thread-Index: AQHVYi4cbo2B9tBfLEa3D4jnCdy4qA==
-Date: Tue, 3 Sep 2019 08:03:45 +0000
-Message-ID: <20190903080336.32288-1-philippe.schenker@toradex.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-clientproxiedby: VI1PR0802CA0015.eurprd08.prod.outlook.com
- (2603:10a6:800:aa::25) To VI1PR0502MB3965.eurprd05.prod.outlook.com
- (2603:10a6:803:23::29)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=philippe.schenker@toradex.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-mailer: git-send-email 2.23.0
-x-originating-ip: [46.140.72.82]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c20d5a36-9ee3-4f78-d0b1-08d730453e84
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:VI1PR0502MB4014; 
-x-ms-traffictypediagnostic: VI1PR0502MB4014:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0502MB4014BA4D63ACBE2E2338AEE4F4B90@VI1PR0502MB4014.eurprd05.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:9508;
-x-forefront-prvs: 01494FA7F7
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(4636009)(39840400004)(376002)(346002)(136003)(396003)(366004)(199004)(85664002)(189003)(6436002)(66066001)(81166006)(110136005)(54906003)(5660300002)(71200400001)(305945005)(2501003)(25786009)(476003)(6306002)(81156014)(2616005)(44832011)(6512007)(66446008)(99286004)(66946007)(66556008)(186003)(64756008)(66476007)(26005)(6486002)(71190400001)(4326008)(53936002)(52116002)(486006)(102836004)(1076003)(7416002)(6116002)(478600001)(86362001)(966005)(50226002)(14454004)(2906002)(36756003)(8936002)(14444005)(3846002)(6506007)(386003)(316002)(256004)(8676002)(7736002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB4014;
- H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: toradex.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: r281zofcXSOtkHg3Ca5PuqOuDV7THauvNbvjeooMI8u+V2C3hjCEB/6JcV8OYL2f+A3F08mM4d61/nqmgyYaK3avCEBjhGfztjLmbACU7znff1B3pfLcdqBDdoUZfvQyP6kLjC0kiIOKkbRAYG30By355iVDQUxSPTLVD501CHBmsA6H3G76Ojg8BlfhD710A1KfsFzLvHNenilPmaMZJZOvPUS/jYCmQvrxDLgG13Hao5mtN6ibrQNp0CvpJ29Cbg+khTo6Bt8meSFpIQqEVoBv/yAa9BEMcnnwaqgg1obfy86pw6L1fJgAm8zcawdSjD/ltOoy4dWfQq2RoZyC6Ae+ToY5id5gvWGBOrsRUfHGAYqWhvXnmTT8M1OuOdo2jiJhTzjmpui8fDSCyub7OKHUjaGR1Ul6JAEf07Q44S0=
+ id 1i53n9-0004Ec-Bz
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:03:57 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 9A129106E28C;
+ Tue,  3 Sep 2019 08:03:54 +0000 (UTC)
+Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id 37E9B60BE0;
+ Tue,  3 Sep 2019 08:03:51 +0000 (UTC)
+Date: Tue, 3 Sep 2019 10:03:48 +0200
+From: Andrew Jones <drjones@redhat.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v4 00/10] arm64: Stolen time support
+Message-ID: <20190903080348.5whavgrjki7zrtmd@kamzik.brq.redhat.com>
+References: <20190830084255.55113-1-steven.price@arm.com>
 MIME-Version: 1.0
-X-OriginatorOrg: toradex.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c20d5a36-9ee3-4f78-d0b1-08d730453e84
-X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2019 08:03:45.8641 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: EyK0fZ1pybILPSRZMA1d01OBKD+5NvCHlS10qFoGIAVX7LMdc7q6ypUUNOqh5avnv+2i1BtNzBC2h4lLGSskaVdk5uquMpyzJrRJTyvxFgI=
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB4014
+Content-Disposition: inline
+In-Reply-To: <20190830084255.55113-1-steven.price@arm.com>
+User-Agent: NeoMutt/20180716
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.64]); Tue, 03 Sep 2019 08:03:55 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_010358_605645_DFFC6143 
-X-CRM114-Status: UNSURE (   9.63  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190903_010355_444444_319232AF 
+X-CRM114-Status: GOOD (  39.38  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.8.135 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -129,61 +68,381 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Luka Pivk <luka.pivk@toradex.com>, Stefan Agner <stefan.agner@toradex.com>,
- Marcel Ziswiler <marcel.ziswiler@toradex.com>,
- Philippe Schenker <philippe.schenker@toradex.com>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Max Krummenacher <max.krummenacher@toradex.com>,
- Fabio Estevam <festevam@gmail.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Marc Zyngier <maz@kernel.org>, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ linux-doc@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Fri, Aug 30, 2019 at 09:42:45AM +0100, Steven Price wrote:
+> This series add support for paravirtualized time for arm64 guests and
+> KVM hosts following the specification in Arm's document DEN 0057A:
+> 
+> https://developer.arm.com/docs/den0057/a
+> 
+> It implements support for stolen time, allowing the guest to
+> identify time when it is forcibly not executing.
+> 
+> It doesn't implement support for Live Physical Time (LPT) as there are
+> some concerns about the overheads and approach in the above
+> specification, and I expect an updated version of the specification to
+> be released soon with just the stolen time parts.
+> 
+> NOTE: Patches 8 and 9 will conflict with Mark Rutland's series[1] cleaning
+> up the SMCCC conduit. I do feel that the addition of an _invoke() call
+> makes a number of call sites cleaner and it should be possible to
+> integrate both this and Mark's other cleanups.
+> 
+> [1] https://lore.kernel.org/linux-arm-kernel/20190809132245.43505-1-mark.rutland@arm.com/
+> 
+> Also available as a git tree:
+> git://linux-arm.org/linux-sp.git stolen_time/v4
+> 
+> Changes from v3:
+> https://lore.kernel.org/lkml/20190821153656.33429-1-steven.price@arm.com/
+>  * There's no longer a PV_TIME device, instead there are attributes on
+>    the VCPU. This allows the stolen time structures to be places
+>    arbitrarily by user space (subject to 64 byte alignment).
+>  * Split documentation between information on the hypercalls and the
+>    attributes on the VCPU
+>  * Fixed the type of SMCCC functions to return long not int
+> 
+> Changes from v2:
+> https://lore.kernel.org/lkml/20190819140436.12207-1-steven.price@arm.com/
+>  * Switched from using gfn_to_hva_cache to a new macro kvm_put_guest()
+>    that can provide the single-copy atomicity required (on arm64). This
+>    macro is added in patch 4.
+>  * Tidied up the locking for kvm_update_stolen_time().
+>    pagefault_disable() was unnecessary and the caller didn't need to
+>    take kvm->srcu as the function does it itself.
+>  * Removed struct kvm_arch_pvtime from the arm implementation, replaced
+>    instead with inline static functions which are empty for arm.
+>  * Fixed a few checkpatch --strict warnings.
+> 
+> Changes from v1:
+> https://lore.kernel.org/lkml/20190802145017.42543-1-steven.price@arm.com/
+>  * Host kernel no longer allocates the stolen time structure, instead it
+>    is allocated by user space. This means the save/restore functionality
+>    can be removed.
+>  * Refactored the code so arm has stub implementations and to avoid
+>    initcall
+>  * Rebased to pick up Documentation/{virt->virtual} change
+>  * Bunch of typo fixes
+> 
+> Christoffer Dall (1):
+>   KVM: arm/arm64: Factor out hypercall handling from PSCI code
+> 
+> Steven Price (9):
+>   KVM: arm64: Document PV-time interface
+>   KVM: arm64: Implement PV_FEATURES call
+>   KVM: Implement kvm_put_guest()
+>   KVM: arm64: Support stolen time reporting via shared structure
+>   KVM: Allow kvm_device_ops to be const
+>   KVM: arm64: Provide VCPU attributes for stolen time
+>   arm/arm64: Provide a wrapper for SMCCC 1.1 calls
+>   arm/arm64: Make use of the SMCCC 1.1 wrapper
+>   arm64: Retrieve stolen time as paravirtualized guest
+> 
+>  Documentation/virt/kvm/arm/pvtime.txt   |  64 ++++++++++
+>  Documentation/virt/kvm/devices/vcpu.txt |  14 +++
+>  arch/arm/include/asm/kvm_host.h         |  26 +++++
+>  arch/arm/kvm/Makefile                   |   2 +-
+>  arch/arm/kvm/handle_exit.c              |   2 +-
+>  arch/arm/mm/proc-v7-bugs.c              |  13 +--
+>  arch/arm64/include/asm/kvm_host.h       |  30 ++++-
+>  arch/arm64/include/asm/paravirt.h       |   9 +-
+>  arch/arm64/include/asm/pvclock-abi.h    |  17 +++
+>  arch/arm64/include/uapi/asm/kvm.h       |   2 +
+>  arch/arm64/kernel/cpu_errata.c          |  80 +++++--------
+>  arch/arm64/kernel/paravirt.c            | 148 ++++++++++++++++++++++++
+>  arch/arm64/kernel/time.c                |   3 +
+>  arch/arm64/kvm/Kconfig                  |   1 +
+>  arch/arm64/kvm/Makefile                 |   2 +
+>  arch/arm64/kvm/guest.c                  |   9 ++
+>  arch/arm64/kvm/handle_exit.c            |   4 +-
+>  include/kvm/arm_hypercalls.h            |  43 +++++++
+>  include/kvm/arm_psci.h                  |   2 +-
+>  include/linux/arm-smccc.h               |  58 ++++++++++
+>  include/linux/cpuhotplug.h              |   1 +
+>  include/linux/kvm_host.h                |  26 ++++-
+>  include/linux/kvm_types.h               |   2 +
+>  include/uapi/linux/kvm.h                |   2 +
+>  virt/kvm/arm/arm.c                      |  11 ++
+>  virt/kvm/arm/hypercalls.c               |  68 +++++++++++
+>  virt/kvm/arm/psci.c                     |  84 +-------------
+>  virt/kvm/arm/pvtime.c                   | 124 ++++++++++++++++++++
+>  virt/kvm/kvm_main.c                     |   6 +-
+>  29 files changed, 699 insertions(+), 154 deletions(-)
+>  create mode 100644 Documentation/virt/kvm/arm/pvtime.txt
+>  create mode 100644 arch/arm64/include/asm/pvclock-abi.h
+>  create mode 100644 include/kvm/arm_hypercalls.h
+>  create mode 100644 virt/kvm/arm/hypercalls.c
+>  create mode 100644 virt/kvm/arm/pvtime.c
+> 
+> -- 
+> 2.20.1
+>
 
-Our hardware has a FET that is switching power rail of the ethernet PHY
-on and off. This switching enable signal is a clock from the SoC.
+Hi Steven,
 
-There is no possibility in regulator subsystem to have this hardware
-reflected in software.
+I had some fun testing this series with the KVM selftests framework. It
+looks like it works to me, so you may add
 
-I already discussed with Mark Brown about possible solutions and he
-suggested to create at least a new compatible. [1]
-This discussion includes also a better explanation of our circuit as
-well as schematics. So please refer to that link if you have questions
-about that.
+Tested-by: Andrew Jones <drjones@redhat.com>
 
-In this first attempt I created a new binding "regulator-fixed-clock"
-that can take a clock from devicetree. This is a simple addition to
-regulator-fixed. If the binding regulator-fixed-clock is given, the
-clock is simply enabled on regulator enable and disabled on regulator
-disable.
-To be able to have multiple consumers a counter variable is also given
-that tells how many consumers need power from this regulator.
+if you like. And below is the test I came up with.
 
-Best regards,
-Philippe
-
-[1] https://lkml.org/lkml/2019/8/7/78
+Thanks,
+drew
 
 
+From: Andrew Jones <drjones@redhat.com>
+Date: Tue, 3 Sep 2019 03:45:08 -0400
+Subject: [PATCH] selftests: kvm: aarch64 stolen-time test
 
-Philippe Schenker (3):
-  regulator: fixed: add possibility to enable by clock
-  ARM: dts: imx6ull-colibri: add phy-supply and respective regulator
-  dt-bindings: regulator: add regulator-fixed-clock binding
+Signed-off-by: Andrew Jones <drjones@redhat.com>
+---
+ tools/testing/selftests/kvm/Makefile          |   1 +
+ .../selftests/kvm/aarch64/stolen-time.c       | 208 ++++++++++++++++++
+ 2 files changed, 209 insertions(+)
+ create mode 100644 tools/testing/selftests/kvm/aarch64/stolen-time.c
 
- .../bindings/regulator/fixed-regulator.yaml   | 18 +++-
- arch/arm/boot/dts/imx6ull-colibri.dtsi        | 12 +++
- drivers/regulator/fixed.c                     | 86 ++++++++++++++++++-
- 3 files changed, 112 insertions(+), 4 deletions(-)
-
+diff --git a/tools/testing/selftests/kvm/Makefile b/tools/testing/selftests/kvm/Makefile
+index ba7849751989..3151264039ad 100644
+--- a/tools/testing/selftests/kvm/Makefile
++++ b/tools/testing/selftests/kvm/Makefile
+@@ -28,6 +28,7 @@ TEST_GEN_PROGS_x86_64 += clear_dirty_log_test
+ TEST_GEN_PROGS_x86_64 += dirty_log_test
+ TEST_GEN_PROGS_x86_64 += kvm_create_max_vcpus
+ 
++TEST_GEN_PROGS_aarch64 += aarch64/stolen-time
+ TEST_GEN_PROGS_aarch64 += clear_dirty_log_test
+ TEST_GEN_PROGS_aarch64 += dirty_log_test
+ TEST_GEN_PROGS_aarch64 += kvm_create_max_vcpus
+diff --git a/tools/testing/selftests/kvm/aarch64/stolen-time.c b/tools/testing/selftests/kvm/aarch64/stolen-time.c
+new file mode 100644
+index 000000000000..36df2f6baa17
+--- /dev/null
++++ b/tools/testing/selftests/kvm/aarch64/stolen-time.c
+@@ -0,0 +1,208 @@
++// SPDX-License-Identifier: GPL-2.0
++/*
++ * AArch64 PV stolen time test
++ *
++ * Copyright (C) 2019, Red Hat, Inc.
++ */
++#define _GNU_SOURCE
++#include <stdio.h>
++#include <time.h>
++#include <sched.h>
++#include <pthread.h>
++#include <sys/syscall.h>
++#include "kvm_util.h"
++
++#define ST_IPA_BASE		(1 << 30)
++#define MIN_STOLEN_TIME		200000
++
++struct st_time {
++	uint32_t rev;
++	uint32_t attr;
++	uint64_t st_time;
++};
++
++static uint64_t st_ipa_offset[4];
++static uint64_t guest_stolen_time[4];
++
++static void guest_code(void)
++{
++	struct st_time *st_time;
++	uint64_t cpu;
++	int64_t ipa;
++	int32_t ret;
++
++	asm volatile("mrs %0, mpidr_el1" : "=r" (cpu));
++	cpu &= 0x3;
++
++	asm volatile(
++		"mov	x0, %1\n"
++		"mov	x1, %2\n"
++		"hvc	#0\n"
++		"mov	%0, x0\n"
++	: "=r" (ret) : "r" (0x80000001), "r" (0xc5000020) :
++	  "x0", "x1", "x2", "x3");
++
++	GUEST_ASSERT(ret == 0);
++
++	asm volatile(
++		"mov	x0, %1\n"
++		"mov	x1, %2\n"
++		"hvc	#0\n"
++		"mov	%0, x0\n"
++	: "=r" (ret) : "r" (0xc5000020), "r" (0xc5000022) :
++	  "x0", "x1", "x2", "x3");
++
++	GUEST_ASSERT(ret == 0);
++
++	asm volatile(
++		"mov	x0, %1\n"
++		"hvc	#0\n"
++		"mov	%0, x0\n"
++	: "=r" (ipa) : "r" (0xc5000022) :
++	  "x0", "x1", "x2", "x3");
++
++	GUEST_ASSERT(ipa == ST_IPA_BASE + st_ipa_offset[cpu]);
++
++	st_time = (struct st_time *)ipa;
++	GUEST_ASSERT(st_time->rev == 0);
++	GUEST_ASSERT(st_time->attr == 0);
++
++	guest_stolen_time[cpu] = st_time->st_time;
++	GUEST_SYNC(0);
++
++	guest_stolen_time[cpu] = st_time->st_time;
++	GUEST_DONE();
++}
++
++static long get_run_delay(void)
++{
++	char path[64];
++	long val[2];
++	FILE *fp;
++
++	sprintf(path, "/proc/%ld/schedstat", syscall(SYS_gettid));
++	fp = fopen(path, "r");
++	fscanf(fp, "%ld %ld ", &val[0], &val[1]);
++	fclose(fp);
++
++	return val[1];
++}
++
++static void *steal_time(void *arg)
++{
++	uint64_t nsecs_per_sec = 1000000000ul;
++	uint64_t sec, nsec;
++	struct timespec ts;
++
++	clock_gettime(CLOCK_MONOTONIC, &ts);
++	sec = ts.tv_sec;
++	nsec = ts.tv_nsec + MIN_STOLEN_TIME;
++	if (nsec > nsecs_per_sec) {
++		sec += 1;
++		nsec -= nsecs_per_sec;
++	}
++
++	while (1) {
++		clock_gettime(CLOCK_MONOTONIC, &ts);
++		if (ts.tv_sec > sec || (ts.tv_sec == sec && ts.tv_nsec >= nsec))
++			break;
++	}
++
++	return NULL;
++}
++
++static void run_vcpu(struct kvm_vm *vm, uint32_t vcpuid)
++{
++	struct ucall uc;
++
++	vcpu_ioctl(vm, vcpuid, KVM_RUN, NULL);
++
++	switch (get_ucall(vm, vcpuid, &uc)) {
++	case UCALL_SYNC:
++	case UCALL_DONE:
++		break;
++	case UCALL_ABORT:
++		TEST_ASSERT(false, "%s at %s:%d", (const char *)uc.args[0],
++			    __FILE__, uc.args[1]);
++	default:
++		TEST_ASSERT(false, "Unexpected exit: %s",
++			    exit_reason_str(vcpu_state(vm, vcpuid)->exit_reason));
++	}
++}
++
++int main(int ac, char **av)
++{
++	struct kvm_device_attr dev = {
++		.group = KVM_ARM_VCPU_PVTIME_CTRL,
++		.attr = KVM_ARM_VCPU_PVTIME_SET_IPA,
++	};
++	uint64_t pvtime_memslot_size;
++	struct kvm_vm *vm;
++	pthread_attr_t attr;
++	pthread_t thread;
++	cpu_set_t cpuset;
++	long stolen_time;
++	int i;
++
++	CPU_ZERO(&cpuset);
++	CPU_SET(0, &cpuset);
++	pthread_attr_init(&attr);
++	pthread_attr_setaffinity_np(&attr, sizeof(cpu_set_t), &cpuset);
++	pthread_setaffinity_np(pthread_self(), sizeof(cpu_set_t), &cpuset);
++
++	pvtime_memslot_size = 64 * 1024; /* one maximum-sized host page */
++
++	/* create a one-vcpu guest and the pvtime memslot */
++	vm = vm_create_default(0, 0, guest_code);
++	vm_userspace_mem_region_add(vm, VM_MEM_SRC_ANONYMOUS, ST_IPA_BASE, 1,
++				    16 /* vm uses 4k pages */, 0);
++	virt_map(vm, ST_IPA_BASE, ST_IPA_BASE, pvtime_memslot_size, 0);
++	ucall_init(vm, UCALL_MMIO, NULL);
++
++	/* add 3 more vcpus */
++	for (i = 1; i < 4; ++i) {
++		vm_vcpu_add_default(vm, i, guest_code);
++		st_ipa_offset[i] = i * 64;
++		sync_global_to_guest(vm, st_ipa_offset[i]);
++	}
++
++	/* add pvtime to each vcpu */
++	for (i = 0; i < 4; ++i) {
++		uint64_t st_ipa = ST_IPA_BASE + st_ipa_offset[i];
++		dev.addr = (uint64_t)&st_ipa;
++		vcpu_ioctl(vm, i, KVM_HAS_DEVICE_ATTR, &dev);
++		vcpu_ioctl(vm, i, KVM_SET_DEVICE_ATTR, &dev);
++	}
++
++	/* run the tests on each vcpu */
++	for (i = 0; i < 4; ++i) {
++		/* first vcpu run */
++		run_vcpu(vm, i);
++		sync_global_from_guest(vm, guest_stolen_time[i]);
++		TEST_ASSERT(guest_stolen_time[i] == 0, "Expected stolen_time = 0");
++
++		/* steal time from the vcpu */
++		stolen_time = get_run_delay();
++		pthread_create(&thread, &attr, steal_time, NULL);
++		pthread_yield();
++		pthread_join(thread, NULL);
++		stolen_time = get_run_delay() - stolen_time;
++		TEST_ASSERT(stolen_time >= MIN_STOLEN_TIME,
++			    "Expected stolen time >= %ld, got %ld",
++			    MIN_STOLEN_TIME, stolen_time);
++
++		/* run vcpu again and check the stolen time */
++		run_vcpu(vm, i);
++		sync_global_from_guest(vm, guest_stolen_time[i]);
++		TEST_ASSERT(guest_stolen_time[i] >= stolen_time,
++			    "Expected stolen_time >= %ld, got %ld",
++			    stolen_time, guest_stolen_time[i]);
++
++		printf("CPU%d: %ld", i, guest_stolen_time[i]);
++		if (stolen_time == guest_stolen_time[i])
++			printf(" (BONUS: guest stolen_time even exactly matches run_delay)");
++		printf("\n");
++	}
++
++	return 0;
++}
 -- 
-2.23.0
+2.18.1
 
 
 _______________________________________________
