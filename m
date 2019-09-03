@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3AECFA6602
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 11:46:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F38DA6603
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 11:47:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,40 +11,40 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=kEw4qAbvbYF0aWmlggtg20b3Udv+SxtuZRkPn0Mwgk0=; b=myVj7mW3GkdPsTH5tKo2rvuS1V
-	iVXGZXj9+/prnKPFJ2YI3eR/ES8JP/v1iOfiCIt7op2kG88Fz3rd3x2S5J6jdBPOq4mFwmKW8y0eV
-	kgfUdQCAXbXk1u9GgWSM0nHnfbAG44MA2jFqWYYmjIFov8KEXLDeIJj7owvhE07fdi+zN5EmSuRG0
-	A6ai3h1Ym3J3fQ6M8NJaPx015sVeQSSec8UpRSBXbO6sUYVxu5bmeA+H1rJ33Om6rXyswL0YpYJaF
-	sQrOQKK9ILEhXcf/HPR00+RqAhTv/WXh+xs7cR6PQgBKnXu+7epgd69oKbLcSIiqGUjppWqvqwvCc
-	Pbt39g4g==;
+	bh=G/h8/iaiYICD9AAvIWvJ7tCMy0zSGhWr8z6zNmknNic=; b=Gw6yB+1d6wnaFO+6X6ZFDRtcmi
+	FJeXDP38Vd04bxSmdp0u17rE4xuKVanMYDuPLWJdzRBI63UJQSBeM8Zyq88iH5HNVhXb5vB/mKhjA
+	CCShvtoyT1gkediYHMxMlrxsOqgxKj+HRRk/sHEt8B8OlH9qfopVNAQ0qg4/jvwkeiOZmPJyvj5Y5
+	CeNammc8cNd22qeEbxJC18EzFxewP9Tydk1ZsEraqqWvJ9hHJQ0c0paXYmfhetgZTxQvoyjrfsIEm
+	j6uwMBIKTMoKEGJw0bJxDu1ZUbHDnMZ/QTCEr1r3UR+6CRZtD1SUiEcfhLa0teB9UN1QKHS1S2dFl
+	nFlHtrpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i55Og-0007Uy-Ck; Tue, 03 Sep 2019 09:46:46 +0000
+	id 1i55P1-0007ky-BS; Tue, 03 Sep 2019 09:47:07 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i55O5-0007BW-3d
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 09:46:10 +0000
+ id 1i55OC-0007JU-LY
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 09:46:17 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 931B91570;
- Tue,  3 Sep 2019 02:46:08 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id EE6CC1570;
+ Tue,  3 Sep 2019 02:46:15 -0700 (PDT)
 Received: from p8cg001049571a15.blr.arm.com (p8cg001049571a15.blr.arm.com
  [10.162.42.170])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id B19A73F59C;
- Tue,  3 Sep 2019 02:46:01 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 185DD3F59C;
+ Tue,  3 Sep 2019 02:46:08 -0700 (PDT)
 From: Anshuman Khandual <anshuman.khandual@arm.com>
 To: linux-mm@kvack.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, akpm@linux-foundation.org,
  catalin.marinas@arm.com, will@kernel.org
-Subject: [PATCH V7 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls in
- try_remove_memory()
-Date: Tue,  3 Sep 2019 15:15:56 +0530
-Message-Id: <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
+Subject: [PATCH V7 2/3] arm64/mm: Hold memory hotplug lock while walking for
+ kernel page table dump
+Date: Tue,  3 Sep 2019 15:15:57 +0530
+Message-Id: <1567503958-25831-3-git-send-email-anshuman.khandual@arm.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
 References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_024609_519861_8B5D1523 
-X-CRM114-Status: GOOD (  12.40  )
+X-CRM114-CacheID: sfid-20190903_024616_779116_811ED41D 
+X-CRM114-Status: GOOD (  11.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,100 +75,49 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
-entries between memory block and node. It first checks pfn validity with
-pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
-(arm64 has this enabled) pfn_valid_within() calls pfn_valid().
+The arm64 page table dump code can race with concurrent modification of the
+kernel page tables. When a leaf entries are modified concurrently, the dump
+code may log stale or inconsistent information for a VA range, but this is
+otherwise not harmful.
 
-pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
-which scans all mapped memblock regions with memblock_is_map_memory(). This
-creates a problem in memory hot remove path which has already removed given
-memory range from memory block with memblock_[remove|free] before arriving
-at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
-skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
-sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
-of existing sysfs entries.
+When intermediate levels of table are freed, the dump code will continue to
+use memory which has been freed and potentially reallocated for another
+purpose. In such cases, the dump code may dereference bogus addresses,
+leading to a number of potential problems.
 
-[   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
-[   62.052517] ------------[ cut here ]------------
-[   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
-[   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
-[   62.054589] Modules linked in:
-[   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
-[   62.056274] Hardware name: linux,dummy-virt (DT)
-[   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
-[   62.058083] pc : add_memory_resource+0x1cc/0x1d8
-[   62.058961] lr : add_memory_resource+0x10c/0x1d8
-[   62.059842] sp : ffff0000168b3ce0
-[   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
-[   62.061501] x27: 0000000000000000 x26: 0000000000000000
-[   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
-[   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
-[   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
-[   62.065558] x19: 0000000000680000 x18: 0000000000000024
-[   62.066566] x17: 0000000000000000 x16: 0000000000000000
-[   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
-[   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
-[   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
-[   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
-[   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
-[   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
-[   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
-[   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
-[   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
-[   62.076930] Call trace:
-[   62.077411]  add_memory_resource+0x1cc/0x1d8
-[   62.078227]  __add_memory+0x70/0xa8
-[   62.078901]  probe_store+0xa4/0xc8
-[   62.079561]  dev_attr_store+0x18/0x28
-[   62.080270]  sysfs_kf_write+0x40/0x58
-[   62.080992]  kernfs_fop_write+0xcc/0x1d8
-[   62.081744]  __vfs_write+0x18/0x40
-[   62.082400]  vfs_write+0xa4/0x1b0
-[   62.083037]  ksys_write+0x5c/0xc0
-[   62.083681]  __arm64_sys_write+0x18/0x20
-[   62.084432]  el0_svc_handler+0x88/0x100
-[   62.085177]  el0_svc+0x8/0xc
+Intermediate levels of table may by freed during memory hot-remove,
+which will be enabled by a subsequent patch. To avoid racing with
+this, take the memory hotplug lock when walking the kernel page table.
 
-Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
-problem on arm64 as pfn_valid() behaves correctly and returns positive
-as memblock for the address range still exists. arch_remove_memory()
-removes applicable memory sections from zone with __remove_pages() and
-tears down kernel linear mapping. Removing memblock regions afterwards
-is safe because there is no other memblock (bootmem) allocator user that
-late. So nobody is going to allocate from the removed range just to blow
-up later. Also nobody should be using the bootmem allocated range else
-we wouldn't allow to remove it. So reordering is indeed safe.
-
-Reviewed-by: David Hildenbrand <david@redhat.com>
-Reviewed-by: Oscar Salvador <osalvador@suse.de>
+Acked-by: David Hildenbrand <david@redhat.com>
 Acked-by: Mark Rutland <mark.rutland@arm.com>
-Acked-by: Michal Hocko <mhocko@suse.com>
 Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
 ---
- mm/memory_hotplug.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ arch/arm64/mm/ptdump_debugfs.c | 4 ++++
+ 1 file changed, 4 insertions(+)
 
-diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
-index c73f09913165..355c466e0621 100644
---- a/mm/memory_hotplug.c
-+++ b/mm/memory_hotplug.c
-@@ -1770,13 +1770,13 @@ static int __ref try_remove_memory(int nid, u64 start, u64 size)
+diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
+index 064163f25592..b5eebc8c4924 100644
+--- a/arch/arm64/mm/ptdump_debugfs.c
++++ b/arch/arm64/mm/ptdump_debugfs.c
+@@ -1,5 +1,6 @@
+ // SPDX-License-Identifier: GPL-2.0
+ #include <linux/debugfs.h>
++#include <linux/memory_hotplug.h>
+ #include <linux/seq_file.h>
  
- 	/* remove memmap entry */
- 	firmware_map_remove(start, start + size, "System RAM");
--	memblock_free(start, size);
--	memblock_remove(start, size);
- 
- 	/* remove memory block devices before removing memory */
- 	remove_memory_block_devices(start, size);
- 
- 	arch_remove_memory(nid, start, size, NULL);
-+	memblock_free(start, size);
-+	memblock_remove(start, size);
- 	__release_memory_resource(start, size);
- 
- 	try_offline_node(nid);
+ #include <asm/ptdump.h>
+@@ -7,7 +8,10 @@
+ static int ptdump_show(struct seq_file *m, void *v)
+ {
+ 	struct ptdump_info *info = m->private;
++
++	get_online_mems();
+ 	ptdump_walk_pgd(m, info);
++	put_online_mems();
+ 	return 0;
+ }
+ DEFINE_SHOW_ATTRIBUTE(ptdump);
 -- 
 2.20.1
 
