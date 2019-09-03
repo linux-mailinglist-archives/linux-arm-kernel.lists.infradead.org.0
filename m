@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0DA9DA6BAB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:38:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3497DA6BC0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:45:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FB9PerW/VRT3Z9Wn2lSrAz1u+M8TnTK9TEUMYNQ/lVs=; b=OUo70gbWGFBOOK
-	7N/aLz9dquyzmaihoNKXX6ebmp/na0yaph4j+iLwru+cBfhflLyBVwZKQ0ZDp8jRkP56Y7Oy0kQf/
-	FoLSllbpEU/qPbdTwO58TT2FHMtPvgkAr0xKDQeySpIpGhRtI6c5YAuugSegdhEjVJuq/JY0JGLvy
-	+IYM/2kaDctz8P+GKXjv+TicKjjlhfTSdkK4rXVWpApSIOWSIbzFAvUn6xbNYvKowiXsqej5EG8Yv
-	MnhP/Ihww669gWHTBB7J1Lb9hCCFaf5/C851B6SahCgTIEsdttJfNZyQbO1hRb8CYo3VbPLbCoQQE
-	pelsR9udVom9NTUkk2WA==;
+	List-Owner; bh=TXNiF0hElFe+IG2R1UCxDCZ51GOdUwuqazmUGsKORVk=; b=oh9WLMMf1FU13A
+	KZ5/UEdX7t63tbPlVCvTHsG5onN5TY8Pkw64RmSSj5pCDNxSka39EC3kwm55YzTydjtr2C1lb06uG
+	B5od50RKpV+zf2bgEt+YaSQJKT5m5sJIOvorP9PwN6FIij/LKHLDNNofT4OEd7mLwMW7+ra4wMcGI
+	WbZzJh88MlQkpLYCdfbwNKc77YPGko/tTPQnA3WuXeKVdQRBCf81pS/8PYYmqj2mpAIjIS+lmADrj
+	Fhhj86cm/drz38gaRz4RnlaLoxk/FWdRa6OzZ/tSLdProD5buiJdpWfnJfQQbCk+Auy0K6xWqyk87
+	AozAukMTuvM4Z+XIN00Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i59wv-0002aq-ED; Tue, 03 Sep 2019 14:38:25 +0000
+	id 1i5A45-00067k-IX; Tue, 03 Sep 2019 14:45:49 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i59wd-0002YS-6j
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:38:08 +0000
+ id 1i5A3v-00067K-Fb
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:45:40 +0000
 Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E0D520828;
- Tue,  3 Sep 2019 14:38:04 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8781320828;
+ Tue,  3 Sep 2019 14:45:37 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567521486;
- bh=NYvh1Ty2TcysP6q9uoPqBfVZ4o8Dsna8O9GWcNeTjPM=;
+ s=default; t=1567521939;
+ bh=qEeo5Yjn1rQcXbmWDfs7jOgFcYF72m1/wF7aUEk38N4=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=OJb3Kho20mdnwL0J0X12EPvZi+YCveo7/1MvWOJty8arm52+WGvg72faQoeDkDslp
- gcXbCoUgsYIImpD8m9W/cZZXzmw/u/1Ai/IOtMCjmud5lXAkRUAZliTRZJFjfkXUvV
- F/jRoBkgB+zfTcpRpoe3lmbufzbFVwL5ziqsj2V4=
-Date: Tue, 3 Sep 2019 15:38:01 +0100
+ b=xWll90rd/ZhBXNDXVq69JZjvSsqS9lvQ9c0ayy6OGJBJOTzrvKwqBKttR/lso8ClD
+ 4V4HhDC0QtNQ6c5niNMG4PFECYYdIihtQw2rkHdRDmPGa8lFYKsdzqt44ufVUMKRya
+ H9iqy/RfkewjwpMzoOJSeU1ew9Adb4MQs51/oEZw=
+Date: Tue, 3 Sep 2019 15:45:34 +0100
 From: Will Deacon <will@kernel.org>
-To: Vincenzo Frascino <vincenzo.frascino@arm.com>
-Subject: Re: [PATCH v2 1/8] arm64: compat: vdso: Expose BUILD_VDSO32
-Message-ID: <20190903143800.k6r663abs2g2ddpg@willie-the-truck>
-References: <20190830135902.20861-1-vincenzo.frascino@arm.com>
- <20190830135902.20861-2-vincenzo.frascino@arm.com>
- <c0b1673d-e37d-a526-0862-ad07f779f5bf@arm.com>
+To: Andrew Murray <andrew.murray@arm.com>
+Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
+Message-ID: <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-4-will@kernel.org>
+ <20190903060011.GA60737@archlinux-threadripper>
+ <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <c0b1673d-e37d-a526-0862-ad07f779f5bf@arm.com>
+In-Reply-To: <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
 User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_073807_303391_1721A430 
-X-CRM114-Status: GOOD (  15.99  )
+X-CRM114-CacheID: sfid-20190903_074539_544692_1E5DA215 
+X-CRM114-Status: GOOD (  21.16  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,50 +79,58 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arch@vger.kernel.org, luto@kernel.org, catalin.marinas@arm.com,
- 0x7f454c46@gmail.com, linux-kernel@vger.kernel.org, linux-mips@vger.kernel.org,
- paul.burton@mips.com, linux-kselftest@vger.kernel.org, tglx@linutronix.de,
- salyzyn@android.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
+ Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 03:36:16PM +0100, Vincenzo Frascino wrote:
-> On 8/30/19 2:58 PM, Vincenzo Frascino wrote:
-> > clock_gettime32 and clock_getres_time32 should be compiled only with the
-> > 32 bit vdso library.
+On Tue, Sep 03, 2019 at 03:31:19PM +0100, Andrew Murray wrote:
+> On Mon, Sep 02, 2019 at 11:00:11PM -0700, Nathan Chancellor wrote:
+> > On Thu, Aug 29, 2019 at 04:48:27PM +0100, Will Deacon wrote:
+> > > From: Andrew Murray <andrew.murray@arm.com>
+> > > 
+> > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > > atomics. It achieves this by branching from inline assembly to a function
+> > > that is built with special compile flags. Further this results in the
+> > > clobbering of registers even when the fallback isn't used increasing
+> > > register pressure.
+> > > 
+> > > Improve this by providing inline implementations of both LSE and
+> > > ll/sc and use a static key to select between them, which allows for the
+> > > compiler to generate better atomics code. Put the LL/SC fallback atomics
+> > > in their own subsection to improve icache performance.
+> > > 
+> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > > Signed-off-by: Will Deacon <will@kernel.org>
 > > 
-> > Expose BUILD_VDSO32 when arm64 compat is compiled, to provide an
-> > indication to the generic library to include these symbols.
+> > For some reason, this causes a clang built kernel to fail to boot in
+> > QEMU. There are no logs, it just never starts. I am off for the next two
+> > days so I am going to try to look into this but you might have some
+> > immediate ideas.
 > > 
-> > Cc: Catalin Marinas <catalin.marinas@arm.com>
-> > Cc: Will Deacon <will@kernel.org>
-> > Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
-> > Acked-by: Catalin Marinas <catalin.marinas@arm.com>
-> > ---
-> >  arch/arm64/include/asm/vdso/compat_gettimeofday.h | 1 +
-> >  1 file changed, 1 insertion(+)
-> > 
-> > diff --git a/arch/arm64/include/asm/vdso/compat_gettimeofday.h b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> > index c50ee1b7d5cd..fe7afe0f1a3d 100644
-> > --- a/arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> > +++ b/arch/arm64/include/asm/vdso/compat_gettimeofday.h
-> > @@ -17,6 +17,7 @@
-> >  #define VDSO_HAS_CLOCK_GETRES		1
-> >  
-> >  #define VDSO_HAS_32BIT_FALLBACK		1
-> > +#define BUILD_VDSO32			1
-> >  
-> >  static __always_inline
-> >  int gettimeofday_fallback(struct __kernel_old_timeval *_tv,
-> > 
+> > https://github.com/ClangBuiltLinux/linux/issues/649
 > 
-> This patch is independent from the rest and touches only arch code. Can it go in
-> via the arm64 tree?
+> I've been able to reproduce this - with clang 9.0.6 and qemu (without KVM)
+> and only when ARM64_LSE_ATOMICS is enabled.
+> 
+> This is slightly concerning...
+> 
+> (gdb) b __lse__cmpxchg_case_acq_32
+> Breakpoint 1 at 0xffff80001012b3cc: __lse__cmpxchg_case_acq_32. (19 locations)
+> (gdb) continue
+> Continuing.
 
-Why not take it via -tip along with patch 6? Otherwise we'll get a silly
-conflict. I'd assumed this series was going in as one thing.
+[...]
+
+> Any ideas?
+
+Does it work if the only thing you change is the toolchain, and use GCC
+instead? Could be some teething issues in the 'asm goto' support for clang?
 
 Will
 
