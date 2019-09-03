@@ -2,76 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8375EA6894
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 14:27:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66041A68A8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 14:37:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eU3f4CxRyn62f8oN3VfHlGAX+4ON70k7AUhXobMhCBQ=; b=UYoig1BAIHPNs7
-	6qTE+13V4tWdjuPk/VFfpnKd/J5cdhjpWS3SCnJ6RbL09vEy4VYg02WI8XCUV9kuUt9oqdVx+ff6h
-	d7LPcJDOdISHQBzcI0iLeCP0oDOk1E8R3k6AWvg1j9yNcrWqrunBH+i7qjiVvJVvN5a0yL16BLAbM
-	znAiZj8SlkRtPEYBL6J31eIAzTkyRIYx6itNMg1jh0daKfJtcOB9gkBY3VS03K8oczzDMuz+D0pCK
-	gSMISY8sa7h6g08qV8A828lWjf5w8835ktuSprrVT2HegOSrD9q6JAfH3i+DWWfwln5lMg5oeOoBD
-	GBcGbrIGarhCYnMH8LPQ==;
+	List-Owner; bh=0YFdKVeFOYMvU9dB7585pvMdelJhH9DMVP6eP1net34=; b=C2ovjfPuO/VC+t
+	F7xAF//gZh2as8S0jOtHSS0fuCWsD+RjG/6CNEpaacPBxfEWrtQS6PAFugBV7qmJFSsNRHoz8UEzF
+	sBaXC8t6dh6GkGOB1OceksT0KGZmgh8Xgr05ro24pEhgyy5nKTTgiKOEXqmMCQHZDi+xA4/Yzb+fu
+	WV63+MEbmqDgaU/9vSwowF0jvmZbXMM46zEETheWW9D11s/t/CDKsRr8OLey0Ahbkv/U2JUraiUuv
+	YQLxOV86Kz8v0xrSH5HDFd/CV8FwANNiEBws4kcg/MXlPMcQINjVsefAejqbxVS/euWwEtBMjKUPP
+	CYtwwu/YpeiQJyHfU4Bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i57uW-0000Nd-Rh; Tue, 03 Sep 2019 12:27:49 +0000
-Received: from mail-qk1-f194.google.com ([209.85.222.194])
+	id 1i583l-0003Nd-3p; Tue, 03 Sep 2019 12:37:21 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i57uJ-0000Lu-61
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 12:27:36 +0000
-Received: by mail-qk1-f194.google.com with SMTP id x5so1563470qkh.5
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 05:27:34 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=GhRwLyjUlW+c2hC8fBDr52ubKPgjR7IWnK8ss/n1sqc=;
- b=k7Y5cB9GgUQjLlv09Ko8DZMseEqY25rXk1aJJQa0M1gAEYkGrBMqXm2+PWmz0oJDk4
- CBCojO3BzfPcU/REmshVWw9J/ePH068Tx4+6Ra6z1SjlxGgTNVbz3Ei5DNqBfy61+GJq
- srQH5cICxcnepnFtr1b9Sl7df8PHX+e/HKaupR+u0ktiX3CGJei3tTkyR1rlUmgShDEy
- pXfjRdCehJlcpbptUCC3zDQzMZi0+IehWJB3LOCVlD4/8WFsZea+rCdmo0QDlQXtsH9k
- t4kpU58S/5Pl41uF8/lbs7CKdLcNGm0GDdDdn0uDceDRVVDlWv9ZW9DbG+hUOULlMnmA
- 1MSw==
-X-Gm-Message-State: APjAAAU/I62gneuCRP+kiPCfOD+pUFoi1UsRpekGgQ6lJ97T9N0xqESS
- SVuhzoqyNDzBDX5K5naCF1QDoAQTDco2VuJYvSY=
-X-Google-Smtp-Source: APXvYqzwVU2KcZM6MzMS/hjDxWHhc2k8jQTbk38dxVSSZJ8yySnydBQRREAwEmKpByufxBClRZAA0HL2G5RvXLyBaXM=
-X-Received: by 2002:a05:620a:b:: with SMTP id
- j11mr34016279qki.352.1567513653740; 
- Tue, 03 Sep 2019 05:27:33 -0700 (PDT)
+ id 1i583Y-0003MJ-T9; Tue, 03 Sep 2019 12:37:10 +0000
+X-UUID: e5bfbae2f5934696853f8d98e60d9e7a-20190903
+X-UUID: e5bfbae2f5934696853f8d98e60d9e7a-20190903
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <henryc.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 2098847012; Tue, 03 Sep 2019 04:36:59 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Sep 2019 05:36:58 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Sep 2019 20:36:51 +0800
+Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Tue, 3 Sep 2019 20:36:51 +0800
+Message-ID: <1567514210.31403.8.camel@mtksdaap41>
+Subject: Re: [PATCH V3 08/10] dt-bindings: interconnect: add MT8183
+ interconnect dt-bindings
+From: Henry Chen <henryc.chen@mediatek.com>
+To: Rob Herring <robh@kernel.org>
+Date: Tue, 3 Sep 2019 20:36:50 +0800
+In-Reply-To: <20190902033045.GA10734@bogus>
+References: <1566995328-15158-1-git-send-email-henryc.chen@mediatek.com>
+ <1566995328-15158-9-git-send-email-henryc.chen@mediatek.com>
+ <20190902033045.GA10734@bogus>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-References: <20190825203222.GA22800@piout.net>
-In-Reply-To: <20190825203222.GA22800@piout.net>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 14:27:17 +0200
-Message-ID: <CAK8P3a0jKyOXD=5SokdMCOjOqN2Zmja3gC2eebgvk_fmxQ6dLA@mail.gmail.com>
-Subject: Re: [GIT PULL] ARM: at91: SoC for 5.4
-To: Alexandre Belloni <alexandre.belloni@bootlin.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_052735_226248_D81DB443 
-X-CRM114-Status: UNSURE (   9.61  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190903_053708_950997_7DCA7CEC 
+X-CRM114-Status: GOOD (  15.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,34 +73,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>, SoC Team <soc@kernel.org>,
- arm-soc <arm@kernel.org>, Olof Johansson <olof@lixom.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Nicolas Boichat <drinkcat@google.com>, Weiyi Lu <weiyi.lu@mediatek.com>,
+ James Liao <jamesjj.liao@mediatek.com>, Viresh Kumar <vireshk@kernel.org>,
+ linux-kernel@vger.kernel.org, Stephen Boyd <swboyd@chromium.org>,
+ Fan Chen <fan.chen@mediatek.com>, devicetree@vger.kernel.org,
+ Ryan Case <ryandcase@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-mediatek@lists.infradead.org, Georgi Djakov <georgi.djakov@linaro.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 25, 2019 at 10:32 PM Alexandre Belloni
-<alexandre.belloni@bootlin.com> wrote:
-> AT91 SoC for 5.4
->
->  - MAINTAINERS updates
->  - a generated headers parallel build fix
->
-> ----------------------------------------------------------------
-> Masahiro Yamada (1):
->       ARM: at91: move platform-specific asm-offset.h to arch/arm/mach-at91
->
-> Nicolas Ferre (3):
->       MAINTAINERS: at91: Collect all pinctrl/gpio drivers in same entry
->       MAINTAINERS: at91: remove the TC entry
->       mailmap: map old company name to new one @microchip.com
+On Mon, 2019-09-02 at 14:38 +0100, Rob Herring wrote:
+Hi Rob,
+> On Wed, Aug 28, 2019 at 08:28:46PM +0800, Henry Chen wrote:
+> > Add interconnect provider dt-bindings for MT8183.
+> > 
+> > Signed-off-by: Henry Chen <henryc.chen@mediatek.com>
+> > ---
+> >  .../devicetree/bindings/soc/mediatek/dvfsrc.txt        |  9 +++++++++
+> >  include/dt-bindings/interconnect/mtk,mt8183-emi.h      | 18 ++++++++++++++++++
+> >  2 files changed, 27 insertions(+)
+> >  create mode 100644 include/dt-bindings/interconnect/mtk,mt8183-emi.h
+> > 
+> > diff --git a/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt b/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
+> > index 7f43499..da98ec9 100644
+> > --- a/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
+> > +++ b/Documentation/devicetree/bindings/soc/mediatek/dvfsrc.txt
+> > @@ -12,6 +12,11 @@ Required Properties:
+> >  - clock-names: Must include the following entries:
+> >  	"dvfsrc": DVFSRC module clock
+> >  - clocks: Must contain an entry for each entry in clock-names.
+> > +- #interconnect-cells : should contain 1
+> > +- interconnect : interconnect providers support dram bandwidth requirements.
+> > +	The provider is able to communicate with the DVFSRC and send the dram
+> > +	bandwidth to it. shall contain only one of the following:
+> > +	"mediatek,mt8183-emi"
+> >  
+> >  Example:
+> >  
+> > @@ -20,4 +25,8 @@ Example:
+> >  		reg = <0 0x10012000 0 0x1000>;
+> >  		clocks = <&infracfg CLK_INFRA_DVFSRC>;
+> >  		clock-names = "dvfsrc";
+> > +		ddr_emi: interconnect {
+> 
+> The EMI is a sub-module in the DVFSRC? This is the DDR controller or 
+> something else?
+Yes, EMI is a sub-module in the DVFSRC, the EMI through interconnect
+framework to collect DRAM bandwidth from other device drivers and will
+send the bandwidth result to DVFSRC driver.
+> 
+> 
+> > +			compatible = "mediatek,mt8183-emi";
+> > +			#interconnect-cells = <1>;
+> > +		};
+> >  	};
+> 
 
-Pulled into arm/soc, thanks!
 
-     Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
