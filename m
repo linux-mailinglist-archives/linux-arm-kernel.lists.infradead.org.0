@@ -2,51 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A46EA6CE5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:31:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99E94A6CEF
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:35:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fGmTksWfBTVXY7ri/V5UHbM5MuUNieQ5XKTjuhhXuAM=; b=LHTe6ywy9rPkzo
-	VZpMk8XfsLiZVsVhSRjvLQ8DZ3f1ZRyI/6mmqHFy1n88hoy3jvekGwU3grow4L2oDjofqHddkbE5b
-	uQjgAiJ3PEYD0h6W8/GIw2Nza8BMNeE2S6/Y2KE3zWnRL9cbCAUZC9IJSa1Z364nqaLlCB2uOKlPl
-	j/U2T6YL5VxzCLDVO6ccd/2nJDnBK5SFyrJN0tIgU4Y3P2MQddwN3Svo4FuSMfayJ3OeiGKBhAqSe
-	VsGoK+9PXXHhUfxmzIP6i2hzvJNeu+82kR/GbxGFSezSjZIqaavaDdsqqLAfmmhkd7DETn8aYJwHh
-	LwlhPsZDqcyntQu8OECA==;
+	List-Owner; bh=d8N/bwm/iVnDHZvzz78ZkO4hkaIPWcpXPWNOZpZ5bbw=; b=j//2RXtlJtwj8e
+	zX3DzzYuy1H8oV3184OwKKoZpQyUyum6zj9OqSyaiZAUYsZAps7aHff7r5yPTmCe3r1vX9bTRoutD
+	nMKpbvJuRdaypiIeHersYHJv9+WC13Pf3m7dJgqsDJf6OWfVNBQTkOwFXRdHgIscdmPdqKbSj5kN/
+	RrogPzEw3/U4cEbzGbz9dA36t6zpfQmqi/rL0PM3hP8DeEdnqxg8d/1xOot6LsBYMUUVv8ufE9xmS
+	cxp1uSO5nWB4Op+9aSwLg8sBerQWnPqR/JlT9fLAhzwVHcOHIzMdffLTQT+TG3gHZyMWVHIKmeHLu
+	S5OfnlVsAHpDPW+l8tRw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5AmO-0006tc-E1; Tue, 03 Sep 2019 15:31:36 +0000
+	id 1i5Apv-0008OW-SW; Tue, 03 Sep 2019 15:35:16 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5AmE-0006ss-MS
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:31:28 +0000
+ id 1i5Apl-0007WJ-JG
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:35:07 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0604F344;
- Tue,  3 Sep 2019 08:31:23 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 77F533F246;
- Tue,  3 Sep 2019 08:31:22 -0700 (PDT)
-Date: Tue, 3 Sep 2019 16:31:20 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Will Deacon <will@kernel.org>
-Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
-Message-ID: <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-4-will@kernel.org>
- <20190903060011.GA60737@archlinux-threadripper>
- <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
- <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
- <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7E8A344;
+ Tue,  3 Sep 2019 08:35:02 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 143303F246;
+ Tue,  3 Sep 2019 08:35:01 -0700 (PDT)
+Date: Tue, 3 Sep 2019 16:34:59 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v3 02/11] kselftest: arm64: adds first test and common
+ utils
+Message-ID: <20190903153456.GM27757@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190802170300.20662-3-cristian.marussi@arm.com>
+ <20190813162411.GZ10425@arm.com>
+ <a76adb28-00f9-3c32-60e5-bc746db6f2fd@arm.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <a76adb28-00f9-3c32-60e5-bc746db6f2fd@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_083126_827109_6E7A62C6 
-X-CRM114-Status: GOOD (  25.03  )
+X-CRM114-CacheID: sfid-20190903_083505_738507_513A0AC6 
+X-CRM114-Status: GOOD (  53.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,141 +64,364 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
- Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
+Cc: andreyknvl@google.com, shuah@kernel.org, linux-kselftest@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
-> On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
-> > On Tue, Sep 03, 2019 at 03:31:19PM +0100, Andrew Murray wrote:
-> > > On Mon, Sep 02, 2019 at 11:00:11PM -0700, Nathan Chancellor wrote:
-> > > > On Thu, Aug 29, 2019 at 04:48:27PM +0100, Will Deacon wrote:
-> > > > > From: Andrew Murray <andrew.murray@arm.com>
-> > > > > 
-> > > > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
-> > > > > or toolchain doesn't support it the existing code will fallback to ll/sc
-> > > > > atomics. It achieves this by branching from inline assembly to a function
-> > > > > that is built with special compile flags. Further this results in the
-> > > > > clobbering of registers even when the fallback isn't used increasing
-> > > > > register pressure.
-> > > > > 
-> > > > > Improve this by providing inline implementations of both LSE and
-> > > > > ll/sc and use a static key to select between them, which allows for the
-> > > > > compiler to generate better atomics code. Put the LL/SC fallback atomics
-> > > > > in their own subsection to improve icache performance.
-> > > > > 
-> > > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > > > Signed-off-by: Will Deacon <will@kernel.org>
-> > > > 
-> > > > For some reason, this causes a clang built kernel to fail to boot in
-> > > > QEMU. There are no logs, it just never starts. I am off for the next two
-> > > > days so I am going to try to look into this but you might have some
-> > > > immediate ideas.
-> > > > 
-> > > > https://github.com/ClangBuiltLinux/linux/issues/649
-> > > 
-> > > I've been able to reproduce this - with clang 9.0.6 and qemu (without KVM)
-> > > and only when ARM64_LSE_ATOMICS is enabled.
-> > > 
-> > > This is slightly concerning...
-> > > 
-> > > (gdb) b __lse__cmpxchg_case_acq_32
-> > > Breakpoint 1 at 0xffff80001012b3cc: __lse__cmpxchg_case_acq_32. (19 locations)
-> > > (gdb) continue
-> > > Continuing.
+Hi, responding to some non-trivial comments here where re-work isn't
+needed -- so we have the right context for the mail thread.
+
+For any remaining nits, I'll comment on the v5 patch.
+
+On Wed, Aug 28, 2019 at 06:34:09PM +0100, Cristian Marussi wrote:
+> Hi
+> 
+> On 13/08/2019 17:24, Dave Martin wrote:
+
+[...]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
+
+[...]
+
+> >> +# Guessing as best as we can where the Kernel headers
+> >> +# could have been installed depending on ENV config and
+> >> +# type of invocation.
+> >> +ifeq ($(KBUILD_OUTPUT),)
+> >> +khdr_dir = $(top_srcdir)/usr/include
+> >> +else
+> >> +ifeq (0,$(MAKELEVEL))
+> >> +khdr_dir = $(KBUILD_OUTPUT)/usr/include
+> >> +else
+> >> +# the KSFT preferred location when KBUILD_OUTPUT is set
+> >> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
+> >> +endif
+> >> +endif
 > > 
-> > [...]
+> > When is KBUILD_OUTPUT set / not set?
 > > 
-> > > Any ideas?
+> 
+> Depending how the user/CI is configured KSFT installs the kernel
+> headers in different places....here I'm trying to guess where they
+> have been installed by KSFT.
+> 
+> >> +
+> >> +CFLAGS += -I$(khdr_dir)
 > > 
-> > Does it work if the only thing you change is the toolchain, and use GCC
-> > instead? 
+> > Do we rely on any non-UAPI headers?  If not, the default should probably
+> > be to rely on the system headers (or toolchain default headers) -- i.e.,
+> > add no -I option at all.
 > 
-> Yup.
-
-Also this is Clang generation:
-
-ffff8000100f2700 <__ptrace_link>:
-ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
-ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
-ffff8000100f2708:       eb09011f        cmp     x8, x9
-ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
-ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
-ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
-ffff8000100f2718:       f9000528        str     x8, [x9, #8]
-ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
-ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
-ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
-ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
-ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
-ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
-ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
-ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
-ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
-ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
-ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
-ffff8000100f2748:       b828005f        stadd   w8, [x2]
-ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
-ffff8000100f2750:       d65f03c0        ret
-ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
-...
-
-This looks like the default path (before we write over it) will take you to
-the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
-least not what we expected to see. Also why 4 branches?
-
-
-
-And GCC:
-
-ffff8000100ebc98 <__ptrace_link>:
-ffff8000100ebc98:       f9426003        ldr     x3, [x0, #1216]
-ffff8000100ebc9c:       91130004        add     x4, x0, #0x4c0
-ffff8000100ebca0:       eb03009f        cmp     x4, x3
-ffff8000100ebca4:       54000261        b.ne    ffff8000100ebcf0 <__ptrace_link+0x58>  // b.any
-ffff8000100ebca8:       f9425825        ldr     x5, [x1, #1200]
-ffff8000100ebcac:       9112c026        add     x6, x1, #0x4b0
-ffff8000100ebcb0:       f90004a4        str     x4, [x5, #8]
-ffff8000100ebcb4:       f9026005        str     x5, [x0, #1216]
-ffff8000100ebcb8:       f9026406        str     x6, [x0, #1224]
-ffff8000100ebcbc:       f9025824        str     x4, [x1, #1200]
-ffff8000100ebcc0:       f9024001        str     x1, [x0, #1152]
-ffff8000100ebcc4:       b4000122        cbz     x2, ffff8000100ebce8 <__ptrace_link+0x50>
-ffff8000100ebcc8:       b900985f        str     wzr, [x2, #152]
-ffff8000100ebccc:       14000006        b       ffff8000100ebce4 <__ptrace_link+0x4c>
-ffff8000100ebcd0:       14000005        b       ffff8000100ebce4 <__ptrace_link+0x4c>
-ffff8000100ebcd4:       52800021        mov     w1, #0x1                        // #1
-ffff8000100ebcd8:       b821005f        stadd   w1, [x2]
-ffff8000100ebcdc:       f9030002        str     x2, [x0, #1536]
-ffff8000100ebce0:       d65f03c0        ret
-ffff8000100ebce4:       14000599        b       ffff8000100ed348 <__arm64_compat_sys_ptrace+0x180>
-...
-
-
-Thanks,
-
-Andrew Murray
-
+> I only need updated UAPI headers, but I cannot build without this specific -I..
+> that points to the installed kernel headers directory.
 > 
-> 
-> > Could be some teething issues in the 'asm goto' support for clang?
-> 
-> Thanks,
-> 
-> Andrew Murray
+> As an example it fails with: undefined  HWCAP_SSBS if I remove the -I
 > 
 > > 
-> > Will
+> > I'm wondering why none of the other kselftests need this header search
+> > logic.
+> > 
 > 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Well... a lot of KSFT tests has something related to headers search in their Makefiles:
+> 
+> ../kcmp/Makefile:CFLAGS += -I../../../../usr/include/
+> ../networking/timestamping/Makefile:CFLAGS += -I../../../../../usr/include
+> ../ipc/Makefile:CFLAGS += -I../../../../usr/include/
+> ../memfd/Makefile:CFLAGS += -I../../../../include/uapi/
+> ../memfd/Makefile:CFLAGS += -I../../../../include/
+> ../memfd/Makefile:CFLAGS += -I../../../../usr/include/
+> 
+> which seems aimed at doing the same thing, but it is a broken approach
+> as far as I can see since if KBUILD_OUTPUT is set, KSFT will install the
+> headers accordingly, so that the above static includes won't work anymore.
+> 
+> Not sure if I'm missing something here, but my understanding was that
+> 
+> - some KSFT requires arch specific bits, usually included within the dedicated kernel
+> headers provided with the source itself and installed with make headers_install.
+> 
+> and that
+> 
+> - such headers can be found naturally, being included from top level libc headers
+> only if:
+> 
+> 1. a fully updated toolchain containing updated headers too is available at CROSS_COMPILE=
+> 
+> or
+> 
+> 2. proper -I options are specified to the compiler to specify where KSFT installed the 
+>   kernel headers related to this kernel and its related KSFT testcases
+> 
+> or
+> 
+> 3. updated kernel headers were installed on top of the available CROSS_COMPILE toolchain
+> 
+> or
+> 
+> 4. we are building and running natively, so you can install the kernel headers on
+>    system default path and those will be searched
+> 
+> 
+> My 'feeling' would have been that in the KSFT scenario we should try to stick with option  2.,
+> in order to be able to run KSFT and run the related testcases, relying just on the shipped
+> Kernel/KSFT and possibly underlying hw features, but not having any dependencies
+> on the toolchain/libc.
+> 
+> My question is: what happens on a CI-somewhere if suddenly there's the need to update
+> the toolchain somehow (fully or partially only the headers) to be able to simply
+> build/run the new KSFT included with this Kernel ?; even if we accept this need to update
+> the toochain, where this CI should get/scrap-from these minimum toolchain requirements ?
+> (in an automated manner)
+> 
+> If instead we can agree to stick with 2.,  I wonder if this locate-headers mechanism which I introduced
+> here should be in charge of the KSFT framework or if there is something broken in my tests: but 
+> in these regards similar issues seems to affect KSFT arm64 tags tests queued on arm64/for-next
+> 
+> https://lkml.org/lkml/2019/8/23/721
+
+Ack, I think we should stick with option 2 for now, but I agree to keep
+it local to your tests for now to avoid breaking stuff elsewhere.
+
+In general I think that kselftest should always search the installed
+UAPI headers from the containing kernel tree first, since that's the
+best way to ensure the headers are 100% up to date.
+
+This may need wider discussion in order to be deployed more widely
+across kselftest though.
+
+[...]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
+
+[...]
+
+> >> + *  "The infrastructure emulates only the following system register space:
+> >> + *   	Op0=3, Op1=0, CRn=0, CRm=0,4,5,6,7
+> >> + */
+> >> +#define get_regval(regname, out) \
+> >> +	asm volatile("mrs %0, " __stringify(regname) : "=r" (out) :: "memory")
+> >> +
+> >> +/* Regs encoding and masks naming copied in from sysreg.h */
+> >> +#define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
+> >> +#define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
+> > 
+> > These ID regs are part of armv8.0-a, so we don't need to use the magic
+> > syntax.
+> > mmm... why I found them in non UAPI headers defined as follows ?
+> 
+> arch/arm64/include/asm/sysreg.h:#define SYS_ID_AA64MMFR1_EL1            sys_reg(3, 0, 0, 7, 1)
+> 
+> anyway I tried to use nonS3 regular sysreg naming (with a reasonably new compiler:
+> 
+> /opt/toolchains/gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu/bin/aarch64-linux-gnu-
+> 
+> and it fails (only on id_aa64mmfr2_el1) as follows:
+> /tmp/ccqAyE8P.s: Assembler messages:                      
+> /tmp/ccoGrnGc.s:1085: Error: selected processor does not support system register name 'id_aa64mmfr2_el1'
+> 
+> In fact this seems to remind me (not totally sure) that this was the reason to use such S3 syntax on this
+> sysregs too.
+
+Ah, it looks like ID_AA64MMFR2_EL1 was added from ARMv8.2-A only.  My
+bad.
+
+To keep things consistent, I'm fine with keeping the S3_ syntax for
+everything here.
+
+> >> +#define ID_AA64MMFR1_PAN_SHIFT	20
+> >> +#define ID_AA64MMFR2_UAO_SHIFT	4
+
+[...]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+
+[...]
+
+> >> +static inline bool are_feats_ok(struct tdescr *td)
+> >> +{
+> >> +	return td ? td->feats_required == td->feats_supported : 0;
+> > 
+> > Should this be something like
+> > (td->feats_required & td->feats_supported) == td->feats_required ?
+> > 
+> > Otherwise additional supported features that our test doesn't care about
+> > will cause this check to fail.
+> > 
+> Yes better.
+> 
+> > 
+> > Do we really need to check td?
+> > 
+> 
+> Overly defensive
+> 
+> > assert(foo); followed by dereferincing foo is usually a bit pointless
+> > because you'd get a SIGSEGV anyway.
+> >
+> > However, since the tests generate deliberate SIGSEGVs too this could
+> > be confusing -- in which case, having an explicit assert() here does
+> > no harm.
+> > 
+> not sure about which assert you refer here
+
+I was persuading myself that my own comment was unnecessary, so don't
+worry about it.  The code is fine as-is.
+
+> >> +}
+> >> +
+> >> +static void default_handler(int signum, siginfo_t *si, void *uc)
+> >> +{
+> >> +	if (current->sig_trig && signum == current->sig_trig) {
+> >> +		fprintf(stderr, "Handling SIG_TRIG\n");
+> >> +		current->triggered = 1;
+> >> +		/* ->run was asserted NON-NULL in test_setup() already */
+> >> +		current->run(current, si, uc);
+> >> +	} else if (signum == SIGILL && !current->initialized) {
+> >> +		/*
+> >> +		 * A SIGILL here while still not initialized means we failed
+> >> +		 * even to asses the existence of features during init
+> >> +		 */
+> >> +		fprintf(stdout,
+> >> +			"Got SIGILL test_init. Marking ALL features UNSUPPORTED.\n");
+> >> +		current->feats_supported = 0;
+> >> +	} else if (current->sig_ok && signum == current->sig_ok) {
+> >> +		/* it's a bug in the test code when this assert fail */
+> > 
+> > Why?  Is this because sig_ok is considered acceptable only as an effect
+> > of the test -- i.e., we shouldn't see it if the test hasn't been
+> > triggered yet?
+> 
+> This assert would like to ensure that when you receive a sig_ok signal,
+> if a sig_trig was defined != 0, the trigger have been in fact used and processed before
+> receiving this sig_ok here: so you didn't define a signal trigger at all, or, if defined
+> it has been fired to arrive here. I'll add some commenting about this.
+
+OK
+
+> >> +		assert(!current->sig_trig || current->triggered);
+> >> +		fprintf(stderr,
+> >> +			"SIG_OK -- SP:%p  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
+> >> +			((ucontext_t *)uc)->uc_mcontext.sp,
+> >> +			si->si_addr, si->si_code, current->token,
+> >> +			current->token - si->si_addr);
+> >> +		/*
+> >> +		 * fake_sigreturn tests, which have sanity_enabled=1, set, at
+> >> +		 * the very last time, the token field to the SP address used
+> >> +		 * to place the fake sigframe: so token==0 means we never made
+> >> +		 * it to the end, segfaulting well-before, and the test is
+> >> +		 * possibly broken.
+> >> +		 */
+> >> +		if (!current->sanity_disabled && !current->token) {
+> >> +			fprintf(stdout,
+> >> +				"current->token ZEROED...test is probably broken!\n");
+> >> +			assert(0);
+> > 
+> > In case someone builds with -DNDEBUG, should we add abort()?
+> > 
+> Well, in such a case all the test suite is mostly compromised anyway.
+> But you are right, I'll add an abort() at least here when broken tests
+> are detected.
+
+I guess you're right.  The abort() does no harm, anyway.
+
+[...]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+
+[...]
+
+> >> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
+> >> +{
+> >> +	bool terminated = false;
+> >> +	size_t offs = 0;
+> >> +	int flags = 0;
+> >> +	struct extra_context *extra = NULL;
+> >> +	struct _aarch64_ctx *head =
+> >> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
+> >> +
+> >> +	if (!err)
+> >> +		return false;
+> >> +	/* Walk till the end terminator verifying __reserved contents */
+> >> +	while (head && !terminated && offs < resv_sz) {
+> >> +		if ((uint64_t)head & 0x0fUL) {
+> >> +			*err = "Misaligned HEAD";
+> >> +			return false;
+> >> +		}
+> >> +
+> >> +		switch (head->magic) {
+> >> +			case 0:
+> >> +				if (head->size)
+> >> +					*err = "Bad size for MAGIC0";
+> > 
+> > Or "terminator".  We don't have an actual symbolic name for magic number
+> > 0.  (Arguably it would have been nice to have a name, but we managed
+> > without.)
+> 
+> ok
+> > 
+> >> +				else
+> >> +					terminated = true;
+> >> +				break;
+> >> +			case FPSIMD_MAGIC:
+> >> +				if (flags & FPSIMD_CTX)
+> >> +					*err = "Multiple FPSIMD_MAGIC";
+> >> +				else if (head->size !=
+> >> +					 sizeof(struct fpsimd_context))
+> >> +					*err = "Bad size for fpsimd_context";
+> >> +				flags |= FPSIMD_CTX;
+> >> +				break;
+> >> +			case ESR_MAGIC:
+> >> +				if (head->size != sizeof(struct esr_context))
+> >> +					fprintf(stderr,
+> >> +						"Bad size for esr_context is not an error...just ignore.\n");
+> > 
+> > Why isn't this an error?  Should the kernel ever write an esr_context
+> > with a different size?
+> 
+> There is no check on Kernel side:
+> 
+>     case ESR_MAGIC:
+>     	/* ignore */
+>         break;
+> 
+> so I sticked with that, since this function can be used to validate a
+> Kernel originated sigframe or a crafted one which will be passed down
+> to the Kernel.
+
+I see where you're coming from: I'll comment on the v5 patch instead of
+here, to make it easier to track any rework.
+
+[...]
+
+> >> +		if (flags & EXTRA_CTX)
+> >> +			if (!validate_extra_context(extra, err))
+> >> +				return false;
+> > 
+> > Can we validate the contents of the extra context too?
+> > 
+> > Ideally we can use the same code to check __reserved[] and the extra
+> > context.
+> > 
+> Do you mean the content pointed by extra->datap ?
+> This extra_context validation routine is generally under review and fixes in a further
+> arm64/signal SVE extensions patch still to be published (and cleaned up):
+> [kselftest: arm64: adds SVE-related signal test], given that EXTRA_CONTEXT can effectively
+> appear only when SVE related instruction are used properly.
+> 
+> Should I introduce this and other extra-context related fixes here instead ?
+> (it is hard to test and debug without any triggering SVE instruction though...)
+
+No, it's fine to exclude it for now.
+
+If there's a plan to add it later, that's good enough for me.
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
