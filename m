@@ -2,82 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3C609A63D3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:25:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 83BEBA6446
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:47:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5uv3bQDOCl0tk5/msIV+N7v+vDwMiQgl48Fujo734Kk=; b=EBTGg5XKJXp00v
-	PrbDLASqRSadDLnwfZD54OquhLDzckN+jjYJNUheDp89aEYGKnWisP7WfwLLDHIoUP5nXT85m+0PW
-	09TyU2plD91dP1lvZFFRB9JJhbKsfwv4bMBfDbaoIhPnWbVzTf5lyh0TBIbdv5Ki039HrVL82W05E
-	cm5nUVTJdtOnXCLTKRl9uSm9N58JpZzsPQAU9MdrfgacVLpGPGV1uc8m7NCHh4TBanC4oLaRWwz8w
-	UtUafSsbEwF8tiYY1q408Ya6xzgrLOd6t1AZuksDzzHFL8bm497JS+V4/eMlwuELC2Sl7d0fQu+CS
-	ln7wOMfyvrDL/aL0rTGw==;
+	List-Owner; bh=Xx3LMnl7S8c8vRlAcfSQBlCucYcenuBYfKmzTRWqgAQ=; b=PGaIhNayDJ5eSz
+	PgU7Ye0QEVLr8Pfv/OLCV1s4fjfc4YBnAFex5PjdW/wX9xfPW+VGx7m8D5pU0nKHTxl2X8SX9k0cF
+	gmVo3mos68nGhKLiBAFjU3SpaZXOvPl/SjL93shox06G9iGmr6IyKdJBZJojT4xnTG75zwDkap5U7
+	DFCsM0M39shedY0xKLrRlqgNSTPlujmr8D3dNOJsUhCBhN6wY6nBgULQP5l6fkfvw8W8Ft2lY5Ez2
+	v4Umls0KSW+7RW99gYP+vmUXxu1Bk+Su3Q6K2i1cp9eiTjWZ+OL8SivL2mJEg5Kvy3q+BmdDUe4R0
+	sQ9lXed15SFYXyjAJi/g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5480-0005vS-Sm; Tue, 03 Sep 2019 08:25:29 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i54TB-00040i-JN; Tue, 03 Sep 2019 08:47:21 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i547o-0005v8-Kt
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:25:18 +0000
-Received: from mail-qt1-f173.google.com (mail-qt1-f173.google.com
- [209.85.160.173])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1i54T0-0003zE-4w
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:47:11 +0000
+Received: from smtp.corp.redhat.com (int-mx02.intmail.prod.int.phx2.redhat.com
+ [10.5.11.12])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A4BD52339D
- for <linux-arm-kernel@lists.infradead.org>;
- Tue,  3 Sep 2019 08:25:15 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567499115;
- bh=f3ZXaegcsrrqhqRDRKGqx4s4cVnRArE7RmypILYd+g8=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=wabHV1k5dEyrX/7adpcLxEwW1MB7sdRxtSAl/Q+ixCo+poiVeI7wlb7c8pmEkomba
- VUBXX9c9bK4EcJ2Rh1xAjjOW6eeil29NeZmenL+Lv7/KjHckb3WHRxEYYillGkJ9G9
- qLA7PMTnlMqUtaKofcpPZkOnAPIPUWPD0G9OlK5o=
-Received: by mail-qt1-f173.google.com with SMTP id k10so8458252qth.2
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 01:25:15 -0700 (PDT)
-X-Gm-Message-State: APjAAAVGSvMH8vKHOo0vYuz9BcVuP/Ayyatg8Az5tZCivJibzyh4IgqM
- VG0C5Killtl4+zDryOB1m+Be9d+X9XD4j/5H9g==
-X-Google-Smtp-Source: APXvYqwIM9DiXxim6rM127j/POM2TKvL5qYklc3Bu+DdP6aV4fnCf6MCR6CZRi7sMcNn4eza859i00dqzSkL7gf1mNo=
-X-Received: by 2002:ac8:28b6:: with SMTP id i51mr8990758qti.143.1567499114797; 
- Tue, 03 Sep 2019 01:25:14 -0700 (PDT)
+ by mx1.redhat.com (Postfix) with ESMTPS id E2536308FBFC;
+ Tue,  3 Sep 2019 08:47:08 +0000 (UTC)
+Received: from kamzik.brq.redhat.com (unknown [10.43.2.160])
+ by smtp.corp.redhat.com (Postfix) with ESMTPS id C784160C18;
+ Tue,  3 Sep 2019 08:47:05 +0000 (UTC)
+Date: Tue, 3 Sep 2019 10:47:03 +0200
+From: Andrew Jones <drjones@redhat.com>
+To: Steven Price <steven.price@arm.com>
+Subject: Re: [PATCH v4 10/10] arm64: Retrieve stolen time as paravirtualized
+ guest
+Message-ID: <20190903084703.hwpelmr7fikb32nj@kamzik.brq.redhat.com>
+References: <20190830084255.55113-1-steven.price@arm.com>
+ <20190830084255.55113-11-steven.price@arm.com>
 MIME-Version: 1.0
-References: <20190823145356.6341-1-krzk@kernel.org>
- <20190823145356.6341-5-krzk@kernel.org>
- <CAL_JsqJybT41cEqiTriLMywUQj1BtAG_9muJ4=84OkF23y53CA@mail.gmail.com>
- <CAJKOXPc0SY_8BHMsWLN=1M3VQh41+bdBiH21L4KQPA+iLPYy+A@mail.gmail.com>
-In-Reply-To: <CAJKOXPc0SY_8BHMsWLN=1M3VQh41+bdBiH21L4KQPA+iLPYy+A@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Tue, 3 Sep 2019 09:25:03 +0100
-X-Gmail-Original-Message-ID: <CAL_JsqKdsABWK9Og_f38T9zf3SCFFdhU8WOJ4uJjREantoYvYQ@mail.gmail.com>
-Message-ID: <CAL_JsqKdsABWK9Og_f38T9zf3SCFFdhU8WOJ4uJjREantoYvYQ@mail.gmail.com>
-Subject: Re: [RFC 5/9] dt-bindings: arm: samsung: Convert Exynos PMU bindings
- to json-schema
-To: Krzysztof Kozlowski <krzk@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190830084255.55113-11-steven.price@arm.com>
+User-Agent: NeoMutt/20180716
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.12
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.43]); Tue, 03 Sep 2019 08:47:09 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_012516_728179_66F778CA 
-X-CRM114-Status: GOOD (  25.46  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190903_014710_236195_09C99786 
+X-CRM114-Status: GOOD (  21.54  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,152 +70,110 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Lars-Peter Clausen <lars@metafoo.de>, Arnd Bergmann <arnd@arndb.de>,
- devicetree@vger.kernel.org,
- "open list:IIO SUBSYSTEM AND DRIVERS" <linux-iio@vger.kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tomasz.figa@gmail.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Olof Johansson <olof@lixom.net>,
- "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>,
- notify@kernel.org, Jonathan Cameron <jic23@kernel.org>,
- =?UTF-8?Q?Pawe=C5=82_Chmiel?= <pawel.mikolaj.chmiel@gmail.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ Radim =?utf-8?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Marc Zyngier <maz@kernel.org>, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ linux-doc@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 3, 2019 at 8:58 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Mon, 26 Aug 2019 at 13:54, Rob Herring <robh+dt@kernel.org> wrote:
-> >
-> > On Fri, Aug 23, 2019 at 9:54 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > >
-> > > Convert Samsung Exynos Power Management Unit (PMU) bindings to DT schema
-> > > format using json-schema.
-> > >
-> > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > ---
-> > >  .../devicetree/bindings/arm/samsung/pmu.txt   | 72 --------------
-> > >  .../devicetree/bindings/arm/samsung/pmu.yaml  | 93 +++++++++++++++++++
-> > >  2 files changed, 93 insertions(+), 72 deletions(-)
-> > >  delete mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.txt
-> > >  create mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> >
-> >
-> > > diff --git a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > > new file mode 100644
-> > > index 000000000000..818c6f3488ef
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > > @@ -0,0 +1,93 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/arm/samsung/pmu.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Samsung Exynos SoC series Power Management Unit (PMU)
-> > > +
-> > > +maintainers:
-> > > +  - Krzysztof Kozlowski <krzk@kernel.org>
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    items:
-> > > +      - enum:
-> > > +          - samsung,exynos3250-pmu
-> > > +          - samsung,exynos4210-pmu
-> > > +          - samsung,exynos4412-pmu
-> > > +          - samsung,exynos5250-pmu
-> > > +          - samsung,exynos5260-pmu
-> > > +          - samsung,exynos5410-pmu
-> > > +          - samsung,exynos5420-pmu
-> > > +          - samsung,exynos5433-pmu
-> > > +          - samsung,exynos7-pmu
-> > > +      - const: syscon
-> > > +
-> > > +  reg:
-> > > +    maxItems: 1
-> > > +
-> > > +  '#clock-cells':
-> > > +    const: 1
-> > > +
-> > > +  clock-names:
-> > > +    description:
-> > > +      list of clock names for particular CLKOUT mux inputs
-> > > +    # TODO: what is the maximum number of elements (mux inputs)?
-> > > +    minItems: 1
-> > > +    maxItems: 32
-> > > +    items:
-> > > +      - enum:
-> >
-> > This isn't correct as you are only defining possible names for the
-> > first item. Drop the '-' (making items a schema instead of a list) and
-> > then it applies to all. However, doing that will cause a meta-schema
-> > error which I need to fix to allow. Or if there's a small set of
-> > possibilities of number of inputs, you can list them under a 'oneOf'
-> > list.
->
-> Mhmm, I cannot test it or I have an error in the schema. if I
-> understand correctly, this would be:
->
->   clock-names:
->     description:
->       List of clock names for particular CLKOUT mux inputs
->     minItems: 1
->     maxItems: 16
->     items:
->       clkout0
->       clkout1
->       clkout2
->       clkout3
->       clkout4
->       clkout5
->       clkout6
->       clkout7
->       clkout8
->       clkout9
->       clkout10
->       clkout11
->       clkout12
->       clkout13
->       clkout14
->       clkout15
->       clkout16
->
-> Now it produces the error "ignoring, error in schema 'items'" but
-> maybe it is expected with current meta-schema?
+On Fri, Aug 30, 2019 at 09:42:55AM +0100, Steven Price wrote:
+> Enable paravirtualization features when running under a hypervisor
+> supporting the PV_TIME_ST hypercall.
+> 
+> For each (v)CPU, we ask the hypervisor for the location of a shared
+> page which the hypervisor will use to report stolen time to us. We set
+> pv_time_ops to the stolen time function which simply reads the stolen
+> value from the shared page for a VCPU. We guarantee single-copy
+> atomicity using READ_ONCE which means we can also read the stolen
+> time for another VCPU than the currently running one while it is
+> potentially being updated by the hypervisor.
+> 
+> Signed-off-by: Steven Price <steven.price@arm.com>
+> ---
+>  arch/arm64/include/asm/paravirt.h |   9 +-
+>  arch/arm64/kernel/paravirt.c      | 148 ++++++++++++++++++++++++++++++
+>  arch/arm64/kernel/time.c          |   3 +
+>  include/linux/cpuhotplug.h        |   1 +
+>  4 files changed, 160 insertions(+), 1 deletion(-)
+> 
+> diff --git a/arch/arm64/include/asm/paravirt.h b/arch/arm64/include/asm/paravirt.h
+> index 799d9dd6f7cc..125c26c42902 100644
+> --- a/arch/arm64/include/asm/paravirt.h
+> +++ b/arch/arm64/include/asm/paravirt.h
+> @@ -21,6 +21,13 @@ static inline u64 paravirt_steal_clock(int cpu)
+>  {
+>  	return pv_ops.time.steal_clock(cpu);
+>  }
+> -#endif
+> +
+> +int __init kvm_guest_init(void);
+> +
+> +#else
+> +
+> +#define kvm_guest_init()
+> +
+> +#endif // CONFIG_PARAVIRT
+>  
+>  #endif
+> diff --git a/arch/arm64/kernel/paravirt.c b/arch/arm64/kernel/paravirt.c
+> index 4cfed91fe256..5bf3be7ccf7e 100644
+> --- a/arch/arm64/kernel/paravirt.c
+> +++ b/arch/arm64/kernel/paravirt.c
+> @@ -6,13 +6,161 @@
+>   * Author: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+>   */
+>  
+> +#define pr_fmt(fmt) "kvmarm-pv: " fmt
+> +
+> +#include <linux/arm-smccc.h>
+> +#include <linux/cpuhotplug.h>
+>  #include <linux/export.h>
+> +#include <linux/io.h>
+>  #include <linux/jump_label.h>
+> +#include <linux/printk.h>
+> +#include <linux/psci.h>
+> +#include <linux/reboot.h>
+> +#include <linux/slab.h>
+>  #include <linux/types.h>
+> +
+>  #include <asm/paravirt.h>
+> +#include <asm/pvclock-abi.h>
+> +#include <asm/smp_plat.h>
+>  
+>  struct static_key paravirt_steal_enabled;
+>  struct static_key paravirt_steal_rq_enabled;
+>  
+>  struct paravirt_patch_template pv_ops;
+>  EXPORT_SYMBOL_GPL(pv_ops);
+> +
+> +struct kvmarm_stolen_time_region {
+> +	struct pvclock_vcpu_stolen_time *kaddr;
+> +};
+> +
+> +static DEFINE_PER_CPU(struct kvmarm_stolen_time_region, stolen_time_region);
+> +
+> +static bool steal_acc = true;
+> +static int __init parse_no_stealacc(char *arg)
+> +{
+> +	steal_acc = false;
+> +	return 0;
+> +}
+> +
+> +early_param("no-steal-acc", parse_no_stealacc);
 
-'make dt_binding_check' will give more detailed errors.
+Need to also add an 'ARM64' to the
+Documentation/admin-guide/kernel-parameters.txt entry for this.
 
-Are the inputs always contiguous 0-N? If so, you want:
-
-items:
-  - const: clkout0
-  - const: clkout1
-  - const: clkout2
-  ...
-
-If you want to express any number and order of strings is valid, then you need:
-
-items:
-  enum:
-    - clkout0
-    - clkout1
-    - clkout2
-
-Doing that is discouraged for bindings though. Currently, it will
-generate an error from the meta-schema, but we could change that.
-
-Rob
+Thanks,
+drew
 
 _______________________________________________
 linux-arm-kernel mailing list
