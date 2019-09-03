@@ -2,59 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C87ADA67C7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 13:49:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4D828A67F0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 13:58:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=ZiI/bQ991Jj6zB+kvRUaCOoxEmo4E9uxY4RcM9FyweE=; b=itOqg9WYcaNajvL2xcFF9Mbdh
-	mv8AtK4RY0swsmmzDR32vz7TVYWtxg5D/Y5gCR30tZz5JsZ4wp+thHLMSO4RU0W0QMpA2osJ7KUDH
-	0dVSN+j2KaY8zEm/eBQMZuFeFczNe6NXuy9W52bIyAraogwKnlyhXhMHsQcAT+5hxMtnhpwihwecY
-	w+C9dp0vRTlAtY2YbQ2tUP9uO1Fnb4S1Y9UyRQs1XXkyFIKLtlXOPj6KWWFgGgqEC6inRAwuxnO/l
-	f4y9w6Bck1un4ZMYzkFe6PASbQgBbpgu8Z6nSHGITTDAcgYhaymbSfCc+JGfZOqxA/A/W6wUrBddX
-	pAmKLABCQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=Y2FEy0kQiOcjj6vAnFojOEM3RX126dp2kvhF55Y+0T0=; b=FSN
+	NhhdqWHD0T+0vPYEN7Rz4LYvE0mijVjfo9Rcvn7VaLaaCoTNN/jNmUy1Z+hHd7vf6biUtRIgvasT+
+	AHe8F5LK3vAYR2oBWDcaeF+XnwPmLsKNJNryZjAs6B7TzkrG3UZD/qk9Cd4IoZRKmGIV1NKBSIITr
+	GQLTKN+WrVpBNTUluvU6us9SPF3lp//UpjQhj5LEYw6rfhRdT5N13pUvysjmVSKS25RK8ZOZWAlfJ
+	2B4+RayxCoBYykCSgMJEjm+DOBxCT5d99Kn+jqfJQ4Mrha/eumfuK6yyHxcRCvb/I5sHHvndZYESb
+	mEG1uuAd2QjIuCpv9FlKESdL2L3NBsA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i57JB-00018P-GH; Tue, 03 Sep 2019 11:49:13 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i57SN-0004yI-7y; Tue, 03 Sep 2019 11:58:43 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i57Ix-00015I-QZ
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 11:49:01 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9715BAF68;
- Tue,  3 Sep 2019 11:48:34 +0000 (UTC)
-Subject: Re: [PATCH V2] arm: xen: mm: use __GPF_DMA32 for arm64
-To: Christoph Hellwig <hch@infradead.org>,
- Stefano Stabellini <sstabellini@kernel.org>
-References: <1567175255-1798-1-git-send-email-peng.fan@nxp.com>
- <d7477406-a8a0-5c3c-13dc-2c84e27b8afa@arm.com>
- <20190830085807.GA15771@infradead.org>
- <alpine.DEB.2.21.1908301926500.21347@sstabellini-ThinkPad-T480s>
- <20190902155732.GA8311@infradead.org>
-From: Juergen Gross <jgross@suse.com>
-Message-ID: <8e81051f-ad50-7b4e-2e88-c685ade6b240@suse.com>
-Date: Tue, 3 Sep 2019 13:48:33 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190902155732.GA8311@infradead.org>
-Content-Language: en-US
+ id 1i57Rb-0004WG-85
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 11:57:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=1sZR0jM6bSKmi2RDe14AoOgOh3ZcP38nZLHlmDYc7z8=; b=msNKnC9/TNrR
+ UlW226Cz+yKvUAC86LEjs3KYAnXCDCXeYLouIltTnS/EVUrdG3b+QMX+SP/GllbYwrlxRZ7yMNn1T
+ k59Q8GzHYkbfLm9mKpgYmZabOYarOdIducgyDlrzo+Me4GUvQ10unTQsWn/1P0ERCft8G5eX8ScpN
+ Dh9k4=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i57RV-0008Ly-Cv; Tue, 03 Sep 2019 11:57:49 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id D6F002742D39; Tue,  3 Sep 2019 12:57:48 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: Keiji Hayashibara <hayashibara.keiji@socionext.com>
+Subject: Applied "spi: uniphier: introduce polling mode" to the spi tree
+In-Reply-To: <1567488661-11428-4-git-send-email-hayashibara.keiji@socionext.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190903115748.D6F002742D39@ypsilon.sirena.org.uk>
+Date: Tue,  3 Sep 2019 12:57:48 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_044900_009273_E8D8697B 
-X-CRM114-Status: GOOD (  19.08  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190903_045755_312873_B3849203 
+X-CRM114-Status: GOOD (  17.93  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,61 +74,196 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peng Fan <peng.fan@nxp.com>, "will@kernel.org" <will@kernel.org>,
- Catalin Marinas <Catalin.Marinas@arm.com>,
- "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
- Julien Grall <Julien.Grall@arm.com>, dl-linux-imx <linux-imx@nxp.com>,
- "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
- boris.ostrovsky@oracle.com, nd <nd@arm.com>,
- Robin Murphy <Robin.Murphy@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: masami.hiramatsu@linaro.org, hayashibara.keiji@socionext.com,
+ yamada.masahiro@socionext.com, linux-kernel@vger.kernel.org,
+ linux-spi@vger.kernel.org, jaswinder.singh@linaro.org,
+ Mark Brown <broonie@kernel.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02.09.19 17:57, Christoph Hellwig wrote:
-> On Fri, Aug 30, 2019 at 07:40:42PM -0700, Stefano Stabellini wrote:
->> + Juergen, Boris
->>
->> On Fri, 30 Aug 2019, Christoph Hellwig wrote:
->>> Can we take a step back and figure out what we want to do here?
->>>
->>> AFAICS this function allocates memory for the swiotlb-xen buffer,
->>> and that means it must be <= 32-bit addressable to satisfy the DMA API
->>> guarantees.  That means we generally want to use GFP_DMA32 everywhere
->>> that exists, but on systems with odd zones we might want to dip into
->>> GFP_DMA.  This also means swiotlb-xen doesn't actually do the right
->>> thing on x86 at the moment.  So shouldn't we just have one common
->>> routine in swiotlb-xen.c that checks if we have CONFIG_ZONE_DMA32
->>> set, then try GFP_DMA32, and if not check if CONFIG_ZONE_DMA is set
->>> and then try that, else default to GFP_KERNEL?
->>
->> Yes, for ARM/ARM64 it makes a lot of sense given that dom0 is 1:1 mapped
->> (pseudo-physical == physical).  I'll let Juergen and Boris comment on
->> the x86 side of things, but on x86 PV Dom0 is not 1:1 mapped so
->> GFP_DMA32 is probably not meaningful.
-> 
-> But is it actually harmful?  If the GFP_DMA32 doesn't hurt we could
-> just use it there.  Or if that seems to ugly we can make the dma
-> flags dependents on a XEN_1TO1_MAPPED config option set by arm/arm64.
-> 
+The patch
 
-I'd rather have it only if needed. Especially on X86 PV dom0 I'd like to
-avoid GFP_DMA32 as memory below 4GB (guest physical) might be rather
-scarce in some configurations.
+   spi: uniphier: introduce polling mode
 
-I think X86 PVH dom0 should need GFP_DMA32, too, as the limit is related
-to the address as communicated to the device (before being translated by
-the IOMMU), right? This would mean on a X86 kernel configured to support
-PV and PVH the test for setting GFP_DMA32 can't depend on a config
-option alone, it needs to be dynamic.
+has been applied to the spi tree at
 
-BTW, for PV guests the DMA address width is handled via
-xen_create_contiguous_region().
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/spi.git for-5.4
 
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Juergen
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
+
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
+
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
+
+Thanks,
+Mark
+
+From 37ffab81709805c674f164948e03ba0d3fe371b6 Mon Sep 17 00:00:00 2001
+From: Keiji Hayashibara <hayashibara.keiji@socionext.com>
+Date: Tue, 3 Sep 2019 14:31:01 +0900
+Subject: [PATCH] spi: uniphier: introduce polling mode
+
+Introduce new polling mode for short size transfer. Either the estimated
+transfer time is estimated to exceed 200us, or polling loop actually exceeds
+200us, it switches to irq mode.
+
+Signed-off-by: Keiji Hayashibara <hayashibara.keiji@socionext.com>
+Link: https://lore.kernel.org/r/1567488661-11428-4-git-send-email-hayashibara.keiji@socionext.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ drivers/spi/spi-uniphier.c | 81 +++++++++++++++++++++++++++++++-------
+ 1 file changed, 66 insertions(+), 15 deletions(-)
+
+diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
+index 226f8508bff2..938f8873e63f 100644
+--- a/drivers/spi/spi-uniphier.c
++++ b/drivers/spi/spi-uniphier.c
+@@ -7,6 +7,7 @@
+ #include <linux/bitfield.h>
+ #include <linux/bitops.h>
+ #include <linux/clk.h>
++#include <linux/delay.h>
+ #include <linux/interrupt.h>
+ #include <linux/io.h>
+ #include <linux/module.h>
+@@ -16,6 +17,7 @@
+ #include <asm/unaligned.h>
+ 
+ #define SSI_TIMEOUT_MS		2000
++#define SSI_POLL_TIMEOUT_US	200
+ #define SSI_MAX_CLK_DIVIDER	254
+ #define SSI_MIN_CLK_DIVIDER	4
+ 
+@@ -289,21 +291,23 @@ static void uniphier_spi_recv(struct uniphier_spi_priv *priv)
+ 
+ static void uniphier_spi_fill_tx_fifo(struct uniphier_spi_priv *priv)
+ {
+-	unsigned int tx_count;
++	unsigned int fifo_threshold, fill_bytes;
+ 	u32 val;
+ 
+-	tx_count = DIV_ROUND_UP(priv->tx_bytes,
++	fifo_threshold = DIV_ROUND_UP(priv->rx_bytes,
+ 				bytes_per_word(priv->bits_per_word));
+-	tx_count = min(tx_count, SSI_FIFO_DEPTH);
++	fifo_threshold = min(fifo_threshold, SSI_FIFO_DEPTH);
++
++	fill_bytes = fifo_threshold - (priv->rx_bytes - priv->tx_bytes);
+ 
+ 	/* set fifo threshold */
+ 	val = readl(priv->base + SSI_FC);
+ 	val &= ~(SSI_FC_TXFTH_MASK | SSI_FC_RXFTH_MASK);
+-	val |= FIELD_PREP(SSI_FC_TXFTH_MASK, tx_count);
+-	val |= FIELD_PREP(SSI_FC_RXFTH_MASK, tx_count);
++	val |= FIELD_PREP(SSI_FC_TXFTH_MASK, fifo_threshold);
++	val |= FIELD_PREP(SSI_FC_RXFTH_MASK, fifo_threshold);
+ 	writel(val, priv->base + SSI_FC);
+ 
+-	while (tx_count--)
++	while (fill_bytes--)
+ 		uniphier_spi_send(priv);
+ }
+ 
+@@ -322,20 +326,14 @@ static void uniphier_spi_set_cs(struct spi_device *spi, bool enable)
+ 	writel(val, priv->base + SSI_FPS);
+ }
+ 
+-static int uniphier_spi_transfer_one(struct spi_master *master,
+-				     struct spi_device *spi,
+-				     struct spi_transfer *t)
++static int uniphier_spi_transfer_one_irq(struct spi_master *master,
++					 struct spi_device *spi,
++					 struct spi_transfer *t)
+ {
+ 	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
+ 	struct device *dev = master->dev.parent;
+ 	unsigned long time_left;
+ 
+-	/* Terminate and return success for 0 byte length transfer */
+-	if (!t->len)
+-		return 0;
+-
+-	uniphier_spi_setup_transfer(spi, t);
+-
+ 	reinit_completion(&priv->xfer_done);
+ 
+ 	uniphier_spi_fill_tx_fifo(priv);
+@@ -355,6 +353,59 @@ static int uniphier_spi_transfer_one(struct spi_master *master,
+ 	return priv->error;
+ }
+ 
++static int uniphier_spi_transfer_one_poll(struct spi_master *master,
++					  struct spi_device *spi,
++					  struct spi_transfer *t)
++{
++	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
++	int loop = SSI_POLL_TIMEOUT_US * 10;
++
++	while (priv->tx_bytes) {
++		uniphier_spi_fill_tx_fifo(priv);
++
++		while ((priv->rx_bytes - priv->tx_bytes) > 0) {
++			while (!(readl(priv->base + SSI_SR) & SSI_SR_RNE)
++								&& loop--)
++				ndelay(100);
++
++			if (loop == -1)
++				goto irq_transfer;
++
++			uniphier_spi_recv(priv);
++		}
++	}
++
++	return 0;
++
++irq_transfer:
++	return uniphier_spi_transfer_one_irq(master, spi, t);
++}
++
++static int uniphier_spi_transfer_one(struct spi_master *master,
++				     struct spi_device *spi,
++				     struct spi_transfer *t)
++{
++	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
++	unsigned long threshold;
++
++	/* Terminate and return success for 0 byte length transfer */
++	if (!t->len)
++		return 0;
++
++	uniphier_spi_setup_transfer(spi, t);
++
++	/*
++	 * If the transfer operation will take longer than
++	 * SSI_POLL_TIMEOUT_US, it should use irq.
++	 */
++	threshold = DIV_ROUND_UP(SSI_POLL_TIMEOUT_US * priv->speed_hz,
++					USEC_PER_SEC * BITS_PER_BYTE);
++	if (t->len > threshold)
++		return uniphier_spi_transfer_one_irq(master, spi, t);
++	else
++		return uniphier_spi_transfer_one_poll(master, spi, t);
++}
++
+ static int uniphier_spi_prepare_transfer_hardware(struct spi_master *master)
+ {
+ 	struct uniphier_spi_priv *priv = spi_master_get_devdata(master);
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
