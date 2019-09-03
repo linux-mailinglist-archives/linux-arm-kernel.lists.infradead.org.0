@@ -2,75 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F77FA7030
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 18:38:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8B1AA7032
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 18:38:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=B13PENCkeOd7O8nKIFrQiCpLoE4OmOX0mLmuS//I3CE=; b=QSYu7jCH7tXH3o
-	OrSbrowPdD1cXe5f2RbvoL/4KXCQd3xCadBIQY2NgqUQwA8Gq46iunmDf1szVfSAauZI7zOegZeeU
-	TuldesuhRaFUtBHeMzbZT334w26LBFgjGVxouaAqWrL/LVALWRXtWdDkkChnPNgy8lMO50ATeE8xJ
-	xNA1P9pC98OkiolWNmRs46RAp8tvGkNf7VlIlydeMslU3SOmxC8k540/pOHH8gbD9ONUHn1r+RUY1
-	IUQNqD8OOuMt3IdYg7jj0j0ZXVkgrmVfDSF6utHnWwNgR8CpM4m0v0qfWUPSV5maHf03GFU0NNdL1
-	m/VsDivW9Ghzq1wnC9pg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=Slc7I3doC4UNK3m5xGnf4Yr1fsHDO76vbeZpGOJwEIQ=; b=Z2dT+FG0xNcwO2RLoKo/LTLo2
+	7B5zYdbWnfFnUvS0AjERAiCOftMvjtFey/5nbpjaSFUALe2FUm/QWU/+XnadhHSxufHlyzvSwyN/N
+	bZE3gmLTdFeG4uuqnhs5G8jv58lvJe9ghfqm+8yBGGCbIkB1uP3aOxSVXWZ45GPJQ0Npx4kuMVbYw
+	Z1YVvbggDHVhAcnrHoiNPWFkqS5YQDHE7NcpSt2iXkOGxlEQFgYWaKJB/8UsCWWr4lRmWJ3T5bRp0
+	MR+RCws907LtgSXIbA8Vki/wYBD7V0hiPrQoLwO9kk6iOVNH/Ado7bz67R5eZfv6Y0aQSGeIUr5O6
+	cX2Wp7FPg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Bot-0005ES-Lp; Tue, 03 Sep 2019 16:38:15 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i5BpU-0005X2-51; Tue, 03 Sep 2019 16:38:52 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Boe-0005Dt-PP
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 16:38:02 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B6F9F2173E;
- Tue,  3 Sep 2019 16:37:58 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567528680;
- bh=bZmXHHP53xjiiygJNDAG5gIBQpX6awlC0esO32JPO4k=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZStQwFNX9UvK1gN75L7tThKBL0p1FfykVjEdoN4Dfv6bgh0Q5fmlN10MEtm4w5F0B
- DlbwTzjGS+Jja5gtc0STZn+cIdIap1996XDvbtik1hqTi3hwjCwm8aSubeqX/Nu1ov
- sqzv0TWNWLzJ0V8pOFNaWURHoGg5vnZF8QJF2VHQ=
-Date: Tue, 3 Sep 2019 17:37:55 +0100
-From: Will Deacon <will@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
-Message-ID: <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-4-will@kernel.org>
- <20190903060011.GA60737@archlinux-threadripper>
- <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
- <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
- <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
- <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
+ id 1i5BpE-0005W9-AP; Tue, 03 Sep 2019 16:38:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=SJ8sp8FvDRuyze29OLcsHkJ1fO3LZuMK56azmXlvfRM=; b=APOdbs66SGlqWMxcn+FKIVqGD
+ tpbvxPtv+sFs7ndBggj7ezK7Mrix3mSgR/vgyiXmz5V5wCSEnj9fAuriGJY0xtnxbG/nbbMAPIoBZ
+ OS5/sm/FO0LZp0EflXUnHsjTqHjyK3+V6ExMsM0RClrjcL3uRHOucUulOjdhVNPklxobo=;
+Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i5Bp8-0000lg-QW; Tue, 03 Sep 2019 16:38:30 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 5A9D62740A95; Tue,  3 Sep 2019 17:38:29 +0100 (BST)
+Date: Tue, 3 Sep 2019 17:38:29 +0100
+From: Mark Brown <broonie@kernel.org>
+To: richtek.jeff.chang@gmail.com
+Subject: Re: [PATCH] [MT6660] Mediatek Smart Amplifier Driver
+Message-ID: <20190903163829.GB7916@sirena.co.uk>
+References: <1567494501-3427-1-git-send-email-richtek.jeff.chang@gmail.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+In-Reply-To: <1567494501-3427-1-git-send-email-richtek.jeff.chang@gmail.com>
+X-Cookie: You will pass away very quickly.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_093800_869077_53875C74 
-X-CRM114-Status: GOOD (  11.68  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190903_093836_386987_BD5970D6 
+X-CRM114-Status: GOOD (  17.92  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,79 +74,172 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
- Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org, tiwai@suse.com,
+ lgirdwood@gmail.com, linux-mediatek@lists.infradead.org,
+ matthias.bgg@gmail.com, perex@perex.cz, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============1857236209074570421=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 04:31:20PM +0100, Andrew Murray wrote:
-> On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
-> > On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
-> > > Does it work if the only thing you change is the toolchain, and use GCC
-> > > instead? 
-> > 
-> > Yup.
-> 
-> Also this is Clang generation:
-> 
-> ffff8000100f2700 <__ptrace_link>:
-> ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
-> ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
-> ffff8000100f2708:       eb09011f        cmp     x8, x9
-> ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
-> ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
-> ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
-> ffff8000100f2718:       f9000528        str     x8, [x9, #8]
-> ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
-> ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
-> ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
-> ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
-> ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
-> ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
-> ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
-> ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
-> ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
-> ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
-> ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
-> ffff8000100f2748:       b828005f        stadd   w8, [x2]
-> ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
-> ffff8000100f2750:       d65f03c0        ret
-> ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
-> ...
-> 
-> This looks like the default path (before we write over it) will take you to
-> the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
-> least not what we expected to see. Also why 4 branches?
 
-So I reproduced this with a silly atomic_inc wrapper:
+--===============1857236209074570421==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="UHN/qo2QbUvPLonB"
+Content-Disposition: inline
 
-void will_atomic_inc(atomic_t *v)
-{
-        atomic_inc(v);
-}
 
-Compiles to:
+--UHN/qo2QbUvPLonB
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
 
-0000000000000018 <will_atomic_inc>:
-  18:	14000004 	b	28 <will_atomic_inc+0x10>
-  1c:	14000001 	b	20 <will_atomic_inc+0x8>
-  20:	14000005 	b	34 <will_atomic_inc+0x1c>
-  24:	14000001 	b	28 <will_atomic_inc+0x10>
-  28:	52800028 	mov	w8, #0x1                   	// #1
-  2c:	b828001f 	stadd	w8, [x0]
-  30:	d65f03c0 	ret
-  34:	14000027 	b	d0 <dump_kernel_offset+0x60>
-  38:	d65f03c0 	ret
+On Tue, Sep 03, 2019 at 03:08:21PM +0800, richtek.jeff.chang@gmail.com wrote:
 
-which is going to explode.
+> --- /dev/null
+> +++ b/sound/soc/codecs/mt6660.c
+> @@ -0,0 +1,802 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2019 MediaTek Inc.
+> + */
 
-Will
+Please make the entire comment block a C++ comment so things look more
+consistent.
+
+> +struct reg_size_table {
+> +	u32 addr;
+> +	u8 size;
+> +};
+
+> +static const struct reg_size_table mt6660_reg_size_table[] = {
+> +	{ MT6660_REG_HPF1_COEF, 4 },
+> +	{ MT6660_REG_HPF2_COEF, 4 },
+> +	{ MT6660_REG_TDM_CFG3, 2 },
+> +	{ MT6660_REG_RESV17, 2 },
+> +	{ MT6660_REG_RESV23, 2 },
+> +	{ MT6660_REG_SIGMAX, 2 },
+> +	{ MT6660_REG_DEVID, 2},
+> +	{ MT6660_REG_TDM_CFG3, 2},
+> +	{ MT6660_REG_HCLIP_CTRL, 2},
+> +	{ MT6660_REG_DA_GAIN, 2},
+> +};
+
+Please talk to your hardware designers about the benefits of consistent
+register sizes :/
+
+> +static int32_t mt6660_i2c_update_bits(struct mt6660_chip *chip,
+> +	uint32_t addr, uint32_t mask, uint32_t data)
+> +{
+
+It would be good to implement a regmap rather than open coding
+*everything* - it'd give you things like this without needing to open
+code them.  Providing you don't use the cache code it should cope fine
+with variable register sizes.
+
+> +
+> +static int mt6660_i2c_init_setting(struct mt6660_chip *chip)
+> +{
+> +	int i, len, ret;
+> +	const struct codec_reg_val *init_table;
+> +
+> +	init_table = e4_reg_inits;
+> +	len = ARRAY_SIZE(e4_reg_inits);
+> +
+> +	for (i = 0; i < len; i++) {
+> +		ret = mt6660_i2c_update_bits(chip, init_table[i].addr,
+> +				init_table[i].mask, init_table[i].data);
+> +		if (ret < 0)
+> +			return ret;
+
+Why are we not using the chip defaults here?
+
+> +static int mt6660_chip_power_on(
+> +	struct snd_soc_component *component, int on_off)
+> +{
+> +	struct mt6660_chip *chip = (struct mt6660_chip *)
+> +		snd_soc_component_get_drvdata(component);
+> +	int ret = 0;
+> +	unsigned int val;
+> +
+> +	dev_dbg(component->dev, "%s: on_off = %d\n", __func__, on_off);
+> +	mutex_lock(&chip->var_lock);
+> +	if (on_off) {
+> +		if (chip->pwr_cnt == 0) {
+> +			ret = mt6660_i2c_update_bits(chip,
+> +				MT6660_REG_SYSTEM_CTRL, 0x01, 0x00);
+> +			val = mt6660_i2c_read(chip, MT6660_REG_IRQ_STATUS1);
+> +			dev_info(chip->dev,
+> +				"%s reg0x05 = 0x%x\n", __func__, val);
+> +		}
+> +		chip->pwr_cnt++;
+
+This looks like you're open coding runtime PM stuff?  AFAICT the issue
+is that you need to write to this register to do any I/O.  Just
+implement this via the standard runtime PM framework, you'll need to do
+something about the register I/O in the controls (ideally in the
+framework, it'd be a lot easier if you did have a cache) but you could
+cut out this bit.
+
+> +static int mt6660_component_set_bias_level(struct snd_soc_component *component,
+> +	enum snd_soc_bias_level level)
+> +{
+> +	struct snd_soc_dapm_context *dapm =
+> +		snd_soc_component_get_dapm(component);
+> +	int ret;
+> +	unsigned int val;
+> +	struct mt6660_chip *chip = snd_soc_component_get_drvdata(component);
+> +
+> +	if (dapm->bias_level == level) {
+> +		dev_warn(component->dev, "%s: repeat level change\n", __func__);
+
+This shouldn't be a warning.
+
+> +static const struct snd_kcontrol_new mt6660_component_snd_controls[] = {
+> +	SOC_SINGLE_EXT_TLV("Volume_Ctrl", MT6660_REG_VOL_CTRL, 0, 255,
+> +			   1, snd_soc_get_volsw, mt6660_component_put_volsw,
+> +			   vol_ctl_tlv),
+> +	SOC_SINGLE_EXT("WDT_Enable", MT6660_REG_WDT_CTRL, 7, 1, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+
+These control names should all use standard ALSA control names - on/off
+switches should end in Switch, volume controls in Volume.
+
+> +	SOC_SINGLE_EXT("I2SLRS", MT6660_REG_DATAO_SEL, 6, 3, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("I2SDOLS", MT6660_REG_DATAO_SEL, 3, 7, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+> +	SOC_SINGLE_EXT("I2SDORS", MT6660_REG_DATAO_SEL, 0, 7, 0,
+> +		       snd_soc_get_volsw, mt6660_component_put_volsw),
+
+What do these controls do?
+
+--UHN/qo2QbUvPLonB
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1ulwQACgkQJNaLcl1U
+h9DsxAf8DiH9juppC2atx8j+pwupdXbxOIeEil91IOqQMEBBSSJ1oa1nPDIz1HkH
+yJY7jq4QIijIkqA0b5Op3zEXSHIve3j3ZoUnN/Wrj6ODeyzrDXSvsDm/gB2/G3xJ
+AQYMGCGEaL3i0OmnFBf3LKCqG/FceKjOmg7QqcuNMGqLkdHdwiNMguc+5QkuSamM
+dvb3ZKnicrimjhMSocpe38qRFfcld4gJp6psfeDIQ8z2A1V8dtiNNrAbza/ArDUB
+kfUE1VkdWMTs1kOrjrTZl067ZzOTLBbSiulfxzDtM1UjB3LSteshyCkoVI5K+QBW
+qJJLfLqnH76e09UCIYvXbbV1J/oeRw==
+=1Pf1
+-----END PGP SIGNATURE-----
+
+--UHN/qo2QbUvPLonB--
+
+
+--===============1857236209074570421==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1857236209074570421==--
+
