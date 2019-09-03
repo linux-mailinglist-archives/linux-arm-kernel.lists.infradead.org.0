@@ -2,49 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 65D9EA61E0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 08:54:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7809DA61E2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 08:54:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4nRMoEU8UElfrN90Aa0bpDzvr/aqtg3vxCyZfS2mpqM=; b=mRWOx1EcjF7gYx
-	P71YlrhuPz1AX44YQToLbEu0dCTsS7uWfV+si8jAdwAP4lD/IOlUnCUXcERtcxNUNNiW6MPMSAoCn
-	9i70Urbvf7i+TgZdjGofHxmQ4+wQkrOuXkVlgFja1e0ImWX/BV3EZRHpAH9cyps7wKM6xaR/elXSc
-	pFjV7LF1d0XhIbPYgvOcdpz+Ybu0VavtBVhqnwr2jeil/ns/jmN5Txk7kKJDqGhUaKdiX7a4GSQmV
-	qwaSzFxnt6aZWDnWk5bhdVuEE4RGd5o+B0MSNeWnGC/vtnw9TykqsFAIRckrQyqyVTv1pCnnMTwfC
-	WdDytLoeFl/9AOG6HguQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LvU/Nv5287C3bE3iLKi4QKHqHmfFa3u0gDoI7fduJwg=; b=KBSjgLyVzEBSxU
+	yH+OWDzEw0soGh4xwpHD3stMgJkLVCMq9GpmsciyLNL1EXDqNtm+kRKlCO+uNnqTHpaKL8gAj1KZM
+	aX6BLf1e4T8WvRhZwpRwnwLUFzsQ3uxrQgGOXVEbmcLrCcXa54o16U+R/t5qYmHL5MKDyzFtk9q57
+	9XdHtVdDseLftUjNnGM1mSrzCDk8RuSishA57HH3tvOOfbtXqoamMjZ5JK6xM9i5AtWOspkHvSGBZ
+	4R7qvPKwaT8eO7yoGX5pmhDrhNWBBTI/Q2z78/6dqp8NO0OpmNx+1zlLO1UI5RhwOMpAzdb36tjTj
+	jXOkP0i5rGFRJBWpy0gw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i52hW-0000Fu-Ut; Tue, 03 Sep 2019 06:54:03 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1i52ho-0000Vh-P5; Tue, 03 Sep 2019 06:54:21 +0000
+Received: from mail-eopbgr750055.outbound.protection.outlook.com
+ ([40.107.75.55] helo=NAM02-BL2-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i52fH-0007NR-CM; Tue, 03 Sep 2019 06:51:45 +0000
-Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Tue, 3 Sep 2019
- 14:52:14 +0800
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH 4/4] arm64: dts: add support for A1 based Amlogic AD401
-Date: Tue, 3 Sep 2019 02:51:15 -0400
-Message-ID: <1567493475-75451-5-git-send-email-jianxin.pan@amlogic.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1567493475-75451-1-git-send-email-jianxin.pan@amlogic.com>
-References: <1567493475-75451-1-git-send-email-jianxin.pan@amlogic.com>
+ id 1i52fY-0007iu-RL
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 06:52:02 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=D4C29hLm9CGUezrEEAum6vbTzxRaD/wpmkVAgoJxjWdt3b3pdyuz7NnB+i+o7pVwXtCHUq6+T30KG2KSLVrDeGD9phZqrGXgVNF1v3v/yn6WxGRlL1skDGPz6dd/GAgZmNDgXOif/x96Wp6Kruygkn4SQH/jtsbiVaZlPlxUBUIkMVMWDnhrrJGr//p4YfuhK2q0AcQUAbXC5m5VrWGioTxLb0L7aUzwjzHxcOD+H0g5giW2g19TjId9acAB3NA0fTFJmYpgpLx0JrSOriE72GqfSIutMDcpsI65uXLWlDBY+9H0H0vjK7ZauvITc2BuEzU+WZXLrjnpyrDbpD3a/A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9WYqNwfO/s3jH7X8NmpmzInLj7cLanrv54KQTAZxsIE=;
+ b=WUtCG+y2KwwXjmRPz0WzkDJjt4tVZG2vDqL/B5+O03VCgHfptjk7UA4xmLgFR5/iYINkzQElRShV1huUh0qUjrv26TXevy1PWv3H28mUud2XKGdSC0bikvNvByWOfmyzugYGxcFshzU6ek+5xa4T3NQ7enX135qFgJGVTywyqW1561vS4hx7FRrf0u08KIISk2hxd43v0055Scmd9YZEva0q84g9wxQ9uPk70jJjE6vRudsyuMubQ0oXqWjRo3JLkBYpBvoXru26ZSVnYg2I7Oi1JDFhMpH2wat76bg7DIdGPe4Ac9/vDVllmphJ8cVxREMYHFIyqb7BT8cqo4bdqA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.83) smtp.rcpttodomain=bootlin.com smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=9WYqNwfO/s3jH7X8NmpmzInLj7cLanrv54KQTAZxsIE=;
+ b=hQGI85EKAoGziAxTfdw0sGdSg7LW0TBnqE3ANqHjiDBZfcUiXRiHHwq+wIq+12AvG7Vl/uemnWQE+bLUqaPI2PqgwCD8tiriNvkKGKWbOVoqKNr7u4ZTliDXgPVFCTk7G7SE0q0ilbmSfLdmDo5H5njBCr9B9A39z6Rf3CFzssA=
+Received: from BL0PR02CA0087.namprd02.prod.outlook.com (2603:10b6:208:51::28)
+ by BYAPR02MB5335.namprd02.prod.outlook.com (2603:10b6:a03:61::17)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2220.18; Tue, 3 Sep
+ 2019 06:51:58 +0000
+Received: from CY1NAM02FT057.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::200) by BL0PR02CA0087.outlook.office365.com
+ (2603:10b6:208:51::28) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2220.19 via Frontend
+ Transport; Tue, 3 Sep 2019 06:51:57 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.83)
+ smtp.mailfrom=xilinx.com; bootlin.com; dkim=none (message not signed)
+ header.d=none;bootlin.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
+Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
+ CY1NAM02FT057.mail.protection.outlook.com (10.152.75.110) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2220.16
+ via Frontend Transport; Tue, 3 Sep 2019 06:51:56 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
+ by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1i52fT-0001Xb-NJ; Mon, 02 Sep 2019 23:51:55 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1i52fO-0002Zp-JH; Mon, 02 Sep 2019 23:51:50 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1i52fI-0002Yu-Q9; Mon, 02 Sep 2019 23:51:45 -0700
+Subject: Re: [PATCH 1/3] ASoC: xlnx: add Xilinx logicPD-I2S FPGA IP support
+To: Miquel Raynal <miquel.raynal@bootlin.com>,
+ Michal Simek <michal.simek@xilinx.com>
+References: <20190830210607.22644-1-miquel.raynal@bootlin.com>
+ <df36fc2d-ed62-2556-513d-158a7707d5cd@xilinx.com>
+ <20190902222111.045ede17@xps13>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <59ab9db1-a94e-f6a7-9777-60959b682674@xilinx.com>
+Date: Tue, 3 Sep 2019 08:51:41 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Originating-IP: [116.236.93.172]
+In-Reply-To: <20190902222111.045ede17@xps13>
+Content-Language: en-US
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(39850400004)(346002)(376002)(396003)(2980300002)(189003)(199004)(6666004)(7416002)(70586007)(66574012)(76176011)(2906002)(31696002)(52146003)(65956001)(65806001)(966005)(106002)(2486003)(356004)(81166006)(70206006)(50466002)(478600001)(47776003)(23676004)(36756003)(26005)(426003)(81156014)(8676002)(8936002)(44832011)(36386004)(336012)(186003)(446003)(2616005)(476003)(486006)(11346002)(126002)(5660300002)(107886003)(31686004)(4326008)(6246003)(9786002)(2870700001)(6306002)(305945005)(229853002)(58126008)(54906003)(316002)(110136005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR02MB5335; H:xsj-pvapsmtpgw01; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: 693d9e61-e90b-4b18-68fd-08d7303b3650
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
+ SRVR:BYAPR02MB5335; 
+X-MS-TrafficTypeDiagnostic: BYAPR02MB5335:
+X-MS-Exchange-PUrlCount: 2
+X-Microsoft-Antispam-PRVS: <BYAPR02MB53354BD0A68CB6789AC17A24C6B90@BYAPR02MB5335.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:10000;
+X-Forefront-PRVS: 01494FA7F7
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: vw+/MxKap4WH3cEmLMER/0C1BJ7HuuQzE3RdOmIvJbRPZz3dKl/V0gFr+F5sYYmYoADiJalR8o0ofa1weDUFSTWfLG4z23DL6WhJQ73As5/bnXNH950pz7TD6P0PoKID+TaYn8EdHYExePl55SdU8SmZ+evrEeSNb19YDgvsbTbxaZgqRrreY9ao/NyAdJdR6NRuLwN+vSp1UjOLyrJhtNgt5fjEtYJsyjuuAYLNfgImdAfMaePecxTYrFc3v0fAZoM8M8dY8AI7WWHBIxHc+Q13z7Sga5IdtFBZcKt4pSDXZyHvIc9moSaz/LDarC39hfrnpWgR4JDQcu63An3jCZWKnPSe7HqCdjfC4RHLANLF2XVGUkisPFZN0HiMzXWTLejaeBLtsyiLmxJuNaXttpnjDPWKU3DVFMpoP4p52vw=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 03 Sep 2019 06:51:56.2282 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 693d9e61-e90b-4b18-68fd-08d7303b3650
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
+ Helo=[xsj-pvapsmtpgw01]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR02MB5335
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_235144_031060_DE41770D 
-X-CRM114-Status: GOOD (  11.53  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190902_235201_107386_E6B6839F 
+X-CRM114-Status: GOOD (  17.81  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.75.55 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -56,210 +142,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Jianxin Pan <jianxin.pan@amlogic.com>,
- Neil Armstrong <narmstrong@baylibre.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, Qiufang Dai <qiufang.dai@amlogic.com>,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- Tao Zeng <tao.zeng@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ alsa-devel@alsa-project.org,
+ Maruthi Srinivas Bayyavarapu <maruthis@xilinx.com>,
+ Takashi Iwai <tiwai@suse.com>, Rob Herring <robh+dt@kernel.org>,
+ Liam Girdwood <lgirdwood@gmail.com>, Mark Brown <broonie@kernel.org>,
+ Thomas Petazzoni <thomas.petazzoni@bootlin.com>, praveenv@xilinx.com,
+ Jaroslav Kysela <perex@perex.cz>, alexandre@bootlin.com,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add basic support for the Amlogic A1 based Amlogic AD401 board:
-which describe components as follows: Reserve Memory, CPU, GIC, IRQ,
-Timer, UART. It's capable of booting up into the serial console.
-
-Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
----
- arch/arm64/boot/dts/amlogic/Makefile           |   1 +
- arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts |  30 ++++++
- arch/arm64/boot/dts/amlogic/meson-a1.dtsi      | 121 +++++++++++++++++++++++++
- 3 files changed, 152 insertions(+)
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
- create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-
-diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
-index edbf128..1720c45 100644
---- a/arch/arm64/boot/dts/amlogic/Makefile
-+++ b/arch/arm64/boot/dts/amlogic/Makefile
-@@ -36,3 +36,4 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxm-rbox-pro.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-gxm-vega-s96.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sei610.dtb
- dtb-$(CONFIG_ARCH_MESON) += meson-sm1-khadas-vim3l.dtb
-+dtb-$(CONFIG_ARCH_MESON) += meson-a1-ad401.dtb
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
-new file mode 100644
-index 00000000..3c05cc0
---- /dev/null
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
-@@ -0,0 +1,30 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-+ */
-+
-+/dts-v1/;
-+
-+#include "meson-a1.dtsi"
-+
-+/ {
-+	compatible = "amlogic,ad401", "amlogic,a1";
-+	model = "Amlogic Meson A1 AD401 Development Board";
-+
-+	aliases {
-+		serial0 = &uart_AO_B;
-+	};
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+	};
-+	memory@0 {
-+		device_type = "memory";
-+		linux,usable-memory = <0x0 0x0 0x0 0x8000000>;
-+	};
-+};
-+
-+&uart_AO_B {
-+	status = "okay";
-+	/*pinctrl-0 = <&uart_ao_a_pins>;*/
-+	/*pinctrl-names = "default";*/
-+};
-diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-new file mode 100644
-index 00000000..b98d648
---- /dev/null
-+++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
-@@ -0,0 +1,121 @@
-+// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
-+/*
-+ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
-+ */
-+
-+#include <dt-bindings/interrupt-controller/irq.h>
-+#include <dt-bindings/interrupt-controller/arm-gic.h>
-+
-+/ {
-+	compatible = "amlogic,a1";
-+
-+	interrupt-parent = <&gic>;
-+	#address-cells = <2>;
-+	#size-cells = <2>;
-+
-+	cpus {
-+		#address-cells = <0x2>;
-+		#size-cells = <0x0>;
-+
-+		cpu0: cpu@0 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a35";
-+			reg = <0x0 0x0>;
-+			enable-method = "psci";
-+			next-level-cache = <&l2>;
-+		};
-+
-+		cpu1: cpu@1 {
-+			device_type = "cpu";
-+			compatible = "arm,cortex-a35";
-+			reg = <0x0 0x1>;
-+			enable-method = "psci";
-+			next-level-cache = <&l2>;
-+		};
-+
-+		l2: l2-cache0 {
-+			compatible = "cache";
-+		};
-+	};
-+	psci {
-+		compatible = "arm,psci-1.0";
-+		method = "smc";
-+	};
-+
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		linux,cma {
-+			compatible = "shared-dma-pool";
-+			reusable;
-+			size = <0x0 0x800000>;
-+			alignment = <0x0 0x400000>;
-+			linux,cma-default;
-+		};
-+	};
-+
-+	sm: secure-monitor {
-+		compatible = "amlogic,meson-gxbb-sm";
-+	};
-+
-+	soc {
-+		compatible = "simple-bus";
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+
-+		uart_AO: serial@fe001c00 {
-+			compatible = "amlogic,meson-gx-uart",
-+				     "amlogic,meson-ao-uart";
-+			reg = <0x0 0xfe001c00 0x0 0x18>;
-+			interrupts = <GIC_SPI 25 IRQ_TYPE_EDGE_RISING>;
-+			clocks = <&xtal>, <&xtal>, <&xtal>;
-+			clock-names = "xtal", "pclk", "baud";
-+			status = "disabled";
-+		};
-+
-+		uart_AO_B: serial@fe002000 {
-+			compatible = "amlogic,meson-gx-uart",
-+				     "amlogic,meson-ao-uart";
-+				     reg = <0x0 0xfe002000 0x0 0x18>;
-+			interrupts = <GIC_SPI 26 IRQ_TYPE_EDGE_RISING>;
-+			clocks = <&xtal>, <&xtal>, <&xtal>;
-+			clock-names = "xtal", "pclk", "baud";
-+			status = "disabled";
-+		};
-+
-+		gic: interrupt-controller@ff901000 {
-+			compatible = "arm,gic-400";
-+			reg = <0x0 0xff901000 0x0 0x1000>,
-+			      <0x0 0xff902000 0x0 0x2000>,
-+			      <0x0 0xff904000 0x0 0x2000>,
-+			      <0x0 0xff906000 0x0 0x2000>;
-+			interrupt-controller;
-+			interrupts = <GIC_PPI 9
-+				(GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_HIGH)>;
-+			#interrupt-cells = <3>;
-+			#address-cells = <0>;
-+		};
-+	};
-+
-+	timer {
-+		compatible = "arm,armv8-timer";
-+		interrupts = <GIC_PPI 13
-+			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 14
-+			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 11
-+			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
-+			     <GIC_PPI 10
-+			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>;
-+	};
-+
-+	xtal: xtal-clk {
-+		compatible = "fixed-clock";
-+		clock-frequency = <24000000>;
-+		clock-output-names = "xtal";
-+		#clock-cells = <0>;
-+	};
-+};
--- 
-2.7.4
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDIuIDA5LiAxOSAyMjoyMSwgTWlxdWVsIFJheW5hbCB3cm90ZToKPiBIaSBNaWNoYWwsCj4g
+Cj4gTWljaGFsIFNpbWVrIDxtaWNoYWwuc2ltZWtAeGlsaW54LmNvbT4gd3JvdGUgb24gTW9uLCAy
+IFNlcCAyMDE5Cj4gMDk6Mzk6MTEgKzAyMDA6Cj4gCj4+IEhpIE1pcXVlbAo+Pgo+PiBPbiAzMC4g
+MDguIDE5IDIzOjA2LCBNaXF1ZWwgUmF5bmFsIHdyb3RlOgo+Pj4gVGhpcyBJUCBpcyB2ZXJ5IHNp
+bXBsZSBzbyB0aGlzIGRyaXZlciBtYW5hZ2UgYm90aCB0aGUgREFJIGFuZCB0aGUgUENNCj4+PiBz
+dHJlYW1zLCBoZW5jZSB0aGUgcHJlc2VuY2Ugb2YgYm90aCBjb21wb25lbnRzIGluIHRoaXMgZHJp
+dmVyLgo+Pj4KPj4+IFRoZXJlIGFyZSBwbGVudHkgYXZhaWxhYmxlIGludGVycnVwdGlvbnMgd2hl
+biBjYXB0dXJpbmcgb3IgcGxheWluZwo+Pj4gYmFjayBhdWRpbyB0aGF0IGNhbiBiZSB0cmlnZ2Vy
+ZWQgYnV0IHRoZSBvbmx5IG9uZSB0aGF0IGZpdHMgdGhlIEFMU0EKPj4+IHNvdW5kIHN5c3RlbSBp
+cyB0aGUgWEZFUl9ET05FIHdoaWNoIGlzIHVzZWQgdG8gYm91bmQgc291bmQKPj4+IHBlcmlvZHMu
+IE90aGVyIGludGVycnVwdHMgYXJlIG1hc2tlZC4gUGxlYXNlIG5vdGUgdGhhdCBjYXB0dXJlIGFu
+ZAo+Pj4gcGxheWJhY2sgYXJlIG5vdCBwb3NzaWJsZSBhdCB0aGUgc2FtZSB0aW1lIHRob3VnaC4K
+Pj4+Cj4+PiBDYXB0dXJlIHNlZW1zIHRvIHdvcmsgKGF0IGxlYXN0IGl0IGNyZWF0ZXMgYSBmaWxl
+IHdpdGggc29tZXRoaW5nCj4+PiBpbnNpZGUpIGJ1dCBJIGhhdmUgbm8gY2FwdHVyZSBtZWNoYW5p
+c20gb24gdGhlIGJvYXJkIHRvIGFjdHVhbGx5IHRlc3QKPj4+IHRoYXQgaXQgd29ya3MgY29ycmVj
+dGx5Lgo+Pj4KPj4+IFNpZ25lZC1vZmYtYnk6IE1pcXVlbCBSYXluYWwgPG1pcXVlbC5yYXluYWxA
+Ym9vdGxpbi5jb20+Cj4+PiAtLS0KPj4+Cj4+PiBIZWxsbywKPj4+Cj4+PiBUaGlzIGlzIG15IGZp
+cnN0IGNvbnRyaWJ1dGlvbiBpbiB0aGUgc291bmQgc3Vic3lzdGVtLCBJIGhvcGUgSSd2ZQo+Pj4g
+dW5kZXJzdG9vZCB0aGUgY29yZSBidXQgSSBtaWdodCBiZSBlbnRpcmVseSB3cm9uZyBhcyB3ZWxs
+LCBzbyBwbGVhc2UKPj4+IGRvIG5vdCBoZXNpdGF0ZSB0byBiZSBjcml0aWNhbCBvbiBteSBjaG9p
+Y2VzLgo+Pj4KPj4+IFRoYW5rcywKPj4+IE1pcXXDqGwKPj4+Cj4+PiAgc291bmQvc29jL3hpbGlu
+eC9LY29uZmlnICAgICAgICAgICAgfCAgIDcgKwo+Pj4gIHNvdW5kL3NvYy94aWxpbngvTWFrZWZp
+bGUgICAgICAgICAgIHwgICAyICsKPj4+ICBzb3VuZC9zb2MveGlsaW54L3hsbngtbG9naWNwZC1p
+MnMuYyB8IDQ2OCArKysrKysrKysrKysrKysrKysrKysrKysrKysrICAKPj4KPj4gV2hhdCBJUCBp
+cyB0aGlzPwo+PiBodHRwczovL3d3dy54aWxpbnguY29tL3Byb2R1Y3RzL2ludGVsbGVjdHVhbC1w
+cm9wZXJ0eS9hdWRpby1pMnMuaHRtbAo+Pgo+PiBodHRwczovL2dpdGh1Yi5jb20vWGlsaW54L2xp
+bnV4LXhsbngvYmxvYi9tYXN0ZXIvc291bmQvc29jL3hpbGlueC94bG54X2kycy5jCj4+Cj4+IEFu
+eXdheSBJIGFtIGFkZGluZyBQcmF2ZWVuIGFuZCBNYXJ1dGhpIHRvIHRha2UgYSBsb29rLgo+IAo+
+IEFjdHVhbGx5IEkgaGF2ZSBiZWVuIHRyaWNrZWQgYnkgYSBkYXRhc2hlZXQgd2l0aCB0aGUgd3Jv
+bmcgdGl0bGU6IHRoaXMKPiBpcyBhIExvZ2ljUEQgSVAsIGl0IGlzIG5vdCBmcm9tIFhpbGlueC4g
+SSB3aWxsIHJlc3VibWl0IHdpdGggYSBuZXcKPiBkcml2ZXIgbmFtZS9jb21wYXRpYmxlIGFuZCBh
+ZGQgdGhlIHJlbGV2YW50IHBlb3BsZS4KCm9rLiBHcmVhdC4KCk0KCl9fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBs
+aXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5m
+cmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
