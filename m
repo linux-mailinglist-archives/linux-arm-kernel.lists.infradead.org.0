@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 21A89A609A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 07:31:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A2D76A609E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 07:32:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,44 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=NcUYRevTwQO0z4W3IbcwwHuAQzXz0+piFzjnrrBp6yw=; b=AYEdbmXdosTiZ4XVgM8b1+jSVv
-	//pd4cRL1xJ1w6XfkFhu9eqZYx61BU6egHjd8ZM3oMQYIukXS4wYvIdczC6omrdiux/kc1Tu8bFtv
-	byOslPKAsR9gwv9ys3cKBtuCS/AlwzJM+ixJBQnZkz6rQRv3l+z2VufX6h3vYUYje3BdXrVkhp4GM
-	Z04AyMP1Kfk8+LUg6XeL4Ofylu/pQtnjBJgoVWBUDll7xwEDsLL3FrTtICGvyNLNnyqhUiYEi1cVf
-	n+ECNCPt9pO1cY2Kz+3vE2o7y5B1S0iWLYKYf6CupVZFgqJGgtlZgO23WCBjJ35UOaryGWnEYf7Ai
-	TAFkDRhA==;
+	bh=Bl/SPOiK9cD/40H4yP/RqJDozEFazeZKDE6AXan0sQ8=; b=exf3FpdpwKTz9u1QyJ0m1aqkOW
+	F3P/Rj5t8lBPvv9VPotABQMVezNlFKUIOcGnI+/LlJYdkoZzzyh929lF0DHMbO/g1tqRlAb5Y/v5X
+	EXVtwBtHV3Bl4C8lJb/PLWzxHpmqTd5wE4om9RiI/77UbtXZciwQ+rDMfIlqIlEdWBv4MVluUb2Hl
+	8mJIl4+G1B0dASlx0466BEks2JL3mCDo0Zudo+1eLY82mFT+xMzR5ESwAIHVfmx15mx79hWNh+R3T
+	GgfvYUnRlbZ293lI3mpLaf4+Nkkm7PIhVS1FkRchmDAlZUzRupDVEZFLQnbYYOObND5XFMpTrgkoy
+	GrJuO/9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i51Pq-0008Rm-M1; Tue, 03 Sep 2019 05:31:42 +0000
+	id 1i51Q6-0000Fd-3x; Tue, 03 Sep 2019 05:31:58 +0000
 Received: from mx.socionext.com ([202.248.49.38])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i51PK-0008Bt-SA
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 05:31:12 +0000
+ id 1i51PL-0008BB-Nz
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 05:31:13 +0000
 Received: from unknown (HELO iyokan-ex.css.socionext.com) ([172.31.9.54])
  by mx.socionext.com with ESMTP; 03 Sep 2019 14:31:05 +0900
 Received: from mail.mfilter.local (m-filter-2 [10.213.24.62])
- by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 52837605F8;
+ by iyokan-ex.css.socionext.com (Postfix) with ESMTP id 535F6605FA;
  Tue,  3 Sep 2019 14:31:05 +0900 (JST)
-Received: from 172.31.9.53 (172.31.9.53) by m-FILTER with ESMTP;
+Received: from 172.31.9.51 (172.31.9.51) by m-FILTER with ESMTP;
  Tue, 3 Sep 2019 14:31:05 +0900
 Received: from yuzu.css.socionext.com (yuzu [172.31.8.45])
- by iyokan.css.socionext.com (Postfix) with ESMTP id DF561403C1;
- Tue,  3 Sep 2019 14:31:04 +0900 (JST)
+ by kinkan.css.socionext.com (Postfix) with ESMTP id 1ADCC1A0E9F;
+ Tue,  3 Sep 2019 14:31:05 +0900 (JST)
 Received: from hamster.e01.socionext.com (unknown [10.213.134.20])
- by yuzu.css.socionext.com (Postfix) with ESMTP id B5E011204B3;
+ by yuzu.css.socionext.com (Postfix) with ESMTP id E5B391204B3;
  Tue,  3 Sep 2019 14:31:04 +0900 (JST)
 From: Keiji Hayashibara <hayashibara.keiji@socionext.com>
 To: broonie@kernel.org, yamada.masahiro@socionext.com,
  linux-spi@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 1/3] spi: uniphier: fix wrong register overwrite
-Date: Tue,  3 Sep 2019 14:30:59 +0900
-Message-Id: <1567488661-11428-2-git-send-email-hayashibara.keiji@socionext.com>
+Subject: [PATCH 2/3] spi: uniphier: remove unnecessary code
+Date: Tue,  3 Sep 2019 14:31:00 +0900
+Message-Id: <1567488661-11428-3-git-send-email-hayashibara.keiji@socionext.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567488661-11428-1-git-send-email-hayashibara.keiji@socionext.com>
 References: <1567488661-11428-1-git-send-email-hayashibara.keiji@socionext.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_223111_019756_C7F52550 
-X-CRM114-Status: GOOD (  15.14  )
+X-CRM114-CacheID: sfid-20190902_223111_885765_686A36AC 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -77,26 +77,27 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When it changes the spi mode, the register is overwritten incorrectly.
-This commit fixes this register overwrite.
+This commit removed if() because priv->is_save_param is always true.
 
 Signed-off-by: Keiji Hayashibara <hayashibara.keiji@socionext.com>
 ---
- drivers/spi/spi-uniphier.c | 1 +
- 1 file changed, 1 insertion(+)
+ drivers/spi/spi-uniphier.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
 
 diff --git a/drivers/spi/spi-uniphier.c b/drivers/spi/spi-uniphier.c
-index c1e6f32..e6ebbb1 100644
+index e6ebbb1..d40ad93 100644
 --- a/drivers/spi/spi-uniphier.c
 +++ b/drivers/spi/spi-uniphier.c
-@@ -214,6 +214,7 @@ static void uniphier_spi_setup_transfer(struct spi_device *spi,
- 	if (!priv->is_save_param || priv->mode != spi->mode) {
- 		uniphier_spi_set_mode(spi);
- 		priv->mode = spi->mode;
-+		priv->is_save_param = false;
+@@ -227,8 +227,7 @@ static void uniphier_spi_setup_transfer(struct spi_device *spi,
+ 		priv->speed_hz = t->speed_hz;
  	}
  
- 	if (!priv->is_save_param || priv->bits_per_word != t->bits_per_word) {
+-	if (!priv->is_save_param)
+-		priv->is_save_param = true;
++	priv->is_save_param = true;
+ 
+ 	/* reset FIFOs */
+ 	val = SSI_FC_TXFFL | SSI_FC_RXFFL;
 -- 
 2.7.4
 
