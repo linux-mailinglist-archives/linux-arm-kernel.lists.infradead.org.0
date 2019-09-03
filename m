@@ -2,83 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 748BAA606C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 07:15:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5AC2AA6075
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 07:20:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=awyYB+TBjgO12uG7EBxabIvMbWjHgZOI1LKkKjwNxNo=; b=J/9i60xql+6H69
-	wuLlulO94vy0qZ0oKQo47z4kWQyKVQSLwEpHPV+e3/g+bJsnDdVTzsuSUOntvgVuA0fUOKCDxZlSd
-	K8BG9LtxLic/GdRGlNq2U96L4HsmJMxv3hnFnSgIE8xzvBL8NVhI24SQ8sX1KDThFZYGGBkpMhckU
-	Ivx6cRr9HMZqNCII6VL3lI3WMzTrZfwy0HFRb8amLQvvmSWuhghoC4bMfFVHGGGXsuj4TuT0BQmlq
-	TpoQS+3K6cerdhbcgE39Aq47FDpybE2YtPfJl54WlXCxpdevTf/vgPfHH96s7CUQIkQvQjDGBLeQi
-	CI4uohQOoFH5+B5PnA6Q==;
+	List-Owner; bh=uOsWIFN1oluadiHP62PZMunJ5OePGou1v40Db+cJdEk=; b=g18zJK2GHgBgjH
+	tvTxOqaYkKMUsTTaHZsPETanvndLGKOIkmFiyw+WSmGkMMhq17Ib7wsiIR3ebKHCNQOjSrGvH3SiS
+	KIOMVj7i0YovjuaifTEkEnT6jvliAsCEcZHHj13pouhfjgHTSvBha/68WwvEwFVLck5SdRmjgIgg5
+	Y807em/UQd0fUy+eRDS0BKDHfQI1ip1WH+Rfu1op0rEYcKiimci8XVrfrSpI78EYlb7iPRH4hkQzk
+	vczOsgYNUhkZiEmLr0PSlSuxhV9XL87dDvGxsOaEsB7yv79eUE4LadrUxnsJLj5kI31ON8/53bvmS
+	p7sANfNQfaLaC26Mgphw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i519y-0003Zn-Q9; Tue, 03 Sep 2019 05:15:18 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i51Ec-00044s-IH; Tue, 03 Sep 2019 05:20:06 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i519q-0003ZA-MM
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 05:15:12 +0000
-Received: by mail-pf1-x443.google.com with SMTP id 205so7572905pfw.2
+ id 1i51EL-000430-KZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 05:19:51 +0000
+Received: by mail-ed1-x541.google.com with SMTP id a21so17254926edt.11
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 02 Sep 2019 22:15:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=ZeFgyFIHCDtxRARd0KAjIBoFG6zEBmwoBwDcSrmUBO4=;
- b=qK+fUm3oO9zpLsBqRCJYOE3M5fwIde5pU3QD3Vy+RaQP3i6XutK1x1jCr48WwiEstL
- lSJ2/xGIH3I31pkalrf/j5bcB1HEHxk7WlL8zT7kFkpdozhKoR1Q5Rybzg2Js4mGPEF4
- /DfF9MXYfamdhrcUxaTztedS75OfQHzJjSBq5QtfdfsBRbenHcvrdK7NPGc6fSVZ5Ufe
- 7ku/DiLD62PLmH5wOh+E/aFfJ1FHR8VDryYWQkxv5eYXGrfkeRPW+8S71rQtRHmT/W89
- 793w4QnOurZU0CLIxiTm7vnDdKTgOPv75Ho/ocZQNDmn1e82BvLwXPrestXCOs+kFpGi
- eFTw==
+ Mon, 02 Sep 2019 22:19:49 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=nRWk1hiNsgYKDx0eHOI6vp6cA2gI01WBhMOu+BZ2jiE=;
+ b=XRznKuQFypiCThT4oXIQSIBA7FNl2mvcrR0pkBLgUBKjwgIbdfglCn2WZbp2oaWnie
+ 5SIqUtqyGftLXp4KNEyzDy+t+MhsoDwqHd6t0wZtQfXgYzkn6fX17iHhLPhI3hNOVr1g
+ 58lg3a5A2vXrMBrASbA4h4/L+NJVUmauuvOvQ=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=ZeFgyFIHCDtxRARd0KAjIBoFG6zEBmwoBwDcSrmUBO4=;
- b=q8HNAWvLIhaBnKC6+RELJoOs6/K4OcLUv9rUk79OFMNc05YO4mWfxksCVYDd1491Qe
- AT3UpbeoGUrKv4ZqcZTqGBljR4hsP6fc+lBYh5ku2Kv3mMCQFEnX2xCgNcPy5WCBiAMZ
- 4fSsJQ6dP7C5e0yWcBKk9M1+i7zbdgxSNfzxTII+uPNsfxrvn+KySewbjdejRj8/wtIn
- zEbc516/wPxtR9KcLT93/hP0k2GDiI3H+P1IIli9yWdXFdlG8FAk7DIb/RaToaLGutLD
- NvliCKj56ooaiN8Qyz0xd2beJZk0W8xlUkvf+GrI5r1z6ySPHSk2wCNC3GLNvgEf7acX
- ykVQ==
-X-Gm-Message-State: APjAAAX3UBnFa5dtfvlyeBEF0yeZn6q5Gw47e1hX9QlarB9SbthaeX4h
- vNgdDUC3XQWqev1FskxjevrlYQ==
-X-Google-Smtp-Source: APXvYqyHtSrm5YyZjYXdqdq+0yUaF32Axr3lTT0vASucA20PnjDHcHbH8EMoHDj2RHxLBsIEORzYSQ==
-X-Received: by 2002:a63:d90f:: with SMTP id r15mr28309557pgg.259.1567487708752; 
- Mon, 02 Sep 2019 22:15:08 -0700 (PDT)
-Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id e9sm20604854pja.17.2019.09.02.22.15.06
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Mon, 02 Sep 2019 22:15:07 -0700 (PDT)
-Date: Tue, 3 Sep 2019 10:45:05 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH ARM64 v4.4 V3 44/44] arm64: futex: Mask __user pointers
- prior to dereference
-Message-ID: <20190903051505.yere5kimi42e24v7@vireshk-i7>
-References: <cover.1567077734.git.viresh.kumar@linaro.org>
- <965d727955b4a45ac1f12e67c6a433110ef94871.1567077734.git.viresh.kumar@linaro.org>
- <20190830094249.GL46475@lakrids.cambridge.arm.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=nRWk1hiNsgYKDx0eHOI6vp6cA2gI01WBhMOu+BZ2jiE=;
+ b=D9uuFZEfYjccZZ+bXGnS3xwRRFZrrpn2Om+GSUaVS89E86kgIpF/4xD4/pEHAHjCzA
+ 5xDGYDFX8Sg/VveC6rla4/ft3/hi2562IbOnyjCAbMoEbaBEHZs1FOVCQUPRWQ5E5RyA
+ eUhB5Er6jUILxKn5efafmgaLOQe7SSBaKwmI9kKbaQ2G15RpPpCTIEEbkm2GDoepCSDt
+ hfoY4GaIw0hLWqxvuVdTK3qfTIYQ686A4Kqe5yAB0tlSnt7geidqFtlcg32y5IG7cIUO
+ LSDKd5H4Es8CT0Y6krCx4f70ssldxjKadbcFQFhbe/2LrPCLyXt8jB8a8bSYZVPQsHJR
+ 1sNg==
+X-Gm-Message-State: APjAAAXyi/yAkw0s74jDLoaYaH8GGZu1lxT1UtE+NN1zACSYBGyNrDSc
+ ilmWrIKwzvcxj/XCxWN3qmB8M7wz2Z6mfg==
+X-Google-Smtp-Source: APXvYqwygLHmFX0Sf0c6RgHk4V6jj/GHliRrnwcgSb4t6LNFaku7asXLtWEVzEgSn37xUPnj4vj4vg==
+X-Received: by 2002:a50:ed1a:: with SMTP id j26mr21820761eds.138.1567487987810; 
+ Mon, 02 Sep 2019 22:19:47 -0700 (PDT)
+Received: from mail-wm1-f52.google.com (mail-wm1-f52.google.com.
+ [209.85.128.52])
+ by smtp.gmail.com with ESMTPSA id f23sm1743105edd.39.2019.09.02.22.19.45
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 02 Sep 2019 22:19:45 -0700 (PDT)
+Received: by mail-wm1-f52.google.com with SMTP id g207so12553272wmg.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 02 Sep 2019 22:19:45 -0700 (PDT)
+X-Received: by 2002:a1c:f704:: with SMTP id v4mr28499086wmh.90.1567487984880; 
+ Mon, 02 Sep 2019 22:19:44 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190830094249.GL46475@lakrids.cambridge.arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org> <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+ <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+ <1567424859.18318.32.camel@mtksdccf07>
+In-Reply-To: <1567424859.18318.32.camel@mtksdccf07>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Tue, 3 Sep 2019 14:19:32 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+Message-ID: <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+To: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_221510_765061_65776FC0 
-X-CRM114-Status: GOOD (  15.09  )
+X-CRM114-CacheID: sfid-20190902_221949_671038_23E868BA 
+X-CRM114-Status: GOOD (  27.04  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -89,6 +94,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,43 +106,207 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
- linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
+ "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ =?UTF-8?B?UG8tWWFuZyBIdWFuZyAo6buD5p+P6Zm9KQ==?= <po-yang.huang@mediatek.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
+ =?UTF-8?B?U2ogSHVhbmcgKOm7g+S/oeeSiyk=?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30-08-19, 10:42, Mark Rutland wrote:
-> On Thu, Aug 29, 2019 at 05:04:29PM +0530, Viresh Kumar wrote:
-> > From: Will Deacon <will.deacon@arm.com>
-> > 
-> > commit 91b2d3442f6a44dce875670d702af22737ad5eff upstream.
-> > 
-> > The arm64 futex code has some explicit dereferencing of user pointers
-> > where performing atomic operations in response to a futex command. This
-> > patch uses masking to limit any speculative futex operations to within
-> > the user address space.
-> > 
-> > Signed-off-by: Will Deacon <will.deacon@arm.com>
-> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> 
-> This would have made more sense immediately following patch 11, as in
-> mainline and the v4.9 backport. Having things applied in the same order
-> makes it much easier to compare and verify.
+On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+>
+> Hi Tomasz,
+>
+> On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
+> > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+> > <Jerry-ch.Chen@mediatek.com> wrote:
+> > >
+> > > Hi Tomasz,
+> > >
+> > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > > > Hi Jerry,
+> > > >
+> > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > >
+> > > > > Hi Tomasz,
+> > > > >
+> > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > > > Hi Jerry,
+> > > > > >
+> > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+[snip]
+> > > static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
+> > >                                   unsigned int *num_buffers,
+> > >                                   unsigned int *num_planes,
+> > >                                   unsigned int sizes[],
+> > >                                   struct device *alloc_devs[])
+> > > {
+> > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > >         struct device *dev = ctx->dev;
+> > >         unsigned int size[2];
+> > >
+> > >         switch (vq->type) {
+> > >         case V4L2_BUF_TYPE_META_CAPTURE:
+> > >                 size[0] = ctx->dst_fmt.buffersize;
+> > >                 break;
+> > >         case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+> > >                 size[0] = ctx->src_fmt.plane_fmt[0].sizeimage;
+> > >                 if (*num_planes == 2)
+> > >                         size[1] = ctx->src_fmt.plane_fmt[1].sizeimage;
+> > >                 break;
+> > >         }
+> > >
+> > >         if (*num_planes == 1) {
+> > >                 if (sizes[0] < size[0])
+> > >                         return -EINVAL;
+> > >         } else if (*num_planes == 2) {
+> > >                 if ((sizes[0] < size[0]) && (sizes[1] < size[1]))
+> > >                         return -EINVAL;
+> >
+> > Can we just use a loop here and combine the 2 cases above?
+> >
+> > Also, we need to fail with -EINVAL if *num_planes is > 2.
+> >
+> > >         } else {
+> > >                 *num_planes = 1;
+> > >                 sizes[0] = size[0];
+> >
+> > This should be the case if *num_planes == 0 and the number of planes
+> > and sizes should match the currently active format.
+> >
+> I appreciate your comments,
+>
+> Ok, I will update as following:
+> static int mtk_fd_vb2_queue_setup(struct vb2_queue *vq,
+>                                   unsigned int *num_buffers,
+>                                   unsigned int *num_planes,
+>                                   unsigned int sizes[],
+>                                   struct device *alloc_devs[])
+> {
+>         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+>         unsigned int size[2];
+>         unsigned int plane;
+>
+>         switch (vq->type) {
+>         case V4L2_BUF_TYPE_META_CAPTURE:
+>                 size[0] = ctx->dst_fmt.buffersize;
+>                 break;
+>         case V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE:
+>                 size[0] = ctx->src_fmt.plane_fmt[0].sizeimage;
+>                 if (*num_planes == 2)
+>                         size[1] = ctx->src_fmt.plane_fmt[1].sizeimage;
+>                 break;
+>         }
+>
+>         if (*num_planes > 2)
+>                 return -EINVAL;
+>         if (*num_planes == 0) {
+>                 if (vq->type == V4L2_BUF_TYPE_META_CAPTURE) {
+>                         sizes[0] = ctx->dst_fmt.buffersize;
+>                         *num_planes = 1;
+>                         return 0;
+>                 }
+>
+>                 *num_planes = ctx->src_fmt.num_planes;
+>                 for (plane = 0; plane < *num_planes; plane++)
+>                         sizes[plane] = ctx->src_fmt.plane_fmt[plane].sizeimage;
+>                 return 0;
+>         }
+>
+>         for (plane = 0; plane < *num_planes; plane++) {
+>                 if(sizes[plane] < size[plane])
+>                         return -EINVAL;
+>         }
+>         return 0;
+> }
+>
 
-Ahh, indeed the order was that way in the arm64/kpti branch, but not
-in the stable branch where it got applied at the end and I followed
-that order :(
+Looks good, thanks!
 
-Fixed the ordering now. Thanks.
+> > >         }
+> > >
+> > >         return 0;
+> > > }
+> > >
+> > > > [snip]
+> > > >
+> > > > > > > +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > > +{
+> > > > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > > > +   struct vb2_buffer *vb;
+> > > > > >
+> > > > > > How do we guarantee here that the hardware isn't still accessing the buffers
+> > > > > > removed below?
+> > > > > >
+> > > > > Maybe we can check the driver state flag and aborting the unfinished
+> > > > > jobs?
+> > > > > (fd_hw->state == FD_ENQ)
+> > > > >
+> > > >
+> > > > Yes, we need to either cancel or wait for the currently processing
+> > > > job. It depends on hardware capabilities, but cancelling is generally
+> > > > preferred for the lower latency.
+> > > >
+> > > Ok, it the state is ENQ, then we can disable the FD hw by controlling
+> > > the registers.
+> > >
+> > > for example:
+> > >         writel(0x0, fd->fd_base + FD_HW_ENABLE);
+> > >         writel(0x0, fd->fd_base + FD_INT_EN);
+> > >
+> >
+> > What's exactly the effect of writing 0 to FD_HW_ENABLE?
+> >
+> Sorry, my last reply didn't solve the question,
+> we should implement a mtk_fd_job_abort() for v4l2_m2m_ops().
+>
+> which is able to readl_poll_timeout_atomic()
+> and check the HW busy bits in the register FD_INT_EN;
+>
+> if they are not cleared until timeout, we could handle the last
+> processing job.
+> Otherwise, the FD irq handler should have handled the last processing
+> job and we could continue the stop_streaming().
+>
+> For job_abort():
+> static void mtk_fd_job_abort(void *priv)
+> {
+>         struct mtk_fd_ctx *ctx = priv;
+>         struct mtk_fd_dev *fd = ctx->fd_dev;
+>         u32 val;
+>         u32 ret;
+>
+>         ret = readl_poll_timeout_atomic(fd->fd_base + MTK_FD_REG_OFFSET_INT_EN,
+>                                         val,
+>                                         (val & MTK_FD_HW_BUSY_MASK) ==
+>                                         MTK_FD_HW_STATE_IS_BUSY,
+>                                         USEC_PER_MSEC, MTK_FD_STOP_HW_TIMEOUT);
 
--- 
-viresh
+Hmm, would it be possible to avoid the busy wait by having a
+completion that could be signalled from the interrupt handler?
+
+Best regards,
+Tomasz
 
 _______________________________________________
 linux-arm-kernel mailing list
