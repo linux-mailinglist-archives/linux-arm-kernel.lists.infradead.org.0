@@ -2,72 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3497DA6BC0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:45:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 72BDEA6BCA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:47:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TXNiF0hElFe+IG2R1UCxDCZ51GOdUwuqazmUGsKORVk=; b=oh9WLMMf1FU13A
-	KZ5/UEdX7t63tbPlVCvTHsG5onN5TY8Pkw64RmSSj5pCDNxSka39EC3kwm55YzTydjtr2C1lb06uG
-	B5od50RKpV+zf2bgEt+YaSQJKT5m5sJIOvorP9PwN6FIij/LKHLDNNofT4OEd7mLwMW7+ra4wMcGI
-	WbZzJh88MlQkpLYCdfbwNKc77YPGko/tTPQnA3WuXeKVdQRBCf81pS/8PYYmqj2mpAIjIS+lmADrj
-	Fhhj86cm/drz38gaRz4RnlaLoxk/FWdRa6OzZ/tSLdProD5buiJdpWfnJfQQbCk+Auy0K6xWqyk87
-	AozAukMTuvM4Z+XIN00Q==;
+	List-Owner; bh=xbxGx3gGp/lDpsth628P/+1FLP8o0S51QzLVMVsvOS8=; b=YaPWwWDsrPcyiS
+	ynLYYWGtgxIUzM39NkI5/JpM+rPASt5SBPd9t6/aaFnGQrjLGtv84q/gUwlaXJdQt7ITvS8K/FVXE
+	6gtCTjq3/JZUNeES1fgJNlmAY5H44DLyIIPq+LJbrwdUvmpNzRNUYtZaghAF7QaygExAW9s3PG8FN
+	0SRQgMgvCbpCmkjbWX+wQ3HWmw6i3aePy+YBE81oPeyJ+jAIcyFNYBCRFqT8cthcZjItYEFtgw5Ek
+	9lc6se3yF5iUAJ3P4K/50zev7Fzfs/CANslY8J0F7q7aUm+kvywsh89TCTeMe0BdOxHY5swIkDWJv
+	3BJ45DD//vHDiPAdQ7Yw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5A45-00067k-IX; Tue, 03 Sep 2019 14:45:49 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i5A5I-0006Ot-Tu; Tue, 03 Sep 2019 14:47:05 +0000
+Received: from mail-eopbgr760101.outbound.protection.outlook.com
+ ([40.107.76.101] helo=NAM02-CY1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5A3v-00067K-Fb
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:45:40 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8781320828;
- Tue,  3 Sep 2019 14:45:37 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567521939;
- bh=qEeo5Yjn1rQcXbmWDfs7jOgFcYF72m1/wF7aUEk38N4=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=xWll90rd/ZhBXNDXVq69JZjvSsqS9lvQ9c0ayy6OGJBJOTzrvKwqBKttR/lso8ClD
- 4V4HhDC0QtNQ6c5niNMG4PFECYYdIihtQw2rkHdRDmPGa8lFYKsdzqt44ufVUMKRya
- H9iqy/RfkewjwpMzoOJSeU1ew9Adb4MQs51/oEZw=
-Date: Tue, 3 Sep 2019 15:45:34 +0100
-From: Will Deacon <will@kernel.org>
-To: Andrew Murray <andrew.murray@arm.com>
-Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
-Message-ID: <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-4-will@kernel.org>
- <20190903060011.GA60737@archlinux-threadripper>
- <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
+ id 1i5A57-0006Ny-CO
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:46:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=N+3+AvajZl5hRcEmSt0MWtuQAgDxpGKyk6NrgEknGMQy8zbnLSp437vJhxmWqAORjyFIl4e7hBDrlbvhn1EUntzh3hbg6xYeRXH/zwG7ZErVkgfSwbJHaF28SA5l7Sl0R9RRnLUr8boFSN5w4UFtQNhf24xLMDwr6mAw7y5E5P9VJ27FPICPcEuE2S/c8ng9E0tD2LsS0vSDZtkutMD3JoVwroZ0HI4hMidg0qy9dGfdzPkat0Ze7HFLqFmZXzDBFUgwcDiZRRIazrCJIg2cIZ1sC9/Cn3udoUxD/OCk9X6Gc1r0mq7HYUykwALuM3e70F/cgSqd5LVD5Adj7VmUaA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=C2dtdEHJXcN9+WtdTUFqQ0eyc4qTJl5/hCb1fiKQ5rs=;
+ b=mQM9eWWfSX4RN9KZ56Inznc7MLfAjHqsk6i4DyaTAHmYM0WUF7puZGarYMdl76pTJgXAdD5XvIMBl5jimQpuE97EWYWy+ajwIRuvCGoHyYYEB8+6JtmkOuASARHzEtMP3ylPEmStbfNFz6aHV/7fcQIKT/IwEflFwfekRck6V6faZdkCHnWnQc24M9DiYlCMKAnily+X15gQN7SuGeFFHmaWWbfGPuj1H6H05Je4D/Fh76yPSZjCYHpzeeArXyx9Go54ww+Y/7lqLd6ehbW7KyzZqWBoYrA5JXelGQ+SpOmtlIcQtwR1cs80GmtosjcXUMBs80JxZY1lOvtzPrpeVg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wavecomp.com; dmarc=pass action=none header.from=mips.com;
+ dkim=pass header.d=mips.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=C2dtdEHJXcN9+WtdTUFqQ0eyc4qTJl5/hCb1fiKQ5rs=;
+ b=MawT0w1UEc5RXPrt7VRsbpCfbifKXOwiIsw3nE7xiEnFqXD5ezYrZVrhNxPQTX3SI7qGvxg+q2kf9/fgOerslb4dPWkJCKw6wOkQIvRgEGfsSzQptY1h2D8PJBbyb44DZlc085Tv3qp0rCB0tgQ+d70QppJSiBJ3kQt2qqs8v8s=
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
+ MWHPR2201MB1038.namprd22.prod.outlook.com (10.174.167.27) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.13; Tue, 3 Sep 2019 14:46:46 +0000
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3]) by MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3%11]) with mapi id 15.20.2220.021; Tue, 3 Sep 2019
+ 14:46:46 +0000
+From: Paul Burton <paul.burton@mips.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v2 7/8] mips: vdso: Remove unused VDSO_HAS_32BIT_FALLBACK
+Thread-Topic: [PATCH v2 7/8] mips: vdso: Remove unused VDSO_HAS_32BIT_FALLBACK
+Thread-Index: AQHVYmZolDG5W8Ccs0Osntbpyln8KA==
+Date: Tue, 3 Sep 2019 14:46:45 +0000
+Message-ID: <20190903143801.7upetfqe6upouzlh@pburton-laptop>
+References: <20190830135902.20861-1-vincenzo.frascino@arm.com>
+ <20190830135902.20861-8-vincenzo.frascino@arm.com>
+In-Reply-To: <20190830135902.20861-8-vincenzo.frascino@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LO2P265CA0065.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:60::29) To MWHPR2201MB1277.namprd22.prod.outlook.com
+ (2603:10b6:301:18::12)
+user-agent: NeoMutt/20180716
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=pburton@wavecomp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.196.167.206]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 191c575a-871f-4f0c-c469-08d7307d8afc
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR2201MB1038; 
+x-ms-traffictypediagnostic: MWHPR2201MB1038:
+x-microsoft-antispam-prvs: <MWHPR2201MB103838333F82D0AC004289CEC1B90@MWHPR2201MB1038.namprd22.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 01494FA7F7
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(7916004)(396003)(346002)(366004)(376002)(136003)(39840400004)(189003)(199004)(8676002)(6512007)(9686003)(55236004)(102836004)(33716001)(6506007)(386003)(66946007)(6486002)(6116002)(305945005)(7736002)(3846002)(4326008)(71200400001)(5660300002)(71190400001)(81166006)(76176011)(81156014)(66476007)(229853002)(66446008)(64756008)(66556008)(256004)(486006)(478600001)(8936002)(44832011)(446003)(11346002)(476003)(7416002)(14454004)(53936002)(25786009)(2906002)(186003)(42882007)(316002)(54906003)(58126008)(66066001)(6436002)(99286004)(6916009)(26005)(6246003)(52116002)(1076003);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1038;
+ H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: wavecomp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: B6LdeD6ARa35RtAijdqKNArBm3t/8A9hKXqTAJN1zI4pQnH0PHd/1Tt6OZXQNYobdEbZrLthmjAgUpXvFfFmsoCyVekecBhTw4G32beibyf7kO+4+VPxA6P9kl6wYty+SUTJZIxNDxo7qUOTQf2aEI3MsoCVtzp9bRxfTteizZ33keTpOqL4R6QaqiW/1NtPuKaIB6LZwE0J4fvLMzdH7P5akBD7lP9TzrKqfKpvXQtS5yWACSSNxpYptdhn9BQdfbcc9ag/i3zhzKR9E7la9SYfgppXd695v+FhpjEXrv3LG4u+ZDqztGJ+NyI1x9RrbOylmLb8SsXCNXTiYhoSEx04WtbS+z8HUScKp+P8aFd+DvOCOXQNVN1C/jTGj827HI3eKRRr/ktKcJHihQZUjWn4fkuJTY9M9ZyUhtXUQJU=
+x-ms-exchange-transport-forked: True
+Content-ID: <AC316F9566DBF246B86E082AA7B4F9C9@namprd22.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+X-OriginatorOrg: mips.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 191c575a-871f-4f0c-c469-08d7307d8afc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2019 14:46:45.8460 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 43If+A1jkVysJ79RZxyyjgZKbY7njpb/vP+0GBFJH8Yr+6b+gU88ABJvtBjIed3Hb9b3YXIDyAOw2SEG8+a0Vw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1038
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_074539_544692_1E5DA215 
-X-CRM114-Status: GOOD (  21.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190903_074653_419256_8F8FF9DE 
+X-CRM114-Status: GOOD (  14.00  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.76.101 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,60 +128,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
- ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
- Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ "luto@kernel.org" <luto@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "0x7f454c46@gmail.com" <0x7f454c46@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "salyzyn@android.com" <salyzyn@android.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 03, 2019 at 03:31:19PM +0100, Andrew Murray wrote:
-> On Mon, Sep 02, 2019 at 11:00:11PM -0700, Nathan Chancellor wrote:
-> > On Thu, Aug 29, 2019 at 04:48:27PM +0100, Will Deacon wrote:
-> > > From: Andrew Murray <andrew.murray@arm.com>
-> > > 
-> > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
-> > > or toolchain doesn't support it the existing code will fallback to ll/sc
-> > > atomics. It achieves this by branching from inline assembly to a function
-> > > that is built with special compile flags. Further this results in the
-> > > clobbering of registers even when the fallback isn't used increasing
-> > > register pressure.
-> > > 
-> > > Improve this by providing inline implementations of both LSE and
-> > > ll/sc and use a static key to select between them, which allows for the
-> > > compiler to generate better atomics code. Put the LL/SC fallback atomics
-> > > in their own subsection to improve icache performance.
-> > > 
-> > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
-> > > Signed-off-by: Will Deacon <will@kernel.org>
-> > 
-> > For some reason, this causes a clang built kernel to fail to boot in
-> > QEMU. There are no logs, it just never starts. I am off for the next two
-> > days so I am going to try to look into this but you might have some
-> > immediate ideas.
-> > 
-> > https://github.com/ClangBuiltLinux/linux/issues/649
+Hi Vincenzo,
+
+On Fri, Aug 30, 2019 at 02:59:01PM +0100, Vincenzo Frascino wrote:
+> VDSO_HAS_32BIT_FALLBACK has been removed from the core since
+> the architectures that support the generic vDSO library have
+> been converted to support the 32 bit fallbacks.
 > 
-> I've been able to reproduce this - with clang 9.0.6 and qemu (without KVM)
-> and only when ARM64_LSE_ATOMICS is enabled.
+> Remove unused VDSO_HAS_32BIT_FALLBACK from mips vdso.
 > 
-> This is slightly concerning...
+> Cc: Paul Burton <paul.burton@mips.com>
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+
+Do you want this one in mips-next too, or applied somewhere else along
+with the rest of the series? If the latter:
+
+    Acked-by: Paul Burton <paul.burton@mips.com>
+
+Thanks,
+    Paul
+
+> ---
+>  arch/mips/include/asm/vdso/gettimeofday.h | 2 --
+>  1 file changed, 2 deletions(-)
 > 
-> (gdb) b __lse__cmpxchg_case_acq_32
-> Breakpoint 1 at 0xffff80001012b3cc: __lse__cmpxchg_case_acq_32. (19 locations)
-> (gdb) continue
-> Continuing.
-
-[...]
-
-> Any ideas?
-
-Does it work if the only thing you change is the toolchain, and use GCC
-instead? Could be some teething issues in the 'asm goto' support for clang?
-
-Will
+> diff --git a/arch/mips/include/asm/vdso/gettimeofday.h b/arch/mips/include/asm/vdso/gettimeofday.h
+> index e78462e8ca2e..5ad2b086626d 100644
+> --- a/arch/mips/include/asm/vdso/gettimeofday.h
+> +++ b/arch/mips/include/asm/vdso/gettimeofday.h
+> @@ -107,8 +107,6 @@ static __always_inline int clock_getres_fallback(
+>  
+>  #if _MIPS_SIM != _MIPS_SIM_ABI64
+>  
+> -#define VDSO_HAS_32BIT_FALLBACK	1
+> -
+>  static __always_inline long clock_gettime32_fallback(
+>  					clockid_t _clkid,
+>  					struct old_timespec32 *_ts)
+> -- 
+> 2.23.0
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
