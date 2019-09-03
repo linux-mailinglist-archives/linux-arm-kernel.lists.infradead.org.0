@@ -2,54 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62AA3A6AEE
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:13:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 253C3A6AFC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 16:15:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1o7Qbtbf3H95hlS1K1thF1Q3sv1Xq1tkTBEns0ubg3U=; b=msqP09CP5RUKIp+1k5FQpyyC/
-	0GvDM8BhhcMhNfswU8SE+ViIDdSyEuJHMjlYN41R+FawYBrCwoNvW2Yx7UqE156f3Oxs962v1xZfP
-	0pFY4d/dKx72HxsXucKtXgAdkE+hQUlYOh+7eTGV2M6rmjoiS7xpLxRYsrHx6ARGTKUcI4KDrJSTs
-	x103tspFBCm7J/4lagatbLTMUB+EvPEucnM8cCwPdjG5Q5QYvavuSYubRhlHvreF1FZiJ2K4tF4sB
-	leyfXQ5zRYyNvONrg3pfXNvSSivhodzLmUnA9zuImcK+2szo22nmY6LrzTnA2PbmSJiwtlA3ciW+z
-	s4t/n2ZhQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l5SCScTh8Gm8TT0pahgrRLQLllwqxex7zq5ot1D68UY=; b=E4c1LsQqe/wNQ2
+	htfBEELiPBfjtSqSqdD3eZFTLSNCNm5P9LPHY15o79ykAWsMgXFcMm5EWDPoP+AiXkhjybYZ0cgGQ
+	0R6r5wsDLD6NpKnyYp1GfBzJrxjVKcKFdRzKM5/ImnD3m7Rhs9JzH4iiBcbmTmB6JB4D+P/AGit6G
+	/kVgUBFnivXxyhW0DDBQuUCo19OHuI9Cq2L7OUa0jpOlP+yWkRZJZIJaO1OacE3EvR1NoYd90wbbi
+	DST0yxIsngbiohbGYTYlBYBnuLWybhzpZl03Q5+uxCtMzqVlDMHNFGVp7Bcae6F+QxnzV8PpQSHTQ
+	+n0zB5ae1L6Dhg7ekjXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i59YU-0006Ja-3R; Tue, 03 Sep 2019 14:13:10 +0000
-Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
+	id 1i59a8-0006hw-2c; Tue, 03 Sep 2019 14:14:52 +0000
+Received: from mail-qt1-f196.google.com ([209.85.160.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i59YF-0006GN-O3
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:12:57 +0000
-Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
- id 80B2A81FA1; Tue,  3 Sep 2019 16:12:35 +0200 (CEST)
-Date: Tue, 3 Sep 2019 16:12:48 +0200
-From: Pavel Machek <pavel@denx.de>
-To: Ran Wang <ran.wang_1@nxp.com>
-Subject: Re: [PATCH v6 3/3] soc: fsl: add RCPM driver
-Message-ID: <20190903141248.GA8354@amd>
-References: <20190821031537.46824-1-ran.wang_1@nxp.com>
- <20190821031537.46824-3-ran.wang_1@nxp.com>
- <DB8PR04MB6826A9EA5D9232D55FE8BDEFF1AA0@DB8PR04MB6826.eurprd04.prod.outlook.com>
+ id 1i59Zw-0006hG-Q5
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 14:14:42 +0000
+Received: by mail-qt1-f196.google.com with SMTP id j15so20029893qtl.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 07:14:40 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=uZuxXXMlAYNSgtrDo0fBJSBMOeWiN9xN97X6WAr23F4=;
+ b=jcCKtA6nz7kXAg3V00sWU/5BGKyEZ9VtunIhdHQyNpyNha+ZWkglW2dnpacvMnUu+o
+ EbHN+AEWqvzulpobTAKz8d4FDNbEDNkP0XnXuRYVNErkd0CiEXAyYE0TEmcuROM4Sb0P
+ JZuXVpMP4zdeV5HxuWSQfv1hfslztRuf8qoXWUvxj7uhejx57fEOdU14XsMnkVUO/MBD
+ eLV6grt9IDyXMI7Gpen3263FzvQ4Er8cAqfnfFWjDZPeXv2F35hYpEK4Q7vp0vqdssOR
+ I2HdXdUdaqfCzszv60gqErwqiPRM3G1wGtHy8BZmuRsu73pKzaJCcMp9795IxauYAJjM
+ XfEQ==
+X-Gm-Message-State: APjAAAVSYJUjFUuEFDGiE3BGBgjiBZw9jkewn1zD42IEz5ZHhlHALmun
+ wrkHQSMAXzEjMPnlHtNJ62pOLPfcMdd7P3rurvY=
+X-Google-Smtp-Source: APXvYqxelYH9THh93iIcl3wa1OLv6f7pgPHKDWhhtXYhUd64qKHC4ZPdbqr0L0BjKsY8IVk5YfziXZyPIgVPl1f7ccw=
+X-Received: by 2002:ac8:32ec:: with SMTP id a41mr3105234qtb.18.1567520079928; 
+ Tue, 03 Sep 2019 07:14:39 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <DB8PR04MB6826A9EA5D9232D55FE8BDEFF1AA0@DB8PR04MB6826.eurprd04.prod.outlook.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+References: <20190825202642.GA18853@piout.net>
+In-Reply-To: <20190825202642.GA18853@piout.net>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Tue, 3 Sep 2019 16:14:23 +0200
+Message-ID: <CAK8P3a02iEsnCc2chJzAs-z=1DQ=P7=WaA1q4EkOCUNxAwwALw@mail.gmail.com>
+Subject: Re: [GIT PULL] ARM: at91: DT for 5.4
+To: Alexandre Belloni <alexandre.belloni@bootlin.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_071255_947060_D24CED33 
-X-CRM114-Status: GOOD (  12.32  )
-X-Spam-Score: -2.0 (--)
+X-CRM114-CacheID: sfid-20190903_071440_841594_57A75D4E 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.113.26.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.196 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.196 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,78 +83,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Biwen Li <biwen.li@nxp.com>,
- Len Brown <len.brown@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
- "Rafael J . Wysocki" <rjw@rjwysocki.net>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Leo Li <leoyang.li@nxp.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>,
- "linuxppc-dev@lists.ozlabs.org" <linuxppc-dev@lists.ozlabs.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============3234885262996765017=="
+Cc: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>, SoC Team <soc@kernel.org>,
+ arm-soc <arm@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Sun, Aug 25, 2019 at 10:26 PM Alexandre Belloni
+<alexandre.belloni@bootlin.com> wrote:
+>
+>
+> ----------------------------------------------------------------
+> AT91 DT for 5.4
+>
+>  - style cleanup for at91sam9x5 based boards
+>  - avoid colliding node and property names
+>
+Pulled into arm/dt, thanks!
 
---===============3234885262996765017==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="EeQfGwPcQSOJBaQU"
-Content-Disposition: inline
-
-
---EeQfGwPcQSOJBaQU
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-Hi!
-
-> > +	/* Begin with first registered wakeup source */
-> > +	ws =3D wakeup_source_get_start(&idx);
->=20
-> Since I have mad some change in this version, could you please take a loo=
-k on this.
-> If it's OK to you, I would re-add 'Acked-by: Pavel Machek <pavel@ucw.cz> '
-
-I'm sorry, I'm a bit busy at the moment and this is not really my
-area.
-
-Best regards,
-								Pavel
-							=09
---=20
-(english) http://www.livejournal.com/~pavelmachek
-(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
-g.html
-
---EeQfGwPcQSOJBaQU
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: Digital signature
-
------BEGIN PGP SIGNATURE-----
-Version: GnuPG v1
-
-iEYEARECAAYFAl1udOAACgkQMOfwapXb+vLLrwCgprpkyPdWIRm3F6Lv4rV9h5Vg
-zkUAnRa7EWL6E5/thkcXz87A7zdQUWUB
-=oBPe
------END PGP SIGNATURE-----
-
---EeQfGwPcQSOJBaQU--
-
-
---===============3234885262996765017==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============3234885262996765017==--
-
