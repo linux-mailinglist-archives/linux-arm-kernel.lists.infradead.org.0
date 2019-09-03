@@ -2,75 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBFDDA6C9C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:12:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0F1E8A6CB3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:16:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=pQNBQPk1CZzhx6eCQDsFsKPX8qkluony+CUWOSWT8bI=; b=FCUsNdXulnjslA
-	/mmhBwEVD5+Pww856T5uDhCCIZtjP6tEnMxlTT41BgPrnlA8f31uo93O3D/HMa/iwO2b+SC04VML/
-	hbIjdmYtGc2PKUVPA51Ov4XkW+Ti70FdktCktUty+vzssPgxm7oyfb7oQqQXRAyR9kcF0076vOfpS
-	r104PsvcaX5hJw5F1fIR6rGOZNNyLKg2LPVRaBus01sALqPzuczrvYQY9SRiVWK3YuiaLIm1zOh6k
-	KRIiw/muRn6P3kgdtEWz2s8S7KPBYDoim1rLwfR2ZO+uXOOAk93o7wFEnpedrYXja9H1yz6RLoarc
-	02kc52Eg5qlipWxRENkQ==;
+	List-Owner; bh=qlySL+LQynrB1Da1sdXOHs2RlSUBaQIULTxB+7CxKeE=; b=VUsK82LZlNp3r0
+	RHJX8ZtVTaRLT+oRXeOvJoVRkB5Ii2ve5092YlXTMMn+QJUhVYsQX1u03wIvOC15yIJ6mO1fLyYH/
+	GeJEV8vwhXOyKxFlEhvCRkPlTbU9QFuD0f1O7wEqFa3A1a4OpJ6nDkjWKO19ncltIA+VRifHfMaxb
+	mnZ4xPBVD6/c1eXuGE0JUfPlOuf5TXgW+bn+QjUhDN9HvlIMJGeZEFvqO6PdQ+Tv0TLrs/I3YsXOM
+	mSCTcRDrudB2ZfxUcQ9N1+uiQA4IhbKZl0cxAJrJz+JsTM4HFWfsoaJa8oi+vNca8D+jEB1UR4fKG
+	e0cbBu6bupT9EHxiNp6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ATW-00006Q-CD; Tue, 03 Sep 2019 15:12:06 +0000
-Received: from mail-qk1-f193.google.com ([209.85.222.193])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ATL-00005i-9B
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:11:56 +0000
-Received: by mail-qk1-f193.google.com with SMTP id m2so16249158qkd.10
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 08:11:54 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=yUXmMvFq9JuQVhXGvV83++3ohpfsoqW3754CPq83tsE=;
- b=sg2DcgzttPY/bFLfrx1HPD3IJWkAI0k7qC8rfYJiclQ5PP1dDycFmGiqMuIpbWyxys
- K9NqLVcx8lXFv12nSWM/gw+LGbBVMmDqRdl9l3vjmunSFiheTCr1bGHkHM0X+khS9nIz
- MlI8ERkhdUROCnZG/mlV8UOulaDBVXly5A0vHLg5w9QoJlw6kcufmZKR33f0/GeGCoO3
- p7q4LR8+wOGCSz5QDOk4KZj7WGLK5R6AyV/sYq99AhzDrwtL0ZGrc6rhUxEB1QwqpH62
- /IAE9J41US1JMysbc3O5RXdkvmm36g8renxY7/d/yxdvqp3B0EMQaJUWAlcjGFuGGQhU
- KkGA==
-X-Gm-Message-State: APjAAAWCrQDgSryvhueM0PCZ3fsF21RzjPpAZwXoyMZf7UZiELXE443B
- d03lBNK54k9EyLz7ePmFwJnp6ItYnWRvH9mArkw=
-X-Google-Smtp-Source: APXvYqzicp/0FiAXHLCjwi8RBlT3ukqfa6Bl3lqhj5ky3RjZd7xt5s9lM9dmNhVLoL/wSMmm5lyMuumjPDBdNsg+T3U=
-X-Received: by 2002:a37:4051:: with SMTP id n78mr32987156qka.138.1567523514062; 
- Tue, 03 Sep 2019 08:11:54 -0700 (PDT)
+	id 1i5AXG-0002SY-Nn; Tue, 03 Sep 2019 15:15:58 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5AX5-0002S9-Bw
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:15:48 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B632B344;
+ Tue,  3 Sep 2019 08:15:46 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 38A403F246;
+ Tue,  3 Sep 2019 08:15:46 -0700 (PDT)
+Date: Tue, 3 Sep 2019 16:15:44 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Will Deacon <will@kernel.org>
+Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
+Message-ID: <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-4-will@kernel.org>
+ <20190903060011.GA60737@archlinux-threadripper>
+ <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
+ <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
 MIME-Version: 1.0
-References: <5D562573.5030604@hisilicon.com>
-In-Reply-To: <5D562573.5030604@hisilicon.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 17:11:35 +0200
-Message-ID: <CAK8P3a2-b7dXrotJRoryu6__hO0T0hiSNmz4GhzqhVrGF_JPJA@mail.gmail.com>
-Subject: Re: [GIT PULL] arm64: defconfig: hisilicon config updates for v5.4
-To: Wei Xu <xuwei5@hisilicon.com>
+Content-Disposition: inline
+In-Reply-To: <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_081155_324914_D20AF77B 
-X-CRM114-Status: UNSURE (   7.19  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190903_081547_445625_860551C7 
+X-CRM114-Status: GOOD (  22.25  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.193 listed in list.dnswl.org]
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.193 listed in wl.mailspike.net]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,34 +64,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Salil Mehta <salil.mehta@huawei.com>, jinying@hisilicon.com,
- Tangkunshan <tangkunshan@huawei.com>, John Garry <john.garry@huawei.com>,
- SoC Team <soc@kernel.org>,
- Shameerali Kolothum Thodi <shameerali.kolothum.thodi@huawei.com>,
- Linuxarm <linuxarm@huawei.com>, "Wangzhou \(B\)" <wangzhou1@hisilicon.com>,
- "arm@kernel.org" <arm@kernel.org>, huangdaode <huangdaode@hisilicon.com>,
- "xuwei \(O\)" <xuwei5@huawei.com>,
- Jonathan Cameron <jonathan.cameron@huawei.com>,
- Olof Johansson <olof@lixom.net>,
- "Liguozhu \(Kenneth\)" <liguozhu@hisilicon.com>,
- Zhangyi ac <zhangyi.ac@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Shiju Jose <shiju.jose@huawei.com>
+Cc: mark.rutland@arm.com, peterz@infradead.org, catalin.marinas@arm.com,
+ ndesaulniers@google.com, Ard.Biesheuvel@arm.com,
+ Nathan Chancellor <natechancellor@gmail.com>, robin.murphy@arm.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 16, 2019 at 5:39 AM Wei Xu <xuwei5@hisilicon.com> wrote:
-> ----------------------------------------------------------------
-> ARM64: hisilicon: defconfig updates for v5.4
->
-> - Enable ACPI_APEI_PCIEAER for the hisilicon D06 board to
->    support PCIe AER error report
+On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
+> On Tue, Sep 03, 2019 at 03:31:19PM +0100, Andrew Murray wrote:
+> > On Mon, Sep 02, 2019 at 11:00:11PM -0700, Nathan Chancellor wrote:
+> > > On Thu, Aug 29, 2019 at 04:48:27PM +0100, Will Deacon wrote:
+> > > > From: Andrew Murray <andrew.murray@arm.com>
+> > > > 
+> > > > When building for LSE atomics (CONFIG_ARM64_LSE_ATOMICS), if the hardware
+> > > > or toolchain doesn't support it the existing code will fallback to ll/sc
+> > > > atomics. It achieves this by branching from inline assembly to a function
+> > > > that is built with special compile flags. Further this results in the
+> > > > clobbering of registers even when the fallback isn't used increasing
+> > > > register pressure.
+> > > > 
+> > > > Improve this by providing inline implementations of both LSE and
+> > > > ll/sc and use a static key to select between them, which allows for the
+> > > > compiler to generate better atomics code. Put the LL/SC fallback atomics
+> > > > in their own subsection to improve icache performance.
+> > > > 
+> > > > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> > > > Signed-off-by: Will Deacon <will@kernel.org>
+> > > 
+> > > For some reason, this causes a clang built kernel to fail to boot in
+> > > QEMU. There are no logs, it just never starts. I am off for the next two
+> > > days so I am going to try to look into this but you might have some
+> > > immediate ideas.
+> > > 
+> > > https://github.com/ClangBuiltLinux/linux/issues/649
+> > 
+> > I've been able to reproduce this - with clang 9.0.6 and qemu (without KVM)
+> > and only when ARM64_LSE_ATOMICS is enabled.
+> > 
+> > This is slightly concerning...
+> > 
+> > (gdb) b __lse__cmpxchg_case_acq_32
+> > Breakpoint 1 at 0xffff80001012b3cc: __lse__cmpxchg_case_acq_32. (19 locations)
+> > (gdb) continue
+> > Continuing.
+> 
+> [...]
+> 
+> > Any ideas?
+> 
+> Does it work if the only thing you change is the toolchain, and use GCC
+> instead? 
 
-Pulled into arm/defconfig, thanks
+Yup.
 
-     Arnd
+
+> Could be some teething issues in the 'asm goto' support for clang?
+
+Thanks,
+
+Andrew Murray
+
+> 
+> Will
 
 _______________________________________________
 linux-arm-kernel mailing list
