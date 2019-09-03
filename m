@@ -2,95 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AAE3BA676F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 13:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 044C8A6772
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 13:34:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zy8fNHJgpR3zt1eAJXj7WqNmY8iM2n0oR0f+epXVOsQ=; b=YVpsqa/c4aBXes
-	1O3DkO4mb+ghbiwEchWnntQTsrvmoh0znGmRcIOGe+6LYvRqVeFu4SM0RXMmrY4AztDop1i6ThHku
-	TEO7s1TbyaWoUTSFSekl3nHBg1l8iTl0f+4WesCWNto2RHXeqnpYv6JBeDVHSwSeeZbyr/wpKYkev
-	7Rghz2UOcURbhggQ4cR20ces8FQ2dP7ZHOYDfaOcjh6WV9HInJ9pkexlHms7AHrtBAfwP1aVP5Fwy
-	0vOPhiSYyLtQg7k5PLgv5PZKB4TXlgnCwBSKqwnoTwqDGq6n8XRbZLMK9sKVHAvxQvaP4GFfbkQZ1
-	Z6c8ySZVzMUTNrtvySkA==;
+	List-Owner; bh=A2/bXjBAyEEWVis5NSvx8EhzuwYcOC2wng6bfvyn924=; b=NG3nZoX8auyPkp
+	MFEPNRkMmMMhmQ3QnGDwvqHHk11Hs4LIJeam9mWpNlKxFUnacOpq8a1zEWSrdlpj4wpeyKXtHDEhv
+	IPcI/0uCcKQ1scmkJQi65U85tKhCpAqC3zK15fUIaGsriUXSr7Hhl6qefb8Dt/M1xzBCaAs5yieHN
+	HkgmESc16fZs/LHlqXPMl+z74vgyg6L/RHo0SYySVmh19uvwzzYuQiyOIHJtlU+YoumJAdkaKS251
+	0f6GIto9+QwWpnKFV2U15GYa7U5vjeLWrmf4gk+XCCum7vnpGznVWo8wLvv8saIojb2qCmKmhvtjP
+	m2irNY1gC+bqf3VTKC9A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i571t-0002kh-7O; Tue, 03 Sep 2019 11:31:21 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i574g-0003py-1T; Tue, 03 Sep 2019 11:34:14 +0000
+Received: from mail-ot1-x344.google.com ([2607:f8b0:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i571c-0002jl-4B
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 11:31:05 +0000
-Received: by mail-wm1-x342.google.com with SMTP id g207so13756945wmg.5
+ id 1i574S-0003pN-S8
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 11:34:02 +0000
+Received: by mail-ot1-x344.google.com with SMTP id g16so4485014otp.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 04:31:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=2Ekc0W7zJk5w+9GqjfFzhlAJ4FiN+oEvkKnq/TUY/UA=;
- b=rxQ0A7gL/rvUTRgFS/x6Jhz66KR/9EtqdUj00Gi6qx2X2kvUeehgUkd8+p67o1zAdh
- jhHPTILE48XYrnwg8UBBO258FnM17/u/jy7Djy7SpVAb0P8pFAoTW1qOfpfAwfNjhJAT
- DgMvezl32n1VEXVXQNQbjeAq4GqCIpmC++6kN/xbkwj+u+PUgbKIgQ1Llm24sLydd5ao
- LKeszXIV4Hr0QQP3BUctE8YxTL4jz9rRJTA4f8AjNqEOacNNW1CVAeZAN2slkCI5Hcqh
- 2/OS+iB6IzU6RSZYWkyMRuB5kD1XX6OEaiVdFvsFPUttT5lL/m20kyhe/Hpi4gYMB5ti
- fqDA==
+ Tue, 03 Sep 2019 04:33:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=XtxHXKLfW5QJwBGA+RR9lcAadfuUNqWWH2+7dJcY6l8=;
+ b=wDvVk5e0nozBCiHVpIJ1ag0McMj21a4LnQhk0VwHhzsl21zYG3/FYXtHN/gUQR/qwI
+ DQ4nXwRjv+5mKj4QwJcpR0ZAN3IhvqFizCBzmL1ZNU0hnKclsxK56/VuG73N2ZAtpxSA
+ 0Qj1vwhiPppNFvUDzZ7vZbEa7IYHFa0HjqZktvpweEF6+6yOecujjcAGJ30EBIat4pIQ
+ y64j6SBsRT3rCskUD0jU9xXYh6EcT1sftyeldRF4iEeAibREHceCb3sJKew1Hc0qEPWh
+ I+FPgFDTiENXz/Xu+DWTL5cinxcSaGb7hgdzGTRAJwjPSGaskJrTfLTWUWrBW4DO8yZs
+ xS/A==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:from:to:cc:subject:date:message-id
- :in-reply-to:references:mime-version:content-transfer-encoding;
- bh=2Ekc0W7zJk5w+9GqjfFzhlAJ4FiN+oEvkKnq/TUY/UA=;
- b=LalXmvvywGDjh1rClRoBsDRUDGq8uf9hVhDXY6RYnV7dhRW0RdTIAXQMLYpCDSS2hi
- eokYDbHcx83tMHlv14lnAtdmF2w3jS0iRoAEWN1J/ZyXkvtScM8pFRd+oYE9gxVrbeVc
- zR5mtnYsEbDuguCrfrYfkxW7wtnDIR/4ryNOKSIPp0dDfWTVBxeVbWBYYd73zBv4CwgX
- OImcnxV/YMZXROQyGi5WgOIXCn5MnvfwZ8qqifvQp9QYSIatIoaFhwDF90Pd4Qc7CfM0
- U2SicV3LAu05oR4EiZtfYksxoRruwXWZXma3VEjNL4OAVI4dpF8JEsx+1hjC/uin4/oK
- NrhA==
-X-Gm-Message-State: APjAAAXbG2u+uVJDjXRph6V/FdQJMs61XZLIU3wTFmaXYa/jKiF8TBF6
- A6gKeymB5U8LpO3zyMJYfo4=
-X-Google-Smtp-Source: APXvYqziAyX3arV2k8bnfEcXOZ1Bh4SmqiEN1nono5tsDY7ufXY/SqE/5xUTbeQQ6Nd5YaemyR+OCQ==
-X-Received: by 2002:a1c:1d85:: with SMTP id d127mr29102252wmd.14.1567510261446; 
- Tue, 03 Sep 2019 04:31:01 -0700 (PDT)
-Received: from localhost.localdomain (ip5b4096c3.dynamic.kabel-deutschland.de.
- [91.64.150.195])
- by smtp.gmail.com with ESMTPSA id l2sm19455074wme.36.2019.09.03.04.31.00
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Sep 2019 04:31:00 -0700 (PDT)
-From: Krzysztof Wilczynski <kw@linux.com>
-To: Bjorn Helgaas <helgaas@kernel.org>
-Subject: [PATCH v2] PCI: Remove unused includes and superfluous struct
- declaration
-Date: Tue,  3 Sep 2019 13:30:59 +0200
-Message-Id: <20190903113059.2901-1-kw@linux.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190901112506.8469-1-kw@linux.com>
-References: <20190901112506.8469-1-kw@linux.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=XtxHXKLfW5QJwBGA+RR9lcAadfuUNqWWH2+7dJcY6l8=;
+ b=TMkf5jQBHCbSN1cqylyGKa4C4luqpQ2o7XaYmlOFxRyu9pJurxkaHog+1oPVs5KUE7
+ WhpQ2f8LjRyJTerFbZFYXYivwT8wdTW9Vz/xsKzCRyIyqkNfgf4z2II0WxJoefey7z3K
+ uxMdlbteyeAyuPxXdLU7WImir3BYtGE9CBLrhYsR8QGuibMIFYNb6CBMEh5szUAG2a/R
+ PutmtbEQmMxCz0P+lvUMjY4FlfXoNQ3+wmLjmXEzHZDDzF4fMo+tWSq9qbjnl33S8k5r
+ ZzBut4Xub+X9sgpt6u8BJFdrfB9IultKJQdX7SXJQhl8S0HyqeadVrpCUiRStsNzZgNN
+ lsnw==
+X-Gm-Message-State: APjAAAXjydlAb/3kmV3FBLoAkAX0P14QQWkxCE5INLEv0qnZJo0b8pZi
+ TE0IifFniJNEXO4niITr60QniHlKkjlt6sAyOtBMNw==
+X-Google-Smtp-Source: APXvYqyoKS7/0TF1tdmLXrX9ofvDMLr2r/p8mHmpyBd5yntAm033XmhU1CGaf4hTCyzl8TYx1jaWNrydF4XT7x42HGQ=
+X-Received: by 2002:a9d:5e10:: with SMTP id d16mr28380255oti.91.1567510439153; 
+ Tue, 03 Sep 2019 04:33:59 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190818140710.23920-1-maz@kernel.org>
+In-Reply-To: <20190818140710.23920-1-maz@kernel.org>
+From: Peter Maydell <peter.maydell@linaro.org>
+Date: Tue, 3 Sep 2019 12:33:48 +0100
+Message-ID: <CAFEAcA-25Cm9ZgSkgXDomEs7jt4sn4z3GeXLt4hvU4P1D0vJCA@mail.gmail.com>
+Subject: Re: [PATCH] KVM: arm/arm64: vgic: Allow more than 256 vcpus for
+ KVM_IRQ_LINE
+To: Marc Zyngier <maz@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_043104_195800_885AC201 
-X-CRM114-Status: GOOD (  11.84  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190903_043400_943774_B3403F2D 
+X-CRM114-Status: GOOD (  21.55  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:344 listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (kswilczynski[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,157 +91,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Jingoo Han <jingoohan1@gmail.com>, Joerg Roedel <joro@8bytes.org>,
- linux-pci@vger.kernel.org, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- Thomas Petazzoni <thomas.petazzoni@bootlin.com>,
- Gustavo Pimentel <gustavo.pimentel@synopsys.com>,
- Frank Rowand <frowand.list@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: kvm-devel <kvm@vger.kernel.org>, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ qemu-arm <qemu-arm@nongnu.org>, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Zenghui Yu <yuzenghui@huawei.com>, kvmarm@lists.cs.columbia.edu,
+ arm-mail-list <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Remove <linux/pci.h> and <linux/msi.h> from being included
-directly as part of the include/linux/of_pci.h, and remove
-superfluous declaration of struct of_phandle_args.
+On Sun, 18 Aug 2019 at 15:07, Marc Zyngier <maz@kernel.org> wrote:
+>
+> While parts of the VGIC support a large number of vcpus (we
+> bravely allow up to 512), other parts are more limited.
+>
+> One of these limits is visible in the KVM_IRQ_LINE ioctl, which
+> only allows 256 vcpus to be signalled when using the CPU or PPI
+> types. Unfortunately, we've cornered ourselves badly by allocating
+> all the bits in the irq field.
+>
+> Since the irq_type subfield (8 bit wide) is currently only taking
+> the values 0, 1 and 2 (and we have been careful not to allow anything
+> else), let's reduce this field to only 4 bits, and allocate the
+> remaining 4 bits to a vcpu2_index, which acts as a multiplier:
+>
+>   vcpu_id = 256 * vcpu2_index + vcpu_index
+>
+> With that, and a new capability (KVM_CAP_ARM_IRQ_LINE_LAYOUT_2)
+> allowing this to be discovered, it becomes possible to inject
+> PPIs to up to 4096 vcpus. But please just don't.
+>
+> Reported-by: Zenghui Yu <yuzenghui@huawei.com>
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
 
-Move users of include <linux/of_pci.h> to include <linux/pci.h>
-and <linux/msi.h> directly rather than rely on both being
-included transitively through <linux/of_pci.h>.
+> diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
+> index 2d067767b617..85518bfb2a99 100644
+> --- a/Documentation/virt/kvm/api.txt
+> +++ b/Documentation/virt/kvm/api.txt
+> @@ -753,8 +753,8 @@ in-kernel irqchip (GIC), and for in-kernel irqchip can tell the GIC to
+>  use PPIs designated for specific cpus.  The irq field is interpreted
+>  like this:
+>
+> -  bits:  | 31 ... 24 | 23  ... 16 | 15    ...    0 |
+> -  field: | irq_type  | vcpu_index |     irq_id     |
+> +  bits:  |  31 ... 28  | 27 ... 24 | 23  ... 16 | 15 ... 0 |
+> +  field: | vcpu2_index | irq_type  | vcpu_index |  irq_id  |
+>
+>  The irq_type field has the following values:
+>  - irq_type[0]: out-of-kernel GIC: irq_id 0 is IRQ, irq_id 1 is FIQ
+> @@ -766,6 +766,10 @@ The irq_type field has the following values:
+>
+>  In both cases, level is used to assert/deassert the line.
+>
+> +When KVM_CAP_ARM_IRQ_LINE_LAYOUT_2 is supported, the target vcpu is
+> +identified as (256 * vcpu2_index + vcpu_index). Otherwise, vcpu2_index
+> +must be zero.
+> +
+>  struct kvm_irq_level {
+>         union {
+>                 __u32 irq;     /* GSI */
 
-Signed-off-by: Krzysztof Wilczynski <kw@linux.com>
----
- drivers/iommu/of_iommu.c                          | 2 ++
- drivers/irqchip/irq-gic-v2m.c                     | 1 +
- drivers/irqchip/irq-gic-v3-its-pci-msi.c          | 1 +
- drivers/pci/controller/dwc/pcie-designware-host.c | 1 +
- drivers/pci/controller/pci-aardvark.c             | 1 +
- drivers/pci/controller/pci-thunder-pem.c          | 1 +
- drivers/pci/pci.c                                 | 1 +
- drivers/pci/probe.c                               | 1 +
- include/linux/of_pci.h                            | 5 ++---
- 9 files changed, 11 insertions(+), 3 deletions(-)
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index 35a069815baf..c1385911de69 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -182,6 +182,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
+>         int r;
+>         switch (ext) {
+>         case KVM_CAP_IRQCHIP:
+> +       case KVM_CAP_ARM_IRQ_LINE_LAYOUT_2:
+>                 r = vgic_present;
+>                 break;
 
-diff --git a/drivers/iommu/of_iommu.c b/drivers/iommu/of_iommu.c
-index 614a93aa5305..026ad2b29dcd 100644
---- a/drivers/iommu/of_iommu.c
-+++ b/drivers/iommu/of_iommu.c
-@@ -8,6 +8,8 @@
- #include <linux/export.h>
- #include <linux/iommu.h>
- #include <linux/limits.h>
-+#include <linux/pci.h>
-+#include <linux/msi.h>
- #include <linux/of.h>
- #include <linux/of_iommu.h>
- #include <linux/of_pci.h>
-diff --git a/drivers/irqchip/irq-gic-v2m.c b/drivers/irqchip/irq-gic-v2m.c
-index e88e75c22b6a..fbec07d634ad 100644
---- a/drivers/irqchip/irq-gic-v2m.c
-+++ b/drivers/irqchip/irq-gic-v2m.c
-@@ -17,6 +17,7 @@
- #include <linux/irq.h>
- #include <linux/irqdomain.h>
- #include <linux/kernel.h>
-+#include <linux/pci.h>
- #include <linux/msi.h>
- #include <linux/of_address.h>
- #include <linux/of_pci.h>
-diff --git a/drivers/irqchip/irq-gic-v3-its-pci-msi.c b/drivers/irqchip/irq-gic-v3-its-pci-msi.c
-index 229d586c3d7a..87711e0f8014 100644
---- a/drivers/irqchip/irq-gic-v3-its-pci-msi.c
-+++ b/drivers/irqchip/irq-gic-v3-its-pci-msi.c
-@@ -5,6 +5,7 @@
-  */
- 
- #include <linux/acpi_iort.h>
-+#include <linux/pci.h>
- #include <linux/msi.h>
- #include <linux/of.h>
- #include <linux/of_irq.h>
-diff --git a/drivers/pci/controller/dwc/pcie-designware-host.c b/drivers/pci/controller/dwc/pcie-designware-host.c
-index d3156446ff27..7a9bef993e57 100644
---- a/drivers/pci/controller/dwc/pcie-designware-host.c
-+++ b/drivers/pci/controller/dwc/pcie-designware-host.c
-@@ -10,6 +10,7 @@
- 
- #include <linux/irqchip/chained_irq.h>
- #include <linux/irqdomain.h>
-+#include <linux/msi.h>
- #include <linux/of_address.h>
- #include <linux/of_pci.h>
- #include <linux/pci_regs.h>
-diff --git a/drivers/pci/controller/pci-aardvark.c b/drivers/pci/controller/pci-aardvark.c
-index fc0fe4d4de49..3a05f6ca95b0 100644
---- a/drivers/pci/controller/pci-aardvark.c
-+++ b/drivers/pci/controller/pci-aardvark.c
-@@ -16,6 +16,7 @@
- #include <linux/pci.h>
- #include <linux/init.h>
- #include <linux/platform_device.h>
-+#include <linux/msi.h>
- #include <linux/of_address.h>
- #include <linux/of_pci.h>
- 
-diff --git a/drivers/pci/controller/pci-thunder-pem.c b/drivers/pci/controller/pci-thunder-pem.c
-index f127ce8bd4ef..9491e266b1ea 100644
---- a/drivers/pci/controller/pci-thunder-pem.c
-+++ b/drivers/pci/controller/pci-thunder-pem.c
-@@ -6,6 +6,7 @@
- #include <linux/bitfield.h>
- #include <linux/kernel.h>
- #include <linux/init.h>
-+#include <linux/pci.h>
- #include <linux/of_address.h>
- #include <linux/of_pci.h>
- #include <linux/pci-acpi.h>
-diff --git a/drivers/pci/pci.c b/drivers/pci/pci.c
-index 484e35349565..571e7e00984b 100644
---- a/drivers/pci/pci.c
-+++ b/drivers/pci/pci.c
-@@ -13,6 +13,7 @@
- #include <linux/delay.h>
- #include <linux/dmi.h>
- #include <linux/init.h>
-+#include <linux/msi.h>
- #include <linux/of.h>
- #include <linux/of_pci.h>
- #include <linux/pci.h>
-diff --git a/drivers/pci/probe.c b/drivers/pci/probe.c
-index 169943f17a4c..11b11a652d18 100644
---- a/drivers/pci/probe.c
-+++ b/drivers/pci/probe.c
-@@ -7,6 +7,7 @@
- #include <linux/delay.h>
- #include <linux/init.h>
- #include <linux/pci.h>
-+#include <linux/msi.h>
- #include <linux/of_device.h>
- #include <linux/of_pci.h>
- #include <linux/pci_hotplug.h>
-diff --git a/include/linux/of_pci.h b/include/linux/of_pci.h
-index 21a89c4880fa..29658c0ee71f 100644
---- a/include/linux/of_pci.h
-+++ b/include/linux/of_pci.h
-@@ -2,11 +2,10 @@
- #ifndef __OF_PCI_H
- #define __OF_PCI_H
- 
--#include <linux/pci.h>
--#include <linux/msi.h>
-+#include <linux/types.h>
-+#include <linux/errno.h>
- 
- struct pci_dev;
--struct of_phandle_args;
- struct device_node;
- 
- #if IS_ENABLED(CONFIG_OF) && IS_ENABLED(CONFIG_PCI)
--- 
-2.23.0
+Shouldn't we be advertising the capability always, not just if
+the VGIC is present? The KVM_IRQ_LINE ioctl can be used for
+directly signalling IRQs to vCPUs even if we're using an
+out-of-kernel irqchip model.
 
+The general principle of the API change/extension looks OK to me.
+
+thanks
+-- PMM
 
 _______________________________________________
 linux-arm-kernel mailing list
