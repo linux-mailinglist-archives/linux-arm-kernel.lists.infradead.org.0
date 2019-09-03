@@ -2,72 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41214A75D4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 22:59:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CFB85A75DA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 23:01:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lhcKc/lpxLaGcMAfoNlWYW4Kb/G/NuaIGVsgMBdzd/w=; b=CeY+wVNoJ3E+Aj
-	BhCUlgk1X+gdDxcEvox/GUB/4YN1vvJOIY85R4eLFwAMcecWSU2vSsjRF1+0MUiiEVmDi2plbf/gn
-	ba7sQHzxKMwN4NfAWfFV10yzYDoi9xEm/lbUcz7XYjXdObnJoKeb+L8+023dJQzF6ZH3gvW2kGSCX
-	wlMB19NdgyXIf4dVTXF2Hh+MtwRcvY5Q3DjBWXDp1qS26//MQkK8IGPy9koCe+x/GhF1fMdk7d9X4
-	C2zy/jDBd14mbTScfVLRZDPSUm1hC6yG3Nq3S2lLWsN3TaTgWif8tIpGg7Fw0ezok/U4/TnlujzeU
-	Y2nDOMN4Mt3vfYSr7kZw==;
+	List-Owner; bh=Vpng1XXaafMCREMuRfrm7F3YUMsyH9NLSiunAdKn1HQ=; b=fVVzWHbanC44Wu
+	SlH3xLvi5p4O0WFnhjJV/x4HHvww7qwDOTcniIfLXwvkvss4SaY84hPz4iXD3KZdVPC5ASKI0FLpV
+	UWz9hBCdJBw3+O+BXCBj7I4+BvIhEP0sHj97SzhNl1oelZq5B9mZf0XyMjaqfpdHwz9r/FnxOj9yc
+	uJ4tfPxbu9PpLbrWaZoew+nyoIh0HZyRqr4hoAxL4gyBjOW4J8A/FeUgXGK6kQSAoH4858Mh7KLGd
+	87tX8S1GAz0/lWAeQ10eRWRHga3d0LJnVm2xykYfePMHfHSS5f23pvZPykrTBn5oWKpxDB/ENC/BA
+	kuGEPG+3ah4TerC50WYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5FtW-0007Ir-ON; Tue, 03 Sep 2019 20:59:18 +0000
-Received: from mail-qt1-f195.google.com ([209.85.160.195])
+	id 1i5FvK-0000IW-LI; Tue, 03 Sep 2019 21:01:10 +0000
+Received: from mail-eopbgr800117.outbound.protection.outlook.com
+ ([40.107.80.117] helo=NAM03-DM3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5FtM-0007IX-6I
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 20:59:09 +0000
-Received: by mail-qt1-f195.google.com with SMTP id t12so21754791qtp.9
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 13:59:07 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ZErB0bO2dCXm0OmfbfhQVIuQ3zaPIQggtK4wBOc6oX8=;
- b=MVXbfl1AwT9XUpN2hVbbN/erPInbHhKDb3lxwYr9G7AWVjVeFDvhWvCk9vYzPJNP3l
- WnAgiJht/0+Io3S+lD2OuGpEvtRBJcLuMCCHyGJjYVaViFyV3EB+w5jspkYuvdcDOwYL
- w6CdGHFS8nvEDZJToj5QvkTFrvX1PjRsjCazeenUNoEIDF86athtik89S84AP7f7usr9
- Jf98kUejDMo7f9pdTMo1b5Wok0GlotXzfEYnJsfyhwLw5ANuDrMXHIL92pM7uDg2OPsA
- oeVEwyZlJHh855tm8j5DfgFri0j9+kqX8dR+HqeDEHpHgLqJNEJ/T4AsrUFgLKEi5rLa
- 1XOA==
-X-Gm-Message-State: APjAAAUlzfJ1TzS4BCCVd7QOXhZ0C71WPIF3AkdgxV8JWZfsuO5wXJ0x
- Tzdk9606TbrJVo/HZE+A/WlS1yjXz8D2IMCpgvE=
-X-Google-Smtp-Source: APXvYqzbGOgsAKM8vI6NTjocLYM8QBMuKhzp5rErOStnZW1+EuzD6/jokTMZh7P3FntYr/oHgDW2+LwkHzd8/eDnbGk=
-X-Received: by 2002:ac8:5306:: with SMTP id t6mr22313640qtn.204.1567544347020; 
- Tue, 03 Sep 2019 13:59:07 -0700 (PDT)
+ id 1i5Fv9-0000I3-Lu
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 21:01:01 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MSFlb6L76FOTBkw9d6tZAq1mBDr9HFVAykGZL/beLoWPflucXzLRmh98Bcbifd89Rq0zen2N7vG4mOQVar54Q2cIccB04hLAKpM4JVo83Wf8R4tYvDanxtljPru5LlYEJw6SB8Vf11KGqD/8gJfe6Eq42U71q75qpM2/4DbboTjgJHSeja4BAu+sX0DMqBiGCsjY7WJawVkgPbSAN4x9mpxb3SZUay02jma1UuCxP9al9xUhMbpRtdN8ezgi66pdGQFARhb6pyYA7Bc/7Om/9b6Jr7cfjDIf5cDpW2ysWas/4n+t7OPLtMWXhCNI5crYhPCG/kQax7emR0XhOJb2Wg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cHe+nRs17sEsXXBKjE7Wm2h+HNWZwys85dH9KzCIaeg=;
+ b=ZyP3V5fQY8R88Xz3MjEZh1/Zri1phSJJMs/II1Hf7Cem98/DTCUUN8LfT1p1vZkAff1DuQYosaoz7cpd9bV/nKyNOii8yIE9LX3KtFwIuRLitvlcrkOsr0+GdGQaIpbB3YypjVaGucQkeDzGPQ/ABRRDuwMn+Ve/HdmQ0Y5YZgTezc+KgT5s7MnOkdZxL1qLZFFOawGCsPOoRHhCEDQy51Pq9RXoQ9bfphF7OaJJimSlAA/KREZSnSf+ikkb3T9plwtEmtdW/e9gX+FLkg1Ulc59itZN5Rj6VBGksDrd/nSDkvjM9PRSSVTY6iLo0jywkYfkQ+fir6zzJk3CROdPOA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wavecomp.com; dmarc=pass action=none header.from=mips.com;
+ dkim=pass header.d=mips.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=wavecomp.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=cHe+nRs17sEsXXBKjE7Wm2h+HNWZwys85dH9KzCIaeg=;
+ b=WUVpWvQYd/b8YHlZ30o06xC6aGkigy7yGaOccKHGj8bkXL4Zr4q2EPO+X8+sHD7nGFPxzyHZPHuYAV4MOv1ZXuMJiyPfggUa3DlBzLAL7MgqScsDXCabNCqmMgRrG22PVupe1utSHJozh1gyQ9CCZPFPtUQvOJdSCbXca0tCsh8=
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com (10.172.60.12) by
+ MWHPR2201MB1551.namprd22.prod.outlook.com (10.174.170.164) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.20; Tue, 3 Sep 2019 21:00:57 +0000
+Received: from MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3]) by MWHPR2201MB1277.namprd22.prod.outlook.com
+ ([fe80::f9e8:5e8c:7194:fad3%11]) with mapi id 15.20.2220.021; Tue, 3 Sep 2019
+ 21:00:57 +0000
+From: Paul Burton <paul.burton@mips.com>
+To: Vincenzo Frascino <vincenzo.frascino@arm.com>
+Subject: Re: [PATCH v2 3/8] mips: compat: vdso: Use legacy syscalls as fallback
+Thread-Topic: [PATCH v2 3/8] mips: compat: vdso: Use legacy syscalls as
+ fallback
+Thread-Index: AQHVYpquVTUocwY3d0uz1j8PNA3NAg==
+Date: Tue, 3 Sep 2019 21:00:57 +0000
+Message-ID: <MWHPR2201MB1277ED2AD21C031201F749EAC1B90@MWHPR2201MB1277.namprd22.prod.outlook.com>
+References: <20190830135902.20861-4-vincenzo.frascino@arm.com>
+In-Reply-To: <20190830135902.20861-4-vincenzo.frascino@arm.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LO2P265CA0480.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:a2::36) To MWHPR2201MB1277.namprd22.prod.outlook.com
+ (2603:10b6:301:18::12)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=pburton@wavecomp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.196.167.206]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: ff988808-de10-4ae0-5a8f-08d730b1d103
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR2201MB1551; 
+x-ms-traffictypediagnostic: MWHPR2201MB1551:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR2201MB15518335CDAC1F1178B5C2DBC1B90@MWHPR2201MB1551.namprd22.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 01494FA7F7
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(366004)(396003)(346002)(136003)(39850400004)(376002)(199004)(189003)(55236004)(316002)(42882007)(7736002)(305945005)(4326008)(8936002)(6916009)(74316002)(386003)(6506007)(256004)(7696005)(81166006)(76176011)(102836004)(54906003)(186003)(25786009)(8676002)(81156014)(71200400001)(71190400001)(26005)(229853002)(478600001)(966005)(99286004)(5660300002)(52536014)(3846002)(6116002)(2906002)(52116002)(33656002)(14454004)(486006)(53936002)(6246003)(64756008)(66476007)(66556008)(66946007)(446003)(44832011)(66446008)(9686003)(11346002)(7416002)(4744005)(476003)(6436002)(6306002)(55016002)(66066001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MWHPR2201MB1551;
+ H:MWHPR2201MB1277.namprd22.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: wavecomp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Lo0x0Jh2oXuLX5JZhpQmBBuMCZ2IPJFHMZClsa04RSG3Z92aOAe+YdCS3uEyrWFlmyVdZdwwhFWq+CTTQK33S56C7wxAXE2keHyhUDXp/EbHEViNgnsdQ82KpsmlCUmFGDRq6seiug3JSkpTCW7fp6AsttfNsfP/NX3UuzcGjCwRxv9iaieV4IC/J8TE6Kho/gJdbvDtm953vZLuaa29ChN4IOaq2gesawcKrVdGFEoLyNuqPhxT0yMuxk5XMHHStlI7JFScGK95JUbvoNFo7o3ain73ae25TF6crmmee96djOsa5PINRVFfeG4b9eh8YoUbzl1H93ZuwUzDpqvAg52zC4e6p2D84mlsR3OzdFY6XCnIzwySaiLEusFNODKg+HrCNwMyUo1MxIoN8akRnDqlbpcubbyGwBHIyFH3uJ8=
 MIME-Version: 1.0
-References: <20190825153237.28829-1-shawnguo@kernel.org>
-In-Reply-To: <20190825153237.28829-1-shawnguo@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 22:58:51 +0200
-Message-ID: <CAK8P3a17J5aOyKN=q=CLQevUYeRFd0qpE_e5Cz8rSErbrMONyw@mail.gmail.com>
-Subject: Re: [GIT PULL 1/7] i.MX drivers update for 5.4
-To: Shawn Guo <shawnguo@kernel.org>
+X-OriginatorOrg: mips.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: ff988808-de10-4ae0-5a8f-08d730b1d103
+X-MS-Exchange-CrossTenant-originalarrivaltime: 03 Sep 2019 21:00:57.1566 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 463607d3-1db3-40a0-8a29-970c56230104
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: FsCJgR/o5cPJLaGQBxzwofEvEivm+RyDYhetHFlca0WvlvLtRW12y77S8Y9XM46+oWy7g7q9MongdJBtbWKUzg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR2201MB1551
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_135908_236447_69B39730 
-X-CRM114-Status: GOOD (  14.01  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190903_140059_783328_B486269E 
+X-CRM114-Status: UNSURE (   8.83  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.195 listed in list.dnswl.org]
+ no trust [40.107.80.117 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,49 +128,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
- SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: "linux-arch@vger.kernel.org" <linux-arch@vger.kernel.org>,
+ Paul Burton <pburton@wavecomp.com>, "luto@kernel.org" <luto@kernel.org>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "0x7f454c46@gmail.com" <0x7f454c46@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-mips@vger.kernel.org" <linux-mips@vger.kernel.org>,
+ "linux-kselftest@vger.kernel.org" <linux-kselftest@vger.kernel.org>,
+ "tglx@linutronix.de" <tglx@linutronix.de>,
+ "salyzyn@android.com" <salyzyn@android.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Aug 25, 2019 at 5:33 PM Shawn Guo <shawnguo@kernel.org> wrote:
->
+Hello,
 
-> i.MX drivers update for 5.4:
->  - A series from Anson Huang to add UID support for i.MX8 SoC and SCU
->    drivers.
->  - A series from Daniel Baluta to add DSP IPC driver for communication
->    between host AP (Linux) and the firmware running on DSP embedded in
->    i.MX8 SoCs.
->  - A small fix for GPCv2 error code printing.
->  - Switch from module_platform_driver_probe() to module_platform_driver()
->    for imx-weim driver, as we need the driver to probe again when device
->    is present later.
->  - Add optional burst clock mode support for imx-weim driver.
+Vincenzo Frascino wrote:
+> The generic VDSO implementation uses the Y2038 safe clock_gettime64() and
+> clock_getres_time64() syscalls as fallback for 32bit VDSO. This breaks
+> seccomp setups because these syscalls might be not (yet) allowed.
+> 
+> Implement the 32bit variants which use the legacy syscalls and select the
+> variant in the core library.
+> 
+> The 64bit time variants are not removed because they are required for the
+> time64 based vdso accessors.
 
-Pulled into arm/drivers.
+Applied to mips-next.
 
-The module_platform_driver_probe() change looks like it should have been
-in a bugfix branch, and I think there were some other patches that would
-qualify in your other pull requests:
-
-a95fbda08ee2 ("ARM: dts: imx7-colibri: disable HS400")
-9846a4524ac9 ("ARM: dts: imx7d: cl-som-imx7: make ethernet work again")
-7cb220a75ff3 ("arm64: dts: lx2160a: Fix incorrect I2C clock divider")
-f64697bd0b9e ("arm64: dts: ls1028a: fix gpio nodes")
-
-There may have been good reasons to not include them in the fixes
-pull request, but my feeling is that you could be a little more aggressive
-in categorizing bugfixes for backports or adding Cc:stable tags.
+> commit 932bb934ed4d
+> https://git.kernel.org/mips/c/932bb934ed4d
+> 
+> Fixes: 00b26474c2f1 ("lib/vdso: Provide generic VDSO implementation")
+> Signed-off-by: Vincenzo Frascino <vincenzo.frascino@arm.com>
+> Signed-off-by: Paul Burton <paul.burton@mips.com>
 
 Thanks,
+    Paul
 
-       Arnd
+[ This message was auto-generated; if you believe anything is incorrect
+  then please email paul.burton@mips.com to report it. ]
 
 _______________________________________________
 linux-arm-kernel mailing list
