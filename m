@@ -2,67 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7016A7516
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 22:41:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41214A75D4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 22:59:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Xz04dWBFX2UKNv/3KtJktMDm4PuTd+pQTzb4ZqqZwVA=; b=d5ST4PCHtEQmQm
-	XRINVKkh4Ay9tQ0D0GrzbvCc98tqgg7oT12VXVmZk+1FXxks9PNYWgWb5vsavYpSr+ZuAsc1LY211
-	aOKlWCR937XQfYPuuYO3oC60TstYXeUDB4cN2vqCMNMBq7tNghS304cQ9idnpNv7lwY5LlWZz/wZ+
-	Nk4Iz2kKuI3k7t9AXBWIHpKeW0esFvC9cWT+Sd/zTm+lyMborxQ0QlHA+MehnGsyleysLYpSbR/Pg
-	ExOVNKaaL6pAoawN0cCcNiS5XnMrxo8hPrPQk43iDvVc+MwTUlmUc6LXY42Q1zgvhNxxIc39HcXCS
-	UHoVFLn4k2zIM19Fm9Ug==;
+	List-Owner; bh=lhcKc/lpxLaGcMAfoNlWYW4Kb/G/NuaIGVsgMBdzd/w=; b=CeY+wVNoJ3E+Aj
+	BhCUlgk1X+gdDxcEvox/GUB/4YN1vvJOIY85R4eLFwAMcecWSU2vSsjRF1+0MUiiEVmDi2plbf/gn
+	ba7sQHzxKMwN4NfAWfFV10yzYDoi9xEm/lbUcz7XYjXdObnJoKeb+L8+023dJQzF6ZH3gvW2kGSCX
+	wlMB19NdgyXIf4dVTXF2Hh+MtwRcvY5Q3DjBWXDp1qS26//MQkK8IGPy9koCe+x/GhF1fMdk7d9X4
+	C2zy/jDBd14mbTScfVLRZDPSUm1hC6yG3Nq3S2lLWsN3TaTgWif8tIpGg7Fw0ezok/U4/TnlujzeU
+	Y2nDOMN4Mt3vfYSr7kZw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Fc8-0002CS-V2; Tue, 03 Sep 2019 20:41:21 +0000
-Received: from mail-qk1-f194.google.com ([209.85.222.194])
+	id 1i5FtW-0007Ir-ON; Tue, 03 Sep 2019 20:59:18 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Fbt-0002B5-Ay; Tue, 03 Sep 2019 20:41:06 +0000
-Received: by mail-qk1-f194.google.com with SMTP id f13so17374988qkm.9;
- Tue, 03 Sep 2019 13:41:04 -0700 (PDT)
+ id 1i5FtM-0007IX-6I
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 20:59:09 +0000
+Received: by mail-qt1-f195.google.com with SMTP id t12so21754791qtp.9
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 13:59:07 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=cn9O+LtABBLqC07ohD1/n6zUnz4dOrwHZE911DJV90Y=;
- b=KKFt8YBhx2+UalR81SdzFSJCZzceglU6Y8B/vO6Sm79UVBb/Yzl0RKgcc+UZp28r4z
- 7AKVpM3K+3QO+8CVRwJ8Z+JaHMD8oBXfX2wWjrtZP8J/gTq2MTpMOjTsMuQtbFACJusM
- ZGQSDnBrtWbbG7RUCiYWHctavQcZHPzzU6iA1JrM6ptZrKCanVQRClZFw5Gn5ufRZ0k/
- e8qUZAPByHaUhA3OMfw+qdEf6O4I+fEYT0QTTh1cmCobttTPNiuSUfwOmaUDWdhiWMSD
- R3MGeq3MAiPYdJRWKCQDm2FoOGSbAAnGuk8wEytQsMUjdosdQSC55qPlU7XFTZ3dnEYn
- CuyA==
-X-Gm-Message-State: APjAAAVTlQX/7HkzJeVSRLDrMttp5PtwhZGeWfnrXlZbSC+XoMNOCi7w
- MdLZXXCpulL90etWw8eJYGnCK3AM/XJVK9L2/R0=
-X-Google-Smtp-Source: APXvYqxMpSjxdJ471vzxNRPmUlj7RmGGdi8vidlnWVL7gwm6Ed9wfO1w2oRxdeVtJ6wApTQAl1fREzPr+mBZhLxlpVU=
-X-Received: by 2002:a37:4fcf:: with SMTP id
- d198mr35814055qkb.394.1567543263655; 
- Tue, 03 Sep 2019 13:41:03 -0700 (PDT)
+ bh=ZErB0bO2dCXm0OmfbfhQVIuQ3zaPIQggtK4wBOc6oX8=;
+ b=MVXbfl1AwT9XUpN2hVbbN/erPInbHhKDb3lxwYr9G7AWVjVeFDvhWvCk9vYzPJNP3l
+ WnAgiJht/0+Io3S+lD2OuGpEvtRBJcLuMCCHyGJjYVaViFyV3EB+w5jspkYuvdcDOwYL
+ w6CdGHFS8nvEDZJToj5QvkTFrvX1PjRsjCazeenUNoEIDF86athtik89S84AP7f7usr9
+ Jf98kUejDMo7f9pdTMo1b5Wok0GlotXzfEYnJsfyhwLw5ANuDrMXHIL92pM7uDg2OPsA
+ oeVEwyZlJHh855tm8j5DfgFri0j9+kqX8dR+HqeDEHpHgLqJNEJ/T4AsrUFgLKEi5rLa
+ 1XOA==
+X-Gm-Message-State: APjAAAUlzfJ1TzS4BCCVd7QOXhZ0C71WPIF3AkdgxV8JWZfsuO5wXJ0x
+ Tzdk9606TbrJVo/HZE+A/WlS1yjXz8D2IMCpgvE=
+X-Google-Smtp-Source: APXvYqzbGOgsAKM8vI6NTjocLYM8QBMuKhzp5rErOStnZW1+EuzD6/jokTMZh7P3FntYr/oHgDW2+LwkHzd8/eDnbGk=
+X-Received: by 2002:ac8:5306:: with SMTP id t6mr22313640qtn.204.1567544347020; 
+ Tue, 03 Sep 2019 13:59:07 -0700 (PDT)
 MIME-Version: 1.0
-References: <7ho907rfsf.fsf@baylibre.com> <7h5zmfo8au.fsf@baylibre.com>
-In-Reply-To: <7h5zmfo8au.fsf@baylibre.com>
+References: <20190825153237.28829-1-shawnguo@kernel.org>
+In-Reply-To: <20190825153237.28829-1-shawnguo@kernel.org>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 3 Sep 2019 22:40:47 +0200
-Message-ID: <CAK8P3a0_HEhvVk8Onk-9MBhnaBQT9B39+t6AGA3FRrH-_yMqVg@mail.gmail.com>
-Subject: Re: [GIT PULL] soc: amlogic: updates for v5.4 (round 2)
-To: Kevin Hilman <khilman@baylibre.com>
+Date: Tue, 3 Sep 2019 22:58:51 +0200
+Message-ID: <CAK8P3a17J5aOyKN=q=CLQevUYeRFd0qpE_e5Cz8rSErbrMONyw@mail.gmail.com>
+Subject: Re: [GIT PULL 1/7] i.MX drivers update for 5.4
+To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_134105_381631_A590EE41 
-X-CRM114-Status: GOOD (  14.14  )
+X-CRM114-CacheID: sfid-20190903_135908_236447_69B39730 
+X-CRM114-Status: GOOD (  14.01  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.194 listed in list.dnswl.org]
+ no trust [209.85.160.195 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.194 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -80,53 +79,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:ARM/Amlogic Meson SoC support"
- <linux-amlogic@lists.infradead.org>, SoC Team <soc@kernel.org>,
- arm-soc <arm@kernel.org>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Stefan Agner <stefan@agner.ch>, Li Yang <leoyang.li@nxp.com>,
+ SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 1:34 AM Kevin Hilman <khilman@baylibre.com> wrote:
+On Sun, Aug 25, 2019 at 5:33 PM Shawn Guo <shawnguo@kernel.org> wrote:
 >
-> OK, here's the respin (round 2.1)
->
-> The previous version was missing the bindings for the new driver, which
-> I had mistakenly put in the DT branch instead of here.  Without the
-> bindings and associated headers, this branch did not build stanalone
-> (found by kbuild robot.)
->
-> All that is fixed by this branch.
->
-> As a result, I also needed to respin the DT64 pull.  Since I moved the
-> bindings/header patche here, the respin of the DT64 pull will now have a
-> dependency merge of this branch.
 
-I've pulled round 2.1 into arm/drivers, but it seems that the
-patchwork integration
-failed to deal with the way this was sent:
+> i.MX drivers update for 5.4:
+>  - A series from Anson Huang to add UID support for i.MX8 SoC and SCU
+>    drivers.
+>  - A series from Daniel Baluta to add DSP IPC driver for communication
+>    between host AP (Linux) and the firmware running on DSP embedded in
+>    i.MX8 SoCs.
+>  - A small fix for GPCv2 error code printing.
+>  - Switch from module_platform_driver_probe() to module_platform_driver()
+>    for imx-weim driver, as we need the driver to probe again when device
+>    is present later.
+>  - Add optional burst clock mode support for imx-weim driver.
 
-- https://patchwork.kernel.org/patch/11122205/ shows both the original
-  pull request, and the updated one. It was meant to detect both pull
-  requests as the same thing and mark the old one as superseded, but that
-  did not happen.
+Pulled into arm/drivers.
 
-- Using pwclient to get the pull request only shows the original one
+The module_platform_driver_probe() change looks like it should have been
+in a bugfix branch, and I think there were some other patches that would
+qualify in your other pull requests:
 
-- I actually tried pulling that after looking at it with pwclient instead of
-  the email client. Thankfully, you had removed the original tag, so that
-  failed and I took a closer look.
+a95fbda08ee2 ("ARM: dts: imx7-colibri: disable HS400")
+9846a4524ac9 ("ARM: dts: imx7d: cl-som-imx7: make ethernet work again")
+7cb220a75ff3 ("arm64: dts: lx2160a: Fix incorrect I2C clock divider")
+f64697bd0b9e ("arm64: dts: ls1028a: fix gpio nodes")
 
-I suspect it would have worked the way it did for
-https://patchwork.kernel.org/patch/11119171/ if you had specified
-the subject as
+There may have been good reasons to not include them in the fixes
+pull request, but my feeling is that you could be a little more aggressive
+in categorizing bugfixes for backports or adding Cc:stable tags.
 
-[GIT PULL, v2] soc: amlogic: updates for v5.4 (round 2)
+Thanks,
 
-i.e. kept the subject the same but the version inside of the [].
-
-         Arnd
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
