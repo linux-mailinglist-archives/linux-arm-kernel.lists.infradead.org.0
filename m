@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 42A2CA5FCB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 05:33:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C4AF6A5FD8
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 05:42:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=EBEt6PwRcrTWmONj2oYBrLWvw0jVVZIwO3SMZbsCKr0=; b=FZpLubFyy6rSiU
-	ikKLrDlkRJljqsI/Q8Ao+gIpELOPA56t7rFTrRbLlE9ck1cC03BlvX73L+p4KFD1PujHG0WeRpmNx
-	Fm3k4GjioM01VuY9630zh4AeaM7vd2QNxirAKojNlqHGTlEGbvXA/C/Zy+cwYVbEX92FywxN9EhQm
-	6O9drVGAjMRRGopTrpLhV7B2AcYHj943LhX1Iy9PAikp+bJOCuvQIF5RyzXb8YliCr4KYJGF4C/on
-	hypLNvVKsETPHxiS4N6u5jKzb/lvDcf1f82bQDM/C15rTAh76iY4i67Iy2tptqprgyiroY6EqT4pq
-	k7SNx5SPaUGkIJk8tnIg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=XxqdASqHtZKWIWxhLEreFtbff9vzZiVlxcXojFRFufg=; b=r1z
+	+ldGiuC42ZBFGO4n2s8IPY0po2Pl3wfSJHbIt0KD3o7XTUz9HLGPx29AdhefFjry8IB2KkJJ5njdY
+	oduEPHI3V3EVKkt+93zFN7QPEzTRBPLIr2GquoM7vKrHC6bjotfnzWmtImYi8itDnNVkQ+dXQoUQi
+	ZmmYLWJYl4UN9OqFcap4gEigjRpE6EK6eFHQvs9BPA8A2aSL7dvFEFHNfshrohEICtM3n0r4PNWRx
+	90dU+nbbd63ckeAFx/dSKQ/q3zDEtLo8ttzc+ZF4+4lj5JSIdgqhiBY3nO14G02O4HiPq2owDPN9p
+	qdoY+ttcRG1eKHhf7p6Vh4hxaNEyQ+g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i4zZ1-0004MC-T1; Tue, 03 Sep 2019 03:33:03 +0000
-Received: from hqemgate14.nvidia.com ([216.228.121.143])
+	id 1i4zhd-0007IY-I0; Tue, 03 Sep 2019 03:41:57 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i4zWf-0002Qu-1L
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 03:30:39 +0000
-Received: from hqpgpgate101.nvidia.com (Not Verified[216.228.121.13]) by
- hqemgate14.nvidia.com (using TLS: TLSv1.2, DES-CBC3-SHA)
- id <B5d6dde5a0003>; Mon, 02 Sep 2019 20:30:34 -0700
-Received: from hqmail.nvidia.com ([172.20.161.6])
- by hqpgpgate101.nvidia.com (PGP Universal service);
- Mon, 02 Sep 2019 20:30:33 -0700
-X-PGP-Universal: processed;
- by hqpgpgate101.nvidia.com on Mon, 02 Sep 2019 20:30:33 -0700
-Received: from HQMAIL101.nvidia.com (172.20.187.10) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Tue, 3 Sep
- 2019 03:30:33 +0000
-Received: from hqnvemgw01.nvidia.com (172.20.150.20) by HQMAIL101.nvidia.com
- (172.20.187.10) with Microsoft SMTP Server (TLS) id 15.0.1473.3 via Frontend
- Transport; Tue, 3 Sep 2019 03:30:33 +0000
-Received: from vdumpa-ubuntu.nvidia.com (Not Verified[172.17.173.140]) by
- hqnvemgw01.nvidia.com with Trustwave SEG (v7, 5, 8, 10121)
- id <B5d6dde590007>; Mon, 02 Sep 2019 20:30:33 -0700
-From: Krishna Reddy <vdumpa@nvidia.com>
-To: 
-Subject: [PATCH v2 7/7] arm64: tegra: enable SMMU for SDHCI and EQOS on T194
-Date: Mon, 2 Sep 2019 20:32:08 -0700
-Message-ID: <1567481528-31163-8-git-send-email-vdumpa@nvidia.com>
-X-Mailer: git-send-email 2.1.4
-In-Reply-To: <1567481528-31163-1-git-send-email-vdumpa@nvidia.com>
-References: <1567481528-31163-1-git-send-email-vdumpa@nvidia.com>
-X-NVConfidentiality: public
-MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nvidia.com; s=n1;
- t=1567481434; bh=0qnKv4AL+zgfotB4+aagt14SzZy5B/jdgMadFvnQidE=;
- h=X-PGP-Universal:From:To:CC:Subject:Date:Message-ID:X-Mailer:
- In-Reply-To:References:X-NVConfidentiality:MIME-Version:
- Content-Type;
- b=V0bCu0jbuj/W8kcfpxyxq7coxrnMd0w/viaMwONQRgvCGIDHdHRQhjQBEeMYdq+82
- skCGaxdQPnvxDvme2R1maqtb6U3i+21GIr2me8L1drayGPhT/DbmSes00IMZR9NoiX
- ibD4I7FPjOO4FD2jUc3PsLzWND/4QGBJe53J05x1bHot4QKHfpjBb16M5sv1vJXPPO
- sW1yWhHkfGASoh/XvSyzE+ujh4ElynGb5HUCQmanp8cPOrynWBHkfqOf2WyHPk2nIL
- BW6cgF0WrUE1eKIfPn5iTBEnRWLH+CYSupqCQeqS2SRZOWKVUsxPfSPA45obfS/3H0
- o5in+W58imcxw==
+ id 1i4zhQ-0007HR-6t
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 03:41:46 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id ACC60200231;
+ Tue,  3 Sep 2019 05:41:40 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A7E5C200264;
+ Tue,  3 Sep 2019 05:41:36 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A9DA6402B1;
+ Tue,  3 Sep 2019 11:41:31 +0800 (SGT)
+From: Yuantian Tang <andy.tang@nxp.com>
+To: shawnguo@kernel.org
+Subject: [PATCH] arm64: dts: lx2160a: add tmu device node
+Date: Tue,  3 Sep 2019 11:31:32 +0800
+Message-Id: <20190903033132.17661-1-andy.tang@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190902_203037_354582_CE9259ED 
-X-CRM114-Status: UNSURE (   7.53  )
+X-CRM114-CacheID: sfid-20190902_204144_538238_01A44384 
+X-CRM114-Status: UNSURE (   8.71  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [216.228.121.143 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,62 +64,307 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: snikam@nvidia.com, thomasz@nvidia.com, jtukkinen@nvidia.com,
- mperttunen@nvidia.com, will@kernel.org, joro@8bytes.org,
- linux-kernel@vger.kernel.org, praithatha@nvidia.com, talho@nvidia.com,
- olof@lixom.net, iommu@lists.linux-foundation.org, linux-tegra@vger.kernel.org,
- yhsu@nvidia.com, treding@nvidia.com, robin.murphy@arm.com,
- avanbrunt@nvidia.com, linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ Yuantian Tang <andy.tang@nxp.com>, linux-kernel@vger.kernel.org,
+ leoyang.li@nxp.com, robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable SMMU translations for SDHCI and EQOS transactions on T194.
+Add the TMU (Thermal Monitoring Unit) device node to enable
+TMU feature.
 
-Signed-off-by: Krishna Reddy <vdumpa@nvidia.com>
+Signed-off-by: Yuantian Tang <andy.tang@nxp.com>
 ---
- arch/arm64/boot/dts/nvidia/tegra194.dtsi | 4 ++++
- 1 file changed, 4 insertions(+)
+ .../arm64/boot/dts/freescale/fsl-lx2160a.dtsi | 108 +++++++++++++++---
+ 1 file changed, 92 insertions(+), 16 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/nvidia/tegra194.dtsi b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-index 5ae3bbf..cac3462 100644
---- a/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-+++ b/arch/arm64/boot/dts/nvidia/tegra194.dtsi
-@@ -51,6 +51,7 @@
- 			clock-names = "master_bus", "slave_bus", "rx", "tx", "ptp_ref";
- 			resets = <&bpmp TEGRA194_RESET_EQOS>;
- 			reset-names = "eqos";
-+			iommus = <&smmu TEGRA186_SID_EQOS>;
- 			status = "disabled";
+diff --git a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+index 39d497df769e..e70ddd01cd84 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
++++ b/arch/arm64/boot/dts/freescale/fsl-lx2160a.dtsi
+@@ -6,6 +6,7 @@
  
- 			snps,write-requests = <1>;
-@@ -381,6 +382,7 @@
- 			clock-names = "sdhci";
- 			resets = <&bpmp TEGRA194_RESET_SDMMC1>;
- 			reset-names = "sdhci";
-+			iommus = <&smmu TEGRA186_SID_SDMMC1>;
- 			nvidia,pad-autocal-pull-up-offset-3v3-timeout =
- 									<0x07>;
- 			nvidia,pad-autocal-pull-down-offset-3v3-timeout =
-@@ -403,6 +405,7 @@
- 			clock-names = "sdhci";
- 			resets = <&bpmp TEGRA194_RESET_SDMMC3>;
- 			reset-names = "sdhci";
-+			iommus = <&smmu TEGRA186_SID_SDMMC3>;
- 			nvidia,pad-autocal-pull-up-offset-1v8 = <0x00>;
- 			nvidia,pad-autocal-pull-down-offset-1v8 = <0x7a>;
- 			nvidia,pad-autocal-pull-up-offset-3v3-timeout = <0x07>;
-@@ -430,6 +433,7 @@
- 					  <&bpmp TEGRA194_CLK_PLLC4>;
- 			resets = <&bpmp TEGRA194_RESET_SDMMC4>;
- 			reset-names = "sdhci";
-+			iommus = <&smmu TEGRA186_SID_SDMMC4>;
- 			nvidia,pad-autocal-pull-up-offset-hs400 = <0x00>;
- 			nvidia,pad-autocal-pull-down-offset-hs400 = <0x00>;
- 			nvidia,pad-autocal-pull-up-offset-1v8-timeout = <0x0a>;
+ #include <dt-bindings/gpio/gpio.h>
+ #include <dt-bindings/interrupt-controller/arm-gic.h>
++#include <dt-bindings/thermal/thermal.h>
+ 
+ /memreserve/ 0x80000000 0x00010000;
+ 
+@@ -24,7 +25,7 @@
+ 		#size-cells = <0>;
+ 
+ 		// 8 clusters having 2 Cortex-A72 cores each
+-		cpu@0 {
++		cpu0: cpu@0 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -38,9 +39,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster0_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@1 {
++		cpu1: cpu@1 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -54,9 +56,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster0_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@100 {
++		cpu100: cpu@100 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -70,9 +73,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster1_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@101 {
++		cpu101: cpu@101 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -86,9 +90,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster1_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@200 {
++		cpu200: cpu@200 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -102,9 +107,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster2_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@201 {
++		cpu201: cpu@201 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -118,9 +124,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster2_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@300 {
++		cpu300: cpu@300 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -134,9 +141,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster3_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@301 {
++		cpu301: cpu@301 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -150,9 +158,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster3_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@400 {
++		cpu400: cpu@400 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -166,9 +175,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster4_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@401 {
++		cpu401: cpu@401 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -182,9 +192,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster4_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@500 {
++		cpu500: cpu@500 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -198,9 +209,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster5_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@501 {
++		cpu501: cpu@501 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -214,9 +226,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster5_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@600 {
++		cpu600: cpu@600 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -230,9 +243,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster6_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@601 {
++		cpu601: cpu@601 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -246,9 +260,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster6_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@700 {
++		cpu700: cpu@700 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -262,9 +277,10 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster7_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+-		cpu@701 {
++		cpu701: cpu@701 {
+ 			device_type = "cpu";
+ 			compatible = "arm,cortex-a72";
+ 			enable-method = "psci";
+@@ -278,6 +294,7 @@
+ 			i-cache-sets = <192>;
+ 			next-level-cache = <&cluster7_l2>;
+ 			cpu-idle-states = <&cpu_pw20>;
++			#cooling-cells = <2>;
+ 		};
+ 
+ 		cluster0_l2: l2-cache0 {
+@@ -422,6 +439,51 @@
+ 		clock-output-names = "sysclk";
+ 	};
+ 
++	thermal-zones {
++		core_thermal1: core-thermal1 {
++			polling-delay-passive = <1000>;
++			polling-delay = <5000>;
++			thermal-sensors = <&tmu 0>;
++
++			trips {
++				core_cluster_alert: core-cluster-alert {
++					temperature = <85000>;
++					hysteresis = <2000>;
++					type = "passive";
++				};
++
++				core_cluster_crit: core-cluster-crit {
++					temperature = <95000>;
++					hysteresis = <2000>;
++					type = "critical";
++				};
++			};
++
++			cooling-maps {
++				map0 {
++					trip = <&core_cluster_alert>;
++					cooling-device =
++						<&cpu0 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu1 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu100 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu101 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu200 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu201 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu300 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu301 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu400 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu401 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu500 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu501 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu600 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu601 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu700 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>,
++						<&cpu701 THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
++				};
++			};
++		};
++	};
++
+ 	soc {
+ 		compatible = "simple-bus";
+ 		#address-cells = <2>;
+@@ -689,6 +751,20 @@
+ 			status = "disabled";
+ 		};
+ 
++		tmu: tmu@1f80000 {
++			compatible = "fsl,qoriq-tmu";
++			reg = <0x0 0x1f80000 0x0 0x10000>;
++			interrupts = <0 23 0x4>;
++			fsl,tmu-range = <0x800000E6 0x8001017D>;
++			fsl,tmu-calibration =
++				/* Calibration data group 1 */
++				<0x00000000 0x00000035
++				/* Calibration data group 2 */
++				0x00010001 0x00000154>;
++			little-endian;
++			#thermal-sensor-cells = <1>;
++		};
++
+ 		uart0: serial@21c0000 {
+ 			compatible = "arm,sbsa-uart","arm,pl011";
+ 			reg = <0x0 0x21c0000 0x0 0x1000>;
 -- 
-2.1.4
+2.17.1
 
 
 _______________________________________________
