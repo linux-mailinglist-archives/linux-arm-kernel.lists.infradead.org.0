@@ -2,53 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB719A6D66
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 17:58:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE674A6D9E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 18:09:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=EfVfDWrWrfh4z3OastagBCrrAlaT9L2luCYCQWwF8ZU=; b=HJGmblALJnNtJ/
-	25JS5O+LYGcuodRvr6aZOwdcA9W6Wrp7kSSDE6zFjnOFsi16fvyx9Rz59rmcpmdc3ivn52SAJnIIm
-	yqlLlGPRklYBfFDVxiY2uNLkMnPxZ/WD9k80vBJHuq7439Qun+4LhUuEs/+pS15Ibqk3M/JpD9vFC
-	jmzt92XVcdG/FQG9/I/1CWtWN7qsmvWCjKFISFf5rYrQ5FbGcXD/+LJJkaC+a6Rs7rBgiAlz/zAa0
-	x9Y24GtGEK45twAyPFj59GR8HRb7IU4x7uEq67dd7VbGywl3iijg/Ik9cbyjAFVy2iPFVs8uGkMC6
-	tmmD8p40sNZm1RNYQo5g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=f0hbHiqg8/IjAUu3IhmuRHzjUfFGeikiNX4vtlgWSvM=; b=lZw/lH9V3DLSXM
+	UqByvLdiPU+o+rYf11luS5YjxzBAZDyvRaONP8d9ee3djzi333b6uOOZMU3eE8QYoxslA6zgjKhKQ
+	b48hY40zeiqo99aZFm2zmYLZuYwb+3uHQB/7tKeQiaxbxPB3XWQw1Cfg7IOKUGQAQLr5we9MPwn2q
+	EzfalgEenKolEiI2vLaTD0y7NC5+z38+aqcD6u3TMhR4Q4luFvbKJuG8y++/OX9RDa32qWwvgDBaq
+	FakfS9zfSPRgYNyB4PunCezZjqoCiTfGevpTGPg4tYh4JoM4zrZQwUHXUurva8M82eSvrdq0vJ1i4
+	cne4msVmn7nBqPS7TrPQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5BCG-0007e4-JF; Tue, 03 Sep 2019 15:58:20 +0000
+	id 1i5BNL-0002e7-9Q; Tue, 03 Sep 2019 16:09:47 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5BBu-0007dU-0i
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 15:58:00 +0000
+ id 1i5BMe-0002ZX-0c
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 16:09:06 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3474C344;
- Tue,  3 Sep 2019 08:57:56 -0700 (PDT)
-Received: from filthy-habits.cambridge.arm.com
- (filthy-habits.cambridge.arm.com [10.1.197.61])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D4C6C3F246;
- Tue,  3 Sep 2019 08:57:54 -0700 (PDT)
-From: Marc Zyngier <maz@kernel.org>
-To: linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
- kvm@vger.kernel.org
-Subject: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
- driven by vcpu_load/put
-Date: Tue,  3 Sep 2019 16:57:47 +0100
-Message-Id: <20190903155747.219802-1-maz@kernel.org>
-X-Mailer: git-send-email 2.20.1
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B6936360;
+ Tue,  3 Sep 2019 09:09:01 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E73123F246;
+ Tue,  3 Sep 2019 09:09:00 -0700 (PDT)
+Subject: Re: [PATCH v3 02/11] kselftest: arm64: adds first test and common
+ utils
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190802170300.20662-1-cristian.marussi@arm.com>
+ <20190802170300.20662-3-cristian.marussi@arm.com>
+ <20190813162411.GZ10425@arm.com>
+ <a76adb28-00f9-3c32-60e5-bc746db6f2fd@arm.com>
+ <20190903153456.GM27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <89bd6f2a-44d1-bff7-34a8-a1a82a6729cc@arm.com>
+Date: Tue, 3 Sep 2019 17:08:57 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190903153456.GM27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_085758_408359_9C6F1C33 
-X-CRM114-Status: GOOD (  20.29  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190903_090904_547403_60F853DC 
+X-CRM114-Status: GOOD (  45.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,290 +66,390 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
- James Morse <james.morse@arm.com>, Andrew Murray <Andrew.Murray@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: andreyknvl@google.com, shuah@kernel.org, linux-kselftest@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When the VHE code was reworked, a lot of the vgic stuff was moved around,
-but the GICv4 residency code did stay untouched, meaning that we come
-in and out of residency on each flush/sync, which is obviously suboptimal.
+Hi
 
-To address this, let's move things around a bit:
+On 03/09/2019 16:34, Dave Martin wrote:
+> Hi, responding to some non-trivial comments here where re-work isn't
+> needed -- so we have the right context for the mail thread.
+> 
+> For any remaining nits, I'll comment on the v5 patch.
+> 
+ok
 
-- Residency entry (flush) moves to vcpu_load
-- Residency exit (sync) moves to vcpu_put
-- On blocking (entry to WFI), we "put"
-- On unblocking (exit from WFI, we "load"
+> On Wed, Aug 28, 2019 at 06:34:09PM +0100, Cristian Marussi wrote:
+>> Hi
+>>
+>> On 13/08/2019 17:24, Dave Martin wrote:
+> 
+> [...]
+> 
+>>>> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
+> 
+> [...]
+> 
+>>>> +# Guessing as best as we can where the Kernel headers
+>>>> +# could have been installed depending on ENV config and
+>>>> +# type of invocation.
+>>>> +ifeq ($(KBUILD_OUTPUT),)
+>>>> +khdr_dir = $(top_srcdir)/usr/include
+>>>> +else
+>>>> +ifeq (0,$(MAKELEVEL))
+>>>> +khdr_dir = $(KBUILD_OUTPUT)/usr/include
+>>>> +else
+>>>> +# the KSFT preferred location when KBUILD_OUTPUT is set
+>>>> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
+>>>> +endif
+>>>> +endif
+>>>
+>>> When is KBUILD_OUTPUT set / not set?
+>>>
+>>
+>> Depending how the user/CI is configured KSFT installs the kernel
+>> headers in different places....here I'm trying to guess where they
+>> have been installed by KSFT.
+>>
+>>>> +
+>>>> +CFLAGS += -I$(khdr_dir)
+>>>
+>>> Do we rely on any non-UAPI headers?  If not, the default should probably
+>>> be to rely on the system headers (or toolchain default headers) -- i.e.,
+>>> add no -I option at all.
+>>
+>> I only need updated UAPI headers, but I cannot build without this specific -I..
+>> that points to the installed kernel headers directory.
+>>
+>> As an example it fails with: undefined  HWCAP_SSBS if I remove the -I
+>>
+>>>
+>>> I'm wondering why none of the other kselftests need this header search
+>>> logic.
+>>>
+>>
+>> Well... a lot of KSFT tests has something related to headers search in their Makefiles:
+>>
+>> ../kcmp/Makefile:CFLAGS += -I../../../../usr/include/
+>> ../networking/timestamping/Makefile:CFLAGS += -I../../../../../usr/include
+>> ../ipc/Makefile:CFLAGS += -I../../../../usr/include/
+>> ../memfd/Makefile:CFLAGS += -I../../../../include/uapi/
+>> ../memfd/Makefile:CFLAGS += -I../../../../include/
+>> ../memfd/Makefile:CFLAGS += -I../../../../usr/include/
+>>
+>> which seems aimed at doing the same thing, but it is a broken approach
+>> as far as I can see since if KBUILD_OUTPUT is set, KSFT will install the
+>> headers accordingly, so that the above static includes won't work anymore.
+>>
+>> Not sure if I'm missing something here, but my understanding was that
+>>
+>> - some KSFT requires arch specific bits, usually included within the dedicated kernel
+>> headers provided with the source itself and installed with make headers_install.
+>>
+>> and that
+>>
+>> - such headers can be found naturally, being included from top level libc headers
+>> only if:
+>>
+>> 1. a fully updated toolchain containing updated headers too is available at CROSS_COMPILE=
+>>
+>> or
+>>
+>> 2. proper -I options are specified to the compiler to specify where KSFT installed the 
+>>   kernel headers related to this kernel and its related KSFT testcases
+>>
+>> or
+>>
+>> 3. updated kernel headers were installed on top of the available CROSS_COMPILE toolchain
+>>
+>> or
+>>
+>> 4. we are building and running natively, so you can install the kernel headers on
+>>    system default path and those will be searched
+>>
+>>
+>> My 'feeling' would have been that in the KSFT scenario we should try to stick with option  2.,
+>> in order to be able to run KSFT and run the related testcases, relying just on the shipped
+>> Kernel/KSFT and possibly underlying hw features, but not having any dependencies
+>> on the toolchain/libc.
+>>
+>> My question is: what happens on a CI-somewhere if suddenly there's the need to update
+>> the toolchain somehow (fully or partially only the headers) to be able to simply
+>> build/run the new KSFT included with this Kernel ?; even if we accept this need to update
+>> the toochain, where this CI should get/scrap-from these minimum toolchain requirements ?
+>> (in an automated manner)
+>>
+>> If instead we can agree to stick with 2.,  I wonder if this locate-headers mechanism which I introduced
+>> here should be in charge of the KSFT framework or if there is something broken in my tests: but 
+>> in these regards similar issues seems to affect KSFT arm64 tags tests queued on arm64/for-next
+>>
+>> https://lkml.org/lkml/2019/8/23/721
+> 
+> Ack, I think we should stick with option 2 for now, but I agree to keep
+> it local to your tests for now to avoid breaking stuff elsewhere.
+> 
+> In general I think that kselftest should always search the installed
+> UAPI headers from the containing kernel tree first, since that's the
+> best way to ensure the headers are 100% up to date.
+> 
+> This may need wider discussion in order to be deployed more widely
+> across kselftest though.
+> 
 
-Because these can nest (load/block/put/load/unblock/put, for example),
-we now have per-VPE tracking of the residency state.
+Yes I agree, in the meantime in V5 I moved such mechanism (2. add -I$(khdr_src)) into the toplevel
+KSFT arm64 Makefile at least so that it transparently works for all arm64 KSFT test families...in fact
+in this way now also KSFT tags tests from Andrey compile fine (without a custom -I ../../../)
+...not sure if it is the proper fix anyway.
 
-Additionally, vgic_v4_put gains a "need doorbell" parameter, which only
-gets set to true when blocking because of a WFI. This allows a finer
-control of the doorbell, which now also gets disabled as soon as
-it gets signaled.
+> [...]
+> 
+>>>> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
+> 
+> [...]
+> 
+>>>> + *  "The infrastructure emulates only the following system register space:
+>>>> + *   	Op0=3, Op1=0, CRn=0, CRm=0,4,5,6,7
+>>>> + */
+>>>> +#define get_regval(regname, out) \
+>>>> +	asm volatile("mrs %0, " __stringify(regname) : "=r" (out) :: "memory")
+>>>> +
+>>>> +/* Regs encoding and masks naming copied in from sysreg.h */
+>>>> +#define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
+>>>> +#define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
+>>>
+>>> These ID regs are part of armv8.0-a, so we don't need to use the magic
+>>> syntax.
+>>> mmm... why I found them in non UAPI headers defined as follows ?
+>>
+>> arch/arm64/include/asm/sysreg.h:#define SYS_ID_AA64MMFR1_EL1            sys_reg(3, 0, 0, 7, 1)
+>>
+>> anyway I tried to use nonS3 regular sysreg naming (with a reasonably new compiler:
+>>
+>> /opt/toolchains/gcc-arm-8.3-2019.03-x86_64-aarch64-linux-gnu/bin/aarch64-linux-gnu-
+>>
+>> and it fails (only on id_aa64mmfr2_el1) as follows:
+>> /tmp/ccqAyE8P.s: Assembler messages:                      
+>> /tmp/ccoGrnGc.s:1085: Error: selected processor does not support system register name 'id_aa64mmfr2_el1'
+>>
+>> In fact this seems to remind me (not totally sure) that this was the reason to use such S3 syntax on this
+>> sysregs too.
+> 
+> Ah, it looks like ID_AA64MMFR2_EL1 was added from ARMv8.2-A only.  My
+> bad.
+> 
+> To keep things consistent, I'm fine with keeping the S3_ syntax for
+> everything here.
+> 
+>>>> +#define ID_AA64MMFR1_PAN_SHIFT	20
+>>>> +#define ID_AA64MMFR2_UAO_SHIFT	4
+> 
+> [...]
+> 
+Not sure if in v5 I fixed only the fixable or left everything as it was...I have to double check.
 
-Signed-off-by: Marc Zyngier <maz@kernel.org>
----
- drivers/irqchip/irq-gic-v4.c       |  7 +++-
- include/kvm/arm_vgic.h             |  4 +--
- include/linux/irqchip/arm-gic-v4.h |  2 ++
- virt/kvm/arm/arm.c                 | 12 ++++---
- virt/kvm/arm/vgic/vgic-v3.c        |  4 +++
- virt/kvm/arm/vgic/vgic-v4.c        | 55 ++++++++++++++----------------
- virt/kvm/arm/vgic/vgic.c           |  4 ---
- virt/kvm/arm/vgic/vgic.h           |  2 --
- 8 files changed, 48 insertions(+), 42 deletions(-)
+>>>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> 
+> [...]
+> 
+>>>> +static inline bool are_feats_ok(struct tdescr *td)
+>>>> +{
+>>>> +	return td ? td->feats_required == td->feats_supported : 0;
+>>>
+>>> Should this be something like
+>>> (td->feats_required & td->feats_supported) == td->feats_required ?
+>>>
+>>> Otherwise additional supported features that our test doesn't care about
+>>> will cause this check to fail.
+>>>
+>> Yes better.
+>>
+>>>
+>>> Do we really need to check td?
+>>>
+>>
+>> Overly defensive
+>>
+>>> assert(foo); followed by dereferincing foo is usually a bit pointless
+>>> because you'd get a SIGSEGV anyway.
+>>>
+>>> However, since the tests generate deliberate SIGSEGVs too this could
+>>> be confusing -- in which case, having an explicit assert() here does
+>>> no harm.
+>>>
+>> not sure about which assert you refer here
+> 
+> I was persuading myself that my own comment was unnecessary, so don't
+> worry about it.  The code is fine as-is.
 
-diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
-index 563e87ed0766..45969927cc81 100644
---- a/drivers/irqchip/irq-gic-v4.c
-+++ b/drivers/irqchip/irq-gic-v4.c
-@@ -141,12 +141,17 @@ static int its_send_vpe_cmd(struct its_vpe *vpe, struct its_cmd_info *info)
- int its_schedule_vpe(struct its_vpe *vpe, bool on)
- {
- 	struct its_cmd_info info;
-+	int ret;
- 
- 	WARN_ON(preemptible());
- 
- 	info.cmd_type = on ? SCHEDULE_VPE : DESCHEDULE_VPE;
- 
--	return its_send_vpe_cmd(vpe, &info);
-+	ret = its_send_vpe_cmd(vpe, &info);
-+	if (!ret)
-+		vpe->resident = on;
-+
-+	return ret;
- }
- 
- int its_invall_vpe(struct its_vpe *vpe)
-diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
-index af4f09c02bf1..4dc58d7a0010 100644
---- a/include/kvm/arm_vgic.h
-+++ b/include/kvm/arm_vgic.h
-@@ -396,7 +396,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int irq,
- int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
- 				 struct kvm_kernel_irq_routing_entry *irq_entry);
- 
--void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
--void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
-+int vgic_v4_load(struct kvm_vcpu *vcpu);
-+int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db);
- 
- #endif /* __KVM_ARM_VGIC_H */
-diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
-index e6b155713b47..ab1396afe08a 100644
---- a/include/linux/irqchip/arm-gic-v4.h
-+++ b/include/linux/irqchip/arm-gic-v4.h
-@@ -35,6 +35,8 @@ struct its_vpe {
- 	/* Doorbell interrupt */
- 	int			irq;
- 	irq_hw_number_t		vpe_db_lpi;
-+	/* VPE resident */
-+	bool			resident;
- 	/* VPE proxy mapping */
- 	int			vpe_proxy_event;
- 	/*
-diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 35a069815baf..4e69268621b6 100644
---- a/virt/kvm/arm/arm.c
-+++ b/virt/kvm/arm/arm.c
-@@ -321,20 +321,24 @@ void kvm_arch_vcpu_blocking(struct kvm_vcpu *vcpu)
- 	/*
- 	 * If we're about to block (most likely because we've just hit a
- 	 * WFI), we need to sync back the state of the GIC CPU interface
--	 * so that we have the lastest PMR and group enables. This ensures
-+	 * so that we have the latest PMR and group enables. This ensures
- 	 * that kvm_arch_vcpu_runnable has up-to-date data to decide
- 	 * whether we have pending interrupts.
-+	 *
-+	 * For the same reason, we want to tell GICv4 that we need
-+	 * doorbells to be signalled, should an interrupt become pending.
- 	 */
- 	preempt_disable();
- 	kvm_vgic_vmcr_sync(vcpu);
-+	vgic_v4_put(vcpu, true);
- 	preempt_enable();
--
--	kvm_vgic_v4_enable_doorbell(vcpu);
- }
- 
- void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
- {
--	kvm_vgic_v4_disable_doorbell(vcpu);
-+	preempt_disable();
-+	vgic_v4_load(vcpu);
-+	preempt_enable();
- }
- 
- int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
-diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
-index 8d69f007dd0c..48307a9eb1d8 100644
---- a/virt/kvm/arm/vgic/vgic-v3.c
-+++ b/virt/kvm/arm/vgic/vgic-v3.c
-@@ -664,6 +664,8 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
- 
- 	if (has_vhe())
- 		__vgic_v3_activate_traps(vcpu);
-+
-+	WARN_ON(vgic_v4_load(vcpu));
- }
- 
- void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
-@@ -676,6 +678,8 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
- 
- void vgic_v3_put(struct kvm_vcpu *vcpu)
- {
-+	WARN_ON(vgic_v4_put(vcpu, false));
-+
- 	vgic_v3_vmcr_sync(vcpu);
- 
- 	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
-diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
-index 477af6aebb97..3a8a28854b13 100644
---- a/virt/kvm/arm/vgic/vgic-v4.c
-+++ b/virt/kvm/arm/vgic/vgic-v4.c
-@@ -85,6 +85,10 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
- {
- 	struct kvm_vcpu *vcpu = info;
- 
-+	/* We got the message, no need to fire again */
-+	if (!irqd_irq_disabled(&irq_to_desc(irq)->irq_data))
-+		disable_irq_nosync(irq);
-+
- 	vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last = true;
- 	kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
- 	kvm_vcpu_kick(vcpu);
-@@ -192,20 +196,30 @@ void vgic_v4_teardown(struct kvm *kvm)
- 	its_vm->vpes = NULL;
- }
- 
--int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu)
-+int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db)
- {
--	if (!vgic_supports_direct_msis(vcpu->kvm))
-+	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
-+	struct irq_desc *desc = irq_to_desc(vpe->irq);
-+
-+	if (!vgic_supports_direct_msis(vcpu->kvm) || !vpe->resident)
- 		return 0;
- 
--	return its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, false);
-+	/*
-+	 * If blocking, a doorbell is required. Undo the nested
-+	 * disable_irq() calls...
-+	 */
-+	while (need_db && irqd_irq_disabled(&desc->irq_data))
-+		enable_irq(vpe->irq);
-+
-+	return its_schedule_vpe(vpe, false);
- }
- 
--int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
-+int vgic_v4_load(struct kvm_vcpu *vcpu)
- {
--	int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
-+	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
- 	int err;
- 
--	if (!vgic_supports_direct_msis(vcpu->kvm))
-+	if (!vgic_supports_direct_msis(vcpu->kvm) || vpe->resident)
- 		return 0;
- 
- 	/*
-@@ -214,11 +228,14 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
- 	 * doc in drivers/irqchip/irq-gic-v4.c to understand how this
- 	 * turns into a VMOVP command at the ITS level.
- 	 */
--	err = irq_set_affinity(irq, cpumask_of(smp_processor_id()));
-+	err = irq_set_affinity(vpe->irq, cpumask_of(smp_processor_id()));
- 	if (err)
- 		return err;
- 
--	err = its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, true);
-+	/* Disabled the doorbell, as we're about to enter the guest */
-+	disable_irq(vpe->irq);
-+
-+	err = its_schedule_vpe(vpe, true);
- 	if (err)
- 		return err;
- 
-@@ -226,9 +243,7 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
- 	 * Now that the VPE is resident, let's get rid of a potential
- 	 * doorbell interrupt that would still be pending.
- 	 */
--	err = irq_set_irqchip_state(irq, IRQCHIP_STATE_PENDING, false);
--
--	return err;
-+	return irq_set_irqchip_state(vpe->irq, IRQCHIP_STATE_PENDING, false);
- }
- 
- static struct vgic_its *vgic_get_its(struct kvm *kvm,
-@@ -335,21 +350,3 @@ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int virq,
- 	mutex_unlock(&its->its_lock);
- 	return ret;
- }
--
--void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu)
--{
--	if (vgic_supports_direct_msis(vcpu->kvm)) {
--		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
--		if (irq)
--			enable_irq(irq);
--	}
--}
--
--void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu)
--{
--	if (vgic_supports_direct_msis(vcpu->kvm)) {
--		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
--		if (irq)
--			disable_irq(irq);
--	}
--}
-diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
-index 45a870cb63f5..99b02ca730a8 100644
---- a/virt/kvm/arm/vgic/vgic.c
-+++ b/virt/kvm/arm/vgic/vgic.c
-@@ -857,8 +857,6 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
- {
- 	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
- 
--	WARN_ON(vgic_v4_sync_hwstate(vcpu));
--
- 	/* An empty ap_list_head implies used_lrs == 0 */
- 	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
- 		return;
-@@ -882,8 +880,6 @@ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
- /* Flush our emulation state into the GIC hardware before entering the guest. */
- void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
- {
--	WARN_ON(vgic_v4_flush_hwstate(vcpu));
--
- 	/*
- 	 * If there are no virtual interrupts active or pending for this
- 	 * VCPU, then there is no work to do and we can bail out without
-diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
-index 83066a81b16a..c7fefd6b1c80 100644
---- a/virt/kvm/arm/vgic/vgic.h
-+++ b/virt/kvm/arm/vgic/vgic.h
-@@ -316,7 +316,5 @@ void vgic_its_invalidate_cache(struct kvm *kvm);
- bool vgic_supports_direct_msis(struct kvm *kvm);
- int vgic_v4_init(struct kvm *kvm);
- void vgic_v4_teardown(struct kvm *kvm);
--int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu);
--int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu);
- 
- #endif
--- 
-2.20.1
+ok
+> 
+>>>> +}
+>>>> +
+>>>> +static void default_handler(int signum, siginfo_t *si, void *uc)
+>>>> +{
+>>>> +	if (current->sig_trig && signum == current->sig_trig) {
+>>>> +		fprintf(stderr, "Handling SIG_TRIG\n");
+>>>> +		current->triggered = 1;
+>>>> +		/* ->run was asserted NON-NULL in test_setup() already */
+>>>> +		current->run(current, si, uc);
+>>>> +	} else if (signum == SIGILL && !current->initialized) {
+>>>> +		/*
+>>>> +		 * A SIGILL here while still not initialized means we failed
+>>>> +		 * even to asses the existence of features during init
+>>>> +		 */
+>>>> +		fprintf(stdout,
+>>>> +			"Got SIGILL test_init. Marking ALL features UNSUPPORTED.\n");
+>>>> +		current->feats_supported = 0;
+>>>> +	} else if (current->sig_ok && signum == current->sig_ok) {
+>>>> +		/* it's a bug in the test code when this assert fail */
+>>>
+>>> Why?  Is this because sig_ok is considered acceptable only as an effect
+>>> of the test -- i.e., we shouldn't see it if the test hasn't been
+>>> triggered yet?
+>>
+>> This assert would like to ensure that when you receive a sig_ok signal,
+>> if a sig_trig was defined != 0, the trigger have been in fact used and processed before
+>> receiving this sig_ok here: so you didn't define a signal trigger at all, or, if defined
+>> it has been fired to arrive here. I'll add some commenting about this.
+> 
+> OK
+> 
+>>>> +		assert(!current->sig_trig || current->triggered);
+>>>> +		fprintf(stderr,
+>>>> +			"SIG_OK -- SP:%p  si_addr@:0x%p  si_code:%d  token@:0x%p  offset:%ld\n",
+>>>> +			((ucontext_t *)uc)->uc_mcontext.sp,
+>>>> +			si->si_addr, si->si_code, current->token,
+>>>> +			current->token - si->si_addr);
+>>>> +		/*
+>>>> +		 * fake_sigreturn tests, which have sanity_enabled=1, set, at
+>>>> +		 * the very last time, the token field to the SP address used
+>>>> +		 * to place the fake sigframe: so token==0 means we never made
+>>>> +		 * it to the end, segfaulting well-before, and the test is
+>>>> +		 * possibly broken.
+>>>> +		 */
+>>>> +		if (!current->sanity_disabled && !current->token) {
+>>>> +			fprintf(stdout,
+>>>> +				"current->token ZEROED...test is probably broken!\n");
+>>>> +			assert(0);
+>>>
+>>> In case someone builds with -DNDEBUG, should we add abort()?
+>>>
+>> Well, in such a case all the test suite is mostly compromised anyway.
+>> But you are right, I'll add an abort() at least here when broken tests
+>> are detected.
+> 
+> I guess you're right.  The abort() does no harm, anyway.
+> Gone with abort() in v5
 
+> [...]
+> 
+>>>> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+> 
+> [...]
+> 
+>>>> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
+>>>> +{
+>>>> +	bool terminated = false;
+>>>> +	size_t offs = 0;
+>>>> +	int flags = 0;
+>>>> +	struct extra_context *extra = NULL;
+>>>> +	struct _aarch64_ctx *head =
+>>>> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
+>>>> +
+>>>> +	if (!err)
+>>>> +		return false;
+>>>> +	/* Walk till the end terminator verifying __reserved contents */
+>>>> +	while (head && !terminated && offs < resv_sz) {
+>>>> +		if ((uint64_t)head & 0x0fUL) {
+>>>> +			*err = "Misaligned HEAD";
+>>>> +			return false;
+>>>> +		}
+>>>> +
+>>>> +		switch (head->magic) {
+>>>> +			case 0:
+>>>> +				if (head->size)
+>>>> +					*err = "Bad size for MAGIC0";
+>>>
+>>> Or "terminator".  We don't have an actual symbolic name for magic number
+>>> 0.  (Arguably it would have been nice to have a name, but we managed
+>>> without.)
+>>
+>> ok
+>>>
+>>>> +				else
+>>>> +					terminated = true;
+>>>> +				break;
+>>>> +			case FPSIMD_MAGIC:
+>>>> +				if (flags & FPSIMD_CTX)
+>>>> +					*err = "Multiple FPSIMD_MAGIC";
+>>>> +				else if (head->size !=
+>>>> +					 sizeof(struct fpsimd_context))
+>>>> +					*err = "Bad size for fpsimd_context";
+>>>> +				flags |= FPSIMD_CTX;
+>>>> +				break;
+>>>> +			case ESR_MAGIC:
+>>>> +				if (head->size != sizeof(struct esr_context))
+>>>> +					fprintf(stderr,
+>>>> +						"Bad size for esr_context is not an error...just ignore.\n");
+>>>
+>>> Why isn't this an error?  Should the kernel ever write an esr_context
+>>> with a different size?
+>>
+>> There is no check on Kernel side:
+>>
+>>     case ESR_MAGIC:
+>>     	/* ignore */
+>>         break;
+>>
+>> so I sticked with that, since this function can be used to validate a
+>> Kernel originated sigframe or a crafted one which will be passed down
+>> to the Kernel.
+> 
+> I see where you're coming from: I'll comment on the v5 patch instead of
+> here, to make it easier to track any rework.
+> 
+ok
+> [...]
+> 
+>>>> +		if (flags & EXTRA_CTX)
+>>>> +			if (!validate_extra_context(extra, err))
+>>>> +				return false;
+>>>
+>>> Can we validate the contents of the extra context too?
+>>>
+>>> Ideally we can use the same code to check __reserved[] and the extra
+>>> context.
+>>>
+>> Do you mean the content pointed by extra->datap ?
+>> This extra_context validation routine is generally under review and fixes in a further
+>> arm64/signal SVE extensions patch still to be published (and cleaned up):
+>> [kselftest: arm64: adds SVE-related signal test], given that EXTRA_CONTEXT can effectively
+>> appear only when SVE related instruction are used properly.
+>>
+>> Should I introduce this and other extra-context related fixes here instead ?
+>> (it is hard to test and debug without any triggering SVE instruction though...)
+> 
+> No, it's fine to exclude it for now.
+> 
+> If there's a plan to add it later, that's good enough for me.
+
+ok
+> 
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
+
+Thanks
+
+Cheers 
+
+Cristian
 
 _______________________________________________
 linux-arm-kernel mailing list
