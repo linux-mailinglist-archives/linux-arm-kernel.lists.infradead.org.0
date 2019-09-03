@@ -2,55 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 75F4DA63A8
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:16:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0A04A63B2
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 10:17:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=b303KJhhEiAPgOfApe4ch0fBjhici+U4jzU0FX8JnHo=; b=QRM/GOzI71+k2C
-	Uz0eAImJL+7f3cvLtWVRHUmnRBLLoXnJalO6BfNsyYoLnRCvUWpavF0zdkz2AIPQK9zxYMq5o7hwD
-	5JXDvcnID9g2SpCjYrNmTW9RufI/r9mi+RByGsUvkTEPGXDHtid2pfdenwHX6XvcyYbtCS0SRaoVu
-	V3vK3h/pL8/QWTxCozaj+5d7UMkuPPuPxSXnAIVizQr1QIskJxHaOk2rpUCZtYYP5aj1nG5//wNIS
-	oXHZLHG2gUjULLQVwF7rEdMGpfmb2gOanvnTU6IcbB5iSqsu8N82dDqUR6FB+eClDdJ3qao4cnSHJ
-	x8WCd9fozaNzhuFHPl1g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=izPwNRFqbpJbSpvVwfB9aKOx8AC6OTZ+Rjq4g5IJ2nM=; b=f5cvMbiH6L7iUP
+	NfaG2bgDZFp5nJjw1tm19yRweswbwGs2X8lqR3muYuJ1hDcQVRanHK5WOwJHDKYxO3nhpuBwF0dUE
+	tygsIjxoeizOdHjVLlGEW2z1O+8CzuUxmRLgdkEHWdMg+wG19KdSCU4I/jrUBfV1c9V6O1LGoU1bp
+	lGXQVkN59BbWjTpd+sTG58JRWqYKVEMl7wjvUYVLg1sOvsB/tNraF8eGJHIWpRuhy4G9a+DLdApp6
+	dCEncAfSqa/Ys5PODcz0ZWc3718sVQWP6S1fzkLDMPj/JygQGOChbeejBdedoIi8hPwi3Y2m0YmWq
+	FpFsOELfTEi1kKDi8iyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53zD-00022b-RN; Tue, 03 Sep 2019 08:16:23 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1i540G-0002LU-0Y; Tue, 03 Sep 2019 08:17:28 +0000
+Received: from relay12.mail.gandi.net ([217.70.178.232])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53z0-00022E-9A; Tue, 03 Sep 2019 08:16:11 +0000
-Received: from [10.18.29.226] (10.18.29.226) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Tue, 3 Sep
- 2019 16:16:57 +0800
-Subject: Re: [PATCH 4/4] arm64: dts: add support for A1 based Amlogic AD401
-To: Neil Armstrong <narmstrong@baylibre.com>, Kevin Hilman
- <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-References: <1567493475-75451-1-git-send-email-jianxin.pan@amlogic.com>
- <1567493475-75451-5-git-send-email-jianxin.pan@amlogic.com>
- <97a462d6-d98e-f778-96d5-bacd4801df6b@baylibre.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <f06ab4c9-4b86-3b6f-062d-b5fe365bcd10@amlogic.com>
-Date: Tue, 3 Sep 2019 16:16:57 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5401-0002KZ-Oq
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 08:17:15 +0000
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay12.mail.gandi.net (Postfix) with ESMTPSA id 25DB920001B;
+ Tue,  3 Sep 2019 08:16:58 +0000 (UTC)
+Date: Tue, 3 Sep 2019 10:16:58 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Yizhuo Zhai <yzhai003@ucr.edu>
+Subject: Re: [PATCH] clocksource: atmel-st: Variable sr in
+ at91rm9200_timer_interrupt() could be uninitialized
+Message-ID: <20190903081658.GK21922@piout.net>
+References: <20190902222946.20548-1-yzhai003@ucr.edu>
+ <20190902223650.GJ21922@piout.net>
+ <CABvMjLRjeXAmhBwfZZPbmxdENq=FP9rR0Ld=T3veGXF6cjptxA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <97a462d6-d98e-f778-96d5-bacd4801df6b@baylibre.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.29.226]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+Content-Disposition: inline
+In-Reply-To: <CABvMjLRjeXAmhBwfZZPbmxdENq=FP9rR0Ld=T3veGXF6cjptxA@mail.gmail.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_011610_326707_15851455 
-X-CRM114-Status: GOOD (  12.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_011713_960738_8C1318C5 
+X-CRM114-Status: GOOD (  20.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.178.232 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -64,94 +64,93 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>,
- Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
- linux-kernel@vger.kernel.org, Qiufang Dai <qiufang.dai@amlogic.com>,
- Rob Herring <robh+dt@kernel.org>, Jian Hu <jian.hu@amlogic.com>,
- Xingyu Chen <xingyu.chen@amlogic.com>, Carlo Caione <carlo@caione.org>,
- Tao Zeng <tao.zeng@amlogic.com>, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Chengyu Song <csong@cs.ucr.edu>, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ Zhiyun Qian <zhiyunq@cs.ucr.edu>, linux-kernel@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Neil,
-
-Thanks for your time.
-Please see my comments below.
-
-On 2019/9/3 15:42, Neil Armstrong wrote:
-> Hi,
+On 02/09/2019 22:56:48-0700, Yizhuo Zhai wrote:
+> In function regmap_read(),  there're two places which could make the read fail.
 > 
-> On 03/09/2019 08:51, Jianxin Pan wrote:
->> Add basic support for the Amlogic A1 based Amlogic AD401 board:
->> which describe components as follows: Reserve Memory, CPU, GIC, IRQ,
-[...]
->> +	chosen {
->> +		stdout-path = "serial0:115200n8";
->> +	};
->> +	memory@0 {
->> +		device_type = "memory";
->> +		linux,usable-memory = <0x0 0x0 0x0 0x8000000>;
-> 
-> I'll prefer usage of reg, it's handled the same but linux,usable-memory
-> is not documented.
-> 
-OK, I will fix it in the next version. Thanks for your review.
->> +	};
->> +};
->> +
->> +&uart_AO_B {
->> +	status = "okay";
->> +	/*pinctrl-0 = <&uart_ao_a_pins>;*/
->> +	/*pinctrl-names = "default";*/
-> 
-> Please remove these lines instead of commenting them.
-> 
-OK, I will fix it in the next version.
->> +};
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> new file mode 100644
->> index 00000000..b98d648
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> @@ -0,0 +1,121 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +/*
->> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
->> + */
->> +
->> +#include <dt-bindings/interrupt-controller/irq.h>
->> +#include <dt-bindings/interrupt-controller/arm-gic.h>
->> +
->> +/ {
-[...]
->> +
->> +	reserved-memory {
->> +		#address-cells = <2>;
->> +		#size-cells = <2>;
->> +		ranges;
-> 
-> Isn't there secmon reserved memory ?
-> 
-A1 uses internal SRAM as secmon memory.
-And there is no secmon reserved memory in ddr side.
->> +
->> +		linux,cma {
->> +			compatible = "shared-dma-pool";
->> +			reusable;
->> +			size = <0x0 0x800000>;
-[...]
->>
-> 
-> Thanks,
-> Neil
-> 
-> .
+> First, if "reg" and  "map->reg_stride" are not aligned, then remap_read() will
+> return -EINVAL without initialize variable "val".
 > 
 
+A quick look at of_syscon_register would show you that this is not
+possible.
+
+> Second, _regmap_read() could also fail and return error code if "val" is not
+> initialized. The caller remap_read() returns the same error code, but
+> at91rm9200_timer_interrupt() does not use this information.
+> 
+
+How would _regmap_read fail exactly?
+
+> On Mon, Sep 2, 2019 at 3:37 PM Alexandre Belloni
+> <alexandre.belloni@bootlin.com> wrote:
+> >
+> > On 02/09/2019 15:29:46-0700, Yizhuo wrote:
+> > > Inside function at91rm9200_timer_interrupt(), variable sr could
+> > > be uninitialized if regmap_read() fails. However, sr is used
+> >
+> > Could you elaborate on how this could fail?
+> >
+> > > to decide the control flow later in the if statement, which is
+> > > potentially unsafe. We could check the return value of
+> > > regmap_read() and print an error here.
+> > >
+> > > Signed-off-by: Yizhuo <yzhai003@ucr.edu>
+> > > ---
+> > >  drivers/clocksource/timer-atmel-st.c | 8 +++++++-
+> > >  1 file changed, 7 insertions(+), 1 deletion(-)
+> > >
+> > > diff --git a/drivers/clocksource/timer-atmel-st.c b/drivers/clocksource/timer-atmel-st.c
+> > > index ab0aabfae5f0..061a3f27847e 100644
+> > > --- a/drivers/clocksource/timer-atmel-st.c
+> > > +++ b/drivers/clocksource/timer-atmel-st.c
+> > > @@ -48,8 +48,14 @@ static inline unsigned long read_CRTR(void)
+> > >  static irqreturn_t at91rm9200_timer_interrupt(int irq, void *dev_id)
+> > >  {
+> > >       u32 sr;
+> > > +     int ret;
+> > > +
+> > > +     ret = regmap_read(regmap_st, AT91_ST_SR, &sr);
+> > > +     if (ret) {
+> > > +             pr_err("Fail to read AT91_ST_SR.\n");
+> > > +             return ret;
+> > > +     }
+> > >
+> > > -     regmap_read(regmap_st, AT91_ST_SR, &sr);
+> > >       sr &= irqmask;
+> > >
+> > >       /*
+> > > --
+> > > 2.17.1
+> > >
+> >
+> > --
+> > Alexandre Belloni, Bootlin
+> > Embedded Linux and Kernel engineering
+> > https://bootlin.com
+> 
+> 
+> 
+> -- 
+> Kind Regards,
+> 
+> Yizhuo Zhai
+> 
+> Computer Science, Graduate Student
+> University of California, Riverside
+
+-- 
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
