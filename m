@@ -2,82 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DAD1A62F7
-	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:45:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 38A60A6316
+	for <lists+linux-arm-kernel@lfdr.de>; Tue,  3 Sep 2019 09:51:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YBom6BxnqTxqGtG7RJO+tzJbReUq7zFm2y/hcYcbeyU=; b=R/ET6VTaYozl3w
-	9EKlVd3h7TcurCd+NGzuTyHpj5ha6MsZKU4n5j7bpp1g7xCl0nJmpfySdD+syO7WfpcdHEL9DWyX0
-	81yBLNyYSS0g8g7Q/U4QJ4D8XCwCjPU6mEBgbPDQ5nO/W2/+EutLPWoypGAJZU6NPdKyEYt7qfiUJ
-	+csaHfL2od/pohmxRgfhd0QTAU5SYhonCtjSPjP1nEGnyENTJ1ELYP/2zo0sVFJBOWxJxI0qXM2N0
-	LeGDiscqO5O1A55UEq9TFiGYv4LOLXnsc0/IthGmfdaIfZsY6rbUxwXxPR4yATwTHCd/uJ9gkyyvA
-	j/D0kj+WkgMQFc7Z7E1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=8iWFV/SGul8bu5+y4LcYRB++iuMsOERgamkztJ9vdyY=; b=gm5wIo/CZKrcuOIfDJb8qrY+Q
+	Mp1jbUATNBqsEkBHCvHQAq3pgM5fCc8xgM78TSeIg17QytD+eTYsiY16a1XE/w3PIIhs5VEZkclX6
+	czX/vYsWhY5bbFUK98VHZzHRb2F9II+jrE+uJ1Uxmg7HigsG0j72VfitUomHBKJSfi9Oo0nXf6du1
+	DzWy2KDvyM9AtrOCG76Iq3YrdlpYFybDUWt6RKdh1DlR/uEeTwo+3hRAKn9uw51GrkRBK2IHpITt8
+	GGg7TsqY1A88n+JT2F3QNHDGzQQGv4MEX6p1xGStj17iesIXjXGibiefgWr89lNKen4MY1IX4gEe7
+	2pZFV98oA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i53Ve-0005xj-4B; Tue, 03 Sep 2019 07:45:50 +0000
-Received: from mail-vs1-xe43.google.com ([2607:f8b0:4864:20::e43])
+	id 1i53b9-0007t7-6H; Tue, 03 Sep 2019 07:51:31 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i53VP-0005wP-42
- for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:45:36 +0000
-Received: by mail-vs1-xe43.google.com with SMTP id u21so2351365vsl.10
+ id 1i53av-0007sD-TD
+ for linux-arm-kernel@lists.infradead.org; Tue, 03 Sep 2019 07:51:19 +0000
+Received: from mail-ed1-f70.google.com (mail-ed1-f70.google.com
+ [209.85.208.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id CC5C7C056807
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 00:45:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=benyossef-com.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=cFrdK23ABQ4OmIay3wgO+JPOpB+v5jDpV220cb1264Q=;
- b=ufwLEFaxFvvebslcyBbnlbc241i8XCEIlYE9wBiVJzjKucNO4eL1Na+LBUvtqz1FgL
- 0nI9xN8fOYPappYKOskoqbaYYxhCb3PvLx9y4Wny7CjinopqfC0cv3EIvJ/tIXAhI4vz
- E2fyfXxycZQ1V9MaJ5KrZ8n//JHLSaT3S3mSjjxjsGU1LuBvEYlxEQyL5b/F3KVpIFiP
- N3NFsrY+79vToYlc7OsQuMRZr4xpv8JWicFnaCsy143PuOIncx321v5ZzrJHufsTr/CI
- BUGGU8MQvYhE3W+DRpd/1UQmERT3DAY8x7i5MtUQm23Ix019VfmAutO3WtSiyRx3lM8R
- mOog==
+ Tue,  3 Sep 2019 07:51:16 +0000 (UTC)
+Received: by mail-ed1-f70.google.com with SMTP id f5so1618933edr.19
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 03 Sep 2019 00:51:16 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=cFrdK23ABQ4OmIay3wgO+JPOpB+v5jDpV220cb1264Q=;
- b=RyfLZrxZ2iGr51ooBD2/566HZCULsnnAJNj9us5fPLk2px7Knk6arpBQ0SSlppIUOt
- sy4Uh6d3A4m+/bH6kU5UrbAVPIQtw6VppFppuMss1iLbZ63cmcyNN6wQF9Y03USS9/Un
- tqg+Jy3VsmWTDajzlCxG7Y68PDeP0BLGGI2ynxOndijd+B8uXQ0wKrSlrOBWzDnlh9Qq
- D8G7PmKa0DDMDaR+GEWN7Bi2C1y0t/+OIO+1XX6dww8KdxKm5oymwDT/hjHbGrbisu7h
- c6RRb0euhHrLjjP4X4fHBw4SznAzYobWmRMe72Jy8VHCYLK7NWV50KMyMszRLk81kMip
- 4DbQ==
-X-Gm-Message-State: APjAAAXvB0gef9D0yPZczXskeISIETID3S126f+9i6AOEp1erJg2zZRH
- mzdqCvft1t0IxqUY+EawQEYj6GEoRyvNRGcrA80o3w==
-X-Google-Smtp-Source: APXvYqwbodlz7C9/rGshgIf7/qYpAxUq0gr6cTRVIP3xE0GyOpy2iRluovRfONJrQ0fD8bl9acvTKe0dYnil3LY22UY=
-X-Received: by 2002:a67:e886:: with SMTP id x6mr9386146vsn.117.1567496732233; 
- Tue, 03 Sep 2019 00:45:32 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190901203532.2615-1-hdegoede@redhat.com>
- <20190901203532.2615-6-hdegoede@redhat.com>
-In-Reply-To: <20190901203532.2615-6-hdegoede@redhat.com>
-From: Gilad Ben-Yossef <gilad@benyossef.com>
-Date: Tue, 3 Sep 2019 10:45:21 +0300
-Message-ID: <CAOtvUMdd+V5pesw+O-kk9_JB5YpxUM+hU+Uu=kiMvOL9d0AziQ@mail.gmail.com>
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=w8HIPoxJeKQ6uWeXwaqzJnrwZeqZuyXyHwG4+Nh5f8I=;
+ b=f4llzWUAgWpBDUXR2IBzFw+QpUPArSQLZYRmrxgDZwlxz34eeeokoBL/mgtWboaz1U
+ nKTb8uMEHoatssb2WtqpTH/+/9q06Iay/pKwSIO/NkKXJZit8C5bH5DRUzaHFXbjudNM
+ Q0HyQqc0KlB4ponM4WRlAlkTqLeDnQBS1gOy+8SLvSyArD8LSM10HNaoORDt42saLEsK
+ 99/j6Vp3IbysxLAaE7W3Alra+bLv9L1psJmMefM4JumNnoiBZblae6v7wi1ck3QDbcFD
+ +RiPW8xH6llbHhTMBRtGgR2ETiE2O+ZWXa8P6o6crB5kpB3E0zXxjtymR2TVNfMBvNGd
+ otKQ==
+X-Gm-Message-State: APjAAAWo6szoTKDg9b/kYT5iHw1uuOu2g9nQvEyON4uo68jKG0tsGUar
+ sDPIitY79V/XIN5aavooMHWTpAJ0y7l7/GHXNUhdbITvQ9GkLGABIgwk5P8h+8W2R0wZkc1i0ze
+ 7hKux9eJthmVs7QFYGR/oULj7vytvwVUTmh4=
+X-Received: by 2002:a17:906:d7a3:: with SMTP id
+ pk3mr13383198ejb.97.1567497075044; 
+ Tue, 03 Sep 2019 00:51:15 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxcWpjWCgHm7od0lS3pQcg6L6ajmTNeMv46O7wYLrV4SdnJWrI2Vv4mBF3X9ZIiqJr2V6QZKg==
+X-Received: by 2002:a17:906:d7a3:: with SMTP id
+ pk3mr13383184ejb.97.1567497074920; 
+ Tue, 03 Sep 2019 00:51:14 -0700 (PDT)
+Received: from shalem.localdomain (84-106-84-65.cable.dynamic.v4.ziggo.nl.
+ [84.106.84.65])
+ by smtp.gmail.com with ESMTPSA id c1sm3244417edr.37.2019.09.03.00.51.13
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Tue, 03 Sep 2019 00:51:14 -0700 (PDT)
 Subject: Re: [PATCH 5/9] crypto: ccree - Rename arrays to avoid conflict with
  crypto/sha256.h
-To: Hans de Goede <hdegoede@redhat.com>
+To: Gilad Ben-Yossef <gilad@benyossef.com>
+References: <20190901203532.2615-1-hdegoede@redhat.com>
+ <20190901203532.2615-6-hdegoede@redhat.com>
+ <CAOtvUMdd+V5pesw+O-kk9_JB5YpxUM+hU+Uu=kiMvOL9d0AziQ@mail.gmail.com>
+From: Hans de Goede <hdegoede@redhat.com>
+Message-ID: <0d55a6a7-9cca-38cb-97a2-558280fdc122@redhat.com>
+Date: Tue, 3 Sep 2019 09:51:12 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <CAOtvUMdd+V5pesw+O-kk9_JB5YpxUM+hU+Uu=kiMvOL9d0AziQ@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_004535_308044_76C3523A 
-X-CRM114-Status: GOOD (  10.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190903_005117_983234_4FD5D66A 
+X-CRM114-Status: GOOD (  19.44  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e43 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,24 +112,33 @@ Cc: linux-efi@vger.kernel.org, Catalin Marinas <catalin.marinas@arm.com>,
  Linux kernel mailing list <linux-kernel@vger.kernel.org>,
  Linux Crypto Mailing List <linux-crypto@vger.kernel.org>,
  "David S . Miller" <davem@davemloft.net>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 1, 2019 at 11:36 PM Hans de Goede <hdegoede@redhat.com> wrote:
->
-> Rename the algo_init arrays to cc_algo_init so that they do not conflict
-> with the functions declared in crypto/sha256.h.
->
-> This is a preparation patch for folding crypto/sha256.h into crypto/sha.h.
+Hi,
 
-I'm fine with the renaming.
+On 03-09-19 09:45, Gilad Ben-Yossef wrote:
+> On Sun, Sep 1, 2019 at 11:36 PM Hans de Goede <hdegoede@redhat.com> wrote:
+>>
+>> Rename the algo_init arrays to cc_algo_init so that they do not conflict
+>> with the functions declared in crypto/sha256.h.
+>>
+>> This is a preparation patch for folding crypto/sha256.h into crypto/sha.h.
+> 
+> I'm fine with the renaming.
+> 
+> Signed-off-by: Gilad Ben-Yossef <gilad@benyossef.com>
 
-Signed-off-by: Gilad Ben-Yossef <gilad@benyossef.com>
+Your Signed-off-by is only used when the patches passes through your hands,
+since Herbert will likely apply this directly that is not the case.
 
-Thanks,
-Gilad
+You want either Acked-by or Reviewed-by to signal that you are ok with this patch.
+
+Regards,
+
+Hans
 
 _______________________________________________
 linux-arm-kernel mailing list
