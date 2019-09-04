@@ -2,89 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1DFDA7B94
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 08:20:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3E2CA7BA6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 08:23:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=P1Qtrm2fIeripxNb8wldd4a+yOCgWdRwmzFQ+JNGB7M=; b=CgZ517Ghp6PUcs
-	fehv24x2tBU7feqk0FWGBQ24kQpVTv+89TvGpiIYYBA0SWOs/rrIzXcm9F7PziPx4YAfEzxe7Sy5L
-	oRNfas9qXiH8PJH5HUveCshxK4bOWCz9EuzgucPoKacFRZZ7l6YF3ZsDGWMKrsMvQ4hizMJW+xdo5
-	rVaiBxoT5OVXnwBcmOT9pnHlMzTnk0QhbaxAhXcUtcaX53OCDUmecIzlSAG/vj7kKEu4JbfS8S0sp
-	tiSWTHXDm349CzBIyvJR4vE6U94OVlazCK7gXcVCP2eimndMwDuqEC77Oppn1lVHX91g+yET6Ljf5
-	fruHxnUcrQfXTZIBjN1g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=u53+2Xy1FMK7XJv5zBHA3KMza+6MoMnYRwSQ5QB4SGI=; b=Xo4/4n1em3IY8y
+	felFK4YO96BQAeebcjtV6tSvNH/Yo624uXVoHh1CmpSyiraJYswv6DGLY7BUsvmPgIgV1gXWqg6ZJ
+	UDQV2VVFKQlosywmM4kj5r8mC0JPqFrvzIEB7miGkLJfEi17CCwx7UFNrIa9Sks7QKjoGYsj9UE6W
+	iWZD5nAqAmGn5n9iKqg00h90IINGWM1XG0VXGDZYfrm2+XHPl9JydAIPISKoJ+cB3M1bPpmPjWDmd
+	nY9rW7sh4j42j2iLUdxSd5xJ0ynxUCJeLViOqh/7RhBMjK4JqT7yeXo4X5H9B+mAEkRbSXfckWCt+
+	tbN0pHwWjXIr3hEqlAsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Oea-0003YD-QR; Wed, 04 Sep 2019 06:20:29 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ObU-0001RB-IR
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 06:17:18 +0000
-Received: by mail-pl1-x642.google.com with SMTP id y10so3176843pll.7
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 23:17:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=oal3IaO/tErsls7uIk50scCx56FqEWZJT9dcXkh2oYs=;
- b=hwQ0ejc7gawIBUqdMX1cbLVlApO4fA4Mriygvn96fnvODntwLTrFDhyto/By1coVfL
- rKsVdgKTo7+0OCayATD3gwspix/ktFDP/Ut/HGTin9J74PdE4wCQqx5wNFFQ7nrAeAZl
- cMYTk8cN20mzzMHGRVDsRphub4z4ZeDAISZO0=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=oal3IaO/tErsls7uIk50scCx56FqEWZJT9dcXkh2oYs=;
- b=gohr3mQq8tpWSHBNBaRoGiw/sJ8Gnv7xbZyHmgRKWlhhngnv0+2Bv7HB3Iahd18QwY
- ncRuGNwdsCIbuI19JdOFlwVLhj61YWrQ7NUeyoS8tRGUuouOP5rgh7eherAY9b3h2pvH
- 35HWo6+jmhS/ROQv4ET4uJfmYs9ssL2WYGTvCkrySy3HBKsZVdaQQc6zFxsV3AxFa9gE
- duKclus+D5rsEGIf4oWoRtyPjbJ7N13Lj2J8Ll1XgrGeHQN+IZm9Yx1R0NySP5o1Uyny
- ukcKk2eZKXqdiefjg/PeWFZKgqyqRSpIySKVxO7I/DZQmr58IOneTmpoJdQW3v00sLsy
- FfZw==
-X-Gm-Message-State: APjAAAWtrwH9Z9Y84sQ5PVr3YHKX4/aW57HV61VtXS5RxUUMa/pKWy+s
- 1BjkvrpnDBwczNlTYV6Ljy0dBQ==
-X-Google-Smtp-Source: APXvYqxrOY+4WKbKVfDkYMJaSzR20/rot1ZjReA7xzONnTysPAGS6CaTgjER2YlWbqyDmzQvGoq6Pw==
-X-Received: by 2002:a17:902:e407:: with SMTP id
- ci7mr39693277plb.326.1567577835907; 
- Tue, 03 Sep 2019 23:17:15 -0700 (PDT)
-Received: from pihsun-z840.tpe.corp.google.com
- ([2401:fa00:1:10:7889:7a43:f899:134c])
- by smtp.googlemail.com with ESMTPSA id r2sm27248750pfq.60.2019.09.03.23.17.13
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Sep 2019 23:17:15 -0700 (PDT)
-From: Pi-Hsun Shih <pihsun@chromium.org>
-To: 
-Subject: [PATCH v17 5/5] arm64: dts: mt8183: add scp node
-Date: Wed,  4 Sep 2019 14:16:43 +0800
-Message-Id: <20190904061649.69099-6-pihsun@chromium.org>
-X-Mailer: git-send-email 2.23.0.187.g17f5b7556c-goog
-In-Reply-To: <20190904061649.69099-1-pihsun@chromium.org>
-References: <20190904061649.69099-1-pihsun@chromium.org>
+	id 1i5Ohx-0004kt-7h; Wed, 04 Sep 2019 06:23:57 +0000
+Received: from protonic.xs4all.nl ([83.163.252.89] helo=protonic.nl)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Ohi-0004jN-Tt
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 06:23:44 +0000
+Received: from troy.prtnl (troy.prtnl [192.168.224.29])
+ by sparta (Postfix) with ESMTP id DF3DC44A0022;
+ Wed,  4 Sep 2019 08:25:30 +0200 (CEST)
+From: Robin van der Gracht <robin@protonic.nl>
+To: robin@protonic.nl
+Subject: [PATCH v3] input: keyboard: snvs_pwrkey: Send key events for i.MX6 S,
+ DL and Q
+Date: Wed,  4 Sep 2019 06:23:29 +0000
+Message-Id: <20190904062329.97520-1-robin@protonic.nl>
+X-Mailer: git-send-email 2.19.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_231716_673305_518BF3F4 
-X-CRM114-Status: GOOD (  12.17  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190903_232343_319296_BB341107 
+X-CRM114-Status: GOOD (  15.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.0 KHOP_HELO_FCRDNS       Relay HELO differs from its IP's reverse DNS
+ 0.0 T_FILL_THIS_FORM_SHORT Fill in a short form with personal
+ information
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,94 +58,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Erin Lo <erin.lo@mediatek.com>,
- open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Pi-Hsun Shih <pihsun@chromium.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Eddie Huang <eddie.huang@mediatek.com>,
- "moderated list:ARM/Mediatek SoC support"
+Cc: Adam Ford <aford173@gmail.com>, Dmitry Torokhov <dmitry.torokhov@gmail.com>,
+ Marco Felsch <m.felsch@pengutronix.de>,
+ "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
+ RobinGong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel @ lists . infradead . org"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Eddie Huang <eddie.huang@mediatek.com>
+The first generation i.MX6 processors does not send an interrupt when the
+power key is pressed. It sends a power down request interrupt if the key is
+released before a hard shutdown (5 second press). This should allow
+software to bring down the SoC safely.
 
-Add scp node to mt8183 and mt8183-evb
+For this driver to work as a regular power key with the older SoCs, we need
+to send a keypress AND release when we get the power down request irq.
 
-Signed-off-by: Erin Lo <erin.lo@mediatek.com>
-Signed-off-by: Pi-Hsun Shih <pihsun@chromium.org>
-Signed-off-by: Eddie Huang <eddie.huang@mediatek.com>
+Signed-off-by: Robin van der Gracht <robin@protonic.nl>
 ---
-Changes from v16, v15, v14:
- - No change.
 
-Changes from v13:
- - Change the size of the cfg register region.
+Changes v2 -> v3:
+ - Drop alt compatible string for identifying first revision snvs hardware,
+   read minor revision from register instead.
+ - Drop imx6qdl.dtsi modification and device-tree binding documentation.
+ - Add an additional input_sync() to create 2 seperate input reports for press
+   and release.
 
-Changes from v12, v11, v10:
- - No change.
+ drivers/input/keyboard/Kconfig       |  2 +-
+ drivers/input/keyboard/snvs_pwrkey.c | 28 ++++++++++++++++++++++++++--
+ 2 files changed, 27 insertions(+), 3 deletions(-)
 
-Changes from v9:
- - Remove extra reserve-memory-vpu_share node.
-
-Changes from v8:
- - New patch.
----
- arch/arm64/boot/dts/mediatek/mt8183-evb.dts | 11 +++++++++++
- arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 12 ++++++++++++
- 2 files changed, 23 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-index 1fb195c683c3..ddb7a7ac9655 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-+++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-@@ -24,6 +24,17 @@
- 	chosen {
- 		stdout-path = "serial0:921600n8";
- 	};
-+
-+	reserved-memory {
-+		#address-cells = <2>;
-+		#size-cells = <2>;
-+		ranges;
-+		scp_mem_reserved: scp_mem_region {
-+			compatible = "shared-dma-pool";
-+			reg = <0 0x50000000 0 0x2900000>;
-+			no-map;
-+		};
-+	};
+diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
+index 7c4f19dab34f..937e58da5ce1 100644
+--- a/drivers/input/keyboard/Kconfig
++++ b/drivers/input/keyboard/Kconfig
+@@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
+ 	depends on OF
+ 	help
+ 	  This is the snvs powerkey driver for the Freescale i.MX application
+-	  processors that are newer than i.MX6 SX.
++	  processors.
+ 
+ 	  To compile this driver as a module, choose M here; the
+ 	  module will be called snvs_pwrkey.
+diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
+index 5342d8d45f81..828580eee0d2 100644
+--- a/drivers/input/keyboard/snvs_pwrkey.c
++++ b/drivers/input/keyboard/snvs_pwrkey.c
+@@ -19,6 +19,7 @@
+ #include <linux/mfd/syscon.h>
+ #include <linux/regmap.h>
+ 
++#define SNVS_HPVIDR1_REG 0xF8
+ #define SNVS_LPSR_REG	0x4C	/* LP Status Register */
+ #define SNVS_LPCR_REG	0x38	/* LP Control Register */
+ #define SNVS_HPSR_REG	0x14
+@@ -37,6 +38,7 @@ struct pwrkey_drv_data {
+ 	int wakeup;
+ 	struct timer_list check_timer;
+ 	struct input_dev *input;
++	u8 minor_rev;
  };
  
- &auxadc {
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 97f84aa9fc6e..3dd1b76bbaf5 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -269,6 +269,18 @@
- 			clock-names = "spi", "wrap";
- 		};
+ static void imx_imx_snvs_check_for_events(struct timer_list *t)
+@@ -45,6 +47,20 @@ static void imx_imx_snvs_check_for_events(struct timer_list *t)
+ 	struct input_dev *input = pdata->input;
+ 	u32 state;
  
-+		scp: scp@10500000 {
-+			compatible = "mediatek,mt8183-scp";
-+			reg = <0 0x10500000 0 0x80000>,
-+			      <0 0x105c0000 0 0x19080>;
-+			reg-names = "sram", "cfg";
-+			interrupts = <GIC_SPI 174 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&infracfg CLK_INFRA_SCPSYS>;
-+			clock-names = "main";
-+			memory-region = <&scp_mem_reserved>;
-+			status = "disabled";
-+		};
++	if (pdata->minor_rev == 0) {
++		/*
++		 * The first generation i.MX6 SoCs only sends an interrupt on
++		 * button release. To mimic power-key usage, we'll prepend a
++		 * press event.
++		 */
++		input_report_key(input, pdata->keycode, 1);
++		input_sync(input);
++		input_report_key(input, pdata->keycode, 0);
++		input_sync(input);
++		pm_relax(input->dev.parent);
++		return;
++	}
 +
- 		auxadc: auxadc@11001000 {
- 			compatible = "mediatek,mt8183-auxadc",
- 				     "mediatek,mt8173-auxadc";
+ 	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
+ 	state = state & SNVS_HPSR_BTN ? 1 : 0;
+ 
+@@ -67,13 +83,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
+ {
+ 	struct platform_device *pdev = dev_id;
+ 	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
++	unsigned long expire = jiffies;
+ 	u32 lp_status;
+ 
+ 	pm_wakeup_event(pdata->input->dev.parent, 0);
+ 
+ 	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
+-	if (lp_status & SNVS_LPSR_SPO)
+-		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
++	if (lp_status & SNVS_LPSR_SPO) {
++		if (pdata->minor_rev > 0)
++			expire = jiffies + msecs_to_jiffies(DEBOUNCE_TIME);
++		mod_timer(&pdata->check_timer, expire);
++	}
+ 
+ 	/* clear SPO status */
+ 	regmap_write(pdata->snvs, SNVS_LPSR_REG, SNVS_LPSR_SPO);
+@@ -94,6 +114,7 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 	struct input_dev *input = NULL;
+ 	struct device_node *np;
+ 	int error;
++	u32 vid;
+ 
+ 	/* Get SNVS register Page */
+ 	np = pdev->dev.of_node;
+@@ -123,6 +144,9 @@ static int imx_snvs_pwrkey_probe(struct platform_device *pdev)
+ 		return -EINVAL;
+ 	}
+ 
++	regmap_read(pdata->snvs, SNVS_HPVIDR1_REG, &vid);
++	pdata->minor_rev = vid & 0xff;
++
+ 	regmap_update_bits(pdata->snvs, SNVS_LPCR_REG, SNVS_LPCR_DEP_EN, SNVS_LPCR_DEP_EN);
+ 
+ 	/* clear the unexpected interrupt before driver ready */
 -- 
-2.23.0.187.g17f5b7556c-goog
+2.20.1
 
 
 _______________________________________________
