@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C7D35A8717
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:50:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8275A8718
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:51:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=5HsN/y6O1rPJ1EQmSkRoREmQPKZIQnRRkvcvmQ10Ajk=; b=FHPc7fPTZ8O6aBLID09AZXC6V5
-	KMZoDrE6l9ajm0cDRA06hf6SExpPYVLdNUP60k0OzBXbZ49fp1Stone1Wk2KRF0yQbncRB/MgIK4F
-	hqyzyepWx23wmXwBw54nPCIJVh/dd2UAe+YCYQfVhkhq1Op+x9iwLm8Ei7imVkBipn1/CdnFSUAoL
-	W9pAZ0DsQ6ukDqB7vjMWKkVHL7CUgzpkQ/IR7C6g1OPDDFGrRyj7ZvxJevJc+keFvmuDdYH/YMjMk
-	RjxYlnUzquhvP7LFrEMsJM1z8arpGgdT5K4ze+Hk8tYsrgwlcH9xntr/sruhOuwUY/4smH44IonW5
-	UapRCGOQ==;
+	bh=Lklcrdo3TzMUlQxQ32Isd3rlhkgMfYJUESZ6jzVK7ys=; b=ISHlI+OOq8Smq27/MYhlP71GOc
+	m+IPjYh6u0rVzLt4RtxxQOLi+DS6L9h3gBSpM1FXf6N3D9b/zsP+hnVbUVoSqRk3NaiEZL1x/Azwz
+	tUurpe381FlMnD4GoiDAT0r4cvz4YG1sa1Ekzm1vaScHEo/wqXt4i1QqQoFVNxx3b++XO6QcyclXU
+	u0PnjK2RZhIhQLIVmtD+qQh+cKZTJFMg4n/CL/njoB6T0+pcUzWelcAYyjuzi0qc1mcFXtXo2ptce
+	j0WkVy4nFDQiRv+f9R2Z/g9bysq9bHLc6w4s9Ob8BdWLbx0FAUfKWSaJTTubPA1rXw3vazML4sDlh
+	Qu2U4uQw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ZQh-00081y-Ts; Wed, 04 Sep 2019 17:50:52 +0000
+	id 1i5ZQx-0008FX-0W; Wed, 04 Sep 2019 17:51:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ZQE-0007k1-9N
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:50:23 +0000
+ id 1i5ZQH-0007ni-Pv
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:50:27 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B9D8721883;
- Wed,  4 Sep 2019 17:50:19 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 5248822CF5;
+ Wed,  4 Sep 2019 17:50:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567619422;
- bh=atbT7s4nkjvbhxmdwbnCIhN5SlzuKsVKwEKH1bulJRo=;
+ s=default; t=1567619425;
+ bh=vYxoB/up+rjfB1ERqXN7TXj5LMSimQQfJSk7f9YeKgg=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=AMTjTbKg++CGOzBWaUsr+7ZgA19CfHgJhUMl7nX8mIwAk5hoe6Pv8hNC8W2CuF5GW
- 3X8dARXLh8lqllvJ4f+2t8exl8vAJoQhhCDgegGzxTmoXHih2zgJ3e3eKha98H+CFe
- IbFPJO6UPY7sfG97oBHOrNaglLdCPwICV5dDNVyc=
+ b=AmMnqNJ44eVCJ8zYAD1pddQms4p5U9Yvd8CXPjhaUl+ck9U2ztm/PAie1i/ZJYgyH
+ LZczOToKCN3Bf4mU114eCYrczmtNntDFaMRBDTKPTN1xnjg3NGtRw6LcNRXZT2xL6Q
+ +gLIEsHpKFsZvvABSa0tmM9q1Vev1oiqcCK26XPY=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL 2/5] soc: samsung: Second pull for v5.4
-Date: Wed,  4 Sep 2019 19:49:59 +0200
-Message-Id: <20190904175002.10487-3-krzk@kernel.org>
+Subject: [GIT PULL 3/5] ARM: dts: exynos: Second pull for v5.4
+Date: Wed,  4 Sep 2019 19:50:00 +0200
+Message-Id: <20190904175002.10487-4-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190904175002.10487-1-krzk@kernel.org>
 References: <20190904175002.10487-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_105022_491579_F3E8AF70 
-X-CRM114-Status: GOOD (  11.00  )
+X-CRM114-CacheID: sfid-20190904_105026_037408_D5076D1F 
+X-CRM114-Status: GOOD (  13.10  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,34 +93,45 @@ Best regards,
 Krzysztof
 
 
-The following changes since commit 40d8aff614f71ab3cab20785b4f213e3802d4e87:
+The following changes since commit bfb77169306d5d560a8b62eebaf6d69d02e8d152:
 
-  soc: samsung: chipid: Convert exynos-chipid driver to use the regmap API (2019-08-15 20:25:25 +0200)
+  ARM: dts: exynos: Add CAM power domain to Exynos5422/5800 (2019-08-12 19:02:59 +0200)
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.4-2
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt-5.4-2
 
-for you to fetch changes up to 28578825ede61834a2c46e7f9a89012c4c7a667f:
+for you to fetch changes up to 51c88919e52873c83f8be0c8f5d0ffd654f1ef4a:
 
-  soc: samsung: chipid: Select missing dependency for EXYNOS_CHIPID (2019-08-22 20:16:20 +0200)
-
-----------------------------------------------------------------
-Samsung soc drivers changes for v5.4, part 2
-
-Fixes and cleanups for recently introduced Exynos chipid driver.
+  ARM: dts: exynos: Enable GPU/Mali T604 on Arndale board (2019-09-04 19:25:33 +0200)
 
 ----------------------------------------------------------------
-Colin Ian King (1):
-      soc: samsung: chipid: Fix memory leak in error path
+Samsung DTS ARM changes for v5.4, part 2
 
-Sylwester Nawrocki (2):
-      soc: samsung: chipid: Remove the regmap lookup error log
-      soc: samsung: chipid: Select missing dependency for EXYNOS_CHIPID
+1. Fix Exynos542x Chromebooks boot with multi_v7 defconfig,
+2. Add GPU (Mali) support to Exynos5250 boards,
+3. Minor cleanup for Exynos3250 ADC.
 
- drivers/soc/samsung/Kconfig         |  1 +
- drivers/soc/samsung/exynos-chipid.c | 18 +++++++++++-------
- 2 files changed, 12 insertions(+), 7 deletions(-)
+----------------------------------------------------------------
+Guillaume Gardet (4):
+      ARM: dts: exynos: Fix min/max buck4 for GPU on Arndale board
+      ARM: dts: exynos: Add GPU/Mali T604 node to Exynos5250
+      ARM: dts: exynos: Enable GPU/Mali T604 on Chromebook Snow
+      ARM: dts: exynos: Enable GPU/Mali T604 on Arndale board
+
+Krzysztof Kozlowski (1):
+      ARM: dts: exynos: Remove not accurate secondary ADC compatible
+
+Marek Szyprowski (1):
+      ARM: dts: exynos: Mark LDO10 as always-on on Peach Pit/Pi Chromebooks
+
+ arch/arm/boot/dts/exynos3250.dtsi             |  3 +-
+ arch/arm/boot/dts/exynos5250-arndale.dts      |  9 +++--
+ arch/arm/boot/dts/exynos5250-snow-common.dtsi |  5 +++
+ arch/arm/boot/dts/exynos5250.dtsi             | 47 +++++++++++++++++++++++++++
+ arch/arm/boot/dts/exynos5420-peach-pit.dts    |  1 +
+ arch/arm/boot/dts/exynos5800-peach-pi.dts     |  1 +
+ 6 files changed, 62 insertions(+), 4 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
