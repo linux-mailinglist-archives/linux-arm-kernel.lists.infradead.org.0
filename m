@@ -2,74 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EBABA7C79
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:16:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C8A13A7C64
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:14:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IblZLw843u1yDvyE1gTffUu46tr4BIFkmxkupaJPZpE=; b=s4rlwza/by6ZYN
-	IgGdFTjL90nXs79nQ/0pPf6bO/Usrg41TEfZcZw0Wq31qlrrVg3wPLVAL8I6V/GFKTxrSWcIhKHtI
-	J7Iw4ZC0ceCduCjKnKBhLm/I3b48VfJVjH4MKdk+QtE1s0X6FI+OSYSwTs2y3BNThCBzM8vq+rPHf
-	VtfAWhH+TyeeDrzKysJ/PYEtS0f1Cr5rtcF+RNX9SZXaiajTtXyaU0x9L1lbyBm5WBPQfQ5LUTcPQ
-	FB8LEOOgzZIUjc33iZAazJHvS/MhXQX/HoXPkc9SbpAsyYNdVbjM0QJcxhAW1nR5MJM7BKsg4EWQk
-	//hYHslha4Jli0N+/i8A==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Wvm1As4jldcyXC5qJacSpFvGVneH6CU1m8E1cbItlTk=; b=DuA
+	F94Yq7oM9ll8CWx+uYOh+gGVLgWZKKkeE8+0lGlmHq7xgw0ffEG/MqEmR9wI82uXzrjutKqwy7xNg
+	wBgOK3JOqqkTeXbuqGvdX1+c9teTxINndKCJPgaqBjeSq3CfmlyOiSKbd/nTMH3xBYb4NwtkvxqBt
+	6FWr1ePprqh/0IxTl+S2kyqdizsqAE96q8OPTod1hHmdwJi1dCckpqGNf59Uy0QlRfZ/NGvVJAs+v
+	b/E2a+1rTOa9UO66e0NOeutKDYdhFAiPI0dyehqjERJfdyjmm8LAfVZVf+U0ltOtsOfujxRTP9VCI
+	XeOXlHKrXPvaCc+Bp6c2R55fjZjMGnQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5PWY-0007ue-4R; Wed, 04 Sep 2019 07:16:14 +0000
-Received: from mail-oi1-f169.google.com ([209.85.167.169])
+	id 1i5PUq-0006RQ-HC; Wed, 04 Sep 2019 07:14:28 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5PWJ-0007uG-2R
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 07:16:00 +0000
-Received: by mail-oi1-f169.google.com with SMTP id 7so6863462oip.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 00:15:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Fgv5ucks9JqJeucfLpT12cl9J45/7/nkr6LLzr2izWk=;
- b=DIX2fHraLH5l27KX+ucS71yh2O0BvfE+ZJYGECTZl52HHbmWNmvsfvimIrlauDl0Y1
- mbUAHjBThQscaGAGWH2nDFiJzwnFTSElhuR2g6bnsc6pL4Y4AjAAwaB/x7LwXne4gx1O
- vV//FWfvNsFZmDORl0sHodNJoigRU7nCBWVLZsC2haxG57qtMPjs0V0godbPIaUpZukX
- WHGXjCmbgsOF8mZksZrAcxfXEIkHMHVE8EqT19LcxY2W7f+JauN+BNJ17SqZKFhAh3UW
- KzQDMnsfHsr4lvyjw06tNqM8Ah+GVJTwJppDMXhp/rAyHJHqJOlPx4MQ0C0xBRAecx6D
- 9rDg==
-X-Gm-Message-State: APjAAAXzrZUMGrCy5Lt3Gp32pgVpCcOM3PrNHQYIGZjBYOmGjX7zYMcm
- 5iAOEg+SRVHIfuqHrCOF1CIlO6YkpW+0yIalP4Q=
-X-Google-Smtp-Source: APXvYqxLc2EhXZhftPgeRfLRRdjdPCuNGx4NeDTs9OkB/LUjEafw3ZWncRNiAh1GjPJ+06Dm2UCrr3biTsphV5tO4vs=
-X-Received: by 2002:aca:cdc7:: with SMTP id d190mr451591oig.148.1567581358045; 
- Wed, 04 Sep 2019 00:15:58 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190823123643.18799-1-geert+renesas@glider.be>
- <20190823123643.18799-3-geert+renesas@glider.be>
- <CAK8P3a11EfOXfwZ5Xx3vYJwfBGPh=yX73f_=3u7Zmm+hJF6HVg@mail.gmail.com>
-In-Reply-To: <CAK8P3a11EfOXfwZ5Xx3vYJwfBGPh=yX73f_=3u7Zmm+hJF6HVg@mail.gmail.com>
-From: Geert Uytterhoeven <geert@linux-m68k.org>
-Date: Wed, 4 Sep 2019 09:15:46 +0200
-Message-ID: <CAMuHMdVaw8KGgxbahwyHv+-PabQSrktjEyrTL1xP4SGgLTdaHA@mail.gmail.com>
-Subject: Re: [PULL 2/5] Renesas ARM SoC updates for v5.4
-To: Arnd Bergmann <arnd@arndb.de>
+ id 1i5PUa-0006QV-Dk
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 07:14:13 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 85BFE1A0063;
+ Wed,  4 Sep 2019 09:14:10 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EC30A1A0194;
+ Wed,  4 Sep 2019 09:14:05 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 09A5540296;
+ Wed,  4 Sep 2019 15:13:59 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: shawnguo@kernel.org, s.hauer@pengutronix.de, kernel@pengutronix.de,
+ festevam@gmail.com, daniel.baluta@nxp.com, aisheng.dong@nxp.com,
+ abel.vesa@nxp.com, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH] soc: imx: imx-scu: Getting UID from SCU should have response
+Date: Wed,  4 Sep 2019 15:13:14 -0400
+Message-Id: <1567624394-25023-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_001559_111642_66800D4A 
-X-CRM114-Status: GOOD (  12.09  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190904_001412_611844_F9B5D8C2 
+X-CRM114-Status: UNSURE (   8.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.169 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (geert.uytterhoeven[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -81,57 +69,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: arm-soc <arm@kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- Linux-Renesas <linux-renesas-soc@vger.kernel.org>, arm-soc <soc@kernel.org>,
- Simon Horman <horms@verge.net.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+The SCU firmware API for getting UID should have response,
+otherwise, the message stored in function stack could be
+released and then the response data received from SCU will be
+stored into that released stack and cause kernel NULL pointer
+dump.
 
-On Tue, Sep 3, 2019 at 11:15 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> On Fri, Aug 23, 2019 at 2:36 PM Geert Uytterhoeven
-> <geert+renesas@glider.be> wrote:
-> > Renesas ARM SoC updates for v5.4
-> >
-> >   - Low-level debugging support for RZ/A2M.
-> >
->
-> Pulled into arm/soc, thanks!
->
-> This should be the last of your pull requests for the moment. Can you check that
-> everything is there once it hits linux-next (probably Wednesday, I may have just
-> missed today).
+Fixes: 73feb4d0f8f1 ("soc: imx-scu: Add SoC UID(unique identifier) support")
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ drivers/soc/imx/soc-imx-scu.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-$ for i in $(git tag | grep renesas-.*-for-v5.4); do echo --- $i ---;
-git cherry -v arm-soc/for-next $i; done
---- renesas-arm-dt-for-v5.4-tag1 ---
---- renesas-arm-soc-for-v5.4-tag1 ---
---- renesas-arm64-dt-for-v5.4-tag1 ---
---- renesas-arm64-dt-for-v5.4-tag2 ---
---- renesas-drivers-for-v5.4-tag1 ---
---- renesas-drivers-for-v5.4-tag2 ---
---- renesas-dt-bindings-for-v5.4-tag1 ---
---- renesas-dt-bindings-for-v5.4-tag2 ---
-
-Yep, all included.
-
-Thanks a lot!
-
-Gr{oetje,eeting}s,
-
-                        Geert
-
+diff --git a/drivers/soc/imx/soc-imx-scu.c b/drivers/soc/imx/soc-imx-scu.c
+index 50831eb..c68882e 100644
+--- a/drivers/soc/imx/soc-imx-scu.c
++++ b/drivers/soc/imx/soc-imx-scu.c
+@@ -46,7 +46,7 @@ static ssize_t soc_uid_show(struct device *dev,
+ 	hdr->func = IMX_SC_MISC_FUNC_UNIQUE_ID;
+ 	hdr->size = 1;
+ 
+-	ret = imx_scu_call_rpc(soc_ipc_handle, &msg, false);
++	ret = imx_scu_call_rpc(soc_ipc_handle, &msg, true);
+ 	if (ret) {
+ 		pr_err("%s: get soc uid failed, ret %d\n", __func__, ret);
+ 		return ret;
 -- 
-Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+2.7.4
 
-In personal conversations with technical people, I call myself a hacker. But
-when I'm talking to journalists I just say "programmer" or something like that.
-                                -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
