@@ -2,70 +2,99 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B6286A968A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 00:31:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E276A96A7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 00:44:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-ID:Date:Content-ID:MIME-Version
-	:Subject:To:References:In-Reply-To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fiABQQUPhTGGJtNdm5mmSP++m9G9MyBnDbwGnFQai2Y=; b=Ts2Lai1Ill2ff8
-	rC2LKYBEAyTFrfqJRCPE9ZjUTwxabdocGdeX+3X1r+uCzgqVHuALrtDmTdWZEDbRM27whzfIXhiUh
-	oOCXD/MPYwMAfJa9g9HeJ/gzI5LhrVFQZf781Ld4g83YoA0tTQ06rHb3S9HBSw0SJxRETP0d6G8RX
-	fUkoExW34rOr0WlSPMJC60PDSg0zmFyv42JqGtHfRx0FSxpmamP9up6XAajpIbnfpBQQt57ul9S3x
-	EkPkBhLael0pYbufWMjTA4MfXDDOsFV2LpKNO/CgKDZncpTXk2niXAnR7gc2YjBmMBZY0fIaI1ire
-	CKagO2WUU1IQmuZmMJqg==;
+	List-Owner; bh=v60onuL/nliiwL//xlVpBJpz+H6wBlhaV/VDULMlyrw=; b=WJBtzd795Pn5+Z
+	QSXdVvJ7CulcduWdlHLoxe1JRefs0sWQ14ULvmY3rfJpFTsnTaF4dVNzNqaKMxMbkLXF5nuP2Jxwd
+	sssK82okUeLzEx1FU18LOYxDrCYexuE/xKwrad90HvfPGa629lSBj4AUCx3ldddXx6Pktm/42SG2q
+	ebrf+hR+JnFOmOpTzZMSDA2ZQI1I84gA2wJL6D6NlDtafzsrtq2M6R6VZ7xBqee+K3tl5HXzXTvuo
+	/F8947iwP8thK8Ql1OFYT/HB304rYE7ZH4aOLUYxdJs2aT2nTIezIf256oXVIPqk1aLZxBIQfMRPw
+	cJ06xXHxNwYAc4ml3MeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5doT-0001rf-62; Wed, 04 Sep 2019 22:31:41 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i5e0x-00059t-Vs; Wed, 04 Sep 2019 22:44:36 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5doJ-0001qI-64
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 22:31:32 +0000
-Received: from smtp.corp.redhat.com (int-mx07.intmail.prod.int.phx2.redhat.com
- [10.5.11.22])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 7774A10277E2;
- Wed,  4 Sep 2019 22:31:27 +0000 (UTC)
-Received: from warthog.procyon.org.uk (ovpn-120-255.rdu2.redhat.com
- [10.10.120.255])
- by smtp.corp.redhat.com (Postfix) with ESMTP id 2332A1001956;
- Wed,  4 Sep 2019 22:31:16 +0000 (UTC)
-Organization: Red Hat UK Ltd. Registered Address: Red Hat UK Ltd, Amberley
- Place, 107-111 Peascod Street, Windsor, Berkshire, SI4 1TE, United
- Kingdom.
- Registered in England and Wales under Company Registration No. 3798903
-From: David Howells <dhowells@redhat.com>
-In-Reply-To: <CAHk-=wgcJq21Hydh7Tx5-o8empoPp7ULDBw0Am-du_Pa+fcftQ@mail.gmail.com>
-References: <CAHk-=wgcJq21Hydh7Tx5-o8empoPp7ULDBw0Am-du_Pa+fcftQ@mail.gmail.com>
- <20190904201933.10736-1-cyphar@cyphar.com>
+ id 1i5e0q-00059a-5J
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 22:44:29 +0000
+Received: by mail-lj1-x243.google.com with SMTP id u14so314024ljj.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 15:44:27 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=linux-foundation.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=KFDhCyHzhyiLnyceYcteUHqOXGgh38Kg6TIOg9RDlV8=;
+ b=GnnwuO2FC8JvRpMBdQIyMOw63KWp0i8RWU7BAf9vhwmdfauk+kGPRrhGsnlnlPAmBt
+ Cx6hzCIVK4L+kzxznEGXiVTPGueSaoLKTwELcbVCO2oVI6bZuWttjzsqT9tZPNkgY/TA
+ 7QyH0CjS5KTQcx4hIjs9o8ztIuxjlBT486QSI=
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KFDhCyHzhyiLnyceYcteUHqOXGgh38Kg6TIOg9RDlV8=;
+ b=gN2Ykzifo/zHvdfzXwyjfvQ+pm2JQxRC6QViU6HPKRzgtf4kbdHycT4I0vY/djDvYj
+ LycazXDJKNSPuHCq2yShkVpKkrE4vrym0THAHQfropVf3n3vKriAZh8cpOa0R2Tkr722
+ s3+x9yZY3oDYq9IqmrWuXIQS2IdeB+SPODnTGvrNIExYDfOcKht9Wiq3rL8PW2OlwscA
+ eT5+JE9JcReEVXZhR68HJFE5RMx5g/akXPMkRz5hzcrINivSMbZQUDJuF62YPhtSfUYE
+ EKCkbGZt9lEj6y9egGUejElDNvvlKocb9iIDRKrscPzPjsqI6WbFkc2t6RugwLacWydO
+ GMHg==
+X-Gm-Message-State: APjAAAVqLN5vkokxgGWdWkCYKkp9/Kl9acJaP+7jbsPPm53qdLgRzuSU
+ zXqMVVd4dRqmHxiZ0ABu3kcTbeQaymQ=
+X-Google-Smtp-Source: APXvYqySq7GHqLgYqTePZcn3zFg6ewq33He+9zG6bkWECZ8kxSRU6+Re1+2Pjsc5RvzC3UzfDtHI2Q==
+X-Received: by 2002:a2e:50b:: with SMTP id 11mr21525ljf.11.1567637066373;
+ Wed, 04 Sep 2019 15:44:26 -0700 (PDT)
+Received: from mail-lj1-f178.google.com (mail-lj1-f178.google.com.
+ [209.85.208.178])
+ by smtp.gmail.com with ESMTPSA id e29sm22724ljb.105.2019.09.04.15.44.25
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Wed, 04 Sep 2019 15:44:26 -0700 (PDT)
+Received: by mail-lj1-f178.google.com with SMTP id e17so302560ljf.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 15:44:25 -0700 (PDT)
+X-Received: by 2002:a2e:814d:: with SMTP id t13mr24885ljg.72.1567636715921;
+ Wed, 04 Sep 2019 15:38:35 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190904201933.10736-1-cyphar@cyphar.com>
  <20190904201933.10736-11-cyphar@cyphar.com>
  <CAHk-=wiod1rQMU+6Zew=cLE8uX4tUdf42bM5eKngMnNVS2My7g@mail.gmail.com>
  <20190904214856.vnvom7h5xontvngq@yavin.dot.cyphar.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
+ <CAHk-=wgcJq21Hydh7Tx5-o8empoPp7ULDBw0Am-du_Pa+fcftQ@mail.gmail.com>
+ <20592.1567636276@warthog.procyon.org.uk>
+In-Reply-To: <20592.1567636276@warthog.procyon.org.uk>
+From: Linus Torvalds <torvalds@linux-foundation.org>
+Date: Wed, 4 Sep 2019 15:38:20 -0700
+X-Gmail-Original-Message-ID: <CAHk-=wg7Wq1kj8kZ+SSpfU_o991woW60NWca9yBA2ccs2eNx8Q@mail.gmail.com>
+Message-ID: <CAHk-=wg7Wq1kj8kZ+SSpfU_o991woW60NWca9yBA2ccs2eNx8Q@mail.gmail.com>
 Subject: Re: [PATCH v12 10/12] namei: aggressively check for nd->root escape
  on ".." resolution
-MIME-Version: 1.0
-Content-ID: <20591.1567636276.1@warthog.procyon.org.uk>
-Date: Wed, 04 Sep 2019 23:31:16 +0100
-Message-ID: <20592.1567636276@warthog.procyon.org.uk>
-X-Scanned-By: MIMEDefang 2.84 on 10.5.11.22
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.66]); Wed, 04 Sep 2019 22:31:28 +0000 (UTC)
+To: David Howells <dhowells@redhat.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_153131_262754_09685DD9 
-X-CRM114-Status: GOOD (  13.50  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190904_154428_206138_C2982F9C 
+X-CRM114-Status: GOOD (  11.57  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,7 +111,7 @@ Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
  Rasmus Villemoes <linux@rasmusvillemoes.dk>,
  Alexei Starovoitov <ast@kernel.org>,
  Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
+ "J. Bruce Fields" <bfields@fieldses.org>,
  "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
  sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
  linux-arch <linux-arch@vger.kernel.org>,
@@ -96,8 +125,7 @@ Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
  Aleksa Sarai <cyphar@cyphar.com>, Al Viro <viro@zeniv.linux.org.uk>,
  Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
  Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
- Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ Christian Brauner <christian@brauner.io>, linux-parisc@vger.kernel.org,
  linux-m68k <linux-m68k@lists.linux-m68k.org>,
  Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
  Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
@@ -110,21 +138,21 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Linus Torvalds <torvalds@linux-foundation.org> wrote:
+On Wed, Sep 4, 2019 at 3:31 PM David Howells <dhowells@redhat.com> wrote:
+>
+> It ought to be reasonably easy to make them per-sb at least, I think.  We
+> don't allow cross-super rename, right?
 
-> > Hinting to userspace to do a retry (with -EAGAIN as you mention in your
-> > other mail) wouldn't be a bad thing at all, though you'd almost
-> > certainly get quite a few spurious -EAGAINs -- &{mount,rename}_lock are
-> > global for the entire machine, after all.
-> 
-> I'd hope that we have some future (possibly very long-term)
-> alternative that is not quite system-global, but yes, right now they
-> are.
+Right now the sequence count handling very much depends on it being a
+global entity on the reader side, at least.
 
-It ought to be reasonably easy to make them per-sb at least, I think.  We
-don't allow cross-super rename, right?
+And while the rename sequence count could (and probably should) be
+per-sb, the same is very much not true of the mount one.
 
-David
+So the rename seqcount is likely easier to fix than the mount one, but
+neither of them are entirely trivial, afaik.
+
+               Linus
 
 _______________________________________________
 linux-arm-kernel mailing list
