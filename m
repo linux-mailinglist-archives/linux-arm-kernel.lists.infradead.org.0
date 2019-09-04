@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 13CB6A7F4F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:26:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3E0EFA7F58
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:28:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5Ge6J+f4K2y1ahdyd1POyjECTpr9v+/q68uzq3jTLXQ=; b=pTDUIt8y2tcB1E
-	pt3/p2wO2kvCxeT+1cLHuh5zAFftFePhymOmex24IUE8bDGowXsM7B1rBOsIaPNB8oX/TRzFjSjf6
-	AVjkh00ItCsW05Ke1ij+p8uTaC0qqaD58Cu4cZZMSgxW4/hWJqv4/7GJtjQbBu0ERzxinwhCIkZU6
-	bqmnIvIPyFiCcTP40O2hlPGud0v+xGMqglXsBIrK3ue7vO3AWxaziKNvPyZujSgBnV0j7tYl4dnv6
-	Jr2iGkSyXYndWYKq6v7lhJaNbmFtWDYzIOUsvkdkDxkk+/ImThayBuzRuKlszGtX8jHZhwirhNOz4
-	xYoj/S3l+IOcRiurQafw==;
+	List-Owner; bh=biGMc/abyuQGGttDgLFblUET44WvMK6kurONFWXbDkI=; b=SnS4eNH50MWATQ
+	8niQ70Qs4B3KyS5yq834YpOjtsjp9NXo0wDAI/4LXwf9OMeXrwJ6Vv8WO+uEKnCV2tCj0od1pb1sQ
+	HY3v81POjHZ3j8zHfRJ1nAxU0hnfwzWHkEGF3Yt4sIzf5hZ3DpLNyGp49faJHSFyAK6j6JondLtm9
+	fojOv+HgEABgLJTDRzoN71iTxm5ub0aRipiW115k1U7N/hQhg+kZGIxgbjE2jrIFalShqEwfpiLdO
+	p5xSZV7Nrfo67yt0ccez3WOjPmNxbiRe3wF2VplZcWHpRWYm0tjsUP+M9RPzx2Jj+e5w7rx7KvyLK
+	AzMBQrl/+Dogkc1tOJHQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5RYx-0003wb-IX; Wed, 04 Sep 2019 09:26:51 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i5Raj-0004X7-GU; Wed, 04 Sep 2019 09:28:41 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5RYj-0003vI-9N; Wed, 04 Sep 2019 09:26:38 +0000
-X-UUID: c151945e2c45482ebc99748edcf82e4c-20190904
-X-UUID: c151945e2c45482ebc99748edcf82e4c-20190904
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 45059580; Wed, 04 Sep 2019 01:26:31 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 02:26:29 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 17:26:28 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Sep 2019 17:26:27 +0800
-Message-ID: <1567589188.22453.24.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 4 Sep 2019 17:26:28 +0800
-In-Reply-To: <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
- <20190802082815.GA203993@chromium.org>
- <1566724680.20680.8.camel@mtksdccf07>
- <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
- <1566957625.20680.33.camel@mtksdccf07>
- <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
- <1567424859.18318.32.camel@mtksdccf07>
- <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
- <1567493081.18318.49.camel@mtksdccf07>
- <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
- <1567511169.18318.65.camel@mtksdccf07>
- <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
- <1567568281.18318.80.camel@mtksdccf07>
- <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
- <1567577389.18318.100.camel@mtksdccf07>
- <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
- <1567584577.22453.11.camel@mtksdccf07>
- <CAAFQd5Dzxy10g-MKHMnNbVO6kp9_L_jm1m+gtN+p=YF2LyBiag@mail.gmail.com>
- <1567587708.22453.15.camel@mtksdccf07>
- <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1i5RaS-0004W0-Qs; Wed, 04 Sep 2019 09:28:26 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=XKThuSbZFfZ7pl95l1VPO0wQKRiG+nLbFF9OeGTjtYM=; b=Om8Lq5NKTbiEdTpux26a7qCk5
+ dZ5tJGlG6PK6Luh2tvZO7cMaOJLPmYev9eKKaC+piAWTYRoP3tQBsAX1v0z0Rmmf6HCqVQAkuV80k
+ f9MovrDB/BdqRql6wDTRmwUw4C0xwquaK5wQ98nhINmsPydabgyv424kYP72LLxUYR/NFlWMA+5VY
+ p9ygB+RVjjh9ozvrDrk/c83hko1T+Krs2RxUAUfeFFukYaxNLm/NHyAnrKbfhgsLJkyFZ4pfG+ZxA
+ EzXEF67V3Av318bsLe0fW/7CVPA0qtAMOVbSUl4lU4N80WT/8hmoVpi0tao6OabLx64hmsNOLxnj7
+ cqhKedPvQ==;
+Received: from shell.armlinux.org.uk
+ ([fd8f:7570:feb6:1:5054:ff:fe00:4ec]:39512)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i5RZb-0003Yi-2F; Wed, 04 Sep 2019 10:27:31 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i5RZP-0004Q3-GU; Wed, 04 Sep 2019 10:27:19 +0100
+Date: Wed, 4 Sep 2019 10:27:19 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Cheng-yi Chiang <cychiang@chromium.org>
+Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+Message-ID: <20190904092719.GJ13294@shell.armlinux.org.uk>
+References: <20190903055103.134764-1-cychiang@chromium.org>
+ <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+ <CAFv8NwKHZM+zTu7GF_J0Xk6hubA2JK4cCsdhsDPOGk=3rnbCZw@mail.gmail.com>
 MIME-Version: 1.0
-X-MTK: N
+Content-Disposition: inline
+In-Reply-To: <CAFv8NwKHZM+zTu7GF_J0Xk6hubA2JK4cCsdhsDPOGk=3rnbCZw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_022637_332512_13E7E98E 
-X-CRM114-Status: GOOD (  19.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_022824_869173_EE4D374A 
+X-CRM114-Status: GOOD (  24.85  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,168 +88,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
- <po-yang.huang@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
- "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, kuninori.morimoto.gx@renesas.com,
+ Neil Armstrong <narmstrong@baylibre.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com,
+ Andrzej Hajda <a.hajda@samsung.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Yakir Yang <ykk@rock-chips.com>, sam@ravnborg.org,
+ Xing Zheng <zhengxing@rock-chips.com>, linux-rockchip@lists.infradead.org,
+ Dylan Reid <dgreid@chromium.org>, tzungbi@chromium.org,
+ Jeffy Chen <jeffy.chen@rock-chips.com>,
+ =?utf-8?B?6JSh5p6r?= <eddie.cai@rock-chips.com>,
+ linux-arm-kernel@lists.infradead.org, Doug Anderson <dianders@chromium.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>, Daniel Vetter <daniel@ffwll.ch>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>, kuankuan.y@gmail.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
-
-On Wed, 2019-09-04 at 17:03 +0800, Tomasz Figa wrote:
-> On Wed, Sep 4, 2019 at 6:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Wed, 2019-09-04 at 16:25 +0800, Tomasz Figa wrote:
-> > > On Wed, Sep 4, 2019 at 5:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > >
-> > > > Hi Tomasz,
-> > > >
-> > > > On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
-> > > > > On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > >
-> > > > > > Hi Tomasz,
-> > > > > >
-> > > > > > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
-> > > > > > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
-> > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > >
-> > > > > > > > Hi Tomasz,
-> > > > > > > >
-> > > > > > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
-> > > > > > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > >
-> > > > > > > > > > Hi Tomasz,
-> > > > > > > > > >
-> > > > > > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > >
-> > > > > > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
-> > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
-> > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
-[snip]
-> > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > > > {
-> > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > >         struct vb2_v4l2_buffer *vb;
-> > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-> > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
-> > > >         u32 ret;
-> > > >
-> > > >         if (!fd->fd_irq_done.done)
-> > >
-> > > We shouldn't access internal fields of completion.
-> > >
-> > > >                 ret = wait_for_completion_timeout(&fd->fd_irq_done,
-> > > >                                                   msecs_to_jiffies(
-> > > >                                                         MTK_FD_HW_TIMEOUT));
-> > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
-> > > >                                         &m2m_ctx->out_q_ctx :
-> > > >                                         &m2m_ctx->cap_q_ctx;
-> > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
-> > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> > > >
-> > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-> > > >                 mtk_fd_hw_disconnect(fd);
-> > > > }
-> > > >
-> > > > I've also tried to wait completion unconditionally for both queues and
-> > > > the second time will wait until timeout, as a result, it takes longer to
-> > > > swap the camera every time and close the camera app.
-> > >
-> > > I think it should work better if we call complete_all() instead of complete().
-> > >
-> > Thanks,
-> >
-> > I use complete_all(), and it works fine now.
-> >
-> > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > {
-> >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> >         struct vb2_v4l2_buffer *vb;
-> >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-> >         struct v4l2_m2m_queue_ctx *queue_ctx;
-> >
-> >         wait_for_completion_timeout(&fd->fd_irq_done,
-> >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+On Wed, Sep 04, 2019 at 05:09:29PM +0800, Cheng-yi Chiang wrote:
+> Hi,
 > 
-> Shouldn't we still send some command to the hardware to stop? Like a
-> reset. Otherwise we don't know if it isn't still accessing the memory.
+> On Tue, Sep 3, 2019 at 5:53 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+> >
+> > Hi,
+> >
+> > On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
+> > > From: Yakir Yang <ykk@rock-chips.com>
+> > >
+> > > When transmitting IEC60985 linear PCM audio, we configure the
+> > > Audio Sample Channel Status information of all the channel
+> > > status bits in the IEC60958 frame.
+> > > Refer to 60958-3 page 10 for frequency, original frequency, and
+> > > wordlength setting.
+> > >
+> > > This fix the issue that audio does not come out on some monitors
+> > > (e.g. LG 22CV241)
+> > >
+> > > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> > > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > > ---
+> > >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
+> > >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
+> > >  2 files changed, 79 insertions(+)
+> > >
+> > > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > > index bd65d0479683..34d46e25d610 100644
+> > > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > > @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+> > >       return n;
+> > >  }
+> > >
+> > > +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
+> > > +{
+> > > +     u8 aud_schnl_samplerate;
+> > > +     u8 aud_schnl_8;
+> > > +
+> > > +     /* These registers are on RK3288 using version 2.0a. */
+> > > +     if (hdmi->version != 0x200a)
+> > > +             return;
+> >
+> > Are these limited to the 2.0a version *in* RK3288, or 2.0a version on all
+> > SoCs ?
+> >
 > 
-I thought no more jobs will be enqueued here when stop_streaming so we
-don't need it.
-We still could send an ipi command to reset the HW, and wait for it's
-callback or we could set the register MTK_FD_REG_OFFSET_HW_ENABLE to
-zero to disable the HW.
+> In the original patch by Yakir,
+> 
+> https://lore.kernel.org/patchwork/patch/539653/   (sorry, I should
+> have added this link in the "after the cut" note)
+> 
+> The fix is limited to version 2.0.
+> Since I am only testing on RK3288 with 2.0a, I change the check to 2.0a only.
+> I can not test 2.0a version on other SoCs.
+> The databook I have at hand is 2.0a (not specific to RK3288) so I
+> think all 2.0a should have this register.
+> 
+> As for other version like version 1.3 on iMX6, there is no such
+> register, as stated by Russell
+> 
+> http://lkml.iu.edu/hypermail/linux/kernel/1501.3/06268.html.
 
-Best regards,
-Jerry
+It's likely more to do with how the IP is configured rather than the
+version.  The big difference between dw-hdmi used in iMX6 and elsewhere
+is that iMX6 uses a built-in AHB audio interface and not I2S.  Elsewhere
+uses I2S.
 
-> >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
-> >                                         &m2m_ctx->out_q_ctx :
-> >                                         &m2m_ctx->cap_q_ctx;
-> >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
-> >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> >
-> >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-> >                 mtk_fd_hw_disconnect(fd);
-> > }
-> >
-> > Best regards,
-> > Jerry
-> >
-> > > Best regards,
-> > > Tomasz
-> >
-> >
+I2S does not have the capability to convey channel status information
+(which is required by HDMI).  With AHB, it is encoded into the data in
+memory.
 
+So, I think this setup should be done in the I2S driver and not in the
+core driver.
 
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
