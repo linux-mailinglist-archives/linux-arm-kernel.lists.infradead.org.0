@@ -2,69 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19F65A85A1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:28:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28E76A85AC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:33:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4f9C/rte+LGFj0eLjqHI4BDXmxA9LEG2AoRm3Bhesn8=; b=S6OI7KRVz1Q9Re
-	4KAPjkXZj5UpmtH0BycPm/T+At/lAyJYNNd8BHV2N+gB7U9V3GCNspDLU64DZl0KJ/g2JN5xzHhhW
-	mYkibX0x17NV33MQBFX5bYbaM49BsIjV1Bx0DwufMZ8orl5+3ObprTo3aUJF2kOeJ+ZYxaxERA4Lj
-	DDYAEA3nN2Q1uxP+/BM9RUj1/XIRfAVKEwqeP/gj6jmSlhAY4EHx4xurRB/Pgx4wfAzbM5ny+c6ti
-	DSwtqSpfGROY/UzY0klz24imhNoVZtOoz4aDLiebyZ2IWNIM98vE59b8WuUA4S3UBSmNyOEBNl1RP
-	q2v1x+Hm8Q/aqSJQbumQ==;
+	List-Owner; bh=vKdr20B2BrNS9vsGiPNOB+0KZKM+lG3DOPV0VsPIP6Y=; b=TT6ttId8iGfSD1
+	7tJLOqx6pW0cJa6g2JJj7N4nt0iUOisZ//QqoSh481w4BhqRug0vdndRkG6k327o9Iu0P/XKpg/k3
+	g6XuHr2cPvh4+82fzN02nqXjM2Y4IlfTM9sJcl2LjAAGr92mndAcVMiR4Nz28pXD9+mrrbE6H/Lgb
+	1I6r0mNtgnZienBs73VDkbeR9ekpx/xF5PkncNJSCL6++G/knTcH4psklDyz7zbr3o/6uJkVQzJg4
+	Rs9CvbPrLzzafHTvyMAaDLrioDF2FDF9t83zAgZgRi9jU74VLibJMAn9xCf2tsDC8Wjnydqvw0h/4
+	+FN7cRnCBcgC7T7xEy+w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5WHH-0005m7-3l; Wed, 04 Sep 2019 14:28:55 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i5WM1-00086e-LO; Wed, 04 Sep 2019 14:33:49 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5WH5-0005k1-4U; Wed, 04 Sep 2019 14:28:44 +0000
-Received: from mail-lf1-f43.google.com (mail-lf1-f43.google.com
- [209.85.167.43])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 592B72342D;
- Wed,  4 Sep 2019 14:28:42 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567607322;
- bh=L76A2ZvdZ49vwh9gPyzYANOjIS9WVsZyi57kx5mf8cQ=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=szOhtdy3pm0hmLpuZGMow2vaeDvOjEj/9NcUKl3Ye865Ae8MB/Tl+Sip/dXvPxb9B
- 72hiCdJ/0l/oVbxrbyiOYabDzUdSAJFpf80udg8QExAsVR84ISBvUwLj6bCfquTzob
- rRp/OA3BeXbrfH/12rQnn4/Hm5WjoM800DRgrq64=
-Received: by mail-lf1-f43.google.com with SMTP id w67so16109868lff.4;
- Wed, 04 Sep 2019 07:28:42 -0700 (PDT)
-X-Gm-Message-State: APjAAAW7ouz7PA1YJi5avY84iHGwgCCcPMEZzsbJEAq+GVAmyhnSPJbc
- dbl6BhpZXiZ6brt97m3k6faIKDq4Mo7gUbS70AA=
-X-Google-Smtp-Source: APXvYqycXOQpNE+apc0JPS11KQSp+RmtxHn6Ng9LQDVcy4lQi5wxS8ZrsQ1N6swmH4iFFIYS5iVQwDmEz/WmDjOTj6U=
-X-Received: by 2002:a19:c649:: with SMTP id w70mr24808672lff.33.1567607320399; 
- Wed, 04 Sep 2019 07:28:40 -0700 (PDT)
+ id 1i5WLp-00085M-UL; Wed, 04 Sep 2019 14:33:39 +0000
+Received: by mail-pg1-x543.google.com with SMTP id w10so11356917pgj.7;
+ Wed, 04 Sep 2019 07:33:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=DpaNQCLmwaNZZZkIvK2MRxioLu52IkmkkbV6j6lsSTI=;
+ b=QVcLTD8SqHO2544hfbjXafPfCHNEZpwx54u/NHKLL3RwoTLbeAc5WRg90T9BucvGkw
+ Z6IpK1fqesAiVvv3WYnGo3XvW7mKItcdFtUy/Bp4QODeexrlOeBRRkhuUAJ4czq3jN8y
+ kUi/Q+fstAnVpRXlUSj41qfGFraX2Q+7Uwt1dxioZzqKoFxtedfDSN6mQKlQi/hfTRDo
+ 1myS+X5K21ZpE2a7Y7RyqRgkt91gc7/cgp8ewkCxV9Ij1udkymmbeNNvTEVufv4hePUw
+ pvh5MvLdiiq7aBb0LfsPF8Bryro3CI+4fNdhZMYLqTjXhialouq7RaUdyHuN+U7+3h5b
+ plCA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=DpaNQCLmwaNZZZkIvK2MRxioLu52IkmkkbV6j6lsSTI=;
+ b=Mlumj70bnfhCVYrdplCmGxYDvVTJxmHpaw7uG+J+wiggMFrFhucaMxC8ooHVpdbmvS
+ 7r6EBDql2/yg/fma7WJFQuOpyrTGHPL9313jZk6oTP6eQOQErJEuwZEoLX+VDiy+19MO
+ qLsGaJGXbIY5gvvoPRWrjP60q1LxdHPELY7nPwdq/LRUi0zvG9WaBJvcp4KBLOfvHqNG
+ n5cAtGWLuJKVz+WxzBfGw+LbiWnunAMLvLiJnlFzjD3fjbmEuuDJu63OQhBBFrmOv5KY
+ Gevkiuxs9wV/zSEDLn74yokbnfWRDwneQ46i85O+rLd7rtSlyrXgQvkasl+2JXH3ymxv
+ YEAA==
+X-Gm-Message-State: APjAAAVfqmiKK8+jFi1eOKnQMVEVzGcf9Tptk+x5C3AWN4AXRU0d8Rwz
+ W9C6VzFBTbau39CUVgrHkQgM73xBCgX6hyt8KOg=
+X-Google-Smtp-Source: APXvYqwTWnlU/s16wk/kQ7qUIsYPs2aUc2xvVztrYy95Dh8DHJPMltqAbOUq+3863Pi6+Ky/QZPyvefYIbOZMFIRgQw=
+X-Received: by 2002:a63:6eca:: with SMTP id j193mr34647329pgc.74.1567607616694; 
+ Wed, 04 Sep 2019 07:33:36 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190904135918.25352-1-yuehaibing@huawei.com>
- <20190904135918.25352-26-yuehaibing@huawei.com>
-In-Reply-To: <20190904135918.25352-26-yuehaibing@huawei.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Wed, 4 Sep 2019 16:28:29 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPdq4as1Oe3U+9znkvP0RA=sxUoiWVBCSbzf_wq_um2t=w@mail.gmail.com>
-Message-ID: <CAJKOXPdq4as1Oe3U+9znkvP0RA=sxUoiWVBCSbzf_wq_um2t=w@mail.gmail.com>
-Subject: Re: [PATCH -next 25/36] spi: s3c24xx: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>
+References: <20190708100641.2702-1-dongchun.zhu@mediatek.com>
+ <20190708100641.2702-3-dongchun.zhu@mediatek.com>
+In-Reply-To: <20190708100641.2702-3-dongchun.zhu@mediatek.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Wed, 4 Sep 2019 17:33:25 +0300
+Message-ID: <CAHp75VcV_tFNMm=oRNVBtwn8orQGuokSgT6YDzNVpQ0vXw_Yag@mail.gmail.com>
+Subject: Re: [PATCH 2/2] media: i2c: dw9768: Add DW9768 VCM driver
+To: dongchun.zhu@mediatek.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_072843_212653_9376E30C 
-X-CRM114-Status: GOOD (  16.32  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190904_073338_001978_BC4AF4EF 
+X-CRM114-Status: GOOD (  17.85  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andy.shevchenko[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -72,7 +80,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,74 +91,168 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: tmaimon77@gmail.com, palmer@sifive.com, tali.perry1@gmail.com,
- eric@anholt.net, ldewangan@nvidia.com, linux-riscv@lists.infradead.org,
- festevam@gmail.com,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- f.fainelli@gmail.com, benjaminfair@google.com, shc_work@mail.ru,
- khilman@baylibre.com, openbmc@lists.ozlabs.org, michal.simek@xilinx.com,
- jonathanh@nvidia.com, yuenn@google.com, wens@csie.org, agross@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-imx@nxp.com,
- linux-arm-msm@vger.kernel.org, linux-tegra@vger.kernel.org,
- Andi Shyti <andi@etezian.org>, rjui@broadcom.com, s.hauer@pengutronix.de,
- mripard@kernel.org, broonie@kernel.org, linux-mediatek@lists.infradead.org,
- linux-rpi-kernel@lists.infradead.org, paul.walmsley@sifive.com,
- matthias.bgg@gmail.com, linux-amlogic@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org, baohua@kernel.org, sbranden@broadcom.com,
- yamada.masahiro@socionext.com, avifishman70@gmail.com, venture@google.com,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-spi@vger.kernel.org, thierry.reding@gmail.com, wahrenst@gmx.net,
- kernel@pengutronix.de, kgene@kernel.org, shawnguo@kernel.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, srv_heupstream@mediatek.com,
+ shengnan.wang@mediatek.com, Tomasz Figa <tfiga@chromium.org>,
+ louis.kuo@mediatek.com, sj.huang@mediatek.com,
+ Rob Herring <robh+dt@kernel.org>,
+ "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, bingbu.cao@intel.com,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 4 Sep 2019 at 16:00, YueHaibing <yuehaibing@huawei.com> wrote:
+On Mon, Jul 8, 2019 at 5:13 PM <dongchun.zhu@mediatek.com> wrote:
 >
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 >
-> Reported-by: Hulk Robot <hulkci@huawei.com>
+> This patch adds a V4L2 sub-device driver for DW9768 lens voice coil,
+> and provides control to set the desired focus.
+>
+> The DW9807 is a 10 bit DAC from Dongwoon, designed for linear
+> control of voice coil motor.
 
-This tag does not look real... First of all where is the report?
-Second, it was reported by coccinelle.
-Reported-by should be use to give real credits.
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright (c) 2018 MediaTek Inc.
+> + */
 
-Best regards,
-Krzysztof
+2019?
 
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/spi/spi-s3c24xx.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
->
-> diff --git a/drivers/spi/spi-s3c24xx.c b/drivers/spi/spi-s3c24xx.c
-> index aea8fd9..2d6e37f 100644
-> --- a/drivers/spi/spi-s3c24xx.c
-> +++ b/drivers/spi/spi-s3c24xx.c
-> @@ -487,7 +487,6 @@ static int s3c24xx_spi_probe(struct platform_device *pdev)
->         struct s3c2410_spi_info *pdata;
->         struct s3c24xx_spi *hw;
->         struct spi_master *master;
-> -       struct resource *res;
->         int err = 0;
->
->         master = spi_alloc_master(&pdev->dev, sizeof(struct s3c24xx_spi));
-> @@ -536,8 +535,7 @@ static int s3c24xx_spi_probe(struct platform_device *pdev)
->         dev_dbg(hw->dev, "bitbang at %p\n", &hw->bitbang);
->
->         /* find and map our resources */
-> -       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -       hw->regs = devm_ioremap_resource(&pdev->dev, res);
-> +       hw->regs = devm_platform_ioremap_resource(pdev, 0);
->         if (IS_ERR(hw->regs)) {
->                 err = PTR_ERR(hw->regs);
->                 goto err_no_pdata;
-> --
-> 2.7.4
->
->
+> +       if (!client->adapter)
+> +               return -ENODEV;
+
+Is it ever possible?
+
+> +       w_buf = kzalloc(size, GFP_KERNEL);
+> +       if (!w_buf)
+> +               return -1;
+
+Error code?
+
+> +       do {
+> +               ret = i2c_transfer(client->adapter, &msg, 1);
+
+> +               if (ret != 1)
+> +                       dev_err(&client->dev, "write fail, ret:%d, retry:%d\n",
+> +                               ret, retry_cnt);
+
+This is noise. And better to use positive condition.
+
+> +               else
+> +                       break;
+
+> +               retry_cnt--;
+> +       } while (retry_cnt != 0);
+> +
+
+} while (--retry_cnt);
+
+> +       if (retry_cnt == 0)     {
+> +               dev_err(&client->dev, "i2c write fail(%d)\n", ret);
+> +               return -EIO;
+> +       }
+
+> +
+> +       kfree(w_buf);
+> +
+> +       return 0;
+> +}
+
+> +static int dw9768_power_off(struct dw9768_device *dw9768_dev, bool standby)
+> +{
+> +       struct i2c_client *client = v4l2_get_subdevdata(&dw9768_dev->sd);
+> +       int ret;
+> +
+> +       /*
+> +        * Go to standby first as real power off my be denied by the hardware
+> +        * (single power line control for both dw9768_dev and sensor).
+> +        */
+> +       if (standby) {
+> +               dw9768_dev->standby = true;
+> +               ret = dw9768_release(dw9768_dev);
+
+> +               if (ret)
+
+> +                       dev_err(&client->dev, "dw9768_release failed!\n");
+
+Is it fatal or not?
+
+> +       }
+
+> +       ret = regulator_disable(dw9768_dev->analog_regulator);
+> +       if (ret)
+> +               return ret;
+> +
+> +       return 0;
+
+return regulator_disable(...);
+
+> +}
+
+> +               dev_err(dw9768_dev->sd.dev, "%s fail error: 0x%x\n",
+> +                       __func__, hdl->error);
+
+Non-informative message.
+
+> +static int dw9768_probe(struct i2c_client *client)
+> +{
+> +       struct device *dev = &client->dev;
+> +       struct dw9768_device *dw9768_dev;
+> +       int rval;
+> +
+> +       dw9768_dev = devm_kzalloc(&client->dev, sizeof(*dw9768_dev),
+> +                                 GFP_KERNEL);
+> +       if (!dw9768_dev)
+> +               return -ENOMEM;
+> +
+> +       dw9768_dev->analog_regulator = devm_regulator_get(dev, "afvdd");
+> +       if (IS_ERR(dw9768_dev->analog_regulator)) {
+
+> +               dev_err(dev, "cannot get analog regulator\n");
+
+Would be noise in case of deferred probe.
+
+> +               return PTR_ERR(dw9768_dev->analog_regulator);
+> +       }
+
+> +err_cleanup:
+> +       mutex_destroy(&dw9768_dev->power_lock);
+> +       dw9768_subdev_cleanup(dw9768_dev);
+
+> +       dev_err(dev, "Probe failed: %d\n", rval);
+
+Noise. Device core has this already.
+
+> +       return rval;
+> +}
+
+> +static const struct i2c_device_id dw9768_id_table[] = {
+> +       { DW9768_NAME, 0 },
+> +       { { 0 } }
+
+{} is enough.
+
+> +};
+> +MODULE_DEVICE_TABLE(i2c, dw9768_id_table);
+> +
+> +static const struct of_device_id dw9768_of_table[] = {
+> +       { .compatible = "dongwoon,dw9768" },
+
+> +       { { 0 } }
+
+Ditto.
+
+> +};
+
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
