@@ -2,61 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 139E1A9586
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 23:49:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF946A958E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 23:50:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hVb3dWrl2U31J+dNOoeCMeAR5qafsUxBi+5sh7qbPb0=; b=qs65ZKztzsYpDdoQ9d9tG3vX9
-	9jwdo23cLodtkdYAZEbvTWmMuZgbdVUnCo11pPExj07xzKfgop9iBRQYBdqmjXPgI6Dn8IYcGbMNZ
-	Q7JE7WdVtdyNYeSP1AtKFZw0UzQa8XA66O3b5fm19a+mzfkPHQK6Dtr3VV60UmaHgOyoTG1f5ZHMX
-	1lmUD6sc5368jec5aZKTioGvHZdzfzG/REyihtX9aJdKQYQDm835VsnpksJt7cBPGou/rS0kFSlim
-	mRxVwksAh8sTB6LV4sMtVeUS7n/9AD2bDh5D46oCpQha0MLUzpwwb658nSZm9vA6VCeFchgOJPx+p
-	QMl93/LHw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YkSe4kdpWlyL/9VwEQWX3soHcADOPNVuVfalxEpqLpM=; b=enDCXGp65MMkoN
+	HU4eoQZ64clpNuS13jSvhzVZMdO4UIIBSxoCKT9UNl8N+9xW3jzE5ia6tibaVCYB3YsPHUWa9LHpS
+	QMV/RLMKDpTbphgua9hHQBZ13UH1MPiV+FAYPAEcBzIBTSF7FVgKRVN/NE1PQRv1me9KQH/laC0sg
+	4Ch6j8q7K+itzUsZd0lrxipWe/68lbIJymLrciPvK1ioKnYjYPa7qmHDwsLr07ZbrfUBSE1z4Q8km
+	XEeC+YYgD92bdulBA1EsRQREDK2lQ5+1FAtwRFNqa0Go8+NKNwS1NCVLfnl/KHlY6WkzVvMojPrtd
+	jbrennObtY2EKlP5f6rg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5d9v-0002UV-OF; Wed, 04 Sep 2019 21:49:47 +0000
-Received: from mx2.mailbox.org ([80.241.60.215])
+	id 1i5dB1-000443-EM; Wed, 04 Sep 2019 21:50:55 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5d9l-0002SY-Dv
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 21:49:39 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org
- [IPv6:2001:67c:2050:105:465:1:2:0])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id D7E89A19C8;
- Wed,  4 Sep 2019 23:49:24 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter06.heinlein-hosting.de (spamfilter06.heinlein-hosting.de
- [80.241.56.125]) (amavisd-new, port 10030)
- with ESMTP id VdSCaItxf1Ze; Wed,  4 Sep 2019 23:49:19 +0200 (CEST)
-Date: Thu, 5 Sep 2019 07:48:56 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Linus Torvalds <torvalds@linux-foundation.org>
-Subject: Re: [PATCH v12 10/12] namei: aggressively check for nd->root escape
- on ".." resolution
-Message-ID: <20190904214856.vnvom7h5xontvngq@yavin.dot.cyphar.com>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-11-cyphar@cyphar.com>
- <CAHk-=wiod1rQMU+6Zew=cLE8uX4tUdf42bM5eKngMnNVS2My7g@mail.gmail.com>
+ id 1i5dAq-00042D-FX
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 21:50:46 +0000
+Received: by mail-pf1-x444.google.com with SMTP id x127so161129pfb.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 14:50:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=8+W3OmsE39CBrAqbMD2zucygtqzvFfD25TTwncsech0=;
+ b=GjpcQGU018si9YdNfH37M4Jo6uFHTdY0pqnKW1bI2T4aZO3/19Jl5FH8QdTr0Txf8r
+ lbdktBIKjY2hxc0z7a5SHCBYbyQppUU8ZGyzcF8t2+flQ2Lwlaci+p+gktP+EW6EDqmr
+ 7s3ugo5oTSkkJtiu8ZB2vHh7nTcCkJZ54OVg2D6VObo1g+/f028Cz07rHoklB10LETyV
+ dFLuT9gELB49hdOz0T2z4JW8dQv635Vj0nXxpecfeEsOaJpbIBJvSdsZWsjU0QjyIfUH
+ 6VYX5tAcR4yuR3xTSFjlWWV60la4AcfUIWbgbdwQcCg1cQrBM60/vQn9sZI9Ky7KMt6T
+ 2ZMg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=8+W3OmsE39CBrAqbMD2zucygtqzvFfD25TTwncsech0=;
+ b=FeOnesoG89uT9WJbScdnoKxSIDdRORCVxibcG7fRThpA+WEyi1er8o4HIByQozAYpW
+ 9f8bm46zwQ07HLXTqO3Fh4xtASfUnjrppvuKex6P9VuDIB5TGQe6fvXSuvytis98wgm2
+ XA3PT+2RROlOrNNAi8FCbjHZ3Vrp8Ca/MO3qMh0CVaS/pdiUS2953Ohv+YMhmFnZdUT8
+ zQ+qmz1H1G+E/BrQy2YWXlWGxlCIxsGZVMNWPn9UZPuk5EIH2ikBvLqqviZ3M57Yl8F3
+ QWDxqiE5CvTKmOrzQv+FuLIyiTiCgeQLLcwoclByMrpCoJik/V2X8LkyK3dGUZ2mpHoH
+ i9/Q==
+X-Gm-Message-State: APjAAAXNN0tQnuVnxWJun+Y8/seUdbq98ZlLsBdnotcIbSwzuu7GwvsF
+ g0aWoFiLynpBSJD5P5oflfCHVg==
+X-Google-Smtp-Source: APXvYqznFPRSJgh/JgdkRzej7oU2uH6AV2QPDQ8rDqB3T60xWU5jKILyc014vwXgwi8/8ui1HTj0dw==
+X-Received: by 2002:a17:90a:cc0c:: with SMTP id
+ b12mr375908pju.138.1567633843429; 
+ Wed, 04 Sep 2019 14:50:43 -0700 (PDT)
+Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
+ [104.188.17.28])
+ by smtp.gmail.com with ESMTPSA id w2sm88618pgc.32.2019.09.04.14.50.41
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Sep 2019 14:50:42 -0700 (PDT)
+Date: Wed, 4 Sep 2019 14:50:39 -0700
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
+To: YueHaibing <yuehaibing@huawei.com>
+Subject: Re: [PATCH -next 08/15] thermal: tsens: use
+ devm_platform_ioremap_resource() to simplify code
+Message-ID: <20190904215039.GG580@tuxbook-pro>
+References: <20190904122939.23780-1-yuehaibing@huawei.com>
+ <20190904122939.23780-9-yuehaibing@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <CAHk-=wiod1rQMU+6Zew=cLE8uX4tUdf42bM5eKngMnNVS2My7g@mail.gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190904122939.23780-9-yuehaibing@huawei.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_144937_777306_4EEFCCE9 
-X-CRM114-Status: GOOD (  23.01  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190904_145044_517336_45FC41EB 
+X-CRM114-Status: GOOD (  15.65  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [80.241.60.215 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,148 +101,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Linux Containers <containers@lists.linux-foundation.org>
-Content-Type: multipart/mixed; boundary="===============4469423287599293669=="
+Cc: mans@mansr.com, mmayer@broadcom.com, eric@anholt.net,
+ miquel.raynal@bootlin.com, linux-stm32@st-md-mailman.stormreply.com,
+ heiko@sntech.de, amit.kucheria@verdurent.com, f.fainelli@gmail.com,
+ daniel.lezcano@linaro.org, phil@raspberrypi.org,
+ linux-rockchip@lists.infradead.org, agross@kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-arm-msm@vger.kernel.org,
+ rui.zhang@intel.com, david.hernandezsanchez@st.com, alexandre.torgue@st.com,
+ marc.w.gonzalez@free.fr, rjui@broadcom.com, edubezval@gmail.com,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ gregory.0xf0@gmail.com, matthias.bgg@gmail.com, horms+renesas@verge.net.au,
+ talel@amazon.com, linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com,
+ wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, wahrenst@gmx.net,
+ mcoquelin.stm32@gmail.com, jun.nie@linaro.org, computersforpeace@gmail.com,
+ shawnguo@kernel.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Wed 04 Sep 05:29 PDT 2019, YueHaibing wrote:
 
---===============4469423287599293669==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="i46h7izteerqaavi"
-Content-Disposition: inline
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+> 
 
+Reviewed-by: Bjorn Andersson <bjorn.andersson@linaro.org>
 
---i46h7izteerqaavi
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-09-04, Linus Torvalds <torvalds@linux-foundation.org> wrote:
-> On Wed, Sep 4, 2019 at 1:23 PM Aleksa Sarai <cyphar@cyphar.com> wrote:
-> > This patch allows for LOOKUP_BENEATH and LOOKUP_IN_ROOT to safely permit
-> > ".." resolution (in the case of LOOKUP_BENEATH the resolution will still
-> > fail if ".." resolution would resolve a path outside of the root --
-> > while LOOKUP_IN_ROOT will chroot(2)-style scope it). Magic-link jumps
-> > are still disallowed entirely because now they could result in
-> > inconsistent behaviour if resolution encounters a subsequent ".."[*].
->=20
-> This is the only patch in the series that makes me go "umm".
->=20
-> Why is it ok to re-initialize m_seq, which is used by other things
-> too? I think it's because we're out of RCU lookup, but there's no
-> comment about it, and it looks iffy to me. I'd rather have a separate
-> sequence count that doesn't have two users with different lifetime
-> rules.
-
-Yeah, the reasoning was that it's because we're out of RCU lookup and if
-we didn't re-grab ->m_seq we'd hit path_is_under() on every subsequent
-".." (even though we've checked that it's safe). But yes, I should've
-used a different field to avoid confusion (and stop it looking
-unnecessarily dodgy). I will fix that.
-
-> But even apart from that, I think from a "patch continuity" standpoint
-> it would be better to introduce the sequence counts as just an error
-> condition first - iow, not have the "path_is_under()" check, but just
-> return -EXDEV if the sequence number doesn't match.
-
-Ack, will do.
-
-> So you'd have three stages:
->=20
->  1) ".." always returns -EXDEV
->=20
->  2) ".." returns -EXDEV if there was a concurrent rename/mount
->=20
->  3) ".." returns -EXDEV if there was a concurrent rename/mount and we
-> reset the sequence numbers and check if you escaped.
->=20
-> becasue the sequence number reset really does make me go "hmm", plus I
-> get this nagging little feeling in the back of my head that you can
-> cause nasty O(n^2) lookup cost behavior with deep paths, lots of "..",
-> and repeated path_is_under() calls.
-
-The reason for doing the concurrent-{rename,mount} checks was to try to
-avoid the O(n^2) in most cases, but you're right that if you have an
-attacker that is spamming renames (or you're on a box with a lot of
-renames and/or mounts going on *anywhere*) you will hit an O(n^2) here
-(more pedantically, O(m*n) but who's counting?).
-
-Unfortunately, I'm not sure what the best solution would be for this
-one. If -EAGAIN retries are on the table, we could limit how many times
-we're willing to do path_is_under() and then just return -EAGAIN.
-
-> So (1) sounds safe. (2) sounds simple. And (3) is where I think subtle
-> things start happening.
->=20
-> Also, I'm not 100% convinced that (3) is needed at all. I think the
-> retry could be done in user space instead, which needs to have a
-> fallback anyway. Yes? No?
-
-Hinting to userspace to do a retry (with -EAGAIN as you mention in your
-other mail) wouldn't be a bad thing at all, though you'd almost
-certainly get quite a few spurious -EAGAINs -- &{mount,rename}_lock are
-global for the entire machine, after all.
-
-But if the only significant roadblock is that (3) seems a bit too hairy,
-I would be quite happy with landing (2) as a first step (with -EAGAIN).
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---i46h7izteerqaavi
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXAxQwAKCRCdlLljIbnQ
-Er4vAQDiHBfZXElf8shcA4ixj+Uqqylcy09QYhCXLxI7/JHdiQD9GI/Ehs0C3HPA
-8HQsyqVEjkx8dq5gApLNG5Rp8gVgywQ=
-=Il7T
------END PGP SIGNATURE-----
-
---i46h7izteerqaavi--
-
-
---===============4469423287599293669==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> ---
+>  drivers/thermal/qcom/tsens-common.c | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
+> 
+> diff --git a/drivers/thermal/qcom/tsens-common.c b/drivers/thermal/qcom/tsens-common.c
+> index 528df88..43ce4fb 100644
+> --- a/drivers/thermal/qcom/tsens-common.c
+> +++ b/drivers/thermal/qcom/tsens-common.c
+> @@ -155,7 +155,6 @@ int __init init_common(struct tsens_priv *priv)
+>  {
+>  	void __iomem *tm_base, *srot_base;
+>  	struct device *dev = priv->dev;
+> -	struct resource *res;
+>  	u32 enabled;
+>  	int ret, i, j;
+>  	struct platform_device *op = of_find_device_by_node(priv->dev->of_node);
+> @@ -166,8 +165,7 @@ int __init init_common(struct tsens_priv *priv)
+>  	if (op->num_resources > 1) {
+>  		/* DT with separate SROT and TM address space */
+>  		priv->tm_offset = 0;
+> -		res = platform_get_resource(op, IORESOURCE_MEM, 1);
+> -		srot_base = devm_ioremap_resource(&op->dev, res);
+> +		srot_base = devm_platform_ioremap_resource(op, 1);
+>  		if (IS_ERR(srot_base)) {
+>  			ret = PTR_ERR(srot_base);
+>  			goto err_put_device;
+> @@ -184,8 +182,7 @@ int __init init_common(struct tsens_priv *priv)
+>  		priv->tm_offset = 0x1000;
+>  	}
+>  
+> -	res = platform_get_resource(op, IORESOURCE_MEM, 0);
+> -	tm_base = devm_ioremap_resource(&op->dev, res);
+> +	tm_base = devm_platform_ioremap_resource(op, 0);
+>  	if (IS_ERR(tm_base)) {
+>  		ret = PTR_ERR(tm_base);
+>  		goto err_put_device;
+> -- 
+> 2.7.4
+> 
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============4469423287599293669==--
-
