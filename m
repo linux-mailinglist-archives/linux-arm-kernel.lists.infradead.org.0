@@ -2,54 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AFBF3A816E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 13:51:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6CAF7A8188
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 13:54:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1r/Y0LOxPnJHQis1uhz5kTiSTASeaE8WMFsty+c/QTY=; b=iUTm13fOFWGYkA
-	KUH+F4HI3y8mxB2VYpwMMAmqKV7CgL9Wb3bPlgBWyT1aQKiuC6zs7evFLCeKIQ3uT1rjGYPZmYZLl
-	LUlsSNTr/++VaX7NkXmMLkdCfhivfC4xS89PiiF2m5Nqsed4DLOa1o0Zh4L/ASVTUrsee9IgNB1XP
-	1+8Yrf6dTomAS0FxSQcA4neAiU8K/dy+7rUOVySJyMDN7+SpnvbBgb36LtKz2gj5ggYHiMJccDr/9
-	wdOOGfFun4j2Vuty+nR/dJJuA/2e/nBnA91LQcOCUjhDlmVYMGX0Q9Jqa6cqCiFOaUThEISfmWvIX
-	pXFczzevT/hs3VOeJW1w==;
+	List-Owner; bh=6ogjDh7iccl9hvJHyETx3wOlgorMhltdL/1Wwu/tmkE=; b=o70iIBbZqI8jwg
+	LAj1aB2HocPgecenT9NfE2GvIhUAdFmDThjS8eVg1aQDeBgsBFEnoyRuwTbfr5lXeyBigSSwGiKo+
+	N02bQpRHhqZKgqtuLsHJakQPtJPNbMIwYeP1HTbAD5umemNc5XqFwVyRAc0kyHGvG6crz6Fq61nnd
+	tF1Z++LC62c5FTCJ6v2PWzeNNvHYpBtD1DroEhaR/vFYFj96xmDRG/HskJrSPGDE4JsCI2vfjeiCp
+	YUJ91ldNFIKsZzocGPw4v1fllz23mhXaJeyn02HrhCU6q1kf2tXxFTLYLwxxHourqrz6fkv7U1YDq
+	ZlN7qUjROOWSdzZbdsYQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Tok-0007nr-KV; Wed, 04 Sep 2019 11:51:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5TnH-0005gu-MF
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 11:49:52 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5E495337;
- Wed,  4 Sep 2019 04:49:47 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 774743F246;
- Wed,  4 Sep 2019 04:49:46 -0700 (PDT)
-Date: Wed, 4 Sep 2019 12:49:44 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v5 11/11] kselftest: arm64: fake_sigreturn_misaligned_sp
-Message-ID: <20190904114944.GB27757@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190902112932.36129-12-cristian.marussi@arm.com>
+	id 1i5TrK-0008TP-I4; Wed, 04 Sep 2019 11:53:58 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Tr6-0008T1-Ne
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 11:53:45 +0000
+Received: from localhost (unknown [122.182.201.156])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 2C20722CF5;
+ Wed,  4 Sep 2019 11:53:42 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567598024;
+ bh=6yE3IUv7qBSVFJ6+Mf00UxE1PnKsLJ0VJifYwWdQq1Y=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=bINwaOQTuFOWx7V12YuIGe2FCJ+xjHqhhW3BE3LSzwuFSEyTJsQ1SW8/5NIU8zUQy
+ DpAM0NqtkKvoWpvFGBSP9qhjJlOM834TBGmJpNbdMCItmQx0hKRfmQN5iU9krCQYkh
+ rSM7PF0SdS00ITRfSqCIRGCPqVzc+Dc7JDvuXR9I=
+Date: Wed, 4 Sep 2019 17:22:34 +0530
+From: Vinod Koul <vkoul@kernel.org>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [PATCH v2 1/1] arm64: dts: qcom: Add Lenovo Yoga C630
+Message-ID: <20190904115234.GV2672@vkoul-mobl>
+References: <20190904113917.15223-1-lee.jones@linaro.org>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190902112932.36129-12-cristian.marussi@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <20190904113917.15223-1-lee.jones@linaro.org>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_044947_837374_3B749A0C 
-X-CRM114-Status: GOOD (  18.63  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_045344_793673_4E3A99CB 
+X-CRM114-Status: GOOD (  12.26  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,75 +76,88 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ robh+dt@kernel.org, bjorn.andersson@linaro.org, agross@kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 02, 2019 at 12:29:32pm +0100, Cristian Marussi wrote:
-> Add a simple fake_sigreturn testcase which places a valid sigframe on a
-> non-16 bytes aligned SP. Expects a SIGSEGV on test PASS.
-> 
-> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
-> ---
-> v3 --> v4
-> - fix commit
-> - use new fake_sigreturn misalig_bytes params
-> - removed TODO
-> - added test description
-> ---
->  .../testcases/fake_sigreturn_misaligned_sp.c  | 37 +++++++++++++++++++
->  1 file changed, 37 insertions(+)
->  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
-> 
-> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
+On 04-09-19, 12:39, Lee Jones wrote:
+> --- a/arch/arm64/boot/dts/qcom/Makefile
+> +++ b/arch/arm64/boot/dts/qcom/Makefile
+> @@ -12,5 +12,6 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r2.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r3.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-db845c.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-mtp.dtb
+> +dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
+
+Can we keep this sorted, so before mtp.
+
+>  dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-1000.dtb
+>  dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-4000.dtb
+> diff --git a/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
 > new file mode 100644
-> index 000000000000..1e089e66f9f3
+> index 000000000000..ad160c718b33
 > --- /dev/null
-> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_misaligned_sp.c
-> @@ -0,0 +1,37 @@
+> +++ b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
+> @@ -0,0 +1,454 @@
 > +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2019 ARM Limited
-> + *
-> + * Place a fake sigframe on the stack at a misaligned SP: on sigreturn
-> + * Kernel must spot this attempt and the test case is expected to be
-> + * terminated via SEGV.
-> + */
-> +
-> +#include <signal.h>
-> +#include <ucontext.h>
-> +
-> +#include "test_signals_utils.h"
-> +#include "testcases.h"
-> +
-> +struct fake_sigframe sf;
-> +
-> +static int fake_sigreturn_misaligned_run(struct tdescr *td,
-> +					 siginfo_t *si, ucontext_t *uc)
-> +{
-> +	/* just to fill the ucontext_t with something real */
-> +	if (!get_current_context(td, &sf.uc))
-> +		return 1;
-> +
-> +	/* Forcing sigframe on misaligned SP (16 + 3) */
-> +	fake_sigreturn(&sf, sizeof(sf), 3);
 
-Can we add tests on the TODO list for other misalignments?
+Are we going to make this dual? or BSD..
 
- a) 4 (i.e., __alignof__(struct _aarch64_ctx))
- b) 8 (i.e., sizeof(struct _aarch64_ctx))
+> +&apps_rsc {
+> +	pm8998-rpmh-regulators {
+> +		compatible = "qcom,pm8998-rpmh-regulators";
+> +		qcom,pmic-id = "a";
+> +
+> +		vdd-l2-l8-l17-supply = <&vreg_s3a_1p35>;
+> +		vdd-l7-l12-l14-l15-supply = <&vreg_s5a_2p04>;
+> +
+> +		vreg_s2a_1p125: smps2 {
+> +		};
+> +
+> +		vreg_s3a_1p35: smps3 {
+> +			regulator-min-microvolt = <1352000>;
+> +			regulator-max-microvolt = <1352000>;
+> +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
+> +		};
+> +
+> +		vreg_s4a_1p8: smps4 {
+> +			regulator-min-microvolt = <1800000>;
+> +			regulator-max-microvolt = <1800000>;
+> +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
+> +		};
+> +
+> +		vreg_s5a_2p04: smps5 {
+> +			regulator-min-microvolt = <2040000>;
+> +			regulator-max-microvolt = <2040000>;
+> +			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
+> +		};
+> +
+> +		vreg_s7a_1p025: smps7 {
 
-This may help catch potential wrong-bitmask bugs in the kernel when
-checking the alignment.  Similarly to my suggestion on patch 10, these
-can go on the TODO list and added later (probably macro-ised).
+Any reason why we dont specify the mode and min/max voltage for this
+and few others below..?
 
-For now, let's get this series settled as-is -- so, after responding to
-nits:
+> +&i2c1 {
+> +	status = "okay";
+> +	clock-frequency = <400000>;
+> +	qcom,geni-se-fifo;
+> +
+> +	battery@70 {
+> +		compatible = "some,battery";
 
-Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+some,battery ..?
+
+> +&qup_i2c12_default {
+
+Please move the qup nodes up so that nodes are sorted alphabetically
+
+-- 
+~Vinod
 
 _______________________________________________
 linux-arm-kernel mailing list
