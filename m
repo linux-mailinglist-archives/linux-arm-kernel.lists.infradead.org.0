@@ -2,59 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA3F5A8638
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:53:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23B86A864B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 18:01:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JLUKopeooEqzEh7EJCMkQ9kq+9H/QkJGKezHf+538Ms=; b=qdHnpkrnDmkJ8R
-	9F/7XEXbBa9sWwIwdbVlRA0GNNerP38/AGXXQWrip6v5UwGM8zf/A06IuBT4FUFGkrl+02F5UEzdw
-	d6G2iNxFZKbdFHoXSK+vj3/SZLZJPQmmr1fyW/R8Wgl0CTuq34elyBlQ9403YDx//rBf8CVwhaPqG
-	4uA9ogDIOsudn1BD4TEY29JNFPFa5IQclWHmf96sEk7VhHHwyJoMEyPeBCpnqX85EVIgSnVSnV2YT
-	DyQmY3VXmmRZzPyQnk5WI9P4djRkLYXkS1f4dgGyXpkoMJeMAAx4UeTWP38ZSP4V9QWBiDtsdf+Sc
-	ntpqlINokvp9SDsbzhzw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mIuvWf47aHyLcpnyHENZ0N8FSpMB9akgpdVMuKZNT/A=; b=I9NON1YwPQT/I+
+	ZtIzgVIo+jgqw290lX4rAa3Qbz+WBJj/c0I8AJYtw7GNzQi7PH2ud1Loe0mDPMkN9fDwk5PJYgXSc
+	PRouDoOjJNdT5E/OcNaGJEMw//+NTj+gVaSP1FL2JmVfTsTtlZA9WDxD4aVPB7amFuUqmyWUAvJZl
+	9fOwi5JLbO1FLCepOycr0PQKKBpozX1TWQR7dPCYwG4MBwqU9DyI/UNJ98hKm0b7Mrsw34Cgr2tqL
+	WzoiOVi3I2cBm8zapTqoTrCv7rdvQzj47EMelkBBdpOTjgundjsNOwTJnIG1XoNqQd3QinCIHJT/b
+	A+/V43lVqhutkoj2n7AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Xav-0007ta-TF; Wed, 04 Sep 2019 15:53:18 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Xak-0007tF-8V
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:53:07 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6BB8728;
- Wed,  4 Sep 2019 08:53:05 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C969A3F246;
- Wed,  4 Sep 2019 08:53:03 -0700 (PDT)
-Subject: Re: [PATCH v4 05/10] KVM: arm64: Support stolen time reporting via
- shared structure
-To: Zenghui Yu <yuzenghui@huawei.com>, Marc Zyngier <maz@kernel.org>,
- Will Deacon <will@kernel.org>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu
-References: <20190830084255.55113-1-steven.price@arm.com>
- <20190830084255.55113-6-steven.price@arm.com>
- <d55d091f-1c0f-9c47-b7b2-95c87285335d@huawei.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <d68fd0f8-a01f-0939-8493-865c4f037783@arm.com>
-Date: Wed, 4 Sep 2019 16:53:02 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i5XiS-000300-44; Wed, 04 Sep 2019 16:01:04 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5XiE-0002z5-SM
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 16:00:52 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue109 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MryKp-1iYq7A0YsP-00o0MA; Wed, 04 Sep 2019 18:00:41 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Shawn Guo <shawnguo@kernel.org>,
+	Sascha Hauer <s.hauer@pengutronix.de>
+Subject: [PATCH] bus: imx-weim: remove incorrect __init annotations
+Date: Wed,  4 Sep 2019 18:00:21 +0200
+Message-Id: <20190904160039.3350229-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <d55d091f-1c0f-9c47-b7b2-95c87285335d@huawei.com>
-Content-Language: en-GB
+X-Provags-ID: V03:K1:edSQpPbQz2i0QyQuA+gpW63iqvRaqDAQVKOzJ3suKf+nyFqMcMI
+ RKLBf7wmMBsX3B6VL98jLw9HvRgEXOWqAn0lir9QaQkdbIqWjGOdCwOzCesPsKPDZpAPytU
+ Clh0eqK029q8ih2vNOnoAQcxDdYCdoX9GBgduNipzMpBvbnC+VHkNDTahUYu0rgxX8Hic0R
+ SlBCpbELBaATcVxUwqyPg==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:/BMWc4WL1IA=:UQx49a3M/46yAIqufq86VM
+ 21sdTV7pJuWwJq7AbtHv9HfmlMBrqz8vmUsYWa39y97opPHXoyc1sIXe97gV0XC/kGnKj+Nd1
+ Tt/oIBVkzFJ4LMbmMpntZdjy/pJiN1CfmTv1McQjMJdiFfZ2hpuk/6vNEEkVChe8MbHabbQ7V
+ t8uH+4XMeyvvUkYoih/aDjRlXcsMwnHuu7boacviY0LDxIcAs7Umgb19jGciq+vemPjpfeOHR
+ XbygfneBE2EpgJ2g3HZpqmA9zV1ouaUo4egHuag854s/+a+fxsYtaA5/pROTuEDTW5hq42gZy
+ 7tU3hYKuirDFCj3hRlcRMavDS7JTPi631dG7krtkUwds1iH9heTV7C6aAoFifpBpPJ9uHVrmT
+ jqTp9kjYaUfnLpTbf29yLKXksB7vxKPWYa+YKyBaw7UpZJxpZ1VCbVEZd/xC3/1vI6IZFpnEs
+ P4u4Fmj4wBTfC0BTmXuicKjIEZkCUnhgK6Ly6rYQFf2lX8zkoENzntEx9yPbpyDbOB5fnizXv
+ oSPM1o30Cv2Cu7bDnicaflr7Etgh6CWuEdmrEsn1C03dRvsIawfFuB3t15y48Sxa8tmHartHF
+ 66RgCYPZZfNMhFNslVM9pK4Z4UgNHkFujrxCXdY9X2m4XhklZTRwc0CQCo8q6s0LLHH8sL77R
+ CzckQD7lBVVuh8YqsM0HwQO+gdwTsYe8B0glWp8SjiGMh5wsjT3lGufB28kVHNOEDnmh+Vg13
+ jLbk+CBHS6AgfQmVIClUAseuUJ2m54DCWQ/uBYAkSgE5MqLLPZQmJkr8nsIVdApZj1WHBvv2B
+ 828SZegT19VN2u1ywaaOouOFK8e+gX21cMHH44rYiESsKjdsCg=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_085306_347336_E1A1764D 
-X-CRM114-Status: GOOD (  13.56  )
+X-CRM114-CacheID: sfid-20190904_090051_211362_4262519D 
+X-CRM114-Status: GOOD (  12.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,36 +75,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, linux-doc@vger.kernel.org,
- Catalin Marinas <catalin.marinas@arm.com>,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- Paolo Bonzini <pbonzini@redhat.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
+ Sven Van Asbroeck <thesven73@gmail.com>, linux-kernel@vger.kernel.org,
+ clang-built-linux@googlegroups.com, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDMvMDkvMjAxOSAxMDoxNCwgWmVuZ2h1aSBZdSB3cm90ZToKPiBPbiAyMDE5LzgvMzAgMTY6
-NDIsIFN0ZXZlbiBQcmljZSB3cm90ZToKPj4gSW1wbGVtZW50IHRoZSBzZXJ2aWNlIGNhbGwgZm9y
-IGNvbmZpZ3VyaW5nIGEgc2hhcmVkIHN0cnVjdHVyZSBiZXR3ZWVuIGEKPj4gVkNQVSBhbmQgdGhl
-IGh5cGVydmlzb3IgaW4gd2hpY2ggdGhlIGh5cGVydmlzb3IgY2FuIHdyaXRlIHRoZSB0aW1lCj4+
-IHN0b2xlbiBmcm9tIHRoZSBWQ1BVJ3MgZXhlY3V0aW9uIHRpbWUgYnkgb3RoZXIgdGFza3Mgb24g
-dGhlIGhvc3QuCj4+Cj4+IFRoZSBoeXBlcnZpc29yIGFsbG9jYXRlcyBtZW1vcnkgd2hpY2ggaXMg
-cGxhY2VkIGF0IGFuIElQQSBjaG9zZW4gYnkgdXNlcgo+PiBzcGFjZS4KPiAKPiBJdCBzZWVtcyB0
-aGF0IG5vIGFsbG9jYXRpb24gaGFwcGVucyBpbiB0aGUgaHlwZXJ2aXNvciBjb2RlLsKgIFVzZXIg
-c3BhY2UKPiB3aWxsIGRvIGl0IGluc3RlYWQ/CgpBaCwgeWVzIEkgc2hvdWxkIHVwZGF0ZSB0aGUg
-Y29tbWl0IG1lc3NhZ2UuIFVzZXIgc3BhY2UgZG9lcyBub3cgYWxsb2NhdGUKdGhlIG1lbW9yeS4g
-VGhhbmtzIGZvciBzcG90dGluZyB0aGF0LgoKU3RldmUKCj4+IFRoZSBoeXBlcnZpc29yIHRoZW4g
-dXBkYXRlcyB0aGUgc2hhcmVkIHN0cnVjdHVyZSB1c2luZwo+PiBrdm1fcHV0X2d1ZXN0KCkgdG8g
-ZW5zdXJlIHNpbmdsZSBjb3B5IGF0b21pY2l0eSBvZiB0aGUgNjQtYml0IHZhbHVlCj4+IHJlcG9y
-dGluZyB0aGUgc3RvbGVuIHRpbWUgaW4gbmFub3NlY29uZHMuCj4+Cj4+IFdoZW5ldmVyIHN0b2xl
-biB0aW1lIGlzIGVuYWJsZWQgYnkgdGhlIGd1ZXN0LCB0aGUgc3RvbGVuIHRpbWUgY291bnRlciBp
-cwo+PiByZXNldC4KPj4KPj4gVGhlIHN0b2xlbiB0aW1lIGl0c2VsZiBpcyByZXRyaWV2ZWQgZnJv
-bSB0aGUgc2NoZWRfaW5mbyBzdHJ1Y3R1cmUKPj4gbWFpbnRhaW5lZCBieSB0aGUgTGludXggc2No
-ZWR1bGVyIGNvZGUuIFdlIGVuYWJsZSBTQ0hFRFNUQVRTIHdoZW4KPj4gc2VsZWN0aW5nIEtWTSBL
-Y29uZmlnIHRvIGVuc3VyZSB0aGlzIHZhbHVlIGlzIG1lYW5pbmdmdWwuCj4+Cj4+IFNpZ25lZC1v
-ZmYtYnk6IFN0ZXZlbiBQcmljZSA8c3RldmVuLnByaWNlQGFybS5jb20+Cj4gCj4gVGhhbmtzLAo+
-IHplbmdodWkKPiAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+The probe function is no longer __init, so anything it calls now
+must also be available at runtime, as Kbuild points out when building
+with clang-9:
+
+WARNING: vmlinux.o(.text+0x6e7040): Section mismatch in reference from the function weim_probe() to the function .init.text:imx_weim_gpr_setup()
+The function weim_probe() references
+the function __init imx_weim_gpr_setup().
+This is often because weim_probe lacks a __init
+annotation or the annotation of imx_weim_gpr_setup is wrong.
+
+WARNING: vmlinux.o(.text+0x6e70f0): Section mismatch in reference from the function weim_probe() to the function .init.text:weim_timing_setup()
+The function weim_probe() references
+the function __init weim_timing_setup().
+This is often because weim_probe lacks a __init
+annotation or the annotation of weim_timing_setup is wrong.
+
+Remove the remaining __init markings that are now wrong.
+
+Fixes: 4a92f07816ba ("bus: imx-weim: use module_platform_driver()")
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+I applied this on top of the patch taht introduced the build error
+
+ drivers/bus/imx-weim.c | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/bus/imx-weim.c b/drivers/bus/imx-weim.c
+index 79af0c27f5a3..28bb65a5613f 100644
+--- a/drivers/bus/imx-weim.c
++++ b/drivers/bus/imx-weim.c
+@@ -76,7 +76,7 @@ static const struct of_device_id weim_id_table[] = {
+ };
+ MODULE_DEVICE_TABLE(of, weim_id_table);
+ 
+-static int __init imx_weim_gpr_setup(struct platform_device *pdev)
++static int imx_weim_gpr_setup(struct platform_device *pdev)
+ {
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct property *prop;
+@@ -126,10 +126,10 @@ static int __init imx_weim_gpr_setup(struct platform_device *pdev)
+ }
+ 
+ /* Parse and set the timing for this device. */
+-static int __init weim_timing_setup(struct device *dev,
+-				    struct device_node *np, void __iomem *base,
+-				    const struct imx_weim_devtype *devtype,
+-				    struct cs_timing_state *ts)
++static int weim_timing_setup(struct device *dev,
++			     struct device_node *np, void __iomem *base,
++			     const struct imx_weim_devtype *devtype,
++			     struct cs_timing_state *ts)
+ {
+ 	u32 cs_idx, value[MAX_CS_REGS_COUNT];
+ 	int i, ret;
+-- 
+2.20.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
