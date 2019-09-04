@@ -2,70 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0F44A78AC
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 04:18:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48426A78B5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 04:21:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CvmoWwDEle0yVrF4ohMVkg4UP5Vdpa46AyCAfxVogNc=; b=Ll0zzcVutL6v2V
-	f2m56R6QXhDQxplfL8Pf9tTE0XzoioSSp7De+4+j9H02VwbPNDqzl3cjUtDk015PYbz4Ned3Zpr6l
-	lnJXIou7W+t6UI+XD5kZ/mIkKhjdD0Z1k2ozZOSJvvRPwnw8tvrpg+XXrcJ47VqHiiRCVcH/bKcUx
-	xV6rvjI9x4J3pky6uXjbsgvqAU4ftbtIlJJbdtZgrJbONlUs3b3Ld5tFGYXYNF3GxkbBw5eM0Dllc
-	43oGQTqCjcH7v9u1ZeGiXNY4ZftNvkhfhR0RJJIt+LJqb05O8a8CvLJ4rsHMBWlEwGhh1TqwNMrNf
-	qQ2Gd3bYBBBgC/STTdhw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=qK3sNtlh5mWeYzMuz9c+ZAFeJYSBm4XzSpqHXtxpC64=; b=FAcj++5vIkZjK/
+	9f8u9AXPTNEAQn4awN8lh/kLB+BhkPJy3/4VhOdimNoN0qLKUV19lXMAbTEUG1S7X+6bYJyrZBOlu
+	YvC2tWLABJTORX2Fdm31upd4GuHG9tVdMhLsoOrHrC2S8BIOvV65q1ACVddMmFG5WrA5wjwqtFlO9
+	12LHKGdcBHkYxP7NpTRHG/p3nPdp/+aJ4ADxjn+oVi03reu70bXLoe6OH9TMG0e2p0l6m4FT9/0op
+	5rDVc1qBOAGbBnooYplVgovJz9SKts7ddpQ/+H4mhs+kcg2x/fqkjxxXvJrfCrvg1hcgkfXkF8RES
+	3SZPuxeJOafQRbfSjb+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Kse-0008HU-BU; Wed, 04 Sep 2019 02:18:44 +0000
-Received: from szxga08-in.huawei.com ([45.249.212.255] helo=huawei.com)
+	id 1i5Kuw-0001Ot-KE; Wed, 04 Sep 2019 02:21:06 +0000
+Received: from wout4-smtp.messagingengine.com ([64.147.123.20])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5KsQ-0008GS-WF
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 02:18:33 +0000
-Received: from DGGEMM403-HUB.china.huawei.com (unknown [172.30.72.56])
- by Forcepoint Email with ESMTP id BC21340E4231C3AB44ED;
- Wed,  4 Sep 2019 10:18:19 +0800 (CST)
-Received: from dggeme764-chm.china.huawei.com (10.3.19.110) by
- DGGEMM403-HUB.china.huawei.com (10.3.20.211) with Microsoft SMTP Server (TLS)
- id 14.3.439.0; Wed, 4 Sep 2019 10:18:11 +0800
-Received: from [127.0.0.1] (10.184.39.28) by dggeme764-chm.china.huawei.com
- (10.3.19.110) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1591.10; Wed, 4
- Sep 2019 10:18:11 +0800
-Subject: Re: [PATCH] arm: fix page faults in do_alignment
-To: "Eric W. Biederman" <ebiederm@xmission.com>, "Russell King - ARM Linux
- admin" <linux@armlinux.org.uk>
-References: <1567171877-101949-1-git-send-email-jingxiangfeng@huawei.com>
- <20190830133522.GZ13294@shell.armlinux.org.uk>
- <87d0gmwi73.fsf@x220.int.ebiederm.org>
- <20190830203052.GG13294@shell.armlinux.org.uk>
- <87y2zav01z.fsf@x220.int.ebiederm.org>
- <20190830222906.GH13294@shell.armlinux.org.uk>
- <87mufmioqv.fsf@x220.int.ebiederm.org>
-From: Jing Xiangfeng <jingxiangfeng@huawei.com>
-Message-ID: <5D6F1EC9.5070909@huawei.com>
-Date: Wed, 4 Sep 2019 10:17:45 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:38.0) Gecko/20100101
- Thunderbird/38.1.0
+ id 1i5Kuj-0001Ns-7k
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 02:20:54 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.west.internal (Postfix) with ESMTP id DD8344FF;
+ Tue,  3 Sep 2019 22:20:46 -0400 (EDT)
+Received: from mailfrontend2 ([10.202.2.163])
+ by compute4.internal (MEProxy); Tue, 03 Sep 2019 22:20:47 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=from
+ :to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding; s=fm3; bh=0OPawNPcXoaz6itJ9OLuJZ+eo+
+ 4zgp53fsik4iX6Y5A=; b=bUpB5qhwONHVcB/LkxyhBPPs4qTdJBZXSmbrFxSTcJ
+ 92TXrH1wYZdpRiyTtVwvkeN2/a2T6uKm6Ze5w/QS9G+sZqri/5lWjOnhzTwe2TCD
+ TNE72RGJAKufDF0PB/X94IwTcae53qa+fM++DXwP+0bCzRbQw2aoSQ1GTO5EeRQb
+ IeLdKmKacwvuNr/bVUaAUrPcyNAxk6FWd54Znxrm+mZZbJxJWPz4TTKlI0EnH8Fl
+ txsXwYJehSrzOWHAsTK6dR6DdO8YXzO0NvCislhISfpF6GTlmBVrKmVZ0o6HvZ+T
+ oV+LLOF7qWZ0FyowDQEJI/xc0wNJdG6Z9m7Tqz8JN4/Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-transfer-encoding:date:from
+ :message-id:mime-version:subject:to:x-me-proxy:x-me-proxy
+ :x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=0OPawNPcXoaz6itJ9
+ OLuJZ+eo+4zgp53fsik4iX6Y5A=; b=aHkwBUfdVOz919lRbW3s0C/fAMdKFV0x+
+ ZYP7AEM7cT3YuXCYRrLos9Y38ihlmfhzk4PlRWDLbXS0++rzTR+/K9+pUJM5koTy
+ Kc2/CmKDDjap69Tnr+QbEJcA+cJne37Gzv/p0VLnrw7j71Z81wyFNoAsbISsfwwM
+ 92cNKXz+y1QSM6yS5e5/zZBllzINa8gp8kKPiIBIKHbKfX9SzVe+rjyUpEB8xCAO
+ Gu/ciU3unWSKrQeBmoCiZWXUUXCtQJdMRxuOTsTrJ1mfVeT/PXQVudFjevT3QYJ8
+ +CCeRrmGzKaMkg361tnyHnUc2xEphCHjdUtd3D9K/CSuuWgW0iq8g==
+X-ME-Sender: <xms:fR9vXThOywdquuTHqB5WK9u6cRRLdroK8yAz90O8nChsB55IXSnF2A>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejgedgheegucetufdoteggodetrfdotf
+ fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
+ uceurghilhhouhhtmecufedttdenucenucfjughrpefhvffufffkofgggfestdekredtre
+ dttdenucfhrhhomheptehnughrvgifucflvghffhgvrhihuceorghnughrvgifsegrjhdr
+ ihgurdgruheqnecuffhomhgrihhnpehoiihlrggsshdrohhrghenucfkphepvddtfedrhe
+ ejrddvudehrddujeeknecurfgrrhgrmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghj
+ rdhiugdrrghunecuvehluhhsthgvrhfuihiivgeptd
+X-ME-Proxy: <xmx:fR9vXYYdpaVaMDvBDQYcEqe0CJQD0Tk-oF7coHtC6EAZDDGORCzPWg>
+ <xmx:fR9vXfIr6kfZHrZqcDvsdkQDj8ZjCX2aZNgMKexQM0LMI_OxYZC5Fg>
+ <xmx:fR9vXVvztQC8bxljLHw2O96MWiEZ_r-uqKEUJRicw_EPOPKUK6IELA>
+ <xmx:fh9vXRVnebMtj_QQWeJhX8aiIv66Y3St9pbVADOY8yxyWnhEyXl0hQ>
+Received: from localhost.localdomain (203-57-215-178.dyn.iinet.net.au
+ [203.57.215.178])
+ by mail.messagingengine.com (Postfix) with ESMTPA id 4E4F2D6005B;
+ Tue,  3 Sep 2019 22:20:42 -0400 (EDT)
+From: Andrew Jeffery <andrew@aj.id.au>
+To: linux-mmc@vger.kernel.org
+Subject: [PATCH v3] mmc: sdhci-of-aspeed: Depend on CONFIG_OF_ADDRESS
+Date: Wed,  4 Sep 2019 11:51:20 +0930
+Message-Id: <20190904022120.4174-1-andrew@aj.id.au>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-In-Reply-To: <87mufmioqv.fsf@x220.int.ebiederm.org>
-X-Originating-IP: [10.184.39.28]
-X-ClientProxiedBy: dggeme718-chm.china.huawei.com (10.1.199.114) To
- dggeme764-chm.china.huawei.com (10.3.19.110)
-X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_191831_214330_C535717C 
-X-CRM114-Status: GOOD (  24.28  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190903_192053_321088_0B505D43 
+X-CRM114-Status: GOOD (  11.32  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.255 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [64.147.123.20 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,166 +100,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kstewart@linuxfoundation.org, gustavo@embeddedor.com,
- gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- sakari.ailus@linux.intel.com, bhelgaas@google.com, tglx@linutronix.de,
+Cc: ulf.hansson@linaro.org, kbuild test robot <lkp@intel.com>,
+ linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
+ openbmc@lists.ozlabs.org, adrian.hunter@intel.com,
+ linux-kernel@vger.kernel.org, joel@jms.id.au,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019/9/3 1:36, Eric W. Biederman wrote:
-> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
-> 
->> On Fri, Aug 30, 2019 at 04:02:48PM -0500, Eric W. Biederman wrote:
->>> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
->>>
->>>> On Fri, Aug 30, 2019 at 02:45:36PM -0500, Eric W. Biederman wrote:
->>>>> Russell King - ARM Linux admin <linux@armlinux.org.uk> writes:
->>>>>
->>>>>> On Fri, Aug 30, 2019 at 09:31:17PM +0800, Jing Xiangfeng wrote:
->>>>>>> The function do_alignment can handle misaligned address for user and
->>>>>>> kernel space. If it is a userspace access, do_alignment may fail on
->>>>>>> a low-memory situation, because page faults are disabled in
->>>>>>> probe_kernel_address.
->>>>>>>
->>>>>>> Fix this by using __copy_from_user stead of probe_kernel_address.
->>>>>>>
->>>>>>> Fixes: b255188 ("ARM: fix scheduling while atomic warning in alignment handling code")
->>>>>>> Signed-off-by: Jing Xiangfeng <jingxiangfeng@huawei.com>
->>>>>>
->>>>>> NAK.
->>>>>>
->>>>>> The "scheduling while atomic warning in alignment handling code" is
->>>>>> caused by fixing up the page fault while trying to handle the
->>>>>> mis-alignment fault generated from an instruction in atomic context.
->>>>>>
->>>>>> Your patch re-introduces that bug.
->>>>>
->>>>> And the patch that fixed scheduling while atomic apparently introduced a
->>>>> regression.  Admittedly a regression that took 6 years to track down but
->>>>> still.
->>>>
->>>> Right, and given the number of years, we are trading one regression for
->>>> a different regression.  If we revert to the original code where we
->>>> fix up, we will end up with people complaining about a "new" regression
->>>> caused by reverting the previous fix.  Follow this policy and we just
->>>> end up constantly reverting the previous revert.
->>>>
->>>> The window is very small - the page in question will have had to have
->>>> instructions read from it immediately prior to the handler being entered,
->>>> and would have had to be made "old" before subsequently being unmapped.
->>>
->>>> Rather than excessively complicating the code and making it even more
->>>> inefficient (as in your patch), we could instead retry executing the
->>>> instruction when we discover that the page is unavailable, which should
->>>> cause the page to be paged back in.
->>>
->>> My patch does not introduce any inefficiencies.  It onlys moves the
->>> check for user_mode up a bit.  My patch did duplicate the code.
->>>
->>>> If the page really is unavailable, the prefetch abort should cause a
->>>> SEGV to be raised, otherwise the re-execution should replace the page.
->>>>
->>>> The danger to that approach is we page it back in, and it gets paged
->>>> back out before we're able to read the instruction indefinitely.
->>>
->>> I would think either a little code duplication or a function that looks
->>> at user_mode(regs) and picks the appropriate kind of copy to do would be
->>> the best way to go.  Because what needs to happen in the two cases for
->>> reading the instruction are almost completely different.
->>
->> That is what I mean.  I'd prefer to avoid that with the large chunk of
->> code.  How about instead adding a local replacement for
->> probe_kernel_address() that just sorts out the reading, rather than
->> duplicating all the code to deal with thumb fixup.
-> 
-> So something like this should be fine?
-> 
-> Jing Xiangfeng can you test this please?  I think this fixes your issue
-> but I don't currently have an arm development box where I could test this.
-> 
-Yes, I have tested and it can fix my issue in kernel 4.19.
+Resolves the following build error reported by the 0-day bot:
 
-> diff --git a/arch/arm/mm/alignment.c b/arch/arm/mm/alignment.c
-> index 04b36436cbc0..b07d17ca0ae5 100644
-> --- a/arch/arm/mm/alignment.c
-> +++ b/arch/arm/mm/alignment.c
-> @@ -767,6 +767,23 @@ do_alignment_t32_to_handler(unsigned long *pinstr, struct pt_regs *regs,
->  	return NULL;
->  }
->  
-> +static inline unsigned long
-> +copy_instr(bool umode, void *dst, unsigned long instrptr, size_t size)
-> +{
-> +	unsigned long result;
-> +	if (umode) {
-> +		void __user *src = (void *)instrptr;
-> +		result = copy_from_user(dst, src, size);
-> +	} else {
-> +		void *src = (void *)instrptr;
-> +		result = probe_kernel_read(dst, src, size);
-> +	}
-> +	/* Convert short reads into -EFAULT */
-> +	if ((result >= 0) && (result < size))
-> +		result = -EFAULT;
-> +	return result;
-> +}
-> +
->  static int
->  do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
->  {
-> @@ -778,22 +795,24 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
->  	u16 tinstr = 0;
->  	int isize = 4;
->  	int thumb2_32b = 0;
-> +	bool umode;
->  
->  	if (interrupts_enabled(regs))
->  		local_irq_enable();
->  
->  	instrptr = instruction_pointer(regs);
-> +	umode = user_mode(regs);
->  
->  	if (thumb_mode(regs)) {
-> -		u16 *ptr = (u16 *)(instrptr & ~1);
-> -		fault = probe_kernel_address(ptr, tinstr);
-> +		unsigned long tinstrptr = instrptr & ~1;
-> +		fault = copy_instr(umode, &tinstr, tinstrptr, 2);
->  		tinstr = __mem_to_opcode_thumb16(tinstr);
->  		if (!fault) {
->  			if (cpu_architecture() >= CPU_ARCH_ARMv7 &&
->  			    IS_T32(tinstr)) {
->  				/* Thumb-2 32-bit */
->  				u16 tinst2 = 0;
-> -				fault = probe_kernel_address(ptr + 1, tinst2);
-> +				fault = copy_instr(umode, &tinst2, tinstrptr + 2, 2);
->  				tinst2 = __mem_to_opcode_thumb16(tinst2);
->  				instr = __opcode_thumb32_compose(tinstr, tinst2);
->  				thumb2_32b = 1;
-> @@ -803,7 +822,7 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
->  			}
->  		}
->  	} else {
-> -		fault = probe_kernel_address((void *)instrptr, instr);
-> +		fault = copy_instr(umode, &instr, instrptr, 4);
->  		instr = __mem_to_opcode_arm(instr);
->  	}
->  
-> @@ -812,7 +831,7 @@ do_alignment(unsigned long addr, unsigned int fsr, struct pt_regs *regs)
->  		goto bad_or_fault;
->  	}
->  
-> -	if (user_mode(regs))
-> +	if (umode)
->  		goto user;
->  
->  	ai_sys += 1;
-> 
-> .
-> 
+    ERROR: "of_platform_device_create" [drivers/mmc/host/sdhci-of-aspeed.ko] undefined!
 
+SPARC does not set CONFIG_OF_ADDRESS so the symbol is missing. Depend on
+CONFIG_OF_ADDRESS to ensure the driver is only built for supported
+configurations.
+
+Fixes: 2d28dbe042f4 ("mmc: sdhci-of-aspeed: Add support for the ASPEED SD controller")
+Reported-by: kbuild test robot <lkp@intel.com>
+Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+---
+v2 was a series of 4 patches, three of which were applied leaving this build
+fix to be reworked. The v2 series can be found here:
+
+https://patchwork.ozlabs.org/cover/1156457/
+
+ drivers/mmc/host/Kconfig | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/drivers/mmc/host/Kconfig b/drivers/mmc/host/Kconfig
+index 0f8a230de2f3..3a52f5703286 100644
+--- a/drivers/mmc/host/Kconfig
++++ b/drivers/mmc/host/Kconfig
+@@ -157,7 +157,7 @@ config MMC_SDHCI_OF_ARASAN
+ config MMC_SDHCI_OF_ASPEED
+ 	tristate "SDHCI OF support for the ASPEED SDHCI controller"
+ 	depends on MMC_SDHCI_PLTFM
+-	depends on OF
++	depends on OF && OF_ADDRESS
+ 	help
+ 	  This selects the ASPEED Secure Digital Host Controller Interface.
+ 
+-- 
+2.20.1
 
 
 _______________________________________________
