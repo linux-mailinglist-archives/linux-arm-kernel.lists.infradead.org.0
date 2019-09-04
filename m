@@ -2,54 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EDECBA7D2E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:55:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2D6B6A7D31
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:56:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PoiUna16bfklLpAxtDJFrXSun2IY0A1mDCmF1sGKx7c=; b=rirv1dvYLDd2iT
-	ztPwFKpCcg5uyqZ0/wHerYbaH/+yvko+FGyv5Nf6HrZxPyF46ukdnEzoJw0vXYRNpa307kYygZmE5
-	e6AsiwOeY4IvQ+Dauw9Tjwr9eqOvDQeUP82Y4N1mglvyqAWq89a17Itox+N/NF5TvhcvTufCHl0+c
-	6ohvsYPeKfuMvKcIUSAVDlqySTOghW9OlUsKdSm+pahqEtLGS5nYMAkLhG1NBbSj6rIm5i86SIEfI
-	G4+6JB/77rFeqMlB9FU+lNfL3wgXqY7Duqw4pSwBbNLrQDE9c1L89UtIrVpjWE7h81pFtrqzJVXDn
-	JprGmtYGKSm4OYA3MlIQ==;
+	List-Owner; bh=wL9oYquQ5xGSe2qwSjO5W045vTpnnzOTkMhKctPybms=; b=gYoS4vGZvF1G2k
+	jKKcSeAYVfNR7QOUxwydAmMhW/UuefwItwAme1kwLG6Q9cUL+DEMu2oKVjd0fFWKeVOmyOIVJ+l2p
+	o1zwgSkf2WOAZJkOGiLpr8AzYCcckb9OluZvQ2ZgltqhPZDi3iomaHMgKPGj5qSbFFrwUNpdpaxyl
+	dLup3PZ3IGgboyoc5nptn756eH8ZfFBkuXRhxPfQgh8CjXFssiWpeJuMrVXtuuVB6/R5UwG6SaQ3m
+	CW4MnIUtY9JRdzD/l5WO9u2Mg4QF2ka9QoxI6vVwkWvEkKsb0QnnNXMbolbMBGcV42BLLkLJLKO4J
+	m7iojGqfzpFmFbgiiQbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Q8f-0006zp-Gy; Wed, 04 Sep 2019 07:55:37 +0000
+	id 1i5Q9e-0007UK-CT; Wed, 04 Sep 2019 07:56:38 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Q82-0005hR-MB; Wed, 04 Sep 2019 07:55:00 +0000
-X-UUID: b135adccabc84f139792ea7f077c45e9-20190903
-X-UUID: b135adccabc84f139792ea7f077c45e9-20190903
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ id 1i5Q83-0005hr-I8; Wed, 04 Sep 2019 07:55:01 +0000
+X-UUID: aa2cda5baffd4f7aad2dc599c2496bd4-20190903
+X-UUID: aa2cda5baffd4f7aad2dc599c2496bd4-20190903
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <chaotian.jing@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 410075846; Tue, 03 Sep 2019 23:54:52 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 00:54:50 -0700
+ with ESMTP id 2114102428; Tue, 03 Sep 2019 23:54:55 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 00:54:53 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 15:54:49 +0800
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 15:54:52 +0800
 Received: from localhost.localdomain (10.17.3.153) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Sep 2019 15:54:48 +0800
+ Transport; Wed, 4 Sep 2019 15:54:51 +0800
 From: Chaotian Jing <chaotian.jing@mediatek.com>
 To: Ulf Hansson <ulf.hansson@linaro.org>
-Subject: [PATCH 1/2] mmc: block: make the card_busy_detect() more generic
-Date: Wed, 4 Sep 2019 15:54:43 +0800
-Message-ID: <20190904075444.2163-2-chaotian.jing@mediatek.com>
+Subject: [PATCH 2/2] mmc: block: add CMD13 polling for ioctl() cmd with R1B
+ response
+Date: Wed, 4 Sep 2019 15:54:44 +0800
+Message-ID: <20190904075444.2163-3-chaotian.jing@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190904075444.2163-1-chaotian.jing@mediatek.com>
 References: <20190904075444.2163-1-chaotian.jing@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_005458_732740_E94020E8 
-X-CRM114-Status: GOOD (  11.71  )
+X-CRM114-CacheID: sfid-20190904_005459_601453_B79B2244 
+X-CRM114-Status: GOOD (  14.11  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -86,69 +87,148 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-to use the card_busy_detect() to wait card levae the programming state,
-there may be do not have the "struct request *" argument.
+currently there is no CMD13 polling and other code to wait card
+change to transfer state after R1B command completed. and this
+polling operation cannot do in user space, because other request
+may coming before the CMD13 from user space.
 
 Signed-off-by: Chaotian Jing <chaotian.jing@mediatek.com>
 ---
- drivers/mmc/core/block.c | 16 ++++++++--------
- 1 file changed, 8 insertions(+), 8 deletions(-)
+ drivers/mmc/core/block.c | 107 ++++++++++++++++++++-------------------
+ 1 file changed, 55 insertions(+), 52 deletions(-)
 
 diff --git a/drivers/mmc/core/block.c b/drivers/mmc/core/block.c
-index 2c71a434c915..aa7c19f7e298 100644
+index aa7c19f7e298..9d6f7a5612b5 100644
 --- a/drivers/mmc/core/block.c
 +++ b/drivers/mmc/core/block.c
-@@ -981,7 +981,7 @@ static inline bool mmc_blk_in_tran_state(u32 status)
+@@ -468,6 +468,58 @@ static int ioctl_do_sanitize(struct mmc_card *card)
+ 	return err;
  }
  
- static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
--			    struct request *req, u32 *resp_errs)
++static inline bool mmc_blk_in_tran_state(u32 status)
++{
++	/*
++	 * Some cards mishandle the status bits, so make sure to check both the
++	 * busy indication and the card state.
++	 */
++	return status & R1_READY_FOR_DATA &&
++	       (R1_CURRENT_STATE(status) == R1_STATE_TRAN);
++}
++
++static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
 +			    u32 *resp_errs)
- {
- 	unsigned long timeout = jiffies + msecs_to_jiffies(timeout_ms);
- 	int err = 0;
-@@ -992,8 +992,8 @@ static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
- 
- 		err = __mmc_send_status(card, &status, 5);
- 		if (err) {
--			pr_err("%s: error %d requesting status\n",
--			       req->rq_disk->disk_name, err);
++{
++	unsigned long timeout = jiffies + msecs_to_jiffies(timeout_ms);
++	int err = 0;
++	u32 status;
++
++	do {
++		bool done = time_after(jiffies, timeout);
++
++		err = __mmc_send_status(card, &status, 5);
++		if (err) {
 +			dev_err(mmc_dev(card->host),
 +				"error %d requesting status\n", err);
- 			return err;
- 		}
- 
-@@ -1006,9 +1006,9 @@ static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
- 		 * leaves the program state.
- 		 */
- 		if (done) {
--			pr_err("%s: Card stuck in wrong state! %s %s status: %#x\n",
--				mmc_hostname(card->host),
--				req->rq_disk->disk_name, __func__, status);
++			return err;
++		}
++
++		/* Accumulate any response error bits seen */
++		if (resp_errs)
++			*resp_errs |= status;
++
++		/*
++		 * Timeout if the device never becomes ready for data and never
++		 * leaves the program state.
++		 */
++		if (done) {
 +			dev_err(mmc_dev(card->host),
 +				"Card stuck in wrong state! %s status: %#x\n",
 +				 __func__, status);
- 			return -ETIMEDOUT;
- 		}
++			return -ETIMEDOUT;
++		}
++
++		/*
++		 * Some cards mishandle the status bits,
++		 * so make sure to check both the busy
++		 * indication and the card state.
++		 */
++	} while (!mmc_blk_in_tran_state(status));
++
++	return err;
++}
++
+ static int __mmc_blk_ioctl_cmd(struct mmc_card *card, struct mmc_blk_data *md,
+ 			       struct mmc_blk_ioc_data *idata)
+ {
+@@ -623,6 +675,9 @@ static int __mmc_blk_ioctl_cmd(struct mmc_card *card, struct mmc_blk_data *md,
+ 					__func__, status, err);
+ 	}
  
-@@ -1671,7 +1671,7 @@ static int mmc_blk_fix_state(struct mmc_card *card, struct request *req)
++	if (!err && (cmd.flags & MMC_RSP_R1B))
++		err = card_busy_detect(card, MMC_BLK_TIMEOUT_MS, NULL);
++
+ 	return err;
+ }
  
- 	mmc_blk_send_stop(card, timeout);
+@@ -970,58 +1025,6 @@ static unsigned int mmc_blk_data_timeout_ms(struct mmc_host *host,
+ 	return ms;
+ }
  
--	err = card_busy_detect(card, timeout, req, NULL);
-+	err = card_busy_detect(card, timeout, NULL);
- 
- 	mmc_retune_release(card->host);
- 
-@@ -1895,7 +1895,7 @@ static int mmc_blk_card_busy(struct mmc_card *card, struct request *req)
- 	if (mmc_host_is_spi(card->host) || rq_data_dir(req) == READ)
- 		return 0;
- 
--	err = card_busy_detect(card, MMC_BLK_TIMEOUT_MS, req, &status);
-+	err = card_busy_detect(card, MMC_BLK_TIMEOUT_MS, &status);
- 
- 	/*
- 	 * Do not assume data transferred correctly if there are any error bits
+-static inline bool mmc_blk_in_tran_state(u32 status)
+-{
+-	/*
+-	 * Some cards mishandle the status bits, so make sure to check both the
+-	 * busy indication and the card state.
+-	 */
+-	return status & R1_READY_FOR_DATA &&
+-	       (R1_CURRENT_STATE(status) == R1_STATE_TRAN);
+-}
+-
+-static int card_busy_detect(struct mmc_card *card, unsigned int timeout_ms,
+-			    u32 *resp_errs)
+-{
+-	unsigned long timeout = jiffies + msecs_to_jiffies(timeout_ms);
+-	int err = 0;
+-	u32 status;
+-
+-	do {
+-		bool done = time_after(jiffies, timeout);
+-
+-		err = __mmc_send_status(card, &status, 5);
+-		if (err) {
+-			dev_err(mmc_dev(card->host),
+-				"error %d requesting status\n", err);
+-			return err;
+-		}
+-
+-		/* Accumulate any response error bits seen */
+-		if (resp_errs)
+-			*resp_errs |= status;
+-
+-		/*
+-		 * Timeout if the device never becomes ready for data and never
+-		 * leaves the program state.
+-		 */
+-		if (done) {
+-			dev_err(mmc_dev(card->host),
+-				"Card stuck in wrong state! %s status: %#x\n",
+-				 __func__, status);
+-			return -ETIMEDOUT;
+-		}
+-
+-		/*
+-		 * Some cards mishandle the status bits,
+-		 * so make sure to check both the busy
+-		 * indication and the card state.
+-		 */
+-	} while (!mmc_blk_in_tran_state(status));
+-
+-	return err;
+-}
+-
+ static int mmc_blk_reset(struct mmc_blk_data *md, struct mmc_host *host,
+ 			 int type)
+ {
 -- 
 2.18.0
 
