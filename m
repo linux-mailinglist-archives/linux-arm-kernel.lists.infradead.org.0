@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 184E9A8555
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:12:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C56E1A855E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:13:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HVP2+GcVO1B1gawCDJNvbelRXBcv3GU1haKx7VQgAkY=; b=BpmrWhiLWdbUBQ
-	KZHIDtEmXbPh+0q2VILAOZptTcvbvJDrUK6u0v2KQXr5+QeIZ0VFLqtc1UXL/oZi0hZI/iSwfmwSU
-	97LmS7oAywdNJB2PZaTQiiaQKewinG9DuRovOuo79cEv0/3bs0SnRzhGg+VYP3Uq68uQCqlAOFWld
-	fqIBis/Tg2Cco57YrzTfLfHxHrfh8/Kyys+qeICoos4ccjZ27e8HI02WGdJv8fudlxbL3oXhBljoN
-	us826x/jO+pHyR67yk9gXJDKq/S9+x71d9MI393yr8UyXhCKIJwjoI++td0NgOiLw9x/V8mNinxp+
-	ahpqbxFrh722cXQ4Lfxw==;
+	List-Owner; bh=h+vXlYU0iRKxhQrmlECoj+P7hKPUkD2b8OmKeNA2uDE=; b=FlHEugJngsD52x
+	YtsGnwwVvQbfrOuBKGra5nZHdW4rlaaT7GwI28zCwD+49x9jCXrktmFxbn2ZGNQQuLYzFddl6N7fu
+	6fsNqipXcDI5xZvY9xTkh8nAfTIInoSwFOeWkyUH/ne/l7+/eCOBq1iTiGN3AJnIoXGA6jYbcgPAn
+	4RADVlujE7SAELSoXTRWScNlAJheAuIebFZCJdAb5+zTGfAfrdvs5vBlidgjFlxl9FIUUwl34Db3R
+	iy5pwrDpSIp5Fy/HpcsPvXTCwbzOWxTYj8ATmiPhYD3VAe+ZTJlpbgIvvoE8wkC+kKaA4jN7mCjWB
+	y4OtY5xa/CugYWqjgvwA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5W0z-0003Pj-5h; Wed, 04 Sep 2019 14:12:05 +0000
+	id 1i5W1k-0004Us-L6; Wed, 04 Sep 2019 14:12:52 +0000
 Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5VqY-0005rf-OX; Wed, 04 Sep 2019 14:01:20 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 8DD4581AAEB95601D72F;
- Wed,  4 Sep 2019 22:01:16 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
- 22:01:05 +0800
+ id 1i5Vqd-0005wz-Ds; Wed, 04 Sep 2019 14:01:25 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 68D776C4A34FFCD4FBBF;
+ Wed,  4 Sep 2019 22:01:21 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
+ 22:01:08 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <broonie@kernel.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
  <sbranden@broadcom.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
@@ -41,10 +41,10 @@ To: <broonie@kernel.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
  <mripard@kernel.org>, <wens@csie.org>, <ldewangan@nvidia.com>,
  <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>
-Subject: [PATCH -next 33/36] spi: xlp: use devm_platform_ioremap_resource() to
- simplify code
-Date: Wed, 4 Sep 2019 21:59:15 +0800
-Message-ID: <20190904135918.25352-34-yuehaibing@huawei.com>
+Subject: [PATCH -next 34/36] spi: zynqmp: use devm_platform_ioremap_resource()
+ to simplify code
+Date: Wed, 4 Sep 2019 21:59:16 +0800
+Message-ID: <20190904135918.25352-35-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190904135918.25352-1-yuehaibing@huawei.com>
 References: <20190904135918.25352-1-yuehaibing@huawei.com>
@@ -52,8 +52,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_070119_003381_CE45C80D 
-X-CRM114-Status: UNSURE (   8.04  )
+X-CRM114-CacheID: sfid-20190904_070123_781306_F8E33527 
+X-CRM114-Status: UNSURE (   8.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -93,31 +93,31 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/spi/spi-xlp.c | 4 +---
+ drivers/spi/spi-zynqmp-gqspi.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/spi/spi-xlp.c b/drivers/spi/spi-xlp.c
-index 4eb5bc9..797ac0e 100644
---- a/drivers/spi/spi-xlp.c
-+++ b/drivers/spi/spi-xlp.c
-@@ -370,7 +370,6 @@ static int xlp_spi_probe(struct platform_device *pdev)
- {
+diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
+index 5e9ea8a..60c4de4 100644
+--- a/drivers/spi/spi-zynqmp-gqspi.c
++++ b/drivers/spi/spi-zynqmp-gqspi.c
+@@ -1016,7 +1016,6 @@ static int zynqmp_qspi_probe(struct platform_device *pdev)
+ 	int ret = 0;
  	struct spi_master *master;
- 	struct xlp_spi_priv *xspi;
+ 	struct zynqmp_qspi *xqspi;
 -	struct resource *res;
- 	struct clk *clk;
- 	int irq, err;
+ 	struct device *dev = &pdev->dev;
  
-@@ -378,8 +377,7 @@ static int xlp_spi_probe(struct platform_device *pdev)
- 	if (!xspi)
- 		return -ENOMEM;
+ 	eemi_ops = zynqmp_pm_get_eemi_ops();
+@@ -1031,8 +1030,7 @@ static int zynqmp_qspi_probe(struct platform_device *pdev)
+ 	master->dev.of_node = pdev->dev.of_node;
+ 	platform_set_drvdata(pdev, master);
  
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	xspi->base = devm_ioremap_resource(&pdev->dev, res);
-+	xspi->base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(xspi->base))
- 		return PTR_ERR(xspi->base);
- 
+-	xqspi->regs = devm_ioremap_resource(&pdev->dev, res);
++	xqspi->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(xqspi->regs)) {
+ 		ret = PTR_ERR(xqspi->regs);
+ 		goto remove_master;
 -- 
 2.7.4
 
