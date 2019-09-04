@@ -2,91 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 53ACCA7937
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 05:19:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9FB87A795D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 05:38:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vzvdkqxVOts70OsO9c0Sd3sPyJuybPuy1yxOk8O6Tqw=; b=UMfwV7nz6OJ/9V
-	0mF+yDYFUmyAUvw/3EkG93AuHeq6sl1I/5oA8QbaSfBh17gzW4xLhkhOAhLyinOL6Ow6lvVa2dCuz
-	9EqGkvcxWYx67UbMgH/VhV8GPgjtLYN3aE0Bm4xwEqevOc2v2VFrsru38Nl2P47VSqLh/crhXo+ks
-	ilJiisERhM8yCqfdSHTA7hlvDEE+rf1VXAEF0WzqaInXDJ3Tpyz/ayhQ+Rzjl82Q+yEdgJ1/yHeK1
-	G+pXENu6Z/q8tWGOmy5DeGNVKRj/XeUdQGqzzxZgNVSCNJ7r9l9VcpiuspqjSfEOdqIp1jVmJT/3f
-	LqwKccwlzGn7MvwWeZqQ==;
+	List-Owner; bh=OuwiCnj0rmlZ6dYFl/lPOH/S0yyOdxPjoD2Dx/JdMiI=; b=r0d1BlIb1DV//E
+	QampNz1UxGyGt8tYBr2kNK0K7quncGzGcKVkRpY9+nw771cWy32NfPM9oo9QoKEO3g0b8MSX79qTX
+	Txa3YawnOhvLLbsG1uT1hqDfc+iQUIuEw8+uDa4RDmd2DUkY6IVHd5DgZlWoSPBUUm4I7WR5GxcEp
+	GbTYfUi2wKJ+enPsACOwwWjQC9R/H4MLQ4qHDLk1oLTTZkhy8GekCAJts/BiuDTaTK6bKwJMKsq21
+	fkITJfESW/P4BiYLJ2FLXU8s70T98rmKZVaDoH4TQblIREswpEOg3qOf30cdx4P4B2qEZBdO8Aqj/
+	R/1yCyzfeRIOsXo96mfQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5LpZ-00021B-8P; Wed, 04 Sep 2019 03:19:37 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i5M7r-00088X-0K; Wed, 04 Sep 2019 03:38:31 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5LpO-00020J-S6
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 03:19:28 +0000
-Received: by mail-pf1-x443.google.com with SMTP id y22so6646354pfr.3
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 20:19:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=02+eBEQJWm6NHimkROpVhmoHyIo4/pLc4YR1Y2rVwOA=;
- b=CztmP3VrmOz2/mU3Ni+FHnjEZCeJ2OyXfo8+ajDcZ79r5MxkWd3rA4/inLzPD+RhqT
- G65tPOsl5mK/jUAMnnKUdXSuWwlD0EwrbbcevxYgEMrozddxtZpG38f2rD/pBHqu7oXj
- c4SIl4FK3haHY+7szeZAjmoG5DCsVHlOwdGVnBAAYn85mmhN35dlKeUKlU0V0uY2+4Gy
- sz80PAgfCcGbm83OjFv88AIjBatvvSx2zv+3Wzo62LaTgEwZKc9aDH+PM+luetMoRCpZ
- qMeyqHf2BuUAkkFuqNrWDU2PpD0b/cvL4gy5vXGj5BnyTLSLC7A6gWk8AevGxappaTEB
- vA9A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=02+eBEQJWm6NHimkROpVhmoHyIo4/pLc4YR1Y2rVwOA=;
- b=ReZdPNKww5e0t2kHz4ckk6vqhtWFIwMiQH/orfneeS8IUYOPHR0CzfWyOF7V8mQIGA
- Bmc7/hAiFVM6ZcZtjPXyLyt7C/r70L6fCwk7JV67JbmJS4UhpPpzd7YEGWEDpUk5NwfC
- UUJCuIF1IKPdKQeahNXrUph6XeJHbJUX9BNhLEbCmweHmH63qBAYlB10P98UP5UeH0Vw
- Ba7MsBzbOSrbdTAKNlQRsipe92frvsc7+6RJ1LzHB/VcRZ3mA6aoPrCOAqK+q1KRDTfr
- oqIshzU00tllmuDiT1w9PUtXIreldeknMc4f+O+Ebd3q73awy65vq6W07gV+e4mEyV5H
- abFQ==
-X-Gm-Message-State: APjAAAXd+yCJa0/T4yNKF+pLBNQ/TnAvuPKBD9UrZElsMAwwsXE8r4Ur
- +5JL/phfQkRRVMC1DlxsMkFITg==
-X-Google-Smtp-Source: APXvYqxYWfllLFvx+G/2hfqNwK0phBdw0yYAbUV1JDKDDrpF5Cmiadx1YRaxQl3l2TCyAI6O/wjG9Q==
-X-Received: by 2002:aa7:84d2:: with SMTP id x18mr5859554pfn.250.1567567165787; 
- Tue, 03 Sep 2019 20:19:25 -0700 (PDT)
-Received: from tuxbook-pro (104-188-17-28.lightspeed.sndgca.sbcglobal.net.
- [104.188.17.28])
- by smtp.gmail.com with ESMTPSA id 185sm21836340pfd.125.2019.09.03.20.19.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Sep 2019 20:19:25 -0700 (PDT)
-Date: Tue, 3 Sep 2019 20:19:22 -0700
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 1/1] soc: qcom: geni: Provide parameter error checking
-Message-ID: <20190904031922.GC574@tuxbook-pro>
-References: <20190903135052.13827-1-lee.jones@linaro.org>
+ id 1i5M7c-00087K-OW; Wed, 04 Sep 2019 03:38:18 +0000
+X-UUID: bfba9cbb55ca44e0a307c1e4c03a0e68-20190903
+X-UUID: bfba9cbb55ca44e0a307c1e4c03a0e68-20190903
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <jerry-ch.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1218975379; Tue, 03 Sep 2019 19:38:11 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 3 Sep 2019 20:38:09 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 11:38:01 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Sep 2019 11:38:01 +0800
+Message-ID: <1567568281.18318.80.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 4 Sep 2019 11:38:01 +0800
+In-Reply-To: <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org>
+ <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+ <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+ <1567424859.18318.32.camel@mtksdccf07>
+ <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+ <1567493081.18318.49.camel@mtksdccf07>
+ <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
+ <1567511169.18318.65.camel@mtksdccf07>
+ <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190903135052.13827-1-lee.jones@linaro.org>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_201926_974407_F6E0920E 
-X-CRM114-Status: GOOD (  19.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190903_203816_808167_23C2881F 
+X-CRM114-Status: GOOD (  35.95  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,75 +84,313 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, agross@kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
+ <po-yang.huang@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>, Sj
+ Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue 03 Sep 06:50 PDT 2019, Lee Jones wrote:
+Hi Tomasz,
 
-> When booting with ACPI, the Geni Serial Engine is not set as the I2C/SPI
-> parent and thus, the wrapper (parent device) is unassigned.  This causes
-> the kernel to crash with a null dereference error.
+On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
+> On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> >
+> > Hi Tomasz,
+> >
+> > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
+> > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > >
+> > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
+> > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > >
+> > > > > > Hi Tomasz,
+> > > > > >
+> > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
+> > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+> > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > >
+> > > > > > > > Hi Tomasz,
+> > > > > > > >
+> > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > > > > > > > > Hi Jerry,
+> > > > > > > > >
+> > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > >
+> > > > > > > > > > Hi Tomasz,
+> > > > > > > > > >
+> > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > >
+> > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+[snip]
+> > > > > > > > > [snip]
+> > > > > > > > >
+> > > > > > > > > > > > +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > > > > > > > +{
+> > > > > > > > > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > > > > > > > > +   struct vb2_buffer *vb;
+> > > > > > > > > > >
+> > > > > > > > > > > How do we guarantee here that the hardware isn't still accessing the buffers
+> > > > > > > > > > > removed below?
+> > > > > > > > > > >
+> > > > > > > > > > Maybe we can check the driver state flag and aborting the unfinished
+> > > > > > > > > > jobs?
+> > > > > > > > > > (fd_hw->state == FD_ENQ)
+> > > > > > > > > >
+> > > > > > > > >
+> > > > > > > > > Yes, we need to either cancel or wait for the currently processing
+> > > > > > > > > job. It depends on hardware capabilities, but cancelling is generally
+> > > > > > > > > preferred for the lower latency.
+> > > > > > > > >
+> > > > > > > > Ok, it the state is ENQ, then we can disable the FD hw by controlling
+> > > > > > > > the registers.
+> > > > > > > >
+> > > > > > > > for example:
+> > > > > > > >         writel(0x0, fd->fd_base + FD_HW_ENABLE);
+> > > > > > > >         writel(0x0, fd->fd_base + FD_INT_EN);
+> > > > > > > >
+> > > > > > >
+> > > > > > > What's exactly the effect of writing 0 to FD_HW_ENABLE?
+> > > > > > >
+> > > > > > Sorry, my last reply didn't solve the question,
+> > > > > > we should implement a mtk_fd_job_abort() for v4l2_m2m_ops().
+> > > > > >
+> > > > > > which is able to readl_poll_timeout_atomic()
+> > > > > > and check the HW busy bits in the register FD_INT_EN;
+> > > > > >
+> > > > > > if they are not cleared until timeout, we could handle the last
+> > > > > > processing job.
+> > > > > > Otherwise, the FD irq handler should have handled the last processing
+> > > > > > job and we could continue the stop_streaming().
+> > > > > >
+> > > > > > For job_abort():
+> > > > > > static void mtk_fd_job_abort(void *priv)
+> > > > > > {
+> > > > > >         struct mtk_fd_ctx *ctx = priv;
+> > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > >         u32 val;
+> > > > > >         u32 ret;
+> > > > > >
+> > > > > >         ret = readl_poll_timeout_atomic(fd->fd_base + MTK_FD_REG_OFFSET_INT_EN,
+> > > > > >                                         val,
+> > > > > >                                         (val & MTK_FD_HW_BUSY_MASK) ==
+> > > > > >                                         MTK_FD_HW_STATE_IS_BUSY,
+> > > > > >                                         USEC_PER_MSEC, MTK_FD_STOP_HW_TIMEOUT);
+> > > > >
+> > > > > Hmm, would it be possible to avoid the busy wait by having a
+> > > > > completion that could be signalled from the interrupt handler?
+> > > > >
+> > > > > Best regards,
+> > > > > Tomasz
+> > > >
+> > > > I suppose that would be wakeup a wait queue in the interrupt handler,
+> > > > the the wait_event_interrupt_timeout() will be used in here and system
+> > > > suspend e.g. mtk_fd_suspend().
+> > >
+> > > Yes, that should work.
+> > >
+> > > > Or do you suggest to wait_event_interrupt_timeout() every frame in the
+> > > > mtk_fd_ipi_handler()?
+> > >
+> > > Nope, we shouldn't need that.
+> > >
+> > > > I think maybe the readl_poll_timeout_atomic would be good enough.
+> > > >
+> > >
+> > > Not really. Busy waiting should be avoided as much as possible. What's
+> > > the point of entering suspend if you end up burning the power by
+> > > spinning the CPU for some milliseconds?
+> > >
+> > Ok, I see, busy waiting is not a good idea, I will use the wait queue
+> > instead. the job abort will refine as following:
+> >
+> > static void mtk_fd_job_abort(void *priv)
+> > {
+> >         struct mtk_fd_ctx *ctx = priv;
+> >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> >         u32 ret;
+> >
+> >         ret = wait_event_interruptible_timeout
+> >                 (fd->wq, (fd->fd_irq_result & MTK_FD_HW_IRQ_MASK),
+> >                  usecs_to_jiffies(50000));
+> >         if (ret)
+> >                 mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> >         dev_dbg(fd->dev, "%s, ret:%d\n", __func__, ret);
+> >
+> >         fd->fd_irq_result = 0;
+> > }
+> >
+> > static struct v4l2_m2m_ops fd_m2m_ops = {
+> >         .device_run = mtk_fd_device_run,
+> >         .job_abort = mtk_fd_job_abort,
+> 
+> I'm not sure we should be using the functon above as the .job_abort
+> callback. It's expected to abort the job, but we're just waiting for
+> it to finish. I think we should just call mtk_fd_job_abort() manually
+> from .stop_streaming.
 > 
 
-Now I see what you did in 8bc529b25354; i.e. stubbed all the other calls
-between the SE and wrapper.
+Ok, I will fix it.
 
-Do you think it would be possible to resolve the _DEP link to QGP[01]
-somehow? For the clocks workarounds this could be resolved by us
-representing that relationship using device_link and just rely on
-pm_runtime to propagate the clock state.
-
-For the DMA operation, iiuc it's the wrapper that implements the DMA
-engine involved, but I'm guessing the main reason for mapping buffers on
-the wrapper is so that it ends up being associated with the iommu
-context of the wrapper.
-
-Are the SMMU contexts at all represented in the ACPI world and if so do
-you know how the wrapper vs SEs are bound to contexts? Can we map on
-se->dev when wrapper is NULL (or perhaps always?)?
-
-Regards,
-Bjorn
-
-> Fixes: 8bc529b25354 ("soc: qcom: geni: Add support for ACPI")
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> ---
-> Since we are already at -rc7 this patch should be processed ASAP - thank you.
+> > };
+> >
+> > and we could use it in suspend.
+> > static int mtk_fd_suspend(struct device *dev)
+> > {
+> >         struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> >
+> >         if (pm_runtime_suspended(dev))
+> >                 return 0;
+> >
+> >         if (fd->fd_stream_count)
+> >                 mtk_fd_job_abort(fd->ctx);
+> >
+> >         /* suspend FD HW */
+> >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> >         clk_disable_unprepare(fd->fd_clk);
+> >         dev_dbg(dev, "%s:disable clock\n", __func__);
+> >
+> >         return 0;
+> > }
+> >
+> > static irqreturn_t mtk_fd_irq(int irq, void *data)
+> > {
+> >         struct mtk_fd_dev *fd = (struct mtk_fd_dev *)data;
+> >
+> >         fd->fd_irq_result = readl(fd->fd_base + MTK_FD_REG_OFFSET_INT_VAL);
+> >         wake_up_interruptible(&fd->wq);
 > 
-> drivers/soc/qcom/qcom-geni-se.c | 6 ++++++
->  1 file changed, 6 insertions(+)
+> The wake up should be done at the very end of this function. Otherwise
+> we end up with m2m framework racing with the mtk_fd_hw_job_finish()
+> below.
 > 
-> diff --git a/drivers/soc/qcom/qcom-geni-se.c b/drivers/soc/qcom/qcom-geni-se.c
-> index d5cf953b4337..7d622ea1274e 100644
-> --- a/drivers/soc/qcom/qcom-geni-se.c
-> +++ b/drivers/soc/qcom/qcom-geni-se.c
-> @@ -630,6 +630,9 @@ int geni_se_tx_dma_prep(struct geni_se *se, void *buf, size_t len,
->  	struct geni_wrapper *wrapper = se->wrapper;
->  	u32 val;
->  
-> +	if (!wrapper)
-> +		return -EINVAL;
-> +
->  	*iova = dma_map_single(wrapper->dev, buf, len, DMA_TO_DEVICE);
->  	if (dma_mapping_error(wrapper->dev, *iova))
->  		return -EIO;
-> @@ -663,6 +666,9 @@ int geni_se_rx_dma_prep(struct geni_se *se, void *buf, size_t len,
->  	struct geni_wrapper *wrapper = se->wrapper;
->  	u32 val;
->  
-> +	if (!wrapper)
-> +		return -EINVAL;
-> +
->  	*iova = dma_map_single(wrapper->dev, buf, len, DMA_FROM_DEVICE);
->  	if (dma_mapping_error(wrapper->dev, *iova))
->  		return -EIO;
-> -- 
-> 2.17.1
+> Also, I'd use a completion here rather than an open coded wait and
+> wake-up. The driver could reinit_completion() before queuing a job to
+> the hardware and the IRQ handler would complete(). There would be no
+> need to store the IRQ flags in driver data anymore.
+Ok, It will be refined as following:
+
+suspend and stop streaming will call mtk_fd_job_abort()
+
+static void mtk_fd_job_abort(struct mtk_fd_dev *fd)
+{
+	u32 ret;
+
+	ret = wait_for_completion_timeout(&fd->fd_irq_done,
+					  msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+	if (ret)
+		mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+}
+
+complete at irq handler
+
+static irqreturn_t mtk_fd_irq(int irq, void *data)
+{
+	struct mtk_fd_dev *fd = (struct mtk_fd_dev *)data;
+
+	/* must read this register otherwise HW will keep sending irq */
+	readl(fd->fd_base + MTK_FD_REG_OFFSET_INT_VAL);
+	fd->output->number = readl(fd->fd_base + MTK_FD_REG_OFFSET_RESULT);
+	dev_dbg(fd->dev, "mtk_fd_face_num:%d\n", fd->output->number);
+
+	pm_runtime_put((fd->dev));
+	mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_DONE);
+	complete(&fd->fd_irq_done);
+	return IRQ_HANDLED;
+}
+
+and reinit_completion before time before sending a job to HW
+
+static int mtk_fd_hw_job_exec(struct mtk_fd_dev *fd,
+			      struct fd_enq_param *fd_param)
+{
+	struct ipi_message fd_ipi_msg;
+	int ret;
+
+	pm_runtime_get_sync((fd->dev));
+
+	reinit_completion(&fd->fd_irq_done);
+	fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_ENQUEUE;
+	memcpy(&fd_ipi_msg.fd_enq_param, fd_param, sizeof(struct
+fd_enq_param));
+	ret = scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+			   sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT);
+	if (ret) {
+		pm_runtime_put((fd->dev));
+		mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+		return ret;
+	}
+	return 0;
+}
+
 > 
+> >         fd->output->number = readl(fd->fd_base + MTK_FD_REG_OFFSET_RESULT);
+> >         dev_dbg(fd->dev, "mtk_fd_face_num:%d\n", fd->output->number);
+> >
+> >         pm_runtime_put((fd->dev));
+> >         mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_DONE);
+> >         return IRQ_HANDLED;
+> > }
+> > > >
+> > > > One more thing, for the mtk_fd_video_device_register()
+> > > > Sorry that I would need to use intermediate variable here since the 80
+> > > > columns check.
+> > > >
+> > > >         function = MEDIA_ENT_F_PROC_VIDEO_STATISTICS;
+> > > >         ret = v4l2_m2m_register_media_controller(m2m_dev, vfd, function);
+> > >
+> > > Why not just make it like this:
+> > >
+> > > ret = v4l2_m2m_register_media_controller(m2m_dev,
+> > >                 MEDIA_ENT_F_PROC_VIDEO_STATISTICS);
+> > >
+> > > The above line is aligned using tabs so that its end is as close to
+> > > the 80 character boundary as possible.
+> > >
+> > I tried but the checkpatch script still gave me a check saying align to
+> > the scope, I will refine as following:
+> >
+> >         ret = v4l2_m2m_register_media_controller
+> >                 (m2m_dev, vfd, MEDIA_ENT_F_PROC_VIDEO_STATISTICS);
+> 
+> Please ignore that checkpatch warning, it sometimes gives false
+> positives. The above looks clearly worse and less consistent with
+> kernel coding style than what I suggested.
+> 
+Ok, I see, I will fix it.
+
+Thanks and best regards,
+Jerry
+
+> Best regards,
+> Tomasz
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
