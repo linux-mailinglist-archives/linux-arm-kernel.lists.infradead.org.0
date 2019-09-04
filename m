@@ -2,71 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8DF24A85B9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:40:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3FDCEA85BF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:42:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=USxcS0JTnvJfXmwq9fiJqZowKbOqH6H4EoJmqW2sHqc=; b=eqMuUOwazLx/Lo0ovRlZy3NLN
-	sYScjZZeN5dd28DnFcVPOh90Tnrmpo0Ha3GMxbqWRt+zO8sI+9Fh0yx/RKbkxVhmmXAjKZkZGZNsv
-	J9THuf5eMlxE7tLsB7+JN6waUCGh2ONjVXjw4CSx66IGK8OIbRnB7Q8kuE8GnjsxX9Aequ2JL+8ms
-	STCByedPUn8MrimTKNtYlaku3rLgW1nJ3VIDNj1RcMjcu6Yc0nficqfQ7ieoMYQUlTCWOsjNPesBz
-	ub7kIz73JplBtvq4TN4vjJvjiiWXGUVc40cE+j2B7xMHl6q/5gQ9gpg3Be38wR7yuFIw8kBZkI5s0
-	hjUoSlOUw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tTB6XcERrka2AW7s+R5XRVvlxebgEDaiju6YzjC+Cnk=; b=OXb54px/1C/OL5
+	xlTz5FIvq2Dn32iX3HYIOSDxaxAvZ6kyMv9pHFIq1X3gaxQ1g6KSepK6fybw9RhIcSIikl9s0ikkY
+	TNheUNg6/AJqEw0ZiUB8b8YRHzw5oXkVjKBQjwE1z2lWWEBBjci0vaIP2WPylm2WfDV6KKVNPGNHh
+	3Jz62im0xNJDTpgRsBs4y5Dt176rACm8y1DE+9s39fzJ/pNbzjPoVSUAQtHfBIrXJs2hSg3NPJkfL
+	b0HhW7zAtz5DY9+H3pE9Ka42qRK+kEQ6nOWp3lzgUj/bbpcUfaMFOzsYkdnPuraslxGgAb72ZD2HP
+	Axts2PJbCMqSUk9B9owQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5WS0-0001nh-Gd; Wed, 04 Sep 2019 14:40:00 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1i5WUP-0003c6-Kb; Wed, 04 Sep 2019 14:42:29 +0000
+Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5WRq-0001mC-1P; Wed, 04 Sep 2019 14:39:51 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=enb3Eyheh3ZkU2pw9T92ijFf5m2SU7dyW+9oN6nQ2aA=; b=oFA8lI/2MLZSL2jMQKCUNOcfF
- XetrvE8ySqtCDsZTPH+9NN/zpPSxY/TG1S4OO0GDQuWpfHDUZ/zfuWQ8LYe+pkAA+xR4ctz09hSK/
- +Y1eyPRBsTFTPh57qabVYjBQtU5LTICbC4jCLu9gOx4ChEN4/1Z8TB07anBun9+khziVg=;
-Received: from ypsilon.sirena.org.uk ([2001:470:1f1d:6b5::7])
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.co.uk>)
- id 1i5WRV-00066D-LZ; Wed, 04 Sep 2019 14:39:29 +0000
-Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
- id BD1A82742B45; Wed,  4 Sep 2019 15:39:28 +0100 (BST)
-Date: Wed, 4 Sep 2019 15:39:28 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Krzysztof Kozlowski <krzk@kernel.org>
+ id 1i5WUE-0003a7-Ux; Wed, 04 Sep 2019 14:42:20 +0000
+Received: from DGGEMS412-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id AF49BB8E4149F22B28EE;
+ Wed,  4 Sep 2019 22:42:15 +0800 (CST)
+Received: from [127.0.0.1] (10.133.213.239) by DGGEMS412-HUB.china.huawei.com
+ (10.3.19.212) with Microsoft SMTP Server id 14.3.439.0;
+ Wed, 4 Sep 2019 22:42:10 +0800
 Subject: Re: [PATCH -next 25/36] spi: s3c24xx: use
  devm_platform_ioremap_resource() to simplify code
-Message-ID: <20190904143928.GB4348@sirena.co.uk>
+To: Krzysztof Kozlowski <krzk@kernel.org>
 References: <20190904135918.25352-1-yuehaibing@huawei.com>
  <20190904135918.25352-26-yuehaibing@huawei.com>
  <CAJKOXPdq4as1Oe3U+9znkvP0RA=sxUoiWVBCSbzf_wq_um2t=w@mail.gmail.com>
+From: Yuehaibing <yuehaibing@huawei.com>
+Message-ID: <3595bac1-e426-b4f9-4e24-01e104fdfe5d@huawei.com>
+Date: Wed, 4 Sep 2019 22:42:06 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101
+ Thunderbird/45.2.0
 MIME-Version: 1.0
 In-Reply-To: <CAJKOXPdq4as1Oe3U+9znkvP0RA=sxUoiWVBCSbzf_wq_um2t=w@mail.gmail.com>
-X-Cookie: Help fight continental drift.
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-Originating-IP: [10.133.213.239]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_073950_104491_65EE9511 
-X-CRM114-Status: UNSURE (   9.39  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190904_074219_344419_A98A716E 
+X-CRM114-Status: GOOD (  12.91  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.191 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,80 +68,82 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: tmaimon77@gmail.com, palmer@sifive.com, tali.perry1@gmail.com,
  eric@anholt.net, ldewangan@nvidia.com, linux-riscv@lists.infradead.org,
- festevam@gmail.com, f.fainelli@gmail.com, benjaminfair@google.com,
- shc_work@mail.ru, khilman@baylibre.com, openbmc@lists.ozlabs.org,
- YueHaibing <yuehaibing@huawei.com>, michal.simek@xilinx.com,
+ festevam@gmail.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ f.fainelli@gmail.com, benjaminfair@google.com, shc_work@mail.ru,
+ khilman@baylibre.com, openbmc@lists.ozlabs.org, michal.simek@xilinx.com,
  jonathanh@nvidia.com, yuenn@google.com, wens@csie.org, agross@kernel.org,
  bcm-kernel-feedback-list@broadcom.com, linux-imx@nxp.com,
  linux-arm-msm@vger.kernel.org, linux-tegra@vger.kernel.org,
  Andi Shyti <andi@etezian.org>, rjui@broadcom.com, s.hauer@pengutronix.de,
- mripard@kernel.org,
- "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- paul.walmsley@sifive.com, matthias.bgg@gmail.com,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- baohua@kernel.org, sbranden@broadcom.com, yamada.masahiro@socionext.com,
- avifishman70@gmail.com, venture@google.com,
+ mripard@kernel.org, broonie@kernel.org, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org, paul.walmsley@sifive.com,
+ matthias.bgg@gmail.com, linux-amlogic@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, baohua@kernel.org, sbranden@broadcom.com,
+ yamada.masahiro@socionext.com, avifishman70@gmail.com, venture@google.com,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  linux-spi@vger.kernel.org, thierry.reding@gmail.com, wahrenst@gmx.net,
  kernel@pengutronix.de, kgene@kernel.org, shawnguo@kernel.org
-Content-Type: multipart/mixed; boundary="===============7906620464499928946=="
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============7906620464499928946==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="GID0FwUMdk1T2AWN"
-Content-Disposition: inline
-
-
---GID0FwUMdk1T2AWN
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-
-On Wed, Sep 04, 2019 at 04:28:29PM +0200, Krzysztof Kozlowski wrote:
+On 2019/9/4 22:28, Krzysztof Kozlowski wrote:
 > On Wed, 4 Sep 2019 at 16:00, YueHaibing <yuehaibing@huawei.com> wrote:
-
-> > Reported-by: Hulk Robot <hulkci@huawei.com>
-
+>>
+>> Use devm_platform_ioremap_resource() to simplify the code a bit.
+>> This is detected by coccinelle.
+>>
+>> Reported-by: Hulk Robot <hulkci@huawei.com>
+> 
 > This tag does not look real... First of all where is the report?
+
+It is our internal CI robot, which is unavailable to external temporarily.
+
 > Second, it was reported by coccinelle.
 > Reported-by should be use to give real credits.
+> 
+> Best regards,
+> Krzysztof
+> 
+>> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+>> ---
+>>  drivers/spi/spi-s3c24xx.c | 4 +---
+>>  1 file changed, 1 insertion(+), 3 deletions(-)
+>>
+>> diff --git a/drivers/spi/spi-s3c24xx.c b/drivers/spi/spi-s3c24xx.c
+>> index aea8fd9..2d6e37f 100644
+>> --- a/drivers/spi/spi-s3c24xx.c
+>> +++ b/drivers/spi/spi-s3c24xx.c
+>> @@ -487,7 +487,6 @@ static int s3c24xx_spi_probe(struct platform_device *pdev)
+>>         struct s3c2410_spi_info *pdata;
+>>         struct s3c24xx_spi *hw;
+>>         struct spi_master *master;
+>> -       struct resource *res;
+>>         int err = 0;
+>>
+>>         master = spi_alloc_master(&pdev->dev, sizeof(struct s3c24xx_spi));
+>> @@ -536,8 +535,7 @@ static int s3c24xx_spi_probe(struct platform_device *pdev)
+>>         dev_dbg(hw->dev, "bitbang at %p\n", &hw->bitbang);
+>>
+>>         /* find and map our resources */
+>> -       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>> -       hw->regs = devm_ioremap_resource(&pdev->dev, res);
+>> +       hw->regs = devm_platform_ioremap_resource(pdev, 0);
+>>         if (IS_ERR(hw->regs)) {
+>>                 err = PTR_ERR(hw->regs);
+>>                 goto err_no_pdata;
+>> --
+>> 2.7.4
+>>
+>>
+> 
+> .
+> 
 
-I think it's reasonable, it's giving credit to the automated system
-they've got running coccinelle (which they do mention in their commit
-logs).  It doesn't really hurt anyone and lets people see their system
-is finding stuff.
-
---GID0FwUMdk1T2AWN
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1vzJ8ACgkQJNaLcl1U
-h9C55Qf9ElRCnBTb/SuDEmM1YeY2Tw9dAMV0y2jsYTl6UYAcJqOg3iMhAjCNbAVd
-K59JgRS+lKB/HrEidQ3L3QfwZfOPhtyOEY5BmhZekABU6SI9ggg6VPIg8jqkOFQw
-8poyZkiuaDhdrDn5rfdOSLpAQ7wls/djlfQ+zeoD0EdoiF5dtadKphhA1dT5NuvV
-szO9xfucbd5yuUBQuUPW3M5tTkXlfyN86C8I1NkgZ26Ozrz5IYHrr+Tmp8++LBUs
-GheNNGndIR/W/3pgCevW340G3aEqQ0G34v9pk1/HOWYuwVS2S1jhaSl77YTk1wZ5
-jDsHN8NDORkPvAnmKmyFVlA1Z3W17A==
-=5oz7
------END PGP SIGNATURE-----
-
---GID0FwUMdk1T2AWN--
-
-
---===============7906620464499928946==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7906620464499928946==--
-
