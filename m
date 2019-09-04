@@ -2,111 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32D75A7CF0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:42:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9C918A7D01
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 09:48:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ao3LNzhsmapSLpl6fFr+vcIyMhYEXWErtgt9GwYe0pA=; b=n8Rkt3aRyAuWCr
-	nO+7oLZHO1ECk1jLG1OYkSbZHeiXbBvDRVCttgkONx3WjWYLGmUV43rtEiGmny/IIxb1IljPc/7p1
-	wVSDSl5xNu3YhtnDZTdEogaR7X67+mMuFThHLIYRrYq/8PtERuqn1cMRscvKCNXYS+DUSuOLH4RB1
-	8A/Rj8rnd/eZ6ORUb9Gw5X5smRNlVzltd1RyXeSr8pRDl7w33R34E4M53wN4Q1BkMYjsRnKs7h9q5
-	YJ6386InuyO1D+32QGV9X28Z5egxw6icqGuyAaNJkVc3kRyZgsjlcres/Q7Uw4ml39NdVuRKRMmM7
-	XxL/cjkFBixhDUMaxtqg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8Q7cp3NtMdamnJUFNzmWH6ifmUxPHpdOYjHqDetkmxo=; b=kHU1QOI7ZvgXZr
+	r6F4OfLtRxCibgaQ9RJRlg47FVCK3beiaV82nIMeXDHc7wchU85n1biYMZMpoMF/ykCmXkKc8gPeN
+	CCM3osn7GR6pN1/CmLtQP9kA+kSGkft44iBheFiDCjlT75Z2L/uYaV5MLjX0bwnw8c2mpSR7jC7GY
+	0xOF4lgHe1LCCVFBhzK8UDQ2+ZUgQOqqiL99uKf4JKuDbOHArIQ7xWB+ke/grIwf3DZDjMacXmw3e
+	gEQKuq67Ehr/2yscG6LIk1HxJSh5Pv8Yti2iZ7uq+YLmg+n4k+TTX7nvYEHAfc0Kj9+gFYtRHS+r9
+	HarkyF9ejoUJhMgZnizg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5PvW-0008Rv-E2; Wed, 04 Sep 2019 07:42:03 +0000
-Received: from mail-eopbgr50082.outbound.protection.outlook.com ([40.107.5.82]
- helo=EUR03-VE1-obe.outbound.protection.outlook.com)
+	id 1i5Q0z-00022C-At; Wed, 04 Sep 2019 07:47:41 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5PvA-0008Qt-7t
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 07:41:43 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=V7PqqbywLGP6XEDHZZWTUdk/i4gFYx0kV2QF9N/2pcQfuY3qaPmaTqDNWEWR+ZcQeJ5JVb8nNraNKXfbzqSMzQ6/datuVFAY4Lq0eYOGFftNBc7LR4Xf0wA/G9ps5EyL5qsV1fesTzgQKR7m7hi8ebE4S335vInHP+zUki4Z3+Ow80GUN3kyx5Hln4MYugJdflQHXXBh1J1IM99aIeui69YQfmSTyJcmbVlujaJqFYuKS6LFhvnROmAJ8+yFArEsYYp2oIO8BvRR0wBrgOl7LWfS7eW7rXb7HZa+0L7khI8w7IaGbtvnZBn6++wx0xvsFPuVnqisvfnj2EqFCyk5Lg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e57POvpSM9H0PzRSbfFnEAZ8gGdG1uilFOYeNZV9QLo=;
- b=b/j6CExGuLXiGlyvpDqt/lni5BMw8gQ6WaNVXBKcVLV/GTn7HnrRclW+R3cUrwXff6h24Fx7tml7KVTpmLvpQt9ODzx+9zPgolxCbc4s8W58i+nhRj8TfGNo4UUVvQIMJ5vc4QLdk/RWjUaxKFwz7wHzl0fk0jY7cu3Hu3LDBMKPg30baBW3DxKY9AepwTanoEdviDQqfXTztyb1Ys53OLFaep6e72Dnaz8seG5pjR1SAqK1mF7pSSEUe1zZ/x2BMRWjbIDeRwjBWUDFXFp5ixX4gARwRju/8DXp32+Azpzis4IYM+58JO8W0G9HGyr6hsScLdrh9DLm9n8q398Qaw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=e57POvpSM9H0PzRSbfFnEAZ8gGdG1uilFOYeNZV9QLo=;
- b=NVXIjhvfiYjaIF+hp7zVVuLrYidAYW4fFyWn5BAVxA0H8bT7Y7pxPOybrRQosdk4z+9cPjZ3G60ggDUtvHIeqobvle8IpyKdfdrQW/lVBrqhjW5NbqjCiUWwiG5a5aAEOW9GxxA8uBVqL2wks7RbNF6p0UTNv9tgPF8T5BYf6eo=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3833.eurprd04.prod.outlook.com (52.134.67.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.21; Wed, 4 Sep 2019 07:41:35 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2199.021; Wed, 4 Sep 2019
- 07:41:35 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Aisheng Dong
- <aisheng.dong@nxp.com>
-Subject: RE: [PATCH] soc: imx: imx-scu: Getting UID from SCU should have
- response
-Thread-Topic: [PATCH] soc: imx: imx-scu: Getting UID from SCU should have
- response
-Thread-Index: AQHVYvBaKeS5E5gU7kibbz+lazsBqacbIMgg
-Date: Wed, 4 Sep 2019 07:41:35 +0000
-Message-ID: <DB3PR0402MB3916932DFC5401F3573F13FDF5B80@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1567624394-25023-1-git-send-email-Anson.Huang@nxp.com>
- <VI1PR04MB7023B9C325C54AA8112F1AE5EEB80@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB7023B9C325C54AA8112F1AE5EEB80@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: af507150-4f5f-490f-453b-08d7310b4fe4
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3833; 
-x-ms-traffictypediagnostic: DB3PR0402MB3833:|DB3PR0402MB3833:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB383327016AD9ADCD1133F1C4F5B80@DB3PR0402MB3833.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0150F3F97D
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(376002)(346002)(366004)(136003)(396003)(189003)(199004)(81156014)(8936002)(478600001)(54906003)(71200400001)(71190400001)(81166006)(14454004)(305945005)(316002)(7736002)(74316002)(99286004)(8676002)(66066001)(5660300002)(110136005)(52536014)(14444005)(6436002)(2906002)(53936002)(66446008)(3846002)(33656002)(6636002)(64756008)(66946007)(76116006)(6116002)(229853002)(76176011)(4326008)(476003)(6246003)(256004)(66476007)(66556008)(55016002)(11346002)(102836004)(26005)(186003)(25786009)(9686003)(44832011)(7696005)(6506007)(53546011)(86362001)(446003)(486006);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3833;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: fnp6emNhLfcbHBjHlfgy5m8ad+xW0ABM0mTf9fuuSSEgsrEJ+yVdRweB+wdKb9bY46OyZA/VFNSRbwQx1xfwork/ErtoiJ46kFyTtURF7v9k69cM5UXpzfIxMn6JfonkCBeZZAECWgcOyPbT7mWnssYnuCzYnZRMHoLnRE+VlLPasmWbQEwe80DVRR5+5C9b/VCW9TPVsH7yjSaUvdkYYNOkRacM2H7ovIMfo+mAKqdD4bFmC+WKUUBc22ZiijbkxE04Vtl3VnFIJ9Z47Pk8sJksGz7ydMboYZF4g65Is0iJ9M91mqhHhLTwMv7UaVkWlPbHHXrdPgSGR2ULMGpgHVFkubvrlRERvk49EkaGDah+np5m5LdweY90PIFXslyFJjG9gcGqOLRj3j8XEABKZMiNK1rkqbNmTRyxbECWlQg=
+ id 1i5Q0g-00021U-Oo
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 07:47:24 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x847bAmM000836; Wed, 4 Sep 2019 09:47:17 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=STMicroelectronics;
+ bh=4UyuBYEhSmaJWCoduBpGAY7jENPHNN3jaF8lnYU4bFY=;
+ b=avLB/K+6dY1CH0Jiwo9EBM5miectu4+Tap6y9Zoritd2dLPoZcLD1Dwpl8D9oCB3J2Db
+ ULwNIdfpicC7HVHo8X7839kHq/yt7EGMps7uItCDQFhABO5T6SM0VM/HE5tEvjtjdO9p
+ /3BU6I0Qkgfc/iYkWYvRFBsws+mOklltKTUGZzlqmiXGGtJUdUrx3RJdOjsFqrfh60Ur
+ SDLYlCTnRnBPUaVfoL81ZPNOg83zjEzLqE+B+iUi+5m/csvhwPx/ECXDhLx2k/TxaihG
+ uLnV0r/Ixi7nnpAKDgedAU6gZyF0pwLsBMmD914k4waeTETbLoP5koubBxysrtTNg/z4 jQ== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2uqe19r07v-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 04 Sep 2019 09:47:17 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 7F74E54;
+ Wed,  4 Sep 2019 07:47:09 +0000 (GMT)
+Received: from Webmail-eu.st.com (sfhdag5node2.st.com [10.75.127.14])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 35A4A2BA693;
+ Wed,  4 Sep 2019 09:47:09 +0200 (CEST)
+Received: from [10.48.1.93] (10.75.127.45) by SFHDAG5NODE2.st.com
+ (10.75.127.14) with Microsoft SMTP Server (TLS) id 15.0.1473.3; Wed, 4 Sep
+ 2019 09:47:08 +0200
+Subject: Re: [PATCH] i2c: stm32f7: Make structure stm32f7_i2c_algo constant
+To: Wolfram Sang <wsa@the-dreams.de>, Nishka Dasgupta
+ <nishkadg.linux@gmail.com>
+References: <20190815055857.1944-1-nishkadg.linux@gmail.com>
+ <20190903180552.GI2171@ninjato>
+From: Pierre Yves MORDRET <pierre-yves.mordret@st.com>
+Message-ID: <662b171f-37e2-f58e-3e05-41a52737b1f3@st.com>
+Date: Wed, 4 Sep 2019 09:47:07 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: af507150-4f5f-490f-453b-08d7310b4fe4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 04 Sep 2019 07:41:35.0246 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: NqWd2vnbus3SAzBJMaPe1/dPa0jMWnmZsAhr28JOiCQn74lxCW+rCeivA2oqde7NUyo9/qNtXscTSIvkeN+vQA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3833
+In-Reply-To: <20190903180552.GI2171@ninjato>
+Content-Language: en-US
+X-Originating-IP: [10.75.127.45]
+X-ClientProxiedBy: SFHDAG7NODE1.st.com (10.75.127.19) To SFHDAG5NODE2.st.com
+ (10.75.127.14)
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-04_01:2019-09-03,2019-09-04 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_004140_316467_74FAFA6C 
-X-CRM114-Status: GOOD (  14.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_004723_276930_7FB53A7E 
+X-CRM114-Status: GOOD (  16.05  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.5.82 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -125,47 +98,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Abel Vesa <abel.vesa@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- Daniel Baluta <daniel.baluta@nxp.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: alexandre.torgue@st.com, linux-kernel@vger.kernel.org,
+ linux-i2c@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Leonard
+Hi Wolfram
 
-> On 2019-09-04 10:14 AM, Anson Huang wrote:
-> > The SCU firmware API for getting UID should have response, otherwise,
-> > the message stored in function stack could be released and then the
-> > response data received from SCU will be stored into that released
-> > stack and cause kernel NULL pointer dump.
+Sorry for the delay.
+
+Acked-by: Pierre-Yves MORDRET <pierre-yves.mordret@st.com>
+
+BR
+
+On 9/3/19 8:05 PM, Wolfram Sang wrote:
+> On Thu, Aug 15, 2019 at 11:28:57AM +0530, Nishka Dasgupta wrote:
+>> Static structure stm32f7_i2c_algo, of type i2c_algorithm, is used only
+>> when it is assigned to constant field algo of a variable having type
+>> i2c_adapter. As stm32f7_i2c_algo is therefore never modified, make it
+>> const as well to protect it from unintended modification.
+>> Issue found with Coccinelle.
+>>
+>> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
+>> ---
 > 
-> This fix looks good, but looking at imx-scu code it seems that passing the
-> incorrect "have_resp" argument to imx_scu_call_rpc or just receiving an
-> unexpected message from SCFW will always result in kernel stack corruption!
+> Are you guys okay with this patch?
 > 
-> This is worth handling inside imx-scu itself: unless a response was explicitly
-> requested it should ignore and print a warning on rx, for example by setting
-> imx_sc_ipc to NULL when not waiting for a response.
-> 
-> Holding on to arbitrary stack pointers is bad.
-
-We noticed this issue recently during the development of ON/OFF button support,
-this UID is lucky, the stack is NOT released when SCU response data is received, but
-this fix should be applied.
-
-We talked to Chuck about adding return value for these special APIs, response data
-needed but no return value from SCU, so very likely we will need a patch in imx_sc_ipc
-driver to enhance/handle that, will do a patch for it later.
-
-Thanks,
-Anson
+>>  drivers/i2c/busses/i2c-stm32f7.c | 2 +-
+>>  1 file changed, 1 insertion(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/i2c/busses/i2c-stm32f7.c b/drivers/i2c/busses/i2c-stm32f7.c
+>> index 266d1c269b83..d36cf08461f7 100644
+>> --- a/drivers/i2c/busses/i2c-stm32f7.c
+>> +++ b/drivers/i2c/busses/i2c-stm32f7.c
+>> @@ -1809,7 +1809,7 @@ static u32 stm32f7_i2c_func(struct i2c_adapter *adap)
+>>  		I2C_FUNC_SMBUS_I2C_BLOCK;
+>>  }
+>>  
+>> -static struct i2c_algorithm stm32f7_i2c_algo = {
+>> +static const struct i2c_algorithm stm32f7_i2c_algo = {
+>>  	.master_xfer = stm32f7_i2c_xfer,
+>>  	.smbus_xfer = stm32f7_i2c_smbus_xfer,
+>>  	.functionality = stm32f7_i2c_func,
+>> -- 
+>> 2.19.1
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
