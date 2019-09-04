@@ -2,54 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D8FAA7A1F
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 06:42:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A43AA7A78
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 06:56:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=C9ue4AREeRJN3BFgtkfD1zYGr3VtybwahtnPdmY9IF4=; b=StOM/7QgGvH+gQ
-	IO2zHqczme9chgVwuuyro9cAQQqs/GQBuEN2luBPNDzLTDemX+XAKzA7/YW/418WAYHbjFAduUf4w
-	GQEyKf9oIyHbu4TweQ4I9eG3E75y5FwSNHbTpMnCRG0a4YZWc4wigq1+dBuaHxNJdf92Qd4PRdjgA
-	7E0tl/YWXKoUBf/BWtwcOK8YmMGP7ERvFn0CHZe589nM/tUXAXSqNVtlASH5/VqrHWPKRNmSFkSEF
-	qSzoqyhJ0/KSAppRi4fHhjjLkZlAbPhWcKLL681cv+sHpc6BgnFXpR68uL33ctjgiPM1CE6XFD2xZ
-	DgRX7l4EitajVtgYHXJA==;
+	List-Owner; bh=cQzZIhvf1NSBagVUqES1QmoqVVTaCW1mDSx5dFCz5Fs=; b=R87gEr9bfdpABe
+	oHVrpszdtqHot1ymMKXs2m9rYJ8zyzQD1ritTvxPr5V237ScknFEHLPdRlZCNid1kkQPtA1Z+tlVv
+	+7e9T1f/UME8zKAa8UMvD240Iy4gWtqfESIQWSupg4NWF8xq9VYtok96nl+LzLuZvpYdwTCGtKFfS
+	TXQCMpnuR3CC+tleXZ2gWxxdrHiThZ5fU8Ow5JwMMbyPAYNIBPZHeeJH43dSQAp4g4f+IUM4CLvbX
+	OWLzuVvm84UObqzCQYAVATJ/VM/PI/nXar7gB7wyprPVOT0Ez4jpQBl/sA9cHkBVpdp16WTMg9HC7
+	yKGnRxwWA+ryL7waFsIA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5N81-0002k1-Fc; Wed, 04 Sep 2019 04:42:45 +0000
+	id 1i5NLU-0007Ep-LA; Wed, 04 Sep 2019 04:56:40 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5N7o-0002jj-Oj
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 04:42:33 +0000
+ id 1i5NLH-0007EN-TN
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 04:56:29 +0000
 Received: from localhost (unknown [122.182.201.156])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id A5B8322CED;
- Wed,  4 Sep 2019 04:42:31 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id A4AB12077B;
+ Wed,  4 Sep 2019 04:56:26 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567572152;
- bh=m4F5Q8UfN0GHnykOXwLzKXVq4D8Xmr2BgfunVwAekLA=;
+ s=default; t=1567572987;
+ bh=xkQZikYEyY3c7L/C+i3x3dyZJTWQdFUTYOzei9xlyQk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=p9N+ebYnuInXthVBf8+7lSgEarA1XZzh3V5v07ou3zmIu2gSHGfzwfR5q8iyaQ90t
- HWtL/vfegjydUewdmaYFzLv8Sa2lxMKKadKoipkNbt1sEdg8o62krINQlB8QMroGOh
- /TbNsE3tj9o2cXlUGA3sqEs0eRapN+C2uVvTqPKI=
-Date: Wed, 4 Sep 2019 10:11:24 +0530
+ b=Qru4PME1plSqZSD3Y0yICIVW9mG8C6MIOggnFtQeOImhWC+FBN6IDZmu3YNXSXfsp
+ /CtM4d+VWQw/4xbdRL1f5E/kqn+X8vqamBF55CBzDkJAaWkH6pNZU4tRZd+X+E6DqX
+ V7Xgvu0JOuirnwEN3Hsu9poD7z85dNhWmTT4l4mg=
+Date: Wed, 4 Sep 2019 10:25:19 +0530
 From: Vinod Koul <vkoul@kernel.org>
-To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH] dmaengine: ti: omap-dma: Remove variable override in
- omap_dma_tx_status()
-Message-ID: <20190904044124.GU2672@vkoul-mobl>
-References: <20190730132029.2971-1-peter.ujfalusi@ti.com>
+To: "Gustavo A. R. Silva" <gustavo@embeddedor.com>
+Subject: Re: [PATCH] dmaengine: stm32-dma: Use struct_size() helper
+Message-ID: <20190904045519.GZ2672@vkoul-mobl>
+References: <20190830161423.GA3483@embeddedor>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190730132029.2971-1-peter.ujfalusi@ti.com>
+In-Reply-To: <20190830161423.GA3483@embeddedor>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_214232_820158_0EBE9C13 
-X-CRM114-Status: UNSURE (   7.50  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190903_215627_974658_18D797BE 
+X-CRM114-Status: GOOD (  11.03  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -78,16 +76,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dmaengine@vger.kernel.org, dan.j.williams@intel.com,
- linux-omap@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>, dmaengine@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org,
+ Kees Cook <keescook@chromium.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 30-07-19, 16:20, Peter Ujfalusi wrote:
-> There is no need to fetch local omap_desc since the desc we have is the
-> correct one already when we need to check the channel status.
+On 30-08-19, 11:14, Gustavo A. R. Silva wrote:
+> One of the more common cases of allocation size calculations is finding
+> the size of a structure that has a zero-sized array at the end, along
+> with memory for some number of elements for that array. For example:
+> 
+> struct stm32_dma_desc {
+> 	...
+>         struct stm32_dma_sg_req sg_req[];
+> };
+> 
+> 
+> Make use of the struct_size() helper instead of an open-coded version
+> in order to avoid any potential type mistakes.
+> 
+> So, replace the following function:
+> 
+> static struct stm32_dma_desc *stm32_dma_alloc_desc(u32 num_sgs)
+> {
+>        return kzalloc(sizeof(struct stm32_dma_desc) +
+>                       sizeof(struct stm32_dma_sg_req) * num_sgs, GFP_NOWAIT);
+> }
+> 
+> with:
+> 
+> kzalloc(struct_size(desc, sg_req, num_sgs), GFP_NOWAIT)
+> 
+> This code was detected with the help of Coccinelle.
 
 Applied, thanks
 
