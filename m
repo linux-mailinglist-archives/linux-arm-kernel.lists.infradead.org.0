@@ -2,93 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AEA1A7B57
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 08:14:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 01E97A7B5C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 08:14:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LwHmiSvok3ajhnH2sOdoUY8fiJDcN7rce0PGaFefn1o=; b=NH/nbJIcmhcVbi
-	iDCwMuyPDNwPJDjjvvFILze2i/U1oWCPqNqGKpoaFZwOLHkNKb6Veso5VtbMHdKAUt9zZmB9haaoV
-	OJUW/kv/Hb+g8wKwyYr9Q7t/w+stkqMLuSDnHGdDddyaLK+belJllMIHIcr8ZED7TE9SE8yharGYx
-	GsydaZ5Tt7aAkcVkSCrXcM+KGXRJuUAZntgw+OJIhgFoFTvVT8wE+AzQPqm9meUujmOWPHMRKOlZF
-	R9yRKKghDh2yWd0NwMMx01h4aYOYtbChQJe9npuN0be8s+ydVJ68LoLf/Nr1iVeTYSjKWvYKRYn22
-	WfKSMNZ1sXn2QEaRQiuQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Jw0LEMHLt3WeqrGjeGT5XwHmNkdl+Cr52ZB/qNm5DUw=; b=GHKuCmUc2tlnLT
+	+XOgWO75ahoQTDvTl6MgC8RS8q1YTy+R+biD6KJYLpeYMFwc69AyuGdhNgeRXQEOHzx9+2bbm1eQj
+	3XzFOwsg2cqPwpzlbs1wby/IOnspbFZ67v4Qx6sCsbiK1MQu19hwB09HfReaA7h6u/q1oNV0ysy9E
+	UmNS5Kv49ZeG9Iv1P4jTPm4/ArcXGDwZy6WIfOecduhqyjn4OKVSRWdDCoIWY5hdGHMX9clpLa221
+	nfiq/20ofRXoOrWXVh7Ce9naNvT+99gy+QpXU86O1K4JQo60bJpv1Mq4AviadvLKcoXKXo0a6u9lA
+	km8gH541VTFl6IOFyWIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5OYf-0007fK-69; Wed, 04 Sep 2019 06:14:21 +0000
-Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5OXp-00076p-PD
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 06:13:31 +0000
-Received: by mail-pg1-x542.google.com with SMTP id n190so10648501pgn.0
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 03 Sep 2019 23:13:29 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=/J2boyPn+qcY/K0vnmvhFTTJFIHHHtzjypsfGFGhgdk=;
- b=T+AzYIEUXfUowK7oaDioOyQfgljXCgF5OaLeVOZDs5si9YNS62iHvZYF7QPPWxoMuD
- 6HZoj9lzZMst3evVF0QG+nXAFRWyTTfNe+b4E+h9aBaBl8CaInKHf+pZGjQktMzzlEyS
- HPNpOSDNvBsS1d0T59kOyxX0yOuiQVzLIo1D/hymPSUPqgY+ZFRe3b3dSJPdOMgWbONz
- XvbCScG2k/yOAyjE4AfT144iEbaku+wFeuwj856zrB+uPkd+g7LsFBwlQVtZxyT5dwXx
- hb3V4Ke7j/tgHPb2wYdr0vtUMJXXvKhK8Lz9SZ5Ad7ed0rq0j23lIoyWDfziHTJgqVtW
- vamg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=/J2boyPn+qcY/K0vnmvhFTTJFIHHHtzjypsfGFGhgdk=;
- b=ZMqN27bBsVv4q3Eom+iPWcoFpK5wc2ZoY89woQuMWvJqcXCIHNkgi5aDZH64Hy+Du+
- xM9NBrW/kQbTt9sbh+KLakBtT3uNr8mho0hk4vpALjsilRydDsHmmTkrnIOoApli6r70
- lqSljEN46BrH6dlIN1RNyQfiiJQ99+M+ru8+7P/4xnlx5OmksVLSsAuiaxdHFfj23ngj
- 4GCx+vZu5JFNcc2aU/BCJVKvGwtRJ5AILDKFxN1l6jIi/Kf56bnZAwBLHBYdViYInLTD
- 7LikqA9D4/hhEm13VeEuZI0/CAxkilRu8i7diw8+VUheMd6XbE5M7f5l31Tdz1MPzhxz
- TF4w==
-X-Gm-Message-State: APjAAAVvmQhBYamXBS0VF71G35YbJ1azmYOIfknyCS6EWKjZwXDLuugs
- Q0anEJZ2DkCBS+2rqzSH/CU=
-X-Google-Smtp-Source: APXvYqx0ThSaW+fHUBqyw3dqUD0Oa30Gmx83hxepmA1ZcStILNrjdla4WSXq4PxIDnAoPGKQ4jNvJQ==
-X-Received: by 2002:a65:5a8c:: with SMTP id c12mr32988229pgt.73.1567577609134; 
- Tue, 03 Sep 2019 23:13:29 -0700 (PDT)
-Received: from rashmica.ozlabs.ibm.com ([122.99.82.10])
- by smtp.gmail.com with ESMTPSA id i9sm42443093pgo.46.2019.09.03.23.13.25
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 03 Sep 2019 23:13:28 -0700 (PDT)
-From: Rashmica Gupta <rashmica.g@gmail.com>
-To: linus.walleij@linaro.org, linux-gpio@vger.kernel.org,
- bgolaszewski@baylibre.com
-Subject: [PATCH 4/4] gpio: Update documentation with ast2600 controllers
-Date: Wed,  4 Sep 2019 16:12:45 +1000
-Message-Id: <20190904061245.30770-4-rashmica.g@gmail.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190904061245.30770-1-rashmica.g@gmail.com>
-References: <20190904061245.30770-1-rashmica.g@gmail.com>
+	id 1i5OZ3-0007xn-EO; Wed, 04 Sep 2019 06:14:45 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5OYo-0007wY-7w; Wed, 04 Sep 2019 06:14:31 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 312C2344;
+ Tue,  3 Sep 2019 23:14:29 -0700 (PDT)
+Received: from [10.162.41.129] (p8cg001049571a15.blr.arm.com [10.162.41.129])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 89A8D3F718; Tue,  3 Sep 2019 23:16:41 -0700 (PDT)
+Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: kbuild test robot <lkp@intel.com>
+References: <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
+ <201909031912.htvWy2Bu%lkp@intel.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <4dc9698f-dff4-b916-a83e-dc932c8087c0@arm.com>
+Date: Wed, 4 Sep 2019 11:44:25 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
+In-Reply-To: <201909031912.htvWy2Bu%lkp@intel.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190903_231330_009833_769C4AB5 
-X-CRM114-Status: UNSURE (   9.94  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190903_231430_367719_6C33792B 
+X-CRM114-Status: GOOD (  18.23  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (rashmica.g[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,36 +62,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, andrew@aj.id.au,
- linux-kernel@vger.kernel.org, joel@jms.id.au,
- Rashmica Gupta <rashmica.g@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
+ Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
+ Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
+ Michael Ellerman <mpe@ellerman.id.au>, x86@kernel.org,
+ Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Vlastimil Babka <vbabka@suse.cz>,
+ linux-snps-arc@lists.infradead.org, kbuild-all@01.org,
+ Kees Cook <keescook@chromium.org>, Mark Brown <broonie@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-arm-kernel@lists.infradead.org,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Dave Hansen <dave.hansen@intel.com>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Signed-off-by: Rashmica Gupta <rashmica.g@gmail.com>
----
- Documentation/devicetree/bindings/gpio/gpio-aspeed.txt | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
 
-diff --git a/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt b/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-index 7e9b586770b0..cd388797e07c 100644
---- a/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-+++ b/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-@@ -2,7 +2,8 @@ Aspeed GPIO controller Device Tree Bindings
- -------------------------------------------
- 
- Required properties:
--- compatible		: Either "aspeed,ast2400-gpio" or "aspeed,ast2500-gpio"
-+- compatible		: Either "aspeed,ast2400-gpio", "aspeed,ast2500-gpio",
-+					  "aspeed,ast2600-gpio", or "aspeed,ast2600-1-8v-gpio"
- 
- - #gpio-cells 		: Should be two
- 			  - First cell is the GPIO line number
--- 
-2.20.1
 
+On 09/03/2019 04:43 PM, kbuild test robot wrote:
+> Hi Anshuman,
+> 
+> Thank you for the patch! Yet something to improve:
+> 
+> [auto build test ERROR on linus/master]
+> [cannot apply to v5.3-rc7 next-20190902]
+> [if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
+> 
+> url:    https://github.com/0day-ci/linux/commits/Anshuman-Khandual/mm-debug-Add-tests-for-architecture-exported-page-table-helpers/20190903-162959
+> config: m68k-allmodconfig (attached as .config)
+> compiler: m68k-linux-gcc (GCC) 7.4.0
+> reproduce:
+>         wget https://raw.githubusercontent.com/intel/lkp-tests/master/sbin/make.cross -O ~/bin/make.cross
+>         chmod +x ~/bin/make.cross
+>         # save the attached .config to linux build tree
+>         GCC_VERSION=7.4.0 make.cross ARCH=m68k 
+> 
+> If you fix the issue, kindly add following tag
+> Reported-by: kbuild test robot <lkp@intel.com>
+> 
+> All error/warnings (new ones prefixed by >>):
+> 
+>    In file included from arch/m68k/include/asm/bug.h:32:0,
+>                     from include/linux/bug.h:5,
+>                     from include/linux/thread_info.h:12,
+>                     from include/asm-generic/preempt.h:5,
+>                     from ./arch/m68k/include/generated/asm/preempt.h:1,
+>                     from include/linux/preempt.h:78,
+>                     from arch/m68k/include/asm/irqflags.h:6,
+>                     from include/linux/irqflags.h:16,
+>                     from arch/m68k/include/asm/atomic.h:6,
+>                     from include/linux/atomic.h:7,
+>                     from include/linux/mm_types_task.h:13,
+>                     from include/linux/mm_types.h:5,
+>                     from include/linux/hugetlb.h:5,
+>                     from mm/arch_pgtable_test.c:14:
+>    mm/arch_pgtable_test.c: In function 'pmd_clear_tests':
+>>> arch/m68k/include/asm/page.h:31:22: error: lvalue required as unary '&' operand
+>     #define pmd_val(x) ((&x)->pmd[0])
+>                          ^
+>    include/asm-generic/bug.h:124:25: note: in definition of macro 'WARN_ON'
+>      int __ret_warn_on = !!(condition);    \
+>                             ^~~~~~~~~
+>>> arch/m68k/include/asm/motorola_pgtable.h:138:26: note: in expansion of macro 'pmd_val'
+>     #define pmd_none(pmd)  (!pmd_val(pmd))
+>                              ^~~~~~~
+>>> mm/arch_pgtable_test.c:233:11: note: in expansion of macro 'pmd_none'
+>      WARN_ON(!pmd_none(READ_ONCE(*pmdp)));
+>               ^~~~~~~~
+>    mm/arch_pgtable_test.c: In function 'pmd_populate_tests':
+>>> arch/m68k/include/asm/page.h:31:22: error: lvalue required as unary '&' operand
+>     #define pmd_val(x) ((&x)->pmd[0])
+
+Storing READ_ONCE(*pmdp) in a local pmd_t variable first solves the problem.
 
 _______________________________________________
 linux-arm-kernel mailing list
