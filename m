@@ -2,77 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 93EB4A85E9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:06:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0516CA85EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:08:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=F62fg3eHKUTHoe8wn6RsYgqPP9ZuCr7GLE6qW2Dagk4=; b=iHwgrfIxm8Av1i
-	uuhvMCevYsRX6nPNAGXVId8//oArKdCm2+kSHkAjw+N2Yfd2zXhc8WNBQgaLAoZ1fV5f4ETiVfUQ6
-	EBjzX/rk6YUpM/eIDeWbMfqSm4yjqqjNBYBtdoqDv8eyZgrj9ZfnlgHNTvcNUezaF1WzOkJ4FlL3V
-	x6eWGbhyCQUgmFTfmw4W4IHSYBIP/czP6FjR7+Jdnaw8oTnSNXhr/0a+Z8w0kaxfTpzdszhlOdLze
-	u8Gaxw7SffVYB42dl/NbuuDuL4Yj74SHFi/KeZ2o0KdeGJgSuyfozQSlehjct8t6MGmE028w5gX6h
-	jh9ASHe8KQLtnvTk2OVA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sIpaHRQIc85ppcIF8WIj86fsfWFD4dCiaQMSikEd6XM=; b=hL28CO+eOc+lWX
+	A3cLikr6oesKj2PbSW4PUgW7MxNlL/mE5GS3YBL6eTXG8snYy0bYCTX0l+t+kv0sy0J1awswswZuW
+	3oBshutRlJjD1AY+yKnxT8YJfSBSe061agyp8g1ckdAVvQxFmzMVnTmwlX85NTFHG9ktF5qQ6rI7G
+	agBjgAFZd4Nc1OFwk8n9XnDPlkjI2NPtr1J4b6yNtZ9w563bPnqISYsAn5QjXFeY9LKfKc+R0JPmD
+	jvNee19dfypcAlTxnZBFGpg2npNiGNTHSaMZPYkhY6R14KfI8DVddWkIjvrtWUuuzsUDmgq7GylQt
+	Zm4oj6+QyhSDIeafh4kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5WrA-0006Tv-Ur; Wed, 04 Sep 2019 15:06:01 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Wql-0006NS-C9
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:05:37 +0000
-Received: by mail-qt1-f194.google.com with SMTP id y26so24801718qto.4
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 08:05:35 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=2VFHwOwmlKF2puTqPRuPTBufUq8IWxw7CTun82Cp4Sk=;
- b=iTzGB2KzAw63FGTf6RUc6fDQv470TD6BpMjFEJAD6Ba3MfCEShxZ+v6IhldYQ7kkp2
- pIDABJiEGuN7k6+M1Cros9yg0OrB+x5QJH03ZC5fa49gOj+COWwuADLOM9ceQBgUcxtd
- JIuWZY/Qw/OXEJjHla4qrTLYShDbADSELcbiAHqPaEZrhQevNcoSSrxPOJk6+qTkgqwh
- 4NtBW9TxIUJ6+s0ynaTI14FvJFjQ6xlBxARAyj9QnWDM2RHSsTuzmzcA8Oo6cWKqPBD6
- U1SWSu5I2P0scKyNgcXHUT3C0EAxwmKcMeFY3cvnlQEbXaF3UHxeYUcWbmJ9248jyVsd
- sAtg==
-X-Gm-Message-State: APjAAAVb9rQ/+w0nDuTsuh/Ytih67ET1gNNYfQV7F+NxSow38Q2W4fgv
- gwpPWkJPrXhEUZ4uhhG9BMQYHCfFjVGfdlMJt4U=
-X-Google-Smtp-Source: APXvYqxe8mW1ml9yvZOqbtI/5Jf26rRet5rCmU+Mz4fV1QOEyWNm9JGTgGjKI8EocAJQlA6gxaTXUTQ5dQiHFPu2Ivk=
-X-Received: by 2002:aed:2842:: with SMTP id r60mr30176500qtd.142.1567609534527; 
- Wed, 04 Sep 2019 08:05:34 -0700 (PDT)
+	id 1i5Wt5-0006v7-Kf; Wed, 04 Sep 2019 15:07:59 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Wsp-0006uL-80
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:07:44 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9ED8628;
+ Wed,  4 Sep 2019 08:07:42 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 6B2783F246;
+ Wed,  4 Sep 2019 08:07:40 -0700 (PDT)
+Subject: Re: [PATCH v4 01/10] KVM: arm64: Document PV-time interface
+To: Andrew Jones <drjones@redhat.com>
+References: <20190830084255.55113-1-steven.price@arm.com>
+ <20190830084255.55113-2-steven.price@arm.com>
+ <20190830144734.kvj4dvt32qzmhw32@kamzik.brq.redhat.com>
+ <7f459290-9c39-cfba-c514-a07469ff120f@arm.com>
+ <20190902125254.3w6lnvcbs7sfhjz7@kamzik.brq.redhat.com>
+ <118ceeea-5501-05b6-7232-e66a175d5fae@arm.com>
+ <20190904142250.ohnkunb5ocwbnx6z@kamzik.brq.redhat.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <9ebbfde3-d592-b9c5-4456-a28a2f6e9125@arm.com>
+Date: Wed, 4 Sep 2019 16:07:39 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <1567317285-8555-1-git-send-email-agross@kernel.org>
- <1567317285-8555-3-git-send-email-agross@kernel.org>
-In-Reply-To: <1567317285-8555-3-git-send-email-agross@kernel.org>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 4 Sep 2019 17:05:18 +0200
-Message-ID: <CAK8P3a1D4004g=U_ekNcGeEht-vfss9sSYtYcnFsp7dXQQvGSw@mail.gmail.com>
-Subject: Re: [GIT PULL] Qualcomm Defconfig updates for 5.4
-To: Andy Gross <agross@kernel.org>
+In-Reply-To: <20190904142250.ohnkunb5ocwbnx6z@kamzik.brq.redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_080535_910549_BF7AB542 
-X-CRM114-Status: UNSURE (   6.95  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190904_080743_379481_715A1129 
+X-CRM114-Status: GOOD (  22.71  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,25 +67,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- arm-soc <arm@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
- Olof Johansson <olof@lixom.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>, kvm@vger.kernel.org,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ linux-doc@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 1, 2019 at 7:54 AM Andy Gross <agross@kernel.org> wrote:
+On 04/09/2019 15:22, Andrew Jones wrote:
+> On Wed, Sep 04, 2019 at 02:55:15PM +0100, Steven Price wrote:
+>> On 02/09/2019 13:52, Andrew Jones wrote:
+>>> On Fri, Aug 30, 2019 at 04:25:08PM +0100, Steven Price wrote:
+>>>> On 30/08/2019 15:47, Andrew Jones wrote:
+>>>>> On Fri, Aug 30, 2019 at 09:42:46AM +0100, Steven Price wrote:
+>> [...]
+>>>>>> +    Return value: (int32)   : NOT_SUPPORTED (-1) or SUCCESS (0) if the relevant
+>>>>>> +                              PV-time feature is supported by the hypervisor.
+>>>>>> +
+>>>>>> +PV_TIME_ST
+>>>>>> +    Function ID:  (uint32)  : 0xC5000022
+>>>>>> +    Return value: (int64)   : IPA of the stolen time data structure for this
+>>>>>> +                              VCPU. On failure:
+>>>>>> +                              NOT_SUPPORTED (-1)
+>>>>>> +
+>>>>>> +The IPA returned by PV_TIME_ST should be mapped by the guest as normal memory
+>>>>>> +with inner and outer write back caching attributes, in the inner shareable
+>>>>>> +domain. A total of 16 bytes from the IPA returned are guaranteed to be
+>>>>>> +meaningfully filled by the hypervisor (see structure below).
+>>>>>> +
+>>>>>> +PV_TIME_ST returns the structure for the calling VCPU.
+>>>>>> +
+>>>>>> +Stolen Time
+>>>>>> +-----------
+>>>>>> +
+>>>>>> +The structure pointed to by the PV_TIME_ST hypercall is as follows:
+>>>>>> +
+>>>>>> +  Field       | Byte Length | Byte Offset | Description
+>>>>>> +  ----------- | ----------- | ----------- | --------------------------
+>>>>>> +  Revision    |      4      |      0      | Must be 0 for version 0.1
+>>>>>> +  Attributes  |      4      |      4      | Must be 0
+>>>>>
+>>>>> The above fields don't appear to be exposed to userspace in anyway. How
+>>>>> will we handle migration from one KVM with one version of the structure
+>>>>> to another?
+>>>>
+>>>> Interesting question. User space does have access to them now it is
+>>>> providing the memory, but it's not exactly an easy method. In particular
+>>>> user space has no (simple) way of probing the kernel's supported version.
+>>>>
+>>>> I guess one solution would be to add an extra attribute on the VCPU
+>>>> which would provide the revision information. The current kernel would
+>>>> then reject any revision other than 0, but this could then be extended
+>>>> to support other revision numbers in the future.
+>>>>
+>>>> Although there's some logic in saying we could add the extra attribute
+>>>> when(/if) there is a new version. Future kernels would then be expected
+>>>> to use the current version unless user space explicitly set the new
+>>>> attribute.
+>>>>
+>>>> Do you feel this is something that needs to be addressed now, or can it
+>>>> be deferred until another version is proposed?
+>>>
+>>> Assuming we'll want userspace to have the option of choosing version=0,
+>>> and that we're fine with version=0 being the implicit choice, when nothing
+>>> is selected, then I guess it can be left as is for now. If, OTOH, we just
+>>> want migration to fail when attempting to migrate to another host with
+>>> an incompatible stolen-time structure (i.e. version=0 is not selectable
+>>> on hosts that implement later versions), then we should expose the version
+>>> in some way now. Perhaps a VCPU's "PV config" should be described in a
+>>> set of pseudo registers?
+>>
+>> I wouldn't have thought making migration fail if/when the host upgrades
+>> to a new version would be particularly helpful - we'd want to provide
+>> backwards compatibility. In particular for the suspend/resume case (I
+>> want to be able to save my VM to disk, upgrade the host kernel and then
+>> resume the VM).
+>>
+>> The only potential issue I see is the implicit "version=0 if not
+>> specified". That seems solvable by rejecting setting the stolen time
+>> base address if no version has been specified and the host kernel
+>> doesn't support version=0.
+> 
+> I think that's the same failure I was trying avoid by failing the
+> migration instead. Maybe it's equivalent to fail at this vcpu-ioctl
+> time though?
 
-> ----------------------------------------------------------------
-> Qualcomm ARM Based defconfig Updates for v5.4
->
-> * Add DRM_MSM to ARCH_QCOM defconfigs
+Yes this is effectively the same failure. But since we require the
+vcpu-ioctl to enable stolen time this gives an appropriate place to
+fail. Indeed this is the failure if migrating from a host with these
+patches to one running an existing kernel with no stolen time support.
 
-Pulled into arm/defconfig, thanks!
-
-       Arnd
+Steve
 
 _______________________________________________
 linux-arm-kernel mailing list
