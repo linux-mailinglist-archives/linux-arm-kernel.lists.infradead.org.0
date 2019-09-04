@@ -2,88 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6A721A7F02
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:14:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6F24A7F29
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:19:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=k2qOGIIb9A8fz3yuuf+VOYfE1FI3AQulpFNbQK20ca0=; b=dkHcriwEz/MvP+
-	gNaNAzlcMenpfuRsjES4jddqFAdjIEuVR9uSKSEN0MhMrBNT1bk+ueuyZnovnwgenlypeuz2opVCo
-	xp9YzAm2cfFcLNZK1y0ofkqIqXCqr68HuKCJ1O78dWjSi2ZZLIn0b1ZYFswMFlRPoLvNVqyUdRYhA
-	BfDiEaFwKepQFR/9GLeeyYP4YdY3V6znx1IBbb5LFNPPjhYJftwyzWVIeJzZgTNIE3SmrMlXgUvbD
-	tNsbzUrKriXmMmQfuXcdIClWy0iCsBHa9SMfn/anAjHduXM/62kvvbJtEXJPXirpXvvmM6bOKoMVW
-	uhmCxPjQBT50DmS3t99Q==;
+	List-Owner; bh=9iGQ2/yYv1Mlx7LYw48Oh1W8RSzxq6nuh+BdDWwmCUo=; b=GH0zKx9jUN5WBC
+	TYZPzgSYtaluUS0nRoHdmeRh0oKkPIC3kgcafvJwUokkA1hHc3GqJmyrE/HPIYgRM1S9BpIIB8Q8i
+	nEl9gKSBxG/oY01tHCq2fOhT67F8tW+sNEPUK/45iz/5eynqDSIXcDMr/0Da9OoW7T+IMSPTAuW2d
+	fruAtj0JKtJnGXrX7VOMcOHooXEHmoIl5/tQXP7Qb2w+5JuUrlNviPpzJhXYoFVMt9ZDPudUao9Pc
+	AsuLgzAA71hF3F9JCm0zfMFacPNhifRkukdnEw9pRP13oXVz8xKI8gBC5oiDDB7GVcgsDxzKk5hFL
+	sP+3r35jqhwxdeHIz14Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5RN0-0006y3-FW; Wed, 04 Sep 2019 09:14:30 +0000
-Received: from mail-vs1-xe42.google.com ([2607:f8b0:4864:20::e42])
+	id 1i5RRz-0000RO-Fn; Wed, 04 Sep 2019 09:19:39 +0000
+Received: from mail-yw1-xc43.google.com ([2607:f8b0:4864:20::c43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5RMk-0006wW-0f
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:14:16 +0000
-Received: by mail-vs1-xe42.google.com with SMTP id m62so13286349vsc.8
+ id 1i5RRl-0000Qx-RF
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:19:27 +0000
+Received: by mail-yw1-xc43.google.com with SMTP id q7so378993ywe.10
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 02:14:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=MN0b6OvKnXZr8uGhWjmCrGTXb1h5H1L7qagdNg+S1sg=;
- b=U+b4Fp2al576XCFXnzNH1lWT0u9Rlzbc5/BCXDYtfPEfL1w+DTyq4kDUJXYVvy2RMv
- 5IUy877oizgwz2GMU72ADTgzpmexHkRBrQ9l0hZ3GsdV/Fpue2ESv+qkSnf9pJXNV8u3
- MJ1eRzLaZcdq5uLHh0A+1OJ77a4mqchZ12yKI=
+ Wed, 04 Sep 2019 02:19:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=OPjd5RoXO1B0dvJpxf2pMwsgeferMb+CMB+0Se3R+aw=;
+ b=unXN/RreWEWxBaEhGFvnUFZekaDtmpmXJg5Q42kLwiPiVSkfsYin0dYhw4tnjEfHd+
+ MysHc5qx2xwiDUaOlHzMTEsGAVFXGnB5KbCeRFPW3I2xjkoG1876UQxAmBewrq5ZeV6C
+ KMgQPXqudZvzCh40y12n3CDnd1nBZxDGRQ+eZ81n9F6DWLCu0c6KPrHep5/z60OkaT8G
+ tYBjCn+TelwAn8Z6miw2wcJRwKpgkgeIadifxyHOpwgXFpQT3/3kQ2hDrTZtRIXJQ0rb
+ jEGZi34qxTlKdE2izWAGxbwiu2UuysDrmPBatAagJkPKpWu6DhdKyOHFsEnMJ8QzSUAJ
+ 72yA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=MN0b6OvKnXZr8uGhWjmCrGTXb1h5H1L7qagdNg+S1sg=;
- b=LHBj4YReKAE2+6FOUrz8R8W/AVR6/9WjdnISDruYJpMYsscxlKxvZhoKTOIS44Zyr0
- Vp4bf8Q6ztYziXf6DV9ydV2E2AWq9qKIJfNRJRve94XIyG0mDAPnijzpL7b+DgFdHS5p
- 2cQIGp6xAYdEm/mEnvLRW8/3Lg+SNBu+Ix9iWrYmGdZM2FOtWsBo3TYbTxfFtikxQC/O
- vtftg3h7A56MRi8MhN9qJvFiT908Y//DqZlgDMXVw9qO8zvQuxruaG2HRi0skEc1K9cA
- 5Bq/tVyXMqs/C41evVT9zLwvA5s4cll4uoSL7IaXXlm8L4xN1yeUyH+H2kc3b4zOK59M
- utAw==
-X-Gm-Message-State: APjAAAUJQkXf3RyMfDt3cv71WDQwNyuYnEQcP7qL3vmYvTKb1AGD99O2
- g/qIxQcML2mdkUHTp7A+ENQ63i1mWsad2YqW5vXySQ==
-X-Google-Smtp-Source: APXvYqykSGETqss+CbHmnsZe1fTUP4pEHpX6xPKY5VZ2TjYX0n59XRPduBG0rpnAbraIcYajXzkHkvwwXMNo38IzQGQ=
-X-Received: by 2002:a05:6102:7d5:: with SMTP id
- y21mr21284524vsg.9.1567588451598; 
- Wed, 04 Sep 2019 02:14:11 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=OPjd5RoXO1B0dvJpxf2pMwsgeferMb+CMB+0Se3R+aw=;
+ b=D4pQXP8gdCXAj+pHZbHqkSbUWDinxNh0orFTVxs0sY+7Xy5jEDdeiMjnvPtTQJekHB
+ Z/S2yrmS9jTJortR0JcMO9b8OcAoZlykPK3ZxRciNvhDTBYrAUx+phEitnWw1XgwytRp
+ HXV4ssmjS2O3aq93FVmLrNx2aOZOWtDllVMAcxMmW07CQ4rUJilC/T+QZOLotf/z0Mn9
+ tHHlaKHEP9zH93oUqr5hba4qBkvNM4E6nv+py99MHSpV4tA7LdmywA+qghnZQgJHrkql
+ KPj4RcIbMNtXvIhbjBX0fvg1PgwhPDlop+lbtFuPXvBDqEZkoIOPQmwYA4mz7wwBYox9
+ +TAA==
+X-Gm-Message-State: APjAAAUPVZ3MaaJqTwnWH4TMwfsV2S/ua9Ih/inEtsoQ9DwsYa98GNqF
+ 74cBNybQw/OBkaT9ElEOdQ29Pg==
+X-Google-Smtp-Source: APXvYqz47cWxK4IGcklYRoE1hotXBCyaLIhAESacqRHHAXJkXrQyR3CVeim/mz6R+LKakgY02qLGtA==
+X-Received: by 2002:a81:1c0c:: with SMTP id c12mr25444005ywc.262.1567588764397; 
+ Wed, 04 Sep 2019 02:19:24 -0700 (PDT)
+Received: from leoy-ThinkPad-X240s (li1320-244.members.linode.com.
+ [45.79.221.244])
+ by smtp.gmail.com with ESMTPSA id 10sm2038410ywf.60.2019.09.04.02.19.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Wed, 04 Sep 2019 02:19:23 -0700 (PDT)
+Date: Wed, 4 Sep 2019 17:19:16 +0800
+From: Leo Yan <leo.yan@linaro.org>
+To: Mathieu Poirier <mathieu.poirier@linaro.org>
+Subject: Re: [PATCH v1 1/3] perf cs-etm: Refactor instruction size handling
+Message-ID: <20190904091916.GB27922@leoy-ThinkPad-X240s>
+References: <20190830062421.31275-1-leo.yan@linaro.org>
+ <20190830062421.31275-2-leo.yan@linaro.org>
+ <20190903222215.GD25787@xps15>
 MIME-Version: 1.0
-References: <20190903055103.134764-1-cychiang@chromium.org>
- <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
- <d8a80ba5-dd2b-f84d-bbfc-9dd5ccbc26e9@baylibre.com>
-In-Reply-To: <d8a80ba5-dd2b-f84d-bbfc-9dd5ccbc26e9@baylibre.com>
-From: Cheng-yi Chiang <cychiang@chromium.org>
-Date: Wed, 4 Sep 2019 17:13:45 +0800
-Message-ID: <CAFv8NwJz9gbdjqcNNxBzvzoOWGu4MeFjp=OKcfH=wCPksQc8Zw@mail.gmail.com>
-Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-To: Neil Armstrong <narmstrong@baylibre.com>
+Content-Disposition: inline
+In-Reply-To: <20190903222215.GD25787@xps15>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_021414_066843_14C8DFBA 
-X-CRM114-Status: GOOD (  22.57  )
-X-Spam-Score: -7.4 (-------)
+X-CRM114-CacheID: sfid-20190904_021925_891136_76F00EB9 
+X-CRM114-Status: GOOD (  25.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-7.4 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e42 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:c43 listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,149 +100,148 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
- <alsa-devel@alsa-project.org>, kuninori.morimoto.gx@renesas.com,
- cain.cai@rock-chips.com, David Airlie <airlied@linux.ie>,
- dri-devel@lists.freedesktop.org, linux-kernel <linux-kernel@vger.kernel.org>,
- Andrzej Hajda <a.hajda@samsung.com>,
- Laurent Pinchart <Laurent.pinchart@ideasonboard.com>, sam@ravnborg.org,
- Xing Zheng <zhengxing@rock-chips.com>, linux-rockchip@lists.infradead.org,
- Dylan Reid <dgreid@chromium.org>, tzungbi@chromium.org,
- Jonas Karlman <jonas@kwiboo.se>, Jeffy Chen <jeffy.chen@rock-chips.com>,
- =?UTF-8?B?6JSh5p6r?= <eddie.cai@rock-chips.com>,
- linux-arm-kernel@lists.infradead.org, Jernej Skrabec <jernej.skrabec@siol.net>,
- Doug Anderson <dianders@chromium.org>, Daniel Vetter <daniel@ffwll.ch>,
- Enric Balletbo i Serra <enric.balletbo@collabora.com>, kuankuan.y@gmail.com
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ linux-kernel@vger.kernel.org, Arnaldo Carvalho de Melo <acme@kernel.org>,
+ Adrian Hunter <adrian.hunter@intel.com>, Namhyung Kim <namhyung@kernel.org>,
+ Robert Walker <Robert.Walker@arm.com>, Jiri Olsa <jolsa@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Mike Leach <mike.leach@linaro.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBTZXAgNCwgMjAxOSBhdCAyOjAwIEFNIE5laWwgQXJtc3Ryb25nIDxuYXJtc3Ryb25n
-QGJheWxpYnJlLmNvbT4gd3JvdGU6Cj4KPiBIaSwKPgo+IExlIDAzLzA5LzIwMTkgw6AgMTE6NTMs
-IE5laWwgQXJtc3Ryb25nIGEgw6ljcml0IDoKPiA+IEhpLAo+ID4KPiA+IE9uIDAzLzA5LzIwMTkg
-MDc6NTEsIENoZW5nLVlpIENoaWFuZyB3cm90ZToKPiA+PiBGcm9tOiBZYWtpciBZYW5nIDx5a2tA
-cm9jay1jaGlwcy5jb20+Cj4gPj4KPiA+PiBXaGVuIHRyYW5zbWl0dGluZyBJRUM2MDk4NSBsaW5l
-YXIgUENNIGF1ZGlvLCB3ZSBjb25maWd1cmUgdGhlCj4gPj4gQXVkaW8gU2FtcGxlIENoYW5uZWwg
-U3RhdHVzIGluZm9ybWF0aW9uIG9mIGFsbCB0aGUgY2hhbm5lbAo+ID4+IHN0YXR1cyBiaXRzIGlu
-IHRoZSBJRUM2MDk1OCBmcmFtZS4KPiA+PiBSZWZlciB0byA2MDk1OC0zIHBhZ2UgMTAgZm9yIGZy
-ZXF1ZW5jeSwgb3JpZ2luYWwgZnJlcXVlbmN5LCBhbmQKPiA+PiB3b3JkbGVuZ3RoIHNldHRpbmcu
-Cj4gPj4KPiA+PiBUaGlzIGZpeCB0aGUgaXNzdWUgdGhhdCBhdWRpbyBkb2VzIG5vdCBjb21lIG91
-dCBvbiBzb21lIG1vbml0b3JzCj4gPj4gKGUuZy4gTEcgMjJDVjI0MSkKPiA+Pgo+ID4+IFNpZ25l
-ZC1vZmYtYnk6IFlha2lyIFlhbmcgPHlra0Byb2NrLWNoaXBzLmNvbT4KPiA+PiBTaWduZWQtb2Zm
-LWJ5OiBDaGVuZy1ZaSBDaGlhbmcgPGN5Y2hpYW5nQGNocm9taXVtLm9yZz4KPiA+PiAtLS0KPiA+
-PiAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLmMgfCA1OSArKysrKysr
-KysrKysrKysrKysrKysrKwo+ID4+ICBkcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3
-LWhkbWkuaCB8IDIwICsrKysrKysrCj4gPj4gIDIgZmlsZXMgY2hhbmdlZCwgNzkgaW5zZXJ0aW9u
-cygrKQo+ID4+Cj4gPj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2Uvc3lub3Bz
-eXMvZHctaGRtaS5jIGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLmMK
-PiA+PiBpbmRleCBiZDY1ZDA0Nzk2ODMuLjM0ZDQ2ZTI1ZDYxMCAxMDA2NDQKPiA+PiAtLS0gYS9k
-cml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWkuYwo+ID4+ICsrKyBiL2RyaXZl
-cnMvZ3B1L2RybS9icmlkZ2Uvc3lub3BzeXMvZHctaGRtaS5jCj4gPj4gQEAgLTU4Miw2ICs1ODIs
-NjMgQEAgc3RhdGljIHVuc2lnbmVkIGludCBoZG1pX2NvbXB1dGVfbih1bnNpZ25lZCBpbnQgZnJl
-cSwgdW5zaWduZWQgbG9uZyBwaXhlbF9jbGspCj4gPj4gICAgICByZXR1cm4gbjsKPiA+PiAgfQo+
-ID4+Cj4gPj4gK3N0YXRpYyB2b2lkIGhkbWlfc2V0X3NjaG5sKHN0cnVjdCBkd19oZG1pICpoZG1p
-KQo+ID4+ICt7Cj4gPj4gKyAgICB1OCBhdWRfc2Nobmxfc2FtcGxlcmF0ZTsKPiA+PiArICAgIHU4
-IGF1ZF9zY2hubF84Owo+ID4+ICsKPiA+PiArICAgIC8qIFRoZXNlIHJlZ2lzdGVycyBhcmUgb24g
-UkszMjg4IHVzaW5nIHZlcnNpb24gMi4wYS4gKi8KPiA+PiArICAgIGlmIChoZG1pLT52ZXJzaW9u
-ICE9IDB4MjAwYSkKPiA+PiArICAgICAgICAgICAgcmV0dXJuOwo+ID4KPiA+IEFyZSB0aGVzZSBs
-aW1pdGVkIHRvIHRoZSAyLjBhIHZlcnNpb24gKmluKiBSSzMyODgsIG9yIDIuMGEgdmVyc2lvbiBv
-biBhbGwKPiA+IFNvQ3MgPwo+Cj4gQWZ0ZXIgaW52ZXN0aWdhdGlvbnMsIEFtbG9naWMgc2V0cyB0
-aGVzZSByZWdpc3RlcnMgb24gdGhlaXIgMi4wYSB2ZXJzaW9uCj4gYXN3ZWxsLCBhbmQgSmVybmVq
-IChhZGRlZCBpbiBDYykgcmVwb3J0ZWQgbWUgQWxsd2lubmVyIHNldHMgdGhlbSBvbiB0aGVpcgo+
-IDwgMi4wYSBhbmQgPiAyLjBhIElQcyB2ZXJzaW9ucy4KPgo+IENhbiB5b3UgY2hlY2sgb24gdGhl
-IFJvY2tjaGlwIElQIHZlcnNpb25zIGluIFJLMzM5OSA/Cj4KU29ycnksIHRoZSBSSzMzOTkgYm9h
-cmQgSSBhbSB1c2luZyBpcyB1c2luZyBEUCwgbm90IEhETUkuCkJ1dCBJIGZvdW5kIHRoYXQgb24g
-cm9ja2NoaXAncyB0cmVlIGF0CgpodHRwczovL2dpdGh1Yi5jb20vcm9ja2NoaXAtbGludXgva2Vy
-bmVsL2NvbW1pdC85MjRmNDgwMzgzYzk4MmRhOTkwOGZiOTZkNmJiYjU4MGIyNTU0NWE1I2RpZmYt
-Zjc0YjRjZmIyMzQzNmExMzdhOTMzOGE1YWYzZmJiM2RSMTcyCgpUaGVyZSBpcyBzdWNoIHJlZ2lz
-dGVyIHNldHRpbmcsIHNvIEkgdGhpbmsgUkszMzk5IHNob3VsZCBoYXZlIHRoZSBzYW1lIHJlZ2lz
-dGVyLgoKCj4gRm9yIHJlZmVyZW5jZSwgdGhlIEhETUkgMS40YSBJUCB2ZXJzaW9uIGFsbHdpbm5l
-ciBzZXR1cHMgaXM6Cj4gaHR0cHM6Ly9naXRodWIuY29tL0FsbHdpbm5lci1Ib21sZXQvSDMtQlNQ
-NC40LWxpbnV4L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdmlkZW8vZmJkZXYvc3VueGkvZGlzcDIvaGRt
-aS9oZG1pX2JzcF9zdW44aXc3LmMjTDUzMS1MNTM5Cj4gKHJlZ2lzdGVycyBhICJzY3JhbWJsZWQi
-IGJ1dCBhIGN1c3RvbSBiaXQgY2FuIHJlc2V0IHRvIHRoZSBvcmlnaW5hbCBtYXBwaW5nLAo+IDB4
-MTA2NiAuLi4gMHgxMDZmKQoKSSBzZWUuLiBzbyAxLjQgaGFzIHRoaXMgcmVnaXN0ZXIuCkkgY2Fu
-IG1vZGlmeSB0aGUgY2hlY2sgdG8gYmUgPj0gMS40IHRoZW4uCldpbGwgZml4IGluIHYyLgoKVGhh
-bmtzIQoKPgo+IE5laWwKPgo+ID4KPiA+PiArCj4gPj4gKyAgICBzd2l0Y2ggKGhkbWktPnNhbXBs
-ZV9yYXRlKSB7Cj4gPj4gKyAgICBjYXNlIDMyMDAwOgo+ID4+ICsgICAgICAgICAgICBhdWRfc2No
-bmxfc2FtcGxlcmF0ZSA9IEhETUlfRkNfQVVEU0NITkxTN19TTVBSQVRFXzMySzsKPiA+PiArICAg
-ICAgICAgICAgYnJlYWs7Cj4gPj4gKyAgICBjYXNlIDQ0MTAwOgo+ID4+ICsgICAgICAgICAgICBh
-dWRfc2Nobmxfc2FtcGxlcmF0ZSA9IEhETUlfRkNfQVVEU0NITkxTN19TTVBSQVRFXzQ0SzE7Cj4g
-Pj4gKyAgICAgICAgICAgIGJyZWFrOwo+ID4+ICsgICAgY2FzZSA0ODAwMDoKPiA+PiArICAgICAg
-ICAgICAgYXVkX3NjaG5sX3NhbXBsZXJhdGUgPSBIRE1JX0ZDX0FVRFNDSE5MUzdfU01QUkFURV80
-OEs7Cj4gPj4gKyAgICAgICAgICAgIGJyZWFrOwo+ID4+ICsgICAgY2FzZSA4ODIwMDoKPiA+PiAr
-ICAgICAgICAgICAgYXVkX3NjaG5sX3NhbXBsZXJhdGUgPSBIRE1JX0ZDX0FVRFNDSE5MUzdfU01Q
-UkFURV84OEsyOwo+ID4+ICsgICAgICAgICAgICBicmVhazsKPiA+PiArICAgIGNhc2UgOTYwMDA6
-Cj4gPj4gKyAgICAgICAgICAgIGF1ZF9zY2hubF9zYW1wbGVyYXRlID0gSERNSV9GQ19BVURTQ0hO
-TFM3X1NNUFJBVEVfOTZLOwo+ID4+ICsgICAgICAgICAgICBicmVhazsKPiA+PiArICAgIGNhc2Ug
-MTc2NDAwOgo+ID4+ICsgICAgICAgICAgICBhdWRfc2Nobmxfc2FtcGxlcmF0ZSA9IEhETUlfRkNf
-QVVEU0NITkxTN19TTVBSQVRFXzE3Nks0Owo+ID4+ICsgICAgICAgICAgICBicmVhazsKPiA+PiAr
-ICAgIGNhc2UgMTkyMDAwOgo+ID4+ICsgICAgICAgICAgICBhdWRfc2Nobmxfc2FtcGxlcmF0ZSA9
-IEhETUlfRkNfQVVEU0NITkxTN19TTVBSQVRFXzE5Mks7Cj4gPj4gKyAgICAgICAgICAgIGJyZWFr
-Owo+ID4+ICsgICAgY2FzZSA3NjgwMDA6Cj4gPj4gKyAgICAgICAgICAgIGF1ZF9zY2hubF9zYW1w
-bGVyYXRlID0gSERNSV9GQ19BVURTQ0hOTFM3X1NNUFJBVEVfNzY4SzsKPiA+PiArICAgICAgICAg
-ICAgYnJlYWs7Cj4gPj4gKyAgICBkZWZhdWx0Ogo+ID4+ICsgICAgICAgICAgICBkZXZfd2Fybiho
-ZG1pLT5kZXYsICJVbnN1cHBvcnRlZCBhdWRpbyBzYW1wbGUgcmF0ZSAoJXUpXG4iLAo+ID4+ICsg
-ICAgICAgICAgICAgICAgICAgICBoZG1pLT5zYW1wbGVfcmF0ZSk7Cj4gPj4gKyAgICAgICAgICAg
-IHJldHVybjsKPiA+PiArICAgIH0KPiA+PiArCj4gPj4gKyAgICAvKiBzZXQgY2hhbm5lbCBzdGF0
-dXMgcmVnaXN0ZXIgKi8KPiA+PiArICAgIGhkbWlfbW9kYihoZG1pLCBhdWRfc2Nobmxfc2FtcGxl
-cmF0ZSwgSERNSV9GQ19BVURTQ0hOTFM3X1NNUFJBVEVfTUFTSywKPiA+PiArICAgICAgICAgICAg
-ICBIRE1JX0ZDX0FVRFNDSE5MUzcpOwo+ID4+ICsKPiA+PiArICAgIC8qCj4gPj4gKyAgICAgKiBT
-ZXQgb3JpZ2luYWwgZnJlcXVlbmN5IHRvIGJlIHRoZSBzYW1lIGFzIGZyZXF1ZW5jeS4KPiA+PiAr
-ICAgICAqIFVzZSBvbmUtY29tcGxlbWVudCB2YWx1ZSBhcyBzdGF0ZWQgaW4gSUVDNjA5NTgtMyBw
-YWdlIDEzLgo+ID4+ICsgICAgICovCj4gPj4gKyAgICBhdWRfc2NobmxfOCA9ICh+YXVkX3NjaG5s
-X3NhbXBsZXJhdGUpIDw8Cj4gPj4gKyAgICAgICAgICAgICAgICAgICAgSERNSV9GQ19BVURTQ0hO
-TFM4X09SSUdTQU1QRlJFUV9PRkZTRVQ7Cj4gPj4gKwo+ID4+ICsgICAgLyogVGhpcyBtZWFucyB3
-b3JkIGxlbmd0aCBpcyAxNiBiaXQuIFJlZmVyIHRvIElFQzYwOTU4LTMgcGFnZSAxMi4gKi8KPiA+
-PiArICAgIGF1ZF9zY2hubF84IHw9IDIgPDwgSERNSV9GQ19BVURTQ0hOTFM4X1dPUkRMRUdOVEhf
-T0ZGU0VUOwo+ID4+ICsKPiA+PiArICAgIGhkbWlfd3JpdGViKGhkbWksIGF1ZF9zY2hubF84LCBI
-RE1JX0ZDX0FVRFNDSE5MUzgpOwo+ID4+ICt9Cj4gPj4gKwo+ID4+ICBzdGF0aWMgdm9pZCBoZG1p
-X3NldF9jbGtfcmVnZW5lcmF0b3Ioc3RydWN0IGR3X2hkbWkgKmhkbWksCj4gPj4gICAgICB1bnNp
-Z25lZCBsb25nIHBpeGVsX2NsaywgdW5zaWduZWQgaW50IHNhbXBsZV9yYXRlKQo+ID4+ICB7Cj4g
-Pj4gQEAgLTYyMCw2ICs2NzcsOCBAQCBzdGF0aWMgdm9pZCBoZG1pX3NldF9jbGtfcmVnZW5lcmF0
-b3Ioc3RydWN0IGR3X2hkbWkgKmhkbWksCj4gPj4gICAgICBoZG1pLT5hdWRpb19jdHMgPSBjdHM7
-Cj4gPj4gICAgICBoZG1pX3NldF9jdHNfbihoZG1pLCBjdHMsIGhkbWktPmF1ZGlvX2VuYWJsZSA/
-IG4gOiAwKTsKPiA+PiAgICAgIHNwaW5fdW5sb2NrX2lycSgmaGRtaS0+YXVkaW9fbG9jayk7Cj4g
-Pj4gKwo+ID4+ICsgICAgaGRtaV9zZXRfc2NobmwoaGRtaSk7Cj4gPj4gIH0KPiA+Pgo+ID4+ICBz
-dGF0aWMgdm9pZCBoZG1pX2luaXRfY2xrX3JlZ2VuZXJhdG9yKHN0cnVjdCBkd19oZG1pICpoZG1p
-KQo+ID4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhk
-bWkuaCBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2Uvc3lub3BzeXMvZHctaGRtaS5oCj4gPj4gaW5k
-ZXggNjk4OGYxMmQ4OWQ5Li42MTllYmMxYzgzNTQgMTAwNjQ0Cj4gPj4gLS0tIGEvZHJpdmVycy9n
-cHUvZHJtL2JyaWRnZS9zeW5vcHN5cy9kdy1oZG1pLmgKPiA+PiArKysgYi9kcml2ZXJzL2dwdS9k
-cm0vYnJpZGdlL3N5bm9wc3lzL2R3LWhkbWkuaAo+ID4+IEBAIC0xNTgsNiArMTU4LDE3IEBACj4g
-Pj4gICNkZWZpbmUgSERNSV9GQ19TUERERVZJQ0VJTkYgICAgICAgICAgICAgICAgICAgIDB4MTA2
-Mgo+ID4+ICAjZGVmaW5lIEhETUlfRkNfQVVEU0NPTkYgICAgICAgICAgICAgICAgICAgICAgICAw
-eDEwNjMKPiA+PiAgI2RlZmluZSBIRE1JX0ZDX0FVRFNTVEFUICAgICAgICAgICAgICAgICAgICAg
-ICAgMHgxMDY0Cj4gPj4gKyNkZWZpbmUgSERNSV9GQ19BVURTViAgICAgICAgICAgICAgICAgICAg
-ICAgICAgIDB4MTA2NQo+ID4+ICsjZGVmaW5lIEhETUlfRkNfQVVEU1UgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAweDEwNjYKPiA+PiArI2RlZmluZSBIRE1JX0ZDX0FVRFNDSE5MUzAgICAgICAg
-ICAgICAgICAgICAgICAgMHgxMDY3Cj4gPj4gKyNkZWZpbmUgSERNSV9GQ19BVURTQ0hOTFMxICAg
-ICAgICAgICAgICAgICAgICAgIDB4MTA2OAo+ID4+ICsjZGVmaW5lIEhETUlfRkNfQVVEU0NITkxT
-MiAgICAgICAgICAgICAgICAgICAgICAweDEwNjkKPiA+PiArI2RlZmluZSBIRE1JX0ZDX0FVRFND
-SE5MUzMgICAgICAgICAgICAgICAgICAgICAgMHgxMDZhCj4gPj4gKyNkZWZpbmUgSERNSV9GQ19B
-VURTQ0hOTFM0ICAgICAgICAgICAgICAgICAgICAgIDB4MTA2Ygo+ID4+ICsjZGVmaW5lIEhETUlf
-RkNfQVVEU0NITkxTNSAgICAgICAgICAgICAgICAgICAgICAweDEwNmMKPiA+PiArI2RlZmluZSBI
-RE1JX0ZDX0FVRFNDSE5MUzYgICAgICAgICAgICAgICAgICAgICAgMHgxMDZkCj4gPj4gKyNkZWZp
-bmUgSERNSV9GQ19BVURTQ0hOTFM3ICAgICAgICAgICAgICAgICAgICAgIDB4MTA2ZQo+ID4+ICsj
-ZGVmaW5lIEhETUlfRkNfQVVEU0NITkxTOCAgICAgICAgICAgICAgICAgICAgICAweDEwNmYKPiA+
-PiAgI2RlZmluZSBIRE1JX0ZDX0RBVEFDSDBGSUxMICAgICAgICAgICAgICAgICAgICAgMHgxMDcw
-Cj4gPj4gICNkZWZpbmUgSERNSV9GQ19EQVRBQ0gxRklMTCAgICAgICAgICAgICAgICAgICAgIDB4
-MTA3MQo+ID4+ICAjZGVmaW5lIEhETUlfRkNfREFUQUNIMkZJTEwgICAgICAgICAgICAgICAgICAg
-ICAweDEwNzIKPiA+PiBAQCAtNzA2LDYgKzcxNywxNSBAQCBlbnVtIHsKPiA+PiAgLyogSERNSV9G
-Q19BVURTQ0hOTFM3IGZpZWxkIHZhbHVlcyAqLwo+ID4+ICAgICAgSERNSV9GQ19BVURTQ0hOTFM3
-X0FDQ1VSQUNZX09GRlNFVCA9IDQsCj4gPj4gICAgICBIRE1JX0ZDX0FVRFNDSE5MUzdfQUNDVVJB
-Q1lfTUFTSyA9IDB4MzAsCj4gPj4gKyAgICBIRE1JX0ZDX0FVRFNDSE5MUzdfU01QUkFURV9NQVNL
-ID0gMHgwZiwKPiA+PiArICAgIEhETUlfRkNfQVVEU0NITkxTN19TTVBSQVRFXzE5MksgPSAweGUs
-Cj4gPj4gKyAgICBIRE1JX0ZDX0FVRFNDSE5MUzdfU01QUkFURV8xNzZLNCA9IDB4YywKPiA+PiAr
-ICAgIEhETUlfRkNfQVVEU0NITkxTN19TTVBSQVRFXzk2SyA9IDB4YSwKPiA+PiArICAgIEhETUlf
-RkNfQVVEU0NITkxTN19TTVBSQVRFXzc2OEsgPSAweDksCj4gPj4gKyAgICBIRE1JX0ZDX0FVRFND
-SE5MUzdfU01QUkFURV84OEsyID0gMHg4LAo+ID4+ICsgICAgSERNSV9GQ19BVURTQ0hOTFM3X1NN
-UFJBVEVfMzJLID0gMHgzLAo+ID4+ICsgICAgSERNSV9GQ19BVURTQ0hOTFM3X1NNUFJBVEVfNDhL
-ID0gMHgyLAo+ID4+ICsgICAgSERNSV9GQ19BVURTQ0hOTFM3X1NNUFJBVEVfNDRLMSA9IDB4MCwK
-PiA+Pgo+ID4+ICAvKiBIRE1JX0ZDX0FVRFNDSE5MUzggZmllbGQgdmFsdWVzICovCj4gPj4gICAg
-ICBIRE1JX0ZDX0FVRFNDSE5MUzhfT1JJR1NBTVBGUkVRX01BU0sgPSAweGYwLAo+ID4+Cj4gPgoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+Hi Mathieu,
+
+On Tue, Sep 03, 2019 at 04:22:15PM -0600, Mathieu Poirier wrote:
+> On Fri, Aug 30, 2019 at 02:24:19PM +0800, Leo Yan wrote:
+> > There has several code pieces need to know the instruction size, but
+> > now every place calculates the instruction size separately.
+> > 
+> > This patch refactors to create a new function cs_etm__instr_size() as
+> > a central place to analyze the instruction length based on ISA type
+> > and instruction value.
+> > 
+> > Signed-off-by: Leo Yan <leo.yan@linaro.org>
+> > ---
+> >  tools/perf/util/cs-etm.c | 44 +++++++++++++++++++++++++++-------------
+> >  1 file changed, 30 insertions(+), 14 deletions(-)
+> > 
+> > diff --git a/tools/perf/util/cs-etm.c b/tools/perf/util/cs-etm.c
+> > index b3a5daaf1a8f..882a0718033d 100644
+> > --- a/tools/perf/util/cs-etm.c
+> > +++ b/tools/perf/util/cs-etm.c
+> > @@ -914,6 +914,26 @@ static inline int cs_etm__t32_instr_size(struct cs_etm_queue *etmq,
+> >  	return ((instrBytes[1] & 0xF8) >= 0xE8) ? 4 : 2;
+> >  }
+> >  
+> > +static inline int cs_etm__instr_size(struct cs_etm_queue *etmq,
+> > +				     u8 trace_chan_id,
+> > +				     enum cs_etm_isa isa,
+> > +				     u64 addr)
+> > +{
+> > +	int insn_len;
+> > +
+> > +	/*
+> > +	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
+> > +	 * cs_etm__t32_instr_size().
+> > +	 */
+> > +	if (isa == CS_ETM_ISA_T32)
+> > +		insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id, addr);
+> > +	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+> > +	else
+> > +		insn_len = 4;
+> > +
+> > +	return insn_len;
+> > +}
+> > +
+> >  static inline u64 cs_etm__first_executed_instr(struct cs_etm_packet *packet)
+> >  {
+> >  	/* Returns 0 for the CS_ETM_DISCONTINUITY packet */
+> > @@ -938,19 +958,23 @@ static inline u64 cs_etm__instr_addr(struct cs_etm_queue *etmq,
+> >  				     const struct cs_etm_packet *packet,
+> >  				     u64 offset)
+> >  {
+> > +	int insn_len;
+> > +
+> >  	if (packet->isa == CS_ETM_ISA_T32) {
+> >  		u64 addr = packet->start_addr;
+> >  
+> >  		while (offset > 0) {
+> > -			addr += cs_etm__t32_instr_size(etmq,
+> > -						       trace_chan_id, addr);
+> > +			addr += cs_etm__instr_size(etmq, trace_chan_id,
+> > +						   packet->isa, addr);
+> >  			offset--;
+> >  		}
+> >  		return addr;
+> >  	}
+> >  
+> > -	/* Assume a 4 byte instruction size (A32/A64) */
+> > -	return packet->start_addr + offset * 4;
+> > +	/* Return instruction size for A32/A64 */
+> > +	insn_len = cs_etm__instr_size(etmq, trace_chan_id,
+> > +				      packet->isa, packet->start_addr);
+> > +	return packet->start_addr + offset * insn_len;
+> 
+> This patch will work but from where I stand it makes things difficult to
+> understand more than anything else.  It is also adding coupling between function
+> cs_etm__instr_addr() and cs_etm__instr_size(), meaning the code needs to be
+> carefully inspected in order to make changes to either one.
+
+My purpose is to use a same place to calculate the instruction
+size, rather than to spread the duplicate codes in several different
+functions.
+
+> Last but not least function cs_etm__instr_size() isn't used in the upcoming
+> patches.  I really don't see what is gained here. 
+
+Sorry that I forgot to commit my final change into patch 02.
+
+I planed to use cs_etm__instr_size() in patch 02; patch 02 has
+function cs_etm__add_stack_event(), which also needs to get the
+instruction size when it sends stack event.
+
+After apply patch 02, tools/perf/util/cs-etm.c will have below three
+functions to caculate instruction size; this is the main reason I want
+to refactor the code for instruction size.
+
+  cs_etm__instr_addr()
+  cs_etm__copy_insn()
+  cs_etm__add_stack_event()
+
+If this lets code more difficult to understand, will drop it.
+
+Thanks,
+Leo Yan
+
+> >  }
+> >  
+> >  static void cs_etm__update_last_branch_rb(struct cs_etm_queue *etmq,
+> > @@ -1090,16 +1114,8 @@ static void cs_etm__copy_insn(struct cs_etm_queue *etmq,
+> >  		return;
+> >  	}
+> >  
+> > -	/*
+> > -	 * T32 instruction size might be 32-bit or 16-bit, decide by calling
+> > -	 * cs_etm__t32_instr_size().
+> > -	 */
+> > -	if (packet->isa == CS_ETM_ISA_T32)
+> > -		sample->insn_len = cs_etm__t32_instr_size(etmq, trace_chan_id,
+> > -							  sample->ip);
+> > -	/* Otherwise, A64 and A32 instruction size are always 32-bit. */
+> > -	else
+> > -		sample->insn_len = 4;
+> > +	sample->insn_len = cs_etm__instr_size(etmq, trace_chan_id,
+> > +					      packet->isa, sample->ip);
+> >  
+> >  	cs_etm__mem_access(etmq, trace_chan_id, sample->ip,
+> >  			   sample->insn_len, (void *)sample->insn);
+> > -- 
+> > 2.17.1
+> > 
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
