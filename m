@@ -2,75 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DBCBAA8368
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:13:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EC9ABA8372
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:16:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SfrzM88mn3RHmR+ncwj9vfrpBrBrZDw6k30CymW+e+E=; b=jiXvGWDiV9g5wq
-	4C7Qya30A3FHtobwouiw3yBQDCLc1iSo7v+OxN6tY6Hjzpm5U5fP25moFYKnHEqH01IbJZlW+KPnj
-	HMAhLwG7NwysUc/Gy4FRUUmMBW5WE10o/JJKy8fYScxpxeKhDjsp71JB2IT3ewteILfX5KPTNU6ds
-	r+OGvIs7/ZoMbu2MWHDruqJCvh4QmcLNQFvy3sMnFpVCV2NH/qvxMNWguKBv/GHcOGCmHcRU7bne4
-	Znwhu4cBl4Mi/MZg97oIm7bYhUdcz7wyAH7cPl3k0SsKUwrZnTQPChDoGUEfhN65aOXfC42FmfLuU
-	IWgr79a9bT4RAnurL1WA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=xZg7uecYtwbVwzyyKh1Z94Ws1Pf4Zhwv7ub3RCHs8Vw=; b=BAZ0Ous1PW/mk+RKEcGm4OdqE
+	zgmyO/wNLk2pNcdSK0zJDeJciUPRCtpjPWLpX/Y1knChuFGNdAGMycSolhQHDXm8MasrR6SkoCmOR
+	aYoWW6OqtooG/NOiEUJ11DV2O/bmblWaIUSZx/GiZsGELcJSSEJwXaI/dOsixPbX3HgOgwxIbH2n7
+	/4Oiy40ZUGPbp1i6jFFrCWVz/xoQGd3JOsJVLGxD0azYaluTf5jdmFBFdYwqTfWxfblDAyQJvsVv5
+	v0XIb9+v54cPETEzy8QxSwMf+dEw1g4GRNCGYTV3DTdoik77zPlBZi63oNzIxFy8MhsrM/V5nevG1
+	/iOvBRByA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5V6J-0007In-3d; Wed, 04 Sep 2019 13:13:31 +0000
-Received: from mail-qk1-f181.google.com ([209.85.222.181])
+	id 1i5V9E-0000ZC-03; Wed, 04 Sep 2019 13:16:32 +0000
+Received: from smtp-fw-9102.amazon.com ([207.171.184.29])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5V69-0007I3-L1
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 13:13:22 +0000
-Received: by mail-qk1-f181.google.com with SMTP id o11so114670qkg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 06:13:20 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=QqGOMSkNe8N9ujaKSarLnUIsNh3MsCa5d0oIcsW2/9g=;
- b=rCZLxXJ43ADFnI3oWSD4HQpAbr1DRXP0CPvUK18S6NFqJVfx3iOw93qJQvm0uB4u82
- Nqn3SMQIssSsqJ3Fon4SA8DhQfGDqQ3mL6d/6/K+TqqDSqpJfwlDERuX7HAR1nN3Im2m
- pfYe74xk6Zy4dVXq/AY5OhffJjWH1ZEGl6SMvWCeTiuCUrRCcQAlGGzy2AmN6sJMF0lH
- RTEGbZt95WyQqrpO/6vhRP7/B+TImEcl+TF3kgXKQWqakFaEdDrUbJBU8d5vW8uplnnr
- eNWBVb69+V7xg6Hx+h3ehKYLgogtkie/tBcsEstJhH2Px/j2nnz0ZiSZZayb/9wDBIvx
- Bt/g==
-X-Gm-Message-State: APjAAAX+sdnDVzbxBDmBIKDqZnJap9zmy9uatgrmzl9m4H2zPwC4+v02
- 7z7i4gsHfoNcFb06OjY6iA5JBJQyGOSPTaV6wOE=
-X-Google-Smtp-Source: APXvYqzO3PFcH/vIwUuhw6gtlDDcL1WT1bcATeUsqqRnxIZTcHH+Qyaju8NPPRLENbew+gTdSZtLJAy6m62D8usUly4=
-X-Received: by 2002:a37:4051:: with SMTP id n78mr37746223qka.138.1567602799917; 
- Wed, 04 Sep 2019 06:13:19 -0700 (PDT)
+ id 1i5V90-0000YK-LI; Wed, 04 Sep 2019 13:16:19 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1567602978; x=1599138978;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=dVPgUqN88hiyFCDUl2n0H4GWl7kQ/LvDY+M8i0q+25Y=;
+ b=VZ3WoOwZpRNbBzyask86p+s4bzhM8s3rmsabMlkwyJH3M21cXVQCp8uw
+ wTHlnw8VLhZerNNEdVY59ltyzNsefsAk0t6RL2XdWQBV4jcjYOxAWB1x5
+ rLSrxKCRKFhsCPtzFe4rAzF2EfZr+EJ8mF79yr+8z7QKIPk+FoNiHNa48 Y=;
+X-IronPort-AV: E=Sophos;i="5.64,467,1559520000"; d="scan'208";a="700658012"
+Received: from sea3-co-svc-lb6-vlan3.sea.amazon.com (HELO
+ email-inbound-relay-2c-397e131e.us-west-2.amazon.com) ([10.47.22.38])
+ by smtp-border-fw-out-9102.sea19.amazon.com with ESMTP;
+ 04 Sep 2019 13:16:13 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
+ by email-inbound-relay-2c-397e131e.us-west-2.amazon.com (Postfix) with ESMTPS
+ id 3E81BA215A; Wed,  4 Sep 2019 13:16:11 +0000 (UTC)
+Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
+ EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 4 Sep 2019 13:16:10 +0000
+Received: from [10.88.66.45] (10.43.160.149) by EX13D01EUB001.ant.amazon.com
+ (10.43.166.194) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Wed, 4 Sep
+ 2019 13:15:54 +0000
+Subject: Re: [PATCH -next 13/15] thermal: thermal_mmio: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>, <miquel.raynal@bootlin.com>,
+ <rui.zhang@intel.com>, <edubezval@gmail.com>, <daniel.lezcano@linaro.org>,
+ <amit.kucheria@verdurent.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
+ <f.fainelli@gmail.com>, <rjui@broadcom.com>, <sbranden@broadcom.com>,
+ <mmayer@broadcom.com>, <computersforpeace@gmail.com>,
+ <gregory.0xf0@gmail.com>, <matthias.bgg@gmail.com>, <agross@kernel.org>,
+ <heiko@sntech.de>, <mcoquelin.stm32@gmail.com>, <alexandre.torgue@st.com>,
+ <marc.w.gonzalez@free.fr>, <mans@mansr.com>, <jun.nie@linaro.org>,
+ <shawnguo@kernel.org>, <phil@raspberrypi.org>, <gregkh@linuxfoundation.org>,
+ <david.hernandezsanchez@st.com>, <horms+renesas@verge.net.au>,
+ <wsa+renesas@sang-engineering.com>, <linux-pm@vger.kernel.org>
+References: <20190904122939.23780-1-yuehaibing@huawei.com>
+ <20190904122939.23780-14-yuehaibing@huawei.com>
+From: Talel Shenhar <talel@amazon.com>
+Message-ID: <228fdf20-9f3a-4809-6fed-448e2bb349d3@amazon.com>
+Date: Wed, 4 Sep 2019 16:15:48 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <1566875507-8067-1-git-send-email-santosh.shilimkar@oracle.com>
-In-Reply-To: <1566875507-8067-1-git-send-email-santosh.shilimkar@oracle.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 4 Sep 2019 15:13:03 +0200
-Message-ID: <CAK8P3a3_NWWBFrpNpbPH9+47Segi_EaYx2jx5jvPhYJJqR+a7A@mail.gmail.com>
-Subject: Re: [GIT PULL] SOC: TI soc updates for 5.4
-To: Santosh Shilimkar <santosh.shilimkar@oracle.com>
+In-Reply-To: <20190904122939.23780-14-yuehaibing@huawei.com>
+Content-Language: en-US
+X-Originating-IP: [10.43.160.149]
+X-ClientProxiedBy: EX13D08UWC003.ant.amazon.com (10.43.162.21) To
+ EX13D01EUB001.ant.amazon.com (10.43.166.194)
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_061321_690940_EEA11083 
-X-CRM114-Status: GOOD (  11.47  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190904_061618_743313_F5D415C0 
+X-CRM114-Status: UNSURE (   8.59  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -12.7 (------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-12.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.181 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [207.171.184.29 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -79,43 +106,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Olof Johansson <olof@lixom.net>, arm-soc <arm@kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Kevin Hilman <khilman@kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-arm-msm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ talel@amazon.com, linux-rockchip@lists.infradead.org,
+ linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
+ ronenk@amazon.com, bcm-kernel-feedback-list@broadcom.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Aug 27, 2019 at 5:12 AM Santosh Shilimkar
-<santosh.shilimkar@oracle.com> wrote:
+Thanks.
 
-> ----------------------------------------------------------------
-> soc: TI soc updates for 5.4
+Talel.
+
+On 9/4/19 2:29 PM, YueHaibing wrote:
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
 >
->  -  Update firmware to support PM domain shared and exclusive support
->  -  Update driver and dt binding docs for the same.
->
-> ----------------------------------------------------------------
->
-> Lokesh Vutla (3):
->   firmware: ti_sci: Allow for device shared and exclusive requests
->   dt-bindings: ti_sci_pm_domains: Add support for exclusive and shared
->     access
->   soc: ti: ti_sci_pm_domains: Add support for exclusive and shared
->     access
-
-Hi Santosh,
-
-I noticed that your branch is based on top of v5.3-rc2, while my
-arm/drivers branch started out from -rc1.
-
-Do you have any dependencies on -rc2 in your changes? If not,
-could you please resubmit after rebasing? I can also just
-cherry-pick those three commits if that's easier.
-
-      Arnd
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Reviewed-By: Talel Shenhar <talel@amazon.com>
+> ---
+>   drivers/thermal/thermal_mmio.c | 4 +---
+>   1 file changed, 1 insertion(+), 3 deletions(-)
 
 _______________________________________________
 linux-arm-kernel mailing list
