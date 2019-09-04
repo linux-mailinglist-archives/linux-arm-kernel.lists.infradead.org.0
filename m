@@ -2,32 +2,32 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 768BBA84E1
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:02:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D355AA84E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:03:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QfiKQ4DeHiI4fgJZCk+nc6ssh/OP22lszYirCP5lkt4=; b=oaCm7+MgGSZcIh
-	4IONF9PVD72HspUxf2jup4yu5rs77IWM8JX114aOj5k86OU2oIeyvZD49h6O8Lcce96nOPgFbc3ce
-	v11jzacAqgtxhhzgke4FK0dipj+47zKh3eybsqXF1YbsB2+PW7dqp27tq/+V1DufShBmPZeKT7La2
-	P6IpHmPxkdt7eERT3UnMGx5RqGHxKAQH6W+XYWDGcRsz4UVus4EqIah1Fv3/V+IOTvOBUCocWtyHd
-	hCtL2JNlmKt8KmG8G2lzKKY/3HIUavVm8d4jRY50uyJdXKlubjEHgdrSNcc4yk8hf4WL72wGmCKhh
-	JPbvCTLQbM5wZAhk+wnA==;
+	List-Owner; bh=9LZdNs1Cp6i4TGHWUQNuqNkboLXX6Io+yN6WDEWhk4I=; b=DMaoMtvQiCKx3b
+	qYvCgVULLUomkkLWuinhYxB4vT/0VVPfplNPQlVaUPWnri1wNyy3tOD/LNgTuMSJqyp6wxnGiAqrP
+	AeqrSrWPNcjHqLv3Ao41fWyS+iwWhcJk2++LX468x58AHd73t20hSB3jSS6L5TacBvIcO2aveTAxL
+	GNm+kd+ippOs+o5tEA7IkeKDTMXz99KqW4SleNBIjzdAamUxi0C2LV2wEhjWZ0EDw4I4RTCc32+cH
+	a4tWQ0kuqnULBV2lvMgYP29dy5K77N6F1YhWAowo0wW/F9KECsd2RX6W6l2mpjiFa6UulJO5a2d8z
+	o4Nrl1E77F3LLqyK/Jgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Vrz-0007UL-0I; Wed, 04 Sep 2019 14:02:47 +0000
-Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
+	id 1i5Vsc-00089x-Dn; Wed, 04 Sep 2019 14:03:26 +0000
+Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5VpG-00038m-NE; Wed, 04 Sep 2019 14:00:00 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id 8E759E7B11A11781131B;
- Wed,  4 Sep 2019 21:59:55 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
- 21:59:48 +0800
+ id 1i5VpL-0003Gi-VC; Wed, 04 Sep 2019 14:00:05 +0000
+Received: from DGGEMS411-HUB.china.huawei.com (unknown [172.30.72.60])
+ by Forcepoint Email with ESMTP id 3B16BB1DB7029390B610;
+ Wed,  4 Sep 2019 22:00:01 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS411-HUB.china.huawei.com
+ (10.3.19.211) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
+ 21:59:52 +0800
 From: YueHaibing <yuehaibing@huawei.com>
 To: <broonie@kernel.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
  <sbranden@broadcom.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
@@ -41,10 +41,10 @@ To: <broonie@kernel.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
  <mripard@kernel.org>, <wens@csie.org>, <ldewangan@nvidia.com>,
  <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
  <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>
-Subject: [PATCH -next 07/36] spi: bcm63xx-hsspi: use
+Subject: [PATCH -next 08/36] spi: cadence: use
  devm_platform_ioremap_resource() to simplify code
-Date: Wed, 4 Sep 2019 21:58:49 +0800
-Message-ID: <20190904135918.25352-8-yuehaibing@huawei.com>
+Date: Wed, 4 Sep 2019 21:58:50 +0800
+Message-ID: <20190904135918.25352-9-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 In-Reply-To: <20190904135918.25352-1-yuehaibing@huawei.com>
 References: <20190904135918.25352-1-yuehaibing@huawei.com>
@@ -52,8 +52,8 @@ MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_065958_983960_47478A1F 
-X-CRM114-Status: UNSURE (   8.14  )
+X-CRM114-CacheID: sfid-20190904_070004_261758_42C6A60C 
+X-CRM114-Status: UNSURE (   8.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -61,7 +61,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.190 listed in list.dnswl.org]
+ medium trust [45.249.212.35 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,31 +93,31 @@ This is detected by coccinelle.
 Reported-by: Hulk Robot <hulkci@huawei.com>
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/spi/spi-bcm63xx-hsspi.c | 4 +---
+ drivers/spi/spi-cadence.c | 4 +---
  1 file changed, 1 insertion(+), 3 deletions(-)
 
-diff --git a/drivers/spi/spi-bcm63xx-hsspi.c b/drivers/spi/spi-bcm63xx-hsspi.c
-index 373cb53..c6836a9 100644
---- a/drivers/spi/spi-bcm63xx-hsspi.c
-+++ b/drivers/spi/spi-bcm63xx-hsspi.c
-@@ -330,7 +330,6 @@ static int bcm63xx_hsspi_probe(struct platform_device *pdev)
- {
+diff --git a/drivers/spi/spi-cadence.c b/drivers/spi/spi-cadence.c
+index 1c35eaa..c36587b 100644
+--- a/drivers/spi/spi-cadence.c
++++ b/drivers/spi/spi-cadence.c
+@@ -474,7 +474,6 @@ static int cdns_spi_probe(struct platform_device *pdev)
+ 	int ret = 0, irq;
  	struct spi_master *master;
- 	struct bcm63xx_hsspi *bs;
--	struct resource *res_mem;
- 	void __iomem *regs;
- 	struct device *dev = &pdev->dev;
- 	struct clk *clk, *pll_clk = NULL;
-@@ -341,8 +340,7 @@ static int bcm63xx_hsspi_probe(struct platform_device *pdev)
- 	if (irq < 0)
- 		return irq;
+ 	struct cdns_spi *xspi;
+-	struct resource *res;
+ 	u32 num_cs;
  
--	res_mem = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	regs = devm_ioremap_resource(dev, res_mem);
-+	regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(regs))
- 		return PTR_ERR(regs);
+ 	master = spi_alloc_master(&pdev->dev, sizeof(*xspi));
+@@ -485,8 +484,7 @@ static int cdns_spi_probe(struct platform_device *pdev)
+ 	master->dev.of_node = pdev->dev.of_node;
+ 	platform_set_drvdata(pdev, master);
  
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	xspi->regs = devm_ioremap_resource(&pdev->dev, res);
++	xspi->regs = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(xspi->regs)) {
+ 		ret = PTR_ERR(xspi->regs);
+ 		goto remove_master;
 -- 
 2.7.4
 
