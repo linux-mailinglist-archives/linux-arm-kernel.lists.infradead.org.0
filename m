@@ -2,98 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A57A7A9544
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 23:37:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7D849A9549
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 23:38:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KT4hssliF1bGOUvlswyBOJEP0BzwUoVKchOx0jntvHc=; b=RgD5UIVEVrUh4i
-	R2Rgc+AXM4EUnzcpFmmDQOrDykzcK0ZkBk9dPzwE4mjd8c4ddMI9M638MTAz7JYqubrE1iECH8Cd2
-	ETloPfcCJgSlqE69OQAQvgaGZC35s1tfzx3Adlrx83ayojtkCXNiZ/pAyDQxSURBIhn7ah/MAVVYv
-	peCaiQy59Gpk+NTSSkbZlZ5QyGlaNo6cOdkfAIL/57+ZukDXzXbIZatzcyn92MnL61919SQN0Zjzt
-	3SHZV4CmaK1zUCyLMi/n46tRh20iJHrDTViWw0+rykrXuYHoTT+EWQVU0LbG2erzxKjGSPJKjF6TY
-	ei0OF4fRcBbJkYiBs9+A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=6jzd7H1x/MMgg/WwYjzFTf22EkyO6ZN9e6j1gozXr04=; b=Ck10/4Cl2RTeUvXIMdn94o2Qh
+	T1UewfqG6QBzaLgHeYszZueG6sSgw3ga8dRwMepZn6E8TcE2P+0GugSeOuJaKeYaCkchDj3G1mrp/
+	ra7XfyoLWcFA24aKjK7zifjvR5IbclAJRKzxASyCOVJrWpqZ5sQ4pr3JLYulBLnmlme+I27gr+ZI6
+	A/+K77I2hxIItmrZ66kURO3E6Pb2TFFy1KSu9u7Kb4+G7w5yrawjiFpp3FNHJW4TtVDt9azyxrfwE
+	2xq8IQpORIplzMX+9e8WSx4yzqlTErT+QTOvIJXaz2ySJeSz9XQPMJw6jfaMbWqs/8danJGYOd5XD
+	AwxOokzXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5cxt-0007YK-7o; Wed, 04 Sep 2019 21:37:21 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5cxj-0007Xf-6Q
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 21:37:12 +0000
-Received: by mail-lf1-x142.google.com with SMTP id t8so172600lfc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 14:37:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=linux-foundation.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=afyKDAGEEGBbAV94gj2UOZt2XiwokGAAZY9fEg48q/g=;
- b=NaaXzsE03/A0aggT0JGsMPgqMPOgw689sbkH2wUyL6Wp3qKaZ1pKjDt9q3nSCqMPah
- 2e4dX/SHASPLfri+fuLDS7WlObVzMB0uCQ613gb+lr0h/VEtc5FGRP26lR62YK8De+Ct
- /QjcaW9K7a4FCLT2Siyb/L/tVCZoNkYi2RP38=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=afyKDAGEEGBbAV94gj2UOZt2XiwokGAAZY9fEg48q/g=;
- b=sPnDk5QPEGoAiAmTpySq2/twgBagWEvW1AW/G9NY5WuZomW57cPeVwp8U4a2mNujbh
- 95yTiRtV2teghb/ScOJZ2B5L2ZFSwS6p+y2KdEDl9myqbBFslqCVxUMPB4n4abskdq9m
- IEwUmtAw9ZEg/HW0k9fFU2Ypfcn0fwX0Fu1wH9W7CPFBUvt00ln6kCQwG9ReTM8ys1mC
- 0uC1huv+gvJS89AY0ue3rwGG4RuQOAZ1Z3GMgSWAQX0goDJbjHJzeSD0NAkJR8Cew8ED
- 14Zuh9xkmvsU9KzwxdYaTpB3jcp/OHWcCFFPuyd5tsyBArg5wRdXyuNZtdntAV7wB39J
- 20uw==
-X-Gm-Message-State: APjAAAWlnHRExwCLEoLAcg+TXUM+QQBHqECXbmo8LCx2ax/cgYApMtvM
- RdyCvc69nX+RP/rdDKXY5zJfqD3dvZI=
-X-Google-Smtp-Source: APXvYqy/LHLlv7sDboT1VmEeWmcPVx0b0NiJqmJIlXl+G6m0IYBWmLR/UBjUtbr6r1JYuyYfWYVyGg==
-X-Received: by 2002:ac2:5ec8:: with SMTP id d8mr140273lfq.183.1567633029007;
- Wed, 04 Sep 2019 14:37:09 -0700 (PDT)
-Received: from mail-lf1-f49.google.com (mail-lf1-f49.google.com.
- [209.85.167.49])
- by smtp.gmail.com with ESMTPSA id u8sm13407lfb.36.2019.09.04.14.37.05
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Sep 2019 14:37:07 -0700 (PDT)
-Received: by mail-lf1-f49.google.com with SMTP id d10so229669lfi.0
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 14:37:05 -0700 (PDT)
-X-Received: by 2002:a05:6512:512:: with SMTP id
- o18mr154625lfb.170.1567633024273; 
- Wed, 04 Sep 2019 14:37:04 -0700 (PDT)
+	id 1i5cyW-0007me-JX; Wed, 04 Sep 2019 21:38:00 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5cyI-0007mI-O5
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 21:37:48 +0000
+Received: from localhost (p54B337F1.dip0.t-ipconnect.de [84.179.55.241])
+ by pokefinder.org (Postfix) with ESMTPSA id E8DCE2C08C3;
+ Wed,  4 Sep 2019 23:37:45 +0200 (CEST)
+Date: Wed, 4 Sep 2019 23:37:45 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Ray Jui <ray.jui@broadcom.com>
+Subject: Re: [PATCH v1 1/1] i2c: iproc: Add i2c repeated start capability
+Message-ID: <20190904213745.GG23608@ninjato>
+References: <1565150941-27297-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+ <20190830125626.GC2870@ninjato>
+ <3e70fa7e-de13-4edd-2e17-b7c56e91d220@broadcom.com>
+ <20190831094940.GA1138@kunai>
+ <540c4e2d-0dd5-5260-30b2-e1589b279d71@broadcom.com>
 MIME-Version: 1.0
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-11-cyphar@cyphar.com>
- <CAHk-=wiod1rQMU+6Zew=cLE8uX4tUdf42bM5eKngMnNVS2My7g@mail.gmail.com>
- <CAHk-=wiHRW3Z9xPRiExi9jLjB0cdGhM=3vaW+b80mjuRcbORyw@mail.gmail.com>
-In-Reply-To: <CAHk-=wiHRW3Z9xPRiExi9jLjB0cdGhM=3vaW+b80mjuRcbORyw@mail.gmail.com>
-From: Linus Torvalds <torvalds@linux-foundation.org>
-Date: Wed, 4 Sep 2019 14:36:48 -0700
-X-Gmail-Original-Message-ID: <CAHk-=wiExfaVhUTvKj7hR6DG4C2+oy6usz0Sa6QbPr5EgDH28w@mail.gmail.com>
-Message-ID: <CAHk-=wiExfaVhUTvKj7hR6DG4C2+oy6usz0Sa6QbPr5EgDH28w@mail.gmail.com>
-Subject: Re: [PATCH v12 10/12] namei: aggressively check for nd->root escape
- on ".." resolution
-To: Aleksa Sarai <cyphar@cyphar.com>
+In-Reply-To: <540c4e2d-0dd5-5260-30b2-e1589b279d71@broadcom.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_143711_240572_DC718881 
-X-CRM114-Status: GOOD (  11.67  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190904_143746_929185_DD5641AA 
+X-CRM114-Status: GOOD (  11.63  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
- [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [88.99.104.3 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,65 +62,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, Linux-sh list <linux-sh@vger.kernel.org>,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>,
- Linux List Kernel Mailing <linux-kernel@vger.kernel.org>,
- David Howells <dhowells@redhat.com>,
- "open list:KERNEL SELFTEST FRAMEWORK" <linux-kselftest@vger.kernel.org>,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch <linux-arch@vger.kernel.org>,
- linux-s390 <linux-s390@vger.kernel.org>, Tycho Andersen <tycho@tycho.ws>,
- Aleksa Sarai <asarai@suse.de>, Jiri Olsa <jolsa@redhat.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linux-m68k <linux-m68k@lists.linux-m68k.org>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- Linux API <linux-api@vger.kernel.org>, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, alpha <linux-alpha@vger.kernel.org>,
- linux-fsdevel <linux-fsdevel@vger.kernel.org>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- Linux Containers <containers@lists.linux-foundation.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Lori Hikichi <lori.hikichi@broadcom.com>,
+ Florian Fainelli <f.fainelli@gmail.com>,
+ Shivaraj Shetty <sshetty1@broadcom.com>,
+ Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ linux-kernel@vger.kernel.org, Icarus Chau <icarus.chau@broadcom.com>,
+ Rob Herring <robh+dt@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============2115852290790848561=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 4, 2019 at 2:35 PM Linus Torvalds
-<torvalds@linux-foundation.org> wrote:
->
-> On Wed, Sep 4, 2019 at 2:09 PM Linus Torvalds
-> <torvalds@linux-foundation.org> wrote:
-> >
-> > So you'd have three stages:
-> >
-> >  1) ".." always returns -EXDEV
-> >
-> >  2) ".." returns -EXDEV if there was a concurrent rename/mount
-> >
-> >  3) ".." returns -EXDEV if there was a concurrent rename/mount and we
-> > reset the sequence numbers and check if you escaped.
->
-> In fact, I wonder if this should return -EAGAIN instead - to say that
-> "retrying may work".
 
-And here "this" was meant to be "case 2" - I was moving the quoted
-text around and didn't fix my wording, so now it is ambiguous or
-implies #3, which would be crazy.
+--===============2115852290790848561==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="EDJsL2R9iCFAt7IV"
+Content-Disposition: inline
 
-Sorry for the confusion,
 
-            Linus
+--EDJsL2R9iCFAt7IV
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+
+> I think you are right that the controller does not seem to support
+> additional I2C features in addition to SMBUS.
+>=20
+> However, my concern of switching to the smbus_xfer API is:
+>=20
+> 1) Some customers might have used I2C_RDWR based API from i2cdev. Changing
+> from master_xfer to smbus_xfer may break the existing applications that a=
+re
+> already developed.
+
+Well, given that you add new quirks in the original patch here, you are
+kind of breaking it already. Most transfers which are not SMBus-alike
+transfers would now be rejected. For SMBus-alike transfers which are
+sent via I2C_RDWR (which is ugly), I have to think about it.
+
+> 2) The sound subsystem I2C regmap based implementation seems to be using
+> i2c_ based API instead of smbus_ based API. Does this mean this will also
+> break most of the audio codec drivers with I2C regmap API based usage?
+
+I don't think so. If you check regmap_get_i2c_bus() then it checks the
+adapter functionality and chooses the best transfer option then. I may
+be missing something but I would wonder if the sound system does
+something special and different.
+
+
+--EDJsL2R9iCFAt7IV
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1wLqkACgkQFA3kzBSg
+KbbdPBAAsHYbJFSjXbArIzGj/6rYqzbUnvYeKqVHK/C1E7C1/89RAeVkba81NFsu
+PjHeTsrPaMQ6lK5Df79WK8I0EDf++K1Imv1edG64CamFTHqc60rVShO3ifPnQf8P
+XrOEAUxLEsoXjAqsUy9Nl2xU9roZxcglRdSSg+rlDsN6WRJ8bq0xg7I/7pPs0t/m
+DU+77rOjrqcj3mKJsMvcH/ay4tAYQGwXKalqLwkRuy6u5bQ98G/z9mPdGRwBXxx7
+2lg61m1t05rmuU8PQZnnD1xB8syyt3/ivq4VWVs/9ghtAoTirMGtkhWu0SIQ17M5
+KePWtCxia4A4rHQeEF6vdrbuZAcPqFy8ttnoccsUBBXLy4KYs2zguxiss0EXq95t
+QHW83RzcyxpPqqbVPAgtoQONVcFBLvJ3p5LDIHi/kgosLcTyyjTfre1vzRcG8j9S
+j/q++XaORKmfJ4evfK5AdbexTLnXGlUyXcRj0vQElOHxVOwk2PbjYAAq58XKsY9W
+95LmlBMR2kDB/GCdZWGdTt29hyyhLgde4temx2eBCAqafAhAsPdFp8sFA2mEkaC4
+h5rby01u7yD66c8hpI/4q5psgoj1j7fRctKsdtxb/S8P2sHcKZ6HygntSmmEb+WG
+BGd+gabtDbQBSHrOxqYrYBZVQFNf3YABNMFvC5LuvgMs3Ek59iM=
+=s2Lx
+-----END PGP SIGNATURE-----
+
+--EDJsL2R9iCFAt7IV--
+
+
+--===============2115852290790848561==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============2115852290790848561==--
+
