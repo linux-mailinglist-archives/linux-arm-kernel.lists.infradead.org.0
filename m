@@ -2,79 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F041FA83B4
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:24:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6425A83C8
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:33:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wegy+TCfoWRSBfq9i4XN4R4EzWmuwrlGQKQNWJq9cGI=; b=cEbI5VRtv0reIr
-	HZUJHG8qSSt+ZySHO8m7UHEJAZvkbxeIbWsAvcAFYNLzy2cbfMOh838dLHhSn2kTvNGzbqBxhXyXg
-	AQvcevSJkyL8G2GhipZdwfMNrEcWUh6ZaK4XIMSGljOpJWY9GudeiOWZ3rN9pQM2FKnJMn3IYhaiT
-	YD2qdfVK2ix4mqNfYoA2ahSUXeccp0mrSIUw3/52L7haeGqwICe6Gaf1Q4d23EXWWSOUhpejDHR1c
-	OgEJQU23br7rlU7seBtW/gfubbDS8dGjZtVCeohnXpLytq1BRhiRw+bE1oo9bqxi2gCM1nh7EaCtk
-	NBFTK2xTYQm0dAekhlog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=7rdq/ULcvLjlAo+0t1PC7wKZCPLVgnfQ3hIArChvrRw=; b=t+Xxdu1qhZKNR7
+	XKcTjj/Jgv0pQIYnwgrlTSM7EnACS0VHUpnXTXASIkeSUqn+DIlDg9+fpl/mGLLWkzUXB9J62Auo4
+	TTYhXrw2moHK60PAbbOwfw/tm7sukJyw+OqHWTpT5E84xVZm8ulNabBFZ74KoiEAjosGwRGVMQzzi
+	UBy45RLaWSg4CMBT8eevHEOBPXKyIQDNwX/8LLKTRzcjvvcBByqr32uyHajm1UqntARB1svHVqMJe
+	Y0wbb6mbC0DnSVvZuzZ5LuIwcInQjLt/1RPySvM4/4YgbAwc3FZcxRHnYYKvRE1gTw1CD2ZSjaaej
+	kw9kNNcR+xpMsY9m7jCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5VH7-0006Wq-TA; Wed, 04 Sep 2019 13:24:42 +0000
-Received: from mail-qt1-f196.google.com ([209.85.160.196])
+	id 1i5VPM-00018Z-Ch; Wed, 04 Sep 2019 13:33:12 +0000
+Received: from smtp-fw-33001.amazon.com ([207.171.190.10])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5VGy-0006WT-3y
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 13:24:33 +0000
-Received: by mail-qt1-f196.google.com with SMTP id g4so24316965qtq.7
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 06:24:31 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=lAg8GIJ4I23SXpEKcanten4ohl4QPXP5evOdJ4kjwIg=;
- b=OyuR4O7ibdsl/YqlubbE8r7UW0x5Ekg6O2NEsIaVQNoS59Pl7laoltIdUvlpk2seH1
- tCWddL3NrNzyZkqAmq12HzUFX4J4vGTJT06QyHftKL3FiKk5igof5mZfJDUPfwl3FbLa
- BLIZvqHN6KhLokkyK3AMOK+nNH+LEsfXnZxKmU7MV1xb71ILZ0cKqZHUzGm7e3wIC8Dq
- 7Sm8M5HZSvXZoNRFK8zxJg3Uz8CQKCxrVHJjku96LIuA8eM+bPgCru9Qmo1lvNOtSpSt
- J9Teh/9/PgIoId2Lq9JQ1P+Qjp7RcUmdJpsDyQcTIMEr6Mj6wsGvahHJ+Bywh8OzuLvz
- QQrQ==
-X-Gm-Message-State: APjAAAXmGUNZd8IUcLnpn//UD/oCy/kBbsAOhxZY+pQN1iysFTTVu0bT
- +310zRPlOLWJ336pNfBVvZ9hDXxArxJ+x9a4HqU=
-X-Google-Smtp-Source: APXvYqzUDpAdPIg8CzPgwlVc9y5PKdADRLSBboI9h9N/p7e7Q98JVgxYuksb4BHmqVm1NuS6FgmkdeWWwRPiGPVJjgI=
-X-Received: by 2002:a0c:d084:: with SMTP id z4mr16589291qvg.63.1567603470314; 
- Wed, 04 Sep 2019 06:24:30 -0700 (PDT)
+ id 1i5VPB-000189-Pj
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 13:33:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1567603981; x=1599139981;
+ h=from:to:cc:subject:date:message-id:mime-version;
+ bh=qlKsodcmfNKYiMWPcqYzq1OagWLl5xOf0xTmXZZw4PA=;
+ b=HQvOyeQfVgb4GHXddEtmQP1i/bHZ8tV2cEdFZNWOslNk0OzPyaZpUm6n
+ 3iSZHsiRlvMqWTjhENgQ/CW0p0kAyjmcVi+MdJsBEdnT+8V3lMy6YpgT0
+ XRr/Y/B8MC6CHzC/fnGBtPrJxqNtOW6dnai9dVlRMuDUzteV3i9xZ/zLd Y=;
+X-IronPort-AV: E=Sophos;i="5.64,467,1559520000"; d="scan'208";a="827206391"
+Received: from sea3-co-svc-lb6-vlan2.sea.amazon.com (HELO
+ email-inbound-relay-1d-38ae4ad2.us-east-1.amazon.com) ([10.47.22.34])
+ by smtp-border-fw-out-33001.sea14.amazon.com with ESMTP;
+ 04 Sep 2019 13:32:51 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
+ by email-inbound-relay-1d-38ae4ad2.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 8019BA2831; Wed,  4 Sep 2019 13:32:50 +0000 (UTC)
+Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
+ EX13MTAUEA001.ant.amazon.com (10.43.61.82) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 4 Sep 2019 13:32:50 +0000
+Received: from udc4a3e82dbc15a031435.hfa15.amazon.com (10.43.161.82) by
+ EX13D01EUB001.ant.amazon.com (10.43.166.194) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Wed, 4 Sep 2019 13:32:41 +0000
+From: Talel Shenhar <talel@amazon.com>
+To: <bp@alien8.de>, <mchehab@kernel.org>, <james.morse@arm.com>,
+ <talel@amazon.com>, <davem@davemloft.net>, <gregkh@linuxfoundation.org>,
+ <nicolas.ferre@microchip.com>, <robh+dt@kernel.org>, <mark.rutland@arm.com>,
+ <catalin.marinas@arm.com>, <will@kernel.org>, <linux-edac@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-kernel@vger.kernel.org>,
+ <linux-arm-kernel@lists.infradead.org>
+Subject: [PATCH 0/3] Amazon's Annapurna Labs Memory Controller EDAC
+Date: Wed, 4 Sep 2019 16:32:20 +0300
+Message-ID: <1567603943-25316-1-git-send-email-talel@amazon.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-References: <20190828151754.21023-1-nsekhar@ti.com>
-In-Reply-To: <20190828151754.21023-1-nsekhar@ti.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 4 Sep 2019 15:24:14 +0200
-Message-ID: <CAK8P3a0JEdtfP+OcpdBgZHuzz1Z+0Z4WYzLa5_h2--==v4hrdA@mail.gmail.com>
-Subject: Re: [GIT PULL 1/4] DaVinci SoC updates for v5.4
-To: Sekhar Nori <nsekhar@ti.com>
+X-Originating-IP: [10.43.161.82]
+X-ClientProxiedBy: EX13D10UWA001.ant.amazon.com (10.43.160.216) To
+ EX13D01EUB001.ant.amazon.com (10.43.166.194)
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_062432_161273_215D3719 
-X-CRM114-Status: UNSURE (   7.36  )
+X-CRM114-CacheID: sfid-20190904_063301_885962_9B1CE5BC 
+X-CRM114-Status: UNSURE (   7.29  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-Spam-Score: -10.0 (----------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-10.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.196 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.196 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [207.171.190.10 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -83,29 +95,38 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- ARM-SoC Maintainers <arm@kernel.org>,
- Linux ARM Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: ronenk@amazon.com, barakw@amazon.com, jonnyc@amazon.com, hanochu@amazon.com,
+ hhhawa@amazon.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Aug 28, 2019 at 5:18 PM Sekhar Nori <nsekhar@ti.com> wrote:
+This series introduces support for Amazon's Annapurna Labs Memory
+Controller EDAC driver.
 
-> This converts all DaVinci SoCs except DM365 to use new clocksource
-> driver. DM365 conversion is still under debug and will be part of a
-> future pull request.
 
-Pulled into arm/soc.
 
-Please remember to send pull requests to soc@kernel.org rather than
-arm@kernel.org now, so they show up in
-https://patchwork.kernel.org/project/linux-soc/list/
+Talel Shenhar (3):
+  dt-bindings: edac: al-mc-edac: Amazon's Annapurna Labs Memory
+    Controller EDAC
+  EDAC: al-mc-edac: Introduce Amazon's Annapurna Labs Memory Controller
+    EDAC
+  arm64: alpine: select EDAC_AL_MC
 
-Thanks,
+ .../devicetree/bindings/edac/amazon,al-mc-edac.txt |  24 ++
+ MAINTAINERS                                        |   6 +
+ arch/arm64/Kconfig.platforms                       |   1 +
+ drivers/edac/Kconfig                               |   7 +
+ drivers/edac/Makefile                              |   1 +
+ drivers/edac/al_mc_edac.c                          | 382 +++++++++++++++++++++
+ 6 files changed, 421 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
+ create mode 100644 drivers/edac/al_mc_edac.c
 
-      Arnd
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
