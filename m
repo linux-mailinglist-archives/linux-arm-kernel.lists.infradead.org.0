@@ -2,47 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 229E8A7FA8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:47:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53C42A7FBC
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:49:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/4sBucFv3WBZMcN60Ju+qaYDlT3NGekboRfcprrANRQ=; b=TcNWUdhIBRtRBe
-	nW7oFmI7qTyKvdP3Hmqzas1p2PXfMjaMtAdN5FePv+s5wOIgmnrNVGoMC6s5srcAqyEYgflgg68TE
-	qfSeWnXcFYexdnZBwGvXYHLFKZHmrGqaHryrt1pArhHQ6NgnlQ/Ix4GR01BuMcGRKogXbAtP8fmcO
-	75cpPGXXsXyZwvjdhZvHfZJS0iBwlc/rOzLiudCI5J44NydulrWmkZ5UkBfA3ZwrCTw/waHcqbi1x
-	yyHWKICFUOKPXi2n+PW1QA7el8MrRXR1rTQtuwr6eB1xyCgdkwNrb67aEIKZDozA1aiV9PKvUBRt+
-	2mkf0izEbH8YLRI8lFHQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=6XAGmuMSfBmhiftoncxCdbACE2hbCZCW25ijp4Cz8i4=; b=jTX
+	1LPIk1c9Ru+UWC6DxsLjy7WGarXGCnsMLHTTe7xN9FfJjz/hTDDLDTxv3lPHxo+3RVpu34CJ2ck60
+	/Gv7Rf/14G0ey32g23FjgxpP0txev3ftEGTEYS6GxwIbjb9hyZFYG0rSIrU9ijdYU7X+ANLnKlSTX
+	oi3ov4CBcXU8KRlqY9SZP56srtdA4RUAO4ADu5am1Y+tQaZOLlr0FaMTfVVMAq2hLWFjGKqssAz5B
+	z3d9iRPi7WhS1YfjzBobSg1YDyKi3Ed7uHWYzwlEFJ9CqW3aUFez+VYFk3P+MiidUsMaMe7NzAY1B
+	txgUEtIVpaAu1SG75+OnKoZLW2MSRdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5RsP-0003a1-PJ; Wed, 04 Sep 2019 09:46:57 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1i5Rux-00046T-Ed; Wed, 04 Sep 2019 09:49:35 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5RsD-0003ZG-6D
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:46:46 +0000
-Received: from DGGEMS409-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id A41B6469D31384F761E5;
- Wed,  4 Sep 2019 17:46:40 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS409-HUB.china.huawei.com
- (10.3.19.209) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
- 17:46:34 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <daniel@zonque.org>, <haojian.zhuang@gmail.com>, <robert.jarzmik@free.fr>, 
- <balbi@kernel.org>, <gregkh@linuxfoundation.org>
-Subject: [PATCH -next] usb: gadget: pxa27x_udc: use
- devm_platform_ioremap_resource() to simplify code
-Date: Wed, 4 Sep 2019 17:45:57 +0800
-Message-ID: <20190904094557.22884-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
-MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+ id 1i5Ruk-00045u-OL
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:49:24 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 318DE2001B1;
+ Wed,  4 Sep 2019 11:49:21 +0200 (CEST)
+Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
+ [134.27.226.22])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 196FF200096;
+ Wed,  4 Sep 2019 11:49:21 +0200 (CEST)
+Received: from fsr-ub1864-112.ea.freescale.net
+ (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
+ by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 7AE1E20612;
+ Wed,  4 Sep 2019 11:49:20 +0200 (CEST)
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Peng Fan <peng.fan@nxp.com>
+Subject: [PATCH] clk: imx: pll14xx: Fix quick switch of S/K parameter
+Date: Wed,  4 Sep 2019 12:49:18 +0300
+Message-Id: <c3e86b5a832a14278e8ba670d51defc70ee78d84.1567590349.git.leonard.crestez@nxp.com>
+X-Mailer: git-send-email 2.17.1
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_024645_406684_3603A843 
-X-CRM114-Status: UNSURE (   9.00  )
+X-CRM114-CacheID: sfid-20190904_024923_068542_468C67E0 
+X-CRM114-Status: UNSURE (   8.07  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -50,9 +52,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,47 +66,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-usb@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
+ linux-imx@nxp.com, Viorel Suman <viorel.suman@nxp.com>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
+ kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
+ Abel Vesa <abel.vesa@nxp.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+The PLL14xx on imx8m can change the S and K parameter without requiring
+a reset and relock of the whole PLL.
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Fix clk_pll144xx_mp_change register reading and use it for pll1443 as
+well since no reset+relock is required on K changes either.
+
+Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
 ---
- drivers/usb/gadget/udc/pxa27x_udc.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+ drivers/clk/imx/clk-pll14xx.c | 40 +++++++----------------------------
+ 1 file changed, 8 insertions(+), 32 deletions(-)
 
-diff --git a/drivers/usb/gadget/udc/pxa27x_udc.c b/drivers/usb/gadget/udc/pxa27x_udc.c
-index 0142332..5f107f2 100644
---- a/drivers/usb/gadget/udc/pxa27x_udc.c
-+++ b/drivers/usb/gadget/udc/pxa27x_udc.c
-@@ -2356,7 +2356,6 @@ MODULE_DEVICE_TABLE(of, udc_pxa_dt_ids);
-  */
- static int pxa_udc_probe(struct platform_device *pdev)
+The PLLs are currently table-based and none of the entries differ only
+in S/K so further work would be required to make use of this. The
+prospective user is audio doing tiny freq adjustments and there is no
+standard API for that.
+
+Lacking users is not a good reason to carry broken code around.
+
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index b7213023b238..25342297e5a6 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -110,47 +110,21 @@ static unsigned long clk_pll1443x_recalc_rate(struct clk_hw *hw,
+ 	do_div(fvco, pdiv << sdiv);
+ 
+ 	return fvco;
+ }
+ 
+-static inline bool clk_pll1416x_mp_change(const struct imx_pll14xx_rate_table *rate,
++static inline bool clk_pll14xx_mp_change(const struct imx_pll14xx_rate_table *rate,
+ 					  u32 pll_div)
  {
--	struct resource *regs;
- 	struct pxa_udc *udc = &memory;
- 	int retval = 0, gpio;
- 	struct pxa2xx_udc_mach_info *mach = dev_get_platdata(&pdev->dev);
-@@ -2378,8 +2377,7 @@ static int pxa_udc_probe(struct platform_device *pdev)
- 		udc->gpiod = devm_gpiod_get(&pdev->dev, NULL, GPIOD_ASIS);
+ 	u32 old_mdiv, old_pdiv;
+ 
+-	old_mdiv = (pll_div >> MDIV_SHIFT) & MDIV_MASK;
+-	old_pdiv = (pll_div >> PDIV_SHIFT) & PDIV_MASK;
++	old_mdiv = (pll_div & MDIV_MASK) >> MDIV_SHIFT;
++	old_pdiv = (pll_div & PDIV_MASK) >> PDIV_SHIFT;
+ 
+ 	return rate->mdiv != old_mdiv || rate->pdiv != old_pdiv;
+ }
+ 
+-static inline bool clk_pll1443x_mpk_change(const struct imx_pll14xx_rate_table *rate,
+-					  u32 pll_div_ctl0, u32 pll_div_ctl1)
+-{
+-	u32 old_mdiv, old_pdiv, old_kdiv;
+-
+-	old_mdiv = (pll_div_ctl0 >> MDIV_SHIFT) & MDIV_MASK;
+-	old_pdiv = (pll_div_ctl0 >> PDIV_SHIFT) & PDIV_MASK;
+-	old_kdiv = (pll_div_ctl1 >> KDIV_SHIFT) & KDIV_MASK;
+-
+-	return rate->mdiv != old_mdiv || rate->pdiv != old_pdiv ||
+-		rate->kdiv != old_kdiv;
+-}
+-
+-static inline bool clk_pll1443x_mp_change(const struct imx_pll14xx_rate_table *rate,
+-					  u32 pll_div_ctl0, u32 pll_div_ctl1)
+-{
+-	u32 old_mdiv, old_pdiv, old_kdiv;
+-
+-	old_mdiv = (pll_div_ctl0 >> MDIV_SHIFT) & MDIV_MASK;
+-	old_pdiv = (pll_div_ctl0 >> PDIV_SHIFT) & PDIV_MASK;
+-	old_kdiv = (pll_div_ctl1 >> KDIV_SHIFT) & KDIV_MASK;
+-
+-	return rate->mdiv != old_mdiv || rate->pdiv != old_pdiv ||
+-		rate->kdiv != old_kdiv;
+-}
+-
+ static int clk_pll14xx_wait_lock(struct clk_pll14xx *pll)
+ {
+ 	u32 val;
+ 
+ 	return readl_poll_timeout(pll->base, val, val & LOCK_TIMEOUT_US, 0,
+@@ -172,11 +146,11 @@ static int clk_pll1416x_set_rate(struct clk_hw *hw, unsigned long drate,
+ 		return -EINVAL;
  	}
  
--	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	udc->regs = devm_ioremap_resource(&pdev->dev, regs);
-+	udc->regs = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(udc->regs))
- 		return PTR_ERR(udc->regs);
- 	udc->irq = platform_get_irq(pdev, 0);
+ 	tmp = readl_relaxed(pll->base + 4);
+ 
+-	if (!clk_pll1416x_mp_change(rate, tmp)) {
++	if (!clk_pll14xx_mp_change(rate, tmp)) {
+ 		tmp &= ~(SDIV_MASK) << SDIV_SHIFT;
+ 		tmp |= rate->sdiv << SDIV_SHIFT;
+ 		writel_relaxed(tmp, pll->base + 4);
+ 
+ 		return 0;
+@@ -233,17 +207,19 @@ static int clk_pll1443x_set_rate(struct clk_hw *hw, unsigned long drate,
+ 			drate, clk_hw_get_name(hw));
+ 		return -EINVAL;
+ 	}
+ 
+ 	tmp = readl_relaxed(pll->base + 4);
+-	div_val = readl_relaxed(pll->base + 8);
+ 
+-	if (!clk_pll1443x_mpk_change(rate, tmp, div_val)) {
++	if (!clk_pll14xx_mp_change(rate, tmp)) {
+ 		tmp &= ~(SDIV_MASK) << SDIV_SHIFT;
+ 		tmp |= rate->sdiv << SDIV_SHIFT;
+ 		writel_relaxed(tmp, pll->base + 4);
+ 
++		tmp = rate->kdiv << KDIV_SHIFT;
++		writel_relaxed(tmp, pll->base + 8);
++
+ 		return 0;
+ 	}
+ 
+ 	/* Enable RST */
+ 	tmp = readl_relaxed(pll->base);
 -- 
-2.7.4
-
+2.17.1
 
 
 _______________________________________________
