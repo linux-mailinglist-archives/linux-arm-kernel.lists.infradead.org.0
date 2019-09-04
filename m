@@ -2,69 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2F8AA86DA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:11:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8C05A86E0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:16:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZohF+jVCy4syuLicXIIm2wLg3GezpYybX0kIix6iNBw=; b=HuuADhmafcokxO
-	1nQe7Vdu7OWfm0OR9tvsrdQ4VxMYjaWbEjTYqLXygiS291+yjvJ+CNq5fzeQLssBPVJE0owBhRr3E
-	NcoBpPdc4PbRQ36eMT2UhPqDyVK3D8xEuGuik79ztKH3fx4OAr/hus91KX1ZIGxtwQoYgQrq+5NIp
-	wCjMKzXiKvmX79uh6rgDT+p8kew9qDrfQ03GfS0Yh+kUcH9L31TGbPaUPF21KnhgBgIO6qHjpZrpf
-	oBONQ0ugECff5MJ/kmPlZCc8c/pc5duYtRLY0vsBEmVwmJhXTg50zIRQzF+qCFOwB2NYHMVgxyB3U
-	I3OBRADLKeliKIjTlh8Q==;
+	List-Owner; bh=F2tQdZPsXNgtRxV8YaGO0wPm8dvM0EV4AnBxvmMkv0o=; b=E6qBX+Lo33/n4O
+	vYM/351ei8dk6zvfu2RU/24tp0UMJ2dVTVu+nMDn7/XKHRDbaGg4Wj6C4Pg/P6NC+9OyLzmVBt9NR
+	szbagh9RdfTkMnJMWweZxIXQRdURySE/FNJx1NvYbI22aTT3Z79TkfLeyZnWTqzT8YOCAkYOSLy9n
+	EMsey7wt9Tuo+z4oZvPokwbSeH3IKDI/mgm9y+QRKvhaak7enw8KQVIlUppq/qnmOTdcYMRrZKHzd
+	1HUDIXId9834/LVPMwk+GxyH8+jJlAuJ0n7gEsAHmsgQDsjbNLfi1kkKQaxllfhFg9iv76dxiYcxI
+	UWVCycKdyusMN3RcdmLg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5YoZ-0000qx-6F; Wed, 04 Sep 2019 17:11:27 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i5Yto-0003MK-5t; Wed, 04 Sep 2019 17:16:52 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5YoP-0000qa-9U
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:11:18 +0000
-Received: by mail-pl1-x644.google.com with SMTP id m9so9862963pls.8
+ id 1i5YtT-0003F4-G1
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:16:32 +0000
+Received: by mail-pg1-x543.google.com with SMTP id l21so11585780pgm.3
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 10:11:17 -0700 (PDT)
+ Wed, 04 Sep 2019 10:16:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=vYEEXFOhxtvYv/yYJOcMUmKNs0oEV4AL/NRwjoex32s=;
- b=hHdD8bIeCBjJio5A7m8CJgEDEiHtSigJRtRdIcbuzRbewe3bc45IFg5j+qlkBynoXd
- YXScxuygluqmLk01crpDYcFseLk6p87mZoeWvIQbWDRXnq7AqsFXcKFh3wS6kcTIUHz0
- 304YmdcmtmCzUEUT5UTro6nEIfY0AQIgwwzmfVdwK1ujvSoF65sYirx0luvpn4591bBy
- hfwkuBevYmIwmiAWV8gllppR6L+oW6Iaa562pZw0UCg+lkW4+Cj+ZhgO9LPH0Hs4l+YO
- +BjbKP2H/8G1+T3QqqhRouhi1qzf8E2PQUDcmfDw7hI1PWgb5XPL3uD1c8Mj18Q/0fV+
- eRUA==
+ bh=0WPF3BC4jLDd3vtXkSBv8TZG6WGb+ZfUilZzHwILAWg=;
+ b=PwCyJpVxMpJGoGTtZM5aT9MZ8u5+xowpL9AcC0NtOzBm7HP2QI1AHwK9oDEDvAiPTi
+ 1mY5E6nYy6JQ5bnHuvnqHZDOcYaHaCOMEee4veWJRsoJcqVaXdHuqQEIqLL2y9eDIL2v
+ WynyqE33zvcmhWNOSVnTFA0u9EcO217chv8Z2p7CBeFXfBtLSvBxMOU3XofMj8I2ud4v
+ aEcKzbXW8RwYP0mmwzL9epLitEodIJRzZD3VlBC6y2b5vUVTNqoj0nt5M1sN0wvyZgTA
+ TPj8S8IQYEK+6DceCb4qObSBanXr4mnrTFZhYE4t55USW3VjoQZSsSx53h+H3ifyhjMA
+ LWkw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=vYEEXFOhxtvYv/yYJOcMUmKNs0oEV4AL/NRwjoex32s=;
- b=bP9gDwWCU9At+McatxS99PlwPp7vIsY9rzpUBUMKifI2jdXDWEa+Cf3Ng3YS0meyWB
- Qi6ESu7sKVjB9jH6jEG6RSzMSLTQSPNvkn5nhSk+Q1Do2eH4/0os/hVliolfnG6MRUUv
- DS6aEcZ8rNNqibVX3f9UEbPKTajWv1x4Arj0VwZpymTU/HAdmH3d9URPi7bb4saBhqn2
- /K5PI6KXPbqb+iyUyCWV6FD37ftUlbdZxiXMeDu1cvkOQZfNlIQL0/v42DJxiV4jpHzK
- Q+zGYyoj369LTMYNp6d7dPjV8gzwznSE3HCLVEFyo30B1pX3/zL3I6PM5EiWhi2/Lyos
- vgRA==
-X-Gm-Message-State: APjAAAUW1v5vqtda+sPDjpzCkPHcCB4Ef3TH8+d5R0MnXuGJhU+1Gb8v
- i/wruQzGHew3pQzQ7wgEKFs=
-X-Google-Smtp-Source: APXvYqxeIb7V3OhRRZv7aV+cgE3F2J0ubBjn6ANX3uLEnAOYw/PugW11KAJc9aaY1V+Q+vuKxv13nw==
-X-Received: by 2002:a17:902:e407:: with SMTP id
- ci7mr42394265plb.326.1567617076816; 
- Wed, 04 Sep 2019 10:11:16 -0700 (PDT)
+ bh=0WPF3BC4jLDd3vtXkSBv8TZG6WGb+ZfUilZzHwILAWg=;
+ b=FRXL9UYKWsZg/YD/pbaqDzksyl+HD2hJIujHIlYPJhqkW6MyVBngDVh/PZUE9Wji/O
+ fwMBUosf1wRdF4n+C/fLRqHWJQANgJhlhpL7bkPJeSsUwFvAdd/RVRRCe4iWeWXDTijF
+ x6CmDq992SPevJhHBBdI3Hh+/emNSETCWPWYuKDEMmvV2JeYJ9adbPJ4v98bna30hCcg
+ ynNMIbd+12X6Mx16OxuR6Nqi0OsG060vVorD2gBY9nKXPM2zPsQoHLzC6k5n7Gblt3fH
+ UaRCH7w3nfJ922Sr7q1sY8K6OqLMZX7eZpufjgnyZiOu2D6nTLg1+Sm/0SBg/A86i19u
+ datw==
+X-Gm-Message-State: APjAAAXkfhos45L/DGWZkK7K8dalX0Dx3ucDy4VbyN8bm3TLfMDWce2h
+ wXOsV9AnNM4Uvbi2VxDvp/c=
+X-Google-Smtp-Source: APXvYqyxTs3a17tRv8EsUjP6U1xDnQ/AJO6MjxWuHGaxk3VeAF2/3Mg8nu1ia8+4PpEi0xDtdG03Iw==
+X-Received: by 2002:a62:5343:: with SMTP id h64mr33072029pfb.4.1567617390831; 
+ Wed, 04 Sep 2019 10:16:30 -0700 (PDT)
 Received: from [10.67.49.31] ([192.19.223.252])
- by smtp.googlemail.com with ESMTPSA id y25sm22869474pfm.95.2019.09.04.10.11.14
+ by smtp.googlemail.com with ESMTPSA id s19sm7722540pfe.86.2019.09.04.10.16.29
  (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Sep 2019 10:11:16 -0700 (PDT)
-Subject: Re: [PATCH v2 2/2] net: phy: gmii2rgmii: Dont use priv field in phy
- device
-To: Harini Katakam <harini.katakam@xilinx.com>, andrew@lunn.ch,
- hkallweit1@gmail.com, davem@davemloft.net
-References: <1567605621-6818-1-git-send-email-harini.katakam@xilinx.com>
- <1567605621-6818-3-git-send-email-harini.katakam@xilinx.com>
+ Wed, 04 Sep 2019 10:16:30 -0700 (PDT)
+Subject: Re: [PATCH v2 0/6] PAXB INTx support with proper model
+To: Srinath Mannam <srinath.mannam@broadcom.com>,
+ Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Bjorn Helgaas <bhelgaas@google.com>, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>,
+ Andy Shevchenko <andy.shevchenko@gmail.com>, Arnd Bergmann <arnd@arndb.de>
+References: <1566982488-9673-1-git-send-email-srinath.mannam@broadcom.com>
 From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
@@ -121,23 +121,23 @@ Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
  caxTGgc5zzQHeX67eMzrGomG3ZnIxmd1sAbgvJUDaD2GrYlulfwGWwWyTNbWRvMighVdPkSF
  6XFgQaosWxkV0OELLy2N485YrTr2Uq64VKyxpncLh50e2RnyAJ9Za0Dx0yyp44iD1OvHtkEI
  M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
-Message-ID: <93b1f1d1-4499-04c1-f240-ef0ea73db5ea@gmail.com>
-Date: Wed, 4 Sep 2019 10:11:12 -0700
+Message-ID: <107116f2-a5ff-c545-1864-eb5885c4c60e@gmail.com>
+Date: Wed, 4 Sep 2019 10:16:27 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1567605621-6818-3-git-send-email-harini.katakam@xilinx.com>
+In-Reply-To: <1566982488-9673-1-git-send-email-srinath.mannam@broadcom.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_101117_336068_27F7F53E 
-X-CRM114-Status: GOOD (  10.65  )
+X-CRM114-CacheID: sfid-20190904_101631_620348_026D2B5F 
+X-CRM114-Status: GOOD (  17.34  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -161,22 +161,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: netdev@vger.kernel.org, radhey.shyam.pandey@xilinx.com,
- michal.simek@xilinx.com, harinikatakamlinux@gmail.com,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-pci@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/4/19 7:00 AM, Harini Katakam wrote:
-> Use set/get drv data in phydev's mdio device instead. Phy device priv
-> field maybe used by the external phy driver and should not be
-> overwritten.
+On 8/28/19 1:54 AM, Srinath Mannam wrote:
+> This patch series adds PCIe legacy interrupt (INTx) support to the iProc
+> PCIe driver by modeling it with its own IRQ domain. All 4 interrupts INTA,
+> INTB, INTC, INTD share the same interrupt line connected to the GIC
+> in the system. This is now modeled by using its own IRQ domain.
 > 
-> Signed-off-by: Harini Katakam <harini.katakam@xilinx.com>
+> Also update all relevant devicetree files to adapt to the new model.
+> 
+> This patch set is based on Linux-5.2-rc4.
+> 
+> Changes from v1:
+>   - Addressed Rob, Lorenzo, Arnd's comments
+>     - Used child node for interrupt controller.
+>   - Addressed Andy Shevchenko's comments
+>     - Replaced while loop with do-while.
 
-Reviewed-by: Florian Fainelli <f.fainelli@gmail.com>
+Lorenzo, Bjorn, if you are good with the binding and PCI host driver
+changes, you can take patches 1-2 through your tree, and I will queue up
+the others through the Broadcom ARM SoC pull requests. If not, please
+feel free to add a:
+
+Acked-by: Florian Fainelli <f.fainelli@gmail.com>
+
+> 
+> Ray Jui (6):
+>   dt-bindings: pci: Update iProc PCI binding for INTx support
+>   PCI: iproc: Add INTx support with better modeling
+>   arm: dts: Change PCIe INTx mapping for Cygnus
+>   arm: dts: Change PCIe INTx mapping for NSP
+>   arm: dts: Change PCIe INTx mapping for HR2
+>   arm64: dts: Change PCIe INTx mapping for NS2
+> 
+>  .../devicetree/bindings/pci/brcm,iproc-pcie.txt    |  48 ++++++++--
+>  arch/arm/boot/dts/bcm-cygnus.dtsi                  |  30 ++++++-
+>  arch/arm/boot/dts/bcm-hr2.dtsi                     |  30 ++++++-
+>  arch/arm/boot/dts/bcm-nsp.dtsi                     |  45 ++++++++--
+>  arch/arm64/boot/dts/broadcom/northstar2/ns2.dtsi   |  28 +++++-
+>  drivers/pci/controller/pcie-iproc.c                | 100 ++++++++++++++++++++-
+>  drivers/pci/controller/pcie-iproc.h                |   6 ++
+>  7 files changed, 260 insertions(+), 27 deletions(-)
+> 
+
+
 -- 
 Florian
 
