@@ -2,55 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 51CAFA82B2
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 14:44:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C7E1A82B6
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 14:48:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+EVv/vWK4cdLbaFw4iFYNHfE544qR51T7UV3pY87FT4=; b=scQ9nzDbpFmWQ+
-	6Uie0GtJX0tKFbOuUnz+vagJCsWIc7WGnmMko+IURIm3KPjSOf8iLONTx8Gpm9njWNmD42Tnbru9v
-	zFodXEXIcPBo3Up80OmzJ50427nS3oRFuHcFyIjbpoB2rKBLIAxmvO2Wxw4X1UBY7K/Vjlj2kJ9zZ
-	dBack33tN1vA+WIDhFo7nNHFlRnwwI/5oN6LWD8NlpHCx402q+WBZpC3Kn4ecJFXLoQVz+v4ZUE63
-	4RIGroUWh7T03I3IfxNcuGIMnB7GelCl7LJr9j3TBiRBiAlHxzGjebmaZSrl54i40z/EylJBkBGv1
-	Snd6VwBzjeI6FLei55GA==;
+	List-Owner; bh=ue+DbbXvvtxhOgYBkBdWOm9YqlGLgFBaOtxQfhURLkQ=; b=TRLYE87qh064c9
+	FZ91EaEqWGNPHDB+oDKRwvL7PjsCFj6ldE8r2kIFkkOMcRerAPiElTqHeH+cnS+vV19OgQv/q94YP
+	YOQgAmPpd9RoRBI2x+0LaMBxipWI1AIzoiG8FWZcjyY2t2xYmiJU5Wi7ZoBT9YCke79eJSuoLq74D
+	dfvHI1lzw7+lByUWQIZPBy9EV98Gd8wzmjqv5+wLKPsrjKWgAVd9DXAIhJcpYIZjdEl+dif7xc7Wh
+	yJyRrnCZwT7imP8EQZEvmQiTUtjHLhEEVabbaKlslQrcsA8ZnNZVxZLkpATYsIjOjdUlqQ5rrComf
+	OAdRUV9RY3AMKYGuB81w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Udt-0001vl-De; Wed, 04 Sep 2019 12:44:09 +0000
-Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+	id 1i5Ui6-00043k-2l; Wed, 04 Sep 2019 12:48:30 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Udg-0001ub-Nv; Wed, 04 Sep 2019 12:43:58 +0000
-X-Originating-IP: 86.250.200.211
-Received: from xps13 (lfbn-1-17395-211.w86-250.abo.wanadoo.fr [86.250.200.211])
- (Authenticated sender: miquel.raynal@bootlin.com)
- by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id 1B4DA2000E;
- Wed,  4 Sep 2019 12:43:33 +0000 (UTC)
-Date: Wed, 4 Sep 2019 14:43:32 +0200
-From: Miquel Raynal <miquel.raynal@bootlin.com>
-To: YueHaibing <yuehaibing@huawei.com>
-Subject: Re: [PATCH -next 01/15] thermal: armada: use
- devm_platform_ioremap_resource() to simplify code
-Message-ID: <20190904144332.46ab190f@xps13>
-In-Reply-To: <20190904122939.23780-2-yuehaibing@huawei.com>
-References: <20190904122939.23780-1-yuehaibing@huawei.com>
- <20190904122939.23780-2-yuehaibing@huawei.com>
-Organization: Bootlin
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1i5Uhs-00043M-WF
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 12:48:18 +0000
+Received: by mail-qk1-f193.google.com with SMTP id x134so9270952qkb.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 05:48:16 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=R+0b8fSY47De7VCrUTxZqJDVduWXpwUI2sctfchKAnE=;
+ b=SctVwuzKa3jA0cbVVqTwyr5+ai7quPcxIUcsFUTxDMw8ryu1CAyxOq24701BdXRhtj
+ blBe1TNXsNsYer2Jl6s/CjrLZTjpgYDX5y0COCQ+fI3u3WeBKpysMd/+EX1fHevnzDcE
+ 4KMMQ1r21Ly2sCO5kR3tAE+pa6CZK6/lKt+ft6Adnku+nvPwfgfhxlXcAvn76Db2wFTz
+ uMR1/71tbTSHfmEgmBB4dFByznozDn8R/K36+/9G/zF2aIBN7nEmvx4yTy84iJRejjxz
+ DONgNBKIJX7p4eJbaeqBrA+lEGbny40DKUr4XYFuRIRXZTFIHvqIVwD0/unrqJ5qRuVA
+ Zs4Q==
+X-Gm-Message-State: APjAAAV/Mywd5LkKNIw2Ey3oiiWxlIJ208j2eLE5Sd4rMZiHJyHfzLnc
+ mmgqT4b2eF4Sfvh9gK1ajL2PUDGC2XBszYoDedg=
+X-Google-Smtp-Source: APXvYqzmeCx7TXRJSQVNzhYBClAtttCpNIkB5lNBYv4e/Rh8BJ6cJEcNduIguYCzUncswi3iA7/qr/zXWpBfhDbUPck=
+X-Received: by 2002:a37:4b0d:: with SMTP id y13mr38552351qka.3.1567601296011; 
+ Wed, 04 Sep 2019 05:48:16 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190803124404.GA11140@Mani-XPS-13-9360>
+In-Reply-To: <20190803124404.GA11140@Mani-XPS-13-9360>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 4 Sep 2019 14:47:59 +0200
+Message-ID: <CAK8P3a2gVsy8Do8Wrpu9wCTTBSb1qx-+mNtyCKKUA=hQVfDwSw@mail.gmail.com>
+Subject: Re: [GIT PULL] Bitmain changes for v5.4
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_054356_934228_588C8DA8 
-X-CRM114-Status: GOOD (  11.86  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190904_054817_035141_431796D4 
+X-CRM114-Status: GOOD (  11.49  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,47 +81,36 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mans@mansr.com, mmayer@broadcom.com, eric@anholt.net,
- linux-stm32@st-md-mailman.stormreply.com, heiko@sntech.de,
- amit.kucheria@verdurent.com, f.fainelli@gmail.com, daniel.lezcano@linaro.org,
- phil@raspberrypi.org, linux-rockchip@lists.infradead.org, agross@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-arm-msm@vger.kernel.org,
- rui.zhang@intel.com, david.hernandezsanchez@st.com, alexandre.torgue@st.com,
- marc.w.gonzalez@free.fr, rjui@broadcom.com, edubezval@gmail.com,
- linux-mediatek@lists.infradead.org, linux-rpi-kernel@lists.infradead.org,
- gregory.0xf0@gmail.com, matthias.bgg@gmail.com, horms+renesas@verge.net.au,
- talel@amazon.com, linux-arm-kernel@lists.infradead.org, sbranden@broadcom.com,
- wsa+renesas@sang-engineering.com, gregkh@linuxfoundation.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org, wahrenst@gmx.net,
- mcoquelin.stm32@gmail.com, jun.nie@linaro.org, computersforpeace@gmail.com,
- shawnguo@kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Olof Johansson <olof@lixom.net>, arm-soc <arm@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgWXVlLAoKWXVlSGFpYmluZyA8eXVlaGFpYmluZ0BodWF3ZWkuY29tPiB3cm90ZSBvbiBXZWQs
-IDQgU2VwIDIwMTkgMjA6Mjk6MjUKKzA4MDA6Cgo+IFVzZSBkZXZtX3BsYXRmb3JtX2lvcmVtYXBf
-cmVzb3VyY2UoKSB0byBzaW1wbGlmeSB0aGUgY29kZSBhIGJpdC4KPiBUaGlzIGlzIGRldGVjdGVk
-IGJ5IGNvY2NpbmVsbGUuCj4gCj4gUmVwb3J0ZWQtYnk6IEh1bGsgUm9ib3QgPGh1bGtjaUBodWF3
-ZWkuY29tPgo+IFNpZ25lZC1vZmYtYnk6IFl1ZUhhaWJpbmcgPHl1ZWhhaWJpbmdAaHVhd2VpLmNv
-bT4KPiAtLS0KPiAgZHJpdmVycy90aGVybWFsL2FybWFkYV90aGVybWFsLmMgfCA0ICstLS0KPiAg
-MSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAzIGRlbGV0aW9ucygtKQo+IAo+IGRpZmYg
-LS1naXQgYS9kcml2ZXJzL3RoZXJtYWwvYXJtYWRhX3RoZXJtYWwuYyBiL2RyaXZlcnMvdGhlcm1h
-bC9hcm1hZGFfdGhlcm1hbC5jCj4gaW5kZXggNzA5YTIyZi4uNzBmZTljNiAxMDA2NDQKPiAtLS0g
-YS9kcml2ZXJzL3RoZXJtYWwvYXJtYWRhX3RoZXJtYWwuYwo+ICsrKyBiL2RyaXZlcnMvdGhlcm1h
-bC9hcm1hZGFfdGhlcm1hbC5jCj4gQEAgLTcwOCwxMiArNzA4LDEwIEBAIHN0YXRpYyBpbnQgYXJt
-YWRhX3RoZXJtYWxfcHJvYmVfbGVnYWN5KHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYsCj4g
-IAkJCQkgICAgICAgc3RydWN0IGFybWFkYV90aGVybWFsX3ByaXYgKnByaXYpCj4gIHsKPiAgCXN0
-cnVjdCBhcm1hZGFfdGhlcm1hbF9kYXRhICpkYXRhID0gcHJpdi0+ZGF0YTsKPiAtCXN0cnVjdCBy
-ZXNvdXJjZSAqcmVzOwo+ICAJdm9pZCBfX2lvbWVtICpiYXNlOwo+ICAKPiAgCS8qIEZpcnN0IG1l
-bW9yeSByZWdpb24gcG9pbnRzIHRvd2FyZHMgdGhlIHN0YXR1cyByZWdpc3RlciAqLwo+IC0JcmVz
-ID0gcGxhdGZvcm1fZ2V0X3Jlc291cmNlKHBkZXYsIElPUkVTT1VSQ0VfTUVNLCAwKTsKPiAtCWJh
-c2UgPSBkZXZtX2lvcmVtYXBfcmVzb3VyY2UoJnBkZXYtPmRldiwgcmVzKTsKPiArCWJhc2UgPSBk
-ZXZtX3BsYXRmb3JtX2lvcmVtYXBfcmVzb3VyY2UocGRldiwgMCk7Cj4gIAlpZiAoSVNfRVJSKGJh
-c2UpKQo+ICAJCXJldHVybiBQVFJfRVJSKGJhc2UpOwo+ICAKClJldmlld2VkLWJ5OiBNaXF1ZWwg
-UmF5bmFsIDxtaXF1ZWwucmF5bmFsQGJvb3RsaW4uY29tPgoKVGhhbmtzLApNaXF1w6hsCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On Sat, Aug 3, 2019 at 2:44 PM Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Hi Arnd, Olof,
+>
+> Please consider pulling the Bitmain SoC changes for v5.4. These changes
+> are supposed to be pulled in for 5.3 but I was waiting for the common
+> clock driver to be reviewed (still not), hence missing the timeline.
+> Details of the changes are in the signed tag.
+
+I just found this while going through old emails, it seems I never pulled it
+so far and did that now.
+
+Please note that our address has changed, and new pull requests and
+patches should go to soc@kernel.org so they end up in the patchwork
+at https://patchwork.kernel.org/project/linux-soc/list/ where you can
+see the status.
+
+Sorry for missing this earlier.
+
+      Arnd
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
