@@ -2,68 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 18220A8561
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:13:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9257BA8566
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 16:13:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=XNeBqLtO3l8DvrmVusK0gF0N3W0t5/1ekkQ3mlCnvsk=; b=ISdap+ZKRq00GF
-	nUQRZzkxOMkuirTfFA5DbLy26Nzzd6CU5GQEiIVOh/ktuh6ocQSJ7KKfn6DVchFZDG6JFyUTGzcXU
-	Hcizu+8Ev1BJIexv8CVBC4yEXKYjlIkUtqpFPmzF1CpNse0Y9jvwt9sdZeSo182Ct4k+AGd2NStYO
-	opEZbZEoVVCBnXzy+jqmYANGfvklYnvQy/TbKt3OVsm4JTcZGaQDXbEcyZAPzK3CWWgPD9CTOYa0N
-	lZpU1JAWnJ2ydfAxDU3kRyFnn6l+BreGrwN7ht5yTChgKDHkiGQNtl1Oh+mAqq5CContxHEyjIQK0
-	ZYY4NoiFeTEXEJr9UTFw==;
+	List-Owner; bh=W9rJwMI7qhMBgV1dTmW3ntvZm9uwgST3+Y6fsdKTaGg=; b=PdKVGZhnanXqBi
+	Tfk9m/C6ilarhx4H/sDfIFmrDb9vRpURfs6LYW7oXuZHtiUBEKasTXSXutKXX3RftSJ6K3jUxylHZ
+	ZD8FGUQ8hOPys5WX6hGCRqujgXnf9257eSa7c5sYATTAs2Ho+hr9IkoO21CKb93QNeor+n12ZM4au
+	jsGcQK2+7+8A/3yLrdTs5+3QgL7JrltinUueFTwQRMTwAwmDnu6qASWw1c3tVSLZORKz/GeDVx6ef
+	Xdvg2tgNSH5zRz9B8IzfvvZIbUj3yh1BMfU/IuPqzsiS7G25qt/yQRUOl6MzitJPq+v9rsIbqVz6C
+	LhYDurIi8umqN5S6+aTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5W23-0004rY-AC; Wed, 04 Sep 2019 14:13:11 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1i5W2L-0005FP-Oy; Wed, 04 Sep 2019 14:13:29 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Vqh-00060V-PM; Wed, 04 Sep 2019 14:01:29 +0000
-Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.60])
- by Forcepoint Email with ESMTP id 5117822534306BAD951C;
- Wed,  4 Sep 2019 22:01:24 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS403-HUB.china.huawei.com
- (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
- 22:01:14 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <broonie@kernel.org>, <f.fainelli@gmail.com>, <rjui@broadcom.com>,
- <sbranden@broadcom.com>, <eric@anholt.net>, <wahrenst@gmx.net>,
- <shc_work@mail.ru>, <agross@kernel.org>, <khilman@baylibre.com>,
- <matthias.bgg@gmail.com>, <shawnguo@kernel.org>, <s.hauer@pengutronix.de>,
- <kernel@pengutronix.de>, <festevam@gmail.com>, <linux-imx@nxp.com>,
- <avifishman70@gmail.com>, <tmaimon77@gmail.com>, <tali.perry1@gmail.com>,
- <venture@google.com>, <yuenn@google.com>, <benjaminfair@google.com>,
- <kgene@kernel.org>, <krzk@kernel.org>, <andi@etezian.org>,
- <palmer@sifive.com>, <paul.walmsley@sifive.com>, <baohua@kernel.org>,
- <mripard@kernel.org>, <wens@csie.org>, <ldewangan@nvidia.com>,
- <thierry.reding@gmail.com>, <jonathanh@nvidia.com>,
- <yamada.masahiro@socionext.com>, <michal.simek@xilinx.com>
-Subject: [PATCH -next 36/36] spi: fsl-spi: use
- devm_platform_ioremap_resource() to simplify code
-Date: Wed, 4 Sep 2019 21:59:18 +0800
-Message-ID: <20190904135918.25352-37-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
-In-Reply-To: <20190904135918.25352-1-yuehaibing@huawei.com>
-References: <20190904135918.25352-1-yuehaibing@huawei.com>
+ id 1i5VvG-00048C-Eq; Wed, 04 Sep 2019 14:06:11 +0000
+X-UUID: 849c79e9c62f431799f3ad3b8703c86d-20190904
+X-UUID: 849c79e9c62f431799f3ad3b8703c86d-20190904
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 759985018; Wed, 04 Sep 2019 06:06:07 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 07:06:05 -0700
+Received: from mtkcas09.mediatek.inc (172.21.101.178) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 22:06:05 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas09.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Sep 2019 22:06:04 +0800
+Message-ID: <1567605965.32522.14.camel@mtksdccf07>
+Subject: Re: [PATCH 1/2] mm/kasan: dump alloc/free stack for page allocator
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Vlastimil Babka <vbabka@suse.cz>
+Date: Wed, 4 Sep 2019 22:06:05 +0800
+In-Reply-To: <401064ae-279d-bef3-a8d5-0fe155d0886d@suse.cz>
+References: <20190904065133.20268-1-walter-zh.wu@mediatek.com>
+ <401064ae-279d-bef3-a8d5-0fe155d0886d@suse.cz>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_070128_141855_7B57F64F 
-X-CRM114-Status: UNSURE (   7.43  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190904_070610_517853_E1AE6AE9 
+X-CRM114-Status: GOOD (  15.88  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,49 +71,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, YueHaibing <yuehaibing@huawei.com>,
- linux-arm-msm@vger.kernel.org, openbmc@lists.ozlabs.org,
- linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-rpi-kernel@lists.infradead.org, linux-tegra@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-riscv@lists.infradead.org,
- linux-arm-kernel@lists.infradead.org
+Cc: wsd_upstream@mediatek.com, Arnd Bergmann <arnd@arndb.de>,
+ linux-mm@kvack.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, Martin
+ Schwidefsky <schwidefsky@de.ibm.com>, Alexander Potapenko <glider@google.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+On Wed, 2019-09-04 at 14:49 +0200, Vlastimil Babka wrote:
+> On 9/4/19 8:51 AM, Walter Wu wrote:
+> > This patch is KASAN report adds the alloc/free stacks for page allocator
+> > in order to help programmer to see memory corruption caused by page.
+> > 
+> > By default, KASAN doesn't record alloc/free stack for page allocator.
+> > It is difficult to fix up page use-after-free issue.
+> > 
+> > This feature depends on page owner to record the last stack of pages.
+> > It is very helpful for solving the page use-after-free or out-of-bound.
+> > 
+> > KASAN report will show the last stack of page, it may be:
+> > a) If page is in-use state, then it prints alloc stack.
+> >    It is useful to fix up page out-of-bound issue.
+> 
+> I expect this will conflict both in syntax and semantics with my series [1] that
+> adds the freeing stack to page_owner when used together with debug_pagealloc,
+> and it's now in mmotm. Glad others see the need as well :) Perhaps you could
+> review the series, see if it fulfils your usecase (AFAICS the series should be a
+> superset, by storing both stacks at once), and perhaps either make KASAN enable
+> debug_pagealloc, or turn KASAN into an alternative enabler of the functionality
+> there?
+> 
+> Thanks, Vlastimil
+> 
+> [1] https://lore.kernel.org/linux-mm/20190820131828.22684-1-vbabka@suse.cz/t/#u
+> 
+Thanks your information.
+We focus on the smartphone, so it doesn't enable
+CONFIG_TRANSPARENT_HUGEPAGE, Is it invalid for our usecase?
+And It looks like something is different, because we only need last
+stack of page, so it can decrease memory overhead.
+I will try to enable debug_pagealloc(with your patch) and KASAN, then we
+see the result.
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- drivers/spi/spi-fsl-cpm.c | 6 ++----
- 1 file changed, 2 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/spi/spi-fsl-cpm.c b/drivers/spi/spi-fsl-cpm.c
-index e967ac5..858f054 100644
---- a/drivers/spi/spi-fsl-cpm.c
-+++ b/drivers/spi/spi-fsl-cpm.c
-@@ -305,12 +305,10 @@ int fsl_spi_cpm_init(struct mpc8xxx_spi *mspi)
- 	}
- 
- 	if (mspi->flags & SPI_CPM1) {
--		struct resource *res;
- 		void *pram;
- 
--		res = platform_get_resource(to_platform_device(dev),
--					    IORESOURCE_MEM, 1);
--		pram = devm_ioremap_resource(dev, res);
-+		pram = devm_platform_ioremap_resource(to_platform_device(dev),
-+						      1);
- 		if (IS_ERR(pram))
- 			mspi->pram = NULL;
- 		else
--- 
-2.7.4
-
+Thanks.
+Walter 
 
 
 _______________________________________________
