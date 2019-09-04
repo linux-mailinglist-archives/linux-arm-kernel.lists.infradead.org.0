@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A182FA869E
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 18:28:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A852AA86A0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 18:30:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=svJ7j3aanMoObjoZGsIkqBnTOcKBQdlEvJLAYjWMcwU=; b=APzFa3a49FbJWO
-	8nXUHRRPU94e5mcY5MF45GVn86aJsrTzS5xBW4Da4Cx1z7xsu/OCyQYMctOeJAqLh9bp67iK/LM2h
-	RG0xkmS7MgQWKAWdKu9TvOjvrqGPI6NIwF11gxZxpvYfeP+4wIaDIIr/ki18+i1nOswCrp8tCX3th
-	Z1ECyHPELqcuBuadJFCKqbU0PCPUdysHIQAnew+CxgUW8h/Zy59jlxM4YWmzPyKOc+h275lfORPiz
-	v1Nk6KyW7qAXfuqLg/C2UD5gKGpLv0T3O1t9W7UEc2Yj4NqSt9kO+51cJeHlJQ4lERiFPmpWKwTS/
-	Qaq/4DIQJlSU+Kb5akfQ==;
+	List-Owner; bh=FuwuRv21ZOIge0B8AIFZ9RNkqrnnI0qHGIe2eBz05+E=; b=TP9wX2tGYF/Hgd
+	slCjetxUkDiIhWdhOlemNphXz9sPLJMOHuV0slPCtDz6SDQbQZS7kOdSCT/jMt/WTiyPjR1zJY4Iw
+	jqkfeqEGP1gfJhKVqH76yqPoRR9nUGy10yQSDDyL+EPx2r/DaYUREfq9izaCTlIvowp9yUoP22GHm
+	JNmbjiFIbErMgee2c53WuINYIjOSNrtLiBs1at51bwAb6ZQGo/wMFd5kq9Gppob00JWB4CRBJcKIw
+	XrJ29se7RFEbCLILgaihlImyZH0/qJIvsCGDpkqLpFOxM6q5ZXYxSaAScXUdSN9tElGZjr02vIf0n
+	omLb8t/pd5aCyLchlg/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Y8q-0000KX-Hc; Wed, 04 Sep 2019 16:28:20 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i5YB3-0001zv-Jw; Wed, 04 Sep 2019 16:30:37 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5Y8H-00009b-9x
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 16:27:46 +0000
-Received: by mail-pf1-x444.google.com with SMTP id q5so5711570pfg.13
+ id 1i5YAn-0001zZ-7A
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 16:30:22 +0000
+Received: by mail-pf1-x441.google.com with SMTP id h195so7023586pfe.5
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 09:27:45 -0700 (PDT)
+ Wed, 04 Sep 2019 09:30:21 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=h04RkzjT3hXLTqVi3hxMYt7+XgkxZzlEb0BXvzdW1Iw=;
- b=u96W3i3h8EyeOAeUHfKxUJeZZrPcR78dwH/TA9Q0gcEBy2fX0/RospEgR+NpW6qmL8
- x7Cw14anhZMC/3swXtc5wbpMZ+zCJqv4YzAVxVQuTkU+2IspzSnhZM3Gv5klXmNda5mw
- wVF9asAXOiNpj3HEIMkNLKBdRy6DO8xyWZEufSISyBoqV0U9AFhOxjXiRaF3BcQWN0kq
- zWWkmevlB+++8fGIjUZFmXsFgLzRrXmjtPLiUiaPDrwTQ3LzcfaJ7vq2GqaVRy5rrt5u
- b4hUoaq7bsGZDSpHsgo2hT8e70WUzAVYai9e+pS1NGd+erk4+IDj3tcPJyGAyEfYLupO
- Z28g==
+ :cc; bh=0Bk5FCrmIebdNTJxqeSp5asp911jjtdI8aFxkaoSkUA=;
+ b=Z7MJE3qJHR8e1zg4M/OzjRMI8uXwVNEOcJS7BGFiaDV6mFALldUUSXDzH7MDyjvIPC
+ N3ORyV1v0tHe0bs85LwIt8W3EDERZ9+ixgYiqYntooIRtWwd0cs7l/fnCUltEybL5LnU
+ AxSYEpWniZ9Vc9HG6/XZyqZTO3u9wlVyUmwU9p7BU8s7K7YCcQ2O8/SGOBjo4uPyS6zx
+ nsN0/ojOMkS3Jj2Vk7LwCMkBQY3EvHhBSKnV2G+lZMK7koE2fAZwP+wc19x3joGmOyTQ
+ d/eDjlbD1Ea+xJ4ZG3I1n6BpTMlO0Ow++2Hu03dK+pWgvMIOwmtd/bC/EWjXYZh9p51n
+ BSiw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=h04RkzjT3hXLTqVi3hxMYt7+XgkxZzlEb0BXvzdW1Iw=;
- b=EhtyHK1Sd4hPs9RFMhx2V8HQnwgsjsmSrNDE6JbWmmbYbU9ORzLk866vo/09kdbaKv
- RXi/JzpGI23T+np00Kgj3Ege/RYReKBgkQCf1tlldYqui/0msmIeLhP2DJCcZWIjIuBO
- J2LXYR+KpqYn3Y+8iH4LMJWmE4oRVajPFcTi6gJI0op7A46b9Krd6dKAXDoFgY782nx2
- EvkvOnfWG13XgQp5Rmrjnd/BLGKGQu4PYYSpK0atpmoOdOaEzZqk9aAMCcAcLzSsUKA1
- c2OrCKENF5aS+0BbzUCqdtHi00dRCeAWxTJdE4BMmVvLW2ggNXvaHLR5liX+AaPsdRea
- rDIQ==
-X-Gm-Message-State: APjAAAXscyNPnP3YrVjMeHdf9fhCUoNHmpTZ2Zs+K9jMUCHAMqG8gKYy
- C0smA1PPfqZbg/tFDQQUvsGeuPSwDulaYb1wk4Q=
-X-Google-Smtp-Source: APXvYqzS8bxdeH8zm+j+hxb1ouuCS1ZUvEOMUS0WH79z6S5Qndoz6KZ4UIiuE9srzqOavs3O1cbyfUGHH5iUYCJJZFI=
-X-Received: by 2002:aa7:93a8:: with SMTP id x8mr14577315pff.151.1567614464501; 
- Wed, 04 Sep 2019 09:27:44 -0700 (PDT)
+ bh=0Bk5FCrmIebdNTJxqeSp5asp911jjtdI8aFxkaoSkUA=;
+ b=se9uKpoWUQoFjKuvearEXeTbVjNxht8xT3u3FGzoO3C/72rQfMvF18OqEZdeEKaxgq
+ QKeQDbjSSjwbEj0EFaP/3qFJKdI69lX7xs9Ofg/D1a0lCutdGXr0NhmXZU2pRVu7+VK0
+ UJoQHbYqOHF3BEwLsyvIwNO6+5lZtyt7W47DqB78nCYLGyS0et9GqLAmIQOHVi5NZrIQ
+ 2BZ5w9pb8k23BInWfUMjaW8SNoMcw1HiMYAaDsGPyPUgMNkHPdR1mf6Pceb9RVM0YrYp
+ gEqVupwuAO3wvrQRFMASJzXZaN+TPI0bzxxLdJ1XjypZtyinlAcmNF3a0XG+nKXQeuwR
+ DivQ==
+X-Gm-Message-State: APjAAAUpwWWxtNfgdP1rDQzw0kfcEkinla2HpUdXYkLCoi1/Zu/7BC1r
+ AlyIOMXDvIq8o6cy6Qugo461Xv22iyoxsHOrpXXBTEAP
+X-Google-Smtp-Source: APXvYqwfTMyky+gr506dU7vA5RQA2gAYCn+ZMYC+IVVNtVkdvfPY6ix3mRDrBzSvrtUGH0BfnF3ha8tgX/jGZ72bAxY=
+X-Received: by 2002:a17:90a:19c4:: with SMTP id 4mr5998093pjj.20.1567614620706; 
+ Wed, 04 Sep 2019 09:30:20 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190904061245.30770-1-rashmica.g@gmail.com>
-In-Reply-To: <20190904061245.30770-1-rashmica.g@gmail.com>
+ <20190904061245.30770-3-rashmica.g@gmail.com>
+In-Reply-To: <20190904061245.30770-3-rashmica.g@gmail.com>
 From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Wed, 4 Sep 2019 19:27:33 +0300
-Message-ID: <CAHp75Vd_6Rpt5=BjzV8YFCiFP7qsRrYHHo7+=gWwnZH-zT9jNw@mail.gmail.com>
-Subject: Re: [PATCH 1/4] gpio/aspeed: Fix incorrect number of banks
+Date: Wed, 4 Sep 2019 19:30:09 +0300
+Message-ID: <CAHp75Ve0zEkuD-75aZ6FU+A=DvX8NvVvY3n9p_pYDyfa76sxoQ@mail.gmail.com>
+Subject: Re: [PATCH 3/4] gpio: Add in ast2600 details to Aspeed driver
 To: Rashmica Gupta <rashmica.g@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_092745_368365_495E3E7E 
-X-CRM114-Status: UNSURE (   8.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190904_093021_265619_D5BF6586 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,19 +107,54 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Wed, Sep 4, 2019 at 9:14 AM Rashmica Gupta <rashmica.g@gmail.com> wrote:
 >
-> Fixes: 361b79119a4b7 ('gpio: Add Aspeed driver')
+> The ast2600 has two gpio controllers, one for 3.6V GPIOS and one for 1.8V GPIOS.
 >
 > Signed-off-by: Rashmica Gupta <rashmica.g@gmail.com>
 
->         /* Allocate a cache of the output registers */
-> -       banks = gpio->config->nr_gpios >> 5;
+> -       for (i = 0; i < ARRAY_SIZE(aspeed_gpio_banks); i++) {
 > +       banks = (gpio->config->nr_gpios >> 5) + 1;
 
-Shouldn't be rather DIV_ROUND_UP(nr_gpios, sizeof(u32)) ?
+Same comment as per the other patch.
 
->         gpio->dcache = devm_kcalloc(&pdev->dev,
->                                     banks, sizeof(u32), GFP_KERNEL);
+> +       for (i = 0; i < banks; i++) {
 
+> +static const struct aspeed_bank_props ast2600_bank_props[] = {
+> +       /*     input      output   */
+> +       {5, 0xffffffff,  0x0000ffff}, /* U/V/W/X */
+> +       {6, 0xffff0000,  0x0fff0000}, /* Y/Z */
+
+Perhaps GENMASK() for all values?
+
+> +       { },
+
+Comma is not needed here.
+
+> +};
+> +
+> +static const struct aspeed_gpio_config ast2600_config =
+> +       /* 208 3.6V GPIOs */
+
+> +       { .nr_gpios = 208, .props = ast2600_bank_props, };
+
+Seems curly braces missed their places.
+
+> +static const struct aspeed_bank_props ast2600_1_8v_bank_props[] = {
+> +       /*     input      output   */
+> +       {1, 0x0000000f,  0x0000000f}, /* E */
+
+GENMASK()?
+
+> +       { },
+
+No comma.
+
+> +};
+
+> +static const struct aspeed_gpio_config ast2600_1_8v_config =
+> +       /* 36 1.8V GPIOs */
+> +       { .nr_gpios = 36, .props = ast2600_1_8v_bank_props, };
+
+Location of the curly braces?
 
 -- 
 With Best Regards,
