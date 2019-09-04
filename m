@@ -2,81 +2,111 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 418CCA7D5A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 10:10:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6D8A5A7D77
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 10:17:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/gTTAvpT2J4ALIr1Kf3JAop2GlzniXf3ugcHkBMIoak=; b=jHDar15Z3mhnBd
-	XGpaE2oYBhd030O6Iu/q3yLUBE67oNh7F5QRKekmqi4/CLslCROr2JhzOlafkmzI12RQziz4vFIoQ
-	zA9KovF2DRsnnZLUteQUo2KpCI1V4VnQBiXulXU8XVnrJ22CLtmRwENRLOcowKTGSK24nrN8tms2N
-	krC6vHzULzsXPyhQJSUC92PLXPcIiy18y8VwA482YlXXqzsrE11KwPrzno/pCrtOML5Xk7XtoXGmV
-	HrZTJj7FabmZeGEhPuBdNCHrNLglA5z3cRD5BytY2ZvpPHh5V5dmSDc/9btmT4ugrxYVuAwJgVpk8
-	Lu246KcW9QFHMQYVnmDQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bAQ22SYAkt25gFg54c1N8U7SBddar3xahC8r03x5EbU=; b=nE1KjJnJpwrDn+
+	PrW3MlNvX+VWuVqY5fb7tHtHhs+XViPrLc9Zb4HgQFIc7ry64IW+CT53xKYypZrQOyNzoiEfVUGgD
+	JSvSZXTLZFCtGLfBP2FkTvPRHeFkIBIq9L+OjaROQR6HGd/tIpxqtBUQDRYyEAyBRBtp9dTyMzbPt
+	3kAIKgBsVxcVwl6NrWS2MTNw+QBPPOJYKiQPz0fojIBLvmulc94YGwDc3hMwOU/RWTPJoswJHQJyi
+	/Vd4cPuI7UnUyAxUVptOmbmJt16wLeGU92GiE18ON3GqE4BpNCXkaYosBmuJTGdHqDqskDCOpku+5
+	hV7ieptvZlRgpdcJHxFg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5QMk-0003yk-7E; Wed, 04 Sep 2019 08:10:10 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i5QTD-0008OR-Fw; Wed, 04 Sep 2019 08:16:51 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5QMR-0003so-3i; Wed, 04 Sep 2019 08:09:53 +0000
-X-UUID: c7fa77a894de4c80b5cb6616dc3e227c-20190904
-X-UUID: c7fa77a894de4c80b5cb6616dc3e227c-20190904
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2069837224; Wed, 04 Sep 2019 00:09:46 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 01:09:44 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 16:09:36 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Wed, 4 Sep 2019 16:09:36 +0800
-Message-ID: <1567584577.22453.11.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 4 Sep 2019 16:09:37 +0800
-In-Reply-To: <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
- <20190802082815.GA203993@chromium.org>
- <1566724680.20680.8.camel@mtksdccf07>
- <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
- <1566957625.20680.33.camel@mtksdccf07>
- <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
- <1567424859.18318.32.camel@mtksdccf07>
- <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
- <1567493081.18318.49.camel@mtksdccf07>
- <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
- <1567511169.18318.65.camel@mtksdccf07>
- <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
- <1567568281.18318.80.camel@mtksdccf07>
- <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
- <1567577389.18318.100.camel@mtksdccf07>
- <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1i5QSy-0008Ni-8v
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 08:16:38 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0834A3084246;
+ Wed,  4 Sep 2019 08:16:35 +0000 (UTC)
+Received: from [10.36.118.26] (unknown [10.36.118.26])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id 320265C207;
+ Wed,  4 Sep 2019 08:16:28 +0000 (UTC)
+Subject: Re: [PATCH V7 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls
+ in try_remove_memory()
+To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ akpm@linux-foundation.org, catalin.marinas@arm.com, will@kernel.org
+References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
+ <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <e98f2950-bef9-3672-81a8-f9593354fffe@redhat.com>
+Date: Wed, 4 Sep 2019 10:16:28 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.40]); Wed, 04 Sep 2019 08:16:35 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_010951_164475_0DB2E4E2 
-X-CRM114-Status: GOOD (  40.13  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_011636_367250_AA044FB2 
+X-CRM114-Status: GOOD (  24.20  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,308 +118,135 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
- <po-yang.huang@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
- "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: mark.rutland@arm.com, mhocko@suse.com, steve.capper@arm.com,
+ ira.weiny@intel.com, suzuki.poulose@arm.com, mgorman@techsingularity.net,
+ steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
+ Robin.Murphy@arm.com, logang@deltatee.com, valentin.schneider@arm.com,
+ osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
-
-On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
-> On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> >
-> > Hi Tomasz,
-> >
-> > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
-> > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
-> > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > >
-> > > > Hi Tomasz,
-> > > >
-> > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
-> > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > >
-> > > > > > Hi Tomasz,
-> > > > > >
-> > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
-> > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > >
-> > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
-> > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > >
-> > > > > > > > > > Hi Tomasz,
-> > > > > > > > > >
-> > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
-> > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > >
-> > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > >
-> > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
-> > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
-> > > > [snip]
-> > > > > > > > > > > > > [snip]
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > > > > > > > > > > > > > > > +{
-> > > > > > > > > > > > > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> > > > > > > > > > > > > > > > +   struct vb2_buffer *vb;
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > How do we guarantee here that the hardware isn't still accessing the buffers
-> > > > > > > > > > > > > > > removed below?
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > Maybe we can check the driver state flag and aborting the unfinished
-> > > > > > > > > > > > > > jobs?
-> > > > > > > > > > > > > > (fd_hw->state == FD_ENQ)
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > Yes, we need to either cancel or wait for the currently processing
-> > > > > > > > > > > > > job. It depends on hardware capabilities, but cancelling is generally
-> > > > > > > > > > > > > preferred for the lower latency.
-> > > > > > > > > > > > >
-> > > > > > > > > > > > Ok, it the state is ENQ, then we can disable the FD hw by controlling
-> > > > > > > > > > > > the registers.
-> > > > > > > > > > > >
-> > > > > > > > > > > > for example:
-> > > > > > > > > > > >         writel(0x0, fd->fd_base + FD_HW_ENABLE);
-> > > > > > > > > > > >         writel(0x0, fd->fd_base + FD_INT_EN);
-> > > > > > > > > > > >
-> > > > > > > > > > >
-> > > > > > > > > > > What's exactly the effect of writing 0 to FD_HW_ENABLE?
-> > > > > > > > > > >
-> > > > > > > > > > Sorry, my last reply didn't solve the question,
-> > > > > > > > > > we should implement a mtk_fd_job_abort() for v4l2_m2m_ops().
-> > > > > > > > > >
-> > > > > > > > > > which is able to readl_poll_timeout_atomic()
-> > > > > > > > > > and check the HW busy bits in the register FD_INT_EN;
-> > > > > > > > > >
-> > > > > > > > > > if they are not cleared until timeout, we could handle the last
-> > > > > > > > > > processing job.
-> > > > > > > > > > Otherwise, the FD irq handler should have handled the last processing
-> > > > > > > > > > job and we could continue the stop_streaming().
-> > > > > > > > > >
-> > > > > > > > > > For job_abort():
-> > > > > > > > > > static void mtk_fd_job_abort(void *priv)
-> > > > > > > > > > {
-> > > > > > > > > >         struct mtk_fd_ctx *ctx = priv;
-> > > > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > > > > > > > >         u32 val;
-> > > > > > > > > >         u32 ret;
-> > > > > > > > > >
-> > > > > > > > > >         ret = readl_poll_timeout_atomic(fd->fd_base + MTK_FD_REG_OFFSET_INT_EN,
-> > > > > > > > > >                                         val,
-> > > > > > > > > >                                         (val & MTK_FD_HW_BUSY_MASK) ==
-> > > > > > > > > >                                         MTK_FD_HW_STATE_IS_BUSY,
-> > > > > > > > > >                                         USEC_PER_MSEC, MTK_FD_STOP_HW_TIMEOUT);
-> > > > > > > > >
-> > > > > > > > > Hmm, would it be possible to avoid the busy wait by having a
-> > > > > > > > > completion that could be signalled from the interrupt handler?
-> > > > > > > > >
-> > > > > > > > > Best regards,
-> > > > > > > > > Tomasz
-> > > > > > > >
-> > > > > > > > I suppose that would be wakeup a wait queue in the interrupt handler,
-> > > > > > > > the the wait_event_interrupt_timeout() will be used in here and system
-> > > > > > > > suspend e.g. mtk_fd_suspend().
-> > > > > > >
-> > > > > > > Yes, that should work.
-> > > > > > >
-> > > > > > > > Or do you suggest to wait_event_interrupt_timeout() every frame in the
-> > > > > > > > mtk_fd_ipi_handler()?
-> > > > > > >
-> > > > > > > Nope, we shouldn't need that.
-> > > > > > >
-> > > > > > > > I think maybe the readl_poll_timeout_atomic would be good enough.
-> > > > > > > >
-> > > > > > >
-> > > > > > > Not really. Busy waiting should be avoided as much as possible. What's
-> > > > > > > the point of entering suspend if you end up burning the power by
-> > > > > > > spinning the CPU for some milliseconds?
-> > > > > > >
-> > > > > > Ok, I see, busy waiting is not a good idea, I will use the wait queue
-> > > > > > instead. the job abort will refine as following:
-> > > > > >
-> > > > > > static void mtk_fd_job_abort(void *priv)
-> > > > > > {
-> > > > > >         struct mtk_fd_ctx *ctx = priv;
-> > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > > > >         u32 ret;
-> > > > > >
-> > > > > >         ret = wait_event_interruptible_timeout
-> > > > > >                 (fd->wq, (fd->fd_irq_result & MTK_FD_HW_IRQ_MASK),
-> > > > > >                  usecs_to_jiffies(50000));
-> > > > > >         if (ret)
-> > > > > >                 mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
-> > > > > >         dev_dbg(fd->dev, "%s, ret:%d\n", __func__, ret);
-> > > > > >
-> > > > > >         fd->fd_irq_result = 0;
-> > > > > > }
-> > > > > >
-> > > > > > static struct v4l2_m2m_ops fd_m2m_ops = {
-> > > > > >         .device_run = mtk_fd_device_run,
-> > > > > >         .job_abort = mtk_fd_job_abort,
-> > > > >
-> > > > > I'm not sure we should be using the functon above as the .job_abort
-> > > > > callback. It's expected to abort the job, but we're just waiting for
-> > > > > it to finish. I think we should just call mtk_fd_job_abort() manually
-> > > > > from .stop_streaming.
-> > > > >
-> > > >
-> > > > Ok, I will fix it.
-> > > >
-> > > > > > };
-> > > > > >
-> > > > > > and we could use it in suspend.
-> > > > > > static int mtk_fd_suspend(struct device *dev)
-> > > > > > {
-> > > > > >         struct mtk_fd_dev *fd = dev_get_drvdata(dev);
-> > > > > >
-> > > > > >         if (pm_runtime_suspended(dev))
-> > > > > >                 return 0;
-> > > > > >
-> > > > > >         if (fd->fd_stream_count)
-> > > > > >                 mtk_fd_job_abort(fd->ctx);
-> > > > > >
-> > > > > >         /* suspend FD HW */
-> > > > > >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
-> > > > > >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
-> > > > > >         clk_disable_unprepare(fd->fd_clk);
-> > > > > >         dev_dbg(dev, "%s:disable clock\n", __func__);
-> > > > > >
-> > > > > >         return 0;
-> > > > > > }
-> > > > > >
-> > > > > > static irqreturn_t mtk_fd_irq(int irq, void *data)
-> > > > > > {
-> > > > > >         struct mtk_fd_dev *fd = (struct mtk_fd_dev *)data;
-> > > > > >
-> > > > > >         fd->fd_irq_result = readl(fd->fd_base + MTK_FD_REG_OFFSET_INT_VAL);
-> > > > > >         wake_up_interruptible(&fd->wq);
-> > > > >
-> > > > > The wake up should be done at the very end of this function. Otherwise
-> > > > > we end up with m2m framework racing with the mtk_fd_hw_job_finish()
-> > > > > below.
-> > > > >
-> > > > > Also, I'd use a completion here rather than an open coded wait and
-> > > > > wake-up. The driver could reinit_completion() before queuing a job to
-> > > > > the hardware and the IRQ handler would complete(). There would be no
-> > > > > need to store the IRQ flags in driver data anymore.
-> > > > Ok, It will be refined as following:
-> > > >
-> > > > suspend and stop streaming will call mtk_fd_job_abort()
-> > > >
-> > > > static void mtk_fd_job_abort(struct mtk_fd_dev *fd)
-> > > > {
-> > > >         u32 ret;
-> > > >
-> > > >         ret = wait_for_completion_timeout(&fd->fd_irq_done,
-> > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
-> > > >         if (ret)
-> > >
-> > > For the _timeout variants, !ret means the timeout and ret > 0 means
-> > > that the wait ended successfully before.
-> > >
-> > Thanks, fixed.
-> >
-> > > Also please make sure that the timeout is big enough not to happen
-> > > normally on a heavily loaded system. Something like 1 second should be
-> > > good.
-> > >
-> > Ok, I will make it 1 second
-> > #define MTK_FD_HW_TIMEOUT 1000
-> >
-> > Also, I will add a condition in mtk_fd_vb2_stop_streaming(), since it
-> > would be called twice, now it works fine whether I reuse the condition
-> > with mtk_fd_hw_disconnect or not, however, I think do it before buffer
-> > remove looks more reasonable.
-> >
-> > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > {
-> >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> >         struct vb2_v4l2_buffer *vb;
-> >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-> >         struct v4l2_m2m_queue_ctx *queue_ctx;
-> >
-> >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-> >                 mtk_fd_job_abort(fd);
+On 03.09.19 11:45, Anshuman Khandual wrote:
+> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
+> entries between memory block and node. It first checks pfn validity with
+> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
+> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
 > 
-> We need to do it regardless of the queue type, otherwise we could
-> still free CAPTURE buffers before the hardware releases them.
+> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
+> which scans all mapped memblock regions with memblock_is_map_memory(). This
+> creates a problem in memory hot remove path which has already removed given
+> memory range from memory block with memblock_[remove|free] before arriving
+> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
+> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
+> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
+> of existing sysfs entries.
+
+Since
+
+commit 60bb462fc7adb06ebee3beb5a4af6c7e6182e248
+Author: David Hildenbrand <david@redhat.com>
+Date:   Wed Aug 28 13:57:15 2019 +1000
+
+    drivers/base/node.c: simplify unregister_memory_block_under_nodes()
+
+that problem should be gone. There is no get_nid_for_pfn() call anymore.
+
+So this patch should no longer be necessary - but as I said during
+earlier versions of this patch, the re-ordering might still make sense
+for consistency (removing stuff in the reverse order they were added).
+You'll have to rephrase the description then.
+
+> 
+> [   62.007176] NUMA: Unknown node for memory at 0x680000000, assuming node 0
+> [   62.052517] ------------[ cut here ]------------
+> [   62.053211] kernel BUG at mm/memory_hotplug.c:1143!
+> [   62.053868] Internal error: Oops - BUG: 0 [#1] PREEMPT SMP
+> [   62.054589] Modules linked in:
+> [   62.054999] CPU: 19 PID: 3275 Comm: bash Not tainted 5.1.0-rc2-00004-g28cea40b2683 #41
+> [   62.056274] Hardware name: linux,dummy-virt (DT)
+> [   62.057166] pstate: 40400005 (nZcv daif +PAN -UAO)
+> [   62.058083] pc : add_memory_resource+0x1cc/0x1d8
+> [   62.058961] lr : add_memory_resource+0x10c/0x1d8
+> [   62.059842] sp : ffff0000168b3ce0
+> [   62.060477] x29: ffff0000168b3ce0 x28: ffff8005db546c00
+> [   62.061501] x27: 0000000000000000 x26: 0000000000000000
+> [   62.062509] x25: ffff0000111ef000 x24: ffff0000111ef5d0
+> [   62.063520] x23: 0000000000000000 x22: 00000006bfffffff
+> [   62.064540] x21: 00000000ffffffef x20: 00000000006c0000
+> [   62.065558] x19: 0000000000680000 x18: 0000000000000024
+> [   62.066566] x17: 0000000000000000 x16: 0000000000000000
+> [   62.067579] x15: ffffffffffffffff x14: ffff8005e412e890
+> [   62.068588] x13: ffff8005d6b105d8 x12: 0000000000000000
+> [   62.069610] x11: ffff8005d6b10490 x10: 0000000000000040
+> [   62.070615] x9 : ffff8005e412e898 x8 : ffff8005e412e890
+> [   62.071631] x7 : ffff8005d6b105d8 x6 : ffff8005db546c00
+> [   62.072640] x5 : 0000000000000001 x4 : 0000000000000002
+> [   62.073654] x3 : ffff8005d7049480 x2 : 0000000000000002
+> [   62.074666] x1 : 0000000000000003 x0 : 00000000ffffffef
+> [   62.075685] Process bash (pid: 3275, stack limit = 0x00000000d754280f)
+> [   62.076930] Call trace:
+> [   62.077411]  add_memory_resource+0x1cc/0x1d8
+> [   62.078227]  __add_memory+0x70/0xa8
+> [   62.078901]  probe_store+0xa4/0xc8
+> [   62.079561]  dev_attr_store+0x18/0x28
+> [   62.080270]  sysfs_kf_write+0x40/0x58
+> [   62.080992]  kernfs_fop_write+0xcc/0x1d8
+> [   62.081744]  __vfs_write+0x18/0x40
+> [   62.082400]  vfs_write+0xa4/0x1b0
+> [   62.083037]  ksys_write+0x5c/0xc0
+> [   62.083681]  __arm64_sys_write+0x18/0x20
+> [   62.084432]  el0_svc_handler+0x88/0x100
+> [   62.085177]  el0_svc+0x8/0xc
+> 
+> Re-ordering memblock_[free|remove]() with arch_remove_memory() solves the
+> problem on arm64 as pfn_valid() behaves correctly and returns positive
+> as memblock for the address range still exists. arch_remove_memory()
+> removes applicable memory sections from zone with __remove_pages() and
+> tears down kernel linear mapping. Removing memblock regions afterwards
+> is safe because there is no other memblock (bootmem) allocator user that
+> late. So nobody is going to allocate from the removed range just to blow
+> up later. Also nobody should be using the bootmem allocated range else
+> we wouldn't allow to remove it. So reordering is indeed safe.
+> 
+> Reviewed-by: David Hildenbrand <david@redhat.com>
+> Reviewed-by: Oscar Salvador <osalvador@suse.de>
+> Acked-by: Mark Rutland <mark.rutland@arm.com>
+> Acked-by: Michal Hocko <mhocko@suse.com>
+> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
+> ---
+>  mm/memory_hotplug.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/mm/memory_hotplug.c b/mm/memory_hotplug.c
+> index c73f09913165..355c466e0621 100644
+> --- a/mm/memory_hotplug.c
+> +++ b/mm/memory_hotplug.c
+> @@ -1770,13 +1770,13 @@ static int __ref try_remove_memory(int nid, u64 start, u64 size)
+>  
+>  	/* remove memmap entry */
+>  	firmware_map_remove(start, start + size, "System RAM");
+> -	memblock_free(start, size);
+> -	memblock_remove(start, size);
+>  
+>  	/* remove memory block devices before removing memory */
+>  	remove_memory_block_devices(start, size);
+>  
+>  	arch_remove_memory(nid, start, size, NULL);
+> +	memblock_free(start, size);
+> +	memblock_remove(start, size);
+>  	__release_memory_resource(start, size);
+>  
+>  	try_offline_node(nid);
 > 
 
-I think we may read the fd->fd_irq_done.done and do wait for completion
-if it's not being done.
-How do you think?
+-- 
 
-static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-{
-	struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-	struct mtk_fd_dev *fd = ctx->fd_dev;
-	struct vb2_v4l2_buffer *vb;
-	struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-	struct v4l2_m2m_queue_ctx *queue_ctx;
-	u32 ret;
+Thanks,
 
-	if (!fd->fd_irq_done.done)
-		ret = wait_for_completion_timeout(&fd->fd_irq_done,
-					  	  msecs_to_jiffies(
-					  	  	MTK_FD_HW_TIMEOUT));
-	queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
-					&m2m_ctx->out_q_ctx :
-					&m2m_ctx->cap_q_ctx;
-	while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
-		v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-
-	if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-		mtk_fd_hw_disconnect(fd);
-}
-
-I've also tried to wait completion unconditionally for both queues and
-the second time will wait until timeout, as a result, it takes longer to
-swap the camera every time and close the camera app.
-
-Thanks and best regards,
-Jerry
-
-> Best regards,
-> Tomasz
-
-
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
