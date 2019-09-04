@@ -2,59 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A3D9A7DF9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 10:36:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 733BAA7DFF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 10:37:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Dmhuu8/xTf4Iw8Lp3kUM+87dMDSkZFyT7y3LW9cY5hQ=; b=CJocJgzU4ZWHVK
-	oUFABrZrdvv/QJOlafD2J4hB8iggrp6igJ1sDZoo2cuzjv3urTaWBijmmbM5K25LDffhHhxwtdemA
-	ishCaN1WLD3d1rQ7DKMx2MADabhRGirMsB7JYEtAdPGmRaB1D07r0prdBjnyJAP1233VhXEMeNvXP
-	gScEaMwXlYj5lUaQF5GQ0xTiK5LWijVKdQQbNr3/pJcSsZyOaRZArtsE7quIxAJvl0UpYs8k03Qbc
-	gWlWfHOu2Ocsb1TjQMVfXVV3wsqL2WPyBYnPNcdAnGkGSSyfxgPsEm+mihMW+dDS77zjtcHesFmny
-	c6XT9WcH8HjQYG9SYISw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pvQYAUM6KosQq8za24yw25EognjJS9k1huwOcYjkA9Q=; b=OrJI+G3cLPkMLX
+	dFcKDNo0TU9vOmcSxbFN3lcxqYiTmG+XqU1JTtYXwlKOwce8ordbWGmqQ5GtKLd7uCpIdAObR6UU5
+	K9TzUCgFa6cEDc+ulap94L8g7ixSxrPUq5U6mgI61rSPOiufPCaaivHYRxdwlYAVkE91PEpzWh2QA
+	MlXE7WVqb650tUByS04mjta0kWk27bs8IxzdkF3RAX8HyWVMPch73XPl4tVM8bXW8hQc3CH+G6bsv
+	qLByeuGnRsExbRn+/FPqI769rtmWwSxBRhBVV3e+HXsg94WQrOi4dOklBJvQc3WF/l7MA4zpK+E0m
+	Adu+hwDQeGVcZjUA8djw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Qll-0007fC-0L; Wed, 04 Sep 2019 08:36:01 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1i5QnK-00081n-Tj; Wed, 04 Sep 2019 08:37:39 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5QlW-0007da-Fh
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 08:35:48 +0000
-Received: from DGGEMS404-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id D5620ACDB2399C9A2B16;
- Wed,  4 Sep 2019 16:35:36 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS404-HUB.china.huawei.com
- (10.3.19.204) with Microsoft SMTP Server id 14.3.439.0; Wed, 4 Sep 2019
- 16:35:29 +0800
-From: YueHaibing <yuehaibing@huawei.com>
-To: <lgirdwood@gmail.com>, <broonie@kernel.org>, <perex@perex.cz>,
- <tiwai@suse.com>, <baohua@kernel.org>, <gregkh@linuxfoundation.org>,
- <kstewart@linuxfoundation.org>, <tglx@linutronix.de>, <allison@lohutok.net>,
- <yuehaibing@huawei.com>, <pakki001@umn.edu>
-Subject: [PATCH -next] ASoC: sirf-audio: use devm_platform_ioremap_resource()
- to simplify code
-Date: Wed, 4 Sep 2019 16:34:12 +0800
-Message-ID: <20190904083412.18700-1-yuehaibing@huawei.com>
-X-Mailer: git-send-email 2.10.2.windows.1
+ id 1i5Qn7-00080z-59
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 08:37:26 +0000
+Received: from mail-lf1-f48.google.com (mail-lf1-f48.google.com
+ [209.85.167.48])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7C10120870
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed,  4 Sep 2019 08:37:24 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567586244;
+ bh=hoAius6REhdbGBpQkFZpk5CeOOmO3Yn/3gIEtQoNWWg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=m8/PRsxKuktjjE9T7/5NZ0LBzGps6QBKzHzUtzjZnjv5htkPdHVQh8+sFQbJXM+oV
+ wJ9auiMz/imRsYyTJZzMVOUpYLK52y7ldef2H7SbULXf2DGzZeSjMAiHGgkwtzOxk2
+ m2m2Wt89goHMOd58PZStIh0ngFEFvAtWbIeFgFKk=
+Received: by mail-lf1-f48.google.com with SMTP id r134so14298909lff.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 01:37:24 -0700 (PDT)
+X-Gm-Message-State: APjAAAV4EOv163k4KO6GQevzsxaLbZDYOqBM7gnq7tNZVxvMJMIkQ2z+
+ x3E5xqIZJGrkBDiDVaIdDJk2Bv3xvANGXHpxmWc=
+X-Google-Smtp-Source: APXvYqynl8t4zpgSOSPhgXGm6urGPD6YD5RT2LviyIZz5LcMF3/ZNtjnIiHi6xBSeCZLQGGW5B0TO2IWt+JPxz/llZY=
+X-Received: by 2002:ac2:4853:: with SMTP id 19mr16484011lfy.69.1567586242704; 
+ Wed, 04 Sep 2019 01:37:22 -0700 (PDT)
 MIME-Version: 1.0
-X-Originating-IP: [10.133.213.239]
-X-CFilter-Loop: Reflected
+References: <20190816163042.6604-1-krzk@kernel.org>
+ <CAJKOXPcgZ2_ofZyAeTSxALkALaP-SFNfvNmNPYSPyLzuhpGZ0w@mail.gmail.com>
+ <20190822183519.GA23735@kozik-lap>
+ <CAK8P3a1_Qw=OB31yOCrpPs8Ys+=9tt4Pnyd=3+2JGzRXJV1KAw@mail.gmail.com>
+In-Reply-To: <CAK8P3a1_Qw=OB31yOCrpPs8Ys+=9tt4Pnyd=3+2JGzRXJV1KAw@mail.gmail.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Wed, 4 Sep 2019 10:37:11 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfRMXkm_pT560Ry5k-zFWpkRDmFHSs2Fb3RL7d4h=ka9g@mail.gmail.com>
+Message-ID: <CAJKOXPfRMXkm_pT560Ry5k-zFWpkRDmFHSs2Fb3RL7d4h=ka9g@mail.gmail.com>
+Subject: Re: [GIT PULL 1/3] soc: samsung: Exynos for v5.4
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_013546_724026_B758BC28 
-X-CRM114-Status: UNSURE (   8.03  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190904_013725_238890_8F485BA5 
+X-CRM114-Status: GOOD (  25.80  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,48 +88,73 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Use devm_platform_ioremap_resource() to simplify the code a bit.
-This is detected by coccinelle.
+On Tue, 3 Sep 2019 at 19:21, Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> On Thu, Aug 22, 2019 at 8:35 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> > On Wed, Aug 21, 2019 at 09:51:09AM +0200, Krzysztof Kozlowski wrote:
+> > > On Fri, 16 Aug 2019 at 18:30, Krzysztof Kozlowski <krzk@kernel.org> wrote:
+> > > >
+> > > > The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+> > > >
+> > > >   Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+> > > >
+> > > > are available in the Git repository at:
+> > > >
+> > > >   https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-drivers-5.4
+> > > >
+> > > > for you to fetch changes up to 40d8aff614f71ab3cab20785b4f213e3802d4e87:
+> > > >
+> > > >   soc: samsung: chipid: Convert exynos-chipid driver to use the regmap API (2019-08-15 20:25:25 +0200)
+> > > >
+> > > > ----------------------------------------------------------------
+> > > > Samsung soc drivers changes for v5.4
+> > > >
+> > > > Add Exynos Chipid driver for identification of product IDs and SoC
+> > > > revisions.  The driver also exposes chipid regmap, later to be used by
+> > > > Exynos Adaptive Supply Voltage driver (adjusting voltages to different
+> > > > revisions of same SoC).
+> > >
+> > > It turns out that it brings troubles (code is executed on every
+> > > platform polluting logs because it is an initcall, not a driver) so
+> > > Sylwester (submitter) asked to skip the submission.
+> > >
+> > > Please ignore the pull request.
+> >
+> > I talked with Sylwester and Bartlomiej who contributed the chipid driver
+> > and they provided small incremental fixes. The driver is still useful
+> > and in the future it will be expanded towards AVS. Therefore please pull
+> > it or optionally wait a week and I will send incremental pull request
+> > with fixes.
+>
+> Pulled into arm/drivers for now.
+>
+> I have drafted a related patch recently, regarding the related
+> arch/arm/plat-samsung/cpu.c file. This is part of a longer series
+> I'm working on, see https://pastebin.com/ZqeU3Mth for the
+> current version of this patch.
 
-Reported-by: Hulk Robot <hulkci@huawei.com>
-Signed-off-by: YueHaibing <yuehaibing@huawei.com>
----
- sound/soc/codecs/sirf-audio-codec.c | 4 +---
- 1 file changed, 1 insertion(+), 3 deletions(-)
+You can then also adjust the include path in arch/arm/mach-exynos/Makefile.
 
-diff --git a/sound/soc/codecs/sirf-audio-codec.c b/sound/soc/codecs/sirf-audio-codec.c
-index 9009a74..a061d78 100644
---- a/sound/soc/codecs/sirf-audio-codec.c
-+++ b/sound/soc/codecs/sirf-audio-codec.c
-@@ -459,7 +459,6 @@ static int sirf_audio_codec_driver_probe(struct platform_device *pdev)
- 	int ret;
- 	struct sirf_audio_codec *sirf_audio_codec;
- 	void __iomem *base;
--	struct resource *mem_res;
- 
- 	sirf_audio_codec = devm_kzalloc(&pdev->dev,
- 		sizeof(struct sirf_audio_codec), GFP_KERNEL);
-@@ -468,8 +467,7 @@ static int sirf_audio_codec_driver_probe(struct platform_device *pdev)
- 
- 	platform_set_drvdata(pdev, sirf_audio_codec);
- 
--	mem_res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	base = devm_ioremap_resource(&pdev->dev, mem_res);
-+	base = devm_platform_ioremap_resource(pdev, 0);
- 	if (IS_ERR(base))
- 		return PTR_ERR(base);
- 
--- 
-2.7.4
+> The observation is that mach-exynos
+> is almost completely independent of plat-samsung these days, and my
+> patch removes the last obstacle from separating the two. I have
+> another set of patches to do the same for mach-s5pv210 (which shares
+> half of its pm.c with plat-samsung, but nothing else).
 
+Great!
 
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
