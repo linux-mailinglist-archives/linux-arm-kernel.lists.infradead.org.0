@@ -2,74 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 421F6A860A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:27:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE6D9A860B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:27:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gtSuoa2Firi28hbWpk6HUuo481ALjt7ks/JxVJG8lzE=; b=c6RFWqK7SyeKsg
-	2k8aC+RIX5nYn3iM3HfXN9rW/lmufV2nzX3R8ZgDbJdQduP50h72mLIUrdeJlRFakdevoOr/GmnJW
-	d5NIIcB5o369i+oVX5iD0P4jJWp6y8CDCnVaXOw5teB6m9wpYZGbj4Dn42s9TTaRqRhWy13/uiejU
-	D01UL8igtMtbWKEjs/24G0JdOBtn9FTW0fQv/HpBzPlIooT8Xqfk3H71LCbrQNm+VYFzkYwXeZtO6
-	yJEPVJ25Fju0glktaiRu/dNnb/PiTOfLT/+aav688XpwUPATBJBk2c1Wq/AaN2510v/eM/Ye2GCj5
-	HdDeyVaRBclmye9/2s4w==;
+	List-Owner; bh=IKatc7vuHlL1KswIrbngiVp4WOSSz5W0Rr6Zcrd1IFk=; b=mTrhhPNdzk3znD
+	3fs/2HFgVJ4hDW53Ll4Rs4sBS+HtHeg0zHoYC+6SHnvTan4oD+CngwIuYMkE1fWhtiuRsxi/42WCm
+	iIZTpbkK8FGpn8lTfwm5sD+vtPoMsTc7vztDe4w65I4z4D04vHVJM2ARTDXmQ4zMsY5z91f/Mh2cQ
+	qxaaAxENvRyqE/CCzt6ASmjth5KT+CZbPckxfff/og/6rZ3rZpjThHLKY3Ti980iIvmF8ok3+eUZ8
+	A0MTog/fAudlYLzCW7RJNYfxN9uUGdJk2psfmtuV/dvgCleO4uKJ7ZqIHaYf7+GDvGMKiBoGWFGn3
+	Y24iQW7S4HCGpYB9V9pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5XBt-0007Bg-LE; Wed, 04 Sep 2019 15:27:25 +0000
-Received: from mail-qk1-f195.google.com ([209.85.222.195])
+	id 1i5XCE-0007Qf-Ay; Wed, 04 Sep 2019 15:27:46 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5XBf-0007Az-UE
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:27:13 +0000
-Received: by mail-qk1-f195.google.com with SMTP id 201so10404903qkd.13
+ id 1i5XC0-0007Pb-J6
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:27:33 +0000
+Received: by mail-qt1-f194.google.com with SMTP id r5so19597757qtd.0
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 08:27:11 -0700 (PDT)
+ Wed, 04 Sep 2019 08:27:32 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=QjzLrloPSj0dq2PlM8GLX2EAvMaEi66BXUAo/AtPzMs=;
- b=G9HxWrsGOl8EnvAdS940lcNju3kEFvP9nKyDbFZaz7LfPF/sybJGE2JP9y6CPq1a8V
- H6yvdPVM3Jo8gyMwqcIVjmjGinHGN1sCsANdUYl/mQERhwbHyyG9jjBwQZWhKEfAzUab
- DWZOyCb12E3ah0MWNAofuL6tOjqoClMeDm8BG+sLCIXxq2xKeHWW8d0qrk3InY9uUwxd
- gbBgM5NwxYFQywc1uUGfkC85hDp/ANgL4gYSQvestjpkSAxCNvmoRvnugMyDuO/ZcILl
- TiEtXkhJxH4Nf8rb0pdpL2CBSCECkeBSlx7ojTblApewxZlXHYyZXIcDRcSPheH1KJd4
- msfA==
-X-Gm-Message-State: APjAAAXCChrzpCzRbk83wodjf2IxeZcXgeB5KuqLktaJgGZqZE4SNVcZ
- D4oMn6GzlBjinjrmdngBDv5GvaSgCsA7JGZ7mDk=
-X-Google-Smtp-Source: APXvYqy07NlVOWiPJc5VipU5GItcVxjI3NfPurtTfcV1/BbuNAzDvNqFIzyT1G8w73R1bNCrsmSc+6PwKLYbSE5QM+8=
-X-Received: by 2002:a37:4b0d:: with SMTP id y13mr39385271qka.3.1567610831069; 
- Wed, 04 Sep 2019 08:27:11 -0700 (PDT)
+ bh=Vcv2kx9szvF+nS0Klj5vVjUOMGNPX4cQA7OvUE3mRZ0=;
+ b=pNfSKyz/PlOwGeqoAEFgpwUgcreMj5fke1ZJeW6kIPMqMeglbrJ2RfYRtyyZ8KMqWN
+ mXSafZR1B0mlH4KanYCI6+zJ9vzyXsQLu6MoTn8PtuWyU9zKlNpFCaUfeGrjhAzlAFU1
+ IHsNnMFyibi38OISBrh15yLStX9DS08LSi76R9bVmH2YyNp2VzN911hk0ZE8nowayr18
+ AeF958gmBW3SoVFIlTvEl9nksp0fppmihzUJWhSkg0j+4B0Lv7yA8SqpCA82tkngTQ3H
+ KmP+FOKVYtdHRV/LDJwLJszdjkWH6Dzu9sU9Oul1Hpa76+9QQhbNKf1vtDZ9C3QsHtUp
+ XVDw==
+X-Gm-Message-State: APjAAAUvFWFi2J4YgM5tvn7Jq8vFb4Zy1jqOl3kLy1D9nRKkZceUOaE9
+ 3y+JzIdRYHTv72W8adPW7T/TDXj4vr/qJkWAOvY=
+X-Google-Smtp-Source: APXvYqzydUUKuJ5DVQS4diifJxc8cj8YCum9qVe0SiQwumrEIlNAdmZQK21a8Qit1myHZqfxCqbDTkb40XKK8Ir0ELQ=
+X-Received: by 2002:aed:2842:: with SMTP id r60mr30298236qtd.142.1567610851770; 
+ Wed, 04 Sep 2019 08:27:31 -0700 (PDT)
 MIME-Version: 1.0
 References: <pull-1567016893-318461@atomide.com>
- <pull-1567016893-318461@atomide.com-2>
-In-Reply-To: <pull-1567016893-318461@atomide.com-2>
+ <pull-1567016893-318461@atomide.com-3>
+In-Reply-To: <pull-1567016893-318461@atomide.com-3>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Wed, 4 Sep 2019 17:26:55 +0200
-Message-ID: <CAK8P3a27NB+8cz=dF5nSL_bACV5HDuUZLoZFUEvjjs7M6Oqm5g@mail.gmail.com>
-Subject: Re: [GIT PULL 2/4] more ti-sysc driver changes for v5.4
+Date: Wed, 4 Sep 2019 17:27:15 +0200
+Message-ID: <CAK8P3a1C_OEPwrf-vdEmns5f87GN6dtsoda_WVmZAxEvLfFiDw@mail.gmail.com>
+Subject: Re: [GIT PULL 3/4] drop more legacy pdata for omaps for v5.4
 To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_082711_969437_815EED8D 
-X-CRM114-Status: UNSURE (   8.01  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190904_082732_655440_AC8A8CF7 
+X-CRM114-Status: GOOD (  12.36  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.195 listed in list.dnswl.org]
+ no trust [209.85.160.194 listed in list.dnswl.org]
  0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.195 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -92,12 +92,28 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Wed, Aug 28, 2019 at 8:35 PM Tony Lindgren <tony@atomide.com> wrote:
-> more ti-sysc driver changes for omap variants for v5.4
+> Drop legacy platform data omap variants for v5.4
 >
-> Few changes mostly to deal with sgx SoC glue quirk for omap36xx that
-> is needed for the related sgx SoC glue dts branch. The other changes
-> are to simplify sysc_check_one_child() sysc_check_children() to be void
-> functions, and detect d2d module when debugging is enabled.
+> We can now drop more platform data in favor of dts data for most
+> devices like cpsw, gpio, i2c, mmc, uart and watchdog.
+>
+> In general we can do this by dropping legacy "ti,hwmods" custom dts
+> property, and the platform data assuming the related dts data is correct.
+> This is best done as single patch as otherwise we'd have to revert two
+> patches in case of any unexpected issues, and we're just removing data.
+>
+> Fro cpsw, before we can do this, we need to configure the cpsw mdio clocks
+> properly in dts though in the first patch. For omap4 i2c, we've already
+> dropped the platform data earlier, but have been still allocting it
+> dynamically based on the dts data based on the "ti,hwmods" property, but
+> that is no longer needed. For d2d, we are missing the dts data, so we
+> first add it and then drop the platform data.
+>
+> For dra7, we drop platform data and "ti,hwmods" for mcasp and mcspi.
+> We've already dropped platform data earlier for gpio, i2c, mmc, and
+> uart so we just need to drop "ti,hwmods" property for those.
+>
+> Note that this branch is based on earlier ti-sysc-fixes branch.
 
 Pulled into arm/late, thanks!
 
