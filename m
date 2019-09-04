@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 72076A871A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:51:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7CF9A871C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 19:52:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,44 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=zOQ8ejsExIk2rPj33k7Fsj5uXF9+5HHm5V+S+vbngRw=; b=JrbenazoLeN/VtVPDcdq/0XtpC
-	exuvKvPgI28g2s/+Oduv/7TsLgBYXIAdzKl8oH/K0Z7cKayk/RR8n0JFmJKXl5qNZheJhU8kYEtME
-	Ya53XOAOegdUY8XqMqxgsPP8aCK2j/7kduOEILMl7UXoxqh0LkeqattDU994btdGeLxk0tYWcira3
-	hvwiqX31CWMF7zlInBKdYGuqbs6lEtum8elaCfer3fIkAdVkywBpPQQL52HqQayryGQjJ+xxKF5IF
-	7tfXWBJU0I8mVnCHmlXmlz6OoRsGlIws+TTcOhFua9iJiD+FDVtP2w8MGf4vRYIgH76wzKHvkhoup
-	cZWvbF4Q==;
+	bh=12zDVCyq7B7WGBRxkuRipuVPUpI99lSYMLDvp0R9evE=; b=ELKYA+ofE2Q5Vw42oPfxnr7CIW
+	oDUU1BlseoMiHV9aqlMuhKjoLGjmyD2OJ27999hZmgdlF5uHH6uYNjsT2mk0D+RIWi8CBu1ymbhdY
+	YeqQE599E9dpz6tisRGcXFGtc4IncRJ1wwv4omnyQ27jg39IYpH5LDZvPgmt+WuAlb4OAYm1TLpEQ
+	olJ56XPaVdiy5tQiMUEy6VDdErZtzN1WQjl+jOHmRX6KRSQogCBbWVSmxjUUxsCNEwTETQ71OFixh
+	hQtuWEq5UYuiu+hBMm/eN8KsMb4dr73eh7iwTNPmj2YBy+Efs5Ndt6i9z4cDtrTbzxI53pynhzhFV
+	z4COvfdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ZR9-0008UO-Om; Wed, 04 Sep 2019 17:51:19 +0000
+	id 1i5ZRj-0000a9-7c; Wed, 04 Sep 2019 17:51:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ZQM-0007tH-Gs
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:50:31 +0000
+ id 1i5ZQa-00086j-Kc
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 17:50:46 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 506182341C;
- Wed,  4 Sep 2019 17:50:27 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id D141822CF5;
+ Wed,  4 Sep 2019 17:50:40 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567619430;
- bh=/GY26QI0Q0gbFhW694JTrgCRqeBhXVLVrh3+/U5tGno=;
+ s=default; t=1567619444;
+ bh=dmMtaj2IuiH+soAyGM2V76pUf5Ba7PXTyw4+f3zhu7A=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=JOhBFOWIey4Drc9rZPVC+o62tCPCxqHoVj6GJHZtsfCnwHNk5BCb+EHO2TNXK0+zJ
- TXDRpNw0ty7EGkclyMM57hCyIxo1tX4Xw+S4STTmpEEv/50wnDw0uGd6Gtl6rmj75M
- z5ob51MShXEKNqS7yJ+1Cfw7dpPRmiP9wnUH6P6E=
+ b=g1DuSOCftqEKkSVTzgbcwEnVibt+Fndbcf8eUfBbr1indNdBJRyEHpDURm6ip6N32
+ IsrBsiHfgtF90bjkfn4ePUE2ftK3+N6n+f0zgg59GeFppRSgL522w6tFPd3jhN2/P9
+ IF+FPAz0nbWb120BSrzmj0WB+9L2j2tyoVUZC9EQ=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL 4/5] ARM: samsung: mach for v5.4,
- second (replacing previous)
-Date: Wed,  4 Sep 2019 19:50:01 +0200
-Message-Id: <20190904175002.10487-5-krzk@kernel.org>
+Subject: [PATCH 5/5] arm64: exynos: Enable exynos-chipid driver
+Date: Wed,  4 Sep 2019 19:50:02 +0200
+Message-Id: <20190904175002.10487-6-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190904175002.10487-1-krzk@kernel.org>
 References: <20190904175002.10487-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_105030_596238_C31C6A68 
-X-CRM114-Status: GOOD (  12.82  )
+X-CRM114-CacheID: sfid-20190904_105044_849924_3980C33E 
+X-CRM114-Status: GOOD (  10.38  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,64 +76,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, Kukjin Kim <kgene@kernel.org>,
- linux-arm-kernel@lists.infradead.org, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-kernel@vger.kernel.org
+Cc: linux-samsung-soc@vger.kernel.org,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>,
+ Pankaj Dubey <pankaj.dubey@samsung.com>, linux-kernel@vger.kernel.org,
+ Krzysztof Kozlowski <krzk@kernel.org>, Kukjin Kim <kgene@kernel.org>,
+ Sylwester Nawrocki <s.nawrocki@samsung.com>,
+ linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+From: Pankaj Dubey <pankaj.dubey@samsung.com>
 
-Replaces previous pull (and it includes it).
+Enable Exynos Chipid driver for accessing SoC related information.
 
-Best regards,
-Krzysztof
+Signed-off-by: Pankaj Dubey <pankaj.dubey@samsung.com>
+Signed-off-by: Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Signed-off-by: Sylwester Nawrocki <s.nawrocki@samsung.com>
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ arch/arm64/Kconfig.platforms | 1 +
+ 1 file changed, 1 insertion(+)
 
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 4778c775de1b..8a098fb4f04c 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -77,6 +77,7 @@ config ARCH_BRCMSTB
+ config ARCH_EXYNOS
+ 	bool "ARMv8 based Samsung Exynos SoC family"
+ 	select COMMON_CLK_SAMSUNG
++	select EXYNOS_CHIPID
+ 	select EXYNOS_PM_DOMAINS if PM_GENERIC_DOMAINS
+ 	select EXYNOS_PMU
+ 	select HAVE_S3C2410_WATCHDOG if WATCHDOG
+-- 
+2.17.1
 
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
-
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
-
-are available in the Git repository at:
-
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.4-2
-
-for you to fetch changes up to c663d542bfb40eeeb6d393ed155c23a4666d65e1:
-
-  MAINTAINERS: Extend patterns for Samsung SoC, Security Subsystem and clock drivers (2019-08-22 21:04:45 +0200)
-
-----------------------------------------------------------------
-Samsung mach/soc changes for v5.4
-
-1. Minor fixup in plat and mach code (S3C platforms),
-2. Enable exynos-chipid driver to provide SoC related information,
-3. Extend the patterns for Samsung maintainer entries to cover all
-   important files.
-
-----------------------------------------------------------------
-Krzysztof Kozlowski (1):
-      MAINTAINERS: Extend patterns for Samsung SoC, Security Subsystem and clock drivers
-
-Linus Walleij (1):
-      ARM: samsung: Include GPIO driver header
-
-Masahiro Yamada (1):
-      ARM: s3c64xx: squash samsung_usb_phy.h into setup-usb-phy.c
-
-Pankaj Dubey (1):
-      ARM: exynos: Enable exynos-chipid driver
-
- MAINTAINERS                                    |  9 +++++++--
- arch/arm/mach-exynos/Kconfig                   |  1 +
- arch/arm/mach-s3c64xx/setup-usb-phy.c          |  5 +++++
- arch/arm/plat-samsung/include/plat/gpio-core.h |  1 +
- arch/arm/plat-samsung/include/plat/usb-phy.h   |  2 --
- include/linux/usb/samsung_usb_phy.h            | 17 -----------------
- 6 files changed, 14 insertions(+), 21 deletions(-)
- delete mode 100644 include/linux/usb/samsung_usb_phy.h
 
 _______________________________________________
 linux-arm-kernel mailing list
