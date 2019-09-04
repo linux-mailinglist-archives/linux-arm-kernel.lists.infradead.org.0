@@ -2,76 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35AEEA8399
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:20:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6419A83AB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 15:21:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=cA3vx1JVIQN607S5DiIJr/QuN6d26s0k23JGKB2Fppc=; b=KxFQA2DOtHiAKQJmL7+TkpF35B
-	7t/kXqueiy/B7MJY+oi5vIDznD2n3u3EQBmUo1h4jr5TWYz9i/QH5pQpX+GMBl/TeWyJfgdoNGhYm
-	WR+aJEfqpld9zV+yT09WDtUFyj0+QYIdVMJFWB+YNtD8JDEE6prB7g1O1V/TJDb82MNFQ6aMj5YPo
-	v+3+qanZ2/GJouMitfc/QZ3ESvqy/wWZRCGECXpPnVmcCUbp/Vpk2o5HiSNqM0vLa02HxX5oEkLic
-	9zXdFmziC6FAlXx4046yZ4MKR8pM6CdliYgjBKO0vv+cHXuMNStXetZCJ1OOg2jtVyx4fP4jvbe10
-	ZD95c1yQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+sA96iIOo/olnQgu4pWLXVDPrB4D4H5A38MIJhGWu/I=; b=sKr4xTt6jWkzhO
+	T9B8mCQ598oIOCBZoiDLdPjlKXUabt50xsHogs5g69XRWIB+flUev6QUdvXIAavXVMkK5x84tNEvg
+	Fviq46/cp1Jw0yO+VrKKAKQbYzWn03GjiAdfvJIYzbIwCMHvqHpu3JlZJlWoa0sYnEEqOGX/7y7ln
+	lB8GA9if+TJC/SoTMIvfv6pMxiv3AUzU4U5XEMx4LMdcD6a0fEpiodldE2X5aHwtr9gJSyyhlkdXn
+	Z64CtCoXp4GU4jT38HmWGElJwX5HqOCEJAMjZiwxVixn+HCy3ZiX6fp8l3TSapDBXRw3dOyg80M+R
+	K/W/mTc6TWsTpN9B8R+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5VCh-0003Mb-Pz; Wed, 04 Sep 2019 13:20:07 +0000
-Received: from smtprelay-out1.synopsys.com ([198.182.61.142])
+	id 1i5VDt-0005kj-5s; Wed, 04 Sep 2019 13:21:21 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5V9w-0000vr-1F
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 13:17:21 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id CA20FC5745;
- Wed,  4 Sep 2019 13:17:13 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567603034; bh=scWvzQE4ZSPNbjbSRD8IT41dV8MdQ8VoTEbzd5Kbcd8=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=Qh8J64uZhzKbpDl+M4PPCqIn9usZuhEZzunRnc089tKj/Ketyu+V8W9KbRm3cthCP
- o+ylq+nJZ0KcUhjMnRH6wBqqSVnSE0dw0YmDQCh4io+peYvMMj6JFBxO4jiyUz6dT6
- q04K209yQIl5Zugb9OUTMVfcCOai0X0zBqUJsUcphCRSCdCYW5hiOu4tQxc3GgjIFJ
- TiooGH9d8cXOGWLvlXkNPtGghyOl4qejwx/KDmFp/5Do36oUJhyktMCTqZmh50po+8
- EA/tzENVFOzuKNEvdatiyqO4hCFeaCBE6/FNCdJS0LWK05jorlA3qRblxGDbl1nGUy
- 9lxszHdpFxWxA==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 87C58A0075;
- Wed,  4 Sep 2019 13:17:12 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH v2 net-next 07/13] net: stmmac: selftests: Implement the ARP
- Offload test
-Date: Wed,  4 Sep 2019 15:16:59 +0200
-Message-Id: <083b6a403678be95230d57af606dfc9eaa579fb2.1567602868.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1567602867.git.joabreu@synopsys.com>
-References: <cover.1567602867.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1567602867.git.joabreu@synopsys.com>
-References: <cover.1567602867.git.joabreu@synopsys.com>
+ id 1i5VBm-0002jh-69; Wed, 04 Sep 2019 13:19:12 +0000
+X-UUID: 7263d8b8fe7f4b03b30bd141dbace133-20190904
+X-UUID: 7263d8b8fe7f4b03b30bd141dbace133-20190904
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <jerry-ch.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 715792008; Wed, 04 Sep 2019 05:19:05 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 06:19:03 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 21:19:02 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Wed, 4 Sep 2019 21:19:02 +0800
+Message-ID: <1567603143.22453.27.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Wed, 4 Sep 2019 21:19:03 +0800
+In-Reply-To: <CAAFQd5Ckz9qH7AnLNM4HRTM2gJQP1HXRS09+o6Prf++D1PQhng@mail.gmail.com>
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org>
+ <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+ <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+ <1567424859.18318.32.camel@mtksdccf07>
+ <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+ <1567493081.18318.49.camel@mtksdccf07>
+ <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
+ <1567511169.18318.65.camel@mtksdccf07>
+ <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
+ <1567568281.18318.80.camel@mtksdccf07>
+ <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
+ <1567577389.18318.100.camel@mtksdccf07>
+ <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
+ <1567584577.22453.11.camel@mtksdccf07>
+ <CAAFQd5Dzxy10g-MKHMnNbVO6kp9_L_jm1m+gtN+p=YF2LyBiag@mail.gmail.com>
+ <1567587708.22453.15.camel@mtksdccf07>
+ <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
+ <1567589188.22453.24.camel@mtksdccf07>
+ <CAAFQd5Ckz9qH7AnLNM4HRTM2gJQP1HXRS09+o6Prf++D1PQhng@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_061716_091453_90233857 
-X-CRM114-Status: GOOD (  13.91  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_061910_299183_CF9847DB 
+X-CRM114-Status: GOOD (  21.30  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,173 +92,185 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
+ <po-yang.huang@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>, Sj
+ Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement a test for ARP Offload feature.
+On Wed, 2019-09-04 at 21:12 +0800, Tomasz Figa wrote:
+> On Wed, Sep 4, 2019 at 6:26 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> >
+> > Hi Tomasz,
+> >
+> > On Wed, 2019-09-04 at 17:03 +0800, Tomasz Figa wrote:
+> > > On Wed, Sep 4, 2019 at 6:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > >
+> > > > Hi Tomasz,
+> > > >
+> > > > On Wed, 2019-09-04 at 16:25 +0800, Tomasz Figa wrote:
+> > > > > On Wed, Sep 4, 2019 at 5:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > >
+> > > > > > Hi Tomasz,
+> > > > > >
+> > > > > > On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
+> > > > > > > On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > >
+> > > > > > > > Hi Tomasz,
+> > > > > > > >
+> > > > > > > > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
+> > > > > > > > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
+> > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > >
+> > > > > > > > > > Hi Tomasz,
+> > > > > > > > > >
+> > > > > > > > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > >
+> > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > >
+> > > > > > > > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > >
+> > > > > > > > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+> > [snip]
+> > > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > {
+> > > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > >         struct vb2_v4l2_buffer *vb;
+> > > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > > > >         u32 ret;
+> > > > > >
+> > > > > >         if (!fd->fd_irq_done.done)
+> > > > >
+> > > > > We shouldn't access internal fields of completion.
+> > > > >
+> > > > > >                 ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> > > > > >                                                   msecs_to_jiffies(
+> > > > > >                                                         MTK_FD_HW_TIMEOUT));
+> > > > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> > > > > >                                         &m2m_ctx->out_q_ctx :
+> > > > > >                                         &m2m_ctx->cap_q_ctx;
+> > > > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> > > > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> > > > > >
+> > > > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> > > > > >                 mtk_fd_hw_disconnect(fd);
+> > > > > > }
+> > > > > >
+> > > > > > I've also tried to wait completion unconditionally for both queues and
+> > > > > > the second time will wait until timeout, as a result, it takes longer to
+> > > > > > swap the camera every time and close the camera app.
+> > > > >
+> > > > > I think it should work better if we call complete_all() instead of complete().
+> > > > >
+> > > > Thanks,
+> > > >
+> > > > I use complete_all(), and it works fine now.
+> > > >
+> > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > {
+> > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > >         struct vb2_v4l2_buffer *vb;
+> > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > >
+> > > >         wait_for_completion_timeout(&fd->fd_irq_done,
+> > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> > >
+> > > Shouldn't we still send some command to the hardware to stop? Like a
+> > > reset. Otherwise we don't know if it isn't still accessing the memory.
+> > >
+> > I thought no more jobs will be enqueued here when stop_streaming so we
+> > don't need it.
+> 
+> That's true for the case when the wait completed successfully, but we
+> also need to ensure the hardware is stopped even if a timeout happens.
+> 
+> > We still could send an ipi command to reset the HW, and wait for it's
+> > callback or we could set the register MTK_FD_REG_OFFSET_HW_ENABLE to
+> > zero to disable the HW.
+> 
+> Since it's for handling a timeout, a reset should be more likely to
+> bring the hardware back to a reasonable state.
+> 
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
+Ok, I will send the ipi command to reset the HW.
 
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 110 +++++++++++++++++++++
- 1 file changed, 110 insertions(+)
+Thanks and best regards,
+Jerry
+> >
+> > Best regards,
+> > Jerry
+> >
+> > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> > > >                                         &m2m_ctx->out_q_ctx :
+> > > >                                         &m2m_ctx->cap_q_ctx;
+> > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> > > >
+> > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> > > >                 mtk_fd_hw_disconnect(fd);
+> > > > }
+> > > >
+> > > > Best regards,
+> > > > Jerry
+> > > >
+> > > > > Best regards,
+> > > > > Tomasz
+> > > >
+> > > >
+> >
+> >
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 36f74ee95295..8446b414b44d 100644
---- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -196,6 +196,24 @@ static struct sk_buff *stmmac_test_get_udp_skb(struct stmmac_priv *priv,
- 	return skb;
- }
- 
-+static struct sk_buff *stmmac_test_get_arp_skb(struct stmmac_priv *priv,
-+					       struct stmmac_packet_attrs *attr)
-+{
-+	__be32 ip_src = htonl(attr->ip_src);
-+	__be32 ip_dst = htonl(attr->ip_dst);
-+	struct sk_buff *skb = NULL;
-+
-+	skb = arp_create(ARPOP_REQUEST, ETH_P_ARP, ip_dst, priv->dev, ip_src,
-+			 NULL, attr->src, attr->dst);
-+	if (!skb)
-+		return NULL;
-+
-+	skb->pkt_type = PACKET_HOST;
-+	skb->dev = priv->dev;
-+
-+	return skb;
-+}
-+
- struct stmmac_test_priv {
- 	struct stmmac_packet_attrs *packet;
- 	struct packet_type pt;
-@@ -1428,6 +1446,94 @@ static int stmmac_test_l4filt_sa_udp(struct stmmac_priv *priv)
- 	return __stmmac_test_l4filt(priv, 0, dummy_port, 0, ~0, true);
- }
- 
-+static int stmmac_test_arp_validate(struct sk_buff *skb,
-+				    struct net_device *ndev,
-+				    struct packet_type *pt,
-+				    struct net_device *orig_ndev)
-+{
-+	struct stmmac_test_priv *tpriv = pt->af_packet_priv;
-+	struct ethhdr *ehdr;
-+	struct arphdr *ahdr;
-+
-+	ehdr = (struct ethhdr *)skb_mac_header(skb);
-+	if (!ether_addr_equal(ehdr->h_dest, tpriv->packet->src))
-+		goto out;
-+
-+	ahdr = arp_hdr(skb);
-+	if (ahdr->ar_op != htons(ARPOP_REPLY))
-+		goto out;
-+
-+	tpriv->ok = true;
-+	complete(&tpriv->comp);
-+out:
-+	kfree_skb(skb);
-+	return 0;
-+}
-+
-+static int stmmac_test_arpoffload(struct stmmac_priv *priv)
-+{
-+	unsigned char src[ETH_ALEN] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06};
-+	unsigned char dst[ETH_ALEN] = {0xff, 0xff, 0xff, 0xff, 0xff, 0xff};
-+	struct stmmac_packet_attrs attr = { };
-+	struct stmmac_test_priv *tpriv;
-+	struct sk_buff *skb = NULL;
-+	u32 ip_addr = 0xdeadcafe;
-+	u32 ip_src = 0xdeadbeef;
-+	int ret;
-+
-+	if (!priv->dma_cap.arpoffsel)
-+		return -EOPNOTSUPP;
-+
-+	tpriv = kzalloc(sizeof(*tpriv), GFP_KERNEL);
-+	if (!tpriv)
-+		return -ENOMEM;
-+
-+	tpriv->ok = false;
-+	init_completion(&tpriv->comp);
-+
-+	tpriv->pt.type = htons(ETH_P_ARP);
-+	tpriv->pt.func = stmmac_test_arp_validate;
-+	tpriv->pt.dev = priv->dev;
-+	tpriv->pt.af_packet_priv = tpriv;
-+	tpriv->packet = &attr;
-+	dev_add_pack(&tpriv->pt);
-+
-+	attr.src = src;
-+	attr.ip_src = ip_src;
-+	attr.dst = dst;
-+	attr.ip_dst = ip_addr;
-+
-+	skb = stmmac_test_get_arp_skb(priv, &attr);
-+	if (!skb) {
-+		ret = -ENOMEM;
-+		goto cleanup;
-+	}
-+
-+	ret = stmmac_set_arp_offload(priv, priv->hw, true, ip_addr);
-+	if (ret)
-+		goto cleanup;
-+
-+	ret = dev_set_promiscuity(priv->dev, 1);
-+	if (ret)
-+		goto cleanup;
-+
-+	skb_set_queue_mapping(skb, 0);
-+	ret = dev_queue_xmit(skb);
-+	if (ret)
-+		goto cleanup_promisc;
-+
-+	wait_for_completion_timeout(&tpriv->comp, STMMAC_LB_TIMEOUT);
-+	ret = tpriv->ok ? 0 : -ETIMEDOUT;
-+
-+cleanup_promisc:
-+	dev_set_promiscuity(priv->dev, -1);
-+cleanup:
-+	stmmac_set_arp_offload(priv, priv->hw, false, 0x0);
-+	dev_remove_pack(&tpriv->pt);
-+	kfree(tpriv);
-+	return ret;
-+}
-+
- #define STMMAC_LOOPBACK_NONE	0
- #define STMMAC_LOOPBACK_MAC	1
- #define STMMAC_LOOPBACK_PHY	2
-@@ -1537,6 +1643,10 @@ static const struct stmmac_test {
- 		.name = "L4 SA UDP Filtering ",
- 		.lb = STMMAC_LOOPBACK_PHY,
- 		.fn = stmmac_test_l4filt_sa_udp,
-+	}, {
-+		.name = "ARP Offload         ",
-+		.lb = STMMAC_LOOPBACK_PHY,
-+		.fn = stmmac_test_arpoffload,
- 	},
- };
- 
--- 
-2.7.4
 
 
 _______________________________________________
