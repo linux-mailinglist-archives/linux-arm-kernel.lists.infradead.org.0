@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23B86A864B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 18:01:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD72EA864D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 18:01:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=mIuvWf47aHyLcpnyHENZ0N8FSpMB9akgpdVMuKZNT/A=; b=I9NON1YwPQT/I+
-	ZtIzgVIo+jgqw290lX4rAa3Qbz+WBJj/c0I8AJYtw7GNzQi7PH2ud1Loe0mDPMkN9fDwk5PJYgXSc
-	PRouDoOjJNdT5E/OcNaGJEMw//+NTj+gVaSP1FL2JmVfTsTtlZA9WDxD4aVPB7amFuUqmyWUAvJZl
-	9fOwi5JLbO1FLCepOycr0PQKKBpozX1TWQR7dPCYwG4MBwqU9DyI/UNJ98hKm0b7Mrsw34Cgr2tqL
-	WzoiOVi3I2cBm8zapTqoTrCv7rdvQzj47EMelkBBdpOTjgundjsNOwTJnIG1XoNqQd3QinCIHJT/b
-	A+/V43lVqhutkoj2n7AQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=LfeX0B1TamLPr/ND1klEj3VJ5Tp6Y/d4xa/aIpwKvUE=; b=khbwTXO5wd6E2P
+	VEI6eLE5iYPb0vBK0Wg/AhSUzbI4jfNCBrnktH18ndb3Ivkux3xMx1AWi+7MNDhW1/egOVwJ3bPfs
+	b/+PgDPqPj5Nfy4+bXtsTT+fLpPEOYOCBwK4qddhTz2qYbyJ/LLAIfbLkKzZ/edp7IPl6y7nfWTkm
+	nlaMniww2GuAWNNphrqEePk3cZcM0XR8tUv3naoRKyWe8PCXVto4KHwA+DGUMJxl3ZgRNpK5h+i8W
+	APLTwA4aEgwcDFBqi5f5bpWe1fF63qotstQzLj9Phb5oeNjgEGtEk6BFBYihXLQ8SPPO3BawLJQR4
+	H7PDx4akr7OmVLEvYG2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5XiS-000300-44; Wed, 04 Sep 2019 16:01:04 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5XiE-0002z5-SM
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 16:00:52 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue109 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MryKp-1iYq7A0YsP-00o0MA; Wed, 04 Sep 2019 18:00:41 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Shawn Guo <shawnguo@kernel.org>,
-	Sascha Hauer <s.hauer@pengutronix.de>
-Subject: [PATCH] bus: imx-weim: remove incorrect __init annotations
-Date: Wed,  4 Sep 2019 18:00:21 +0200
-Message-Id: <20190904160039.3350229-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+	id 1i5Xis-0003J4-Kl; Wed, 04 Sep 2019 16:01:30 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Xid-0003IT-9P
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 16:01:16 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F5CB28;
+ Wed,  4 Sep 2019 09:01:14 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9042B3F246;
+ Wed,  4 Sep 2019 09:01:12 -0700 (PDT)
+Subject: Re: [PATCH v4 10/10] arm64: Retrieve stolen time as paravirtualized
+ guest
+To: Andrew Jones <drjones@redhat.com>
+References: <20190830084255.55113-1-steven.price@arm.com>
+ <20190830084255.55113-11-steven.price@arm.com>
+ <20190903084703.hwpelmr7fikb32nj@kamzik.brq.redhat.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <329fa72e-5c92-602e-a010-2083366221d1@arm.com>
+Date: Wed, 4 Sep 2019 17:01:11 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:edSQpPbQz2i0QyQuA+gpW63iqvRaqDAQVKOzJ3suKf+nyFqMcMI
- RKLBf7wmMBsX3B6VL98jLw9HvRgEXOWqAn0lir9QaQkdbIqWjGOdCwOzCesPsKPDZpAPytU
- Clh0eqK029q8ih2vNOnoAQcxDdYCdoX9GBgduNipzMpBvbnC+VHkNDTahUYu0rgxX8Hic0R
- SlBCpbELBaATcVxUwqyPg==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:/BMWc4WL1IA=:UQx49a3M/46yAIqufq86VM
- 21sdTV7pJuWwJq7AbtHv9HfmlMBrqz8vmUsYWa39y97opPHXoyc1sIXe97gV0XC/kGnKj+Nd1
- Tt/oIBVkzFJ4LMbmMpntZdjy/pJiN1CfmTv1McQjMJdiFfZ2hpuk/6vNEEkVChe8MbHabbQ7V
- t8uH+4XMeyvvUkYoih/aDjRlXcsMwnHuu7boacviY0LDxIcAs7Umgb19jGciq+vemPjpfeOHR
- XbygfneBE2EpgJ2g3HZpqmA9zV1ouaUo4egHuag854s/+a+fxsYtaA5/pROTuEDTW5hq42gZy
- 7tU3hYKuirDFCj3hRlcRMavDS7JTPi631dG7krtkUwds1iH9heTV7C6aAoFifpBpPJ9uHVrmT
- jqTp9kjYaUfnLpTbf29yLKXksB7vxKPWYa+YKyBaw7UpZJxpZ1VCbVEZd/xC3/1vI6IZFpnEs
- P4u4Fmj4wBTfC0BTmXuicKjIEZkCUnhgK6Ly6rYQFf2lX8zkoENzntEx9yPbpyDbOB5fnizXv
- oSPM1o30Cv2Cu7bDnicaflr7Etgh6CWuEdmrEsn1C03dRvsIawfFuB3t15y48Sxa8tmHartHF
- 66RgCYPZZfNMhFNslVM9pK4Z4UgNHkFujrxCXdY9X2m4XhklZTRwc0CQCo8q6s0LLHH8sL77R
- CzckQD7lBVVuh8YqsM0HwQO+gdwTsYe8B0glWp8SjiGMh5wsjT3lGufB28kVHNOEDnmh+Vg13
- jLbk+CBHS6AgfQmVIClUAseuUJ2m54DCWQ/uBYAkSgE5MqLLPZQmJkr8nsIVdApZj1WHBvv2B
- 828SZegT19VN2u1ywaaOouOFK8e+gX21cMHH44rYiESsKjdsCg=
+In-Reply-To: <20190903084703.hwpelmr7fikb32nj@kamzik.brq.redhat.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_090051_211362_4262519D 
-X-CRM114-Status: GOOD (  12.92  )
+X-CRM114-CacheID: sfid-20190904_090115_419373_2D862F8D 
+X-CRM114-Status: GOOD (  18.29  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,72 +64,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Herring <robh@kernel.org>, Arnd Bergmann <arnd@arndb.de>,
- Sven Van Asbroeck <thesven73@gmail.com>, linux-kernel@vger.kernel.org,
- clang-built-linux@googlegroups.com, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, kvm@vger.kernel.org,
+ =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?= <rkrcmar@redhat.com>,
+ Marc Zyngier <maz@kernel.org>, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ linux-doc@vger.kernel.org, Russell King <linux@armlinux.org.uk>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ Will Deacon <will@kernel.org>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The probe function is no longer __init, so anything it calls now
-must also be available at runtime, as Kbuild points out when building
-with clang-9:
+On 03/09/2019 09:47, Andrew Jones wrote:
+> On Fri, Aug 30, 2019 at 09:42:55AM +0100, Steven Price wrote:
+>> Enable paravirtualization features when running under a hypervisor
+>> supporting the PV_TIME_ST hypercall.
+>>
+>> For each (v)CPU, we ask the hypervisor for the location of a shared
+>> page which the hypervisor will use to report stolen time to us. We set
+>> pv_time_ops to the stolen time function which simply reads the stolen
+>> value from the shared page for a VCPU. We guarantee single-copy
+>> atomicity using READ_ONCE which means we can also read the stolen
+>> time for another VCPU than the currently running one while it is
+>> potentially being updated by the hypervisor.
+>>
+>> Signed-off-by: Steven Price <steven.price@arm.com>
+>> ---
+>>  arch/arm64/include/asm/paravirt.h |   9 +-
+>>  arch/arm64/kernel/paravirt.c      | 148 ++++++++++++++++++++++++++++++
+>>  arch/arm64/kernel/time.c          |   3 +
+>>  include/linux/cpuhotplug.h        |   1 +
+>>  4 files changed, 160 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/arch/arm64/include/asm/paravirt.h b/arch/arm64/include/asm/paravirt.h
+>> index 799d9dd6f7cc..125c26c42902 100644
+>> --- a/arch/arm64/include/asm/paravirt.h
+>> +++ b/arch/arm64/include/asm/paravirt.h
+>> @@ -21,6 +21,13 @@ static inline u64 paravirt_steal_clock(int cpu)
+>>  {
+>>  	return pv_ops.time.steal_clock(cpu);
+>>  }
+>> -#endif
+>> +
+>> +int __init kvm_guest_init(void);
+>> +
+>> +#else
+>> +
+>> +#define kvm_guest_init()
+>> +
+>> +#endif // CONFIG_PARAVIRT
+>>  
+>>  #endif
+>> diff --git a/arch/arm64/kernel/paravirt.c b/arch/arm64/kernel/paravirt.c
+>> index 4cfed91fe256..5bf3be7ccf7e 100644
+>> --- a/arch/arm64/kernel/paravirt.c
+>> +++ b/arch/arm64/kernel/paravirt.c
+>> @@ -6,13 +6,161 @@
+>>   * Author: Stefano Stabellini <stefano.stabellini@eu.citrix.com>
+>>   */
+>>  
+>> +#define pr_fmt(fmt) "kvmarm-pv: " fmt
+>> +
+>> +#include <linux/arm-smccc.h>
+>> +#include <linux/cpuhotplug.h>
+>>  #include <linux/export.h>
+>> +#include <linux/io.h>
+>>  #include <linux/jump_label.h>
+>> +#include <linux/printk.h>
+>> +#include <linux/psci.h>
+>> +#include <linux/reboot.h>
+>> +#include <linux/slab.h>
+>>  #include <linux/types.h>
+>> +
+>>  #include <asm/paravirt.h>
+>> +#include <asm/pvclock-abi.h>
+>> +#include <asm/smp_plat.h>
+>>  
+>>  struct static_key paravirt_steal_enabled;
+>>  struct static_key paravirt_steal_rq_enabled;
+>>  
+>>  struct paravirt_patch_template pv_ops;
+>>  EXPORT_SYMBOL_GPL(pv_ops);
+>> +
+>> +struct kvmarm_stolen_time_region {
+>> +	struct pvclock_vcpu_stolen_time *kaddr;
+>> +};
+>> +
+>> +static DEFINE_PER_CPU(struct kvmarm_stolen_time_region, stolen_time_region);
+>> +
+>> +static bool steal_acc = true;
+>> +static int __init parse_no_stealacc(char *arg)
+>> +{
+>> +	steal_acc = false;
+>> +	return 0;
+>> +}
+>> +
+>> +early_param("no-steal-acc", parse_no_stealacc);
+> 
+> Need to also add an 'ARM64' to the
+> Documentation/admin-guide/kernel-parameters.txt entry for this.
 
-WARNING: vmlinux.o(.text+0x6e7040): Section mismatch in reference from the function weim_probe() to the function .init.text:imx_weim_gpr_setup()
-The function weim_probe() references
-the function __init imx_weim_gpr_setup().
-This is often because weim_probe lacks a __init
-annotation or the annotation of imx_weim_gpr_setup is wrong.
+Good point, thanks for the pointer.
 
-WARNING: vmlinux.o(.text+0x6e70f0): Section mismatch in reference from the function weim_probe() to the function .init.text:weim_timing_setup()
-The function weim_probe() references
-the function __init weim_timing_setup().
-This is often because weim_probe lacks a __init
-annotation or the annotation of weim_timing_setup is wrong.
-
-Remove the remaining __init markings that are now wrong.
-
-Fixes: 4a92f07816ba ("bus: imx-weim: use module_platform_driver()")
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
-I applied this on top of the patch taht introduced the build error
-
- drivers/bus/imx-weim.c | 10 +++++-----
- 1 file changed, 5 insertions(+), 5 deletions(-)
-
-diff --git a/drivers/bus/imx-weim.c b/drivers/bus/imx-weim.c
-index 79af0c27f5a3..28bb65a5613f 100644
---- a/drivers/bus/imx-weim.c
-+++ b/drivers/bus/imx-weim.c
-@@ -76,7 +76,7 @@ static const struct of_device_id weim_id_table[] = {
- };
- MODULE_DEVICE_TABLE(of, weim_id_table);
- 
--static int __init imx_weim_gpr_setup(struct platform_device *pdev)
-+static int imx_weim_gpr_setup(struct platform_device *pdev)
- {
- 	struct device_node *np = pdev->dev.of_node;
- 	struct property *prop;
-@@ -126,10 +126,10 @@ static int __init imx_weim_gpr_setup(struct platform_device *pdev)
- }
- 
- /* Parse and set the timing for this device. */
--static int __init weim_timing_setup(struct device *dev,
--				    struct device_node *np, void __iomem *base,
--				    const struct imx_weim_devtype *devtype,
--				    struct cs_timing_state *ts)
-+static int weim_timing_setup(struct device *dev,
-+			     struct device_node *np, void __iomem *base,
-+			     const struct imx_weim_devtype *devtype,
-+			     struct cs_timing_state *ts)
- {
- 	u32 cs_idx, value[MAX_CS_REGS_COUNT];
- 	int i, ret;
--- 
-2.20.0
+Steve
 
 
 _______________________________________________
