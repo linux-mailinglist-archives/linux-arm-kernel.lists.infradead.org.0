@@ -2,56 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3E4FBA85E8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:05:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93EB4A85E9
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 17:06:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=kVZxwBFWYGDF2q24sOWpjNbXe4EZNXmyMkY/+gy10Rw=; b=XI2BJ2RyvwJerM
-	RVRiFUglbgnPXDVaHZoxBfYz26496PypQTzglrlsAnMt97ZpfNAfyFepua7Fe12Gdfq66ZDwyJ488
-	Qrq8cKv9OY0a+x6V/b/lJ7gAsWsyscZ9Or8RuCQBhkMGG5MGrDSFQTcULJBPJBmSVsl1eHC79Kj0X
-	maygDAz1CPI293yrsjXmpmP0tJr4mhD37YlH3ADD3jBkEwVinT+LjJRadfWPS1BH7A8lCsPZAxmn4
-	KwIlVuO8zD0c6VNAitBUIQpCOQXut6HFLN0PMEiI4wyi2d/XRYkmMUWyYRfimYuC9occ84/YGOQm9
-	i0PThb2ubtdvnTRcbRmw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=F62fg3eHKUTHoe8wn6RsYgqPP9ZuCr7GLE6qW2Dagk4=; b=iHwgrfIxm8Av1i
+	uuhvMCevYsRX6nPNAGXVId8//oArKdCm2+kSHkAjw+N2Yfd2zXhc8WNBQgaLAoZ1fV5f4ETiVfUQ6
+	EBjzX/rk6YUpM/eIDeWbMfqSm4yjqqjNBYBtdoqDv8eyZgrj9ZfnlgHNTvcNUezaF1WzOkJ4FlL3V
+	x6eWGbhyCQUgmFTfmw4W4IHSYBIP/czP6FjR7+Jdnaw8oTnSNXhr/0a+Z8w0kaxfTpzdszhlOdLze
+	u8Gaxw7SffVYB42dl/NbuuDuL4Yj74SHFi/KeZ2o0KdeGJgSuyfozQSlehjct8t6MGmE028w5gX6h
+	jh9ASHe8KQLtnvTk2OVA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5Wqr-0006HP-Vs; Wed, 04 Sep 2019 15:05:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5WqW-0006GL-Qf
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:05:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 65F2C28;
- Wed,  4 Sep 2019 08:05:19 -0700 (PDT)
-Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 230793F59C;
- Wed,  4 Sep 2019 08:05:13 -0700 (PDT)
-Subject: Re: [PATCH v4 02/10] KVM: arm/arm64: Factor out hypercall handling
- from PSCI code
-To: kbuild test robot <lkp@intel.com>
-References: <20190830084255.55113-3-steven.price@arm.com>
- <201909021437.rO6o0mHc%lkp@intel.com>
-From: Steven Price <steven.price@arm.com>
-Message-ID: <78c2cce6-19ae-302c-6e5a-3798f658c8e2@arm.com>
-Date: Wed, 4 Sep 2019 16:05:11 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i5WrA-0006Tv-Ur; Wed, 04 Sep 2019 15:06:01 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Wql-0006NS-C9
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 15:05:37 +0000
+Received: by mail-qt1-f194.google.com with SMTP id y26so24801718qto.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 08:05:35 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=2VFHwOwmlKF2puTqPRuPTBufUq8IWxw7CTun82Cp4Sk=;
+ b=iTzGB2KzAw63FGTf6RUc6fDQv470TD6BpMjFEJAD6Ba3MfCEShxZ+v6IhldYQ7kkp2
+ pIDABJiEGuN7k6+M1Cros9yg0OrB+x5QJH03ZC5fa49gOj+COWwuADLOM9ceQBgUcxtd
+ JIuWZY/Qw/OXEJjHla4qrTLYShDbADSELcbiAHqPaEZrhQevNcoSSrxPOJk6+qTkgqwh
+ 4NtBW9TxIUJ6+s0ynaTI14FvJFjQ6xlBxARAyj9QnWDM2RHSsTuzmzcA8Oo6cWKqPBD6
+ U1SWSu5I2P0scKyNgcXHUT3C0EAxwmKcMeFY3cvnlQEbXaF3UHxeYUcWbmJ9248jyVsd
+ sAtg==
+X-Gm-Message-State: APjAAAVb9rQ/+w0nDuTsuh/Ytih67ET1gNNYfQV7F+NxSow38Q2W4fgv
+ gwpPWkJPrXhEUZ4uhhG9BMQYHCfFjVGfdlMJt4U=
+X-Google-Smtp-Source: APXvYqxe8mW1ml9yvZOqbtI/5Jf26rRet5rCmU+Mz4fV1QOEyWNm9JGTgGjKI8EocAJQlA6gxaTXUTQ5dQiHFPu2Ivk=
+X-Received: by 2002:aed:2842:: with SMTP id r60mr30176500qtd.142.1567609534527; 
+ Wed, 04 Sep 2019 08:05:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <201909021437.rO6o0mHc%lkp@intel.com>
-Content-Language: en-GB
+References: <1567317285-8555-1-git-send-email-agross@kernel.org>
+ <1567317285-8555-3-git-send-email-agross@kernel.org>
+In-Reply-To: <1567317285-8555-3-git-send-email-agross@kernel.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 4 Sep 2019 17:05:18 +0200
+Message-ID: <CAK8P3a1D4004g=U_ekNcGeEht-vfss9sSYtYcnFsp7dXQQvGSw@mail.gmail.com>
+Subject: Re: [GIT PULL] Qualcomm Defconfig updates for 5.4
+To: Andy Gross <agross@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_080520_908111_EB81987E 
-X-CRM114-Status: GOOD (  19.54  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_080535_910549_BF7AB542 
+X-CRM114-Status: UNSURE (   6.95  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,69 +84,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Christoffer Dall <christoffer.dall@arm.com>, kvm@vger.kernel.org,
- Radim =?unknown-8bit?B?S3LEjW3DocWZ?= <rkrcmar@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-doc@vger.kernel.org,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, kbuild-all@01.org,
- Marc Zyngier <maz@kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>, Will Deacon <will@kernel.org>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: linux-arm-msm@vger.kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ arm-soc <arm@kernel.org>, Kevin Hilman <khilman@baylibre.com>,
+ Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02/09/2019 08:06, kbuild test robot wrote:
-> Hi Steven,
-> 
-> Thank you for the patch! Yet something to improve:
-> 
-> [auto build test ERROR on linus/master]
-> [cannot apply to v5.3-rc6 next-20190830]
-> [if your patch is applied to the wrong git tree, please drop us a note to help improve the system]
-> 
-> url:    https://github.com/0day-ci/linux/commits/Steven-Price/arm64-Stolen-time-support/20190901-185152
-> config: i386-randconfig-a002-201935 (attached as .config)
-> compiler: gcc-7 (Debian 7.4.0-11) 7.4.0
-> reproduce:
->         # save the attached .config to linux build tree
->         make ARCH=i386 
-> 
-> If you fix the issue, kindly add following tag
-> Reported-by: kbuild test robot <lkp@intel.com>
-> 
-> All error/warnings (new ones prefixed by >>):
-> 
->    In file included from include/kvm/arm_hypercalls.h:7:0,
->                     from <command-line>:0:
->>> arch/x86/include/asm/kvm_emulate.h:349:22: error: 'NR_VCPU_REGS' undeclared here (not in a function)
->      unsigned long _regs[NR_VCPU_REGS];
->                          ^~~~~~~~~~~~
+On Sun, Sep 1, 2019 at 7:54 AM Andy Gross <agross@kernel.org> wrote:
 
-This is because x86's asm/kvm_emulate.h can't be included by itself (and
-doesn't even exist on other architectures). This new header file doesn't
-make sense to include on x86, so I'll squash in the following to prevent
-building the header file except on arm/arm64.
+> ----------------------------------------------------------------
+> Qualcomm ARM Based defconfig Updates for v5.4
+>
+> * Add DRM_MSM to ARCH_QCOM defconfigs
 
-Steve
+Pulled into arm/defconfig, thanks!
 
-----8<----
-diff --git a/include/Kbuild b/include/Kbuild
-index c38f0d46b267..f775ea28716e 100644
---- a/include/Kbuild
-+++ b/include/Kbuild
-@@ -67,6 +67,8 @@ header-test-			+= keys/big_key-type.h
- header-test-			+= keys/request_key_auth-type.h
- header-test-			+= keys/trusted.h
- header-test-			+= kvm/arm_arch_timer.h
-+header-test-$(CONFIG_ARM)	+= kvm/arm_hypercalls.h
-+header-test-$(CONFIG_ARM64)	+= kvm/arm_hypercalls.h
- header-test-			+= kvm/arm_pmu.h
- header-test-$(CONFIG_ARM)	+= kvm/arm_psci.h
- header-test-$(CONFIG_ARM64)	+= kvm/arm_psci.h
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
