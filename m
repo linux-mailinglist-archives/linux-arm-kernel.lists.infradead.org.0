@@ -2,110 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B0DF1A7EEF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:11:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F973A7EE5
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 11:10:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VSHTcTxY/FV2IZMWILemlcCquyMplEUIM6bxdW86CVY=; b=ktK8UtoJ9o/Zex
-	KYK8Y+iSwqn6jOuIQFJt7rqXQnFgB4FvWS1RkLSB7Sb/fpaynpnmDKHoPR5X6XYofhmlohs75l3q/
-	mNCPcA2lvk7QL5ifru0oqWHzcbTaBHj4WyLxDxit0kkAg3/7uBEtWgNtDnUyvJ65d5aF1rU7ImRyk
-	Rjwfvkd+uU1Xb953IYS+J7kXPzMRpshdcju9NIqGG46iCjwY7OwvWY04gR/mKa3PoFI7c+w/WSgyM
-	h9/3ycgoxjhHKZFu1NkJj/K0fvKSwBGtnQomEFCG1AwXgHkhYbt4+dQhhFoOMs3QGMLtsIAhhE+42
-	jaeOdUmZMDitYEWurntg==;
+	List-Owner; bh=1nSSB318VddfVJ8u+fqmiFuYngUj1gc6/SuhmMFUBn4=; b=M/VSdu5OZRVEBa
+	SHJkOoJR1OENNljPLrpJmOAbz3qXpYjLhJkeB0AgM4hbj2Orj1Fpi97md1g6nmwxiMtYVtwjVbWB8
+	B4kHZOAyUhIQMmUUopqWEZRAq722PhdEcuE6YLwIX++1M76M7niEImWFiAFPgMeD6/MBlW4ggvG3r
+	f5e1xAtNEy0JtIt61zMW2Zkbpwav2k/GjANWPfo/sNiE/zVU310iFzUhgOzUY5DXptX8DoHPEvfHd
+	L+kbb6jtXaX3AbGIvu63H2NV+tc8OeSaEhgEUUDAwtg0BcXuJHtWBHN0RVX6mx5T8WukolDzD4TpK
+	a+rcVqvLwiVFhk6E+2LA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5RKB-0006Nx-QL; Wed, 04 Sep 2019 09:11:36 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i5RJ0-0005UP-N0; Wed, 04 Sep 2019 09:10:23 +0000
+Received: from mail-vk1-xa44.google.com ([2607:f8b0:4864:20::a44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5RJx-0006Nd-4e
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:11:23 +0000
-Received: by mail-ed1-x544.google.com with SMTP id o9so10152447edq.0
+ id 1i5RIg-0004mm-L6
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 09:10:05 +0000
+Received: by mail-vk1-xa44.google.com with SMTP id u192so1653490vkb.12
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 02:11:21 -0700 (PDT)
+ Wed, 04 Sep 2019 02:09:57 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=SlDNtvqTlkGND+OCwOrEAc9WxGs6zVmm0CCR8hqfXtY=;
- b=emVBmdVn3njvoS0f5ToN11EX9aUXnklC3C3insakwJUhhJdsrlTeLOXf+xKsRDQphe
- wZAsgkupoxnLiP2Q2s7z0/0dh2FqGDSeHmBaBvWy6BY3nz2HDBycedrYQKfZczVihSFP
- aMax4R7LJc6TtXP/f0klf6tm1yXNU3UjFRWfE=
+ :cc; bh=/7UND9SOq0N/Mu7NFRIefvWNsoxRo00bN5EWVx1PPmg=;
+ b=Mlg5W6F0m6BbiO7bLUIcb9iudFcat5z/DX3B7/G8pCGiW9ROsclogeu2jIRlvHzM/d
+ IXAxYvgqLjxSbY15XuPpr7HHx82st/A8TT7KGrkwiAwb718KqM9yKz4SKhMnx/QM2w1U
+ SMLB3tK9KTJrgBY5A+s3bOjaPYoMoxO05sCsY=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=SlDNtvqTlkGND+OCwOrEAc9WxGs6zVmm0CCR8hqfXtY=;
- b=G/BU1lV9dmezecHUPRkW9Ytv7fgjkB6ut0UxpKAyzbhkEaobF56dX71Drra3SC/cjI
- Z3ElMWTSPV7tbqNMkRQvRkzIHKKgt5UwZByk8pSiXwogM36eNZ37H+E6B3lMQyI9Jp3P
- MIqe5eDxFq/DbwlqlBPOMapOmo2/5fDJYJ1WcychMTfusveIF0EihZ2NVmVwzROFunVh
- zrjDR1g+UGmnquN2TRRGtWEZcCJUtEm7c3sKFahSMaVpg+4PMGDm/Oi0OX8oRtRdW0t0
- 6/H0dljBAqwJ7GOvJmYOAszcmmKMD2zupzl5+k+PXeHjSYXS03RhgwrTpUl4qdmnn5ZU
- SuQQ==
-X-Gm-Message-State: APjAAAW4CDlj/AMKHapJMFpJJBe8x17MS5uWR5V0xmV4eRIzyrmYRSVh
- TR1wPzttDiz1bidwbMEslUkHZWUm/RK96w==
-X-Google-Smtp-Source: APXvYqxtayeMzLuqMpop/HpxwbGBPLuTRz3MDus7pEq4BDhc9GeDKZV7Diw5cg/shQCPevI0F8Wk4A==
-X-Received: by 2002:a17:906:94c5:: with SMTP id
- d5mr6401899ejy.180.1567588279669; 
- Wed, 04 Sep 2019 02:11:19 -0700 (PDT)
-Received: from mail-wm1-f53.google.com (mail-wm1-f53.google.com.
- [209.85.128.53])
- by smtp.gmail.com with ESMTPSA id b36sm3318524edc.53.2019.09.04.02.11.19
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 04 Sep 2019 02:11:19 -0700 (PDT)
-Received: by mail-wm1-f53.google.com with SMTP id q19so2413133wmc.3
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 02:11:19 -0700 (PDT)
-X-Received: by 2002:a05:600c:240a:: with SMTP id
- 10mr3651794wmp.113.1567587851370; 
- Wed, 04 Sep 2019 02:04:11 -0700 (PDT)
+ bh=/7UND9SOq0N/Mu7NFRIefvWNsoxRo00bN5EWVx1PPmg=;
+ b=g983qX3AcP2zAc+DmDjB/80pnl8n8jDqgJdgt51+cIhYiKWQ/W4WyOAq/00sWgxQrt
+ 0befPBWQJzu9saMQkEhUgE0DAUkJDnzVk96vavdF/t2wsXJxMEnpDQWOr2jg/gVehT3e
+ fN1Z1jc5CeF3U4toRclQ8jxyDqDYktjH8ydrYu/WR4pDGLBjdDz/gj3zpVcuviFwdoDz
+ lOo2keG8KZ7BhXujtiIYr/qvAoV98X7XSdEJQ+R5L7qBo4JSX4IB9DDs+SidyFuBYYiZ
+ X7AkpQ8bSC5TmORgD+AgJ9hTxSzo8N+/VJHZosKv1yz1JtR8qMBAdoz6UD4Jgt8BUsi1
+ F4Jw==
+X-Gm-Message-State: APjAAAUmU2oCIkF4Vb7hyCLVSlTmieHKkBGEY3vB/2iGxCIlnvWTz+Vj
+ EvyA9hp0SLFVWmRV3gF0rPg/PbzpYR58aQhBQTkwaA==
+X-Google-Smtp-Source: APXvYqxyUrMUAEkf02GxMqWIIOzfSuvgtrLWM2sSGK16hyG7HzhEOSHPAFZCD4s0FpvvQcKVYvJ3YZLL0+Bj3C67BUA=
+X-Received: by 2002:ac5:c4f7:: with SMTP id b23mr14767555vkl.17.1567588196444; 
+ Wed, 04 Sep 2019 02:09:56 -0700 (PDT)
 MIME-Version: 1.0
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
- <20190802082815.GA203993@chromium.org> <1566724680.20680.8.camel@mtksdccf07>
- <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
- <1566957625.20680.33.camel@mtksdccf07>
- <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
- <1567424859.18318.32.camel@mtksdccf07>
- <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
- <1567493081.18318.49.camel@mtksdccf07>
- <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
- <1567511169.18318.65.camel@mtksdccf07>
- <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
- <1567568281.18318.80.camel@mtksdccf07>
- <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
- <1567577389.18318.100.camel@mtksdccf07>
- <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
- <1567584577.22453.11.camel@mtksdccf07>
- <CAAFQd5Dzxy10g-MKHMnNbVO6kp9_L_jm1m+gtN+p=YF2LyBiag@mail.gmail.com>
- <1567587708.22453.15.camel@mtksdccf07>
-In-Reply-To: <1567587708.22453.15.camel@mtksdccf07>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Wed, 4 Sep 2019 18:03:59 +0900
-X-Gmail-Original-Message-ID: <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
-Message-ID: <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
-Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
-To: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+References: <20190903055103.134764-1-cychiang@chromium.org>
+ <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+In-Reply-To: <e1c3483c-baa6-c726-e547-fadf40d259f4@baylibre.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Wed, 4 Sep 2019 17:09:29 +0800
+Message-ID: <CAFv8NwKHZM+zTu7GF_J0Xk6hubA2JK4cCsdhsDPOGk=3rnbCZw@mail.gmail.com>
+Subject: Re: [PATCH] drm: bridge/dw_hdmi: add audio sample channel status
+ setting
+To: Neil Armstrong <narmstrong@baylibre.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_021121_317807_24A7E821 
-X-CRM114-Status: GOOD (  35.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_021002_713674_C3CDF4D0 
+X-CRM114-Status: GOOD (  24.35  )
+X-Spam-Score: -7.4 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-7.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:a44 listed in]
  [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
@@ -120,344 +92,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
- "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
- srv_heupstream <srv_heupstream@mediatek.com>,
- =?UTF-8?B?UG8tWWFuZyBIdWFuZyAo6buD5p+P6Zm9KQ==?= <po-yang.huang@mediatek.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
- =?UTF-8?B?U2ogSHVhbmcgKOm7g+S/oeeSiyk=?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
- =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <Frederic.Chen@mediatek.com>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Cc: "moderated list:SOUND - SOC LAYER / DYNAMIC AUDIO POWER MANAGEM..."
+ <alsa-devel@alsa-project.org>, tzungbi@chromium.org,
+ kuninori.morimoto.gx@renesas.com, Xing Zheng <zhengxing@rock-chips.com>,
+ cain.cai@rock-chips.com, David Airlie <airlied@linux.ie>, sam@ravnborg.org,
+ Jeffy Chen <jeffy.chen@rock-chips.com>,
+ linux-kernel <linux-kernel@vger.kernel.org>, dri-devel@lists.freedesktop.org,
+ Doug Anderson <dianders@chromium.org>, Andrzej Hajda <a.hajda@samsung.com>,
+ =?UTF-8?B?6JSh5p6r?= <eddie.cai@rock-chips.com>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, Yakir Yang <ykk@rock-chips.com>,
+ Enric Balletbo i Serra <enric.balletbo@collabora.com>,
+ linux-rockchip@lists.infradead.org, Dylan Reid <dgreid@chromium.org>,
+ kuankuan.y@gmail.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 4, 2019 at 6:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
->
-> Hi Tomasz,
->
-> On Wed, 2019-09-04 at 16:25 +0800, Tomasz Figa wrote:
-> > On Wed, Sep 4, 2019 at 5:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > >
-> > > Hi Tomasz,
-> > >
-> > > On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
-> > > > On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > >
-> > > > > Hi Tomasz,
-> > > > >
-> > > > > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
-> > > > > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
-> > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > >
-> > > > > > > Hi Tomasz,
-> > > > > > >
-> > > > > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
-> > > > > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > >
-> > > > > > > > > Hi Tomasz,
-> > > > > > > > >
-> > > > > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
-> > > > > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > >
-> > > > > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
-> > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
-> > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
-> > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > Hi Tomasz,
-> > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
-> > > > > > > > > > > > > > > > > > Hi Jerry,
-> > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
-> > > > > > > [snip]
-> > > > > > > > > > > > > > > > [snip]
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > > +static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > > > > > > > > > > > > > > > > > > +{
-> > > > > > > > > > > > > > > > > > > +   struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> > > > > > > > > > > > > > > > > > > +   struct vb2_buffer *vb;
-> > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > > How do we guarantee here that the hardware isn't still accessing the buffers
-> > > > > > > > > > > > > > > > > > removed below?
-> > > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > > Maybe we can check the driver state flag and aborting the unfinished
-> > > > > > > > > > > > > > > > > jobs?
-> > > > > > > > > > > > > > > > > (fd_hw->state == FD_ENQ)
-> > > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > > Yes, we need to either cancel or wait for the currently processing
-> > > > > > > > > > > > > > > > job. It depends on hardware capabilities, but cancelling is generally
-> > > > > > > > > > > > > > > > preferred for the lower latency.
-> > > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > Ok, it the state is ENQ, then we can disable the FD hw by controlling
-> > > > > > > > > > > > > > > the registers.
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > > > for example:
-> > > > > > > > > > > > > > >         writel(0x0, fd->fd_base + FD_HW_ENABLE);
-> > > > > > > > > > > > > > >         writel(0x0, fd->fd_base + FD_INT_EN);
-> > > > > > > > > > > > > > >
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > > What's exactly the effect of writing 0 to FD_HW_ENABLE?
-> > > > > > > > > > > > > >
-> > > > > > > > > > > > > Sorry, my last reply didn't solve the question,
-> > > > > > > > > > > > > we should implement a mtk_fd_job_abort() for v4l2_m2m_ops().
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > which is able to readl_poll_timeout_atomic()
-> > > > > > > > > > > > > and check the HW busy bits in the register FD_INT_EN;
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > if they are not cleared until timeout, we could handle the last
-> > > > > > > > > > > > > processing job.
-> > > > > > > > > > > > > Otherwise, the FD irq handler should have handled the last processing
-> > > > > > > > > > > > > job and we could continue the stop_streaming().
-> > > > > > > > > > > > >
-> > > > > > > > > > > > > For job_abort():
-> > > > > > > > > > > > > static void mtk_fd_job_abort(void *priv)
-> > > > > > > > > > > > > {
-> > > > > > > > > > > > >         struct mtk_fd_ctx *ctx = priv;
-> > > > > > > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > > > > > > > > > > >         u32 val;
-> > > > > > > > > > > > >         u32 ret;
-> > > > > > > > > > > > >
-> > > > > > > > > > > > >         ret = readl_poll_timeout_atomic(fd->fd_base + MTK_FD_REG_OFFSET_INT_EN,
-> > > > > > > > > > > > >                                         val,
-> > > > > > > > > > > > >                                         (val & MTK_FD_HW_BUSY_MASK) ==
-> > > > > > > > > > > > >                                         MTK_FD_HW_STATE_IS_BUSY,
-> > > > > > > > > > > > >                                         USEC_PER_MSEC, MTK_FD_STOP_HW_TIMEOUT);
-> > > > > > > > > > > >
-> > > > > > > > > > > > Hmm, would it be possible to avoid the busy wait by having a
-> > > > > > > > > > > > completion that could be signalled from the interrupt handler?
-> > > > > > > > > > > >
-> > > > > > > > > > > > Best regards,
-> > > > > > > > > > > > Tomasz
-> > > > > > > > > > >
-> > > > > > > > > > > I suppose that would be wakeup a wait queue in the interrupt handler,
-> > > > > > > > > > > the the wait_event_interrupt_timeout() will be used in here and system
-> > > > > > > > > > > suspend e.g. mtk_fd_suspend().
-> > > > > > > > > >
-> > > > > > > > > > Yes, that should work.
-> > > > > > > > > >
-> > > > > > > > > > > Or do you suggest to wait_event_interrupt_timeout() every frame in the
-> > > > > > > > > > > mtk_fd_ipi_handler()?
-> > > > > > > > > >
-> > > > > > > > > > Nope, we shouldn't need that.
-> > > > > > > > > >
-> > > > > > > > > > > I think maybe the readl_poll_timeout_atomic would be good enough.
-> > > > > > > > > > >
-> > > > > > > > > >
-> > > > > > > > > > Not really. Busy waiting should be avoided as much as possible. What's
-> > > > > > > > > > the point of entering suspend if you end up burning the power by
-> > > > > > > > > > spinning the CPU for some milliseconds?
-> > > > > > > > > >
-> > > > > > > > > Ok, I see, busy waiting is not a good idea, I will use the wait queue
-> > > > > > > > > instead. the job abort will refine as following:
-> > > > > > > > >
-> > > > > > > > > static void mtk_fd_job_abort(void *priv)
-> > > > > > > > > {
-> > > > > > > > >         struct mtk_fd_ctx *ctx = priv;
-> > > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > > > > > > >         u32 ret;
-> > > > > > > > >
-> > > > > > > > >         ret = wait_event_interruptible_timeout
-> > > > > > > > >                 (fd->wq, (fd->fd_irq_result & MTK_FD_HW_IRQ_MASK),
-> > > > > > > > >                  usecs_to_jiffies(50000));
-> > > > > > > > >         if (ret)
-> > > > > > > > >                 mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
-> > > > > > > > >         dev_dbg(fd->dev, "%s, ret:%d\n", __func__, ret);
-> > > > > > > > >
-> > > > > > > > >         fd->fd_irq_result = 0;
-> > > > > > > > > }
-> > > > > > > > >
-> > > > > > > > > static struct v4l2_m2m_ops fd_m2m_ops = {
-> > > > > > > > >         .device_run = mtk_fd_device_run,
-> > > > > > > > >         .job_abort = mtk_fd_job_abort,
-> > > > > > > >
-> > > > > > > > I'm not sure we should be using the functon above as the .job_abort
-> > > > > > > > callback. It's expected to abort the job, but we're just waiting for
-> > > > > > > > it to finish. I think we should just call mtk_fd_job_abort() manually
-> > > > > > > > from .stop_streaming.
-> > > > > > > >
-> > > > > > >
-> > > > > > > Ok, I will fix it.
-> > > > > > >
-> > > > > > > > > };
-> > > > > > > > >
-> > > > > > > > > and we could use it in suspend.
-> > > > > > > > > static int mtk_fd_suspend(struct device *dev)
-> > > > > > > > > {
-> > > > > > > > >         struct mtk_fd_dev *fd = dev_get_drvdata(dev);
-> > > > > > > > >
-> > > > > > > > >         if (pm_runtime_suspended(dev))
-> > > > > > > > >                 return 0;
-> > > > > > > > >
-> > > > > > > > >         if (fd->fd_stream_count)
-> > > > > > > > >                 mtk_fd_job_abort(fd->ctx);
-> > > > > > > > >
-> > > > > > > > >         /* suspend FD HW */
-> > > > > > > > >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
-> > > > > > > > >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
-> > > > > > > > >         clk_disable_unprepare(fd->fd_clk);
-> > > > > > > > >         dev_dbg(dev, "%s:disable clock\n", __func__);
-> > > > > > > > >
-> > > > > > > > >         return 0;
-> > > > > > > > > }
-> > > > > > > > >
-> > > > > > > > > static irqreturn_t mtk_fd_irq(int irq, void *data)
-> > > > > > > > > {
-> > > > > > > > >         struct mtk_fd_dev *fd = (struct mtk_fd_dev *)data;
-> > > > > > > > >
-> > > > > > > > >         fd->fd_irq_result = readl(fd->fd_base + MTK_FD_REG_OFFSET_INT_VAL);
-> > > > > > > > >         wake_up_interruptible(&fd->wq);
-> > > > > > > >
-> > > > > > > > The wake up should be done at the very end of this function. Otherwise
-> > > > > > > > we end up with m2m framework racing with the mtk_fd_hw_job_finish()
-> > > > > > > > below.
-> > > > > > > >
-> > > > > > > > Also, I'd use a completion here rather than an open coded wait and
-> > > > > > > > wake-up. The driver could reinit_completion() before queuing a job to
-> > > > > > > > the hardware and the IRQ handler would complete(). There would be no
-> > > > > > > > need to store the IRQ flags in driver data anymore.
-> > > > > > > Ok, It will be refined as following:
-> > > > > > >
-> > > > > > > suspend and stop streaming will call mtk_fd_job_abort()
-> > > > > > >
-> > > > > > > static void mtk_fd_job_abort(struct mtk_fd_dev *fd)
-> > > > > > > {
-> > > > > > >         u32 ret;
-> > > > > > >
-> > > > > > >         ret = wait_for_completion_timeout(&fd->fd_irq_done,
-> > > > > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
-> > > > > > >         if (ret)
-> > > > > >
-> > > > > > For the _timeout variants, !ret means the timeout and ret > 0 means
-> > > > > > that the wait ended successfully before.
-> > > > > >
-> > > > > Thanks, fixed.
-> > > > >
-> > > > > > Also please make sure that the timeout is big enough not to happen
-> > > > > > normally on a heavily loaded system. Something like 1 second should be
-> > > > > > good.
-> > > > > >
-> > > > > Ok, I will make it 1 second
-> > > > > #define MTK_FD_HW_TIMEOUT 1000
-> > > > >
-> > > > > Also, I will add a condition in mtk_fd_vb2_stop_streaming(), since it
-> > > > > would be called twice, now it works fine whether I reuse the condition
-> > > > > with mtk_fd_hw_disconnect or not, however, I think do it before buffer
-> > > > > remove looks more reasonable.
-> > > > >
-> > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > > > > {
-> > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > > > >         struct vb2_v4l2_buffer *vb;
-> > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-> > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
-> > > > >
-> > > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-> > > > >                 mtk_fd_job_abort(fd);
-> > > >
-> > > > We need to do it regardless of the queue type, otherwise we could
-> > > > still free CAPTURE buffers before the hardware releases them.
-> > > >
-> > >
-> > > I think we may read the fd->fd_irq_done.done and do wait for completion
-> > > if it's not being done.
-> > > How do you think?
-> > >
-> > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> > > {
-> > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
-> > >         struct mtk_fd_dev *fd = ctx->fd_dev;
-> > >         struct vb2_v4l2_buffer *vb;
-> > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
-> > >         struct v4l2_m2m_queue_ctx *queue_ctx;
-> > >         u32 ret;
-> > >
-> > >         if (!fd->fd_irq_done.done)
-> >
-> > We shouldn't access internal fields of completion.
-> >
-> > >                 ret = wait_for_completion_timeout(&fd->fd_irq_done,
-> > >                                                   msecs_to_jiffies(
-> > >                                                         MTK_FD_HW_TIMEOUT));
-> > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
-> > >                                         &m2m_ctx->out_q_ctx :
-> > >                                         &m2m_ctx->cap_q_ctx;
-> > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
-> > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
-> > >
-> > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
-> > >                 mtk_fd_hw_disconnect(fd);
-> > > }
-> > >
-> > > I've also tried to wait completion unconditionally for both queues and
-> > > the second time will wait until timeout, as a result, it takes longer to
-> > > swap the camera every time and close the camera app.
-> >
-> > I think it should work better if we call complete_all() instead of complete().
-> >
-> Thanks,
->
-> I use complete_all(), and it works fine now.
->
-> static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
-> {
->         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
->         struct mtk_fd_dev *fd = ctx->fd_dev;
->         struct vb2_v4l2_buffer *vb;
->         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
->         struct v4l2_m2m_queue_ctx *queue_ctx;
->
->         wait_for_completion_timeout(&fd->fd_irq_done,
->                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+Hi,
 
-Shouldn't we still send some command to the hardware to stop? Like a
-reset. Otherwise we don't know if it isn't still accessing the memory.
+On Tue, Sep 3, 2019 at 5:53 PM Neil Armstrong <narmstrong@baylibre.com> wrote:
+>
+> Hi,
+>
+> On 03/09/2019 07:51, Cheng-Yi Chiang wrote:
+> > From: Yakir Yang <ykk@rock-chips.com>
+> >
+> > When transmitting IEC60985 linear PCM audio, we configure the
+> > Audio Sample Channel Status information of all the channel
+> > status bits in the IEC60958 frame.
+> > Refer to 60958-3 page 10 for frequency, original frequency, and
+> > wordlength setting.
+> >
+> > This fix the issue that audio does not come out on some monitors
+> > (e.g. LG 22CV241)
+> >
+> > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
+> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
+> > ---
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c | 59 +++++++++++++++++++++++
+> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h | 20 ++++++++
+> >  2 files changed, 79 insertions(+)
+> >
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > index bd65d0479683..34d46e25d610 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
+> > @@ -582,6 +582,63 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
+> >       return n;
+> >  }
+> >
+> > +static void hdmi_set_schnl(struct dw_hdmi *hdmi)
+> > +{
+> > +     u8 aud_schnl_samplerate;
+> > +     u8 aud_schnl_8;
+> > +
+> > +     /* These registers are on RK3288 using version 2.0a. */
+> > +     if (hdmi->version != 0x200a)
+> > +             return;
+>
+> Are these limited to the 2.0a version *in* RK3288, or 2.0a version on all
+> SoCs ?
+>
 
->         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
->                                         &m2m_ctx->out_q_ctx :
->                                         &m2m_ctx->cap_q_ctx;
->         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
->                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
->
->         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
->                 mtk_fd_hw_disconnect(fd);
-> }
->
-> Best regards,
-> Jerry
->
-> > Best regards,
-> > Tomasz
->
+In the original patch by Yakir,
+
+https://lore.kernel.org/patchwork/patch/539653/   (sorry, I should
+have added this link in the "after the cut" note)
+
+The fix is limited to version 2.0.
+Since I am only testing on RK3288 with 2.0a, I change the check to 2.0a only.
+I can not test 2.0a version on other SoCs.
+The databook I have at hand is 2.0a (not specific to RK3288) so I
+think all 2.0a should have this register.
+
+As for other version like version 1.3 on iMX6, there is no such
+register, as stated by Russell
+
+http://lkml.iu.edu/hypermail/linux/kernel/1501.3/06268.html.
+
+So at least we should check the version.
+Maybe we can set the criteria as version 2.0 or above to make it a safe patch ?
+If there is the same need on other SoC with version < 2.0, it can be
+added later.
+Presumably, there will be databook of that version to help confirming
+this setting.
+
+Thanks!
+> > +
+> > +     switch (hdmi->sample_rate) {
+> > +     case 32000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_32K;
+> > +             break;
+> > +     case 44100:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_44K1;
+> > +             break;
+> > +     case 48000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_48K;
+> > +             break;
+> > +     case 88200:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_88K2;
+> > +             break;
+> > +     case 96000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_96K;
+> > +             break;
+> > +     case 176400:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_176K4;
+> > +             break;
+> > +     case 192000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_192K;
+> > +             break;
+> > +     case 768000:
+> > +             aud_schnl_samplerate = HDMI_FC_AUDSCHNLS7_SMPRATE_768K;
+> > +             break;
+> > +     default:
+> > +             dev_warn(hdmi->dev, "Unsupported audio sample rate (%u)\n",
+> > +                      hdmi->sample_rate);
+> > +             return;
+> > +     }
+> > +
+> > +     /* set channel status register */
+> > +     hdmi_modb(hdmi, aud_schnl_samplerate, HDMI_FC_AUDSCHNLS7_SMPRATE_MASK,
+> > +               HDMI_FC_AUDSCHNLS7);
+> > +
+> > +     /*
+> > +      * Set original frequency to be the same as frequency.
+> > +      * Use one-complement value as stated in IEC60958-3 page 13.
+> > +      */
+> > +     aud_schnl_8 = (~aud_schnl_samplerate) <<
+> > +                     HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_OFFSET;
+> > +
+> > +     /* This means word length is 16 bit. Refer to IEC60958-3 page 12. */
+> > +     aud_schnl_8 |= 2 << HDMI_FC_AUDSCHNLS8_WORDLEGNTH_OFFSET;
+> > +
+> > +     hdmi_writeb(hdmi, aud_schnl_8, HDMI_FC_AUDSCHNLS8);
+> > +}
+> > +
+> >  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+> >       unsigned long pixel_clk, unsigned int sample_rate)
+> >  {
+> > @@ -620,6 +677,8 @@ static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
+> >       hdmi->audio_cts = cts;
+> >       hdmi_set_cts_n(hdmi, cts, hdmi->audio_enable ? n : 0);
+> >       spin_unlock_irq(&hdmi->audio_lock);
+> > +
+> > +     hdmi_set_schnl(hdmi);
+> >  }
+> >
+> >  static void hdmi_init_clk_regenerator(struct dw_hdmi *hdmi)
+> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > index 6988f12d89d9..619ebc1c8354 100644
+> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
+> > @@ -158,6 +158,17 @@
+> >  #define HDMI_FC_SPDDEVICEINF                    0x1062
+> >  #define HDMI_FC_AUDSCONF                        0x1063
+> >  #define HDMI_FC_AUDSSTAT                        0x1064
+> > +#define HDMI_FC_AUDSV                           0x1065
+> > +#define HDMI_FC_AUDSU                           0x1066
+> > +#define HDMI_FC_AUDSCHNLS0                      0x1067
+> > +#define HDMI_FC_AUDSCHNLS1                      0x1068
+> > +#define HDMI_FC_AUDSCHNLS2                      0x1069
+> > +#define HDMI_FC_AUDSCHNLS3                      0x106a
+> > +#define HDMI_FC_AUDSCHNLS4                      0x106b
+> > +#define HDMI_FC_AUDSCHNLS5                      0x106c
+> > +#define HDMI_FC_AUDSCHNLS6                      0x106d
+> > +#define HDMI_FC_AUDSCHNLS7                      0x106e
+> > +#define HDMI_FC_AUDSCHNLS8                      0x106f
+> >  #define HDMI_FC_DATACH0FILL                     0x1070
+> >  #define HDMI_FC_DATACH1FILL                     0x1071
+> >  #define HDMI_FC_DATACH2FILL                     0x1072
+> > @@ -706,6 +717,15 @@ enum {
+> >  /* HDMI_FC_AUDSCHNLS7 field values */
+> >       HDMI_FC_AUDSCHNLS7_ACCURACY_OFFSET = 4,
+> >       HDMI_FC_AUDSCHNLS7_ACCURACY_MASK = 0x30,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_MASK = 0x0f,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_192K = 0xe,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_176K4 = 0xc,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_96K = 0xa,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_768K = 0x9,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_88K2 = 0x8,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_32K = 0x3,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_48K = 0x2,
+> > +     HDMI_FC_AUDSCHNLS7_SMPRATE_44K1 = 0x0,
+> >
+> >  /* HDMI_FC_AUDSCHNLS8 field values */
+> >       HDMI_FC_AUDSCHNLS8_ORIGSAMPFREQ_MASK = 0xf0,
+> >
 >
 
 _______________________________________________
