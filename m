@@ -2,85 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CC60A8130
-	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 13:39:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8B2C7A814B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed,  4 Sep 2019 13:47:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=wfM2ZPDF9rbDLr2IJLRJrKhWUZk6wGt2u/HbvkFZZAI=; b=o9n
-	4C1UxVL6p1HZXeiay/o+S48+guWDqv3hN5SvrlMaQX/9/dzXBcu0CWYF0yZTRJpIOcxdQrCIlzS5g
-	0NgK162uqaUXfWE54Cer/djCGeqBmD8ASBMT5nkwkCY0VE9L3U4eJqx2JZLM2wg5YZKNNicTkd5uS
-	TUMXf07RgeKdIaLFLtNwKOk3EUswsu97EQyR+nM8FY0st4OSXKR/NGZcsLUAVB+EJow2EPOr345z3
-	7PHbpNphxYqDS7b3BhLfSRtHcp1VqNCixyynWO2LW+HoZWZPTS8OidOVHRkuc9DgYsOBw55YYmxn7
-	Cy3quEh74S2dj+T225IfXfyr5c2ys3A==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XT6/E70xxoirRUF+LWLf7srFF1kCNKfsUE5e1ww8Lmg=; b=KssIGm/qv5dpMQ
+	V32Vous1gaxJFe1Fgq3/3wVTn1UarXUmq/YD7aLoWpU+0Mf1QoyV8A74evSDjBOuH4DFqaqD04nrK
+	7ZAgJGmgass7xZ4L4tOzf0xElwMGJ5nxk4oY8zJlquIO8dI4cmv+Za9eDn46ovKbrBGjXsJ1Ej8wH
+	rvioGa34T2Ff1VMd6lYdDp4WPN2h1ge/Fl+/8XCdTOE5xIbCLmUCAsZvBB15k9T8/J14YM/RVD4Oq
+	ySsx/s2oev+4PqgUk/BwOFgbp/qvvNnOPAhuUcTXNcVLQGhBZR09U0mw8qHwNa9FgyiIRLokE64ON
+	mWlzWHOwzJ0T9oypyPTQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5TdR-0008VG-3R; Wed, 04 Sep 2019 11:39:37 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5TdC-0008UO-FM
- for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 11:39:24 +0000
-Received: by mail-wr1-x442.google.com with SMTP id l11so12059682wrx.5
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 04:39:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=9R8WwNbYAQJ7k+cq6zNVuuobL5bGy+tfUNAJOU1O9Tg=;
- b=rKR+1XdJ0uMus/Kgs96uLxQwK0bg15ydnJskHnPhcOS7rGM7I0fg6OuTNlCm5F76bk
- Eua/svccibDfxYIHagDMREHfuNZXMi6xze+wk5YJci3LfgU3gvzOL/3C+9ov0CUkCLv3
- ZpHQF7FVkn1dRFw1y9A56GBUEMV0IFArITMNMP+QjSdFx8G/a/S10kMZ5HEWkoDbzrmX
- ay4ui3ka4n6ZkaEn3QP1nuMYY3q62nAT+I0hx71e+8IxRAE0yxusAfrT/hGhe5Hni3mM
- cY/OwxMzIKW3LyewNLZraXC93DMYvTvAN/WVJa6OhAroeQ5/6fo6jJITnb53ippO3gzF
- yvig==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=9R8WwNbYAQJ7k+cq6zNVuuobL5bGy+tfUNAJOU1O9Tg=;
- b=gC+/dmGl2ZRYvlctDDGpM1CdyzVIrAzseALGEm0w5z2GlIa3kODpsCfrHM91U28TmN
- RDnlU3Vl5M9flQ5xuB10wa+UOU5V10KlLN0PR19rHAiCR+vAwqmLSIC8nm5v6DBWjt2V
- tCEJw0V08tGhmW6Q1A+mQzJxM3ri/0p7zjBVbeT/ftt8TChHhsF00m9feyBlnk/gTmi1
- oOby93QNtWGKHHku/Bj7LSIulYdDi6w81ODBzdEce69NnFaoRAivuUGZzyBrEdS+nx8D
- XK4CftgAsDNeXQyM8VCe/OWepjWjSsm+6BXmK+G5TdE4Bt2NsarK4zkzK+v9zaqB8Gsc
- D9IQ==
-X-Gm-Message-State: APjAAAUabRcAtXJUlcsnQ6V3eeCU7wRWQv25w90UmojuEDqehs/DZjEL
- +e8HRiRfcKqzP+7KSmBBIHbMYQ==
-X-Google-Smtp-Source: APXvYqyMt0MDIetJFkhHHw2N+8gG4UOBR6ds0kp3aADDcqOpRL0pe8PNIMlnQNU+37s+gc/36LxpRA==
-X-Received: by 2002:adf:ef05:: with SMTP id e5mr18247942wro.127.1567597160886; 
- Wed, 04 Sep 2019 04:39:20 -0700 (PDT)
-Received: from localhost.localdomain ([95.147.198.36])
- by smtp.gmail.com with ESMTPSA id g3sm27813165wrh.28.2019.09.04.04.39.20
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 04 Sep 2019 04:39:20 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: agross@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- bjorn.andersson@linaro.org
-Subject: [PATCH v2 1/1] arm64: dts: qcom: Add Lenovo Yoga C630
-Date: Wed,  4 Sep 2019 12:39:17 +0100
-Message-Id: <20190904113917.15223-1-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.17.1
+	id 1i5TlG-0003ex-Nj; Wed, 04 Sep 2019 11:47:43 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5Tl1-0003eV-UY
+ for linux-arm-kernel@lists.infradead.org; Wed, 04 Sep 2019 11:47:29 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7EA7C337;
+ Wed,  4 Sep 2019 04:47:25 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 964DB3F246;
+ Wed,  4 Sep 2019 04:47:24 -0700 (PDT)
+Date: Wed, 4 Sep 2019 12:47:22 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v5 00/11] Add arm64/signal initial kselftest support
+Message-ID: <20190904114722.GQ27757@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190902112932.36129-1-cristian.marussi@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_043922_526772_64E7AFE5 
-X-CRM114-Status: GOOD (  14.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_044728_032235_CD92AB2A 
+X-CRM114-Status: GOOD (  19.05  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
- [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,508 +60,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-msm@vger.kernel.org, Lee Jones <lee.jones@linaro.org>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org
-MIME-Version: 1.0
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
+On Mon, Sep 02, 2019 at 12:29:21pm +0100, Cristian Marussi wrote:
+> Hi
+> 
+> this patchset aims to add the initial arch-specific arm64 support to
+> kselftest starting with signals-related test-cases.
+> A common internal test-case layout is proposed which then it is anyway
+> wired-up to the toplevel kselftest Makefile, so that it should be possible
+> at the end to run it on an arm64 target in the usual way with KSFT.
 
-The Lenovo Yoga C630 is built on the SDM850 from Qualcomm, but this seem
-to be similar enough to the SDM845 that we can reuse the sdm845.dtsi.
+BTW, it's helpful to state the base branch / commit as clearly as
+possible near the top of the cover letter, say,
 
-Supported by this patch is: keyboard, battery monitoring, UFS storage,
-USB host and Bluetooth.
+--8<--
 
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
----
-v1 -> v2:
-  Added support to avoid DMA lock-ups (reboot)
+This series is based on arm64/for-next/core [1]
+commit 9ce1263033cd ("selftests, arm64: add a selftest for passing tagged pointers to kernel")
 
-arch/arm64/boot/dts/qcom/Makefile             |   1 +
- .../boot/dts/qcom/sdm850-lenovo-yoga-c630.dts | 454 ++++++++++++++++++
- 2 files changed, 455 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
+[1] git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
 
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 0a7e5dfce6f7..670c6c65f9e9 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -12,5 +12,6 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r2.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r3.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-db845c.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-mtp.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-1000.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-4000.dtb
-diff --git a/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
-new file mode 100644
-index 000000000000..ad160c718b33
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
-@@ -0,0 +1,454 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Lenovo Yoga C630
-+ *
-+ * Copyright (c) 2019, Linaro Ltd.
-+ */
-+
-+/dts-v1/;
-+
-+#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
-+#include "sdm845.dtsi"
-+#include "pm8998.dtsi"
-+
-+/ {
-+	model = "Lenovo Yoga C630";
-+	compatible = "lenovo,yoga-c630", "qcom,sdm845";
-+
-+	aliases {
-+		hsuart0 = &uart6;
-+	};
-+};
-+
-+&apps_rsc {
-+	pm8998-rpmh-regulators {
-+		compatible = "qcom,pm8998-rpmh-regulators";
-+		qcom,pmic-id = "a";
-+
-+		vdd-l2-l8-l17-supply = <&vreg_s3a_1p35>;
-+		vdd-l7-l12-l14-l15-supply = <&vreg_s5a_2p04>;
-+
-+		vreg_s2a_1p125: smps2 {
-+		};
-+
-+		vreg_s3a_1p35: smps3 {
-+			regulator-min-microvolt = <1352000>;
-+			regulator-max-microvolt = <1352000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s4a_1p8: smps4 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s5a_2p04: smps5 {
-+			regulator-min-microvolt = <2040000>;
-+			regulator-max-microvolt = <2040000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s7a_1p025: smps7 {
-+		};
-+
-+		vdd_qusb_hs0:
-+		vdda_hp_pcie_core:
-+		vdda_mipi_csi0_0p9:
-+		vdda_mipi_csi1_0p9:
-+		vdda_mipi_csi2_0p9:
-+		vdda_mipi_dsi0_pll:
-+		vdda_mipi_dsi1_pll:
-+		vdda_qlink_lv:
-+		vdda_qlink_lv_ck:
-+		vdda_qrefs_0p875:
-+		vdda_pcie_core:
-+		vdda_pll_cc_ebi01:
-+		vdda_pll_cc_ebi23:
-+		vdda_sp_sensor:
-+		vdda_ufs1_core:
-+		vdda_ufs2_core:
-+		vdda_usb1_ss_core:
-+		vdda_usb2_ss_core:
-+		vreg_l1a_0p875: ldo1 {
-+			regulator-min-microvolt = <880000>;
-+			regulator-max-microvolt = <880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_10:
-+		vreg_l2a_1p2: ldo2 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-always-on;
-+		};
-+
-+		vreg_l3a_1p0: ldo3 {
-+		};
-+
-+		vdd_wcss_cx:
-+		vdd_wcss_mx:
-+		vdda_wcss_pll:
-+		vreg_l5a_0p8: ldo5 {
-+			regulator-min-microvolt = <800000>;
-+			regulator-max-microvolt = <800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_13:
-+		vreg_l6a_1p8: ldo6 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l7a_1p8: ldo7 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l8a_1p2: ldo8 {
-+		};
-+
-+		vreg_l9a_1p8: ldo9 {
-+		};
-+
-+		vreg_l10a_1p8: ldo10 {
-+		};
-+
-+		vreg_l11a_1p0: ldo11 {
-+		};
-+
-+		vdd_qfprom:
-+		vdd_qfprom_sp:
-+		vdda_apc1_cs_1p8:
-+		vdda_gfx_cs_1p8:
-+		vdda_qrefs_1p8:
-+		vdda_qusb_hs0_1p8:
-+		vddpx_11:
-+		vreg_l12a_1p8: ldo12 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_2:
-+		vreg_l13a_2p95: ldo13 {
-+		};
-+
-+		vreg_l14a_1p88: ldo14 {
-+			regulator-min-microvolt = <1880000>;
-+			regulator-max-microvolt = <1880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l15a_1p8: ldo15 {
-+		};
-+
-+		vreg_l16a_2p7: ldo16 {
-+		};
-+
-+		vreg_l17a_1p3: ldo17 {
-+			regulator-min-microvolt = <1304000>;
-+			regulator-max-microvolt = <1304000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l18a_2p7: ldo18 {
-+		};
-+
-+		vreg_l19a_3p0: ldo19 {
-+			regulator-min-microvolt = <3100000>;
-+			regulator-max-microvolt = <3108000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l20a_2p95: ldo20 {
-+			regulator-min-microvolt = <2960000>;
-+			regulator-max-microvolt = <2960000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l21a_2p95: ldo21 {
-+		};
-+
-+		vreg_l22a_2p85: ldo22 {
-+		};
-+
-+		vreg_l23a_3p3: ldo23 {
-+		};
-+
-+		vdda_qusb_hs0_3p1:
-+		vreg_l24a_3p075: ldo24 {
-+			regulator-min-microvolt = <3075000>;
-+			regulator-max-microvolt = <3083000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l25a_3p3: ldo25 {
-+			regulator-min-microvolt = <3104000>;
-+			regulator-max-microvolt = <3112000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vdda_hp_pcie_1p2:
-+		vdda_hv_ebi0:
-+		vdda_hv_ebi1:
-+		vdda_hv_ebi2:
-+		vdda_hv_ebi3:
-+		vdda_mipi_csi_1p25:
-+		vdda_mipi_dsi0_1p2:
-+		vdda_mipi_dsi1_1p2:
-+		vdda_pcie_1p2:
-+		vdda_ufs1_1p2:
-+		vdda_ufs2_1p2:
-+		vdda_usb1_ss_1p2:
-+		vdda_usb2_ss_1p2:
-+		vreg_l26a_1p2: ldo26 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1208000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l28a_3p0: ldo28 {
-+		};
-+
-+		vreg_lvs1a_1p8: lvs1 {
-+		};
-+
-+		vreg_lvs2a_1p8: lvs2 {
-+		};
-+	};
-+};
-+
-+&apps_smmu {
-+	/* TODO: Figure out how to survive booting with this enabled */
-+	status = "disabled";
-+};
-+
-+&gcc {
-+	protected-clocks = <GCC_QSPI_CORE_CLK>,
-+			   <GCC_QSPI_CORE_CLK_SRC>,
-+			   <GCC_QSPI_CNOC_PERIPH_AHB_CLK>;
-+};
-+
-+&i2c1 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+	qcom,geni-se-fifo;
-+
-+	battery@70 {
-+		compatible = "some,battery";
-+		reg = <0x70>;
-+	};
-+};
-+
-+&i2c3 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+	qcom,geni-se-fifo;
-+
-+	hid@15 {
-+		compatible = "hid-over-i2c";
-+		reg = <0x15>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
-+	};
-+
-+	hid@2c {
-+		compatible = "hid-over-i2c";
-+		reg = <0x2c>;
-+		hid-descr-addr = <0x20>;
-+
-+		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c2_hid_active>;
-+	};
-+};
-+
-+&i2c5 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+	qcom,geni-se-fifo;
-+
-+	hid@10 {
-+		compatible = "hid-over-i2c";
-+		reg = <0x10>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 125 IRQ_TYPE_EDGE_FALLING>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c6_hid_active>;
-+	};
-+};
-+
-+&i2c11 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+	qcom,geni-se-fifo;
-+
-+	hid@5c {
-+		compatible = "hid-over-i2c";
-+		reg = <0x5c>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 92 IRQ_TYPE_LEVEL_LOW>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c12_hid_active>;
-+	};
-+};
-+
-+&qupv3_id_0 {
-+	status = "okay";
-+};
-+
-+&qupv3_id_1 {
-+	status = "okay";
-+};
-+
-+&tlmm {
-+	gpio-reserved-ranges = <0 4>, <81 4>;
-+
-+	i2c2_hid_active: i2c2-hid-active {
-+		pins = <37>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+
-+	i2c6_hid_active: i2c6-hid-active {
-+		pins = <125>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+
-+	i2c12_hid_active: i2c12-hid-active {
-+		pins = <92>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+};
-+
-+&uart6 {
-+       status = "okay";
-+
-+       bluetooth {
-+	       compatible = "qcom,wcn3990-bt";
-+
-+	       vddio-supply = <&vreg_s4a_1p8>;
-+	       vddxo-supply = <&vreg_l7a_1p8>;
-+	       vddrf-supply = <&vreg_l17a_1p3>;
-+	       vddch0-supply = <&vreg_l25a_3p3>;
-+	       max-speed = <3200000>;
-+       };
-+};
-+
-+&ufs_mem_hc {
-+	status = "okay";
-+
-+	vcc-supply = <&vreg_l20a_2p95>;
-+	vcc-max-microamp = <600000>;
-+};
-+
-+&ufs_mem_phy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_ufs1_core>;
-+	vdda-pll-supply = <&vdda_ufs1_1p2>;
-+};
-+
-+&usb_1 {
-+	status = "okay";
-+};
-+
-+&usb_1_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_1_hsphy {
-+	status = "okay";
-+
-+	vdd-supply = <&vdda_usb1_ss_core>;
-+	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
-+	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
-+
-+	qcom,imp-res-offset-value = <8>;
-+	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_21_6_MA>;
-+	qcom,preemphasis-level = <QUSB2_V2_PREEMPHASIS_5_PERCENT>;
-+	qcom,preemphasis-width = <QUSB2_V2_PREEMPHASIS_WIDTH_HALF_BIT>;
-+};
-+
-+&usb_1_qmpphy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_usb1_ss_1p2>;
-+	vdda-pll-supply = <&vdda_usb1_ss_core>;
-+};
-+
-+&usb_2 {
-+	status = "okay";
-+};
-+
-+&usb_2_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_2_hsphy {
-+	status = "okay";
-+
-+	vdd-supply = <&vdda_usb2_ss_core>;
-+	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
-+	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
-+
-+	qcom,imp-res-offset-value = <8>;
-+	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_22_8_MA>;
-+};
-+
-+&usb_2_qmpphy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_usb2_ss_1p2>;
-+	vdda-pll-supply = <&vdda_usb2_ss_core>;
-+};
-+
-+&qup_i2c12_default {
-+	drive-strength = <2>;
-+	bias-disable;
-+};
-+
-+&qup_uart6_default {
-+       pinmux {
-+               pins = "gpio45", "gpio46", "gpio47", "gpio48";
-+               function = "qup6";
-+       };
-+
-+       cts {
-+	       pins = "gpio45";
-+	       bias-pull-down;
-+       };
-+
-+       rts-tx {
-+	       pins = "gpio46", "gpio47";
-+	       drive-strength = <2>;
-+	       bias-disable;
-+       };
-+
-+       rx {
-+	       pins = "gpio48";
-+	       bias-pull-up;
-+       };
-+};
--- 
-2.17.1
+-->8--
 
+This is particularly important if you expect the maintainer to pick up
+the patches.
+
+You don't need to reference a specific commit unless there's a
+significant chance of conflicts if the wrong commit is used, but it can
+help provide a clue as to why you're basing on this alternate branch.
+
+> ~/linux# make TARGETS=arm64 kselftest
+> 
+> New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped by
+> family inside subdirectories: arm64/signal is the first family proposed with
+> this series.
+> This series converts also to this subdirectory scheme the pre-existing
+> (already queued on arm64/for-next/core) KSFT arm64 tags tests, moving them
+> into arm64/tags.
+> 
+> Thanks
+> 
+> Cristian
+> 
+> 
+> Notes:
+> -----
+> - further details in the included READMEs
+> 
+> - more tests still to be written (current strategy is going through the related
+>   Kernel signal-handling code and write a test for each possible and sensible code-path)
+>   A few ideas for more TODO testcases:
+> 	- fake_sigreturn_unmapped_sp: SP into unmapped addrs
+> 	- fake_sigreturn_kernelspace_sp: SP into kernel addrs
+> 	- fake_sigreturn_sve_bad_extra_context: SVE extra context badly formed
+> 	- mangle_sve_invalid_extra_context: SVE extra_context invalid
+> 
+> - SVE signal testcases and special handling will be part of an additional patch
+>   still to be released
+
+What's your approach to checking that the test failure paths work?
+
+We could either hack the kernel or the tests to provoke "fake" failures,
+and I don't think it's necessary to test everything in this way,
+providing we have confidence that the test strategy and framework works
+in general.
+
+[...]
+
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
