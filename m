@@ -2,82 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB833A9EC5
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:49:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43B2EA9ED4
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:51:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2P64sTVu1bj5c8NkcOCWEfHmrS9ugYJE91eRcOg/1O8=; b=eLPcOWV3g29IpO
-	+zyd2D+n1VVKV10TrFdRHg6wSl1S70K3KMNBulkqnrjqjEWkpsXUlZNRYe6rkMyqmMYs8WTs7LkT6
-	s3HrOKZx3ncEwkgfw8s/Zr9OzjjBL+U5ubMVlVbl+0B7YPlpKbhX4XpOljwccGTWtaVDElfBO4n4b
-	Qsc08X5APdjOklHybuzrfzZivnxB79oWXKT0FWf3q8fKVGv4Hsdgb925V8fXpQOIJK0gExm/QTKkO
-	mMQHOqd/hdU/B8+X1wIb5Qcab93j3AnzlOqPpeNG9lsxqUXLiWUflUh/li4xVaVF8JtijVwSltXEF
-	yl3IKlMighsy/HAXd1lA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=hltDuvNVWMY3kXS8ByLVUlAWvdjJ8/4Xi5hjU1Msup4=; b=LyfMrO+1b0WN20XHQmoTjiBQ7
+	DuKxNmd2lBsS/OkVhORKG7DX9BPr5Vn2laGTgq7uf312cmS3KnxgMjMWsxjMGP978D2G2PAGEJRap
+	zx3syQu/pPS1QxI3S6Bsv9Vd8O1wilqSyQgcx2qPwHMbcFiYOikQ0EIAcuw6jzI6Fxm80Ipy/aWhm
+	sPVy94FstMUP1fj4CiRkKf1uVutiW6oGw9L+g8hMwN9XXYrOqej2Eq3zqjNvW2KAARS57KNkiXMag
+	eaTAZOzbPgJcZfgdBx87ZzECOt6+QAaLjbsROCH1PILhp5qxdo3Kx55oRa0xBHSpB3WLvRMI4ddLD
+	05x0zpk2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5oOf-00024L-6g; Thu, 05 Sep 2019 09:49:45 +0000
-Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
+	id 1i5oQ0-0003Xx-Oq; Thu, 05 Sep 2019 09:51:08 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5oOT-00022U-RK
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:49:35 +0000
-Received: by mail-qt1-x841.google.com with SMTP id g13so1611301qtj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 02:49:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BLTsSGkAS20nKvSmDJ8nD9cteiUsmNrKqKIdwSgw/JU=;
- b=aXg0BCP9Sek1lvZeMuLX3m0T7YqT3J7+y48L+cuVdvR8ljEDdiPEof2dLMZGMrNQqf
- frfpxxqdq4i1ZSuneYWogqaVVwUXhpWbAAr50DK5fwnz7E0gTyF774wGR5nyj0EYsHkU
- O58lSwPmNLnkiy7PLIyxy6NJBfLmKRlhrMQ/s=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BLTsSGkAS20nKvSmDJ8nD9cteiUsmNrKqKIdwSgw/JU=;
- b=KaRAyWr75pd65aZuvvcOlJgmazWXhDhsP97qMiJ1hY4QDsPl3PcMk+u3u0YU2vdN5w
- gh0j7PJb9/erMA41C97mJ/Kr/1RhMq7FaN/N8BrF51diu/T3++otyDh+X5hFyZ6KqdjP
- eNC9425uYd3AjcIVZDp1cd+/HNTaxlAYWJebzqXgyRK+dDoI4YKrWECgBvuwCLmThE9u
- ZF+fVfZ4vyzJBzZ9dldhNfDZsRGVdg3vuB4WOAdrS2tqM2/DgwjUJyPLdCdkDsUq6DF+
- 89Q4DFQi8RFtKIY35/oDL6MGZvj0wzKFTPgkAO2rKh6OQEsMefI74JsaC1ejpFq4cGEB
- x6EQ==
-X-Gm-Message-State: APjAAAUeA6yQi+ktqKoJ1AAX2uIn6rV29CpQBNkM4j3KpDbkys8FxAhF
- o3FowuDma5+0uyan70KacijrWOEMDuZfCvbCp2+xwg==
-X-Google-Smtp-Source: APXvYqyXj8KKk6gL7JNHTjmBpk7/3LqhzsyiSDFP08Dv/c/7DWQvOJacLN7yrqb3hzTQyDsYjO9u9/Zn/1y3KylZCaY=
-X-Received: by 2002:a0c:efcc:: with SMTP id a12mr1032204qvt.59.1567676970643; 
- Thu, 05 Sep 2019 02:49:30 -0700 (PDT)
+ id 1i5oPp-0003XW-Lh
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:51:00 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org [80.241.60.240])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id B12A0A1D27;
+ Thu,  5 Sep 2019 11:50:53 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id H6fKP-o1gXOv; Thu,  5 Sep 2019 11:50:49 +0200 (CEST)
+Date: Thu, 5 Sep 2019 19:50:26 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905095026.gjemg2gqua2vufxb@yavin.dot.cyphar.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <57ba3752-c4a6-d2a4-1a4d-a0e13bccd473@rasmusvillemoes.dk>
 MIME-Version: 1.0
-References: <20190905081546.42716-1-drinkcat@chromium.org>
- <CAL_JsqJCO2G90TTT9Mpy4kjVKQyXWw4aXEEnbRp_SE8X=EGc5g@mail.gmail.com>
-In-Reply-To: <CAL_JsqJCO2G90TTT9Mpy4kjVKQyXWw4aXEEnbRp_SE8X=EGc5g@mail.gmail.com>
-From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Thu, 5 Sep 2019 17:49:19 +0800
-Message-ID: <CANMq1KCTPdFhJG1SLf-i+-557Yx-1WLzWCHu3tT_5Q2BF+JgdQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: mt8183: Add node for the Mali GPU
-To: Rob Herring <robh+dt@kernel.org>
+In-Reply-To: <57ba3752-c4a6-d2a4-1a4d-a0e13bccd473@rasmusvillemoes.dk>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_024933_915335_15F75A5D 
-X-CRM114-Status: GOOD (  25.50  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_025058_015853_BF44AC76 
+X-CRM114-Status: GOOD (  47.85  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:841 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -89,241 +69,365 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nick Fan <nick.fan@mediatek.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Alexei Starovoitov <ast@kernel.org>,
+ linux-kernel@vger.kernel.org, David Howells <dhowells@redhat.com>,
+ linux-kselftest@vger.kernel.org, sparclinux@vger.kernel.org,
+ Jiri Olsa <jolsa@redhat.com>, linux-arch@vger.kernel.org,
+ linux-s390@vger.kernel.org, Tycho Andersen <tycho@tycho.ws>,
+ Aleksa Sarai <asarai@suse.de>, Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Al Viro <viro@zeniv.linux.org.uk>,
+ Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
+ Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============1256676375886240804=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Thanks for the quick review!
 
-On Thu, Sep 5, 2019 at 5:09 PM Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Thu, Sep 5, 2019 at 9:16 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
-> >
-> > Add a basic GPU node and opp table for mt8183.
-> >
-> > The binding we use with out-of-tree Mali drivers includes more
-> > clocks, I assume this would be required eventually if we have an
-> > in-tree driver:
->
-> We have an in-tree driver...
+--===============1256676375886240804==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="npvprxbrvxn3jdkc"
+Content-Disposition: inline
 
-Right but AFAICT it does not support Bifrost GPU (yet?).
 
->
-> > clocks =
-> >         <&topckgen CLK_TOP_MFGPLL_CK>,
-> >         <&topckgen CLK_TOP_MUX_MFG>,
-> >         <&clk26m>,
-> >         <&mfgcfg CLK_MFG_BG3D>;
-> > clock-names =
-> >         "clk_main_parent",
-> >         "clk_mux",
-> >         "clk_sub_parent",
-> >         "subsys_mfg_cg";
+--npvprxbrvxn3jdkc
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-Do you think we should add those to the binding document? May not be
-easy to match what the amlogic binding does (I'm not sure to
-understand the details of this device, but I can dig further/ask).
-
-> >
-> > Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
-> >
+On 2019-09-05, Rasmus Villemoes <linux@rasmusvillemoes.dk> wrote:
+> On 04/09/2019 22.19, Aleksa Sarai wrote:
+> > A common pattern for syscall extensions is increasing the size of a
+> > struct passed from userspace, such that the zero-value of the new fields
+> > result in the old kernel behaviour (allowing for a mix of userspace and
+> > kernel vintages to operate on one another in most cases). This is done
+> > in both directions -- hence two helpers -- though it's more common to
+> > have to copy user space structs into kernel space.
+> >=20
+> > Previously there was no common lib/ function that implemented
+> > the necessary extension-checking semantics (and different syscalls
+> > implemented them slightly differently or incompletely[1]). A future
+> > patch replaces all of the common uses of this pattern to use the new
+> > copy_struct_{to,from}_user() helpers.
+> >=20
+> > [1]: For instance {sched_setattr,perf_event_open,clone3}(2) all do do
+> >      similar checks to copy_struct_from_user() while rt_sigprocmask(2)
+> >      always rejects differently-sized struct arguments.
+> >=20
+> > Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> > Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
 > > ---
-> > Upstreaming what matches existing bindings from our Chromium OS tree:
-> > https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/arch/arm64/boot/dts/mediatek/mt8183.dtsi#1348
-> >
-> > The evb part of this change depends on this patch to add PMIC dtsi:
-> > https://patchwork.kernel.org/patch/10928161/
-> >
-> >  arch/arm64/boot/dts/mediatek/mt8183-evb.dts |   7 ++
-> >  arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 103 ++++++++++++++++++++
-> >  2 files changed, 110 insertions(+)
-> >
-> > diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> > index 1fb195c683c3d01..200d8e65a6368a1 100644
-> > --- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> > +++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> > @@ -7,6 +7,7 @@
-> >
-> >  /dts-v1/;
-> >  #include "mt8183.dtsi"
-> > +#include "mt6358.dtsi"
-> >
-> >  / {
-> >         model = "MediaTek MT8183 evaluation board";
-> > @@ -30,6 +31,12 @@
-> >         status = "okay";
-> >  };
-> >
-> > +&gpu {
-> > +       supply-names = "mali", "mali_sram";
-> > +       mali-supply = <&mt6358_vgpu_reg>;
-> > +       mali_sram-supply = <&mt6358_vsram_gpu_reg>;
->
-> Not documented. Just 'sram-supply' is enough.
-
-Will fix.
-
-> Note that the binding doc queued up for 5.4 has been converted to DT schema.
-
-Yep I see that in linux-next.
-
->
-> > +};
+> > diff --git a/lib/struct_user.c b/lib/struct_user.c
+> > new file mode 100644
+> > index 000000000000..7301ab1bbe98
+> > --- /dev/null
+> > +++ b/lib/struct_user.c
+> > @@ -0,0 +1,182 @@
+> > +// SPDX-License-Identifier: GPL-2.0-or-later
+> > +/*
+> > + * Copyright (C) 2019 SUSE LLC
+> > + * Copyright (C) 2019 Aleksa Sarai <cyphar@cyphar.com>
+> > + */
 > > +
-> >  &i2c0 {
-> >         pinctrl-names = "default";
-> >         pinctrl-0 = <&i2c_pins_0>;
-> > diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > index 97f84aa9fc6e1c1..8ea548a762ea252 100644
-> > --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> > @@ -579,6 +579,109 @@
-> >                         #clock-cells = <1>;
-> >                 };
-> >
-> > +               gpu: mali@13040000 {
+> > +#include <linux/types.h>
+> > +#include <linux/export.h>
+> > +#include <linux/uaccess.h>
+> > +#include <linux/kernel.h>
+> > +#include <linux/string.h>
+> > +
+> > +#define BUFFER_SIZE 64
+> > +
+> > +/*
+> > + * "memset(p, 0, size)" but for user space buffers. Caller must have a=
+lready
+> > + * checked access_ok(p, size).
+> > + */
+>=20
+> Isn't this __clear_user() exactly (perhaps except for the return value)?
+> Perhaps not every arch has that?
+
+I didn't know about clear_user() -- I will switch to it.
+
+> > +static int __memzero_user(void __user *p, size_t s)
+> > +{
+> > +	const char zeros[BUFFER_SIZE] =3D {};
+> > +	while (s > 0) {
+> > +		size_t n =3D min(s, sizeof(zeros));
+> > +
+> > +		if (__copy_to_user(p, zeros, n))
+> > +			return -EFAULT;
+> > +
+> > +		p +=3D n;
+> > +		s -=3D n;
+> > +	}
+> > +	return 0;
+> > +}
+> > +
+> > +/**
+> > + * copy_struct_to_user: copy a struct to user space
+> > + * @dst:   Destination address, in user space.
+> > + * @usize: Size of @dst struct.
+> > + * @src:   Source address, in kernel space.
+> > + * @ksize: Size of @src struct.
+> > + *
+> > + * Returns (in all cases, some data may have been copied):
+> > + *  * -EFBIG:  (@usize < @ksize) and there are non-zero trailing bytes=
+ in @src.
+> > + *  * -EFAULT: access to user space failed.
+> > + */
+> > +int copy_struct_to_user(void __user *dst, size_t usize,
+> > +			const void *src, size_t ksize)
+> > +{
+> > +	size_t size =3D min(ksize, usize);
+> > +	size_t rest =3D abs(ksize - usize);
+>=20
+> Eh, I'd avoid abs() here due to the funkiness of the implicit type
+> conversions - ksize-usize has type size_t, then that's coerced to an int
+> (or a long maybe?), the abs is applied which return an int/long (or
+> unsigned versions?). Something like "rest =3D max(ksize, usize) - size;"
+> is more obviously correct and doesn't fall into any
+> narrowing/widening/sign extending traps.
+
+Yeah, I originally used "max(ksize, usize) - size" for that reason but
+was worried it looked too funky (and some quick tests showed that abs()
+gives the right results in most cases -- though I just realised it would
+probably not give the right results around SIZE_MAX). I'll switch back.
+
+> > +	if (unlikely(usize > PAGE_SIZE))
+> > +		return -EFAULT;
+>=20
+> Please don't. That is a restriction on all future extensions - once a
+> kernel is shipped with a syscall using this helper with that arbitrary
+> restriction in place, that syscall is forever prevented from extending
+> its arg struct beyond PAGE_SIZE (which is arch-dependent anyway). Sure,
+> it's hard to imagine, but who'd have thought 32 O_* or CLONE_* bits
+> weren't enough for everybody?
 >
-> gpu@...
->
-> > +                       compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
->
-> You need to add this compatible string too.
+> This is only for future compatibility, and if someone runs an app
+> compiled against 7.3 headers on a 5.4 kernel, they probably don't care
+> about performance, but they would like their app to run.
+
+I'm not sure I agree that the limit is in place *forever* -- it's
+generally not a break in compatibility to convert an error into a
+success (though, there are counterexamples such as mknod(2) -- but that
+was a very specific case).
+
+You're right that it would mean that some very new code won't run on
+very ancient kernels (assuming we ever pass around structs that
+massive), but there should be a reasonable trade-off here IMHO.
+
+If we allow very large sizes, a program could probably DoS the kernel by
+allocating a moderately-large block of memory and then spawning a bunch
+of threads that all cause the kernel to re-check that the same 1GB block
+of memory is zeroed. I haven't tried, but it seems like it's best to
+avoid the possibility altogether.
+
+> > +	}
+> > +	/* Copy the interoperable parts of the struct. */
+> > +	if (__copy_to_user(dst, src, size))
+> > +		return -EFAULT;
+>=20
+> I think I understand why you put this last instead of handling the
+> buffer in the "natural" order. However,
+> I'm wondering whether we should actually do this copy before checking
+> that the extra kernel bytes are 0 - the user will still be told that
+> there was some extra information via the -EFBIG/-E2BIG return, but maybe
+> in some cases the part he understands is good enough. But I also guess
+> we have to look to existing users to see whether that would prevent them
+> from being converted to using this helper.
+>=20
+> linux-api folks, WDYT?
+
+Regarding the order, I just copied what sched and perf already do. I
+wouldn't mind doing it the other way around -- though I am a little
+cautious about implicitly making guarantees like that. The syscall that
+uses copy_struct_to_user() might not want to make that guarantee (it
+might not make sense for them), and there are some -E2BIG returns that
+won't result in data being copied (usize > PAGE_SIZE).
+
+As for feedback, this is syscall-dependent at the moment. The sched and
+perf users explicitly return the size of the kernel structure (by
+overwriting uattr->size if -E2BIG is returned) for copies in either
+direction. So users arguably already have some kind of feedback about
+size issues. clone3() on the other hand doesn't do that (though it
+doesn't copy anything to user-space so this isn't relevant to this
+particular question).
+
+Effectively, I'd like to see someone argue that this is something that
+they would personally want (before we do it).
+
+> > +	return 0;
+>=20
+> Maybe more useful to "return size;", some users might want to know/pass
+> on how much was actually copied.
+
+Even though it is "just" min(ksize, usize), I don't see any harm in
+returning it. Will do.
+
+> > +}
+> > +EXPORT_SYMBOL(copy_struct_to_user);
+>=20
+> Can't we wait with this until a modular user shows up? The primary users
+> are syscalls, which can't be modular AFAIK.
+
+Yeah, I'll drop it. You could use them for ioctl()s but we can always
+add EXPORT_SYMBOL() later.
+
+> > +/**
+> > + * copy_struct_from_user: copy a struct from user space
+> > + * @dst:   Destination address, in kernel space. This buffer must be @=
+ksize
+> > + *         bytes long.
+> > + * @ksize: Size of @dst struct.
+> > + * @src:   Source address, in user space.
+> > + * @usize: (Alleged) size of @src struct.
+> > + *
+> > + * Copies a struct from user space to kernel space, in a way that guar=
+antees
+> > + * backwards-compatibility for struct syscall arguments (as long as fu=
+ture
+> > + * struct extensions are made such that all new fields are *appended* =
+to the
+> > + * old struct, and zeroed-out new fields have the same meaning as the =
+old
+> > + * struct).
+> > + *
+> > + * @ksize is just sizeof(*dst), and @usize should've been passed by us=
+er space.
+> > + * The recommended usage is something like the following:
+> > + *
+> > + *   SYSCALL_DEFINE2(foobar, const struct foo __user *, uarg, size_t, =
+usize)
+> > + *   {
+> > + *      int err;
+> > + *      struct foo karg =3D {};
+> > + *
+> > + *      err =3D copy_struct_from_user(&karg, sizeof(karg), uarg, size);
+> > + *      if (err)
+> > + *        return err;
+> > + *
+> > + *      // ...
+> > + *   }
+> > + *
+> > + * There are three cases to consider:
+> > + *  * If @usize =3D=3D @ksize, then it's copied verbatim.
+> > + *  * If @usize < @ksize, then the user space has passed an old struct=
+ to a
+> > + *    newer kernel. The rest of the trailing bytes in @dst (@ksize - @=
+usize)
+> > + *    are to be zero-filled.
+> > + *  * If @usize > @ksize, then the user space has passed a new struct =
+to an
+> > + *    older kernel. The trailing bytes unknown to the kernel (@usize -=
+ @ksize)
+> > + *    are checked to ensure they are zeroed, otherwise -E2BIG is retur=
+ned.
+> > + *
+> > + * Returns (in all cases, some data may have been copied):
+> > + *  * -E2BIG:  (@usize > @ksize) and there are non-zero trailing bytes=
+ in @src.
+> > + *  * -E2BIG:  @usize is "too big" (at time of writing, >PAGE_SIZE).
+> > + *  * -EFAULT: access to user space failed.
+> > + */
+> > +int copy_struct_from_user(void *dst, size_t ksize,
+> > +			  const void __user *src, size_t usize)
+> > +{
+> > +	size_t size =3D min(ksize, usize);
+> > +	size_t rest =3D abs(ksize - usize);
+>=20
+> As above.
+>=20
+> > +	if (unlikely(usize > PAGE_SIZE))
+> > +		return -EFAULT;
+>=20
+> As above.
+>=20
+> > +	if (unlikely(!access_ok(src, usize)))
+> > +		return -EFAULT;
+> > +
+> > +	/* Deal with trailing bytes. */
+> > +	if (usize < ksize)
+> > +		memset(dst + size, 0, rest);
+> > +	else if (usize > ksize) {
+> > +		const void __user *addr =3D src + size;
+> > +		char buffer[BUFFER_SIZE] =3D {};
+> > +
+> > +		while (rest > 0) {
+> > +			size_t bufsize =3D min(rest, sizeof(buffer));
+> > +
+> > +			if (__copy_from_user(buffer, addr, bufsize))
+> > +				return -EFAULT;
+> > +			if (memchr_inv(buffer, 0, bufsize))
+> > +				return -E2BIG;
+> > +
+> > +			addr +=3D bufsize;
+> > +			rest -=3D bufsize;
+> > +		}
+>=20
+> I'd create a __user_is_zero() helper for this - that way the two
+> branches in the two helpers become nicely symmetric, each just calling a
+> single helper that deals appropriately with the tail. And we can discuss
+> how to implement __user_is_zero() in another bikeshed.
 
 Will do.
 
->
-> > +                       reg = <0 0x13040000 0 0x4000>;
-> > +                       interrupts =
-> > +                               <GIC_SPI 280 IRQ_TYPE_LEVEL_LOW>,
-> > +                               <GIC_SPI 279 IRQ_TYPE_LEVEL_LOW>,
-> > +                               <GIC_SPI 278 IRQ_TYPE_LEVEL_LOW>;
-> > +                       interrupt-names = "job", "mmu", "gpu";
-> > +
-> > +                       clocks = <&topckgen CLK_TOP_MFGPLL_CK>;
-> > +                       power-domains =
-> > +                               <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>,
-> > +                               <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>,
-> > +                               <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
->
-> This needs to be documented too.
+>=20
+> > +	}
+> > +	/* Copy the interoperable parts of the struct. */
+> > +	if (__copy_from_user(dst, src, size))
+> > +		return -EFAULT;
+>=20
+> If you do move up the __copy_to_user(), please move this as well - on
+> the kernel side, we certainly don't care that we copied some bytes to a
+> local buffer which we then ignore because the user had a non-zero tail.
+> But if __copy_to_user() is kept last in copy_struct_to_user(), this
+> should stay for symmetry.
 
-I see that Documentation/devicetree/bindings/gpu/arm,mali-midgard.yaml
-has power-domains in the example both not in the yaml, is that
-expected?
+I will keep that in mind.
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--npvprxbrvxn3jdkc
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXDaXgAKCRCdlLljIbnQ
+Emf2AQDodc/azw4b6cwwZDqnqxOM8t8DCzDdAdvqvdxibvlNZQEA0FAaEvh21B5s
+gAEhZHoS+52ad2ZdUjMFOGVxov8Odg8=
+=BfyA
+-----END PGP SIGNATURE-----
+
+--npvprxbrvxn3jdkc--
 
 
->
-> > +
-> > +                       operating-points-v2 = <&gpu_opp_table>;
-> > +               };
-> > +
-> > +               gpu_opp_table: opp_table0 {
-> > +                       compatible = "operating-points-v2";
-> > +                       opp-shared;
-> > +
-> > +                       opp-300000000 {
-> > +                               opp-hz = /bits/ 64 <300000000>;
-> > +                               opp-microvolt = <625000>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-320000000 {
-> > +                               opp-hz = /bits/ 64 <320000000>;
-> > +                               opp-microvolt = <631250>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-340000000 {
-> > +                               opp-hz = /bits/ 64 <340000000>;
-> > +                               opp-microvolt = <637500>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-360000000 {
-> > +                               opp-hz = /bits/ 64 <360000000>;
-> > +                               opp-microvolt = <643750>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-380000000 {
-> > +                               opp-hz = /bits/ 64 <380000000>;
-> > +                               opp-microvolt = <650000>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-400000000 {
-> > +                               opp-hz = /bits/ 64 <400000000>;
-> > +                               opp-microvolt = <656250>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-420000000 {
-> > +                               opp-hz = /bits/ 64 <420000000>;
-> > +                               opp-microvolt = <662500>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-460000000 {
-> > +                               opp-hz = /bits/ 64 <460000000>;
-> > +                               opp-microvolt = <675000>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-500000000 {
-> > +                               opp-hz = /bits/ 64 <500000000>;
-> > +                               opp-microvolt = <687500>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-540000000 {
-> > +                               opp-hz = /bits/ 64 <540000000>;
-> > +                               opp-microvolt = <700000>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-580000000 {
-> > +                               opp-hz = /bits/ 64 <580000000>;
-> > +                               opp-microvolt = <712500>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-620000000 {
-> > +                               opp-hz = /bits/ 64 <620000000>;
-> > +                               opp-microvolt = <725000>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-653000000 {
-> > +                               opp-hz = /bits/ 64 <653000000>;
-> > +                               opp-microvolt = <743750>, <850000>;
-> > +                       };
-> > +
-> > +                       opp-698000000 {
-> > +                               opp-hz = /bits/ 64 <698000000>;
-> > +                               opp-microvolt = <768750>, <868750>;
-> > +                       };
-> > +
-> > +                       opp-743000000 {
-> > +                               opp-hz = /bits/ 64 <743000000>;
-> > +                               opp-microvolt = <793750>, <893750>;
-> > +                       };
-> > +
-> > +                       opp-800000000 {
-> > +                               opp-hz = /bits/ 64 <800000000>;
-> > +                               opp-microvolt = <825000>, <925000>;
-> > +                       };
->
-> Okay, but I seriously doubt the OPP selection logic is sophisticated
-> enough or will ever be to use all these levels...
->
-> > +               };
-> > +
-> >                 mmsys: syscon@14000000 {
-> >                         compatible = "mediatek,mt8183-mmsys", "syscon";
-> >                         reg = <0 0x14000000 0 0x1000>;
-> > --
-> > 2.23.0.187.g17f5b7556c-goog
-> >
+--===============1256676375886240804==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============1256676375886240804==--
+
