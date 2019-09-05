@@ -2,67 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CB84EA9A4C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 07:57:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EE3EA9A6C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 08:16:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8CMaSfZvmhU/omlTkDnwsCucbl//YVbyKbY/sJtEH10=; b=O8u2cek7rF8yf/
-	VC+RMFCYRjxwZL3KHe81v9/Ta7F1vmpNUJhtJKm8WJrguHHk3c0A+nTlZkc3iC6k4s/F5FO3R78/f
-	KBUchPLB5dQnQF2tKZUjMycNsGkcmZn0OVW4k3zwd9jX+ndl9dAZLtrHLqXvEuw6VurRLKoQdTHx8
-	5VD5rZqp24bXjwW4jYacchxWrQp19KWxZGuUSvpBoVGn+GWyGLxcvw60uO9WzhVxbWdoQt1dAGx9S
-	il+3SvAqpOWPqmy8Ei1VxQWc5FaiHOxg/uXGLn+QgRl+ymLurWBlbrhDRbUqXpHFMTJddGq8mi/ZO
-	g9hshxnXQ3cC7dxxbF8w==;
+	List-Owner; bh=VngFoLwBb7ZSmBSm3DPBMBH0DLXIKJ2XA0rcYc7KY60=; b=VFtqM4YFxWNLSY
+	4iAdTKrmBTQbCsfYAI439ElkoVOzLXuh2JXfKMd5rLtsqh07NsuurPslfY2pgBYFeT/c7A/Bc9Mae
+	zJhyuoNFELOW9aDeLhrOdN7HKH2CG1Q1EtpxaHwcywBfUc6fa0Dc9g/a6vKikGI3jpGYMG4wUBze6
+	/iLZgoMpg3Wmvv2SL36GNmffBPZFbjddz0kSdmu4BBL6+n6hPn3aYy8+k5H8V/bxi4p8POKjgrP73
+	XmgGSSlftL0k1ILqU+wuQc9zVC5dB7NPF97yaZRuR8vk2oEvrFC9aRIKYs3qtNA46GukqsxayWVqF
+	2lwzbzALhbQRF5bCrXgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5klb-00021s-EA; Thu, 05 Sep 2019 05:57:11 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i5l3o-0008ER-4P; Thu, 05 Sep 2019 06:16:00 +0000
+Received: from mail-vk1-xa41.google.com ([2607:f8b0:4864:20::a41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5klM-0001zR-97; Thu, 05 Sep 2019 05:56:57 +0000
-X-UUID: 021cec5728554d41a55a2e95c52b5397-20190904
-X-UUID: 021cec5728554d41a55a2e95c52b5397-20190904
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <yong.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 634166656; Wed, 04 Sep 2019 21:56:47 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 22:56:45 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Thu, 5 Sep 2019 13:56:38 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 5 Sep 2019 13:56:37 +0800
-Message-ID: <1567662999.18702.28.camel@mhfsdcap03>
-Subject: Re: [PATCH v3 06/14] media: mtk-mdp: Get rid of mtk_smi_larb_get/put
-From: Yong Wu <yong.wu@mediatek.com>
-To: houlong wei <houlong.wei@mediatek.com>
-Date: Thu, 5 Sep 2019 13:56:39 +0800
-In-Reply-To: <1567570074.31301.19.camel@mhfsdcap03>
-References: <mailman.21807.1567503573.19300.linux-mediatek@lists.infradead.org>
- <1567570074.31301.19.camel@mhfsdcap03>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i5l3Y-0008Bv-6r
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 06:15:46 +0000
+Received: by mail-vk1-xa41.google.com with SMTP id d126so221149vkf.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 23:15:43 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Lxv2YjVDy5w6AQ+Z95Jd1OHt1865rQWbHzl1H0ckHb4=;
+ b=IurRXFpodLHrXjhNeDu0PBjJR6aKmlNT/dzeEONMU1V5mjYfCIsKTQIXkLXspZuRLT
+ SO2IeUW73ig0y4hTpIc1LeJScYwe/7jF3x1ItS7fkoJd9YSTWsUH2sI/3COuK4II6o/r
+ +Kj20DSoITETteLabp2V7jA4ju9DbWda2nuGTSuEzhZ1KGohbqZEVKqkpRJCAhcLSXD9
+ kEdWKNMJEgbkZzacsvDJtyDbgG7jhbcfx/K1U5vEhgoviC+KwrwJF0gUE3d7mSshVMHg
+ A0LYcz1miwyWZt1OUA9B7KkZFPklzUWf8pMOs0ddGs8nwCkutop0K9qwCxD0ooyRsoi+
+ ohUg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Lxv2YjVDy5w6AQ+Z95Jd1OHt1865rQWbHzl1H0ckHb4=;
+ b=JlGnEHCitoQvSGR2o9kYcYtoAyW2wupPk4b5/TVWFb+ZYhRPdHjfy/498zNLZF66BR
+ lA1vxnw3JQwvRGaHkt6EE6AsqjkLPZsKxFALDf92bj3P/59hfdsHBMMerRa5EPyQ5kr9
+ T+o8GTs585qajnUve7T6CIc9mGQVyTFNBk+c4nYfsVTxuomWwP/SC54NERoqAZCtfOTt
+ R5eL85nNLO2Fh8ptoKjB2qx/cT0TSpCKcKQb7fa+r2PTWmaNxtgLVlaErF3wPD5XaaXa
+ q3ZKrMkoknf04+5x2ji9C+2K6ZbV0wgU2ohH8G0zqWqffA3iGPaPMIXPjUi829rISQj9
+ jYxQ==
+X-Gm-Message-State: APjAAAVyTtlQ7vK36UG1yHxTZRa8sQVdadvcqT8iXaHzvUFSr1fv+wh9
+ xQkLQVJTjoQ1nJeX5tQrKEEopAEuDML2POFksmaQWw==
+X-Google-Smtp-Source: APXvYqwVi7szQ+w3nsCf0zPQZyYdR4HeVO1GXvtz/sWMMhtS2v2QWLsWh3Ip3Jb3oWwBQ9pfzHwoVyT/iOmN8ovRJtE=
+X-Received: by 2002:a1f:4981:: with SMTP id w123mr690507vka.13.1567664142296; 
+ Wed, 04 Sep 2019 23:15:42 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: B5594BCA8B000D0387E321BE740558961162944E3E3D0781D08371B12D3EAA0E2000:8
-X-MTK: N
+References: <20190904122939.23780-1-yuehaibing@huawei.com>
+ <20190904122939.23780-9-yuehaibing@huawei.com>
+In-Reply-To: <20190904122939.23780-9-yuehaibing@huawei.com>
+From: Amit Kucheria <amit.kucheria@linaro.org>
+Date: Thu, 5 Sep 2019 11:45:30 +0530
+Message-ID: <CAHLCerOVuNEAkCggBoDU4NgbzhTVxpdJXeTXVrTs5tp7ZVtSMg@mail.gmail.com>
+Subject: Re: [PATCH -next 08/15] thermal: tsens: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_225656_328944_A5F9645D 
-X-CRM114-Status: GOOD (  16.45  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_231544_258376_71635211 
+X-CRM114-Status: GOOD (  16.22  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:a41 listed in]
+ [list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,92 +92,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org, Nicolas
- Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, chao.hao@mediatek.com,
- Joerg Roedel <joro@8bytes.org>, Will Deacon <will.deacon@arm.com>,
- linux-kernel@vger.kernel.org, Evan Green <evgreen@chromium.org>,
- Tomasz Figa <tfiga@google.com>, iommu@lists.linux-foundation.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>, minghsiu.tsai@mediatek.com,
- ming-fan.chen@mediatek.com, anan.sun@mediatek.com, Robin
- Murphy <robin.murphy@arm.com>, Matthias Kaehlcke <mka@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mans@mansr.com, Markus Mayer <mmayer@broadcom.com>,
+ Eric Anholt <eric@anholt.net>, miquel.raynal@bootlin.com,
+ linux-stm32@st-md-mailman.stormreply.com, Heiko Stuebner <heiko@sntech.de>,
+ f.fainelli@gmail.com, Daniel Lezcano <daniel.lezcano@linaro.org>,
+ phil@raspberrypi.org, linux-rockchip@lists.infradead.org,
+ Andy Gross <agross@kernel.org>, bcm-kernel-feedback-list@broadcom.com,
+ linux-arm-msm <linux-arm-msm@vger.kernel.org>, Zhang Rui <rui.zhang@intel.com>,
+ david.hernandezsanchez@st.com, alexandre.torgue@st.com,
+ Marc Gonzalez <marc.w.gonzalez@free.fr>, rjui@broadcom.com,
+ Eduardo Valentin <edubezval@gmail.com>, linux-mediatek@lists.infradead.org,
+ linux-rpi-kernel@lists.infradead.org, gregory.0xf0@gmail.com,
+ Matthias Brugger <matthias.bgg@gmail.com>, horms+renesas@verge.net.au,
+ talel@amazon.com, lakml <linux-arm-kernel@lists.infradead.org>,
+ sbranden@broadcom.com, wsa+renesas@sang-engineering.com,
+ gregkh@linuxfoundation.org, Linux PM list <linux-pm@vger.kernel.org>,
+ LKML <linux-kernel@vger.kernel.org>, wahrenst@gmx.net,
+ mcoquelin.stm32@gmail.com, Jun Nie <jun.nie@linaro.org>,
+ computersforpeace@gmail.com, Shawn Guo <shawnguo@kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 2019-09-04 at 12:07 +0800, houlong wei wrote:
-> Hi, Yong,
-> 
-> I have inline comment below.
+On Wed, Sep 4, 2019 at 6:05 PM YueHaibing <yuehaibing@huawei.com> wrote:
+>
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+>
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 
-Thanks for your review.
+Acked-by: Amit Kucheria <amit.kucheria@linaro.org>
 
-> 
-> > MediaTek IOMMU has already added the device_link between the consumer
-> > and smi-larb device. If the mdp device call the pm_runtime_get_sync,
-> > the smi-larb's pm_runtime_get_sync also be called automatically.
-> > 
-> > CC: Minghsiu Tsai <minghsiu.tsai@mediatek.com>
-> > Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> > Reviewed-by: Evan Green <evgreen@chromium.org>
-> > ---
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_comp.c | 38 ---------------------------
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_comp.h |  2 --
-> >  drivers/media/platform/mtk-mdp/mtk_mdp_core.c |  1 -
-> >  3 files changed, 41 deletions(-)
-> > 
-> > diff --git a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > index 9afe816..5985a9b 100644
-> > --- a/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > +++ b/drivers/media/platform/mtk-mdp/mtk_mdp_comp.c
-> > @@ -9,7 +9,6 @@
-> >  #include <linux/of.h>
-> >  #include <linux/of_address.h>
-> >  #include <linux/of_platform.h>
-> > -#include <soc/mediatek/smi.h>
-> >  
-> >  #include "mtk_mdp_comp.h"
-> >  
-> > @@ -58,14 +57,6 @@ void mtk_mdp_comp_clock_on(struct device *dev, struct mtk_mdp_comp *comp)
-> >  {
-> >  	int i, err;
-> >  
-> > -	if (comp->larb_dev) {
-> > -		err = mtk_smi_larb_get(comp->larb_dev);
-> > -		if (err)
-> > -			dev_err(dev,
-> > -				"failed to get larb, err %d. type:%d id:%d\n",
-> > -				err, comp->type, comp->id);
-> > -	}
-> 
-> In previous design,mtk_mdp_comp_clock_on() is called by each MDP
-> hardware component, and mtk_smi_larb_get() is also called for each MDP
-> hardware component which accesses DRAM via SMI larb.
-> 
-> Since mdp device only contains mdp_rdma component, so
-> pm_runtime_get_sync() will ignore other smi-larb clock. We need consider
-> how to enable clocks of other smi-larb associated with other mdp
-> component, e.g. mdp_wdma, mdp_wrot.
-> 
-
-Sorry, I'm not so familiar with mdp, thus, for MDP part, the test and
-reviewing from Minghsiu or you is expected.
-
-This patch only delete the smi interface literally. In my understanding,
-mdp should call pm_runtime_get with the corresponding device, no matter
-mdp_wdma or mdp_wrot device.
-
-Of course I am not sure the mdp flow, If this patch affect its function,
-please tell me. Also, If mdp driver need change correspondingly, I will
-put it into this series like [12/14] of this patchset which is from
-display.
-
-[snip]
-
-
+> ---
+>  drivers/thermal/qcom/tsens-common.c | 7 ++-----
+>  1 file changed, 2 insertions(+), 5 deletions(-)
+>
+> diff --git a/drivers/thermal/qcom/tsens-common.c b/drivers/thermal/qcom/tsens-common.c
+> index 528df88..43ce4fb 100644
+> --- a/drivers/thermal/qcom/tsens-common.c
+> +++ b/drivers/thermal/qcom/tsens-common.c
+> @@ -155,7 +155,6 @@ int __init init_common(struct tsens_priv *priv)
+>  {
+>         void __iomem *tm_base, *srot_base;
+>         struct device *dev = priv->dev;
+> -       struct resource *res;
+>         u32 enabled;
+>         int ret, i, j;
+>         struct platform_device *op = of_find_device_by_node(priv->dev->of_node);
+> @@ -166,8 +165,7 @@ int __init init_common(struct tsens_priv *priv)
+>         if (op->num_resources > 1) {
+>                 /* DT with separate SROT and TM address space */
+>                 priv->tm_offset = 0;
+> -               res = platform_get_resource(op, IORESOURCE_MEM, 1);
+> -               srot_base = devm_ioremap_resource(&op->dev, res);
+> +               srot_base = devm_platform_ioremap_resource(op, 1);
+>                 if (IS_ERR(srot_base)) {
+>                         ret = PTR_ERR(srot_base);
+>                         goto err_put_device;
+> @@ -184,8 +182,7 @@ int __init init_common(struct tsens_priv *priv)
+>                 priv->tm_offset = 0x1000;
+>         }
+>
+> -       res = platform_get_resource(op, IORESOURCE_MEM, 0);
+> -       tm_base = devm_ioremap_resource(&op->dev, res);
+> +       tm_base = devm_platform_ioremap_resource(op, 0);
+>         if (IS_ERR(tm_base)) {
+>                 ret = PTR_ERR(tm_base);
+>                 goto err_put_device;
+> --
+> 2.7.4
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
