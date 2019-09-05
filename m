@@ -2,67 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4316A98F0
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 05:42:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62135A98F5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 05:46:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=fuRbYwkvsbp1pAmkavFxGDhcMCKdwZ2aA/4KE4/Ebgc=; b=ob/
-	FKbie4tKzhuiyCHJQDQ7lZkd3Fn/n9L8NXGPr4qMu4riCid7CgPDjVUdKgrLIS7zWN/qdrcNTKbEn
-	nJS0RK3q7r8RXBYDLyMKI8TQETNK3CKCgiReMDxf++iu/EXyyU/CRAT6BV3qCEnYt08REscqp2N4d
-	vJif+3e21nXlccHFz5WgClbxqZPd1uXZxhf0tFAxEev9fHH6eKC1fmfcAhbraKolllmH9oWivJC/d
-	hNdG2QImmKGNl7qtjyXwTMLFUUL7Sh70EGD1ahN4GPHYBlfYGIh2GsiDQxX9QOQUPz0O1evpoJv0P
-	3rniv3LeYeC/jTBdKL7Ta9EJSfu+wlQ==;
+	References:List-Owner; bh=4J9idOGGTAwZ1x8eOhz5vsObze0mRmdsgN4x99Qdp18=; b=sBB
+	remHkz8Qbfgq5CYIB0W6TBUUHi8dFvS+92FTsPJ5iLZW/hKjPJr9tF6l2l2uwoEuzPLz8dx9BuxPN
+	hmdSa6efErUIkDtjZ0xZim/boYUg0gG1Ks+oxXd7SA90PinB/rEYDm/AGEK0IEJkKkV2AQbMXrseh
+	12ualuGJ3eemYJ9T3pNZn8o/lvvsGpjRazhTrOHfi8KxVYBBHO69nNjWXarpiCBpYzyz65IMASZ+s
+	V2ObIubU3ei3CT4nNXtek4UfbNjaafBgDtcAykI2ZF5wVxB4gydtsVE0/AwP+2SuJcCv+Yj3hHI+X
+	i1W+g7WNZqoo3XISbyz/7XuPULUDylQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ifB-0005Mb-M6; Thu, 05 Sep 2019 03:42:25 +0000
-Received: from ozlabs.org ([2401:3900:2:1::2])
+	id 1i5iih-0006rd-Cf; Thu, 05 Sep 2019 03:46:03 +0000
+Received: from conuserg-12.nifty.com ([210.131.2.79])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5if3-0005L2-Qy
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 03:42:19 +0000
-Received: from authenticated.ozlabs.org (localhost [127.0.0.1])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits)
- key-exchange ECDHE (P-256) server-signature RSA-PSS (4096 bits) server-digest
- SHA256) (No client certificate requested)
- by mail.ozlabs.org (Postfix) with ESMTPSA id 46P62G4pP0z9sDB;
- Thu,  5 Sep 2019 13:42:13 +1000 (AEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=canb.auug.org.au;
- s=201702; t=1567654934;
- bh=D20kb8FI3SomKAMFU69sx2kOZjLBDN7Zio+s1/ojh5g=;
- h=Date:From:To:Cc:Subject:From;
- b=n4nBW4F6iU8JNHCd2sXvqFLwQv01DM83fps9ZYicuMoPD3F4t+EPZ7V99BScFAFN7
- CcV3qQ4PoST4MbLMx7yKrxtPtJ/AVQd86IjYo2Efo3o193crsys7vNnYR0w+T8QLDT
- f9XG5Q2Va93VGfrjsop0UJpAbttdKsn27U1+wg84/REF0wllVAWRhZrmXHqVBrNC8G
- kHnBXwozJBeVgPFQTt6iX42ADyLRIu5P7NgdckkXzFPyfoISY9OHt9O5rzJrykyhMV
- Be0hI3wOo/8tfxlR7OdqA3CshCpPcxMDrao2SUpkaFXYzRcn5KW40uFAMYM1zNPgMM
- FTyVkJhnVE9qw==
-Date: Thu, 5 Sep 2019 13:42:13 +1000
-From: Stephen Rothwell <sfr@canb.auug.org.au>
-To: David Miller <davem@davemloft.net>, Networking <netdev@vger.kernel.org>,
- Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>, ARM
- <linux-arm-kernel@lists.infradead.org>
-Subject: linux-next: manual merge of the net-next tree with the arm-soc tree
-Message-ID: <20190905134213.739ca375@canb.auug.org.au>
-MIME-Version: 1.0
+ id 1i5iiZ-0006rM-IK
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 03:45:57 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-12.nifty.com with ESMTP id x853jcTH003166;
+ Thu, 5 Sep 2019 12:45:39 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-12.nifty.com x853jcTH003166
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1567655140;
+ bh=7gaxoylNrSTAPifaXUMFJFcVml5WuDbSfw0bNdNYgYM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=H2oqbZYUpS6xDMhaK5PhpPyCGgywVffCJmhNpiMupiVr7p6Xmid33GiuiI3bVqEHz
+ QlUAC6hZHOSnIoOY9NFTEUP4r5IqpM7bwuCFB4DcfY4fumrIUAZXg+9t6hfu209rqe
+ hNUp76bDcw31kvFpjY7Zc+mFrIoIW5rOniPZ4AZdLDGmB8kZurgrhtQS6LX+DRLdv6
+ /BrKTX/5mc1KUp832Cx2zheldE8ijvghFp5i/bwNjDlIai/8c9/1/RuQQH058Y6v7f
+ far3P6PeQsx3xlNLIY4ZlulKjoDVYE+6LxU2d6w+gGntBWRP5xxqsUY6Nygd8MH+gl
+ jTdm/yKKxuCgg==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: Wolfram Sang <wsa+renesas@sang-engineering.com>, linux-i2c@vger.kernel.org
+Subject: [PATCH] i2c: uniphier(-f): use devm_platform_ioremap_resource()
+Date: Thu,  5 Sep 2019 12:45:32 +0900
+Message-Id: <20190905034533.9842-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_204218_156900_1A5A2FE1 
-X-CRM114-Status: UNSURE (   7.27  )
+X-CRM114-CacheID: sfid-20190904_204555_828877_01F4C431 
+X-CRM114-Status: UNSURE (   7.86  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.4 (--)
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.4 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2401:3900:2:1:0:0:0:2 listed in] [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.79 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -76,77 +72,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stephen Boyd <swboyd@chromium.org>
-Content-Type: multipart/mixed; boundary="===============5436046279447565316=="
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============5436046279447565316==
-Content-Type: multipart/signed; boundary="Sig_/7ZgpHNInDPnmm6UQg5TPdzE";
- protocol="application/pgp-signature"; micalg=pgp-sha256
+Replace the chain of platform_get_resource() and devm_ioremap_resource()
+with devm_platform_ioremap_resource().
 
---Sig_/7ZgpHNInDPnmm6UQg5TPdzE
-Content-Type: text/plain; charset=US-ASCII
-Content-Transfer-Encoding: quoted-printable
+This allows to remove the local variable for (struct resource *), and
+have one function call less.
 
-Hi all,
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
 
-Today's linux-next merge of the net-next tree got a conflict in:
+ drivers/i2c/busses/i2c-uniphier-f.c | 4 +---
+ drivers/i2c/busses/i2c-uniphier.c   | 4 +---
+ 2 files changed, 2 insertions(+), 6 deletions(-)
 
-  drivers/net/ethernet/nuvoton/w90p910_ether.c
+diff --git a/drivers/i2c/busses/i2c-uniphier-f.c b/drivers/i2c/busses/i2c-uniphier-f.c
+index 7acca2599f04..fc5354845ffa 100644
+--- a/drivers/i2c/busses/i2c-uniphier-f.c
++++ b/drivers/i2c/busses/i2c-uniphier-f.c
+@@ -538,7 +538,6 @@ static int uniphier_fi2c_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct uniphier_fi2c_priv *priv;
+-	struct resource *regs;
+ 	u32 bus_speed;
+ 	unsigned long clk_rate;
+ 	int irq, ret;
+@@ -547,8 +546,7 @@ static int uniphier_fi2c_probe(struct platform_device *pdev)
+ 	if (!priv)
+ 		return -ENOMEM;
+ 
+-	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	priv->membase = devm_ioremap_resource(dev, regs);
++	priv->membase = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(priv->membase))
+ 		return PTR_ERR(priv->membase);
+ 
+diff --git a/drivers/i2c/busses/i2c-uniphier.c b/drivers/i2c/busses/i2c-uniphier.c
+index 0173840c32af..a6d7a3709051 100644
+--- a/drivers/i2c/busses/i2c-uniphier.c
++++ b/drivers/i2c/busses/i2c-uniphier.c
+@@ -326,7 +326,6 @@ static int uniphier_i2c_probe(struct platform_device *pdev)
+ {
+ 	struct device *dev = &pdev->dev;
+ 	struct uniphier_i2c_priv *priv;
+-	struct resource *regs;
+ 	u32 bus_speed;
+ 	unsigned long clk_rate;
+ 	int irq, ret;
+@@ -335,8 +334,7 @@ static int uniphier_i2c_probe(struct platform_device *pdev)
+ 	if (!priv)
+ 		return -ENOMEM;
+ 
+-	regs = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	priv->membase = devm_ioremap_resource(dev, regs);
++	priv->membase = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(priv->membase))
+ 		return PTR_ERR(priv->membase);
+ 
+-- 
+2.17.1
 
-between commit:
-
-  00d2fbf73d55 ("net: remove w90p910-ether driver")
-
-from the arm-soc tree and commit:
-
-  d1a55841ab24 ("net: Remove dev_err() usage after platform_get_irq()")
-
-from the net-next tree.
-
-I fixed it up (I removed the file) and can carry the fix as necessary.
-This is now fixed as far as linux-next is concerned, but any non trivial
-conflicts should be mentioned to your upstream maintainer when your tree
-is submitted for merging.  You may also want to consider cooperating
-with the maintainer of the conflicting tree to minimise any particularly
-complex conflicts.
-
---=20
-Cheers,
-Stephen Rothwell
-
---Sig_/7ZgpHNInDPnmm6UQg5TPdzE
-Content-Type: application/pgp-signature
-Content-Description: OpenPGP digital signature
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAEBCAAdFiEENIC96giZ81tWdLgKAVBC80lX0GwFAl1whBUACgkQAVBC80lX
-0GxxrAf9F2t1WiC/CROxhOEgz3XgdRi7F4M0XLeKgV6HYsch3nX5Wj9Z1Vh8tW6l
-c/fbKI1ZSokhfgYm1cEiqm/9SQg2lhUiGywuszysvidYT7o1GX/zMb9CGNC5fg8p
-zJsmfVIjLY5Qzo4RtOQSqFlT8wgd+CXFK2fEn/9nEnryStrlzb/E6xA+b437SxuI
-gQ7U2Zl+eNgIgMJXMJlLQQP+3yfw5HJX7Ox4AbYxYbuV6wS9H1XZvWkT4JjCgSQZ
-jsn8b1Ly8foiIhxb7K7cDl7yUCJyjCoVUqIGTAY6grwXCxRGRm5EDr9thpRRrCgS
-yAxzxRctgd46mxhzjE9l0L2sbmpMOA==
-=nc/L
------END PGP SIGNATURE-----
-
---Sig_/7ZgpHNInDPnmm6UQg5TPdzE--
-
-
---===============5436046279447565316==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5436046279447565316==--
-
