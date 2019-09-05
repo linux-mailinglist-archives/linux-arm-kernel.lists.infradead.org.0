@@ -2,120 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1D8E3AA530
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:58:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 479CAAA559
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:02:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+08n3LYxKBohOc68+QfkZXsQQC83PCDNjZ1JLHwZxPk=; b=qHIkb5jeiqsvsK
-	++9/r2T41aYNrzDiD64afmVvTRCKGxsGdcZX8HXtXhSd5FRaQo1lkdBW3RPGUaV61GtVrlTcfXSLn
-	YEecIHKBhhZzkH+bZhgIQfY2IiyzwTiEnUsCIoR1/7AKHCvHEqWI7jCqCG3Z64K19ehIyblMXgt9f
-	Rwc4vOMWtl5ZYz8L9CnYI4mMxBMyxwuhFacwJH1i1SAcNmhZC5TOswJ8+/EQVEJssqF7MlqygFtwX
-	lcCgqY9io2qfGkBkJ7Wq41dz10k0gfsT+3w/kA5Kkn8IVyaPghvjsc/jBEyfVbnZJ1ia99CMqt8WS
-	cvlj7Kjqh++abj43ne/g==;
+	List-Owner; bh=8a8PMCStlBj+xCTXENdaTrDOy1F9WblTRaSjozK2sAM=; b=PbQQ6qNqy3iuNg
+	vpmMuLP8lqHcpkZABIkmlnWyNInXKrG1JC4sgDZZCftr9KrtqDUkDc1ktN7sinnsBo+LqFKDdLPWb
+	79A5FOM5bx5gvBKIe5+gZ14XvvhXh8znLHmFv36HnOysSfIa1uKUCsQj5gLYeBgYWQjg70hyvwkkH
+	jfLeyRcxBqjyUNkujtIKteO+41JGuKGnstlG2/4pEMLoLuagOJAIpuSmBZyIoNEOxI/XOg96ZYDaq
+	j9AgjYowJy4GDX9ateQ+WCGTtdoSui7bGC8+ZrsvFSR1tdE0pgbWAdMWSapeZbO3YVBBEMIMbnydk
+	4HLb0JAUIyRZM2WPcJyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sHc-0004Il-A9; Thu, 05 Sep 2019 13:58:44 +0000
-Received: from mail-vi1eur04on0708.outbound.protection.outlook.com
- ([2a01:111:f400:fe0e::708]
- helo=EUR04-VI1-obe.outbound.protection.outlook.com)
+	id 1i5sL4-0006JD-8K; Thu, 05 Sep 2019 14:02:18 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sHR-0004Hh-AZ
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:58:35 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=C5uaPA2gs4WQ1xXVtTvXgYR49gkKPbz/cB21D12depCR1ip7Bm0OqvFU3TPviCPpTc5dWV1hYo6k0CbnKe0Bif40rJuRdDDyWR+oNgeiCkmr3fse1AmXClVklAf8TaE3CiVlwlt9AsCG26zg8UQqDHhy7fBtIJqaKR3ZzxKlYh0733DEM/SLZL2fkkRR6SftGS51oXao1vdsloM9oIIJ7tcy/5JPGNEyY5RtmWE4aLpQuZ1WExaUqJbvuLj0kEcSt6MB4x/A0VGhAItg1ZSssANAubSlgYKNe93XHU6uE9U1nNI78mqeO5+axmEQnNqLqztguVnyHh8+XjkpZRikbg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=utsaBLCJganQV5SdQABLEt8dkWnVAQMfeaiOyy2TwNw=;
- b=eR40THKTGni2WVaXwFj5RV6zXba+DCmDPdgCS/jBhPcyTj4qAv+2U21gBVDdRd/ygbW+1xliG6qieAv1QI0kKPM/8N13dskX1huMvY4+yqZ5VDl+IUdZC1LKgTPgQquX1kv9x7vklO/ip2g8iRAUTQKDt9do9ckKlwKTdxF7FdAPHGszeYP9DLwlcFc9aR49GbCwfDDZf5rXJVKzhhDHq1B1o+snyRpLaBvtk2ihLOhHADLbb8uCAZ80BjtAtoIq0vuoUccZDoFPv5AfkvdYRQdLrAbjCD3McpCZrezL8RtwTooqjfgsU/bwJ0nxn9nn8+INz9LmDYejquOTmPjnYQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=axentia.se; dmarc=pass action=none header.from=axentia.se;
- dkim=pass header.d=axentia.se; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=axentia.se;
- s=selector2;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=utsaBLCJganQV5SdQABLEt8dkWnVAQMfeaiOyy2TwNw=;
- b=esarSxK0SCESZ7uHnv2BHAUIcXFADsghNn7tEkp75KWzZ7bAihgdFpwfHYFH6Q0ZehKCStOHpAJqopVWWeeoVPMdMJaj/FzU1diAt5TEohf9KDa+HUebAwfPrvlaJoT6emEvMcOBiRdvbBwtBXZ6uxd7xS4Z3B8c4ilukWo01c0=
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com (52.134.66.158) by
- DB3PR0202MB3404.eurprd02.prod.outlook.com (52.134.68.142) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.19; Thu, 5 Sep 2019 13:58:25 +0000
-Received: from DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::e12b:afcb:73e1:5d09]) by DB3PR0202MB3434.eurprd02.prod.outlook.com
- ([fe80::e12b:afcb:73e1:5d09%7]) with mapi id 15.20.2220.022; Thu, 5 Sep 2019
- 13:58:24 +0000
-From: Peter Rosin <peda@axentia.se>
-To: Wolfram Sang <wsa@the-dreams.de>, Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
- processing
-Thread-Topic: [PATCH v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
- processing
-Thread-Index: AQHVY9PiTM9rqMwvEUyL0vDv3ajYn6cdGeCAgAACawA=
-Date: Thu, 5 Sep 2019 13:58:24 +0000
-Message-ID: <3458ed2a-ae49-b46b-3e89-ce039a2749b4@axentia.se>
-References: <20190905102247.27583-1-lee.jones@linaro.org>
- <20190905134941.GG1157@kunai>
-In-Reply-To: <20190905134941.GG1157@kunai>
-Accept-Language: en-US, sv-SE
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-user-agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-x-originating-ip: [213.112.138.100]
-x-clientproxiedby: HE1PR06CA0162.eurprd06.prod.outlook.com
- (2603:10a6:7:16::49) To DB3PR0202MB3434.eurprd02.prod.outlook.com
- (2603:10a6:8:5::30)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peda@axentia.se; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: eea0af23-5e3b-426a-4af0-08d732091eaa
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:DB3PR0202MB3404; 
-x-ms-traffictypediagnostic: DB3PR0202MB3404:
-x-ms-exchange-purlcount: 1
-x-microsoft-antispam-prvs: <DB3PR0202MB3404D99EBF971483D51B7B0BBCBB0@DB3PR0202MB3404.eurprd02.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:8882;
-x-forefront-prvs: 015114592F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(376002)(346002)(396003)(136003)(42606007)(39830400003)(366004)(189003)(199004)(58126008)(65806001)(65956001)(54906003)(2616005)(316002)(11346002)(4326008)(53936002)(110136005)(476003)(66066001)(71190400001)(71200400001)(8936002)(446003)(99286004)(52116002)(76176011)(6512007)(6436002)(5660300002)(6246003)(6306002)(25786009)(31696002)(7736002)(256004)(6116002)(508600001)(14454004)(6486002)(102836004)(229853002)(26005)(86362001)(36756003)(66446008)(64756008)(66556008)(66476007)(66946007)(7416002)(186003)(486006)(81166006)(31686004)(81156014)(2906002)(966005)(8676002)(305945005)(386003)(6506007)(53546011)(3846002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:DB3PR0202MB3404;
- H:DB3PR0202MB3434.eurprd02.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: axentia.se does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: xDOuuvqxrS9glJKYa7/86AFZprjNL2TjHTSPqfDFOix3FIfXyaq3IAgmLYME7MuIVBL+SFX9S4XGaHHBttJuaeWICuur6/a72Wq9tU4XF5D8L5c5nuyZLQ69GzV4onREM59cH82gu2UU/H4trcbXzpgbUQc5+5RyYn7Rad8x4NT9w+fYAwPfO0HA0c/W7+EoBFDbYkSUWjq6zI48I5L5Ix2VM8BjTNs8hL2Dkqwva8VzwQyyFlOUeNMzOCjF6O/t/kZBsa4OlwaOTcWAVx5KtrDD73+OW2cUegf91nDLAUqhUKOEpdceaoqTAImVNKBLN+T0hDuHTR8nvonJUdGegeW1A86b9xEsF2yarsIOR6zCoyGcBhJphBf7XjRC6KfsuUpZpq15zF7H2KmtKJPRFfPRVBvfsZQWDwpb2Ph89jk=
-x-ms-exchange-transport-forked: True
-Content-ID: <813F8E51C3E2B141AF9AC8B67D62FE76@eurprd02.prod.outlook.com>
+ id 1i5sKs-0006HC-Gt
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:02:08 +0000
+Received: by mail-lf1-x141.google.com with SMTP id t8so2096401lfc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 07:02:04 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Y6GdqPH0KVO/+ZJvIYhCRArnuMGnAumqu+juuMVJhOc=;
+ b=R64ee0WfRJ2+6EYXTlrJf8c+TzHsEXj8JNgQSfgg30DK/M/mocVRoL4Q8ct3r/rODE
+ CTRGZoGFXbA6P0iP1NsvBQTO4qh8oDNUb/TkGdBQLeWy95eNCiUM9T65Kuv19NuE9Vwy
+ c4/der6ho0mulKsweuGoF/FcAW9FE6KwEK4Xse3CNeuKX8jlVFpjHuUft+QvfjrFipC0
+ HPgScpSAwIJ/x0pAoljakY1Oe5IHQyZojwuQdcrd9xVwtNBm+HcUVD8p0J6GQ+xwG322
+ prgREciNMHLpiydbIVKnabDHqAT77GMryWpDkhbrGv12K0UPFh044XtZ0N7Hd+lnjtxu
+ DJrA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Y6GdqPH0KVO/+ZJvIYhCRArnuMGnAumqu+juuMVJhOc=;
+ b=phsnO3vLd7l0TAofJAtIurJkhegF2ko40h/ZA5pHbSdnb1pIa3KF4N4g+abwmfjev5
+ och2b44FYwGvMYZP05bfc5RSXvolaQZ3QZZKV6AMNzW+7aviUJzge/FgnCScnHlg8OJt
+ cbpCY6thr7H0ITUARiPB3+CaJiFXav4s3t6jnlAdqnxz7kebIPoB1zCT6RAIe4CNqW/9
+ coexvCd32Zn978JDw19m1mAtx3s8/3+VLLcGgPxYIZUED8tdqrc7v4EkqRBqdMKk40Tf
+ M4Qif81u0Ef/6ZN8NI4E1LQrRzvSwVbKWu3NzTPNh6N2KNZFO97Eog/S2slZxb5kYeXI
+ IVXA==
+X-Gm-Message-State: APjAAAV8715FmvxSJnLRz0++qF4TFqoEgYOkX5GFW4J4Y3gFMzIsrN9S
+ OG7skaqz0y8g8Uz6HkbEVF6I111ThTPZKNcyK8RMMA==
+X-Google-Smtp-Source: APXvYqyl4zI+t8OtieR9s2IQqoz5ExKv3CVcq9ddTFSGd/uFyuy0jWlSRm7mgp7YK7eaM/5kiWkFzcXJ/qrhw9/p4qE=
+X-Received: by 2002:a05:6512:304:: with SMTP id
+ t4mr2590877lfp.15.1567692122600; 
+ Thu, 05 Sep 2019 07:02:02 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: axentia.se
-X-MS-Exchange-CrossTenant-Network-Message-Id: eea0af23-5e3b-426a-4af0-08d732091eaa
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 13:58:24.8524 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 4ee68585-03e1-4785-942a-df9c1871a234
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: jfgVotAS0pgobuVIHFfQC0PWUnx09cwdMJa6OY+7pSKyKaiEHOrbBxzNOgJ5a7JH
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0202MB3404
+References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
+ <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
+ <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
+ <1567689999.2389.5.camel@mtkswgap22>
+In-Reply-To: <1567689999.2389.5.camel@mtkswgap22>
+From: Vincent Guittot <vincent.guittot@linaro.org>
+Date: Thu, 5 Sep 2019 16:01:51 +0200
+Message-ID: <CAKfTPtC3txstND=6YkWBJ16i06cQ7xueUpD5j-j-UfuSf0-z-g@mail.gmail.com>
+Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
+To: Jing-Ting Wu <jing-ting.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_065833_579920_BBA37FA0 
-X-CRM114-Status: GOOD (  13.64  )
+X-CRM114-CacheID: sfid-20190905_070206_693035_B0B71DC0 
+X-CRM114-Status: GOOD (  32.27  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:111:f400:fe0e:0:0:0:708 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -134,55 +94,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "agross@kernel.org" <agross@kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>,
- "bjorn.andersson@linaro.org" <bjorn.andersson@linaro.org>,
- "vkoul@kernel.org" <vkoul@kernel.org>,
- "alokc@codeaurora.org" <alokc@codeaurora.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- "linux-arm-msm@vger.kernel.org" <linux-arm-msm@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
+ linux-kernel <linux-kernel@vger.kernel.org>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Qais Yousef <qais.yousef@arm.com>, LAK <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 2019-09-05 15:49, Wolfram Sang wrote:
-> Hi Lee,
-> 
-> I understand you are in a hurry, but please double check before
-> sending...
+Hi Jing-Ting,
 
-Linus indicated that an rc8 is coming up, which should provide an extra week.
-https://lwn.net/Articles/798152/
+On Thu, 5 Sep 2019 at 15:26, Jing-Ting Wu <jing-ting.wu@mediatek.com> wrote:
+>
+> On Fri, 2019-08-30 at 15:55 +0100, Qais Yousef wrote:
+> > On 08/29/19 11:38, Valentin Schneider wrote:
+> > > On 29/08/2019 04:15, Jing-Ting Wu wrote:
+> > > > At original linux design, RT & CFS scheduler are independent.
+> > > > Current RT task placement policy will select the first cpu in
+> > > > lowest_mask, even if the first CPU is running a CFS task.
+> > > > This may put RT task to a running cpu and let CFS task runnable.
+> > > >
+> > > > So we select idle cpu in lowest_mask first to avoid preempting
+> > > > CFS task.
+> > > >
+> > >
+> > > Regarding the RT & CFS thing, that's working as intended. RT is a whole
+> > > class above CFS, it shouldn't have to worry about CFS.
+> > >
+> > > On the other side of things, CFS does worry about RT. We have the concept
+> > > of RT-pressure in the CFS scheduler, where RT tasks will reduce a CPU's
+> > > capacity (see fair.c::scale_rt_capacity()).
+> > >
+> > > CPU capacity is looked at on CFS wakeup (see wake_cap() and
+> > > find_idlest_cpu()), and the periodic load balancer tries to spread load
+> > > over capacity, so it'll tend to put less things on CPUs that are also
+> > > running RT tasks.
+> > >
+> > > If RT were to start avoiding rqs with CFS tasks, we'd end up with a nasty
+> > > situation were both are avoiding each other. It's even more striking when
+> > > you see that RT pressure is done with a rq-wide RT util_avg, which
+> > > *doesn't* get migrated when a RT task migrates. So if you decide to move
+> > > a RT task to an idle CPU "B" because CPU "A" had runnable CFS tasks, the
+> > > CFS scheduler will keep seeing CPU "B" as not significantly RT-pressured
+> > > while that util_avg signal ramps up, whereas it would correctly see CPU
+> > > "A" as RT-pressured if the RT task previously ran there.
+> > >
+> > > So overall I think this is the wrong approach.
+> >
+> > I like the idea, but yeah tend to agree the current approach might not be
+> > enough.
+> >
+> > I think the major problem here is that on generic systems where CFS is a first
+> > class citizen, RT tasks can be hostile to them - not always necessarily for a
+> > good reason.
+> >
+> > To further complicate the matter, even among CFS tasks we can't tell which are
+> > more important than the others - though hopefully latency-nice proposal will
+> > make the situation better.
+> >
+> > So I agree we have a problem here, but I think this patch is just a temporary
+> > band aid and we need to do better. Though I have no concrete suggestion yet on
+> > how to do that.
+> >
+> > Another thing I couldn't quantify yet how common and how severe this problem is
+> > yet. Jing-Ting, if you can share the details of your use case that'd be great.
+> >
+> > Cheers
+> >
+> > --
+> > Qais Yousef
+>
+>
+> I agree that the nasty situation will happen.The current approach and this patch might not be enough.
 
-> On Thu, Sep 05, 2019 at 11:22:47AM +0100, Lee Jones wrote:
->> We have a production-level laptop (Lenovo Yoga C630) which is exhibiting
->> a rather horrific bug.  When I2C HID devices are being scanned for at
->> boot-time the QCom Geni based I2C (Serial Engine) attempts to use DMA.
->> When it does, the laptop reboots and the user never sees the OS.
->>
->> The beautiful thing about this approach is that, *if* the Geni SE DMA
->> ever starts working, we can remove the C code and any old properties
->> left in older DTs just become NOOP.  Older kernels with newer DTs (less
->> of a priority) *still* will not work - but they do not work now anyway.
-> 
-> ... becasue this paragraph doesn't fit anymore. Needs to be reworded.
-> 
->>
->> Fixes: 8bc529b25354 ("soc: qcom: geni: Add support for ACPI")
-> 
-> As said in the other thread, I don't get it, but this is not a show
-> stopper for me.
+RT task should not harm its cache hotness and responsiveness for the
+benefit of a CFS task
 
-WAG: because ACPI made some driver load at all, and when it
-did it something started happening which crashed some machines.
+> But for requirement of performance, I think it is better to differentiate between idle CPU and CPU has CFS task.
+>
+> For example, we use rt-app to evaluate runnable time on non-patched environment.
+> There are (NR_CPUS-1) heavy CFS tasks and 1 RT Task. When a CFS task is running, the RT task wakes up and choose the same CPU.
+> The CFS task will be preempted and keep runnable until it is migrated to another cpu by load balance.
+> But load balance is not triggered immediately, it will be triggered until timer tick hits with some condition satisfied(ex. rq->next_balance).
 
-Cheers,
-Peter
+Yes you will have to wait for the next tick that will trigger an idle
+load balance because you have an idle cpu and 2 runnable tack (1 RT +
+1CFS) on the same CPU. But you should not wait for more than  1 tick
+
+The current load_balance doesn't handle correctly the situation of 1
+CFS and 1 RT task on same CPU while 1 CPU is idle. There is a rework
+of the load_balance that is under review on the mailing list that
+fixes this problem and your CFS task should migrate to the idle CPU
+faster than now
+
+> CFS tasks may be runnable for a long time. In this test case, it increase 332.091 ms runnable time for CFS task.
+>
+> The detailed log is shown as following, CFS task(thread1-6580) is preempted by RT task(thread0-6674) about 332ms:
+
+332ms is quite long and is probably not an idle load blanace but a
+busy load balance
+
+> thread1-6580  [003] dnh2    94.452898: sched_wakeup: comm=thread0 pid=6674 prio=89 target_cpu=003
+> thread1-6580  [003] d..2    94.452916: sched_switch: prev_comm=thread1 prev_pid=6580 prev_prio=120 prev_state=R ==> next_comm=thread0 next_pid=6674 next_prio=89
+> .... 332.091ms
+> krtatm-1930  [001] d..2    94.785007: sched_migrate_task: comm=thread1 pid=6580 prio=120 orig_cpu=3 dest_cpu=1
+> krtatm-1930  [001] d..2    94.785020: sched_switch: prev_comm=krtatm prev_pid=1930 prev_prio=100 prev_state=S ==> next_comm=thread1 next_pid=6580 next_prio=120
+
+your CFS task has not moved on the idle CPU but has replaced another task
+
+Regards,
+Vincent
+>
+> So I think choose idle CPU at RT wake up flow could reduce the CFS runnable time.
+>
+>
+> Best regards,
+> Jing-Ting Wu
+>
+>
 
 _______________________________________________
 linux-arm-kernel mailing list
