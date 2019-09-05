@@ -2,55 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E3096AA4A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:38:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DAF8BAA4C5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:41:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AFEfTPJdEzyD7so0BIrrY0g1xpnYSAOJtkfeD46wugw=; b=QV+idKldZVPdLWJHTC5vzye5p
-	vzQvEZV5pFOyDVmNXGOeRVcMmjBnrmUKkeQvEwAmygKTRpaL0kXgSALIvjMoCUPvRveQRSNqf9Piu
-	c6YKvnVIJG8lk51y0JZWvGqPfFt2Jzwt3t+hH1X5mJ0+cIZN9sfg6+pNT5XDmy2Xn/y+RrB9bDIdr
-	Jpx5r9o4JEnrhT+qacWM4Jd8TbArBjsJFCqY21DTSmiOXdL9mAYBts+2zurSEWRZ8aAC3Zn+Nw95C
-	2KAuVUj5o28pKRamabimbZ8XbRfItLpn9KH5YhhjttlU9HIoFXnBAX+nlsR4TKczegf+dla8VtsXx
-	OPITNVpsQ==;
+	 bh=HQl96vk8bYu3ZjWCUfDLOtu2UlGQw8ixqRHttYx0dQA=; b=PTvR4twpDFAS8g5DGl7j9c//f
+	mZgMfxQZeLTJk9fjwv9rXvLdMODTfUWi1r9f9v1W3EXiwkf7GZt122Fm5UQ7xcOj6wdlLNtEd42uA
+	YV1DyqwrURiSS2uXN4lHs4ZXJGFdZEDdk2KzPMg3itoKNg8Rx69yjD8KxnaTzK4ADRObZhHCpDwkQ
+	2hdiJXWt6Xg2lLqfe8IRgYG9rAaY23CVqzl/VmOTFjdJIMHfB7SRrbr+sfeCjRM9GEq3caHcAD4k/
+	F8eTihiEt2HEIyzon3reyXv0sSIbNpSpdIawx8gjj6cNS6oVnM26jbC8J5P/whgbvhiSmE3YXsOet
+	/SlZr/i9g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5rxY-0005OS-38; Thu, 05 Sep 2019 13:38:00 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5rxM-0005NI-U7
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:37:50 +0000
-Received: from localhost (p54B335F6.dip0.t-ipconnect.de [84.179.53.246])
- by pokefinder.org (Postfix) with ESMTPSA id 31A312C00C0;
- Thu,  5 Sep 2019 15:37:44 +0200 (CEST)
-Date: Thu, 5 Sep 2019 15:37:43 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 1/2] i2c: qcom-geni: Provide an option to select FIFO
- processing
-Message-ID: <20190905133743.GE1157@kunai>
-References: <20190904113613.14997-1-lee.jones@linaro.org>
- <20190904203548.GC580@tuxbook-pro> <20190904212337.GF23608@ninjato>
- <20190905071103.GX26880@dell> <20190905091617.GC1157@kunai>
- <20190905093444.GE26880@dell>
+	id 1i5s0R-0006uu-71; Thu, 05 Sep 2019 13:40:59 +0000
+Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
+ helo=mx2.mailbox.org)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5s0F-0006uW-W4
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:40:49 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 641B2A2002;
+ Thu,  5 Sep 2019 15:40:45 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
+ [80.241.56.122]) (amavisd-new, port 10030)
+ with ESMTP id fp988BBgv0Z0; Thu,  5 Sep 2019 15:40:41 +0200 (CEST)
+Date: Thu, 5 Sep 2019 23:40:17 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Christian Brauner <christian.brauner@ubuntu.com>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905134017.rstiqa6v6roslzlu@yavin.dot.cyphar.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905110544.d6c5t7rx25kvywmi@wittgenstein>
 MIME-Version: 1.0
-In-Reply-To: <20190905093444.GE26880@dell>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190905110544.d6c5t7rx25kvywmi@wittgenstein>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_063749_117582_78CF776C 
-X-CRM114-Status: GOOD (  13.57  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190905_064048_335726_9043C64B 
+X-CRM114-Status: GOOD (  21.44  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,89 +69,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, agross@kernel.org,
- robh+dt@kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- alokc@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6472864147567913146=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Al Viro <viro@zeniv.linux.org.uk>,
+ Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
+ Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============0802662071480975608=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============6472864147567913146==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="gMR3gsNFwZpnI/Ts"
+--===============0802662071480975608==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="lfmn5rszd42a2efo"
 Content-Disposition: inline
 
 
---gMR3gsNFwZpnI/Ts
+--lfmn5rszd42a2efo
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-
-> > So, are there investigations running why this reboot happens?
->=20
-> Yes, but they have been running for months, literally.
-
-I see. This is good to know. Just so I also know where we are with this.
-
-> > Which is a clear disadvantage of that solution. It won't fix older
-> > kernels. My suggestion above should fix them, too.
->=20
-> Not sure how this is possible.  Unless you mean LTS?
-
-Why not? Using of_machine_is_compatible() makes the patch 100% self
-contained (no extra binding needed). It will work wherever the machine
-description fits.
-
-> > Unless we know why the reboot happens on your platform, I'd be careful
-> > with saying "work obviously well" on other platforms.
->=20
-> Someone must have tested it?  Surely ... ;)
-
-It seems to work mostly, I won't deny that. But we don't know if the
-buggy situation can be triggered on these platforms as well by something
-else later. We just don't know.
-
-> > My suggestion:
+On 2019-09-05, Christian Brauner <christian.brauner@ubuntu.com> wrote:
+> On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
+> > A common pattern for syscall extensions is increasing the size of a
+> > struct passed from userspace, such that the zero-value of the new fields
+> > result in the old kernel behaviour (allowing for a mix of userspace and
+> > kernel vintages to operate on one another in most cases). This is done
+> > in both directions -- hence two helpers -- though it's more common to
+> > have to copy user space structs into kernel space.
 > >=20
-> > For 5.3, use of_machine_is_compatible() and we backport that. For later,
-> > try to find out the root cause and fix it. If that can't be done, try to
-> > set up a generic "disable-dma" property and use it.
+> > Previously there was no common lib/ function that implemented
+> > the necessary extension-checking semantics (and different syscalls
+> > implemented them slightly differently or incompletely[1]). A future
+> > patch replaces all of the common uses of this pattern to use the new
+> > copy_struct_{to,from}_user() helpers.
 > >=20
-> > What do you think about that?
->=20
-> Sounds okay to me.  Let me code that up.
+> > [1]: For instance {sched_setattr,perf_event_open,clone3}(2) all do do
+> >      similar checks to copy_struct_from_user() while rt_sigprocmask(2)
+> >      always rejects differently-sized struct arguments.
+> >=20
+> > Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> > Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
 
-Glad you like it.
+[...]
 
+> > +	if (unlikely(!access_ok(src, usize)))
+> > +		return -EFAULT;
+> > +
+> > +	/* Deal with trailing bytes. */
+> > +	if (usize < ksize)
+> > +		memset(dst + size, 0, rest);
+[...]
+> That's a change in behavior for clone3() and sched at least, no? Unless
+> - which I guess you might have done - you have moved the "error out when
+> the struct is too small" part before the call to copy_struct_from_user()
+> for them.
 
---gMR3gsNFwZpnI/Ts
+Yes, I've put the minimum size check to the callers in all of the
+cases (in the case of clone3() I've #define'd a CLONE_ARGS_SIZE_VER0 to
+match the others -- see patch 2 of the series).
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--lfmn5rszd42a2efo
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1xD6MACgkQFA3kzBSg
-KbbjbRAAoIoQeZCMH5wLWkFBosilnEpvLFsBKQ9e1UoyHCK9wZiPoKduvpoo2g4R
-RLSwko3R49cuGKCMy3e7WeX+bOekY7xaP4M79/b/jOp7JBm3rhbKj2NjHNl7hz2b
-GRgIR9rCK7LbzfT47jf2p8rYGXTa2e4285Z6LqLwncf3E2ZGIntEE7Trc9hZbn2c
-MI+dMDgRvUUotGXQ0H5+XVRLjpPLi2p4MJhSE1wQpsAl1q2vD3sOdnG1ewpj2akI
-O3H+tupA5EU3MEMeWLN2LLhTAllw5uopqX74r4TCwfFl8QYOYZ/7Z4UfTsKLiY9q
-I/VbXn8NmghJTbnFogH8Ne6fm/omHZDPzO44bznJeDKtfAc2P+LKQOjAXpA0Iaof
-Qv6zBX7P6eILRJtxr6IeYbrmvaV85wyVeAf2Kxucxo5BIq5HwulcjX3Qxu6GGal8
-9zhmaOu8RmL9DYHWXr5IaG8+Lx88ftTspUHD4AiYxDbMWkRTbrENV7m6lLWtDTgZ
-VQ5hDBtx7HZEFb9I/ToOTBkL8zwiHRCKvAhtRNfMTBHixl5q5Hy68RI77Jywp3+G
-ku1M7uMksLAgH7u8UGxWtxkimxcEcYGAvXwaffbqfQnswOSPD7l3iL6k9uv5hYC8
-ZKwMfYXGXIcWI6l7qWcFkoTpIVsb3Sflshc1I7iHAGJov017tSI=
-=0if5
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXEQPQAKCRCdlLljIbnQ
+EmI0AQDWLDq3CfEAPKhr2gyUgsbcgKNMnsXSA4qFj1Jjd61fzQEAqPhisgSoisGO
+mIYO56C9d94ktWhTGVP9Bs10TG3V/Ac=
+=1PLZ
 -----END PGP SIGNATURE-----
 
---gMR3gsNFwZpnI/Ts--
+--lfmn5rszd42a2efo--
 
 
---===============6472864147567913146==
+--===============0802662071480975608==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -155,5 +181,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============6472864147567913146==--
+--===============0802662071480975608==--
 
