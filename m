@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 40D6FAA4A3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:37:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0BF39AA498
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:36:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Gb0vm2+aDOnM6E7A3NXfa7cVVJp1WI9OV+4drI0gzis=; b=rx6lqYPCcZe5Epl6qYMOAn8Rl
-	T9NePsxZ5GGZ6/Fcp6Ob4qr9xfYnCVT7OEzUubRm7732KpUnjpr96y6JFKyDk6pUvAFKPmMI57LcP
-	frbo4t1FBkgIK/ZfItJO6iHVbhIeEBR69UssgFtHeEMXQoYX2uLRXwv5fYOKxcM+3KshxwS2UcaQZ
-	mx8sSOJbEHVVvRzz1iIZjcmzc0y2KdjJqb9xN+ttUP6aRNBEdy7lyLHc0pR+vxeC9IdIrYdHx7OEk
-	aUfbEAFhP60gHR2Mf8EluxHN21tuylUP6ix+FEkacXpqcQTjgSFl+S/y3WXJ4K8r1FPJT6U9lt7Iv
-	22xjxWIXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Yo05b3r5bcrw2cRhge+uWC1go2chmMJub/H92SkjYg0=; b=r/4nJnnJntR1YQ
+	w1htY6G4XS7sJvPHjOkrWTLm37r/soSkwng5/8YUGdxB1/Pl/m9m6RLR9ONH3YJVU86BEZx+t0mNG
+	5E6Hkvj7J6KorPpIfFMUfADdgEUIM3AzReeFg7R3lBRKPNHLVU5Skif1etBNNzuoUl6UjS/vSum2A
+	Wn+CGMAmIG38L7G/86L8n7ARChb6cNROr5KTLfFuP+XwVZggYpIYJTVgz+/3UIETCieZ4xlJAjm4r
+	PtPgFLfPEWJZSfGfw2CCeOIp/ypxyGajRNVe7d9S7iP8LKuTHZSpEiKBSvOdCK6rlj+MoGglHenGr
+	+SSwDNajLsrqJncoDNaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5rwY-0004zI-ON; Thu, 05 Sep 2019 13:36:58 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
- helo=mx2.mailbox.org)
+	id 1i5rwJ-0004na-UC; Thu, 05 Sep 2019 13:36:44 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5rw6-0004kw-PA
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:36:33 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 812EBA1762;
- Thu,  5 Sep 2019 15:36:21 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by spamfilter04.heinlein-hosting.de (spamfilter04.heinlein-hosting.de
- [80.241.56.122]) (amavisd-new, port 10030)
- with ESMTP id QEpWHY7VDe2j; Thu,  5 Sep 2019 15:36:16 +0200 (CEST)
-Date: Thu, 5 Sep 2019 23:35:52 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
- helpers
-Message-ID: <20190905133552.xlckmxfzar4wh5ju@yavin.dot.cyphar.com>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-2-cyphar@cyphar.com>
- <20190905073205.GY2332@hirez.programming.kicks-ass.net>
- <20190905092622.tlb6nn3uisssdfbu@yavin.dot.cyphar.com>
- <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
+ id 1i5rw3-0004ks-Pj; Thu, 05 Sep 2019 13:36:30 +0000
+X-UUID: d0b9221cc195404388cffaa083738f99-20190905
+X-UUID: d0b9221cc195404388cffaa083738f99-20190905
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <jerry-ch.chen@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1893509683; Thu, 05 Sep 2019 05:36:19 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 06:36:17 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 21:36:15 +0800
+Received: from [172.21.84.99] (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 5 Sep 2019 21:36:15 +0800
+Message-ID: <1567690577.22453.45.camel@mtksdccf07>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
+To: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 5 Sep 2019 21:36:17 +0800
+In-Reply-To: <CAAFQd5D2ketE19RPr20BVYGhqg2Lh2ZNTtAr5J2GoWU9RiSAsA@mail.gmail.com>
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org>
+ <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+ <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+ <1567424859.18318.32.camel@mtksdccf07>
+ <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+ <1567493081.18318.49.camel@mtksdccf07>
+ <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
+ <1567511169.18318.65.camel@mtksdccf07>
+ <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
+ <1567568281.18318.80.camel@mtksdccf07>
+ <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
+ <1567577389.18318.100.camel@mtksdccf07>
+ <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
+ <1567584577.22453.11.camel@mtksdccf07>
+ <CAAFQd5Dzxy10g-MKHMnNbVO6kp9_L_jm1m+gtN+p=YF2LyBiag@mail.gmail.com>
+ <1567587708.22453.15.camel@mtksdccf07>
+ <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
+ <1567589188.22453.24.camel@mtksdccf07>
+ <CAAFQd5Ckz9qH7AnLNM4HRTM2gJQP1HXRS09+o6Prf++D1PQhng@mail.gmail.com>
+ <1567603143.22453.27.camel@mtksdccf07>
+ <1567666940.22453.31.camel@mtksdccf07>
+ <CAAFQd5A=D33nUWTyYjt3acV43r3fqjSEkLbt3_Sr1YG1PzQgqQ@mail.gmail.com>
+ <1567671418.22453.41.camel@mtksdccf07>
+ <CAAFQd5D2ketE19RPr20BVYGhqg2Lh2ZNTtAr5J2GoWU9RiSAsA@mail.gmail.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_063631_118804_841E51BC 
-X-CRM114-Status: GOOD (  29.47  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190905_063627_847672_5830F203 
+X-CRM114-Status: GOOD (  26.63  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,211 +97,302 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Shuah Khan <shuah@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============1784812432235317488=="
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
+ <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
+ <po-yang.huang@mediatek.com>, "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
+ <jungo.lin@mediatek.com>, Sj
+ Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
+ <christie.yu@mediatek.com>,
+ Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
+ <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, 2019-09-05 at 16:52 +0800, Tomasz Figa wrote:
+> On Thu, Sep 5, 2019 at 5:17 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> >
+> > Hi Tomasz,
+> >
+> > On Thu, 2019-09-05 at 15:13 +0800, Tomasz Figa wrote:
+> > > On Thu, Sep 5, 2019 at 4:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > >
+> > > > Hi Tomasz,
+> > > >
+> > > > On Wed, 2019-09-04 at 21:19 +0800, Jerry-ch Chen wrote:
+> > > > > On Wed, 2019-09-04 at 21:12 +0800, Tomasz Figa wrote:
+> > > > > > On Wed, Sep 4, 2019 at 6:26 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > >
+> > > > > > > Hi Tomasz,
+> > > > > > >
+> > > > > > > On Wed, 2019-09-04 at 17:03 +0800, Tomasz Figa wrote:
+> > > > > > > > On Wed, Sep 4, 2019 at 6:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > >
+> > > > > > > > > Hi Tomasz,
+> > > > > > > > >
+> > > > > > > > > On Wed, 2019-09-04 at 16:25 +0800, Tomasz Figa wrote:
+> > > > > > > > > > On Wed, Sep 4, 2019 at 5:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > >
+> > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > >
+> > > > > > > > > > > On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > >
+> > > > > > > > > > > > > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
+> > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+> > > > > > > [snip]
+> > > > > > > > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > > > > > > {
+> > > > > > > > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > > > > > > >         struct vb2_v4l2_buffer *vb;
+> > > > > > > > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > > > > > > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > > > > > > > > >         u32 ret;
+> > > > > > > > > > >
+> > > > > > > > > > >         if (!fd->fd_irq_done.done)
+> > > > > > > > > >
+> > > > > > > > > > We shouldn't access internal fields of completion.
+> > > > > > > > > >
+> > > > > > > > > > >                 ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> > > > > > > > > > >                                                   msecs_to_jiffies(
+> > > > > > > > > > >                                                         MTK_FD_HW_TIMEOUT));
+> > > > > > > > > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> > > > > > > > > > >                                         &m2m_ctx->out_q_ctx :
+> > > > > > > > > > >                                         &m2m_ctx->cap_q_ctx;
+> > > > > > > > > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> > > > > > > > > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> > > > > > > > > > >
+> > > > > > > > > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> > > > > > > > > > >                 mtk_fd_hw_disconnect(fd);
+> > > > > > > > > > > }
+> > > > > > > > > > >
+> > > > > > > > > > > I've also tried to wait completion unconditionally for both queues and
+> > > > > > > > > > > the second time will wait until timeout, as a result, it takes longer to
+> > > > > > > > > > > swap the camera every time and close the camera app.
+> > > > > > > > > >
+> > > > > > > > > > I think it should work better if we call complete_all() instead of complete().
+> > > > > > > > > >
+> > > > > > > > > Thanks,
+> > > > > > > > >
+> > > > > > > > > I use complete_all(), and it works fine now.
+> > > > > > > > >
+> > > > > > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > > > > {
+> > > > > > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > > > > >         struct vb2_v4l2_buffer *vb;
+> > > > > > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > > > > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > > > > > > >
+> > > > > > > > >         wait_for_completion_timeout(&fd->fd_irq_done,
+> > > > > > > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> > > > > > > >
+> > > > > > > > Shouldn't we still send some command to the hardware to stop? Like a
+> > > > > > > > reset. Otherwise we don't know if it isn't still accessing the memory.
+> > > > > > > >
+> > > > > > > I thought no more jobs will be enqueued here when stop_streaming so we
+> > > > > > > don't need it.
+> > > > > >
+> > > > > > That's true for the case when the wait completed successfully, but we
+> > > > > > also need to ensure the hardware is stopped even if a timeout happens.
+> > > > > >
+> > > > > > > We still could send an ipi command to reset the HW, and wait for it's
+> > > > > > > callback or we could set the register MTK_FD_REG_OFFSET_HW_ENABLE to
+> > > > > > > zero to disable the HW.
+> > > > > >
+> > > > > > Since it's for handling a timeout, a reset should be more likely to
+> > > > > > bring the hardware back to a reasonable state.
+> > > > > >
+> > > > >
+> > > > > Ok, I will send the ipi command to reset the HW.
+> > > > >
+> > > > > Thanks and best regards,
+> > > > > Jerry
+> > > > I've tested and will refine as following:
+> > > >
+> > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > {
+> > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > >         struct vb2_v4l2_buffer *vb;
+> > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > >         u32 ret;
+> > > >
+> > > >         ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> > > >         /* Disable FD HW */
+> > > >         if(!ret) {
+> > > >                 struct ipi_message fd_ipi_msg;
+> > > >
+> > > >                 fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_RESET;
+> > > >                 ret = scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+> > > >                                    sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT);
+> > > >                 if (ret)
+> > > >                         dev_err(fd->dev, "FD Reset HW error\n");
+> > > >         }
+> > >
+> > > Would you also put the same code in suspend handler? If so, perhaps
+> > > it's better to keep this in a helper function (mtk_fd_job_abort()) as
+> > > we had before?
+> > >
+> >
+> > Ok, done, It will reset the HW and return ETIMEOUT if the last job is
+> > timeout, the return value will be used in suspend for further action.
+> >
+> > static int mtk_fd_job_abort(struct mtk_fd_dev *fd)
+> > {
+> >         u32 ret;
+> >
+> >         ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> >         /* Reset FD HW */
+> >         if (!ret) {
+> >                 struct ipi_message fd_ipi_msg;
+> >
+> >                 fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_RESET;
+> >                 if (scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+> >                                  sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT))
+> >                         dev_err(fd->dev, "FD Reset HW error\n");
+> >                 return -ETIMEDOUT;
+> >         }
+> >         return 0;
+> > }
+> >
+> > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > {
+> >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> >         struct vb2_v4l2_buffer *vb;
+> >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> >
+> >         mtk_fd_job_abort(fd);
+> >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> >                                         &m2m_ctx->out_q_ctx :
+> >                                         &m2m_ctx->cap_q_ctx;
+> >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> >
+> >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> >                 mtk_fd_hw_disconnect(fd);
+> > }
+> >
+> > static int mtk_fd_suspend(struct device *dev)
+> > {
+> >         struct mtk_fd_dev *fd = dev_get_drvdata(dev);
+> >
+> >         if (pm_runtime_suspended(dev))
+> >                 return 0;
+> >
+> >         if (fd->fd_stream_count)
+> >                 if (mtk_fd_job_abort(fd))
+> >                         mtk_fd_hw_job_finish(fd, VB2_BUF_STATE_ERROR);
+> 
+> Wouldn't this cause the next job to be run?
+> 
+> >
+> >         /* suspend FD HW */
+> >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_INT_EN);
+> >         writel(0x0, fd->fd_base + MTK_FD_REG_OFFSET_HW_ENABLE);
+> >         clk_disable_unprepare(fd->fd_clk);
+> >         dev_dbg(dev, "%s:disable clock\n", __func__);
+> >
+> >         return 0;
+> > }
+> >
+> > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> > > >                                         &m2m_ctx->out_q_ctx :
+> > > >                                         &m2m_ctx->cap_q_ctx;
+> > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> > > >
+> > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> > > >                 mtk_fd_hw_disconnect(fd);
+> > > > }
+> > > >
+> > > > If there is no other concern, may I send the RFC v3 patch for review?
+> > >
+> > > Thanks, technically it looks good now. Just one comment about avoiding
+> > > code duplication above.
+> > >
+> >
+> > Thanks,
+> >
+> > I will send the v3 if the above fix-up is accepted,
+> 
+> I think there is a bigger issue here actually, related to how the m2m
+> helpers work. Let's just keep the code as you proposed and post v3.
+> 
+> We can continue the discussion there.
+> 
 
---===============1784812432235317488==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="p7vw24iv2smepbtp"
-Content-Disposition: inline
+Ok, I will send v3 soon.
+
+Thanks and best regards,
+Jerry
+
+> Best regards,
+> Tomasz
 
 
---p7vw24iv2smepbtp
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
-> On Thu, Sep 05, 2019 at 07:26:22PM +1000, Aleksa Sarai wrote:
-> > On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
-> > > On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
-> > > > +/**
-> > > > + * copy_struct_to_user: copy a struct to user space
-> > > > + * @dst:   Destination address, in user space.
-> > > > + * @usize: Size of @dst struct.
-> > > > + * @src:   Source address, in kernel space.
-> > > > + * @ksize: Size of @src struct.
-> > > > + *
-> > > > + * Copies a struct from kernel space to user space, in a way that =
-guarantees
-> > > > + * backwards-compatibility for struct syscall arguments (as long a=
-s future
-> > > > + * struct extensions are made such that all new fields are *append=
-ed* to the
-> > > > + * old struct, and zeroed-out new fields have the same meaning as =
-the old
-> > > > + * struct).
-> > > > + *
-> > > > + * @ksize is just sizeof(*dst), and @usize should've been passed b=
-y user space.
-> > > > + * The recommended usage is something like the following:
-> > > > + *
-> > > > + *   SYSCALL_DEFINE2(foobar, struct foo __user *, uarg, size_t, us=
-ize)
-> > > > + *   {
-> > > > + *      int err;
-> > > > + *      struct foo karg =3D {};
-> > > > + *
-> > > > + *      // do something with karg
-> > > > + *
-> > > > + *      err =3D copy_struct_to_user(uarg, usize, &karg, sizeof(kar=
-g));
-> > > > + *      if (err)
-> > > > + *        return err;
-> > > > + *
-> > > > + *      // ...
-> > > > + *   }
-> > > > + *
-> > > > + * There are three cases to consider:
-> > > > + *  * If @usize =3D=3D @ksize, then it's copied verbatim.
-> > > > + *  * If @usize < @ksize, then kernel space is "returning" a newer=
- struct to an
-> > > > + *    older user space. In order to avoid user space getting incom=
-plete
-> > > > + *    information (new fields might be important), all trailing by=
-tes in @src
-> > > > + *    (@ksize - @usize) must be zerored
-> > >=20
-> > > s/zerored/zero/, right?
-> >=20
-> > It should've been "zeroed".
->=20
-> That reads wrong to me; that way it reads like this function must take
-> that action and zero out the 'rest'; which is just wrong.
->=20
-> This function must verify those bytes are zero, not make them zero.
-
-Right, in my head I was thinking "must have been zeroed" which isn't
-what it says. I'll switch to "zero".
-
-> > > >                                          , otherwise -EFBIG is retu=
-rned.
-> > >=20
-> > > 'Funny' that, copy_struct_from_user() below seems to use E2BIG.
-> >=20
-> > This is a copy of the semantics that sched_[sg]etattr(2) uses -- E2BIG =
-for
-> > a "too big" struct passed to the kernel, and EFBIG for a "too big"
-> > struct passed to user-space. I would personally have preferred EMSGSIZE
-> > instead of EFBIG, but felt using the existing error codes would be less
-> > confusing.
->=20
-> Sadly a recent commit:
->=20
->   1251201c0d34 ("sched/core: Fix uclamp ABI bug, clean up and robustify s=
-ched_read_attr() ABI logic and code")
->=20
-> Made the situation even 'worse'.
-
-I hadn't seen this patch before, and I have a few questions taking a
-look at it:
-
- * An error code for a particular behaviour was changed (EFBIG ->
-   E2BIG). Is this not a userspace breakage (I know Linus went ballistic
-   about something similar a while ago[1]), or did I misunderstand what
-   the issue was in [1]?
-   * At the risk of bike-shedding -- of we are changing it, wouldn't
-	 -EMSGSIZE be more appropriate? To be fair, picking errno values has
-	 always been more of an art than a science, but to my ears "Argument
-	 list too long" doesn't make too much sense in the context of
-	 "returning" a struct back to userspace (and the cause of the error
-	 is that the argument passed by user space *isn't big enough*). If
-	 there was an E2SMALL that would also work. ;)
-
- * Do you want me to write a patch based on that, to switch it to
-   copy_struct_to_user()?
-
- * That patch removes the "are there non-zero bytes in the tail that
-   userspace won't know about" check (which I have included in mine). I
-   understand that this caused issues specifically with sched_getattr(2)
-   due to the default value not being zero -- how should we rectify that
-   (given that we'd hopefully want to port everyone who uses that
-   interface to copy_struct_{to,from}_user())?
-
- * Given that the [uk]attr->size construct is pretty important to the
-   usability of the sched and perf interfaces, should we require (or
-   encourage) it for all struct-extension syscall setups?
-
-> > > > +	if (unlikely(!access_ok(src, usize)))
-> > > > +		return -EFAULT;
-> > > > +
-> > > > +	/* Deal with trailing bytes. */
-> > > > +	if (usize < ksize)
-> > > > +		memset(dst + size, 0, rest);
-> > > > +	else if (usize > ksize) {
-> > > > +		const void __user *addr =3D src + size;
-> > > > +		char buffer[BUFFER_SIZE] =3D {};
-> > >=20
-> > > Isn't that too big for on-stack?
-> >=20
-> > Is a 64-byte buffer too big? I picked the number "at random" to be the
-> > size of a cache line, but I could shrink it down to 32 bytes if the size
-> > is an issue (I wanted to avoid needless allocations -- hence it being
-> > on-stack).
->=20
-> Ah, my ctags gave me a definition of BUFFER_SIZE that was 512. I suppose
-> 64 should be OK.
-
-Good to know, though I'll rename it to avoid confusion.
-
-[1]: https://lore.kernel.org/lkml/CA+55aFy98A+LJK4+GWMcbzaa1zsPBRo76q+ioEjb=
-x-uaMKH6Uw@mail.gmail.com/
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---p7vw24iv2smepbtp
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXEPNQAKCRCdlLljIbnQ
-EtdDAQC347lG5qRdA84KUpGgbwgprjAxcKgxqQIULhRNFfpXbgD/ZCHtkcVeJovi
-WTsQxqcwA375UPIXJ/SgrKfqOJOI7Q4=
-=dSqz
------END PGP SIGNATURE-----
-
---p7vw24iv2smepbtp--
-
-
---===============1784812432235317488==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1784812432235317488==--
-
