@@ -2,78 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A0888AA681
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:51:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E7D55AA6B8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 17:05:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=RFMjkhfiAb3mDQJcei/M3ErXIrcuIvXho1uY3CGaFs8=; b=QcC
-	mRfwJTEzsniFc2PQTDfopo/phWmprscia3e6OqRIHx0I6F8qNt3pLneLcx7MATAHPJHeD2Bfz/d1W
-	vk/w8leYRcdrNca/SkMK3grqwTP3XueqwIC3W59cpisOR1/MTcmZZ05pTYnppFox5HNzWRfOL6Z6r
-	CZvdTV7DVN0DYpv+NU1GnegQ3L8w/B1BaXGHVCPJjH/dHMLJ4OqBor2LD0dBQpYwROMamQbE3enrN
-	WGMNjdb3YYZU47m5stsgoivzulIOlOF5PKp+VY75IwHxck1S07mqhqxB9cmIvdEke7S9T1EpoIOJs
-	2cu8v9rxofEpJNocOcSJeYiEpGj6qIA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mdr2Vj08HFparRAZolbsQdhsPrrZeUxcNHVfsCqzw+s=; b=QrZ5FUW8KvLG/m
+	mPHcV+szZloxS6MgyYLVYZKUOcdrRuB0G7w7/ViM3vfhUM9AZTlKazr3uxwQl8tL5S9uz8n+cgYmw
+	nFucn+2a1EFuPqXANe6rnY++fqXbP9qEULYSK623XPssw22Nql4tp1iIGbQgVE9z5zHhlp93OEyIH
+	++KrXJ0zWfDc78d7wQFb9IpSK/BNx5HiaoPoe1M6qLq4WouGfKq4u3FFYjtlIciicNMSW8SBOO34O
+	f2joXz/T+TsbJHPpRo2a9sOVE9yxFhHYcE0UcUon8J0iBEgBQprzyRU700exeL+yHGNCAJ3UFSr4D
+	YNBbXW+/Rz9wgyvylNCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5t6e-0000ra-Ic; Thu, 05 Sep 2019 14:51:28 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1i5tJz-0006NX-JJ; Thu, 05 Sep 2019 15:05:15 +0000
+Received: from mail-eopbgr50080.outbound.protection.outlook.com ([40.107.5.80]
+ helo=EUR03-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5t6S-0000r9-W3
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:51:18 +0000
-Received: by mail-wm1-x343.google.com with SMTP id n10so3441823wmj.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 07:51:16 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=hP6dTKrGhmI4Li1vYBwvA5G00RWYLdiehRQLahBt/08=;
- b=UUIx2S2a1OTzLYcxsOGi8vjYvnpXjIXXfjjInQmQhJrOoLVMUI4bMk0pP8K4hv5+v1
- bC+ahF3FezFlzFIlypiny7EYPPxM79sdZHZnnpe6qgrTfl/6guRvEmNJy8vpPadhocR8
- IW0JAJGxuc7RH4bWScdjpjBLvTYEo3MLTNDGuJOCB05O5AH8D6gSDZPqwaUWbITmdboy
- JTOLJ37XUMxPF83r7F6BQwynpfcnLc9Ytv9w1tMp0R82MmO52QP457mar3d7PWPJu/Rw
- YJb6IDjcjSjZJrr3aGvnJVnETp/zGeRsmeTgNtJe37OYQ5blm4tzTlx1dRxuMiRRs6DS
- rUaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=hP6dTKrGhmI4Li1vYBwvA5G00RWYLdiehRQLahBt/08=;
- b=d2RovY2av4Dyx8Ou6LJ+nAvLFVrruV6de3b6OWCOF5mnVZA2T2tJEcsrZEGXSSpkiz
- 1YxSkV7YgJJElZhqlfudvkyyxth7A1ZDQnU4x3QyppMQ5lWeHg/xT9+q+h7orxiRjQeX
- 2J+SRG4WqZwcpbUSe95Wy2tPFVB5GYv1eyARjCARCpYOECeprtSl1ckDVyBJ/3G4AVLm
- kB1xk3Ua101/bad3LA8IW1Zo0ld7x7u42jPYO7kJhPH8Ec/l0mrAVSIJn54PKoLu/DhW
- yH6q+kD4LffmAtpj4ICo/rQdtmjV7msTJZ/Dcos9IpUPi5KoXbxWdP+NoUyaVleKhEIl
- IYMA==
-X-Gm-Message-State: APjAAAUQgezKycPxaZ7DvJWRiVy/0dp867xlik7J0fXQ60D99YKcuW0q
- aRR9aWXTADWPSkrcTkd0a071Qw==
-X-Google-Smtp-Source: APXvYqybUDyw7bzKyC0JJlkse2i6lXau2tHY0+7iUxCwZcbyfwIDTqmYWXxNn26wfhgBAKudt68zBQ==
-X-Received: by 2002:a1c:a404:: with SMTP id n4mr3206745wme.137.1567695075383; 
- Thu, 05 Sep 2019 07:51:15 -0700 (PDT)
-Received: from localhost.localdomain ([95.147.198.36])
- by smtp.gmail.com with ESMTPSA id g201sm4376858wmg.34.2019.09.05.07.51.14
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Sep 2019 07:51:14 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: agross@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
- bjorn.andersson@linaro.org, arnd@arndb.de
-Subject: [PATCH v4 1/1] arm64: dts: qcom: Add Lenovo Yoga C630
-Date: Thu,  5 Sep 2019 15:51:12 +0100
-Message-Id: <20190905145112.7366-1-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ id 1i5tJo-0005GC-Vu
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 15:05:06 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WTDBtp20RNcGWwUiTYnvOOTUDI11yDdim4WUeaaL+AMUxecuw2lSkQaFgNo95IccD6K+f1iOMdXGt4gOMw5weB6GapnqeYr4Wk9U/pM8nbUGYBf/fSxoYfkeI/6MyZHTnLyPO800cT14rDRDnW//DJFEepWvGOm+YSeddO/SLQ4EK+Pd5GfI/7oAKTC5O0gQ8N2xOA9QpOGuy7n/Rn+IkBJlr3UrN2cd4fkgaOc8UT3e5JxX9NxCVUjS39JR0p+wGVbDImJOreweUb9cAHKLjGkilb6fZETOtfCd0VOfz0y4DodXm5dFzIw+16NGBs20WaIhcEQO6qob1UztiST6Aw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dh8qNTBlExiAQjh/fxxhxb/Tovj8gRMkuiDhETk7HfI=;
+ b=ND1/Wuhhmo+V/pwRTQIZoSdJ/zzp0fxZHBXTZGh5D18B09hGIlTb6T1blsqpAqd1Bh879L7P2xvK7/9ZzdVlayjmAGT2PaF72Jj64mqDPKPITRvFbPnWi/PB8dTrMuJmgRuMBOLCPQVK1MI6mmAHuRLAxHatdRDc2FAeMq7jBCuosXSt99B07bOY5ITtP5isf70ziy6LmynCgk8lX0clHjvdgnAoAFTvSQY+qykXIDXvTDgWvjdVHrPoYE8NU4V4yFUEXbtXQBQpc9Mz2XxREUPzW1TCUz8Ez2NSgMh2DWTUfHaCLLTApCsG2CAUaHN5qTDYqr9+PHnrExdQxPM+TA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=dh8qNTBlExiAQjh/fxxhxb/Tovj8gRMkuiDhETk7HfI=;
+ b=cpCyebcVh8dxiwI2JFJ9pLyf7g1RkJrfH48YSb/TVuGUfc/3Em9m67vje2G35wIlFcTytZERSgzf8yPwojohC52tvbe92fngQfjIR0J4rlsTQxUYMGD4ljPRmWBYh1oCI9kjj78w5nbmYKCTDCKsiYHC+CEmJMgGgFs39ir+IYg=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB4619.eurprd04.prod.outlook.com (52.135.138.14) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.21; Thu, 5 Sep 2019 15:05:00 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa%5]) with mapi id 15.20.2241.014; Thu, 5 Sep 2019
+ 15:05:00 +0000
+From: Biwen Li <biwen.li@nxp.com>
+To: "'andy.shevchenko@gmail.com'" <andy.shevchenko@gmail.com>,
+ "'rafael@kernel.org'" <rafael@kernel.org>, Leo Li <leoyang.li@nxp.com>,
+ Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>, Udit Kumar
+ <udit.kumar@nxp.com>, "'wsa@the-dreams.de'" <wsa@the-dreams.de>,
+ "'rjw@rjwysocki.net'" <rjw@rjwysocki.net>
+Subject: RE: [PATCH] ACPI: support for NXP i2c controller
+Thread-Topic: [PATCH] ACPI: support for NXP i2c controller
+Thread-Index: AQHVN9RWONVodUogYk2tb4fLvCueOacZMhcAgAAFiwCAAI1AgIAABROQgAMCJ+CAALpIQA==
+Date: Thu, 5 Sep 2019 15:04:59 +0000
+Message-ID: <DB7PR04MB449006447F52FBA418278E868FBB0@DB7PR04MB4490.eurprd04.prod.outlook.com>
+References: <20190711102601.20582-1-chuanhua.han@nxp.com>
+ <CAJZ5v0hY2sL+XfN_4v07_hjvoxgCAt+Q89+wNg5Pky6XKP-mqA@mail.gmail.com>
+ <CAHp75VfFtMMQhetRFHrx=Ft7OWwyMqLrwP3sPjT6YVtr8xCHoQ@mail.gmail.com>
+ <896b88d4-9d1b-922b-1784-55ef9a1a1830@pengutronix.de>
+ <AM7PR04MB6885DB03C6B96C7932DDA74B8EB90@AM7PR04MB6885.eurprd04.prod.outlook.com>
+ <DB7PR04MB4490E737C00CF9CA173AB2898FBB0@DB7PR04MB4490.eurprd04.prod.outlook.com>
+In-Reply-To: <DB7PR04MB4490E737C00CF9CA173AB2898FBB0@DB7PR04MB4490.eurprd04.prod.outlook.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=biwen.li@nxp.com; 
+x-originating-ip: [119.31.174.73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 169eb17a-4cdb-4d75-b2be-08d732126c3d
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB7PR04MB4619; 
+x-ms-traffictypediagnostic: DB7PR04MB4619:|DB7PR04MB4619:
+x-ms-exchange-purlcount: 2
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB46194C044B10F398195053BA8FBB0@DB7PR04MB4619.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-forefront-prvs: 015114592F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(136003)(366004)(39860400002)(376002)(396003)(189003)(199004)(102836004)(6116002)(3846002)(74316002)(6506007)(53546011)(76116006)(81166006)(44832011)(186003)(966005)(110136005)(14454004)(86362001)(66066001)(7696005)(26005)(305945005)(8936002)(81156014)(8676002)(476003)(33656002)(11346002)(54906003)(71200400001)(446003)(71190400001)(2906002)(486006)(256004)(14444005)(76176011)(7416002)(9686003)(2940100002)(478600001)(7736002)(55016002)(52536014)(316002)(66946007)(4326008)(64756008)(6436002)(66556008)(25786009)(66446008)(53936002)(6306002)(45080400002)(229853002)(5660300002)(99286004)(66476007)(6246003)(491001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4619;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: R5psLADPB4bx/bBxOIVbZtDtxFXw7dODZ31fDPmqvYc0QYA9y97Y/UBEJNntzlXg8oDNaJ2mjbt8jdL9D+TnobsCPlZn8i/JxD1aYeh2LLwIRnq35OwMjLZgvjIeYUJ/CvM+GdKg3v1NGbhxAX6WCOYlXnJUGynoKrAwPNzYVNCSmbDsr8Vnhuoi/0XVT1166LasqIkxeFsxKMdT6IAsI2a9G2o5jAdYcGSXK9jb2O1JWMADi/WgP5n7OeAwSG2xRmzJS+aOm9TaQxUVhO6uSgxLkcbV8M6EQ/9fHXWZgWGbE4FuDBi/as0aPQmfpiVPyRK8HHvLUCcoOTb8/JDRoLI5YE5b+kicPRIxsMdpWWzsbPJSbYC4Fjakn09QKETOBF6hp94Tf/E6fywr+PM7wmmJ8pET8g2u7HNKs5HyMFQ=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 169eb17a-4cdb-4d75-b2be-08d732126c3d
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 15:05:00.0888 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: YQh4Q60X5rcy84nO0O7FUdS8ONLzO0GBLhxydDduHBPYCz+x34xcSS3/bqua8s+OqGNjVhltRQvbndQ61n7aog==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4619
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_075117_040430_5C619449 
-X-CRM114-Status: GOOD (  14.05  )
+X-CRM114-CacheID: sfid-20190905_080505_117297_6A13DD5D 
+X-CRM114-Status: GOOD (  17.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
+ no trust [40.107.5.80 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -92,508 +131,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, soc@kernel.org, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: "'s.hauer@pengutronix.de'" <s.hauer@pengutronix.de>,
+ "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
+ "'linux-acpi@vger.kernel.org'" <linux-acpi@vger.kernel.org>,
+ "'linux-i2c@vger.kernel.org'" <linux-i2c@vger.kernel.org>,
+ Chuanhua Han <chuanhua.han@nxp.com>,
+ "'shawnguo@kernel.org'" <shawnguo@kernel.org>,
+ "'linux-arm-kernel@lists.infradead.org'"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Bjorn Andersson <bjorn.andersson@linaro.org>
-
-The Lenovo Yoga C630 is built on the SDM850 from Qualcomm, but this seem
-to be similar enough to the SDM845 that we can reuse the sdm845.dtsi.
-
-Supported by this patch is: keyboard, battery monitoring, UFS storage,
-USB host and Bluetooth.
-
-Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
-Reviewed-by: Vinod Koul <vkoul@kernel.org>
-Acked-by: Sudeep Holla <sudeep.holla@arm.com>
-[Lee] Reorder, change licence, remove non-upstream device node
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
----
-
-Changelog:
- * Reorder nodes alphabetically
- * Remove superfluous node for driver not yet upstream
- * Add (then remove) 'no-dma' property
- * Change licence to BSD
-
-arch/arm64/boot/dts/qcom/Makefile             |   1 +
- .../boot/dts/qcom/sdm850-lenovo-yoga-c630.dts | 446 ++++++++++++++++++
- 2 files changed, 447 insertions(+)
- create mode 100644 arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
-
-diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
-index 0a7e5dfce6f7..670c6c65f9e9 100644
---- a/arch/arm64/boot/dts/qcom/Makefile
-+++ b/arch/arm64/boot/dts/qcom/Makefile
-@@ -12,5 +12,6 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r2.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r3.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-db845c.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-mtp.dtb
-+dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-1000.dtb
- dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-4000.dtb
-diff --git a/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
-new file mode 100644
-index 000000000000..ded120d3aef5
---- /dev/null
-+++ b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
-@@ -0,0 +1,446 @@
-+// SPDX-License-Identifier: BSD-3-Clause
-+/*
-+ * Lenovo Yoga C630
-+ *
-+ * Copyright (c) 2019, Linaro Ltd.
-+ */
-+
-+/dts-v1/;
-+
-+#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
-+#include "sdm845.dtsi"
-+#include "pm8998.dtsi"
-+
-+/ {
-+	model = "Lenovo Yoga C630";
-+	compatible = "lenovo,yoga-c630", "qcom,sdm845";
-+
-+	aliases {
-+		hsuart0 = &uart6;
-+	};
-+};
-+
-+&apps_rsc {
-+	pm8998-rpmh-regulators {
-+		compatible = "qcom,pm8998-rpmh-regulators";
-+		qcom,pmic-id = "a";
-+
-+		vdd-l2-l8-l17-supply = <&vreg_s3a_1p35>;
-+		vdd-l7-l12-l14-l15-supply = <&vreg_s5a_2p04>;
-+
-+		vreg_s2a_1p125: smps2 {
-+		};
-+
-+		vreg_s3a_1p35: smps3 {
-+			regulator-min-microvolt = <1352000>;
-+			regulator-max-microvolt = <1352000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s4a_1p8: smps4 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s5a_2p04: smps5 {
-+			regulator-min-microvolt = <2040000>;
-+			regulator-max-microvolt = <2040000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_s7a_1p025: smps7 {
-+		};
-+
-+		vdd_qusb_hs0:
-+		vdda_hp_pcie_core:
-+		vdda_mipi_csi0_0p9:
-+		vdda_mipi_csi1_0p9:
-+		vdda_mipi_csi2_0p9:
-+		vdda_mipi_dsi0_pll:
-+		vdda_mipi_dsi1_pll:
-+		vdda_qlink_lv:
-+		vdda_qlink_lv_ck:
-+		vdda_qrefs_0p875:
-+		vdda_pcie_core:
-+		vdda_pll_cc_ebi01:
-+		vdda_pll_cc_ebi23:
-+		vdda_sp_sensor:
-+		vdda_ufs1_core:
-+		vdda_ufs2_core:
-+		vdda_usb1_ss_core:
-+		vdda_usb2_ss_core:
-+		vreg_l1a_0p875: ldo1 {
-+			regulator-min-microvolt = <880000>;
-+			regulator-max-microvolt = <880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_10:
-+		vreg_l2a_1p2: ldo2 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1200000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-always-on;
-+		};
-+
-+		vreg_l3a_1p0: ldo3 {
-+		};
-+
-+		vdd_wcss_cx:
-+		vdd_wcss_mx:
-+		vdda_wcss_pll:
-+		vreg_l5a_0p8: ldo5 {
-+			regulator-min-microvolt = <800000>;
-+			regulator-max-microvolt = <800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_13:
-+		vreg_l6a_1p8: ldo6 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l7a_1p8: ldo7 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l8a_1p2: ldo8 {
-+		};
-+
-+		vreg_l9a_1p8: ldo9 {
-+		};
-+
-+		vreg_l10a_1p8: ldo10 {
-+		};
-+
-+		vreg_l11a_1p0: ldo11 {
-+		};
-+
-+		vdd_qfprom:
-+		vdd_qfprom_sp:
-+		vdda_apc1_cs_1p8:
-+		vdda_gfx_cs_1p8:
-+		vdda_qrefs_1p8:
-+		vdda_qusb_hs0_1p8:
-+		vddpx_11:
-+		vreg_l12a_1p8: ldo12 {
-+			regulator-min-microvolt = <1800000>;
-+			regulator-max-microvolt = <1800000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vddpx_2:
-+		vreg_l13a_2p95: ldo13 {
-+		};
-+
-+		vreg_l14a_1p88: ldo14 {
-+			regulator-min-microvolt = <1880000>;
-+			regulator-max-microvolt = <1880000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+			regulator-always-on;
-+		};
-+
-+		vreg_l15a_1p8: ldo15 {
-+		};
-+
-+		vreg_l16a_2p7: ldo16 {
-+		};
-+
-+		vreg_l17a_1p3: ldo17 {
-+			regulator-min-microvolt = <1304000>;
-+			regulator-max-microvolt = <1304000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l18a_2p7: ldo18 {
-+		};
-+
-+		vreg_l19a_3p0: ldo19 {
-+			regulator-min-microvolt = <3100000>;
-+			regulator-max-microvolt = <3108000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l20a_2p95: ldo20 {
-+			regulator-min-microvolt = <2960000>;
-+			regulator-max-microvolt = <2960000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l21a_2p95: ldo21 {
-+		};
-+
-+		vreg_l22a_2p85: ldo22 {
-+		};
-+
-+		vreg_l23a_3p3: ldo23 {
-+		};
-+
-+		vdda_qusb_hs0_3p1:
-+		vreg_l24a_3p075: ldo24 {
-+			regulator-min-microvolt = <3075000>;
-+			regulator-max-microvolt = <3083000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l25a_3p3: ldo25 {
-+			regulator-min-microvolt = <3104000>;
-+			regulator-max-microvolt = <3112000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vdda_hp_pcie_1p2:
-+		vdda_hv_ebi0:
-+		vdda_hv_ebi1:
-+		vdda_hv_ebi2:
-+		vdda_hv_ebi3:
-+		vdda_mipi_csi_1p25:
-+		vdda_mipi_dsi0_1p2:
-+		vdda_mipi_dsi1_1p2:
-+		vdda_pcie_1p2:
-+		vdda_ufs1_1p2:
-+		vdda_ufs2_1p2:
-+		vdda_usb1_ss_1p2:
-+		vdda_usb2_ss_1p2:
-+		vreg_l26a_1p2: ldo26 {
-+			regulator-min-microvolt = <1200000>;
-+			regulator-max-microvolt = <1208000>;
-+			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
-+		};
-+
-+		vreg_l28a_3p0: ldo28 {
-+		};
-+
-+		vreg_lvs1a_1p8: lvs1 {
-+		};
-+
-+		vreg_lvs2a_1p8: lvs2 {
-+		};
-+	};
-+};
-+
-+&apps_smmu {
-+	/* TODO: Figure out how to survive booting with this enabled */
-+	status = "disabled";
-+};
-+
-+&gcc {
-+	protected-clocks = <GCC_QSPI_CORE_CLK>,
-+			   <GCC_QSPI_CORE_CLK_SRC>,
-+			   <GCC_QSPI_CNOC_PERIPH_AHB_CLK>;
-+};
-+
-+&i2c1 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+};
-+
-+&i2c3 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+
-+	hid@15 {
-+		compatible = "hid-over-i2c";
-+		reg = <0x15>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
-+	};
-+
-+	hid@2c {
-+		compatible = "hid-over-i2c";
-+		reg = <0x2c>;
-+		hid-descr-addr = <0x20>;
-+
-+		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c2_hid_active>;
-+	};
-+};
-+
-+&i2c5 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+
-+	hid@10 {
-+		compatible = "hid-over-i2c";
-+		reg = <0x10>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 125 IRQ_TYPE_EDGE_FALLING>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c6_hid_active>;
-+	};
-+};
-+
-+&i2c11 {
-+	status = "okay";
-+	clock-frequency = <400000>;
-+
-+	hid@5c {
-+		compatible = "hid-over-i2c";
-+		reg = <0x5c>;
-+		hid-descr-addr = <0x1>;
-+
-+		interrupts-extended = <&tlmm 92 IRQ_TYPE_LEVEL_LOW>;
-+
-+		pinctrl-names = "default";
-+		pinctrl-0 = <&i2c12_hid_active>;
-+	};
-+};
-+
-+&qup_i2c12_default {
-+	drive-strength = <2>;
-+	bias-disable;
-+};
-+
-+&qup_uart6_default {
-+	pinmux {
-+		 pins = "gpio45", "gpio46", "gpio47", "gpio48";
-+		 function = "qup6";
-+	};
-+
-+	cts {
-+		pins = "gpio45";
-+		bias-pull-down;
-+	};
-+
-+	rts-tx {
-+		pins = "gpio46", "gpio47";
-+		drive-strength = <2>;
-+		bias-disable;
-+	};
-+
-+	rx {
-+		pins = "gpio48";
-+		bias-pull-up;
-+	};
-+};
-+
-+&qupv3_id_0 {
-+	status = "okay";
-+};
-+
-+&qupv3_id_1 {
-+	status = "okay";
-+};
-+
-+&tlmm {
-+	gpio-reserved-ranges = <0 4>, <81 4>;
-+
-+	i2c2_hid_active: i2c2-hid-active {
-+		pins = <37>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+
-+	i2c6_hid_active: i2c6-hid-active {
-+		pins = <125>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+
-+	i2c12_hid_active: i2c12-hid-active {
-+		pins = <92>;
-+		function = "gpio";
-+
-+		input-enable;
-+		bias-pull-up;
-+		drive-strength = <2>;
-+	};
-+};
-+
-+&uart6 {
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "qcom,wcn3990-bt";
-+
-+		vddio-supply = <&vreg_s4a_1p8>;
-+		vddxo-supply = <&vreg_l7a_1p8>;
-+		vddrf-supply = <&vreg_l17a_1p3>;
-+		vddch0-supply = <&vreg_l25a_3p3>;
-+		max-speed = <3200000>;
-+	};
-+};
-+
-+&ufs_mem_hc {
-+	status = "okay";
-+
-+	vcc-supply = <&vreg_l20a_2p95>;
-+	vcc-max-microamp = <600000>;
-+};
-+
-+&ufs_mem_phy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_ufs1_core>;
-+	vdda-pll-supply = <&vdda_ufs1_1p2>;
-+};
-+
-+&usb_1 {
-+	status = "okay";
-+};
-+
-+&usb_1_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_1_hsphy {
-+	status = "okay";
-+
-+	vdd-supply = <&vdda_usb1_ss_core>;
-+	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
-+	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
-+
-+	qcom,imp-res-offset-value = <8>;
-+	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_21_6_MA>;
-+	qcom,preemphasis-level = <QUSB2_V2_PREEMPHASIS_5_PERCENT>;
-+	qcom,preemphasis-width = <QUSB2_V2_PREEMPHASIS_WIDTH_HALF_BIT>;
-+};
-+
-+&usb_1_qmpphy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_usb1_ss_1p2>;
-+	vdda-pll-supply = <&vdda_usb1_ss_core>;
-+};
-+
-+&usb_2 {
-+	status = "okay";
-+};
-+
-+&usb_2_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_2_hsphy {
-+	status = "okay";
-+
-+	vdd-supply = <&vdda_usb2_ss_core>;
-+	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
-+	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
-+
-+	qcom,imp-res-offset-value = <8>;
-+	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_22_8_MA>;
-+};
-+
-+&usb_2_qmpphy {
-+	status = "okay";
-+
-+	vdda-phy-supply = <&vdda_usb2_ss_1p2>;
-+	vdda-pll-supply = <&vdda_usb2_ss_core>;
-+};
--- 
-2.17.1
-
-
+> 
+> > Hi,
+> >
+> > On 02.09.19 23:16, Andy Shevchenko wrote:
+> > > On Mon, Sep 2, 2019 at 11:58 PM Rafael J. Wysocki
+> > > <rafael@kernel.org>
+> > wrote:
+> > >>
+> > >> On Thu, Jul 11, 2019 at 12:35 PM Chuanhua Han
+> > >> <chuanhua.han@nxp.com>
+> > wrote:
+> > >>>
+> > >>> Enable NXP i2c controller to boot with ACPI
+> > >>>
+> > >>> Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
+> > >>> Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
+> > >>> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
+> > >>
+> > >> Wolfram, any objections to this from the i2c side?
+> > >
+> > > May I propose amendment(s)?
+> > >
+> > >>> @@ -44,6 +44,7 @@
+> > >>>   #include <linux/pm_runtime.h>
+> > >>>   #include <linux/sched.h>
+> > >>>   #include <linux/slab.h>
+> > >
+> > >>> +#include <linux/acpi.h>
+> > >
+> > > If it's kept in order, better to go with it. (Yes, it is as I have
+> > > checked) However, property.h should be included instead, see below.
+Ok, got it. I will fix it in v2.
+> > >
+> > >>>          const struct of_device_id *of_id =
+> > of_match_device(i2c_imx_dt_ids,
+> > >>>
+> > >>> &pdev->dev);
+> > >>> +       const struct acpi_device_id *acpi_id =
+> > >>> +                       acpi_match_device(i2c_imx_acpi_ids,
+> > >>> +                                         &pdev->dev);
+> > >
+> > >
+> > >>>          if (of_id)
+> > >>>                  i2c_imx->hwdata = of_id->data;
+> > >>> +       else if (acpi_id)
+> > >>> +               i2c_imx->hwdata = (struct imx_i2c_hwdata *)
+> > >>> +                               acpi_id->driver_data;
+> > >
+> > >
+> > > The above altogher may be replaced with
+> > >
+> > > const struct imx_i2c_hwdata *match;
+> > > ...
+> > > match = device_get_match_data(&pdev->dev);
+> > > if (match)
+> > >   i2c_imx->hwdata = match;
+> > > else
+> > > ...
+> >
+Ok, I will correct it in v2.
+> > Instead of "may be replaced", I would say: it should be replaced :)
+> >
+> > >>> +               .acpi_match_table = ACPI_PTR(i2c_imx_acpi_ids),
+> > >
+> > > Since there is no #ifdef guard no need to use ACPI_PTR().
+> > >
+> >
+> > What iMX/(other NXP?) SoCs are with ACPI support?  Where I can get
+> > one? I would like to know more about it.
+> - Nxp has variety Socs, include i.MX, Layerscape, etc.
+> - You can get one from here
+> https://www.nxp.com/design/qoriq-developer-resources/qoriq-lx2160a-develo
+> pment-board:LX2160A-RDB
+> 
+> >
+> > Kind regards,
+> > Oleksij Rempel
+> >
+> > --
+> > Pengutronix e.K.                           |
+> > |
+> > Industrial Linux Solutions                 |
+> > https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.p
+> > e
+> ngutronix.de%2F&amp;data=02%7C01%7Cmeenakshi.aggarwal%40nxp.com%
+> >
+> 7C640eb015a91f4959d3b508d7303168fb%7C686ea1d3bc2b4c6fa92cd99c5c
+> >
+> 301635%7C0%7C0%7C637030861076879938&amp;sdata=sPWtkVtHHDvoRR
+> > ZmWJuipCO%2BEwG%2BcupgZvcIV1%2BrlEY%3D&amp;reserved=0  |
+> Peiner Str.
+> > 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0
+> > |
+> > Amtsgericht Hildesheim, HRA 2686           | Fax:
+> > +49-5121-206917-5555 |
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
