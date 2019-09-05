@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6FE8AA9E0A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:17:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AB1A3A9E16
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:18:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
 	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
 	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
 	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=dfxiFYK3kvnAlDneIKwUqVkPPNp6AEl0M9k7GyNKx0U=; b=ZImXXYvVa3JmR89Swk7ZwGoii
-	CVf/Q//KNteM5sDsd/83z2WWH8xgVmgJtVe5jZjJtnynZ0f4J7yIn5nZXdiUJSLTq4JdQS81LVJDo
-	VqO43zvApgOTq0VtcHHWLd4s87fd3hdkrXCskzDGFhMIXV/5CYVpDYQForp+r36E1Gl8GdvZBRxcP
-	wwVJ+5BFTLuGzI894SzKfr56slbbbS00loYKhJtgMR8lqSGz/R1nTwCeGRfsgC6/3iQYH3GVYRSk3
-	RxXhDv3AuGNjqZtJ05L90X1VmMhYkekvQ2OXBvlddC+q2QwfKrpI5ywI/4icopdrrLVeuUYYFhw/4
-	SmS5Uruhw==;
+	 bh=1dsWvMY4seoQqW8Xqc76IHUniMeDxC99/sya40B3y5o=; b=hN89esZb6xZPaY3+UWHauup4u
+	Wc0ExHtILy2xuSq2OsGQekRggDSjd+mS4pyFhtPYfFIbQV2CgbnW1z5kYXk8cyeIOFKHYIyvnsx8U
+	X3dxxmxba8ESskPNl/OUIH0X77Fa6lKiTCYgp2cm714YHHzNuaPy0aYJtzZz08MVK+lAly5p150Sf
+	BPAXeQ9GuICmK2TdVtFPH+snvz5hiVJBntTJamyLiPJgqKCVDPmLhViCYk121bn7ojmOgRUJt4JJP
+	XufLhxdz8BvzbMZ8Q2KEduM2BVCbCg2263P1ZSOrj1FsYfNxkNNfUglzUcDgoysr+0N4kMq6PB8xg
+	cEEuprxWg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5nsr-0001V7-QN; Thu, 05 Sep 2019 09:16:53 +0000
+	id 1i5nuB-00023y-09; Thu, 05 Sep 2019 09:18:15 +0000
 Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5nsJ-0001Jt-Cf
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:16:21 +0000
+ id 1i5ntx-00023c-Jw
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:18:03 +0000
 Received: from localhost (p54B335F6.dip0.t-ipconnect.de [84.179.53.246])
- by pokefinder.org (Postfix) with ESMTPSA id 9698D2C0509;
- Thu,  5 Sep 2019 11:16:17 +0200 (CEST)
-Date: Thu, 5 Sep 2019 11:16:17 +0200
+ by pokefinder.org (Postfix) with ESMTPSA id E0B302C0509;
+ Thu,  5 Sep 2019 11:18:00 +0200 (CEST)
+Date: Thu, 5 Sep 2019 11:18:00 +0200
 From: Wolfram Sang <wsa@the-dreams.de>
 To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [PATCH 1/2] i2c: qcom-geni: Provide an option to select FIFO
+Subject: Re: [PATCH 2/2] i2c: qcom-geni: Provide an option to disable DMA
  processing
-Message-ID: <20190905091617.GC1157@kunai>
-References: <20190904113613.14997-1-lee.jones@linaro.org>
- <20190904203548.GC580@tuxbook-pro> <20190904212337.GF23608@ninjato>
- <20190905071103.GX26880@dell>
+Message-ID: <20190905091800.GD1157@kunai>
+References: <20190905075213.13260-1-lee.jones@linaro.org>
+ <20190905075213.13260-2-lee.jones@linaro.org>
 MIME-Version: 1.0
-In-Reply-To: <20190905071103.GX26880@dell>
+In-Reply-To: <20190905075213.13260-2-lee.jones@linaro.org>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_021619_812725_FB0257CE 
-X-CRM114-Status: GOOD (  16.86  )
+X-CRM114-CacheID: sfid-20190905_021801_998767_565DC7C3 
+X-CRM114-Status: GOOD (  14.04  )
 X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.0 points)
@@ -63,102 +62,112 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
  linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, agross@kernel.org,
- robh+dt@kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
+ robh+dt@kernel.org, bjorn.andersson@linaro.org, vkoul@kernel.org,
  alokc@codeaurora.org, linux-i2c@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============0698838446927595607=="
+Content-Type: multipart/mixed; boundary="===============4292042958299802539=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
---===============0698838446927595607==
+--===============4292042958299802539==
 Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="R+My9LyyhiUvIEro"
+	protocol="application/pgp-signature"; boundary="xB0nW4MQa6jZONgY"
 Content-Disposition: inline
 
 
---R+My9LyyhiUvIEro
+--xB0nW4MQa6jZONgY
 Content-Type: text/plain; charset=us-ascii
 Content-Disposition: inline
 Content-Transfer-Encoding: quoted-printable
 
-Hi Lee,
 
-> > It looks like a workaround to me. It would be interesting to hear which
-> > I2C client breaks with DMA and if it's driver can't be fixed somehow
-> > instead. But even if we agree on a workaround short term, adding a
+> Fixes: 8bc529b25354 ("soc: qcom: geni: Add support for ACPI")
 
-So, are there investigations running why this reboot happens?
+Are you sure? From visual inspection, I don't see a correlation between
+this commit and the fix here.
 
-> > Is there no other way to disable DMA which is local to this driver so we
-> > can easily revert the workaround later?
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> Reviewed-by: Vinod Koul <vkoul@kernel.org>
+> ---
+>  drivers/i2c/busses/i2c-qcom-geni.c | 14 ++++++++++----
+>  1 file changed, 10 insertions(+), 4 deletions(-)
 >=20
-> This is the most local low-impact solution (nomenclature aside).
+> diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-=
+qcom-geni.c
+> index a89bfce5388e..8822dea82980 100644
+> --- a/drivers/i2c/busses/i2c-qcom-geni.c
+> +++ b/drivers/i2c/busses/i2c-qcom-geni.c
+> @@ -353,13 +353,16 @@ static void geni_i2c_tx_fsm_rst(struct geni_i2c_dev=
+ *gi2c)
+>  static int geni_i2c_rx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg=
+ *msg,
+>  				u32 m_param)
+>  {
+> +	struct device_node *np =3D gi2c->se.dev->of_node;
+>  	dma_addr_t rx_dma;
+>  	unsigned long time_left;
+> -	void *dma_buf;
+> +	void *dma_buf =3D NULL;
+>  	struct geni_se *se =3D &gi2c->se;
+>  	size_t len =3D msg->len;
+> =20
+> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +	if (!of_property_read_bool(np, "qcom,geni-se-no-dma"))
+> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +
+>  	if (dma_buf)
+>  		geni_se_select_mode(se, GENI_SE_DMA);
+>  	else
+> @@ -392,13 +395,16 @@ static int geni_i2c_rx_one_msg(struct geni_i2c_dev =
+*gi2c, struct i2c_msg *msg,
+>  static int geni_i2c_tx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg=
+ *msg,
+>  				u32 m_param)
+>  {
+> +	struct device_node *np =3D gi2c->se.dev->of_node;
+>  	dma_addr_t tx_dma;
+>  	unsigned long time_left;
+> -	void *dma_buf;
+> +	void *dma_buf =3D NULL;
+>  	struct geni_se *se =3D &gi2c->se;
+>  	size_t len =3D msg->len;
+> =20
+> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +	if (!of_property_read_bool(np, "qcom,geni-se-no-dma"))
+> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +
+>  	if (dma_buf)
+>  		geni_se_select_mode(se, GENI_SE_DMA);
+>  	else
+> --=20
+> 2.17.1
+>=20
 
-I disagree. You could use of_machine_is_compatible() and disable DMA for
-that machine. Less impact because we save the workaround binding.
-
-> The beautiful thing about this approach is that, *if* the Geni SE DMA
-
-I'd say 'advantage' instead of 'beautiful' ;)
-
-> ever starts working, we can remove the C code and any old properties
-> left in older DTs just become NOOP.  Older kernels with newer DTs
-> (less of a priority) *still* won't work, but they don't work now
-> anyway.
-
-Which is a clear disadvantage of that solution. It won't fix older
-kernels. My suggestion above should fix them, too.
-
-> The offending line can be found at [0].  There is no obvious bug to
-> fix and this code obviously works well on some of the hardware
-> platforms using it.  But on our platform (Lenovo Yoga C630 - QCom
-> SMD850) that final command, which initiates the DMA transaction, ends
-> up rebooting the machine.
-
-Unless we know why the reboot happens on your platform, I'd be careful
-with saying "work obviously well" on other platforms.
-
-> With regards to the nomenclature, my original suggestion was
-> 'qcom,geni-se-no-dma'.  Would that better suit your request?
-
-My suggestion:
-
-For 5.3, use of_machine_is_compatible() and we backport that. For later,
-try to find out the root cause and fix it. If that can't be done, try to
-set up a generic "disable-dma" property and use it.
-
-What do you think about that?
-
-Kind regards,
-
-   Wolfram
-
-
---R+My9LyyhiUvIEro
+--xB0nW4MQa6jZONgY
 Content-Type: application/pgp-signature; name="signature.asc"
 
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1w0l0ACgkQFA3kzBSg
-KbZwIw//V6IiIveJDn0aD/OW1kfJryDVHjJc9G0mc7e95Zv5IY4F77vlM/3CreL9
-Af8mavqJNEfLlkVymEEVTAt5PqfsdhPd1Ttd54GEByAk7gFtXtbHt8LpkY2Sqn6p
-gFdduWs32IP/JG6iQpi0Ee9CeLKhU4me95zYWcky93b2tdBA7+G7nZjD/+WL4OyB
-32xbzQgElDmo0WiphV6jwpYpISbIcmpaeTTmFYSAs0UMXBbGV2aIN+Ji/mIko/Lv
-BtZtPegtsBK+8DyuxqsRYwI6vpyoMf6RTBe0GnkpRVYeMJpuaGxEsNAkc8YpdiF3
-f7rdd/EMf0mrONo37R6ZpYmxMAP/IJ7pBUYnpDffPRNDiXEhXfBD+DruIc//UcDi
-GAtZXEOgpBAu9ajY0EUUqXkqgKYx6KeTdAWklCYBNt4/E9IaIvp9A+o4K0O19PI0
-ArjbIhqNKKV70VytmD9DyGhzC248OYpkyY9A9emMSgeU8JoL2UsgbMzvAnykz3gc
-d0xVBP9b37pTrpkvaQHY6kH7Jkso/5HgSFzS81OiAqmmBt1TrazTT+1FN02brO2G
-KvnIbw0p1nwwbH3s4L0G6ejee2wf0Jjjki0rJi8Sy4WMN5K5pcVIHo3eTTtlhIr/
-BI5zFeZg6eu8RkalM5glGaFpO1KWV27kaRx+INA1LdndZ+3RZmA=
-=UyFF
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1w0sgACgkQFA3kzBSg
+KbZAkhAAqLidEFMA6FK2iigoU4Bb521+nLwBTqlnG9ahMrhVVQmIKDARK++TEvwm
+6DKw2OxJDCx/hXpnWy5U1TAj8x9Q09BWol8xTjT7paGKdek65kB/EbfvwCqCFfdO
+5J34MIIYgu6o6BjvfN3OCcwLFg2ubYm76kIS/wjPpocPVEoUBCtyrK+fXIsp21eB
+kmcvGyYY+3O69bjNoGdpdV3SLQyh0LRCmxPKi0ogIU8+hY+S5DpA3HaEkzb75KgV
+zla+6XVWtROIA8OnNsPt8lZruy4tbP5JHq+zrxel1/GEDX45jPxLINqz2ei1tZJ2
+szJMBeMO6Brq1i1qgbK6/c610FdJV+G/9OhkeY6B0iKp6FaoeuiEGuQLxZvJoEpM
+Y+bSw/8i2h+RCZh187XcpOM3M8Ulqzje3Ruk1xsqJXb6bWuy/Tm5BiCAWUCO62gk
+R9/wLxQgKg3HpyQYqatk0POPGhj5Wl+vH4A2XO5V36wqV6YMVQn+RFuRREfndDmP
+tFAk6i4Rn54l9f3CtKP8cB16zSplO0d9vO8LKEhG3HtFUsvOBxeq+IMW1YA9tTGP
+DRjTu3Dbme8P2BrUsB2gWglzNC2xRY489FM9Oik2qL3YrXqLcE2LeGh3bOvuet1R
+cESLKwr6DFkLrbvbKv1V/1+e+cUdtt3PGQPLh/08KbKqpdvB16s=
+=vkLL
 -----END PGP SIGNATURE-----
 
---R+My9LyyhiUvIEro--
+--xB0nW4MQa6jZONgY--
 
 
---===============0698838446927595607==
+--===============4292042958299802539==
 Content-Type: text/plain; charset="us-ascii"
 MIME-Version: 1.0
 Content-Transfer-Encoding: 7bit
@@ -169,5 +178,5 @@ linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
---===============0698838446927595607==--
+--===============4292042958299802539==--
 
