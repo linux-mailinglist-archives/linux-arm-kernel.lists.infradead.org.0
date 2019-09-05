@@ -2,34 +2,33 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E882AAA1DB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:43:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C48C8AA1DC
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:43:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=CXBSH8AihoeuEGt97E5HkjPn21WahuYya2u72SAKxHI=; b=dg45+Qt5OT5KMQ
-	SOuFeh+HUaO/jIchc5nHV868Fo/zefvW9JES803rEpKT5Bl6j/kEyUmmbGrbve9Rt75HW0l5kjrnY
-	cOolyg2TjQtR84zUzUzKTWS2IAaFvyRO86kn8Wqjw1BG+AH6Lp2P3EQPK6qdRGvjNOuBVok3726YT
-	ksAB1vnfEiR3sMeyAeLyQl8+gcbWvWnK0cbDn3GgImQRteF3fRgR7fxEnaDYmIPWf8NcV05S5mJH2
-	yOlNcppZup3xsNnwXvzJs/6X2chBCBxu/d48IDxIvTCttjONmJMO14w5PtKgoKKYTTPK4kbRFrCjY
-	wUOP1E89NohX47y2x5gA==;
+	List-Owner; bh=FCOgnB7sMN+okHw/SCzu7k8gI8GoJEadLNJx9cxnNBo=; b=Bfbh4dg/IA8Akd
+	jmTQ8lNpXvXPDgYH00VKyPpHo8XLDLuuCR35EPh8wscKimdfwbPxQvOnHP8BA7YgkenStH9UFIUQi
+	22XsunFV4Z+dspagCdLkp0VohNJevLNUbHtvUB6rFgxOKjSWodi6dMRhBVGEQkMrvd8+UW7ZfQRJl
+	p6pJtmE8Wc70/y2TvPfNx4qVwXrn/um516maCXSJess6/Rfse7nxKtPrFHXmPTvMfow0vd6Bgm9Xm
+	DOKw6CkJ4pXfj7tc4l6PnDqOkcQGzg8U8D8sJZi+9NSrXQsfg1J+FwpEXECs73xGKT+f0ANJRHz0K
+	94dR1i6Fn7BWLzw3Sksg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5qAI-0006Uo-1N; Thu, 05 Sep 2019 11:43:02 +0000
+	id 1i5qAX-0006jR-94; Thu, 05 Sep 2019 11:43:17 +0000
 Received: from [2001:4bb8:18c:1755:a4b2:9562:6bf1:4bb9] (helo=localhost)
  by bombadil.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
- id 1i5q8L-000519-Cd; Thu, 05 Sep 2019 11:41:02 +0000
+ id 1i5q8P-00054e-6G; Thu, 05 Sep 2019 11:41:05 +0000
 From: Christoph Hellwig <hch@lst.de>
 To: Stefano Stabellini <sstabellini@kernel.org>,
  Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, gross@suse.com,
  boris.ostrovsky@oracle.com
-Subject: [PATCH 07/11] swiotlb-xen: remove xen_swiotlb_dma_mmap and
- xen_swiotlb_dma_get_sgtable
-Date: Thu,  5 Sep 2019 13:34:04 +0200
-Message-Id: <20190905113408.3104-8-hch@lst.de>
+Subject: [PATCH 08/11] swiotlb-xen: use the same foreign page check everywhere
+Date: Thu,  5 Sep 2019 13:34:05 +0200
+Message-Id: <20190905113408.3104-9-hch@lst.de>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190905113408.3104-1-hch@lst.de>
 References: <20190905113408.3104-1-hch@lst.de>
@@ -53,59 +52,69 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There is no need to wrap the common version, just wire them up directly.
+xen_dma_map_page uses a different and more complicated check for foreign
+pages than the other three cache maintainance helpers.  Switch it to the
+simpler pfn_valid method a well, and document the scheme with a single
+improved comment in xen_dma_map_page.
 
 Signed-off-by: Christoph Hellwig <hch@lst.de>
 Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 ---
- drivers/xen/swiotlb-xen.c | 29 ++---------------------------
- 1 file changed, 2 insertions(+), 27 deletions(-)
+ include/xen/arm/page-coherent.h | 31 +++++++++----------------------
+ 1 file changed, 9 insertions(+), 22 deletions(-)
 
-diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
-index eee86cc7046b..b8808677ae1d 100644
---- a/drivers/xen/swiotlb-xen.c
-+++ b/drivers/xen/swiotlb-xen.c
-@@ -547,31 +547,6 @@ xen_swiotlb_dma_supported(struct device *hwdev, u64 mask)
- 	return xen_virt_to_bus(xen_io_tlb_end - 1) <= mask;
- }
+diff --git a/include/xen/arm/page-coherent.h b/include/xen/arm/page-coherent.h
+index a840d6949a87..a8d9c0678c27 100644
+--- a/include/xen/arm/page-coherent.h
++++ b/include/xen/arm/page-coherent.h
+@@ -53,23 +53,17 @@ static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
+ 	     dma_addr_t dev_addr, unsigned long offset, size_t size,
+ 	     enum dma_data_direction dir, unsigned long attrs)
+ {
+-	unsigned long page_pfn = page_to_xen_pfn(page);
+-	unsigned long dev_pfn = XEN_PFN_DOWN(dev_addr);
+-	unsigned long compound_pages =
+-		(1<<compound_order(page)) * XEN_PFN_PER_PAGE;
+-	bool local = (page_pfn <= dev_pfn) &&
+-		(dev_pfn - page_pfn < compound_pages);
++	unsigned long pfn = PFN_DOWN(dev_addr);
  
--/*
-- * Create userspace mapping for the DMA-coherent memory.
-- * This function should be called with the pages from the current domain only,
-- * passing pages mapped from other domains would lead to memory corruption.
-- */
--static int
--xen_swiotlb_dma_mmap(struct device *dev, struct vm_area_struct *vma,
--		     void *cpu_addr, dma_addr_t dma_addr, size_t size,
--		     unsigned long attrs)
--{
--	return dma_common_mmap(dev, vma, cpu_addr, dma_addr, size, attrs);
--}
--
--/*
-- * This function should be called with the pages from the current domain only,
-- * passing pages mapped from other domains would lead to memory corruption.
-- */
--static int
--xen_swiotlb_get_sgtable(struct device *dev, struct sg_table *sgt,
--			void *cpu_addr, dma_addr_t handle, size_t size,
--			unsigned long attrs)
--{
--	return dma_common_get_sgtable(dev, sgt, cpu_addr, handle, size, attrs);
--}
--
- const struct dma_map_ops xen_swiotlb_dma_ops = {
- 	.alloc = xen_swiotlb_alloc_coherent,
- 	.free = xen_swiotlb_free_coherent,
-@@ -584,6 +559,6 @@ const struct dma_map_ops xen_swiotlb_dma_ops = {
- 	.map_page = xen_swiotlb_map_page,
- 	.unmap_page = xen_swiotlb_unmap_page,
- 	.dma_supported = xen_swiotlb_dma_supported,
--	.mmap = xen_swiotlb_dma_mmap,
--	.get_sgtable = xen_swiotlb_get_sgtable,
-+	.mmap = dma_common_mmap,
-+	.get_sgtable = dma_common_get_sgtable,
- };
+ 	/*
+-	 * Dom0 is mapped 1:1, while the Linux page can span across
+-	 * multiple Xen pages, it's not possible for it to contain a
+-	 * mix of local and foreign Xen pages. So if the first xen_pfn
+-	 * == mfn the page is local otherwise it's a foreign page
+-	 * grant-mapped in dom0. If the page is local we can safely
+-	 * call the native dma_ops function, otherwise we call the xen
+-	 * specific function.
++	 * Dom0 is mapped 1:1, and while the Linux page can span across multiple
++	 * Xen pages, it is not possible for it to contain a mix of local and
++	 * foreign Xen pages.  Calling pfn_valid on a foreign mfn will always
++	 * return false, so if pfn_valid returns true the pages is local and we
++	 * can use the native dma-direct functions, otherwise we call the Xen
++	 * specific version.
+ 	 */
+-	if (local)
++	if (pfn_valid(pfn))
+ 		dma_direct_map_page(hwdev, page, offset, size, dir, attrs);
+ 	else
+ 		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
+@@ -79,14 +73,7 @@ static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
+ 		size_t size, enum dma_data_direction dir, unsigned long attrs)
+ {
+ 	unsigned long pfn = PFN_DOWN(handle);
+-	/*
+-	 * Dom0 is mapped 1:1, while the Linux page can be spanned accross
+-	 * multiple Xen page, it's not possible to have a mix of local and
+-	 * foreign Xen page. Dom0 is mapped 1:1, so calling pfn_valid on a
+-	 * foreign mfn will always return false. If the page is local we can
+-	 * safely call the native dma_ops function, otherwise we call the xen
+-	 * specific function.
+-	 */
++
+ 	if (pfn_valid(pfn))
+ 		dma_direct_unmap_page(hwdev, handle, size, dir, attrs);
+ 	else
 -- 
 2.20.1
 
