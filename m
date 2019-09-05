@@ -2,50 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA8DAAAEF0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 01:04:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4D89AAF61
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 01:54:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JwTysaHcPsOnw3rX38CZyUA3WulbES3P9l3WvmzAgAs=; b=il6cG7dbh+mUdq
-	/sC22Rr/SViak+6jAmJKjmWBfWKGuch/kPiM48sTmhMW4hUszotm1hwJX8G8awJheN88S9x+SY31Y
-	FAsxy0SzlWMS24z16nNCOKMZPOnVJG9nDICyszJF2ip+vDmqHNVOJ4NQmf5sUSAc+hsxCBVGeCkNh
-	Or2YlCdpexzTwZSdWC2XDhdF6IH/lUwmtFCywAzs8wL/zXBamWGhnBSGOGyAzFVUoc9ugJdgHHvwr
-	6GBcHmaFoXC9wTSF7y6VMVSTfeQWPbGoNiDM8TVreCMZHFnd5DDsBNXzx3nByL9S58RIxdtWENK21
-	zPOcm/9k9nyGvw44eMkw==;
+	List-Owner; bh=sGQkTIttyqKIA6EGBKLXVFFJF0R9mxkmlARb2qM/DhM=; b=a0+wkNJmZGqkq/
+	pZKRATEPDXmckqnxuUcpGSCHpxWTaPysSbFaKmC0r5doRUkCd1F+ghuf1jtxlsmOkvCwtdIg8mVRw
+	QNZkIMINz4kTiX8EYIP3LIMPIwxsodCfuTUBqXh28c7Q8UMvXTjarRkxM+ZGQFdSGDaFPdH68aV/p
+	HTjmUOhH+w+irS1YtGi/prbVCO4ib5V6HnWVSckC5Y3qGI2Qk/rNUCLlS/9rlrsYYlivmkSkt2u3l
+	WQ830nTxzzhWvk95SIOe+Zd6dgqhOuCoJS5Q4a79pjz1UH8lqHdshBPf4LPBHpWxc9NXQ4d0pmV+F
+	DYIve3NVbk6zcC3r21wA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i60oC-00048o-HA; Thu, 05 Sep 2019 23:04:56 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i60o5-00048K-9n
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 23:04:50 +0000
-Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 0A27C810D;
- Thu,  5 Sep 2019 23:05:16 +0000 (UTC)
-Date: Thu, 5 Sep 2019 16:04:43 -0700
-From: Tony Lindgren <tony@atomide.com>
-To: Adam Ford <aford173@gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-Message-ID: <20190905230443.GA52127@atomide.com>
-References: <20190828150037.2640-1-aford173@gmail.com>
+	id 1i61a2-0001Uz-70; Thu, 05 Sep 2019 23:54:22 +0000
+Received: from zeniv.linux.org.uk ([195.92.253.2])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i61Zv-0001Rj-RH
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 23:54:17 +0000
+Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.1 #3 (Red Hat
+ Linux)) id 1i61VY-0003aC-Me; Thu, 05 Sep 2019 23:49:44 +0000
+Date: Fri, 6 Sep 2019 00:49:44 +0100
+From: Al Viro <viro@zeniv.linux.org.uk>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905234944.GT1131@ZenIV.linux.org.uk>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905180750.GQ1131@ZenIV.linux.org.uk>
+ <20190905230003.bek7vqdvruzi4ybx@yavin.dot.cyphar.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190828150037.2640-1-aford173@gmail.com>
-User-Agent: Mutt/1.11.4 (2019-03-13)
+In-Reply-To: <20190905230003.bek7vqdvruzi4ybx@yavin.dot.cyphar.com>
+User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_160449_382910_70FDEE51 
-X-CRM114-Status: GOOD (  16.70  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_165415_888154_DD23FB34 
+X-CRM114-Status: GOOD (  15.57  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.92.253.2 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -59,86 +62,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Paul Walmsley <paul@pwsan.com>, aaro.koskinen@iki.fi,
- Russell King <linux@armlinux.org.uk>, linux-kernel@vger.kernel.org,
- t-kristo@ti.com, Rob Herring <robh+dt@kernel.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>, pali.rohar@gmail.com,
- linux-omap@vger.kernel.org, adam.ford@logicpd.com,
- linux-arm-kernel@lists.infradead.org
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Shuah Khan <shuah@kernel.org>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-
-* Adam Ford <aford173@gmail.com> [190828 15:01]:
-> The datasheet for the AM3517 shows the RNG is connected to L4.
-> It shows the module address for the RNG is 0x480A0000, and it
-> matches the omap2.dtsi description.  Since the driver can support
-> omap2 and omap4, it seems reasonable to assume the omap3 would
-> use the same core for the RNG.
+On Fri, Sep 06, 2019 at 09:00:03AM +1000, Aleksa Sarai wrote:
+> > > +			return -EFAULT;
+> > > +	}
+> > > +	/* Copy the interoperable parts of the struct. */
+> > > +	if (__copy_to_user(dst, src, size))
+> > > +		return -EFAULT;
+> > 
+> > Why not simply clear_user() and copy_to_user()?
 > 
-> This RFC, mimics much of the omap2 hwmods on the OMAP3. It
-> also adds the necessary clock for driving the RNG.  Unfortunately,
-> it appears non-functional.  If anyone has any suggestions on how
-> to finish the hwmod (or port it to the newer l4 device tree
-> format), feedback is requested.
+> I'm not sure I understand what you mean -- are you asking why we need to
+> do memchr_inv(src + size, 0, rest) earlier?
 
-Yup I'll take the bait :) The patch below seems to do the trick
-for me on dm3730 based on translating your patch to probe with
-ti-sysc.
+I'm asking why bother with __ and separate access_ok().
 
-Not sure about 34xx, it seems we're missing rng_clk? Care
-to give it a try and attempt simlar patches for 34xx and
-3517?
+> > 	if ((unsigned long)addr & 1) {
+> > 		u8 v;
+> > 		if (get_user(v, (__u8 __user *)addr))
+> > 			return -EFAULT;
+> > 		if (v)
+> > 			return -E2BIG;
+> > 		addr++;
+> > 	}
+> > 	if ((unsigned long)addr & 2) {
+> > 		u16 v;
+> > 		if (get_user(v, (__u16 __user *)addr))
+> > 			return -EFAULT;
+> > 		if (v)
+> > 			return -E2BIG;
+> > 		addr +=2;
+> > 	}
+> > 	if ((unsigned long)addr & 4) {
+> > 		u32 v;
+> > 		if (get_user(v, (__u32 __user *)addr))
+> > 			return -EFAULT;
+> > 		if (v)
+> > 			return -E2BIG;
+> > 	}
+> > 	<read the rest like you currently do>
 
-At least I'm not needing the "ti,no-reset-on-init" property
-that your patch has a comment for. Maybe that's needed on
-some other omap3.
+Actually, this is a dumb way to do it - page size on anything
+is going to be a multiple of 8, so you could just as well
+read 8 bytes from an address aligned down.  Then mask the
+bytes you don't want to check out and see if there's anything
+left.
 
-Oh and this needs to default to status = "disabled" for
-HS devices like n900 as it needs to use the omap3-rom-rng.
+You can have readability boundaries inside a page - it's either
+the entire page (let alone a single word) being readable, or
+it's EFAULT for all parts.
 
-Regards,
+> > would be saner, and things like x86 could trivially add an
+> > asm variant - it's not hard.  Incidentally, memchr_inv() is
+> > an overkill in this case...
+> 
+> Why is memchr_inv() overkill?
 
-Tony
+Look at its implementation; you only care if there are
+non-zeroes, you don't give a damn where in the buffer
+the first one would be.  All you need is the same logics
+as in "from userland" case
+	if (!count)
+		return true;
+	offset = (unsigned long)from & 7
+	p = (u64 *)(from - offset);
+	v = *p++;
+	if (offset) {	// unaligned
+		count += offset;
+		v &= ~aligned_byte_mask(offset); // see strnlen_user.c
+	}
+	while (count > 8) {
+		if (v)
+			return false;
+		v = *p++;
+		count -= 8;
+	}
+	if (count != 8)
+		v &= aligned_byte_mask(count);
+	return v == 0;
 
-8< -----------------------
-diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
---- a/arch/arm/boot/dts/omap36xx.dtsi
-+++ b/arch/arm/boot/dts/omap36xx.dtsi
-@@ -140,6 +140,29 @@
- 			};
- 		};
- 
-+		rng_target: target-module@480a0000 {
-+			compatible = "ti,sysc-omap2", "ti,sysc";
-+			reg = <0x480a003c 0x4>,
-+			      <0x480a0040 0x4>,
-+			      <0x480a0044 0x4>;
-+			reg-names = "rev", "sysc", "syss";
-+			ti,sysc-mask = <(SYSC_OMAP2_AUTOIDLE)>;
-+			ti,sysc-sidle = <SYSC_IDLE_FORCE>,
-+					<SYSC_IDLE_NO>;
-+			ti,syss-mask = <1>;
-+			clocks = <&rng_ick>;
-+			clock-names = "ick";
-+			#address-cells = <1>;
-+			#size-cells = <1>;
-+			ranges = <0 0x480a0000 0x2000>;
-+
-+			rng: rng@0 {
-+				compatible = "ti,omap2-rng";
-+				reg = <0x0 0x2000>;
-+				interrupts = <52>;
-+			};
-+		};
-+
- 		/*
- 		 * Note that the sysconfig register layout is a subset of the
- 		 * "ti,sysc-omap4" type register with just sidle and midle bits
+All there is to it...
 
 _______________________________________________
 linux-arm-kernel mailing list
