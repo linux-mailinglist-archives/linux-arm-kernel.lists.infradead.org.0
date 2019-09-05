@@ -2,47 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9980DAA562
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:04:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 90A1DAA571
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:09:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=tbXXtiRbuhCZfYhdCbmIhhgeX4nCKvYAfj/URQRyJh4=; b=SR0mk1rBk9zCq4
-	kEXioQFew2a6rKz9qBUphnAENLH9EdgcEG9bLE2V3MOxGKLPOVSKJSzIDW+GFGHy5wZpnUrJTrsL1
-	vgtAgZJyc/jivzg9UGm4ous3AcmxzQ0Ce10dAufrYT4qCk7LVFHf0OCYwG+eP5tgH7yvsRp6Rxt56
-	srkurwCx5CqHvrmO8wd5c7SlAxdbFHYEEqXMMG8UOTBwhr29LmYWvuZglDaT428CVwOwg/MPX7VhX
-	ZKmlf3rF76wJ/ooWY32OTIIx6lvmxJX6Rn8kWY1E1OWCpc6lAN5ZdEtJUWylGvS+DuNoqS8CuQg0B
-	x7iBw4lQFEjSXz53VfCA==;
+	List-Owner; bh=2QVf+gZ6O+RXwFBw0HigwDdl4jdxjS+ANswSnOlZPOA=; b=QHLHZ5TtFKh/xP
+	nwOYM8A6GYPE5KzyvbBbAyCFCjtwASjc7gAfPtNJhQfSNxWSyMZ6fkoKHCyRbNXXavOSLvBcnQESx
+	AXkJj3niVLcH8T+oe+9Jw4ZBWFw0c7IjNABSQPPI6S5BSEpcIGn57YG8vSIlj5v1ADc1FlYVBb7x2
+	/lISahV9YYmToqlOdhoo2lv1E9QWjLvrt0RhThrJUcBtr3N8VZcM+UN0m2xMtMotLnl1YWYM8s2DK
+	AQ9o2vWD9DYs353WfL6Sz8dnSFRrEA4lUv4awbvBSYhF1ewH8clGML3mNedE9p0mobN3wSnLEnfg9
+	HmPtZymiM+5RQsZi7elQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sMs-0006eT-6r; Thu, 05 Sep 2019 14:04:10 +0000
-Received: from muru.com ([72.249.23.125])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sMf-0006de-F1
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:03:59 +0000
-Received: from hillo.muru.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTP id CA4C5810D;
- Thu,  5 Sep 2019 14:04:24 +0000 (UTC)
-From: Tony Lindgren <tony@atomide.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH] bus: ti-sysc: Fix clock handling for no-idle quirks
-Date: Thu,  5 Sep 2019 07:03:37 -0700
-Message-Id: <20190905140337.19373-1-tony@atomide.com>
-X-Mailer: git-send-email 2.23.0
+	id 1i5sS7-0008KZ-OT; Thu, 05 Sep 2019 14:09:35 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5sRy-0008IW-0i
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:09:27 +0000
+Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
+ by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+ (Exim 4.76) (envelope-from <colin.king@canonical.com>)
+ id 1i5sRr-0001aJ-Mw; Thu, 05 Sep 2019 14:09:19 +0000
+From: Colin King <colin.king@canonical.com>
+To: Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, linux-gpio@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] pinctrl: bcm: remove redundant assignment to pointer log
+Date: Thu,  5 Sep 2019 15:09:19 +0100
+Message-Id: <20190905140919.29283-1-colin.king@canonical.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_070357_539690_810467D4 
-X-CRM114-Status: GOOD (  13.82  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_070926_203172_0F4E9DEC 
+X-CRM114-Status: UNSURE (   9.80  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [72.249.23.125 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -56,131 +61,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Grygorii Strashko <grygorii.strashko@ti.com>,
- Vignesh Raghavendra <vigneshr@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-NFSroot can fail on dra7 when cpsw is probed using ti-sysc interconnect
-target module driver as reported by Keerthy.
+From: Colin Ian King <colin.king@canonical.com>
 
-Device clocks and the interconnect target module may or may not be
-enabled by the bootloader on init, but we currently assume the clocks
-and module are on from the bootloader for "ti,no-idle" and
-"ti,no-idle-on-init" quirks as reported by Grygorii Strashko.
+The pointer log is being initialized with a value that is never read
+and is being re-assigned a little later on. The assignment is
+redundant and hence can be removed.
 
-Let's fix the issue by always enabling clocks init, and
-never disable them for "ti,no-idle" quirk. For "ti,no-idle-on-init"
-quirk, we must decrement the usage count later on to allow PM
-runtime to idle the module if requested.
-
-Fixes: 1a5cd7c23cc5 ("bus: ti-sysc: Enable all clocks directly during init to read revision")
-Cc: Keerthy <j-keerthy@ti.com>
-Cc: Vignesh Raghavendra <vigneshr@ti.com>
-Reported-by: Keerthy <j-keerthy@ti.com>
-Reported-by: Grygorii Strashko <grygorii.strashko@ti.com>
-Signed-off-by: Tony Lindgren <tony@atomide.com>
+Addresses-Coverity: ("Unused value")
+Signed-off-by: Colin Ian King <colin.king@canonical.com>
 ---
- drivers/bus/ti-sysc.c | 48 +++++++++++++++++++++++++++++++++----------
- 1 file changed, 37 insertions(+), 11 deletions(-)
+ drivers/pinctrl/bcm/pinctrl-cygnus-mux.c | 1 -
+ 1 file changed, 1 deletion(-)
 
-diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
---- a/drivers/bus/ti-sysc.c
-+++ b/drivers/bus/ti-sysc.c
-@@ -1632,17 +1632,19 @@ static int sysc_init_module(struct sysc *ddata)
- 	if (error)
- 		return error;
+diff --git a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
+index 44df35942a43..dcab2204c60c 100644
+--- a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
++++ b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
+@@ -923,7 +923,6 @@ static int cygnus_mux_log_init(struct cygnus_pinctrl *pinctrl)
+ 	if (!pinctrl->mux_log)
+ 		return -ENOMEM;
  
--	if (manage_clocks) {
--		sysc_clkdm_deny_idle(ddata);
-+	sysc_clkdm_deny_idle(ddata);
- 
--		error = sysc_enable_opt_clocks(ddata);
--		if (error)
--			return error;
-+	/*
-+	 * Always enable clocks. The bootloader may or may not have enabled
-+	 * the related clocks.
-+	 */
-+	error = sysc_enable_opt_clocks(ddata);
-+	if (error)
-+		return error;
- 
--		error = sysc_enable_main_clocks(ddata);
--		if (error)
--			goto err_opt_clocks;
--	}
-+	error = sysc_enable_main_clocks(ddata);
-+	if (error)
-+		goto err_opt_clocks;
- 
- 	if (!(ddata->cfg.quirks & SYSC_QUIRK_NO_RESET_ON_INIT)) {
- 		error = sysc_rstctrl_reset_deassert(ddata, true);
-@@ -1660,7 +1662,7 @@ static int sysc_init_module(struct sysc *ddata)
- 			goto err_main_clocks;
- 	}
- 
--	if (!ddata->legacy_mode && manage_clocks) {
-+	if (!ddata->legacy_mode) {
- 		error = sysc_enable_module(ddata->dev);
- 		if (error)
- 			goto err_main_clocks;
-@@ -1677,6 +1679,7 @@ static int sysc_init_module(struct sysc *ddata)
- 	if (manage_clocks)
- 		sysc_disable_main_clocks(ddata);
- err_opt_clocks:
-+	/* No re-enable of clockdomain autoidle to prevent module autoidle */
- 	if (manage_clocks) {
- 		sysc_disable_opt_clocks(ddata);
- 		sysc_clkdm_allow_idle(ddata);
-@@ -2357,6 +2360,28 @@ static void ti_sysc_idle(struct work_struct *work)
- 
- 	ddata = container_of(work, struct sysc, idle_work.work);
- 
-+	/*
-+	 * One time decrement of clock usage counts if left on from init.
-+	 * Note that we disable opt clocks unconditionally in this case
-+	 * as they are enabled unconditionally during init without
-+	 * considering sysc_opt_clks_needed() at that point.
-+	 */
-+	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE |
-+				 SYSC_QUIRK_NO_IDLE_ON_INIT)) {
-+		sysc_clkdm_deny_idle(ddata);
-+		sysc_disable_main_clocks(ddata);
-+		sysc_disable_opt_clocks(ddata);
-+		sysc_clkdm_allow_idle(ddata);
-+	}
-+
-+	/* Keep permanent PM runtime usage count for SYSC_QUIRK_NO_IDLE */
-+	if (ddata->cfg.quirks & SYSC_QUIRK_NO_IDLE)
-+		return;
-+
-+	/*
-+	 * Decrement PM runtime usage count for SYSC_QUIRK_NO_IDLE_ON_INIT
-+	 * and SYSC_QUIRK_NO_RESET_ON_INIT
-+	 */
- 	if (pm_runtime_active(ddata->dev))
- 		pm_runtime_put_sync(ddata->dev);
- }
-@@ -2445,7 +2470,8 @@ static int sysc_probe(struct platform_device *pdev)
- 	INIT_DELAYED_WORK(&ddata->idle_work, ti_sysc_idle);
- 
- 	/* At least earlycon won't survive without deferred idle */
--	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE_ON_INIT |
-+	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE |
-+				 SYSC_QUIRK_NO_IDLE_ON_INIT |
- 				 SYSC_QUIRK_NO_RESET_ON_INIT)) {
- 		schedule_delayed_work(&ddata->idle_work, 3000);
- 	} else {
+-	log = pinctrl->mux_log;
+ 	for (i = 0; i < CYGNUS_NUM_IOMUX_REGS; i++) {
+ 		for (j = 0; j < CYGNUS_NUM_MUX_PER_REG; j++) {
+ 			log = &pinctrl->mux_log[i * CYGNUS_NUM_MUX_PER_REG
 -- 
-2.23.0
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
