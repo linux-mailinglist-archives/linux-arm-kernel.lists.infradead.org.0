@@ -2,83 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AB77AA597
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:17:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1B379AA59E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:18:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=EOVy5/GmU2Z2cacc0vmfxUkGOylR3cJUOQRBIgC01fQ=; b=fNKoqZhY905aepFGtIKwk92Mp
-	7sckhd6q4+hAjEWiSrMdH23XFqbPRY2xDyQjQrvdn3raG5rjmNY+4e1Q6874VHikVzE8V33BsWX/p
-	mhiaiz/AD7qvgJem0EToK+7Fl5jNCpxYxIAQFRuXnLv8PbviN+RI9ESixQEFrLezHzGYTYrhWV+pL
-	5JvDv7EMPOwxqW4bd3T+wTBmo/3GwCNgNyLt06kV9xzjdnnKAr7Tp5+lid5U572L8EkTUfaCf0QmB
-	C5eY1VPQamd/VgxrRlUXzE7Yn+hzr+sqPxJqkZHRFic6GSImp7FYfo7DaavCvAh9yD+/tAsFWxrj4
-	uu+pqZo6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=K7MHLRqXtUMvgsExR3Oh07TcB6q3AHTMeRzJypNsR3Y=; b=NGNRMZ3kvSsBGz
+	7AE1DDYKzzSimMLiKvnT+aPiJ0IrlUj9eUqVRLn/ldpe8M4ubDEVx2Lou1tl8/RnUkep92x/BtQfO
+	Upm3riAT/o8Ds6/VTOybg2ukBUUrNDZrSBRPQo6qEwFqPVGjqzIKREqy9yidWm92LDlTJ8uK6twyx
+	ho2CEaojTTsOE3qOzYsAGAdbLkZDMvU209t/4uQOU/jqr7Qw9QmwczuuKXS2dnC+qggoYdqmLqxi0
+	le2IA/b7sN16Dm4vP7cKlN4pmSFc2s4obnFU0xGJsDBMelWV4FYGlo/S4BShDarvRg8EzPGRANLHy
+	qcb64LVUm0FMuT1wOsjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sZk-0003PB-Nl; Thu, 05 Sep 2019 14:17:28 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sZb-0003Ol-Hx
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:17:20 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x85EHF6q066539;
- Thu, 5 Sep 2019 09:17:15 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567693035;
- bh=ub+LpZSR2SqSnDTZYERv7a6nXgZCl/QfTXbE8sjKO10=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=jkRJNor/c//NIjSOu2F8t0GecbA3rmd/dTZM1I1uP2YjUNdtSlFyQGTDRm9uataKz
- xfiha8TFkN8MrbcAr3s8LDQvlhyGJtIzrD+azaihHuMhi4HkdJAb/qCRntw9a9Pq7y
- RiNzAl0LUP90NvcSOwe8j9ck78Ybh+3+QPEydLsA=
-Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x85EHF1r089155;
- Thu, 5 Sep 2019 09:17:15 -0500
-Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE102.ent.ti.com
- (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 5 Sep
- 2019 09:17:13 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
- (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 5 Sep 2019 09:17:13 -0500
-Received: from [10.250.98.116] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x85EH9Sc113593;
- Thu, 5 Sep 2019 09:17:10 -0500
-Subject: Re: [PATCH] bus: ti-sysc: Fix clock handling for no-idle quirks
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20190905140337.19373-1-tony@atomide.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <49ce192d-697b-48e2-2b18-47acb370739b@ti.com>
-Date: Thu, 5 Sep 2019 17:17:04 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i5sb2-0003kg-HO; Thu, 05 Sep 2019 14:18:48 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5sas-0003kH-5m
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:18:39 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9C27028;
+ Thu,  5 Sep 2019 07:18:37 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B3A913F67D;
+ Thu,  5 Sep 2019 07:18:36 -0700 (PDT)
+Date: Thu, 5 Sep 2019 15:18:34 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v5 01/11] kselftest: arm64: add skeleton Makefile
+Message-ID: <20190905141834.GE27757@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190902112932.36129-2-cristian.marussi@arm.com>
+ <20190904114734.GR27757@arm.com>
+ <4e7f583f-df36-1d7b-7a41-160abc60a296@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190905140337.19373-1-tony@atomide.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <4e7f583f-df36-1d7b-7a41-160abc60a296@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_071719_701422_B3873806 
-X-CRM114-Status: GOOD (  14.69  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190905_071838_308662_C574468E 
+X-CRM114-Status: GOOD (  25.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,51 +63,140 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Vignesh Raghavendra <vigneshr@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
- Roger Quadros <rogerq@ti.com>
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 05/09/2019 17:03, Tony Lindgren wrote:
-> NFSroot can fail on dra7 when cpsw is probed using ti-sysc interconnect
-> target module driver as reported by Keerthy.
+On Thu, Sep 05, 2019 at 02:45:39PM +0100, Cristian Marussi wrote:
+> On 04/09/2019 12:47, Dave Martin wrote:
+> > On Mon, Sep 02, 2019 at 12:29:22pm +0100, Cristian Marussi wrote:
+> >> Add a new arm64-specific empty subsystem amongst TARGETS of KSFT build
+> >> framework; keep these new arm64 KSFT testcases separated into distinct
+> > 
+> > Nit: this isn't true any more, since the tags tests already added the
+> > arm64 subsystem here.
 > 
-> Device clocks and the interconnect target module may or may not be
-> enabled by the bootloader on init, but we currently assume the clocks
-> and module are on from the bootloader for "ti,no-idle" and
-> "ti,no-idle-on-init" quirks as reported by Grygorii Strashko.
+> Ok
+> > 
+> >> subdirs inside tools/testing/selftests/arm64/ depending on the specific
+> >> subsystem targeted.
+> >>
+> >> Add into toplevel arm64 KSFT Makefile a mechanism to guess the effective
+> >> location of Kernel headers as installed by KSFT framework.
+> > 
+> > This:
+> > 
+> >> Merge with
+> >>
+> >> commit 9ce1263033cd ("selftests, arm64: add a selftest for passing
+> >> 		     tagged pointers to kernel")
+> >>
+> >> while moving such KSFT tags tests inside their own subdirectory
+> >> (arm64/tags).
+> > 
+> > ...could be put under the tearoff, but it doesn't really belong in the
+> > commit message IMHO.
+> > 
+> > I suggest rewriting the commit message to reflect the current
+> > situation (but it can be kept brief).
+> > 
+> > Basically, what this patch now seems to do is to prepare for adding
+> > more arm64 tests, by moving the tags tests into their own subdirectory
+> > and extending the existing skeleton Makefile as appropriate.
+> > 
 > 
-> Let's fix the issue by always enabling clocks init, and
-> never disable them for "ti,no-idle" quirk. For "ti,no-idle-on-init"
-> quirk, we must decrement the usage count later on to allow PM
-> runtime to idle the module if requested.
+> Ok
+> >> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> >> ---
+> >> v4 --> v5
+> >> - rebased on arm64/for-next/core
+> >> - merged this patch with KSFT arm64 tags patch, while moving the latter
+> >>   into its own subdir
+> >> - moved kernel header includes search mechanism from KSFT arm64
+> >>   SIGNAL Makefile
+> >> - export proper top_srcdir ENV for lib.mk
+> >> v3 --> v4
+> >> - comment reword
+> >> - simplified documentation in README
+> >> - dropped README about standalone
+> >> ---
+> > 
+> > [...]
+> > 
+> >> diff --git a/tools/testing/selftests/arm64/Makefile b/tools/testing/selftests/arm64/Makefile
+> >> index a61b2e743e99..5dbb0ffdfc9a 100644
+> >> --- a/tools/testing/selftests/arm64/Makefile
+> >> +++ b/tools/testing/selftests/arm64/Makefile
+> >> @@ -1,11 +1,69 @@
+> >>  # SPDX-License-Identifier: GPL-2.0
+> >> +# Copyright (C) 2019 ARM Limited
+> > 
+> > Change of copyright?  This isn't pure Arm IP upstream IIUC.
+> > 
+> > Maybe just drop it: Makefiles don't usually contain significant IP, so
+> > many have no copyright message anyway.
+> > 
+> Right. I'll drop.
+> >> -# ARCH can be overridden by the user for cross compiling
+> >> -ARCH ?= $(shell uname -m 2>/dev/null || echo not)
+> >> +# When ARCH not overridden for crosscompiling, lookup machine
+> >> +ARCH ?= $(shell uname -m)
+> >> +ARCH := $(shell echo $(ARCH) | sed -e s/aarch64/arm64/)
+> >>  
+> >> -ifneq (,$(filter $(ARCH),aarch64 arm64))
+> >> -TEST_GEN_PROGS := tags_test
+> >> -TEST_PROGS := run_tags_test.sh
+> >> +ifeq ("x$(ARCH)", "xarm64")
+> >> +SUBDIRS := tags
+> >> +else
+> >> +SUBDIRS :=
+> >>  endif
+> >>  
+> >> -include ../lib.mk
+> >> +CFLAGS := -Wall -O2 -g
+> >> +
+> >> +# A proper top_srcdir is needed by KSFT(lib.mk)
+> >> +top_srcdir = ../../../../..
+> >> +
+> >> +# Additional include paths needed by kselftest.h and local headers
+> >> +CFLAGS += -I$(top_srcdir)/tools/testing/selftests/
+> >> +
+> >> +# Guessing where the Kernel headers could have been installed
+> >> +# depending on ENV config
+> >> +ifeq ($(KBUILD_OUTPUT),)
+> >> +khdr_dir = $(top_srcdir)/usr/include
+> >> +else
+> >> +# the KSFT preferred location when KBUILD_OUTPUT is set
+> >> +khdr_dir = $(KBUILD_OUTPUT)/kselftest/usr/include
+> >> +endif
+> > 
+> > Looking at this, can we just pass the directory in from the toplevel
+> > "all" rule instead of guessing?
+> > 
+> Do you mean toplevel in KSFT ?
+> I think it's how should be done at the end, but I was trying to keep this series on
+> arm64/ lands only. (also maybe I'm missing something obvious in KSFT handling of this
+> situation....even though many other KSFT use built CFLAGS like: -I../../../usr/include
+> or similar)
 > 
-> Fixes: 1a5cd7c23cc5 ("bus: ti-sysc: Enable all clocks directly during init to read revision")
-> Cc: Keerthy <j-keerthy@ti.com>
-> Cc: Vignesh Raghavendra <vigneshr@ti.com>
-> Reported-by: Keerthy <j-keerthy@ti.com>
-> Reported-by: Grygorii Strashko <grygorii.strashko@ti.com>
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
-> ---
->   drivers/bus/ti-sysc.c | 48 +++++++++++++++++++++++++++++++++----------
->   1 file changed, 37 insertions(+), 11 deletions(-)
+> > Maybe don't churn this for now though.  It's something that could be
+> > looked at later.
+> > 
 > 
+> Ok. I'll leave here and fix it to avoid relative paths...which could be problematic
+> when exported to lower level Makefiles.
+> 
+> Cheers
+> 
+> Cristian
 
-Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
+Sounds reasonable
 
-Thank you, Tony.
-
--- 
-Best regards,
-grygorii
+Cheers
+---Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
