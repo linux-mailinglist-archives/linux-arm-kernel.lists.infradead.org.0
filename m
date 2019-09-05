@@ -2,42 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1BDE0A9B3C
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:09:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC2CFA9B3E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:09:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QgK/zJX9hAmxtTB8J8QR9IigEk0ihoPKNJC4uD1zOC0=; b=bxBuFdq0lj6NAb
-	4ihalAZiVafRkTrdWrZOqTv4ey+csyYACSzJeaa3NoNfnpQ4GUsxc5IDKv4t9v1U3X62oF4T1dvDf
-	41bcPORstV38QZiT0UNVIompQorYY6HHiEbZTGjd8J1pXL3tYQzo/raZKWZXfhx1KBcbOrntr0orp
-	S0jgH46f/ydON0Y3Tr+2aNJdrAH15Sb/wjLPD00csYM/txqxem702lYMiwl5ksqGmCW9vaDlsuJP7
-	0Ow7blT0+EzHufKIVd8qzEO59yaHO70wNLqliaXeshilD3pzJSYc396Oq4Pg5SnSvPo6ViO2JMrHy
-	yjClN8tmKhnuA/GP422g==;
+	List-Owner; bh=aK4S3NFAGAAWsYdJvnEAxtY4OnWRd5TWlQE7mDJAwXY=; b=CImjE/iQZaPRNj
+	x8bQvC3Lyy4qdMRO2FX2KBcyeWQJDv8hlmN8Ju9/jZsRS210+TtCNqOmTW6L0oLCQzVCDNS6ugTqY
+	BqzHTUpD7/RG2wCmYB6aZuK/BunixpsO+UfS61HrQ+P2lV5fCwVQVXB+SRffQlOzEDs/3Lj9RJMWz
+	xbUzXqDcbkdjhlFilguz0SIIaWdebD56jyh2IbUdvk6LgK9eWcW0Ti8z9hk00YP/5mQLJNGctxtSU
+	fDD60dkuJJqnmpAKNAf0NEGpn7MpMNHm4W06qlyek9PesAP0ARzouq2e/nmT7TL0G+33xvJiaiaHb
+	L5RIa8ZhPAnc8RRH+t8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ltG-00039V-Mq; Thu, 05 Sep 2019 07:09:10 +0000
+	id 1i5ltZ-0003O8-0n; Thu, 05 Sep 2019 07:09:29 +0000
 Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5lsJ-0002ZD-AQ; Thu, 05 Sep 2019 07:08:12 +0000
+ id 1i5lsL-0002ZD-4Z; Thu, 05 Sep 2019 07:08:14 +0000
 Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
  (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Thu, 5 Sep 2019
  15:08:53 +0800
 From: Jianxin Pan <jianxin.pan@amlogic.com>
 To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH v2 2/4] dt-bindings: arm: amlogic: add A1 bindings
-Date: Thu, 5 Sep 2019 03:07:28 -0400
-Message-ID: <1567667251-33466-3-git-send-email-jianxin.pan@amlogic.com>
+Subject: [PATCH v2 3/4] dt-bindings: arm: amlogic: add Amlogic AD401 bindings
+Date: Thu, 5 Sep 2019 03:07:29 -0400
+Message-ID: <1567667251-33466-4-git-send-email-jianxin.pan@amlogic.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
 References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [116.236.93.172]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_000811_457171_0ABECE7D 
-X-CRM114-Status: UNSURE (   6.18  )
+X-CRM114-CacheID: sfid-20190905_000813_247837_F6F4BB11 
+X-CRM114-Status: UNSURE (   6.56  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,29 +71,25 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add bindings for the new Amlogic A1 SoC family.
-
-A1 is an application processor designed for smart audio and IoT applications,
-with dual core Cortex-A35.
+Add the compatible for the Amlogic A1 Based AD401 board.
 
 Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
 Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- Documentation/devicetree/bindings/arm/amlogic.yaml | 4 ++++
- 1 file changed, 4 insertions(+)
+ Documentation/devicetree/bindings/arm/amlogic.yaml | 2 ++
+ 1 file changed, 2 insertions(+)
 
 diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-index 99015ce..0ef45ac 100644
+index 0ef45ac..ee5703c 100644
 --- a/Documentation/devicetree/bindings/arm/amlogic.yaml
 +++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -156,4 +156,8 @@ properties:
-               - seirobotics,sei610
-               - khadas,vim3l
-           - const: amlogic,sm1
-+
-+      - description: Boards with the Amlogic Meson A1 A113L SoC
-+        items:
-+          - const: amlogic,a1
+@@ -159,5 +159,7 @@ properties:
+ 
+       - description: Boards with the Amlogic Meson A1 A113L SoC
+         items:
++          - enum:
++              - amlogic,ad401
+           - const: amlogic,a1
  ...
 -- 
 2.7.4
