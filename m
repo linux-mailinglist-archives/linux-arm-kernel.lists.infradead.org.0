@@ -2,97 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A559A9919
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 05:59:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8669A9983
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 06:27:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WI1kPqul3Nz8ELT6vIhfRCYtLGA5ygv7PTDW1zDA2xc=; b=DIwibn/GDytXYO
-	FSNIUVJW6mGVvauLkx7RT7qqqZlqsaMlG/9D3PylyNyXEvhvAuFDP7z+E6x3SzBA5pxVeUHyxiCWw
-	Ofu5Xwriq4xHZPzyzmLuBGvz/MzoEz51qQc5veePqJCRlTzE/wmtVGpr4ddKseeybiE9TT6VmFS8Q
-	gBk9rcwW9KiKT43Y2k5uJAY2R4xNPSm8ejYnIU0YYvZ+MIkRGK1uXl8uO4geA4Vi2x2PEF/Lv3sYF
-	tlKtiGY6yb7SWvaXT2D45+i4vmxEWtn8HoyVvtAbaBYDikbcajLjU9MDV3ZRg0eVSm3raML+r84W2
-	NMriYiRGCiFX4Gmv4Gfw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2BD9X20JacvaZ47vvJYUphqQSysOgLyHeojQYq/jjKo=; b=Nn2SkkyIUuUyRO
+	tUhHlRuX6Ux76RjdRF0C95XRjcUBTrpubtnaH3RI8/saPTUSLdmeFyxvgtrwjg4kZ6J/2zx0dybh1
+	ZAWiY091eh4Dv01RzlfDH0UmzSPS63dwz6tfeYo1RS4yjpePO8dTGMbxhwq7avw/sEw++Gp3HNmln
+	24fRM4hAHh6UgkihSXb0BuHZsJcDxBM45YmI9FmYLR2SD7+swLbTuoq2IqkEqeKdEF80ygiUZ2tz4
+	I72oS9jIzZ/ikW1mx1sZlbKDR//wpTTnpr+f24yA+Xmy9w//CCH1DXgJfk3HsCQYG2JrQdGXixGQQ
+	YZK+EWcV87pvdqiqozbw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ivf-00063w-Mo; Thu, 05 Sep 2019 03:59:27 +0000
-Received: from new1-smtp.messagingengine.com ([66.111.4.221])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ivJ-00063X-B1
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 03:59:06 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailnew.nyi.internal (Postfix) with ESMTP id E36DC399A;
- Wed,  4 Sep 2019 23:59:03 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 04 Sep 2019 23:59:03 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=bsxI63SDV53IBgVMw9ODo8bNo53LTDF
- tLsvuYgDTumc=; b=cxi0lxLMshDNFApXwHb+YnUgaXybAEJD4RXHoK45E5SVzBo
- jwmlEP9AamppX+wLLstsGJrBCfPKqKxYTMOiHYBvNOtYR4BHt0qAMn/6nvtu023i
- oMz1+L2EopbHYaibpSYOnjKxAhVvo5SUX8K3Qa+3iN/LCYg3YTy43UJAMOni17wS
- isZJzyTCpSunnQGn8kUtTNSfo247l0wubez2B7LoDLQGWwZHpYtjlpDMdX58fOOv
- T33ukMTx5ZzovB0jlb61CseEJQECpU+CIQwN7aWfrCZihc3fGTANoan9eiMlbSAV
- AAEnEw94LbDxVSanAo6cUFTVRs3r9RHWLiouxOA==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=bsxI63
- SDV53IBgVMw9ODo8bNo53LTDFtLsvuYgDTumc=; b=XdIJZOQmJhKJ1LqYXYYS4h
- IuDgZApzHMLe2yXEYn0Jtah0T1STxbmaFDguklzz9+FQxNcd7MQ2ZROl4q2YpepQ
- Z50PtQvsk9GWP6cRgkknPJjFbp2qtfbwKGBQ0TFC8aqEidJT2EgF16qVkSUgBXzi
- cSJ4phSg7BAjkAOu9lkYR7zNYzrhZTAZotpvpRHZ7uGr3DZsYzCGwro4nVos4uOc
- G7wyG0OLNiVC2N28x9rXNrNAC9FehG6IsnPTl7t0FyXaMCvjYuEpG7bRQGh3MFfB
- WTr7pByxoFMtdEwVfr0IWC4UBM//mL8o48rTXsI5/RVMVxALWsHX2XogHIR84WGw
- ==
-X-ME-Sender: <xms:B4hwXayjsygOYaj8l4PbulBAuT8qWTh1NBH6NzyMdJkaY2VTz--qaA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejiedgjeeiucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:B4hwXfGnLBul3l6Udc_i_53IEol2R6CjpoL9MJLEZQo750pyaTOnGA>
- <xmx:B4hwXTTC5oI7XVX6BT1Jm-kZAOwa8B4ZmTbvqP9BsUX7oP_Vjkmo_A>
- <xmx:B4hwXaGdHvnq3xcZ3ahDizMlAjxwfEdCU6WlswcVpTDnExbf4FfDZQ>
- <xmx:B4hwXeyGK36-A7d6lMJZBk4iEBP9mmUowTbonVUncqdCVaq0n2Trwg>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 933F9E00A3; Wed,  4 Sep 2019 23:59:03 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-186-gf4cb3c3-fmstable-20190904v1
-Mime-Version: 1.0
-Message-Id: <3f9d48eb-79ed-42e9-a346-761871e74c98@www.fastmail.com>
-In-Reply-To: <20190905011800.16156-1-rashmica.g@gmail.com>
-References: <20190905011800.16156-1-rashmica.g@gmail.com>
-Date: Thu, 05 Sep 2019 13:29:29 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Rashmica Gupta" <rashmica.g@gmail.com>,
- "Linus Walleij" <linus.walleij@linaro.org>
-Subject: =?UTF-8?Q?Re:_[PATCH_v2_4/4]_gpio:_dt-bindings:_Update_documentation_wit?=
- =?UTF-8?Q?h_ast2600_controllers?=
+	id 1i5jMz-000624-Uo; Thu, 05 Sep 2019 04:27:42 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5jMk-00061N-Lc
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 04:27:27 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0854728;
+ Wed,  4 Sep 2019 21:27:23 -0700 (PDT)
+Received: from [10.162.41.136] (p8cg001049571a15.blr.arm.com [10.162.41.136])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 4EE723F718; Wed,  4 Sep 2019 21:27:16 -0700 (PDT)
+Subject: Re: [PATCH V7 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls
+ in try_remove_memory()
+To: David Hildenbrand <david@redhat.com>, linux-mm@kvack.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ akpm@linux-foundation.org, catalin.marinas@arm.com, will@kernel.org
+References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
+ <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
+ <e98f2950-bef9-3672-81a8-f9593354fffe@redhat.com>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <49c2a682-97c5-5eef-6635-9fe75e4677f7@arm.com>
+Date: Thu, 5 Sep 2019 09:57:23 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <e98f2950-bef9-3672-81a8-f9593354fffe@redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_205905_533032_6917AC66 
-X-CRM114-Status: GOOD (  13.74  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190904_212726_756151_6D3BED55 
+X-CRM114-Status: GOOD (  14.48  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.221 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,11 +66,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Joel Stanley <joel@jms.id.au>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, mhocko@suse.com, steve.capper@arm.com,
+ ira.weiny@intel.com, suzuki.poulose@arm.com, mgorman@techsingularity.net,
+ steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
+ cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
+ Robin.Murphy@arm.com, logang@deltatee.com, valentin.schneider@arm.com,
+ osalvador@suse.de
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -116,43 +79,41 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On Thu, 5 Sep 2019, at 10:48, Rashmica Gupta wrote:
-> The ast2600 is a new generation of SoC from ASPEED. Similarly to the
-> ast2400 and ast2500, it has a GPIO controller for it's 3.6V GPIO pins.
-> Additionally, it has a GPIO controller for 36 1.8V GPIO pins. These
-> voltages are fixed and cannot be configured via pinconf, so we have two
-> separate drivers for them.
+On 09/04/2019 01:46 PM, David Hildenbrand wrote:
+> On 03.09.19 11:45, Anshuman Khandual wrote:
+>> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
+>> entries between memory block and node. It first checks pfn validity with
+>> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
+>> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
+>>
+>> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
+>> which scans all mapped memblock regions with memblock_is_map_memory(). This
+>> creates a problem in memory hot remove path which has already removed given
+>> memory range from memory block with memblock_[remove|free] before arriving
+>> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
+>> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
+>> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
+>> of existing sysfs entries.
+> Since
+> 
+> commit 60bb462fc7adb06ebee3beb5a4af6c7e6182e248
+> Author: David Hildenbrand <david@redhat.com>
+> Date:   Wed Aug 28 13:57:15 2019 +1000
+> 
+>     drivers/base/node.c: simplify unregister_memory_block_under_nodes()
+> 
+> that problem should be gone. There is no get_nid_for_pfn() call anymore.
 
-See 3/4 for discussion about the commit message.
+Yes, the problem is gone. The above commit is still not present on arm64
+tree against which this series was rebased and tested while posting.
 
 > 
-> Signed-off-by: Rashmica Gupta <rashmica.g@gmail.com>
-> ---
->  Documentation/devicetree/bindings/gpio/gpio-aspeed.txt | 3 ++-
->  1 file changed, 2 insertions(+), 1 deletion(-)
-> 
-> diff --git a/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt 
-> b/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-> index 7e9b586770b0..cd388797e07c 100644
-> --- a/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-> +++ b/Documentation/devicetree/bindings/gpio/gpio-aspeed.txt
-> @@ -2,7 +2,8 @@ Aspeed GPIO controller Device Tree Bindings
->  -------------------------------------------
->  
->  Required properties:
-> -- compatible		: Either "aspeed,ast2400-gpio" or "aspeed,ast2500-gpio"
-> +- compatible		: Either "aspeed,ast2400-gpio", "aspeed,ast2500-gpio",
-> +					  "aspeed,ast2600-gpio", or "aspeed,ast2600-1-8v-gpio"
+> So this patch should no longer be necessary - but as I said during
+> earlier versions of this patch, the re-ordering might still make sense
+> for consistency (removing stuff in the reverse order they were added).
+> You'll have to rephrase the description then.
 
-See the discussion on patch 3/4 about how we might eliminate the
-aspeed,ast2600-1-8v-gpio compatible string.
-
-Also, this patch should be the first in the series and start the subject with
-"dt-bindings: gpio: aspeed: ..."
-
-Cheers,
-
-Andrew
+Sure will reword the commit message on these lines.
 
 _______________________________________________
 linux-arm-kernel mailing list
