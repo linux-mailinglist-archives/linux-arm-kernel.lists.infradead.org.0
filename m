@@ -2,86 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E45BAAC0F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 21:33:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABC2CAAC25
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 21:43:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=RX+V7LZ+FJYkqv2shp1Cw+SuZaQ/vxBvE0L1RgOPD4s=; b=PjzQSiB74bABQL3uKkitiFtGf
-	kGNOGMMyupTTPJaCzo8NmHKHHckcNFJThv9RUHcjvHXhxn4NzZTnA8/UFqDhN2QmN9n5Y7KdJgNoT
-	fh8Ta+hg4cQa5ZZatbC6Pg4SVLfpgBJ/J8+FSvGbZD0s4c0HwNRwG6L0a5SMXBbaH+vnbaghuxkh9
-	iKRoFtOR3ahYC5mgsq8XCTSlVTUUMI6MMk6Zmqo0JUZjHmFwNMH44L2JwkyR58pwXhJu8Mnjdyyrh
-	BTVQF2ox9a9TGgoO4Z38hF1Z5r7ciB73+e0RuXd2miBhbxccjHcncGyEJn+IwQD9OTHjr7blNuvcw
-	jYwZVy8dQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:References
+	:In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=c0V+sAGHK/hgMM6YtdNVIPQ19zfxII/zbfwc00JPR/c=; b=oNX4t9Lk+kL7fK
+	ZaPTiLwQno5+tzvXgaGsRyU9YJfE4XFpviU5et6J/TUp+U4b7dPv4seJDi+YP/qxyjMg56oChSO56
+	TGhj3Qyqme7SD2+GKD9ofP4grDp6wR49mqzZkQxIuP6uVmqNmHd+3LeN6xIKQ6tA65MIh/oWpqbqK
+	BKxqBFJsNN9y6Z+T9ib8a4IiD7AxCHQyw1TyP1rcgC16d8VuRdUf42l7fafHxl7jPLb5OcXgkPw50
+	3w7oUmz/IETlPc/ldZOov8bt+fdoTsq6ABcPxfo2IbI7X+OU4jbCnbYZus+3p9ALp3DSXLtoBmK64
+	DtMQHXwawwhnW4QFChww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5xVl-0000hK-Pl; Thu, 05 Sep 2019 19:33:41 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1i5xf3-0003l4-Ar; Thu, 05 Sep 2019 19:43:17 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5xVe-0000gx-5j
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 19:33:36 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x85JXVf1013274;
- Thu, 5 Sep 2019 14:33:31 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567712012;
- bh=kkAMWtH2lSDWQdmzGtIiji4XCoqJUTR6qG2fZ+Vzpqc=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=BFSW/p+jNL5LX1/ko200OssuvJytWR4GBiX5gGhcP6SgNOs8u+6qORlPMLg51rKtj
- 0vCvmEn+3EbUhSaOjeBRWK76TR3XuFDIlJTQRe9Ojl2DmYFTOYeaEQB81AIuiGulUl
- SBSi6TnBnrlfsND5HFXVJUcEI8XhXfPFptAFxl7k=
-Received: from DLEE115.ent.ti.com (dlee115.ent.ti.com [157.170.170.26])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x85JXVeO012448
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 5 Sep 2019 14:33:31 -0500
-Received: from DLEE113.ent.ti.com (157.170.170.24) by DLEE115.ent.ti.com
- (157.170.170.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 5 Sep
- 2019 14:33:31 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 5 Sep 2019 14:33:31 -0500
-Received: from [10.250.98.116] (ileax41-snat.itg.ti.com [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x85JXSQZ069292;
- Thu, 5 Sep 2019 14:33:29 -0500
-Subject: Re: [RESEND PATCH next v2 0/6] ARM: keystone: update dt and enable
- cpts support
-To: <santosh.shilimkar@oracle.com>, Santosh Shilimkar <ssantosh@kernel.org>
-References: <20190705151247.30422-1-grygorii.strashko@ti.com>
- <2ef8b34e-7a6e-b3e4-90e0-c4e7f16c2e99@oracle.com>
-From: Grygorii Strashko <grygorii.strashko@ti.com>
-Message-ID: <323c1835-e6b0-9153-8d1e-06200d5e2201@ti.com>
-Date: Thu, 5 Sep 2019 22:33:28 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5xes-0003kR-Jr
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 19:43:08 +0000
+Received: by mail-pf1-x444.google.com with SMTP id 205so2520859pfw.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 12:43:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:in-reply-to:references:date:message-id
+ :mime-version; bh=3R88/IRJQcHRZWfdzbbMzR1ZVULQNx99NBBwZp8K2ns=;
+ b=VXvvRpfhCqUKNncwr4Dey5Mx58h6v8se2x5GT2BI6+dsZ30ptMP268TU5Ukorb1hyu
+ SmYCaggQ1jJ6g1g3/X+8akl5EFQKHKvUDk/g76kaLGi9hSOl4PRd2AMR21qC7xgdKDeJ
+ WG6ovXaIz7dQUDDlzL/CwyWEoabgr8CpuOue4ldmBJQ3V/WmY9eXOhkXgholvPwI3KSF
+ 0kgBU9Fq+G/b86qwuWmECrHGTVmDHKDjtxLwPLH9HKVk6jG9tp948w2JzTZTUzhAfxir
+ eKOb1Lu/ExJMaP03XgcDXnBYLnfiu2od9jJf/B3oXjsmMwLEDUnriVbxM7dgL6pB9pK1
+ z32g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:in-reply-to:references:date
+ :message-id:mime-version;
+ bh=3R88/IRJQcHRZWfdzbbMzR1ZVULQNx99NBBwZp8K2ns=;
+ b=UkmHqIOhCfDM9xb/KJ2w5lz2FsL+zulQQ8w2MAgcK5aeFfSdq39yMdfARcb6AliX7x
+ Trxc/qwuh/Ox/84IXV7FBRMzQ1jy3O1tpRPSf8kafZkK0/E7XMCOSxxvEOn3wd2gkSCK
+ 3z1YHFpw96UzxRAXRQ0eGGDImEpUicNP8LEfPEmZ69qEsbSfjJ3tu3bKDTnsGm2PcKTJ
+ YE/0jdynVq0mLKYllla96FLvyGrgODMddiI+rk6yDTHiKZ7h+MDx4S2CqC9BCV+oXtwi
+ botBpD6/gsnTYxG89q7hEmXIZhWoe/sFwy32ld+qjJXZauqX4sdK0qMG0kPnmcLCKzKP
+ Tecw==
+X-Gm-Message-State: APjAAAVuAQQJZHcvO3dXOuXQzBgBs1N6I2bpEbdF2J7wig/4/DEEQHkv
+ 7W/eZ8JzxkXT/JUDqzWqc9Codg==
+X-Google-Smtp-Source: APXvYqwf8krQaPMriUbEZ8Wdy1D3DRDXRb2n8Bb/CAhfFSa+I1I14VwMuRvI1N/0Lrhr0cbyX5GhOg==
+X-Received: by 2002:a17:90a:d981:: with SMTP id
+ d1mr5637712pjv.79.1567712585621; 
+ Thu, 05 Sep 2019 12:43:05 -0700 (PDT)
+Received: from localhost (c-71-197-186-152.hsd1.wa.comcast.net.
+ [71.197.186.152])
+ by smtp.gmail.com with ESMTPSA id w2sm2820837pgc.32.2019.09.05.12.43.04
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 05 Sep 2019 12:43:05 -0700 (PDT)
+From: Kevin Hilman <khilman@baylibre.com>
+To: Catalin Marinas <catalin.marinas@arm.com>, Mark Brown <broonie@kernel.org>
+Subject: Re: next/master boot: 310 boots: 11 failed, 292 passed with 6 offline,
+ 1 untried/unknown (next-20190904)
+In-Reply-To: <20190905170257.GC31268@arrakis.emea.arm.com>
+References: <5d700b15.1c69fb81.2abcd.479b@mx.google.com>
+ <20190904192725.GI4348@sirena.co.uk> <7hzhjjsime.fsf@baylibre.com>
+ <20190905153938.GB4053@sirena.co.uk>
+ <20190905170257.GC31268@arrakis.emea.arm.com>
+Date: Thu, 05 Sep 2019 12:43:04 -0700
+Message-ID: <7h4l1qsf5j.fsf@baylibre.com>
 MIME-Version: 1.0
-In-Reply-To: <2ef8b34e-7a6e-b3e4-90e0-c4e7f16c2e99@oracle.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_123334_344981_BFC3989F 
-X-CRM114-Status: GOOD (  10.29  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190905_124306_704185_BDEE0ED5 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,35 +97,49 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Murali Karicheri <m-karicheri2@ti.com>,
- Sekhar Nori <nsekhar@ti.com>, linux-kernel@vger.kernel.org,
+Cc: Steven Liu <steven.liu@mediatek.com>, kernel-build-reports@lists.linaro.org,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ Will Deacon <will@kernel.org>, Christoph Hellwig <hch@lst.de>,
  linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgU2FudG9zaCwKCk9uIDA2LzA3LzIwMTkgMDI6NDgsIHNhbnRvc2guc2hpbGlta2FyQG9yYWNs
-ZS5jb20gd3JvdGU6Cj4gT24gNy81LzE5IDg6MTIgQU0sIEdyeWdvcmlpIFN0cmFzaGtvIHdyb3Rl
-Ogo+PiBIaSBTYW50b3NoLAo+Pgo+PiBUaGlzIHNlcmllcyBpcyBzZXQgb2YgcGxhdGZvcm0gY2hh
-bmdlcyByZXF1aXJlZCB0byBlbmFibGUgTkVUQ1AgQ1BUUyByZWZlcmVuY2UKPj4gY2xvY2sgc2Vs
-ZWN0aW9uIGFuZCBmaW5hbCBwYXRjaCB0byBlbmFibGUgQ1BUUyBmb3IgS2V5c3RvbmUgNjZBSzJF
-L0wvSEsgU29Dcy4KPj4KPj4gVGhvc2UgcGF0Y2hlcyB3ZXJlIHBvc3RlZCBhbHJlYWR5IFsxXSB0
-b2dldGhlciB3aXRoIGRyaXZlcidzIGNoYW5nZXMsIHNvIHRoaXMKPj4gaXMgcmUtc2VuZCBvZiBE
-VC9wbGF0Zm9ybSBzcGVjaWZpYyBjaGFuZ2VzIG9ubHksIGFzIGRyaXZlcidzIGNoYW5nZXMgaGF2
-ZQo+PiBiZWVuIG1lcmdlZCBhbHJlYWR5Lgo+Pgo+PiBQYXRjaGVzIDEtNTogQ1BUUyBEVCBub2Rl
-cyB1cGRhdGUgZm9yIFRJIEtleXN0b25lIDIgNjZBSzJISy9FL0wgU29Dcy4KPj4gUGF0Y2ggNjog
-ZW5hYmxlcyBDUFRTIGZvciBUSSBLZXlzdG9uZSAyIDY2QUsySEsvRS9MIFNvQ3MuCj4+Cj4+IFsx
-XSBodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL2NvdmVyLzEwOTgwMDM3Lwo+Pgo+PiBHcnln
-b3JpaSBTdHJhc2hrbyAoNik6Cj4+IMKgwqAgQVJNOiBkdHM6IGtleXN0b25lLWNsb2NrczogYWRk
-IGlucHV0IGZpeGVkIGNsb2Nrcwo+PiDCoMKgIEFSTTogZHRzOiBrMmUtY2xvY2tzOiBhZGQgaW5w
-dXQgZXh0LiBmaXhlZCBjbG9ja3MgdHNpcGNsa2EvYgo+PiDCoMKgIEFSTTogZHRzOiBrMmUtbmV0
-Y3A6IGFkZCBjcHRzIHJlZmNsa19tdXggbm9kZQo+PiDCoMKgIEFSTTogZHRzOiBrMmhrLW5ldGNw
-OiBhZGQgY3B0cyByZWZjbGtfbXV4IG5vZGUKPj4gwqDCoCBBUk06IGR0czogazJsLW5ldGNwOiBh
-ZGQgY3B0cyByZWZjbGtfbXV4IG5vZGUKPj4gwqDCoCBBUk06IGNvbmZpZ3M6IGtleXN0b25lOiBl
-bmFibGUgY3B0cwo+Pgo+IFdpbGwgYWRkIHRoZXNlIGZvciA1LjQgcXVldWUuIFRoYW5rcyAhIQoK
-U3J5LCB0aGF0IEknbSBkaXN0dXJiaW5nIHlvdSwgYnV0IEkgZG8gbm90IHNlZSB0aG9zZSBwYXRj
-aGVzIGFwcGxpZWQ/CgoKCi0tIApCZXN0IHJlZ2FyZHMsCmdyeWdvcmlpCgpfX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxp
-bmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3Rz
-LmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Catalin Marinas <catalin.marinas@arm.com> writes:
+
+> On Thu, Sep 05, 2019 at 04:39:38PM +0100, Mark Brown wrote:
+>> On Wed, Sep 04, 2019 at 05:15:53PM -0700, Kevin Hilman wrote:
+>> > [ + Steven Liu who donated this board to my kernelCI lab ]
+>> 
+>> Also adding Christoph since this was bisected to his commit and Catalin
+>> and Will since this was an architecture change.
+>
+> Thanks.
+>
+>> > Bisected down to this commit[1], full bisect log here[2].  It didn't
+>> > revert cleanly on top of next-20190904, so I didn't get any further.
+>> 
+>> > [1]
+>> > 419e2f1838819e954071dfa1d1f820ab3386ada1 is the first bad commit
+>> > commit 419e2f1838819e954071dfa1d1f820ab3386ada1
+>> > Author: Christoph Hellwig <hch@lst.de>
+>> > Date:   Mon Aug 26 09:03:44 2019 +0200
+>
+> I stared at this commit and the ones around it for a while but couldn't
+> see anything obvious. AFAICT this commit only replaces some macros, no
+> functional change.
+
+This is a an arm64 mediatek SoC (MT7622) so hopefully the folks on
+linux-mediatek can take a closer look and see what's going on here.
+
+If someone can suggest how I can enable an earlcon on this platform, I'd
+be happy to give that a try to see if we can get any kernel output
+before it hangs.
+
+Kevin
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
