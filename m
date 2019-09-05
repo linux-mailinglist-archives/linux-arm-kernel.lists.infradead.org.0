@@ -2,62 +2,94 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BCAF9A9E47
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:27:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53A8BA9E5A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:28:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MpdarrIhE7FcwyvFA+5Pbxx6H/XVcEUCXaKC5ddsPJM=; b=A9V6t9lntY1A0s51/ldgy19GQ
-	CAZmZd1LMICbYoRwbNihdOsYqb5vh/rvWcH7W63S7mSRy0lyxP0OyKh3lgoK5GrRlShgX4r1C5iQr
-	HyMt6mgP96vnwgbE/39GQYQraiuvWwiE1OkM5QmUoDTQv7ntiNDfc5ApIMly1wd0JR2p4jXrAIDho
-	zRDHQGRB4f20X9/4a95l+CXu/2HPtmn2qX0iUdgWOb8AwlU+b+c7yzjCgWSFwKnEpdX6cL2ZEaO3+
-	AgbcmOCiQiLCc/LMR+nbgXft/pKBxEW1dT68SYi3d2OQGvR8c3ifP7pbbyZ74mGPT54fUHpi/+aOh
-	o/BXpc7uA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y+m2JB7em7GfB84fCdyW3bw53buUT/fBbS8Am6cyY94=; b=HGmDLhd7WPxJYp
+	eJAzFBPt08tXh4f9b2uPjlWDReypVuQsDLuE69uxWmERF1J3YI7+rafKreV+j8QNX82mtHp+jwOO/
+	z5JodNQXIFfU6uHkA5WZbYs3pHqAcQ6TL1vLa+JBtSZhBLY+g3M8+oyxg5HUUxNNDuZgmLI1E5Emd
+	+l/0jf21bbUmgfgZ4HmI/Cozb+hk+xf2WCRm5ToemW8KJGsPBYNSrzhtrGTKO3D9u9EXwit2Pib77
+	N6dIO0olGkrutoh6rFs2L9+heVHYUkGI1it2EbXlz5xccwpG/B0OgdMeSJXWJiKFKfy2/bzTJgiEX
+	hCy23fnesvDfaYRlQlsg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5o2r-000849-9c; Thu, 05 Sep 2019 09:27:14 +0000
-Received: from mx2a.mailbox.org ([2001:67c:2050:104:0:2:25:2]
- helo=mx2.mailbox.org)
+	id 1i5o4B-0008Sr-16; Thu, 05 Sep 2019 09:28:35 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5o2e-0007sk-R4
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:27:03 +0000
-Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
- (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
- (No client certificate requested)
- by mx2.mailbox.org (Postfix) with ESMTPS id 572C6A167F;
- Thu,  5 Sep 2019 11:26:53 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at heinlein-support.de
-Received: from smtp2.mailbox.org ([80.241.60.241])
- by hefe.heinlein-support.de (hefe.heinlein-support.de [91.198.250.172])
- (amavisd-new, port 10030)
- with ESMTP id A-4M1Owl_Xlc; Thu,  5 Sep 2019 11:26:48 +0200 (CEST)
-Date: Thu, 5 Sep 2019 19:26:22 +1000
-From: Aleksa Sarai <cyphar@cyphar.com>
-To: Peter Zijlstra <peterz@infradead.org>
-Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
- helpers
-Message-ID: <20190905092622.tlb6nn3uisssdfbu@yavin.dot.cyphar.com>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-2-cyphar@cyphar.com>
- <20190905073205.GY2332@hirez.programming.kicks-ass.net>
+ id 1i5o3z-0008Rf-Cn
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:28:24 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l16so1828856wrv.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 02:28:19 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=ZSFUJO3Cl5xfTH0Oz2n3wB3n0rI8IaAXjOBMneGW988=;
+ b=pfkV95Bv0UZfPijf04Lw+S5gWyPrZBf6nMW16xOvbNgBkOqbuTXKqhjFYAv9E+FprC
+ 642QNfMlNoxFq2F0pUWRVLDLWtQL7aLFtrD6IJKWfeyGn3AkKPJwPOFVJ8qunlmtFhMp
+ GKKYEIOvFTsJKHXCODaxCEyFcLgMBLlDjFYCqomKC9NKxAyn9Q72U1ovQrgfqEmTUG8o
+ cYVriYNXSKLlGpnAn4pKQiheoN5zetXQ5lk4piehoTmcslfppIi5ZIQJdodEIIMRMZTE
+ uvjWfyt0nD1xjB3h3EBMWIFAJvJyWlLFfsoGRS4tTUQzwhypCN4lrWEl8Ms7o4ipyBNB
+ Yn4g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=ZSFUJO3Cl5xfTH0Oz2n3wB3n0rI8IaAXjOBMneGW988=;
+ b=U7JvAy+9H5MEQGsKCjo/Z9cLULHZGfrdtPIooe23zd9bYYDRgPuVxYrJ+PazLpuEgw
+ Icg4ja6lJbUjSa60fX/ymCg7I7+HxH31BT8UjIZnQ/2Q63QnF3dhRxpP1xO7Hhj2KY8o
+ QV9rLr18Gp5Oc+BALRfqlE1lrbl3CY1Lu7lgnld0BhkwST6aiZpZPTO0wohbSG8OXSg5
+ bB0kPAlwiRvWA0rDxq4ydN1WcPQhZc1hoPUWNkaXyke+jIqrqWWW8xqZWeeSdhXQSHsO
+ bCNKrMeK4faB591MQ1PpWroKRZJ4U3yohyAl3c9rl8oHwRWznpLk95C0BxSP0DR+o7VX
+ 4Qww==
+X-Gm-Message-State: APjAAAX8q766Uo1JG1oeFMi5O39/JSc6sKpXWoXfHwqd6cRWxd9bpwUR
+ Vl3knwgHqGSze+yK6h4iHk1znQ==
+X-Google-Smtp-Source: APXvYqzXqv86R+TXN5EBeFSzsw4TbvqcdMpFUJoJuOdwhoetcsejRn2RxvT5UuPS+bGgwEyO0gPGzw==
+X-Received: by 2002:adf:e7cc:: with SMTP id e12mr1706018wrn.299.1567675698218; 
+ Thu, 05 Sep 2019 02:28:18 -0700 (PDT)
+Received: from dell ([95.147.198.36])
+ by smtp.gmail.com with ESMTPSA id t7sm1796620wrr.37.2019.09.05.02.28.17
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Thu, 05 Sep 2019 02:28:17 -0700 (PDT)
+Date: Thu, 5 Sep 2019 10:28:16 +0100
+From: Lee Jones <lee.jones@linaro.org>
+To: Wolfram Sang <wsa@the-dreams.de>
+Subject: Re: [PATCH 2/2] i2c: qcom-geni: Provide an option to disable DMA
+ processing
+Message-ID: <20190905092816.GD26880@dell>
+References: <20190905075213.13260-1-lee.jones@linaro.org>
+ <20190905075213.13260-2-lee.jones@linaro.org>
+ <20190905091800.GD1157@kunai>
 MIME-Version: 1.0
-In-Reply-To: <20190905073205.GY2332@hirez.programming.kicks-ass.net>
+Content-Disposition: inline
+In-Reply-To: <20190905091800.GD1157@kunai>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_022701_191707_8224E04A 
-X-CRM114-Status: GOOD (  28.64  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190905_022823_439001_643F05FA 
+X-CRM114-Status: GOOD (  18.15  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2001:67c:2050:104:0:2:25:2 listed in]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,303 +101,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Shuah Khan <shuah@kernel.org>, Ingo Molnar <mingo@redhat.com>,
- linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: multipart/mixed; boundary="===============2107968251611448574=="
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, agross@kernel.org,
+ robh+dt@kernel.org, bjorn.andersson@linaro.org, vkoul@kernel.org,
+ alokc@codeaurora.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
---===============2107968251611448574==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="ctyxwo5xz342v75e"
-Content-Disposition: inline
-
-
---ctyxwo5xz342v75e
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
-> On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
-> > +/**
-> > + * copy_struct_to_user: copy a struct to user space
-> > + * @dst:   Destination address, in user space.
-> > + * @usize: Size of @dst struct.
-> > + * @src:   Source address, in kernel space.
-> > + * @ksize: Size of @src struct.
-> > + *
-> > + * Copies a struct from kernel space to user space, in a way that guar=
-antees
-> > + * backwards-compatibility for struct syscall arguments (as long as fu=
-ture
-> > + * struct extensions are made such that all new fields are *appended* =
-to the
-> > + * old struct, and zeroed-out new fields have the same meaning as the =
-old
-> > + * struct).
-> > + *
-> > + * @ksize is just sizeof(*dst), and @usize should've been passed by us=
-er space.
-> > + * The recommended usage is something like the following:
-> > + *
-> > + *   SYSCALL_DEFINE2(foobar, struct foo __user *, uarg, size_t, usize)
-> > + *   {
-> > + *      int err;
-> > + *      struct foo karg =3D {};
-> > + *
-> > + *      // do something with karg
-> > + *
-> > + *      err =3D copy_struct_to_user(uarg, usize, &karg, sizeof(karg));
-> > + *      if (err)
-> > + *        return err;
-> > + *
-> > + *      // ...
-> > + *   }
-> > + *
-> > + * There are three cases to consider:
-> > + *  * If @usize =3D=3D @ksize, then it's copied verbatim.
-> > + *  * If @usize < @ksize, then kernel space is "returning" a newer str=
-uct to an
-> > + *    older user space. In order to avoid user space getting incomplete
-> > + *    information (new fields might be important), all trailing bytes =
-in @src
-> > + *    (@ksize - @usize) must be zerored
->=20
-> s/zerored/zero/, right?
-
-It should've been "zeroed".
-
-> >                                          , otherwise -EFBIG is returned.
->=20
-> 'Funny' that, copy_struct_from_user() below seems to use E2BIG.
-
-This is a copy of the semantics that sched_[sg]etattr(2) uses -- E2BIG for
-a "too big" struct passed to the kernel, and EFBIG for a "too big"
-struct passed to user-space. I would personally have preferred EMSGSIZE
-instead of EFBIG, but felt using the existing error codes would be less
-confusing.
-
->=20
-> > + *  * If @usize > @ksize, then the kernel is "returning" an older stru=
-ct to a
-> > + *    newer user space. The trailing bytes in @dst (@usize - @ksize) w=
-ill be
-> > + *    zero-filled.
-> > + *
-> > + * Returns (in all cases, some data may have been copied):
-> > + *  * -EFBIG:  (@usize < @ksize) and there are non-zero trailing bytes=
- in @src.
-> > + *  * -EFAULT: access to user space failed.
-> > + */
-> > +int copy_struct_to_user(void __user *dst, size_t usize,
-> > +			const void *src, size_t ksize)
-> > +{
-> > +	size_t size =3D min(ksize, usize);
-> > +	size_t rest =3D abs(ksize - usize);
-> > +
-> > +	if (unlikely(usize > PAGE_SIZE))
-> > +		return -EFAULT;
->=20
-> Not documented above. Implementation consistent with *from*, but see
-> below.
-
-Will update the kernel-doc.
-
-> > +	if (unlikely(!access_ok(dst, usize)))
-> > +		return -EFAULT;
-> > +
-> > +	/* Deal with trailing bytes. */
-> > +	if (usize < ksize) {
-> > +		if (memchr_inv(src + size, 0, rest))
-> > +			return -EFBIG;
-> > +	} else if (usize > ksize) {
-> > +		if (__memzero_user(dst + size, rest))
-> > +			return -EFAULT;
-> > +	}
-> > +	/* Copy the interoperable parts of the struct. */
-> > +	if (__copy_to_user(dst, src, size))
-> > +		return -EFAULT;
-> > +	return 0;
-> > +}
-> > +EXPORT_SYMBOL(copy_struct_to_user);
-> > +
-> > +/**
-> > + * copy_struct_from_user: copy a struct from user space
-> > + * @dst:   Destination address, in kernel space. This buffer must be @=
-ksize
-> > + *         bytes long.
-> > + * @ksize: Size of @dst struct.
-> > + * @src:   Source address, in user space.
-> > + * @usize: (Alleged) size of @src struct.
-> > + *
-> > + * Copies a struct from user space to kernel space, in a way that guar=
-antees
-> > + * backwards-compatibility for struct syscall arguments (as long as fu=
-ture
-> > + * struct extensions are made such that all new fields are *appended* =
-to the
-> > + * old struct, and zeroed-out new fields have the same meaning as the =
-old
-> > + * struct).
-> > + *
-> > + * @ksize is just sizeof(*dst), and @usize should've been passed by us=
-er space.
-> > + * The recommended usage is something like the following:
-> > + *
-> > + *   SYSCALL_DEFINE2(foobar, const struct foo __user *, uarg, size_t, =
-usize)
-> > + *   {
-> > + *      int err;
-> > + *      struct foo karg =3D {};
-> > + *
-> > + *      err =3D copy_struct_from_user(&karg, sizeof(karg), uarg, size);
-> > + *      if (err)
-> > + *        return err;
-> > + *
-> > + *      // ...
-> > + *   }
-> > + *
-> > + * There are three cases to consider:
-> > + *  * If @usize =3D=3D @ksize, then it's copied verbatim.
-> > + *  * If @usize < @ksize, then the user space has passed an old struct=
- to a
-> > + *    newer kernel. The rest of the trailing bytes in @dst (@ksize - @=
-usize)
-> > + *    are to be zero-filled.
-> > + *  * If @usize > @ksize, then the user space has passed a new struct =
-to an
-> > + *    older kernel. The trailing bytes unknown to the kernel (@usize -=
- @ksize)
-> > + *    are checked to ensure they are zeroed, otherwise -E2BIG is retur=
-ned.
-> > + *
-> > + * Returns (in all cases, some data may have been copied):
-> > + *  * -E2BIG:  (@usize > @ksize) and there are non-zero trailing bytes=
- in @src.
-> > + *  * -E2BIG:  @usize is "too big" (at time of writing, >PAGE_SIZE).
-> > + *  * -EFAULT: access to user space failed.
-> > + */
-> > +int copy_struct_from_user(void *dst, size_t ksize,
-> > +			  const void __user *src, size_t usize)
-> > +{
-> > +	size_t size =3D min(ksize, usize);
-> > +	size_t rest =3D abs(ksize - usize);
-> > +
-> > +	if (unlikely(usize > PAGE_SIZE))
-> > +		return -EFAULT;
->=20
-> Documented above as returning -E2BIG.
-
-I will switch this (and to) back to -E2BIG -- I must've had a brain-fart
-when doing some refactoring.
-
->=20
-> > +	if (unlikely(!access_ok(src, usize)))
-> > +		return -EFAULT;
-> > +
-> > +	/* Deal with trailing bytes. */
-> > +	if (usize < ksize)
-> > +		memset(dst + size, 0, rest);
-> > +	else if (usize > ksize) {
-> > +		const void __user *addr =3D src + size;
-> > +		char buffer[BUFFER_SIZE] =3D {};
->=20
-> Isn't that too big for on-stack?
-
-Is a 64-byte buffer too big? I picked the number "at random" to be the
-size of a cache line, but I could shrink it down to 32 bytes if the size
-is an issue (I wanted to avoid needless allocations -- hence it being
-on-stack).
-
-> > +
-> > +		while (rest > 0) {
-> > +			size_t bufsize =3D min(rest, sizeof(buffer));
-> > +
-> > +			if (__copy_from_user(buffer, addr, bufsize))
-> > +				return -EFAULT;
-> > +			if (memchr_inv(buffer, 0, bufsize))
-> > +				return -E2BIG;
-> > +
-> > +			addr +=3D bufsize;
-> > +			rest -=3D bufsize;
-> > +		}
->=20
-> The perf implementation uses get_user(); but if that is too slow, surely
-> we can do something with uaccess_try() here?
-
-Is there a non-x86-specific way to do that (unless I'm mistaken only x86
-has uaccess_try() or the other *_try() wrappers)? The main "performance
-improvement" (if you can even call it that) is that we use memchr_inv()
-which finds non-matching characters more efficiently than just doing a
-loop.
-
-> > +	}
-> > +	/* Copy the interoperable parts of the struct. */
-> > +	if (__copy_from_user(dst, src, size))
-> > +		return -EFAULT;
-> > +	return 0;
-> > +}
-> > +EXPORT_SYMBOL(copy_struct_from_user);
->=20
-> And personally I'm not a big fan of EXPORT_SYMBOL().
-
-I don't have much of an opinion (after all, it only really makes sense a
-lot of sense for syscalls) -- though out-of-tree modules that define
-ioctl()s wouldn't be able to make use of them.
-
---=20
-Aleksa Sarai
-Senior Software Engineer (Containers)
-SUSE Linux GmbH
-<https://www.cyphar.com/>
-
---ctyxwo5xz342v75e
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXDUuwAKCRCdlLljIbnQ
-EkuOAP40xlR/F06o1fNB6rvD1iKaBJIRC05rW3WDn2pxUoltnAD/bSvjzMtd1lc1
-JInrmBQUHIPZa+Rk1zPMB2BFjgHRZAA=
-=mJdv
------END PGP SIGNATURE-----
-
---ctyxwo5xz342v75e--
-
-
---===============2107968251611448574==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2107968251611448574==--
-
+T24gVGh1LCAwNSBTZXAgMjAxOSwgV29sZnJhbSBTYW5nIHdyb3RlOgoKPiAKPiA+IEZpeGVzOiA4
+YmM1MjliMjUzNTQgKCJzb2M6IHFjb206IGdlbmk6IEFkZCBzdXBwb3J0IGZvciBBQ1BJIikKPiAK
+PiBBcmUgeW91IHN1cmU/IEZyb20gdmlzdWFsIGluc3BlY3Rpb24sIEkgZG9uJ3Qgc2VlIGEgY29y
+cmVsYXRpb24gYmV0d2Vlbgo+IHRoaXMgY29tbWl0IGFuZCB0aGUgZml4IGhlcmUuCgpUaGlzIHBh
+dGNoIHNob3VsZCBoYXZlIGJlZW4gcGFydCBvZiB0aGUgY29tbWl0LCBvciBhdCB0aGUgdmVyeSBs
+ZWFzdCwKcGFydCBvZiB0aGUgc2V0LCBhbGx1ZGVkIHRvIGFib3ZlLiAgVW5mb3J0dW5hdGVseSwg
+SSB3YXMgY2FycnlpbmcKQmpvcm4ncyBoYWNrIHdoaWNoIHNpbXBseSByZXR1cm5lZCBlYXJseSBm
+cm9tIGdlbmlfc2VfcnhfZG1hX3ByZXAoKQp3aXRoIGFuIGVycm9yLCBzbyBpdCBtYXNrZWQgdGhl
+IGlzc3VlLgoKPiA+IFNpZ25lZC1vZmYtYnk6IExlZSBKb25lcyA8bGVlLmpvbmVzQGxpbmFyby5v
+cmc+Cj4gPiBSZXZpZXdlZC1ieTogVmlub2QgS291bCA8dmtvdWxAa2VybmVsLm9yZz4KPiA+IC0t
+LQo+ID4gIGRyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtcWNvbS1nZW5pLmMgfCAxNCArKysrKysrKysr
+LS0tLQo+ID4gIDEgZmlsZSBjaGFuZ2VkLCAxMCBpbnNlcnRpb25zKCspLCA0IGRlbGV0aW9ucygt
+KQo+ID4gCj4gPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1xY29tLWdlbmku
+YyBiL2RyaXZlcnMvaTJjL2J1c3Nlcy9pMmMtcWNvbS1nZW5pLmMKPiA+IGluZGV4IGE4OWJmY2U1
+Mzg4ZS4uODgyMmRlYTgyOTgwIDEwMDY0NAo+ID4gLS0tIGEvZHJpdmVycy9pMmMvYnVzc2VzL2ky
+Yy1xY29tLWdlbmkuYwo+ID4gKysrIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1xY29tLWdlbmku
+Ywo+ID4gQEAgLTM1MywxMyArMzUzLDE2IEBAIHN0YXRpYyB2b2lkIGdlbmlfaTJjX3R4X2ZzbV9y
+c3Qoc3RydWN0IGdlbmlfaTJjX2RldiAqZ2kyYykKPiA+ICBzdGF0aWMgaW50IGdlbmlfaTJjX3J4
+X29uZV9tc2coc3RydWN0IGdlbmlfaTJjX2RldiAqZ2kyYywgc3RydWN0IGkyY19tc2cgKm1zZywK
+PiA+ICAJCQkJdTMyIG1fcGFyYW0pCj4gPiAgewo+ID4gKwlzdHJ1Y3QgZGV2aWNlX25vZGUgKm5w
+ID0gZ2kyYy0+c2UuZGV2LT5vZl9ub2RlOwo+ID4gIAlkbWFfYWRkcl90IHJ4X2RtYTsKPiA+ICAJ
+dW5zaWduZWQgbG9uZyB0aW1lX2xlZnQ7Cj4gPiAtCXZvaWQgKmRtYV9idWY7Cj4gPiArCXZvaWQg
+KmRtYV9idWYgPSBOVUxMOwo+ID4gIAlzdHJ1Y3QgZ2VuaV9zZSAqc2UgPSAmZ2kyYy0+c2U7Cj4g
+PiAgCXNpemVfdCBsZW4gPSBtc2ctPmxlbjsKPiA+ICAKPiA+IC0JZG1hX2J1ZiA9IGkyY19nZXRf
+ZG1hX3NhZmVfbXNnX2J1Zihtc2csIDMyKTsKPiA+ICsJaWYgKCFvZl9wcm9wZXJ0eV9yZWFkX2Jv
+b2wobnAsICJxY29tLGdlbmktc2Utbm8tZG1hIikpCj4gPiArCQlkbWFfYnVmID0gaTJjX2dldF9k
+bWFfc2FmZV9tc2dfYnVmKG1zZywgMzIpOwo+ID4gKwo+ID4gIAlpZiAoZG1hX2J1ZikKPiA+ICAJ
+CWdlbmlfc2Vfc2VsZWN0X21vZGUoc2UsIEdFTklfU0VfRE1BKTsKPiA+ICAJZWxzZQo+ID4gQEAg
+LTM5MiwxMyArMzk1LDE2IEBAIHN0YXRpYyBpbnQgZ2VuaV9pMmNfcnhfb25lX21zZyhzdHJ1Y3Qg
+Z2VuaV9pMmNfZGV2ICpnaTJjLCBzdHJ1Y3QgaTJjX21zZyAqbXNnLAo+ID4gIHN0YXRpYyBpbnQg
+Z2VuaV9pMmNfdHhfb25lX21zZyhzdHJ1Y3QgZ2VuaV9pMmNfZGV2ICpnaTJjLCBzdHJ1Y3QgaTJj
+X21zZyAqbXNnLAo+ID4gIAkJCQl1MzIgbV9wYXJhbSkKPiA+ICB7Cj4gPiArCXN0cnVjdCBkZXZp
+Y2Vfbm9kZSAqbnAgPSBnaTJjLT5zZS5kZXYtPm9mX25vZGU7Cj4gPiAgCWRtYV9hZGRyX3QgdHhf
+ZG1hOwo+ID4gIAl1bnNpZ25lZCBsb25nIHRpbWVfbGVmdDsKPiA+IC0Jdm9pZCAqZG1hX2J1ZjsK
+PiA+ICsJdm9pZCAqZG1hX2J1ZiA9IE5VTEw7Cj4gPiAgCXN0cnVjdCBnZW5pX3NlICpzZSA9ICZn
+aTJjLT5zZTsKPiA+ICAJc2l6ZV90IGxlbiA9IG1zZy0+bGVuOwo+ID4gIAo+ID4gLQlkbWFfYnVm
+ID0gaTJjX2dldF9kbWFfc2FmZV9tc2dfYnVmKG1zZywgMzIpOwo+ID4gKwlpZiAoIW9mX3Byb3Bl
+cnR5X3JlYWRfYm9vbChucCwgInFjb20sZ2VuaS1zZS1uby1kbWEiKSkKPiA+ICsJCWRtYV9idWYg
+PSBpMmNfZ2V0X2RtYV9zYWZlX21zZ19idWYobXNnLCAzMik7Cj4gPiArCj4gPiAgCWlmIChkbWFf
+YnVmKQo+ID4gIAkJZ2VuaV9zZV9zZWxlY3RfbW9kZShzZSwgR0VOSV9TRV9ETUEpOwo+ID4gIAll
+bHNlCgoKCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNh
+bCBMZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpG
+b2xsb3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcg
+bGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmlu
+ZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
