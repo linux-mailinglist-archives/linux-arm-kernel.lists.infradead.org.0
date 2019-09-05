@@ -2,57 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 292FDAA1D6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:42:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14E27AA201
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:50:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=VYjWy0rQvZFlMTuFL1/LMf3ygHFJq25rww8EZ1LoSZA=; b=VSBT5qLGXBFRK/
-	F6DhT7K82KUNpnZquuBAiQVPEbDJ3f6cZnwFPgbDy8UTr054svlDNbOvIp2KZdSbNr2OTuW2nGU4b
-	KJqxpa9++QoIEsuTVaXAQzIPjHrveV5RjTNn2sRnwW7qqADKwzyluXAaKjWmDRjMT1YQZCqPAZFVS
-	WUDndax8x3gNrppZP/i8SefXMxE3DBg75y11HApwTBBiS+h9ina1qcK+ygPBRUGgQTUh8o/VBqSJj
-	B9asMB1+5r3d+j8WIQCRy9FpxNwnl2MCno4CVj/C1hF6xaH6lQaNF0od3Mi0k5VrKybfSD/NpLrTl
-	CD/wHCqEXmiur/kGAPzA==;
+	List-Owner; bh=UBr8wGGZ1zdMWUk05OVVmRBlfCFUYO3AhXKzbeUytWo=; b=Cf8cL08um8h/CJ
+	LHSA2WDFW89wjWINOvTVWrXdcbJZ0q/f2vvWb3JduovRwQffd1+bQnDJWXVqwaYGY6QcNMr6U5vua
+	TcPiZTWg9rzBRIakcKIRCpF5P7vS2BMzIt2AIhdxAWMdJb3jCTht+kOxwHrZfcxlOy4PqPikYJkUo
+	LlN6FcRv6DpNS4uhSXlUiosh2qCwS5LlBOnd7sSNbwn2EQALSLHQgYBJsOCaagSSG+73D9ky9zTuX
+	tQjyHk18f3tz5Or62GxAnieCVaNiKYrN0LDy/uxhLMWubAQS2/11ngeu4MrKApsoTqEYRSpuk3T+3
+	75kD3WF8TUHEZhhiDrUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5q9b-0005wL-GF; Thu, 05 Sep 2019 11:42:19 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1i5qGw-0000zy-To; Thu, 05 Sep 2019 11:49:55 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5q8E-0004vF-NM
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:40:56 +0000
-Received: from [213.220.153.21] (helo=wittgenstein)
- by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
- (Exim 4.76) (envelope-from <christian.brauner@ubuntu.com>)
- id 1i5q7j-0003X6-1p; Thu, 05 Sep 2019 11:40:23 +0000
-Date: Thu, 5 Sep 2019 13:40:21 +0200
-From: Christian Brauner <christian.brauner@ubuntu.com>
-To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
- helpers
-Message-ID: <20190905114020.52xaqqgp43wdctbl@wittgenstein>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-2-cyphar@cyphar.com>
- <20190905110915.4vvhicg4ldmpi5u6@wittgenstein>
- <20190905112718.ojg3znly6x3m4mjq@yavin.dot.cyphar.com>
+ id 1i5qGj-0000z7-2g
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:49:42 +0000
+Received: by mail-io1-xd41.google.com with SMTP id f12so4045494iog.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 04:49:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=dowhile0-org.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=07XjWPhuRTiUsIcEUDNjhZ6tpZVcaU36P56dDdLY0Pk=;
+ b=ZWbds64KtyFdL7uMmE4khRKKozzY0xYd0T6A3Tny14KpXb0FphtSgDL/hsu+4oIaZ7
+ qSWAaYJj1gdQT5zpEe/pMQ1r0B9jA4p99pYF5auuV0lsHaO1WK3LKAu+TBes+C46ZjPC
+ 4hdMzofRj2D8m+e5jeUE+ZYSASN/gI5oNvI14A5OHw72kQKJT2reLGS+qQcYlpgQCRKO
+ /uIn0Ojh2PDfYaBUxLQsUSj2bvx2jrGXq1Ysne+FcaVejETBSGgcP9NUpHm7aZ6UsUZ5
+ Lnj1sBbCDxw63qe/KEUMBHboyeYAIVj+IDfyHG+BIihZMmXOUN18ScVwwWFEf79EkgC+
+ GbJA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=07XjWPhuRTiUsIcEUDNjhZ6tpZVcaU36P56dDdLY0Pk=;
+ b=gcPbiB2cKOXLOPYROjfd12lNw3YkbmaOuJ2cySj7KyhluiLkPANFpIe2W3iJYNDWVs
+ j+A+FimdVQjGkrjiz5XCa6BoNnbaG+sFKPC5z4iFOCufCoU38OZW4RuD8CD0XjrEgb76
+ +Awg12Lh23r1sFdh8HEshv/qw2fJq7pIfNq98n2244ldjkdCeb59JeZKvKBuKaBqah9M
+ RamA13dJqUblR9lskeG8pYdCSUfHIUnzTi4rIYlpG3gLi64ueDAQt5wNv7jFo0mHpMCs
+ uLu+26M9iKUgjn27m1gY2qQlgxSpYpXagR96tLed3fQDMIuX+RIWpsfjgvOoSj0XAy7c
+ L+WQ==
+X-Gm-Message-State: APjAAAUTi96WkN9XpYOQio+9tZdZIP6i/PhLZBG1qhIfnijacDVvVer3
+ rdTlBOYWTvHo1YlRJsf8vHNty1ghUmEBzODMocrXCg==
+X-Google-Smtp-Source: APXvYqyiGxGtl4n/7uL2NBTrtUM5FvEKngetPUXADWAWtMsSh3HfkH+hQtGoOy7IvevSfM/V35Ie24aKLw08l2LlsN4=
+X-Received: by 2002:a5d:8f8d:: with SMTP id l13mr3726673iol.6.1567684179776;
+ Thu, 05 Sep 2019 04:49:39 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190905112718.ojg3znly6x3m4mjq@yavin.dot.cyphar.com>
-User-Agent: NeoMutt/20180716
+References: <20190905072142.14606-1-dongchun.zhu@mediatek.com>
+ <20190905072142.14606-2-dongchun.zhu@mediatek.com>
+ <20190905101406.GA2680@smile.fi.intel.com>
+ <20190905104829.GB5475@paasikivi.fi.intel.com>
+ <20190905113509.GD2680@smile.fi.intel.com>
+In-Reply-To: <20190905113509.GD2680@smile.fi.intel.com>
+From: Javier Martinez Canillas <javier@dowhile0.org>
+Date: Thu, 5 Sep 2019 13:49:28 +0200
+Message-ID: <CABxcv=knP+-x0O-Ga-Dy8WTNovHk6GfX4ZEv0vVjnQvwchuVzg@mail.gmail.com>
+Subject: Re: [V2, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
+To: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_044055_415841_255A400A 
-X-CRM114-Status: GOOD (  19.98  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190905_044941_259150_BE6BD2B4 
+X-CRM114-Status: GOOD (  14.99  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,88 +91,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Jiri Olsa <jolsa@redhat.com>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
- linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
- linux-m68k@lists.linux-m68k.org, Al Viro <viro@zeniv.linux.org.uk>,
- Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
- Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
- Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ drinkcat@chromium.org, srv_heupstream@mediatek.com, sam.hung@mediatek.com,
+ shengnan.wang@mediatek.com, Tomasz Figa <tfiga@chromium.org>,
+ sj.huang@mediatek.com, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
+ Sakari Ailus <sakari.ailus@linux.intel.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, bingbu.cao@intel.com,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ linux-arm-kernel@lists.infradead.org,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 05, 2019 at 09:27:18PM +1000, Aleksa Sarai wrote:
-> On 2019-09-05, Christian Brauner <christian.brauner@ubuntu.com> wrote:
-> > On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
-> > > A common pattern for syscall extensions is increasing the size of a
-> > > struct passed from userspace, such that the zero-value of the new fields
-> > > result in the old kernel behaviour (allowing for a mix of userspace and
-> > > kernel vintages to operate on one another in most cases). This is done
-> > > in both directions -- hence two helpers -- though it's more common to
-> > > have to copy user space structs into kernel space.
-> > > 
-> > > Previously there was no common lib/ function that implemented
-> > > the necessary extension-checking semantics (and different syscalls
-> > > implemented them slightly differently or incompletely[1]). A future
-> > > patch replaces all of the common uses of this pattern to use the new
-> > > copy_struct_{to,from}_user() helpers.
-> > > 
-> > > [1]: For instance {sched_setattr,perf_event_open,clone3}(2) all do do
-> > >      similar checks to copy_struct_from_user() while rt_sigprocmask(2)
-> > >      always rejects differently-sized struct arguments.
-> > > 
-> > > Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
-> > > Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
-> > 
-> > I would probably split this out into a separate patchset. It can very
-> > well go in before openat2(). Thoughts?
-> 
-> Yeah, I'll split this and the related patches out -- though I will admit
-> I'm not sure how you're supposed to deal with multiple independent
-> patchsets that depend on each other. How will folks reviewing openat2(2)
-> know to include the lib/struct_user.c changes?
+On Thu, Sep 5, 2019 at 1:35 PM Andy Shevchenko
+<andriy.shevchenko@linux.intel.com> wrote:
+>
+> On Thu, Sep 05, 2019 at 01:48:30PM +0300, Sakari Ailus wrote:
+> > On Thu, Sep 05, 2019 at 01:14:06PM +0300, Andy Shevchenko wrote:
+> > > On Thu, Sep 05, 2019 at 03:21:41PM +0800, dongchun.zhu@mediatek.com wrote:
+> > > > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > >
+> > > > This patch is to add the Devicetree binding documentation and
+> > > > MAINTAINERS entry for dw9768 actuator.
+> > > >
+> > > > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> > > > ---
+> > > >  Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.txt | 9 +++++++++
+> > > >  MAINTAINERS                                                     | 7 +++++++
+> > >
+> > > This should be:
+> > > 1) two separate patches
+> >
+> > Why? The MAINTAINERS entry is usually added in the first patch needing it,
+> > isn't it?
+>
+> Bindings are required to be a separate patch.
+> Rob, is it still the case or am I mistaken?
+>
 
-The way I usually deal with this is to make two branches. One with the
-changes the other depends on and then merge this branch into the other
-and put the changes on top. Then you can provide a complete branch that
-people can test when you send the patchset out by just linking to it in
-the cover letter.
-(But if it's too much hazzle just leave it.)
+According to the rule 0 in [1] it should be a separate patch indeed
+and also use as subject "dt-bindings: <binding dir>: ..." which this
+patch also doesn't follow.
+So if I'm reading that document correctly, then I think the
+maintainers entry should be added in patch 2/2 along with the driver.
 
-> 
-> Also, whose tree should it go through?
+[1]: https://www.kernel.org/doc/Documentation/devicetree/bindings/submitting-patches.txt
 
-If people think splitting it out makes sense and we can settle the
-technical details I can take it and let it stew in linux-next at least
-for a little while.
-I have changes to clone3() in there that touch
-copy_clone_args_from_user() anyway and there are tests for clone3()
-struct copying so we'd catch regressions (for clone3() at least) pretty
-quickly.
-If we don't see any major issues in the next two weeks it might even be
-ok to send for 5.4.
-
-Christian
+Best regards,
+Javier
 
 _______________________________________________
 linux-arm-kernel mailing list
