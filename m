@@ -2,139 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A20CAAA396
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:56:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C1F1AA3D9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:04:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=P4hlPc7smHbCMYPK17i60C6rdCD75TzM7FhD/tP1rgw=; b=B8IX1VyJc0XpeV
-	98tgbg2AfMLA4SuZcZfNyA3lP/evm/1y46jU8WTktnTRrFclPJH8pRJNR9o+r8atQSAX5JbgnXrVA
-	GL+BkEYySxkW9Ez9GaPfx5VTQYx27VW3w1CEJyfXiOx7/HYmF5jR+mTbEsuln5amNnThmO8iPOIqB
-	EdJD+6uN2cyQ9lWwASSuPffMKeUXjJngLuUjQAnKuocBhpnEa50XTjIvZ9gC0BQVAYjh68Xu67sOB
-	L426ig/plD+NzW56QAzwSXHZZHXiaS+jMfGU0Mw5C9F3oro65y0sXcvhaYAxH7jlaXbaYn8x/c2ut
-	8HDK8yM06ZFIKUeTT8aQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=XHTjKSzF+Z22T2e2rjmR1+0oBH0djDY93A40E8Ib39Q=; b=lL5ZfkzVCCEjVn
+	2u53ugS7IMVhp1Tuhoku/zO9CHwLA81avcQOlojJTo3xX404trhABhES3NyeriRYAe9hM8IpG5wcw
+	XH3Rh2BSh+P8Nzl2liwZH4uekOVuJpGVQz1djh6BZEPZm3wJXxtfGPwlxkwHFf6y+0r8AUQ3FehFA
+	RJQ2EHvBbg0OAlgGacXQhrIOWiNwU1N9PBATZALAolOg5Rk0K1k6ZZc3oucoKH+zDSThc7/sX7gAW
+	i+w5s6PgIGyAomPx7po9xwOqCS69EYaWLfoAzuCCgmoapA3cyqH4qTZxDi6991/gJvNuUiauXV5Zg
+	9VxymOyf5XwKk77nLNiQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5rJR-0004q0-MK; Thu, 05 Sep 2019 12:56:33 +0000
-Received: from mail-eopbgr810088.outbound.protection.outlook.com
- ([40.107.81.88] helo=NAM01-BY2-obe.outbound.protection.outlook.com)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5rJH-0004pe-Tt
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 12:56:25 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ksdwq0jvy5Jwff4s1/w9wI6XXGnFBJtqyf8W4G1e7PSSMu5NzzXL2AR25DKuCYtStemNKwRgjSJ/waqyRj26Jmg5sAE0Ul7UyXBCen7PdoQOuSR7Pcp9ZxQVLEo734UD9gSBmSDrlEGu8cBE2w8HTi/WRJbyEOwtS9b2hYS7L2v+Y4KXLBf1N211KFzLDjfjwfR648lKziRFkn4PIkayhqokFi1DAtflEZ7BJOjwnObjKXgRhlyv75SfyvrZ2lrGa89Nk121WSpDgVsmn+0FCXi2Zcd85LYLVXAdscQRGUSYxOqMV833bDfjSvJeNQCWUgYszklilboqMDnWDLfVTw==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SpyOa6gJlaIKt0fDzsXiEVewzTZs3poezB1NCiyBiso=;
- b=OHYAa6RDoaTeU4r+wMXOECORQ2mcHH8W8NTx+e0HTth1hwzsCn1wdgMxHRAUnU/Z1Y/0ccC766CyuNxSGFChm3NeITP789IVyVIsMeJW22QAOkRpwYlEFpYqR3G917Xi3PDncTypQWuvYdOFMGwkpr/fC7MPH63DgW8fyuZigGCSU5Ec8rc2JioOnEltoOjoGQZQepsmf/kIqNt7DUYVV4sROjfiZClbjV5hmjkYTosmeW/0z4DUoh9e2aynXtHN1pl7AfwjNbuIhIzwpNQs8GV9RmuWC5Xp/sD+QbSIfgiXWmplqM7DGy/GQFh21mr42H0AKFr2w1oi/s1Vl0OzGg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.83) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SpyOa6gJlaIKt0fDzsXiEVewzTZs3poezB1NCiyBiso=;
- b=GSi1d+a56AKwgZxXxV7+7Ugb0eX5Tb/ySU+K47QONrI8Ms8Ij8S+j7JunYbKr7p3VMaVqpBNYWgPoKs9W1/0+3U6up8QQX8RvlhK8d/FmMJsWCRSzDVu0N2keOzFUy95MrzypIPIxa5MtrBN5f6s4uPcuEzjMGAXdyTCPHeRGx8=
-Received: from MWHPR0201CA0034.namprd02.prod.outlook.com
- (2603:10b6:301:74::47) by SN6PR02MB5261.namprd02.prod.outlook.com
- (2603:10b6:805:70::30) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2220.18; Thu, 5 Sep
- 2019 12:56:19 +0000
-Received: from SN1NAM02FT016.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e44::206) by MWHPR0201CA0034.outlook.office365.com
- (2603:10b6:301:74::47) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2241.15 via Frontend
- Transport; Thu, 5 Sep 2019 12:56:18 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.83)
- smtp.mailfrom=xilinx.com; vger.kernel.org; dkim=none (message not signed)
- header.d=none;vger.kernel.org; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.83 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.83; helo=xsj-pvapsmtpgw01;
-Received: from xsj-pvapsmtpgw01 (149.199.60.83) by
- SN1NAM02FT016.mail.protection.outlook.com (10.152.72.113) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2241.14
- via Frontend Transport; Thu, 5 Sep 2019 12:56:17 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66] helo=xsj-pvapsmtp01)
- by xsj-pvapsmtpgw01 with esmtp (Exim 4.63)
- (envelope-from <radhey.shyam.pandey@xilinx.com>)
- id 1i5rJB-0001hh-Dy; Thu, 05 Sep 2019 05:56:17 -0700
-Received: from [127.0.0.1] (helo=xsj-smtp-dlp1.xlnx.xilinx.com)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <radhey.shyam.pandey@xilinx.com>)
- id 1i5rJ6-00034q-8z; Thu, 05 Sep 2019 05:56:12 -0700
-Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp1.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x85CuBcM022841; 
- Thu, 5 Sep 2019 05:56:11 -0700
-Received: from [10.140.184.180] (helo=ubuntu)
- by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <radheys@ubuntu>)
- id 1i5rJ4-00034e-Vb; Thu, 05 Sep 2019 05:56:11 -0700
-Received: by ubuntu (Postfix, from userid 13245)
- id 228A0101052; Thu,  5 Sep 2019 18:26:09 +0530 (IST)
-From: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-To: davem@davemloft.net, netdev@vger.kernel.org
-Subject: [PATCH net-next] MAINTAINERS: add myself as maintainer for xilinx
- axiethernet driver
-Date: Thu,  5 Sep 2019 18:26:08 +0530
-Message-Id: <1567688168-20607-1-git-send-email-radhey.shyam.pandey@xilinx.com>
-X-Mailer: git-send-email 2.7.4
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-Result: No--7.274-7.0-31-1
-X-imss-scan-details: No--7.274-7.0-31-1;No--7.274-5.0-31-1
-X-TM-AS-User-Approved-Sender: No;No
-X-TM-AS-Result-Xfilter: Match text exemption rules:No
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.83; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(346002)(136003)(376002)(2980300002)(189003)(199004)(70206006)(8936002)(47776003)(103686004)(70586007)(50226002)(305945005)(81156014)(81166006)(14444005)(50466002)(478600001)(4326008)(48376002)(5660300002)(356004)(8676002)(36756003)(186003)(106002)(2906002)(426003)(26005)(16586007)(316002)(42186006)(126002)(476003)(336012)(107886003)(6266002)(486006)(51416003)(52956003)(2616005);
- DIR:OUT; SFP:1101; SCL:1; SRVR:SN6PR02MB5261; H:xsj-pvapsmtpgw01; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-83.xilinx.com; MX:1; A:1; 
+	id 1i5rR3-00076T-P6; Thu, 05 Sep 2019 13:04:25 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5rQs-00075O-7s
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:04:17 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 7892B28;
+ Thu,  5 Sep 2019 06:04:13 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id E37BC3F718;
+ Thu,  5 Sep 2019 06:04:12 -0700 (PDT)
+Date: Thu, 5 Sep 2019 14:04:11 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Marc Zyngier <maz@kernel.org>
+Subject: Re: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
+ driven by vcpu_load/put
+Message-ID: <20190905130410.GA9720@e119886-lin.cambridge.arm.com>
+References: <20190903155747.219802-1-maz@kernel.org>
 MIME-Version: 1.0
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 5ede6d9b-4231-4a15-499f-08d732007178
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
- SRVR:SN6PR02MB5261; 
-X-MS-TrafficTypeDiagnostic: SN6PR02MB5261:
-X-Microsoft-Antispam-PRVS: <SN6PR02MB526178C7D645C6F0B47E924DC7BB0@SN6PR02MB5261.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:7219;
-X-Forefront-PRVS: 015114592F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: K5f8Ay9YJXQn44Yc9HPtzuy2ZsvQGiZk7FgAgdjYXNQQT+yj9zHrO6F7Vx7PApk+Puupkl+MU3SW09wmD8byFUC2hD+DDdCLehxoGNxLs2km1Y9bIKFBy2gOcNvPjAc3cQi4sJ3CRwGeYIP1TwVp0GrGn98ankU0Q7f+55WTSgO+A//i3rPJGO//+D/fbxSo2e+CgBU/px7diW3xEeiUswR57Yar10CrVXYPMz3mbIRmRJer1IhJMJw3D9tASVjeA+1ZqILMeZJlGsJ0ah1v/GMtxsEePqQKm9bSzoSqIvpVID+Mu4g95u/FaMlIeNw6skekN4vgIQZQIZIuM5ZAiRng9xENYw/8suz3TfDjae8aO8+V2K7lb0QuBUbq8Bqdx7Y4KigBDhEh9LQCAjEv202vPxW+mANLFXm5OOVdaSA=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2019 12:56:17.8069 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5ede6d9b-4231-4a15-499f-08d732007178
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.83];
- Helo=[xsj-pvapsmtpgw01]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: SN6PR02MB5261
+Content-Disposition: inline
+In-Reply-To: <20190903155747.219802-1-maz@kernel.org>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_055623_969148_5F445351 
-X-CRM114-Status: GOOD (  10.81  )
-X-Spam-Score: 3.0 (+++)
+X-CRM114-CacheID: sfid-20190905_060415_947039_8E67B08E 
+X-CRM114-Status: GOOD (  30.72  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.81.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 3.0 AC_FROM_MANY_DOTS      Multiple periods in From user name
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -146,48 +61,336 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, anirudha.sarangi@xilinx.com,
- Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>, michal.simek@xilinx.com,
- gregkh@linuxfoundation.org, mchehab+samsung@kernel.org, john.linn@xilinx.com,
- linux-arm-kernel@lists.infradead.org
+Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
+ Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
+ James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I am maintaining xilinx axiethernet driver in xilinx tree and would like
-to maintain it in the mainline kernel as well. Hence adding myself as a
-maintainer. Also Anirudha and John has moved to new roles, so based on
-request removing them from the maintainer list.
+Hi Marc,
 
-Signed-off-by: Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
-Acked-by: John Linn <john.linn@xilinx.com>
-Acked-by: Michal Simek <michal.simek@xilinx.com>
----
-I am resending this patch as earlier version didn't go through mailing
-list due to some config restriction on the external email addresses.
-Also adding Michal's acked-by tag.
----
- MAINTAINERS | 3 +--
- 1 file changed, 1 insertion(+), 2 deletions(-)
+Some feedback below, but mostly questions to aid my understanding...
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index 84bb347..16fc09d 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -17732,8 +17732,7 @@ F:	include/uapi/linux/dqblk_xfs.h
- F:	include/uapi/linux/fsmap.h
- 
- XILINX AXI ETHERNET DRIVER
--M:	Anirudha Sarangi <anirudh@xilinx.com>
--M:	John Linn <John.Linn@xilinx.com>
-+M:	Radhey Shyam Pandey <radhey.shyam.pandey@xilinx.com>
- S:	Maintained
- F:	drivers/net/ethernet/xilinx/xilinx_axienet*
- 
--- 
-2.7.4
+On Tue, Sep 03, 2019 at 04:57:47PM +0100, Marc Zyngier wrote:
+> When the VHE code was reworked, a lot of the vgic stuff was moved around,
+> but the GICv4 residency code did stay untouched, meaning that we come
+> in and out of residency on each flush/sync, which is obviously suboptimal.
+> 
+> To address this, let's move things around a bit:
+> 
+> - Residency entry (flush) moves to vcpu_load
+> - Residency exit (sync) moves to vcpu_put
+> - On blocking (entry to WFI), we "put"
+> - On unblocking (exit from WFI, we "load"
+> 
+> Because these can nest (load/block/put/load/unblock/put, for example),
+> we now have per-VPE tracking of the residency state.
+> 
+> Additionally, vgic_v4_put gains a "need doorbell" parameter, which only
+> gets set to true when blocking because of a WFI. This allows a finer
+> control of the doorbell, which now also gets disabled as soon as
+> it gets signaled.
+> 
+> Signed-off-by: Marc Zyngier <maz@kernel.org>
+> ---
+>  drivers/irqchip/irq-gic-v4.c       |  7 +++-
+>  include/kvm/arm_vgic.h             |  4 +--
+>  include/linux/irqchip/arm-gic-v4.h |  2 ++
+>  virt/kvm/arm/arm.c                 | 12 ++++---
+>  virt/kvm/arm/vgic/vgic-v3.c        |  4 +++
+>  virt/kvm/arm/vgic/vgic-v4.c        | 55 ++++++++++++++----------------
+>  virt/kvm/arm/vgic/vgic.c           |  4 ---
+>  virt/kvm/arm/vgic/vgic.h           |  2 --
+>  8 files changed, 48 insertions(+), 42 deletions(-)
+> 
+> diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
+> index 563e87ed0766..45969927cc81 100644
+> --- a/drivers/irqchip/irq-gic-v4.c
+> +++ b/drivers/irqchip/irq-gic-v4.c
+> @@ -141,12 +141,17 @@ static int its_send_vpe_cmd(struct its_vpe *vpe, struct its_cmd_info *info)
+>  int its_schedule_vpe(struct its_vpe *vpe, bool on)
+>  {
+>  	struct its_cmd_info info;
+> +	int ret;
+>  
+>  	WARN_ON(preemptible());
+>  
+>  	info.cmd_type = on ? SCHEDULE_VPE : DESCHEDULE_VPE;
+>  
+> -	return its_send_vpe_cmd(vpe, &info);
+> +	ret = its_send_vpe_cmd(vpe, &info);
+> +	if (!ret)
+> +		vpe->resident = on;
+> +
 
+We make an assumption here that its_schedule_vpe is the only caller of
+its_send_vpe_cmd where we may pass SCHEDULE_VPE. I guess this is currently
+the case.
+
+Why do we also set the residency flag for DESCHEDULE_VPE?
+
+And by residency we mean that interrupts are delivered to VM, instead of
+doorbell?
+
+> +	return ret;
+>  }
+>  
+>  int its_invall_vpe(struct its_vpe *vpe)
+> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
+> index af4f09c02bf1..4dc58d7a0010 100644
+> --- a/include/kvm/arm_vgic.h
+> +++ b/include/kvm/arm_vgic.h
+> @@ -396,7 +396,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int irq,
+>  int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
+>  				 struct kvm_kernel_irq_routing_entry *irq_entry);
+>  
+> -void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
+> -void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
+> +int vgic_v4_load(struct kvm_vcpu *vcpu);
+> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db);
+>  
+>  #endif /* __KVM_ARM_VGIC_H */
+> diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
+> index e6b155713b47..ab1396afe08a 100644
+> --- a/include/linux/irqchip/arm-gic-v4.h
+> +++ b/include/linux/irqchip/arm-gic-v4.h
+> @@ -35,6 +35,8 @@ struct its_vpe {
+>  	/* Doorbell interrupt */
+>  	int			irq;
+>  	irq_hw_number_t		vpe_db_lpi;
+> +	/* VPE resident */
+> +	bool			resident;
+>  	/* VPE proxy mapping */
+>  	int			vpe_proxy_event;
+>  	/*
+> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
+> index 35a069815baf..4e69268621b6 100644
+> --- a/virt/kvm/arm/arm.c
+> +++ b/virt/kvm/arm/arm.c
+> @@ -321,20 +321,24 @@ void kvm_arch_vcpu_blocking(struct kvm_vcpu *vcpu)
+>  	/*
+>  	 * If we're about to block (most likely because we've just hit a
+>  	 * WFI), we need to sync back the state of the GIC CPU interface
+> -	 * so that we have the lastest PMR and group enables. This ensures
+> +	 * so that we have the latest PMR and group enables. This ensures
+>  	 * that kvm_arch_vcpu_runnable has up-to-date data to decide
+>  	 * whether we have pending interrupts.
+> +	 *
+> +	 * For the same reason, we want to tell GICv4 that we need
+> +	 * doorbells to be signalled, should an interrupt become pending.
+
+As I understand, and as indicated by removal of kvm_vgic_v4_enable_doorbell
+below, we've now abstracted enabling the doorbell behind the concept of a
+v4_put.
+
+Why then, do we break that abstraction by adding this comment? Surely we just
+want to indicate that we're done with ITS for now - do whatever you need to do.
+
+This would have made more sense to me if the comment above was removed in this
+patch rather than added.
+
+>  	 */
+>  	preempt_disable();
+>  	kvm_vgic_vmcr_sync(vcpu);
+> +	vgic_v4_put(vcpu, true);
+>  	preempt_enable();
+> -
+> -	kvm_vgic_v4_enable_doorbell(vcpu);
+>  }
+>  
+>  void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
+>  {
+> -	kvm_vgic_v4_disable_doorbell(vcpu);
+> +	preempt_disable();
+> +	vgic_v4_load(vcpu);
+> +	preempt_enable();
+>  }
+>  
+>  int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
+> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
+> index 8d69f007dd0c..48307a9eb1d8 100644
+> --- a/virt/kvm/arm/vgic/vgic-v3.c
+> +++ b/virt/kvm/arm/vgic/vgic-v3.c
+> @@ -664,6 +664,8 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
+>  
+>  	if (has_vhe())
+>  		__vgic_v3_activate_traps(vcpu);
+> +
+> +	WARN_ON(vgic_v4_load(vcpu));
+>  }
+>  
+>  void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
+> @@ -676,6 +678,8 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
+>  
+>  void vgic_v3_put(struct kvm_vcpu *vcpu)
+>  {
+> +	WARN_ON(vgic_v4_put(vcpu, false));
+> +
+>  	vgic_v3_vmcr_sync(vcpu);
+>  
+>  	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
+> diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
+> index 477af6aebb97..3a8a28854b13 100644
+> --- a/virt/kvm/arm/vgic/vgic-v4.c
+> +++ b/virt/kvm/arm/vgic/vgic-v4.c
+> @@ -85,6 +85,10 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
+>  {
+>  	struct kvm_vcpu *vcpu = info;
+>  
+> +	/* We got the message, no need to fire again */
+> +	if (!irqd_irq_disabled(&irq_to_desc(irq)->irq_data))
+> +		disable_irq_nosync(irq);
+> +
+>  	vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last = true;
+>  	kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
+>  	kvm_vcpu_kick(vcpu);
+
+This is because the doorbell will fire each time any guest device interrupts,
+however we only need to tell the guest just once that something has happened
+right?
+
+> @@ -192,20 +196,30 @@ void vgic_v4_teardown(struct kvm *kvm)
+>  	its_vm->vpes = NULL;
+>  }
+>  
+> -int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu)
+> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db)
+>  {
+> -	if (!vgic_supports_direct_msis(vcpu->kvm))
+> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
+> +	struct irq_desc *desc = irq_to_desc(vpe->irq);
+> +
+> +	if (!vgic_supports_direct_msis(vcpu->kvm) || !vpe->resident)
+>  		return 0;
+
+Are we using !vpe->resident to avoid pointlessly doing work we've
+already done?
+
+>  
+> -	return its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, false);
+> +	/*
+> +	 * If blocking, a doorbell is required. Undo the nested
+> +	 * disable_irq() calls...
+> +	 */
+> +	while (need_db && irqd_irq_disabled(&desc->irq_data))
+> +		enable_irq(vpe->irq);
+> +
+> +	return its_schedule_vpe(vpe, false);
+>  }
+>  
+> -int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
+> +int vgic_v4_load(struct kvm_vcpu *vcpu)
+>  {
+> -	int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
+> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
+>  	int err;
+>  
+> -	if (!vgic_supports_direct_msis(vcpu->kvm))
+> +	if (!vgic_supports_direct_msis(vcpu->kvm) || vpe->resident)
+>  		return 0;
+>  
+>  	/*
+> @@ -214,11 +228,14 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
+>  	 * doc in drivers/irqchip/irq-gic-v4.c to understand how this
+>  	 * turns into a VMOVP command at the ITS level.
+>  	 */
+> -	err = irq_set_affinity(irq, cpumask_of(smp_processor_id()));
+> +	err = irq_set_affinity(vpe->irq, cpumask_of(smp_processor_id()));
+>  	if (err)
+>  		return err;
+>  
+> -	err = its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, true);
+> +	/* Disabled the doorbell, as we're about to enter the guest */
+> +	disable_irq(vpe->irq);
+> +
+> +	err = its_schedule_vpe(vpe, true);
+>  	if (err)
+>  		return err;
+
+Given that the doorbell corresponds with vpe residency, it could make sense
+to add a helper here that calls its_schedule_vpe and [disable,enable]_irq.
+Though I see that vgic_v3_put calls vgic_v4_put with need_db=false. I wonder
+what effect setting that to true would be for vgic_v3_put? Could it be known
+that v3 won't set need_db to true?
+
+Thanks,
+
+Andrew Murray
+
+>  
+> @@ -226,9 +243,7 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
+>  	 * Now that the VPE is resident, let's get rid of a potential
+>  	 * doorbell interrupt that would still be pending.
+>  	 */
+> -	err = irq_set_irqchip_state(irq, IRQCHIP_STATE_PENDING, false);
+> -
+> -	return err;
+> +	return irq_set_irqchip_state(vpe->irq, IRQCHIP_STATE_PENDING, false);
+>  }
+>  
+>  static struct vgic_its *vgic_get_its(struct kvm *kvm,
+> @@ -335,21 +350,3 @@ int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int virq,
+>  	mutex_unlock(&its->its_lock);
+>  	return ret;
+>  }
+> -
+> -void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu)
+> -{
+> -	if (vgic_supports_direct_msis(vcpu->kvm)) {
+> -		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
+> -		if (irq)
+> -			enable_irq(irq);
+> -	}
+> -}
+> -
+> -void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu)
+> -{
+> -	if (vgic_supports_direct_msis(vcpu->kvm)) {
+> -		int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
+> -		if (irq)
+> -			disable_irq(irq);
+> -	}
+> -}
+> diff --git a/virt/kvm/arm/vgic/vgic.c b/virt/kvm/arm/vgic/vgic.c
+> index 45a870cb63f5..99b02ca730a8 100644
+> --- a/virt/kvm/arm/vgic/vgic.c
+> +++ b/virt/kvm/arm/vgic/vgic.c
+> @@ -857,8 +857,6 @@ void kvm_vgic_sync_hwstate(struct kvm_vcpu *vcpu)
+>  {
+>  	struct vgic_cpu *vgic_cpu = &vcpu->arch.vgic_cpu;
+>  
+> -	WARN_ON(vgic_v4_sync_hwstate(vcpu));
+> -
+>  	/* An empty ap_list_head implies used_lrs == 0 */
+>  	if (list_empty(&vcpu->arch.vgic_cpu.ap_list_head))
+>  		return;
+> @@ -882,8 +880,6 @@ static inline void vgic_restore_state(struct kvm_vcpu *vcpu)
+>  /* Flush our emulation state into the GIC hardware before entering the guest. */
+>  void kvm_vgic_flush_hwstate(struct kvm_vcpu *vcpu)
+>  {
+> -	WARN_ON(vgic_v4_flush_hwstate(vcpu));
+> -
+>  	/*
+>  	 * If there are no virtual interrupts active or pending for this
+>  	 * VCPU, then there is no work to do and we can bail out without
+> diff --git a/virt/kvm/arm/vgic/vgic.h b/virt/kvm/arm/vgic/vgic.h
+> index 83066a81b16a..c7fefd6b1c80 100644
+> --- a/virt/kvm/arm/vgic/vgic.h
+> +++ b/virt/kvm/arm/vgic/vgic.h
+> @@ -316,7 +316,5 @@ void vgic_its_invalidate_cache(struct kvm *kvm);
+>  bool vgic_supports_direct_msis(struct kvm *kvm);
+>  int vgic_v4_init(struct kvm *kvm);
+>  void vgic_v4_teardown(struct kvm *kvm);
+> -int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu);
+> -int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu);
+>  
+>  #endif
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
