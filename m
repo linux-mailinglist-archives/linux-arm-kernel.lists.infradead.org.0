@@ -2,116 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 901B0A9C87
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:03:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE137A9C8B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:04:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=unAennOdCDXv7i1a719Et+K4MfcPMJ/8bvjopIfLUpU=; b=WV3ZB2ZCM25YQU
-	bLIibV+2kmljtot3aWItieVmgpe6Ix9do4AjcQxYqNUTvcUry2tcyX0wP3xADcUz8XcUaODv75s8n
-	X1JBYqmMfdN/q4z017WWeurG/H0nZcSOxK2GMna5g/X1J0PTkdnS6evmsT86QOfEWKQSbtadQF0QZ
-	xhZ5+P8LhwI1IJt71e2Zo1iUUGhPXwH2T9ZSTwGLq1CfJ4rZQ4kHQH6Zdbmj/MVVhlLH1BO+Mfzs6
-	7ECsde8BsfZA8ZVgkobq0ZsALoWtj6sA9uMTDwe8X4Nr7ADyb0maC1pFJBBsvYD1VTG2SNGUwssB+
-	fR4O64v0sLxJEUpYSsog==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QXEaDaS5trS4AdHXdkC/FLlKUC17+oJDPG+wEFcVJkw=; b=SVNWlPrbBxOgDQ
+	z2KxTic5BJo4+i7FEUPf319R7IrcPT/gnNwqns0I4TgBX9mzFKYN2SzAvgDZRFq/7v5+4m9YPmOQd
+	Ccmx4YpMYHHoktTGNZhqFnKICmGBCQGE9IWkLEKjmQQXCISAzy0f/NgUVQzw+ar3/wvt0InQfuG1T
+	ZNQPGJYWtXBqqmYcmu5pnx/QoT7HAlJcu7taFqwI441hDngzb7y11SQ/2NBpZLlgZ2pyXM7ukAW3p
+	ICk/7lYZMp7mL+htoHXiAIlTA3U+rV8uAE609hWFU6DRDxKZj3G37WTABEyY74mz5SUNaMBh4RPW5
+	1duHzGrwre3iuDQAjhfw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5mk3-00023i-Sl; Thu, 05 Sep 2019 08:03:43 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5mjr-00022x-7b; Thu, 05 Sep 2019 08:03:32 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id CBEA8AD6B;
- Thu,  5 Sep 2019 08:03:28 +0000 (UTC)
-Subject: Re: [PATCH 1/2] mm/kasan: dump alloc/free stack for page allocator
-To: Walter Wu <walter-zh.wu@mediatek.com>
-References: <20190904065133.20268-1-walter-zh.wu@mediatek.com>
- <401064ae-279d-bef3-a8d5-0fe155d0886d@suse.cz>
- <1567605965.32522.14.camel@mtksdccf07>
- <7998e8f1-e5e2-da84-ea1f-33e696015dce@suse.cz>
- <1567607063.32522.24.camel@mtksdccf07>
-From: Vlastimil Babka <vbabka@suse.cz>
-Openpgp: preference=signencrypt
-Autocrypt: addr=vbabka@suse.cz; prefer-encrypt=mutual; keydata=
- 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
-Message-ID: <99913463-0e2c-7dab-c1eb-8b9e149b3ee3@suse.cz>
-Date: Thu, 5 Sep 2019 10:03:28 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <1567607063.32522.24.camel@mtksdccf07>
-Content-Language: en-US
+	id 1i5mkb-0002LD-4f; Thu, 05 Sep 2019 08:04:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5mkN-0002KQ-8Z
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 08:04:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 94B5928;
+ Thu,  5 Sep 2019 01:04:00 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [10.1.27.38])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5AA793F67D;
+ Thu,  5 Sep 2019 01:03:58 -0700 (PDT)
+Date: Thu, 05 Sep 2019 09:03:50 +0100
+Message-ID: <86r24vrwyh.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
+ decoded
+In-Reply-To: <20190904180736.29009-1-xypron.glpk@gmx.de>
+References: <20190904180736.29009-1-xypron.glpk@gmx.de>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_010331_567106_1A414097 
-X-CRM114-Status: GOOD (  13.19  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190905_010403_344650_BD7DBEDC 
+X-CRM114-Status: GOOD (  20.20  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -125,50 +64,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Arnd Bergmann <arnd@arndb.de>,
- linux-mm@kvack.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
- Matthias Brugger <matthias.bgg@gmail.com>,
- Andrey Ryabinin <aryabinin@virtuozzo.com>,
- Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
+Cc: Peter Maydell <peter.maydell@linaro.org>,
+ =?UTF-8?B?IkRhbmllbCBQIC4gQmVycmFuZ8OpIg==?= <berrange@redhat.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Julien Thierry <julien.thierry@arm.com>, linux-kernel@vger.kernel.org,
+ James Morse <james.morse@arm.com>, Stefan Hajnoczi <stefanha@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/4/19 4:24 PM, Walter Wu wrote:
-> On Wed, 2019-09-04 at 16:13 +0200, Vlastimil Babka wrote:
->> On 9/4/19 4:06 PM, Walter Wu wrote:
->>
->> The THP fix is not required for the rest of the series, it was even merged to
->> mainline separately.
->>
->>> And It looks like something is different, because we only need last
->>> stack of page, so it can decrease memory overhead.
->>
->> That would save you depot_stack_handle_t (which is u32) per page. I guess that's
->> nothing compared to KASAN overhead?
->>
-> If we can use less memory, we can achieve what we want. Why not?
+[Please use my kernel.org address. My arm.com address will disappear shortly]
 
-In my experience to solve some UAFs, it's important to know not only the
-freeing stack, but also the allocating stack. Do they make sense together,
-or not? In some cases, even longer history of alloc/free would be nice :)
-
-Also by simply recording the free stack in the existing depot handle,
-you might confuse existing page_owner file consumers, who won't know
-that this is a freeing stack.
-
-All that just doesn't seem to justify saving an u32 per page.
-
-> Thanks.
-> Walter
+On Wed, 04 Sep 2019 19:07:36 +0100,
+Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
 > 
+> If an application tries to access memory that is not mapped, an error
+> ENOSYS, "load/store instruction decoding not implemented" may occur.
+> QEMU will hang with a register dump.
 > 
+> Instead create a data abort that can be handled gracefully by the
+> application running in the virtual environment.
 > 
+> Now the virtual machine can react to the event in the most appropriate
+> way - by recovering, by writing an informative log, or by rebooting.
+> 
+> Signed-off-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
+> ---
+>  virt/kvm/arm/mmio.c | 4 ++--
+>  1 file changed, 2 insertions(+), 2 deletions(-)
+> 
+> diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
+> index a8a6a0c883f1..0cbed7d6a0f4 100644
+> --- a/virt/kvm/arm/mmio.c
+> +++ b/virt/kvm/arm/mmio.c
+> @@ -161,8 +161,8 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+>  		if (ret)
+>  			return ret;
+>  	} else {
+> -		kvm_err("load/store instruction decoding not implemented\n");
+> -		return -ENOSYS;
+> +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> +		return 1;
 
+How can you tell that the access would fault? You have no idea at that
+stage (the kernel doesn't know about the MMIO ranges that userspace
+handles). All you know is that you're faced with a memory access that
+you cannot emulate in the kernel. Injecting a data abort at that stage
+is not something that the architecture allows.
+
+If you want to address this, consider forwarding the access to
+userspace. You'll only need an instruction decoder (supporting T1, T2,
+A32 and A64) and a S1 page table walker (one per page table format,
+all three of them) to emulate the access (having taken care of
+stopping all the other vcpus to make sure there is no concurrent
+modification of the page tables). You'll then be able to return the
+result of the access back to the kernel.
+
+Of course, the best thing would be to actually fix the guest so that
+it doesn't use non-emulatable MMIO accesses. In general, that the sign
+of a bug in low-level accessors.
+
+	M.
+
+-- 
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
