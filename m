@@ -2,99 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A3848A99E7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 07:01:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DEA83A9A06
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 07:21:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lHPmQfFQtF4vS6jmcI8BOorMQRFhjpvuAYOuJR4YrxQ=; b=utvV1eDA6MFuDO
-	d7usnNwxOblzvCzbh6tGew5Y5XHfgiWown3pcKndiB/NYwbAgoVG36cqs5EzWUAa/L36agBMLffKp
-	LMme7q6/u8NB7jSnjy5grbBZ+rNW9U2tkf5wVKw1qf/8EbTGclYaKtQ9BubRcqm/fNfi7Z4tmJKK5
-	Pu7uCcdcilBp72NDkdPGI1D+2G+sCEu16+DDaSdcCNfeQqMkuNxpTKOi0c492SweJTVNXj+2wHKJm
-	ihIQMjLjMJtk7T0S6UsoXxHC4AC+NBsF5L664/xTs1cYzzBfVTFiDCNqUPQrfVAT1RBB5/38IMiGy
-	eJ5m1DENxQ21eUYdwEhQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=eTLkgXg/ZAHgulkWlLggS7uBkieYFxBqs+6D13xPdk0=; b=p1qe8ZGSl0REW3
+	ntq1NAQFY4NIReWYI5lUGM/Q2NTcJa3QHn0/eWPZXJXlw/fpuYZO14NTIOVXpCEpPZZqD4hvedXpo
+	2t2Ejvt//eRN8BvXwuN68Ogt7DE9v4TaEEHvfec26ltfsTzSPibQGmhmrh+4G+ZcRlgJMR+BW/ABR
+	nedQvE2kOWGuBmad6IJ3HOZFgN+eEtrAt8dI6bKje/WdF0H7J7tOBJ2xd0AM26qHWaYKFP0O5ddOA
+	F55hrAarECobjSKVR2zvRMu5CWykG5QwYGK9Nb0/zYSm8d4XglEZaCf20JZFOopBEyQ73L4kHNf+0
+	sxz2WRKLd1wO5rJpFu6w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5jtt-0002HC-Ee; Thu, 05 Sep 2019 05:01:41 +0000
-Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
+	id 1i5kCq-0000Bv-VK; Thu, 05 Sep 2019 05:21:17 +0000
+Received: from mail-eopbgr820081.outbound.protection.outlook.com
+ ([40.107.82.81] helo=NAM01-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5jth-0002Go-7C
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 05:01:30 +0000
-Received: by mail-pl1-x642.google.com with SMTP id x3so662468plr.12
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 22:01:28 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=SUBeohh+HfbbNLC2vNWJGf1wy1Gdj58+BXfyMUrKjoc=;
- b=lQNQsZxYsESZuNfE0/YmQ6QEjfkBMP2b5Cq9hW5SSuH4ZmInwZ+bEdgwHTQBKexs0l
- mm0PIiuvSihKeJKrtU55xFyIXXKbfpkaUUHA6LciwO+kh3SqCIR9dRisUpjIKrdmLCH/
- aEU5hKRqdQraaaOa2/U1+8xQssGgrCYcV84OknuhvYOam+Zusks1aoH2zBwhNfOdrPqw
- WPpvMOU8e5zTBL/stzc3L/IDjgE+sj3e8ePSTkncNQklhRJacblNFNi5XBs2m3VZpkLp
- PzcLlF6mvd+UN7b3K2oVTrAaCu+B9Jc1ZCiBw1+rbT9eITC/YqJtkEA2jAMHxi6euTGE
- tnoA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=SUBeohh+HfbbNLC2vNWJGf1wy1Gdj58+BXfyMUrKjoc=;
- b=kkfL+N9NcmY+J93W7XwNtx9lw00LFmPOMABdyCD2OcPk6ALemQLtA6t9VK3CM1Vzar
- 1I8Hp26+9NkQgw1Ew63vD8dxVNt0OiIUG/mIjBcY+f3bOCmYyWRvs9I/tNbMvZkYpqXf
- drgsYmMH0JtlARbrpJgHxE1MIrcUyXyTqQz5msDnSHXHsHIQmDkHCIaP/EJ5nUjW10ju
- gYjb/7WnTxaFfmKmlmgaBcsVFZS3TmVLAj86xPg7Di43u7P0hmwj97GkdI7T1o9n+h3e
- aOZRNPS3jPbp5AxrJmw8kTAeNWDM3SmcXdhPO7WQtxADQqP9Z12lTL7K4tQjeEzp7rjD
- mMlQ==
-X-Gm-Message-State: APjAAAV2Iuaxj0zhrX88QMbyjdD1OnU+65AYPbJX72DxIR+LO/wncwPV
- NA7gRhxUnFhdmiCTBxiIVuKFtQ==
-X-Google-Smtp-Source: APXvYqxLKp/hQTBJFZg4bq2XsgfOo5v+1kCisfZEZTN8ZhsozLd3tLyYaMrWDgM/E+T8p4eXRva++Q==
-X-Received: by 2002:a17:902:a58c:: with SMTP id
- az12mr1410313plb.129.1567659688106; 
- Wed, 04 Sep 2019 22:01:28 -0700 (PDT)
-Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id p189sm1181543pfp.163.2019.09.04.22.01.26
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 04 Sep 2019 22:01:26 -0700 (PDT)
-Date: Thu, 5 Sep 2019 10:31:24 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Sylwester Nawrocki <s.nawrocki@samsung.com>
-Subject: Re: [PATCH v2 0/9] Exynos Adaptive Supply Voltage support
-Message-ID: <20190905050124.kopzxxouuuta37n6@vireshk-i7>
-References: <562dd2e7-2b24-8492-d1c1-2dc4973f07be@samsung.com>
- <20190819090928.pke6cov52n4exlbp@vireshk-i7>
- <b831d7c5-c830-fd65-20cf-02e209889c28@samsung.com>
- <20190819112533.bvfyinw7fsebkufr@vireshk-i7>
- <b7093aaf-ea56-c390-781f-6f9d0780bd8e@samsung.com>
- <20190820030114.6flnn2omeys3lih3@vireshk-i7>
- <06ccff05-2152-4bcc-7537-8f24da75f163@samsung.com>
- <CGME20190820092123epcas2p2170ae19467a5fb19fcfc1acdbecf9381@epcas2p2.samsung.com>
- <20190820092113.gojhe3romdnvm7eu@vireshk-i7>
- <4e6379a7-0d4b-8e0d-c225-49976b2587e0@samsung.com>
+ id 1i5kC7-0008G2-T8; Thu, 05 Sep 2019 05:20:33 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=WTPqT3NV40EAgHb4NRZ87arJG5IEyYxaVmJlozuJofzQu8KiKo4B13juahclxrwhRm562Y29pE5UCtm9oykjUh6R5HnNkXXGHDpEfFZd2yqViBDq5pSVuqj8fl8HVh3pZ8J2oSH4jYg+1asvST4HU/P8Pcs4v/Ts0ix/ilfu5l3TbDGH5WNv46yKGhEgc67vR38TeXAMGA8VDkaRwSe/ccno0zKcH8OltFlFZ5H8upLmf4LE2xBBfUBNbDAu5BIJb2qn5WFUtcncfzZFelEDvbCIU19loxA0GCL1g/7t2yvSc/x6iwQnf8GGQg0mhQ3hUTweUW30CNl+BnlZgcXycg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fWZiTF6LDxv801hBYWsUrl1FImWGGMnV9HI+PvZzS/E=;
+ b=Ay3wPLSN1om3EURT1yNLfVC5gPo2RB+XNMzcVjG0GnIZ/sjHh0e30F084ZmFM8RO/u/fTqme2ERqEYs447tirRkLgPKtFdRCvOigsLgWrcmFme4GJ5wLY1dGQezFJdjGqr8PN7uTSQXi+7I0SAbrpKBZRq2k8nIcdLM4vn9+6ggmCV5P7h8aXBUZHvi6ujkM0e4AkqS3kbV1RKowvb4LDYp2LZC7nEtCps4pddxJ54dqDmpG6E0F7RbM1z8gcCA5Aa+MFFZ7Cb8siBrG5RzPkTCEESG7rTi98LuoL/eIpi7L/IxjyM3fU3KAvNtFYhbyemLE96R8g4qVmn9ci0wVig==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 149.199.60.100) smtp.rcpttodomain=huawei.com smtp.mailfrom=xilinx.com;
+ dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=fWZiTF6LDxv801hBYWsUrl1FImWGGMnV9HI+PvZzS/E=;
+ b=m4mJdT0dSpC3upWdAdPLvIjDRcKPg5t0fkKu5skSCiTU4/vudxWuVR+cJv60gHNvQ7VJ+qHbpkLonhH5OdfmmOOW/M5fOFwzrZjxdDw/Me3t/uOyQ3tFia0AWXhpY37HrzliJssZPdfK0ifo+bmvAEoDOyREQxvSl/NBZmqChPg=
+Received: from MN2PR02CA0013.namprd02.prod.outlook.com (2603:10b6:208:fc::26)
+ by BN7PR02MB5331.namprd02.prod.outlook.com (2603:10b6:408:2b::29)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2199.21; Thu, 5 Sep
+ 2019 05:20:29 +0000
+Received: from CY1NAM02FT031.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::207) by MN2PR02CA0013.outlook.office365.com
+ (2603:10b6:208:fc::26) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2220.19 via Frontend
+ Transport; Thu, 5 Sep 2019 05:20:28 +0000
+Authentication-Results: spf=pass (sender IP is 149.199.60.100)
+ smtp.mailfrom=xilinx.com; huawei.com; dkim=none (message not signed)
+ header.d=none;huawei.com; dmarc=bestguesspass action=none
+ header.from=xilinx.com;
+Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
+ 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
+ client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
+Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
+ CY1NAM02FT031.mail.protection.outlook.com (10.152.75.180) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2241.14
+ via Frontend Transport; Thu, 5 Sep 2019 05:20:11 +0000
+Received: from unknown-38-66.xilinx.com ([149.199.38.66]:34131
+ helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1i5kBm-0001qx-47; Wed, 04 Sep 2019 22:20:10 -0700
+Received: from [127.0.0.1] (helo=localhost)
+ by xsj-pvapsmtp01 with smtp (Exim 4.63)
+ (envelope-from <michal.simek@xilinx.com>)
+ id 1i5kBg-000601-KA; Wed, 04 Sep 2019 22:20:04 -0700
+Received: from xsj-pvapsmtp01 (mailhub.xilinx.com [149.199.38.66])
+ by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x855JvMC001765; 
+ Wed, 4 Sep 2019 22:19:57 -0700
+Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
+ (envelope-from <michals@xilinx.com>)
+ id 1i5kBZ-0005jH-CE; Wed, 04 Sep 2019 22:19:57 -0700
+Subject: Re: [PATCH -next 34/36] spi: zynqmp: use
+ devm_platform_ioremap_resource() to simplify code
+To: YueHaibing <yuehaibing@huawei.com>, broonie@kernel.org,
+ f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com,
+ eric@anholt.net, wahrenst@gmx.net, shc_work@mail.ru, agross@kernel.org,
+ khilman@baylibre.com, matthias.bgg@gmail.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ linux-imx@nxp.com, avifishman70@gmail.com, tmaimon77@gmail.com,
+ tali.perry1@gmail.com, venture@google.com, yuenn@google.com,
+ benjaminfair@google.com, kgene@kernel.org, krzk@kernel.org,
+ andi@etezian.org, palmer@sifive.com, paul.walmsley@sifive.com,
+ baohua@kernel.org, mripard@kernel.org, wens@csie.org,
+ ldewangan@nvidia.com, thierry.reding@gmail.com, jonathanh@nvidia.com,
+ yamada.masahiro@socionext.com, michal.simek@xilinx.com
+References: <20190904135918.25352-1-yuehaibing@huawei.com>
+ <20190904135918.25352-35-yuehaibing@huawei.com>
+From: Michal Simek <michal.simek@xilinx.com>
+Message-ID: <f267daf8-3351-a90a-35ea-94e1d8c20583@xilinx.com>
+Date: Thu, 5 Sep 2019 07:19:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4e6379a7-0d4b-8e0d-c225-49976b2587e0@samsung.com>
-User-Agent: NeoMutt/20180716-391-311a52
+In-Reply-To: <20190904135918.25352-35-yuehaibing@huawei.com>
+Content-Language: en-US
+X-RCIS-Action: ALLOW
+X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
+X-TM-AS-User-Approved-Sender: Yes;Yes
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(4636009)(1496009)(136003)(39860400002)(376002)(346002)(396003)(2980300002)(189003)(199004)(2616005)(44832011)(336012)(11346002)(476003)(126002)(26005)(486006)(446003)(426003)(305945005)(6246003)(81156014)(229853002)(186003)(5660300002)(31696002)(7416002)(478600001)(2486003)(52146003)(23676004)(356004)(8676002)(6666004)(76176011)(4326008)(58126008)(316002)(106002)(50466002)(7406005)(2906002)(47776003)(70206006)(65806001)(36756003)(9786002)(65956001)(230700001)(70586007)(31686004)(81166006)(36386004)(8936002)(921003)(1121003)(5001870100001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR02MB5331; H:xsj-pvapsmtpgw02; FPR:;
+ SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; MX:1; A:1;
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: fac73ab7-0bd2-4147-3dc1-08d731c0c371
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
+ SRVR:BN7PR02MB5331; 
+X-MS-TrafficTypeDiagnostic: BN7PR02MB5331:
+X-Microsoft-Antispam-PRVS: <BN7PR02MB53310A6D9FFB4A2590F44CA5C6BB0@BN7PR02MB5331.namprd02.prod.outlook.com>
+X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
+X-MS-Oob-TLC-OOBClassifiers: OLM:1079;
+X-Forefront-PRVS: 015114592F
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: xDHBjZQ8GYL4pdYhnRlKeinrYnOGSRK2gTz9Op8BpLU3YyfFpCkPVoShvRJKH9fqEOtwsdouUc2baNyy/393AFAy8yVDWUPlqhFvFzWhSzmgLOrpF77Vz7N3FlNYwHkZdHRbhbyk6STbg8Ip1oVAPOZtS6ebeSkRB551f/xUe90p0iOc4jRo3+bHyEc3sTDUObc3oTapGzxrgn7Nbw2VP9Y9MyT0A7XTROOWcNDeK/uAtZAwKuNDpw/VnbfVNhowlrnXsba+EIbDx39RbUaJ2Lp0Z8a2GjzfGzyjJSHGqP5m3T70AR5jgPiHh6cWWmBij1XrIsQRgiq1EcpvjeN1cLIoLctoM4DhNV9QhVesFQVyUDrZmtwXUnu1lND/fTr4l9DD3hz0IcIuRPnsRwkCTSTrmWpInqHshY8P1ZP9SEc=
+X-OriginatorOrg: xilinx.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2019 05:20:11.1281 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: fac73ab7-0bd2-4147-3dc1-08d731c0c371
+X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
+ Helo=[xsj-pvapsmtpgw02]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB5331
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_220129_266285_F2DE0F1D 
-X-CRM114-Status: UNSURE (   8.58  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190904_222031_944479_4B762109 
+X-CRM114-Status: GOOD (  13.41  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.82.81 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -108,28 +154,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
- linux-pm@vger.kernel.org, vireshk@kernel.org, b.zolnierkie@samsung.com,
- linux-kernel@vger.kernel.org, krzk@kernel.org, robh+dt@kernel.org,
- kgene@kernel.org, pankaj.dubey@samsung.com,
- linux-arm-kernel@lists.infradead.org,
- Marek Szyprowski <m.szyprowski@samsung.com>
+Cc: linux-samsung-soc@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ openbmc@lists.ozlabs.org, linux-mediatek@lists.infradead.org,
+ linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
+ bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
+ linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
+ linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04-09-19, 14:37, Sylwester Nawrocki wrote:
-> I have changed the code to use dev_pm_opp_adjust_voltage(). I was wondering 
-> though, what did you mean by "triplet" when commenting on this patch
-> https://patchwork.kernel.org/patch/11092245 ?
+On 04. 09. 19 15:59, YueHaibing wrote:
+> Use devm_platform_ioremap_resource() to simplify the code a bit.
+> This is detected by coccinelle.
+> 
+> Reported-by: Hulk Robot <hulkci@huawei.com>
+> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+> ---
+>  drivers/spi/spi-zynqmp-gqspi.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
+> 
+> diff --git a/drivers/spi/spi-zynqmp-gqspi.c b/drivers/spi/spi-zynqmp-gqspi.c
+> index 5e9ea8a..60c4de4 100644
+> --- a/drivers/spi/spi-zynqmp-gqspi.c
+> +++ b/drivers/spi/spi-zynqmp-gqspi.c
+> @@ -1016,7 +1016,6 @@ static int zynqmp_qspi_probe(struct platform_device *pdev)
+>  	int ret = 0;
+>  	struct spi_master *master;
+>  	struct zynqmp_qspi *xqspi;
+> -	struct resource *res;
+>  	struct device *dev = &pdev->dev;
+>  
+>  	eemi_ops = zynqmp_pm_get_eemi_ops();
+> @@ -1031,8 +1030,7 @@ static int zynqmp_qspi_probe(struct platform_device *pdev)
+>  	master->dev.of_node = pdev->dev.of_node;
+>  	platform_set_drvdata(pdev, master);
+>  
+> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> -	xqspi->regs = devm_ioremap_resource(&pdev->dev, res);
+> +	xqspi->regs = devm_platform_ioremap_resource(pdev, 0);
+>  	if (IS_ERR(xqspi->regs)) {
+>  		ret = PTR_ERR(xqspi->regs);
+>  		goto remove_master;
+> 
 
-The voltage value in the OPP core is stored as a triplet,
-min/max/target kind of stuff. You can check DT binding for OPPs and
-see the details. That's called as triplet.
+Acked-by: Michal Simek <michal.simek@xilinx.com>
 
--- 
-viresh
+Thanks,
+Michal
 
 _______________________________________________
 linux-arm-kernel mailing list
