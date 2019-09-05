@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9C796AAA9E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 20:08:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8C127AAAC6
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 20:21:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=/ta3AzLQQxZLqBD2MYuJFCz2GmSp3HsEMgX1pydfnQ8=; b=JwD9z1V9RE941S
-	0Tna07gQZjHMUbNwoHuYx1Jjiw3UrDJPkeAxD3KBgFR/RPKxaKKnvjDW/i5hRB2TxR4JrbGfP3/eF
-	X/RgHrM8M0Y5W6+21yAaHkZZwr2kJTFdnP6oo19pWd4ZCusnHVJMBw/vM5U3XKKQ00rUJ8K9eevwO
-	/p34DF7Uf9oG+TntGuBdF6nmXh6qADumq3zbz9CMFtz9a9zTAhyAeCUuCEVYIhGH/UwJLSeU5g7Ez
-	q2Tj3t3OqttqKlKhbSmRMZ/3BPNS6B8Uh4XbNYdWcRmOLb9olwXGntaPsEwGVeQ4vI1bviBSQQa/t
-	paYEANmhEUyzHAvdF9Fw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=MtFlJZayRjbBnPO4+ppoRh2tyHj8w4medmCSxVtyBoY=; b=lz0+Lm0nnJcCzB6EkjPkM0WuN
+	GxYQjimaWvCpcqRQR2Hx35NkC37c+C5M6LqLq4kj/xQVPRoeEkn+cXsn1gm0jg6IjN3++7jS/0WJ5
+	9cVVQgSpej41YmjOS+nVLGZWlJ2X+c+y1Dz5YYOLmAL+e4KKNeug5aTUMruU3oJygjcjL62SgBJLY
+	BlSFHwSHWqyv2RM0iHPtchP5bg2bJvR9DpjUizoMSvJ23oiEWrjevf8Ri+bzveoN3MrxGWxDGeZEd
+	uNrRXATPwOTt6iC4ZJSPemuE559v96P/BhXFIDJrfZhExDLKjXWE6ISUg+qtlX2t7VToJWBbZVHEP
+	rryprLLUQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5wBP-0004jw-W0; Thu, 05 Sep 2019 18:08:35 +0000
-Received: from zeniv.linux.org.uk ([195.92.253.2])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5wBH-0004ie-Iy
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 18:08:29 +0000
-Received: from viro by ZenIV.linux.org.uk with local (Exim 4.92.1 #3 (Red Hat
- Linux)) id 1i5wAg-000437-LE; Thu, 05 Sep 2019 18:07:51 +0000
-Date: Thu, 5 Sep 2019 19:07:50 +0100
-From: Al Viro <viro@zeniv.linux.org.uk>
-To: Aleksa Sarai <cyphar@cyphar.com>
-Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
- helpers
-Message-ID: <20190905180750.GQ1131@ZenIV.linux.org.uk>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-2-cyphar@cyphar.com>
+	id 1i5wNb-0000zp-Ck; Thu, 05 Sep 2019 18:21:11 +0000
+Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5wNT-0000yc-He
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 18:21:05 +0000
+Received: from localhost (p54B335F6.dip0.t-ipconnect.de [84.179.53.246])
+ by pokefinder.org (Postfix) with ESMTPSA id 73A6F2C00C0;
+ Thu,  5 Sep 2019 20:20:59 +0200 (CEST)
+Date: Thu, 5 Sep 2019 20:20:59 +0200
+From: Wolfram Sang <wsa@the-dreams.de>
+To: Lee Jones <lee.jones@linaro.org>
+Subject: Re: [RESEND v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
+ processing
+Message-ID: <20190905182058.GA5281@kunai>
+References: <20190905144122.5689-1-lee.jones@linaro.org>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190904201933.10736-2-cyphar@cyphar.com>
-User-Agent: Mutt/1.12.0 (2019-05-25)
+In-Reply-To: <20190905144122.5689-1-lee.jones@linaro.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_110827_630905_8E180734 
-X-CRM114-Status: GOOD (  12.62  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190905_112103_883269_A63DB2E1 
+X-CRM114-Status: GOOD (  15.07  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.92.253.2 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [88.99.104.3 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,145 +59,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
- linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
- Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
- Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
- linux-m68k@lists.linux-m68k.org, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
- Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- containers@lists.linux-foundation.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-kernel@vger.kernel.org, agross@kernel.org, robh+dt@kernel.org,
+ bjorn.andersson@linaro.org, vkoul@kernel.org, alokc@codeaurora.org,
+ linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============6792147039483872891=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
-> +/*
-> + * "memset(p, 0, size)" but for user space buffers. Caller must have already
-> + * checked access_ok(p, size).
-> + */
-> +static int __memzero_user(void __user *p, size_t s)
-> +{
-> +	const char zeros[BUFFER_SIZE] = {};
-> +	while (s > 0) {
-> +		size_t n = min(s, sizeof(zeros));
+
+--===============6792147039483872891==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="zhXaljGHf11kAtnf"
+Content-Disposition: inline
+
+
+--zhXaljGHf11kAtnf
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Thu, Sep 05, 2019 at 03:41:22PM +0100, Lee Jones wrote:
+> We have a production-level laptop (Lenovo Yoga C630) which is exhibiting
+> a rather horrific bug.  When I2C HID devices are being scanned for at
+> boot-time the QCom Geni based I2C (Serial Engine) attempts to use DMA.
+> When it does, the laptop reboots and the user never sees the OS.
+
+$subject is still wrong. And a paragraph that you are/were debugging the
+root cause but to no avail so DMA gets disabled for now would be good for a
+hotfix this late in the cycle.
+
+>=20
+> Signed-off-by: Lee Jones <lee.jones@linaro.org>
+> ---
+>  drivers/i2c/busses/i2c-qcom-geni.c | 12 ++++++++----
+>  1 file changed, 8 insertions(+), 4 deletions(-)
+>=20
+> diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-=
+qcom-geni.c
+> index a89bfce5388e..17abf60c94ae 100644
+> --- a/drivers/i2c/busses/i2c-qcom-geni.c
+> +++ b/drivers/i2c/busses/i2c-qcom-geni.c
+> @@ -355,11 +355,13 @@ static int geni_i2c_rx_one_msg(struct geni_i2c_dev =
+*gi2c, struct i2c_msg *msg,
+>  {
+>  	dma_addr_t rx_dma;
+>  	unsigned long time_left;
+> -	void *dma_buf;
+> +	void *dma_buf =3D NULL;
+>  	struct geni_se *se =3D &gi2c->se;
+>  	size_t len =3D msg->len;
+> =20
+> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +	if (!of_machine_is_compatible("lenovo,yoga-c630"))
+> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
 > +
-> +		if (__copy_to_user(p, zeros, n))
-> +			return -EFAULT;
+>  	if (dma_buf)
+>  		geni_se_select_mode(se, GENI_SE_DMA);
+>  	else
+> @@ -394,11 +396,13 @@ static int geni_i2c_tx_one_msg(struct geni_i2c_dev =
+*gi2c, struct i2c_msg *msg,
+>  {
+>  	dma_addr_t tx_dma;
+>  	unsigned long time_left;
+> -	void *dma_buf;
+> +	void *dma_buf =3D NULL;
+>  	struct geni_se *se =3D &gi2c->se;
+>  	size_t len =3D msg->len;
+> =20
+> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
+> +	if (!of_machine_is_compatible("lenovo,yoga-c630"))
+> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
 > +
-> +		p += n;
-> +		s -= n;
-> +	}
-> +	return 0;
-> +}
+>  	if (dma_buf)
+>  		geni_se_select_mode(se, GENI_SE_DMA);
+>  	else
+> --=20
+> 2.17.1
+>=20
 
-That's called clear_user().
+--zhXaljGHf11kAtnf
+Content-Type: application/pgp-signature; name="signature.asc"
 
-> +int copy_struct_to_user(void __user *dst, size_t usize,
-> +			const void *src, size_t ksize)
-> +{
-> +	size_t size = min(ksize, usize);
-> +	size_t rest = abs(ksize - usize);
-> +
-> +	if (unlikely(usize > PAGE_SIZE))
-> +		return -EFAULT;
+-----BEGIN PGP SIGNATURE-----
 
-Why?
+iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1xUgcACgkQFA3kzBSg
+KbYXzA/+LjS2mPdsksvarWH8VQNQdqsoNEIn5YCxhi5qXxi0KAdEp5Z3N04ZEOk3
+goSeO/4g2HCWM9myuZ9wunwRgK8ucOiSfkatKYPEKHg8buN9f3QfSlLfENIhtwKc
+yeNOJyakRyJnfzXpFVRmrrTWjJoLTS0ZhNgHFMPbR8cXu1sAW2tnvzYfUVLUBGP4
+w+3ldwl6wzRUvg49x4K4yGmsTJ5NQFPKJnTUUYUJ0IgetTRyGD/3HoEY6k3W12oo
+QenoRNh3MEd/HjG+sQYH1w01/86Oz5L0N5OFQoQtFwCR5fITMP4sjy30dB1/cvyr
+UzXWWfzzRV5Gbz1EodWPOS2dzPj4e8f5TRzKJa86GkPYcm6Fys4ifFWTCD6yxuTe
+A3o2ruGJwaIZ6ALxUAzLfSjbyb3ZKsCJ+JLUeMP7hnTrOI7umYHQKxiAXkC4gL1E
+CzAg3CA0BefETQ0vutbyGemZfq8ThJpFktldowciXZrxo55JoPIW2PNMn9YuLE+h
+7yxkc0NQB2Y1Pzzqyk8dcQrwDOS+4sEiGD2QEgAe7FdMqv181MA7XIH8C05Y/uqV
+gwBYxFuKCc7/dUfKBzHDi5EpWlwGIY7wGTvNzzOwn25+wmUOEidSa3SPuM6ozEnR
+Kc9uu4xw4ZB/1cne5zTkL0BDa14aJt4/lkcWV4TWrs7E6voy05k=
+=Z3pm
+-----END PGP SIGNATURE-----
 
-> +	} else if (usize > ksize) {
-> +		if (__memzero_user(dst + size, rest))
-> +			return -EFAULT;
-> +	}
-> +	/* Copy the interoperable parts of the struct. */
-> +	if (__copy_to_user(dst, src, size))
-> +		return -EFAULT;
+--zhXaljGHf11kAtnf--
 
-Why not simply clear_user() and copy_to_user()?
 
-> +int copy_struct_from_user(void *dst, size_t ksize,
-> +			  const void __user *src, size_t usize)
-> +{
-> +	size_t size = min(ksize, usize);
-> +	size_t rest = abs(ksize - usize);
-
-Cute, but... you would be just as well without that 'rest' thing.
-
-> +
-> +	if (unlikely(usize > PAGE_SIZE))
-> +		return -EFAULT;
-
-Again, why?
-
-> +	if (unlikely(!access_ok(src, usize)))
-> +		return -EFAULT;
-
-Why not simply copy_from_user() here?
-
-> +	/* Deal with trailing bytes. */
-> +	if (usize < ksize)
-> +		memset(dst + size, 0, rest);
-> +	else if (usize > ksize) {
-> +		const void __user *addr = src + size;
-> +		char buffer[BUFFER_SIZE] = {};
-> +
-> +		while (rest > 0) {
-> +			size_t bufsize = min(rest, sizeof(buffer));
-> +
-> +			if (__copy_from_user(buffer, addr, bufsize))
-> +				return -EFAULT;
-> +			if (memchr_inv(buffer, 0, bufsize))
-> +				return -E2BIG;
-
-Frankly, that looks like a candidate for is_all_zeroes_user().
-With the loop like above serving as a dumb default.  And on
-badly alighed address it _will_ be dumb.  Probably too much
-so - something like
-	if ((unsigned long)addr & 1) {
-		u8 v;
-		if (get_user(v, (__u8 __user *)addr))
-			return -EFAULT;
-		if (v)
-			return -E2BIG;
-		addr++;
-	}
-	if ((unsigned long)addr & 2) {
-		u16 v;
-		if (get_user(v, (__u16 __user *)addr))
-			return -EFAULT;
-		if (v)
-			return -E2BIG;
-		addr +=2;
-	}
-	if ((unsigned long)addr & 4) {
-		u32 v;
-		if (get_user(v, (__u32 __user *)addr))
-			return -EFAULT;
-		if (v)
-			return -E2BIG;
-	}
-	<read the rest like you currently do>
-would be saner, and things like x86 could trivially add an
-asm variant - it's not hard.  Incidentally, memchr_inv() is
-an overkill in this case...
+--===============6792147039483872891==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6792147039483872891==--
+
