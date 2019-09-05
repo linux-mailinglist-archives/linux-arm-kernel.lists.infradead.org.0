@@ -2,76 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D4808A9DDC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:09:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69F6DA9DE0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 11:10:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:In-Reply-To:
+	Date:References:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tgnCd56+LBZULDnldYlO2ZPWM+9v56krwtShn5Tivwg=; b=h8aPEt9dAuXXs8
-	5HkWI2f3sXlzBfdc2UlMOpUkKmV7AsViGAANu7Ffct/8s8wkTuOPAaBoyNV8dw/0m6iZ6pn2x8rLd
-	ehZJs2VzW8BrrUOYpNA1xRrr7TGAGPZUsd9UW0aBU/IpHaxah2usn+GUqpIs/9I+3G02felX1MKbY
-	Km2T9Un3rMMMDUMtpc0klUHAhbV0jhJsMinTjL8Sim4+vLFav7hsBfUC7x9nHkMtuoXrnnNtjvQuo
-	OL5cLI1EHxoS2VlVxPm1VNeCkDPQVCpQmwRTTtjIv+i6PZ6STpTkNzoSOZxCJp8Q2N0lGe8l4o2Al
-	rNa+QSnE4H2q/qXH/JIw==;
+	List-Owner; bh=AykZwkwVrKj+ESqhxDjfIfblFehBdHDvqR/XbiYoV0I=; b=a8oJ+ZdnLwegND
+	PBfKZwze3jmy5dqitJ6d2V6V4L86Z8Dv74Wo0jCwhRHlK8ZUehQJw4lv0aNcLk+se8Ca4ULdUf+vF
+	/A5K230Yp8tHMsbBbLvvY1YSb9Qep/nl0ibnO/OIxDZNZ6ukw+uxP2Dm/OXliGpgVDrcBtkaz0ViA
+	9P1mAJsZgXmzNMOp+EeBgJyKa1W7XQKqzoGhvRAXtoDqNFG2iXD8E1sv9ErUAALLjJVCfpnz8ItsB
+	w+vBJ5suBhWK3eyNH3G9XCNTLdTk8Y/DmRifn/NKoEVdi6qQI4R2jCRSU0A26rPicioV84vZdcWPN
+	G17wbUzpvNceIOwdW71Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5nly-0005gm-UY; Thu, 05 Sep 2019 09:09:47 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i5nmH-0005u3-QD; Thu, 05 Sep 2019 09:10:05 +0000
+Received: from mail-out.m-online.net ([212.18.0.9])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5nll-0005fu-94; Thu, 05 Sep 2019 09:09:34 +0000
-Received: from mail-qk1-f169.google.com (mail-qk1-f169.google.com
- [209.85.222.169])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ id 1i5nlx-0005lZ-BL
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 09:09:48 +0000
+Received: from frontend01.mail.m-online.net (unknown [192.168.8.182])
+ by mail-out.m-online.net (Postfix) with ESMTP id 46PFJ40dnZz1rK5J;
+ Thu,  5 Sep 2019 11:09:40 +0200 (CEST)
+Received: from localhost (dynscan1.mnet-online.de [192.168.6.70])
+ by mail.m-online.net (Postfix) with ESMTP id 46PFJ32zjcz1qqkk;
+ Thu,  5 Sep 2019 11:09:39 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at mnet-online.de
+Received: from mail.mnet-online.de ([192.168.8.182])
+ by localhost (dynscan1.mail.m-online.net [192.168.6.70]) (amavisd-new,
+ port 10024)
+ with ESMTP id bsFr3srmzyBP; Thu,  5 Sep 2019 11:09:36 +0200 (CEST)
+X-Auth-Info: HjUMDzwcEehHBjaVffXZjtB4a4fj/TG0EaQI9SDHSpRwfnDQz77oFMRdUd9Aa8bN
+Received: from hawking (charybdis-ext.suse.de [195.135.221.2])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8390A22DBF;
- Thu,  5 Sep 2019 09:09:30 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567674570;
- bh=2y9QrdwzmfA0llHSctFl2m6ifgKdca76hgM46s40Jqo=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=A7jbPfgz7iDbyfAh7FRh4lNexG/TXF3ScTCKO8nMsMseEaD3FIekJ4V75JBPjnXPE
- KmGQfiJzMgv3dMSkoJYtCd6C2HlnVFXxuIfvlr5/IStZ6CYCzDY//Pu4c5uPuYVn4N
- gUsQAoZ4hc0w2Kyrr7B4+iz9yJaMProOHVGOIhS0=
-Received: by mail-qk1-f169.google.com with SMTP id 201so1347366qkd.13;
- Thu, 05 Sep 2019 02:09:30 -0700 (PDT)
-X-Gm-Message-State: APjAAAVLNzfJ9atEnKYyr1CD1nMsJS2PDCsvPnJvzW+4yAod4//CcgUJ
- NBHItXwrRfL+0v7UPDLHepwjc7G2v2lI5aJY8Q==
-X-Google-Smtp-Source: APXvYqyCZ1JFPrFdkdY4EtQAOam5zWRzs7tCzxtp5nMv/9gUEkXp5uEHLWxNb2B7T4bytKsL8PG/Xdv5F/1FvYv7IIE=
-X-Received: by 2002:a05:620a:1356:: with SMTP id
- c22mr1583635qkl.119.1567674569634; 
- Thu, 05 Sep 2019 02:09:29 -0700 (PDT)
+ by mail.mnet-online.de (Postfix) with ESMTPSA;
+ Thu,  5 Sep 2019 11:09:36 +0200 (CEST)
+From: Andreas Schwab <schwab@linux-m68k.org>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,
+ from}_user helpers
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+X-Yow: RELATIVES!!
+Date: Thu, 05 Sep 2019 11:09:35 +0200
+In-Reply-To: <20190904201933.10736-2-cyphar@cyphar.com> (Aleksa Sarai's
+ message of "Thu, 5 Sep 2019 06:19:22 +1000")
+Message-ID: <mvma7bj85yo.fsf@linux-m68k.org>
+User-Agent: Gnus/5.13 (Gnus v5.13) Emacs/26.3 (gnu/linux)
 MIME-Version: 1.0
-References: <20190905081546.42716-1-drinkcat@chromium.org>
-In-Reply-To: <20190905081546.42716-1-drinkcat@chromium.org>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Thu, 5 Sep 2019 10:09:18 +0100
-X-Gmail-Original-Message-ID: <CAL_JsqJCO2G90TTT9Mpy4kjVKQyXWw4aXEEnbRp_SE8X=EGc5g@mail.gmail.com>
-Message-ID: <CAL_JsqJCO2G90TTT9Mpy4kjVKQyXWw4aXEEnbRp_SE8X=EGc5g@mail.gmail.com>
-Subject: Re: [PATCH] arm64: dts: mt8183: Add node for the Mali GPU
-To: Nicolas Boichat <drinkcat@chromium.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_020933_358826_6D827431 
-X-CRM114-Status: GOOD (  20.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190905_020946_199288_A797CE43 
+X-CRM114-Status: GOOD (  12.35  )
+X-Spam-Score: -0.5 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [212.18.0.9 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -83,213 +78,74 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Boris Brezillon <boris.brezillon@collabora.com>,
- "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Alyssa Rosenzweig <alyssa.rosenzweig@collabora.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, Nick Fan <nick.fan@mediatek.com>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Al Viro <viro@zeniv.linux.org.uk>,
+ Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
+ Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 5, 2019 at 9:16 AM Nicolas Boichat <drinkcat@chromium.org> wrote:
->
-> Add a basic GPU node and opp table for mt8183.
->
-> The binding we use with out-of-tree Mali drivers includes more
-> clocks, I assume this would be required eventually if we have an
-> in-tree driver:
+On Sep 05 2019, Aleksa Sarai <cyphar@cyphar.com> wrote:
 
-We have an in-tree driver...
+> diff --git a/lib/struct_user.c b/lib/struct_user.c
+> new file mode 100644
+> index 000000000000..7301ab1bbe98
+> --- /dev/null
+> +++ b/lib/struct_user.c
+> @@ -0,0 +1,182 @@
+> +// SPDX-License-Identifier: GPL-2.0-or-later
+> +/*
+> + * Copyright (C) 2019 SUSE LLC
+> + * Copyright (C) 2019 Aleksa Sarai <cyphar@cyphar.com>
+> + */
+> +
+> +#include <linux/types.h>
+> +#include <linux/export.h>
+> +#include <linux/uaccess.h>
+> +#include <linux/kernel.h>
+> +#include <linux/string.h>
+> +
+> +#define BUFFER_SIZE 64
+> +
+> +/*
+> + * "memset(p, 0, size)" but for user space buffers. Caller must have already
+> + * checked access_ok(p, size).
+> + */
+> +static int __memzero_user(void __user *p, size_t s)
+> +{
+> +	const char zeros[BUFFER_SIZE] = {};
 
-> clocks =
->         <&topckgen CLK_TOP_MFGPLL_CK>,
->         <&topckgen CLK_TOP_MUX_MFG>,
->         <&clk26m>,
->         <&mfgcfg CLK_MFG_BG3D>;
-> clock-names =
->         "clk_main_parent",
->         "clk_mux",
->         "clk_sub_parent",
->         "subsys_mfg_cg";
->
-> Signed-off-by: Nicolas Boichat <drinkcat@chromium.org>
->
-> ---
-> Upstreaming what matches existing bindings from our Chromium OS tree:
-> https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-4.19/arch/arm64/boot/dts/mediatek/mt8183.dtsi#1348
->
-> The evb part of this change depends on this patch to add PMIC dtsi:
-> https://patchwork.kernel.org/patch/10928161/
->
->  arch/arm64/boot/dts/mediatek/mt8183-evb.dts |   7 ++
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi    | 103 ++++++++++++++++++++
->  2 files changed, 110 insertions(+)
->
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> index 1fb195c683c3d01..200d8e65a6368a1 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183-evb.dts
-> @@ -7,6 +7,7 @@
->
->  /dts-v1/;
->  #include "mt8183.dtsi"
-> +#include "mt6358.dtsi"
->
->  / {
->         model = "MediaTek MT8183 evaluation board";
-> @@ -30,6 +31,12 @@
->         status = "okay";
->  };
->
-> +&gpu {
-> +       supply-names = "mali", "mali_sram";
-> +       mali-supply = <&mt6358_vgpu_reg>;
-> +       mali_sram-supply = <&mt6358_vsram_gpu_reg>;
+Perhaps make that static?
 
-Not documented. Just 'sram-supply' is enough.
+Andreas.
 
-Note that the binding doc queued up for 5.4 has been converted to DT schema.
-
-> +};
-> +
->  &i2c0 {
->         pinctrl-names = "default";
->         pinctrl-0 = <&i2c_pins_0>;
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 97f84aa9fc6e1c1..8ea548a762ea252 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -579,6 +579,109 @@
->                         #clock-cells = <1>;
->                 };
->
-> +               gpu: mali@13040000 {
-
-gpu@...
-
-> +                       compatible = "mediatek,mt8183-mali", "arm,mali-bifrost";
-
-You need to add this compatible string too.
-
-> +                       reg = <0 0x13040000 0 0x4000>;
-> +                       interrupts =
-> +                               <GIC_SPI 280 IRQ_TYPE_LEVEL_LOW>,
-> +                               <GIC_SPI 279 IRQ_TYPE_LEVEL_LOW>,
-> +                               <GIC_SPI 278 IRQ_TYPE_LEVEL_LOW>;
-> +                       interrupt-names = "job", "mmu", "gpu";
-> +
-> +                       clocks = <&topckgen CLK_TOP_MFGPLL_CK>;
-> +                       power-domains =
-> +                               <&scpsys MT8183_POWER_DOMAIN_MFG_CORE0>,
-> +                               <&scpsys MT8183_POWER_DOMAIN_MFG_CORE1>,
-> +                               <&scpsys MT8183_POWER_DOMAIN_MFG_2D>;
-
-This needs to be documented too.
-
-> +
-> +                       operating-points-v2 = <&gpu_opp_table>;
-> +               };
-> +
-> +               gpu_opp_table: opp_table0 {
-> +                       compatible = "operating-points-v2";
-> +                       opp-shared;
-> +
-> +                       opp-300000000 {
-> +                               opp-hz = /bits/ 64 <300000000>;
-> +                               opp-microvolt = <625000>, <850000>;
-> +                       };
-> +
-> +                       opp-320000000 {
-> +                               opp-hz = /bits/ 64 <320000000>;
-> +                               opp-microvolt = <631250>, <850000>;
-> +                       };
-> +
-> +                       opp-340000000 {
-> +                               opp-hz = /bits/ 64 <340000000>;
-> +                               opp-microvolt = <637500>, <850000>;
-> +                       };
-> +
-> +                       opp-360000000 {
-> +                               opp-hz = /bits/ 64 <360000000>;
-> +                               opp-microvolt = <643750>, <850000>;
-> +                       };
-> +
-> +                       opp-380000000 {
-> +                               opp-hz = /bits/ 64 <380000000>;
-> +                               opp-microvolt = <650000>, <850000>;
-> +                       };
-> +
-> +                       opp-400000000 {
-> +                               opp-hz = /bits/ 64 <400000000>;
-> +                               opp-microvolt = <656250>, <850000>;
-> +                       };
-> +
-> +                       opp-420000000 {
-> +                               opp-hz = /bits/ 64 <420000000>;
-> +                               opp-microvolt = <662500>, <850000>;
-> +                       };
-> +
-> +                       opp-460000000 {
-> +                               opp-hz = /bits/ 64 <460000000>;
-> +                               opp-microvolt = <675000>, <850000>;
-> +                       };
-> +
-> +                       opp-500000000 {
-> +                               opp-hz = /bits/ 64 <500000000>;
-> +                               opp-microvolt = <687500>, <850000>;
-> +                       };
-> +
-> +                       opp-540000000 {
-> +                               opp-hz = /bits/ 64 <540000000>;
-> +                               opp-microvolt = <700000>, <850000>;
-> +                       };
-> +
-> +                       opp-580000000 {
-> +                               opp-hz = /bits/ 64 <580000000>;
-> +                               opp-microvolt = <712500>, <850000>;
-> +                       };
-> +
-> +                       opp-620000000 {
-> +                               opp-hz = /bits/ 64 <620000000>;
-> +                               opp-microvolt = <725000>, <850000>;
-> +                       };
-> +
-> +                       opp-653000000 {
-> +                               opp-hz = /bits/ 64 <653000000>;
-> +                               opp-microvolt = <743750>, <850000>;
-> +                       };
-> +
-> +                       opp-698000000 {
-> +                               opp-hz = /bits/ 64 <698000000>;
-> +                               opp-microvolt = <768750>, <868750>;
-> +                       };
-> +
-> +                       opp-743000000 {
-> +                               opp-hz = /bits/ 64 <743000000>;
-> +                               opp-microvolt = <793750>, <893750>;
-> +                       };
-> +
-> +                       opp-800000000 {
-> +                               opp-hz = /bits/ 64 <800000000>;
-> +                               opp-microvolt = <825000>, <925000>;
-> +                       };
-
-Okay, but I seriously doubt the OPP selection logic is sophisticated
-enough or will ever be to use all these levels...
-
-> +               };
-> +
->                 mmsys: syscon@14000000 {
->                         compatible = "mediatek,mt8183-mmsys", "syscon";
->                         reg = <0 0x14000000 0 0x1000>;
-> --
-> 2.23.0.187.g17f5b7556c-goog
->
+-- 
+Andreas Schwab, schwab@linux-m68k.org
+GPG Key fingerprint = 7578 EB47 D4E5 4D69 2510  2552 DF73 E780 A9DA AEC1
+"And now for something completely different."
 
 _______________________________________________
 linux-arm-kernel mailing list
