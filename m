@@ -2,67 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3068AAA58B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:14:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AB77AA597
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:17:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+rqwWd7Ry+bTk8gQ2Kif6I9es1ZLmJrppHbEPjrGUEI=; b=CQGLnCjuoqqHwM
-	unkCXhO1FJAo+11hiLlBlUyf1WAJV80g/O/Tu5GCtt655rFBB5huHYrjMS02f+hxe2GiwQ8EBcZlw
-	ipFrGxugMPur7nlhEXUHTMoOGbsiVRaivTf5dRHxcHB7H1Pf3j78Jxx17J6EOD8xzJni92YdA3cNF
-	r9CFBunGnhhtsdKjyuTK5BvVbqb/7huMuTN5/b0T0+Wbe+VM9ERVgXy0q3h32I9nAP5O0ibZ8SYlH
-	zQZAUZeV7DdteacCk7k0EkY4+8bIAE5UbhLvtfRf218oiIOaV2OcjGi+Ucco2Y0uEbOuFf/36/T4C
-	5GuM/WceQ0J5EssLD2NA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EOVy5/GmU2Z2cacc0vmfxUkGOylR3cJUOQRBIgC01fQ=; b=fNKoqZhY905aepFGtIKwk92Mp
+	7sckhd6q4+hAjEWiSrMdH23XFqbPRY2xDyQjQrvdn3raG5rjmNY+4e1Q6874VHikVzE8V33BsWX/p
+	mhiaiz/AD7qvgJem0EToK+7Fl5jNCpxYxIAQFRuXnLv8PbviN+RI9ESixQEFrLezHzGYTYrhWV+pL
+	5JvDv7EMPOwxqW4bd3T+wTBmo/3GwCNgNyLt06kV9xzjdnnKAr7Tp5+lid5U572L8EkTUfaCf0QmB
+	C5eY1VPQamd/VgxrRlUXzE7Yn+hzr+sqPxJqkZHRFic6GSImp7FYfo7DaavCvAh9yD+/tAsFWxrj4
+	uu+pqZo6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sWx-0001jy-Eh; Thu, 05 Sep 2019 14:14:35 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i5sZk-0003PB-Nl; Thu, 05 Sep 2019 14:17:28 +0000
+Received: from lelv0142.ext.ti.com ([198.47.23.249])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sWm-0001jV-8a; Thu, 05 Sep 2019 14:14:25 +0000
-X-UUID: 20f0eab654914ced890d55d069271c50-20190905
-X-UUID: 20f0eab654914ced890d55d069271c50-20190905
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <jerry-ch.chen@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 495146118; Thu, 05 Sep 2019 06:14:20 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Sep 2019 07:14:18 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Sep 2019 22:14:10 +0800
-Received: from [172.21.84.99] (172.21.84.99) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 5 Sep 2019 22:14:10 +0800
-Message-ID: <1567692852.22453.55.camel@mtksdccf07>
-Subject: Re: [RFC PATCH V2 3/4] media: platform: Add Mediatek FD driver KConfig
-From: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>
-Date: Thu, 5 Sep 2019 22:14:12 +0800
-In-Reply-To: <20190905123054.GL5035@pendragon.ideasonboard.com>
-References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
- <1562661672-22439-4-git-send-email-Jerry-Ch.chen@mediatek.com>
- <20190905123054.GL5035@pendragon.ideasonboard.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1i5sZb-0003Ol-Hx
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:17:20 +0000
+Received: from fllv0035.itg.ti.com ([10.64.41.0])
+ by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x85EHF6q066539;
+ Thu, 5 Sep 2019 09:17:15 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1567693035;
+ bh=ub+LpZSR2SqSnDTZYERv7a6nXgZCl/QfTXbE8sjKO10=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=jkRJNor/c//NIjSOu2F8t0GecbA3rmd/dTZM1I1uP2YjUNdtSlFyQGTDRm9uataKz
+ xfiha8TFkN8MrbcAr3s8LDQvlhyGJtIzrD+azaihHuMhi4HkdJAb/qCRntw9a9Pq7y
+ RiNzAl0LUP90NvcSOwe8j9ck78Ybh+3+QPEydLsA=
+Received: from DLEE102.ent.ti.com (dlee102.ent.ti.com [157.170.170.32])
+ by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x85EHF1r089155;
+ Thu, 5 Sep 2019 09:17:15 -0500
+Received: from DLEE105.ent.ti.com (157.170.170.35) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 5 Sep
+ 2019 09:17:13 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE105.ent.ti.com
+ (157.170.170.35) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Thu, 5 Sep 2019 09:17:13 -0500
+Received: from [10.250.98.116] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x85EH9Sc113593;
+ Thu, 5 Sep 2019 09:17:10 -0500
+Subject: Re: [PATCH] bus: ti-sysc: Fix clock handling for no-idle quirks
+To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
+References: <20190905140337.19373-1-tony@atomide.com>
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+Message-ID: <49ce192d-697b-48e2-2b18-47acb370739b@ti.com>
+Date: Thu, 5 Sep 2019 17:17:04 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <20190905140337.19373-1-tony@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_071424_304272_BBF22E57 
-X-CRM114-Status: GOOD (  18.94  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_071719_701422_B3873806 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.23.249 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,132 +90,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Sean Cheng =?UTF-8?Q?=28=E9=84=AD=E6=98=87=E5=BC=98=29?=
- <Sean.Cheng@mediatek.com>, "laurent.pinchart+renesas@ideasonboard.com"
- <laurent.pinchart+renesas@ideasonboard.com>,
- Rynn Wu =?UTF-8?Q?=28=E5=90=B3=E8=82=B2=E6=81=A9=29?= <Rynn.Wu@mediatek.com>,
- Christie Yu =?UTF-8?Q?=28=E6=B8=B8=E9=9B=85=E6=83=A0=29?=
- <christie.yu@mediatek.com>, srv_heupstream <srv_heupstream@mediatek.com>,
- Po-Yang Huang =?UTF-8?Q?=28=E9=BB=83=E6=9F=8F=E9=99=BD=29?=
- <po-yang.huang@mediatek.com>, "suleiman@chromium.org" <suleiman@chromium.org>,
- "shik@chromium.org" <shik@chromium.org>,
- "tfiga@chromium.org" <tfiga@chromium.org>,
- Jungo Lin =?UTF-8?Q?=28=E6=9E=97=E6=98=8E=E4=BF=8A=29?=
- <jungo.lin@mediatek.com>, Sj
- Huang =?UTF-8?Q?=28=E9=BB=83=E4=BF=A1=E7=92=8B=29?= <sj.huang@mediatek.com>,
- "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- Frederic Chen =?UTF-8?Q?=28=E9=99=B3=E4=BF=8A=E5=85=83=29?=
- <Frederic.Chen@mediatek.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Laurent,
 
-On Thu, 2019-09-05 at 20:30 +0800, Laurent Pinchart wrote:
-> Hi Jerry,
-> 
-> Thank you for the patch.
-> 
-> On Tue, Jul 09, 2019 at 04:41:11PM +0800, Jerry-ch Chen wrote:
-> > From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
-> > 
-> > This patch adds KConfig for Mediatek Face Detection driver (FD).
-> > FD is embedded in Mediatek SoCs. It can provide hardware
-> > accelerated face detection function.
-> > 
-> > Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
-> 
-> You can squash this patch with 4/4, there's no need to keep it separate.
-> 
 
-I appreciate your comments,
-
-Ok, I will squash it.
-
-> > ---
-> >  drivers/media/platform/Kconfig            |  2 ++
-> >  drivers/media/platform/mtk-isp/fd/Kconfig | 17 +++++++++++++++++
-> >  2 files changed, 19 insertions(+)
-> >  create mode 100644 drivers/media/platform/mtk-isp/fd/Kconfig
-> > 
-> > diff --git a/drivers/media/platform/Kconfig b/drivers/media/platform/Kconfig
-> > index a505e9f..ae99258e 100644
-> > --- a/drivers/media/platform/Kconfig
-> > +++ b/drivers/media/platform/Kconfig
-> > @@ -32,6 +32,8 @@ source "drivers/media/platform/davinci/Kconfig"
-> >  
-> >  source "drivers/media/platform/omap/Kconfig"
-> >  
-> > +source "drivers/media/platform/mtk-isp/fd/Kconfig"
-> > +
-> >  config VIDEO_ASPEED
-> >  	tristate "Aspeed AST2400 and AST2500 Video Engine driver"
-> >  	depends on VIDEO_V4L2
-> > diff --git a/drivers/media/platform/mtk-isp/fd/Kconfig b/drivers/media/platform/mtk-isp/fd/Kconfig
-> > new file mode 100644
-> > index 0000000..0c5eaf0
-> > --- /dev/null
-> > +++ b/drivers/media/platform/mtk-isp/fd/Kconfig
-> > @@ -0,0 +1,17 @@
-> > +config VIDEO_MEDIATEK_FD
-> > +	bool "Mediatek face detection processing function"
-> > +	select DMA_SHARED_BUFFER
-> > +	select VIDEOBUF2_DMA_CONTIG
-> > +	select VIDEOBUF2_CORE
-> > +	select VIDEOBUF2_V4L2
-> > +	select VIDEOBUF2_MEMOPS
-> > +	select VIDEOBUF2_VMALLOC
+On 05/09/2019 17:03, Tony Lindgren wrote:
+> NFSroot can fail on dra7 when cpsw is probed using ti-sysc interconnect
+> target module driver as reported by Keerthy.
 > 
-> Do you need both VIDEOBUF2_DMA_CONTIG and VIDEOBUF2_VMALLOC ? The driver
-> doesn't seem to make use of VIDEOBUF2_VMALLOC.
+> Device clocks and the interconnect target module may or may not be
+> enabled by the bootloader on init, but we currently assume the clocks
+> and module are on from the bootloader for "ti,no-idle" and
+> "ti,no-idle-on-init" quirks as reported by Grygorii Strashko.
+> 
+> Let's fix the issue by always enabling clocks init, and
+> never disable them for "ti,no-idle" quirk. For "ti,no-idle-on-init"
+> quirk, we must decrement the usage count later on to allow PM
+> runtime to idle the module if requested.
+> 
+> Fixes: 1a5cd7c23cc5 ("bus: ti-sysc: Enable all clocks directly during init to read revision")
+> Cc: Keerthy <j-keerthy@ti.com>
+> Cc: Vignesh Raghavendra <vigneshr@ti.com>
+> Reported-by: Keerthy <j-keerthy@ti.com>
+> Reported-by: Grygorii Strashko <grygorii.strashko@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+>   drivers/bus/ti-sysc.c | 48 +++++++++++++++++++++++++++++++++----------
+>   1 file changed, 37 insertions(+), 11 deletions(-)
 > 
 
-No, I should remove it. and also would like to update as following:
+Reviewed-by: Grygorii Strashko <grygorii.strashko@ti.com>
 
-        depends on VIDEO_V4L2
-        depends on ARCH_MEDIATEK || COMPILE_TEST
-        select VIDEOBUF2_DMA_CONTIG
-        select VIDEOBUF2_CORE
-        select VIDEOBUF2_V4L2
-        select VIDEOBUF2_MEMOPS
-        select MEDIA_CONTROLLER
-        select MTK_SCP
+Thank you, Tony.
 
-> > +	select MEDIA_CONTROLLER
-> > +
-> > +	default n
-> > +	help
-> > +		Support the Face Detectioin (FD) feature.
-> 
-> s/Detectioin/Detection/
-> 
-Typo fixed.
-
-> Maybe "... feature found in the Mediatek <list of SoCs> SoCs." ?
-
-I will refine as:
-Support the Face Detection (FD) feature in the Mediatek mt8183 Soc.
-
-Thanks and best regards,
-Jerry
-> 
-> > +
-> > +		FD driver is a V4L2 memory-to-memory device driver which
-> > +		provides hardware accelerated face detection function,
-> > +		it can detect different sizes of faces in a raw image.
-> 
-
-
+-- 
+Best regards,
+grygorii
 
 _______________________________________________
 linux-arm-kernel mailing list
