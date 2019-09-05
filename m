@@ -2,145 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 05B7BA9A01
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 07:20:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C72BDA9A2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 07:49:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mKwM7oojdTnD+tNuBZoWK+I6LW5+p5dh/Wc2DjtlDgo=; b=puKvT0rR5I3aOa
-	LSOnoDqjnfmr7l8u3CU8oIsIYxTLubW6Xxlbm4/y4HgrI1pY3RQ3/iKDEDLvKkmFP0c3/Ss6XsoHV
-	F2vW2SsjuPr7C7kdjHvv50pzoOCv1ZBxviCv/mbte5oxzr9sivC8lawX9pqn0eoxWefgMG0l8V/L9
-	S4R5/Xu99QXPgddr0MA6r2JnvWHiNeb5BWDfezeFOUzaMF8vSB+3bJuEOV6bka3iGwPlYK8iiWxaC
-	sCovzr0k91KsFoYPq76T9LXpwL5opX2kN6uYwgktxVFDrmF0MbKR5B31ZCL9204Dh8lOcN7y2+8te
-	ysXuE8RKL5GcLcIQQhDg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Sl2yBo5gfC/N9r2kei3hpm9g/Pw4srx1Wpw1etFU+Y4=; b=arv
+	s8PAAoWTHoTSGemtICm79JVso2C+TL4sWCEOQpdSStdoj7iAewpGmcJ3FT2dY+H8aOYlfX0i8PrYX
+	7vibkjlVlqdtAPGug2TnAHQDW5ENFVdz0UAI5HS6KRqb7Ysbo3Ce7dL7ibN7eiCDKRevwlVIJ5/S4
+	o0fZ5YOz480rM53L3omT0M3EOQoqvZ+SZx5aYRQDAKRWJkXuZodnjZ1ddMuWGfIqZ8ALrsTUp1fuJ
+	mp00zll4Ila7VswKGNeYrSkQcY8cnmF4ChpOOLfAEBuCKNEgbHyivLn8peTa3O5EDnHPw4oRlB89z
+	x/d7ogQWExb5MjHGyM7w9V0ViIPsLxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5kCI-0008GG-Ij; Thu, 05 Sep 2019 05:20:42 +0000
-Received: from mail-eopbgr730084.outbound.protection.outlook.com
- ([40.107.73.84] helo=NAM05-DM3-obe.outbound.protection.outlook.com)
+	id 1i5kdq-0007Pi-I3; Thu, 05 Sep 2019 05:49:10 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5kC4-0008FV-CC; Thu, 05 Sep 2019 05:20:29 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=QefvtaMsqxyUrhCCN0xHL4XRqqF5IW68q09mQ2W5xzJaDMy5VvZDz0GAeK+l2To+fXXRchNnzVjoqEL8kRzV8d56R7Myqh1p5/GsLd2zsHkk6OgFU6sSQ/nwig3kvA/E0sOmDn4ulspPw4eM9CKsknLWMe81X3+nw5pihCuDOoUGQgOAT0rQsQPBkudZDp9TO0zDhb5MwfXZVX7yqbigjvQ0fjCjeTu+tEecr/Hfwp8T03NkTZ27gvNmaoQoTy6njtx2SIwjlEhPCt0cokGzKJRcytqm0o7RRWgIEHpiI8I8s8NQ31iVrKxXR5YDaOYHvOyzMFK0f02ivtX/+Bt/Og==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SQAzwEfRXD7T3ZN4nz/9r0j5k1a9CTAdOWrL2FjF1zg=;
- b=nEbla+dd8ph4PrqbV6OpUR0EEapeHXBBFKPtrxz07OegHXLUz6Dw6BOLhtL0kCg7WbtP4/ASQraD3PEoWN0vsFb+CTZvPyioQtGUSufwyevOB6h1JotrMX8n/6wMq/OYCUowa30W9rcCtnEm2k5DLG8plHCwIy2uZqQf1WN/y8n2uhc0zoB/BYnOm/hfDvcJuNmi/ZjaNtDYkV2cmZx+JeuAbjj2sI2chozvXkanhl7c/Tp8SkbQCvJYruy4LLuOYHv6JHHca3kOZQ6OXZ3du35ISPBi1oPdA/bTz8lXlNBxbhZo/jGptqco4dFmMmjaCFp/+K1Z0XLhKDAJ64j7jg==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 149.199.60.100) smtp.rcpttodomain=huawei.com smtp.mailfrom=xilinx.com;
- dmarc=bestguesspass action=none header.from=xilinx.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=xilinx.onmicrosoft.com; s=selector2-xilinx-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=SQAzwEfRXD7T3ZN4nz/9r0j5k1a9CTAdOWrL2FjF1zg=;
- b=b20+yIaTHL+sWa1MmF3rael+2EEg/cLklBViLAteI0dvNbSmHu7Toa1UcpCt+tXqkSafKgdSu8AeAGHqg/rWdLfOurObnI0vfNCeVwWMY/AzRtcsDeNmgbohg0qID7UMeP4GUjYBk6WasnRBtrgcUydOV3vIsKBZTjWyXjNMQIE=
-Received: from BYAPR02CA0061.namprd02.prod.outlook.com (2603:10b6:a03:54::38)
- by BN7PR02MB5316.namprd02.prod.outlook.com (2603:10b6:408:2b::26)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2178.16; Thu, 5 Sep
- 2019 05:20:23 +0000
-Received: from CY1NAM02FT056.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::201) by BYAPR02CA0061.outlook.office365.com
- (2603:10b6:a03:54::38) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2199.15 via Frontend
- Transport; Thu, 5 Sep 2019 05:20:23 +0000
-Authentication-Results: spf=pass (sender IP is 149.199.60.100)
- smtp.mailfrom=xilinx.com; huawei.com; dkim=none (message not signed)
- header.d=none;huawei.com; dmarc=bestguesspass action=none
- header.from=xilinx.com;
-Received-SPF: Pass (protection.outlook.com: domain of xilinx.com designates
- 149.199.60.100 as permitted sender) receiver=protection.outlook.com;
- client-ip=149.199.60.100; helo=xsj-pvapsmtpgw02;
-Received: from xsj-pvapsmtpgw02 (149.199.60.100) by
- CY1NAM02FT056.mail.protection.outlook.com (10.152.74.160) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2241.14
- via Frontend Transport; Thu, 5 Sep 2019 05:20:20 +0000
-Received: from unknown-38-66.xilinx.com ([149.199.38.66]:37867
- helo=xsj-pvapsmtp01) by xsj-pvapsmtpgw02 with esmtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1i5kBw-0001s1-5D; Wed, 04 Sep 2019 22:20:20 -0700
-Received: from [127.0.0.1] (helo=localhost)
- by xsj-pvapsmtp01 with smtp (Exim 4.63)
- (envelope-from <michal.simek@xilinx.com>)
- id 1i5kBr-0006dk-00; Wed, 04 Sep 2019 22:20:15 -0700
-Received: from xsj-pvapsmtp01 (smtp.xilinx.com [149.199.38.66])
- by xsj-smtp-dlp2.xlnx.xilinx.com (8.13.8/8.13.1) with ESMTP id x855K7PS002245; 
- Wed, 4 Sep 2019 22:20:08 -0700
-Received: from [172.30.17.116] by xsj-pvapsmtp01 with esmtp (Exim 4.63)
- (envelope-from <michals@xilinx.com>)
- id 1i5kBi-0005k1-Ga; Wed, 04 Sep 2019 22:20:06 -0700
-Subject: Re: [PATCH -next 35/36] spi: zynq-qspi: use
- devm_platform_ioremap_resource() to simplify code
-To: YueHaibing <yuehaibing@huawei.com>, broonie@kernel.org,
- f.fainelli@gmail.com, rjui@broadcom.com, sbranden@broadcom.com,
- eric@anholt.net, wahrenst@gmx.net, shc_work@mail.ru, agross@kernel.org,
- khilman@baylibre.com, matthias.bgg@gmail.com, shawnguo@kernel.org,
- s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
- linux-imx@nxp.com, avifishman70@gmail.com, tmaimon77@gmail.com,
- tali.perry1@gmail.com, venture@google.com, yuenn@google.com,
- benjaminfair@google.com, kgene@kernel.org, krzk@kernel.org,
- andi@etezian.org, palmer@sifive.com, paul.walmsley@sifive.com,
- baohua@kernel.org, mripard@kernel.org, wens@csie.org,
- ldewangan@nvidia.com, thierry.reding@gmail.com, jonathanh@nvidia.com,
- yamada.masahiro@socionext.com, michal.simek@xilinx.com
-References: <20190904135918.25352-1-yuehaibing@huawei.com>
- <20190904135918.25352-36-yuehaibing@huawei.com>
-From: Michal Simek <michal.simek@xilinx.com>
-Message-ID: <fbd385ec-f24d-7628-5f63-03f4444976aa@xilinx.com>
-Date: Thu, 5 Sep 2019 07:19:56 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190904135918.25352-36-yuehaibing@huawei.com>
-Content-Language: en-US
-X-RCIS-Action: ALLOW
-X-TM-AS-Product-Ver: IMSS-7.1.0.1224-8.2.0.1013-23620.005
-X-TM-AS-User-Approved-Sender: Yes;Yes
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:149.199.60.100; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(1496009)(4636009)(346002)(396003)(136003)(376002)(39860400002)(2980300002)(189003)(199004)(478600001)(58126008)(316002)(106002)(52146003)(2486003)(6246003)(76176011)(23676004)(4326008)(5660300002)(65956001)(65806001)(47776003)(6666004)(356004)(70586007)(70206006)(36756003)(44832011)(26005)(2616005)(305945005)(186003)(11346002)(446003)(2906002)(476003)(7416002)(7406005)(336012)(426003)(126002)(36386004)(50466002)(230700001)(31696002)(8936002)(31686004)(486006)(81166006)(81156014)(8676002)(229853002)(9786002)(921003)(5001870100001)(1121003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR02MB5316; H:xsj-pvapsmtpgw02; FPR:;
- SPF:Pass; LANG:en; PTR:unknown-60-100.xilinx.com,xapps1.xilinx.com; MX:1; A:1;
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 2770641f-c6d9-49ae-fa79-08d731c0c0b0
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
- SRVR:BN7PR02MB5316; 
-X-MS-TrafficTypeDiagnostic: BN7PR02MB5316:
-X-Microsoft-Antispam-PRVS: <BN7PR02MB531625F4F25A281A255B5CD4C6BB0@BN7PR02MB5316.namprd02.prod.outlook.com>
-X-Auto-Response-Suppress: DR, RN, NRN, OOF, AutoReply
-X-MS-Oob-TLC-OOBClassifiers: OLM:1079;
-X-Forefront-PRVS: 015114592F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: qv/pAS4OAoGo44rOeZ2Hm2SpuPSdh5pU2/ZuTflAnnakUZOlssAhfQ6teplQXOgiqD8dzoUW3NUgI4G/HIFXIZpXXHH4GNpyVofLYAQDiEYD6fVPXJ5RMt6fQBmW7TyiKV2zcwDwByMjhh3akRMWo6Ps0V8EhBeuj2Afa4Ht/srGaNbvcwr41sjRTh+qq45a/Im6ul1rf/Fv7VnFyBX1BM7VQFJ2Mj1d7PUxxxLB83CpHvVhNpTeCHtHxz+ovsB9PvxxaZ3Y2/jvyDvT9aD+JFjVlD5JRuvFwBqGaYleSzAj67tU0HXgLzbQ5UteTcLIOxt27HNX+HDsE++ZAfbOSwBXIKG2IFw9GLPBqbytHVG+Y4B1svSjlCkuw3jLb6tNnA3mBBYehhsZtFa84mFH7Dm89fjPpfKoIC71tppkQRo=
-X-OriginatorOrg: xilinx.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 05 Sep 2019 05:20:20.8182 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2770641f-c6d9-49ae-fa79-08d731c0c0b0
-X-MS-Exchange-CrossTenant-Id: 657af505-d5df-48d0-8300-c31994686c5c
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=657af505-d5df-48d0-8300-c31994686c5c; Ip=[149.199.60.100];
- Helo=[xsj-pvapsmtpgw02]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR02MB5316
+ id 1i5kdf-0007Or-6i
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 05:49:00 +0000
+Received: by mail-pg1-x544.google.com with SMTP id w10so759509pgj.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 04 Sep 2019 22:48:57 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=g1c0uKqcl2Uqys8hPkg4arH8tc4L0iWbYLMHcFcpz44=;
+ b=CeHnue+XdE3z8T/pA2jTkiHC37W/Lr+ByNfl0cUmH2n7oEC0sX86vGn1OobsUdOX7I
+ RIIU4DpVMt7LNgZ/JrmxPyeCpcIuLA05gcLYoi0iyKDBz8O5gdMeVoZSH/IXehoE+zIt
+ zAjWTTAZ4x0siE6+8EMh63n/maNsRVvEWM1l3SqKiuiHU5xSB5d4Gc1fgTYGGN2z38qX
+ 7HGCeYLt4s/30CR4y9emxzALhTF+jCeW8InHl7p1tAXB4ejPES6sTcmryXt/6N8GWVuc
+ 9E9xG7ZheVjUg4kJwW24iUy6oXwuQww4Z15ZDv9esSS8tj+hqEDSsT8AwUjAs2TJq4Ho
+ sDxQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=g1c0uKqcl2Uqys8hPkg4arH8tc4L0iWbYLMHcFcpz44=;
+ b=pXymzUr733PkcApbuuGoxkKsNhtkrpgnANBFH+RGAKvcfMEDLXs73Ng3GR4PnEJhKq
+ UfLsW3c0QYJQj6h5srA5jn6H/3xUNQmu/HokZ/uOvPJMpuuI7VjR9vIdIjLdT9Zi684z
+ kAgGbDRxM0UK8sO+TfU3dD5Qj+3uBnA9/XCK//DckyN9OMeJ5eUkmF0HCHkjFTRf058y
+ Akl48p3g+sU5o+D/xo5Jv2QXQHCy4HdyIdu21rXDZ0HXSmtNis2CBc+gEhKn9GiICJ9g
+ KHZ6CXesIkfU9eLU1FdF0yM/ZlM8ODM1kXhUAcHtU+w7GDvoNMMiMdx9iwOmQiEu2Z4n
+ GO4Q==
+X-Gm-Message-State: APjAAAXa4WxROLhgoa8t24aRsVt+21raa/NSdJOjUqnPoqlh7pkQHglg
+ yoUFjRMGgwZlfzkJ5qH2CpwX89bH
+X-Google-Smtp-Source: APXvYqw9l30xKKHJt2RD4rDY7PBqvH0nNaPlKgiSXdlhGFBiuNDjRG595n1zw2C8LyCvKuYnZlPgKw==
+X-Received: by 2002:a62:e216:: with SMTP id a22mr1690845pfi.249.1567662536413; 
+ Wed, 04 Sep 2019 22:48:56 -0700 (PDT)
+Received: from localhost.localdomain ([49.216.8.243])
+ by smtp.gmail.com with ESMTPSA id k31sm847472pjb.14.2019.09.04.22.48.50
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Sep 2019 22:48:55 -0700 (PDT)
+From: jamestai.sky@gmail.com
+X-Google-Original-From: james.tai@realtek.com
+To: linux-arm-kernel@lists.infradead.org,
+	linux-kernel@vger.kernel.org
+Subject: [PATCH] ARM: Add support for Realtek SOC
+Date: Thu,  5 Sep 2019 13:46:47 +0800
+Message-Id: <20190905054647.1235-1-james.tai@realtek.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_222028_421241_AE5B775E 
-X-CRM114-Status: GOOD (  13.34  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190904_224859_275834_CA5682BD 
+X-CRM114-Status: GOOD (  17.23  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.73.84 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jamestai.sky[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -154,55 +95,323 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-samsung-soc@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- openbmc@lists.ozlabs.org, linux-mediatek@lists.infradead.org,
- linux-kernel@vger.kernel.org, linux-spi@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-rpi-kernel@lists.infradead.org,
- linux-tegra@vger.kernel.org, linux-amlogic@lists.infradead.org,
- linux-riscv@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ "james.tai" <james.tai@realtek.com>, Arnd Bergmann <arnd@arndb.de>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, CY_Huang <cy.huang@realtek.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ Russell King <linux@armlinux.org.uk>, Stefan Agner <stefan@agner.ch>,
+ Mike Rapoport <rppt@linux.ibm.com>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Paul Burton <paul.burton@mips.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Doug Anderson <armlinux@m.disordat.com>, Thierry Reding <treding@nvidia.com>,
+ Phinex Hung <phinex@realtek.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04. 09. 19 15:59, YueHaibing wrote:
-> Use devm_platform_ioremap_resource() to simplify the code a bit.
-> This is detected by coccinelle.
-> 
-> Reported-by: Hulk Robot <hulkci@huawei.com>
-> Signed-off-by: YueHaibing <yuehaibing@huawei.com>
-> ---
->  drivers/spi/spi-zynq-qspi.c | 4 +---
->  1 file changed, 1 insertion(+), 3 deletions(-)
-> 
-> diff --git a/drivers/spi/spi-zynq-qspi.c b/drivers/spi/spi-zynq-qspi.c
-> index 4a5326c..5cf6993 100644
-> --- a/drivers/spi/spi-zynq-qspi.c
-> +++ b/drivers/spi/spi-zynq-qspi.c
-> @@ -620,7 +620,6 @@ static int zynq_qspi_probe(struct platform_device *pdev)
->  	struct device *dev = &pdev->dev;
->  	struct device_node *np = dev->of_node;
->  	struct zynq_qspi *xqspi;
-> -	struct resource *res;
->  	u32 num_cs;
->  
->  	ctlr = spi_alloc_master(&pdev->dev, sizeof(*xqspi));
-> @@ -630,8 +629,7 @@ static int zynq_qspi_probe(struct platform_device *pdev)
->  	xqspi = spi_controller_get_devdata(ctlr);
->  	xqspi->dev = dev;
->  	platform_set_drvdata(pdev, xqspi);
-> -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> -	xqspi->regs = devm_ioremap_resource(&pdev->dev, res);
-> +	xqspi->regs = devm_platform_ioremap_resource(pdev, 0);
->  	if (IS_ERR(xqspi->regs)) {
->  		ret = PTR_ERR(xqspi->regs);
->  		goto remove_master;
-> 
+From: "james.tai" <james.tai@realtek.com>
 
-Acked-by: Michal Simek <michal.simek@xilinx.com>
+This patch adds the basic machine file for
+the Realtek RTD16XX platform.
 
-Thanks,
-Michal
+Signed-off-by: james.tai <james.tai@realtek.com>
+---
+ arch/arm/Kconfig                |  2 +
+ arch/arm/Makefile               |  2 +
+ arch/arm/mach-realtek/Kconfig   | 32 ++++++++++++
+ arch/arm/mach-realtek/Makefile  |  3 ++
+ arch/arm/mach-realtek/platsmp.c | 91 +++++++++++++++++++++++++++++++++
+ arch/arm/mach-realtek/platsmp.h |  7 +++
+ arch/arm/mach-realtek/realtek.c | 78 ++++++++++++++++++++++++++++
+ 7 files changed, 215 insertions(+)
+ create mode 100644 arch/arm/mach-realtek/Kconfig
+ create mode 100644 arch/arm/mach-realtek/Makefile
+ create mode 100644 arch/arm/mach-realtek/platsmp.c
+ create mode 100644 arch/arm/mach-realtek/platsmp.h
+ create mode 100644 arch/arm/mach-realtek/realtek.c
+
+diff --git a/arch/arm/Kconfig b/arch/arm/Kconfig
+index 33b00579beff..c7c9a3662eb7 100644
+--- a/arch/arm/Kconfig
++++ b/arch/arm/Kconfig
+@@ -836,6 +836,8 @@ source "arch/arm/mach-zx/Kconfig"
+ 
+ source "arch/arm/mach-zynq/Kconfig"
+ 
++source "arch/arm/mach-realtek/Kconfig"
++
+ # ARMv7-M architecture
+ config ARCH_EFM32
+ 	bool "Energy Micro efm32"
+diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+index c3624ca6c0bc..1f0926449d47 100644
+--- a/arch/arm/Makefile
++++ b/arch/arm/Makefile
+@@ -148,6 +148,7 @@ endif
+ textofs-$(CONFIG_ARCH_MSM8X60) := 0x00208000
+ textofs-$(CONFIG_ARCH_MSM8960) := 0x00208000
+ textofs-$(CONFIG_ARCH_MESON) := 0x00208000
++textofs-$(CONFIG_ARCH_REALTEK) := 0x00208000
+ textofs-$(CONFIG_ARCH_AXXIA) := 0x00308000
+ 
+ # Machine directory name.  This list is sorted alphanumerically
+@@ -225,6 +226,7 @@ machine-$(CONFIG_ARCH_VT8500)		+= vt8500
+ machine-$(CONFIG_ARCH_W90X900)		+= w90x900
+ machine-$(CONFIG_ARCH_ZX)		+= zx
+ machine-$(CONFIG_ARCH_ZYNQ)		+= zynq
++machine-$(CONFIG_ARCH_REALTEK)		+= realtek
+ machine-$(CONFIG_PLAT_SPEAR)		+= spear
+ 
+ # Platform directory name.  This list is sorted alphanumerically
+diff --git a/arch/arm/mach-realtek/Kconfig b/arch/arm/mach-realtek/Kconfig
+new file mode 100644
+index 000000000000..a8269964dbdb
+--- /dev/null
++++ b/arch/arm/mach-realtek/Kconfig
+@@ -0,0 +1,32 @@
++# SPDX-License-Identifier: GPL-2.0-only
++menuconfig ARCH_REALTEK
++	bool "Realtek SoCs"
++	select ARM_GLOBAL_TIMER
++	select CLKDEV_LOOKUP
++	select HAVE_SMP
++	select HAVE_MACH_CLKDEV
++	select GENERIC_CLOCKEVENTS
++	select HAVE_SCHED_CLOCK
++	select ARCH_HAS_CPUFREQ
++	select CLKSRC_OF
++	select ARCH_REQUIRE_GPIOLIB
++	select GENERIC_IRQ_CHIP
++	select IRQ_DOMAIN
++	select PINCTRL
++	select COMMON_CLK
++	select ARCH_HAS_BARRIERS
++	select SPARSE_IRQ
++	select PM_OPP
++	select ARM_HAS_SG_CHAIN
++	select ARM_PATCH_PHYS_VIRT
++	select AUTO_ZRELADDR
++	select MIGHT_HAVE_PCI
++	select MULTI_IRQ_HANDLER
++	select PCI_DOMAINS if PCI
++	select USE_OF
++
++config ARCH_RTD16XX
++	bool "Enable support for RTD1619"
++	depends on ARCH_REALTEK
++	select ARM_GIC_V3
++	select ARM_PSCI
+diff --git a/arch/arm/mach-realtek/Makefile b/arch/arm/mach-realtek/Makefile
+new file mode 100644
+index 000000000000..9cdc1f1f2917
+--- /dev/null
++++ b/arch/arm/mach-realtek/Makefile
+@@ -0,0 +1,3 @@
++# SPDX-License-Identifier: GPL-2.0-only
++obj-$(CONFIG_ARCH_REALTEK) += realtek.o
++obj-$(CONFIG_SMP) += platsmp.o
+diff --git a/arch/arm/mach-realtek/platsmp.c b/arch/arm/mach-realtek/platsmp.c
+new file mode 100644
+index 000000000000..5c4368fe1520
+--- /dev/null
++++ b/arch/arm/mach-realtek/platsmp.c
+@@ -0,0 +1,91 @@
++// SPDX-License-Identifier: GPL-2.0-only
++
++/*
++ * Copyright (c) 2019 Realtek Semiconductor Corp.
++ */
++
++#include <linux/init.h>
++#include <linux/delay.h>
++#include <linux/jiffies.h>
++#include <linux/io.h>
++#include <linux/memory.h>
++#include <linux/smp.h>
++#include <linux/of.h>
++#include <linux/arm-smccc.h>
++#include <asm/smp_plat.h>
++#include <asm/cacheflush.h>
++#include <asm/cp15.h>
++#include <asm/barrier.h>
++
++#define BL31_CMD 0x8400ff04
++#define BL31_DAT 0x00001619
++#define CPUID 28
++#define CORE_PWRDN_EN 0x1
++
++#define CPUPWRCTLR __ACCESS_CP15(c15, 0, c2, 7)
++
++static u32 __iomem *cpu_release_virt;
++
++static int rtk_boot_secondary(unsigned int cpu, struct task_struct *idle)
++{
++	unsigned long entry_pa = __pa_symbol(secondary_startup);
++
++	writel_relaxed(entry_pa | (cpu << CPUID), cpu_release_virt);
++
++	arch_send_wakeup_ipi_mask(cpumask_of(cpu));
++
++	return 0;
++}
++
++void rtk_prepare_cpus(unsigned int max_cpus)
++{
++	struct device_node *np;
++	u32 release_phys;
++	int cpu;
++
++	for_each_possible_cpu(cpu) {
++
++		np = of_get_cpu_node(cpu, NULL);
++		if (!np)
++			continue;
++
++		if (of_property_read_u32(np, "cpu-release-addr", &release_phys))
++			continue;
++
++		cpu_release_virt = ioremap(release_phys, sizeof(u32));
++
++		set_cpu_present(cpu, true);
++	}
++}
++
++#ifdef CONFIG_HOTPLUG_CPU
++
++static void rtk_cpu_die(unsigned int cpu)
++{
++	struct arm_smccc_res res;
++	unsigned int cpu_pwr_ctrl;
++
++	writel_relaxed(0x0, cpu_release_virt);
++
++	/* notify BL31 cpu hotplug */
++	arm_smccc_smc(BL31_CMD, BL31_DAT, 0, 0, 0, 0, 0, 0, &res);
++	v7_exit_coherency_flush(louis);
++
++	cpu_pwr_ctrl = read_sysreg(CPUPWRCTLR);
++	cpu_pwr_ctrl |= CORE_PWRDN_EN;
++	write_sysreg(cpu_pwr_ctrl, CPUPWRCTLR);
++
++	dsb(sy);
++
++	for (;;)
++		wfi();
++}
++#endif
++
++struct smp_operations rtk_smp_ops __initdata = {
++	.smp_prepare_cpus = rtk_prepare_cpus,
++	.smp_boot_secondary = rtk_boot_secondary,
++#ifdef CONFIG_HOTPLUG_CPU
++	.cpu_die = rtk_cpu_die,
++#endif
++};
+diff --git a/arch/arm/mach-realtek/platsmp.h b/arch/arm/mach-realtek/platsmp.h
+new file mode 100644
+index 000000000000..9c411d097c14
+--- /dev/null
++++ b/arch/arm/mach-realtek/platsmp.h
+@@ -0,0 +1,7 @@
++/* SPDX-License-Identifier: GPL-2.0-only */
++
++/*
++ * Copyright (c) 2019 Realtek Semiconductor Corp.
++ */
++
++extern struct smp_operations rtk_smp_ops;
+diff --git a/arch/arm/mach-realtek/realtek.c b/arch/arm/mach-realtek/realtek.c
+new file mode 100644
+index 000000000000..d248e19f4c1d
+--- /dev/null
++++ b/arch/arm/mach-realtek/realtek.c
+@@ -0,0 +1,78 @@
++// SPDX-License-Identifier: GPL-2.0-only
++
++/*
++ * Copyright (c) 2019 Realtek Semiconductor Corp.
++ */
++
++#include <linux/clk-provider.h>
++#include <linux/clocksource.h>
++#include <linux/kernel.h>
++#include <linux/init.h>
++#include <linux/irqchip.h>
++#include <linux/of_address.h>
++#include <linux/of_irq.h>
++#include <linux/of_platform.h>
++#include <linux/io.h>
++#include <linux/memblock.h>
++#include <linux/delay.h>
++#include <linux/clockchips.h>
++#include <asm/mach/arch.h>
++#include <asm/mach/map.h>
++#include <asm/system_misc.h>
++#include <asm/system_info.h>
++
++#include "platsmp.h"
++
++#define RBUS_BASE_PHYS (0x98000000)
++#define RBUS_BASE_VIRT (0xfe000000)
++#define RBUS_BASE_SIZE (0x00100000)
++
++static struct map_desc rtk_io_desc[] __initdata = {
++	{
++		.virtual = (unsigned long) IOMEM(RBUS_BASE_VIRT),
++		.pfn = __phys_to_pfn(RBUS_BASE_PHYS),
++		.length = RBUS_BASE_SIZE,
++		.type = MT_DEVICE,
++	},
++};
++
++void __init rtk_map_io(void)
++{
++	debug_ll_io_init();
++	iotable_init(rtk_io_desc, ARRAY_SIZE(rtk_io_desc));
++}
++
++static void __init rtk_dt_init(void)
++{
++	of_platform_populate(NULL, of_default_bus_match_table, NULL, NULL);
++}
++
++static void __init rtk_timer_init(void)
++{
++#ifdef CONFIG_COMMON_CLK
++	of_clk_init(NULL);
++#endif
++	timer_probe();
++	tick_setup_hrtimer_broadcast();
++}
++
++bool __init rtk_smp_init_ops(void)
++{
++	smp_set_ops(smp_ops(rtk_smp_ops));
++
++	return true;
++}
++
++static const char *const rtd16xx_board_dt_compat[] = {
++	"realtek,rtd1619",
++	NULL,
++};
++
++DT_MACHINE_START(RTD16XX, "Realtek rtd16xx platform")
++	.map_io = rtk_map_io,
++	.init_machine = rtk_dt_init,
++	.init_time = rtk_timer_init,
++	.dt_compat = rtd16xx_board_dt_compat,
++	.smp = smp_ops(rtk_smp_ops),
++	.smp_init = smp_init_ops(rtk_smp_init_ops),
++MACHINE_END
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
