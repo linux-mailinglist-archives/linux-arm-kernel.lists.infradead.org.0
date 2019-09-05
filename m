@@ -2,57 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5CA51AA465
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:27:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 14477AA468
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 15:27:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=d87JtdwZqN8uX9m58ErQgaeDQIiqlZEwEhg2QCl+MZ8=; b=fbWJhpwtavU9ro
-	9CY4JBgGTDinDdHkfUKCdnvjyTi9LI3/5F/wlJ/5SaCUqRIkuLQP0ISvzNqTPNU0WUuYw1hYPQAup
-	TSezC/71MLf+eN6ik0kpZadD9g+uJQ5rqYbj9IU8IqnrJHTcvcHQvTb6MCkA/A46WHALg/hN/qQOs
-	kBxcyaDx74SS4mZmJqmKLxRiA7f4D+krhDh0WXDZRm4+JE9VujXTw8ah5C4jeoKTYE3b7PcC3fE42
-	GjdQdAGkaSwHvHID5JLzb/5yak8mR0jt4T+levpAHtKUvWzisNRRKxznoJFKUUY/ZHCkSS1TpHLjx
-	9sDH41bDxFjClo74L8fw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=rLwil8TMn3FzzMzLYK+8AIy1ubKYZ7lphHaTsLjgRv0=; b=qflwOMTk0HngTl
+	WTZ2jHOmNjJ7mXI4ps3aGXt2pT4YE1YUU62PhANyfeq1092P2SEwe/wdxqqiw6aLtSn6VgTapphTf
+	w9zIGJ54QTfU3R1l215Or6J6wBGBHkJAA9qPIfu2BGGFpPQad+uo3IjgL2v2ZZLYLfXw0t4A0HY/O
+	ffFD8raTf/16QKcBe/sltA2zyZi6Z0LGD8l/6kS7cPPfkN0B9g7BlugQYrm3Rnv6/nFMqrk0nTflH
+	0tt2n+AUo4Ymp9Hn9Jyj+hARmrFmhCLYBS71RBIk5pwNFjBsM8Jf8rRzjcilxm/oQXcX/EI6lj/VK
+	mFjFuT5rq2dJtLyyFeMQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5rmj-0000Ak-VD; Thu, 05 Sep 2019 13:26:50 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5rmP-00005h-OA
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 13:26:31 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A069028;
- Thu,  5 Sep 2019 06:26:28 -0700 (PDT)
-Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 7F54B3F67D; Thu,  5 Sep 2019 06:26:27 -0700 (PDT)
-Subject: Re: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
- driven by vcpu_load/put
-To: Andrew Murray <andrew.murray@arm.com>
-References: <20190903155747.219802-1-maz@kernel.org>
- <20190905130410.GA9720@e119886-lin.cambridge.arm.com>
-From: Marc Zyngier <maz@kernel.org>
-Organization: Approximate
-Message-ID: <28777048-c34c-b2b3-468f-233b068e057a@kernel.org>
-Date: Thu, 5 Sep 2019 14:26:26 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i5rn2-0000Tj-Uy; Thu, 05 Sep 2019 13:27:09 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5rmk-0000MF-ME; Thu, 05 Sep 2019 13:26:52 +0000
+X-UUID: ad3cf4ad084647ab842edc3a7552582c-20190905
+X-UUID: ad3cf4ad084647ab842edc3a7552582c-20190905
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <jing-ting.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 855500143; Thu, 05 Sep 2019 05:26:42 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 06:26:38 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 21:26:37 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 5 Sep 2019 21:26:36 +0800
+Message-ID: <1567689999.2389.5.camel@mtkswgap22>
+Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
+From: Jing-Ting Wu <jing-ting.wu@mediatek.com>
+To: Qais Yousef <qais.yousef@arm.com>
+Date: Thu, 5 Sep 2019 21:26:39 +0800
+In-Reply-To: <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
+References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
+ <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
+ <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190905130410.GA9720@e119886-lin.cambridge.arm.com>
-Content-Language: en-US
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_062629_929444_AD093147 
-X-CRM114-Status: GOOD (  32.04  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190905_062650_867822_78DC7E05 
+X-CRM114-Status: GOOD (  24.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,293 +74,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kvm@vger.kernel.org, Suzuki K Poulose <suzuki.poulose@arm.com>,
- Andre Przywara <Andre.Przywara@arm.com>, Eric Auger <eric.auger@redhat.com>,
- James Morse <james.morse@arm.com>, linux-arm-kernel@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, Julien Thierry <julien.thierry.kdev@gmail.com>
+Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Valentin Schneider <valentin.schneider@arm.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 05/09/2019 14:04, Andrew Murray wrote:
-> Hi Marc,
+On Fri, 2019-08-30 at 15:55 +0100, Qais Yousef wrote:
+> On 08/29/19 11:38, Valentin Schneider wrote:
+> > On 29/08/2019 04:15, Jing-Ting Wu wrote:
+> > > At original linux design, RT & CFS scheduler are independent.
+> > > Current RT task placement policy will select the first cpu in
+> > > lowest_mask, even if the first CPU is running a CFS task.
+> > > This may put RT task to a running cpu and let CFS task runnable.
+> > > 
+> > > So we select idle cpu in lowest_mask first to avoid preempting
+> > > CFS task.
+> > > 
+> > 
+> > Regarding the RT & CFS thing, that's working as intended. RT is a whole
+> > class above CFS, it shouldn't have to worry about CFS.
+> > 
+> > On the other side of things, CFS does worry about RT. We have the concept
+> > of RT-pressure in the CFS scheduler, where RT tasks will reduce a CPU's
+> > capacity (see fair.c::scale_rt_capacity()).
+> > 
+> > CPU capacity is looked at on CFS wakeup (see wake_cap() and
+> > find_idlest_cpu()), and the periodic load balancer tries to spread load
+> > over capacity, so it'll tend to put less things on CPUs that are also
+> > running RT tasks.
+> > 
+> > If RT were to start avoiding rqs with CFS tasks, we'd end up with a nasty
+> > situation were both are avoiding each other. It's even more striking when
+> > you see that RT pressure is done with a rq-wide RT util_avg, which
+> > *doesn't* get migrated when a RT task migrates. So if you decide to move
+> > a RT task to an idle CPU "B" because CPU "A" had runnable CFS tasks, the
+> > CFS scheduler will keep seeing CPU "B" as not significantly RT-pressured
+> > while that util_avg signal ramps up, whereas it would correctly see CPU
+> > "A" as RT-pressured if the RT task previously ran there.
+> > 
+> > So overall I think this is the wrong approach.
 > 
-> Some feedback below, but mostly questions to aid my understanding...
+> I like the idea, but yeah tend to agree the current approach might not be
+> enough.
 > 
-> On Tue, Sep 03, 2019 at 04:57:47PM +0100, Marc Zyngier wrote:
->> When the VHE code was reworked, a lot of the vgic stuff was moved around,
->> but the GICv4 residency code did stay untouched, meaning that we come
->> in and out of residency on each flush/sync, which is obviously suboptimal.
->>
->> To address this, let's move things around a bit:
->>
->> - Residency entry (flush) moves to vcpu_load
->> - Residency exit (sync) moves to vcpu_put
->> - On blocking (entry to WFI), we "put"
->> - On unblocking (exit from WFI, we "load"
->>
->> Because these can nest (load/block/put/load/unblock/put, for example),
->> we now have per-VPE tracking of the residency state.
->>
->> Additionally, vgic_v4_put gains a "need doorbell" parameter, which only
->> gets set to true when blocking because of a WFI. This allows a finer
->> control of the doorbell, which now also gets disabled as soon as
->> it gets signaled.
->>
->> Signed-off-by: Marc Zyngier <maz@kernel.org>
->> ---
->>  drivers/irqchip/irq-gic-v4.c       |  7 +++-
->>  include/kvm/arm_vgic.h             |  4 +--
->>  include/linux/irqchip/arm-gic-v4.h |  2 ++
->>  virt/kvm/arm/arm.c                 | 12 ++++---
->>  virt/kvm/arm/vgic/vgic-v3.c        |  4 +++
->>  virt/kvm/arm/vgic/vgic-v4.c        | 55 ++++++++++++++----------------
->>  virt/kvm/arm/vgic/vgic.c           |  4 ---
->>  virt/kvm/arm/vgic/vgic.h           |  2 --
->>  8 files changed, 48 insertions(+), 42 deletions(-)
->>
->> diff --git a/drivers/irqchip/irq-gic-v4.c b/drivers/irqchip/irq-gic-v4.c
->> index 563e87ed0766..45969927cc81 100644
->> --- a/drivers/irqchip/irq-gic-v4.c
->> +++ b/drivers/irqchip/irq-gic-v4.c
->> @@ -141,12 +141,17 @@ static int its_send_vpe_cmd(struct its_vpe *vpe, struct its_cmd_info *info)
->>  int its_schedule_vpe(struct its_vpe *vpe, bool on)
->>  {
->>  	struct its_cmd_info info;
->> +	int ret;
->>  
->>  	WARN_ON(preemptible());
->>  
->>  	info.cmd_type = on ? SCHEDULE_VPE : DESCHEDULE_VPE;
->>  
->> -	return its_send_vpe_cmd(vpe, &info);
->> +	ret = its_send_vpe_cmd(vpe, &info);
->> +	if (!ret)
->> +		vpe->resident = on;
->> +
+> I think the major problem here is that on generic systems where CFS is a first
+> class citizen, RT tasks can be hostile to them - not always necessarily for a
+> good reason.
 > 
-> We make an assumption here that its_schedule_vpe is the only caller of
-> its_send_vpe_cmd where we may pass SCHEDULE_VPE. I guess this is currently
-> the case.
-
-It is, and it is intended to stay that way.
-
-> Why do we also set the residency flag for DESCHEDULE_VPE?
-
-We don't.
-
-> And by residency we mean that interrupts are delivered to VM, instead of
-> doorbell?
-
-Interrupts are always delivered to the VPE, whether it is resident or
-not. Residency is defined as the VPE that is currently programmed in the
-redistributor (by virtue of programming the VPROPBASER and VPENDBASER
-registers).
-
+> To further complicate the matter, even among CFS tasks we can't tell which are
+> more important than the others - though hopefully latency-nice proposal will
+> make the situation better.
 > 
->> +	return ret;
->>  }
->>  
->>  int its_invall_vpe(struct its_vpe *vpe)
->> diff --git a/include/kvm/arm_vgic.h b/include/kvm/arm_vgic.h
->> index af4f09c02bf1..4dc58d7a0010 100644
->> --- a/include/kvm/arm_vgic.h
->> +++ b/include/kvm/arm_vgic.h
->> @@ -396,7 +396,7 @@ int kvm_vgic_v4_set_forwarding(struct kvm *kvm, int irq,
->>  int kvm_vgic_v4_unset_forwarding(struct kvm *kvm, int irq,
->>  				 struct kvm_kernel_irq_routing_entry *irq_entry);
->>  
->> -void kvm_vgic_v4_enable_doorbell(struct kvm_vcpu *vcpu);
->> -void kvm_vgic_v4_disable_doorbell(struct kvm_vcpu *vcpu);
->> +int vgic_v4_load(struct kvm_vcpu *vcpu);
->> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db);
->>  
->>  #endif /* __KVM_ARM_VGIC_H */
->> diff --git a/include/linux/irqchip/arm-gic-v4.h b/include/linux/irqchip/arm-gic-v4.h
->> index e6b155713b47..ab1396afe08a 100644
->> --- a/include/linux/irqchip/arm-gic-v4.h
->> +++ b/include/linux/irqchip/arm-gic-v4.h
->> @@ -35,6 +35,8 @@ struct its_vpe {
->>  	/* Doorbell interrupt */
->>  	int			irq;
->>  	irq_hw_number_t		vpe_db_lpi;
->> +	/* VPE resident */
->> +	bool			resident;
->>  	/* VPE proxy mapping */
->>  	int			vpe_proxy_event;
->>  	/*
->> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
->> index 35a069815baf..4e69268621b6 100644
->> --- a/virt/kvm/arm/arm.c
->> +++ b/virt/kvm/arm/arm.c
->> @@ -321,20 +321,24 @@ void kvm_arch_vcpu_blocking(struct kvm_vcpu *vcpu)
->>  	/*
->>  	 * If we're about to block (most likely because we've just hit a
->>  	 * WFI), we need to sync back the state of the GIC CPU interface
->> -	 * so that we have the lastest PMR and group enables. This ensures
->> +	 * so that we have the latest PMR and group enables. This ensures
->>  	 * that kvm_arch_vcpu_runnable has up-to-date data to decide
->>  	 * whether we have pending interrupts.
->> +	 *
->> +	 * For the same reason, we want to tell GICv4 that we need
->> +	 * doorbells to be signalled, should an interrupt become pending.
+> So I agree we have a problem here, but I think this patch is just a temporary
+> band aid and we need to do better. Though I have no concrete suggestion yet on
+> how to do that.
 > 
-> As I understand, and as indicated by removal of kvm_vgic_v4_enable_doorbell
-> below, we've now abstracted enabling the doorbell behind the concept of a
-> v4_put.
+> Another thing I couldn't quantify yet how common and how severe this problem is
+> yet. Jing-Ting, if you can share the details of your use case that'd be great.
 > 
-> Why then, do we break that abstraction by adding this comment? Surely we just
-> want to indicate that we're done with ITS for now - do whatever you need to do.
-
-Well, I don't think you can realistically pretend that KVM doesn't know
-about the intricacies of GICv4. They are intimately linked.
-
-> This would have made more sense to me if the comment above was removed in this
-> patch rather than added.
-
-I disagree. The very reason we to a put on GICv4 is to get a doorbell.
-If we didn't need one, we'd just let schedule() do a non
-doorbell-generating vcpu_put.
-
->>  	 */
->>  	preempt_disable();
->>  	kvm_vgic_vmcr_sync(vcpu);
->> +	vgic_v4_put(vcpu, true);
->>  	preempt_enable();
->> -
->> -	kvm_vgic_v4_enable_doorbell(vcpu);
->>  }
->>  
->>  void kvm_arch_vcpu_unblocking(struct kvm_vcpu *vcpu)
->>  {
->> -	kvm_vgic_v4_disable_doorbell(vcpu);
->> +	preempt_disable();
->> +	vgic_v4_load(vcpu);
->> +	preempt_enable();
->>  }
->>  
->>  int kvm_arch_vcpu_init(struct kvm_vcpu *vcpu)
->> diff --git a/virt/kvm/arm/vgic/vgic-v3.c b/virt/kvm/arm/vgic/vgic-v3.c
->> index 8d69f007dd0c..48307a9eb1d8 100644
->> --- a/virt/kvm/arm/vgic/vgic-v3.c
->> +++ b/virt/kvm/arm/vgic/vgic-v3.c
->> @@ -664,6 +664,8 @@ void vgic_v3_load(struct kvm_vcpu *vcpu)
->>  
->>  	if (has_vhe())
->>  		__vgic_v3_activate_traps(vcpu);
->> +
->> +	WARN_ON(vgic_v4_load(vcpu));
->>  }
->>  
->>  void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
->> @@ -676,6 +678,8 @@ void vgic_v3_vmcr_sync(struct kvm_vcpu *vcpu)
->>  
->>  void vgic_v3_put(struct kvm_vcpu *vcpu)
->>  {
->> +	WARN_ON(vgic_v4_put(vcpu, false));
->> +
->>  	vgic_v3_vmcr_sync(vcpu);
->>  
->>  	kvm_call_hyp(__vgic_v3_save_aprs, vcpu);
->> diff --git a/virt/kvm/arm/vgic/vgic-v4.c b/virt/kvm/arm/vgic/vgic-v4.c
->> index 477af6aebb97..3a8a28854b13 100644
->> --- a/virt/kvm/arm/vgic/vgic-v4.c
->> +++ b/virt/kvm/arm/vgic/vgic-v4.c
->> @@ -85,6 +85,10 @@ static irqreturn_t vgic_v4_doorbell_handler(int irq, void *info)
->>  {
->>  	struct kvm_vcpu *vcpu = info;
->>  
->> +	/* We got the message, no need to fire again */
->> +	if (!irqd_irq_disabled(&irq_to_desc(irq)->irq_data))
->> +		disable_irq_nosync(irq);
->> +
->>  	vcpu->arch.vgic_cpu.vgic_v3.its_vpe.pending_last = true;
->>  	kvm_make_request(KVM_REQ_IRQ_PENDING, vcpu);
->>  	kvm_vcpu_kick(vcpu);
+> Cheers
 > 
-> This is because the doorbell will fire each time any guest device interrupts,
-> however we only need to tell the guest just once that something has happened
-> right?
+> --
+> Qais Yousef
 
-Not for any guest interrupt. Only for VLPIs. And yes, there is no need
-to get multiple doorbells. Once you got one, you know you're runnable
-and don't need to be told another 50k times...
 
-> 
->> @@ -192,20 +196,30 @@ void vgic_v4_teardown(struct kvm *kvm)
->>  	its_vm->vpes = NULL;
->>  }
->>  
->> -int vgic_v4_sync_hwstate(struct kvm_vcpu *vcpu)
->> +int vgic_v4_put(struct kvm_vcpu *vcpu, bool need_db)
->>  {
->> -	if (!vgic_supports_direct_msis(vcpu->kvm))
->> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
->> +	struct irq_desc *desc = irq_to_desc(vpe->irq);
->> +
->> +	if (!vgic_supports_direct_msis(vcpu->kvm) || !vpe->resident)
->>  		return 0;
-> 
-> Are we using !vpe->resident to avoid pointlessly doing work we've
-> already done?
+I agree that the nasty situation will happen.The current approach and this patch might not be enough.
+But for requirement of performance, I think it is better to differentiate between idle CPU and CPU has CFS task.
 
-And also to avoid corrupting the state that we've saved by re-reading
-what could potentially be an invalid state.
+For example, we use rt-app to evaluate runnable time on non-patched environment.
+There are (NR_CPUS-1) heavy CFS tasks and 1 RT Task. When a CFS task is running, the RT task wakes up and choose the same CPU.
+The CFS task will be preempted and keep runnable until it is migrated to another cpu by load balance.
+But load balance is not triggered immediately, it will be triggered until timer tick hits with some condition satisfied(ex. rq->next_balance).
+CFS tasks may be runnable for a long time. In this test case, it increase 332.091 ms runnable time for CFS task.
 
-> 
->>  
->> -	return its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, false);
->> +	/*
->> +	 * If blocking, a doorbell is required. Undo the nested
->> +	 * disable_irq() calls...
->> +	 */
->> +	while (need_db && irqd_irq_disabled(&desc->irq_data))
->> +		enable_irq(vpe->irq);
->> +
->> +	return its_schedule_vpe(vpe, false);
->>  }
->>  
->> -int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
->> +int vgic_v4_load(struct kvm_vcpu *vcpu)
->>  {
->> -	int irq = vcpu->arch.vgic_cpu.vgic_v3.its_vpe.irq;
->> +	struct its_vpe *vpe = &vcpu->arch.vgic_cpu.vgic_v3.its_vpe;
->>  	int err;
->>  
->> -	if (!vgic_supports_direct_msis(vcpu->kvm))
->> +	if (!vgic_supports_direct_msis(vcpu->kvm) || vpe->resident)
->>  		return 0;
->>  
->>  	/*
->> @@ -214,11 +228,14 @@ int vgic_v4_flush_hwstate(struct kvm_vcpu *vcpu)
->>  	 * doc in drivers/irqchip/irq-gic-v4.c to understand how this
->>  	 * turns into a VMOVP command at the ITS level.
->>  	 */
->> -	err = irq_set_affinity(irq, cpumask_of(smp_processor_id()));
->> +	err = irq_set_affinity(vpe->irq, cpumask_of(smp_processor_id()));
->>  	if (err)
->>  		return err;
->>  
->> -	err = its_schedule_vpe(&vcpu->arch.vgic_cpu.vgic_v3.its_vpe, true);
->> +	/* Disabled the doorbell, as we're about to enter the guest */
->> +	disable_irq(vpe->irq);
->> +
->> +	err = its_schedule_vpe(vpe, true);
->>  	if (err)
->>  		return err;
-> 
-> Given that the doorbell corresponds with vpe residency, it could make sense
-> to add a helper here that calls its_schedule_vpe and [disable,enable]_irq.
-> Though I see that vgic_v3_put calls vgic_v4_put with need_db=false. I wonder
-> what effect setting that to true would be for vgic_v3_put? Could it be known
-> that v3 won't set need_db to true?
+The detailed log is shown as following, CFS task(thread1-6580) is preempted by RT task(thread0-6674) about 332ms:
+thread1-6580  [003] dnh2    94.452898: sched_wakeup: comm=thread0 pid=6674 prio=89 target_cpu=003 
+thread1-6580  [003] d..2    94.452916: sched_switch: prev_comm=thread1 prev_pid=6580 prev_prio=120 prev_state=R ==> next_comm=thread0 next_pid=6674 next_prio=89
+.... 332.091ms
+krtatm-1930  [001] d..2    94.785007: sched_migrate_task: comm=thread1 pid=6580 prio=120 orig_cpu=3 dest_cpu=1
+krtatm-1930  [001] d..2    94.785020: sched_switch: prev_comm=krtatm prev_pid=1930 prev_prio=100 prev_state=S ==> next_comm=thread1 next_pid=6580 next_prio=120
 
-There is no doorbells for GICv3.
+So I think choose idle CPU at RT wake up flow could reduce the CFS runnable time. 
 
-	M.
--- 
-Jazz is not dead, it just smells funny...
+
+Best regards,
+Jing-Ting Wu
+
+
 
 _______________________________________________
 linux-arm-kernel mailing list
