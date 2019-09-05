@@ -2,89 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B2829AA0A7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:57:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2269AAA0A8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:58:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=odIEvvZqAlCdaxXqHVsWLzqwvHMMwPfDSwQcsuu+WuQ=; b=hhyWZD9YWR3fdt
-	5xcIsi5XCDtMkxchXTD41uGG9iLp1p3qxQ19v2HsSSoqDD10m/7yXn9hp96XboudrhZYM0MAE+qyG
-	EiU4phtKFoaAwsTlKcBZwE+yn4F5YgMV2QS5k7yX0YEBZWKxJe6UoS8oyWMzZ8WhYKTcAhbd3Kjj/
-	nXx68/fP2XcxPPJ5LSsTxBJ2RgvpYmd51dOS4XFuguYkLOmwZzoXwugh+06KFF+V77cTQ/cjEEVIK
-	QBmOWk5N4bj0NXBdrhsom0lxkM1DGblO87dN+TGSV3gw8HxVT4Y0DpxNpPT0p4XInZbGrI3v+uMCR
-	bV7ovYNSj95QApVq2hyw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ne0I6Jb3EBTCOHFAthZ0YWUTT79Oz59igWgXS4KJDt8=; b=P4LASZEfIY3qVP
+	RxOe94FPj8EqkkDhZn6w+7cvCj7p1lEfEodrRXciEjChbFVkyNNWgEKUa7vf3u+2MLpPNPdAbMhvE
+	diX11GKJp7HdCgGRkm9LC/QNyKxtMAsesda4R9Gl8DyZVKUf02SswXi9y3XVPDTD1+mIrpQUXVTkf
+	ON+1mZ4NsoEeCi7j4lZUbkJa6UlIemJa5j3Wl5x1MYBhNl6ic2JXPRd1ZM9VRDS6cvBIjIPkE7zIP
+	Aw0uPmYSu5GX/vOqcz8ciyHnRQYbb1yAo6pRwKFopQOPC7Mg/OS3iJfKvak42ZYvlTOAPpwpl7nX5
+	NVENbOX8AkQsolzdwLeA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5pSV-0001CS-1F; Thu, 05 Sep 2019 10:57:47 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i5pT1-0001UX-G0; Thu, 05 Sep 2019 10:58:19 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5pSN-0001BW-LR
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 10:57:41 +0000
-Received: from mail-wm1-f71.google.com (mail-wm1-f71.google.com
- [209.85.128.71])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id B53D288311
- for <linux-arm-kernel@lists.infradead.org>;
- Thu,  5 Sep 2019 10:57:38 +0000 (UTC)
-Received: by mail-wm1-f71.google.com with SMTP id t185so795961wmg.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 03:57:38 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=u65TSO+Rvf1axEqmi3wSZZGF+sDF08PzfGTCX34no0w=;
- b=f89IhFI9UI2f6oVEJDlxlVOrZ5vGaNAlXGw3/8yhqnw/LgnuEqNYKDMkMras/w1w9H
- D+jImGOfK9ANL1IqW5i11pIcsH+ZKBTDU97HH1Nx3wuf9lGR+9HGb3qXwsvNkJwy6J9L
- gflQiuXhO579vSElz7s5Z4Pm8fpiRMM15pFEJ9aBHre8K1NQhRgK7tS2kfTurM8GqSDi
- QznoPCtoyk9NisqMUPU/UTPz6dawNsIw/Nz9Eo7XMqvYVcaeYIZUn31bLzuQTD/AAXEz
- hNJVgEPjYdozOkYC4pEDJ8rq8q7+nKNn+wkPzheAH06FEGaglH3dwNBb9nNLNmwb2+Ai
- InHg==
-X-Gm-Message-State: APjAAAVwOSkvIkoj6eKOEtTHRVVtLtPocWcJ61V5GgFEEYnfAvUu0l4x
- E6dDJvqrb5Yk/tyTGZwFtj/4QLL4CLsHuuUiCUyw1M20ANx0M/jflZqXfaCkNRQztrtJ6WXu0ET
- Oe+htWw9gWxCVUJW5NGzZD/rgHMWVjN+ByUc=
-X-Received: by 2002:a1c:ef09:: with SMTP id n9mr2295972wmh.23.1567681057404;
- Thu, 05 Sep 2019 03:57:37 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqytSMTFwKy6lxd+Xl2q9JD1L6j9P/OzvtGIshQY0oEp+mKnHzNdpLaXEnuh8y3DBKzT/FTaXA==
-X-Received: by 2002:a1c:ef09:: with SMTP id n9mr2295960wmh.23.1567681057221;
- Thu, 05 Sep 2019 03:57:37 -0700 (PDT)
-Received: from [192.168.1.13] ([90.168.169.92])
- by smtp.gmail.com with ESMTPSA id p19sm1745164wmg.31.2019.09.05.03.57.35
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 05 Sep 2019 03:57:36 -0700 (PDT)
-Subject: Re: [V2, 2/2] media: i2c: Add DW9768 VCM driver
-To: Sakari Ailus <sakari.ailus@linux.intel.com>,
- Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-References: <20190905072142.14606-1-dongchun.zhu@mediatek.com>
- <20190905072142.14606-3-dongchun.zhu@mediatek.com>
- <20190905082134.GY5475@paasikivi.fi.intel.com>
- <20190905101908.GB2680@smile.fi.intel.com>
- <20190905104001.GZ5475@paasikivi.fi.intel.com>
-From: Javier Martinez Canillas <javierm@redhat.com>
-Message-ID: <ad357e27-3e51-6922-1924-5d2c2daf1934@redhat.com>
-Date: Thu, 5 Sep 2019 12:57:34 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5pSu-0001Tb-T9
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 05 Sep 2019 10:58:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=In-Reply-To:Content-Type:MIME-Version:
+ References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=+Sinl1C05/gcXMERfRM/CU0CjBg4xK+OsBSdZDx7CWA=; b=IjEDEzxQ6IOLkFjkqA8G4weVr
+ 2ix5c/aN4vGafnJXRf8rm/lgF5V/h8pr9d+f7e8f9OSp80GpF3zbO7SWy+3CyteSdnLqJ6Ic01Eck
+ Qw45hjOn6CGILdH7NYdlX3QNlS6oBhbtjqOQIJ4pNdWA6KkcZlyOT+79D27wNXhjHRMhibB3VXOyP
+ sAJWusCKmntCRiDFHFAB8StBwMoFAeeUSuWFHvMRXj5LbGacMCNuzaOlSVL9EYzyssCtUNWwPs/OK
+ 0uzjRDmNrV/qRN36OfkME7aOIHLiHj9z0OGY4db+OtNKgaMRhA1yiHliWNZazO5KpD60UvZM6wqyK
+ PFVlbiYIA==;
+Received: from j217100.upc-j.chello.nl ([24.132.217.100]
+ helo=noisy.programming.kicks-ass.net)
+ by merlin.infradead.org with esmtpsa (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5pSc-00065U-Lb; Thu, 05 Sep 2019 10:57:55 +0000
+Received: from hirez.programming.kicks-ass.net
+ (hirez.programming.kicks-ass.net [192.168.1.225])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (Client did not present a certificate)
+ by noisy.programming.kicks-ass.net (Postfix) with ESMTPS id C8326303121;
+ Thu,  5 Sep 2019 12:57:12 +0200 (CEST)
+Received: by hirez.programming.kicks-ass.net (Postfix, from userid 1000)
+ id B4C5529E3BB8C; Thu,  5 Sep 2019 12:57:49 +0200 (CEST)
+Date: Thu, 5 Sep 2019 12:57:49 +0200
+From: Peter Zijlstra <peterz@infradead.org>
+To: Aleksa Sarai <cyphar@cyphar.com>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905105749.GW2386@hirez.programming.kicks-ass.net>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905073205.GY2332@hirez.programming.kicks-ass.net>
+ <20190905092622.tlb6nn3uisssdfbu@yavin.dot.cyphar.com>
+ <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-In-Reply-To: <20190905104001.GZ5475@paasikivi.fi.intel.com>
-Content-Language: en-US
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_035739_752199_B0E11FC8 
-X-CRM114-Status: GOOD (  18.92  )
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
- pts rule name              description
- ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+Content-Disposition: inline
+In-Reply-To: <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,46 +73,113 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, sam.hung@mediatek.com, shengnan.wang@mediatek.com,
- tfiga@chromium.org, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Shuah Khan <shuah@kernel.org>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ patrick.bellasi@arm.com, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gOS81LzE5IDEyOjQwIFBNLCBTYWthcmkgQWlsdXMgd3JvdGU6Cj4gT24gVGh1LCBTZXAgMDUs
-IDIwMTkgYXQgMDE6MTk6MDhQTSArMDMwMCwgQW5keSBTaGV2Y2hlbmtvIHdyb3RlOgo+PiBPbiBU
-aHUsIFNlcCAwNSwgMjAxOSBhdCAxMToyMTozNEFNICswMzAwLCBTYWthcmkgQWlsdXMgd3JvdGU6
-Cj4+PiBPbiBUaHUsIFNlcCAwNSwgMjAxOSBhdCAwMzoyMTo0MlBNICswODAwLCBkb25nY2h1bi56
-aHVAbWVkaWF0ZWsuY29tIHdyb3RlOgo+Pj4+IEZyb206IERvbmdjaHVuIFpodSA8ZG9uZ2NodW4u
-emh1QG1lZGlhdGVrLmNvbT4KPj4KPj4+PiArc3RhdGljIGNvbnN0IHN0cnVjdCBpMmNfZGV2aWNl
-X2lkIGR3OTc2OF9pZF90YWJsZVtdID0gewo+Pj4+ICsJeyBEVzk3NjhfTkFNRSwgMCB9LAo+Pj4+
-ICsJeyB9LAo+Pj4KPj4+IENvdWxkIHlvdSBkcm9wIHRoZSBJwrJDIElEIHRhYmxlPwo+Pgo+PiBC
-dXQgd2h5Pwo+PiBJdCB3aWxsIGFsbG93IHlvdSB0byBpbnN0YW5jaWF0ZSB0aGUgZGV2aWNlIGZy
-b20gdXNlciBzcGFjZS4KClllcywgdGhlIEkyQyBkZXZpY2UgdGFibGUgaXMgc3RpbGwgbmVlZGVk
-IGlmIHRoZSBkZXZpY2UgY2FuIGJlIGluc3RhbnRpYXRlZApmcm9tIHVzZXItc3BhY2UgdXNpbmcg
-dGhlIHN5c2ZzIGludGVyZmFjZSwgb3Igb3RoZXJ3aXNlIHRoZSBtb2R1bGUgd29uJ3QgYmUKYXV0
-b21hdGljYWxseSBsb2FkZWQuCgpLaWVyYW4gcG9zdGVkIGEgIltQQVRDSCBSRkNdIG1vZHBvc3Q6
-IFN1cHBvcnQgSTJDIEFsaWFzZXMgZnJvbSBPRiB0YWJsZXMiCnBhdGNoIHRoYXQgYWRkcyBhIE1P
-RFVMRV9ERVZJQ0VfVEFCTEUoaTJjX29mLCAuLikgbWFjcm8gc28gbW9kcG9zdCBjb3VsZAphZGQg
-bGVnYWN5IEkyQyBtb2RhbGlhcyB1c2luZyB0aGUgaW5mb3JtYXRpb24gaW4gdGhlIE9GIGRldmlj
-ZSBJRCB0YWJsZXM6CgpodHRwczovL3BhdGNod29yay5rZXJuZWwub3JnL3BhdGNoLzExMDM4ODYx
-LwoKSWYgdGhhdCBsYW5kcywgdGhlbiB3ZSBjb3VsZCBnZXQgcmlkIG9mIHRoZSBJMkMgZGV2aWNl
-IHRhYmxlcyBhbHRvZ2V0aGVyCmZvciBub24tbGVnYWN5IEkyQyBkcml2ZXJzLgoKPiAKPiBUaGUg
-ZGV2aWNlIGlzIHN1cHBvc2VkIHRvIGJlIHByZXNlbnQgaW4gRFQgKG9yIEFDUEkgdGFibGVzKSBh
-bHJlYWR5Lgo+CgpBZ3JlZWQuIEFsc28gYnkgbG9va2luZyBhdCB0aGUgZHJpdmVyJ3MgcHJvYmUg
-ZnVuY3Rpb24gSSBzZWUgdGhhdCB0aGUKZGV2aWNlIGxvb2t1cHMgYSAndmluJyBhbmQgJ3ZkZCcg
-cmVndWxhdG9ycyBzdXBwbGllcyBhbmQgaXQgZmFpbHMgaWYKYXJlbid0IGRlZmluZWQsIHNvIGl0
-IGNhbid0IGJlIGluc3RhbnRpYXRlZCBmcm9tIHVzZXItc3BhY2UgYW55d2F5cy4KCkJUVywgdGhl
-c2UgdHdvIHJlZ3VsYXRvcnMgc3VwcGxpZXMgc2hvdWxkIGJlIGxpc3RlZCBhcyAndmluLXN1cHBs
-eScKYW5kICd2ZGQtc3VwcGx5JyBhcyByZXF1aXJlZCBwcm9wZXJ0aWVzIGluIHRoZSBEVCBiaW5k
-aW5nIGRvY3VtZW50LgoKQmVzdCByZWdhcmRzLAotLSAKSmF2aWVyIE1hcnRpbmV6IENhbmlsbGFz
-ClNvZnR3YXJlIEVuZ2luZWVyIC0gRGVza3RvcCBIYXJkd2FyZSBFbmFibGVtZW50ClJlZCBIYXQK
-Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
-bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
-ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
-ZXJuZWwK
+On Thu, Sep 05, 2019 at 11:43:05AM +0200, Peter Zijlstra wrote:
+> On Thu, Sep 05, 2019 at 07:26:22PM +1000, Aleksa Sarai wrote:
+> > On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
+> > > On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
+> > > > +/**
+> > > > + * copy_struct_to_user: copy a struct to user space
+> > > > + * @dst:   Destination address, in user space.
+> > > > + * @usize: Size of @dst struct.
+> > > > + * @src:   Source address, in kernel space.
+> > > > + * @ksize: Size of @src struct.
+> > > > + *
+> > > > + * Copies a struct from kernel space to user space, in a way that guarantees
+> > > > + * backwards-compatibility for struct syscall arguments (as long as future
+> > > > + * struct extensions are made such that all new fields are *appended* to the
+> > > > + * old struct, and zeroed-out new fields have the same meaning as the old
+> > > > + * struct).
+> > > > + *
+> > > > + * @ksize is just sizeof(*dst), and @usize should've been passed by user space.
+> > > > + * The recommended usage is something like the following:
+> > > > + *
+> > > > + *   SYSCALL_DEFINE2(foobar, struct foo __user *, uarg, size_t, usize)
+> > > > + *   {
+> > > > + *      int err;
+> > > > + *      struct foo karg = {};
+> > > > + *
+> > > > + *      // do something with karg
+> > > > + *
+> > > > + *      err = copy_struct_to_user(uarg, usize, &karg, sizeof(karg));
+> > > > + *      if (err)
+> > > > + *        return err;
+> > > > + *
+> > > > + *      // ...
+> > > > + *   }
+> > > > + *
+> > > > + * There are three cases to consider:
+> > > > + *  * If @usize == @ksize, then it's copied verbatim.
+> > > > + *  * If @usize < @ksize, then kernel space is "returning" a newer struct to an
+> > > > + *    older user space. In order to avoid user space getting incomplete
+> > > > + *    information (new fields might be important), all trailing bytes in @src
+> > > > + *    (@ksize - @usize) must be zerored
+> > > 
+> > > s/zerored/zero/, right?
+> > 
+> > It should've been "zeroed".
+> 
+> That reads wrong to me; that way it reads like this function must take
+> that action and zero out the 'rest'; which is just wrong.
+> 
+> This function must verify those bytes are zero, not make them zero.
+> 
+> > > >                                          , otherwise -EFBIG is returned.
+> > > 
+> > > 'Funny' that, copy_struct_from_user() below seems to use E2BIG.
+> > 
+> > This is a copy of the semantics that sched_[sg]etattr(2) uses -- E2BIG for
+> > a "too big" struct passed to the kernel, and EFBIG for a "too big"
+> > struct passed to user-space. I would personally have preferred EMSGSIZE
+> > instead of EFBIG, but felt using the existing error codes would be less
+> > confusing.
+> 
+> Sadly a recent commit:
+> 
+>   1251201c0d34 ("sched/core: Fix uclamp ABI bug, clean up and robustify sched_read_attr() ABI logic and code")
+> 
+> Made the situation even 'worse'.
+
+And thinking more about things; I'm not convinced the above patch is
+actually right.
+
+Do we really want to simply truncate all the attributes of the task?
+
+And should we not at least set sched_flags when there are non-default
+clamp values applied?
+
+See; that is I think the primary bug that had chrt failing; we tried to
+publish the default clamp values as !0.
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
