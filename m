@@ -2,59 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B8669A9983
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 06:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5FF01A99A9
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 06:34:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2BD9X20JacvaZ47vvJYUphqQSysOgLyHeojQYq/jjKo=; b=Nn2SkkyIUuUyRO
-	tUhHlRuX6Ux76RjdRF0C95XRjcUBTrpubtnaH3RI8/saPTUSLdmeFyxvgtrwjg4kZ6J/2zx0dybh1
-	ZAWiY091eh4Dv01RzlfDH0UmzSPS63dwz6tfeYo1RS4yjpePO8dTGMbxhwq7avw/sEw++Gp3HNmln
-	24fRM4hAHh6UgkihSXb0BuHZsJcDxBM45YmI9FmYLR2SD7+swLbTuoq2IqkEqeKdEF80ygiUZ2tz4
-	I72oS9jIzZ/ikW1mx1sZlbKDR//wpTTnpr+f24yA+Xmy9w//CCH1DXgJfk3HsCQYG2JrQdGXixGQQ
-	YZK+EWcV87pvdqiqozbw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nNZEnMv/nmRhfPYUwHPO3ztUlldGRrRGMLLufZrWDzs=; b=DmPgiR5SAN8j+4
+	s1QjvsJtrG4bidwPB5C+XUp7pIll9CYhKB6mQkhIps9Un22TwRqe5SlFd67huWEePuxtiphv5BrNJ
+	B4/M78w5/ajvDYFDPNr3SJ3i6ukbo3v1IlMiPBJ1uBJzLv7Oh9TRk4wC8IFUDDKKqkBbU4T8p9kyZ
+	q7EBNaW4sIOaYvBOJmH3dy0ye4/xNS+LdjJlzyQgV6UV71ewUF4mnq8ixgXxwDmtaPkY6al5P4mpS
+	aDkqWwKVIVV6L7G8TNSdCH31PEDbez2RkzjEqvtgDMgkguYHECkDVzx96pHXyb79HAU6hQCbo4W3h
+	Mpo18QeAXMHSAaNKOsQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5jMz-000624-Uo; Thu, 05 Sep 2019 04:27:42 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5jMk-00061N-Lc
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 04:27:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0854728;
- Wed,  4 Sep 2019 21:27:23 -0700 (PDT)
-Received: from [10.162.41.136] (p8cg001049571a15.blr.arm.com [10.162.41.136])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 4EE723F718; Wed,  4 Sep 2019 21:27:16 -0700 (PDT)
-Subject: Re: [PATCH V7 1/3] mm/hotplug: Reorder memblock_[free|remove]() calls
- in try_remove_memory()
-To: David Hildenbrand <david@redhat.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- akpm@linux-foundation.org, catalin.marinas@arm.com, will@kernel.org
-References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
- <1567503958-25831-2-git-send-email-anshuman.khandual@arm.com>
- <e98f2950-bef9-3672-81a8-f9593354fffe@redhat.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <49c2a682-97c5-5eef-6635-9fe75e4677f7@arm.com>
-Date: Thu, 5 Sep 2019 09:57:23 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <e98f2950-bef9-3672-81a8-f9593354fffe@redhat.com>
+	id 1i5jT9-0007gQ-Hb; Thu, 05 Sep 2019 04:34:03 +0000
+Received: from mail-eopbgr40051.outbound.protection.outlook.com ([40.107.4.51]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5jSt-0007g3-TD
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 04:33:49 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=cr656mdKnZmL/TCrDxmvMKJZ3SL67BsOSULaOZYlTWPcHpmHwB6m1bb7fa6IyUGVVEdZWqIyOFBoklrlxuauZ07RU0fCxwVgKqGew0QNkUTvDQEZa7ZtxsQY4ZgJ7UmGN24wg/wFlX7hXVlN4deUWkHIcfN8Jklcp5q8/WsKFtV4PmaW/HeUZBI4bG568yiQoDOkCb69xnpC/8lC7xhuXZq+wwhRKLo9sr4AnohCBLxn98Yqi9HKWCovi9evhljQCrIBFguZ+6MBjVfUZRNRRws/3PNfvfVBNXbKQFEwAzTnqqZNWhRCilguLf6rd5YH6q9H3b73HrMPsV19Y7B6XQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=avaDpKvXgso4dx/QmtD7Hl71dbR5CxEuNE1/dUXMv+4=;
+ b=dviwHyu9/tMe7aqZ/qlXBe5K3wKAOwdPmWQZlf13oCwvXhAM6udfXpsitK60whhowBP08TcZ2ESw8PWA9NuODc36rYhFiTV2kVLs6hExDLvCYQW1dbAq2rRSIqRTdFVuLzIntL/KdHl+eAs9QCB8TH+PYk5mOZ0aeRXT8ReMdANd55Ve9P8BMSsoNDJrHrV6+rnkzZ1EeUeIUZgNlg4mxTv6H6JtS7TxEa4BafyDgkHFKQNlpQakgJMcGCvUBb/tWj3TBAsHFlciS0OzXK/dS66Et0fEIqAznFRRdZRjyajOt8u8oYJPZv2Bg9xp/uVOXsnoL4eOA0Dxbl28/2ANXg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=avaDpKvXgso4dx/QmtD7Hl71dbR5CxEuNE1/dUXMv+4=;
+ b=ojmNIiUvX1hCHDXc1pl9DW1TFcGjEvOA+fakr8dYgWZ2KqfMTqsDq4oWGVREuSFoZTAvL5HPVhM0u50Jq1NhJL2CgamkVRfPfWbVbl4j7RoXXgC1cZkMYgH+6/AIrJg8ktXJ76/TwAnULEkllbsxkhTr9ZLwrDO6BPMOc+YaJcE=
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
+ DB7PR04MB4667.eurprd04.prod.outlook.com (52.135.139.13) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2220.20; Thu, 5 Sep 2019 04:33:44 +0000
+Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa]) by DB7PR04MB4490.eurprd04.prod.outlook.com
+ ([fe80::4427:96f2:f651:6dfa%5]) with mapi id 15.20.2241.014; Thu, 5 Sep 2019
+ 04:33:44 +0000
+From: Biwen Li <biwen.li@nxp.com>
+To: "'andy.shevchenko@gmail.com'" <andy.shevchenko@gmail.com>,
+ "'rafael@kernel.org'" <rafael@kernel.org>, Leo Li <leoyang.li@nxp.com>,
+ Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>, Udit Kumar
+ <udit.kumar@nxp.com>, "'wsa@the-dreams.de'" <wsa@the-dreams.de>,
+ "'rjw@rjwysocki.net'" <rjw@rjwysocki.net>
+Subject: RE: [PATCH] ACPI: support for NXP i2c controller
+Thread-Topic: [PATCH] ACPI: support for NXP i2c controller
+Thread-Index: AQHVN9RWONVodUogYk2tb4fLvCueOacZMhcAgAAFiwCAAI1AgIAABROQgAMCJ+A=
+Date: Thu, 5 Sep 2019 04:33:44 +0000
+Message-ID: <DB7PR04MB4490E737C00CF9CA173AB2898FBB0@DB7PR04MB4490.eurprd04.prod.outlook.com>
+References: <20190711102601.20582-1-chuanhua.han@nxp.com>
+ <CAJZ5v0hY2sL+XfN_4v07_hjvoxgCAt+Q89+wNg5Pky6XKP-mqA@mail.gmail.com>
+ <CAHp75VfFtMMQhetRFHrx=Ft7OWwyMqLrwP3sPjT6YVtr8xCHoQ@mail.gmail.com>
+ <896b88d4-9d1b-922b-1784-55ef9a1a1830@pengutronix.de>
+ <AM7PR04MB6885DB03C6B96C7932DDA74B8EB90@AM7PR04MB6885.eurprd04.prod.outlook.com>
+In-Reply-To: <AM7PR04MB6885DB03C6B96C7932DDA74B8EB90@AM7PR04MB6885.eurprd04.prod.outlook.com>
+Accept-Language: zh-CN, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=biwen.li@nxp.com; 
+x-originating-ip: [119.31.174.73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 09ddf1b3-09d0-4333-f572-08d731ba3c9a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:DB7PR04MB4667; 
+x-ms-traffictypediagnostic: DB7PR04MB4667:|DB7PR04MB4667:
+x-ms-exchange-purlcount: 2
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB46678644953757242F8865408FBB0@DB7PR04MB4667.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:5236;
+x-forefront-prvs: 015114592F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(136003)(376002)(346002)(366004)(39860400002)(396003)(199004)(189003)(26005)(6246003)(8936002)(966005)(74316002)(110136005)(6436002)(8676002)(66066001)(478600001)(9686003)(54906003)(4326008)(6306002)(476003)(86362001)(305945005)(2906002)(81156014)(81166006)(3846002)(7736002)(76176011)(11346002)(102836004)(53546011)(6506007)(53936002)(229853002)(446003)(14454004)(7696005)(186003)(45080400002)(7416002)(486006)(55016002)(6116002)(44832011)(256004)(64756008)(66446008)(66946007)(66476007)(66556008)(76116006)(71190400001)(25786009)(33656002)(71200400001)(99286004)(14444005)(5660300002)(52536014)(316002)(491001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4667;
+ H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: dsZ+rVCRe1StNRXL2GWcOUTLbQTy7W5efTggCMQsGX0/hKHTXdjFuLhHthmemMbVm76yJ3vsVyHVNGzBJh3ZnzyC7dVQX9R00HrwCL8MQVXAmw2dJMqR9zd6cz6IavL4Jb89F+ZzvH41xj6LY+9jlxmAoDKFKaVrhAUOwiBwzDneRHlFKqHZQB57cJzdOLwnuEfr0TA/kxpMG87rtz4O1Rq7LUFB6Pf1peARWi3+gTMWxLMc57W1bITLWDv3BgZZjJXagH2MrAY4ETopHOzs7lXIQybwypzyN2XgObUl6DjiVURrwFLUFTabzuhZmvFEpnkeSD+u6s2/y47MyIgdqOmFCaBTXaOtQQ4ZLwaUQws9/J+80CLoKX4MWBY6t2rkkyw32KQ6Aa7LqVAyWVkaRv8Ab0p1tBgAvc4cRPyMauE=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 09ddf1b3-09d0-4333-f572-08d731ba3c9a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 04:33:44.5791 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: VebfGvSMsR2OHpZ/pyjQ7o5bqoBjwEhONfx0Ew8jxjsjpGt5pEX53BRm1RlROvsPAVRge10QdvlxM8ZRBwz/yg==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4667
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_212726_756151_6D3BED55 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190904_213348_115265_E7851C4D 
+X-CRM114-Status: GOOD (  15.26  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.4.51 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,55 +130,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, steve.capper@arm.com,
- ira.weiny@intel.com, suzuki.poulose@arm.com, mgorman@techsingularity.net,
- steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
- Robin.Murphy@arm.com, logang@deltatee.com, valentin.schneider@arm.com,
- osalvador@suse.de
+Cc: "'s.hauer@pengutronix.de'" <s.hauer@pengutronix.de>,
+ "'linux-kernel@vger.kernel.org'" <linux-kernel@vger.kernel.org>,
+ "'linux-acpi@vger.kernel.org'" <linux-acpi@vger.kernel.org>,
+ "'linux-i2c@vger.kernel.org'" <linux-i2c@vger.kernel.org>,
+ Chuanhua Han <chuanhua.han@nxp.com>,
+ "'shawnguo@kernel.org'" <shawnguo@kernel.org>,
+ "'linux-arm-kernel@lists.infradead.org'"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 09/04/2019 01:46 PM, David Hildenbrand wrote:
-> On 03.09.19 11:45, Anshuman Khandual wrote:
->> Memory hot remove uses get_nid_for_pfn() while tearing down linked sysfs
->> entries between memory block and node. It first checks pfn validity with
->> pfn_valid_within() before fetching nid. With CONFIG_HOLES_IN_ZONE config
->> (arm64 has this enabled) pfn_valid_within() calls pfn_valid().
->>
->> pfn_valid() is an arch implementation on arm64 (CONFIG_HAVE_ARCH_PFN_VALID)
->> which scans all mapped memblock regions with memblock_is_map_memory(). This
->> creates a problem in memory hot remove path which has already removed given
->> memory range from memory block with memblock_[remove|free] before arriving
->> at unregister_mem_sect_under_nodes(). Hence get_nid_for_pfn() returns -1
->> skipping subsequent sysfs_remove_link() calls leaving node <-> memory block
->> sysfs entries as is. Subsequent memory add operation hits BUG_ON() because
->> of existing sysfs entries.
-> Since
+> Hi,
 > 
-> commit 60bb462fc7adb06ebee3beb5a4af6c7e6182e248
-> Author: David Hildenbrand <david@redhat.com>
-> Date:   Wed Aug 28 13:57:15 2019 +1000
+> On 02.09.19 23:16, Andy Shevchenko wrote:
+> > On Mon, Sep 2, 2019 at 11:58 PM Rafael J. Wysocki <rafael@kernel.org>
+> wrote:
+> >>
+> >> On Thu, Jul 11, 2019 at 12:35 PM Chuanhua Han <chuanhua.han@nxp.com>
+> wrote:
+> >>>
+> >>> Enable NXP i2c controller to boot with ACPI
+> >>>
+> >>> Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
+> >>> Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
+> >>> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
+> >>
+> >> Wolfram, any objections to this from the i2c side?
+> >
+> > May I propose amendment(s)?
+> >
+> >>> @@ -44,6 +44,7 @@
+> >>>   #include <linux/pm_runtime.h>
+> >>>   #include <linux/sched.h>
+> >>>   #include <linux/slab.h>
+> >
+> >>> +#include <linux/acpi.h>
+> >
+> > If it's kept in order, better to go with it. (Yes, it is as I have
+> > checked) However, property.h should be included instead, see below.
+> >
+> >>>          const struct of_device_id *of_id =
+> of_match_device(i2c_imx_dt_ids,
+> >>>
+> >>> &pdev->dev);
+> >>> +       const struct acpi_device_id *acpi_id =
+> >>> +                       acpi_match_device(i2c_imx_acpi_ids,
+> >>> +                                         &pdev->dev);
+> >
+> >
+> >>>          if (of_id)
+> >>>                  i2c_imx->hwdata = of_id->data;
+> >>> +       else if (acpi_id)
+> >>> +               i2c_imx->hwdata = (struct imx_i2c_hwdata *)
+> >>> +                               acpi_id->driver_data;
+> >
+> >
+> > The above altogher may be replaced with
+> >
+> > const struct imx_i2c_hwdata *match;
+> > ...
+> > match = device_get_match_data(&pdev->dev);
+> > if (match)
+> >   i2c_imx->hwdata = match;
+> > else
+> > ...
 > 
->     drivers/base/node.c: simplify unregister_memory_block_under_nodes()
+> Instead of "may be replaced", I would say: it should be replaced :)
 > 
-> that problem should be gone. There is no get_nid_for_pfn() call anymore.
-
-Yes, the problem is gone. The above commit is still not present on arm64
-tree against which this series was rebased and tested while posting.
+> >>> +               .acpi_match_table = ACPI_PTR(i2c_imx_acpi_ids),
+> >
+> > Since there is no #ifdef guard no need to use ACPI_PTR().
+> >
+> 
+> What iMX/(other NXP?) SoCs are with ACPI support?  Where I can get one? I
+> would like to know more about it.
+- Nxp has variety Socs, include i.MX, Layerscape, etc.
+- You can get one from here https://www.nxp.com/design/qoriq-developer-resources/qoriq-lx2160a-development-board:LX2160A-RDB
 
 > 
-> So this patch should no longer be necessary - but as I said during
-> earlier versions of this patch, the re-ordering might still make sense
-> for consistency (removing stuff in the reverse order they were added).
-> You'll have to rephrase the description then.
-
-Sure will reword the commit message on these lines.
-
+> Kind regards,
+> Oleksij Rempel
+> 
+> --
+> Pengutronix e.K.                           |
+> |
+> Industrial Linux Solutions                 |
+> https://eur01.safelinks.protection.outlook.com/?url=http%3A%2F%2Fwww.pe
+> ngutronix.de%2F&amp;data=02%7C01%7Cmeenakshi.aggarwal%40nxp.com%
+> 7C640eb015a91f4959d3b508d7303168fb%7C686ea1d3bc2b4c6fa92cd99c5c
+> 301635%7C0%7C0%7C637030861076879938&amp;sdata=sPWtkVtHHDvoRR
+> ZmWJuipCO%2BEwG%2BcupgZvcIV1%2BrlEY%3D&amp;reserved=0  |
+> Peiner Str. 6-8, 31137 Hildesheim, Germany | Phone: +49-5121-206917-0
+> |
+> Amtsgericht Hildesheim, HRA 2686           | Fax:
+> +49-5121-206917-5555 |
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
