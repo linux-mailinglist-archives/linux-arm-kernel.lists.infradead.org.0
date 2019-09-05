@@ -2,83 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 34F92A9C2A
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:46:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 920CCA9C39
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:52:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DuCoKe+5fh2ul/kSr7TyjtWZYzfPVbDOApOKHwGEHWs=; b=Syn2n2xwXBPZ76
-	sou8t9+IJzvhFNi/wrGCmbPQ+IwfNjhkgmK9/0ED8EFBZyAHRYUWDeHQnuL2CLl8NDpy6QnFNZoba
-	tRuCQlCfyVJoSIVTQrRuajoL0h5OvtK27Kjglja47Qi9QVTQE7yLpA7W8ztNAyFNKCL7tRJDDZSRs
-	2eiIcJXdZGK5som6hMngxyRG22F7iXz7PnnEI+LjVshy0T5ZlTmhJUGZbVnkRyJACZtWYyvXfuGEr
-	tAzFPLMaLz8ULNmBOvbkXw/4mheVp9YTzPP7toc/R5BUQrETOrnTXjyiHpZuEpGp5SYmv5bj+acQa
-	Ctm8jbL/H62Mv41+T5uA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=UdY/xXiOm9DV4V/Ohq4dY5faQksoNFnaXlLpvPgiG+U=; b=mks
+	+sh9i/pXCKMnwPytzWP+KgxYpPsrtqs1rmmALZY1/zvymglmFiJuDPS86DhDbyI4Gl3+AUnuIZFJE
+	YTtWyOBZi8CF5jJOJVomd20CBwlvPi3uPbRgMClDpk3YKXU0GaJTuIXUdXjr9ZXbrrGTf3iPrXWRU
+	Q3vWey0yr3G50vazT476dzawXCilHIa5VHhtbAMOYMMpZN9xHmAhWoVgqGthsTfK0qXBbO0c43rCl
+	e1v5Wb1TS3J4sdz8IFyasCMRlB8dQcLrtS+Swrf+Lbb/AJtvRPcV4hofNVULVE8Z1CfQY2k08WYU4
+	9IBrVoxT/2POivwTro9TFyBfNkBceew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5mTP-0002CB-0G; Thu, 05 Sep 2019 07:46:31 +0000
-Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+	id 1i5mZC-0005L3-7v; Thu, 05 Sep 2019 07:52:30 +0000
+Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5mS7-00021y-I4
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 07:45:13 +0000
-Received: by mail-pf1-x444.google.com with SMTP id b13so1170898pfo.8
+ id 1i5mZ0-0005KT-Gi
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 07:52:19 +0000
+Received: by mail-wm1-x342.google.com with SMTP id r17so4319333wme.0
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 00:45:10 -0700 (PDT)
+ Thu, 05 Sep 2019 00:52:18 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=hpCUEGddX7qZLrDE/1ojj9wnkPMw6M1KGQTh1eKUChU=;
- b=SsnUCEcCbGGi4OuiIojnwuy1Ee1+ueJDvGIE8Q02a2QFmbConzEYQb4DP/a+yh5yML
- ZTP0ZI3nP5KRxtf6jCw8NjPLtG7bU61kUQQRfCt2DkOIHR52JELw1RNT1I5zvvHAIDSr
- /qAts2dyovBObTSLxRR9Xo9gnCDc3J/etQW0dlu/MK85xWPqiis6iPbvY6HEMr8fuwm4
- gz2D0qtOXrieZ1waZe86IyltHwsTPgEN15ooTGZhiGvK7GMLVLO0Xz8flIH0er565G2j
- q4AbrYw4B6hz2nMoqiALLqeaBoi4GUmP5b+wYE35sZjO2AUpggcBNmjHVB6TdD1Jr6Df
- JQ+Q==
+ h=from:to:cc:subject:date:message-id;
+ bh=8QTtt8+sGnSqf2GZqqr6eKF9qx6336YqhCVxZTe4hN4=;
+ b=P3M2iaYypKmONmySetZUFaEg2hS2Zw4ANUaBhR6r5Ydm74kgAH+IhORp1ZlSO3+SvG
+ bPCT3dkX2yVgIb96qqnsLFsYvscdlxnkL5q7N2vsbXFwuzu0KFsjgL2cm4cVMQIVCiHg
+ E3HyFv/qZeAvK2dR5fvXAwdJ6ohLBAUxXUlpSrnwZygHBjnfzUXN7K/XTGA3fFhhPMLp
+ aef7z4TL+zPCwYLGdxAx8P883nSG9rZIhxXDy0ApUIjVYUWVdz2yX3BC0F3ldwajVhor
+ yFM9sHNlHvSqgAqu2mpD6gLSQXdhjL2FV5gmXWXcKoqfAWr8dBPfgBb+lndVXZwEXGIy
+ zv9g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=hpCUEGddX7qZLrDE/1ojj9wnkPMw6M1KGQTh1eKUChU=;
- b=sUC9cKtuhOLT3ggAJuOxkTtfkLQTzZkWZUS0RnE2svY3GHfAyt9jVA/wuOH+xLjh4a
- uSsqezso3eybIva5NA3BGPwNmf0luSaoz+cFW9psa1QcISzzSDtMVHjuk34zWFJXYQUp
- PUQ/QnZdscVAKfXGEPIEqzZPQSmOKGMqeVeKSxfJ56BKeWr+IIV82VO/Y0GTYYFpF6cx
- oxahKu8iX8vmWvTsFGUKV/cv5IxzaCt9AWULniQq7/lSJi56Lo7v4FdxDcEPDGcDEUZc
- VlUYJHBGSeNNQHjS4xUVqbIIERxluqcCmImrq72vxrGzztgsROLZCP+kEQA4eFjYyQz9
- eeCA==
-X-Gm-Message-State: APjAAAViytE6qw9LJFPvGPXlvh3eioDg+3/scEABzgcaJST3I/RkqtYz
- gU+pgoV67hjpNGtyGtcLkN5DEg==
-X-Google-Smtp-Source: APXvYqwf0YX6tt1CPUpyTzEzZQjgLyT4wvcmEy6Ovf5SU/FcoQviQhfq965/ABavnjJQs6c9+uWbuA==
-X-Received: by 2002:a62:d4:: with SMTP id 203mr2120282pfa.210.1567669509669;
- Thu, 05 Sep 2019 00:45:09 -0700 (PDT)
-Received: from localhost ([122.167.132.221])
- by smtp.gmail.com with ESMTPSA id j128sm2936214pfg.51.2019.09.05.00.45.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 05 Sep 2019 00:45:08 -0700 (PDT)
-Date: Thu, 5 Sep 2019 13:15:06 +0530
-From: Viresh Kumar <viresh.kumar@linaro.org>
-To: Mark Rutland <mark.rutland@arm.com>
-Subject: Re: [PATCH ARM64 v4.4 V3 12/44] arm64: cpufeature: Test 'matches'
- pointer to find the end of the list
-Message-ID: <20190905074506.oxsw24xoex7gcfgm@vireshk-i7>
-References: <cover.1567077734.git.viresh.kumar@linaro.org>
- <617ad445043f040c5ab986b9620b2ba7847b561e.1567077734.git.viresh.kumar@linaro.org>
- <20190902142741.GB9922@lakrids.cambridge.arm.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190902142741.GB9922@lakrids.cambridge.arm.com>
-User-Agent: NeoMutt/20180716-391-311a52
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8QTtt8+sGnSqf2GZqqr6eKF9qx6336YqhCVxZTe4hN4=;
+ b=ckXMvSMHW9tZWwro63sbEO6VsY9Ix48Os7P05ILLEAMIRokqTfUBbeaFJrBiWOuU1Z
+ 94Tl8CZyi5OFbpIjbOAGwzTJpL7fEsYNmEv73CpsSNg4aKKU+sj1wGv49vWrIzSHAmCl
+ DJKYSPMKK2D3iCE6Hbv6Jahfgrux8xdgw8QLbWHeq5O0vz/JZJ+S3cBIKrSMYpQWm4e9
+ Ps1NbM0HgZzN3NCGcRo08zat3Oe13oA21OygudO3vA4S76C6bWxewm2mOBwgkveTPE8F
+ FMI2kMR/8FHKW9YDNZ+zDba3YSgNFeNWlYFDsAM2ydoMS0DQKMdYqf6IrtCktUe4GDBM
+ v89A==
+X-Gm-Message-State: APjAAAW6Yn5+5a5ijycn4rAxbDRJtMTL+PYiscyd2oCwpANwKObdx1iX
+ wpMtp9hb+NyW6EnK07rRgynuxA==
+X-Google-Smtp-Source: APXvYqwzQVlp8PCbFWrdVBA5xmrr3ZHShk2IdYXuGYRwilcld1G0FXOEOyA9G0LVuEDXC8E5xXtsSg==
+X-Received: by 2002:a1c:7919:: with SMTP id l25mr1454666wme.23.1567669937202; 
+ Thu, 05 Sep 2019 00:52:17 -0700 (PDT)
+Received: from localhost.localdomain ([95.147.198.36])
+ by smtp.gmail.com with ESMTPSA id a13sm3418784wrf.73.2019.09.05.00.52.15
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Sep 2019 00:52:16 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, agross@kernel.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, bjorn.andersson@linaro.org,
+ linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ devicetree@vger.kernel.org, wsa@the-dreams.de, vkoul@kernel.org
+Subject: [PATCH 1/2] dt-bindings: soc: qcom: Provide option to disable DMA
+Date: Thu,  5 Sep 2019 08:52:12 +0100
+Message-Id: <20190905075213.13260-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_004511_723829_6211DCB1 
-X-CRM114-Status: GOOD (  25.82  )
+X-CRM114-CacheID: sfid-20190905_005218_562181_B93BFFD5 
+X-CRM114-Status: UNSURE (   9.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:342 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -100,88 +95,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Julien Thierry <Julien.Thierry@arm.com>,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Will Deacon <will.deacon@arm.com>, stable@vger.kernel.org, mark.brown@arm.com,
- Russell King <rmk+kernel@arm.linux.org.uk>,
+Cc: Lee Jones <lee.jones@linaro.org>, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 02-09-19, 15:27, Mark Rutland wrote:
-> On Thu, Aug 29, 2019 at 05:03:57PM +0530, Viresh Kumar wrote:
-> > From: James Morse <james.morse@arm.com>
-> > 
-> > commit 644c2ae198412c956700e55a2acf80b2541f6aa5 upstream.
-> > 
-> > CPU feature code uses the desc field as a test to find the end of the list,
-> > this means every entry must have a description. This generates noise for
-> > entries in the list that aren't really features, but combinations of them.
-> > e.g.
-> > > CPU features: detected feature: Privileged Access Never
-> > > CPU features: detected feature: PAN and not UAO
-> > 
-> > These combination features are needed for corner cases with alternatives,
-> > where cpu features interact.
-> > 
-> > Change all walkers of the arm64_features[] and arm64_hwcaps[] lists to test
-> > 'matches' not 'desc', and only print 'desc' if it is non-NULL.
-> > 
-> > Signed-off-by: James Morse <james.morse@arm.com>
-> > Reviewed-by : Suzuki K Poulose <suzuki.poulose@arm.com>
-> > Signed-off-by: Catalin Marinas <catalin.marinas@arm.com>
-> > Signed-off-by: Viresh Kumar <viresh.kumar@linaro.org>
-> > ---
-> >  arch/arm64/kernel/cpufeature.c | 12 ++++++------
-> >  1 file changed, 6 insertions(+), 6 deletions(-)
-> 
-> >From looking at my 4.9.y/{meltdown,spectre} banches on kernel.org [1,2],
-> and chasing the history v4.4..v4.9, there are a number of patches I'd
-> expect to have alongside this that I don't spot in this series:
-> 
-> * e3661b128e53ee281e1e7c589a5b647890bd6d7c ("arm64: Allow a capability to be checked on a single CPU")
-> * 8f4137588261d7504f4aa022dc9d1a1fd1940e8e ("arm64: Allow checking of a CPU-local erratum")
-> * 67948af41f2e6818edeeba5182811c704d484949 ("arm64: capabilities: Handle duplicate entries for a capability")
-> * edf298cfce47ab7279d03b5203ae2ef3a58e49db ("arm64: cpufeature: __this_cpu_has_cap() shouldn't stop early")
+Used when DMA is not available or the best option.
 
-I also had to pick this one for cleaner rebase:
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Vinod Koul <vkoul@kernel.org>
+---
+ Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.txt | 1 +
+ 1 file changed, 1 insertion(+)
 
-752835019c15 arm64: HWCAP: Split COMPAT HWCAP table entries
-
-> 
-> ... which IIUC are necessary for big.LITTLE to work correctly.
-
-I have pushed the changes to my branch again with above 5 patches and
-some more reordering to match 4.9 log.
-
-> Have you verified this for big.LITTLE?
-
-Not sure if we ever talked about this earlier, but here is the
-situation which I explained to Julien earlier.
-
-I don't have access to the test-suite to verify that these patches
-indeed fix the spectre mitigations and I was asked to backport these
-and then ask for help from ARM to get these tested through the
-test-suite. I was expecting Julien to do that earlier.
-
-Julien did ask me to verify few things earlier, which can be done
-without the test suite and was about checking that the new code paths
-are getting hit now or not, which I did.
-
-I haven't tested these on big LITTLE, though I can get the branch
-through LAVA to get it tested on big LITTLE but I have no clue on what
-I should be looking for in results :)
-
-If there is some testing that can be done on my side for this, I sure
-can do it. But I would need help from you on that to know what exactly
-I need to check.
-
-Thanks for the reviews Mark.
-
+diff --git a/Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.txt b/Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.txt
+index dab7ca9f250c..a14889ee76b0 100644
+--- a/Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.txt
++++ b/Documentation/devicetree/bindings/soc/qcom/qcom,geni-se.txt
+@@ -40,6 +40,7 @@ Required properties:
+ Optional property:
+ - clock-frequency:	Desired I2C bus clock frequency in Hz.
+ 			When missing default to 100000Hz.
++- qcom,geni-se-no-dma:	Prevents the use of DMA in the Geni SE.
+ 
+ Child nodes should conform to I2C bus binding as described in i2c.txt.
+ 
 -- 
-viresh
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
