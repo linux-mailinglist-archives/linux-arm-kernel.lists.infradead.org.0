@@ -2,77 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AEA71A9F81
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:21:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 481B9A9F8C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:23:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=FqryjNwd0jusnHNIj5Yt+8MR6nX3yY2LgxQ91LD9fRc=; b=IpKdT8h2JyYgg8
-	G7UiyjE6PUXW1bRt3bDJk/m+ASsnS5ogWoDB/NXJFMRYqeoQCQwKmgxjNJZK0RJNypMqeia7+gvWu
-	Gkl/pT9D0q2/DrvKeJ81/pjxSTA2Hoj0ix5xzDSgnGnBLNrXh95S2o1FRWbDCE9/6G+7+VFpmviCN
-	Ckfp4ZjeykxcJzRNgP5kfbtKr1omHLTzdpwTWD7G3oOdamZ2hQLlw2ut9DlJcLLNngn5/n1BBVNHd
-	ly3eURPMO6x+D5+GUXMgGQE5P6+18ahz0Iuh54qdDfBKmZ17r3jP9GTPhon6sTHwQvYZ8SMXeRSPo
-	k1EcMVpYr8SIMFn6ydHw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=4LnO4IFbniugSlR3C8bbWoNTqukrt4vkQu/h7VVaKxU=; b=MEZ
+	tNGWHJ3jyReBkgjDVd3h17vt1hvmSdpMcpUbtxKThNv93brsnoyBSBsbbLX8pcAjdiwiwMvzWtjkC
+	EBObxNT18heErZ4CQd4QK1ijPzkXnSsyAJRl5+uZ0n32uwPZSOK9DgZqQsYNpDociVHZzLrWEHD6b
+	BYcNNWkKz98xlpA3LdzEGe8954ChYYHJaU+ZwpM9CmHJncxdWqHFlzqxFqZCAHLTjwm10d+IL5mI3
+	eWwVjfH8pNfRLYDuidRsdotdgs7LLbezjGgFufJ1M1GwKQsLzF33ewS6rvAQ4L/DNtOB2+opKObT7
+	7anGXbeyL5oxQumA/YJ89T5U4b6yVKA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5otN-0007dF-3M; Thu, 05 Sep 2019 10:21:29 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1i5out-0007uw-3q; Thu, 05 Sep 2019 10:23:03 +0000
+Received: from mail-wr1-x430.google.com ([2a00:1450:4864:20::430])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ot7-0007cq-U3
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 10:21:15 +0000
-Received: by mail-qt1-f194.google.com with SMTP id c9so2100016qth.9
+ id 1i5oui-0007uX-MR
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 10:22:54 +0000
+Received: by mail-wr1-x430.google.com with SMTP id s18so2106668wrn.1
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 03:21:13 -0700 (PDT)
+ Thu, 05 Sep 2019 03:22:51 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=8xEVf00Y33lenJGWE1WtURKsjjiVID11MePd5b0emho=;
+ b=yAw6iuIOSuOZ+YXKeJEQQfn6wzRLUND3C/Q+xp+Go2IqXw7O0y1G/s8YOYuFi5e9+y
+ lBvutzg4MJe8da4PkCcQz73BqztCf0iujT17EuwKLLWB4R+Fr0MefM+4spDMtuxQFLx5
+ zk2gyYDyP/H+Q9nXMujL/l1wG6HdhxfZCO/4mlH5xRw0n8JvuwIEElv8AUYmyPk4Ypv/
+ gEMmY7av3rkYg8EBijSJShFm0ukmzYoGlUM6DpABiGDNrsKAbO0BQaYx8S7VKJp7hA8c
+ +IMuRTJicum2UfBMhAsU87uuqHtGd7mXUoVWGsKRJHw4XVu91Xbb0cFmoCJ/QnxxfyI9
+ HM/Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=W9ASHhPKpQsIU9mZBi7LyeVQlq2CQJ2Nfa0cGg2cxjU=;
- b=dYUTNGe168QTkil57CletXSS+yXg8+69MkHC9L1OlLKeU6azxUx7R992QoC4p0Hzxj
- OUtSFIgnvT2smHPy3MYxv1H4xruHdJUMJy6kLAW4iJzBME56UglVAtouVrXgyRLUA31n
- 9g87ZqM4vulR3dU+iO1JZvGgvu0UAOfJytfgZ8TzCgW46i+fqhr1yD2gINIXfFCwHf5R
- WTbJIqHAMHnN/TCf2uVBHmAnli4/A2KT0/DXvV1/IyUofaGPbYMdU1l2v35xYAWgSM/B
- Pqn6d9VycFQtT877Kc+5MLQjdnopt6LG3WbScrRPxtwoLjNoL9vTVReJv6/GxcYE5HP9
- /3KQ==
-X-Gm-Message-State: APjAAAUPvbl2d57TkUjEO2OJjoGS0ybuAXasJmgF/tCiIKVa11xsFwt8
- AXWl0LnvEGF+/KRfpax4NnKCAM1bQJv5+WW7DAA=
-X-Google-Smtp-Source: APXvYqw66BDokdBxyKl2ZBebLXBdM0Uc+EDEJXEwWO/OOdpU9zSB4XfPNlLYUumfYtGYq8zDk75S62/byvrXBZWShig=
-X-Received: by 2002:ac8:32ec:: with SMTP id a41mr2625217qtb.18.1567678872786; 
- Thu, 05 Sep 2019 03:21:12 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190830220743.439670-14-lkundrak@v3.sk>
- <201909021510.0g4L7Wva%lkp@intel.com>
-In-Reply-To: <201909021510.0g4L7Wva%lkp@intel.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 5 Sep 2019 12:20:56 +0200
-Message-ID: <CAK8P3a1kpRcmTW0hH7-9vd4SiJjEuTMRPb6Kb06LSiRj0AGd8A@mail.gmail.com>
-Subject: Re: [PATCH v3 13/16] ARM: mmp: move cputype.h to include/linux/soc/
-To: kbuild test robot <lkp@intel.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=8xEVf00Y33lenJGWE1WtURKsjjiVID11MePd5b0emho=;
+ b=DJLdiG11QkAEn7gM1IuKf3kVqImoGbWi+AqVL4ci/tQ9X65PzmDzqaKr9IJJJYijmj
+ yjCwmuKjvRFeveL5Xf9p/AGkY6y2NrdCsM0hBBQgZKfjFvsMtIMi+QkltmWafGH2Dz2d
+ +yxH6fHUcVlUJ1eFQKZEcZsbUNoJfuu2Lu/ZSbNkxvxHOScKT7FdOT9JuCufLpel2knc
+ /06zRpYBO7O7hQC3WLIcqa61N1fdbedhGSXsOW77XQUdcZ99QtlPOCuqyVDnNod8HASo
+ CX1v0pMMevDceBdZ87TFE3NGeaNOUmIytRIQ+ETMWPqq7Svf8yfRFvHEDSKI6/D0F7E7
+ a+3A==
+X-Gm-Message-State: APjAAAXzj3+wCXVZptYZvZbauXtBhtCpoLb961LCh3gZd5reWU3QgiT4
+ ImHfJrUY4ZIIMsEGmBmwifetzg==
+X-Google-Smtp-Source: APXvYqzmbJAh9A9AFOK7TMEJNJgAkDyKpZ3l6Gm+oQLOYe2+z/aL96Z6LnhW/H/QG2oOLwJCl34d2A==
+X-Received: by 2002:adf:ed8f:: with SMTP id c15mr1883163wro.83.1567678970169; 
+ Thu, 05 Sep 2019 03:22:50 -0700 (PDT)
+Received: from localhost.localdomain ([95.147.198.36])
+ by smtp.gmail.com with ESMTPSA id i93sm1779947wri.57.2019.09.05.03.22.49
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Sep 2019 03:22:49 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: alokc@codeaurora.org, agross@kernel.org, robh+dt@kernel.org,
+ mark.rutland@arm.com, bjorn.andersson@linaro.org, vkoul@kernel.org,
+ wsa@the-dreams.de
+Subject: [PATCH v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
+ processing
+Date: Thu,  5 Sep 2019 11:22:47 +0100
+Message-Id: <20190905102247.27583-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_032113_966346_07EB7785 
-X-CRM114-Status: UNSURE (   9.54  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190905_032252_740322_9B61AE23 
+X-CRM114-Status: GOOD (  11.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
+ no trust [2a00:1450:4864:20:0:0:0:430 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -84,43 +94,71 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
- Jason Cooper <jason@lakedaemon.net>, Stephen Boyd <sboyd@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Russell King <linux@armlinux.org.uk>, Lubomir Rintel <lkundrak@v3.sk>,
- "Cc : Rob Herring" <robh+dt@kernel.org>, kbuild-all@01.org,
- "To : Olof Johansson" <olof@lixom.net>, Thomas Gleixner <tglx@linutronix.de>,
- Kishon Vijay Abraham I <kishon@ti.com>, linux-clk <linux-clk@vger.kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 2, 2019 at 10:16 AM kbuild test robot <lkp@intel.com> wrote:
+We have a production-level laptop (Lenovo Yoga C630) which is exhibiting
+a rather horrific bug.  When I2C HID devices are being scanned for at
+boot-time the QCom Geni based I2C (Serial Engine) attempts to use DMA.
+When it does, the laptop reboots and the user never sees the OS.
 
->
-> vim +5 include/linux/soc/mmp/cputype.h
->
-> 49cbe78637eb05 arch/arm/mach-mmp/include/mach/cputype.h Eric Miao 2009-01-20  4
-> 49cbe78637eb05 arch/arm/mach-mmp/include/mach/cputype.h Eric Miao 2009-01-20 @5  #include <asm/cputype.h>
-> 49cbe78637eb05 arch/arm/mach-mmp/include/mach/cputype.h Eric Miao 2009-01-20  6
->
+The beautiful thing about this approach is that, *if* the Geni SE DMA
+ever starts working, we can remove the C code and any old properties
+left in older DTs just become NOOP.  Older kernels with newer DTs (less
+of a priority) *still* will not work - but they do not work now anyway.
 
-You can probably do something like
+Fixes: 8bc529b25354 ("soc: qcom: geni: Add support for ACPI")
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Reviewed-by: Vinod Koul <vkoul@kernel.org>
+---
+ drivers/i2c/busses/i2c-qcom-geni.c | 12 ++++++++----
+ 1 file changed, 8 insertions(+), 4 deletions(-)
 
-#ifdef CONFIG_ARM
-#include <asm/cputype.h>
-#else
-static inline read_cpuid_id(void) { return 0; }
-#endif
+diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
+index a89bfce5388e..17abf60c94ae 100644
+--- a/drivers/i2c/busses/i2c-qcom-geni.c
++++ b/drivers/i2c/busses/i2c-qcom-geni.c
+@@ -355,11 +355,13 @@ static int geni_i2c_rx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg *msg,
+ {
+ 	dma_addr_t rx_dma;
+ 	unsigned long time_left;
+-	void *dma_buf;
++	void *dma_buf = NULL;
+ 	struct geni_se *se = &gi2c->se;
+ 	size_t len = msg->len;
+ 
+-	dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++	if (!of_machine_is_compatible("lenovo,yoga-c630"))
++		dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++
+ 	if (dma_buf)
+ 		geni_se_select_mode(se, GENI_SE_DMA);
+ 	else
+@@ -394,11 +396,13 @@ static int geni_i2c_tx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg *msg,
+ {
+ 	dma_addr_t tx_dma;
+ 	unsigned long time_left;
+-	void *dma_buf;
++	void *dma_buf = NULL;
+ 	struct geni_se *se = &gi2c->se;
+ 	size_t len = msg->len;
+ 
+-	dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++	if (!of_machine_is_compatible("lenovo,yoga-c630"))
++		dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++
+ 	if (dma_buf)
+ 		geni_se_select_mode(se, GENI_SE_DMA);
+ 	else
+-- 
+2.17.1
 
-Then again, ideally drivers don't even have to know about this,
-but would distinguish between devices based on the
-compatible string for the particular device.
-
-       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
