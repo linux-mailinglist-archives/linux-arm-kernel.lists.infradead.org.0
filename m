@@ -2,69 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7AF34A987F
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 04:42:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A59D1A989F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 04:56:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Rr8pdQj684sqwbQ0rDCOVoUzfenYrYOTfDpKzkxf764=; b=paBljwFBb4Yprv
-	ju4BjCBQcT8g4pJQe7yQ9a6QZxlKvi/cz86zyQ4+n5hV7jjHBWCvd6ROuhtJJGiTKUbdUpcSab1Lo
-	4H98WeW8gQAsSQlR8DQHdD2Xar28yi0cPxgiMJqcDxAOFEjuqzKIzRIGpyZQYrOcHWrPBv+dbPJHW
-	3/tkAlzquHaUErNb/0UAeFCVJJRDJ6ESAJcgo9cymzZ1+GQxt76lCbREJoedOQ7aCw6PEZ643Fs5K
-	CrH+wknItaFpbMvOUtaYk4CuqT2rGZaWC5oA1jaMzbrXZ9iOHUCEUELWwHUPGSUo5wUh4y8g/FRvj
-	o9MvBEetunZJwsfMoQ3A==;
+	List-Owner; bh=mrVoKZnOBz0BSF5dLlgwRFrhewv+NJT4QZo6QSrE1+4=; b=V7aJtqO6aeHvjP
+	bNQ6M/KUaBOKUwlkg9aah0P57/xm1SLLuAKFKbOUBzQ+LKK7UF2Gyc+PNQ3Tb5KGizkr/Nt0KCKh1
+	QR+OifIOlJfvMeNE7A3MfFTwLyEtGR4H1SY29I07XRjkVyZt88z4ZQupiBOWvaDMQrXpcjP+sylag
+	IR4rbUdBxz6j/xDS+selGWxnwlKI+1Nf4NMoxqT/ARbw6CN6QtroYDn/TrBzGAtIromTrQfQ4dj6m
+	9zXvivfo/pR6HmGp7tQ0J07leq+SsUstoeeVNs8b60HlyVIO3AwbkHGTlX3VOva9SrwnX0JpIYvwe
+	kS88XOBzGau6B+UCkf2A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5hii-0003mv-RC; Thu, 05 Sep 2019 02:42:00 +0000
+	id 1i5hwF-0000GY-Oj; Thu, 05 Sep 2019 02:55:59 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5hia-0003lQ-1K; Thu, 05 Sep 2019 02:41:53 +0000
-X-UUID: d5dadfe3cf9940239a961b3895cc8987-20190904
-X-UUID: d5dadfe3cf9940239a961b3895cc8987-20190904
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
+ id 1i5hw5-0000F7-Th; Thu, 05 Sep 2019 02:55:51 +0000
+X-UUID: 2a4163641d4d48c185f742c31b1324ae-20190904
+X-UUID: 2a4163641d4d48c185f742c31b1324ae-20190904
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
+ (envelope-from <chaotian.jing@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 154976142; Wed, 04 Sep 2019 18:41:48 -0800
-Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 4 Sep 2019 19:41:46 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- MTKMBS33DR.mediatek.inc (172.27.6.106) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Sep 2019 10:41:38 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 5 Sep 2019 10:41:37 +0800
-Message-ID: <1567651299.13330.4.camel@mtksdaap41>
-Subject: Re: [PATCH v6 0/7] Support dsi for mt8183
-From: CK Hu <ck.hu@mediatek.com>
-To: Jitao Shi <jitao.shi@mediatek.com>
-Date: Thu, 5 Sep 2019 10:41:39 +0800
-In-Reply-To: <20190811104008.53372-1-jitao.shi@mediatek.com>
-References: <20190811104008.53372-1-jitao.shi@mediatek.com>
+ with ESMTP id 784677791; Wed, 04 Sep 2019 18:55:39 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 4 Sep 2019 19:55:38 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by mtkmbs07n2.mediatek.inc
+ (172.21.101.141) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Thu, 5 Sep 2019 10:55:36 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 5 Sep 2019 10:55:34 +0800
+Message-ID: <1567652136.11483.1.camel@mhfsdcap03>
+Subject: Re: [PATCH 2/2] mmc: block: add CMD13 polling for ioctl() cmd with
+ R1B response
+From: Chaotian Jing <chaotian.jing@mediatek.com>
+To: Avri Altman <Avri.Altman@wdc.com>
+Date: Thu, 5 Sep 2019 10:55:36 +0800
+In-Reply-To: <MN2PR04MB6991F51F6DDCA28FC23D02FEFCB80@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <20190904075444.2163-1-chaotian.jing@mediatek.com>
+ <20190904075444.2163-3-chaotian.jing@mediatek.com>
+ <MN2PR04MB6991F51F6DDCA28FC23D02FEFCB80@MN2PR04MB6991.namprd04.prod.outlook.com>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-X-TM-AS-Product-Ver: SMEX-12.5.0.1684-8.5.1010-24890.000
-X-TM-AS-Result: No-10.241600-8.000000-10
-X-TMASE-MatchedRID: 6otD/cJAac2EFkjzuXHNt+LdprnA5EQRJih/yo+OvlVSAxvL+nqAnW4+
- gA+i9D2DqMlm1+4tGhQfHS8wUUuW9T4Pcn5OGAtGMpVOsYwN78M0YG6kQ2QiFFSOymiJfTYXrr5
- TE4GLzk06n5U+9hWy0GYwRleGHW3t0/GyN5MpGlOqNnzrkU+2mgKflB9+9kWVcJHSK1bfF9XGcw
- gtERMbmd99l6mYw28dfPU3ZRMebCuKiQbKW6KJeAlpVkdtt3WuOHhqIXe4IzZIyDY579vwTFYvW
- mlP6FyeEu6Hmd7GM5PTDbyTDLiYnVGEd5OSBmbmngIgpj8eDcC063Wh9WVqgmWCfbzydb0g2EuZ
- q9zngaeNo+PRbWqfRDsAVzN+Ov/sXEXPO/6fybNBoFITciebPaiz/Co2CGruef8GeKgmo5snmxJ
- 8YZpSdw==
-X-TM-AS-User-Approved-Sender: No
-X-TM-AS-User-Blocked-Sender: No
-X-TMASE-Result: 10--10.241600-8.000000
-X-TMASE-Version: SMEX-12.5.0.1684-8.5.1010-24890.000
-X-TM-SNTS-SMTP: 75FAA2A7B910283301DE15DCDB5DB7A8A744F4C0B4B7E434DF4A678FAB936AED2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_194152_086724_228EB9D8 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190904_195549_969375_C76CC5B7 
+X-CRM114-Status: GOOD (  11.42  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -85,80 +73,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- David Airlie <airlied@linux.ie>, stonea168@163.com,
- dri-devel@lists.freedesktop.org, yingjoe.chen@mediatek.com,
- Ajay Kumar <ajaykumar.rs@samsung.com>, Vincent Palatin <vpalatin@chromium.org>,
- cawa.cheng@mediatek.com, bibby.hsieh@mediatek.com,
- Russell King <rmk+kernel@arm.linux.org.uk>, Thierry
- Reding <treding@nvidia.com>, linux-pwm@vger.kernel.org,
- Sascha Hauer <kernel@pengutronix.de>, Pawel Moll <pawel.moll@arm.com>,
- Ian Campbell <ijc+devicetree@hellion.org.uk>, Inki
- Dae <inki.dae@samsung.com>, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Andy
- Yan <andy.yan@rock-chips.com>, Matthias Brugger <matthias.bgg@gmail.com>,
- eddie.huang@mediatek.com, linux-arm-kernel@lists.infradead.org,
- Rahul Sharma <rahul.sharma@samsung.com>, srv_heupstream@mediatek.com,
- linux-kernel@vger.kernel.org, Philipp Zabel <p.zabel@pengutronix.de>, Sean
- Paul <seanpaul@chromium.org>
+Cc: Jens Axboe <axboe@kernel.dk>, Ulf Hansson <ulf.hansson@linaro.org>, Chris
+ Boot <bootc@bootc.net>,
+ "srv_heupstream@mediatek.com" <srv_heupstream@mediatek.com>,
+ "linux-mmc@vger.kernel.org" <linux-mmc@vger.kernel.org>,
+ Zachary Hays <zhays@lexmark.com>, YueHaibing <yuehaibing@huawei.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Ming Lei <ming.lei@redhat.com>,
+ Wolfram Sang <wsa+renesas@sang-engineering.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Hannes Reinecke <hare@suse.de>, Matthias Brugger <matthias.bgg@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Jitao:
+On Wed, 2019-09-04 at 14:11 +0000, Avri Altman wrote:
+> >  static int __mmc_blk_ioctl_cmd(struct mmc_card *card, struct
+> > mmc_blk_data *md,
+> >                                struct mmc_blk_ioc_data *idata)
+> >  {
+> > @@ -623,6 +675,9 @@ static int __mmc_blk_ioctl_cmd(struct mmc_card
+> > *card, struct mmc_blk_data *md,
+> >                                         __func__, status, err);
+> >         }
+> > 
+> > +       if (!err && (cmd.flags & MMC_RSP_R1B))
+> > +               err = card_busy_detect(card, MMC_BLK_TIMEOUT_MS, NULL);
+> > +
+> >         return err;
+> >  }
+> You have both the R1B flag check, and status poll (for rpmb) few line above.
+> Maybe you could re-use it.
+> It will both simplify this patch, and save the tad optimization of your first patch.
+> 
+> Thanks,
+> Avri
 
-For this series, applied to mediatek-drm-next-5.5 [1], and I break
-"[v6,2/7] drm/mediatek: fixes CMDQ reg address of mt8173 is different
-with mt2701" into two patches, thanks.
-
-[1]
-https://github.com/ckhu-mediatek/linux.git-tags/commits/mediatek-drm-next-5.5
-
-Regards,
-CK
-
-
-On Sun, 2019-08-11 at 18:40 +0800, Jitao Shi wrote:
-> Change since v5:
->  - fine tune dphy timing.
-> 
-> Change since v4:
->  - move mipi_dsi_host_unregiter() to .remove()
->  - fine tune add frame size control coding style
->  - change the data type of data_rate as u32, and add DIV_ROUND_UP_ULL
->  - use div_u64 when 8000000000ULL / dsi->data_rate.
-> 
-> Changes since v3
->  - add one more 'tab' for bitwise define.
->  - add Tested-by: Ryan Case <ryandcase@chromium.org>
-> 	and Reviewed-by: CK Hu <ck.hu@mediatek.com>.
->  - remove compare da_hs_zero to da_hs_prepare.
-> 
-> Changes since v2:
->  - change the video timing calc method
->  - fine the dsi and mipitx init sequence
->  - fine tune commit msg
-> 
-> Changes since v1:
->  - separate frame size and reg commit control independent patches.
->  - fix some return values in probe
->  - remove DSI_CMDW0 in "CMDQ reg address of mt8173 is different with mt2701" 
-> 
-> Jitao Shi (7):
->   drm/mediatek: move mipi_dsi_host_register to probe
->   drm/mediatek: fixes CMDQ reg address of mt8173 is different with
->     mt2701
->   drm/mediatek: add dsi reg commit disable control
->   drm/mediatek: add frame size control
->   drm/mediatek: add mt8183 dsi driver support
->   drm/mediatek: change the dsi phytiming calculate method
->   drm: mediatek: adjust dsi and mipi_tx probe sequence
-> 
->  drivers/gpu/drm/mediatek/mtk_drm_drv.c |   2 +-
->  drivers/gpu/drm/mediatek/mtk_dsi.c     | 224 ++++++++++++++++++-------
->  2 files changed, 161 insertions(+), 65 deletions(-)
-> 
+So that we can drop the ioctl_rpmb_card_status_poll() as it do almost
+the same thing with card_busy_detect().
 
 
 
