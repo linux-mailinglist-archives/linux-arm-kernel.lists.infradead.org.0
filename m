@@ -2,51 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 291D0AA245
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:00:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 99244AA248
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:00:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=7k7r+oO1MwhiyZcLnUQ4XRzW/xLRqyBctqchyEKIHsQ=; b=AHZZ/nSnH9RISz
-	07N7MJg6eF195MYng3Eargj4uq76uos5d4cA/X+jQcgs/HIAoOF9fbF7BKFsDAZG03XqIj4RnvHRh
-	Bc3MMoDnpr+dZctuQ/RWVZbIqldxLK0SDp0/KgMGy7G1QJXE4lz0jFjJom7z3wjmlRnDZrsS8gmF1
-	eqcMYzbJCCdCnuAxDKE2KTijx7h6CBGvtbpKDYUNl3O/n6+qAaKm1WJ7f0aP0NXa7p4Jt5so2gilK
-	GOMrVpcB9xOfruXTmSPaG6jgpwWQt7ZtVhD0tVHn+uSs+qOAn63ip4RYuGx/T8TdX6VOg95aRIa0g
-	6BLI+3VX0Rctk4fvE/YA==;
+	List-Owner; bh=FxUZfzSueC1IZRxkB7/krFsiiuuMTbgIumxHO1fNn7I=; b=GP6+cSjUjaWaSl
+	2TQCKMeoaE9OkaHhlM6Hnl1omLjcsINVTtVqUnUnKAHVgQ31WGQ3OqEj2rhWP4YXGLlNpDH3+YNMW
+	GwYCSFk8M73xSVw2vVvR4lvRvxYd/+kuiltU8UqIcsAaR0QaIHFFMFBQiT40Cbzaat4DtmtWdAfsk
+	EEvuOi9cZmNQG+gNxudXDjRM8tnTg+7DKaQUqsyXLABu83Xgg7HccjY6qzV3sJiTkIJAMh2jruNTK
+	WBbr81CpMu+4yIz8JbSoVwWXqXJ8HSHNpqHB7FT03+AFVVsuZjvHlu0B15bvQMg0God0UisBIQhpn
+	xk7GLsiopFsNZ6ht8Phw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5qQz-0005kM-Hn; Thu, 05 Sep 2019 12:00:17 +0000
+	id 1i5qRK-0007Ec-BD; Thu, 05 Sep 2019 12:00:38 +0000
 Received: from mail-db5eur03on061f.outbound.protection.outlook.com
  ([2a01:111:f400:fe0a::61f]
  helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5qPU-0004UO-5C
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:58:45 +0000
+ id 1i5qPW-0004UO-6W
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:58:47 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Ne3AOILdRkmkFza4292dhigs4tf/EbWdt3evRPm2vLSBJYDFBaPnmRL4Bszn8k9sB0vkR3F2hkHum4VrOA2+zw84tmOES1LGfKJ3a8dfCYZxVG38+3oyHurPjzAgPf7Kn+WqIYDmETAhaONr596wUUX1degXdPNYvda/w8V7N6Yevh2sxolLWMGVMW8yYsuYmfLKVSeSmotmK6XqBFb/vfTCu1inAXhDVAlejQCBu75T5or02t8cEC188eqI7TozHMIx6RKFnRk93L8Kto1RcLgv2Jod5mQjjkevAm6PmROkk2/ovpKucgz4ea4vKagi+AnttfvV5xC0YqasOKsRsA==
+ b=bKAoDb2zCK7Q+bzXXcqOeTtYELoM9zyY0OBmTaVI1ymAl51JZzKb1/IPHtE2I5WNp/018V4LuBtbLZbzP9nOaBlNFqEUHF8H1M3y22nxbZ/jD1NXy4oFse2laMIyWP8CJEcA2E4IRyCL9wbaGJlnjunZl1iZ6ogR+U+OX/4vAeKArUQXygnYNIWzaLHaPyogxY26a+2jgGuue4XZTXrIkEn5rUNJUnbDp3mbPqIiUkWWzeRIEfJLlHfD6dspM/XxDxvSclLx0kdmtEyzwgrmRe3h6U6i8ZyaX+94uB8ydmfpJSG9gGkN3UcX4rMSIirLNbok2siyFFv2MadHQw2wWA==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7j2kPiROaie9oEnDMTMxiT+49euk0rtlIzW9UozmdMk=;
- b=dToZoIklLsuF39n1tZEQ2D/vJgnYGsctVpSnGjxLuhLD3CFzh+iMIDGH+AR/bx574NPmNqso9TbJN7Q063zpuRCTB5WXDo3NaCuLfuEB4IfuyusPjigvz5ZwYCO+Poffb6ZPX8E1b8RgZ4TZzL46pLcBXyit1vA33dtPkv0KTTKa3AzmVeAt5IMtico03yy44DbsU7030Lo166tA1PiCG4ar/IrP44HzN6Fkn8fAaRreeqF/Gy/kpA8eMCRoIjrx1kS1yspdzYd6wkyV0rVK5sT+I8QEGVeWYmXjCvU4ou4EFucrOVjCkgnxBpD3WWz/a0wa5m8BFN7R8Tyaz9yIUA==
+ bh=egAmLLcYxNc+vNg4VL0BrjM1fDO0l7UPG3LF2prGCGY=;
+ b=RiDFctgqIYUCOM0NAqMrspLlcu0fS4GgrqkZaq3w/RQUFhxN5UK4D3ZjKxK6EBK4iSf/JYCOG/eawSsJlSnReaQ0WwD9YCJzkHtdms+/MZf9HO7f8gmvGZ0HR37aTFvlBgSLsFqj2seZ1/lPHpA9hm/17PxXn6IsnWffDZuwYuMLOuZQMut8nBC0iRcFWYidPo0PydRHepUJ8YEdvdXMEcrIjkxomcWvlyFNrfMZzbBd3hVqE7ACBf7OUojsrZln7lgh4k+3R5/jU/ogC80nBIC07qotpxgs/SyCgluN8SpxdIP8b/c8ecbWMk83d01eZqd0+u1r3+Lil9ghEuIluw==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
  smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
  header.d=nxp.com; arc=none
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7j2kPiROaie9oEnDMTMxiT+49euk0rtlIzW9UozmdMk=;
- b=L0t8j/bw8J3cImQ2gM7IP7qbRODlivd/5H6qM2eE80oY5Uualmxdx9NrAmaMEJHk85AFxDT/vV5CtXCi1YwIFjlmOuy8wrtOxv5NJO644UCdz2tfb9SwJ73Mi2AuifdCwAmk303YvrWeG50j7/+7yC4X2oV8aJvAKLkKDmOXm6A=
+ bh=egAmLLcYxNc+vNg4VL0BrjM1fDO0l7UPG3LF2prGCGY=;
+ b=Tqkrqu4rOsAEd5J1ezYDkXwvgxLUPExymw50TUmtBgVMh4kjKv2k2ndYq+776jm4TGSyRFasSSkJe/ppQUTN+r3CDL5Q3tEJrxOp782X9aI5kUYg48udTudLbEj45U5A6qEcnGavqG8edkj/gfKC5VVQxf4bXVmFquo5tpgpjLE=
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com (10.175.20.18) by
  VI1PR0402MB3805.eurprd04.prod.outlook.com (52.134.16.26) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.18; Thu, 5 Sep 2019 11:58:40 +0000
+ 15.20.2220.18; Thu, 5 Sep 2019 11:58:41 +0000
 Received: from VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::19cd:9f82:31ce:fbbb]) by VI1PR0402MB2863.eurprd04.prod.outlook.com
  ([fe80::19cd:9f82:31ce:fbbb%8]) with mapi id 15.20.2220.022; Thu, 5 Sep 2019
- 11:58:40 +0000
+ 11:58:41 +0000
 From: Stefan-gabriel Mirea <stefan-gabriel.mirea@nxp.com>
 To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  <robh+dt@kernel.org>, "mark.rutland@arm.com" <mark.rutland@arm.com>,
@@ -54,12 +54,11 @@ To: "corbet@lwn.net" <corbet@lwn.net>, "robh+dt@kernel.org"
  "catalin.marinas@arm.com" <catalin.marinas@arm.com>, "will@kernel.org"
  <will@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>, Leo Li
  <leoyang.li@nxp.com>
-Subject: [PATCH v4 5/6] dt-bindings: serial: Document Freescale LINFlexD UART
-Thread-Topic: [PATCH v4 5/6] dt-bindings: serial: Document Freescale LINFlexD
- UART
-Thread-Index: AQHVY+FBDBHz8YxpUkWiYnjWoMIYag==
-Date: Thu, 5 Sep 2019 11:58:39 +0000
-Message-ID: <20190905115803.19565-6-stefan-gabriel.mirea@nxp.com>
+Subject: [PATCH v4 6/6] arm64: defconfig: Enable configs for S32V234
+Thread-Topic: [PATCH v4 6/6] arm64: defconfig: Enable configs for S32V234
+Thread-Index: AQHVY+FC12rG9yn4iU2MzSxKohFhxg==
+Date: Thu, 5 Sep 2019 11:58:41 +0000
+Message-ID: <20190905115803.19565-7-stefan-gabriel.mirea@nxp.com>
 References: <20190905115803.19565-1-stefan-gabriel.mirea@nxp.com>
 In-Reply-To: <20190905115803.19565-1-stefan-gabriel.mirea@nxp.com>
 Accept-Language: en-US
@@ -75,38 +74,38 @@ authentication-results: spf=none (sender IP is )
 x-ms-exchange-messagesentrepresentingtype: 1
 x-originating-ip: [212.146.100.6]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 5fde2049-6d71-48bf-6da7-08d731f86402
+x-ms-office365-filtering-correlation-id: 52e9e927-a1d5-45cf-0cf4-08d731f8650b
 x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
  RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
  SRVR:VI1PR0402MB3805; 
 x-ms-traffictypediagnostic: VI1PR0402MB3805:|VI1PR0402MB3805:
-x-ms-exchange-purlcount: 1
 x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR0402MB3805141090FB433A6086C8AEDFBB0@VI1PR0402MB3805.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:5797;
+x-microsoft-antispam-prvs: <VI1PR0402MB38052310A176976C1AE777F8DFBB0@VI1PR0402MB3805.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:3044;
 x-forefront-prvs: 015114592F
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(39860400002)(366004)(396003)(376002)(136003)(199004)(189003)(476003)(81156014)(81166006)(446003)(2616005)(486006)(71190400001)(11346002)(6436002)(1076003)(54906003)(71200400001)(110136005)(53936002)(8676002)(7416002)(102836004)(478600001)(36756003)(966005)(14454004)(6512007)(25786009)(2501003)(2201001)(86362001)(256004)(66556008)(64756008)(66446008)(186003)(66946007)(26005)(4326008)(3846002)(7736002)(316002)(6506007)(52116002)(99286004)(8936002)(76176011)(2906002)(305945005)(6486002)(5660300002)(50226002)(66066001)(6306002)(6116002)(66476007)(6636002)(386003);
+ SFS:(10009020)(4636009)(346002)(39860400002)(366004)(396003)(376002)(136003)(199004)(189003)(476003)(81156014)(81166006)(446003)(2616005)(486006)(71190400001)(11346002)(6436002)(1076003)(54906003)(71200400001)(110136005)(53936002)(8676002)(7416002)(102836004)(478600001)(36756003)(14454004)(6512007)(25786009)(2501003)(2201001)(86362001)(256004)(66556008)(64756008)(66446008)(186003)(66946007)(26005)(4326008)(4744005)(3846002)(7736002)(316002)(6506007)(52116002)(99286004)(8936002)(76176011)(2906002)(305945005)(6486002)(5660300002)(50226002)(66066001)(6116002)(66476007)(6636002)(386003);
  DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR0402MB3805;
  H:VI1PR0402MB2863.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
 received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: enxCorFcYC1gkqfpR/ThFDdP5hImky/2/6j7yhv2WmMbT34KnsfJi9KPUS09ovRVgLFqOh3t5myI4LeZy5jQ5SjXIoI8EPob71EUeiFm2DgjhS4h0Hd9mHXuBzyB5ztvMHKgfMwaRpMKaknv5cJnojKg5CAv2SSTvWaobU2GDEB2aMbJJUcEMEcMSFwFTX8IPplNZPD6A6Z6Xzf+zZ0GoSWYdiRJWtn433fer5wk0uJGn6bo6pId7/LdVmXIih6LSrYCC3i9ud0z2XHuAZy7rSSYO/EkdQtKLaxCBvRv3KbnpbnBxuOgP8fL2+We+t4em+CXMyMHMvl71kvmbYH/aWhsyKsjiS7HtAvBuXBLz80idDQNbA8dn/R0nOL6Ovoo5QD0bbjZqSTo5L+SHANnAyfdp+zoA83buGZEVdA9nqg=
+x-microsoft-antispam-message-info: P2/Ou2M7NRa69+jdpisdTjUDtNnjQhQZwee+CQ+3DhmyPHbsqQZ2jYVvx+uW7DrZateik+4GOLdgaAG+ixIbRehEKZYSNH/3VSqgTyevI17mJVY1oMoypbTXSQ42ZhOfbMTwQqr4ijStR6nyX5uy/q7yMU9XV3Jm2jnNpgeGFU9cvTRozMXYhhJdZu+wphb8n1vjfzHoUMV1N9/UYl7uR5h+GbmH/9T/TMXHsYRJ1qeTJ/ySdZeUeLYsbMRr1qXGi+mLSKFGYqV7kYjfSYdKHE0uDmzeivRmhF9m/tgTmmIwnAde097htu7/aXbwhhSOMcSlXg+KloThczCLXGJNViFnTtYpGNUNQh9l5cWn+USDAaFz4jj/MZMckHYu6jbjYRSqaSx7Gnyvl3xu7Peod4g8ctJu2WCU31h4Jy6MoHE=
 MIME-Version: 1.0
 X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 5fde2049-6d71-48bf-6da7-08d731f86402
-X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 11:58:39.8724 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 52e9e927-a1d5-45cf-0cf4-08d731f8650b
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 11:58:41.5936 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
 X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 6SpBk+oPMnhSMNvw/MFKJcA87GGKBFUsGyhIWvAW3nPg5mhWXOBud2ugp5YHWNKjDO4esytqizR0Chn/CCD/E4VEAncTNWNyg03qc4Y6HHg=
+X-MS-Exchange-CrossTenant-userprincipalname: H5mWGBWRf+jmJM9z5sDNk/Rpm21pcY6qpcMUrrIKi46x4+3xOozdj8zvb9BF6wDGoh1eoSMa9ms/axi3R03KD48JWdeLX+uCVDZ+0PCqj1c=
 X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0402MB3805
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_045844_423851_D5F65768 
-X-CRM114-Status: GOOD (  10.12  )
+X-CRM114-CacheID: sfid-20190905_045846_397324_233A69C0 
+X-CRM114-Status: UNSURE (   9.17  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.8 points)
@@ -138,7 +137,6 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
  "linux-doc@vger.kernel.org" <linux-doc@vger.kernel.org>,
- Larisa Ileana Grigore <larisa.grigore@nxp.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
  "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
  "jslaby@suse.com" <jslaby@suse.com>,
@@ -149,48 +147,40 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
+From: Mihaela Martinas <Mihaela.Martinas@freescale.com>
 
-Add documentation for the serial communication interface module (LINFlexD),
-found in two instances on S32V234.
+Enable support for the S32V234 SoC, including the previously added UART
+driver.
 
+Signed-off-by: Mihaela Martinas <Mihaela.Martinas@freescale.com>
+Signed-off-by: Adrian.Nitu <adrian.nitu@freescale.com>
 Signed-off-by: Stoica Cosmin-Stefan <cosmin.stoica@nxp.com>
-Signed-off-by: Larisa Grigore <Larisa.Grigore@nxp.com>
 Signed-off-by: Stefan-Gabriel Mirea <stefan-gabriel.mirea@nxp.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
 ---
- .../bindings/serial/fsl,s32-linflexuart.txt   | 22 +++++++++++++++++++
- 1 file changed, 22 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
+ arch/arm64/configs/defconfig | 3 +++
+ 1 file changed, 3 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-new file mode 100644
-index 000000000000..f1bbe0826be5
---- /dev/null
-+++ b/Documentation/devicetree/bindings/serial/fsl,s32-linflexuart.txt
-@@ -0,0 +1,22 @@
-+* Freescale LINFlexD UART
-+
-+The LINFlexD controller implements several LIN protocol versions, as well as
-+support for full-duplex UART communication through 8-bit and 9-bit frames.
-+
-+See chapter 47 ("LINFlexD") in the reference manual[1].
-+
-+Required properties:
-+- compatible :
-+  - "fsl,s32v234-linflexuart" for LINFlexD configured in UART mode, which
-+    is compatible with the one integrated on S32V234 SoC
-+- reg : Address and length of the register set for the device
-+- interrupts : Should contain uart interrupt
-+
-+Example:
-+uart0: serial@40053000 {
-+	compatible = "fsl,s32v234-linflexuart";
-+	reg = <0x0 0x40053000 0x0 0x1000>;
-+	interrupts = <0 59 4>;
-+};
-+
-+[1] https://www.nxp.com/webapp/Download?colCode=S32V234RM
+diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
+index 0e58ef02880c..bb5aa95a8455 100644
+--- a/arch/arm64/configs/defconfig
++++ b/arch/arm64/configs/defconfig
+@@ -48,6 +48,7 @@ CONFIG_ARCH_MXC=y
+ CONFIG_ARCH_QCOM=y
+ CONFIG_ARCH_RENESAS=y
+ CONFIG_ARCH_ROCKCHIP=y
++CONFIG_ARCH_S32=y
+ CONFIG_ARCH_SEATTLE=y
+ CONFIG_ARCH_STRATIX10=y
+ CONFIG_ARCH_SYNQUACER=y
+@@ -347,6 +348,8 @@ CONFIG_SERIAL_XILINX_PS_UART=y
+ CONFIG_SERIAL_XILINX_PS_UART_CONSOLE=y
+ CONFIG_SERIAL_FSL_LPUART=y
+ CONFIG_SERIAL_FSL_LPUART_CONSOLE=y
++CONFIG_SERIAL_FSL_LINFLEXUART=y
++CONFIG_SERIAL_FSL_LINFLEXUART_CONSOLE=y
+ CONFIG_SERIAL_MVEBU_UART=y
+ CONFIG_SERIAL_DEV_BUS=y
+ CONFIG_VIRTIO_CONSOLE=y
 -- 
 2.22.0
 
