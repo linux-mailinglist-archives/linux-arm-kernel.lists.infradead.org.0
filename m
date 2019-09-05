@@ -2,92 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 003F3AA5FC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:34:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29E90AA604
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:35:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4OU/eu5mOZeWhBCmH8GeN4+nn1xGbiTXoZW7mmUCicQ=; b=kKdkZYwJ9Xe8jQ
-	zADbYwDAUdu4jLhDPv4o49XdQhVzsiK9/WQogin9mWQgwMizVnTePtNxAMmiZrxxJ4/VczpDdFxUl
-	BkPJ9Ub4vDPvMSWNDiYXpMiMnpwYlheNHwtx1fkzYfrdre+DB4roTKfLnIXSPqBlSbXWy5iKZ/P+Z
-	hoR5G2fdcUV8fMatIo35Lo8azmUnl0v71Swm+0oHMccKkxwOR0C6Sh1o2Y30rRiwxKJNdAnVWlTr+
-	qH/mNcxMFN3dy59Rr/1ir5b9gZb2L9NJ/YvUOoxRoZhjrWCBMl5/1y4o1aBLifjMJsqT7Ii9Yqukr
-	BlxzUBCuBKFfK3MBXDXA==;
+	List-Owner; bh=NxJ6z25srme0FpMqV3SR21ups7mOD0dDaflnp/u27Yo=; b=CgzWrvKZpag0k5
+	3Quwuf7kAKxhP15DMgvbi07H9kfbMAPkNK9BoC9vzh7TY47Sw+h60+AZGbANgAJu44F6DktuVe525
+	UZY0zJpG/P9HWFomqd1Z8s1q0ikAqpsfkruE3/2190hl57orDTPrsujjPAnxPkqCi/4NUzj5a0mH3
+	yhAyU3JDvPH1+0Pr8eRd5Wj6ql2+OwlgYKZ8/KEO5B1XDvslEvCFKoVgb8W8jitpk4uA//0+Deflq
+	hlK1wn83wp2YDwMa6ZcNmy2J304iagLcBT2D73TxWeD9JviEipYqfyPxaCFMrZBNi0Z54T5BkSZ3Y
+	SnRAt+ePupANlMyMb03w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sqK-0001rc-VB; Thu, 05 Sep 2019 14:34:37 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1i5srY-0003Ws-PB; Thu, 05 Sep 2019 14:35:52 +0000
+Received: from mail-eopbgr10088.outbound.protection.outlook.com ([40.107.1.88]
+ helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sqA-0001r5-G1
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:34:27 +0000
-Received: by mail-wm1-x344.google.com with SMTP id q12so3350928wmj.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 07:34:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=DyTw9eXVQm1IWrN4WvbcEFv8xvh92gzUp05Bd1JROcs=;
- b=ko7ppxFDEAiwEELcyPLL5C3zPAEAP/lMXO+uEQEqEAh/yKcsyqip8+coBqZyqHjIFA
- M/2KxCRWGsALtstWQHuhxG6OQ3n9laBE/K9F04K5QJsO6nsOrYGdDP89FSVEPuNc1psY
- alB+gYnUEsvkUM7/zE7NQQW5cPDjZC/G9qM9ZKAG8o/wrFHFu8Gnnaydw1BjmoJfJS/9
- gxCgfejK0r/KxwyHjLNRb4jS3IbGmc45eY+YSQqAiy05rtyZoX7zwYaNx7Phu26maV88
- J2oUrNbH9eKAU8a5SX1eDBj5LyQDjPmkrYu6XHAF8ojfHZxzwRwVDEPhEJhthkDOyRol
- kTCw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=DyTw9eXVQm1IWrN4WvbcEFv8xvh92gzUp05Bd1JROcs=;
- b=tVosHJQOrtTH6k0LqMvCMZyeCMYSvFZTYt0yVODdRysWkTRpr8wi4mwnNYONzdBNYZ
- cvHZiCoHcxWQpgcywdhkMPoSXcdvQSTVt45flh8QjXERqNNJxTkP7LdXU59IhHJ8kZ/t
- qjGZfpk12Y+CUF8mT9EQY88NtatxsoQzie14QmDrxCMvUR4co2vVhlfM/zEYHfH/77TS
- rDiri+OuY7Ly1hPVynkmHKqE7AMF20J1A0rgW2ItLkcW1hLiOTiLN8LKuGZDpbksCia8
- K+GcDH7uhkrWJdARz1pqL4ftcnnb2zyxMFWV9IgA29xNacgNZk6kwjpqDNJvFj6qXI1f
- 9Gbg==
-X-Gm-Message-State: APjAAAWdUY6dDLYsDY+67Zc9Do5iToH1OtC+bAYWCqaRr61sYLIkv+uY
- fOhJdBrQ90I+JLPSzOurQ6ly3A==
-X-Google-Smtp-Source: APXvYqypIINRLr/tdc6ZE4OP7FqGeS1CGF1Dknw14T3cDFuJ3wEbHIo7XY5x44yBErUXQfIEAM9puA==
-X-Received: by 2002:a1c:cbcc:: with SMTP id b195mr3552405wmg.80.1567694065295; 
- Thu, 05 Sep 2019 07:34:25 -0700 (PDT)
-Received: from dell ([95.147.198.36])
- by smtp.gmail.com with ESMTPSA id l1sm3058017wrb.1.2019.09.05.07.34.24
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 05 Sep 2019 07:34:24 -0700 (PDT)
-Date: Thu, 5 Sep 2019 15:34:23 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: [PATCH 2/2] i2c: qcom-geni: Provide an option to disable DMA
- processing
-Message-ID: <20190905143423.GG26880@dell>
-References: <20190905075213.13260-1-lee.jones@linaro.org>
- <20190905075213.13260-2-lee.jones@linaro.org>
- <20190905091800.GD1157@kunai> <20190905092816.GD26880@dell>
- <20190905134338.GF1157@kunai>
+ id 1i5srN-0003WS-Ez
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:35:42 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=MktwJiTyxaA2FWomLMP6+hL8O2pez8uh17y+KGIZrsCR7kTrrd+NhuDE0GNef/blh6c4TmgbguK5zpVcPtKc+WdZ108ChzleRP4j2Lk+63STQ1wZpOBDFDxqLsOEtc+B5WkapMS7U9bUXZRPuxG5fyQBV6SYqIaLYS6hROGnLtg3BIz2spz5XoVT6DOzWYZRPvT+sVAADElVRt4LeEqaeQ8/+pvcHaqi6FUBH8Vumq044Jpk3JuvEWrwqG5AcsL1xlUXeFwNKirLOuMp1QvxiEr6AOn6SR0MlmiOmQL1l8i+62PdBwNIbMkxsEJtAKYTPu6JzB9ErR+CibuwpwB18A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7HqUkZSyW4zUgHZAKK4Cn/Hal/NIwD8GgDIZ5CLOCS0=;
+ b=XET72F445iljFmWSJZn3KWqGu0tZsg7j2o3wk1erXh31mU6NXc5UO2/uvm789iRsdG+CGVaZ1G+K/H3ANTESaPmAtOpgowYwEfLr4XeHrVcV80bc9M2FJDH3Oy5kl8YiJQUo6L9rEL/mho3zdmYgnKN7Q95sTyBpwY4dIVFeYdeKIiObiBP7cw6hB/ve/fZf/ONlKtzNUzB56tMf7+fte2KI4WhY5wUtihl3FfyuJq4k5jaZoZk5ZsnZnMojihLfJUngMQq4Xds/3yomGZPhfh+HfuD4c0xApBdd0Vyv760YgUwuxmr86tddD4tgKpbyJMidSqpglTxnLdxgOG0fRA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=kococonnector.com; dmarc=pass action=none
+ header.from=kococonnector.com; dkim=pass header.d=kococonnector.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=KoCoConnector.onmicrosoft.com; s=selector2-KoCoConnector-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=7HqUkZSyW4zUgHZAKK4Cn/Hal/NIwD8GgDIZ5CLOCS0=;
+ b=GRSA4eKb/if+79Mfpl+9QnNcxpvDTWI9982WbDpVuvf4WvtQNtBvYs5VHQuD98wlCK4Wuu3Z1N+qSTzkQ53qGchOW/XcQEJQAB3lWr9UhtRjyOpftJdjm3o5QKVMlYzsaxzf2W+JI9q87dUxurROEPT7YoLJd6iC7c+VKC8Prfk=
+Received: from DB6PR0902MB2072.eurprd09.prod.outlook.com (10.170.212.23) by
+ DB6PR0902MB1830.eurprd09.prod.outlook.com (10.171.76.23) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.15; Thu, 5 Sep 2019 14:35:37 +0000
+Received: from DB6PR0902MB2072.eurprd09.prod.outlook.com
+ ([fe80::19cd:2f16:89cd:67cb]) by DB6PR0902MB2072.eurprd09.prod.outlook.com
+ ([fe80::19cd:2f16:89cd:67cb%3]) with mapi id 15.20.2220.022; Thu, 5 Sep 2019
+ 14:35:37 +0000
+From: Oliver Graute <oliver.graute@kococonnector.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Subject: Re: [PATCH v1] watchdog: imx_sc: this patch just fixes whitespaces
+Thread-Topic: [PATCH v1] watchdog: imx_sc: this patch just fixes whitespaces
+Thread-Index: AQHVY724fLk0KIY3y0CpQBQtW0JX36cdEvuAgAAT2IA=
+Date: Thu, 5 Sep 2019 14:35:37 +0000
+Message-ID: <20190905143525.GE23537@optiplex>
+References: <20190905073730.22258-1-oliver.graute@kococonnector.com>
+ <016e268c-f289-4127-a47e-3d8faa790ded@roeck-us.net>
+In-Reply-To: <016e268c-f289-4127-a47e-3d8faa790ded@roeck-us.net>
+Accept-Language: de-DE, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: AM3PR04CA0129.eurprd04.prod.outlook.com (2603:10a6:207::13)
+ To DB6PR0902MB2072.eurprd09.prod.outlook.com
+ (2603:10a6:6:8::23)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=oliver.graute@kococonnector.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [193.47.161.132]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 43bc5ca8-6eea-4811-f296-08d7320e5165
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(7021145)(8989299)(4534185)(7022145)(4603075)(4627221)(201702281549075)(8990200)(7048125)(7024125)(7027125)(7023125)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DB6PR0902MB1830; 
+x-ms-traffictypediagnostic: DB6PR0902MB1830:
+x-microsoft-antispam-prvs: <DB6PR0902MB18301B485416AD8D99981D2EEBBB0@DB6PR0902MB1830.eurprd09.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:98;
+x-forefront-prvs: 015114592F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(7916004)(136003)(346002)(39830400003)(376002)(396003)(366004)(199004)(189003)(66946007)(1076003)(71200400001)(71190400001)(66066001)(5660300002)(256004)(9686003)(6512007)(86362001)(6246003)(6916009)(53936002)(14454004)(508600001)(7416002)(6436002)(33656002)(2906002)(6486002)(33716001)(66476007)(66556008)(64756008)(66446008)(25786009)(4744005)(4326008)(229853002)(76176011)(305945005)(3846002)(6116002)(186003)(26005)(53546011)(6506007)(386003)(102836004)(99286004)(11346002)(8936002)(316002)(52116002)(81156014)(486006)(44832011)(476003)(81166006)(8676002)(7736002)(446003)(54906003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB6PR0902MB1830;
+ H:DB6PR0902MB2072.eurprd09.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: kococonnector.com does not
+ designate permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: Vmm7l8RqyLNv4jP+uSffuW8t/plUOsT1fq5OKJ/dGqfVaxzJbqNl+rJGcywFCFkRBvdki7KtFLFJJC80dLe1jIb7/AxmHw2WNIL3OrfzdmmO3KccYue5U8ZgtKiIUQVPiy7q2xLuMjR/Wy09/5TbdTJ7TB1Y6noHcPZFs/tcFev+b5Mn795kgk6w70a08l9wkK3zJhgl/S3zlHlI60C8IcAuvKQvo08vwEBIIZB0a73xZUKN2V95fA28DahUgKzCzJQ65fykHy4INyWQA5nAFnMKwPvtYkNNhV5rdiqVQyJdqpFHBgMt9G+Nhv2zIi+9OGe8MVLyushuTNES8wS/I0f9MNIf6zpsY9FRqAD0ALo6FRzheIvkl4DG5ahDyHnStCkry/e7/bh/ebneE7UO+e/n3mhM5WMHXjB+DLaLC3I=
+x-ms-exchange-transport-forked: True
+Content-ID: <B922D784E86B724A8F2E4DD058D40B93@eurprd09.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190905134338.GF1157@kunai>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+X-OriginatorOrg: kococonnector.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 43bc5ca8-6eea-4811-f296-08d7320e5165
+X-MS-Exchange-CrossTenant-originalarrivaltime: 05 Sep 2019 14:35:37.5169 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 59845429-0644-4099-bd7e-17fba65a2f2b
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 1DPLFVWdRDOvuxHOVW2Se9N6Ehy3SKo4suWJ3I8cHHNdWWL1S5ucpSCLa1EA/O9K8gwZASSur+Li2cZ7vacAyIsMtc/PgeswzU+48x0wnJg=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB6PR0902MB1830
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_073426_530336_9DE7CBAF 
-X-CRM114-Status: GOOD (  15.64  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_073541_534167_E8809ADB 
+X-CRM114-Status: UNSURE (   9.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
+ no trust [40.107.1.88 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -102,34 +124,39 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, agross@kernel.org,
- robh+dt@kernel.org, bjorn.andersson@linaro.org, vkoul@kernel.org,
- alokc@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, Aisheng Dong <aisheng.dong@nxp.com>,
+ Ulf Hansson <ulf.hansson@linaro.org>,
+ "linux-watchdog@vger.kernel.org" <linux-watchdog@vger.kernel.org>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Daniel Baluta <daniel.baluta@nxp.com>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Wim Van Sebroeck <wim@linux-watchdog.org>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVGh1LCAwNSBTZXAgMjAxOSwgV29sZnJhbSBTYW5nIHdyb3RlOgoKPiBPbiBUaHUsIFNlcCAw
-NSwgMjAxOSBhdCAxMDoyODoxNkFNICswMTAwLCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiBPbiBUaHUs
-IDA1IFNlcCAyMDE5LCBXb2xmcmFtIFNhbmcgd3JvdGU6Cj4gPiAKPiA+ID4gCj4gPiA+ID4gRml4
-ZXM6IDhiYzUyOWIyNTM1NCAoInNvYzogcWNvbTogZ2VuaTogQWRkIHN1cHBvcnQgZm9yIEFDUEki
-KQo+ID4gPiAKPiA+ID4gQXJlIHlvdSBzdXJlPyBGcm9tIHZpc3VhbCBpbnNwZWN0aW9uLCBJIGRv
-bid0IHNlZSBhIGNvcnJlbGF0aW9uIGJldHdlZW4KPiA+ID4gdGhpcyBjb21taXQgYW5kIHRoZSBm
-aXggaGVyZS4KPiA+IAo+ID4gVGhpcyBwYXRjaCBzaG91bGQgaGF2ZSBiZWVuIHBhcnQgb2YgdGhl
-IGNvbW1pdCwgb3IgYXQgdGhlIHZlcnkgbGVhc3QsCj4gPiBwYXJ0IG9mIHRoZSBzZXQsIGFsbHVk
-ZWQgdG8gYWJvdmUuICBVbmZvcnR1bmF0ZWx5LCBJIHdhcyBjYXJyeWluZwo+ID4gQmpvcm4ncyBo
-YWNrIHdoaWNoIHNpbXBseSByZXR1cm5lZCBlYXJseSBmcm9tIGdlbmlfc2VfcnhfZG1hX3ByZXAo
-KQo+ID4gd2l0aCBhbiBlcnJvciwgc28gaXQgbWFza2VkIHRoZSBpc3N1ZS4KPiAKPiBJIHN0aWxs
-IGRvbid0IHNlZSB3aHkgdGhpcyBiYXNpYyBBQ1BJIGVuYWJsaW5nIGNvZGUgKG5vdCB0b3VjaGlu
-ZyBETUEKPiBidXQgb25seSBjbG9ja3MgYW5kIHBpbmN0cmwpIGNhdXNlcyBhbmQgYWRkaXRpb25h
-bCBoYW5kbGluZyBmb3IgRE1BLiBBbQo+IEkgb3Zlcmxvb2tpbmcgc29tZXRoaW5nIG9idmlvdXM/
-CgpQbGVhc2UgaWdub3JlLCBJJ20gZGlzY3Vzc2luZyB3aXRoIGFub3RoZXIgcGF0Y2ggaW4gbWlu
-ZC4KCi0tIApMZWUgSm9uZXMgW+adjueQvOaWr10KTGluYXJvIFNlcnZpY2VzIFRlY2huaWNhbCBM
-ZWFkCkxpbmFyby5vcmcg4pSCIE9wZW4gc291cmNlIHNvZnR3YXJlIGZvciBBUk0gU29DcwpGb2xs
-b3cgTGluYXJvOiBGYWNlYm9vayB8IFR3aXR0ZXIgfCBCbG9nCgpfX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlz
-dApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJh
-ZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+On 05/09/19, Guenter Roeck wrote:
+> On 9/5/19 12:44 AM, Oliver Graute wrote:
+> > Fix only whitespace errors in imx_sc_wdt_probe()
+> > 
+> > Signed-off-by: Oliver Graute <oliver.graute@kococonnector.com>
+> 
+> This patch no longer applies due to commit "watchdog: imx_sc: Remove
+> unnecessary error log".
+> 
+
+ok I'll rebase patch against linux-staging/watchdog-next
+
+Best regards,
+
+Oliver
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
