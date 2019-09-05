@@ -2,54 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 90A1DAA571
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:09:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 74D6CAA586
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:14:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=2QVf+gZ6O+RXwFBw0HigwDdl4jdxjS+ANswSnOlZPOA=; b=QHLHZ5TtFKh/xP
-	nwOYM8A6GYPE5KzyvbBbAyCFCjtwASjc7gAfPtNJhQfSNxWSyMZ6fkoKHCyRbNXXavOSLvBcnQESx
-	AXkJj3niVLcH8T+oe+9Jw4ZBWFw0c7IjNABSQPPI6S5BSEpcIGn57YG8vSIlj5v1ADc1FlYVBb7x2
-	/lISahV9YYmToqlOdhoo2lv1E9QWjLvrt0RhThrJUcBtr3N8VZcM+UN0m2xMtMotLnl1YWYM8s2DK
-	AQ9o2vWD9DYs353WfL6Sz8dnSFRrEA4lUv4awbvBSYhF1ewH8clGML3mNedE9p0mobN3wSnLEnfg9
-	HmPtZymiM+5RQsZi7elQ==;
+	List-Owner; bh=euZ84duMeHfWQDlF5xhciLugK/gVq2jadfoNd1CGQrA=; b=RqHOFOnGhre4dn
+	dWoU+hzPOdci6dPwJbdV2kMm7ZVJn6xD5yXhZ919T/ka68FNlFwsnweutahF0zrw9++b4NSnslrSu
+	dz9my1EDrdSQCUmF0MK6LTBPRaaRYB5ATcH0dYyvWimOQJzyZn9dYDv2D7ShHiGoZQqSE4FrYYP5J
+	GZ94PK0gU5uF9x9EBaE2F8CiWkCauVP490tuC2OKoyeox/JpI5QPoKPJ4r7B0Jp+fdVzLmjZpY3A3
+	1AxEQ7mSam4Ib3vE/DreMzFpoTY4jKWncWr+UUc2UnZCqDDYUOoKkDQxpW/hwp5aTuVJVoHcAo081
+	lOKqTc9Rx/bSfO+ch19g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sS7-0008KZ-OT; Thu, 05 Sep 2019 14:09:35 +0000
-Received: from youngberry.canonical.com ([91.189.89.112])
+	id 1i5sWS-0001VG-AK; Thu, 05 Sep 2019 14:14:04 +0000
+Received: from merlin.infradead.org ([2001:8b0:10b:1231::1])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sRy-0008IW-0i
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:09:27 +0000
-Received: from 1.general.cking.uk.vpn ([10.172.193.212] helo=localhost)
- by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
- (Exim 4.76) (envelope-from <colin.king@canonical.com>)
- id 1i5sRr-0001aJ-Mw; Thu, 05 Sep 2019 14:09:19 +0000
-From: Colin King <colin.king@canonical.com>
-To: Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-gpio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] pinctrl: bcm: remove redundant assignment to pointer log
-Date: Thu,  5 Sep 2019 15:09:19 +0100
-Message-Id: <20190905140919.29283-1-colin.king@canonical.com>
-X-Mailer: git-send-email 2.20.1
+ id 1i5sWK-0001V7-UK
+ for linux-arm-kernel@bombadil.infradead.org; Thu, 05 Sep 2019 14:13:56 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=infradead.org; s=merlin.20170209; h=Content-Transfer-Encoding:MIME-Version:
+ Message-Id:Date:Subject:Cc:To:From:Sender:Reply-To:Content-Type:Content-ID:
+ Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+ :Resent-Message-ID:In-Reply-To:References:List-Id:List-Help:List-Unsubscribe:
+ List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=0J2eF/GJkYBlAV9bsnnTBObhosClR3AQeu2oGuzNZNA=; b=owLoTCg2OEV1iBW67N0j/SMK4n
+ aINszVFMCn3WUAHCIe1qdW0Je5p/nXJuESt6LHRzHaGIyberJg4tNZ3BrmVXjjWFWDIHea1N3PW7W
+ OjjISGM44JGpjmWRfcAdivUXJtPlq5zJZrXb2jrpy81hrnhWlXAPsudzeWSQR71PPdw4eoAHP1jqj
+ Te5jzGDAT5wUCPukFDw/y2V6l4MF2RtaSmc3BJPNvts04PwwQ4kPEgPFqnvhqMyLznFAhTnHm1MRH
+ nCxNNpQZaca5EtLNYO6zVxoUd5HPrWLFsEWbU8LwBnuGNWoXsvXslgvvmz/pnp3M3+xxpQ3o7kYc8
+ BDjHRnIQ==;
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
+ by merlin.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5sWH-0008Mu-Vg
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:13:55 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id DF4D72002B;
+ Thu,  5 Sep 2019 14:13:13 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH] pinctrl: at91-pio4: implement .get_multiple and .set_multiple
+Date: Thu,  5 Sep 2019 16:13:04 +0200
+Message-Id: <20190905141304.22005-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_070926_203172_0F4E9DEC 
-X-CRM114-Status: UNSURE (   9.80  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.0 (-----)
-X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+X-Spam-Note: CRM114 invocation failed
+X-Spam-Score: -0.7 (/)
+X-Spam-Report: SpamAssassin version 3.4.2 on merlin.infradead.org summary:
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [91.189.89.112 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,38 +73,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Colin Ian King <colin.king@canonical.com>
+Implement .get_multiple and .set_multiple to allow reading or setting
+multiple pins simultaneously. Pins in the same bank will all be switched at
+the same time, improving synchronization and performances.
 
-The pointer log is being initialized with a value that is never read
-and is being re-assigned a little later on. The assignment is
-redundant and hence can be removed.
-
-Addresses-Coverity: ("Unused value")
-Signed-off-by: Colin Ian King <colin.king@canonical.com>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/pinctrl/bcm/pinctrl-cygnus-mux.c | 1 -
- 1 file changed, 1 deletion(-)
+ drivers/pinctrl/pinctrl-at91-pio4.c | 60 +++++++++++++++++++++++++++++
+ 1 file changed, 60 insertions(+)
 
-diff --git a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-index 44df35942a43..dcab2204c60c 100644
---- a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-+++ b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-@@ -923,7 +923,6 @@ static int cygnus_mux_log_init(struct cygnus_pinctrl *pinctrl)
- 	if (!pinctrl->mux_log)
- 		return -ENOMEM;
+diff --git a/drivers/pinctrl/pinctrl-at91-pio4.c b/drivers/pinctrl/pinctrl-at91-pio4.c
+index d6de4d360cd4..488a302a60d4 100644
+--- a/drivers/pinctrl/pinctrl-at91-pio4.c
++++ b/drivers/pinctrl/pinctrl-at91-pio4.c
+@@ -328,6 +328,35 @@ static int atmel_gpio_get(struct gpio_chip *chip, unsigned offset)
+ 	return !!(reg & BIT(pin->line));
+ }
  
--	log = pinctrl->mux_log;
- 	for (i = 0; i < CYGNUS_NUM_IOMUX_REGS; i++) {
- 		for (j = 0; j < CYGNUS_NUM_MUX_PER_REG; j++) {
- 			log = &pinctrl->mux_log[i * CYGNUS_NUM_MUX_PER_REG
++static int atmel_gpio_get_multiple(struct gpio_chip *chip, unsigned long *mask,
++				   unsigned long *bits)
++{
++	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
++	unsigned int bank;
++
++	bitmap_zero(bits, atmel_pioctrl->npins);
++
++	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
++		unsigned int word = bank;
++		unsigned int offset = 0;
++		unsigned int reg;
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
++		offset = bank * ATMEL_PIO_NPINS_PER_BANK % BITS_PER_LONG;
++#endif
++		if (!mask[word])
++			continue;
++
++		reg = atmel_gpio_read(atmel_pioctrl, bank, ATMEL_PIO_PDSR);
++		bits[word] |= mask[word] & (reg << offset);
++
++		pr_err("ABE: %d %08x\n", bank, bits[word]);
++	}
++
++	return 0;
++}
++
+ static int atmel_gpio_direction_output(struct gpio_chip *chip, unsigned offset,
+ 				       int value)
+ {
+@@ -358,11 +387,42 @@ static void atmel_gpio_set(struct gpio_chip *chip, unsigned offset, int val)
+ 			 BIT(pin->line));
+ }
+ 
++static void atmel_gpio_set_multiple(struct gpio_chip *chip, unsigned long *mask,
++				    unsigned long *bits)
++{
++	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
++	unsigned int bank;
++
++	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
++		unsigned int bitmask;
++		unsigned int word = bank;
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
++#endif
++		if (!mask[word])
++			continue;
++
++		bitmask = mask[word] & bits[word];
++		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_SODR, bitmask);
++
++		bitmask = mask[word] & ~bits[word];
++		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_CODR, bitmask);
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		mask[word] >>= ATMEL_PIO_NPINS_PER_BANK;
++		bits[word] >>= ATMEL_PIO_NPINS_PER_BANK;
++#endif
++	}
++}
++
+ static struct gpio_chip atmel_gpio_chip = {
+ 	.direction_input        = atmel_gpio_direction_input,
+ 	.get                    = atmel_gpio_get,
++	.get_multiple           = atmel_gpio_get_multiple,
+ 	.direction_output       = atmel_gpio_direction_output,
+ 	.set                    = atmel_gpio_set,
++	.set_multiple           = atmel_gpio_set_multiple,
+ 	.to_irq                 = atmel_gpio_to_irq,
+ 	.base                   = 0,
+ };
 -- 
-2.20.1
+2.21.0
 
 
 _______________________________________________
