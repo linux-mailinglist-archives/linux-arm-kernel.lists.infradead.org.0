@@ -2,53 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C916AA9FF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 19:29:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 60874AAA2D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 19:39:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=7La7pRcOif8yQEph4xn/4qNETg19lK8ZlhDR0owDLfA=; b=udwRPvn09cGFUhUPU/WU/UPxs
-	ZPwK+1T+hkM7mJ0jcfxi1VaNzk3Wo8NZ+ixYQUpYZRpqwu1VdL/Tdo8871tvTCfoEKCHw0VSzd2qK
-	kjc2HB+GX4TJ75JzsM+5p4zIQuGHZR/lT8Zb2llO57JaeCsVUoiNS8VdGG3zMh6K/h0tsRQZ3S6+Q
-	OwGMgATqegAZbWbu6BZ0wmM9rVXj2LTqUODQCRclEGAXr0+u+tIgjycNVe2fBhrRa9jvoHUEK2HWn
-	Y8g5Wm88j/NnjIiRFdPcvxil/f36N7xTyAF1hDMQdxneEdIqxg/Slepv899LPIzaNrkWAGL9t2gB5
-	J2IkRYO3g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
+	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	References:List-Owner; bh=LwFPfmAh5U9ucNaY9cw/lR3hNPRUAiL/O+qWwal3TE4=; b=idc
+	f/eqIC3q3K4Jwzpqu859GRjVBuV84OB+1wZYn1ngEW7HVdH2PyRMGnCI40xJGq5gRBYV2of8OqNVg
+	QX5etJP8DkTVn/6q1IBXprBOSyMPo031rkVM193p7rJO0gDxj5txOqOYvVW+0BmnCTSMTPEbiYES7
+	cQ0CNMGG8LakFtU6qdVbTgBP0oOzPk3oW5uPpJPsPBQcFO37cZwSoHdXSDpUygGj5IvoP61D2m4Nh
+	WzaK8eEiP/0TTeaXxRp3pUJ/nQuYT/SP2JkZfscxB2AmGoxoc7kpwwcYWteFklMZqHWlZfJhG0i/Y
+	vpYzaCe+ho6Pps+IPDT5G52J0/wWXEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5vZ9-0005CK-JF; Thu, 05 Sep 2019 17:29:03 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i5vj6-0000y4-AQ; Thu, 05 Sep 2019 17:39:20 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5vYz-0005BU-Kf; Thu, 05 Sep 2019 17:28:55 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id ED229AC49;
- Thu,  5 Sep 2019 17:28:49 +0000 (UTC)
-Message-ID: <93a26ccce01a6a2c37c60dc1fab50b337f9ebe95.camel@suse.de>
-Subject: Re: [PATCH v3 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Catalin Marinas <catalin.marinas@arm.com>
-Date: Thu, 05 Sep 2019 19:28:47 +0200
-In-Reply-To: <20190905171939.GF31268@arrakis.emea.arm.com>
-References: <20190902141043.27210-1-nsaenzjulienne@suse.de>
- <20190902141043.27210-4-nsaenzjulienne@suse.de>
- <20190905171939.GF31268@arrakis.emea.arm.com>
-User-Agent: Evolution 3.32.4 
-MIME-Version: 1.0
+ id 1i5vim-0000eE-GL
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 17:39:02 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
+ Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
+ List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
+ List-Archive; bh=AP3QXYgc2oODBwjsiyyDTEmHz/ojfNEQngmM1GZg4jc=; b=ZSyEwwWkzeYr
+ ciXUA8MJrAoSIFRCwbqGVE9a/25h+JPRZPLQ+ADVW9nMktvi70e2pFva1ZWtmK+aXjOrstXWTAICc
+ n3r/D9FuOGayRr9FafsbqFzw1g1EqHgMcBuvONYDzUxd5jZIm+n4uKI1plXOpYQFoI0pAzZtmgOnE
+ 6KAMQ=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i5vie-0005Ge-5O; Thu, 05 Sep 2019 17:38:52 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 3861B2742D07; Thu,  5 Sep 2019 18:38:51 +0100 (BST)
+From: Mark Brown <broonie@kernel.org>
+To: YueHaibing <yuehaibing@huawei.com>
+Subject: Applied "ASoC: SOF: imx8: Fix COMPILE_TEST error" to the asoc tree
+In-Reply-To: <20190905064400.24800-1-yuehaibing@huawei.com>
+X-Patchwork-Hint: ignore
+Message-Id: <20190905173851.3861B2742D07@ypsilon.sirena.org.uk>
+Date: Thu,  5 Sep 2019 18:38:51 +0100 (BST)
+X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_102853_973848_073400C1 
-X-CRM114-Status: GOOD (  19.10  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190905_103900_558672_7E691753 
+X-CRM114-Status: GOOD (  14.03  )
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -60,170 +75,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rpi-kernel@lists.infradead.org, f.fainelli@gmail.com,
- marc.zyngier@arm.com, Will Deacon <will@kernel.org>,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, linux-mm@kvack.org,
- mbrugger@suse.com, wahrenst@gmx.net, linux-riscv@lists.infradead.org,
- phill@raspberrypi.org, robin.murphy@arm.com, hch@lst.de,
- linux-arm-kernel@lists.infradead.org, m.szyprowski@samsung.com
-Content-Type: multipart/mixed; boundary="===============2044485873071413011=="
+Cc: pierre-louis.bossart@linux.intel.com, alsa-devel@alsa-project.org,
+ daniel.baluta@nxp.com, s.hauer@pengutronix.de, tiwai@suse.com,
+ yuehaibing@huawei.com, lgirdwood@gmail.com, linux-kernel@vger.kernel.org,
+ Hulk Robot <hulkci@huawei.com>, Mark Brown <broonie@kernel.org>,
+ linux-imx@nxp.com, kernel@pengutronix.de, shawnguo@kernel.org, perex@perex.cz,
+ festevam@gmail.com, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The patch
 
---===============2044485873071413011==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-9g3qoHfuOq/LJ3RZf+b9"
+   ASoC: SOF: imx8: Fix COMPILE_TEST error
 
+has been applied to the asoc tree at
 
---=-9g3qoHfuOq/LJ3RZf+b9
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/sound.git for-5.4
 
-On Thu, 2019-09-05 at 18:19 +0100, Catalin Marinas wrote:
-> On Mon, Sep 02, 2019 at 04:10:41PM +0200, Nicolas Saenz Julienne wrote:
-> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-> > index 8956c22634dd..f02a4945aeac 100644
-> > --- a/arch/arm64/mm/init.c
-> > +++ b/arch/arm64/mm/init.c
-> > @@ -50,6 +50,13 @@
-> >  s64 memstart_addr __ro_after_init =3D -1;
-> >  EXPORT_SYMBOL(memstart_addr);
-> > =20
-> > +/*
-> > + * We create both ZONE_DMA and ZONE_DMA32. ZONE_DMA covers the first 1=
-G of
-> > + * memory as some devices, namely the Raspberry Pi 4, have peripherals=
- with
-> > + * this limited view of the memory. ZONE_DMA32 will cover the rest of =
-the
-> > 32
-> > + * bit addressable memory area.
-> > + */
-> > +phys_addr_t arm64_dma_phys_limit __ro_after_init;
-> >  phys_addr_t arm64_dma32_phys_limit __ro_after_init;
-> > =20
-> >  #ifdef CONFIG_KEXEC_CORE
-> > @@ -164,9 +171,9 @@ static void __init reserve_elfcorehdr(void)
-> >  }
-> >  #endif /* CONFIG_CRASH_DUMP */
-> >  /*
-> > - * Return the maximum physical address for ZONE_DMA32 (DMA_BIT_MASK(32=
-)).
-> > It
-> > - * currently assumes that for memory starting above 4G, 32-bit devices=
- will
-> > - * use a DMA offset.
-> > + * Return the maximum physical address for ZONE_DMA32 (DMA_BIT_MASK(32=
-))
-> > and
-> > + * ZONE_DMA (DMA_BIT_MASK(30)) respectively. It currently assumes that=
- for
-> > + * memory starting above 4G, 32-bit devices will use a DMA offset.
-> >   */
-> >  static phys_addr_t __init max_zone_dma32_phys(void)
-> >  {
-> > @@ -174,12 +181,23 @@ static phys_addr_t __init max_zone_dma32_phys(voi=
-d)
-> >  	return min(offset + (1ULL << 32), memblock_end_of_DRAM());
-> >  }
-> > =20
-> > +static phys_addr_t __init max_zone_dma_phys(void)
-> > +{
-> > +	phys_addr_t offset =3D memblock_start_of_DRAM() & GENMASK_ULL(63, 32)=
-;
-> > +
-> > +	return min(offset + (1ULL << ARCH_ZONE_DMA_BITS),
-> > +		   memblock_end_of_DRAM());
-> > +}
->=20
-> I think we could squash these two functions into a single one with a
-> "bits" argument that is either 32 or ARCH_ZONE_DMA_BITS.
+All being well this means that it will be integrated into the linux-next
+tree (usually sometime in the next 24 hours) and sent to Linus during
+the next merge window (or sooner if it is a bug fix), however if
+problems are discovered then the patch may be dropped or reverted.  
 
-Hi Catalin, thanks for the review.
+You may get further e-mails resulting from automated or manual testing
+and review of the tree, please engage with people reporting problems and
+send followup patches addressing any issues that are reported if needed.
 
-Agree, it'll look nicer.
+If any updates are required or you are submitting further changes they
+should be sent as incremental updates against current git, existing
+patches will not be replaced.
 
-> > +
-> >  #ifdef CONFIG_NUMA
-> > =20
-> >  static void __init zone_sizes_init(unsigned long min, unsigned long ma=
-x)
-> >  {
-> >  	unsigned long max_zone_pfns[MAX_NR_ZONES]  =3D {0};
-> > =20
-> > +#ifdef CONFIG_ZONE_DMA
-> > +	max_zone_pfns[ZONE_DMA] =3D PFN_DOWN(arm64_dma_phys_limit);
-> > +#endif
-> >  #ifdef CONFIG_ZONE_DMA32
-> >  	max_zone_pfns[ZONE_DMA32] =3D PFN_DOWN(arm64_dma32_phys_limit);
-> >  #endif
-> > @@ -195,13 +213,17 @@ static void __init zone_sizes_init(unsigned long =
-min,
-> > unsigned long max)
-> >  	struct memblock_region *reg;
-> >  	unsigned long zone_size[MAX_NR_ZONES], zhole_size[MAX_NR_ZONES];
-> >  	unsigned long max_dma32 =3D min;
-> > +	unsigned long max_dma =3D min;
-> > =20
-> >  	memset(zone_size, 0, sizeof(zone_size));
-> > =20
-> > -	/* 4GB maximum for 32-bit only capable devices */
-> > +#ifdef CONFIG_ZONE_DMA
-> > +	max_dma =3D PFN_DOWN(arm64_dma_phys_limit);
-> > +	zone_size[ZONE_DMA] =3D max_dma - min;
-> > +#endifmax_dma32
-> >  #ifdef CONFIG_ZONE_DMA32
-> >  	max_dma32 =3D PFN_DOWN(arm64_dma32_phys_limit);
-> > -	zone_size[ZONE_DMA32] =3D max_dma32 - min;
-> > +	zone_size[ZONE_DMA32] =3D max_dma32 - max_dma;
-> >  #endif
-> >  	zone_size[ZONE_NORMAL] =3D max - max_dma32;
->=20
-> Does this still work if we have ZONE_DMA32 disabled but ZONE_DMA
-> enabled? You could use a max(max_dma32, max_dma) or just update
-> max_dma32 to max_dma in the CONFIG_ZONE_DMA block.
+Please add any relevant lists and maintainers to the CCs when replying
+to this mail.
 
-You're right, I missed that scenario. I'll fix it and give it a test for th=
-e
-next series.
+Thanks,
+Mark
 
-Regards,
-Nicolas
+From f4df4e4042b045c6ddbaff878a17ae169fe68ba6 Mon Sep 17 00:00:00 2001
+From: YueHaibing <yuehaibing@huawei.com>
+Date: Thu, 5 Sep 2019 14:44:00 +0800
+Subject: [PATCH] ASoC: SOF: imx8: Fix COMPILE_TEST error
 
+When do compile test, if SND_SOC_SOF_OF is not set, we get:
 
---=-9g3qoHfuOq/LJ3RZf+b9
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
+sound/soc/sof/imx/imx8.o: In function `imx8_dsp_handle_request':
+imx8.c:(.text+0xb0): undefined reference to `snd_sof_ipc_msgs_rx'
+sound/soc/sof/imx/imx8.o: In function `imx8_ipc_msg_data':
+imx8.c:(.text+0xf4): undefined reference to `sof_mailbox_read'
+sound/soc/sof/imx/imx8.o: In function `imx8_dsp_handle_reply':
+imx8.c:(.text+0x160): undefined reference to `sof_mailbox_read'
 
------BEGIN PGP SIGNATURE-----
+Make SND_SOC_SOF_IMX_TOPLEVEL always depends on SND_SOC_SOF_OF
 
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl1xRc8ACgkQlfZmHno8
-x/4zsQf+Odspv12Kqk0K8vb4jtkpGtHtQl6pUtnIphzCybhSuOzl4bxUXIArYiL+
-Lu5cVIQaXyjSOXBuIr6GsScAhWKRjOzFrM0A6SbvJRE1ux/JqeK51vDO40fktv9J
-lenJrzXYB0lG9EnMgAoT0epCa6v/5xWSn7KQMrE74tY+P1qhcDM6pi7g3K3ikCzg
-ev0bpsZQEDldBcYhBC53DgQv5Bn3E1J88PwlPP7ZWeklE3o137uXUDgd72xoXqmO
-ehRHRNZpLdvi7ir/k0HHEs0LnBv1noT3izXaCACKM7w6K8nYiPNGST3C/KHBIpAY
-RVPpKUcG8+9fmhEPDw5gmlyZ0x+hMA==
-=UF63
------END PGP SIGNATURE-----
+Reported-by: Hulk Robot <hulkci@huawei.com>
+Fixes: 202acc565a1f ("ASoC: SOF: imx: Add i.MX8 HW support")
+Signed-off-by: YueHaibing <yuehaibing@huawei.com>
+Reviewed-by: Daniel Baluta <daniel.baluta@nxp.com>
+Reviewed-by: Pierre-Louis Bossart <pierre-louis.bossart@linux.intel.com>
+Link: https://lore.kernel.org/r/20190905064400.24800-1-yuehaibing@huawei.com
+Signed-off-by: Mark Brown <broonie@kernel.org>
+---
+ sound/soc/sof/imx/Kconfig | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
---=-9g3qoHfuOq/LJ3RZf+b9--
+diff --git a/sound/soc/sof/imx/Kconfig b/sound/soc/sof/imx/Kconfig
+index fd73d8402dbf..5acae75f5750 100644
+--- a/sound/soc/sof/imx/Kconfig
++++ b/sound/soc/sof/imx/Kconfig
+@@ -2,7 +2,8 @@
+ 
+ config SND_SOC_SOF_IMX_TOPLEVEL
+ 	bool "SOF support for NXP i.MX audio DSPs"
+-	depends on ARM64 && SND_SOC_SOF_OF || COMPILE_TEST
++	depends on ARM64|| COMPILE_TEST
++	depends on SND_SOC_SOF_OF
+ 	help
+           This adds support for Sound Open Firmware for NXP i.MX platforms.
+           Say Y if you have such a device.
+-- 
+2.20.1
 
-
-
---===============2044485873071413011==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2044485873071413011==--
-
-
