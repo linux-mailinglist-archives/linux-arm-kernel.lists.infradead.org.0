@@ -2,83 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DB326A9B4E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:11:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A42BEA9B75
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:14:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y2oQgeQak3EI/H4r2u3n+r4z9FTNWOgGHoWoyUxcIyA=; b=sx3DBGWBuIl5tW
-	eLQOWeoQFsnTArZv3+Cu9hKjobk98EVk07xaDBuM+b4pgSyoya1KlSUtrzYvCrhNs1Figb2vpgNTy
-	whdSYgU1boMYdkK5ey1xFd++hHAheYUF+plqDqEH6So1BjC1hugwRrbqVmJBB4W2EihsZ8bDsfc5U
-	swO9ikYzczoW9/XvVl/puj3BCs9NgDlWcLEBW9uPsgcbTPD5ed2VZy0oFsWp8dH+uEpRVlWMU7gOT
-	rA1o4o27DzgrNrFVjR/Q3GKYSOqKqNcEOByRmHOycjij2CaoNqamyZhBRBgnH4kvjH21UMM9Qio55
-	dt7m6Yq9R9alW1H4hLgA==;
+	List-Owner; bh=Kta62V5JpX8H/vrgja7L1ssNXaAx96G8cFNXPrcIkeo=; b=Xr2y4yrPg6cnkE
+	jjbDO9EdZ9ostXYDhp55Z8vKSIHNfgtEJsXPnsvjOfen/8iCA5HrJN0YGa03FOOOHAhqRYzZXyZiG
+	sWW2TvP5jkC5XJM7eNdlJymRFioxFTIMwmBiaLwRlF9aTsRAM/lU1NK1E+rZXyauzvvotnPmkABMI
+	xH+UVnDjUm3etLBtU5hBRVNbte5c1vFSHgUji4zolZtWTNcYK7fHCivTDB4/LeYDhS5tYKw9hHNnA
+	s+OYk5EAAedv0vwROOXOVPch6pezFyWxR8FoQjbh73by80x6soNX7tE8En7LjwooRk66rlt/0880z
+	0ATx8GdGAGZGOwBgMDJA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5lvR-0005eD-IY; Thu, 05 Sep 2019 07:11:25 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i5lyX-0006T8-2I; Thu, 05 Sep 2019 07:14:37 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5lvB-0005dd-2q
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 07:11:10 +0000
-Received: by mail-wr1-x442.google.com with SMTP id 30so1309142wrk.11
+ id 1i5lyA-0006SO-VV
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 07:14:17 +0000
+Received: by mail-ed1-x541.google.com with SMTP id t50so1643352edd.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 00:11:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=DFvvnaHLzFEzaTnNYzUt4Q2hQTFq/NK+O6UpsbmEMb0=;
- b=By8LGyThV3tQ7KpjUQafQj2mWoVF3UaQyPDD/AsSXb+5tk4zZFZVekW3CeEG2npb2B
- Jmy5Qb0Gklgk/axCGfbNZJSWL5JklgbojPM3DCPn25IMckFHtdSMHFMkMKwn7/d9ZmWv
- NLlXUPiedZKGcQzpUT6V3EIMJJci8gkcWnpcauUrUpDTBdDfs6O8etqFgheEto1vISaT
- rTOEicKYLY89K5mHry30Y6vbjFHGz2jb/uZ/4t9ZzErtlzLlh8SbtbMZiSpSdYxh5rsz
- Kv529cVvW8zneJb4OdeHcTYd38NSZx322XL6q16Xz2Oj3s9WMBkYdcj0JhBNbdVGNIE9
- JkqQ==
+ Thu, 05 Sep 2019 00:14:13 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=7TCqIrZqaf6XwiSFUwZhI65zRbXrDVNm96+IN3lqyG4=;
+ b=O4iL5AQAEVX4MVDpvuzO2WKgprqxKSFccry7+iN/oU5IaA5JqNbsueGefwXsKGPF+X
+ YN2fLDVXPShuWTHDec6yq+WAlAan7C953OkgUGCpn1LiLmVWHBe3UU4D+bMDBfovpuQy
+ A0Prq2FsjfQ6x8AfyLS6XnQnaS/dJVGm/asxg=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:content-transfer-encoding
- :in-reply-to:user-agent;
- bh=DFvvnaHLzFEzaTnNYzUt4Q2hQTFq/NK+O6UpsbmEMb0=;
- b=n2R6bRUb2cLjrER9ff0kjY728G70jVjh3PpR/ccGD+vnFj8KaCs16fDUpjLyWFhvQ9
- kgEp3jFL+VQLWYgJvqp/bQqXc0GfKoLuE46gItXgF0y1jHIfsmbeZV9qcxOA01QiLFlK
- ngCYsUOfXmHVxFyvvtv+KoJpvM6HmKQAxOUVMq9/YyGfF1zSZjP6URgrCh9IzuFhXcRt
- AyoR8p1sf/LQm4tN/JKG9CoznBnuBOEPzlnD0+CZvQEF4HipthHb4G2bHIq3LtCjymYi
- 7jq+ACVPGfgHCSKmJRRXzqahH8mVIYPeDwYBNQGpro8V+dTfruYXVGysVpTet6Aob467
- qZ2Q==
-X-Gm-Message-State: APjAAAUKmCxdG1NSrKsjqu+RWKAi6aeWPE7OM6WSwXy2/mbeLfsTVd52
- 9HKsysLfZbpK0uSWK5lPnwRPTA==
-X-Google-Smtp-Source: APXvYqwmUfGIDO2UDqtQ8Ewygc0VpleSUBO6Yhj2gmAs7eRwG0RusGrqdiNi/OFtceHOm46lPN3l5g==
-X-Received: by 2002:a5d:528a:: with SMTP id c10mr1153426wrv.111.1567667466248; 
- Thu, 05 Sep 2019 00:11:06 -0700 (PDT)
-Received: from dell ([95.147.198.36])
- by smtp.gmail.com with ESMTPSA id m18sm1455462wrg.97.2019.09.05.00.11.05
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 05 Sep 2019 00:11:05 -0700 (PDT)
-Date: Thu, 5 Sep 2019 08:11:03 +0100
-From: Lee Jones <lee.jones@linaro.org>
-To: Wolfram Sang <wsa@the-dreams.de>
-Subject: Re: [PATCH 1/2] i2c: qcom-geni: Provide an option to select FIFO
- processing
-Message-ID: <20190905071103.GX26880@dell>
-References: <20190904113613.14997-1-lee.jones@linaro.org>
- <20190904203548.GC580@tuxbook-pro> <20190904212337.GF23608@ninjato>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=7TCqIrZqaf6XwiSFUwZhI65zRbXrDVNm96+IN3lqyG4=;
+ b=U9GeBDFkL/eBKAhPn4Qx3GicWFECwygef966qJ3cfikWfSZ0TDNOVu8veCh//FLeul
+ V4d6aQegwWEfZVf/lXu8hzMiLDepemMjmtoMDynPjISr4Zvug8nPkaE790eaRs9KdE2k
+ a3U4bK+94WANIjuzu6agIyV8ThNHggB8SSaH+vt5R2WD8E+Q8Osq7n0XJQTToUHUW8oZ
+ hqyFucTeNIpSa9M04E7qxRNfw53R5lXPwhB0i0lKZFW1CFscAVrBdnPHF1LtT27OMKbj
+ Yrz2t3OlcrRZa1UetxIPMtXWMdy7wlEtOOIAAgjjn1WYTYX2vkINIjSWilQa1qtnJpEI
+ fGhQ==
+X-Gm-Message-State: APjAAAUp+Tz1xWgtbb1GfDSQ7yKOLyT1S8C8tU1cveLCpjZCrrButvbv
+ oIU8uW8sPgXlpRoXTO3pgrIIAHosgC1Hsw==
+X-Google-Smtp-Source: APXvYqxfOXd9IASiZ9T++JkwGHy7Dn5CT+hijhVFMh9CkiwvC7xlaxI0t5SoSDZzwKkk7Rdtftsqdw==
+X-Received: by 2002:a17:906:79d8:: with SMTP id
+ m24mr1532318ejo.289.1567667652253; 
+ Thu, 05 Sep 2019 00:14:12 -0700 (PDT)
+Received: from mail-wm1-f45.google.com (mail-wm1-f45.google.com.
+ [209.85.128.45])
+ by smtp.gmail.com with ESMTPSA id j11sm144834ejs.35.2019.09.05.00.14.09
+ for <linux-arm-kernel@lists.infradead.org>
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 05 Sep 2019 00:14:10 -0700 (PDT)
+Received: by mail-wm1-f45.google.com with SMTP id r17so4241009wme.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 00:14:09 -0700 (PDT)
+X-Received: by 2002:a05:600c:2111:: with SMTP id
+ u17mr1781635wml.64.1567667649340; 
+ Thu, 05 Sep 2019 00:14:09 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190904212337.GF23608@ninjato>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1562661672-22439-1-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <1562661672-22439-5-git-send-email-Jerry-Ch.chen@mediatek.com>
+ <20190802082815.GA203993@chromium.org> <1566724680.20680.8.camel@mtksdccf07>
+ <CAAFQd5Dw+jaT-+LAUEVeB8W1zdnOgPw7u+aCfDWhYW1SfbzO8g@mail.gmail.com>
+ <1566957625.20680.33.camel@mtksdccf07>
+ <CAAFQd5D-Yg1FjUE_rwmqfS1gvfE0=MZ=r-ziueU_37-uo9QTbw@mail.gmail.com>
+ <1567424859.18318.32.camel@mtksdccf07>
+ <CAAFQd5AGgeFbto6V1KkL0dp1QPziOKV3pWQDU2OJ+S1QKvnBdg@mail.gmail.com>
+ <1567493081.18318.49.camel@mtksdccf07>
+ <CAAFQd5DWM=R7sFHYGhhR_rXrzgRnc4xtH_t8Pig-4tcP9KTSYg@mail.gmail.com>
+ <1567511169.18318.65.camel@mtksdccf07>
+ <CAAFQd5DiPcUxd+R-v_-BdRx+QqZ35Riii_jpgbqr5mc3BnQvDw@mail.gmail.com>
+ <1567568281.18318.80.camel@mtksdccf07>
+ <CAAFQd5CRC2cyV30B4Qv59HdrJ7Cpe_yK5aY-BecQQ3J3i0PtCQ@mail.gmail.com>
+ <1567577389.18318.100.camel@mtksdccf07>
+ <CAAFQd5AxTQPD+nP9CJs45QTzGHKssjv3vRtMqHONABfp12afYw@mail.gmail.com>
+ <1567584577.22453.11.camel@mtksdccf07>
+ <CAAFQd5Dzxy10g-MKHMnNbVO6kp9_L_jm1m+gtN+p=YF2LyBiag@mail.gmail.com>
+ <1567587708.22453.15.camel@mtksdccf07>
+ <CAAFQd5DWfEEiGthPi=qoxD-mpAWa68GOCi55mqpmagS-tsGYkA@mail.gmail.com>
+ <1567589188.22453.24.camel@mtksdccf07>
+ <CAAFQd5Ckz9qH7AnLNM4HRTM2gJQP1HXRS09+o6Prf++D1PQhng@mail.gmail.com>
+ <1567603143.22453.27.camel@mtksdccf07> <1567666940.22453.31.camel@mtksdccf07>
+In-Reply-To: <1567666940.22453.31.camel@mtksdccf07>
+From: Tomasz Figa <tfiga@chromium.org>
+Date: Thu, 5 Sep 2019 16:13:56 +0900
+X-Gmail-Original-Message-ID: <CAAFQd5A=D33nUWTyYjt3acV43r3fqjSEkLbt3_Sr1YG1PzQgqQ@mail.gmail.com>
+Message-ID: <CAAFQd5A=D33nUWTyYjt3acV43r3fqjSEkLbt3_Sr1YG1PzQgqQ@mail.gmail.com>
+Subject: Re: [RFC PATCH V2 4/4] platform: mtk-isp: Add Mediatek FD driver
+To: Jerry-ch Chen <Jerry-ch.Chen@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_001109_143526_3636D6BC 
-X-CRM114-Status: GOOD (  28.17  )
+X-CRM114-CacheID: sfid-20190905_001415_042880_07D99908 
+X-CRM114-Status: GOOD (  26.84  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -89,6 +112,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,92 +124,210 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-msm@vger.kernel.org, agross@kernel.org,
- robh+dt@kernel.org, Bjorn Andersson <bjorn.andersson@linaro.org>,
- alokc@codeaurora.org, linux-i2c@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ =?UTF-8?B?U2VhbiBDaGVuZyAo6YSt5piH5byYKQ==?= <Sean.Cheng@mediatek.com>,
+ "laurent.pinchart+renesas@ideasonboard.com"
+ <laurent.pinchart+renesas@ideasonboard.com>,
+ =?UTF-8?B?UnlubiBXdSAo5ZCz6IKy5oGpKQ==?= <Rynn.Wu@mediatek.com>,
+ srv_heupstream <srv_heupstream@mediatek.com>,
+ =?UTF-8?B?UG8tWWFuZyBIdWFuZyAo6buD5p+P6Zm9KQ==?= <po-yang.huang@mediatek.com>,
+ "mchehab@kernel.org" <mchehab@kernel.org>,
+ "suleiman@chromium.org" <suleiman@chromium.org>,
+ "shik@chromium.org" <shik@chromium.org>,
+ =?UTF-8?B?SnVuZ28gTGluICjmnpfmmI7kv4op?= <jungo.lin@mediatek.com>,
+ =?UTF-8?B?U2ogSHVhbmcgKOm7g+S/oeeSiyk=?= <sj.huang@mediatek.com>,
+ "yuzhao@chromium.org" <yuzhao@chromium.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "zwisler@chromium.org" <zwisler@chromium.org>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ =?UTF-8?B?Q2hyaXN0aWUgWXUgKOa4uOmbheaDoCk=?= <christie.yu@mediatek.com>,
+ =?UTF-8?B?RnJlZGVyaWMgQ2hlbiAo6Zmz5L+K5YWDKQ==?= <Frederic.Chen@mediatek.com>,
+ "hans.verkuil@cisco.com" <hans.verkuil@cisco.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "linux-media@vger.kernel.org" <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCAwNCBTZXAgMjAxOSwgV29sZnJhbSBTYW5nIHdyb3RlOgoKPiBPbiBXZWQsIFNlcCAw
-NCwgMjAxOSBhdCAwMTozNTo0OFBNIC0wNzAwLCBCam9ybiBBbmRlcnNzb24gd3JvdGU6Cj4gPiBP
-biBXZWQgMDQgU2VwIDA0OjM2IFBEVCAyMDE5LCBMZWUgSm9uZXMgd3JvdGU6Cj4gPiAKPiA+IFRo
-ZSBzdWJqZWN0IGltcGxpZXMgdGhhdCB3ZSBzZWxlY3QgRklGTyBtb2RlIGluc3RlYWQgb2YgRE1B
-LCBidXQgdGhhdCdzCj4gPiBub3QgcmVhbGx5IHRydWUsIGJlY2F1c2Ugd2l0aCBETUEgZW5hYmxl
-ZCB3ZSBzdGlsbCBmYWxsIGJhY2sgdG8gRklGTyBmb3IKPiA+IG1lc3NhZ2VzIGJlbG93IDMyIGJ5
-dGVzLiAKCkRvIHlvdSBtZWFuLCB3ZSBmYWxsIGJhY2sgdG8gRE1BPwoKPiA+IFNvIHdoYXQgdGhp
-cyBkb2VzIGl0IHRvIGRpc2FibGUgRE1BLCB3aGljaCBuZWl0aGVyIHRoZSBzdWJqZWN0IG9yIHRo
-ZSBEVAo+ID4gcHJvcGVydHkgZGVzY3JpYmVzLgo+ID4gCj4gPiBBbHNvIG1pc3NpbmcgaXMgYSBk
-ZXNjcmlwdGlvbiBvZiB3aHkgdGhpcyBpcyBuZWVkZWQuCj4gCj4gWWVzLgo+IAo+IEkgYW0gd2ls
-bGluZyB0byBoZWxwIHRvIGdldCB0aGlzIHJlc29sdmVkIHNvb25pc2guIEhvd2V2ZXIsIEkgaGF2
-ZQo+IGlzc3VlcyB3aXRoIHRoZSBhcHByb2FjaC4KPiAKPiBJdCBsb29rcyBsaWtlIGEgd29ya2Fy
-b3VuZCB0byBtZS4gSXQgd291bGQgYmUgaW50ZXJlc3RpbmcgdG8gaGVhciB3aGljaAo+IEkyQyBj
-bGllbnQgYnJlYWtzIHdpdGggRE1BIGFuZCBpZiBpdCdzIGRyaXZlciBjYW4ndCBiZSBmaXhlZCBz
-b21laG93Cj4gaW5zdGVhZC4gQnV0IGV2ZW4gaWYgd2UgYWdyZWUgb24gYSB3b3JrYXJvdW5kIHNo
-b3J0IHRlcm0sIGFkZGluZyBhCj4gYmluZGluZyBmb3IgdGhpcyB3b3JrYXJvdW5kIHNlZW1zIGxp
-a2UgYSBuby1nbyB0byBtZS4gV2UgaGF2ZSB0byBsaXZlCj4gd2l0aCB0aGlzIGJpbmRpbmcgZm9y
-ZXZlci4gU2lkZW5vdGU6IEkgY291bGQgdGhpbmsgb2YgYSBnZW5lcmljCj4gJ2Rpc2FibGUtZG1h
-JyB3aGljaCBjb3VsZCBiZSByZXVzZWQgZXZlcnl3aGVyZSBidXQgd2UgcHJvYmFibHkgd29uJ3Qg
-Z2V0Cj4gdGhhdCB1cHN0cmVhbSB0aGF0IGxhdGUgaW4gdGhlIGN5Y2xlLgo+IAo+IElzIHRoZXJl
-IG5vIG90aGVyIHdheSB0byBkaXNhYmxlIERNQSB3aGljaCBpcyBsb2NhbCB0byB0aGlzIGRyaXZl
-ciBzbyB3ZQo+IGNhbiBlYXNpbHkgcmV2ZXJ0IHRoZSB3b3JrYXJvdW5kIGxhdGVyPwoKVGhpcyBp
-cyB0aGUgbW9zdCBsb2NhbCBsb3ctaW1wYWN0IHNvbHV0aW9uIChub21lbmNsYXR1cmUgYXNpZGUp
-LgoKVGhlIGJlYXV0aWZ1bCB0aGluZyBhYm91dCB0aGlzIGFwcHJvYWNoIGlzIHRoYXQsICppZiog
-dGhlIEdlbmkgU0UgRE1BCmV2ZXIgc3RhcnRzIHdvcmtpbmcsIHdlIGNhbiByZW1vdmUgdGhlIEMg
-Y29kZSBhbmQgYW55IG9sZCBwcm9wZXJ0aWVzCmxlZnQgaW4gb2xkZXIgRFRzIGp1c3QgYmVjb21l
-IE5PT1AuICBPbGRlciBrZXJuZWxzIHdpdGggbmV3ZXIgRFRzCihsZXNzIG9mIGEgcHJpb3JpdHkp
-ICpzdGlsbCogd29uJ3Qgd29yaywgYnV0IHRoZXkgZG9uJ3Qgd29yayBub3cKYW55d2F5LgoKTkI6
-IFFDb20gaGF2ZSBhbHNvIG1hZGUgaXQgcHJldHR5IGNsZWFyIHRoYXQgRFRCcyAqbXVzdCogbWF0
-Y2ggdGhlaXIKa2VybmVsIHZlcnNpb24uICBJIGtub3cgdGhpcyBpcyBjb250cm92ZXJzaWFsIGFt
-b25nc3QgRFQgcHVyaXN0cywgYnV0Cml0J3Mgc3RpbGwgaG93IFFDb20gb3BlcmF0ZS4KClRoZSBv
-ZmZlbmRpbmcgbGluZSBjYW4gYmUgZm91bmQgYXQgWzBdLiAgVGhlcmUgaXMgbm8gb2J2aW91cyBi
-dWcgdG8KZml4IGFuZCB0aGlzIGNvZGUgb2J2aW91c2x5IHdvcmtzIHdlbGwgb24gc29tZSBvZiB0
-aGUgaGFyZHdhcmUKcGxhdGZvcm1zIHVzaW5nIGl0LiAgQnV0IG9uIG91ciBwbGF0Zm9ybSAoTGVu
-b3ZvIFlvZ2EgQzYzMCAtIFFDb20KU01EODUwKSB0aGF0IGZpbmFsIGNvbW1hbmQsIHdoaWNoIGlu
-aXRpYXRlcyB0aGUgRE1BIHRyYW5zYWN0aW9uLCBlbmRzCnVwIHJlYm9vdGluZyB0aGUgbWFjaGlu
-ZS4KCldpdGggcmVnYXJkcyB0byB0aGUgbm9tZW5jbGF0dXJlLCBteSBvcmlnaW5hbCBzdWdnZXN0
-aW9uIHdhcwoncWNvbSxnZW5pLXNlLW5vLWRtYScuICBXb3VsZCB0aGF0IGJldHRlciBzdWl0IHlv
-dXIgcmVxdWVzdD8KClswXSBodHRwczovL2dpdC5rZXJuZWwub3JnL3B1Yi9zY20vbGludXgva2Vy
-bmVsL2dpdC90b3J2YWxkcy9saW51eC5naXQvdHJlZS9kcml2ZXJzL3NvYy9xY29tL3Fjb20tZ2Vu
-aS1zZS5jI242NDQKCj4gPiA+IFNpZ25lZC1vZmYtYnk6IExlZSBKb25lcyA8bGVlLmpvbmVzQGxp
-bmFyby5vcmc+Cj4gPiA+IC0tLQo+ID4gPiAgZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1xY29tLWdl
-bmkuYyB8IDE0ICsrKysrKysrKystLS0tCj4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgMTAgaW5zZXJ0
-aW9ucygrKSwgNCBkZWxldGlvbnMoLSkKPiA+ID4gCj4gPiA+IGRpZmYgLS1naXQgYS9kcml2ZXJz
-L2kyYy9idXNzZXMvaTJjLXFjb20tZ2VuaS5jIGIvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1xY29t
-LWdlbmkuYwo+ID4gPiBpbmRleCBhODliZmNlNTM4OGUuLmRmZGJjZTA2NzgyNyAxMDA2NDQKPiA+
-ID4gLS0tIGEvZHJpdmVycy9pMmMvYnVzc2VzL2kyYy1xY29tLWdlbmkuYwo+ID4gPiArKysgYi9k
-cml2ZXJzL2kyYy9idXNzZXMvaTJjLXFjb20tZ2VuaS5jCj4gPiA+IEBAIC0zNTMsMTMgKzM1Mywx
-NiBAQCBzdGF0aWMgdm9pZCBnZW5pX2kyY190eF9mc21fcnN0KHN0cnVjdCBnZW5pX2kyY19kZXYg
-KmdpMmMpCj4gPiA+ICBzdGF0aWMgaW50IGdlbmlfaTJjX3J4X29uZV9tc2coc3RydWN0IGdlbmlf
-aTJjX2RldiAqZ2kyYywgc3RydWN0IGkyY19tc2cgKm1zZywKPiA+ID4gIAkJCQl1MzIgbV9wYXJh
-bSkKPiA+ID4gIHsKPiA+ID4gKwlzdHJ1Y3QgZGV2aWNlX25vZGUgKm5wID0gZ2kyYy0+c2UuZGV2
-LT5vZl9ub2RlOwo+ID4gPiAgCWRtYV9hZGRyX3QgcnhfZG1hOwo+ID4gPiAgCXVuc2lnbmVkIGxv
-bmcgdGltZV9sZWZ0Owo+ID4gPiAtCXZvaWQgKmRtYV9idWY7Cj4gPiA+ICsJdm9pZCAqZG1hX2J1
-ZiA9IE5VTEw7Cj4gPiA+ICAJc3RydWN0IGdlbmlfc2UgKnNlID0gJmdpMmMtPnNlOwo+ID4gPiAg
-CXNpemVfdCBsZW4gPSBtc2ctPmxlbjsKPiA+ID4gIAo+ID4gPiAtCWRtYV9idWYgPSBpMmNfZ2V0
-X2RtYV9zYWZlX21zZ19idWYobXNnLCAzMik7Cj4gPiA+ICsJaWYgKCFvZl9wcm9wZXJ0eV9yZWFk
-X2Jvb2wobnAsICJxY29tLGdlbmktc2UtZmlmbyIpKQo+ID4gPiArCQlkbWFfYnVmID0gaTJjX2dl
-dF9kbWFfc2FmZV9tc2dfYnVmKG1zZywgMzIpOwo+ID4gPiArCj4gPiA+ICAJaWYgKGRtYV9idWYp
-Cj4gPiA+ICAJCWdlbmlfc2Vfc2VsZWN0X21vZGUoc2UsIEdFTklfU0VfRE1BKTsKPiA+ID4gIAll
-bHNlCj4gPiA+IEBAIC0zOTIsMTMgKzM5NSwxNiBAQCBzdGF0aWMgaW50IGdlbmlfaTJjX3J4X29u
-ZV9tc2coc3RydWN0IGdlbmlfaTJjX2RldiAqZ2kyYywgc3RydWN0IGkyY19tc2cgKm1zZywKPiA+
-ID4gIHN0YXRpYyBpbnQgZ2VuaV9pMmNfdHhfb25lX21zZyhzdHJ1Y3QgZ2VuaV9pMmNfZGV2ICpn
-aTJjLCBzdHJ1Y3QgaTJjX21zZyAqbXNnLAo+ID4gPiAgCQkJCXUzMiBtX3BhcmFtKQo+ID4gPiAg
-ewo+ID4gPiArCXN0cnVjdCBkZXZpY2Vfbm9kZSAqbnAgPSBnaTJjLT5zZS5kZXYtPm9mX25vZGU7
-Cj4gPiA+ICAJZG1hX2FkZHJfdCB0eF9kbWE7Cj4gPiA+ICAJdW5zaWduZWQgbG9uZyB0aW1lX2xl
-ZnQ7Cj4gPiA+IC0Jdm9pZCAqZG1hX2J1ZjsKPiA+ID4gKwl2b2lkICpkbWFfYnVmID0gTlVMTDsK
-PiA+ID4gIAlzdHJ1Y3QgZ2VuaV9zZSAqc2UgPSAmZ2kyYy0+c2U7Cj4gPiA+ICAJc2l6ZV90IGxl
-biA9IG1zZy0+bGVuOwo+ID4gPiAgCj4gPiA+IC0JZG1hX2J1ZiA9IGkyY19nZXRfZG1hX3NhZmVf
-bXNnX2J1Zihtc2csIDMyKTsKPiA+ID4gKwlpZiAoIW9mX3Byb3BlcnR5X3JlYWRfYm9vbChucCwg
-InFjb20sZ2VuaS1zZS1maWZvIikpCj4gPiA+ICsJCWRtYV9idWYgPSBpMmNfZ2V0X2RtYV9zYWZl
-X21zZ19idWYobXNnLCAzMik7Cj4gPiA+ICsKPiA+ID4gIAlpZiAoZG1hX2J1ZikKPiA+ID4gIAkJ
-Z2VuaV9zZV9zZWxlY3RfbW9kZShzZSwgR0VOSV9TRV9ETUEpOwo+ID4gPiAgCWVsc2UKCgoKLS0g
-CkxlZSBKb25lcyBb5p2O55C85pavXQpMaW5hcm8gU2VydmljZXMgVGVjaG5pY2FsIExlYWQKTGlu
-YXJvLm9yZyDilIIgT3BlbiBzb3VyY2Ugc29mdHdhcmUgZm9yIEFSTSBTb0NzCkZvbGxvdyBMaW5h
-cm86IEZhY2Vib29rIHwgVHdpdHRlciB8IEJsb2cKCl9fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9y
-Zy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Thu, Sep 5, 2019 at 4:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+>
+> Hi Tomasz,
+>
+> On Wed, 2019-09-04 at 21:19 +0800, Jerry-ch Chen wrote:
+> > On Wed, 2019-09-04 at 21:12 +0800, Tomasz Figa wrote:
+> > > On Wed, Sep 4, 2019 at 6:26 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > >
+> > > > Hi Tomasz,
+> > > >
+> > > > On Wed, 2019-09-04 at 17:03 +0800, Tomasz Figa wrote:
+> > > > > On Wed, Sep 4, 2019 at 6:02 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > >
+> > > > > > Hi Tomasz,
+> > > > > >
+> > > > > > On Wed, 2019-09-04 at 16:25 +0800, Tomasz Figa wrote:
+> > > > > > > On Wed, Sep 4, 2019 at 5:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > >
+> > > > > > > > Hi Tomasz,
+> > > > > > > >
+> > > > > > > > On Wed, 2019-09-04 at 14:34 +0800, Tomasz Figa wrote:
+> > > > > > > > > On Wed, Sep 4, 2019 at 3:09 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > >
+> > > > > > > > > > Hi Tomasz,
+> > > > > > > > > >
+> > > > > > > > > > On Wed, 2019-09-04 at 12:15 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > On Wed, Sep 4, 2019 at 12:38 PM Jerry-ch Chen
+> > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > >
+> > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > >
+> > > > > > > > > > > > On Tue, 2019-09-03 at 20:05 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > On Tue, Sep 3, 2019 at 8:46 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > >
+> > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > >
+> > > > > > > > > > > > > > On Tue, 2019-09-03 at 15:04 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > On Tue, Sep 3, 2019 at 3:44 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > On Tue, 2019-09-03 at 13:19 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > On Mon, Sep 2, 2019 at 8:47 PM Jerry-ch Chen <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > On Fri, 2019-08-30 at 16:33 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > On Wed, Aug 28, 2019 at 11:00 AM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > On Mon, 2019-08-26 at 14:36 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > On Sun, Aug 25, 2019 at 6:18 PM Jerry-ch Chen
+> > > > > > > > > > > > > > > > > > > > > <Jerry-ch.Chen@mediatek.com> wrote:
+> > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > Hi Tomasz,
+> > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > On Fri, 2019-08-02 at 16:28 +0800, Tomasz Figa wrote:
+> > > > > > > > > > > > > > > > > > > > > > > Hi Jerry,
+> > > > > > > > > > > > > > > > > > > > > > >
+> > > > > > > > > > > > > > > > > > > > > > > On Tue, Jul 09, 2019 at 04:41:12PM +0800, Jerry-ch Chen wrote:
+> > > > [snip]
+> > > > > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > > > {
+> > > > > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > > > >         struct vb2_v4l2_buffer *vb;
+> > > > > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > > > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > > > > > >         u32 ret;
+> > > > > > > >
+> > > > > > > >         if (!fd->fd_irq_done.done)
+> > > > > > >
+> > > > > > > We shouldn't access internal fields of completion.
+> > > > > > >
+> > > > > > > >                 ret = wait_for_completion_timeout(&fd->fd_irq_done,
+> > > > > > > >                                                   msecs_to_jiffies(
+> > > > > > > >                                                         MTK_FD_HW_TIMEOUT));
+> > > > > > > >         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+> > > > > > > >                                         &m2m_ctx->out_q_ctx :
+> > > > > > > >                                         &m2m_ctx->cap_q_ctx;
+> > > > > > > >         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+> > > > > > > >                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+> > > > > > > >
+> > > > > > > >         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+> > > > > > > >                 mtk_fd_hw_disconnect(fd);
+> > > > > > > > }
+> > > > > > > >
+> > > > > > > > I've also tried to wait completion unconditionally for both queues and
+> > > > > > > > the second time will wait until timeout, as a result, it takes longer to
+> > > > > > > > swap the camera every time and close the camera app.
+> > > > > > >
+> > > > > > > I think it should work better if we call complete_all() instead of complete().
+> > > > > > >
+> > > > > > Thanks,
+> > > > > >
+> > > > > > I use complete_all(), and it works fine now.
+> > > > > >
+> > > > > > static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> > > > > > {
+> > > > > >         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+> > > > > >         struct mtk_fd_dev *fd = ctx->fd_dev;
+> > > > > >         struct vb2_v4l2_buffer *vb;
+> > > > > >         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+> > > > > >         struct v4l2_m2m_queue_ctx *queue_ctx;
+> > > > > >
+> > > > > >         wait_for_completion_timeout(&fd->fd_irq_done,
+> > > > > >                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+> > > > >
+> > > > > Shouldn't we still send some command to the hardware to stop? Like a
+> > > > > reset. Otherwise we don't know if it isn't still accessing the memory.
+> > > > >
+> > > > I thought no more jobs will be enqueued here when stop_streaming so we
+> > > > don't need it.
+> > >
+> > > That's true for the case when the wait completed successfully, but we
+> > > also need to ensure the hardware is stopped even if a timeout happens.
+> > >
+> > > > We still could send an ipi command to reset the HW, and wait for it's
+> > > > callback or we could set the register MTK_FD_REG_OFFSET_HW_ENABLE to
+> > > > zero to disable the HW.
+> > >
+> > > Since it's for handling a timeout, a reset should be more likely to
+> > > bring the hardware back to a reasonable state.
+> > >
+> >
+> > Ok, I will send the ipi command to reset the HW.
+> >
+> > Thanks and best regards,
+> > Jerry
+> I've tested and will refine as following:
+>
+> static void mtk_fd_vb2_stop_streaming(struct vb2_queue *vq)
+> {
+>         struct mtk_fd_ctx *ctx = vb2_get_drv_priv(vq);
+>         struct mtk_fd_dev *fd = ctx->fd_dev;
+>         struct vb2_v4l2_buffer *vb;
+>         struct v4l2_m2m_ctx *m2m_ctx = ctx->fh.m2m_ctx;
+>         struct v4l2_m2m_queue_ctx *queue_ctx;
+>         u32 ret;
+>
+>         ret = wait_for_completion_timeout(&fd->fd_irq_done,
+>                                           msecs_to_jiffies(MTK_FD_HW_TIMEOUT));
+>         /* Disable FD HW */
+>         if(!ret) {
+>                 struct ipi_message fd_ipi_msg;
+>
+>                 fd_ipi_msg.cmd_id = MTK_FD_IPI_CMD_RESET;
+>                 ret = scp_ipi_send(fd->scp_pdev, SCP_IPI_FD_CMD, &fd_ipi_msg,
+>                                    sizeof(fd_ipi_msg), MTK_FD_IPI_SEND_TIMEOUT);
+>                 if (ret)
+>                         dev_err(fd->dev, "FD Reset HW error\n");
+>         }
+
+Would you also put the same code in suspend handler? If so, perhaps
+it's better to keep this in a helper function (mtk_fd_job_abort()) as
+we had before?
+
+>         queue_ctx = V4L2_TYPE_IS_OUTPUT(vq->type) ?
+>                                         &m2m_ctx->out_q_ctx :
+>                                         &m2m_ctx->cap_q_ctx;
+>         while ((vb = v4l2_m2m_buf_remove(queue_ctx)))
+>                 v4l2_m2m_buf_done(vb, VB2_BUF_STATE_ERROR);
+>
+>         if (vq->type == V4L2_BUF_TYPE_VIDEO_OUTPUT_MPLANE)
+>                 mtk_fd_hw_disconnect(fd);
+> }
+>
+> If there is no other concern, may I send the RFC v3 patch for review?
+
+Thanks, technically it looks good now. Just one comment about avoiding
+code duplication above.
+
+Best regards,
+Tomasz
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
