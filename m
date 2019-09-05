@@ -2,94 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 19D17A9903
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 05:47:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 20ED4A9909
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 05:50:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dfAdEIXGAUOvM9zQ+TH73G5cOVOIEmDg/kYF3NmCHsE=; b=oYZLeeAZKYwWim
-	49eqoqE7Xyusfd8Ya2L4Hj5faLL3uZK+WiOCiiokmmrpsCP4hE4XBCs0ma57PKSyalbNehPh2/my7
-	Mg074txc2etbpRvC0YCj0l3BO9x6lXqDnGEjjXVq4s9dAVlCIiVo6aWLRqtQ6Q4ZMTp8XFdz49fsS
-	V6MYbQ+cSwVTQjILPQYyfEhqk/9zcMX5Mhd6FsJseqHpv5qbJTaUWdWC+t+skouDfsoWPvdlnJXKJ
-	qUGPMpJ5n0nTJnfho3iBwIhoG+6p4sTwTvJnEa3lIwNrpq6r7LATdJh1rYg9UeYf+V2MXdF050Caj
-	qsU83vzTRPoii3cKvFwA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=JPow0nCK/XOYQoV1SifHAA0k83tMGS6FpiVqSX7odTs=; b=Ij2
+	HGD9h/9u93CDksPNEppR2BENDUwBvuLE0ITF9TuIT3qP1sbz6t53DTHlPVjauAHqfW5i7d6mZcdWf
+	vPOq0ptXy5TVu689Vl/Hb88irL+Md5VDSdk70JREuSz9Ic2N9HLm4yyOIdlPQa5UFZQ4ubLXcMDFa
+	9C1gZQInjG7pWn6O3yIzevrxxsmxCvrtcwz2UYligYzCZeOoHoVkLqISHeUXHEdOFrqz1DBopd2fX
+	656V7kzcD22jxQle9ZQNd6Tj3UaxLtFSEsytw/la/Rl2W0wQy3JMT74jDyQ505s+/pbRhsyk3oqzV
+	A1STgY3ZN34FpKRRWD6SvwpV3ieIJrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ijw-0007IZ-5c; Thu, 05 Sep 2019 03:47:20 +0000
-Received: from out2-smtp.messagingengine.com ([66.111.4.26])
+	id 1i5imj-0003X6-6t; Thu, 05 Sep 2019 03:50:13 +0000
+Received: from conuserg-10.nifty.com ([210.131.2.77])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ijn-0007Hs-HB
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 03:47:13 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id 8A30C21391;
- Wed,  4 Sep 2019 23:47:08 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Wed, 04 Sep 2019 23:47:08 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=iz5b5ME3PsMsS8QeBujZtb3JCi3nja+
- Hla+LmculZwk=; b=b4epihcJys2LL8YoCM/nc8qGbEazvW2vWIO1hIVaP9napuP
- AgLUK/SA4LCbYT07PHOJ76rcWRjJwmhK+SpzqL7QUuBCTXcnnP/NuS/jUcSWKWzR
- AY8hwGjvJfCsQg7OOdgu5uDvLXf2aR/h1d69gfjGE1RPPjYZLKdfY419TQ1VBZHE
- LEj5vLwO/Y31rQ//yYbd4S5Hj8fp7R3T9M8tHJmJxXAgwOVFF6bJwPJ8wjnx2N88
- oKI2W8VJ1Y8Yi/Usv0DAICA8Rs6J/to+LLrz+l2sQWGppJSjp3qsGRg/r6Cv3zGH
- hQI2yfJdSUzasOhqLIEuQ6yOrP/u1ng0xIZuiXQ==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=iz5b5M
- E3PsMsS8QeBujZtb3JCi3nja+Hla+LmculZwk=; b=RSh87SEs4Y5wMEQGhMF4TS
- cTeVYM8QeCyqZt+S3kg5/alKN3LfJRrDYbL4QebKdEuKDXl/WvhnqtRC/LIH9ufS
- YH2RPnAIdDbVRv7NWv0/3BVCF4BB6uzAB0BN7X+Q3aoTaYgUL6OBuKR2I/B+szBf
- CBWcbyXTo06rhy1TceChRX0UlnEP362/efTMCe4Ho+iPbaW/2ZwQwA4sCte2oHj3
- PbkeQV+WaA7MuB63+2wybuenW63wBIt2Q+4LAgcHVm41dBadp3X8dFHqtRwJSvwb
- 5rooHlU2LFk+U6icJyVPkgFmKUf/GAGABGAoCC1uMsEyrj9ga+YlfSGpxXXIiy4g
- ==
-X-ME-Sender: <xms:O4VwXXAJe39Xm9VrYIewsp4nenufMiJTMOMxHoALQG_Zr48RAi2MZA>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudejiedgjeegucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreertdenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecurfgrrh
- grmhepmhgrihhlfhhrohhmpegrnhgurhgvfiesrghjrdhiugdrrghunecuvehluhhsthgv
- rhfuihiivgeptd
-X-ME-Proxy: <xmx:O4VwXSE4mYfTEweu3O6KFE0pGmhNb_HFsgwDUiQVeh0YpIveJSvaKg>
- <xmx:O4VwXfsL9wGoQ0JxDaAo2kBs1kK7vFeAGvk_WynV2YxxmiBwhsJyzA>
- <xmx:O4VwXQktE8PQEzKDSfzOWBM1NB6cjn_43xm_-mJXRwKx2Gl7msm2rg>
- <xmx:PIVwXXgFkxGGf64YPijCZE9v8cbsk3HfIs7FmFcR8-D7RIG-x8YgbA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 77709E00A3; Wed,  4 Sep 2019 23:47:07 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-186-gf4cb3c3-fmstable-20190904v1
-Mime-Version: 1.0
-Message-Id: <5f3ec58f-d83b-41f9-80ed-35a5434bb985@www.fastmail.com>
-In-Reply-To: <20190905011635.15902-1-rashmica.g@gmail.com>
-References: <20190905011635.15902-1-rashmica.g@gmail.com>
-Date: Thu, 05 Sep 2019 13:17:33 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Rashmica Gupta" <rashmica.g@gmail.com>,
- "Linus Walleij" <linus.walleij@linaro.org>
-Subject: Re: [PATCH v2 1/4] gpio/aspeed: Fix incorrect number of banks
+ id 1i5imY-0002pf-Ps
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 03:50:04 +0000
+Received: from localhost.localdomain (p14092-ipngnfx01kyoto.kyoto.ocn.ne.jp
+ [153.142.97.92]) (authenticated)
+ by conuserg-10.nifty.com with ESMTP id x853naL4022436;
+ Thu, 5 Sep 2019 12:49:36 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conuserg-10.nifty.com x853naL4022436
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1567655376;
+ bh=m+VFVDgsbj7vdDly5A6Xk6C0RvP7zfj9OdjMeGF3RbM=;
+ h=From:To:Cc:Subject:Date:From;
+ b=XyM51OJWda3Wd0pahMvAKiSfBLO4I85fcNhBbIorH1tg1KsrSN/w+GAtiUETA0lOr
+ VJEcO4+nZEWa+Hsfzghx66gPYhUs3kiaNScFuwgf1QL/ui5ISGp7HxQA8h6tEmOsxV
+ 1Q/IM5OMaAmyCVu4D+qIYOEAijJXYyEcH13wWu+jYsvQWR2xpBiuGpm6jsEh7whMVg
+ n9m5BbTj2W7VDkAGrIjYurD6/b1LH3/cr4tfpbU045p44JFn838L0h2xAKtT0rXzt6
+ P93ga3wjY8zwMnObhW1n9yksTk9+hsSRnyl3OK0d7pHLoEYmJU9U80zsORF7SLT5fg
+ UyoLJD/8SnYQA==
+X-Nifty-SrcIP: [153.142.97.92]
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+To: Marc Zyngier <maz@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ Jason Cooper <jason@lakedaemon.net>
+Subject: [PATCH] irqchip: uniphier-aidet: use devm_platform_ioremap_resource()
+Date: Thu,  5 Sep 2019 12:49:32 +0900
+Message-Id: <20190905034932.12587-1-yamada.masahiro@socionext.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_204711_909135_BA85DC2E 
-X-CRM114-Status: GOOD (  13.14  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190904_205003_067763_12A163CD 
+X-CRM114-Status: UNSURE (   8.12  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.26 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.77 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -103,49 +73,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org,
- linux-kernel@vger.kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Joel Stanley <joel@jms.id.au>, linux-arm-kernel@lists.infradead.org
+Cc: Masahiro Yamada <yamada.masahiro@socionext.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Replace the chain of platform_get_resource() and devm_ioremap_resource()
+with devm_platform_ioremap_resource().
 
+This allows to remove the local variable for (struct resource *), and
+have one function call less.
 
-On Thu, 5 Sep 2019, at 10:46, Rashmica Gupta wrote:
-> The current calculation for the number of GPIO banks is only correct if
-> the number of GPIOs is a multiple of 32 (if there were 31 GPIOs we would
-> currently say there are 0 banks, which is incorrect).
-> 
-> Fixes: 361b79119a4b7 ('gpio: Add Aspeed driver')
-> 
-> Signed-off-by: Rashmica Gupta <rashmica.g@gmail.com>
+Signed-off-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+---
 
-Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
+ drivers/irqchip/irq-uniphier-aidet.c | 4 +---
+ 1 file changed, 1 insertion(+), 3 deletions(-)
 
-> ---
->  drivers/gpio/gpio-aspeed.c | 2 +-
->  1 file changed, 1 insertion(+), 1 deletion(-)
-> 
-> diff --git a/drivers/gpio/gpio-aspeed.c b/drivers/gpio/gpio-aspeed.c
-> index 9defe25d4721..b83e23aecd18 100644
-> --- a/drivers/gpio/gpio-aspeed.c
-> +++ b/drivers/gpio/gpio-aspeed.c
-> @@ -1165,7 +1165,7 @@ static int __init aspeed_gpio_probe(struct 
-> platform_device *pdev)
->  	gpio->chip.base = -1;
->  
->  	/* Allocate a cache of the output registers */
-> -	banks = gpio->config->nr_gpios >> 5;
-> +	banks = DIV_ROUND_UP(gpio->config->nr_gpios, 32);
->  	gpio->dcache = devm_kcalloc(&pdev->dev,
->  				    banks, sizeof(u32), GFP_KERNEL);
->  	if (!gpio->dcache)
-> -- 
-> 2.20.1
-> 
->
+diff --git a/drivers/irqchip/irq-uniphier-aidet.c b/drivers/irqchip/irq-uniphier-aidet.c
+index ed7b4f47ff3f..89121b39be26 100644
+--- a/drivers/irqchip/irq-uniphier-aidet.c
++++ b/drivers/irqchip/irq-uniphier-aidet.c
+@@ -166,7 +166,6 @@ static int uniphier_aidet_probe(struct platform_device *pdev)
+ 	struct device_node *parent_np;
+ 	struct irq_domain *parent_domain;
+ 	struct uniphier_aidet_priv *priv;
+-	struct resource *res;
+ 
+ 	parent_np = of_irq_find_parent(dev->of_node);
+ 	if (!parent_np)
+@@ -181,8 +180,7 @@ static int uniphier_aidet_probe(struct platform_device *pdev)
+ 	if (!priv)
+ 		return -ENOMEM;
+ 
+-	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+-	priv->reg_base = devm_ioremap_resource(dev, res);
++	priv->reg_base = devm_platform_ioremap_resource(pdev, 0);
+ 	if (IS_ERR(priv->reg_base))
+ 		return PTR_ERR(priv->reg_base);
+ 
+-- 
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
