@@ -2,43 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BC2CFA9B3E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:09:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E00ACA9B42
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 09:10:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=aK4S3NFAGAAWsYdJvnEAxtY4OnWRd5TWlQE7mDJAwXY=; b=CImjE/iQZaPRNj
-	x8bQvC3Lyy4qdMRO2FX2KBcyeWQJDv8hlmN8Ju9/jZsRS210+TtCNqOmTW6L0oLCQzVCDNS6ugTqY
-	BqzHTUpD7/RG2wCmYB6aZuK/BunixpsO+UfS61HrQ+P2lV5fCwVQVXB+SRffQlOzEDs/3Lj9RJMWz
-	xbUzXqDcbkdjhlFilguz0SIIaWdebD56jyh2IbUdvk6LgK9eWcW0Ti8z9hk00YP/5mQLJNGctxtSU
-	fDD60dkuJJqnmpAKNAf0NEGpn7MpMNHm4W06qlyek9PesAP0ARzouq2e/nmT7TL0G+33xvJiaiaHb
-	L5RIa8ZhPAnc8RRH+t8g==;
+	List-Owner; bh=iqjssRcuakQ4KRuxB9dMj0ET1+w+T7jMiVZm9e3TWmQ=; b=T6ke8DP/eIEpKg
+	xq8I4kSP1Ppm4ZTER7mXibod3ztNk8ZHh3q+HfkGB/6So3JQjRyMaAvypgBBSs/wMKiZbgO4W96Cm
+	9PnMdMqoW3rBqnPJPSYftGkH4HDvoLy2oHiM7/dSbvecj8tRkpImV9KV9HsiI8yTkIJ6j3LD3lhk/
+	XSVxosGruD+1f0ib2YIR04mXcq2AHjId+hSdNZbmdA9WZmZ9z0SHtrtOf73KHZiLES9QcfgsZtUFF
+	BjdsweE46gaCOXOJjIWfaOtOU9TbWmDrRGOXjAk1Arl+v/ITzQf3fE4QbAnulJJ+hdmEZI93Dq3sz
+	Y/LPfdv94KnJDLDBdddw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ltZ-0003O8-0n; Thu, 05 Sep 2019 07:09:29 +0000
+	id 1i5ltx-0003eY-GT; Thu, 05 Sep 2019 07:09:53 +0000
 Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5lsL-0002ZD-4Z; Thu, 05 Sep 2019 07:08:14 +0000
+ id 1i5lsM-0002ZD-Ta; Thu, 05 Sep 2019 07:08:16 +0000
 Received: from droid13.amlogic.com (116.236.93.172) by mail-sh.amlogic.com
  (10.18.11.5) with Microsoft SMTP Server id 15.1.1591.10; Thu, 5 Sep 2019
  15:08:53 +0800
 From: Jianxin Pan <jianxin.pan@amlogic.com>
 To: Kevin Hilman <khilman@baylibre.com>, <linux-amlogic@lists.infradead.org>
-Subject: [PATCH v2 3/4] dt-bindings: arm: amlogic: add Amlogic AD401 bindings
-Date: Thu, 5 Sep 2019 03:07:29 -0400
-Message-ID: <1567667251-33466-4-git-send-email-jianxin.pan@amlogic.com>
+Subject: [PATCH v2 4/4] arm64: dts: add support for A1 based Amlogic AD401
+Date: Thu, 5 Sep 2019 03:07:30 -0400
+Message-ID: <1567667251-33466-5-git-send-email-jianxin.pan@amlogic.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
 References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
 MIME-Version: 1.0
 X-Originating-IP: [116.236.93.172]
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_000813_247837_F6F4BB11 
-X-CRM114-Status: UNSURE (   6.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190905_000814_994211_D2960BFB 
+X-CRM114-Status: GOOD (  11.32  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,26 +70,194 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add the compatible for the Amlogic A1 Based AD401 board.
+Add basic support for the Amlogic A1 based Amlogic AD401 board:
+which describe components as follows: Reserve Memory, CPU, GIC, IRQ,
+Timer, UART. It's capable of booting up into the serial console.
 
 Signed-off-by: Jianxin Pan <jianxin.pan@amlogic.com>
-Reviewed-by: Rob Herring <robh@kernel.org>
+Reviewed-by: Jerome Brunet <jbrunet@baylibre.com>
 ---
- Documentation/devicetree/bindings/arm/amlogic.yaml | 2 ++
- 1 file changed, 2 insertions(+)
+ arch/arm64/boot/dts/amlogic/Makefile           |   1 +
+ arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts |  31 +++++++
+ arch/arm64/boot/dts/amlogic/meson-a1.dtsi      | 122 +++++++++++++++++++++++++
+ 3 files changed, 154 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-a1.dtsi
 
-diff --git a/Documentation/devicetree/bindings/arm/amlogic.yaml b/Documentation/devicetree/bindings/arm/amlogic.yaml
-index 0ef45ac..ee5703c 100644
---- a/Documentation/devicetree/bindings/arm/amlogic.yaml
-+++ b/Documentation/devicetree/bindings/arm/amlogic.yaml
-@@ -159,5 +159,7 @@ properties:
- 
-       - description: Boards with the Amlogic Meson A1 A113L SoC
-         items:
-+          - enum:
-+              - amlogic,ad401
-           - const: amlogic,a1
- ...
+diff --git a/arch/arm64/boot/dts/amlogic/Makefile b/arch/arm64/boot/dts/amlogic/Makefile
+index 84afecb..a90be52 100644
+--- a/arch/arm64/boot/dts/amlogic/Makefile
++++ b/arch/arm64/boot/dts/amlogic/Makefile
+@@ -36,3 +36,4 @@ dtb-$(CONFIG_ARCH_MESON) += meson-gxm-rbox-pro.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-gxm-vega-s96.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-sei610.dtb
+ dtb-$(CONFIG_ARCH_MESON) += meson-sm1-khadas-vim3l.dtb
++dtb-$(CONFIG_ARCH_MESON) += meson-a1-ad401.dtb
+diff --git a/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+new file mode 100644
+index 00000000..190dedf
+--- /dev/null
++++ b/arch/arm64/boot/dts/amlogic/meson-a1-ad401.dts
+@@ -0,0 +1,31 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
++ */
++
++/dts-v1/;
++
++#include "meson-a1.dtsi"
++
++/ {
++	compatible = "amlogic,ad401", "amlogic,a1";
++	model = "Amlogic Meson A1 AD401 Development Board";
++
++	aliases {
++		serial0 = &uart_AO_B;
++	};
++
++	chosen {
++		stdout-path = "serial0:115200n8";
++	};
++
++	memory@0 {
++		device_type = "memory";
++		reg = <0x0 0x0 0x0 0x8000000>;
++		/*linux,usable-memory = <0x0 0x0 0x0 0x8000000>;*/
++	};
++};
++
++&uart_AO_B {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+new file mode 100644
+index 00000000..4d476ac
+--- /dev/null
++++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
+@@ -0,0 +1,122 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
++ */
++
++#include <dt-bindings/interrupt-controller/irq.h>
++#include <dt-bindings/interrupt-controller/arm-gic.h>
++
++/ {
++	compatible = "amlogic,a1";
++
++	interrupt-parent = <&gic>;
++	#address-cells = <2>;
++	#size-cells = <2>;
++
++	cpus {
++		#address-cells = <0x2>;
++		#size-cells = <0x0>;
++
++		cpu0: cpu@0 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a35";
++			reg = <0x0 0x0>;
++			enable-method = "psci";
++			next-level-cache = <&l2>;
++		};
++
++		cpu1: cpu@1 {
++			device_type = "cpu";
++			compatible = "arm,cortex-a35";
++			reg = <0x0 0x1>;
++			enable-method = "psci";
++			next-level-cache = <&l2>;
++		};
++
++		l2: l2-cache0 {
++			compatible = "cache";
++		};
++	};
++
++	psci {
++		compatible = "arm,psci-1.0";
++		method = "smc";
++	};
++
++	reserved-memory {
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		linux,cma {
++			compatible = "shared-dma-pool";
++			reusable;
++			size = <0x0 0x800000>;
++			alignment = <0x0 0x400000>;
++			linux,cma-default;
++		};
++	};
++
++	sm: secure-monitor {
++		compatible = "amlogic,meson-gxbb-sm";
++	};
++
++	soc {
++		compatible = "simple-bus";
++		#address-cells = <2>;
++		#size-cells = <2>;
++		ranges;
++
++		uart_AO: serial@fe001c00 {
++			compatible = "amlogic,meson-gx-uart",
++				     "amlogic,meson-ao-uart";
++			reg = <0x0 0xfe001c00 0x0 0x18>;
++			interrupts = <GIC_SPI 25 IRQ_TYPE_EDGE_RISING>;
++			clocks = <&xtal>, <&xtal>, <&xtal>;
++			clock-names = "xtal", "pclk", "baud";
++			status = "disabled";
++		};
++
++		uart_AO_B: serial@fe002000 {
++			compatible = "amlogic,meson-gx-uart",
++				     "amlogic,meson-ao-uart";
++				     reg = <0x0 0xfe002000 0x0 0x18>;
++			interrupts = <GIC_SPI 26 IRQ_TYPE_EDGE_RISING>;
++			clocks = <&xtal>, <&xtal>, <&xtal>;
++			clock-names = "xtal", "pclk", "baud";
++			status = "disabled";
++		};
++
++		gic: interrupt-controller@ff901000 {
++			compatible = "arm,gic-400";
++			reg = <0x0 0xff901000 0x0 0x1000>,
++			      <0x0 0xff902000 0x0 0x2000>,
++			      <0x0 0xff904000 0x0 0x2000>,
++			      <0x0 0xff906000 0x0 0x2000>;
++			interrupt-controller;
++			interrupts = <GIC_PPI 9
++				(GIC_CPU_MASK_SIMPLE(8) | IRQ_TYPE_LEVEL_HIGH)>;
++			#interrupt-cells = <3>;
++			#address-cells = <0>;
++		};
++	};
++
++	timer {
++		compatible = "arm,armv8-timer";
++		interrupts = <GIC_PPI 13
++			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 14
++			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 11
++			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>,
++			     <GIC_PPI 10
++			(GIC_CPU_MASK_RAW(0xff) | IRQ_TYPE_LEVEL_LOW)>;
++	};
++
++	xtal: xtal-clk {
++		compatible = "fixed-clock";
++		clock-frequency = <24000000>;
++		clock-output-names = "xtal";
++		#clock-cells = <0>;
++	};
++};
 -- 
 2.7.4
 
