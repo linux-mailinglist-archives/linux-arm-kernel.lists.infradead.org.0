@@ -2,95 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CA3A8A9D14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:34:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEEA4A9D05
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:31:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+sVrpShi8Csq+LjMOeNxK9gAoBtYuIzpytQ12Q8rBfk=; b=fxRcwu4sb+FYgFW39uC9UEUJM
-	2zopN5COHKMqllDFeD3gz59DarsYaZr2zrB7lGJBXrbI8JTzbNXjMOTGKdMipG90ihuahzW6zlESl
-	PCC/r9UxxrWDwB6TGf8azokU4bjZJDtY3GhEFN6g1aPb7hnAnI9zsDZXUdV1OR1aKXjhoalp2ExAo
-	plNn1X6vH93Z/MeLCDdWe9XeutBCKFPkaMTTbcW6zgyfWuikWGNw3dlbtTS8ON1Ly6dwj3fQu4dyB
-	B7YNtjsOrVdeCJ+MDb2M5LClG5YP9s4EC11cgDotIZ9WzWtq60pCaCk0oUQw2jr6xDqkXmKGPDlna
-	q1dUBCKjA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g5ZackK6xU8vbnKvWQdbsInuFrlPSUdKZg+EiBHdlHg=; b=l0GEeWf3zPx3uF
+	D+ymrTN/vQfX9kdJzpw2/E/FYkQPCXLIbV+ZRzUYKfu0pLbVGd6ZoeEeuhj96SIeh1arCz2UqTgSF
+	khG9sr2yIeACN07r3qoBbOeUCY01nXkn7r3Y765Y/PuxjiGg9Yi9PFgNGjCWt7wJyNxx7g7AHEz9X
+	SqWs59dLzuAQmOx0gNESi849jQefE67DWtaN0PibU0FhYzYuv7OVVPX+qfwM0gGreFsWNW9SuP1Ay
+	IV8XUPpL8AyjBN3xL/5J+hTZJGqxpVBWvjOPzOvCWSLngGzB4P5X+Ucj2S0IK4vo9pJCni/ZySqTf
+	75dYHr3Pof8lCJwhLhUA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5nDp-0008LD-2h; Thu, 05 Sep 2019 08:34:29 +0000
-Received: from mout.gmx.net ([212.227.17.21])
+	id 1i5nAx-0007ij-SS; Thu, 05 Sep 2019 08:31:32 +0000
+Received: from mail-qk1-f196.google.com ([209.85.222.196])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5nDb-0008Kk-0w
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 08:34:16 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
- s=badeba3b8450; t=1567672447;
- bh=t7W1mOvSdT7FOnR+iJZMPkkVrv1ufI9+MEcjVA3FqQY=;
- h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
- b=N1EpPbj8Pe+bjz/RlEAc/X/adBV7j6fMl86xUtS1bTj/bG5r6wdt8PuqVHL1Q6j+/
- v+1MOurOM1vHa1cFSU1U5MptCkBAheK8n6JO1AoHwLwmOajEbfFrR1ok6ijmjJBOxg
- 5NcRwzov1lAKgj+UWUXosaNMrJNTE+FxhVUBLnIc=
-X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
-Received: from [192.168.123.51] ([84.118.159.3]) by mail.gmx.com (mrgmx102
- [212.227.17.168]) with ESMTPSA (Nemesis) id 0M1iGk-1iPwPf0u7u-00toiu; Thu, 05
- Sep 2019 10:28:45 +0200
-Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
- decoded
-To: Marc Zyngier <maz@kernel.org>
-References: <20190904180736.29009-1-xypron.glpk@gmx.de>
- <86r24vrwyh.wl-maz@kernel.org>
-From: Heinrich Schuchardt <xypron.glpk@gmx.de>
-Message-ID: <754fb77a-aace-e0aa-a5bb-a6c6bcff9890@gmx.de>
-Date: Thu, 5 Sep 2019 10:28:42 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5nAk-0007hu-K8
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 08:31:20 +0000
+Received: by mail-qk1-f196.google.com with SMTP id z67so1267813qkb.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 05 Sep 2019 01:31:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=HfKuAxk9/bRoioSR+a2a8fhqX2PF1AL0BOFS3W9OiGc=;
+ b=ZkmQvAzNQx+gaYd6xyaGT0P/kyer9VHhLu83TuJSyLXZZz6Re/+91TjqFeFNlqgFnm
+ soMmpMLbIucX7G9VEGMzKiy5jjmijmHr8f7e1vOGEKhXkAKRE/65pHGhnRBMGNGr5i3n
+ N2c7GunFuLt83pvxYmytrrJbTF1YoRFzjrHsY/zKhz3ojy950ZTD8uM33VyqDl52qqY4
+ yNfhY9FXsqDxZDhCc1KLDgwS0uT9dcX80bUNEqFcCtPDVBUeTM9M6C7vGNOo90u9vGLX
+ 4BAhienKJlkoDaySWJWM3v5iIqbgXCod71JrUtrDEEdYUbwSkqtCozcl/tVHct+D5UGB
+ Ef0w==
+X-Gm-Message-State: APjAAAVafR4+SFZ3K/T1kn0M59oWEmstbNmop3s7BzQRcIAWCIJG+kMN
+ zwZPK02vtPR21/+LAn8x7yiYkEz9IAuIF+yVA6s=
+X-Google-Smtp-Source: APXvYqwJP0cESRmEZHpkjp58dScikbAuglfHxNNCW2CGpnwyPfyt43xGIybh72k+p4oPPZxz8/N0O2S7OWaot+tNSmQ=
+X-Received: by 2002:a37:4051:: with SMTP id n78mr1599585qka.138.1567672276936; 
+ Thu, 05 Sep 2019 01:31:16 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <86r24vrwyh.wl-maz@kernel.org>
-Content-Language: en-US
-X-Provags-ID: V03:K1:eaUsm+16cI+R1zRcdIsQOLAO6sdEkj8i+rShDso7dOQJA3nRcY+
- VTOE55Nsdz4pR3H8aP0fFrW8lWq9Jbia0oD9USGdOLuY7ZlGNKikVKt+zXBjIAWn3SLx4hy
- fqoArj8gvqB8ws48EHaCKZweAnVS/X7+AiMTNMorZ8RK6WOuEjAxko686tWkag1OK2n7h0Y
- ZEfc9obZitTHgvedP3CZQ==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:cL1GsB7FjCw=:AsTE/y8c6haPu54gjI6cT8
- nJAEyC+fHYKDuXnwuDKkFqwdf4Ne8GYIS3qVYx0H1BDIRAN+tuM5G2G75Onl1yh3eIxYsoEI9
- nkTe/OKoDWR8SoAUx6cNPzTrzZgi08Wt7FwF/uatQk0eVFzYVVcMo+SUFcfmHtI8M8NhvUr1z
- QoLUh41FSN9/+6t4fn8Fvr04rK6G1GhBcVCULA6RweazWP7NeHW877OJFuI7vcQIVHv6KV7TU
- leS/6c2eHuTGMBZ1t+X7vDE4m9BwL9Y76dfYQRiSx9xeD+1dLUeIdr7HcrpnSB1FwD+pFH/zQ
- /kHxGgBVp3QrklH6Ai3dqoXKNu9r6TgVxGL4G+TPxrwo2WpYgskKXvrj1zaKtM990OFM/plwr
- 5xPArYBkNvUrmSAeSrOLN+ksfkclwYuECsLLWwO3y0GDG041aBdunDHQZ0sp/5CM0KnCNeWq8
- jAKzjvDtGg+EbSWBbEz6m8WdX9S5TOqWDRUjhMq4LGuu5+411rhKh65yjC/b4hiYzQHU1IlG+
- tHNVP7vjIrUws0mg+ImRHBCrrq8gTYsE/rvvBLfGGMJYnNaYJf7ZLlAFArOAahT3Y3Yhc8OfM
- NebrsUs+S+K44RwaQwxAnRXDVdXFHKaomPnWp581uzW9GxRMxe2M78GKTNyZvGlneAvIPGs0r
- aXnZL7wSvAINuGiIEmW4YXH4xYvajOQktmaBIFFe92bsm9z8hurPLlWIVJLFJsn3873zyhOp+
- X9T0jeri7RbIk789DreBieXkvjD0yErPujp+7ePsiLao8hQ7QYZI5dlzWSJ2eVYFDe1mmdOFq
- uxQJx5w0g60AXmTOy942IfN0tNffk+vTeZ4gzu+A9/3hxV60DD0Qomv/xni9K8DLigv8SgJCf
- bTgY1xxVZaR576RG4Kyl553A533GIGohD5Gbs2l67xUTJS1V0cwVmYSVlyT1gxqHh3bgP2FhH
- csKPL+sHrcz5HgiSS9Jb6IbZCeqK7AXB+4y3g28A/k1ExR/P+mJvOidWHDy5/oSoeKofPVIZs
- ZJTppqWdT6hVWAjmoCjUzXjPZN/nOWdI5f27uMRPiUFdVwoydC+D6XsbXh+FVKzUUrhyiDYg1
- KepIOPxTVXKGKsWhSillqv7FIMMCk7708+aYxwg3JG/23xZSbHwjnQRbmSInl5lU14ZxEWNKh
- 8qGDLYWtpU5hodUzSOlIgqwiy/XLMy8ZAgWYSrKFL3NzAZmSyULbcxTSqicQS50yOidony+jC
- 65bQIfkyqiWfB6LLCcdcXkpOstIDlTzDUSNULKBlLudCOWJyF8ZeIIJFCF//OH5bqIzFxRQtr
- msrjgMZAxvPGdor9iCmwvvqpHAbQvogd+NA6AqokA8VhlriFLsrzgyaVrun/9t6CcUvzca6Fk
- y7gTPE3/gP4Fps/X++KhCdEt+H/2KwpXzgbdAn8Pvub5TyrBvLfeXmzzSoLZz8+HuArgNt+bf
- P5JHP1WVExzJQAyKsqMulgwWmWvEv0TJc=
+References: <20190905054647.1235-1-james.tai@realtek.com>
+In-Reply-To: <20190905054647.1235-1-james.tai@realtek.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 5 Sep 2019 10:31:00 +0200
+Message-ID: <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
+Subject: Re: [PATCH] ARM: Add support for Realtek SOC
+To: jamestai.sky@gmail.com
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_013415_358990_B774F602 
-X-CRM114-Status: GOOD (  22.28  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190905_013118_663841_69308293 
+X-CRM114-Status: GOOD (  27.67  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [212.227.17.21 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.196 listed in list.dnswl.org]
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.196 listed in wl.mailspike.net]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (xypron.glpk[at]gmx.de)
+ provider (arndbergmann[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -102,83 +81,211 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- =?UTF-8?Q?Daniel_P_=2e_Berrang=c3=a9?= <berrange@redhat.com>,
- Suzuki K Pouloze <suzuki.poulose@arm.com>,
- Julien Thierry <julien.thierry@arm.com>, linux-kernel@vger.kernel.org,
- James Morse <james.morse@arm.com>, Stefan Hajnoczi <stefanha@redhat.com>,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
+Cc: Rob Herring <robh@kernel.org>, "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ Thierry Reding <treding@nvidia.com>, "james.tai" <james.tai@realtek.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, CY_Huang <cy.huang@realtek.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Stefan Agner <stefan@agner.ch>, Russell King <linux@armlinux.org.uk>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Paul Burton <paul.burton@mips.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Doug Anderson <armlinux@m.disordat.com>, Mike Rapoport <rppt@linux.ibm.com>,
+ Phinex Hung <phinex@realtek.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 9/5/19 10:03 AM, Marc Zyngier wrote:
-> [Please use my kernel.org address. My arm.com address will disappear shortly]
+On Thu, Sep 5, 2019 at 7:48 AM <jamestai.sky@gmail.com> wrote:
 >
-> On Wed, 04 Sep 2019 19:07:36 +0100,
-> Heinrich Schuchardt <xypron.glpk@gmx.de> wrote:
->>
->> If an application tries to access memory that is not mapped, an error
->> ENOSYS, "load/store instruction decoding not implemented" may occur.
->> QEMU will hang with a register dump.
->>
->> Instead create a data abort that can be handled gracefully by the
->> application running in the virtual environment.
->>
->> Now the virtual machine can react to the event in the most appropriate
->> way - by recovering, by writing an informative log, or by rebooting.
->>
->> Signed-off-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
->> ---
->>   virt/kvm/arm/mmio.c | 4 ++--
->>   1 file changed, 2 insertions(+), 2 deletions(-)
->>
->> diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
->> index a8a6a0c883f1..0cbed7d6a0f4 100644
->> --- a/virt/kvm/arm/mmio.c
->> +++ b/virt/kvm/arm/mmio.c
->> @@ -161,8 +161,8 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
->>   		if (ret)
->>   			return ret;
->>   	} else {
->> -		kvm_err("load/store instruction decoding not implemented\n");
->> -		return -ENOSYS;
->> +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
->> +		return 1;
+> From: "james.tai" <james.tai@realtek.com>
 >
-> How can you tell that the access would fault? You have no idea at that
-> stage (the kernel doesn't know about the MMIO ranges that userspace
-> handles). All you know is that you're faced with a memory access that
-> you cannot emulate in the kernel. Injecting a data abort at that stage
-> is not something that the architecture allows.
+> This patch adds the basic machine file for
+> the Realtek RTD16XX platform.
 >
-> If you want to address this, consider forwarding the access to
-> userspace. You'll only need an instruction decoder (supporting T1, T2,
-> A32 and A64) and a S1 page table walker (one per page table format,
-> all three of them) to emulate the access (having taken care of
-> stopping all the other vcpus to make sure there is no concurrent
-> modification of the page tables). You'll then be able to return the
-> result of the access back to the kernel.
+> Signed-off-by: james.tai <james.tai@realtek.com>
 
-If I understand you right, the problem has to be fixed in QEMU and not
-in KVM.
+Hi James,
 
-Is there an example of such a forwarding already available in QEMU?
+Thanks a lot for your submission! I'm glad to see interest in upstream
+support for this SoC family. I have a few small comments on
+details, mostly where I would either like to see an explanation
+in the patch description, or things that looks like they can be
+left out from the patch.
 
+> index 33b00579beff..c7c9a3662eb7 100644
+> --- a/arch/arm/Kconfig
+> +++ b/arch/arm/Kconfig
+> @@ -836,6 +836,8 @@ source "arch/arm/mach-zx/Kconfig"
 >
-> Of course, the best thing would be to actually fix the guest so that
-> it doesn't use non-emulatable MMIO accesses. In general, that the sign
-> of a bug in low-level accessors.
+>  source "arch/arm/mach-zynq/Kconfig"
+>
+> +source "arch/arm/mach-realtek/Kconfig"
+> +
+> diff --git a/arch/arm/mach-realtek/Kconfig b/arch/arm/mach-realtek/Kconfig
+> @@ -225,6 +226,7 @@ machine-$(CONFIG_ARCH_VT8500)               += vt8500
+>  machine-$(CONFIG_ARCH_W90X900)         += w90x900
+>  machine-$(CONFIG_ARCH_ZX)              += zx
+>  machine-$(CONFIG_ARCH_ZYNQ)            += zynq
+> +machine-$(CONFIG_ARCH_REALTEK)         += realtek
+>  machine-$(CONFIG_PLAT_SPEAR)           += spear
+>
+>  # Platform directory name.  This list is sorted alphanumerically
 
-My problem was to find out where in my guest (U-Boot running UEFI SCT)
-the problem occurred. With this patch U-Boot gave me the relative
-address in Shell.efi and I was able to locate what was wrong in U-Boot's
-UEFI implementation.
+Please keep these lists in alphabetical order.
 
-Thanks for reviewing.
+>  # ARMv7-M architecture
+>  config ARCH_EFM32
+>         bool "Energy Micro efm32"
+> diff --git a/arch/arm/Makefile b/arch/arm/Makefile
+> index c3624ca6c0bc..1f0926449d47 100644
+> --- a/arch/arm/Makefile
+> +++ b/arch/arm/Makefile
+> @@ -148,6 +148,7 @@ endif
+>  textofs-$(CONFIG_ARCH_MSM8X60) := 0x00208000
+>  textofs-$(CONFIG_ARCH_MSM8960) := 0x00208000
+>  textofs-$(CONFIG_ARCH_MESON) := 0x00208000
+> +textofs-$(CONFIG_ARCH_REALTEK) := 0x00208000
+>  textofs-$(CONFIG_ARCH_AXXIA) := 0x00308000
 
-Heinrich
+Can you explain why this is needed for your platform?
+
+>  # Machine directory name.  This list is sorted alphanumerically
+> new file mode 100644
+> index 000000000000..a8269964dbdb
+> --- /dev/null
+> +++ b/arch/arm/mach-realtek/Kconfig
+> @@ -0,0 +1,32 @@
+> +# SPDX-License-Identifier: GPL-2.0-only
+> +menuconfig ARCH_REALTEK
+> +       bool "Realtek SoCs"
+
+Please add "depends on ARCH_MULTI_V7" to avoid
+compile time issues when selecting it on an earlier
+architecture.
+
+> +       select ARM_GLOBAL_TIMER
+> +       select CLKDEV_LOOKUP
+> +       select HAVE_SMP
+> +       select HAVE_MACH_CLKDEV
+> +       select GENERIC_CLOCKEVENTS
+> +       select HAVE_SCHED_CLOCK
+> +       select ARCH_HAS_CPUFREQ
+> +       select CLKSRC_OF
+> +       select ARCH_REQUIRE_GPIOLIB
+> +       select GENERIC_IRQ_CHIP
+> +       select IRQ_DOMAIN
+> +       select PINCTRL
+> +       select COMMON_CLK
+> +       select ARCH_HAS_BARRIERS
+> +       select SPARSE_IRQ
+> +       select PM_OPP
+> +       select ARM_HAS_SG_CHAIN
+> +       select ARM_PATCH_PHYS_VIRT
+> +       select AUTO_ZRELADDR
+> +       select MIGHT_HAVE_PCI
+> +       select MULTI_IRQ_HANDLER
+> +       select PCI_DOMAINS if PCI
+> +       select USE_OF
+
+Almost all of the symbols above are implied by
+ARCH_MULTI_V7 and should not be selected
+separately.
+
+> +config ARCH_RTD16XX
+> +       bool "Enable support for RTD1619"
+> +       depends on ARCH_REALTEK
+> +       select ARM_GIC_V3
+> +       select ARM_PSCI
+
+As I understand, this chip uses a Cortex-A55. What is the reason
+for adding support only to the 32-bit ARM architecture rather than
+64-bit?
+
+Most 64-bit SoCs are only supported with arch/arm64, but generally
+speaking that is not a requirement. My rule of thumb is that on
+systems with 1GB of RAM or more, one would want to run a 64-bit
+kernel, while systems with less than that are better off with a 32-bit
+one, but that is clearly not the only reason for picking one over the
+other.
+
+> +
+> +static int rtk_boot_secondary(unsigned int cpu, struct task_struct *idle)
+> +{
+> +       unsigned long entry_pa = __pa_symbol(secondary_startup);
+> +
+> +       writel_relaxed(entry_pa | (cpu << CPUID), cpu_release_virt);
+> +
+> +       arch_send_wakeup_ipi_mask(cpumask_of(cpu));
+> +
+> +       return 0;
+> +}
+
+It's very unusual to see custom smp operations on an ARMv8
+system, as we normally use PSCI here. Can you explain what
+is going on here? Are you able to use a boot wrapper that implements
+these in psci instead?
+> +
+> +#include "platsmp.h"
+> +
+> +#define RBUS_BASE_PHYS (0x98000000)
+> +#define RBUS_BASE_VIRT (0xfe000000)
+> +#define RBUS_BASE_SIZE (0x00100000)
+> +
+> +static struct map_desc rtk_io_desc[] __initdata = {
+> +       {
+> +               .virtual = (unsigned long) IOMEM(RBUS_BASE_VIRT),
+> +               .pfn = __phys_to_pfn(RBUS_BASE_PHYS),
+> +               .length = RBUS_BASE_SIZE,
+> +               .type = MT_DEVICE,
+> +       },
+> +};
+
+This needs a comment: Why do you require a static mapping for
+"RBUS_BASE_PHYS"? Normally device drivers should just use
+ioremap() for mapping whichever registers they want to access.
+
+> +static void __init rtk_dt_init(void)
+> +{
+> +       of_platform_populate(NULL, of_default_bus_match_table, NULL, NULL);
+> +}
+
+This should be taken care of by the
+of_platform_default_populate_init() and can be dropped.
+
+> +static void __init rtk_timer_init(void)
+> +{
+> +#ifdef CONFIG_COMMON_CLK
+> +       of_clk_init(NULL);
+> +#endif
+
+COMMON_CLK is implied by ARCH_MULTI_V7, so the
+#ifdef can be dropped.
+
+> +       timer_probe();
+> +       tick_setup_hrtimer_broadcast();
+> +}
+
+What do you need tick_setup_hrtimer_broadcast() for? I don't
+see any other platform calling this.
+
+> +bool __init rtk_smp_init_ops(void)
+> +{
+> +       smp_set_ops(smp_ops(rtk_smp_ops));
+> +
+> +       return true;
+> +}
+
+I think this can also be dropped, as you set the smp_ops in the
+machine descriptor.
+
+
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
