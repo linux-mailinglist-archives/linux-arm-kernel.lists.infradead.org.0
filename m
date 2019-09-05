@@ -2,81 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3FCBEA9CA7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:11:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F0D6A9CA8
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 10:11:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J3+RzR9M0C89z65naB/gRdxDjhWs60c4yGRxH2e70iE=; b=tvFzsNgyx5x75a
-	WK2oYXzxfm0KhIe7ZBMentSDYslIgHaZ4K05MXXIM67gX+QXq1D7pfY6bqUCHD05CmP4ZTwslPwSR
-	EzFMwJE015zeHDDsBrhpWGSSHsR7ehgvjjmqJ7cEZkkLxyEas4Id4d8Bak2YWGp2NNVpYkM5HMFqE
-	eWOTwU6dgGzACDku9XmZT4WwS+0ti05TFCfnrW6YAJoRvUYjQ6/Jn7xQ2ck9I6iUtBGTIQ1yL7SbC
-	9vc0rrnNMcNXm2Q9xF6tQC6g6Me9C0UA78XxPf94ygBKuP8mi5JU2wzLii5ZJetEdVTpTKyyZLbuk
-	Mp38G5fvBm7d2PIwU/0w==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=akhl5FTL2hXk68gPQYEBZIBMMiyiu7+KSZVICQ/V4BU=; b=QGF
+	PkK8EIDt5h8EuqhVP4soGKCg5L3GdeYQqihovaib2mABaJKwVpUIaNuRl3GaV1u0tpODehO5LH7TP
+	5AP/K6KJKmmy2nI13ylPZmDBQnkUwzYSXpWA+DisPF+A7QGBpeaXaJ2wnPe0TVgr2a+md7U0tFv6V
+	OmmoT5BbMaU5Wv+HqtpbhN8I+ulITOYpIrn9sQE1TdlqoWQ1rJMBwAHjJZbiqQas1dxXavHf3g5aa
+	D4qdFA1lfXBZSM6Kly9hJmzCca4R+TEHYZBHt/E9MRGF5DBT5/4uDKqieOy67H3pZ/p4BoGZ/2lMO
+	HLr1Az/IRrjnHqPrlBPMV9gpP1ShK6A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5mrT-0005ws-4O; Thu, 05 Sep 2019 08:11:23 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i5mrk-0006G4-Co; Thu, 05 Sep 2019 08:11:40 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5mrE-0005tS-B2
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 08:11:09 +0000
-Received: by mail-pg1-x544.google.com with SMTP id i18so965061pgl.11
+ id 1i5mrI-00060O-Lv
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 08:11:14 +0000
+Received: by mail-wm1-x341.google.com with SMTP id o184so1730800wme.3
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 01:11:07 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=BNUhBxF1OnG3d3ID43Jl2Sra4Jf1K5JNUVXSe0J/Mmo=;
- b=FsniQefV8YjuNc/PRrZO7rOT/9G0ax8+aLc2Sz/tUwIKjH+DrNsgTNPIdCNssllbf1
- yTsw2jCCl+nhi3JG+3OiKUJbn9m3OqZzU/MwtpGG7EvVTeby+PTM1a4kWl+pAl/W8p2f
- QW3A2gnfv/hpd5csElAMUYftBSWWIMgYAbyA8tas18mDueWBGlE+8y8yMlS7K97UJz1e
- FdGd63Y59wGv26usW5cD/I64bNqERDONTXMRb/TQ1dMOR3neAW0ou+hw7gmHuZ/jLN3R
- Yq6qr2hqq64hFguW6qK+LgttRPvNo0jBVjB5hpdOXr7pVzj2BUERpVvhbtWwaa3rb9Bu
- 0X5A==
+ Thu, 05 Sep 2019 01:11:12 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id;
+ bh=yJCirWApZZ0ivNXXO3nQfAsBcjkVZc9NIdUCRQkGEAQ=;
+ b=kQXtbg46qf6mJfOb6CpCcdKzbDkV8IoZH+0ywbkhzK1+g3X2MxEaaL7S23ji8OiRJG
+ 0AgQWPHbgYtrqFMiGkehSdRaIXfsJRIzJcvLiUQ6f/vx4qAKstAxG9JMpqz5QQ/ZOCNC
+ FDTvd0oeOddeNjRIcl0KX9N4TcnWR+vtzXDF5Ti9XItEPoZoEpZ/meeGk1jtWriInOHN
+ 3zqXAdeG35U/jdsB5Fbxmkadv141nELdBvAfV4lhof7hlvle3PQFC0qaxdJcV1LHSp7k
+ piSgHKfjclT4D3Pkqz5xsYs21FLynso4mjQkuMXYE6/7ALLwyYoi2wNAA5Vcn9dMyia/
+ 7xEw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=BNUhBxF1OnG3d3ID43Jl2Sra4Jf1K5JNUVXSe0J/Mmo=;
- b=QQhLKf5oJk8Px7ESDdVGxNHv8qeH9RKgJc+N/f6WJ2x/sNtcgEqM5B411dENPry3wq
- NtSqwMqz68OCJph1fZluS8gCx2ucTAWypeq8BoHGUmShmfUlfqV2i9nsHsoSLm7+sYNd
- oS4n9LOT2sqdpGTpxmU26qVDZXdqi08OFuFpboIhiKN+8Ewhk4r8kxsSOirpLrCbhO7Z
- nhgeN/Op8MYt9BTnsLii1sKdcyKZMDcA5pxHJZicbCKQxXzvN0rUMKUIxH63s5TxUIRN
- p/BGN+uy2aU3+LSEDc5M/D3MCbEdW8qtB/a8fwpTBN3rEL5ftwcWZp0JJyd1JOS/ayxT
- SOQg==
-X-Gm-Message-State: APjAAAUkns+ZzrmdUfiVqMr1egtJGdmLGPRcMvpe+UutjS6WWhzYZzHC
- WKLiq6U8jc481zDhrze3ntWIsQKU2kflelxuZUE=
-X-Google-Smtp-Source: APXvYqxtpDJ3+oWsCUzA9PrngplgA8XurQG2hkrTxbU64Fwo0RP5J+VAvVKFqCivcEjjcIw5AUIW1TNKX62bq9nBXEs=
-X-Received: by 2002:a17:90a:338b:: with SMTP id
- n11mr2570783pjb.132.1567671067543; 
- Thu, 05 Sep 2019 01:11:07 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190904061245.30770-1-rashmica.g@gmail.com>
- <20190904061245.30770-3-rashmica.g@gmail.com>
- <CAHp75Ve0zEkuD-75aZ6FU+A=DvX8NvVvY3n9p_pYDyfa76sxoQ@mail.gmail.com>
- <1ca6ffddd2452e218ef19ea84ac6c6277e1a9725.camel@gmail.com>
-In-Reply-To: <1ca6ffddd2452e218ef19ea84ac6c6277e1a9725.camel@gmail.com>
-From: Andy Shevchenko <andy.shevchenko@gmail.com>
-Date: Thu, 5 Sep 2019 11:10:55 +0300
-Message-ID: <CAHp75VcCUuCNx35DReO4YzSgDv0YJPKXdpL+xNyjwOZX8jvVtA@mail.gmail.com>
-Subject: Re: [PATCH 3/4] gpio: Add in ast2600 details to Aspeed driver
-To: Rashmica Gupta <rashmica.g@gmail.com>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=yJCirWApZZ0ivNXXO3nQfAsBcjkVZc9NIdUCRQkGEAQ=;
+ b=iIYixWEpwZ4sfgoPJRRzxUCvyLm6SJLMOwRSR1BwYURr3zwEi+2nCGmFgsNz0Cmtyw
+ RQQ4lWR3flsZM0jQcnzIWJCPnTBF1meicp/2JqwHw8/iBzo6kxx1dJcTs5lx5tb18xDl
+ aeK8WgWTPurM35tLHPu4BBRlLQLJ2jbLK5vRqrrZSnOLMMETbQ2ySO2L15gbH2eeUfwR
+ K8/MJtWw2vVbpUB83+DPnnzgEPlAI0TaRSDqTIfDax25GFlTh42lgC2IwtVMWiR/0fJJ
+ zdLyc0nsA0d1HAnN98YFl33ZLwfaKObyp37zd1njT+8i8CVAafhodhD7dYM/z86At5sr
+ FrbA==
+X-Gm-Message-State: APjAAAX7zkPdEWn8ttKfn2RFmccqXInHNNuFMe4zF0rF9c7GXs9O2qNb
+ mljpOILNt403VuUiwVcrfwYLNgYMjuw=
+X-Google-Smtp-Source: APXvYqzwdkvNxUKuT+40JMzc1W7OmvEqV4Rh40Quj3BW+9WHE3ya/eqxFX2khvazoyEs8pMmhAbT/g==
+X-Received: by 2002:a1c:ca02:: with SMTP id a2mr1959554wmg.127.1567671070986; 
+ Thu, 05 Sep 2019 01:11:10 -0700 (PDT)
+Received: from localhost.localdomain ([95.147.198.36])
+ by smtp.gmail.com with ESMTPSA id e4sm1658442wro.21.2019.09.05.01.11.09
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Thu, 05 Sep 2019 01:11:10 -0700 (PDT)
+From: Lee Jones <lee.jones@linaro.org>
+To: agross@kernel.org, robh+dt@kernel.org, mark.rutland@arm.com,
+ bjorn.andersson@linaro.org
+Subject: [PATCH v4 1/1] arm64: dts: qcom: Add Lenovo Yoga C630
+Date: Thu,  5 Sep 2019 09:11:08 +0100
+Message-Id: <20190905081108.14485-1-lee.jones@linaro.org>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_011108_375770_A62C17D5 
-X-CRM114-Status: UNSURE (   9.56  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190905_011112_790400_5E9099E1 
+X-CRM114-Status: GOOD (  14.20  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (andy.shevchenko[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -97,31 +92,501 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Andrew Jeffery <andrew@aj.id.au>, Linus Walleij <linus.walleij@linaro.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
+ linux-kernel@vger.kernel.org, vkoul@kernel.org,
+ Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 5, 2019 at 2:34 AM Rashmica Gupta <rashmica.g@gmail.com> wrote:>
-> On Wed, 2019-09-04 at 19:30 +0300, Andy Shevchenko wrote:
+From: Bjorn Andersson <bjorn.andersson@linaro.org>
 
-> Perhaps this and your other comments below would be best addressed in
-> an additional cleanup patch? This patch follows the formatting of the
-> existing code and it's not very clean to differ from that or to change
-> the formatting of the current code in this patch.
+The Lenovo Yoga C630 is built on the SDM850 from Qualcomm, but this seem
+to be similar enough to the SDM845 that we can reuse the sdm845.dtsi.
 
-OK.
+Supported by this patch is: keyboard, battery monitoring, UFS storage,
+USB host and Bluetooth.
 
+Signed-off-by: Bjorn Andersson <bjorn.andersson@linaro.org>
+Reviewed-by: Vinod Koul <vkoul@kernel.org>
+Signed-off-by: Lee Jones <lee.jones@linaro.org>
+---
+ arch/arm64/boot/dts/qcom/Makefile             |   1 +
+ .../boot/dts/qcom/sdm850-lenovo-yoga-c630.dts | 449 ++++++++++++++++++
+ 2 files changed, 450 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
+
+diff --git a/arch/arm64/boot/dts/qcom/Makefile b/arch/arm64/boot/dts/qcom/Makefile
+index 0a7e5dfce6f7..670c6c65f9e9 100644
+--- a/arch/arm64/boot/dts/qcom/Makefile
++++ b/arch/arm64/boot/dts/qcom/Makefile
+@@ -12,5 +12,6 @@ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r2.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-cheza-r3.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-db845c.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= sdm845-mtp.dtb
++dtb-$(CONFIG_ARCH_QCOM)	+= sdm850-lenovo-yoga-c630.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-1000.dtb
+ dtb-$(CONFIG_ARCH_QCOM)	+= qcs404-evb-4000.dtb
+diff --git a/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
+new file mode 100644
+index 000000000000..3f2ccb4f032e
+--- /dev/null
++++ b/arch/arm64/boot/dts/qcom/sdm850-lenovo-yoga-c630.dts
+@@ -0,0 +1,449 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Lenovo Yoga C630
++ *
++ * Copyright (c) 2019, Linaro Ltd.
++ */
++
++/dts-v1/;
++
++#include <dt-bindings/regulator/qcom,rpmh-regulator.h>
++#include "sdm845.dtsi"
++#include "pm8998.dtsi"
++
++/ {
++	model = "Lenovo Yoga C630";
++	compatible = "lenovo,yoga-c630", "qcom,sdm845";
++
++	aliases {
++		hsuart0 = &uart6;
++	};
++};
++
++&apps_rsc {
++	pm8998-rpmh-regulators {
++		compatible = "qcom,pm8998-rpmh-regulators";
++		qcom,pmic-id = "a";
++
++		vdd-l2-l8-l17-supply = <&vreg_s3a_1p35>;
++		vdd-l7-l12-l14-l15-supply = <&vreg_s5a_2p04>;
++
++		vreg_s2a_1p125: smps2 {
++		};
++
++		vreg_s3a_1p35: smps3 {
++			regulator-min-microvolt = <1352000>;
++			regulator-max-microvolt = <1352000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_s4a_1p8: smps4 {
++			regulator-min-microvolt = <1800000>;
++			regulator-max-microvolt = <1800000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_s5a_2p04: smps5 {
++			regulator-min-microvolt = <2040000>;
++			regulator-max-microvolt = <2040000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_s7a_1p025: smps7 {
++		};
++
++		vdd_qusb_hs0:
++		vdda_hp_pcie_core:
++		vdda_mipi_csi0_0p9:
++		vdda_mipi_csi1_0p9:
++		vdda_mipi_csi2_0p9:
++		vdda_mipi_dsi0_pll:
++		vdda_mipi_dsi1_pll:
++		vdda_qlink_lv:
++		vdda_qlink_lv_ck:
++		vdda_qrefs_0p875:
++		vdda_pcie_core:
++		vdda_pll_cc_ebi01:
++		vdda_pll_cc_ebi23:
++		vdda_sp_sensor:
++		vdda_ufs1_core:
++		vdda_ufs2_core:
++		vdda_usb1_ss_core:
++		vdda_usb2_ss_core:
++		vreg_l1a_0p875: ldo1 {
++			regulator-min-microvolt = <880000>;
++			regulator-max-microvolt = <880000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vddpx_10:
++		vreg_l2a_1p2: ldo2 {
++			regulator-min-microvolt = <1200000>;
++			regulator-max-microvolt = <1200000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++			regulator-always-on;
++		};
++
++		vreg_l3a_1p0: ldo3 {
++		};
++
++		vdd_wcss_cx:
++		vdd_wcss_mx:
++		vdda_wcss_pll:
++		vreg_l5a_0p8: ldo5 {
++			regulator-min-microvolt = <800000>;
++			regulator-max-microvolt = <800000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vddpx_13:
++		vreg_l6a_1p8: ldo6 {
++			regulator-min-microvolt = <1800000>;
++			regulator-max-microvolt = <1800000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l7a_1p8: ldo7 {
++			regulator-min-microvolt = <1800000>;
++			regulator-max-microvolt = <1800000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l8a_1p2: ldo8 {
++		};
++
++		vreg_l9a_1p8: ldo9 {
++		};
++
++		vreg_l10a_1p8: ldo10 {
++		};
++
++		vreg_l11a_1p0: ldo11 {
++		};
++
++		vdd_qfprom:
++		vdd_qfprom_sp:
++		vdda_apc1_cs_1p8:
++		vdda_gfx_cs_1p8:
++		vdda_qrefs_1p8:
++		vdda_qusb_hs0_1p8:
++		vddpx_11:
++		vreg_l12a_1p8: ldo12 {
++			regulator-min-microvolt = <1800000>;
++			regulator-max-microvolt = <1800000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vddpx_2:
++		vreg_l13a_2p95: ldo13 {
++		};
++
++		vreg_l14a_1p88: ldo14 {
++			regulator-min-microvolt = <1880000>;
++			regulator-max-microvolt = <1880000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l15a_1p8: ldo15 {
++		};
++
++		vreg_l16a_2p7: ldo16 {
++		};
++
++		vreg_l17a_1p3: ldo17 {
++			regulator-min-microvolt = <1304000>;
++			regulator-max-microvolt = <1304000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l18a_2p7: ldo18 {
++		};
++
++		vreg_l19a_3p0: ldo19 {
++			regulator-min-microvolt = <3100000>;
++			regulator-max-microvolt = <3108000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l20a_2p95: ldo20 {
++			regulator-min-microvolt = <2960000>;
++			regulator-max-microvolt = <2960000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l21a_2p95: ldo21 {
++		};
++
++		vreg_l22a_2p85: ldo22 {
++		};
++
++		vreg_l23a_3p3: ldo23 {
++		};
++
++		vdda_qusb_hs0_3p1:
++		vreg_l24a_3p075: ldo24 {
++			regulator-min-microvolt = <3075000>;
++			regulator-max-microvolt = <3083000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l25a_3p3: ldo25 {
++			regulator-min-microvolt = <3104000>;
++			regulator-max-microvolt = <3112000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vdda_hp_pcie_1p2:
++		vdda_hv_ebi0:
++		vdda_hv_ebi1:
++		vdda_hv_ebi2:
++		vdda_hv_ebi3:
++		vdda_mipi_csi_1p25:
++		vdda_mipi_dsi0_1p2:
++		vdda_mipi_dsi1_1p2:
++		vdda_pcie_1p2:
++		vdda_ufs1_1p2:
++		vdda_ufs2_1p2:
++		vdda_usb1_ss_1p2:
++		vdda_usb2_ss_1p2:
++		vreg_l26a_1p2: ldo26 {
++			regulator-min-microvolt = <1200000>;
++			regulator-max-microvolt = <1208000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
++
++		vreg_l28a_3p0: ldo28 {
++		};
++
++		vreg_lvs1a_1p8: lvs1 {
++		};
++
++		vreg_lvs2a_1p8: lvs2 {
++		};
++	};
++};
++
++&apps_smmu {
++	/* TODO: Figure out how to survive booting with this enabled */
++	status = "disabled";
++};
++
++&gcc {
++	protected-clocks = <GCC_QSPI_CORE_CLK>,
++			   <GCC_QSPI_CORE_CLK_SRC>,
++			   <GCC_QSPI_CNOC_PERIPH_AHB_CLK>;
++};
++
++&i2c1 {
++	status = "okay";
++	clock-frequency = <400000>;
++	qcom,geni-se-no-dma;
++};
++
++&i2c3 {
++	status = "okay";
++	clock-frequency = <400000>;
++	qcom,geni-se-no-dma;
++
++	hid@15 {
++		compatible = "hid-over-i2c";
++		reg = <0x15>;
++		hid-descr-addr = <0x1>;
++
++		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
++	};
++
++	hid@2c {
++		compatible = "hid-over-i2c";
++		reg = <0x2c>;
++		hid-descr-addr = <0x20>;
++
++		interrupts-extended = <&tlmm 37 IRQ_TYPE_EDGE_RISING>;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&i2c2_hid_active>;
++	};
++};
++
++&i2c5 {
++	status = "okay";
++	clock-frequency = <400000>;
++	qcom,geni-se-no-dma;
++
++	hid@10 {
++		compatible = "hid-over-i2c";
++		reg = <0x10>;
++		hid-descr-addr = <0x1>;
++
++		interrupts-extended = <&tlmm 125 IRQ_TYPE_EDGE_FALLING>;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&i2c6_hid_active>;
++	};
++};
++
++&i2c11 {
++	status = "okay";
++	clock-frequency = <400000>;
++	qcom,geni-se-no-dma;
++
++	hid@5c {
++		compatible = "hid-over-i2c";
++		reg = <0x5c>;
++		hid-descr-addr = <0x1>;
++
++		interrupts-extended = <&tlmm 92 IRQ_TYPE_LEVEL_LOW>;
++
++		pinctrl-names = "default";
++		pinctrl-0 = <&i2c12_hid_active>;
++	};
++};
++
++&qup_i2c12_default {
++	drive-strength = <2>;
++	bias-disable;
++};
++
++&qup_uart6_default {
++	pinmux {
++		 pins = "gpio45", "gpio46", "gpio47", "gpio48";
++		 function = "qup6";
++	};
++
++	cts {
++		pins = "gpio45";
++		bias-pull-down;
++	};
++
++	rts-tx {
++		pins = "gpio46", "gpio47";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
++	rx {
++		pins = "gpio48";
++		bias-pull-up;
++	};
++};
++
++&qupv3_id_0 {
++	status = "okay";
++};
++
++&qupv3_id_1 {
++	status = "okay";
++};
++
++&tlmm {
++	gpio-reserved-ranges = <0 4>, <81 4>;
++
++	i2c2_hid_active: i2c2-hid-active {
++		pins = <37>;
++		function = "gpio";
++
++		input-enable;
++		bias-pull-up;
++		drive-strength = <2>;
++	};
++
++	i2c6_hid_active: i2c6-hid-active {
++		pins = <125>;
++		function = "gpio";
++
++		input-enable;
++		bias-pull-up;
++		drive-strength = <2>;
++	};
++
++	i2c12_hid_active: i2c12-hid-active {
++		pins = <92>;
++		function = "gpio";
++
++		input-enable;
++		bias-pull-up;
++		drive-strength = <2>;
++	};
++};
++
++&uart6 {
++	status = "okay";
++
++	bluetooth {
++		compatible = "qcom,wcn3990-bt";
++
++		vddio-supply = <&vreg_s4a_1p8>;
++		vddxo-supply = <&vreg_l7a_1p8>;
++		vddrf-supply = <&vreg_l17a_1p3>;
++		vddch0-supply = <&vreg_l25a_3p3>;
++		max-speed = <3200000>;
++	};
++};
++
++&ufs_mem_hc {
++	status = "okay";
++
++	vcc-supply = <&vreg_l20a_2p95>;
++	vcc-max-microamp = <600000>;
++};
++
++&ufs_mem_phy {
++	status = "okay";
++
++	vdda-phy-supply = <&vdda_ufs1_core>;
++	vdda-pll-supply = <&vdda_ufs1_1p2>;
++};
++
++&usb_1 {
++	status = "okay";
++};
++
++&usb_1_dwc3 {
++	dr_mode = "host";
++};
++
++&usb_1_hsphy {
++	status = "okay";
++
++	vdd-supply = <&vdda_usb1_ss_core>;
++	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
++	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
++
++	qcom,imp-res-offset-value = <8>;
++	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_21_6_MA>;
++	qcom,preemphasis-level = <QUSB2_V2_PREEMPHASIS_5_PERCENT>;
++	qcom,preemphasis-width = <QUSB2_V2_PREEMPHASIS_WIDTH_HALF_BIT>;
++};
++
++&usb_1_qmpphy {
++	status = "okay";
++
++	vdda-phy-supply = <&vdda_usb1_ss_1p2>;
++	vdda-pll-supply = <&vdda_usb1_ss_core>;
++};
++
++&usb_2 {
++	status = "okay";
++};
++
++&usb_2_dwc3 {
++	dr_mode = "host";
++};
++
++&usb_2_hsphy {
++	status = "okay";
++
++	vdd-supply = <&vdda_usb2_ss_core>;
++	vdda-pll-supply = <&vdda_qusb_hs0_1p8>;
++	vdda-phy-dpdm-supply = <&vdda_qusb_hs0_3p1>;
++
++	qcom,imp-res-offset-value = <8>;
++	qcom,hstx-trim-value = <QUSB2_V2_HSTX_TRIM_22_8_MA>;
++};
++
++&usb_2_qmpphy {
++	status = "okay";
++
++	vdda-phy-supply = <&vdda_usb2_ss_1p2>;
++	vdda-pll-supply = <&vdda_usb2_ss_core>;
++};
 -- 
-With Best Regards,
-Andy Shevchenko
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
