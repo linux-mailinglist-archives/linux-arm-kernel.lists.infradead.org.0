@@ -2,60 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C486AA144
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:25:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 163B4AA161
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 13:28:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DqkzE6tIRd23QBN+hnfKNmY26nJyyCGxLdCcjTP/Tk0=; b=FSAHbjVkxBYmdV
-	wyAO02tVc+DQRLpFPH6DBSJf3KSTBsFA3jVbqSMNk4g84a5ty7oOOJn5oXBBAUKbsU3vWq1sPLT/v
-	L/iX/BmhNqF1DaphQTPRlK5L57qGuBGsJGdS9XvC3gumi5fDRVpBlQS6rwaNK0OpHdzO7R9kFa1kO
-	T3QSEz/tdeAaRE5KTPyqjmp55iFeFwvfrKaxC2qx0Dl4SkFg3jgnKr1Gd5sUxqnvGV6sekeG6ULkO
-	OpQap1+ySGxh5XZ+3Bh7ScVvTCo4vVP01ZpTHD6n3dnPhC4HJJPPvCtr1/1YupgacnJWt0/v8EXV/
-	l7fZaaVgbQ45ZuvgtcRw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=9lq7cf/Apsp7kJdhjEqhuQoyacI9iC9W8xVgigEVUqk=; b=msumDZzGpJ6Mm8f7QQxInp69z
+	DRV1EvAP9EnGdAjwg/sl6AeLu7EQXX2PgPD+3VzAfikLj6GjLR0RBPngn2LyEgo243KjF+6/TasFi
+	DN/VPTqyemgEv4Zb5KE695mljR1ptL7p0PiDbnjJE+aRe01G3WIAxgvHmBVExI9LEhprMf79F28sW
+	zm7SXhiC5bBSR5rLmUo/ZXZa9zZmx8VNJsnoBbqRMy1dYowonzNdIFOEhT9J2byS2wqlB7BQ+yXth
+	6hg12MWqizsPzdF4lBEpLnd73m+9JFAbC6FFUWII88DmdfE8bhHl+glRHzXd1mgV9Yty2djPyVRMq
+	7iq6PwexQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5ptY-0004xa-Ip; Thu, 05 Sep 2019 11:25:44 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5ptH-0004wj-UD
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:25:29 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 20E4728;
- Thu,  5 Sep 2019 04:25:22 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 8C3D93F718;
- Thu,  5 Sep 2019 04:25:21 -0700 (PDT)
-Date: Thu, 5 Sep 2019 12:25:19 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Nick Desaulniers <ndesaulniers@google.com>
-Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
-Message-ID: <20190905112519.GY9720@e119886-lin.cambridge.arm.com>
-References: <20190829154834.26547-1-will@kernel.org>
- <20190829154834.26547-4-will@kernel.org>
- <20190903060011.GA60737@archlinux-threadripper>
- <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
- <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
- <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
- <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
- <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
- <20190903220412.GU9720@e119886-lin.cambridge.arm.com>
- <CAKwvOdkVatgMBLiuKV1bLdDKj_czsaGXuXWXp-9VR6zLyv+U4g@mail.gmail.com>
+	id 1i5pw1-00065Q-5L; Thu, 05 Sep 2019 11:28:17 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5pvh-00064D-RN
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 11:27:59 +0000
+Received: from smtp1.mailbox.org (smtp1.mailbox.org
+ [IPv6:2001:67c:2050:105:465:1:1:0])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id 80455A162A;
+ Thu,  5 Sep 2019 13:27:48 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp1.mailbox.org ([80.241.60.240])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id bvZM-eYrS-l9; Thu,  5 Sep 2019 13:27:44 +0200 (CEST)
+Date: Thu, 5 Sep 2019 21:27:18 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Christian Brauner <christian.brauner@ubuntu.com>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905112718.ojg3znly6x3m4mjq@yavin.dot.cyphar.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905110915.4vvhicg4ldmpi5u6@wittgenstein>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKwvOdkVatgMBLiuKV1bLdDKj_czsaGXuXWXp-9VR6zLyv+U4g@mail.gmail.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+In-Reply-To: <20190905110915.4vvhicg4ldmpi5u6@wittgenstein>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_042528_070213_F711E924 
-X-CRM114-Status: GOOD (  31.76  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_042758_189983_8C50B6FC 
+X-CRM114-Status: GOOD (  20.30  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -69,216 +68,109 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
- Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
- Ard.Biesheuvel@arm.com, Nathan Chancellor <natechancellor@gmail.com>,
- Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ linux-m68k@lists.linux-m68k.org, Al Viro <viro@zeniv.linux.org.uk>,
+ Andy Lutomirski <luto@kernel.org>, Shuah Khan <skhan@linuxfoundation.org>,
+ Namhyung Kim <namhyung@kernel.org>, David Drysdale <drysdale@google.com>,
+ Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============3188958737127614295=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 04, 2019 at 10:28:14AM -0700, Nick Desaulniers wrote:
-> On Tue, Sep 3, 2019 at 3:04 PM Andrew Murray <andrew.murray@arm.com> wrote:
-> >
-> > On Tue, Sep 03, 2019 at 05:37:55PM +0100, Will Deacon wrote:
-> > > On Tue, Sep 03, 2019 at 04:31:20PM +0100, Andrew Murray wrote:
-> > > > On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
-> > > > > On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
-> > > > > > Does it work if the only thing you change is the toolchain, and use GCC
-> > > > > > instead?
-> > > > >
-> > > > > Yup.
-> > > >
-> > > > Also this is Clang generation:
-> > > >
-> > > > ffff8000100f2700 <__ptrace_link>:
-> > > > ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
-> > > > ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
-> > > > ffff8000100f2708:       eb09011f        cmp     x8, x9
-> > > > ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
-> > > > ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
-> > > > ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
-> > > > ffff8000100f2718:       f9000528        str     x8, [x9, #8]
-> > > > ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
-> > > > ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
-> > > > ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
-> > > > ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
-> > > > ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
-> > > > ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
-> > > > ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
-> > > > ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
-> > > > ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
-> > > > ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
-> > > > ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
-> > > > ffff8000100f2748:       b828005f        stadd   w8, [x2]
-> > > > ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
-> > > > ffff8000100f2750:       d65f03c0        ret
-> > > > ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
-> > > > ...
-> > > >
-> > > > This looks like the default path (before we write over it) will take you to
-> > > > the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
-> > > > least not what we expected to see. Also why 4 branches?
-> > >
-> > > So I reproduced this with a silly atomic_inc wrapper:
-> > >
-> > > void will_atomic_inc(atomic_t *v)
-> > > {
-> > >         atomic_inc(v);
-> > > }
-> > >
-> > > Compiles to:
-> > >
-> > > 0000000000000018 <will_atomic_inc>:
-> > >   18: 14000004        b       28 <will_atomic_inc+0x10>
-> > >   1c: 14000001        b       20 <will_atomic_inc+0x8>
-> > >   20: 14000005        b       34 <will_atomic_inc+0x1c>
-> > >   24: 14000001        b       28 <will_atomic_inc+0x10>
-> > >   28: 52800028        mov     w8, #0x1                        // #1
-> > >   2c: b828001f        stadd   w8, [x0]
-> > >   30: d65f03c0        ret
-> > >   34: 14000027        b       d0 <dump_kernel_offset+0x60>
-> > >   38: d65f03c0        ret
-> > >
-> > > which is going to explode.
-> >
-> > I've come up with a simple reproducer for this issue:
-> >
-> > static bool branch_jump()
-> > {
-> >         asm_volatile_goto(
-> >                 "1: b %l[l_yes2]"
-> >                  : : : : l_yes2);
-> >
-> >         return false;
-> > l_yes2:
-> >         return true;
-> > }
-> >
-> > static bool branch_test()
-> > {
-> >         return (!branch_jump() && !branch_jump());
-> > }
-> >
-> > void andy_test(int *v)
-> > {
-> >         if (branch_test())
-> >                 *v = 0xff;
-> > }
-> >
-> > This leads to the following (it shouldn't do anything):
-> >
-> > 0000000000000000 <andy_test>:
-> >    0:   14000004        b       10 <andy_test+0x10>
-> >    4:   14000001        b       8 <andy_test+0x8>
-> >    8:   14000004        b       18 <andy_test+0x18>
-> >    c:   14000001        b       10 <andy_test+0x10>
-> >   10:   52801fe8        mov     w8, #0xff                       // #255
-> >   14:   b9000008        str     w8, [x0]
-> >   18:   d65f03c0        ret
-> >
-> > The issue goes away with any of the following hunks:
-> >
-> >
-> > @@ -55,7 +55,7 @@ static bool branch_jump()
-> >
-> >  static bool branch_test()
-> >  {
-> > -       return (!branch_jump() && !branch_jump());
-> > +       return (!branch_jump());
-> >  }
-> >
-> >  void andy_test(int *v)
-> >
-> >
-> > or:
-> >
-> >
-> > @@ -53,14 +53,10 @@ static bool branch_jump()
-> >          return true;
-> >  }
-> >
-> > -static bool branch_test()
-> > -{
-> > -       return (!branch_jump() && !branch_jump());
-> > -}
-> >
-> >  void andy_test(int *v)
-> >  {
-> > -       if (branch_test())
-> > +       if (!branch_jump() && !branch_jump())
-> >                 *v = 0xff;
-> >  }
-> 
-> Indeed, playing with the definition of `__lse_ll_sc_body`, I can get
-> the kernel to boot again.
 
-Thanks for investigating this.
+--===============3188958737127614295==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="nkbo7v76ghbobp4m"
+Content-Disposition: inline
 
-Did it boot to a prompt? I played with the structure of the code and
-too was able to get it to boot, but I found that it hung later-on during
-boot. Thus I lost a bit of confidence in it.
 
-> 
-> So I think your very helpful test cases are illustrating two different problems:
-> https://godbolt.org/z/dMf7x-
-> See the disassembly of `andy_test2`.  Reference to the correct label
-> is emitted in the inline asm, but there's some silly unconditional
-> branches to the next instruction.  That's issue #1 and part of the
-> reason you see superfluous branches.  With that fixed, `andy_test2`
-> would match between GCC and Clang.  I think that can be a very late
-> peephole optimization (and further, we could probably combine labels
-> that refer to the same location, oh and .Lfunc_endX could just use
-> `.`, too!). LLVM devs noted that the x86 backend doesn't have this
-> issue, but this is a curiously recurring pattern I'm noticing in LLVM
-> where some arch agnostic optimization is only implemented for x86...
-> I'm reading through our Branch Folding pass which I think should
-> handle this, but I'll need to fire up a debugger.
-> 
-> Issue #2 is the more critical issue, but may be conflated with issue
-> #1.  Issue #2 is the nonsensical control flow with one level of
-> inlining.  See how in the disassembly of `andy_test`, the first label
-> referenced from inline assembly is *before* the mov/str when it should
-> have been *after*.  Not sure where we could be going wrong, but it's
-> straightforward for me to observe the code change as its transformed
-> through LLVM, and I've debugged and fixed issues related to inlining
-> asm goto before.
+--nkbo7v76ghbobp4m
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-You may also be interested in this:
+On 2019-09-05, Christian Brauner <christian.brauner@ubuntu.com> wrote:
+> On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
+> > A common pattern for syscall extensions is increasing the size of a
+> > struct passed from userspace, such that the zero-value of the new fields
+> > result in the old kernel behaviour (allowing for a mix of userspace and
+> > kernel vintages to operate on one another in most cases). This is done
+> > in both directions -- hence two helpers -- though it's more common to
+> > have to copy user space structs into kernel space.
+> >=20
+> > Previously there was no common lib/ function that implemented
+> > the necessary extension-checking semantics (and different syscalls
+> > implemented them slightly differently or incompletely[1]). A future
+> > patch replaces all of the common uses of this pattern to use the new
+> > copy_struct_{to,from}_user() helpers.
+> >=20
+> > [1]: For instance {sched_setattr,perf_event_open,clone3}(2) all do do
+> >      similar checks to copy_struct_from_user() while rt_sigprocmask(2)
+> >      always rejects differently-sized struct arguments.
+> >=20
+> > Suggested-by: Rasmus Villemoes <linux@rasmusvillemoes.dk>
+> > Signed-off-by: Aleksa Sarai <cyphar@cyphar.com>
+>=20
+> I would probably split this out into a separate patchset. It can very
+> well go in before openat2(). Thoughts?
 
-https://godbolt.org/z/8OthP2
+Yeah, I'll split this and the related patches out -- though I will admit
+I'm not sure how you're supposed to deal with multiple independent
+patchsets that depend on each other. How will folks reviewing openat2(2)
+know to include the lib/struct_user.c changes?
 
-void andy_test3(int *v)
-{
-    if (!branch_jump())
-        return;
+Also, whose tree should it go through?
 
-    if (!branch_jump())
-        return;
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
 
-    *v = 0xff;
-}
+--nkbo7v76ghbobp4m
+Content-Type: application/pgp-signature; name="signature.asc"
 
-(I used a similar approach with system_uses_lse_atomics to get the
-kernel to boot a bit more).
+-----BEGIN PGP SIGNATURE-----
 
-This generated code does the right thing here (in comparison to andy_test2).
-I felt like this gave an insight as to what is going on, but I don't
-have the knowledge to know what. It's as if the early return prevents the
-compiler from getting confused when it should otherwise jump to the second
-goto.
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXDxEwAKCRCdlLljIbnQ
+EqovAQD8WBncNVUTEL0Y3xtDhqYMDFHga+X5xWtEwl2PAh4uVQEAhuzdaAU+gBqt
+VqtP9IF4PFfoqMmGbekI1BKCWI4gmgo=
+=UsGw
+-----END PGP SIGNATURE-----
 
-Thanks,
+--nkbo7v76ghbobp4m--
 
-Andrew Murray
 
-> -- 
-> Thanks,
-> ~Nick Desaulniers
+--===============3188958737127614295==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============3188958737127614295==--
+
