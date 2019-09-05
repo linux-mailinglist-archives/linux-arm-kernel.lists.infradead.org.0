@@ -2,52 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C127AAAC6
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 20:21:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 93C7EAAAD7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 20:23:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=MtFlJZayRjbBnPO4+ppoRh2tyHj8w4medmCSxVtyBoY=; b=lz0+Lm0nnJcCzB6EkjPkM0WuN
-	GxYQjimaWvCpcqRQR2Hx35NkC37c+C5M6LqLq4kj/xQVPRoeEkn+cXsn1gm0jg6IjN3++7jS/0WJ5
-	9cVVQgSpej41YmjOS+nVLGZWlJ2X+c+y1Dz5YYOLmAL+e4KKNeug5aTUMruU3oJygjcjL62SgBJLY
-	BlSFHwSHWqyv2RM0iHPtchP5bg2bJvR9DpjUizoMSvJ23oiEWrjevf8Ri+bzveoN3MrxGWxDGeZEd
-	uNrRXATPwOTt6iC4ZJSPemuE559v96P/BhXFIDJrfZhExDLKjXWE6ISUg+qtlX2t7VToJWBbZVHEP
-	rryprLLUQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lSku3T2KHdjaZ2Nc0wbbSV0x/IbjHDuh3H8ZQcyRNS0=; b=nbyHE/xfbaaR2n
+	AvdltuJskHyWk+sDSNgKPMC5JtR9Y+hrNcfFcYBd4DeFB4RS0qy6XQBEytCP19epNULKFXhexXgCQ
+	W2a0aVAwppGsAFjru8Fe0H0Q1mTyRZ3Zg7Dx17wcU20us1LDtIhJ2D73l6ut/8+dDboMzmxaORTwv
+	6Hy0hX+Zsnyzw5IaNWPHEhD6xK26lV2wYEGL5YbpGMuWJjXinK+kDM2BQWI9yEoHiS4SByxf9JfZ5
+	QS7R1pO+XTFmNGLg71lCm10jKpDEP4siXB0GXNRTxOY4u0QenuKFttR+KYFZbIeNA1ikPOTS0ttBt
+	IT+JIQLAkzmpRRjQKv6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5wNb-0000zp-Ck; Thu, 05 Sep 2019 18:21:11 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5wNT-0000yc-He
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 18:21:05 +0000
-Received: from localhost (p54B335F6.dip0.t-ipconnect.de [84.179.53.246])
- by pokefinder.org (Postfix) with ESMTPSA id 73A6F2C00C0;
- Thu,  5 Sep 2019 20:20:59 +0200 (CEST)
-Date: Thu, 5 Sep 2019 20:20:59 +0200
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Lee Jones <lee.jones@linaro.org>
-Subject: Re: [RESEND v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
- processing
-Message-ID: <20190905182058.GA5281@kunai>
-References: <20190905144122.5689-1-lee.jones@linaro.org>
+	id 1i5wQD-0001OL-5g; Thu, 05 Sep 2019 18:23:53 +0000
+Received: from youngberry.canonical.com ([91.189.89.112])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5wQ3-0001Mm-VU
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 18:23:45 +0000
+Received: from [213.220.153.21] (helo=wittgenstein)
+ by youngberry.canonical.com with esmtpsa (TLS1.0:RSA_AES_256_CBC_SHA1:32)
+ (Exim 4.76) (envelope-from <christian.brauner@ubuntu.com>)
+ id 1i5wPR-00053t-Nn; Thu, 05 Sep 2019 18:23:05 +0000
+Date: Thu, 5 Sep 2019 20:23:03 +0200
+From: Christian Brauner <christian.brauner@ubuntu.com>
+To: Al Viro <viro@zeniv.linux.org.uk>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905182303.7f6bxpa2enbgcegv@wittgenstein>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905180750.GQ1131@ZenIV.linux.org.uk>
 MIME-Version: 1.0
-In-Reply-To: <20190905144122.5689-1-lee.jones@linaro.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Disposition: inline
+In-Reply-To: <20190905180750.GQ1131@ZenIV.linux.org.uk>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_112103_883269_A63DB2E1 
-X-CRM114-Status: GOOD (  15.07  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190905_112344_159812_28184314 
+X-CRM114-Status: GOOD (  11.45  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [91.189.89.112 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -59,119 +63,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, agross@kernel.org, robh+dt@kernel.org,
- bjorn.andersson@linaro.org, vkoul@kernel.org, alokc@codeaurora.org,
- linux-i2c@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============6792147039483872891=="
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Shuah Khan <shuah@kernel.org>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Jiri Olsa <jolsa@redhat.com>,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Ingo Molnar <mingo@redhat.com>, linux-arm-kernel@lists.infradead.org,
+ linux-mips@vger.kernel.org, linux-xtensa@linux-xtensa.org,
+ Kees Cook <keescook@chromium.org>, Arnd Bergmann <arnd@arndb.de>,
+ Jann Horn <jannh@google.com>, linuxppc-dev@lists.ozlabs.org,
+ Aleksa Sarai <cyphar@cyphar.com>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-m68k@lists.linux-m68k.org, linux-api@vger.kernel.org,
+ Chanho Min <chanho.min@lge.com>, Jeff Layton <jlayton@kernel.org>,
+ Oleg Nesterov <oleg@redhat.com>, Eric Biederman <ebiederm@xmission.com>,
+ linux-alpha@vger.kernel.org, linux-fsdevel@vger.kernel.org,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Thu, Sep 05, 2019 at 07:07:50PM +0100, Al Viro wrote:
+> On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
+> > +/*
+> > + * "memset(p, 0, size)" but for user space buffers. Caller must have already
+> > + * checked access_ok(p, size).
+> > + */
+> > +static int __memzero_user(void __user *p, size_t s)
+> > +{
+> > +	const char zeros[BUFFER_SIZE] = {};
+> > +	while (s > 0) {
+> > +		size_t n = min(s, sizeof(zeros));
+> > +
+> > +		if (__copy_to_user(p, zeros, n))
+> > +			return -EFAULT;
+> > +
+> > +		p += n;
+> > +		s -= n;
+> > +	}
+> > +	return 0;
+> > +}
+> 
+> That's called clear_user().
+> 
+> > +int copy_struct_to_user(void __user *dst, size_t usize,
+> > +			const void *src, size_t ksize)
+> > +{
+> > +	size_t size = min(ksize, usize);
+> > +	size_t rest = abs(ksize - usize);
+> > +
+> > +	if (unlikely(usize > PAGE_SIZE))
+> > +		return -EFAULT;
+> 
+> Why?
 
---===============6792147039483872891==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="zhXaljGHf11kAtnf"
-Content-Disposition: inline
-
-
---zhXaljGHf11kAtnf
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Thu, Sep 05, 2019 at 03:41:22PM +0100, Lee Jones wrote:
-> We have a production-level laptop (Lenovo Yoga C630) which is exhibiting
-> a rather horrific bug.  When I2C HID devices are being scanned for at
-> boot-time the QCom Geni based I2C (Serial Engine) attempts to use DMA.
-> When it does, the laptop reboots and the user never sees the OS.
-
-$subject is still wrong. And a paragraph that you are/were debugging the
-root cause but to no avail so DMA gets disabled for now would be good for a
-hotfix this late in the cycle.
-
->=20
-> Signed-off-by: Lee Jones <lee.jones@linaro.org>
-> ---
->  drivers/i2c/busses/i2c-qcom-geni.c | 12 ++++++++----
->  1 file changed, 8 insertions(+), 4 deletions(-)
->=20
-> diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-=
-qcom-geni.c
-> index a89bfce5388e..17abf60c94ae 100644
-> --- a/drivers/i2c/busses/i2c-qcom-geni.c
-> +++ b/drivers/i2c/busses/i2c-qcom-geni.c
-> @@ -355,11 +355,13 @@ static int geni_i2c_rx_one_msg(struct geni_i2c_dev =
-*gi2c, struct i2c_msg *msg,
->  {
->  	dma_addr_t rx_dma;
->  	unsigned long time_left;
-> -	void *dma_buf;
-> +	void *dma_buf =3D NULL;
->  	struct geni_se *se =3D &gi2c->se;
->  	size_t len =3D msg->len;
-> =20
-> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
-> +	if (!of_machine_is_compatible("lenovo,yoga-c630"))
-> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
-> +
->  	if (dma_buf)
->  		geni_se_select_mode(se, GENI_SE_DMA);
->  	else
-> @@ -394,11 +396,13 @@ static int geni_i2c_tx_one_msg(struct geni_i2c_dev =
-*gi2c, struct i2c_msg *msg,
->  {
->  	dma_addr_t tx_dma;
->  	unsigned long time_left;
-> -	void *dma_buf;
-> +	void *dma_buf =3D NULL;
->  	struct geni_se *se =3D &gi2c->se;
->  	size_t len =3D msg->len;
-> =20
-> -	dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
-> +	if (!of_machine_is_compatible("lenovo,yoga-c630"))
-> +		dma_buf =3D i2c_get_dma_safe_msg_buf(msg, 32);
-> +
->  	if (dma_buf)
->  		geni_se_select_mode(se, GENI_SE_DMA);
->  	else
-> --=20
-> 2.17.1
->=20
-
---zhXaljGHf11kAtnf
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl1xUgcACgkQFA3kzBSg
-KbYXzA/+LjS2mPdsksvarWH8VQNQdqsoNEIn5YCxhi5qXxi0KAdEp5Z3N04ZEOk3
-goSeO/4g2HCWM9myuZ9wunwRgK8ucOiSfkatKYPEKHg8buN9f3QfSlLfENIhtwKc
-yeNOJyakRyJnfzXpFVRmrrTWjJoLTS0ZhNgHFMPbR8cXu1sAW2tnvzYfUVLUBGP4
-w+3ldwl6wzRUvg49x4K4yGmsTJ5NQFPKJnTUUYUJ0IgetTRyGD/3HoEY6k3W12oo
-QenoRNh3MEd/HjG+sQYH1w01/86Oz5L0N5OFQoQtFwCR5fITMP4sjy30dB1/cvyr
-UzXWWfzzRV5Gbz1EodWPOS2dzPj4e8f5TRzKJa86GkPYcm6Fys4ifFWTCD6yxuTe
-A3o2ruGJwaIZ6ALxUAzLfSjbyb3ZKsCJ+JLUeMP7hnTrOI7umYHQKxiAXkC4gL1E
-CzAg3CA0BefETQ0vutbyGemZfq8ThJpFktldowciXZrxo55JoPIW2PNMn9YuLE+h
-7yxkc0NQB2Y1Pzzqyk8dcQrwDOS+4sEiGD2QEgAe7FdMqv181MA7XIH8C05Y/uqV
-gwBYxFuKCc7/dUfKBzHDi5EpWlwGIY7wGTvNzzOwn25+wmUOEidSa3SPuM6ozEnR
-Kc9uu4xw4ZB/1cne5zTkL0BDa14aJt4/lkcWV4TWrs7E6voy05k=
-=Z3pm
------END PGP SIGNATURE-----
-
---zhXaljGHf11kAtnf--
-
-
---===============6792147039483872891==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Because every caller of that function right now has that limit set
+anyway iirc. So we can either remove it from here and place it back for
+the individual callers or leave it in the helper.
+Also, I'm really asking, why not? Is it unreasonable to have an upper
+bound on the size (for a long time probably) or are you disagreeing with
+PAGE_SIZE being used? PAGE_SIZE limit is currently used by sched, perf,
+bpf, and clone3 and in a few other places.
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============6792147039483872891==--
-
