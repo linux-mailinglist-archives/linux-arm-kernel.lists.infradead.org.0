@@ -2,87 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 479CAAA559
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:02:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9980DAA562
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:04:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=8a8PMCStlBj+xCTXENdaTrDOy1F9WblTRaSjozK2sAM=; b=PbQQ6qNqy3iuNg
-	vpmMuLP8lqHcpkZABIkmlnWyNInXKrG1JC4sgDZZCftr9KrtqDUkDc1ktN7sinnsBo+LqFKDdLPWb
-	79A5FOM5bx5gvBKIe5+gZ14XvvhXh8znLHmFv36HnOysSfIa1uKUCsQj5gLYeBgYWQjg70hyvwkkH
-	jfLeyRcxBqjyUNkujtIKteO+41JGuKGnstlG2/4pEMLoLuagOJAIpuSmBZyIoNEOxI/XOg96ZYDaq
-	j9AgjYowJy4GDX9ateQ+WCGTtdoSui7bGC8+ZrsvFSR1tdE0pgbWAdMWSapeZbO3YVBBEMIMbnydk
-	4HLb0JAUIyRZM2WPcJyQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=tbXXtiRbuhCZfYhdCbmIhhgeX4nCKvYAfj/URQRyJh4=; b=SR0mk1rBk9zCq4
+	kEXioQFew2a6rKz9qBUphnAENLH9EdgcEG9bLE2V3MOxGKLPOVSKJSzIDW+GFGHy5wZpnUrJTrsL1
+	vgtAgZJyc/jivzg9UGm4ous3AcmxzQ0Ce10dAufrYT4qCk7LVFHf0OCYwG+eP5tgH7yvsRp6Rxt56
+	srkurwCx5CqHvrmO8wd5c7SlAxdbFHYEEqXMMG8UOTBwhr29LmYWvuZglDaT428CVwOwg/MPX7VhX
+	ZKmlf3rF76wJ/ooWY32OTIIx6lvmxJX6Rn8kWY1E1OWCpc6lAN5ZdEtJUWylGvS+DuNoqS8CuQg0B
+	x7iBw4lQFEjSXz53VfCA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sL4-0006JD-8K; Thu, 05 Sep 2019 14:02:18 +0000
-Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sKs-0006HC-Gt
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:02:08 +0000
-Received: by mail-lf1-x141.google.com with SMTP id t8so2096401lfc.13
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 07:02:04 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Y6GdqPH0KVO/+ZJvIYhCRArnuMGnAumqu+juuMVJhOc=;
- b=R64ee0WfRJ2+6EYXTlrJf8c+TzHsEXj8JNgQSfgg30DK/M/mocVRoL4Q8ct3r/rODE
- CTRGZoGFXbA6P0iP1NsvBQTO4qh8oDNUb/TkGdBQLeWy95eNCiUM9T65Kuv19NuE9Vwy
- c4/der6ho0mulKsweuGoF/FcAW9FE6KwEK4Xse3CNeuKX8jlVFpjHuUft+QvfjrFipC0
- HPgScpSAwIJ/x0pAoljakY1Oe5IHQyZojwuQdcrd9xVwtNBm+HcUVD8p0J6GQ+xwG322
- prgREciNMHLpiydbIVKnabDHqAT77GMryWpDkhbrGv12K0UPFh044XtZ0N7Hd+lnjtxu
- DJrA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=Y6GdqPH0KVO/+ZJvIYhCRArnuMGnAumqu+juuMVJhOc=;
- b=phsnO3vLd7l0TAofJAtIurJkhegF2ko40h/ZA5pHbSdnb1pIa3KF4N4g+abwmfjev5
- och2b44FYwGvMYZP05bfc5RSXvolaQZ3QZZKV6AMNzW+7aviUJzge/FgnCScnHlg8OJt
- cbpCY6thr7H0ITUARiPB3+CaJiFXav4s3t6jnlAdqnxz7kebIPoB1zCT6RAIe4CNqW/9
- coexvCd32Zn978JDw19m1mAtx3s8/3+VLLcGgPxYIZUED8tdqrc7v4EkqRBqdMKk40Tf
- M4Qif81u0Ef/6ZN8NI4E1LQrRzvSwVbKWu3NzTPNh6N2KNZFO97Eog/S2slZxb5kYeXI
- IVXA==
-X-Gm-Message-State: APjAAAV8715FmvxSJnLRz0++qF4TFqoEgYOkX5GFW4J4Y3gFMzIsrN9S
- OG7skaqz0y8g8Uz6HkbEVF6I111ThTPZKNcyK8RMMA==
-X-Google-Smtp-Source: APXvYqyl4zI+t8OtieR9s2IQqoz5ExKv3CVcq9ddTFSGd/uFyuy0jWlSRm7mgp7YK7eaM/5kiWkFzcXJ/qrhw9/p4qE=
-X-Received: by 2002:a05:6512:304:: with SMTP id
- t4mr2590877lfp.15.1567692122600; 
- Thu, 05 Sep 2019 07:02:02 -0700 (PDT)
+	id 1i5sMs-0006eT-6r; Thu, 05 Sep 2019 14:04:10 +0000
+Received: from muru.com ([72.249.23.125])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i5sMf-0006de-F1
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:03:59 +0000
+Received: from hillo.muru.com (localhost [127.0.0.1])
+ by muru.com (Postfix) with ESMTP id CA4C5810D;
+ Thu,  5 Sep 2019 14:04:24 +0000 (UTC)
+From: Tony Lindgren <tony@atomide.com>
+To: linux-omap@vger.kernel.org
+Subject: [PATCH] bus: ti-sysc: Fix clock handling for no-idle quirks
+Date: Thu,  5 Sep 2019 07:03:37 -0700
+Message-Id: <20190905140337.19373-1-tony@atomide.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <1567048502-6064-1-git-send-email-jing-ting.wu@mediatek.com>
- <d5100b2d-46c4-5811-8274-8b06710d2594@arm.com>
- <20190830145501.zadfv2ffuu7j46ft@e107158-lin.cambridge.arm.com>
- <1567689999.2389.5.camel@mtkswgap22>
-In-Reply-To: <1567689999.2389.5.camel@mtkswgap22>
-From: Vincent Guittot <vincent.guittot@linaro.org>
-Date: Thu, 5 Sep 2019 16:01:51 +0200
-Message-ID: <CAKfTPtC3txstND=6YkWBJ16i06cQ7xueUpD5j-j-UfuSf0-z-g@mail.gmail.com>
-Subject: Re: [PATCH 1/1] sched/rt: avoid contend with CFS task
-To: Jing-Ting Wu <jing-ting.wu@mediatek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_070206_693035_B0B71DC0 
-X-CRM114-Status: GOOD (  32.27  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_070357_539690_810467D4 
+X-CRM114-Status: GOOD (  13.82  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:141 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [72.249.23.125 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,126 +56,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: wsd_upstream@mediatek.com, Peter Zijlstra <peterz@infradead.org>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- Valentin Schneider <valentin.schneider@arm.com>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
- Qais Yousef <qais.yousef@arm.com>, LAK <linux-arm-kernel@lists.infradead.org>
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Grygorii Strashko <grygorii.strashko@ti.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
+ Keerthy <j-keerthy@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jing-Ting,
+NFSroot can fail on dra7 when cpsw is probed using ti-sysc interconnect
+target module driver as reported by Keerthy.
 
-On Thu, 5 Sep 2019 at 15:26, Jing-Ting Wu <jing-ting.wu@mediatek.com> wrote:
->
-> On Fri, 2019-08-30 at 15:55 +0100, Qais Yousef wrote:
-> > On 08/29/19 11:38, Valentin Schneider wrote:
-> > > On 29/08/2019 04:15, Jing-Ting Wu wrote:
-> > > > At original linux design, RT & CFS scheduler are independent.
-> > > > Current RT task placement policy will select the first cpu in
-> > > > lowest_mask, even if the first CPU is running a CFS task.
-> > > > This may put RT task to a running cpu and let CFS task runnable.
-> > > >
-> > > > So we select idle cpu in lowest_mask first to avoid preempting
-> > > > CFS task.
-> > > >
-> > >
-> > > Regarding the RT & CFS thing, that's working as intended. RT is a whole
-> > > class above CFS, it shouldn't have to worry about CFS.
-> > >
-> > > On the other side of things, CFS does worry about RT. We have the concept
-> > > of RT-pressure in the CFS scheduler, where RT tasks will reduce a CPU's
-> > > capacity (see fair.c::scale_rt_capacity()).
-> > >
-> > > CPU capacity is looked at on CFS wakeup (see wake_cap() and
-> > > find_idlest_cpu()), and the periodic load balancer tries to spread load
-> > > over capacity, so it'll tend to put less things on CPUs that are also
-> > > running RT tasks.
-> > >
-> > > If RT were to start avoiding rqs with CFS tasks, we'd end up with a nasty
-> > > situation were both are avoiding each other. It's even more striking when
-> > > you see that RT pressure is done with a rq-wide RT util_avg, which
-> > > *doesn't* get migrated when a RT task migrates. So if you decide to move
-> > > a RT task to an idle CPU "B" because CPU "A" had runnable CFS tasks, the
-> > > CFS scheduler will keep seeing CPU "B" as not significantly RT-pressured
-> > > while that util_avg signal ramps up, whereas it would correctly see CPU
-> > > "A" as RT-pressured if the RT task previously ran there.
-> > >
-> > > So overall I think this is the wrong approach.
-> >
-> > I like the idea, but yeah tend to agree the current approach might not be
-> > enough.
-> >
-> > I think the major problem here is that on generic systems where CFS is a first
-> > class citizen, RT tasks can be hostile to them - not always necessarily for a
-> > good reason.
-> >
-> > To further complicate the matter, even among CFS tasks we can't tell which are
-> > more important than the others - though hopefully latency-nice proposal will
-> > make the situation better.
-> >
-> > So I agree we have a problem here, but I think this patch is just a temporary
-> > band aid and we need to do better. Though I have no concrete suggestion yet on
-> > how to do that.
-> >
-> > Another thing I couldn't quantify yet how common and how severe this problem is
-> > yet. Jing-Ting, if you can share the details of your use case that'd be great.
-> >
-> > Cheers
-> >
-> > --
-> > Qais Yousef
->
->
-> I agree that the nasty situation will happen.The current approach and this patch might not be enough.
+Device clocks and the interconnect target module may or may not be
+enabled by the bootloader on init, but we currently assume the clocks
+and module are on from the bootloader for "ti,no-idle" and
+"ti,no-idle-on-init" quirks as reported by Grygorii Strashko.
 
-RT task should not harm its cache hotness and responsiveness for the
-benefit of a CFS task
+Let's fix the issue by always enabling clocks init, and
+never disable them for "ti,no-idle" quirk. For "ti,no-idle-on-init"
+quirk, we must decrement the usage count later on to allow PM
+runtime to idle the module if requested.
 
-> But for requirement of performance, I think it is better to differentiate between idle CPU and CPU has CFS task.
->
-> For example, we use rt-app to evaluate runnable time on non-patched environment.
-> There are (NR_CPUS-1) heavy CFS tasks and 1 RT Task. When a CFS task is running, the RT task wakes up and choose the same CPU.
-> The CFS task will be preempted and keep runnable until it is migrated to another cpu by load balance.
-> But load balance is not triggered immediately, it will be triggered until timer tick hits with some condition satisfied(ex. rq->next_balance).
+Fixes: 1a5cd7c23cc5 ("bus: ti-sysc: Enable all clocks directly during init to read revision")
+Cc: Keerthy <j-keerthy@ti.com>
+Cc: Vignesh Raghavendra <vigneshr@ti.com>
+Reported-by: Keerthy <j-keerthy@ti.com>
+Reported-by: Grygorii Strashko <grygorii.strashko@ti.com>
+Signed-off-by: Tony Lindgren <tony@atomide.com>
+---
+ drivers/bus/ti-sysc.c | 48 +++++++++++++++++++++++++++++++++----------
+ 1 file changed, 37 insertions(+), 11 deletions(-)
 
-Yes you will have to wait for the next tick that will trigger an idle
-load balance because you have an idle cpu and 2 runnable tack (1 RT +
-1CFS) on the same CPU. But you should not wait for more than  1 tick
-
-The current load_balance doesn't handle correctly the situation of 1
-CFS and 1 RT task on same CPU while 1 CPU is idle. There is a rework
-of the load_balance that is under review on the mailing list that
-fixes this problem and your CFS task should migrate to the idle CPU
-faster than now
-
-> CFS tasks may be runnable for a long time. In this test case, it increase 332.091 ms runnable time for CFS task.
->
-> The detailed log is shown as following, CFS task(thread1-6580) is preempted by RT task(thread0-6674) about 332ms:
-
-332ms is quite long and is probably not an idle load blanace but a
-busy load balance
-
-> thread1-6580  [003] dnh2    94.452898: sched_wakeup: comm=thread0 pid=6674 prio=89 target_cpu=003
-> thread1-6580  [003] d..2    94.452916: sched_switch: prev_comm=thread1 prev_pid=6580 prev_prio=120 prev_state=R ==> next_comm=thread0 next_pid=6674 next_prio=89
-> .... 332.091ms
-> krtatm-1930  [001] d..2    94.785007: sched_migrate_task: comm=thread1 pid=6580 prio=120 orig_cpu=3 dest_cpu=1
-> krtatm-1930  [001] d..2    94.785020: sched_switch: prev_comm=krtatm prev_pid=1930 prev_prio=100 prev_state=S ==> next_comm=thread1 next_pid=6580 next_prio=120
-
-your CFS task has not moved on the idle CPU but has replaced another task
-
-Regards,
-Vincent
->
-> So I think choose idle CPU at RT wake up flow could reduce the CFS runnable time.
->
->
-> Best regards,
-> Jing-Ting Wu
->
->
+diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+--- a/drivers/bus/ti-sysc.c
++++ b/drivers/bus/ti-sysc.c
+@@ -1632,17 +1632,19 @@ static int sysc_init_module(struct sysc *ddata)
+ 	if (error)
+ 		return error;
+ 
+-	if (manage_clocks) {
+-		sysc_clkdm_deny_idle(ddata);
++	sysc_clkdm_deny_idle(ddata);
+ 
+-		error = sysc_enable_opt_clocks(ddata);
+-		if (error)
+-			return error;
++	/*
++	 * Always enable clocks. The bootloader may or may not have enabled
++	 * the related clocks.
++	 */
++	error = sysc_enable_opt_clocks(ddata);
++	if (error)
++		return error;
+ 
+-		error = sysc_enable_main_clocks(ddata);
+-		if (error)
+-			goto err_opt_clocks;
+-	}
++	error = sysc_enable_main_clocks(ddata);
++	if (error)
++		goto err_opt_clocks;
+ 
+ 	if (!(ddata->cfg.quirks & SYSC_QUIRK_NO_RESET_ON_INIT)) {
+ 		error = sysc_rstctrl_reset_deassert(ddata, true);
+@@ -1660,7 +1662,7 @@ static int sysc_init_module(struct sysc *ddata)
+ 			goto err_main_clocks;
+ 	}
+ 
+-	if (!ddata->legacy_mode && manage_clocks) {
++	if (!ddata->legacy_mode) {
+ 		error = sysc_enable_module(ddata->dev);
+ 		if (error)
+ 			goto err_main_clocks;
+@@ -1677,6 +1679,7 @@ static int sysc_init_module(struct sysc *ddata)
+ 	if (manage_clocks)
+ 		sysc_disable_main_clocks(ddata);
+ err_opt_clocks:
++	/* No re-enable of clockdomain autoidle to prevent module autoidle */
+ 	if (manage_clocks) {
+ 		sysc_disable_opt_clocks(ddata);
+ 		sysc_clkdm_allow_idle(ddata);
+@@ -2357,6 +2360,28 @@ static void ti_sysc_idle(struct work_struct *work)
+ 
+ 	ddata = container_of(work, struct sysc, idle_work.work);
+ 
++	/*
++	 * One time decrement of clock usage counts if left on from init.
++	 * Note that we disable opt clocks unconditionally in this case
++	 * as they are enabled unconditionally during init without
++	 * considering sysc_opt_clks_needed() at that point.
++	 */
++	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE |
++				 SYSC_QUIRK_NO_IDLE_ON_INIT)) {
++		sysc_clkdm_deny_idle(ddata);
++		sysc_disable_main_clocks(ddata);
++		sysc_disable_opt_clocks(ddata);
++		sysc_clkdm_allow_idle(ddata);
++	}
++
++	/* Keep permanent PM runtime usage count for SYSC_QUIRK_NO_IDLE */
++	if (ddata->cfg.quirks & SYSC_QUIRK_NO_IDLE)
++		return;
++
++	/*
++	 * Decrement PM runtime usage count for SYSC_QUIRK_NO_IDLE_ON_INIT
++	 * and SYSC_QUIRK_NO_RESET_ON_INIT
++	 */
+ 	if (pm_runtime_active(ddata->dev))
+ 		pm_runtime_put_sync(ddata->dev);
+ }
+@@ -2445,7 +2470,8 @@ static int sysc_probe(struct platform_device *pdev)
+ 	INIT_DELAYED_WORK(&ddata->idle_work, ti_sysc_idle);
+ 
+ 	/* At least earlycon won't survive without deferred idle */
+-	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE_ON_INIT |
++	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE |
++				 SYSC_QUIRK_NO_IDLE_ON_INIT |
+ 				 SYSC_QUIRK_NO_RESET_ON_INIT)) {
+ 		schedule_delayed_work(&ddata->idle_work, 3000);
+ 	} else {
+-- 
+2.23.0
 
 _______________________________________________
 linux-arm-kernel mailing list
