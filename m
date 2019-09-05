@@ -2,87 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CCA1DAA616
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:41:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 92E79AA66F
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 16:49:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=u8DGKT40ZnoKtB/e3GlLkfNLOtmyxyxmtKWgRQ+NOwI=; b=DPi
-	avOBazkmL+G0JxnBr7ALXWMn/sfWo2qmZObcH5yoAFJM7n0qALJnobeD1Izsq4Pao3v+jhKbaWq/+
-	9y/WJbfBEyZlaRG+O+AIF/F7icoT5Lmh7hRVHzJHNLP3SNSsnerba9n8lv+zxWRTthZRzolhA1U3T
-	scTbNCvs4lUCNNkqecBGzYmKELyuDfscunxA0a4Uwg1xxfhWKf+/V4XUmXqDjO7FCkaolL6aMLnv/
-	FRQNYUQ42Q71FXTOIqFSg98iWCIdfEMvWgEGAMMMuWixod1IezXCC/uYmXYphIbB1zHp9Q73TvvER
-	TG+LDolH0cg2BvMw9DlACGZwH/0mKoA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=T6YQ4IricH9SAkMvm3nau30FpWAQzUE8QJ2H71MdunI=; b=XVO8AvSPQqq7wR
+	t5lhYHdoLiQ4BrRl6JIc1V6kMy200UFUgBrm7FfeWPWf2AIauE4EDVjZ+VsvJcoVbA2SXaZ06DJNg
+	VYnVAiznpt5YSwDuh53uRQHd+Rog+40o4vw0t8ENu27jj23XiI9E8uVWEkJG76xp+liy7qHxZaR0h
+	KIXc04dcow014JWLFb0VFw2VEUUyzRYE7TcE+qTGSPfiPpYo60Py3iluLifgEAmNJbTJWe74VBNKL
+	5QXGqN+wM9rjANdbz5sRJW59wuMV2q/PMBFH/8LvSBhDkIfFwDCSyApIZnqiaQ7axo1ZFI/q29mrn
+	2HnvnXzhyz1hWchAEIRA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5sxA-0005Vz-0E; Thu, 05 Sep 2019 14:41:40 +0000
-Received: from mail-wm1-x334.google.com ([2a00:1450:4864:20::334])
+	id 1i5t4a-0007fd-Vz; Thu, 05 Sep 2019 14:49:21 +0000
+Received: from relay7-d.mail.gandi.net ([217.70.183.200])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5sx0-0005V5-16
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:41:31 +0000
-Received: by mail-wm1-x334.google.com with SMTP id c10so3138921wmc.0
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 07:41:27 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=gvXZWVwHpbdck37kQtyWXbSqSEeeYIFeArcoXQY5L9I=;
- b=mB3Sko2ifz0tOSCJAHjX283XAID1lWJHxJ8+5TDxf+6IIqPTfr+z/PPEttOLXQQH+b
- 8VhpLSs2Xx38CdkqQN3H01l2xCICqrXkssFgkSPUbXJ7w82PFNTO/EflDqdaBZrjTBr4
- OPh0RTFzOYZ9LW56DmIi7VmHRBlGKptwDvVx48791iI0/CHvG7SloF7JfIgzVPVxd9SI
- Rs/Blwyl15h0QvyK0ESbbrFGhGmV1HOpEJtqRhDWTDXP8pDPRI+cycCzopj1+4fHb/Dm
- IQ1Epwi19TWJKlDbg2Ewvh51NYJmGcEGrfcOJBcKHYIVsbxVndIy9Vz+arcpx4sv7wik
- J4KQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=gvXZWVwHpbdck37kQtyWXbSqSEeeYIFeArcoXQY5L9I=;
- b=m48CTDDcyQmDAK9+H/V36QlGCXEUNbyQKqMKAO3E23oRSwo7bYjJSHN2UgSQ7/9SCO
- 4Syr4zBuNYuZRBFd8ei7APeooRcNIzqhx05ikfBIkHgfz2hN5Epk+50N33aoS5vhIFWS
- NocYSYr7w0C1gpfV5W176zEIeCfnfEx6ezsJnsPoaOoxxkULpNRq9Dx+tDG1upTCafVn
- yQrMwY/CqMHrWnnJeE5GWMvOLVpuX4AcqhhpXiSZK0WVCOaXzVWbhb52f0jHweueNj6k
- YwgNpJBQrRlN23AGk2eMR7ZzlRVACe/H2bXkQPaWL/QqKqkhoESR14NT69in3+XDfY5y
- 8fRw==
-X-Gm-Message-State: APjAAAVame+LI6R8BrVmj+UVC2LnxZyk3ZgdUs0VjJjPXXy8wA9VvYSj
- ddyZaR3+f5a/b22pgUmsKGD9XA==
-X-Google-Smtp-Source: APXvYqwSsdzWd7u9Fz8nhhPSzaTVwwrjIYP4HGLSO8rAw+8XajRcLI9Thgj6+E2e/hZXiqvdsbjQ7w==
-X-Received: by 2002:a1c:be04:: with SMTP id o4mr3387448wmf.60.1567694485991;
- Thu, 05 Sep 2019 07:41:25 -0700 (PDT)
-Received: from localhost.localdomain ([95.147.198.36])
- by smtp.gmail.com with ESMTPSA id c132sm4191392wme.27.2019.09.05.07.41.24
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Thu, 05 Sep 2019 07:41:25 -0700 (PDT)
-From: Lee Jones <lee.jones@linaro.org>
-To: alokc@codeaurora.org, agross@kernel.org, robh+dt@kernel.org,
- mark.rutland@arm.com, bjorn.andersson@linaro.org, vkoul@kernel.org,
- wsa@the-dreams.de
-Subject: [RESEND v3 1/1] i2c: qcom-geni: Provide an option to disable DMA
- processing
-Date: Thu,  5 Sep 2019 15:41:22 +0100
-Message-Id: <20190905144122.5689-1-lee.jones@linaro.org>
-X-Mailer: git-send-email 2.17.1
+ id 1i5t4L-0007YA-Jo
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 14:49:08 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay7-d.mail.gandi.net (Postfix) with ESMTPSA id B1E0E2000B;
+ Thu,  5 Sep 2019 14:48:57 +0000 (UTC)
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: Linus Walleij <linus.walleij@linaro.org>
+Subject: [PATCH v2] pinctrl: at91-pio4: implement .get_multiple and
+ .set_multiple
+Date: Thu,  5 Sep 2019 16:48:49 +0200
+Message-Id: <20190905144849.24882-1-alexandre.belloni@bootlin.com>
+X-Mailer: git-send-email 2.21.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_074130_077705_67B6ABC6 
-X-CRM114-Status: GOOD (  10.44  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_074906_029657_67E97325 
+X-CRM114-Status: GOOD (  10.60  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:334 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.200 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,63 +60,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-msm@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ Claudiu.Beznea@microchip.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We have a production-level laptop (Lenovo Yoga C630) which is exhibiting
-a rather horrific bug.  When I2C HID devices are being scanned for at
-boot-time the QCom Geni based I2C (Serial Engine) attempts to use DMA.
-When it does, the laptop reboots and the user never sees the OS.
+Implement .get_multiple and .set_multiple to allow reading or setting
+multiple pins simultaneously. Pins in the same bank will all be switched at
+the same time, improving synchronization and performances.
 
-Signed-off-by: Lee Jones <lee.jones@linaro.org>
+Signed-off-by: Alexandre Belloni <alexandre.belloni@bootlin.com>
 ---
- drivers/i2c/busses/i2c-qcom-geni.c | 12 ++++++++----
- 1 file changed, 8 insertions(+), 4 deletions(-)
 
-diff --git a/drivers/i2c/busses/i2c-qcom-geni.c b/drivers/i2c/busses/i2c-qcom-geni.c
-index a89bfce5388e..17abf60c94ae 100644
---- a/drivers/i2c/busses/i2c-qcom-geni.c
-+++ b/drivers/i2c/busses/i2c-qcom-geni.c
-@@ -355,11 +355,13 @@ static int geni_i2c_rx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg *msg,
- {
- 	dma_addr_t rx_dma;
- 	unsigned long time_left;
--	void *dma_buf;
-+	void *dma_buf = NULL;
- 	struct geni_se *se = &gi2c->se;
- 	size_t len = msg->len;
+Changes since v1
+https://lore.kernel.org/lkml/20190905141304.22005-1-alexandre.belloni@bootlin.com/ :
+ - Removed debug line
+
+
+
+ drivers/pinctrl/pinctrl-at91-pio4.c | 58 +++++++++++++++++++++++++++++
+ 1 file changed, 58 insertions(+)
+
+diff --git a/drivers/pinctrl/pinctrl-at91-pio4.c b/drivers/pinctrl/pinctrl-at91-pio4.c
+index d6de4d360cd4..d281ec40e098 100644
+--- a/drivers/pinctrl/pinctrl-at91-pio4.c
++++ b/drivers/pinctrl/pinctrl-at91-pio4.c
+@@ -328,6 +328,33 @@ static int atmel_gpio_get(struct gpio_chip *chip, unsigned offset)
+ 	return !!(reg & BIT(pin->line));
+ }
  
--	dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
-+	if (!of_machine_is_compatible("lenovo,yoga-c630"))
-+		dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++static int atmel_gpio_get_multiple(struct gpio_chip *chip, unsigned long *mask,
++				   unsigned long *bits)
++{
++	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
++	unsigned int bank;
 +
- 	if (dma_buf)
- 		geni_se_select_mode(se, GENI_SE_DMA);
- 	else
-@@ -394,11 +396,13 @@ static int geni_i2c_tx_one_msg(struct geni_i2c_dev *gi2c, struct i2c_msg *msg,
++	bitmap_zero(bits, atmel_pioctrl->npins);
++
++	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
++		unsigned int word = bank;
++		unsigned int offset = 0;
++		unsigned int reg;
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
++		offset = bank * ATMEL_PIO_NPINS_PER_BANK % BITS_PER_LONG;
++#endif
++		if (!mask[word])
++			continue;
++
++		reg = atmel_gpio_read(atmel_pioctrl, bank, ATMEL_PIO_PDSR);
++		bits[word] |= mask[word] & (reg << offset);
++	}
++
++	return 0;
++}
++
+ static int atmel_gpio_direction_output(struct gpio_chip *chip, unsigned offset,
+ 				       int value)
  {
- 	dma_addr_t tx_dma;
- 	unsigned long time_left;
--	void *dma_buf;
-+	void *dma_buf = NULL;
- 	struct geni_se *se = &gi2c->se;
- 	size_t len = msg->len;
+@@ -358,11 +385,42 @@ static void atmel_gpio_set(struct gpio_chip *chip, unsigned offset, int val)
+ 			 BIT(pin->line));
+ }
  
--	dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
-+	if (!of_machine_is_compatible("lenovo,yoga-c630"))
-+		dma_buf = i2c_get_dma_safe_msg_buf(msg, 32);
++static void atmel_gpio_set_multiple(struct gpio_chip *chip, unsigned long *mask,
++				    unsigned long *bits)
++{
++	struct atmel_pioctrl *atmel_pioctrl = gpiochip_get_data(chip);
++	unsigned int bank;
 +
- 	if (dma_buf)
- 		geni_se_select_mode(se, GENI_SE_DMA);
- 	else
++	for (bank = 0; bank < atmel_pioctrl->nbanks; bank++) {
++		unsigned int bitmask;
++		unsigned int word = bank;
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		word = BIT_WORD(bank * ATMEL_PIO_NPINS_PER_BANK);
++#endif
++		if (!mask[word])
++			continue;
++
++		bitmask = mask[word] & bits[word];
++		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_SODR, bitmask);
++
++		bitmask = mask[word] & ~bits[word];
++		atmel_gpio_write(atmel_pioctrl, bank, ATMEL_PIO_CODR, bitmask);
++
++#if ATMEL_PIO_NPINS_PER_BANK != BITS_PER_LONG
++		mask[word] >>= ATMEL_PIO_NPINS_PER_BANK;
++		bits[word] >>= ATMEL_PIO_NPINS_PER_BANK;
++#endif
++	}
++}
++
+ static struct gpio_chip atmel_gpio_chip = {
+ 	.direction_input        = atmel_gpio_direction_input,
+ 	.get                    = atmel_gpio_get,
++	.get_multiple           = atmel_gpio_get_multiple,
+ 	.direction_output       = atmel_gpio_direction_output,
+ 	.set                    = atmel_gpio_set,
++	.set_multiple           = atmel_gpio_set_multiple,
+ 	.to_irq                 = atmel_gpio_to_irq,
+ 	.base                   = 0,
+ };
 -- 
-2.17.1
+2.21.0
 
 
 _______________________________________________
