@@ -2,64 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23744AAEB9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 00:50:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DB067AAEC6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 00:58:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eQnFkr7vFClHCIVMY8oSq+fVCOIa6Tk5yc0i+0nXgOs=; b=gPNUjQjJckIOTm
-	ztChCN7Tsf53YNNp2cUXrTCCvb6EOKWPHSvt730FgR7Z64edRqSIXdFvvzya0Pttqiw50DUQdGvZB
-	JHLjyk0Wm+1wMdpZr544LcEqveN4+sZGRHyY+SwDcdxS8HXeIJWQwUEq4AtI6C2uuAJejp9T8Z8sa
-	5q6oqifawc4OP43lEvPQm5ookS7eFErB49PHzccBQYT+Nt+3W6nUM2oI2WlXEvz2jK/8pDd4KOzIy
-	v8Pnt06Ukz8T0rt1n8psCU/DuCnX1EIz4x2t145zY85OTkZqMrnFSGzz8nZmGWAZhs+QrdIXDxNHq
-	Yt6SBpBY/nA45O0S96Ug==;
+	List-Owner; bh=Ie397Yxo+AdmBjD8JX9KnCAD5GEp4+TNO3mEGiSD/jI=; b=nLE/rWe648IX/d
+	cDc26Evtp3ya2qP5MredCNjmdiHco+hTEYcMwYjizqcf1/yhuhWIvSf0Kf4lxdyuHb2c/vIIZLyai
+	sY5f33aVob3PHmZUOSFz767S2gMcEdgmCLOrGmnxats9WsgAWCYfC0U/cwVtOOMqyUh2RYrRRE1PW
+	4lSQCfcsp1fG/B6v2ki7DBPL2LaY+d37u8kS33ZMWywJanjPeinHWuaYdbsVt+txpdxLMr6/VIsWm
+	uHbHilHovzJ8wH5gAxTOOoS/zCorNOJYDQPmM19Z7Md1/jp6fzbf7IOeyhPRqxTk8dml+xMzT9qZE
+	kyXaAFZKdDT834o0rJdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i60aA-0000Er-FR; Thu, 05 Sep 2019 22:50:26 +0000
+	id 1i60ht-00024A-Ca; Thu, 05 Sep 2019 22:58:25 +0000
 Received: from mail-qt1-x841.google.com ([2607:f8b0:4864:20::841])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i60Zw-0000D6-LE
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 22:50:14 +0000
-Received: by mail-qt1-x841.google.com with SMTP id v11so4818929qto.13
+ id 1i60hl-00022b-1w
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 22:58:18 +0000
+Received: by mail-qt1-x841.google.com with SMTP id k10so4941302qth.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 15:50:11 -0700 (PDT)
+ Thu, 05 Sep 2019 15:58:16 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=Mt9CnpWDYE9AuIn/hMdu40hiJSofbzdMOkAcHsCIv0A=;
- b=Vydhvi9xtxhqe5HoBNZPhdiSWovcw1HFQTA8soQuoeVMc6pIcQ5l37oQ3SalYjcgjm
- TrbR2gyQ0J8Z5UPkHYElYPnXXieZeIn8ra2Lk7QRG5pG5hbOY9DVaX9uLAGALyg85Txg
- Es6trlS030XfryZ7vU/40X/oGNBbzuCH/ebqU=
+ :cc; bh=cQJ+zFOVB6K6WcAR5pcUdxaScO8yDgBnUHh3PD1RXoI=;
+ b=DRLNWLd8+ETk0QluxLV9XbJORwoyXqRnnMYnVOBDD3zYwbylkOWFJ9gnaLgf67l6lx
+ nXrg/tuOjFYwZIV0I+VrcVrJkKhHNQpBWin4HyZMDKQBhKhYx5WvbWrP0f46reaSkrFx
+ E+fkGTnUHj+R9/vYM863tugJRlR8AfObMEQe0=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=Mt9CnpWDYE9AuIn/hMdu40hiJSofbzdMOkAcHsCIv0A=;
- b=hgrszxIwtkUPYrdnAW0P6bEAmrd012OJpqZIftIFZ151uZAyrfqfrkKdMDSbePMEze
- cFqUA0AadiAzMH2YElEbXP87N172bvQ1UK5ympT2ZGi3+P9yrV1+rWTj/NecQOVGNKBB
- 3uB9ENqJgj2pVIqIj/tfuDn546MZa8rU2YQlnhx1D5UjWoy71Gd8cXORUCTFy9lrR/hx
- 8yv0w5rPN3L+HZpi5fGAZmv25gebBI/rtPLWi9ian63A+7S/spgSW0NBABUBk7k/4Oea
- lThfsKL1zPJ0oLss3GYvBvbfne4EpBOo/jzZ/ojnYL093ajLcyUp6NswQJ7l++DK7kaR
- Ibww==
-X-Gm-Message-State: APjAAAWoWIJgjgq1ozqkT3GTHAtf8BPl0b9baD8VBLFykppU4m9E6laA
- JHKDY1SR+X4zcvz4g5HJJdhZipYf1/6eha+zbSaEPQ==
-X-Google-Smtp-Source: APXvYqx+KZU9zIaMUMZ+jLWYnGv8HnZ+gqwV0E2600/1VRfMon8nX6vFFavjV+luTwMIWxrqVykRIXpwOLTFiFRi94I=
-X-Received: by 2002:ac8:434e:: with SMTP id a14mr6318575qtn.278.1567723810989; 
- Thu, 05 Sep 2019 15:50:10 -0700 (PDT)
+ bh=cQJ+zFOVB6K6WcAR5pcUdxaScO8yDgBnUHh3PD1RXoI=;
+ b=TLj6BwwQlWvIAjSLRh9LDOLjpKfWVhKTICql5e+pXkOJ/H1oAxoX4BdqzzXbcdPnGM
+ 9mQFn+5/0BrgtoEz3xV0mvRnLYePS0OEChyGy2l04hh9GWV1/NZHiiWmlq1jhQfX/q+T
+ CsCebG1yYUqP5ZdhQT8rDcqPyry7JLMlibNGgE5gT5IdFxyQlkP5CDBzZpZ/f/ktBDaL
+ T3/7cTd+1MuQUqiBRGiArHUnEG9qXoKaSyr/qPEeUSS+wHSUNVPQadVYXSLwoPlidxUz
+ WKj4vXK1Jk73P8oRCDhe7D84NJdg/oCdULVPTvO/ZYhvxIstvkYItN+QeeQowcSGsfV3
+ 4l7A==
+X-Gm-Message-State: APjAAAWBgDrACk7m9z4jvluxXdF2pbmpIIQrqubN8BDA2uMpy7/Hcm2A
+ AM768D5RcJvbqkZ70/+4FwBxjdLBajkQWI2ilPtpng==
+X-Google-Smtp-Source: APXvYqzxEctUy2fVNhmlBa2d060jbs6jhMPm3vNuZR/XdvJM98rLVHL7XY+TYTWbR9KnwSaB7/U5fV5KOs5bQUPWGMg=
+X-Received: by 2002:ad4:540c:: with SMTP id f12mr3741489qvt.104.1567724296065; 
+ Thu, 05 Sep 2019 15:58:16 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190830074103.16671-1-bibby.hsieh@mediatek.com>
- <20190830074103.16671-2-bibby.hsieh@mediatek.com>
-In-Reply-To: <20190830074103.16671-2-bibby.hsieh@mediatek.com>
+References: <20190819034331.13098-1-dongchun.zhu@mediatek.com>
+ <20190819034331.13098-3-dongchun.zhu@mediatek.com>
+ <20190819083009.GC6133@paasikivi.fi.intel.com>
+ <1567676465.21623.100.camel@mhfsdcap03>
+ <20190905104546.GA5475@paasikivi.fi.intel.com>
+ <CAAFQd5Bh-11D9RR9WVH5A3DbXZoxWhbMhXSNKUV25mempMi+ag@mail.gmail.com>
+ <20190905160512.GG5475@paasikivi.fi.intel.com>
+In-Reply-To: <20190905160512.GG5475@paasikivi.fi.intel.com>
 From: Nicolas Boichat <drinkcat@chromium.org>
-Date: Fri, 6 Sep 2019 06:49:59 +0800
-Message-ID: <CANMq1KDUR2cFrQC0NdfvLD=0QDiYoyOTGMf3RWyg5PPSURhGMQ@mail.gmail.com>
-Subject: Re: [PATCH 1/2] drm/mediatek: Support CMDQ interface in ddp component
-To: Bibby Hsieh <bibby.hsieh@mediatek.com>
+Date: Fri, 6 Sep 2019 06:58:05 +0800
+Message-ID: <CANMq1KDVMGkeBvu1nO5WHopWwec9mxHfhmLmX2BzvaYVLzxoXw@mail.gmail.com>
+Subject: Re: [V3, 2/2] media: i2c: Add Omnivision OV02A10 camera sensor driver
+To: Sakari Ailus <sakari.ailus@linux.intel.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_155012_726477_8D42D063 
-X-CRM114-Status: GOOD (  12.97  )
+X-CRM114-CacheID: sfid-20190905_155817_125476_BABDC0D2 
+X-CRM114-Status: GOOD (  14.47  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -89,72 +94,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yongqiang Niu <yongqiang.niu@mediatek.com>, David Airlie <airlied@linux.ie>,
- Daniel Vetter <daniel.vetter@ffwll.ch>, lkml <linux-kernel@vger.kernel.org>,
- dri-devel@lists.freedesktop.org, Tomasz Figa <tfiga@chromium.org>,
- YT Shen <yt.shen@mediatek.com>, CK Hu <ck.hu@mediatek.com>,
- Thierry Reding <thierry.reding@gmail.com>,
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream <srv_heupstream@mediatek.com>, shengnan.wang@mediatek.com,
+ Tomasz Figa <tfiga@chromium.org>, Louis Kuo <louis.kuo@mediatek.com>,
+ Sj Huang <sj.huang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
  "moderated list:ARM/Mediatek SoC support" <linux-mediatek@lists.infradead.org>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Matthias Brugger <matthias.bgg@gmail.com>, Guenter Roeck <groeck@chromium.org>,
- linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
+ Dongchun Zhu <dongchun.zhu@mediatek.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>,
+ "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
+ Joerg Roedel <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 30, 2019 at 3:41 PM Bibby Hsieh <bibby.hsieh@mediatek.com> wrote:
+On Fri, Sep 6, 2019 at 12:05 AM Sakari Ailus
+<sakari.ailus@linux.intel.com> wrote:
 >
-> The CMDQ (Command Queue) in MT8183 is used to help
-> update all relevant display controller registers
-> with critical time limation.
-> This patch add cmdq interface in ddp_comp interface,
-> let all ddp_comp interface can support cpu/cmdq function
-> at the same time.
+> On Thu, Sep 05, 2019 at 07:53:37PM +0900, Tomasz Figa wrote:
+> > On Thu, Sep 5, 2019 at 7:45 PM Sakari Ailus
+> > <sakari.ailus@linux.intel.com> wrote:
+> > >
+> > > Hi Dongchun,
+> > >
+> > > On Thu, Sep 05, 2019 at 05:41:05PM +0800, Dongchun Zhu wrote:
+> > >
+> > > ...
+> > >
+> > > > > > + ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
+> > > > > > + if (ret < 0) {
+> > > > > > +         dev_err(dev, "Failed to enable regulators\n");
+> > > > > > +         goto disable_clk;
+> > > > > > + }
+> > > > > > + msleep_range(7);
+> > > > >
+> > > > > This has some potential of clashing with more generic functions in the
+> > > > > future. Please use usleep_range directly, or msleep.
+> > > > >
+> > > >
+> > > > Did you mean using usleep_range(7*1000, 8*1000), as used in patch v1?
+> > > > https://patchwork.kernel.org/patch/10957225/
+> > >
+> > > Yes, please.
+> >
+> > Why not just msleep()?
 >
-> Signed-off-by: YT Shen <yt.shen@mediatek.com>
-> Signed-off-by: CK Hu <ck.hu@mediatek.com>
-> Signed-off-by: Philipp Zabel <p.zabel@pengutronix.de>
-> Signed-off-by: Bibby Hsieh <bibby.hsieh@mediatek.com>
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> --- [snip]
->  static void mtk_gamma_set(struct mtk_ddp_comp *comp,
-> -                         struct drm_crtc_state *state)
-> +                         struct drm_crtc_state *state,
-> +                         struct cmdq_pkt *cmdq_pkt)
->  {
-> -       unsigned int i, reg;
-> +       unsigned int i;
->         struct drm_color_lut *lut;
->         void __iomem *lut_base;
->         u32 word;
->
->         if (state->gamma_lut) {
-> -               reg = readl(comp->regs + DISP_GAMMA_CFG);
-> -               reg = reg | GAMMA_LUT_EN;
-> -               writel(reg, comp->regs + DISP_GAMMA_CFG);
-> +               mtk_ddp_write_mask(cmdq_pkt, GAMMA_LUT_EN, comp,
-> +                                  DISP_GAMMA_CFG, GAMMA_LUT_EN);
->                 lut_base = comp->regs + DISP_GAMMA_LUT;
->                 lut = (struct drm_color_lut *)state->gamma_lut->data;
->                 for (i = 0; i < MTK_LUT_SIZE; i++) {
->                         word = (((lut[i].red >> 6) & LUT_10BIT_MASK) << 20) +
->                                 (((lut[i].green >> 6) & LUT_10BIT_MASK) << 10) +
->                                 ((lut[i].blue >> 6) & LUT_10BIT_MASK);
-> -                       writel(word, (lut_base + i * 4));
-> +                       mtk_ddp_write(cmdq_pkt, word, comp,
-> +                                     (unsigned int)(lut_base + i * 4));
+> msleep() is usually less accurate. I'm not sure it makes a big different in
+> this case. Perhaps, if someone wants that the sensor is powered on and
+> streaming as soon as possible.
 
-Guenter pointed out that this looks quite wrong. We should have:
-unsigned int lut_base;
-lut_base = DISP_GAMMA_LUT;
-mtk_ddp_write(cmdq_pkt, word, comp, lut_base + i * 4);
+https://elixir.bootlin.com/linux/latest/source/Documentation/timers/timers-howto.txt#L70
 
-Or more simply:
-mtk_ddp_write(cmdq_pkt, word, comp, DISP_GAMMA_LUT + i * 4);
+Use usleep_range for delays up to 20ms (at least that's what the
+documentation (still) says?)
 
->                 }
->         }
+> --
+> Sakari Ailus
+> sakari.ailus@linux.intel.com
 
 _______________________________________________
 linux-arm-kernel mailing list
