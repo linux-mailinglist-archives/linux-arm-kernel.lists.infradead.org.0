@@ -2,50 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1989CAA2CE
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:16:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6848CAA2D5
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:16:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nYHo0JmAh95EcmcuuRdM8TZQaBN9fotz9ii4OU9LWXQ=; b=n6A+azf6LhTU9l
-	/SHP8LruDrYVO0pzIGA53SPhlUthtfXt3PhUb/oNirnSNsfiYnVRdjR0+2Ycf6vbOA6QuFT0G3P2N
-	dGPhYwU9QqKMqalJf7+7LThGs04e1igYpJzDJZsKjZeFC8vXKeNbeNIaVpQnjgKW0ZCjTO3vGkfuq
-	Eb3vqXSQjxMxOcd0lGUXkOGsdn5PTh7x0U3q0GsJNpl7I6f4TndsqDpYIFRKJOTQf2TZuKCH/9neR
-	zPFRGRxIDKXblc1+gt/A41QirePr4nPzHNS3TJUX8MdYT392cmwpXjVyJNsz2ks+7piCOSqgAdHyg
-	SdcjbbxZOeEz/wxhQ6yw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=20Bdf+D70AaAWjfySj2UjkQyLhE8DnzgSvQ0a4y+is4=; b=tqYCFgqr3+d5Am
+	MUXxcqXNIdG/fBT8a9yxHHKG5LkTbHpmJlxmMTYHvGADr2ZO9MNmNP/N3jO/k3D+d/nsPuYt70j3z
+	QkeOxC7urf/BEiH4D7zGeUDEA7Jk4+doNhL66yRjmC6xIVqN1n5TyYI0StTpgfJbE2oileYTu9PDZ
+	4bJRcvpUVEyUD9UMChZHYkpqUYaoxtH9gvtHRwXc8BqgIw2vG3KtsebQQGaYSULgQAX6nHxrX3Pra
+	d2oaT/f/KdfloiwSG08dMQfSlP4Jv67kjDIIR1ZxMRS7PSUBZoJab3yit5UR6CfrS8NNucLcZS+Z+
+	S5nRb1bkPHLjNoycqhzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5qgT-0005C4-Cb; Thu, 05 Sep 2019 12:16:17 +0000
+	id 1i5qh4-0005Ve-O6; Thu, 05 Sep 2019 12:16:54 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i5qgF-0005BY-Rs
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 12:16:05 +0000
+ id 1i5qgr-0005V5-5D
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 12:16:42 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 200BE28;
- Thu,  5 Sep 2019 05:16:03 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 51FA33F718;
- Thu,  5 Sep 2019 05:16:02 -0700 (PDT)
-Subject: Re: [PATCH v5 09/11] kselftest: arm64:
- fake_sigreturn_duplicated_fpsimd
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190902112932.36129-10-cristian.marussi@arm.com>
- <20190904114923.GZ27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <f29dbde7-90eb-3a06-71a0-e434afa9f89d@arm.com>
-Date: Thu, 5 Sep 2019 13:15:58 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9A3E128;
+ Thu,  5 Sep 2019 05:16:40 -0700 (PDT)
+Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.144.41])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2EA823F718;
+ Thu,  5 Sep 2019 05:16:40 -0700 (PDT)
+Date: Thu, 5 Sep 2019 14:16:38 +0200
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Heinrich Schuchardt <xypron.glpk@gmx.de>
+Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
+ decoded
+Message-ID: <20190905121638.GD4320@e113682-lin.lund.arm.com>
+References: <20190904180736.29009-1-xypron.glpk@gmx.de>
+ <20190905092039.GG32415@stefanha-x1.localdomain>
+ <561eae08-c5f1-9543-275c-0da0a85cd7df@gmx.de>
 MIME-Version: 1.0
-In-Reply-To: <20190904114923.GZ27757@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <561eae08-c5f1-9543-275c-0da0a85cd7df@gmx.de>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_051603_992794_B9E55B8C 
-X-CRM114-Status: GOOD (  18.54  )
+X-CRM114-CacheID: sfid-20190905_051641_284449_13A2C0F4 
+X-CRM114-Status: GOOD (  28.85  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,119 +63,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
+ Marc Zyngier <marc.zyngier@arm.com>, linux-kernel@vger.kernel.org,
+ Stefan Hajnoczi <stefanha@redhat.com>, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+Hi Heinrich,
 
-On 04/09/2019 12:49, Dave Martin wrote:
-> On Mon, Sep 02, 2019 at 12:29:30pm +0100, Cristian Marussi wrote:
->> Add a simple fake_sigreturn testcase which builds a ucontext_t with
->> an anomalous additional fpsimd_context and place it onto the stack.
->> Expects a SIGSEGV on test PASS.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->> v3 --> v4
->> - fix commit
->> - missing include
->> - using new get_starting_head() helper
->> - added test description
->> ---
->>  .../fake_sigreturn_duplicated_fpsimd.c        | 52 +++++++++++++++++++
->>  1 file changed, 52 insertions(+)
->>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
->>
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
->> new file mode 100644
->> index 000000000000..c7122c44f53f
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_duplicated_fpsimd.c
->> @@ -0,0 +1,52 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Place a fake sigframe on the stack including an additional FPSIMD
->> + * record: on sigreturn Kernel must spot this attempt and the test
->> + * case is expected to be terminated via SEGV.
->> + */
->> +
->> +#include <signal.h>
->> +#include <ucontext.h>
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +struct fake_sigframe sf;
->> +
->> +static int fake_sigreturn_duplicated_fpsimd_run(struct tdescr *td,
->> +						siginfo_t *si, ucontext_t *uc)
->> +{
->> +	size_t resv_sz, need_sz;
->> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
->> +
->> +	/* just to fill the ucontext_t with something real */
->> +	if (!get_current_context(td, &sf.uc))
->> +		return 1;
->> +
->> +	resv_sz = GET_SF_RESV_SIZE(sf);
->> +	need_sz = HDR_SZ + sizeof(struct fpsimd_context);
+On Thu, Sep 05, 2019 at 02:01:36PM +0200, Heinrich Schuchardt wrote:
+> On 9/5/19 11:20 AM, Stefan Hajnoczi wrote:
+> > On Wed, Sep 04, 2019 at 08:07:36PM +0200, Heinrich Schuchardt wrote:
+> > > If an application tries to access memory that is not mapped, an error
+> > > ENOSYS, "load/store instruction decoding not implemented" may occur.
+> > > QEMU will hang with a register dump.
+> > > 
+> > > Instead create a data abort that can be handled gracefully by the
+> > > application running in the virtual environment.
+> > > 
+> > > Now the virtual machine can react to the event in the most appropriate
+> > > way - by recovering, by writing an informative log, or by rebooting.
+> > > 
+> > > Signed-off-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
+> > > ---
+> > >   virt/kvm/arm/mmio.c | 4 ++--
+> > >   1 file changed, 2 insertions(+), 2 deletions(-)
+> > > 
+> > > diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
+> > > index a8a6a0c883f1..0cbed7d6a0f4 100644
+> > > --- a/virt/kvm/arm/mmio.c
+> > > +++ b/virt/kvm/arm/mmio.c
+> > > @@ -161,8 +161,8 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
+> > >   		if (ret)
+> > >   			return ret;
+> > >   	} else {
+> > > -		kvm_err("load/store instruction decoding not implemented\n");
+> > > -		return -ENOSYS;
+> > > +		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+> > > +		return 1;
+> > 
+> > I see this more as a temporary debugging hack than something to merge.
+> > 
+> > It sounds like in your case the guest environment provided good
+> > debugging information and you preferred it over debugging this from the
+> > host side.  That's fine, but allowing the guest to continue running in
+> > the general case makes it much harder to track down the root cause of a
+> > problem because many guest CPU instructions may be executed after the
+> > original problem occurs.  Other guest software may fail silently in
+> > weird ways.  IMO it's best to fail early.
+> > 
+> > Stefan
+> > 
 > 
-> Nit: Maybe write this sum in the same order as the records we're going 
-> o append, i.e.:
+> As virtual machine are ubiquitous, expect also mission critical system
+> to run on them. At development time halting a machine may be a good
+> idea. In production this is often the worst solution. Rebooting may be
+> essential for survival.
 > 
-> 	need_sz = sizeof(struct fpsimd_context) + HDR_SZ; /* for terminator */
-
-Ok
-
+> For an anecdotal example see:
+> https://www.hq.nasa.gov/alsj/a11/a11.1201-pa.html
 > 
-> Also, maybe fail this test if there is no fpsimd_context in the initial
-> frame from get_current_context(): that would be a kernel bug, but we
-> wouldn't be giving fake_sigreturn() duplicate fpsimd_contexts in that
-> case -- so this test wouldn't test the thing it's supposed to test.
+> I am convinced that leaving it to the guest to decide how to react is
+> the best choice.
 > 
+Maintaining strong adherence to the architecture is equally important,
+and I'm sure we can find anecdotes to support how not doing the
+expected, can also lead to disastrous outcomes.
 
-Any context grabbed by get_current_context() is verified at first to be sane
-when is copied in the handler by ASSERT_GOOD_CONTEXT()
+Have you had a look at the suggested patch I sent?  The idea is that we
+can preserve existing legacy ABI, allow for a better debugging
+experience, allow userspace to do emulation if it so wishes, and provide
+a better error message if userspace doesn't handle this properly.
 
->   } else if (signum == sig_copyctx && current->live_uc) {
->                 memcpy(current->live_uc, uc, current->live_sz);
->                 ASSERT_GOOD_CONTEXT(current->live_uc);
->                 current->live_uc_valid = 1;
+One thing we could change from my proposed patch would be to have KVM
+inject the access as an external abort if the target address also
+doesn't hit an MMIO device, which is by far the common scenario reported
+here on the list.
 
-A missing fpsimd in the original sigframe would lead to an abort()
-straight away while preparing the test, and the test will fail.
+Hopefully, a mission critical deployment based on KVM/Arm (scary as that
+sounds), would use a recent and patched VMM (QEMU) that either causes
+the external abort, or reboots the VM, as per the configuration of the
+particular system in question.
 
-Cheers
 
-Cristian
+Thanks,
 
->> +
->> +	head = get_starting_head(shead, need_sz, resv_sz, NULL);
->> +	if (head) {
->> +		/* Add a spurios fpsimd_context */
->> +		head->magic = FPSIMD_MAGIC;
->> +		head->size = sizeof(struct fpsimd_context);
->> +		/* and terminate */
->> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
->> +
->> +		ASSERT_BAD_CONTEXT(&sf.uc);
->> +		fake_sigreturn(&sf, sizeof(sf), 0);
->> +	}
->> +
->> +	return 1;
-> 
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
-
+    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
