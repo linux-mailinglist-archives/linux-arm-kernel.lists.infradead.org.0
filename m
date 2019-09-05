@@ -2,94 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E81E6AA954
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 18:47:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1F662AA997
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 19:01:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=AM9UwmSADExySXwwpd28PneIks8eBT+KWFjDCjhixb4=; b=lrflbBUu7oOD1/wMeGtjy3PlD
-	Ey1oLWvuyD/HwwYYKhbgzoRT4r4eJueO4VE9T3M9ckNzPDMYssOzxBVWte1XUEwW7NVdPYHv70wOA
-	VZG9TFxVaRkbXrUWmq7jQYP6LwiUAVt6hEp5AcOs4+D11qvMXKGX6km0h8as+ykEIiu7mA0xAOdQU
-	t3JalqSbywbmePRl3T3om88Yus75+AKHLq4LCeoNDMw+FoK5NXireyBSZLTasOQodTuHQarQ7fcEX
-	6xZuKM7ZRl9F3dXwig9frIKC2zA/mu9sc9nSePjvYjqKO+sKxZef0G53nVdmf+gUQzYZmYR9H0J8m
-	Uo7v7/WFA==;
+	 bh=qU/DWwIwGZDL9qd9bhb1hS1DXCIqdBMBrCtDuj7f3sg=; b=K3J6RtysydTVapd8y3RhIIAWM
+	UzPkn5np+6ox+6GC9DZust85U/Q1N1uIBvG9oIUP22n3ICWr/Gxi8AI5sEUdLHSIqhvFANlnOqIxK
+	yFDcfBlM/1y3uFd8huEiEhgrKQVVcoW+hMzRBJZgoHte2gXCSPKkGXlgydtKbr9kZ4Wf75AeyiBCZ
+	BtG4CUiQ5Qf7Sqq+zNugroMdNAKAkKi5CDa8ACx1r5JMBmLLnC9He4jAfiF/SzckzqM7tErxQk1Gq
+	UUsoVzpRrH5wRCzKa5t+4dSAbFABcQQCYpzyCW798ndYX8s2aOBMew5U+PNRmG0EklQE0uTFBZ05m
+	lgB0Kf8uQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5uuR-0007rM-KB; Thu, 05 Sep 2019 16:46:59 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
+	id 1i5v8q-00049P-4x; Thu, 05 Sep 2019 17:01:52 +0000
+Received: from mx2.mailbox.org ([80.241.60.215])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5uuJ-0007r0-EY
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 16:46:52 +0000
-Received: by mail-pg1-x544.google.com with SMTP id d1so1726459pgp.4
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 05 Sep 2019 09:46:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=L9WHyJ99KP39xuH8ZsBbeD/D63ObFkXNBLywQqZYCeQ=;
- b=IcLjJF6Drj/jNnHL/b3X6MBESCOo9YBQ726xZEEEmWRXc8xz/NMkPi5oQm1CTl46ju
- 10h5rfJrJmPahQG5I7wfMHm3Fmn2auuA4hO62jagzIOVh3dGJ1gcyIxA2phxbSqlEL8c
- 65/MGCgUUJ5lOBWoETWECotdK7cREeFHnQuuE=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=L9WHyJ99KP39xuH8ZsBbeD/D63ObFkXNBLywQqZYCeQ=;
- b=MwYNwvuA0BTYuXWSodIOtmIy6IltRCi0RTFviqjZ6f/zcm+lFFsqqNwN8mgodjribO
- iyipUkdxwI9oKYMEnJoYickyCiA10uRuDvq7JyreG6hftxUUgoJTSGvUNV03Q1/djQB9
- O98hDWhXRbbGN0SyS5Um5KSKnBdSeuEcffUIUcTzMmLpH+FoLaQn8hZYe6IkZpeRw6P3
- A2sCrz3/soSodowlUInShKzYeYVAB5BzRhqPxW9W4BBq2n5SkhjTEyRrgQYlipP9hDS3
- Lz4Z8y6p1shncjDtQJyz5/0a4sopcN05hZN/bKHzicA+Bdtn3rt2P+vQrs/O9bHF9dAf
- LKBA==
-X-Gm-Message-State: APjAAAUqeV/voxN2bdWqA/ZFDluwD5zYvAtqMvjhZ3hAw8EmCKQuigkz
- 5xnytSAfmpeHiiCbM9AtOCfO4A==
-X-Google-Smtp-Source: APXvYqy0sZl+jGcPJei+V5sF4FXAeaGn9GQV14FyFINPWV2xmay1Mt/P6SirlNi+G2x6Daricnqaag==
-X-Received: by 2002:a65:620a:: with SMTP id d10mr4029784pgv.8.1567702010015;
- Thu, 05 Sep 2019 09:46:50 -0700 (PDT)
-Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
- by smtp.gmail.com with ESMTPSA id x11sm7683567pja.3.2019.09.05.09.46.47
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 05 Sep 2019 09:46:49 -0700 (PDT)
-Subject: Re: [PATCH] pinctrl: bcm: remove redundant assignment to pointer log
-To: Colin King <colin.king@canonical.com>,
- Linus Walleij <linus.walleij@linaro.org>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, linux-gpio@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-References: <20190905140919.29283-1-colin.king@canonical.com>
-From: Ray Jui <ray.jui@broadcom.com>
-Message-ID: <190fef22-fe90-dfa0-0943-4d30b10b6b1d@broadcom.com>
-Date: Thu, 5 Sep 2019 09:46:46 -0700
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i5v8g-00048F-V6
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 17:01:45 +0000
+Received: from smtp2.mailbox.org (smtp2.mailbox.org [80.241.60.241])
+ (using TLSv1.2 with cipher ECDHE-RSA-CHACHA20-POLY1305 (256/256 bits))
+ (No client certificate requested)
+ by mx2.mailbox.org (Postfix) with ESMTPS id A0FCBA01CE;
+ Thu,  5 Sep 2019 19:01:34 +0200 (CEST)
+X-Virus-Scanned: amavisd-new at heinlein-support.de
+Received: from smtp2.mailbox.org ([80.241.60.241])
+ by spamfilter05.heinlein-hosting.de (spamfilter05.heinlein-hosting.de
+ [80.241.56.123]) (amavisd-new, port 10030)
+ with ESMTP id l96lis2EinZ8; Thu,  5 Sep 2019 19:01:30 +0200 (CEST)
+Date: Fri, 6 Sep 2019 03:01:06 +1000
+From: Aleksa Sarai <cyphar@cyphar.com>
+To: Peter Zijlstra <peterz@infradead.org>
+Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to,from}_user
+ helpers
+Message-ID: <20190905170106.7j4nmgwnvkcwn6md@yavin.dot.cyphar.com>
+References: <20190904201933.10736-1-cyphar@cyphar.com>
+ <20190904201933.10736-2-cyphar@cyphar.com>
+ <20190905073205.GY2332@hirez.programming.kicks-ass.net>
+ <20190905092622.tlb6nn3uisssdfbu@yavin.dot.cyphar.com>
+ <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
 MIME-Version: 1.0
-In-Reply-To: <20190905140919.29283-1-colin.king@canonical.com>
-Content-Language: en-US
+In-Reply-To: <20190905094305.GJ2349@hirez.programming.kicks-ass.net>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_094651_499571_4EEF27D7 
-X-CRM114-Status: GOOD (  18.89  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_100143_310992_02C88678 
+X-CRM114-Status: GOOD (  17.34  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [80.241.60.215 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -101,49 +69,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: kernel-janitors@vger.kernel.org, linux-kernel@vger.kernel.org
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
+ Alexander Shishkin <alexander.shishkin@linux.intel.com>,
+ Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Alexei Starovoitov <ast@kernel.org>, linux-kernel@vger.kernel.org,
+ David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
+ sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
+ linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
+ Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
+ Shuah Khan <shuah@kernel.org>, Ingo Molnar <mingo@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, linux-mips@vger.kernel.org,
+ linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
+ Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
+ linuxppc-dev@lists.ozlabs.org, linux-m68k@lists.linux-m68k.org,
+ Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
+ Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
+ David Drysdale <drysdale@google.com>, Christian Brauner <christian@brauner.io>,
+ "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
+ linux-api@vger.kernel.org, Chanho Min <chanho.min@lge.com>,
+ Jeff Layton <jlayton@kernel.org>, Oleg Nesterov <oleg@redhat.com>,
+ Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
+ linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
+ Linus Torvalds <torvalds@linux-foundation.org>,
+ containers@lists.linux-foundation.org
+Content-Type: multipart/mixed; boundary="===============9108544654706145243=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
+--===============9108544654706145243==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="kmvm5dxbzyhfjvqj"
+Content-Disposition: inline
 
-On 9/5/19 7:09 AM, Colin King wrote:
-> From: Colin Ian King <colin.king@canonical.com>
-> 
-> The pointer log is being initialized with a value that is never read
-> and is being re-assigned a little later on. The assignment is
-> redundant and hence can be removed.
-> 
-> Addresses-Coverity: ("Unused value")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
-> ---
->   drivers/pinctrl/bcm/pinctrl-cygnus-mux.c | 1 -
->   1 file changed, 1 deletion(-)
-> 
-> diff --git a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-> index 44df35942a43..dcab2204c60c 100644
-> --- a/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-> +++ b/drivers/pinctrl/bcm/pinctrl-cygnus-mux.c
-> @@ -923,7 +923,6 @@ static int cygnus_mux_log_init(struct cygnus_pinctrl *pinctrl)
->   	if (!pinctrl->mux_log)
->   		return -ENOMEM;
->   
-> -	log = pinctrl->mux_log;
 
-Yes, this indeed looks completely redundant.
+--kmvm5dxbzyhfjvqj
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
->   	for (i = 0; i < CYGNUS_NUM_IOMUX_REGS; i++) {
->   		for (j = 0; j < CYGNUS_NUM_MUX_PER_REG; j++) {
->   			log = &pinctrl->mux_log[i * CYGNUS_NUM_MUX_PER_REG
-> 
+On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
+> On Thu, Sep 05, 2019 at 07:26:22PM +1000, Aleksa Sarai wrote:
+> > On 2019-09-05, Peter Zijlstra <peterz@infradead.org> wrote:
+> > > On Thu, Sep 05, 2019 at 06:19:22AM +1000, Aleksa Sarai wrote:
+> > > > +
+> > > > +		while (rest > 0) {
+> > > > +			size_t bufsize =3D min(rest, sizeof(buffer));
+> > > > +
+> > > > +			if (__copy_from_user(buffer, addr, bufsize))
+> > > > +				return -EFAULT;
+> > > > +			if (memchr_inv(buffer, 0, bufsize))
+> > > > +				return -E2BIG;
+> > > > +
+> > > > +			addr +=3D bufsize;
+> > > > +			rest -=3D bufsize;
+> > > > +		}
+> > >=20
+> > > The perf implementation uses get_user(); but if that is too slow, sur=
+ely
+> > > we can do something with uaccess_try() here?
+> >=20
+> > Is there a non-x86-specific way to do that (unless I'm mistaken only x86
+> > has uaccess_try() or the other *_try() wrappers)? The main "performance
+> > improvement" (if you can even call it that) is that we use memchr_inv()
+> > which finds non-matching characters more efficiently than just doing a
+> > loop.
+>=20
+> Oh, you're right, that's x86 only :/
 
-Change looks good to me. Thanks!
+Though, I just had an idea -- am I wrong to think that the following
+would work just as well (without the need for an intermediate buffer)?
 
-Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+   if (memchr_inv((const char __force *) src + size, 0, rest))
+     return -E2BIG;
+
+Or is this type of thing very much frowned upon? What if it was a
+separate memchr_inv_user() instead -- I feel as though there's not a
+strong argument for needing to use a buffer when we're single-passing
+the __user buffer and doing a basic boolean check.
+
+--=20
+Aleksa Sarai
+Senior Software Engineer (Containers)
+SUSE Linux GmbH
+<https://www.cyphar.com/>
+
+--kmvm5dxbzyhfjvqj
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQSxZm6dtfE8gxLLfYqdlLljIbnQEgUCXXE/TgAKCRCdlLljIbnQ
+Eo4lAP4vz7qxi6aZbZTeed0ZbnEtPkuMnCkFo0v18rHfgnM6xgD/bV/SICkzrufH
+DwNHgRAu5z8daivqeybakfQqvQMhpA4=
+=SteT
+-----END PGP SIGNATURE-----
+
+--kmvm5dxbzyhfjvqj--
+
+
+--===============9108544654706145243==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============9108544654706145243==--
+
