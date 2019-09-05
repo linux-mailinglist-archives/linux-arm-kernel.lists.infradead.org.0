@@ -2,81 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1C1A97B1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 02:44:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5B116A97E3
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 03:16:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	MIME-Version:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=VTcbOk70Uv0FA6D5V5daSo/lWdHU6oBt071oaRJWIGw=; b=IBorcw/1ua8ShL
-	Z79d9btnLnILS6hOxJd4DiIO3k7EPpSTQT/SSM/FQOUY5AzS7RIXOlin1n3u/3wtJuTcu9OyNEtzO
-	LGd20AOCa4bXbnYWTIWwja6mJziH7hbYt/g92/+UcVCTH7Poh5XVv/85CNuHdRF7ffFt36WKd24oN
-	6SjIZn64pP/MxfLMsdsMxFbcF+bdwes/MXbUlzQoBFt9rmVxGbway7eNgK/mgvg64f+VoObdHlSBi
-	afLVM/g62SwyNQOfTv7+sGAHkwfQA0aP3RXDpXz07FvtTloEoaZ8HOF/jUa3e5YBfoKrSALotauds
-	2w3ThwkO8mt753i/mH9w==;
+	List-Owner; bh=323Ybe+s5031vLm4Ld4tJpCT/Xj+NusqGUMZEgXzdRM=; b=cjNyaVQ9c9OhY2
+	zRWNdVUQM0R0geucaOJiGxc2u7EyvQXuBx+mE4kk5WhP4fOWoFngtkR6NzRVnJgpHOst+Mh2BJoGI
+	4dYnOs63k2M1GgHrJmKkRKT/Y9wOtoFmQrZ03mvbuLcrFLOd6+jwCloFZ06v8zgnjdx9t86Utxw1M
+	24y/v3lbqLNAkrPH3zJG+ivo5AU8AdmYq6DcITPx45YI/8Jk4vg1NS9EtmNx9TSt6HfSHFL+WJLcx
+	KZMqPm29UrjRSNkC+2bH4i0OSH4dbElS0U/5POOyRXLsGMKouz/2Hm2/rG8fwMlM2vV5V8flucSxJ
+	DYWIyrl7DqKf1ND1meTg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5fsU-0001Nb-N3; Thu, 05 Sep 2019 00:43:58 +0000
-Received: from mail-qt1-x843.google.com ([2607:f8b0:4864:20::843])
+	id 1i5gNk-0002aU-G0; Thu, 05 Sep 2019 01:16:16 +0000
+Received: from mail-pg1-x52a.google.com ([2607:f8b0:4864:20::52a])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5fsN-0001NI-3h
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 00:43:52 +0000
-Received: by mail-qt1-x843.google.com with SMTP id c9so698777qth.9
+ id 1i5gNd-0002ZR-NV
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 01:16:10 +0000
+Received: by mail-pg1-x52a.google.com with SMTP id u17so406810pgi.6
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 04 Sep 2019 17:43:50 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=jms.id.au; s=google;
- h=mime-version:from:date:message-id:subject:to:cc;
- bh=vWtL2Vub1f+32siEIcYJodOWeAIoKseX4/7ukdIJ8rM=;
- b=DUOjf08vaf+rDQo0po8Z+oo2S2EhpkZ8EiRQxGgVm1LSslML92VV/8+I4c4y7fFNRW
- vaLdtbReVGCMKdFKjj3pI0SlhgTi9udAKNktgiAiF0NhKFNbynjTdfzh28y0C2MbGsaM
- GsU0pjlWzOnLvRmOnXrLirf8zcpYFJLRTDVzw=
+ Wed, 04 Sep 2019 18:16:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=z3Ei8FyHzXCEAswMjYYL2sgHBCg2TC7hkQhTjvYG8KY=;
+ b=mzLpXBBSjIfPoEznzDVi8hEGCoi8iPdVtV8Hzs4xr0PPj03usX/NK85vi1/SC3DNJ8
+ cbZm8aJV/muvSP7U5x2czXSHfhO8XhBRtYzUArCTgPG2U9p6fC9vhcLGmJCOq9QXy/9t
+ CqH78HGJ00MSIcznSifqNso3bpZsBijFDPVDgPHJ6++c9yIaodj1B+YLBgFe+97RUrOJ
+ sxIpfha+z/sQQqJAKYoxfeq+BT3sVV1vSsS5gEArAfjltMN1X7UnOWbwlraaWgwArNeq
+ UoQiewIqDIxmx42RFeNT2rw7VX8+4GIdY0qDdLSI2SIDPTkhU7xpEkVJGYxnEmFYLjP1
+ waRA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:from:date:message-id:subject:to:cc;
- bh=vWtL2Vub1f+32siEIcYJodOWeAIoKseX4/7ukdIJ8rM=;
- b=i72nO+LuGsOMlizy8FZw4N9y2zi595zEy59Q6ECho/WUMr+i8NG+uM3ciERuQ6coaT
- 3rYb68fwodVYK2EDsPcKIdoKpECMJK4FHPBVARTOIZxmtTfKk/Ifo1WjpIRwBWUqBkGC
- h4MFQiCDlazmD/IFF52q8hB+mEddiMAnTLj4O1oowWY9qNddUI+oPEJGt/kJMdQUJlQ+
- +gmVgETgg4guDblwYISr+GQoODmOpO/iPxtGqlYCqwmn+eSIXohB1DmowwWizmc2stED
- f1k09wjzoe9jQ1vpT3gyJ6pxJKb0e6vd+G0cghJcF4mL3wTzoR7SYmIEbC79Gz2se1Fc
- pFqA==
-X-Gm-Message-State: APjAAAXSznujF/t3uylZiy1Sl3wU+OeR6kPGfO4CnsNl7r2CNGMozb19
- tSjZZEqa1K++KbZkzOJQhWjSXZNWEhy/zLHGyEaDiqR1
-X-Google-Smtp-Source: APXvYqxh+0oAV4ZBPS7dGr9Y7LoZnq29Cfydu9xInfMG6mrl3YTwB+pT8pISnzJLoVlQ4OMWr1UILB7SE5B2VG8tB70=
-X-Received: by 2002:ac8:2f81:: with SMTP id l1mr923228qta.269.1567644229728;
- Wed, 04 Sep 2019 17:43:49 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=z3Ei8FyHzXCEAswMjYYL2sgHBCg2TC7hkQhTjvYG8KY=;
+ b=sxF0C0YqjsRVmfVThmoIWmGyF/GejdOh/LqccBU41yr2m0q/cJPC20oAe5t469pW8T
+ kIhRJbnHpL/1r3CTZotKFWKkjcakuOSYVqK/q5Y0SLY3wfBGybccSdNZ8ZrYd1tJAlFR
+ nDbOFekhBUfo60nDQ6yem4LkMbiqhImfs7asTfytHzffJ9CglUDbOz55F/vw8cufJT2E
+ Jd4mBerT1Z/UxMJkGLLOFHzordJHP5TSJsHDAd2+GZdZWyPQyVSLXV2DCfAnyQwGYpur
+ 5adZnXoiKFrIeaI0bPwu6jhbX/TteA65LAcbwU6/ay0+OuhwVhV1fGpPElpwt4OQOGZs
+ +5rQ==
+X-Gm-Message-State: APjAAAVc7bf4AD5Lf5wZ+0ud/jS/LhkzaHh7LyiS7WmgJ+gsdIo/3r5S
+ ArKx/WRM9QQFTdeeGEN9Sp8=
+X-Google-Smtp-Source: APXvYqzTqKmk34vcZ/2Fksg66IicendpcLZGFN0xLJvxlsd5PmuspSmVqBJQBYhJ3l6UV1K7WLBbzA==
+X-Received: by 2002:a65:4304:: with SMTP id j4mr837941pgq.419.1567646168290;
+ Wed, 04 Sep 2019 18:16:08 -0700 (PDT)
+Received: from rashmica.ozlabs.ibm.com ([122.99.82.10])
+ by smtp.gmail.com with ESMTPSA id v43sm6300914pjb.1.2019.09.04.18.16.04
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 04 Sep 2019 18:16:07 -0700 (PDT)
+From: Rashmica Gupta <rashmica.g@gmail.com>
+To: linus.walleij@linaro.org
+Subject: [PATCH v2 0/4] Add ast2600 gpio support 
+Date: Thu,  5 Sep 2019 11:16:00 +1000
+Message-Id: <20190905011600.15821-1-rashmica.g@gmail.com>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
-From: Joel Stanley <joel@jms.id.au>
-Date: Thu, 5 Sep 2019 00:43:38 +0000
-Message-ID: <CACPK8Xdp4gVuetmiu2bRTTH6oHhRrC7FELHWKVB2ZGSbPbH7HQ@mail.gmail.com>
-Subject: [GIT PULL] ARM: aspeed: devicetree changes for 5.4, round two
-To: arm <arm@kernel.org>, soc@kernel.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190904_174351_342530_9D06EA63 
-X-CRM114-Status: GOOD (  10.63  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190904_181609_795240_57534530 
+X-CRM114-Status: UNSURE (   6.68  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:843 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:52a listed in]
  [list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (joel.stan[at]gmail.com)
+ provider (rashmica.g[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,63 +97,30 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Andrew Jeffery <andrew@aj.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- linux-aspeed <linux-aspeed@lists.ozlabs.org>
+Cc: linux-aspeed@lists.ozlabs.org, linux-gpio@vger.kernel.org,
+ Andrew Jeffery <andrew@aj.id.au>, linux-kernel@vger.kernel.org,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, Joel Stanley <joel@jms.id.au>,
+ Rashmica Gupta <rashmica.g@gmail.com>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello ARM maintainers,
+v2: More verbose commit messages, using DIV_ROUND_UP().
 
-Here are some late fixes I collected for the ASPEED boards.
+Rashmica Gupta (4):
+  gpio/aspeed: Fix incorrect number of banks
+  gpio/aspeed: Setup irqchip dynamically
+  gpio: Add in ast2600 details to Aspeed driver
+  gpio: dt-bindings: Update documentation with ast2600 controllers
 
-I've thrown the commits on top of the ones in the first pull request, which
-you've merged. I've not sent a second pull before so if that's not the done
-thing then let me know what you prefer.
+ drivers/gpio/gpio-aspeed.c                    | 48 ++++++++++++++-----
+ .../devicetree/bindings/gpio/gpio-aspeed.txt  |  3 +-
+ 2 files changed, 38 insertions(+), 13 deletions(-)
 
-The following changes since commit 49b0f3be0b86292eed6f6aedadf4252131d9c111:
+-- 
+2.20.1
 
-  ARM: dts: aspeed: swift: Add eMMC device (2019-08-22 15:34:20 +0930)
-
-are available in the Git repository at:
-
-  git://git.kernel.org/pub/scm/linux/kernel/git/joel/aspeed.git \
-      tags/aspeed-5.4-devicetree-2
-
-for you to fetch changes up to 89b97c429e2e77d695b5133572ca12ec256a4ea4:
-
-  ARM: dts: aspeed-g5: Fixe gpio-ranges upper limit (2019-09-04 17:34:34 -0700)
-
-----------------------------------------------------------------
-ASPEED device tree updates for 5.4, second round
-
- - Alternate flash support for Vesnin
- - Minor cleanups and fixes
-
-----------------------------------------------------------------
-Eddie James (1):
-      ARM: dts: aspeed: swift: Change power supplies to version 2
-
-Ivan Mikhaylov (2):
-      ARM: dts: aspeed: vesnin: Add wdt2 with alt-boot option
-      ARM: dts: aspeed: vesnin: Add secondary SPI flash chip
-
-Joel Stanley (2):
-      ARM: dts: aspeed-g4: Add all flash chips
-      ARM; dts: aspeed: mihawk: File should not be executable
-
-Oscar A Perez (1):
-      ARM: dts: aspeed-g5: Fixe gpio-ranges upper limit
-
- arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts |  0
- arch/arm/boot/dts/aspeed-bmc-opp-swift.dts  |  4 ++--
- arch/arm/boot/dts/aspeed-bmc-opp-vesnin.dts | 10 ++++++++++
- arch/arm/boot/dts/aspeed-g4.dtsi            | 20 ++++++++++++++++++++
- arch/arm/boot/dts/aspeed-g5.dtsi            |  2 +-
- 5 files changed, 33 insertions(+), 3 deletions(-)
- mode change 100755 => 100644 arch/arm/boot/dts/aspeed-bmc-opp-mihawk.dts
 
 _______________________________________________
 linux-arm-kernel mailing list
