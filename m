@@ -2,66 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2BC17A9F56
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:14:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A331A9F54
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 12:14:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5GvbRXZge7ga59VNHzw5YPuNd7RYki/F8t+fMIT5/Fk=; b=ra8Plhx/6ctuoV
-	Qff4p0Pt3AJBl009U5A7g5eqHeZNeuO99fDSGrUGw6PkHB9HIkcJhNr5uidzMUY786oRfgECVTWDl
-	XlMRc8iF3eisk99ppxQSooB+3hd9/XB9heTU1MogskWrjZtOSrLv6KnhYCqHrFIdXGXFzFz/XsNug
-	RcXSj1QjLkNdYfokj0KBMRTOQg+HIytOtaLfEzfkh4elEUZ2QW2MRoE56mxMlIMZYv9NAjhMVvVGf
-	HPQ2L74P9TYcdJAQrN67xJk8C+JOrdboyzqDhRAcMX4Oys3dSfGGgPLuRfs2cXQ62d2xkecrMBfhK
-	kJl6uWcH0kl5GnUjaFkA==;
+	List-Owner; bh=Q9bGcXLji5ilT6BW3BWBN5I0fqLayicie0MzarMHMNE=; b=dskQ9nFQP9196b
+	KlwYdc4DIVAmJLVEEMuIm/BhaLKNhra/7QU71qFs7r2Idk4I6s8tlNBY7szNC7TldJdBPUPayFqcj
+	qMQrFdMLEvGtoeSBXHnWHw07QzYWWsIcvnQqFyLKDSaMCiwpfKjWCo5IBe2SPpB+A4du908+8ZgjH
+	UlBmZgk/npiaf9oJA8JNTMZkSRv6L0ikiqazg9scnTOuzWt3eQ1gUDj4+TFLj+TOsXwO/sGJo+LFP
+	X9RfQ7ydKFINu0/GqQrfuqnmEhBoNXBZYy4HeMU0/Dgo7h7LrnHipF+IzQ1Vuh2dNq5IA5r3x2BJZ
+	rk6ns7UYVVjKk7GzOvcA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5omt-0003rg-P3; Thu, 05 Sep 2019 10:14:47 +0000
-Received: from outbound4mad.lav.puc.rediris.es ([130.206.19.146]
- helo=mx01.puc.rediris.es)
+	id 1i5omV-0003WM-8H; Thu, 05 Sep 2019 10:14:23 +0000
+Received: from mga04.intel.com ([192.55.52.120])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5omg-0003nb-Q0
- for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 10:14:37 +0000
-Received: from mta-out02.sim.rediris.es (mta-out02.sim.rediris.es
- [130.206.24.44])
- by mx01.puc.rediris.es  with ESMTP id x85ADag1012008-x85ADag3012008
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NO);
- Thu, 5 Sep 2019 12:13:36 +0200
-Received: from mta-out02.sim.rediris.es (localhost.localdomain [127.0.0.1])
- by mta-out02.sim.rediris.es (Postfix) with ESMTPS id 655BCC7BE2B;
- Thu,  5 Sep 2019 12:13:30 +0200 (CEST)
-Received: from mta-out02.sim.rediris.es (localhost.localdomain [127.0.0.1])
- by mta-out02.sim.rediris.es (Postfix) with ESMTPS id 40229C7BE2C;
- Thu,  5 Sep 2019 12:13:27 +0200 (CEST)
-Received: from lt-gp.iram.es (mrt-fw.iram.es [150.214.224.223])
- by mta-out02.sim.rediris.es (Postfix) with ESMTPA id 95D21C7BE2B;
- Thu,  5 Sep 2019 12:13:19 +0200 (CEST)
-Date: Thu, 5 Sep 2019 12:13:15 +0200
-From: Gabriel Paubert <paubert@iram.es>
-To: Andreas Schwab <schwab@linux-m68k.org>
-Subject: Re: [PATCH v12 01/12] lib: introduce copy_struct_{to, from}_user
- helpers
-Message-ID: <20190905101315.GA25637@lt-gp.iram.es>
-References: <20190904201933.10736-1-cyphar@cyphar.com>
- <20190904201933.10736-2-cyphar@cyphar.com>
- <mvma7bj85yo.fsf@linux-m68k.org>
+ id 1i5omK-0003Vp-FB; Thu, 05 Sep 2019 10:14:13 +0000
+X-Amp-Result: UNKNOWN
+X-Amp-Original-Verdict: FILE UNKNOWN
+X-Amp-File-Uploaded: False
+Received: from fmsmga004.fm.intel.com ([10.253.24.48])
+ by fmsmga104.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 05 Sep 2019 03:14:11 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,470,1559545200"; d="scan'208";a="207823254"
+Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
+ by fmsmga004.fm.intel.com with ESMTP; 05 Sep 2019 03:14:07 -0700
+Received: from andy by smile with local (Exim 4.92.1)
+ (envelope-from <andriy.shevchenko@linux.intel.com>)
+ id 1i5omE-0006KH-Di; Thu, 05 Sep 2019 13:14:06 +0300
+Date: Thu, 5 Sep 2019 13:14:06 +0300
+From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
+To: dongchun.zhu@mediatek.com
+Subject: Re: [V2, 1/2] media: i2c: dw9768: Add DT support and MAINTAINERS entry
+Message-ID: <20190905101406.GA2680@smile.fi.intel.com>
+References: <20190905072142.14606-1-dongchun.zhu@mediatek.com>
+ <20190905072142.14606-2-dongchun.zhu@mediatek.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <mvma7bj85yo.fsf@linux-m68k.org>
+In-Reply-To: <20190905072142.14606-2-dongchun.zhu@mediatek.com>
+Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
 User-Agent: Mutt/1.10.1 (2018-07-13)
-X-FEAS-CONTENT-MODIFICATION: 
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_031435_109467_B7BC607F 
-X-CRM114-Status: GOOD (  13.10  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_031412_518600_852BCBAE 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [192.55.52.120 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,81 +71,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-ia64@vger.kernel.org, linux-sh@vger.kernel.org,
- Peter Zijlstra <peterz@infradead.org>,
- Rasmus Villemoes <linux@rasmusvillemoes.dk>,
- Alexei Starovoitov <ast@kernel.org>, linux-mips@vger.kernel.org,
- David Howells <dhowells@redhat.com>, linux-kselftest@vger.kernel.org,
- sparclinux@vger.kernel.org, Jiri Olsa <jolsa@redhat.com>,
- linux-arch@vger.kernel.org, linux-s390@vger.kernel.org,
- Tycho Andersen <tycho@tycho.ws>, Aleksa Sarai <asarai@suse.de>,
- Shuah Khan <shuah@kernel.org>,
- Alexander Shishkin <alexander.shishkin@linux.intel.com>,
- Ingo Molnar <mingo@redhat.com>, Christian Brauner <christian@brauner.io>,
- linux-xtensa@linux-xtensa.org, Kees Cook <keescook@chromium.org>,
- Arnd Bergmann <arnd@arndb.de>, Jann Horn <jannh@google.com>,
- Oleg Nesterov <oleg@redhat.com>, Aleksa Sarai <cyphar@cyphar.com>,
- Al Viro <viro@zeniv.linux.org.uk>, Andy Lutomirski <luto@kernel.org>,
- Shuah Khan <skhan@linuxfoundation.org>, Namhyung Kim <namhyung@kernel.org>,
- David Drysdale <drysdale@google.com>, linux-arm-kernel@lists.infradead.org,
- "J. Bruce Fields" <bfields@fieldses.org>, linux-parisc@vger.kernel.org,
- linux-m68k@lists.linux-m68k.org, linux-api@vger.kernel.org,
- Chanho Min <chanho.min@lge.com>,
- Linus Torvalds <torvalds@linux-foundation.org>,
- Jeff Layton <jlayton@kernel.org>, linux-kernel@vger.kernel.org,
- Eric Biederman <ebiederm@xmission.com>, linux-alpha@vger.kernel.org,
- linux-fsdevel@vger.kernel.org, Andrew Morton <akpm@linux-foundation.org>,
- linuxppc-dev@lists.ozlabs.org, containers@lists.linux-foundation.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
+ srv_heupstream@mediatek.com, sam.hung@mediatek.com, shengnan.wang@mediatek.com,
+ tfiga@chromium.org, sj.huang@mediatek.com, robh+dt@kernel.org,
+ linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
+ matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 05, 2019 at 11:09:35AM +0200, Andreas Schwab wrote:
-> On Sep 05 2019, Aleksa Sarai <cyphar@cyphar.com> wrote:
+On Thu, Sep 05, 2019 at 03:21:41PM +0800, dongchun.zhu@mediatek.com wrote:
+> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
 > 
-> > diff --git a/lib/struct_user.c b/lib/struct_user.c
-> > new file mode 100644
-> > index 000000000000..7301ab1bbe98
-> > --- /dev/null
-> > +++ b/lib/struct_user.c
-> > @@ -0,0 +1,182 @@
-> > +// SPDX-License-Identifier: GPL-2.0-or-later
-> > +/*
-> > + * Copyright (C) 2019 SUSE LLC
-> > + * Copyright (C) 2019 Aleksa Sarai <cyphar@cyphar.com>
-> > + */
-> > +
-> > +#include <linux/types.h>
-> > +#include <linux/export.h>
-> > +#include <linux/uaccess.h>
-> > +#include <linux/kernel.h>
-> > +#include <linux/string.h>
-> > +
-> > +#define BUFFER_SIZE 64
-> > +
-> > +/*
-> > + * "memset(p, 0, size)" but for user space buffers. Caller must have already
-> > + * checked access_ok(p, size).
-> > + */
-> > +static int __memzero_user(void __user *p, size_t s)
-> > +{
-> > +	const char zeros[BUFFER_SIZE] = {};
+> This patch is to add the Devicetree binding documentation and
+> MAINTAINERS entry for dw9768 actuator.
 > 
-> Perhaps make that static?
+> Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
+> ---
+>  Documentation/devicetree/bindings/media/i2c/dongwoon,dw9768.txt | 9 +++++++++
+>  MAINTAINERS                                                     | 7 +++++++
 
-On SMP? It should at least be per cpu, and I'm not even sure
-with preemption.
+This should be:
+1) two separate patches
+2) binding in YAML
 
-	Gabriel
+-- 
+With Best Regards,
+Andy Shevchenko
 
-> 
-> Andreas.
-> 
-> -- 
-> Andreas Schwab, schwab@linux-m68k.org
-> GPG Key fingerprint = 7578 EB47 D4E5 4D69 2510  2552 DF73 E780 A9DA AEC1
-> "And now for something completely different."
+
 
 _______________________________________________
 linux-arm-kernel mailing list
