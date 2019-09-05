@@ -2,50 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01C2AAA2DF
-	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:19:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BC110AA302
+	for <lists+linux-arm-kernel@lfdr.de>; Thu,  5 Sep 2019 14:23:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IlSWlTf2gODiWRQ1n3tnSnNds3vzNyxAwuZyBxZ2d7A=; b=umLzPiE+/Th0hw
-	7gHKs895ahkvP6hgk+U/YNPLjQTLdskYPtKgCVggUs5iUG4q17lAarF6+XS6qVpCgUt1pNpx2RlEI
-	kxYkumlsVI7oLyFnI29+F1czRL4bK9t/Onh+1nOlQgZmj9ocE7VOT+04d0E28ZRhFyZQHak1W0IUT
-	X1+jiRj3vlSFbeRS2j9oeZiPhB03M3N7xtzeiFXA+PUkD7dFkPP7BDt5nW6BRdmGgfRVsSjYPxWuQ
-	FxYGqeE/rlxY9DVRDZqTX2ySdgiZJjZjum8nyLknzEJFf1CLvvMvNS7OUKHIg2HDYhZGVSQss2/fs
-	VKw76tsBhmGKRNETxFTQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=KQ6tPccsNs6RoW84ZG8jQxnLzzzFlFGz0Xr/lW7vBGA=; b=mjGdWwGuWy3gsC
+	VeSreXz5s4ZoIvdd7pxs4IyfovzOvHS9FW2nyP+Ioa3jSpkrYnWi0Sd1kKaimizJv3XsIppT3xW43
+	3lfWUE4NwNtU5KRYmvQM4uAuMIAq1m+0+3bvTyBh3+FeKNGO5q0PptyEDKRyPtftE1Lzpgv+CzPGL
+	LHGeoQny7pik2vIYSHBQnKErDZOl/idi9lyuJ3Dc8XRDNjVdT5hYZQkUXmQUTmJHIvXRGfHp/PFKq
+	73tLhcakO8bUxR7t7F4jA0LsGT/d67IC54Sm1FFIW29+9+M3tkkOvO/1GbW+RLESdAoCnej3S9w0J
+	woggSR9IOVO7rzSNYM2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i5qjG-0006JV-4R; Thu, 05 Sep 2019 12:19:10 +0000
-Received: from gloria.sntech.de ([185.11.138.130])
+	id 1i5qn8-0000LQ-2X; Thu, 05 Sep 2019 12:23:10 +0000
+Received: from mx08-00178001.pphosted.com ([91.207.212.93]
+ helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i5qj2-0006J1-FU; Thu, 05 Sep 2019 12:18:57 +0000
-Received: from wf0413.dip.tu-dresden.de ([141.76.181.157] helo=phil.localnet)
- by gloria.sntech.de with esmtpsa
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.89)
- (envelope-from <heiko@sntech.de>)
- id 1i5qj1-0003qD-6Y; Thu, 05 Sep 2019 14:18:55 +0200
-From: Heiko Stuebner <heiko@sntech.de>
-To: arm@kernel.org
-Subject: [GIT PULL 2/2] Rockchip DT64 changes for 5.4 - round2
-Date: Thu, 05 Sep 2019 14:18:54 +0200
-Message-ID: <43564855.cWDBQSyQMS@phil>
-In-Reply-To: <1718334.9BoTfW0Ujv@phil>
-References: <1718334.9BoTfW0Ujv@phil>
+ id 1i5qmE-00088m-Jv
+ for linux-arm-kernel@lists.infradead.org; Thu, 05 Sep 2019 12:22:17 +0000
+Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
+ by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x85CM7CR009310; Thu, 5 Sep 2019 14:22:10 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=CFc7V5XirXSeitPE35aKToc2Pe4j/3PUS9ILTMJMjb8=;
+ b=J5xdMWbzdXsLGs+8QgJxl4949aVCBtI0VaFF9K1UybUOaNQUqcjnHceD4Y5PwT+s3pTF
+ p9lvGaHny750VUu5JLo4hYYgoVsxw/aevHGYqj0dDJ6Y8RBIUyRQOh1kfc9GlrMkTTs5
+ kv+6GgPh4S4K0xSgeXiShAKbo3f/QRvWObOfOsA/NMHPIuqdVd4p5CKdXzvtXhVPYkQ6
+ XiL4uWFNpRVKD4s4qwI1OK0Fa3dh4pT2zk/WxlsYhy5eGSbmjPEvAjbNJUiT7jkuR17t
+ Li4gp9O86TmEOQMVSNVbc2t2Ovou30VssSQ/WnP9AK5c4LBL9sSjgFcQ7S7jzn6Yubjl 4w== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx08-00178001.pphosted.com with ESMTP id 2uqe1a09eg-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Thu, 05 Sep 2019 14:22:10 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 34E3654;
+ Thu,  5 Sep 2019 12:21:51 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id D28ED2CBDA8;
+ Thu,  5 Sep 2019 14:21:49 +0200 (CEST)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.93) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 5 Sep 2019
+ 14:21:49 +0200
+Received: from lmecxl0923.lme.st.com (10.48.0.237) by Webmail-ga.st.com
+ (10.75.90.48) with Microsoft SMTP Server (TLS) id 14.3.439.0; Thu, 5 Sep 2019
+ 14:21:49 +0200
+From: Ludovic Barre <ludovic.Barre@st.com>
+To: Ulf Hansson <ulf.hansson@linaro.org>, Rob Herring <robh+dt@kernel.org>
+Subject: [PATCH V6 0/3] mmc: mmci: add busy detect for stm32 sdmmc variant
+Date: Thu, 5 Sep 2019 14:21:09 +0200
+Message-ID: <20190905122112.29672-1-ludovic.Barre@st.com>
+X-Mailer: git-send-email 2.17.1
 MIME-Version: 1.0
+X-Originating-IP: [10.48.0.237]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-05_04:2019-09-04,2019-09-05 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_051856_662834_F99A3F2C 
-X-CRM114-Status: UNSURE (   9.92  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_052216_121041_39B86D60 
+X-CRM114-Status: GOOD (  11.84  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -57,44 +92,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rockchip@lists.infradead.org, soc@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: devicetree@vger.kernel.org, Alexandre Torgue <alexandre.torgue@st.com>,
+ linux-mmc@vger.kernel.org, linux-kernel@vger.kernel.org,
+ srinivas.kandagatla@linaro.org, Ludovic Barre <ludovic.barre@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The following changes since commit fc702ed49a8668a17343811ee28214d845bfc5e6:
+From: Ludovic Barre <ludovic.barre@st.com>
 
-  arm64: dts: rockchip: Add dts for Leez RK3399 P710 SBC (2019-08-16 14:39:20 +0200)
+This patch series adds busy detect for stm32 sdmmc variant.
+Some adaptations are required:
+-On sdmmc the data timer is started on data transfert
+and busy state, so we must add hardware busy timeout support.
+-Add busy_complete callback at mmci_host_ops to allow to define
+a specific busy completion by variant.
+-Add sdmmc busy_complete callback.
 
-are available in the Git repository at:
+V6:
+-mmci_start_command: set datatimer only on rsp_busy flag
+(remove host->mrq->data).
+-move max_busy_timeout in set_ios callback.
+-typo fix: err_msk, clks on one lines.
 
-  git://git.kernel.org/pub/scm/linux/kernel/git/mmind/linux-rockchip.git tags/v5.4-rockchip-dts64-2
+V5:
+-Replaces !cmd->data to !host->mrq->data to avoid overwrite
+ of datatimer register by the first command (cmd23, without data) of
+ SBC request.
 
-for you to fetch changes up to 03e61929c0d227ed3e1c322fc3804216ea298b7e:
+V4:
+-Re-work with busy_complete callback
+-In series, move "mmc: mmci: add hardware busy timeout feature" in
+first to simplify busy_complete prototype with err_msk parameter.
 
-  arm64: dts: rockchip: limit clock rate of MMC controllers for RK3328 (2019-09-01 03:00:17 +0200)
+V3:
+-rebase on latest mmc next
+-replace re-read by status parameter. 
 
-----------------------------------------------------------------
-RK3328 mmc clockrate limit and addition of vpu node as well
-as a regulator fix for the rk3328-rock64.
+V2:
+-mmci_cmd_irq cleanup in separate patch.
+-simplify the busy_detect_flag exclude
+-replace sdmmc specific comment in
+"mmc: mmci: avoid fake busy polling in mmci_irq"
+to focus on common behavior
 
-----------------------------------------------------------------
-Jonas Karlman (1):
-      arm64: dts: rockchip: add rk3328 VPU node
+Ludovic Barre (3):
+  mmc: mmci: add hardware busy timeout feature
+  mmc: mmci: add busy_complete callback
+  mmc: mmci: sdmmc: add busy_complete callback
 
-Kever Yang (1):
-      arm64: dts: rockchip: fix vcc_host_5v regulator for usb3 host
+ drivers/mmc/host/mmci.c             | 183 +++++++++++++++++-----------
+ drivers/mmc/host/mmci.h             |   7 +-
+ drivers/mmc/host/mmci_stm32_sdmmc.c |  38 ++++++
+ 3 files changed, 156 insertions(+), 72 deletions(-)
 
-Shawn Lin (1):
-      arm64: dts: rockchip: limit clock rate of MMC controllers for RK3328
-
- arch/arm64/boot/dts/rockchip/rk3328-rock64.dts | 11 ++---------
- arch/arm64/boot/dts/rockchip/rk3328.dtsi       | 17 ++++++++++++++++-
- 2 files changed, 18 insertions(+), 10 deletions(-)
-
-
+-- 
+2.17.1
 
 
 _______________________________________________
