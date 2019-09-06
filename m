@@ -2,46 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F87CABB1F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:38:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4701ABB21
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:39:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=OLNnKIhmU7RxkzMBdQVmyaylyveLs7K6BUmDSU5dW9k=; b=LfjTrJIYW1Ybfe
-	AQ5tAJHEklyXbqbWbpbQNGCQ47L2ncfuEgJ84f6syKsrOzz3n+h4nQMhgZKKHaYQlN67qbL6p9IWU
-	JaT+I+OPU46pqIZlMKIN70CpTNtj9m/PxYO1T9xq+uUak80vu9ZaYoQYD0P8is7h791eb5hacuNlt
-	Ecz6wK5S5yiHIFXzM5BMENyRQpqOVVSsLs9LPZCHwLlX5wgFy7OaQHpXlRBNsAXCTNnphU4UN5+yJ
-	FGQioodMhW6xcW6RZqGp2fI+pFLu71ajW9s0Q4Q4WY7+tdEBodWzsOu5j9A4ucPNBEuAPBcp2f5fX
-	RjE/uyygtOogaYjlsmMg==;
+	List-Owner; bh=PgN8hbplh3G5znDE25Is/iW+uGR4eUtYs4H//g5+TNk=; b=D+WHGmR2apHZOm
+	cwjFzpJL++R8o8j2XkjUW51j+8TJ/+NcMbWq1e32xJ/JDiKokW2wtNL9bWWF7Ly1pOqWc8PPeBAEd
+	o/Hy1ac+5dO4YcAt6BEaq078ocpORIhi9h20zsd/zCfQaCC33HUazfEYpqbM7bsqSnUTdAENjwKBw
+	v+7Q49jz64RsXOUPM/gEyf98bmpd8FW8nIIc3o9JMDvqJIF+Pjf2c04s6tycSbwl/qZkPYdEvsdm1
+	TvoLn5/wMzpYLvEz6UOP3WUPvtw1Wt256FpGw4G3jb3eiZlq4ZfhKbr1ZDUhNn3QVt7adTUK+8FMm
+	Ivx2UF3YOGdRVLotFDaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6FNo-0001fv-De; Fri, 06 Sep 2019 14:38:40 +0000
-Received: from szxga05-in.huawei.com ([45.249.212.191] helo=huawei.com)
+	id 1i6FOR-0001uM-Pn; Fri, 06 Sep 2019 14:39:19 +0000
+Received: from szxga06-in.huawei.com ([45.249.212.32] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6FNZ-0001en-V4
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:38:29 +0000
-Received: from DGGEMS406-HUB.china.huawei.com (unknown [172.30.72.58])
- by Forcepoint Email with ESMTP id D0F2ECCB4E4E46042EED;
- Fri,  6 Sep 2019 22:38:02 +0800 (CST)
-Received: from localhost (10.133.213.239) by DGGEMS406-HUB.china.huawei.com
- (10.3.19.206) with Microsoft SMTP Server id 14.3.439.0; Fri, 6 Sep 2019
- 22:37:57 +0800
+ id 1i6FOD-0001td-H9
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:39:06 +0000
+Received: from DGGEMS402-HUB.china.huawei.com (unknown [172.30.72.59])
+ by Forcepoint Email with ESMTP id AD6AEA71A989DDBF8958;
+ Fri,  6 Sep 2019 22:39:00 +0800 (CST)
+Received: from localhost (10.133.213.239) by DGGEMS402-HUB.china.huawei.com
+ (10.3.19.202) with Microsoft SMTP Server id 14.3.439.0; Fri, 6 Sep 2019
+ 22:38:54 +0800
 From: YueHaibing <yuehaibing@huawei.com>
-To: <will@kernel.org>, <mark.rutland@arm.com>, <khuong@os.amperecomputing.com>
-Subject: [PATCH -next] perf: xgene: use devm_platform_ioremap_resource() to
- simplify code
-Date: Fri, 6 Sep 2019 22:37:35 +0800
-Message-ID: <20190906143735.28272-1-yuehaibing@huawei.com>
+To: <will@kernel.org>, <mark.rutland@arm.com>
+Subject: [PATCH -next] perf/smmuv3: gpio: creg-snps: use
+ devm_platform_ioremap_resource() to simplify code
+Date: Fri, 6 Sep 2019 22:38:44 +0800
+Message-ID: <20190906143844.27956-1-yuehaibing@huawei.com>
 X-Mailer: git-send-email 2.10.2.windows.1
 MIME-Version: 1.0
 X-Originating-IP: [10.133.213.239]
 X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_073827_522021_EE05DD0D 
-X-CRM114-Status: UNSURE (   8.51  )
+X-CRM114-CacheID: sfid-20190906_073905_768184_5CCAC860 
+X-CRM114-Status: UNSURE (   8.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -49,7 +49,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.191 listed in list.dnswl.org]
+ medium trust [45.249.212.32 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -75,57 +75,32 @@ This is detected by coccinelle.
 
 Signed-off-by: YueHaibing <yuehaibing@huawei.com>
 ---
- drivers/perf/xgene_pmu.c | 14 ++++----------
- 1 file changed, 4 insertions(+), 10 deletions(-)
+ drivers/perf/arm_smmuv3_pmu.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/perf/xgene_pmu.c b/drivers/perf/xgene_pmu.c
-index 7e328d6..46ee680 100644
---- a/drivers/perf/xgene_pmu.c
-+++ b/drivers/perf/xgene_pmu.c
-@@ -1282,25 +1282,21 @@ static int acpi_pmu_probe_active_mcb_mcu_l3c(struct xgene_pmu *xgene_pmu,
- 					     struct platform_device *pdev)
+diff --git a/drivers/perf/arm_smmuv3_pmu.c b/drivers/perf/arm_smmuv3_pmu.c
+index abcf54f..773128f 100644
+--- a/drivers/perf/arm_smmuv3_pmu.c
++++ b/drivers/perf/arm_smmuv3_pmu.c
+@@ -727,7 +727,7 @@ static void smmu_pmu_get_acpi_options(struct smmu_pmu *smmu_pmu)
+ static int smmu_pmu_probe(struct platform_device *pdev)
  {
- 	void __iomem *csw_csr, *mcba_csr, *mcbb_csr;
--	struct resource *res;
- 	unsigned int reg;
+ 	struct smmu_pmu *smmu_pmu;
+-	struct resource *res_0, *res_1;
++	struct resource *res_0;
+ 	u32 cfgr, reg_size;
+ 	u64 ceid_64[2];
+ 	int irq, err;
+@@ -764,8 +764,7 @@ static int smmu_pmu_probe(struct platform_device *pdev)
  
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
--	csw_csr = devm_ioremap_resource(&pdev->dev, res);
-+	csw_csr = devm_platform_ioremap_resource(pdev, 1);
- 	if (IS_ERR(csw_csr)) {
- 		dev_err(&pdev->dev, "ioremap failed for CSW CSR resource\n");
- 		return PTR_ERR(csw_csr);
- 	}
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 2);
--	mcba_csr = devm_ioremap_resource(&pdev->dev, res);
-+	mcba_csr = devm_platform_ioremap_resource(pdev, 2);
- 	if (IS_ERR(mcba_csr)) {
- 		dev_err(&pdev->dev, "ioremap failed for MCBA CSR resource\n");
- 		return PTR_ERR(mcba_csr);
- 	}
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 3);
--	mcbb_csr = devm_ioremap_resource(&pdev->dev, res);
-+	mcbb_csr = devm_platform_ioremap_resource(pdev, 3);
- 	if (IS_ERR(mcbb_csr)) {
- 		dev_err(&pdev->dev, "ioremap failed for MCBB CSR resource\n");
- 		return PTR_ERR(mcbb_csr);
-@@ -1332,13 +1328,11 @@ static int acpi_pmu_v3_probe_active_mcb_mcu_l3c(struct xgene_pmu *xgene_pmu,
- 						struct platform_device *pdev)
- {
- 	void __iomem *csw_csr;
--	struct resource *res;
- 	unsigned int reg;
- 	u32 mcb0routing;
- 	u32 mcb1routing;
- 
--	res = platform_get_resource(pdev, IORESOURCE_MEM, 1);
--	csw_csr = devm_ioremap_resource(&pdev->dev, res);
-+	csw_csr = devm_platform_ioremap_resource(pdev, 1);
- 	if (IS_ERR(csw_csr)) {
- 		dev_err(&pdev->dev, "ioremap failed for CSW CSR resource\n");
- 		return PTR_ERR(csw_csr);
+ 	/* Determine if page 1 is present */
+ 	if (cfgr & SMMU_PMCG_CFGR_RELOC_CTRS) {
+-		res_1 = platform_get_resource(pdev, IORESOURCE_MEM, 1);
+-		smmu_pmu->reloc_base = devm_ioremap_resource(dev, res_1);
++		smmu_pmu->reloc_base = devm_platform_ioremap_resource(pdev, 1);
+ 		if (IS_ERR(smmu_pmu->reloc_base))
+ 			return PTR_ERR(smmu_pmu->reloc_base);
+ 	} else {
 -- 
 2.7.4
 
