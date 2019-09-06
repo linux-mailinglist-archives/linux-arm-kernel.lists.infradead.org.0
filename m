@@ -2,146 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 648CEABD0B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:55:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7FF2AABD1F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:59:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zLn7YDV30Qcft9JT8VsfYsU7MWdJsIRwF1LaLxfnuBs=; b=DjmmXAluJfca6y
-	7pV/2V2/IgBwPwyqAoOM/JEUsN9pu6BtSBrfQ8X2PXjXi3arKhzTFkllApdDbCbQe/954SbZAbNjX
-	TfvWOs90EQBGvm812RuqyRd1qb07bIYfJ4PTSeTO8Iy/qbfg5cjw34brzdGuB+wwFGOh2nJj19X0T
-	ITYygjTFf/dA3+Icsiu1hm2dkCmCM0xC3uH7Gg5BB05aSlPSqyF6ooesolJQBkvqw002edJmxo1OC
-	A8JFBJDATD2NDNp4J7dy+h5JTdocmsR/3cp195i9LwezWyldOGnML5lPQ98hZU3PLJyCilRjEKzZ3
-	eW3R6z5xyAGALRKbTu8A==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aj7g+0Q48MoV+PeAjuF32lvudf1/SsLOjccL6Ljqm8Q=; b=Z0HcjR4i7JAcPi
+	KiyVnPe1ztZDZPnUycoaJE84i2V1x4zhqUFlWt5FUXu/N7iehscYAms4oSYb5mRGEYDY3zt+tmsyj
+	qruVZWNCZZs535fpZtCSCqFWRBjBJAgVIRMDwLQV18SF+rcEqOecRzJ3rx3SHWFRnF//hX4lxYQ12
+	0JXMfluO8WlPffoJ39QbwB97tTCn9xetya+Immg5ZQl7fmvOsukl2fXXRZsELaJTg+sq9j6gW4tLq
+	nJ58Qc1y6PZASLrpnAOGAQgK7mdfKXSxc7oywO3W5akbMMNE6S3n08FWpe1p073hvbJ1toLTe5vLW
+	JEcu4SB9FA9bDgckyM0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6GaQ-0004QC-2T; Fri, 06 Sep 2019 15:55:46 +0000
-Received: from esa6.hc3370-68.iphmx.com ([216.71.155.175])
+	id 1i6Gdk-0004k1-UA; Fri, 06 Sep 2019 15:59:13 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6GaG-0004PZ-Is
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:55:37 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
- d=citrix.com; s=securemail; t=1567785336;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=PNiOjWmh/mGHcri38QvqDipcCi86TqJQp3m5qsgndZ8=;
- b=AxL4dbeAPXS3JX15pTCwn415zgtTXad6bYI+9s6Cb3FtqIdyK4tUePGN
- Ol3QsiEMNGbBJ8IystjOuz+yX0ZG3Jy1sZ55PVSAnvzWAYi9+ARl7gREI
- 6lFafq+UZG9a5Zz+LzKZK+Ka2mu4mPH0VDtlVGnU93NhiQ3YRVsTjIp0b A=;
-Authentication-Results: esa6.hc3370-68.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=None smtp.pra=andrew.cooper3@citrix.com;
- spf=Pass smtp.mailfrom=Andrew.Cooper3@citrix.com;
- spf=None smtp.helo=postmaster@mail.citrix.com
-Received-SPF: None (esa6.hc3370-68.iphmx.com: no sender
- authenticity information available from domain of
- andrew.cooper3@citrix.com) identity=pra;
- client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
- envelope-from="Andrew.Cooper3@citrix.com";
- x-sender="andrew.cooper3@citrix.com";
- x-conformance=sidf_compatible
-Received-SPF: Pass (esa6.hc3370-68.iphmx.com: domain of
- Andrew.Cooper3@citrix.com designates 162.221.158.21 as
- permitted sender) identity=mailfrom;
- client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
- envelope-from="Andrew.Cooper3@citrix.com";
- x-sender="Andrew.Cooper3@citrix.com";
- x-conformance=sidf_compatible; x-record-type="v=spf1";
- x-record-text="v=spf1 ip4:209.167.231.154 ip4:178.63.86.133
- ip4:195.66.111.40/30 ip4:85.115.9.32/28 ip4:199.102.83.4
- ip4:192.28.146.160 ip4:192.28.146.107 ip4:216.52.6.88
- ip4:216.52.6.188 ip4:162.221.158.21 ip4:162.221.156.83 ~all"
-Received-SPF: None (esa6.hc3370-68.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@mail.citrix.com) identity=helo;
- client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
- envelope-from="Andrew.Cooper3@citrix.com";
- x-sender="postmaster@mail.citrix.com";
- x-conformance=sidf_compatible
-IronPort-SDR: yzNCuWgNsC2asdRXUTsLimtFItklHg9kA0eC+kPRgDwkI0lC+u25kHF4n9rtr4u3roKL1gWH5E
- z6iklNYqSsncWIyOO6HZRQYrvObixqO2GfjzjgVEKmSybIS8SXSf1D2DfSSDEmsSQVxJGX7nzt
- 2DqMe8P2e5rylaXL9kGuwjgjlqhvXq6Vqfk7KVB51MpfsESJbKy10EMnLifEd89Fl3lr2TMThG
- UE5qI+ibM/TOPPPBhhU/wDXLn6KYj7wSKhrN0kCCq6mFc7+ERFuVIDfbDu4+Bbl//ERRkO5GS4
- clE=
-X-SBRS: 2.7
-X-MesageID: 5476378
-X-Ironport-Server: esa6.hc3370-68.iphmx.com
-X-Remote-IP: 162.221.158.21
-X-Policy: $RELAYED
-X-IronPort-AV: E=Sophos;i="5.64,473,1559534400"; 
-   d="scan'208";a="5476378"
-Subject: Re: [Xen-devel] [PATCH] ARM: xen: unexport HYPERVISOR_platform_op
- function
-To: Arnd Bergmann <arnd@arndb.de>, Stefano Stabellini <sstabellini@kernel.org>
-References: <20190906153948.2160342-1-arnd@arndb.de>
-From: Andrew Cooper <andrew.cooper3@citrix.com>
-Openpgp: preference=signencrypt
-Autocrypt: addr=andrew.cooper3@citrix.com; prefer-encrypt=mutual; keydata=
- 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
- 6+ahAA==
-Message-ID: <7abad95e-ea47-c068-d91c-ba503f2530b9@citrix.com>
-Date: Fri, 6 Sep 2019 16:55:30 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i6GdU-0004jg-3f
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:58:58 +0000
+Received: from mail-qt1-f182.google.com (mail-qt1-f182.google.com
+ [209.85.160.182])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 968232186A
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  6 Sep 2019 15:58:55 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567785535;
+ bh=5Xa64DDgQTlA0twWFBEh/6rw5yPEcKMciY3q5SZHGpg=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=xqU+aQyBLnNXZ8poKwGLkz3m8ePw3SkXcnTf/tehuTwQ6wJ1sm/nTyeY4S4JkkUjV
+ oPtJWHJC07ohFUvm6NmUGVcZMRQjXjfMnYtZwXZz03TGsAfrS1neKuAC3G3Ld3HhyT
+ PAjwpaWkGKpFQl11Z0unFdwGdx/EyNFQ5ra+xKjc=
+Received: by mail-qt1-f182.google.com with SMTP id a13so7630590qtj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 08:58:55 -0700 (PDT)
+X-Gm-Message-State: APjAAAVmihkyTTSR5LzZ7WZrSgWWICBzZKd4bi194nj6JA7Nc4ynIAhc
+ L/Iaz5DjUoe7dQJUWb7vdTDW8zMORpdSnVMw+Q==
+X-Google-Smtp-Source: APXvYqx1zzwAucWFSeUA5Xn8OCCP477JQH3tzPjHEKs13+RFD/VFPewf7geqIl0U2abjEY7ZDlC9s5Mmsmsx3lb3DLQ=
+X-Received: by 2002:ac8:100d:: with SMTP id z13mr3867259qti.224.1567785534684; 
+ Fri, 06 Sep 2019 08:58:54 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190906153948.2160342-1-arnd@arndb.de>
-Content-Language: en-GB
-X-ClientProxiedBy: AMSPEX02CAS02.citrite.net (10.69.22.113) To
- AMSPEX02CL01.citrite.net (10.69.22.125)
+References: <20190906151221.3148-1-mripard@kernel.org>
+In-Reply-To: <20190906151221.3148-1-mripard@kernel.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Fri, 6 Sep 2019 16:58:42 +0100
+X-Gmail-Original-Message-ID: <CAL_Jsq+a=YaN79A-NXVvnPzLijjkoVkjQJcceq4xwhH6ujpgqA@mail.gmail.com>
+Message-ID: <CAL_Jsq+a=YaN79A-NXVvnPzLijjkoVkjQJcceq4xwhH6ujpgqA@mail.gmail.com>
+Subject: Re: [PATCH v3 1/2] ASoC: dt-bindings: Convert Allwinner A10 codec to
+ a schema
+To: Maxime Ripard <mripard@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_085536_662399_0DF61A15 
-X-CRM114-Status: UNSURE (   9.73  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190906_085856_197333_3CD68041 
+X-CRM114-Status: GOOD (  28.17  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [216.71.155.175 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -163,31 +86,421 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Emil Velikov <emil.l.velikov@gmail.com>,
- Russell King <linux@armlinux.org.uk>, Denis Efremov <efremov@linux.com>,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Linux-ALSA <alsa-devel@alsa-project.org>, Liam Girdwood <lgirdwood@gmail.com>,
+ Chen-Yu Tsai <wens@csie.org>, Mark Brown <broonie@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gMDYvMDkvMjAxOSAxNjozOSwgQXJuZCBCZXJnbWFubiB3cm90ZToKPiBIWVBFUlZJU09SX3Bs
-YXRmb3JtX29wKCkgaXMgYW4gaW5saW5lIGZ1bmN0aW9uIGFuZCBzaG91bGQgbm90Cj4gYmUgZXhw
-b3J0ZWQuIFNpbmNlIGNvbW1pdCAxNWJmYzIzNDhkNTQgKCJtb2Rwb3N0OiBjaGVjayBmb3IKPiBz
-dGF0aWMgRVhQT1JUX1NZTUJPTCogZnVuY3Rpb25zIiksIHRoaXMgY2F1c2VzIGEgd2FybmluZzoK
-Pgo+IFdBUk5JTkc6ICJIWVBFUlZJU09SX3BsYXRmb3JtX29wIiBbdm1saW51eF0gaXMgYSBzdGF0
-aWMgRVhQT1JUX1NZTUJPTF9HUEwKPgo+IFJlbW92ZSB0aGUgZXh0cmFuZW91cyBleHBvcnQuCj4K
-PiBGaXhlczogMTViZmMyMzQ4ZDU0ICgibW9kcG9zdDogY2hlY2sgZm9yIHN0YXRpYyBFWFBPUlRf
-U1lNQk9MKiBmdW5jdGlvbnMiKQo+IFNpZ25lZC1vZmYtYnk6IEFybmQgQmVyZ21hbm4gPGFybmRA
-YXJuZGIuZGU+CgpTb21ldGhpbmcgaXMgd29ua3kuwqAgVGhhdCBzeW1ib2wgaXMgKC8gcmVhbGx5
-IG91Z2h0IHRvIGJlKSBpbiB0aGUKaHlwZXJjYWxsIHBhZ2UgYW5kIG1vc3QgZGVmaW5pdGVseSBu
-b3QgaW5saW5lLgoKV2hpY2ggdHJlZSBpcyB0aGF0IGNoYW5nZXNldCBmcm9tP8KgIEkgY2FuJ3Qg
-ZmluZCB0aGUgU0hBLgoKSSBoYXRlIHRvIG9wZW4gYSBzZXBhcmF0ZSBjYW4gb2Ygd29ybXMsIGJ1
-dCB3aHkgYXJlIHRoZXkgdGFnZ2VkIEdQTD/CoApUaGUgWGVuIGh5cGVyY2FsbCBBQkksIGxpa2Ug
-dGhlIExpbnV4IHN5c2NhbGwgQUJJLCBhcmUgc3BlY2lmaWNhbGx5IG5vdApHUEwuwqAgWGVuIGhh
-cyBhcyBzb21ldGhpbmcgdmVyeSBzaW1pbGFyIHRvIChhbmQgcHJvYmFibHkgZGVyaXZlZCBmcm9t
-KQp0aGUgTGludXgtc3lzY2FsbC1ub3RlIGV4Y2VwdGlvbi4KCn5BbmRyZXcKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Sep 6, 2019 at 4:12 PM Maxime Ripard <mripard@kernel.org> wrote:
+>
+> From: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> The Allwinner SoCs have an embedded audio codec that is supported in Linux,
+> with a matching Device Tree binding.
+>
+> Now that we have the DT validation in place, let's convert the device tree
+> bindings for that controller over to a YAML schemas.
+>
+> Signed-off-by: Maxime Ripard <maxime.ripard@bootlin.com>
+>
+> ---
+>
+> Changes from v2:
+>   - Change the audio-routing values to an enum, and enforce boundaries on
+>     the size
+>   - Add restrictions to the possible values of audio-routing
+>
+> Changes from v1:
+>   - Fix subject prefix
+> ---
+>  .../sound/allwinner,sun4i-a10-codec.yaml      | 262 ++++++++++++++++++
+>  .../devicetree/bindings/sound/sun4i-codec.txt |  94 -------
+>  2 files changed, 262 insertions(+), 94 deletions(-)
+>  create mode 100644 Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+>  delete mode 100644 Documentation/devicetree/bindings/sound/sun4i-codec.txt
+>
+> diff --git a/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+> new file mode 100644
+> index 000000000000..faa75b91c072
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/sound/allwinner,sun4i-a10-codec.yaml
+> @@ -0,0 +1,262 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/sound/allwinner,sun4i-a10-codec.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner A10 Codec Device Tree Bindings
+> +
+> +maintainers:
+> +  - Chen-Yu Tsai <wens@csie.org>
+> +  - Maxime Ripard <maxime.ripard@bootlin.com>
+> +
+> +properties:
+> +  "#sound-dai-cells":
+> +    const: 0
+> +
+> +  compatible:
+> +    enum:
+> +      - allwinner,sun4i-a10-codec
+> +      - allwinner,sun6i-a31-codec
+> +      - allwinner,sun7i-a20-codec
+> +      - allwinner,sun8i-a23-codec
+> +      - allwinner,sun8i-h3-codec
+> +      - allwinner,sun8i-v3s-codec
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Bus Clock
+> +      - description: Module Clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: apb
+> +      - const: codec
+> +
+> +  dmas:
+> +    items:
+> +      - description: RX DMA Channel
+> +      - description: TX DMA Channel
+> +
+> +  dma-names:
+> +    items:
+> +      - const: rx
+> +      - const: tx
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  allwinner,audio-routing:
+> +    description: |-
+> +      A list of the connections between audio components.  Each entry
+> +      is a pair of strings, the first being the connection's sink, the
+> +      second being the connection's source.
+> +    allOf:
+> +      - $ref: /schemas/types.yaml#definitions/non-unique-string-array
+> +      - minItems: 2
+> +        maxItems: 18
+> +        enum:
+> +          # Audio Pins on the SoC
+> +          - HP
+> +          - HPCOM
+> +          - LINEIN
+> +          - LINEOUT
+> +          - MIC1
+> +          - MIC2
+> +          - MIC3
+> +
+> +          # Microphone Biases from the SoC
+> +          - HBIAS
+> +          - MBIAS
+> +
+> +          # Board Connectors
+> +          - Headphone
+> +          - Headset Mic
+> +          - Line In
+> +          - Line Out
+> +          - Mic
+> +          - Speaker
+> +
+> +  allwinner,codec-analog-controls:
+> +    $ref: /schemas/types.yaml#/definitions/phandle
+> +    description: Phandle to the codec analog controls in the PRCM
+> +
+> +  allwinner,pa-gpios:
+> +    description: GPIO to enable the external amplifier
+> +
+> +required:
+> +  - "#sound-dai-cells"
+> +  - compatible
+> +  - reg
+> +  - interrupts
+> +  - clocks
+> +  - clock-names
+> +  - dmas
+> +  - dma-names
+> +
+> +allOf:
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun6i-a31-codec
+> +            - allwinner,sun8i-a23-codec
+> +            - allwinner,sun8i-h3-codec
+> +            - allwinner,sun8i-v3s-codec
+> +
+> +    then:
+> +      if:
+> +        properties:
+> +          compatible:
+> +            const: allwinner,sun6i-a31-codec
+> +
+> +      then:
+> +        required:
+> +          - resets
+> +          - allwinner,audio-routing
+> +
+> +      else:
+> +        required:
+> +          - resets
+> +          - allwinner,audio-routing
+> +          - allwinner,codec-analog-controls
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun6i-a31-codec
+> +
+> +    then:
+> +      properties:
+> +        allwinner,audio-routing:
+> +          enum:
+> +            - HP
+> +            - HPCOM
+> +            - LINEIN
+> +            - LINEOUT
+> +            - MIC1
+> +            - MIC2
+> +            - MIC3
+> +            - HBIAS
+> +            - MBIAS
+> +            - Headphone
+> +            - Headset Mic
+> +            - Line In
+> +            - Line Out
+> +            - Mic
+> +            - Speaker
+
+This looks like the same list as the default...
+
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun8i-a23-codec
+> +
+> +    then:
+> +      properties:
+> +        allwinner,audio-routing:
+> +          enum:
+> +            - HP
+> +            - HPCOM
+> +            - LINEIN
+> +            - MIC1
+> +            - MIC2
+> +            - HBIAS
+> +            - MBIAS
+> +            - Headphone
+> +            - Headset Mic
+> +            - Line In
+> +            - Line Out
+> +            - Mic
+> +            - Speaker
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun8i-h3-codec
+> +
+> +    then:
+> +      properties:
+> +        allwinner,audio-routing:
+> +          enum:
+> +            - HP
+> +            - HPCOM
+> +            - LINEIN
+> +            - LINEOUT
+> +            - MIC1
+> +            - MIC2
+> +            - HBIAS
+> +            - MBIAS
+> +            - Headphone
+> +            - Headset Mic
+> +            - Line In
+> +            - Line Out
+> +            - Mic
+> +            - Speaker
+> +
+> +  - if:
+> +      properties:
+> +        compatible:
+> +          enum:
+> +            - allwinner,sun8i-v3s-codec
+> +
+> +    then:
+> +      properties:
+> +        allwinner,audio-routing:
+> +          enum:
+> +            - HP
+> +            - HPCOM
+> +            - MIC1
+> +            - HBIAS
+> +            - Headphone
+> +            - Headset Mic
+> +            - Line In
+> +            - Line Out
+> +            - Mic
+> +            - Speaker
+> +
+> +additionalProperties: false
+> +
+> +examples:
+> +  - |
+> +    codec@1c22c00 {
+> +        #sound-dai-cells = <0>;
+> +        compatible = "allwinner,sun7i-a20-codec";
+> +        reg = <0x01c22c00 0x40>;
+> +        interrupts = <0 30 4>;
+> +        clocks = <&apb0_gates 0>, <&codec_clk>;
+> +        clock-names = "apb", "codec";
+> +        dmas = <&dma 0 19>, <&dma 0 19>;
+> +        dma-names = "rx", "tx";
+> +    };
+> +
+> +  - |
+> +    codec@1c22c00 {
+> +        #sound-dai-cells = <0>;
+> +        compatible = "allwinner,sun6i-a31-codec";
+> +        reg = <0x01c22c00 0x98>;
+> +        interrupts = <0 29 4>;
+> +        clocks = <&ccu 61>, <&ccu 135>;
+> +        clock-names = "apb", "codec";
+> +        resets = <&ccu 42>;
+> +        dmas = <&dma 15>, <&dma 15>;
+> +        dma-names = "rx", "tx";
+> +        allwinner,audio-routing =
+> +            "Headphone", "HP",
+> +            "Speaker", "LINEOUT",
+> +            "LINEIN", "Line In",
+> +            "MIC1", "MBIAS",
+> +            "MIC1", "Mic",
+> +            "MIC2", "HBIAS",
+> +            "MIC2", "Headset Mic";
+> +    };
+> +
+> +...
+> diff --git a/Documentation/devicetree/bindings/sound/sun4i-codec.txt b/Documentation/devicetree/bindings/sound/sun4i-codec.txt
+> deleted file mode 100644
+> index 66579bbd3294..000000000000
+> --- a/Documentation/devicetree/bindings/sound/sun4i-codec.txt
+> +++ /dev/null
+> @@ -1,94 +0,0 @@
+> -* Allwinner A10 Codec
+> -
+> -Required properties:
+> -- compatible: must be one of the following compatibles:
+> -               - "allwinner,sun4i-a10-codec"
+> -               - "allwinner,sun6i-a31-codec"
+> -               - "allwinner,sun7i-a20-codec"
+> -               - "allwinner,sun8i-a23-codec"
+> -               - "allwinner,sun8i-h3-codec"
+> -               - "allwinner,sun8i-v3s-codec"
+> -- reg: must contain the registers location and length
+> -- interrupts: must contain the codec interrupt
+> -- dmas: DMA channels for tx and rx dma. See the DMA client binding,
+> -       Documentation/devicetree/bindings/dma/dma.txt
+> -- dma-names: should include "tx" and "rx".
+> -- clocks: a list of phandle + clock-specifer pairs, one for each entry
+> -  in clock-names.
+> -- clock-names: should contain the following:
+> -   - "apb": the parent APB clock for this controller
+> -   - "codec": the parent module clock
+> -
+> -Optional properties:
+> -- allwinner,pa-gpios: gpio to enable external amplifier
+> -
+> -Required properties for the following compatibles:
+> -               - "allwinner,sun6i-a31-codec"
+> -               - "allwinner,sun8i-a23-codec"
+> -               - "allwinner,sun8i-h3-codec"
+> -               - "allwinner,sun8i-v3s-codec"
+> -- resets: phandle to the reset control for this device
+> -- allwinner,audio-routing: A list of the connections between audio components.
+> -                          Each entry is a pair of strings, the first being the
+> -                          connection's sink, the second being the connection's
+> -                          source. Valid names include:
+> -
+> -                          Audio pins on the SoC:
+> -                          "HP"
+> -                          "HPCOM"
+> -                          "LINEIN"     (not on sun8i-v3s)
+> -                          "LINEOUT"    (not on sun8i-a23 or sun8i-v3s)
+> -                          "MIC1"
+> -                          "MIC2"       (not on sun8i-v3s)
+> -                          "MIC3"       (sun6i-a31 only)
+> -
+> -                          Microphone biases from the SoC:
+> -                          "HBIAS"
+> -                          "MBIAS"      (not on sun8i-v3s)
+> -
+> -                          Board connectors:
+> -                          "Headphone"
+> -                          "Headset Mic"
+> -                          "Line In"
+> -                          "Line Out"
+> -                          "Mic"
+> -                          "Speaker"
+> -
+> -Required properties for the following compatibles:
+> -               - "allwinner,sun8i-a23-codec"
+> -               - "allwinner,sun8i-h3-codec"
+> -               - "allwinner,sun8i-v3s-codec"
+> -- allwinner,codec-analog-controls: A phandle to the codec analog controls
+> -                                  block in the PRCM.
+> -
+> -Example:
+> -codec: codec@1c22c00 {
+> -       #sound-dai-cells = <0>;
+> -       compatible = "allwinner,sun7i-a20-codec";
+> -       reg = <0x01c22c00 0x40>;
+> -       interrupts = <0 30 4>;
+> -       clocks = <&apb0_gates 0>, <&codec_clk>;
+> -       clock-names = "apb", "codec";
+> -       dmas = <&dma 0 19>, <&dma 0 19>;
+> -       dma-names = "rx", "tx";
+> -};
+> -
+> -codec: codec@1c22c00 {
+> -       #sound-dai-cells = <0>;
+> -       compatible = "allwinner,sun6i-a31-codec";
+> -       reg = <0x01c22c00 0x98>;
+> -       interrupts = <GIC_SPI 29 IRQ_TYPE_LEVEL_HIGH>;
+> -       clocks = <&ccu CLK_APB1_CODEC>, <&ccu CLK_CODEC>;
+> -       clock-names = "apb", "codec";
+> -       resets = <&ccu RST_APB1_CODEC>;
+> -       dmas = <&dma 15>, <&dma 15>;
+> -       dma-names = "rx", "tx";
+> -       allwinner,audio-routing =
+> -               "Headphone", "HP",
+> -               "Speaker", "LINEOUT",
+> -               "LINEIN", "Line In",
+> -               "MIC1", "MBIAS",
+> -               "MIC1", "Mic",
+> -               "MIC2", "HBIAS",
+> -               "MIC2", "Headset Mic";
+> -};
+> --
+> 2.21.0
+>
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
