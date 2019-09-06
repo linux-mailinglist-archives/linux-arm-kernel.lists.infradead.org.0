@@ -2,72 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 529ADAB4DC
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 11:25:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3CF2BAB505
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 11:38:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=W4kOJu//k5QEfYZndz6LvrN7K8KyPce8zcv2UhfmGC8=; b=OREa86KyWWx0of
-	XiXuAGzymTOAONkL3jnxm+GI+o5TXjlDgTybpiuCq0oPnJMOnyZNmSY4IOd4LCVMEuwPcriQC30NK
-	8yJ7GJBcS6qTKQ+RJadNDb/jOHJKN0FtPHS86LkXbHVHBO1mzXyTuYwk/ADXeBBilF59PFNJp8k7D
-	FF24h8A7Kd82stCz0+T2lSzByZLYkkuS03FBgPHaq8l6/IGwqUebcIGm+97T53NJ7dQNA+9dwYccL
-	lyfZ5lGC1no7VGS8jWM0QDHMR0bNt/4cg3lLzxkFVakET0wNqmj9BKFA6Y7STjM1DZC2nCUE6X4p5
-	7/pUXOca0Y+E9/80ztBg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5sIACCO5eqEWKhClCy163cDquJL9ztX60Cm4ZEPbBcY=; b=dArQ3/eEM2iEkLOUTakhvPd9+
+	eqMrdWUVf4e6N7GGvMrM5jGMOMqPVRQ5JeUEa0aINcJyefQqUANYfOKRHGTkC89yI0O7B76MaCv5V
+	gMPpU0jRQ4cMu3MkaiFtAAXzVeLfrAK72U80Zo8LQ63cabvRJumQBhBjW3SE0ZxxS87tFAcRy2xvD
+	e2Xj96Z2dtaTulKiJ9hJhjoSqRuojKkzZAw8UQE9unQrNKrwXdS5GNG19OdQ+UkwXgatRDToUv8sD
+	hIHdvtUkSabdyTnyPETSdpI5wQcZ85IypczscjcC+p/vJ3GwzqHIsbAKV9FrzFvGBrQUpUskbHeDe
+	LotmIJZQQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6AUy-0004xW-Q2; Fri, 06 Sep 2019 09:25:44 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i6Ags-0000Ql-Co; Fri, 06 Sep 2019 09:38:02 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6AUm-0004xB-8T
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 09:25:33 +0000
-Received: by mail-wr1-x442.google.com with SMTP id y19so5813432wrd.3
+ id 1i6Age-0000QJ-Om
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 09:37:50 +0000
+Received: by mail-wr1-x444.google.com with SMTP id u16so5870828wrr.0
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 02:25:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=4/hTF78iK4Cpd1QxROMccGOHzNHaxmbPis/cOP5u7Xg=;
- b=eKLzvu2MGA64vk98hhxrKNuyKWibjjWUbKiy08K4iRsX1Co7AIxiUbclqeXzsnCFIu
- IWvBUrh2iX8dSC1MP4TPJdmTs5Hh1NJEcr3hwmC88o+E9iYYFLSjyxH0ZOTOLFrt3f9l
- 16xmIXG1pm8YAmLbpt11SbjP/akgC3ruX5yVU=
+ Fri, 06 Sep 2019 02:37:48 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=gHQvGo2oHSAi0l4hj3JH6Y+XbDhT95DFxyzr46YUgC0=;
+ b=NAc2a7jRTkb41+7GcrFFCTtk//51mt4fZSMi2okYkU/RL7BN7Kehl9G8057rRtItPo
+ M0d9ShHgo0VHZn3JStaBU1eXpu4pxvy1NbXPVpJqpYp0+s0jaJf3GezIDmCKboV4oSzw
+ cqyEoJoyazb6wtmNhxC3D+aA+5YpMH8ijW6xQKuWgzSrnOD6sJFFaGYLCwVDKXs2NAPQ
+ +itDTYVhRm1NpBen9LUxpTPFoEVez0CXXQmAABmaHLrqwc3UFxa+XGjO3zDIj1o5on27
+ 40+JhXnMzVKhjHENBCRefZjBmWNH7xBfUQIpb3i4Em9x3+DLcBt7ho2yqhtzmKUDT/0u
+ Rqmg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=4/hTF78iK4Cpd1QxROMccGOHzNHaxmbPis/cOP5u7Xg=;
- b=EyL5jG3LElpwJ6OOLHrSI0GJL84+u9tJGzxTBm59z9/JMbzzfxYXigixJ08eW0jTAh
- Zf6OfQIV3bOTMI3FQGyARj5Pkuw5qYsdsKVZPyqquVY/yJTKIGyxaNy/QCS7xQ/s0yRy
- fpxp7pFT0Ls2/yO4K7NFfD3xRHC5BZ86YxFwLnfBomTqLP19o3AukhFqfwY4RB5YIt93
- Zv4gzZxPVRTSnaiscoGPIntBEGDG8dpRMv/RBpiLsYZF0mADZ/pQ7dLC9AZAn9Bxu6jS
- YTHL4tYini7rGcy9cX4AgjLaBkzoJzsKVRiEOU55XKKYNEARzDCJ0glJ6p4uIsDrrTtX
- Gvpg==
-X-Gm-Message-State: APjAAAVc6nxLvszyb+cxNpK1sQe8ot8d8KyRX020nkbOgoNgKuEblKPl
- 4PCMvcNvpCRPyW8ZCZltK+QI2QS/pNG1BYKBae+24A==
-X-Google-Smtp-Source: APXvYqwbU+XGTguORWihC8VnYu09/9mUmdttn0D/6NQhpn7lEMS/E0pN0mR6XPsaf0hc7khzR2EiaXrcqpuqhy9wNdY=
-X-Received: by 2002:adf:dd04:: with SMTP id a4mr6298846wrm.340.1567761930632; 
- Fri, 06 Sep 2019 02:25:30 -0700 (PDT)
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=gHQvGo2oHSAi0l4hj3JH6Y+XbDhT95DFxyzr46YUgC0=;
+ b=MnD00LMtupkr7VI1XrD/SlXgbag4bqy3nfQtuh4MGQcc/kwwcWdh0draU412quHmH6
+ Qrnf56SX+birQFzugshbtZeGxKU7sujTjIjmS6WQ1I2TADe+G/eeRT2ojRbGZGMPAQUH
+ 4vaO/H3ELX4+2uP9iSXcyBfVgGQ56TAsoFoMAus9rOjOfw58wA8n8t8QI+Hzm65sNbRF
+ 0L3stZzvxmugo3z74j6XEtezT4MoOtmv4+5TsvfzpNusKJ4fioxNbKjWPATB8rVa9WJK
+ FYtY2gbsHl2Tuof1joxEKHXsxFrzpJGBnagSZAkH/s1oxlxsERAKPPPzLryJCNVmJcRM
+ eYcg==
+X-Gm-Message-State: APjAAAX49dj38I/70y5GSHmHPLjnn6gEi1O/Lk7dU62hcfPRCwZbIjI0
+ PeIyy6HXuQgeKAY2xPQUPjD2TA==
+X-Google-Smtp-Source: APXvYqw1zQx7D1rB9iMcWVLhI+wsFFMTYX3kk0oDtXEiRAW+K08F0IAMcTRcUFhriIoveu69KGo66w==
+X-Received: by 2002:adf:f709:: with SMTP id r9mr6734946wrp.228.1567762666819; 
+ Fri, 06 Sep 2019 02:37:46 -0700 (PDT)
+Received: from [192.168.86.34]
+ (cpc89974-aztw32-2-0-cust43.18-1.cable.virginm.net. [86.30.250.44])
+ by smtp.googlemail.com with ESMTPSA id h125sm7238999wmf.31.2019.09.06.02.37.45
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 06 Sep 2019 02:37:45 -0700 (PDT)
+Subject: Re: [PATCH 2/2] nvmem: imx: scu: support write
+To: Peng Fan <peng.fan@nxp.com>, "shawnguo@kernel.org" <shawnguo@kernel.org>, 
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>
+References: <1566356496-30493-1-git-send-email-peng.fan@nxp.com>
+ <1566356496-30493-2-git-send-email-peng.fan@nxp.com>
+ <AM0PR04MB448144701DB63A3C9F05B3E488BA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+From: Srinivas Kandagatla <srinivas.kandagatla@linaro.org>
+Message-ID: <dd82e84d-ab22-9dd9-f895-776570f46fee@linaro.org>
+Date: Fri, 6 Sep 2019 10:37:44 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
- <20190906083816.GD9720@e119886-lin.cambridge.arm.com>
-In-Reply-To: <20190906083816.GD9720@e119886-lin.cambridge.arm.com>
-From: Abhishek Shah <abhishek.shah@broadcom.com>
-Date: Fri, 6 Sep 2019 14:55:19 +0530
-Message-ID: <CAKUFe6ZuRGJSmLdXqTWJzX-nE_Vh4yEQF_-rf+BWFrD_r4BRaQ@mail.gmail.com>
-Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
- programming it
-To: Andrew Murray <andrew.murray@arm.com>
+In-Reply-To: <AM0PR04MB448144701DB63A3C9F05B3E488BA0@AM0PR04MB4481.eurprd04.prod.outlook.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_022532_314800_83B1B409 
-X-CRM114-Status: GOOD (  22.77  )
+X-CRM114-CacheID: sfid-20190906_023748_814071_C0F39FEA 
+X-CRM114-Status: GOOD (  21.13  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -78,7 +92,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,121 +103,192 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- open list <linux-kernel@vger.kernel.org>,
- BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
-
-Thanks for the review. Please see my response inline:
-
-On Fri, Sep 6, 2019 at 2:08 PM Andrew Murray <andrew.murray@arm.com> wrote:
->
-> On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
-> > Invalidate PAXB inbound/outbound address mapping each time before
-> > programming it. This is helpful for the cases where we need to
-> > reprogram inbound/outbound address mapping without resetting PAXB.
-> > kexec kernel is one such example.
->
-> Why is this approach better than resetting the PAXB (I assume that's
-> the PCI controller IP)? Wouldn't resetting the PAXB address this issue,
-> and ensure that no other configuration is left behind?
->
-We normally reset PAXB in the firmware(ATF). But for cases like kexec
-kernel boot,
-we do not execute any firmware code and directly boot into kernel.
-
-We could have done PAXB reset in the driver itself as you have suggested here.
-But note that this detail could vary for each SoC, because these
-registers are not part
-of PAXB register space itself, rather exists in a register space responsible for
-controlling power to various wrappers in PCIe IP. Normally, this kind
-of SoC specific
-details are handled in firmware itself, we don't bring them to driver level.
-
-> Or is this related to earlier boot stages loading firmware for the emulated
-> downstream endpoints (ep_is_internal)?
->
-> Finally, in the case where ep_is_internal do you need to disable anything
-> prior to invalidating the mappings?
->
-No, ep_is_internal  is indicator for PAXC IP. It does not have
-mappings as in PAXB.
 
 
-Regards,
-Abhishek
-> >
-> > Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
-> > Reviewed-by: Ray Jui <ray.jui@broadcom.com>
-> > Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
-> > ---
-> >  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
-> >  1 file changed, 28 insertions(+)
-> >
-> > diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> > index e3ca46497470..99a9521ba7ab 100644
-> > --- a/drivers/pci/controller/pcie-iproc.c
-> > +++ b/drivers/pci/controller/pcie-iproc.c
-> > @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
-> >       return ret;
-> >  }
-> >
-> > +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
-> > +{
-> > +     struct iproc_pcie_ib *ib = &pcie->ib;
-> > +     struct iproc_pcie_ob *ob = &pcie->ob;
-> > +     int idx;
-> > +
-> > +     if (pcie->ep_is_internal)
-> > +             return;
-> > +
-> > +     if (pcie->need_ob_cfg) {
-> > +             /* iterate through all OARR mapping regions */
-> > +             for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
-> > +                     iproc_pcie_write_reg(pcie,
-> > +                                          MAP_REG(IPROC_PCIE_OARR0, idx), 0);
-> > +             }
-> > +     }
-> > +
-> > +     if (pcie->need_ib_cfg) {
-> > +             /* iterate through all IARR mapping regions */
-> > +             for (idx = 0; idx < ib->nr_regions; idx++) {
-> > +                     iproc_pcie_write_reg(pcie,
-> > +                                          MAP_REG(IPROC_PCIE_IARR0, idx), 0);
-> > +             }
-> > +     }
-> > +}
-> > +
-> >  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
-> >                              struct device_node *msi_node,
-> >                              u64 *msi_addr)
-> > @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
-> >       iproc_pcie_perst_ctrl(pcie, true);
-> >       iproc_pcie_perst_ctrl(pcie, false);
-> >
-> > +     iproc_pcie_invalidate_mapping(pcie);
-> > +
-> >       if (pcie->need_ob_cfg) {
-> >               ret = iproc_pcie_map_ranges(pcie, res);
-> >               if (ret) {
->
-> The code changes look good to me.
->
+On 06/09/2019 07:57, Peng Fan wrote:
+>> Subject: [PATCH 2/2] nvmem: imx: scu: support write
+> 
+> Ping..
+> 
+Thanks for your patience!
+I normally do not take patches after rc5 for nvmem.
+These will be applied after rc1 is released!
+
+Thanks,
+srini
 > Thanks,
->
-> Andrew Murray
->
-> > --
-> > 2.17.1
-> >
+> Peng.
+> 
+>>
+>> From: Peng Fan <peng.fan@nxp.com>
+>>
+>> The fuse programming from non-secure world is blocked, so we could only use
+>> Arm Trusted Firmware SIP call to let ATF program fuse.
+>>
+>> Because there is ECC region that could only be programmed once, so add a
+>> heler in_ecc to check the ecc region.
+>>
+>> Signed-off-by: Peng Fan <peng.fan@nxp.com>
+>> ---
+>>
+>> The ATF patch will soon be posted to ATF community.
+>>
+>>   drivers/nvmem/imx-ocotp-scu.c | 73
+>> ++++++++++++++++++++++++++++++++++++++++++-
+>>   1 file changed, 72 insertions(+), 1 deletion(-)
+>>
+>> diff --git a/drivers/nvmem/imx-ocotp-scu.c b/drivers/nvmem/imx-ocotp-scu.c
+>> index 2f339d7432e6..0f064f2e74a8 100644
+>> --- a/drivers/nvmem/imx-ocotp-scu.c
+>> +++ b/drivers/nvmem/imx-ocotp-scu.c
+>> @@ -7,6 +7,7 @@
+>>    * Peng Fan <peng.fan@nxp.com>
+>>    */
+>>
+>> +#include <linux/arm-smccc.h>
+>>   #include <linux/firmware/imx/sci.h>
+>>   #include <linux/module.h>
+>>   #include <linux/nvmem-provider.h>
+>> @@ -14,6 +15,9 @@
+>>   #include <linux/platform_device.h>
+>>   #include <linux/slab.h>
+>>
+>> +#define IMX_SIP_OTP			0xC200000A
+>> +#define IMX_SIP_OTP_WRITE		0x2
+>> +
+>>   enum ocotp_devtype {
+>>   	IMX8QXP,
+>>   };
+>> @@ -45,6 +49,8 @@ struct imx_sc_msg_misc_fuse_read {
+>>   	u32 word;
+>>   } __packed;
+>>
+>> +static DEFINE_MUTEX(scu_ocotp_mutex);
+>> +
+>>   static struct ocotp_devtype_data imx8qxp_data = {
+>>   	.devtype = IMX8QXP,
+>>   	.nregs = 800,
+>> @@ -73,6 +79,23 @@ static bool in_hole(void *context, u32 index)
+>>   	return false;
+>>   }
+>>
+>> +static bool in_ecc(void *context, u32 index) {
+>> +	struct ocotp_priv *priv = context;
+>> +	const struct ocotp_devtype_data *data = priv->data;
+>> +	int i;
+>> +
+>> +	for (i = 0; i < data->num_region; i++) {
+>> +		if (data->region[i].flag & ECC_REGION) {
+>> +			if ((index >= data->region[i].start) &&
+>> +			    (index <= data->region[i].end))
+>> +				return true;
+>> +		}
+>> +	}
+>> +
+>> +	return false;
+>> +}
+>> +
+>>   static int imx_sc_misc_otp_fuse_read(struct imx_sc_ipc *ipc, u32 word,
+>>   				     u32 *val)
+>>   {
+>> @@ -116,6 +139,8 @@ static int imx_scu_ocotp_read(void *context,
+>> unsigned int offset,
+>>   	if (!p)
+>>   		return -ENOMEM;
+>>
+>> +	mutex_lock(&scu_ocotp_mutex);
+>> +
+>>   	buf = p;
+>>
+>>   	for (i = index; i < (index + count); i++) { @@ -126,6 +151,7 @@ static int
+>> imx_scu_ocotp_read(void *context, unsigned int offset,
+>>
+>>   		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, i, buf);
+>>   		if (ret) {
+>> +			mutex_unlock(&scu_ocotp_mutex);
+>>   			kfree(p);
+>>   			return ret;
+>>   		}
+>> @@ -134,18 +160,63 @@ static int imx_scu_ocotp_read(void *context,
+>> unsigned int offset,
+>>
+>>   	memcpy(val, (u8 *)p + offset % 4, bytes);
+>>
+>> +	mutex_unlock(&scu_ocotp_mutex);
+>> +
+>>   	kfree(p);
+>>
+>>   	return 0;
+>>   }
+>>
+>> +static int imx_scu_ocotp_write(void *context, unsigned int offset,
+>> +			       void *val, size_t bytes)
+>> +{
+>> +	struct ocotp_priv *priv = context;
+>> +	struct arm_smccc_res res;
+>> +	u32 *buf = val;
+>> +	u32 tmp;
+>> +	u32 index;
+>> +	int ret;
+>> +
+>> +	/* allow only writing one complete OTP word at a time */
+>> +	if ((bytes != 4) || (offset % 4))
+>> +		return -EINVAL;
+>> +
+>> +	index = offset >> 2;
+>> +
+>> +	if (in_hole(context, index))
+>> +		return -EINVAL;
+>> +
+>> +	if (in_ecc(context, index)) {
+>> +		pr_warn("ECC region, only program once\n");
+>> +		mutex_lock(&scu_ocotp_mutex);
+>> +		ret = imx_sc_misc_otp_fuse_read(priv->nvmem_ipc, index, &tmp);
+>> +		mutex_unlock(&scu_ocotp_mutex);
+>> +		if (ret)
+>> +			return ret;
+>> +		if (tmp) {
+>> +			pr_warn("ECC region, already has value: %x\n", tmp);
+>> +			return -EIO;
+>> +		}
+>> +	}
+>> +
+>> +	mutex_lock(&scu_ocotp_mutex);
+>> +
+>> +	arm_smccc_smc(IMX_SIP_OTP, IMX_SIP_OTP_WRITE, index, *buf,
+>> +		      0, 0, 0, 0, &res);
+>> +
+>> +	mutex_unlock(&scu_ocotp_mutex);
+>> +
+>> +	return res.a0;
+>> +}
+>> +
+>>   static struct nvmem_config imx_scu_ocotp_nvmem_config = {
+>>   	.name = "imx-scu-ocotp",
+>> -	.read_only = true,
+>> +	.read_only = false,
+>>   	.word_size = 4,
+>>   	.stride = 1,
+>>   	.owner = THIS_MODULE,
+>>   	.reg_read = imx_scu_ocotp_read,
+>> +	.reg_write = imx_scu_ocotp_write,
+>>   };
+>>
+>>   static const struct of_device_id imx_scu_ocotp_dt_ids[] = {
+>> --
+>> 2.16.4
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
