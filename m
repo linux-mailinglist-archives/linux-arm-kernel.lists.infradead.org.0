@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 83B95ABC44
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:23:52 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09AF9ABC4C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:25:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZQh5fU2NFBhP9esUXU29wPAzeTBhHAiocrGT8um4HjI=; b=TaTFtXGawgrL+d
-	/EPzxPrd++ckzp/rOr3vthjIiGBL78DbwPcYv8bPnG916/QAb+FSBfQsgKgiVotmeWh195ZjaSEwl
-	eGwHm2fSMRsvWb65tXAszV9tmTiY7gyVqI3iZF8K8A/+4c28u3M361nSiXd2LpeTDcRIo91pGCz2i
-	tKGgO5W0s+DOaeev7SSOOu5UWLMiBKrN+PXBVDIa64sApoNScL2Vy/HyKXqgWW8pLw8/A3mtBtPb/
-	ixMiXAPRBjcjA0JeMbF4mty4SkY6WSA9NSFnrjigNiL/L2/4qTrWK6ADQoGFAPQzajKWjcGPovJA1
-	AAVX1PU4DeGst34pBDcQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=S42IlCmm9kILcPpRYSD5gMMsF6Igo+qcW0ktoCTkVA8=; b=PuzNJI4KDqfTJD
+	pjXclGk8yT06dAZMRXCOX4QEsVlJM4L0qDsvzCWr8+s7DxNmIvjIhb3KQKpddRKGNkl4bE0/xVqHF
+	u37Xjv3qa9tyIwR/KcaiLx7jSJH8I3gBhfaLtaSfr05GJShLhmM2zRRJlBgbxtjestimH0DKrfyG0
+	PoV2scYIOovygLhY/6Iyj7/ssVVO5+zJStjjziCcEMakkDYpU0v9IYMA1YHlw7w9pK6h7HfUP//r6
+	QmjRCd71izZeHSQX5FydgnDLEUJaweH1z8kHGZ5Kl55EMZQHpUqS21KOzdDdPXV7Kb8K3hw0aTgTF
+	WinrgIg2djNK8ZeSt0Sw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6G5I-0007P0-KT; Fri, 06 Sep 2019 15:23:36 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6G52-0007N2-IX; Fri, 06 Sep 2019 15:23:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AF61828;
- Fri,  6 Sep 2019 08:23:19 -0700 (PDT)
-Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C6D063F59C;
- Fri,  6 Sep 2019 08:23:16 -0700 (PDT)
-Subject: Re: [PATCH v3 12/17] arm64, trans_pgd: complete generalization of
- trans_pgds
-To: Pavel Tatashin <pasha.tatashin@soleen.com>
-References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-13-pasha.tatashin@soleen.com>
-From: James Morse <james.morse@arm.com>
-Message-ID: <d4a5bb7b-21c0-9f39-ad96-3fa43684c6c6@arm.com>
-Date: Fri, 6 Sep 2019 16:23:15 +0100
-User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
- Thunderbird/60.7.2
+	id 1i6G6j-0007ih-Fg; Fri, 06 Sep 2019 15:25:05 +0000
+Received: from mout.kundenserver.de ([212.227.17.13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6G6V-0007i9-DB; Fri, 06 Sep 2019 15:24:52 +0000
+Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
+ (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
+ 1MgNtR-1ieCGu1yVr-00hxJq; Fri, 06 Sep 2019 17:24:39 +0200
+From: Arnd Bergmann <arnd@arndb.de>
+To: Alessandro Zummo <a.zummo@towertech.it>,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Kevin Hilman <khilman@baylibre.com>
+Subject: [PATCH] rtc: meson: mark PM functions as __maybe_unused
+Date: Fri,  6 Sep 2019 17:24:29 +0200
+Message-Id: <20190906152438.1533833-1-arnd@arndb.de>
+X-Mailer: git-send-email 2.20.0
 MIME-Version: 1.0
-In-Reply-To: <20190821183204.23576-13-pasha.tatashin@soleen.com>
-Content-Language: en-GB
+X-Provags-ID: V03:K1:iAXw4+juZQ88e5MCxf8CxgonumKHmdb38haLq7aNwoHTl6DtoPC
+ Z9GPHNRp0w/tJjiEzrdFIfQtJ5pxhtRdL+pDmwoKrwYL57eprTQvOXgSCFQPuyr29o4PnGW
+ kZim5mMmM/k12IdaDCvf5Chnxe+5bimHjJ3PUFNF7AFhOfJDEx1L06QWv2Ub1xM/gCDNYFb
+ FEXmyJk3f22Aen5NN8QMw==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:ZlbboHLS25M=:nbSzMGw1TiiBYTW/Jn2ABL
+ t6bsPlq1T8uhQiCGjZelLsQ8maUrd4/3e9VeJPNzuzACOgz38aM8zpjxcUnsTsOSABK1eubj6
+ PwFWvFkSTZcFXV245vVSil93R9kfP9WnmMoGIZPNUT8PXlGp5AQw8v+YPYZ3v7WNCAld1AMD0
+ ywH3pNCp54V5vLICDZPZNAM0kTguEV2kQ5EDE2beAPTQG7SXArH/9ZujIR2vhaC5LCY9pD0BL
+ tmJSPxv/zYa/pdUE6i0rUABlEyngw4SyACVDHeTKd8/ZGmIJNm3rVy8aeRVf6ZKlcshiPN8Cf
+ t2GAoZmq1P74mkbcgYaRAybt8RR79Irw9igE659MjsXorLaifnVinOauDka3WJJaKEyeEoZoc
+ pc9n8fI2QS0S6VPpqKnnlYDM3+hezWY9NHiqUGrl4EQRtcn5AK0Fxl5ZvV/ZPJ8b6GPYntIp3
+ /VDxk8Ss6T8AoZysMdHSF2rkFNJKiq/9fLYY+dGX5vFrerQBfvOl/AbA4pCnd15UYAqWFt3Le
+ yH3C335gyPj6YQ3UQBIgwyyjJTn3o+aMOd53ssfQQ4w27aKbrR7QApt9OCP/g3Kv6dId6DF/l
+ NPPQ5Cxfl8djMyNhzSMiFvL8TDxYnN7w3s2UHoFz8CFL86I4/pzBLTxy3YUz/+TIGy/e2/HOM
+ PW1xNwI6q+Xb/Fn6ieQ/n/4Y3ww0GJ61hLyCrlEGlSOjMFWuTLHLrqmPleglq7TGov8OdyvX1
+ G5vhUIbYZwMd0h487IPYU3jfG9z59wzVrap7c31npIvjd9hOPhWMtg9T22MUML2qoRmO/hA5P
+ teP6FLOBRvCXWDX0xjfrMvf1dfA1wLAUpcFjxeeXHyk8yiYIsc=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_082320_697049_E3EDC415 
-X-CRM114-Status: GOOD (  24.33  )
+X-CRM114-CacheID: sfid-20190906_082451_745534_472A7204 
+X-CRM114-Status: GOOD (  10.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [212.227.17.13 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,141 +75,62 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: sashal@kernel.org, mark.rutland@arm.com, vladimir.murzin@arm.com,
- corbet@lwn.net, marc.zyngier@arm.com, catalin.marinas@arm.com,
- bhsharma@redhat.com, kexec@lists.infradead.org, linux-kernel@vger.kernel.org,
- jmorris@namei.org, linux-mm@kvack.org, ebiederm@xmission.com,
- matthias.bgg@gmail.com, will@kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: linux-rtc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
+ Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Pavel,
+The meson_vrtc_set_wakeup_time() function is only used by
+the PM functions and causes a warning when they are disabled:
 
-On 21/08/2019 19:31, Pavel Tatashin wrote:
-> Make the last private functions in page table copy path generlized for use
-> outside of hibernate.
-> 
-> Switch to use the provided allocator, flags, and source page table. Also,
-> unify all copy function implementations to reduce the possibility of bugs.
+drivers/rtc/rtc-meson-vrtc.c:32:13: error: unused function 'meson_vrtc_set_wakeup_time' [-Werror,-Wunused-function]
 
-By changing it? No one has reported any problems. We're more likely to break it making
-unnecessary changes.
+Remove the #ifdef around the callers and add a __maybe_unused
+annotation as a more reliable way to avoid these warnings.
 
-Why is this necessary?
+Signed-off-by: Arnd Bergmann <arnd@arndb.de>
+---
+ drivers/rtc/rtc-meson-vrtc.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
 
+diff --git a/drivers/rtc/rtc-meson-vrtc.c b/drivers/rtc/rtc-meson-vrtc.c
+index 4621a4715179..89e5ba0dae69 100644
+--- a/drivers/rtc/rtc-meson-vrtc.c
++++ b/drivers/rtc/rtc-meson-vrtc.c
+@@ -91,8 +91,7 @@ static int meson_vrtc_probe(struct platform_device *pdev)
+ 	return 0;
+ }
+ 
+-#ifdef CONFIG_PM_SLEEP
+-static int meson_vrtc_suspend(struct device *dev)
++static int __maybe_unused meson_vrtc_suspend(struct device *dev)
+ {
+ 	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
+ 
+@@ -121,7 +120,7 @@ static int meson_vrtc_suspend(struct device *dev)
+ 	return 0;
+ }
+ 
+-static int meson_vrtc_resume(struct device *dev)
++static int __maybe_unused meson_vrtc_resume(struct device *dev)
+ {
+ 	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
+ 
+@@ -131,7 +130,7 @@ static int meson_vrtc_resume(struct device *dev)
+ 	meson_vrtc_set_wakeup_time(vrtc, 0);
+ 	return 0;
+ }
+-#endif
++
+ static SIMPLE_DEV_PM_OPS(meson_vrtc_pm_ops,
+ 			 meson_vrtc_suspend, meson_vrtc_resume);
+ 
+-- 
+2.20.0
 
-> All page table levels are implemented symmetrically.
-
-
-> diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
-> index efd42509d069..ccd9900f8edb 100644
-> --- a/arch/arm64/mm/trans_pgd.c
-> +++ b/arch/arm64/mm/trans_pgd.c
-> @@ -27,139 +27,157 @@ static void *trans_alloc(struct trans_pgd_info *info)
-
-> -static void _copy_pte(pte_t *dst_ptep, pte_t *src_ptep, unsigned long addr)
-> +static int copy_pte(struct trans_pgd_info *info, pte_t *dst_ptep,
-> +		    pte_t *src_ptep, unsigned long start, unsigned long end)
->  {
-> -	pte_t pte = READ_ONCE(*src_ptep);
-> -
-> -	if (pte_valid(pte)) {
-> -		/*
-> -		 * Resume will overwrite areas that may be marked
-> -		 * read only (code, rodata). Clear the RDONLY bit from
-> -		 * the temporary mappings we use during restore.
-> -		 */
-> -		set_pte(dst_ptep, pte_mkwrite(pte));
-> -	} else if (debug_pagealloc_enabled() && !pte_none(pte)) {
-> -		/*
-> -		 * debug_pagealloc will removed the PTE_VALID bit if
-> -		 * the page isn't in use by the resume kernel. It may have
-> -		 * been in use by the original kernel, in which case we need
-> -		 * to put it back in our copy to do the restore.
-> -		 *
-> -		 * Before marking this entry valid, check the pfn should
-> -		 * be mapped.
-> -		 */
-> -		BUG_ON(!pfn_valid(pte_pfn(pte)));
-> -
-> -		set_pte(dst_ptep, pte_mkpresent(pte_mkwrite(pte)));
-> -	}
-> -}
-
-> -static int copy_pte(pmd_t *dst_pmdp, pmd_t *src_pmdp, unsigned long start,
-> -		    unsigned long end)
-> -{
-> -	pte_t *src_ptep;
-> -	pte_t *dst_ptep;
->  	unsigned long addr = start;
-> +	int i = pte_index(addr);
->  
-> -	dst_ptep = (pte_t *)get_safe_page(GFP_ATOMIC);
-> -	if (!dst_ptep)
-> -		return -ENOMEM;
-> -	pmd_populate_kernel(&init_mm, dst_pmdp, dst_ptep);
-> -	dst_ptep = pte_offset_kernel(dst_pmdp, start);
-> -
-> -	src_ptep = pte_offset_kernel(src_pmdp, start);
->  	do {
-> -		_copy_pte(dst_ptep, src_ptep, addr);
-> -	} while (dst_ptep++, src_ptep++, addr += PAGE_SIZE, addr != end);
-> +		pte_t src_pte = READ_ONCE(src_ptep[i]);
-> +
-> +		if (pte_none(src_pte))
-> +			continue;
-
-> +		if (info->trans_flags & TRANS_MKWRITE)
-> +			src_pte = pte_mkwrite(src_pte);
-
-This should be unconditional. The purpose of this thing is to create a set of page tables
-you can use to overwrite all of memory. Why would you want to keep the RDONLY flag for
-normal memory?
-
-
-> +		if (info->trans_flags & TRANS_MKVALID)
-> +			src_pte = pte_mkpresent(src_pte);
-> +		if (info->trans_flags & TRANS_CHECKPFN) {
-> +			if (!pfn_valid(pte_pfn(src_pte)))
-> +				return -ENXIO;
-> +		}
-
-This lets you skip the pfn_valid() check if you want to create bogus mappings. This should
-not be conditional.
-This removes the BUG_ON(), which is there to make sure we stop if we find page-table
-corruption.
-
-Please keep the shape of _copy_pte() as it is. Putting a different mapping in the copied
-tables is risky, the code that does it should all be in one place, along with the
-justification of why its doing this. Anything else is harder to debug when it goes wrong.
-
-
-> +		set_pte(&dst_ptep[i], src_pte);
-> +	} while (addr += PAGE_SIZE, i++, addr != end && i < PTRS_PER_PTE);
-
-Incrementing pte/pud/pmg/pgd pointers is a common pattern in the kernel's page table
-walkers. Why do we need to change this to index it like an array?
-
-This needs to look like walk_page_range() as the eventual aim is to remove it, and use the
-core-code page table walker.
-
-(at the time it was merged the core-code page table walker removed block mappings it
-didn't like, which didn't go well.)
-
-This is a backwards step as it makes any attempt to remove this arch-specific walker harder.
-
-
->  
->  	return 0;
->  }
-
-
-
-Thanks,
-
-James
 
 _______________________________________________
 linux-arm-kernel mailing list
