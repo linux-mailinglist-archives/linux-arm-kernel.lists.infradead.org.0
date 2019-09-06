@@ -2,76 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C1B19AC025
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 21:05:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 241F3AC02C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 21:07:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PdWtm+RMRV+rKKryZmLbKjNFEnl/t1ytwnUmROPv5A4=; b=GobuoFFtqQnIOC
-	m525UTgqG/S5bkHGX7vqKKPAVE+6bnmDSVO1AtW91vw5Aqq5cVrHuNMjXgtruo5Chzw7yzTxlkxYR
-	f27pkRp+Xt/yWtYZNCXAFN1ZEN/p0csYXDOoa3XGqI1V6PS+W1Q65RrbSfLnnClHkUAeQ2UeK60R0
-	CedC187z1xPWn3/sW522z01qxj3iDuX8jFe4A3MeXT0oTLLzb4JbiWJbB1qQwoXqXaq+6zwXPQwIv
-	q3SCY1hRVk2UKhKaQtwmQkoFUt5k85ie5gw/4uZUc3H9XPgPndOCkAqRANdCjLBi8Us/myzZwC8Yw
-	CPdumLe0f0kUTqDXHSjg==;
+	List-Owner; bh=yoY2SwdjPMdVw1LeyBTqVHSXIBXh1BqxwsuIoTEHvU4=; b=mJw/Ihrj+fTrQF
+	aH/kcmtdMumzSmxkZ6wBUAHThUbYTTXPNbkWv/G6oenzZGD6Cm4/ALzL8i3x1XH8YwLLHeKw9EKRF
+	1U45MUUzy8lTAuAO4DNWUHsRUsS+Lgjbf2gHWD++34bwZA0zC5VxCrR842cclHCJQg+jzf++Ej7eu
+	Ki0HpZ9tIbjtyjrOsz4evLuUu+NaYUdrZkKiiKH2sBIELx1TDP4AmK3QssmUKxEIhlqCDB3iX5R8m
+	gWdYyQgC7FsDqKUUW92vLoQrDinTMg9wPxGoXFEtoDUPMIpIJTwDiARxJdXJJgMxH8CihUVqkNw3c
+	Y70RfdYv+B0Al8WDjOkg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6JXm-0006X4-8q; Fri, 06 Sep 2019 19:05:14 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1i6JZT-0008Dz-Nl; Fri, 06 Sep 2019 19:06:59 +0000
+Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6JXR-0006VI-IY
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 19:04:59 +0000
-Received: by mail-ed1-x543.google.com with SMTP id v38so7251387edm.7
+ id 1i6JZI-0008CT-Gc
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 19:06:49 +0000
+Received: by mail-ed1-x544.google.com with SMTP id y91so7240989ede.9
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 12:04:53 -0700 (PDT)
+ Fri, 06 Sep 2019 12:06:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=jojg3lt9aotJnGt5bH33wsrcyv/EEKP9KJRLMGkqesY=;
- b=LeW70Cwz4yP0y+LnTrM6vdUtvCMHjSw1acep3zXSJpi5BYck+TcuH8lwg6BFF+angS
- RDYMTGCVx+3iLx4bIRpfNA69sQlUdbjAfJrE1tIJt9h5xR7KlD59f1teg2zUjKLWji8U
- HtKOfDiAs4fvtxuIYAkhN86SzJ/3DECTbwuraae7Ro4Fnmf/j7wRycV3GekLevRvA4yi
- hN+l2NlmZ43f8LnS3649b2RQBq2URKwBrG03uECmpal6VX2gf/H7cIiJydxgVHNdAVEK
- ZsN2k2L3TJXN4FJXJv8Ww2KRqLaR8luX0x/QO6p8DnbYTUm/7XaIdegqHhHY71r0jRUC
- LkWg==
+ :cc; bh=Y2omJ3/dD4U+vCtoy8H75XszRI5XH+eQMkgkdDPlArY=;
+ b=FQTP/TmgHTgyC+PBU5SEyiseIy1zvJC97N+VhKG2dCvL9vAhP80LEhoKJOvzIi6bLQ
+ BgVBFgf58SS8R6ppJO3IlLnneB06um+xoINkqVeAcoexAD7EM8Pa8+VTq2HkDgPCOmt1
+ TOn3ZhGsy7GLjFuJ1Jsk7gydcJxrPs9xEq3rZGr9mprwu/oe6WREKg8EsucNQZWw2j6w
+ J7ifMbBwHA1GZOQh8cnKXT8qN31F/vuBtp4u7YqNI+J47VPkt/zp22gNmPCRdoGMqBlZ
+ nVh7RyWgx3VRI12mKbkkekJb4SMfWKAg2SUtXlgb9KFbdoDmStmdx61Q+ALcL6DiU6Eb
+ OcSw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=jojg3lt9aotJnGt5bH33wsrcyv/EEKP9KJRLMGkqesY=;
- b=FwLJX9CoooI0cV+eO1M8wFCRucs4YgpKUdcfUldQ1ZO4Y3z5+zuOVJT12tfHoZiuQ4
- 7wWr2p02g9wrIC8/dcLKwFaeaYABI9CwLAucY+SuVnv4Y+22x3Dvs3LiMnbMIWBPNvLa
- Ujoyf78Xga6zQ9ViYrSPhBEt6KWaBtPVWtx8BRHmlISrPcicEYh8VRO1DIFxQrwRpJ/H
- XsPw/0lp5wevOY8r+Qaqoz8/meCebhQr3yCGhbq/v+V1QGv7HhyKCPdNQLuHti8kqQBl
- wNJ582ya8JHD89v/ZyD45BY6z+UvgP1UPNfz0VeD1Rd8f+WzKWfdrIhfwGkq0tbVKFwm
- xvyQ==
-X-Gm-Message-State: APjAAAVPZ72pbfflK1gD2cMB5OeNbR06ao91lVXWlM7976Bj5SamCnMD
- FNoALkRUw4ldWV8W2O1i0XljYLDiypAe4Dmd0jFoozpT
-X-Google-Smtp-Source: APXvYqyK1SCAqBB23XwDsQMDwIBa7uh8HdAPqm1/xVvjPDxouORMX2W/oKEVAMQ70bEUmrEuPn+OtVr0upjiCbgyF4o=
-X-Received: by 2002:aa7:c40c:: with SMTP id j12mr11447072edq.80.1567796692440; 
- Fri, 06 Sep 2019 12:04:52 -0700 (PDT)
+ bh=Y2omJ3/dD4U+vCtoy8H75XszRI5XH+eQMkgkdDPlArY=;
+ b=dR44+ugxd/ZCzwkZmQEkyLk6KeAnNbQLmt8DWXylGVQvo8SUYMpFUk7TDR9lJHkZml
+ V6YLzrbckNxGgM/pCfAQnC/cSVfXA5HAHnPhv4JUXe753hSO3lksHVrxUqOrO3sB1LbH
+ FwYDVaPSVRD8azzBsJ4+jqTHFAlrjUO+yuxX/DJbXU4ZOTYUP7wyqFqvSKvuuSU7Gy/i
+ l4VRwtiSHISMn6aYNSeOd0RiBfm9EM6ImqgkU67foNGhtQRfcYzQv7HDOxm3a2LpuJ37
+ LFFxQeH0oUfs+PjC604xa5lrS01o9O+Oo8q++tsxNrPF0byGE7qZuPkSvEXhwzU0TpER
+ sITQ==
+X-Gm-Message-State: APjAAAU+/YlhHO6eToiO51wc2dfB8NND529ICpZVhAl17hJJglWsGoS2
+ bP/yh5xtjDQK4TMzgODYE3DyHFZS0gkm7DmpkGZkzg==
+X-Google-Smtp-Source: APXvYqxUyzboKtZynQf94VQal3O7BvvXwmvhzJw991UoDJCeN6nT1tLn0eiUP2pwGueZpl557B6qG/MIy5a1dR+RLhA=
+X-Received: by 2002:a50:9ea1:: with SMTP id a30mr11569826edf.304.1567796807172; 
+ Fri, 06 Sep 2019 12:06:47 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-12-pasha.tatashin@soleen.com>
- <d53d973c-17dc-2f4f-c052-83d6df15b002@arm.com>
-In-Reply-To: <d53d973c-17dc-2f4f-c052-83d6df15b002@arm.com>
+ <20190821183204.23576-13-pasha.tatashin@soleen.com>
+ <d4a5bb7b-21c0-9f39-ad96-3fa43684c6c6@arm.com>
+In-Reply-To: <d4a5bb7b-21c0-9f39-ad96-3fa43684c6c6@arm.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Fri, 6 Sep 2019 15:04:41 -0400
-Message-ID: <CA+CK2bCSDEspfJZ9k_4nWmerQSatc9M_dVf4Jij5xUwTMbg29w@mail.gmail.com>
-Subject: Re: [PATCH v3 11/17] arm64, trans_pgd: add PUD_SECT_RDONLY
+Date: Fri, 6 Sep 2019 15:06:36 -0400
+Message-ID: <CA+CK2bDxK5DHARkAUxzodhMDqokqEy3Y12F-bgHPF9g9K496hA@mail.gmail.com>
+Subject: Re: [PATCH v3 12/17] arm64,
+ trans_pgd: complete generalization of trans_pgds
 To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_120453_631309_ECB09E79 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190906_120648_556564_4893CA5D 
+X-CRM114-Status: GOOD (  11.31  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -107,22 +107,24 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 6, 2019 at 11:21 AM James Morse <james.morse@arm.com> wrote:
+On Fri, Sep 6, 2019 at 11:23 AM James Morse <james.morse@arm.com> wrote:
 >
 > Hi Pavel,
 >
 > On 21/08/2019 19:31, Pavel Tatashin wrote:
-> > Thre is PMD_SECT_RDONLY that is used in pud_* function which is confusing.
+> > Make the last private functions in page table copy path generlized for use
+> > outside of hibernate.
+> >
+> > Switch to use the provided allocator, flags, and source page table. Also,
+> > unify all copy function implementations to reduce the possibility of bugs.
 >
-> Nit: There
+> By changing it? No one has reported any problems. We're more likely to break it making
+> unnecessary changes.
 >
-> I bet it was equally confusing before before you moved it! Could you do this earlier in
-> the series with the rest of the cleanup?
->
-> With that,
-> Acked-by: James Morse <james.morse@arm.com>
+> Why is this necessary?
 
-Will move it earlier.
+I tried to make it cleaner, but if you think the final version does
+not make it better, I will keep the current versions.
 
 Thank you,
 Pasha
