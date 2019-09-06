@@ -2,74 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A34FABCED
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:49:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 648CEABD0B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:55:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K2bBIsEgLtyCON2bUVaXXHT4SvC5klHsh473UVpMlSY=; b=UuOygJ9c7s43Ex
-	w0sRUQ4gs03Z2GfeKQ2L+UWSgrZ8LCBDqLapZ7VXBtx/Q/kdIAF/UcRI/4xtkMVjte60Lel5lqJ+c
-	ewF0mdmlb5nlB2dTW+DRHosvJhMApbIzS/S5n7DrCIRoE0qHt4xQlQsFVFiS4CMp6OWPgHduVgXzd
-	mo68PfHzmvw/KnljDpYNAEJnwcfmsW1/xfs9qPNoS3iUScnh4YRuEqQcnDqSYJ6thLL+jovhfQn4c
-	IfpFD6LcWW7YHrdMO45EYxQ95E641nkbm3a6RyeVhMkcVloggKfc3Td+lYD3DPjC7Sm5kFF47UxFo
-	ODfw9bll6DyAGFuAMX5w==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zLn7YDV30Qcft9JT8VsfYsU7MWdJsIRwF1LaLxfnuBs=; b=DjmmXAluJfca6y
+	7pV/2V2/IgBwPwyqAoOM/JEUsN9pu6BtSBrfQ8X2PXjXi3arKhzTFkllApdDbCbQe/954SbZAbNjX
+	TfvWOs90EQBGvm812RuqyRd1qb07bIYfJ4PTSeTO8Iy/qbfg5cjw34brzdGuB+wwFGOh2nJj19X0T
+	ITYygjTFf/dA3+Icsiu1hm2dkCmCM0xC3uH7Gg5BB05aSlPSqyF6ooesolJQBkvqw002edJmxo1OC
+	A8JFBJDATD2NDNp4J7dy+h5JTdocmsR/3cp195i9LwezWyldOGnML5lPQ98hZU3PLJyCilRjEKzZ3
+	eW3R6z5xyAGALRKbTu8A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6GUI-000113-Fs; Fri, 06 Sep 2019 15:49:26 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i6GaQ-0004QC-2T; Fri, 06 Sep 2019 15:55:46 +0000
+Received: from esa6.hc3370-68.iphmx.com ([216.71.155.175])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6GTy-00010Q-A4
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:49:08 +0000
-Received: from mail-qt1-f170.google.com (mail-qt1-f170.google.com
- [209.85.160.170])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id AC6182178F
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Sep 2019 15:49:05 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567784945;
- bh=Jr5kgXqyWS7nh52NwJvOior0lys98UCdmbOdcfTtNDg=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=CWy0XUtdMPK4ldm+ALO4hNc9NhMkC9KZQ0dMR1c4PcYhArloTT5P2R24zCBNE9WW8
- mBW9uvEmpTGaJ4qOV83YYHyVA4xMuTO9ivrxhgE4dlY0rFEBVv5g9IKT3JyRpI1YW9
- NhVjc/T1ubb6yDj8dA0KJaL+l37rTDRrAa6opxMo=
-Received: by mail-qt1-f170.google.com with SMTP id b2so7543965qtq.5
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 08:49:05 -0700 (PDT)
-X-Gm-Message-State: APjAAAW/TwS7+wDgkwMZbvriDRX7SkvNe9txA17q7kuEL/JC+2AsQh8T
- Lki2N4pq+hFICDSOgnSnL6MryUMLCju1xbsmkw==
-X-Google-Smtp-Source: APXvYqzOFUgh8GnB6rG6hXcILzhLec0cs9V0M4FXVh+YnJXdDppWGYwFW7NZzD11jYW/qoY7azAhk18Zu9nuUkLC+F4=
-X-Received: by 2002:ac8:100d:: with SMTP id z13mr3818851qti.224.1567784944824; 
- Fri, 06 Sep 2019 08:49:04 -0700 (PDT)
+ id 1i6GaG-0004PZ-Is
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:55:37 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=citrix.com; s=securemail; t=1567785336;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=PNiOjWmh/mGHcri38QvqDipcCi86TqJQp3m5qsgndZ8=;
+ b=AxL4dbeAPXS3JX15pTCwn415zgtTXad6bYI+9s6Cb3FtqIdyK4tUePGN
+ Ol3QsiEMNGbBJ8IystjOuz+yX0ZG3Jy1sZ55PVSAnvzWAYi9+ARl7gREI
+ 6lFafq+UZG9a5Zz+LzKZK+Ka2mu4mPH0VDtlVGnU93NhiQ3YRVsTjIp0b A=;
+Authentication-Results: esa6.hc3370-68.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=None smtp.pra=andrew.cooper3@citrix.com;
+ spf=Pass smtp.mailfrom=Andrew.Cooper3@citrix.com;
+ spf=None smtp.helo=postmaster@mail.citrix.com
+Received-SPF: None (esa6.hc3370-68.iphmx.com: no sender
+ authenticity information available from domain of
+ andrew.cooper3@citrix.com) identity=pra;
+ client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
+ envelope-from="Andrew.Cooper3@citrix.com";
+ x-sender="andrew.cooper3@citrix.com";
+ x-conformance=sidf_compatible
+Received-SPF: Pass (esa6.hc3370-68.iphmx.com: domain of
+ Andrew.Cooper3@citrix.com designates 162.221.158.21 as
+ permitted sender) identity=mailfrom;
+ client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
+ envelope-from="Andrew.Cooper3@citrix.com";
+ x-sender="Andrew.Cooper3@citrix.com";
+ x-conformance=sidf_compatible; x-record-type="v=spf1";
+ x-record-text="v=spf1 ip4:209.167.231.154 ip4:178.63.86.133
+ ip4:195.66.111.40/30 ip4:85.115.9.32/28 ip4:199.102.83.4
+ ip4:192.28.146.160 ip4:192.28.146.107 ip4:216.52.6.88
+ ip4:216.52.6.188 ip4:162.221.158.21 ip4:162.221.156.83 ~all"
+Received-SPF: None (esa6.hc3370-68.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@mail.citrix.com) identity=helo;
+ client-ip=162.221.158.21; receiver=esa6.hc3370-68.iphmx.com;
+ envelope-from="Andrew.Cooper3@citrix.com";
+ x-sender="postmaster@mail.citrix.com";
+ x-conformance=sidf_compatible
+IronPort-SDR: yzNCuWgNsC2asdRXUTsLimtFItklHg9kA0eC+kPRgDwkI0lC+u25kHF4n9rtr4u3roKL1gWH5E
+ z6iklNYqSsncWIyOO6HZRQYrvObixqO2GfjzjgVEKmSybIS8SXSf1D2DfSSDEmsSQVxJGX7nzt
+ 2DqMe8P2e5rylaXL9kGuwjgjlqhvXq6Vqfk7KVB51MpfsESJbKy10EMnLifEd89Fl3lr2TMThG
+ UE5qI+ibM/TOPPPBhhU/wDXLn6KYj7wSKhrN0kCCq6mFc7+ERFuVIDfbDu4+Bbl//ERRkO5GS4
+ clE=
+X-SBRS: 2.7
+X-MesageID: 5476378
+X-Ironport-Server: esa6.hc3370-68.iphmx.com
+X-Remote-IP: 162.221.158.21
+X-Policy: $RELAYED
+X-IronPort-AV: E=Sophos;i="5.64,473,1559534400"; 
+   d="scan'208";a="5476378"
+Subject: Re: [Xen-devel] [PATCH] ARM: xen: unexport HYPERVISOR_platform_op
+ function
+To: Arnd Bergmann <arnd@arndb.de>, Stefano Stabellini <sstabellini@kernel.org>
+References: <20190906153948.2160342-1-arnd@arndb.de>
+From: Andrew Cooper <andrew.cooper3@citrix.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=andrew.cooper3@citrix.com; prefer-encrypt=mutual; keydata=
+ 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
+ 6+ahAA==
+Message-ID: <7abad95e-ea47-c068-d91c-ba503f2530b9@citrix.com>
+Date: Fri, 6 Sep 2019 16:55:30 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190823145356.6341-1-krzk@kernel.org>
- <20190823145356.6341-5-krzk@kernel.org>
- <CAL_JsqJybT41cEqiTriLMywUQj1BtAG_9muJ4=84OkF23y53CA@mail.gmail.com>
- <CAJKOXPc0SY_8BHMsWLN=1M3VQh41+bdBiH21L4KQPA+iLPYy+A@mail.gmail.com>
- <CAL_JsqKdsABWK9Og_f38T9zf3SCFFdhU8WOJ4uJjREantoYvYQ@mail.gmail.com>
- <CAJKOXPfnvu=c5f6AcOSiQ_9E-C2fMf9qbEpy1Tr3QvH8LgAtpQ@mail.gmail.com>
-In-Reply-To: <CAJKOXPfnvu=c5f6AcOSiQ_9E-C2fMf9qbEpy1Tr3QvH8LgAtpQ@mail.gmail.com>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 6 Sep 2019 16:48:53 +0100
-X-Gmail-Original-Message-ID: <CAL_JsqKyj3s-Mn3q_Lna0w38K3DJzvKN5d72WHzqt4CUVf5X4Q@mail.gmail.com>
-Message-ID: <CAL_JsqKyj3s-Mn3q_Lna0w38K3DJzvKN5d72WHzqt4CUVf5X4Q@mail.gmail.com>
-Subject: Re: [RFC 5/9] dt-bindings: arm: samsung: Convert Exynos PMU bindings
- to json-schema
-To: Krzysztof Kozlowski <krzk@kernel.org>
+In-Reply-To: <20190906153948.2160342-1-arnd@arndb.de>
+Content-Language: en-GB
+X-ClientProxiedBy: AMSPEX02CAS02.citrite.net (10.69.22.113) To
+ AMSPEX02CL01.citrite.net (10.69.22.125)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_084906_486381_0A7E22FD 
-X-CRM114-Status: GOOD (  30.28  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190906_085536_662399_0DF61A15 
+X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.155.175 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -91,188 +163,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Lars-Peter Clausen <lars@metafoo.de>, Arnd Bergmann <arnd@arndb.de>,
- devicetree@vger.kernel.org,
- "open list:IIO SUBSYSTEM AND DRIVERS" <linux-iio@vger.kernel.org>,
- Marek Szyprowski <m.szyprowski@samsung.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Tomasz Figa <tomasz.figa@gmail.com>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>,
- Peter Meerwald-Stadler <pmeerw@pmeerw.net>, Hartmut Knaack <knaack.h@gmx.de>,
- Olof Johansson <olof@lixom.net>,
- "open list:REAL TIME CLOCK \(RTC\) SUBSYSTEM" <linux-rtc@vger.kernel.org>,
- notify@kernel.org, Jonathan Cameron <jic23@kernel.org>,
- =?UTF-8?Q?Pawe=C5=82_Chmiel?= <pawel.mikolaj.chmiel@gmail.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Emil Velikov <emil.l.velikov@gmail.com>,
+ Russell King <linux@armlinux.org.uk>, Denis Efremov <efremov@linux.com>,
+ linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
+ xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 3, 2019 at 12:03 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
->
-> On Tue, 3 Sep 2019 at 10:25, Rob Herring <robh+dt@kernel.org> wrote:
-> >
-> > On Tue, Sep 3, 2019 at 8:58 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > >
-> > > On Mon, 26 Aug 2019 at 13:54, Rob Herring <robh+dt@kernel.org> wrote:
-> > > >
-> > > > On Fri, Aug 23, 2019 at 9:54 AM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> > > > >
-> > > > > Convert Samsung Exynos Power Management Unit (PMU) bindings to DT schema
-> > > > > format using json-schema.
-> > > > >
-> > > > > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > > > > ---
-> > > > >  .../devicetree/bindings/arm/samsung/pmu.txt   | 72 --------------
-> > > > >  .../devicetree/bindings/arm/samsung/pmu.yaml  | 93 +++++++++++++++++++
-> > > > >  2 files changed, 93 insertions(+), 72 deletions(-)
-> > > > >  delete mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.txt
-> > > > >  create mode 100644 Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > > >
-> > > >
-> > > > > diff --git a/Documentation/devicetree/bindings/arm/samsung/pmu.yaml b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > > > > new file mode 100644
-> > > > > index 000000000000..818c6f3488ef
-> > > > > --- /dev/null
-> > > > > +++ b/Documentation/devicetree/bindings/arm/samsung/pmu.yaml
-> > > > > @@ -0,0 +1,93 @@
-> > > > > +# SPDX-License-Identifier: GPL-2.0
-> > > > > +%YAML 1.2
-> > > > > +---
-> > > > > +$id: http://devicetree.org/schemas/arm/samsung/pmu.yaml#
-> > > > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > > > +
-> > > > > +title: Samsung Exynos SoC series Power Management Unit (PMU)
-> > > > > +
-> > > > > +maintainers:
-> > > > > +  - Krzysztof Kozlowski <krzk@kernel.org>
-> > > > > +
-> > > > > +properties:
-> > > > > +  compatible:
-> > > > > +    items:
-> > > > > +      - enum:
-> > > > > +          - samsung,exynos3250-pmu
-> > > > > +          - samsung,exynos4210-pmu
-> > > > > +          - samsung,exynos4412-pmu
-> > > > > +          - samsung,exynos5250-pmu
-> > > > > +          - samsung,exynos5260-pmu
-> > > > > +          - samsung,exynos5410-pmu
-> > > > > +          - samsung,exynos5420-pmu
-> > > > > +          - samsung,exynos5433-pmu
-> > > > > +          - samsung,exynos7-pmu
-> > > > > +      - const: syscon
-> > > > > +
-> > > > > +  reg:
-> > > > > +    maxItems: 1
-> > > > > +
-> > > > > +  '#clock-cells':
-> > > > > +    const: 1
-> > > > > +
-> > > > > +  clock-names:
-> > > > > +    description:
-> > > > > +      list of clock names for particular CLKOUT mux inputs
-> > > > > +    # TODO: what is the maximum number of elements (mux inputs)?
-> > > > > +    minItems: 1
-> > > > > +    maxItems: 32
-> > > > > +    items:
-> > > > > +      - enum:
-> > > >
-> > > > This isn't correct as you are only defining possible names for the
-> > > > first item. Drop the '-' (making items a schema instead of a list) and
-> > > > then it applies to all. However, doing that will cause a meta-schema
-> > > > error which I need to fix to allow. Or if there's a small set of
-> > > > possibilities of number of inputs, you can list them under a 'oneOf'
-> > > > list.
-> > >
-> > > Mhmm, I cannot test it or I have an error in the schema. if I
-> > > understand correctly, this would be:
-> > >
-> > >   clock-names:
-> > >     description:
-> > >       List of clock names for particular CLKOUT mux inputs
-> > >     minItems: 1
-> > >     maxItems: 16
-> > >     items:
-> > >       clkout0
-> > >       clkout1
-> > >       clkout2
-> > >       clkout3
-> > >       clkout4
-> > >       clkout5
-> > >       clkout6
-> > >       clkout7
-> > >       clkout8
-> > >       clkout9
-> > >       clkout10
-> > >       clkout11
-> > >       clkout12
-> > >       clkout13
-> > >       clkout14
-> > >       clkout15
-> > >       clkout16
-> > >
-> > > Now it produces the error "ignoring, error in schema 'items'" but
-> > > maybe it is expected with current meta-schema?
-> >
-> > 'make dt_binding_check' will give more detailed errors.
-> >
-> > Are the inputs always contiguous 0-N? If so, you want:
-> >
-> > items:
-> >   - const: clkout0
-> >   - const: clkout1
-> >   - const: clkout2
-> >   ...
-> >
-> > If you want to express any number and order of strings is valid, then you need:
-> >
-> > items:
-> >   enum:
-> >     - clkout0
-> >     - clkout1
-> >     - clkout2
-> >
-> > Doing that is discouraged for bindings though. Currently, it will
-> > generate an error from the meta-schema, but we could change that.
->
-> It's the second case. The inputs are not contiguous. Examples:
->
-> system-controller {
->     compatible = "samsung,exynos3250-pmu", "syscon";
->     clock-names = "clkout8";
->     clocks = <&cmu CLK_FIN_PLL>;
-> }
->
-> system-controller {
->     compatible = "samsung,exynos4412-pmu", "syscon";
->     clock-names = "clkout0", "clkout1", "clkout2", "clkout3",
->                   "clkout4", "clkout8", "clkout9";
->     clocks = <&clock CLK_OUT_DMC>, <&clock CLK_OUT_TOP>,
->              <&clock CLK_OUT_LEFTBUS>, <&clock CLK_OUT_RIGHTBUS>,
->              <&clock CLK_OUT_CPU>, <&clock CLK_XXTI>, <&clock CLK_XUSBXTI>;
-> }
->
-> The bindings never required any specific ordering. Also the driver
-> just go through all indices and parses them.
->
-> Your second syntax fails:
-> Documentation/devicetree/bindings/arm/samsung/pmu.yaml:
-> properties:clock-names:items: {'enum': ['clkout0', 'clkout1',
-> 'clkout2', 'clkout3', 'clkout4', 'clkout5', 'clkout6', 'clkout7',
-> 'clkout8', 'clkout9', 'clkout10', 'clkout11', 'clkout12', 'clkout13',
-> 'clkout14', 'clkout15', 'clkout16']} is not of type 'array'
-
-Update dt-schema and try again. It should be allowed now. You'll also
-need to define minItems and maxItems though.
-
-Rob
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gMDYvMDkvMjAxOSAxNjozOSwgQXJuZCBCZXJnbWFubiB3cm90ZToKPiBIWVBFUlZJU09SX3Bs
+YXRmb3JtX29wKCkgaXMgYW4gaW5saW5lIGZ1bmN0aW9uIGFuZCBzaG91bGQgbm90Cj4gYmUgZXhw
+b3J0ZWQuIFNpbmNlIGNvbW1pdCAxNWJmYzIzNDhkNTQgKCJtb2Rwb3N0OiBjaGVjayBmb3IKPiBz
+dGF0aWMgRVhQT1JUX1NZTUJPTCogZnVuY3Rpb25zIiksIHRoaXMgY2F1c2VzIGEgd2FybmluZzoK
+Pgo+IFdBUk5JTkc6ICJIWVBFUlZJU09SX3BsYXRmb3JtX29wIiBbdm1saW51eF0gaXMgYSBzdGF0
+aWMgRVhQT1JUX1NZTUJPTF9HUEwKPgo+IFJlbW92ZSB0aGUgZXh0cmFuZW91cyBleHBvcnQuCj4K
+PiBGaXhlczogMTViZmMyMzQ4ZDU0ICgibW9kcG9zdDogY2hlY2sgZm9yIHN0YXRpYyBFWFBPUlRf
+U1lNQk9MKiBmdW5jdGlvbnMiKQo+IFNpZ25lZC1vZmYtYnk6IEFybmQgQmVyZ21hbm4gPGFybmRA
+YXJuZGIuZGU+CgpTb21ldGhpbmcgaXMgd29ua3kuwqAgVGhhdCBzeW1ib2wgaXMgKC8gcmVhbGx5
+IG91Z2h0IHRvIGJlKSBpbiB0aGUKaHlwZXJjYWxsIHBhZ2UgYW5kIG1vc3QgZGVmaW5pdGVseSBu
+b3QgaW5saW5lLgoKV2hpY2ggdHJlZSBpcyB0aGF0IGNoYW5nZXNldCBmcm9tP8KgIEkgY2FuJ3Qg
+ZmluZCB0aGUgU0hBLgoKSSBoYXRlIHRvIG9wZW4gYSBzZXBhcmF0ZSBjYW4gb2Ygd29ybXMsIGJ1
+dCB3aHkgYXJlIHRoZXkgdGFnZ2VkIEdQTD/CoApUaGUgWGVuIGh5cGVyY2FsbCBBQkksIGxpa2Ug
+dGhlIExpbnV4IHN5c2NhbGwgQUJJLCBhcmUgc3BlY2lmaWNhbGx5IG5vdApHUEwuwqAgWGVuIGhh
+cyBhcyBzb21ldGhpbmcgdmVyeSBzaW1pbGFyIHRvIChhbmQgcHJvYmFibHkgZGVyaXZlZCBmcm9t
+KQp0aGUgTGludXgtc3lzY2FsbC1ub3RlIGV4Y2VwdGlvbi4KCn5BbmRyZXcKCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
