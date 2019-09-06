@@ -2,54 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AC434AB423
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 10:38:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EE06BAB44D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 10:46:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=u5WGQ39AP3w62+gjTD7FhAYobCNtVWXMj1TRFgOBaXU=; b=ekrHR1AoCHrUwu
-	xc+l7Qeo0BwXpTDGBLlBGPBnpRRuHQ6//ZCmQWLW4GynfTgXpNT+SDCQYrTEzt8P4kegUF1RknEke
-	LBpdZ+muKk1QqT3d/5VhDkdJDmuOV5o1iHJ19IusaQ6oCbKnckgcek7dFqkVk0MQwKXZf09IsXYpN
-	fCoN3oDqiR2/ukY2rbovsLKALG81YUJ8No9KkQ+Id09F0FQtTzmmnwZSwTqjPyPCCIvkxmMp9aghV
-	dBVrx8sY4d0NKAF6rg6yC/ODHmVEi9xbdWnGLcqSz39CDbA98BrBu2sYlL4FuVNl39Vgr3tjmKq89
-	W9cViq938tbjVgemEPKA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=0H2FeaImL7URqrTCnrRB4AEq6D5WOsxEhlqnXRRpe6M=; b=nbB
+	W5fVkPfUsHIO6iGA2uxjZuewhdHzsl0vHB0gnvVRmzfx9Ovuluf1U66U3MDS4Q02NCDdwGrtPhqBq
+	rsqPszM5rd1F96bk9mmQDxAXqAJph0l+Y7GDkK4u4aRJddyfqtopekvm9XXtgqycn8tDN3CbLhUHZ
+	k/YcFJBAoE861snSeF9Crk17DiLbW/iXHV+ixsoCce9iZxuHuCA2p4wxpvEkRBnVcWeFSKdP1IGhA
+	igUkrKN5El/iweX/LjfD4312/rfVDy8fo6gOWAP12jxabXEXjL9bKXEhykcINWafVtPIuYklCOcHa
+	u9ShanJyxZsbNCbHUtRCLdWdiZ3YYEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i69lL-0002mI-7t; Fri, 06 Sep 2019 08:38:35 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i69l8-0002lR-0t
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 08:38:23 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6234B1570;
- Fri,  6 Sep 2019 01:38:19 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CE1F63F718;
- Fri,  6 Sep 2019 01:38:18 -0700 (PDT)
-Date: Fri, 6 Sep 2019 09:38:17 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Abhishek Shah <abhishek.shah@broadcom.com>
-Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
- programming it
-Message-ID: <20190906083816.GD9720@e119886-lin.cambridge.arm.com>
-References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190906035813.24046-1-abhishek.shah@broadcom.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+	id 1i69tJ-0006Dl-M8; Fri, 06 Sep 2019 08:46:50 +0000
+Received: from baptiste.telenet-ops.be ([2a02:1800:120:4::f00:13])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i69sO-0005kd-KD
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 08:45:56 +0000
+Received: from ramsan ([84.194.98.4]) by baptiste.telenet-ops.be with bizsmtp
+ id y8lg2000x05gfCL018lhml; Fri, 06 Sep 2019 10:45:42 +0200
+Received: from rox.of.borg ([192.168.97.57]) by ramsan with esmtp (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1i69sC-0003Mz-T2; Fri, 06 Sep 2019 10:45:40 +0200
+Received: from geert by rox.of.borg with local (Exim 4.90_1)
+ (envelope-from <geert@linux-m68k.org>)
+ id 1i69sC-0005h1-QK; Fri, 06 Sep 2019 10:45:40 +0200
+From: Geert Uytterhoeven <geert+renesas@glider.be>
+To: Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH 0/4] gpio: API boundary cleanups
+Date: Fri,  6 Sep 2019 10:45:35 +0200
+Message-Id: <20190906084539.21838-1-geert+renesas@glider.be>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_013822_112153_06B4C6F3 
-X-CRM114-Status: GOOD (  18.78  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_014552_819950_95BEEF7F 
+X-CRM114-Status: UNSURE (   8.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a02:1800:120:4:0:0:f00:13 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -61,96 +65,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- linux-kernel@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+Cc: devicetree@vger.kernel.org, Geert Uytterhoeven <geert+renesas@glider.be>,
+ linux-kernel@vger.kernel.org, linux-gpio@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
  linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
-> Invalidate PAXB inbound/outbound address mapping each time before
-> programming it. This is helpful for the cases where we need to
-> reprogram inbound/outbound address mapping without resetting PAXB.
-> kexec kernel is one such example.
+	Hi Linus, Bartosz,
 
-Why is this approach better than resetting the PAXB (I assume that's
-the PCI controller IP)? Wouldn't resetting the PAXB address this issue,
-and ensure that no other configuration is left behind?
+This patch series contains various API boundary cleanups for gpiolib:
+  - The first two patches make two functions private,
+  - The last two patches switch the remaining gpiolib exported functions
+    from EXPORT_SYMBOL() to EXPORT_SYMBOL_GPL().
 
-Or is this related to earlier boot stages loading firmware for the emulated
-downstream endpoints (ep_is_internal)?
+After this there is only a single GPIO driver function exported with
+EXPORT_SYMBOL();
 
-Finally, in the case where ep_is_internal do you need to disable anything
-prior to invalidating the mappings?
+    drivers/gpio/gpio-htc-egpio.c:EXPORT_SYMBOL(htc_egpio_get_wakeup_irq);
 
-> 
-> Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
-> Reviewed-by: Ray Jui <ray.jui@broadcom.com>
-> Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
-> ---
->  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
->  1 file changed, 28 insertions(+)
-> 
-> diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
-> index e3ca46497470..99a9521ba7ab 100644
-> --- a/drivers/pci/controller/pcie-iproc.c
-> +++ b/drivers/pci/controller/pcie-iproc.c
-> @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
->  	return ret;
->  }
->  
-> +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
-> +{
-> +	struct iproc_pcie_ib *ib = &pcie->ib;
-> +	struct iproc_pcie_ob *ob = &pcie->ob;
-> +	int idx;
-> +
-> +	if (pcie->ep_is_internal)
-> +		return;
-> +
-> +	if (pcie->need_ob_cfg) {
-> +		/* iterate through all OARR mapping regions */
-> +		for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
-> +			iproc_pcie_write_reg(pcie,
-> +					     MAP_REG(IPROC_PCIE_OARR0, idx), 0);
-> +		}
-> +	}
-> +
-> +	if (pcie->need_ib_cfg) {
-> +		/* iterate through all IARR mapping regions */
-> +		for (idx = 0; idx < ib->nr_regions; idx++) {
-> +			iproc_pcie_write_reg(pcie,
-> +					     MAP_REG(IPROC_PCIE_IARR0, idx), 0);
-> +		}
-> +	}
-> +}
-> +
->  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
->  			       struct device_node *msi_node,
->  			       u64 *msi_addr)
-> @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
->  	iproc_pcie_perst_ctrl(pcie, true);
->  	iproc_pcie_perst_ctrl(pcie, false);
->  
-> +	iproc_pcie_invalidate_mapping(pcie);
-> +
->  	if (pcie->need_ob_cfg) {
->  		ret = iproc_pcie_map_ranges(pcie, res);
->  		if (ret) {
+I believe this symbol was never used upstream, and may be a relic of the
+original out-of-tree code the htc-egpio was based on.  I don't know if
+there (still) exist out-of-tree users of the symbol.
 
-The code changes look good to me.
+Thanks for your comments!
 
-Thanks,
+Geert Uytterhoeven (4):
+  gpio: of: Make of_get_named_gpiod_flags() private
+  gpio: of: Make of_gpio_simple_xlate() private
+  gpio: of: Switch to EXPORT_SYMBOL_GPL()
+  gpio: devres: Switch to EXPORT_SYMBOL_GPL()
 
-Andrew Murray
+ drivers/gpio/gpiolib-devres.c | 28 ++++++++++++++--------------
+ drivers/gpio/gpiolib-of.c     | 16 ++++++++--------
+ drivers/gpio/gpiolib-of.h     |  7 -------
+ include/linux/of_gpio.h       | 11 -----------
+ 4 files changed, 22 insertions(+), 40 deletions(-)
 
-> -- 
-> 2.17.1
-> 
+-- 
+2.17.1
+
+Gr{oetje,eeting}s,
+
+						Geert
+
+--
+Geert Uytterhoeven -- There's lots of Linux beyond ia32 -- geert@linux-m68k.org
+
+In personal conversations with technical people, I call myself a hacker. But
+when I'm talking to journalists I just say "programmer" or something like that.
+							    -- Linus Torvalds
 
 _______________________________________________
 linux-arm-kernel mailing list
