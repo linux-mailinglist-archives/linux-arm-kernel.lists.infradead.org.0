@@ -2,56 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCAE6AB583
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:12:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C749CAB584
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:12:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=5aUQa1mi4q0TBfrj87rUVVU0CWFGtI609/9zzKGzzLo=; b=TustDoUErzmx/E
-	rPMCBYM0WCsQHFkcTDq8ov2mqoWPRgCWXsCCIl/L1AL+HvrNSdFes33dCjRZOuFJda5qP254LBN0h
-	D6yHydvPdeA9iVQlzJfUErVPaymW4mY7f+fOGgiWKvlQiCAkb7hGaj0YPWWL5Bb0L6CiTW5ABDHmP
-	T3Vny3CSFJSW8gUbvfn15LmcjqnCI4QtBkQ8QW3Qd9kWy5KOqcJeKfbaNlfqsfnVJGTq86qNmN7zj
-	0hQbP2CBQ5zDs8VprR7FNqomjUqOgnXTt81LfEHbLZfxQkTLk6HCWZKxAaEC8hVerAnQLtab/A5+2
-	LTR7J0BEVpuyL4epGflg==;
+	List-Owner; bh=1k6mG3gUBkahuT6kL5xaNCKaTn/POBDYl7oTg3iVoac=; b=YKUCP4loyhv/QB
+	h4CEXWl+7ziJfbiJzSslUsvwvwIyTn8S7wbAHd0mTpspos6o6r+5RP8Rk2onc+qQMblA8eEWKmTQ2
+	eBpBG8UVfmbn8jtlugXh3EPZewFifHxJVXxVKPLC920gTgaNt0EVAfqtSX7XGfWmHM0JDrsftTn+5
+	6Wu4V2DmmdDg1eNdKXLcfESluM9dOrFl1KhvU4v41RaT3QMI31OmCVnAvFnTr+m3BEIldpaTifrpB
+	BlR/lCy5qn2smEXO3npgZOK8CbYJeCjpsaPIdF1NbJ8POpCB7UU2JsbYAmP+lAW24Yq0rZR9XE0RZ
+	bu8zJ18E7Cb8vMFrDNLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6BE6-0004D6-Jl; Fri, 06 Sep 2019 10:12:22 +0000
+	id 1i6BEO-0004S5-3M; Fri, 06 Sep 2019 10:12:40 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6BDq-00049r-SV; Fri, 06 Sep 2019 10:12:08 +0000
-X-UUID: f6831c3123254bb68b211df1515d5f85-20190906
-X-UUID: f6831c3123254bb68b211df1515d5f85-20190906
+ id 1i6BDr-0004A9-HR; Fri, 06 Sep 2019 10:12:08 +0000
+X-UUID: a5f193dcb5ed45418abda3497c5eaa1d-20190906
+X-UUID: a5f193dcb5ed45418abda3497c5eaa1d-20190906
 Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
  (envelope-from <jerry-ch.chen@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1454388940; Fri, 06 Sep 2019 02:11:57 -0800
-Received: from MTKMBS06N1.mediatek.inc (172.21.101.129) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 6 Sep 2019 03:11:55 -0700
+ with ESMTP id 174783752; Fri, 06 Sep 2019 02:12:03 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Sep 2019 03:12:02 -0700
 Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs06n1.mediatek.inc (172.21.101.129) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Fri, 6 Sep 2019 18:11:57 +0800
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Sep 2019 18:11:58 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas09.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Fri, 6 Sep 2019 18:11:54 +0800
+ Frontend Transport; Fri, 6 Sep 2019 18:11:58 +0800
 From: Jerry-ch Chen <Jerry-Ch.chen@mediatek.com>
 To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
  <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <mchehab@kernel.org>,
  <lkml@metux.net>
-Subject: [RFC PATCH V3 1/3] dt-bindings: mt8183: Added FD dt-bindings
-Date: Fri, 6 Sep 2019 18:11:23 +0800
-Message-ID: <20190906101125.3784-2-Jerry-Ch.chen@mediatek.com>
+Subject: [RFC PATCH V3 2/3] dts: arm64: mt8183: Add FD nodes
+Date: Fri, 6 Sep 2019 18:11:24 +0800
+Message-ID: <20190906101125.3784-3-Jerry-Ch.chen@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190906101125.3784-1-Jerry-Ch.chen@mediatek.com>
 References: <20190906101125.3784-1-Jerry-Ch.chen@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_031206_931204_A1E89435 
-X-CRM114-Status: UNSURE (   8.93  )
+X-CRM114-CacheID: sfid-20190906_031207_581185_1B02331E 
+X-CRM114-Status: UNSURE (   7.39  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -87,55 +87,39 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 From: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
 
-This patch adds DT binding documentation for the Face Detection (FD)
-unit of the Mediatek's mt8183 SoC.
+This patch adds nodes for Face Detection (FD) unit. FD is embedded
+in Mediatek SoCs and works with the co-processor to perform face
+detection on the input data and image and output detected face result.
 
 Signed-off-by: Jerry-ch Chen <jerry-ch.chen@mediatek.com>
 ---
- .../bindings/media/mediatek,mt8183-fd.txt     | 34 +++++++++++++++++++
- 1 file changed, 34 insertions(+)
- create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-fd.txt
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi | 13 +++++++++++++
+ 1 file changed, 13 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/media/mediatek,mt8183-fd.txt b/Documentation/devicetree/bindings/media/mediatek,mt8183-fd.txt
-new file mode 100644
-index 000000000000..46464175b95a
---- /dev/null
-+++ b/Documentation/devicetree/bindings/media/mediatek,mt8183-fd.txt
-@@ -0,0 +1,34 @@
-+* Mediatek Face Detection Unit (FD)
+diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+index c3a516e63141..6f31b5f4c17c 100644
+--- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
++++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
+@@ -432,6 +432,19 @@
+ 			#clock-cells = <1>;
+ 		};
+ 
++		fd:fd@1502b000 {
++			compatible = "mediatek,mt8183-fd";
++			mediatek,scp = <&scp>;
++			iommus = <&iommu M4U_PORT_CAM_FDVT_RP>,
++				 <&iommu M4U_PORT_CAM_FDVT_WR>,
++				 <&iommu M4U_PORT_CAM_FDVT_RB>;
++			reg = <0 0x1502b000 0 0x1000>;
++			interrupts = <GIC_SPI 269 IRQ_TYPE_LEVEL_LOW>;
++			clocks = <&imgsys CLK_IMG_FDVT>;
++			clock-names = "fd";
++			power-domains = <&scpsys MT8183_POWER_DOMAIN_ISP>;
++		};
 +
-+Face Detection (FD) unit is a typical memory-to-memory HW device.
-+It provides hardware accelerated face detection function, and it
-+is able to detect different poses of faces. FD will writre result
-+of detected face into memory as output.
-+
-+Required properties:
-+- compatible: "mediatek,mt8183-fd"
-+- mediatek,scp : the node of system control processor (SCP), see
-+  Documentation/devicetree/bindings/remoteproc/mtk,scp.txt for details.
-+- iommus: should point to the 3 entries:  M4U_PORT_CAM_FDVT_RP,
-+  M4U_PORT_CAM_FDVT_WR and M4U_PORT_CAM_FDVT_RB.  (Please see
-+  Documentation/devicetree/bindings/iommu/mediatek,iommu.txt for details.)
-+- reg: Physical base address and length of the register space.
-+- interrupts: interrupt number to the cpu.
-+- clocks : must contain the FDVT clock, see
-+  Documentation/devicetree/bindings/clock/clock-bindings.txt for details.
-+- clock-names: must be "fd".
-+- power-domain: must be "MT8183_POWER_DOMAIN_ISP".
-+
-+Example:
-+	fd: fd@1502b000 {
-+		compatible = "mediatek,mt8183-fd";
-+		mediatek,scp = <&scp>;
-+		iommus = <&iommu M4U_PORT_CAM_FDVT_RP>,
-+			 <&iommu M4U_PORT_CAM_FDVT_WR>,
-+			 <&iommu M4U_PORT_CAM_FDVT_RB>;
-+		reg = <0 0x1502b000 0 0x1000>;
-+		interrupts = <GIC_SPI 269 IRQ_TYPE_LEVEL_LOW>;
-+		clocks = <&imgsys CLK_IMG_FDVT>;
-+		clock-names = "fd";
-+		power-domains = <&scpsys MT8183_POWER_DOMAIN_ISP>;
-+	};
+ 		vdecsys: syscon@16000000 {
+ 			compatible = "mediatek,mt8183-vdecsys", "syscon";
+ 			reg = <0 0x16000000 0 0x1000>;
 -- 
 2.18.0
 
