@@ -2,52 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DF24FAC277
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 00:24:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 88F8FAC27A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 00:24:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=833nSOLw9gnk3Taa40Lgs3uhoClWn4cD4ayg/Y5FErE=; b=poMp7N/LCyoQF2
-	CO6ooOcrdquvyb6/SVzmR+SgCD59PGJcdBpAAPLVXsgOiBbSI0So+7+pzF5PtLsH3CUWI81yyXbYB
-	mu3yoyyZkPkhuouK+ltLPI2b+SF6Z3AXX99x4alzDT6KUINyMpUfmRUXHOInhCOQeyQG3Wviih3xD
-	O7HdtDvELk8diZXd+ieRdCfnKDFANOzI3BWRWPDRUuKfi/e2pZPe1cL/Mehqx5BuCjr2mvKni+brV
-	OM3tl7yIlqdSqAj1w7JMw4eJUGmdU7W+9gk+8mk8o2hmf6gdz2O+ZuTpday4vZISf9yN9NTE3Rhgf
-	aO5ZfYwt1fkTDsq7Qb3Q==;
+	List-Owner; bh=iAPJ9aSlus5KZOSVNEQJQ/qkqPG6KNEPxG/4x8pfO0s=; b=rbyaHwSEUi5KW/
+	7mtAxpMJj/Qfh8s1dC3yVZdWd+rqlEnaEWi2ymmFIajJK78e0TIjLl50lT0bdgc5un8meI4gfIUou
+	e94aPxPaR5+kAYXAhVL5OezuaUv4c3bh0PhWGWSBhOeqftpr0Pde/Zl0UpYcMiQuFYEW1hNa3LDJH
+	xS4sNNORJOhkpXG9vyRGwX88chc4qCGZ2p4G7NURS9jXoIEirQmLrLGhdxgDZt6H0YksfoSxGdHlh
+	DH+gAQP25pan+LcuaqJIlFH50it41on6R9NNf5Oykvv4/8YGbHy1t6G1TnOHF8LqdvIwyiCCj5EdV
+	QtRQGbPHR/Cnbkrk6r4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Me1-0008Hp-PE; Fri, 06 Sep 2019 22:23:53 +0000
+	id 1i6MeU-0008Qr-Py; Fri, 06 Sep 2019 22:24:22 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Mdq-0008HV-D6
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 22:23:44 +0000
+ id 1i6Mdy-0008MZ-GK
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 22:23:52 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id E63C2207FC;
- Fri,  6 Sep 2019 22:23:41 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 04419214E0;
+ Fri,  6 Sep 2019 22:23:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567808622;
- bh=bZdcjHRTRictQKuKHROlwLDaTmKRAORwUFoQbRhpj28=;
+ s=default; t=1567808629;
+ bh=7fWT4pSEpV668ptngcAoGmXNSeOFGFx6ayqh1U9b/uc=;
  h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=DZ6igBgMOMpRoIV4Lq6HqTpdhr2Z7iGqIkhs8+ySpg6iV9iUejH5iUEkMTxD4A0VZ
- aX9iy9LAUaxyqPWfQJdUPXtfHMOGVO8gpngAezv1MyZ1MD0b+z3A/JWBNGzQFDC8JY
- HQ3HdZ14sHe6zjmvhx7iYeToJ8rKdCyCLnTCCKzg=
+ b=PcVCeOpwb38RDWS/yuj5NA6PzqfUXRkDLDdWnyHqWvGf+ibd3zRGHXkz+W5PI+Mi/
+ uQsMpsP4fmSBvZDsCFX2sxrmLFU0QaBs7hGaJzuUfm9PQIP57QxduygJsaYI5UMf8Q
+ yltad5HTkUhYeC0w5OhY+BKUvA026HZlDJ5p5wmc=
 MIME-Version: 1.0
-In-Reply-To: <20190825141848.17346-2-joel@jms.id.au>
+In-Reply-To: <20190825141848.17346-3-joel@jms.id.au>
 References: <20190825141848.17346-1-joel@jms.id.au>
- <20190825141848.17346-2-joel@jms.id.au>
+ <20190825141848.17346-3-joel@jms.id.au>
 To: Joel Stanley <joel@jms.id.au>, Michael Turquette <mturquette@baylibre.com>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 1/2] clk: aspeed: Move structures to header
+Subject: Re: [PATCH v2 2/2] clk: Add support for AST2600 SoC
 User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 15:23:41 -0700
-Message-Id: <20190906222341.E63C2207FC@mail.kernel.org>
+Date: Fri, 06 Sep 2019 15:23:48 -0700
+Message-Id: <20190906222349.04419214E0@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_152342_464844_618BEF74 
-X-CRM114-Status: UNSURE (   5.84  )
+X-CRM114-CacheID: sfid-20190906_152350_999515_65124608 
+X-CRM114-Status: UNSURE (   7.72  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -85,8 +85,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Joel Stanley (2019-08-25 07:18:47)
-> They will be reused by the ast2600 driver.
+Quoting Joel Stanley (2019-08-25 07:18:48)
+> The ast2600 is a new BMC SoC from ASPEED. It contains many more clocks
+> than the previous iterations, so support is broken out into it's own
+> driver.
 > 
 > Signed-off-by: Joel Stanley <joel@jms.id.au>
 > ---
