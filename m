@@ -2,48 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3BA68ABC17
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:18:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A15ABC19
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:19:09 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=obY/MBg1xqRgNNYVYuZjQddYng6XU2rraRwph+NKk0w=; b=ESPNdtgaZLTgqW
-	o5xBRtIDWN4axIrpNe3DvrAwAxTmdqy2eOrFTwlUUhWRkWGOk6jn3d42lV0aJGgWIQyKBygL3G34R
-	yXgH7YKe3hT9RSVUbb7MWYhbQtMYgN7VU4rcxzS3Z2JBqiT24MvApnPi/D1im5H07Fz9aEAgfATBE
-	+i9va+Gvbm5iIkLNE4AN+d/WGEptdDOUKmi+l5tWHbbq9GdxBz0pQ9uAxQQmMZxEM/YvepnWoYuDh
-	j5Ud7TbFKLUnsjniQXhuzBwFFttLs9fTsUjxGD7tPy2h2YezLErnv2hr9hRPvn9oTBlCr5J7j1qh3
-	IwGi1EVvWLCv835eKmtA==;
+	List-Owner; bh=mbjE5hu8zyjRJGdiOfw8D9V1q6vvxRcrMYLW0iZgGmw=; b=K8b0NvTIMvK4xI
+	NeKm0oJrJGmArOS9TEzoUFxDzDn/tpXiDAHX40jK+aB78HSVW9uKpTaSkd2NctLP8JiNIWMMWv7Fl
+	22HeU2N71ykfZnnisaOELVPDcCsDcRYMuK1uhIN+iGH5RV+h88I4hIDLGHxy24qPHyV4UJT/Y6W/V
+	lsl6gf+zqftB3YTMtb+b3nuWmIx7moMQDfp5qhBQK23UKDN2rlSFiZKCGy1HvLWTxC4K8hZn6w7in
+	Q5WJJ0xWpBZ+ziN3njTyvUoZ9uxSzyWvLsEAMgjwTwpnvyNz82sVrYD9wxWtnu63s+qIVDkbkmLlE
+	dgJpTip1SHxNGvv5R+VA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6G0W-0003LD-1S; Fri, 06 Sep 2019 15:18:40 +0000
+	id 1i6G0r-0003cV-Mg; Fri, 06 Sep 2019 15:19:01 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Fzb-0002gU-Jb; Fri, 06 Sep 2019 15:17:44 +0000
+ id 1i6Fzq-0002vo-4V; Fri, 06 Sep 2019 15:17:59 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 211D71576;
- Fri,  6 Sep 2019 08:17:43 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 9B9CE1596;
+ Fri,  6 Sep 2019 08:17:57 -0700 (PDT)
 Received: from [10.1.196.105] (unknown [10.1.196.105])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C75063F59C;
- Fri,  6 Sep 2019 08:17:40 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 0D1163F59C;
+ Fri,  6 Sep 2019 08:17:54 -0700 (PDT)
 From: James Morse <james.morse@arm.com>
-Subject: Re: [PATCH v3 04/17] arm64, hibernate: rename dst to page in
- create_safe_exec_page
+Subject: Re: [PATCH v3 05/17] arm64, hibernate: check pgd table allocation
 To: Pavel Tatashin <pasha.tatashin@soleen.com>
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-5-pasha.tatashin@soleen.com>
-Message-ID: <2e826560-4005-fa16-8bbb-fc0e25763dcc@arm.com>
-Date: Fri, 6 Sep 2019 16:17:38 +0100
+ <20190821183204.23576-6-pasha.tatashin@soleen.com>
+Message-ID: <ddd81093-89fc-5146-0b33-ad3bd9a1c10c@arm.com>
+Date: Fri, 6 Sep 2019 16:17:53 +0100
 User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
  Thunderbird/60.7.2
 MIME-Version: 1.0
-In-Reply-To: <20190821183204.23576-5-pasha.tatashin@soleen.com>
+In-Reply-To: <20190821183204.23576-6-pasha.tatashin@soleen.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_081743_805872_02176A62 
-X-CRM114-Status: GOOD (  11.51  )
+X-CRM114-CacheID: sfid-20190906_081758_282335_85959227 
+X-CRM114-Status: GOOD (  14.54  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -75,26 +74,34 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Hi Pavel,
 
 On 21/08/2019 19:31, Pavel Tatashin wrote:
-> create_safe_exec_page() allocates a safe page and maps it at a
-> specific location, also this function returns the physical address
-> of newly allocated page.
+> There is a bug in create_safe_exec_page(), when page table is allocated
+> it is not checked that table is allocated successfully:
 > 
-> The destination VA, and PA are specified in arguments: dst_addr,
-> phys_dst_addr
-> 
-> However, within the function it uses "dst" which has unsigned long
-> type, but is actually a pointers in the current virtual space. This
-> is confusing to read.
+> But it is dereferenced in: pgd_none(READ_ONCE(*pgdp)).
 
-The type? There are plenty of places in the kernel that an unsigned-long is actually a
-pointer. This isn't unusual.
+If there is a bug, it shouldn't be fixed part way through a series. This makes it
+difficult to backport the fix.
+
+Please split this out as an independent patch with a 'Fixes:' tag for the commit that
+introduced the bug.
 
 
-> Rename dst to more appropriate page (page that is created), and also
-> change its time to "void *"
+> Another issue,
 
-If you think its clearer,
-Reviewed-by: James Morse <james.morse@arm.com>
+So this patch does two things? That is rarely a good idea. Again, this makes it difficult
+to backport the fix.
+
+
+> is that phys_to_ttbr() uses an offset in page table instead
+> of pgd directly.
+
+If you were going to reuse this, that would be a bug. But because the only page that is
+being mapped, is mapped to PAGE_SIZE, all the top bits will be 0. The offset calls are
+boiler-plate. It doesn't look intentional, but its harmless.
+
+
+Please separate out the potential NULL-dereference bits so there is a clean stand-alone
+fix that can be sent to the stable trees.
 
 
 Thanks,
