@@ -2,101 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A86BABA6F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:13:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D69EFABAB1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:19:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=NwxYYOQJ363cVBIY38kLItvyS8vvZvWwtf6AUHTpVtM=; b=FN6kjWSZE0NRGZ7FI3p9T9Qj+
-	yemvYcCgtjwDrmq3QFR0DMaChSfF6YFc7qMqGMq3ncX4HE47rHHS5isD9d6v6mfWCH5lqcBI4PIT1
-	lfNAD9+o0vdUSFXQVZDk94N0i7o+j+NtkJ0fMpZBlwc/FWBn/tFfMZnJlGYFGPw0DIzBTIFOzcX9Z
-	nGXGpKqAyw/8QhMHhJUElzpx0pj1+GsO+Mfnqv002POglYtOSQkru8eOJSPkp6UKrMLdtaQy2kEnG
-	rBkNWB2K/jW19b9TbdKXDvNgflErkGSo6yVhiQVR5faKpm0cIpfWgKBzlEiFa4MqJDXxvSegwQdwA
-	ujFEeL2Rw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=MwEdMeWyhCrGFdvXcOz9JYsr/mZsFMS8PTlAeCMM8YI=; b=hHvFWgsUFznVMz
+	ueSDnys7Yh8W3NWEYnwrjPm5dJlVwPSu3KEiJ4dPRxf1bS/2Yz1YdEMdW6Be2wTERGq4MFiG7ovOs
+	BUCb2XmmTLaekOIFAs5/rSAbjix/T+WvQCIdQ4mi+ueSdMzVYJGNOn+OyXjFf8k6UsEKqkPZOa21z
+	ZwqpoPEQVuZnZ3ba7xpxK1gZf6TepRgHqU4RwSX/mCkx80WNa3y7q8jMpEbvVVAi8CBOCRkQIYoEM
+	45qLWNEYuJRXmpZf4b9mkDKixj81GNNmPn0PbmRxdjAb7JS815w/iIt/DzS/aK5Y0wiy0jxFixP/t
+	rixJinLmQ4Xh6u/g9HKQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6EzG-0007dV-A7; Fri, 06 Sep 2019 14:13:18 +0000
-Received: from smtp-fw-6001.amazon.com ([52.95.48.154])
+	id 1i6F5D-00010C-Rp; Fri, 06 Sep 2019 14:19:27 +0000
+Received: from userp2120.oracle.com ([156.151.31.85])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Ez0-0007d7-LL
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:13:04 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1567779182; x=1599315182;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=9G4bFzovgTxqFaJRsXnATnhBOQd8Ab1q5goy+J25MD4=;
- b=JEjCBTwdSLij4ASmlw97hai+VR/fKDDhI+yxWBtPOy1P2pJc77XIalDT
- UKmODJ2mHdm0IgVzixBTTaeJz3Zjo4yZvIfKBXp1BtUgu+syzL7DOMZ10
- TecSLPGlQlvkswdhtmq4ZLJCOflcBlsGDorJAJgmsgZ5xiWM1yvE1jddI k=;
-X-IronPort-AV: E=Sophos;i="5.64,473,1559520000"; d="scan'208";a="413941107"
-Received: from iad6-co-svc-p1-lb1-vlan3.amazon.com (HELO
- email-inbound-relay-1a-821c648d.us-east-1.amazon.com) ([10.124.125.6])
- by smtp-border-fw-out-6001.iad6.amazon.com with ESMTP;
- 06 Sep 2019 14:12:59 +0000
-Received: from EX13MTAUWC001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan3.iad.amazon.com [10.40.159.166])
- by email-inbound-relay-1a-821c648d.us-east-1.amazon.com (Postfix) with ESMTPS
- id F40E0A2404; Fri,  6 Sep 2019 14:12:56 +0000 (UTC)
-Received: from EX13D20UWC001.ant.amazon.com (10.43.162.244) by
- EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Fri, 6 Sep 2019 14:12:56 +0000
-Received: from 38f9d3867b82.ant.amazon.com (10.43.162.242) by
- EX13D20UWC001.ant.amazon.com (10.43.162.244) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Fri, 6 Sep 2019 14:12:53 +0000
-Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
- decoded
-To: Peter Maydell <peter.maydell@linaro.org>
-References: <20190904180736.29009-1-xypron.glpk@gmx.de>
- <86r24vrwyh.wl-maz@kernel.org>
- <CAFEAcA-mc6cLmRGdGNOBR0PC1f_VBjvTdAL6xYtKjApx3NoPgQ@mail.gmail.com>
- <86mufjrup7.wl-maz@kernel.org>
- <CAFEAcA9qkqkOTqSVrhTpt-NkZSNXomSBNiWo_D6Kr=QKYRRf=w@mail.gmail.com>
- <20190905092223.GC4320@e113682-lin.lund.arm.com>
- <4b6662bd-56e4-3c10-3b65-7c90828a22f9@kernel.org>
- <20190906080033.GF4320@e113682-lin.lund.arm.com>
- <a58c5f76-641a-8381-2cf3-e52d139c4236@amazon.com>
- <20190906131252.GG4320@e113682-lin.lund.arm.com>
- <CAFEAcA9vwyhAN8uO8=PpaBkBXb0Of4G0jEij7nMrYcnJjSRVjg@mail.gmail.com>
- <28c5c021-7cb0-616b-4215-dd75242c16e6@amazon.com>
- <CAFEAcA8HH-JeMLZ29h6GidDcLpb_oUHqoyEMJ0buo3hyTBj5jA@mail.gmail.com>
-From: Alexander Graf <graf@amazon.com>
-Message-ID: <f5af43d5-d8f6-58f1-bd25-909e4e94ddb0@amazon.com>
-Date: Fri, 6 Sep 2019 16:12:51 +0200
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
+ id 1i6F51-0000zd-89
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:19:16 +0000
+Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
+ by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EDfAw042820;
+ Fri, 6 Sep 2019 14:19:09 GMT
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
+ h=subject : to : cc :
+ references : from : message-id : date : mime-version : in-reply-to :
+ content-type : content-transfer-encoding; s=corp-2019-08-05;
+ bh=hN8hZ6HuMup1PhkKBqnf3LK/a8llinuYBo/9CxNyLFg=;
+ b=FHeTL963J3lbam1Nr23h9B3euapMCROjnQkGXwqSvQq/whZtZa2nerD3Wu4aOnfCA9g/
+ sepYvmIGHMlQ460vp272CrJfBWkRg+LGtYTq9YLVqxYq2+jS3Lw1IxmuwuMeuWSi1CIX
+ 1Cjo2QRI6ghxKKQrq0g7yPakOz49a9p2iF/mRiL7CiPJZ9s9YZ3WbKCYSbEU5Ho7Mb8c
+ +mNPEsI4bsKqtQrKJpxIns8YMV1zQHmUOE1KtLVvjk2mR3M6KuD3mL7albPG3yVLhhOM
+ 5UkcUuoRKH90y7nXFlpaFph+9n7++VG+gaQPgyjqaZsKbgjGMaH7lzUTziiEQKijvRWb Ig== 
+Received: from userp3030.oracle.com (userp3030.oracle.com [156.151.31.80])
+ by userp2120.oracle.com with ESMTP id 2uurpy85fx-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 06 Sep 2019 14:19:09 +0000
+Received: from pps.filterd (userp3030.oracle.com [127.0.0.1])
+ by userp3030.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EDakf150702;
+ Fri, 6 Sep 2019 14:19:09 GMT
+Received: from aserv0121.oracle.com (aserv0121.oracle.com [141.146.126.235])
+ by userp3030.oracle.com with ESMTP id 2uujte8cxs-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Fri, 06 Sep 2019 14:19:08 +0000
+Received: from abhmp0019.oracle.com (abhmp0019.oracle.com [141.146.116.25])
+ by aserv0121.oracle.com (8.14.4/8.13.8) with ESMTP id x86EJ64P030721;
+ Fri, 6 Sep 2019 14:19:06 GMT
+Received: from bostrovs-us.us.oracle.com (/10.152.32.65)
+ by default (Oracle Beehive Gateway v4.0)
+ with ESMTP ; Fri, 06 Sep 2019 07:19:06 -0700
+Subject: Re: [PATCH 09/11] swiotlb-xen: simplify cache maintainance
+To: Christoph Hellwig <hch@lst.de>
+References: <20190905113408.3104-1-hch@lst.de>
+ <20190905113408.3104-10-hch@lst.de>
+ <e4f9b393-2631-57cd-f42f-3581e75ab9a3@oracle.com>
+ <20190906140123.GA9894@lst.de>
+From: Boris Ostrovsky <boris.ostrovsky@oracle.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=boris.ostrovsky@oracle.com; prefer-encrypt=mutual; keydata=
+ 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
+ Jg6OxFYd01z+a+oL
+Message-ID: <ca88e7b8-08ca-51b2-0c77-c828d92da0db@oracle.com>
+Date: Fri, 6 Sep 2019 10:19:01 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-In-Reply-To: <CAFEAcA8HH-JeMLZ29h6GidDcLpb_oUHqoyEMJ0buo3hyTBj5jA@mail.gmail.com>
+In-Reply-To: <20190906140123.GA9894@lst.de>
 Content-Language: en-US
-X-Originating-IP: [10.43.162.242]
-X-ClientProxiedBy: EX13D18UWC003.ant.amazon.com (10.43.162.237) To
- EX13D20UWC001.ant.amazon.com (10.43.162.244)
-Precedence: Bulk
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9372
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
+ malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=623
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.0.1-1906280000 definitions=main-1909060152
+X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9372
+ signatures=668685
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
+ priorityscore=1501 malwarescore=0
+ suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
+ lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=676 adultscore=0
+ classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
+ definitions=main-1909060152
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_071302_906720_96A5067D 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: -2.2 (--)
+X-CRM114-CacheID: sfid-20190906_071915_379570_AB28E90B 
+X-CRM114-Status: GOOD (  19.37  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.95.48.154 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ medium trust [156.151.31.85 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -105,65 +159,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Daniel_P=2e_Berrang=c3=a9?= <berrange@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- Christoffer Dall <christoffer.dall@arm.com>,
- lkml - Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Hajnoczi <stefanha@redhat.com>, Marc Zyngier <maz@kernel.org>,
- kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: Juergen Gross <jgross@suse.com>,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, x86@kernel.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ xen-devel@lists.xenproject.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 06.09.19 15:50, Peter Maydell wrote:
-> On Fri, 6 Sep 2019 at 14:41, Alexander Graf <graf@amazon.com> wrote:
->> On 06.09.19 15:31, Peter Maydell wrote:
->>> (b) we try to reuse the code we already have that does TCG exception
->>> injection, which might or might not be a design mistake, and
+On 9/6/19 10:01 AM, Christoph Hellwig wrote:
+> On Fri, Sep 06, 2019 at 09:52:12AM -0400, Boris Ostrovsky wrote:
+>> We need nop definitions of these two for x86.
 >>
->> That's probably a design mistake, correct :)
-> 
-> Well, conceptually it's not necessarily a bad idea, because
-> in both cases what we're doing is "change the system register
-> state (PC, ESR_EL1, ELR_EL1 etc) so that the CPU looks like
-> it's just taken an exception"; but some of what the
-> TCG code needs to do isn't necessary for KVM and all of it
-> was not written with the idea of KVM in mind at all...
-
-Yes, and it probably makes sense to model the QEMU internal API 
-similarly, so that exception generating code does not have to distinguish.
-
-However, it's much easier for KVM to ensure exception prioritization as 
-well as internal state synchronization. Conceptually, as you've seen, it 
-really doesn't make a lot of sense to pull register state from KVM, 
-wiggle it and then push it down when KVM has awareness of the same 
-transformation anyway.
-
-So I guess the path is clear: Create a generic interface for exception 
-injection and a separate patch similar to what Christoffer already 
-posted with the new CAP to route illegal MMIO traps into user space.
-
-Connecting the two dots in user space really should be trivial then.
-
-(famous last words)
+>> Everything builds now but that's probably because the calls are under
+>> 'if (!dev_is_dma_coherent(dev))' which is always false so compiler
+>> optimized is out. I don't think we should rely on that.
+> That is how a lot of the kernel works.  Provide protypes only for code
+> that is semantically compiled, but can't ever be called due to
+> IS_ENABLED() checks.  It took me a while to get used to it, but it
+> actually is pretty nice as the linker does the work for you to check
+> that it really is never called.  Much better than say a BUILD_BUG_ON().
 
 
-Alex
+(with corrected Juergen's email)
 
+I know about IS_ENABLED() but I didn't realize that this is allowed for
+compile-time inlines and such as well.
 
+Anyway, for non-ARM bits
 
-Amazon Development Center Germany GmbH
-Krausenstr. 38
-10117 Berlin
-Geschaeftsfuehrung: Christian Schlaeger, Ralf Herbrich
-Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
-Sitz: Berlin
-Ust-ID: DE 289 237 879
+Reviewed-by: Boris Ostrovsky <boris.ostrovsky@oracle.com>
 
+If this goes via Xen tree then the first couple of patches need an ack
+from ARM maintainers.
+
+-boris
 
 _______________________________________________
 linux-arm-kernel mailing list
