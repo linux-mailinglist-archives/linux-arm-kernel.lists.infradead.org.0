@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81B1FAB5A0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:15:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86B92AB5A1
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:15:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,104 +11,104 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=H8Qqp9K28LnZMvMt9XaP61ONzh9eTYyo0QnIFZECrGg=; b=S68N1es1HgXtiesTKSSq0vG2Vy
-	+XbDpbIoMrpZa6WMi0QBECwOSSM+yXVd4C32bqBmhe18APVOprbS4QWElzHgLQy+lEkHFC6B/mcLI
-	Wjmxm8XXFNETmiRh+nJ6QBDUT/Xpk+iqYmOv/3KjRpNTeP8NZcB10nCgjcriGWmVO0F0uNIKzisO5
-	1S48+GpbuKhfy1ch762UxEU9uDKpwLvo4YBTjre3JvLC1PfTVLPrqY3BupWjt2tnJIhe23JkEdh7M
-	ALOu19qNMrHvW2XaA72q/tt9YDY3Tkd5PD8ftKher3/X6Wo+okowREiqWMDXJRv6mmZfR+bOqDV1x
-	+1CK4ypg==;
+	bh=fAPKyTPXQ7JZ3g1EqU8IJH1/3u/KRSiAZb63rCS9qZc=; b=MPwjNBA6ik8AdQEHeAUSv8ZFoi
+	cjKRrKYiARgoan9SIKQTMYBq7TqPlT6dmkiTEg2CH42hq/tzkhKri6duG7maRBmqnxyVfAn9BVp4W
+	PZ44HmaL7XtNAggVMlmTfhwcbI5dt89yWBVTz0goZXvpPCOfH5B+DQu8qYz3OzBF/muj9Slso4k5j
+	FZouvSvypeMC+55uUWPn7PP1abgmmDpv7XzMwDJAftlkZcrmfOc28va9rH04ClFQJpFVpleX8TO8i
+	49TcBoqlbf/Cj9cAKaix7YxNAWrCUXYwpAKgBV9dchCcHWOfniL8PfXaSsFZO6lilLKCzXJEMjzcf
+	gHfJeB5Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6BGe-0006LT-AX; Fri, 06 Sep 2019 10:15:00 +0000
+	id 1i6BGy-0006ZM-Jk; Fri, 06 Sep 2019 10:15:20 +0000
 Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6BFr-0005tF-T8
+ id 1i6BFs-0005tM-L0
  for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:14:14 +0000
 Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
  by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
- 20190906101408euoutp010e8c52e12d494380c76c0c276c1d86f0~B0dLLDjTC0929309293euoutp01F
+ 20190906101409euoutp018976c11261580b41353c715dcda797a2~B0dL43fAO0918309183euoutp01e
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Sep 2019 10:14:08 +0000 (GMT)
+ Fri,  6 Sep 2019 10:14:09 +0000 (GMT)
 DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
- 20190906101408euoutp010e8c52e12d494380c76c0c276c1d86f0~B0dLLDjTC0929309293euoutp01F
+ 20190906101409euoutp018976c11261580b41353c715dcda797a2~B0dL43fAO0918309183euoutp01e
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1567764848;
- bh=Uy8PbI8Ay//0lPtuuye0Cr4E/yS+/gJgE62W7KlqB88=;
+ s=mail20170921; t=1567764849;
+ bh=OHYIHhGJeuiILvH2fW3MHBtLQfu9LguRK9+tcyvHP4c=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=CQCgygnXTSwu9J3NMtmTbRo5PQsMCHxALB/4rf5EbR3cPYDcbGzq3u3IuLNYfhve7
- 0OUnU4APEZlGmGHboMDn/4+r5qUxumXG6vPYZSGJPGBJit/prRsEgZqtpzJgGkJ15F
- kuZkheL+2siTQWH9x18a6ZB8y/rLI7gYD3XGems4=
-Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ b=NdPtgxNiZMP1AMJx/AbbQL+wxEl2+EPgvsKMjA9i2vERZsb5M9D20Wu8IoVlnhLDS
+ F0/1uxfvZ2jR00TYVHlNh3Z6RFFJHJeBh0XQmLBX95y+Wj2xK5om+KFrEdFJpqoOqW
+ ERw1fp0KAttIAFBKgAiuTPiZt10ulZm1KmZSR0eA=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
  eucas1p2.samsung.com (KnoxPortal) with ESMTP id
- 20190906101407eucas1p2f83ea12590aa7a81bd1367620314c2fa~B0dKKYx-J0426804268eucas1p2K;
+ 20190906101408eucas1p2caf15ca314d5e5d19d9fffb64873f487~B0dLFjkyq0165501655eucas1p2S;
+ Fri,  6 Sep 2019 10:14:08 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 05.C7.04469.071327D5; Fri,  6
+ Sep 2019 11:14:08 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6~B0dKEa8Lv0522205222eucas1p1v;
  Fri,  6 Sep 2019 10:14:07 +0000 (GMT)
-Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
- eusmges3new.samsung.com (EUCPMTA) with SMTP id 17.F8.04374.F61327D5; Fri,  6
- Sep 2019 11:14:07 +0100 (BST)
-Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
- eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
- 20190906101406eucas1p289695a398d757b116367257293c3544d~B0dJQJNPf0165101651eucas1p2V;
- Fri,  6 Sep 2019 10:14:06 +0000 (GMT)
-Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
- eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190906101406eusmtrp2bd76666accd9da1e19564368dabf7995~B0dJB4LdS3160331603eusmtrp2Q;
- Fri,  6 Sep 2019 10:14:06 +0000 (GMT)
-X-AuditID: cbfec7f5-4ddff70000001116-3e-5d72316f3170
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190906101407eusmtrp137eb26ab183ca80cb8352672348ab41e~B0dJ16fBx1272412724eusmtrp1e;
+ Fri,  6 Sep 2019 10:14:07 +0000 (GMT)
+X-AuditID: cbfec7f2-569ff70000001175-e9-5d723170a0e3
 Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
- eusmgms2.samsung.com (EUCPMTA) with SMTP id 5D.03.04117.E61327D5; Fri,  6
- Sep 2019 11:14:06 +0100 (BST)
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id AB.9E.04166.F61327D5; Fri,  6
+ Sep 2019 11:14:07 +0100 (BST)
 Received: from AMDC3778.DIGITAL.local (unknown [106.120.51.20]) by
  eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
- 20190906101405eusmtip1d3d6b902b9c7631ac6f5e54f2daa3811~B0dINg9fb0073200732eusmtip1v;
- Fri,  6 Sep 2019 10:14:05 +0000 (GMT)
+ 20190906101406eusmtip12f0d144656723f3a4441858294962e36~B0dJBndGY2707427074eusmtip19;
+ Fri,  6 Sep 2019 10:14:06 +0000 (GMT)
 From: Lukasz Luba <l.luba@partner.samsung.com>
 To: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-pm@vger.kernel.org, linux-samsung-soc@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
-Subject: [PATCH 2/3] ARM: dts: exynos: fix too long line in memory device
-Date: Fri,  6 Sep 2019 12:13:43 +0200
-Message-Id: <20190906101344.3535-3-l.luba@partner.samsung.com>
+Subject: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3 memories
+Date: Fri,  6 Sep 2019 12:13:44 +0200
+Message-Id: <20190906101344.3535-4-l.luba@partner.samsung.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190906101344.3535-1-l.luba@partner.samsung.com>
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFtrMKsWRmVeSWpSXmKPExsWy7djP87r5hkWxBm3XOCw2zljPanH9y3NW
- i/lHzrFa9D9+zWxx/vwGdouzTW/YLW41yFhsenyN1eLyrjlsFp97jzBazDi/j8li7ZG77BZL
- r19ksrjduILNonXvEXaLw2/aWS2+nXjE6CDosWbeGkaPnbPusntsWtXJ5rF5Sb3HwXd7mDz6
- tqxi9Pi8SS6APYrLJiU1J7MstUjfLoErY8eBy8wFz9kq9t5ZyNTAeJm1i5GTQ0LAROL7n/ts
- XYxcHEICKxgl3v//yALhfGGUuDn5PiuE85lRYsK7HcxdjBxgLR9XFUHElzNKrGrfzgrXsWd6
- IwtIEZuAnsSOVYUgK0QEFjNKfDscBWIzC2xjkuj9KgNiCwt4SrRfngB2BouAqsTKw0dZQGxe
- ATuJQ39Os0CcJy+xesMBZhCbU8BeYtL6qWDXSQgcY5e4+fY8O0SRi8SxvSA/gNjCEq+Ob4GK
- y0j83zmfCcIulmjoXcgIYddIPO6fC1VjLXH4+EVWkJuZBTQl1u/Shwg7Sux9+5IJ4l8+iRtv
- BSHO55OYtG06NBh4JTrahCCqNSS29FyAWiQmsXzNNKjhHhIvH9xjgoTOJEaJ9l+LmCYwys9C
- WLaAkXEVo3hqaXFuemqxcV5quV5xYm5xaV66XnJ+7iZGYFI6/e/41x2M+/4kHWIU4GBU4uEV
- +FIQK8SaWFZcmXuIUYKDWUmEd/1GoBBvSmJlVWpRfnxRaU5q8SFGaQ4WJXHeaoYH0UIC6Ykl
- qdmpqQWpRTBZJg5OqQbGaUdPOewUTBWUO3p2idMFVctc1YwdHuX3/9myv3kVIV3quzf6il27
- +BTz/b03jDf9u1H4+OnZs0VTZn9X/tr7wse+cNmWPXXzX5lpyFb2nmmdUmU3+d0L7yfB7M+5
- c2McZ+/aOyt015+wTw9vHLuVq7ci/kqPzdr1cn5Ns0/aZ92pKP6h3cMYrMRSnJFoqMVcVJwI
- APOi1dVGAwAA
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprGIsWRmVeSWpSXmKPExsVy+t/xu7p5hkWxBn+P8llsnLGe1eL6l+es
+X-Brightmail-Tracker: H4sIAAAAAAAAA0WSe1BMYRjGfXvO2XNqbL5Wo3cqmlmMW7qMy3yqcRmXOaNh9IcxI4ZVRzUq
+ 2zlFYVi5N8KsySWJblPWEqtpSC3VTiFsGIqtJnZMLiG2Iky0zuK/3/u8z/O977zzcZS6kvHj
+ ElPSBDFFm6RRetJVjYMPp+vCxLWhJUYvcvVUBUNa+7oZcs76kCFHHe8pYrNdYcmDrB6WvNAH
+ ELPjGUOeVOcriTPHisgpm0VBLlk7WFLa+khB7LvLlWRfrZUlDT0HGDJw5xWa782bCkyIv5HX
+ wfJm4yElf61kF1/3sUbBH6k0It5pHreCXe0ZGSckJW4RxJC56z0THPbvCl0RzqjtPEPpUb0q
+ G3lwgGeC/e1lRTby5NS4HEHXUBMjF30ITpi+UnLhRFBeWMT8jZSettJyowxBtsWA/kVM9qrh
+ CMcpcTBcN6a6Aj64GMFAw2oXU7hKATn9AS4ejaMhN7eOdTGNJ8I3cxHtYhWeC4PX3tDysEC4
+ eOU25WIPPA8MFbl/BgNuZKF4+GCyaRH02mxI5tHwrqmSlTkAmo8fdj8kgT6n0O3ZAY6jZ92e
+ CGhoesS4dqbwFKioDpHlBfArz6B0yYC9oO2Dt7y+FxiqTlKyrIKD+9WyezJUHm5RyDwGykwn
+ 3I/z0Hn/gvs6BgRDzU72GArM+z/sPEJG5CukS8nxghSWImwNlrTJUnpKfHDs5mQzGv5LzUNN
+ X66j/scb6hHmkGakCvfp1qoZ7RYpM7keAUdpfFQVV4clVZw2c5sgbl4npicJUj3y52iNr2r7
+ iK4YNY7XpgmbBEEniH+7Cs7DT492Wp5PwlGT21bdWzItfHz0Qj48RwwZFPljHpaMzsD27peO
+ 9vPSA1Xc0sHo3qJDWRuooHyNfmH14tabT6Occz6t9P/8FOtPtliCSuypNc7IH3V3dSHxt4wr
+ XtPFyxNnjNqIZsXEzI5MjU2K+Fm8rOB4C1kzNnSNcU/2bHrvBAOdF6yhpQRt2FRKlLS/AVO/
+ 2OdHAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFprBIsWRmVeSWpSXmKPExsVy+t/xu7r5hkWxBhMvsFhsnLGe1eL6l+es
  FvOPnGO16H/8mtni/PkN7BZnm96wW9xqkLHY9Pgaq8XlXXPYLD73HmG0mHF+H5PF2iN32S2W
  Xr/IZHG7cQWbReveI+wWh9+0s1p8O/GI0UHQY828NYweO2fdZffYtKqTzWPzknqPg+/2MHn0
  bVnF6PF5k1wAe5SeTVF+aUmqQkZ+cYmtUrShhZGeoaWFnpGJpZ6hsXmslZGpkr6dTUpqTmZZ
- apG+XYJexo4Dl5kLnrNV7L2zkKmB8TJrFyMHh4SAicTHVUVdjFwcQgJLGSWun2gBinMCxcUk
- Ju3bzg5hC0v8udbFBmILCXxilHg9twykl01AT2LHqkKQXhGB5YwSx1a9ZQZxmAWOMEn075oH
- NkhYwFOi/fIEMJtFQFVi5eGjLCA2r4CdxKE/p1kgFshLrN5wgBnE5hSwl5i0fioLxDI7iV1T
- OlkmMPItYGRYxSiSWlqcm55bbKRXnJhbXJqXrpecn7uJERgn24793LKDsetd8CFGAQ5GJR5e
- gS8FsUKsiWXFlbmHGCU4mJVEeNdvBArxpiRWVqUW5ccXleakFh9iNAU6aiKzlGhyPjCG80ri
- DU0NzS0sDc2NzY3NLJTEeTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MF5f3u893+KudFF+kofU
- W/a90vkR39wcjDSYRTLnZTMo1bGFXO0sunL+JdujWP81r9+vy//HZ7FmNvMDXdXNJ6WObpgg
- LZKw5W5Gj+rszz1pm9j7Gt7lCN99Kbz1SOt6Y/bilgefBKxX8nHWBMz4LCqQfPrSZP4jzDMX
- 7xb+cj3fYEufBye/lBJLcUaioRZzUXEiAEV82JepAgAA
-X-CMS-MailID: 20190906101406eucas1p289695a398d757b116367257293c3544d
+ apG+XYJexuPbv5gKFglU7L03m7mB8RBvFyMnh4SAicTSmUdYuhi5OIQEljJK7Jn8mQUiISYx
+ ad92dghbWOLPtS42iKJPjBI7pnQzdjFycLAJ6EnsWFUIEhcRWM4ocWzVW2YQh1ngCJNE/655
+ rCDdwgL+Elfm/WQGsVkEVCV+bFoEtoFXwE7i5+YXUNvkJVZvOABWwylgLzFp/VSwuBBQza4p
+ nSwTGPkWMDKsYhRJLS3OTc8tNtQrTswtLs1L10vOz93ECIyVbcd+bt7BeGlj8CFGAQ5GJR5e
+ gS8FsUKsiWXFlbmHGCU4mJVEeNdvBArxpiRWVqUW5ccXleakFh9iNAU6aiKzlGhyPjCO80ri
+ DU0NzS0sDc2NzY3NLJTEeTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MBZ2dDVv8wrpsbb03P79
+ molSXODx7mSrXvaSBtdDS94YZjyoCIzw/X9uZd++4K+LHH5uOfv8o+9j1rcZDudPrw9/U1yo
+ riL6fkXlra/b9oUoTngrJ2LC/WZmUHqI6PaP7zl6Xzi2lffdefcup1XX706Yz10vrdmeJa7f
+ 3u92LDaKuKc1T/TkQiWW4oxEQy3mouJEAAynBn+rAgAA
+X-CMS-MailID: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
 X-Msg-Generator: CA
-X-RootMTR: 20190906101406eucas1p289695a398d757b116367257293c3544d
+X-RootMTR: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
 X-EPHeader: CA
 CMS-TYPE: 201P
-X-CMS-RootMailID: 20190906101406eucas1p289695a398d757b116367257293c3544d
+X-CMS-RootMailID: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
 References: <20190906101344.3535-1-l.luba@partner.samsung.com>
- <CGME20190906101406eucas1p289695a398d757b116367257293c3544d@eucas1p2.samsung.com>
+ <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_031412_069728_F37CF6CE 
-X-CRM114-Status: GOOD (  12.32  )
+X-CRM114-CacheID: sfid-20190906_031412_818427_7B4E8CE0 
+X-CRM114-Status: GOOD (  12.34  )
 X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.1 points)
@@ -146,28 +146,64 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Small fix moving the comment to line above making sure the lines do not
-exceed 80 characters.
+Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+Minor fixes in the old documentation.
 
 Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
 ---
- arch/arm/boot/dts/exynos5422-odroid-core.dtsi | 3 ++-
- 1 file changed, 2 insertions(+), 1 deletion(-)
+ .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+ 1 file changed, 27 insertions(+), 2 deletions(-)
 
-diff --git a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-index fe885ca969af..059fa32d1a8f 100644
---- a/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-+++ b/arch/arm/boot/dts/exynos5422-odroid-core.dtsi
-@@ -103,7 +103,8 @@
+diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+index 3b2485b84b3f..de0905239767 100644
+--- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
++++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+@@ -40,10 +40,34 @@ Child nodes:
+   a given speed-bin. Please see Documentation/devicetree/
+   bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
  
- 		timings_samsung_K3QF2F20DB_800mhz: lpddr3-timings@800000000 {
- 			compatible	= "jedec,lpddr3-timings";
--			reg		= <800000000>; /* workaround: it shows max-freq */
-+			/* workaround: 'reg' shows max-freq */
-+			reg		= <800000000>;
- 			min-freq	= <100000000>;
- 			tRFC		= <65000>;
- 			tRRD		= <6000>;
++Samsung K3QF2F20DB LPDDR3 memory
++------------------------------------------------------------
++
++This binding uses the LPDDR3 binding (described above)
++
++Required properties:
++- compatible:	Should be:
++		"samsung,K3QF2F20DB"
++		followed by "jedec,lpddr3"
++- density  : <u32> representing density in Mb (Mega bits)
++- io-width : <u32> representing bus width. Possible value 32
++- #address-cells: Must be set to 1
++- #size-cells: Must be set to 0
++
++Optional properties:
++
++The optional properties are the same as in the LPDDR3 generic bindings and
++values should be taken from the data-sheet. Detailed bindings are described
++above.
++
++Child nodes:
++
++Detailed bindings are described in LPDDR3 generic bindings described above.
++
+ Example:
+ 
+ samsung_K3QF2F20DB: lpddr3 {
+-	compatible	= "Samsung,K3QF2F20DB", "jedec,lpddr3";
++	compatible	= "samsung,K3QF2F20DB", "jedec,lpddr3";
+ 	density		= <16384>;
+ 	io-width	= <32>;
+ 	#address-cells	= <1>;
+@@ -73,7 +97,8 @@ samsung_K3QF2F20DB: lpddr3 {
+ 
+ 	timings_samsung_K3QF2F20DB_800mhz: lpddr3-timings@800000000 {
+ 		compatible	= "jedec,lpddr3-timings";
+-		reg		= <800000000>; /* workaround: it shows max-freq */
++		/* workaround: 'reg' shows max-freq */
++		reg		= <800000000>;
+ 		min-freq	= <100000000>;
+ 		tRFC		= <65000>;
+ 		tRRD		= <6000>;
 -- 
 2.17.1
 
