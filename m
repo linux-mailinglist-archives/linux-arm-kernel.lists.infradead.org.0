@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CD67AB369
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 893BFAB368
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:42:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=Hry7E5sYqq6ztbiKKH3NTB/agejoJJ/R0t/AEYpXF1Y=; b=Ho5CCfnCIlDusFthMBw96HSiq2
-	IJX88JFtefHa4ebRsQiUjjKNuNNqOeHiWR5ryTk/O3f0kaNcFTfFno50R4IXlzpg+EJoPEzs9zGQh
-	t1XfVn0igroA1QJOji2iXcFfzrM+rTM7ZkO5Mzuph29vN/r936ydKHNBb1sERWR93p2c2g9cSv5rf
-	ktTp8hoM22XlgM+shkBZ1/D4irOYpj3qumt1jujCkit0lIDr106j6zhfzZl2AVEG9U2nv2/w4htOC
-	42l1/HyqjT257fOcJpfpeSctDMriiuRv1xejJ/OGLc6fOCnbKcySI1JrsbwpSxcnu7qRm7hufGig9
-	g/S9DEBw==;
+	bh=uRxXmdYMxLjLLdjjmpeizBOiaG2C7gQamOBaY3v0ye0=; b=LF5aLZuGjrDDjNE248p47+FIbE
+	8duiK7Ee/V1aqB6IFyKxIulYgi0tsDAqRN9+/+9sl40KQg7LCB1DwajurSFtpUH/YLf4taJQckDZN
+	8Q/QkB0+ih3Wqd4A39pDDY96iBL59NJV6gMUXCuve8hAZvfLYbZQxilquJgNiwNdgfxFZAVMcmztO
+	HZIOjUoJYsW0H7490hAxjGBOAsKwgH8l/9utgJT0JjNxKvKErDkABUtVsrcmKhxNCzSqHCChPBq1j
+	ASBzlfGw0tFz/m8Gkd/Awi3vBfsa1PK7g2XmX0jyVsYdmmhgVpqSOxy5Ka9VSNusj7KlgZtQRuNtp
+	kORjgCjQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i68t9-0006NS-L1; Fri, 06 Sep 2019 07:42:35 +0000
+	id 1i68ss-00069x-Pl; Fri, 06 Sep 2019 07:42:19 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i68s6-0005h2-Pp
+ id 1i68s6-0005h1-48
  for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:41:32 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 50F4AC0E3E;
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 47E3DC0E3D;
  Fri,  6 Sep 2019 07:41:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567755688; bh=5PThB8CbPp7CzMhqALHU7PGlPrATo2NWaeXFnvxIVn8=;
+ t=1567755688; bh=EBL9Jc4mlbrbWU2YRFXqsB+Tqzg4pzZ34sKsco1vIEQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=drvZ1NVfjP8S07HTglCD14IF98r7nF21bZy9Q7+7ipGQcVBY5gubVAMjK0yGX330n
- 3JXnT4RfjyfzDpBZ6o4X9wUF0q68w/W3dm1fVeMomjRC26jkU893lHRk9iYcpJ2ZzX
- o8j22eZNVJ5Xv8Lq3UPedq0dczXiYjtqhRUD7kybd+D8/CoHbYji9MO73O1zrDdvbq
- nSezPLPbgExNnMomZlzp5HSInq9ivBA5AVu1Jawa7lT93AVLWBp+KsNJrEZrbbVgGH
- XdRWC/Z/DRw50fbXtY3vvaWuupikLWfsVVbLdejC1AgWAr1EiretupAuPe6hSptzxH
- ukgdeVJtn5IbA==
+ b=awJF23K6k9+arQCYwI+jPTTiKkv2d8nThws2/sPR3Y/nm3WjIajWFCJz8xuvb/RJX
+ 3n1UMBse2Vhho1bpGAOIM7zGorF/99uTp6EthLOY467PhoG8P0e+di9VlUhIku4geT
+ pVxdTCSLjViSXlutMbpsW4NAiw02XMUEf4vpNGpO39Y4uosXn2YdOYMppVO7UGF9zQ
+ JiJ8pjgF4EBP0wp7FqhkJjRmF68lZZXr9c2+pqUNmW6Q9eAp17oRWDTrTdeoxaZ/oT
+ M7beHJfcBibNCxiRlmeRblQJkAPPZuh4gDsUU+Brl8cVF3wHVzVxAL6pmRYOlh/mY5
+ 3nbE+sr8nU3rQ==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id CDB44A0066;
+ by mailhost.synopsys.com (Postfix) with ESMTP id E359EA0069;
  Fri,  6 Sep 2019 07:41:26 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 3/5] net: stmmac: dwmac4: Enable RX Jumbo frame
- support
-Date: Fri,  6 Sep 2019 09:41:15 +0200
-Message-Id: <1eb3adcf838e92cffd2c4a6ef405fed0f3ac2b1e.1567755423.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 4/5] net: stmmac: selftests: Add Split Header test
+Date: Fri,  6 Sep 2019 09:41:16 +0200
+Message-Id: <b789f9f19115714646565c821e10f1a1e76a55c5.1567755423.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567755423.git.joabreu@synopsys.com>
 References: <cover.1567755423.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567755423.git.joabreu@synopsys.com>
 References: <cover.1567755423.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_004130_848450_79C1FAD7 
-X-CRM114-Status: GOOD (  13.16  )
+X-CRM114-CacheID: sfid-20190906_004130_174591_073D1469 
+X-CRM114-Status: GOOD (  13.05  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,8 +94,9 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-We are already doing it by default in the TX path so we can also enable
-Jumbo Frame support in the RX path independently of MTU value.
+Add a test to validate that Split Header feature is working correctly.
+It works by using the rececently introduced counter that increments each
+time a packet with split header is received.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -110,43 +110,68 @@ Cc: netdev@vger.kernel.org
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h      | 3 ++-
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 6 ------
- 2 files changed, 2 insertions(+), 7 deletions(-)
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 42 ++++++++++++++++++++++
+ 1 file changed, 42 insertions(+)
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-index 2ed11a581d80..03301ffc0391 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-@@ -352,7 +352,8 @@ enum power_event {
+diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+index 2943943bec43..c56e89e1ae56 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
++++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
+@@ -1603,6 +1603,44 @@ static int stmmac_test_mjumbo(struct stmmac_priv *priv)
+ 	return 0;
+ }
  
- /* Default operating mode of the MAC */
- #define GMAC_CORE_INIT (GMAC_CONFIG_JD | GMAC_CONFIG_PS | \
--			GMAC_CONFIG_BE | GMAC_CONFIG_DCRS)
-+			GMAC_CONFIG_BE | GMAC_CONFIG_DCRS | \
-+			GMAC_CONFIG_JE)
- 
- /* To dump the core regs excluding  the Address Registers */
- #define	GMAC_REG_NUM	132
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index fc9954e4a772..596311a80d1c 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -25,15 +25,9 @@ static void dwmac4_core_init(struct mac_device_info *hw,
- {
- 	void __iomem *ioaddr = hw->pcsr;
- 	u32 value = readl(ioaddr + GMAC_CONFIG);
--	int mtu = dev->mtu;
- 
- 	value |= GMAC_CORE_INIT;
- 
--	if (mtu > 1500)
--		value |= GMAC_CONFIG_2K;
--	if (mtu > 2000)
--		value |= GMAC_CONFIG_JE;
--
- 	if (hw->ps) {
- 		value |= GMAC_CONFIG_TE;
++static int stmmac_test_sph(struct stmmac_priv *priv)
++{
++	unsigned long cnt_end, cnt_start = priv->xstats.rx_split_hdr_pkt_n;
++	struct stmmac_packet_attrs attr = { };
++	int ret;
++
++	if (!priv->sph)
++		return -EOPNOTSUPP;
++
++	/* Check for UDP first */
++	attr.dst = priv->dev->dev_addr;
++	attr.tcp = false;
++
++	ret = __stmmac_test_loopback(priv, &attr);
++	if (ret)
++		return ret;
++
++	cnt_end = priv->xstats.rx_split_hdr_pkt_n;
++	if (cnt_end <= cnt_start)
++		return -EINVAL;
++
++	/* Check for TCP now */
++	cnt_start = cnt_end;
++
++	attr.dst = priv->dev->dev_addr;
++	attr.tcp = true;
++
++	ret = __stmmac_test_loopback(priv, &attr);
++	if (ret)
++		return ret;
++
++	cnt_end = priv->xstats.rx_split_hdr_pkt_n;
++	if (cnt_end <= cnt_start)
++		return -EINVAL;
++
++	return 0;
++}
++
+ #define STMMAC_LOOPBACK_NONE	0
+ #define STMMAC_LOOPBACK_MAC	1
+ #define STMMAC_LOOPBACK_PHY	2
+@@ -1724,6 +1762,10 @@ static const struct stmmac_test {
+ 		.name = "Multichannel Jumbo  ",
+ 		.lb = STMMAC_LOOPBACK_PHY,
+ 		.fn = stmmac_test_mjumbo,
++	}, {
++		.name = "Split Header        ",
++		.lb = STMMAC_LOOPBACK_PHY,
++		.fn = stmmac_test_sph,
+ 	},
+ };
  
 -- 
 2.7.4
