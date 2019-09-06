@@ -2,78 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BB301ABCC9
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:42:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BE163ABCD4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:44:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tH/5VH4zhHKVxBPHFF/cxfyGXYl7eiFw4O5yv8nHZnI=; b=hX6iRqfk+Les6L
-	JSuum04Ct2JnTIJwyxl58pnXfE8SeQs2+OaHKeosdCaY9uXueaGVQI/7JL1spqIuJQO4f0lNvSQJk
-	Y+Ntbbn5CbWu5Qb5HxcDtTVyAAHhx2MpxfXdGBRKnAOi8l7hpV/EMKduiiTRNZrllvROIwt+bGJCz
-	/TESsQQRJQjYtlynGrbieNV3J8JGKIULMcvguDMc9AEhxO+uhSVhQyu1X4lJVdk9AdsE/O0SbG5v4
-	iwsypC63Va4gX3r0EBGWHkB9AmL7uQlQxR745R+jP+hVm45RGPAB6tYpSiMTnbLAA4bjyVAV3sTSr
-	WNxTC8yzRK9UYtcJG1JA==;
+	List-Owner; bh=1EyVboBKzFN8L6LVwPiaI+KjgYoELOWN7OFxKcAaxqc=; b=ekSxs9tvrSAkDF
+	w7gIDihtJnD28Ae/81yuT46XielANIbA4HQ/Ki6s/9RLnVYwUVD92QwL1b1IQK3TluoCfDuQuFpnd
+	1IvJZVKNm3GRcExnclUFjc7nhYAbY4nl8UKkwwRfCJVcq98p/LwwsNtaOa9VS8F6KM7qsbWVLBrRc
+	2C4CutC8BION0xgAY0ogeMPeRMGSC0MpUhcUYJ1CR+6jiMKKs0B03eG1o5t33Qxa6C2kIaqnJnrs3
+	zr7YCy/tg44yq5l9MekNFYWrIYHj5xsVBUfbsbLmTDyud7oLBTxTyvaUYo2ZO39nHnm0ikW5py7Ev
+	atOf9GbELCXvmluFEa6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6GNR-0007FE-RB; Fri, 06 Sep 2019 15:42:21 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i6GPZ-0007bC-Mh; Fri, 06 Sep 2019 15:44:33 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6GNE-00074u-9H
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:42:09 +0000
-Received: by mail-ed1-x544.google.com with SMTP id y91so6674284ede.9
+ id 1i6GPP-0007aY-1e
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:44:24 +0000
+Received: by mail-ed1-x542.google.com with SMTP id f2so346460edw.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 08:42:08 -0700 (PDT)
+ Fri, 06 Sep 2019 08:44:22 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=a7CpqJIrowSUHG+Dch68wvi3kLH0yuCv0IJ23idpZx0=;
- b=YXvpaoqMtouskhiUthoVXPDwKUE0Kz84re4KCST1uCTAdZjSEPNsCxH3wZatPhfpAw
- CglvxirjKsFI5Yaogq+8Ur9COKORkUDCdZBoiH2khsNLfib9n6ch/6NaZBqtk841aAnl
- ozo71ho8eyrOMjQ8i2QLUDxeMChNm4iPTNqqGriW7BgshzdhNnDzVrR9LB77Vlua9nQa
- fSy1556Hyav/y2lp862IG9hXSaRGsJvWVxnFEpaev+aNCrLuZV8Oi+N9IY/txQmMvXPy
- ncjCg4DJh1LDJlanwQwRvadO7ctDS66Q74Yg250aQFjMHJ5ZldxRx3JoU2pkerbWZTki
- DhlA==
+ :cc; bh=UXzffckHlrDd2GxMkcUegpxPLxQbezYI5SKZXnOnJzk=;
+ b=GOMgzAf/lkF5c2eKwXgjCw9a3KXnWR5APRE7h0mk6NdXu79AGiO8sODfHid9N6Xl5h
+ M/C8KT/SLLU5H1Aqg4nwEKOuTu5OkbyrUQJTErU8uVcm673iUBJEH32XMXPStUacK9QI
+ xCMSuQrJe1j8CHQBTWz9PB+Jomp1+g+QD9Tkd9KMYHmJWFzG5xyCzw8xyfNgbLXZwkrs
+ 5FlS9o5FS4p8okYBPzuG2ITgzJGemxFxUkm3aSbDG/x0MDmUmazIm6dOMXX9j66GMFk+
+ 3cLHZkaYpm/muQI+jLdcObCu1m/ydijbn1wGNoRDjuAv/Fx5CRGdTNnFLVIVNVPLSSN2
+ qWrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=a7CpqJIrowSUHG+Dch68wvi3kLH0yuCv0IJ23idpZx0=;
- b=cfl5CNA+850U+u6k0potUWA0ro2Ey5+ICs2HGdVQ0O7/PpiVw9jeixSLXmlI+ygH31
- bprs2ffAksFYKTCl/YOD08pJwXbZL+0MBYvlb8ovyHZaYH+HJjYEzaQ6pumWW/fD1AMt
- 4462PIyrzE4AuKbtvL1s7PpqfgX4cM+LMvoOnCHpffXDZl40ntzmMR+IsyZp/eDb2FAx
- RPoKm4PMC0smZBW7kBeFkhC3AqM9Bzotx3e5ooHkye59Txeeebt6HNhg96FxcDlMquAJ
- /qgSLpkZWR9YJCapOZquHi/q66I1EWaMQ0Akdshzh80w8+fW34c0Q9Npv09PCbzkOvs9
- 9G6Q==
-X-Gm-Message-State: APjAAAXwKNpEh6CXJzHwrQ0dIL3USef19effoktwFmJIN0mwXst96w8s
- v3U5NwMm9MctsdWFcoJ1SSIDCboVytGwWOUkNOfkCg7T
-X-Google-Smtp-Source: APXvYqxdjX49MkF9aNw2e1jsftF5aJXCE4yDWZCKUgUZ6wavoi1VTf853eLT2XTzHK8gYqwDuQeOUszbmnukR+qEv0k=
-X-Received: by 2002:a05:6402:17ae:: with SMTP id
- j14mr10239541edy.219.1567784527097; 
- Fri, 06 Sep 2019 08:42:07 -0700 (PDT)
+ bh=UXzffckHlrDd2GxMkcUegpxPLxQbezYI5SKZXnOnJzk=;
+ b=dc6lPBBz75s1Kt5cxf7GlPaa/QYwb2nSYrY6hciWHeFntUNwwIsFJcDiF+hUWHt/DV
+ VuK+q5VrrWdWCBE9QnjFcLNmxrsRElasf02gCy26psB64jJMVddbhFI/awWEPCvu1uR3
+ do5rA/zfY5Gm9BUXM8Bt04k3iSVBf8OBi7D054jQi8qZ4PCr0Pt0tCkwJbySM6CUsdti
+ N8jKUirmqsrAgqjeTPZUy/HPc3DIsF8k8Qb5PUD9g11UA9vUNTiCbIZyy8IN2pZck3wU
+ KAn7R2zbsc08JnF6HsDwpZ1CC0sQiAt9psM6Lb1r1pNOLCtIxkfkmcqLWtXTRKGco399
+ Jwug==
+X-Gm-Message-State: APjAAAWSJsJOuCGJqS3p4jmE5782MmqAL12MQfARN/UEocA+rTPv7lHa
+ lZpaM32vr+I3GnF0IiB2rJqs02S3r5lnMyfoTzZHhQ==
+X-Google-Smtp-Source: APXvYqwplMA0AW8lXkCWQuG9K8cCsGpwcuOwcj3r1h53xYTkZkNhYGGnMNAxboAR+e2euONipoiDRfZvyN8jJZQFWsM=
+X-Received: by 2002:a17:906:f04:: with SMTP id
+ z4mr8127839eji.209.1567784661783; 
+ Fri, 06 Sep 2019 08:44:21 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-4-pasha.tatashin@soleen.com>
- <99aba737-a959-e352-74d8-a2aff3ae5a88@arm.com>
-In-Reply-To: <99aba737-a959-e352-74d8-a2aff3ae5a88@arm.com>
+ <20190821183204.23576-6-pasha.tatashin@soleen.com>
+ <ddd81093-89fc-5146-0b33-ad3bd9a1c10c@arm.com>
+In-Reply-To: <ddd81093-89fc-5146-0b33-ad3bd9a1c10c@arm.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Fri, 6 Sep 2019 11:41:56 -0400
-Message-ID: <CA+CK2bDj18EkjznFg7rbSSEtDDRpTioyrWfu+EWChH=8zktrNw@mail.gmail.com>
-Subject: Re: [PATCH v3 03/17] arm64,
- hibernate: remove gotos in create_safe_exec_page
+Date: Fri, 6 Sep 2019 11:44:10 -0400
+Message-ID: <CA+CK2bBXfa0MFspOpWAGL4Q7iYH9UMdKAwMD-PyL7Wp4s64x+Q@mail.gmail.com>
+Subject: Re: [PATCH v3 05/17] arm64, hibernate: check pgd table allocation
 To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_084208_334046_52AF1886 
-X-CRM114-Status: UNSURE (   8.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190906_084423_084027_237B9FCC 
+X-CRM114-Status: GOOD (  18.37  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -114,14 +112,36 @@ On Fri, Sep 6, 2019 at 11:17 AM James Morse <james.morse@arm.com> wrote:
 > Hi Pavel,
 >
 > On 21/08/2019 19:31, Pavel Tatashin wrote:
-> > Usually, gotos are used to handle cleanup after exception, but
-> > in case of create_safe_exec_page there are no clean-ups. So,
-> > simply return the errors directly.
+> > There is a bug in create_safe_exec_page(), when page table is allocated
+> > it is not checked that table is allocated successfully:
+> >
+> > But it is dereferenced in: pgd_none(READ_ONCE(*pgdp)).
 >
-> Reviewed-by: James Morse <james.morse@arm.com>
+> If there is a bug, it shouldn't be fixed part way through a series. This makes it
+> difficult to backport the fix.
+>
+> Please split this out as an independent patch with a 'Fixes:' tag for the commit that
+> introduced the bug.
+>
+>
+> > Another issue,
+>
+> So this patch does two things? That is rarely a good idea. Again, this makes it difficult
+> to backport the fix.
+>
+>
+> > is that phys_to_ttbr() uses an offset in page table instead
+> > of pgd directly.
+>
+> If you were going to reuse this, that would be a bug. But because the only page that is
+> being mapped, is mapped to PAGE_SIZE, all the top bits will be 0. The offset calls are
+> boiler-plate. It doesn't look intentional, but its harmless.
 
-Thank you.
+Yes, it is harmless otherwise the code would not work. But it is
+confusing to read, and looks broken. I will separate this change as
+two patches as you suggested.
 
+Thank you,
 Pasha
 
 _______________________________________________
