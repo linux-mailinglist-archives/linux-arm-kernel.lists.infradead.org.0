@@ -2,109 +2,128 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1F1E0AAFFB
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:04:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 54268AB002
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:07:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I95nPjLKK54X4JtuBwctj5fWyJctRYgWenV+wrPb7fE=; b=pKXpZnvv/OQDZO
-	UspKAiAo8bM0VfXn8bddurzuqjtkBhuLXTkaf3HugVTVm4Rk1s84ZkNmYY/AAvbG+jEf8UTaouXOW
-	GyL1zSHrJP7mPRVIJB+iXJgzn4RJbX3y0JPpjIVl96lahVZhdODlZ1JkYXviInACjc2mHO/UI4M/e
-	QdRCoDJyPU5+Iyr4dmzXgemfp1Fe4dwEC79bRkG0vJM9Xqp+dv7bM0dglX34AwCC1py81/Mnf5gSJ
-	m7NVvLQUQFHCyY7LOYpiG7ok0jJnTNwdJuV9N7uKDxgHU8dazu/xD1kYysuVNy7dfUzDChsKJAuRp
-	IopFTF/VQgAIbHfyhpSA==;
+	List-Owner; bh=mtAepC8tvioq8I2cxoKP2RmoOAykkfh/E+fkVRf84sU=; b=HEN2luTX6OFkBL
+	ziVBHjENHrEwETzsPVdAIUxOQhu1s4PoNs8bifdWz3rg7EoMRYHV3fFL1IP2I0ByGBAQFN18uHslC
+	DPSjlucbjB/hrdFGMe+PXlIHfjXAxgHseHL3cKACVBRtRTsRIcrljC4AIi8jrn/kNMDCoDhNnxt9f
+	aPPcSMXlPVvjug2WddedTmR6uiTp2cZTmfoUWcVU4cwmXZrWdpx6AN/1I0pLmU2ntsEKVruYBwJa1
+	AUxWwd9o/Pzb1+AAjgrvYPcfj3NDcWJ74nJ3lx9QB0jroGYSweUb6zedAYJlJ+IeCEzERpC8X84SN
+	KQQ22fXAYYu4+WyCV+fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i62fh-000564-LN; Fri, 06 Sep 2019 01:04:17 +0000
-Received: from mail-eopbgr140047.outbound.protection.outlook.com
- ([40.107.14.47] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
+	id 1i62iB-0006bu-Nc; Fri, 06 Sep 2019 01:06:51 +0000
+Received: from mailout4.samsung.com ([203.254.224.34])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i62fa-00055Z-8i
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 01:04:12 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=lAPn13ZKT43ynf5J9FLWBpnfCYgvfMPLSwend5fooxmshlY5tWvbizg6YNagS0asJxxO8EqMCvX2mX0yWS6uagx7V1KL2WZ3YCapPZuvvw8PBuhsgX2dzfoS8kVDvETWRrJocw16a4Evecz6uKkv+RI8x36S6mfKT33K9fAVW5puouOpfKc0c7EApLOd8c1dQjwo5KTmwnb/qVRSmyiQvGq4gxc+RJ7VlUrEZMd1C2cmc9wda4nBcSIojviYoviwk3BRRySUXn/DNiT4B56CZgsv+kU7fui2xSe1aMlQE5nM0uOJFhVu1i7Ne5jL8mp235Awh0avyy2GRiwH6h0nHQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=udYJCCRSp7KblBxA7rBcq2S46lq18WDU8pY8F6vN3lw=;
- b=THFg8m8Zd/2VZ+hk5CcZuBEFxFvJhTA+nb6dq9cgxy4FG+0V/LMq8YMgrBmD1rq6qXvM9KPbjH4zvasyaOZVg54yuyyCP2qJZ1A/b8Zy2LwLppoD9+rrtUME7KfOTj/3TCPXcx0qndUh8yjO8/iNAnGMF94MXDw77CHucTjfJk+b1DI3fslrdlul3xp9QNg26efZB/9QE2LNrpbkC4qkWtP0rGBAi6KpCZGgVNOhLmMSWgtzu4ooGSnLEF+HkosnTNKRe9xGOvuZcHVCQldD+y+vT3YvzETVShyeIpl35cnOUL+/PT3ogsLNFU/PBUbmUoEziNheKKfmhdVaVLUhVQ==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=udYJCCRSp7KblBxA7rBcq2S46lq18WDU8pY8F6vN3lw=;
- b=j0GsJfC+KTGrvSg9T7ocjOxxOT/55jOMW7XLX+L8F59rvKJ4kgt5A9VV+gyIB1ktCOKO/Ty9bgC5KizcvE5jNiEdKL2Rig7hXaNz/P59CzhlpzrSelcxV6gHg99iWVMrUUOME1IvGs/EURbZoeDWYuKclVKsaS6/QqnRzstoltE=
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
- DB3PR0402MB3817.eurprd04.prod.outlook.com (52.134.73.14) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2199.21; Fri, 6 Sep 2019 01:03:58 +0000
-Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
- ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2199.027; Fri, 6 Sep 2019
- 01:03:58 +0000
-From: Anson Huang <anson.huang@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Abel Vesa <abel.vesa@nxp.com>, 
- Jacky Bai <ping.bai@nxp.com>
-Subject: RE: [PATCH 1/2] clk: imx8mm: Move 1443X/1416X PLL clock structure to
- common place
-Thread-Topic: [PATCH 1/2] clk: imx8mm: Move 1443X/1416X PLL clock structure to
- common place
-Thread-Index: AQHVY9CbkBSOjf4lJEuj9oVFkY5eUacd1VTg
-Date: Fri, 6 Sep 2019 01:03:58 +0000
-Message-ID: <DB3PR0402MB3916535DC3A2F539326A43E8F5BA0@DB3PR0402MB3916.eurprd04.prod.outlook.com>
-References: <1567720699-23514-1-git-send-email-Anson.Huang@nxp.com>
- <VI1PR04MB7023460FBB9FB8D034ECC2A1EEBB0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-In-Reply-To: <VI1PR04MB7023460FBB9FB8D034ECC2A1EEBB0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=anson.huang@nxp.com; 
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 2896bf8c-9871-4dd8-4c7e-08d73266190f
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB3PR0402MB3817; 
-x-ms-traffictypediagnostic: DB3PR0402MB3817:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB3PR0402MB38175D7E8420B0904663FA19F5BA0@DB3PR0402MB3817.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6790;
-x-forefront-prvs: 0152EBA40F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(346002)(376002)(136003)(366004)(39860400002)(396003)(189003)(199004)(14454004)(2906002)(86362001)(256004)(25786009)(6246003)(52536014)(5660300002)(53936002)(9686003)(66066001)(55016002)(102836004)(99286004)(26005)(478600001)(186003)(76176011)(4326008)(71190400001)(6506007)(53546011)(7696005)(76116006)(71200400001)(6116002)(11346002)(305945005)(486006)(476003)(3846002)(446003)(6436002)(316002)(66476007)(66556008)(8676002)(44832011)(74316002)(7736002)(54906003)(110136005)(64756008)(66446008)(229853002)(7416002)(66946007)(6636002)(33656002)(8936002)(81156014)(81166006)(32563001);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3817;
- H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: XBWQ0nBRDytHkcByASpGqByEpFSeQDeXblgC4TK+/f0X9sChYXvnUAA1J5sg3a8viyc9ZyAYrszlE6tx+LTmEZ+igUDStTarSyWxME4v3YJV4bwCkNm8BdZjUb8dlooWs5UyuLF5a0AgKLGS9WYN8cJZwdL44KvuTrZBuLOjeTssxXhDhvga6ao1YuSg8SFebjTshY7M9toqHM2bUKA4KUzDLCUs/4U1elR7q/+4QX1AE/ig5JflXPofpv4ews3jYyJbSHZBedU1bZtPaGbvhG+T8QkX2fGrzdToaVdOIBdXCyCQt58MWFMxzzsTni9lHDgD54KErKrJMg9he+GxGF9fgHBFEf2ONFTzLlRPfeEnOZHwSzV8DZzh1rimgbXIcZ5JzS2ObIempbQFtEwGx2bGIGvbHyq5MwCHHyXjx5U=
+ id 1i62i3-0006ap-6Q
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 01:06:45 +0000
+Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
+ by mailout4.samsung.com (KnoxPortal) with ESMTP id
+ 20190906010638epoutp04dfa9b99b40e8515a1fd3f71292f28dd3~Bs-JheY340890208902epoutp04h
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  6 Sep 2019 01:06:38 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout4.samsung.com
+ 20190906010638epoutp04dfa9b99b40e8515a1fd3f71292f28dd3~Bs-JheY340890208902epoutp04h
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1567731998;
+ bh=zuqhj21YLwUOhSeDZ220Srd0Xcb66OLWNXrDTjNiHss=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=EOS/0AKeqroYNexlaLnwnGNthBKyZNn4ReOxWejJsb3CU0bEbSne9bV//pRQS31Vu
+ 2gaedf9YwKgxHl4PnHRr3Q2+i7aQfrP/IF3sSQVGtLUiH06sSbxqEhP5nYH0u5BksQ
+ 0x2OEismq6EvXTk5MJ8kD1Lomj5tHKBoUx3kh1t0=
+Received: from epsnrtp3.localdomain (unknown [182.195.42.164]) by
+ epcas1p3.samsung.com (KnoxPortal) with ESMTP id
+ 20190906010638epcas1p3542009440ef239ab8bfbc7d3bd34f32d~Bs-I-w22k2945529455epcas1p3N;
+ Fri,  6 Sep 2019 01:06:38 +0000 (GMT)
+Received: from epsmges1p5.samsung.com (unknown [182.195.40.152]) by
+ epsnrtp3.localdomain (Postfix) with ESMTP id 46PfXB4jHCzMqYkc; Fri,  6 Sep
+ 2019 01:06:34 +0000 (GMT)
+Received: from epcas1p1.samsung.com ( [182.195.41.45]) by
+ epsmges1p5.samsung.com (Symantec Messaging Gateway) with SMTP id
+ 84.3F.04085.A11B17D5; Fri,  6 Sep 2019 10:06:34 +0900 (KST)
+Received: from epsmtrp1.samsung.com (unknown [182.195.40.13]) by
+ epcas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190906010633epcas1p1a4c677f5c78377674c83f404a80076eb~Bs-E1NtM_0904609046epcas1p1J;
+ Fri,  6 Sep 2019 01:06:33 +0000 (GMT)
+Received: from epsmgms1p2new.samsung.com (unknown [182.195.42.42]) by
+ epsmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190906010633epsmtrp14cad7057212e6288d16c817a36b00523~Bs-E0grel2861228612epsmtrp1V;
+ Fri,  6 Sep 2019 01:06:33 +0000 (GMT)
+X-AuditID: b6c32a39-d03ff70000000ff5-5b-5d71b11a402a
+Received: from epsmtip1.samsung.com ( [182.195.34.30]) by
+ epsmgms1p2new.samsung.com (Symantec Messaging Gateway) with SMTP id
+ E7.5E.03638.911B17D5; Fri,  6 Sep 2019 10:06:33 +0900 (KST)
+Received: from [10.113.221.102] (unknown [10.113.221.102]) by
+ epsmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190906010633epsmtip1e0a7f2ad301ad6db990f26db9a762290~Bs-ErLoBx3003430034epsmtip1G;
+ Fri,  6 Sep 2019 01:06:33 +0000 (GMT)
+Subject: Re: [PATCH v3 2/2] ARM: exynos: Enable support for ARM architected
+ timers
+To: Marek Szyprowski <m.szyprowski@samsung.com>,
+ linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+From: Chanwoo Choi <cw00.choi@samsung.com>
+Organization: Samsung Electronics
+Message-ID: <ee7945aa-d668-6017-8aec-7f377f3951fb@samsung.com>
+Date: Fri, 6 Sep 2019 10:10:42 +0900
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 2896bf8c-9871-4dd8-4c7e-08d73266190f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Sep 2019 01:03:58.3711 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: DWNFuzRYvTvxwqcju8oJPNg/gNT17gwwefXS0YdJDoplv3RE6GyfvkwRPklvI1bk/USRd9VxZq5MJpNewBP6nw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3817
+In-Reply-To: <20190828121005.29368-3-m.szyprowski@samsung.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01Sf0yMYRz33N373ltzPK7St5sf581smqt75XgzGdO4YWpkqLW8q3dX6368
+ 7r0zMpNlUSyOzXLIb02WlDQhRxFlExEWVsRWGJOQGN67N/Tf5/v9fj7fz/N5nodSag+SOirb
+ 7uKdds5Kk8Gq2sapBoOual2acU97GFtVUkmwra3n1Wx192OCLWm9pmArbr5Qs3WHmol5pLm6
+ vJA0Xzi5xVxcU47Mn6snJKlScuZk8Vwm79Tz9gxHZrbdEk8vWZG+IN0008gYmDh2Fq23czY+
+ nk5YmmRYmG2VvGn9es7qllpJnCjSMXPnOB1uF6/PcoiueJoXMq1CnBAtcjbRbbdEZzhssxmj
+ cbpJIq7Nyerd/10p7KU27HtZochDHWQRCqIAz4DKPI+qCAVTWnwJwbtiLyEXfQjyS7ep5eIr
+ grNt/f8kZQd2KeRBPYK7hbcU/oEWf0QwcCXRj0NwMlztH1T7cSjOheLrg0q/QInzEJTtvEb4
+ BySOAl/P08DW0XgStA90Iz/W4Lnw6mVFQKzCkyF/4HzAIAyvhr6uRkLmjIHmA69Vfhwk8fs8
+ nYE9ShwOHa+PKGQ8EfIvHgwYA+4kwXOnVCFHSIBv7wcJGYfA29s1ahnroHd3wRDeBGeab5Ky
+ eAeCGt/9IUEs+E7tkxZRksNUqLwcI7cnQd2Pw0g2HgUfvuwi/BTAGthRoJUpkfCw68XQESLg
+ xPZCcg+ivcPieIdF8A6L4P1vdhSpytFYXhBtFl5kBNPw565GgY8ZFXcJNd1b2oAwheiRGtwv
+ pGkJbr240daAgFLSoZrKKqmlyeQ25vJOR7rTbeXFBmSSbtuj1IVlOKRvbnelM6bpsbGx7Axm
+ polh6HDNsQE2TYstnIvP4XmBd/7VKaggXR7K74loJPsiUlua9j8xd9O/5ieWtG2vq73hsQlb
+ W5pvLaqvorN9fHHrg+T2zbXjPo18Pq00uMe12OdesyUhd+LPO5tWjl8VU/ZJUBWsnWLMYQ3L
+ jdHQkhuMIj1vmPfhPzrbHoWesf6enJJccfxZxwiLuvFBb9Gyw132uJrU0+ea9Bm0SszimCil
+ U+T+APD5R6GuAwAA
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmpjkeLIzCtJLcpLzFFi42LZdlhJTldyY2GsweZ3+hYbZ6xntTh/fgO7
+ xabH11gtZpzfx2Sx9shddoudc06yOrB5bFrVyeaxeUm9R9+WVYwenzfJBbBEcdmkpOZklqUW
+ 6dslcGW8nPaTuWASR8Xkh2uZGhhvsXUxcnJICJhILJ/Zw9TFyMUhJLCbUWLNtY/sEAlJiWkX
+ jzJ3MXIA2cIShw8XQ9S8ZZT4++UgE0iNsECIxJ4vv8DqRQSqgGq2soEUMQs0MUrsOvQRaupR
+ RompB+aAVbEJaEnsf3EDbDW/gKLE1R+PGUFsXgE7iUcP14LVsAioSDT/2AC2QVQgQuLwjllQ
+ NYISJ2c+YQGxOYHqP028DzaHWUBd4s+8S8wQtrjErSfzmSBseYnmrbOZJzAKz0LSPgtJyywk
+ LbOQtCxgZFnFKJlaUJybnltsWGCUl1quV5yYW1yal66XnJ+7iREcO1paOxhPnIg/xCjAwajE
+ wyvwpSBWiDWxrLgy9xCjBAezkgjv+o1AId6UxMqq1KL8+KLSnNTiQ4zSHCxK4rzy+ccihQTS
+ E0tSs1NTC1KLYLJMHJxSDYyzpiqLOL25+z/w7ZR5XqHzKx7O7Vv/MTpu1anrt0OWXt3xsVXQ
+ RPpwIwdb9qIJKz7G3lIWvyfbn7HFeOq9b/sf3LmxskrCv7x5CuOk1ifPcrYa7xG+o3xyZ/3D
+ nBRfDec9/VvSlD+4Kq5REzzCtMaDq2jiStOMk8Kz78Ru16uL1roymXkCW1W0EktxRqKhFnNR
+ cSIAq3bH4JkCAAA=
+X-CMS-MailID: 20190906010633epcas1p1a4c677f5c78377674c83f404a80076eb
+X-Msg-Generator: CA
+X-Sendblock-Type: SVC_REQ_APPROVE
+CMS-TYPE: 101P
+DLP-Filter: Pass
+X-CFilter-Loop: Reflected
+X-CMS-RootMailID: 20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2
+References: <20190828121005.29368-1-m.szyprowski@samsung.com>
+ <CGME20190828121012eucas1p2fb78bfebe16d744dc28194bb224650e2@eucas1p2.samsung.com>
+ <20190828121005.29368-3-m.szyprowski@samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_180410_313649_47EA19EB 
-X-CRM114-Status: GOOD (  15.26  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190905_180643_752289_8A5A295F 
+X-CRM114-Status: GOOD (  18.52  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.14.47 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [203.254.224.34 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -114,6 +133,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,82 +145,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, "S.j. Wang" <shengjiu.wang@nxp.com>,
- Peng Fan <peng.fan@nxp.com>, "sfr@canb.auug.org.au" <sfr@canb.auug.org.au>,
- "sboyd@kernel.org" <sboyd@kernel.org>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- Fancy Fang <chen.fang@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "l.stach@pengutronix.de" <l.stach@pengutronix.de>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
+ Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Leonard
-
-> On 05.09.2019 12:59, Anson Huang wrote:
-> > Many i.MX8M SoCs use same 1443X/1416X PLL, such as i.MX8MM,
-> i.MX8MN
-> > and later i.MX8M SoCs, moving these PLL definitions to common place
-> > can save a lot of duplicated code on each platform.
-> 
-> There are lots of similarities between imx8m clocks, do you plan to do
-> combine them further?
-
-I will consider it later, maybe we can create a new clock file named clk-imx8m.c
-as common clock for i.MX8M SoCs which are similar.
-
-> 
-> > Meanwhile, no need to define PLL clock structure for every module
-> > which uses same type of PLL, e.g., audio/video/dram use 1443X PLL,
-> > arm/gpu/vpu/sys use 1416X PLL, define 2 PLL clock structure for each
-> > group is enough.
-> 
-> > diff --git a/drivers/clk/imx/clk.c b/drivers/clk/imx/clk.c
-> 
-> > +const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
-> > +	PLL_1416X_RATE(1800000000U, 225, 3, 0),
-> > +	PLL_1416X_RATE(1600000000U, 200, 3, 0),
-> > +	PLL_1416X_RATE(1200000000U, 300, 3, 1),
-> > +	PLL_1416X_RATE(1000000000U, 250, 3, 1),
-> > +	PLL_1416X_RATE(800000000U,  200, 3, 1),
-> > +	PLL_1416X_RATE(750000000U,  250, 2, 2),
-> > +	PLL_1416X_RATE(700000000U,  350, 3, 2),
-> > +	PLL_1416X_RATE(600000000U,  300, 3, 2), };
-> > +
-> > +const struct imx_pll14xx_rate_table imx_pll1443x_tbl[] = {
-> > +	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
-> > +	PLL_1443X_RATE(594000000U, 198, 2, 2, 0),
-> > +	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
-> > +	PLL_1443X_RATE(361267200U, 361, 3, 3, 17511), };
-> > +
-> > +struct imx_pll14xx_clk imx_1443x_pll = {
-> > +	.type = PLL_1443X,
-> > +	.rate_table = imx_pll1443x_tbl,
-> > +	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl), };
-> > +
-> > +struct imx_pll14xx_clk imx_1416x_pll = {
-> > +	.type = PLL_1416X,
-> > +	.rate_table = imx_pll1416x_tbl,
-> > +	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl), };
-> 
-> Perhaps these consts should be in clk-pll14xx.c? That way they won't be
-> compiled for imx6 as well.
-
-Make sense, I will do it in V2.
-
-Thanks,
-Anson
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+RGVhciBNYXJlaywKCk9uIDE5LiA4LiAyOC4g7Jik7ZuEIDk6MTAsIE1hcmVrIFN6eXByb3dza2kg
+d3JvdGU6Cj4gQVJNIGFyY2hpdGVjdGVkIHRpbWVyIGNhbiBiZSB1c2VkIHRvZ2V0aGVyIHdpdGgg
+RXh5bm9zIE11bHRpQ29yZSBUaW1lcgo+IGRyaXZlciwgc28gZW5hYmxlIHN1cHBvcnQgZm9yIGl0
+LiBTdXBwb3J0IGZvciBBUk0gYXJjaGl0ZWN0ZWQgdGltZXJzIGlzCj4gZXNzZW50aWFsIGZvciBl
+bmFibGluZyBwcm9wZXIgS1ZNIHN1cHBvcnQuCj4gCj4gU2lnbmVkLW9mZi1ieTogTWFyZWsgU3p5
+cHJvd3NraSA8bS5zenlwcm93c2tpQHNhbXN1bmcuY29tPgo+IC0tLQo+ICBhcmNoL2FybS9tYWNo
+LWV4eW5vcy9LY29uZmlnIHwgMSArCj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKQo+
+IAo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9tYWNoLWV4eW5vcy9LY29uZmlnIGIvYXJjaC9hcm0v
+bWFjaC1leHlub3MvS2NvbmZpZwo+IGluZGV4IGY4Mzc4NjY0MGY5NC4uOWRhYjFmNTBhMDJmIDEw
+MDY0NAo+IC0tLSBhL2FyY2gvYXJtL21hY2gtZXh5bm9zL0tjb25maWcKPiArKysgYi9hcmNoL2Fy
+bS9tYWNoLWV4eW5vcy9LY29uZmlnCj4gQEAgLTE5LDYgKzE5LDcgQEAgbWVudWNvbmZpZyBBUkNI
+X0VYWU5PUwo+ICAJc2VsZWN0IEVYWU5PU19TUk9NCj4gIAlzZWxlY3QgRVhZTk9TX1BNX0RPTUFJ
+TlMgaWYgUE1fR0VORVJJQ19ET01BSU5TCj4gIAlzZWxlY3QgR1BJT0xJQgo+ICsJc2VsZWN0IEhB
+VkVfQVJNX0FSQ0hfVElNRVIgaWYgQVJDSF9FWFlOT1M1ICYmIFZJUlRVQUxJWkFUSU9OCj4gIAlz
+ZWxlY3QgSEFWRV9BUk1fU0NVIGlmIFNNUAo+ICAJc2VsZWN0IEhBVkVfUzNDMjQxMF9JMkMgaWYg
+STJDCj4gIAlzZWxlY3QgSEFWRV9TM0MyNDEwX1dBVENIRE9HIGlmIFdBVENIRE9HCj4gCgpSZXZp
+ZXdlZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ftc3VuZy5jb20+CgotLSAKQmVzdCBS
+ZWdhcmRzLApDaGFud29vIENob2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoKX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5n
+IGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5p
+bmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
