@@ -2,57 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F2D6AB653
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:47:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4AF53AB636
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:42:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=d5YgrTCG1AmcMet7hSA8rqjtjPefoLWhFscSVx2MnOo=; b=Cli
-	8nMwQUqh2n+xRcN4W8vdhQETwZlYSzoSVaPs5rVp00Bj2FxIEPdNdN/HHieevg26SPXpL90njv8rn
-	4vEqTJywkN8J6ku3eDLkyyvRLWe6yZK7rfMW4WoyKSt0zAeNz8FZ/qm6YALlb+GHzjVhukBygF165
-	WwBFj0qxnCtmFSBU9qm79WccyEchF1HYFNLljgYbxXSqQv8mwL1jRUv5LYKstGqBSXetGNuPx/sUo
-	JUjfoDS3QISPW1YFZFbto8gOztf+vBCwhQOQSLGDNO2vcRWGrvmYYDIP9MJT8GuSoAz3kEpu49P5O
-	mmvATnqg7/Evn4OQJQVJDUFB6n8fksA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SBvLNl2JCNstO0pIh3xvzYSkYVWEq+SZ+WOwUAXtwCw=; b=Svd64WX6X0bBTP
+	Zf5/dcHPtMpWH2+v62BOAlxyUb0WpNeQaJszPI5Wv6jx9gor/n/BK0TaC4V9ssvGIE5pqXq2qjnJ8
+	uvg31fxH5J1FShv5eopXXL/HBhBT0b8wfYRbRB6koVnA/BtnChDXWqz8bhrpEJS7FCeLqZzG5TbQS
+	izYNu2NHCI5I4nrqTNE7toqbxN8LFnKULtJtofFA7imETdkwmdNaiibfV+fm9YC8kYgnUsRU/Y7F9
+	NyEsmvPm3dkF2nHnfhRthiXZh2YPRxwBNVtoFZnyzdNktIBYcpVI6J9+42OHZILwqQl6GJx4RtNs0
+	K2Cyd24Ovf8lrwbFueVg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Bm8-0002N9-DS; Fri, 06 Sep 2019 10:47:32 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i6Bhd-0000Nr-No; Fri, 06 Sep 2019 10:42:53 +0000
+Received: from relay1-d.mail.gandi.net ([217.70.183.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Blv-0002M0-Qm
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:47:21 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EC6331A0216;
- Fri,  6 Sep 2019 12:47:15 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F00A21A0BC3;
- Fri,  6 Sep 2019 12:47:10 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 8E114402FB;
- Fri,  6 Sep 2019 18:47:04 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH] gpio/mpc8xxx: change irq handler from chained to normal
-Date: Fri,  6 Sep 2019 18:37:00 +0800
-Message-Id: <20190906103700.2034-1-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i6BhR-0000NA-NF
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:42:44 +0000
+X-Originating-IP: 86.207.98.53
+Received: from localhost
+ (aclermont-ferrand-651-1-259-53.w86-207.abo.wanadoo.fr [86.207.98.53])
+ (Authenticated sender: alexandre.belloni@bootlin.com)
+ by relay1-d.mail.gandi.net (Postfix) with ESMTPSA id BE71F240004;
+ Fri,  6 Sep 2019 10:42:30 +0000 (UTC)
+Date: Fri, 6 Sep 2019 12:42:24 +0200
+From: Alexandre Belloni <alexandre.belloni@bootlin.com>
+To: David Laight <David.Laight@aculab.com>
+Subject: Re: [PATCH v2] pinctrl: at91-pio4: implement .get_multiple and
+ .set_multiple
+Message-ID: <20190906104224.GG21254@piout.net>
+References: <20190905144849.24882-1-alexandre.belloni@bootlin.com>
+ <2261eadf98584d13a490f2abd8777d4a@AcuMS.aculab.com>
+ <20190906091212.GF21254@piout.net>
+ <b010053340ef48dfa244ff48c8decd38@AcuMS.aculab.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <b010053340ef48dfa244ff48c8decd38@AcuMS.aculab.com>
+User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_034720_007886_C618DFFA 
-X-CRM114-Status: GOOD (  10.23  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190906_034241_912723_E3844AFA 
+X-CRM114-Status: GOOD (  20.16  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [217.70.183.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,91 +66,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-MIME-Version: 1.0
+Cc: Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ Ludovic Desroches <ludovic.desroches@microchip.com>,
+ "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Song Hui <hui.song_1@nxp.com>
+On 06/09/2019 09:46:02+0000, David Laight wrote:
+> From: Alexandre Belloni
+> > Sent: 06 September 2019 10:12
+> > On 06/09/2019 09:05:36+0000, David Laight wrote:
+> > > From: Alexandre Belloni
+> > > > Implement .get_multiple and .set_multiple to allow reading or setting
+> > > > multiple pins simultaneously. Pins in the same bank will all be switched at
+> > > > the same time, improving synchronization and performances.
+> > >
+> > > Actually it won't 'improve synchronisation', instead it will lead to
+> > > random synchronisation errors and potential metastability if one
+> > > pin is used as a clock and another as data, or if the code is reading
+> > > a free-flowing counter.
+> > >
+> > 
+> > It does improve gpio switching synchronisation when they are in the same
+> > bank as it will remove the 250ns delay. Of course, if you need this
+> > delay between clk and data, then the consumer driver should ensure the
+> > delay is present.
+> 
+> With multiple requests the output pin changes will always be in the
+> same order and will be separated by (say) 250ns.
+> This is a guaranteed synchronisation.
+> 
+> If you change multiple pins with the same 'iowrite()' then the pins
+> will change at approximately the same time.
+> But the actual order will depend on internal device delays (which
+> may depend on the actual silicon and temperature).
+> You then have to take account of varying track lengths and the
+> target devices input stage properties before knowing which change
+> arrives first.
+> The delays might be sub-nanosecond, but they matter if you are
+> talking about synchronisation.
+> 
 
-more one gpio controller use share one interrupt,
-make request interrupt to be shared.
+And my point is that this means that your gpio consumer driver is buggy
+if it doesn't do multiple requests if it requires a delay between two
+pin changes.
 
-Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
-Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
-Signed-off-by: Song Hui <hui.song_1@nxp.com>
----
- drivers/gpio/gpio-mpc8xxx.c | 21 ++++++++++++++-------
- 1 file changed, 14 insertions(+), 7 deletions(-)
+> IIRC both SMBus and I2C now quote 0ns setup time.
+> Changing both clock and data with the same IOW isn't enough to
+> guarantee this.
+> (In practise the I2C setup time required by a device is probably
+> slightly negative (In order to support 0ns inputs) so a very small
+> -ve setup will (mostly) work.)
 
-diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-index 1a680aa..4006250 100644
---- a/drivers/gpio/gpio-mpc8xxx.c
-+++ b/drivers/gpio/gpio-mpc8xxx.c
-@@ -22,6 +22,7 @@
- #include <linux/irq.h>
- #include <linux/gpio/driver.h>
- #include <linux/bitops.h>
-+#include <linux/interrupt.h>
- 
- #define MPC8XXX_GPIO_PINS	32
- 
-@@ -127,10 +128,9 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
- 		return -ENXIO;
- }
- 
--static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
-+static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
- {
--	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
--	struct irq_chip *chip = irq_desc_get_chip(desc);
-+	struct mpc8xxx_gpio_chip *mpc8xxx_gc = (struct mpc8xxx_gpio_chip *)data;
- 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
- 	unsigned int mask;
- 
-@@ -139,8 +139,8 @@ static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
- 	if (mask)
- 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
- 						     32 - ffs(mask)));
--	if (chip->irq_eoi)
--		chip->irq_eoi(&desc->irq_data);
-+
-+	return IRQ_HANDLED;
- }
- 
- static void mpc8xxx_irq_unmask(struct irq_data *d)
-@@ -319,6 +319,7 @@ static const struct of_device_id mpc8xxx_gpio_ids[] = {
- 	{ .compatible = "fsl,mpc5125-gpio", .data = &mpc5125_gpio_devtype, },
- 	{ .compatible = "fsl,pq3-gpio",     },
- 	{ .compatible = "fsl,ls1028a-gpio", .data = &ls1028a_gpio_devtype, },
-+	{ .compatible = "fsl,ls1088a-gpio", .data = &ls1028a_gpio_devtype, },
- 	{ .compatible = "fsl,qoriq-gpio",   },
- 	{}
- };
-@@ -408,8 +409,14 @@ static int mpc8xxx_probe(struct platform_device *pdev)
- 	if (devtype->gpio_dir_in_init)
- 		devtype->gpio_dir_in_init(gc);
- 
--	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
--					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
-+	ret = request_irq(mpc8xxx_gc->irqn, mpc8xxx_gpio_irq_cascade,
-+		IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade", mpc8xxx_gc);
-+	if (ret) {
-+		pr_err("%s: failed to request_irq(%d), ret = %d\n",
-+				np->full_name, mpc8xxx_gc->irqn, ret);
-+		goto err;
-+	}
-+
- 	return 0;
- err:
- 	iounmap(mpc8xxx_gc->regs);
+I'm not sure what is your point exactly as this patch doesn't break any
+existing use cases.
+
 -- 
-2.9.5
-
+Alexandre Belloni, Bootlin
+Embedded Linux and Kernel engineering
+https://bootlin.com
 
 _______________________________________________
 linux-arm-kernel mailing list
