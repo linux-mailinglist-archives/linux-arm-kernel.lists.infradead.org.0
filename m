@@ -2,68 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09AF9ABC4C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:25:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52D47ABCA4
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:36:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=S42IlCmm9kILcPpRYSD5gMMsF6Igo+qcW0ktoCTkVA8=; b=PuzNJI4KDqfTJD
-	pjXclGk8yT06dAZMRXCOX4QEsVlJM4L0qDsvzCWr8+s7DxNmIvjIhb3KQKpddRKGNkl4bE0/xVqHF
-	u37Xjv3qa9tyIwR/KcaiLx7jSJH8I3gBhfaLtaSfr05GJShLhmM2zRRJlBgbxtjestimH0DKrfyG0
-	PoV2scYIOovygLhY/6Iyj7/ssVVO5+zJStjjziCcEMakkDYpU0v9IYMA1YHlw7w9pK6h7HfUP//r6
-	QmjRCd71izZeHSQX5FydgnDLEUJaweH1z8kHGZ5Kl55EMZQHpUqS21KOzdDdPXV7Kb8K3hw0aTgTF
-	WinrgIg2djNK8ZeSt0Sw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JySApYkF+lMLFJYu95Vm+PfSEbP731Io1GyAkoIWvSQ=; b=A8Amd4Z2NqOVKB
+	5GixFEfpAocopHYxNuSjkjNKrQXNGZrQ5WrnuT100Uy5GEEWjgXtwtRTSV/piys9q8sXhwXgQJH0g
+	kdEMihyF5Ek7nJnILRYQ7Ca91fvK017dIO6KJhBEq7TfDYROUKRsblCH5REFI9XfMsp1WQ5vRzFTB
+	4w06RUe811nFGjfoZ5wqPVeP+ywU5IgGYVdC4NM6FF0/aY+O/iB3qoSyYX8P6OP9U+NG/2HoD9Jpk
+	lmYSgm0uUQvWZn2EorjM3H+p/Rv7lG+89W3XUHLz/1VyhVOGhA+mIHdwkHk87KMi7oOkQGcuV1+Zj
+	zBhmeYsGiPpqZb5a57hA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6G6j-0007ih-Fg; Fri, 06 Sep 2019 15:25:05 +0000
-Received: from mout.kundenserver.de ([212.227.17.13])
+	id 1i6GHX-0003lZ-Ad; Fri, 06 Sep 2019 15:36:15 +0000
+Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6G6V-0007i9-DB; Fri, 06 Sep 2019 15:24:52 +0000
-Received: from threadripper.lan ([149.172.19.189]) by mrelayeu.kundenserver.de
- (mreue107 [212.227.15.145]) with ESMTPA (Nemesis) id
- 1MgNtR-1ieCGu1yVr-00hxJq; Fri, 06 Sep 2019 17:24:39 +0200
-From: Arnd Bergmann <arnd@arndb.de>
-To: Alessandro Zummo <a.zummo@towertech.it>,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCH] rtc: meson: mark PM functions as __maybe_unused
-Date: Fri,  6 Sep 2019 17:24:29 +0200
-Message-Id: <20190906152438.1533833-1-arnd@arndb.de>
-X-Mailer: git-send-email 2.20.0
+ id 1i6GHI-0003f0-Uf
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:36:03 +0000
+Received: by mail-ed1-x542.google.com with SMTP id i1so6696407edv.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 08:35:59 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=A4FYq6BYAh9kLfOqN+BJBL7FeQsVNJ/SlbY8XN9CwA8=;
+ b=Ef0Hr3tJqLTPZXz5nKn/QZlVlv/EccVcAXv+2/UUOF6Mg5R+fHj87YhuLGsxjwYppU
+ W3/rHKML8xuucTp2rSpU2M2xqVOAPB2zE2P5SzCfGRnmQUckNHc9bFtZKPELKdLRUP2f
+ JG+u003rO5+i6SD1pmAO0U6edTrVhdAnswlfGrKlbFjZaunsV/07suyfBhpVyRaKAqPz
+ kgoeUTaq1QPmlw+R60+UxKe7BthBtS34DA2HkxeU86dVp7bcstmFCe/Kk5FE9Q+vkfgM
+ O4sRgA1GIDIYLWe3+HSMgP8M/j2LiKmEcd/yTovL3oK0UfXa3QpI0BHSrg+ZS8481Rrp
+ O53Q==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=A4FYq6BYAh9kLfOqN+BJBL7FeQsVNJ/SlbY8XN9CwA8=;
+ b=oFsg7iFZ1Oa/thYiZsI8QP1cty/fDWPdM93AhLXyp+5WVRyY8R63Kjjb5EnEpeMV/I
+ Hed6vZZJcjPeWw409b2O9AuBI1dVr6u15gMM1ylSSTshq+bR2g1AyrHtHDvVOtBAQcpA
+ QtfwsPimhYmWM7dMOdNOAc92dGHpp2wWErVFmDnHsLB8jYIGzrVwK1F7ceM4yGS+pAC2
+ r0GlY6/PCBqq1nW8kLpGdVibLLmGR8Do6jvM1Bh6uX4f2lkVxUHNLWJwcGNKXkKZ0W14
+ tajEpEfy3gLI+gJPtQYmO52NiWC4pL5f2GnhtfW5Hel07bv8gfwVqJWDVXH9U9l8QAOk
+ 5YlQ==
+X-Gm-Message-State: APjAAAWGshU/FyqEBoLzh/VOnz3lb9E8dLVg+AvEUNlpGmvBQYillr/b
+ 5eZSJkQweGGAMPiioHfaUoeJYNwrLq12FaOfbIU6vA==
+X-Google-Smtp-Source: APXvYqwSiKKOKWP/h3a0ZsF+Oo9rceIyMqvsTBtnjeEonE2/Oyyhql11Q3k8Zm0qLFs0EuLz3YWma2Khwt65rF7/etA=
+X-Received: by 2002:a05:6402:17ae:: with SMTP id
+ j14mr10209564edy.219.1567784158621; 
+ Fri, 06 Sep 2019 08:35:58 -0700 (PDT)
 MIME-Version: 1.0
-X-Provags-ID: V03:K1:iAXw4+juZQ88e5MCxf8CxgonumKHmdb38haLq7aNwoHTl6DtoPC
- Z9GPHNRp0w/tJjiEzrdFIfQtJ5pxhtRdL+pDmwoKrwYL57eprTQvOXgSCFQPuyr29o4PnGW
- kZim5mMmM/k12IdaDCvf5Chnxe+5bimHjJ3PUFNF7AFhOfJDEx1L06QWv2Ub1xM/gCDNYFb
- FEXmyJk3f22Aen5NN8QMw==
-X-Spam-Flag: NO
-X-UI-Out-Filterresults: notjunk:1;V03:K0:ZlbboHLS25M=:nbSzMGw1TiiBYTW/Jn2ABL
- t6bsPlq1T8uhQiCGjZelLsQ8maUrd4/3e9VeJPNzuzACOgz38aM8zpjxcUnsTsOSABK1eubj6
- PwFWvFkSTZcFXV245vVSil93R9kfP9WnmMoGIZPNUT8PXlGp5AQw8v+YPYZ3v7WNCAld1AMD0
- ywH3pNCp54V5vLICDZPZNAM0kTguEV2kQ5EDE2beAPTQG7SXArH/9ZujIR2vhaC5LCY9pD0BL
- tmJSPxv/zYa/pdUE6i0rUABlEyngw4SyACVDHeTKd8/ZGmIJNm3rVy8aeRVf6ZKlcshiPN8Cf
- t2GAoZmq1P74mkbcgYaRAybt8RR79Irw9igE659MjsXorLaifnVinOauDka3WJJaKEyeEoZoc
- pc9n8fI2QS0S6VPpqKnnlYDM3+hezWY9NHiqUGrl4EQRtcn5AK0Fxl5ZvV/ZPJ8b6GPYntIp3
- /VDxk8Ss6T8AoZysMdHSF2rkFNJKiq/9fLYY+dGX5vFrerQBfvOl/AbA4pCnd15UYAqWFt3Le
- yH3C335gyPj6YQ3UQBIgwyyjJTn3o+aMOd53ssfQQ4w27aKbrR7QApt9OCP/g3Kv6dId6DF/l
- NPPQ5Cxfl8djMyNhzSMiFvL8TDxYnN7w3s2UHoFz8CFL86I4/pzBLTxy3YUz/+TIGy/e2/HOM
- PW1xNwI6q+Xb/Fn6ieQ/n/4Y3ww0GJ61hLyCrlEGlSOjMFWuTLHLrqmPleglq7TGov8OdyvX1
- G5vhUIbYZwMd0h487IPYU3jfG9z59wzVrap7c31npIvjd9hOPhWMtg9T22MUML2qoRmO/hA5P
- teP6FLOBRvCXWDX0xjfrMvf1dfA1wLAUpcFjxeeXHyk8yiYIsc=
+References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+ <20190821183204.23576-2-pasha.tatashin@soleen.com>
+ <0f83b70e-2f8f-aa05-84d8-41290679003b@arm.com>
+In-Reply-To: <0f83b70e-2f8f-aa05-84d8-41290679003b@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Fri, 6 Sep 2019 11:35:47 -0400
+Message-ID: <CA+CK2bBzCnxk8X8R=_70ECT=kn8QRm7OioZP4LNJioTNXYDhXQ@mail.gmail.com>
+Subject: Re: [PATCH v3 01/17] kexec: quiet down kexec reboot
+To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_082451_745534_472A7204 
-X-CRM114-Status: GOOD (  10.26  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_083601_115765_2104C4CC 
+X-CRM114-Status: GOOD (  13.56  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [212.227.17.13 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ no trust [2a00:1450:4864:20:0:0:0:542 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,62 +93,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, Arnd Bergmann <arnd@arndb.de>,
- Neil Armstrong <narmstrong@baylibre.com>, linux-kernel@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
+ linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The meson_vrtc_set_wakeup_time() function is only used by
-the PM functions and causes a warning when they are disabled:
+On Fri, Sep 6, 2019 at 11:17 AM James Morse <james.morse@arm.com> wrote:
+>
+> Hi Pavel,
+>
+> On 21/08/2019 19:31, Pavel Tatashin wrote:
+> > Here is a regular kexec command sequence and output:
+> > =====
+> > $ kexec --reuse-cmdline -i --load Image
+> > $ kexec -e
+> > [  161.342002] kexec_core: Starting new kernel
+> >
+> > Welcome to Buildroot
+> > buildroot login:
+> > =====
+> >
+> > Even when "quiet" kernel parameter is specified, "kexec_core: Starting
+> > new kernel" is printed.
+> >
+> > This message has  KERN_EMERG level, but there is no emergency, it is a
+> > normal kexec operation, so quiet it down to appropriate KERN_NOTICE.
+>
+> As this doesn't have a dependency with the rest of the series, you may want to post it
+> independently so it can be picked up independently.
 
-drivers/rtc/rtc-meson-vrtc.c:32:13: error: unused function 'meson_vrtc_set_wakeup_time' [-Werror,-Wunused-function]
+Hi James,
 
-Remove the #ifdef around the callers and add a __maybe_unused
-annotation as a more reliable way to avoid these warnings.
+I have posted it previously, but it has not been picked up. So, I
+decided to include it together with this series. Is this alright with
+you, otherwise I can remove it from this series.
 
-Signed-off-by: Arnd Bergmann <arnd@arndb.de>
----
- drivers/rtc/rtc-meson-vrtc.c | 7 +++----
- 1 file changed, 3 insertions(+), 4 deletions(-)
-
-diff --git a/drivers/rtc/rtc-meson-vrtc.c b/drivers/rtc/rtc-meson-vrtc.c
-index 4621a4715179..89e5ba0dae69 100644
---- a/drivers/rtc/rtc-meson-vrtc.c
-+++ b/drivers/rtc/rtc-meson-vrtc.c
-@@ -91,8 +91,7 @@ static int meson_vrtc_probe(struct platform_device *pdev)
- 	return 0;
- }
- 
--#ifdef CONFIG_PM_SLEEP
--static int meson_vrtc_suspend(struct device *dev)
-+static int __maybe_unused meson_vrtc_suspend(struct device *dev)
- {
- 	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
- 
-@@ -121,7 +120,7 @@ static int meson_vrtc_suspend(struct device *dev)
- 	return 0;
- }
- 
--static int meson_vrtc_resume(struct device *dev)
-+static int __maybe_unused meson_vrtc_resume(struct device *dev)
- {
- 	struct meson_vrtc_data *vrtc = dev_get_drvdata(dev);
- 
-@@ -131,7 +130,7 @@ static int meson_vrtc_resume(struct device *dev)
- 	meson_vrtc_set_wakeup_time(vrtc, 0);
- 	return 0;
- }
--#endif
-+
- static SIMPLE_DEV_PM_OPS(meson_vrtc_pm_ops,
- 			 meson_vrtc_suspend, meson_vrtc_resume);
- 
--- 
-2.20.0
-
+Thank you,
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
