@@ -2,53 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 88F8FAC27A
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 00:24:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A6839AC362
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 01:48:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iAPJ9aSlus5KZOSVNEQJQ/qkqPG6KNEPxG/4x8pfO0s=; b=rbyaHwSEUi5KW/
-	7mtAxpMJj/Qfh8s1dC3yVZdWd+rqlEnaEWi2ymmFIajJK78e0TIjLl50lT0bdgc5un8meI4gfIUou
-	e94aPxPaR5+kAYXAhVL5OezuaUv4c3bh0PhWGWSBhOeqftpr0Pde/Zl0UpYcMiQuFYEW1hNa3LDJH
-	xS4sNNORJOhkpXG9vyRGwX88chc4qCGZ2p4G7NURS9jXoIEirQmLrLGhdxgDZt6H0YksfoSxGdHlh
-	DH+gAQP25pan+LcuaqJIlFH50it41on6R9NNf5Oykvv4/8YGbHy1t6G1TnOHF8LqdvIwyiCCj5EdV
-	QtRQGbPHR/Cnbkrk6r4Q==;
+	List-Owner; bh=xoKJtK5i2Gh/pUQBSGa3X/WRcsfJUf7qpx1E/uGbSis=; b=SAC1ZoFdqvc2oR
+	OZV/HHVxb6HBNju1qnTsJGfwIK5p28Oh04D39ZtXz+LGzUYqPZEcO+N7Ofk0HVyo91QBGPFlVwpCZ
+	s7BrzB2nUwULkQyJTjaXVvZzQPuBz7Tq3BxcdW4wYeBpFFGX9st8yzqyPU/gDtiirtG3xtVjIJFM3
+	DRAOFSagSBY3MRuqn7vswwr2yw3Kmq2/b/irIifBwCc14ct9Yd58rmpUnBduTqkBzn5cpAU4WTLSl
+	kh0GsMXdVJBflmEBv4tkyrwUi5EB2y3FaZyL076FmnU6YmfS979x66RBq6sg6us4A2LIxGCXDNkGL
+	YZ3t9DS+ZQ/UenXFnJ4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6MeU-0008Qr-Py; Fri, 06 Sep 2019 22:24:22 +0000
+	id 1i6Nxw-0004wX-C2; Fri, 06 Sep 2019 23:48:32 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Mdy-0008MZ-GK
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 22:23:52 +0000
+ id 1i6Nxj-0004w8-U5
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 23:48:21 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 04419214E0;
- Fri,  6 Sep 2019 22:23:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id EC0DA20842;
+ Fri,  6 Sep 2019 23:48:18 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567808629;
- bh=7fWT4pSEpV668ptngcAoGmXNSeOFGFx6ayqh1U9b/uc=;
- h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=PcVCeOpwb38RDWS/yuj5NA6PzqfUXRkDLDdWnyHqWvGf+ibd3zRGHXkz+W5PI+Mi/
- uQsMpsP4fmSBvZDsCFX2sxrmLFU0QaBs7hGaJzuUfm9PQIP57QxduygJsaYI5UMf8Q
- yltad5HTkUhYeC0w5OhY+BKUvA026HZlDJ5p5wmc=
+ s=default; t=1567813699;
+ bh=NSLywlCOcgcWPM52MbfyuhWTAOW2/4du9FX0KFp7RSI=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=KwtHGJhGEM4BfLeqXjbsZT07sFB7biEeHKuQ9ohRGYNIP+wMSmwfyp48kbdV4SUug
+ 9M91UWABZNoGL2ftCmjs/VA0iuLyajB//EFiauZlmyBqMSnWqUAU5XYGAqo9yY+2fj
+ yelyGsFZ9lWHC9sKK4riqUF9SI/AwZEQtDSQvrHU=
 MIME-Version: 1.0
-In-Reply-To: <20190825141848.17346-3-joel@jms.id.au>
-References: <20190825141848.17346-1-joel@jms.id.au>
- <20190825141848.17346-3-joel@jms.id.au>
-To: Joel Stanley <joel@jms.id.au>, Michael Turquette <mturquette@baylibre.com>
+In-Reply-To: <20190830220743.439670-12-lkundrak@v3.sk>
+References: <20190830220743.439670-1-lkundrak@v3.sk>
+ <20190830220743.439670-12-lkundrak@v3.sk>
+To: "To : Olof Johansson" <olof@lixom.net>, Lubomir Rintel <lkundrak@v3.sk>
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH v2 2/2] clk: Add support for AST2600 SoC
+Subject: Re: [PATCH v3 11/16] ARM: mmp: add support for MMP3 SoC
 User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 15:23:48 -0700
-Message-Id: <20190906222349.04419214E0@mail.kernel.org>
+Date: Fri, 06 Sep 2019 16:48:18 -0700
+Message-Id: <20190906234818.EC0DA20842@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_152350_999515_65124608 
-X-CRM114-Status: UNSURE (   7.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190906_164819_997357_86E57F01 
+X-CRM114-Status: GOOD (  11.40  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,24 +76,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, Andrew Jeffery <andrew@aj.id.au>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Jason Cooper <jason@lakedaemon.net>, linux-kernel@vger.kernel.org,
+ Michael Turquette <mturquette@baylibre.com>,
+ Russell King <linux@armlinux.org.uk>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Lubomir Rintel <lkundrak@v3.sk>, "Cc : Rob Herring" <robh+dt@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Joel Stanley (2019-08-25 07:18:48)
-> The ast2600 is a new BMC SoC from ASPEED. It contains many more clocks
-> than the previous iterations, so support is broken out into it's own
-> driver.
-> 
-> Signed-off-by: Joel Stanley <joel@jms.id.au>
-> ---
+Quoting Lubomir Rintel (2019-08-30 15:07:38)
+> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+> index 801fa1cd03217..8bb2ac83a1fcc 100644
+> --- a/drivers/clk/Kconfig
+> +++ b/drivers/clk/Kconfig
+> @@ -301,6 +301,11 @@ config COMMON_CLK_STM32H7
+>         ---help---
+>           Support for stm32h7 SoC family clocks
+>  
+> +config COMMON_CLK_MMP2
+> +       def_bool COMMON_CLK && (MACH_MMP2_DT || MACH_MMP3_DT)
 
-Applied to clk-next
+Does it need to depend on COMMON_CLK? I thought that by being part of
+the menuconfig (even if it's a hidden symbol) mean that it wouldn't be
+evaulated unless the COMMON_CLK define is =Y.
 
+> +       help
+> +         Support for Marvell MMP2 and MMP3 SoC clocks
+> +
+>  config COMMON_CLK_BD718XX
+>         tristate "Clock driver for ROHM BD718x7 PMIC"
+>         depends on MFD_ROHM_BD718XX || MFD_ROHM_BD70528
 
 _______________________________________________
 linux-arm-kernel mailing list
