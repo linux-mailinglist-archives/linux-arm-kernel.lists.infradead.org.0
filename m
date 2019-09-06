@@ -2,63 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 35322AB663
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:51:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 695DBAB680
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:57:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=oQ7gPQ5O47vVF7nP5lF1BsRRQO5nZBujSFa2IxxeieQ=; b=G4e9qWSZYvNE/K
-	AeF5r/+DaWdDG92FHWXoH2VhmgVzMWxgSzMeLloQGJxuykgtmyP04PfW3Kg5/CPkNv6Q93NOK+RR9
-	AH0L83l1fB7ex+s9VkSBt17kcogVnxFuq/fz4umJVnu7Hbr1jFoQbwwWs6AL3197aRGH8eFyA89rI
-	Ys4we4lk3FV+YcbVguvseLqPXz+Vuyf5O9mTe3ZBAuaRip8LSwdyO5i4yL1CO885WqorT59ceXez5
-	tf9aO4RBy0fYn30CbHjKzti3uBOX2MAzqJb6U4ZaLaxRf1z4Vi642iOx/L4rpW8WvUSdsNwqpDJTp
-	44ZWw386jW2kFWZ+DgHQ==;
+	List-Owner; bh=B2nFxh3xplGzMDUWWpX9nVo/W2BF1OYCkhJHxspkNF4=; b=UW6HQHAgjCmfj7
+	f/tHV6idXCtPnIyGouzzwjm63oUIgt+BFhVTd2jiVOhvLilpTpWJXR+h7QLSq9mHAvhCDv7E7azEi
+	0em/8CpxpqSG124jkaRiUvlttrltWmC1bTYIoBOLieT+/nEL74nyy31dypL1MTQ1P4WvZyqEvHkbK
+	V3Q2Tciq+wCNb/JfuTsg23J8NjZZVwa5wXV8+oUWgAV024AWYyLhHPywHXauop7A/J5PH/zeIPJxb
+	9XHZMPbk5VodP6FPRtR0iTIFM4IAp/ccW2NFjY0ls/6sPx5+Q3ECsN4tlcNtJkE2DxofSo0qvjs49
+	ic+Jp/EKNqRrSrExj9cQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Bpq-00040h-Ol; Fri, 06 Sep 2019 10:51:22 +0000
+	id 1i6BvM-0007wm-9Y; Fri, 06 Sep 2019 10:57:04 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Bpk-0003ze-6B
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:51:17 +0000
-Received: from mail-lj1-f170.google.com (mail-lj1-f170.google.com
- [209.85.208.170])
+ id 1i6BvE-0007wO-3L
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:56:57 +0000
+Received: from mail-lf1-f43.google.com (mail-lf1-f43.google.com
+ [209.85.167.43])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C48412070C
+ by mail.kernel.org (Postfix) with ESMTPSA id 7744520854
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Sep 2019 10:51:14 +0000 (UTC)
+ Fri,  6 Sep 2019 10:56:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567767075;
- bh=F40/vyERzL2PLT+u7CNuLPRmvSEYRMi6jl/F1YioOow=;
+ s=default; t=1567767415;
+ bh=eKqQLsZ1CqXLPChoayXDfV/yXKBUa6ki7SK6YURr7JQ=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=XC7BjD4hpWNrKK1pOpCRX02SjWQJCOK5gbUvFoli/8DoHFwcrigpVQp1QjIv24WpF
- 3hJfKMDgOn65XmIZDcVCGO/8Sr3r8YzUkIFTLavQgHRoyJu9StYgFHDfQQAjBcVc19
- ARQKYejAHq4EGjxZetUnrB+vwDkoilM7UE3eDMcE=
-Received: by mail-lj1-f170.google.com with SMTP id a22so5609783ljd.0
+ b=iwe7A6POO/AXJafBwclGZTdDimAL7JL/4tkeyQ2Hmmn/p1RAKgcK1OXWpNcost0c6
+ vb6M7H3Hkn2NmTAYYE4TKKuMQBsOeTRnrzB3CLFIS0u69fCfWWPHZAnzndjTpfAjSt
+ FTUs49YdlcffPsxSnWGKYkGzC9ON7Sqxu9LEJ72k=
+Received: by mail-lf1-f43.google.com with SMTP id c12so4645194lfh.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 03:51:14 -0700 (PDT)
-X-Gm-Message-State: APjAAAUpzf8CuoMNMYopeXsZaWmlvO8y/Pw0x0baQYTCrObxwoh6h5RD
- f9dxlUHyzJRvBJaPY08GbRISKqPURMukgwtmIso=
-X-Google-Smtp-Source: APXvYqwz+PkOkcsh+hE8+0p+GyRXl5rEBYk6E+6at+bWRa6Bvz54E4CXhRKX/zpdsB3GgFZGBaVFW3t88k1Ohu8cSYo=
-X-Received: by 2002:a2e:8785:: with SMTP id n5mr1760238lji.210.1567767072972; 
- Fri, 06 Sep 2019 03:51:12 -0700 (PDT)
+ Fri, 06 Sep 2019 03:56:55 -0700 (PDT)
+X-Gm-Message-State: APjAAAX3HPFUOBwaSWLWdlZnVCZpTQGoCrWq9/NsrsOMTCA9BMIOIKV2
+ 1EPu/EZKxGwAy9dg/tnJRplhyXCuhY81C9DSpMY=
+X-Google-Smtp-Source: APXvYqyuyvNE+DfCX2EXl+GcF9M9zNqpthnU+rCpM/ZylcfvRmscK9OYLhqRaqB/x8T/f9Qsn/DW81HgYTXkDGfiTR4=
+X-Received: by 2002:a19:c649:: with SMTP id w70mr5991002lff.33.1567767413630; 
+ Fri, 06 Sep 2019 03:56:53 -0700 (PDT)
 MIME-Version: 1.0
-References: <CGME20190906101405eucas1p2e3da7b461810a3a520e76c636a06e486@eucas1p2.samsung.com>
+References: <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
  <20190906101344.3535-1-l.luba@partner.samsung.com>
- <20190906101344.3535-2-l.luba@partner.samsung.com>
-In-Reply-To: <20190906101344.3535-2-l.luba@partner.samsung.com>
+ <20190906101344.3535-4-l.luba@partner.samsung.com>
+In-Reply-To: <20190906101344.3535-4-l.luba@partner.samsung.com>
 From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Fri, 6 Sep 2019 12:51:01 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPdLhrvqR==k4a9w9cmdnwGRYaTXC1ya+vOeVaGpML0zcQ@mail.gmail.com>
-Message-ID: <CAJKOXPdLhrvqR==k4a9w9cmdnwGRYaTXC1ya+vOeVaGpML0zcQ@mail.gmail.com>
-Subject: Re: [PATCH 1/3] memory: Exynos5422: minor fixes in DMC
+Date: Fri, 6 Sep 2019 12:56:42 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+Message-ID: <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3
+ memories
 To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_035116_789735_9DBB8F9B 
-X-CRM114-Status: GOOD (  16.37  )
+X-CRM114-CacheID: sfid-20190906_035656_182163_718BF6F8 
+X-CRM114-Status: GOOD (  17.32  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -104,47 +105,43 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, 6 Sep 2019 at 12:14, Lukasz Luba <l.luba@partner.samsung.com> wrote:
 >
-> Small fixes captured by static analyzes.
+> Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+> Minor fixes in the old documentation.
+>
+> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> ---
+>  .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+>  1 file changed, 27 insertions(+), 2 deletions(-)
+>
+> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> index 3b2485b84b3f..de0905239767 100644
+> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> @@ -40,10 +40,34 @@ Child nodes:
+>    a given speed-bin. Please see Documentation/devicetree/
+>    bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
+>
+> +Samsung K3QF2F20DB LPDDR3 memory
+> +------------------------------------------------------------
+> +
+> +This binding uses the LPDDR3 binding (described above)
+> +
+> +Required properties:
+> +- compatible:  Should be:
+> +               "samsung,K3QF2F20DB"
+> +               followed by "jedec,lpddr3"
+> +- density  : <u32> representing density in Mb (Mega bits)
+> +- io-width : <u32> representing bus width. Possible value 32
+> +- #address-cells: Must be set to 1
+> +- #size-cells: Must be set to 0
 
-Explain please what are the errors being fixed. Additionally error
-message from tool might be useful.
-
-Also:
-Reported-by: Krzysztof Kozlowski <krzk@kernel.org>
+If you decided to repeat all properties again, then it deserves its
+own bindings file. However I though about simpler solution - just
+document compatible. Exactly the same as AT24 or AT25 EEPROM bindings.
+There is not much benefit from copying all these properties.
 
 Best regards,
 Krzysztof
-
-> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
-> ---
->  drivers/memory/samsung/exynos5422-dmc.c | 4 ++--
->  1 file changed, 2 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/memory/samsung/exynos5422-dmc.c b/drivers/memory/samsung/exynos5422-dmc.c
-> index 8c2ec29a7d57..a809fa997c03 100644
-> --- a/drivers/memory/samsung/exynos5422-dmc.c
-> +++ b/drivers/memory/samsung/exynos5422-dmc.c
-> @@ -269,7 +269,7 @@ static int exynos5_init_freq_table(struct exynos5_dmc *dmc,
->         return 0;
->
->  err_free_tables:
-> -       kfree(dmc->opp);
-> +       devm_kfree(dmc->dev, dmc->opp);
->  err_opp:
->         dev_pm_opp_of_remove_table(dmc->dev);
->
-> @@ -732,7 +732,7 @@ static struct devfreq_dev_profile exynos5_dmc_df_profile = {
->   * statistics engine which supports only registered values. Thus, some alignment
->   * must be made.
->   */
-> -unsigned long
-> +static unsigned long
->  exynos5_dmc_align_init_freq(struct exynos5_dmc *dmc,
->                             unsigned long bootloader_init_freq)
->  {
-> --
-> 2.17.1
->
 
 _______________________________________________
 linux-arm-kernel mailing list
