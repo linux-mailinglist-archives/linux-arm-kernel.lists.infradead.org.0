@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 31422AB391
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:58:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3530CAB3AA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 10:04:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NN/8qFiOnt8yqkL//5kN54KNoNoXsCOm2eZ9qlI0d3A=; b=Z8+YIUvOAokDOS
-	nvktmlYqHNO9ajhbPdoG2UaDgtJpxJQEuM/YepZyOdFOgrIInWVAfxQfpQO01a6Y+T3yoR26oID2J
-	JnFwTjgG1UulAoaIC2rOYlg2WIJhP5w4w5T6BcHuep5km6btZH24xeJwvk+YuyQN8oFMMuYyLyLtr
-	uSHqsWSw07Prm1cVF0SJaBHgOYG6ffhbIK5qUS3kSD2eT7Snu/97m0JQhcIhTTMMLWdZEg3Ry3Ib3
-	cHsKq1h7SiO279qEqaTf2EqUy9IH3RoWevPz9ez48c3inVJRPwmBaLCacCp9MHVUp3Ev106w6AfSs
-	MR16HiYfV8RFQJ6X2Aog==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=bYZd9ifWiXiRkzvs85RIsC+gkwndo0FgA4dD7p+hB34=; b=Mba
+	gstP4xaazPMnoz5yaJ5rN39D8ZLQS50UXmIR9d6uE0tCIu8jhSPd0rFnT8e9QRZ0D14FUP/ESWTlx
+	J+SojbGoV8/UEBpBnecS7mW9BZTwwvB0u9jzob/eNVDznpqlmHEcQ3zI9MdZ5SdHZ/g8UG3qDOhsY
+	w/qIxeExto6FN74cilLiwDTNv3DEMfVLeyrr0An7X+cNpd0uk2FXn7A8vD+f+Tjw2o+ry0JFKqMfV
+	cFJQzWZd1WNmYBb+ZaPFreo551p3RzNpDgzzdT7GjRd21btLFwBvnBOIqVH+Uo3F9uZc0ZiBOWsk1
+	3vhmuFRRrdHyWrMeNZcWjOmqbduDdxw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i698j-0003Rq-32; Fri, 06 Sep 2019 07:58:41 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i698S-0003R8-91
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:58:27 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 206E928;
- Fri,  6 Sep 2019 00:58:23 -0700 (PDT)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.144.41])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A78CE3F718;
- Fri,  6 Sep 2019 00:58:22 -0700 (PDT)
-Date: Fri, 6 Sep 2019 09:58:21 +0200
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: Heinrich Schuchardt <xypron.glpk@gmx.de>
-Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
- decoded
-Message-ID: <20190906075821.GE4320@e113682-lin.lund.arm.com>
-References: <20190904180736.29009-1-xypron.glpk@gmx.de>
- <86r24vrwyh.wl-maz@kernel.org>
- <CAFEAcA-mc6cLmRGdGNOBR0PC1f_VBjvTdAL6xYtKjApx3NoPgQ@mail.gmail.com>
- <86mufjrup7.wl-maz@kernel.org>
- <CAFEAcA9qkqkOTqSVrhTpt-NkZSNXomSBNiWo_D6Kr=QKYRRf=w@mail.gmail.com>
- <20190905092223.GC4320@e113682-lin.lund.arm.com>
- <27e7edd6-1c4f-c970-3395-ecb4f176f858@gmx.de>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <27e7edd6-1c4f-c970-3395-ecb4f176f858@gmx.de>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1i69E5-0005P3-K4; Fri, 06 Sep 2019 08:04:13 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i69Dt-0005Ok-71
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 08:04:02 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 042B8200589;
+ Fri,  6 Sep 2019 10:03:59 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 321242000EC;
+ Fri,  6 Sep 2019 10:03:52 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id E4747402A5;
+ Fri,  6 Sep 2019 16:03:43 +0800 (SGT)
+From: Biwen Li <biwen.li@nxp.com>
+To: andy.shevchenko@gmail.com, rafael@kernel.org, leoyang.li@nxp.com,
+ meenakshi.aggarwal@nxp.com, udit.kumar@nxp.com, wsa@the-dreams.de,
+ rjw@rjwysocki.net
+Subject: [v2] ACPI: support for NXP i2c controller
+Date: Fri,  6 Sep 2019 15:53:19 +0800
+Message-Id: <20190906075319.21244-1-biwen.li@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_005825_723020_EF8F0016 
-X-CRM114-Status: GOOD (  36.92  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_010401_535759_F59D738F 
+X-CRM114-Status: UNSURE (   9.02  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,204 +66,136 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
- Marc Zyngier <maz@kernel.org>,
- lkml - Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Hajnoczi <stefanha@redhat.com>, kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: Biwen Li <biwen.li@nxp.com>, s.hauer@pengutronix.de,
+ linux-kernel@vger.kernel.org, linux-acpi@vger.kernel.org,
+ linux-i2c@vger.kernel.org, chuanhua.han@nxp.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 05, 2019 at 03:25:47PM +0200, Heinrich Schuchardt wrote:
-> On 9/5/19 11:22 AM, Christoffer Dall wrote:
-> > On Thu, Sep 05, 2019 at 09:56:44AM +0100, Peter Maydell wrote:
-> > > On Thu, 5 Sep 2019 at 09:52, Marc Zyngier <maz@kernel.org> wrote:
-> > > > 
-> > > > On Thu, 05 Sep 2019 09:16:54 +0100,
-> > > > Peter Maydell <peter.maydell@linaro.org> wrote:
-> > > > > This is true, but the problem is that barfing out to userspace
-> > > > > makes it harder to debug the guest because it means that
-> > > > > the VM is immediately destroyed, whereas AIUI if we
-> > > > > inject some kind of exception then (assuming you're set up
-> > > > > to do kernel-debug via gdbstub) you can actually examine
-> > > > > the offending guest code with a debugger because at least
-> > > > > your VM is still around to inspect...
-> > > > 
-> > > > To Christoffer's point, I find the benefit a bit dubious. Yes, you get
-> > > > an exception, but the instruction that caused it may be completely
-> > > > legal (store with post-increment, for example), leading to an even
-> > > > more puzzled developer (that exception should never have been
-> > > > delivered the first place).
-> > > 
-> > > Right, but the combination of "host kernel prints a message
-> > > about an unsupported load/store insn" and "within-guest debug
-> > > dump/stack trace/etc" is much more useful than just having
-> > > "host kernel prints message" and "QEMU exits"; and it requires
-> > > about 3 lines of code change...
-> > > 
-> > > > I'm far more in favour of dumping the state of the access in the run
-> > > > structure (much like we do for a MMIO access) and let userspace do
-> > > > something about it (such as dumping information on the console or
-> > > > breaking). It could even inject an exception *if* the user has asked
-> > > > for it.
-> > > 
-> > > ...whereas this requires agreement on a kernel-userspace API,
-> > > larger changes in the kernel, somebody to implement the userspace
-> > > side of things, and the user to update both the kernel and QEMU.
-> > > It's hard for me to see that the benefit here over the 3-line
-> > > approach really outweighs the extra effort needed. In practice
-> > > saying "we should do this" is saying "we're going to do nothing",
-> > > based on the historical record.
-> > > 
-> > 
-> > How about something like the following (completely untested, liable for
-> > ABI discussions etc. etc., but for illustration purposes).
-> > 
-> > I think it raises the question (and likely many other) of whether we can
-> > break the existing 'ABI' and change behavior for missing ISV
-> > retrospectively for legacy user space when the issue has occurred?
-> > 
-> > Someone might have written code that reacts to the -ENOSYS, so I've
-> > taken the conservative approach for this for the time being.
-> > 
-> > 
-> > diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-> > index 8a37c8e89777..19a92c49039c 100644
-> > --- a/arch/arm/include/asm/kvm_host.h
-> > +++ b/arch/arm/include/asm/kvm_host.h
-> > @@ -76,6 +76,14 @@ struct kvm_arch {
-> > 
-> >   	/* Mandated version of PSCI */
-> >   	u32 psci_version;
-> > +
-> > +	/*
-> > +	 * If we encounter a data abort without valid instruction syndrome
-> > +	 * information, report this to user space.  User space can (and
-> > +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-> > +	 * supported.
-> > +	 */
-> > +	bool return_nisv_io_abort_to_user;
-> >   };
-> > 
-> >   #define KVM_NR_MEM_OBJS     40
-> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> > index f656169db8c3..019bc560edc1 100644
-> > --- a/arch/arm64/include/asm/kvm_host.h
-> > +++ b/arch/arm64/include/asm/kvm_host.h
-> > @@ -83,6 +83,14 @@ struct kvm_arch {
-> > 
-> >   	/* Mandated version of PSCI */
-> >   	u32 psci_version;
-> > +
-> > +	/*
-> > +	 * If we encounter a data abort without valid instruction syndrome
-> > +	 * information, report this to user space.  User space can (and
-> > +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-> > +	 * supported.
-> > +	 */
-> > +	bool return_nisv_io_abort_to_user;
-> 
-> How about 32bit ARM?
-> 
+From: Chuanhua Han <chuanhua.han@nxp.com>
 
-What about it?  Not sure I understand the comment.
+Enable NXP i2c controller to boot with ACPI
 
-> >   };
-> > 
-> >   #define KVM_NR_MEM_OBJS     40
-> > diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-> > index 5e3f12d5359e..a4dd004d0db9 100644
-> > --- a/include/uapi/linux/kvm.h
-> > +++ b/include/uapi/linux/kvm.h
-> > @@ -235,6 +235,7 @@ struct kvm_hyperv_exit {
-> >   #define KVM_EXIT_S390_STSI        25
-> >   #define KVM_EXIT_IOAPIC_EOI       26
-> >   #define KVM_EXIT_HYPERV           27
-> > +#define KVM_EXIT_ARM_NISV         28
-> > 
-> >   /* For KVM_EXIT_INTERNAL_ERROR */
-> >   /* Emulate instruction failed. */
-> > @@ -996,6 +997,7 @@ struct kvm_ppc_resize_hpt {
-> >   #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
-> >   #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
-> >   #define KVM_CAP_PMU_EVENT_FILTER 173
-> > +#define KVM_CAP_ARM_NISV_TO_USER 174
-> > 
-> >   #ifdef KVM_CAP_IRQ_ROUTING
-> > 
-> > diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> > index 35a069815baf..2ce94bd9d4a9 100644
-> > --- a/virt/kvm/arm/arm.c
-> > +++ b/virt/kvm/arm/arm.c
-> > @@ -98,6 +98,26 @@ int kvm_arch_check_processor_compat(void)
-> >   	return 0;
-> >   }
-> > 
-> > +int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
-> > +			    struct kvm_enable_cap *cap)
-> 
-> This overrides the weak implementation in virt/kvm/kvm_main.c. OK.
-> 
+Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
+Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
+Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
+Signed-off-by: Biwen Li <biwen.li@nxp.com>
+---
+Change in v2:
+	- Simplify code
+	- Adjust header file order
+	- Not use ACPI_PTR()
 
-Yes.
+ drivers/acpi/acpi_apd.c      |  7 +++++++
+ drivers/i2c/busses/i2c-imx.c | 17 +++++++++++++----
+ 2 files changed, 20 insertions(+), 4 deletions(-)
 
-> > +{
-> > +	int r;
-> > +
-> > +	if (cap->flags)
-> > +		return -EINVAL;
-> > +
-> > +	switch (cap->cap) {
-> > +	case KVM_CAP_ARM_NISV_TO_USER:
-> > +		r = 0;
-> > +		kvm->arch.return_nisv_io_abort_to_user = true;
-> > +		break;
-> > +	default:
-> > +		r = -EINVAL;
-> > +		break;
-> > +	}
-> > +
-> > +	return r;
-> > +}
-> > 
-> >   /**
-> >    * kvm_arch_init_vm - initializes a VM data structure
-> > @@ -196,6 +216,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
-> >   	case KVM_CAP_MP_STATE:
-> >   	case KVM_CAP_IMMEDIATE_EXIT:
-> >   	case KVM_CAP_VCPU_EVENTS:
-> > +	case KVM_CAP_ARM_NISV_TO_USER:
-> >   		r = 1;
-> >   		break;
-> >   	case KVM_CAP_ARM_SET_DEVICE_ADDR:
-> > @@ -673,6 +694,8 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
-> >   		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
-> >   		if (ret)
-> >   			return ret;
-> > +	} else if (run->exit_reason == KVM_EXIT_ARM_NISV) {
-> > +		kvm_inject_undefined(vcpu);
-> 
-> So QEMU can try to enable the feature via IOCTL. And here you would
-> raise the 'undefined instruction' exception which QEMU will have to
-> handle in the loop calling KVM either by trying to make sense of the
-> instruction or by passing it on to the guest.
-> 
-> Conceptually this looks good to me and meets the requirements of my
-> application.
-> 
-> Thanks a lot for your suggestion.
-> 
+diff --git a/drivers/acpi/acpi_apd.c b/drivers/acpi/acpi_apd.c
+index 7cd0c9ac71ea..71511ae2dfcd 100644
+--- a/drivers/acpi/acpi_apd.c
++++ b/drivers/acpi/acpi_apd.c
+@@ -160,11 +160,17 @@ static const struct apd_device_desc hip08_i2c_desc = {
+ 	.setup = acpi_apd_setup,
+ 	.fixed_clk_rate = 250000000,
+ };
++
+ static const struct apd_device_desc thunderx2_i2c_desc = {
+ 	.setup = acpi_apd_setup,
+ 	.fixed_clk_rate = 125000000,
+ };
+ 
++static const struct apd_device_desc nxp_i2c_desc = {
++	.setup = acpi_apd_setup,
++	.fixed_clk_rate = 350000000,
++};
++
+ static const struct apd_device_desc hip08_spi_desc = {
+ 	.setup = acpi_apd_setup,
+ 	.fixed_clk_rate = 250000000,
+@@ -238,6 +244,7 @@ static const struct acpi_device_id acpi_apd_device_ids[] = {
+ 	{ "HISI02A1", APD_ADDR(hip07_i2c_desc) },
+ 	{ "HISI02A2", APD_ADDR(hip08_i2c_desc) },
+ 	{ "HISI0173", APD_ADDR(hip08_spi_desc) },
++	{ "NXP0001", APD_ADDR(nxp_i2c_desc) },
+ #endif
+ 	{ }
+ };
+diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+index 15f6cde6452f..a3b61336fe55 100644
+--- a/drivers/i2c/busses/i2c-imx.c
++++ b/drivers/i2c/busses/i2c-imx.c
+@@ -20,6 +20,7 @@
+  *
+  */
+ 
++#include <linux/acpi.h>
+ #include <linux/clk.h>
+ #include <linux/completion.h>
+ #include <linux/delay.h>
+@@ -255,6 +256,12 @@ static const struct of_device_id i2c_imx_dt_ids[] = {
+ };
+ MODULE_DEVICE_TABLE(of, i2c_imx_dt_ids);
+ 
++static const struct acpi_device_id i2c_imx_acpi_ids[] = {
++	{"NXP0001", .driver_data = (kernel_ulong_t)&vf610_i2c_hwdata},
++	{ }
++};
++MODULE_DEVICE_TABLE(acpi, i2c_imx_acpi_ids);
++
+ static inline int is_imx1_i2c(struct imx_i2c_struct *i2c_imx)
+ {
+ 	return i2c_imx->hwdata->devtype == IMX1_I2C;
+@@ -1048,14 +1055,13 @@ static const struct i2c_algorithm i2c_imx_algo = {
+ 
+ static int i2c_imx_probe(struct platform_device *pdev)
+ {
+-	const struct of_device_id *of_id = of_match_device(i2c_imx_dt_ids,
+-							   &pdev->dev);
+ 	struct imx_i2c_struct *i2c_imx;
+ 	struct resource *res;
+ 	struct imxi2c_platform_data *pdata = dev_get_platdata(&pdev->dev);
+ 	void __iomem *base;
+ 	int irq, ret;
+ 	dma_addr_t phy_addr;
++	const struct imx_i2c_hwdata *match;
+ 
+ 	dev_dbg(&pdev->dev, "<%s>\n", __func__);
+ 
+@@ -1075,8 +1081,9 @@ static int i2c_imx_probe(struct platform_device *pdev)
+ 	if (!i2c_imx)
+ 		return -ENOMEM;
+ 
+-	if (of_id)
+-		i2c_imx->hwdata = of_id->data;
++	match = device_get_match_data(&pdev->dev);
++	if (match)
++		i2c_imx->hwdata = match;
+ 	else
+ 		i2c_imx->hwdata = (struct imx_i2c_hwdata *)
+ 				platform_get_device_id(pdev)->driver_data;
+@@ -1089,6 +1096,7 @@ static int i2c_imx_probe(struct platform_device *pdev)
+ 	i2c_imx->adapter.nr		= pdev->id;
+ 	i2c_imx->adapter.dev.of_node	= pdev->dev.of_node;
+ 	i2c_imx->base			= base;
++	ACPI_COMPANION_SET(&i2c_imx->adapter.dev, ACPI_COMPANION(&pdev->dev));
+ 
+ 	/* Get I2C clock */
+ 	i2c_imx->clk = devm_clk_get(&pdev->dev, NULL);
+@@ -1247,6 +1255,7 @@ static struct platform_driver i2c_imx_driver = {
+ 		.name = DRIVER_NAME,
+ 		.pm = &i2c_imx_pm_ops,
+ 		.of_match_table = i2c_imx_dt_ids,
++		.acpi_match_table = i2c_imx_acpi_ids,
+ 	},
+ 	.id_table = imx_i2c_devtype,
+ };
+-- 
+2.17.1
 
-I will change the undef to an external abort as I think that's more in
-line with the architecture, and document this, test and send out as a
-proper patch.
-
-Thanks,
-
-    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
