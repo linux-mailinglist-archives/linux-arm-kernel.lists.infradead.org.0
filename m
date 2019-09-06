@@ -2,52 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D32E7ABE5C
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:09:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 51F1DABE62
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:13:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hKsscFinAyBCal0lV+Bx0yOi4q6hcDWxPfjjB4rIXFY=; b=TsGsdS4dRbKO5l
-	EqZF9/ZZa6OXbsaTQVlROfV1nkdwxy4m4iBPf/8LO8e8Sr/AEso6vl5d0BiwzXOSgVIscfUKwo2AE
-	9KuHwjuN8eDsvIdNquBVyaBLIMGrz1AOww8YWLg1k1hU1WKSp6+dsVzDDNc0SdMiGSuMZ+ronzGUe
-	GJEEfnkPlfNXSHS7sxnaQhglzZoKRlXo8ufMisiHo35/lMfOvlXRnhDN0rjbiUMQ9iXAbjvnaDgbu
-	ZjuyUe8g10K4jhdzp3IvU62empl5gXwx0wqHu5d8jyzn94er8YdyDDJUkF6nEeA34hqD3VTad/LvH
-	yn9YlSSjfpzH6URoLmKQ==;
+	List-Owner; bh=g6ebkvVHZjuaKTvKxyFGwpl5djyIGcXD7g8DHCvkESo=; b=ZJkRIGDA7dU70O
+	22G5bc+X8R8Gl+pwYfSllVLPjbOzFPFpOOhoMQWld3oEptuFoYvq5N09FeIAgNEBu5bg2ova99WpL
+	kneSGRWltYqJDRbFGdUW/cjEf/heFDly8zcsSzsxcWpxfN5j9sOxc3325FPJ+q2tzxem7c5slrxw0
+	ekMDNDJrclCBLub5gE+KgIZZTRIZaggPkAxB48LWnlmoT50qMHnu8rEC5V8OfSQR4aOET8ujwb/Qf
+	BMSwymZcwcV8WvDudzO8FrWlsokbhjhPBVAmBL2v8+DaQMBZzImjNiinJiP9AelZkdY4UheCIl2t7
+	YkjwAX4QT5S7nZvgXr8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6HkA-0002vP-W7; Fri, 06 Sep 2019 17:09:55 +0000
+	id 1i6Hnh-0004Zm-OD; Fri, 06 Sep 2019 17:13:33 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Hk1-0002v5-5E
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:09:46 +0000
+ id 1i6HnX-0004ZS-WE
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:13:25 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B861620578;
- Fri,  6 Sep 2019 17:09:44 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8847820640;
+ Fri,  6 Sep 2019 17:13:23 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567789784;
- bh=BNNllF0FjOInxrSgqhOawPj640tyUstNVfBjp7RKecU=;
+ s=default; t=1567790003;
+ bh=HJFZvCXScmLP/VynpJCvTMJhcWV1p90pwZuT//GAUtM=;
  h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=YSf77/C3UiKjN6tATKXLzwxWc1iXh4wXTn5RzbwF9+GsqqHtSVGbEwxjHJmR4DyLG
- KrTW+f0a2vBT85j6hbY7Fyj2OqNoKA2k1gsRGAAKsToe3i6ZwOO/4PglZm41szUf3n
- CLxCWd0LKfXammfVpMyD0uLJVKOrvYQN7D8S+KM0=
+ b=ZJoEQi0jpT9Ve/DcxKpgVJ3jVt9wJPl8Pwidllew/7ZRF22Xo0/L4DZh+wMyX7H6/
+ mlzn2YxtPBzSEvM4EdXemELSuC1xUoaij7h/msGl+cT97DhvS+PkgFRF0M020jn1f/
+ 8V/uM9zRguSP3YrNSMNga9fy4fyhVmXK3FcfHtDY=
 MIME-Version: 1.0
-In-Reply-To: <1566299605-15641-8-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1566299605-15641-9-git-send-email-aisheng.dong@nxp.com>
 References: <1566299605-15641-1-git-send-email-aisheng.dong@nxp.com>
- <1566299605-15641-8-git-send-email-aisheng.dong@nxp.com>
+ <1566299605-15641-9-git-send-email-aisheng.dong@nxp.com>
 To: Dong Aisheng <aisheng.dong@nxp.com>, linux-clk@vger.kernel.org
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH V4 07/11] clk: imx: scu: add suspend/resume support
+Subject: Re: [PATCH V4 08/11] clk: imx: imx8qxp-lpcg: add parsing clocks from
+ device tree
 User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 10:09:43 -0700
-Message-Id: <20190906170944.B861620578@mail.kernel.org>
+Date: Fri, 06 Sep 2019 10:13:22 -0700
+Message-Id: <20190906171323.8847820640@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_100945_224902_E79D7844 
-X-CRM114-Status: GOOD (  12.52  )
+X-CRM114-CacheID: sfid-20190906_101324_081615_259DE5B6 
+X-CRM114-Status: GOOD (  13.13  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,92 +85,131 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Dong Aisheng (2019-08-20 04:13:21)
-> Clock state will be lost when its power domain is completely off
-> during system suspend/resume. So we save and restore the state
-> accordingly in suspend/resume callback.
+Quoting Dong Aisheng (2019-08-20 04:13:22)
+> Add parsing clocks from device tree.
 
-And this doesn't need any coordination with other clks in the clk tree
-right?
+Please describe some more here.
 
-> diff --git a/drivers/clk/imx/clk-scu.c b/drivers/clk/imx/clk-scu.c
-> index edc39d7..8d9cfa2 100644
-> --- a/drivers/clk/imx/clk-scu.c
-> +++ b/drivers/clk/imx/clk-scu.c
-> @@ -46,6 +46,10 @@ struct clk_scu {
->         struct clk_hw hw;
->         u16 rsrc_id;
->         u8 clk_type;
-> +
-> +       /* for state save&restore */
-> +       bool is_enabled;
-> +       u32 rate;
+> diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
+> index c0aff7c..90326e5 100644
+> --- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
+> +++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
+> @@ -157,6 +158,101 @@ static const struct imx8qxp_ss_lpcg imx8qxp_ss_lsio = {
+>         .num_max = IMX_LSIO_LPCG_CLK_END,
 >  };
 >  
->  /*
-> @@ -425,6 +429,9 @@ struct clk_hw *__imx_clk_scu(struct device *dev, const char *name,
->                 hw = ERR_PTR(ret);
->         }
->  
-> +       if (dev)
-> +               dev_set_drvdata(dev, clk);
+> +#define IMX_LPCG_MAX_CLKS      8
 > +
->         return hw;
->  }
->  
-> @@ -481,10 +488,52 @@ static int imx_clk_scu_probe(struct platform_device *pdev)
->         return 0;
->  }
->  
-> +int __maybe_unused imx_clk_scu_suspend(struct device *dev)
-
-static?
-
+> +static struct clk_hw *imx_lpcg_of_clk_src_get(struct of_phandle_args *clkspec,
+> +                                             void *data)
 > +{
-> +       struct clk_scu *clk = dev_get_drvdata(dev);
+> +       struct clk_hw_onecell_data *hw_data = data;
+> +       unsigned int idx = clkspec->args[0] / 4;
 > +
-> +       clk->rate = clk_hw_get_rate(&clk->hw);
-> +       clk->is_enabled = clk_hw_is_enabled(&clk->hw);
-> +
-> +       if (clk->rate)
-> +               dev_dbg(dev, "save rate %d\n", clk->rate);
-> +
-> +       if (clk->is_enabled)
-> +               dev_dbg(dev, "save enabled state\n");
-> +
-> +       return 0;
-> +}
-> +
-> +int __maybe_unused imx_clk_scu_resume(struct device *dev)
-
-static?
-
-> +{
-> +       struct clk_scu *clk = dev_get_drvdata(dev);
-> +       int ret = 0;
-> +
-> +       if (clk->rate) {
-> +               ret = clk_scu_set_rate(&clk->hw, clk->rate, 0);
-> +               dev_dbg(dev, "restore rate %d %s\n", clk->rate,
-> +                       !ret ? "success" : "failed");
+> +       if (idx >= hw_data->num) {
+> +               pr_err("%s: invalid index %u\n", __func__, idx);
+> +               return ERR_PTR(-EINVAL);
 > +       }
 > +
-> +       if (clk->is_enabled) {
-> +               ret = clk_scu_prepare(&clk->hw);
-> +               dev_dbg(dev, "restore enabled state %s\n",
-> +                       !ret ? "success" : "failed");
-> +       }
-> +
-> +       return ret;
+> +       return hw_data->hws[idx];
 > +}
 > +
-> +const struct dev_pm_ops imx_clk_scu_pm_ops = {
+> +static int imx_lpcg_parse_clks_from_dt(struct platform_device *pdev,
+> +                                      struct device_node *np)
+> +{
+> +       const char *output_names[IMX_LPCG_MAX_CLKS];
+> +       const char *parent_names[IMX_LPCG_MAX_CLKS];
+> +       unsigned int bit_offset[IMX_LPCG_MAX_CLKS];
+> +       struct clk_hw_onecell_data *clk_data;
+> +       struct clk_hw **clk_hws;
+> +       struct resource *res;
+> +       void __iomem *base;
+> +       int count;
+> +       int idx;
+> +       int ret;
+> +       int i;
+> +
+> +       if (!of_device_is_compatible(np, "fsl,imx8qxp-lpcg"))
+> +               return -EINVAL;
+> +
+> +       res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +       base = devm_ioremap_resource(&pdev->dev, res);
+> +       if (IS_ERR(base))
+> +               return PTR_ERR(base);
+> +
+> +       count = of_property_count_u32_elems(np, "clock-indices");
+> +       if (count < 0) {
+> +               dev_err(&pdev->dev, "failed to count clocks\n");
+> +               return -EINVAL;
+> +       }
 
-static?
+Is 'count' expected to be equal to IMX_LPCG_MAX_CLKS? Because later on
+in this function we set the num of clks to the MAX instead of the count
+from clock-indices.
 
-> +       SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_clk_scu_suspend,
-> +                                     imx_clk_scu_resume)
-> +};
+> +
+> +       clk_data = devm_kzalloc(&pdev->dev, struct_size(clk_data, hws, IMX_LPCG_MAX_CLKS),
+
+This line is too long.
+
+> +                               GFP_KERNEL);
+> +       if (!clk_data)
+> +               return -ENOMEM;
+> +
+> +       clk_data->num = IMX_LPCG_MAX_CLKS;
+> +       clk_hws = clk_data->hws;
+> +
+> +       ret = of_property_read_u32_array(np, "clock-indices", bit_offset,
+> +                                        count);
+> +       if (ret < 0) {
+> +               dev_err(&pdev->dev, "failed to read clocks bit-offset\n");
+
+This isn't called bit-offset anymore.
+
+> +               return -EINVAL;
+> +       }
+> +
+> +       ret = of_clk_parent_fill(np, parent_names, count);
+> +       if (ret != count) {
+> +               dev_err(&pdev->dev, "failed to get clock parent names\n");
+> +               return -EINVAL;
+
+return count?
+
+> +       }
+> +
+> +       ret = of_property_read_string_array(np, "clock-output-names",
+> +                                           output_names, count);
+> +       if (ret != count) {
+> +               dev_err(&pdev->dev, "failed to read clock-output-names\n");
+> +               return -EINVAL;
+> +       }
+> +
+> +       for (i = 0; i < count; i++) {
+> +               idx = bit_offset[i] / 4;
+> +               if (idx > IMX_LPCG_MAX_CLKS) {
+> +                       dev_warn(&pdev->dev, "invalid bit offset of clock %d\n",
+> +                                i);
+> +                       return -EINVAL;
+> +               }
+> +
+> +               clk_hws[idx] = imx_clk_lpcg_scu(output_names[i],
+> +                                               parent_names[i], 0, base,
+> +                                               bit_offset[i], false);
+> +               if (IS_ERR(clk_hws[idx])) {
+> +                       dev_warn(&pdev->dev, "failed to register clock %d\n",
+> +                                idx);
+> +                       return -EINVAL;
+> +               }
+> +       }
+> +
+> +       return devm_of_clk_add_hw_provider(&pdev->dev, imx_lpcg_of_clk_src_get,
+> +                                          clk_data);
+
+If this fails does imx_clk_lpcg_scu() need to be unwound and unregister
+clks?
+
+> +}
 > +
 
 _______________________________________________
