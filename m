@@ -2,96 +2,137 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 56733AB7DA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:09:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BCEC5AB7E7
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:14:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+xK9Ty7oHFQd41mdEj9b4ET7b5iIsBAesIJXlYw9HHA=; b=FuVrz44WqGAb1ay+5ulIsWew8
-	kTslnbz2JiaJiiozDQ35l9QPi/qjrdL66L0XVWSB83DpN5IP02blfVsTcG61GKJKVIBTrQZafKxhL
-	tzmMothPQcGDOj/haVbcsowOWj2AwFxHtRq38t5v5j9EUu0y0TJrR8vJjSmWpXzmRuwovEmYnzsmQ
-	lS72PEOLV31T2CzgVeeY7ZbnC9IpUS7dcpumAV9S0wx2IM1BJF68jFn92yuce3q0LrhuyNtS3Frzx
-	SD8PWvB7CG3fTuu+G1XPT+W3tZOb9raa3cuem4O9CWnudVFSJVCJvCqHfI61FKn8iwlco4W3qluXl
-	MvX/rcbXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mxLC3RCUB+kk9AP72TXMAW7NSxm0GyDr8F8IlzgZbdc=; b=fyqfokbEPUcedB
+	8P7OdEAcDRDwDNYKlNuRuQ2VcsHMpj6muk8siH290vMJUxEosdmkkXc6YIIZhqFX7EnBOThoonBE/
+	lCTzLCSTHU3P6sIyBUk1IOfs2+RuzAB3LEbCeTNeaqqCLQhGYDjDyojpAR3kCxRvRBTU6g2jropf8
+	laTHQZe/wX0aLhKUce+8eq+p5+UHhrK8G54CCTtMk3EzyR5ODHCBieBOscDlWv/Eiy1JyuGzVUs93
+	O71gLJsUCS4OgYHJeRne4YGmwunNsqbCoX+FjTVspIgQFTAHFvUDk24r27MqRHAKygJ+ejW/+qGbu
+	92bDmgJCz3E06O/Uaqxg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6D2s-0000yh-GL; Fri, 06 Sep 2019 12:08:54 +0000
-Received: from smtp-fw-6002.amazon.com ([52.95.49.90])
+	id 1i6D87-0002iZ-Nh; Fri, 06 Sep 2019 12:14:19 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6D2j-0000y2-UP
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:08:47 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1567771725; x=1599307725;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=hxs/scbeDUuiqXhNmj59X3zMejisYXVxIxd+xioJtUQ=;
- b=VaPisM2g2EE8J1lCxLhCne9kuyabjvzo2pXE/r/oDXQpTgh6m+QKJNVP
- z6LXumf9F/glbH0pOPO4ohq7X8I7EqNDxcjhmgeYs5ZrWgbmcKreMjDd5
- B8Jqoer0ae6kzjUhw9mhXbPuDdQF1ZxZ3sHFb2ab35VPGd/nzrxB/sBIk o=;
-X-IronPort-AV: E=Sophos;i="5.64,473,1559520000"; d="scan'208";a="419804944"
-Received: from iad6-co-svc-p1-lb1-vlan3.amazon.com (HELO
- email-inbound-relay-2c-397e131e.us-west-2.amazon.com) ([10.124.125.6])
- by smtp-border-fw-out-6002.iad6.amazon.com with ESMTP;
- 06 Sep 2019 12:08:22 +0000
-Received: from EX13MTAUWC001.ant.amazon.com
- (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
- by email-inbound-relay-2c-397e131e.us-west-2.amazon.com (Postfix) with ESMTPS
- id A29A7A06DA; Fri,  6 Sep 2019 12:08:21 +0000 (UTC)
-Received: from EX13D20UWC001.ant.amazon.com (10.43.162.244) by
- EX13MTAUWC001.ant.amazon.com (10.43.162.135) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Fri, 6 Sep 2019 12:08:21 +0000
-Received: from 38f9d3867b82.ant.amazon.com (10.43.160.160) by
- EX13D20UWC001.ant.amazon.com (10.43.162.244) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Fri, 6 Sep 2019 12:08:18 +0000
-Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
- decoded
-To: Christoffer Dall <christoffer.dall@arm.com>, Marc Zyngier <maz@kernel.org>
-References: <20190904180736.29009-1-xypron.glpk@gmx.de>
- <86r24vrwyh.wl-maz@kernel.org>
- <CAFEAcA-mc6cLmRGdGNOBR0PC1f_VBjvTdAL6xYtKjApx3NoPgQ@mail.gmail.com>
- <86mufjrup7.wl-maz@kernel.org>
- <CAFEAcA9qkqkOTqSVrhTpt-NkZSNXomSBNiWo_D6Kr=QKYRRf=w@mail.gmail.com>
- <20190905092223.GC4320@e113682-lin.lund.arm.com>
- <4b6662bd-56e4-3c10-3b65-7c90828a22f9@kernel.org>
- <20190906080033.GF4320@e113682-lin.lund.arm.com>
-From: Alexander Graf <graf@amazon.com>
-Message-ID: <a58c5f76-641a-8381-2cf3-e52d139c4236@amazon.com>
-Date: Fri, 6 Sep 2019 14:08:15 +0200
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10.14; rv:60.0)
- Gecko/20100101 Thunderbird/60.8.0
+ id 1i6D82-0002hW-1Z
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:14:15 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190906121411euoutp011e32528f2ce7c35db2b47ee29414374b~B2F-tu6sF3255032550euoutp01q
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  6 Sep 2019 12:14:11 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190906121411euoutp011e32528f2ce7c35db2b47ee29414374b~B2F-tu6sF3255032550euoutp01q
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1567772051;
+ bh=8bq0zyXxMMGz7JArDAMaWTFTMXYIKCVTlRXFaU/lxLE=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=BVLCNstXliCJiSTE7hI5qCqLLBUnseQWq+OqvRkBiE7qqylf5ezN3RPTKorz3fW6x
+ 14vcgFmCV8izPuOgtv/Sy+TDZcra7i3o1It4IfZmyejGd2+jwrTEb/84DAezjuCoWg
+ nSAtx6VEbdFTjykv6kxveRDOg6MiJ0eopr1N0YjQ=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTP id
+ 20190906121410eucas1p20d604a2935d841fd3c0bfaf07c151ec2~B2F_zQnIv1615716157eucas1p2b;
+ Fri,  6 Sep 2019 12:14:10 +0000 (GMT)
+Received: from eucas1p2.samsung.com ( [182.198.249.207]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 60.08.04374.29D427D5; Fri,  6
+ Sep 2019 13:14:10 +0100 (BST)
+Received: from eusmtrp1.samsung.com (unknown [182.198.249.138]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190906121409eucas1p19c9b4675d6a4a60f3fedae6597be10f3~B2F97UTwZ1740117401eucas1p1e;
+ Fri,  6 Sep 2019 12:14:09 +0000 (GMT)
+Received: from eusmgms2.samsung.com (unknown [182.198.249.180]) by
+ eusmtrp1.samsung.com (KnoxPortal) with ESMTP id
+ 20190906121409eusmtrp14ca8de593255321a04aeaa0d5ddbb3c8~B2F9sce9B2099920999eusmtrp1R;
+ Fri,  6 Sep 2019 12:14:09 +0000 (GMT)
+X-AuditID: cbfec7f5-4ddff70000001116-21-5d724d9287d8
+Received: from eusmtip2.samsung.com ( [203.254.199.222]) by
+ eusmgms2.samsung.com (EUCPMTA) with SMTP id 12.F0.04117.19D427D5; Fri,  6
+ Sep 2019 13:14:09 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190906121408eusmtip24d7641472ec9002de43140e73e4a2ab1~B2F9DGPpa0190101901eusmtip2x;
+ Fri,  6 Sep 2019 12:14:08 +0000 (GMT)
+Subject: Re: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3
+ memories
+To: Krzysztof Kozlowski <krzk@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <99d2f2be-80f8-258c-2621-a4b5ff5cd177@partner.samsung.com>
+Date: Fri, 6 Sep 2019 14:14:07 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190906080033.GF4320@e113682-lin.lund.arm.com>
+In-Reply-To: <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
 Content-Language: en-US
-X-Originating-IP: [10.43.160.160]
-X-ClientProxiedBy: EX13D05UWB001.ant.amazon.com (10.43.161.181) To
- EX13D20UWC001.ant.amazon.com (10.43.162.244)
-Precedence: Bulk
+X-Brightmail-Tracker: H4sIAAAAAAAAA02SfSyVYRjGe877eaxjb4e4+1htp9ZkIWPr2ZJJzU5tUX+0VaY68nYYDp0X
+ faloqI6PSiuc6csqnEgOIRPrOIsSslosaUIpH2tFGil5vSz//e7rvp7nvq9nD0soO6mlbJgu
+ htfrNBEq2oaseDbe6pK5Qx+0vtG6Cpdml1C4fbSfwjetLRS+2DtI4NbWhwxuPjvEYHPvWwq/
+ rs6l8Ui6FeHs1loZLrZ2Mfhue5sMdyYW0Dj5iZXB9UPnKDzW2IN8OHXRjSKkfmzsYtRm0wVa
+ XXbnjDqj3ITUI+YVO+l9Nl4hfERYHK938z5oEzpVUUhE319ybLCygU5AVfYGJGeB84TvOUnI
+ gGxYJVeAoL+rbrYYRWCsGWakYgRBcf2YbO5I7t0eWmrkI8gy5JFSMYxgMu0FLbrsuN3wMvU3
+ I7I9txba//yiRBPBWUjIrh6fvoplac4VqkxHRI+C84PU0c+UyCS3Gi53fSFFXsztgR/d9ZTk
+ WQTPc/pmdDm3C9KTemdmEZwjvOu7KZN4JVQO5xLiLOASWbjV+ImU1t4KX8tv0BLbwUBDOSPx
+ cmi6kjbrESAh/TaSOB56L16f9WyE+oY2StyZmA5TUu0myZthyphJizJwttAxvEhawRYyK7II
+ SVbA+RSl5HaC8rRXs2/oAPlF15hLSGWcF8w4L4xxXhjj/7m3EGlCjnysEKnlBQ8df9RV0EQK
+ sTqt66GoSDOa/nJNfxt+VqHayWAL4likWqjo9tEHKSlNnHA80oKAJVT2ipLS6CClIkRz/ASv
+ jzqgj43gBQtaxpIqR8XJBd2BSk6rieHDeT6a1891Zax8aQLKrzqg/pjEJOcN+Ha0+18VmA8O
+ 273GDgdO7DfUOuc0B3v5ugQMbik9kZdIjevej9R9k6908rtd/DPZP8UwKHPYZgpK4gssLZBq
+ P+4+hgMKJ9YdzMh+sEl5elddv+cpPjjgTXgZTdY4FUdvuNck31mi9fHY6xzhXal6umb3I008
+ ryKFUI27M6EXNP8AELsQK24DAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrPIsWRmVeSWpSXmKPExsVy+t/xe7oTfYtiDQ63qVpsnLGe1eL6l+es
+ FvOPnGO16H/8mtni/PkN7BZnm96wW2x6fI3V4vKuOWwWn3uPMFrMOL+PyWLtkbvsFkuvX2Sy
+ uN24gs2ide8RdovDb9pZLb6deMToIOCxZt4aRo+ds+6ye2xa1cnmsXlJvUffllWMHp83yQWw
+ RenZFOWXlqQqZOQXl9gqRRtaGOkZWlroGZlY6hkam8daGZkq6dvZpKTmZJalFunbJehl/N+2
+ krlgtWTF6+3H2RoYd4h0MXJySAiYSMxZ+oiti5GLQ0hgKaPEh8OtrBAJMYlJ+7azQ9jCEn+u
+ dUEVvWaUWLdkI1hCWCBU4kz3bzBbREBT4vrf76wgRcwCh1gkPm09zgjRMYlZYvWfqyxdjBwc
+ bAJ6EjtWFYI08Aq4SXR/eQa2jUVARWLi3RcsILaoQITE4R2zGCFqBCVOznwCFucUCJTobXnM
+ BmIzC5hJzNv8kBnCFpe49WQ+E4QtL7H97RzmCYxCs5C0z0LSMgtJyywkLQsYWVYxiqSWFuem
+ 5xYb6RUn5haX5qXrJefnbmIERva2Yz+37GDsehd8iFGAg1GJh/eBQ1GsEGtiWXFl7iFGCQ5m
+ JRHe9RsLYoV4UxIrq1KL8uOLSnNSiw8xmgI9N5FZSjQ5H5h08kriDU0NzS0sDc2NzY3NLJTE
+ eTsEDsYICaQnlqRmp6YWpBbB9DFxcEo1MKp53nDxc0m0ZvQ09tv4Z0nUAdYliz+d5ErtEPvy
+ 52Tl/L87HaqlraW26CbdSdnwqUqzWtYt9ImVWNqNBrFtFy476DOIpE56e9d6+fS4yWZT7Naf
+ qLx2mff7ystGOVJWbzfIRcXe3X+89m5H5FKdK/e5XoWtOP3lUJ1M8uJqsZeNy5atWLl+XZ4S
+ S3FGoqEWc1FxIgB7L0JuAgMAAA==
+X-CMS-MailID: 20190906121409eucas1p19c9b4675d6a4a60f3fedae6597be10f3
+X-Msg-Generator: CA
+X-RootMTR: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
+References: <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
+ <20190906101344.3535-1-l.luba@partner.samsung.com>
+ <20190906101344.3535-4-l.luba@partner.samsung.com>
+ <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+ <52963d0d-cf48-7085-5581-a94c6e15e0bd@partner.samsung.com>
+ <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_050846_180107_5747C270 
-X-CRM114-Status: GOOD (  24.30  )
-X-Spam-Score: -2.2 (--)
+X-CRM114-CacheID: sfid-20190906_051414_295356_C2CBECBC 
+X-CRM114-Status: GOOD (  19.41  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.2 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.95.49.90 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -100,203 +141,103 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?UTF-8?Q?Daniel_P=2e_Berrang=c3=a9?= <berrange@redhat.com>, Heinrich
- Schuchardt <xypron.glpk@gmx.de>,
- lkml - Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Hajnoczi <stefanha@redhat.com>, kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?Q?Bart=c5=82omiej_=c5=bbo=c5=82nierkiewicz?=
+ <b.zolnierkie@samsung.com>, linux-pm@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ robh+dt@kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
 
-On 06.09.19 10:00, Christoffer Dall wrote:
-> On Thu, Sep 05, 2019 at 02:09:18PM +0100, Marc Zyngier wrote:
->> On 05/09/2019 10:22, Christoffer Dall wrote:
->>> On Thu, Sep 05, 2019 at 09:56:44AM +0100, Peter Maydell wrote:
->>>> On Thu, 5 Sep 2019 at 09:52, Marc Zyngier <maz@kernel.org> wrote:
->>>>>
->>>>> On Thu, 05 Sep 2019 09:16:54 +0100,
->>>>> Peter Maydell <peter.maydell@linaro.org> wrote:
->>>>>> This is true, but the problem is that barfing out to userspace
->>>>>> makes it harder to debug the guest because it means that
->>>>>> the VM is immediately destroyed, whereas AIUI if we
->>>>>> inject some kind of exception then (assuming you're set up
->>>>>> to do kernel-debug via gdbstub) you can actually examine
->>>>>> the offending guest code with a debugger because at least
->>>>>> your VM is still around to inspect...
->>>>>
->>>>> To Christoffer's point, I find the benefit a bit dubious. Yes, you get
->>>>> an exception, but the instruction that caused it may be completely
->>>>> legal (store with post-increment, for example), leading to an even
->>>>> more puzzled developer (that exception should never have been
->>>>> delivered the first place).
->>>>
->>>> Right, but the combination of "host kernel prints a message
->>>> about an unsupported load/store insn" and "within-guest debug
->>>> dump/stack trace/etc" is much more useful than just having
->>>> "host kernel prints message" and "QEMU exits"; and it requires
->>>> about 3 lines of code change...
->>>>
->>>>> I'm far more in favour of dumping the state of the access in the run
->>>>> structure (much like we do for a MMIO access) and let userspace do
->>>>> something about it (such as dumping information on the console or
->>>>> breaking). It could even inject an exception *if* the user has asked
->>>>> for it.
->>>>
->>>> ...whereas this requires agreement on a kernel-userspace API,
->>>> larger changes in the kernel, somebody to implement the userspace
->>>> side of things, and the user to update both the kernel and QEMU.
->>>> It's hard for me to see that the benefit here over the 3-line
->>>> approach really outweighs the extra effort needed. In practice
->>>> saying "we should do this" is saying "we're going to do nothing",
->>>> based on the historical record.
->>>>
->>>
->>> How about something like the following (completely untested, liable for
->>> ABI discussions etc. etc., but for illustration purposes).
->>>
->>> I think it raises the question (and likely many other) of whether we can
->>> break the existing 'ABI' and change behavior for missing ISV
->>> retrospectively for legacy user space when the issue has occurred?
->>>     
->>> Someone might have written code that reacts to the -ENOSYS, so I've
->>> taken the conservative approach for this for the time being.
->>>
->>>
->>> diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
->>> index 8a37c8e89777..19a92c49039c 100644
->>> --- a/arch/arm/include/asm/kvm_host.h
->>> +++ b/arch/arm/include/asm/kvm_host.h
->>> @@ -76,6 +76,14 @@ struct kvm_arch {
->>>   
->>>   	/* Mandated version of PSCI */
->>>   	u32 psci_version;
->>> +
->>> +	/*
->>> +	 * If we encounter a data abort without valid instruction syndrome
->>> +	 * information, report this to user space.  User space can (and
->>> +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
->>> +	 * supported.
->>> +	 */
->>> +	bool return_nisv_io_abort_to_user;
->>>   };
->>>   
->>>   #define KVM_NR_MEM_OBJS     40
->>> diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
->>> index f656169db8c3..019bc560edc1 100644
->>> --- a/arch/arm64/include/asm/kvm_host.h
->>> +++ b/arch/arm64/include/asm/kvm_host.h
->>> @@ -83,6 +83,14 @@ struct kvm_arch {
->>>   
->>>   	/* Mandated version of PSCI */
->>>   	u32 psci_version;
->>> +
->>> +	/*
->>> +	 * If we encounter a data abort without valid instruction syndrome
->>> +	 * information, report this to user space.  User space can (and
->>> +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
->>> +	 * supported.
->>> +	 */
->>> +	bool return_nisv_io_abort_to_user;
->>>   };
->>>   
->>>   #define KVM_NR_MEM_OBJS     40
->>> diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
->>> index 5e3f12d5359e..a4dd004d0db9 100644
->>> --- a/include/uapi/linux/kvm.h
->>> +++ b/include/uapi/linux/kvm.h
->>> @@ -235,6 +235,7 @@ struct kvm_hyperv_exit {
->>>   #define KVM_EXIT_S390_STSI        25
->>>   #define KVM_EXIT_IOAPIC_EOI       26
->>>   #define KVM_EXIT_HYPERV           27
->>> +#define KVM_EXIT_ARM_NISV         28
->>>   
->>>   /* For KVM_EXIT_INTERNAL_ERROR */
->>>   /* Emulate instruction failed. */
->>> @@ -996,6 +997,7 @@ struct kvm_ppc_resize_hpt {
->>>   #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
->>>   #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
->>>   #define KVM_CAP_PMU_EVENT_FILTER 173
->>> +#define KVM_CAP_ARM_NISV_TO_USER 174
->>>   
->>>   #ifdef KVM_CAP_IRQ_ROUTING
->>>   
->>> diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
->>> index 35a069815baf..2ce94bd9d4a9 100644
->>> --- a/virt/kvm/arm/arm.c
->>> +++ b/virt/kvm/arm/arm.c
->>> @@ -98,6 +98,26 @@ int kvm_arch_check_processor_compat(void)
->>>   	return 0;
->>>   }
->>>   
->>> +int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
->>> +			    struct kvm_enable_cap *cap)
->>> +{
->>> +	int r;
->>> +
->>> +	if (cap->flags)
->>> +		return -EINVAL;
->>> +
->>> +	switch (cap->cap) {
->>> +	case KVM_CAP_ARM_NISV_TO_USER:
->>> +		r = 0;
->>> +		kvm->arch.return_nisv_io_abort_to_user = true;
->>> +		break;
->>> +	default:
->>> +		r = -EINVAL;
->>> +		break;
->>> +	}
->>> +
->>> +	return r;
->>> +}
->>>   
->>>   /**
->>>    * kvm_arch_init_vm - initializes a VM data structure
->>> @@ -196,6 +216,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
->>>   	case KVM_CAP_MP_STATE:
->>>   	case KVM_CAP_IMMEDIATE_EXIT:
->>>   	case KVM_CAP_VCPU_EVENTS:
->>> +	case KVM_CAP_ARM_NISV_TO_USER:
->>>   		r = 1;
->>>   		break;
->>>   	case KVM_CAP_ARM_SET_DEVICE_ADDR:
->>> @@ -673,6 +694,8 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
->>>   		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
->>>   		if (ret)
->>>   			return ret;
->>> +	} else if (run->exit_reason == KVM_EXIT_ARM_NISV) {
->>> +		kvm_inject_undefined(vcpu);
+On 9/6/19 1:50 PM, Krzysztof Kozlowski wrote:
+> On Fri, 6 Sep 2019 at 13:39, Lukasz Luba <l.luba@partner.samsung.com> wrote:
 >>
->> Just to make sure I understand: Is the expectation here that userspace
->> could clear the exit reason if it managed to handle the exit? And
->> otherwise we'd inject an UNDEF on reentry?
+>> Hi Krzysztof,
 >>
+>> On 9/6/19 12:56 PM, Krzysztof Kozlowski wrote:
+>>> On Fri, 6 Sep 2019 at 12:14, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>>>>
+>>>> Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+>>>> Minor fixes in the old documentation.
+>>>>
+>>>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+>>>> ---
+>>>>    .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+>>>>    1 file changed, 27 insertions(+), 2 deletions(-)
+>>>>
+>>>> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>> index 3b2485b84b3f..de0905239767 100644
+>>>> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>> @@ -40,10 +40,34 @@ Child nodes:
+>>>>      a given speed-bin. Please see Documentation/devicetree/
+>>>>      bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
+>>>>
+>>>> +Samsung K3QF2F20DB LPDDR3 memory
+>>>> +------------------------------------------------------------
+>>>> +
+>>>> +This binding uses the LPDDR3 binding (described above)
+>>>> +
+>>>> +Required properties:
+>>>> +- compatible:  Should be:
+>>>> +               "samsung,K3QF2F20DB"
+>>>> +               followed by "jedec,lpddr3"
+>>>> +- density  : <u32> representing density in Mb (Mega bits)
+>>>> +- io-width : <u32> representing bus width. Possible value 32
+>>>> +- #address-cells: Must be set to 1
+>>>> +- #size-cells: Must be set to 0
+>>>
+>>> If you decided to repeat all properties again, then it deserves its
+>>> own bindings file. However I though about simpler solution - just
+>>> document compatible. Exactly the same as AT24 or AT25 EEPROM bindings.
+>>> There is not much benefit from copying all these properties.
+>> OK, I see. I will add only 'compatible' and skip the rest then.
+>> So the lpddr3.txt file will get this addition:
+>>
+>> +Samsung K3QF2F20DB LPDDR3 memory
+>> +------------------------------------------------------------
+>> +
+>> +This binding uses the LPDDR3 binding (described above)
+>> +
+>> +Required properties:
+>> +- compatible:  Should be:
+>> +               "samsung,K3QF2F20DB"
+>> +               followed by "jedec,lpddr3"
+>> +
+>> +Optional properties:
+>> +
+>> +The optional properties are the same as in the LPDDR3 generic bindings and
+>> +values should be taken from the data-sheet. Detailed bindings are described
+>> +above.
+>> +
+>> +Child nodes:
+>> +
+>> +Detailed bindings are described in LPDDR3 generic bindings described above.
+>> +
+>>
+>> Is it OK?
 > 
-> Yes, but I think we should change that to an external abort.  I'll test
-> something and send a proper patch with more clear documentation.
+> To me it is still a lot of text just for one compatible and I can
+> image more of such entries for other memories... However I do not mind
+> and anyway, YAML will simplify it. If you're in doubt, wait for Rob's
+> reply as this is his part.
 
-Why not leave the injection to user space in any case? API wise there is 
-no need to be backwards compatible, as we require the CAP to be enabled, 
-right?
+You are definitely right, YAML will simplify this.
+I will wait a few days with the v2 series, maybe Rob would like to see
+something different. If not, I will send v2 with the above change.
+Thank you for your comments.
 
-IMHO it should be 100% a policy decision in user space whether to 
-emulate and what type of exception to inject, if anything.
-
-
-Alex
-
-
-
-Amazon Development Center Germany GmbH
-Krausenstr. 38
-10117 Berlin
-Geschaeftsfuehrung: Christian Schlaeger, Ralf Herbrich
-Eingetragen am Amtsgericht Charlottenburg unter HRB 149173 B
-Sitz: Berlin
-Ust-ID: DE 289 237 879
+Regards,
+Lukasz
 
 
 _______________________________________________
