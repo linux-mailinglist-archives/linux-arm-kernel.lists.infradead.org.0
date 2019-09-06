@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E8CDCABE21
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 18:57:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0DB54ABE2E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:00:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SXzDq83+BWPItWCA2HTpqQgF0Qd/gIwNP4vyLSVT/4k=; b=PwXYF0r5MKZfXP
-	i5Oc7yXFV94wHmq1AF2+VGDsxosC+IgxNlsN2lk/BvUgy1zlOB85ABc35euMaGApWU8rpxaYAjrfc
-	uT8rEfM38FSnT0bV2oorhxUQAPyz73dPbOHC+yrlH7gdSMj+OkNzIrZ2QbHhn4141HHgrFGp0BFOW
-	FzHF/Ml7tM+uPUlYJaFXf/3LAJXUxeX13+LP9FdamQ5DY6b5rVKO5OoLzokGjNBhQzX0Zt1mRKIDD
-	+WHn0reXESZZmhaLGqsLWsH6KTWqPev0e9m2k9oFw2iajtFXg7OI0xkfgz67zVDMmOoL3HyzGBcf1
-	uPmm/927H+TbYX9hFU2g==;
+	List-Owner; bh=KI5J9GVcYtqriArD376WddUJBxL8reCvJ+WBnNdyA84=; b=K2Ny7Aq2+T7miP
+	Klms43Ok/vDWBkIWiNEKQKZCX3VGzH1Yoj1pL9QLpHMRKbtPyWICOO/aMtQoPfnEadBQMQjTSmPVt
+	RkKw3Z7uIO/S8v6Yo/w2VgxY+y/3DCYRUIP7KRd3taO3+TleD3UezUYlDN6P8dOYUFQYJb2e3fMF0
+	3CdOHmpM7DjHe5nVL4/07urXSxSA+kvPbYWmRyl3jloxC6rtsd/kxJh2SZ1JSct3ufbFhxQ11wFtg
+	wwL7teJOcQnnmLZxTVRjOIFQ1IApj3Hvl5SPETCfQ1aR1WoMUicPpXetLzBmFptoEGg+3Qw7xPF6E
+	Ufvu6hjeEzKLuC4mUeXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6HXf-00072w-6c; Fri, 06 Sep 2019 16:56:59 +0000
+	id 1i6HbP-0000H8-AS; Fri, 06 Sep 2019 17:00:51 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6HXS-00072R-9i
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 16:56:47 +0000
+ id 1i6HbC-0000Gl-SM
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:00:40 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9253120838;
- Fri,  6 Sep 2019 16:56:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7271720693;
+ Fri,  6 Sep 2019 17:00:38 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567789005;
- bh=XLiSshmmIvhKSn19Y5Ycy0IjYyEkcV7i/Om32f9YTCs=;
+ s=default; t=1567789238;
+ bh=edmt0mWAVzMrncvBSTQ4sSM8tDFkQPsUZ6bHredUyAE=;
  h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=zab+L7xreeoQiYiiP1PW139DUm9DwlukkoY/+5QLWhdMORo5KV9IbxytCew+5sS1y
- 3J39cU8ilrpAsoG7vxXWjbWlRIKvwErYmsgk2RO+QlbRv5/x4OZrBSMNDOG6fKPaGA
- 4KFkzBj2W8KmU/BpNetXaq2JRhioVGdDhaeKolB0=
+ b=VOiJ/CZaGT0AlatZpumHMBvaMiBcMzchXIfHDZjECNtalH9Q/tYgJwBBpJMH9j7Vu
+ vyt4vnSi8a9QhBbzQGl+cTeDrbvt1Wnh+XIoqmWAtE82Cy+YcE+/aJOxSLhg+vQUgQ
+ 0yKMiTrlSt/+Fjs1U16kGKAL/gFjslxK7mLMMgkc=
 MIME-Version: 1.0
-In-Reply-To: <1566299605-15641-2-git-send-email-aisheng.dong@nxp.com>
+In-Reply-To: <1566299605-15641-3-git-send-email-aisheng.dong@nxp.com>
 References: <1566299605-15641-1-git-send-email-aisheng.dong@nxp.com>
- <1566299605-15641-2-git-send-email-aisheng.dong@nxp.com>
+ <1566299605-15641-3-git-send-email-aisheng.dong@nxp.com>
 To: Dong Aisheng <aisheng.dong@nxp.com>, linux-clk@vger.kernel.org
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH V4 01/11] dt-bindings: firmware: imx-scu: new binding to
+Subject: Re: [PATCH V4 02/11] dt-bindings: clock: imx-lpcg: add support to
  parse clocks from device tree
 User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 09:56:44 -0700
-Message-Id: <20190906165645.9253120838@mail.kernel.org>
+Date: Fri, 06 Sep 2019 10:00:37 -0700
+Message-Id: <20190906170038.7271720693@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_095646_356264_9F34BB8F 
-X-CRM114-Status: GOOD (  10.80  )
+X-CRM114-CacheID: sfid-20190906_100038_959298_DA4167D3 
+X-CRM114-Status: GOOD (  19.37  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,23 +86,16 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Dong Aisheng (2019-08-20 04:13:15)
-> There's a few limitations on the original one cell clock binding
-> (#clock-cells = <1>) that we have to define some SW clock IDs for device
-> tree to reference. This may cause troubles if we want to use common
-> clock IDs for multi platforms support when the clock of those platforms
-> are mostly the same.
-> e.g. Current clock IDs name are defined with SS prefix.
+Quoting Dong Aisheng (2019-08-20 04:13:16)
+> MX8QM and MX8QXP LPCG Clocks are mostly the same except they may reside
+> in different subsystems across CPUs and also vary a bit on the availability.
 > 
-> However the device may reside in different SS across CPUs, that means the
-> SS prefix may not valid anymore for a new SoC. Furthermore, the device
-> availability of those clocks may also vary a bit.
+> Same as SCU clock, we want to move the clock definition into device tree
+> which can fully decouple the dependency of Clock ID definition from device
+> tree and make us be able to write a fully generic lpcg clock driver.
 > 
-> For such situation, we want to eliminate the using of SW Clock IDs and
-> change to use a more close to HW one instead.
-> For SCU clocks usage, only two params required: Resource id + Clock Type.
-> Both parameters are platform independent. So we could use two cells binding
-> to pass those parameters,
+> And we can also use the existence of clock nodes in device tree to address
+> the device and clock availability differences across different SoCs.
 > 
 > Cc: Rob Herring <robh+dt@kernel.org>
 > Cc: Stephen Boyd <sboyd@kernel.org>
@@ -115,6 +108,51 @@ Quoting Dong Aisheng (2019-08-20 04:13:15)
 
 Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 
+> ChangeLog:
+> v3->v4:
+>  * change bit-offset property to clock-indices
+>  * use constant macro to define clock indinces
+>  * drop hw-autogate property which is still not used by drivers
+> v2->v3:
+>  * no changes
+> v1->v2:
+>  * Update example
+>  * Add power domain property
+> ---
+>  .../devicetree/bindings/clock/imx8qxp-lpcg.txt     | 36 ++++++++++++++++++----
+>  include/dt-bindings/clock/imx8-lpcg.h              | 14 +++++++++
+>  2 files changed, 44 insertions(+), 6 deletions(-)
+>  create mode 100644 include/dt-bindings/clock/imx8-lpcg.h
+> 
+> diff --git a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
+> index 965cfa4..cad8fc4 100644
+> --- a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
+> +++ b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
+> @@ -11,6 +11,21 @@ enabled by these control bits, it might still not be running based
+>  on the base resource.
+>  
+>  Required properties:
+> +- compatible:          Should be one of:
+> +                         "fsl,imx8qxp-lpcg"
+> +                         "fsl,imx8qm-lpcg" followed by "fsl,imx8qxp-lpcg".
+> +- reg:                 Address and length of the register set.
+> +- #clock-cells:                Should be 1. One LPCG supports multiple clocks.
+> +- clocks:              Input parent clocks phandle array for each clock.
+> +- clock-indices:       An integer array indicating the bit offset for each clock.
+> +                       Refer to <include/dt-bindings/clock/imx8-lpcg.h> for the
+> +                       supported LPCG clock indices.
+
+This is an interesting solution.
+
+> +- clock-output-names:  Shall be the corresponding names of the outputs.
+> +                       NOTE this property must be specified in the same order
+> +                       as the clock-indices property.
+> +- power-domains:       Should contain the power domain used by this clock.
+> +
+> +Legacy binding (DEPRECATED):
+>  - compatible:  Should be one of:
+>                   "fsl,imx8qxp-lpcg-adma",
+>                   "fsl,imx8qxp-lpcg-conn",
 
 _______________________________________________
 linux-arm-kernel mailing list
