@@ -2,135 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D2E08AB82A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:31:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFAF7AB833
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:33:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=KnNt01pONj7/JurhLREW+S4SUX+0uj42o2Kty4bCwo8=; b=WiJaGi5+p3ZSsU
-	wm74a30So84zJBzVrn7kiF3P9VLfaR9zOn1Db7iw6MYfOFHnO6whwcGg5FphDcuRGTfjDO+MprF3y
-	7x7XEv+EUDKvfBJCqVPWwEP//u3lASl1t1rPY8k/qy3suwF/3zReMbd5NJI6QsYoodvca06+X70Ow
-	lWMW89hWNEKjr0irx+fDYzyGkrREpHlttOkji410HVnd4S4KOPWZcj5LWt7fu2stNFq7AS1+yJdIv
-	DKvfqABKcDPYq0EdqREXbx9oNtFOf14gdFhMIEmj40rlXrWtvZaD/xn8eXWlR67PvoBZ2yxZZhYJF
-	rAYwo1jpjfwHx1aiiRyQ==;
+	List-Owner; bh=XBFOLx0LYdsShfq1rRs/l19LYbxuihv05qG1kMLkQy0=; b=UeMgEUx4URwDMy
+	IiZiAYdoWZEOHPiEkMuqR5qXKYzDQF6tmtxutp/CP/6stZHEEhKrQc3iqW2TUdmoUucbPFTOpEb+m
+	DHIXCzvEGWsUQgaOlAZWZuNI61PcrGbWhdnuYT8ZnJTLzIvECNGH6iuZLm6svsOjEP2H8sexQbkh6
+	gJpcTmGoMeEemDGB31jiID+86JPfQk88OgKCz/Dd+91ohDZTYdJzZOc8l80av3X+hfKPZ+BBoesnH
+	U9fo9L41vLPZEttAzLfzbaurHUkVhakU8URniKsaVYaIr6NtojwfXgPnBsb8X3TqNk7QBfL7IbMfo
+	r+9+jdnhuEsff9nHkLpg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6DOY-0000Yl-JU; Fri, 06 Sep 2019 12:31:18 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1i6DQS-0001P7-Hr; Fri, 06 Sep 2019 12:33:16 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6DOS-0000Y4-1f
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:31:13 +0000
-Received: from pps.filterd (m0167089.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x86CSPrZ017800; Fri, 6 Sep 2019 08:31:05 -0400
-Received: from nam04-bn3-obe.outbound.protection.outlook.com
- (mail-bn3nam04lp2055.outbound.protection.outlook.com [104.47.46.55])
- by mx0a-00128a01.pphosted.com with ESMTP id 2uqnt8m7jj-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 06 Sep 2019 08:31:05 -0400
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=FdyAQGtrhhssV1DKdOYYCBS4qV8qxm2VoQ4QST5aIpgISXKz6h6DigU+vCD4s4pyOkLhj9Tj1PQCnkjKDYlc70IUjSsGkbdGNYiugm+Gc51OwNFzQjAEIcgW8iVE0vSJQ4tQI7v7xUgzYLwzYn2wDVRhwLGm8Puf1VAgeJacDz9zigGQ14Ccg1ZFK8j7YOISHM/Ec5v2URfPYuBkMfkl76ZJU6T3/u2JFRixoFrMLYUx4rbNRdU0KtiIV+lBzdufII13BQVEHM815ZWfjpQ+03kJvG7K1tBJrhpx8zWNJSPOj9JLBZHeV6wpWbn1hl42IJa6ZFCQsLtJfI8Fqk+Lmg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cmYmdUDYrg+4d3nvWf1pvVITUqE3ubU8lBQlktAxug4=;
- b=G6D4vxgiCBSGYxrg6SKe97cjRF/DY0QL64S3E5Zd5JNtB+DjG8zm/ozGvko3BZ1szG/mzWj6FMW1yFIed/0OjSUJIK2uVk3mOyR8LQMNKXPbnnIUMBl0F2bWrL1hLn3h/48QV6ZEvYPn5oZzEsY/afo5aob62uB1TjLKaux1ic5yXl9gr8tEl+ZFrCkwi35YuTMQ2dDVk6b5rIwpsOa7ISZZQrcylzIVqNUN0uYvhO9tDokpIEpOH33C/5Wc0rOrcGRiMatxmwfBMaSIzC3ngvlf2BYYuX8qG9uS7WC9sm+YSEkx5giinzQFWfIzrUz5NrwiVDI2q5tvdLMvcWVzcA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 137.71.25.55) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=analog.com;
- dmarc=bestguesspass action=none header.from=analog.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=cmYmdUDYrg+4d3nvWf1pvVITUqE3ubU8lBQlktAxug4=;
- b=Xi6RVJdypotiX1F5DLeS2othyrq01Ckk3z14e390MRCt7Z380kXC3UBMErwEyoaH5bHoUBXjIotPiXlhDfF0vOY2+P7t8z+zowa0ktdijwxV0miuSb3B/6QiApDpvAZHL+f6pYov7Kz18Js9a9UCaAPcY5+dJKHeb3map5RfYBs=
-Received: from BN6PR03CA0098.namprd03.prod.outlook.com (2603:10b6:404:10::12)
- by DM6PR03MB4700.namprd03.prod.outlook.com (2603:10b6:5:180::30) with
- Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2241.15; Fri, 6 Sep
- 2019 12:31:03 +0000
-Received: from BL2NAM02FT041.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e46::203) by BN6PR03CA0098.outlook.office365.com
- (2603:10b6:404:10::12) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2241.14 via Frontend
- Transport; Fri, 6 Sep 2019 12:31:03 +0000
-Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
- 137.71.25.55 as permitted sender) receiver=protection.outlook.com;
- client-ip=137.71.25.55; helo=nwd2mta1.analog.com;
-Received: from nwd2mta1.analog.com (137.71.25.55) by
- BL2NAM02FT041.mail.protection.outlook.com (10.152.77.122) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2241.14
- via Frontend Transport; Fri, 6 Sep 2019 12:31:03 +0000
-Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
- [10.64.69.107])
- by nwd2mta1.analog.com (8.13.8/8.13.8) with ESMTP id x86CV2Sm023246
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Fri, 6 Sep 2019 05:31:02 -0700
-Received: from saturn.ad.analog.com (10.48.65.123) by
- NWD2HUBCAS7.ad.analog.com (10.64.69.107) with Microsoft SMTP Server id
- 14.3.408.0; Fri, 6 Sep 2019 08:31:02 -0400
-From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-To: <netdev@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
- <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
-Subject: [PATCH] net: stmmac: socfpga: re-use the `interface` parameter from
- platform data
-Date: Fri, 6 Sep 2019 15:30:54 +0300
-Message-ID: <20190906123054.5514-1-alexandru.ardelean@analog.com>
-X-Mailer: git-send-email 2.20.1
+ id 1i6DQL-0001ON-1g; Fri, 06 Sep 2019 12:33:10 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q10so4396307pfl.0;
+ Fri, 06 Sep 2019 05:33:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Yz8E2Km3qb90hXAs0IYE6gU7l6QgyfYQZCSLqivyf6E=;
+ b=Ey2hqfA7IQvWIjwaZRXLK1MJoLAYZ3w+rNkhCSb2zOJvC3mTkVwW4A3QD/q7u9b5Ru
+ 84ARDBD6Hxgad++SUaJVDTD20qNcP3oTvxITLv8nkFhFFP562ePZK8saL8OE/oHb10jj
+ R32kFFJSqkH2XltA6GO5F1ZEdhkERcUULQytBhvCx/v/iPAmL0qxt9szZqHHL02NhrxH
+ uBj1NDFBL2ZljD9+V9/98u7l7lNX5aHrqko49U5yXC80L9KOHHde2J07RPH91rEwmshU
+ zKHMvFFtYRNeWaydN/C3775jUprLyNNwkOtEjrp/x02h2+YjbyRQJek7qsulMR8724Vc
+ uvOw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=Yz8E2Km3qb90hXAs0IYE6gU7l6QgyfYQZCSLqivyf6E=;
+ b=aAh6iyQkHNjsssE2r8/gO46Ly3vuBu/GKEMBipFEFkzCWY4DX2m9UUn9r1d4hTW7Iv
+ yxkTItq6E5rpjDbK9mzumEDTjbIQk0iMKKCbKjY9OZ7IIbrky2hHTx7856HyZTdadXt3
+ f7ymewlU448M0hvr85ulgeRCd2oUoUnOoBAd+jHX3jmbZMsIR45UeIG9QEPtRnxWYWUi
+ adw/GZ/1HJV1Zc+Mb/kZOSa5fyyylFtwaNBTKmcPrI238PSybcbFZhkldAwMJQjpw/wk
+ PkCSLZRdnytd5alEpYjSIW5HKaaV49LEsUHNMoAJEMMXWetQNZ2oFMgwtgS0a381yZdG
+ n0Sw==
+X-Gm-Message-State: APjAAAUs/0C6mXJBYV/cLhSiDpXGZvYrsdpsiqM65eFjpo3WgnY404Yv
+ SUPgJ6wAGIkLkOhgl5qfQR4=
+X-Google-Smtp-Source: APXvYqyyFCOHTFvEoDeCLFQhX/mZ4AJ7iNpCfpGLKwFKukF531c5Ct9E3LFVHRm7nIXjQiD0S/lk7Q==
+X-Received: by 2002:aa7:8592:: with SMTP id w18mr10425002pfn.237.1567773188389; 
+ Fri, 06 Sep 2019 05:33:08 -0700 (PDT)
+Received: from localhost.localdomain ([45.114.62.203])
+ by smtp.gmail.com with ESMTPSA id h70sm4752933pgc.36.2019.09.06.05.33.05
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 06 Sep 2019 05:33:07 -0700 (PDT)
+From: Anand Moon <linux.amoon@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>,
+ Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
+ Jerome Brunet <jbrunet@baylibre.com>,
+ Neil Armstrong <narmstrong@baylibre.com>,
+ Kevin Hilman <khilman@baylibre.com>
+Subject: [PATCHv3-next 0/3] Odroid c2 missing regulator linking
+Date: Fri,  6 Sep 2019 12:32:56 +0000
+Message-Id: <20190906123259.351-1-linux.amoon@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-ADIRoutedOnPrem: True
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:137.71.25.55; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(136003)(39860400002)(396003)(376002)(346002)(2980300002)(189003)(199004)(5660300002)(8936002)(8676002)(47776003)(26005)(4326008)(478600001)(50226002)(7636002)(246002)(70586007)(107886003)(36756003)(70206006)(305945005)(486006)(44832011)(476003)(336012)(2906002)(2616005)(6666004)(356004)(1076003)(426003)(86362001)(50466002)(48376002)(7696005)(51416003)(2870700001)(106002)(316002)(110136005)(126002)(54906003)(186003)(2201001)(81973001)(2101003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DM6PR03MB4700; H:nwd2mta1.analog.com; FPR:;
- SPF:Pass; LANG:en; PTR:nwd2mail10.analog.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 81df5308-7871-41e9-042e-08d732c614f2
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
- SRVR:DM6PR03MB4700; 
-X-MS-TrafficTypeDiagnostic: DM6PR03MB4700:
-X-Microsoft-Antispam-PRVS: <DM6PR03MB4700F9344C52C32DB291E865F9BA0@DM6PR03MB4700.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:5236;
-X-Forefront-PRVS: 0152EBA40F
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: 4elzOFMw439Z/orIXPc1TbHcVg83DafU9jWaxyxYE2XB4XcGCkWoLaU7oJB4pVncO/m1kNmnxQKQOQPg9x4uP4wbFUeTUmkfIaYPnKkDPkdmaEhCsnPNz88xNWXt2QI2Bsbv+IM+QNLJy9n+PRpPG4Ph6Mx3uYZBT64jAqNo+2t7bwu/EHSh4qmrQVr8lZaeL+ve+v6GkK1nQpihhJSuNHB3sV+inGAR09dhw1odrT0MfAP1SLZ/7ohlRNUegTDloojcmw0z+DH5A08axy3EGUPQlR+NZuxN4EGxbHsJzktmvnKTCbhwNjkvhaWpz+HEHOIhLJCUAjChaU1ODhy1v4SQKFYlOJwQUGpnUrnXLD3EyB6tDZ72JJ8lFL/HIAiuAdms7iPbZXHkgfZaNaj+8Ub3vr+5HTXHTeVfKCgoHrM=
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 06 Sep 2019 12:31:03.1512 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 81df5308-7871-41e9-042e-08d732c614f2
-X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.55];
- Helo=[nwd2mta1.analog.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM6PR03MB4700
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-06_06:2019-09-04,2019-09-06 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- impostorscore=0 clxscore=1011
- suspectscore=0 lowpriorityscore=0 bulkscore=0 spamscore=0 malwarescore=0
- mlxscore=0 priorityscore=1501 adultscore=0 mlxlogscore=999 phishscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.12.0-1906280000
- definitions=main-1909060131
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_053112_146851_03684A4C 
-X-CRM114-Status: GOOD (  12.59  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190906_053309_116788_019C19A8 
+X-CRM114-Status: UNSURE (   6.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.135.77 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (linux.amoon[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -142,94 +99,54 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alexandre.torgue@st.com, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, Alexandru Ardelean <alexandru.ardelean@analog.com>,
- davem@davemloft.net
+Cc: devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The socfpga sub-driver defines an `interface` field in the `socfpga_dwmac`
-struct and parses it on init.
+Below small changes help re-configure or fix missing inter linking
+of regulator node.
 
-The shared `stmmac_probe_config_dt()` function also parses this from the
-device-tree and makes it available on the returned `plat_data` (which is
-the same data available via `netdev_priv()`).
+Re-based on linux-next-20190904
+Changes from previous patch's series.
+Build using Cross Compiler.
 
-All that's needed now is to dig that information out, via some
-`dev_get_drvdata()` && `netdev_priv()` calls and re-use it.
+Added missing Reviewed-by Neil's and Martin.
+Added few suggestion from martin for rename of node.
 
-Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
----
- .../net/ethernet/stmicro/stmmac/dwmac-socfpga.c   | 15 +++++++--------
- 1 file changed, 7 insertions(+), 8 deletions(-)
+Dependencies:
+Changes based top on my previous usb fix series patch's.
 
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-index c141fe783e87..3094bb1f77e5 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
-@@ -46,7 +46,6 @@ struct socfpga_dwmac_ops {
- };
- 
- struct socfpga_dwmac {
--	int	interface;
- 	u32	reg_offset;
- 	u32	reg_shift;
- 	struct	device *dev;
-@@ -110,8 +109,6 @@ static int socfpga_dwmac_parse_data(struct socfpga_dwmac *dwmac, struct device *
- 	struct resource res_tse_pcs;
- 	struct resource res_sgmii_adapter;
- 
--	dwmac->interface = of_get_phy_mode(np);
--
- 	sys_mgr_base_addr =
- 		altr_sysmgr_regmap_lookup_by_phandle(np, "altr,sysmgr-syscon");
- 	if (IS_ERR(sys_mgr_base_addr)) {
-@@ -231,8 +228,12 @@ static int socfpga_dwmac_parse_data(struct socfpga_dwmac *dwmac, struct device *
- 	return ret;
- }
- 
--static int socfpga_set_phy_mode_common(int phymode, u32 *val)
-+static int socfpga_set_phy_mode_common(struct socfpga_dwmac *dwmac, u32 *val)
- {
-+	struct net_device *ndev = dev_get_drvdata(dwmac->dev);
-+	struct stmmac_priv *priv = netdev_priv(ndev);
-+	int phymode = priv->plat->interface;
-+
- 	switch (phymode) {
- 	case PHY_INTERFACE_MODE_RGMII:
- 	case PHY_INTERFACE_MODE_RGMII_ID:
-@@ -255,12 +256,11 @@ static int socfpga_set_phy_mode_common(int phymode, u32 *val)
- static int socfpga_gen5_set_phy_mode(struct socfpga_dwmac *dwmac)
- {
- 	struct regmap *sys_mgr_base_addr = dwmac->sys_mgr_base_addr;
--	int phymode = dwmac->interface;
- 	u32 reg_offset = dwmac->reg_offset;
- 	u32 reg_shift = dwmac->reg_shift;
- 	u32 ctrl, val, module;
- 
--	if (socfpga_set_phy_mode_common(phymode, &val)) {
-+	if (socfpga_set_phy_mode_common(dwmac, &val)) {
- 		dev_err(dwmac->dev, "bad phy mode %d\n", phymode);
- 		return -EINVAL;
- 	}
-@@ -314,12 +314,11 @@ static int socfpga_gen5_set_phy_mode(struct socfpga_dwmac *dwmac)
- static int socfpga_gen10_set_phy_mode(struct socfpga_dwmac *dwmac)
- {
- 	struct regmap *sys_mgr_base_addr = dwmac->sys_mgr_base_addr;
--	int phymode = dwmac->interface;
- 	u32 reg_offset = dwmac->reg_offset;
- 	u32 reg_shift = dwmac->reg_shift;
- 	u32 ctrl, val, module;
- 
--	if (socfpga_set_phy_mode_common(phymode, &val))
-+	if (socfpga_set_phy_mode_common(dwmac, &val))
- 		return -EINVAL;
- 
- 	/* Overwrite val to GMII if splitter core is enabled. The phymode here
+[0] https://patchwork.kernel.org/patch/11113095/
+[1] https://patchwork.kernel.org/patch/11113099/
+[3] https://patchwork.kernel.org/patch/11113103/
+
+Hope this series get picked up for 5.4-rc1, finger crossed.
+
+Changes for previous changes.
+Fix some typo.
+Updated few patches as per Martin's suggestion.
+
+I will try to commit less mistake in the future.
+
+Best Regards
+-Anand
+
+Anand Moon (3):
+  arm64: dts: meson: odroid-c2: Add missing regulator linked to P5V0
+    regulator
+  arm64: dts: meson: odroid-c2: Add missing regulator linked to
+    VDDIO_AO3V3 regulator
+  arm64: dts: meson: odroid-c2: Add missing regulator linked to HDMI
+    supply
+
+ .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 53 +++++++++++++++++--
+ 1 file changed, 50 insertions(+), 3 deletions(-)
+
 -- 
-2.20.1
+2.23.0
 
 
 _______________________________________________
