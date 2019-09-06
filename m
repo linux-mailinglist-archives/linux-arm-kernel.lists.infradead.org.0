@@ -2,68 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 32A57ABCC0
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:40:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0E5A7ABCC6
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 17:41:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=zgqxU6sWEqkrRURtaZE2EOMdQF8oXTIYsaMuTVzELos=; b=hoKdIDRFSaTe1F
-	ZwuzjtYyb3CCobfgXXasLzpkZH3o4lxp2R0y3fZ2BLeLcWFWtQY97YdtTRi8Uodb5BptHwhrhvleD
-	93x4FgDaw4JU8N+4Cu3u8AUOKU/4dGB2JnWqztrpjq9tBdUDcotuHbm0Cuu1uevNHPGAbxIcRGgbt
-	zL3cS7RnQRvAdnYCICdyxJF76jdg5S6eq2yErFwQtOaU3uZoJmR7o6e2ihlAFbyZX7/VAOU1o1vqz
-	gO285zqYYoXnTQS9/7JNRD13n2piVQpvK0N/9Z/6Vgo6becFwECaYPpmpFE6vEpXd4qExJK1IASLD
-	yiblmQ/ySxKp61EdGhWA==;
+	List-Owner; bh=xS+xVY6TajuM/ldjoqTIcwtLDxQ3HOmSSNhQvq4T2o4=; b=b3GOuoG/I0Mlrm
+	GnX+AHdyTV9iMboE4vyah4l5ycEKa2V925ns6JsUpndUFxldzG+X5TND/BQBgJ0h/XNzMKFUMRPGa
+	XaKZW2hZqGCcACXja5JQ/GxIg13IJsZfmGKp1+jRfS5MOq8e5KbwQ2qalhFDED8cjzLrSPJ/N07nH
+	lRv0VZXsE+EVUJgKWKTj3lp2C2GBDwAGvfYXjxcetnLNO+hpuDec8ylhE0ipZAj++bNCoNWAfzYF+
+	Ps+jRqfiBAuVoZ3sFg65XZ9ml+XAv5jijK535BVPg1cammyBLRJUn3DYWKHsCz1e6AuTixwU4iyV5
+	iSHRTxOi60CuLozJP3qQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6GLi-0005pl-8j; Fri, 06 Sep 2019 15:40:34 +0000
+	id 1i6GMc-0006Gn-G3; Fri, 06 Sep 2019 15:41:30 +0000
 Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6GLK-0005gE-RN
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:40:12 +0000
-Received: by mail-ed1-x543.google.com with SMTP id z9so6673857edq.8
+ id 1i6GMN-0006F1-JL
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 15:41:16 +0000
+Received: by mail-ed1-x543.google.com with SMTP id i1so6711023edv.4
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 08:40:10 -0700 (PDT)
+ Fri, 06 Sep 2019 08:41:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CjF3fwI23SGTIbsZbebpupUjHvggvSShXHb+f7gohRg=;
- b=X+TZLFq+/8fiOOZaSxM4o7weyYJJYjKBVTcRCZfcxr2IxHAce/BmJfEXlo+kHisHhF
- mlpMhUTxWtcXV/LgdZFzuY7qNCrZaKMw8ItKcgilp5WTkQNFuCtZgPd4jGMxpgeusHKy
- +ahYXFtlTF+mSXTcvIEKTHM34JZSa4gUxMyQbY9ovXkeE1DqzeHziy0kVUOT9HDoGgh+
- 86qEcJGuBwvEp64MJNk43vufsS6oXhTwJOTInG+rMeHXceUdYHOhY8j0CA+yEADsDreV
- fxhYTUKSD4lXhNC87Jhmdi20O2F9lotiaxFikDlzOtV2OTRHPhktK0wYcLrfjjdxvON+
- FoEQ==
+ :cc; bh=E/TcN7fOifPGax1Jq40PHMF0EK7SlDS08IkccSojTBY=;
+ b=UHpvjhj/b+3iPmUiNVdPjXOFzdSR9u8eZg6v7FAfkypqULaESyzADB/3E0G1AkEkNR
+ Lp8I3t1bftgwOcuzcW2n2byutpV5BbBWkG00d6zYMuBg0Wf4juih5hnIVQ30wERZkO42
+ orJl08eujiOsHl+blX6Hkfe0UnzoOC8HeNQyn2zEw6FuD2liDmdKTiQwOCOOPWUUQUrq
+ i0UfvMU0TYqLIyuRgY978I+xXrDXcSjX7hTdo9RtugdRgTB6Ij+Esu3cAjKLJTX0AxAF
+ M0acuyTnKUC/IW05ASrd/FZQtsdbwbSCUpPxWnd4khMHCCnwBz2K2dMpQDeoOrFxf1IL
+ qPxQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=CjF3fwI23SGTIbsZbebpupUjHvggvSShXHb+f7gohRg=;
- b=qvI165GeFgasPwotK1nzaHpPMnV8Xx4gGit5MwvOP97I4dxI+aLQFsqHRAfE43wEq5
- O0Ep7f63Xqo82AGszBgteXJPD8+HkVvwkPMiUG63ol4S4D4vfmJfTe4AA41ZYqMlezOd
- mNtdoynfGbl7m92/kiGiWrkqpumi369kEOoPqDY8LKlg8dKYzsCdHEKBsgq/Vclr1N2E
- o5WHTk0vmKB5rmfaCoZl7Xqzf6xas/i3XZ5Zyr/hg9/Cnim+OTRkgyJYBrubUlHZdLvX
- V3JK2HmcmpcmbqXFOcdiQE8b/tpyZZtU0v0FKpwTD7w/8/+Orh2T7psW2988s/CVXgIg
- JqqQ==
-X-Gm-Message-State: APjAAAVKYd/D9xhhm34W33qyowLeKlQ/NQwH43PVzXISrxOzMITN0BTd
- F3RKqb8KocDla6A0mm6M9U4ZoSKRFCFz8E8fiYofYg==
-X-Google-Smtp-Source: APXvYqwgWEKdsXXZDKUgZfHTTS/3PBS/mpsvU7NBgD+cDEAZM2KkwC32Gcr7KkyJWBr9wuGwTdTO2+WUmBcm/dqbcb4=
-X-Received: by 2002:aa7:dd17:: with SMTP id i23mr10239139edv.124.1567784409076; 
- Fri, 06 Sep 2019 08:40:09 -0700 (PDT)
+ bh=E/TcN7fOifPGax1Jq40PHMF0EK7SlDS08IkccSojTBY=;
+ b=RCFSh8D6i7t6yO2V6+XiHeXbkD+xECLQeU9oodsEDeBH66gQIoEQZa/jeJSQiOM2rX
+ T4/gxt1BAmNP2k2qWPpHYuL3py/rL0SIBWaV/wOe0d3/yNvMwVv3qP6DRmro7hljhXM1
+ PBC1RfUH16tAzuUi3xkj89t9XGaDdpG6NGfQzQKfgTolkC4T4h5X3MhLx9zQPC+v385Q
+ ZYdH9BwxPSaoW1ole9PZEQQx/ffqLOqYq88ePSLmU9sIBk6br8rx8VtiqorfaklkED8n
+ 3ssVqkz21IoI0iNXfZ0UNLpjTKh9RTklNL3VXrHCW11gBvp3hgarjd5beFRJ6KeMxX7F
+ fv9Q==
+X-Gm-Message-State: APjAAAUAQtWkkfbaWlRoy/HobMt4mdJ7EwyiUTGKlvHXuagGcfUtPxVI
+ I1ANTmi0LNuKQrsOxa7Zb8+vlQ1q8CAH+GLQoTDXXg==
+X-Google-Smtp-Source: APXvYqxqjBbmqD7LIj2EqKBKAdltdsP4QbI+ZnJq02VDIJPVUgUjKlLGn6euHlVgtpT+xdsUOX7pyuDO609XO9GYCmk=
+X-Received: by 2002:a17:906:bb0f:: with SMTP id
+ jz15mr7785513ejb.264.1567784474126; 
+ Fri, 06 Sep 2019 08:41:14 -0700 (PDT)
 MIME-Version: 1.0
 References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
- <20190821183204.23576-3-pasha.tatashin@soleen.com>
- <dc6506a0-9b66-f633-8319-9c8a9dc93d4f@arm.com>
-In-Reply-To: <dc6506a0-9b66-f633-8319-9c8a9dc93d4f@arm.com>
+ <20190821183204.23576-5-pasha.tatashin@soleen.com>
+ <2e826560-4005-fa16-8bbb-fc0e25763dcc@arm.com>
+In-Reply-To: <2e826560-4005-fa16-8bbb-fc0e25763dcc@arm.com>
 From: Pavel Tatashin <pasha.tatashin@soleen.com>
-Date: Fri, 6 Sep 2019 11:39:58 -0400
-Message-ID: <CA+CK2bBgUH8v_bYEyJKPsLZFDxse6xYRwGR8KN=SzgHnrR9yhA@mail.gmail.com>
-Subject: Re: [PATCH v3 02/17] arm64, hibernate: use get_safe_page directly
+Date: Fri, 6 Sep 2019 11:41:03 -0400
+Message-ID: <CA+CK2bDU9ZZbXsqfEzMV9JDRUq0vMRNHObpQ0q-YtwbEbq702w@mail.gmail.com>
+Subject: Re: [PATCH v3 04/17] arm64,
+ hibernate: rename dst to page in create_safe_exec_page
 To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_084011_104771_58FC9D53 
-X-CRM114-Status: GOOD (  17.73  )
+X-CRM114-CacheID: sfid-20190906_084115_634840_6238AF7B 
+X-CRM114-Status: GOOD (  14.87  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -110,45 +112,30 @@ On Fri, Sep 6, 2019 at 11:17 AM James Morse <james.morse@arm.com> wrote:
 >
 > Hi Pavel,
 >
-> Nit: The pattern for the subject prefix should be "arm64: hibernate:"..
-> Its usually possible to spot the pattern from "git log --oneline $file".
-
-Sure, I will change here and in other places to "arm64: hibernate:"
-
->
 > On 21/08/2019 19:31, Pavel Tatashin wrote:
-> > create_safe_exec_page is a local function that uses the
-> > get_safe_page() to allocate page table and pages and one pages
-> > that is getting mapped.
+> > create_safe_exec_page() allocates a safe page and maps it at a
+> > specific location, also this function returns the physical address
+> > of newly allocated page.
+> >
+> > The destination VA, and PA are specified in arguments: dst_addr,
+> > phys_dst_addr
+> >
+> > However, within the function it uses "dst" which has unsigned long
+> > type, but is actually a pointers in the current virtual space. This
+> > is confusing to read.
 >
-> I can't parse this.
->
-> create_safe_exec_page() uses hibernate's allocator to create a set of page table to map a
-> single page that will contain the relocation code.
-
-Thanks I will rephrase it with your suggestion.
-
+> The type? There are plenty of places in the kernel that an unsigned-long is actually a
+> pointer. This isn't unusual.
 >
 >
-> > Remove the allocator related arguments, and use get_safe_page
-> > directly, as it is done in other local functions in this
-> > file.
-> ... because kexec can't use this as it doesn't have a working allocator.
-> Removing this function pointer makes it easier to refactor the code later.
-
-Thanks, I will add it to the description.
-
+> > Rename dst to more appropriate page (page that is created), and also
+> > change its time to "void *"
 >
-> (this thing is only a function pointer so kexec could use it too ... It looks like you're
-> creating extra work. Patch 7 moves these new calls out to a new file... presumably so
-> another patch can remove them again)
->
-> As stand-alone cleanup the patch looks fine, but you probably don't need to do this.
+> If you think its clearer,
+> Reviewed-by: James Morse <james.morse@arm.com>
 
-Without this clean-up moving to common code becomes messier. So, I
-would like to keep this change.
+Thank you for your review.
 
-Thank you,
 Pasha
 
 _______________________________________________
