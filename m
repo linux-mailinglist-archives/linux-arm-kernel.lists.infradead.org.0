@@ -2,71 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A81C1AB02E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:33:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EED68AB033
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:35:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BCx2UxiQJO3mpo9wiSF9iscdjqY4MKnP7C2zuRudQs0=; b=jfrhcBhhL+GJUz
-	DaIHP2uf4sULsBf6l9gykdbGwftuINpmA56dsmTpGNowjJR1mesC8ONzPrhmArt95/OxfmEZr2oVM
-	x2RDPRokcpf3UwAGX+sCJwsOZu8p/KzmI9DSQrOZWIduPW5FXnPKfDnTiS5qhPn/vYBsQfS10vqL+
-	QbwlCbRvemTt94yJ8jgA1H+UtG9+PHwBq/d6WK1k3JJbwPOU23X/k4UUxqT2hm8B0OfX2lh3BMmPx
-	ttxB0MvGMEDcD9X0zWBKP3C7aRPeGKUbN9oRgHzluKMd6TE4tj/1EhZqoy/NwCmSPnk4sgm6tM/En
-	65b1B/3J1BuCFgDE//kA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=URGj60q4ItKzIQtwpohbxuoFayf75op8LbTEzezJp10=; b=H6e
+	mXfR+AuelDhprQoQF9orZBd48KqqZQ8R4JjmzANiTd+FosRh5UTl28Ew0g7d2trBrSwOE7BvscfF5
+	wEYip5whbN7eVKLan87HgUZRmQr1+x8fxAxxuHmXUcEmeKpsB1fW/fxsSVInSm4LKJhOeSkA/iJgt
+	fucQ88PxsnxiK8ThfPFJPrOOvlndFb7b21/JIVkZglXvSB6rY78fFYkNdJz0YImfb7SHcCkWsENsk
+	Vw2IHaRFq8J6fNEyymv2Zh0seF23z9blZY25/+TeIhaVeq4kDHrcSfQGx5bPChn53iGt4FyHTjh24
+	09bIwr6HO1Mt9begWhW3lD+vYN5qZMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6380-0006tN-Ma; Fri, 06 Sep 2019 01:33:32 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i639x-0000ja-8M; Fri, 06 Sep 2019 01:35:33 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i637q-0006pr-Qs; Fri, 06 Sep 2019 01:33:24 +0000
-X-UUID: 00c7e03b78b846faa5f322daa04fcdf5-20190905
-X-UUID: 00c7e03b78b846faa5f322daa04fcdf5-20190905
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 213228797; Thu, 05 Sep 2019 17:33:13 -0800
-Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 5 Sep 2019 18:33:12 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
- (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Fri, 6 Sep 2019 09:33:03 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Fri, 6 Sep 2019 09:33:02 +0800
-Message-ID: <1567733585.21623.163.camel@mhfsdcap03>
-Subject: Re: [V3, 2/2] media: i2c: Add Omnivision OV02A10 camera sensor driver
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Nicolas Boichat <drinkcat@chromium.org>
-Date: Fri, 6 Sep 2019 09:33:05 +0800
-In-Reply-To: <CANMq1KDVMGkeBvu1nO5WHopWwec9mxHfhmLmX2BzvaYVLzxoXw@mail.gmail.com>
-References: <20190819034331.13098-1-dongchun.zhu@mediatek.com>
- <20190819034331.13098-3-dongchun.zhu@mediatek.com>
- <20190819083009.GC6133@paasikivi.fi.intel.com>
- <1567676465.21623.100.camel@mhfsdcap03>
- <20190905104546.GA5475@paasikivi.fi.intel.com>
- <CAAFQd5Bh-11D9RR9WVH5A3DbXZoxWhbMhXSNKUV25mempMi+ag@mail.gmail.com>
- <20190905160512.GG5475@paasikivi.fi.intel.com>
- <CANMq1KDVMGkeBvu1nO5WHopWwec9mxHfhmLmX2BzvaYVLzxoXw@mail.gmail.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
-MIME-Version: 1.0
-X-TM-SNTS-SMTP: F407418E7C5334074F2F61C9B1662FF6503DAC5082ABBBF7307673C1AD9D1A8A2000:8
-X-MTK: N
+ id 1i639p-0000hk-Lb
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 01:35:27 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 009C51A050C;
+ Fri,  6 Sep 2019 03:35:16 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id A52BD1A0B7A;
+ Fri,  6 Sep 2019 03:35:07 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 947C440296;
+ Fri,  6 Sep 2019 09:34:57 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: mturquette@baylibre.com, sboyd@kernel.org, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
+ leonard.crestez@nxp.com, abel.vesa@nxp.com, peng.fan@nxp.com,
+ ping.bai@nxp.com, chen.fang@nxp.com, shengjiu.wang@nxp.com,
+ aisheng.dong@nxp.com, sfr@canb.auug.org.au, l.stach@pengutronix.de,
+ linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [PATCH V2 1/2] clk: imx8mm: Move 1443X/1416X PLL clock structure to
+ common place
+Date: Fri,  6 Sep 2019 09:34:05 -0400
+Message-Id: <1567776846-6373-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_183322_881190_94F91151 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190905_183525_994592_6370BF85 
+X-CRM114-Status: GOOD (  10.01  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.13 listed in list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -78,79 +72,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- srv_heupstream <srv_heupstream@mediatek.com>, shengnan.wang@mediatek.com,
- Tomasz Figa <tfiga@chromium.org>, Louis Kuo <louis.kuo@mediatek.com>,
- Sj Huang <sj.huang@mediatek.com>, Rob
- Herring <robh+dt@kernel.org>, "moderated list:ARM/Mediatek
- SoC support" <linux-mediatek@lists.infradead.org>,
- Sakari Ailus <sakari.ailus@linux.intel.com>, Matthias
- Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU
- DRIVERS <iommu@lists.linux-foundation.org>,  Joerg  Roedel
- <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-09-06 at 06:58 +0800, Nicolas Boichat wrote:
-> On Fri, Sep 6, 2019 at 12:05 AM Sakari Ailus
-> <sakari.ailus@linux.intel.com> wrote:
-> >
-> > On Thu, Sep 05, 2019 at 07:53:37PM +0900, Tomasz Figa wrote:
-> > > On Thu, Sep 5, 2019 at 7:45 PM Sakari Ailus
-> > > <sakari.ailus@linux.intel.com> wrote:
-> > > >
-> > > > Hi Dongchun,
-> > > >
-> > > > On Thu, Sep 05, 2019 at 05:41:05PM +0800, Dongchun Zhu wrote:
-> > > >
-> > > > ...
-> > > >
-> > > > > > > + ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
-> > > > > > > + if (ret < 0) {
-> > > > > > > +         dev_err(dev, "Failed to enable regulators\n");
-> > > > > > > +         goto disable_clk;
-> > > > > > > + }
-> > > > > > > + msleep_range(7);
-> > > > > >
-> > > > > > This has some potential of clashing with more generic functions in the
-> > > > > > future. Please use usleep_range directly, or msleep.
-> > > > > >
-> > > > >
-> > > > > Did you mean using usleep_range(7*1000, 8*1000), as used in patch v1?
-> > > > > https://patchwork.kernel.org/patch/10957225/
-> > > >
-> > > > Yes, please.
-> > >
-> > > Why not just msleep()?
-> >
-> > msleep() is usually less accurate. I'm not sure it makes a big different in
-> > this case. Perhaps, if someone wants that the sensor is powered on and
-> > streaming as soon as possible.
-> 
-> https://elixir.bootlin.com/linux/latest/source/Documentation/timers/timers-howto.txt#L70
-> 
-> Use usleep_range for delays up to 20ms (at least that's what the
-> documentation (still) says?)
-> 
+Many i.MX8M SoCs use same 1443X/1416X PLL, such as i.MX8MM,
+i.MX8MN and later i.MX8M SoCs, moving these PLL definitions
+to pll14xx driver can save a lot of duplicated code on each
+platform.
 
-Thank you for your clarifications.
-From the doc,
-"msleep(1~20) may not do what the caller intends, and
-will often sleep longer (~20 ms actual sleep for any
-value given in the 1~20ms range). In many cases this
-is not the desired behavior."
+Meanwhile, no need to define PLL clock structure for every
+module which uses same type of PLL, e.g., audio/video/dram use
+1443X PLL, arm/gpu/vpu/sys use 1416X PLL, define 2 PLL clock
+structure for each group is enough.
 
-So, it is supposed to use usleep_range in shorter sleep case,
-such as 5ms.
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+Changes since V1:
+	- Move 1443X/1416X PLL clock table/structure to pll14xx driver.
+---
+ drivers/clk/imx/clk-imx8mm.c  | 87 +++++--------------------------------------
+ drivers/clk/imx/clk-pll14xx.c | 30 +++++++++++++++
+ drivers/clk/imx/clk.h         |  3 ++
+ 3 files changed, 43 insertions(+), 77 deletions(-)
 
-> > --
-> > Sakari Ailus
-> > sakari.ailus@linux.intel.com
-
+diff --git a/drivers/clk/imx/clk-imx8mm.c b/drivers/clk/imx/clk-imx8mm.c
+index 2758e3f..9649250 100644
+--- a/drivers/clk/imx/clk-imx8mm.c
++++ b/drivers/clk/imx/clk-imx8mm.c
+@@ -26,73 +26,6 @@ static u32 share_count_disp;
+ static u32 share_count_pdm;
+ static u32 share_count_nand;
+ 
+-static const struct imx_pll14xx_rate_table imx8mm_pll1416x_tbl[] = {
+-	PLL_1416X_RATE(1800000000U, 225, 3, 0),
+-	PLL_1416X_RATE(1600000000U, 200, 3, 0),
+-	PLL_1416X_RATE(1200000000U, 300, 3, 1),
+-	PLL_1416X_RATE(1000000000U, 250, 3, 1),
+-	PLL_1416X_RATE(800000000U,  200, 3, 1),
+-	PLL_1416X_RATE(750000000U,  250, 2, 2),
+-	PLL_1416X_RATE(700000000U,  350, 3, 2),
+-	PLL_1416X_RATE(600000000U,  300, 3, 2),
+-};
+-
+-static const struct imx_pll14xx_rate_table imx8mm_audiopll_tbl[] = {
+-	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
+-	PLL_1443X_RATE(361267200U, 361, 3, 3, 17511),
+-};
+-
+-static const struct imx_pll14xx_rate_table imx8mm_videopll_tbl[] = {
+-	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
+-	PLL_1443X_RATE(594000000U, 198, 2, 2, 0),
+-};
+-
+-static const struct imx_pll14xx_rate_table imx8mm_drampll_tbl[] = {
+-	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_audio_pll = {
+-		.type = PLL_1443X,
+-		.rate_table = imx8mm_audiopll_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_audiopll_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_video_pll = {
+-		.type = PLL_1443X,
+-		.rate_table = imx8mm_videopll_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_videopll_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_dram_pll = {
+-		.type = PLL_1443X,
+-		.rate_table = imx8mm_drampll_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_drampll_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_arm_pll = {
+-		.type = PLL_1416X,
+-		.rate_table = imx8mm_pll1416x_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_gpu_pll = {
+-		.type = PLL_1416X,
+-		.rate_table = imx8mm_pll1416x_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_vpu_pll = {
+-		.type = PLL_1416X,
+-		.rate_table = imx8mm_pll1416x_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+-};
+-
+-static struct imx_pll14xx_clk imx8mm_sys_pll = {
+-		.type = PLL_1416X,
+-		.rate_table = imx8mm_pll1416x_tbl,
+-		.rate_count = ARRAY_SIZE(imx8mm_pll1416x_tbl),
+-};
+-
+ static const char *pll_ref_sels[] = { "osc_24m", "dummy", "dummy", "dummy", };
+ static const char *audio_pll1_bypass_sels[] = {"audio_pll1", "audio_pll1_ref_sel", };
+ static const char *audio_pll2_bypass_sels[] = {"audio_pll2", "audio_pll2_ref_sel", };
+@@ -396,16 +329,16 @@ static int imx8mm_clocks_probe(struct platform_device *pdev)
+ 	clks[IMX8MM_SYS_PLL2_REF_SEL] = imx_clk_mux("sys_pll2_ref_sel", base + 0x104, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
+ 	clks[IMX8MM_SYS_PLL3_REF_SEL] = imx_clk_mux("sys_pll3_ref_sel", base + 0x114, 0, 2, pll_ref_sels, ARRAY_SIZE(pll_ref_sels));
+ 
+-	clks[IMX8MM_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx8mm_audio_pll);
+-	clks[IMX8MM_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx8mm_audio_pll);
+-	clks[IMX8MM_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx8mm_video_pll);
+-	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx8mm_dram_pll);
+-	clks[IMX8MM_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx8mm_gpu_pll);
+-	clks[IMX8MM_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx8mm_vpu_pll);
+-	clks[IMX8MM_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx8mm_arm_pll);
+-	clks[IMX8MM_SYS_PLL1] = imx_clk_pll14xx("sys_pll1", "sys_pll1_ref_sel", base + 0x94, &imx8mm_sys_pll);
+-	clks[IMX8MM_SYS_PLL2] = imx_clk_pll14xx("sys_pll2", "sys_pll2_ref_sel", base + 0x104, &imx8mm_sys_pll);
+-	clks[IMX8MM_SYS_PLL3] = imx_clk_pll14xx("sys_pll3", "sys_pll3_ref_sel", base + 0x114, &imx8mm_sys_pll);
++	clks[IMX8MM_AUDIO_PLL1] = imx_clk_pll14xx("audio_pll1", "audio_pll1_ref_sel", base, &imx_1443x_pll);
++	clks[IMX8MM_AUDIO_PLL2] = imx_clk_pll14xx("audio_pll2", "audio_pll2_ref_sel", base + 0x14, &imx_1443x_pll);
++	clks[IMX8MM_VIDEO_PLL1] = imx_clk_pll14xx("video_pll1", "video_pll1_ref_sel", base + 0x28, &imx_1443x_pll);
++	clks[IMX8MM_DRAM_PLL] = imx_clk_pll14xx("dram_pll", "dram_pll_ref_sel", base + 0x50, &imx_1443x_pll);
++	clks[IMX8MM_GPU_PLL] = imx_clk_pll14xx("gpu_pll", "gpu_pll_ref_sel", base + 0x64, &imx_1416x_pll);
++	clks[IMX8MM_VPU_PLL] = imx_clk_pll14xx("vpu_pll", "vpu_pll_ref_sel", base + 0x74, &imx_1416x_pll);
++	clks[IMX8MM_ARM_PLL] = imx_clk_pll14xx("arm_pll", "arm_pll_ref_sel", base + 0x84, &imx_1416x_pll);
++	clks[IMX8MM_SYS_PLL1] = imx_clk_pll14xx("sys_pll1", "sys_pll1_ref_sel", base + 0x94, &imx_1416x_pll);
++	clks[IMX8MM_SYS_PLL2] = imx_clk_pll14xx("sys_pll2", "sys_pll2_ref_sel", base + 0x104, &imx_1416x_pll);
++	clks[IMX8MM_SYS_PLL3] = imx_clk_pll14xx("sys_pll3", "sys_pll3_ref_sel", base + 0x114, &imx_1416x_pll);
+ 
+ 	/* PLL bypass out */
+ 	clks[IMX8MM_AUDIO_PLL1_BYPASS] = imx_clk_mux_flags("audio_pll1_bypass", base, 4, 1, audio_pll1_bypass_sels, ARRAY_SIZE(audio_pll1_bypass_sels), CLK_SET_RATE_PARENT);
+diff --git a/drivers/clk/imx/clk-pll14xx.c b/drivers/clk/imx/clk-pll14xx.c
+index b721302..4a61743 100644
+--- a/drivers/clk/imx/clk-pll14xx.c
++++ b/drivers/clk/imx/clk-pll14xx.c
+@@ -41,6 +41,36 @@ struct clk_pll14xx {
+ 
+ #define to_clk_pll14xx(_hw) container_of(_hw, struct clk_pll14xx, hw)
+ 
++const struct imx_pll14xx_rate_table imx_pll1416x_tbl[] = {
++	PLL_1416X_RATE(1800000000U, 225, 3, 0),
++	PLL_1416X_RATE(1600000000U, 200, 3, 0),
++	PLL_1416X_RATE(1200000000U, 300, 3, 1),
++	PLL_1416X_RATE(1000000000U, 250, 3, 1),
++	PLL_1416X_RATE(800000000U,  200, 3, 1),
++	PLL_1416X_RATE(750000000U,  250, 2, 2),
++	PLL_1416X_RATE(700000000U,  350, 3, 2),
++	PLL_1416X_RATE(600000000U,  300, 3, 2),
++};
++
++const struct imx_pll14xx_rate_table imx_pll1443x_tbl[] = {
++	PLL_1443X_RATE(650000000U, 325, 3, 2, 0),
++	PLL_1443X_RATE(594000000U, 198, 2, 2, 0),
++	PLL_1443X_RATE(393216000U, 262, 2, 3, 9437),
++	PLL_1443X_RATE(361267200U, 361, 3, 3, 17511),
++};
++
++struct imx_pll14xx_clk imx_1443x_pll = {
++	.type = PLL_1443X,
++	.rate_table = imx_pll1443x_tbl,
++	.rate_count = ARRAY_SIZE(imx_pll1443x_tbl),
++};
++
++struct imx_pll14xx_clk imx_1416x_pll = {
++	.type = PLL_1416X,
++	.rate_table = imx_pll1416x_tbl,
++	.rate_count = ARRAY_SIZE(imx_pll1416x_tbl),
++};
++
+ static const struct imx_pll14xx_rate_table *imx_get_pll_settings(
+ 		struct clk_pll14xx *pll, unsigned long rate)
+ {
+diff --git a/drivers/clk/imx/clk.h b/drivers/clk/imx/clk.h
+index f7a389a..bc5bb6a 100644
+--- a/drivers/clk/imx/clk.h
++++ b/drivers/clk/imx/clk.h
+@@ -50,6 +50,9 @@ struct imx_pll14xx_clk {
+ 	int flags;
+ };
+ 
++extern struct imx_pll14xx_clk imx_1416x_pll;
++extern struct imx_pll14xx_clk imx_1443x_pll;
++
+ #define imx_clk_cpu(name, parent_name, div, mux, pll, step) \
+ 	imx_clk_hw_cpu(name, parent_name, div, mux, pll, step)->clk
+ 
+-- 
+2.7.4
 
 
 _______________________________________________
