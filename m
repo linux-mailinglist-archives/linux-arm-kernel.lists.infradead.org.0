@@ -2,97 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2001BABB1A
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:37:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 87DAFABAFA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:34:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Yaa2unJDAMbEgPw3yEMcJpnL+R++fJvZ4oj46mRjjvs=; b=VJHvLT6afNS/ZI
-	Ok9F5B9Phh8Iqmsf/Amlor7HiZr4FGeJCsY2rO600fbdw+aF2LPagVy4XdOSD52Lpam46kmMYTM5f
-	Z5vu7lIeV+B3vVGG5pEAZ08XraduZgSiiDLbBgLw42b13fd6SchUjHDM1mg77yNsV8+O1dU8qLYIk
-	PHJCoZ4bHQzTaJ1j6g0T7OjlS7oRa2Glmb6X/YcZxW6Wj8+QHk+rACQan4TFfKoSUn7Rvr/ewxhBP
-	yaXDSR1orkUlSt9eAiYtku7+q4NyxXyq+UbVm5+1Yu2Y+mCsId8RQldVFHj7bNwyiZ1iYvZmoMYpk
-	ZT48WxmalF1TFTpj1zdQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=gI5FbX3GBvd4EOA+FczY13DTxdzNQYdBFbOg9MAKcd4=; b=A1F
+	fpa2uBHIRT/z6++PHvzoP8pzLIuDu7G33O6OsqDHUMzm57e4s5xUEx4hjXkSpt6pmXOEnwxDjA+ox
+	6FPLHscK78RiQpkTlNtg75ik4dpJHx+fTh8l4wxyDNAhHX3wvGxXlMLX7QJ08IAax+1BWOcDJAXrt
+	cStwhtdMGYhOWRT56FxbuHhMwhUFAqJDG0nXwzS8MV06M9NWHXxFv264x8d5AQ0HwFw/EfSjpHdZD
+	AepDpSGLFbQmWqfnU00inJLfZtX1uREOcp7dtWGXxHaBGWwxJkx/OVpVR2z8UWS4yUCSquGqtYZAf
+	PK6O1mDrUKbQYJaURm8i5UcfsTkkJhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6FMd-0001PN-Ul; Fri, 06 Sep 2019 14:37:28 +0000
-Received: from aserp2120.oracle.com ([141.146.126.78])
+	id 1i6FIx-0006C5-Pf; Fri, 06 Sep 2019 14:33:39 +0000
+Received: from mail-wr1-x443.google.com ([2a00:1450:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6FMQ-0001P1-Gm
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:37:15 +0000
-Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
- by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EY7Be032545;
- Fri, 6 Sep 2019 14:36:45 GMT
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
- h=from : to : cc :
- subject : date : message-id : in-reply-to : references : mime-version :
- content-transfer-encoding; s=corp-2019-08-05;
- bh=w5Vu/fbczNwoQcE3H6hN/D9dx7OzQsmQPWGC5Uj8C14=;
- b=NZhrmRf1W50Q/ZfNJSn3dGFcD7saeYNzsPB0KvZ9at5iuo/aGmDpqd1yx1LPDLf2tm4t
- bO2LdLi9AmxA5zRZrFdtG/kNNXwcjRXRUCaW8CoGsBSty9VHlmfbDmfhsPRH5nPq7xk3
- tt9wbt7QX0ccqFKRoVoz2tuO0/eCafs+RWbcWzYlVcFSyehAtFsjjjmdr7Sju3/X2GxO
- IA6j+yUKeN5MO9Fura2quWyCNfYi+3xLw+F7zijzNWKTKqvtlYPaYR+3BkRH+13Mi3XD
- WWyzrjKCBCRWqKHdcg9kp0g0gmM0/n1MAmsxCM+KFzCDwlT9OCXAxfTyj9T2JZlczv43 Yw== 
-Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by aserp2120.oracle.com with ESMTP id 2uus4kg3n1-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 06 Sep 2019 14:36:45 +0000
-Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EXR7d079676;
- Fri, 6 Sep 2019 14:34:44 GMT
-Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 2uud7pk6h6-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 06 Sep 2019 14:34:44 +0000
-Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x86EWwLi026054;
- Fri, 6 Sep 2019 14:32:58 GMT
-Received: from neelam.us.oracle.com (/10.152.128.16)
- by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 06 Sep 2019 07:32:58 -0700
-From: Alex Kogan <alex.kogan@oracle.com>
-To: linux@armlinux.org.uk, peterz@infradead.org, mingo@redhat.com,
- will.deacon@arm.com, arnd@arndb.de, longman@redhat.com,
- linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
- hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
-Subject: [PATCH v4 5/5] locking/qspinlock: Introduce the shuffle reduction
- optimization into CNA
-Date: Fri,  6 Sep 2019 10:25:41 -0400
-Message-Id: <20190906142541.34061-6-alex.kogan@oracle.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <20190906142541.34061-1-alex.kogan@oracle.com>
-References: <20190906142541.34061-1-alex.kogan@oracle.com>
-MIME-Version: 1.0
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9372
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0 suspectscore=0
- malwarescore=0
- phishscore=0 bulkscore=0 spamscore=0 mlxscore=0 mlxlogscore=999
- adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.0.1-1906280000 definitions=main-1909060153
-X-Proofpoint-Virus-Version: vendor=nai engine=6000 definitions=9372
- signatures=668685
-X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
- priorityscore=1501 malwarescore=0
- suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
- lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
- classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1909060154
+ id 1i6FIj-0006BM-N3; Fri, 06 Sep 2019 14:33:26 +0000
+Received: by mail-wr1-x443.google.com with SMTP id 30so6801296wrk.11;
+ Fri, 06 Sep 2019 07:33:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=YhOPiGQ/jKMfAKNMmBIBmilg3dwIp+IShaOpXqxWprg=;
+ b=Dwm8lWGdUfC0GE7Rtw818ox0Io/TAtpAZBPZwpQUuPsDnSRSlrYN+jCD9mNWWFgdK4
+ j4a0eB5omczZilSZ7ulLqflJcjHmKtm3/5FwVDYfDWUd2NWx+8VgQvQ+VvXgkQLc/w3Q
+ TCO8DOlc9P3rYEoO+da2Fy6JtnNOP/DK8O+ny8ekeDW6ksFcpwWBOlzcWISQm0z/0kGi
+ OmIBA8Ebfswojg9WcOK8TXLX2mqd0DknsH7t/Rw63q9erBbkT7BAs46SvDpBskdxrlCm
+ SPeQPK1kDW8kCxfMZWH+k0/Iju1spAq8DuZm7ePQ34F4UdBA4gi+IL2hVZ44vpKM6BIw
+ byBw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=YhOPiGQ/jKMfAKNMmBIBmilg3dwIp+IShaOpXqxWprg=;
+ b=SxSs1g6eMl2H4QrR5NAv8kxvXiyWKp7oLCrEFxA5a6v2+Lg8J4L30DtVRXCoEM6dzS
+ qM7/jSSffZtFxdz15aBfYDgshRnHk1okfwjnQTDUMpWxbHEMeN9cJos1vihIv1qPtIVg
+ M9Ap9PpCVzotqiagavaGFquImeRo24dwNyp+qIwnVZlu2vRC1pB52XW4fCmunBw6jcBW
+ 1/Au+tsMaj3yeY7+fxQ3F4PV+C96Zev4DwW1v6VB8BPsRsDmfMmaJAQk+QbWWlAWzGkw
+ ZhnP4iO0mrbMQIZ37ELZQ9yy5Ti/WJm3ypa/qDGmXNWa+bojstlLjX/9c8n4Np4SW8Jo
+ nEaQ==
+X-Gm-Message-State: APjAAAW3SlXfxUulcipPRbCxK0Nb8U3jF/doYtEzvwuZc8IpsJd2wmmc
+ g0ZQIlynJGwUPOJu/6xaEWg=
+X-Google-Smtp-Source: APXvYqw8wZl/LTWgg0Chrhk0TDYioBtuoFUHLvwZXVA3/hte6Kq+jsmDp9J3p5QcsrlFvFLn+mterA==
+X-Received: by 2002:a5d:6ac8:: with SMTP id u8mr7431909wrw.104.1567780404007; 
+ Fri, 06 Sep 2019 07:33:24 -0700 (PDT)
+Received: from localhost.localdomain ([94.204.252.234])
+ by smtp.gmail.com with ESMTPSA id s9sm9300198wme.36.2019.09.06.07.33.21
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Fri, 06 Sep 2019 07:33:23 -0700 (PDT)
+From: Christian Hewitt <christianshewitt@gmail.com>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Kevin Hilman <khilman@baylibre.com>, devicetree@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-amlogic@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: [RESEND PATCH v3 0/3] arm64: meson-g12b: Add support for the Ugoos AM6
+Date: Fri,  6 Sep 2019 18:32:31 +0400
+Message-Id: <1567780354-59472-1-git-send-email-christianshewitt@gmail.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_073714_646597_8866F843 
-X-CRM114-Status: GOOD (  16.35  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190906_073325_778929_50421B90 
+X-CRM114-Status: GOOD (  10.42  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [141.146.126.78 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (christianshewitt[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,9 +83,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -115,69 +94,37 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alex.kogan@oracle.com, dave.dice@oracle.com, rahul.x.yadav@oracle.com,
- steven.sistare@oracle.com, daniel.m.jordan@oracle.com
+Cc: Oleg Ivanov <balbes-150@yandex.ru>,
+ Chrisitian Hewitt <christianshewitt@gmail.com>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This optimization reduces the probability threads will be shuffled between
-the main and secondary queues when the secondary queue is empty.
-It is helpful when the lock is only lightly contended.
+This patchset adds support for the Ugoos AM6, an Android STB based on
+the Amlogic W400 reference design with the S922X chipset.
 
-Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
-Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
----
- kernel/locking/qspinlock_cna.h | 20 ++++++++++++++++++++
- 1 file changed, 20 insertions(+)
+v2: correction of minor nits
 
-diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
-index e86182e6163b..1c3a8905b2ca 100644
---- a/kernel/locking/qspinlock_cna.h
-+++ b/kernel/locking/qspinlock_cna.h
-@@ -64,6 +64,15 @@ static DEFINE_PER_CPU(u32, seed);
- #define INTRA_NODE_HANDOFF_PROB_ARG (16)
- 
- /*
-+ * Controls the probability for enabling the scan of the main queue when
-+ * the secondary queue is empty. The chosen value reduces the amount of
-+ * unnecessary shuffling of threads between the two waiting queues when
-+ * the contention is low, while responding fast enough and enabling
-+ * the shuffling when the contention is high.
-+ */
-+#define SHUFFLE_REDUCTION_PROB_ARG  (7)
-+
-+/*
-  * Return false with probability 1 / 2^@num_bits.
-  * Intuitively, the larger @num_bits the less likely false is to be returned.
-  * @num_bits must be a number between 0 and 31.
-@@ -230,6 +239,16 @@ static inline void cna_pass_lock(struct mcs_spinlock *node,
- 	u32 val = 1;
- 
- 	/*
-+	 * Limit thread shuffling when the secondary queue is empty.
-+	 * This copes with the overhead the shuffling creates when the
-+	 * lock is only lightly contended, and threads do not stay
-+	 * in the secondary queue long enough to reap the benefit of moving
-+	 * them there.
-+	 */
-+	if (node->locked <= 1 && probably(SHUFFLE_REDUCTION_PROB_ARG))
-+		goto pass_lock;
-+
-+	/*
- 	 * Try to find a successor running on the same NUMA node
- 	 * as the current lock holder. For long-term fairness,
- 	 * search for such a thread with high probability rather than always.
-@@ -252,5 +271,6 @@ static inline void cna_pass_lock(struct mcs_spinlock *node,
- 		((struct cna_node *)next_holder)->tail->mcs.next = next;
- 	}
- 
-+pass_lock:
- 	arch_mcs_pass_lock(&next_holder->locked, val);
- }
+v3: address regulator and GPIO corrections from Neil Armstrong (using
+schematic excerpts from Ugoos) and related v2 comments from Martin
+Blumenstingle. Add acks on patches 1/2 from Rob Herring.
+
+Christian Hewitt (3):
+  dt-bindings: Add vendor prefix for Ugoos
+  dt-bindings: arm: amlogic: Add support for the Ugoos AM6
+  arm64: dts: meson-g12b-ugoos-am6: add initial device-tree
+
+ Documentation/devicetree/bindings/arm/amlogic.yaml |   1 +
+ .../devicetree/bindings/vendor-prefixes.yaml       |   2 +
+ arch/arm64/boot/dts/amlogic/Makefile               |   1 +
+ .../boot/dts/amlogic/meson-g12b-ugoos-am6.dts      | 557 +++++++++++++++++++++
+ 4 files changed, 561 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/amlogic/meson-g12b-ugoos-am6.dts
+
 -- 
-2.11.0 (Apple Git-81)
+2.7.4
 
 
 _______________________________________________
