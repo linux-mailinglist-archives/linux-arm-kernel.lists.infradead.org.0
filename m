@@ -2,64 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 86BD9AB87D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:54:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B80F5AB88B
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:57:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lNSnvMHEMq5c1vBKJ8lfcGcvJ/mpzWpzi4L2SkhtTEQ=; b=ectr9Qw1m14XU2
-	SuT89NdxyJURyNblZ7vjsGQwVfzfINDnu/eAkuBLrW8hJ8n/KPXHxROJmajekXjUqUxB4MbnqX4Po
-	Dusd+vkToNOA5PeKVxNhkgp8yt/JJtw7bkwAYpw8uWIF75HyXIvGj/tS5rISlproWNxNSy8buBA0D
-	TFaa3nifJVwTq96EaE6E7gFgapgfyuQ4nASRtKDof8sA3jTEukL+U8uK35FwoidbozDor9b1pHyVi
-	BiWsBUNPD29oyp5Bek77QIXj7eh/yOUoxnbgB5eXJB23Zfq3KR0uekebYu3I0JIiCG2/VXTNqY7YP
-	aJXwI87x7w0AWcpL1b0Q==;
+	List-Owner; bh=mclTDGQxjLfR2KXduvDfJkce3ws5lXP1fXTLF63HBjE=; b=QkqPqmWlVbZAWx
+	7tfIjy2YIZ4N4UvQ5UkfnXJyPagVaiIZTuc0oW7CEuAhq+CNDzQR9li0YRl6ZmR5xZFq5V+tFaKad
+	h1fJfqltVTcumg6p/u8b+Apo3q96K/NQ21e57V1Fb/8BbkN63P85qnjrRI+kY5gWqT89ZGwWXdGfk
+	9uH/A1PXgtX+HO+5KsQ9L9e/u0P+U6neSK8IOJe/wLZ1B/UEkTDFIoV7y4Khd/6oFCa8QXOQTYUZ4
+	+tjhdrs9BsP7uZe9eTwDRsrnTMVDKRilA9M01jGTpwIIMUO2nWXLHsL4VELHgmIXeUq7lTw+BcKL9
+	ss28AIdDsnm8L3ewXlQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6DlF-0000qk-9e; Fri, 06 Sep 2019 12:54:45 +0000
+	id 1i6Dnh-0002ON-BC; Fri, 06 Sep 2019 12:57:17 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Dl8-0000qG-PM
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:54:40 +0000
-Received: from mail-qt1-f171.google.com (mail-qt1-f171.google.com
- [209.85.160.171])
+ id 1i6Dnb-0002Ny-FX
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:57:12 +0000
+Received: from mail-qt1-f176.google.com (mail-qt1-f176.google.com
+ [209.85.160.176])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 10B552178F
+ by mail.kernel.org (Postfix) with ESMTPSA id EE9142082C
  for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Sep 2019 12:54:38 +0000 (UTC)
+ Fri,  6 Sep 2019 12:57:10 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567774478;
- bh=w26cLrekOjO1NDx0tjF+iXImKvXPay5u6douh3UTcSc=;
+ s=default; t=1567774631;
+ bh=NL02bNQfH90Jrh+T8P44tgOkFtizvrx9wmPax7o59to=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=OzEZ52pNQXx2jfxi1p0Rz7AWzk2tshLGkAJv5Kwc2ZoNBxIIcTpg+KWIawTuunQyn
- uBEkMQgY8uKwNQu+G7kf/HlCicShOAXWIqqA45210f4YcY3x/XH/n/ECMMctXRa4vi
- zZcRT1BrKKQ4sMPROADQv66jLW6z/unYlxjgUqGY=
-Received: by mail-qt1-f171.google.com with SMTP id b2so6879306qtq.5
+ b=vDMxptgHsUae7s7z00ld+VjzFkQDdCjcUSozl7tLfuvMQHWN3Rn35I8UJpOTQP1n1
+ +x1TCX+cwuFwmBTss46FBiUWuHnvvt5X+2eAm3Eas/565ha+NwrLKikC8q4IDQAQXU
+ ORP3TBiGUU6g2gSv1iHZQ4I4hqdZ9Mg41OurrDmg=
+Received: by mail-qt1-f176.google.com with SMTP id o12so6915774qtf.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 06 Sep 2019 05:54:38 -0700 (PDT)
-X-Gm-Message-State: APjAAAVT1ofN5zqTFScnF4uVrLgIOac/l981hwb7zmHW/OffsHFhKUr2
- B00jSBqojCflE8X3NgumM/QvQeuc2POIfntAhw==
-X-Google-Smtp-Source: APXvYqzVbPCN340zI7CD/0EZC4in0AqbdQAYzhHjxdPokS0Z7DebCRDOhfJSzXAeSnDC4Peblf2p9+Ax+0DX28qiE6Y=
-X-Received: by 2002:a0c:8a6d:: with SMTP id 42mr5290386qvu.138.1567774477116; 
- Fri, 06 Sep 2019 05:54:37 -0700 (PDT)
+ Fri, 06 Sep 2019 05:57:10 -0700 (PDT)
+X-Gm-Message-State: APjAAAVXghy4SRNtrrOdcu339e0sUuoKNJceEZkBj2UUmrzkzVojg/64
+ ZO7ebO90gpZAEJtlt7mBORhjEuG2mKXxtP3zjw==
+X-Google-Smtp-Source: APXvYqyDk0WFHsHVbn49ivVXFxlgtYthvW6nlgjYDlf1/VbP/QyxY/nRvcooxFGw9uRPTPZaOoDz4E2YHy7hCWtcbLg=
+X-Received: by 2002:ac8:31b3:: with SMTP id h48mr9073369qte.300.1567774630183; 
+ Fri, 06 Sep 2019 05:57:10 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190906111435.5706-1-horms+renesas@verge.net.au>
- <CAL_JsqLvU4=kaQ-nSwMuh4VXX67U5URZAPvVJohfKzQsQdFTrA@mail.gmail.com>
- <20190906114857.4mgunm4feehakc4u@verge.net.au>
-In-Reply-To: <20190906114857.4mgunm4feehakc4u@verge.net.au>
+References: <20190830121816.30034-2-t-kristo@ti.com>
+ <20190906103558.17694-1-t-kristo@ti.com>
+In-Reply-To: <20190906103558.17694-1-t-kristo@ti.com>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 6 Sep 2019 13:54:26 +0100
-X-Gmail-Original-Message-ID: <CAL_Jsq+yp6vw=RoUb+-C3rX2322Y=8xD=wr8OYWxmbvq2SOuKg@mail.gmail.com>
-Message-ID: <CAL_Jsq+yp6vw=RoUb+-C3rX2322Y=8xD=wr8OYWxmbvq2SOuKg@mail.gmail.com>
-Subject: Re: [PATCH] dt-bindings: arm: renesas: Convert 'renesas,
- prr' to json-schema
-To: Simon Horman <horms@verge.net.au>
+Date: Fri, 6 Sep 2019 13:56:58 +0100
+X-Gmail-Original-Message-ID: <CAL_JsqLHTsEz6RJSi3rZ9AKyTBc00abyAxqwG8B9zAqL6cnv+w@mail.gmail.com>
+Message-ID: <CAL_JsqLHTsEz6RJSi3rZ9AKyTBc00abyAxqwG8B9zAqL6cnv+w@mail.gmail.com>
+Subject: Re: [PATCHv4 01/10] dt-bindings: omap: add new binding for PRM
+ instances
+To: Tero Kristo <t-kristo@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_055438_871187_E16864D3 
-X-CRM114-Status: GOOD (  22.45  )
+X-CRM114-CacheID: sfid-20190906_055711_540831_111CF03C 
+X-CRM114-Status: GOOD (  10.93  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,11 +87,10 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>,
+Cc: devicetree@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
+ Philipp Zabel <p.zabel@pengutronix.de>,
+ Santosh Shilimkar <ssantosh@kernel.org>,
+ linux-omap <linux-omap@vger.kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -100,105 +98,23 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 6, 2019 at 12:49 PM Simon Horman <horms@verge.net.au> wrote:
+On Fri, Sep 6, 2019 at 11:36 AM Tero Kristo <t-kristo@ti.com> wrote:
 >
-> On Fri, Sep 06, 2019 at 12:21:58PM +0100, Rob Herring wrote:
-> > On Fri, Sep 6, 2019 at 12:14 PM Simon Horman <horms+renesas@verge.net.au> wrote:
-> > >
-> > > Convert Renesas Product Register bindings documentation to json-schema.
-> > >
-> > > Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
-> > > ---
-> > > Based on v5.3-rc1
-> > > Tested using:
-> > >   make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > > ---
-> > >  .../devicetree/bindings/arm/renesas,prr.txt        | 20 ------------
-> > >  .../devicetree/bindings/arm/renesas,prr.yaml       | 36 ++++++++++++++++++++++
-> > >  2 files changed, 36 insertions(+), 20 deletions(-)
-> > >  delete mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.txt
-> > >  create mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > >
-> > > diff --git a/Documentation/devicetree/bindings/arm/renesas,prr.txt b/Documentation/devicetree/bindings/arm/renesas,prr.txt
-> > > deleted file mode 100644
-> > > index 08e482e953ca..000000000000
-> > > --- a/Documentation/devicetree/bindings/arm/renesas,prr.txt
-> > > +++ /dev/null
-> > > @@ -1,20 +0,0 @@
-> > > -Renesas Product Register
-> > > -
-> > > -Most Renesas ARM SoCs have a Product Register or Boundary Scan ID Register that
-> > > -allows to retrieve SoC product and revision information.  If present, a device
-> > > -node for this register should be added.
-> > > -
-> > > -Required properties:
-> > > -  - compatible: Must be one of:
-> > > -    "renesas,prr"
-> > > -    "renesas,bsid"
-> > > -  - reg: Base address and length of the register block.
-> > > -
-> > > -
-> > > -Examples
-> > > ---------
-> > > -
-> > > -       prr: chipid@ff000044 {
-> > > -               compatible = "renesas,prr";
-> > > -               reg = <0 0xff000044 0 4>;
-> > > -       };
-> > > diff --git a/Documentation/devicetree/bindings/arm/renesas,prr.yaml b/Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > > new file mode 100644
-> > > index 000000000000..9df003041456
-> > > --- /dev/null
-> > > +++ b/Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > > @@ -0,0 +1,36 @@
-> > > +# SPDX-License-Identifier: GPL-2.0
-> > > +%YAML 1.2
-> > > +---
-> > > +$id: http://devicetree.org/schemas/arm/renesas,prr.yaml#
-> > > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > > +
-> > > +title: Renesas Product Register
-> > > +
-> > > +maintainers:
-> > > +  - Geert Uytterhoeven <geert+renesas@glider.be>
-> > > +  - Magnus Damm <magnus.damm@gmail.com>
-> > > +
-> > > +description: |
-> > > +  Most Renesas ARM SoCs have a Product Register or Boundary Scan ID
-> > > +  Register that allows to retrieve SoC product and revision information.
-> > > +  If present, a device node for this register should be added.
-> > > +
-> > > +properties:
-> > > +  compatible:
-> > > +    oneOf:
-> > > +        - const: "renesas,prr"
-> > > +        - const: "renesas,bsid"
-> >
-> > enum is better than oneOf+const and drop the quotes. oneOf/allOf/anyOf
-> > result in terrible error messages.
+> Add new binding for OMAP PRM (Power and Reset Manager) instances. Each
+> of these will act as a power domain controller and potentially as a reset
+> provider.
 >
-> Thanks Rob,
+> Signed-off-by: Tero Kristo <t-kristo@ti.com>
+> ---
+> v4:
+> - renamed nodes as power-controller
+> - added documentation about hierarchy
 >
-> Like this?
->
->   compatible:
->     enum:
->       - renesas,prr
->       - renesas,bsid
->
-> > > +  reg:
-> > > +    items:
-> > > +      - description: Base address and length of the register block.
-> >
-> > That's what 'reg' *always* is... Just 'maxItems: 1' is sufficient when
-> > there is" only 1 entry.
->
-> And this?
->
->   reg:
->     maxItems: 1
+>  .../devicetree/bindings/arm/omap/prm-inst.txt | 31 +++++++++++++++++++
+>  1 file changed, 31 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/arm/omap/prm-inst.txt
 
-Yes, for both.
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
