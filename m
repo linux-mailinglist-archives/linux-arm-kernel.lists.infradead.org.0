@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 569CEAB36B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:43:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id AFF0DAB36A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:42:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,54 +11,54 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=WHJ13LzuHU6s48Sn0XwiEAZojnPQMF5SJjN8OX4c0o0=; b=DMtd0jN4c2FM2lZXOs4KAKpA8c
-	FmjRImu9mNgN8u0TLCkeOHlMIYArsJ2PXccvJnutgf0hpYADGqIlU4SpMtd8iW3Uz8k3w/HmfkG0s
-	dSFaUN4g83lw5vDHOpSIhRwaFBDLZyst6rgsKiGF/gw68K33mZGfxoaBFicFeqsNaoGQ/xDIbOSGH
-	Yrzn8koa/O0/Yw9RBVb41iCrzr1g95zIJldE+yzPNNoEOlulGcN7Mgsvu/doNxfFpoMF+DmIrzzyr
-	j7TcSUyxgGhbBYUcUweFkN7dj3h/OypqtwYNT1ZHHgrYQXMoJlPl2ETM0TM7JroYmxT/BKOsVVlZU
-	0/o88h7g==;
+	bh=zsJAo0Jg9NEQ/7xUCxpDJUMXjkS55OOI9+D/6gxG0EE=; b=PFEKxwfZKIkJKmMD7dOCY0EUfG
+	lPd/klXXH76u/Q/yvx22ci0PQQDoYDivLdj2QrKWwATtwEHLPphPS9P67QzODOFZEjMQ6WEkhHWi/
+	fNIV9Z98voj0kw77UTjwLJPVh6hjN9bQQOc2UgIyTz5yK2w+YIgTVc2dTEGAikshrRynxuzq7J9pR
+	sGZ6JoZKtJTJA/uufndXFkgnURU/b9M49OCtJgyg2bXbwKDkv7CPNrtvpWsW5Uhou2SS3Q3Xzv2Kj
+	ciAWpI8r0SEjzFKMmhnS4XpvT8kO3RH0L0+YDG446VuFiE7nM70r0t7kLtASjebLgjmK+VjsK6g+Z
+	fkcVLDIw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i68tf-0006q0-B4; Fri, 06 Sep 2019 07:43:07 +0000
+	id 1i68tP-0006ch-1F; Fri, 06 Sep 2019 07:42:51 +0000
 Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
  helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i68s6-0005h5-Pn
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:41:33 +0000
+ id 1i68s6-0005h3-Po
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:41:32 +0000
 Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
  [10.225.0.209])
  (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23683C0E03;
- Fri,  6 Sep 2019 07:41:27 +0000 (UTC)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 2AE33C0E3C;
+ Fri,  6 Sep 2019 07:41:28 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1567755688; bh=1i/geIHgBQLLy7LPimv2MIzVFeg/Cl2TeuERvfMsPYk=;
+ t=1567755688; bh=jZCMlvgCMuP7tUeAHLlMp4idCMgk/I/cK3F4CsQd+PQ=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
  References:From;
- b=UKDD5M3QsYIJSRZ7L9o99VGsWgvjEfmNmPwUfpdbQebZ8qBBDEJY4wRUNpNkuTO7v
- R3FngN05ExpqQxQWK/icr3lKvhAY0ywtmn5/8r/PqTuIsg4ydYiO5Cl3boXasgE2E1
- ZBhMsqDhvK405Rng3quH4TxJhW6j1zrVtFK7j/OgQEMgEsip9DpF1zKdV85M5cwbk/
- 9Urvg/z/EQ+Wi1K1i8RF2Tu89qxCxwVO1+5f8j9PrzaUVeCAA4l+c/b9s3P79xPQvG
- Ij8OoXdWTGC/xipH4+25Qj+IkdTl35l43Ax/SERJpxFqYUXnOcrslIoNG2o1KpVRHz
- xzGrdurzMs3PA==
+ b=ishy2uzL4O1BH/uU/Pa3nyGxn/4goiVJhORDkg31zNiVDoAlF5mzhMnrO4K//S78l
+ M5w8LClhcaOfomTJJyC1Y8t0/MB3Bn4HQHGpbXPwx5s28vTGAiodYmdU3CNr96Yqpn
+ Z9Fsn3Sn7ctltDHFBal6vHhGBXc7PcwaOM2A8FTRtBWNFAklk/WeAQOZEcUuFeIxNy
+ dGiWO6o+WCI0WQZFzVazqZZtSJADj89mmVvkzoQZmV10bklpFZFT3/sLK2MnU8sH4o
+ RiUARgV7YIBtTQt8Qy9isheuBEat0Tvbv7Ge3QBO+jYeXEd9Kl+jDigztFruV5U9fp
+ dxI6hQxF0VEYA==
 Received: from de02dwia024.internal.synopsys.com
  (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id A5E9BA005D;
+ by mailhost.synopsys.com (Postfix) with ESMTP id B9DA5A0062;
  Fri,  6 Sep 2019 07:41:26 +0000 (UTC)
 From: Jose Abreu <Jose.Abreu@synopsys.com>
 To: netdev@vger.kernel.org
-Subject: [PATCH net-next 1/5] net: stmmac: selftests: Add missing checks for
- support of SA
-Date: Fri,  6 Sep 2019 09:41:13 +0200
-Message-Id: <3b38421ddf3d8c4e40400f990999d548b8c459b5.1567755423.git.joabreu@synopsys.com>
+Subject: [PATCH net-next 2/5] net: stmmac: selftests: Set RX tail pointer in
+ Flow Control test
+Date: Fri,  6 Sep 2019 09:41:14 +0200
+Message-Id: <9e6d4447eeefa45d7e61e6bb9e4f602981c85c23.1567755423.git.joabreu@synopsys.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <cover.1567755423.git.joabreu@synopsys.com>
 References: <cover.1567755423.git.joabreu@synopsys.com>
 In-Reply-To: <cover.1567755423.git.joabreu@synopsys.com>
 References: <cover.1567755423.git.joabreu@synopsys.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_004130_840010_4739F5F1 
-X-CRM114-Status: GOOD (  11.47  )
+X-CRM114-CacheID: sfid-20190906_004130_838874_F2EE90FA 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
@@ -95,8 +95,8 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add checks for support of Source Address Insertion/Replacement before
-running the test.
+We need to set the RX tail pointer so that RX engine starts working
+again after finishing the Flow Control test.
 
 Signed-off-by: Jose Abreu <joabreu@synopsys.com>
 
@@ -110,53 +110,28 @@ Cc: netdev@vger.kernel.org
 Cc: linux-arm-kernel@lists.infradead.org
 Cc: linux-kernel@vger.kernel.org
 ---
- drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+ drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c | 6 ++++++
+ 1 file changed, 6 insertions(+)
 
 diff --git a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-index 305d24935cf4..dce34c081a1e 100644
+index dce34c081a1e..2943943bec43 100644
 --- a/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
 +++ b/drivers/net/ethernet/stmicro/stmmac/stmmac_selftests.c
-@@ -1057,6 +1057,9 @@ static int stmmac_test_desc_sai(struct stmmac_priv *priv)
- 	struct stmmac_packet_attrs attr = { };
- 	int ret;
+@@ -722,8 +722,14 @@ static int stmmac_test_flowctrl(struct stmmac_priv *priv)
  
-+	if (!priv->dma_cap.vlins)
-+		return -EOPNOTSUPP;
-+
- 	attr.remove_sa = true;
- 	attr.sarc = true;
- 	attr.src = src;
-@@ -1076,6 +1079,9 @@ static int stmmac_test_desc_sar(struct stmmac_priv *priv)
- 	struct stmmac_packet_attrs attr = { };
- 	int ret;
+ 	for (i = 0; i < rx_cnt; i++) {
+ 		struct stmmac_channel *ch = &priv->channel[i];
++		u32 tail;
  
-+	if (!priv->dma_cap.vlins)
-+		return -EOPNOTSUPP;
++		tail = priv->rx_queue[i].dma_rx_phy +
++			(DMA_RX_SIZE * sizeof(struct dma_desc));
 +
- 	attr.sarc = true;
- 	attr.src = src;
- 	attr.dst = priv->dev->dev_addr;
-@@ -1094,6 +1100,9 @@ static int stmmac_test_reg_sai(struct stmmac_priv *priv)
- 	struct stmmac_packet_attrs attr = { };
- 	int ret;
- 
-+	if (!priv->dma_cap.vlins)
-+		return -EOPNOTSUPP;
++		stmmac_set_rx_tail_ptr(priv, priv->ioaddr, tail, i);
+ 		stmmac_start_rx(priv, priv->ioaddr, i);
 +
- 	attr.remove_sa = true;
- 	attr.sarc = true;
- 	attr.src = src;
-@@ -1114,6 +1123,9 @@ static int stmmac_test_reg_sar(struct stmmac_priv *priv)
- 	struct stmmac_packet_attrs attr = { };
- 	int ret;
- 
-+	if (!priv->dma_cap.vlins)
-+		return -EOPNOTSUPP;
-+
- 	attr.sarc = true;
- 	attr.src = src;
- 	attr.dst = priv->dev->dev_addr;
+ 		local_bh_disable();
+ 		napi_reschedule(&ch->rx_napi);
+ 		local_bh_enable();
 -- 
 2.7.4
 
