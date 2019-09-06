@@ -2,52 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57441ABEB7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:25:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66E57ABEBF
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:28:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
 	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=1cBBIdJoF6snkjONMtEMMWqy7LkqOl39y053NBJ3cmw=; b=jYfgVxiFXgFJvO
-	Es1eFwk2698lBqrFdZ3RRYW/UyLrLcuX5ycQUy2lIZXUh8z+HKyHuG419BN6pqNqol8t/7N/WM8Go
-	fmCpXS4TKgvc07ndE0KApFqcGRECJGh+HSdhOX1ShpmPw9vDRIlmMnDnRAORW3ow2HFsFOKsblYwG
-	Dy+wgvzA8d6/Ggh4YlmmtrkjSf84pS+kSSILmOOoj3YpYhUi/yTjpOfanoRJfcfJTHDz8CMQ3h+DL
-	KapBzoSioLVt8NipNGYG+f3Y7uiP9rvM/dtIiVPea4xg+Bta7roxC4fxCLdFSYhzfSg13TUMGEuFb
-	OHt3ScORw66wy2H/SpFA==;
+	List-Owner; bh=B3kKCYqUQ2Q5N2ufY4SV+XYc3mxKr4iC1zS79GNgRaI=; b=utPZKJN/rRH7x3
+	NLQIUzC2Vzfs3HL68zAMNoRL7iJEzpV3t8xxLGBnvqPJKvMdfbf9ycK7+Pd12Un3ILmdn0jQq3+Vp
+	0MFN6EWZUXe9Rj5F5VhaXNzeauk9sQF9Qu7MNR1CfdXGGNHnTmIdliTV0oVvouD/nR0Cl/gx+8WlK
+	pZNC4CwYbtYUMuNNIC+9HVF1xR0LxRD1MVMnmN9cRhr3v/1V1MF6COkj+obElA5reybvHvg6kNh4W
+	UDUW/QQya7iiPGcFeoHgsRtAASGrHX/BKeMxMkrz+NHK0/lqKeRXwgWbYzNadsUNivk0rABIWmrNo
+	zusJDoAV93hWIB2tW+gg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Hys-0000KV-PK; Fri, 06 Sep 2019 17:25:06 +0000
+	id 1i6I1n-0001og-1i; Fri, 06 Sep 2019 17:28:07 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Hyf-0000K7-7v
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:24:54 +0000
+ id 1i6I1c-0001oP-Eo
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:27:57 +0000
 Received: from kernel.org (unknown [104.132.0.74])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id D1ED620838;
- Fri,  6 Sep 2019 17:24:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0146020838;
+ Fri,  6 Sep 2019 17:27:55 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567790692;
- bh=VFA2y6aGSEi1O7IjtmDRuhV4iW9oDnoUYHFJr+NnkZw=;
+ s=default; t=1567790876;
+ bh=aLRmPl43ZbLFE5HkFDGotmTtNfpnGumo9iTQkZUEWHA=;
  h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=2wTQ0bRk+dT5wClH2j/LUxzHRh/DqGD52/v9A6Ct++U/etB+2/+3zj5FvvNZCSqFB
- vKsJpAU8WI43KaV3kjS3zqr7kwZL2KS9jiiANcjo2eqH+QL7lQhtad4nvReOwtFlvL
- infNYS+DXT/9y0hmiCEmYGsUtd2SfQHXH3liB610=
+ b=NXeAVOXDmbDAR6b8gVPBLnnahqfeZNg6ihO6nSKugJCoA53yiqFcfp+s+i98IaPGi
+ FQuPIhtsTzbFZDerXuHHCUXk/+NUCuy+VNGEpNE59Ms9FXLGFAECSNE2elu0DUAkwG
+ geVPM/by/joxsfKwQGQgNW8B+DkbdVN48mt/wzSI=
 MIME-Version: 1.0
-In-Reply-To: <c3e86b5a832a14278e8ba670d51defc70ee78d84.1567590349.git.leonard.crestez@nxp.com>
-References: <c3e86b5a832a14278e8ba670d51defc70ee78d84.1567590349.git.leonard.crestez@nxp.com>
-To: Leonard Crestez <leonard.crestez@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Shawn Guo <shawnguo@kernel.org>
+In-Reply-To: <20190813085714.8079-1-nishkadg.linux@gmail.com>
+References: <20190813085714.8079-1-nishkadg.linux@gmail.com>
+To: Nishka Dasgupta <nishkadg.linux@gmail.com>,
+ linux-arm-kernel@lists.infradead.org, linux-clk@vger.kernel.org,
+ mturquette@baylibre.com, vireshk@kernel.org
 From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: imx: pll14xx: Fix quick switch of S/K parameter
+Subject: Re: [PATCH] clk: spear: Make structure i2s_sclk_masks constant
 User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 10:24:51 -0700
-Message-Id: <20190906172452.D1ED620838@mail.kernel.org>
+Date: Fri, 06 Sep 2019 10:27:55 -0700
+Message-Id: <20190906172756.0146020838@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_102453_305268_F31809AB 
-X-CRM114-Status: GOOD (  10.40  )
+X-CRM114-CacheID: sfid-20190906_102756_522051_01CDE1C4 
+X-CRM114-Status: UNSURE (   7.40  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -76,42 +78,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-clk@vger.kernel.org,
- linux-imx@nxp.com, Viorel Suman <viorel.suman@nxp.com>,
- Fabio Estevam <fabio.estevam@nxp.com>, Daniel Baluta <daniel.baluta@nxp.com>,
- kernel@pengutronix.de, linux-arm-kernel@lists.infradead.org,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: Nishka Dasgupta <nishkadg.linux@gmail.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Leonard Crestez (2019-09-04 02:49:18)
-> The PLL14xx on imx8m can change the S and K parameter without requiring
-> a reset and relock of the whole PLL.
+Quoting Nishka Dasgupta (2019-08-13 01:57:14)
+> Static structure i2s_sclk_masks, having type aux_clk_masks, is only used
+> when it is passed as the sixth argument to function clk_register_aux().
+> However, clk_register_aux() is defined with its sixth argument as const.
+> Hence i2s_sclk_masks is not modified by clk_register_aux, which is also
+> the only usage of the former. Therefore make i2s_sclk_masks constant as
+> it is never modified.
+> Issue found with Coccinelle.
 > 
-> Fix clk_pll144xx_mp_change register reading and use it for pll1443 as
-> well since no reset+relock is required on K changes either.
-> 
-> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
+> Signed-off-by: Nishka Dasgupta <nishkadg.linux@gmail.com>
 > ---
->  drivers/clk/imx/clk-pll14xx.c | 40 +++++++----------------------------
->  1 file changed, 8 insertions(+), 32 deletions(-)
-> 
-> The PLLs are currently table-based and none of the entries differ only
-> in S/K so further work would be required to make use of this. The
-> prospective user is audio doing tiny freq adjustments and there is no
-> standard API for that.
 
-sub-Hz adjustments?
-
-> 
-> Lacking users is not a good reason to carry broken code around.
-
-Maybe add a Fixes tag so if anyone wants to use it in LTS kernels there
-might be a chance that they'll find this patch mention code they're
-using.
+Applied to clk-next
 
 
 _______________________________________________
