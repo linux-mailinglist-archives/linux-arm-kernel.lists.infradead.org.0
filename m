@@ -2,68 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3A7B6AB518
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 11:46:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 598CAAB536
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:01:42 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=He9LaoofHJmQ5yy+6AwEP6IEVxMfNUSvFUKqnDX/624=; b=s38B0HW2yc+CSS
-	HMW80T4keEBR79wt/4xENI18bUICwnGSjiHK+hEXMgaVl04ADtWpgWaiXVIs/ixKfwY/Bhvkmuvx1
-	sNT4UJhZDLoYCe0Bv7gWlZfHp1uTNA8m7SLh76sfCR69BOh8faC98AeE5cvw90dvi2UvLZbJc+ZBO
-	O2rlNKUqIxMbhl2PmzeoEGsZ2YznFlbJGL/qwfzNA7H+81rcQWWwO2VWHPuMoSumspCt9ZyGinnY6
-	RpqTFkHpU4Auh0fP2oKSmLp3X3uva6urdayumwye+NmaDJb7V4C+w5DPQosyYCyz+oTDbXwdOPB39
-	FyedhrJTRFEwIfAQQnXQ==;
+	List-Owner; bh=LslbX6r0n2mv1t1m+i8z53qNy3CX1w/rF5Fru30aPfk=; b=aJveOCIjQXs7sk
+	IoK2tdjoHgfFXVKA2HT888nOPgz2qks4Q8EC46UTaA8OHkQw+go/vz+Q0pvuDsjJ8QIeFcVNC7HHL
+	B9U8iikT38A+mDKGlDYIB5xl1Klhz1CHhh9kcRg3U9T4RRQ8AXpdHbROcmeAS8yBuRv7QwCq9MXiP
+	wBQ/W66HPW/v0qC8BPpCVU8vSmBzNWAq8arqC1cU1FebxCuEy4TxoJvZloDj76pRK7JPbAjsVX/14
+	JUMs4o0kh36VabiNC+hlTcPk0i2a6amYqdQ8XevmP7E0k3E4P7wy+BChTdjl1/tjbMs7LKcWRrDBl
+	5bFBK0tWsaWCwISTyCFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Aox-0003mg-IS; Fri, 06 Sep 2019 09:46:23 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([207.82.80.151])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Aoj-0003lw-NM
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 09:46:11 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-104-eKY-JNlwMq6UlZLFLzlduw-1; Fri, 06 Sep 2019 10:46:02 +0100
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Fri, 6 Sep 2019 10:46:02 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Fri, 6 Sep 2019 10:46:02 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Alexandre Belloni' <alexandre.belloni@bootlin.com>
-Subject: RE: [PATCH v2] pinctrl: at91-pio4: implement .get_multiple and
- .set_multiple
-Thread-Topic: [PATCH v2] pinctrl: at91-pio4: implement .get_multiple and
- .set_multiple
-Thread-Index: AQHVY/kRQYKuMyjlyU+DkxaSF5MIvaceWwkA///ylwCAABEjEA==
-Date: Fri, 6 Sep 2019 09:46:02 +0000
-Message-ID: <b010053340ef48dfa244ff48c8decd38@AcuMS.aculab.com>
-References: <20190905144849.24882-1-alexandre.belloni@bootlin.com>
- <2261eadf98584d13a490f2abd8777d4a@AcuMS.aculab.com>
- <20190906091212.GF21254@piout.net>
-In-Reply-To: <20190906091212.GF21254@piout.net>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+	id 1i6B3c-0008FD-EN; Fri, 06 Sep 2019 10:01:32 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6B3O-0008EF-OM
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:01:21 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B67721570;
+ Fri,  6 Sep 2019 03:01:16 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2F8F23F59C;
+ Fri,  6 Sep 2019 03:01:16 -0700 (PDT)
+Date: Fri, 6 Sep 2019 11:01:14 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Abhishek Shah <abhishek.shah@broadcom.com>
+Subject: Re: [PATCH 1/1] PCI: iproc: Invalidate PAXB address mapping before
+ programming it
+Message-ID: <20190906100114.GE9720@e119886-lin.cambridge.arm.com>
+References: <20190906035813.24046-1-abhishek.shah@broadcom.com>
+ <20190906083816.GD9720@e119886-lin.cambridge.arm.com>
+ <CAKUFe6ZuRGJSmLdXqTWJzX-nE_Vh4yEQF_-rf+BWFrD_r4BRaQ@mail.gmail.com>
 MIME-Version: 1.0
-X-MC-Unique: eKY-JNlwMq6UlZLFLzlduw-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <CAKUFe6ZuRGJSmLdXqTWJzX-nE_Vh4yEQF_-rf+BWFrD_r4BRaQ@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_024610_027961_9A79B59E 
-X-CRM114-Status: GOOD (  16.33  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190906_030118_883664_5CAFF0BF 
+X-CRM114-Status: GOOD (  26.64  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [207.82.80.151 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -77,63 +63,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
- Ludovic Desroches <ludovic.desroches@microchip.com>,
- "Claudiu.Beznea@microchip.com" <Claudiu.Beznea@microchip.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
+ open list <linux-kernel@vger.kernel.org>,
+ BCM Kernel Feedback <bcm-kernel-feedback-list@broadcom.com>,
+ linux-pci@vger.kernel.org, Bjorn Helgaas <bhelgaas@google.com>,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Alexandre Belloni
-> Sent: 06 September 2019 10:12
-> On 06/09/2019 09:05:36+0000, David Laight wrote:
-> > From: Alexandre Belloni
-> > > Implement .get_multiple and .set_multiple to allow reading or setting
-> > > multiple pins simultaneously. Pins in the same bank will all be switched at
-> > > the same time, improving synchronization and performances.
-> >
-> > Actually it won't 'improve synchronisation', instead it will lead to
-> > random synchronisation errors and potential metastability if one
-> > pin is used as a clock and another as data, or if the code is reading
-> > a free-flowing counter.
-> >
+On Fri, Sep 06, 2019 at 02:55:19PM +0530, Abhishek Shah wrote:
+> Hi Andrew,
 > 
-> It does improve gpio switching synchronisation when they are in the same
-> bank as it will remove the 250ns delay. Of course, if you need this
-> delay between clk and data, then the consumer driver should ensure the
-> delay is present.
+> Thanks for the review. Please see my response inline:
+> 
+> On Fri, Sep 6, 2019 at 2:08 PM Andrew Murray <andrew.murray@arm.com> wrote:
+> >
+> > On Fri, Sep 06, 2019 at 09:28:13AM +0530, Abhishek Shah wrote:
+> > > Invalidate PAXB inbound/outbound address mapping each time before
+> > > programming it. This is helpful for the cases where we need to
+> > > reprogram inbound/outbound address mapping without resetting PAXB.
+> > > kexec kernel is one such example.
+> >
+> > Why is this approach better than resetting the PAXB (I assume that's
+> > the PCI controller IP)? Wouldn't resetting the PAXB address this issue,
+> > and ensure that no other configuration is left behind?
+> >
+> We normally reset PAXB in the firmware(ATF). But for cases like kexec
+> kernel boot,
+> we do not execute any firmware code and directly boot into kernel.
+> 
+> We could have done PAXB reset in the driver itself as you have suggested here.
+> But note that this detail could vary for each SoC, because these
+> registers are not part
+> of PAXB register space itself, rather exists in a register space responsible for
+> controlling power to various wrappers in PCIe IP. Normally, this kind
+> of SoC specific
+> details are handled in firmware itself, we don't bring them to driver level.
 
-With multiple requests the output pin changes will always be in the
-same order and will be separated by (say) 250ns.
-This is a guaranteed synchronisation.
+OK understood.
 
-If you change multiple pins with the same 'iowrite()' then the pins
-will change at approximately the same time.
-But the actual order will depend on internal device delays (which
-may depend on the actual silicon and temperature).
-You then have to take account of varying track lengths and the
-target devices input stage properties before knowing which change
-arrives first.
-The delays might be sub-nanosecond, but they matter if you are
-talking about synchronisation.
+> 
+> > Or is this related to earlier boot stages loading firmware for the emulated
+> > downstream endpoints (ep_is_internal)?
+> >
+> > Finally, in the case where ep_is_internal do you need to disable anything
+> > prior to invalidating the mappings?
+> >
+> No, ep_is_internal  is indicator for PAXC IP. It does not have
+> mappings as in PAXB.
 
-IIRC both SMBus and I2C now quote 0ns setup time.
-Changing both clock and data with the same IOW isn't enough to
-guarantee this.
-(In practise the I2C setup time required by a device is probably
-slightly negative (In order to support 0ns inputs) so a very small
--ve setup will (mostly) work.)
+I think I meant !ep_is_internal. I.e. is there possibility of inbound traffic
+prior to invalidating the mappings. I'd assume not, but that's an assumption.
 
-	David
+Either way:
 
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
+Reviewed-by: Andrew Murray <andrew.murray@arm.com>
 
+> 
+> 
+> Regards,
+> Abhishek
+> > >
+> > > Signed-off-by: Abhishek Shah <abhishek.shah@broadcom.com>
+> > > Reviewed-by: Ray Jui <ray.jui@broadcom.com>
+> > > Reviewed-by: Vikram Mysore Prakash <vikram.prakash@broadcom.com>
+> > > ---
+> > >  drivers/pci/controller/pcie-iproc.c | 28 ++++++++++++++++++++++++++++
+> > >  1 file changed, 28 insertions(+)
+> > >
+> > > diff --git a/drivers/pci/controller/pcie-iproc.c b/drivers/pci/controller/pcie-iproc.c
+> > > index e3ca46497470..99a9521ba7ab 100644
+> > > --- a/drivers/pci/controller/pcie-iproc.c
+> > > +++ b/drivers/pci/controller/pcie-iproc.c
+> > > @@ -1245,6 +1245,32 @@ static int iproc_pcie_map_dma_ranges(struct iproc_pcie *pcie)
+> > >       return ret;
+> > >  }
+> > >
+> > > +static void iproc_pcie_invalidate_mapping(struct iproc_pcie *pcie)
+> > > +{
+> > > +     struct iproc_pcie_ib *ib = &pcie->ib;
+> > > +     struct iproc_pcie_ob *ob = &pcie->ob;
+> > > +     int idx;
+> > > +
+> > > +     if (pcie->ep_is_internal)
+> > > +             return;
+> > > +
+> > > +     if (pcie->need_ob_cfg) {
+> > > +             /* iterate through all OARR mapping regions */
+> > > +             for (idx = ob->nr_windows - 1; idx >= 0; idx--) {
+> > > +                     iproc_pcie_write_reg(pcie,
+> > > +                                          MAP_REG(IPROC_PCIE_OARR0, idx), 0);
+> > > +             }
+> > > +     }
+> > > +
+> > > +     if (pcie->need_ib_cfg) {
+> > > +             /* iterate through all IARR mapping regions */
+> > > +             for (idx = 0; idx < ib->nr_regions; idx++) {
+> > > +                     iproc_pcie_write_reg(pcie,
+> > > +                                          MAP_REG(IPROC_PCIE_IARR0, idx), 0);
+> > > +             }
+> > > +     }
+> > > +}
+> > > +
+> > >  static int iproce_pcie_get_msi(struct iproc_pcie *pcie,
+> > >                              struct device_node *msi_node,
+> > >                              u64 *msi_addr)
+> > > @@ -1517,6 +1543,8 @@ int iproc_pcie_setup(struct iproc_pcie *pcie, struct list_head *res)
+> > >       iproc_pcie_perst_ctrl(pcie, true);
+> > >       iproc_pcie_perst_ctrl(pcie, false);
+> > >
+> > > +     iproc_pcie_invalidate_mapping(pcie);
+> > > +
+> > >       if (pcie->need_ob_cfg) {
+> > >               ret = iproc_pcie_map_ranges(pcie, res);
+> > >               if (ret) {
+> >
+> > The code changes look good to me.
+> >
+> > Thanks,
+> >
+> > Andrew Murray
+> >
+> > > --
+> > > 2.17.1
+> > >
 
 _______________________________________________
 linux-arm-kernel mailing list
