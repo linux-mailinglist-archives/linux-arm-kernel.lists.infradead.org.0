@@ -2,67 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 03507ABB12
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:35:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2001BABB1A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 16:37:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cor7O7V5BHxeiIDYgAp372OqJCSDBphrWunEzRWNtEU=; b=Pj0aZrc871JXuX
-	JFo+SIw6n6LdnMDGRQ/8SBluvtRNf0bDR9iNUNJj2W/RFCNbD/H2x1dEQN8cG4XCvXhEE1TCMlABn
-	8gCTW5h9vbumPD9m6u3ohXdiYVd6+Bgp6isQVfFVYyJfzI98r3rRKDcOr0wMmGAKhVcvP6ggBiA51
-	qSwDDfTHns+6L5UUlclcVj8K2ehUrmqw4AzIcW763iWvmk6NSOjDBLpcBt666Sg+8r5XH4jhF4/Fx
-	uNkQOZJP6BveZhHd3YJ6XUEahZB37dsA2WPlXAZlraG5DLsMP0HbWb+j9xRUZNvc9nvSSYX3kq2lJ
-	XcxdJ82TQWcH5qru2FVQ==;
+	List-Owner; bh=Yaa2unJDAMbEgPw3yEMcJpnL+R++fJvZ4oj46mRjjvs=; b=VJHvLT6afNS/ZI
+	Ok9F5B9Phh8Iqmsf/Amlor7HiZr4FGeJCsY2rO600fbdw+aF2LPagVy4XdOSD52Lpam46kmMYTM5f
+	Z5vu7lIeV+B3vVGG5pEAZ08XraduZgSiiDLbBgLw42b13fd6SchUjHDM1mg77yNsV8+O1dU8qLYIk
+	PHJCoZ4bHQzTaJ1j6g0T7OjlS7oRa2Glmb6X/YcZxW6Wj8+QHk+rACQan4TFfKoSUn7Rvr/ewxhBP
+	yaXDSR1orkUlSt9eAiYtku7+q4NyxXyq+UbVm5+1Yu2Y+mCsId8RQldVFHj7bNwyiZ1iYvZmoMYpk
+	ZT48WxmalF1TFTpj1zdQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6FKp-0000Lv-Cx; Fri, 06 Sep 2019 14:35:35 +0000
-Received: from userp2120.oracle.com ([156.151.31.85])
+	id 1i6FMd-0001PN-Ul; Fri, 06 Sep 2019 14:37:28 +0000
+Received: from aserp2120.oracle.com ([141.146.126.78])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6FJQ-0006dI-1y
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:34:10 +0000
-Received: from pps.filterd (userp2120.oracle.com [127.0.0.1])
- by userp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86ETPB5057991;
- Fri, 6 Sep 2019 14:33:31 GMT
+ id 1i6FMQ-0001P1-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 14:37:15 +0000
+Received: from pps.filterd (aserp2120.oracle.com [127.0.0.1])
+ by aserp2120.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EY7Be032545;
+ Fri, 6 Sep 2019 14:36:45 GMT
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=oracle.com;
  h=from : to : cc :
  subject : date : message-id : in-reply-to : references : mime-version :
  content-transfer-encoding; s=corp-2019-08-05;
- bh=iUYFxUsqHgAm76CUFaGiB1Q4NJwTjXdVV+fFE9B3uOo=;
- b=iZcNxkhtBcoPpNAZsabiJ6qx3XRaQeZrUTqowkCWgn2cGaKNLA2wytbaCnM6M5VLl/oj
- Fad3xeTZAbewEHYxaiKINQklQTmelxS7LIsQbJEhps1fWtqn591VRVfKCCYbDKdvKx96
- +L2VfR/wBY5ZlZYO7rYYTVfrWsMDOl9OH0JrLfYXNjkb/p1euy84tsYOsc4Yq4UH78my
- BnCj2kloThIBOr3TgkNdfN608lhg07dKvpLpILgecKUYTwCdGV2vGTWB+GywNAfZ9yKw
- 8zJRUULDfG91GpdKri8S9eL3Gt2DN5eG+0W3QEXe/QxxPg7HquBoZ8sYw2pgsKEEWzni qA== 
+ bh=w5Vu/fbczNwoQcE3H6hN/D9dx7OzQsmQPWGC5Uj8C14=;
+ b=NZhrmRf1W50Q/ZfNJSn3dGFcD7saeYNzsPB0KvZ9at5iuo/aGmDpqd1yx1LPDLf2tm4t
+ bO2LdLi9AmxA5zRZrFdtG/kNNXwcjRXRUCaW8CoGsBSty9VHlmfbDmfhsPRH5nPq7xk3
+ tt9wbt7QX0ccqFKRoVoz2tuO0/eCafs+RWbcWzYlVcFSyehAtFsjjjmdr7Sju3/X2GxO
+ IA6j+yUKeN5MO9Fura2quWyCNfYi+3xLw+F7zijzNWKTKqvtlYPaYR+3BkRH+13Mi3XD
+ WWyzrjKCBCRWqKHdcg9kp0g0gmM0/n1MAmsxCM+KFzCDwlT9OCXAxfTyj9T2JZlczv43 Yw== 
 Received: from aserp3020.oracle.com (aserp3020.oracle.com [141.146.126.70])
- by userp2120.oracle.com with ESMTP id 2uus6qg1k0-1
+ by aserp2120.oracle.com with ESMTP id 2uus4kg3n1-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 06 Sep 2019 14:33:31 +0000
+ Fri, 06 Sep 2019 14:36:45 +0000
 Received: from pps.filterd (aserp3020.oracle.com [127.0.0.1])
- by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EXSL6079760;
- Fri, 6 Sep 2019 14:33:31 GMT
+ by aserp3020.oracle.com (8.16.0.27/8.16.0.27) with SMTP id x86EXR7d079676;
+ Fri, 6 Sep 2019 14:34:44 GMT
 Received: from userv0122.oracle.com (userv0122.oracle.com [156.151.31.75])
- by aserp3020.oracle.com with ESMTP id 2uud7pk6h5-1
+ by aserp3020.oracle.com with ESMTP id 2uud7pk6h6-1
  (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
- Fri, 06 Sep 2019 14:33:30 +0000
+ Fri, 06 Sep 2019 14:34:44 +0000
 Received: from abhmp0009.oracle.com (abhmp0009.oracle.com [141.146.116.15])
- by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x86EWvHV026013;
- Fri, 6 Sep 2019 14:32:57 GMT
+ by userv0122.oracle.com (8.14.4/8.14.4) with ESMTP id x86EWwLi026054;
+ Fri, 6 Sep 2019 14:32:58 GMT
 Received: from neelam.us.oracle.com (/10.152.128.16)
  by default (Oracle Beehive Gateway v4.0)
- with ESMTP ; Fri, 06 Sep 2019 07:32:57 -0700
+ with ESMTP ; Fri, 06 Sep 2019 07:32:58 -0700
 From: Alex Kogan <alex.kogan@oracle.com>
 To: linux@armlinux.org.uk, peterz@infradead.org, mingo@redhat.com,
  will.deacon@arm.com, arnd@arndb.de, longman@redhat.com,
  linux-arch@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org, tglx@linutronix.de, bp@alien8.de,
  hpa@zytor.com, x86@kernel.org, guohanjun@huawei.com, jglauber@marvell.com
-Subject: [PATCH v4 4/5] locking/qspinlock: Introduce starvation avoidance into
- CNA
-Date: Fri,  6 Sep 2019 10:25:40 -0400
-Message-Id: <20190906142541.34061-5-alex.kogan@oracle.com>
+Subject: [PATCH v4 5/5] locking/qspinlock: Introduce the shuffle reduction
+ optimization into CNA
+Date: Fri,  6 Sep 2019 10:25:41 -0400
+Message-Id: <20190906142541.34061-6-alex.kogan@oracle.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <20190906142541.34061-1-alex.kogan@oracle.com>
 References: <20190906142541.34061-1-alex.kogan@oracle.com>
@@ -81,17 +81,17 @@ X-Proofpoint-Spam-Details: rule=notspam policy=default score=0
  suspectscore=0 phishscore=0 bulkscore=0 spamscore=0 clxscore=1015
  lowpriorityscore=0 mlxscore=0 impostorscore=0 mlxlogscore=999 adultscore=0
  classifier=spam adjust=0 reason=mlx scancount=1 engine=8.0.1-1906280000
- definitions=main-1909060153
+ definitions=main-1909060154
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_073408_794307_F1956669 
-X-CRM114-Status: GOOD (  21.20  )
+X-CRM114-CacheID: sfid-20190906_073714_646597_8866F843 
+X-CRM114-Status: GOOD (  16.35  )
 X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [156.151.31.85 listed in list.dnswl.org]
+ medium trust [141.146.126.78 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -122,81 +122,60 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Choose the next lock holder among spinning threads running on the same
-node with high probability rather than always. With small probability,
-hand the lock to the first thread in the secondary queue or, if that
-queue is empty, to the immediate successor of the current lock holder
-in the main queue.  Thus, assuming no failures while threads hold the
-lock, every thread would be able to acquire the lock after a bounded
-number of lock transitions, with high probability.
+This optimization reduces the probability threads will be shuffled between
+the main and secondary queues when the secondary queue is empty.
+It is helpful when the lock is only lightly contended.
 
 Signed-off-by: Alex Kogan <alex.kogan@oracle.com>
 Reviewed-by: Steve Sistare <steven.sistare@oracle.com>
 ---
- kernel/locking/qspinlock_cna.h | 35 +++++++++++++++++++++++++++++++++--
- 1 file changed, 33 insertions(+), 2 deletions(-)
+ kernel/locking/qspinlock_cna.h | 20 ++++++++++++++++++++
+ 1 file changed, 20 insertions(+)
 
 diff --git a/kernel/locking/qspinlock_cna.h b/kernel/locking/qspinlock_cna.h
-index f983debf20bb..e86182e6163b 100644
+index e86182e6163b..1c3a8905b2ca 100644
 --- a/kernel/locking/qspinlock_cna.h
 +++ b/kernel/locking/qspinlock_cna.h
-@@ -4,6 +4,7 @@
- #endif
- 
- #include <linux/topology.h>
-+#include <linux/random.h>
+@@ -64,6 +64,15 @@ static DEFINE_PER_CPU(u32, seed);
+ #define INTRA_NODE_HANDOFF_PROB_ARG (16)
  
  /*
-  * Implement a NUMA-aware version of MCS (aka CNA, or compact NUMA-aware lock).
-@@ -50,6 +51,34 @@ struct cna_node {
- 	struct	cna_node *tail;    /* points to the secondary queue tail */
- };
- 
-+/* Per-CPU pseudo-random number seed */
-+static DEFINE_PER_CPU(u32, seed);
++ * Controls the probability for enabling the scan of the main queue when
++ * the secondary queue is empty. The chosen value reduces the amount of
++ * unnecessary shuffling of threads between the two waiting queues when
++ * the contention is low, while responding fast enough and enabling
++ * the shuffling when the contention is high.
++ */
++#define SHUFFLE_REDUCTION_PROB_ARG  (7)
 +
 +/*
-+ * Controls the probability for intra-node lock hand-off. It can be
-+ * tuned and depend, e.g., on the number of CPUs per node. For now,
-+ * choose a value that provides reasonable long-term fairness without
-+ * sacrificing performance compared to a version that does not have any
-+ * fairness guarantees.
-+ */
-+#define INTRA_NODE_HANDOFF_PROB_ARG (16)
-+
-+/*
-+ * Return false with probability 1 / 2^@num_bits.
-+ * Intuitively, the larger @num_bits the less likely false is to be returned.
-+ * @num_bits must be a number between 0 and 31.
-+ */
-+static bool probably(unsigned int num_bits)
-+{
-+	u32 s;
-+
-+	s = this_cpu_read(seed);
-+	s = next_pseudo_random32(s);
-+	this_cpu_write(seed, s);
-+
-+	return s & ((1 << num_bits) - 1);
-+}
-+
- static void __init cna_init_nodes_per_cpu(unsigned int cpu)
- {
- 	struct mcs_spinlock *base = per_cpu_ptr(&qnodes[0].mcs, cpu);
-@@ -202,9 +231,11 @@ static inline void cna_pass_lock(struct mcs_spinlock *node,
+  * Return false with probability 1 / 2^@num_bits.
+  * Intuitively, the larger @num_bits the less likely false is to be returned.
+  * @num_bits must be a number between 0 and 31.
+@@ -230,6 +239,16 @@ static inline void cna_pass_lock(struct mcs_spinlock *node,
+ 	u32 val = 1;
  
  	/*
++	 * Limit thread shuffling when the secondary queue is empty.
++	 * This copes with the overhead the shuffling creates when the
++	 * lock is only lightly contended, and threads do not stay
++	 * in the secondary queue long enough to reap the benefit of moving
++	 * them there.
++	 */
++	if (node->locked <= 1 && probably(SHUFFLE_REDUCTION_PROB_ARG))
++		goto pass_lock;
++
++	/*
  	 * Try to find a successor running on the same NUMA node
--	 * as the current lock holder.
-+	 * as the current lock holder. For long-term fairness,
-+	 * search for such a thread with high probability rather than always.
- 	 */
--	new_next = cna_try_find_next(node, next);
-+	if (probably(INTRA_NODE_HANDOFF_PROB_ARG))
-+		new_next = cna_try_find_next(node, next);
+ 	 * as the current lock holder. For long-term fairness,
+ 	 * search for such a thread with high probability rather than always.
+@@ -252,5 +271,6 @@ static inline void cna_pass_lock(struct mcs_spinlock *node,
+ 		((struct cna_node *)next_holder)->tail->mcs.next = next;
+ 	}
  
- 	if (new_next) {		          /* if such successor is found */
- 		next_holder = new_next;
++pass_lock:
+ 	arch_mcs_pass_lock(&next_holder->locked, val);
+ }
 -- 
 2.11.0 (Apple Git-81)
 
