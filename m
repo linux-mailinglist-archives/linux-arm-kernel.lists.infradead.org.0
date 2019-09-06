@@ -2,60 +2,121 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D7CB2AB39B
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 10:00:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1917CAB3FE
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 10:27:18 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Qs6RRJCy2k13Z6YO8UjLLsh/jN7IACJQDEG5wVOJFFE=; b=ScOh0MmD1a6OSB
-	banfxmMUiWq34cmh1Bt7SjVcQXTqOH+UhmKpspIVlaCTmuabHE/sAOAfGkaUstUCPnLANXXy6ln2J
-	bH4UAdRBJWM6y7Scy+agIk4upiaMWCRRCWrmkCwZiZ32TVG9q+fQ6didHM+lLN+nQHGa+V5d8xvne
-	dHCJ6MjVsee13W80GEYqSeXCzJMJ/ScoMfzzYEJH8+QV2QAAvSZJanZP7ULbsWlkMto/yWaiawD50
-	ZXuxox2Z8klaA+UTMBJ8NfWUqGf2hRiJS+15ZF4xiy8Isrsw1PGEnlAU2qZnDBRhFVDkzTXJDi46a
-	Z9tTlq1bONUfn+e5rOjw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=vIZK11hq8bgp5Bdi6KD+eSb5EYFvODIHU69jetX/9F4=; b=EDriQVwZAWTCAq
+	nsjhdtwdDllvP3B79kqqPe20sE0CpwLd2+Vw7sFpitLmuBZimivYKcv0AZTCUTeXNVmfphHCsUvOZ
+	o6gcymh3hcvIwkiEW4RyW2qNuPUZZX1S2BaX5kIdRp/R95zVAwN/rZXUJ9Y2ryZk2hN9vf67bAjUd
+	uB4eXQvKRIY9JnDA7PNCvEgg/u6u2jEzOrO5ltcLyz4bkQxNLSz6CKPaqZOhE9qqr5cpsFXJqvDL+
+	UdoosmXrRj0DGPaZiD9tkw9WZPRioid4WPVlHWrx+sVtmg3e81/gOjHyVWn5fr2pLJif00wsDqXAB
+	1nV3tFTpIZNLJOmjqH5g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i69An-00056f-8t; Fri, 06 Sep 2019 08:00:49 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i69Aa-00056G-3g
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 08:00:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id AC75328;
- Fri,  6 Sep 2019 01:00:35 -0700 (PDT)
-Received: from localhost (e113682-lin.copenhagen.arm.com [10.32.144.41])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 3F6DB3F718;
- Fri,  6 Sep 2019 01:00:35 -0700 (PDT)
-Date: Fri, 6 Sep 2019 10:00:33 +0200
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: Marc Zyngier <maz@kernel.org>
-Subject: Re: [PATCH 1/1] KVM: inject data abort if instruction cannot be
- decoded
-Message-ID: <20190906080033.GF4320@e113682-lin.lund.arm.com>
-References: <20190904180736.29009-1-xypron.glpk@gmx.de>
- <86r24vrwyh.wl-maz@kernel.org>
- <CAFEAcA-mc6cLmRGdGNOBR0PC1f_VBjvTdAL6xYtKjApx3NoPgQ@mail.gmail.com>
- <86mufjrup7.wl-maz@kernel.org>
- <CAFEAcA9qkqkOTqSVrhTpt-NkZSNXomSBNiWo_D6Kr=QKYRRf=w@mail.gmail.com>
- <20190905092223.GC4320@e113682-lin.lund.arm.com>
- <4b6662bd-56e4-3c10-3b65-7c90828a22f9@kernel.org>
+	id 1i69aL-0007jJ-MH; Fri, 06 Sep 2019 08:27:13 +0000
+Received: from mail-eopbgr20083.outbound.protection.outlook.com ([40.107.2.83]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i69aA-0007ig-SK
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 08:27:04 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=S5PPOOwXgmSxMAb5cqvwCTf1/TAQHI4lTzpkKMIgnSAVbiH+kNstuK7A8p+N/nAoBtYqjby5wcoIfWds7/AuTCxVhnzUBi8lAEICzr5P/QSSQEMstPbbSz2QvF9doQKr0LJPgcOJHb/tWgzDoOIYpVLmTpTMvmV/OM/0BQppqasSmeuQ2B8XZCMJjY8VxpsVC7LmlbHO9gKcy27fz6oRUKfSixB1fyEMwbq/QK859gWRNn0NtEt1tluqfm3KWrZ6T0jxHzeP7on8VyNz0jfITXvCPvbaCVMqRXg2Cqb2ug30huTqzHjmoUNOFHl982fBqJzq4nsyQCaqz4RWY8ezmQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PFNl9MygmTj/go/otn+EpQ3dyUaGu0Fi2TgIHJs/4R8=;
+ b=O5Jdns9dJVmEmj5b4EBs7W7vf/NzcMPkX1d28IShpnQql9aG0/WzBIEIHdqglZmVnWVpzbc6aLmopaFkrhPQWXpozLD2o4efhK9iHLbwFki7kRt/e5wYKyFI+KxAlbqoK5lOqhBqsbXRyPrLtSwSIdcYnQ8sqPCc6ZqFEVu67DCSZqGFFij/LmtZhslKG3eX1tkVqnKGBL4JerJF6cA+ni6nJbMI+ZfAHu8cVh5vWnykWDjnAJmNddw0roUIwaqEdiMKqDyjR2Jlju4uKsEB1Xakm8LSgN047OKh9uBNiuUmtxbU2Y2X77JD86JIA1qBGCmD8rr93hHr5Bvu8zxKLg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PFNl9MygmTj/go/otn+EpQ3dyUaGu0Fi2TgIHJs/4R8=;
+ b=eJGPxlE/q/gnfFADoMclkjVdMjcUnJE/zYgvAgU8iaG7KADgpkULSEUonVK3uDjOiCippVMFJM9ASHmYWiyQV0eLrlbJTRsgQIXjREcmHg4iwYlwhJxv99O9s/Qu5AWEau0VPXVcxRZvoBysCDIAt/m9hPrXjDH/nEcAHg2k+4I=
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com (52.135.139.151) by
+ DB7PR04MB5561.eurprd04.prod.outlook.com (20.178.104.18) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.18; Fri, 6 Sep 2019 08:26:56 +0000
+Received: from DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::29e4:47d:7a2b:a6c6]) by DB7PR04MB4618.eurprd04.prod.outlook.com
+ ([fe80::29e4:47d:7a2b:a6c6%7]) with mapi id 15.20.2220.024; Fri, 6 Sep 2019
+ 08:26:56 +0000
+From: Joakim Zhang <qiangqing.zhang@nxp.com>
+To: "will@kernel.org" <will@kernel.org>, "mark.rutland@arm.com"
+ <mark.rutland@arm.com>, "robin.murphy@arm.com" <robin.murphy@arm.com>, Frank
+ Li <frank.li@nxp.com>
+Subject: [PATCH 1/2] perf/imx_ddr: add enhanced AXI ID filter support
+Thread-Topic: [PATCH 1/2] perf/imx_ddr: add enhanced AXI ID filter support
+Thread-Index: AQHVZIzXxnEyO/p2cU+i3CnZc4qNBg==
+Date: Fri, 6 Sep 2019 08:26:55 +0000
+Message-ID: <20190906082356.25485-1-qiangqing.zhang@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.17.1
+x-clientproxiedby: SG2PR04CA0129.apcprd04.prod.outlook.com
+ (2603:1096:3:16::13) To DB7PR04MB4618.eurprd04.prod.outlook.com
+ (2603:10a6:5:38::23)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=qiangqing.zhang@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.71]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 1bca420b-4b3c-4a14-d2d7-08d732a3fa45
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB7PR04MB5561; 
+x-ms-traffictypediagnostic: DB7PR04MB5561:|DB7PR04MB5561:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB7PR04MB55610A519FBFF18765C44555E6BA0@DB7PR04MB5561.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:2958;
+x-forefront-prvs: 0152EBA40F
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(396003)(39860400002)(376002)(366004)(346002)(136003)(199004)(189003)(6512007)(53936002)(14454004)(256004)(81166006)(8676002)(25786009)(36756003)(81156014)(478600001)(14444005)(50226002)(305945005)(7736002)(6436002)(6486002)(8936002)(2501003)(6636002)(66446008)(64756008)(66556008)(66066001)(66946007)(66476007)(2201001)(86362001)(5660300002)(2906002)(6116002)(3846002)(1076003)(52116002)(26005)(186003)(316002)(54906003)(110136005)(386003)(6506007)(4326008)(102836004)(476003)(486006)(99286004)(2616005)(71190400001)(71200400001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB5561;
+ H:DB7PR04MB4618.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 0haWZbn0kYyZ4dbPW6B0ONxYkNtiQ3bq7In6nR+0siVG51u36aQ/J2o+1nHwhXnT9KJF7fycYiUesCiN2RYsmgQOBHncv9c3LLdWQUs+Sg0+TUL+arrMolC2osUyGOw4lYEnmk8kc/NeYLE2axirxE7+ZsfYZUTN68ewtWthtiD/fP/xbxCkU3MdmhffWGxO2lZ1W33rZabuyrrQhO84lpud6zJxKd/HwgQmW7ux4VBLQbAlQnKZYpeJgb8aeOcAw94mPzW5Xf/IGLocuBDtxEpp2CpMtCcE/ASSot4yawwT4/27OEH/639DWf8tegYVq77ZfW8IyM2DRF7N+kKMo87qSYDyuV8WFt7fPUTCg4SQRTg84fgX8LePixhcKJPTYpBikNq30StkzxMMkY1qQO+QTWDLYlsf/TS8F095L18=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <4b6662bd-56e4-3c10-3b65-7c90828a22f9@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1bca420b-4b3c-4a14-d2d7-08d732a3fa45
+X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Sep 2019 08:26:55.9270 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: sgmcf0rpk+JtBLzMJoDqkUIZ7S0XU5g79Ean9JPCDBAuzZI99o7r2g35UTG5X5QF6GAZg/YmCdYgGnTDasdLPQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB5561
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_010036_244100_40CC5722 
-X-CRM114-Status: GOOD (  35.81  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_012702_993003_9E790E05 
+X-CRM114-Status: GOOD (  11.96  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.2.83 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [40.107.2.83 listed in wl.mailspike.net]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,225 +128,63 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Maydell <peter.maydell@linaro.org>,
- Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>,
- lkml - Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Stefan Hajnoczi <stefanha@redhat.com>, kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: dl-linux-imx <linux-imx@nxp.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, Joakim Zhang <qiangqing.zhang@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 05, 2019 at 02:09:18PM +0100, Marc Zyngier wrote:
-> On 05/09/2019 10:22, Christoffer Dall wrote:
-> > On Thu, Sep 05, 2019 at 09:56:44AM +0100, Peter Maydell wrote:
-> >> On Thu, 5 Sep 2019 at 09:52, Marc Zyngier <maz@kernel.org> wrote:
-> >>>
-> >>> On Thu, 05 Sep 2019 09:16:54 +0100,
-> >>> Peter Maydell <peter.maydell@linaro.org> wrote:
-> >>>> This is true, but the problem is that barfing out to userspace
-> >>>> makes it harder to debug the guest because it means that
-> >>>> the VM is immediately destroyed, whereas AIUI if we
-> >>>> inject some kind of exception then (assuming you're set up
-> >>>> to do kernel-debug via gdbstub) you can actually examine
-> >>>> the offending guest code with a debugger because at least
-> >>>> your VM is still around to inspect...
-> >>>
-> >>> To Christoffer's point, I find the benefit a bit dubious. Yes, you get
-> >>> an exception, but the instruction that caused it may be completely
-> >>> legal (store with post-increment, for example), leading to an even
-> >>> more puzzled developer (that exception should never have been
-> >>> delivered the first place).
-> >>
-> >> Right, but the combination of "host kernel prints a message
-> >> about an unsupported load/store insn" and "within-guest debug
-> >> dump/stack trace/etc" is much more useful than just having
-> >> "host kernel prints message" and "QEMU exits"; and it requires
-> >> about 3 lines of code change...
-> >>
-> >>> I'm far more in favour of dumping the state of the access in the run
-> >>> structure (much like we do for a MMIO access) and let userspace do
-> >>> something about it (such as dumping information on the console or
-> >>> breaking). It could even inject an exception *if* the user has asked
-> >>> for it.
-> >>
-> >> ...whereas this requires agreement on a kernel-userspace API,
-> >> larger changes in the kernel, somebody to implement the userspace
-> >> side of things, and the user to update both the kernel and QEMU.
-> >> It's hard for me to see that the benefit here over the 3-line
-> >> approach really outweighs the extra effort needed. In practice
-> >> saying "we should do this" is saying "we're going to do nothing",
-> >> based on the historical record.
-> >>
-> > 
-> > How about something like the following (completely untested, liable for
-> > ABI discussions etc. etc., but for illustration purposes).
-> > 
-> > I think it raises the question (and likely many other) of whether we can
-> > break the existing 'ABI' and change behavior for missing ISV
-> > retrospectively for legacy user space when the issue has occurred?
-> >    
-> > Someone might have written code that reacts to the -ENOSYS, so I've
-> > taken the conservative approach for this for the time being.
-> > 
-> > 
-> > diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-> > index 8a37c8e89777..19a92c49039c 100644
-> > --- a/arch/arm/include/asm/kvm_host.h
-> > +++ b/arch/arm/include/asm/kvm_host.h
-> > @@ -76,6 +76,14 @@ struct kvm_arch {
-> >  
-> >  	/* Mandated version of PSCI */
-> >  	u32 psci_version;
-> > +
-> > +	/*
-> > +	 * If we encounter a data abort without valid instruction syndrome
-> > +	 * information, report this to user space.  User space can (and
-> > +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-> > +	 * supported.
-> > +	 */
-> > +	bool return_nisv_io_abort_to_user;
-> >  };
-> >  
-> >  #define KVM_NR_MEM_OBJS     40
-> > diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-> > index f656169db8c3..019bc560edc1 100644
-> > --- a/arch/arm64/include/asm/kvm_host.h
-> > +++ b/arch/arm64/include/asm/kvm_host.h
-> > @@ -83,6 +83,14 @@ struct kvm_arch {
-> >  
-> >  	/* Mandated version of PSCI */
-> >  	u32 psci_version;
-> > +
-> > +	/*
-> > +	 * If we encounter a data abort without valid instruction syndrome
-> > +	 * information, report this to user space.  User space can (and
-> > +	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-> > +	 * supported.
-> > +	 */
-> > +	bool return_nisv_io_abort_to_user;
-> >  };
-> >  
-> >  #define KVM_NR_MEM_OBJS     40
-> > diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-> > index 5e3f12d5359e..a4dd004d0db9 100644
-> > --- a/include/uapi/linux/kvm.h
-> > +++ b/include/uapi/linux/kvm.h
-> > @@ -235,6 +235,7 @@ struct kvm_hyperv_exit {
-> >  #define KVM_EXIT_S390_STSI        25
-> >  #define KVM_EXIT_IOAPIC_EOI       26
-> >  #define KVM_EXIT_HYPERV           27
-> > +#define KVM_EXIT_ARM_NISV         28
-> >  
-> >  /* For KVM_EXIT_INTERNAL_ERROR */
-> >  /* Emulate instruction failed. */
-> > @@ -996,6 +997,7 @@ struct kvm_ppc_resize_hpt {
-> >  #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
-> >  #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
-> >  #define KVM_CAP_PMU_EVENT_FILTER 173
-> > +#define KVM_CAP_ARM_NISV_TO_USER 174
-> >  
-> >  #ifdef KVM_CAP_IRQ_ROUTING
-> >  
-> > diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-> > index 35a069815baf..2ce94bd9d4a9 100644
-> > --- a/virt/kvm/arm/arm.c
-> > +++ b/virt/kvm/arm/arm.c
-> > @@ -98,6 +98,26 @@ int kvm_arch_check_processor_compat(void)
-> >  	return 0;
-> >  }
-> >  
-> > +int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
-> > +			    struct kvm_enable_cap *cap)
-> > +{
-> > +	int r;
-> > +
-> > +	if (cap->flags)
-> > +		return -EINVAL;
-> > +
-> > +	switch (cap->cap) {
-> > +	case KVM_CAP_ARM_NISV_TO_USER:
-> > +		r = 0;
-> > +		kvm->arch.return_nisv_io_abort_to_user = true;
-> > +		break;
-> > +	default:
-> > +		r = -EINVAL;
-> > +		break;
-> > +	}
-> > +
-> > +	return r;
-> > +}
-> >  
-> >  /**
-> >   * kvm_arch_init_vm - initializes a VM data structure
-> > @@ -196,6 +216,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
-> >  	case KVM_CAP_MP_STATE:
-> >  	case KVM_CAP_IMMEDIATE_EXIT:
-> >  	case KVM_CAP_VCPU_EVENTS:
-> > +	case KVM_CAP_ARM_NISV_TO_USER:
-> >  		r = 1;
-> >  		break;
-> >  	case KVM_CAP_ARM_SET_DEVICE_ADDR:
-> > @@ -673,6 +694,8 @@ int kvm_arch_vcpu_ioctl_run(struct kvm_vcpu *vcpu, struct kvm_run *run)
-> >  		ret = kvm_handle_mmio_return(vcpu, vcpu->run);
-> >  		if (ret)
-> >  			return ret;
-> > +	} else if (run->exit_reason == KVM_EXIT_ARM_NISV) {
-> > +		kvm_inject_undefined(vcpu);
-> 
-> Just to make sure I understand: Is the expectation here that userspace
-> could clear the exit reason if it managed to handle the exit? And
-> otherwise we'd inject an UNDEF on reentry?
-> 
+With DDR_CAP_AXI_ID_FILTER quirk, indicating HW supports AXI ID filter
+which only can get bursts of reading/writing DDR, i.e. DDR read/write
+request.
 
-Yes, but I think we should change that to an external abort.  I'll test
-something and send a proper patch with more clear documentation.
+This patch add DDR_CAP_AXI_ID_ENHANCED_FILTER quirk, indicating HW
+supports AXI ID filter which can get bytes of reading/writing DDR. This
+feature is more meaningful due to we always care more about bandwidth.
 
-> >  	}
-> >  
-> >  	if (run->immediate_exit)
-> > diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
-> > index 6af5c91337f2..62e6ef47a6de 100644
-> > --- a/virt/kvm/arm/mmio.c
-> > +++ b/virt/kvm/arm/mmio.c
-> > @@ -167,8 +167,15 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
-> >  		if (ret)
-> >  			return ret;
-> >  	} else {
-> > -		kvm_err("load/store instruction decoding not implemented\n");
-> > -		return -ENOSYS;
-> > +		if (vcpu->kvm->arch.return_nisv_io_abort_to_user) {
-> > +			run->exit_reason = KVM_EXIT_ARM_NISV;
-> > +			run->mmio.phys_addr = fault_ipa;
-> 
-> We could also record whether that's a read or a write (WnR should still
-> be valid). Actually, we could store a sanitized version of the ESR.
-> 
+Need select both above two qiurks together when HW support enhanced AXI
+ID filter.
 
-Ah yes, I'll incorporate that.
+Signed-off-by: Joakim Zhang <qiangqing.zhang@nxp.com>
+---
+ drivers/perf/fsl_imx8_ddr_perf.c | 13 +++++++++++--
+ 1 file changed, 11 insertions(+), 2 deletions(-)
 
-> > +			vcpu->stat.mmio_exit_user++;
-> > +			return 0;
-> > +		} else {
-> > +			kvm_info("encountered data abort without syndrome info\n");
-> 
-> My only issue with this is that the previous message has been sort of
-> documented...
+diff --git a/drivers/perf/fsl_imx8_ddr_perf.c b/drivers/perf/fsl_imx8_ddr_perf.c
+index ce7345745b42..5f70dbfa9607 100644
+--- a/drivers/perf/fsl_imx8_ddr_perf.c
++++ b/drivers/perf/fsl_imx8_ddr_perf.c
+@@ -45,7 +45,8 @@
+ static DEFINE_IDA(ddr_ida);
+ 
+ /* DDR Perf hardware feature */
+-#define DDR_CAP_AXI_ID_FILTER          0x1     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER			BIT(1)     /* support AXI ID filter */
++#define DDR_CAP_AXI_ID_FILTER_ENHANCED		BIT(2)     /* support enhanced AXI ID filter */
+ 
+ struct fsl_ddr_devtype_data {
+ 	unsigned int quirks;    /* quirks needed for different DDR Perf core */
+@@ -209,7 +210,15 @@ static void ddr_perf_free_counter(struct ddr_pmu *pmu, int counter)
+ 
+ static u32 ddr_perf_read_counter(struct ddr_pmu *pmu, int counter)
+ {
+-	return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
++	if ((pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER) &&
++	    (pmu->devtype_data->quirks & DDR_CAP_AXI_ID_FILTER_ENHANCED)) {
++		if ((pmu->events[counter]->attr.config == 0x41) ||
++		    (pmu->events[counter]->attr.config == 0x42))
++			return readl_relaxed(pmu->base + COUNTER_DPCR1 + counter * 4);
++		else
++			return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
++	} else
++		return readl_relaxed(pmu->base + COUNTER_READ + counter * 4);
+ }
+ 
+ static bool ddr_perf_is_filtered(struct perf_event *event)
+-- 
+2.17.1
 
-Well, my main gripe with the current code is that the error message is
-massively misleading because it explains one possible case, which is
-very "kernel part of a KVM VM centric" and is actually not the common
-scenario that people encounter.
-
-Let me work on the particular wording of the error message and see if I
-can achieve something self-documenting.
-
-
-Thanks,
-
-    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
