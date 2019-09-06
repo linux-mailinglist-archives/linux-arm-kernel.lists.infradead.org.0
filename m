@@ -2,57 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC99AAB754
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 13:49:11 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 072C5AB75F
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 13:50:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=BfE1MQEQLaoXrNYkgrsQs1TIuPOXw1zwn5hNI05f6r4=; b=HbuDWA/hsE24HB
-	Zb0d1AUf6NgdYpyL8CuRR6QWqTxmhHW1vFUyzbtZnI281/7WW5gjJ1wvaY3KbqNnAbwVmtPdCrZEW
-	rrZ+7UBKqXrz+IiA9lwH7KDX3S5050cNjsYYRXj5I1d6jXC5Y9m16wa+f/9gBJrGPc4sCsTi1YrSs
-	tvn0Ggvvxc+J/i1cCyLy1NM3QoUD13iFLtfj2xBOz1WelcdBON5pSblDTAG2q3VKU0+LUMr7WQzvU
-	4TkU6mYgZWY04VavSnrIOFITTT+qHfivI3fsm0Aill6SlX51BQ+JemJYSZLSVSPxl59fBByoAwt1y
-	6DC0061tAcNKnzhvEQtw==;
+	List-Owner; bh=7xl+78b+UJ4YyWt5R/P8+E8X8PrADX4xHHVHP7vpkuc=; b=XKqyTckVFqKLVj
+	NylnJLMsd7gpdhp2oOvnJwnX8Ggxncpj3Qk/NDX0GOK36MzbzT9t2j2XyRb5M+Zke4STysuBAI15r
+	+BkNl08y5eAozaQ68CQA9z4SoI7hEyZrS/R2hilyHcRCNuIvvKTBWI+iKIBvSnJeZbueKtPOKyszo
+	oirfZMnD3S9a5EgpAplQYvwJSmr6Tl6bYz1x1saJd/hnMCCuQVVTAvfK06+BWS7xzDR7cYfZ/kfoW
+	ilyaCgdlOKvDdKUuc1dXs9L48PUrzcwb3bLiCnnUFBHxhR5e/MAMC048so2bCOI0GVdWhv46gl1dx
+	H4wiX+SgNqjxNMkx+HtQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Cjl-0000QG-7J; Fri, 06 Sep 2019 11:49:09 +0000
-Received: from kirsty.vergenet.net ([202.4.237.240])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Cjf-0000Pm-0w
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 11:49:04 +0000
-Received: from reginn.horms.nl (watermunt.horms.nl [80.127.179.77])
- by kirsty.vergenet.net (Postfix) with ESMTPA id A8C5225B7AD;
- Fri,  6 Sep 2019 21:48:59 +1000 (AEST)
-Received: by reginn.horms.nl (Postfix, from userid 7100)
- id 9647E9445BA; Fri,  6 Sep 2019 13:48:57 +0200 (CEST)
-Date: Fri, 6 Sep 2019 13:48:57 +0200
-From: Simon Horman <horms@verge.net.au>
-To: Rob Herring <robh+dt@kernel.org>
-Subject: Re: [PATCH] dt-bindings: arm: renesas: Convert 'renesas,prr' to
- json-schema
-Message-ID: <20190906114857.4mgunm4feehakc4u@verge.net.au>
-References: <20190906111435.5706-1-horms+renesas@verge.net.au>
- <CAL_JsqLvU4=kaQ-nSwMuh4VXX67U5URZAPvVJohfKzQsQdFTrA@mail.gmail.com>
+	id 1i6ClK-00022U-6h; Fri, 06 Sep 2019 11:50:46 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6ClD-000227-TX
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 11:50:41 +0000
+Received: from mail-lj1-f172.google.com (mail-lj1-f172.google.com
+ [209.85.208.172])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 256A0208C3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri,  6 Sep 2019 11:50:39 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1567770639;
+ bh=6UFqIwtKvW1eriIbgBgmH3OSdsldJSwILczL2ULz+PM=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=N0csuP4JYNSPIcZcs0RweApE9TD0NSFN9lth+8XvaWizi5oye5mSl1exsL720mVul
+ 8hs0HcoXfks1iXMpZQRUSutucTK2AHQM5cfFa4//G1fsXWd9hwFBbihKbHHv9wm8nc
+ zYiitj3mdsobc6gRClSXtKkB6rbLd2JR/WaCCElc=
+Received: by mail-lj1-f172.google.com with SMTP id l20so5743169ljj.3
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 04:50:39 -0700 (PDT)
+X-Gm-Message-State: APjAAAVqTCuc+vZWSKqVzGn52GMPKlgn/gauBTZYohka7tgFF3ec5h7r
+ kObTUhLg7JARG8m9y8PFyxxsGnkZnYSg12fLfDc=
+X-Google-Smtp-Source: APXvYqxWkRdWTlhJIL7EvtAYDTFsy7AyeWu9slg4CHeVr9feUDarBlHinHRQL9wXQP33htWdRErIEeuuvAQCICFYSck=
+X-Received: by 2002:a2e:99cc:: with SMTP id l12mr5508092ljj.5.1567770637352;
+ Fri, 06 Sep 2019 04:50:37 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAL_JsqLvU4=kaQ-nSwMuh4VXX67U5URZAPvVJohfKzQsQdFTrA@mail.gmail.com>
-Organisation: Horms Solutions BV
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
+ <20190906101344.3535-1-l.luba@partner.samsung.com>
+ <20190906101344.3535-4-l.luba@partner.samsung.com>
+ <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+ <52963d0d-cf48-7085-5581-a94c6e15e0bd@partner.samsung.com>
+In-Reply-To: <52963d0d-cf48-7085-5581-a94c6e15e0bd@partner.samsung.com>
+From: Krzysztof Kozlowski <krzk@kernel.org>
+Date: Fri, 6 Sep 2019 13:50:26 +0200
+X-Gmail-Original-Message-ID: <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
+Message-ID: <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
+Subject: Re: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3
+ memories
+To: Lukasz Luba <l.luba@partner.samsung.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_044903_376915_9A821C85 
-X-CRM114-Status: GOOD (  19.73  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190906_045040_001518_4AEFB0B8 
+X-CRM114-Status: GOOD (  22.58  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [202.4.237.240 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,129 +90,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Magnus Damm <magnus.damm@gmail.com>,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?B?QmFydMWCb21pZWogxbtvxYJuaWVya2lld2ljeg==?=
+ <b.zolnierkie@samsung.com>, linux-pm@vger.kernel.org,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ robh+dt@kernel.org, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 12:21:58PM +0100, Rob Herring wrote:
-> On Fri, Sep 6, 2019 at 12:14 PM Simon Horman <horms+renesas@verge.net.au> wrote:
+On Fri, 6 Sep 2019 at 13:39, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>
+> Hi Krzysztof,
+>
+> On 9/6/19 12:56 PM, Krzysztof Kozlowski wrote:
+> > On Fri, 6 Sep 2019 at 12:14, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+> >>
+> >> Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+> >> Minor fixes in the old documentation.
+> >>
+> >> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> >> ---
+> >>   .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+> >>   1 file changed, 27 insertions(+), 2 deletions(-)
+> >>
+> >> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> >> index 3b2485b84b3f..de0905239767 100644
+> >> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> >> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> >> @@ -40,10 +40,34 @@ Child nodes:
+> >>     a given speed-bin. Please see Documentation/devicetree/
+> >>     bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
+> >>
+> >> +Samsung K3QF2F20DB LPDDR3 memory
+> >> +------------------------------------------------------------
+> >> +
+> >> +This binding uses the LPDDR3 binding (described above)
+> >> +
+> >> +Required properties:
+> >> +- compatible:  Should be:
+> >> +               "samsung,K3QF2F20DB"
+> >> +               followed by "jedec,lpddr3"
+> >> +- density  : <u32> representing density in Mb (Mega bits)
+> >> +- io-width : <u32> representing bus width. Possible value 32
+> >> +- #address-cells: Must be set to 1
+> >> +- #size-cells: Must be set to 0
 > >
-> > Convert Renesas Product Register bindings documentation to json-schema.
-> >
-> > Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
-> > ---
-> > Based on v5.3-rc1
-> > Tested using:
-> >   make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > ---
-> >  .../devicetree/bindings/arm/renesas,prr.txt        | 20 ------------
-> >  .../devicetree/bindings/arm/renesas,prr.yaml       | 36 ++++++++++++++++++++++
-> >  2 files changed, 36 insertions(+), 20 deletions(-)
-> >  delete mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.txt
-> >  create mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/arm/renesas,prr.txt b/Documentation/devicetree/bindings/arm/renesas,prr.txt
-> > deleted file mode 100644
-> > index 08e482e953ca..000000000000
-> > --- a/Documentation/devicetree/bindings/arm/renesas,prr.txt
-> > +++ /dev/null
-> > @@ -1,20 +0,0 @@
-> > -Renesas Product Register
-> > -
-> > -Most Renesas ARM SoCs have a Product Register or Boundary Scan ID Register that
-> > -allows to retrieve SoC product and revision information.  If present, a device
-> > -node for this register should be added.
-> > -
-> > -Required properties:
-> > -  - compatible: Must be one of:
-> > -    "renesas,prr"
-> > -    "renesas,bsid"
-> > -  - reg: Base address and length of the register block.
-> > -
-> > -
-> > -Examples
-> > ---------
-> > -
-> > -       prr: chipid@ff000044 {
-> > -               compatible = "renesas,prr";
-> > -               reg = <0 0xff000044 0 4>;
-> > -       };
-> > diff --git a/Documentation/devicetree/bindings/arm/renesas,prr.yaml b/Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > new file mode 100644
-> > index 000000000000..9df003041456
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/arm/renesas,prr.yaml
-> > @@ -0,0 +1,36 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/arm/renesas,prr.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Renesas Product Register
-> > +
-> > +maintainers:
-> > +  - Geert Uytterhoeven <geert+renesas@glider.be>
-> > +  - Magnus Damm <magnus.damm@gmail.com>
-> > +
-> > +description: |
-> > +  Most Renesas ARM SoCs have a Product Register or Boundary Scan ID
-> > +  Register that allows to retrieve SoC product and revision information.
-> > +  If present, a device node for this register should be added.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    oneOf:
-> > +        - const: "renesas,prr"
-> > +        - const: "renesas,bsid"
-> 
-> enum is better than oneOf+const and drop the quotes. oneOf/allOf/anyOf
-> result in terrible error messages.
+> > If you decided to repeat all properties again, then it deserves its
+> > own bindings file. However I though about simpler solution - just
+> > document compatible. Exactly the same as AT24 or AT25 EEPROM bindings.
+> > There is not much benefit from copying all these properties.
+> OK, I see. I will add only 'compatible' and skip the rest then.
+> So the lpddr3.txt file will get this addition:
+>
+> +Samsung K3QF2F20DB LPDDR3 memory
+> +------------------------------------------------------------
+> +
+> +This binding uses the LPDDR3 binding (described above)
+> +
+> +Required properties:
+> +- compatible:  Should be:
+> +               "samsung,K3QF2F20DB"
+> +               followed by "jedec,lpddr3"
+> +
+> +Optional properties:
+> +
+> +The optional properties are the same as in the LPDDR3 generic bindings and
+> +values should be taken from the data-sheet. Detailed bindings are described
+> +above.
+> +
+> +Child nodes:
+> +
+> +Detailed bindings are described in LPDDR3 generic bindings described above.
+> +
+>
+> Is it OK?
 
-Thanks Rob,
+To me it is still a lot of text just for one compatible and I can
+image more of such entries for other memories... However I do not mind
+and anyway, YAML will simplify it. If you're in doubt, wait for Rob's
+reply as this is his part.
 
-Like this?
-
-  compatible:
-    enum:
-      - renesas,prr
-      - renesas,bsid
-
-> > +  reg:
-> > +    items:
-> > +      - description: Base address and length of the register block.
-> 
-> That's what 'reg' *always* is... Just 'maxItems: 1' is sufficient when
-> there is" only 1 entry.
-
-And this?
-
-  reg:
-    maxItems: 1
-
-> > +
-> > +required:
-> > +  - compatible
-> > +  - reg
-> > +
-> > +examples:
-> > +  - |
-> > +    prr: chipid@ff000044 {
-> > +        compatible = "renesas,prr";
-> > +        reg = <0 0xff000044 0 4>;
-> > +    };
-> > --
-> > 2.11.0
-> >
-> 
+Best regards,
+Krzysztof
 
 _______________________________________________
 linux-arm-kernel mailing list
