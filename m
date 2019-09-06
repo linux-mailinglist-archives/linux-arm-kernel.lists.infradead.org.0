@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5447DAB5C5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:26:58 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DEDEAB5D3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 12:32:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=yI5B+IBORGHY7uLN4Zpm1AZjq5BmnjUXarPELhhCU24=; b=ZG9aD8Q6xWxu2K
-	BhBBRBUzncqw/EU6cqn58MJPZw+S4HMwNa2G8Bj0I54vuheJZuVScchU+q8Ik1dgtETZZJsX8iQ4Z
-	nLJrooNfAqKqn+k9wclHW6bNjISFguVju8Ega1m8l7bZp18pXB9cqEecaFL09ZHyM3cAnNpRkMJ1h
-	YNxcMgHtHhiqw/TD3wURQ5n1n7IC6jZGC114tkzf451YecrQ2B0kWc6DEc2g9hahUgaJvdIcWt1Rw
-	bigT8LJyCyfKcQuRRdNIBDxWqho9glv8ONUpVu0qFo6/nHMg1uu/R1jMoDg01aXUEmHm0dihXHaRY
-	HPxP3q286/rnJ6HuYCeQ==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=g2UcrG9g5oKsVkrSl7K/sIqJTTkJelzuu55s3ZlxieA=; b=OD6ObeTfqYv1N4
+	/18CeOT7/yjBC8wfe8uy+q3vikDTat4JCSXoHFoXu4xyN8d3yoNjGGTgxiP6WgXa6OL1hCSHWQzXm
+	ULBBe3wn8vnZh8qO5Ma2kRxz80GyI9gqlntYB5LB2keU3yxu4+dWtIIqo6kUVa0b06MMYcxNIdJVb
+	0/Iz3burzkHB+iz7nvL8i0mOKAq6HZH6GjOaxtRu4A5EZt28wBxgHoi4cCipXeXq5Y1wgO4OpEOle
+	2iVoNYTvKFxGQpKz6I7XA5RsgyNI5IENjC3svZ1H2ccM4T/hf0GolFAsMOuRZIxEnZnnHTwwmteKs
+	tbnJMnKckWHZkZBJ7FJw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6BSB-0002oD-HW; Fri, 06 Sep 2019 10:26:55 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6BRs-0002no-4p
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:26:38 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 1E5951570;
- Fri,  6 Sep 2019 03:26:35 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 316D23F59C;
- Fri,  6 Sep 2019 03:26:34 -0700 (PDT)
-Subject: Re: [PATCH v5 02/11] kselftest: arm64: add common utils and one
- testcase
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190902112932.36129-3-cristian.marussi@arm.com>
- <20190904114752.GS27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <4d13461b-acf6-505f-aefc-05afdec278c7@arm.com>
-Date: Fri, 6 Sep 2019 11:26:29 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i6BXQ-0004UA-Cq; Fri, 06 Sep 2019 10:32:20 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6BXF-0004Tn-04
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 10:32:10 +0000
+Received: by mail-pf1-x444.google.com with SMTP id q5so4136340pfg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 03:32:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=5rKq84QHOcAdoXtjiTtFTy93eGC6R/AyPPtgsMCU2W8=;
+ b=oFy2Rsd4PPunJebqhYLKX+0hn+GiXdKIR3YsUvL0TG7apYKiHrbFSuXztFNnf64OE6
+ SImRJTpwz9xAXIxE4dijI+7q77g025fCPPz2xNDIeemvXI9B7ZLMPm61JRlqpl08NEkQ
+ DhCp4tp683IfgnaG+/0Vq7YvVaJVI6QtJKmP5fbuz+USY8RoVzijWb/ihrF5g0UWU6L5
+ HdFs/dBGpT5Tt0G+JK9phbo3/w+elLztFPNzuUzgvzhCKNQK+IPM6MYDawAcH3lM8x1Z
+ nYAaH+EuCw+coTkHZRV9y1SsSWqSyZYI6LaPqy0b2zs1lZU0WMsqUZf3TIUq2OEG4dEt
+ VzSQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=5rKq84QHOcAdoXtjiTtFTy93eGC6R/AyPPtgsMCU2W8=;
+ b=VX9NaUdhnvxbAzN8vlc6KjNiUGHEtGwIp8O2GOKveg1esRDuMSNDl78B3Omc4thxjd
+ M+HY5zjr682nlAdvxiCUJbPWQJ/Vc03fSH3OAJqrWcqPoPB5DQKoJJaS7f09LdZLj6EX
+ FKhRihIj7Ev01mFOxd1g3Zrg8x7Os6TqJPhfFsLMdEeTu+WJaObv/t5O+JJs0axBVEyL
+ 51RbJBsN3ey8xvfcJo3cOIvwd8bap72V3JgplBW9ILoqZMy6/1mYJpc5rRujYQeO6spM
+ L8g5dF63nDHK6CNpxkL9cHIaIBAwQ/PMRXzA25DC92YqPldKRWruNM1ZMLgbi7nHHLBM
+ y6zA==
+X-Gm-Message-State: APjAAAUSwJWO4RR94fH16MYT2BzqFb8vLFV/gbUKeAS9WxeaKSUnMcRk
+ uQ3T+tCchPHB6wiXZ5W6DKd0cQTv6CEnyXDMtryLVsChsNU=
+X-Google-Smtp-Source: APXvYqwbBBttnyh2bmwK1C0I0C/xnOFUNqudsNLuzR88C4OtaQ8iSHw56xP7zh2lS2h8Lgk+c7DlEGy+U7SGFtgMPbk=
+X-Received: by 2002:a17:90a:7f96:: with SMTP id
+ m22mr1422911pjl.30.1567765927768; 
+ Fri, 06 Sep 2019 03:32:07 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190904114752.GS27757@arm.com>
-Content-Language: en-US
+References: <20190906075319.21244-1-biwen.li@nxp.com>
+In-Reply-To: <20190906075319.21244-1-biwen.li@nxp.com>
+From: Andy Shevchenko <andy.shevchenko@gmail.com>
+Date: Fri, 6 Sep 2019 13:31:56 +0300
+Message-ID: <CAHp75Vcz+ruwvq_yu6Oj69XTezsdnne049Ma=oTRPjRXJKnhPQ@mail.gmail.com>
+Subject: Re: [v2] ACPI: support for NXP i2c controller
+To: Biwen Li <biwen.li@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_032636_286867_809765C9 
-X-CRM114-Status: GOOD (  31.20  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190906_033209_045950_3A3498E4 
+X-CRM114-Status: GOOD (  20.38  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (andy.shevchenko[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,629 +93,160 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: Wolfram Sang <wsa@the-dreams.de>, Sascha Hauer <s.hauer@pengutronix.de>,
+ Udit Kumar <udit.kumar@nxp.com>, "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Leo Li <leoyang.li@nxp.com>,
+ ACPI Devel Maling List <linux-acpi@vger.kernel.org>,
+ Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>,
+ linux-i2c <linux-i2c@vger.kernel.org>, Chuanhua Han <chuanhua.han@nxp.com>,
+ "Rafael J. Wysocki" <rafael@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ linux-arm Mailing List <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
-
-On 04/09/2019 12:47, Dave Martin wrote:
-> ^Nit: "add one testcase" doesn't really describe what is being added here.
-> 
-
-Yep I know...I was trying to stay under first commit line length limitations
-
-> Maybe the following would work as the subject line:
-> 
-> --8<--
-> kselftest: arm64: mangle_pstate_invalid_compat_toggle and common utils
-> -->8--
-> 
-I'll grab it
-
-
-> The remainder of the commit message looks fine.
-> 
-> On Mon, Sep 02, 2019 at 12:29:23pm +0100, Cristian Marussi wrote:
->> Add some arm64/signal specific boilerplate and utility code to help
->> further testcases' development.
->>
->> Introduce also one simple testcase mangle_pstate_invalid_compat_toggle
->> and some related helpers: it is a simple mangle testcase which messes
->> with the ucontext_t from within the signal handler, trying to toggle
->> PSTATE state bits to switch the system between 32bit/64bit execution
->> state. Expects SIGSEGV on test PASS.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->> v4 --> v5
->> - moved kernel headers include search to top level KSFT arm64 Makefile
->> - removed warning about kernel headers not found
->> - moved testcases/.gitignore up one level
->> v3 --> v4
->> - removed standalone mode
->> - fixed arm64/signal/README
->> - add file level comments: test layout / test description
->> - reduced verbosity
->> - removed spurious headers includes
->> - reviewed ID_AA64MMFR[1,2]_EL1 macros
->> - removed unused feats_ok
->> - simplified CPU features gathering
->> - reviewed included headers
->> - fixed/refactored get_header() and validation routines
->> - added test description
->> ---
-> 
-> [...]
-> 
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals.c b/tools/testing/selftests/arm64/signal/test_signals.c
->> new file mode 100644
->> index 000000000000..f05c6dbf8659
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/test_signals.c
->> @@ -0,0 +1,29 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Generic test wrapper for arm64 signal tests.
->> + *
->> + * Each test provides its own tde struct tddescr descriptor to link with
-> 
-> Typo?  tdescr
-> 
-Yes
-
-> [...]
-> 
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
->> new file mode 100644
->> index 000000000000..e2a5f37e6ad3
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
->> @@ -0,0 +1,269 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/* Copyright (C) 2019 ARM Limited */
->> +
->> +#include <stdio.h>
->> +#include <stdlib.h>
->> +#include <signal.h>
->> +#include <string.h>
->> +#include <unistd.h>
->> +#include <assert.h>
->> +#include <sys/auxv.h>
->> +#include <linux/auxvec.h>
->> +#include <ucontext.h>
->> +
->> +#include "test_signals.h"
->> +#include "test_signals_utils.h"
->> +#include "testcases/testcases.h"
->> +
->> +extern struct tdescr *current;
->> +
->> +static char *feats_store[FMAX_END] = {
-> 
-> Nit: can we call this feat_names[]?ok
-> 
-> "store" makes me think of loads and stores...
-> 
-> Also, nit: can this be static const char *const []?
-> 
-> String literals are immutable anyway, and I guess we don't intend too
-> modify the pointers to the strings either...
-> 
-Yes of course.
-
->> +	" SSBS ",
->> +	" PAN ",
->> +	" UAO ",
->> +};
->> +
->> +#define MAX_FEATS_SZ	128
->> +static char feats_string[MAX_FEATS_SZ];
->> +
->> +static inline char *feats_to_string(unsigned long feats)
->> +{
->> +	size_t flen = MAX_FEATS_SZ - 1;
->> +
->> +	for (int i = 0; i < FMAX_END; i++) {
->> +		if (feats & 1UL << i) {
-> 
-> Nit: maybe have () around (1UL << i), though I think it makes no
-> difference.
-
-Yes it's better, I feared that, being not required, was frown upon.
-
-> 
->> +			size_t tlen = strlen(feats_store[i]);
->> +
->> +			assert(flen > tlen);
->> +			flen -= tlen;
->> +			strncat(feats_string, feats_store[i], flen);
->> +		}
->> +	}
->> +
->> +	return feats_string;
->> +}
->> +
->> +static void unblock_signal(int signum)
->> +{
->> +	sigset_t sset;
->> +
->> +	sigemptyset(&sset);
->> +	sigaddset(&sset, signum);
->> +	sigprocmask(SIG_UNBLOCK, &sset, NULL);
->> +}
->> +
->> +static void default_result(struct tdescr *td, bool force_exit)
->> +{
->> +	if (td->pass)
->> +		fprintf(stderr, "==>> completed. PASS(1)\n");
->> +	else
->> +		fprintf(stdout, "==>> completed. FAIL(0)\n");
->> +	if (force_exit)
->> +		exit(td->pass ? EXIT_SUCCESS : EXIT_FAILURE);
->> +}
->> +
->> +static inline bool are_feats_ok(struct tdescr *td)
->> +{
->> +	return (td->feats_required & td->feats_supported) == td->feats_required;
->> +}
->> +
->> +static void default_handler(int signum, siginfo_t *si, void *uc)
->> +{
->> +	if (current->sig_trig && signum == current->sig_trig) {
-> 
-> (Thinking about it, signum is never 0 because there is no signal 0.
-> So we could write if (signum == current->sig_trig).  But I think your
-> code makes the intention clearer -- so no need to change it.)
-> 
-
-Yes, in fact that's the reason I left it even if unneeded.
-
->> +		fprintf(stderr, "Handling SIG_TRIG\n");
->> +		current->triggered = 1;
->> +		/* ->run was asserted NON-NULL in test_setup() already */
->> +		current->run(current, si, uc);
->> +	} else if (signum == SIGILL && !current->initialized) {
->> +		/*
->> +		 * A SIGILL here while still not initialized means we failed
->> +		 * even to asses the existence of features during init
->> +		 */
->> +		fprintf(stdout,
->> +			"Got SIGILL test_init. Marking ALL features UNSUPPORTED.\n");
->> +		current->feats_supported = 0;
->> +	} else if (current->sig_ok && signum == current->sig_ok) {
->> +		/*
->> +		 * it's a bug in the test code when this assert fail:
->> +		 * if a sig_trig was defined, it must have been used before
->> +		 * arriving here.
->> +		 */
->> +		assert(!current->sig_trig || current->triggered);
->> +		fprintf(stderr,
->> +			"SIG_OK -- SP:0x%llX  si_addr@:%p  si_code:%d  token@:%p  offset:%ld\n",
->> +			((ucontext_t *)uc)->uc_mcontext.sp,
->> +			si->si_addr, si->si_code, current->token,
->> +			current->token - si->si_addr);
->> +		/*
->> +		 * fake_sigreturn tests, which have sanity_enabled=1, set, at
->> +		 * the very last time, the token field to the SP address used
->> +		 * to place the fake sigframe: so token==0 means we never made
->> +		 * it to the end, segfaulting well-before, and the test is
->> +		 * possibly broken.
->> +		 */
->> +		if (!current->sanity_disabled && !current->token) {
->> +			fprintf(stdout,
->> +				"current->token ZEROED...test is probably broken!\n");
->> +			abort();
->> +		}
->> +		/*
->> +		 * Trying to narrow down the SEGV to the ones generated by
->> +		 * Kernel itself via arm64_notify_segfault().
->> +		 * This is a best-effort check anyway, and the si_code check may
->> +		 * need to change if this aspect of the kernel ABI changes.
->> +		 */
->> +		if (current->sig_ok == SIGSEGV && si->si_code != SEGV_ACCERR) {
->> +			fprintf(stdout,
->> +				"si_code != SEGV_ACCERR...test is probably broken!\n");
->> +			abort();
->> +		}
->> +		fprintf(stderr, "Handling SIG_OK\n");
->> +		current->pass = 1;
->> +		/*
->> +		 * Some tests can lead to SEGV loops: in such a case we want
->> +		 * to terminate immediately exiting straight away
->> +		 */
->> +		default_result(current, 1);
->> +	} else {
->> +		if (signum == current->sig_unsupp && !are_feats_ok(current)) {
->> +			fprintf(stderr,
->> +				"-- RX SIG_UNSUPP on unsupported feat...OK\n");
->> +			current->pass = 1;
->> +		} else if (signum == SIGALRM && current->timeout) {
->> +			fprintf(stderr, "-- Timeout !\n");
->> +		} else {
->> +			fprintf(stderr,
->> +				"-- RX UNEXPECTED SIGNAL: %d\n", signum);
->> +		}
->> +		default_result(current, 1);
->> +	}
->> +}
->> +
->> +static int default_setup(struct tdescr *td)
->> +{
->> +	struct sigaction sa;
->> +
->> +	sa.sa_sigaction = default_handler;
->> +	sa.sa_flags = SA_SIGINFO | SA_RESTART;
->> +	sa.sa_flags |= td->sa_flags;
->> +	sigemptyset(&sa.sa_mask);
->> +	/* uncatchable signals naturally skipped ... */
->> +	for (int sig = 1; sig < 32; sig++)
->> +		sigaction(sig, &sa, NULL);
->> +	/*
->> +	 * RT Signals default disposition is Term but they cannot be
->> +	 * generated by the Kernel in response to our tests; so just catch
->> +	 * them all and report them as UNEXPECTED signals.
->> +	 */
->> +	for (int sig = SIGRTMIN; sig <= SIGRTMAX; sig++)
->> +		sigaction(sig, &sa, NULL);
->> +
->> +	/* just in case...unblock explicitly all we need */
->> +	if (td->sig_trig)
->> +		unblock_signal(td->sig_trig);
->> +	if (td->sig_ok)
->> +		unblock_signal(td->sig_ok);
->> +	if (td->sig_unsupp)
->> +		unblock_signal(td->sig_unsupp);
->> +
->> +	if (td->timeout) {
->> +		unblock_signal(SIGALRM);
->> +		alarm(td->timeout);
->> +	}
->> +	fprintf(stderr, "Registered handlers for all signals.\n");
->> +
->> +	return 1;
->> +}
->> +
->> +static inline int default_trigger(struct tdescr *td)
->> +{
->> +	return !raise(td->sig_trig);
->> +}
->> +
->> +static int test_init(struct tdescr *td)
->> +{
->> +	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
->> +	if (!td->minsigstksz)
->> +		td->minsigstksz = MINSIGSTKSZ;
->> +	fprintf(stderr, "Detected MINSTKSIGSZ:%d\n", td->minsigstksz);
->> +
->> +	if (td->feats_required) {
->> +		bool feats_ok = false;
->> +
->> +		td->feats_supported = 0;
->> +		/*
->> +		 * Checking for CPU required features using both the
->> +		 * auxval and the arm64 MRS Emulation to read sysregs.
->> +		 */
->> +		if (getauxval(AT_HWCAP) & HWCAP_CPUID) {
->> +			uint64_t val = 0;
->> +
->> +			/* Uses HWCAP to check capability */
->> +			if (getauxval(AT_HWCAP) & HWCAP_SSBS)
->> +				td->feats_supported |= FEAT_SSBS;
-> 
-> Should this be outside the HWCAP_CPUID check?
-
-Right.
-
-> 
-> It's only the get_regval(SYS_ID_foo) based checks that depend on
-> HWCAP_CPUID.
-> 
->> +			/* Uses MRS emulation to check capability */
->> +			get_regval(SYS_ID_AA64MMFR1_EL1, val);
->> +			if (ID_AA64MMFR1_EL1_PAN_SUPPORTED(val))
->> +				td->feats_supported |= FEAT_PAN;
->> +			/* Uses MRS emulation to check capability */
->> +			get_regval(SYS_ID_AA64MMFR2_EL1, val);
->> +			if (ID_AA64MMFR2_EL1_UAO_SUPPORTED(val))
->> +				td->feats_supported |= FEAT_UAO;
->> +		} else {
->> +			fprintf(stderr,
->> +				"HWCAP_CPUID NOT available. Mark ALL feats UNSUPPORTED.\n");
->> +		}
->> +		feats_ok = are_feats_ok(td);
->> +		fprintf(stderr,
->> +			"Required Features: [%s] %ssupported\n",
->> +			feats_ok ? feats_to_string(td->feats_supported) :
->> +			feats_to_string(td->feats_required ^
->> +					td->feats_supported),
-> 
-> Should this be something like:
-> td->feats_required & ~td->feats_supported ?
-> 
-> Otherwise we'll include features that are supported but not required,
-> when printing the features that are NOT supported.
-> 
-> Alternatively, we could just print out the required and supported sets
-> separately and leave it up to the user to obverse how they are
-> different.
-> 
-> (Watch out for calling feats_to_string() twice in the same printf() call
-> though.)
-> 
-Ok. Reported information was poor in fact.
-
->> +			!feats_ok ? "NOT " : "");
->> +	}
->> +
->> +	td->initialized = 1;
->> +	return 1;
->> +}
->> +
->> +int test_setup(struct tdescr *td)
->> +{
->> +	/* assert core invariants symptom of a rotten testcase */
->> +	assert(current);
->> +	assert(td);
->> +	assert(td->name);
->> +	assert(td->run);
->> +
->> +	if (!test_init(td))
->> +		return 0;
->> +
->> +	if (td->setup)
->> +		return td->setup(td);
->> +	else
->> +		return default_setup(td);
->> +}
->> +
->> +int test_run(struct tdescr *td)
->> +{
->> +	if (td->sig_trig) {
->> +		if (td->trigger)
->> +			return td->trigger(td);
->> +		else
->> +			return default_trigger(td);
->> +	} else {
->> +		return td->run(td, NULL, NULL);
->> +	}
->> +}
->> +
->> +void test_result(struct tdescr *td)
->> +{
->> +	if (td->check_result)
->> +		td->check_result(td);
->> +	default_result(td, 0);
->> +}
->> +
->> +void test_cleanup(struct tdescr *td)
->> +{
->> +	if (td->cleanup)
->> +		td->cleanup(td);
->> +}
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> new file mode 100644
->> index 000000000000..8658d1a7d4b9
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> @@ -0,0 +1,13 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +/* Copyright (C) 2019 ARM Limited */
->> +
->> +#ifndef __TEST_SIGNALS_UTILS_H__
->> +#define __TEST_SIGNALS_UTILS_H__
->> +
->> +#include "test_signals.h"
->> +
->> +int test_setup(struct tdescr *td);
->> +void test_cleanup(struct tdescr *td);
->> +int test_run(struct tdescr *td);
->> +void test_result(struct tdescr *td);
->> +#endif
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
->> new file mode 100644
->> index 000000000000..2cb118b0ba05
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_invalid_compat_toggle.c
->> @@ -0,0 +1,31 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Try to mangle the ucontext from inside a signal handler, toggling
->> + * the execution state bit: this attempt must be spotted by Kernel and
->> + * the test case is expected to be terminated via SEGV.
->> + */
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +static int mangle_invalid_pstate_run(struct tdescr *td, siginfo_t *si,
->> +				     ucontext_t *uc)
->> +{
->> +	ASSERT_GOOD_CONTEXT(uc);
->> +
->> +	/* This config should trigger a SIGSEGV by Kernel */
->> +	uc->uc_mcontext.pstate ^= PSR_MODE32_BIT;
->> +
->> +	return 1;
->> +}
->> +
->> +struct tdescr tde = {
->> +		.sanity_disabled = true,
->> +		.name = "MANGLE_PSTATE_INVALID_STATE_TOGGLE",
->> +		.descr = "Mangling uc_mcontext with INVALID STATE_TOGGLE",
->> +		.sig_trig = SIGUSR1,
->> +		.sig_ok = SIGSEGV,
->> +		.run = mangle_invalid_pstate_run,
->> +};
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
->> new file mode 100644
->> index 000000000000..72e3f482b177
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
->> @@ -0,0 +1,151 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/* Copyright (C) 2019 ARM Limited */
->> +#include "testcases.h"
->> +
->> +struct _aarch64_ctx *get_header(struct _aarch64_ctx *head, uint32_t magic,
->> +				size_t resv_sz, size_t *offset)
->> +{
->> +	size_t offs = 0;
->> +	struct _aarch64_ctx *found = NULL;
->> +
->> +	if (!head)
->> +		return found;
->> +
-> 
-> I suggest you also check for resv_sz < HDR_SZ, since the while()
-> condition assumes that resv_sz - HDR_SZ doesn't underflow.
-> 
-> For now, I think resv_sz is already sizeof(__reserved) so this is never
-> true, but I suspect we will want to reuse this code eventually to looko
-> at the contents of extra_context.  Then, resv_sz would be the
-> extra_context size rather than a fixed constant.
-> 
-
-Ok....in fact I think I removed recently such check...not sure why o_O
-I'll fix it.
-
-
->> +	while (offs <= resv_sz - HDR_SZ &&
->> +	       head->magic != magic && head->magic) {
->> +		offs += head->size;
->> +		head = GET_RESV_NEXT_HEAD(head);
->> +	}
->> +	if (head->magic == magic) {
->> +		found = head;
->> +		if (offset)
->> +			*offset = offs;
->> +	}
-> 
-> Although there appears to be some code duplication here, I guess you
-> need things this way to do the right thing if called with magic==0.
-> 
-> So I guess this is fine.
+On Fri, Sep 6, 2019 at 11:03 AM Biwen Li <biwen.li@nxp.com> wrote:
 >
-Yes that was exactly the point, and it seemed to me that removing further
-duplication would have made the code more complex and unreadable.
+> From: Chuanhua Han <chuanhua.han@nxp.com>
+>
+> Enable NXP i2c controller to boot with ACPI
+>
 
-> Ultimately it would be good to have GET_RESV_NEXT_HEAD() work more
-> like an iterator, doing integrity bounds/alignment checks and updating
-> offs as it goes, but for now I think the code is sufficient.  We can
-> always beef it up later to catch more kinds of error from the kernel.
-> 
-Yes I remember you told me that on a previous iteration, but for now I left the
-GET_RESV_NEXT_HEAD() as it was without embedding the bounds checking logic
-because it is indirectly used also by the validation function that I use in
-the ASSERT_GOOD/BAD_CONTEXT() macros, so it should be able to handle
-artficially badly formed and corrupted frames without bailing out: it just walks
-and any kind of logic is handled outside...but maybe I'm overthinking
-(certainly I have not explained this reasons anywhere...I'll add a comment)
+Thanks, the code looks good to me,
+Reviewed-by: Andy Shevchenko <andy.shevchenko@gmail.com>
 
->> +
->> +	return found;
->> +}
->> +
->> +bool validate_extra_context(struct extra_context *extra, char **err)
->> +{
->> +	struct _aarch64_ctx *term;
->> +
->> +	if (!extra || !err)
->> +		return false;
->> +
->> +	fprintf(stderr, "Validating EXTRA...\n");
->> +	term = GET_RESV_NEXT_HEAD(extra);
->> +	if (!term || term->magic || term->size) {
->> +		*err = "Missing terminator after EXTRA context";
->> +		return false;
->> +	}
->> +	if (extra->datap & 0x0fUL)
->> +		*err = "Extra DATAP misaligned";
->> +	else if (extra->size & 0x0fUL)
->> +		*err = "Extra SIZE misaligned";
->> +	else if (extra->datap != (uint64_t)term + sizeof(*term))
->> +		*err = "Extra DATAP misplaced (not contiguos)";
->> +	if (*err)
->> +		return false;
->> +
->> +	return true;
->> +}
->> +
->> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
->> +{
->> +	bool terminated = false;
->> +	size_t offs = 0;
->> +	int flags = 0;
->> +	struct extra_context *extra = NULL;
->> +	struct _aarch64_ctx *head =
->> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
->> +
->> +	if (!err)
->> +		return false;
->> +	/* Walk till the end terminator verifying __reserved contents */
->> +	while (head && !terminated && offs < resv_sz) {
->> +		if ((uint64_t)head & 0x0fUL) {
->> +			*err = "Misaligned HEAD";
->> +			return false;
->> +		}
->> +
->> +		switch (head->magic) {
->> +		case 0:
->> +			if (head->size)
->> +				*err = "Bad size for terminator";
->> +			else
->> +				terminated = true;
->> +			break;
->> +		case FPSIMD_MAGIC:
->> +			if (flags & FPSIMD_CTX)
->> +				*err = "Multiple FPSIMD_MAGIC";
->> +			else if (head->size !=
->> +				 sizeof(struct fpsimd_context))
->> +				*err = "Bad size for fpsimd_context";
->> +			flags |= FPSIMD_CTX;
->> +			break;
->> +		case ESR_MAGIC:
->> +			if (head->size != sizeof(struct esr_context))
->> +				fprintf(stderr,
->> +					"Bad size for esr_context is not an error...just ignore.\n");
->> +			break;
-> 
-> Although it's not essential, I'd prefer that we enforce the correct
-> size here.  All records, including esr_context are intended to be
-> fixed-size.
-> 
-> In the kernel we check a bit more loosely -- this allows userspace to
-> delete a record using head->size += next_head->size.  This way no
-> memmove() is needed to shuffle subsequent records down.  I don't know
-> whether any userspace code makes use of this -- prior to SVE there were
-> no optional records except for esr_context, and sigreturn ignores that
-> in any case so deleting it is pointless.
-> 
+though...
 
-> The kernel should never insert extra padding between records though,
-> so I think it makes sense to have strict size checks in this test.
-> 
+> Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
+> Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
+> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
 
-Ok, I'll do. I kept it loose as it is in Kernel, because in some past tests
-(now removed) I used to play also with esr_context size to build easily an inflated
-fake sigframe (but good) and adding some badness on top of it.
+This SoB chain is a bit odd. Who is the author of this? The first SoB
+in the chain usually points to the first (main) author. There is also
+possible to change that, though in that case for the rest we now use
+Co-developed-by tag rather than SoB.
+In any case, if Rafael and Wolfram are okay with this, I have no objections.
 
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
+> Signed-off-by: Biwen Li <biwen.li@nxp.com>
+> ---
+> Change in v2:
+>         - Simplify code
+>         - Adjust header file order
+>         - Not use ACPI_PTR()
+>
+>  drivers/acpi/acpi_apd.c      |  7 +++++++
+>  drivers/i2c/busses/i2c-imx.c | 17 +++++++++++++----
+>  2 files changed, 20 insertions(+), 4 deletions(-)
+>
+> diff --git a/drivers/acpi/acpi_apd.c b/drivers/acpi/acpi_apd.c
+> index 7cd0c9ac71ea..71511ae2dfcd 100644
+> --- a/drivers/acpi/acpi_apd.c
+> +++ b/drivers/acpi/acpi_apd.c
+> @@ -160,11 +160,17 @@ static const struct apd_device_desc hip08_i2c_desc = {
+>         .setup = acpi_apd_setup,
+>         .fixed_clk_rate = 250000000,
+>  };
+> +
+>  static const struct apd_device_desc thunderx2_i2c_desc = {
+>         .setup = acpi_apd_setup,
+>         .fixed_clk_rate = 125000000,
+>  };
+>
+> +static const struct apd_device_desc nxp_i2c_desc = {
+> +       .setup = acpi_apd_setup,
+> +       .fixed_clk_rate = 350000000,
+> +};
+> +
+>  static const struct apd_device_desc hip08_spi_desc = {
+>         .setup = acpi_apd_setup,
+>         .fixed_clk_rate = 250000000,
+> @@ -238,6 +244,7 @@ static const struct acpi_device_id acpi_apd_device_ids[] = {
+>         { "HISI02A1", APD_ADDR(hip07_i2c_desc) },
+>         { "HISI02A2", APD_ADDR(hip08_i2c_desc) },
+>         { "HISI0173", APD_ADDR(hip08_spi_desc) },
+> +       { "NXP0001", APD_ADDR(nxp_i2c_desc) },
+>  #endif
+>         { }
+>  };
+> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c
+> index 15f6cde6452f..a3b61336fe55 100644
+> --- a/drivers/i2c/busses/i2c-imx.c
+> +++ b/drivers/i2c/busses/i2c-imx.c
+> @@ -20,6 +20,7 @@
+>   *
+>   */
+>
+> +#include <linux/acpi.h>
+>  #include <linux/clk.h>
+>  #include <linux/completion.h>
+>  #include <linux/delay.h>
+> @@ -255,6 +256,12 @@ static const struct of_device_id i2c_imx_dt_ids[] = {
+>  };
+>  MODULE_DEVICE_TABLE(of, i2c_imx_dt_ids);
+>
+> +static const struct acpi_device_id i2c_imx_acpi_ids[] = {
+> +       {"NXP0001", .driver_data = (kernel_ulong_t)&vf610_i2c_hwdata},
+> +       { }
+> +};
+> +MODULE_DEVICE_TABLE(acpi, i2c_imx_acpi_ids);
+> +
+>  static inline int is_imx1_i2c(struct imx_i2c_struct *i2c_imx)
+>  {
+>         return i2c_imx->hwdata->devtype == IMX1_I2C;
+> @@ -1048,14 +1055,13 @@ static const struct i2c_algorithm i2c_imx_algo = {
+>
+>  static int i2c_imx_probe(struct platform_device *pdev)
+>  {
+> -       const struct of_device_id *of_id = of_match_device(i2c_imx_dt_ids,
+> -                                                          &pdev->dev);
+>         struct imx_i2c_struct *i2c_imx;
+>         struct resource *res;
+>         struct imxi2c_platform_data *pdata = dev_get_platdata(&pdev->dev);
+>         void __iomem *base;
+>         int irq, ret;
+>         dma_addr_t phy_addr;
+> +       const struct imx_i2c_hwdata *match;
+>
+>         dev_dbg(&pdev->dev, "<%s>\n", __func__);
+>
+> @@ -1075,8 +1081,9 @@ static int i2c_imx_probe(struct platform_device *pdev)
+>         if (!i2c_imx)
+>                 return -ENOMEM;
+>
+> -       if (of_id)
+> -               i2c_imx->hwdata = of_id->data;
+> +       match = device_get_match_data(&pdev->dev);
+> +       if (match)
+> +               i2c_imx->hwdata = match;
+>         else
+>                 i2c_imx->hwdata = (struct imx_i2c_hwdata *)
+>                                 platform_get_device_id(pdev)->driver_data;
+> @@ -1089,6 +1096,7 @@ static int i2c_imx_probe(struct platform_device *pdev)
+>         i2c_imx->adapter.nr             = pdev->id;
+>         i2c_imx->adapter.dev.of_node    = pdev->dev.of_node;
+>         i2c_imx->base                   = base;
+> +       ACPI_COMPANION_SET(&i2c_imx->adapter.dev, ACPI_COMPANION(&pdev->dev));
+>
+>         /* Get I2C clock */
+>         i2c_imx->clk = devm_clk_get(&pdev->dev, NULL);
+> @@ -1247,6 +1255,7 @@ static struct platform_driver i2c_imx_driver = {
+>                 .name = DRIVER_NAME,
+>                 .pm = &i2c_imx_pm_ops,
+>                 .of_match_table = i2c_imx_dt_ids,
+> +               .acpi_match_table = i2c_imx_acpi_ids,
+>         },
+>         .id_table = imx_i2c_devtype,
+>  };
+> --
+> 2.17.1
+>
 
-Cheers
 
-Cristian
+-- 
+With Best Regards,
+Andy Shevchenko
 
 _______________________________________________
 linux-arm-kernel mailing list
