@@ -2,83 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA9C3AB837
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:33:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD882AB839
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:33:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bBgRwmhqAfGODccAeKA2NcpO8fnuCQDDqynT+d6P/jk=; b=UfqJpgWkB2g5ww
-	scX1bUfhrW3uysCJm6o6YlDTC+sQQW7CuCjoeEnJNJrAqLvk64OmQuO/A+ZrXHGUXVAdsSn6IEju+
-	FEjxDBFrAPHL6/BJ2aCyqrGsu1cEPjk0M3gNU7pNwV0vUKa8z+Rr9whHSJqb7/piA2eu7c/IgYPOf
-	c+zkolZGTp7c1LrL2/XPkaGnHgI5tfO0xGcKB48x5xNEVv0nbsbq0M5Be0kffjeBvJViF8HS/QdWO
-	k4W/pN10hrcEgtXxYdzU8jD3Pq+xNw3XYnhLO7hi8nuR7RSe8ueDTK5k8R2TixWBOlFQl2oYhXsqL
-	6DoZe1CVF4zPdmKG4ifQ==;
+	List-Owner; bh=iAZKlWt2fettfiq0roS9xQQ/QX2Ruja3udADSLnj3MI=; b=qK/Zu7OedDgwgb
+	OvNZd15j/z9/NRArx6Y0SWh9xMj065ix+aCYR1zQib+jN+T0xkitB9CeOdmREGkCfJHweGUVW8+U2
+	jYQwWJ0esJ4FUzH8pk2qsIZvvLlOGqR5qwXTUF8Dz9/LE2J7Ze16IJVhRjBT+m0/e7NTV1O8FCkDm
+	6RCPNsDlu7m+a6jQv8kGpPZ9tVAvEqRIlWQ0jJArBRAc5aFLcmdNzxAjPCSu0iPMkAlVFPRlH2lVs
+	LYzMjU0JdueBPmBCByYPt534rxcA93SZkUxLmKUFQMghJ+D5ohuIf+ZlvM7A3Z+LXmUq2X+er72Ak
+	al/86vZzIlfkAweDS5ZA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6DQi-0001ez-4L; Fri, 06 Sep 2019 12:33:32 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i6DQr-0001sv-I5; Fri, 06 Sep 2019 12:33:41 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6DQZ-0001dw-Vs; Fri, 06 Sep 2019 12:33:25 +0000
-Received: by mail-pl1-x644.google.com with SMTP id bd8so3084201plb.6;
- Fri, 06 Sep 2019 05:33:23 -0700 (PDT)
+ id 1i6DQd-0001gz-GZ; Fri, 06 Sep 2019 12:33:28 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q21so4362356pfn.11;
+ Fri, 06 Sep 2019 05:33:27 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=vGfjddqvpRFJCrBIPxEpBGcV3pVBssJwGgtFL9Le0kA=;
- b=Bdt98gm5oqea5uLdu8RYPixSg1ZQwKdmeABnC6snkO69Jlb7mS5e8vFkpHhE1x0dyi
- HhON2KNE6ylCWbUYp3PXFTLtZ7qtKxMAWUVSXTlszuD9dJ+MeIVkaRRWwTEkQ2WVRmDc
- Ek6EWmGrDD8Xym8avPsGdl88FlQFFvqUu52LrEqVfzU1Sjd5r2PNHded82c1qpY1mE6O
- OhOQg7bjI4DXA8IWCVgEyMU54p+1frp/fyDbWIPDVRD6EvyVd5eZhs6hZHEh/Lhof0HH
- nPpEL+R14Hym2/rvvn5RdKIjEXVmSws13/cHSKoyALu5x/xIKkaaJUAndl1cnXIZ7IXo
- yPGg==
+ bh=1q69QNZwyCxZwRo3C/LHJfNu0oJxZkgoeKYpJf6LVDA=;
+ b=BNvSL3ZAzGJGTokL2No8cyUTNZDT9TLKYOXlxXKNruvFhYssGfuEQ3aLx2wb9tCUCH
+ PHEiprtHlcmHALDN+Z2UxkBm6fwd/Sh6O5GfDaLl5t/4UsgQ4UMt6GjfA1NNDYRznHkX
+ CxUCbLZfyCDtEOy5GOxF82yE0F6NHMFfkQ3l+8EXYHw+FlQu45TrE+I1LEbID02ILP6k
+ xS1Ov+EHQucQadlGMLtKHCwXpmKIFDLCcQvRRfw2G8HnxsRlfioA6uD4gtM+5t1CfA6Q
+ tEAJnA4AmoTM6TTOFf6wh1ZdNZvLPPcAkyO4AWut2vrYYZsTKZZrATRqfutNsl8axAxz
+ mQaQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=vGfjddqvpRFJCrBIPxEpBGcV3pVBssJwGgtFL9Le0kA=;
- b=MNOTAGQVPhpo3dvCvD2iF4bDekxLtwqCw3cUczHtCtny5ktvUsk6cW9IdPOv2Q2HAz
- ciMepd3b8tcw+ZBlxptXIAqLnMjhkxRXUKtWuq9EJafjlrk2Oz0UCIAkogwfBLcHqpUx
- vxN4MYvUhVE7FpDMhMst3v8wGvgS3tcyFasRTn/UdVI1apyGjwAUQIeCToeqhsoQ55Td
- 1EwFS+5ZJPFe1U/4CYqqGD3u3yrDaKBVuKr0iwSR5u4sTxVfFCc16xFbzU4t5nW04tmo
- XQ3uY1K0mIDM2It0PFFjEtn0d7QKUBXMSNzT1a8WsXzOoEZEQHIKp6b8eQGeCf/0VCKL
- yFFg==
-X-Gm-Message-State: APjAAAWCVFTxQWuPjI2CKydHZoheEGBIX4ctUC3Dhxltdta8aFu6/7Gu
- 79T64RvCx7B9kKOZeM5qnXA=
-X-Google-Smtp-Source: APXvYqxPoCY0Iputq8fkikyBk2Nk0t4gfljXTYb5kbWgW/LosC9l/1+fqNEgth+XX7w5vr2UL9TNIA==
-X-Received: by 2002:a17:902:e60d:: with SMTP id
- cm13mr8790686plb.178.1567773203464; 
- Fri, 06 Sep 2019 05:33:23 -0700 (PDT)
+ bh=1q69QNZwyCxZwRo3C/LHJfNu0oJxZkgoeKYpJf6LVDA=;
+ b=A1u1VRDr0mq85vq2WsWKdV8OuzSh2OWwE9Ps5IB4oVgyTzxAphFF/l35u8S3QO5ZIt
+ f9C0E9UyiaThx1V+VF0QauUA4Yh3ox67N7piFyZ3aUQfGmghCt04JtWulZDIoJQi1QdU
+ Y+HEusZcrLL355b+CgbmHcGmsTfw1osRuX4RgqoQTDZHx8+XFuVgO52JQvmLikS4KKWN
+ UdwMRe7YrhHsr93j9xl7CQaHBNaKtZ8m5VIYR6/6LwG2CgMMBoHQ34g84cjMSGnWx269
+ PXNizj5Co7A8Tl6nK/FUTLmIrWu4KdqdvdLXnOyBXJfJ3l54qNsXRgULyzLDdtbiWzb5
+ Mj/g==
+X-Gm-Message-State: APjAAAXw/fcCQFgsmDqrInra/wmItsPCdqgSsMykuixiKLTmaeh8NlSn
+ RPl8HKeO87laH6LKIOGXPMc=
+X-Google-Smtp-Source: APXvYqxUij3K9fJKMk7ZoMDBdfQ/kF2Eu75kBlo9YQSPuiiSdwawYEpUrkHNhhBGqKO+v8oRXbr1oQ==
+X-Received: by 2002:a65:654d:: with SMTP id a13mr7600875pgw.196.1567773206808; 
+ Fri, 06 Sep 2019 05:33:26 -0700 (PDT)
 Received: from localhost.localdomain ([45.114.62.203])
- by smtp.gmail.com with ESMTPSA id h70sm4752933pgc.36.2019.09.06.05.33.20
+ by smtp.gmail.com with ESMTPSA id h70sm4752933pgc.36.2019.09.06.05.33.23
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 06 Sep 2019 05:33:23 -0700 (PDT)
+ Fri, 06 Sep 2019 05:33:26 -0700 (PDT)
 From: Anand Moon <linux.amoon@gmail.com>
 To: Rob Herring <robh+dt@kernel.org>,
  Martin Blumenstingl <martin.blumenstingl@googlemail.com>,
  Jerome Brunet <jbrunet@baylibre.com>,
  Neil Armstrong <narmstrong@baylibre.com>,
  Kevin Hilman <khilman@baylibre.com>
-Subject: [PATCHv3-next 1/3] arm64: dts: meson: odroid-c2: Add missing
- regulator linked to P5V0 regulator
-Date: Fri,  6 Sep 2019 12:32:57 +0000
-Message-Id: <20190906123259.351-2-linux.amoon@gmail.com>
+Subject: [PATCHv3-next 2/3] arm64: dts: meson: odroid-c2: Add missing
+ regulator linked to VDDIO_AO3V3 regulator
+Date: Fri,  6 Sep 2019 12:32:58 +0000
+Message-Id: <20190906123259.351-3-linux.amoon@gmail.com>
 X-Mailer: git-send-email 2.23.0
 In-Reply-To: <20190906123259.351-1-linux.amoon@gmail.com>
 References: <20190906123259.351-1-linux.amoon@gmail.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_053324_022164_F34D64B4 
-X-CRM114-Status: GOOD (  10.02  )
+X-CRM114-CacheID: sfid-20190906_053327_576143_8FF86165 
+X-CRM114-Status: GOOD (  11.82  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (linux.amoon[at]gmail.com)
@@ -109,8 +108,12 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-As per schematics VDDIO_AO18, VDDIO_AO3V3/VDD3V3 DDR3_1V5/DDR_VDDC:
-fixed regulator output which is supplied by P5V0.
+As per schematics TFLASH_VDD, TF_IO, VCC3V3 fixed regulator output which
+is supplied by VDDIO_AO3V3.
+
+While here, move the comment name with the signal name in the
+schematics above the gpio property to make it consistent with other
+regulators.
 
 Cc: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Cc: Jerome Brunet <jbrunet@baylibre.com>
@@ -119,59 +122,63 @@ Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
 Reviewed-by: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
 Signed-off-by: Anand Moon <linux.amoon@gmail.com>
 ---
-Changes from previous.
-patchv1.
-- drop the rename and linking vcc3v3 regulator node.
-- fix the typo spelling.
-patchv2.
-- change the vddc_ddr node name to ddr3_1v5 as per Martin's suggestion
-- Added Matrin's and Neil's Reviewed-by.
+changes from previous.
+Patchv1
+- Fix the typo.
+- Add the comment as per Martin's suggestion.
+- Added Martin's review tags
+Patchv2
+- Added missing Neil's Reviewed-by tags.
 ---
----
- .../boot/dts/amlogic/meson-gxbb-odroidc2.dts  | 30 +++++++++++++++++++
- 1 file changed, 30 insertions(+)
+ arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts | 13 ++++++++++---
+ 1 file changed, 10 insertions(+), 3 deletions(-)
 
 diff --git a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-index 3e51f0835c8d..9ea336c33d00 100644
+index 9ea336c33d00..5624ff034659 100644
 --- a/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
 +++ b/arch/arm64/boot/dts/amlogic/meson-gxbb-odroidc2.dts
-@@ -111,6 +111,36 @@
- 		regulator-max-microvolt = <3300000>;
+@@ -67,17 +67,19 @@
  	};
  
-+	vddio_ao1v8: regulator-vddio-ao1v8 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDIO_AO1V8";
-+		regulator-min-microvolt = <1800000>;
-+		regulator-max-microvolt = <1800000>;
+ 	tflash_vdd: regulator-tflash_vdd {
+-		/*
+-		 * signal name from schematics: TFLASH_VDD_EN
+-		 */
+ 		compatible = "regulator-fixed";
+ 
+ 		regulator-name = "TFLASH_VDD";
+ 		regulator-min-microvolt = <3300000>;
+ 		regulator-max-microvolt = <3300000>;
+ 
++		/*
++		 * signal name from schematics: TFLASH_VDD_EN
++		 */
+ 		gpio = <&gpio GPIOY_12 GPIO_ACTIVE_HIGH>;
+ 		enable-active-high;
++		/* U16 RT9179GB */
++		vin-supply = <&vddio_ao3v3>;
+ 	};
+ 
+ 	tf_io: gpio-regulator-tf_io {
+@@ -95,6 +97,8 @@
+ 
+ 		states = <3300000 0>,
+ 			 <1800000 1>;
++		/* U12/U13 RT9179GB */
++		vin-supply = <&vddio_ao3v3>;
+ 	};
+ 
+ 	vcc1v8: regulator-vcc1v8 {
+@@ -102,6 +106,9 @@
+ 		regulator-name = "VCC1V8";
+ 		regulator-min-microvolt = <1800000>;
+ 		regulator-max-microvolt = <1800000>;
 +		regulator-always-on;
-+		/* U17 RT9179GB */
-+		vin-supply = <&p5v0>;
-+	};
-+
-+	vddio_ao3v3: regulator-vddio-ao3v3 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "VDDIO_AO3V3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+		regulator-always-on;
-+		/* U11 MP2161GJ-C499 */
-+		vin-supply = <&p5v0>;
-+	};
-+
-+	ddr3_1v5: regulator-ddr3_1v5 {
-+		compatible = "regulator-fixed";
-+		regulator-name = "DDR3_1V5";
-+		regulator-min-microvolt = <1500000>;
-+		regulator-max-microvolt = <1500000>;
-+		regulator-always-on;
-+		/* U15 MP2161GJ-C499 */
-+		vin-supply = <&p5v0>;
-+	};
-+
- 	emmc_pwrseq: emmc-pwrseq {
- 		compatible = "mmc-pwrseq-emmc";
- 		reset-gpios = <&gpio BOOT_9 GPIO_ACTIVE_LOW>;
++		/* U18 RT9179GB */
++		vin-supply = <&vddio_ao3v3>;
+ 	};
+ 
+ 	vcc3v3: regulator-vcc3v3 {
 -- 
 2.23.0
 
