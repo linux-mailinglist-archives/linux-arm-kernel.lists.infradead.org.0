@@ -2,59 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C66A1ABEC5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:30:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F3729ABEEC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 19:41:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
-	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3RfLrLk8bD9W3P/40UPZYUaTSeC7szxwwCans0gGT00=; b=VHaswH2B+9MJrF
-	JZsb1MhAvqi15XuZxR4YXNGCRipAgXmVpff8ZJxGxO9jEWrAYX0edLkqPTWCxeIR0Fbpl5cnjruLy
-	AedYo7iq1b0o4UngeFJS9xUYoDlv9Za1Zy6uCesvswW13MS9HsP8+nA6zRrov0mSeWcMFuBCqEhm1
-	1ZL4/3aFoYCiS7DdrPx5wppPnOiQ0C4hlfAxBtv9Kk9oCp1dyJ/iLTzrXv758KrA2Qfoq1p7f6Trr
-	uCceHU3HZWqTxKDd9YxB9PRPEMxJTuYlXygO9pMY0cPkhGhjWLmmr8tml26Z0Ugwl4Bh/PNGI6l8r
-	/a8UMdC3lS9brgvA11lQ==;
+	List-Owner; bh=Nma5CTaGmXsYLLD8EKAGv7PPgKHICFBPNpJmVwWzZMs=; b=LmE6e6S75lPkto
+	51bHkzMCXv4MgQ7+QIMHeqMP+eaFMWv44isYTq1/8dUKjXy990UL9fxfXfaOy+4KA2U8IiBVXXqhS
+	ERtW8XvMGts6RkViuYLyX3n2F9LSEssLK7zrfgBu8fwlmjh9ufNazR4kglYCUem8oaSjTWzNBBi5W
+	K9rchiRe50978USEf1Yw75DETYw+1PztvfpjqtbT2ZSDdRclLpHGaJM0kInYHTNeSNdSYTIpkN7+B
+	RoMBKGhzDAGntbBowttYJfw5UjdP5dR0p0yvGmVmy1N2JYc22TtpLT/WIvvtpdCj7UNOVglszcIO5
+	DHWNpMavxgzdbeJUOMew==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6I4L-0003HL-1i; Fri, 06 Sep 2019 17:30:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i6IEx-00006r-Qo; Fri, 06 Sep 2019 17:41:44 +0000
+Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6I4C-0003H1-9v
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:30:37 +0000
-Received: from kernel.org (unknown [104.132.0.74])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id BE16520838;
- Fri,  6 Sep 2019 17:30:35 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567791035;
- bh=i1CVD4eeoDs3jI2oDy7B58p/ldJyg1fEXzVadkF+/ho=;
- h=In-Reply-To:References:To:From:Cc:Subject:Date:From;
- b=YrGEIBTNgkBjx5GuhaHqy+wgb//ReGDHpTZUKwCygfqSMFfFJBuv43BH/lnRMCMHQ
- DAJyo4qze6+djqt5qS5MwloqpXLLNNL1Evy2Kz7zgKalMT+sqGnoiXkIVoEwfB6Pnq
- CMfLoNPj3oLg+kd4lLrsS1V3Fa4JiziCQaK2PYq8=
+ id 1i6IEk-0008WO-Dy
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 17:41:32 +0000
+Received: by mail-ed1-x543.google.com with SMTP id a23so4776253edv.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 10:41:29 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=soleen.com; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VBkiR/7BisGtZVmNVXhHtJrfmofi1qU8Pxcjpjv/ZgU=;
+ b=KWbZvsNIkISQq4DJ0Jn0+DC13xFv36DJ+INz1iCwsDURlinnxi/FqltluIcUdyKEH+
+ rohLlAAcGa9S/ZYLvc1vTaR6e7aQaHawkNyzLp29w4f6Au1gxqx6ccQi15xWrUysZLko
+ l0O4EcJcNb3Zxrza5Xu2Cdd0Q8c1MNJiep4Y23PuKjCm1JHlOUjUXO3rjxiUgpMuxdBZ
+ 195WYeYAEX+sfEiPtjph8YRPHJ5jQAWbkYH6/UE6sgH5I3Tkdk2sSbsvvqd+Xnpv0uvu
+ 1ilSBFkcIXgD0EgHuYTfM1YDM5ly+poGMtxFMSDOaOGhgSkdDDpWTmBO4MBPmbtsnmHo
+ MKVg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VBkiR/7BisGtZVmNVXhHtJrfmofi1qU8Pxcjpjv/ZgU=;
+ b=cmKFcmNiKWq6rmDe8AvsHC5uh40LaFT96WUw06KfwSZGOJXWSPm6wrDGPjkLoRw5n4
+ x0MUGSH3NSeNEbzIjCNNdm/b7fBwt2rHkHy1Q3nBrV5/gmDWlTdgxrOg3LR1paKvh8ry
+ w9j7MVGV5r5BtUKQviYUE376teTjCeYBudMkSGEIr1aBGEBMmGr5x0Uh4ugVsDVRKjEn
+ pMqxecyGT2C1ouCT4W7MIvyK2GhFNuyCPeC/Q6PV8eRvSy3K3G5ifZxLUjU+ZFTkrqo1
+ w9sY4rdINelsa+Dht8762VBb2m2ONTkPE/K/HnabOf6KFOEleFXpF5XKNMO685rUk2MM
+ ZxkA==
+X-Gm-Message-State: APjAAAVWNATkxHbsa00mLK9lfDA0CDKFamwYRXkiox7Y93PBcoCSb6V7
+ xB70I5FD9UipJNkQMXyxCqt9l/nzC8T8LycNGmECGg==
+X-Google-Smtp-Source: APXvYqzdydAQq2XsQ/paSb9m4rgwscf0/CCdiPGGGSWL+1ARUwePukKygj3cKHXfmSeUdjAS/Egx8Zb0S9m9dpj+AVQ=
+X-Received: by 2002:aa7:c40c:: with SMTP id j12mr11037477edq.80.1567791688713; 
+ Fri, 06 Sep 2019 10:41:28 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <alpine.DEB.2.21.1908081809160.2995@hadrien>
-References: <alpine.DEB.2.21.1908081809160.2995@hadrien>
-To: Jonas Gorski <jonas.gorski@gmail.com>, Julia Lawall <julia.lawall@lip6.fr>
-From: Stephen Boyd <sboyd@kernel.org>
-Subject: Re: [PATCH] clk: fix devm_platform_ioremap_resource.cocci warnings
-User-Agent: alot/0.8.1
-Date: Fri, 06 Sep 2019 10:30:34 -0700
-Message-Id: <20190906173035.BE16520838@mail.kernel.org>
+References: <20190821183204.23576-1-pasha.tatashin@soleen.com>
+ <20190821183204.23576-8-pasha.tatashin@soleen.com>
+ <f1db863a-de57-2d1a-6bec-6020b2130964@arm.com>
+In-Reply-To: <f1db863a-de57-2d1a-6bec-6020b2130964@arm.com>
+From: Pavel Tatashin <pasha.tatashin@soleen.com>
+Date: Fri, 6 Sep 2019 13:41:17 -0400
+Message-ID: <CA+CK2bDTVGm6pNRGQx7eAyEP6m0xr9X1No_=qgUOTDAoL9uigw@mail.gmail.com>
+Subject: Re: [PATCH v3 07/17] arm64, hibernate: move page handling function to
+ new trans_pgd.c
+To: James Morse <james.morse@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_103036_361266_824B1907 
-X-CRM114-Status: UNSURE (   7.13  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190906_104130_888056_6F86FBA5 
+X-CRM114-Status: GOOD (  17.87  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:543 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -64,7 +82,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,34 +93,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Florian Fainelli <f.fainelli@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Philippe Mathieu-Daud?? <f4bug@amsat.org>, linux-kernel@vger.kernel.org,
- bcm-kernel-feedback-list@broadcom.com, kbuild-all@01.org,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Sasha Levin <sashal@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Vladimir Murzin <vladimir.murzin@arm.com>, Jonathan Corbet <corbet@lwn.net>,
+ Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
+ Bhupesh Sharma <bhsharma@redhat.com>,
+ kexec mailing list <kexec@lists.infradead.org>,
+ LKML <linux-kernel@vger.kernel.org>, James Morris <jmorris@namei.org>,
+ linux-mm <linux-mm@kvack.org>, "Eric W. Biederman" <ebiederm@xmission.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>, will@kernel.org,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Quoting Julia Lawall (2019-08-08 09:10:53)
-> From: kbuild test robot <lkp@intel.com>
-> 
-> drivers/clk/bcm/clk-bcm63xx-gate.c:174:1-9: WARNING: Use devm_platform_ioremap_resource for hw -> regs
-> 
->  Use devm_platform_ioremap_resource helper which wraps
->  platform_get_resource() and devm_ioremap_resource() together.
-> 
-> Generated by: scripts/coccinelle/api/devm_platform_ioremap_resource.cocci
-> 
-> Fixes: 1c099779c1e2 ("clk: add BCM63XX gated clock controller driver")
-> CC: Jonas Gorski <jonas.gorski@gmail.com>
-> Signed-off-by: kbuild test robot <lkp@intel.com>
-> Signed-off-by: Julia Lawall <julia.lawall@lip6.fr>
-> ---
+On Fri, Sep 6, 2019 at 11:18 AM James Morse <james.morse@arm.com> wrote:
+>
+> Hi Pavel,
+>
+> On 21/08/2019 19:31, Pavel Tatashin wrote:
+> > Now, that we abstracted the required functions move them to a new home.
+> > Later, we will generalize these function in order to be useful outside
+> > of hibernation.
+>
+> > diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
+> > new file mode 100644
+> > index 000000000000..00b62d8640c2
+> > --- /dev/null
+> > +++ b/arch/arm64/mm/trans_pgd.c
+> > @@ -0,0 +1,211 @@
+> > +// SPDX-License-Identifier: GPL-2.0
+> > +
+> > +/*
+> > + * Copyright (c) 2019, Microsoft Corporation.
+> > + * Pavel Tatashin <patatash@linux.microsoft.com>
+>
+> Hmmm, while line-count isn't a useful metric: this file contains 41% of the code that was
+> in hibernate.c, but has stripped the substantial copyright-pedigree that the hibernate
+> code had built up over the years.
+> (counting lines identified by 'cloc' as code, not comments or blank)
+>
+> If you are copying or moving a non trivial quantity of code, you need to preserve the
+> copyright. Something like 'Derived from the arm64 hibernate support which has:'....
 
-Applied to clk-next
+I will do that.  The copyright thing was meant to appear in
+"generalization" patch that comes later, where I unified most of the
+code to be symmetric.
+So, I will add it there, and also do the derived message that you suggested.
 
+>
+>
+> > + */
+> > +
+> > +/*
+> > + * Transitional tables are used during system transferring from one world to
+> > + * another: such as during hibernate restore, and kexec reboots. During these
+> > + * phases one cannot rely on page table not being overwritten.
+>
+> I think you need to mention that hibernate and kexec are rewriting memory, and may
+> overwrite the live page tables, therefore ...
+
+Will add, thank you.
+
+Pasha
 
 _______________________________________________
 linux-arm-kernel mailing list
