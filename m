@@ -2,58 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0F546AB7CA
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:07:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5C366AB7C2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 14:06:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=R74AK1Htq/Vb7c/4F5JUs37QyS0v5oDp9g0PndzUFkI=; b=OYy
-	Pqs8+lJa+Poeb0JWMqMSw1qRPNFC2yX8OiQ2nl1YakIEha62gO//DNOAQOQ4wMiMYMik53tJdo73N
-	E1sDjW8M5/ojHofhIbRC1h49kC99ij5y8V8b7u/L0GGmzldUTRq11wOvbRbhhMURh3csjtWO992xF
-	f0KEdN/Bc/kgjcTeXb6mf4PcVpgRo0rZ4+kxvNfvAuR68iEk5eVN4K6KopU5dxcDfRgG0tjYrhHkp
-	eSZY5KZdKUKDiQw7HXczQzVsR/bRkS2zzsujMTpdYOQOjiFtyZpFso3BD/wZKVvbbh9UF03PTT3+H
-	eJp6et80sQWNfVZh4v3RByCjHtZd78Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=R1vzNvKF3lJLbLMWCcFAzQ03XY14DJUcvjpAsIq5/yU=; b=NbraZlU4soK8GU
+	HGiqz+LmgNT4gG5573l8yAqsxaJajBKaUyQEbjxwiMUwzQ0byhRVutlbzowDiPjrQZuTQD1SI+s6Q
+	rhxr8sQbQN187iOyS0uSbi3VhQ0pVc3iyIbXBwVI2oW/MnAtOUP6J7EeNwhjiRVVgOKt1yln9jPp5
+	4NWoqd5zKH5DwJmkElpwZxnyKz+QVfz7Bi6V3aSwLgEf7inlRrX8S7dvmbUfDeAkAceagSpyBHgnU
+	AGxMsmuad11cuUJUZ6PybFb8591PhPLzXE+gj7WU0GnKdOSTVZ0grKLSsZM+cvy1yBRvarEdCRxjS
+	O3TN6ek865YrT3vXk2Ww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6D1J-0008OC-09; Fri, 06 Sep 2019 12:07:17 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i6D0p-0007g9-Ry; Fri, 06 Sep 2019 12:06:47 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6D0Z-0007T3-Fp
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 12:06:33 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 62DE51A05D0;
- Fri,  6 Sep 2019 14:06:29 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 682C31A00B6;
- Fri,  6 Sep 2019 14:06:24 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0AF19402A5;
- Fri,  6 Sep 2019 20:06:17 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH] gpio/mpc8xxx: change irq handler from chained to normal
-Date: Fri,  6 Sep 2019 19:56:14 +0800
-Message-Id: <20190906115614.5645-1-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i6D0W-0007SG-0w; Fri, 06 Sep 2019 12:06:29 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 462F1AC6E;
+ Fri,  6 Sep 2019 12:06:25 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: catalin.marinas@arm.com, hch@lst.de, wahrenst@gmx.net,
+ marc.zyngier@arm.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-mm@kvack.org,
+ linux-riscv@lists.infradead.org
+Subject: [PATCH v4 0/4] Raspberry Pi 4 DMA addressing support
+Date: Fri,  6 Sep 2019 14:06:11 +0200
+Message-Id: <20190906120617.18836-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.23.0
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_050631_681046_08C7D609 
-X-CRM114-Status: UNSURE (   9.90  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190906_050628_352403_4E38D827 
+X-CRM114-Status: GOOD (  13.98  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -67,82 +59,111 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-MIME-Version: 1.0
+Cc: f.fainelli@gmail.com, will@kernel.org, linux-kernel@vger.kernel.org,
+ mbrugger@suse.com, linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org,
+ robin.murphy@arm.com, nsaenzjulienne@suse.de, m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Song Hui <hui.song_1@nxp.com>
+Hi all,
+this series attempts to address some issues we found while bringing up
+the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
+up of these discussions:
+v3: https://lkml.org/lkml/2019/9/2/589
+v2: https://lkml.org/lkml/2019/8/20/767
+v1: https://lkml.org/lkml/2019/7/31/922
+RFC: https://lkml.org/lkml/2019/7/17/476
 
-more one gpio controller use share one interrupt,
-make request interrupt to be shared.
+The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
+only address the first GB: their DMA address range is
+0xc0000000-0xfc000000 which is aliased to the first GB of physical
+memory 0x00000000-0x3c000000. Note that only some peripherals have these
+limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
+view of the address space by virtue of being hooked up trough a second
+interconnect.
 
-Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
-Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
-Signed-off-by: Song Hui <hui.song_1@nxp.com>
+Part of this is solved on arm32 by setting up the machine specific
+'.dma_zone_size = SZ_1G', which takes care of reserving the coherent
+memory area at the right spot. That said no buffer bouncing (needed for
+dma streaming) is available at the moment, but that's a story for
+another series.
+
+Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
+ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
+arch code as if all peripherals where be able to address the first 4GB
+of memory.
+
+In the light of this, the series implements the following changes:
+
+- Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
+  area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
+  the RPi4 is the only arm64 device with such DMA addressing limitations
+  so this hardcoded solution was deemed preferable.
+
+- Properly set ARCH_ZONE_DMA_BITS.
+
+- Reserve the CMA area in a place suitable for all peripherals.
+
+This series has been tested on multiple devices both by checking the
+zones setup matches the expectations and by double-checking physical
+addresses on pages allocated on the three relevant areas GFP_DMA,
+GFP_DMA32, GFP_KERNEL:
+
+- On an RPi4 with variations on the ram memory size. But also forcing
+  the situation where all three memory zones are nonempty by setting a 3G
+  ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
+
+- On a Synquacer box[1] with 32G of memory.
+
+- On an ACPI based Huawei TaiShan server[2] with 256G of memory.
+
+- On a QEMU virtual machine running arm64's OpenSUSE Tumbleweed.
+
+That's all.
+
+Regards,
+Nicolas
+
+[1] https://www.96boards.org/product/developerbox/
+[2] https://e.huawei.com/en/products/cloud-computing-dc/servers/taishan-server/taishan-2280-v2
+
 ---
- drivers/gpio/gpio-mpc8xxx.c | 20 +++++++++++++-------
- 1 file changed, 13 insertions(+), 7 deletions(-)
 
-diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-index 16a47de..4006250 100644
---- a/drivers/gpio/gpio-mpc8xxx.c
-+++ b/drivers/gpio/gpio-mpc8xxx.c
-@@ -22,6 +22,7 @@
- #include <linux/irq.h>
- #include <linux/gpio/driver.h>
- #include <linux/bitops.h>
-+#include <linux/interrupt.h>
- 
- #define MPC8XXX_GPIO_PINS	32
- 
-@@ -127,10 +128,9 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
- 		return -ENXIO;
- }
- 
--static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
-+static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
- {
--	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
--	struct irq_chip *chip = irq_desc_get_chip(desc);
-+	struct mpc8xxx_gpio_chip *mpc8xxx_gc = (struct mpc8xxx_gpio_chip *)data;
- 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
- 	unsigned int mask;
- 
-@@ -139,8 +139,8 @@ static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
- 	if (mask)
- 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
- 						     32 - ffs(mask)));
--	if (chip->irq_eoi)
--		chip->irq_eoi(&desc->irq_data);
-+
-+	return IRQ_HANDLED;
- }
- 
- static void mpc8xxx_irq_unmask(struct irq_data *d)
-@@ -409,8 +409,14 @@ static int mpc8xxx_probe(struct platform_device *pdev)
- 	if (devtype->gpio_dir_in_init)
- 		devtype->gpio_dir_in_init(gc);
- 
--	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
--					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
-+	ret = request_irq(mpc8xxx_gc->irqn, mpc8xxx_gpio_irq_cascade,
-+		IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade", mpc8xxx_gc);
-+	if (ret) {
-+		pr_err("%s: failed to request_irq(%d), ret = %d\n",
-+				np->full_name, mpc8xxx_gc->irqn, ret);
-+		goto err;
-+	}
-+
- 	return 0;
- err:
- 	iounmap(mpc8xxx_gc->regs);
+Changes in v4:
+- Rebased to linux-next
+- Fix issue when NUMA=n and ZONE_DMA=n
+- Merge two max_zone_dma*_phys() functions
+
+Changes in v3:
+- Fixed ZONE_DMA's size to 1G
+- Update mmzone.h's comment to match changes in arm64
+- Remove all dma-direct patches
+
+Changes in v2:
+- Update comment to reflect new zones split
+- ZONE_DMA will never be left empty
+- Try another approach merging both ZONE_DMA comments into one
+- Address Christoph's comments
+- If this approach doesn't get much traction I'll just drop the patch
+  from the series as it's not really essential
+
+Nicolas Saenz Julienne (4):
+  arm64: mm: use arm64_dma_phys_limit instead of calling
+    max_zone_dma_phys()
+  arm64: rename variables used to calculate ZONE_DMA32's size
+  arm64: use both ZONE_DMA and ZONE_DMA32
+  mm: refresh ZONE_DMA and ZONE_DMA32 comments in 'enum zone_type'
+
+ arch/arm64/Kconfig            |  4 ++
+ arch/arm64/include/asm/page.h |  2 +
+ arch/arm64/mm/init.c          | 71 +++++++++++++++++++++++++----------
+ include/linux/mmzone.h        | 45 ++++++++++++----------
+ 4 files changed, 83 insertions(+), 39 deletions(-)
+
 -- 
-2.9.5
+2.23.0
 
 
 _______________________________________________
