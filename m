@@ -2,138 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B469CAB008
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:10:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81C1AB02E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 03:33:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
-	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rFkkWV6HU7ArfVujoAnEIdBMQQMQDWJ+cOyYSg5bOU4=; b=UiSIHRwB2auOb6
-	b2pGdphgFzfFWQweFHDap/Ciwbtpz0mOSSQRPdLQpVkL2+iQe9+6EBAC8WRRDTaWX8CoXYZiGqXpf
-	C5mUtDuql/2rLGqZmtGbVnxnXij99G1ATxpJ3JqxytTdGJd9Jo6vfB3eTYB55qYvNBfZOh5/ZIGD6
-	5zl6Zt0yE/9EF0zUcNaMhYjfYNlBL52+30vRy4PWRBDKU8jmuvfUjtlfbgxB7TZViFxzspxabhFrv
-	L5FyfY/YgrdvoXvHoqpgGz1JKm/srp6t6ZxsRqM0TbVjpglmMQkDaWwtPP6Wz+jxe1f0SP6iLQ5dg
-	Qw1WEcD741B3gOn+ZkVQ==;
+	List-Owner; bh=BCx2UxiQJO3mpo9wiSF9iscdjqY4MKnP7C2zuRudQs0=; b=jfrhcBhhL+GJUz
+	DaIHP2uf4sULsBf6l9gykdbGwftuINpmA56dsmTpGNowjJR1mesC8ONzPrhmArt95/OxfmEZr2oVM
+	x2RDPRokcpf3UwAGX+sCJwsOZu8p/KzmI9DSQrOZWIduPW5FXnPKfDnTiS5qhPn/vYBsQfS10vqL+
+	QbwlCbRvemTt94yJ8jgA1H+UtG9+PHwBq/d6WK1k3JJbwPOU23X/k4UUxqT2hm8B0OfX2lh3BMmPx
+	ttxB0MvGMEDcD9X0zWBKP3C7aRPeGKUbN9oRgHzluKMd6TE4tj/1EhZqoy/NwCmSPnk4sgm6tM/En
+	65b1B/3J1BuCFgDE//kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i62lQ-0007yZ-Dp; Fri, 06 Sep 2019 01:10:12 +0000
-Received: from mailout3.samsung.com ([203.254.224.33])
+	id 1i6380-0006tN-Ma; Fri, 06 Sep 2019 01:33:32 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i62lH-0006w6-Aw
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 01:10:05 +0000
-Received: from epcas1p4.samsung.com (unknown [182.195.41.48])
- by mailout3.samsung.com (KnoxPortal) with ESMTP id
- 20190906010956epoutp03e3e9cb08fd73cd1bc5032898c65c3b99~BtCB3Py742382723827epoutp03E
- for <linux-arm-kernel@lists.infradead.org>;
- Fri,  6 Sep 2019 01:09:56 +0000 (GMT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 mailout3.samsung.com
- 20190906010956epoutp03e3e9cb08fd73cd1bc5032898c65c3b99~BtCB3Py742382723827epoutp03E
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
- s=mail20170921; t=1567732196;
- bh=R/1SBy/e3IUgv5u0E3blonWcx55M0ueMCvMUQqYuNXI=;
- h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
- b=W+ez4yXcr1jEAV/gdJo67s4b5iV9u7kUQy7qTbCljYIhV9vuL8AOn17ttdlyq3bg+
- fcSDrR56sI4p+K9CgKOhkGfTQVtGczXGeiIE452WCKeazlrqF1iXbuJ7e3cHAVjEmk
- L7dsstmPVRoHO2JRwDuwioRLLwPKocgWfeTGCa9c=
-Received: from epsnrtp4.localdomain (unknown [182.195.42.165]) by
- epcas1p1.samsung.com (KnoxPortal) with ESMTP id
- 20190906010956epcas1p1c1096911a058b2d7cefb6165513f113b~BtCBrek3p1072310723epcas1p1Z;
- Fri,  6 Sep 2019 01:09:56 +0000 (GMT)
-Received: from epsmges1p4.samsung.com (unknown [182.195.40.152]) by
- epsnrtp4.localdomain (Postfix) with ESMTP id 46Pfc11XdtzMqYkW; Fri,  6 Sep
- 2019 01:09:53 +0000 (GMT)
-Received: from epcas1p3.samsung.com ( [182.195.41.47]) by
- epsmges1p4.samsung.com (Symantec Messaging Gateway) with SMTP id
- FA.DB.04160.1E1B17D5; Fri,  6 Sep 2019 10:09:53 +0900 (KST)
-Received: from epsmtrp2.samsung.com (unknown [182.195.40.14]) by
- epcas1p4.samsung.com (KnoxPortal) with ESMTPA id
- 20190906010952epcas1p4a1c6399dd744c8d9aa2e60a0d28cec2d~BtB9zf-pj2444024440epcas1p4F;
- Fri,  6 Sep 2019 01:09:52 +0000 (GMT)
-Received: from epsmgms1p1new.samsung.com (unknown [182.195.42.41]) by
- epsmtrp2.samsung.com (KnoxPortal) with ESMTP id
- 20190906010952epsmtrp231d06642f89b1a185ee1e0b3fc349b6d~BtB9yxuoD2286122861epsmtrp2J;
- Fri,  6 Sep 2019 01:09:52 +0000 (GMT)
-X-AuditID: b6c32a38-b4bff70000001040-cb-5d71b1e1cd89
-Received: from epsmtip2.samsung.com ( [182.195.34.31]) by
- epsmgms1p1new.samsung.com (Symantec Messaging Gateway) with SMTP id
- 5C.DD.03706.0E1B17D5; Fri,  6 Sep 2019 10:09:52 +0900 (KST)
-Received: from [10.113.221.102] (unknown [10.113.221.102]) by
- epsmtip2.samsung.com (KnoxPortal) with ESMTPA id
- 20190906010952epsmtip2b8dc82b7a362d61f7327fd5754267c79~BtB9nPvPv2262922629epsmtip2x;
- Fri,  6 Sep 2019 01:09:52 +0000 (GMT)
-Subject: Re: [PATCH v3 1/2] ARM: dts: exynos: Add support ARM architected
- timers on Exynos5
-To: Marek Szyprowski <m.szyprowski@samsung.com>,
- linux-samsung-soc@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-From: Chanwoo Choi <cw00.choi@samsung.com>
-Organization: Samsung Electronics
-Message-ID: <4616ea91-1b35-4ac4-4a9e-a5002b54fc1a@samsung.com>
-Date: Fri, 6 Sep 2019 10:14:01 +0900
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i637q-0006pr-Qs; Fri, 06 Sep 2019 01:33:24 +0000
+X-UUID: 00c7e03b78b846faa5f322daa04fcdf5-20190905
+X-UUID: 00c7e03b78b846faa5f322daa04fcdf5-20190905
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <dongchun.zhu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 213228797; Thu, 05 Sep 2019 17:33:13 -0800
+Received: from MTKMBS31DR.mediatek.inc (172.27.6.102) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 18:33:12 -0700
+Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31DR.mediatek.inc
+ (172.27.6.102) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Fri, 6 Sep 2019 09:33:03 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Fri, 6 Sep 2019 09:33:02 +0800
+Message-ID: <1567733585.21623.163.camel@mhfsdcap03>
+Subject: Re: [V3, 2/2] media: i2c: Add Omnivision OV02A10 camera sensor driver
+From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+To: Nicolas Boichat <drinkcat@chromium.org>
+Date: Fri, 6 Sep 2019 09:33:05 +0800
+In-Reply-To: <CANMq1KDVMGkeBvu1nO5WHopWwec9mxHfhmLmX2BzvaYVLzxoXw@mail.gmail.com>
+References: <20190819034331.13098-1-dongchun.zhu@mediatek.com>
+ <20190819034331.13098-3-dongchun.zhu@mediatek.com>
+ <20190819083009.GC6133@paasikivi.fi.intel.com>
+ <1567676465.21623.100.camel@mhfsdcap03>
+ <20190905104546.GA5475@paasikivi.fi.intel.com>
+ <CAAFQd5Bh-11D9RR9WVH5A3DbXZoxWhbMhXSNKUV25mempMi+ag@mail.gmail.com>
+ <20190905160512.GG5475@paasikivi.fi.intel.com>
+ <CANMq1KDVMGkeBvu1nO5WHopWwec9mxHfhmLmX2BzvaYVLzxoXw@mail.gmail.com>
+X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
-In-Reply-To: <20190828121005.29368-2-m.szyprowski@samsung.com>
-Content-Language: en-US
-X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTcRTH++3u3l2l5a9ZeTTTeQtKyfQ6V9dQU5IQsrD6p4KlN72ouZe7
- W7SCEoSyWpIIoivp/VrGcmn08IUWZS97sIhCUvQPy7BQs/Ug2naL/O9zzvme3/d3fr9DE6pG
- KoouM1oFi5HXM1So/GZvfFLiUEuFLvllQwjX0uAmuf7+6wrOM/ya5Br6O2XctXsDCu72yT4y
- i8r1uA5TuTfOH8itaXWh3ElPTL58e3l6qcAXCxa1YCwyFZcZSzKY9VsK1hZoVyaziWwat4pR
- G3mDkMHk5OUnrivT+70Z9W5eb/On8nlRZJIy0y0mm1VQl5pEawYjmIv15jTzCpE3iDZjyYoi
- k2E1m5ycovULC8tLXz9/qDC3L9jTXVcnr0Qe1REUQgNOheHWSeIICqVV+BaCa0NuUgomEHR7
- flBSMI2g+ft94l9LfVtdkFW4A8HLkc2S6DOC6TGHv0DT4VgHjuq8gGYe3gs13T+CFgSuRHDp
- aCcZKFA4AbpG31ABDsNx4PUNowArcSZUdb0IauR4CYy6XUGej7fCxGAvKWnmQl/jiDzAIX79
- lzvDwQsROALejpySSRwLVW0ngsaA31EwNulTBC4HOAeqvm2WhgmHjw9aFRJHweR4ByXxPrjS
- d4+SeqsRtHY9J6WCBrou1MkC5xA4Htx3kqR0HNz+2YQk3zkw/tVBSlZKqD7496kXw6vBAZnE
- kXDu0GHqOGKcM6ZxzpjAOWMC53+z00juQgsEs2goEUTWnDrzsz0ouJYJ3C3U/iyvB2EaMbOV
- eMqsU5H8btFu6EFAE8w8pbvFn1IW8/a9gsVUYLHpBbEHaf2PXUtEzS8y+ZfcaC1gtSkajYZL
- ZVdqWZaJUJ7xcToVLuGtQrkgmAXLvz4ZHRJVieh9YY9905Exh5YtW229+vN99N3Ojd4daVPx
- GeFPbN790Sb7+NJFpw56d+p37R/1OdLrf33yNv2OtE7xqgsateVNYax40648yzxZ6AzNvtzL
- bk1bY3QtvRhZcUP14VhHTuH4hk3L+xJP6+wDu7aN1N7Nbg5rn3XO8Sjla8v0U6Y8q42Ri6U8
- m0BYRP4PCgJU7KwDAAA=
-X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFmphkeLIzCtJLcpLzFFi42LZdlhJXvfBxsJYg7UzJC02zljPanH+/AZ2
- i02Pr7FazDi/j8li7ZG77BY755xkdWDz2LSqk81j85J6j74tqxg9Pm+SC2CJ4rJJSc3JLEst
- 0rdL4Mq4duEEe8EesYoDkyezNDBuEupi5OSQEDCRmLZ1MjOILSSwm1Fi3YoYiLikxLSLR4Hi
- HEC2sMThw8VdjFxAJW8ZJXb+uAcWFxaIlejp8AEpFxGoAirZygZSwyzQxCix69BHJoiGo4wS
- LRevsYJUsQloSex/cYMNxOYXUJS4+uMxI4jNK2An0bz/IlgNi4CKxIv1q8BsUYEIicM7ZkHV
- CEqcnPmEBcTmBKr/sOsx2NHMAuoSf+ZdgrLFJW49mc8EYctLNG+dzTyBUXgWkvZZSFpmIWmZ
- haRlASPLKkbJ1ILi3PTcYsMCw7zUcr3ixNzi0rx0veT83E2M4LjR0tzBeHlJ/CFGAQ5GJR5e
- gS8FsUKsiWXFlbmHGCU4mJVEeNdvBArxpiRWVqUW5ccXleakFh9ilOZgURLnfZp3LFJIID2x
- JDU7NbUgtQgmy8TBKdXAGBu099ysazauMs/O7r741ltyihFPcRLH3qePBa4/uXdw0kuPrbGr
- OHaZ7fgzQ7vk2FLfpNVXvn489vvtSZGa+mId8wvWnybp7J7GczpL7LHeP9s5tTzTp3In6D1k
- 6Xm+YgKnpLDSPocnhWcZ5BlZ8tcYp7RPEVRoPfQs0ozFxIDd5teO9887rJVYijMSDbWYi4oT
- AUjp66iXAgAA
-X-CMS-MailID: 20190906010952epcas1p4a1c6399dd744c8d9aa2e60a0d28cec2d
-X-Msg-Generator: CA
-X-Sendblock-Type: SVC_REQ_APPROVE
-CMS-TYPE: 101P
-DLP-Filter: Pass
-X-CFilter-Loop: Reflected
-X-CMS-RootMailID: 20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11
-References: <20190828121005.29368-1-m.szyprowski@samsung.com>
- <CGME20190828121012eucas1p10bac7ebb742d968bca251f21dd3aad11@eucas1p1.samsung.com>
- <20190828121005.29368-2-m.szyprowski@samsung.com>
+X-TM-SNTS-SMTP: F407418E7C5334074F2F61C9B1662FF6503DAC5082ABBBF7307673C1AD9D1A8A2000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_181003_560011_835395D6 
-X-CRM114-Status: GOOD (  22.24  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190905_183322_881190_94F91151 
+X-CRM114-Status: GOOD (  15.42  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [203.254.224.33 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,63 +78,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Marc Zyngier <maz@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- Bartlomiej Zolnierkiewicz <b.zolnierkie@samsung.com>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ srv_heupstream <srv_heupstream@mediatek.com>, shengnan.wang@mediatek.com,
+ Tomasz Figa <tfiga@chromium.org>, Louis Kuo <louis.kuo@mediatek.com>,
+ Sj Huang <sj.huang@mediatek.com>, Rob
+ Herring <robh+dt@kernel.org>, "moderated list:ARM/Mediatek
+ SoC support" <linux-mediatek@lists.infradead.org>,
+ Sakari Ailus <sakari.ailus@linux.intel.com>, Matthias
+ Brugger <matthias.bgg@gmail.com>, Cao Bing Bu <bingbu.cao@intel.com>,
+ Mauro Carvalho Chehab <mchehab@kernel.org>, "list@263.net:IOMMU
+ DRIVERS <iommu@lists.linux-foundation.org>,  Joerg  Roedel
+ <joro@8bytes.org>, " <linux-arm-kernel@lists.infradead.org>,
+ Linux Media Mailing List <linux-media@vger.kernel.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-RGVhciBNYXJlaywKCk9uIDE5LiA4LiAyOC4g7Jik7ZuEIDk6MTAsIE1hcmVrIFN6eXByb3dza2kg
-d3JvdGU6Cj4gQWxsIENvcnRleEE3L0ExNSBiYXNlZCBFeHlub3M1IFNvQ3MgaGF2ZSBBUk0gYXJj
-aGl0ZWN0ZWQgdGltZXJzLCBzbyBlbmFibGUKPiBzdXBwb3J0IGZvciB0aGVtIGRpcmVjdGx5IGlu
-IHRoZSBiYXNlIGR0c2kuIE5vbmUgb2YgdGhlIGtub3duIGZpcm13YXJlCj4gcHJvcGVybHkgY29u
-ZmlndXJlcyBDTlRGUlEgYXJjaCB0aW1lciByZWdpc3Rlciwgc28gZm9yY2UgY2xvY2sgZnJlcXVl
-bmN5Cj4gdG8gMjRNSHosIHdoaWNoIGlzIHRoZSBvbmx5IGNvbmZpZ3VyYXRpb24gc3VwcG9ydGVk
-IGJ5IHRoZSByZW1haW5pbmcKPiBjbG9jayBkcml2ZXJzIHNvIGZhci4KPiAKPiBTdG9jayBmaXJt
-d2FyZSBmb3IgUGVhY2ggUGl0IGFuZCBQaSBDaHJvbWVib29rcyBhbHNvIGRvZXNuJ3QgcmVzZXQK
-PiBwcm9wZXJseSBvdGhlciBhcmNoIHRpbWVyIHJlZ2lzdGVycywgc28gYWRkIHJlc3BlY3RpdmUg
-cHJvcGVydGllcwo+IGluZGljYXRpbmcgdGhhdC4gT3RoZXIgRXh5bm9zNS1iYXNlZCBib2FyZHMg
-YmVoYXZlcyBjb3JyZWN0bHkgaW4gdGhpcyBhcmVhLAo+IHdoYXQgZmluYWxseSBhbGxvd3MgdG8g
-ZW5hYmxlIHN1cHBvcnQgZm9yIEtWTS1iYXNlZCB2aXJ0dWFsaXphdGlvbi4KPiAKPiBTaWduZWQt
-b2ZmLWJ5OiBNYXJlayBTenlwcm93c2tpIDxtLnN6eXByb3dza2lAc2Ftc3VuZy5jb20+Cj4gLS0t
-Cj4gIGFyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczU0MjAtcGVhY2gtcGl0LmR0cyB8IDQgKysrKwo+
-ICBhcmNoL2FybS9ib290L2R0cy9leHlub3M1NHh4LmR0c2kgICAgICAgICAgfCA5ICsrKysrKysr
-Kwo+ICBhcmNoL2FybS9ib290L2R0cy9leHlub3M1ODAwLXBlYWNoLXBpLmR0cyAgfCA0ICsrKysK
-PiAgMyBmaWxlcyBjaGFuZ2VkLCAxNyBpbnNlcnRpb25zKCspCj4gCj4gZGlmZiAtLWdpdCBhL2Fy
-Y2gvYXJtL2Jvb3QvZHRzL2V4eW5vczU0MjAtcGVhY2gtcGl0LmR0cyBiL2FyY2gvYXJtL2Jvb3Qv
-ZHRzL2V4eW5vczU0MjAtcGVhY2gtcGl0LmR0cwo+IGluZGV4IGY3OGRiNjgwOWNjYS4uNzdlMDhh
-NGM3MzAwIDEwMDY0NAo+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczU0MjAtcGVhY2gt
-cGl0LmR0cwo+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL2V4eW5vczU0MjAtcGVhY2gtcGl0LmR0
-cwo+IEBAIC0xMDY0LDYgKzEwNjQsMTAgQEAKPiAgCXN0YXR1cyA9ICJva2F5IjsKPiAgfTsKPiAg
-Cj4gKyZ0aW1lciB7Cj4gKwlhcm0sY3B1LXJlZ2lzdGVycy1ub3QtZnctY29uZmlndXJlZDsKPiAr
-fTsKPiArCj4gICZ0bXVfY3B1MCB7Cj4gIAl2dG11LXN1cHBseSA9IDwmbGRvMTBfcmVnPjsKPiAg
-fTsKPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNTR4eC5kdHNpIGIvYXJj
-aC9hcm0vYm9vdC9kdHMvZXh5bm9zNTR4eC5kdHNpCj4gaW5kZXggOWMzYjYzYjdjYWM2Li4wMmQz
-NDk1N2NkODMgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNTR4eC5kdHNp
-Cj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNTR4eC5kdHNpCj4gQEAgLTQ1LDYgKzQ1
-LDE1IEBACj4gIAkJc3RhdHVzID0gImRpc2FibGVkIjsKPiAgCX07Cj4gIAo+ICsJdGltZXI6IHRp
-bWVyIHsKPiArCQljb21wYXRpYmxlID0gImFybSxhcm12Ny10aW1lciI7Cj4gKwkJaW50ZXJydXB0
-cyA9IDxHSUNfUFBJIDEzIChHSUNfQ1BVX01BU0tfU0lNUExFKDQpIHwgSVJRX1RZUEVfTEVWRUxf
-TE9XKT4sCj4gKwkJCSAgICAgPEdJQ19QUEkgMTQgKEdJQ19DUFVfTUFTS19TSU1QTEUoNCkgfCBJ
-UlFfVFlQRV9MRVZFTF9MT1cpPiwKPiArCQkJICAgICA8R0lDX1BQSSAxMSAoR0lDX0NQVV9NQVNL
-X1NJTVBMRSg0KSB8IElSUV9UWVBFX0xFVkVMX0xPVyk+LAo+ICsJCQkgICAgIDxHSUNfUFBJIDEw
-IChHSUNfQ1BVX01BU0tfU0lNUExFKDQpIHwgSVJRX1RZUEVfTEVWRUxfTE9XKT47Cj4gKwkJY2xv
-Y2stZnJlcXVlbmN5ID0gPDI0MDAwMDAwPjsKPiArCX07Cj4gKwo+ICAJc29jOiBzb2Mgewo+ICAJ
-CXN5c3JhbUAyMDIwMDAwIHsKPiAgCQkJY29tcGF0aWJsZSA9ICJtbWlvLXNyYW0iOwo+IGRpZmYg
-LS1naXQgYS9hcmNoL2FybS9ib290L2R0cy9leHlub3M1ODAwLXBlYWNoLXBpLmR0cyBiL2FyY2gv
-YXJtL2Jvb3QvZHRzL2V4eW5vczU4MDAtcGVhY2gtcGkuZHRzCj4gaW5kZXggZTBmNDcwZmU1NGM4
-Li41ZThjZWM3MzY0NDQgMTAwNjQ0Cj4gLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvZXh5bm9zNTgw
-MC1wZWFjaC1waS5kdHMKPiArKysgYi9hcmNoL2FybS9ib290L2R0cy9leHlub3M1ODAwLXBlYWNo
-LXBpLmR0cwo+IEBAIC0xMDMzLDYgKzEwMzMsMTAgQEAKPiAgCXN0YXR1cyA9ICJva2F5IjsKPiAg
-fTsKPiAgCj4gKyZ0aW1lciB7Cj4gKwlhcm0sY3B1LXJlZ2lzdGVycy1ub3QtZnctY29uZmlndXJl
-ZDsKPiArfTsKPiArCj4gICZ0bXVfY3B1MCB7Cj4gIAl2dG11LXN1cHBseSA9IDwmbGRvMTBfcmVn
-PjsKPiAgfTsKPiAKCkkgdGVzdGVkIGl0IG9uIG9kcm9pZC14dTMgdG8gZW5hYmxlIGFyY2gtdGlt
-ZXIgZm9yIEtWTS4KSW4gcmVzdWx0LCBJIGNvdWxkIGp1c3QgaW5pdGlhbGl6ZSBLVk0gb24geHUz
-IHdpdGhvdXQgcHJvYmxlbS4KClRlc3RlZC1ieTogQ2hhbndvbyBDaG9pIDxjdzAwLmNob2lAc2Ft
-c3VuZy5jb20+ClJldmlld2VkLWJ5OiBDaGFud29vIENob2kgPGN3MDAuY2hvaUBzYW1zdW5nLmNv
-bT4KCgotLSAKQmVzdCBSZWdhcmRzLApDaGFud29vIENob2kKU2Ftc3VuZyBFbGVjdHJvbmljcwoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+On Fri, 2019-09-06 at 06:58 +0800, Nicolas Boichat wrote:
+> On Fri, Sep 6, 2019 at 12:05 AM Sakari Ailus
+> <sakari.ailus@linux.intel.com> wrote:
+> >
+> > On Thu, Sep 05, 2019 at 07:53:37PM +0900, Tomasz Figa wrote:
+> > > On Thu, Sep 5, 2019 at 7:45 PM Sakari Ailus
+> > > <sakari.ailus@linux.intel.com> wrote:
+> > > >
+> > > > Hi Dongchun,
+> > > >
+> > > > On Thu, Sep 05, 2019 at 05:41:05PM +0800, Dongchun Zhu wrote:
+> > > >
+> > > > ...
+> > > >
+> > > > > > > + ret = regulator_bulk_enable(OV02A10_NUM_SUPPLIES, ov02a10->supplies);
+> > > > > > > + if (ret < 0) {
+> > > > > > > +         dev_err(dev, "Failed to enable regulators\n");
+> > > > > > > +         goto disable_clk;
+> > > > > > > + }
+> > > > > > > + msleep_range(7);
+> > > > > >
+> > > > > > This has some potential of clashing with more generic functions in the
+> > > > > > future. Please use usleep_range directly, or msleep.
+> > > > > >
+> > > > >
+> > > > > Did you mean using usleep_range(7*1000, 8*1000), as used in patch v1?
+> > > > > https://patchwork.kernel.org/patch/10957225/
+> > > >
+> > > > Yes, please.
+> > >
+> > > Why not just msleep()?
+> >
+> > msleep() is usually less accurate. I'm not sure it makes a big different in
+> > this case. Perhaps, if someone wants that the sensor is powered on and
+> > streaming as soon as possible.
+> 
+> https://elixir.bootlin.com/linux/latest/source/Documentation/timers/timers-howto.txt#L70
+> 
+> Use usleep_range for delays up to 20ms (at least that's what the
+> documentation (still) says?)
+> 
+
+Thank you for your clarifications.
+From the doc,
+"msleep(1~20) may not do what the caller intends, and
+will often sleep longer (~20 ms actual sleep for any
+value given in the 1~20ms range). In many cases this
+is not the desired behavior."
+
+So, it is supposed to use usleep_range in shorter sleep case,
+such as 5ms.
+
+> > --
+> > Sakari Ailus
+> > sakari.ailus@linux.intel.com
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
