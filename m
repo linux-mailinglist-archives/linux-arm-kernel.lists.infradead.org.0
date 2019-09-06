@@ -2,73 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C225BAB354
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:40:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 62418AB35C
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 09:41:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=w1p6R971hffY3TY6Qcb41rOcB60YIbyCHPVIhymsEV8=; b=JtmYAgSQnw3ExJYQGadLXEXrR
-	Zye2elkuYegYBe4xVTDO1PIEJd9MKOf7hgVF9N8bwdXResZ4tzopP44yqEIYXgDMbmi0Y+3xX2c9E
-	IzcDuuxZqhI7Z6SkFvhLyW6sKCxTROtihZ67o1TRQiwSrdlk4E57dL19/gm4b7O0IfzTQ7Xhat0Nk
-	4UBa8CHzuePk4arkFY4VXniMyXzWzDjbQRnqFlnmNSTbbIaEYcVr+NLMsq/hqIB90ziaWVmyr3uUu
-	FWk2UI7Yks+2nY/n06SbgQm86qub2oL+MOzKSd5wYLxy5CX8fEL4R3V8y73EkLNvGycNFRGsmRnpx
-	t1Nz+RnTA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=ljqpL3KmJUEG2MaHg9lirG89hwd3hIRc2RNkrmQ3viw=; b=fBA
+	nTfgT0Krk2uI3qBLBEpitxM8oXzzlpoYhKUtIx5BQEF/hYeQ53SdLHpYQWJWo5LW5GAYIkOF/7ZcH
+	+DtZ29QLRI9SgZ1hkw1EaSvAFbVYGFkCqPLGfAsrLqf86jyH2JdiEWKFT4FxvurOvlHpEM2yFRQLg
+	JiHssSkpkZyOEKT2/VHTcAbZ9bfncQ30NvUsQM/pvq4LbEEWODWZAwz4VmcpQSJvlBGonMHOAT0+B
+	EaEuWYHyyf6HTzDwxSej4TMTcTB41ek1I+cimunuWJX5OEZJEgKxpP3P112R9s0dTscgP/iHrOz01
+	a/xc5QLMPF/VMqrl3nFl2WvGZ2dLaIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i68qS-0004Dx-6F; Fri, 06 Sep 2019 07:39:48 +0000
-Received: from lelv0142.ext.ti.com ([198.47.23.249])
+	id 1i68sJ-0005ie-BM; Fri, 06 Sep 2019 07:41:43 +0000
+Received: from dc8-smtprelay2.synopsys.com ([198.182.47.102]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i68qE-0004DL-Au
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:39:35 +0000
-Received: from fllv0035.itg.ti.com ([10.64.41.0])
- by lelv0142.ext.ti.com (8.15.2/8.15.2) with ESMTP id x867dRJB053866;
- Fri, 6 Sep 2019 02:39:27 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1567755567;
- bh=z6Nh68YYvTDDh5HiSd5ce/6VHBCPMMXmMgbKOM1slds=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=iT3e59oWcC9/GWHtEvNJFERDlEd0VDsMZpqKav5auCLqqTQwYdbZs8EqQFLsI8XrU
- SXq+HElmMR2X3k2eAlJiw/9PISXTbdHV2qiKjDSy6p68s2Y/5sQfQBKhxd+rYVubVD
- tfqhQNMpcmlE5XUW7wOdQ6USYzAY9iKr+slbYk7g=
-Received: from DFLE105.ent.ti.com (dfle105.ent.ti.com [10.64.6.26])
- by fllv0035.itg.ti.com (8.15.2/8.15.2) with ESMTP id x867dRN6029677;
- Fri, 6 Sep 2019 02:39:27 -0500
-Received: from DFLE114.ent.ti.com (10.64.6.35) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Fri, 6 Sep
- 2019 02:39:26 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Fri, 6 Sep 2019 02:39:26 -0500
-Received: from [192.168.2.14] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x867dNc9078451;
- Fri, 6 Sep 2019 02:39:23 -0500
-Subject: Re: [PATCH] bus: ti-sysc: Fix handling of invalid clocks
-To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
-References: <20190905215356.8168-1-tony@atomide.com>
-From: Roger Quadros <rogerq@ti.com>
-Message-ID: <3c9f7340-f17f-cecd-3ae4-ec8a1af7c2bf@ti.com>
-Date: Fri, 6 Sep 2019 10:39:22 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <20190905215356.8168-1-tony@atomide.com>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+ id 1i68s6-0005h0-48
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 07:41:31 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost1.synopsys.com
+ [10.225.0.209])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
+ (No client certificate requested)
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 23988C0E35;
+ Fri,  6 Sep 2019 07:41:27 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1567755688; bh=4FNcbwGO762eeiYuWoydSpxazMahLxkBYcFUNjeJ3so=;
+ h=From:To:Cc:Subject:Date:From;
+ b=QV3sTkQjRq3+DWj4SAq7M3ARw0wOD88Y820JB4aK6VQ3BqbtO+ozEBJg5jkZxP6ba
+ 3K3PfEsnZAFP8beQSbvbq4rYsxCaqGuqw8h9pPqMiS6RCdbZ0eax/vPBjpPQJO3fpn
+ 4GOoFgI8P87xZ6bFcQt0szF2m6kys4oWjegPndcukIUo4cRGrBYIT79WQrcuzC9ip9
+ 4+AT6uXZ1T2NKq8mP+IAI4DwvUSgoSG5aniE63bpRkwW+wF/luxd0JWIyWzZQsXLIu
+ EiPm2rX5BcbHPhAqfeLgzesocBttjgJAAkBystKy36O3f9cHmcsjU3truRAWoxfcIF
+ 40D7xgWd5/dhw==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id 001F5A005C;
+ Fri,  6 Sep 2019 07:41:25 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 0/5] net: stmmac: Improvements and fixes for -next
+Date: Fri,  6 Sep 2019 09:41:12 +0200
+Message-Id: <cover.1567755423.git.joabreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_003934_483156_FEBF6258 
-X-CRM114-Status: GOOD (  18.40  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190906_004130_175777_3DAFCAF2 
+X-CRM114-Status: UNSURE (   8.85  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.23.249 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -78,7 +67,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,85 +78,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
- Dave Gerlach <d-gerlach@ti.com>, Keerthy <j-keerthy@ti.com>,
- linux-kernel@vger.kernel.org, "Andrew F . Davis" <afd@ti.com>,
- Peter Ujfalusi <peter.ujfalusi@ti.com>, Faiz Abbas <faiz_abbas@ti.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06/09/2019 00:53, Tony Lindgren wrote:
-> We can currently get "Unable to handle kernel paging request at
-> virtual address" for invalid clocks with dts node but no driver:
-> 
-> (__clk_get_hw) from [<c0138ebc>] (ti_sysc_find_one_clockdomain+0x18/0x34)
-> (ti_sysc_find_one_clockdomain) from [<c0138f0c>] (ti_sysc_clkdm_init+0x34/0xdc)
-> (ti_sysc_clkdm_init) from [<c0584660>] (sysc_probe+0xa50/0x10e8)
-> (sysc_probe) from [<c065c6ac>] (platform_drv_probe+0x58/0xa8)
-> 
-> Let's add IS_ERR checks to ti_sysc_clkdm_init() as And let's start treating
-> clk_get() with -ENOENT as a proper error. If the clock name is specified
-> in device tree we must succeed with clk_get() to continue. For modules with
-> no clock names specified in device tree we will just ignore the clocks.
-> 
-> Fixes: 2b2f7def058a ("bus: ti-sysc: Add support for missing clockdomain handling")
-> Signed-off-by: Tony Lindgren <tony@atomide.com>
+Improvements and fixes for recently introduced features. All for -next tree.
+More info in commit logs.
 
-Acked-by: Roger Quadros <rogerq@ti.com>
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
 
-> ---
->   arch/arm/mach-omap2/pdata-quirks.c | 4 ++--
->   drivers/bus/ti-sysc.c              | 5 +----
->   2 files changed, 3 insertions(+), 6 deletions(-)
-> 
-> diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
-> --- a/arch/arm/mach-omap2/pdata-quirks.c
-> +++ b/arch/arm/mach-omap2/pdata-quirks.c
-> @@ -491,11 +491,11 @@ static int ti_sysc_clkdm_init(struct device *dev,
->   			      struct clk *fck, struct clk *ick,
->   			      struct ti_sysc_cookie *cookie)
->   {
-> -	if (fck)
-> +	if (!IS_ERR(fck))
->   		cookie->clkdm = ti_sysc_find_one_clockdomain(fck);
->   	if (cookie->clkdm)
->   		return 0;
-> -	if (ick)
-> +	if (!IS_ERR(ick))
->   		cookie->clkdm = ti_sysc_find_one_clockdomain(ick);
->   	if (cookie->clkdm)
->   		return 0;
-> diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
-> --- a/drivers/bus/ti-sysc.c
-> +++ b/drivers/bus/ti-sysc.c
-> @@ -280,9 +280,6 @@ static int sysc_get_one_clock(struct sysc *ddata, const char *name)
->   
->   	ddata->clocks[index] = devm_clk_get(ddata->dev, name);
->   	if (IS_ERR(ddata->clocks[index])) {
-> -		if (PTR_ERR(ddata->clocks[index]) == -ENOENT)
-> -			return 0;
-> -
->   		dev_err(ddata->dev, "clock get error for %s: %li\n",
->   			name, PTR_ERR(ddata->clocks[index]));
->   
-> @@ -357,7 +354,7 @@ static int sysc_get_clocks(struct sysc *ddata)
->   			continue;
->   
->   		error = sysc_get_one_clock(ddata, name);
-> -		if (error && error != -ENOENT)
-> +		if (error)
->   			return error;
->   	}
->   
-> 
+Jose Abreu (5):
+  net: stmmac: selftests: Add missing checks for support of SA
+  net: stmmac: selftests: Set RX tail pointer in Flow Control test
+  net: stmmac: dwmac4: Enable RX Jumbo frame support
+  net: stmmac: selftests: Add Split Header test
+  net: stmmac: Limit max speeds of XGMAC if asked to
+
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h       |  3 +-
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  |  6 ---
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  | 25 +++++----
+ .../net/ethernet/stmicro/stmmac/stmmac_selftests.c | 60 ++++++++++++++++++++++
+ 4 files changed, 78 insertions(+), 16 deletions(-)
 
 -- 
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki.
-Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
