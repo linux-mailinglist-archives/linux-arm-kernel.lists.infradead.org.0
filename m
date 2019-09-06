@@ -2,108 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 49B6EAC0A5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 21:37:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 28550AC0BA
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 21:44:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
-	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	List-Owner; bh=ozAFzRuU4f8aOekURKH7WRsFwhUKJ7dF9Z3qH5L6990=; b=Y9YEnQIsIE9pms
-	//3gu3bJ1lDTZKfayLZUmpkrm1hp2o23FUe1Q4FG3VCmkPoOk0lPF5K+hfIFkg3Z4fa8aVt2Rrq/H
-	QlOi5RimQGiq/lp580zzrzhev4r6tke15nSFv2V4bdfgy4IcQUh1URVCe7qcYXGZ2lBeQczBL53Yk
-	TsvjgB/XPTCx+f6WxfSrorb2gmXu98x6gqOp+YdWYu/8qLtH+I/83MHaLu0bIJwNVmmzc8aB4h9bQ
-	5a9BHtjfh4vEewxBUGdNyDkrLyKvThgcqL5CDg3l6R4kpQSggF8zEGhp+Ri4sdglNRFYSRbjt2kUn
-	1alEUosBLz17O8wzLPPA==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bB7Qe73KhtI9P2jeIEW9GPTyqnEhCo5pj/bEE1J8F+4=; b=mxC8s6t5Tibzcp
+	3Kibl/LnOuivAj318kc+Ag5AecEfW8ULf3qlub92x7WDOIIB3+Z3iQP4g2CkfXSjzX+bv/lB549DI
+	7fmbj2sO6u3FLVVaO0Apha3K7oUgSmbLI3eXeuv1gv7eNM5Nftu5gWkr3MiKfvi0YkVrHSzridYFm
+	samuXUMFIBh4lOAGhPdcfiXG7S6+m7bigDcQZQfgFIr7pfr36fPYRuYuU5Qj3V3BnKJ1YS4kSBpzn
+	HWCBvGlCfOGR8+dWlBTaoNbtU1FjE3irOfx50jXBRb+bZqlluDugskFsmJe5Cuok8tm5PbjKQRgMT
+	TRyqi3/iAvbMgt9EG6Ug==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6K2l-00005T-N3; Fri, 06 Sep 2019 19:37:15 +0000
-Received: from mail-eopbgr20047.outbound.protection.outlook.com ([40.107.2.47]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1i6K9s-0001qO-6E; Fri, 06 Sep 2019 19:44:36 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6K2c-000059-58
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 19:37:07 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=O+rZs6HD7tTTkh7V/8Px0/uwCIbk6Nc0PBnJUWaSsP0PNHXIS31u2PpOcA2j9FD+2SqUVH4uEkOFqNCoA2B71thPL2pY0SKGWfYg43jIA+6uRg78A3yw0IRCMsb7rWnnN7UbsEsrdw4KHv6tdJXQx335EvruExXj/+BchXEIzIq3eeT4BHe9Wvd+i7/8gnJpH6kkfhnBECjaBDqFo/rqv9dTcOlBnlejTNOX4Is9cXGGkZe48BeYksS70Bg1sKE8Mbe8j1hU8ywZvyVVkwqSHB3DUysiGyFwgMiLrX0BfyZlo5x6BaKh7Cr3JdAsIwaIzdEv5feSWG3xpsDyrp8Dpg==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ljIEUsl9YYDvUzn3h/FkX32GvUboR1Ii0V0gti1Tr4s=;
- b=MhvMSdfaF0MIj4kDQCmgp2EOTu2y/LY9FULmM+qoGWHrDXmt/EDuouUSdooeTB87SvIhbSOtoIEq1javbIa3JR7pDPC1qonbnu79RmKZYvyWhZQZsEx4WnX4fTJWXa47cvFSO7hKlWMO1XR4/o5BqtjHdxwsu9zLaXtJAJrKJrIccpHlJY48MRYw5oSafMXDVsmnV1IhpGp3LYdIwwPPlsMEDylN250oQ8dTK2rN9NQ/oKBKvNydSjO9Pu2AcO2muTRktp74a2Vk8e0YNdabI/30gd+dIUIF6L/oejP35Op+I0MkBF9ZQHEcM3Qci2Szka3O6y0KCJC9+iuFbV7Zog==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=ljIEUsl9YYDvUzn3h/FkX32GvUboR1Ii0V0gti1Tr4s=;
- b=qOPY++TA4btOfKxl/tD/HRDq67EXAYYQwm6J1ICqHbLL50c70RMUOVVVB7d/WTorcDOPbY13q+P+81M/SJm5IDJTsZocIGGW6KFgLb/Y6QQsVEmvrDAUnRlLeUo4qBAZ8wrreu+sRiaei69o57mZsydhQg0mqYywCfHmoyJLITo=
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
- VI1PR04MB5312.eurprd04.prod.outlook.com (20.177.52.13) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2220.18; Fri, 6 Sep 2019 19:36:47 +0000
-Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e]) by VI1PR04MB7023.eurprd04.prod.outlook.com
- ([fe80::c5e8:90f8:da97:947e%3]) with mapi id 15.20.2241.018; Fri, 6 Sep 2019
- 19:36:47 +0000
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, Peng Fan <peng.fan@nxp.com>, Shawn Guo
- <shawnguo@kernel.org>, Daniel Baluta <daniel.baluta@nxp.com>
-Subject: Re: [PATCH] clk: imx: pll14xx: Fix quick switch of S/K parameter
-Thread-Topic: [PATCH] clk: imx: pll14xx: Fix quick switch of S/K parameter
-Thread-Index: AQHVYwYI+hx87JSvwEWGyvesxHdlQw==
-Date: Fri, 6 Sep 2019 19:36:47 +0000
-Message-ID: <VI1PR04MB70239D5AA9604E72E74CD555EEBA0@VI1PR04MB7023.eurprd04.prod.outlook.com>
-References: <c3e86b5a832a14278e8ba670d51defc70ee78d84.1567590349.git.leonard.crestez@nxp.com>
- <20190906172452.D1ED620838@mail.kernel.org>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=leonard.crestez@nxp.com; 
-x-originating-ip: [89.37.124.34]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: c8a76b9a-08b7-4fc6-cae0-08d733018e6d
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:VI1PR04MB5312; 
-x-ms-traffictypediagnostic: VI1PR04MB5312:|VI1PR04MB5312:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <VI1PR04MB5312D213AD9EF6FF3CECBF94EEBA0@VI1PR04MB5312.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:10000;
-x-forefront-prvs: 0152EBA40F
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(396003)(39860400002)(366004)(346002)(376002)(136003)(199004)(189003)(7696005)(74316002)(305945005)(7736002)(8676002)(81156014)(81166006)(14454004)(478600001)(316002)(99286004)(8936002)(54906003)(110136005)(76116006)(91956017)(66946007)(66476007)(66556008)(64756008)(66446008)(33656002)(86362001)(486006)(44832011)(446003)(476003)(6506007)(53546011)(76176011)(102836004)(186003)(26005)(229853002)(6636002)(5660300002)(2906002)(25786009)(6436002)(256004)(66066001)(4326008)(53936002)(52536014)(55016002)(71200400001)(6246003)(9686003)(3846002)(71190400001)(6116002);
- DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB5312;
- H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: qtmxDXyIepOZDzzki6eqyyNf/YURy0IsQcNBfIrAxtYUGm+tC4CH0DwFBvxOEfGrqV2cDCN6KOQS5NgojVapGWxSCGUGW65aNsPHU77CnRkFJ8bZYMgYRIOb+DQR6zhU6K/QG2fSnlesrSuvOWRf7gFjKG8idVZEqFK01ubUHkgvx8FshtK6/nPJnB+MosdfDLiqLxTtPFmhiDLlBW3MTi2qR5laQ8Gzu083yGNnikYnfUpm9ahsW529/SftGtbyXlfw1RfOZSM9KPRnvQiUtTsKSzNtZhij7wrcEw6PC7eYx2vODEcE54q7Tr69PH+3rYAnZ5BfEU7N7OH6I1+zWaN1lMZCnNQ2OqMONWy3ZX7pZgZ6BdfLkXv3DxT7s5SQnqKgBrMvAwtz9aB7pHTENKf6guFzt2bkkB+8BxvCxME=
+ id 1i6K9g-0001q2-Eu
+ for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 19:44:26 +0000
+Received: by mail-pf1-x443.google.com with SMTP id s12so5207376pfe.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 06 Sep 2019 12:44:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=3o9OaX9M4ICKUt6XFy1HLXyWbTIOHsoBsPAVZG++fPM=;
+ b=PxSyBjJABc2aInbFoWH/3OjfPPppsEsMG0qQtZe0EGHWk2o95C1Y+jLExgMXIE7H0C
+ nLYoQ6N9mfdbYUCszNKWCjd0Kh5SQ+Ml/+lHuQFqk41VSKNM2mjIrNJSDdHRZxcUE+PV
+ bZ/kvxf0OGgE4cGU6YZxe8OkOjUZr6iL8di0XziL2lkcpX8P5EzzhPTwjdf6SnuXAjfA
+ pTwznFuG2nRP0OTCWfz5uyqq1To2ZXFHWtHDx+xZUDmdS+GPoJP4GaVOQvn58pbZJWNW
+ C+YiqXuiUCVXgTILiBTMqjRHEujNrxV9NPDLQ+7Yvi1cQKey1PMVjqH1zQdaaJcvakB3
+ twFQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=3o9OaX9M4ICKUt6XFy1HLXyWbTIOHsoBsPAVZG++fPM=;
+ b=l/qWXirHbpIjbUjL+JGWLFVX1S9vEI8gkaW7v7YoSdhvfnOpodFcMPvxeXL4gz8VrV
+ 90wZ4ueeI8gCTgVQDTDFyvbyGuR1ysmy0icP+xbMcTCpks7ZwuwNsB+pYGx4bl8cLEaA
+ 20/uBR2N6QsmpIytFGPs+3MnYj1w5FGMZ5NiWgf3Q19/j1HkUJ4Io70gjIMFpJUNsbgZ
+ cfnkaIoob/6jgSBKupxZxDUL86l7MZtkNtAr4HoTpT+x3fpImWF+WWKJbH/Xrqnnvn60
+ h7F9qVeg7Jr1pv7KeBhgnXcpv6qCwSmoXTBY877O7WhACPIldRrCX14GIxLMYdIbllYJ
+ in0g==
+X-Gm-Message-State: APjAAAWkj5SrcBzJMtR1LX+Z3LTY92ERikT6ujEpKaeqCbitHo5lhQ1T
+ +sHK6K4lCEbxXCwbxMQrR9a40t1rF2NKzS8HhrfrGw==
+X-Google-Smtp-Source: APXvYqw5LfzSKwHFtY2SJqbGQmzhaNLqx4TyA4jDF52KJ1awLyK4pCObCMk+9SAPDsQF5ddJJIjkDG4gWT0pNo0CzRM=
+X-Received: by 2002:aa7:8481:: with SMTP id u1mr12913672pfn.3.1567799059882;
+ Fri, 06 Sep 2019 12:44:19 -0700 (PDT)
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: c8a76b9a-08b7-4fc6-cae0-08d733018e6d
-X-MS-Exchange-CrossTenant-originalarrivaltime: 06 Sep 2019 19:36:47.1276 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 0Gw0Y+ZYiKVEBcjlKhW2Xp3b+HS8QCvhwjX/YadElmI3kGcLMhm5F9mGhD4j8WGaA85uiosfy83hO1yncanciA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB5312
+References: <20190829154834.26547-1-will@kernel.org>
+ <20190829154834.26547-4-will@kernel.org>
+ <20190903060011.GA60737@archlinux-threadripper>
+ <20190903143117.GR9720@e119886-lin.cambridge.arm.com>
+ <20190903144534.h2rp3cyd3ryohhgj@willie-the-truck>
+ <20190903151544.GS9720@e119886-lin.cambridge.arm.com>
+ <20190903153120.GT9720@e119886-lin.cambridge.arm.com>
+ <20190903163753.huk5sjg4m27qu2zu@willie-the-truck>
+ <20190903220412.GU9720@e119886-lin.cambridge.arm.com>
+ <CAKwvOdkVatgMBLiuKV1bLdDKj_czsaGXuXWXp-9VR6zLyv+U4g@mail.gmail.com>
+ <20190905112519.GY9720@e119886-lin.cambridge.arm.com>
+In-Reply-To: <20190905112519.GY9720@e119886-lin.cambridge.arm.com>
+From: Nick Desaulniers <ndesaulniers@google.com>
+Date: Fri, 6 Sep 2019 12:44:07 -0700
+Message-ID: <CAKwvOdkLZ8SgjyCRE8QoN9W68ojTMP1oWNL1bO_veLcr3Lu4fA@mail.gmail.com>
+Subject: Re: [PATCH v5 03/10] arm64: atomics: avoid out-of-line ll/sc atomics
+To: Andrew Murray <andrew.murray@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_123706_202962_7B253573 
-X-CRM114-Status: UNSURE (   9.70  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190906_124424_533223_C646C86E 
+X-CRM114-Status: GOOD (  34.82  )
+X-Spam-Score: -15.7 (---------------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-15.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.47 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
+ -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
+ white-list
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -112,6 +93,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  author's domain
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,60 +106,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Jacky Bai <ping.bai@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>, Viorel Suman <viorel.suman@nxp.com>,
- Fabio Estevam <fabio.estevam@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: Mark Rutland <mark.rutland@arm.com>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, Robin Murphy <robin.murphy@arm.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>, Ard.Biesheuvel@arm.com,
+ Kristof Beyls <Kristof.Beyls@arm.com>,
+ Nathan Chancellor <natechancellor@gmail.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 06.09.2019 20:24, Stephen Boyd wrote:
-> Quoting Leonard Crestez (2019-09-04 02:49:18)
->> The PLL14xx on imx8m can change the S and K parameter without requiring
->> a reset and relock of the whole PLL.
->>
->> Fix clk_pll144xx_mp_change register reading and use it for pll1443 as
->> well since no reset+relock is required on K changes either.
->>
->> Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
->> ---
->>   drivers/clk/imx/clk-pll14xx.c | 40 +++++++----------------------------
->>   1 file changed, 8 insertions(+), 32 deletions(-)
->>
->> The PLLs are currently table-based and none of the entries differ only
->> in S/K so further work would be required to make use of this. The
->> prospective user is audio doing tiny freq adjustments and there is no
->> standard API for that.
-> 
-> sub-Hz adjustments?
+On Thu, Sep 5, 2019 at 4:25 AM Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> On Wed, Sep 04, 2019 at 10:28:14AM -0700, Nick Desaulniers wrote:
+> > On Tue, Sep 3, 2019 at 3:04 PM Andrew Murray <andrew.murray@arm.com> wrote:
+> > >
+> > > On Tue, Sep 03, 2019 at 05:37:55PM +0100, Will Deacon wrote:
+> > > > On Tue, Sep 03, 2019 at 04:31:20PM +0100, Andrew Murray wrote:
+> > > > > On Tue, Sep 03, 2019 at 04:15:44PM +0100, Andrew Murray wrote:
+> > > > > > On Tue, Sep 03, 2019 at 03:45:34PM +0100, Will Deacon wrote:
+> > > > > > > Does it work if the only thing you change is the toolchain, and use GCC
+> > > > > > > instead?
+> > > > > >
+> > > > > > Yup.
+> > > > >
+> > > > > Also this is Clang generation:
+> > > > >
+> > > > > ffff8000100f2700 <__ptrace_link>:
+> > > > > ffff8000100f2700:       f9426009        ldr     x9, [x0, #1216]
+> > > > > ffff8000100f2704:       91130008        add     x8, x0, #0x4c0
+> > > > > ffff8000100f2708:       eb09011f        cmp     x8, x9
+> > > > > ffff8000100f270c:       540002a1        b.ne    ffff8000100f2760 <__ptrace_link+0x60>  // b.any
+> > > > > ffff8000100f2710:       f9425829        ldr     x9, [x1, #1200]
+> > > > > ffff8000100f2714:       9112c02a        add     x10, x1, #0x4b0
+> > > > > ffff8000100f2718:       f9000528        str     x8, [x9, #8]
+> > > > > ffff8000100f271c:       f9026009        str     x9, [x0, #1216]
+> > > > > ffff8000100f2720:       f902640a        str     x10, [x0, #1224]
+> > > > > ffff8000100f2724:       f9025828        str     x8, [x1, #1200]
+> > > > > ffff8000100f2728:       f9024001        str     x1, [x0, #1152]
+> > > > > ffff8000100f272c:       b4000162        cbz     x2, ffff8000100f2758 <__ptrace_link+0x58>
+> > > > > ffff8000100f2730:       b900985f        str     wzr, [x2, #152]
+> > > > > ffff8000100f2734:       14000004        b       ffff8000100f2744 <__ptrace_link+0x44>
+> > > > > ffff8000100f2738:       14000001        b       ffff8000100f273c <__ptrace_link+0x3c>
+> > > > > ffff8000100f273c:       14000006        b       ffff8000100f2754 <__ptrace_link+0x54>
+> > > > > ffff8000100f2740:       14000001        b       ffff8000100f2744 <__ptrace_link+0x44>
+> > > > > ffff8000100f2744:       52800028        mov     w8, #0x1                        // #1
+> > > > > ffff8000100f2748:       b828005f        stadd   w8, [x2]
+> > > > > ffff8000100f274c:       f9030002        str     x2, [x0, #1536]
+> > > > > ffff8000100f2750:       d65f03c0        ret
+> > > > > ffff8000100f2754:       140007fd        b       ffff8000100f4748 <ptrace_check_attach+0xf8>
+> > > > > ...
+> > > > >
+> > > > > This looks like the default path (before we write over it) will take you to
+> > > > > the LSE code (e.g. ffff8000100f2734). I'm pretty sure this is wrong, or at
+> > > > > least not what we expected to see. Also why 4 branches?
+> > > >
+> > > > So I reproduced this with a silly atomic_inc wrapper:
+> > > >
+> > > > void will_atomic_inc(atomic_t *v)
+> > > > {
+> > > >         atomic_inc(v);
+> > > > }
+> > > >
+> > > > Compiles to:
+> > > >
+> > > > 0000000000000018 <will_atomic_inc>:
+> > > >   18: 14000004        b       28 <will_atomic_inc+0x10>
+> > > >   1c: 14000001        b       20 <will_atomic_inc+0x8>
+> > > >   20: 14000005        b       34 <will_atomic_inc+0x1c>
+> > > >   24: 14000001        b       28 <will_atomic_inc+0x10>
+> > > >   28: 52800028        mov     w8, #0x1                        // #1
+> > > >   2c: b828001f        stadd   w8, [x0]
+> > > >   30: d65f03c0        ret
+> > > >   34: 14000027        b       d0 <dump_kernel_offset+0x60>
+> > > >   38: d65f03c0        ret
+> > > >
+> > > > which is going to explode.
+> > >
+> > > I've come up with a simple reproducer for this issue:
+> > >
+> > > static bool branch_jump()
+> > > {
+> > >         asm_volatile_goto(
+> > >                 "1: b %l[l_yes2]"
+> > >                  : : : : l_yes2);
+> > >
+> > >         return false;
+> > > l_yes2:
+> > >         return true;
+> > > }
+> > >
+> > > static bool branch_test()
+> > > {
+> > >         return (!branch_jump() && !branch_jump());
+> > > }
+> > >
+> > > void andy_test(int *v)
+> > > {
+> > >         if (branch_test())
+> > >                 *v = 0xff;
+> > > }
+> > >
+> > > This leads to the following (it shouldn't do anything):
+> > >
+> > > 0000000000000000 <andy_test>:
+> > >    0:   14000004        b       10 <andy_test+0x10>
+> > >    4:   14000001        b       8 <andy_test+0x8>
+> > >    8:   14000004        b       18 <andy_test+0x18>
+> > >    c:   14000001        b       10 <andy_test+0x10>
+> > >   10:   52801fe8        mov     w8, #0xff                       // #255
+> > >   14:   b9000008        str     w8, [x0]
+> > >   18:   d65f03c0        ret
+> > >
+> > > The issue goes away with any of the following hunks:
+> > >
+> > >
+> > > @@ -55,7 +55,7 @@ static bool branch_jump()
+> > >
+> > >  static bool branch_test()
+> > >  {
+> > > -       return (!branch_jump() && !branch_jump());
+> > > +       return (!branch_jump());
+> > >  }
+> > >
+> > >  void andy_test(int *v)
+> > >
+> > >
+> > > or:
+> > >
+> > >
+> > > @@ -53,14 +53,10 @@ static bool branch_jump()
+> > >          return true;
+> > >  }
+> > >
+> > > -static bool branch_test()
+> > > -{
+> > > -       return (!branch_jump() && !branch_jump());
+> > > -}
+> > >
+> > >  void andy_test(int *v)
+> > >  {
+> > > -       if (branch_test())
+> > > +       if (!branch_jump() && !branch_jump())
+> > >                 *v = 0xff;
+> > >  }
+> >
+> > Indeed, playing with the definition of `__lse_ll_sc_body`, I can get
+> > the kernel to boot again.
+>
+> Thanks for investigating this.
+>
+> Did it boot to a prompt? I played with the structure of the code and
+> too was able to get it to boot, but I found that it hung later-on during
+> boot. Thus I lost a bit of confidence in it.
+>
+> >
+> > So I think your very helpful test cases are illustrating two different problems:
+> > https://godbolt.org/z/dMf7x-
+> > See the disassembly of `andy_test2`.  Reference to the correct label
+> > is emitted in the inline asm, but there's some silly unconditional
+> > branches to the next instruction.  That's issue #1 and part of the
+> > reason you see superfluous branches.  With that fixed, `andy_test2`
+> > would match between GCC and Clang.  I think that can be a very late
+> > peephole optimization (and further, we could probably combine labels
+> > that refer to the same location, oh and .Lfunc_endX could just use
+> > `.`, too!). LLVM devs noted that the x86 backend doesn't have this
+> > issue, but this is a curiously recurring pattern I'm noticing in LLVM
+> > where some arch agnostic optimization is only implemented for x86...
+> > I'm reading through our Branch Folding pass which I think should
+> > handle this, but I'll need to fire up a debugger.
+> >
+> > Issue #2 is the more critical issue, but may be conflated with issue
+> > #1.  Issue #2 is the nonsensical control flow with one level of
+> > inlining.  See how in the disassembly of `andy_test`, the first label
+> > referenced from inline assembly is *before* the mov/str when it should
+> > have been *after*.  Not sure where we could be going wrong, but it's
+> > straightforward for me to observe the code change as its transformed
+> > through LLVM, and I've debugged and fixed issues related to inlining
+> > asm goto before.
+>
+> You may also be interested in this:
+>
+> https://godbolt.org/z/8OthP2
+>
+> void andy_test3(int *v)
+> {
+>     if (!branch_jump())
+>         return;
+>
+>     if (!branch_jump())
+>         return;
+>
+>     *v = 0xff;
+> }
+>
+> (I used a similar approach with system_uses_lse_atomics to get the
+> kernel to boot a bit more).
+>
+> This generated code does the right thing here (in comparison to andy_test2).
+> I felt like this gave an insight as to what is going on, but I don't
+> have the knowledge to know what. It's as if the early return prevents the
+> compiler from getting confused when it should otherwise jump to the second
+> goto.
 
-Maybe at the audio level? The PLL itself runs at ~400Mhz so wouldn't 
-need sub-hz adjustment.
+Thanks for all of these test cases.  It highlighted a bug in our
+implementation that I have a fix in hand for (currently awaiting code
+review):
+https://reviews.llvm.org/D67252
 
-My understanding is that adjustments would be made based on an external 
-clock so if CLK framework rounds to 1hz then it would just take longer 
-for adjustment to kick in.
+Further, I wrote a check for this kind of bug in our verification
+pass, so that this kind of bug doesn't creep back in:
+https://reviews.llvm.org/D67196
 
->> Lacking users is not a good reason to carry broken code around.
-> 
-> Maybe add a Fixes tag so if anyone wants to use it in LTS kernels there
-> might be a chance that they'll find this patch mention code they're
-> using.
+I cleared https://reviews.llvm.org/D67252 w/ the clang-9 release
+manager; assuming I land it today or early next week we'll likely be
+able to pick it up for the clang-9 release.
 
-It doesn't meet stable kernel rules because it doesn't "fix a real bug 
-that bothers people" but it's still technically a fix:
-
-Fixes: 8646d4dcc7fb ("clk: imx: Add PLLs driver for imx8mm soc")
-
---
-Regards,
-Leonard
+I very much appreciate the help debugging and the reduced test cases.
+It's been a pleasure!
+-- 
+Thanks,
+~Nick Desaulniers
 
 _______________________________________________
 linux-arm-kernel mailing list
