@@ -2,49 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BBA0EAB230
-	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 07:58:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2888AB233
+	for <lists+linux-arm-kernel@lfdr.de>; Fri,  6 Sep 2019 08:01:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QdKSfJFNxbC8WB/KI3L6YsAM8YOaR5kifbyrjZRHg1U=; b=ey/qDbLqGGclpH
-	0SQRiggLGy8hm5zO2uMwkN2yb6AOs5N3yMnccreW9lqK0gg0Lz6hhbq8yWRULolZ6JfFGe7FXFWbI
-	qTQYdOQi7D7HG8mm2YGdgYIriGRmoD7+rVjPYwvp/tWtroZPSCtCbIEjX5vqsxC8Y7PM78VrNWAI8
-	IK6lxQevPYEl8O1lEqCghRQhpRU9TV9amxiQEz0dY9ro0c8ueQY9h9ENv+s2BuyVfaxjK2bFAqSZd
-	fKN4huSCUYIYSL35R6DsTvd9pASyNu4ag4Czp96ICpiSfnx8mE+BqttRZyCE5waDzt/Nt3gt/3PWg
-	W0kLlxAiHCP9NtxwA0bw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=mOHWLYsYBfaMgK0d3iHzwjxCa4vL7XchSQ/XUDRB0m0=; b=Cq9fnAbMKGLTOo
+	obmUfN1A0pLiXk2saQAhImmoO173wSwuKIalbwBMBdE29ZFfO2ZRDLb75vIudsEcZltG3crTUARkF
+	658aFShb7xJv+ETX8lXm8nyWM6jRCJdAYuVcQifJV/p59OePjp7QrpxKGKsnon0h+tmlhdSz5nIn0
+	Rn7CXC2/jqFD7kQ0YGY2O2sDw+2GlNMmq99E8thgwg1RX9MgwF7FwuGhN87PoUpAhJgJJ5YRhIKAL
+	21sH8v6ambZ6g8E6CEEM2pdxYsR9jRuiF5/MHqy908so0OnCuoiTBv9bM93J9ekpyUrDKSF/w/qfi
+	X6rX2dj+xr+M0V3s4nEA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i67GX-0004If-IO; Fri, 06 Sep 2019 05:58:37 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1i67Jh-0005t9-Ae; Fri, 06 Sep 2019 06:01:53 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i67GQ-0004IF-Of; Fri, 06 Sep 2019 05:58:32 +0000
-Received: from [10.18.29.226] (10.18.29.226) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Fri, 6 Sep
- 2019 13:59:06 +0800
-Subject: Re: [PATCH v2 4/4] arm64: dts: add support for A1 based Amlogic AD401
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
- <1567667251-33466-5-git-send-email-jianxin.pan@amlogic.com>
- <CAFBinCBSmW4y-Dz7EkJMV8HOU4k6Z0G-K6T77XnVrHyubaSsdg@mail.gmail.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <be032a85-b60d-f7f0-8404-b27784d809df@amlogic.com>
-Date: Fri, 6 Sep 2019 13:59:05 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i67JZ-0005s0-Ia; Fri, 06 Sep 2019 06:01:46 +0000
+X-UUID: 4abd6e27ed744027a7453885ec125f70-20190905
+X-UUID: 4abd6e27ed744027a7453885ec125f70-20190905
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <mark-pk.tsai@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 401149852; Thu, 05 Sep 2019 22:01:34 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 5 Sep 2019 23:01:32 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Fri, 6 Sep 2019 14:01:31 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Fri, 6 Sep 2019 14:01:31 +0800
+From: Mark-PK Tsai <mark-pk.tsai@mediatek.com>
+To: <peterz@infradead.org>, <mingo@redhat.com>, <acme@kernel.org>,
+ <alexander.shishkin@linux.intel.com>, <jolsa@redhat.com>,
+ <namhyung@kernel.org>, <matthias.bgg@gmail.com>
+Subject: [PATCH] perf/hw_breakpoint: Fix arch_hw_breakpoint
+ use-before-initialization
+Date: Fri, 6 Sep 2019 14:01:16 +0800
+Message-ID: <20190906060115.9460-1-mark-pk.tsai@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCBSmW4y-Dz7EkJMV8HOU4k6Z0G-K6T77XnVrHyubaSsdg@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.29.226]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190905_225830_807229_A3FC3879 
-X-CRM114-Status: GOOD (  16.77  )
+X-CRM114-CacheID: sfid-20190905_230145_622514_33FF0E70 
+X-CRM114-Status: UNSURE (   8.10  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -52,6 +59,8 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,91 +72,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Qiufang Dai <qiufang.dai@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Tao Zeng <tao.zeng@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: Alix Wu <alix.wu@mediatek.com>, YJ Chiang <yj.chiang@mediatek.com>,
+ linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ linux-arm-kernel@lists.infradead.org, Mark-PK Tsai <mark-pk.tsai@mediatek.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Martin,
+If we disable the compiler's auto-initialization feature
+(-fplugin-arg-structleak_plugin-byref or -ftrivial-auto-var-init=pattern)
+is disabled, arch_hw_breakpoint may be used before initialization after
+the change 9a4903dde2c86.
+(perf/hw_breakpoint: Split attribute parse and commit)
 
-Thanks for the review, we really appreciate your time.
-Please see my comments below.
+On our arm platform, the struct step_ctrl in arch_hw_breakpoint, which
+used to be zero-initialized by kzalloc, may be used in
+arch_install_hw_breakpoint without initialization.
 
-On 2019/9/6 4:15, Martin Blumenstingl wrote:
-> Hi Jianxin,
-> 
-> (it's great to see that you and your team are upstreaming this early)
-> 
-> On Thu, Sep 5, 2019 at 9:08 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
-> [...]
->> +       memory@0 {
->> +               device_type = "memory";
->> +               reg = <0x0 0x0 0x0 0x8000000>;
->> +               /*linux,usable-memory = <0x0 0x0 0x0 0x8000000>;*/
-> why do we need that comment here (I don't understand it - why doesn't
-> the "reg" property cover this)?
-> I replaced "linux,usable-memory" with reg, but forgot to remove this comment line. 
-I will remove this line in the next version. Thank you.
->> +       };
->> +};
->> +
->> +&uart_AO_B {
->> +       status = "okay";
->> +};
->> diff --git a/arch/arm64/boot/dts/amlogic/meson-a1.dtsi b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> new file mode 100644
->> index 00000000..4d476ac
->> --- /dev/null
->> +++ b/arch/arm64/boot/dts/amlogic/meson-a1.dtsi
->> @@ -0,0 +1,122 @@
->> +// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
->> +/*
->> + * Copyright (c) 2019 Amlogic, Inc. All rights reserved.
->> + */
->> +
->> +#include <dt-bindings/interrupt-controller/irq.h>
->> +#include <dt-bindings/interrupt-controller/arm-gic.h>
->> +
->> +/ {
->> +       compatible = "amlogic,a1";
->> +
->> +       interrupt-parent = <&gic>;
->> +       #address-cells = <2>;
->> +       #size-cells = <2>;
->> +
->> +       cpus {
->> +               #address-cells = <0x2>;
->> +               #size-cells = <0x0>;
-> only now I notice that all our other .dtsi also use hex values
-> (instead of decimal as just a few lines above) here
-> do you know if there is a particular reason for this?
-> 
-I just copied from the previous series, and didn't notice the difference before.> [...]
->> +               uart_AO_B: serial@fe002000 {
->> +                       compatible = "amlogic,meson-gx-uart",
->> +                                    "amlogic,meson-ao-uart";
->> +                                    reg = <0x0 0xfe002000 0x0 0x18>;
-> the indentation of the "reg" property is off here
-OK, I will fix it.
-> 
-> also I'm a bit surprised to see no busses (like aobus, cbus, periphs, ...) here
-> aren't there any busses defined in the A1 SoC implementation or are
-> were you planning to add them later?
->Unlike previous series,there is no Cortex-M3 AO CPU in A1, and there is no AO/EE power domain.
-Most of the registers are on the apb_32b bus.  aobus, cbus and periphs are not used in A1.
-> 
-> Martin
-> 
-> .
-> 
+Signed-off-by: Mark-PK Tsai <mark-pk.tsai@mediatek.com>
+Cc: YJ Chiang <yj.chiang@mediatek.com>
+Cc: Alix Wu <alix.wu@mediatek.com>
+---
+ kernel/events/hw_breakpoint.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/kernel/events/hw_breakpoint.c b/kernel/events/hw_breakpoint.c
+index c5cd852fe86b..8fb842394924 100644
+--- a/kernel/events/hw_breakpoint.c
++++ b/kernel/events/hw_breakpoint.c
+@@ -413,7 +413,7 @@ static int hw_breakpoint_parse(struct perf_event *bp,
+
+ int register_perf_hw_breakpoint(struct perf_event *bp)
+ {
+-	struct arch_hw_breakpoint hw;
++	struct arch_hw_breakpoint hw = {0};
+ 	int err;
+
+ 	err = reserve_bp_slot(bp);
+@@ -461,7 +461,7 @@ int
+ modify_user_hw_breakpoint_check(struct perf_event *bp, struct perf_event_attr *attr,
+ 			        bool check)
+ {
+-	struct arch_hw_breakpoint hw;
++	struct arch_hw_breakpoint hw = {0};
+ 	int err;
+
+ 	err = hw_breakpoint_parse(bp, attr, &hw);
+--
+2.18.0
 
 
 _______________________________________________
