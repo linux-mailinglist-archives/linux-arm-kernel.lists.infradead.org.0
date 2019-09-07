@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 50DBEAC452
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 06:01:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7EC85AC456
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 06:01:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SdZcR8Kxo2qjFJv+afzZga3TEdBFVqrlwbP03vPGxBU=; b=eDEUMN9BBPYoA8
-	MTgOt+lojuZehv0ocD2b1WpqTyTLATUTjExP3o+UqXdcg9RiwdXT637NL7icm9qacXwu5hw4ODk1/
-	oslPEG8ElbCXVAkeZJkV9EPM5Jgjh/JwN6m1jkuay+rFBKQRgZSMia+EXZYL2StWssF+kIwXryUM4
-	gEjtOaPbhIiSwyig0x7xT6YNJi1BuAHdVapIc7QdCWDFrBiTRukyBeafb9XK0V6/m+rLyHM9mvwn3
-	UiD0yWaROLml5dl5VLb0IGfnngyk8aWmfZDuz1PSFimgXYVbTcsikcjYFBBJmBDkHAF7Z+dNh2gsA
-	oodviHygfx1jnaySJvFg==;
+	List-Owner; bh=4vWXqxSqVKI0YwL111P1ISkG5S86pUfPHzrsc5owKYI=; b=upG537tDwxVWFg
+	mCtTZofGJXlG6yfGn/7kkCvgm5UdWL0/IhCvnmjmY1f90Aq8BQLdorqlMWIZGgmbiWmgrrVG9B9YG
+	OvsHOEPr1VCyQ5Y/GyDTaHKNZBkdG1zWu+S3qnHrZ00FIjIIVBr62jcixU4TuF9ZXrxecu6zaXMj7
+	Su7ru62b9u4QCLdNxUe7RnkPMhLvapCfJhh04jrsub3hv1pzL8Ilz5/ufySU+cOUQjwLtiie+mbFQ
+	REkA193gr8Yp+C0Qk/dgW6YcS8E0GzAe8lXCqOpR4KIVasBgK//0W29TQ5W36LuxEus52zA7VQ0OT
+	UtCCZSzbXiql8MCyj4aQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Rum-0001rp-Mr; Sat, 07 Sep 2019 04:01:32 +0000
+	id 1i6Rv9-00026p-R1; Sat, 07 Sep 2019 04:01:55 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Rua-0001rM-D3
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 04:01:21 +0000
+ id 1i6Rud-0001s7-Al
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 04:01:24 +0000
 Received: from localhost (unknown [194.251.198.105])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 082902070C;
- Sat,  7 Sep 2019 04:01:18 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6B81520854;
+ Sat,  7 Sep 2019 04:01:22 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567828879;
- bh=XlHMzdxEhCU8TNX/JZPcZ4hHgdKXexPwcQhZPxEgtMY=;
+ s=default; t=1567828883;
+ bh=iu+lz+zqRz/+ZH/PPEzbT7toVzrtFnm5HGdE4wWlvRo=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=z+7P3y/LZpSbeOzfqFEfzeCra5uDxJmaJM5SFdpbqIllO05qVgI9X8WtwtG6rsmun
- KffS7FdNpFbVTZXwUMWL3GPgi6E/Wuhpxe761/2CfMNmMiVCfhXTHoHJIh+ltQ1r8S
- eFiXZe7lAI7xVOTHo/Av1l2SP6qf/5GT86OXUq7o=
-Date: Sat, 7 Sep 2019 06:54:53 +0300
+ b=XkZG4FLkpMuUlfykl/s2Cjtw2sN2NURmDBBPEpjYtpByLcMJ7uUc25IwecXQHXmUA
+ bXWD2DoHkX3EMLNtKOBWAIE6u0TohVtD+T/XI45WydWqeIihnPfQF2j71VPG1oEpsB
+ ZlxEkT6RF0Y7LBx34lvC1oF5lXbcy0vm3D0Fuxhs=
+Date: Sat, 7 Sep 2019 07:01:16 +0300
 From: Maxime Ripard <mripard@kernel.org>
 To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH 1/9] crypto: Add allwinner subdirectory
-Message-ID: <20190907035453.urfqmdg3kg4kbtgc@flea>
+Subject: Re: [PATCH 3/9] dt-bindings: crypto: Add DT bindings documentation
+ for sun8i-ce Crypto Engine
+Message-ID: <20190907040116.lib532o2eqt4qnvv@flea>
 References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
- <20190906184551.17858-2-clabbe.montjoie@gmail.com>
+ <20190906184551.17858-4-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190906184551.17858-2-clabbe.montjoie@gmail.com>
+In-Reply-To: <20190906184551.17858-4-clabbe.montjoie@gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_210120_465654_771F4B46 
-X-CRM114-Status: UNSURE (   9.13  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190906_210123_417569_AAB4B594 
+X-CRM114-Status: GOOD (  15.34  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,18 +88,101 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 08:45:43PM +0200, Corentin Labbe wrote:
-> Since a second Allwinner crypto driver will be added, it is better to
-> create a dedicated subdirectory.
+On Fri, Sep 06, 2019 at 08:45:45PM +0200, Corentin Labbe wrote:
+> This patch adds documentation for Device-Tree bindings for the
+> Crypto Engine cryptographic accelerator driver.
 >
 > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 > ---
->  MAINTAINERS                      | 6 ++++++
->  drivers/crypto/Kconfig           | 2 ++
->  drivers/crypto/Makefile          | 1 +
->  drivers/crypto/allwinner/Kconfig | 6 ++++++
+>  .../bindings/crypto/allwinner,sun8i-ce.yaml   | 84 +++++++++++++++++++
+>  1 file changed, 84 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+>
+> diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+> new file mode 100644
+> index 000000000000..bd8ccedd6059
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
 
-I guess it would make sense to move the sun4i driver there too?
+So, usually we're using the first compatible supported here as the
+name.
+
+> @@ -0,0 +1,84 @@
+> +# SPDX-License-Identifier: GPL-2.0
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ce.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
+> +
+> +title: Allwinner Crypto Engine driver
+> +
+> +maintainers:
+> +  - Corentin Labbe <clabbe@baylibre.com>
+> +
+> +properties:
+> +  compatible:
+> +    oneOf:
+> +      - const: allwinner,sun8i-h3-crypto
+> +      - const: allwinner,sun8i-r40-crypto
+> +      - const: allwinner,sun50i-a64-crypto
+> +      - const: allwinner,sun50i-h5-crypto
+> +      - const: allwinner,sun50i-h6-crypto
+
+An enum would be better here, it provides a more obvious error
+message.
+
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +if:
+> +  properties:
+> +    compatible:
+> +      contains:
+> +        const: allwinner,sun50i-h6-crypto
+> +then:
+> +  clocks:
+> +    items:
+> +      - description: Bus clock
+> +      - description: Module clock
+> +      - description: MBus clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ahb
+> +      - const: mod
+> +      - const: mbus
+
+It looks like there's a reset line on the H6 as well for that
+controller (register 0x68c of the CCU, "CE_BGR_REG").
+
+> +else:
+> +  clocks:
+> +    items:
+> +      - description: Bus clock
+> +      - description: Module clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: ahb
+> +      - const: mod
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  reset-names:
+> +    const: ahb
+
+This prevents the usage of the additionalProperties property, which
+you should really use.
+
+What you can do instead is moving the clocks and clock-names
+description under properties, with a minItems of 2 and a maxItems of
+3. Then you can restrict the length of that property to either 2 or 3
+depending on the case here.
 
 Maxime
 
