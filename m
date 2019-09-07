@@ -2,45 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E826AC7F4
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:09:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5FBEAC7F5
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:09:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9VamCdfDTLJO+8XVNELIIkdvZBW6nwSsYFacslYxbKE=; b=X2zJ1lyhfmjDRU
-	IHlQcos0myt/3bwuEUAfjw5fgd53xlqHWMv9iaXyyO1curD9XU5/B/ibOSRLLYgR/nd/Y+5/uNo7G
-	R94nEh32IJ6Uc2CpXGtvD/3vYse25H5dTvJ9jMwyhV8L4clpr1DaDRbH85QHdhusJvDlNsBG56OwV
-	fdBgMZhsZ4QVR5FrsOH1Yx54ARxHPMaw3fmWrQeYQLIYfJyx+daOE98cTDQyilqeiGJQoSGhS+L9C
-	2pzpzw+cGqodFkZnvNMNhi6TmWd34rwbSDSIH/tVrECknvkx+Os8j/rh6Os1Ae3X/eYv8Sf0IEFmB
-	9RnlcwpOV82WsZ7cqfzA==;
+	List-Owner; bh=/YYWp93kQIWsEV/aBhnQQTUiHOdzkWg/N9ZYnZTsops=; b=CXd/M/rPjua9Fu
+	sPH3+O1Oxy+O8nU0hn1JQ1SG7Ep2swZ94zeNtL40sZ0IGi+nz2jzdGv907GNp5N/3R6rZd7V6D36F
+	IQ0zwakoQIP1ARo85kOiW9vKOPoMCH3tOL0nqyPaAqjo47nKw55/1Dt8LiDkGqwICUEn3616ZTYu9
+	BgPaJAN24jyYl2in5YNOunO5mveVbgT5iZHmDJSMZmk63gFcd4+UVjSxSWt2qd5u7gcHdeJtE8O3o
+	5r3IS6Z26ueJT39Fny62Qb3uBtDWPwRhjD3HFxusomAUHdnRbfamDeW6r1RSE7ksF8YDImtWfkIGO
+	feh0qmO2zW/6iJysiopg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6eDL-00019C-3F; Sat, 07 Sep 2019 17:09:31 +0000
+	id 1i6eDc-0001N5-Hc; Sat, 07 Sep 2019 17:09:48 +0000
 Received: from muru.com ([72.249.23.125])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6eCy-00011F-3M
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 17:09:09 +0000
+ id 1i6eD6-00019V-Oh
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 17:09:18 +0000
 Received: from atomide.com (localhost [127.0.0.1])
- by muru.com (Postfix) with ESMTPS id 9A72A805C;
- Sat,  7 Sep 2019 17:09:35 +0000 (UTC)
-Date: Sat, 7 Sep 2019 10:09:02 -0700
+ by muru.com (Postfix) with ESMTPS id 6BF00805C;
+ Sat,  7 Sep 2019 17:09:44 +0000 (UTC)
+Date: Sat, 7 Sep 2019 10:09:11 -0700
 From: Tony Lindgren <tony@atomide.com>
 To: "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: Re: [PATCH 3/4] ARM: dts: omap3: bulk convert compatible to be
- explicitly ti,omap3430 or ti,omap3630 or ti,am3517
-Message-ID: <20190907170902.GJ52127@atomide.com>
+Subject: Re: [PATCH 4/4] DTS: bindings: omap: update bindings documentation
+Message-ID: <20190907170911.GK52127@atomide.com>
 References: <cover.1567839375.git.hns@goldelico.com>
- <2c9eb085606de4a52d73a2461b1997265cdd2ea5.1567839375.git.hns@goldelico.com>
+ <3063019699f21e161221897e14c124a4e5366fa0.1567839375.git.hns@goldelico.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <2c9eb085606de4a52d73a2461b1997265cdd2ea5.1567839375.git.hns@goldelico.com>
+In-Reply-To: <3063019699f21e161221897e14c124a4e5366fa0.1567839375.git.hns@goldelico.com>
 User-Agent: Mutt/1.11.4 (2019-03-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_100908_204502_8A33D117 
-X-CRM114-Status: UNSURE (   8.79  )
+X-CRM114-CacheID: sfid-20190907_100917_027725_35983B6E 
+X-CRM114-Status: UNSURE (   6.21  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -80,28 +79,12 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 * H. Nikolaus Schaller <hns@goldelico.com> [190907 06:57]:
-> For the ti-cpufreq driver we need a clear separation between omap34 and omap36 families
-> since they have different silicon revisions and efuses.
-> 
-> So far ti,omap3630/ti,omap36xx is just an additional flag to ti,omap3 while omap34 has no
-> required entry.
-> 
-> Therefore we can not match omap34 boards properly.
-> 
-> This needs to add ti,omap3430 and ti,omap3630 where it is missing.
-> 
-> We also clean up some instances of missing ti,am3517 so that we can rely on
-> seeing either one of:
-> 
-> ti,am3517
-> ti,omap3430
-> ti,omap3630
-> 
-> in addition to ti,omap3.
-> 
-> We leave ti,omap34xx and ti,omap36xx untouched for compatibility.
-
-Thanks for doing this:
+> * clarify that we now need either "ti,omap3430" or "ti,omap3630" or "ti,am3517" for omap3 chips
+> * clarify that "ti,omap3" has no default
+> * clarify that AM33x is not an "ti,omap3"
+> * clarify that the list of boards is incomplete
+> * remove some "ti,am33xx", "ti,omap3"
+> * add some missing "ti,omap4"
 
 Acked-by: Tony Lindgren <tony@atomide.com>
 
