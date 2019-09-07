@@ -2,7 +2,7 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F26E8AC50B
+	by mail.lfdr.de (Postfix) with ESMTPS id C4FB9AC50A
 	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 08:57:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
@@ -10,34 +10,34 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9cJecPZr1s8wlXF1qvfaH7noxRebD1er2Lu0tF2AKE8=; b=GfoLXduY3pFBzL
-	64/ifBGRfJYTjiVwW/mToHcFPCrND/PUU92e0B+QF1YWqo5xgHbSJfyGBaIBF4B+brwrOILzgDY76
-	rnTIixyqZk5kIW5es/62dnAZEHWM8ocNhz2T2VgQzPKUWu5JBdqhi9G7UcE0DEXocXij8kkYYTD1k
-	NTzmlgMR8ixEYJuARR7LLgtIQTj/LPlaf7VWDG4mE4sO3v7FGTwKf+VkGODgoTHyv0rjr3uzb20+o
-	yiXmG/5CnfnfGls6Rk90Ai09eCUG7v/8fPg5eY14CDu/2joNGhgKG+/tk2xgCHHIn6cr8iFwq9aA1
-	sEOcKUnk5atLlrz1XyaA==;
+	List-Owner; bh=KjSftXmou8HhsvCv9hpvt0bFcrt16NqT9ZQPBv8mgXs=; b=KAn+tHOD7kqWUL
+	01aY8glxesjqse43myRgWcpH2S9lhkr5ohrruh4Groij7f/iqJKYI2g8Fa6o6+3kLv6yki/jzSeOe
+	/czLCWD3dmhl70Q8875J65OT/TDSvqpNk1uYxnpCTX811o8TDr7MxO8UjE20pJW6QhH8gV49GrXcV
+	7gyNTxFcEsZNw6K35MnFoq0g6biv0Ihb3zGWGXglC7FBVuKdSu+tumirmixVpIvh9fJOrXrJp5v+l
+	AEnIZut09cijSS1kM5Ic3DO6P6zmB1aBrJ/+4E9jeHFzhbvhxOGu4hGqPYY0O7NFf/ZMHGa/XTHRI
+	UPXw+WF5w4t1bm/NZlaA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Uf9-0003Ih-Vl; Sat, 07 Sep 2019 06:57:36 +0000
-Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::7])
+	id 1i6Uev-00034e-14; Sat, 07 Sep 2019 06:57:21 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Ue7-0002Zk-J4
+ id 1i6Ue7-0002Zm-IX
  for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 06:56:35 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1567839378;
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1567839379;
  s=strato-dkim-0002; d=goldelico.com;
  h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
  X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=AqD/iPQEOInFz2Pgsnu5OkcHusIVOg4mimADn66JWVw=;
- b=QFhvBnzFTdNx7maS+gy7l2/d1SDqAdF3Ibm4Z/1h0vS7gMw35kwuJNHHiT3eRGQKFC
- 1EUViEHubFOSuL/EVgdhpRyLBMbwmLemnoYQrodolZBEWU6DY4wbmauosxbRCdXXFek/
- Dj2BRNR+RqHw1PEmQ6MgNKgbL4QLOmVRCxviYrZ5mL1ACzGlLE+xnfNkIGqLRsX/KsEb
- j/SCTsfNPnnEVxOTU1MTRJ3Yib1KcTV8KKNLZmYOR19Q6cHSiXfPuBULUdZS/Bkdxvbg
- p4EVGC3A4CXLyBO6WoyzhsxwCBBCk7ftWKPzy91OXhXL8anzu5ZU/T2ahkcaSjm83z3i
- Vewg==
+ bh=uyXL6ZJKRYKrWZM3YkcbBBmQQtBUP2/DT8Wi8EzHQ4o=;
+ b=WLjPC9+bVBNMfeI/+gkUcyzyXjrdK/4ung60GIGf3NN6h0UdfMtbN+oJE86sdS9D0o
+ JL14yx8gXG3yCyEL5v1zGDgQrYRT7VhEf992qwSD4rKNsQgcQTjMtkb8rKS+id2vzB72
+ i8WPo1hovhmG+QQIq5CTWZ26+ST1v/Zsg8MNy/Yr8NTlpWqwkfnL+Mj310TOIDCQ6eo/
+ z1BU9ThlM5P/tzjAR3ElJMObFeHOrqWiGO2Q2pCATiQoYtHUXgQuwUkiGXSon/FEcQkY
+ vllo5PzvnnIhmEvro24EIX6idh3HSGhq3D15gVPK2qchf4sKsrCxEjAwSNKbgCB1w99j
+ RVBg==
 X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXL8GTntuxg="
 X-RZG-CLASS-ID: mo00
 Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.27.0 DYNA|AUTH)
- with ESMTPSA id u036f9v876uIqXE
+ with ESMTPSA id u036f9v876uIqXF
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
  521 ECDH bits, eq. 15360 bits RSA))
  (Client did not present a certificate);
@@ -54,16 +54,17 @@ To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
  Javier Martinez Canillas <javier@dowhile0.org>,
  Roger Quadros <rogerq@ti.com>, Teresa Remmet <t.remmet@phytec.de>,
  "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: [PATCH 1/4] cpufreq: ti-cpufreq: add support for omap34xx and omap36xx
-Date: Sat,  7 Sep 2019 08:56:12 +0200
-Message-Id: <0eb7129f6148faac0150d6299ac97347484c7125.1567839375.git.hns@goldelico.com>
+Subject: [PATCH 2/4] ARM: dts: replace opp-v1 tables by opp-v2 for omap34xx
+ and omap36xx
+Date: Sat,  7 Sep 2019 08:56:13 +0200
+Message-Id: <326e1bfe9e7c04346b4fcc0386303d7f93d0ba77.1567839375.git.hns@goldelico.com>
 X-Mailer: git-send-email 2.19.1
 In-Reply-To: <cover.1567839375.git.hns@goldelico.com>
 References: <cover.1567839375.git.hns@goldelico.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_235632_216450_4380533F 
-X-CRM114-Status: GOOD (  18.18  )
+X-CRM114-CacheID: sfid-20190906_235632_225423_53F4A18F 
+X-CRM114-Status: GOOD (  14.43  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -72,7 +73,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [2a01:238:20a:202:5302:0:0:7 listed in]
+ low trust [2a01:238:20a:202:5302:0:0:6 listed in]
  [list.dnswl.org]
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -101,190 +102,208 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds code and tables to read the silicon revision and
-eFuse (speed binned / 720 MHz grade) bits for selecting
-opp-v2 table entries.
+In addition, move omap3 from whitelist to blacklist in cpufreq-dt-platdev
+in the same patch, because doing either first breaks operation and
+may make trouble in bisect.
 
-Since these bits are not always part of the syscon register
-range (like for am33xx, am43, dra7), we add code to directly
-read the register values using ioremap() if syscon access fails.
+We also can remove opp-v1 table for omap3-n950-n9 since it is now
+automatically detected.
 
-The format of the opp-supported-hw entries is that it has
-two 32 bit bitfields. E.g.:
-
-	opp-supported-hw = <0xffffffff 3>
-
-The first value is matched against the bit position of the
-silicon revision which is (see TRM)
-
-omap34xx:
-BIT(0)	ES1.0
-BIT(1)	ES2.0
-BIT(2)	ES2.1
-BIT(3)	ES3.0
-BIT(4)	ES3.1
-BIT(7)	ES3.1.2
-
-omap36xx:
-BIT(0)	ES1.0
-BIT(1)	ES1.1
-BIT(2)	ES1.2
-
-The second value is matched against the speed grade eFuse:
-
-BIT(0)	no high speed OPP
-BIT(1)	high speed OPP
-
-This means for the example above that it is always enabled
-while e.g.
-
-	opp-supported-hw = <0x1 2>
-
-enables the OPP only for ES1.0 BIT(0) and if the high speed
-eFuse is set BIT(1).
+We also fix a wrong OPP4 voltage for omap3430 which must be
+0.6V + 54*12.5mV = 1275mV. Otherwise the twl4030 driver will reject
+this OPP.
 
 Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
 ---
- drivers/cpufreq/ti-cpufreq.c | 91 +++++++++++++++++++++++++++++++++++-
- 1 file changed, 89 insertions(+), 2 deletions(-)
+ arch/arm/boot/dts/omap3-n950-n9.dtsi |  7 ---
+ arch/arm/boot/dts/omap34xx.dtsi      | 65 ++++++++++++++++++++++++----
+ arch/arm/boot/dts/omap36xx.dtsi      | 53 +++++++++++++++++++----
+ drivers/cpufreq/cpufreq-dt-platdev.c |  2 +-
+ 4 files changed, 102 insertions(+), 25 deletions(-)
 
-diff --git a/drivers/cpufreq/ti-cpufreq.c b/drivers/cpufreq/ti-cpufreq.c
-index 2ad1ae17932d..f2f58d689320 100644
---- a/drivers/cpufreq/ti-cpufreq.c
-+++ b/drivers/cpufreq/ti-cpufreq.c
-@@ -31,6 +31,11 @@
- #define DRA7_EFUSE_OD_MPU_OPP			BIT(1)
- #define DRA7_EFUSE_HIGH_MPU_OPP			BIT(2)
+diff --git a/arch/arm/boot/dts/omap3-n950-n9.dtsi b/arch/arm/boot/dts/omap3-n950-n9.dtsi
+index 5441e9ffdbb4..e98b0c615f19 100644
+--- a/arch/arm/boot/dts/omap3-n950-n9.dtsi
++++ b/arch/arm/boot/dts/omap3-n950-n9.dtsi
+@@ -11,13 +11,6 @@
+ 	cpus {
+ 		cpu@0 {
+ 			cpu0-supply = <&vcc>;
+-			operating-points = <
+-				/* kHz    uV */
+-				300000  1012500
+-				600000  1200000
+-				800000  1325000
+-				1000000	1375000
+-			>;
+ 		};
+ 	};
  
-+#define OMAP3_CONTROL_DEVICE_STATUS		0x4800244C
-+#define OMAP3_CONTROL_IDCODE			0x4830A204
-+#define OMAP34xx_ProdID_SKUID			0x4830A20C
-+#define OMAP3_SYSCON_BASE	(0x48000000 + 0x2000 + 0x270)
+diff --git a/arch/arm/boot/dts/omap34xx.dtsi b/arch/arm/boot/dts/omap34xx.dtsi
+index f572a477f74c..91154829f86a 100644
+--- a/arch/arm/boot/dts/omap34xx.dtsi
++++ b/arch/arm/boot/dts/omap34xx.dtsi
+@@ -16,19 +16,66 @@
+ / {
+ 	cpus {
+ 		cpu: cpu@0 {
+-			/* OMAP343x/OMAP35xx variants OPP1-5 */
+-			operating-points = <
+-				/* kHz    uV */
+-				125000   975000
+-				250000  1075000
+-				500000  1200000
+-				550000  1270000
+-				600000  1350000
+-			>;
++			/* OMAP343x/OMAP35xx variants OPP1-6 */
++			operating-points-v2 = <&cpu0_opp_table>;
 +
- #define VERSION_COUNT				2
+ 			clock-latency = <300000>; /* From legacy driver */
+ 		};
+ 	};
  
- struct ti_cpufreq_data;
-@@ -84,6 +89,13 @@ static unsigned long dra7_efuse_xlate(struct ti_cpufreq_data *opp_data,
- 	return calculated_efuse;
- }
- 
-+static unsigned long omap3_efuse_xlate(struct ti_cpufreq_data *opp_data,
-+				      unsigned long efuse)
-+{
-+	/* OPP enable bit ("Speed Binned") */
-+	return BIT(efuse);
-+}
++	/* see Documentation/devicetree/bindings/opp/opp.txt */
++	cpu0_opp_table: opp-table {
++		compatible = "operating-points-v2-ti-cpu";
++		syscon = <&scm_conf>;
 +
- static struct ti_cpufreq_soc_data am3x_soc_data = {
- 	.efuse_xlate = amx3_efuse_xlate,
- 	.efuse_fallback = AM33XX_800M_ARM_MPU_MAX_FREQ,
-@@ -111,6 +123,56 @@ static struct ti_cpufreq_soc_data dra7_soc_data = {
- 	.multi_regulator = true,
++		opp1-125000000 {
++			opp-hz = /bits/ 64 <125000000>;
++			/*
++			 * we currently only select the max voltage from table
++			 * Table 3-3 of the omap3530 Data sheet (SPRS507F).
++			 * Format is: <target min max>
++			 */
++			opp-microvolt = <975000 975000 975000>;
++			/*
++			 * first value is silicon revision bit mask
++			 * second one 720MHz Device Identification bit mask
++			 */
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp2-250000000 {
++			opp-hz = /bits/ 64 <250000000>;
++			opp-microvolt = <1075000 1075000 1075000>;
++			opp-supported-hw = <0xffffffff 3>;
++			opp-suspend;
++		};
++
++		opp3-500000000 {
++			opp-hz = /bits/ 64 <500000000>;
++			opp-microvolt = <1200000 1200000 1200000>;
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp4-550000000 {
++			opp-hz = /bits/ 64 <550000000>;
++			opp-microvolt = <1275000 1275000 1275000>;
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp5-600000000 {
++			opp-hz = /bits/ 64 <600000000>;
++			opp-microvolt = <1350000 1350000 1350000>;
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp6-720000000 {
++			opp-hz = /bits/ 64 <720000000>;
++			opp-microvolt = <1350000 1350000 1350000>;
++			/* only high-speed grade omap3530 devices */
++			opp-supported-hw = <0xffffffff 2>;
++		};
++	};
++
+ 	ocp@68000000 {
+ 		omap3_pmx_core2: pinmux@480025d8 {
+ 			compatible = "ti,omap3-padconf", "pinctrl-single";
+diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
+index 6fb23ada1f64..44f25b0eb45b 100644
+--- a/arch/arm/boot/dts/omap36xx.dtsi
++++ b/arch/arm/boot/dts/omap36xx.dtsi
+@@ -19,15 +19,52 @@
+ 	};
+ 
+ 	cpus {
+-		/* OMAP3630/OMAP37xx 'standard device' variants OPP50 to OPP130 */
++		/* OMAP3630/OMAP37xx variants OPP50 to OPP130 and OPP1G */
+ 		cpu: cpu@0 {
+-			operating-points = <
+-				/* kHz    uV */
+-				300000  1012500
+-				600000  1200000
+-				800000  1325000
+-			>;
+-			clock-latency = <300000>; /* From legacy driver */
++			operating-points-v2 = <&cpu0_opp_table>;
++
++			clock-latency = <300000>; /* From omap-cpufreq driver */
++		};
++	};
++
++	/* see Documentation/devicetree/bindings/opp/opp.txt */
++	cpu0_opp_table: opp-table {
++		compatible = "operating-points-v2-ti-cpu";
++		syscon = <&scm_conf>;
++
++		opp50-300000000 {
++			opp-hz = /bits/ 64 <300000000>;
++			/*
++			 * we currently only select the max voltage from table
++			 * Table 4-19 of the DM3730 Data sheet (SPRS685B)
++			 * Format is: <target min max>
++			 */
++			opp-microvolt = <1012500 1012500 1012500>;
++			/*
++			 * first value is silicon revision bit mask
++			 * second one is "speed binned" bit mask
++			 */
++			opp-supported-hw = <0xffffffff 3>;
++			opp-suspend;
++		};
++
++		opp100-600000000 {
++			opp-hz = /bits/ 64 <600000000>;
++			opp-microvolt = <1200000 1200000 1200000>;
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp130-800000000 {
++			opp-hz = /bits/ 64 <800000000>;
++			opp-microvolt = <1325000 1325000 1325000>;
++			opp-supported-hw = <0xffffffff 3>;
++		};
++
++		opp1g-1000000000 {
++			opp-hz = /bits/ 64 <1000000000>;
++			opp-microvolt = <1375000 1375000 1375000>;
++			/* only on am/dm37x with speed-binned bit set */
++			opp-supported-hw = <0xffffffff 2>;
+ 		};
+ 	};
+ 
+diff --git a/drivers/cpufreq/cpufreq-dt-platdev.c b/drivers/cpufreq/cpufreq-dt-platdev.c
+index 03dc4244ab00..68b7fc4225f8 100644
+--- a/drivers/cpufreq/cpufreq-dt-platdev.c
++++ b/drivers/cpufreq/cpufreq-dt-platdev.c
+@@ -86,7 +86,6 @@ static const struct of_device_id whitelist[] __initconst = {
+ 	{ .compatible = "st-ericsson,u9540", },
+ 
+ 	{ .compatible = "ti,omap2", },
+-	{ .compatible = "ti,omap3", },
+ 	{ .compatible = "ti,omap4", },
+ 	{ .compatible = "ti,omap5", },
+ 
+@@ -132,6 +131,7 @@ static const struct of_device_id blacklist[] __initconst = {
+ 	{ .compatible = "ti,am33xx", },
+ 	{ .compatible = "ti,am43", },
+ 	{ .compatible = "ti,dra7", },
++	{ .compatible = "ti,omap3", },
+ 
+ 	{ }
  };
- 
-+/*
-+ * OMAP35x TRM (SPRUF98K):
-+ *  CONTROL_IDCODE (0x4830 A204) describes Silicon revisions.
-+ *  Control OMAP Status Register 15:0 (Address 0x4800 244C)
-+ *    to separate between omap3503, omap3515, omap3525, omap3530
-+ *    and feature presence.
-+ *    There are encodings for versions limited to 400/266MHz
-+ *    but we ignore.
-+ *    Not clear if this also holds for omap34xx.
-+ *  some eFuse values e.g. CONTROL_FUSE_OPP1_VDD1
-+ *    are stored in the SYSCON register range
-+ *  Register 0x4830A20C [ProdID.SKUID] [0:3]
-+ *    0x0 for normal 600/430MHz device.
-+ *    0x8 for 720/520MHz device.
-+ *    Not clear what omap34xx value is.
-+ */
-+
-+static struct ti_cpufreq_soc_data omap34xx_soc_data = {
-+	.efuse_xlate = omap3_efuse_xlate,
-+	.efuse_offset = OMAP34xx_ProdID_SKUID - OMAP3_SYSCON_BASE,
-+	.efuse_shift = 3,
-+	.efuse_mask = BIT(3),
-+	.rev_offset = OMAP3_CONTROL_IDCODE - OMAP3_SYSCON_BASE,
-+	.multi_regulator = false,
-+};
-+
-+/*
-+ * AM/DM37x TRM (SPRUGN4M)
-+ *  CONTROL_IDCODE (0x4830 A204) describes Silicon revisions.
-+ *  Control Device Status Register 15:0 (Address 0x4800 244C)
-+ *    to separate between am3703, am3715, dm3725, dm3730
-+ *    and feature presence.
-+ *   Speed Binned = Bit 9
-+ *     0 800/600 MHz
-+ *     1 1000/800 MHz
-+ *  some eFuse values e.g. CONTROL_FUSE_OPP 1G_VDD1
-+ *    are stored in the SYSCON register range.
-+ *  There is no 0x4830A20C [ProdID.SKUID] register (exists but
-+ *    seems to always read as 0).
-+ */
-+
-+static struct ti_cpufreq_soc_data omap36xx_soc_data = {
-+	.efuse_xlate = omap3_efuse_xlate,
-+	.efuse_offset = OMAP3_CONTROL_DEVICE_STATUS - OMAP3_SYSCON_BASE,
-+	.efuse_shift = 9,
-+	.efuse_mask = BIT(9),
-+	.rev_offset = OMAP3_CONTROL_IDCODE - OMAP3_SYSCON_BASE,
-+	.multi_regulator = false,
-+};
-+
- /**
-  * ti_cpufreq_get_efuse() - Parse and return efuse value present on SoC
-  * @opp_data: pointer to ti_cpufreq_data context
-@@ -127,7 +189,17 @@ static int ti_cpufreq_get_efuse(struct ti_cpufreq_data *opp_data,
- 
- 	ret = regmap_read(opp_data->syscon, opp_data->soc_data->efuse_offset,
- 			  &efuse);
--	if (ret) {
-+	if (ret == -EIO) {
-+		/* not a syscon register! */
-+		void __iomem *regs = ioremap(OMAP3_SYSCON_BASE +
-+				opp_data->soc_data->efuse_offset, 4);
-+
-+		if (!regs)
-+			return -ENOMEM;
-+		efuse = readl(regs);
-+		iounmap(regs);
-+		}
-+	else if (ret) {
- 		dev_err(dev,
- 			"Failed to read the efuse value from syscon: %d\n",
- 			ret);
-@@ -158,7 +230,17 @@ static int ti_cpufreq_get_rev(struct ti_cpufreq_data *opp_data,
- 
- 	ret = regmap_read(opp_data->syscon, opp_data->soc_data->rev_offset,
- 			  &revision);
--	if (ret) {
-+	if (ret == -EIO) {
-+		/* not a syscon register! */
-+		void __iomem *regs = ioremap(OMAP3_SYSCON_BASE +
-+				opp_data->soc_data->rev_offset, 4);
-+
-+		if (!regs)
-+			return -ENOMEM;
-+		revision = readl(regs);
-+		iounmap(regs);
-+		}
-+	else if (ret) {
- 		dev_err(dev,
- 			"Failed to read the revision number from syscon: %d\n",
- 			ret);
-@@ -190,6 +272,11 @@ static const struct of_device_id ti_cpufreq_of_match[] = {
- 	{ .compatible = "ti,am33xx", .data = &am3x_soc_data, },
- 	{ .compatible = "ti,am43", .data = &am4x_soc_data, },
- 	{ .compatible = "ti,dra7", .data = &dra7_soc_data },
-+	{ .compatible = "ti,omap34xx", .data = &omap34xx_soc_data, },
-+	{ .compatible = "ti,omap36xx", .data = &omap36xx_soc_data, },
-+	/* legacy */
-+	{ .compatible = "ti,omap3430", .data = &omap34xx_soc_data, },
-+	{ .compatible = "ti,omap3630", .data = &omap36xx_soc_data, },
- 	{},
- };
- 
 -- 
 2.19.1
 
