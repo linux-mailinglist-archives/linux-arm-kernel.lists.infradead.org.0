@@ -2,64 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4E5FDAC65D
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 13:34:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C148AC66E
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 13:36:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
+	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
+	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x/FgYEfCE5fd1mCweVXV21+SiJ0LgonGxFFrno+WlfQ=; b=IpdsbAnWuon3Ig
-	K3+7Q0uoWNhvvRSyOCfMCDYr6ywO3x28pB3L9vprSTQd3rYh0x7eRXx5Oj1nG+zvObx5fWiBzzAtM
-	ISaa7gqTMCBne0rREspiwuBCOYKeKSjDTKjy40VOG67NAkLxPG8vzErmfezs51iILcqZNJBH2cPvh
-	0IqKw8AqXcpIJVA1wc6oxfX4Ro/Cj5ZZ/NwmwQniechdcGXH+u/+DWzJQPQ6XKXMfcXn0pc4AmZpT
-	AGbCRMcG7nYgsMXQEuukpwXpFF3G/wxOvuWbLHd8+FD1j2AecCoLg9gOzgvUSrbOE2wjy+EhSPzXj
-	PHFoGFX5RXr4Na0LMANw==;
+	List-Owner; bh=ELew+ZDgfIHiQ9QVvfYHX/FPTfly2Mh/gSFXv/h3krE=; b=V86d4eHLeUkTQy
+	N0o13n1HkKYrbzvaJXQdGQVUfffKm78g8PHviEiEZlVMkS+ufebH0EywJehben4PMR67LS+OXQgnD
+	BvS4URroj+/8HqPG4Hab/TiaYwIqul9bhpz8RzJX2tWGo04jPaseSGX5M/zfGLniOZIHRfzk5pkbo
+	Xn2Rb4PH1F9xr8edpFQMSVz0qLeGby1GsOoNsKXeGh3y4xnzgkd6yQGfe//qDUoS+K38BTLIIAggu
+	FNLLnhxLbNnhto9LZ+IQDQ//tVun3z9QpQNh5gwXSueI2GZE86uWrSD3wo87wmo18O7qRwxhhOyYd
+	kQfrCrJ9OHTD29mQ+FpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Yyb-0002bI-13; Sat, 07 Sep 2019 11:33:57 +0000
+	id 1i6Z0X-0004Ac-S1; Sat, 07 Sep 2019 11:35:57 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6YyU-0002aZ-MF
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 11:33:52 +0000
+ id 1i6Z0R-0004AF-7L
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 11:35:53 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3960E20854;
- Sat,  7 Sep 2019 11:33:45 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 0DAC7218AF;
+ Sat,  7 Sep 2019 11:35:48 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567856028;
- bh=P50xo7m/hUx5iwji95aKRMlv0t3ad1ikhaodbFQe45s=;
+ s=default; t=1567856150;
+ bh=VOxfcQzwaHM0XiCY/XXEfAZTtrIlO4ZRE/buwNFjUxw=;
  h=From:To:Subject:Date:From;
- b=kQnJwuopno6wn2b1m0kIb1H/0+B0zHoerIfOkUqKzMVusUelej/q5l+lMKc1yUEGv
- Cc1DOvVkXMwxq5SY+YD8Y6GGXyq993ZCLzGbGTkpvYphtz7Gmx+YfTRv2gp5ISnZmi
- FTVJnW5e/WqMzzsXVHwKgpLYTHR0URvG19ArkPiA=
+ b=ejMPHeZ+1HnqQoRFodV1DvPkSbS+FqzcmIxBykf0WA1uM+9HbpjaRmMlaOpC9cJgL
+ ZVOfVsg+SYi50sBYI2nOlLJZ4cYLNyb3CTrLZrjEl4huwCmVRExS83gOS/25v6oqRn
+ p38pReB5ObKwZwQoK7QIUNdasAocnM3c68oh4ZX8=
 From: Krzysztof Kozlowski <krzk@kernel.org>
-To: Matt Mackall <mpm@selenic.com>, Herbert Xu <herbert@gondor.apana.org.au>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
- linux-crypto@vger.kernel.org, devicetree@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org,
- linux-kernel@vger.kernel.org
-Subject: [PATCH] dt-bindings: rng: exynos4-rng: Convert Exynos PRNG bindings
- to json-schema
-Date: Sat,  7 Sep 2019 13:33:27 +0200
-Message-Id: <20190907113327.3477-1-krzk@kernel.org>
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
+Subject: [PATCH 1/2] dt-bindings: sram: Convert SRAM bindings to json-schema
+Date: Sat,  7 Sep 2019 13:35:41 +0200
+Message-Id: <20190907113542.4096-1-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_043350_775350_641E2598 
-X-CRM114-Status: GOOD (  14.40  )
+X-CRM114-CacheID: sfid-20190907_043551_309210_D9688C13 
+X-CRM114-Status: GOOD (  20.27  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -79,66 +75,258 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Q29udmVydCBTYW1zdW5nIEV4eW5vcyBQc2V1ZG8gUmFuZG9tIE51bWJlciBHZW5lcmF0b3IgYmlu
-ZGluZ3MgdG8gRFQKc2NoZW1hIGZvcm1hdCB1c2luZyBqc29uLXNjaGVtYS4KClNpZ25lZC1vZmYt
-Ynk6IEtyenlzenRvZiBLb3psb3dza2kgPGtyemtAa2VybmVsLm9yZz4KLS0tCiAuLi4vYmluZGlu
-Z3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1ybmcudHh0ICAgICAgfCAxOSAtLS0tLS0tLS0KIC4uLi9i
-aW5kaW5ncy9ybmcvc2Ftc3VuZyxleHlub3M0LXJuZy55YW1sICAgICB8IDQxICsrKysrKysrKysr
-KysrKysrKysKIE1BSU5UQUlORVJTICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB8
-ICAyICstCiAzIGZpbGVzIGNoYW5nZWQsIDQyIGluc2VydGlvbnMoKyksIDIwIGRlbGV0aW9ucygt
-KQogZGVsZXRlIG1vZGUgMTAwNjQ0IERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9y
-bmcvc2Ftc3VuZyxleHlub3M0LXJuZy50eHQKIGNyZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0
-aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1ybmcueWFtbAoKZGlm
-ZiAtLWdpdCBhL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvc2Ftc3VuZyxl
-eHlub3M0LXJuZy50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL3Nh
-bXN1bmcsZXh5bm9zNC1ybmcudHh0CmRlbGV0ZWQgZmlsZSBtb2RlIDEwMDY0NAppbmRleCBhMTNm
-YmRiNGJkODguLjAwMDAwMDAwMDAwMAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1ybmcudHh0CisrKyAvZGV2L251bGwKQEAgLTEsMTkg
-KzAsMCBAQAotRXh5bm9zIFBzZXVkbyBSYW5kb20gTnVtYmVyIEdlbmVyYXRvcgotCi1SZXF1aXJl
-ZCBwcm9wZXJ0aWVzOgotCi0tIGNvbXBhdGlibGUgIDogT25lIG9mOgotICAgICAgICAgICAgICAg
-IC0gInNhbXN1bmcsZXh5bm9zNC1ybmciIGZvciBFeHlub3M0MjEwIGFuZCBFeHlub3M0NDEyCi0g
-ICAgICAgICAgICAgICAgLSAic2Ftc3VuZyxleHlub3M1MjUwLXBybmciIGZvciBFeHlub3M1MjUw
-KwotLSByZWcgICAgICAgICA6IFNwZWNpZmllcyBiYXNlIHBoeXNpY2FsIGFkZHJlc3MgYW5kIHNp
-emUgb2YgdGhlIHJlZ2lzdGVycyBtYXAuCi0tIGNsb2NrcyAgICAgIDogUGhhbmRsZSB0byBjbG9j
-ay1jb250cm9sbGVyIHBsdXMgY2xvY2stc3BlY2lmaWVyIHBhaXIuCi0tIGNsb2NrLW5hbWVzIDog
-InNlY3NzIiBhcyBhIGNsb2NrIG5hbWUuCi0KLUV4YW1wbGU6Ci0KLQlybmdAMTA4MzA0MDAgewot
-CQljb21wYXRpYmxlID0gInNhbXN1bmcsZXh5bm9zNC1ybmciOwotCQlyZWcgPSA8MHgxMDgzMDQw
-MCAweDIwMD47Ci0JCWNsb2NrcyA9IDwmY2xvY2sgQ0xLX1NTUz47Ci0JCWNsb2NrLW5hbWVzID0g
-InNlY3NzIjsKLQl9OwpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
-bmdzL3JuZy9zYW1zdW5nLGV4eW5vczQtcm5nLnlhbWwgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRy
-ZWUvYmluZGluZ3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1ybmcueWFtbApuZXcgZmlsZSBtb2RlIDEw
-MDY0NAppbmRleCAwMDAwMDAwMDAwMDAuLjk5NGIwYmExMGQyZQotLS0gL2Rldi9udWxsCisrKyBi
-L0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ybmcvc2Ftc3VuZyxleHlub3M0LXJu
-Zy55YW1sCkBAIC0wLDAgKzEsNDEgQEAKKyMgU1BEWC1MaWNlbnNlLUlkZW50aWZpZXI6IEdQTC0y
-LjAKKyVZQU1MIDEuMgorLS0tCiskaWQ6IGh0dHA6Ly9kZXZpY2V0cmVlLm9yZy9zY2hlbWFzL3Ju
-Zy9zYW1zdW5nLGV4eW5vczQtcm5nLnlhbWwjCiskc2NoZW1hOiBodHRwOi8vZGV2aWNldHJlZS5v
-cmcvbWV0YS1zY2hlbWFzL2NvcmUueWFtbCMKKwordGl0bGU6IFNhbXN1bmcgRXh5bm9zIFNvQyBQ
-c2V1ZG8gUmFuZG9tIE51bWJlciBHZW5lcmF0b3IKKworbWFpbnRhaW5lcnM6CisgIC0gS3J6eXN6
-dG9mIEtvemxvd3NraSA8a3J6a0BrZXJuZWwub3JnPgorCitwcm9wZXJ0aWVzOgorICBjb21wYXRp
-YmxlOgorICAgIGVudW06CisgICAgICAtIHNhbXN1bmcsZXh5bm9zNC1ybmcgICAgICAgICAgICAg
-ICAgICAgIyBmb3IgRXh5bm9zNDIxMCBhbmQgRXh5bm9zNDQxMgorICAgICAgLSBzYW1zdW5nLGV4
-eW5vczUyNTAtcHJuZyAgICAgICAgICAgICAgICMgZm9yIEV4eW5vczUyNTArCisKKyAgcmVnOgor
-ICAgIG1heEl0ZW1zOiAxCisKKyAgY2xvY2tzOgorICAgIG1heEl0ZW1zOiAxCisKKyAgY2xvY2st
-bmFtZXM6CisgICAgaXRlbXM6CisgICAgICAtIGNvbnN0OiBzZWNzcworCityZXF1aXJlZDoKKyAg
-LSBjb21wYXRpYmxlCisgIC0gcmVnCisgIC0gY2xvY2stbmFtZXMKKyAgLSBjbG9ja3MKKworZXhh
-bXBsZXM6CisgIC0gfAorICAgIHJuZ0AxMDgzMDQwMCB7CisgICAgICBjb21wYXRpYmxlID0gInNh
-bXN1bmcsZXh5bm9zNC1ybmciOworICAgICAgcmVnID0gPDB4MTA4MzA0MDAgMHgyMDA+OworICAg
-ICAgY2xvY2tzID0gPCZjbG9jayAyNTU+OyAvLyBDTEtfU1NTCisgICAgICBjbG9jay1uYW1lcyA9
-ICJzZWNzcyI7CisgICAgfTsKZGlmZiAtLWdpdCBhL01BSU5UQUlORVJTIGIvTUFJTlRBSU5FUlMK
-aW5kZXggMzMxYzQwYWU2YTAxLi5jZGQyZjFmM2UxZjQgMTAwNjQ0Ci0tLSBhL01BSU5UQUlORVJT
-CisrKyBiL01BSU5UQUlORVJTCkBAIC0xNDE4MSw3ICsxNDE4MSw3IEBAIEw6CWxpbnV4LWNyeXB0
-b0B2Z2VyLmtlcm5lbC5vcmcKIEw6CWxpbnV4LXNhbXN1bmctc29jQHZnZXIua2VybmVsLm9yZwog
-UzoJTWFpbnRhaW5lZAogRjoJZHJpdmVycy9jcnlwdG8vZXh5bm9zLXJuZy5jCi1GOglEb2N1bWVu
-dGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1ybmcudHh0CitG
-OglEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3Mvcm5nL3NhbXN1bmcsZXh5bm9zNC1y
-bmcueWFtbAogCiBTQU1TVU5HIEVYWU5PUyBUUlVFIFJBTkRPTSBOVU1CRVIgR0VORVJBVE9SIChU
-Uk5HKSBEUklWRVIKIE06CcWBdWthc3ogU3RlbG1hY2ggPGwuc3RlbG1hY2hAc2Ftc3VuZy5jb20+
-Ci0tIAoyLjE3LjEKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3Rz
-LmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5m
-by9saW51eC1hcm0ta2VybmVsCg==
+Convert generic mmio-sram bindings to DT schema format using
+json-schema.
+
+Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
+---
+ .../devicetree/bindings/sram/sram.txt         |  80 ----------
+ .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
+ 2 files changed, 138 insertions(+), 80 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
+ create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
+
+diff --git a/Documentation/devicetree/bindings/sram/sram.txt b/Documentation/devicetree/bindings/sram/sram.txt
+deleted file mode 100644
+index e98908bd4227..000000000000
+--- a/Documentation/devicetree/bindings/sram/sram.txt
++++ /dev/null
+@@ -1,80 +0,0 @@
+-Generic on-chip SRAM
+-
+-Simple IO memory regions to be managed by the genalloc API.
+-
+-Required properties:
+-
+-- compatible : mmio-sram or atmel,sama5d2-securam
+-
+-- reg : SRAM iomem address range
+-
+-Reserving sram areas:
+----------------------
+-
+-Each child of the sram node specifies a region of reserved memory. Each
+-child node should use a 'reg' property to specify a specific range of
+-reserved memory.
+-
+-Following the generic-names recommended practice, node names should
+-reflect the purpose of the node. Unit address (@<address>) should be
+-appended to the name.
+-
+-Required properties in the sram node:
+-
+-- #address-cells, #size-cells : should use the same values as the root node
+-- ranges : standard definition, should translate from local addresses
+-           within the sram to bus addresses
+-
+-Optional properties in the sram node:
+-
+-- no-memory-wc : the flag indicating, that SRAM memory region has not to
+-                 be remapped as write combining. WC is used by default.
+-
+-Required properties in the area nodes:
+-
+-- reg : iomem address range, relative to the SRAM range
+-
+-Optional properties in the area nodes:
+-
+-- compatible : standard definition, should contain a vendor specific string
+-               in the form <vendor>,[<device>-]<usage>
+-- pool : indicates that the particular reserved SRAM area is addressable
+-         and in use by another device or devices
+-- export : indicates that the reserved SRAM area may be accessed outside
+-           of the kernel, e.g. by bootloader or userspace
+-- protect-exec : Same as 'pool' above but with the additional
+-		 constraint that code wil be run from the region and
+-		 that the memory is maintained as read-only, executable
+-		 during code execution. NOTE: This region must be page
+-		 aligned on start and end in order to properly allow
+-		 manipulation of the page attributes.
+-- label : the name for the reserved partition, if omitted, the label
+-          is taken from the node name excluding the unit address.
+-- clocks : a list of phandle and clock specifier pair that controls the
+-	   single SRAM clock.
+-
+-Example:
+-
+-sram: sram@5c000000 {
+-	compatible = "mmio-sram";
+-	reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
+-
+-	#address-cells = <1>;
+-	#size-cells = <1>;
+-	ranges = <0 0x5c000000 0x40000>;
+-
+-	smp-sram@100 {
+-		compatible = "socvendor,smp-sram";
+-		reg = <0x100 0x50>;
+-	};
+-
+-	device-sram@1000 {
+-		reg = <0x1000 0x1000>;
+-		pool;
+-	};
+-
+-	exported@20000 {
+-		reg = <0x20000 0x20000>;
+-		export;
+-	};
+-};
+diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+new file mode 100644
+index 000000000000..0821cdb4cef9
+--- /dev/null
++++ b/Documentation/devicetree/bindings/sram/sram.yaml
+@@ -0,0 +1,138 @@
++# SPDX-License-Identifier: GPL-2.0
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/sram/sram.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
++
++title: Generic on-chip SRAM
++
++maintainers:
++  - FIXME <who@should.it.be>
++
++description: |+
++  Simple IO memory regions to be managed by the genalloc API.
++
++  Each child of the sram node specifies a region of reserved memory. Each
++  child node should use a 'reg' property to specify a specific range of
++  reserved memory.
++
++  Following the generic-names recommended practice, node names should
++  reflect the purpose of the node. Unit address (@<address>) should be
++  appended to the name.
++
++properties:
++  $nodename:
++    pattern: "^sram(@.*)?"
++
++  compatible:
++    items:
++      - enum:
++          - mmio-sram
++          - atmel,sama5d2-securam
++
++  reg:
++    maxItems: 1
++
++  "#address-cells":
++    description: Should use the same values as the root node.
++
++  "#size-cells":
++    description: Should use the same values as the root node.
++
++  ranges:
++    description:
++      Should translate from local addresses within the sram to bus addresses.
++
++  no-memory-wc:
++    description:
++      The flag indicating, that SRAM memory region has not to be remapped
++      as write combining. WC is used by default.
++    type: boolean
++
++  # TODO: additionalProperties: false
++
++patternProperties:
++  "^([a-z]*-)?sram@[a-f0-9]$":
++    type: object
++    description:
++      Each child of the sram node specifies a region of reserved memory.
++    properties:
++      reg:
++        description:
++          IO mem address range, relative to the SRAM range.
++
++      compatible:
++        $ref: /schemas/types.yaml#/definitions/string
++        description:
++          Should contain a vendor specific string in the form
++          <vendor>,[<device>-]<usage>
++
++      pool:
++        description:
++          Indicates that the particular reserved SRAM area is addressable
++          and in use by another device or devices.
++        type: boolean
++
++      export:
++        description:
++          Indicates that the reserved SRAM area may be accessed outside
++          of the kernel, e.g. by bootloader or userspace.
++        type: boolean
++
++      protect-exec:
++        description: |
++          Same as 'pool' above but with the additional constraint that code
++          will be run from the region and that the memory is maintained as
++          read-only, executable during code execution. NOTE: This region must
++          be page aligned on start and end in order to properly allow
++          manipulation of the page attributes.
++        type: boolean
++
++      label:
++        $ref: /schemas/types.yaml#/definitions/string
++        description:
++          The name for the reserved partition, if omitted, the label is taken
++          from the node name excluding the unit address.
++
++      clocks:
++        description:
++          A list of phandle and clock specifier pair that controls the
++          single SRAM clock.
++
++      # TODO: additionalProperties: false
++
++    required:
++      - reg
++
++required:
++  - compatible
++  - reg
++  - "#address-cells"
++  - "#size-cells"
++  - ranges
++
++examples:
++  - |
++    sram: sram@5c000000 {
++      compatible = "mmio-sram";
++      reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
++
++      #address-cells = <1>;
++      #size-cells = <1>;
++      ranges = <0 0x5c000000 0x40000>;
++
++      smp-sram@100 {
++        compatible = "socvendor,smp-sram";
++        reg = <0x100 0x50>;
++      };
++
++      device-sram@1000 {
++        reg = <0x1000 0x1000>;
++        pool;
++      };
++
++      exported@20000 {
++        reg = <0x20000 0x20000>;
++        export;
++      };
++    };
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
