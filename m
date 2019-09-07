@@ -2,54 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7EC85AC456
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 06:01:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9A51DAC45A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 06:02:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4vWXqxSqVKI0YwL111P1ISkG5S86pUfPHzrsc5owKYI=; b=upG537tDwxVWFg
-	mCtTZofGJXlG6yfGn/7kkCvgm5UdWL0/IhCvnmjmY1f90Aq8BQLdorqlMWIZGgmbiWmgrrVG9B9YG
-	OvsHOEPr1VCyQ5Y/GyDTaHKNZBkdG1zWu+S3qnHrZ00FIjIIVBr62jcixU4TuF9ZXrxecu6zaXMj7
-	Su7ru62b9u4QCLdNxUe7RnkPMhLvapCfJhh04jrsub3hv1pzL8Ilz5/ufySU+cOUQjwLtiie+mbFQ
-	REkA193gr8Yp+C0Qk/dgW6YcS8E0GzAe8lXCqOpR4KIVasBgK//0W29TQ5W36LuxEus52zA7VQ0OT
-	UtCCZSzbXiql8MCyj4aQ==;
+	List-Owner; bh=/xNFdOjuiGcr96lI1iVuVeiBgOq0wwg2q2cP9JbPr2M=; b=XGFLLvY6CAJAXk
+	j1AbAS/SyVfor71om2B5c+0qKUxX8CHezG0tj4H5ugS+/OtkrFypgGpTrzGDsYBbfDHyCPH6Eih4j
+	6IrlMlnPJ3KD2WyrWR+g6/VbdiNqWDPthL97BxXPS+vzgoDUV3utq4CT0IWrS76C4E+LWNo9mY6ar
+	eQ0fNk6rc63g+rWSWKAqwPR1CngcMmOX6AD9B8yZuDD+5EJlMDAOpPHrmBJOcWjsHP85W67itgtrW
+	mvCLGQ+CM+kCeP30E7QHwzRp1vzzAtZvUVU1Dh2xHKnLzoKLAe1BoHwnVMAqz4WDLhVEvgiWUK2Ex
+	MG2z6nABhA/7KZ+ZRkBA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Rv9-00026p-R1; Sat, 07 Sep 2019 04:01:55 +0000
+	id 1i6Rvm-0002PV-Ux; Sat, 07 Sep 2019 04:02:35 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Rud-0001s7-Al
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 04:01:24 +0000
+ id 1i6RvY-0002P8-Am
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 04:02:21 +0000
 Received: from localhost (unknown [194.251.198.105])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 6B81520854;
- Sat,  7 Sep 2019 04:01:22 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 6BF582070C;
+ Sat,  7 Sep 2019 04:02:19 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567828883;
- bh=iu+lz+zqRz/+ZH/PPEzbT7toVzrtFnm5HGdE4wWlvRo=;
+ s=default; t=1567828940;
+ bh=1gMSka+4QLoCiltsiYLD1GUn97RGYkVSkdGt0rGcA2o=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=XkZG4FLkpMuUlfykl/s2Cjtw2sN2NURmDBBPEpjYtpByLcMJ7uUc25IwecXQHXmUA
- bXWD2DoHkX3EMLNtKOBWAIE6u0TohVtD+T/XI45WydWqeIihnPfQF2j71VPG1oEpsB
- ZlxEkT6RF0Y7LBx34lvC1oF5lXbcy0vm3D0Fuxhs=
-Date: Sat, 7 Sep 2019 07:01:16 +0300
+ b=SlXSdikJ6wry65JzxmjpGos/mSjfnW4y1NMoK94yvlxnIwO7WTtmxm6p9Jymo6jbT
+ +o/OLvhnwpZIbYAUtN+7AzK9LZRCqdnGD55vKwMVNphf+AHr+MiBuVJHO90gmJy42i
+ IQUDyu+rLiMyt2M0LOszN9fTGXOuYU0RcbBmxJeU=
+Date: Sat, 7 Sep 2019 07:02:17 +0300
 From: Maxime Ripard <mripard@kernel.org>
 To: Corentin Labbe <clabbe.montjoie@gmail.com>
-Subject: Re: [PATCH 3/9] dt-bindings: crypto: Add DT bindings documentation
- for sun8i-ce Crypto Engine
-Message-ID: <20190907040116.lib532o2eqt4qnvv@flea>
+Subject: Re: [PATCH 4/9] ARM: dts: sun8i: r40: add crypto engine node
+Message-ID: <20190907040217.kzvq7gfxz67pluhz@flea>
 References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
- <20190906184551.17858-4-clabbe.montjoie@gmail.com>
+ <20190906184551.17858-5-clabbe.montjoie@gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190906184551.17858-4-clabbe.montjoie@gmail.com>
+In-Reply-To: <20190906184551.17858-5-clabbe.montjoie@gmail.com>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_210123_417569_AAB4B594 
-X-CRM114-Status: GOOD (  15.34  )
+X-CRM114-CacheID: sfid-20190906_210220_389570_3DDF3A34 
+X-CRM114-Status: GOOD (  14.84  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -88,101 +87,38 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 06, 2019 at 08:45:45PM +0200, Corentin Labbe wrote:
-> This patch adds documentation for Device-Tree bindings for the
-> Crypto Engine cryptographic accelerator driver.
+On Fri, Sep 06, 2019 at 08:45:46PM +0200, Corentin Labbe wrote:
+> The Crypto Engine is a hardware cryptographic offloader that supports
+> many algorithms.
+> It could be found on most Allwinner SoCs.
+>
+> This patch enables the Crypto Engine on the Allwinner R40 SoC Device-tree.
 >
 > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
 > ---
->  .../bindings/crypto/allwinner,sun8i-ce.yaml   | 84 +++++++++++++++++++
->  1 file changed, 84 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+>  arch/arm/boot/dts/sun8i-r40.dtsi | 11 +++++++++++
+>  1 file changed, 11 insertions(+)
 >
-> diff --git a/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
-> new file mode 100644
-> index 000000000000..bd8ccedd6059
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/crypto/allwinner,sun8i-ce.yaml
+> diff --git a/arch/arm/boot/dts/sun8i-r40.dtsi b/arch/arm/boot/dts/sun8i-r40.dtsi
+> index bde068111b85..7eb649cea163 100644
+> --- a/arch/arm/boot/dts/sun8i-r40.dtsi
+> +++ b/arch/arm/boot/dts/sun8i-r40.dtsi
+> @@ -266,6 +266,17 @@
+>  			#phy-cells = <1>;
+>  		};
+>
+> +		crypto: crypto-engine@1c15000 {
+> +			compatible = "allwinner,sun8i-r40-crypto";
+> +			reg = <0x01c15000 0x1000>;
+> +			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>;
+> +			clocks = <&ccu CLK_BUS_CE>, <&ccu CLK_CE>;
+> +			clock-names = "ahb", "mod";
+> +			resets = <&ccu RST_BUS_CE>;
+> +			reset-names = "ahb";
+> +			status = "okay";
 
-So, usually we're using the first compatible supported here as the
-name.
-
-> @@ -0,0 +1,84 @@
-> +# SPDX-License-Identifier: GPL-2.0
-> +%YAML 1.2
-> +---
-> +$id: http://devicetree.org/schemas/crypto/allwinner,sun8i-ce.yaml#
-> +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> +
-> +title: Allwinner Crypto Engine driver
-> +
-> +maintainers:
-> +  - Corentin Labbe <clabbe@baylibre.com>
-> +
-> +properties:
-> +  compatible:
-> +    oneOf:
-> +      - const: allwinner,sun8i-h3-crypto
-> +      - const: allwinner,sun8i-r40-crypto
-> +      - const: allwinner,sun50i-a64-crypto
-> +      - const: allwinner,sun50i-h5-crypto
-> +      - const: allwinner,sun50i-h6-crypto
-
-An enum would be better here, it provides a more obvious error
-message.
-
-> +
-> +  reg:
-> +    maxItems: 1
-> +
-> +  interrupts:
-> +    maxItems: 1
-> +
-> +if:
-> +  properties:
-> +    compatible:
-> +      contains:
-> +        const: allwinner,sun50i-h6-crypto
-> +then:
-> +  clocks:
-> +    items:
-> +      - description: Bus clock
-> +      - description: Module clock
-> +      - description: MBus clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ahb
-> +      - const: mod
-> +      - const: mbus
-
-It looks like there's a reset line on the H6 as well for that
-controller (register 0x68c of the CCU, "CE_BGR_REG").
-
-> +else:
-> +  clocks:
-> +    items:
-> +      - description: Bus clock
-> +      - description: Module clock
-> +
-> +  clock-names:
-> +    items:
-> +      - const: ahb
-> +      - const: mod
-> +
-> +  resets:
-> +    maxItems: 1
-> +
-> +  reset-names:
-> +    const: ahb
-
-This prevents the usage of the additionalProperties property, which
-you should really use.
-
-What you can do instead is moving the clocks and clock-names
-description under properties, with a minItems of 2 and a maxItems of
-3. Then you can restrict the length of that property to either 2 or 3
-depending on the case here.
+The driver will probe if status is not declared, so if you want it
+always enabled you should simply remove status
 
 Maxime
 
