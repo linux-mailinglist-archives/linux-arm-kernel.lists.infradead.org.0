@@ -2,85 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C741BAC872
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:48:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 58030AC876
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:49:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=vOkrZjgspgQpwlgGpDA5g0+Zoz75Zshfv/bz3KU0bM0=; b=VxTIxis0S1aXH6
-	6mSlFuot+3+TscDJ3u8W7nTgyoJrvK/iYCERjlKd3ubySp9Lt9CBCK/ybKxcDU7hvnvtKF3WG1dW2
-	wBzO0SxrIstLK+Wy+vNNk+QPdt25MZiXzu+k8WGw5wMrFsvKI3EFiqxWJSLuBTt43c61qXmtCpXyh
-	RvIQJffUHmKwoVKZqI1oGEK9soZyU5HR9Vtq5r7nQj2CGG5EwXpf6f5xNzN1xQVCR5CkJkE5SEldX
-	PzRI1CD1u5N37+kfssUy7EoP1k5NbZpR9SdDTEFjk1pmsD1FEcSN3yDS/eonhTZtyyoRelc8sjxim
-	Kwn014Sc2vzY+YVPNGhA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=L21lvwvrsusohkOilAgnRZWBH2TbRM5sV9bmy85QlNE=; b=fB27qfUoCgQIBK
+	Bd65pUZXpi6QAZ3GcRgn7Ayvq+fNN+bXQhV3jXU7WNLcCXGvH3AaoCfC9i6WkmJpmaj1qRxGJ7FsS
+	n7phaga1urNtKuVAn31iEhxoWQTLIglymRNIZnigkNRIr8bXUyXD7JjQJiJVg92EM7vxeSDSqdD2k
+	pZkyJuz5aWdy++6VQvXyJ4xDal7XE309708vGkHlp/GcPYWeZsDaaB+LtuHvNG9wwTJA038rZ5LLR
+	JF40XK399ysV6ieZyw7zpcH5GT8s3F0qi3VjpYH5J/XQDN+ljW7dmxYWg3KnUI6Ztaj1wJGlxuidM
+	XG0S8Iq92BZgHMaEo7pQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6eoi-0000hD-7A; Sat, 07 Sep 2019 17:48:08 +0000
-Received: from mo6-p03-ob.smtp.rzone.de ([2a01:238:20a:202:5303::9])
+	id 1i6epa-0001IA-4M; Sat, 07 Sep 2019 17:49:02 +0000
+Received: from www1102.sakura.ne.jp ([219.94.129.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6enc-0008N0-U0
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 17:47:03 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1567878418;
- s=strato-dkim-0002; d=goldelico.com;
- h=References:In-Reply-To:Message-Id:Date:Subject:Cc:To:From:
- X-RZG-CLASS-ID:X-RZG-AUTH:From:Subject:Sender;
- bh=dkjt0qMhGxLVTBpvMP6aAPlNlv/UnmzG7T8esfy3ij4=;
- b=aQcypB38D4XJO+Fymd3kM10rSTVYchqajUA9tH2aR8xLX3bPHsSyBub83az84hQ18L
- KCaFXfMO6gVqL0D96WEqorXj7eefKDLJED+PwMndT+gOBzhl2h+8jJEOALiRKuGPmHHH
- CgaQbzwcQM+TPOiVSTWds4eQlo2uAkTvhP4aC6wGcRAO9fhi8TdBVHZidDhmjtanKETs
- 3P5CE8MsGGv0ETJXn2T0LQvjoP9bwTOt5NueAoiavYZFXiYijMwD+cUfh3RLDv2zdlKm
- 3PbOrLZISZPVODNxbOxsd5MslsZZFjuEpv78A46P4EEx8Q+t4SvcdTquJrCgXxfxmrgz
- gcPg==
-X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1mfYzBGHXL8GTntuxg="
-X-RZG-CLASS-ID: mo00
-Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.27.0 DYNA|AUTH)
- with ESMTPSA id u036f9v87Hkwrbm
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
- 521 ECDH bits, eq. 15360 bits RSA))
- (Client did not present a certificate);
- Sat, 7 Sep 2019 19:46:58 +0200 (CEST)
-From: "H. Nikolaus Schaller" <hns@goldelico.com>
-To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
- Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
- Adam Ford <aford173@gmail.com>,
- =?UTF-8?q?Andr=C3=A9=20Roth?= <neolynx@gmail.com>,
- Mark Rutland <mark.rutland@arm.com>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- Enric Balletbo i Serra <eballetbo@gmail.com>,
- Javier Martinez Canillas <javier@dowhile0.org>,
- Roger Quadros <rogerq@ti.com>, Teresa Remmet <t.remmet@phytec.de>,
- "H. Nikolaus Schaller" <hns@goldelico.com>
-Subject: [PATCH 4/4] DTS: bindings: omap: update bindings documentation
-Date: Sat,  7 Sep 2019 19:46:53 +0200
-Message-Id: <35e4f219af5f8bff48e89ece7541f4e4ae6f27a0.1567878413.git.hns@goldelico.com>
-X-Mailer: git-send-email 2.19.1
-In-Reply-To: <cover.1567878413.git.hns@goldelico.com>
-References: <cover.1567878413.git.hns@goldelico.com>
+ id 1i6epG-0001Gc-Kj; Sat, 07 Sep 2019 17:48:44 +0000
+Received: from fsav401.sakura.ne.jp (fsav401.sakura.ne.jp [133.242.250.100])
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTP id x87HmehJ009775;
+ Sun, 8 Sep 2019 02:48:40 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+Received: from www1102.sakura.ne.jp (219.94.129.142)
+ by fsav401.sakura.ne.jp (F-Secure/fsigk_smtp/530/fsav401.sakura.ne.jp);
+ Sun, 08 Sep 2019 02:48:40 +0900 (JST)
+X-Virus-Status: clean(F-Secure/fsigk_smtp/530/fsav401.sakura.ne.jp)
+Received: from localhost.localdomain (118.153.231.153.ap.dti.ne.jp
+ [153.231.153.118]) (authenticated bits=0)
+ by www1102.sakura.ne.jp (8.15.2/8.15.2) with ESMTPSA id x87HmZhP009763
+ (version=TLSv1.2 cipher=DHE-RSA-AES256-SHA bits=256 verify=NO);
+ Sun, 8 Sep 2019 02:48:40 +0900 (JST)
+ (envelope-from katsuhiro@katsuster.net)
+From: Katsuhiro Suzuki <katsuhiro@katsuster.net>
+To: Heiko Stuebner <heiko@sntech.de>
+Subject: [PATCH] arm64: dts: rockchip: add analog audio nodes on
+ rk3399-rockpro64
+Date: Sun,  8 Sep 2019 02:48:33 +0900
+Message-Id: <20190907174833.19957-1-katsuhiro@katsuster.net>
+X-Mailer: git-send-email 2.23.0.rc1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_104701_112828_DB15B360 
-X-CRM114-Status: GOOD (  10.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190907_104842_892671_71434D93 
+X-CRM114-Status: UNSURE (   8.45  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a01:238:20a:202:5303:0:0:9 listed in]
- [list.dnswl.org]
  0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,116 +66,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
- linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
- kernel@pyra-handheld.com, letux-kernel@openphoenux.org,
+Cc: Katsuhiro Suzuki <katsuhiro@katsuster.net>,
+ linux-rockchip@lists.infradead.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-* clarify that we now need either "ti,omap3430" or "ti,omap3630" or "ti,am3517" for omap3 chips
-* clarify that "ti,omap3" has no default
-* clarify that AM33x is not an "ti,omap3"
-* clarify that the list of boards is incomplete
-* remove some "ti,am33xx", "ti,omap3"
-* add some missing "ti,omap4"
+This patch adds audio codec (Everest ES8316) and I2S audio nodes for
+RK3399 RockPro64.
 
-Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
-Acked-by: Tony Lindgren <tony@atomide.com>
+Signed-off-by: Katsuhiro Suzuki <katsuhiro@katsuster.net>
 ---
- .../devicetree/bindings/arm/omap/omap.txt     | 30 +++++++++++--------
- 1 file changed, 17 insertions(+), 13 deletions(-)
+ .../boot/dts/rockchip/rk3399-rockpro64.dts    | 28 +++++++++++++++++++
+ 1 file changed, 28 insertions(+)
 
-diff --git a/Documentation/devicetree/bindings/arm/omap/omap.txt b/Documentation/devicetree/bindings/arm/omap/omap.txt
-index b301f753ed2c..e77635c5422c 100644
---- a/Documentation/devicetree/bindings/arm/omap/omap.txt
-+++ b/Documentation/devicetree/bindings/arm/omap/omap.txt
-@@ -43,7 +43,7 @@ SoC Families:
+diff --git a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+index 0401d4ec1f45..8b1e6382b140 100644
+--- a/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
++++ b/arch/arm64/boot/dts/rockchip/rk3399-rockpro64.dts
+@@ -81,6 +81,12 @@
+ 		reset-gpios = <&gpio0 RK_PB2 GPIO_ACTIVE_LOW>;
+ 	};
  
- - OMAP2 generic - defaults to OMAP2420
-   compatible = "ti,omap2"
--- OMAP3 generic - defaults to OMAP3430
-+- OMAP3 generic
-   compatible = "ti,omap3"
- - OMAP4 generic - defaults to OMAP4430
-   compatible = "ti,omap4"
-@@ -51,6 +51,8 @@ SoC Families:
-   compatible = "ti,omap5"
- - DRA7 generic - defaults to DRA742
-   compatible = "ti,dra7"
-+- AM33x generic
-+  compatible = "ti,am33xx"
- - AM43x generic - defaults to AM4372
-   compatible = "ti,am43"
++	sound {
++		compatible = "audio-graph-card";
++		label = "rockchip,rk3399";
++		dais = <&i2s1_p0>;
++	};
++
+ 	vcc12v_dcin: vcc12v-dcin {
+ 		compatible = "regulator-fixed";
+ 		regulator-name = "vcc12v_dcin";
+@@ -470,6 +476,20 @@
+ 	i2c-scl-rising-time-ns = <300>;
+ 	i2c-scl-falling-time-ns = <15>;
+ 	status = "okay";
++
++	es8316: codec@11 {
++		compatible = "everest,es8316";
++		reg = <0x11>;
++		clocks = <&cru SCLK_I2S_8CH_OUT>;
++		clock-names = "mclk";
++		#sound-dai-cells = <0>;
++
++		port {
++			es8316_p0_0: endpoint {
++				remote-endpoint = <&i2s1_p0_0>;
++			};
++		};
++	};
+ };
  
-@@ -63,12 +65,14 @@ SoCs:
+ &i2c3 {
+@@ -505,6 +525,14 @@
+ 	rockchip,playback-channels = <2>;
+ 	rockchip,capture-channels = <2>;
+ 	status = "okay";
++
++	i2s1_p0: port {
++		i2s1_p0_0: endpoint {
++			dai-format = "i2s";
++			mclk-fs = <256>;
++			remote-endpoint = <&es8316_p0_0>;
++		};
++	};
+ };
  
- - OMAP3430
-   compatible = "ti,omap3430", "ti,omap3"
-+  legacy: "ti,omap34xx" - please do not use any more
- - AM3517
-   compatible = "ti,am3517", "ti,omap3"
- - OMAP3630
--  compatible = "ti,omap36xx", "ti,omap3"
--- AM33xx
--  compatible = "ti,am33xx", "ti,omap3"
-+  compatible = "ti,omap3630", "ti,omap3"
-+  legacy: "ti,omap36xx" - please do not use any more
-+- AM335x
-+  compatible = "ti,am33xx"
- 
- - OMAP4430
-   compatible = "ti,omap4430", "ti,omap4"
-@@ -110,19 +114,19 @@ SoCs:
- - AM4372
-   compatible = "ti,am4372", "ti,am43"
- 
--Boards:
-+Boards (incomplete list of examples):
- 
- - OMAP3 BeagleBoard : Low cost community board
--  compatible = "ti,omap3-beagle", "ti,omap3"
-+  compatible = "ti,omap3-beagle", "ti,omap3430", "ti,omap3"
- 
- - OMAP3 Tobi with Overo : Commercial expansion board with daughter board
--  compatible = "gumstix,omap3-overo-tobi", "gumstix,omap3-overo", "ti,omap3"
-+  compatible = "gumstix,omap3-overo-tobi", "gumstix,omap3-overo", "ti,omap3430", "ti,omap3"
- 
- - OMAP4 SDP : Software Development Board
--  compatible = "ti,omap4-sdp", "ti,omap4430"
-+  compatible = "ti,omap4-sdp", "ti,omap4430", "ti,omap4"
- 
- - OMAP4 PandaBoard : Low cost community board
--  compatible = "ti,omap4-panda", "ti,omap4430"
-+  compatible = "ti,omap4-panda", "ti,omap4430", "ti,omap4"
- 
- - OMAP4 DuoVero with Parlor : Commercial expansion board with daughter board
-   compatible = "gumstix,omap4-duovero-parlor", "gumstix,omap4-duovero", "ti,omap4430", "ti,omap4";
-@@ -134,16 +138,16 @@ Boards:
-   compatible = "variscite,var-dvk-om44", "variscite,var-som-om44", "ti,omap4460", "ti,omap4";
- 
- - OMAP3 EVM : Software Development Board for OMAP35x, AM/DM37x
--  compatible = "ti,omap3-evm", "ti,omap3"
-+  compatible = "ti,omap3-evm", "ti,omap3630", "ti,omap3"
- 
- - AM335X EVM : Software Development Board for AM335x
--  compatible = "ti,am335x-evm", "ti,am33xx", "ti,omap3"
-+  compatible = "ti,am335x-evm", "ti,am33xx"
- 
- - AM335X Bone : Low cost community board
--  compatible = "ti,am335x-bone", "ti,am33xx", "ti,omap3"
-+  compatible = "ti,am335x-bone", "ti,am33xx"
- 
- - AM3359 ICEv2 : Low cost Industrial Communication Engine EVM.
--  compatible = "ti,am3359-icev2", "ti,am33xx", "ti,omap3"
-+  compatible = "ti,am3359-icev2", "ti,am33xx"
- 
- - AM335X OrionLXm : Substation Automation Platform
-   compatible = "novatech,am335x-lxm", "ti,am33xx"
+ &i2s2 {
 -- 
-2.19.1
+2.23.0.rc1
 
 
 _______________________________________________
