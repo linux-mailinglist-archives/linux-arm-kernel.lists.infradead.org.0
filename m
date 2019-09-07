@@ -2,51 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C148AC66E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 13:36:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8EF14AC66F
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 13:36:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:To:
-	From:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=ELew+ZDgfIHiQ9QVvfYHX/FPTfly2Mh/gSFXv/h3krE=; b=V86d4eHLeUkTQy
-	N0o13n1HkKYrbzvaJXQdGQVUfffKm78g8PHviEiEZlVMkS+ufebH0EywJehben4PMR67LS+OXQgnD
-	BvS4URroj+/8HqPG4Hab/TiaYwIqul9bhpz8RzJX2tWGo04jPaseSGX5M/zfGLniOZIHRfzk5pkbo
-	Xn2Rb4PH1F9xr8edpFQMSVz0qLeGby1GsOoNsKXeGh3y4xnzgkd6yQGfe//qDUoS+K38BTLIIAggu
-	FNLLnhxLbNnhto9LZ+IQDQ//tVun3z9QpQNh5gwXSueI2GZE86uWrSD3wo87wmo18O7qRwxhhOyYd
-	kQfrCrJ9OHTD29mQ+FpQ==;
+	List-Post:List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qsXMxCPDIXdKmyxB2heQYZBt4Z17vV7m2MMWp5oUOTg=; b=bQK9ZaL42L/9LE
+	r66gXTneORxjPXZQGA7HhYZOKTCWL5lJKKWkHyPl9fbkJ6Go0iyj1JdbOGP5pNwns2Kd6H1H1TbKk
+	aCtVoSaCNB10Vr5jOdN/Zy+jTXMBk+Vd7kDcukSHQQ1eXFvGQxOT2BBnY0/3YPCI4oxUdBBJZNeVr
+	TMXoHDGJt2nfk9swaSp3/DyPkdz/0kMBwWSQBN3c2FZsgnTjIpBmpj4mKsN/YY/h0/9lmur1Dhpll
+	+dhVPpbo1KsA7A3AG6rJ7UAf3yBJxcBnNwuJ0rlFwPgpQz8ZmVLv//iX5V252tn5xN3VnKF8KIIZC
+	QBAvPmRFMehrY+0bMziw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6Z0X-0004Ac-S1; Sat, 07 Sep 2019 11:35:57 +0000
+	id 1i6Z0i-0004N8-PV; Sat, 07 Sep 2019 11:36:08 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6Z0R-0004AF-7L
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 11:35:53 +0000
+ id 1i6Z0T-0004Ab-Iw
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 11:35:55 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 0DAC7218AF;
- Sat,  7 Sep 2019 11:35:48 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 644A1218DE;
+ Sat,  7 Sep 2019 11:35:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567856150;
- bh=VOxfcQzwaHM0XiCY/XXEfAZTtrIlO4ZRE/buwNFjUxw=;
- h=From:To:Subject:Date:From;
- b=ejMPHeZ+1HnqQoRFodV1DvPkSbS+FqzcmIxBykf0WA1uM+9HbpjaRmMlaOpC9cJgL
- ZVOfVsg+SYi50sBYI2nOlLJZ4cYLNyb3CTrLZrjEl4huwCmVRExS83gOS/25v6oqRn
- p38pReB5ObKwZwQoK7QIUNdasAocnM3c68oh4ZX8=
+ s=default; t=1567856153;
+ bh=DjGNzh+fr05rUNc5wWkela8s+FXQ7EbFjXm5r11Xvyc=;
+ h=From:To:Subject:Date:In-Reply-To:References:From;
+ b=oYl9n3KGIMIMS1LOa9ZVQvBI/H9n1aUdAJDb3KjNRbqgnEl+dZbPGV+XiymmuY7VZ
+ 5JksdBRRVgctcWZOhKh5KOktCCXBONxgMwbjDIZtne29kk74BOJyP32e1Aga/dm3mL
+ HFdQdkI2/X0lKBMru+Gejm6N095z07tn7mwiUBsQ=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Kukjin Kim <kgene@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>,
  devicetree@vger.kernel.org, linux-kernel@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-samsung-soc@vger.kernel.org
-Subject: [PATCH 1/2] dt-bindings: sram: Convert SRAM bindings to json-schema
-Date: Sat,  7 Sep 2019 13:35:41 +0200
-Message-Id: <20190907113542.4096-1-krzk@kernel.org>
+Subject: [PATCH 2/2] dt-bindings: sram: Convert Samsung Exynos SYSRAM bindings
+ to json-schema
+Date: Sat,  7 Sep 2019 13:35:42 +0200
+Message-Id: <20190907113542.4096-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190907113542.4096-1-krzk@kernel.org>
+References: <20190907113542.4096-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_043551_309210_D9688C13 
-X-CRM114-Status: GOOD (  20.27  )
+X-CRM114-CacheID: sfid-20190907_043553_674178_8A351022 
+X-CRM114-Status: GOOD (  14.51  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,247 +84,144 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Convert generic mmio-sram bindings to DT schema format using
+Convert Samsung Exynos SYSRAM bindings to DT schema format using
 json-schema.
 
 Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
----
- .../devicetree/bindings/sram/sram.txt         |  80 ----------
- .../devicetree/bindings/sram/sram.yaml        | 138 ++++++++++++++++++
- 2 files changed, 138 insertions(+), 80 deletions(-)
- delete mode 100644 Documentation/devicetree/bindings/sram/sram.txt
- create mode 100644 Documentation/devicetree/bindings/sram/sram.yaml
 
-diff --git a/Documentation/devicetree/bindings/sram/sram.txt b/Documentation/devicetree/bindings/sram/sram.txt
+---
+
+TODO:
+The node naming should be probably fixed (sysram->sram)
+---
+ .../devicetree/bindings/sram/samsung-sram.txt | 38 ------------
+ .../bindings/sram/samsung-sram.yaml           | 58 +++++++++++++++++++
+ MAINTAINERS                                   |  2 +-
+ 3 files changed, 59 insertions(+), 39 deletions(-)
+ delete mode 100644 Documentation/devicetree/bindings/sram/samsung-sram.txt
+ create mode 100644 Documentation/devicetree/bindings/sram/samsung-sram.yaml
+
+diff --git a/Documentation/devicetree/bindings/sram/samsung-sram.txt b/Documentation/devicetree/bindings/sram/samsung-sram.txt
 deleted file mode 100644
-index e98908bd4227..000000000000
---- a/Documentation/devicetree/bindings/sram/sram.txt
+index 61a9bbed303d..000000000000
+--- a/Documentation/devicetree/bindings/sram/samsung-sram.txt
 +++ /dev/null
-@@ -1,80 +0,0 @@
--Generic on-chip SRAM
+@@ -1,38 +0,0 @@
+-Samsung Exynos SYSRAM for SMP bringup:
+-------------------------------------
 -
--Simple IO memory regions to be managed by the genalloc API.
+-Samsung SMP-capable Exynos SoCs use part of the SYSRAM for the bringup
+-of the secondary cores. Once the core gets powered up it executes the
+-code that is residing at some specific location of the SYSRAM.
 -
--Required properties:
+-Therefore reserved section sub-nodes have to be added to the mmio-sram
+-declaration. These nodes are of two types depending upon secure or
+-non-secure execution environment.
 -
--- compatible : mmio-sram or atmel,sama5d2-securam
+-Required sub-node properties:
+-- compatible : depending upon boot mode, should be
+-		"samsung,exynos4210-sysram" : for Secure SYSRAM
+-		"samsung,exynos4210-sysram-ns" : for Non-secure SYSRAM
 -
--- reg : SRAM iomem address range
--
--Reserving sram areas:
-----------------------
--
--Each child of the sram node specifies a region of reserved memory. Each
--child node should use a 'reg' property to specify a specific range of
--reserved memory.
--
--Following the generic-names recommended practice, node names should
--reflect the purpose of the node. Unit address (@<address>) should be
--appended to the name.
--
--Required properties in the sram node:
--
--- #address-cells, #size-cells : should use the same values as the root node
--- ranges : standard definition, should translate from local addresses
--           within the sram to bus addresses
--
--Optional properties in the sram node:
--
--- no-memory-wc : the flag indicating, that SRAM memory region has not to
--                 be remapped as write combining. WC is used by default.
--
--Required properties in the area nodes:
--
--- reg : iomem address range, relative to the SRAM range
--
--Optional properties in the area nodes:
--
--- compatible : standard definition, should contain a vendor specific string
--               in the form <vendor>,[<device>-]<usage>
--- pool : indicates that the particular reserved SRAM area is addressable
--         and in use by another device or devices
--- export : indicates that the reserved SRAM area may be accessed outside
--           of the kernel, e.g. by bootloader or userspace
--- protect-exec : Same as 'pool' above but with the additional
--		 constraint that code wil be run from the region and
--		 that the memory is maintained as read-only, executable
--		 during code execution. NOTE: This region must be page
--		 aligned on start and end in order to properly allow
--		 manipulation of the page attributes.
--- label : the name for the reserved partition, if omitted, the label
--          is taken from the node name excluding the unit address.
--- clocks : a list of phandle and clock specifier pair that controls the
--	   single SRAM clock.
+-The rest of the properties should follow the generic mmio-sram discription
+-found in Documentation/devicetree/bindings/sram/sram.txt
 -
 -Example:
 -
--sram: sram@5c000000 {
--	compatible = "mmio-sram";
--	reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
+-	sysram@2020000 {
+-		compatible = "mmio-sram";
+-		reg = <0x02020000 0x54000>;
+-		#address-cells = <1>;
+-		#size-cells = <1>;
+-		ranges = <0 0x02020000 0x54000>;
 -
--	#address-cells = <1>;
--	#size-cells = <1>;
--	ranges = <0 0x5c000000 0x40000>;
+-		smp-sysram@0 {
+-			compatible = "samsung,exynos4210-sysram";
+-			reg = <0x0 0x1000>;
+-		};
 -
--	smp-sram@100 {
--		compatible = "socvendor,smp-sram";
--		reg = <0x100 0x50>;
+-		smp-sysram@53000 {
+-			compatible = "samsung,exynos4210-sysram-ns";
+-			reg = <0x53000 0x1000>;
+-		};
 -	};
--
--	device-sram@1000 {
--		reg = <0x1000 0x1000>;
--		pool;
--	};
--
--	exported@20000 {
--		reg = <0x20000 0x20000>;
--		export;
--	};
--};
-diff --git a/Documentation/devicetree/bindings/sram/sram.yaml b/Documentation/devicetree/bindings/sram/sram.yaml
+diff --git a/Documentation/devicetree/bindings/sram/samsung-sram.yaml b/Documentation/devicetree/bindings/sram/samsung-sram.yaml
 new file mode 100644
-index 000000000000..0821cdb4cef9
+index 000000000000..501d299a554e
 --- /dev/null
-+++ b/Documentation/devicetree/bindings/sram/sram.yaml
-@@ -0,0 +1,138 @@
++++ b/Documentation/devicetree/bindings/sram/samsung-sram.yaml
+@@ -0,0 +1,58 @@
 +# SPDX-License-Identifier: GPL-2.0
 +%YAML 1.2
 +---
-+$id: http://devicetree.org/schemas/sram/sram.yaml#
++$id: http://devicetree.org/schemas/sram/samsung-sram.yaml#
 +$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+title: Generic on-chip SRAM
++title: Samsung Exynos SoC SYSRAM for SMP bringup
 +
 +maintainers:
-+  - FIXME <who@should.it.be>
++  - Krzysztof Kozlowski <krzk@kernel.org>
 +
 +description: |+
-+  Simple IO memory regions to be managed by the genalloc API.
++  Samsung SMP-capable Exynos SoCs use part of the SYSRAM for the bringup
++  of the secondary cores. Once the core gets powered up it executes the
++  code that is residing at some specific location of the SYSRAM.
 +
-+  Each child of the sram node specifies a region of reserved memory. Each
-+  child node should use a 'reg' property to specify a specific range of
-+  reserved memory.
++  Therefore reserved section sub-nodes have to be added to the mmio-sram
++  declaration. These nodes are of two types depending upon secure or
++  non-secure execution environment.
 +
-+  Following the generic-names recommended practice, node names should
-+  reflect the purpose of the node. Unit address (@<address>) should be
-+  appended to the name.
++allOf:
++  - $ref: "sram.yaml#"
 +
 +properties:
 +  $nodename:
-+    pattern: "^sram(@.*)?"
-+
-+  compatible:
-+    items:
-+      - enum:
-+          - mmio-sram
-+          - atmel,sama5d2-securam
-+
-+  reg:
-+    maxItems: 1
-+
-+  "#address-cells":
-+    description: Should use the same values as the root node.
-+
-+  "#size-cells":
-+    description: Should use the same values as the root node.
-+
-+  ranges:
-+    description:
-+      Should translate from local addresses within the sram to bus addresses.
-+
-+  no-memory-wc:
-+    description:
-+      The flag indicating, that SRAM memory region has not to be remapped
-+      as write combining. WC is used by default.
-+    type: boolean
-+
-+  # TODO: additionalProperties: false
++    pattern: "^sysram(@.*)?"
 +
 +patternProperties:
-+  "^([a-z]*-)?sram@[a-f0-9]$":
++  "^([a-z]*-)?sysram@[a-f0-9]$":
 +    type: object
-+    description:
-+      Each child of the sram node specifies a region of reserved memory.
++
 +    properties:
-+      reg:
-+        description:
-+          IO mem address range, relative to the SRAM range.
-+
 +      compatible:
-+        $ref: /schemas/types.yaml#/definitions/string
 +        description:
-+          Should contain a vendor specific string in the form
-+          <vendor>,[<device>-]<usage>
-+
-+      pool:
-+        description:
-+          Indicates that the particular reserved SRAM area is addressable
-+          and in use by another device or devices.
-+        type: boolean
-+
-+      export:
-+        description:
-+          Indicates that the reserved SRAM area may be accessed outside
-+          of the kernel, e.g. by bootloader or userspace.
-+        type: boolean
-+
-+      protect-exec:
-+        description: |
-+          Same as 'pool' above but with the additional constraint that code
-+          will be run from the region and that the memory is maintained as
-+          read-only, executable during code execution. NOTE: This region must
-+          be page aligned on start and end in order to properly allow
-+          manipulation of the page attributes.
-+        type: boolean
-+
-+      label:
-+        $ref: /schemas/types.yaml#/definitions/string
-+        description:
-+          The name for the reserved partition, if omitted, the label is taken
-+          from the node name excluding the unit address.
-+
-+      clocks:
-+        description:
-+          A list of phandle and clock specifier pair that controls the
-+          single SRAM clock.
-+
-+      # TODO: additionalProperties: false
-+
-+    required:
-+      - reg
-+
-+required:
-+  - compatible
-+  - reg
-+  - "#address-cells"
-+  - "#size-cells"
-+  - ranges
++          Depending upon boot mode
++        enum:
++          - samsung,exynos4210-sysram                 # for Secure SYSRAM
++          - samsung,exynos4210-sysram-ns              # for Non-secure SYSRAM
 +
 +examples:
 +  - |
-+    sram: sram@5c000000 {
++    sysram@2020000 {
 +      compatible = "mmio-sram";
-+      reg = <0x5c000000 0x40000>; /* 256 KiB SRAM at address 0x5c000000 */
-+
++      reg = <0x02020000 0x54000>;
 +      #address-cells = <1>;
 +      #size-cells = <1>;
-+      ranges = <0 0x5c000000 0x40000>;
++      ranges = <0 0x02020000 0x54000>;
 +
-+      smp-sram@100 {
-+        compatible = "socvendor,smp-sram";
-+        reg = <0x100 0x50>;
++      smp-sysram@0 {
++        compatible = "samsung,exynos4210-sysram";
++        reg = <0x0 0x1000>;
 +      };
 +
-+      device-sram@1000 {
-+        reg = <0x1000 0x1000>;
-+        pool;
-+      };
-+
-+      exported@20000 {
-+        reg = <0x20000 0x20000>;
-+        export;
++      smp-sysram@53000 {
++        compatible = "samsung,exynos4210-sysram-ns";
++        reg = <0x53000 0x1000>;
 +      };
 +    };
+diff --git a/MAINTAINERS b/MAINTAINERS
+index cdd2f1f3e1f4..36c30f31bdf2 100644
+--- a/MAINTAINERS
++++ b/MAINTAINERS
+@@ -2225,7 +2225,7 @@ F:	drivers/soc/samsung/
+ F:	include/linux/soc/samsung/
+ F:	Documentation/arm/samsung/
+ F:	Documentation/devicetree/bindings/arm/samsung/
+-F:	Documentation/devicetree/bindings/sram/samsung-sram.txt
++F:	Documentation/devicetree/bindings/sram/samsung-sram.yaml
+ F:	Documentation/devicetree/bindings/power/pd-samsung.txt
+ N:	exynos
+ 
 -- 
 2.17.1
 
