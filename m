@@ -2,82 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62202AC87E
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:50:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 162E3AC88A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 19:53:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=Uc+mHv7KCEoYmlSFmUrGG7ISgwHv1PlBLlS0Z+OH67M=; b=UkdnZXHOE5eEDu
-	+5tXtLhis7/98yyqAw5iCIqS/g6Eao7xyoFOTS0mLXlw0sqtq6Qw4OjNLlLZcbsCptnjfukGRzwhl
-	5K9+psPzhVvEEuz51i32gzIsU0FOOGvidFeHomuvz36TeTBB9bEs6rGRbq5sMBRfwV9gkI+3etWio
-	hyAQQ+Cz39JzdyRyLGiWZqnkMRfzFpgL157IUj5+Yo9keXaYwDy2oO4+DJ3bwEshDGunivCV5/gc/
-	scmdtZX0j9n9BKrC42uqsG6KWXhKYm9bsT7B62iEV5TEXzZZSDln5PdSH1LjC5kDAC9USXh4G6eaJ
-	yylLWNtouajw5YtynSXg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xejuH6v+mJUUm/H2DqOjMVpOhQ2TqLCtUhVIkKwhvMg=; b=nZ6NwYZPPzkPQ/
+	Pm/EOxJiY7jI0E819BQjJxGeifcV8cVYeUO4fX1jWUvUcRRcDPfEoIVZjsdQTucD7CUw6XjOw4asM
+	XdWxmW7ZdO62dC1mVQbs9WdWohsBh53DjMc0J5jpRH3auIlbNRZR0dEEyePoagWDZ3oegq81PWELC
+	YHUxf1+NQI726cqpJ2n+hnzNWBLclPYYESoeN2Q3dNVsDQNwThdDGVT5ZcOhtrS0JoRKBRj6fcYeq
+	i0yX+KEZGD2cx6mnBoznSuCfCbYocNkaQTz8z4x0pNXF5tvoIwDkJl2UgXGo2W7dh9SvbxZxPXH7E
+	07CqJ28bD55ltEKRiZ6g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6er9-0002nG-Mp; Sat, 07 Sep 2019 17:50:39 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i6euK-0003Gx-Mi; Sat, 07 Sep 2019 17:53:56 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6eqt-0002mS-Hz
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 17:50:24 +0000
-Received: by mail-pf1-x443.google.com with SMTP id x127so6599160pfb.7
+ id 1i6eu8-0003GU-Cr
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 17:53:45 +0000
+Received: by mail-wr1-x441.google.com with SMTP id h7so8647748wrw.8
  for <linux-arm-kernel@lists.infradead.org>;
- Sat, 07 Sep 2019 10:50:22 -0700 (PDT)
+ Sat, 07 Sep 2019 10:53:43 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wK8kJ2udIf0g3BsyoIaHFt8dADR/WXvxfITihNsDeFg=;
- b=Gwsp7VRn4r5cDdw7eygkYZ/sszfgRBn/LNffK8rKLuU3OXDMBJBQUafVm/8/Ym6kxl
- K6awj9C0Ux8gpf0vABsHPwAIKvMSSj1HLTzzX71l0KzyvaROHC2yWEmvxZUqIwm2nmrV
- lmAcCTAPwuKZNItjsz1tvAaLHs33eilTvmINw0ZqMFmLGcHNMeEFjmq9aeDH8XSCV7Je
- T+U7wuABMQprBiDBJ/RIg7QDfuYLkWl0B7++OvQOJnlTCNrryYx3AgCOz1cGCJhWOuVk
- XyZoKGE/8NngV3NN1lmVf04Gjw36Ts1U5JbkQX6QXEPMa5FYJCQ1regZqneDUa94+wOD
- YkPg==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=YKzGXNoMiVxlqUxjXu5q/1sB2Sa9HHIsJwOXqdFSK2c=;
+ b=JIU69Gj2coPhLQ8h1Nf0FifUpIaP/2YUh/DZqI+EYnKebBIjEvpNnmE2atBKfaDgr1
+ dIL0Oi7VSCbGp0Fh2AR9sHkXMfWxl1IcAj5ncZZhah1yhDiTdwF4XoEWqh4zCzl5ecYY
+ QdkQGYPUNcztydTqmwakzmdMhvRp7CufSU7jvpqlZp7W6hPTn9+bC3aZW150tI0awCXW
+ P22JNJcg6l25VlJEAEajstYzekutPS6SlHe6B/31RlCjw5d/1HTSCZ/6e5bIt5/QKKeb
+ h38iCIFUM/84QaD5YqDhAVu4V+t/p6Sk6ZENpp4z5SIrJFfK9VqFlv0vmwnQMMfM0Clo
+ Ob7w==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=wK8kJ2udIf0g3BsyoIaHFt8dADR/WXvxfITihNsDeFg=;
- b=dFsbvn1/TEM6O65U/izm417BG/mk/hvFiU7frjQu0r2CEr/S//+0kzHJwF9kzgTCqU
- h8xm9M011I3ALQ4Jfp/LyKnG2Fvh1sst3PlfTr7vLLHjxquRhprmAU8xRmBhOYdVGDno
- hba8yFvOH1gc94aecbwFuu0ntwz1ztcBlLMXfffMuWph2OMr6XHat0hDtUUgkkwEJH7E
- szdTuQP10JWZrrJBT/t5bOcty/KH+ca8ZzVyihlNXGqmms0Q4bD0Q0/VxRAuz+QxEkCO
- EqaNFKZX1dtFtsNLxysC1cljxW8qPe3FyhFf3xeIk83+ZE1f+Um1pX13r4z/nyz9oTsq
- v5JQ==
-X-Gm-Message-State: APjAAAWVZjVGskvakPfQj1ODD5mrxP673YklT134lohcz+B7SbeAd7zj
- GjWWfo9J6M6Di9qkfXD258U=
-X-Google-Smtp-Source: APXvYqzafbPVLonS9mDnmRUFSlGT5UrLrAnZgt7eKA+ZXKBawYn/MhQ8WUF6BIH88qCUmZL2MEVRGA==
-X-Received: by 2002:a65:6795:: with SMTP id e21mr13501884pgr.428.1567878622201; 
- Sat, 07 Sep 2019 10:50:22 -0700 (PDT)
-Received: from localhost ([2601:1c0:5200:e554::8610])
- by smtp.gmail.com with ESMTPSA id 11sm8401943pgo.43.2019.09.07.10.50.21
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sat, 07 Sep 2019 10:50:21 -0700 (PDT)
-From: Rob Clark <robdclark@gmail.com>
-To: iommu@lists.linux-foundation.org
-Subject: [PATCH] iommu/arm-smmu: fix "hang" when games exit
-Date: Sat,  7 Sep 2019 10:50:13 -0700
-Message-Id: <20190907175013.24246-1-robdclark@gmail.com>
-X-Mailer: git-send-email 2.21.0
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=YKzGXNoMiVxlqUxjXu5q/1sB2Sa9HHIsJwOXqdFSK2c=;
+ b=WytGnOcuyxVbvI40r/D4hZzn5IMshdzge2JBxJAzpMSjSyEuUTgGNUUaS90z5GVPaD
+ yTijtpbfrEgqrfau7LoRIj0l0NqZ+5T0gP5HIwl3c39PrzciFHk7slMUg0DDsOlwI7iV
+ 8N0aWzu17jkqMX4X6f23magGzxsXDYTXyhT817tZS6auxyGI5gk4V5lYf3ZCiEt++FTL
+ SEeYKbVW9ixs3lAr9uuaFC681twqFt6JkLkAtADJu5cItiBSaDsyf48NK2OUl0Rg9Y8J
+ BBJTz368umVsghxe+v/h4IwYW2Fps/EtJQYGLMpwuIbxqZXq+dIuFrmVOjKoLPQQZzDs
+ DpIA==
+X-Gm-Message-State: APjAAAW9bP6DLERvpSmAPTPOKPtI/lM3d2VunvirDqlkPn+GefLx9laL
+ X/pr9Waqy/VqftsVDsGMm+k=
+X-Google-Smtp-Source: APXvYqwON0QZyTc/slBAnXZF2MVpu7fDOpaczP7dIghDSrGZbOPHtlEMfx9Sldugsdu+L5p1uFGQjQ==
+X-Received: by 2002:a5d:6585:: with SMTP id q5mr11363959wru.162.1567878822899; 
+ Sat, 07 Sep 2019 10:53:42 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id p23sm5778566wma.18.2019.09.07.10.53.41
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Sat, 07 Sep 2019 10:53:42 -0700 (PDT)
+Date: Sat, 7 Sep 2019 19:53:40 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Maxime Ripard <mripard@kernel.org>
+Subject: Re: [PATCH 1/9] crypto: Add allwinner subdirectory
+Message-ID: <20190907175340.GA2628@Red>
+References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
+ <20190906184551.17858-2-clabbe.montjoie@gmail.com>
+ <20190907035453.urfqmdg3kg4kbtgc@flea>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190907035453.urfqmdg3kg4kbtgc@flea>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_105023_623207_1D5BAC2D 
-X-CRM114-Status: GOOD (  14.96  )
+X-CRM114-CacheID: sfid-20190907_105344_440990_10122A2B 
+X-CRM114-Status: GOOD (  12.94  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robdclark[at]gmail.com)
+ provider (clabbe.montjoie[at]gmail.com)
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -96,71 +101,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob Clark <robdclark@chromium.org>, Will Deacon <will@kernel.org>,
- linux-arm-msm@vger.kernel.org, Joerg Roedel <joro@8bytes.org>,
- Robin Murphy <robin.murphy@arm.com>, open list <linux-kernel@vger.kernel.org>,
- freedreno@lists.freedesktop.org,
- "moderated list:ARM SMMU DRIVERS" <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Rob Clark <robdclark@chromium.org>
+On Sat, Sep 07, 2019 at 06:54:53AM +0300, Maxime Ripard wrote:
+> On Fri, Sep 06, 2019 at 08:45:43PM +0200, Corentin Labbe wrote:
+> > Since a second Allwinner crypto driver will be added, it is better to
+> > create a dedicated subdirectory.
+> >
+> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > ---
+> >  MAINTAINERS                      | 6 ++++++
+> >  drivers/crypto/Kconfig           | 2 ++
+> >  drivers/crypto/Makefile          | 1 +
+> >  drivers/crypto/allwinner/Kconfig | 6 ++++++
+> 
+> I guess it would make sense to move the sun4i driver there too?
+> 
+Yes it is planned.
+I will add this move patch in the next iteration.
 
-When games, browser, or anything using a lot of GPU buffers exits, there
-can be many hundreds or thousands of buffers to unmap and free.  If the
-GPU is otherwise suspended, this can cause arm-smmu to resume/suspend
-for each buffer, resulting 5-10 seconds worth of reprogramming the
-context bank (arm_smmu_write_context_bank()/arm_smmu_write_s2cr()/etc).
-To the user it would appear that the system is locked up.
-
-A simple solution is to use pm_runtime_put_autosuspend() instead, so we
-don't immediately suspend the SMMU device.
-
-Signed-off-by: Rob Clark <robdclark@chromium.org>
----
-Note: I've tied the autosuspend enable/delay to the consumer device,
-based on the reasoning that if the consumer device benefits from using
-an autosuspend delay, then it's corresponding SMMU probably does too.
-Maybe that is overkill and we should just unconditionally enable
-autosuspend.
-
- drivers/iommu/arm-smmu.c | 11 ++++++++++-
- 1 file changed, 10 insertions(+), 1 deletion(-)
-
-diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-index c2733b447d9c..73a0dd53c8a3 100644
---- a/drivers/iommu/arm-smmu.c
-+++ b/drivers/iommu/arm-smmu.c
-@@ -289,7 +289,7 @@ static inline int arm_smmu_rpm_get(struct arm_smmu_device *smmu)
- static inline void arm_smmu_rpm_put(struct arm_smmu_device *smmu)
- {
- 	if (pm_runtime_enabled(smmu->dev))
--		pm_runtime_put(smmu->dev);
-+		pm_runtime_put_autosuspend(smmu->dev);
- }
- 
- static struct arm_smmu_domain *to_smmu_domain(struct iommu_domain *dom)
-@@ -1445,6 +1445,15 @@ static int arm_smmu_attach_dev(struct iommu_domain *domain, struct device *dev)
- 	/* Looks ok, so add the device to the domain */
- 	ret = arm_smmu_domain_add_master(smmu_domain, fwspec);
- 
-+#ifdef CONFIG_PM
-+	/* TODO maybe device_link_add() should do this for us? */
-+	if (dev->power.use_autosuspend) {
-+		pm_runtime_set_autosuspend_delay(smmu->dev,
-+			dev->power.autosuspend_delay);
-+		pm_runtime_use_autosuspend(smmu->dev);
-+	}
-+#endif
-+
- rpm_put:
- 	arm_smmu_rpm_put(smmu);
- 	return ret;
--- 
-2.21.0
-
+Regards
 
 _______________________________________________
 linux-arm-kernel mailing list
