@@ -2,57 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 467B7AC36B
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 01:51:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ADE5BAC422
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 04:48:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Js93UAxakNEN0mbz8ssSYVtrLFTCHWw6mh1bd+fX87o=; b=lEZ+XroLH2Zr3pnxWNnzG98aSo
-	ljFp6aJETDwBFXKYCwrtHA2MDrnCSGuhgz4mUHI+hTM8I10e9l+3xMENYidwBql2dVVfIY9b7iI2L
-	X/sQvej9Wwsbh4AXvhOTZKGqjhtZpAlQWsrT7MwXTXh4Lrbmxx4sEIVvTzTczOLQ/u58HerMMZs7e
-	LAhOiclYrDrrLFw+xI+fod6ugrLURSXt0BLLvKuMJHcM/69Sw55+dwupOFNztZapXb6Jyf2OVVxZS
-	hlxhWpDdL8b3JYiSSd90P3rtwwnSaZmmVOxyjjtwIU6i+Uu7crGHvCuagtC5Ndw8FQANyZGXXuInW
-	4hS0Wlug==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LbTMJ5UQlFEoUAJparT8BULvm1e1F1/17p/dOK8y/NU=; b=YlhgH1cD1U9fKD
+	u5flWUyyBSKsipX0Dfes7qkKSILpkuh7YJeZMovl2PdNk7v5xOluKjW3Y+YkdVLPqTXyfu9ckHgb5
+	KZarRAi8lfkSdFE8IZS6LxNCs2cgOvt5m79F9/S0PO3KuwI/4tjE1zTMP0qizFctOje9t9/92Bjb1
+	cg8zY/V/kZoCmOO9gQuMHN42Kdv2ENsK1gmSh6q8myehXnEJrQCv7bL9oJ6u1II2cBS9V5vpNUG21
+	rQW6fmGERwZiIOmrEgAJ/ybvicTBPZP7rrI3VSiZfsHYcH10pDvEkK6GnTOb15C0K/YCx6r7tWxQc
+	17uM69ByeQypN382q3EA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6O17-0006hz-E0; Fri, 06 Sep 2019 23:51:49 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i6O0e-0006W4-79
- for linux-arm-kernel@lists.infradead.org; Fri, 06 Sep 2019 23:51:21 +0000
-Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
- [167.220.2.18])
- by linux.microsoft.com (Postfix) with ESMTPSA id C50CC20B7187;
- Fri,  6 Sep 2019 16:51:18 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com C50CC20B7187
-From: Prakhar Srivastava <prsriva@linux.microsoft.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [RFC][PATCH v1 1/1] Add support for arm64 to carry ima measurement
- log in kexec_file_load
-Date: Fri,  6 Sep 2019 16:51:10 -0700
-Message-Id: <20190906235110.15566-2-prsriva@linux.microsoft.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190906235110.15566-1-prsriva@linux.microsoft.com>
-References: <20190906235110.15566-1-prsriva@linux.microsoft.com>
+	id 1i6Qlq-0005dG-IJ; Sat, 07 Sep 2019 02:48:14 +0000
+Received: from mail-oln040092013069.outbound.protection.outlook.com
+ ([40.92.13.69] helo=NAM05-CO1-obe.outbound.protection.outlook.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i6QlV-0005cq-Gi
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 02:47:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=LlvBXoMgJmqgMjUbsIkJnDVyxHWcNFL3HVeNsb+aoNe4YcFrKLUyuAMHDksyoijzWgukYJQpc/rwwVCaNu85+BmK+AHggW1Rki8aUKW9Eg+kDs9+gEjYXeDnjscMuKNaXPTwa4a68uSQFZ7bERsJCRGg/p5k1lRDeljlggyJoAa+hxTtx/BTWXeHMHsHf24M5kFhZk6iF7HrT1NyBDXkT/DinvuLt0cgtZWxiTbDV0xzwNOOkSiiNuIzMuxv2tz5a0VDQIcRdrXIBjRjyg1uIDlQXTNtvo6PseNvVYhJtLnGsfjafT5o0TT50nlpKkBUCQQbnpavPigL6pfaGsG9dA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BUKkUT1eyx5FZTK6Xq/YsW4npTci6eh/VoWupVMkRz0=;
+ b=eUBykbpRhCqsrXmELtvZcFmYwx9zzWcCqe0Pd+bBWI8G0XmkvWz1j+nWB9z0Dj39NarrEaeRA1rwt2Jts08sSZT5mJeVYIHX3QGLIhYawqo4lnJQlFtvmvtP70ZDM1ttg8MtlwJ/jLo1SkmAUanVrKc8qhYQtA88xR93nfzKH+iWjjEU+DdFqP0U1vpbXqY9J/L0KoAKH2fcAcnKLDW97hbrW6gYW5R0AX1oHzQAKys9aSlZQ3cBL3oboF3t8nQX39Jri5+bv9H3jAJ0aSP7Oa8JaEDySD5kRUnEvCL6P3TiNK5eMtxKBUzr8dwCp3N0Qq1MkpXFmyqB1oYEgtH+mg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=BUKkUT1eyx5FZTK6Xq/YsW4npTci6eh/VoWupVMkRz0=;
+ b=GJ2AS1NZOtwvs9F1mg4rljfX08FLG20/4y4J5TN6P+wDGB8xy5xc9a+ukgoP2+Hatsd3haJ+XkEaFX9xP6BjeAjPti1/PdkEkPe30bff9OeBl4jKM7M2VSeDSk43FYqYpmtqoXE3HM8WVoixb8Ph2Z3GO/C6RtwcM2nQjHAlyrXyGm+1kAKDTUcSRgdfzagCnwjdDxtfYJNvuONNJ+rq5Oxm3yzV1DrrazzHv0T2QJf0737hzE8FYX3bNz91qNL/gMq8V4iKG2boBhlNxOZtLH1cc1CnWMkpFtE7gZ2H8wmK18qy4aMzO8PH4prlBOGE6jA33cKR3j2sEWkTLI7NgQ==
+Received: from BY2NAM05FT030.eop-nam05.prod.protection.outlook.com
+ (10.152.100.58) by BY2NAM05HT133.eop-nam05.prod.protection.outlook.com
+ (10.152.101.78) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2263.6; Sat, 7 Sep
+ 2019 02:47:48 +0000
+Received: from BY5PR12MB3699.namprd12.prod.outlook.com (10.152.100.59) by
+ BY2NAM05FT030.mail.protection.outlook.com (10.152.100.167) with Microsoft
+ SMTP Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.6 via Frontend Transport; Sat, 7 Sep 2019 02:47:48 +0000
+Received: from BY5PR12MB3699.namprd12.prod.outlook.com
+ ([fe80::2429:2cff:48e7:4d89]) by BY5PR12MB3699.namprd12.prod.outlook.com
+ ([fe80::2429:2cff:48e7:4d89%5]) with mapi id 15.20.2220.024; Sat, 7 Sep 2019
+ 02:47:48 +0000
+From: Yao Lihua <ylhuajnu@outlook.com>
+To: "krzk@kernel.org" <krzk@kernel.org>, "kgene@kernel.org"
+ <kgene@kernel.org>, "linux-samsung-soc@vger.kernel.org"
+ <linux-samsung-soc@vger.kernel.org>
+Subject: [PATCH 0/2] Fix init order of S3C64xx's clock providers
+Thread-Topic: [PATCH 0/2] Fix init order of S3C64xx's clock providers
+Thread-Index: AQHVZSaiW91wLn5Vn0OHDbNgCQYMcg==
+Date: Sat, 7 Sep 2019 02:47:48 +0000
+Message-ID: <BY5PR12MB3699A8D741EF6226B8DB65E4C4B50@BY5PR12MB3699.namprd12.prod.outlook.com>
+Accept-Language: zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HK0PR03CA0096.apcprd03.prod.outlook.com
+ (2603:1096:203:72::36) To BY5PR12MB3699.namprd12.prod.outlook.com
+ (2603:10b6:a03:195::16)
+x-incomingtopheadermarker: OriginalChecksum:0707FC45F03E8ED7520792CB3344E53008DA47F62C2A02F2D2BAF570631116BE;
+ UpperCasedChecksum:7AEBCF3B0A4B2DDD0B4097FE297A84A5DC256792AAD10A95541F5D3764C52E83;
+ SizeAsReceived:7487; Count:48
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.17.1
+x-tmn: [D70OcmfeE6t3iNr/c6TvtDq2IHBquyaQ]
+x-microsoft-original-message-id: <20190907024719.16974-1-ylhuajnu@outlook.com>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 48
+x-eopattributedmessage: 0
+x-ms-exchange-slblob-mailprops: mBRmoEB1kyJZLj0bYvVxCSrv9e2Se25nzXua1sMAR8mvcBn/MTGK90TR+/GKGBAL2orxHZXvr6B3yFt8C9tpDDt192TdKf0eZlqQw99hdD6sSfdFaM/uSYKKaLK32Da149jvwxgTNKHzGwAmaOnMIvwj9mTZ1tFv9b4q7XoFMDZC4Ob3Q3BT2+JhBmAxlXH4+WaDGkEWj2Sx6/8EEWazY4KVGPJ47uoYSxZCtgwprqxVpE9g0MfkylbQF2Fq7mGR+1Ae6Qi0yA3ylMBcQl7rvytB3IvTbud90AObDbL9u+ZMqY1QPnwSdXIQOSFJXmLA2qUWyWBj4c/jHLGRfXvI7dBT7O8UcMnmVsMHyAByH0Xy1jplMXZeaEr1laFLzfowS/gJ47k0jhLBdIMDoNjn/YqF9VrfLNHNb37BpJ/VkD9Me0lZADr5yKDKcB5WNo22qsSxCW3vNxC3SVzDuZP4bc0ytGnwdk4t7wqedApaSNPu2FACm2VV+zuNeptZaG9lll0qlTUo59gJZ2xkIwPZkhjI0CGeSsS6foGFvyF30/r7f1oDaKYMbKReutAS9xRvDNzwODnAlm27eApQh+clq4Tj3YmkRdZMquGvuelees/pwjHW2NEBjSRRNw79N8DlhLsJADDIRlYqxaISUzOc7WXnI7wYG1YYA5ak/6qoPBluBK+XZknmxb1wAY1qCvWwD1JMyOHK6/ghmnbQrNDgIrFaQsBWW7xmy1F+2MnFuwagOtaHUbhN68HBnLZIvov5MAdDlPcuSSY=
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(201702181274)(2017031322404)(2017031323274)(2017031324274)(1601125500)(1603101475)(1701031045);
+ SRVR:BY2NAM05HT133; 
+x-ms-traffictypediagnostic: BY2NAM05HT133:
+x-microsoft-antispam-message-info: mVgPiJC92Nz3LNHlAB8PfXhq7WaCGE4QqPq2V45Hb2CQ5K2pf10BrGzogIqQPS7R+KhPpxzE0laQq6PVO0KZOTn0GlmoM9vGTY45B4zRugo9vpoW6mrFK1KK2MgEbNSiLy6IX7tJh1rfILZuRINjURcIyLpFM9qitgxtUZe9EPti09nxnJ9e6o6v/x39c6Qy
+x-ms-exchange-transport-forked: True
+MIME-Version: 1.0
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 1de14863-e478-4ca1-4dff-08d7333dc495
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 07 Sep 2019 02:47:48.4912 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BY2NAM05HT133
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190906_165120_304237_C555E672 
-X-CRM114-Status: GOOD (  23.20  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20190906_194753_641771_03953203 
+X-CRM114-Status: UNSURE (   6.25  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.92.13.69 listed in list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (ylhuajnu[at]outlook.com)
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,359 +126,32 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
- yamada.masahiro@socionext.com, kristina.martsenko@arm.org, duwe@lst.de,
- bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
- allison@lohutok.net
-MIME-Version: 1.0
+Cc: Yao Lihua <ylhuajnu@outlook.com>, "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-During kexec_file_load, carrying forward the ima measurement log allows
-a verifying party to get the entire runtime event log since the last
-full reboot since that is when PCRs were last reset.
+From: Lihua Yao <ylhuajnu@outlook.com>
 
-Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
----
- arch/arm64/Kconfig                     |   7 +
- arch/arm64/include/asm/ima.h           |  29 ++++
- arch/arm64/include/asm/kexec.h         |   5 +
- arch/arm64/kernel/Makefile             |   3 +-
- arch/arm64/kernel/ima_kexec.c          | 213 +++++++++++++++++++++++++
- arch/arm64/kernel/machine_kexec_file.c |   6 +
- 6 files changed, 262 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/include/asm/ima.h
- create mode 100644 arch/arm64/kernel/ima_kexec.c
+Ensure fin_pll is initialized before clock-controller@7e00f000 so
+we have correct clock frequency like below:
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3adcec05b1f6..f39b12dbf9e8 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -976,6 +976,13 @@ config KEXEC_VERIFY_SIG
- 	  verification for the corresponding kernel image type being
- 	  loaded in order for this to work.
- 
-+config HAVE_IMA_KEXEC
-+	bool "Carry over IMA measurement log during kexec_file_load() syscall"
-+	depends on KEXEC_FILE
-+	help
-+	  Select this option to carry over IMA measurement log during
-+	  kexec_file_load.
-+
- config KEXEC_IMAGE_VERIFY_SIG
- 	bool "Enable Image signature verification support"
- 	default y
-diff --git a/arch/arm64/include/asm/ima.h b/arch/arm64/include/asm/ima.h
-new file mode 100644
-index 000000000000..e23cee84729f
---- /dev/null
-+++ b/arch/arm64/include/asm/ima.h
-@@ -0,0 +1,29 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _ASM_ARM64_IMA_H
-+#define _ASM_ARM64_IMA_H
-+
-+struct kimage;
-+
-+int ima_get_kexec_buffer(void **addr, size_t *size);
-+int ima_free_kexec_buffer(void);
-+
-+#ifdef CONFIG_IMA
-+void remove_ima_buffer(void *fdt, int chosen_node);
-+#else
-+static inline void remove_ima_buffer(void *fdt, int chosen_node) {}
-+#endif
-+
-+#ifdef CONFIG_IMA_KEXEC
-+int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-+			      size_t size);
-+
-+int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node);
-+#else
-+static inline int setup_ima_buffer(const struct kimage *image, void *fdt,
-+				   int chosen_node)
-+{
-+	remove_ima_buffer(fdt, chosen_node);
-+	return 0;
-+}
-+#endif /* CONFIG_IMA_KEXEC */
-+#endif /* _ASM_ARM64_IMA_H */
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..e8d2412066e7 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -96,6 +96,11 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	unsigned long dtb_mem;
-+
-+#ifdef CONFIG_IMA_KEXEC
-+	phys_addr_t ima_buffer_addr;
-+	size_t ima_buffer_size;
-+#endif
- };
- 
- extern const struct kexec_file_ops kexec_image_ops;
-diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
-index 478491f07b4f..580238f2e9a7 100644
---- a/arch/arm64/kernel/Makefile
-+++ b/arch/arm64/kernel/Makefile
-@@ -55,7 +55,8 @@ obj-$(CONFIG_RANDOMIZE_BASE)		+= kaslr.o
- obj-$(CONFIG_HIBERNATION)		+= hibernate.o hibernate-asm.o
- obj-$(CONFIG_KEXEC_CORE)		+= machine_kexec.o relocate_kernel.o	\
- 					   cpu-reset.o
--obj-$(CONFIG_KEXEC_FILE)		+= machine_kexec_file.o kexec_image.o
-+obj-$(CONFIG_KEXEC_FILE)		+= machine_kexec_file.o kexec_image.o	\
-+					   ima_kexec.o
- obj-$(CONFIG_ARM64_RELOC_TEST)		+= arm64-reloc-test.o
- arm64-reloc-test-y := reloc_test_core.o reloc_test_syms.o
- obj-$(CONFIG_CRASH_DUMP)		+= crash_dump.o
-diff --git a/arch/arm64/kernel/ima_kexec.c b/arch/arm64/kernel/ima_kexec.c
-new file mode 100644
-index 000000000000..b14326d541f3
---- /dev/null
-+++ b/arch/arm64/kernel/ima_kexec.c
-@@ -0,0 +1,213 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 Microsoft Corporation.
-+ *
-+ * Authors:
-+ * Prakhar Srivastava <prsriva@linux.microsoft.com>
-+ */
-+
-+#include <linux/slab.h>
-+#include <linux/kexec.h>
-+#include <linux/of.h>
-+#include <linux/memblock.h>
-+#include <linux/libfdt.h>
-+
-+
-+/**
-+ * delete_fdt_mem_rsv - delete memory reservation with given address and size
-+ * @fdt - pointer to the fdt.
-+ * @start - start address of the memory.
-+ * @size - number of cells to be deletd.
-+ * 
-+ * Return: 0 on success, or negative errno on error.
-+ */
-+int delete_fdt_mem_rsv(void *fdt, unsigned long start, unsigned long size)
-+{
-+	int i, ret, num_rsvs = fdt_num_mem_rsv(fdt);
-+
-+	for (i = 0; i < num_rsvs; i++) {
-+		uint64_t rsv_start, rsv_size;
-+
-+		ret = fdt_get_mem_rsv(fdt, i, &rsv_start, &rsv_size);
-+		if (ret) {
-+			pr_err("Malformed device tree\n");
-+			return -EINVAL;
-+		}
-+
-+		if (rsv_start == start && rsv_size == size) {
-+			ret = fdt_del_mem_rsv(fdt, i);
-+			if (ret) {
-+				pr_err("Error deleting device tree reservation\n");
-+				return -EINVAL;
-+			}
-+
-+			return 0;
-+		}
-+	}
-+
-+	return -ENOENT;
-+}
-+
-+/**
-+ * remove_ima_buffer - remove the IMA buffer property and reservation
-+ * @fdt - pointer the fdt.
-+ * @chosen_node - node under which property can be found.
-+ * 
-+ * The IMA measurement buffer is either read by now and freeed or a kexec call
-+ * needs to replace the ima measurement buffer, clear the property and memory
-+ * reservation.
-+ */
-+void remove_ima_buffer(void *fdt, int chosen_node)
-+{
-+	int ret, len;
-+	const void *prop;
-+	uint64_t tmp_start, tmp_end;
-+
-+	prop = fdt_getprop(fdt, chosen_node, "linux,ima-kexec-buffer", &len);
-+	if (prop) {
-+		tmp_start = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+		prop = fdt_getprop(fdt, chosen_node,
-+				   "linux,ima-kexec-buffer-end", &len);
-+		if (!prop)
-+			return;
-+
-+		tmp_end = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+		ret = delete_fdt_mem_rsv(fdt, tmp_start, tmp_end - tmp_start);
-+
-+		if (ret == 0)
-+			pr_debug("Removed old IMA buffer reservation.\n");
-+		else if (ret != -ENOENT)
-+			return;
-+
-+		fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer");
-+		fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer-end");
-+	}
-+}
-+
-+/**
-+ * ima_get_kexec_buffer - get IMA buffer from the previous kernel
-+ * @addr:	On successful return, set to point to the buffer contents.
-+ * @size:	On successful return, set to the buffer size.
-+ *
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int ima_get_kexec_buffer(void **addr, size_t *size)
-+{
-+	int len;
-+	const void *prop;
-+	uint64_t tmp_start, tmp_end;
-+
-+	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer", &len);
-+	if (!prop)
-+		return -ENOENT;
-+
-+	tmp_start = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer-end", &len);
-+	if (!prop)
-+		return -ENOENT;
-+
-+	tmp_end = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+	*addr = __va(tmp_start);
-+	*size = tmp_end - tmp_start;
-+
-+	return 0;
-+}
-+
-+/**
-+ * ima_free_kexec_buffer - free memory used by the IMA buffer
-+ *
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int ima_free_kexec_buffer(void)
-+{
-+	int ret;
-+	void *propStart, *propEnd;
-+	uint64_t tmp_start, tmp_end;
-+
-+	propStart = of_find_property(of_chosen, "linux,ima-kexec-buffer",
-+				     NULL);
-+	if (propStart) {
-+		tmp_start = fdt64_to_cpu(*((const fdt64_t *) propStart));
-+		ret = of_remove_property(of_chosen, propStart);
-+		if (!ret) {
-+			return ret;
-+		}
-+
-+		propEnd = of_find_property(of_chosen,
-+					   "linux,ima-kexec-buffer-end", NULL);
-+		if (!propEnd) {
-+			return -EINVAL;
-+		}
-+
-+		tmp_end = fdt64_to_cpu(*((const fdt64_t *) propEnd));
-+
-+		ret = of_remove_property(of_chosen, propEnd);
-+		if (!ret) {
-+			return ret;
-+		}
-+
-+		return memblock_free(tmp_start, tmp_end - tmp_start);
-+	}
-+	return 0;
-+}
-+
-+#ifdef CONFIG_IMA_KEXEC
-+/**
-+ * arch_ima_add_kexec_buffer - do arch-specific steps to add the IMA
-+ * 	measurement log.
-+ * @image: - pointer to the kimage, to store the address and size of the 
-+ *	 IMA measurement log.
-+ * @load_addr: - the address where the IMA measurement log is stored.
-+ * @size - size of the IMA measurement log.
-+ * 
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-+			      size_t size)
-+{
-+	image->arch.ima_buffer_addr = load_addr;
-+	image->arch.ima_buffer_size = size;
-+	return 0;
-+}
-+
-+/**
-+ * setup_ima_buffer - update the fdt to contain the ima mesasurement log
-+ * @image: - pointer to the kimage, containing the address and size of
-+ *	     the IMA measurement log.
-+ * @fdt: - pointer to the fdt.
-+ * @chosen_node: - node under which property is to be defined.
-+ *  
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node)
-+{
-+	int ret;
-+
-+	remove_ima_buffer(fdt, chosen_node);
-+
-+	if (!image->arch.ima_buffer_size)
-+		return 0;
-+
-+	ret = fdt_setprop_u64(fdt, chosen_node, "linux,ima-kexec-buffer",
-+			      image->arch.ima_buffer_addr);
-+	if (ret < 0)
-+		return ret;
-+
-+	ret = fdt_setprop_u64(fdt, chosen_node, "linux,ima-kexec-buffer-end",
-+			      image->arch.ima_buffer_addr +
-+			      image->arch.ima_buffer_size);
-+	if (ret < 0)
-+		return ret;
-+
-+	ret = fdt_add_mem_rsv(fdt, image->arch.ima_buffer_addr,
-+			      image->arch.ima_buffer_size);
-+	if (ret < 0)
-+		return ret;
-+
-+	return 0;
-+}
-+#endif /* CONFIG_IMA_KEXEC */
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 58871333737a..de5452539c67 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -21,6 +21,7 @@
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- #include <asm/byteorder.h>
-+#include <asm/ima.h>
- 
- /* relevant device tree properties */
- #define FDT_PROP_INITRD_START	"linux,initrd-start"
-@@ -85,6 +86,11 @@ static int setup_dtb(struct kimage *image,
- 			goto out;
- 	}
- 
-+	/* add ima measuremnet log buffer */
-+	ret = setup_ima_buffer(image, dtb, off);
-+	if (ret)
-+		goto out;
-+
- 	/* add kaslr-seed */
- 	ret = fdt_delprop(dtb, off, FDT_PROP_KASLR_SEED);
- 	if  (ret == -FDT_ERR_NOTFOUND)
+[    0.000000] S3C6410 clocks: apll = 532000000, mpll = 532000000
+[    0.000000]  epll = 24000000, arm_clk = 532000000
+
+Lihua Yao (2):
+  ARM: dts: s3c64xx: factor out external fixed clocks
+  ARM: dts: s3c64xx: specify dependency of clock providers
+
+ arch/arm/boot/dts/s3c6400.dtsi         |  1 +
+ arch/arm/boot/dts/s3c6410-mini6410.dts | 22 ----------------------
+ arch/arm/boot/dts/s3c6410-smdk6410.dts | 22 ----------------------
+ arch/arm/boot/dts/s3c6410.dtsi         |  1 +
+ arch/arm/boot/dts/s3c64xx.dtsi         | 14 ++++++++++++++
+ 5 files changed, 16 insertions(+), 44 deletions(-)
+
 -- 
 2.17.1
 
