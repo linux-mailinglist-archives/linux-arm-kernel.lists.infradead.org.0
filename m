@@ -2,76 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3442CAC91C
-	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 21:58:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A81B2AC94A
+	for <lists+linux-arm-kernel@lfdr.de>; Sat,  7 Sep 2019 22:48:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=omZi9fcAW1n9YHNJAC74CUr07gQRwMQkB4LNQk7puv4=; b=i1rhvjEB3zsqdR
-	00YUc9+eOOE023dVYdXOwrA1612oVb4bYIjkGhbhuzwx3CSky34i/NkG/bBayc1y0mGkDwvloZAZF
-	mvyHzUuhq2ej954Qe0pxJtZnyvIyjEChPhULPkZJ4QwTdsr+IDLMtQOdrb1oEE1lag768ucY67V2J
-	ik2TSgkXUIZcGrrvzoydntQzeSo4kcJf8HiHQ1fyBfRHPtF/TlpbXcjySnEww2zFmF+C42QD1RYcg
-	feG6HE/ydd6V4Fd8SSS+yt+MnCJYhPU262E6uUAYWUZgpXT5K4IWIcDenwx1sbcwFSZJhVaw4kQNN
-	3tgRNEzrLz8ratVykhGw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=JaKnzclvKf/DGhVCW7lfh/3S9RlCp66MhuIq3qKkwdo=; b=L8gthyThSER867BMzqwiud/Vf
+	jyBBUZyojOSFYaUVzMYb3IJDJDw7gZTLRQdpUKTxsjlEKalytjoqA+BDV2AcoO0bRivp1owLsfySQ
+	Memo1UgNAzaFHJkeekIKnH9LfI2cZIWEkCKCVEAxHHohJBO6J4OIuAlj9jCqcGbsXlvVX466P//tl
+	zDsDmR9CzzeBoYhGL4WU7diFY92VzzAEA3wNUKrwFK6/OIUz6V+oVJI7VmL90tVnQyVVwEgkHEUQ/
+	GQbfHec8SbMCGcVY8FOvgWg14eD30ln+d6H1f2MKPGoV+MVcrI0hOogm68zKJxjiVeMVvTpI7dbId
+	yaIFzHjLw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6gqg-00084S-9f; Sat, 07 Sep 2019 19:58:18 +0000
-Received: from mail-qk1-f194.google.com ([209.85.222.194])
+	id 1i6hd2-0005Ru-Ew; Sat, 07 Sep 2019 20:48:17 +0000
+Received: from atrey.karlin.mff.cuni.cz ([195.113.26.193])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6gqP-00083b-Ku
- for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 19:58:02 +0000
-Received: by mail-qk1-f194.google.com with SMTP id u184so6132947qkd.4
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 07 Sep 2019 12:57:58 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=9NPm7pq2etg3aO5AoopkMdbvIMBa6Oa5m8sS5IwERn4=;
- b=Pj0GUQ33qTt4KG3asDR9IxpCZuu6ogFt5VPGBn5laKyu+D/0VhvOKkaL6K3JHSImVC
- 6QtU5t6ivixTsZe+eL9+LPy4kV/F2E5Mu7UnsHjo+KnFRF8ggs1Mni4K0FMSWI/5EbzD
- lSw+BIxECXMeYT4Oa8itBdDAine5/awHcxwZjswSgfVFSCZc33mo3Nu6zC3o2fAcw7gf
- fpe8IHwlhzexAqTmHGxXt58YDS6ObNxV2gIltA1DmHGdOwDcfXFlmLu8UVRCN7en5EBJ
- KQ9A4vcqHynZWyzyx6PZY+iSw8Ik4mtBmg1hwgSnZtew/r1Rh7MX4+KqXfjFUxFxs1Np
- q2tQ==
-X-Gm-Message-State: APjAAAWC9dzT3V5X5GSOy8W52NVZ/mxmu54cPM3wWo0L7qNWZK1afjx5
- Tqbesja9UByFoW6HwofbGnZMHk1cTSH7Q0aIfjA=
-X-Google-Smtp-Source: APXvYqx8oJMvuPB2/youI+h75v27+Ip96nv7/l7tdwFLO1GMppaXZm3p/ssMxkoocV7Lo+QidZdpBd1QqU5QYX//lI0=
-X-Received: by 2002:a05:620a:145a:: with SMTP id
- i26mr15728941qkl.352.1567886278121; 
- Sat, 07 Sep 2019 12:57:58 -0700 (PDT)
-MIME-Version: 1.0
+ id 1i6hcp-0005Qc-W6
+ for linux-arm-kernel@lists.infradead.org; Sat, 07 Sep 2019 20:48:05 +0000
+Received: by atrey.karlin.mff.cuni.cz (Postfix, from userid 512)
+ id 5D3F9802B9; Sat,  7 Sep 2019 22:47:39 +0200 (CEST)
+Date: Sat, 7 Sep 2019 22:47:52 +0200
+From: Pavel Machek <pavel@ucw.cz>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH v3 0/6] ARM: dts: mmp2: devicetree updates
+Message-ID: <20190907204752.GA7919@amd>
 References: <20190828072629.285760-1-lkundrak@v3.sk>
  <20190907194040.GB25459@amd>
-In-Reply-To: <20190907194040.GB25459@amd>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Sat, 7 Sep 2019 21:57:42 +0200
-Message-ID: <CAK8P3a0nNEoy31oxFL11Y2VHw-O=m8e8JuuQk+FjiPh94GikoA@mail.gmail.com>
-Subject: Re: [PATCH v3 0/6] ARM: dts: mmp2: devicetree updates
-To: Pavel Machek <pavel@ucw.cz>
+ <CAK8P3a0nNEoy31oxFL11Y2VHw-O=m8e8JuuQk+FjiPh94GikoA@mail.gmail.com>
+MIME-Version: 1.0
+In-Reply-To: <CAK8P3a0nNEoy31oxFL11Y2VHw-O=m8e8JuuQk+FjiPh94GikoA@mail.gmail.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190907_125801_687774_965D7B96 
-X-CRM114-Status: GOOD (  12.55  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190907_134804_189938_27030924 
+X-CRM114-Status: GOOD (  17.99  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.194 listed in list.dnswl.org]
- 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.194 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.113.26.193 listed in list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,38 +64,75 @@ Cc: Mark Rutland <mark.rutland@arm.com>, DTML <devicetree@vger.kernel.org>,
  Lubomir Rintel <lkundrak@v3.sk>, Rob Herring <robh+dt@kernel.org>,
  Olof Johansson <olof@lixom.net>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Content-Type: multipart/mixed; boundary="===============5773698087097424425=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 7, 2019 at 9:40 PM Pavel Machek <pavel@ucw.cz> wrote:
->
->
-> > Here's a couple of updates for the MMP2 SoC devicetree files.
-> > I'm wondering if they could be applied to the armsoc tree?
+
+--===============5773698087097424425==
+Content-Type: multipart/signed; micalg=pgp-sha1;
+	protocol="application/pgp-signature"; boundary="a8Wt8u1KmwUX3Y2C"
+Content-Disposition: inline
+
+
+--a8Wt8u1KmwUX3Y2C
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Sat 2019-09-07 21:57:42, Arnd Bergmann wrote:
+> On Sat, Sep 7, 2019 at 9:40 PM Pavel Machek <pavel@ucw.cz> wrote:
 > >
-> > Compared to previous submission, the only change is the addition of
-> > Acks from Pavel.
->
-> Any news here? Having up-to-date dts is kind-of useful....
+> >
+> > > Here's a couple of updates for the MMP2 SoC devicetree files.
+> > > I'm wondering if they could be applied to the armsoc tree?
+> > >
+> > > Compared to previous submission, the only change is the addition of
+> > > Acks from Pavel.
+> >
+> > Any news here? Having up-to-date dts is kind-of useful....
+>=20
+> Thanks for adding me to Cc on your reply. I'm doing the merged for 5.4
+> and had not noticed this series earlier (I found the mmp3 series by
+> accident, but that one looked like it was not meant as a submission
+> for inclusion yet).
+>=20
+> I've added the six patches to the arm/late branch in the soc tree
+> now, they will be in 5.4.
 
-Thanks for adding me to Cc on your reply. I'm doing the merged for 5.4
-and had not noticed this series earlier (I found the mmp3 series by
-accident, but that one looked like it was not meant as a submission
-for inclusion yet).
+That was quick, thank you!
+								Pavel
+							=09
+--=20
+(english) http://www.livejournal.com/~pavelmachek
+(cesky, pictures) http://atrey.karlin.mff.cuni.cz/~pavel/picture/horses/blo=
+g.html
 
-I've added the six patches to the arm/late branch in the soc tree
-now, they will be in 5.4.
+--a8Wt8u1KmwUX3Y2C
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: Digital signature
 
-Lubomir, please send all future submissions to soc@kernel.org
-(with Cc: to the interested parties) when you want them to be
-included in the soc tree. That way they show up in patchwork
-and won't get lost.
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1
 
-       Arnd
+iEYEARECAAYFAl10F3gACgkQMOfwapXb+vL0iwCeKnLVYDl45xCxTQmr6GfIec3S
+/nMAoLneu6hLNmE6/QadQfhQkaNlwULX
+=8gHX
+-----END PGP SIGNATURE-----
+
+--a8Wt8u1KmwUX3Y2C--
+
+
+--===============5773698087097424425==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============5773698087097424425==--
+
