@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77A77ACF34
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 16:13:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 151F9ACF4F
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 16:26:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Za2mz2fJzzZs10oCxj7zvuwUQbbxrsqn8eEqg0eCcso=; b=WRF29RvLNGor3i
-	dP6MLhNwoby6VbhVCV0C5jGsdXp6uUhO2LJIAO+4eGyCcD7hB1TYZbI5djTNCELXAc9WOZnb3pu9Q
-	L1fpCTIQeWAXEnlJnEP6xmzKFwYl2B40mx3aRopljsFIPeVfKtG2JjSBJC6GguuqafckT85jsW4ge
-	pOHWToAC9FJmpwC2BnHT0aXAhFZJlWokUmA7l2h8YmC8+pKvRQehN8+kVHdk02xM5ku5/qJTRQygi
-	erPx2iQJlW3gOLuKL76sdMOHG6W5UsZdLC2TvY34GT5m5iVHfEMFNEPVVJpGMxbyuKbMavjKnafBJ
-	Su8fxpSjkMd+WHBMdEgg==;
+	List-Owner; bh=QxVe0mkjwiSQq8QOJ6pLAFqWd5xZ/WMN9LafHqwhtoE=; b=EjTAG94ECxr/RX
+	wuFOXhnqFbXaq5RgMxxQEDFJPg0zzIKSXfx4DB42S7Z6/yXG5606f3s1aTby37EZLiwot9MQ/bjsP
+	FQyyM838lYIE/krFBuX1Ce2QJ1E6gy0ElsqUyiAl2mvL051wx0qnBQ2qEj1evg8lppulD5qJp0e0u
+	0ra4H6+tE3rOmUB9AO53Hg+q9c6NcOCFm4Xwlw0vGQDszFxSX/l16gDif01EtIfzEfnN2FNx5GFym
+	T7VGlEXJoOmFdbWw7u7Fv+k2vjGSWLntD007o+iVkIUyPatVqWhNm/R2gumEqBnGoxsFtbq5DCX05
+	SMkfsi9JA2wbO+NtbaXg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6xwa-0000Hh-57; Sun, 08 Sep 2019 14:13:32 +0000
+	id 1i6y9V-0004MC-86; Sun, 08 Sep 2019 14:26:53 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6xwU-0000H9-Uu
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 14:13:28 +0000
+ id 1i6y9N-0004Lh-JW
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 14:26:46 +0000
 Received: from localhost (unknown [122.182.221.179])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 69EE0214DB;
- Sun,  8 Sep 2019 14:13:21 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 334872082C;
+ Sun,  8 Sep 2019 14:26:42 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567952005;
- bh=g9RxzkYEfVpKOAJwV3oEn7y/61ZfPHD/mrK3hZzuHnQ=;
+ s=default; t=1567952805;
+ bh=5OC7Bh5uXfbtr4JcrcU69cVhYn1EgLlh/jbSfCSkHnE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=WoBiJ481LdXQmZDqTPxZwAiFcq3EBZGBJ46sim865WlLmOJowtKJuxb6YLB6trmmn
- zupdUdIULJ2hiBhVxS4HtyhqHAfXPBEt2D6AHChVbR25Mt0yfNoLZNBc5SbMXXl8we
- 3HmSm+7QUehQ2Xx+PdHsAyJNKOTu76to2aq2y9F4=
-Date: Sun, 8 Sep 2019 19:42:07 +0530
+ b=DupPeUreh77vAnNFkRHcvZkC5JEoXcFKq61YC4s2Sz1Xk2CDD3ymTVWmey73R7Iry
+ j38HOr3x1SWw/XhxnU24p4fio+G3bqtEUX6juOJIXpWL0EHNI2mGqM5MNI5JXamb11
+ +ihuCLC9yGbSxoa98lha+itpNuTROB8kw0w2KKk8=
+Date: Sun, 8 Sep 2019 19:55:28 +0530
 From: Vinod Koul <vkoul@kernel.org>
 To: Peter Ujfalusi <peter.ujfalusi@ti.com>
-Subject: Re: [PATCH v2 04/14] dmaengine: Add metadata_ops for
- dma_async_tx_descriptor
-Message-ID: <20190908141207.GO2672@vkoul-mobl>
+Subject: Re: [PATCH v2 06/14] dmaengine: ti: Add cppi5 header for UDMA
+Message-ID: <20190908142528.GP2672@vkoul-mobl>
 References: <20190730093450.12664-1-peter.ujfalusi@ti.com>
- <20190730093450.12664-5-peter.ujfalusi@ti.com>
+ <20190730093450.12664-7-peter.ujfalusi@ti.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190730093450.12664-5-peter.ujfalusi@ti.com>
+In-Reply-To: <20190730093450.12664-7-peter.ujfalusi@ti.com>
 User-Agent: Mutt/1.12.0 (2019-05-25)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_071327_019620_72516590 
-X-CRM114-Status: GOOD (  19.60  )
+X-CRM114-CacheID: sfid-20190908_072645_667327_5BD63E5C 
+X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -89,62 +89,52 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 30-07-19, 12:34, Peter Ujfalusi wrote:
-> The metadata is best described as side band data or parameters traveling
-> alongside the data DMAd by the DMA engine. It is data
-> which is understood by the peripheral and the peripheral driver only, the
-> DMA engine see it only as data block and it is not interpreting it in any
-> way.
-> 
-> The metadata can be different per descriptor as it is a parameter for the
-> data being transferred.
-> 
-> If the DMA supports per descriptor metadata it can implement the attach,
-> get_ptr/set_len callbacks.
-> 
-> Client drivers must only use either attach or get_ptr/set_len to avoid
-> misconfiguration.
-> 
-> Client driver can check if a given metadata mode is supported by the
-> channel during probe time with
-> dmaengine_is_metadata_mode_supported(chan, DESC_METADATA_CLIENT);
-> dmaengine_is_metadata_mode_supported(chan, DESC_METADATA_ENGINE);
-> 
-> and based on this information can use either mode.
-> 
-> Wrappers are also added for the metadata_ops.
-> 
-> To be used in DESC_METADATA_CLIENT mode:
-> dmaengine_desc_attach_metadata()
-> 
-> To be used in DESC_METADATA_ENGINE mode:
-> dmaengine_desc_get_metadata_ptr()
-> dmaengine_desc_set_metadata_len()
-> 
-> Signed-off-by: Peter Ujfalusi <peter.ujfalusi@ti.com>
-> ---
->  drivers/dma/dmaengine.c   |  73 ++++++++++++++++++++++++++
->  include/linux/dmaengine.h | 108 ++++++++++++++++++++++++++++++++++++++
->  2 files changed, 181 insertions(+)
-> 
-> diff --git a/drivers/dma/dmaengine.c b/drivers/dma/dmaengine.c
-> index 03ac4b96117c..6baddf7dcbfd 100644
-> --- a/drivers/dma/dmaengine.c
-> +++ b/drivers/dma/dmaengine.c
-> @@ -1302,6 +1302,79 @@ void dma_async_tx_descriptor_init(struct dma_async_tx_descriptor *tx,
->  }
->  EXPORT_SYMBOL(dma_async_tx_descriptor_init);
->  
-> +static inline int desc_check_and_set_metadata_mode(
-> +	struct dma_async_tx_descriptor *desc, enum dma_desc_metadata_mode mode)
-> +{
-> +	/* Make sure that the metadata mode is not mixed */
-> +	if (!desc->desc_metadata_mode) {
-> +		if (dmaengine_is_metadata_mode_supported(desc->chan, mode))
-> +			desc->desc_metadata_mode = mode;
 
-So do we have different descriptors supporting different modes or is it
-controlled based? For latter we can do this check at controller
-registration!
+> +/**
+> + * Descriptor header, present in all types of descriptors
+> + */
+> +struct cppi5_desc_hdr_t {
+> +	u32 pkt_info0;	/* Packet info word 0 (n/a in Buffer desc) */
+> +	u32 pkt_info1;	/* Packet info word 1 (n/a in Buffer desc) */
+> +	u32 pkt_info2;	/* Packet info word 2 Buffer reclamation info */
+> +	u32 src_dst_tag; /* Packet info word 3 (n/a in Buffer desc) */
+
+Can we move these comments to kernel-doc style please
+
+> +/**
+> + * cppi5_desc_get_type - get descriptor type
+> + * @desc_hdr: packet descriptor/TR header
+> + *
+> + * Returns descriptor type:
+> + * CPPI5_INFO0_DESC_TYPE_VAL_HOST
+> + * CPPI5_INFO0_DESC_TYPE_VAL_MONO
+> + * CPPI5_INFO0_DESC_TYPE_VAL_TR
+> + */
+> +static inline u32 cppi5_desc_get_type(struct cppi5_desc_hdr_t *desc_hdr)
+> +{
+> +	WARN_ON(!desc_hdr);
+
+why WARN_ON and not return error!
+
+> +/**
+> + * cppi5_hdesc_calc_size - Calculate Host Packet Descriptor size
+> + * @epib: is EPIB present
+> + * @psdata_size: PSDATA size
+> + * @sw_data_size: SWDATA size
+> + *
+> + * Returns required Host Packet Descriptor size
+> + * 0 - if PSDATA > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE
+> + */
+> +static inline u32 cppi5_hdesc_calc_size(bool epib, u32 psdata_size,
+> +					u32 sw_data_size)
+> +{
+> +	u32 desc_size;
+> +
+> +	if (psdata_size > CPPI5_INFO0_HDESC_PSDATA_MAX_SIZE)
+> +		return 0;
+> +	//TODO_GS: align
+
+:)
 
 -- 
 ~Vinod
