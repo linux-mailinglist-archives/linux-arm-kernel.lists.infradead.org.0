@@ -2,84 +2,78 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0CBA9ACEEC
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 15:31:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4E6AACEFE
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 15:43:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Oesmiwa8cFo/Sa8O3MXFOwPNL9qrB1xM7FiI7cWHj+k=; b=jEjBDOnhpcL1xd
-	Dou47x5LMQLW0mx3W8LRVLmRJNQmS78LsIsyA4cIf/54f1B607BiCl7PStTroTuoxRI4TR4OkAfdC
-	3YbT7ybPnwuDxApCO6HR17j42vwwcKWJ+9DzEdiNowz0ss6/75+J8Zuwjc4W/xktvwKQe/S5gViZI
-	+hwbamKWtSzCO2jecTJX9BkUau9BWRCxsYZVFhH2pq2B5EPy0JnrSiZjCrkUopAHAOyCSXMVitM7b
-	RlhJPKzZNVYXkOz1i42WIQZqIvyd/GdNb3c3W3L1N8zEHVRyYLm7SSiho2EA6BlPlMbyi2Dbgo0mR
-	4jvfoMYJvk3ABeIttXkg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=9Ih6ezT0kuPh7nqCspHMKYbqOf7FEiLFO7d7JVhs8iE=; b=WBb
+	8W9eA+x3dRnIeTMHv7S4CUHYWpfNCIQwI69v04w+tt4xL/C4KoxIYwZ93bWEBLmkuGbARvcTZ8Sx6
+	V8/jw5Y8+mJaIVq0B4PQgnZK/QdZ5sK+68Jgn6/+ST4vT4Oc5EwxHvMNgrlVNHxZlNHYDxvSGqwkj
+	CzX3GEdfYxpNZlvzHhV9YO3UvLaVguR91Kc3SY5cEQ+EqgnN/cs6QWWSGALVCfNlSGGvomzWdk/1v
+	pSoyUSsdmcWhmSODVMIuKwuxDjDOq6tAp4QSojj1Z1lLzMGv297ag2RYWraM1STwUS2W7pvdl+nNe
+	oJcOLwIZSXiP9NztBUzNmyjkzLDlyCQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6xIE-0001CW-EL; Sun, 08 Sep 2019 13:31:50 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1i6xTM-0004tw-MN; Sun, 08 Sep 2019 13:43:20 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6xI9-0001CC-LU
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 13:31:46 +0000
-Received: by mail-io1-xd42.google.com with SMTP id h144so22794863iof.7
+ id 1i6xT9-0004pc-Jr
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 13:43:09 +0000
+Received: by mail-wm1-x341.google.com with SMTP id k2so10911464wmj.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 08 Sep 2019 06:31:44 -0700 (PDT)
+ Sun, 08 Sep 2019 06:43:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=bgdev-pl.20150623.gappssmtp.com; s=20150623;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=X36wmf2pELzyiFZg2q0AZrLC5LYQSeOEO3rN3+H57xE=;
- b=BimSHKNEyNzWb8hT9o7lZ2Nhdz/s4+lbiuzgpmVLSurdU1us2dnPcX4TK/Wg+cAbKH
- oVd2ZhdQAxE+a4fHS932+8og+uPsHLydHNkwp28Au5hrNzHhD8cr3C07Up6dpjg1L5We
- JVyoJQxbUyyXkNyXqmLr0TlbDB0A0f1mnJnrP+RO3nZlF62DmwCnrNEka/VcHUNZxe51
- 9sRid72T1Jwe7r5ctCkCBVTqG6Qtm+a82yBZGA1Nj4Vop0YsfYVXoC7E267+P503exA7
- CzR0t2upSy3AgcUA0Vj9I+mnENWe6Wc3v0eLkyYP4tAeZKwM2W5A6U7VsWdj+FSfltr8
- tltg==
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=from:to:cc:subject:date:message-id;
+ bh=bhJiBihaPigA25kWimp1Wuk4duG+A/TW5bOjh0hx7qw=;
+ b=FbLKHFO3sy/P0LsX5o7Lup+JKzur4H4kJ75gquUD3SHLGIczGl85/lWck6sGMnBYAg
+ WuraeQeE84/NeiZuKBQAK7N9H1Tbzjb9ZahlQWMSgcqXezOev7edsEN/PnzMny+AYBbZ
+ xB2juX0GUvpdh55ITRxxgbp9rNzidWkL4rgedFsVY26bwlrT4VdwHUgR1f4Z+IMjWVo8
+ wfL/Xb1j8ivrQWg8m6S3A31KhBx7GmDA9r8KVefF5CBpC11SP2hf2m0wA3dIwsYM+DFx
+ 9HGyFtFgiGihd56srnRwjg1StrJz+0jGNE39tXzxd58RyOGF2vZCEGJhfbEsAhWknHlr
+ l12Q==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=X36wmf2pELzyiFZg2q0AZrLC5LYQSeOEO3rN3+H57xE=;
- b=MqWRW3WFYSVZdSJIqw0kjoPU31ye4q8v6zXXI5lDsVUS1Cb2aG6xMk2TYYI8fYh2WE
- 6VtsCX27/mre6ADi+yzTE0Cpa+FSPWJZLKxLQkk3xCwIst8LKegburKolpCrxLiOgfPC
- P/GT+l45wpg8+IN3SPfBncB/0EzthJoUkcfsLLYF2Nlh52+bC7UVxOb/yliWxnTrnrDf
- G4H3qnCYrA0vJ4b/FzC7i4tiRFv6Jdnq/jKc61wcW8GwYEefXWIwXR4ZXIPS1KiGSPGk
- LWHSUjhD1FLCCts5rck4D7MQmHBxw2RqzVdqNhIP44JXFjX6or7f6R7MNeBU/lQwI4K9
- 1xzA==
-X-Gm-Message-State: APjAAAWfN3ZabaQ/HZus0+YuPDdXzejI1t6GUuGOOU+AhUap/XSGhA19
- 3CswHULNaUdCMQuFshaTRIDdW3Q+Ll9e2C+caWO6Qg==
-X-Google-Smtp-Source: APXvYqwzM2/smviUmWv4GATCXByKYmZBZv6kVqGnmRGoYGjQ1Na3OObolYsXeau8eo8I2KisMILUm2hc4DvR+jJL9Aw=
-X-Received: by 2002:a5d:8457:: with SMTP id w23mr3350922ior.189.1567949504203; 
- Sun, 08 Sep 2019 06:31:44 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190725131257.6142-1-brgl@bgdev.pl>
- <CAK8P3a1FXyRRi5q48h-=egFjgoRJvy6_zuO9MQaAOMA-bsJKRA@mail.gmail.com>
- <CAMRc=Me_7aw_RvU_tZnVUgduN2wWYGqJ7hQirQ2RLzxGiPujvQ@mail.gmail.com>
- <CAMRc=MdCviMA4gakqFS3+F-nU2XkdmmZbCb-m1mBJdGRHufKGg@mail.gmail.com>
- <27eb964a-bc6c-3a0d-c2c4-48e908465986@ti.com>
- <CAMpxmJX7osgdzx1Lc=627RpHZDs+ha8a6=AnhaQJ5HkLVp-xKg@mail.gmail.com>
- <CAK8P3a0+kfDbGrcFi5TLxNNpoOM6u6KRW+PaLFNSQJ9BTxX=-w@mail.gmail.com>
-In-Reply-To: <CAK8P3a0+kfDbGrcFi5TLxNNpoOM6u6KRW+PaLFNSQJ9BTxX=-w@mail.gmail.com>
-From: Bartosz Golaszewski <brgl@bgdev.pl>
-Date: Sun, 8 Sep 2019 15:31:33 +0200
-Message-ID: <CAMRc=Mdsfbh1nF1a23Anig=w42s7=WzS3Uz7KK1P1aRNP2kFvg@mail.gmail.com>
-Subject: Re: [PATCH v2 0/5] ARM: make DaVinci part of the ARM v5 multiplatform
- build
-To: Arnd Bergmann <arnd@arndb.de>
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=bhJiBihaPigA25kWimp1Wuk4duG+A/TW5bOjh0hx7qw=;
+ b=RBMo/xIfeRad50prT6YRV1j2fa+RQdPqQkzXGJmf/Rjz9K8mU88X7JPQh/OV7Wuv4M
+ kKjomex5jrrLa2D+2aBLwQCgVPSS9OMVzh7y90mqsKWT7iwgg0a23jhoMLp3Q8IjDOtC
+ Fm+DxAdeCSFf9X0nSBhCeyR1youAeMZCIpiNzYEH108cRJKpNq7eCHLlC42oiQaSDfRO
+ JlK0K/5wZLgdFrVqD9j6ZOIcovIBckGEl2fA5rTJ0rsdANZ3cePtte437X7B4fcy7e/5
+ w4QK/WI6K5AjuO4ztzd3PMNg8qQgq65zSFE2CRu1ljfFhewxj3As3yX4QCr4CtW22Npq
+ n1lg==
+X-Gm-Message-State: APjAAAWhFnlEpMtTLMQVxYQZ6SbO1Uf101uQfmUimRcBw6hE6kqhoyLU
+ Hz1XnXq08OJxDvvBuui45+q0nA==
+X-Google-Smtp-Source: APXvYqzZDOffIFpKH0a5IrjJM+OMLi4OoraM+UJVMqR7MJ3TEHLDVrjUVrj3tt8e4i0+UESY/zZsig==
+X-Received: by 2002:a7b:cfd1:: with SMTP id f17mr14578586wmm.146.1567950184183; 
+ Sun, 08 Sep 2019 06:43:04 -0700 (PDT)
+Received: from localhost.localdomain ([51.15.160.169])
+ by smtp.gmail.com with ESMTPSA id t203sm14313902wmf.42.2019.09.08.06.43.03
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
+ Sun, 08 Sep 2019 06:43:03 -0700 (PDT)
+From: Neil Armstrong <narmstrong@baylibre.com>
+To: khilman@baylibre.com, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
+ yue.wang@Amlogic.com, kishon@ti.com
+Subject: [PATCH 0/6] arm64: dts: meson-g12: add support for PCIe
+Date: Sun,  8 Sep 2019 13:42:52 +0000
+Message-Id: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_063145_754489_5CC37A7B 
-X-CRM114-Status: GOOD (  12.22  )
+X-CRM114-CacheID: sfid-20190908_064307_795610_27A14B1F 
+X-CRM114-Status: GOOD (  11.26  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -95,37 +89,57 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>, Kevin Hilman <khilman@kernel.org>,
- Sekhar Nori <nsekhar@ti.com>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Hans Verkuil <hans.verkuil@cisco.com>,
- Mauro Carvalho Chehab <mchehab@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Linux Media Mailing List <linux-media@vger.kernel.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Neil Armstrong <narmstrong@baylibre.com>, maz@kernel.org,
+ linux-kernel@vger.kernel.org, repk@triplefau.lt, linux-pci@vger.kernel.org,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-c29iLiwgNyB3cnogMjAxOSBvIDEwOjIxIEFybmQgQmVyZ21hbm4gPGFybmRAYXJuZGIuZGU+IG5h
-cGlzYcWCKGEpOgo+Cj4gT24gV2VkLCBBdWcgMjgsIDIwMTkgYXQgOTo1NSBBTSBCYXJ0b3N6IEdv
-bGFzemV3c2tpCj4gPGJnb2xhc3pld3NraUBiYXlsaWJyZS5jb20+IHdyb3RlOgo+ID4gxZtyLiwg
-Mjggc2llIDIwMTkgbyAwOTo0NCBTZWtoYXIgTm9yaSA8bnNla2hhckB0aS5jb20+IG5hcGlzYcWC
-KGEpOgo+ID4KPiA+IEFjdHVhbGx5IEkgdGVzdGVkIHRoaXMgd2l0aG91dCB0aGUgY2xvY2tzb3Vy
-Y2UgY29udmVyc2lvbiBhbmQgaXQgd29ya3MKPiA+IC0gdGhlIHByZXZpb3VzIGRyaXZlciBzdGls
-bCBzZWxlY3RzIHJlbGV2YW50IGNvbmZpZyBvcHRpb25zLiBCdXQgSQo+ID4gdGhpbmsgeW91J3Jl
-IHJpZ2h0IC0gaXQncyB3b3J0aCBwaWNraW5nIHVwIGFsbCB0aGUgYnVnIGZpeGVzIGZyb20gdGhp
-cwo+ID4gc2VyaWVzIGFuZCB0aGVuIG1lcmdpbmcgdGhlIHJlc3Qgb25jZSBkbTM2NSBpc3N1ZSBp
-cyBmaXhlZC4KPgo+IEkganVzdCBoYWQgYW5vdGhlciBsb29rIGF0IHRoZSBzZXJpZXMgYW5kIGZv
-dW5kIHRoYXQgdGhlIGRyaXZlciBmaXhlcwo+IChwYXRjaGVzIDEgYW5kIDIpIGFyZSBxdWV1ZWQg
-aW4gbGludXgtbmV4dCwgYW5kIHBhdGNoIDMgd2FzIG1lcmdlZC4KPgo+IElmIHlvdSBsaWtlLCBJ
-IGNvdWxkIHB1dCB0aGUgcmVtYWluaW5nIHR3byBwYXRjaGVzIGludG8gdGhlIGFybS9sYXRlIGJy
-YW5jaAo+IGFuZCBzZW5kIHRoYXQgYWZ0ZXIgdGhlIG1lZGlhIGFuZCBzdGFnaW5nIHRyZWVzIGFy
-ZSBtZXJnZWQgaW50byBtYWlubGluZS4KPgo+ICAgICAgIEFybmQKClN1cmUhIE1ha2VzIHNlbnNl
-LgoKU2VraGFyOiB0aGlzIHNlcmllcyBkb2Vzbid0IGJyZWFrIGN1cnJlbnQgbWFpbmxpbmUgKGku
-ZS4gd2l0aG91dCB0aGUKY2xvY2tzb3VyY2Ugc2VyaWVzKSBzbyBJIHRoaW5rIHdlJ3JlIHNhZmUg
-ZXZlbiBmb3IgZG0zNjUuCgpCYXJ0CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2Vy
-bmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1h
-bi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+This patchset :
+- updates the Amlogic PCI bindings for G12A
+- reworks the Amlogic PCIe driver to make use of the
+G12a USB3+PCIe Combo PHY instead of directly writing in
+the PHY register
+- adds the necessary operations to the G12a USB3+PCIe Combo PHY driver
+- adds the PCIe Node for G12A, G12B and SM1 SoCs
+- adds the commented support for the S922X, A311D and S905D3 based
+VIM3 boards.
+
+This patchset has been tested in a A311D VIM3 using a 128Go
+TS128GMTE110S NVMe PCIe module.
+
+For indication, here is a bonnie++ run as ext4 formatted:
+     ------Sequential Output------ --Sequential Input- --Random-
+     -Per Chr- --Block-- -Rewrite- -Per Chr- --Block-- --Seeks--
+Size K/sec %CP K/sec %CP K/sec %CP K/sec %CP K/sec %CP /sec %CP
+  4G 93865  99 312837  96 194487  23 102808  97 415501 21 +++++ +++
+
+Neil Armstrong (6):
+  dt-bindings: pci: amlogic,meson-pcie: Add G12A bindings
+  PCI: amlogic: Fix probed clock names
+  PCI: amlogic: meson: Add support for G12A
+  phy: meson-g12a-usb3-pcie: Add support for PCIe mode
+  arm64: dts: meson-g12a: Add PCIe node
+  arm64: dts: khadas-vim3: add commented support for PCIe
+
+ .../bindings/pci/amlogic,meson-pcie.txt       |  12 +-
+ .../boot/dts/amlogic/meson-g12-common.dtsi    |  33 ++++++
+ .../amlogic/meson-g12b-a311d-khadas-vim3.dts  |  22 ++++
+ .../amlogic/meson-g12b-s922x-khadas-vim3.dts  |  22 ++++
+ .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |   4 +
+ .../dts/amlogic/meson-sm1-khadas-vim3l.dts    |  22 ++++
+ drivers/pci/controller/dwc/pci-meson.c        | 105 ++++++++++++++----
+ .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    |  70 ++++++++++--
+ 8 files changed, 258 insertions(+), 32 deletions(-)
+
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
