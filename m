@@ -2,86 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CAC94ACF0D
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 15:44:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9542DACF1B
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 15:51:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=QUXLTanNpBi7m3CSIb/hvCMPdGApNF7Yuxi0v5VpzLg=; b=mD3MyXTYzYhWtfPwPT8g/NeFkr
-	L69w/GGsEvqMAjm4rHmMjURkbNePPPrV3AlhhvUYL5GpPVo0v3Fx1rfZNQnFCOQqHkU2SQwl6kIxp
-	Fx3OXLjs0U1GpXl0gZA3lN4oYN7Sm7xyvhZRVzJhkFFKXQKsvW0+RSHp1ArJYmD+3Enf++GGE+bow
-	KypGRobG17HTNdQxOjg96azUy+mS6X70jwrHgRAm3HGeFcusKXW7t+YBzyo7iBUXfWegV3xx7C1wq
-	Bk4Fxj82TQcmwFcZVGeshHT3UnrJd9IenjUTxUW4WaBR6zLNvGyhNbtsOdUjhkM5MSPEECmucCgGr
-	Zn8kYq1Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pXBHnzhJEs9CRmrXZBlEggVSC+O+FLpcMCAo8c5TnU8=; b=XFdogjRqaFt45k
+	xZCEP2SN8BWU1Jnn6EK7gznKbCEkic1pyKER/nw9Lt6vk55WezfQeK4/M3H2WyP2l1yyDtLeLOvsk
+	9Bpk8055gnxoKJNDKC1UCkgj+8vYto1GEEpqLt4fFmQzKKFYqLF71OGo6sLjSIrDLUdW+sYrNhbfi
+	T6ndG7J+H8X3UxlAb8przAFxkerMdXgDu0/bqFMaPOpPJD66qzYZf+caszmMwWyR1257tJ6c544q3
+	7McyNcfeWxF6+aJCumPh6mmPA++OhYcxh6iZ4m0xABjmXLo2DlNLHa75AUWi4fdGhGyin1v5b7PTw
+	gucUVcYFbsVsmF/M7Y7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6xUG-0006Qb-MP; Sun, 08 Sep 2019 13:44:16 +0000
-Received: from mail-wr1-x442.google.com ([2a00:1450:4864:20::442])
+	id 1i6xbR-0001Hv-DL; Sun, 08 Sep 2019 13:51:41 +0000
+Received: from mail-ua1-x944.google.com ([2607:f8b0:4864:20::944])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6xTE-0004sK-0h
- for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 13:43:17 +0000
-Received: by mail-wr1-x442.google.com with SMTP id w13so11013717wru.7
+ id 1i6xbK-0001Gv-Gk
+ for linux-arm-kernel@lists.infradead.org; Sun, 08 Sep 2019 13:51:36 +0000
+Received: by mail-ua1-x944.google.com with SMTP id i17so3454714ual.7
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 08 Sep 2019 06:43:11 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=baylibre-com.20150623.gappssmtp.com; s=20150623;
- h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=MPMNuIvBDuMpXWllYYYQc+uQUL5Apc6pCcccd/3M7DI=;
- b=1YogVn8kGos8KYTq7iFgHl8nNKzFAwaR62cZ1BnEPVcRFJF/CtzJpgnRxieBcmpBns
- BMc+Ppn2v3xM9ZWWG42Iv9Q3g4cpCEhC44zuVO585NDvAuOTD9b19ZhQwh34UD98voaj
- daaCrnsdN+1Egwx4tVBs5FD/Xy8l2Odfcz1gsIPIhaHoE8jDpfkxr1Vip00kqwk4dDIz
- LXhm/1DtkeWECYKe1P3ceIHzK57O3oL5PRURDiSYO/WIg1QTpKSZXlwRwamN+hzQ9M3g
- hNQPVbxrvwxM6klB5rCKV0ZIUA/qOfK49v2dI3LSrgfECoW6bUUlaLUbCExtmLmEc5oc
- s2AA==
+ Sun, 08 Sep 2019 06:51:28 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=/OjUEd4QSp7PdF6VW4aQrBE3Z+/uVpO6ArZ5TFedKOc=;
+ b=gVLsd+T0GXYo4KXD8R+kiCVmUyc3iXlvJ5SL3N90TjeV223lfZq0lpVImmm1TQPLvr
+ biVG3B/n3OMziPN/L+IVvhgX7Ge1Bk7hcW/JG/CkZ9zrfy4+DonIP5+MTrsf/9lW9zj+
+ GDyNN76Ur/2fW2BBK/M7SqE9yXZfqSEsSHkh4=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references;
- bh=MPMNuIvBDuMpXWllYYYQc+uQUL5Apc6pCcccd/3M7DI=;
- b=jB5xXujpfUP2diHWwzgRUPVuS4DNPOi42B6jK9DfUztosAhV5uDRSeUTsqeKTjcNJE
- pgWRnZgKNkPOyXwsAh7wzBjV7qxKTbfwdUr5dxYua72vX9vsSuzgP3qgmdTFpT2iciBF
- 7qZkq4Yk1p78Fm+GwoVjNRc8KGro9OAu6LgfKz8fSGapiEL71ZZHXMPEtzq5qTp1ajMH
- OOB3riEbfgxcuxNKGVyRnW4TJSZLja0Dqw4BlnUwcjbQ87oRH/4YnJfQDMKRSjmewqXX
- DzDAHHDujwRWvnTeddfBt7mBxVb1MI6Cira3qbPFtOBUJcUS85vwoPOqOSzxMSVcRKvg
- hTQA==
-X-Gm-Message-State: APjAAAXXP0L/yW+v02ZUn6Lwp+ic0EHQkfV/g0gZiaZpn2cCjGDsq+PJ
- UB7afrr7KMDIWPfJj9voCc/LGw==
-X-Google-Smtp-Source: APXvYqwNyG0t5TErz2/QR2NwfTw/s/xk+uFaC9e+6aRneeul+t9o7Pn0tGNVJy66USrGio+WoOlNeg==
-X-Received: by 2002:adf:f482:: with SMTP id l2mr15178200wro.103.1567950190158; 
- Sun, 08 Sep 2019 06:43:10 -0700 (PDT)
-Received: from localhost.localdomain ([51.15.160.169])
- by smtp.gmail.com with ESMTPSA id t203sm14313902wmf.42.2019.09.08.06.43.09
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Sun, 08 Sep 2019 06:43:09 -0700 (PDT)
-From: Neil Armstrong <narmstrong@baylibre.com>
-To: khilman@baylibre.com, bhelgaas@google.com, lorenzo.pieralisi@arm.com,
- yue.wang@Amlogic.com, kishon@ti.com
-Subject: [PATCH 6/6] arm64: dts: khadas-vim3: add commented support for PCIe
-Date: Sun,  8 Sep 2019 13:42:58 +0000
-Message-Id: <1567950178-4466-7-git-send-email-narmstrong@baylibre.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
-References: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=/OjUEd4QSp7PdF6VW4aQrBE3Z+/uVpO6ArZ5TFedKOc=;
+ b=MKWMciA6GCGp75+KiBjx/kiV/Tq04DI1qgk8IGj7OLpRvbFFVcFQ/7Rd8k8j8CE0kA
+ eTdE+kMx6G/Ry44jqbqIb/Wb9RAnWYV0wJI8BLl69AUVffxfS2vCN5K5K3x5F5SI98Dh
+ RkNYWo1ml2rGr4wndrFhsHhpKjntPepxZePoHNYd2xIm2HP/zd97ZljQ23sO+i5co9Yu
+ oreuRtH6iHHSWilZsMkJlj8l+gt746DPr3580WO8TBlhq5rjDi2R2Mi3J3J7IyeOsv5/
+ P6f7Dw2ZC76qhco+tH2vKzaWdeRG9Sf2U5tkzwtYegTBWF4ux+aiDIysBS2/K0v752Va
+ NrcQ==
+X-Gm-Message-State: APjAAAWMbDSTGKH0yoYLupo+bgVQVrQFPx9HB2XydWIrkzfp+nTSUpt8
+ pYv9nwRfU27/QElqYa7gV0PJUobl3yKybvjW+CTywA==
+X-Google-Smtp-Source: APXvYqz0WcmHMeiK6IT+v7kmZTAGTgr1Hd/fvxS4YbL4elq2hJMpg584VDsJiFFWnsbRAAo6uqeDZQp5p3+XGhBLzrU=
+X-Received: by 2002:ab0:7c3:: with SMTP id d3mr8981573uaf.131.1567950687342;
+ Sun, 08 Sep 2019 06:51:27 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190717083327.47646-1-cychiang@chromium.org>
+ <CA+Px+wX4gbntkd6y8NN8xwXpZLD4MH9rTeHcW9+Ndtw=3_mWBw@mail.gmail.com>
+ <CAFv8NwLiY+ro0L4c5vjSOGN8jA-Qr4zm2OWvVHkiuoa7_4e2Fg@mail.gmail.com>
+In-Reply-To: <CAFv8NwLiY+ro0L4c5vjSOGN8jA-Qr4zm2OWvVHkiuoa7_4e2Fg@mail.gmail.com>
+From: Cheng-yi Chiang <cychiang@chromium.org>
+Date: Sun, 8 Sep 2019 21:51:01 +0800
+Message-ID: <CAFv8NwJjG4mwfnYO=M3O9nZN48D6aY72nQuqEFpZL68dh5727w@mail.gmail.com>
+Subject: Re: [PATCH v5 0/5] Add HDMI jack support on RK3288
+To: Tzung-Bi Shih <tzungbi@google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_064312_079309_08664E68 
-X-CRM114-Status: GOOD (  14.43  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190908_065134_560076_80242D3E 
+X-CRM114-Status: GOOD (  21.48  )
+X-Spam-Score: -7.6 (-------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-7.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:944 listed in]
  [list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,143 +92,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Neil Armstrong <narmstrong@baylibre.com>, maz@kernel.org,
- linux-kernel@vger.kernel.org, repk@triplefau.lt, linux-pci@vger.kernel.org,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: ALSA development <alsa-devel@alsa-project.org>,
+ Douglas Anderson <dianders@chromium.org>, Heiko Stuebner <heiko@sntech.de>,
+ Liam Girdwood <lgirdwood@gmail.com>, David Airlie <airlied@linux.ie>,
+ dri-devel@lists.freedesktop.org, Neil Armstrong <narmstrong@baylibre.com>,
+ Takashi Iwai <tiwai@suse.com>, tzungbi@chromium.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Hans Verkuil <hverkuil@xs4all.nl>, Andrzej Hajda <a.hajda@samsung.com>,
+ Russell King <rmk+kernel@armlinux.org.uk>, Mark Brown <broonie@kernel.org>,
+ Laurent Pinchart <Laurent.pinchart@ideasonboard.com>,
+ Daniel Vetter <daniel@ffwll.ch>, linux-rockchip@lists.infradead.org,
+ Dylan Reid <dgreid@chromium.org>, Jaroslav Kysela <perex@perex.cz>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The VIM3 on-board  MCU can mux the PCIe/USB3.0 shared differential
-lines using a FUSB340TMX USB 3.1 SuperSpeed Data Switch between
-an USB3.0 Type A connector and a M.2 Key M slot.
-The PHY driving these differential lines is shared between
-the USB3.0 controller and the PCIe Controller, thus only
-a single controller can use it.
+On Fri, Aug 30, 2019 at 10:55 AM Cheng-yi Chiang <cychiang@chromium.org> wrote:
+>
+> On Wed, Jul 17, 2019 at 6:28 PM Tzung-Bi Shih <tzungbi@google.com> wrote:
+> >
+> > On Wed, Jul 17, 2019 at 4:33 PM Cheng-Yi Chiang <cychiang@chromium.org> wrote:
+> > >
+> > > This patch series supports HDMI jack reporting on RK3288, which uses
+> > > DRM dw-hdmi driver and hdmi-codec codec driver.
+> > >
+> > > The previous discussion about reporting jack status using hdmi-notifier
+> > > and drm_audio_component is at
+> > >
+> > > https://lore.kernel.org/patchwork/patch/1083027/
+> > >
+> > > The new approach is to use a callback mechanism that is
+> > > specific to hdmi-codec.
+> > >
+> > > Changes from v4 to v5:
+> > > - synopsys/Kconfig: Remove the incorrect dependency change in v4.
+> > > - rockchip/Kconfig: Add dependency of hdmi-codec when it is really need
+> > >   for jack support.
+> > >
+> > > Cheng-Yi Chiang (5):
+> > >   ASoC: hdmi-codec: Add an op to set callback function for plug event
+> > >   drm: bridge: dw-hdmi: Report connector status using callback
+> > >   drm: dw-hdmi-i2s: Use fixed id for codec device
+> > >   ASoC: rockchip_max98090: Add dai_link for HDMI
+> > >   ASoC: rockchip_max98090: Add HDMI jack support
+> > >
+> > LGTM.
+> >
+> > Reviewed-by: Tzung-Bi Shih <tzungbi@google.com>
+>
+> Hi Daniel,
+> Do you have further concern on this patch series related to hdmi-codec
+> and drm part ?
+> We would like to merge this patch series if possible.
+> They will be needed in many future chrome projects for HDMI audio jack
+> detection.
+> Thanks a lot!
 
-The needed DT configuration when the MCU is configured to mux
-the PCIe/USB3.0 differential lines to the M.2 Key M slot is
-added commented and may uncommented to disable USB3.0 from the
-USB Complex and enable the PCIe controller.
+Hi Neil,
+I am not sure if this patch series is under your radar.
+Would you mind taking a look ?
+This patch series has been following great suggestions from various
+reviewers, so I hope it is fine now.
 
-Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
----
- .../amlogic/meson-g12b-a311d-khadas-vim3.dts  | 22 +++++++++++++++++++
- .../amlogic/meson-g12b-s922x-khadas-vim3.dts  | 22 +++++++++++++++++++
- .../boot/dts/amlogic/meson-khadas-vim3.dtsi   |  4 ++++
- .../dts/amlogic/meson-sm1-khadas-vim3l.dts    | 22 +++++++++++++++++++
- 4 files changed, 70 insertions(+)
-
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts
-index 3a6a1e0c1e32..0577b1435cbb 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-a311d-khadas-vim3.dts
-@@ -14,3 +14,25 @@
- / {
- 	compatible = "khadas,vim3", "amlogic,a311d", "amlogic,g12b";
- };
-+
-+/*
-+ * The VIM3 on-board  MCU can mux the PCIe/USB3.0 shared differential
-+ * lines using a FUSB340TMX USB 3.1 SuperSpeed Data Switch between
-+ * an USB3.0 Type A connector and a M.2 Key M slot.
-+ * The PHY driving these differential lines is shared between
-+ * the USB3.0 controller and the PCIe Controller, thus only
-+ * a single controller can use it.
-+ * If the MCU is configured to mux the PCIe/USB3.0 differential lines
-+ * to the M.2 Key M slot, uncomment the following block to disable
-+ * USB3.0 from the USB Complex and enable the PCIe controller.
-+ */
-+/*
-+&pcie {
-+	status = "okay";
-+};
-+
-+&usb {
-+	phys = <&usb2_phy0>, <&usb2_phy1>;
-+	phy-names = "usb2-phy0", "usb2-phy1";
-+};
-+ */
-diff --git a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x-khadas-vim3.dts b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x-khadas-vim3.dts
-index b73deb282120..1ef5c2f04f67 100644
---- a/arch/arm64/boot/dts/amlogic/meson-g12b-s922x-khadas-vim3.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-g12b-s922x-khadas-vim3.dts
-@@ -14,3 +14,25 @@
- / {
- 	compatible = "khadas,vim3", "amlogic,s922x", "amlogic,g12b";
- };
-+
-+/*
-+ * The VIM3 on-board  MCU can mux the PCIe/USB3.0 shared differential
-+ * lines using a FUSB340TMX USB 3.1 SuperSpeed Data Switch between
-+ * an USB3.0 Type A connector and a M.2 Key M slot.
-+ * The PHY driving these differential lines is shared between
-+ * the USB3.0 controller and the PCIe Controller, thus only
-+ * a single controller can use it.
-+ * If the MCU is configured to mux the PCIe/USB3.0 differential lines
-+ * to the M.2 Key M slot, uncomment the following block to disable
-+ * USB3.0 from the USB Complex and enable the PCIe controller.
-+ */
-+/*
-+&pcie {
-+	status = "okay";
-+};
-+
-+&usb {
-+	phys = <&usb2_phy0>, <&usb2_phy1>;
-+	phy-names = "usb2-phy0", "usb2-phy1";
-+};
-+ */
-diff --git a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-index 8647da7d6609..eac5720dc15f 100644
---- a/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-+++ b/arch/arm64/boot/dts/amlogic/meson-khadas-vim3.dtsi
-@@ -246,6 +246,10 @@
- 	linux,rc-map-name = "rc-khadas";
- };
- 
-+&pcie {
-+	reset-gpios = <&gpio GPIOA_8 GPIO_ACTIVE_LOW>;
-+};
-+
- &pwm_ef {
-         status = "okay";
-         pinctrl-0 = <&pwm_e_pins>;
-diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-index 5233bd7cacfb..d9c7cbedce53 100644
---- a/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-+++ b/arch/arm64/boot/dts/amlogic/meson-sm1-khadas-vim3l.dts
-@@ -68,3 +68,25 @@
- 	clock-names = "clkin1";
- 	status = "okay";
- };
-+
-+/*
-+ * The VIM3 on-board  MCU can mux the PCIe/USB3.0 shared differential
-+ * lines using a FUSB340TMX USB 3.1 SuperSpeed Data Switch between
-+ * an USB3.0 Type A connector and a M.2 Key M slot.
-+ * The PHY driving these differential lines is shared between
-+ * the USB3.0 controller and the PCIe Controller, thus only
-+ * a single controller can use it.
-+ * If the MCU is configured to mux the PCIe/USB3.0 differential lines
-+ * to the M.2 Key M slot, uncomment the following block to disable
-+ * USB3.0 from the USB Complex and enable the PCIe controller.
-+ */
-+/*
-+&pcie {
-+	status = "okay";
-+};
-+
-+&usb {
-+	phys = <&usb2_phy0>, <&usb2_phy1>;
-+	phy-names = "usb2-phy0", "usb2-phy1";
-+};
-+ */
--- 
-2.17.1
-
+Audio jack reporting for HDMI might not be needed for other OS, but it
+is a must on ChromeOS.
+We have many previous projects using different local patch sets to
+achieve HDMI jack reporting.
+I hope that we can achieve a proper way and really get the patches
+merged to mainline.
+Thanks a lot!
 
 _______________________________________________
 linux-arm-kernel mailing list
