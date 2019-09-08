@@ -2,61 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0A1D8ACCD5
-	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 14:43:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EB41CACCD6
+	for <lists+linux-arm-kernel@lfdr.de>; Sun,  8 Sep 2019 14:44:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=dixicH4ewfkqDatCyDIk0kyLNQL5UdaaMNqakmNmihY=; b=H/1lCq7ayqST2P
-	aRbrM4sUnDNYFQlhCoT1RcGutI+7CEERvJHIO7tLefy8BWnxWrYQA44/Xr8eLQuqiQLM/DAeySFQi
-	ekTv+yJ8oC7sL3FfQOxmcNZIxd844Npr2J/ZNsEnjmCspuOUnuq2sNcEz83Ww3+wiqZ508TJWyM0H
-	Amx2MVUIM8A4FxkE/WJNTJvrNjw5cNOYev+Y9DTxMo8PBs4WGcfMwdT9DnbcGmj7hiMnY4KEYJRWO
-	71NQB61lcpzX7kdpfzJlmGAAN23ajxdppzlaJWQMuEhvJ1eWDe2IDgDkadyQUWrkA5n1ju/VCUdgC
-	F8EPju/2KQcD8h7OAANA==;
+	List-Owner; bh=MURmUbBaqXILJZ1FbG0uSfV9syWVtwdYv0w5dCdfZcU=; b=M2HjcXgoB6tGr+
+	Ip+zzVLzZNNYQakcL3YMoRsHepzJNluIBBqTbrkXp4IfQ5kh8g7FdF+8Js+5QzKbPCT6vYRmrX2b7
+	mqNU4E33JKtVEzOlgvfeRio8lQU4pHCpJtmkrdLixxY5gTc+h0Ze1dX+Xeaqt4gPuGH2w6gKzbFxo
+	SutQ2LtyX2aZJwZuEslfFuoFWnfGiSqVl0gA6G3kuNt5PmXJo84eNLOjQxZSu6zEDJQMl0vA4fX7U
+	S6aeZErT0zF89P9TivdkxeC8Hl+r4QqVAK2ISfs2A0GPTGFotYOK1GXDVyWKPNSQxVUGeGW0VxhJF
+	zJtep3n5E2/y3qGEuMzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i6wXc-0002Ij-R5; Sun, 08 Sep 2019 12:43:40 +0000
+	id 1i6wYJ-0002gR-GK; Sun, 08 Sep 2019 12:44:23 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i6wXW-0002Hd-OW; Sun, 08 Sep 2019 12:43:36 +0000
+ id 1i6wYD-0002g1-BE; Sun, 08 Sep 2019 12:44:18 +0000
 Received: from localhost (unknown [62.28.240.114])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B0E5218AE;
- Sun,  8 Sep 2019 12:43:32 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8848421920;
+ Sun,  8 Sep 2019 12:44:16 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1567946612;
- bh=YZJIXJ17E7a0+EEK2SrgMQvwGAvnZmivE5QpgZgWL18=;
+ s=default; t=1567946657;
+ bh=jaiPO4WwP8gIgvXqmYmnleiQmHpvd5tKNuZEiZG9TLo=;
  h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=sJPQiuctj6q06P97XlnT7X3ZvfZePzwL2AzOgd6W+yTGY0bxENK/gSSq80wm2eode
- vsG7sGKc3N80gjm4jTzgb4b3H1RfVNA69DwnCCqlU8NeTfjotGMQezjddCYbCQTFfB
- 2UVCp3LBPMvlBuU42pC3Z2FV2tZNJhERcjnLedIw=
+ b=E6pfAWU5T9bTWVElJ+z1PWlpPX5uM6C7rb/qEhsxB1vyoOLyMrnNphnNkIBheQbjZ
+ 5oSWYr2AWRobd+JlNO74LlTuHXGjaOjGNTw3m1VM/MYihwZVz0p1vEhSGmEY2ESoW2
+ Qan1hTRBIjOCP0lVJckGyiG7e3jhJogNyvNZVNCg=
 From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 4.4 17/23] spi: bcm2835aux: ensure interrupts are enabled for
+Subject: [PATCH 4.9 18/26] spi: bcm2835aux: ensure interrupts are enabled for
  shared handler
-Date: Sun,  8 Sep 2019 13:41:52 +0100
-Message-Id: <20190908121100.841586731@linuxfoundation.org>
+Date: Sun,  8 Sep 2019 13:41:57 +0100
+Message-Id: <20190908121108.502407891@linuxfoundation.org>
 X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190908121052.898169328@linuxfoundation.org>
-References: <20190908121052.898169328@linuxfoundation.org>
+In-Reply-To: <20190908121057.216802689@linuxfoundation.org>
+References: <20190908121057.216802689@linuxfoundation.org>
 User-Agent: quilt/0.66
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_054334_822829_77217500 
+X-CRM114-CacheID: sfid-20190908_054417_405548_B6E36C03 
 X-CRM114-Status: GOOD (  14.72  )
 X-Spam-Score: -1.4 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-1.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
  [62.28.240.114 listed in zen.spamhaus.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -124,10 +124,10 @@ Signed-off-by: Sasha Levin <sashal@kernel.org>
  1 file changed, 5 insertions(+)
 
 diff --git a/drivers/spi/spi-bcm2835aux.c b/drivers/spi/spi-bcm2835aux.c
-index 7de6f8472a810..6f4c6aa801f14 100644
+index 7428091d3f5b8..bd00b7cc8b78b 100644
 --- a/drivers/spi/spi-bcm2835aux.c
 +++ b/drivers/spi/spi-bcm2835aux.c
-@@ -187,6 +187,11 @@ static irqreturn_t bcm2835aux_spi_interrupt(int irq, void *dev_id)
+@@ -184,6 +184,11 @@ static irqreturn_t bcm2835aux_spi_interrupt(int irq, void *dev_id)
  	struct bcm2835aux_spi *bs = spi_master_get_devdata(master);
  	irqreturn_t ret = IRQ_NONE;
  
