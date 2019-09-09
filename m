@@ -2,88 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87DBBAD868
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 14:01:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3B40AD873
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 14:04:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G36SZ1s4KRmHAhDcIhT/tLit3pzrLgWqYaqv7tbdWjc=; b=IWbIvvgv14vu02
-	HcHddxzW3T1is6yyf3fSEajlPdOjzWsK2t/d9n27mSueW53NYwXyttKW4rAN72yJweiH4hb5ml/pb
-	7qKm/6ttS4VAtPO11T6nCmAsymGAC6RZtzQuuUcwgIxEOJo8x6gYOBveMPU6A0rEzejjjzfARjrJ1
-	A42d1sLkb5zxhRnkDd0DKQYKSrw10ALWiGnm5PT2IPbxoV7N8qD7Pl6xsE/vXPAnZC06RM5lHuddA
-	sA/ma3Gz9iTwMAUP9Hc+R0GQCJwET4noXbwNtxAvvrFQ+l/rUsCVG8+O2ZRFHeTYwiP2OUkX/7SF/
-	255STGSiK1zuWsKvJQUg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=4e2MiPqFiNSJAuYF/gT6BIYc47P68DsmFTdvUDT4TFA=; b=pePiKzDc+f7vAs
+	RCOWDlXD0HlmRHLNwseeX/+5WxAZ0A6OzOPWOJQ6FVRCBaMPKoKTr7zeIZdkYoEWDyaTXt/pJPyvW
+	FyLLZCbTTY7qJG8HNtU0Yr2iKV4fe0ADRG5o77ReYpvlLJum7B1uEVNaa2ZWWtDtD69VtUds3W1la
+	+uKbAd/2k5n8GcH6iz0l7DHaVW/9YKC6sMs/IipJ6SbcmbLMQG4bs4uOP9+4xvKuGX7ax4Ng8Fs81
+	EIAX1b/e5ruoBwQqhx23Cs8Kl4EjSZchNY64y9kXdaqpnUgyEs8VHE+2XE7klPS0OVTMF3l3eIZD3
+	uyFpLSddk8TzND1yG8nQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7IMG-0001mn-0F; Mon, 09 Sep 2019 12:01:24 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1i7IOg-0002GP-CW; Mon, 09 Sep 2019 12:03:54 +0000
+Received: from mail-sh.amlogic.com ([58.32.228.43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7IM9-0001lT-0o
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 12:01:18 +0000
-Received: by mail-io1-xd44.google.com with SMTP id k5so2659507iol.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 05:01:13 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=gjzSJy3NDD7sYggLday3lhixH+9SUC/EVeZUWoe2eU4=;
- b=sBnSROaYcwf48BNTZC63gADs6dyXJsKsfnm5pvlYuv5jzlMTu/aPSFTGhshJ5Ll2Ik
- vp3iKTlPbMgxE6XkoPHIJ/qTcKQQEIG5TxF+1nU1OVHAw1XATgur1o4zXdsj6Tl06D07
- IVt098D2fTUdr0zDTvJJNG6PS5KsBOW0c2GESGvGta4qvr3/oOGCkc7ZXFfuiHRI2eP+
- jNx5OyS14T4hjexE+g4JM9Ovu0yh/3y36DnCXdIPNEMImJM4bhEXEWUpxJnIOw2j0N8p
- VKfPXMRpbA4pqQXRi8/WFkUfYT9a3yEaV7KGTZAW27gtUxRfz210Ov9jSc972wldEYOe
- B8BA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=gjzSJy3NDD7sYggLday3lhixH+9SUC/EVeZUWoe2eU4=;
- b=ky1XZ0il66Sm6FUDY2DxHjdW5Y5hr+lRKXSdVTB6Aal+l/Vyoo64gkBscOM3leXgAr
- +cD8EMCmTWFVyUpBZD0/9II6+VpsNELDbaArFuR25NKLhAdNckuAcpK1a/Xc3jIa3TAh
- 3BrcJwlDKcb/oIfD1bLxoE3Wkcqh3NWEQGHGdhWd4Gz4qbZzzCqB7XEiu1MOVm1sxQCa
- Tg+L6mHGxDRYOGCxTF2W4p5I5akBpdK639uIopwkjxQSDTMmpj3GjFz3vHUOARjoTA2i
- 9fEbPA7bAsAgdRvAEdejho7QOrJrP3V1G6Nbwv8Rv96LHrWhN66qJCCZbNHIlOXTdMQW
- u9bQ==
-X-Gm-Message-State: APjAAAX+fWowjoOBtWoxpgOYLJcHlpLyRExVypodXGkNCySa1EplWdRW
- av6WeG6dPnsEGPoD/79v8fpNJVDbJrjykCiBU2M=
-X-Google-Smtp-Source: APXvYqyKrMcPIeFry4pmSxcirJ0sZlzv9BWvR/f7rXRlNraERjFdqJdXoc1ys7lbOzrlKqXMAIHEzvwlSjm0lpNwlDo=
-X-Received: by 2002:a6b:e514:: with SMTP id y20mr18930982ioc.197.1568030472875; 
- Mon, 09 Sep 2019 05:01:12 -0700 (PDT)
+ id 1i7IOZ-0002FU-JA; Mon, 09 Sep 2019 12:03:48 +0000
+Received: from [10.18.29.226] (10.18.29.226) by mail-sh.amlogic.com
+ (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Mon, 9 Sep
+ 2019 20:04:28 +0800
+Subject: Re: [PATCH v2 4/4] arm64: dts: add support for A1 based Amlogic AD401
+To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
+References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
+ <1567667251-33466-5-git-send-email-jianxin.pan@amlogic.com>
+ <CAFBinCBSmW4y-Dz7EkJMV8HOU4k6Z0G-K6T77XnVrHyubaSsdg@mail.gmail.com>
+ <be032a85-b60d-f7f0-8404-b27784d809df@amlogic.com>
+ <CAFBinCD7gFzOsmZCB8T1KJKVsgL7WMhoEkj3dRzyqwAnjC0CNA@mail.gmail.com>
+From: Jianxin Pan <jianxin.pan@amlogic.com>
+Message-ID: <a82336e2-44df-5682-1c86-daf8a8448d30@amlogic.com>
+Date: Mon, 9 Sep 2019 20:04:27 +0800
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <1566936978-28519-1-git-send-email-peng.fan@nxp.com>
- <20190906172044.B99FB20838@mail.kernel.org>
-In-Reply-To: <20190906172044.B99FB20838@mail.kernel.org>
-From: Dong Aisheng <dongas86@gmail.com>
-Date: Mon, 9 Sep 2019 19:51:12 +0800
-Message-ID: <CAA+hA=To9B0H1z6Hh1eSZN9_rcextT_Oe-CTMmz9fC9CDNUBTQ@mail.gmail.com>
-Subject: Re: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
-To: Stephen Boyd <sboyd@kernel.org>
+In-Reply-To: <CAFBinCD7gFzOsmZCB8T1KJKVsgL7WMhoEkj3dRzyqwAnjC0CNA@mail.gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.18.29.226]
+X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
+ (10.18.11.5)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_050117_090380_F23BC292 
-X-CRM114-Status: GOOD (  11.14  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190909_050347_632844_8AE5E611 
+X-CRM114-Status: GOOD (  11.11  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (dongas86[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (dongas86[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,47 +65,46 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
- Jacky Bai <ping.bai@nxp.com>, Anson Huang <anson.huang@nxp.com>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- Abel Vesa <abel.vesa@nxp.com>
+Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
+ Victor Wan <victor.wan@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>,
+ Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
+ Qiufang Dai <qiufang.dai@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
+ Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
+ Tao Zeng <tao.zeng@amlogic.com>, Carlo Caione <carlo@caione.org>,
+ linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
+ Jerome Brunet <jbrunet@baylibre.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 7, 2019 at 9:47 PM Stephen Boyd <sboyd@kernel.org> wrote:
->
-> Quoting Peng Fan (2019-08-27 01:17:50)
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > There is hardware issue that:
-> > The output clock the LPCG cell will not turn back on as expected,
-> > even though a read of the IPG registers in the LPCG indicates that
-> > the clock should be enabled.
-> >
-> > The software workaround is to write twice to enable the LPCG clock
-> > output.
-> >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
->
-> Does this need a Fixes tag?
+Hi Martin,
 
-Not sure as it's not code logic issue but a hardware bug.
-And 4.19 LTS still have not this driver support.
+On 2019/9/7 23:02, Martin Blumenstingl wrote:
+> Hi Jianxin,
+> 
+> On Fri, Sep 6, 2019 at 7:58 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
+> [...]
+>>> also I'm a bit surprised to see no busses (like aobus, cbus, periphs, ...) here
+>>> aren't there any busses defined in the A1 SoC implementation or are
+>>> were you planning to add them later?
+>> Unlike previous series,there is no Cortex-M3 AO CPU in A1, and there is no AO/EE power domain.
+>> Most of the registers are on the apb_32b bus.  aobus, cbus and periphs are not used in A1.
+> OK, thank you for the explanation
+> since you're going to re-send the patch anyways: can you please
+> include the apb_32b bus?
+> all other upstream Amlogic .dts are using the bus definitions, so that
+> will make A1 consistent with the other SoCs
+In A1 (and the later C1), BUS is not mentioned in the memmap and register spec.
+Registers are organized and grouped by functions, and we can not find information about buses from the SoC document.
+Maybe it's better to remove bus definitions for these chips.
+> 
+> 
+> Martin
+> 
+> .
+> 
 
-Regards
-Aisheng
-
->
 
 _______________________________________________
 linux-arm-kernel mailing list
