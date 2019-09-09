@@ -2,77 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 416C8AD500
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 10:40:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 853A0AD506
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 10:43:05 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=FpdWECc+gSeieeIde5BF3PUONJFqy8SXTpWLyIzP89c=; b=QO5
-	uD8qRf8SJo7pnM6bJINenwGB41ZdamxeUifHQBppywfn4Hs6aSD52mdzGYoW508ScKvcITFo3FtNB
-	uLf8MEIrmeNsG6p4Ump/aHgtQjyfTtINdSki/xGMh2hr1LWxWMJkIfAz/o5zFS7RQs5DDVgrausp4
-	MjJbuH1W+iptsgAxDpvbAKuwRC6Gn7M6z0XHfvWKqMBpMzqZTcFvrdsCpgXvZbDnJuYJVspL6C9aP
-	0lhar0hqcJCVix4m+AjdG/HC8tIkVhserYQ/zO3R/GbnqBYxMOcCal+SD6lQn9DxqaNK06OOaqt6G
-	sEuLxB6RwIyGPMa8+wdqPhHjrA6THXg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=P/1EC+ChQ8BXZTZx02M4Pz4xSdhbPBrejCoMbKW6WHA=; b=YN9uO+KHyZCnn5
+	sXrnfmzWHK8/2nr4JOyz2qq34ttdM8hbzc4aEVCXZdfzgVZ2Mg67vYSf0SKMGGgAUWaUF3dVrRYZa
+	h63w+enwgbI1lTx+53/QTcfosJwAVlCeryyV4WbCzkbuR9PSoOdA8py5e+OwGzg468jWRSV9PKLSb
+	dH0hKGu90B0pWIdNKJzQoc38fLrEukh/JmbwCNGrYkcB/nvjpucdrSX7xFmkAG4ItqLnC0AleIJRP
+	mK5NuFU7/lv7hSOyAmcWQM8Z8YAVE6OXhecmAo8wM2ZlN+UWaZjwyrEAZwxftaisuMYO5H1D80eBD
+	Q6mniI8W+ogL3zPogsGg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7FDk-0006SO-3z; Mon, 09 Sep 2019 08:40:24 +0000
-Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
+	id 1i7FGJ-0007Iw-Mc; Mon, 09 Sep 2019 08:43:03 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7FDZ-0006Rc-4L
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 08:40:14 +0000
-Received: by mail-pf1-x443.google.com with SMTP id d15so8691620pfo.10
+ id 1i7FG7-0007IZ-CN
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 08:42:52 +0000
+Received: by mail-wm1-x341.google.com with SMTP id 7so3113408wme.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 01:40:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=TNGg1bT4M83XgP2RC5fcRc5TAwrl2wtEuXkFfZHHUo0=;
- b=ADS5F3cs90nPD8bSvzEWy/mb+K5U1guRgyF+b9L4vilM7Om3shihnqQDQmspQFACA3
- QyM7CGKF0CfDIwhQvXfQYyGn1ZIvtb9KwPuzjyejVlGYSOyo03KFiEL08MGmm9qC9Vtu
- D4Yhuea7WOLZ3PtvVj45RuMW55RKJ41Fq8kKs=
+ Mon, 09 Sep 2019 01:42:50 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=subject:to:cc:references:from:message-id:date:user-agent
+ :mime-version:in-reply-to:content-language:content-transfer-encoding;
+ bh=VRJyS7lUCXas8WAE658lk9X9sHjdPlVwIBMgs+wdqWI=;
+ b=QZfGunqBjejLiGnNAxL/fPG1ckyIjU+rD3juRxpa2g4ni1iEHvKAgTpq7F2wp0DESC
+ NsjRU4d7+kheApD7wdnMg5VShbozYS4+gq14PcUoTSb2UC+7XY/Tgrktw60ghtoYyKKv
+ jSFIg9wXvU//K9X08jH0DUxiBejNu0n1h7Jd9iU0JVFIYfZujPU/36FU+E+lFKAvuV//
+ tm18hs03Hl6EeVaOUZ5C054OiHN2UAw1q6D3Lh7DxCiBFTyKOKCRBwF7O+MpEoN0m8of
+ odRouRg7RdoB/E4IN93u4i8baIcjCSqiyiHgHN2L+j2nDnUqMvXdRJ899taCfpPppcnF
+ ZniA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=TNGg1bT4M83XgP2RC5fcRc5TAwrl2wtEuXkFfZHHUo0=;
- b=YMmp1jUdE5OlSX3grXdn/MuhWlghfalcWvbKhpjDzXLotFv4QpO/FYMmk23fFiy0Hr
- AjlgHfC7miM6j4QC4EH2FbloeV4KBkuLfDlUum2qIcVbAm1t9cm0aawia7UgVmHM9Jlt
- DgdQx3uHNAexo7CldT17UGsM2775dFLb0I2xztJEXaWeETz2/77RRLGAac/FioReaLqC
- iKfOjkfvfNnTAKL4GNMInlj44nlotr8e2tP5sXwwCrkoQQpaxTrw3PybkT6CM4tOAPWi
- 0mpLdAkhqacnyrkxpr8qAsm6Rem5qWWELq+ECrAHRkhtV1OTU5KzpVhJFr/MNfrJPnd0
- HUqQ==
-X-Gm-Message-State: APjAAAUliAPcCigDZBHYcKCl2zqutGISRlZc/K0eDyDxGQOxQcp7TNjA
- d6W96pRXYMninzerWnR9ZLXXIg==
-X-Google-Smtp-Source: APXvYqxVxkiMU1OnCxUqU9U/Z9h7kM90tIaooxzLYGix97nAkELbgYSZRV6TyhpuDWeJOwZRgBJ9uw==
-X-Received: by 2002:a62:ae0c:: with SMTP id q12mr25243724pff.253.1568018411533; 
- Mon, 09 Sep 2019 01:40:11 -0700 (PDT)
-Received: from rayagonda.dhcp.broadcom.net ([192.19.234.250])
- by smtp.gmail.com with ESMTPSA id r27sm16175346pgn.25.2019.09.09.01.40.08
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-SHA bits=128/128);
- Mon, 09 Sep 2019 01:40:10 -0700 (PDT)
-From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-To: Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- bcm-kernel-feedback-list@broadcom.com, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
- devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
-Subject: [PATCH v1 1/1] arm64: dts: Fix gpio to pinmux mapping
-Date: Mon,  9 Sep 2019 14:05:27 +0530
-Message-Id: <1568018127-26730-1-git-send-email-rayagonda.kokatanur@broadcom.com>
-X-Mailer: git-send-email 1.9.1
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=VRJyS7lUCXas8WAE658lk9X9sHjdPlVwIBMgs+wdqWI=;
+ b=JRwmwkzLyNvLEcIvh9+honNhwrlhFPn1VocI8o1XHM6sD9gCYU2YuH+7xjyapWiJ77
+ uhiT01aX5CkCX+QkJby2VdygMN6q3U7Esbrq9BUtiBgUvwHLssoH8IeWohP3x5VryIvZ
+ Od7+8/ztMfHI3Bs/Phz0wDW+jMRW6Ha1EpTGu8LIE+Q3sqaIpRleUXhJicops3GAEF9Y
+ zAG0JoFi2ZMzDO6tjNNN9Gp0q6o4RCi41xNg9nxj16XLmBpa+92u9lbOSTyvTJlSLkMi
+ +4UyXnT6cNPw1VL5Xpk3ueC79DIanBSsPQka1Err+eSt4G14XBvPAHKuTBHTqp3Nf38c
+ ZTpQ==
+X-Gm-Message-State: APjAAAWwqHKNcg67YiMBXJi5uNX7vTlKtdPjMy7cIniFe9FDT1p7TB5Y
+ VV+WGdHaaF3DKlxo3iLWmVPVvP/kti4=
+X-Google-Smtp-Source: APXvYqyNPG78C9VVatLsGWpEXNrqd7ULWSAW5snh5OGScKgXrUtJNXyuYtwzdWdI6mN+/5JVu2Q80w==
+X-Received: by 2002:a1c:a90b:: with SMTP id s11mr19030554wme.92.1568018569510; 
+ Mon, 09 Sep 2019 01:42:49 -0700 (PDT)
+Received: from [192.168.42.85] (p578adb1c.dip0.t-ipconnect.de. [87.138.219.28])
+ by smtp.gmail.com with ESMTPSA id h125sm17930614wmf.31.2019.09.09.01.42.48
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 09 Sep 2019 01:42:48 -0700 (PDT)
+Subject: Re: [PATCH] arm64: dts: renesas: Add /soc dma-ranges
+To: Geert Uytterhoeven <geert@linux-m68k.org>
+References: <20190907161634.27378-1-marek.vasut@gmail.com>
+ <CAMuHMdXkExZXeXnxuKkMC0J4m56cZUmJpcq2JCXuMv3PBzA0Dg@mail.gmail.com>
+From: Marek Vasut <marek.vasut@gmail.com>
+Message-ID: <b77e6a66-be14-4f94-c116-788b8fa18b31@gmail.com>
+Date: Mon, 9 Sep 2019 10:42:47 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <CAMuHMdXkExZXeXnxuKkMC0J4m56cZUmJpcq2JCXuMv3PBzA0Dg@mail.gmail.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_014013_180702_E4594CEC 
-X-CRM114-Status: GOOD (  12.38  )
+X-CRM114-CacheID: sfid-20190909_014251_444134_12021B01 
+X-CRM114-Status: GOOD (  17.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (marek.vasut[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -80,7 +91,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,62 +102,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
-MIME-Version: 1.0
+Cc: Linux-Renesas <linux-renesas-soc@vger.kernel.org>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Geert Uytterhoeven <geert+renesas@glider.be>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Wolfram Sang <wsa@the-dreams.de>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There are total of 151 non-secure gpio (0-150) and four
-pins of pinmux (91, 92, 93 and 94) are not mapped to any
-gpio pin, hence update same in DT.
+On 9/9/19 10:19 AM, Geert Uytterhoeven wrote:
+> Hi Marek,
 
-Fixes: 8aa428cc1e2e ("arm64: dts: Add pinctrl DT nodes for Stingray SOC")
-Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
----
- arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi | 5 +++--
- arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi         | 3 +--
- 2 files changed, 4 insertions(+), 4 deletions(-)
+Hi,
 
-diff --git a/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi b/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
-index 8a3a770..56789cc 100644
---- a/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
-+++ b/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
-@@ -42,13 +42,14 @@
- 
- 		pinmux: pinmux@14029c {
- 			compatible = "pinctrl-single";
--			reg = <0x0014029c 0x250>;
-+			reg = <0x0014029c 0x26c>;
- 			#address-cells = <1>;
- 			#size-cells = <1>;
- 			pinctrl-single,register-width = <32>;
- 			pinctrl-single,function-mask = <0xf>;
- 			pinctrl-single,gpio-range = <
--				&range 0 154 MODE_GPIO
-+				&range 0  91 MODE_GPIO
-+				&range 95 60 MODE_GPIO
- 				>;
- 			range: gpio-range {
- 				#pinctrl-single,gpio-range-cells = <3>;
-diff --git a/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi b/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
-index 71e2e34..0098dfd 100644
---- a/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
-+++ b/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
-@@ -464,8 +464,7 @@
- 					<&pinmux 108 16 27>,
- 					<&pinmux 135 77 6>,
- 					<&pinmux 141 67 4>,
--					<&pinmux 145 149 6>,
--					<&pinmux 151 91 4>;
-+					<&pinmux 145 149 6>;
- 		};
- 
- 		i2c1: i2c@e0000 {
+> On Sat, Sep 7, 2019 at 6:16 PM <marek.vasut@gmail.com> wrote:
+>> From: Marek Vasut <marek.vasut+renesas@gmail.com>
+>>
+>> Add dma-ranges property into /soc node to describe the DMA capabilities
+>> of the bus. This is currently needed to translate PCI DMA ranges, which
+>> are limited to 32bit addresses.
+>>
+>> Signed-off-by: Marek Vasut <marek.vasut+renesas@gmail.com>
+> 
+> Thanks for your patch!
+> 
+>> NOTE: This is needed for the following patches to work correctly:
+>>       https://patchwork.ozlabs.org/patch/1144870/
+>>       https://patchwork.ozlabs.org/patch/1144871/
+> 
+> What happens with the above patches applied, and without this one?
+
+It triggers https://patchwork.kernel.org/patch/11087391/#22811745
+
+> As PCI/OF driver patches go in through different trees, is it safe to apply
+> this patch now?
+> Should they go in together?
+
+I didn't get any feedback on the other two patches, but this one here is
+safe to go in either way.
+
+>>  arch/arm64/boot/dts/renesas/r8a7795.dtsi  | 1 +
+>>  arch/arm64/boot/dts/renesas/r8a7796.dtsi  | 1 +
+>>  arch/arm64/boot/dts/renesas/r8a77965.dtsi | 1 +
+> 
+> Do we need similar patches for the other R-Car Gen3 and RZ/G2 DTS files?
+> What about R-Car Gen2 and RZ/G1?
+I suspect we need such patches for any ARM64 machine with PCIe with this
+32bit limitation.
+
 -- 
-1.9.1
-
+Best regards,
+Marek Vasut
 
 _______________________________________________
 linux-arm-kernel mailing list
