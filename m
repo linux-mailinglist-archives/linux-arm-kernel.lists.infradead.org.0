@@ -2,57 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5316BAD77B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 13:00:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D91FEAD786
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 13:01:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
 	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=l0Rw+sx14XRIO3r4nghz2rnL/8pszk1uFzUAD72sigI=; b=b05lT/rxu4aAzd
-	CK2mOaVILlKvdMSDQTePCm6M2VaSeDL346w9IObPy4jVYuyidjCujM8RPaQpecV4QtD45a+XEFdSY
-	k84PCZImVlDhCNiXFYEyXRKiN0uNOvpsKAIWV1hyi5x85J951Pk38Hg4fNKtcJ5MpVy6kDDpI98AD
-	20Sejg8LxOUZdO06iBp598gPp/wt9d0Kyy1l81AldFond/sJUKBv3UFBj7eLd1hlE1jcZaGrPm9CF
-	u17G6OiujmPKPtkJGPwVPSpWPRcAOS+HuEWO6f6MQIAlz5+5sfHNfBqajmv0wzPDMtib5sKYVdepg
-	6lf47XHimd4AC8EZrrpw==;
+	List-Owner; bh=WKjzbykzJcYXbctqGR8utMMEHKPhb/MxxdWE/QQCnHs=; b=O9CGpPG2v0T3iU
+	Yjv6ixFpyzVIWHAW8eJWrrPpGMKMhWgBsGvYjB35hkFFkHqoqToc7FLlm8ItQS3SzymwBSpMkuDhn
+	mvND1YayGvjQuu5ivzR9ggCibF9KEcqzelguhBdRFctQI5dP6TVkMum6Oc2gzEfqh2yz+0Jj64n7f
+	xUc5PMhQK3fE+Yg7KtysPj/fVJAyR74rLruvCjywL3rtz34YZyuOXI0RU2mL4Cc54itQcwyRjEs54
+	jclPCHAwsxxiUecMnzzM8YOso/jp3ZJcdlf4n6wMRT8e7v+u0kFyM3BCvqj5YQARXfbE69c7bUC0O
+	mPfl6s7GXYgRcoPPlEOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7HP2-0002n5-Gs; Mon, 09 Sep 2019 11:00:12 +0000
-Received: from metis.ext.pengutronix.de ([2001:67c:670:201:290:27ff:fe1d:cc33])
+	id 1i7HQ3-00041U-Hp; Mon, 09 Sep 2019 11:01:15 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7HOr-0002Sm-3a
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 11:00:02 +0000
-Received: from pty.hi.pengutronix.de ([2001:67c:670:100:1d::c5])
- by metis.ext.pengutronix.de with esmtps
- (TLS1.2:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <ukl@pengutronix.de>)
- id 1i7HOn-0003wJ-Jf; Mon, 09 Sep 2019 12:59:57 +0200
-Received: from ukl by pty.hi.pengutronix.de with local (Exim 4.89)
- (envelope-from <ukl@pengutronix.de>)
- id 1i7HOm-0006LO-SB; Mon, 09 Sep 2019 12:59:56 +0200
-From: =?UTF-8?q?Uwe=20Kleine-K=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
-To: Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH RFC] gpio: define gpio-init nodes to initialize pins similar
- to hogs
-Date: Mon,  9 Sep 2019 12:59:19 +0200
-Message-Id: <20190909105919.30418-1-u.kleine-koenig@pengutronix.de>
-X-Mailer: git-send-email 2.23.0
+ id 1i7HPw-00040d-U5
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 11:01:10 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Claudiu.Beznea@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="Claudiu.Beznea@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Claudiu.Beznea@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 9xll3BMS+TMUyqo+IYQ9PebZVty6ukX2OAoxO7O6xicbl+ZItOjg9+xK32hgPRww+4CeHuqp6M
+ dboQhy1wz01CBmDyKuuDZ6aJvUJ0KMl8iY6XRuVGFvkzWScW/0J+r4NOlInlW82eW+whZbfI3e
+ HUreJqRNcu48WCwHAdSWgdYjBJ9qcsfeDxtxscz5sJLCveh5gx5WIf2DnP/l5bJGb919gWYnEe
+ tVGzwUJRtt19ya4oXbrMoglSXd8rIPXjV5xn6BwZRbI8CB1/EgzDOHXanoUdhJj7sp1rRTYFKr
+ 0Ww=
+X-IronPort-AV: E=Sophos;i="5.64,484,1559545200"; d="scan'208";a="49728710"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 09 Sep 2019 04:00:42 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Mon, 9 Sep 2019 04:00:42 -0700
+Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
+ 15.1.1713.5 via Frontend Transport; Mon, 9 Sep 2019 04:00:38 -0700
+From: Claudiu Beznea <claudiu.beznea@microchip.com>
+To: <tglx@linutronix.de>, <jason@lakedaemon.net>, <maz@kernel.org>,
+ <robh+dt@kernel.org>, <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
+ <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
+Subject: [PATCH] irqchip/atmel-aic5: add support for sam9x60 irqchip
+Date: Mon, 9 Sep 2019 14:00:35 +0300
+Message-ID: <1568026835-6646-1-git-send-email-claudiu.beznea@microchip.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
-X-SA-Exim-Connect-IP: 2001:67c:670:100:1d::c5
-X-SA-Exim-Mail-From: ukl@pengutronix.de
-X-SA-Exim-Scanned: No (on metis.ext.pengutronix.de);
- SAEximRunCond expanded to false
-X-PTX-Original-Recipient: linux-arm-kernel@lists.infradead.org
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_040001_154595_14877DFC 
-X-CRM114-Status: GOOD (  11.09  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_040109_010342_A9C309C3 
+X-CRM114-Status: UNSURE (   9.74  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,58 +95,76 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-gpio@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- kernel@pengutronix.de
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: devicetree@vger.kernel.org,
+ Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Claudiu Beznea <claudiu.beznea@microchip.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-U29tZXRpbWVzIGl0IGlzIGhhbmR5IHRvIGJlIGFibGUgdG8gZWFzaWx5IGRlZmluZSBhICJzYWZl
-IiBzdGF0ZSBmb3IgYQpHUElPLiBUaGlzIG1pZ2h0IGZvciBleGFtcGxlIGJlIHVzZWQgdG8gZW5z
-dXJlIHRoYXQgYW4gZXRoZXJuZXQgcGh5IGlzCnByb3Blcmx5IHJlc2V0IGR1cmluZyBzdGFydHVw
-IG9yIGp1c3QgdGhhdCBhbGwgcGlucyBoYXZlIGEgZGVmaW5lZCBzdGF0ZQp0byBtaW5pbWl6ZSBs
-ZWFrYWdlIGN1cnJlbnQuIEFzIHN1Y2ggYSBwaW4gbXVzdCBiZSByZXF1ZXN0YWJsZSAoYW5kCmNo
-YW5nYWJsZSkgYnkgYSBkZXZpY2UgZHJpdmVyLCBhIGdwaW8taG9nIGNhbm5vdCBiZSB1c2VkLgoK
-U28gZGVmaW5lIGEgR1BJTyBpbml0aWFsaXplciB3aXRoIGEgc3ludGF4IGlkZW50aWNhbCB0byBh
-IEdQSU8gaG9nIGp1c3QKdXNpbmcgImdwaW8taW5pdCIgYXMgaWRlbnRpZmllciBpbnN0ZWFkIG9m
-ICJncGlvLWhvZyIuCgpUaGUgdXNhZ2UgSSBoYXZlIGluIG1pbmQgKGFuZCBhbHNvIGltcGxlbWVu
-dGVkIGluIGEgY3VzdG9tIHBhdGNoIHN0YWNrCm9uIHRvcCBvZiBiYXJlYm94IGFscmVhZHkpIGlz
-IHRhcmdldGluZyB0aGUgYm9vdGxvYWRlciBhbmQgbm90Cm5lY2Vzc2FyaWx5IExpbnV4IGFzIHN1
-Y2ggYW4gYm9vdC11cCBpbml0aWFsaXNhdGlvbiBzaG91bGQgYmUgZG9uZSBhcwplYXJseSBhcyBw
-b3NzaWJsZS4KCk5vdC15ZXQtc2lnbmVkLW9mZi1ieTogVXdlIEtsZWluZS1Lw7ZuaWcgPHUua2xl
-aW5lLWtvZW5pZ0BwZW5ndXRyb25peC5kZT4KLS0tCkhlbGxvLAoKbWF5YmUgaXQgYWxzbyBtYWtl
-cyBzZW5zZSB0byB1c2UgImdwaW8tc2FmZSI/IE1heWJlIGl0ICh0aGVuKSBtYWtlcwpzZW5zZSB0
-byByZXNldCB0aGUgZ3BpbyBpbiB0aGUgaW5kaWNhdGVkIHN0YXRlIGFmdGVyIGl0IGlzIHJlbGVh
-c2VkPwoKQWxzbyBpdCBtaWdodCBiZSBiZW5lZmljaWFsIHRvIG1ha2UgdGhlIHdvcmRpbmcgbW9y
-ZSBleHBsaWNpdCBpbiB0aGUKZGVzY3JpcHRpb24gYW5kIGZvciBleGFtcGxlIHRlbGwgdGhhdCBv
-bmx5IG9uZSBvZiBncGlvLWhvZyBhbmQgZ3Bpby1pbml0Cm11c3QgYmUgcHJvdmlkZWQuIAoKQmVz
-dCByZWdhcmRzClV3ZQoKIERvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9ncGlvL2dw
-aW8udHh0IHwgOSArKysrKystLS0KIDEgZmlsZSBjaGFuZ2VkLCA2IGluc2VydGlvbnMoKyksIDMg
-ZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvRG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRp
-bmdzL2dwaW8vZ3Bpby50eHQgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZ3Bp
-by9ncGlvLnR4dAppbmRleCBhODg5NWQzMzliZmUuLjViNzg4M2Y1NTIwZiAxMDA2NDQKLS0tIGEv
-RG9jdW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2dwaW8vZ3Bpby50eHQKKysrIGIvRG9j
-dW1lbnRhdGlvbi9kZXZpY2V0cmVlL2JpbmRpbmdzL2dwaW8vZ3Bpby50eHQKQEAgLTE4MiwxMyAr
-MTgyLDE2IEBAIGdwaW8tY29udHJvbGxlckAwMDAwMDAwMCB7CiAJCSJwb3dlcm9mZiIsICJyZXNl
-dCI7CiB9CiAKLVRoZSBHUElPIGNoaXAgbWF5IGNvbnRhaW4gR1BJTyBob2cgZGVmaW5pdGlvbnMu
-IEdQSU8gaG9nZ2luZyBpcyBhIG1lY2hhbmlzbQotcHJvdmlkaW5nIGF1dG9tYXRpYyBHUElPIHJl
-cXVlc3QgYW5kIGNvbmZpZ3VyYXRpb24gYXMgcGFydCBvZiB0aGUKLWdwaW8tY29udHJvbGxlcidz
-IGRyaXZlciBwcm9iZSBmdW5jdGlvbi4KK1RoZSBHUElPIGNoaXAgbWF5IGNvbnRhaW4gR1BJTyBo
-b2cgYW5kIGluaXQgZGVmaW5pdGlvbnMuIEdQSU8gaG9nZ2luZyBpcyBhCittZWNoYW5pc20gcHJv
-dmlkaW5nIGF1dG9tYXRpYyBHUElPIHJlcXVlc3QgYW5kIGNvbmZpZ3VyYXRpb24gYXMgcGFydCBv
-ZiB0aGUKK2dwaW8tY29udHJvbGxlcidzIGRyaXZlciBwcm9iZSBmdW5jdGlvbi4gQW4gR1BJTyBp
-bml0aWFsaXplciBpcyBzaW1pbGFyIGJ1dAorZG9lc24ndCBwcmV2ZW50IGxhdGVyIHJlcXVlc3Rp
-bmcgYW5kIHJlY29uZmlndXJhdGlvbi4KIAogRWFjaCBHUElPIGhvZyBkZWZpbml0aW9uIGlzIHJl
-cHJlc2VudGVkIGFzIGEgY2hpbGQgbm9kZSBvZiB0aGUgR1BJTyBjb250cm9sbGVyLgogUmVxdWly
-ZWQgcHJvcGVydGllczoKIC0gZ3Bpby1ob2c6ICAgQSBwcm9wZXJ0eSBzcGVjaWZ5aW5nIHRoYXQg
-dGhpcyBjaGlsZCBub2RlIHJlcHJlc2VudHMgYSBHUElPIGhvZy4KKy0gZ3Bpby1pbml0OiAgQSBw
-cm9wZXJ0eSBzcGVjaWZ5aW5nIHRoYXQgdGhpcyBjaGlsZCBub2RlIHJlcHJlc2VudHMgYSBHUElP
-CisJICAgICAgaW5pdGlhbGl6ZXIuCiAtIGdwaW9zOiAgICAgIFN0b3JlIHRoZSBHUElPIGluZm9y
-bWF0aW9uIChpZCwgZmxhZ3MsIC4uLikgZm9yIGVhY2ggR1BJTyB0bwogCSAgICAgIGFmZmVjdC4g
-U2hhbGwgY29udGFpbiBhbiBpbnRlZ2VyIG11bHRpcGxlIG9mIHRoZSBudW1iZXIgb2YgY2VsbHMK
-IAkgICAgICBzcGVjaWZpZWQgaW4gaXRzIHBhcmVudCBub2RlIChHUElPIGNvbnRyb2xsZXIgbm9k
-ZSkuCi0tIAoyLjIzLjAKCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxp
-c3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0
-aW5mby9saW51eC1hcm0ta2VybmVsCg==
+From: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
+
+Add support for SAM9X60 irqchip.
+
+Signed-off-by: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
+[claudiu.beznea@microchip.com: update aic5_irq_fixups[], update
+ documentation]
+Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
+---
+ .../devicetree/bindings/interrupt-controller/atmel,aic.txt     |  7 +++++--
+ drivers/irqchip/irq-atmel-aic5.c                               | 10 ++++++++++
+ 2 files changed, 15 insertions(+), 2 deletions(-)
+
+diff --git a/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt b/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
+index f4c5d34c4111..7079d44bf3ba 100644
+--- a/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
++++ b/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
+@@ -1,8 +1,11 @@
+ * Advanced Interrupt Controller (AIC)
+ 
+ Required properties:
+-- compatible: Should be "atmel,<chip>-aic"
+-  <chip> can be "at91rm9200", "sama5d2", "sama5d3" or "sama5d4"
++- compatible: Should be:
++    - "atmel,<chip>-aic" where  <chip> can be "at91rm9200", "sama5d2",
++      "sama5d3" or "sama5d4"
++    - "microchip,<chip>-aic" where <chip> can be "sam9x60"
++
+ - interrupt-controller: Identifies the node as an interrupt controller.
+ - #interrupt-cells: The number of cells to define the interrupts. It should be 3.
+   The first cell is the IRQ number (aka "Peripheral IDentifier" on datasheet).
+diff --git a/drivers/irqchip/irq-atmel-aic5.c b/drivers/irqchip/irq-atmel-aic5.c
+index 6acad2ea0fb3..29333497ba10 100644
+--- a/drivers/irqchip/irq-atmel-aic5.c
++++ b/drivers/irqchip/irq-atmel-aic5.c
+@@ -313,6 +313,7 @@ static void __init sama5d3_aic_irq_fixup(void)
+ static const struct of_device_id aic5_irq_fixups[] __initconst = {
+ 	{ .compatible = "atmel,sama5d3", .data = sama5d3_aic_irq_fixup },
+ 	{ .compatible = "atmel,sama5d4", .data = sama5d3_aic_irq_fixup },
++	{ .compatible = "microchip,sam9x60", .data = sama5d3_aic_irq_fixup },
+ 	{ /* sentinel */ },
+ };
+ 
+@@ -390,3 +391,12 @@ static int __init sama5d4_aic5_of_init(struct device_node *node,
+ 	return aic5_of_init(node, parent, NR_SAMA5D4_IRQS);
+ }
+ IRQCHIP_DECLARE(sama5d4_aic5, "atmel,sama5d4-aic", sama5d4_aic5_of_init);
++
++#define NR_SAM9X60_IRQS		50
++
++static int __init sam9x60_aic5_of_init(struct device_node *node,
++				       struct device_node *parent)
++{
++	return aic5_of_init(node, parent, NR_SAM9X60_IRQS);
++}
++IRQCHIP_DECLARE(sam9x60_aic5, "microchip,sam9x60-aic", sam9x60_aic5_of_init);
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
