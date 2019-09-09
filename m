@@ -2,93 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 064DCAD9A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:05:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9D830AD9B7
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:08:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=hNXDMsNyPmpz9trh+CEqb9LPL56ipTFpgv6cOUd7sMY=; b=j/OjL2HUBgmY2J
-	h/DTEjcNHDYvYKzStzyJdCF+d1N4NXO/lUv1iZhROK9evv5FY0+VJfm6NiP7XZqiDmDPOxX2RsEMW
-	YN+74UTQdf1qLni1gB/smv+yNmw4DL5Nxx+cEk8Z+UsrkzVKPCS725Nar2sPL/Pi99QibDqmDft4j
-	ZoQuHnXUG9Qf+jszSuV1Kp0rEoToP3ItKkweYe3r2wM1qqYcgQN2+FOiFbMLr+2+T9GX8iVFuzZ5o
-	1NQHhsNrrKuG8TqJqMlsRhCMsvPsD0ExZH38axqDl0zPf6nmWz6j0//wCSp2wtXdBmaQ6eXQTzpOK
-	PQJq9LJ8YCSgDE2x8QwQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=5cBk+mYI0G8mrgQ/s/AQb1aL744p2Z3Hca/09Dzgf5I=; b=JtORdRoJeLPxYCwgiQLH5NWsp
+	U8D1Yog5/8Lwg6+7i3E5PJHwwYhfmLuUOAUO+fliMsUgGM/6wjEDFduFj4P/IUGtEicexkvY1pcam
+	3CUGeX6OTxkxEHsUr7Vo6iAM9dkm4YFyLd4E8dz4JCrO4m53g/Rd4u78iB696LaI/4IWR2adR2Qgv
+	275pE6zsd4DNSiCIw3zc3t1f2nyDSfXIUMXZFAVp2Sf6f79tMCC5zo6+pcnfwlThqBqzbJMj6bMdG
+	MglhMlRdUXcFpKMNsn5LYauufpWLuIWXGeN7V/ApPAa60HCkHuvXYOUu8YTC6Gjnqkec5y7pTG48o
+	8bX0rIUdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7JLm-0008Tx-48; Mon, 09 Sep 2019 13:04:58 +0000
-Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
+	id 1i7JP5-0001gg-HP; Mon, 09 Sep 2019 13:08:23 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7JKu-0008TA-Rc
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:04:07 +0000
-Received: by mail-wr1-x444.google.com with SMTP id h7so12742781wrw.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 06:04:03 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9y+22Q8ixtWcD5ju9SRyneHTrf2Ur/gcyX9aL38jrJ8=;
- b=m4C6Xk/j6j5iR6qiDeoF0BoZ6vmChDvg4ZUHZGDPPwDvfBnH1hKZmBSsAOTdCvvTO5
- YGmDb1lmCn/E7iSQ2S005YmgvIXL6rJbsyQgRfPg4H0/AGqpD8RkFK70n78chiLKok4j
- 9iL8/W1WCvuhRISx3B5OGOWhEZXUlf2csBCJcGau5vnsnHn3+C3vB4/PyfCivyH0JOq2
- L3ncuaHISdM5M2NBHFdwN3QXXUrSX7QaRTFGQALc+GA2gmQ1WkwdYd3r6se4/AmZyqke
- T6QE2eE7qidPUOKEHCh9mXFY4tzbH0HFJ6InTMQBgxvX0pKHNTKXtPkX+H1dXJK21H9K
- n6Og==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9y+22Q8ixtWcD5ju9SRyneHTrf2Ur/gcyX9aL38jrJ8=;
- b=rwb+hpLYdROmeojwy2riTyozPiKU/NSSceuaHPlg2GOeEKE12DMZXrTXEj1xCLmF57
- ao1QnmV1Rg6I/3mOUT3m3p5hQ6iNpYzS78s8CSCXdCXF0umy9Zwwx1rW34/S5FIbGJ+0
- +k6xC9OQmYM9/yLe6HxDLiM1J9EAr9CxRKlSlC9HPMrdmbmFwaO4KnHl5QvEBdcPeNKd
- cYgE1W+Lw1IA7M1sBNQZ/mV+IFfrE+OnxcCYU+Iogkr+6CY47BKCIJHiQ9GZ0tao50Sd
- Z584M+vCZpqLggr0Yh829urHfBhwdXRUetlcTyKw2qd3R0zkf6BLZ1vnEnV2pYNfP377
- pOZg==
-X-Gm-Message-State: APjAAAWP4oS3n2OyxEddtecmm7smujV4px1yQoPWZfxqEhk6MlVsWDm/
- saOzsP0R3Jhi/Y4v5AcplPJhYw==
-X-Google-Smtp-Source: APXvYqwk/hc+u/zqnHFB7vI8hYnVgaNIR9Xf1U5ML8a8gIMOmTBbmhFEHswaAoqNvRMqTbL5YHIWKw==
-X-Received: by 2002:adf:f88e:: with SMTP id u14mr18227770wrp.260.1568034242622; 
- Mon, 09 Sep 2019 06:04:02 -0700 (PDT)
-Received: from holly.lan (cpc141214-aztw34-2-0-cust773.18-1.cable.virginm.net.
- [86.9.19.6])
- by smtp.gmail.com with ESMTPSA id f3sm15033405wmh.9.2019.09.09.06.04.01
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 09 Sep 2019 06:04:01 -0700 (PDT)
-Date: Mon, 9 Sep 2019 14:04:00 +0100
-From: Daniel Thompson <daniel.thompson@linaro.org>
-To: Jean-Jacques Hiblot <jjhiblot@ti.com>
-Subject: Re: Status of led-backlight driver
-Message-ID: <20190909130400.erccomveu2ongeks@holly.lan>
-References: <20190907100726.GA12763@amd>
- <20190909111410.dwqvg6b4lgxymn2o@holly.lan>
- <e40fcd10-85ef-9e04-0960-210736075f1f@ti.com>
+ id 1i7JOV-0001fM-Sv; Mon, 09 Sep 2019 13:07:50 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 737C5ADDD;
+ Mon,  9 Sep 2019 13:07:46 +0000 (UTC)
+Subject: Re: [PATCH v2 0/2] mm/kasan: dump alloc/free stack for page allocator
+To: walter-zh.wu@mediatek.com, Andrey Ryabinin <aryabinin@virtuozzo.com>,
+ Alexander Potapenko <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>,
+ Matthias Brugger <matthias.bgg@gmail.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>, Will Deacon <will@kernel.org>,
+ Andrey Konovalov <andreyknvl@google.com>, Arnd Bergmann <arnd@arndb.de>,
+ Thomas Gleixner <tglx@linutronix.de>, Michal Hocko <mhocko@kernel.org>,
+ Qian Cai <cai@lca.pw>
+References: <20190909082412.24356-1-walter-zh.wu@mediatek.com>
+From: Vlastimil Babka <vbabka@suse.cz>
+Message-ID: <d53d88df-d9a4-c126-32a8-4baeb0645a2c@suse.cz>
+Date: Mon, 9 Sep 2019 15:07:45 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e40fcd10-85ef-9e04-0960-210736075f1f@ti.com>
-User-Agent: NeoMutt/20180716
+In-Reply-To: <20190909082412.24356-1-walter-zh.wu@mediatek.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_060405_141672_934CD8E2 
-X-CRM114-Status: GOOD (  15.92  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190909_060748_344034_867D298D 
+X-CRM114-Status: GOOD (  18.54  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:444 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,44 +67,82 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mpartap@gmx.net, tony@atomide.com, merlijn@wizzup.org,
- kernel list <linux-kernel@vger.kernel.org>, sre@kernel.org,
- nekit1000@gmail.com, tomi.valkeinen@ti.com, Pavel Machek <pavel@ucw.cz>,
- linux-omap@vger.kernel.org,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
+Cc: wsd_upstream@mediatek.com, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 09, 2019 at 01:46:39PM +0200, Jean-Jacques Hiblot wrote:
-> Hi Daniel,
+On 9/9/19 10:24 AM, walter-zh.wu@mediatek.com wrote:
+> From: Walter Wu <walter-zh.wu@mediatek.com>
 > 
-> On 09/09/2019 13:14, Daniel Thompson wrote:
-> > On Sat, Sep 07, 2019 at 12:07:27PM +0200, Pavel Machek wrote:
-> > > Hi!
-> > > 
-> > > I don't see the LED-backlight driver in -next. Could it be pushed? It
-> > > is one of last pieces to get working backlight on Motorola Droid 4...
-> > Sorry, I dropped the ball on this and was therefore rather late
-> > reviewing this patchset.
-> > 
-> > Assuming I have read the code correctly I think there are some
-> > problems with the max_brightness handling in the backlight code.
+> This patch is KASAN report adds the alloc/free stacks for page allocator
+> in order to help programmer to see memory corruption caused by page.
 > 
-> Can you comment this? I'll be happy to fix the problem.
+> By default, KASAN doesn't record alloc and free stack for page allocator.
+> It is difficult to fix up page use-after-free or dobule-free issue.
+> 
+> Our patchsets will record the last stack of pages.
+> It is very helpful for solving the page use-after-free or double-free.
+> 
+> KASAN report will show the last stack of page, it may be:
+> a) If page is in-use state, then it prints alloc stack.
+>     It is useful to fix up page out-of-bound issue.
 
-I did that before replying to the nudges. See:
-https://lore.kernel.org/linux-leds/20190909095304.67ehnpg6gckwpno4@holly.lan/
+I still disagree with duplicating most of page_owner functionality for 
+the sake of using a single stack handle for both alloc and free (while 
+page_owner + debug_pagealloc with patches in mmotm uses two handles). It 
+reduces the amount of potentially important debugging information, and I 
+really doubt the u32-per-page savings are significant, given the rest of 
+KASAN overhead.
 
+> BUG: KASAN: slab-out-of-bounds in kmalloc_pagealloc_oob_right+0x88/0x90
+> Write of size 1 at addr ffffffc0d64ea00a by task cat/115
+> ...
+> Allocation stack of page:
+>   set_page_stack.constprop.1+0x30/0xc8
+>   kasan_alloc_pages+0x18/0x38
+>   prep_new_page+0x5c/0x150
+>   get_page_from_freelist+0xb8c/0x17c8
+>   __alloc_pages_nodemask+0x1a0/0x11b0
+>   kmalloc_order+0x28/0x58
+>   kmalloc_order_trace+0x28/0xe0
+>   kmalloc_pagealloc_oob_right+0x2c/0x68
+> 
+> b) If page is freed state, then it prints free stack.
+>     It is useful to fix up page use-after-free or double-free issue.
+> 
+> BUG: KASAN: use-after-free in kmalloc_pagealloc_uaf+0x70/0x80
+> Write of size 1 at addr ffffffc0d651c000 by task cat/115
+> ...
+> Free stack of page:
+>   kasan_free_pages+0x68/0x70
+>   __free_pages_ok+0x3c0/0x1328
+>   __free_pages+0x50/0x78
+>   kfree+0x1c4/0x250
+>   kmalloc_pagealloc_uaf+0x38/0x80
+> 
+> This has been discussed, please refer below link.
+> https://bugzilla.kernel.org/show_bug.cgi?id=203967
 
-> Reading the v4 again, I noticed that that I still had not removed the
-> brightness scaling. Is that the problem ?
+That's not a discussion, but a single comment from Dmitry, which btw 
+contains "provide alloc *and* free stacks for it" ("it" refers to page, 
+emphasis mine). It would be nice if he or other KASAN guys could clarify.
 
-Yes (plus a couple of nits).
-
-
-Daniel.
+> Changes since v1:
+> - slim page_owner and move it into kasan
+> - enable the feature by default
+> 
+> Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+> ---
+>   include/linux/kasan.h |  1 +
+>   lib/Kconfig.kasan     |  2 ++
+>   mm/kasan/common.c     | 32 ++++++++++++++++++++++++++++++++
+>   mm/kasan/kasan.h      |  5 +++++
+>   mm/kasan/report.c     | 27 +++++++++++++++++++++++++++
+>   5 files changed, 67 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
