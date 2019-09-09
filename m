@@ -2,56 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A9A69ADBF6
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:16:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32A5EADBFC
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:17:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qJHS9lI7DrOcH6eEl8pbvoMQVgp9gZPNCvLXlMgI4d8=; b=oTdmpEkHTfCbRv
-	6B5uCqAGP4H1Cpq79IGc2UcvgKUh6vO9s0y0DnzFFcVevLlREmqg6j4fsWW2T3Az+01jcvC25bIEK
-	Ly8NDInK8HLRj4M0NaL5+RF8JwqLVbOydFyLrwQU8MAO17YicoYauMxxqWiQyUqZOvbu/820g0KZJ
-	y/+tu4Er6Yg75SXvNhvTKMKAIocw/O5YqUJI/hRcOZmiT3pZQQ1yu1YaS1FKapy7WKmLJbUsv4RD4
-	MU+PqyoXyy9vsEtG5rJb86HT9Cy3VKGPBSKlBBFvECCfuPUAYxt+FH49yUav8g4DnALQ930XgIPMV
-	YiuIwwjnjeqo1a/o9VlQ==;
+	List-Owner; bh=VUcFR4XdLkQPzBnuWfvSPWTXhf3kwv/J1alNhw6FisE=; b=ROoF5yf7X1Qyg0
+	w/yCG6F0vHMqcUq1MBzoYA0NPB8jV7nGg+KxMISeCYnkQL/0At6zf7U0Pn7TtpG2kxSPL2DB8nsEv
+	QA9c1/qaHXb4BwlvOCVapUYRorEf0l/hXrad05ajctJnv95ZZCN+OGipq4OM6g4u7HV+3JDocQwhJ
+	HzERyuq71VxnGlNJ+oXU/DUyXIPgRCg6uTiPHI04QTIdbXG2lddKtwEnVswj9CaL009zc7Se3kFyN
+	pREwYpK6gg4wBsiY29Mn0xKio8d4V2YZTlfVUK7dff2C5AYKP+vtl8XDVxBiwVoBVWHrt3Vu4R2rM
+	yWxbGUbcrW5BjMe3OJ1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7LPK-00007B-5W; Mon, 09 Sep 2019 15:16:46 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7LP9-00006q-GT
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:16:37 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4A152169E;
- Mon,  9 Sep 2019 08:16:34 -0700 (PDT)
-Received: from localhost (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 978C43F59C;
- Mon,  9 Sep 2019 08:16:33 -0700 (PDT)
-Date: Mon, 9 Sep 2019 17:16:31 +0200
-From: Christoffer Dall <christoffer.dall@arm.com>
-To: Peter Maydell <peter.maydell@linaro.org>
-Subject: Re: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external
- data aborts
-Message-ID: <20190909151631.GA26449@lvm>
-References: <20190909121337.27287-1-christoffer.dall@arm.com>
- <20190909121337.27287-3-christoffer.dall@arm.com>
- <CAFEAcA8WcQNJV27q5WJ-SMhOyjFZyh1Pz7H7duK6zW1wiAvqKQ@mail.gmail.com>
+	id 1i7LQ4-0000MB-AE; Mon, 09 Sep 2019 15:17:32 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7LPs-0000LE-KN
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:17:22 +0000
+Received: by mail-qt1-f194.google.com with SMTP id j1so3841583qth.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Sep 2019 08:17:13 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=KzvdCYJMc3jcRY8kC6B+9ojaAy4hLNLNsDWcIiJdsf0=;
+ b=FwEotWj45YsvSQviKm20GDhcP5kiqCpfle7zvjn1KX1v/9ldUOvTag+7WmnlgM3E3g
+ NNYYdJqAVWfR2gEdF3OTG732k3rY7Wsm8MLOxX7bXQKnG956J8ilRbC0gQTAoL35qBZt
+ qYoK4LWDFKFIbx44U2VWIFKUvNZrNqzv6UZcdvDhVGTlnMMdotbAzPsjDlM4CBKayLO8
+ 1zF9/gYWR/JD36PxkEDsNhYsIsUhC3zKsPObCctXIlApX3FYtcs0mnZLtYIM7KSa8WTZ
+ 5vOrgjfLHwZ6uW6NS7IGW7Uxxj9H4+fSkwftVt4EwMZzcELOQPbv/6js7XII3c0/BH+q
+ mH8w==
+X-Gm-Message-State: APjAAAWdJR+jfRX1kWWHO7kYqOc/hIOYT0dNvHNER57ydRexD7o4iwVT
+ zd+SpTIADeeGSmBT9CEPsyo2MnVd6JXsElDwUTk=
+X-Google-Smtp-Source: APXvYqylECFPtzaWoRGJJ21CFA6Dl83bvtYMuTMRQbTeIMxr8YHGq6zdO6BvsdMD9Vg1HxNm8rA+F1PV06xkwvaeGL0=
+X-Received: by 2002:ac8:342a:: with SMTP id u39mr23896297qtb.7.1568042232506; 
+ Mon, 09 Sep 2019 08:17:12 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAFEAcA8WcQNJV27q5WJ-SMhOyjFZyh1Pz7H7duK6zW1wiAvqKQ@mail.gmail.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+References: <1568020220-7758-1-git-send-email-talel@amazon.com>
+ <1568020220-7758-3-git-send-email-talel@amazon.com>
+ <CAK8P3a3UF7xPV1U3eW6Jdu754P1bzG208UxD9KUxEm1JjZudww@mail.gmail.com>
+ <98f0028e-5653-3116-fdaa-1385ecdf0289@amazon.com>
+ <CAK8P3a1NVGwYa1bw_vjBatd1xe-i875X1Vq1M+2G_Zxd2Oqusg@mail.gmail.com>
+ <8f7840c3-a682-04a5-18bf-ac7a723725b0@amazon.com>
+In-Reply-To: <8f7840c3-a682-04a5-18bf-ac7a723725b0@amazon.com>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Mon, 9 Sep 2019 17:16:56 +0200
+Message-ID: <CAK8P3a1fbK-qoK+K1ZsWsU3rkxxZgZGaK8ywFAcM4va1GRn_FQ@mail.gmail.com>
+Subject: Re: [PATCH 2/3] soc: amazon: al-pos: Introduce Amazon's Annapurna
+ Labs POS driver
+To: "Shenhar, Talel" <talel@amazon.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_081635_635318_740B235E 
-X-CRM114-Status: GOOD (  35.62  )
+X-CRM114-CacheID: sfid-20190909_081720_669133_11BFE378 
+X-CRM114-Status: GOOD (  18.56  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,137 +88,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
- Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
- James Morse <james.morse@arm.com>,
- Julien Thierry <julien.thierry.kdev@gmail.com>,
- Stefan Hajnoczi <stefanha@redhat.com>,
- Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
- kvmarm@lists.cs.columbia.edu,
- arm-mail-list <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, mjourdan@baylibre.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ jonnyc@amazon.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ ronenk@amazon.com, Will Deacon <will@kernel.org>,
+ Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ DTML <devicetree@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, hanochu@amazon.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, barakw@amazon.com,
+ hhhawa@amazon.com, gregkh <gregkh@linuxfoundation.org>,
+ paul.kocialkowski@bootlin.com, Patrick Venture <venture@google.com>,
+ Olof Johansson <olof@lixom.net>, David Miller <davem@davemloft.net>,
+ David Woodhouse <dwmw@amazon.co.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 09, 2019 at 01:32:46PM +0100, Peter Maydell wrote:
-> On Mon, 9 Sep 2019 at 13:13, Christoffer Dall <christoffer.dall@arm.com> wrote:
-> >
-> > In some scenarios, such as buggy guest or incorrect configuration of the
-> > VMM and firmware description data, userspace will detect a memory access
-> > to a portion of the IPA, which is not mapped to any MMIO region.
-> >
-> > For this purpose, the appropriate action is to inject an external abort
-> > to the guest.  The kernel already has functionality to inject an
-> > external abort, but we need to wire up a signal from user space that
-> > lets user space tell the kernel to do this.
-> >
-> > It turns out, we already have the set event functionality which we can
-> > perfectly reuse for this.
-> >
-> > Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
-> > ---
-> >  Documentation/virt/kvm/api.txt    | 15 ++++++++++++++-
-> >  arch/arm/include/uapi/asm/kvm.h   |  3 ++-
-> >  arch/arm/kvm/guest.c              |  3 +++
-> >  arch/arm64/include/uapi/asm/kvm.h |  3 ++-
-> >  arch/arm64/kvm/guest.c            |  3 +++
-> >  arch/arm64/kvm/inject_fault.c     |  4 ++--
-> >  include/uapi/linux/kvm.h          |  1 +
-> >  virt/kvm/arm/arm.c                |  1 +
-> >  8 files changed, 28 insertions(+), 5 deletions(-)
-> >
-> > diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
-> > index 02501333f746..edd6cdc470ca 100644
-> > --- a/Documentation/virt/kvm/api.txt
-> > +++ b/Documentation/virt/kvm/api.txt
-> > @@ -955,6 +955,8 @@ The following bits are defined in the flags field:
-> >
-> >  ARM/ARM64:
-> >
-> > +User space may need to inject several types of events to the guest.
-> > +
-> >  If the guest accesses a device that is being emulated by the host kernel in
-> >  such a way that a real device would generate a physical SError, KVM may make
-> >  a virtual SError pending for that VCPU. This system error interrupt remains
-> > @@ -989,12 +991,23 @@ Specifying exception.has_esr on a system that does not support it will return
-> >  -EINVAL. Setting anything other than the lower 24bits of exception.serror_esr
-> >  will return -EINVAL.
-> >
-> > +If the guest performed an access to I/O memory which could not be handled by
-> > +user space, for example because of missing instruction syndrome decode
-> > +information or because there is no device mapped at the accessed IPA, then
-> > +user space can ask the kernel to inject an external abort using the address
-> > +from the exiting fault on the VCPU. It is a programming error to set
-> > +ext_dabt_pending at the same time as any of the serror fields, or to set
-> > +ext_dabt_pending on an exit which was not either KVM_EXIT_MMIO or
-> > +KVM_EXIT_ARM_NISV. This feature is only available if the system supports
-> > +KVM_CAP_ARM_INJECT_EXT_DABT;
-> > +
-> >  struct kvm_vcpu_events {
-> >         struct {
-> >                 __u8 serror_pending;
-> >                 __u8 serror_has_esr;
-> > +               __u8 ext_dabt_pending;
-> >                 /* Align it to 8 bytes */
-> > -               __u8 pad[6];
-> > +               __u8 pad[5];
-> >                 __u64 serror_esr;
-> >         } exception;
-> >         __u32 reserved[12];
-> 
-> This API seems to be missing support for userspace to specify
-> whether the ESR_ELx for the guest should have the EA bit set
-> (and more generally other syndrome/fault status bits). I think
-> if we have an API for "KVM_EXIT_MMIO but the access failed"
-> then it should either (a) be architecture agnostic, since
-> pretty much any architecture might have a concept of "access
-> gave some bus-error-type failure" and it would be nice if userspace
-> didn't have to special case them all in arch-specific code,
-> or (b) have the same flexibility for specifying exactly what
-> kind of fault as the architecture does. This sort of seems to
-> fall between two stools. (My ideal for KVM_EXIT_MMIO faults
-> would be a generic API which included space for optional
-> arch-specific info, which for Arm would pretty much just be
-> the EA bit.)
+On Mon, Sep 9, 2019 at 4:11 PM Shenhar, Talel <talel@amazon.com> wrote:
+> On 9/9/2019 4:41 PM, Arnd Bergmann wrote:
+>
+> In current implementation of v1, I am not doing any read barrier, Hence,
+> using the non-relaxed will add unneeded memory barrier.
+>
+> I have no strong objection moving to the non-relaxed version and have an
+> unneeded memory barrier, as this path is not "hot" one.
 
-I'm not sure I understand exactly what would be improved by making this
-either more architecture speific or more architecture generic.  The
-EA bit will always be set, that's why the field is called
-'ext_dabt_pending'.
+Ok, then please add it.
 
-I thought as per the previous discussion, that we were specifically
-trying to avoid userspace emulating the exception in detail, so I
-designed this to provide the minimal effort API for userspace.
+> Beside of avoiding the unneeded memory barrier, I would be happy to keep
+> common behavior for our drivers:
+>
+> e.g.
+>
+> https://github.com/torvalds/linux/blob/master/drivers/irqchip/irq-al-fic.c#L49
+>
+>
+> So what do you think we should go with? relaxed or non-relaxed?
 
-Since we already have an architecture specific ioctl, kvm_vcpu_events, I
-don't think we're painting ourselves into a corner by using that.  Is a
-natural consequence of what you're saying not that we should try to make
-that whole call architecture generic?
+The al_fic_set_trigger() function is clearly a slow-path and should use the
+non-relaxed functions. In case of al_fic_irq_handler(), the extra barrier
+might introduce a measurable overhead, but at the same time I'm
+not sure if that one is correct without the barrier:
 
-Unless we already have specific examples of how other architectures
-would want to use something like this, and given the impact of this
-patch, I'm not sure it's worth trying to speculate about that.
+If you have an MSI-type interrupt for notifying a device driver of
+a DMA completion, there might not be any other barrier between
+the arrival of the MSI message and the CPU accessing the data.
+Depending on how strict the hardware implements MSI and how
+the IRQ is chained, this could lead to data corruption.
 
-> 
-> As and when we support nested virtualization, any suggestions
-> on how this API would extend to support userspace saying
-> "deliver fault to guest EL1" vs "deliver fault to guest EL2" ?
-> 
+If the interrupt is only used for level or edge triggered interrupts,
+this is ok since you already need another register read in
+the driver before it can safely access a DMA buffer.
 
-If we took one of the supported exits from a VM with nested virt
-support, it means that you either had a fault from the guest hypervisor,
-or a fault from a nested guest where the guest hypervisor has set up a
-virtual stage 2 mapping to a hole in the VM's IPA space.  In the former
-case, the exception would be delivered back to guest hypervisor, and in
-the latter case the target depends on the guest hypervisor's
-configuration of the virtual HCR_EL2(.TEA), which the kernel should
-respect when handling the KVM_SET_VCPU_EVENTS ioctl.
+In either case, if you can prove that it's safe to use the relaxed
+version here and you think that it may help, it would be good to
+add a comment explaining the reasoning.
 
-
-Thanks,
-
-    Christoffer
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
