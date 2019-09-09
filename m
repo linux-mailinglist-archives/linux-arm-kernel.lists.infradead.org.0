@@ -2,64 +2,114 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B7CE5AD22D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 05:22:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CD0FAAD246
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 05:40:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=xVaY4saLUrv5jh0EEqReedgcB4lRJggvCzf1o69TdaA=; b=aO6KAhCypphxGb
-	U0urvcuZzlM6CF3s+14rB0u80ZvhcsKKqm15j20FeHmzM3EPbwhqv71rzOdxtEyZiP6jBWq2BoPKL
-	t7gSeIf/ZzkluQXpp5aVo7iPXIYVEKiTiOTQtUTSYfcYxrgmpklnpfnDyW1jMSdJ/xFBXIEPNS+ei
-	uE7ft4fuWkFrYHqWhK0DDUgU8le0PGmCGBcMGOMeI3WOOQ5zt6HDUpwrhKdRKXxt4NRW4MOsxnUZS
-	T42S6GwTTs/YvYyWRRRjfn9bZ7YCVIL1eoTJUBtLO11wXE3lGkdRVScvcx4QQF7c6VUXD3BeSF2xG
-	YmxdRoUTuYJxDwaQVTMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=wYm50taDauAc7mcLHECQ0W1KpzvNR8EoY3y75f2rwp8=; b=JnqmjGfqVQY+Ii
+	S7gk1xGyf0Uhcp8q6xHaL2wwZ4jqC9EYJRNo3WGmpT6SYzij8l+HtMQNufpAtc552UkAN+jAxZKtT
+	FF4Acx69Jdd4J49w1jGVkOoqz/CPwfCm/K6GF8y5clB2qHXGlQYiSQOcC+kJeRJ/sRWdvu80nRFa7
+	kA2uxFKZJBmhASsPHLH3sp+d19D82JSne6T5g7HErVB4ULsnHPKKwI/tHXXyTH//hqIQMMD9eA2sO
+	rnywyHGsEpYgqh1DAyQ+m6Fx9K/D9ebGonlGMlqdJ6ExCI6hnTk0fok26P0hosjtVniO/OWTS+eV/
+	B/os5yWLGi2gvcalXwXA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7AG3-0007ym-4O; Mon, 09 Sep 2019 03:22:27 +0000
-Received: from vps.xff.cz ([195.181.215.36])
+	id 1i7AXD-0003uA-Ou; Mon, 09 Sep 2019 03:40:11 +0000
+Received: from mail-eopbgr60043.outbound.protection.outlook.com ([40.107.6.43]
+ helo=EUR04-DB3-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7AFq-0007y0-LH
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 03:22:17 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=megous.com; s=mail;
- t=1567999329; bh=vGYPee7mKvLamg5HC7jtXbBVYj6KXR/2WLHAods+Fag=;
- h=Date:From:To:Cc:Subject:References:X-My-GPG-KeyId:From;
- b=XtHCSzy5e62L1bITKndtj+3FFoPAdA6OegqfjwJSR/jyEmq+59SgqFa+A8wFEwHS0
- WLmj3PTQilbBuH5qhJMipBhxeByZPp/oTf4p5Fnm1GQcApTFCfSnZmqWjg2QLt07Hw
- tP6IhXE0K/lCI8SUbrEwrpjP32k4VpLdiNm8ITrA=
-Date: Mon, 9 Sep 2019 05:22:08 +0200
-From: =?utf-8?Q?Ond=C5=99ej?= Jirman <megous@megous.com>
-To: Samuel Holland <samuel@sholland.org>
-Subject: Re: [PATCH v4 00/10] Allwinner sunxi message box support
-Message-ID: <20190909032208.rlorx2ppytymtyej@core.my.home>
-Mail-Followup-To: Samuel Holland <samuel@sholland.org>,
- Maxime Ripard <maxime.ripard@bootlin.com>,
- Chen-Yu Tsai <wens@csie.org>, Jassi Brar <jassisinghbrar@gmail.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Stephen Boyd <sboyd@kernel.org>, Rob Herring <robh+dt@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>,
- Corentin Labbe <clabbe.montjoie@gmail.com>,
- Vasily Khoruzhick <anarsoul@gmail.com>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-sunxi@googlegroups.com,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-References: <20190820032311.6506-1-samuel@sholland.org>
+ id 1i7AWm-0003ss-HP
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 03:39:46 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Nrf/Xurhf4waxw+zxjP/oh4sG7lJo5AvzGY9EM5Oa3pdhbIaegzJuCG3OLtZq5Vp0cqJeUu+Mv1EEVNjPJCjJ73LN2cT9SK9I0rR4JgX+0J2KIx3g3I2RyoS/Xr9T41qYhZnOIMZ+HbQ+7IoZZ/ML1uh+mlFVcNJQtRNacfunUJcnNDCNLNYGTXCW1d2Hvkx5zQrzZ5hP5/+wgNACzED4f8KqrqN0Gu5M2RVElN66PStzVFR7JM9S9EyP/rZcHKk5BnlgqC1iqjysB2HHURJIaxfJY9Kh3rV1t2CAuFzqWi1gUbPZ00g3EyAXWK+eZiHevGNcXEC4EPh4UMVzOT8zQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PF+QbQ6C9EBBeWUE8Do2AhKUKj1uvwhx45VjUfUsigc=;
+ b=kJW2FMHpp66Z0NdFM/+urL2xNk+Az/VgF4DMYfShTwnPXfXyBSIvenv/92ENH7hoYalTe8AJWGsJVMJp7zPoh2kp1CT9tBGsd2qfOIYNNwVz/HNevsBUM/C3FqFwNHmTsFbz76sNesiYKx4fC2HAdbwv+rWPum9synV3HbJSE2wLDqpBMfHSp8AY9EUJTMYaelD4PhspBWx0xn45RkazKpf6WygbjRGjq/iavx+3omq7yBTIdoK67wOxVVk+eazlCUcwQfPHSSb7OazMC+Ssf1CY0+xOKiUtB0GUVraxOUa6nEXgk1Xl5p0psbgkWEugNbfLsHWAw6Qlb1/OKmj8sQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=PF+QbQ6C9EBBeWUE8Do2AhKUKj1uvwhx45VjUfUsigc=;
+ b=qYdYNszEpR/vEkg1K5lCkXy9oCqfNvR1UPAJMExwkt9zhMPFjRpFeDeWO/xrp8x2RLD+mOX4SFIe3KG9FNz4npTyNdS9vZR4bgdrBeVDpzLJuUY36xf68A4/WUgfRnysacOgEJzmT/5RojA0RmL0SL7g6jH496XNuy6ODQTIG04=
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
+ AM0PR04MB6020.eurprd04.prod.outlook.com (20.179.32.17) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.19; Mon, 9 Sep 2019 03:39:29 +0000
+Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6ca2:ec08:2b37:8ab8]) by AM0PR04MB4481.eurprd04.prod.outlook.com
+ ([fe80::6ca2:ec08:2b37:8ab8%6]) with mapi id 15.20.2241.018; Mon, 9 Sep 2019
+ 03:39:29 +0000
+From: Peng Fan <peng.fan@nxp.com>
+To: "mturquette@baylibre.com" <mturquette@baylibre.com>, "sboyd@kernel.org"
+ <sboyd@kernel.org>, "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>, "festevam@gmail.com"
+ <festevam@gmail.com>
+Subject: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+Thread-Topic: [PATCH V3 0/4] clk: imx8m: fix glitch/mux
+Thread-Index: AQHVZsAvxNHrETdja06leIJqZC3kHQ==
+Date: Mon, 9 Sep 2019 03:39:29 +0000
+Message-ID: <1568043491-20680-1-git-send-email-peng.fan@nxp.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-mailer: git-send-email 2.7.4
+x-clientproxiedby: HK0PR03CA0004.apcprd03.prod.outlook.com
+ (2603:1096:203:2e::16) To AM0PR04MB4481.eurprd04.prod.outlook.com
+ (2603:10a6:208:70::15)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=peng.fan@nxp.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 21c7b4ef-a549-4e51-64f6-08d734d751b0
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:AM0PR04MB6020; 
+x-ms-traffictypediagnostic: AM0PR04MB6020:|AM0PR04MB6020:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <AM0PR04MB6020F94DE7DE3D776A543F4E88B70@AM0PR04MB6020.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8273;
+x-forefront-prvs: 01559F388D
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(366004)(396003)(39860400002)(376002)(136003)(346002)(199004)(189003)(7736002)(186003)(26005)(54906003)(316002)(66446008)(64756008)(50226002)(2616005)(4326008)(6512007)(44832011)(3846002)(6116002)(66946007)(102836004)(110136005)(2201001)(25786009)(8676002)(52116002)(2501003)(386003)(478600001)(36756003)(14454004)(99286004)(66556008)(5660300002)(66476007)(86362001)(4744005)(71190400001)(6506007)(2906002)(256004)(476003)(486006)(53936002)(8936002)(6486002)(66066001)(81166006)(6436002)(71200400001)(81156014)(305945005)(32563001);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB6020;
+ H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: /Q+OuHuMezANPUCpZCKkll1Ek1YuNasBAzkZvU8VPLmfbfrQnkoUrY+IqQ95Po0JCvsb9yqm/VnmQAVB6cVZrn19S+11kGYOPQcI7Nb8Bn1f8WZgnx7o/jci+0bklEYhYXVYP0OZ3HIsomWkpr1q+VWF//aqEywu4/uWAqCv6tbWmxMeY7yH+FFAhnJr3ir6g25pyYTYWKwZAO2O1vHUfswR356fdyxDME0tsL903EzT6PHtZgTN5nMwdnmZE2CKeM11OsdxmhPuTbGmZa5uKgeZtQ5ZhAfP2XbTzvDPt8HHE+qTrdhPUKvd9fp77rnnp2VdviFogHd7FKqNBl/pJHTaAPQ2pvrqP+Y+cJbGdjjgu2QQx9JT+j5gFcyc2DK0ORdTa5DX9AsT7cdgYKaNSlzVkRlpyo52MSBwlCNf2ek=
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190820032311.6506-1-samuel@sholland.org>
-X-My-GPG-KeyId: EBFBDDE11FB918D44D1F56C1F9F0A873BE9777ED
- <https://xff.cz/key.txt>
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 21c7b4ef-a549-4e51-64f6-08d734d751b0
+X-MS-Exchange-CrossTenant-originalarrivaltime: 09 Sep 2019 03:39:29.3409 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: kPIBbo4HQ0NHebn8jeziRVlrGhBH5wJjDruZ9qxqCwWxHpxdQX9e5Potfe7Ifw7xko8NtXe4d9wUiBOei9gknA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB6020
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_202215_204805_8E3A7953 
-X-CRM114-Status: GOOD (  30.75  )
+X-CRM114-CacheID: sfid-20190908_203944_757097_47D3759B 
+X-CRM114-Status: UNSURE (   8.73  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.6.43 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -78,144 +128,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- linux-sunxi@googlegroups.com, Maxime Ripard <maxime.ripard@bootlin.com>,
- Michael Turquette <mturquette@baylibre.com>,
- Jassi Brar <jassisinghbrar@gmail.com>, linux-kernel@vger.kernel.org,
- Stephen Boyd <sboyd@kernel.org>, Chen-Yu Tsai <wens@csie.org>,
- Rob Herring <robh+dt@kernel.org>, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: Peng Fan <peng.fan@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello Samuel,
+From: Peng Fan <peng.fan@nxp.com>
 
-On Mon, Aug 19, 2019 at 10:23:01PM -0500, Samuel Holland wrote:
-> This series adds support for the "hardware message box" in sun8i, sun9i,
-> and sun50i SoCs, used for communication with the ARISC management
-> processor (the platform's equivalent of the ARM SCP). The end goal is to
-> use the arm_scpi driver as a client, communicating with firmware running
-> on the AR100 CPU, or to use the mailbox to forward NMIs that the
-> firmware picks up from R_INTC.
-> 
-> Unfortunately, the ARM SCPI client no longer works with this driver
-> since it now exposes all 8 hardware FIFOs individually. The SCPI client
-> could be made to work (and I posted proof-of-concept code to that effect
-> with v1 of this series), but that is a low priority, as Linux does not
-> directly use SCPI with the current firmware version; all SCPI use goes
-> through ATF via PSCI.
-> 
-> As requested in the comments to v3 of this patchset, a demo client is
-> provided in the final patch. This demo goes along with a toy firmware
-> which shows that the driver does indeed work for two-way communication
-> on all channels. To build the firmware component, run:
+V3:
+ Add cover-letter
 
-I've tried using this driver with mainline arm_scpi driver (which is probably
-an expected future use, since crust provides SCPI interface).
+V2:
+ Added patch [2,3,4]/4 and avoid glitch when prepare
 
-The problem I've found is that arm_scpi expects message box to be
-bi-directional, but this driver provides uni-directional interface.
+There is two bypass bit in the pll, BYPASS and EXT_BYPASS.
+There is also a restriction that to avoid glitch, need set BYPASS
+bit when RESETB changed from 0 to 1, otherwise there will be glitch.
 
-What do you think about making this driver provide bi-directional interface?
-We could halve the number of channels to 4 and mandate TX/RX configuration
-(from main CPU's PoV) as ABI.
+However the BYPASS bit is also used as mux bit in imx8mm/imx8mn clk driver.
 
-Otherwise it's impossible to use it with the arm_scpi driver.
+This means two paths touch the same bit which is wrong. So switch to use
+EXT_BYPASS bit as the mux.
 
-Or do you have any other ideas? I guess arm_scpi can be fixed to add a
-property that would make it possible to use single shmem with two
-mailboxes, one for rx and one for tx, but making sun6i mailbox have
-bi-directional interface sounds easier.
+Peng Fan (4):
+  clk: imx: pll14xx: avoid glitch when set rate
+  clk: imx: clk-pll14xx: unbypass PLL by default
+  clk: imx: imx8mm: fix pll mux bit
+  clk: imx: imx8mn: fix pll mux bit
 
-regards,
-	o.
+ drivers/clk/imx/clk-imx8mm.c  | 32 ++++++++++----------------------
+ drivers/clk/imx/clk-imx8mn.c  | 32 ++++++++++----------------------
+ drivers/clk/imx/clk-pll14xx.c | 27 ++++++++++++++++++++++++++-
+ 3 files changed, 46 insertions(+), 45 deletions(-)
 
->   git clone https://github.com/crust-firmware/meta meta
->   git clone -b mailbox-demo https://github.com/crust-firmware/crust meta/crust
->   cd meta
->   make
-> 
-> That will by default produce a U-Boot + ATF + SCP firmware image in
-> [meta/]build/pinebook/u-boot-sunxi-with-spl.bin. See the top-level
-> README.md for more information, such as cross-compiler setup.
-> 
-> I've now used this driver with three separate clients over the past two
-> years, and they all work. If there are no remaining concerns with the
-> driver, I'd like it to get merged.
-> 
-> Even without the driver, the clock patches (1-2) can go in at any time.
-> 
-> Changes from v3:
->   - Rebased on sunxi-next
->   - Added Rob's Reviewed-by for patch 3
->   - Fixed a crash when receiving a message on a disabled channel
->   - Cleaned up some comments/formatting in the driver
->   - Fixed #mbox-cells in sunxi-h3-h5.dtsi (patch 7)
->   - Removed the irqchip example (no longer relevant to the fw design)
->   - Added a demo/example client that uses the driver and a toy firmware
-> 
-> Changes from v2:
->   - Merge patches 1-3
->   - Add a comment in the code explaining the CLK_IS_CRITICAL usage
->   - Add a patch to mark the AR100 clocks as critical
->   - Use YAML for the device tree binding
->   - Include a not-for-merge example usage of the mailbox
-> 
-> Changes from v1:
->   - Marked message box clocks as critical instead of hacks in the driver
->   - 8 unidirectional channels instead of 4 bidirectional pairs
->   - Use per-SoC compatible strings and an A31 fallback compatible
->   - Dropped the mailbox framework patch
->   - Include DT patches for SoCs that document the message box
-> 
-> Samuel Holland (10):
->   clk: sunxi-ng: Mark msgbox clocks as critical
->   clk: sunxi-ng: Mark AR100 clocks as critical
->   dt-bindings: mailbox: Add a sunxi message box binding
->   mailbox: sunxi-msgbox: Add a new mailbox driver
->   ARM: dts: sunxi: a80: Add msgbox node
->   ARM: dts: sunxi: a83t: Add msgbox node
->   ARM: dts: sunxi: h3/h5: Add msgbox node
->   arm64: dts: allwinner: a64: Add msgbox node
->   arm64: dts: allwinner: h6: Add msgbox node
->   [DO NOT MERGE] drivers: firmware: msgbox demo
-> 
->  .../mailbox/allwinner,sunxi-msgbox.yaml       |  79 +++++
->  arch/arm/boot/dts/sun8i-a83t.dtsi             |  10 +
->  arch/arm/boot/dts/sun9i-a80.dtsi              |  10 +
->  arch/arm/boot/dts/sunxi-h3-h5.dtsi            |  10 +
->  arch/arm64/boot/dts/allwinner/sun50i-a64.dtsi |  34 ++
->  arch/arm64/boot/dts/allwinner/sun50i-h5.dtsi  |  24 ++
->  arch/arm64/boot/dts/allwinner/sun50i-h6.dtsi  |  10 +
->  drivers/clk/sunxi-ng/ccu-sun50i-a64.c         |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun50i-h6-r.c        |   2 +-
->  drivers/clk/sunxi-ng/ccu-sun50i-h6.c          |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-a23.c          |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-a33.c          |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-a83t.c         |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-h3.c           |   3 +-
->  drivers/clk/sunxi-ng/ccu-sun8i-r.c            |   2 +-
->  drivers/clk/sunxi-ng/ccu-sun9i-a80.c          |   3 +-
->  drivers/firmware/Kconfig                      |   6 +
->  drivers/firmware/Makefile                     |   1 +
->  drivers/firmware/sunxi_msgbox_demo.c          | 307 +++++++++++++++++
->  drivers/mailbox/Kconfig                       |  10 +
->  drivers/mailbox/Makefile                      |   2 +
->  drivers/mailbox/sunxi-msgbox.c                | 323 ++++++++++++++++++
->  22 files changed, 842 insertions(+), 9 deletions(-)
->  create mode 100644 Documentation/devicetree/bindings/mailbox/allwinner,sunxi-msgbox.yaml
->  create mode 100644 drivers/firmware/sunxi_msgbox_demo.c
->  create mode 100644 drivers/mailbox/sunxi-msgbox.c
-> 
-> -- 
-> 2.21.0
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+-- 
+2.16.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
