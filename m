@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7A6A3AD8A2
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 14:14:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7E147AD8A3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 14:14:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=oDQGeUNMj218s0ZSzxlq3UC0s4Urz2Y/cMr46cZlg3U=; b=Jdn1yv9doDO0C+7HMJrQLvKUYC
-	bJosMU3luw0KXWWxS0ZUDQEEeMGfqT/q9SVpzsuQWAqjfJeKd2NYKYzC+p+qtwoNiG1KMjlg1j5P6
-	YspYtEcHzkQqKV+Vy4iIOH1iHjLKtxDmqgvyuyh5QK9HO698k0RkDADQF7tQxvvkvbvYycHRtdkzy
-	+grcLDa14P9CohIClbD/pLWhv7hxTxdmhDPUd8f9hQHyvY7fMTu7b7FhhmYDRO/Ya98gbkNvTiGr1
-	fAz5JCcWzJuCvv9CrbRAF4eGjAgrdaaTVVKQOOI5/gcZGorifHSLNbudtXpjmwqGCcpJKlCef5OK+
-	64GEB3rA==;
+	bh=fdcVcBWZgpx/zeP+XzL11f49V3MBdedYL/ztWXBdqpU=; b=OlQQREX75D+zmGZ7iOk8FsBtC3
+	5okNxBsvbQ3ArFAUvlstDzgL+HDrCmI48qP1FcmlZQyNmIIiWofx+0JuNay7dUVPininYe3/Z2mUD
+	r0NVu/ksjQE5F3aEO5LsHJI3e/2g+2r3Po1R20Pc4NRAuOSwfP+/oAjLmPKNI3ghKve+k64Ri1zNA
+	ZXz4zlp3SYEIWdFXK2z5ioaawmvhxn6Z0nA8/P6WFUnANdCg9YHG4z1clY1FNVNKrXPAzK7m0qh5R
+	snzSby4odUH1dzh8RNXh5Dxm7dFuH5lFJ9Np2DgYJSFu5jb+bK5ShHNxBf4H04pAKNVtjE5CnLpAk
+	RCEfQIpA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7IYc-0006n2-Un; Mon, 09 Sep 2019 12:14:10 +0000
+	id 1i7IYn-00073U-Oc; Mon, 09 Sep 2019 12:14:21 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7IYH-0006V9-7b
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 12:13:51 +0000
+ id 1i7IYI-0006XS-Su
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 12:13:52 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4DABC1570;
- Mon,  9 Sep 2019 05:13:47 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4E4C11576;
+ Mon,  9 Sep 2019 05:13:50 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9BDB53F59C;
- Mon,  9 Sep 2019 05:13:44 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 9DC943F59C;
+ Mon,  9 Sep 2019 05:13:47 -0700 (PDT)
 From: Christoffer Dall <christoffer.dall@arm.com>
 To: kvmarm@lists.cs.columbia.edu
-Subject: [PATCH 1/2] KVM: arm/arm64: Allow reporting non-ISV data aborts to
- userspace
-Date: Mon,  9 Sep 2019 14:13:33 +0200
-Message-Id: <20190909121337.27287-2-christoffer.dall@arm.com>
+Subject: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external data
+ aborts
+Date: Mon,  9 Sep 2019 14:13:34 +0200
+Message-Id: <20190909121337.27287-3-christoffer.dall@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190909121337.27287-1-christoffer.dall@arm.com>
 References: <20190909121337.27287-1-christoffer.dall@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_051349_364073_DE951DD0 
-X-CRM114-Status: GOOD (  23.71  )
+X-CRM114-CacheID: sfid-20190909_051351_067442_763AEFAE 
+X-CRM114-Status: GOOD (  21.18  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -74,275 +74,184 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For a long time, if a guest accessed memory outside of a memslot using
-any of the load/store instructions in the architecture which doesn't
-supply decoding information in the ESR_EL2 (the ISV bit is not set), the
-kernel would print the following message and terminate the VM as a
-result of returning -ENOSYS to userspace:
+In some scenarios, such as buggy guest or incorrect configuration of the
+VMM and firmware description data, userspace will detect a memory access
+to a portion of the IPA, which is not mapped to any MMIO region.
 
-  load/store instruction decoding not implemented
+For this purpose, the appropriate action is to inject an external abort
+to the guest.  The kernel already has functionality to inject an
+external abort, but we need to wire up a signal from user space that
+lets user space tell the kernel to do this.
 
-The reason behind this message is that KVM assumes that all accesses
-outside a memslot is an MMIO access which should be handled by
-userspace, and we originally expected to eventually implement some sort
-of decoding of load/store instructions where the ISV bit was not set.
+It turns out, we already have the set event functionality which we can
+perfectly reuse for this.
 
-However, it turns out that many of the instructions which don't provide
-decoding information on abort are not safe to use for MMIO accesses, and
-the remaining few that would potentially make sense to use on MMIO
-accesses, such as those with register writeback, are not used in
-practice.  It also turns out that fetching an instruction from guest
-memory can be a pretty horrible affair, involving stopping all CPUs on
-SMP systems, handling multiple corner cases of address translation in
-software, and more.  It doesn't appear likely that we'll ever implement
-this in the kernel.
-
-What is much more common is that a user has misconfigured his/her guest
-and is actually not accessing an MMIO region, but just hitting some
-random hole in the IPA space.  In this scenario, the error message above
-is almost misleading and has led to a great deal of confusion over the
-years.
-
-It is, nevertheless, ABI to userspace, and we therefore need to
-introduce a new capability that userspace explicitly enables to change
-behavior.
-
-This patch introduces KVM_CAP_ARM_NISV_TO_USER (NISV meaning Non-ISV)
-which does exactly that, and introduces a new exit reason to report the
-event to userspace.  User space can then emulate an exception to the
-guest, restart the guest, suspend the guest, or take any other
-appropriate action as per the policy of the running system.
-
-Reported-by: Heinrich Schuchardt <xypron.glpk@gmx.de>
 Signed-off-by: Christoffer Dall <christoffer.dall@arm.com>
 ---
- Documentation/virt/kvm/api.txt       | 29 ++++++++++++++++++++++++++++
- arch/arm/include/asm/kvm_arm.h       |  2 ++
- arch/arm/include/asm/kvm_emulate.h   |  5 +++++
- arch/arm/include/asm/kvm_host.h      |  8 ++++++++
- arch/arm64/include/asm/kvm_emulate.h |  5 +++++
- arch/arm64/include/asm/kvm_host.h    |  8 ++++++++
- include/uapi/linux/kvm.h             |  7 +++++++
- virt/kvm/arm/arm.c                   | 21 ++++++++++++++++++++
- virt/kvm/arm/mmio.c                  | 11 +++++++++--
- 9 files changed, 94 insertions(+), 2 deletions(-)
+ Documentation/virt/kvm/api.txt    | 15 ++++++++++++++-
+ arch/arm/include/uapi/asm/kvm.h   |  3 ++-
+ arch/arm/kvm/guest.c              |  3 +++
+ arch/arm64/include/uapi/asm/kvm.h |  3 ++-
+ arch/arm64/kvm/guest.c            |  3 +++
+ arch/arm64/kvm/inject_fault.c     |  4 ++--
+ include/uapi/linux/kvm.h          |  1 +
+ virt/kvm/arm/arm.c                |  1 +
+ 8 files changed, 28 insertions(+), 5 deletions(-)
 
 diff --git a/Documentation/virt/kvm/api.txt b/Documentation/virt/kvm/api.txt
-index 2d067767b617..02501333f746 100644
+index 02501333f746..edd6cdc470ca 100644
 --- a/Documentation/virt/kvm/api.txt
 +++ b/Documentation/virt/kvm/api.txt
-@@ -4453,6 +4453,35 @@ Hyper-V SynIC state change. Notification is used to remap SynIC
- event/message pages and to enable/disable SynIC messages/events processing
- in userspace.
+@@ -955,6 +955,8 @@ The following bits are defined in the flags field:
  
-+		/* KVM_EXIT_ARM_NISV */
-+		struct {
-+			__u64 esr_iss;
-+			__u64 fault_ipa;
-+		} arm_nisv;
-+
-+Used on arm and arm64 systems. If a guest accesses memory not in a memslot,
-+KVM will typically return to userspace and ask it to do MMIO emulation on its
-+behalf. However, for certain classes of instructions, no instruction decode
-+(direction, length of memory access) is provided, and fetching and decoding
-+the instruction from the VM is overly complicated to live in the kernel.
-+
-+Historically, when this situation occurred, KVM would print a warning and kill
-+the VM. KVM assumed that if the guest accessed non-memslot memory, it was
-+trying to do I/O, which just couldn't be emulated, and the warning message was
-+phrased accordingly. However, what happened more often was that a guest bug
-+caused access outside the guest memory areas which should lead to a more
-+mearningful warning message and an external abort in the guest, if the access
-+did not fall within an I/O window.
-+
-+Userspace implementations can query for KVM_CAP_ARM_NISV_TO_USER, and enable
-+this capability at VM creation. Once this is done, these types of errors will
-+instead return to userspace with KVM_EXIT_ARM_NISV, with the valid bits from
-+the HSR (arm) and ESR_EL2 (arm64) in the esr_iss field, and the faulting IPA
-+in the fault_ipa field. Userspace can either fix up the access if it's
-+actually an I/O access by decoding the instruction from guest memory (if it's
-+very brave) and continue executing the guest, or it can decide to suspend,
-+dump, or restart the guest.
-+
- 		/* Fix the size of the union. */
- 		char padding[256];
- 	};
-diff --git a/arch/arm/include/asm/kvm_arm.h b/arch/arm/include/asm/kvm_arm.h
-index 0125aa059d5b..ce61b3b0058d 100644
---- a/arch/arm/include/asm/kvm_arm.h
-+++ b/arch/arm/include/asm/kvm_arm.h
-@@ -162,6 +162,8 @@
- #define HSR_ISV		(_AC(1, UL) << HSR_ISV_SHIFT)
- #define HSR_SRT_SHIFT	(16)
- #define HSR_SRT_MASK	(0xf << HSR_SRT_SHIFT)
-+#define HSR_CM		(1 << 8)
-+#define HSR_WNR		(1 << 6)
- #define HSR_FSC		(0x3f)
- #define HSR_FSC_TYPE	(0x3c)
- #define HSR_SSE		(1 << 21)
-diff --git a/arch/arm/include/asm/kvm_emulate.h b/arch/arm/include/asm/kvm_emulate.h
-index 40002416efec..e8ef349c04b4 100644
---- a/arch/arm/include/asm/kvm_emulate.h
-+++ b/arch/arm/include/asm/kvm_emulate.h
-@@ -167,6 +167,11 @@ static inline bool kvm_vcpu_dabt_isvalid(struct kvm_vcpu *vcpu)
- 	return kvm_vcpu_get_hsr(vcpu) & HSR_ISV;
- }
+ ARM/ARM64:
  
-+static inline unsigned long kvm_vcpu_dabt_iss_nisv_sanitized(const struct kvm_vcpu *vcpu)
-+{
-+	return kvm_vcpu_get_hsr(vcpu) & (HSR_CM | HSR_WNR | HSR_FSC);
-+}
++User space may need to inject several types of events to the guest.
 +
- static inline bool kvm_vcpu_dabt_iswrite(struct kvm_vcpu *vcpu)
+ If the guest accesses a device that is being emulated by the host kernel in
+ such a way that a real device would generate a physical SError, KVM may make
+ a virtual SError pending for that VCPU. This system error interrupt remains
+@@ -989,12 +991,23 @@ Specifying exception.has_esr on a system that does not support it will return
+ -EINVAL. Setting anything other than the lower 24bits of exception.serror_esr
+ will return -EINVAL.
+ 
++If the guest performed an access to I/O memory which could not be handled by
++user space, for example because of missing instruction syndrome decode
++information or because there is no device mapped at the accessed IPA, then
++user space can ask the kernel to inject an external abort using the address
++from the exiting fault on the VCPU. It is a programming error to set
++ext_dabt_pending at the same time as any of the serror fields, or to set
++ext_dabt_pending on an exit which was not either KVM_EXIT_MMIO or
++KVM_EXIT_ARM_NISV. This feature is only available if the system supports
++KVM_CAP_ARM_INJECT_EXT_DABT;
++
+ struct kvm_vcpu_events {
+ 	struct {
+ 		__u8 serror_pending;
+ 		__u8 serror_has_esr;
++		__u8 ext_dabt_pending;
+ 		/* Align it to 8 bytes */
+-		__u8 pad[6];
++		__u8 pad[5];
+ 		__u64 serror_esr;
+ 	} exception;
+ 	__u32 reserved[12];
+diff --git a/arch/arm/include/uapi/asm/kvm.h b/arch/arm/include/uapi/asm/kvm.h
+index a4217c1a5d01..d2449a5bf8d5 100644
+--- a/arch/arm/include/uapi/asm/kvm.h
++++ b/arch/arm/include/uapi/asm/kvm.h
+@@ -131,8 +131,9 @@ struct kvm_vcpu_events {
+ 	struct {
+ 		__u8 serror_pending;
+ 		__u8 serror_has_esr;
++		__u8 ext_dabt_pending;
+ 		/* Align it to 8 bytes */
+-		__u8 pad[6];
++		__u8 pad[5];
+ 		__u64 serror_esr;
+ 	} exception;
+ 	__u32 reserved[12];
+diff --git a/arch/arm/kvm/guest.c b/arch/arm/kvm/guest.c
+index 684cf64b4033..4154c5589501 100644
+--- a/arch/arm/kvm/guest.c
++++ b/arch/arm/kvm/guest.c
+@@ -263,11 +263,14 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
  {
- 	return kvm_vcpu_get_hsr(vcpu) & HSR_WNR;
-diff --git a/arch/arm/include/asm/kvm_host.h b/arch/arm/include/asm/kvm_host.h
-index 8a37c8e89777..19a92c49039c 100644
---- a/arch/arm/include/asm/kvm_host.h
-+++ b/arch/arm/include/asm/kvm_host.h
-@@ -76,6 +76,14 @@ struct kvm_arch {
+ 	bool serror_pending = events->exception.serror_pending;
+ 	bool has_esr = events->exception.serror_has_esr;
++	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
  
- 	/* Mandated version of PSCI */
- 	u32 psci_version;
-+
-+	/*
-+	 * If we encounter a data abort without valid instruction syndrome
-+	 * information, report this to user space.  User space can (and
-+	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-+	 * supported.
-+	 */
-+	bool return_nisv_io_abort_to_user;
- };
+ 	if (serror_pending && has_esr)
+ 		return -EINVAL;
+ 	else if (serror_pending)
+ 		kvm_inject_vabt(vcpu);
++	else if (has_ext_dabt_pending)
++		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
  
- #define KVM_NR_MEM_OBJS     40
-diff --git a/arch/arm64/include/asm/kvm_emulate.h b/arch/arm64/include/asm/kvm_emulate.h
-index d69c1efc63e7..a3c967988e1d 100644
---- a/arch/arm64/include/asm/kvm_emulate.h
-+++ b/arch/arm64/include/asm/kvm_emulate.h
-@@ -258,6 +258,11 @@ static inline bool kvm_vcpu_dabt_isvalid(const struct kvm_vcpu *vcpu)
- 	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_ISV);
+ 	return 0;
  }
- 
-+static inline unsigned long kvm_vcpu_dabt_iss_nisv_sanitized(const struct kvm_vcpu *vcpu)
-+{
-+	return kvm_vcpu_get_hsr(vcpu) & (ESR_ELx_CM | ESR_ELx_WNR | ESR_ELx_FSC);
-+}
-+
- static inline bool kvm_vcpu_dabt_issext(const struct kvm_vcpu *vcpu)
+diff --git a/arch/arm64/include/uapi/asm/kvm.h b/arch/arm64/include/uapi/asm/kvm.h
+index 9a507716ae2f..7729efdb1c0c 100644
+--- a/arch/arm64/include/uapi/asm/kvm.h
++++ b/arch/arm64/include/uapi/asm/kvm.h
+@@ -164,8 +164,9 @@ struct kvm_vcpu_events {
+ 	struct {
+ 		__u8 serror_pending;
+ 		__u8 serror_has_esr;
++		__u8 ext_dabt_pending;
+ 		/* Align it to 8 bytes */
+-		__u8 pad[6];
++		__u8 pad[5];
+ 		__u64 serror_esr;
+ 	} exception;
+ 	__u32 reserved[12];
+diff --git a/arch/arm64/kvm/guest.c b/arch/arm64/kvm/guest.c
+index dfd626447482..10e6e2144dca 100644
+--- a/arch/arm64/kvm/guest.c
++++ b/arch/arm64/kvm/guest.c
+@@ -720,6 +720,7 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
  {
- 	return !!(kvm_vcpu_get_hsr(vcpu) & ESR_ELx_SSE);
-diff --git a/arch/arm64/include/asm/kvm_host.h b/arch/arm64/include/asm/kvm_host.h
-index f656169db8c3..019bc560edc1 100644
---- a/arch/arm64/include/asm/kvm_host.h
-+++ b/arch/arm64/include/asm/kvm_host.h
-@@ -83,6 +83,14 @@ struct kvm_arch {
+ 	bool serror_pending = events->exception.serror_pending;
+ 	bool has_esr = events->exception.serror_has_esr;
++	bool has_ext_dabt_pending = events->exception.ext_dabt_pending;
  
- 	/* Mandated version of PSCI */
- 	u32 psci_version;
-+
-+	/*
-+	 * If we encounter a data abort without valid instruction syndrome
-+	 * information, report this to user space.  User space can (and
-+	 * should) opt in to this feature if KVM_CAP_ARM_NISV_TO_USER is
-+	 * supported.
-+	 */
-+	bool return_nisv_io_abort_to_user;
- };
+ 	if (serror_pending && has_esr) {
+ 		if (!cpus_have_const_cap(ARM64_HAS_RAS_EXTN))
+@@ -731,6 +732,8 @@ int __kvm_arm_vcpu_set_events(struct kvm_vcpu *vcpu,
+ 			return -EINVAL;
+ 	} else if (serror_pending) {
+ 		kvm_inject_vabt(vcpu);
++	} else if (has_ext_dabt_pending) {
++		kvm_inject_dabt(vcpu, kvm_vcpu_get_hfar(vcpu));
+ 	}
  
- #define KVM_NR_MEM_OBJS     40
+ 	return 0;
+diff --git a/arch/arm64/kvm/inject_fault.c b/arch/arm64/kvm/inject_fault.c
+index a9d25a305af5..ccdb6a051ab2 100644
+--- a/arch/arm64/kvm/inject_fault.c
++++ b/arch/arm64/kvm/inject_fault.c
+@@ -109,7 +109,7 @@ static void inject_undef64(struct kvm_vcpu *vcpu)
+ 
+ /**
+  * kvm_inject_dabt - inject a data abort into the guest
+- * @vcpu: The VCPU to receive the undefined exception
++ * @vcpu: The VCPU to receive the data abort
+  * @addr: The address to report in the DFAR
+  *
+  * It is assumed that this code is called from the VCPU thread and that the
+@@ -125,7 +125,7 @@ void kvm_inject_dabt(struct kvm_vcpu *vcpu, unsigned long addr)
+ 
+ /**
+  * kvm_inject_pabt - inject a prefetch abort into the guest
+- * @vcpu: The VCPU to receive the undefined exception
++ * @vcpu: The VCPU to receive the prefetch abort
+  * @addr: The address to report in the DFAR
+  *
+  * It is assumed that this code is called from the VCPU thread and that the
 diff --git a/include/uapi/linux/kvm.h b/include/uapi/linux/kvm.h
-index 5e3f12d5359e..dd79235b6435 100644
+index dd79235b6435..a80ee820e700 100644
 --- a/include/uapi/linux/kvm.h
 +++ b/include/uapi/linux/kvm.h
-@@ -235,6 +235,7 @@ struct kvm_hyperv_exit {
- #define KVM_EXIT_S390_STSI        25
- #define KVM_EXIT_IOAPIC_EOI       26
- #define KVM_EXIT_HYPERV           27
-+#define KVM_EXIT_ARM_NISV         28
- 
- /* For KVM_EXIT_INTERNAL_ERROR */
- /* Emulate instruction failed. */
-@@ -392,6 +393,11 @@ struct kvm_run {
- 		} eoi;
- 		/* KVM_EXIT_HYPERV */
- 		struct kvm_hyperv_exit hyperv;
-+		/* KVM_EXIT_ARM_NISV */
-+		struct {
-+			__u64 esr_iss;
-+			__u64 fault_ipa;
-+		} arm_nisv;
- 		/* Fix the size of the union. */
- 		char padding[256];
- 	};
-@@ -996,6 +1002,7 @@ struct kvm_ppc_resize_hpt {
- #define KVM_CAP_ARM_PTRAUTH_ADDRESS 171
+@@ -1003,6 +1003,7 @@ struct kvm_ppc_resize_hpt {
  #define KVM_CAP_ARM_PTRAUTH_GENERIC 172
  #define KVM_CAP_PMU_EVENT_FILTER 173
-+#define KVM_CAP_ARM_NISV_TO_USER 174
+ #define KVM_CAP_ARM_NISV_TO_USER 174
++#define KVM_CAP_ARM_INJECT_EXT_DABT 175
  
  #ifdef KVM_CAP_IRQ_ROUTING
  
 diff --git a/virt/kvm/arm/arm.c b/virt/kvm/arm/arm.c
-index 35a069815baf..7153504bb106 100644
+index 7153504bb106..56a97dd9b292 100644
 --- a/virt/kvm/arm/arm.c
 +++ b/virt/kvm/arm/arm.c
-@@ -98,6 +98,26 @@ int kvm_arch_check_processor_compat(void)
- 	return 0;
- }
- 
-+int kvm_vm_ioctl_enable_cap(struct kvm *kvm,
-+			    struct kvm_enable_cap *cap)
-+{
-+	int r;
-+
-+	if (cap->flags)
-+		return -EINVAL;
-+
-+	switch (cap->cap) {
-+	case KVM_CAP_ARM_NISV_TO_USER:
-+		r = 0;
-+		kvm->arch.return_nisv_io_abort_to_user = true;
-+		break;
-+	default:
-+		r = -EINVAL;
-+		break;
-+	}
-+
-+	return r;
-+}
- 
- /**
-  * kvm_arch_init_vm - initializes a VM data structure
-@@ -196,6 +216,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
- 	case KVM_CAP_MP_STATE:
+@@ -217,6 +217,7 @@ int kvm_vm_ioctl_check_extension(struct kvm *kvm, long ext)
  	case KVM_CAP_IMMEDIATE_EXIT:
  	case KVM_CAP_VCPU_EVENTS:
-+	case KVM_CAP_ARM_NISV_TO_USER:
+ 	case KVM_CAP_ARM_NISV_TO_USER:
++	case KVM_CAP_ARM_INJECT_EXT_DABT:
  		r = 1;
  		break;
  	case KVM_CAP_ARM_SET_DEVICE_ADDR:
-diff --git a/virt/kvm/arm/mmio.c b/virt/kvm/arm/mmio.c
-index 6af5c91337f2..7b92e2744fa7 100644
---- a/virt/kvm/arm/mmio.c
-+++ b/virt/kvm/arm/mmio.c
-@@ -167,8 +167,15 @@ int io_mem_abort(struct kvm_vcpu *vcpu, struct kvm_run *run,
- 		if (ret)
- 			return ret;
- 	} else {
--		kvm_err("load/store instruction decoding not implemented\n");
--		return -ENOSYS;
-+		if (vcpu->kvm->arch.return_nisv_io_abort_to_user) {
-+			run->exit_reason = KVM_EXIT_ARM_NISV;
-+			run->arm_nisv.esr_iss = kvm_vcpu_dabt_iss_nisv_sanitized(vcpu);
-+			run->arm_nisv.fault_ipa = fault_ipa;
-+			return 0;
-+		} else {
-+			kvm_info("Encountered data abort outside memslots with no valid syndrome info\n");
-+			return -ENOSYS;
-+		}
- 	}
- 
- 	rt = vcpu->arch.mmio_decode.rt;
 -- 
 2.17.1
 
