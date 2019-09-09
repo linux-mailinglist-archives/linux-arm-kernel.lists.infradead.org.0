@@ -2,91 +2,93 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D91FEAD786
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 13:01:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2AD98AD7B3
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 13:13:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=WKjzbykzJcYXbctqGR8utMMEHKPhb/MxxdWE/QQCnHs=; b=O9CGpPG2v0T3iU
-	Yjv6ixFpyzVIWHAW8eJWrrPpGMKMhWgBsGvYjB35hkFFkHqoqToc7FLlm8ItQS3SzymwBSpMkuDhn
-	mvND1YayGvjQuu5ivzR9ggCibF9KEcqzelguhBdRFctQI5dP6TVkMum6Oc2gzEfqh2yz+0Jj64n7f
-	xUc5PMhQK3fE+Yg7KtysPj/fVJAyR74rLruvCjywL3rtz34YZyuOXI0RU2mL4Cc54itQcwyRjEs54
-	jclPCHAwsxxiUecMnzzM8YOso/jp3ZJcdlf4n6wMRT8e7v+u0kFyM3BCvqj5YQARXfbE69c7bUC0O
-	mPfl6s7GXYgRcoPPlEOw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=tFIGWOysMoSaKMqRsPg93BsYIDhfNtGLJNRBliYHz4w=; b=LPoSBaa8ZxLHXKPBoZVCpeajK
+	gqemtb7M9bwZgbw1Xn3+jNdDnMlNJykD8VzcXSqjRhvk/qU0w3KBqAhShxgw5muoBhPF1eDfR9FIs
+	z8CRtnCwTqaKgbBorlpyCf0FOLHJzQHr95u7B7PNY63f3QtqTkZjwu67TqxxGjoBEi4xRo17kDr4X
+	KQC1G1X0y4+q8oJoUtvTBHkniVF41pTDmVYa7Fda9nB75W/3AK5C3M2Kk0v23fxOVPX5dWFXO3U9t
+	sC2C2d1fzbkomAETbYhAlahC+ceI+oBJsK06bYdcHWt3NoX9ehiEa4qBs7nnbIwHRuylO5VK3zGGM
+	QffJJJdKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7HQ3-00041U-Hp; Mon, 09 Sep 2019 11:01:15 +0000
-Received: from esa1.microchip.iphmx.com ([68.232.147.91])
+	id 1i7Hbm-0007QP-IB; Mon, 09 Sep 2019 11:13:22 +0000
+Received: from smtp-fw-6001.amazon.com ([52.95.48.154])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7HPw-00040d-U5
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 11:01:10 +0000
-Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
- Claudiu.Beznea@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="Claudiu.Beznea@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa1.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
- envelope-from="Claudiu.Beznea@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa1.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Claudiu.Beznea@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: 9xll3BMS+TMUyqo+IYQ9PebZVty6ukX2OAoxO7O6xicbl+ZItOjg9+xK32hgPRww+4CeHuqp6M
- dboQhy1wz01CBmDyKuuDZ6aJvUJ0KMl8iY6XRuVGFvkzWScW/0J+r4NOlInlW82eW+whZbfI3e
- HUreJqRNcu48WCwHAdSWgdYjBJ9qcsfeDxtxscz5sJLCveh5gx5WIf2DnP/l5bJGb919gWYnEe
- tVGzwUJRtt19ya4oXbrMoglSXd8rIPXjV5xn6BwZRbI8CB1/EgzDOHXanoUdhJj7sp1rRTYFKr
- 0Ww=
-X-IronPort-AV: E=Sophos;i="5.64,484,1559545200"; d="scan'208";a="49728710"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 09 Sep 2019 04:00:42 -0700
-Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Mon, 9 Sep 2019 04:00:42 -0700
-Received: from m18063-ThinkPad-T460p.mchp-main.com (10.10.85.251) by
- chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Mon, 9 Sep 2019 04:00:38 -0700
-From: Claudiu Beznea <claudiu.beznea@microchip.com>
-To: <tglx@linutronix.de>, <jason@lakedaemon.net>, <maz@kernel.org>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>, <nicolas.ferre@microchip.com>,
- <alexandre.belloni@bootlin.com>, <ludovic.desroches@microchip.com>
-Subject: [PATCH] irqchip/atmel-aic5: add support for sam9x60 irqchip
-Date: Mon, 9 Sep 2019 14:00:35 +0300
-Message-ID: <1568026835-6646-1-git-send-email-claudiu.beznea@microchip.com>
-X-Mailer: git-send-email 2.7.4
+ id 1i7Hbf-0007Pf-MZ
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 11:13:17 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
+ t=1568027595; x=1599563595;
+ h=subject:to:cc:references:from:message-id:date:
+ mime-version:in-reply-to:content-transfer-encoding;
+ bh=F9WoBKV+oWdvDBwrEieyAZ8tIJPF4Cx6CuXAUeqFsQk=;
+ b=X/2hIaLzDhmTmldf6pKq9X5lwnuVHi04xz1KXG7ieLBwjevCK0MFwtJ+
+ cDcVLg8JIXcNrr1nps6pmreNfO29kFUZoBSOVAgSVQ64pkjvzjKD9mOvb
+ B2rczl80ydgx+1lXNha2jeIk1rHba6oZb1IzuDSy0KxDMrQRuIE6H97Pa Q=;
+X-IronPort-AV: E=Sophos;i="5.64,484,1559520000"; d="scan'208";a="414286943"
+Received: from iad6-co-svc-p1-lb1-vlan3.amazon.com (HELO
+ email-inbound-relay-1d-74cf8b49.us-east-1.amazon.com) ([10.124.125.6])
+ by smtp-border-fw-out-6001.iad6.amazon.com with ESMTP;
+ 09 Sep 2019 11:13:12 +0000
+Received: from EX13MTAUEA001.ant.amazon.com
+ (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
+ by email-inbound-relay-1d-74cf8b49.us-east-1.amazon.com (Postfix) with ESMTPS
+ id 57341C0934; Mon,  9 Sep 2019 11:13:06 +0000 (UTC)
+Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
+ EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
+ id 15.0.1367.3; Mon, 9 Sep 2019 11:13:05 +0000
+Received: from [10.125.238.52] (10.43.161.152) by EX13D01EUB001.ant.amazon.com
+ (10.43.166.194) with Microsoft SMTP Server (TLS) id 15.0.1367.3;
+ Mon, 9 Sep 2019 11:12:54 +0000
+Subject: Re: [PATCH 2/3] soc: amazon: al-pos: Introduce Amazon's Annapurna
+ Labs POS driver
+To: Arnd Bergmann <arnd@arndb.de>
+References: <1568020220-7758-1-git-send-email-talel@amazon.com>
+ <1568020220-7758-3-git-send-email-talel@amazon.com>
+ <CAK8P3a3UF7xPV1U3eW6Jdu754P1bzG208UxD9KUxEm1JjZudww@mail.gmail.com>
+From: "Shenhar, Talel" <talel@amazon.com>
+Message-ID: <98f0028e-5653-3116-fdaa-1385ecdf0289@amazon.com>
+Date: Mon, 9 Sep 2019 14:12:48 +0300
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
+ Thunderbird/68.0
 MIME-Version: 1.0
+In-Reply-To: <CAK8P3a3UF7xPV1U3eW6Jdu754P1bzG208UxD9KUxEm1JjZudww@mail.gmail.com>
+Content-Language: en-US
+X-Originating-IP: [10.43.161.152]
+X-ClientProxiedBy: EX13D16UWB001.ant.amazon.com (10.43.161.17) To
+ EX13D01EUB001.ant.amazon.com (10.43.166.194)
+Precedence: Bulk
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_040109_010342_A9C309C3 
-X-CRM114-Status: UNSURE (   9.74  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190909_041315_873695_F54C5A2F 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: -10.0 (----------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-10.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.147.91 listed in list.dnswl.org]
+ medium trust [52.95.48.154 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
-Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -95,74 +97,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org,
- Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Claudiu Beznea <claudiu.beznea@microchip.com>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Mark Rutland <mark.rutland@arm.com>, mjourdan@baylibre.com,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ jonnyc@amazon.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ ronenk@amazon.com, Will
+ Deacon <will@kernel.org>, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
+ DTML <devicetree@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>,
+ Thomas Gleixner <tglx@linutronix.de>, hanochu@amazon.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>, barakw@amazon.com,
+ hhhawa@amazon.com, gregkh <gregkh@linuxfoundation.org>,
+ paul.kocialkowski@bootlin.com, Patrick
+ Venture <venture@google.com>, Olof Johansson <olof@lixom.net>,
+ David Miller <davem@davemloft.net>, David Woodhouse <dwmw@amazon.co.uk>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
 
-Add support for SAM9X60 irqchip.
+On 9/9/2019 12:44 PM, Arnd Bergmann wrote:
+> On Mon, Sep 9, 2019 at 11:14 AM Talel Shenhar <talel@amazon.com> wrote:
+>> The Amazon's Annapurna Labs SoCs includes Point Of Serialization error
+>> logging unit that reports an error in case write error (e.g. attempt to
+>> write to a read only register).
+>> This patch introduces the support for this unit.
+>>
+>> Signed-off-by: Talel Shenhar <talel@amazon.com>
+> Looks ok overall, juts a few minor comments:
+Thanks.
+>
+>> +MODULE_LICENSE("GPL v2");
+>> +MODULE_AUTHOR("Talel Shenhar");
+>> +MODULE_DESCRIPTION("Amazon's Annapurna Labs POS driver");
+> These usually go to the end of the file.
+Ack, Will move them as part of v2.
+>
+>> +       log1 = readl_relaxed(pos->mmio_base + AL_POS_ERROR_LOG_1);
+>> +       if (!FIELD_GET(AL_POS_ERROR_LOG_1_VALID, log1))
+>> +               return IRQ_NONE;
+>> +
+>> +       log0 = readl_relaxed(pos->mmio_base + AL_POS_ERROR_LOG_0);
+>> +       writel_relaxed(0, pos->mmio_base + AL_POS_ERROR_LOG_1);
+> Why do you require _relaxed() accessors here? Please add a comment
+> explaining that, or use the regular readl()/writel().
 
-Signed-off-by: Sandeep Sheriker Mallikarjun <sandeepsheriker.mallikarjun@microchip.com>
-[claudiu.beznea@microchip.com: update aic5_irq_fixups[], update
- documentation]
-Signed-off-by: Claudiu Beznea <claudiu.beznea@microchip.com>
----
- .../devicetree/bindings/interrupt-controller/atmel,aic.txt     |  7 +++++--
- drivers/irqchip/irq-atmel-aic5.c                               | 10 ++++++++++
- 2 files changed, 15 insertions(+), 2 deletions(-)
+I don't think commenting is needed here as there is nothing special in 
+this type of access.
 
-diff --git a/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt b/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
-index f4c5d34c4111..7079d44bf3ba 100644
---- a/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
-+++ b/Documentation/devicetree/bindings/interrupt-controller/atmel,aic.txt
-@@ -1,8 +1,11 @@
- * Advanced Interrupt Controller (AIC)
- 
- Required properties:
--- compatible: Should be "atmel,<chip>-aic"
--  <chip> can be "at91rm9200", "sama5d2", "sama5d3" or "sama5d4"
-+- compatible: Should be:
-+    - "atmel,<chip>-aic" where  <chip> can be "at91rm9200", "sama5d2",
-+      "sama5d3" or "sama5d4"
-+    - "microchip,<chip>-aic" where <chip> can be "sam9x60"
-+
- - interrupt-controller: Identifies the node as an interrupt controller.
- - #interrupt-cells: The number of cells to define the interrupts. It should be 3.
-   The first cell is the IRQ number (aka "Peripheral IDentifier" on datasheet).
-diff --git a/drivers/irqchip/irq-atmel-aic5.c b/drivers/irqchip/irq-atmel-aic5.c
-index 6acad2ea0fb3..29333497ba10 100644
---- a/drivers/irqchip/irq-atmel-aic5.c
-+++ b/drivers/irqchip/irq-atmel-aic5.c
-@@ -313,6 +313,7 @@ static void __init sama5d3_aic_irq_fixup(void)
- static const struct of_device_id aic5_irq_fixups[] __initconst = {
- 	{ .compatible = "atmel,sama5d3", .data = sama5d3_aic_irq_fixup },
- 	{ .compatible = "atmel,sama5d4", .data = sama5d3_aic_irq_fixup },
-+	{ .compatible = "microchip,sam9x60", .data = sama5d3_aic_irq_fixup },
- 	{ /* sentinel */ },
- };
- 
-@@ -390,3 +391,12 @@ static int __init sama5d4_aic5_of_init(struct device_node *node,
- 	return aic5_of_init(node, parent, NR_SAMA5D4_IRQS);
- }
- IRQCHIP_DECLARE(sama5d4_aic5, "atmel,sama5d4-aic", sama5d4_aic5_of_init);
-+
-+#define NR_SAM9X60_IRQS		50
-+
-+static int __init sam9x60_aic5_of_init(struct device_node *node,
-+				       struct device_node *parent)
-+{
-+	return aic5_of_init(node, parent, NR_SAM9X60_IRQS);
-+}
-+IRQCHIP_DECLARE(sam9x60_aic5, "microchip,sam9x60-aic", sam9x60_aic5_of_init);
--- 
-2.7.4
+I don't see this is common to comment the use of the _relaxed accessors.
 
+This driver is for SoC using arm64 cpu.
+
+If one uses the non-relaxed version of readl while running on arm64, he 
+shall cause read barrier, which is then doing dsm(ld).. This barrier is 
+not needed here, so we spare the use of the more heavy readl in favor of 
+the less "harmful" one.
+
+Let me know what you think.
+
+>
+>> +       resource = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+>> +       pos->mmio_base = devm_ioremap_resource(&pdev->dev, resource);
+> This can be simplified to devm_platform_ioremap_resource().
+Ack, Will simplify them in v2.
+>
+>> +       pos->irq = irq_of_parse_and_map(pdev->dev.of_node, 0);
+> And this is usually written as platform_get_irq()
+Ack, Will replace them with platform_get_irq() in v2.
+>
+>         Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
