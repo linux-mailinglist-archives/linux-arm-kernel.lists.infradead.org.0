@@ -2,48 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1418ADC4B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:42:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AC26ADC7D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:52:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=a9MxGiNJuqqEYXZSbufl5ahNi/cC8XRVEkm/6GtBgyw=; b=GsurSsjGE7fL93
-	sV/wwUmpW7FOwBWPb7CXvwRm9iZrQYCZJNffw7JH2xgnxMJthkJsfvjgK9tTnInZ0Y9Oyh2scuHVE
-	d17JYW5E2cuJUynhR6xvCbE0lGzjeP+LquwlXed0XCQ9yubEUO7jdioOrBB6Ld+FM62eL6FjCunxe
-	OeQ9nQ1cq+3oje0qKFLdMJcWR0BG1j7keLaXYWNooBXQ0d4XaGnF7MmX7+l7lc5VAOvbxfq0VVyQM
-	8bSgldPyxZnbT6JPLmz9j0mUcpfY4dNvHjRJNbyGif8aeBjD3VPJxVNY7TB0jE/YPaVx/jQvq2EbT
-	iG9axjo6YpyxuR49zZ6g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3MJm1Ddv5DSk35tHVrnDWnnBRXkLnTtA4r0Lz6WICn0=; b=VvoPxYjnUpYwE8
+	jUVDfGs4/IYXJutvtOA1xT5ERu1X1qi6bZpihBioiqUXO38phtOqo/McyxZEm67xC+g3ohfwPt8n7
+	Bie/L/zMb06jmJBUGZLu+buOB8YcmcKUerRls3VCrk0z/mQlfMra7s88+50ezKnTkBvMVcfHBFCO4
+	QSjea2onO9UpehyZV+RJXJMGRNpmJWwdf/MScgMpsLGTA5wucjJ/7GEb2jP+RFYH3OPChQH5KtHLO
+	5knwlp/UDFZlZPdksRlfbF+qXfRGOPBk+pR4WywYGJn7gya8d7H56qhKjoc3feZMoKfQEJ5i8+uY6
+	W/4tYqBTD0M+9MJq+Axg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7LoQ-00022T-8y; Mon, 09 Sep 2019 15:42:42 +0000
+	id 1i7Lxe-0005Uv-PB; Mon, 09 Sep 2019 15:52:14 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7Lo4-0001mu-Aa
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:42:22 +0000
+ id 1i7LxR-0005Ti-HF
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:52:03 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 156F1169E;
- Mon,  9 Sep 2019 08:42:20 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B5B4F3F59C;
- Mon,  9 Sep 2019 08:42:18 -0700 (PDT)
-Date: Mon, 9 Sep 2019 16:42:16 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Peng Fan <peng.fan@nxp.com>
-Subject: Re: [PATCH v5 2/2] mailbox: introduce ARM SMC based mailbox
-Message-ID: <20190909164216.0abe640b@donnerap.cambridge.arm.com>
-In-Reply-To: <1567004515-3567-3-git-send-email-peng.fan@nxp.com>
-References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
- <1567004515-3567-3-git-send-email-peng.fan@nxp.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DD51169E;
+ Mon,  9 Sep 2019 08:51:57 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 516963F59C;
+ Mon,  9 Sep 2019 08:51:56 -0700 (PDT)
+From: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v5 05/11] kselftest: arm64: mangle_pstate_ssbs_regs
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190902112932.36129-6-cristian.marussi@arm.com>
+ <20190904114836.GV27757@arm.com>
+Message-ID: <1794920f-84b3-a4e6-b20a-b769d95df0c8@arm.com>
+Date: Mon, 9 Sep 2019 16:51:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190904114836.GV27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_084220_471019_A19A4E77 
-X-CRM114-Status: GOOD (  35.95  )
+X-CRM114-CacheID: sfid-20190909_085201_670865_FD74D9C4 
+X-CRM114-Status: GOOD (  40.75  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -62,346 +63,420 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "jassisinghbrar@gmail.com" <jassisinghbrar@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, 28 Aug 2019 03:03:02 +0000
-Peng Fan <peng.fan@nxp.com> wrote:
+Hi
 
-Hi,
-
-> From: Peng Fan <peng.fan@nxp.com>
+On 04/09/2019 12:48, Dave Martin wrote:
+> On Mon, Sep 02, 2019 at 12:29:26pm +0100, Cristian Marussi wrote:
+>> Add a simple mangle testcase which messes with the ucontext_t from within
+>> the signal handler, trying to set the PSTATE SSBS bit.
+>> Expect SIGILL if SSBS feature is unsupported or that, on test PASS, the
+>> value set in PSTATE.SSBS in the signal frame is preserved by sigreturn.
+>>
+>> Additionally, in order to support this test specific needs:
+>> - extend signal testing framework to allow the definition of a custom per
+>>   test initialization function to be run at the end of test setup.
+>> - introduced a set_regval() helper to set system register values in a
+>>   toolchain independent way.
+>> - introduce also a new common utility function: get_current_context()
+>>   which can be used to grab a ucontext without the help of libc, and
+>>   detect if such ucontext has been actively used to jump back into it.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v3 --> v4
+>> - fix commit message
+>> - missing include signal.h
+>> - added .init per-test init-func
+>> - added set_regval() helper
+>> - added SSBS clear to 0 custom .init function
+>> - removed volatile qualifier associated with sig_atomic_t data
+>> - added dsb inside handler to ensure the writes related to the
+>>   grabbed ucontext have completed
+>> - added test description
+>> ---
+>>  .../selftests/arm64/signal/test_signals.h     | 20 +++-
+>>  .../arm64/signal/test_signals_utils.c         | 98 +++++++++++++++++++
+>>  .../arm64/signal/test_signals_utils.h         |  2 +
+>>  .../testcases/mangle_pstate_ssbs_regs.c       | 69 +++++++++++++
+>>  4 files changed, 184 insertions(+), 5 deletions(-)
+>>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+>>
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
+>> index a1cf69997604..0767e27fbe78 100644
+>> --- a/tools/testing/selftests/arm64/signal/test_signals.h
+>> +++ b/tools/testing/selftests/arm64/signal/test_signals.h
+>> @@ -27,6 +27,14 @@
+>>  	: "memory");					\
+>>  }
+>>  
+>> +#define set_regval(regname, in)				\
+>> +{							\
+>> +	asm volatile("msr " __stringify(regname) ", %0" \
+>> +	:						\
+>> +	: "r" (in)					\
+>> +	: "memory");					\
+>> +}
+>> +
+>>  /* Regs encoding and masks naming copied in from sysreg.h */
+>>  #define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
+>>  #define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
+>> @@ -89,12 +97,16 @@ struct tdescr {
+>>  	/* optional sa_flags for the installed handler */
+>>  	int		sa_flags;
+>>  	ucontext_t	saved_uc;
+>> -
+>> -	/* a custom setup function to be called before test starts */
+>> +	/* used by get_current_ctx() */
+>> +	size_t		live_sz;
+>> +	ucontext_t	*live_uc;
+>> +	sig_atomic_t	live_uc_valid;
+>> +	/* a custom setup: called alternatively to default_setup */
+>>  	int (*setup)(struct tdescr *td);
+>> +	/* a custom init: called by default test initialization */
+>> +	void (*init)(struct tdescr *td);
+>>  	/* a custom cleanup function called before test exits */
+>>  	void (*cleanup)(struct tdescr *td);
+>> -
+>>  	/* an optional function to be used as a trigger for test starting */
+>>  	int (*trigger)(struct tdescr *td);
+>>  	/*
+>> @@ -102,10 +114,8 @@ struct tdescr {
+>>  	 * presence of the trigger function above; this is mandatory
+>>  	 */
+>>  	int (*run)(struct tdescr *td, siginfo_t *si, ucontext_t *uc);
+>> -
+>>  	/* an optional function for custom results' processing */
+>>  	void (*check_result)(struct tdescr *td);
+>> -
+>>  	void *priv;
+>>  };
+>>  
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+>> index e2a5f37e6ad3..c6fdcb23f246 100644
+>> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.c
+>> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+>> @@ -11,12 +11,16 @@
+>>  #include <linux/auxvec.h>
+>>  #include <ucontext.h>
+>>  
+>> +#include <asm/unistd.h>
+>> +
+>>  #include "test_signals.h"
+>>  #include "test_signals_utils.h"
+>>  #include "testcases/testcases.h"
+>>  
+>>  extern struct tdescr *current;
+>>  
+>> +static int sig_copyctx = SIGUSR2;
+>> +
+>>  static char *feats_store[FMAX_END] = {
+>>  	" SSBS ",
+>>  	" PAN ",
+>> @@ -43,6 +47,81 @@ static inline char *feats_to_string(unsigned long feats)
+>>  	return feats_string;
+>>  }
+>>  
+>> +/*
+>> + * Obtaining a valid and full-blown ucontext_t from userspace is tricky:
+>> + * libc getcontext does() not save all the regs and messes with some of
+>> + * them (pstate value in particular is not reliable).
+>> + * Here we use a service signal to grab the ucontext_t from inside a
+>> + * dedicated signal handler, since there, it is populated by Kernel
+>> + * itself in setup_sigframe(). The grabbed context is then stored and
+>> + * made available in td->live_uc.
+>> + *
+>> + * Anyway this function really serves a dual purpose:
+>> + *
+>> + * 1. grab a valid sigcontext into td->live_uc for result analysis: in
+>> + * such case it returns 1.
+>> + *
+>> + * 2. detect if somehow a previously grabbed live_uc context has been
+>> + * used actively with a sigreturn: in such a case the execution would have
+>> + * magically resumed in the middle of the function itself (seen_already==1):
+>> + * in such a case return 0, since in fact we have not just simply grabbed
+>> + * the context.
+>> + *
+>> + * This latter case is useful to detect when a fake_sigreturn test-case has
+>> + * unexpectedly survived without hittig a SEGV.
+>> + */
+>> +bool get_current_context(struct tdescr *td, ucontext_t *dest_uc)
+>> +{
+>> +	static sig_atomic_t seen_already;
+>> +
+>> +	assert(td && dest_uc);
+>> +	/* it's a genuine invocation..reinit */
+>> +	seen_already = 0;
+>> +	td->live_uc_valid = 0;
+>> +	td->live_sz = sizeof(*dest_uc);
+>> +	memset(dest_uc, 0x00, td->live_sz);
+>> +	td->live_uc = dest_uc;
+>> +	/*
+>> +	 * Grab ucontext_t triggering a signal...
+>> +	 * ASM equivalent of raise(sig_copyctx);
+>> +	 *
+>> +	 * Note that:
+>> +	 * - live_uc_valid is declared sig_atomic_t in struct tdescr
+>> +	 *   since it will be changed inside the sig_copyctx handler
+>> +	 * - the kill() syscall invocation returns only after any possible
+>> +	 *   registered signal handler for the invoked signal has returned,
+>> +	 *   so that live_uc_valid flag is surely up to date when this
+>> +	 *   function return it.
+>> +	 * - the additional 'memory' clobber is there to avoid possible
+>> +	 *   compiler's assumption on live_uc_valid, seen-already and
+>> +	 *   the content pointed by dest_uc, which are all changed inside
+>> +	 *   the signal handler, without resorting to the volatile qualifier
+>> +	 *   (and keeping quiet checkpatch.pl)
+>> +	 */
+>> +	asm volatile ("mov x8, %0\n\t"
+>> +		      "svc #0\n\t"
+>> +		      "mov x1, %1\n\t"
+>> +		      "mov x8, %2\n\t"
+>> +		      "svc #0"
+>> +		      :
+>> +		      : "i" (__NR_getpid), "r" (sig_copyctx), "i" (__NR_kill)
+>> +		      : "x1", "x8", "x0", "memory");
+>> +	/*
+>> +	 * If we get here with seen_already==1 it implies the td->live_uc
+>> +	 * context has been used to get back here....this probably means
+>> +	 * a test has failed to cause a SEGV...anyway the live_uc has not
+>> +	 * just been acquired...so return 0
+>> +	 */
+>> +	if (seen_already) {
+>> +		fprintf(stdout,
+>> +			"Successful sigreturn detected: live_uc is stale !\n");
+>> +		return 0;
+>> +	}
+>> +	seen_already = 1;
+>> +
+>> +	return td->live_uc_valid;
+>> +}
+>> +
+>>  static void unblock_signal(int signum)
+>>  {
+>>  	sigset_t sset;
+>> @@ -124,6 +203,17 @@ static void default_handler(int signum, siginfo_t *si, void *uc)
+>>  		 * to terminate immediately exiting straight away
+>>  		 */
+>>  		default_result(current, 1);
+>> +	} else if (signum == sig_copyctx && current->live_uc) {
+>> +		memcpy(current->live_uc, uc, current->live_sz);
+>> +		ASSERT_GOOD_CONTEXT(current->live_uc);
+>> +		current->live_uc_valid = 1;
+>> +		/*
+>> +		 * Ensure above writes have completed before signal
+>> +		 * handler terminates
+>> +		 */
+>> +		asm volatile ("dsb sy" ::: "memory");
 > 
-> This mailbox driver implements a mailbox which signals transmitted data
-> via an ARM smc (secure monitor call) instruction. The mailbox receiver
-> is implemented in firmware and can synchronously return data when it
-> returns execution to the non-secure world again.
-> An asynchronous receive path is not implemented.
-> This allows the usage of a mailbox to trigger firmware actions on SoCs
-> which either don't have a separate management processor or on which such
-> a core is not available. A user of this mailbox could be the SCP
-> interface.
+> The dsb doesn't help here: this has no effect on how the compiler caches
+> variables in registers etc.
 > 
-> Modified from Andre Przywara's v2 patch
-> https://lore.kernel.org/patchwork/patch/812999/
+> Overall, I think some details need a bit of a rethink here.
 > 
-> Cc: Andre Przywara <andre.przywara@arm.com>
-> Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> ---
->  drivers/mailbox/Kconfig           |   7 ++
->  drivers/mailbox/Makefile          |   2 +
->  drivers/mailbox/arm-smc-mailbox.c | 215 ++++++++++++++++++++++++++++++++++++++
->  3 files changed, 224 insertions(+)
->  create mode 100644 drivers/mailbox/arm-smc-mailbox.c
+
+Beside the dsb which I understand is useless, I thought the memory clobber
+could have helped at least with the compiler optimization/re-ordering issues
+while avoiding the volatile. (but not fully)
+
+> We need some way to ensure coherency of accesses to variables around
+> and inside the signal handler here, but since we're running in a single
+> thread that may be interrupted by a signal handler (running in the same
+> thread), it's compiler<->compiler coherency that's the issue here, not
+> cpu<->cpu or cpu<->device coherency.
 > 
-> diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-> index ab4eb750bbdd..7707ee26251a 100644
-> --- a/drivers/mailbox/Kconfig
-> +++ b/drivers/mailbox/Kconfig
-> @@ -16,6 +16,13 @@ config ARM_MHU
->  	  The controller has 3 mailbox channels, the last of which can be
->  	  used in Secure mode only.
->  
-> +config ARM_SMC_MBOX
-> +	tristate "Generic ARM smc mailbox"
-> +	depends on OF && HAVE_ARM_SMCCC
-> +	help
-> +	  Generic mailbox driver which uses ARM smc calls to call into
-> +	  firmware for triggering mailboxes.
-> +
->  config IMX_MBOX
->  	tristate "i.MX Mailbox"
->  	depends on ARCH_MXC || COMPILE_TEST
-> diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-> index c22fad6f696b..93918a84c91b 100644
-> --- a/drivers/mailbox/Makefile
-> +++ b/drivers/mailbox/Makefile
-> @@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
->  
->  obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
->  
-> +obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
-> +
->  obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
->  
->  obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-> diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-> new file mode 100644
-> index 000000000000..76a2ae11ee4d
-> --- /dev/null
-> +++ b/drivers/mailbox/arm-smc-mailbox.c
-> @@ -0,0 +1,215 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Copyright (C) 2016,2017 ARM Ltd.
-> + * Copyright 2019 NXP
-> + */
-> +
-> +#include <linux/arm-smccc.h>
-> +#include <linux/device.h>
-> +#include <linux/kernel.h>
-> +#include <linux/interrupt.h>
-> +#include <linux/mailbox_controller.h>
-> +#include <linux/module.h>
-> +#include <linux/platform_device.h>
-> +
-> +#define ARM_SMC_MBOX_MEM_TRANS	BIT(0)
-> +
-> +struct arm_smc_chan_data {
-> +	u32 function_id;
-> +	u32 chan_id;
-> +	u32 flags;
-> +};
-> +
-> +struct arm_smccc_mbox_cmd {
-> +	unsigned long a0, a1, a2, a3, a4, a5, a6, a7;
+> There may also be atomicity concerns, since the compiler might move
+> stuff across and/or duplicate or tear reads/writes around the asm where
+> the signal is delivered.
+> 
+> The classic solution to these problems is to use volatile, but this
+> is a blunt tool and you often end up having to mark more objects
+> volatile than you really want to in order to ensure correctness.  The
+> ordering behaviour of accesses to volatiles is also ill-specified for
+> accesses made in different threads.
+> 
+> That said, efficiency is of no concern here and we're single-threaded,
+> so a blunt, simple tool may still be adequate.
+> 
+I'll revert back to use volatile despite checkpatch complaints, and sig_atomic_t
+where needed, and add an output param in the inline asm for *dest_uc to avoid
+compiler making assumptions about it
 
-I think this is one or even two registers too long?
-The SMCCC speaks of the function ID in x0/r0 and six arguments, with a "client ID" being an optional seventh argument. Looking at the description there I believe we cannot use the client ID here for this purpose, as this is supposed to be set by a hypervisor before passing on an SMC to EL3 firmware. KVM does not allow passing on SMCs in this way.
+> 
+> Another issue is that nothing stops the stack frame the captured SP
+> points to from disappearing between get_current_context() and the
+> fake_sigreturn() that tries to jump back to it.
+> 
+> To avoid this issue, we'd probably need to inline more of
+> get_current_context(), i.e., turn it into a macro.
+> 
 
-Also, while using "long" in here seems to make sense from the mailbox and SMC point of view, aliasing this to the mailbox client provided data seems dangerous to me, as this exposes the difference between arm32 and arm64 to the client. I think this is not what we want, the client should not be architecture specific.
+I made it a static __always_inline.
 
-> +};
-> +
-> +typedef unsigned long (smc_mbox_fn)(unsigned long, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long, unsigned long,
-> +				    unsigned long, unsigned long);
-> +static smc_mbox_fn *invoke_smc_mbox_fn;
-> +
-> +static int arm_smc_send_data(struct mbox_chan *link, void *data)
-> +{
-> +	struct arm_smc_chan_data *chan_data = link->con_priv;
-> +	struct arm_smccc_mbox_cmd *cmd = data;
-> +	unsigned long ret;
-> +	u32 function_id;
-> +	u32 chan_id;
-> +
-> +	if (chan_data->flags & ARM_SMC_MBOX_MEM_TRANS) {
-> +		if (chan_data->function_id != UINT_MAX)
-> +			function_id = chan_data->function_id;
-> +		else
-> +			function_id = cmd->a0;
+Moreover I moved away from kill(mypid, USR1) approach since the syscall path
+will zero the SVE regs before grabbing the sigframe
+(and is bad for future signal/SVE tests).
 
-This is somewhat surprising, dangerous and undocumented. We should *not* allow mailbox clients to specify the function ID. They could end up using PSCI function IDs, for instance, that sounds especially scary if a client driver allows userland to set parameters of some sort.
-The function ID is presumably allocated and fixed in the firmware, so it should not be dynamic. Any dynamic properties should be done within a function ID on the protocol level, by using r1/x1, for instance.
+I'm instead now using brk and catch the SIGTRAP (picked form the arm64/signal
+SVE tests patch still to be published)
 
-> +		chan_id = chan_data->chan_id;
+>> +		fprintf(stderr,
+>> +			"GOOD CONTEXT grabbed from sig_copyctx handler\n");
+>>  	} else {
+>>  		if (signum == current->sig_unsupp && !are_feats_ok(current)) {
+>>  			fprintf(stderr,
+>> @@ -222,7 +312,15 @@ static int test_init(struct tdescr *td)
+>>  			!feats_ok ? "NOT " : "");
+>>  	}
+>>  
+>> +	if (td->sig_trig == sig_copyctx)
+>> +		sig_copyctx = SIGUSR1;
+>> +	unblock_signal(sig_copyctx);
+>> +
+>> +	/* Perform test specific additional initialization */
+>> +	if (td->init)
+>> +		td->init(td);
+>>  	td->initialized = 1;
+>> +
+>>  	return 1;
+>>  }
+>>  
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> index 8658d1a7d4b9..ce35be8ebc8e 100644
+>> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> @@ -10,4 +10,6 @@ int test_setup(struct tdescr *td);
+>>  void test_cleanup(struct tdescr *td);
+>>  int test_run(struct tdescr *td);
+>>  void test_result(struct tdescr *td);
+>> +
+>> +bool get_current_context(struct tdescr *td, ucontext_t *dest_uc);
+>>  #endif
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+>> new file mode 100644
+>> index 000000000000..15e6f62512d5
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
+>> @@ -0,0 +1,69 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (C) 2019 ARM Limited
+>> + *
+>> + * Try to mangle the ucontext from inside a signal handler, setting the
+>> + * SSBS bit to 1 and veryfing that such modification is preserved.
+>> + */
+>> +
+>> +#include <stdio.h>
+>> +#include <signal.h>
+>> +#include <ucontext.h>
+>> +
+>> +#include "test_signals_utils.h"
+>> +#include "testcases.h"
+>> +
+>> +static void mangle_invalid_pstate_ssbs_init(struct tdescr *td)
+>> +{
+>> +	fprintf(stderr, "Clearing SSBS to 0\n");
+>> +	set_regval(SSBS_SYSREG, 0);
+>> +}
+>> +
+>> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
+>> +					  siginfo_t *si, ucontext_t *uc)
+>> +{
+>> +	ASSERT_GOOD_CONTEXT(uc);
+>> +
+>> +	/* set bit value */
+>> +	uc->uc_mcontext.pstate |= PSR_SSBS_BIT;
+> 
+> Can we check that uc->uc_mcontext.pstate & PSR_SSBS_BIT is initially 0?
+> 
+> If not, it suggests either a test bug, or modification of the SSBS
+> flag by other C code before the test signal was delivered.
+> 
+Here the situation is a bit tricky: architecture defines three levels of
+SSBS support:
+ 1.  SSBS bit + MRS SSBS instruction or
+ 2.  SSBS bit ONLY
+ 3.  no support
 
-Why is this here? Where is this documented? Isn't this redundant with function ID? Or is this meant to be a replacement for it when a client provided function ID is used (which is not desired, as mentioned above)?
+HW_SSBS capability is reported as supported by kernel only for full support (1.)
+Otherwise it is reported as unsupported, even if in 2. the PSTATE.SSBS bit is working
+and I can look it up using util get_current_context().
 
-> +		ret = invoke_smc_mbox_fn(function_id, chan_id, 0, 0, 0, 0,
-> +					 0, 0);
-> +	} else {
-> +		ret = invoke_smc_mbox_fn(cmd->a0, cmd->a1, cmd->a2, cmd->a3,
-> +					 cmd->a4, cmd->a5, cmd->a6, cmd->a7);
-> +	}
+Moreover the test is supposed to check that the sigreturn Kernel path does NOT clear
+improperly the SSBS bit while returning: so as long as we can set the SSBS bit in uc PSTATE
+we can check if it is cleared.
 
-As mentioned in my reply to the binding patch, I don't see this is necessary. Instead of ignoring the client provided data, we should just always pass it on. If clients and protocols don't use them, the client could zero it as well, letting the firmware side ignore it.
+So in order to gather as much info as possible from the test without incurring in unneeded
+SIGILL (attempting to use MRS), my new approach is:
 
-Also this underlines the problem with using "long" above: For 32-bit and 64-bit kernels the layout would be different.
-I think the size of each argument should be determined by the calling convention class (bit 30) of the function ID.
-The client doesn't know about that one (it's a controller/firmware property), so this driver here should split up the stream of data according to SMC64 vs. SMC32.
-Does that make sense?
+- test anyway no matter if SSBS is supported: check that bit is NOT cleared on sigreturn
+- use MRS clear to 0 on test_init only if SSBS declared as supported
+- abort when PSTATE.SSBS bit is not cleared on test start (trigger) ONLY if SSBS was declared supported  (and so cleared in test_init)
+- check test result using:
+  - MRS SSBS if HW_SSBS supported
+  - PSTATE.SSBS get_current_context if HW_SSBS NOT supported
+  - print out always PSTATE retrieved values
 
-> +
-> +	mbox_chan_received_data(link, (void *)ret);
+This way I was able to avoid SIGILL and properly test at any level of support (1,2,3)
+both the PASS and the FAIL path (using a Kernel which does NOT  properly preserve the
+SSBS bit)
 
-Not a mailbox expert, but shouldn't we mark the TX operation as complete here? Clearly by returning from the SMC the firmware has received the request.
-Whether the requested action has completed, is a protocol / mailbox client question.
 
-> +
-> +	return 0;
-> +}
-> +
-> +static unsigned long __invoke_fn_hvc(unsigned long function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5,
-> +				     unsigned long arg6)
-> +{
-> +	struct arm_smccc_res res;
-> +
-> +	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, arg6, &res);
-> +	return res.a0;
-> +}
-> +
-> +static unsigned long __invoke_fn_smc(unsigned long function_id,
-> +				     unsigned long arg0, unsigned long arg1,
-> +				     unsigned long arg2, unsigned long arg3,
-> +				     unsigned long arg4, unsigned long arg5,
-> +				     unsigned long arg6)
-> +{
-> +	struct arm_smccc_res res;
-> +
-> +	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-> +		      arg5, arg6, &res);
-> +	return res.a0;
-> +}
-> +
-> +static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-> +	.send_data	= arm_smc_send_data,
-> +};
-> +
-> +static int arm_smc_mbox_probe(struct platform_device *pdev)
-> +{
-> +	struct device *dev = &pdev->dev;
-> +	struct mbox_controller *mbox;
-> +	struct arm_smc_chan_data *chan_data;
-> +	const char *method;
-> +	bool mem_trans = false;
-> +	int ret, i;
-> +	u32 val;
-> +
-> +	if (!of_property_read_u32(dev->of_node, "arm,num-chans", &val)) {
-> +		if (!val) {
-> +			dev_err(dev, "invalid arm,num-chans value %u\n", val);
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		return -EINVAL;
-> +	}
+>> +	fprintf(stderr, "SSBS set to 1 -- PSTATE: 0x%016llX\n",
+>> +		uc->uc_mcontext.pstate);
+>> +	/* Save after mangling...it should be preserved */
+>> +	td->saved_uc = *uc;
+>> +
+>> +	return 1;
+>> +}
+>> +
+>> +static void pstate_ssbs_bit_checks(struct tdescr *td)
+>> +{
+>> +	uint64_t val = 0;
+>> +	ucontext_t uc;
+>> +
+>> +	/* This check reports some result even if MRS SSBS unsupported */
+>> +	if (get_current_context(td, &uc))
+>> +		fprintf(stderr,
+>> +			"INFO: live_uc - got PSTATE: 0x%016llX -> SSBS %s\n",
+>> +			uc.uc_mcontext.pstate,
+>> +			(td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT) ==
+>> +			(uc.uc_mcontext.pstate & PSR_SSBS_BIT) ?
+>> +			"PRESERVED" : "CLEARED");
+>> +
+>> +	fprintf(stderr, "Checking with MRS SSBS...\n");
+>> +	get_regval(SSBS_SYSREG, val);
+>> +	fprintf(stderr, "INFO: MRS SSBS - got: 0x%016lX\n", val);
+>> +	/* pass when preserved */
+>> +	td->pass = (val & PSR_SSBS_BIT) ==
+>> +		   (td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT);
+>> +}
+>> +
+>> +struct tdescr tde = {
+>> +		.sanity_disabled = true,
+>> +		.name = "MANGLE_PSTATE_SSBS_REGS",
+>> +		.descr = "Mangling uc_mcontext changing SSBS.(PRESERVE)",
+> 
+> Can we come up with a clearer description here?  I'm not sure how to
+> read this.
+> 
 
-As mentioned, this property should be removed, ...
+Ok..I was trying to please checkpatch.
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
 
-> +
-> +	if (!of_property_read_string(dev->of_node, "transports", &method)) {
-> +		if (!strcmp("mem", method)) {
-> +			mem_trans = true;
-> +		} else if (!strcmp("reg", method)) {
-> +			mem_trans = false;
-> +		} else {
-> +			dev_warn(dev, "invalid \"transports\" property: %s\n",
-> +				 method);
-> +
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		return -EINVAL;
-> +	}
+Cheers
 
-... and this one as well.
-
-> +
-> +	if (!of_property_read_string(dev->of_node, "method", &method)) {
-> +		if (!strcmp("hvc", method)) {
-> +			invoke_smc_mbox_fn = __invoke_fn_hvc;
-> +		} else if (!strcmp("smc", method)) {
-> +			invoke_smc_mbox_fn = __invoke_fn_smc;
-> +		} else {
-> +			dev_warn(dev, "invalid \"method\" property: %s\n",
-> +				 method);
-
-Just a nit, but if this is fatal for the driver, it should be dev_err().
-
-> +
-> +			return -EINVAL;
-> +		}
-> +	} else {
-> +		return -EINVAL;
-> +	}
-> +
-> +	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-> +	if (!mbox)
-> +		return -ENOMEM;
-> +
-> +	mbox->num_chans = val;
-
-This could be replaced with:
-	mbox->num_chans = of_property_count_elems_of_size(dev_of_node(dev),
-                                     "arm,func-ids", sizeof(u32));
-
-> +	mbox->chans = devm_kcalloc(dev, mbox->num_chans, sizeof(*mbox->chans),
-> +				   GFP_KERNEL);
-> +	if (!mbox->chans)
-> +		return -ENOMEM;
-> +
-> +	chan_data = devm_kcalloc(dev, mbox->num_chans, sizeof(*chan_data),
-> +				 GFP_KERNEL);
-> +	if (!chan_data)
-> +		return -ENOMEM;
-> +
-> +	for (i = 0; i < mbox->num_chans; i++) {
-> +		u32 function_id;
-> +
-> +		ret = of_property_read_u32_index(dev->of_node,
-> +						 "arm,func-ids", i,
-> +						 &function_id);
-> +		if (ret)
-> +			chan_data[i].function_id = UINT_MAX;
-> +
-> +		else
-> +			chan_data[i].function_id = function_id;
-
-As mentioned above, this should go. Any non-0 return value should stop the driver probing.
-
-Cheers,
-Andre.
-
-> +
-> +		chan_data[i].chan_id = i;
-> +
-> +		if (mem_trans)
-> +			chan_data[i].flags |= ARM_SMC_MBOX_MEM_TRANS;
-> +		mbox->chans[i].con_priv = &chan_data[i];
-> +	}
-> +
-> +	mbox->txdone_poll = false;
-> +	mbox->txdone_irq = false;
-> +	mbox->ops = &arm_smc_mbox_chan_ops;
-> +	mbox->dev = dev;
-> +
-> +	platform_set_drvdata(pdev, mbox);
-> +
-> +	ret = devm_mbox_controller_register(dev, mbox);
-> +	if (ret)
-> +		return ret;
-> +
-> +	dev_info(dev, "ARM SMC mailbox enabled with %d chan%s.\n",
-> +		 mbox->num_chans, mbox->num_chans == 1 ? "" : "s");
-> +
-> +	return ret;
-> +}
-> +
-> +static int arm_smc_mbox_remove(struct platform_device *pdev)
-> +{
-> +	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-> +
-> +	mbox_controller_unregister(mbox);
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id arm_smc_mbox_of_match[] = {
-> +	{ .compatible = "arm,smc-mbox", },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-> +
-> +static struct platform_driver arm_smc_mbox_driver = {
-> +	.driver = {
-> +		.name = "arm-smc-mbox",
-> +		.of_match_table = arm_smc_mbox_of_match,
-> +	},
-> +	.probe		= arm_smc_mbox_probe,
-> +	.remove		= arm_smc_mbox_remove,
-> +};
-> +module_platform_driver(arm_smc_mbox_driver);
-> +
-> +MODULE_AUTHOR("Andre Przywara <andre.przywara@arm.com>");
-> +MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-> +MODULE_LICENSE("GPL v2");
-
+Cristian
 
 _______________________________________________
 linux-arm-kernel mailing list
