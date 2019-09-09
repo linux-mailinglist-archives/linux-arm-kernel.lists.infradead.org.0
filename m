@@ -2,55 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4F31ADFA5
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 21:51:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E6A60ADFE2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 22:19:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=+sKEbEO2BAqRpHRWcSKZz5JbgNqmhNaLTL5MG0TxGpE=; b=NKzhUL0aX7eITfcjVVXJ+GV9x
-	L4kTgVpNe3NDQ2QTz29ofvziPDEi4fwrj44Salj7Askke7x5Ibo1C1Ghws7OkFkELrtebj6hMSXxv
-	UL1MYqnqXYKPe2n1TU1R8ZORdIS+bIAl6+58ee5nki4hw9ry4oEnW0umWMr6yabWoz0/sg6G8zgCf
-	J/O35q8wFLTQscwV6gtGCCY/Wp8z/jnmhIihMQz4rKh3tlOQYyqUb8PjQdduNRidPR7mjkKlTt/u8
-	eYd4Us6Cz2b5ctuaSn+tyBTLK2NkZMiVR+hbcu0KLCLAh8nG8Q74sIo/mjG4jcv+nF8YBVwh+xTlv
-	xKNMfl98Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=WLDS+xau2BC6OYBjSzHxXP7cKX+AU6F/H+Za5XNZqs4=; b=nRfm5ozSssHpCw
+	28ZClCpaHg1rbahuvJhoHien0XLJ7V+CT0ooMzUuffra9Y3Nlh7LnHUwBzQtoGAa/61XNjzNOO/1s
+	x67G2/H7q9TiLKdDmhIhB6+zL92HPwYDPI6B1dWyI7XqynxvXpIj/6siS5KMXTy/FmXgrjWbev3JC
+	V+RJSiIWeCqONABJdJ/lsW1UZ4JeSiDplvzliToTYTBu7vSvk80O9l2CgpSzF/8WI2tiCdeD4JHJG
+	3JYHBD5R62MsbJIzmWy3V+D4HH9eDsgxAzO/ziOJeyCtHT5RxcXBrxiV1GidFl9P3oziuHXnvimd0
+	NOtwTaCnmlLRGcC6kXow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7Pgl-0005xR-2s; Mon, 09 Sep 2019 19:51:03 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i7Q8Y-0006sC-Vf; Mon, 09 Sep 2019 20:19:47 +0000
+Received: from smtp06.smtpout.orange.fr ([80.12.242.128]
+ helo=smtp.smtpout.orange.fr)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7Pgc-0005wg-Ga; Mon, 09 Sep 2019 19:50:56 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id A1671B6D8;
- Mon,  9 Sep 2019 19:50:51 +0000 (UTC)
-Message-ID: <cac63db8b9a7ff78fc0cd816c7dce284a06480d5.camel@suse.de>
-Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
-From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-To: Stefan Wahren <wahrenst@gmx.net>, catalin.marinas@arm.com, hch@lst.de, 
- marc.zyngier@arm.com, robh+dt@kernel.org,
- linux-arm-kernel@lists.infradead.org,  linux-mm@kvack.org,
- linux-riscv@lists.infradead.org
-Date: Mon, 09 Sep 2019 21:50:47 +0200
-In-Reply-To: <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
-References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
- <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
-User-Agent: Evolution 3.32.4 
+ id 1i7Q8Q-0006r4-Ks
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 20:19:40 +0000
+Received: from localhost.localdomain ([90.126.97.183]) by mwinf5d12 with ME
+ id zYKM2000H3xPcdm03YKMxP; Mon, 09 Sep 2019 22:19:24 +0200
+X-ME-Helo: localhost.localdomain
+X-ME-Auth: Y2hyaXN0b3BoZS5qYWlsbGV0QHdhbmFkb28uZnI=
+X-ME-Date: Mon, 09 Sep 2019 22:19:24 +0200
+X-ME-IP: 90.126.97.183
+From: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+To: will@kernel.org,
+	robin.murphy@arm.com,
+	joro@8bytes.org
+Subject: [PATCH] iommu/io-pgtable: Move some initialization data to
+ .init.rodata
+Date: Mon,  9 Sep 2019 22:19:19 +0200
+Message-Id: <20190909201919.5841-1-christophe.jaillet@wanadoo.fr>
+X-Mailer: git-send-email 2.20.1
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_125054_847539_FF9C8584 
-X-CRM114-Status: GOOD (  22.35  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190909_131938_964927_93472FB2 
+X-CRM114-Status: GOOD (  18.21  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.12.242.128 listed in list.dnswl.org]
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [80.12.242.128 listed in wl.mailspike.net]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,134 +65,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, robin.murphy@arm.com, linux-kernel@vger.kernel.org,
- mbrugger@suse.com, linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org,
- will@kernel.org, m.szyprowski@samsung.com
-Content-Type: multipart/mixed; boundary="===============7388730019844420172=="
+Cc: Christophe JAILLET <christophe.jaillet@wanadoo.fr>,
+ iommu@lists.linux-foundation.org, kernel-janitors@vger.kernel.org,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The memory used by '__init' functions can be freed once the initialization
+phase has been performed.
 
---===============7388730019844420172==
-Content-Type: multipart/signed; micalg="pgp-sha256";
-	protocol="application/pgp-signature"; boundary="=-aEBb/xch/kbKDpnAu5z0"
+Mark some 'static const' array defined and used within some '__init'
+functions as '__initconst', so that the corresponding data can also be
+discarded.
 
+Without '__initconst', the data are put in the .rodata section.
+With the qualifier, they are put in the .init.rodata section.
 
---=-aEBb/xch/kbKDpnAu5z0
-Content-Type: text/plain; charset="UTF-8"
-Content-Transfer-Encoding: quoted-printable
+With gcc 8.3.0, the following changes have been measured:
 
-On Mon, 2019-09-09 at 21:33 +0200, Stefan Wahren wrote:
-> Hi Nicolas,
->=20
-> Am 09.09.19 um 11:58 schrieb Nicolas Saenz Julienne:
-> > Hi all,
-> > this series attempts to address some issues we found while bringing up
-> > the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
-> > up of these discussions:
-> > v4: https://lkml.org/lkml/2019/9/6/352
-> > v3: https://lkml.org/lkml/2019/9/2/589
-> > v2: https://lkml.org/lkml/2019/8/20/767
-> > v1: https://lkml.org/lkml/2019/7/31/922
-> > RFC: https://lkml.org/lkml/2019/7/17/476
-> >=20
-> > The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
-> > only address the first GB: their DMA address range is
-> > 0xc0000000-0xfc000000 which is aliased to the first GB of physical
-> > memory 0x00000000-0x3c000000. Note that only some peripherals have thes=
-e
-> > limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
-> > view of the address space by virtue of being hooked up trough a second
-> > interconnect.
-> >=20
-> > Part of this is solved on arm32 by setting up the machine specific
-> > '.dma_zone_size =3D SZ_1G', which takes care of reserving the coherent
-> > memory area at the right spot. That said no buffer bouncing (needed for
-> > dma streaming) is available at the moment, but that's a story for
-> > another series.
-> >=20
-> > Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
-> > ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
-> > arch code as if all peripherals where be able to address the first 4GB
-> > of memory.
-> >=20
-> > In the light of this, the series implements the following changes:
-> >=20
-> > - Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
-> >   area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
-> >   the RPi4 is the only arm64 device with such DMA addressing limitation=
-s
-> >   so this hardcoded solution was deemed preferable.
-> >=20
-> > - Properly set ARCH_ZONE_DMA_BITS.
-> >=20
-> > - Reserve the CMA area in a place suitable for all peripherals.
-> >=20
-> > This series has been tested on multiple devices both by checking the
-> > zones setup matches the expectations and by double-checking physical
-> > addresses on pages allocated on the three relevant areas GFP_DMA,
-> > GFP_DMA32, GFP_KERNEL:
-> >=20
-> > - On an RPi4 with variations on the ram memory size. But also forcing
-> >   the situation where all three memory zones are nonempty by setting a =
-3G
-> >   ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
-> >=20
-> i like to test this series on Raspberry Pi 4 and i have some questions
-> to get arm64 running:
->=20
-> Do you use U-Boot? Which tree?
+Without '__initconst':
+   section      size
+  .rodata       00000720
+  .init.rodata  00000018
 
-No, I boot directly.
+With '__initconst':
+   section      size
+  .rodata       00000660
+  .init.rodata  00000058
 
-> Are there any config.txt tweaks necessary?
+Signed-off-by: Christophe JAILLET <christophe.jaillet@wanadoo.fr>
+---
+Adding __initconst "within" a function is not in line with kernel/include/init.h
+which states that:
+ * Don't forget to initialize data not at file scope, i.e. within a function,
+ * as gcc otherwise puts the data into the bss section and not into the init
+ * section.
+However, having the array within the function or out-side the function
+seems to have no impact in the generated code and in the section used.
+According to my test, both put the data in .init.rodata.
 
-I'm using the foundation's arm64 stub. Though I'm not 100% it's needed anym=
-ore
-with the latest firmware.
+Maybe the comment is outdated or related to some older vesion of gcc.
+---
+ drivers/iommu/io-pgtable-arm.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-config.txt:
-	arm_64bit=3D1
-	armstub=3Darmstub8-gic.bin
-	enable_gic=3D1
-	enable_uart=3D1
+diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+index 161a7d56264d..24076f0560c6 100644
+--- a/drivers/iommu/io-pgtable-arm.c
++++ b/drivers/iommu/io-pgtable-arm.c
+@@ -1109,7 +1109,7 @@ static void __init arm_lpae_dump_ops(struct io_pgtable_ops *ops)
+ 
+ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
+ {
+-	static const enum io_pgtable_fmt fmts[] = {
++	static const enum io_pgtable_fmt fmts[] __initconst = {
+ 		ARM_64_LPAE_S1,
+ 		ARM_64_LPAE_S2,
+ 	};
+@@ -1208,13 +1208,13 @@ static int __init arm_lpae_run_tests(struct io_pgtable_cfg *cfg)
+ 
+ static int __init arm_lpae_do_selftests(void)
+ {
+-	static const unsigned long pgsize[] = {
++	static const unsigned long pgsize[] __initconst = {
+ 		SZ_4K | SZ_2M | SZ_1G,
+ 		SZ_16K | SZ_32M,
+ 		SZ_64K | SZ_512M,
+ 	};
+ 
+-	static const unsigned int ias[] = {
++	static const unsigned int ias[] __initconst = {
+ 		32, 36, 40, 42, 44, 48,
+ 	};
+ 
+-- 
+2.20.1
 
-Apart from that the series is based on today's linux-next plus your RPi4
-bringup patches.
-
-
---=-aEBb/xch/kbKDpnAu5z0
-Content-Type: application/pgp-signature; name="signature.asc"
-Content-Description: This is a digitally signed message part
-Content-Transfer-Encoding: 7bit
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl12rRcACgkQlfZmHno8
-x/7toQf+L/Ta9MCsjv+DyfWvjt/fl9GT60+Z9cBctuHCujlRmElfGztMgn6Nu0hh
-fosUsadksYqFzrdw9GLfqJj57Lmq8RXvt/glSBSN0lQZkXjn3pVklko/Wkj2UOaH
-SvICcPMWlbk6nRjyVzX70aenvVmV5BqYa6qNxuCxPHEkYeVd9egxB//JPjtL6tqK
-4QVSoJLjfoQAlYNWDm96f77nn5doyj1ibooZxaFQe5u0+3T0ytqCZfgDsJvrIpuW
-2E4fth6VMA1AOFYH+EsvU49WyLcA1ry6xEA5NbkfmZZdh1eSyW7nCcCT60+S7Zm5
-kfIX5VMaPvFiHYUMyyPzrdRP1un7VA==
-=oHYd
------END PGP SIGNATURE-----
-
---=-aEBb/xch/kbKDpnAu5z0--
-
-
-
---===============7388730019844420172==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7388730019844420172==--
-
-
