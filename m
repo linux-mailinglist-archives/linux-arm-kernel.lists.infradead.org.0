@@ -2,49 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 070ECADE09
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 19:31:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2423EADE17
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 19:36:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U5DcrnW+Z3K7VMDrzsWCd0PA4Xd8b7OKdn40mlopXS8=; b=eQlFLLGnPMLpgZ
-	l9tuEPkQRkCHQ+rv898Jq57Kcc8PdmexPg90eH4lB1cD0BKN4lLNLKMTkmPgswV9rwKcgsrmFY134
-	I7X8Cd5Kf8WSA6jjwAT1Ty38P9iSlSjpByXkfVzpyx0zFGumQDTsq+Jse2nVJahilBe623iFkPS+1
-	tVs1k6DFv2nsy/WGFkeepGQgHhmmMAtljUn9l+jvauxQlo7zGGiA7w0b+nrfoCfcn0ia1Sx1Cdyd5
-	cmBgyRvTUiJbsAvzGWksXGF+BoU6kCG/GR7n+HRVnHUP7hfFC/eFEeqhaltdqavaBO9xLmDK5fG4R
-	u62Qtu2c+tfkQGs2N3ng==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oAd/xzYt4BQngjmF1lJjPrlwaL9Wa51LEqoBxD/tBtc=; b=G6d+f72L5gyr9e
+	stDh+VOB/eeQs2yLmJ+qsgBDtoFSbgGH6jqcNbtWOoBGKpWtTrZhCEGqcS8Va/JkvG8Uk3IYABUG5
+	mlVNF+yR0sZEQL+W/21fJQVMlrkTjQCPOF4H3sLeeB3iw1N+UsQtPo6xddF9BvmpkT8KD6Ms0tXgn
+	W0ZUhkXN34SCghi8LDlGGmztXXIAVspdrpkjSNO/jn/kUtiK8d9f6TgYHN/ogaYOtvW/ugYIdZkir
+	rbHkTp/SoTP0ykEyjRiL7JBq5r5aTrGPSA6Fs+g4aL1dm3hCoExk0NMEECUsZDC92ULMP5rMdJMR0
+	K/fmoqXbu06gmVDh+C1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7NVz-0002Xo-3h; Mon, 09 Sep 2019 17:31:47 +0000
+	id 1i7NaX-00045y-A2; Mon, 09 Sep 2019 17:36:29 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7NVj-0002XE-Lh
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 17:31:33 +0000
+ id 1i7NaN-00045Y-Vz
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 17:36:21 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 195AF1000;
- Mon,  9 Sep 2019 10:31:31 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 248EA3F71F;
- Mon,  9 Sep 2019 10:31:30 -0700 (PDT)
-Subject: Re: [PATCH v5 06/11] kselftest: arm64: fake_sigreturn_bad_magic
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190902112932.36129-7-cristian.marussi@arm.com>
- <20190904114845.GW27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <44186921-7dc7-451d-2d04-6424a4725ccb@arm.com>
-Date: Mon, 9 Sep 2019 18:31:28 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 66A901000;
+ Mon,  9 Sep 2019 10:36:19 -0700 (PDT)
+Received: from localhost (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C01DD3F71F;
+ Mon,  9 Sep 2019 10:36:18 -0700 (PDT)
+Date: Mon, 9 Sep 2019 19:36:16 +0200
+From: Christoffer Dall <christoffer.dall@arm.com>
+To: Peter Maydell <peter.maydell@linaro.org>
+Subject: Re: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external
+ data aborts
+Message-ID: <20190909173616.GA28908@lvm>
+References: <20190909121337.27287-1-christoffer.dall@arm.com>
+ <20190909121337.27287-3-christoffer.dall@arm.com>
+ <CAFEAcA8WcQNJV27q5WJ-SMhOyjFZyh1Pz7H7duK6zW1wiAvqKQ@mail.gmail.com>
+ <20190909151631.GA26449@lvm>
+ <CAFEAcA-F3YLEQgKAvfbyGGYdzs_wYPz+QMuxk4qZd_oeU-_PBA@mail.gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <20190904114845.GW27757@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CAFEAcA-F3YLEQgKAvfbyGGYdzs_wYPz+QMuxk4qZd_oeU-_PBA@mail.gmail.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_103131_806310_5ECC6CCC 
-X-CRM114-Status: GOOD (  31.47  )
+X-CRM114-CacheID: sfid-20190909_103620_118390_CCA4A2FE 
+X-CRM114-Status: GOOD (  36.43  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -63,362 +65,151 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: Daniel =?utf-8?B?UC4gQmVycmFuZ8Op?= <berrange@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Stefan Hajnoczi <stefanha@redhat.com>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
+ kvmarm@lists.cs.columbia.edu,
+ arm-mail-list <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
-
-On 04/09/2019 12:48, Dave Martin wrote:
-> On Mon, Sep 02, 2019 at 12:29:27pm +0100, Cristian Marussi wrote:
->> Add a simple fake_sigreturn testcase which builds a ucontext_t with a bad
->> magic header and place it onto the stack. Expects a SIGSEGV on test PASS.
->>
->> Introduce a common utility assembly trampoline function to invoke a
->> sigreturn while placing the provided sigframe at wanted alignment and
->> also an helper to make space when needed inside the sigframe reserved
->> area.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->> v3 --> v4
->> - fix commit
->> - fix signal.S, handle misalign requests too
->> - remove unneeded comments
->> - add signal.h include
->> - added get_starting_head() helper
->> - added test description
->> ---
->>  tools/testing/selftests/arm64/signal/Makefile |  2 +-
->>  .../testing/selftests/arm64/signal/signals.S  | 62 +++++++++++++++++++
->>  .../arm64/signal/test_signals_utils.h         |  1 +
->>  .../testcases/fake_sigreturn_bad_magic.c      | 54 ++++++++++++++++
->>  .../arm64/signal/testcases/testcases.c        | 28 +++++++++
->>  .../arm64/signal/testcases/testcases.h        |  4 ++
->>  6 files changed, 150 insertions(+), 1 deletion(-)
->>  create mode 100644 tools/testing/selftests/arm64/signal/signals.S
->>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
->>
->> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
->> index f78f5190e3d4..b497cfea4643 100644
->> --- a/tools/testing/selftests/arm64/signal/Makefile
->> +++ b/tools/testing/selftests/arm64/signal/Makefile
->> @@ -28,5 +28,5 @@ clean:
->>  # Common test-unit targets to build common-layout test-cases executables
->>  # Needs secondary expansion to properly include the testcase c-file in pre-reqs
->>  .SECONDEXPANSION:
->> -$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
->> +$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c signals.S $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
->>  	$(CC) $(CFLAGS) $^ -o $@
->> diff --git a/tools/testing/selftests/arm64/signal/signals.S b/tools/testing/selftests/arm64/signal/signals.S
->> new file mode 100644
->> index 000000000000..b89fec0d5ba0
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/signals.S
->> @@ -0,0 +1,62 @@
->> +/* SPDX-License-Identifier: GPL-2.0 */
->> +/* Copyright (C) 2019 ARM Limited */
->> +
->> +#include <asm/unistd.h>
->> +
->> +.section        .rodata, "a"
->> +call_fmt:
->> +	.asciz "Calling sigreturn with fake sigframe sized:%zd at SP @%08lX\n"
->> +
->> +.text
->> +
->> +.globl fake_sigreturn
->> +
->> +/*	fake_sigreturn	x0:&sigframe,  x1:sigframe_size,  x2:misalign_bytes */
->> +fake_sigreturn:
+On Mon, Sep 09, 2019 at 04:56:23PM +0100, Peter Maydell wrote:
+> On Mon, 9 Sep 2019 at 16:16, Christoffer Dall <christoffer.dall@arm.com> wrote:
+> >
+> > On Mon, Sep 09, 2019 at 01:32:46PM +0100, Peter Maydell wrote:
+> > > This API seems to be missing support for userspace to specify
+> > > whether the ESR_ELx for the guest should have the EA bit set
+> > > (and more generally other syndrome/fault status bits). I think
+> > > if we have an API for "KVM_EXIT_MMIO but the access failed"
+> > > then it should either (a) be architecture agnostic, since
+> > > pretty much any architecture might have a concept of "access
+> > > gave some bus-error-type failure" and it would be nice if userspace
+> > > didn't have to special case them all in arch-specific code,
+> > > or (b) have the same flexibility for specifying exactly what
+> > > kind of fault as the architecture does. This sort of seems to
+> > > fall between two stools. (My ideal for KVM_EXIT_MMIO faults
+> > > would be a generic API which included space for optional
+> > > arch-specific info, which for Arm would pretty much just be
+> > > the EA bit.)
+> >
+> > I'm not sure I understand exactly what would be improved by making this
+> > either more architecture speific or more architecture generic.  The
+> > EA bit will always be set, that's why the field is called
+> > 'ext_dabt_pending'.
 > 
-> Nit: the "bl printf" later on destroys lr.
-> 
-> This isn't a problem, since the function never tries to return anyway --
-> if things go wrong you just "b .".
-> 
-> But it may be helpful for debug purposes to at least create a frame
-> record, e.g.:
-> 
-> 	stp	x29, x30, [sp, #-16]!
-> 	mov	x29, sp
-> 
-> before doing anything else.
-> 
-ok
-
->> +	mov x20, x0
->> +	mov x21, x1
->> +	mov x22, x2
->> +	mov x23, sp
-> 
-> Nit: to follow the conventional asm style for arm64 kernel code, can you
-> format lines as
-> 
-> <TAB>	op<TAB>	operands
-> 
-ok
-
->> +
->> +	/* create space on the stack for fake sigframe 16 bytes-aligned */
->> +	add x0, x21, #16
->> +	bic x0, x0, #15
->> +	sub x23, x23, x0
->> +	/* any misalignment requested ? */
->> +	add x23, x23, x22
-> 
-> Aren't we actually reducing the allocation here, rather than increasing it?
-> 
-For the misalignment bytes if any yes...
-
-> Doing something like this may work to allocate guaranteed sufficient
-> space:
-> 
-> 	add	x0, x21, x22
-> 	add	x0, x0, #15
-> 	bic	x0, x0, #15 /* round_up(sigframe_size + misglian_bytes, 16) */
-> 	sub	sp, sp, x0
-> 	add	x23, sp, x22 /* new sigframe base with misaligment */
-> 
-> (You can drop the mov into x23 above in your function prologue if you
-> code it this way.)
-> 
-ok...but...shouldn't be 
-
-add x0, x0, #16
-
-before 
-
-bic x-, x0, #15
-
-instead of adding #15 ?
-
->> +
->> +	ldr x0, =call_fmt
->> +	mov x1, x21
->> +	mov x2, x23
->> +	bl printf
->> +
->> +	mov sp, x23
-> 
-> AAPCS64 requires sp to be 16-byte aligned at function boundaries, so 
-> we may get stack alignments faults in mempcy() here.  Possibly these
-> can be confused with test failure SEGVs (I can't remember offhand how
-> stack alignment faults are supported).
-> 
-Didn't know about function boundaries requirements.
-
-> Coding something like what I have above to guarantee stack alignment
-> should avoid this.
+> ESR_EL1.EA doesn't mean "this is an external abort". It means
+> "given that this is an external abort as indicated by ESR_EL1.DFSC,
+> specify the external abort type". Traditionally this is 0 for
+> an AXI bus Decode error ("interconnect says there's nothing there")
+> and 1 for a Slave error ("there's something there but it told us
+> to go away"), though architecturally it's specified as impdef
+> because not everybody uses AXI. In QEMU we track the difference
+> between these two things and for TCG will raise external aborts
+> with the correct EA bit value.
 > 
 
-Nice I'll do.
+Ah, I missed that.  I don't think we want to allow userspace to supply
+any implementation defined values for the VM, though.
 
->> +	/* now fill it with the provided content... */
->> +	mov x0, sp
+> > I thought as per the previous discussion, that we were specifically
+> > trying to avoid userspace emulating the exception in detail, so I
+> > designed this to provide the minimal effort API for userspace.
+> >
+> > Since we already have an architecture specific ioctl, kvm_vcpu_events, I
+> > don't think we're painting ourselves into a corner by using that.  Is a
+> > natural consequence of what you're saying not that we should try to make
+> > that whole call architecture generic?
+> >
+> > Unless we already have specific examples of how other architectures
+> > would want to use something like this, and given the impact of this
+> > patch, I'm not sure it's worth trying to speculate about that.
 > 
-> With my version this would be mov x0, x23
+> In QEMU, use of a generic API would look something like
+> this in kvm-all.c:
 > 
-ok
+>         case KVM_EXIT_MMIO:
+>             DPRINTF("handle_mmio\n");
+>             /* Called outside BQL */
+>             MemTxResult res;
+> 
+>             res = address_space_rw(&address_space_memory,
+>                                    run->mmio.phys_addr, attrs,
+>                                    run->mmio.data,
+>                                    run->mmio.len,
+>                                    run->mmio.is_write);
+>             if (res != MEMTX_OK) {
+>                 /* tell the kernel the access failed, eg
+>                  * by updating the kvm_run struct to say so
+>                  */
+>             } else {
+>                 /* access passed, we have updated the kvm_run
+>                  * struct's mmio subfield, proceed as usual
+>                  */
+>             }
+>             ret = 0;
+>             break;
+> 
+> [this is exactly the current QEMU code except that today
+> we throw away the 'res' that tells us if the transaction
+> succeeded because we have no way to report it to KVM and
+> effectively always RAZ/WI the access.]
+> 
+> This is nice because you don't need anything here that has to do
+> "bail out to architecture specific handling of anything",
+> you just say "nope, the access failed", and let the kernel handle
+> that however the CPU would handle it. It just immediately works
+> for all architectures on the userspace side (assuming the kernel
+> defaults to not actually trying to report an abort to the guest
+> if nobody's implemented that on the kernel side, which is exactly
+> what happens today where there's no way to report the error for
+> any architecture).
+> The downside is that you lose the ability to be more specific about
+> architecture-specific fine distinctions like decode errors vs slave
+> errors, though.
 
->> +	mov x1, x20
->> +	mov x2, x21
->> +	bl memcpy
->> +
->> +	/*
->> +	 * Here saving a last minute SP to current->token acts as a marker:
->> +	 * if we got here, we are successfully faking a sigreturn; in other
->> +	 * words we are sure no bad fatal signal has been raised till now
->> +	 * for unrelated reasons, so we should consider the possibly observed
->> +	 * fatal signal like SEGV coming from Kernel restore_sigframe() and
->> +	 * triggered as expected from our test-case.
->> +	 * For simplicity this assumes that current field 'token' is laid out
->> +	 * as first in struct tdescr
->> +	 */
->> +	ldr x0, current
-> 
-> Nit: it probably doesn't matter since this will be a small binary
-> after linking, but to avoid possible fixup errors during linking you
-> could also do:
-> 
-> 	adrp	x0, current
-> 	ldr	x0, [x0, #:lo12:current]
-> 
-> This raises the addressing range from 0.5 MB or so to a few GB, making
-> link errors much more unlikely.
-> 
-Ok...I'll fix this nitpick once I'll have understood it :D
+I understand that it's convenient to avoid having to write an
+architecture hook, but I simply don't know if it makes sense to do this
+on other architectures, and while it can be more code to have to write
+the architecture hooks in QEMU, it's hardly a strong argument against
+using an existing architecture-specific mechanism to inject an event to
+a guest.
 
->> +	str x23, [x0]
->> +	/* SP is already pointing back to the just built fake sigframe here */
->> +	mov x8, #__NR_rt_sigreturn
-> 
-> And finally we would mov sp, x23 here.
-> 
-Yes
+Note that I looked at using a an appropriate field in the kvm_run
+structure, but nothing elegant came to mind.
 
->> +	svc #0
->> +
->> +	/*
->> +	 * Above sigreturn should not return...looping here leads to a timeout
->> +	 * and ensure proper and clean test failure, instead of jumping around
->> +	 * on a potentially corrupted stack.
->> +	 */
->> +	b .
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> index ce35be8ebc8e..68930f1e46e5 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> @@ -12,4 +12,5 @@ int test_run(struct tdescr *td);
->>  void test_result(struct tdescr *td);
->>  
->>  bool get_current_context(struct tdescr *td, ucontext_t *dest_uc);
->> +int fake_sigreturn(void *sigframe, size_t sz, int misalign_bytes);
->>  #endif
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
->> new file mode 100644
->> index 000000000000..7fb700b9801b
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
->> @@ -0,0 +1,54 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Place a fake sigframe on the stack including a BAD Unknown magic
->> + * record: on sigreturn Kernel must spot this attempt and the test
->> + * case is expected to be terminated via SEGV.
->> + */
->> +
->> +#include <signal.h>
->> +#include <ucontext.h>
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +struct fake_sigframe sf;
->> +
->> +static int fake_sigreturn_bad_magic_run(struct tdescr *td,
->> +					siginfo_t *si, ucontext_t *uc)
->> +{
->> +	size_t resv_sz, need_sz;
->> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
->> +
->> +	/* just to fill the ucontext_t with something real */
->> +	if (!get_current_context(td, &sf.uc))
->> +		return 1;
->> +
->> +	resv_sz = GET_SF_RESV_SIZE(sf);
->> +	/* need at least 2*HDR_SZ space: KSFT_BAD_MAGIC + terminator. */
->> +	need_sz = HDR_SZ * 2;
->> +	head = get_starting_head(shead, need_sz, resv_sz, NULL);
-> 
-> Nit: are the need_sz and resv_sz variables required?
-> 
-> Maybe they help to highlight what these expressions mean in the
-> get_starting_head() call though.  I'm happy either way.
-
-Not really required...I'll remove. (probably in other tests were and they
-landed here too...)
+Do you have a concrete example of how you would like to change the
+kvm_run structure?
 
 > 
->> +	if (head) {
->> +		/*
->> +		 * use a well known NON existent bad magic...something
->> +		 * we should pretty sure won't be ever defined in Kernel
->> +		 */
->> +		head->magic = KSFT_BAD_MAGIC;
->> +		head->size = HDR_SZ;
->> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
->> +
->> +		ASSERT_BAD_CONTEXT(&sf.uc);
->> +		fake_sigreturn(&sf, sizeof(sf), 0);
->> +	}
->> +
->> +	return 1;
->> +}
->> +
->> +struct tdescr tde = {
->> +		.name = "FAKE_SIGRETURN_BAD_MAGIC",
->> +		.descr = "Trigger a sigreturn with a sigframe with a bad magic",
->> +		.sig_ok = SIGSEGV,
->> +		.timeout = 3,
->> +		.run = fake_sigreturn_bad_magic_run,
->> +};
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
->> index 72e3f482b177..2effb8ded935 100644
->> --- a/tools/testing/selftests/arm64/signal/testcases/testcases.c
->> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
->> @@ -149,3 +149,31 @@ bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
->>  
->>  	return true;
->>  }
->> +
-> 
-> Maybe add a comment saying what this function does.
-> 
-> To check my understanding:
-> The purpose is to find a place to append a new record, right?
-> By default we append at the end (i.e., at the terminator), but
-> because extra_context is optional we replace that instead if
-> there isn't sufficient space after the terminator in __reserved[].
-> 
+> Or you could have an arm-specific API that does care about
+> fine details like the EA bit (and maybe also other ESR_ELx
+> fields); that has the downside that userspace needs to
+> make the handling of error returns from "handle this MMIO
+> access" architecture specific, but you get architecture-specific
+> benefits as a result. (Preferably the architecture-specific
+> APIs should at least be basically the same, eg same ioctl
+> or same bit of the kvm_run struct being updated with some parts
+> being arch-specific data, rather than 3 different mechanisms.)
 
-Yes I'll add a comment.
+Are there other bits of the ESR than the EA that you think we should be
+able to specify?
 
->> +struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
->> +				       size_t need_sz, size_t resv_sz,
->> +				       size_t *offset)
->> +{
->> +	size_t offs = 0;
->> +	struct _aarch64_ctx *head;
->> +
->> +	head = get_terminator(shead, resv_sz, &offs);
->> +	/* not found a terminator...no need to update offset if any */
->> +	if (!head)
->> +		return head;
->> +	if (resv_sz - offs < need_sz) {
->> +		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
->> +			resv_sz - offs);
->> +		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offs);
->> +		if (!head || resv_sz - offs < need_sz) {
->> +			fprintf(stderr,
->> +				"Failed to reclaim space on sigframe.\n");
->> +			return NULL;
->> +		}
->> +	}
->> +
->> +	fprintf(stderr, "Available space:%zd\n", resv_sz - offs);
->> +	if (offset)
->> +		*offset = offs;
->> +	return head;
->> +}
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.h b/tools/testing/selftests/arm64/signal/testcases/testcases.h
->> index 00618c3202bb..7653f8a64b3d 100644
->> --- a/tools/testing/selftests/arm64/signal/testcases/testcases.h
->> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.h
->> @@ -83,4 +83,8 @@ static inline void write_terminator_record(struct _aarch64_ctx *tail)
->>  		tail->size = 0;
->>  	}
->>  }
->> +
->> +struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
->> +				       size_t need_sz, size_t resv_sz,
->> +				       size_t *offset);
->>  #endif
-> 
-> Apart from the comments above, this looks reasonable.
-> 
-> Cheers
-> ---Dave
-> 
+Can we decide if we need to allow userspace to provide additional
+information or not, and then decide on the mechanism, instead of
+conflating the two questions?
 
-Cheers
+I think we should either expose the minimal mechanism to user space, or
+just leave it to user space to emulate the whole thing.
 
-Cristian
+
+Thanks,
+
+    Christoffer
 
 _______________________________________________
 linux-arm-kernel mailing list
