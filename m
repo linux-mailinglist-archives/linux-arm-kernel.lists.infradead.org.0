@@ -2,79 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A6D0FADE69
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 20:11:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4807CADE72
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 20:11:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=4Ho2C6bx5IpNJ6Q4WdEbpWLo/pzLLs2tXIwMveWJXYk=; b=FQQtzbeluKg8An
-	qEEa4JOYN4j11iAUbFqeXn5dS37jkcRJ2fZiA9a+uVyvSzY2CPjdEkiGe3WsLpXOOQb2Q3ceGxyAs
-	y2H+lbP2btNB+0RHOUooIqkegkFZ9uuNaofHF26EGIIGWxXBLfRQ89zuIgwShx5iWPmEy7Ix4UkJD
-	vFwxDmzMot3p78QWtri0TZ8pqxN6qrocE2I632raOlzN28FqTHmcl6EPGh0pJxDEb6bYNOiuw+yus
-	kwa4S1GBqJwbfNheMr9mwXqZnzDjn77xVZWZZ1iOITIplt8gT54EqzNye0Bsgl90Uo1YkeVsV3xSr
-	90Ls9COV5G+SPZQJkjLA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=pa0C+Fl1mZu5YCMUTKRSimLz9JZxkfk9TRNImAPoT9w=; b=M4TsHn/Eo/NxKl
+	rj6wrllcO6ZYGSltPf32qdW56HcfQczSVjfJ4rlTMW7OkqQf17r8SPT9H5FYP3lUmjfZ9k2NOZm2g
+	Khd038A1xI5ir7pyRkDXA/Qja4BWM88XFJIJkn9ySDqmXWbBPVMqM7nRep4ee6S+lqffnozcd6WxH
+	e3WQ63hFSo/TfV5Mj1VFdg88WLPrpJOpXEIjamPN9PuJMSg+Ni5IiD9Uecn2qxRLG+p28unnBX/Iq
+	S2/n4dhZRezmykXokzjG/5lXq2ZwOZiMuKWdjDPLO/gFxn46CSrBBSCj0Je32BLN/iTWjwzHW+CxL
+	r3marTNX54M4NMQN9F8Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7O7x-0007jb-Aa; Mon, 09 Sep 2019 18:11:01 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7O7l-0007j9-Gm
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 18:10:53 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=mx3Xh4ep/H2MS1V/mOp+1a6s1yR6UWXnWyfZb1bFdAc=; b=TbDx8hbSXM0NZPxYF1d0enz/P
- d7TPUowSPzilQR+hOE259kcE8PANs3sJ7FMcY3WM90VaVDdcrP3w4Do7q9TOsQxIxbUGR7985AuOu
- EAz6xKsgPRnhjKf9KbfQnFFkSkJbpEsAwkOZoukSt3Luw8KZXMXkr1MYy2EqoA7vg4lB4mIXt6of1
- j1XlYLGDP0P+N9neE8jb8vrcAUnt0BmbEbTxsYrZV2xfPWFupWfBjPKe6TbuHI9HN/N8q7L8IYmBC
- V2HeCk0dCc1oZf26BzJxp8JK08jaiP6eyBb6pv4/kd3NR0b/afzvGX15m4iBg21gmvd1VU8t/Bl0K
- eTSKeeAsg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:58222)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i7O7e-00040S-UL; Mon, 09 Sep 2019 19:10:43 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i7O7d-0002D1-Uf; Mon, 09 Sep 2019 19:10:41 +0100
-Date: Mon, 9 Sep 2019 19:10:41 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Aggelis Aggelis <aggelis@gmail.com>
-Subject: Re: kexec arm support
-Message-ID: <20190909181041.GO13294@shell.armlinux.org.uk>
-References: <CAKUkA52n+g4=G8r47P4Jt1LpUaPStEkLUNmU6szSCW9sYhW4Mw@mail.gmail.com>
+	id 1i7O8I-0007xX-TW; Mon, 09 Sep 2019 18:11:23 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7O87-0007x0-HT
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 18:11:13 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 32E041000;
+ Mon,  9 Sep 2019 11:11:11 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5E53D3F71F;
+ Mon,  9 Sep 2019 11:11:10 -0700 (PDT)
+Subject: Re: [PATCH v5 10/11] kselftest: arm64: fake_sigreturn_bad_size
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190902112932.36129-11-cristian.marussi@arm.com>
+ <20190904114933.GA27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <eadec3f3-279c-28a8-a894-c0e6082cdb14@arm.com>
+Date: Mon, 9 Sep 2019 19:11:08 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKUkA52n+g4=G8r47P4Jt1LpUaPStEkLUNmU6szSCW9sYhW4Mw@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190904114933.GA27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_111049_711692_C9391B53 
-X-CRM114-Status: GOOD (  20.01  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190909_111111_711993_2307C8AD 
+X-CRM114-Status: GOOD (  20.50  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,148 +63,127 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 09, 2019 at 08:58:58PM +0300, Aggelis Aggelis wrote:
-> I use MitySOM-5CSX dev kit (cyclone v)and i would like to boot to a
-> different kernel using kexec.
+On 04/09/2019 12:49, Dave Martin wrote:
+> On Mon, Sep 02, 2019 at 12:29:31pm +0100, Cristian Marussi wrote:
+>> Add a simple fake_sigreturn testcase which builds a ucontext_t with a
+>> badly sized header that causes a overrun in the __reserved area and
+>> place it onto the stack. Expects a SIGSEGV on test PASS.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v3 --> v4
+>> - fix commit
+>> - missing include
+>> - using new get_starting_head() helper
+>> - added test description
+>> ---
+>>  .../testcases/fake_sigreturn_bad_size.c       | 77 +++++++++++++++++++
+>>  1 file changed, 77 insertions(+)
+>>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+>>
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+>> new file mode 100644
+>> index 000000000000..b1156afdb691
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_size.c
+>> @@ -0,0 +1,77 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (C) 2019 ARM Limited
+>> + *
+>> + * Place a fake sigframe on the stack including a bad record overflowing
+>> + * the __reserved space: on sigreturn Kernel must spot this attempt and
+>> + * the test case is expected to be terminated via SEGV.
+>> + */
+>> +
+>> +#include <signal.h>
+>> +#include <ucontext.h>
+>> +
+>> +#include "test_signals_utils.h"
+>> +#include "testcases.h"
+>> +
+>> +struct fake_sigframe sf;
+>> +
+>> +#define MIN_SZ_ALIGN	16
+>> +
+>> +static int fake_sigreturn_bad_size_run(struct tdescr *td,
+>> +				       siginfo_t *si, ucontext_t *uc)
+>> +{
+>> +	size_t resv_sz, need_sz, offset;
+>> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
+>> +
+>> +	/* just to fill the ucontext_t with something real */
+>> +	if (!get_current_context(td, &sf.uc))
+>> +		return 1;
+>> +
+>> +	resv_sz = GET_SF_RESV_SIZE(sf);
+>> +	/* at least HDR_SZ + bad sized esr_context needed */
+>> +	need_sz = HDR_SZ + sizeof(struct esr_context);
 > 
-> In my configuration:
-> 
-> KERNEL : https://github.com/altera-opensource/linux-socfpga/archive/socfpga-4.9.76-ltsi-rt.zip
-> COMPILER : https://releases.linaro.org/archive/14.04/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.bz2
-> 
-> In the kernel configuration kexec is enabled
-> 
-> zcat /proc/config.gz |grep KEXEC
-> CONFIG_KEXEC_CORE=y
-> CONFIG_KEXEC=y
-> 
-> and the default kernel cmdline is
-> 
-> # cat /proc/cmdline
-> root=/dev/mmcblk0p3 rootwait rw earlycon
-> 
-> First we load kernel with
-> 
-> #./kexec --version
-> kexec-tools 2.0.19
-> 
-> kexec  -d -l zImagebkx --dtb=socfpga_cyclone5_mitysom5csx_devkit.dtb
-> --command-line="root=/dev/mmcblk0p3 rootwait rw earlycon"
-> syscall kexec_file_load not available.
-> kernel: 0xb6a9d008 kernel_size: 0x4a55c8
-> MEMORY RANGES
-> 0000000000000000-000000003fffffff (0)
-> zImage header: 0x016f2818 0x00000000 0x004a55c8
-> zImage size 0x4a55c8, file size 0x4a55c8
-> zImage requires 0x004b65c8 bytes
-> Kernel: address=0x00008000 size=0x0178fce8
-> DT    : address=0x01799000 size=0x00007cf4
-
-It looks like your kernel predates the addition of additional
-information that allows kexec to adequately lay out the physical
-address space, which was added around the 4.15 timeframe.
-
-See commits c772568788b5 ("ARM: add additional table to compressed
-kernel") and the preceeding commit.
-
-These improvements were added to kexec-tools in the 2.0.16 timeframe,
-and the combination of both allows kexec-tools to more accurately
-place the DT image.
-
-It is highly likely with the above placement that the kernel is
-overwriting the DT image during decompression, resulting in the
-kernel attempting to boot knowing nothing about the platform.
-
-> kexec_load: entry = 0x8000 flags = 0x280000
-> nr_segments = 2
-> segment[0].buf   = 0xb6a9d008
-> segment[0].bufsz = 0x4a55cc
-> segment[0].mem   = 0x8000
-> segment[0].memsz = 0x4a6000
-> segment[1].buf   = 0x8e610
-> segment[1].bufsz = 0x7cf4
-> segment[1].mem   = 0x1799000
-> segment[1].memsz = 0x8000
-> 
-> 
-> and kexec  kernel with
-> 
-> 
-> kexec  -e
-> [  134.110855] kexec_core: Starting new kernel
-> [  134.115064] Disabling non-boot CPUs ...
-> [  134.176961] CPU1: shutdown
-> [  134.180624] Bye!
-> Uncompressing Linux... done, booting the kernel.
-> 
-> and then nothing  no messages on console. The same kernel boots
-> successfully with U-Boot
-> 
-> using kernel 4.1.22 from https://github.com/dlaut/linux-socfpga and
-> applying the patch described in
-> https://patchwork.kernel.org/patch/6504321/
-> i  successfully kexeced 4.9.76 kernel from 4.1.22 using the same
-> kexec-tools 2.0.19.
-> 
-> root@node1:/mnt/test#uname -a Linux node1 4.1.22-ltsi-altera #2 SMP
-> PREEMPT Mon Jul 29 12:38:06 EEST 2019 armv7l GNU/L
-> 
-> 
-> root@node1:/mnt/test# kexec -d -e
-> [   46.306102] kexec: Starting new kernel
-> [   46.309928] Disabling non-boot CPUs ...
-> [   46.306102] kexec: Starting new kernel
-> [   46.378053] CPU1: shutdown
-> [   46.381875] Bye!
-> Uncompressing Linux... done, booting the kernel.
-> [    0.000000] Booting Linux on physical CPU 0x0
-> [    0.000000] Linux version 4.9.76-rt61-ltsi-altera (aggelis@corei5)
-> (gcc version 4.8.3 20140401 (prerelease) (crosstool-NG l9
-> [    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
-> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing
-> instruction cache
-> [    0.000000] OF: fdt:Machine model: MitySOM-5CSX Altera SOCFPGA Cyclone V
-> [    0.000000] cma: Reserved 16 MiB at 0x3f000000
-> [    0.000000] Memory policy: Data cache writealloc
-> [    0.000000] percpu: Embedded 15 pages/cpu @ef6bf000 s29184 r8192
-> d24064 u61440
-> [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.
-> Total pages: 260416
-> [    0.000000] Kernel command line: root=/dev/mmcblk0p3 rootwait
-> [    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
-> [    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
-> [    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
-> [    0.000000] allocated 1048576 bytes of page_ext
-> ...
-> ...
-> Angstrom v2017.12 - Kernel 4.9.76-rt61-ltsi-altera
-> node1 login:
-> 
-> 
-> 
-> The kexec patch applied on the 4.1.22 kernel (enabling kexec on
-> socfpga) is already present in 4.9.76 kernel.
-> 
-> Did something break in kexec implementation in later 4 series kernels?
-> 
-> Aggelis Aggelis
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> Nit: can we write this sum the other way round (see comment on patch 9)?
 > 
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Ok
+>> +	head = get_starting_head(shead, need_sz, resv_sz, &offset);
+
+I'll also fail straight away too here on !head (no timeout) like in others
+
+>> +	if (head) {
+>> +		/*
+>> +		 * Use an esr_context to build a fake header with a
+>> +		 * size greater then the free __reserved area minus HDR_SZ;
+>> +		 * using ESR_MAGIC here since it is not checked for size nor
+>> +		 * is limited to one instance.
+>> +		 *
+>> +		 * At first inject an additional normal esr_context
+>> +		 */
+>> +		head->magic = ESR_MAGIC;
+>> +		head->size = sizeof(struct esr_context);
+>> +		/* and terminate properly */
+>> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
+>> +		ASSERT_GOOD_CONTEXT(&sf.uc);
+>> +
+>> +		/*
+>> +		 * now mess with fake esr_context size: leaving less space than
+>> +		 * needed while keeping size value 16-aligned
+>> +		 *
+>> +		 * It must trigger a SEGV from Kernel on:
+>> +		 *
+>> +		 *	resv_sz - offset < sizeof(*head)
+>> +		 */
+>> +		/* at first set the maximum good 16-aligned size */
+>> +		head->size =
+>> +			(resv_sz - offset - need_sz + MIN_SZ_ALIGN) & ~0xfUL;
+>> +		/* plus a bit more of 16-aligned sized stuff */
+>> +		head->size += MIN_SZ_ALIGN;
+> 
+> Can we also have versions of this test that try:
+> 
+>  a) a size that doesn't overflow __reserved[], but is not a multiple of 16
+>  b) a size that is less than 16
+>  c) a size that does overflow __reserved[], but by less than 16 bytes?
+> 
+> These tests are all closely related and can probably be macro-ised
+> easily.  They can go on the TODO list for now anyway: let's get this
+> series settled in its current form first.
+> 
+Ok
+
+> In any case:
+> 
+> Reviewed-by: Dave Martin <Dave.Martin@arm.com>
+> 
+
+Thanks
+
+Cristian
 
 _______________________________________________
 linux-arm-kernel mailing list
