@@ -2,47 +2,47 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 708BAADA6E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:51:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D7991ADA6F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:51:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ekMlP+TOOzB4Yyo7A/LeI3+c9p3Y+N/2gVLEPuBTL7M=; b=Bomx5EKCsRhM+c
-	jbPaTIlPH3jtGcP0R3V3ZUNvky5wB1jSZERSa5HqPCUpHI67MtlHGa7cuEfhXF7WLsoey684+8hgn
-	NO3Vwf3ZAkIJPaLjOw4uociVhzdSBeQG4Ptd14aeizOc12qCGsmL42iYwmWNEcyZR8PzRWwccXoqX
-	YubxqTpQ1olnOr0/5b5cHNGiX6M0/32FQjesD5oNjFRNlBJrNaiVBW9xBt1fzMjib40hrRBK1HSAo
-	smk3mk8r+twmQ7N61c5rJsgfIc1V0VRyAAgXca8krLY22pFQ242Ut3XHLnM1D7SoVi/nl5lFKPfHy
-	4Jcu1UQa6JkFtzozLo3A==;
+	List-Owner; bh=bjayN6w8nRyRQZ3t+m6tjsU1oH135NyF/K7dqoDp1vM=; b=raMdRTKLw2Ru5Z
+	iyLvWtgCFWs0vsqVmei88AMrJ+5MMMujTdhR4RpC+7/ogAOH8gL4sLQbBQ9Ar9UbMr8uMEL2Rh4uP
+	yeDPwHsv0mbraQg9PFTcFHdphdN6dneI+tF3jkLyc+iZRd1/No4ChfpKfOYhitX6WeAYkWfyjZuzL
+	Qw4I8tGas8EnsPBCkrpeeaZt0x/xXQoxn4qCeu9t6LFV5w8eWFZMBeAQRwEvIgiJieV1AU3VhCWHB
+	xHXjg71FvrMFIxj12iPTN4yESpt99haio1WzD06t3aR2AK0CwAeFSHO+oIaEYmizXhytIYIxZVcm/
+	mxeYmW/744YysYNbtLwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7K4F-0004xC-2I; Mon, 09 Sep 2019 13:50:55 +0000
+	id 1i7K4U-0005BY-1j; Mon, 09 Sep 2019 13:51:10 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7K2U-0002SJ-PL
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:49:08 +0000
+ id 1i7K2X-0002VD-Ey
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:49:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3A5B31682;
- Mon,  9 Sep 2019 06:49:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id CF3E1168F;
+ Mon,  9 Sep 2019 06:49:08 -0700 (PDT)
 Received: from localhost.localdomain (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F41003F59C;
- Mon,  9 Sep 2019 06:49:03 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 88A023F59C;
+ Mon,  9 Sep 2019 06:49:06 -0700 (PDT)
 From: Marc Zyngier <maz@kernel.org>
 To: Paolo Bonzini <pbonzini@redhat.com>,
  =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>
-Subject: [PATCH 06/17] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
- translation cache on ITS disable
-Date: Mon,  9 Sep 2019 14:47:56 +0100
-Message-Id: <20190909134807.27978-7-maz@kernel.org>
+Subject: [PATCH 07/17] KVM: arm/arm64: vgic-its: Invalidate MSI-LPI
+ translation cache on vgic teardown
+Date: Mon,  9 Sep 2019 14:47:57 +0100
+Message-Id: <20190909134807.27978-8-maz@kernel.org>
 X-Mailer: git-send-email 2.20.1
 In-Reply-To: <20190909134807.27978-1-maz@kernel.org>
 References: <20190909134807.27978-1-maz@kernel.org>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_064906_924137_D30D0051 
-X-CRM114-Status: UNSURE (   9.52  )
+X-CRM114-CacheID: sfid-20190909_064909_650665_DF7FE03B 
+X-CRM114-Status: UNSURE (   8.46  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -72,9 +72,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If an ITS gets disabled, we need to make sure that further interrupts
-won't hit in the cache. For that, we invalidate the translation cache
-when the ITS is disabled.
+In order to avoid leaking vgic_irq structures on teardown, we need to
+drop all references to LPIs before deallocating the cache itself.
+
+This is done by invalidating the cache on vgic teardown.
 
 Tested-by: Andre Przywara <andre.przywara@arm.com>
 Reviewed-by: Eric Auger <eric.auger@redhat.com>
@@ -84,18 +85,18 @@ Signed-off-by: Marc Zyngier <maz@kernel.org>
  1 file changed, 2 insertions(+)
 
 diff --git a/virt/kvm/arm/vgic/vgic-its.c b/virt/kvm/arm/vgic/vgic-its.c
-index 09a179820816..05406bd92ce9 100644
+index 05406bd92ce9..d3e90a9d0a7a 100644
 --- a/virt/kvm/arm/vgic/vgic-its.c
 +++ b/virt/kvm/arm/vgic/vgic-its.c
-@@ -1597,6 +1597,8 @@ static void vgic_mmio_write_its_ctlr(struct kvm *kvm, struct vgic_its *its,
- 		goto out;
+@@ -1731,6 +1731,8 @@ void vgic_lpi_translation_cache_destroy(struct kvm *kvm)
+ 	struct vgic_dist *dist = &kvm->arch.vgic;
+ 	struct vgic_translation_cache_entry *cte, *tmp;
  
- 	its->enabled = !!(val & GITS_CTLR_ENABLE);
-+	if (!its->enabled)
-+		vgic_its_invalidate_cache(kvm);
- 
- 	/*
- 	 * Try to process any pending commands. This function bails out early
++	vgic_its_invalidate_cache(kvm);
++
+ 	list_for_each_entry_safe(cte, tmp,
+ 				 &dist->lpi_translation_cache, entry) {
+ 		list_del(&cte->entry);
 -- 
 2.20.1
 
