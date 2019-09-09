@@ -2,79 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 48976AE10B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 00:31:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7528CAE166
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 01:14:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tqH3MrncuhR3zdtS35qkytgJ8UjNmYDICKJYmdm01rw=; b=uUwJZm5PpfeujN
-	MObR1tQ7qg41iJZfL79qENBd99VDHskRmbaoUD6uKZFLfZIWrt1pW4nBeyiqq2S/Wl5esvIFFcziF
-	dbSlMAPsbcG2p37hf+47wQ8I1xq5kkt1rBdiwFmq67v2Kq3Q2QAeOrHxT6PRPv3HCpty8l2bxttZj
-	oLSvXeEeJASePdGaLiOEfV0OyR7njwXBsiYRJlJV+0TejtDTXWOdEYm2BQ9dgzZqzHgRCAZvgxIvz
-	SVLqKWmVhT7+sQ/tYkQWDxV3ehmkz7ptfLjDFUlWWhloaR8+WJV01YNx+nSwkMitu8Aw4fA6c+sfV
-	xRV/J4lQYxQhnnQs8rSA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=uZF0OFq2OQX7OqHWcP5TCAM/D4VYrNvQJBKoaFLIX6U=; b=cA2
+	rVXqSKaeJv3HBjOMsr1IJ3AuX0Eo2fpRx6tEtE2evtQ7S+5Rd9ykNq4+1PaeGa6TuJedsHle6Sw3E
+	rdTKCaQ9RhP5jemPWzaG2BUoY+xAFmT5WtPaxZVRoDD9iZTrzj7WOG6lLBZAMzqeDJx6umpdYyL8s
+	cxaKZqOucKB94kfib7ywW4z7upgctFCXfFAJe07rQ0bPIita+wquaTDKF2tP+WVfGg+1soVogvaWJ
+	N2SqQksu7NRj2lp9xnZ2Le4YNmCNAActcWuyFSPD8NdPW0znVwqyGuGrNYVUr1uc0lRXFO7QHA8j7
+	R7espt66ExZUSqJeGwrbkaU9ib64Q7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7SBw-0006P7-OD; Mon, 09 Sep 2019 22:31:24 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7SBq-0006Oh-5L
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 22:31:20 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=u0oMZEsrwk7J/0FujHdKrmzaiHFyR66uRe3QqNZ8iKA=; b=G6bq9f59v6RPWMPua90CwqY8y
- vG0oNdBbJNLc7qd3BKmE7hE1vkdY4x0d8YsOeTihvkJbF90jkX0p9w+boY/CXJczUV9s5tAnRnQk+
- mWxwkAy6Xs2nIDpMQjUsWSrey47PtVVAUoSEY82jU9Pk2N0Bv8IZ45oRVBPCCHHta/4KXbPZmpKhD
- ScyDtFeIhxBb4Ci7F84rrVoE/YOoO9qNSoxpymdPPy7xEEqDKKpF2wQGlU/L3TElUzKQQ0h0eHKqe
- RKwfmb9kiwBu8QXuOu/8cg7XZhDtMC3qoOxwrutGS8fetO71+CibjlN4CpOHqcXKKtFev6xOsxKGM
- jepa4RC6w==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:58296)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i7SBg-00056N-Uh; Mon, 09 Sep 2019 23:31:09 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i7SBc-0002LS-3X; Mon, 09 Sep 2019 23:31:04 +0100
-Date: Mon, 9 Sep 2019 23:31:04 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Aggelis Aggelis <aggelis@gmail.com>
-Subject: Re: kexec broken on later 4 series arm kernels ?
-Message-ID: <20190909223103.GP13294@shell.armlinux.org.uk>
-References: <CAKUkA50BOqpW7ZCQc9nGGE8ceYZuZMsPk-2rfq1txu3R9114TA@mail.gmail.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAKUkA50BOqpW7ZCQc9nGGE8ceYZuZMsPk-2rfq1txu3R9114TA@mail.gmail.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+	id 1i7SrZ-0001av-3C; Mon, 09 Sep 2019 23:14:25 +0000
+Received: from linux.microsoft.com ([13.77.154.182])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7SrS-0001Zu-FR
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 23:14:19 +0000
+Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
+ [167.220.2.18])
+ by linux.microsoft.com (Postfix) with ESMTPSA id 27A8F20B7186;
+ Mon,  9 Sep 2019 16:14:16 -0700 (PDT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 27A8F20B7186
+From: Prakhar Srivastava <prsriva@linux.microsoft.com>
+To: linux-kernel@vger.kernel.org,
+	linux-arm-kernel@lists.infradead.org
+Subject: [RFC PATCH v1 0/1] Add support for arm64 to carry ima measurement log
+ in kexec_file_load
+Date: Mon,  9 Sep 2019 16:14:08 -0700
+Message-Id: <20190909231409.20461-1-prsriva@linux.microsoft.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_153118_357494_2CD7BFC9 
-X-CRM114-Status: GOOD (  19.59  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190909_161418_533910_5279B4E6 
+X-CRM114-Status: UNSURE (   9.70  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -8.0 (--------)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-8.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
+ white-list
+ -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
+ Match
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,132 +62,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
+ takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
+ zohar@linux.ibm.com, yamada.masahiro@socionext.com, kristina.martsenko@arm.org,
+ duwe@lst.de, bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
+ allison@lohutok.net
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 09, 2019 at 09:15:58PM +0300, Aggelis Aggelis wrote:
-> I use MitySOM-5CSX dev kit (cyclone v)and i would like to boot to a
-> different kernel using kexec.
-> 
-> In my configuration:
-> 
-> KERNEL : https://github.com/altera-opensource/linux-socfpga/archive/socfpga-4.9.76-ltsi-rt.zip
-> COMPILER : https://releases.linaro.org/archive/14.04/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.bz2
-> 
-> In the kernel configuration kexec is enabled
-> 
-> zcat /proc/config.gz |grep KEXEC
-> CONFIG_KEXEC_CORE=y
-> CONFIG_KEXEC=y
-> 
-> and the default kernel cmdline is
-> 
-> # cat /proc/cmdline
-> root=/dev/mmcblk0p3 rootwait rw earlycon
-> 
-> First we load kernel with
-> 
-> #./kexec --version
-> kexec-tools 2.0.19
-> 
-> # kexec  -d -l zImagebkx --dtb=socfpga_cyclone5_mitysom5csx_devkit.dtb
-> --command-line="root=/dev/mmcblk0p3 rootwait rw earlycon"
-> syscall kexec_file_load not available.
-> kernel: 0xb6a9d008 kernel_size: 0x4a55c8
-> MEMORY RANGES
-> 0000000000000000-000000003fffffff (0)
-> zImage header: 0x016f2818 0x00000000 0x004a55c8
-> zImage size 0x4a55c8, file size 0x4a55c8
-> zImage requires 0x004b65c8 bytes
-> Kernel: address=0x00008000 size=0x0178fce8
-> DT    : address=0x01799000 size=0x00007cf4
+Add support for arm64 to carry ima measurement log
+to the next kexec'ed session triggered via kexec_file_load.
+- Top of Linux 5.3-rc6
 
-Same comments as per your previous email on this same subject.
+Currently during kexec the kernel file signatures are/can be validated
+prior to actual load, the information(PE/ima signature) is not carried
+to the next session. This lead to loss of information.
 
-> kexec_load: entry = 0x8000 flags = 0x280000
-> nr_segments = 2
-> segment[0].buf   = 0xb6a9d008kernel
-> segment[0].bufsz = 0x4a55cc
-> segment[0].mem   = 0x8000
-> segment[0].memsz = 0x4a6000
-> segment[1].buf   = 0x8e610
-> segment[1].bufsz = 0x7cf4
-> segment[1].mem   = 0x1799000
-> segment[1].memsz = 0x8000
-> 
-> and kexec  kernel with
-> 
-> # kexec  -e
-> [  134.110855] kexec_core: Starting new kernel
-> [  134.115064] Disabling non-boot CPUs ...
-> [  134.176961] CPU1: shutdown
-> [  134.180624] Bye!
-> Uncompressing Linux... done, booting the kernel.
-> 
-> and then nothing  no messages on console.
-> 
-> The same kernel boots successfully with U-Boot
-> 
-> Using kernel 4.1.22 from https://github.com/dlaut/linux-socfpga and
-> applying the patch described in https://patchwork.kernel.org/patch/6504321/
-> i  successfully kexeced 4.9.76 kernel from 4.1.22 using the same
-> kexec-tools 2.0.19.
-> 
-> root@node1:/mnt/test#uname -a Linux node1 4.1.22-ltsi-altera #2 SMP
-> PREEMPT Mon Jul 29 12:38:06 EEST 2019 armv7l GNU/L
-> root@node1:/mnt/test# kexec -d -e
-> [   46.306102] kexec: Starting new kernel
-> [   46.309928] Disabling non-boot CPUs ...
-> [   46.306102] kexec: Starting new kernel
-> [   46.378053] CPU1: shutdown
-> [   46.381875] Bye!
-> Uncompressing Linux... done, booting the kernel.
-> [    0.000000] Booting Linux on physical CPU 0x0
-> [    0.000000] Linux version 4.9.76-rt61-ltsi-altera (aggelis@corei5)
-> (gcc version 4.8.3 20140401 (prerelease) (crosstool-NG l9
-> [    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
-> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing
-> instruction cache
-> [    0.000000] OF: fdt:Machine model: MitySOM-5CSX Altera SOCFPGA Cyclone V
-> [    0.000000] cma: Reserved 16 MiB at 0x3f000000
-> [    0.000000] Memory policy: Data cache writealloc
-> [    0.000000] percpu: Embedded 15 pages/cpu @ef6bf000 s29184 r8192
-> d24064 u61440
-> [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.
-> Total pages: 260416
-> [    0.000000] Kernel command line: root=/dev/mmcblk0p3 rootwait
-> [    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
-> [    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
-> [    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
-> [    0.000000] allocated 1048576 bytes of page_ext
-> ...
-> ...
-> Angstrom v2017.12 - Kernel 4.9.76-rt61-ltsi-altera
-> node1 login:
-> 
-> The kexec patch applied on the 4.1.22 kernel (enabling kexec on
-> socfpga) is already present in 4.9.76 kernel.
-> 
-> Since the same  kexec 2.0.19 userland tool runs successfully  in the
-> older 4.1.22
-> but not in 4.9.76  kernel did something break in kexec implementation
-> in later 4 series kernels?
-> 
-> Aggelis Aggelis
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+Carrying forward the ima measurement log to the next kexec'ed session 
+allows a verifying party to get the entire runtime event log since the
+last full reboot, since that is when PCRs were last reset.
+
+Changelog:
+
+v1:
+  - add new fdt porperties to mark start and end for ima measurement
+    log.
+  - use fdt_* functions to add/remove fdt properties and memory
+    allocations.
+  - remove additional check for endian-ness as they are checked
+    in fdt_* functions.
+
+v0:
+  - Add support to carry ima measurement log in arm64, 
+   uses same code as powerpc.
+
+Prakhar Srivastava (1):
+  Add support for arm64 to carry ima measurement log in kexec_file_load
+
+ arch/arm64/Kconfig                     |   7 +
+ arch/arm64/include/asm/ima.h           |  29 ++++
+ arch/arm64/include/asm/kexec.h         |   5 +
+ arch/arm64/kernel/Makefile             |   3 +-
+ arch/arm64/kernel/ima_kexec.c          | 213 +++++++++++++++++++++++++
+ arch/arm64/kernel/machine_kexec_file.c |   6 +
+ 6 files changed, 262 insertions(+), 1 deletion(-)
+ create mode 100644 arch/arm64/include/asm/ima.h
+ create mode 100644 arch/arm64/kernel/ima_kexec.c
 
 -- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+2.17.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
