@@ -2,84 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CFB0ADAA1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 16:00:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 582F6ADA9A
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:59:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=/+5X5HMj7FaO3dPmtavCMfPcmvmxJ02JYePMlb94tWM=; b=ayPzXZUYO2Vv84SMSiqqqMLM1
-	PjOkzG3Pf4khqupEAEgkgKnSKHhEHWTODkB8brenrv57FqD/jRFx8wMA1M6UhDQ5Va1BYl4shorp3
-	YjYx63xNUub2CuXUW8D1y8kx69UfaxcpXumHkU3CU0uRcbYJ0UO0GG3I6Wu3+23VJ+/navgcMuR0m
-	2WzdHI9VoZWMH9IwDlDFdbMJYguMq6LO9or17HIhfVey/r+TpjGcjw61js5i16qTQ9tgFa+oZtJ6Z
-	TwQ7CBjezp7ozSP3vno70kutvwpk5AiIBi0q/a7WS6pmxBBa5dUrg/FUcmNzR0LGrCjv4xWy4JDQT
-	GeLok3Ohw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=YeOCA9y/1YgFYhJYKFBr/5n+zZ3NWC7BT3yHOrVaNxk=; b=unWpCFRoyLAHnj
+	86qJcAAxH93q4t8jdypN27R7ctVYRLGSvPq7BcfnQjula1IqBx1oPIvtaIFptqguBVcFEYSmMTqSI
+	cm/QMLHXEUOIuZ6PZJ7KAVv9XGpr+hzTU1VFh7FzdGZ5iWlxDBxhewzYu4QfGwGRuj9W5XVHobXvs
+	zISYchi1rxD/6au2EwLBv8bqFhlJh4wUoKFGO3zIUwtfYCTKSQWlvUDSlWIPzukVTYjZwml0Wtzrv
+	pejhr0AzZJ+VeVKNzXPWNkjD/xKbjUrXoKZxfXtdjfC/fCSG4GsMPgkBh56meJ4ORwJT2OtkO49tR
+	UngERTDDNGmN2tObg3PA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7KCz-0001tg-EH; Mon, 09 Sep 2019 13:59:57 +0000
-Received: from smtp-fw-33001.amazon.com ([207.171.190.10])
+	id 1i7KCV-0001KF-4R; Mon, 09 Sep 2019 13:59:27 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7KCm-0001qx-0L
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:59:45 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1568037583; x=1599573583;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=K42g/AFNMDx/RgjzKJBTKWAce5pXZj/ROym93HlBV/I=;
- b=DWlYYA1/6vPpZZkpJ74FLnfQgKJhMDFjSiytC4XYA9b66a4cOiEqdyY9
- 25DvBhdupkWhn35nvIiBQoyX7bU+KDNtpM+ZGuUZ208K7zLWaR3FX1pJ7
- kX/mfXhitYOHc89MYeXynAGkY8zkl6fkbOUzVIKG/VBpN9lJ3KtGPU1MH A=;
-X-IronPort-AV: E=Sophos;i="5.64,484,1559520000"; d="scan'208";a="829304744"
-Received: from sea3-co-svc-lb6-vlan2.sea.amazon.com (HELO
- email-inbound-relay-2a-90c42d1d.us-west-2.amazon.com) ([10.47.22.34])
- by smtp-border-fw-out-33001.sea14.amazon.com with ESMTP;
- 09 Sep 2019 13:59:14 +0000
-Received: from EX13MTAUEA001.ant.amazon.com
- (pdx4-ws-svc-p6-lb7-vlan3.pdx.amazon.com [10.170.41.166])
- by email-inbound-relay-2a-90c42d1d.us-west-2.amazon.com (Postfix) with ESMTPS
- id 0CCB1A1E19; Mon,  9 Sep 2019 13:59:12 +0000 (UTC)
-Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
- EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Mon, 9 Sep 2019 13:59:12 +0000
-Received: from [10.125.238.52] (10.43.160.27) by EX13D01EUB001.ant.amazon.com
- (10.43.166.194) with Microsoft SMTP Server (TLS) id 15.0.1367.3;
- Mon, 9 Sep 2019 13:59:01 +0000
-Subject: Re: [PATCH 3/3] arm64: alpine: select AL_POS
-To: Arnd Bergmann <arnd@arndb.de>
-References: <1568020220-7758-1-git-send-email-talel@amazon.com>
- <1568020220-7758-4-git-send-email-talel@amazon.com>
- <CAK8P3a0DEMeFWK+RuAdSLyDYduWWwj9DxP_Beipays-d_6ixnA@mail.gmail.com>
- <ab512ced-d989-5c10-a550-2a4723d38e7e@amazon.com>
- <CAK8P3a34eKFXoAPOfkFN5+H4kxOhRjXgws_0wy+d-186LFxcTw@mail.gmail.com>
-From: "Shenhar, Talel" <talel@amazon.com>
-Message-ID: <0d36f94d-596f-0ec7-6951-b097b5ee0d2d@amazon.com>
-Date: Mon, 9 Sep 2019 16:58:56 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.0
+ id 1i7KCJ-0001JV-Ur
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:59:17 +0000
+Received: from localhost (lfbn-1-17395-211.w86-250.abo.wanadoo.fr
+ [86.250.200.211])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7759E2086D;
+ Mon,  9 Sep 2019 13:59:14 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568037554;
+ bh=1LOeIrNaojbFutO/35pibYdicy6zk1C9NEftmHLgaYE=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=UieH1zXYFmI9ZQoBmDFp/Caccsfb8zgAwWbjMjeDAAsY7nOdDGw25MsSl3XEWM/eK
+ aCMGsGuAWbMv29jYF4cNJLtde8dflId6l4spy1NhpVNiZk1DIBghKpAI9y5BFNAJ5s
+ Vr1SD9rR+VQpQwiMsnxecPLCM1nyBKQ6YwApwNbI=
+Date: Mon, 9 Sep 2019 15:59:10 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH 2/9] crypto: Add Allwinner sun8i-ce Crypto Engine
+Message-ID: <20190909135908.vkvcuykrplhxxwtd@flea>
+References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
+ <20190906184551.17858-3-clabbe.montjoie@gmail.com>
+ <20190907081951.v2huvhm44jfprfop@flea> <20190907190408.GE2628@Red>
+ <20190909113837.vrnqdfgzhsiymfpm@flea> <20190909131906.GA12882@Red>
 MIME-Version: 1.0
-In-Reply-To: <CAK8P3a34eKFXoAPOfkFN5+H4kxOhRjXgws_0wy+d-186LFxcTw@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.43.160.27]
-X-ClientProxiedBy: EX13D23UWA002.ant.amazon.com (10.43.160.40) To
- EX13D01EUB001.ant.amazon.com (10.43.166.194)
-Precedence: Bulk
+Content-Disposition: inline
+In-Reply-To: <20190909131906.GA12882@Red>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_065944_098955_DEFB63EB 
-X-CRM114-Status: GOOD (  14.48  )
-X-Spam-Score: -10.0 (----------)
+X-CRM114-CacheID: sfid-20190909_065916_040799_BBA16104 
+X-CRM114-Status: GOOD (  25.45  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-10.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [207.171.190.10 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,6 +71,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -98,72 +80,77 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, mjourdan@baylibre.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- jonnyc@amazon.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- ronenk@amazon.com, Will
- Deacon <will@kernel.org>, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- DTML <devicetree@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, hanochu@amazon.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, barakw@amazon.com,
- hhhawa@amazon.com, gregkh <gregkh@linuxfoundation.org>,
- paul.kocialkowski@bootlin.com, Patrick
- Venture <venture@google.com>, Olof Johansson <olof@lixom.net>,
- David Miller <davem@davemloft.net>, David Woodhouse <dwmw@amazon.co.uk>
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-On 9/9/2019 4:45 PM, Arnd Bergmann wrote:
-> On Mon, Sep 9, 2019 at 12:17 PM Shenhar, Talel <talel@amazon.com> wrote:
->> On 9/9/2019 12:40 PM, Arnd Bergmann wrote:
->>> On Mon, Sep 9, 2019 at 11:14 AM Talel Shenhar <talel@amazon.com> wrote:
->>>> diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
->>>> index 4778c77..bd86b15 100644
->>>> --- a/arch/arm64/Kconfig.platforms
->>>> +++ b/arch/arm64/Kconfig.platforms
->>>> @@ -25,6 +25,7 @@ config ARCH_SUNXI
->>>>    config ARCH_ALPINE
->>>>           bool "Annapurna Labs Alpine platform"
->>>>           select ALPINE_MSI if PCI
->>>> +       select AL_POS
->>>>           help
->>>>             This enables support for the Annapurna Labs Alpine
->>>>             Soc family.
->>> Generally I think this kind of thing should go into the defconfig
->>> rather than being hard-selected. There might be users that
->>> want to not enable the driver.
->> The reason for selecting it is because this is a driver that we will
->> always want for ARCH_ALPINE.
-> Can you put the exact requirement (other than "we want this")
-> in the changelog text then? It's still not clear to me what breaks
-> without this driver.
+On Mon, Sep 09, 2019 at 03:19:06PM +0200, Corentin Labbe wrote:
+> On Mon, Sep 09, 2019 at 01:38:37PM +0200, Maxime Ripard wrote:
+> > On Sat, Sep 07, 2019 at 09:04:08PM +0200, Corentin Labbe wrote:
+> > > > Also, I'm not sure what is the point of having the clocks names be
+> > > > parameters there as well. It's constant across all the compatibles,
+> > > > the only thing that isn't is the number of clocks and the module clock
+> > > > rate. It's what you should have in there.
+> > >
+> > > Since the datasheet give some max frequency, I think I will add a
+> > > max_freq and add a check to verify if the clock is in the right
+> > > range
+> >
+> > It's a bit pointless. What are you going to do if it's not correct?
+> > What are you trying to fix / report with this?
 >
->          Arnd
+> I thinked to print a warning.  If someone want to play with
+> overclocking for example, the driver should said that probably some
+> result could be invalid.
 
-Its not that something will get broken. its error event detector for POS 
-events which allows seeing bad accesses to registers.
+If someone wants to play with overclocking, the crypto engine is going
+to be the least of their concern.
 
-What is the general rule of which configs to put under select and which 
-under defconfig?
+> > > > > +int sun8i_ce_get_engine_number(struct sun8i_ce_dev *ce)
+> > > > > +{
+> > > > > +	return atomic_inc_return(&ce->flow) % ce->variant->maxflow;
+> > > > > +}
+> > > >
+> > > > I'm not sure what this is supposed to be doing, but that mod there
+> > > > seems pretty dangerous.
+> > > >
+> > > > ...
+> > >
+> > > This mod do a round robin on each channel.
+> > > I dont see why it is dangerous.
+> >
+> > Well, you're using the atomic API here which is most commonly used for
+> > refcounting, while you're using a mod.
+> >
+> > Plus, while the increment is atomic, the modulo isn't, so you can end
+> > up in a case where you would be preempted between the
+> > atomic_inc_return and the mod, which is dangerous.
+> >
+> > Again, I'm not sure what this function is doing (which is also a
+> > problem in itself). I guess you should just make it clearer what it
+> > does, and then we can discuss it properly.
+>
+> Each request need to be assigned to a channel.
+> Each channel are identified by a number from 1 to 4.
+>
+> So this function return the channel to use, 1 then 2 then 3 then 4 then 1...
+>
+> Note that this is uncritical. If, due to anything, two request are
+> assigned to the same channel, nothing will break.
 
-I was thinking that "general" SoC support is good under select - those 
-things that we always want.
+I'm not sure why you're using the atomic API then?
 
-And specific features, e.g. RAID support or features that supported only 
-on specific HW shall go under defconfig.
+Also, I guess a bitfield and find_first_bit (and a different function
+name) would be more obvious to the reader.
 
-
-Similar, I see ARCH_LAYERSCAPE selecting EDAC_SUPPORT.
-
-
-Will love to hear the general rule for select vs defconfig.
-
+Thanks!
+Maxime
 
 _______________________________________________
 linux-arm-kernel mailing list
