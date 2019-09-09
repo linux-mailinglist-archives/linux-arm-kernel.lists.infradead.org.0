@@ -2,89 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A820AD1AE
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 03:53:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A7E27AD1B4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 03:56:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=qqQH8mlCYP6Dgx6IeK3fo/0brWhw4Imlnf0IBhPYOOc=; b=robFuZLpMJ0UkH
-	BhMG+kAqdo9NE34PhX6xCBKaUzBUpYhTb/8Az+HqRdo2fxx8Gbedp53FsoEr3Id/a9DHQE/9kiqO9
-	9JMZMCJlCd/K4RbDEo5+PGveg3jBM+hyqs5RZ41ZSLMuwR5ruEXTOdrjT5OMJ4R4lL1jV8gwZrpRq
-	2UAFLERRhr0nEV0+FHb4ayN4QZ8o3hWQydrAAlHBoQcke3uq0SBDJ1E8pKNvUaNJ9KuaS0z6gPuKY
-	EreqZe1BiXCdJtaWv8Z6qupkVKEx6IpQW2VRCnWOSb3orGi17YGi6jCgZZ+UGdfdwFZG9U6xHgYTT
-	+cK7tC5wWnYExWerJVzg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=EFAliHTJGSDJn4bCUU6uWDBmTg17TPu8ThHJNhoxu/k=; b=iUPZAeYVnqRQHuT1oHOR6x8UL
+	mh+w9hZvkCzhDDoS++04vlq9gFB5saXun0RmMAXNmJrzNgVBgD42gDvQh1TCy6jDks2wTY7BlQsoM
+	XvQ9bitXxD1867VwnHOfQL/hYk8EKpkxmFLdOfcY4Dv/t3kAsUeUQbSlJvsGEzbMP0GPqyybAkm6X
+	Z9uChQuEd4OX2bU17JISYEO7xq6cw9VBdu4U1X1gBJf6yrVcTTStclVfmaG/ps5F08N/cRkzt9YpH
+	XYMUNggg+W+4P03ssLZAwRIMoOH6Xo4mC+T/XcohYzFx0LF/CYAvNomFaQgXxhldoqn9RCLoiqbkA
+	mgQ3TWR3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i78s9-000448-9e; Mon, 09 Sep 2019 01:53:41 +0000
-Received: from wout5-smtp.messagingengine.com ([64.147.123.21])
+	id 1i78vF-0005cV-4T; Mon, 09 Sep 2019 01:56:53 +0000
+Received: from fllv0016.ext.ti.com ([198.47.19.142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i78s2-00043N-LC
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 01:53:36 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.west.internal (Postfix) with ESMTP id 10CBF666;
- Sun,  8 Sep 2019 21:53:28 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Sun, 08 Sep 2019 21:53:28 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=heMFjdjLm+JvFR3BTNKLlq77Ee6tOAO
- N0xWmiX14zOI=; b=YmI8WuX1c6avsekUIqvUMCvoL5nWhFoFIH5/qo6lETy4oD6
- QJpJ+hZaKzUjzYutk7BvrTcJrJAiz93NZJ/fVza9Po0xCYaBw4Zf3GA1dPE2DdH6
- /gLiU9I8M+/+QUjWk1dRId5eI0qvyTgg528yon0CYwj+/Hxj82NMI6d47KWydh9g
- GmloJFgP1dXiKXi0MH3N0NUBojzpk+CKg3jUABf7KikhUMIq+RXmqSoWv2uwtW4P
- xbE+Ho0JMt1gbWthpGd5o0DvOMpqa3pZddM8a05IXvcljURRd3nkbZI68bEENRT/
- WmUay8+80ZZh5evknhzJV+X027qKRNZ4NM1X93Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=heMFjd
- jLm+JvFR3BTNKLlq77Ee6tOAON0xWmiX14zOI=; b=gSGn1BhJpBwVTeKbLSPJA1
- nxu2WvzJEwAB8CyiOc6NZ229kLL8jDpaxwZgQZ1ouxjdS9aho3AONtviggLXosSJ
- ipunIvNZWwYyQe+Jg37Z9jVK5ct9kT9NhaJnHMm1956cX5w2bjm4PWnd3w1C6eTK
- TVYGEUxIt2vSSDYAY08xtcJgMZ49qY1GX7ksbvjLRZVHfDHHomrllhDMMPIOqKUi
- JiVHQU3hKHZV+7s1M/CWmOxw4m3HPzetsIDxgwc3Vh3VStHvrX+oD5OtALPwHjBL
- xSWVM5aKfqvq96DN6BAx0t8IUjlg2WOQrh/5qpDNDeETBVT6N7m/bWlYQA7Ivb7g
- ==
-X-ME-Sender: <xms:lrB1XScWpoS1AmB5PU0MLKUKeiGdl6CYlDuLyctnMRi9XZstGYI6eg>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgeduvddrudekhedghedvucetufdoteggodetrfdotf
- fvucfrrhhofhhilhgvmecuhfgrshhtofgrihhlpdfqfgfvpdfurfetoffkrfgpnffqhgen
- uceurghilhhouhhtmecufedttdenucesvcftvggtihhpihgvnhhtshculddquddttddmne
- cujfgurhepofgfggfkjghffffhvffutgesthdtredtreerjeenucfhrhhomhepfdetnhgu
- rhgvficulfgvfhhfvghrhidfuceorghnughrvgifsegrjhdrihgurdgruheqnecuffhomh
- grihhnpeifihhnughofidrqddqqdhpihhnghenucfrrghrrghmpehmrghilhhfrhhomhep
- rghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghrufhiiigvpedt
-X-ME-Proxy: <xmx:lrB1XQdut5HhPiTBXjQBDcD9DwwNfNIczAWlXMW_KvqFBtXjmcs_Bg>
- <xmx:lrB1XegPExrUQOkXqQV9GHlrPEzlgxNS2Omg0jHhJZvmMiFNtxUtug>
- <xmx:lrB1XUQ_RyOIpSfLtN_-cNbLBFPNM5u3GafpvVUsTFXrmMKqhUSCdw>
- <xmx:l7B1XSvhSHVcRDCU41Ecxe_h3Db164lAofWbrkTrQC_qRQYnbPmK1w>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id 87B75E00A3; Sun,  8 Sep 2019 21:53:26 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-188-g385deb1-fmstable-20190905v2
-Mime-Version: 1.0
-Message-Id: <5f66333d-1621-4e36-b138-52453f61cc68@www.fastmail.com>
-In-Reply-To: <20190829071738.2523-1-andrew@aj.id.au>
-References: <20190829071738.2523-1-andrew@aj.id.au>
-Date: Mon, 09 Sep 2019 11:23:57 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: linux-gpio@vger.kernel.org, "Linus Walleij" <linus.walleij@linaro.org>
-Subject: =?UTF-8?Q?Re:_[PATCH_pinctrl/fixes]_pinctrl:_aspeed:_Fix_spurious_mux_fa?=
- =?UTF-8?Q?ilures_on_the_AST2500?=
+ id 1i78v6-0005bp-MM
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 01:56:47 +0000
+Received: from fllv0034.itg.ti.com ([10.64.40.246])
+ by fllv0016.ext.ti.com (8.15.2/8.15.2) with ESMTP id x891ucNi093546;
+ Sun, 8 Sep 2019 20:56:38 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1567994198;
+ bh=lUH/u9a2zTD6UF778x023rDtCPXhaWcsnAHpbSuBK3o=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=nFoHhQ+r46Wn0jPfAF+YacwzfnNk4mm29ggO1pW5VUXM90PuQMzsYZ7PQda6sx/nm
+ wkxRkAYX44pkz21mUWS5IbKnkVQBZzd3W+oqvcyirTBTQPFuwObt+WBpGWFn15uiJw
+ eXh3LIsGFqpFkBGe4/BjbIdlFokfub5YhMT0GjiQ=
+Received: from DFLE106.ent.ti.com (dfle106.ent.ti.com [10.64.6.27])
+ by fllv0034.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x891ubNL019345
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Sun, 8 Sep 2019 20:56:38 -0500
+Received: from DFLE101.ent.ti.com (10.64.6.22) by DFLE106.ent.ti.com
+ (10.64.6.27) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Sun, 8 Sep
+ 2019 20:56:37 -0500
+Received: from lelv0326.itg.ti.com (10.180.67.84) by DFLE101.ent.ti.com
+ (10.64.6.22) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Sun, 8 Sep 2019 20:56:37 -0500
+Received: from [172.24.191.45] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by lelv0326.itg.ti.com (8.15.2/8.15.2) with ESMTP id x891uWaN094203;
+ Sun, 8 Sep 2019 20:56:32 -0500
+Subject: Re: [PATCH] bus: ti-sysc: Remove unpaired sysc_clkdm_deny_idle()
+To: Tony Lindgren <tony@atomide.com>, <linux-omap@vger.kernel.org>
+References: <20190906200154.6510-1-tony@atomide.com>
+From: Keerthy <j-keerthy@ti.com>
+Message-ID: <40e5c2a1-3682-584a-4eb9-4d96901bbfda@ti.com>
+Date: Mon, 9 Sep 2019 07:27:12 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <20190906200154.6510-1-tony@atomide.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190908_185334_908419_65FDAAA8 
-X-CRM114-Status: GOOD (  12.36  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190908_185644_865217_7BD8644C 
+X-CRM114-Status: GOOD (  16.94  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [64.147.123.21 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [198.47.19.142 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
@@ -92,6 +79,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,59 +91,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed@lists.ozlabs.org, openbmc@lists.ozlabs.org,
- linux-kernel@vger.kernel.org, John Wang <wangzqbj@inspur.com>,
- linux-arm-kernel@lists.infradead.org, Joel Stanley <joel@jms.id.au>
-Content-Type: text/plain; charset="us-ascii"
+Cc: Nishanth Menon <nm@ti.com>, Tero Kristo <t-kristo@ti.com>,
+ Vignesh Raghavendra <vigneshr@ti.com>, Dave Gerlach <d-gerlach@ti.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-kernel@vger.kernel.org,
+ "Andrew F . Davis" <afd@ti.com>, Peter Ujfalusi <peter.ujfalusi@ti.com>,
+ Faiz Abbas <faiz_abbas@ti.com>, linux-arm-kernel@lists.infradead.org,
+ Roger Quadros <rogerq@ti.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
 
-On Thu, 29 Aug 2019, at 16:47, Andrew Jeffery wrote:
-> Commit 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
-> was determined to be a partial fix to the problem of acquiring the LPC
-> Host Controller and GFX regmaps: The AST2500 pin controller may need to
-> fetch syscon regmaps during expression evaluation as well as when
-> setting mux state. For example, this case is hit by attempting to export
-> pins exposing the LPC Host Controller as GPIOs.
+On 07/09/19 1:31 AM, Tony Lindgren wrote:
+> Commit d098913a10f8 ("bus: ti-sysc: Fix clock handling for no-idle
+> quirks") fixed handling for no-idle quirk modules that are not enabled
+> by the bootloader.
 > 
-> An optional eval() hook is added to the Aspeed pinmux operation struct
-> and called from aspeed_sig_expr_eval() if the pointer is set by the
-> SoC-specific driver. This enables the AST2500 to perform the custom
-> action of acquiring its regmap dependencies as required.
+> But it also caused unpaired clockdomain calls that won't allow idling
+> the system. That's because clkdm_allow_idle_nolock() and
+> clkdm_deny_idle_nolock() have usage count with clkdm->forcewake_count.
 > 
-> John Wang tested the fix on an Inspur FP5280G2 machine (AST2500-based)
-> where the issue was found, and I've booted the fix on Witherspoon
-> (AST2500) and Palmetto (AST2400) machines, and poked at relevant pins
-> under QEMU by forcing mux configurations via devmem before exporting
-> GPIOs to exercise the driver.
-> 
-> Fixes: 7d29ed88acbb ("pinctrl: aspeed: Read and write bits in LPC and 
-> GFX controllers")
-> Fixes: 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
-> Reported-by: John Wang <wangzqbj@inspur.com>
-> Tested-by: John Wang <wangzqbj@inspur.com>
-> Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> 
-> ---
-> Hi Linus,
-> 
-> The timing of merging the AST2600 (g6) driver and 674fa8daa8c9 ("pinctrl:
-> aspeed-g5: Delay acquisition of regmaps") caused a bit of a rough spot a
-> few weeks back. This fix doesn't cause any such disruption - I've
-> developed it on top of pinctrl/fixes and back-merged the result into
-> pinctrl/devel to test for build breakage (via CONFIG_COMPILE_TEST to
-> enable all of the g4, g5 and g6 drivers). All three ASPEED pinctrl
-> drivers built successfully, so it should be enough to simply take this
-> patch through pinctrl/fixes and leave pinctrl/devel as is for the 5.4
-> merge window.
-> ---
+> Let's drop the unpaired sysc_clkdm_deny_idle() to fix idling of devices.
 
-Ping? Was hoping to get this merged before 5.3 is tagged.
+Tested-by: Keerthy <j-keerthy@ti.com>
 
-Andrew
+I believe still the previous fix [1] for nfs boot is still not on 
+linux-next. Are you planning on more testing or it will be queued as fixes?
+
+
+[1] https://lkml.org/lkml/2019/9/5/616
+
+- Keerthy
+
+> 
+> Fixes: d098913a10f8 ("bus: ti-sysc: Fix clock handling for no-idle quirks")
+> Cc: Keerthy <j-keerthy@ti.com>
+> Cc: Vignesh Raghavendra <vigneshr@ti.com>
+> Signed-off-by: Tony Lindgren <tony@atomide.com>
+> ---
+>   drivers/bus/ti-sysc.c | 1 -
+>   1 file changed, 1 deletion(-)
+> 
+> diff --git a/drivers/bus/ti-sysc.c b/drivers/bus/ti-sysc.c
+> --- a/drivers/bus/ti-sysc.c
+> +++ b/drivers/bus/ti-sysc.c
+> @@ -2363,7 +2363,6 @@ static void ti_sysc_idle(struct work_struct *work)
+>   	 */
+>   	if (ddata->cfg.quirks & (SYSC_QUIRK_NO_IDLE |
+>   				 SYSC_QUIRK_NO_IDLE_ON_INIT)) {
+> -		sysc_clkdm_deny_idle(ddata);
+>   		sysc_disable_main_clocks(ddata);
+>   		sysc_disable_opt_clocks(ddata);
+>   		sysc_clkdm_allow_idle(ddata);
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
