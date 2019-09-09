@@ -2,56 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6AC26ADC7D
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:52:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2DBE1ADC88
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 17:56:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:References:To:Subject:From:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3MJm1Ddv5DSk35tHVrnDWnnBRXkLnTtA4r0Lz6WICn0=; b=VvoPxYjnUpYwE8
-	jUVDfGs4/IYXJutvtOA1xT5ERu1X1qi6bZpihBioiqUXO38phtOqo/McyxZEm67xC+g3ohfwPt8n7
-	Bie/L/zMb06jmJBUGZLu+buOB8YcmcKUerRls3VCrk0z/mQlfMra7s88+50ezKnTkBvMVcfHBFCO4
-	QSjea2onO9UpehyZV+RJXJMGRNpmJWwdf/MScgMpsLGTA5wucjJ/7GEb2jP+RFYH3OPChQH5KtHLO
-	5knwlp/UDFZlZPdksRlfbF+qXfRGOPBk+pR4WywYGJn7gya8d7H56qhKjoc3feZMoKfQEJ5i8+uY6
-	W/4tYqBTD0M+9MJq+Axg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8+zpCTrpi6QMB+w/hs/bMgd7UkmWOFVX27J94o4WKyw=; b=G34u3JCdggwOPs
+	LNwcrd3fC8WG+6aA0tvs959g7IShXOnP0r2yJIZeMh9ny1ifamZiMD7G9idUW/NIpBh9HCANVmmd0
+	1RhmWQMpBPXRus+KlwM379KGpPtSGlUzc+ZZQu2vMcI9IBjYhgPfwuFmypU7ZqAdX0GytXj8pT48j
+	dksuwdMhj6SUHlGPQaTDusIHZ2vhUjGWQWlAebF/mHwzN2s3ro9L0h1wLI57hseYwtr6/P1v+8miB
+	Yx0Au406ht3rkmqhbPuE/KBIryMuAWxCk+NDgUOoAedUaA8c59XtuOOHXY1x17um3Lqd2R7c0mbLr
+	omvEuLbnVuEl/5cuXSyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7Lxe-0005Uv-PB; Mon, 09 Sep 2019 15:52:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7LxR-0005Ti-HF
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:52:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3DD51169E;
- Mon,  9 Sep 2019 08:51:57 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 516963F59C;
- Mon,  9 Sep 2019 08:51:56 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v5 05/11] kselftest: arm64: mangle_pstate_ssbs_regs
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190902112932.36129-6-cristian.marussi@arm.com>
- <20190904114836.GV27757@arm.com>
-Message-ID: <1794920f-84b3-a4e6-b20a-b769d95df0c8@arm.com>
-Date: Mon, 9 Sep 2019 16:51:54 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i7M21-0007H6-Og; Mon, 09 Sep 2019 15:56:45 +0000
+Received: from mail-ot1-x342.google.com ([2607:f8b0:4864:20::342])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7M1r-0007GM-Hc
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 15:56:37 +0000
+Received: by mail-ot1-x342.google.com with SMTP id g19so12887235otg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Sep 2019 08:56:34 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=kQKpAgCR0aWCUsHchRbJumhQq4BDu43empvLhB4T6fI=;
+ b=IjGuVdyhihsn0b2oYLNf4y7K69+X5aGEmAFSdm+1q0Kll52046kdiPV2LPXnxRzqTk
+ foFxeVH98++bVgffBOr5uA0D8e72l42msAAIgxqS250eBsUVorYHMEiCb5QbU7KhvetI
+ CIoYbFPIZVSUAdWVOSO4QJKBdRNBCOMG37mqOCKwdYP7ujjVSP2XNi/wftjSqM46UKsF
+ PcHNNrEbbA2V+dozh6tkDwaB3/vc2yK1mFnvw5MQAmJf14oKrmatelLOZFDK/ihq5ilB
+ w5cI5ClKRiFHrc+O95zu9WVvBymSNNT/jZaMHVC6dNkeDRahg6RN0fM7/nd7UOxdpTVH
+ hj5A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=kQKpAgCR0aWCUsHchRbJumhQq4BDu43empvLhB4T6fI=;
+ b=bonRK6qLzHfl7M4fw7vb/UWUpAgKlAQWI+RsrAIgxX/jRQtXQqcji9y94q3dvh6uF+
+ tvmqzWXg7GLncXksCp+4IqSj9pCpDiYyU8RdytGgKwhH7/dkosNuJjlk/IyNUItQ7WPD
+ Cq/aS2nvbZW4CZAkidnG7NkWp86q+wEfSGtMc3XrmxwTMfbuN+b0fs30i4OY1FXMcWx3
+ 54P8SUjJBr3Q+6f4TPQ5kttFH13+P1qjAd7lNZutgZDkkHzOVG9xupUHznFvyRJhltgX
+ kDlRBArQxPPkMsdM5xq9k4rXylC9avVsfRpYafuV7UhMycxQ7w8+XMS/odevOtVZa3ac
+ igfA==
+X-Gm-Message-State: APjAAAVHfewcOJzN/CTOBQH0LpLD2dnMtuUVmywL6hmzuUdSz9xe5gsY
+ HrYvwbruo+nkiNNZjJZtWB4vuxBrJ/Dy8OU7Cct0HQ==
+X-Google-Smtp-Source: APXvYqzbc9c18AQCh76zKydtjHclhprX3nwiBJCVCBrHjfBy36NDDmORyT9T+dl4742NmvQzsZpn5WqNHStM991/rRg=
+X-Received: by 2002:a9d:5e11:: with SMTP id d17mr20660650oti.135.1568044594249; 
+ Mon, 09 Sep 2019 08:56:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <20190904114836.GV27757@arm.com>
-Content-Language: en-US
+References: <20190909121337.27287-1-christoffer.dall@arm.com>
+ <20190909121337.27287-3-christoffer.dall@arm.com>
+ <CAFEAcA8WcQNJV27q5WJ-SMhOyjFZyh1Pz7H7duK6zW1wiAvqKQ@mail.gmail.com>
+ <20190909151631.GA26449@lvm>
+In-Reply-To: <20190909151631.GA26449@lvm>
+From: Peter Maydell <peter.maydell@linaro.org>
+Date: Mon, 9 Sep 2019 16:56:23 +0100
+Message-ID: <CAFEAcA-F3YLEQgKAvfbyGGYdzs_wYPz+QMuxk4qZd_oeU-_PBA@mail.gmail.com>
+Subject: Re: [PATCH 2/2] KVM: arm/arm64: Allow user injection of external data
+ aborts
+To: Christoffer Dall <christoffer.dall@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_085201_670865_FD74D9C4 
-X-CRM114-Status: GOOD (  40.75  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_085635_599234_7AF4065C 
+X-CRM114-Status: GOOD (  25.80  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:342 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,420 +94,126 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: =?UTF-8?Q?Daniel_P=2E_Berrang=C3=A9?= <berrange@redhat.com>,
+ Suzuki K Poulose <suzuki.poulose@arm.com>, Marc Zyngier <maz@kernel.org>,
+ James Morse <james.morse@arm.com>,
+ Julien Thierry <julien.thierry.kdev@gmail.com>,
+ Stefan Hajnoczi <stefanha@redhat.com>,
+ Heinrich Schuchardt <xypron.glpk@gmx.de>, Alexander Graf <graf@amazon.com>,
+ kvmarm@lists.cs.columbia.edu,
+ arm-mail-list <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi
+On Mon, 9 Sep 2019 at 16:16, Christoffer Dall <christoffer.dall@arm.com> wrote:
+>
+> On Mon, Sep 09, 2019 at 01:32:46PM +0100, Peter Maydell wrote:
+> > This API seems to be missing support for userspace to specify
+> > whether the ESR_ELx for the guest should have the EA bit set
+> > (and more generally other syndrome/fault status bits). I think
+> > if we have an API for "KVM_EXIT_MMIO but the access failed"
+> > then it should either (a) be architecture agnostic, since
+> > pretty much any architecture might have a concept of "access
+> > gave some bus-error-type failure" and it would be nice if userspace
+> > didn't have to special case them all in arch-specific code,
+> > or (b) have the same flexibility for specifying exactly what
+> > kind of fault as the architecture does. This sort of seems to
+> > fall between two stools. (My ideal for KVM_EXIT_MMIO faults
+> > would be a generic API which included space for optional
+> > arch-specific info, which for Arm would pretty much just be
+> > the EA bit.)
+>
+> I'm not sure I understand exactly what would be improved by making this
+> either more architecture speific or more architecture generic.  The
+> EA bit will always be set, that's why the field is called
+> 'ext_dabt_pending'.
 
-On 04/09/2019 12:48, Dave Martin wrote:
-> On Mon, Sep 02, 2019 at 12:29:26pm +0100, Cristian Marussi wrote:
->> Add a simple mangle testcase which messes with the ucontext_t from within
->> the signal handler, trying to set the PSTATE SSBS bit.
->> Expect SIGILL if SSBS feature is unsupported or that, on test PASS, the
->> value set in PSTATE.SSBS in the signal frame is preserved by sigreturn.
->>
->> Additionally, in order to support this test specific needs:
->> - extend signal testing framework to allow the definition of a custom per
->>   test initialization function to be run at the end of test setup.
->> - introduced a set_regval() helper to set system register values in a
->>   toolchain independent way.
->> - introduce also a new common utility function: get_current_context()
->>   which can be used to grab a ucontext without the help of libc, and
->>   detect if such ucontext has been actively used to jump back into it.
->>
->> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
->> ---
->> v3 --> v4
->> - fix commit message
->> - missing include signal.h
->> - added .init per-test init-func
->> - added set_regval() helper
->> - added SSBS clear to 0 custom .init function
->> - removed volatile qualifier associated with sig_atomic_t data
->> - added dsb inside handler to ensure the writes related to the
->>   grabbed ucontext have completed
->> - added test description
->> ---
->>  .../selftests/arm64/signal/test_signals.h     | 20 +++-
->>  .../arm64/signal/test_signals_utils.c         | 98 +++++++++++++++++++
->>  .../arm64/signal/test_signals_utils.h         |  2 +
->>  .../testcases/mangle_pstate_ssbs_regs.c       | 69 +++++++++++++
->>  4 files changed, 184 insertions(+), 5 deletions(-)
->>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->>
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals.h b/tools/testing/selftests/arm64/signal/test_signals.h
->> index a1cf69997604..0767e27fbe78 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals.h
->> +++ b/tools/testing/selftests/arm64/signal/test_signals.h
->> @@ -27,6 +27,14 @@
->>  	: "memory");					\
->>  }
->>  
->> +#define set_regval(regname, in)				\
->> +{							\
->> +	asm volatile("msr " __stringify(regname) ", %0" \
->> +	:						\
->> +	: "r" (in)					\
->> +	: "memory");					\
->> +}
->> +
->>  /* Regs encoding and masks naming copied in from sysreg.h */
->>  #define SYS_ID_AA64MMFR1_EL1	S3_0_C0_C7_1	/* MRS Emulated */
->>  #define SYS_ID_AA64MMFR2_EL1	S3_0_C0_C7_2	/* MRS Emulated */
->> @@ -89,12 +97,16 @@ struct tdescr {
->>  	/* optional sa_flags for the installed handler */
->>  	int		sa_flags;
->>  	ucontext_t	saved_uc;
->> -
->> -	/* a custom setup function to be called before test starts */
->> +	/* used by get_current_ctx() */
->> +	size_t		live_sz;
->> +	ucontext_t	*live_uc;
->> +	sig_atomic_t	live_uc_valid;
->> +	/* a custom setup: called alternatively to default_setup */
->>  	int (*setup)(struct tdescr *td);
->> +	/* a custom init: called by default test initialization */
->> +	void (*init)(struct tdescr *td);
->>  	/* a custom cleanup function called before test exits */
->>  	void (*cleanup)(struct tdescr *td);
->> -
->>  	/* an optional function to be used as a trigger for test starting */
->>  	int (*trigger)(struct tdescr *td);
->>  	/*
->> @@ -102,10 +114,8 @@ struct tdescr {
->>  	 * presence of the trigger function above; this is mandatory
->>  	 */
->>  	int (*run)(struct tdescr *td, siginfo_t *si, ucontext_t *uc);
->> -
->>  	/* an optional function for custom results' processing */
->>  	void (*check_result)(struct tdescr *td);
->> -
->>  	void *priv;
->>  };
->>  
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
->> index e2a5f37e6ad3..c6fdcb23f246 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.c
->> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
->> @@ -11,12 +11,16 @@
->>  #include <linux/auxvec.h>
->>  #include <ucontext.h>
->>  
->> +#include <asm/unistd.h>
->> +
->>  #include "test_signals.h"
->>  #include "test_signals_utils.h"
->>  #include "testcases/testcases.h"
->>  
->>  extern struct tdescr *current;
->>  
->> +static int sig_copyctx = SIGUSR2;
->> +
->>  static char *feats_store[FMAX_END] = {
->>  	" SSBS ",
->>  	" PAN ",
->> @@ -43,6 +47,81 @@ static inline char *feats_to_string(unsigned long feats)
->>  	return feats_string;
->>  }
->>  
->> +/*
->> + * Obtaining a valid and full-blown ucontext_t from userspace is tricky:
->> + * libc getcontext does() not save all the regs and messes with some of
->> + * them (pstate value in particular is not reliable).
->> + * Here we use a service signal to grab the ucontext_t from inside a
->> + * dedicated signal handler, since there, it is populated by Kernel
->> + * itself in setup_sigframe(). The grabbed context is then stored and
->> + * made available in td->live_uc.
->> + *
->> + * Anyway this function really serves a dual purpose:
->> + *
->> + * 1. grab a valid sigcontext into td->live_uc for result analysis: in
->> + * such case it returns 1.
->> + *
->> + * 2. detect if somehow a previously grabbed live_uc context has been
->> + * used actively with a sigreturn: in such a case the execution would have
->> + * magically resumed in the middle of the function itself (seen_already==1):
->> + * in such a case return 0, since in fact we have not just simply grabbed
->> + * the context.
->> + *
->> + * This latter case is useful to detect when a fake_sigreturn test-case has
->> + * unexpectedly survived without hittig a SEGV.
->> + */
->> +bool get_current_context(struct tdescr *td, ucontext_t *dest_uc)
->> +{
->> +	static sig_atomic_t seen_already;
->> +
->> +	assert(td && dest_uc);
->> +	/* it's a genuine invocation..reinit */
->> +	seen_already = 0;
->> +	td->live_uc_valid = 0;
->> +	td->live_sz = sizeof(*dest_uc);
->> +	memset(dest_uc, 0x00, td->live_sz);
->> +	td->live_uc = dest_uc;
->> +	/*
->> +	 * Grab ucontext_t triggering a signal...
->> +	 * ASM equivalent of raise(sig_copyctx);
->> +	 *
->> +	 * Note that:
->> +	 * - live_uc_valid is declared sig_atomic_t in struct tdescr
->> +	 *   since it will be changed inside the sig_copyctx handler
->> +	 * - the kill() syscall invocation returns only after any possible
->> +	 *   registered signal handler for the invoked signal has returned,
->> +	 *   so that live_uc_valid flag is surely up to date when this
->> +	 *   function return it.
->> +	 * - the additional 'memory' clobber is there to avoid possible
->> +	 *   compiler's assumption on live_uc_valid, seen-already and
->> +	 *   the content pointed by dest_uc, which are all changed inside
->> +	 *   the signal handler, without resorting to the volatile qualifier
->> +	 *   (and keeping quiet checkpatch.pl)
->> +	 */
->> +	asm volatile ("mov x8, %0\n\t"
->> +		      "svc #0\n\t"
->> +		      "mov x1, %1\n\t"
->> +		      "mov x8, %2\n\t"
->> +		      "svc #0"
->> +		      :
->> +		      : "i" (__NR_getpid), "r" (sig_copyctx), "i" (__NR_kill)
->> +		      : "x1", "x8", "x0", "memory");
->> +	/*
->> +	 * If we get here with seen_already==1 it implies the td->live_uc
->> +	 * context has been used to get back here....this probably means
->> +	 * a test has failed to cause a SEGV...anyway the live_uc has not
->> +	 * just been acquired...so return 0
->> +	 */
->> +	if (seen_already) {
->> +		fprintf(stdout,
->> +			"Successful sigreturn detected: live_uc is stale !\n");
->> +		return 0;
->> +	}
->> +	seen_already = 1;
->> +
->> +	return td->live_uc_valid;
->> +}
->> +
->>  static void unblock_signal(int signum)
->>  {
->>  	sigset_t sset;
->> @@ -124,6 +203,17 @@ static void default_handler(int signum, siginfo_t *si, void *uc)
->>  		 * to terminate immediately exiting straight away
->>  		 */
->>  		default_result(current, 1);
->> +	} else if (signum == sig_copyctx && current->live_uc) {
->> +		memcpy(current->live_uc, uc, current->live_sz);
->> +		ASSERT_GOOD_CONTEXT(current->live_uc);
->> +		current->live_uc_valid = 1;
->> +		/*
->> +		 * Ensure above writes have completed before signal
->> +		 * handler terminates
->> +		 */
->> +		asm volatile ("dsb sy" ::: "memory");
-> 
-> The dsb doesn't help here: this has no effect on how the compiler caches
-> variables in registers etc.
-> 
-> Overall, I think some details need a bit of a rethink here.
-> 
+ESR_EL1.EA doesn't mean "this is an external abort". It means
+"given that this is an external abort as indicated by ESR_EL1.DFSC,
+specify the external abort type". Traditionally this is 0 for
+an AXI bus Decode error ("interconnect says there's nothing there")
+and 1 for a Slave error ("there's something there but it told us
+to go away"), though architecturally it's specified as impdef
+because not everybody uses AXI. In QEMU we track the difference
+between these two things and for TCG will raise external aborts
+with the correct EA bit value.
 
-Beside the dsb which I understand is useless, I thought the memory clobber
-could have helped at least with the compiler optimization/re-ordering issues
-while avoiding the volatile. (but not fully)
+> I thought as per the previous discussion, that we were specifically
+> trying to avoid userspace emulating the exception in detail, so I
+> designed this to provide the minimal effort API for userspace.
+>
+> Since we already have an architecture specific ioctl, kvm_vcpu_events, I
+> don't think we're painting ourselves into a corner by using that.  Is a
+> natural consequence of what you're saying not that we should try to make
+> that whole call architecture generic?
+>
+> Unless we already have specific examples of how other architectures
+> would want to use something like this, and given the impact of this
+> patch, I'm not sure it's worth trying to speculate about that.
 
-> We need some way to ensure coherency of accesses to variables around
-> and inside the signal handler here, but since we're running in a single
-> thread that may be interrupted by a signal handler (running in the same
-> thread), it's compiler<->compiler coherency that's the issue here, not
-> cpu<->cpu or cpu<->device coherency.
-> 
-> There may also be atomicity concerns, since the compiler might move
-> stuff across and/or duplicate or tear reads/writes around the asm where
-> the signal is delivered.
-> 
-> The classic solution to these problems is to use volatile, but this
-> is a blunt tool and you often end up having to mark more objects
-> volatile than you really want to in order to ensure correctness.  The
-> ordering behaviour of accesses to volatiles is also ill-specified for
-> accesses made in different threads.
-> 
-> That said, efficiency is of no concern here and we're single-threaded,
-> so a blunt, simple tool may still be adequate.
-> 
-I'll revert back to use volatile despite checkpatch complaints, and sig_atomic_t
-where needed, and add an output param in the inline asm for *dest_uc to avoid
-compiler making assumptions about it
+In QEMU, use of a generic API would look something like
+this in kvm-all.c:
 
-> 
-> Another issue is that nothing stops the stack frame the captured SP
-> points to from disappearing between get_current_context() and the
-> fake_sigreturn() that tries to jump back to it.
-> 
-> To avoid this issue, we'd probably need to inline more of
-> get_current_context(), i.e., turn it into a macro.
-> 
+        case KVM_EXIT_MMIO:
+            DPRINTF("handle_mmio\n");
+            /* Called outside BQL */
+            MemTxResult res;
 
-I made it a static __always_inline.
+            res = address_space_rw(&address_space_memory,
+                                   run->mmio.phys_addr, attrs,
+                                   run->mmio.data,
+                                   run->mmio.len,
+                                   run->mmio.is_write);
+            if (res != MEMTX_OK) {
+                /* tell the kernel the access failed, eg
+                 * by updating the kvm_run struct to say so
+                 */
+            } else {
+                /* access passed, we have updated the kvm_run
+                 * struct's mmio subfield, proceed as usual
+                 */
+            }
+            ret = 0;
+            break;
 
-Moreover I moved away from kill(mypid, USR1) approach since the syscall path
-will zero the SVE regs before grabbing the sigframe
-(and is bad for future signal/SVE tests).
+[this is exactly the current QEMU code except that today
+we throw away the 'res' that tells us if the transaction
+succeeded because we have no way to report it to KVM and
+effectively always RAZ/WI the access.]
 
-I'm instead now using brk and catch the SIGTRAP (picked form the arm64/signal
-SVE tests patch still to be published)
+This is nice because you don't need anything here that has to do
+"bail out to architecture specific handling of anything",
+you just say "nope, the access failed", and let the kernel handle
+that however the CPU would handle it. It just immediately works
+for all architectures on the userspace side (assuming the kernel
+defaults to not actually trying to report an abort to the guest
+if nobody's implemented that on the kernel side, which is exactly
+what happens today where there's no way to report the error for
+any architecture).
+The downside is that you lose the ability to be more specific about
+architecture-specific fine distinctions like decode errors vs slave
+errors, though.
 
->> +		fprintf(stderr,
->> +			"GOOD CONTEXT grabbed from sig_copyctx handler\n");
->>  	} else {
->>  		if (signum == current->sig_unsupp && !are_feats_ok(current)) {
->>  			fprintf(stderr,
->> @@ -222,7 +312,15 @@ static int test_init(struct tdescr *td)
->>  			!feats_ok ? "NOT " : "");
->>  	}
->>  
->> +	if (td->sig_trig == sig_copyctx)
->> +		sig_copyctx = SIGUSR1;
->> +	unblock_signal(sig_copyctx);
->> +
->> +	/* Perform test specific additional initialization */
->> +	if (td->init)
->> +		td->init(td);
->>  	td->initialized = 1;
->> +
->>  	return 1;
->>  }
->>  
->> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> index 8658d1a7d4b9..ce35be8ebc8e 100644
->> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
->> @@ -10,4 +10,6 @@ int test_setup(struct tdescr *td);
->>  void test_cleanup(struct tdescr *td);
->>  int test_run(struct tdescr *td);
->>  void test_result(struct tdescr *td);
->> +
->> +bool get_current_context(struct tdescr *td, ucontext_t *dest_uc);
->>  #endif
->> diff --git a/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> new file mode 100644
->> index 000000000000..15e6f62512d5
->> --- /dev/null
->> +++ b/tools/testing/selftests/arm64/signal/testcases/mangle_pstate_ssbs_regs.c
->> @@ -0,0 +1,69 @@
->> +// SPDX-License-Identifier: GPL-2.0
->> +/*
->> + * Copyright (C) 2019 ARM Limited
->> + *
->> + * Try to mangle the ucontext from inside a signal handler, setting the
->> + * SSBS bit to 1 and veryfing that such modification is preserved.
->> + */
->> +
->> +#include <stdio.h>
->> +#include <signal.h>
->> +#include <ucontext.h>
->> +
->> +#include "test_signals_utils.h"
->> +#include "testcases.h"
->> +
->> +static void mangle_invalid_pstate_ssbs_init(struct tdescr *td)
->> +{
->> +	fprintf(stderr, "Clearing SSBS to 0\n");
->> +	set_regval(SSBS_SYSREG, 0);
->> +}
->> +
->> +static int mangle_invalid_pstate_ssbs_run(struct tdescr *td,
->> +					  siginfo_t *si, ucontext_t *uc)
->> +{
->> +	ASSERT_GOOD_CONTEXT(uc);
->> +
->> +	/* set bit value */
->> +	uc->uc_mcontext.pstate |= PSR_SSBS_BIT;
-> 
-> Can we check that uc->uc_mcontext.pstate & PSR_SSBS_BIT is initially 0?
-> 
-> If not, it suggests either a test bug, or modification of the SSBS
-> flag by other C code before the test signal was delivered.
-> 
-Here the situation is a bit tricky: architecture defines three levels of
-SSBS support:
- 1.  SSBS bit + MRS SSBS instruction or
- 2.  SSBS bit ONLY
- 3.  no support
+Or you could have an arm-specific API that does care about
+fine details like the EA bit (and maybe also other ESR_ELx
+fields); that has the downside that userspace needs to
+make the handling of error returns from "handle this MMIO
+access" architecture specific, but you get architecture-specific
+benefits as a result. (Preferably the architecture-specific
+APIs should at least be basically the same, eg same ioctl
+or same bit of the kvm_run struct being updated with some parts
+being arch-specific data, rather than 3 different mechanisms.)
 
-HW_SSBS capability is reported as supported by kernel only for full support (1.)
-Otherwise it is reported as unsupported, even if in 2. the PSTATE.SSBS bit is working
-and I can look it up using util get_current_context().
+Having an API that is architecture specific but doesn't actually
+let you define any of the architecture-specific aspects of
+what the abort might imply seems like the worst of both worlds.
+If all we can say is "this aborted" then we might as well have
+the API be generic.
 
-Moreover the test is supposed to check that the sigreturn Kernel path does NOT clear
-improperly the SSBS bit while returning: so as long as we can set the SSBS bit in uc PSTATE
-we can check if it is cleared.
-
-So in order to gather as much info as possible from the test without incurring in unneeded
-SIGILL (attempting to use MRS), my new approach is:
-
-- test anyway no matter if SSBS is supported: check that bit is NOT cleared on sigreturn
-- use MRS clear to 0 on test_init only if SSBS declared as supported
-- abort when PSTATE.SSBS bit is not cleared on test start (trigger) ONLY if SSBS was declared supported  (and so cleared in test_init)
-- check test result using:
-  - MRS SSBS if HW_SSBS supported
-  - PSTATE.SSBS get_current_context if HW_SSBS NOT supported
-  - print out always PSTATE retrieved values
-
-This way I was able to avoid SIGILL and properly test at any level of support (1,2,3)
-both the PASS and the FAIL path (using a Kernel which does NOT  properly preserve the
-SSBS bit)
-
-
->> +	fprintf(stderr, "SSBS set to 1 -- PSTATE: 0x%016llX\n",
->> +		uc->uc_mcontext.pstate);
->> +	/* Save after mangling...it should be preserved */
->> +	td->saved_uc = *uc;
->> +
->> +	return 1;
->> +}
->> +
->> +static void pstate_ssbs_bit_checks(struct tdescr *td)
->> +{
->> +	uint64_t val = 0;
->> +	ucontext_t uc;
->> +
->> +	/* This check reports some result even if MRS SSBS unsupported */
->> +	if (get_current_context(td, &uc))
->> +		fprintf(stderr,
->> +			"INFO: live_uc - got PSTATE: 0x%016llX -> SSBS %s\n",
->> +			uc.uc_mcontext.pstate,
->> +			(td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT) ==
->> +			(uc.uc_mcontext.pstate & PSR_SSBS_BIT) ?
->> +			"PRESERVED" : "CLEARED");
->> +
->> +	fprintf(stderr, "Checking with MRS SSBS...\n");
->> +	get_regval(SSBS_SYSREG, val);
->> +	fprintf(stderr, "INFO: MRS SSBS - got: 0x%016lX\n", val);
->> +	/* pass when preserved */
->> +	td->pass = (val & PSR_SSBS_BIT) ==
->> +		   (td->saved_uc.uc_mcontext.pstate & PSR_SSBS_BIT);
->> +}
->> +
->> +struct tdescr tde = {
->> +		.sanity_disabled = true,
->> +		.name = "MANGLE_PSTATE_SSBS_REGS",
->> +		.descr = "Mangling uc_mcontext changing SSBS.(PRESERVE)",
-> 
-> Can we come up with a clearer description here?  I'm not sure how to
-> read this.
-> 
-
-Ok..I was trying to please checkpatch.
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
-
-Cheers
-
-Cristian
+thanks
+-- PMM
 
 _______________________________________________
 linux-arm-kernel mailing list
