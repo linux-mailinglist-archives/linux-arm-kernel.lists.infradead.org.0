@@ -2,89 +2,56 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A1DD1ADDFC
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 19:24:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 070ECADE09
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 19:31:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TbgSNpDONwSZjSZl9mDugh/EQHffCZSxngyeY4WVeX0=; b=TCMpZSRP0wFdFg
-	cnMNVrEKoyiHgX4GBtH9KBnmkX0SO6tDWmxVdyLRR1wRv8fO3oZMYWlNGsiMsCCnu7Q5PeMMRT+JF
-	2PQQamaM4SsKckIxId3WAuBDrUzKq2fRBK5BP67pel1+YNfSBqATAwLf4/iGVtcIB1ryEPHqKw2dq
-	hzx965LfZ7xL4opWIxe1blcm+2mUqcUcXuF4oTSYYedBgz+FLHxj9+A9NuMPmAyT636GaA9de3wl7
-	HziK8DBJaa35uKm76cIVCN9284Xmh2viYFX48GPJr6PsazmrEyw2BNsMqERb75Pr/zsmSaQ/HpxBO
-	GrNDJL2C7ZeYecD5nfzQ==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U5DcrnW+Z3K7VMDrzsWCd0PA4Xd8b7OKdn40mlopXS8=; b=eQlFLLGnPMLpgZ
+	l9tuEPkQRkCHQ+rv898Jq57Kcc8PdmexPg90eH4lB1cD0BKN4lLNLKMTkmPgswV9rwKcgsrmFY134
+	I7X8Cd5Kf8WSA6jjwAT1Ty38P9iSlSjpByXkfVzpyx0zFGumQDTsq+Jse2nVJahilBe623iFkPS+1
+	tVs1k6DFv2nsy/WGFkeepGQgHhmmMAtljUn9l+jvauxQlo7zGGiA7w0b+nrfoCfcn0ia1Sx1Cdyd5
+	cmBgyRvTUiJbsAvzGWksXGF+BoU6kCG/GR7n+HRVnHUP7hfFC/eFEeqhaltdqavaBO9xLmDK5fG4R
+	u62Qtu2c+tfkQGs2N3ng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7NPE-00087j-64; Mon, 09 Sep 2019 17:24:48 +0000
-Received: from mail-ot1-x343.google.com ([2607:f8b0:4864:20::343])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7NOy-000862-0T; Mon, 09 Sep 2019 17:24:33 +0000
-Received: by mail-ot1-x343.google.com with SMTP id b2so13313641otq.10;
- Mon, 09 Sep 2019 10:24:31 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=6Wt1hD/MRsQkqqV33+GUQZHencJLKuHpXLwImoJRYqM=;
- b=YHy1qrMkczFFQ67ktlriXxOyE29+Bp3XIJ4JoIRyg3btuchKYh3OUMaKdFI2UjMXQD
- RrRefDltC3kmYcSXFqCYXX8o/i3xwLUGhJKwxrsdjspUD65Ya7wHxSH6XKvx5U4vSRBa
- R+hO9dTTrFgUaQ+8YXuQHV1dOLkj8osB0WquDFeaCIDRWie5SvRJz1hmUQWSbHQpxDvZ
- A16PEZ+me5Sa+F/aHm8nFPxB7n76Bj7m6w4LF8oG92BkZSQ/xLXI8oovo5IF8eUcl5z7
- 3QVyGjBIJpEK3RoUqlvuJqdp4nosMcmKI4FVpRdJSOYNH5QgZSq9OSHNmvPBLS/uFN0G
- HJaA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=6Wt1hD/MRsQkqqV33+GUQZHencJLKuHpXLwImoJRYqM=;
- b=hzrZwW2bkkMVVijWT5jnixqsx9si+MC4PHUvGsdnv3Nx0Bj6+eL6tv0ztjj/sdNG/c
- CrKsDJTcTpH+k4uoTWX/b5FhW/S3euQoyszdYdRcnhHO0WZ8Td8B9Uan08KtUEn8ikIG
- D4Y4tShFHJvcL7O+LX5XkruoHnX8S00v/XwKp0ueZSu6ssGdCMecqq9poDC6zWz4EZEi
- up9yMyX69z6QWJYy4EBbqZ2rsFezo+Iy2SN+bA/zi6EaaDrHInbacHi1L4EtmWWicYCy
- uZGXS+3XTkfgWXDmd4FrJoDOrJcpyUWmC0OdqO+ntWsRxrU2Wmb0wfaVOqbhanwIC51P
- UWGA==
-X-Gm-Message-State: APjAAAWaq0q0lxygE7sIHBxAtfeEL3qw3xnI619jtnzWUiVveaiP9vyo
- g7ruejxKqdN/I1adFbQwrGezafo/uv8uTI8+Ezc=
-X-Google-Smtp-Source: APXvYqx/wYKZsFCWHqjgcQBulyAf2hyBig9egcPMosBzQP1ky90Mmva1Ji9X/RYvJZ4uQspim2j2H9duJRW0qz6v1a8=
-X-Received: by 2002:a9d:5c0f:: with SMTP id o15mr21270768otk.81.1568049870233; 
- Mon, 09 Sep 2019 10:24:30 -0700 (PDT)
+	id 1i7NVz-0002Xo-3h; Mon, 09 Sep 2019 17:31:47 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7NVj-0002XE-Lh
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 17:31:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 195AF1000;
+ Mon,  9 Sep 2019 10:31:31 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 248EA3F71F;
+ Mon,  9 Sep 2019 10:31:30 -0700 (PDT)
+Subject: Re: [PATCH v5 06/11] kselftest: arm64: fake_sigreturn_bad_magic
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190902112932.36129-7-cristian.marussi@arm.com>
+ <20190904114845.GW27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <44186921-7dc7-451d-2d04-6424a4725ccb@arm.com>
+Date: Mon, 9 Sep 2019 18:31:28 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
- <1567667251-33466-5-git-send-email-jianxin.pan@amlogic.com>
- <CAFBinCBSmW4y-Dz7EkJMV8HOU4k6Z0G-K6T77XnVrHyubaSsdg@mail.gmail.com>
- <be032a85-b60d-f7f0-8404-b27784d809df@amlogic.com>
- <CAFBinCD7gFzOsmZCB8T1KJKVsgL7WMhoEkj3dRzyqwAnjC0CNA@mail.gmail.com>
- <a82336e2-44df-5682-1c86-daf8a8448d30@amlogic.com>
-In-Reply-To: <a82336e2-44df-5682-1c86-daf8a8448d30@amlogic.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Mon, 9 Sep 2019 19:24:19 +0200
-Message-ID: <CAFBinCAJG4=M3BSXfREGU+iadMPkc7=yt3AdcqA1KAhQx6Wh9w@mail.gmail.com>
-Subject: Re: [PATCH v2 4/4] arm64: dts: add support for A1 based Amlogic AD401
-To: Jianxin Pan <jianxin.pan@amlogic.com>
+In-Reply-To: <20190904114845.GW27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_102432_079276_45977A85 
-X-CRM114-Status: GOOD (  15.81  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190909_103131_806310_5ECC6CCC 
+X-CRM114-Status: GOOD (  31.47  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:343 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,56 +63,362 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Qiufang Dai <qiufang.dai@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Tao Zeng <tao.zeng@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Jianxin,
+Hi
 
-On Mon, Sep 9, 2019 at 2:03 PM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
->
-> Hi Martin,
->
-> On 2019/9/7 23:02, Martin Blumenstingl wrote:
-> > Hi Jianxin,
-> >
-> > On Fri, Sep 6, 2019 at 7:58 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
-> > [...]
-> >>> also I'm a bit surprised to see no busses (like aobus, cbus, periphs, ...) here
-> >>> aren't there any busses defined in the A1 SoC implementation or are
-> >>> were you planning to add them later?
-> >> Unlike previous series,there is no Cortex-M3 AO CPU in A1, and there is no AO/EE power domain.
-> >> Most of the registers are on the apb_32b bus.  aobus, cbus and periphs are not used in A1.
-> > OK, thank you for the explanation
-> > since you're going to re-send the patch anyways: can you please
-> > include the apb_32b bus?
-> > all other upstream Amlogic .dts are using the bus definitions, so that
-> > will make A1 consistent with the other SoCs
-> In A1 (and the later C1), BUS is not mentioned in the memmap and register spec.
-> Registers are organized and grouped by functions, and we can not find information about buses from the SoC document.
-do you know why the busses are not part of the documentation?
+On 04/09/2019 12:48, Dave Martin wrote:
+> On Mon, Sep 02, 2019 at 12:29:27pm +0100, Cristian Marussi wrote:
+>> Add a simple fake_sigreturn testcase which builds a ucontext_t with a bad
+>> magic header and place it onto the stack. Expects a SIGSEGV on test PASS.
+>>
+>> Introduce a common utility assembly trampoline function to invoke a
+>> sigreturn while placing the provided sigframe at wanted alignment and
+>> also an helper to make space when needed inside the sigframe reserved
+>> area.
+>>
+>> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+>> ---
+>> v3 --> v4
+>> - fix commit
+>> - fix signal.S, handle misalign requests too
+>> - remove unneeded comments
+>> - add signal.h include
+>> - added get_starting_head() helper
+>> - added test description
+>> ---
+>>  tools/testing/selftests/arm64/signal/Makefile |  2 +-
+>>  .../testing/selftests/arm64/signal/signals.S  | 62 +++++++++++++++++++
+>>  .../arm64/signal/test_signals_utils.h         |  1 +
+>>  .../testcases/fake_sigreturn_bad_magic.c      | 54 ++++++++++++++++
+>>  .../arm64/signal/testcases/testcases.c        | 28 +++++++++
+>>  .../arm64/signal/testcases/testcases.h        |  4 ++
+>>  6 files changed, 150 insertions(+), 1 deletion(-)
+>>  create mode 100644 tools/testing/selftests/arm64/signal/signals.S
+>>  create mode 100644 tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+>>
+>> diff --git a/tools/testing/selftests/arm64/signal/Makefile b/tools/testing/selftests/arm64/signal/Makefile
+>> index f78f5190e3d4..b497cfea4643 100644
+>> --- a/tools/testing/selftests/arm64/signal/Makefile
+>> +++ b/tools/testing/selftests/arm64/signal/Makefile
+>> @@ -28,5 +28,5 @@ clean:
+>>  # Common test-unit targets to build common-layout test-cases executables
+>>  # Needs secondary expansion to properly include the testcase c-file in pre-reqs
+>>  .SECONDEXPANSION:
+>> -$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
+>> +$(PROGS): test_signals.c test_signals_utils.c testcases/testcases.c signals.S $$@.c test_signals.h test_signals_utils.h testcases/testcases.h
+>>  	$(CC) $(CFLAGS) $^ -o $@
+>> diff --git a/tools/testing/selftests/arm64/signal/signals.S b/tools/testing/selftests/arm64/signal/signals.S
+>> new file mode 100644
+>> index 000000000000..b89fec0d5ba0
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/signals.S
+>> @@ -0,0 +1,62 @@
+>> +/* SPDX-License-Identifier: GPL-2.0 */
+>> +/* Copyright (C) 2019 ARM Limited */
+>> +
+>> +#include <asm/unistd.h>
+>> +
+>> +.section        .rodata, "a"
+>> +call_fmt:
+>> +	.asciz "Calling sigreturn with fake sigframe sized:%zd at SP @%08lX\n"
+>> +
+>> +.text
+>> +
+>> +.globl fake_sigreturn
+>> +
+>> +/*	fake_sigreturn	x0:&sigframe,  x1:sigframe_size,  x2:misalign_bytes */
+>> +fake_sigreturn:
+> 
+> Nit: the "bl printf" later on destroys lr.
+> 
+> This isn't a problem, since the function never tries to return anyway --
+> if things go wrong you just "b .".
+> 
+> But it may be helpful for debug purposes to at least create a frame
+> record, e.g.:
+> 
+> 	stp	x29, x30, [sp, #-16]!
+> 	mov	x29, sp
+> 
+> before doing anything else.
+> 
+ok
 
-> Maybe it's better to remove bus definitions for these chips.
-my understanding is that devicetree describes the hardware
-so if there's a bus in hardware (that we know about) then we should
-describe it in devicetree
+>> +	mov x20, x0
+>> +	mov x21, x1
+>> +	mov x22, x2
+>> +	mov x23, sp
+> 
+> Nit: to follow the conventional asm style for arm64 kernel code, can you
+> format lines as
+> 
+> <TAB>	op<TAB>	operands
+> 
+ok
 
-personally I think busses also make the .dts easier to read:
-instead of a huge .dts with all nodes on one level it's split into
-multiple smaller sub-nodes - thus making it easier to keep track of
-"where am I in this file".
+>> +
+>> +	/* create space on the stack for fake sigframe 16 bytes-aligned */
+>> +	add x0, x21, #16
+>> +	bic x0, x0, #15
+>> +	sub x23, x23, x0
+>> +	/* any misalignment requested ? */
+>> +	add x23, x23, x22
+> 
+> Aren't we actually reducing the allocation here, rather than increasing it?
+> 
+For the misalignment bytes if any yes...
 
+> Doing something like this may work to allocate guaranteed sufficient
+> space:
+> 
+> 	add	x0, x21, x22
+> 	add	x0, x0, #15
+> 	bic	x0, x0, #15 /* round_up(sigframe_size + misglian_bytes, 16) */
+> 	sub	sp, sp, x0
+> 	add	x23, sp, x22 /* new sigframe base with misaligment */
+> 
+> (You can drop the mov into x23 above in your function prologue if you
+> code it this way.)
+> 
+ok...but...shouldn't be 
 
-Martin
+add x0, x0, #16
+
+before 
+
+bic x-, x0, #15
+
+instead of adding #15 ?
+
+>> +
+>> +	ldr x0, =call_fmt
+>> +	mov x1, x21
+>> +	mov x2, x23
+>> +	bl printf
+>> +
+>> +	mov sp, x23
+> 
+> AAPCS64 requires sp to be 16-byte aligned at function boundaries, so 
+> we may get stack alignments faults in mempcy() here.  Possibly these
+> can be confused with test failure SEGVs (I can't remember offhand how
+> stack alignment faults are supported).
+> 
+Didn't know about function boundaries requirements.
+
+> Coding something like what I have above to guarantee stack alignment
+> should avoid this.
+> 
+
+Nice I'll do.
+
+>> +	/* now fill it with the provided content... */
+>> +	mov x0, sp
+> 
+> With my version this would be mov x0, x23
+> 
+ok
+
+>> +	mov x1, x20
+>> +	mov x2, x21
+>> +	bl memcpy
+>> +
+>> +	/*
+>> +	 * Here saving a last minute SP to current->token acts as a marker:
+>> +	 * if we got here, we are successfully faking a sigreturn; in other
+>> +	 * words we are sure no bad fatal signal has been raised till now
+>> +	 * for unrelated reasons, so we should consider the possibly observed
+>> +	 * fatal signal like SEGV coming from Kernel restore_sigframe() and
+>> +	 * triggered as expected from our test-case.
+>> +	 * For simplicity this assumes that current field 'token' is laid out
+>> +	 * as first in struct tdescr
+>> +	 */
+>> +	ldr x0, current
+> 
+> Nit: it probably doesn't matter since this will be a small binary
+> after linking, but to avoid possible fixup errors during linking you
+> could also do:
+> 
+> 	adrp	x0, current
+> 	ldr	x0, [x0, #:lo12:current]
+> 
+> This raises the addressing range from 0.5 MB or so to a few GB, making
+> link errors much more unlikely.
+> 
+Ok...I'll fix this nitpick once I'll have understood it :D
+
+>> +	str x23, [x0]
+>> +	/* SP is already pointing back to the just built fake sigframe here */
+>> +	mov x8, #__NR_rt_sigreturn
+> 
+> And finally we would mov sp, x23 here.
+> 
+Yes
+
+>> +	svc #0
+>> +
+>> +	/*
+>> +	 * Above sigreturn should not return...looping here leads to a timeout
+>> +	 * and ensure proper and clean test failure, instead of jumping around
+>> +	 * on a potentially corrupted stack.
+>> +	 */
+>> +	b .
+>> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.h b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> index ce35be8ebc8e..68930f1e46e5 100644
+>> --- a/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.h
+>> @@ -12,4 +12,5 @@ int test_run(struct tdescr *td);
+>>  void test_result(struct tdescr *td);
+>>  
+>>  bool get_current_context(struct tdescr *td, ucontext_t *dest_uc);
+>> +int fake_sigreturn(void *sigframe, size_t sz, int misalign_bytes);
+>>  #endif
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+>> new file mode 100644
+>> index 000000000000..7fb700b9801b
+>> --- /dev/null
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/fake_sigreturn_bad_magic.c
+>> @@ -0,0 +1,54 @@
+>> +// SPDX-License-Identifier: GPL-2.0
+>> +/*
+>> + * Copyright (C) 2019 ARM Limited
+>> + *
+>> + * Place a fake sigframe on the stack including a BAD Unknown magic
+>> + * record: on sigreturn Kernel must spot this attempt and the test
+>> + * case is expected to be terminated via SEGV.
+>> + */
+>> +
+>> +#include <signal.h>
+>> +#include <ucontext.h>
+>> +
+>> +#include "test_signals_utils.h"
+>> +#include "testcases.h"
+>> +
+>> +struct fake_sigframe sf;
+>> +
+>> +static int fake_sigreturn_bad_magic_run(struct tdescr *td,
+>> +					siginfo_t *si, ucontext_t *uc)
+>> +{
+>> +	size_t resv_sz, need_sz;
+>> +	struct _aarch64_ctx *shead = GET_SF_RESV_HEAD(sf), *head;
+>> +
+>> +	/* just to fill the ucontext_t with something real */
+>> +	if (!get_current_context(td, &sf.uc))
+>> +		return 1;
+>> +
+>> +	resv_sz = GET_SF_RESV_SIZE(sf);
+>> +	/* need at least 2*HDR_SZ space: KSFT_BAD_MAGIC + terminator. */
+>> +	need_sz = HDR_SZ * 2;
+>> +	head = get_starting_head(shead, need_sz, resv_sz, NULL);
+> 
+> Nit: are the need_sz and resv_sz variables required?
+> 
+> Maybe they help to highlight what these expressions mean in the
+> get_starting_head() call though.  I'm happy either way.
+
+Not really required...I'll remove. (probably in other tests were and they
+landed here too...)
+
+> 
+>> +	if (head) {
+>> +		/*
+>> +		 * use a well known NON existent bad magic...something
+>> +		 * we should pretty sure won't be ever defined in Kernel
+>> +		 */
+>> +		head->magic = KSFT_BAD_MAGIC;
+>> +		head->size = HDR_SZ;
+>> +		write_terminator_record(GET_RESV_NEXT_HEAD(head));
+>> +
+>> +		ASSERT_BAD_CONTEXT(&sf.uc);
+>> +		fake_sigreturn(&sf, sizeof(sf), 0);
+>> +	}
+>> +
+>> +	return 1;
+>> +}
+>> +
+>> +struct tdescr tde = {
+>> +		.name = "FAKE_SIGRETURN_BAD_MAGIC",
+>> +		.descr = "Trigger a sigreturn with a sigframe with a bad magic",
+>> +		.sig_ok = SIGSEGV,
+>> +		.timeout = 3,
+>> +		.run = fake_sigreturn_bad_magic_run,
+>> +};
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+>> index 72e3f482b177..2effb8ded935 100644
+>> --- a/tools/testing/selftests/arm64/signal/testcases/testcases.c
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+>> @@ -149,3 +149,31 @@ bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
+>>  
+>>  	return true;
+>>  }
+>> +
+> 
+> Maybe add a comment saying what this function does.
+> 
+> To check my understanding:
+> The purpose is to find a place to append a new record, right?
+> By default we append at the end (i.e., at the terminator), but
+> because extra_context is optional we replace that instead if
+> there isn't sufficient space after the terminator in __reserved[].
+> 
+
+Yes I'll add a comment.
+
+>> +struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
+>> +				       size_t need_sz, size_t resv_sz,
+>> +				       size_t *offset)
+>> +{
+>> +	size_t offs = 0;
+>> +	struct _aarch64_ctx *head;
+>> +
+>> +	head = get_terminator(shead, resv_sz, &offs);
+>> +	/* not found a terminator...no need to update offset if any */
+>> +	if (!head)
+>> +		return head;
+>> +	if (resv_sz - offs < need_sz) {
+>> +		fprintf(stderr, "Low on space:%zd. Discarding extra_context.\n",
+>> +			resv_sz - offs);
+>> +		head = get_header(shead, EXTRA_MAGIC, resv_sz, &offs);
+>> +		if (!head || resv_sz - offs < need_sz) {
+>> +			fprintf(stderr,
+>> +				"Failed to reclaim space on sigframe.\n");
+>> +			return NULL;
+>> +		}
+>> +	}
+>> +
+>> +	fprintf(stderr, "Available space:%zd\n", resv_sz - offs);
+>> +	if (offset)
+>> +		*offset = offs;
+>> +	return head;
+>> +}
+>> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.h b/tools/testing/selftests/arm64/signal/testcases/testcases.h
+>> index 00618c3202bb..7653f8a64b3d 100644
+>> --- a/tools/testing/selftests/arm64/signal/testcases/testcases.h
+>> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.h
+>> @@ -83,4 +83,8 @@ static inline void write_terminator_record(struct _aarch64_ctx *tail)
+>>  		tail->size = 0;
+>>  	}
+>>  }
+>> +
+>> +struct _aarch64_ctx *get_starting_head(struct _aarch64_ctx *shead,
+>> +				       size_t need_sz, size_t resv_sz,
+>> +				       size_t *offset);
+>>  #endif
+> 
+> Apart from the comments above, this looks reasonable.
+> 
+> Cheers
+> ---Dave
+> 
+
+Cheers
+
+Cristian
 
 _______________________________________________
 linux-arm-kernel mailing list
