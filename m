@@ -2,88 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57C25AD408
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 09:39:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 84CF5AD425
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 09:49:34 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6b/n7mjNxfVJLOzPB+bMdT/xcoliwwQf/m+qKv9IIQE=; b=sbodzN1QOhoSFs
-	+tDPnh0rG3LLSvix//u9SezWrBRdQSkGNLZoUWdJLNLGmFN+vjYYYAyi7UIBtINN3WKvjhc4WCBKl
-	BR/ZksvpeljH1YiIm8aVLTHPyTZ4O/g4asmmXFZLc2W3bWZfRGlp135ESvBh+rfElAibZdVLL8pwY
-	HYlIlKPjIyhSLf4PgcQ7An1jNP6juOXT6UxeODnVBWMIxCrzsyqF6BgENLMURk0PIyXQDYbD7/c8R
-	sGEOpDSLOKr6r97lzuh+PlXNSTPvVgu+ksyX5fcGpzZdn8QR7KIFkdh84Pneolz+KGXgUNw6H1wwc
-	9LV/a7CSOWBdfSlO70Aw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=aP8RAK8rbAo3bloOB1MzCsAoxPFYbf4o3Kw+Bzz9JNw=; b=nGpAfYvqSoTiln
+	dE+tfgOS0PbFlA/8gGvtvfeEcJjKfDbgE3XiYbv8LCSbDQhM3Lcfw7jyrR5BnMPCNHqibpWWm8Ffu
+	cuyprm6DwxpdBd4l4EzaFmC/uL6lL5W217zSx68ka/hrHP13zgJmQMD5KiS6cgfKg7XV90rpsI+Iv
+	PEf+DwYFeCFvatOSoE4ct8jn3PsHOzfg6VNNI1f4eMBodEKiJlQdc1cKD/Fd4wGuyJQ/BVivxu4Cm
+	7BR/M+emX7xbbeWriyB90dW5/HD05S/peHWqAqse/Np9uQk71NifFUDgmjGCh0706X8MQQn2yyCe3
+	KIFfbGF6Gr7oLSXPujfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7EGy-0000jC-46; Mon, 09 Sep 2019 07:39:40 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1i7EQP-0004EZ-Eq; Mon, 09 Sep 2019 07:49:25 +0000
+Received: from helcar.hmeau.com ([216.24.177.18] helo=fornost.hmeau.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7EGh-0000hR-W8
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 07:39:25 +0000
-Received: from lelv0266.itg.ti.com ([10.180.67.225])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x897cZvh033689;
- Mon, 9 Sep 2019 02:38:35 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1568014715;
- bh=iamZWF3P+/BxrZM9dDpicBskGflhaFV85H5xVtlEl/g=;
- h=Subject:To:CC:References:From:Date:In-Reply-To;
- b=lXJeLxZAKfBOar8uSu/9xAVammm8uZhs8xLCYmJhyqb4VmDJ1rrocfTCy0/A7mfvh
- jeRyg9IgXn9UMa9vKIIw/2seXLOYFH8xD003SJlPqsNZpVcxoMQcuetMt2DzeEXomY
- axgTdGPA/IBqoRkrBTffBUX0uWTreM2n9eqg2zw4=
-Received: from DLEE113.ent.ti.com (dlee113.ent.ti.com [157.170.170.24])
- by lelv0266.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x897cZPL066397
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Mon, 9 Sep 2019 02:38:35 -0500
-Received: from DLEE107.ent.ti.com (157.170.170.37) by DLEE113.ent.ti.com
- (157.170.170.24) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Mon, 9 Sep
- 2019 02:38:35 -0500
-Received: from lelv0327.itg.ti.com (10.180.67.183) by DLEE107.ent.ti.com
- (157.170.170.37) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Mon, 9 Sep 2019 02:38:35 -0500
-Received: from [172.24.190.212] (ileax41-snat.itg.ti.com [10.172.224.153])
- by lelv0327.itg.ti.com (8.15.2/8.15.2) with ESMTP id x897cWVg099486;
- Mon, 9 Sep 2019 02:38:33 -0500
-Subject: Re: [PATCH v2 5/5] ARM: multi_v5_defconfig: make DaVinci part of the
- ARM v5 multiplatform build
-To: Bartosz Golaszewski <brgl@bgdev.pl>, Kevin Hilman <khilman@kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, David Lechner <david@lechnology.com>
-References: <20190725131257.6142-1-brgl@bgdev.pl>
- <20190725131257.6142-6-brgl@bgdev.pl>
-From: Sekhar Nori <nsekhar@ti.com>
-Message-ID: <9c1974ea-f19c-768e-9db4-f2dd3a35b9c3@ti.com>
-Date: Mon, 9 Sep 2019 13:08:31 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i7EQ7-0004DG-GC
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 07:49:09 +0000
+Received: from gwarestrin.arnor.me.apana.org.au ([192.168.0.7])
+ by fornost.hmeau.com with smtp (Exim 4.89 #2 (Debian))
+ id 1i7EPp-0007Z9-9K; Mon, 09 Sep 2019 17:48:50 +1000
+Received: by gwarestrin.arnor.me.apana.org.au (sSMTP sendmail emulation);
+ Mon, 09 Sep 2019 17:48:44 +1000
+Date: Mon, 9 Sep 2019 17:48:44 +1000
+From: Herbert Xu <herbert@gondor.apana.org.au>
+To: zhong jiang <zhongjiang@huawei.com>
+Subject: Re: [PATCH] crypto: arm64: Use PTR_ERR_OR_ZERO rather than its
+ implementation.
+Message-ID: <20190909074844.GA21364@gondor.apana.org.au>
+References: <1567493656-19916-1-git-send-email-zhongjiang@huawei.com>
 MIME-Version: 1.0
-In-Reply-To: <20190725131257.6142-6-brgl@bgdev.pl>
-Content-Language: en-US
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+Content-Disposition: inline
+In-Reply-To: <1567493656-19916-1-git-send-email-zhongjiang@huawei.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_003924_115738_827302BB 
-X-CRM114-Status: UNSURE (   9.85  )
+X-CRM114-CacheID: sfid-20190909_004907_777146_C9B0EB39 
+X-CRM114-Status: UNSURE (   8.68  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,24 +61,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: catalin.marinas@arm.com, linux-kernel@vger.kernel.org,
+ linux-crypto@vger.kernel.org, will@kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 25/07/19 6:42 PM, Bartosz Golaszewski wrote:
-> From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+On Tue, Sep 03, 2019 at 02:54:16PM +0800, zhong jiang wrote:
+> PTR_ERR_OR_ZERO contains if(IS_ERR(...)) + PTR_ERR. It is better to
+> use it directly. hence just replace it.
 > 
-> Add all DaVinci boards to multi_v5_defconfig.
-> 
-> Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+> Signed-off-by: zhong jiang <zhongjiang@huawei.com>
+> ---
+>  arch/arm64/crypto/aes-glue.c | 4 +---
+>  1 file changed, 1 insertion(+), 3 deletions(-)
 
-Acked-by: Sekhar Nori <nsekhar@ti.com>
-
-Thanks,
-Sekhar
+Patch applied.  Thanks.
+-- 
+Email: Herbert Xu <herbert@gondor.apana.org.au>
+Home Page: http://gondor.apana.org.au/~herbert/
+PGP Key: http://gondor.apana.org.au/~herbert/pubkey.txt
 
 _______________________________________________
 linux-arm-kernel mailing list
