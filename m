@@ -2,78 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0E7A2ADF85
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 21:38:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A4F31ADFA5
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 21:51:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=U7ci+bmv6lYGT152AkxIsh1kO23n+gr2r2DHZqH2zAQ=; b=Zhz3yvBbhRNUJq
-	8PVuI3EwRM9s2pRRvBDMrGXSMLxXn6GATvo67lk8kj/KHKsixLg2t08iIpSSlMakojKt0GyuJOoTU
-	3GtXLtk2eocIUjBFdtvFu/GAyrxX54PKJvYYhL2GOF/z8TNcPF/fncSDL8Mwn5WFZQpmNcN97vKnE
-	rLljcjoMdMmWbqjUmk4pXQCcUvlKQPd9LGayMNWBTLQK8rjyh+1byXkdX6KfAWvXGznT2xGHg8mUg
-	m55fo38HNVdHiRrSoGKXBEIpYC4AzJCKL2sT+oKQ9BMPbNvOZfuj24jHB4VWxk8uibTJAF8Q/xAQe
-	ShQ7XAHDWcjtmz89JyXA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:References:In-Reply-To:Date:To:From:Subject:Message-ID:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=+sKEbEO2BAqRpHRWcSKZz5JbgNqmhNaLTL5MG0TxGpE=; b=NKzhUL0aX7eITfcjVVXJ+GV9x
+	L4kTgVpNe3NDQ2QTz29ofvziPDEi4fwrj44Salj7Askke7x5Ibo1C1Ghws7OkFkELrtebj6hMSXxv
+	UL1MYqnqXYKPe2n1TU1R8ZORdIS+bIAl6+58ee5nki4hw9ry4oEnW0umWMr6yabWoz0/sg6G8zgCf
+	J/O35q8wFLTQscwV6gtGCCY/Wp8z/jnmhIihMQz4rKh3tlOQYyqUb8PjQdduNRidPR7mjkKlTt/u8
+	eYd4Us6Cz2b5ctuaSn+tyBTLK2NkZMiVR+hbcu0KLCLAh8nG8Q74sIo/mjG4jcv+nF8YBVwh+xTlv
+	xKNMfl98Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7PUd-0001bQ-CS; Mon, 09 Sep 2019 19:38:31 +0000
-Received: from mail-qt1-f194.google.com ([209.85.160.194])
+	id 1i7Pgl-0005xR-2s; Mon, 09 Sep 2019 19:51:03 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7PUV-0001b3-RA
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 19:38:25 +0000
-Received: by mail-qt1-f194.google.com with SMTP id b2so17660450qtq.5
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 12:38:23 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=83C5cArNTuV93R+PRhbVcq8+PPG/Zw02UW3M6xNCISo=;
- b=FWsmUnnSLfBDLXIoDxwknOqafQL3G7ALKESo3gXP63pZHANp+4edKA3W4epG0z5kHN
- IhaeAkaUIE7T9qNR+/ZjhykLXohn6tFnAlDZTTEnQ2y9Yl+YCJrAgeWyTcfhUWUjfGGd
- ZS6LPKxO2ESbWKYEwCcJzIFTdtflOEuGBSmxwPRwfQbtvIwcjN0iMI+1/5rV5/oEKQD7
- N0tIjcvvG38WL+BON0gilD8cB3ghd64Uo53r8TIZm9VxzOwAAxnUZGvCTkFEYwdi0yQl
- FON247F1UmLN7MUWGIkCm4UlRaMvx8roz1J6KkRj3fUgAZLWRUx//by1Y3DQFakXjTIL
- O9Sw==
-X-Gm-Message-State: APjAAAXyzAAcNK+t4J5+HgwQ2x7XNO7NzmTy9oVZ1oG8NeR/mvx9afrR
- 6gfLm9td6mdHkg2KA4wv8nlB46N0/ppy5tiuIWI=
-X-Google-Smtp-Source: APXvYqznJr6bft2FiwRFx9J/NlM8tBNYOscDbgcfzeUzZ476EMTWBnkI79bb5QynlE2kwyHibHS1sjNun1Tqhuq/ovY=
-X-Received: by 2002:a0c:e0c4:: with SMTP id x4mr15820028qvk.176.1568057902529; 
- Mon, 09 Sep 2019 12:38:22 -0700 (PDT)
+ id 1i7Pgc-0005wg-Ga; Mon, 09 Sep 2019 19:50:56 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id A1671B6D8;
+ Mon,  9 Sep 2019 19:50:51 +0000 (UTC)
+Message-ID: <cac63db8b9a7ff78fc0cd816c7dce284a06480d5.camel@suse.de>
+Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: Stefan Wahren <wahrenst@gmx.net>, catalin.marinas@arm.com, hch@lst.de, 
+ marc.zyngier@arm.com, robh+dt@kernel.org,
+ linux-arm-kernel@lists.infradead.org,  linux-mm@kvack.org,
+ linux-riscv@lists.infradead.org
+Date: Mon, 09 Sep 2019 21:50:47 +0200
+In-Reply-To: <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
+References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
+ <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
+User-Agent: Evolution 3.32.4 
 MIME-Version: 1.0
-References: <20190725131257.6142-1-brgl@bgdev.pl>
- <20190725131257.6142-5-brgl@bgdev.pl>
- <5fd79cda-59d4-b69b-9902-5d01e1087c62@ti.com>
-In-Reply-To: <5fd79cda-59d4-b69b-9902-5d01e1087c62@ti.com>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Mon, 9 Sep 2019 21:38:06 +0200
-Message-ID: <CAK8P3a0tCrax_5QvWConV5PF-FjFWusNLfnU73EyjQic+Zm9+Q@mail.gmail.com>
-Subject: Re: [PATCH v2 4/5] ARM: davinci: support multiplatform build for ARM
- v5
-To: Sekhar Nori <nsekhar@ti.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_123823_883170_7F9FBD25 
-X-CRM114-Status: GOOD (  11.25  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_125054_847539_FF9C8584 
+X-CRM114-Status: GOOD (  22.35  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.160.194 listed in list.dnswl.org]
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.194 listed in wl.mailspike.net]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,40 +62,134 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: David Lechner <david@lechnology.com>, Kevin Hilman <khilman@kernel.org>,
- Bartosz Golaszewski <brgl@bgdev.pl>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: f.fainelli@gmail.com, robin.murphy@arm.com, linux-kernel@vger.kernel.org,
+ mbrugger@suse.com, linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org,
+ will@kernel.org, m.szyprowski@samsung.com
+Content-Type: multipart/mixed; boundary="===============7388730019844420172=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 9, 2019 at 9:38 AM Sekhar Nori <nsekhar@ti.com> wrote:
->
-> On 25/07/19 6:42 PM, Bartosz Golaszewski wrote:
-> > From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
-> >
-> > Add modifications necessary to make davinci part of the ARM v5
-> > multiplatform build.
-> >
-> > Move the arch-specific configuration out of arch/arm/Kconfig and
-> > into mach-davinci/Kconfig. Remove the sub-menu for DaVinci
-> > implementations (they'll be visible directly under the system type.
-> > Select all necessary options not already selected by ARCH_MULTI_V5.
-> > Update davinci_all_defconfig. Explicitly include the mach-specific
-> > headers in mach-davinci/Makefile.
-> >
-> > Signed-off-by: Bartosz Golaszewski <bgolaszewski@baylibre.com>
->
-> Acked-by: Sekhar Nori <nsekhar@ti.com>
 
-Ok, pulled both into arm/soc.
+--===============7388730019844420172==
+Content-Type: multipart/signed; micalg="pgp-sha256";
+	protocol="application/pgp-signature"; boundary="=-aEBb/xch/kbKDpnAu5z0"
 
-     Arnd
+
+--=-aEBb/xch/kbKDpnAu5z0
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+On Mon, 2019-09-09 at 21:33 +0200, Stefan Wahren wrote:
+> Hi Nicolas,
+>=20
+> Am 09.09.19 um 11:58 schrieb Nicolas Saenz Julienne:
+> > Hi all,
+> > this series attempts to address some issues we found while bringing up
+> > the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
+> > up of these discussions:
+> > v4: https://lkml.org/lkml/2019/9/6/352
+> > v3: https://lkml.org/lkml/2019/9/2/589
+> > v2: https://lkml.org/lkml/2019/8/20/767
+> > v1: https://lkml.org/lkml/2019/7/31/922
+> > RFC: https://lkml.org/lkml/2019/7/17/476
+> >=20
+> > The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
+> > only address the first GB: their DMA address range is
+> > 0xc0000000-0xfc000000 which is aliased to the first GB of physical
+> > memory 0x00000000-0x3c000000. Note that only some peripherals have thes=
+e
+> > limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
+> > view of the address space by virtue of being hooked up trough a second
+> > interconnect.
+> >=20
+> > Part of this is solved on arm32 by setting up the machine specific
+> > '.dma_zone_size =3D SZ_1G', which takes care of reserving the coherent
+> > memory area at the right spot. That said no buffer bouncing (needed for
+> > dma streaming) is available at the moment, but that's a story for
+> > another series.
+> >=20
+> > Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
+> > ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
+> > arch code as if all peripherals where be able to address the first 4GB
+> > of memory.
+> >=20
+> > In the light of this, the series implements the following changes:
+> >=20
+> > - Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
+> >   area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
+> >   the RPi4 is the only arm64 device with such DMA addressing limitation=
+s
+> >   so this hardcoded solution was deemed preferable.
+> >=20
+> > - Properly set ARCH_ZONE_DMA_BITS.
+> >=20
+> > - Reserve the CMA area in a place suitable for all peripherals.
+> >=20
+> > This series has been tested on multiple devices both by checking the
+> > zones setup matches the expectations and by double-checking physical
+> > addresses on pages allocated on the three relevant areas GFP_DMA,
+> > GFP_DMA32, GFP_KERNEL:
+> >=20
+> > - On an RPi4 with variations on the ram memory size. But also forcing
+> >   the situation where all three memory zones are nonempty by setting a =
+3G
+> >   ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
+> >=20
+> i like to test this series on Raspberry Pi 4 and i have some questions
+> to get arm64 running:
+>=20
+> Do you use U-Boot? Which tree?
+
+No, I boot directly.
+
+> Are there any config.txt tweaks necessary?
+
+I'm using the foundation's arm64 stub. Though I'm not 100% it's needed anym=
+ore
+with the latest firmware.
+
+config.txt:
+	arm_64bit=3D1
+	armstub=3Darmstub8-gic.bin
+	enable_gic=3D1
+	enable_uart=3D1
+
+Apart from that the series is based on today's linux-next plus your RPi4
+bringup patches.
+
+
+--=-aEBb/xch/kbKDpnAu5z0
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: This is a digitally signed message part
+Content-Transfer-Encoding: 7bit
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCAAdFiEErOkkGDHCg2EbPcGjlfZmHno8x/4FAl12rRcACgkQlfZmHno8
+x/7toQf+L/Ta9MCsjv+DyfWvjt/fl9GT60+Z9cBctuHCujlRmElfGztMgn6Nu0hh
+fosUsadksYqFzrdw9GLfqJj57Lmq8RXvt/glSBSN0lQZkXjn3pVklko/Wkj2UOaH
+SvICcPMWlbk6nRjyVzX70aenvVmV5BqYa6qNxuCxPHEkYeVd9egxB//JPjtL6tqK
+4QVSoJLjfoQAlYNWDm96f77nn5doyj1ibooZxaFQe5u0+3T0ytqCZfgDsJvrIpuW
+2E4fth6VMA1AOFYH+EsvU49WyLcA1ry6xEA5NbkfmZZdh1eSyW7nCcCT60+S7Zm5
+kfIX5VMaPvFiHYUMyyPzrdRP1un7VA==
+=oHYd
+-----END PGP SIGNATURE-----
+
+--=-aEBb/xch/kbKDpnAu5z0--
+
+
+
+--===============7388730019844420172==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7388730019844420172==--
+
+
