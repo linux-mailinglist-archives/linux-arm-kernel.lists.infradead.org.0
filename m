@@ -2,63 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BD58BADA08
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 825C2ADA12
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 15:37:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=KqFcy2m2awvkXsEAFaVtHpIeaAkhRks/3FoRo5wsKec=; b=MMiGo5fe7DwMcC
-	k1/X7ffdNKXT3tBMMBRIsoHf0uoE3wiuL4+lvnC811uUYM2mrTiSHI6Ga9ze6dRskB9HWdCy+C/1h
-	WyyZ4Ls5kvSsLbeXcF3WQ4/h/zq7mk6fpH61HehclXrTLs3WEJTYgTEn8AKRcA97y/BTr+OObSeSA
-	77u+UprvGgVTNR7qLo7SvaWp1emuj7L2RsGa8mo9egGdY0+H59EaoeKHX4lSqMQgeVrxiIjUO49aI
-	tr04XBW/60HOPeGjGlXAleESRqgRRyWS0ArJqJDm9rQJ4nvavJbs9/Hcflwe8KpIK+ptM5cLvRmxS
-	Odj3mgPd9qpUsQtdcJgg==;
+	List-Owner; bh=JtYmPnvamLSUX9QliWKZ9gDGIGvU3oJsJv9oh1O8N4o=; b=eTJApX6/fBLZaT
+	j2ZeLwyyLYwAq+LbsO2TJLU8K4OqWt0Kf0CVHMFV3GNJRo5H42Kve94T+99g0MCGsOtqWtTi3mdzy
+	QsG+qF5NBXN0TOP8GjeOaOqPWTZpSAMy3wyfMqz1wVNzTkJx7BDOLGCIVbWMW+44qU3Z768uQOof5
+	jvIf7It24bbF+tb9mrAAL6hsJ00M4FaoSAgwxuf95l8r0SkT7kyjeU030/axThDkBz4zfcG2zrSO8
+	pfEKpAp46NG/kVxmecbAWEEaTUaO3QXHGOTtyc6XQul6wg6D3nVSxbuinnX8ZY+plygLNEydTyk6V
+	8kPqKrkcAipkDn/r6qDA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7JnL-00045R-Uu; Mon, 09 Sep 2019 13:33:28 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7JmZ-00040c-7i
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:32:42 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 4238D28;
- Mon,  9 Sep 2019 06:32:34 -0700 (PDT)
-Received: from donnerap.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
- [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id D2C2C3F59C;
- Mon,  9 Sep 2019 06:32:32 -0700 (PDT)
-Date: Mon, 9 Sep 2019 14:32:30 +0100
-From: Andre Przywara <andre.przywara@arm.com>
-To: Jassi Brar <jassisinghbrar@gmail.com>
-Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the
- ARM SMC/HVC mailbox
-Message-ID: <20190909143230.48b1143f@donnerap.cambridge.arm.com>
-In-Reply-To: <CABb+yY2t-oz6KqvCTsOJZqcMAUaR9Cbj014m7dCFXSBAMCojww@mail.gmail.com>
-References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
- <1567004515-3567-2-git-send-email-peng.fan@nxp.com>
- <CABb+yY2tRjazjaogpM7irqgTD+PdwsfqCxk5hP-_czrET3V5xQ@mail.gmail.com>
- <AM0PR04MB4481785CABB44A8C71CFB8D788BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CABb+yY2TREpO7+TFcGgsgQrkmMWwFAgtuJ4GnLPPQ+GEBuh07w@mail.gmail.com>
- <AM0PR04MB448161C632722DF10989008088BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CABb+yY2SrMF8e1iLyLqb-rJyBx4ajA0hZ6D=LFtuMNtXYjgccA@mail.gmail.com>
- <AM0PR04MB448133D1F4C887A82C679CEB88BD0@AM0PR04MB4481.eurprd04.prod.outlook.com>
- <CABb+yY2t-oz6KqvCTsOJZqcMAUaR9Cbj014m7dCFXSBAMCojww@mail.gmail.com>
-Organization: ARM
-X-Mailer: Claws Mail 3.17.3 (GTK+ 2.24.32; aarch64-unknown-linux-gnu)
+	id 1i7JrK-00067S-H9; Mon, 09 Sep 2019 13:37:34 +0000
+Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7Jr8-00066y-Be
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 13:37:23 +0000
+Received: by mail-io1-xd41.google.com with SMTP id m11so28733087ioo.0
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Sep 2019 06:37:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yh5I34I3F+kfotLecJXxZJWCxaSx2fVhdlna36vlC/Q=;
+ b=aMjYbIgkkBOM4kFGelnj0CRr0XsK616LuEIBdWHa9oQUjj0CAGINRicUeroEu9gczK
+ S4rD+z3DtU83yn88vV/t8iPfliEYHa29cYU0+0KKObloJYilOTnlM/Sa+sVi1JW4J5pX
+ v0E73NBQ8LSkMYfyRJSaimQ8uBE0hNloy9kq/q9JapEbnJa14f/df4kHpswzkb+F0E0A
+ mC6ki7e6q674qnVL5OrCPCgG24lGF5mnBpC7x7j92FeFALc37r2hywEdPpj23cySjR2e
+ C2QCUC47GcJrWxOMYvoXMUOXRn3zDs4IZsu3nCVxa6vYz3Bh9LoRSH1QKkvS2QfC0Axb
+ jiVw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yh5I34I3F+kfotLecJXxZJWCxaSx2fVhdlna36vlC/Q=;
+ b=ic8uNQ1brfJQHgz+UAVh1d5PjVz5lAd1Hfn71cPeRdFW51aGWlowCzZMd8Y0i3MFqv
+ afBy8Vq4ZoFtkp/f0AjYNQTqkvCLMYBMgaIwozBzY01CQiTt9bFTNcsGWWJkfkLz3daY
+ 8dRQd9vVRQsFo2M8mnjRQD+sWOegcIvw64cnGdaQry4qd57ZwBuylqpYb6xAuz9xmWQb
+ ibvGIgZSbn0Cd3PkX6fvmr5M4xeZIKDd5M/zyrSrzZQfLgFzpnlSNT4hibD/YwSIapAp
+ MJiPSuXJshPqWW3pP9KsSKTyptlzVB8CdnmuPwC34iq3kLc5HXJJi3klRaciKNcx9aj3
+ Sfug==
+X-Gm-Message-State: APjAAAW971hu2+SbkbeODWhU07hiPWNzbbqTUKN+WlKQ4Yexi/B7VyDh
+ TWtau0XNgb8zkXYfEosMvIm/WqglXICf2+KdpO0=
+X-Google-Smtp-Source: APXvYqyp7hx2ZCMIfDI5DkTtuxBM/fx0HuShxFbt9jNMkXe/jgYYg8kF8aWEGdXk2I4SrI2LI8SYRU+FTsVSCybZo4Y=
+X-Received: by 2002:a6b:8e92:: with SMTP id q140mr4178546iod.205.1568036240538; 
+ Mon, 09 Sep 2019 06:37:20 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190828150037.2640-1-aford173@gmail.com>
+ <20190905230443.GA52127@atomide.com>
+ <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
+In-Reply-To: <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Mon, 9 Sep 2019 08:37:09 -0500
+Message-ID: <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
+Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_063239_510077_276D1204 
-X-CRM114-Status: GOOD (  24.69  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_063722_429584_A5764F25 
+X-CRM114-Status: GOOD (  27.57  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ [list.dnswl.org]
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (aford173[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,124 +96,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 30 Aug 2019 03:12:29 -0500
-Jassi Brar <jassisinghbrar@gmail.com> wrote:
-
-Hi,
-
-> On Fri, Aug 30, 2019 at 3:07 AM Peng Fan <peng.fan@nxp.com> wrote:
-> >  
-> > > Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
-> > > SMC/HVC mailbox
+On Mon, Sep 9, 2019 at 7:13 AM Adam Ford <aford173@gmail.com> wrote:
+>
+> On Thu, Sep 5, 2019 at 6:04 PM Tony Lindgren <tony@atomide.com> wrote:
+> >
+> > Hi,
+> >
+> > * Adam Ford <aford173@gmail.com> [190828 15:01]:
+> > > The datasheet for the AM3517 shows the RNG is connected to L4.
+> > > It shows the module address for the RNG is 0x480A0000, and it
+> > > matches the omap2.dtsi description.  Since the driver can support
+> > > omap2 and omap4, it seems reasonable to assume the omap3 would
+> > > use the same core for the RNG.
 > > >
-> > > On Fri, Aug 30, 2019 at 2:37 AM Peng Fan <peng.fan@nxp.com> wrote:  
-> > > >
-> > > > Hi Jassi,
-> > > >  
-> > > > > Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc
-> > > > > for the ARM SMC/HVC mailbox
-> > > > >
-> > > > > On Fri, Aug 30, 2019 at 1:28 AM Peng Fan <peng.fan@nxp.com> wrote:
-> > > > >  
-> > > > > > > > +examples:
-> > > > > > > > +  - |
-> > > > > > > > +    sram@910000 {
-> > > > > > > > +      compatible = "mmio-sram";
-> > > > > > > > +      reg = <0x0 0x93f000 0x0 0x1000>;
-> > > > > > > > +      #address-cells = <1>;
-> > > > > > > > +      #size-cells = <1>;
-> > > > > > > > +      ranges = <0 0x0 0x93f000 0x1000>;
-> > > > > > > > +
-> > > > > > > > +      cpu_scp_lpri: scp-shmem@0 {
-> > > > > > > > +        compatible = "arm,scmi-shmem";
-> > > > > > > > +        reg = <0x0 0x200>;
-> > > > > > > > +      };
-> > > > > > > > +
-> > > > > > > > +      cpu_scp_hpri: scp-shmem@200 {
-> > > > > > > > +        compatible = "arm,scmi-shmem";
-> > > > > > > > +        reg = <0x200 0x200>;
-> > > > > > > > +      };
-> > > > > > > > +    };
-> > > > > > > > +
-> > > > > > > > +    firmware {
-> > > > > > > > +      smc_mbox: mailbox {
-> > > > > > > > +        #mbox-cells = <1>;
-> > > > > > > > +        compatible = "arm,smc-mbox";
-> > > > > > > > +        method = "smc";
-> > > > > > > > +        arm,num-chans = <0x2>;
-> > > > > > > > +        transports = "mem";
-> > > > > > > > +        /* Optional */
-> > > > > > > > +        arm,func-ids = <0xc20000fe>, <0xc20000ff>;
-> > > > > > > >  
-> > > > > > > SMC/HVC is synchronously(block) running in "secure mode", i.e,
-> > > > > > > there can only be one instance running platform wide. Right?  
-> > > > > >
-> > > > > > I think there could be channel for TEE, and channel for Linux.
-> > > > > > For virtualization case, there could be dedicated channel for each VM.
-> > > > > >  
-> > > > > I am talking from Linux pov. Functions 0xfe and 0xff above, can't
-> > > > > both be active at the same time, right?  
-> > > >
-> > > > If I get your point correctly,
-> > > > On UP, both could not be active. On SMP, tx/rx could be both active,
-> > > > anyway this depends on secure firmware and Linux firmware design.
-> > > >
-> > > > Do you have any suggestions about arm,func-ids here?
-> > > >  
-> > > I was thinking if this is just an instruction, why can't each channel be
-> > > represented as a controller, i.e, have exactly one func-id per controller node.
-> > > Define as many controllers as you need channels ?  
+> > > This RFC, mimics much of the omap2 hwmods on the OMAP3. It
+> > > also adds the necessary clock for driving the RNG.  Unfortunately,
+> > > it appears non-functional.  If anyone has any suggestions on how
+> > > to finish the hwmod (or port it to the newer l4 device tree
+> > > format), feedback is requested.
 > >
-> > I am ok, this could make driver code simpler. Something as below?
+> > Yup I'll take the bait :) The patch below seems to do the trick
+> > for me on dm3730 based on translating your patch to probe with
+> > ti-sysc.
 > >
-> >     smc_tx_mbox: tx_mbox {
-> >       #mbox-cells = <0>;
-> >       compatible = "arm,smc-mbox";
-> >       method = "smc";
-> >       transports = "mem";
-> >       arm,func-id = <0xc20000fe>;
-> >     };
+> > Not sure about 34xx, it seems we're missing rng_clk? Care
+> > to give it a try and attempt simlar patches for 34xx and
+> > 3517?
 > >
-> >     smc_rx_mbox: rx_mbox {
-> >       #mbox-cells = <0>;
-> >       compatible = "arm,smc-mbox";
-> >       method = "smc";
-> >       transports = "mem";
-> >       arm,func-id = <0xc20000ff>;
-> >     };
+> > At least I'm not needing the "ti,no-reset-on-init" property
+> > that your patch has a comment for. Maybe that's needed on
+> > some other omap3.
 > >
-> >     firmware {
-> >       scmi {
-> >         compatible = "arm,scmi";
-> >         mboxes = <&smc_tx_mbox>, <&smc_rx_mbox 1>;
-> >         mbox-names = "tx", "rx";
-> >         shmem = <&cpu_scp_lpri>, <&cpu_scp_hpri>;
-> >       };
-> >     };
-> >  
-> Yes, the channel part is good.
-> But I am not convinced by the need to have SCMI specific "transport" mode.
+> > Oh and this needs to default to status = "disabled" for
+> > HS devices like n900 as it needs to use the omap3-rom-rng.
+> >
+> > Regards,
+> >
+> > Tony
+> >
+> > 8< -----------------------
+> > diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
+> > --- a/arch/arm/boot/dts/omap36xx.dtsi
+> > +++ b/arch/arm/boot/dts/omap36xx.dtsi
+> > @@ -140,6 +140,29 @@
+> >                         };
+> >                 };
+> >
+> > +               rng_target: target-module@480a0000 {
+> > +                       compatible = "ti,sysc-omap2", "ti,sysc";
+> > +                       reg = <0x480a003c 0x4>,
+> > +                             <0x480a0040 0x4>,
+> > +                             <0x480a0044 0x4>;
+> > +                       reg-names = "rev", "sysc", "syss";
+> > +                       ti,sysc-mask = <(SYSC_OMAP2_AUTOIDLE)>;
+> > +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> > +                                       <SYSC_IDLE_NO>;
+> > +                       ti,syss-mask = <1>;
+> > +                       clocks = <&rng_ick>;
+> > +                       clock-names = "ick";
+> > +                       #address-cells = <1>;
+> > +                       #size-cells = <1>;
+> > +                       ranges = <0 0x480a0000 0x2000>;
+> > +
+> > +                       rng: rng@0 {
+> > +                               compatible = "ti,omap2-rng";
+> > +                               reg = <0x0 0x2000>;
+> > +                               interrupts = <52>;
+> > +                       };
+> > +               };
+> > +
 
-Why would this be SCMI specific and what is the problem with having this property?
-By the very nature of the SMC/HVC call you would expect to also pass parameters in registers. However this limits the amount of data you can push, so the option of reverting to a memory based payload sounds very reasonable.
-On the other hand *just* using memory complicates things, in case you have a very simple protocol. You would need a memory region shared between firmware and OS, which is not always easily possible on every platform. Also this doesn't scale easily with multiple mailboxes and channels. Passing parameters via registers is also naturally consistent, as there would be no races and no need for synchronisation with other cores or other users of the mailbox.
+I applied this on 5.3 and it is working.  I assume the same is true in for-next.
 
-So I clearly see the benefit of specifying *both* ways of payload transport. Given that this driver should be protocol agnostic, it makes a lot of sense to introduce both methods *now*, so in the future users can just use the register method, without extending the binding in a incompatible way later (earlier kernels would have the driver, but wouldn't know how to deal with this parameter).
+Do you want to submit a formal patch?  I  can mark it as 'tested-by'
+This really helps speed up the startup sequence on boards with sshd
+because it delays for nearly 80 seconds waiting for entropy without
+the hwrng.
 
-Cheers,
-Andre.
+adam
+>
+> Tony,
+>
+> Can you tell me what branch you're using?  I am not seeing the note
+> below, so I am not exactly sure what version to base my testing.
+>
+> ada,
+> >                 /*
+> >                  * Note that the sysconfig register layout is a subset of the
+> >                  * "ti,sysc-omap4" type register with just sidle and midle bits
 
 _______________________________________________
 linux-arm-kernel mailing list
