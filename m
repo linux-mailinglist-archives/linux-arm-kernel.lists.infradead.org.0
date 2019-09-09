@@ -2,80 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A650ADF2B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 20:56:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8ABF6ADF2E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 20:56:55 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=K8lM1mP/XtSwPJ1WXFWys4IBGMAayJYm4oNwH2N3LjI=; b=TbjVuWOIAWa1Ld
-	a/hVGfRQhnSH32IcV8gJlKpuF7g8WcHACHrlUmX4KsIbEMbTBxyBrFhuxYPpoL8qG6UuXRwh779I6
-	oEG9NBTQc9fGZxAvz7vPQcBG7rztzuWOdAaYWVOzrIkZy3aN4OhP5SDLlrNGNjpfURUM/JeEVVEaJ
-	wel32wklH3lR+lPMnFahs0fOzpruJavSCunvl2u6SGgxqetJZfP/gR+yUdUDd9rNzbfxOAUit06Ez
-	TCjZkgRAwbtuCE6z8pw2L3W562ejQ9Q7rUYx7xeEny7jS5LpVh69mOlPHpvBg+Ps1/yKnkfs07xUO
-	vU2aHGai2Lbgyq8MRjtA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ydU4ieC452Ck4rv6mq9sJHWfCd4knGjB29/zp3XXwaI=; b=lsICNzY6ZoE4umoJ+RwsnBt2P
+	cr+3tgZgKQEU3IO7NmZaPiiLpsgW+NPjEuyhTfLvPOm0tsM11+xq8graC+1TAu8cBdFlHp8DiKA0U
+	eI+dARmVplzk+lwV/xMC4BgblSTBqexYBYbuXL/dInRuZB3v04raVRHSGlo6kZmCvpn8N5pz2/dtc
+	t4uhTj59ArKNv6f+yOLt5XfUVXwE7WrQJRHv6cMz0GFagTIYb0APo5nAt6a8WMVkaO8CxzljnFN3c
+	T7gFLqwvPHBTaQQnssMli8RF2EBOUXgQV45LV2JoUMnGi3Pn48G5Uq0w3XnHFtoZTluk7WfN7reiS
+	f0xHHwSaQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7OpU-0003Te-0K; Mon, 09 Sep 2019 18:56:00 +0000
-Received: from mail-wr1-f67.google.com ([209.85.221.67])
+	id 1i7OqM-0003jc-3C; Mon, 09 Sep 2019 18:56:54 +0000
+Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7OpK-0003TJ-Ok
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 18:55:51 +0000
-Received: by mail-wr1-f67.google.com with SMTP id a11so5500780wrx.1
+ id 1i7OqB-0003ix-2q
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 18:56:45 +0000
+Received: by mail-pl1-x643.google.com with SMTP id d3so6986690plr.1
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 11:55:50 -0700 (PDT)
+ Mon, 09 Sep 2019 11:56:42 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=broadcom.com; s=google;
+ h=subject:to:references:from:message-id:date:user-agent:mime-version
+ :in-reply-to:content-language:content-transfer-encoding;
+ bh=9PpVHKOkn7AvbOWw4B8dKfxzmxwCcW0yqGrQBUq0hN8=;
+ b=DhYg+foHMBNgIp8ZI6L0UbWWMEHpLnOxeSdowJUQ0hVIusLXPBuzB5YrlNfmFeh+K6
+ Xm1rdE3/IBzPQjUatOMjcobzfLiFnLZihws9zc6ra29d7Wwo8P3N3LBSRVlys2Nug1v3
+ s+0LaXu2s4EWSkKyG4IEoUsd5ohWbInVKmiAM=
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=Ra/gV8lPXO5Wh+Vb60+O0aQkihf+QKY6CFPEg3Fy55M=;
- b=FcI9hsaE/q3zpfPPJvqsWWeApQt1xbLk49u01POWlR78dB8mpklPkcWIgJsCjfvm9L
- nLmIIqpfPF/xIbV+y3EZqYVHiDgTN/V2TXNB7SVSLZlx1sb08sLXsjPcic/W6w1iZMiS
- PZlzotcHMCtuUqxmOIy3LQ0eGnm5ORgJJDAPBmjPuuwLAT9d5laQ81lKsneSJ5EGdOvI
- iPHcEgQKfk18TtzbOM2EH6+DdUphFg5fH8HqDO/4G3msgq6dS3OsNPMeHmKKrqSz1qrw
- ghGhw5s4/K5svPOiU0fw1cK9bsOuWKSZ9FXAQHBwh3GV2dG7JCaCt8T/v0thr7RCf2m4
- egtg==
-X-Gm-Message-State: APjAAAX1SpzPx01rwnqXVCFqo8yZcKoQF0NjhH4LfOwPxQcM6SyH5mnT
- wN3Kj4fmOR/mIHpiASzbLho=
-X-Google-Smtp-Source: APXvYqyxVVDbLBd/lmNb4rlXWNpQ7yGIHb1PMpq6KlcPnN//NYJPYejDZJ4hsW8yo4QfV3ZZexu8Gg==
-X-Received: by 2002:a5d:6506:: with SMTP id x6mr836883wru.22.1568055349493;
- Mon, 09 Sep 2019 11:55:49 -0700 (PDT)
-Received: from kozik-lap ([194.230.155.145])
- by smtp.googlemail.com with ESMTPSA id s26sm28793706wrs.63.2019.09.09.11.55.48
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Mon, 09 Sep 2019 11:55:48 -0700 (PDT)
-Date: Mon, 9 Sep 2019 20:55:47 +0200
-From: "krzk@kernel.org" <krzk@kernel.org>
-To: Yao Lihua <ylhuajnu@outlook.com>
-Subject: Re: [PATCH] ARM: SAMSUNG: Fix system restart support on s3c6410
-Message-ID: <20190909185547.GC10091@kozik-lap>
-References: <BY5PR12MB3699F7EF4920F878F3096DE7C4B50@BY5PR12MB3699.namprd12.prod.outlook.com>
+ h=x-gm-message-state:subject:to:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=9PpVHKOkn7AvbOWw4B8dKfxzmxwCcW0yqGrQBUq0hN8=;
+ b=caUOqO+CCJ3L76Cz0yeULoqxLv5Jqzqi+I1FfwoXghaKbSuGcrb6cjpqWQ2iLoziMU
+ eWurL0TxNGQxcb0eBYc0FxCvtRgMheqWul5w7vLaYaUmh2i+o3nSsXcWkAxj5ruWHgj9
+ SV2o3m8nfrpZRCtX/AcPsX8yddo3ddZGFfXbrpd7GXE4vAs3sOcyEF0g7pRmRUN8ISML
+ d+l8QJILIIU5cQND3+XXijM5I6Wc52xPHUOi2xKWgRuyBXrtDqo9gzJzyIfabUl/r7fg
+ +HpoAoBvDQUu2i1BU5gwnuvPhlQKki3eV5klCgeJ6U7kStNry8g5ume7kVchz/36TltS
+ O/7A==
+X-Gm-Message-State: APjAAAXjQ/3Pc7lD1CBIIyuYiIu/0hnakpPOvGVugBMe91nCawGb/6ji
+ 4Q7aWH2fqRIy27sOsmmswTVz4fsubZhgbu1S
+X-Google-Smtp-Source: APXvYqxHAEqC9e+AAStf9IM6pukGCQTPomG2dj8gqDOX6pR5nm98F+0IcF0DggiI0chSTzXXODrb7A==
+X-Received: by 2002:a17:902:166:: with SMTP id
+ 93mr26449506plb.320.1568055401720; 
+ Mon, 09 Sep 2019 11:56:41 -0700 (PDT)
+Received: from rj-aorus.ric.broadcom.com ([192.19.228.250])
+ by smtp.gmail.com with ESMTPSA id l72sm270722pjb.7.2019.09.09.11.56.39
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Mon, 09 Sep 2019 11:56:40 -0700 (PDT)
+Subject: Re: [PATCH v1 1/1] arm64: dts: Fix gpio to pinmux mapping
+To: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
+ bcm-kernel-feedback-list@broadcom.com, Rob Herring <robh+dt@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>, linux-arm-kernel@lists.infradead.org,
+ devicetree@vger.kernel.org, linux-kernel@vger.kernel.org
+References: <1568018127-26730-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+From: Ray Jui <ray.jui@broadcom.com>
+Message-ID: <664091a5-7cc0-eeb9-425a-ce39c31b1dfc@broadcom.com>
+Date: Mon, 9 Sep 2019 11:56:37 -0700
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <BY5PR12MB3699F7EF4920F878F3096DE7C4B50@BY5PR12MB3699.namprd12.prod.outlook.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+In-Reply-To: <1568018127-26730-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_115550_808016_C324CC4C 
-X-CRM114-Status: GOOD (  10.65  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_115643_133053_9D4A7CEF 
+X-CRM114-Status: GOOD (  19.21  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.221.67 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (k.kozlowski.k[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.221.67 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,29 +102,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
- "kgene@kernel.org" <kgene@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat, Sep 07, 2019 at 03:30:01AM +0000, Yao Lihua wrote:
-> From: Lihua Yao <ylhuajnu@outlook.com>
+
+
+On 9/9/19 1:35 AM, Rayagonda Kokatanur wrote:
+> There are total of 151 non-secure gpio (0-150) and four
+> pins of pinmux (91, 92, 93 and 94) are not mapped to any
+> gpio pin, hence update same in DT.
 > 
-> S3C6410 system restart is triggered by watchdog reset.
-> 
-> Fixes: 9f55342cc2de ("ARM: dts: s3c64xx: Fix infinite interrupt in soft mode")
-> Signed-off-by: Lihua Yao <ylhuajnu@outlook.com>
+> Fixes: 8aa428cc1e2e ("arm64: dts: Add pinctrl DT nodes for Stingray SOC")
+> Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 > ---
->  arch/arm/plat-samsung/watchdog-reset.c | 1 +
+>   arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi | 5 +++--
+>   arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi         | 3 +--
+>   2 files changed, 4 insertions(+), 4 deletions(-)
+> 
+> diff --git a/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi b/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
+> index 8a3a770..56789cc 100644
+> --- a/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
+> +++ b/arch/arm64/boot/dts/broadcom/stingray/stingray-pinctrl.dtsi
+> @@ -42,13 +42,14 @@
+>   
+>   		pinmux: pinmux@14029c {
+>   			compatible = "pinctrl-single";
+> -			reg = <0x0014029c 0x250>;
+> +			reg = <0x0014029c 0x26c>;
+>   			#address-cells = <1>;
+>   			#size-cells = <1>;
+>   			pinctrl-single,register-width = <32>;
+>   			pinctrl-single,function-mask = <0xf>;
+>   			pinctrl-single,gpio-range = <
+> -				&range 0 154 MODE_GPIO
+> +				&range 0  91 MODE_GPIO
+> +				&range 95 60 MODE_GPIO
+>   				>;
+>   			range: gpio-range {
+>   				#pinctrl-single,gpio-range-cells = <3>;
+> diff --git a/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi b/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
+> index 71e2e34..0098dfd 100644
+> --- a/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
+> +++ b/arch/arm64/boot/dts/broadcom/stingray/stingray.dtsi
+> @@ -464,8 +464,7 @@
+>   					<&pinmux 108 16 27>,
+>   					<&pinmux 135 77 6>,
+>   					<&pinmux 141 67 4>,
+> -					<&pinmux 145 149 6>,
+> -					<&pinmux 151 91 4>;
+> +					<&pinmux 145 149 6>;
+>   		};
+>   
+>   		i2c1: i2c@e0000 {
+> 
 
-Thanks, applied.
+Thanks for the fix. Looks good to me!
 
-Best regards,
-Krzysztof
-
+Reviewed-by: Ray Jui <ray.jui@broadcom.com>
 
 _______________________________________________
 linux-arm-kernel mailing list
