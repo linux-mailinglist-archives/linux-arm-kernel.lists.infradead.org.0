@@ -2,67 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DA708AD5A9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 11:28:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 401A8AD5C4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 11:33:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=y9xWix38oJ7H3l/KpAnpfUmm1SRpXuSMj2HEGxFqLYE=; b=BzHTuekfNM9cdj
-	b+nynP9JOUHBf9OPC1BrguwW+cPwn3IU+PeG+ECuwWCnVD+K/UvBiBJlN6hY9nwqLIOMxDs3kqT+F
-	z/LsetLkAKNxHfLv2ULhUG9jbQP49GUAMgKNeowTI4apWCMurzICMrLhQPvZEZQ0QB1HmCGGe7TKK
-	nk5mKcp8Cfyhd4ZmSrfmlEHmDi8vRqb+Hl4n+pec7hPT9uW8tsh+gc2Ya7pXRqT91JBY+ohWpQkMU
-	s8XYUQ2348TzhFgtDIiigL0G2tgw0YG5HVsnZSRFMueiAJIg6l1rK3X+bmqzlkm6gcQEguD37fUlA
-	s1C7olmkH0AHyh0tqh6Q==;
+	List-Owner; bh=S3ueGVl2faZSbf12Wk0NuMmHxsYo9WFBopQMJTPn7c8=; b=af2j7tGlAeOwSd
+	FGagtwjYqY9JXjO9p2eIBBy+1+L1pgW0Y4hqWo6cuXsr4XyVx2gV9aLgBtRPqb1k3iEqW5I//V7YS
+	0rdZol0Is70TUcSUcuxzcIQLMl+M4ivKhkeB4D7cpEzsbjC+Pooio0EUwtkoRnwXM7FULPMOO4+GF
+	AuqdocL1ePx3s7HF1TrE+du32TKC0qusWLhEMAXtLBHZAt9Uj3gKAVCKwc57RD0BEnzsIcpQpGKfT
+	pBlbqm1M12oeJNhVmLTIQ+cpYUvODPLdmwO3eEw2jH5pPtQpbvK8bBhHDNFrOoFRTHMfW3/hyX0O8
+	1zGn793YGud+mHyFRsFQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7Fxd-0008W0-Ef; Mon, 09 Sep 2019 09:27:49 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i7G38-0001xI-2r; Mon, 09 Sep 2019 09:33:30 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7FxM-0008TI-HV; Mon, 09 Sep 2019 09:27:34 +0000
-X-UUID: d9e43ccfdd624e1090dbbe2b9159decf-20190909
-X-UUID: d9e43ccfdd624e1090dbbe2b9159decf-20190909
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1215198597; Mon, 09 Sep 2019 01:27:29 -0800
-Received: from MTKMBS31N1.mediatek.inc (172.27.4.69) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 9 Sep 2019 02:27:28 -0700
-Received: from MTKCAS36.mediatek.inc (172.27.4.186) by MTKMBS31N1.mediatek.inc
- (172.27.4.69) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
- Mon, 9 Sep 2019 17:27:23 +0800
-Received: from [10.17.3.153] (172.27.4.253) by MTKCAS36.mediatek.inc
- (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 9 Sep 2019 17:27:23 +0800
-Message-ID: <1568021243.21623.250.camel@mhfsdcap03>
-Subject: Re: [V1, 2/2] media: i2c: Add more sensor mode for ov8856 camera
- sensor
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-To: Tomasz Figa <tfiga@chromium.org>
-Date: Mon, 9 Sep 2019 17:27:23 +0800
-In-Reply-To: <20190823100126.GB33937@chromium.org>
-References: <20190808092215.5608-1-dongchun.zhu@mediatek.com>
- <20190808092215.5608-3-dongchun.zhu@mediatek.com>
- <20190823100126.GB33937@chromium.org>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i7G2n-0001wx-Q7
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 09:33:11 +0000
+Received: by mail-qk1-x743.google.com with SMTP id 4so12369558qki.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 09 Sep 2019 02:33:08 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=2tHmH1stIAhWci8qIBPtmNf+VD11DJ+UCL9f9Y17abo=;
+ b=vrZnv+PStMf+ECSwAA9EBVmkJ1p3GaWvYFKNeMG3Owov4IHFuOEVR00hBZEXUYgKSh
+ OieKMKPXAWSyeWC/HP+/8QjHPAQdr34fWMdBDb4EyrTrZzcaWm+bFSXF8/i1Qu+HEiyz
+ CKq1XWiDER91AclIs00Rtj003JXkH1Eu9Ku5Gq5DOUvFkeqvW6kHPWF61Px47znWI9K1
+ S/swfW3z34aw9icDEOL4KLxAVFXkRZCd61hfEJTlf//onBcY4c/nTKxMTOkbTn4T4qAu
+ gUry9EPHH1pj8bML9BWQUN4v2UvpiQKwO3J3lFPxgg0Hq0i2zXZ1H1fYb9CNTHuZvNPo
+ y/0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=2tHmH1stIAhWci8qIBPtmNf+VD11DJ+UCL9f9Y17abo=;
+ b=KZRGFps5PisEFA8ZDj6Dc3Yvx0vjlfYjNWVmZFODdP4i7eAma6fheMy4VRgEM0xbPs
+ z0ooG2RMPcyvYIefiyerGLPtQbs3GbZPeyp3KVyg0vceTo6FU1O1CZ1hGiNV7oRl/w3i
+ fgNui3E9YoBrRpJj0nzXTcxntaTQeuAiTJXpStht4dAdasVHV8pavXLNfR2zzAqG2Z1H
+ bv4a5Ab0v1801t4kdZKIC8RqdkC7IwV37BssnusGeQ40JN2yJmfflUNbHUJyKlOrBmQN
+ HR4Q4YuQZpMif9NpILUqjajA0ptLxCDmF152DWD9T1+WAGXTQKU2UIg71kV1QqZSWANH
+ 5XuA==
+X-Gm-Message-State: APjAAAWL8yu96pASoTKeJRwPrKI453RriumEwnMgNiapgZjgKFekpsA8
+ qcBv7gqSDpROTz1n591YnnPv9TelgdQAOhIKaG6V4g==
+X-Google-Smtp-Source: APXvYqyJ2skoDsCxCcviaFJEdYxXi0/LKrzEr6iBfeSawT0Q0tTImcnSBrPILhJzLyjKObBRKhPopIxIjwlVAoBadOo=
+X-Received: by 2002:ae9:dd81:: with SMTP id r123mr6813864qkf.103.1568021588009; 
+ Mon, 09 Sep 2019 02:33:08 -0700 (PDT)
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: C101645FC6010ADACA24136EE257BF4E873FFFDCD9736CBD53C7475A863EB0172000:8
-X-MTK: N
+References: <1567761708-31777-1-git-send-email-yannick.fertre@st.com>
+In-Reply-To: <1567761708-31777-1-git-send-email-yannick.fertre@st.com>
+From: Benjamin Gaignard <benjamin.gaignard@linaro.org>
+Date: Mon, 9 Sep 2019 11:32:57 +0200
+Message-ID: <CA+M3ks6MQBScJ4mOY3VD-OTP-wG2VfSLMxA-9z6ZkNAeO53SMA@mail.gmail.com>
+Subject: Re: [PATCH] drm/stm: ltdc: add pinctrl for DPI encoder mode
+To: =?UTF-8?Q?Yannick_Fertr=C3=A9?= <yannick.fertre@st.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_022732_597511_5899C36E 
-X-CRM114-Status: GOOD (  34.56  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190909_023309_849630_3C73A09A 
+X-CRM114-Status: GOOD (  20.28  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,676 +91,78 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Daniel Vetter <daniel@ffwll.ch>, David Airlie <airlied@linux.ie>,
+ Philippe Cornu <philippe.cornu@st.com>,
+ ML dri-devel <dri-devel@lists.freedesktop.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Alexandre Torgue <alexandre.torgue@st.com>,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Vincent Abriou <vincent.abriou@st.com>,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Benjamin Gaignard <benjamin.gaignard@st.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Tomasz,
-
-On Fri, 2019-08-23 at 19:01 +0900, Tomasz Figa wrote:
-> Hi Dongchun,
-> 
-> On Thu, Aug 08, 2019 at 05:22:15PM +0800, dongchun.zhu@mediatek.com wrote:
-> > From: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > 
-> > This patch mainly adds two more sensor modes for OV8856 image sensor.
-> > The OV8856 driver currently supports output format: 10-bit Raw,
-> > the resolution of 1632*1224 and 3264*2448, and the bayer order of BGGR.
-> > The hardware version also differs in some OTP regiser,
-> > as well as PLL register setting.
-> > 
-> > Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
-> > ---
-> >  drivers/media/i2c/ov8856.c | 624 ++++++++++++++++++++++++++++++++++++++++++++-
-> >  1 file changed, 621 insertions(+), 3 deletions(-)
-> > 
-> 
-> Thanks for the patch! Please see my comments inline.
-> 
-> > diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-> > index cd347d6..e0610b6 100644
-> > --- a/drivers/media/i2c/ov8856.c
-> > +++ b/drivers/media/i2c/ov8856.c
-> > @@ -1,12 +1,15 @@
-> >  // SPDX-License-Identifier: GPL-2.0
-> >  // Copyright (c) 2019 Intel Corporation.
-> >  
-> > +#include <linux/clk.h>
-> >  #include <asm/unaligned.h>
-> >  #include <linux/acpi.h>
-> >  #include <linux/delay.h>
-> > +#include <linux/gpio/consumer.h>
-> >  #include <linux/i2c.h>
-> >  #include <linux/module.h>
-> >  #include <linux/pm_runtime.h>
-> > +#include <linux/regulator/consumer.h>
-> >  #include <media/v4l2-ctrls.h>
-> >  #include <media/v4l2-device.h>
-> >  #include <media/v4l2-fwnode.h>
-> > @@ -19,6 +22,7 @@
-> >  #define OV8856_LINK_FREQ_180MHZ		180000000ULL
-> >  #define OV8856_SCLK			144000000ULL
-> >  #define OV8856_MCLK			19200000
-> > +#define OV8856_XVCLK_FREQ		24000000
-> >  #define OV8856_DATA_LANES		4
-> >  #define OV8856_RGB_DEPTH		10
-> >  
-> > @@ -29,6 +33,18 @@
-> >  #define OV8856_MODE_STANDBY		0x00
-> >  #define OV8856_MODE_STREAMING		0x01
-> >  
-> > +/* define 1B module */
-> > +#define OV8856_1B_MODULE		0x02
-> > +
-> > +/* otp sram register */
-> > +#define OV8856_OTP_REG			0x700f
-> 
-> This isn't a register. I believe the OTP read-out buffer is at 0x7000 and
-> 0xf is the offset of the byte in the OTP that means the module revision.
-> 
-
-Agreed.
-I would rename this macro.
-
-> > +#define OV8856_OTP_REG_ONE		0x3d84
-> > +#define OV8856_OTP_REG_TWO		0x3d81
-> 
-> These registers are definitely not "ONE" and "TWO". Please use proper
-> names as per the datasheet.
-> 
-
-Fixed in next release.
-
-> > +
-> > +/* clock register */
-> > +#define OV8856_CLK_REG			0x3614
-> > +#define OV8856_CLK_REG_1B_VAL		0x20
-> 
-> Same here. These don't look like the real names of the register and bit
-> field.
-> 
-
-Fixed in next release.
-
-> > +
-> >  /* vertical-timings from sensor */
-> >  #define OV8856_REG_VTS			0x380e
-> >  #define OV8856_VTS_MAX			0x7fff
-> > @@ -64,6 +80,14 @@
-> >  
-> >  #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
-> >  
-> > +static const char * const ov8856_supply_names[] = {
-> > +	"dovdd",	/* Digital I/O power */
-> > +	"avdd",		/* Analog power */
-> > +	"dvdd",		/* Digital core power */
-> > +};
-> > +
-> > +#define OV8856_NUM_SUPPLIES ARRAY_SIZE(ov8856_supply_names)
-> > +
-> >  enum {
-> >  	OV8856_LINK_FREQ_720MBPS,
-> >  	OV8856_LINK_FREQ_360MBPS,
-> > @@ -316,6 +340,208 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
-> >  	{0x5e00, 0x00}
-> >  };
-> >  
-> > +static const struct ov8856_reg mode_3264x2448_regs[] = {
-> > +	{0x0103, 0x01},
-> > +	{0x0302, 0x3c},
-> > +	{0x0303, 0x01},
-> > +	{0x031e, 0x0c},
-> > +	{0x3000, 0x00},
-> > +	{0x300e, 0x00},
-> > +	{0x3010, 0x00},
-> > +	{0x3015, 0x84},
-> > +	{0x3018, 0x72},
-> > +	{0x3021, 0x23},
-> > +	{0x3033, 0x24},
-> > +	{0x3500, 0x00},
-> > +	{0x3501, 0x9a},
-> > +	{0x3502, 0x20},
-> > +	{0x3503, 0x08},
-> > +	{0x3505, 0x83},
-> > +	{0x3508, 0x01},
-> > +	{0x3509, 0x80},
-> > +	{0x350c, 0x00},
-> > +	{0x350d, 0x80},
-> > +	{0x350e, 0x04},
-> > +	{0x350f, 0x00},
-> > +	{0x3510, 0x00},
-> > +	{0x3511, 0x02},
-> > +	{0x3512, 0x00},
-> > +	{0x3600, 0x72},
-> > +	{0x3601, 0x40},
-> > +	{0x3602, 0x30},
-> > +	{0x3610, 0xc5},
-> > +	{0x3611, 0x58},
-> > +	{0x3612, 0x5c},
-> > +	{0x3613, 0xca},
-> > +	{0x3614, 0x60},
-> > +	{0x3628, 0xff},
-> > +	{0x3629, 0xff},
-> > +	{0x362a, 0xff},
-> > +	{0x3633, 0x10},
-> > +	{0x3634, 0x10},
-> > +	{0x3635, 0x10},
-> > +	{0x3636, 0x10},
-> > +	{0x3663, 0x08},
-> > +	{0x3669, 0x34},
-> > +	{0x366d, 0x00},
-> > +	{0x366e, 0x10},
-> > +	{0x3706, 0x86},
-> > +	{0x370b, 0x7e},
-> > +	{0x3714, 0x23},
-> > +	{0x3730, 0x12},
-> > +	{0x3733, 0x10},
-> > +	{0x3764, 0x00},
-> > +	{0x3765, 0x00},
-> > +	{0x3769, 0x62},
-> > +	{0x376a, 0x2a},
-> > +	{0x376b, 0x30},
-> > +	{0x3780, 0x00},
-> > +	{0x3781, 0x24},
-> > +	{0x3782, 0x00},
-> > +	{0x3783, 0x23},
-> > +	{0x3798, 0x2f},
-> > +	{0x37a1, 0x60},
-> > +	{0x37a8, 0x6a},
-> > +	{0x37ab, 0x3f},
-> > +	{0x37c2, 0x04},
-> > +	{0x37c3, 0xf1},
-> > +	{0x37c9, 0x80},
-> > +	{0x37cb, 0x16},
-> > +	{0x37cc, 0x16},
-> > +	{0x37cd, 0x16},
-> > +	{0x37ce, 0x16},
-> > +	{0x3800, 0x00},
-> > +	{0x3801, 0x00},
-> > +	{0x3802, 0x00},
-> > +	{0x3803, 0x0c},
-> > +	{0x3804, 0x0c},
-> > +	{0x3805, 0xdf},
-> > +	{0x3806, 0x09},
-> > +	{0x3807, 0xa3},
-> > +	{0x3808, 0x0c},
-> > +	{0x3809, 0xc0},
-> > +	{0x380a, 0x09},
-> > +	{0x380b, 0x90},
-> > +	{0x380c, 0x07},
-> > +	{0x380d, 0x8c},
-> > +	{0x380e, 0x09},
-> > +	{0x380f, 0xb2},
-> > +	{0x3810, 0x00},
-> > +	{0x3811, 0x04},
-> > +	{0x3812, 0x00},
-> > +	{0x3813, 0x02},
-> > +	{0x3814, 0x01},
-> > +	{0x3815, 0x01},
-> > +	{0x3816, 0x00},
-> > +	{0x3817, 0x00},
-> > +	{0x3818, 0x00},
-> > +	{0x3819, 0x00},
-> > +	{0x3820, 0x80},
-> > +	{0x3821, 0x46},
-> > +	{0x382a, 0x01},
-> > +	{0x382b, 0x01},
-> > +	{0x3830, 0x06},
-> > +	{0x3836, 0x02},
-> > +	{0x3862, 0x04},
-> > +	{0x3863, 0x08},
-> > +	{0x3cc0, 0x33},
-> > +	{0x3d85, 0x17},
-> > +	{0x3d8c, 0x73},
-> > +	{0x3d8d, 0xde},
-> > +	{0x4001, 0xe0},
-> > +	{0x4003, 0x40},
-> > +	{0x4008, 0x00},
-> > +	{0x4009, 0x0b},
-> > +	{0x400a, 0x00},
-> > +	{0x400b, 0x84},
-> > +	{0x400f, 0x80},
-> > +	{0x4010, 0xf0},
-> > +	{0x4011, 0xff},
-> > +	{0x4012, 0x02},
-> > +	{0x4013, 0x01},
-> > +	{0x4014, 0x01},
-> > +	{0x4015, 0x01},
-> > +	{0x4042, 0x00},
-> > +	{0x4043, 0x80},
-> > +	{0x4044, 0x00},
-> > +	{0x4045, 0x80},
-> > +	{0x4046, 0x00},
-> > +	{0x4047, 0x80},
-> > +	{0x4048, 0x00},
-> > +	{0x4049, 0x80},
-> > +	{0x4041, 0x03},
-> > +	{0x404c, 0x20},
-> > +	{0x404d, 0x00},
-> > +	{0x404e, 0x20},
-> > +	{0x4203, 0x80},
-> > +	{0x4307, 0x30},
-> > +	{0x4317, 0x00},
-> > +	{0x4502, 0x50},
-> > +	{0x4503, 0x08},
-> > +	{0x4601, 0x80},
-> > +	{0x4800, 0x44},
-> > +	{0x4816, 0x53},
-> > +	{0x481b, 0x50},
-> > +	{0x481f, 0x27},
-> > +	{0x4823, 0x3c},
-> > +	{0x482b, 0x00},
-> > +	{0x4831, 0x66},
-> > +	{0x4837, 0x16},
-> > +	{0x483c, 0x0f},
-> > +	{0x484b, 0x05},
-> > +	{0x5000, 0x77},
-> > +	{0x5001, 0x0a},
-> > +	{0x5003, 0xc8},
-> > +	{0x5004, 0x04},
-> > +	{0x5006, 0x00},
-> > +	{0x5007, 0x00},
-> > +	{0x502e, 0x03},
-> > +	{0x5030, 0x41},
-> > +	{0x5780, 0x14},
-> > +	{0x5781, 0x0f},
-> > +	{0x5782, 0x44},
-> > +	{0x5783, 0x02},
-> > +	{0x5784, 0x01},
-> > +	{0x5785, 0x01},
-> > +	{0x5786, 0x00},
-> > +	{0x5787, 0x04},
-> > +	{0x5788, 0x02},
-> > +	{0x5789, 0x0f},
-> > +	{0x578a, 0xfd},
-> > +	{0x578b, 0xf5},
-> > +	{0x578c, 0xf5},
-> > +	{0x578d, 0x03},
-> > +	{0x578e, 0x08},
-> > +	{0x578f, 0x0c},
-> > +	{0x5790, 0x08},
-> > +	{0x5791, 0x04},
-> > +	{0x5792, 0x00},
-> > +	{0x5793, 0x52},
-> > +	{0x5794, 0xa3},
-> > +	{0x5795, 0x02},
-> > +	{0x5796, 0x20},
-> > +	{0x5797, 0x20},
-> > +	{0x5798, 0xd5},
-> > +	{0x5799, 0xd5},
-> > +	{0x579a, 0x00},
-> > +	{0x579b, 0x50},
-> > +	{0x579c, 0x00},
-> > +	{0x579d, 0x2c},
-> > +	{0x579e, 0x0c},
-> > +	{0x579f, 0x40},
-> > +	{0x57a0, 0x09},
-> > +	{0x57a1, 0x40},
-> > +	{0x59f8, 0x3d},
-> > +	{0x5a08, 0x02},
-> > +	{0x5b00, 0x02},
-> > +	{0x5b01, 0x10},
-> > +	{0x5b02, 0x03},
-> > +	{0x5b03, 0xcf},
-> > +	{0x5b05, 0x6c},
-> > +	{0x5e00, 0x00},
-> > +	{0x5e10, 0xfc}
-> > +};
-> > +
-> 
-> It would be better if we could find the differences between the two arrays
-> and handle them incrementally.
-> 
-
-This approach is not recommended.
-
-For these two arrays, sensor input clock frequencies (19.2MHz, 24MHz)
-are different, corresponding to different PLL register setting.
-
-Besides, there are also some differences in image resolution and
-hts/vts, including 0x3614 register that reflecting sensor revision.
-
-
-> [snip]
-> 
-> > +static int ov8856_update_otp_reg(struct ov8856 *ov8856)
-> > +{
-> > +	int ret;
-> > +
-> > +	ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
-> > +			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ret = ov8856_write_reg(ov8856, OV8856_OTP_REG_ONE,
-> > +			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STANDBY);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	return ov8856_write_reg(ov8856, OV8856_OTP_REG_TWO,
-> > +				OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-> 
-> Hmm, this doesn't sound right. The OTP register doesn't have anything to do
-> with streaming. Also we should stop streaming at the end.
-> 
-
-Sorry for the confusion.
-We would rename ov8856_update_otp_reg function.
-
-> > +}
-> > +
-> >  static int ov8856_set_ctrl(struct v4l2_ctrl *ctrl)
-> >  {
-> >  	struct ov8856 *ov8856 = container_of(ctrl->handler,
-> > @@ -825,7 +1302,13 @@ static void ov8856_update_pad_format(const struct ov8856_mode *mode,
-> >  {
-> >  	fmt->width = mode->width;
-> >  	fmt->height = mode->height;
-> > -	fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-> > +
-> > +	/* Bayer Order is determined by image resolution */
-> > +	if (fmt->width == 3264 || fmt->width == 1632)
-> 
-> Could we instead set the bayer order in the mode struct?
-> 
-
-I would have a try...
-
-> > +		fmt->code = MEDIA_BUS_FMT_SBGGR10_1X10;
-> > +	else
-> > +		fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-> > +
-> >  	fmt->field = V4L2_FIELD_NONE;
-> >  }
-> >  
-> > @@ -850,6 +1333,17 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
-> >  		return ret;
-> >  	}
-> >  
-> > +	/* update R3614 for 1B module */
-> 
-> What's R3614?
-> 
-
-R3614 is the register 0x3614, which reflects the sensor revision.
-For instance, it would be 0x20 for 1B module, while 0x60 for 2A module.
-
-> > +	if (ov8856->is_1B_module) {
-> > +		ret = ov8856_write_reg(ov8856, OV8856_CLK_REG,
-> > +				       OV8856_REG_VALUE_08BIT,
-> > +				       OV8856_CLK_REG_1B_VAL);
-> > +		if (ret) {
-> > +			dev_err(&client->dev, "failed to set R3614");
-> > +			return ret;
-> > +		}
-> > +	}
-> > +
-> >  	ret = __v4l2_ctrl_handler_setup(ov8856->sd.ctrl_handler);
-> >  	if (ret)
-> >  		return ret;
-> > @@ -882,6 +1376,8 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> >  	if (ov8856->streaming == enable)
-> >  		return 0;
-> >  
-> > +	dev_dbg(&client->dev, "hardware version: (%d)\n", ov8856->is_1B_module);
-> > +
-> >  	mutex_lock(&ov8856->mutex);
-> >  	if (enable) {
-> >  		ret = pm_runtime_get_sync(&client->dev);
-> > @@ -908,6 +1404,54 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
-> >  	return ret;
-> >  }
-> >  
-> > +/* Calculate the delay in us by clock rate and clock cycles */
-> > +static inline u32 ov8856_cal_delay(u32 cycles)
-> > +{
-> > +	return DIV_ROUND_UP(cycles, OV8856_XVCLK_FREQ / 1000 / 1000);
-> > +}
-> > +
-> > +static int __ov8856_power_on(struct ov8856 *ov8856)
-> > +{
-> > +	int ret;
-> > +	u32 delay_us;
-> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > +
-> > +	ret = clk_prepare_enable(ov8856->xvclk);
-> > +	if (ret < 0) {
-> > +		dev_err(&client->dev, "Failed to enable xvclk\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> 
-> According to my datasheet, this sensor doesn't have a reset pin. The one I
-> can see there is XSHUTDN, which I would call "n_shutdn" here.
-> 
-
-I would rename this pin in next release.
-BTW, how do you define "n_shutdn" or "shuutdn"?
-If GPIO is actively high, then "n_shutdn"?
-
-> > +
-> > +	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > +	if (ret < 0) {
-> > +		dev_err(&client->dev, "Failed to enable regulators\n");
-> > +		goto disable_clk;
-> > +	}
-> > +
-> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 0);
-> 
-> According to the datasheet, XSHUTDN should be 0 for shutdown and 1 for
-> running. Why is it the other way around here?
-> 
-
-For GPIO, the definition of bit field of flags defined in DT seems
-reversed.
-This would be fixed in next release.
-
-> > +
-> > +	/* 8192 cycles prior to first SCCB transaction */
-> > +	delay_us = ov8856_cal_delay(8192);
-> 
-> If we pass a constant to the function and the function itself only uses
-> constants inside, could we just define a constant delay instead?
-> 
-
-This calculation refers to powering up sequence in datasheet.
-Did you mean using usleep_range() directly?
-
-> > +	usleep_range(delay_us  * 2, delay_us * 4);
-> 
-> Normally one one just give some small delta here, like +/- 100 us.
-> 
-
-Fixed in next release.
-
-> > +
-> > +	return 0;
-> > +
-> > +disable_clk:
-> > +	clk_disable_unprepare(ov8856->xvclk);
-> > +
-> > +	return ret;
-> > +}
-> > +
-> > +static void __ov8856_power_off(struct ov8856 *ov8856)
-> > +{
-> > +	clk_disable_unprepare(ov8856->xvclk);
-> > +	gpiod_set_value_cansleep(ov8856->reset_gpio, 1);
-> > +
-> > +	regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> > +}
-> > +
-> >  static int __maybe_unused ov8856_suspend(struct device *dev)
-> >  {
-> >  	struct i2c_client *client = to_i2c_client(dev);
-> > @@ -915,8 +1459,8 @@ static int __maybe_unused ov8856_suspend(struct device *dev)
-> >  	struct ov8856 *ov8856 = to_ov8856(sd);
-> >  
-> >  	mutex_lock(&ov8856->mutex);
-> > -	if (ov8856->streaming)
-> > -		ov8856_stop_streaming(ov8856);
-> > +
-> > +	__ov8856_power_off(ov8856);
-> 
-> This change is incorrect because it will power off even if the device was
-> already powered off, causing reference count mismatch. The original code
-> was okay.
-> 
-
-Then do we need to power off sensor per power off sequence?
-I thought this function would be called by pm_runtime_put when power
-count is 0.
-
-> >  
-> >  	mutex_unlock(&ov8856->mutex);
-> >  
-> > @@ -1089,6 +1633,20 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
-> >  		return -ENXIO;
-> >  	}
-> >  
-> > +	/* set R3614 to distinguish harward versions */
-> 
-> hardware
-> 
-
-Sorry for the typo.
-Fixed in next release.
-
-> > +	ret = ov8856_update_otp_reg(ov8856);
-> > +	if (ret) {
-> > +		dev_err(&client->dev, "failed to set otp register");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = ov8856_read_reg(ov8856, OV8856_OTP_REG,
-> > +			      OV8856_REG_VALUE_08BIT, &val);
-> > +	if (ret)
-> > +		return ret;
-> > +
-> > +	ov8856->is_1B_module = (val == OV8856_1B_MODULE) ? 1 : 0;
-> 
-> I'd rename ov8856_update_otp_reg() to ov8856_check_revision() and move the
-> few lines above to that function too.
-> 
-
-Fixed in next release.
-
-> > +
-> >  	return 0;
-> >  }
-> >  
-> > @@ -1164,11 +1722,27 @@ static int ov8856_remove(struct i2c_client *client)
-> >  	media_entity_cleanup(&sd->entity);
-> >  	v4l2_ctrl_handler_free(sd->ctrl_handler);
-> >  	pm_runtime_disable(&client->dev);
-> > +	if (!pm_runtime_status_suspended(&client->dev))
-> > +		__ov8856_power_off(ov8856);
-> > +	pm_runtime_set_suspended(&client->dev);
-> >  	mutex_destroy(&ov8856->mutex);
-> >  
-> >  	return 0;
-> >  }
-> >  
-> > +static int ov8856_configure_regulators(struct ov8856 *ov8856)
-> > +{
-> > +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> > +	int i;
-> > +
-> > +	for (i = 0; i < OV8856_NUM_SUPPLIES; i++)
-> > +		ov8856->supplies[i].supply = ov8856_supply_names[i];
-> > +
-> > +	return devm_regulator_bulk_get(&client->dev,
-> > +				       OV8856_NUM_SUPPLIES,
-> > +				       ov8856->supplies);
-> > +}
-> 
-> There is not much value in having a dedicated function just to call one
-> more function. Could you move back to the caller?
-> 
-
-Fixed in next release.
-
-> > +
-> >  static int ov8856_probe(struct i2c_client *client)
-> >  {
-> >  	struct ov8856 *ov8856;
-> > @@ -1186,6 +1760,40 @@ static int ov8856_probe(struct i2c_client *client)
-> >  		return -ENOMEM;
-> >  
-> >  	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-> > +
-> > +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-> > +	if (IS_ERR(ov8856->xvclk)) {
-> > +		dev_err(&client->dev, "Failed to get xvclk\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_FREQ);
-> 
-> We should get the frequency from the DT bindings.
-> 
-
-Fixed in next release.
-
-> > +	if (ret < 0) {
-> > +		dev_err(&client->dev, "Failed to set xvclk rate (24MHz)\n");
-> > +		return ret;
-> > +	}
-> > +	if (clk_get_rate(ov8856->xvclk) != OV8856_XVCLK_FREQ)
-> > +		dev_warn(&client->dev,
-> > +			 "xvclk mismatched, modes are based on 24MHz\n");
-> > +
-> > +	ov8856->reset_gpio = devm_gpiod_get(&client->dev,
-> > +					    "reset",
-> > +					    GPIOD_OUT_LOW);
-> > +	if (IS_ERR(ov8856->reset_gpio)) {
-> > +		dev_err(&client->dev, "Failed to get reset-gpios\n");
-> > +		return -EINVAL;
-> > +	}
-> > +
-> > +	ret = ov8856_configure_regulators(ov8856);
-> > +	if (ret) {
-> > +		dev_err(&client->dev, "Failed to get power regulators\n");
-> > +		return ret;
-> > +	}
-> > +
-> > +	ret = __ov8856_power_on(ov8856);
-> > +	if (ret)
-> > +		goto probe_error_v4l2_ctrl_handler_free;
-> > +
-> >  	ret = ov8856_identify_module(ov8856);
-> >  	if (ret) {
-> >  		dev_err(&client->dev, "failed to find sensor: %d", ret);
-> > @@ -1251,11 +1859,21 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
-> >  MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
-> >  #endif
-> >  
-> > +#if IS_ENABLED(CONFIG_OF)
-> > +static const struct of_device_id ov8856_of_match[] = {
-> > +	{ .compatible = "ovti,ov8856" },
-> > +	{},
-> > +};
-> > +
-> 
-> nit: Unnecessary blank line.
-> 
-
-Fixed in next release.
-
-> Best regards,
-> Tomasz
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+TGUgdmVuLiA2IHNlcHQuIDIwMTkgw6AgMTE6MjIsIFlhbm5pY2sgRmVydHLDqSA8eWFubmljay5m
+ZXJ0cmVAc3QuY29tPiBhIMOpY3JpdCA6Cj4KPiBUaGUgaW1wbGVtZW50YXRpb24gb2YgZnVuY3Rp
+b25zIGVuY29kZXJfZW5hYmxlIGFuZCBlbmNvZGVyX2Rpc2FibGUKPiBtYWtlIHBvc3NpYmxlIHRv
+IGNvbnRyb2wgdGhlIHBpbmN0cmwgYWNjb3JkaW5nIHRvIHRoZSBlbmNvZGVyIHR5cGUuCj4gVGhl
+IHBpbmN0cmwgbXVzdCBiZSBhY3RpdmF0ZWQgb25seSBpZiB0aGUgZW5jb2RlciB0eXBlIGlzIERQ
+SS4KPiBUaGlzIGhlbHBzIHRvIG1vdmUgdGhlIERQSS1yZWxhdGVkIHBpbmN0cmwgY29uZmlndXJh
+dGlvbiBmcm9tCj4gYWxsIHRoZSBwYW5lbCBvciBicmlkZ2UgdG8gdGhlIExUREMgZHQgbm9kZS4K
+Pgo+IFJldmlld2VkLWJ5OiBQaGlsaXBwZSBDb3JudSA8cGhpbGlwcGUuY29ybnVAc3QuY29tPgo+
+Cj4gU2lnbmVkLW9mZi1ieTogWWFubmljayBGZXJ0csOpIDx5YW5uaWNrLmZlcnRyZUBzdC5jb20+
+CgpBcHBsaWVkIG9uIGRybS1taXNjLW5leHQsClRoYW5rcywKQmVuamFtaW4KCj4gLS0tCj4gIGRy
+aXZlcnMvZ3B1L2RybS9zdG0vbHRkYy5jIHwgMzUgKysrKysrKysrKysrKysrKysrKysrKysrKysr
+KysrKysrKysKPiAgMSBmaWxlIGNoYW5nZWQsIDM1IGluc2VydGlvbnMoKykKPgo+IGRpZmYgLS1n
+aXQgYS9kcml2ZXJzL2dwdS9kcm0vc3RtL2x0ZGMuYyBiL2RyaXZlcnMvZ3B1L2RybS9zdG0vbHRk
+Yy5jCj4gaW5kZXggM2FiNGZiZi4uMWM0ZmRlMCAxMDA2NDQKPiAtLS0gYS9kcml2ZXJzL2dwdS9k
+cm0vc3RtL2x0ZGMuYwo+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9zdG0vbHRkYy5jCj4gQEAgLTE1
+LDYgKzE1LDcgQEAKPiAgI2luY2x1ZGUgPGxpbnV4L21vZHVsZS5oPgo+ICAjaW5jbHVkZSA8bGlu
+dXgvb2ZfYWRkcmVzcy5oPgo+ICAjaW5jbHVkZSA8bGludXgvb2ZfZ3JhcGguaD4KPiArI2luY2x1
+ZGUgPGxpbnV4L3BpbmN0cmwvY29uc3VtZXIuaD4KPiAgI2luY2x1ZGUgPGxpbnV4L3BsYXRmb3Jt
+X2RldmljZS5oPgo+ICAjaW5jbHVkZSA8bGludXgvcG1fcnVudGltZS5oPgo+ICAjaW5jbHVkZSA8
+bGludXgvcmVzZXQuaD4KPiBAQCAtMTA0MCw2ICsxMDQxLDM2IEBAIHN0YXRpYyBjb25zdCBzdHJ1
+Y3QgZHJtX2VuY29kZXJfZnVuY3MgbHRkY19lbmNvZGVyX2Z1bmNzID0gewo+ICAgICAgICAgLmRl
+c3Ryb3kgPSBkcm1fZW5jb2Rlcl9jbGVhbnVwLAo+ICB9Owo+Cj4gK3N0YXRpYyB2b2lkIGx0ZGNf
+ZW5jb2Rlcl9kaXNhYmxlKHN0cnVjdCBkcm1fZW5jb2RlciAqZW5jb2RlcikKPiArewo+ICsgICAg
+ICAgc3RydWN0IGRybV9kZXZpY2UgKmRkZXYgPSBlbmNvZGVyLT5kZXY7Cj4gKwo+ICsgICAgICAg
+RFJNX0RFQlVHX0RSSVZFUigiXG4iKTsKPiArCj4gKyAgICAgICAvKiBTZXQgdG8gc2xlZXAgc3Rh
+dGUgdGhlIHBpbmN0cmwgd2hhdGV2ZXIgdHlwZSBvZiBlbmNvZGVyICovCj4gKyAgICAgICBwaW5j
+dHJsX3BtX3NlbGVjdF9zbGVlcF9zdGF0ZShkZGV2LT5kZXYpOwo+ICt9Cj4gKwo+ICtzdGF0aWMg
+dm9pZCBsdGRjX2VuY29kZXJfZW5hYmxlKHN0cnVjdCBkcm1fZW5jb2RlciAqZW5jb2RlcikKPiAr
+ewo+ICsgICAgICAgc3RydWN0IGRybV9kZXZpY2UgKmRkZXYgPSBlbmNvZGVyLT5kZXY7Cj4gKwo+
+ICsgICAgICAgRFJNX0RFQlVHX0RSSVZFUigiXG4iKTsKPiArCj4gKyAgICAgICAvKgo+ICsgICAg
+ICAgICogU2V0IHRvIGRlZmF1bHQgc3RhdGUgdGhlIHBpbmN0cmwgb25seSB3aXRoIERQSSB0eXBl
+Lgo+ICsgICAgICAgICogT3RoZXJzIHR5cGVzIGxpa2UgRFNJLCBkb24ndCBuZWVkIHBpbmN0cmwg
+ZHVlIHRvCj4gKyAgICAgICAgKiBpbnRlcm5hbCBicmlkZ2UgKHRoZSBzaWduYWxzIGRvIG5vdCBj
+b21lIG91dCBvZiB0aGUgY2hpcHNldCkuCj4gKyAgICAgICAgKi8KPiArICAgICAgIGlmIChlbmNv
+ZGVyLT5lbmNvZGVyX3R5cGUgPT0gRFJNX01PREVfRU5DT0RFUl9EUEkpCj4gKyAgICAgICAgICAg
+ICAgIHBpbmN0cmxfcG1fc2VsZWN0X2RlZmF1bHRfc3RhdGUoZGRldi0+ZGV2KTsKPiArfQo+ICsK
+PiArc3RhdGljIGNvbnN0IHN0cnVjdCBkcm1fZW5jb2Rlcl9oZWxwZXJfZnVuY3MgbHRkY19lbmNv
+ZGVyX2hlbHBlcl9mdW5jcyA9IHsKPiArICAgICAgIC5kaXNhYmxlID0gbHRkY19lbmNvZGVyX2Rp
+c2FibGUsCj4gKyAgICAgICAuZW5hYmxlID0gbHRkY19lbmNvZGVyX2VuYWJsZSwKPiArfTsKPiAr
+Cj4gIHN0YXRpYyBpbnQgbHRkY19lbmNvZGVyX2luaXQoc3RydWN0IGRybV9kZXZpY2UgKmRkZXYs
+IHN0cnVjdCBkcm1fYnJpZGdlICpicmlkZ2UpCj4gIHsKPiAgICAgICAgIHN0cnVjdCBkcm1fZW5j
+b2RlciAqZW5jb2RlcjsKPiBAQCAtMTA1NSw2ICsxMDg2LDggQEAgc3RhdGljIGludCBsdGRjX2Vu
+Y29kZXJfaW5pdChzdHJ1Y3QgZHJtX2RldmljZSAqZGRldiwgc3RydWN0IGRybV9icmlkZ2UgKmJy
+aWRnZSkKPiAgICAgICAgIGRybV9lbmNvZGVyX2luaXQoZGRldiwgZW5jb2RlciwgJmx0ZGNfZW5j
+b2Rlcl9mdW5jcywKPiAgICAgICAgICAgICAgICAgICAgICAgICAgRFJNX01PREVfRU5DT0RFUl9E
+UEksIE5VTEwpOwo+Cj4gKyAgICAgICBkcm1fZW5jb2Rlcl9oZWxwZXJfYWRkKGVuY29kZXIsICZs
+dGRjX2VuY29kZXJfaGVscGVyX2Z1bmNzKTsKPiArCj4gICAgICAgICByZXQgPSBkcm1fYnJpZGdl
+X2F0dGFjaChlbmNvZGVyLCBicmlkZ2UsIE5VTEwpOwo+ICAgICAgICAgaWYgKHJldCkgewo+ICAg
+ICAgICAgICAgICAgICBkcm1fZW5jb2Rlcl9jbGVhbnVwKGVuY29kZXIpOwo+IEBAIC0xMjgwLDYg
+KzEzMTMsOCBAQCBpbnQgbHRkY19sb2FkKHN0cnVjdCBkcm1fZGV2aWNlICpkZGV2KQo+Cj4gICAg
+ICAgICBjbGtfZGlzYWJsZV91bnByZXBhcmUobGRldi0+cGl4ZWxfY2xrKTsKPgo+ICsgICAgICAg
+cGluY3RybF9wbV9zZWxlY3Rfc2xlZXBfc3RhdGUoZGRldi0+ZGV2KTsKPiArCj4gICAgICAgICBw
+bV9ydW50aW1lX2VuYWJsZShkZGV2LT5kZXYpOwo+Cj4gICAgICAgICByZXR1cm4gMDsKPiAtLQo+
+IDIuNy40Cj4KPiBfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+Xwo+IGRyaS1kZXZlbCBtYWlsaW5nIGxpc3QKPiBkcmktZGV2ZWxAbGlzdHMuZnJlZWRlc2t0b3Au
+b3JnCj4gaHR0cHM6Ly9saXN0cy5mcmVlZGVza3RvcC5vcmcvbWFpbG1hbi9saXN0aW5mby9kcmkt
+ZGV2ZWwKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
