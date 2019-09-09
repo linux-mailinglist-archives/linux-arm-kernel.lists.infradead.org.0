@@ -2,82 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D6CEFAE04E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 23:36:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 48976AE10B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 00:31:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LPM4ATWq714HRr7yN3ESRIh9/E7iqxfU3GjGC8txmRA=; b=qyisME/k4ivSP7
-	OTmkdn3JhFo5agqU0/Tjtin91GTbIqweSL0h00dcb3gUgrtFXFdWqvKiJ+0DSMtjhWX6ZUwhXJMGJ
-	UdfuscyRv0afCg1ObZJtenqmSDFVJLE+3oNGEwhkuE2DW6Wy06cKIgehjYjuawqwqL8vxTZvLXDDE
-	xmApY6+c/m5+nPad3BeIueMGep7cPR4Hel9H8DlxELszeSVdgJ+h44/u7uHrCUC4xKVa4JoC+lgOz
-	2z8rGh3TtIYx82ikvBdQXdIK+k33L6D13BhwZvZwuwa9PG76kbrI1M+iiz0lwvL0r2GKb0iMR0NCv
-	/wUhX8AxQk4Vn4HgruDQ==;
+	List-Owner; bh=tqH3MrncuhR3zdtS35qkytgJ8UjNmYDICKJYmdm01rw=; b=uUwJZm5PpfeujN
+	MObR1tQ7qg41iJZfL79qENBd99VDHskRmbaoUD6uKZFLfZIWrt1pW4nBeyiqq2S/Wl5esvIFFcziF
+	dbSlMAPsbcG2p37hf+47wQ8I1xq5kkt1rBdiwFmq67v2Kq3Q2QAeOrHxT6PRPv3HCpty8l2bxttZj
+	oLSvXeEeJASePdGaLiOEfV0OyR7njwXBsiYRJlJV+0TejtDTXWOdEYm2BQ9dgzZqzHgRCAZvgxIvz
+	SVLqKWmVhT7+sQ/tYkQWDxV3ehmkz7ptfLjDFUlWWhloaR8+WJV01YNx+nSwkMitu8Aw4fA6c+sfV
+	xRV/J4lQYxQhnnQs8rSA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7RKV-0006KP-4O; Mon, 09 Sep 2019 21:36:11 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i7SBw-0006P7-OD; Mon, 09 Sep 2019 22:31:24 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7RKM-0006K5-6h
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 21:36:04 +0000
-Received: by mail-pl1-x644.google.com with SMTP id x20so1680287plm.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 14:36:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=AWfChiuUJemWX/xDu17NLd8EQGs1u1yuvhrocXkkuOg=;
- b=HooNS6LiLAXvF9NxFE+eZmqZRW7ToWinYSCthOx4HHhPgE/cRzd5jeOMn2yr5WiqfB
- WWlxDcwln3c9YsBFYGXWBlVEZ5flrg0DIwF8uyiFU1xecYdg0iM3B7HAOOG9dPpQXnQb
- xfeUvSxsNN2yfg5eHVNBw2aaE7XZvNv+LAE2fZb99cS3FC30B+OOmiFzjSvTfmOEPbul
- kmLdtJfpkj1ewRj4T47B1pgiuWnCGu/mCYZHCfP+iFQNfDHLyi3eGGgCva+7KRCA2qQk
- 9XUmCDuEPWSrnKjgUXKCem2BUmdBQUY9f3Cq7S8+c4ZB7mK1YvHTvKzeO5bcxg9HomkM
- KujQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=AWfChiuUJemWX/xDu17NLd8EQGs1u1yuvhrocXkkuOg=;
- b=e922a7czlJpOjibtoKAzbi/nBOIn/GjviDtjc/aDmANuYv4YWMCvb07JM9ACzM1Dap
- wj622Opfxio5jJUhHq9gDpt0BRRuN9pE/Cu9vZjVLb+beNAhlzk+JD031gPKsJqC6deH
- a9YrNp7OVhjMEOuF8k5EZ74zPcpNIV+nKvmdjpuhPvgMMmd2O8c4yctjsByAu8h5wRRK
- d2fuLiziNPIx9Bu/XpWD8BKcpLumSfjhNFtKA/47VQj228aZAtXitufsbhiZnrvnHnDY
- lQcQtONZ5zPc04p1plpx1XMAXYYwv4J8LyKk79ej8zHpeFTNGMyslpgkp3mPv7Vmr7gj
- edNQ==
-X-Gm-Message-State: APjAAAWTJ/DMyKRWJ3hdOlETl0/xnbsIt8fB76rxjS8TlMk2Mcc4ZiY1
- M6QORZCoqm014UCKIjw+XRghwon5nxCD5nZvM+g7eg==
-X-Google-Smtp-Source: APXvYqwkg+0VvgZLd1QcDeZiY87eDys4X4c+0f1blThj9icDKEd2DCXH7feptcBVwXIi9LLpUJncKLJuNiuB3WNbZ4E=
-X-Received: by 2002:a17:902:8484:: with SMTP id
- c4mr26519733plo.223.1568064960627; 
- Mon, 09 Sep 2019 14:36:00 -0700 (PDT)
+ id 1i7SBq-0006Oh-5L
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 22:31:20 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=u0oMZEsrwk7J/0FujHdKrmzaiHFyR66uRe3QqNZ8iKA=; b=G6bq9f59v6RPWMPua90CwqY8y
+ vG0oNdBbJNLc7qd3BKmE7hE1vkdY4x0d8YsOeTihvkJbF90jkX0p9w+boY/CXJczUV9s5tAnRnQk+
+ mWxwkAy6Xs2nIDpMQjUsWSrey47PtVVAUoSEY82jU9Pk2N0Bv8IZ45oRVBPCCHHta/4KXbPZmpKhD
+ ScyDtFeIhxBb4Ci7F84rrVoE/YOoO9qNSoxpymdPPy7xEEqDKKpF2wQGlU/L3TElUzKQQ0h0eHKqe
+ RKwfmb9kiwBu8QXuOu/8cg7XZhDtMC3qoOxwrutGS8fetO71+CibjlN4CpOHqcXKKtFev6xOsxKGM
+ jepa4RC6w==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:58296)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i7SBg-00056N-Uh; Mon, 09 Sep 2019 23:31:09 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i7SBc-0002LS-3X; Mon, 09 Sep 2019 23:31:04 +0100
+Date: Mon, 9 Sep 2019 23:31:04 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Aggelis Aggelis <aggelis@gmail.com>
+Subject: Re: kexec broken on later 4 series arm kernels ?
+Message-ID: <20190909223103.GP13294@shell.armlinux.org.uk>
+References: <CAKUkA50BOqpW7ZCQc9nGGE8ceYZuZMsPk-2rfq1txu3R9114TA@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190909202153.144970-1-arnd@arndb.de>
- <CAKwvOdn90naN2qLx6qBCii67HNOYeJmVqTKEKuUpXcTXLEEaLA@mail.gmail.com>
-In-Reply-To: <CAKwvOdn90naN2qLx6qBCii67HNOYeJmVqTKEKuUpXcTXLEEaLA@mail.gmail.com>
-From: Nick Desaulniers <ndesaulniers@google.com>
-Date: Mon, 9 Sep 2019 14:35:49 -0700
-Message-ID: <CAKwvOdnnsQHkLG02oa2hkP8JDEiqnaH_xsxLrWBxSs0bvZetsQ@mail.gmail.com>
-Subject: Re: [PATCH] arm64: fix unreachable code issue with cmpxchg
-To: Arnd Bergmann <arnd@arndb.de>
+Content-Disposition: inline
+In-Reply-To: <CAKUkA50BOqpW7ZCQc9nGGE8ceYZuZMsPk-2rfq1txu3R9114TA@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_143602_276298_BF4A4E46 
-X-CRM114-Status: GOOD (  24.27  )
-X-Spam-Score: -15.7 (---------------)
+X-CRM114-CacheID: sfid-20190909_153118_357494_2CD7BFC9 
+X-CRM114-Status: GOOD (  19.59  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-15.7 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -7.5 USER_IN_DEF_DKIM_WL    From: address is in the default DKIM
- white-list
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -85,8 +75,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match -0.0 DKIMWL_WL_MED          DKIMwl.org - Medium sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,127 +86,132 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Catalin Marinas <catalin.marinas@arm.com>, LKML <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Andrew Murray <andrew.murray@arm.com>,
- Nathan Chancellor <natechancellor@gmail.com>, Will Deacon <will@kernel.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 9, 2019 at 2:06 PM Nick Desaulniers <ndesaulniers@google.com> wrote:
->
-> On Mon, Sep 9, 2019 at 1:21 PM Arnd Bergmann <arnd@arndb.de> wrote:
-> >
-> > On arm64 build with clang, sometimes the __cmpxchg_mb is not inlined
-> > when CONFIG_OPTIMIZE_INLINING is set.
-> > Clang then fails a compile-time assertion, because it cannot tell at
-> > compile time what the size of the argument is:
-> >
-> > mm/memcontrol.o: In function `__cmpxchg_mb':
-> > memcontrol.c:(.text+0x1a4c): undefined reference to `__compiletime_assert_175'
-> > memcontrol.c:(.text+0x1a4c): relocation truncated to fit: R_AARCH64_CALL26 against undefined symbol `__compiletime_assert_175'
-> >
-> > Mark all of the cmpxchg() style functions as __always_inline to
-> > ensure that the compiler can see the result.
->
-> Acked-by: Nick Desaulniers <ndesaulniers@google.com>
+On Mon, Sep 09, 2019 at 09:15:58PM +0300, Aggelis Aggelis wrote:
+> I use MitySOM-5CSX dev kit (cyclone v)and i would like to boot to a
+> different kernel using kexec.
+> 
+> In my configuration:
+> 
+> KERNEL : https://github.com/altera-opensource/linux-socfpga/archive/socfpga-4.9.76-ltsi-rt.zip
+> COMPILER : https://releases.linaro.org/archive/14.04/components/toolchain/binaries/gcc-linaro-arm-linux-gnueabihf-4.8-2014.04_linux.tar.bz2
+> 
+> In the kernel configuration kexec is enabled
+> 
+> zcat /proc/config.gz |grep KEXEC
+> CONFIG_KEXEC_CORE=y
+> CONFIG_KEXEC=y
+> 
+> and the default kernel cmdline is
+> 
+> # cat /proc/cmdline
+> root=/dev/mmcblk0p3 rootwait rw earlycon
+> 
+> First we load kernel with
+> 
+> #./kexec --version
+> kexec-tools 2.0.19
+> 
+> # kexec  -d -l zImagebkx --dtb=socfpga_cyclone5_mitysom5csx_devkit.dtb
+> --command-line="root=/dev/mmcblk0p3 rootwait rw earlycon"
+> syscall kexec_file_load not available.
+> kernel: 0xb6a9d008 kernel_size: 0x4a55c8
+> MEMORY RANGES
+> 0000000000000000-000000003fffffff (0)
+> zImage header: 0x016f2818 0x00000000 0x004a55c8
+> zImage size 0x4a55c8, file size 0x4a55c8
+> zImage requires 0x004b65c8 bytes
+> Kernel: address=0x00008000 size=0x0178fce8
+> DT    : address=0x01799000 size=0x00007cf4
 
-Also, I think a Link tag may be appropriate as I believe it fixes this report:
+Same comments as per your previous email on this same subject.
 
-Reported-by: Nathan Chancellor <natechancellor@gmail.com>
-Link: https://github.com/ClangBuiltLinux/linux/issues/648
-
->
-> >
-> > Signed-off-by: Arnd Bergmann <arnd@arndb.de>
-> > ---
-> >  arch/arm64/include/asm/cmpxchg.h | 15 ++++++++-------
-> >  1 file changed, 8 insertions(+), 7 deletions(-)
-> >
-> > diff --git a/arch/arm64/include/asm/cmpxchg.h b/arch/arm64/include/asm/cmpxchg.h
-> > index a1398f2f9994..fd64dc8a235f 100644
-> > --- a/arch/arm64/include/asm/cmpxchg.h
-> > +++ b/arch/arm64/include/asm/cmpxchg.h
-> > @@ -19,7 +19,7 @@
-> >   * acquire+release for the latter.
-> >   */
-> >  #define __XCHG_CASE(w, sfx, name, sz, mb, nop_lse, acq, acq_lse, rel, cl)      \
-> > -static inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)                \
-> > +static __always_inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)\
-> >  {                                                                              \
-> >         u##sz ret;                                                              \
-> >         unsigned long tmp;                                                      \
-> > @@ -62,7 +62,7 @@ __XCHG_CASE( ,  ,  mb_, 64, dmb ish, nop,  , a, l, "memory")
-> >  #undef __XCHG_CASE
-> >
-> >  #define __XCHG_GEN(sfx)                                                        \
-> > -static inline unsigned long __xchg##sfx(unsigned long x,               \
-> > +static __always_inline  unsigned long __xchg##sfx(unsigned long x,     \
-> >                                         volatile void *ptr,             \
-> >                                         int size)                       \
-> >  {                                                                      \
-> > @@ -103,8 +103,9 @@ __XCHG_GEN(_mb)
-> >  #define arch_xchg_release(...) __xchg_wrapper(_rel, __VA_ARGS__)
-> >  #define arch_xchg(...)         __xchg_wrapper( _mb, __VA_ARGS__)
-> >
-> > -#define __CMPXCHG_CASE(name, sz)                       \
-> > -static inline u##sz __cmpxchg_case_##name##sz(volatile void *ptr,      \
-> > +#define __CMPXCHG_CASE(name, sz)                                       \
-> > +static __always_inline u##sz                                           \
-> > +__cmpxchg_case_##name##sz(volatile void *ptr,                          \
-> >                                               u##sz old,                \
-> >                                               u##sz new)                \
-> >  {                                                                      \
-> > @@ -148,7 +149,7 @@ __CMPXCHG_DBL(_mb)
-> >  #undef __CMPXCHG_DBL
-> >
-> >  #define __CMPXCHG_GEN(sfx)                                             \
-> > -static inline unsigned long __cmpxchg##sfx(volatile void *ptr,         \
-> > +static __always_inline unsigned long __cmpxchg##sfx(volatile void *ptr,        \
-> >                                            unsigned long old,           \
-> >                                            unsigned long new,           \
-> >                                            int size)                    \
-> > @@ -230,7 +231,7 @@ __CMPXCHG_GEN(_mb)
-> >  })
-> >
-> >  #define __CMPWAIT_CASE(w, sfx, sz)                                     \
-> > -static inline void __cmpwait_case_##sz(volatile void *ptr,             \
-> > +static __always_inline void __cmpwait_case_##sz(volatile void *ptr,    \
-> >                                        unsigned long val)               \
-> >  {                                                                      \
-> >         unsigned long tmp;                                              \
-> > @@ -255,7 +256,7 @@ __CMPWAIT_CASE( ,  , 64);
-> >  #undef __CMPWAIT_CASE
-> >
-> >  #define __CMPWAIT_GEN(sfx)                                             \
-> > -static inline void __cmpwait##sfx(volatile void *ptr,                  \
-> > +static __always_inline void __cmpwait##sfx(volatile void *ptr,         \
-> >                                   unsigned long val,                    \
-> >                                   int size)                             \
-> >  {                                                                      \
-> > --
-> > 2.20.0
-> >
-> > --
-> > You received this message because you are subscribed to the Google Groups "Clang Built Linux" group.
-> > To unsubscribe from this group and stop receiving emails from it, send an email to clang-built-linux+unsubscribe@googlegroups.com.
-> > To view this discussion on the web visit https://groups.google.com/d/msgid/clang-built-linux/20190909202153.144970-1-arnd%40arndb.de.
->
->
->
-> --
-> Thanks,
-> ~Nick Desaulniers
-
-
+> kexec_load: entry = 0x8000 flags = 0x280000
+> nr_segments = 2
+> segment[0].buf   = 0xb6a9d008kernel
+> segment[0].bufsz = 0x4a55cc
+> segment[0].mem   = 0x8000
+> segment[0].memsz = 0x4a6000
+> segment[1].buf   = 0x8e610
+> segment[1].bufsz = 0x7cf4
+> segment[1].mem   = 0x1799000
+> segment[1].memsz = 0x8000
+> 
+> and kexec  kernel with
+> 
+> # kexec  -e
+> [  134.110855] kexec_core: Starting new kernel
+> [  134.115064] Disabling non-boot CPUs ...
+> [  134.176961] CPU1: shutdown
+> [  134.180624] Bye!
+> Uncompressing Linux... done, booting the kernel.
+> 
+> and then nothing  no messages on console.
+> 
+> The same kernel boots successfully with U-Boot
+> 
+> Using kernel 4.1.22 from https://github.com/dlaut/linux-socfpga and
+> applying the patch described in https://patchwork.kernel.org/patch/6504321/
+> i  successfully kexeced 4.9.76 kernel from 4.1.22 using the same
+> kexec-tools 2.0.19.
+> 
+> root@node1:/mnt/test#uname -a Linux node1 4.1.22-ltsi-altera #2 SMP
+> PREEMPT Mon Jul 29 12:38:06 EEST 2019 armv7l GNU/L
+> root@node1:/mnt/test# kexec -d -e
+> [   46.306102] kexec: Starting new kernel
+> [   46.309928] Disabling non-boot CPUs ...
+> [   46.306102] kexec: Starting new kernel
+> [   46.378053] CPU1: shutdown
+> [   46.381875] Bye!
+> Uncompressing Linux... done, booting the kernel.
+> [    0.000000] Booting Linux on physical CPU 0x0
+> [    0.000000] Linux version 4.9.76-rt61-ltsi-altera (aggelis@corei5)
+> (gcc version 4.8.3 20140401 (prerelease) (crosstool-NG l9
+> [    0.000000] CPU: ARMv7 Processor [413fc090] revision 0 (ARMv7), cr=10c5387d
+> [    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT aliasing
+> instruction cache
+> [    0.000000] OF: fdt:Machine model: MitySOM-5CSX Altera SOCFPGA Cyclone V
+> [    0.000000] cma: Reserved 16 MiB at 0x3f000000
+> [    0.000000] Memory policy: Data cache writealloc
+> [    0.000000] percpu: Embedded 15 pages/cpu @ef6bf000 s29184 r8192
+> d24064 u61440
+> [    0.000000] Built 1 zonelists in Zone order, mobility grouping on.
+> Total pages: 260416
+> [    0.000000] Kernel command line: root=/dev/mmcblk0p3 rootwait
+> [    0.000000] PID hash table entries: 4096 (order: 2, 16384 bytes)
+> [    0.000000] Dentry cache hash table entries: 131072 (order: 8, 1048576 bytes)
+> [    0.000000] Inode-cache hash table entries: 65536 (order: 6, 262144 bytes)
+> [    0.000000] allocated 1048576 bytes of page_ext
+> ...
+> ...
+> Angstrom v2017.12 - Kernel 4.9.76-rt61-ltsi-altera
+> node1 login:
+> 
+> The kexec patch applied on the 4.1.22 kernel (enabling kexec on
+> socfpga) is already present in 4.9.76 kernel.
+> 
+> Since the same  kexec 2.0.19 userland tool runs successfully  in the
+> older 4.1.22
+> but not in 4.9.76  kernel did something break in kexec implementation
+> in later 4 series kernels?
+> 
+> Aggelis Aggelis
+> 
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+> 
 
 -- 
-Thanks,
-~Nick Desaulniers
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
