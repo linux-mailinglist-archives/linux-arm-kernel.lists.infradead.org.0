@@ -2,52 +2,51 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A71E8AE263
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 04:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E3385AE28C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 05:26:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
 	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
 	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=X1oMAWsK4lJPRKbvaG7VBLfUtKxllpZlBufGJULJxqk=; b=V74
-	64L5MaJCMzx6ckPJdrDzJ8/9qHc9rQxW8U63lEZF2+KHongDMZl9roZPNqYsMP6MVWgICLGBB655a
-	rZTWNXI8H2U3nk8IVUHQGXrBi7lr93RzPUKqyxeg7FHTmTtpax/HpI+YRWyO9bhgt4fM6wiSJPVRJ
-	YiZOa1HuPgWd/iSbwRwURBTWkyvEOvJdVIfpE05sYai67R8OJoJ3ADJRb5GWAzbyIk5JFqAWgU3O9
-	trzEBW2wpbB/QzqUmuHgBuX1OeFjSktz0JYuRiqJgx8SFea6mXzX9lfcLXbL41NJD7VtQEfyPxQfC
-	PVc7SeGwiV7VvAROlslQFe7yFViDCww==;
+	References:List-Owner; bh=0dm5ruZf5IziFamt9YpxuH2uSfXwtIANOR7f8NQK2B8=; b=o8I
+	ARRCNnFhAyRdO3Nt2XmYHtpJZ+XfnG85eak+4QSca6pSA9M1/xtW+bm5mx7TgHf/5FQtSFTDwTEsB
+	rXfXGXrs64oO42QVd3+FnmP5Ax0GEW5mf8ST7fPF2pgMsSQTH14I4MNeZsMLSxQ8TIC+9Z9/2jmA2
+	87cKAjrXeqD4fEM1dkt/YvgR4Jd+EBJJZ1ZprLXzlGxSDpq/erh+AqBzD2n9W53BRFzCxJlAuntzx
+	rVmqZ2NCOV0rfB8miStVXEhScMSF5+OKOnqOOKz7giB8ezsx/nGMznIaXjoLOICNUwpuohwl+sz1A
+	E9J8ACF98fx5kvtW6fZIrw2YuAwqQig==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7W5U-0003Lp-Dg; Tue, 10 Sep 2019 02:41:00 +0000
+	id 1i7Wno-0008Jg-0g; Tue, 10 Sep 2019 03:26:48 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7W59-0003Kq-Ac
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 02:40:40 +0000
+ id 1i7Wnc-0008IN-Bl
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 03:26:37 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 4874C200008;
- Tue, 10 Sep 2019 04:40:35 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 7A848200071;
+ Tue, 10 Sep 2019 05:26:34 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id E1211200056;
- Tue, 10 Sep 2019 04:40:29 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 20851200056;
+ Tue, 10 Sep 2019 05:26:29 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id C0024402CF;
- Tue, 10 Sep 2019 10:40:22 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 41B7E402A5;
+ Tue, 10 Sep 2019 11:26:22 +0800 (SGT)
 From: Anson Huang <Anson.Huang@nxp.com>
 To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
  s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  leonard.crestez@nxp.com, daniel.baluta@nxp.com, devicetree@vger.kernel.org,
  linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org
-Subject: [PATCH] arm64: dts: imx8mn: Add "fsl,
- imx8mq-src" as src's fallback compatible
-Date: Tue, 10 Sep 2019 10:39:19 -0400
-Message-Id: <1568126359-2887-1-git-send-email-Anson.Huang@nxp.com>
+Subject: [PATCH 1/2] arm64: dts: imx8mn: Add system counter node
+Date: Tue, 10 Sep 2019 11:25:17 -0400
+Message-Id: <1568129118-31114-1-git-send-email-Anson.Huang@nxp.com>
 X-Mailer: git-send-email 2.7.4
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_194039_508063_D31532E9 
-X-CRM114-Status: UNSURE (   8.50  )
+X-CRM114-CacheID: sfid-20190909_202636_536655_BF392A95 
+X-CRM114-Status: UNSURE (   6.96  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -77,27 +76,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-i.MX8MN can reuse i.MX8MQ's src driver, add "fsl,imx8mq-src" as
-src's fallback compatible to enable it.
+Add i.MX8MN system counter node to enable timer-imx-sysctr
+broadcast timer driver.
 
 Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/imx8mn.dtsi | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8mn.dtsi | 8 ++++++++
+ 1 file changed, 8 insertions(+)
 
 diff --git a/arch/arm64/boot/dts/freescale/imx8mn.dtsi b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-index 785f4c4..d94db95 100644
+index d94db95..0166f8c 100644
 --- a/arch/arm64/boot/dts/freescale/imx8mn.dtsi
 +++ b/arch/arm64/boot/dts/freescale/imx8mn.dtsi
-@@ -371,7 +371,7 @@
+@@ -428,6 +428,14 @@
+ 				#pwm-cells = <2>;
+ 				status = "disabled";
  			};
++
++			system_counter: timer@306a0000 {
++				compatible = "nxp,sysctr-timer";
++				reg = <0x306a0000 0x20000>;
++				interrupts = <GIC_SPI 47 IRQ_TYPE_LEVEL_HIGH>;
++				clocks = <&osc_24m>;
++				clock-names = "per";
++			};
+ 		};
  
- 			src: reset-controller@30390000 {
--				compatible = "fsl,imx8mn-src", "syscon";
-+				compatible = "fsl,imx8mn-src", "fsl,imx8mq-src", "syscon";
- 				reg = <0x30390000 0x10000>;
- 				interrupts = <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>;
- 				#reset-cells = <1>;
+ 		aips3: bus@30800000 {
 -- 
 2.7.4
 
