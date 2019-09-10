@@ -2,69 +2,119 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 324F8AEB14
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 15:05:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 69A36AEB1D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 15:07:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=G3nirn+OpggvFD6VJIXH1raq2IhdaesldvGuOpzY0xw=; b=mY9TR5fcS3Dbl5
-	zSSb/7oe9qF7vYT1CcQJJ2edbwdhBwUuuuDmRq6R/0vebOzvJtVskFATWJ9ayhB2PW3QczDITMn1H
-	0/2b5caniU/DpIuPRB6z63Jp0UQ597S2PZTVdW5Xrh+KCkn/ONiE6Mxq/0xTCUXgMfEHfhxdqqLVY
-	+smVoqs7gqWSkBycb9FyzeGKBlrwXUkGhTgFZ5HIu5HwM+Axyw7bOByHdWxW12reZSPI++IxE7QE/
-	3jzWe2Umzy2HKbp80jH1ESYzxgH6HBaFVezL73WIto6M7VCrLiemA06XqW/691ChZBdJn1noXyaKM
-	HyImcmxiq0x+PhPp8KOg==;
+	List-Owner; bh=kSLUv6PI6hRJJxt3VDrPOUToPjeTB40oq4sf1Zqzj6I=; b=bsJVdTr/gTMvHV
+	vWW0dogSScVBWuaIjY1c2dyquZLbWLe8I0VumPFPw8wnOXat37tanFoVQd8YShtc63mq19ZBJgnRj
+	ahcYoWtI0Ps7TMtCf3Uj8kXna5Uh1/I5805UW9cF6updCM3TN7xOJ4kGF+zEmkvwq9rW2NOhjTGoA
+	kCI2AxmLG0O8NynLlffFqnTTMb+Wxs10VHaCGK1Q9XJlcHVJEeWKHEOoumxyUGWk4tagSGc9HgFSe
+	TUD+tIQzoyKP4ICS5buQUzUWduyrerxy0rvq4V9tn069Tp/3BUd9Lwr8gjDDnm11HQaCQCKkzEG5+
+	lUsli0a2y/xQnjkdOldQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7fpg-0007sW-Hl; Tue, 10 Sep 2019 13:05:20 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i7frd-0000mv-ME; Tue, 10 Sep 2019 13:07:21 +0000
+Received: from mail-oln040092011071.outbound.protection.outlook.com
+ ([40.92.11.71] helo=NAM04-SN1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7fpO-0006us-LC; Tue, 10 Sep 2019 13:05:05 +0000
-X-UUID: a3980f1b58d64ec09b7dd91700fd056c-20190910
-X-UUID: a3980f1b58d64ec09b7dd91700fd056c-20190910
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <dongchun.zhu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1402907106; Tue, 10 Sep 2019 05:04:55 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Sep 2019 06:04:54 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Tue, 10 Sep 2019 21:04:53 +0800
-Received: from localhost.localdomain (10.17.3.153) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Tue, 10 Sep 2019 21:04:51 +0800
-From: <dongchun.zhu@mediatek.com>
-To: <mchehab@kernel.org>, <andriy.shevchenko@linux.intel.com>,
- <robh+dt@kernel.org>, <mark.rutland@arm.com>, <sakari.ailus@linux.intel.com>, 
- <drinkcat@chromium.org>, <tfiga@chromium.org>, <matthias.bgg@gmail.com>,
- <bingbu.cao@intel.com>
-Subject: [V2, 2/2] media: i2c: Add more sensor modes for ov8856 camera sensor
-Date: Tue, 10 Sep 2019 21:04:46 +0800
-Message-ID: <20190910130446.26413-3-dongchun.zhu@mediatek.com>
-X-Mailer: git-send-email 2.9.2
-In-Reply-To: <20190910130446.26413-1-dongchun.zhu@mediatek.com>
-References: <media: ov8856: DT bindings and sensor mode improvements>
- <20190910130446.26413-1-dongchun.zhu@mediatek.com>
+ id 1i7frQ-0000mI-GZ
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 13:07:10 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=It/nNhUc4J7PfZxd9+rqExGQamb8r67hEbE6cXgIhWhGF7u60T/NuBGCAk8UtvdrAMeBHmVM1iwZhu5FtfMUSntn6q71z9ahlF6zrTpWfBA+0g+MR2xHOADiQf6HThWIYdqCU1+aqTOL29tcUu5eok3O4PlQaypPUtJa4vbUWoA9iHOTMVQvsbnHWTiGtQ6Ob2tY7RgSyfs9ufjExTJyKI/giTX5iYZX5gXDFYtI/dnpj2mcVHtnYCQDRVdQVwcGsVZK9MY+ZfmyS6aOLpAxEYCv0mZvj3+yBkFZBtSnJTodGuMiVC9ReTdynspqlU9/WsnTW47DtKiq+4G07hBksA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y0cQxVXZARF+hCywCH4/p1XvURnpzgsmDWFLEbLy7us=;
+ b=BUxE0VEWL+G69Th++2nT64ei5Ua9YCokK7yUbHpR+nTGK7ko42gHUh78LBUQAVP3GeG2cEc87Dq04544bXbSHRLXSX7WHSb62I+sQ6i13Pi5s73TgjoOaIWZT/AcOibXdpDl+lhi9br3Pc/SRbAkI51bsMwxBsmO2CAXnXHaLGtL8x3rZ5nqDIfqYZ5UYyETXnZyampbe6xLOsGNEykOnaE8DbT4HHgUTEgK2frJ08v1KMv3152dY8Hw3/QtUHdQ7wUdD5LLFD6j8xxObNIpiO6U1EmC3JgXZXAuG2nkHnrF+uMFffxRbz47klXwnGFsExVng/FUZJThjwCMhhdxfQ==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=none; dmarc=none;
+ dkim=none; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=outlook.com;
+ s=selector1;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Y0cQxVXZARF+hCywCH4/p1XvURnpzgsmDWFLEbLy7us=;
+ b=LbSq6Zj8gz5GHJHsUljW7zdliaFUewpyfw3XMCaeSO2+0TzuEM/Mjg8FV70dJhuWnWzaDoJcYTq2/yQsQW+5LzkLDwHSN+5gzC5npnOZmgszYWpBMO9R5yYRYxCTVxMpku02UPcw88hevyqg5Q917cN0ycUHC3P02tpyXAWZ8xHP14rnMfITqDMRCzcBUcHAEABIvITPdkVEF9kuzcDcradYlb2rH9W31UiQWKziCNUMZ4S/kaNH0OQovwUZTrVjQXVcKTAlKMOvXBvX7r7Tv3Y+dQHYhqgqhoFU2HCh1VRlzyL3HrNZSq5wflEF8E2bD8eU3s8zxzdYlhOqFem17A==
+Received: from BN3NAM04FT052.eop-NAM04.prod.protection.outlook.com
+ (10.152.92.55) by BN3NAM04HT185.eop-NAM04.prod.protection.outlook.com
+ (10.152.93.15) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2241.14; Tue, 10 Sep
+ 2019 13:07:05 +0000
+Received: from BY5PR12MB3699.namprd12.prod.outlook.com (10.152.92.60) by
+ BN3NAM04FT052.mail.protection.outlook.com (10.152.92.241) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.14 via Frontend Transport; Tue, 10 Sep 2019 13:07:05 +0000
+Received: from BY5PR12MB3699.namprd12.prod.outlook.com
+ ([fe80::2429:2cff:48e7:4d89]) by BY5PR12MB3699.namprd12.prod.outlook.com
+ ([fe80::2429:2cff:48e7:4d89%5]) with mapi id 15.20.2241.018; Tue, 10 Sep 2019
+ 13:07:03 +0000
+From: Lihua Yao <ylhuajnu@outlook.com>
+To: "krzk@kernel.org" <krzk@kernel.org>
+Subject: Re: [PATCH 1/2] ARM: dts: s3c64xx: factor out external fixed clocks
+Thread-Topic: [PATCH 1/2] ARM: dts: s3c64xx: factor out external fixed clocks
+Thread-Index: AQHVZSau+vjQG28peUivUmwfyzgb3A==
+Date: Tue, 10 Sep 2019 13:07:03 +0000
+Message-ID: <BY5PR12MB3699C8F06D8DDE821247D2CAC4B60@BY5PR12MB3699.namprd12.prod.outlook.com>
+References: <20190907024719.16974-1-ylhuajnu@outlook.com>
+ <BY5PR12MB36996A79D9B1EEC5162B00F4C4B50@BY5PR12MB3699.namprd12.prod.outlook.com>
+ <20190909185148.GA10163@kozik-lap>
+In-Reply-To: <20190909185148.GA10163@kozik-lap>
+Accept-Language: en-GB, zh-CN, en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: HK2PR0401CA0006.apcprd04.prod.outlook.com
+ (2603:1096:202:2::16) To BY5PR12MB3699.namprd12.prod.outlook.com
+ (2603:10b6:a03:195::16)
+x-incomingtopheadermarker: OriginalChecksum:528A108AB7CB1E615106EEA41E071EAA9EF385A89B70A7947C2ACC20CF4D5397;
+ UpperCasedChecksum:B8BF922989065060D8B1AD3842CE91F5DA7B81CF12FF1A098AC4F2C617A0495D;
+ SizeAsReceived:7678; Count:49
+x-ms-exchange-messagesentrepresentingtype: 1
+x-tmn: [Lj7FSRF9t77BsL2Hi9EQIme7b0hNRgXI]
+x-microsoft-original-message-id: <f5ccfb6b-6cf4-fa07-c131-b0299a11a14f@outlook.com>
+x-ms-publictraffictype: Email
+x-incomingheadercount: 49
+x-eopattributedmessage: 0
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(5050001)(7020095)(20181119110)(201702061078)(5061506573)(5061507331)(1603103135)(2017031320274)(2017031324274)(2017031323274)(2017031322404)(1601125500)(1603101475)(1701031045);
+ SRVR:BN3NAM04HT185; 
+x-ms-traffictypediagnostic: BN3NAM04HT185:
+x-microsoft-antispam-message-info: bvZlwFkEeNYJA6X9ignIeZjbYsPePR6T9+swFtun8PWqRzlGHXWIcp9emS54NrybJxgZiSs5dyKc+ipF9AI/Do8l1B3iJV/EG5YJIeCYg98UJfCfDQA9pxiJRphfwiKvIRNpeNpfzXwG6+tYJZ9dtINgSYBdlU9QjDyHR65qs8ZzCdULWhFRo5LtDEZaGZhf
+x-ms-exchange-transport-forked: True
+Content-ID: <041D0DAFEC20B940980D9473CD0B4980@namprd12.prod.outlook.com>
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: outlook.com
+X-MS-Exchange-CrossTenant-RMS-PersistedConsumerOrg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-Network-Message-Id: 44752f1b-9842-49d3-801c-08d735efc5f4
+X-MS-Exchange-CrossTenant-rms-persistedconsumerorg: 00000000-0000-0000-0000-000000000000
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Sep 2019 13:07:03.3214 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Internet
+X-MS-Exchange-CrossTenant-id: 84df9e7f-e9f6-40af-b435-aaaaaaaaaaaa
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN3NAM04HT185
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_060502_729113_DAD6CAC2 
-X-CRM114-Status: GOOD (  13.36  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190910_060708_644347_9EC452E6 
+X-CRM114-Status: GOOD (  21.75  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [40.92.11.71 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (ylhuajnu[at]outlook.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,927 +126,162 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, srv_heupstream@mediatek.com,
- shengnan.wang@mediatek.com, sj.huang@mediatek.com,
- linux-mediatek@lists.infradead.org, dongchun.zhu@mediatek.com,
- louis.kuo@mediatek.com, linux-arm-kernel@lists.infradead.org,
- linux-media@vger.kernel.org
+Cc: "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ "kgene@kernel.org" <kgene@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+Hi Krzysztof,
 
-This patch mainly adds two more sensor modes for OV8856 CMOS image sensor.
-That is, the resolution of 1632*1224 and 3264*2448, corresponding to the bayer order of BGGR.
-The sensor revision also differs in some OTP register.
+On 10/9/2019 2:51 AM, krzk@kernel.org wrote:
+> On Sat, Sep 07, 2019 at 02:48:08AM +0000, Yao Lihua wrote:
+>> From: Lihua Yao <ylhuajnu@outlook.com>
+>>
+>> As per arch/arm/mach-s3c64xx/common.c, the external oscillators
+>> of S3C6400 and S3C6410 are identical. Move them to s3c64xx.dtsi
+>> and place under root node directly.
+> Hi,
+>
+> Thanks for patches!
+>
+> These are external oscillators so they are not a SoC property. They
+> should be external.
+>
+> They could be moved to their own shared DTSI but I am not sure how much
+> benefit it will bring - it is rather small code duplication.
+OK.
+>
+> You need to fix the error in different way. However I do not quite
+> understand why moving them to the end of DTS fixed the error - they
+> should be now registered at the end...
 
-Signed-off-by: Dongchun Zhu <dongchun.zhu@mediatek.com>
----
- drivers/media/i2c/ov8856.c | 654 +++++++++++++++++++++++++++++++++++++++++++--
- 1 file changed, 639 insertions(+), 15 deletions(-)
+I moved them to the begin of DTSI so fin_pll will be placed before
 
-diff --git a/drivers/media/i2c/ov8856.c b/drivers/media/i2c/ov8856.c
-index cd347d6..9ad0b73 100644
---- a/drivers/media/i2c/ov8856.c
-+++ b/drivers/media/i2c/ov8856.c
-@@ -1,12 +1,15 @@
- // SPDX-License-Identifier: GPL-2.0
- // Copyright (c) 2019 Intel Corporation.
- 
-+#include <linux/clk.h>
- #include <asm/unaligned.h>
- #include <linux/acpi.h>
- #include <linux/delay.h>
-+#include <linux/gpio/consumer.h>
- #include <linux/i2c.h>
- #include <linux/module.h>
- #include <linux/pm_runtime.h>
-+#include <linux/regulator/consumer.h>
- #include <media/v4l2-ctrls.h>
- #include <media/v4l2-device.h>
- #include <media/v4l2-fwnode.h>
-@@ -18,10 +21,15 @@
- #define OV8856_LINK_FREQ_360MHZ		360000000ULL
- #define OV8856_LINK_FREQ_180MHZ		180000000ULL
- #define OV8856_SCLK			144000000ULL
--#define OV8856_MCLK			19200000
-+#define OV8856_XVCLK			19200000
-+#define OV8856_XVCLK_TYP		24000000
- #define OV8856_DATA_LANES		4
- #define OV8856_RGB_DEPTH		10
- 
-+#define REG_X_ADDR_START		0x3808
-+#define X_OUTPUT_FULL_SIZE		0x0cc0
-+#define X_OUTPUT_BINNING_SIZE		0x0660
-+
- #define OV8856_REG_CHIP_ID		0x300a
- #define OV8856_CHIP_ID			0x00885a
- 
-@@ -29,6 +37,22 @@
- #define OV8856_MODE_STANDBY		0x00
- #define OV8856_MODE_STREAMING		0x01
- 
-+/* define 1B module revision */
-+#define OV8856_1B_MODULE		0x02
-+
-+/* the OTP read-out buffer is at 0x7000 and 0xf is the offset
-+ * of the byte in the OTP that means the module revision
-+ */
-+#define OV8856_MODULE_REVISION		0x700f
-+#define OV8856_OTP_MODE_CTRL		0x3d84
-+#define OV8856_OTP_LOAD_CTRL		0x3d81
-+#define OV8856_OTP_MODE_AUTO		0x00
-+#define OV8856_OTP_LOAD_CTRL_ENABLE	BIT(0)
-+
-+/* Analog control register that decided by module revision */
-+#define OV8856_ANAL_MODE_CTRL		0x3614
-+#define OV8856_ANAL_1B_VAL		0x20
-+
- /* vertical-timings from sensor */
- #define OV8856_REG_VTS			0x380e
- #define OV8856_VTS_MAX			0x7fff
-@@ -64,6 +88,14 @@
- 
- #define to_ov8856(_sd)			container_of(_sd, struct ov8856, sd)
- 
-+static const char * const ov8856_supply_names[] = {
-+	"dovdd",	/* Digital I/O power */
-+	"avdd",		/* Analog power */
-+	"dvdd",		/* Digital core power */
-+};
-+
-+#define OV8856_NUM_SUPPLIES ARRAY_SIZE(ov8856_supply_names)
-+
- enum {
- 	OV8856_LINK_FREQ_720MBPS,
- 	OV8856_LINK_FREQ_360MBPS,
-@@ -195,11 +227,11 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
- 	{0x3800, 0x00},
- 	{0x3801, 0x00},
- 	{0x3802, 0x00},
--	{0x3803, 0x06},
-+	{0x3803, 0x07},
- 	{0x3804, 0x0c},
- 	{0x3805, 0xdf},
- 	{0x3806, 0x09},
--	{0x3807, 0xa7},
-+	{0x3807, 0xa6},
- 	{0x3808, 0x0c},
- 	{0x3809, 0xd0},
- 	{0x380a, 0x09},
-@@ -211,7 +243,7 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
- 	{0x3810, 0x00},
- 	{0x3811, 0x00},
- 	{0x3812, 0x00},
--	{0x3813, 0x01},
-+	{0x3813, 0x00},
- 	{0x3814, 0x01},
- 	{0x3815, 0x01},
- 	{0x3816, 0x00},
-@@ -316,6 +348,209 @@ static const struct ov8856_reg mode_3280x2464_regs[] = {
- 	{0x5e00, 0x00}
- };
- 
-+static const struct ov8856_reg mode_3264x2448_regs[] = {
-+	{0x0103, 0x01},
-+	{0x0302, 0x3c},
-+	{0x0303, 0x01},
-+	{0x031e, 0x0c},
-+	{0x3000, 0x20},
-+	{0x3003, 0x08},
-+	{0x300e, 0x20},
-+	{0x3010, 0x00},
-+	{0x3015, 0x84},
-+	{0x3018, 0x72},
-+	{0x3021, 0x23},
-+	{0x3033, 0x24},
-+	{0x3500, 0x00},
-+	{0x3501, 0x9a},
-+	{0x3502, 0x20},
-+	{0x3503, 0x08},
-+	{0x3505, 0x83},
-+	{0x3508, 0x01},
-+	{0x3509, 0x80},
-+	{0x350c, 0x00},
-+	{0x350d, 0x80},
-+	{0x350e, 0x04},
-+	{0x350f, 0x00},
-+	{0x3510, 0x00},
-+	{0x3511, 0x02},
-+	{0x3512, 0x00},
-+	{0x3600, 0x72},
-+	{0x3601, 0x40},
-+	{0x3602, 0x30},
-+	{0x3610, 0xc5},
-+	{0x3611, 0x58},
-+	{0x3612, 0x5c},
-+	{0x3613, 0xca},
-+	{0x3614, 0x60},
-+	{0x3628, 0xff},
-+	{0x3629, 0xff},
-+	{0x362a, 0xff},
-+	{0x3633, 0x10},
-+	{0x3634, 0x10},
-+	{0x3635, 0x10},
-+	{0x3636, 0x10},
-+	{0x3663, 0x08},
-+	{0x3669, 0x34},
-+	{0x366d, 0x00},
-+	{0x366e, 0x10},
-+	{0x3706, 0x86},
-+	{0x370b, 0x7e},
-+	{0x3714, 0x23},
-+	{0x3730, 0x12},
-+	{0x3733, 0x10},
-+	{0x3764, 0x00},
-+	{0x3765, 0x00},
-+	{0x3769, 0x62},
-+	{0x376a, 0x2a},
-+	{0x376b, 0x30},
-+	{0x3780, 0x00},
-+	{0x3781, 0x24},
-+	{0x3782, 0x00},
-+	{0x3783, 0x23},
-+	{0x3798, 0x2f},
-+	{0x37a1, 0x60},
-+	{0x37a8, 0x6a},
-+	{0x37ab, 0x3f},
-+	{0x37c2, 0x04},
-+	{0x37c3, 0xf1},
-+	{0x37c9, 0x80},
-+	{0x37cb, 0x16},
-+	{0x37cc, 0x16},
-+	{0x37cd, 0x16},
-+	{0x37ce, 0x16},
-+	{0x3800, 0x00},
-+	{0x3801, 0x00},
-+	{0x3802, 0x00},
-+	{0x3803, 0x0c},
-+	{0x3804, 0x0c},
-+	{0x3805, 0xdf},
-+	{0x3806, 0x09},
-+	{0x3807, 0xa3},
-+	{0x3808, 0x0c},
-+	{0x3809, 0xc0},
-+	{0x380a, 0x09},
-+	{0x380b, 0x90},
-+	{0x380c, 0x07},
-+	{0x380d, 0x8c},
-+	{0x380e, 0x09},
-+	{0x380f, 0xb2},
-+	{0x3810, 0x00},
-+	{0x3811, 0x04},
-+	{0x3812, 0x00},
-+	{0x3813, 0x02},
-+	{0x3814, 0x01},
-+	{0x3815, 0x01},
-+	{0x3816, 0x00},
-+	{0x3817, 0x00},
-+	{0x3818, 0x00},
-+	{0x3819, 0x00},
-+	{0x3820, 0x80},
-+	{0x3821, 0x46},
-+	{0x382a, 0x01},
-+	{0x382b, 0x01},
-+	{0x3830, 0x06},
-+	{0x3836, 0x02},
-+	{0x3862, 0x04},
-+	{0x3863, 0x08},
-+	{0x3cc0, 0x33},
-+	{0x3d85, 0x17},
-+	{0x3d8c, 0x73},
-+	{0x3d8d, 0xde},
-+	{0x4001, 0xe0},
-+	{0x4003, 0x40},
-+	{0x4008, 0x00},
-+	{0x4009, 0x0b},
-+	{0x400a, 0x00},
-+	{0x400b, 0x84},
-+	{0x400f, 0x80},
-+	{0x4010, 0xf0},
-+	{0x4011, 0xff},
-+	{0x4012, 0x02},
-+	{0x4013, 0x01},
-+	{0x4014, 0x01},
-+	{0x4015, 0x01},
-+	{0x4042, 0x00},
-+	{0x4043, 0x80},
-+	{0x4044, 0x00},
-+	{0x4045, 0x80},
-+	{0x4046, 0x00},
-+	{0x4047, 0x80},
-+	{0x4048, 0x00},
-+	{0x4049, 0x80},
-+	{0x4041, 0x03},
-+	{0x404c, 0x20},
-+	{0x404d, 0x00},
-+	{0x404e, 0x20},
-+	{0x4203, 0x80},
-+	{0x4307, 0x30},
-+	{0x4317, 0x00},
-+	{0x4502, 0x50},
-+	{0x4503, 0x08},
-+	{0x4601, 0x80},
-+	{0x4800, 0x44},
-+	{0x4816, 0x53},
-+	{0x481b, 0x50},
-+	{0x481f, 0x27},
-+	{0x4823, 0x3c},
-+	{0x482b, 0x00},
-+	{0x4831, 0x66},
-+	{0x4837, 0x16},
-+	{0x483c, 0x0f},
-+	{0x484b, 0x05},
-+	{0x5000, 0x77},
-+	{0x5001, 0x0a},
-+	{0x5003, 0xc8},
-+	{0x5004, 0x04},
-+	{0x5006, 0x00},
-+	{0x5007, 0x00},
-+	{0x502e, 0x03},
-+	{0x5030, 0x41},
-+	{0x5780, 0x14},
-+	{0x5781, 0x0f},
-+	{0x5782, 0x44},
-+	{0x5783, 0x02},
-+	{0x5784, 0x01},
-+	{0x5785, 0x01},
-+	{0x5786, 0x00},
-+	{0x5787, 0x04},
-+	{0x5788, 0x02},
-+	{0x5789, 0x0f},
-+	{0x578a, 0xfd},
-+	{0x578b, 0xf5},
-+	{0x578c, 0xf5},
-+	{0x578d, 0x03},
-+	{0x578e, 0x08},
-+	{0x578f, 0x0c},
-+	{0x5790, 0x08},
-+	{0x5791, 0x04},
-+	{0x5792, 0x00},
-+	{0x5793, 0x52},
-+	{0x5794, 0xa3},
-+	{0x5795, 0x02},
-+	{0x5796, 0x20},
-+	{0x5797, 0x20},
-+	{0x5798, 0xd5},
-+	{0x5799, 0xd5},
-+	{0x579a, 0x00},
-+	{0x579b, 0x50},
-+	{0x579c, 0x00},
-+	{0x579d, 0x2c},
-+	{0x579e, 0x0c},
-+	{0x579f, 0x40},
-+	{0x57a0, 0x09},
-+	{0x57a1, 0x40},
-+	{0x59f8, 0x3d},
-+	{0x5a08, 0x02},
-+	{0x5b00, 0x02},
-+	{0x5b01, 0x10},
-+	{0x5b02, 0x03},
-+	{0x5b03, 0xcf},
-+	{0x5b05, 0x6c},
-+	{0x5e00, 0x00},
-+	{0x5e10, 0xfc}
-+};
-+
- static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x3000, 0x20},
- 	{0x3003, 0x08},
-@@ -385,11 +620,11 @@ static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x3800, 0x00},
- 	{0x3801, 0x00},
- 	{0x3802, 0x00},
--	{0x3803, 0x06},
-+	{0x3803, 0x07},
- 	{0x3804, 0x0c},
- 	{0x3805, 0xdf},
- 	{0x3806, 0x09},
--	{0x3807, 0xa7},
-+	{0x3807, 0xa6},
- 	{0x3808, 0x06},
- 	{0x3809, 0x68},
- 	{0x380a, 0x04},
-@@ -401,7 +636,7 @@ static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x3810, 0x00},
- 	{0x3811, 0x00},
- 	{0x3812, 0x00},
--	{0x3813, 0x01},
-+	{0x3813, 0x00},
- 	{0x3814, 0x03},
- 	{0x3815, 0x01},
- 	{0x3816, 0x00},
-@@ -506,6 +741,209 @@ static const struct ov8856_reg mode_1640x1232_regs[] = {
- 	{0x5e00, 0x00}
- };
- 
-+static const struct ov8856_reg mode_1632x1224_regs[] = {
-+	{0x0103, 0x01},
-+	{0x0302, 0x3c},
-+	{0x0303, 0x01},
-+	{0x031e, 0x0c},
-+	{0x3000, 0x20},
-+	{0x3003, 0x08},
-+	{0x300e, 0x20},
-+	{0x3010, 0x00},
-+	{0x3015, 0x84},
-+	{0x3018, 0x72},
-+	{0x3021, 0x23},
-+	{0x3033, 0x24},
-+	{0x3500, 0x00},
-+	{0x3501, 0x4c},
-+	{0x3502, 0xe0},
-+	{0x3503, 0x08},
-+	{0x3505, 0x83},
-+	{0x3508, 0x01},
-+	{0x3509, 0x80},
-+	{0x350c, 0x00},
-+	{0x350d, 0x80},
-+	{0x350e, 0x04},
-+	{0x350f, 0x00},
-+	{0x3510, 0x00},
-+	{0x3511, 0x02},
-+	{0x3512, 0x00},
-+	{0x3600, 0x72},
-+	{0x3601, 0x40},
-+	{0x3602, 0x30},
-+	{0x3610, 0xc5},
-+	{0x3611, 0x58},
-+	{0x3612, 0x5c},
-+	{0x3613, 0xca},
-+	{0x3614, 0x60},
-+	{0x3628, 0xff},
-+	{0x3629, 0xff},
-+	{0x362a, 0xff},
-+	{0x3633, 0x10},
-+	{0x3634, 0x10},
-+	{0x3635, 0x10},
-+	{0x3636, 0x10},
-+	{0x3663, 0x08},
-+	{0x3669, 0x34},
-+	{0x366d, 0x00},
-+	{0x366e, 0x08},
-+	{0x3706, 0x86},
-+	{0x370b, 0x7e},
-+	{0x3714, 0x27},
-+	{0x3730, 0x12},
-+	{0x3733, 0x10},
-+	{0x3764, 0x00},
-+	{0x3765, 0x00},
-+	{0x3769, 0x62},
-+	{0x376a, 0x2a},
-+	{0x376b, 0x30},
-+	{0x3780, 0x00},
-+	{0x3781, 0x24},
-+	{0x3782, 0x00},
-+	{0x3783, 0x23},
-+	{0x3798, 0x2f},
-+	{0x37a1, 0x60},
-+	{0x37a8, 0x6a},
-+	{0x37ab, 0x3f},
-+	{0x37c2, 0x14},
-+	{0x37c3, 0xf1},
-+	{0x37c9, 0x80},
-+	{0x37cb, 0x16},
-+	{0x37cc, 0x16},
-+	{0x37cd, 0x16},
-+	{0x37ce, 0x16},
-+	{0x3800, 0x00},
-+	{0x3801, 0x00},
-+	{0x3802, 0x00},
-+	{0x3803, 0x0c},
-+	{0x3804, 0x0c},
-+	{0x3805, 0xdf},
-+	{0x3806, 0x09},
-+	{0x3807, 0xa3},
-+	{0x3808, 0x06},
-+	{0x3809, 0x60},
-+	{0x380a, 0x04},
-+	{0x380b, 0xc8},
-+	{0x380c, 0x07},
-+	{0x380d, 0x8c},
-+	{0x380e, 0x09},
-+	{0x380f, 0xb2},
-+	{0x3810, 0x00},
-+	{0x3811, 0x02},
-+	{0x3812, 0x00},
-+	{0x3813, 0x02},
-+	{0x3814, 0x03},
-+	{0x3815, 0x01},
-+	{0x3816, 0x00},
-+	{0x3817, 0x00},
-+	{0x3818, 0x00},
-+	{0x3819, 0x00},
-+	{0x3820, 0x80},
-+	{0x3821, 0x47},
-+	{0x382a, 0x03},
-+	{0x382b, 0x01},
-+	{0x3830, 0x06},
-+	{0x3836, 0x02},
-+	{0x3862, 0x04},
-+	{0x3863, 0x08},
-+	{0x3cc0, 0x33},
-+	{0x3d85, 0x17},
-+	{0x3d8c, 0x73},
-+	{0x3d8d, 0xde},
-+	{0x4001, 0xe0},
-+	{0x4003, 0x40},
-+	{0x4008, 0x00},
-+	{0x4009, 0x05},
-+	{0x400a, 0x00},
-+	{0x400b, 0x84},
-+	{0x400f, 0x80},
-+	{0x4010, 0xf0},
-+	{0x4011, 0xff},
-+	{0x4012, 0x02},
-+	{0x4013, 0x01},
-+	{0x4014, 0x01},
-+	{0x4015, 0x01},
-+	{0x4042, 0x00},
-+	{0x4043, 0x80},
-+	{0x4044, 0x00},
-+	{0x4045, 0x80},
-+	{0x4046, 0x00},
-+	{0x4047, 0x80},
-+	{0x4048, 0x00},
-+	{0x4049, 0x80},
-+	{0x4041, 0x03},
-+	{0x404c, 0x20},
-+	{0x404d, 0x00},
-+	{0x404e, 0x20},
-+	{0x4203, 0x80},
-+	{0x4307, 0x30},
-+	{0x4317, 0x00},
-+	{0x4502, 0x50},
-+	{0x4503, 0x08},
-+	{0x4601, 0x80},
-+	{0x4800, 0x44},
-+	{0x4816, 0x53},
-+	{0x481b, 0x50},
-+	{0x481f, 0x27},
-+	{0x4823, 0x3c},
-+	{0x482b, 0x00},
-+	{0x4831, 0x66},
-+	{0x4837, 0x16},
-+	{0x483c, 0x0f},
-+	{0x484b, 0x05},
-+	{0x5000, 0x77},
-+	{0x5001, 0x0a},
-+	{0x5003, 0xc8},
-+	{0x5004, 0x04},
-+	{0x5006, 0x00},
-+	{0x5007, 0x00},
-+	{0x502e, 0x03},
-+	{0x5030, 0x41},
-+	{0x5795, 0x00},
-+	{0x5796, 0x10},
-+	{0x5797, 0x10},
-+	{0x5798, 0x73},
-+	{0x5799, 0x73},
-+	{0x579a, 0x00},
-+	{0x579b, 0x28},
-+	{0x579c, 0x00},
-+	{0x579d, 0x16},
-+	{0x579e, 0x06},
-+	{0x579f, 0x20},
-+	{0x57a0, 0x04},
-+	{0x57a1, 0xa0},
-+	{0x5780, 0x14},
-+	{0x5781, 0x0f},
-+	{0x5782, 0x44},
-+	{0x5783, 0x02},
-+	{0x5784, 0x01},
-+	{0x5785, 0x01},
-+	{0x5786, 0x00},
-+	{0x5787, 0x04},
-+	{0x5788, 0x02},
-+	{0x5789, 0x0f},
-+	{0x578a, 0xfd},
-+	{0x578b, 0xf5},
-+	{0x578c, 0xf5},
-+	{0x578d, 0x03},
-+	{0x578e, 0x08},
-+	{0x578f, 0x0c},
-+	{0x5790, 0x08},
-+	{0x5791, 0x04},
-+	{0x5792, 0x00},
-+	{0x5793, 0x52},
-+	{0x5794, 0xa3},
-+	{0x59f8, 0x3d},
-+	{0x5a08, 0x02},
-+	{0x5b00, 0x02},
-+	{0x5b01, 0x10},
-+	{0x5b02, 0x03},
-+	{0x5b03, 0xcf},
-+	{0x5b05, 0x6c},
-+	{0x5e00, 0x00},
-+	{0x5e10, 0xfc}
-+};
-+
- static const char * const ov8856_test_pattern_menu[] = {
- 	"Disabled",
- 	"Standard Color Bar",
-@@ -548,6 +986,18 @@ static const struct ov8856_mode supported_modes[] = {
- 		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
- 	},
- 	{
-+		.width    = 3264,
-+		.height   = 2448,
-+		.hts      = 1932,
-+		.vts_def  = 2482,
-+		.vts_min  = 2482,
-+		.reg_list = {
-+			.num_of_regs = ARRAY_SIZE(mode_3264x2448_regs),
-+			.regs = mode_3264x2448_regs,
-+		},
-+		.link_freq_index = OV8856_LINK_FREQ_720MBPS,
-+	},
-+	{
- 		.width = 1640,
- 		.height = 1232,
- 		.hts = 3820,
-@@ -558,6 +1008,18 @@ static const struct ov8856_mode supported_modes[] = {
- 			.regs = mode_1640x1232_regs,
- 		},
- 		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
-+	},
-+	{
-+		.width    = 1632,
-+		.height   = 1224,
-+		.hts      = 1932,
-+		.vts_def  = 2482,
-+		.vts_min  = 2482,
-+		.reg_list = {
-+			.num_of_regs = ARRAY_SIZE(mode_1632x1224_regs),
-+			.regs = mode_1632x1224_regs,
-+		},
-+		.link_freq_index = OV8856_LINK_FREQ_360MBPS,
- 	}
- };
- 
-@@ -566,16 +1028,28 @@ struct ov8856 {
- 	struct media_pad pad;
- 	struct v4l2_ctrl_handler ctrl_handler;
- 
-+	struct clk		*xvclk;
-+	struct gpio_desc	*n_shutdn_gpio;
-+	struct regulator_bulk_data supplies[OV8856_NUM_SUPPLIES];
-+
- 	/* V4L2 Controls */
- 	struct v4l2_ctrl *link_freq;
- 	struct v4l2_ctrl *pixel_rate;
- 	struct v4l2_ctrl *vblank;
- 	struct v4l2_ctrl *hblank;
- 	struct v4l2_ctrl *exposure;
-+	struct v4l2_mbus_framefmt	fmt;
- 
- 	/* Current mode */
- 	const struct ov8856_mode *cur_mode;
- 
-+	/* module hardware version that can be read out from register 0x700f
-+	 * the register value corresponds to different hardware version
-+	 * 01: 2A module revision
-+	 * 02: 1B module revision
-+	 */
-+	bool is_1B_revision;
-+
- 	/* To serialize asynchronus callbacks */
- 	struct mutex mutex;
- 
-@@ -696,6 +1170,25 @@ static int ov8856_test_pattern(struct ov8856 *ov8856, u32 pattern)
- 				OV8856_REG_VALUE_08BIT, pattern);
- }
- 
-+static int ov8856_check_revision(struct ov8856 *ov8856)
-+{
-+	int ret;
-+
-+	ret = ov8856_write_reg(ov8856, OV8856_REG_MODE_SELECT,
-+			       OV8856_REG_VALUE_08BIT, OV8856_MODE_STREAMING);
-+	if (ret)
-+		return ret;
-+
-+	ret = ov8856_write_reg(ov8856, OV8856_OTP_MODE_CTRL,
-+			       OV8856_REG_VALUE_08BIT, OV8856_OTP_MODE_AUTO);
-+	if (ret)
-+		return ret;
-+
-+	return ov8856_write_reg(ov8856, OV8856_OTP_LOAD_CTRL,
-+				OV8856_REG_VALUE_08BIT,
-+				OV8856_OTP_LOAD_CTRL_ENABLE);
-+}
-+
- static int ov8856_set_ctrl(struct v4l2_ctrl *ctrl)
- {
- 	struct ov8856 *ov8856 = container_of(ctrl->handler,
-@@ -825,7 +1318,6 @@ static void ov8856_update_pad_format(const struct ov8856_mode *mode,
- {
- 	fmt->width = mode->width;
- 	fmt->height = mode->height;
--	fmt->code = MEDIA_BUS_FMT_SGRBG10_1X10;
- 	fmt->field = V4L2_FIELD_NONE;
- }
- 
-@@ -834,6 +1326,7 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
- 	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
- 	const struct ov8856_reg_list *reg_list;
- 	int link_freq_index, ret;
-+	u32 h_size;
- 
- 	link_freq_index = ov8856->cur_mode->link_freq_index;
- 	reg_list = &link_freq_configs[link_freq_index].reg_list;
-@@ -850,6 +1343,29 @@ static int ov8856_start_streaming(struct ov8856 *ov8856)
- 		return ret;
- 	}
- 
-+	/* Update R3614 if the revision is 1B module */
-+	if (ov8856->is_1B_revision) {
-+		ret = ov8856_write_reg(ov8856, OV8856_ANAL_MODE_CTRL,
-+				       OV8856_REG_VALUE_08BIT,
-+				       OV8856_ANAL_1B_VAL);
-+		if (ret) {
-+			dev_err(&client->dev, "failed to set R3614");
-+			return ret;
-+		}
-+	}
-+
-+	ret = ov8856_read_reg(ov8856, REG_X_ADDR_START,
-+			      OV8856_REG_VALUE_16BIT, &h_size);
-+	if (ret) {
-+		dev_err(&client->dev, "failed to read out R3614");
-+		return ret;
-+	}
-+
-+	if (h_size == X_OUTPUT_FULL_SIZE || h_size == X_OUTPUT_BINNING_SIZE)
-+		ov8856->fmt.code = MEDIA_BUS_FMT_SBGGR10_1X10;
-+
- 	ret = __v4l2_ctrl_handler_setup(ov8856->sd.ctrl_handler);
- 	if (ret)
- 		return ret;
-@@ -878,6 +1394,7 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
- 	struct ov8856 *ov8856 = to_ov8856(sd);
- 	struct i2c_client *client = v4l2_get_subdevdata(sd);
- 	int ret = 0;
-+	u32 val;
- 
- 	if (ov8856->streaming == enable)
- 		return 0;
-@@ -908,6 +1425,44 @@ static int ov8856_set_stream(struct v4l2_subdev *sd, int enable)
- 	return ret;
- }
- 
-+static int __ov8856_power_on(struct ov8856 *ov8856)
-+{
-+	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-+	int ret;
-+
-+	ret = clk_prepare_enable(ov8856->xvclk);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "failed to enable xvclk\n");
-+		return ret;
-+	}
-+
-+	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_LOW);
-+
-+	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "failed to enable regulators\n");
-+		goto disable_clk;
-+	}
-+
-+	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_HIGH);
-+
-+	usleep_range(1400, 1500);
-+
-+	return 0;
-+
-+disable_clk:
-+	clk_disable_unprepare(ov8856->xvclk);
-+
-+	return ret;
-+}
-+
-+static void __ov8856_power_off(struct ov8856 *ov8856)
-+{
-+	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, 1);
-+	regulator_bulk_disable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-+	clk_disable_unprepare(ov8856->xvclk);
-+}
-+
- static int __maybe_unused ov8856_suspend(struct device *dev)
- {
- 	struct i2c_client *client = to_i2c_client(dev);
-@@ -951,6 +1506,7 @@ static int ov8856_set_format(struct v4l2_subdev *sd,
- 			     struct v4l2_subdev_format *fmt)
- {
- 	struct ov8856 *ov8856 = to_ov8856(sd);
-+	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
- 	const struct ov8856_mode *mode;
- 	s32 vblank_def, h_blank;
- 
-@@ -960,7 +1516,9 @@ static int ov8856_set_format(struct v4l2_subdev *sd,
- 				      fmt->format.height);
- 
- 	mutex_lock(&ov8856->mutex);
--	ov8856_update_pad_format(mode, &fmt->format);
-+	mbus_fmt->code = ov8856->fmt.code;
-+	ov8856_update_pad_format(mode, mbus_fmt);
-+	ov8856->fmt = fmt->format;
- 	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
- 		*v4l2_subdev_get_try_format(sd, cfg, fmt->pad) = fmt->format;
- 	} else {
-@@ -992,13 +1550,17 @@ static int ov8856_get_format(struct v4l2_subdev *sd,
- 			     struct v4l2_subdev_format *fmt)
- {
- 	struct ov8856 *ov8856 = to_ov8856(sd);
-+	struct v4l2_mbus_framefmt *mbus_fmt = &fmt->format;
- 
- 	mutex_lock(&ov8856->mutex);
--	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY)
-+	if (fmt->which == V4L2_SUBDEV_FORMAT_TRY) {
- 		fmt->format = *v4l2_subdev_get_try_format(&ov8856->sd, cfg,
- 							  fmt->pad);
--	else
--		ov8856_update_pad_format(ov8856->cur_mode, &fmt->format);
-+	} else {
-+		fmt->format = ov8856->fmt;
-+		ov8856_update_pad_format(ov8856->cur_mode, mbus_fmt);
-+		mbus_fmt->code = ov8856->fmt.code;
-+	}
- 
- 	mutex_unlock(&ov8856->mutex);
- 
-@@ -1009,11 +1571,12 @@ static int ov8856_enum_mbus_code(struct v4l2_subdev *sd,
- 				 struct v4l2_subdev_pad_config *cfg,
- 				 struct v4l2_subdev_mbus_code_enum *code)
- {
--	/* Only one bayer order GRBG is supported */
-+	struct ov8856 *ov8856 = to_ov8856(sd);
-+
- 	if (code->index > 0)
- 		return -EINVAL;
- 
--	code->code = MEDIA_BUS_FMT_SGRBG10_1X10;
-+	code->code = ov8856->fmt.code;
- 
- 	return 0;
- }
-@@ -1089,6 +1652,20 @@ static int ov8856_identify_module(struct ov8856 *ov8856)
- 		return -ENXIO;
- 	}
- 
-+	/* check sensor hardware revision */
-+	ret = ov8856_check_revision(ov8856);
-+	if (ret) {
-+		dev_err(&client->dev, "failed to check sensor revision");
-+		return ret;
-+	}
-+
-+	ret = ov8856_read_reg(ov8856, OV8856_MODULE_REVISION,
-+			      OV8856_REG_VALUE_08BIT, &val);
-+	if (ret)
-+		return ret;
-+
-+	ov8856->is_1B_revision = (val == OV8856_1B_MODULE) ? 1 : 0;
-+
- 	return 0;
- }
- 
-@@ -1107,7 +1684,7 @@ static int ov8856_check_hwcfg(struct device *dev)
- 		return -ENXIO;
- 
- 	fwnode_property_read_u32(fwnode, "clock-frequency", &mclk);
--	if (mclk != OV8856_MCLK) {
-+	if (mclk != OV8856_XVCLK) {
- 		dev_err(dev, "external clock %d is not supported", mclk);
- 		return -EINVAL;
- 	}
-@@ -1164,6 +1741,9 @@ static int ov8856_remove(struct i2c_client *client)
- 	media_entity_cleanup(&sd->entity);
- 	v4l2_ctrl_handler_free(sd->ctrl_handler);
- 	pm_runtime_disable(&client->dev);
-+	if (!pm_runtime_status_suspended(&client->dev))
-+		__ov8856_power_off(ov8856);
-+	pm_runtime_set_suspended(&client->dev);
- 	mutex_destroy(&ov8856->mutex);
- 
- 	return 0;
-@@ -1172,6 +1752,7 @@ static int ov8856_remove(struct i2c_client *client)
- static int ov8856_probe(struct i2c_client *client)
- {
- 	struct ov8856 *ov8856;
-+	unsigned int i;
- 	int ret;
- 
- 	ret = ov8856_check_hwcfg(&client->dev);
-@@ -1186,6 +1767,42 @@ static int ov8856_probe(struct i2c_client *client)
- 		return -ENOMEM;
- 
- 	v4l2_i2c_subdev_init(&ov8856->sd, client, &ov8856_subdev_ops);
-+	ov8856->fmt.code = MEDIA_BUS_FMT_SGRBG10_1X10;
-+
-+	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-+	if (IS_ERR(ov8856->xvclk)) {
-+		dev_err(&client->dev, "failed to get xvclk\n");
-+		return -EINVAL;
-+	}
-+
-+	ret = clk_set_rate(ov8856->xvclk, OV8856_XVCLK_TYP);
-+	if (ret < 0) {
-+		dev_err(&client->dev, "failed to set xvclk rate (24MHz)\n");
-+		return ret;
-+	}
-+	if (clk_get_rate(ov8856->xvclk) != OV8856_XVCLK_TYP)
-+		dev_warn(&client->dev,
-+			 "xvclk mismatched, modes are based on 24MHz\n");
-+
-+	ov8856->n_shutdn_gpio = devm_gpiod_get(&client->dev, "reset",
-+					       GPIOD_OUT_LOW);
-+	if (IS_ERR(ov8856->n_shutdn_gpio)) {
-+		dev_err(&client->dev, "failed to get reset-gpios\n");
-+		return -EINVAL;
-+	}
-+
-+	for (i = 0; i < OV8856_NUM_SUPPLIES; i++)
-+		ov8856->supplies[i].supply = ov8856_supply_names[i];
-+
-+	ret = devm_regulator_bulk_get(&client->dev, OV8856_NUM_SUPPLIES,
-+				      ov8856->supplies);
-+	if (ret)
-+		dev_warn(&client->dev, "failed to get regulators\n");
-+
-+	ret = __ov8856_power_on(ov8856);
-+	if (ret)
-+		dev_warn(&client->dev, "failed to power on\n");
-+
- 	ret = ov8856_identify_module(ov8856);
- 	if (ret) {
- 		dev_err(&client->dev, "failed to find sensor: %d", ret);
-@@ -1251,11 +1868,18 @@ static const struct acpi_device_id ov8856_acpi_ids[] = {
- MODULE_DEVICE_TABLE(acpi, ov8856_acpi_ids);
- #endif
- 
-+static const struct of_device_id ov8856_of_match[] = {
-+	{ .compatible = "ovti,ov8856" },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, ov8856_of_match);
-+
- static struct i2c_driver ov8856_i2c_driver = {
- 	.driver = {
- 		.name = "ov8856",
- 		.pm = &ov8856_pm_ops,
- 		.acpi_match_table = ACPI_PTR(ov8856_acpi_ids),
-+		.of_match_table = ov8856_of_match,
- 	},
- 	.probe_new = ov8856_probe,
- 	.remove = ov8856_remove,
--- 
-2.9.2
+clock-controller@7e00f000.
 
-
+>
+> Best regards,
+> Krzysztof
+>
+>> This introduces side effect of changing the initialization order of
+>> fin_pll and clock-controller@7e00f000. As of commit 3f6d439f2022
+>> ("clk: reverse default clk provider initialization order in of_clk_init()"),
+>> clock providers are initialized in the orders they are present in the
+>> device tree unless the clocks' dependencies are specified explicitly.
+>>
+>> without this patch:
+>>   [    0.000000] S3C6410 clocks: apll = 0, mpll = 0
+>>   [    0.000000]  epll = 0, arm_clk = 0
+>>
+>> with this patch:
+>>   [    0.000000] S3C6410 clocks: apll = 532000000, mpll = 532000000
+>>   [    0.000000]  epll = 24000000, arm_clk = 532000000
+>>
+>> Fixes: 3f6d439f2022 ("clk: reverse default clk provider initialization order in of_clk_init()")
+>> Signed-off-by: Lihua Yao <ylhuajnu@outlook.com>
+>> ---
+>>  arch/arm/boot/dts/s3c6410-mini6410.dts | 22 ----------------------
+>>  arch/arm/boot/dts/s3c6410-smdk6410.dts | 22 ----------------------
+>>  arch/arm/boot/dts/s3c64xx.dtsi         | 14 ++++++++++++++
+>>  3 files changed, 14 insertions(+), 44 deletions(-)
+>>
+>> diff --git a/arch/arm/boot/dts/s3c6410-mini6410.dts b/arch/arm/boot/dts/s3c6410-mini6410.dts
+>> index 5201512054c4..7028507b7076 100644
+>> --- a/arch/arm/boot/dts/s3c6410-mini6410.dts
+>> +++ b/arch/arm/boot/dts/s3c6410-mini6410.dts
+>> @@ -28,28 +28,6 @@
+>>  		bootargs = "console=ttySAC0,115200n8 earlyprintk root=/dev/nfs rw nfsroot=192.168.31.2:/srv/nfs/tiny6410,nfsvers=3 ip=dhcp";
+>>  	};
+>>  
+>> -	clocks {
+>> -		compatible = "simple-bus";
+>> -		#address-cells = <1>;
+>> -		#size-cells = <0>;
+>> -
+>> -		fin_pll: oscillator@0 {
+>> -			compatible = "fixed-clock";
+>> -			reg = <0>;
+>> -			clock-frequency = <12000000>;
+>> -			clock-output-names = "fin_pll";
+>> -			#clock-cells = <0>;
+>> -		};
+>> -
+>> -		xusbxti: oscillator@1 {
+>> -			compatible = "fixed-clock";
+>> -			reg = <1>;
+>> -			clock-output-names = "xusbxti";
+>> -			clock-frequency = <48000000>;
+>> -			#clock-cells = <0>;
+>> -		};
+>> -	};
+>> -
+>>  	srom-cs1@18000000 {
+>>  		compatible = "simple-bus";
+>>  		#address-cells = <1>;
+>> diff --git a/arch/arm/boot/dts/s3c6410-smdk6410.dts b/arch/arm/boot/dts/s3c6410-smdk6410.dts
+>> index a9a5689dc462..10a854b488a8 100644
+>> --- a/arch/arm/boot/dts/s3c6410-smdk6410.dts
+>> +++ b/arch/arm/boot/dts/s3c6410-smdk6410.dts
+>> @@ -28,28 +28,6 @@
+>>  		bootargs = "console=ttySAC0,115200n8 earlyprintk rootwait root=/dev/mmcblk0p1";
+>>  	};
+>>  
+>> -	clocks {
+>> -		compatible = "simple-bus";
+>> -		#address-cells = <1>;
+>> -		#size-cells = <0>;
+>> -
+>> -		fin_pll: oscillator@0 {
+>> -			compatible = "fixed-clock";
+>> -			reg = <0>;
+>> -			clock-frequency = <12000000>;
+>> -			clock-output-names = "fin_pll";
+>> -			#clock-cells = <0>;
+>> -		};
+>> -
+>> -		xusbxti: oscillator@1 {
+>> -			compatible = "fixed-clock";
+>> -			reg = <1>;
+>> -			clock-output-names = "xusbxti";
+>> -			clock-frequency = <48000000>;
+>> -			#clock-cells = <0>;
+>> -		};
+>> -	};
+>> -
+>>  	srom-cs1@18000000 {
+>>  		compatible = "simple-bus";
+>>  		#address-cells = <1>;
+>> diff --git a/arch/arm/boot/dts/s3c64xx.dtsi b/arch/arm/boot/dts/s3c64xx.dtsi
+>> index 2e611df37911..672764133cea 100644
+>> --- a/arch/arm/boot/dts/s3c64xx.dtsi
+>> +++ b/arch/arm/boot/dts/s3c64xx.dtsi
+>> @@ -39,6 +39,20 @@
+>>  		};
+>>  	};
+>>  
+>> +	fin_pll: oscillator-0 {
+>> +		compatible = "fixed-clock";
+>> +		clock-frequency = <12000000>;
+>> +		clock-output-names = "fin_pll";
+>> +		#clock-cells = <0>;
+>> +	};
+>> +
+>> +	xusbxti: oscillator-1 {
+>> +		compatible = "fixed-clock";
+>> +		clock-frequency = <48000000>;
+>> +		clock-output-names = "xusbxti";
+>> +		#clock-cells = <0>;
+>> +	};
+>> +
+>>  	soc: soc {
+>>  		compatible = "simple-bus";
+>>  		#address-cells = <1>;
+>> -- 
+>> 2.17.1
+>>
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
