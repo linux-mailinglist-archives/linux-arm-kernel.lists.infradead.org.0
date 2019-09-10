@@ -2,53 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CE04AAEA3B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:23:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F0F2AEA4C
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:26:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=529joCAMBpRPZ6KVW+eIDkm6s1YnHSZp9+A6yWk3JLU=; b=QtgdoHdWtxyX6T
-	j+l3ZE2au1bIyrJ0QAcBYO0Aq5cBjfJRsl/W/svp2rQFo2Tp+a1aAtSGqO4B6uuh7Xx03qF2ApzUJ
-	9jkl7ewhUfsgRh19FlhG+uGJ4Jgq1B3C7za+udPGHKgw8Zt+GN3J7mL3BvrdGU1JGBnH2pjQrl4LW
-	OgZLl2hn62XkS1VO0QEaqkglrOk/2QHWtskg8wTZYIxB31Xptv9H/XjkzJ+1MFq6qRpxnQmLA+KQV
-	ylM7WRpeqQOdIo98T0bodn2OyYgnt0NKewBgzXg8uwrWgZ7ZIfCk3zOJRrP5MXXwRnKNF49NRJNpm
-	QQK+FMUHuOblYH/jcxbA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Mvhd3VLCV7zQdmAuDe4aiMp8Tz+M9VOLq4nan4+1Fxk=; b=KCZpXngJGMz65n
+	FbMY701jt2Sn4N/6YVYZwy2yV4GSG6xCq6+jfBrrxYPpZm7XMp1E/WwfpM7LUI5XoD7D1hJz97Bqu
+	Lmg+pWFEMVo0ffDdgu4UBMjqU+pe4Hk+Rj0vdjfg6l5E6dAtt24KyM2hwFpGcjRbQ52vzdp449F6K
+	JgUVHQ6AHCHU9ybgSvnXFnsmR4MmIrEYpzmgnVikmbGbiqk7xn54fAcyk+r/vl9ScaNyKxq9FVVtD
+	UjV7AGXk1q3uJX/oAOsB8YbX7EsYs4zTLu+4JAC8QIxHR+6TBr+N0yD0HuMrbO9z7J/OI4O+X5VLp
+	8zOiJ1yJJ2gvkZ0i2b9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7fBE-0004NB-6g; Tue, 10 Sep 2019 12:23:32 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7fAy-0004Mh-2m
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:23:17 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 9A3ACB68B;
- Tue, 10 Sep 2019 12:23:14 +0000 (UTC)
-Date: Tue, 10 Sep 2019 14:23:13 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: Alexander Duyck <alexander.duyck@gmail.com>
-Subject: Re: [PATCH v9 3/8] mm: Move set/get_pcppage_migratetype to mmzone.h
-Message-ID: <20190910122313.GW2063@dhcp22.suse.cz>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190907172528.10910.37051.stgit@localhost.localdomain>
+	id 1i7fDe-0005zp-8V; Tue, 10 Sep 2019 12:26:02 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7fDH-0005zD-Es
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:25:45 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21E2C1000;
+ Tue, 10 Sep 2019 05:25:38 -0700 (PDT)
+Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50E5D3F59C;
+ Tue, 10 Sep 2019 05:25:37 -0700 (PDT)
+Subject: Re: [PATCH v5 00/11] Add arm64/signal initial kselftest support
+To: Dave Martin <Dave.Martin@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190904114722.GQ27757@arm.com>
+From: Cristian Marussi <cristian.marussi@arm.com>
+Message-ID: <74165b2e-eb4c-994f-20ca-b69f71f3f5bc@arm.com>
+Date: Tue, 10 Sep 2019 13:25:31 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190907172528.10910.37051.stgit@localhost.localdomain>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <20190904114722.GQ27757@arm.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_052316_410059_9AB9FD28 
-X-CRM114-Status: GOOD (  22.10  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190910_052543_502205_F3BCD384 
+X-CRM114-Status: GOOD (  24.34  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -61,103 +62,181 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: yang.zhang.wz@gmail.com, pagupta@redhat.com, kvm@vger.kernel.org,
- david@redhat.com, catalin.marinas@arm.com, lcapitulino@redhat.com,
- linux-mm@kvack.org, alexander.h.duyck@linux.intel.com, will@kernel.org,
- aarcange@redhat.com, virtio-dev@lists.oasis-open.org, mst@redhat.com,
- willy@infradead.org, wei.w.wang@intel.com, ying.huang@intel.com,
- riel@surriel.com, konrad.wilk@oracle.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de, nitesh@redhat.com,
- dave.hansen@intel.com, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
- akpm@linux-foundation.org, fengguang.wu@intel.com,
- kirill.shutemov@linux.intel.com
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sat 07-09-19 10:25:28, Alexander Duyck wrote:
-> From: Alexander Duyck <alexander.h.duyck@linux.intel.com>
+On 04/09/2019 12:47, Dave Martin wrote:
+> On Mon, Sep 02, 2019 at 12:29:21pm +0100, Cristian Marussi wrote:
+>> Hi
+>>
+>> this patchset aims to add the initial arch-specific arm64 support to
+>> kselftest starting with signals-related test-cases.
+>> A common internal test-case layout is proposed which then it is anyway
+>> wired-up to the toplevel kselftest Makefile, so that it should be possible
+>> at the end to run it on an arm64 target in the usual way with KSFT.
 > 
-> In order to support page reporting it will be necessary to store and
-> retrieve the migratetype of a page. To enable that I am moving the set and
-> get operations for pcppage_migratetype into the mm/internal.h header so
-> that they can be used outside of the page_alloc.c file.
-
-Please describe who is the user and why does it needs this interface.
-This is really important because migratetype is an MM internal thing and
-external users shouldn't really care about it at all. We really do not
-want a random code to call those, especially the set_pcppage_migratetype.
-
-> Reviewed-by: Dan Williams <dan.j.williams@intel.com>
-> Signed-off-by: Alexander Duyck <alexander.h.duyck@linux.intel.com>
-> ---
->  mm/internal.h   |   18 ++++++++++++++++++
->  mm/page_alloc.c |   18 ------------------
->  2 files changed, 18 insertions(+), 18 deletions(-)
+> BTW, it's helpful to state the base branch / commit as clearly as
+> possible near the top of the cover letter, say,
 > 
-> diff --git a/mm/internal.h b/mm/internal.h
-> index 0d5f720c75ab..e4a1a57bbd40 100644
-> --- a/mm/internal.h
-> +++ b/mm/internal.h
-> @@ -549,6 +549,24 @@ static inline bool is_migrate_highatomic_page(struct page *page)
->  	return get_pageblock_migratetype(page) == MIGRATE_HIGHATOMIC;
->  }
->  
-> +/*
-> + * A cached value of the page's pageblock's migratetype, used when the page is
-> + * put on a pcplist. Used to avoid the pageblock migratetype lookup when
-> + * freeing from pcplists in most cases, at the cost of possibly becoming stale.
-> + * Also the migratetype set in the page does not necessarily match the pcplist
-> + * index, e.g. page might have MIGRATE_CMA set but be on a pcplist with any
-> + * other index - this ensures that it will be put on the correct CMA freelist.
-> + */
-> +static inline int get_pcppage_migratetype(struct page *page)
-> +{
-> +	return page->index;
-> +}
-> +
-> +static inline void set_pcppage_migratetype(struct page *page, int migratetype)
-> +{
-> +	page->index = migratetype;
-> +}
-> +
->  void setup_zone_pageset(struct zone *zone);
->  extern struct page *alloc_new_node_page(struct page *page, unsigned long node);
->  #endif	/* __MM_INTERNAL_H */
-> diff --git a/mm/page_alloc.c b/mm/page_alloc.c
-> index 4e4356ba66c7..a791f2baeeeb 100644
-> --- a/mm/page_alloc.c
-> +++ b/mm/page_alloc.c
-> @@ -185,24 +185,6 @@ static int __init early_init_on_free(char *buf)
->  }
->  early_param("init_on_free", early_init_on_free);
->  
-> -/*
-> - * A cached value of the page's pageblock's migratetype, used when the page is
-> - * put on a pcplist. Used to avoid the pageblock migratetype lookup when
-> - * freeing from pcplists in most cases, at the cost of possibly becoming stale.
-> - * Also the migratetype set in the page does not necessarily match the pcplist
-> - * index, e.g. page might have MIGRATE_CMA set but be on a pcplist with any
-> - * other index - this ensures that it will be put on the correct CMA freelist.
-> - */
-> -static inline int get_pcppage_migratetype(struct page *page)
-> -{
-> -	return page->index;
-> -}
-> -
-> -static inline void set_pcppage_migratetype(struct page *page, int migratetype)
-> -{
-> -	page->index = migratetype;
-> -}
-> -
->  #ifdef CONFIG_PM_SLEEP
->  /*
->   * The following functions are used by the suspend/hibernate code to temporarily
+> --8<--
+> 
+> This series is based on arm64/for-next/core [1]
+> commit 9ce1263033cd ("selftests, arm64: add a selftest for passing tagged pointers to kernel")
+> 
+> [1] git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
+> 
+> -->8--
+> 
+> This is particularly important if you expect the maintainer to pick up
+> the patches.
+> 
+> You don't need to reference a specific commit unless there's a
+> significant chance of conflicts if the wrong commit is used, but it can
+> help provide a clue as to why you're basing on this alternate branch.
+> 
 
--- 
-Michal Hocko
-SUSE Labs
+Ok, thanks I'll do.
+
+>> ~/linux# make TARGETS=arm64 kselftest
+>>
+>> New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped by
+>> family inside subdirectories: arm64/signal is the first family proposed with
+>> this series.
+>> This series converts also to this subdirectory scheme the pre-existing
+>> (already queued on arm64/for-next/core) KSFT arm64 tags tests, moving them
+>> into arm64/tags.
+>>
+>> Thanks
+>>
+>> Cristian
+>>
+>>
+>> Notes:
+>> -----
+>> - further details in the included READMEs
+>>
+>> - more tests still to be written (current strategy is going through the related
+>>   Kernel signal-handling code and write a test for each possible and sensible code-path)
+>>   A few ideas for more TODO testcases:
+>> 	- fake_sigreturn_unmapped_sp: SP into unmapped addrs
+>> 	- fake_sigreturn_kernelspace_sp: SP into kernel addrs
+>> 	- fake_sigreturn_sve_bad_extra_context: SVE extra context badly formed
+>> 	- mangle_sve_invalid_extra_context: SVE extra_context invalid
+>>
+>> - SVE signal testcases and special handling will be part of an additional patch
+>>   still to be released
+> 
+> What's your approach to checking that the test failure paths work?
+> 
+> We could either hack the kernel or the tests to provoke "fake" failures,
+> and I don't think it's necessary to test everything in this way,
+> providing we have confidence that the test strategy and framework works
+> in general.
+> 
+
+So my approach to testing the tests itself has been as follows:
+
+- PASS path: instrumented Kernel itself to print the exact line where the SEGV
+  is supposed to be called and manually check once for all (just redone now).
+  Something like:
+
+# FAKE_SIGRETURN_MISALIGNED_SP :: Triggers a sigreturn with a misaligned sigframe
+Registered handlers for all signals.
+Detected MINSTKSIGSZ:9984
+Testcase initialized.
+uc context validated.
+GOOD CONTEXT grabbed from sig_copyctx handler
+Handled SIG_COPYCTX
+Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAAE5253
+[  188.206911] Kernel SEGV @ 571                                                   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+SIG_OK -- SP:0xFFFFCAAE5253  si_addr@:0xffffcaae5253  si_code:2  token@:0xffffcaae5253  offset:0
+==>> completed. PASS(1)
+
+
+- FAIL path: tried at first the same approach (instrument to avoid the SEGV), but thinking that
+  this could have led to general Kernel instability while processing bad sigframes,
+  I instead instrumented tests and utils as follows:
+
+  - mangle_ TESTS:
+
+    + removed the "mangling" for each test, and observed test FAIL (NO SEGV)
+
+# MANGLE_PSTATE_INVALID_MODE_EL1h :: Mangling uc_mcontext INVALID MODE EL1h
+Registered handlers for all signals.
+Detected MINSTKSIGSZ:9984
+Testcase initialized.
+uc context validated.
+Handled SIG_TRIG
+==>> completed. FAIL(0)
+
+    + SSBS: being this a peculiar mangle_ test, where we check that SSBS is PRESERVED as it is
+      on Kernel restoring sigframe (no expected SEGV), I used a kernel patched to NOT preserve
+      the SSBS bit (so clearing it). Moreover I experimented with the various SSBS support levels
+      (no_supp/SSBS_BIT/MRS+SSBS_BIT) and observed how test behaved related to the detected SSBS support
+
+    + verify that an anomalous SEGV (no SEGV_ACCER) is detected (say a *(* int)0x00= inside handler)
+
+# MANGLE_PSTATE_INVALID_DAIF_BITS :: Mangling uc_mcontext with INVALID DAIF_BITS
+Registered handlers for all signals.
+Detected MINSTKSIGSZ:9984
+Testcase initialized.
+uc context validated.
+SIG_OK -- SP:0xFFFFFBE96DA0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
+si_code != SEGV_ACCERR...test is probably broken!  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-- RX UNEXPECTED SIGNAL: 6
+==>> completed. FAIL(0)
+
+
+  - fake_sigreturn_ TESTS:
+
+    + verify placing on the stack the good context grabbed from get_current_context() as it is
+      (GOOD), execution flow is anomalously restored inside get_current_context() and such 
+      anomaly is spotted (without deadly loops)
+
+# FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
+Registered handlers for all signals.
+Detected MINSTKSIGSZ:9984
+Testcase initialized.
+uc context validated.
+GOOD CONTEXT grabbed from sig_copyctx handler
+Handled SIG_COPYCTX
+Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAC61F80
+Unexpected successful sigreturn detected: live_uc is stale !        <<<<<<<<<<<<<<<<<<<<<<<<<<<
+==>> completed. FAIL(0)
+
+    + verify that an early SEGV is detected as anomalous (say a *(* int)0x00 before fake sigframe
+      has been placed on the stack)
+
+# FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
+Registered handlers for all signals.
+Detected MINSTKSIGSZ:9984
+Testcase initialized.
+uc context validated.
+GOOD CONTEXT grabbed from sig_copyctx handler
+Handled SIG_COPYCTX
+Available space:3552
+Using badly built context - ERR: BAD MAGIC !
+Calling sigreturn with fake sigframe sized:4688 at SP @FFFFE77C96D0
+SIG_OK -- SP:0xFFFFE77C96D0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
+current->token ZEROED...test is probably broken!   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+-- RX UNEXPECTED SIGNAL: 6
+==>> completed. FAIL(0)
+
+
+> [...]
+> 
+> Cheers
+> ---Dave
+> 
+
+Cheers
+
+Cristian
+
 
 _______________________________________________
 linux-arm-kernel mailing list
