@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C278AADAE9
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 16:13:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C77E3ADADA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 16:12:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,43 +11,43 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=yo3P0lXmS7RvtndH9E2Ao96YA2ieXLbLoakhr0rBwOo=; b=YM4EiLvDgSNTn8yVeTlX5wfVsD
-	gf566gXe6dABjz6vjxjzgtqsP8iZP1uzTjzw9Kih0cwKfA+Q28R8cJUwhEd+wppTk+cd9voHB0hkK
-	n6u2TF0NGVK7AeakiT89KBNVONb8SpMTD28g9Sq7GKz+n4ArFF1Mrnboc87EXy9ZzVFnh1V0CTv0+
-	Nnq4it1N5njc/SVkoofPPUFZ4JeaGW02lRIfUbR98PzX6M0sJq/g2l5JfxllVPJ4vXvBUMZCmdcbr
-	zYT0lYl4Qskq8bX0d9cdTVzc2MC7sn6vqLPN+yP050aqVVQU0knu6ZO6pdysNXx103yYYsXIn9949
-	Vddi1ecg==;
+	bh=20amC+wHptRRoBk5v7i7EQmUeKtZ4zsOGFKDz2z/deg=; b=EZN0NsAX3CLHUbLHAe5vFjRdrJ
+	MtbZ/cotsoGEZZUzKbwYvSS+FuRwmoMbv/QV3ysame2L5na9CjBnObEV1dI5+xGz11zyAHn6wgPjz
+	l/yUOdgSS+lw8zmMoZyIc6Hq8zUGeIgB2ii3JOT4/drTH+lPECDJj09RIsmmrXEuByDgx3KGm01yc
+	dyg69eGsxFJyk7taB6FvnNLwOHi2ndQmZAzhoU3ysZx7SYy9EvL1yQRvdQ4qBP8/0YeLHd+SnEq/G
+	lQghpvUgSIzlXqsMv8DMmXN/lJdKVFdEO2Hqs3T3cyHAIuBQcNzBx77dO2eDn2dEzMRXWFplYeMch
+	WHpLBXmw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7KPe-0007ze-4u; Mon, 09 Sep 2019 14:13:02 +0000
+	id 1i7KON-0006sX-KM; Mon, 09 Sep 2019 14:11:43 +0000
 Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7KOD-0006rf-HP
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 14:11:35 +0000
+ id 1i7KOB-0006qe-9G
+ for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 14:11:33 +0000
 Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 54A622003F7;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id F1EDB200885;
  Mon,  9 Sep 2019 16:11:27 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 808202000F6;
- Mon,  9 Sep 2019 16:11:22 +0200 (CEST)
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 27F762001B4;
+ Mon,  9 Sep 2019 16:11:23 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 9908F402CF;
- Mon,  9 Sep 2019 22:11:16 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A0865402E3;
+ Mon,  9 Sep 2019 22:11:17 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH V5 01/11] dt-bindings: firmware: imx-scu: new binding to parse
+Subject: [PATCH V5 02/11] dt-bindings: clock: imx-lpcg: add support to parse
  clocks from device tree
-Date: Mon,  9 Sep 2019 22:09:58 -0400
-Message-Id: <1568081408-26800-2-git-send-email-aisheng.dong@nxp.com>
+Date: Mon,  9 Sep 2019 22:09:59 -0400
+Message-Id: <1568081408-26800-3-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
 References: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_071133_858939_A1426833 
-X-CRM114-Status: GOOD (  14.69  )
+X-CRM114-CacheID: sfid-20190909_071131_607035_49FC1EC8 
+X-CRM114-Status: GOOD (  14.49  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -79,22 +79,15 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-There's a few limitations on the original one cell clock binding
-(#clock-cells = <1>) that we have to define some SW clock IDs for device
-tree to reference. This may cause troubles if we want to use common
-clock IDs for multi platforms support when the clock of those platforms
-are mostly the same.
-e.g. Current clock IDs name are defined with SS prefix.
+MX8QM and MX8QXP LPCG Clocks are mostly the same except they may reside
+in different subsystems across CPUs and also vary a bit on the availability.
 
-However the device may reside in different SS across CPUs, that means the
-SS prefix may not valid anymore for a new SoC. Furthermore, the device
-availability of those clocks may also vary a bit.
+Same as SCU clock, we want to move the clock definition into device tree
+which can fully decouple the dependency of Clock ID definition from device
+tree and make us be able to write a fully generic lpcg clock driver.
 
-For such situation, we want to eliminate the using of SW Clock IDs and
-change to use a more close to HW one instead.
-For SCU clocks usage, only two params required: Resource id + Clock Type.
-Both parameters are platform independent. So we could use two cells binding
-to pass those parameters,
+And we can also use the existence of clock nodes in device tree to address
+the device and clock availability differences across different SoCs.
 
 Cc: Sascha Hauer <kernel@pengutronix.de>
 Cc: Michael Turquette <mturquette@baylibre.com>
@@ -105,93 +98,104 @@ Reviewed-by: Stephen Boyd <sboyd@kernel.org>
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
+v4->v5:
+ : no changes
 v3->v4:
- * add some comments for various clock types
+ * change bit-offset property to clock-indices
+ * use constant macro to define clock indinces
+ * drop hw-autogate property which is still not used by drivers
 v2->v3:
- * Changed to two cells binding and register all clocks in driver
-   instead of parse from device tree.
+ * no changes
 v1->v2:
- * changed to one cell binding inspired by arm,scpi.txt
-   Documentation/devicetree/bindings/arm/arm,scpi.txt
-   Resource ID is encoded in 'reg' property.
-   Clock type is encoded in generic clock-indices property.
-   Then we don't have to search all the DT nodes to fetch
-   those two value to construct clocks which is relatively
-   low efficiency.
- * Add required power-domain property as well.
+ * Update example
+ * Add power domain property
 ---
- .../devicetree/bindings/arm/freescale/fsl,scu.txt  | 12 ++++++-----
- include/dt-bindings/firmware/imx/rsrc.h            | 23 ++++++++++++++++++++++
- 2 files changed, 30 insertions(+), 5 deletions(-)
+ .../devicetree/bindings/clock/imx8qxp-lpcg.txt     | 36 ++++++++++++++++++----
+ include/dt-bindings/clock/imx8-lpcg.h              | 14 +++++++++
+ 2 files changed, 44 insertions(+), 6 deletions(-)
+ create mode 100644 include/dt-bindings/clock/imx8-lpcg.h
 
-diff --git a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-index a575e42..8cee5bf 100644
---- a/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-+++ b/Documentation/devicetree/bindings/arm/freescale/fsl,scu.txt
-@@ -89,7 +89,10 @@ Required properties:
- 			  "fsl,imx8qm-clock"
- 			  "fsl,imx8qxp-clock"
- 			followed by "fsl,scu-clk"
--- #clock-cells:		Should be 1. Contains the Clock ID value.
-+- #clock-cells:		Should be either
-+			2: Contains the Resource and Clock ID value.
-+			or
-+			1: Contains the Clock ID value. (DEPRECATED)
- - clocks:		List of clock specifiers, must contain an entry for
- 			each required entry in clock-names
- - clock-names:		Should include entries "xtal_32KHz", "xtal_24MHz"
-@@ -184,7 +187,7 @@ firmware {
+diff --git a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
+index 965cfa4..cad8fc4 100644
+--- a/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
++++ b/Documentation/devicetree/bindings/clock/imx8qxp-lpcg.txt
+@@ -11,6 +11,21 @@ enabled by these control bits, it might still not be running based
+ on the base resource.
  
- 		clk: clk {
- 			compatible = "fsl,imx8qxp-clk", "fsl,scu-clk";
--			#clock-cells = <1>;
-+			#clock-cells = <2>;
- 		};
+ Required properties:
++- compatible:		Should be one of:
++			  "fsl,imx8qxp-lpcg"
++			  "fsl,imx8qm-lpcg" followed by "fsl,imx8qxp-lpcg".
++- reg:			Address and length of the register set.
++- #clock-cells:		Should be 1. One LPCG supports multiple clocks.
++- clocks:		Input parent clocks phandle array for each clock.
++- clock-indices:	An integer array indicating the bit offset for each clock.
++			Refer to <include/dt-bindings/clock/imx8-lpcg.h> for the
++			supported LPCG clock indices.
++- clock-output-names:	Shall be the corresponding names of the outputs.
++			NOTE this property must be specified in the same order
++			as the clock-indices property.
++- power-domains:	Should contain the power domain used by this clock.
++
++Legacy binding (DEPRECATED):
+ - compatible:	Should be one of:
+ 		  "fsl,imx8qxp-lpcg-adma",
+ 		  "fsl,imx8qxp-lpcg-conn",
+@@ -33,10 +48,19 @@ Examples:
  
- 		iomuxc {
-@@ -229,8 +232,7 @@ serial@5a060000 {
- 	...
- 	pinctrl-names = "default";
- 	pinctrl-0 = <&pinctrl_lpuart0>;
--	clocks = <&clk IMX8QXP_UART0_CLK>,
--		 <&clk IMX8QXP_UART0_IPG_CLK>;
--	clock-names = "per", "ipg";
-+	clocks = <&uart0_clk IMX_SC_R_UART_0 IMX_SC_PM_CLK_PER>;
-+	clock-names = "ipg";
- 	power-domains = <&pd IMX_SC_R_UART_0>;
+ #include <dt-bindings/clock/imx8qxp-clock.h>
+ 
+-conn_lpcg: clock-controller@5b200000 {
+-	compatible = "fsl,imx8qxp-lpcg-conn";
+-	reg = <0x5b200000 0xb0000>;
++sdhc0_lpcg: clock-controller@5b200000 {
++	compatible = "fsl,imx8qxp-lpcg";
++	reg = <0x5b200000 0x10000>;
+ 	#clock-cells = <1>;
++	clocks = <&sdhc0_clk IMX_SC_PM_CLK_PER>,
++		 <&conn_ipg_clk>, <&conn_axi_clk>;
++	clock-indices = <IMX_LPCG_CLK_0>,
++			<IMX_LPCG_CLK_4>,
++			<IMX_LPCG_CLK_5>;
++	clock-output-names = "sdhc0_lpcg_per_clk",
++			     "sdhc0_lpcg_ipg_clk",
++			     "sdhc0_lpcg_ahb_clk";
++	power-domains = <&pd IMX_SC_R_SDHC_0>;
  };
-diff --git a/include/dt-bindings/firmware/imx/rsrc.h b/include/dt-bindings/firmware/imx/rsrc.h
-index 4e61f64..24c153d 100644
---- a/include/dt-bindings/firmware/imx/rsrc.h
-+++ b/include/dt-bindings/firmware/imx/rsrc.h
-@@ -547,4 +547,27 @@
- #define IMX_SC_R_ATTESTATION		545
- #define IMX_SC_R_LAST			546
  
+ usdhc1: mmc@5b010000 {
+@@ -44,8 +68,8 @@ usdhc1: mmc@5b010000 {
+ 	interrupt-parent = <&gic>;
+ 	interrupts = <GIC_SPI 232 IRQ_TYPE_LEVEL_HIGH>;
+ 	reg = <0x5b010000 0x10000>;
+-	clocks = <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_IPG_CLK>,
+-		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_PER_CLK>,
+-		 <&conn_lpcg IMX8QXP_CONN_LPCG_SDHC0_HCLK>;
++	clocks = <&sdhc0_lpcg IMX_LPCG_CLK_4>,
++		 <&sdhc0_lpcg IMX_LPCG_CLK_0>,
++		 <&sdhc0_lpcg IMX_LPCG_CLK_5>;
+ 	clock-names = "ipg", "per", "ahb";
+ };
+diff --git a/include/dt-bindings/clock/imx8-lpcg.h b/include/dt-bindings/clock/imx8-lpcg.h
+new file mode 100644
+index 0000000..df90aad
+--- /dev/null
++++ b/include/dt-bindings/clock/imx8-lpcg.h
+@@ -0,0 +1,14 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
 +/*
-+ * Defines for SC PM CLK
++ * Copyright 2019 NXP
++ *   Dong Aisheng <aisheng.dong@nxp.com>
 + */
 +
-+/* Normal device resource clock */
-+#define IMX_SC_PM_CLK_SLV_BUS		0	/* Slave bus clock */
-+#define IMX_SC_PM_CLK_MST_BUS		1	/* Master bus clock */
-+#define IMX_SC_PM_CLK_PER		2	/* Peripheral clock */
-+#define IMX_SC_PM_CLK_PHY		3	/* Phy clock */
-+#define IMX_SC_PM_CLK_MISC		4	/* Misc clock */
-+
-+/* Special clock types which do not belong to above normal clock types */
-+#define IMX_SC_PM_CLK_MISC0		0	/* Misc 0 clock */
-+#define IMX_SC_PM_CLK_MISC1		1	/* Misc 1 clock */
-+#define IMX_SC_PM_CLK_MISC2		2	/* Misc 2 clock */
-+#define IMX_SC_PM_CLK_MISC3		3	/* Misc 3 clock */
-+#define IMX_SC_PM_CLK_MISC4		4	/* Misc 4 clock */
-+
-+/* Special clock types for CPU/PLL/BYPASS only */
-+#define IMX_SC_PM_CLK_CPU		2	/* CPU clock */
-+#define IMX_SC_PM_CLK_PLL		4	/* PLL */
-+#define IMX_SC_PM_CLK_BYPASS		4	/* Bypass clock */
-+
- #endif /* __DT_BINDINGS_RSCRC_IMX_H */
++#define IMX_LPCG_CLK_0	0
++#define IMX_LPCG_CLK_1	4
++#define IMX_LPCG_CLK_2	8
++#define IMX_LPCG_CLK_3	12
++#define IMX_LPCG_CLK_4	16
++#define IMX_LPCG_CLK_5	20
++#define IMX_LPCG_CLK_6	24
++#define IMX_LPCG_CLK_7	28
 -- 
 2.7.4
 
