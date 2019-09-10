@@ -2,57 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4F40AAE167
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 01:14:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49B5DAE1A3
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 02:18:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Js93UAxakNEN0mbz8ssSYVtrLFTCHWw6mh1bd+fX87o=; b=LiuUk93Q10ZBKRLIMVMNqh81Nu
-	fhpudj4AMj7WUhg03Dwnzo/mEw458fl2LCyTW6REcKLpwlX73QJ2aAcN9SrlYirqOBD6hF0vP2Hd0
-	aNtpZiBNaJ35gGcd5rcDWmS032xPNH+hW4M1A3pNBLXxQsXTIUMKQFzq9my52A08p/FYqg7v0XxtM
-	5ykT8syx6TcUWY0FiZWMKqeE29IljBDsNOwcCVODflezZW+86DSJCmmveV2gwNb5yFpJ1V/YgJcF8
-	IlI7JAPq/zCYYCYqm5EWhgaQyG4GffdZQHLkAmhlYEEuFZ1Lgx5yg+6u5gFe8z1B8J1SKnZQBAuB6
-	EpzAcUZA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qtHnZRn6Jp30ucHJQpcpBKmz3J5OaF2aG19qforE7sQ=; b=tLeULGTGs69QKY
+	oVv3BQAY0iKxf2y+sutt/zUSY1UqEui+K/e9Zek+5cpRgVn18ekHjl8JW1ZMZ+QcvvyiRRp/uoSj7
+	XAxbbcMVcuMfTh2fGzJHD3YI/qokzo+Cs8LUR3HeHbaZ/s+AX6q3n1pXXJXEIClziqOXjToIbrGQa
+	cxK1OczOJVQy7lBdL5gsrCdB2ysleanWBV9B+PTwXv9LY3gJ8j2mm9AYSf3zJq3lAYw+INbESb1Hv
+	dNMeKY9LKS+nVQukXh2kv6Csmgycs4Hyc3rS6xvCkCGJMYtEgj6mFCtuBakKiok3Aii5tULfoorXf
+	gg7DDD6Vdl9gucBTMx5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7Srk-0001gm-OI; Mon, 09 Sep 2019 23:14:36 +0000
-Received: from linux.microsoft.com ([13.77.154.182])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7SrS-0001Zv-Bm
- for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 23:14:20 +0000
-Received: from prsriva-Precision-Tower-5810.corp.microsoft.com (unknown
- [167.220.2.18])
- by linux.microsoft.com (Postfix) with ESMTPSA id 61E9E20B7187;
- Mon,  9 Sep 2019 16:14:16 -0700 (PDT)
-DKIM-Filter: OpenDKIM Filter v2.11.0 linux.microsoft.com 61E9E20B7187
-From: Prakhar Srivastava <prsriva@linux.microsoft.com>
-To: linux-kernel@vger.kernel.org,
-	linux-arm-kernel@lists.infradead.org
-Subject: [RFC PATCH v1 1/1] Add support for arm64 to carry ima measurement log
- in kexec_file_load
-Date: Mon,  9 Sep 2019 16:14:09 -0700
-Message-Id: <20190909231409.20461-2-prsriva@linux.microsoft.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190909231409.20461-1-prsriva@linux.microsoft.com>
-References: <20190909231409.20461-1-prsriva@linux.microsoft.com>
+	id 1i7Trn-0002fZ-Jw; Tue, 10 Sep 2019 00:18:43 +0000
+Received: from mail.kernel.org ([198.145.29.99])
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7Tra-0002ev-FD
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 00:18:32 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id C351C21670;
+ Tue, 10 Sep 2019 00:18:28 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568074709;
+ bh=YgqPgucJuky5FcSp0vrxNvRL/Fngfl3HUuoywRnLxy0=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=jDdg6bjkfqRkN2qiY8xoU/nMdM+W40s+tBS17TmDrDcR3MECdp1nBG0NCqvoH4YvV
+ BhBFaNaLjghh08U+HyVFYhOT2bdGVC30dg4Fe3ALVyp/kGUA3+wG2mX1tAtaVHNUem
+ LmajRzth9Ln8b9KkbWlaJjYNjxw9p2XvDczARe2k=
+Date: Mon, 9 Sep 2019 17:18:27 -0700 (PDT)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Christoph Hellwig <hch@lst.de>
+Subject: Re: [PATCH 01/11] xen/arm: use dma-noncoherent.h calls for xen-swiotlb
+ cache maintainance
+In-Reply-To: <20190905113408.3104-2-hch@lst.de>
+Message-ID: <alpine.DEB.2.21.1909091659220.29131@sstabellini-ThinkPad-T480s>
+References: <20190905113408.3104-1-hch@lst.de>
+ <20190905113408.3104-2-hch@lst.de>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_161418_453153_53FE2874 
-X-CRM114-Status: GOOD (  23.48  )
-X-Spam-Score: -8.0 (--------)
+X-CRM114-CacheID: sfid-20190909_171830_557790_F56FD723 
+X-CRM114-Status: GOOD (  24.40  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-8.0 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
- -0.5 ENV_AND_HDR_SPF_MATCH  Env and Hdr From used in default SPF WL
- Match
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,362 +78,222 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, jean-philippe@linaro.org, arnd@arndb.de,
- takahiro.akashi@linaro.org, sboyd@kernel.org, catalin.marinas@arm.com,
- zohar@linux.ibm.com, yamada.masahiro@socionext.com, kristina.martsenko@arm.org,
- duwe@lst.de, bauerman@linux.ibm.com, james.morse@arm.org, tglx@linutronix.de,
- allison@lohutok.net
-MIME-Version: 1.0
+Cc: Stefano Stabellini <sstabellini@kernel.org>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>, gross@suse.com, x86@kernel.org,
+ linux-kernel@vger.kernel.org, iommu@lists.linux-foundation.org,
+ xen-devel@lists.xenproject.org, boris.ostrovsky@oracle.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-During kexec_file_load, carrying forward the ima measurement log allows
-a verifying party to get the entire runtime event log since the last
-full reboot since that is when PCRs were last reset.
+On Thu, 5 Sep 2019, Christoph Hellwig wrote:
+> Copy the arm64 code that uses the dma-direct/swiotlb helpers for DMA
+> on-coherent devices.
+> 
+> Signed-off-by: Christoph Hellwig <hch@lst.de>
 
-Signed-off-by: Prakhar Srivastava <prsriva@linux.microsoft.com>
----
- arch/arm64/Kconfig                     |   7 +
- arch/arm64/include/asm/ima.h           |  29 ++++
- arch/arm64/include/asm/kexec.h         |   5 +
- arch/arm64/kernel/Makefile             |   3 +-
- arch/arm64/kernel/ima_kexec.c          | 213 +++++++++++++++++++++++++
- arch/arm64/kernel/machine_kexec_file.c |   6 +
- 6 files changed, 262 insertions(+), 1 deletion(-)
- create mode 100644 arch/arm64/include/asm/ima.h
- create mode 100644 arch/arm64/kernel/ima_kexec.c
+This is much better and much more readable.
 
-diff --git a/arch/arm64/Kconfig b/arch/arm64/Kconfig
-index 3adcec05b1f6..f39b12dbf9e8 100644
---- a/arch/arm64/Kconfig
-+++ b/arch/arm64/Kconfig
-@@ -976,6 +976,13 @@ config KEXEC_VERIFY_SIG
- 	  verification for the corresponding kernel image type being
- 	  loaded in order for this to work.
- 
-+config HAVE_IMA_KEXEC
-+	bool "Carry over IMA measurement log during kexec_file_load() syscall"
-+	depends on KEXEC_FILE
-+	help
-+	  Select this option to carry over IMA measurement log during
-+	  kexec_file_load.
-+
- config KEXEC_IMAGE_VERIFY_SIG
- 	bool "Enable Image signature verification support"
- 	default y
-diff --git a/arch/arm64/include/asm/ima.h b/arch/arm64/include/asm/ima.h
-new file mode 100644
-index 000000000000..e23cee84729f
---- /dev/null
-+++ b/arch/arm64/include/asm/ima.h
-@@ -0,0 +1,29 @@
-+/* SPDX-License-Identifier: GPL-2.0 */
-+#ifndef _ASM_ARM64_IMA_H
-+#define _ASM_ARM64_IMA_H
-+
-+struct kimage;
-+
-+int ima_get_kexec_buffer(void **addr, size_t *size);
-+int ima_free_kexec_buffer(void);
-+
-+#ifdef CONFIG_IMA
-+void remove_ima_buffer(void *fdt, int chosen_node);
-+#else
-+static inline void remove_ima_buffer(void *fdt, int chosen_node) {}
-+#endif
-+
-+#ifdef CONFIG_IMA_KEXEC
-+int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-+			      size_t size);
-+
-+int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node);
-+#else
-+static inline int setup_ima_buffer(const struct kimage *image, void *fdt,
-+				   int chosen_node)
-+{
-+	remove_ima_buffer(fdt, chosen_node);
-+	return 0;
-+}
-+#endif /* CONFIG_IMA_KEXEC */
-+#endif /* _ASM_ARM64_IMA_H */
-diff --git a/arch/arm64/include/asm/kexec.h b/arch/arm64/include/asm/kexec.h
-index 12a561a54128..e8d2412066e7 100644
---- a/arch/arm64/include/asm/kexec.h
-+++ b/arch/arm64/include/asm/kexec.h
-@@ -96,6 +96,11 @@ static inline void crash_post_resume(void) {}
- struct kimage_arch {
- 	void *dtb;
- 	unsigned long dtb_mem;
-+
-+#ifdef CONFIG_IMA_KEXEC
-+	phys_addr_t ima_buffer_addr;
-+	size_t ima_buffer_size;
-+#endif
- };
- 
- extern const struct kexec_file_ops kexec_image_ops;
-diff --git a/arch/arm64/kernel/Makefile b/arch/arm64/kernel/Makefile
-index 478491f07b4f..580238f2e9a7 100644
---- a/arch/arm64/kernel/Makefile
-+++ b/arch/arm64/kernel/Makefile
-@@ -55,7 +55,8 @@ obj-$(CONFIG_RANDOMIZE_BASE)		+= kaslr.o
- obj-$(CONFIG_HIBERNATION)		+= hibernate.o hibernate-asm.o
- obj-$(CONFIG_KEXEC_CORE)		+= machine_kexec.o relocate_kernel.o	\
- 					   cpu-reset.o
--obj-$(CONFIG_KEXEC_FILE)		+= machine_kexec_file.o kexec_image.o
-+obj-$(CONFIG_KEXEC_FILE)		+= machine_kexec_file.o kexec_image.o	\
-+					   ima_kexec.o
- obj-$(CONFIG_ARM64_RELOC_TEST)		+= arm64-reloc-test.o
- arm64-reloc-test-y := reloc_test_core.o reloc_test_syms.o
- obj-$(CONFIG_CRASH_DUMP)		+= crash_dump.o
-diff --git a/arch/arm64/kernel/ima_kexec.c b/arch/arm64/kernel/ima_kexec.c
-new file mode 100644
-index 000000000000..b14326d541f3
---- /dev/null
-+++ b/arch/arm64/kernel/ima_kexec.c
-@@ -0,0 +1,213 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2019 Microsoft Corporation.
-+ *
-+ * Authors:
-+ * Prakhar Srivastava <prsriva@linux.microsoft.com>
-+ */
-+
-+#include <linux/slab.h>
-+#include <linux/kexec.h>
-+#include <linux/of.h>
-+#include <linux/memblock.h>
-+#include <linux/libfdt.h>
-+
-+
-+/**
-+ * delete_fdt_mem_rsv - delete memory reservation with given address and size
-+ * @fdt - pointer to the fdt.
-+ * @start - start address of the memory.
-+ * @size - number of cells to be deletd.
-+ * 
-+ * Return: 0 on success, or negative errno on error.
-+ */
-+int delete_fdt_mem_rsv(void *fdt, unsigned long start, unsigned long size)
-+{
-+	int i, ret, num_rsvs = fdt_num_mem_rsv(fdt);
-+
-+	for (i = 0; i < num_rsvs; i++) {
-+		uint64_t rsv_start, rsv_size;
-+
-+		ret = fdt_get_mem_rsv(fdt, i, &rsv_start, &rsv_size);
-+		if (ret) {
-+			pr_err("Malformed device tree\n");
-+			return -EINVAL;
-+		}
-+
-+		if (rsv_start == start && rsv_size == size) {
-+			ret = fdt_del_mem_rsv(fdt, i);
-+			if (ret) {
-+				pr_err("Error deleting device tree reservation\n");
-+				return -EINVAL;
-+			}
-+
-+			return 0;
-+		}
-+	}
-+
-+	return -ENOENT;
-+}
-+
-+/**
-+ * remove_ima_buffer - remove the IMA buffer property and reservation
-+ * @fdt - pointer the fdt.
-+ * @chosen_node - node under which property can be found.
-+ * 
-+ * The IMA measurement buffer is either read by now and freeed or a kexec call
-+ * needs to replace the ima measurement buffer, clear the property and memory
-+ * reservation.
-+ */
-+void remove_ima_buffer(void *fdt, int chosen_node)
-+{
-+	int ret, len;
-+	const void *prop;
-+	uint64_t tmp_start, tmp_end;
-+
-+	prop = fdt_getprop(fdt, chosen_node, "linux,ima-kexec-buffer", &len);
-+	if (prop) {
-+		tmp_start = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+		prop = fdt_getprop(fdt, chosen_node,
-+				   "linux,ima-kexec-buffer-end", &len);
-+		if (!prop)
-+			return;
-+
-+		tmp_end = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+		ret = delete_fdt_mem_rsv(fdt, tmp_start, tmp_end - tmp_start);
-+
-+		if (ret == 0)
-+			pr_debug("Removed old IMA buffer reservation.\n");
-+		else if (ret != -ENOENT)
-+			return;
-+
-+		fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer");
-+		fdt_delprop(fdt, chosen_node, "linux,ima-kexec-buffer-end");
-+	}
-+}
-+
-+/**
-+ * ima_get_kexec_buffer - get IMA buffer from the previous kernel
-+ * @addr:	On successful return, set to point to the buffer contents.
-+ * @size:	On successful return, set to the buffer size.
-+ *
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int ima_get_kexec_buffer(void **addr, size_t *size)
-+{
-+	int len;
-+	const void *prop;
-+	uint64_t tmp_start, tmp_end;
-+
-+	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer", &len);
-+	if (!prop)
-+		return -ENOENT;
-+
-+	tmp_start = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+	prop = of_get_property(of_chosen, "linux,ima-kexec-buffer-end", &len);
-+	if (!prop)
-+		return -ENOENT;
-+
-+	tmp_end = fdt64_to_cpu(*((const fdt64_t *) prop));
-+
-+	*addr = __va(tmp_start);
-+	*size = tmp_end - tmp_start;
-+
-+	return 0;
-+}
-+
-+/**
-+ * ima_free_kexec_buffer - free memory used by the IMA buffer
-+ *
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int ima_free_kexec_buffer(void)
-+{
-+	int ret;
-+	void *propStart, *propEnd;
-+	uint64_t tmp_start, tmp_end;
-+
-+	propStart = of_find_property(of_chosen, "linux,ima-kexec-buffer",
-+				     NULL);
-+	if (propStart) {
-+		tmp_start = fdt64_to_cpu(*((const fdt64_t *) propStart));
-+		ret = of_remove_property(of_chosen, propStart);
-+		if (!ret) {
-+			return ret;
-+		}
-+
-+		propEnd = of_find_property(of_chosen,
-+					   "linux,ima-kexec-buffer-end", NULL);
-+		if (!propEnd) {
-+			return -EINVAL;
-+		}
-+
-+		tmp_end = fdt64_to_cpu(*((const fdt64_t *) propEnd));
-+
-+		ret = of_remove_property(of_chosen, propEnd);
-+		if (!ret) {
-+			return ret;
-+		}
-+
-+		return memblock_free(tmp_start, tmp_end - tmp_start);
-+	}
-+	return 0;
-+}
-+
-+#ifdef CONFIG_IMA_KEXEC
-+/**
-+ * arch_ima_add_kexec_buffer - do arch-specific steps to add the IMA
-+ * 	measurement log.
-+ * @image: - pointer to the kimage, to store the address and size of the 
-+ *	 IMA measurement log.
-+ * @load_addr: - the address where the IMA measurement log is stored.
-+ * @size - size of the IMA measurement log.
-+ * 
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int arch_ima_add_kexec_buffer(struct kimage *image, unsigned long load_addr,
-+			      size_t size)
-+{
-+	image->arch.ima_buffer_addr = load_addr;
-+	image->arch.ima_buffer_size = size;
-+	return 0;
-+}
-+
-+/**
-+ * setup_ima_buffer - update the fdt to contain the ima mesasurement log
-+ * @image: - pointer to the kimage, containing the address and size of
-+ *	     the IMA measurement log.
-+ * @fdt: - pointer to the fdt.
-+ * @chosen_node: - node under which property is to be defined.
-+ *  
-+ * Return: 0 on success, negative errno on error.
-+ */
-+int setup_ima_buffer(const struct kimage *image, void *fdt, int chosen_node)
-+{
-+	int ret;
-+
-+	remove_ima_buffer(fdt, chosen_node);
-+
-+	if (!image->arch.ima_buffer_size)
-+		return 0;
-+
-+	ret = fdt_setprop_u64(fdt, chosen_node, "linux,ima-kexec-buffer",
-+			      image->arch.ima_buffer_addr);
-+	if (ret < 0)
-+		return ret;
-+
-+	ret = fdt_setprop_u64(fdt, chosen_node, "linux,ima-kexec-buffer-end",
-+			      image->arch.ima_buffer_addr +
-+			      image->arch.ima_buffer_size);
-+	if (ret < 0)
-+		return ret;
-+
-+	ret = fdt_add_mem_rsv(fdt, image->arch.ima_buffer_addr,
-+			      image->arch.ima_buffer_size);
-+	if (ret < 0)
-+		return ret;
-+
-+	return 0;
-+}
-+#endif /* CONFIG_IMA_KEXEC */
-diff --git a/arch/arm64/kernel/machine_kexec_file.c b/arch/arm64/kernel/machine_kexec_file.c
-index 58871333737a..de5452539c67 100644
---- a/arch/arm64/kernel/machine_kexec_file.c
-+++ b/arch/arm64/kernel/machine_kexec_file.c
-@@ -21,6 +21,7 @@
- #include <linux/types.h>
- #include <linux/vmalloc.h>
- #include <asm/byteorder.h>
-+#include <asm/ima.h>
- 
- /* relevant device tree properties */
- #define FDT_PROP_INITRD_START	"linux,initrd-start"
-@@ -85,6 +86,11 @@ static int setup_dtb(struct kimage *image,
- 			goto out;
- 	}
- 
-+	/* add ima measuremnet log buffer */
-+	ret = setup_ima_buffer(image, dtb, off);
-+	if (ret)
-+		goto out;
-+
- 	/* add kaslr-seed */
- 	ret = fdt_delprop(dtb, off, FDT_PROP_KASLR_SEED);
- 	if  (ret == -FDT_ERR_NOTFOUND)
--- 
-2.17.1
+Reviewed-by: Stefano Stabellini <sstabellini@kernel.org>
 
+> ---
+>  arch/arm/include/asm/device.h            |  3 -
+>  arch/arm/include/asm/xen/page-coherent.h | 72 +++++++++---------------
+>  arch/arm/mm/dma-mapping.c                |  8 +--
+>  drivers/xen/swiotlb-xen.c                | 20 -------
+>  4 files changed, 28 insertions(+), 75 deletions(-)
+> 
+> diff --git a/arch/arm/include/asm/device.h b/arch/arm/include/asm/device.h
+> index f6955b55c544..c675bc0d5aa8 100644
+> --- a/arch/arm/include/asm/device.h
+> +++ b/arch/arm/include/asm/device.h
+> @@ -14,9 +14,6 @@ struct dev_archdata {
+>  #endif
+>  #ifdef CONFIG_ARM_DMA_USE_IOMMU
+>  	struct dma_iommu_mapping	*mapping;
+> -#endif
+> -#ifdef CONFIG_XEN
+> -	const struct dma_map_ops *dev_dma_ops;
+>  #endif
+>  	unsigned int dma_coherent:1;
+>  	unsigned int dma_ops_setup:1;
+> diff --git a/arch/arm/include/asm/xen/page-coherent.h b/arch/arm/include/asm/xen/page-coherent.h
+> index 2c403e7c782d..602ac02f154c 100644
+> --- a/arch/arm/include/asm/xen/page-coherent.h
+> +++ b/arch/arm/include/asm/xen/page-coherent.h
+> @@ -6,23 +6,37 @@
+>  #include <asm/page.h>
+>  #include <xen/arm/page-coherent.h>
+>  
+> -static inline const struct dma_map_ops *xen_get_dma_ops(struct device *dev)
+> -{
+> -	if (dev && dev->archdata.dev_dma_ops)
+> -		return dev->archdata.dev_dma_ops;
+> -	return get_arch_dma_ops(NULL);
+> -}
+> -
+>  static inline void *xen_alloc_coherent_pages(struct device *hwdev, size_t size,
+>  		dma_addr_t *dma_handle, gfp_t flags, unsigned long attrs)
+>  {
+> -	return xen_get_dma_ops(hwdev)->alloc(hwdev, size, dma_handle, flags, attrs);
+> +	return dma_direct_alloc(hwdev, size, dma_handle, flags, attrs);
+>  }
+>  
+>  static inline void xen_free_coherent_pages(struct device *hwdev, size_t size,
+>  		void *cpu_addr, dma_addr_t dma_handle, unsigned long attrs)
+>  {
+> -	xen_get_dma_ops(hwdev)->free(hwdev, size, cpu_addr, dma_handle, attrs);
+> +	dma_direct_free(hwdev, size, cpu_addr, dma_handle, attrs);
+> +}
+> +
+> +static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
+> +		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+> +{
+> +	unsigned long pfn = PFN_DOWN(handle);
+> +
+> +	if (pfn_valid(pfn))
+> +		dma_direct_sync_single_for_cpu(hwdev, handle, size, dir);
+> +	else
+> +		__xen_dma_sync_single_for_cpu(hwdev, handle, size, dir);
+> +}
+> +
+> +static inline void xen_dma_sync_single_for_device(struct device *hwdev,
+> +		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+> +{
+> +	unsigned long pfn = PFN_DOWN(handle);
+> +	if (pfn_valid(pfn))
+> +		dma_direct_sync_single_for_device(hwdev, handle, size, dir);
+> +	else
+> +		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
+>  }
+>  
+>  static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
+> @@ -36,17 +50,8 @@ static inline void xen_dma_map_page(struct device *hwdev, struct page *page,
+>  	bool local = (page_pfn <= dev_pfn) &&
+>  		(dev_pfn - page_pfn < compound_pages);
+>  
+> -	/*
+> -	 * Dom0 is mapped 1:1, while the Linux page can span across
+> -	 * multiple Xen pages, it's not possible for it to contain a
+> -	 * mix of local and foreign Xen pages. So if the first xen_pfn
+> -	 * == mfn the page is local otherwise it's a foreign page
+> -	 * grant-mapped in dom0. If the page is local we can safely
+> -	 * call the native dma_ops function, otherwise we call the xen
+> -	 * specific function.
+> -	 */
+>  	if (local)
+> -		xen_get_dma_ops(hwdev)->map_page(hwdev, page, offset, size, dir, attrs);
+> +		dma_direct_map_page(hwdev, page, offset, size, dir, attrs);
+>  	else
+>  		__xen_dma_map_page(hwdev, page, dev_addr, offset, size, dir, attrs);
+>  }
+> @@ -63,33 +68,10 @@ static inline void xen_dma_unmap_page(struct device *hwdev, dma_addr_t handle,
+>  	 * safely call the native dma_ops function, otherwise we call the xen
+>  	 * specific function.
+>  	 */
+> -	if (pfn_valid(pfn)) {
+> -		if (xen_get_dma_ops(hwdev)->unmap_page)
+> -			xen_get_dma_ops(hwdev)->unmap_page(hwdev, handle, size, dir, attrs);
+> -	} else
+> +	if (pfn_valid(pfn))
+> +		dma_direct_unmap_page(hwdev, handle, size, dir, attrs);
+> +	else
+>  		__xen_dma_unmap_page(hwdev, handle, size, dir, attrs);
+>  }
+>  
+> -static inline void xen_dma_sync_single_for_cpu(struct device *hwdev,
+> -		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+> -{
+> -	unsigned long pfn = PFN_DOWN(handle);
+> -	if (pfn_valid(pfn)) {
+> -		if (xen_get_dma_ops(hwdev)->sync_single_for_cpu)
+> -			xen_get_dma_ops(hwdev)->sync_single_for_cpu(hwdev, handle, size, dir);
+> -	} else
+> -		__xen_dma_sync_single_for_cpu(hwdev, handle, size, dir);
+> -}
+> -
+> -static inline void xen_dma_sync_single_for_device(struct device *hwdev,
+> -		dma_addr_t handle, size_t size, enum dma_data_direction dir)
+> -{
+> -	unsigned long pfn = PFN_DOWN(handle);
+> -	if (pfn_valid(pfn)) {
+> -		if (xen_get_dma_ops(hwdev)->sync_single_for_device)
+> -			xen_get_dma_ops(hwdev)->sync_single_for_device(hwdev, handle, size, dir);
+> -	} else
+> -		__xen_dma_sync_single_for_device(hwdev, handle, size, dir);
+> -}
+> -
+>  #endif /* _ASM_ARM_XEN_PAGE_COHERENT_H */
+> diff --git a/arch/arm/mm/dma-mapping.c b/arch/arm/mm/dma-mapping.c
+> index d42557ee69c2..738097396445 100644
+> --- a/arch/arm/mm/dma-mapping.c
+> +++ b/arch/arm/mm/dma-mapping.c
+> @@ -1132,10 +1132,6 @@ static const struct dma_map_ops *arm_get_dma_map_ops(bool coherent)
+>  	 * 32-bit DMA.
+>  	 * Use the generic dma-direct / swiotlb ops code in that case, as that
+>  	 * handles bounce buffering for us.
+> -	 *
+> -	 * Note: this checks CONFIG_ARM_LPAE instead of CONFIG_SWIOTLB as the
+> -	 * latter is also selected by the Xen code, but that code for now relies
+> -	 * on non-NULL dev_dma_ops.  To be cleaned up later.
+>  	 */
+>  	if (IS_ENABLED(CONFIG_ARM_LPAE))
+>  		return NULL;
+> @@ -2363,10 +2359,8 @@ void arch_setup_dma_ops(struct device *dev, u64 dma_base, u64 size,
+>  	set_dma_ops(dev, dma_ops);
+>  
+>  #ifdef CONFIG_XEN
+> -	if (xen_initial_domain()) {
+> -		dev->archdata.dev_dma_ops = dev->dma_ops;
+> +	if (xen_initial_domain())
+>  		dev->dma_ops = xen_dma_ops;
+> -	}
+>  #endif
+>  	dev->archdata.dma_ops_setup = true;
+>  }
+> diff --git a/drivers/xen/swiotlb-xen.c b/drivers/xen/swiotlb-xen.c
+> index ae1df496bf38..eee86cc7046b 100644
+> --- a/drivers/xen/swiotlb-xen.c
+> +++ b/drivers/xen/swiotlb-xen.c
+> @@ -557,11 +557,6 @@ xen_swiotlb_dma_mmap(struct device *dev, struct vm_area_struct *vma,
+>  		     void *cpu_addr, dma_addr_t dma_addr, size_t size,
+>  		     unsigned long attrs)
+>  {
+> -#ifdef CONFIG_ARM
+> -	if (xen_get_dma_ops(dev)->mmap)
+> -		return xen_get_dma_ops(dev)->mmap(dev, vma, cpu_addr,
+> -						    dma_addr, size, attrs);
+> -#endif
+>  	return dma_common_mmap(dev, vma, cpu_addr, dma_addr, size, attrs);
+>  }
+>  
+> @@ -574,21 +569,6 @@ xen_swiotlb_get_sgtable(struct device *dev, struct sg_table *sgt,
+>  			void *cpu_addr, dma_addr_t handle, size_t size,
+>  			unsigned long attrs)
+>  {
+> -#ifdef CONFIG_ARM
+> -	if (xen_get_dma_ops(dev)->get_sgtable) {
+> -#if 0
+> -	/*
+> -	 * This check verifies that the page belongs to the current domain and
+> -	 * is not one mapped from another domain.
+> -	 * This check is for debug only, and should not go to production build
+> -	 */
+> -		unsigned long bfn = PHYS_PFN(dma_to_phys(dev, handle));
+> -		BUG_ON (!page_is_ram(bfn));
+> -#endif
+> -		return xen_get_dma_ops(dev)->get_sgtable(dev, sgt, cpu_addr,
+> -							   handle, size, attrs);
+> -	}
+> -#endif
+>  	return dma_common_get_sgtable(dev, sgt, cpu_addr, handle, size, attrs);
+>  }
+>  
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
