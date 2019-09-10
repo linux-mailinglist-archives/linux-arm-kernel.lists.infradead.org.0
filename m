@@ -2,98 +2,62 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 957A3AE29C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 05:45:55 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3303AE2A9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 05:57:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=60gkL8EcYeT7GliN5FDYCvXdKwU1Qq9TrmnWPJAj2+c=; b=ShX+fVbHQijJWs
-	KcMfcelavnhBc4A1E76jCPOtD39m1+5vD0WSy2FcRlEL+hwHbFBDd5R2rHGeZD/IdAHr5PkiCgIL9
-	RQCScX64mu1An9MF6ue2Dptpk4dqWKwegeD2ZwpkSuWXNzFoySbWWV3mpAbTsN24efJ6I5Vjbj65f
-	w+aNy3vuQb6rn/NzdAm0tety7tOBT3S+WuXH7aSqgf6sya6zieMYoyApBu0xoMO9w2H9owkFedAXQ
-	d8lflfYDe9QYtfSuWdF2CpEq59LcwvcxLMOE5qHGUbTdCvrrgC4oGCXouHrLR2Kl3queZZffvlAK0
-	fL8Kv8NYoJzMIk6KeINw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=SRZauH4iNMGdtNH2nslKhNJoPffNA8PgoItxZFCVoag=; b=f0YdaeIwDxFWp+
+	fiLf8tzQXPsYvZdpGAgEcZKjqe9DPbtJA31/9LqjxQrc5dLAVJ0RFhaQfxAvRMFj/cT2GxgtcJB4Z
+	RYjxyjaLxnUsl8fx4g2EEmPqyq+5SNhFwPu5jWhqdxu/MboaDJx7bwpFx6is/nK2u8FLSLagwoi6W
+	hrzitKnAGBh6zXd/tQw9WPJJ8v0TWAEw6QzD1JFo3ecDOLom4vlcEOAszVmdjWsS4AjFT9/W/lkcE
+	jP1mYRq+wE9G5xcs4TL9Nqwubn5BfUf0cTPLY0u9XgPUMrnHMl+USon5VfBPcDexqHJQ4PDOv67Dw
+	Xn3NuFNrmodDirAi4Rdw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7X6I-0005xM-1x; Tue, 10 Sep 2019 03:45:54 +0000
-Received: from mail-ed1-x542.google.com ([2a00:1450:4864:20::542])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7X5y-0005vd-5s
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 03:45:36 +0000
-Received: by mail-ed1-x542.google.com with SMTP id c19so15466523edy.10
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 20:45:33 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=UZhgKEyeg4/ZhgBIdE78gdGAld/LMbipU+2onAGgOQ0=;
- b=lOJx4trdPZVd8ndaXDUwVuK1vy4dAcAM2Um+GGllKMWNH7QMsGZ7z2k0QQOYu14t+U
- uRudc6Fp6L3jIkdviQRjw8jU5HS2L4ds1Nq9hvtt2qUz/48Inn2KQRbfZ3OJlrlE327E
- EtKkCmckIwJF42LWLCmxzQqLFvDARU4MzTTsc=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=UZhgKEyeg4/ZhgBIdE78gdGAld/LMbipU+2onAGgOQ0=;
- b=JCiUp9UnNaYq8ATeC5NLVjesz8eUmMYcfOdR7Et2bwaPJHv7nlriLb+GMF1aQioYkE
- Llroq7LnNGpITKdOupBwgu7Acuw2bCqBOf4HK/pW7CeGs26RaGswNWGVq6kIRvHfR977
- kxJh7LN0OptsYWqIC9zca9sg+8NMJCQQgJzbC75w2XqHM6ZkfOB/whXH5vXF9YLw4CXm
- hSNr6SAqx9anGB4B0cH32Zu3LjMK/wUK0EgpWYznp6JXcB6utxN5wMewyulr6N8ZqNG9
- cbVaZdIB/KsIBYa4j2rjiPuE5cRRux+El73sMXFBtGgG7YtDGgSFDKgL5qF0ycYDML+U
- 40MA==
-X-Gm-Message-State: APjAAAVRO5hoEkSwjEZWj15yphDrjXjEYod0biqnhL55iU+JinpSuM9o
- YYz/kVU6w6IWdQ+enE6rZqXI879oL9Vo5Q==
-X-Google-Smtp-Source: APXvYqzLuk3uah031wzIWahB0kDAoxwjh7zj8XqqVch2M3cfltSkFb/XB0xu/Q7rqhZ3VdCXicbj6A==
-X-Received: by 2002:a50:8f81:: with SMTP id y1mr27856975edy.181.1568087132500; 
- Mon, 09 Sep 2019 20:45:32 -0700 (PDT)
-Received: from mail-wr1-f50.google.com (mail-wr1-f50.google.com.
- [209.85.221.50])
- by smtp.gmail.com with ESMTPSA id h21sm1959235ejq.92.2019.09.09.20.45.30
- for <linux-arm-kernel@lists.infradead.org>
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 09 Sep 2019 20:45:31 -0700 (PDT)
-Received: by mail-wr1-f50.google.com with SMTP id i1so16465292wro.4
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 09 Sep 2019 20:45:30 -0700 (PDT)
-X-Received: by 2002:a5d:6585:: with SMTP id q5mr21692014wru.162.1568087130450; 
- Mon, 09 Sep 2019 20:45:30 -0700 (PDT)
+	id 1i7XHD-0000bc-SZ; Tue, 10 Sep 2019 03:57:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7XGu-0000ax-Kd; Tue, 10 Sep 2019 03:56:54 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8D9AB28;
+ Mon,  9 Sep 2019 20:56:51 -0700 (PDT)
+Received: from [10.162.40.137] (p8cg001049571a15.blr.arm.com [10.162.40.137])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 249BA3F67D; Mon,  9 Sep 2019 20:56:40 -0700 (PDT)
+Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
+ page table helpers
+To: "Kirill A. Shutemov" <kirill@shutemov.name>
+References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
+ <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
+ <20190904221618.1b624a98@thinkpad>
+ <20e3044d-2af5-b27b-7653-cec53bdec941@arm.com>
+ <20190905190629.523bdb87@thinkpad>
+ <3c609e33-afbb-ffaf-481a-6d225a06d1d0@arm.com>
+ <20190906210346.5ecbff01@thinkpad>
+ <3d5de35f-8192-1c75-50a9-03e66e3b8e5c@arm.com>
+ <20190909151344.ghfypjbgxyosjdk3@box>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <5883d41a-8299-1584-aa3d-fac89b3d9b5b@arm.com>
+Date: Tue, 10 Sep 2019 09:26:50 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-References: <20190708110500.7242-1-frederic.chen@mediatek.com>
- <20190708110500.7242-5-frederic.chen@mediatek.com>
- <20190731071014.GA43159@chromium.org>
- <1566875772.10064.99.camel@mtksdccf07>
- <CAAFQd5B7WM-uExpo-qpEyDMNXLQkvqO=qBDrkpNvERr+iXVhtw@mail.gmail.com>
- <1567761407.31117.12.camel@mtksdccf07>
-In-Reply-To: <1567761407.31117.12.camel@mtksdccf07>
-From: Tomasz Figa <tfiga@chromium.org>
-Date: Tue, 10 Sep 2019 12:45:18 +0900
-X-Gmail-Original-Message-ID: <CAAFQd5BKxg9xhJLfM_xqbo-tGihr==PzrPvVScaj89s8HY=FMQ@mail.gmail.com>
-Message-ID: <CAAFQd5BKxg9xhJLfM_xqbo-tGihr==PzrPvVScaj89s8HY=FMQ@mail.gmail.com>
-Subject: Re: [RFC PATCH V2 4/6] platform: mtk-isp: Add Mediatek DIP driver
-To: Frederic Chen <frederic.chen@mediatek.com>
+In-Reply-To: <20190909151344.ghfypjbgxyosjdk3@box>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_204534_222290_C89A3F07 
-X-CRM114-Status: GOOD (  36.22  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190909_205652_768539_0015EF5F 
+X-CRM114-Status: GOOD (  21.01  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:542 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,239 +69,195 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "yuzhao@chromium.org" <yuzhao@chromium.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "zwisler@chromium.org" <zwisler@chromium.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "mchehab@kernel.org" <mchehab@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
+ linux-sh@vger.kernel.org, Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
+ James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
+ Michal Hocko <mhocko@kernel.org>, linux-mm@kvack.org,
+ Dave Hansen <dave.hansen@intel.com>, Paul Mackerras <paulus@samba.org>,
+ sparclinux@vger.kernel.org, Thomas Gleixner <tglx@linutronix.de>,
+ linux-s390@vger.kernel.org, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
+ Jason Gunthorpe <jgg@ziepe.ca>, Vlastimil Babka <vbabka@suse.cz>,
+ linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, Dan Williams <dan.j.williams@intel.com>,
+ Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-arm-kernel@lists.infradead.org,
+ Sri Krishna chowdary <schowdary@nvidia.com>,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
+ Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
+ Peter Zijlstra <peterz@infradead.org>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
+ Paul Burton <paul.burton@mips.com>, Vineet Gupta <vgupta@synopsys.com>,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
+ "David S. Miller" <davem@davemloft.net>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 6, 2019 at 6:17 PM Frederic Chen <frederic.chen@mediatek.com> wrote:
->
-> Hi Tomasz,
->
-> Thank you for your comments.
->
->
-> On Fri, 2019-08-30 at 16:14 +0900, Tomasz Figa wrote:
-> > Hi Frederic,
-> >
-> > On Tue, Aug 27, 2019 at 12:16 PM Frederic Chen
-> > <frederic.chen@mediatek.com> wrote:
-> > >
-> > > Dear Tomasz,
-> > >
-> > > I appreciate your comment. I will collaborate more closely with Jungo
-> > > to solve the common issues in DIP and Pass 1(CAM) drivers.
-> > >
-> >
-> > Thank you!
-> >
-> > Also thanks for replying to all the comments, it's very helpful.
-> > Please check my replies inline. I've snipped out the parts that I
-> > don't have further comments on.
-> >
-> > >
-> > > On Wed, 2019-07-31 at 15:10 +0800, Tomasz Figa wrote:
-> > > > Hi Frederic,
-> > > >
-> > > > On Mon, Jul 08, 2019 at 07:04:58PM +0800, frederic.chen@mediatek.com wrote:
-> >
-> > [snip]
-> >
-> > > >
-> > > > > +                   dev_buf->vbb.vb2_buf.timestamp =
-> > > > > +                           in_buf->vbb.vb2_buf.timestamp;
-> > > > > +
-> > > > > +           vb2_buffer_done(&dev_buf->vbb.vb2_buf, vbf_state);
-> > > > > +
-> > > > > +           node = mtk_dip_vbq_to_node(dev_buf->vbb.vb2_buf.vb2_queue);
-> > > > > +           spin_lock(&node->buf_list_lock);
-> > > > > +           list_del(&dev_buf->list);
-> > > > > +           spin_unlock(&node->buf_list_lock);
-> > > > > +
-> > > > > +           dev_dbg(&pipe->dip_dev->pdev->dev,
-> > > > > +                   "%s:%s: return buf, idx(%d), state(%d)\n",
-> > > > > +                   pipe->desc->name, node->desc->name,
-> > > > > +                   dev_buf->vbb.vb2_buf.index, vbf_state);
-> > > > > +   }
-> > > >
-> > > > This looks almost the same as what's being done inside
-> > > > mtk_dip_hw_streamoff(). Could we just call this function from the loop
-> > > > there?
-> > >
-> > > I would like to call the function from mtk_dip_hw_streamoff(). The only
-> > > difference is mtk_dip_pipe_job_finish() also remove the buffer from the
-> > > node's internal list.
-> > >
-> >
-> > Would anything wrong happen if we also remove the buffer from the
-> > node's internal list in mtk_dip_hw_streamoff()?
-> >
-> > Actually, do we need that internal node list? If we have a list of
-> > requests and each request stores its buffer, wouldn't that be enough?
-> >
->
-> We use the buffer list in the following cases:
-> 1. media_pipeline_start() failed when streaming on video device
-> 2. Video device stream off
->
-> If the some video device is streamed on ,but the entire pipe has not
-> started streaming (for example, MDP 0 is streamed on, but RAW input has
-> not been streamed on), we use the list to return the buffers.
->
-> Should we handle this cases? or we expect that the user will request
-> buffers again to ensure all buffers are removed from the video device in
-> this error case.
->
 
-However, if we only support the Request API, there wouldn't be any
-buffers outside of any request. For a request that isn't queued, the
-buffers are not passed to the driver, so it doesn't need to do
-anything. The only thing left to handle is when there are some
-requests queued and those requests already include the buffer request
-objects inside, so we can handle them without a separate internal
-buffer list.
 
-> > > > > +/* Plane size that is accepted by MDP HW */
-> > > > > +static u32
-> > > > > +dip_mdp_fmt_get_plane_size(const struct mtk_dip_dev_format *fmt,
-> > > > > +                      u32 stride, u32 height,
-> > > > > +                      unsigned int plane)
-> > > > > +{
-> > > > > +   enum mdp_color c = fmt->mdp_color;
-> > > > > +   u32 bytesperline;
-> > > > > +
-> > > > > +   bytesperline = (stride * fmt->row_depth[0])
-> > > > > +           / MDP_COLOR_BITS_PER_PIXEL(c);
-> > > >
-> > > > Hmm, stride and bytesperline should be exactly the same thing. Could you
-> > > > explain what's happening here?
-> > >
-> > > The stride here is specific for MDP hardware (which uses the same MDP
-> > > stride setting for NV12 and NV12M):
-> > >
-> > >         bytesperline = width * row_depth / 8
-> > >         MDP stride   = width * MDP_COLOR_BITS_PER_PIXEL /8
-> > >
-> > > Therfore,
-> > >
-> > >         bytesperline = MDP stride * row_depth / MDP_COLOR_BITS_PER_PIXEL
-> > >         MDP stride   = bytesperline * MDP_COLOR_BITS_PER_PIXEL/ row_depth
-> > >
-> >
-> > I'm sorry I'm still confused. Is there an intermediate buffer between
-> > DIP and MDP that has stride of |MDP stride| and then MDP writes to the
-> > final buffer that has the stride of |bytesperline|?
-> >
->
-> No, there is no intermediate buffer between DIP and MDP that has stride
-> of |MDP stride|. DIP connects to MDP in hardware level, so MDP writes
-> the buffer with |MDP stride|.
->
-> As I know, V4L2's bytesperline means bytes per line of the first
-> plane(*), but mdp hw needs y, u, v stride (it is different from V4L2).
-> Therefore we calculate the |MDP stride| here.
->
-> *:
-> https://linuxtv.org/downloads/v4l-dvb-apis/uapi/v4l/pixfmt-v4l2.html#c.v4l2_pix_format
-> "When the image format is planar the bytesperline value applies to the
-> first plane and is divided by the same factor as the width field for the
-> other planes."
+On 09/09/2019 08:43 PM, Kirill A. Shutemov wrote:
+> On Mon, Sep 09, 2019 at 11:56:50AM +0530, Anshuman Khandual wrote:
+>>
+>>
+>> On 09/07/2019 12:33 AM, Gerald Schaefer wrote:
+>>> On Fri, 6 Sep 2019 11:58:59 +0530
+>>> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+>>>
+>>>> On 09/05/2019 10:36 PM, Gerald Schaefer wrote:
+>>>>> On Thu, 5 Sep 2019 14:48:14 +0530
+>>>>> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
+>>>>>   
+>>>>>>> [...]    
+>>>>>>>> +
+>>>>>>>> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
+>>>>>>>> +static void pud_clear_tests(pud_t *pudp)
+>>>>>>>> +{
+>>>>>>>> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
+>>>>>>>> +	pud_clear(pudp);
+>>>>>>>> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
+>>>>>>>> +}    
+>>>>>>>
+>>>>>>> For pgd/p4d/pud_clear(), we only clear if the page table level is present
+>>>>>>> and not folded. The memset() here overwrites the table type bits, so
+>>>>>>> pud_clear() will not clear anything on s390 and the pud_none() check will
+>>>>>>> fail.
+>>>>>>> Would it be possible to OR a (larger) random value into the table, so that
+>>>>>>> the lower 12 bits would be preserved?    
+>>>>>>
+>>>>>> So the suggestion is instead of doing memset() on entry with RANDOM_NZVALUE,
+>>>>>> it should OR a large random value preserving lower 12 bits. Hmm, this should
+>>>>>> still do the trick for other platforms, they just need non zero value. So on
+>>>>>> s390, the lower 12 bits on the page table entry already has valid value while
+>>>>>> entering this function which would make sure that pud_clear() really does
+>>>>>> clear the entry ?  
+>>>>>
+>>>>> Yes, in theory the table entry on s390 would have the type set in the last
+>>>>> 4 bits, so preserving those would be enough. If it does not conflict with
+>>>>> others, I would still suggest preserving all 12 bits since those would contain
+>>>>> arch-specific flags in general, just to be sure. For s390, the pte/pmd tests
+>>>>> would also work with the memset, but for consistency I think the same logic
+>>>>> should be used in all pxd_clear_tests.  
+>>>>
+>>>> Makes sense but..
+>>>>
+>>>> There is a small challenge with this. Modifying individual bits on a given
+>>>> page table entry from generic code like this test case is bit tricky. That
+>>>> is because there are not enough helpers to create entries with an absolute
+>>>> value. This would have been easier if all the platforms provided functions
+>>>> like __pxx() which is not the case now. Otherwise something like this should
+>>>> have worked.
+>>>>
+>>>>
+>>>> pud_t pud = READ_ONCE(*pudp);
+>>>> pud = __pud(pud_val(pud) | RANDOM_VALUE (keeping lower 12 bits 0))
+>>>> WRITE_ONCE(*pudp, pud);
+>>>>
+>>>> But __pud() will fail to build in many platforms.
+>>>
+>>> Hmm, I simply used this on my system to make pud_clear_tests() work, not
+>>> sure if it works on all archs:
+>>>
+>>> pud_val(*pudp) |= RANDOM_NZVALUE;
+>>
+>> Which compiles on arm64 but then fails on x86 because of the way pmd_val()
+>> has been defined there.
+> 
+> Use instead
+> 
+> 	*pudp = __pud(pud_val(*pudp) | RANDOM_NZVALUE);
 
-However, we're using v4l2_pix_fmt_mplane, not v4l2_pix_format. If the
-pixelformat is the M variant (e.g. V4L2_PIX_FMT_NV12M), the
-v4l2_pix_fmt_mplane::planes[] contains bytesperline and sizeimage for
-each plane separately. That's the reason I'm strongly suggesting
-abandoning the non-M formats and supporting only the M ones.
+Agreed.
 
->
-> > [snip]
-> >
-> > > >
-> > > > > +           u32 sizeimage;
-> > > > > +
-> > > > > +           if (bpl < min_bpl)
-> > > > > +                   bpl = min_bpl;
-> > > > > +
-> > > > > +           sizeimage = (bpl * mfmt_to_fill->height * dev_fmt->depth[i])
-> > > > > +                   / dev_fmt->row_depth[i];
-> > > >
-> > > > Shouldn't this be bpl * fmt->height?
-> > >
-> > > Row_depth is the bits of the pixel.
-> > > Depth means the bytes per pixel of the image format.
-> > >
-> > > For example,
-> > > Image: 640 * 480
-> > > YV12: row_depth = 8, depth = 12
-> >
-> > YV12 has 3 planes of 8 bits per pixel. Not sure where does this 12 come from.
-> >
->
-> Let me elaborate more about the 12 depth.
->
-> depth: pixel bit number
->
-> For 420,
->
-> y = w * h
-> u = (w/2) * (h/2)
-> v = (w/2) * (h/2)
->
-> Therefore,
->
-> y = 8,
-> u = 8/2/2 = 2
-> v = 8/2/2 = 2
->
-> depth (y + u + v) = 8 + 2 + 2 = 12
->
+As I had mentioned before this would have been really the cleanest approach.
 
-Yes, that's what I understood, but it is by no means associated with
-any physical depth. It's more like "total_bits_per_pixel". That's
-however a very error prone way to express pixel formats, as for
-example it can't handle the case when plane strides alignments are not
-proportional.
+> 
+> It *should* be more portable.
 
-Please see the v4l2_format_info struct for the recommended way of
-describing pixel formats. Actually, the struct itself could be reused
-in this driver, even if we don't end up using the helpers for some
-reason.
+Not really, because not all the platforms have __pxx() definitions right now.
+Going with these will clearly cause build failures on affected platforms. Lets
+examine __pud() for instance. It is defined only on these platforms.
 
->
-> > > Bytes per line = width * row_depth / 8 = 640 * 8/ 8 = 640
-> > > Image size = Bytes per line * height * (depth/ row_depth)
-> > >            = 640 * 480 * 1.5
-> > >
-> >
-> > I think we might be having some terminology issue here. "row" is
-> > normally the same as "line", which consists of |width| pixels +
-> > padding, which is |bytesperline| bytes in total.
-> >
-> > Perhaps you want to store a bits_per_pixel[] and vertical and
-> > horizontal subsampling arrays for all planes of the formats in the
-> > format descriptor.
-> >
-> > By the way, have you considered using the V4L2 format helpers [1]?
-> >
-> > [1] https://elixir.bootlin.com/linux/v5.3-rc6/source/drivers/media/v4l2-core/v4l2-common.c#L561
->
-> Would it be possible to keep row_depth and depth? It is already used in
-> MDP drivers.
->
-> https://elixir.bootlin.com/linux/v5.3-rc6/source/drivers/media/platform/mtk-mdp/mtk_mdp_m2m.c
->
+arch/arm64/include/asm/pgtable-types.h:		#define __pud(x) ((pud_t) { (x) } )
+arch/mips/include/asm/pgtable-64.h:		#define __pud(x) ((pud_t) { (x) })
+arch/powerpc/include/asm/pgtable-be-types.h:	#define __pud(x) ((pud_t) { cpu_to_be64(x) })
+arch/powerpc/include/asm/pgtable-types.h:	#define __pud(x) ((pud_t) { (x) })
+arch/s390/include/asm/page.h:			#define __pud(x) ((pud_t) { (x) } )
+arch/sparc/include/asm/page_64.h:		#define __pud(x) ((pud_t) { (x) } )
+arch/sparc/include/asm/page_64.h:		#define __pud(x) (x)
+arch/x86/include/asm/pgtable.h:			#define __pud(x) native_make_pud(x)
 
-I'd suggest cleaning up the MDP driver instead. :)
-(Could be done as a follow up later, of course.)
+Similarly for __pmd()
 
-Best regards,
-Tomasz
+arch/alpha/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
+arch/arm/include/asm/page-nommu.h:		#define __pmd(x)  (x)
+arch/arm/include/asm/pgtable-2level-types.h:	#define __pmd(x)  ((pmd_t) { (x) } )
+arch/arm/include/asm/pgtable-2level-types.h:	#define __pmd(x)  (x)
+arch/arm/include/asm/pgtable-3level-types.h:	#define __pmd(x)  ((pmd_t) { (x) } )
+arch/arm/include/asm/pgtable-3level-types.h:	#define __pmd(x)  (x)
+arch/arm64/include/asm/pgtable-types.h:		#define __pmd(x)  ((pmd_t) { (x) } )
+arch/m68k/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { { (x) }, })
+arch/mips/include/asm/pgtable-64.h:		#define __pmd(x)  ((pmd_t) { (x) } )
+arch/nds32/include/asm/page.h:			#define __pmd(x)  (x)
+arch/parisc/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
+arch/parisc/include/asm/page.h:			#define __pmd(x)  (x)
+arch/powerpc/include/asm/pgtable-be-types.h:	#define __pmd(x)  ((pmd_t) { cpu_to_be64(x) })
+arch/powerpc/include/asm/pgtable-types.h:	#define __pmd(x)  ((pmd_t) { (x) })
+arch/riscv/include/asm/pgtable-64.h:		#define __pmd(x)  ((pmd_t) { (x) })
+arch/s390/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
+arch/sh/include/asm/pgtable-3level.h:		#define __pmd(x)  ((pmd_t) { (x) } )
+arch/sparc/include/asm/page_32.h:		#define __pmd(x)  ((pmd_t) { { (x) }, })
+arch/sparc/include/asm/page_32.h:		#define __pmd(x)  ((pmd_t) { { (x) }, })
+arch/sparc/include/asm/page_64.h:		#define __pmd(x)  ((pmd_t) { (x) } )
+arch/sparc/include/asm/page_64.h:		#define __pmd(x)  (x)
+arch/um/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
+arch/um/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
+arch/x86/include/asm/pgtable.h:			#define __pmd(x)  native_make_pmd(x)
+
+Similarly for __pgd()
+
+arch/alpha/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/alpha/include/asm/page.h:			#define __pgd(x)  (x)
+arch/arc/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
+arch/arc/include/asm/page.h:			#define __pgd(x)  (x)
+arch/arm/include/asm/pgtable-3level-types.h:	#define __pgd(x)  ((pgd_t) { (x) } )
+arch/arm/include/asm/pgtable-3level-types.h:	#define __pgd(x)  (x)
+arch/arm64/include/asm/pgtable-types.h:		#define __pgd(x)  ((pgd_t) { (x) } )
+arch/csky/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
+arch/hexagon/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
+arch/m68k/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/mips/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/nds32/include/asm/page.h:			#define __pgd(x)  (x)
+arch/nios2/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
+arch/openrisc/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
+arch/parisc/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/parisc/include/asm/page.h:			#define __pgd(x)  (x)
+arch/powerpc/include/asm/pgtable-be-types.h:	#define __pgd(x)  ((pgd_t) { cpu_to_be64(x) })
+arch/powerpc/include/asm/pgtable-types.h:	#define __pgd(x)  ((pgd_t) { (x) })
+arch/riscv/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
+arch/s390/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/sh/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/sparc/include/asm/page_32.h:		#define __pgd(x)  ((pgd_t) { (x) } )
+arch/sparc/include/asm/page_32.h:		#define __pgd(x)  (x)
+arch/sparc/include/asm/page_64.h:		#define __pgd(x)  ((pgd_t) { (x) } )
+arch/sparc/include/asm/page_64.h:		#define __pgd(x)  (x)
+arch/um/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+arch/unicore32/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
+arch/unicore32/include/asm/page.h:		#define __pgd(x)  (x)
+arch/x86/include/asm/pgtable.h:			#define __pgd(x)  native_make_pgd(x)
+arch/xtensa/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
+
+Similarly for __p4d()
+
+arch/s390/include/asm/page.h:			#define __p4d(x)  ((p4d_t) { (x) } )
+arch/x86/include/asm/pgtable.h:			#define __p4d(x)  native_make_p4d(x)
+
+The search pattern here has been "#define __pxx(". Unless I am missing something,
+I dont see how we can use these without risking build failures.
 
 _______________________________________________
 linux-arm-kernel mailing list
