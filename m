@@ -2,83 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 81F9DAEF09
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 17:55:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EF642AEF22
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 18:06:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=zE55MyUuU4vFKlN+JGFrx/ZQ2RwlFAbcffICzA0WgCM=; b=mXaaoa1eSB1GWV
-	HVQLVoRzt7/cdNwro5NmTuugcZZH8dhRG0uV9w8Q5d0g4Uxx9oTP83FtMITSEGkTZdQYWUnnHqiq5
-	i56YwcSJUWf4PVnsnpYRNFBWfZuTH7Mvx6B/VDZLJxAF/M3uyl351fUj8vGSfMYStCTZWxRyhDzPs
-	9WRYuYv45W4t2mmoW4OOi1ewRqYyO9507EzxIhRR9Yoa110YQRV96Dk8ZzoTJfLRCTFLXjcBEKoPv
-	JOMvPh7U1lMuSBtg/2W/qUASG+bfDPRw1ElWhuam6PI1zldLaVMGGfuFM/OhPz4eNIq4qIqI72Y6B
-	Clp5yFflHjkxm2EAwnUw==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qJPdlunc9L3NRy3S/Zeha9+9VyyKCAhYOSft6SXFYa0=; b=VOBey8eB6QyS9U
+	I4lZ0dn9jeNI2+ezuO1QanC+vbrH/3fbZstarteue+xpPs2nM85zju2HlT3+GBqWD5n22E7yYIRR8
+	NnKGLyVwIOdVaH4TMpbgFB2HrfD5NRyXH2qNMxu9AVh75PBms+XHqRoICnuyCjaryZuqEDTHFgQh9
+	020FtL54wca1EQuouwi0ElnqmrffCObbzNa8bxWUPtl4YKuleeslkVU5OC3aSE67ZkZcHek6Sk36L
+	/FFr4/Pz63jDoEzOZk+4DJZTHpme3tu2q6rM0vujWEnEqM57n0K9xG9QrJt7vldKmrkzPHn7I4php
+	xpYoBO6nmSXvIKh6bXJQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7iUX-0000Rb-Pf; Tue, 10 Sep 2019 15:55:41 +0000
-Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
+	id 1i7iee-0003z5-V4; Tue, 10 Sep 2019 16:06:09 +0000
+Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7iUO-0000RE-0a
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 15:55:33 +0000
-Received: by mail-wm1-x343.google.com with SMTP id t9so157347wmi.5
+ id 1i7ieR-0003xI-S0
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 16:05:57 +0000
+Received: by mail-io1-xd44.google.com with SMTP id b136so38791995iof.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 08:55:31 -0700 (PDT)
+ Tue, 10 Sep 2019 09:05:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YJ/xSRj04hb+Vjp0G8v57BGzk2RHL40NPxcaQuTTxb0=;
- b=NopmjHDf1N0d3pOf0ECTnZpkWbC5PPwUogiwZsUwDTIwgEgQ47sCN/WtEU/LQLlPSv
- fZ9X9O89kZTEP6e7o3p9jm+rLnGIDG4++Rxp/zhxPi8gUhsz3x1lbkfKW3RtvUOKYtb/
- Q53V94Qyzox2PxZnj6wzk0UiwSuCBZT1oQJ8M/mIyqnarV1hZuegeQj8J9SUyIV48f09
- yVnsIrEGiUAWTJb81dWQdA9Y541KxvANRRMTlpY5vX1yHTjkB2/7v8ZvBXwQLqOXq7u9
- uqboVrDdxLwGW1pquRt+1L+t0qtJ0+3ugritCgb7zcDdqRYZJTTFcaGyvz5stIAtXU/S
- J4KA==
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=VOHRoq+5f0zDDmoxjc5LrcCUbX6pSA5aom1GvfEBdqM=;
+ b=Fo10nVgCGjb967s2Gvy7rNbxLGvFQyPQai3LMMHk9zZedD+veZSBvOOmwQSJubz6ZP
+ tuAujd3bbR/kbJcDxXxLq07MStOXSHX/1qIcFO49nAb5M62AjF0b3yFVjA+XNCCqoEEB
+ WliSdoQPWIq+66wv7Qo/0/p4xMBLyrD1BdExRd2/35+zdhIjOeD0flz03I1Oe76aoV9A
+ h+0xDFdQGW2HNoXAad189kM9G4aREr7hFK4BN7X8BoO7QW2AnAzdEzWlRlvTAn+IAgFx
+ h/DxKukXVR4eBj0Ryq0xnwI+x6E+5VbdcoJjA04pKpMjf4S2U4shxqFiG3xCBT0kEmIU
+ vdQg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=YJ/xSRj04hb+Vjp0G8v57BGzk2RHL40NPxcaQuTTxb0=;
- b=QMAtA+X+ZHve0eft6jNmyitblMBUaPmXSdgzHSeet/+GzdN6keui4dXaJuhUezefO2
- 931l/umJZwIj+i+1liKabi5bLSJWydmLF+77PmMvngDqa/ROYsy2vq1qaxYQlPCyYMj3
- /0XOz9D6TizDs0sv7NGZgsiTBTjmaTBTgDD8Puf0izQW8PeUhP/GyjJ8o8bdGzRycwkw
- fdy3CaPNrvajJvc2MjBVRprfLLysPu/8OHj/SgWNqlQiRmV03yYhibZJPbxgFSZjQk1l
- wuLeQwOVcgL8a+udgw6UoO1yCiW6rcxhvW/Xx63xIh+s/HHk5YLoI1adHEa+fsSaKtul
- avcw==
-X-Gm-Message-State: APjAAAUCp6ZzH4cfjMiDNq0LbbRRMcq7SQuWwUTKQ/hSP9Wy7KI2CFUS
- IYtK/sc+N0FX61wZ5qpQweU=
-X-Google-Smtp-Source: APXvYqwRgrZHxJJlCCWWTIdvJK1X8hVtJn4cq1fyPIBd0nfF2LAchwsIZdzc9hsmxdjosHFLCGuzAw==
-X-Received: by 2002:a7b:c094:: with SMTP id r20mr143261wmh.134.1568130930147; 
- Tue, 10 Sep 2019 08:55:30 -0700 (PDT)
-Received: from arch-dsk-01.twb ([77.126.41.65])
- by smtp.gmail.com with ESMTPSA id y3sm17167133wrw.83.2019.09.10.08.55.28
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Sep 2019 08:55:29 -0700 (PDT)
-From: tinywrkb <tinywrkb@gmail.com>
-To: 
-Subject: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
- max-speed
-Date: Tue, 10 Sep 2019 18:55:07 +0300
-Message-Id: <20190910155507.491230-1-tinywrkb@gmail.com>
-X-Mailer: git-send-email 2.23.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=VOHRoq+5f0zDDmoxjc5LrcCUbX6pSA5aom1GvfEBdqM=;
+ b=MgNGW/FbfZ0fbAeVJ4QmMIAi5cTax0Tv4NlvxhJF9/OTRizP9Eb7tkdg1nyVA11o21
+ G+4D9l39U0PmecbC3Lbs/4yg9eMk18NdifpDv660kKLU7qpucZF0M/ot0+pTwPza8kDf
+ M8vDU4PU+9EEBAVnEZf1ycL+Y/jwMDv5RyA9pMJw0G/xcTUShmNmwMt9VWk++8GocU4/
+ UlOMCZJ7M5G25aS0VKUFaVel1Wo8B3zWQdOopcJn1H8Zf5EW06GNJHvHKVN6QgAGmqVq
+ ZyoAa7T3rkbdjZF4A/vEfu/qOrpVuWFpdlbVJ/6XBvXJYJ4rW9FvnMWwCPlL3354P84W
+ I8WQ==
+X-Gm-Message-State: APjAAAUxUknPSLjElBucnyzQ02DNWo8s21CZ0iiM/1jmxFifafOHnP/7
+ gjoq9tqOwPw17j/e2hY5rvWe/xY2GZL0ar/Y4jA=
+X-Google-Smtp-Source: APXvYqwuv/pHVCWexKpkprqv1+Ti4casdnv0H37FsG/aFQFyd9UW76zxHfgdVDSoAnHjOav423k8D+xgBCR6S09zUQ4=
+X-Received: by 2002:a6b:ac85:: with SMTP id v127mr4562969ioe.97.1568131554878; 
+ Tue, 10 Sep 2019 09:05:54 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+ <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+ <20190910144713.GF2063@dhcp22.suse.cz>
+In-Reply-To: <20190910144713.GF2063@dhcp22.suse.cz>
+From: Alexander Duyck <alexander.duyck@gmail.com>
+Date: Tue, 10 Sep 2019 09:05:43 -0700
+Message-ID: <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
+Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+To: Michal Hocko <mhocko@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_085532_060559_37ED25DB 
-X-CRM114-Status: GOOD (  12.69  )
+X-CRM114-CacheID: sfid-20190910_090555_938022_8FBBF196 
+X-CRM114-Status: GOOD (  29.73  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:343 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (tinywrkb[at]gmail.com)
+ provider (alexander.duyck[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -97,89 +95,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
- Sascha Hauer <s.hauer@pengutronix.de>, tinywrkb@gmail.com,
- Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
- Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
+ "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Rik van Riel <riel@surriel.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Cubox-i Solo/DualLite carrier board has 100Mb/s magnetics while the
-Atheros AR8035 PHY on the MicroSoM v1.3 CPU module is a 1GbE PHY device.
+On Tue, Sep 10, 2019 at 7:47 AM Michal Hocko <mhocko@kernel.org> wrote:
+>
+> On Tue 10-09-19 07:42:43, Alexander Duyck wrote:
+> > On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
+> > >
+> > > I wanted to review "mm: Introduce Reported pages" just realize that I
+> > > have no clue on what is going on so returned to the cover and it didn't
+> > > really help much. I am completely unfamiliar with virtio so please bear
+> > > with me.
+> > >
+> > > On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
+> > > [...]
+> > > > This series provides an asynchronous means of reporting to a hypervisor
+> > > > that a guest page is no longer in use and can have the data associated
+> > > > with it dropped. To do this I have implemented functionality that allows
+> > > > for what I am referring to as unused page reporting
+> > > >
+> > > > The functionality for this is fairly simple. When enabled it will allocate
+> > > > statistics to track the number of reported pages in a given free area.
+> > > > When the number of free pages exceeds this value plus a high water value,
+> > > > currently 32, it will begin performing page reporting which consists of
+> > > > pulling pages off of free list and placing them into a scatter list. The
+> > > > scatterlist is then given to the page reporting device and it will perform
+> > > > the required action to make the pages "reported", in the case of
+> > > > virtio-balloon this results in the pages being madvised as MADV_DONTNEED
+> > > > and as such they are forced out of the guest. After this they are placed
+> > > > back on the free list,
+> > >
+> > > And here I am reallly lost because "forced out of the guest" makes me
+> > > feel that those pages are no longer usable by the guest. So how come you
+> > > can add them back to the free list. I suspect understanding this part
+> > > will allow me to understand why we have to mark those pages and prevent
+> > > merging.
+> >
+> > Basically as the paragraph above mentions "forced out of the guest"
+> > really is just the hypervisor calling MADV_DONTNEED on the page in
+> > question. So the behavior is the same as any userspace application
+> > that calls MADV_DONTNEED where the contents are no longer accessible
+> > from userspace and attempting to access them will result in a fault
+> > and the page being populated with a zero fill on-demand page, or a
+> > copy of the file contents if the memory is file backed.
+>
+> As I've said I have no idea about virt so this doesn't really tell me
+> much. Does that mean that if somebody allocates such a page and tries to
+> access it then virt will handle a fault and bring it back?
 
-Since commit 5502b218e001 ("net: phy: use phy_resolve_aneg_linkmode in
-genphy_read_status") ethernet is broken on Cubox-i Solo/DualLite devices.
+Actually I am probably describing too much as the MADV_DONTNEED is the
+hypervisor behavior in response to the virtio-balloon notification. A
+more thorough explanation of it can be found by just running "man
+madvise", probably best just to leave it at that since I am probably
+confusing things by describing hypervisor behavior in a kernel patch
+set.
 
-This adds a phy node to the MicroSoM DTS and a 100Mb/s max-speed limit
-to the Cubox-i Solo/DualLite carrier DTS.
+For the most part all the page reporting really does is provide a way
+to incrementally identify unused regions of memory in the buddy
+allocator. That in turn is used by virtio-balloon in a polling thread
+to report to the hypervisor what pages are not in use so that it can
+make a decision on what to do with the pages now that it knows they
+are unused.
 
-Signed-off-by: tinywrkb <tinywrkb@gmail.com>
----
-This patch fixes ethernet on my Cubox-i2-300-D which is limited to 100Mb/s,
-afaik due to the carrier board  magnetics, and was since commit 5502b218e001
-("net: phy: use phy_resolve_aneg_linkmode in genphy_read_status")
-
-The AR8035 PHY on the CPU module reports to the driver as 1GbE capable
-via MII_BSMR's BMSR_ESTATEN status bit, the auto-negotiation sets the
-speed at 1GbE while the carrier board can't support it.
-Same behavior with the generic phy_device and the at803x drivers.
-
-While the PHY is on the CPU module board I added the max-speed limit to
-the cubox-i carrier DTS as I suspect that if the Solo or DualLite v1.3
-MicroSoM will be connected to a 1GbE capable carrier board then it would
-work correctly with 1GbE.
-
-I can confirm that this commit doesn't break networking on the my
-Cubox-i4Pro Quad (i4P-300-D) with it's 1GbE capable carrier board, and
-was tested separately with the generic phy_device and at803x drivers.
-
- arch/arm/boot/dts/imx6dl-cubox-i.dts  | 4 ++++
- arch/arm/boot/dts/imx6qdl-sr-som.dtsi | 9 +++++++++
- 2 files changed, 13 insertions(+)
-
-diff --git a/arch/arm/boot/dts/imx6dl-cubox-i.dts b/arch/arm/boot/dts/imx6dl-cubox-i.dts
-index 2b1b3e193f53..cfc82513c78c 100644
---- a/arch/arm/boot/dts/imx6dl-cubox-i.dts
-+++ b/arch/arm/boot/dts/imx6dl-cubox-i.dts
-@@ -49,3 +49,7 @@
- 	model = "SolidRun Cubox-i Solo/DualLite";
- 	compatible = "solidrun,cubox-i/dl", "fsl,imx6dl";
- };
-+
-+&ethphy {
-+	max-speed = <100>;
-+};
-diff --git a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-index 6d7f6b9035bc..969bc96c3f99 100644
---- a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-+++ b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
-@@ -57,6 +57,15 @@
- 	phy-reset-duration = <2>;
- 	phy-reset-gpios = <&gpio4 15 GPIO_ACTIVE_LOW>;
- 	status = "okay";
-+	phy-handle = <&ethphy>;
-+	mdio {
-+		#address-cells = <1>;
-+		#size-cells = <0>;
-+		ethphy: ethernet-phy@0 {
-+			compatible = "ethernet-phy-ieee802.3-c22";
-+			reg = <0>;
-+		};
-+	};
- };
- 
- &iomuxc {
--- 
-2.23.0
-
+All this is providing is just a report and it is optional if the
+hypervisor will act on it or not. If the hypervisor takes some sort of
+action on the page, then the expectation is that the hypervisor will
+use some sort of mechanism such as a page fault to discover when the
+page is used again.
 
 _______________________________________________
 linux-arm-kernel mailing list
