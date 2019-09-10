@@ -2,62 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 424C2AF09E
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 19:45:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BAF19AF0A4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 19:46:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Y+1wZBlTyN0quc4tcgB1hlOY6NtEJUcCTt8Ghqyrn48=; b=rkfIl9z/r0///z
-	tPUh9GDkE07cU5Gl47lBzxq/SRjEuvUUQCC0ITMzdMW8KfduW3bCi09+V4cN7ZNKOe9id8/JwyvOR
-	/NA8Xa+Ge9U8Jhk4bHmEswMyTKrywtQ+U0gpfugNugdDApgFTtS97pzvNQWCULZi5/GNEFK4Z221N
-	fPTKTt39Q/r7OfKnu25VOSDf8xK1o2vZ0SMD1oplQwpJTmdNLmb3AkEZxPBVCkRbMQc6nwn53CNrm
-	jXcPxcw1QwX/zv1NqLg4BPk8BvNIPM284CTSK4+ZO1mROThQeTEJMBujkgAKB5TV5lKizsbsNA9QJ
-	bB+QOja9Xbu0ktZr1P4g==;
+	List-Owner; bh=I/e2bvHMeAgyuqVS1L6xmxl1Yv2hQDb7nhaj3Lw2Pkc=; b=l4TSp8h1erIb1H
+	HrOBle9aH0CHd+gVIsNgL85chywji6MwmVw463YpYL4C6ExABSQGZwcl9be/lFcKdXcSSqlc1KIG8
+	oz+YqxogfwZHUAz3sGeJHn8gMxnvgGEEl+8/bL5KZ5p+B7HgEaIOrgTVp9EJDMNA3tzxXxE9sDMSm
+	fV+HRFX23vYIgTlIrW/5uBqrFgHgprsZpLj/uYHNuW+WYo4rgSv0JI6OgxIjm2UxkCxjan4+UFjRm
+	ZsZos+xm0fvDvwOvp74AS3caECBohBmUTjLPnUF7HXS1AMovop5PsSxhunqPmb0YO+mOAOlE4r6/B
+	R7zathI3WGtro+Fi1LgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7kCU-00050W-JZ; Tue, 10 Sep 2019 17:45:10 +0000
-Received: from mga06.intel.com ([134.134.136.31])
+	id 1i7kDX-0006Z2-Cy; Tue, 10 Sep 2019 17:46:15 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7kCH-0004zr-93; Tue, 10 Sep 2019 17:44:58 +0000
-X-Amp-Result: UNSCANNABLE
-X-Amp-File-Uploaded: False
-Received: from orsmga003.jf.intel.com ([10.7.209.27])
- by orsmga104.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Sep 2019 10:44:56 -0700
-X-ExtLoop1: 1
-X-IronPort-AV: E=Sophos;i="5.64,490,1559545200"; d="scan'208";a="186924829"
-Received: from smile.fi.intel.com (HELO smile) ([10.237.68.40])
- by orsmga003.jf.intel.com with ESMTP; 10 Sep 2019 10:44:51 -0700
-Received: from andy by smile with local (Exim 4.92.1)
- (envelope-from <andriy.shevchenko@linux.intel.com>)
- id 1i7kCA-0003u5-Ca; Tue, 10 Sep 2019 20:44:50 +0300
-Date: Tue, 10 Sep 2019 20:44:50 +0300
-From: Andy Shevchenko <andriy.shevchenko@linux.intel.com>
-To: dongchun.zhu@mediatek.com
-Subject: Re: [V2, 2/2] media: i2c: Add more sensor modes for ov8856 camera
- sensor
-Message-ID: <20190910174450.GJ2680@smile.fi.intel.com>
-References: <20190910130446.26413-1-dongchun.zhu@mediatek.com>
- <20190910130446.26413-3-dongchun.zhu@mediatek.com>
+ id 1i7kDI-0006Xn-4z
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 17:46:01 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id E89D9AD17;
+ Tue, 10 Sep 2019 17:45:54 +0000 (UTC)
+Date: Tue, 10 Sep 2019 19:45:53 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Alexander Duyck <alexander.duyck@gmail.com>
+Subject: Re: [PATCH v9 3/8] mm: Move set/get_pcppage_migratetype to mmzone.h
+Message-ID: <20190910174553.GC4023@dhcp22.suse.cz>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190907172528.10910.37051.stgit@localhost.localdomain>
+ <20190910122313.GW2063@dhcp22.suse.cz>
+ <CAKgT0Ud1xqhEy_LL4AfMgreP0uXrkF-fSDn=6uDXfn7Pvj5AAw@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190910130446.26413-3-dongchun.zhu@mediatek.com>
-Organization: Intel Finland Oy - BIC 0357606-4 - Westendinkatu 7, 02160 Espoo
+In-Reply-To: <CAKgT0Ud1xqhEy_LL4AfMgreP0uXrkF-fSDn=6uDXfn7Pvj5AAw@mail.gmail.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_104457_360839_93EFF1BF 
-X-CRM114-Status: GOOD (  12.94  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190910_104600_334583_2CB14448 
+X-CRM114-Status: GOOD (  19.93  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [134.134.136.31 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -70,97 +63,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, drinkcat@chromium.org,
- srv_heupstream@mediatek.com, shengnan.wang@mediatek.com, tfiga@chromium.org,
- louis.kuo@mediatek.com, sj.huang@mediatek.com, robh+dt@kernel.org,
- linux-mediatek@lists.infradead.org, sakari.ailus@linux.intel.com,
- matthias.bgg@gmail.com, bingbu.cao@intel.com, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
+ "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Rik van Riel <riel@surriel.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 09:04:46PM +0800, dongchun.zhu@mediatek.com wrote:
-> From: Dongchun Zhu <dongchun.zhu@mediatek.com>
+On Tue 10-09-19 07:46:50, Alexander Duyck wrote:
+> On Tue, Sep 10, 2019 at 5:23 AM Michal Hocko <mhocko@kernel.org> wrote:
+> >
+> > On Sat 07-09-19 10:25:28, Alexander Duyck wrote:
+> > > From: Alexander Duyck <alexander.h.duyck@linux.intel.com>
+> > >
+> > > In order to support page reporting it will be necessary to store and
+> > > retrieve the migratetype of a page. To enable that I am moving the set and
+> > > get operations for pcppage_migratetype into the mm/internal.h header so
+> > > that they can be used outside of the page_alloc.c file.
+> >
+> > Please describe who is the user and why does it needs this interface.
+> > This is really important because migratetype is an MM internal thing and
+> > external users shouldn't really care about it at all. We really do not
+> > want a random code to call those, especially the set_pcppage_migratetype.
 > 
-> This patch mainly adds two more sensor modes for OV8856 CMOS image sensor.
-> That is, the resolution of 1632*1224 and 3264*2448, corresponding to the bayer order of BGGR.
-> The sensor revision also differs in some OTP register.
+> I was using it to store the migratetype of the page so that I could
+> find the boundary list that contained the reported page as the array
+> is indexed based on page order and migratetype. However on further
+> discussion I am thinking I may just use page->index directly to index
+> into the boundary array. Doing that I should be able to get a very
+> slight improvement in lookup time since I am not having to pull order
+> and migratetype and then compute the index based on that. In addition
+> it becomes much more clear as to what is going on, and if needed I
+> could add debug checks to verify the page is "Reported" and that the
+> "Buddy" page type is set.
 
-> +static int __ov8856_power_on(struct ov8856 *ov8856)
-> +{
-> +	struct i2c_client *client = v4l2_get_subdevdata(&ov8856->sd);
-> +	int ret;
-> +
-> +	ret = clk_prepare_enable(ov8856->xvclk);
-> +	if (ret < 0) {
-> +		dev_err(&client->dev, "failed to enable xvclk\n");
-> +		return ret;
-> +	}
-> +
-> +	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_LOW);
-> +
-> +	ret = regulator_bulk_enable(OV8856_NUM_SUPPLIES, ov8856->supplies);
-> +	if (ret < 0) {
-> +		dev_err(&client->dev, "failed to enable regulators\n");
-> +		goto disable_clk;
-> +	}
-> +
-> +	gpiod_set_value_cansleep(ov8856->n_shutdn_gpio, GPIOD_OUT_HIGH);
-> +
-
-> +	usleep_range(1400, 1500);
-
-This should be commented why this is needed and from where the requirement
-comes from. Also, not, that 100us, which is only ~7%, is small margin.
-Recommended one is ~20%.
-
-> +
-> +	return 0;
-> +
-> +disable_clk:
-> +	clk_disable_unprepare(ov8856->xvclk);
-> +
-> +	return ret;
-> +}
-
-> +	ov8856->is_1B_revision = (val == OV8856_1B_MODULE) ? 1 : 0;
-
-!! will give same result without using ternary operator.
-
-> +	ov8856->xvclk = devm_clk_get(&client->dev, "xvclk");
-> +	if (IS_ERR(ov8856->xvclk)) {
-> +		dev_err(&client->dev, "failed to get xvclk\n");
-> +		return -EINVAL;
-> +	}
-
-Previously it was optional.
-How did it work before and why it's not optional?
-
-> +	ov8856->n_shutdn_gpio = devm_gpiod_get(&client->dev, "reset",
-> +					       GPIOD_OUT_LOW);
-> +	if (IS_ERR(ov8856->n_shutdn_gpio)) {
-> +		dev_err(&client->dev, "failed to get reset-gpios\n");
-> +		return -EINVAL;
-> +	}
-
-Ditto.
-
-> +static const struct of_device_id ov8856_of_match[] = {
-> +	{ .compatible = "ovti,ov8856" },
-
-> +	{},
-
-No comma needed for terminator line.
-
-> +};
+Be careful though. A free page belongs to the page allocator and it is
+free to reuse any fields for its purpose so using any of them nilly
+willy is no go. If you need to stuff something like that then there
+better be an api the allocator is aware of. My main objection is the
+abuse migrate type. There might be other ways to express what you need.
+Please make sure you clearly define that though.
 
 -- 
-With Best Regards,
-Andy Shevchenko
-
-
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
