@@ -2,59 +2,35 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 59427AE327
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 06:46:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 297E0AE34E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 07:43:50 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=Vv8EOnFZIAaSMTSfsK1O0Wo4V0s8z3Tu5PfmY+qtqUA=; b=cGyE32NVHYzrCpPy4J720x67+
-	RLQHtKbmR+hsPNbryveSdTWL3ty51u8+7MfBnCIA8y5+u4bDHWYEtjEN6utHtPmJtx3OTIlZCogb0
-	xYXktQjjYtPutD++kGeT0F9p4FzLKdYnsDW30EqXYSO9oSTAHncHrLA/Esbd8sf9LRDRMAVpnQUbC
-	vWOkctSTDB91mQ8IEz8AvvMuj5JxLrNPf19vzmYCck76P96JasaleBkEetBWFPF2HuKDaSXFIKv5U
-	zI/ViyVjTQhSQClKQT/G3ug8+kW/yVzbSPp/6jldhxcOgDlVH1ZqGDiIwWiVu/dkjGbtya7blr7u+
-	tq2+45w7A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=7dFGfjD+ewlzyr11KqEJlNN4DqqPjiVnkIBL1fSIHfw=; b=eX3eIgTPn/mkxc
+	Vq1scyhF6V24B09kB5nan34uwWBXWErNWifgO4S7xVLPG4Qzq890V4BvHWaYraPlusv8SWUgQEKM3
+	7ggLAM4/drCIEAT91ZWI71W7OIQQSVQ3v/wlmOq+o5HeXkVp+oWY0vovQDsoT/8Pldf6wodVd0MnV
+	aPPu6uceNpm5FBTmBtZa0dBmOW1RQ6hTh1vCC1z3xlLmmYTJ7jFAu+/qmf+gdHdt8+Hl3fitxcUON
+	RozGmZoboRHmb6iGHDDILfCiH7abl5B9uKB7PpsFo/2Wf4uYBCGHKBb+nsUB5pno26vYI2mHbbC9l
+	L80TGfal+wr7gr3fDqng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7Y2X-000794-MC; Tue, 10 Sep 2019 04:46:05 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7Y2D-00077g-0Z; Tue, 10 Sep 2019 04:45:47 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 46SCBz6t8WzB09bJ;
- Tue, 10 Sep 2019 06:45:31 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=gWwFwMGQ; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id bU4eAMlI_ySx; Tue, 10 Sep 2019 06:45:31 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 46SCBz5bQYzB09bF;
- Tue, 10 Sep 2019 06:45:31 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1568090731; bh=3HdTywXJsBxu7f63a95rihr1tfvWFCcQDr3tUVoe8yw=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=gWwFwMGQhXbQPv4skvhBowgMpQ4CQb9YoCte6J0EYdnWndOz/QIIkIC5h0zvHR3UB
- Ff9SsJ29XXUzNtVXyrvW+IGqLrX8MaQ1V/dHa+poQ/qL4JRqg1blBogwropiP4BW3n
- ppQHiwrH0gDyFgNqtIfQfIcOubs7+hioH8IDo+8k=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 7CEF08B78A;
- Tue, 10 Sep 2019 06:45:32 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id nnso-4tCA0Zm; Tue, 10 Sep 2019 06:45:32 +0200 (CEST)
-Received: from pc16032vm.idsi0.si.c-s.fr (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 7E34D8B754;
- Tue, 10 Sep 2019 06:45:30 +0200 (CEST)
+	id 1i7YwE-0005F0-6U; Tue, 10 Sep 2019 05:43:38 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7Yvt-0005DS-3U; Tue, 10 Sep 2019 05:43:19 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A514B28;
+ Mon,  9 Sep 2019 22:43:10 -0700 (PDT)
+Received: from [10.162.40.137] (p8cg001049571a15.blr.arm.com [10.162.40.137])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 53DA43F67D; Mon,  9 Sep 2019 22:45:25 -0700 (PDT)
 Subject: Re: [PATCH 1/1] mm/pgtable/debug: Add test validating architecture
  page table helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>,
+To: Christophe Leroy <christophe.leroy@c-s.fr>,
  "Kirill A. Shutemov" <kirill@shutemov.name>
 References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
  <1567497706-8649-2-git-send-email-anshuman.khandual@arm.com>
@@ -66,33 +42,25 @@ References: <1567497706-8649-1-git-send-email-anshuman.khandual@arm.com>
  <3d5de35f-8192-1c75-50a9-03e66e3b8e5c@arm.com>
  <20190909151344.ghfypjbgxyosjdk3@box>
  <5883d41a-8299-1584-aa3d-fac89b3d9b5b@arm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <94029d96-47c4-3020-57a8-4e03de1b4fc8@c-s.fr>
-Date: Tue, 10 Sep 2019 04:45:30 +0000
+ <94029d96-47c4-3020-57a8-4e03de1b4fc8@c-s.fr>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <b0e2c87c-1130-4219-246b-e050a9da2a39@arm.com>
+Date: Tue, 10 Sep 2019 11:13:07 +0530
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+ Thunderbird/52.9.1
 MIME-Version: 1.0
-In-Reply-To: <5883d41a-8299-1584-aa3d-fac89b3d9b5b@arm.com>
+In-Reply-To: <94029d96-47c4-3020-57a8-4e03de1b4fc8@c-s.fr>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_214545_358115_A664A223 
-X-CRM114-Status: GOOD (  21.02  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190909_224317_241830_9C5327B2 
+X-CRM114-Status: GOOD (  22.08  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -127,213 +95,205 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
  "David S. Miller" <davem@davemloft.net>
-Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 09/10/2019 03:56 AM, Anshuman Khandual wrote:
-> 
-> 
-> On 09/09/2019 08:43 PM, Kirill A. Shutemov wrote:
->> On Mon, Sep 09, 2019 at 11:56:50AM +0530, Anshuman Khandual wrote:
->>>
->>>
->>> On 09/07/2019 12:33 AM, Gerald Schaefer wrote:
->>>> On Fri, 6 Sep 2019 11:58:59 +0530
->>>> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
->>>>
->>>>> On 09/05/2019 10:36 PM, Gerald Schaefer wrote:
->>>>>> On Thu, 5 Sep 2019 14:48:14 +0530
->>>>>> Anshuman Khandual <anshuman.khandual@arm.com> wrote:
->>>>>>    
->>>>>>>> [...]
->>>>>>>>> +
->>>>>>>>> +#if !defined(__PAGETABLE_PMD_FOLDED) && !defined(__ARCH_HAS_4LEVEL_HACK)
->>>>>>>>> +static void pud_clear_tests(pud_t *pudp)
->>>>>>>>> +{
->>>>>>>>> +	memset(pudp, RANDOM_NZVALUE, sizeof(pud_t));
->>>>>>>>> +	pud_clear(pudp);
->>>>>>>>> +	WARN_ON(!pud_none(READ_ONCE(*pudp)));
->>>>>>>>> +}
->>>>>>>>
->>>>>>>> For pgd/p4d/pud_clear(), we only clear if the page table level is present
->>>>>>>> and not folded. The memset() here overwrites the table type bits, so
->>>>>>>> pud_clear() will not clear anything on s390 and the pud_none() check will
->>>>>>>> fail.
->>>>>>>> Would it be possible to OR a (larger) random value into the table, so that
->>>>>>>> the lower 12 bits would be preserved?
->>>>>>>
->>>>>>> So the suggestion is instead of doing memset() on entry with RANDOM_NZVALUE,
->>>>>>> it should OR a large random value preserving lower 12 bits. Hmm, this should
->>>>>>> still do the trick for other platforms, they just need non zero value. So on
->>>>>>> s390, the lower 12 bits on the page table entry already has valid value while
->>>>>>> entering this function which would make sure that pud_clear() really does
->>>>>>> clear the entry ?
->>>>>>
->>>>>> Yes, in theory the table entry on s390 would have the type set in the last
->>>>>> 4 bits, so preserving those would be enough. If it does not conflict with
->>>>>> others, I would still suggest preserving all 12 bits since those would contain
->>>>>> arch-specific flags in general, just to be sure. For s390, the pte/pmd tests
->>>>>> would also work with the memset, but for consistency I think the same logic
->>>>>> should be used in all pxd_clear_tests.
->>>>>
->>>>> Makes sense but..
->>>>>
->>>>> There is a small challenge with this. Modifying individual bits on a given
->>>>> page table entry from generic code like this test case is bit tricky. That
->>>>> is because there are not enough helpers to create entries with an absolute
->>>>> value. This would have been easier if all the platforms provided functions
->>>>> like __pxx() which is not the case now. Otherwise something like this should
->>>>> have worked.
->>>>>
->>>>>
->>>>> pud_t pud = READ_ONCE(*pudp);
->>>>> pud = __pud(pud_val(pud) | RANDOM_VALUE (keeping lower 12 bits 0))
->>>>> WRITE_ONCE(*pudp, pud);
->>>>>
->>>>> But __pud() will fail to build in many platforms.
->>>>
->>>> Hmm, I simply used this on my system to make pud_clear_tests() work, not
->>>> sure if it works on all archs:
->>>>
->>>> pud_val(*pudp) |= RANDOM_NZVALUE;
->>>
->>> Which compiles on arm64 but then fails on x86 because of the way pmd_val()
->>> has been defined there.
->>
->> Use instead
->>
->> 	*pudp = __pud(pud_val(*pudp) | RANDOM_NZVALUE);
-> 
-> Agreed.
-> 
-> As I had mentioned before this would have been really the cleanest approach.
-> 
->>
->> It *should* be more portable.
-> 
-> Not really, because not all the platforms have __pxx() definitions right now.
-> Going with these will clearly cause build failures on affected platforms. Lets
-> examine __pud() for instance. It is defined only on these platforms.
-> 
-> arch/arm64/include/asm/pgtable-types.h:		#define __pud(x) ((pud_t) { (x) } )
-> arch/mips/include/asm/pgtable-64.h:		#define __pud(x) ((pud_t) { (x) })
-> arch/powerpc/include/asm/pgtable-be-types.h:	#define __pud(x) ((pud_t) { cpu_to_be64(x) })
-> arch/powerpc/include/asm/pgtable-types.h:	#define __pud(x) ((pud_t) { (x) })
-> arch/s390/include/asm/page.h:			#define __pud(x) ((pud_t) { (x) } )
-> arch/sparc/include/asm/page_64.h:		#define __pud(x) ((pud_t) { (x) } )
-> arch/sparc/include/asm/page_64.h:		#define __pud(x) (x)
-> arch/x86/include/asm/pgtable.h:			#define __pud(x) native_make_pud(x)
-
-You missed:
-arch/x86/include/asm/paravirt.h:static inline pud_t __pud(pudval_t val)
-include/asm-generic/pgtable-nop4d-hack.h:#define __pud(x) 
-                ((pud_t) { __pgd(x) })
-include/asm-generic/pgtable-nopud.h:#define __pud(x) 
-        ((pud_t) { __p4d(x) })
-
-> 
-> Similarly for __pmd()
-> 
-> arch/alpha/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/arm/include/asm/page-nommu.h:		#define __pmd(x)  (x)
-> arch/arm/include/asm/pgtable-2level-types.h:	#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/arm/include/asm/pgtable-2level-types.h:	#define __pmd(x)  (x)
-> arch/arm/include/asm/pgtable-3level-types.h:	#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/arm/include/asm/pgtable-3level-types.h:	#define __pmd(x)  (x)
-> arch/arm64/include/asm/pgtable-types.h:		#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/m68k/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { { (x) }, })
-> arch/mips/include/asm/pgtable-64.h:		#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/nds32/include/asm/page.h:			#define __pmd(x)  (x)
-> arch/parisc/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/parisc/include/asm/page.h:			#define __pmd(x)  (x)
-> arch/powerpc/include/asm/pgtable-be-types.h:	#define __pmd(x)  ((pmd_t) { cpu_to_be64(x) })
-> arch/powerpc/include/asm/pgtable-types.h:	#define __pmd(x)  ((pmd_t) { (x) })
-> arch/riscv/include/asm/pgtable-64.h:		#define __pmd(x)  ((pmd_t) { (x) })
-> arch/s390/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/sh/include/asm/pgtable-3level.h:		#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/sparc/include/asm/page_32.h:		#define __pmd(x)  ((pmd_t) { { (x) }, })
-> arch/sparc/include/asm/page_32.h:		#define __pmd(x)  ((pmd_t) { { (x) }, })
-> arch/sparc/include/asm/page_64.h:		#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/sparc/include/asm/page_64.h:		#define __pmd(x)  (x)
-> arch/um/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/um/include/asm/page.h:			#define __pmd(x)  ((pmd_t) { (x) } )
-> arch/x86/include/asm/pgtable.h:			#define __pmd(x)  native_make_pmd(x)
-
-You missed:
-arch/x86/include/asm/paravirt.h:static inline pmd_t __pmd(pmdval_t val)
-include/asm-generic/page.h:#define __pmd(x)     ((pmd_t) { (x) } )
-include/asm-generic/pgtable-nopmd.h:#define __pmd(x) 
-        ((pmd_t) { __pud(x) } )
-
-
-> 
-> Similarly for __pgd()
-> 
-> arch/alpha/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/alpha/include/asm/page.h:			#define __pgd(x)  (x)
-> arch/arc/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
-> arch/arc/include/asm/page.h:			#define __pgd(x)  (x)
-> arch/arm/include/asm/pgtable-3level-types.h:	#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/arm/include/asm/pgtable-3level-types.h:	#define __pgd(x)  (x)
-> arch/arm64/include/asm/pgtable-types.h:		#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/csky/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
-> arch/hexagon/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
-> arch/m68k/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/mips/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/nds32/include/asm/page.h:			#define __pgd(x)  (x)
-> arch/nios2/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
-> arch/openrisc/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
-> arch/parisc/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/parisc/include/asm/page.h:			#define __pgd(x)  (x)
-> arch/powerpc/include/asm/pgtable-be-types.h:	#define __pgd(x)  ((pgd_t) { cpu_to_be64(x) })
-> arch/powerpc/include/asm/pgtable-types.h:	#define __pgd(x)  ((pgd_t) { (x) })
-> arch/riscv/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) })
-> arch/s390/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/sh/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/sparc/include/asm/page_32.h:		#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/sparc/include/asm/page_32.h:		#define __pgd(x)  (x)
-> arch/sparc/include/asm/page_64.h:		#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/sparc/include/asm/page_64.h:		#define __pgd(x)  (x)
-> arch/um/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-> arch/unicore32/include/asm/page.h:		#define __pgd(x)  ((pgd_t) { (x) })
-> arch/unicore32/include/asm/page.h:		#define __pgd(x)  (x)
-> arch/x86/include/asm/pgtable.h:			#define __pgd(x)  native_make_pgd(x)
-> arch/xtensa/include/asm/page.h:			#define __pgd(x)  ((pgd_t) { (x) } )
-
-You missed:
-arch/x86/include/asm/paravirt.h:static inline pgd_t __pgd(pgdval_t val)
-include/asm-generic/page.h:#define __pgd(x)     ((pgd_t) { (x) } )
-
-
-> 
-> Similarly for __p4d()
-> 
-> arch/s390/include/asm/page.h:			#define __p4d(x)  ((p4d_t) { (x) } )
-> arch/x86/include/asm/pgtable.h:			#define __p4d(x)  native_make_p4d(x)
-
-You missed:
-arch/x86/include/asm/paravirt.h:static inline p4d_t __p4d(p4dval_t val)
-include/asm-generic/5level-fixup.h:#define __p4d(x) 
-__pgd(x)
-include/asm-generic/pgtable-nop4d.h:#define __p4d(x) 
-        ((p4d_t) { __pgd(x) })
-
-
-> 
-> The search pattern here has been "#define __pxx(". Unless I am missing something,
-> I dont see how we can use these without risking build failures.
-> 
-
-I guess you missed that arches not defining them fall back on the 
-definitions in include/asm-generic
-
-Christophe
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+CgpPbiAwOS8xMC8yMDE5IDEwOjE1IEFNLCBDaHJpc3RvcGhlIExlcm95IHdyb3RlOgo+IAo+IAo+
+IE9uIDA5LzEwLzIwMTkgMDM6NTYgQU0sIEFuc2h1bWFuIEtoYW5kdWFsIHdyb3RlOgo+Pgo+Pgo+
+PiBPbiAwOS8wOS8yMDE5IDA4OjQzIFBNLCBLaXJpbGwgQS4gU2h1dGVtb3Ygd3JvdGU6Cj4+PiBP
+biBNb24sIFNlcCAwOSwgMjAxOSBhdCAxMTo1Njo1MEFNICswNTMwLCBBbnNodW1hbiBLaGFuZHVh
+bCB3cm90ZToKPj4+Pgo+Pj4+Cj4+Pj4gT24gMDkvMDcvMjAxOSAxMjozMyBBTSwgR2VyYWxkIFNj
+aGFlZmVyIHdyb3RlOgo+Pj4+PiBPbiBGcmksIDYgU2VwIDIwMTkgMTE6NTg6NTkgKzA1MzAKPj4+
+Pj4gQW5zaHVtYW4gS2hhbmR1YWwgPGFuc2h1bWFuLmtoYW5kdWFsQGFybS5jb20+IHdyb3RlOgo+
+Pj4+Pgo+Pj4+Pj4gT24gMDkvMDUvMjAxOSAxMDozNiBQTSwgR2VyYWxkIFNjaGFlZmVyIHdyb3Rl
+Ogo+Pj4+Pj4+IE9uIFRodSwgNSBTZXAgMjAxOSAxNDo0ODoxNCArMDUzMAo+Pj4+Pj4+IEFuc2h1
+bWFuIEtoYW5kdWFsIDxhbnNodW1hbi5raGFuZHVhbEBhcm0uY29tPiB3cm90ZToKPj4+Pj4+PiDC
+oMKgCj4+Pj4+Pj4+PiBbLi4uXQo+Pj4+Pj4+Pj4+ICsKPj4+Pj4+Pj4+PiArI2lmICFkZWZpbmVk
+KF9fUEFHRVRBQkxFX1BNRF9GT0xERUQpICYmICFkZWZpbmVkKF9fQVJDSF9IQVNfNExFVkVMX0hB
+Q0spCj4+Pj4+Pj4+Pj4gK3N0YXRpYyB2b2lkIHB1ZF9jbGVhcl90ZXN0cyhwdWRfdCAqcHVkcCkK
+Pj4+Pj4+Pj4+PiArewo+Pj4+Pj4+Pj4+ICvCoMKgwqAgbWVtc2V0KHB1ZHAsIFJBTkRPTV9OWlZB
+TFVFLCBzaXplb2YocHVkX3QpKTsKPj4+Pj4+Pj4+PiArwqDCoMKgIHB1ZF9jbGVhcihwdWRwKTsK
+Pj4+Pj4+Pj4+PiArwqDCoMKgIFdBUk5fT04oIXB1ZF9ub25lKFJFQURfT05DRSgqcHVkcCkpKTsK
+Pj4+Pj4+Pj4+PiArfQo+Pj4+Pj4+Pj4KPj4+Pj4+Pj4+IEZvciBwZ2QvcDRkL3B1ZF9jbGVhcigp
+LCB3ZSBvbmx5IGNsZWFyIGlmIHRoZSBwYWdlIHRhYmxlIGxldmVsIGlzIHByZXNlbnQKPj4+Pj4+
+Pj4+IGFuZCBub3QgZm9sZGVkLiBUaGUgbWVtc2V0KCkgaGVyZSBvdmVyd3JpdGVzIHRoZSB0YWJs
+ZSB0eXBlIGJpdHMsIHNvCj4+Pj4+Pj4+PiBwdWRfY2xlYXIoKSB3aWxsIG5vdCBjbGVhciBhbnl0
+aGluZyBvbiBzMzkwIGFuZCB0aGUgcHVkX25vbmUoKSBjaGVjayB3aWxsCj4+Pj4+Pj4+PiBmYWls
+Lgo+Pj4+Pj4+Pj4gV291bGQgaXQgYmUgcG9zc2libGUgdG8gT1IgYSAobGFyZ2VyKSByYW5kb20g
+dmFsdWUgaW50byB0aGUgdGFibGUsIHNvIHRoYXQKPj4+Pj4+Pj4+IHRoZSBsb3dlciAxMiBiaXRz
+IHdvdWxkIGJlIHByZXNlcnZlZD8KPj4+Pj4+Pj4KPj4+Pj4+Pj4gU28gdGhlIHN1Z2dlc3Rpb24g
+aXMgaW5zdGVhZCBvZiBkb2luZyBtZW1zZXQoKSBvbiBlbnRyeSB3aXRoIFJBTkRPTV9OWlZBTFVF
+LAo+Pj4+Pj4+PiBpdCBzaG91bGQgT1IgYSBsYXJnZSByYW5kb20gdmFsdWUgcHJlc2VydmluZyBs
+b3dlciAxMiBiaXRzLiBIbW0sIHRoaXMgc2hvdWxkCj4+Pj4+Pj4+IHN0aWxsIGRvIHRoZSB0cmlj
+ayBmb3Igb3RoZXIgcGxhdGZvcm1zLCB0aGV5IGp1c3QgbmVlZCBub24gemVybyB2YWx1ZS4gU28g
+b24KPj4+Pj4+Pj4gczM5MCwgdGhlIGxvd2VyIDEyIGJpdHMgb24gdGhlIHBhZ2UgdGFibGUgZW50
+cnkgYWxyZWFkeSBoYXMgdmFsaWQgdmFsdWUgd2hpbGUKPj4+Pj4+Pj4gZW50ZXJpbmcgdGhpcyBm
+dW5jdGlvbiB3aGljaCB3b3VsZCBtYWtlIHN1cmUgdGhhdCBwdWRfY2xlYXIoKSByZWFsbHkgZG9l
+cwo+Pj4+Pj4+PiBjbGVhciB0aGUgZW50cnkgPwo+Pj4+Pj4+Cj4+Pj4+Pj4gWWVzLCBpbiB0aGVv
+cnkgdGhlIHRhYmxlIGVudHJ5IG9uIHMzOTAgd291bGQgaGF2ZSB0aGUgdHlwZSBzZXQgaW4gdGhl
+IGxhc3QKPj4+Pj4+PiA0IGJpdHMsIHNvIHByZXNlcnZpbmcgdGhvc2Ugd291bGQgYmUgZW5vdWdo
+LiBJZiBpdCBkb2VzIG5vdCBjb25mbGljdCB3aXRoCj4+Pj4+Pj4gb3RoZXJzLCBJIHdvdWxkIHN0
+aWxsIHN1Z2dlc3QgcHJlc2VydmluZyBhbGwgMTIgYml0cyBzaW5jZSB0aG9zZSB3b3VsZCBjb250
+YWluCj4+Pj4+Pj4gYXJjaC1zcGVjaWZpYyBmbGFncyBpbiBnZW5lcmFsLCBqdXN0IHRvIGJlIHN1
+cmUuIEZvciBzMzkwLCB0aGUgcHRlL3BtZCB0ZXN0cwo+Pj4+Pj4+IHdvdWxkIGFsc28gd29yayB3
+aXRoIHRoZSBtZW1zZXQsIGJ1dCBmb3IgY29uc2lzdGVuY3kgSSB0aGluayB0aGUgc2FtZSBsb2dp
+Ywo+Pj4+Pj4+IHNob3VsZCBiZSB1c2VkIGluIGFsbCBweGRfY2xlYXJfdGVzdHMuCj4+Pj4+Pgo+
+Pj4+Pj4gTWFrZXMgc2Vuc2UgYnV0Li4KPj4+Pj4+Cj4+Pj4+PiBUaGVyZSBpcyBhIHNtYWxsIGNo
+YWxsZW5nZSB3aXRoIHRoaXMuIE1vZGlmeWluZyBpbmRpdmlkdWFsIGJpdHMgb24gYSBnaXZlbgo+
+Pj4+Pj4gcGFnZSB0YWJsZSBlbnRyeSBmcm9tIGdlbmVyaWMgY29kZSBsaWtlIHRoaXMgdGVzdCBj
+YXNlIGlzIGJpdCB0cmlja3kuIFRoYXQKPj4+Pj4+IGlzIGJlY2F1c2UgdGhlcmUgYXJlIG5vdCBl
+bm91Z2ggaGVscGVycyB0byBjcmVhdGUgZW50cmllcyB3aXRoIGFuIGFic29sdXRlCj4+Pj4+PiB2
+YWx1ZS4gVGhpcyB3b3VsZCBoYXZlIGJlZW4gZWFzaWVyIGlmIGFsbCB0aGUgcGxhdGZvcm1zIHBy
+b3ZpZGVkIGZ1bmN0aW9ucwo+Pj4+Pj4gbGlrZSBfX3B4eCgpIHdoaWNoIGlzIG5vdCB0aGUgY2Fz
+ZSBub3cuIE90aGVyd2lzZSBzb21ldGhpbmcgbGlrZSB0aGlzIHNob3VsZAo+Pj4+Pj4gaGF2ZSB3
+b3JrZWQuCj4+Pj4+Pgo+Pj4+Pj4KPj4+Pj4+IHB1ZF90IHB1ZCA9IFJFQURfT05DRSgqcHVkcCk7
+Cj4+Pj4+PiBwdWQgPSBfX3B1ZChwdWRfdmFsKHB1ZCkgfCBSQU5ET01fVkFMVUUgKGtlZXBpbmcg
+bG93ZXIgMTIgYml0cyAwKSkKPj4+Pj4+IFdSSVRFX09OQ0UoKnB1ZHAsIHB1ZCk7Cj4+Pj4+Pgo+
+Pj4+Pj4gQnV0IF9fcHVkKCkgd2lsbCBmYWlsIHRvIGJ1aWxkIGluIG1hbnkgcGxhdGZvcm1zLgo+
+Pj4+Pgo+Pj4+PiBIbW0sIEkgc2ltcGx5IHVzZWQgdGhpcyBvbiBteSBzeXN0ZW0gdG8gbWFrZSBw
+dWRfY2xlYXJfdGVzdHMoKSB3b3JrLCBub3QKPj4+Pj4gc3VyZSBpZiBpdCB3b3JrcyBvbiBhbGwg
+YXJjaHM6Cj4+Pj4+Cj4+Pj4+IHB1ZF92YWwoKnB1ZHApIHw9IFJBTkRPTV9OWlZBTFVFOwo+Pj4+
+Cj4+Pj4gV2hpY2ggY29tcGlsZXMgb24gYXJtNjQgYnV0IHRoZW4gZmFpbHMgb24geDg2IGJlY2F1
+c2Ugb2YgdGhlIHdheSBwbWRfdmFsKCkKPj4+PiBoYXMgYmVlbiBkZWZpbmVkIHRoZXJlLgo+Pj4K
+Pj4+IFVzZSBpbnN0ZWFkCj4+Pgo+Pj4gwqDCoMKgwqAqcHVkcCA9IF9fcHVkKHB1ZF92YWwoKnB1
+ZHApIHwgUkFORE9NX05aVkFMVUUpOwo+Pgo+PiBBZ3JlZWQuCj4+Cj4+IEFzIEkgaGFkIG1lbnRp
+b25lZCBiZWZvcmUgdGhpcyB3b3VsZCBoYXZlIGJlZW4gcmVhbGx5IHRoZSBjbGVhbmVzdCBhcHBy
+b2FjaC4KPj4KPj4+Cj4+PiBJdCAqc2hvdWxkKiBiZSBtb3JlIHBvcnRhYmxlLgo+Pgo+PiBOb3Qg
+cmVhbGx5LCBiZWNhdXNlIG5vdCBhbGwgdGhlIHBsYXRmb3JtcyBoYXZlIF9fcHh4KCkgZGVmaW5p
+dGlvbnMgcmlnaHQgbm93Lgo+PiBHb2luZyB3aXRoIHRoZXNlIHdpbGwgY2xlYXJseSBjYXVzZSBi
+dWlsZCBmYWlsdXJlcyBvbiBhZmZlY3RlZCBwbGF0Zm9ybXMuIExldHMKPj4gZXhhbWluZSBfX3B1
+ZCgpIGZvciBpbnN0YW5jZS4gSXQgaXMgZGVmaW5lZCBvbmx5IG9uIHRoZXNlIHBsYXRmb3Jtcy4K
+Pj4KPj4gYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKgwqDCoMKg
+wqAgI2RlZmluZSBfX3B1ZCh4KSAoKHB1ZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9taXBzL2luY2x1
+ZGUvYXNtL3BndGFibGUtNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICgocHVk
+X3QpIHsgKHgpIH0pCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9wZ3RhYmxlLWJlLXR5cGVz
+Lmg6wqDCoMKgICNkZWZpbmUgX19wdWQoeCkgKChwdWRfdCkgeyBjcHVfdG9fYmU2NCh4KSB9KQo+
+PiBhcmNoL3Bvd2VycGMvaW5jbHVkZS9hc20vcGd0YWJsZS10eXBlcy5oOsKgwqDCoCAjZGVmaW5l
+IF9fcHVkKHgpICgocHVkX3QpIHsgKHgpIH0pCj4+IGFyY2gvczM5MC9pbmNsdWRlL2FzbS9wYWdl
+Lmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICgocHVkX3QpIHsgKHgp
+IH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAj
+ZGVmaW5lIF9fcHVkKHgpICgocHVkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUv
+YXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcHVkKHgpICh4KQo+PiBhcmNo
+L3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
+IF9fcHVkKHgpIG5hdGl2ZV9tYWtlX3B1ZCh4KQo+IAo+IFlvdSBtaXNzZWQ6Cj4gYXJjaC94ODYv
+aW5jbHVkZS9hc20vcGFyYXZpcnQuaDpzdGF0aWMgaW5saW5lIHB1ZF90IF9fcHVkKHB1ZHZhbF90
+IHZhbCkKPiBpbmNsdWRlL2FzbS1nZW5lcmljL3BndGFibGUtbm9wNGQtaGFjay5oOiNkZWZpbmUg
+X19wdWQoeCkgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAoKHB1ZF90KSB7IF9fcGdkKHgp
+IH0pCj4gaW5jbHVkZS9hc20tZ2VuZXJpYy9wZ3RhYmxlLW5vcHVkLmg6I2RlZmluZSBfX3B1ZCh4
+KSDCoMKgwqDCoMKgwqAgKChwdWRfdCkgeyBfX3A0ZCh4KSB9KQo+IAo+Pgo+PiBTaW1pbGFybHkg
+Zm9yIF9fcG1kKCkKPj4KPj4gYXJjaC9hbHBoYS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFy
+Y2gvYXJtL2luY2x1ZGUvYXNtL3BhZ2Utbm9tbXUuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
+cG1kKHgpwqAgKHgpCj4+IGFyY2gvYXJtL2luY2x1ZGUvYXNtL3BndGFibGUtMmxldmVsLXR5cGVz
+Lmg6wqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoKHBtZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9h
+cm0vaW5jbHVkZS9hc20vcGd0YWJsZS0ybGV2ZWwtdHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3Bt
+ZCh4KcKgICh4KQo+PiBhcmNoL2FybS9pbmNsdWRlL2FzbS9wZ3RhYmxlLTNsZXZlbC10eXBlcy5o
+OsKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvYXJt
+L2luY2x1ZGUvYXNtL3BndGFibGUtM2xldmVsLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wbWQo
+eCnCoCAoeCkKPj4gYXJjaC9hcm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKg
+wqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0gKQo+PiBhcmNoL202
+OGsvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3Bt
+ZCh4KcKgICgocG1kX3QpIHsgeyAoeCkgfSwgfSkKPj4gYXJjaC9taXBzL2luY2x1ZGUvYXNtL3Bn
+dGFibGUtNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAo
+eCkgfSApCj4+IGFyY2gvbmRzMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDC
+oMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICh4KQo+PiBhcmNoL3BhcmlzYy9pbmNsdWRlL2FzbS9w
+YWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkg
+eyAoeCkgfSApCj4+IGFyY2gvcGFyaXNjL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDC
+oMKgwqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoeCkKPj4gYXJjaC9wb3dlcnBjL2luY2x1ZGUv
+YXNtL3BndGFibGUtYmUtdHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3Qp
+IHsgY3B1X3RvX2JlNjQoeCkgfSkKPj4gYXJjaC9wb3dlcnBjL2luY2x1ZGUvYXNtL3BndGFibGUt
+dHlwZXMuaDrCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0pCj4+IGFy
+Y2gvcmlzY3YvaW5jbHVkZS9hc20vcGd0YWJsZS02NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUg
+X19wbWQoeCnCoCAoKHBtZF90KSB7ICh4KSB9KQo+PiBhcmNoL3MzOTAvaW5jbHVkZS9hc20vcGFn
+ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsg
+KHgpIH0gKQo+PiBhcmNoL3NoL2luY2x1ZGUvYXNtL3BndGFibGUtM2xldmVsLmg6wqDCoMKgwqDC
+oMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJj
+L2luY2x1ZGUvYXNtL3BhZ2VfMzIuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAg
+KChwbWRfdCkgeyB7ICh4KSB9LCB9KQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfMzIu
+aDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyB7ICh4KSB9LCB9
+KQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfNjQuaDrCoMKgwqDCoMKgwqDCoCAjZGVm
+aW5lIF9fcG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvc3BhcmMvaW5jbHVkZS9h
+c20vcGFnZV82NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wbWQoeCnCoCAoeCkKPj4gYXJj
+aC91bS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
+cG1kKHgpwqAgKChwbWRfdCkgeyAoeCkgfSApCj4+IGFyY2gvdW0vaW5jbHVkZS9hc20vcGFnZS5o
+OsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BtZCh4KcKgICgocG1kX3QpIHsgKHgp
+IH0gKQo+PiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKg
+wqDCoCAjZGVmaW5lIF9fcG1kKHgpwqAgbmF0aXZlX21ha2VfcG1kKHgpCj4gCj4gWW91IG1pc3Nl
+ZDoKPiBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9wYXJhdmlydC5oOnN0YXRpYyBpbmxpbmUgcG1kX3Qg
+X19wbWQocG1kdmFsX3QgdmFsKQo+IGluY2x1ZGUvYXNtLWdlbmVyaWMvcGFnZS5oOiNkZWZpbmUg
+X19wbWQoeCnCoMKgwqDCoCAoKHBtZF90KSB7ICh4KSB9ICkKPiBpbmNsdWRlL2FzbS1nZW5lcmlj
+L3BndGFibGUtbm9wbWQuaDojZGVmaW5lIF9fcG1kKHgpIMKgwqDCoMKgwqDCoCAoKHBtZF90KSB7
+IF9fcHVkKHgpIH0gKQo+IAo+IAo+Pgo+PiBTaW1pbGFybHkgZm9yIF9fcGdkKCkKPj4KPj4gYXJj
+aC9hbHBoYS9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
+IF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvYWxwaGEvaW5jbHVkZS9hc20v
+cGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBh
+cmNoL2FyYy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5l
+IF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSkKPj4gYXJjaC9hcmMvaW5jbHVkZS9hc20vcGFn
+ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNo
+L2FybS9pbmNsdWRlL2FzbS9wZ3RhYmxlLTNsZXZlbC10eXBlcy5oOsKgwqDCoCAjZGVmaW5lIF9f
+cGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvYXJtL2luY2x1ZGUvYXNtL3BndGFi
+bGUtM2xldmVsLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoeCkKPj4gYXJjaC9h
+cm02NC9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5cGVzLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBf
+X3BnZCh4KcKgICgocGdkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL2Nza3kvaW5jbHVkZS9hc20vcGFn
+ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
+KHgpIH0pCj4+IGFyY2gvaGV4YWdvbi9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqAg
+I2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsgKHgpIH0pCj4+IGFyY2gvbTY4ay9pbmNsdWRl
+L2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKChw
+Z2RfdCkgeyAoeCkgfSApCj4+IGFyY2gvbWlwcy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDC
+oMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSApCj4+IGFy
+Y2gvbmRzMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmlu
+ZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNoL25pb3MyL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDC
+oMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBh
+cmNoL29wZW5yaXNjL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoCAjZGVmaW5lIF9f
+cGdkKHgpwqAgKChwZ2RfdCkgeyAoeCkgfSkKPj4gYXJjaC9wYXJpc2MvaW5jbHVkZS9hc20vcGFn
+ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
+KHgpIH0gKQo+PiBhcmNoL3BhcmlzYy9pbmNsdWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqDC
+oMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKHgpCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2Fz
+bS9wZ3RhYmxlLWJlLXR5cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7
+IGNwdV90b19iZTY0KHgpIH0pCj4+IGFyY2gvcG93ZXJwYy9pbmNsdWRlL2FzbS9wZ3RhYmxlLXR5
+cGVzLmg6wqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNo
+L3Jpc2N2L2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUg
+X19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNoL3MzOTAvaW5jbHVkZS9hc20vcGFn
+ZS5oOsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgocGdkX3QpIHsg
+KHgpIH0gKQo+PiBhcmNoL3NoL2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDC
+oMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9ICkKPj4gYXJjaC9zcGFyYy9p
+bmNsdWRlL2FzbS9wYWdlXzMyLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICgo
+cGdkX3QpIHsgKHgpIH0gKQo+PiBhcmNoL3NwYXJjL2luY2x1ZGUvYXNtL3BhZ2VfMzIuaDrCoMKg
+wqDCoMKgwqDCoCAjZGVmaW5lIF9fcGdkKHgpwqAgKHgpCj4+IGFyY2gvc3BhcmMvaW5jbHVkZS9h
+c20vcGFnZV82NC5oOsKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7
+ICh4KSB9ICkKPj4gYXJjaC9zcGFyYy9pbmNsdWRlL2FzbS9wYWdlXzY0Lmg6wqDCoMKgwqDCoMKg
+wqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBhcmNoL3VtL2luY2x1ZGUvYXNtL3BhZ2UuaDrC
+oMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9
+ICkKPj4gYXJjaC91bmljb3JlMzIvaW5jbHVkZS9hc20vcGFnZS5oOsKgwqDCoMKgwqDCoMKgICNk
+ZWZpbmUgX19wZ2QoeCnCoCAoKHBnZF90KSB7ICh4KSB9KQo+PiBhcmNoL3VuaWNvcmUzMi9pbmNs
+dWRlL2FzbS9wYWdlLmg6wqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3BnZCh4KcKgICh4KQo+PiBh
+cmNoL3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlLmg6wqDCoMKgwqDCoMKgwqDCoMKgwqDCoCAjZGVm
+aW5lIF9fcGdkKHgpwqAgbmF0aXZlX21ha2VfcGdkKHgpCj4+IGFyY2gveHRlbnNhL2luY2x1ZGUv
+YXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wZ2QoeCnCoCAoKHBn
+ZF90KSB7ICh4KSB9ICkKPiAKPiBZb3UgbWlzc2VkOgo+IGFyY2gveDg2L2luY2x1ZGUvYXNtL3Bh
+cmF2aXJ0Lmg6c3RhdGljIGlubGluZSBwZ2RfdCBfX3BnZChwZ2R2YWxfdCB2YWwpCj4gaW5jbHVk
+ZS9hc20tZ2VuZXJpYy9wYWdlLmg6I2RlZmluZSBfX3BnZCh4KcKgwqDCoMKgICgocGdkX3QpIHsg
+KHgpIH0gKQo+IAo+IAo+Pgo+PiBTaW1pbGFybHkgZm9yIF9fcDRkKCkKPj4KPj4gYXJjaC9zMzkw
+L2luY2x1ZGUvYXNtL3BhZ2UuaDrCoMKgwqDCoMKgwqDCoMKgwqDCoMKgICNkZWZpbmUgX19wNGQo
+eCnCoCAoKHA0ZF90KSB7ICh4KSB9ICkKPj4gYXJjaC94ODYvaW5jbHVkZS9hc20vcGd0YWJsZS5o
+OsKgwqDCoMKgwqDCoMKgwqDCoMKgwqAgI2RlZmluZSBfX3A0ZCh4KcKgIG5hdGl2ZV9tYWtlX3A0
+ZCh4KQo+IAo+IFlvdSBtaXNzZWQ6Cj4gYXJjaC94ODYvaW5jbHVkZS9hc20vcGFyYXZpcnQuaDpz
+dGF0aWMgaW5saW5lIHA0ZF90IF9fcDRkKHA0ZHZhbF90IHZhbCkKPiBpbmNsdWRlL2FzbS1nZW5l
+cmljLzVsZXZlbC1maXh1cC5oOiNkZWZpbmUgX19wNGQoeCkgX19wZ2QoeCkKPiBpbmNsdWRlL2Fz
+bS1nZW5lcmljL3BndGFibGUtbm9wNGQuaDojZGVmaW5lIF9fcDRkKHgpIMKgwqDCoMKgwqDCoCAo
+KHA0ZF90KSB7IF9fcGdkKHgpIH0pCj4gCj4gCj4+Cj4+IFRoZSBzZWFyY2ggcGF0dGVybiBoZXJl
+IGhhcyBiZWVuICIjZGVmaW5lIF9fcHh4KCIuIFVubGVzcyBJIGFtIG1pc3Npbmcgc29tZXRoaW5n
+LAo+PiBJIGRvbnQgc2VlIGhvdyB3ZSBjYW4gdXNlIHRoZXNlIHdpdGhvdXQgcmlza2luZyBidWls
+ZCBmYWlsdXJlcy4KPj4KPiAKPiBJIGd1ZXNzIHlvdSBtaXNzZWQgdGhhdCBhcmNoZXMgbm90IGRl
+ZmluaW5nIHRoZW0gZmFsbCBiYWNrIG9uIHRoZSBkZWZpbml0aW9ucyBpbiBpbmNsdWRlL2FzbS1n
+ZW5lcmljCgpZb3UgYXJlIHJpZ2h0LiBJIHdhcyBjb25mdXNlZCB3aGV0aGVyIHRoZXNlIGdlbmVy
+aWMgZGVmaW5pdGlvbnMgd2VyZSByZWFsbHkKYXBwbGljYWJsZSBmb3IgYWxsIHRob3NlIHBsYXRm
+b3JtcyBhcyBmYWxsYmFjayAod2l0aCBzbyBtYW55IHBhZ2UgdGFibGUKbGV2ZWwgZm9sZGluZyBj
+b21iaW5hdGlvbnMgYXZhaWxhYmxlKSB3aGVuIHRoZXkgZG9udCBkZWZpbmUuIFN1cmUgd2lsbCB0
+YWtlCnRoaXMgYXBwcm9hY2ggYW5kIHRyeSB0byBidWlsZCB0aGVtIG9uIG11bHRpcGxlIHBsYXRm
+b3Jtcy4KCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxp
+bnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFk
+ZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4
+LWFybS1rZXJuZWwK
