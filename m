@@ -2,93 +2,113 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E9D71AEF76
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 18:21:59 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A637AAEF7D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 18:23:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bMU7nhJS7NjbQYZxCtYv1dEBPUEhxes0naqD+5UlJ4Q=; b=AbJ9n7aul9R5bq
-	v3UjgZNP+eHJa31HBbUWKiNEEbSfFl+gm1aCvivwnDSqPsEwJD/LXEkMipVUss10Qa/ifpeRCO56d
-	TQ+RbXB+cZLTF6zvU+UarAsYU+2hCrxhB/fa8i18TghBv2ospPzqNVkZ3uTrUJ9lqOpr7tfHSsDty
-	hCfNYpfLLIRYvQ5KxN8M2NnKigBALwomd5whzHAYPbzmxnVQP4V5meKSg/gRf3afqIWjHGaehRFw0
-	UVImVPRBIFbq+7ETF3L8i4dQ0K5WNPm2W71KQk8LeXRb747KROyA6ZAFsoaLFsgj/iKiYcyz8vZKa
-	fXiX0U0F8J2dnm6zJaOA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Vr1BtvXDXLHNd2gNFIyuQ1/4pm2qXxC5DAirHQJKAYc=; b=jzql1F2HcHg9CS
+	vACXok0vrqw/K/l79as0RWvinsZP8yYCQAkmpf/yB1j2t55oT/uOP416tKqIBS+1pN0WhURHcZHKa
+	/TxI/Pziw118L/H3biEngQ7Jhz6TKohzBlU5MfjcaLjdysOA7sT7jqulv+AmWHEiCqbX4GkzMRFpl
+	7gxbaY23WlB768tcUea6wHK5BTtTnUSC032fmNZIVvJBoSlRjpS9IFPGfQkx1wN8nSo4wrwkWIFDK
+	fE/PS7BRsyHqMb48C6107Wnw/sG7aSKczbTU3+M8PTWr/7DfegxkdU8GtdxfEsnxflA+owa2KzOSf
+	i/lLfjipSt40mlpla7UA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7itx-0002h3-Ln; Tue, 10 Sep 2019 16:21:57 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1i7iv5-0002yG-26; Tue, 10 Sep 2019 16:23:07 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7itn-0002gd-Qr
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 16:21:49 +0000
-Received: by mail-io1-xd41.google.com with SMTP id j4so38858652iog.11
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 09:21:47 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=zfak0oamvqR0wlkWdro1v2MEWig7UToX5bvVAqdDtOo=;
- b=bmHftRBVG3UesIvZiqDbiuOA72BylSogyhaiKS/wsP0AEjtZYtvMHOLsoute6sQZ5m
- xIpo4gwZiwWDF9NooW5VDBFoxQRjUbyuPu83ukqlsJCxANwMV2lX6+qwjxFIUr6BKnq3
- NfSd+thBNxcRljHIBEfSFJfnX7Q/CYPMHBuJo7QT+nvrZD7tMejiXPX4Zs/CkfDsqBOY
- LGQ4DWvRummpLuvyn5+fQh6ES61QTQ1cEyqouvQ1C/hgnOdTAA8wQ5nVUanyJCpycTeh
- pUe2RixtytadF7XaVfarQuRIZRWLNta0DZH6FwCIudQOeAh9XLLfxyWfqlD0aJ0kin47
- bl5w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=zfak0oamvqR0wlkWdro1v2MEWig7UToX5bvVAqdDtOo=;
- b=Lgjw0hCnEQGTbHmyQildEgnDaUjGIz/gJ50P086CI4DiMlYtCjWx8Unn5q/K+3HREX
- NScXTAKSkSsbg604aDsnZfAgLljQJBuYWLbehu0REb+vRZDyZBS2KSDCpM7KrehQqiJb
- e9EqecAAPQ/r0eTkT5bMSiv57HO8wtLoI2wRsQBRhu8zSkVxsNJkzLj1Yfbb9Wa4Qmty
- Zf5uIQC4fjhmOCOAFkD6lU8U7Oobwic2Qvwep6/TEiFMwfQhBdJKVAgg2VJ3Zwx63iV8
- hCAtpymSoBtf5+XSuPx+zkCJCqOSSFpBk1Gd4qR7pLLYGxR9XQp92uV5JFenyO26BdvE
- C7rQ==
-X-Gm-Message-State: APjAAAUq/wcZbHloFyRp6WLIiEH/ntfcgvZV6SRVxC7zinibV3WnRp9u
- YlVoVUyKag7SzTfGf9JAHf0DpT6HMtWba+HDuQw=
-X-Google-Smtp-Source: APXvYqzn3tHPt7okLee/JSPLqAibKWmQEQwC+Yi3HLUftPevSq/bxBvLHOKp4243JzzRNVWIktQJsyVQUxI79CU3IR4=
-X-Received: by 2002:a5e:de47:: with SMTP id e7mr1078126ioq.127.1568132506319; 
- Tue, 10 Sep 2019 09:21:46 -0700 (PDT)
+ id 1i7iur-0002wu-4d
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 16:22:58 +0000
+Received: from smtp.corp.redhat.com (int-mx06.intmail.prod.int.phx2.redhat.com
+ [10.5.11.16])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 3841410C697D;
+ Tue, 10 Sep 2019 16:22:50 +0000 (UTC)
+Received: from [10.36.116.108] (ovpn-116-108.ams2.redhat.com [10.36.116.108])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id D38D95C207;
+ Tue, 10 Sep 2019 16:22:37 +0000 (UTC)
+Subject: Re: [virtio-dev] Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+To: "Dr. David Alan Gilbert" <dgilbert@redhat.com>,
+ Alexander Duyck <alexander.duyck@gmail.com>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+ <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+ <20190910144713.GF2063@dhcp22.suse.cz>
+ <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
+ <20190910161818.GF2797@work-vm>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <f74117db-225d-92cb-9476-22c0f752659d@redhat.com>
+Date: Tue, 10 Sep 2019 18:22:37 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-References: <20190828150037.2640-1-aford173@gmail.com>
- <20190905230443.GA52127@atomide.com>
- <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
- <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
- <20190909134033.s26eiurpat3iekse@pali> <20190909163543.GQ52127@atomide.com>
- <CAHCN7x+t-OVRE7pVM4V87_YMWpgO+_Vashfn1s5msoqC5eiwTg@mail.gmail.com>
-In-Reply-To: <CAHCN7x+t-OVRE7pVM4V87_YMWpgO+_Vashfn1s5msoqC5eiwTg@mail.gmail.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 10 Sep 2019 11:21:34 -0500
-Message-ID: <CAHCN7xLaGQMM67VC-2_G8XC7UuG4c+TbbYb4z=ibJwZsQF4YVw@mail.gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-To: Tony Lindgren <tony@atomide.com>
+In-Reply-To: <20190910161818.GF2797@work-vm>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.79 on 10.5.11.16
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
+ (mx1.redhat.com [10.5.110.65]); Tue, 10 Sep 2019 16:22:50 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_092147_898329_037B78C5 
-X-CRM114-Status: GOOD (  25.43  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190910_092256_728705_A4659791 
+X-CRM114-Status: GOOD (  25.51  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,80 +120,114 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Michal Hocko <mhocko@kernel.org>,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
+ Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, lcapitulino@redhat.com,
+ linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
+ Nitesh Narayan Lal <nitesh@redhat.com>, Dave Hansen <dave.hansen@intel.com>,
+ LKML <linux-kernel@vger.kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
+ Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gVHVlLCBTZXAgMTAsIDIwMTkgYXQgMTA6NDggQU0gQWRhbSBGb3JkIDxhZm9yZDE3M0BnbWFp
-bC5jb20+IHdyb3RlOgo+Cj4gT24gTW9uLCBTZXAgOSwgMjAxOSBhdCAxMTozNSBBTSBUb255IExp
-bmRncmVuIDx0b255QGF0b21pZGUuY29tPiB3cm90ZToKPiA+Cj4gPiAqIFBhbGkgUm9ow6FyIDxw
-YWxpLnJvaGFyQGdtYWlsLmNvbT4gWzE5MDkwOSAxMzo0MV06Cj4gPiA+IE9uIE1vbmRheSAwOSBT
-ZXB0ZW1iZXIgMjAxOSAwODozNzowOSBBZGFtIEZvcmQgd3JvdGU6Cj4gPiA+ID4gSSBhcHBsaWVk
-IHRoaXMgb24gNS4zIGFuZCBpdCBpcyB3b3JraW5nLiAgSSBhc3N1bWUgdGhlIHNhbWUgaXMgdHJ1
-ZSBpbiBmb3ItbmV4dC4KPiA+Cj4gPiBIbW0gSSBub3RpY2VkIEkgc3RvcHBlZCBnZXR0aW5nIFJO
-RyBkYXRhIGFmdGVyIHNldmVyYWwgcm1tb2QgbW9kcHJvYmUKPiA+IGN5Y2xlcywgb3Igc2V2ZXJh
-bCBoZCAvZGV2L3JhbmRvbSByZWFkcy4gQW55Ym9keSBlbHNlIHNlZWluZyB0aGF0Pwo+ID4KPiA+
-ID4gPiBEbyB5b3Ugd2FudCB0byBzdWJtaXQgYSBmb3JtYWwgcGF0Y2g/ICBJICBjYW4gbWFyayBp
-dCBhcyAndGVzdGVkLWJ5Jwo+ID4gPiA+IFRoaXMgcmVhbGx5IGhlbHBzIHNwZWVkIHVwIHRoZSBz
-dGFydHVwIHNlcXVlbmNlIG9uIGJvYXJkcyB3aXRoIHNzaGQKPiA+ID4gPiBiZWNhdXNlIGl0IGRl
-bGF5cyBmb3IgbmVhcmx5IDgwIHNlY29uZHMgd2FpdGluZyBmb3IgZW50cm9weSB3aXRob3V0Cj4g
-PiA+ID4gdGhlIGh3cm5nLgo+ID4gPgo+ID4gPiBIaSEgV2hlbiBhcHBseWluZyBhIHBhdGNoLCBj
-b3VsZCB5b3UgcGxlYXNlIGRpc2FibGUgdGhpcyBybmcgZm9yIG45MDA/Cj4gPiA+Cj4gPiA+IElu
-IG9tYXAzLW45MDAuZHRzIGZvciBybmcgc2hvdWxkIGJlIHN0YXR1cyA9ICJkaXNhYmxlZCIgKGFz
-IFRvbnkgYWxyZWFkeQo+ID4gPiB3cm90ZSksIHNpbWlsYXJseSBsaWtlIGZvciBhZXMuCj4gPgo+
-ID4gWWVhaCBJJ2xsIHBvc3QgYSBwcm9wZXIgcGF0Y2ggYWZ0ZXIgLXJjMS4KPgo+IEZZSSwKPgo+
-IEJ5IHB1dHRpbmcgeW91ciBub2RlIGludG8gb21hcDM0eHguZHRzaSBhbmQgb21hcDM2eHguZHRz
-aSBhbG9uZyB3aXRoCj4gdGhlIGZvbGxvd2luZywgSSBjYW4gZ2V0IHRoZSBSTkcgdG8gd29yayBv
-biBhbiBPTUFQMzUzMCBhbmQgYSBETTM3MzAuCj4KPgo+IGRpZmYgLS1naXQgYS9hcmNoL2FybS9i
-b290L2R0cy9vbWFwMzR4eC1vbWFwMzZ4eC1jbG9ja3MuZHRzaQo+IGIvYXJjaC9hcm0vYm9vdC9k
-dHMvb21hcDM0eHgtb21hcDM2eHgtY2xvY2tzLmR0c2kKPiBpbmRleCA1ZTlkMWFmY2Q0MjIuLjcz
-ZjM1MWU2ZDEzMiAxMDA2NDQKPiAtLS0gYS9hcmNoL2FybS9ib290L2R0cy9vbWFwMzR4eC1vbWFw
-MzZ4eC1jbG9ja3MuZHRzaQo+ICsrKyBiL2FyY2gvYXJtL2Jvb3QvZHRzL29tYXAzNHh4LW9tYXAz
-Nnh4LWNsb2Nrcy5kdHNpCj4gQEAgLTI1OSw3ICsyNTksNyBAQAo+ICAgICAgICAgICAgICAgICAg
-ICAgICAgICA8JmkyYzFfaWNrPiwgPCZ1YXJ0Ml9pY2s+LCA8JnVhcnQxX2ljaz4sIDwmZ3B0MTFf
-aWNrPiwKPiAgICAgICAgICAgICAgICAgICAgICAgICAgPCZncHQxMF9pY2s+LCA8Jm1jYnNwNV9p
-Y2s+LCA8Jm1jYnNwMV9pY2s+LAo+ICAgICAgICAgICAgICAgICAgICAgICAgICA8Jm9tYXBjdHJs
-X2ljaz4sIDwmYWVzMl9pY2s+LCA8JnNoYTEyX2ljaz4sIDwmaWNyX2ljaz4sCj4gLSAgICAgICAg
-ICAgICAgICAgICAgICAgIDwmZGVzMl9pY2s+LCA8Jm1zcHJvX2ljaz4sIDwmbWFpbGJveGVzX2lj
-az4sCj4gKyAgICAgICAgICAgICAgICAgICAgICAgIDwmZGVzMl9pY2s+LCA8Jm1zcHJvX2ljaz4s
-IDwmbWFpbGJveGVzX2ljaz4sCj4gPCZybmdfaWNrPiwKPiAgICAgICAgICAgICAgICAgICAgICAg
-ICAgPCZtc3Byb19mY2s+Owo+ICAgICAgICAgfTsKPiAgfTsKPgo+IEkgdHJpZWQgZG9pbmcgdGhl
-IHNhbWUgZm9yIGFtMzUxNywgYnV0IGl0IGRvZXNuJ3QgYXBwZWFyIHRvIHdvcmsuICBJbgo+IGZh
-Y3QsIHRoZSBib2FyZCBoYW5ncyBhdCBib290IHdpdGggbm8gc3BsYXQsIHNvIEkgYXNzdW1lIHRo
-YXQgc29tZQo+IGNsb2NrIGlzbid0IHJ1bm5pbmcgYW5kIGNhdXNpbmcgYSBoYW5nLiAgRmlndXJl
-IDQtNTAgaW4gdGhlIEFNMzUxNyBUUk0KPiBzaG93cyB0aGUgc2VjdXJpdHlfbDRfaWNsazIsIHNv
-IEkgd29uZGVyIGlmIHRoZSBIVyBtb2RzIGZvciBBRVMsIFNIQSwKPiBldGMgYXJlIGRvaW5nIHNv
-bWV0aGluZyB0byBlbmFibGUgdGhpcyBjbG9jay4gIFRob3NlIEhXbW9kcyBhcmUKPiBkaXNhYmxl
-ZCBvbiBBTTM1MTcuICBJIHRyaWVkIHR1cm5pbmcgb24gdGhlIGh3bW9kcyBmb3IgdGhlbSBiZWZv
-cmUKPiB3aXRob3V0IHN1Y2Nlc3MsIGJ1dCBJJ2xsIHRyeSBpdCBhZ2Fpbi4KCkFjY29yZGluZyB0
-byBhIG5vdGUgaW4gb21hcF9od21vZF8zeHh4X2RhdGEuYywKCi8qCiAqIEFwcGFyZW50bHkgdGhl
-IFNIQS9NRDUgYW5kIEFFUyBhY2NlbGVyYXRvciBJUCBibG9ja3MgYXJlCiAqIG9ubHkgcHJlc2Vu
-dCBvbiBzb21lIEFNMzV4eCBjaGlwcywgYW5kIG5vIG9uZSBrbm93cyB3aGljaAogKiBvbmVzLiAg
-U2VlCiAqIGh0dHA6Ly93d3cuc3Bpbmljcy5uZXQvbGlzdHMvYXJtLWtlcm5lbC9tc2cyMTU0NjYu
-aHRtbCBTbwogKiBpZiB5b3UgbmVlZCB0aGVzZSBJUCBibG9ja3Mgb24gYW4gQU0zNXh4LCB0cnkg
-dW5jb21tZW50aW5nCiAqIHRoZSBmb2xsb3dpbmcgbGluZXMuCiAqLwoKSSBkZWNpZGVkIHRvIHVu
-Y29tbWVudCB0aGUgaHdtb2QgZW50cmllcywgYW5kIEkgZ290IHRoZSBmb2xsb3dpbmc6CgpbICAg
-IDAuMjYzMjIyXSBvbWFwX2h3bW9kOiBzaGFtOiBfd2FpdF90YXJnZXRfcmVhZHkgZmFpbGVkOiAt
-MTYKWyAgICAwLjI2MzI0OF0gb21hcF9od21vZDogc2hhbTogY2Fubm90IGJlIGVuYWJsZWQgZm9y
-IHJlc2V0ICgzKQpbICAgIDAuMjY1ODM3XSBvbWFwX2h3bW9kOiBhZXM6IF93YWl0X3RhcmdldF9y
-ZWFkeSBmYWlsZWQ6IC0xNgpbICAgIDAuMjY1ODUxXSBvbWFwX2h3bW9kOiBhZXM6IGNhbm5vdCBi
-ZSBlbmFibGVkIGZvciByZXNldCAoMykKWyAgICA2LjIwODg2Nl0gb21hcF9od21vZDogc2hhbTog
-X3dhaXRfdGFyZ2V0X3JlYWR5IGZhaWxlZDogLTE2ClsgICAgNi4yODc3MzJdIG9tYXBfaHdtb2Q6
-IGFlczogX3dhaXRfdGFyZ2V0X3JlYWR5IGZhaWxlZDogLTE2CgpCYXNlZCBvbiB0aGlzLCBJIHdv
-bmRlciBpZiB0aGUgc2hhbSBhbmQgYWVzIG1vZHVsZXMgYXJlIG5vdCBwcmVzZW50LgpJZiB0aGlz
-IGlzIHRoZSBjYXNlLCBpdCBtaWdodCBleHBsYWluIHdoeSBJIGNhbm5vdCB1c2UgdGhlIHJuZyBl
-aXRoZXIuCgphZGFtCj4KPiBhZGFtCj4gPgo+ID4gUmVnYXJkcywKPiA+Cj4gPiBUb255CgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+On 10.09.19 18:18, Dr. David Alan Gilbert wrote:
+> * Alexander Duyck (alexander.duyck@gmail.com) wrote:
+>> On Tue, Sep 10, 2019 at 7:47 AM Michal Hocko <mhocko@kernel.org> wrote:
+>>>
+>>> On Tue 10-09-19 07:42:43, Alexander Duyck wrote:
+>>>> On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
+>>>>>
+>>>>> I wanted to review "mm: Introduce Reported pages" just realize that I
+>>>>> have no clue on what is going on so returned to the cover and it didn't
+>>>>> really help much. I am completely unfamiliar with virtio so please bear
+>>>>> with me.
+>>>>>
+>>>>> On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
+>>>>> [...]
+>>>>>> This series provides an asynchronous means of reporting to a hypervisor
+>>>>>> that a guest page is no longer in use and can have the data associated
+>>>>>> with it dropped. To do this I have implemented functionality that allows
+>>>>>> for what I am referring to as unused page reporting
+>>>>>>
+>>>>>> The functionality for this is fairly simple. When enabled it will allocate
+>>>>>> statistics to track the number of reported pages in a given free area.
+>>>>>> When the number of free pages exceeds this value plus a high water value,
+>>>>>> currently 32, it will begin performing page reporting which consists of
+>>>>>> pulling pages off of free list and placing them into a scatter list. The
+>>>>>> scatterlist is then given to the page reporting device and it will perform
+>>>>>> the required action to make the pages "reported", in the case of
+>>>>>> virtio-balloon this results in the pages being madvised as MADV_DONTNEED
+>>>>>> and as such they are forced out of the guest. After this they are placed
+>>>>>> back on the free list,
+>>>>>
+>>>>> And here I am reallly lost because "forced out of the guest" makes me
+>>>>> feel that those pages are no longer usable by the guest. So how come you
+>>>>> can add them back to the free list. I suspect understanding this part
+>>>>> will allow me to understand why we have to mark those pages and prevent
+>>>>> merging.
+>>>>
+>>>> Basically as the paragraph above mentions "forced out of the guest"
+>>>> really is just the hypervisor calling MADV_DONTNEED on the page in
+>>>> question. So the behavior is the same as any userspace application
+>>>> that calls MADV_DONTNEED where the contents are no longer accessible
+>>>> from userspace and attempting to access them will result in a fault
+>>>> and the page being populated with a zero fill on-demand page, or a
+>>>> copy of the file contents if the memory is file backed.
+>>>
+>>> As I've said I have no idea about virt so this doesn't really tell me
+>>> much. Does that mean that if somebody allocates such a page and tries to
+>>> access it then virt will handle a fault and bring it back?
+>>
+>> Actually I am probably describing too much as the MADV_DONTNEED is the
+>> hypervisor behavior in response to the virtio-balloon notification. A
+>> more thorough explanation of it can be found by just running "man
+>> madvise", probably best just to leave it at that since I am probably
+>> confusing things by describing hypervisor behavior in a kernel patch
+>> set.
+>>
+>> For the most part all the page reporting really does is provide a way
+>> to incrementally identify unused regions of memory in the buddy
+>> allocator. That in turn is used by virtio-balloon in a polling thread
+>> to report to the hypervisor what pages are not in use so that it can
+>> make a decision on what to do with the pages now that it knows they
+>> are unused.
+>>
+>> All this is providing is just a report and it is optional if the
+>> hypervisor will act on it or not. If the hypervisor takes some sort of
+>> action on the page, then the expectation is that the hypervisor will
+>> use some sort of mechanism such as a page fault to discover when the
+>> page is used again.
+> 
+> OK, that's interestingly different (but OK) from some other schemes that
+> hav ebeen described which *require* the guest to somehow indicate the
+> page is in use before starting to use the page again.
+> 
+
+virtio-balloon also has a mode where the guest would not have to
+indicate to the host before re-using a page. Only
+VIRTIO_BALLOON_F_MUST_TELL_HOST enforces this. So it's not completely new.
+
+> Dave
+
+
+-- 
+
+Thanks,
+
+David / dhildenb
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
