@@ -2,91 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 470F6AEFBB
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 18:39:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D1A20AEFE4
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 18:47:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=1GU0rW9mTdbgVQwSFVq2r0kDteMmWD/NzSOAtBnFhyg=; b=EiNTnXpYdRi+SFUmQdLwXDAzK
-	nSdbmcCXopum2hXaFFN1Sga0HiL9QlO39pvGO5n+7KsQB+qnrQthu6FuTsu4vV5SF1fbx572ECzZM
-	PWNpDCOaqkT17Idpkh96FbvBtnbggCYMKYqG+e9orYhIqODWoWX+I18aX0HqqrT+SAjcnVVyK9QES
-	+w9eAx4iALMRUJv7oP5+un6ji462qxUehCgTGxD6n0SeHDn4AKay8/HwJqFsK3dMALJ2WPZ7U9mzT
-	DZbBV/kYLcM8PwEwWXJTWRDsJdsxFz655kV4/16lxe3EuXl9b8F4LA6DQfsHsAgT6ODu1GFoCU7E/
-	oLurQ/+QA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=qpXq/fv6DswVuJNds+sJfRUrxJALvy0Qrp39WyCYvyE=; b=gIJupSm0GLwH8M
+	TijflbTOOamS06ekdlOcEC6NO3ctTFtICWtqtc2U5KLl+k+3Ey62N5wNYvhSKD7k6nTo9xSAXNOFF
+	T/0NUtPIhSHSP49HUPMGqCta4uUc4VZUd4jVN/eDC1oC7+3TPCxCcFNDWwP41CNC+Xwx2xO8mZd4g
+	XFFwF+8RI03q4NAotIm/4fpkIX51nHEWdFzndscxq/Nsbvl3iihU+miQf3z7B2oRyJBybk5osiIg2
+	oIY1VQSQZBHHBIH7sg05Uk0WYFS7e2sFsIeiQd5WeCx6uZdR1smCm8Gy157J76jk5GqU1mVAgygIk
+	9DlAwqGDk9MD2EZ+73Lw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7jAp-0007n1-N1; Tue, 10 Sep 2019 16:39:23 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i7jIW-0002hu-0v; Tue, 10 Sep 2019 16:47:20 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7jAe-0007m1-QD
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 16:39:16 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p13so322758wmh.1
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 09:39:09 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=9rKDGY0MFRZdaZnKSd/lS4UFdLIc/jP8nB7azl11tUI=;
- b=HEbLn3aBGyeecdNNQoeWj1L/XGqtVDfOU6G40udwnVXtfE77N+9FiOx6GFPmrarF23
- uG86Bu6HC3lbUTmj4o4UzYM/gWF6OPUKCeVbpknYQRGnl2pjf8f43WR3X4kP2eLfaZDo
- +poowPimf25Itf9lw/jXbWbDJKrNNKdyJ6iJOuueCCB/TYFEgxn2ujlTosLmOxJ7EPt2
- pkv3r98dWM4mDIg/RYxK0b+eBReztnhW/MH9vPLmp6sADnOxlCAovYJQBFZJM3uSO+8Z
- 8wntJURcOMWawG2co7C3/v2WiW/CFH5PRvEfAYj1/Q1VNYxYv0jzRpbhnArMv1RauHSN
- cGhA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=9rKDGY0MFRZdaZnKSd/lS4UFdLIc/jP8nB7azl11tUI=;
- b=MhyveEWhqPJn2/m27Z6MI04GYPaYusRlDkNivWQN7Xw1QhAyerKcAWVzOh4cDUJevF
- KyivTxBEm5U9pMfsb2NNJWWpjUwgd77OvsCDyySJxyMGmP2U0xwUxb4LePAwuc7XVVmQ
- LjToY/fgFzOD2kwM2qSXH6wGzHKPHaXSDLtlWGmjGwNNlmNccbaqbVKhcc8I8QpRideD
- tJWynexi0qgFeOq6CfG12ullplvYmJDrydzh7onNPpU8UqZ0LQUoN5dGCl+yqYzFhgEW
- gDJw4jZNHNK77o8/5nVsQfTFe0Zfhq3wSyJWx3vg5uT7s3tpsKiWXLqtjGPsMTXzUJXK
- vk9w==
-X-Gm-Message-State: APjAAAVxqSNjrhz5xJ50Krz4ttdOQea6MLeyETuNaIR5lTkpAG80W4g9
- 41KzPPCKzxnZzzVZyOoS1N4=
-X-Google-Smtp-Source: APXvYqw8ebDZH4F2c2uP5ThFXATEfOpH3jYOedzlB19JXj1slg+OSeGXmoaNfo72UIw0B5JqjcJGZg==
-X-Received: by 2002:a7b:c447:: with SMTP id l7mr306535wmi.33.1568133548709;
- Tue, 10 Sep 2019 09:39:08 -0700 (PDT)
-Received: from pali ([2a02:2b88:2:1::5cc6:2f])
- by smtp.gmail.com with ESMTPSA id r65sm293647wmr.9.2019.09.10.09.39.06
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Tue, 10 Sep 2019 09:39:07 -0700 (PDT)
-Date: Tue, 10 Sep 2019 18:39:06 +0200
-From: Pali =?utf-8?B?Um9ow6Fy?= <pali.rohar@gmail.com>
-To: Adam Ford <aford173@gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-Message-ID: <20190910163906.ypyeaido6h4nurvv@pali>
-References: <20190828150037.2640-1-aford173@gmail.com>
- <20190905230443.GA52127@atomide.com>
- <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
- <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
- <20190909134033.s26eiurpat3iekse@pali>
- <20190909163543.GQ52127@atomide.com>
- <CAHCN7x+t-OVRE7pVM4V87_YMWpgO+_Vashfn1s5msoqC5eiwTg@mail.gmail.com>
- <CAHCN7xLaGQMM67VC-2_G8XC7UuG4c+TbbYb4z=ibJwZsQF4YVw@mail.gmail.com>
+ id 1i7jIM-0002gr-DR
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 16:47:12 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=3N//E0zcW7kRGKgSwYJTLOJfeK8dM1KlFJHe42qIo4U=; b=wiqoJdzGZHQ7dsTr38TSaB5P+
+ cta9fRgOiJ/ZTzQP/DDDoMC/vEtYnu6PAXEwTVwDa0gstcCWZJls1EwitVBVZLNv+hhssniiGNquj
+ 70BDI3avTTV851UwbBZq7ch010410u0p2YJqBTSZ/PM6yzP0CTnoSCvGCI4qkeS0TsELT+DsINR1k
+ MewdfyvFEfv0PUNRhZc7Hyv8GCVmPBE/lXRvAHHqmgFyRiyrpwZ5A2SF45JDW0eLdnH2GvJ4spaEn
+ VejQayvONza3cFDRvB7aI3TEUfMtMCM9pJ1jXOKSwj3iBUY/knwaP8JL8RqnGoyUnGZLj6t5tsrEk
+ JDPec4SgA==;
+Received: from shell.armlinux.org.uk
+ ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:58608)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i7jI5-0001Dm-W7; Tue, 10 Sep 2019 17:46:54 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i7jI2-00038s-NO; Tue, 10 Sep 2019 17:46:50 +0100
+Date: Tue, 10 Sep 2019 17:46:50 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: tinywrkb <tinywrkb@gmail.com>
+Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
+ max-speed
+Message-ID: <20190910164650.GS13294@shell.armlinux.org.uk>
+References: <20190910155507.491230-1-tinywrkb@gmail.com>
 MIME-Version: 1.0
-In-Reply-To: <CAHCN7xLaGQMM67VC-2_G8XC7UuG4c+TbbYb4z=ibJwZsQF4YVw@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+Content-Disposition: inline
+In-Reply-To: <20190910155507.491230-1-tinywrkb@gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_093912_854473_233C968B 
-X-CRM114-Status: GOOD (  16.69  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190910_094710_457543_FC0395E2 
+X-CRM114-Status: GOOD (  21.41  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (pali.rohar[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,7 +76,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -107,86 +88,100 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============1793124943157460829=="
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Shawn Guo <shawnguo@kernel.org>,
+ Sascha Hauer <s.hauer@pengutronix.de>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Fabio Estevam <festevam@gmail.com>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On Tue, Sep 10, 2019 at 06:55:07PM +0300, tinywrkb wrote:
+> Cubox-i Solo/DualLite carrier board has 100Mb/s magnetics while the
 
---===============1793124943157460829==
-Content-Type: multipart/signed; micalg=pgp-sha1;
-	protocol="application/pgp-signature"; boundary="v7pe77r44rvnt7o5"
-Content-Disposition: inline
+That statement is false, sorry.  All boards support 1G.
 
+> Atheros AR8035 PHY on the MicroSoM v1.3 CPU module is a 1GbE PHY device.
+> 
+> Since commit 5502b218e001 ("net: phy: use phy_resolve_aneg_linkmode in
+> genphy_read_status") ethernet is broken on Cubox-i Solo/DualLite devices.
+> 
+> This adds a phy node to the MicroSoM DTS and a 100Mb/s max-speed limit
+> to the Cubox-i Solo/DualLite carrier DTS.
+> 
+> Signed-off-by: tinywrkb <tinywrkb@gmail.com>
+> ---
+> This patch fixes ethernet on my Cubox-i2-300-D which is limited to 100Mb/s,
+> afaik due to the carrier board  magnetics, and was since commit 5502b218e001
+> ("net: phy: use phy_resolve_aneg_linkmode in genphy_read_status")
+> 
+> The AR8035 PHY on the CPU module reports to the driver as 1GbE capable
+> via MII_BSMR's BMSR_ESTATEN status bit, the auto-negotiation sets the
+> speed at 1GbE while the carrier board can't support it.
+> Same behavior with the generic phy_device and the at803x drivers.
+> 
+> While the PHY is on the CPU module board I added the max-speed limit to
+> the cubox-i carrier DTS as I suspect that if the Solo or DualLite v1.3
+> MicroSoM will be connected to a 1GbE capable carrier board then it would
+> work correctly with 1GbE.
+> 
+> I can confirm that this commit doesn't break networking on the my
+> Cubox-i4Pro Quad (i4P-300-D) with it's 1GbE capable carrier board, and
+> was tested separately with the generic phy_device and at803x drivers.
+> 
+>  arch/arm/boot/dts/imx6dl-cubox-i.dts  | 4 ++++
+>  arch/arm/boot/dts/imx6qdl-sr-som.dtsi | 9 +++++++++
+>  2 files changed, 13 insertions(+)
+> 
+> diff --git a/arch/arm/boot/dts/imx6dl-cubox-i.dts b/arch/arm/boot/dts/imx6dl-cubox-i.dts
+> index 2b1b3e193f53..cfc82513c78c 100644
+> --- a/arch/arm/boot/dts/imx6dl-cubox-i.dts
+> +++ b/arch/arm/boot/dts/imx6dl-cubox-i.dts
+> @@ -49,3 +49,7 @@
+>  	model = "SolidRun Cubox-i Solo/DualLite";
+>  	compatible = "solidrun,cubox-i/dl", "fsl,imx6dl";
+>  };
+> +
+> +&ethphy {
+> +	max-speed = <100>;
+> +};
+> diff --git a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
+> index 6d7f6b9035bc..969bc96c3f99 100644
+> --- a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
+> +++ b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
+> @@ -57,6 +57,15 @@
+>  	phy-reset-duration = <2>;
+>  	phy-reset-gpios = <&gpio4 15 GPIO_ACTIVE_LOW>;
+>  	status = "okay";
+> +	phy-handle = <&ethphy>;
+> +	mdio {
+> +		#address-cells = <1>;
+> +		#size-cells = <0>;
+> +		ethphy: ethernet-phy@0 {
+> +			compatible = "ethernet-phy-ieee802.3-c22";
+> +			reg = <0>;
+> +		};
+> +	};
+>  };
+>  
+>  &iomuxc {
+> -- 
+> 2.23.0
+> 
+> 
 
---v7pe77r44rvnt7o5
-Content-Type: text/plain; charset=utf-8
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Tuesday 10 September 2019 11:21:34 Adam Ford wrote:
-> According to a note in omap_hwmod_3xxx_data.c,
->=20
-> /*
->  * Apparently the SHA/MD5 and AES accelerator IP blocks are
->  * only present on some AM35xx chips, and no one knows which
->  * ones.  See
->  * http://www.spinics.net/lists/arm-kernel/msg215466.html So
->  * if you need these IP blocks on an AM35xx, try uncommenting
->  * the following lines.
->  */
->=20
-> I decided to uncomment the hwmod entries, and I got the following:
->=20
-> [    0.263222] omap_hwmod: sham: _wait_target_ready failed: -16
-> [    0.263248] omap_hwmod: sham: cannot be enabled for reset (3)
-> [    0.265837] omap_hwmod: aes: _wait_target_ready failed: -16
-> [    0.265851] omap_hwmod: aes: cannot be enabled for reset (3)
-> [    6.208866] omap_hwmod: sham: _wait_target_ready failed: -16
-> [    6.287732] omap_hwmod: aes: _wait_target_ready failed: -16
-
-Hi! Same errors I got in qemu-n900, but not on real N900. So I guess
-those errors means that IP blocks are not present.
-
-> Based on this, I wonder if the sham and aes modules are not present.
-> If this is the case, it might explain why I cannot use the rng either.
-
-Probably this is the reason, you do not have crypto/rng HW engine.
-
---=20
-Pali Roh=C3=A1r
-pali.rohar@gmail.com
-
---v7pe77r44rvnt7o5
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iF0EABECAB0WIQS4VrIQdKium2krgIWL8Mk9A+RDUgUCXXfRqAAKCRCL8Mk9A+RD
-UvMwAKC5PytcObjM5hlbkUO3+dfjWZwPBQCffPh8UWUkmuzDbXQs1ybxGZqap80=
-=Gd7N
------END PGP SIGNATURE-----
-
---v7pe77r44rvnt7o5--
-
-
---===============1793124943157460829==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============1793124943157460829==--
-
