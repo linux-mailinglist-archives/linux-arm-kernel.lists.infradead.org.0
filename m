@@ -2,89 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 23A94AF0B4
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 19:50:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E2A3CAF0B9
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 19:52:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:From:To:
-	Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=/dgC8m2qOzaDJnbg3RWFPKuiiJZSgmMorjGZqRngisU=; b=sGpSrIAYc4c2vb
-	WbnyBHo4wKocZ3UcstJT2ZnJDjxeGZl5QStTjqH/5dfhbyveG4ygOTZp0nbkRLZnxe9yjJ2u8bV5e
-	ppiW52245Pf48SAX72bGKGp2W4qq9vSqyYuxOxLhu7YypwGMwXC6OjKy0OS7VWEWJWaf7UtzwvaqN
-	AnRHEXyDIRAvN5qcNsDGMeQk9ORwFTMAAM4I+C/qn+76TW1dei8Bd+7EgMABCREo9882DY1HJHsXs
-	uxxI8/HCNGpASrNRhv1xBgAj8ovnzVIygesVuIiL++6eqsuK6e73KhF9GYye0f8k10hn/2FbDOvnx
-	wU/ttL0YIDYki8vyGfCA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=zl9HhktFs13/Ki5STNgcNHGpKbmyQYK53PY6csgKTBo=; b=cwbrLxFHkjxohA
+	y9PJV95g6ZMxfTPK7acbYTLETsO42lCNbWHKukjunHU6fkREanWFxkPFNq3w00+7aJfWUMTT8rw2p
+	z+UQSZiHJY37tOkmWkRIn4ZXieV8K7Q1wezdz/6XPZKjLbpYNY6icOIAd2np6HwbbFll5ynZrWfah
+	mFfi7ktdpfa66z0YIvJoAwcOEXHKa24ENF9hHGCQpnsdWvUku6YPFLvH5ddCDEGQ9omsZhURzTIEB
+	yX7g9eVicZYFHPXougmmvIGIyt/sOrRGaurED561ucrOgFBtXKwXDz5nPtLxvnt6Gqv1mgylLokUJ
+	wSKGWu1Anhx1rxiudF1w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7kHh-0008Bu-Vc; Tue, 10 Sep 2019 17:50:34 +0000
-Received: from ms3.ystp.ac.ir ([78.39.159.15])
+	id 1i7kJW-00006B-25; Tue, 10 Sep 2019 17:52:26 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7kHX-0008Aa-5x
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 17:50:25 +0000
-Received: from localhost (localhost [127.0.0.1])
- by ms3.ystp.ac.ir (Postfix) with ESMTP id 626069CA7D0;
- Tue, 10 Sep 2019 17:41:36 +0430 (+0430)
-Received: from ms3.ystp.ac.ir ([127.0.0.1])
- by localhost (ms3.ystp.ac.ir [127.0.0.1]) (amavisd-new, port 10032)
- with ESMTP id vDh2XLvy_bp8; Tue, 10 Sep 2019 17:41:36 +0430 (+0430)
-Received: from localhost (localhost [127.0.0.1])
- by ms3.ystp.ac.ir (Postfix) with ESMTP id D1F889CA7CF;
- Tue, 10 Sep 2019 17:41:35 +0430 (+0430)
-DKIM-Filter: OpenDKIM Filter v2.10.3 ms3.ystp.ac.ir D1F889CA7CF
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ystp.ac.ir;
- s=52244776-9648-11E6-8E52-D9F3D0CA04A5; t=1568121095;
- bh=pJXfywXhiBshMOZwrwT6j4GPOZJFwPovP45q7L7XP4A=;
- h=To:From:Message-ID:Date:MIME-Version;
- b=GyFTEJ4O+BqpFbC6Z8dFZSSuxRtyGwczTlda3NRS4NmarI10RZmTkQPSeyE8z6lh8
- wQvd1rmy8O1/iZ20VYqjgV3KhZ6pv2sZZlfHnbXX/7bMTWPGwU1P9sirpdmH08FtUo
- z3OQzRP5D4Myy0vRNoTAVgYcXR2NU3xHzj+dEROE=
-X-Virus-Scanned: amavisd-new at ms3.ystp.ac.ir
-Received: from ms3.ystp.ac.ir ([127.0.0.1])
- by localhost (ms3.ystp.ac.ir [127.0.0.1]) (amavisd-new, port 10026)
- with ESMTP id MXnhCXpHEdcK; Tue, 10 Sep 2019 17:41:35 +0430 (+0430)
-Received: from mail.ystp.ac.ir (unknown [194.53.178.134])
- by ms3.ystp.ac.ir (Postfix) with ESMTPSA id 579B49CA770;
- Tue, 10 Sep 2019 17:41:33 +0430 (+0430)
-To: "rob herring" <rob.herring@calxeda.com>,
- "hsweeten" <hsweeten@visionengravers.com>, "buildroot" <buildroot@busybox.net>,
- "linux arm kernel" <linux-arm-kernel@lists.infradead.org>,
- "Paul Chavent" <paul.chavent@fnac.net>
-From: nik_bin_nek_alwi <shookuhi@ystp.ac.ir>
-Subject: =?UTF-8?Q?=F0=9F=93=AA_Huhu._wollte_mich_mal_?=
- =?UTF-8?Q?wieder_bei_dir_melden.?=
-Message-ID: <eb403e56-8b81-4024-b620-a3fe1144202e@ystp.ac.ir>
-Date: Tue, 10 Sep 2019 07:06:55 -0600
-User-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ id 1i7kJL-00005Y-Ul
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 17:52:17 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 7BE91AD17;
+ Tue, 10 Sep 2019 17:52:14 +0000 (UTC)
+Date: Tue, 10 Sep 2019 19:52:13 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Alexander Duyck <alexander.duyck@gmail.com>
+Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+Message-ID: <20190910175213.GD4023@dhcp22.suse.cz>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+ <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+ <20190910144713.GF2063@dhcp22.suse.cz>
+ <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
 MIME-Version: 1.0
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_105023_952063_65179599 
-X-CRM114-Status: UNSURE (   1.08  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 3.1 (+++)
+X-CRM114-CacheID: sfid-20190910_105216_288621_BBCC6F2D 
+X-CRM114-Status: GOOD (  31.50  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (3.1 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 2.5 URIBL_DBL_SPAM         Contains a spam URL listed in the Spamhaus DBL
- blocklist [URIs: cal149.xyz]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 URIBL_SBL_A Contains URL's A record listed in the Spamhaus SBL
- blocklist [URIs: cal149.xyz]
- 0.6 URIBL_SBL Contains an URL's NS IP listed in the Spamhaus SBL
- blocklist [URIs: cal149.xyz]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.0 L_8BIT_MISMATCH        Header says 7bits but body disagrees
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,13 +64,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
+ "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Rik van Riel <riel@surriel.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-S2FubnN0IGR1IGRpciBkYXMgdm9yc3RlbGxlbj8gaHR0cDovL25nYmxxYXguQ2FsMTQ5Lnh5ei9p
-bmRleAoKCgoKCgpfX18KR3J1w58KbmlrX2Jpbl9uZWtfYWx3aUB5YWhvby5jb20KCl9fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwg
-bWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8v
-bGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Tue 10-09-19 09:05:43, Alexander Duyck wrote:
+> On Tue, Sep 10, 2019 at 7:47 AM Michal Hocko <mhocko@kernel.org> wrote:
+> >
+> > On Tue 10-09-19 07:42:43, Alexander Duyck wrote:
+> > > On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
+> > > >
+> > > > I wanted to review "mm: Introduce Reported pages" just realize that I
+> > > > have no clue on what is going on so returned to the cover and it didn't
+> > > > really help much. I am completely unfamiliar with virtio so please bear
+> > > > with me.
+> > > >
+> > > > On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
+> > > > [...]
+> > > > > This series provides an asynchronous means of reporting to a hypervisor
+> > > > > that a guest page is no longer in use and can have the data associated
+> > > > > with it dropped. To do this I have implemented functionality that allows
+> > > > > for what I am referring to as unused page reporting
+> > > > >
+> > > > > The functionality for this is fairly simple. When enabled it will allocate
+> > > > > statistics to track the number of reported pages in a given free area.
+> > > > > When the number of free pages exceeds this value plus a high water value,
+> > > > > currently 32, it will begin performing page reporting which consists of
+> > > > > pulling pages off of free list and placing them into a scatter list. The
+> > > > > scatterlist is then given to the page reporting device and it will perform
+> > > > > the required action to make the pages "reported", in the case of
+> > > > > virtio-balloon this results in the pages being madvised as MADV_DONTNEED
+> > > > > and as such they are forced out of the guest. After this they are placed
+> > > > > back on the free list,
+> > > >
+> > > > And here I am reallly lost because "forced out of the guest" makes me
+> > > > feel that those pages are no longer usable by the guest. So how come you
+> > > > can add them back to the free list. I suspect understanding this part
+> > > > will allow me to understand why we have to mark those pages and prevent
+> > > > merging.
+> > >
+> > > Basically as the paragraph above mentions "forced out of the guest"
+> > > really is just the hypervisor calling MADV_DONTNEED on the page in
+> > > question. So the behavior is the same as any userspace application
+> > > that calls MADV_DONTNEED where the contents are no longer accessible
+> > > from userspace and attempting to access them will result in a fault
+> > > and the page being populated with a zero fill on-demand page, or a
+> > > copy of the file contents if the memory is file backed.
+> >
+> > As I've said I have no idea about virt so this doesn't really tell me
+> > much. Does that mean that if somebody allocates such a page and tries to
+> > access it then virt will handle a fault and bring it back?
+> 
+> Actually I am probably describing too much as the MADV_DONTNEED is the
+> hypervisor behavior in response to the virtio-balloon notification. A
+> more thorough explanation of it can be found by just running "man
+> madvise", probably best just to leave it at that since I am probably
+> confusing things by describing hypervisor behavior in a kernel patch
+> set.
+
+This analogy is indeed confusing and doesn't help to build a picture.
+
+> For the most part all the page reporting really does is provide a way
+> to incrementally identify unused regions of memory in the buddy
+> allocator. That in turn is used by virtio-balloon in a polling thread
+> to report to the hypervisor what pages are not in use so that it can
+> make a decision on what to do with the pages now that it knows they
+> are unused.
+
+So essentially you want to store metadata into free pages and control
+what the allocator can do with them? Namely buddy merging if the type
+doesn't match?
+
+> All this is providing is just a report and it is optional if the
+> hypervisor will act on it or not. If the hypervisor takes some sort of
+> action on the page, then the expectation is that the hypervisor will
+> use some sort of mechanism such as a page fault to discover when the
+> page is used again.
+
+OK so the baloon driver is in charge of this metadata and the allocator
+has to live with that. Isn't that a layer violation?
+
+-- 
+Michal Hocko
+SUSE Labs
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
