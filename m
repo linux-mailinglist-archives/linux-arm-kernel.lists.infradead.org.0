@@ -2,85 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8F8E2AEEE3
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 17:49:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 81F9DAEF09
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 17:55:49 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I/Dv8exKpK1+2sQuFzTrX+S0Kvu4Xwl47TEG8kkihXY=; b=Q6mQTr3HVLIWGR
-	fJqMVAVjLfEOmu/bfmAxArtNQCrruTpqoA6Rc5coCPA13vltWZdRKtwyRe0X5JdEVJs9UlVFH0Geq
-	5i9uVVgezACkHu+lOn24I5+Otx1+5aRAcnbiR8Zs2HTVu5gY5VsH8d0UE+8pAE5+EwiGXg5wky2PC
-	OHnrdjV6BJ7p9+B6b8JU3c8m4KKVewT4iZu+xpKRnZqUqaTodGYG7pH02ellgdnLbnYj/HzGK/3HM
-	ZQfai0g3JKySS344xN1u0QlMQdpVNRoo7QcCtvDXzgkVLBbW0+U5q8GidPOCTCA8X+Wdg2T/YU1tc
-	Ifb0yo3qhojUVqaWqEOA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zE55MyUuU4vFKlN+JGFrx/ZQ2RwlFAbcffICzA0WgCM=; b=mXaaoa1eSB1GWV
+	HVQLVoRzt7/cdNwro5NmTuugcZZH8dhRG0uV9w8Q5d0g4Uxx9oTP83FtMITSEGkTZdQYWUnnHqiq5
+	i56YwcSJUWf4PVnsnpYRNFBWfZuTH7Mvx6B/VDZLJxAF/M3uyl351fUj8vGSfMYStCTZWxRyhDzPs
+	9WRYuYv45W4t2mmoW4OOi1ewRqYyO9507EzxIhRR9Yoa110YQRV96Dk8ZzoTJfLRCTFLXjcBEKoPv
+	JOMvPh7U1lMuSBtg/2W/qUASG+bfDPRw1ElWhuam6PI1zldLaVMGGfuFM/OhPz4eNIq4qIqI72Y6B
+	Clp5yFflHjkxm2EAwnUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7iNv-00062Y-CI; Tue, 10 Sep 2019 15:48:51 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1i7iUX-0000Rb-Pf; Tue, 10 Sep 2019 15:55:41 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7iNm-00061r-62
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 15:48:43 +0000
-Received: by mail-io1-xd42.google.com with SMTP id b136so38652720iof.3
+ id 1i7iUO-0000RE-0a
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 15:55:33 +0000
+Received: by mail-wm1-x343.google.com with SMTP id t9so157347wmi.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 08:48:41 -0700 (PDT)
+ Tue, 10 Sep 2019 08:55:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=coLUn/mFfKhtEGTZkfKU7iKSONi2SChdAx43tZsS4uk=;
- b=okO7qHCmIYGdIBDffowQ8Wck3DnmwENwiHbs8BFei3qdB7cleA0izNjAMyKE2F7+ef
- wtmYj5wqOoXNY0lHRjg92QCpCFjXB2/0JUrhu6PR8cBkoiE51XWVpfLfqECQ90lNNcO1
- Q/WD65oXGV9FQBMNEOOEgnk+vaPsuJ7oq95iEELrpo3/BtsaKCYITkhhqxUVRCLvxCtg
- UxwoBknPo+HoYtYnbnyJfa5cbrMp+vNdrdjtZ/W6g2bBYgWxdtskZeJyZylvf0Rp+QvX
- x3b1Yuaow7UlwiWtHw5E7iczZuMN0tTZAxA+3+iR3M+lHhxQH5p08KYR9wqt3wDoyqn5
- +t8g==
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YJ/xSRj04hb+Vjp0G8v57BGzk2RHL40NPxcaQuTTxb0=;
+ b=NopmjHDf1N0d3pOf0ECTnZpkWbC5PPwUogiwZsUwDTIwgEgQ47sCN/WtEU/LQLlPSv
+ fZ9X9O89kZTEP6e7o3p9jm+rLnGIDG4++Rxp/zhxPi8gUhsz3x1lbkfKW3RtvUOKYtb/
+ Q53V94Qyzox2PxZnj6wzk0UiwSuCBZT1oQJ8M/mIyqnarV1hZuegeQj8J9SUyIV48f09
+ yVnsIrEGiUAWTJb81dWQdA9Y541KxvANRRMTlpY5vX1yHTjkB2/7v8ZvBXwQLqOXq7u9
+ uqboVrDdxLwGW1pquRt+1L+t0qtJ0+3ugritCgb7zcDdqRYZJTTFcaGyvz5stIAtXU/S
+ J4KA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=coLUn/mFfKhtEGTZkfKU7iKSONi2SChdAx43tZsS4uk=;
- b=RbHnzfp49yTfwUphLzABusgBhAYHFP7gcH6mcYhaVy5qopbHqQpMi2rFxPIPeNN8o8
- hCAwRKeBfiXrdPkNgSgJnaHGAqi7HqnojqyteZGbMw6Z+rO6pgIZmmNL0L99iZs+cfWY
- JxhhMXmJ6thKh65JRXWM+7gotrYcQtUvhOkqZCr1FyrqmemCMLQNUMNvgVKiSKZr5GPb
- +ntJ4OC3vNk4qgxVsypChB+FRg/dyiSn1ip5yDhxqFFfGvtOmiQ5BNZzvgYAKZ4KaV+O
- W84sgDCzemOJ7baZrhrSOC10sT0cc+G467zR7m7p8ygwmPgsoCj19ZeuzyYGH11U74tz
- GQag==
-X-Gm-Message-State: APjAAAXeKqqs81uku16LqHGhNUBUTMj/h/m047LRqzy2XaMgpLYybBX+
- 0us7tvnt3mTSw//qcd8NppStA1E6kRKHrFTJOGA=
-X-Google-Smtp-Source: APXvYqyNK2KpMgOp5yFAwKzmIl05wi6Oom/MmgyrjpQIHsqWHE02/1onqF5gDO4XoszLJOEPF4gT+Ma3ZxxXzdKWHOo=
-X-Received: by 2002:a5e:de47:: with SMTP id e7mr899998ioq.127.1568130520830;
- Tue, 10 Sep 2019 08:48:40 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=YJ/xSRj04hb+Vjp0G8v57BGzk2RHL40NPxcaQuTTxb0=;
+ b=QMAtA+X+ZHve0eft6jNmyitblMBUaPmXSdgzHSeet/+GzdN6keui4dXaJuhUezefO2
+ 931l/umJZwIj+i+1liKabi5bLSJWydmLF+77PmMvngDqa/ROYsy2vq1qaxYQlPCyYMj3
+ /0XOz9D6TizDs0sv7NGZgsiTBTjmaTBTgDD8Puf0izQW8PeUhP/GyjJ8o8bdGzRycwkw
+ fdy3CaPNrvajJvc2MjBVRprfLLysPu/8OHj/SgWNqlQiRmV03yYhibZJPbxgFSZjQk1l
+ wuLeQwOVcgL8a+udgw6UoO1yCiW6rcxhvW/Xx63xIh+s/HHk5YLoI1adHEa+fsSaKtul
+ avcw==
+X-Gm-Message-State: APjAAAUCp6ZzH4cfjMiDNq0LbbRRMcq7SQuWwUTKQ/hSP9Wy7KI2CFUS
+ IYtK/sc+N0FX61wZ5qpQweU=
+X-Google-Smtp-Source: APXvYqwRgrZHxJJlCCWWTIdvJK1X8hVtJn4cq1fyPIBd0nfF2LAchwsIZdzc9hsmxdjosHFLCGuzAw==
+X-Received: by 2002:a7b:c094:: with SMTP id r20mr143261wmh.134.1568130930147; 
+ Tue, 10 Sep 2019 08:55:30 -0700 (PDT)
+Received: from arch-dsk-01.twb ([77.126.41.65])
+ by smtp.gmail.com with ESMTPSA id y3sm17167133wrw.83.2019.09.10.08.55.28
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Tue, 10 Sep 2019 08:55:29 -0700 (PDT)
+From: tinywrkb <tinywrkb@gmail.com>
+To: 
+Subject: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
+ max-speed
+Date: Tue, 10 Sep 2019 18:55:07 +0300
+Message-Id: <20190910155507.491230-1-tinywrkb@gmail.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-References: <20190828150037.2640-1-aford173@gmail.com>
- <20190905230443.GA52127@atomide.com>
- <CAHCN7xL0fbr=Sv+b=0AuGB1PPhAAFdAFLEd_iBM+ZMTkUw5sHQ@mail.gmail.com>
- <CAHCN7xL-Gfxe0qF5w7BUsHnyhcNNpmCnchdKErnmiqggXfsLWw@mail.gmail.com>
- <20190909134033.s26eiurpat3iekse@pali> <20190909163543.GQ52127@atomide.com>
-In-Reply-To: <20190909163543.GQ52127@atomide.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Tue, 10 Sep 2019 10:48:29 -0500
-Message-ID: <CAHCN7x+t-OVRE7pVM4V87_YMWpgO+_Vashfn1s5msoqC5eiwTg@mail.gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_084842_231177_07CE0B6A 
-X-CRM114-Status: GOOD (  19.46  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190910_085532_060559_37ED25DB 
+X-CRM114-Status: GOOD (  12.69  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
+ provider (tinywrkb[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -100,59 +98,90 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, tinywrkb@gmail.com,
+ Russell King <linux@armlinux.org.uk>, open list <linux-kernel@vger.kernel.org>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gTW9uLCBTZXAgOSwgMjAxOSBhdCAxMTozNSBBTSBUb255IExpbmRncmVuIDx0b255QGF0b21p
-ZGUuY29tPiB3cm90ZToKPgo+ICogUGFsaSBSb2jDoXIgPHBhbGkucm9oYXJAZ21haWwuY29tPiBb
-MTkwOTA5IDEzOjQxXToKPiA+IE9uIE1vbmRheSAwOSBTZXB0ZW1iZXIgMjAxOSAwODozNzowOSBB
-ZGFtIEZvcmQgd3JvdGU6Cj4gPiA+IEkgYXBwbGllZCB0aGlzIG9uIDUuMyBhbmQgaXQgaXMgd29y
-a2luZy4gIEkgYXNzdW1lIHRoZSBzYW1lIGlzIHRydWUgaW4gZm9yLW5leHQuCj4KPiBIbW0gSSBu
-b3RpY2VkIEkgc3RvcHBlZCBnZXR0aW5nIFJORyBkYXRhIGFmdGVyIHNldmVyYWwgcm1tb2QgbW9k
-cHJvYmUKPiBjeWNsZXMsIG9yIHNldmVyYWwgaGQgL2Rldi9yYW5kb20gcmVhZHMuIEFueWJvZHkg
-ZWxzZSBzZWVpbmcgdGhhdD8KPgo+ID4gPiBEbyB5b3Ugd2FudCB0byBzdWJtaXQgYSBmb3JtYWwg
-cGF0Y2g/ICBJICBjYW4gbWFyayBpdCBhcyAndGVzdGVkLWJ5Jwo+ID4gPiBUaGlzIHJlYWxseSBo
-ZWxwcyBzcGVlZCB1cCB0aGUgc3RhcnR1cCBzZXF1ZW5jZSBvbiBib2FyZHMgd2l0aCBzc2hkCj4g
-PiA+IGJlY2F1c2UgaXQgZGVsYXlzIGZvciBuZWFybHkgODAgc2Vjb25kcyB3YWl0aW5nIGZvciBl
-bnRyb3B5IHdpdGhvdXQKPiA+ID4gdGhlIGh3cm5nLgo+ID4KPiA+IEhpISBXaGVuIGFwcGx5aW5n
-IGEgcGF0Y2gsIGNvdWxkIHlvdSBwbGVhc2UgZGlzYWJsZSB0aGlzIHJuZyBmb3IgbjkwMD8KPiA+
-Cj4gPiBJbiBvbWFwMy1uOTAwLmR0cyBmb3Igcm5nIHNob3VsZCBiZSBzdGF0dXMgPSAiZGlzYWJs
-ZWQiIChhcyBUb255IGFscmVhZHkKPiA+IHdyb3RlKSwgc2ltaWxhcmx5IGxpa2UgZm9yIGFlcy4K
-Pgo+IFllYWggSSdsbCBwb3N0IGEgcHJvcGVyIHBhdGNoIGFmdGVyIC1yYzEuCgpGWUksCgpCeSBw
-dXR0aW5nIHlvdXIgbm9kZSBpbnRvIG9tYXAzNHh4LmR0c2kgYW5kIG9tYXAzNnh4LmR0c2kgYWxv
-bmcgd2l0aAp0aGUgZm9sbG93aW5nLCBJIGNhbiBnZXQgdGhlIFJORyB0byB3b3JrIG9uIGFuIE9N
-QVAzNTMwIGFuZCBhIERNMzczMC4KCgpkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvb21h
-cDM0eHgtb21hcDM2eHgtY2xvY2tzLmR0c2kKYi9hcmNoL2FybS9ib290L2R0cy9vbWFwMzR4eC1v
-bWFwMzZ4eC1jbG9ja3MuZHRzaQppbmRleCA1ZTlkMWFmY2Q0MjIuLjczZjM1MWU2ZDEzMiAxMDA2
-NDQKLS0tIGEvYXJjaC9hcm0vYm9vdC9kdHMvb21hcDM0eHgtb21hcDM2eHgtY2xvY2tzLmR0c2kK
-KysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvb21hcDM0eHgtb21hcDM2eHgtY2xvY2tzLmR0c2kKQEAg
-LTI1OSw3ICsyNTksNyBAQAogICAgICAgICAgICAgICAgICAgICAgICAgPCZpMmMxX2ljaz4sIDwm
-dWFydDJfaWNrPiwgPCZ1YXJ0MV9pY2s+LCA8JmdwdDExX2ljaz4sCiAgICAgICAgICAgICAgICAg
-ICAgICAgICA8JmdwdDEwX2ljaz4sIDwmbWNic3A1X2ljaz4sIDwmbWNic3AxX2ljaz4sCiAgICAg
-ICAgICAgICAgICAgICAgICAgICA8Jm9tYXBjdHJsX2ljaz4sIDwmYWVzMl9pY2s+LCA8JnNoYTEy
-X2ljaz4sIDwmaWNyX2ljaz4sCi0gICAgICAgICAgICAgICAgICAgICAgICA8JmRlczJfaWNrPiwg
-PCZtc3Byb19pY2s+LCA8Jm1haWxib3hlc19pY2s+LAorICAgICAgICAgICAgICAgICAgICAgICAg
-PCZkZXMyX2ljaz4sIDwmbXNwcm9faWNrPiwgPCZtYWlsYm94ZXNfaWNrPiwKPCZybmdfaWNrPiwK
-ICAgICAgICAgICAgICAgICAgICAgICAgIDwmbXNwcm9fZmNrPjsKICAgICAgICB9OwogfTsKCkkg
-dHJpZWQgZG9pbmcgdGhlIHNhbWUgZm9yIGFtMzUxNywgYnV0IGl0IGRvZXNuJ3QgYXBwZWFyIHRv
-IHdvcmsuICBJbgpmYWN0LCB0aGUgYm9hcmQgaGFuZ3MgYXQgYm9vdCB3aXRoIG5vIHNwbGF0LCBz
-byBJIGFzc3VtZSB0aGF0IHNvbWUKY2xvY2sgaXNuJ3QgcnVubmluZyBhbmQgY2F1c2luZyBhIGhh
-bmcuICBGaWd1cmUgNC01MCBpbiB0aGUgQU0zNTE3IFRSTQpzaG93cyB0aGUgc2VjdXJpdHlfbDRf
-aWNsazIsIHNvIEkgd29uZGVyIGlmIHRoZSBIVyBtb2RzIGZvciBBRVMsIFNIQSwKZXRjIGFyZSBk
-b2luZyBzb21ldGhpbmcgdG8gZW5hYmxlIHRoaXMgY2xvY2suICBUaG9zZSBIV21vZHMgYXJlCmRp
-c2FibGVkIG9uIEFNMzUxNy4gIEkgdHJpZWQgdHVybmluZyBvbiB0aGUgaHdtb2RzIGZvciB0aGVt
-IGJlZm9yZQp3aXRob3V0IHN1Y2Nlc3MsIGJ1dCBJJ2xsIHRyeSBpdCBhZ2Fpbi4KCmFkYW0KPgo+
-IFJlZ2FyZHMsCj4KPiBUb255CgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVs
-QGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9s
-aXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Cubox-i Solo/DualLite carrier board has 100Mb/s magnetics while the
+Atheros AR8035 PHY on the MicroSoM v1.3 CPU module is a 1GbE PHY device.
+
+Since commit 5502b218e001 ("net: phy: use phy_resolve_aneg_linkmode in
+genphy_read_status") ethernet is broken on Cubox-i Solo/DualLite devices.
+
+This adds a phy node to the MicroSoM DTS and a 100Mb/s max-speed limit
+to the Cubox-i Solo/DualLite carrier DTS.
+
+Signed-off-by: tinywrkb <tinywrkb@gmail.com>
+---
+This patch fixes ethernet on my Cubox-i2-300-D which is limited to 100Mb/s,
+afaik due to the carrier board  magnetics, and was since commit 5502b218e001
+("net: phy: use phy_resolve_aneg_linkmode in genphy_read_status")
+
+The AR8035 PHY on the CPU module reports to the driver as 1GbE capable
+via MII_BSMR's BMSR_ESTATEN status bit, the auto-negotiation sets the
+speed at 1GbE while the carrier board can't support it.
+Same behavior with the generic phy_device and the at803x drivers.
+
+While the PHY is on the CPU module board I added the max-speed limit to
+the cubox-i carrier DTS as I suspect that if the Solo or DualLite v1.3
+MicroSoM will be connected to a 1GbE capable carrier board then it would
+work correctly with 1GbE.
+
+I can confirm that this commit doesn't break networking on the my
+Cubox-i4Pro Quad (i4P-300-D) with it's 1GbE capable carrier board, and
+was tested separately with the generic phy_device and at803x drivers.
+
+ arch/arm/boot/dts/imx6dl-cubox-i.dts  | 4 ++++
+ arch/arm/boot/dts/imx6qdl-sr-som.dtsi | 9 +++++++++
+ 2 files changed, 13 insertions(+)
+
+diff --git a/arch/arm/boot/dts/imx6dl-cubox-i.dts b/arch/arm/boot/dts/imx6dl-cubox-i.dts
+index 2b1b3e193f53..cfc82513c78c 100644
+--- a/arch/arm/boot/dts/imx6dl-cubox-i.dts
++++ b/arch/arm/boot/dts/imx6dl-cubox-i.dts
+@@ -49,3 +49,7 @@
+ 	model = "SolidRun Cubox-i Solo/DualLite";
+ 	compatible = "solidrun,cubox-i/dl", "fsl,imx6dl";
+ };
++
++&ethphy {
++	max-speed = <100>;
++};
+diff --git a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
+index 6d7f6b9035bc..969bc96c3f99 100644
+--- a/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
++++ b/arch/arm/boot/dts/imx6qdl-sr-som.dtsi
+@@ -57,6 +57,15 @@
+ 	phy-reset-duration = <2>;
+ 	phy-reset-gpios = <&gpio4 15 GPIO_ACTIVE_LOW>;
+ 	status = "okay";
++	phy-handle = <&ethphy>;
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++		ethphy: ethernet-phy@0 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			reg = <0>;
++		};
++	};
+ };
+ 
+ &iomuxc {
+-- 
+2.23.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
