@@ -2,83 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CC9EAAE7F6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 12:23:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C9506AE800
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 12:25:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=YcTatb70VOPM3iFUrgSSfFpdm+2FirdMIvqsMPs8DMQ=; b=kH02iVf+Fdwqvp
-	KSTzVuMwfFyN1/KpNCIZ6CoBK0S8oB6VwUNMUi4+3u3NNNhYY7HwPOQPFPExUaloVgbTib+t0R1NC
-	LKeoP4osBY3561tdpohh1CJoeopkVLn3VRwO7ZQg0WhmXr1TmkC5yU0ZZK+uAZ/HNeUd9cbzctJvO
-	KsIpHKg+HZn9/QmSgE6ITBskJPRPlQ3Wfhj17ePQsB+UvhxIHzMTdZZ8zM8JMrfSyhvz2DAI32/il
-	Wy6g1gvQR1bA64CcoEaDiezrnD84qJpEfVTlNvf1m3yE1+3y4E8jx7+7CbEoOtx788IFbMG0LI9f7
-	eo+iHETSGgnxB0A//Org==;
+	List-Owner; bh=OZwPQeyL0rSjaoSfyuJtnUhLdxaeLkU1MFbHAq93CXw=; b=Ez+pI3XZoPdT1F
+	U7+bLHWTF+i/YHT95TtwPHF43PNb18ObgZOA47cOy/mVUOiX1pWUxeRFviEbRqWK1QehKOwKG83w3
+	f1jgACa+aMc8lCkRn7+0qN/jzSKTZrzTGbIYr5gamgIXuGD4jD8ATw/GnJExa4QK0t63K4t9RzO6x
+	ihclspy627QOSsPGhBf2mbHezuyCF1pkPdLjrBraMtuTFCw6NV+MCZjoCm0GmddEXrKeye+ZcdJnm
+	TwHQa+kVEjkhfzA69Cc4DzsbJCG3Y4d8bBDau/mTI/LjwH2bTolAQTik6kczr6FVlluDeoKrrk9j7
+	HhkGLQ7QO29xtRxxJ18A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7dIU-0007vL-HQ; Tue, 10 Sep 2019 10:22:54 +0000
-Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7dIH-0007no-CQ
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 10:22:42 +0000
-Received: by mail-lj1-x244.google.com with SMTP id j16so15866479ljg.6
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 03:22:40 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=/RnO7aDpzX5C5EyL4y2IfgyW41OmQo4u8v7lMN7YHKQ=;
- b=vK1D15dW6aK1jvV0nmXA12AyrRJ4vLk03n2a23yq0lZRGq48xLdY0RhJGf/oVx3ddU
- BUAjXvFBI/R3XlUEEH3n9JnN/c8UDxlRqcZ0ljT/0fp2iSi9QNFMbGUQ1uNvvf/pHRBf
- yY68Kq2lxaiYmbOSRv4PDu75QITFpvy/hmgAYMpzQ4dWeFI7almhAIwEc7t5+FspOqdW
- RCKI6Rw+pO36dveGJhF4K3kXhysgPyGbM8rk1Ptjz4PRpFBDezeBWpCpFOHSXJjUnNaQ
- CgVPB0tp5Gh/UsxejI6EgLuWO/WSB1of8qF1yn/BDTBwMYqJmaoxG9DlUKZtw5/EGyMd
- dnPg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=/RnO7aDpzX5C5EyL4y2IfgyW41OmQo4u8v7lMN7YHKQ=;
- b=OncdiNbW7mz6q66q7fMDKNtRceojG5znSb8Ll2CqxzVMitDubPssy9n8GYLsLCTvcc
- 8gGg3lbmZ5QEJqM1G8ccDN8hWVAdUn/xbs21Fi+I0VIg6dnxxYDFLezw9izU6zMK7l7k
- 9UQx4fsKdVpfmliL3doZCgStW3IZ6cWxg6zGi3H8GISocCfzphKdKrQqYd3+0yBECV0u
- eUh3OvNZlx/o6t9YSCmnzdGfPJfEcJ6KrCBdyS80QfL4iZgzfoHUeUJk9/GdAt18YWuM
- lc1a1egJUC6SBvtMihIwZDClyNutGk31BPasvmADwkJo/J7b6OL9O65LfqfoYyDteqLP
- jTOw==
-X-Gm-Message-State: APjAAAUJ2NvJEv9M6dlzLu1XQYo1PAjOtuD0wWovDSOwv8IWXMg9PCOa
- yCuIo39S3+e+bWwI+/7RmVbkMCWJEUD2CdJ5/VQrVA==
-X-Google-Smtp-Source: APXvYqxTmNO1MGnu8vYhnE2IUmvw4ev8RpQUmIyLWCAtSHO9mqRjl78UFY8OZp8Ndh+gq+efvNad6aAMm/6X66YLAJ8=
-X-Received: by 2002:a2e:8056:: with SMTP id p22mr14060234ljg.69.1568110959123; 
- Tue, 10 Sep 2019 03:22:39 -0700 (PDT)
+	id 1i7dKh-0000p3-Uu; Tue, 10 Sep 2019 10:25:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7dKY-0000AB-B7
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 10:25:04 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 45E591000;
+ Tue, 10 Sep 2019 03:25:01 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B154C3F59C;
+ Tue, 10 Sep 2019 03:25:00 -0700 (PDT)
+Date: Tue, 10 Sep 2019 11:24:59 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Arnd Bergmann <arnd@arndb.de>
+Subject: Re: [PATCH] arm64: fix unreachable code issue with cmpxchg
+Message-ID: <20190910102458.GJ9720@e119886-lin.cambridge.arm.com>
+References: <20190909202153.144970-1-arnd@arndb.de>
+ <20190910092324.GI9720@e119886-lin.cambridge.arm.com>
+ <CAK8P3a2Vk+KSUGJyPTRuLPD=KPEAR43SZ1ofB6k+KeQi3fSERw@mail.gmail.com>
 MIME-Version: 1.0
-References: <20190906084539.21838-1-geert+renesas@glider.be>
-In-Reply-To: <20190906084539.21838-1-geert+renesas@glider.be>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Tue, 10 Sep 2019 11:22:27 +0100
-Message-ID: <CACRpkdax+KYuB9Gs4V-9wnFu=DPu0MNCmOupeNkUEa-pNdSZig@mail.gmail.com>
-Subject: Re: [PATCH 0/4] gpio: API boundary cleanups
-To: Geert Uytterhoeven <geert+renesas@glider.be>
+Content-Disposition: inline
+In-Reply-To: <CAK8P3a2Vk+KSUGJyPTRuLPD=KPEAR43SZ1ofB6k+KeQi3fSERw@mail.gmail.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_032241_423569_104ABA81 
-X-CRM114-Status: GOOD (  10.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190910_032502_483263_03BFAE29 
+X-CRM114-Status: GOOD (  26.14  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:244 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -90,40 +62,91 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
- <devicetree@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>,
- Rob Herring <robh+dt@kernel.org>, Frank Rowand <frowand.list@gmail.com>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Will Deacon <will@kernel.org>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 6, 2019 at 9:45 AM Geert Uytterhoeven
-<geert+renesas@glider.be> wrote:
+On Tue, Sep 10, 2019 at 11:38:37AM +0200, Arnd Bergmann wrote:
+> On Tue, Sep 10, 2019 at 11:23 AM Andrew Murray <andrew.murray@arm.com> wrote:
+> 
+> >
+> > >  arch/arm64/include/asm/cmpxchg.h | 15 ++++++++-------
+> > >  1 file changed, 8 insertions(+), 7 deletions(-)
+> > >
+> > > diff --git a/arch/arm64/include/asm/cmpxchg.h b/arch/arm64/include/asm/cmpxchg.h
+> > > index a1398f2f9994..fd64dc8a235f 100644
+> > > --- a/arch/arm64/include/asm/cmpxchg.h
+> > > +++ b/arch/arm64/include/asm/cmpxchg.h
+> > > @@ -19,7 +19,7 @@
+> > >   * acquire+release for the latter.
+> > >   */
+> > >  #define __XCHG_CASE(w, sfx, name, sz, mb, nop_lse, acq, acq_lse, rel, cl)    \
+> > > -static inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)              \
+> > > +static __always_inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)\
+> >
+> > This hunk isn't needed, there is no BUILD_BUG here.
+> 
+> Right, I noticed this, but it seemed like a good idea regardless given the small
+> size of the function compared with the overhead of a function call.  We clearly
+> want these to be inlined all the time.
+> 
+> Same for the others.
 
-> This patch series contains various API boundary cleanups for gpiolib:
->   - The first two patches make two functions private,
->   - The last two patches switch the remaining gpiolib exported functions
->     from EXPORT_SYMBOL() to EXPORT_SYMBOL_GPL().
+I'm not so sure - isn't the point of something like OPTIMIZE_INLINING to give
+more freedom to the tooling (and by virtue of the option - the user)?
 
-Good stuff, let's merge for early v5.4 (possibly rebasing if necessary).
+Surely any decent optimising compiler will do the right thing by inlining small
+trivial functions that are annotated with inline? And if not, the compiler
+should be fixed not the kernel - unless of course it causes an issue - and then
+we should fix those specific cases.
 
-> After this there is only a single GPIO driver function exported with
-> EXPORT_SYMBOL();
->
->     drivers/gpio/gpio-htc-egpio.c:EXPORT_SYMBOL(htc_egpio_get_wakeup_irq);
+There must be dozens of trivial functions that are marked with __inline, I
+don't think it would make sense to mark those as __always_inline. For example the
+atomics in atomic_lse.h are trivial but only marked inline. We obviously want
+them inline, though I don't think we should babysit the compiler to do the
+right thing.
 
-Kill it. People using this platform should step up if they need it.
-The outoftree code was at handhelds.org and that web site is
-even down. There is a copy of their git tree on github
-somewhere but it is definately not maintained.
+(Also the commit message implies that all the hunks are required to fix this
+particular issue which they are not).
 
-Yours,
-Linus Walleij
+Thanks,
+
+Andrew Murray
+
+> 
+> > Alternatively is it possible to replace the BUILD_BUG's with something else?
+> >
+> > I think because we use BUILD_BUG at the end of a switch statement, we make
+> > the assumption that size is known at compile time, for this reason we should
+> > ensure the function containing the BUILD_BUG is __always_inline.
+> >
+> > Looking across the kernel where BUILD_BUG is used as a default in a switch
+> > statment ($ git grep -B 3 BUILD_BUG\( | grep default), most instances are
+> > within macros, but many are found in an __always_inline function:
+> >
+> > arch/x86/kvm/cpuid.h
+> > mm/kasan/generic.c
+> >
+> > Though some are not:
+> >
+> > include/linux/signal.h
+> > arch/arm64/include/asm/arm_dsu/pmu.h
+> >
+> > I wonder if there may be a latent mole ready to whack with pmu.h?
+> 
+> Right, it can't hurt to annotate those as well. I actually have another
+> fixup for linux/signal.h that I would have to revisit at some point.
+> See https://bugs.llvm.org/show_bug.cgi?id=38789, I think this is
+> fixed with clang-9 now, but maybe not with clang-8.
+> 
+>       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
