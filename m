@@ -2,53 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 374EFAE44A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 09:09:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0CF4EAE43E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 09:06:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=SFYOEAPlE6l6iqR3Bz73djdqJMopnF19OFz5X3HbeUY=; b=t8UU+ALczn8RwL
-	9Dc0I1qD/FVFhikkBHEZZZ5IhNeBPbJHc1+inmxR5HaNJbCHtYhNDu6WXkjMAyKEVzxA3qAuwnv/Z
-	cycoLSIRs5EhOQ5Yx/lPYG9owQW0mMSAzlnu7yBEiBespaJAB70dfRk17AROkZ/7w71QYo6xcHyWy
-	taKdY2AfdIpOUZhb+Qvr2RKbyUljITxsJqlUlktwIuoHTNzGgJECxWZ7Ll1KqMMc5M/Skcm8bpXi5
-	seMpfK7KUn27PbwmqIMyPVO8chRngXsD1/8dz5LI0L+tV0lOdRmY3244kRjXHjFDyCjNhjoQqOx9F
-	9h99hTG7zc1ay4zuMcpQ==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=lRGscyWesY1k4z1VFkNkA4ee9u3VJlgJLBKdFNQi8jU=; b=aiVW6fQknFsILDdSDN2DLuhJez
+	vGUSTHabP5qxvMRrWAPVtYLOSXhxWXWUXGprE1enDgdWm64oz/GTfLnvF738bUCYCpkOar5NLcqu6
+	JXWc1SUOHSX0I0rB+uVLnaohb3/Od6KbpsbdlUpuH+78pa/gZb6I3PrDSIfNQ9UWGalFSecSKPLIW
+	usZop4JV27CG5keHdPoE5uJYxD/PwtQR7zv87dTY/bkNx4WIcvGTD8Z9spgjugprGwVI5sLgZSf3x
+	Hb7kOpu+Wi+9EQ8fnY3s8uCTAgsOLz6bcfP29RThtpu2nsuEdZNLfkvgCrVb27wSIoHiTYgHBW74v
+	XdCGwpOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7aHG-0000Ke-RE; Tue, 10 Sep 2019 07:09:26 +0000
-Received: from mxwww.masterlogin.de ([2a03:2900:1:1::b])
+	id 1i7aES-0007xF-IW; Tue, 10 Sep 2019 07:06:32 +0000
+Received: from mxwww.masterlogin.de ([95.129.51.220])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7aDL-0007rG-EZ; Tue, 10 Sep 2019 07:05:25 +0000
-Received: from mxout1.routing.net (unknown [192.168.10.81])
- by new.mxwww.masterlogin.de (Postfix) with ESMTPS id A088C962BA;
- Tue, 10 Sep 2019 07:05:11 +0000 (UTC)
+ id 1i7aDG-0007rW-Q0; Tue, 10 Sep 2019 07:05:22 +0000
+Received: from mxout2.routing.net (unknown [192.168.10.82])
+ by new.mxwww.masterlogin.de (Postfix) with ESMTPS id 38CCF9630D;
+ Tue, 10 Sep 2019 07:05:14 +0000 (UTC)
 Received: from mxbox2.masterlogin.de (unknown [192.168.10.253])
- by mxout1.routing.net (Postfix) with ESMTP id ED6A343E8B;
- Tue, 10 Sep 2019 07:05:11 +0000 (UTC)
+ by mxout2.routing.net (Postfix) with ESMTP id 80AE26205B;
+ Tue, 10 Sep 2019 07:05:14 +0000 (UTC)
 Received: from localhost.localdomain (fttx-pool-185.75.73.135.bambit.de
  [185.75.73.135])
- by mxbox2.masterlogin.de (Postfix) with ESMTPSA id C3943100B88;
- Tue, 10 Sep 2019 07:05:10 +0000 (UTC)
+ by mxbox2.masterlogin.de (Postfix) with ESMTPSA id E2744100C3C;
+ Tue, 10 Sep 2019 07:05:11 +0000 (UTC)
 From: Frank Wunderlich <frank-w@public-files.de>
 To: linux-mediatek@lists.infradead.org
-Subject: [PATCH v7 0/7] implement poweroff for mt6323 / bpi-r2
-Date: Tue, 10 Sep 2019 09:04:39 +0200
-Message-Id: <20190910070446.639-1-frank-w@public-files.de>
+Subject: [PATCH v7 1/7] dt-bindings: rtc: mediatek: add missing mt6397 rtc
+Date: Tue, 10 Sep 2019 09:04:40 +0200
+Message-Id: <20190910070446.639-2-frank-w@public-files.de>
 X-Mailer: git-send-email 2.17.1
-MIME-Version: 1.0
+In-Reply-To: <20190910070446.639-1-frank-w@public-files.de>
+References: <20190910070446.639-1-frank-w@public-files.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_000524_375572_2EA4FAF6 
-X-CRM114-Status: GOOD (  11.18  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190910_000519_271959_99C57D91 
+X-CRM114-Status: GOOD (  11.00  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a03:2900:1:1:0:0:0:b listed in] [list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [95.129.51.220 listed in list.dnswl.org]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -73,56 +75,72 @@ Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
  Sebastian Reichel <sre@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
  Mark Rutland <mark.rutland@arm.com>, Eddie Huang <eddie.huang@mediatek.com>,
  Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-bWFpbmxpbmUtZHJpdmVyIGRvZXMgbm90IHN1cHBvcnQgbXQ2MzIzCgp0aGlzIHNlcmllcyBtYWtl
-cyBzb21lIGNsZWFudXAgdG8gbXQ2Mzk3LXJ0Yy1kcml2ZXIsIGFkZHMgbXQ2MzIzIGFuZAppbXBs
-ZW1lbnQgcG93ZXItY29udHJvbGxlciBvbiBpdC4KCnRlc3RlZCBvbiBiYW5hbmFwaS1yMgoKT3Jp
-Z2luYWwgUGF0Y2ggZnJvbSBKb3NlZiBGcmllZGwKCmNoYW5nZXMgc2luY2UgdjY6CgktIHJlYmFz
-ZWQgb24gNS4zLXJjOAoJLSBwb3N0IG9ubHkgNyBQYXRjaGVzIGJlY2F1c2UgNiBhcmUgYWxyZWFk
-eSBhcHBsaWVkIHRvIG5leHQKCS0gdXBkYXRlIGNvcHlyaWdodCBpbiAibW92ZSBzb21lIGNvbW1v
-biBkZWZpbml0aW9ucyBpbnRvIHJ0Yy5oIgpjaGFuZ2VzIHNpbmNlIHY1OgoJLSBzcGxpdHRlZCBw
-YXJ0IDEgdG8gc2VwYXJhdGUgY2hhbmdlcyBhbmQgYWRkaXRpb25zIG5vdCByZWxhdGVkIHRvIHB3
-cmMKCS0gbW92ZSBtZmQvbXQ2Mzk3L2NvcmUuaCBmcm9tIHY0LjggaW4gc2VwYXJhdGUgcGF0Y2gg
-ImFkZCBtdXRleCBpbmNsdWRlIgoJLSBjaGFuZ2VkIHJlY2lwaWVudHMgKG1vdmVkIGZyb20gVG8g
-dG8gQ2MsIHJlbW92ZWQgY29tbWl0dGVycykKY2hhbmdlcyBzaW5jZSB2NDoKCS0gcmVsYXRpdmUg
-cGF0aCBpbiBwYXJ0IDErMgoJLSBkcm9wIGNoYW5nZSBvZiBjb3B5cmlnaHQteWVhciBpbiBwYXJ0
-IDUKY2hhbmdlcyBzaW5jZSB2MzoKCS0gbW92ZWQgU09CIGluIDIvMTAgYW5kIDkvMTAKCS0gbW92
-ZWQgcGFydCA1IHRvIDYgdG8gYmUgbmVhciBkcml2ZXItY2hhbmdlCgktIGNoYW5nZWhpc3Rvcnkg
-b2YgcGF0Y2hlcyBiZWxvdyAtLS0KY2hhbmdlcyBzaW5jZSB2MjoKCS0gU3BsaXR0ZWQgc29tZSBw
-YXJ0cyBhbmQgcmViYXNlZCBvbiA1LjMtcmMyOgoKCXYyLjEgZHQtYmluZGluZ3M6IGFkZCBwb3dl
-cmNvbnRyb2xsZXIg4oCTIHRyeSB0byBtYWtlIGJldHRlciBzdWJqZWN0Cgl2Mi4yIHNlcGFyYXRl
-IHJ0Yy1tdDYzOTcudHh0IChzdWdnZXN0ZWQgYnkgQWxleGFuZHJlIEJlbGxvbmkpCgkgICAgIGFk
-ZCBtaXNzaW5nIGNvbW1pdC1tZXNzYWdlIChzdWdnZXN0ZWQgYnkgTWF0dGhpYXMgQnJ1Z2dlcikK
-CXYyLjMgZml4IGFsbG9jIGFmdGVyIElSUSAoc3VnZ2VzdGVkIGJ5IEFsZXhhbmRyZSBCZWxsb25p
-KQoJICAgICBuZXcgY29tcGF0aWJsZSAoc3BsaXR0aW5nIHN1Z2dlc3RlZCBieSBBbGV4YW5kcmUg
-QmVsbG9uaSkKCSAgICAgbmVlZGVkIGR1ZSB0byBkaWZmZXJlbnQgcnRjLWJhc2Uvc2l6ZSBzZWUg
-IzcKCXYyLjQgc2ltcGxpZmljYXRpb25zIChEZWZpbmUtcmVzLW1hY3JvcykKCSAgICAgYWRkIG10
-NjMyMyBydGMrcHdyYwoJdjIuNSBhZGQgcG93ZXJvZmYtZHJpdmVyIChubyBjaGFuZ2UpCgl2Mi42
-IE1BSU5UQUlORVJTIChubyBjaGFuZ2UpCgl2Mi43IERUUy1DaGFuZ2VzIChubyBjaGFuZ2UpCgpK
-b3NlZiBGcmllZGwgKDcpOgogIGR0LWJpbmRpbmdzOiBydGM6IG1lZGlhdGVrOiBhZGQgbWlzc2lu
-ZyBtdDYzOTcgcnRjCiAgcnRjOiBtdDYzOTc6IG1vdmUgc29tZSBjb21tb24gZGVmaW5pdGlvbnMg
-aW50byBydGMuaAogIHJ0YzogbXQ2Mzk3OiBpbXByb3ZlbWVudHMgb2YgcnRjIGRyaXZlcgogIHJ0
-YzogbXQ2Mzk3OiBhZGQgY29tcGF0aWJsZSBmb3IgbXQ2MzIzCiAgcG93ZXI6IHJlc2V0OiBhZGQg
-ZHJpdmVyIGZvciBtdDYzMjMgcG93ZXJvZmYKICBNQUlOVEFJTkVSUzogYWRkIE1lZGlhdGVrIHNo
-dXRkb3duIGRyaXZlcnMKICBhcm06IGR0czogbXQ2MzIzOiBhZGQga2V5cywgcG93ZXItY29udHJv
-bGxlciwgcnRjIGFuZCBjb2RlYwoKIC4uLi9kZXZpY2V0cmVlL2JpbmRpbmdzL3J0Yy9ydGMtbXQ2
-Mzk3LnR4dCAgICB8ICAyOSArKysrKwogTUFJTlRBSU5FUlMgICAgICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgICAgIHwgICA3ICsrCiBhcmNoL2FybS9ib290L2R0cy9tdDYzMjMuZHRzaSAgICAg
-ICAgICAgICAgICAgfCAgMjcgKysrKysKIGRyaXZlcnMvcG93ZXIvcmVzZXQvS2NvbmZpZyAgICAg
-ICAgICAgICAgICAgICB8ICAxMCArKwogZHJpdmVycy9wb3dlci9yZXNldC9NYWtlZmlsZSAgICAg
-ICAgICAgICAgICAgIHwgICAxICsKIGRyaXZlcnMvcG93ZXIvcmVzZXQvbXQ2MzIzLXBvd2Vyb2Zm
-LmMgICAgICAgICB8ICA5NyArKysrKysrKysrKysrKysrCiBkcml2ZXJzL3J0Yy9ydGMtbXQ2Mzk3
-LmMgICAgICAgICAgICAgICAgICAgICAgfCAxMDcgKysrKy0tLS0tLS0tLS0tLS0tCiBpbmNsdWRl
-L2xpbnV4L21mZC9tdDYzOTcvcnRjLmggICAgICAgICAgICAgICAgfCAgNzEgKysrKysrKysrKysr
-CiA4IGZpbGVzIGNoYW5nZWQsIDI2MyBpbnNlcnRpb25zKCspLCA4NiBkZWxldGlvbnMoLSkKIGNy
-ZWF0ZSBtb2RlIDEwMDY0NCBEb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcnRjL3J0
-Yy1tdDYzOTcudHh0CiBjcmVhdGUgbW9kZSAxMDA2NDQgZHJpdmVycy9wb3dlci9yZXNldC9tdDYz
-MjMtcG93ZXJvZmYuYwogY3JlYXRlIG1vZGUgMTAwNjQ0IGluY2x1ZGUvbGludXgvbWZkL210NjM5
-Ny9ydGMuaAoKLS0gCjIuMTcuMQoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJu
-ZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFu
-L2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+From: Josef Friedl <josef.friedl@speed.at>
+
+add missing devicetree-binding document for mt6397 rtc
+in later patch driver is extended with mt6323 chip
+
+Suggested-By: Alexandre Belloni <alexandre.belloni@bootlin.com>
+Signed-off-by: Josef Friedl <josef.friedl@speed.at>
+Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+Reviewed-by: Rob Herring <robh@kernel.org>
+---
+changes since v6: none
+changes since v5: none
+changes since v4: use relative path
+changes since v3: moved SOB
+changes since v2: splitted rtc-mt6397.txt from first patch
+---
+ .../devicetree/bindings/rtc/rtc-mt6397.txt    | 29 +++++++++++++++++++
+ 1 file changed, 29 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+
+diff --git a/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+new file mode 100644
+index 000000000000..55a0c8874c03
+--- /dev/null
++++ b/Documentation/devicetree/bindings/rtc/rtc-mt6397.txt
+@@ -0,0 +1,29 @@
++Device-Tree bindings for MediaTek PMIC based RTC
++
++MediaTek PMIC based RTC is an independent function of MediaTek PMIC that works
++as a type of multi-function device (MFD). The RTC can be configured and set up
++with PMIC wrapper bus which is a common resource shared with the other
++functions found on the same PMIC.
++
++For MediaTek PMIC MFD bindings, see:
++../mfd/mt6397.txt
++
++For MediaTek PMIC wrapper bus bindings, see:
++../soc/mediatek/pwrap.txt
++
++Required properties:
++- compatible: Should be one of follows
++       "mediatek,mt6323-rtc": for MT6323 PMIC
++       "mediatek,mt6397-rtc": for MT6397 PMIC
++
++Example:
++
++       pmic {
++               compatible = "mediatek,mt6323";
++
++               ...
++
++               rtc {
++                       compatible = "mediatek,mt6323-rtc";
++               };
++       };
+-- 
+2.17.1
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
