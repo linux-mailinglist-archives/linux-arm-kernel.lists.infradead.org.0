@@ -2,62 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DD862AED3A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:37:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D96EBAED69
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:42:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=PfEcokXqQ56FDqOuMDU2sm2ZnzJRoRvmmP94saTROoA=; b=mHIXrfba9XEwAzoUORpyjJrYJ
-	3O6MbchdZDfsiT6wA7Hk6azRaXkZV3H2jLVYy/fy1+lVhQvO9bl5I216AG6Ae5myYNAUkkfGchlgZ
-	lKuXHILVLi0mxcbplNSu4WtWwUhk726bUwQo+WFxf1HkZMa1GNDvr1XqOV+Hn0NI1/tcWONhS9j48
-	LycE0gkKDRZ5OEqqm7gJsC6uD2VLhHTv2a0dQ8fhPbJC+0By0GMGVQm0Ewf5dkx2bNhMwUEsB3E/l
-	7Kl4R7Q2390oY8efnp7YZzu0LLHRXQt8PTfa86ktIOD16zdZgMeLUm9LB+FPUptoLbhindB4atqYt
-	hGYOsOhoQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=+DkLjsRnaApdlL9aiLhgs3hOWOwsbttZUkpFvt+q8Yc=; b=XAt
+	vhBMSDq+jM3IMubQC84sP/B+mawrNL+xBFMV9NdjcFWMfthbcHLTReDZhvAJf+aX0bpz21KKwP5fY
+	/5Cg8O1BF2jbpuppyVa7O01sDpsTJaLI9dp+dGAziTQgPoia+SQjMGfXrJ1P+7SDG6+rHttkjUxaK
+	YEKxdKJObSBSQE0ZVFtBaTRXQq6meGOGBsfA5gCCA8IFdH3JJKRliug2IXOu0P5wWDP0vicqzE+7O
+	ANPz5gIud5bN8npJ8nG0o/7BntVqXIpkvTzchvGS5HcJxWjwK2cplsu96WFG3+nb5KCDQTlObTbUG
+	UhTrFLGNl6gcKNP2o1UewtYljVfYgow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7hHA-0000NC-DF; Tue, 10 Sep 2019 14:37:48 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i7hLT-0002UT-5N; Tue, 10 Sep 2019 14:42:15 +0000
+Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
+ helo=smtprelay-out1.synopsys.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7hGx-0000MM-Bq
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:37:36 +0000
-Received: from earth.universe (unknown [148.69.85.38])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ id 1i7hKn-0001yb-7m
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:41:36 +0000
+Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
+ [10.225.0.210])
+ (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 95C0121479;
- Tue, 10 Sep 2019 14:37:34 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568126254;
- bh=y1WgrtzyvFdOq+b4d4REujchX5rk4th/6G7OOccfmxM=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=iYlI8DaVumn332PgaHqmbGve4wfPHMu0RUKeSPGg0tR/ZBCA5cMBGisOPvfJ5WTat
- QFfogJ1XfKG4+7MXP5TZNCCqhaSNCAgjaVnZ0lZ9X2TpoxJ9fC0zIbRwf7lAqP9XiG
- 1a67UW/obuJuytpzOoVZrwD9QXBSgZWniN83km5U=
-Received: by earth.universe (Postfix, from userid 1000)
- id 8B5D53C0CFA; Tue, 10 Sep 2019 16:37:32 +0200 (CEST)
-Date: Tue, 10 Sep 2019 15:37:32 +0100
-From: Sebastian Reichel <sre@kernel.org>
-To: Adam Ford <aford173@gmail.com>
-Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
-Message-ID: <20190910143732.3g3q4acvnx2pqvjx@earth.universe>
-References: <20190828150037.2640-1-aford173@gmail.com>
- <20190905230443.GA52127@atomide.com>
- <CAHCN7xKxffJUV2V2CCuw0iPqUm4LJT28GMrcF2=8rDJQM2dOOw@mail.gmail.com>
-MIME-Version: 1.0
-In-Reply-To: <CAHCN7xKxffJUV2V2CCuw0iPqUm4LJT28GMrcF2=8rDJQM2dOOw@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+ by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 4F355C2B07;
+ Tue, 10 Sep 2019 14:41:31 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
+ t=1568126491; bh=Tub4nxbeU4nreRv8Psll6baSDgasdHP9Jdi2H3FUuM0=;
+ h=From:To:Cc:Subject:Date:From;
+ b=C2o6PJo4/Gf/7lp2JOLM+WEG1MfCOq73flr31Z7C9+k5tPz3ahpk3X+Jdiw3i1fn9
+ imLq+yTn/PJJlWrTdXHoTa/8aus7nXy5gjO+RrI80mGiwkgCCXASzT7qN2WCdjCmue
+ OfxO8I9cv2dqEbJBlSWxOiLrHu6RW1A/4GkyB+sQraKB0raSVjXXKSPSvCrFaIga4B
+ y9BuCLwa04cyaUqPgnY6ADYrMAWgEQzFctN1M50DadnTDXTeUkweuOTpiwzxUdd5pr
+ rfMt62re75WqJhRakCtdR1TKDAOFu4McgBvPV74oFBSIxBzoQgSa7LdCuXxvsneLn/
+ kptY6jHGqPW/g==
+Received: from de02dwia024.internal.synopsys.com
+ (de02dwia024.internal.synopsys.com [10.225.19.81])
+ by mailhost.synopsys.com (Postfix) with ESMTP id B7508A0057;
+ Tue, 10 Sep 2019 14:41:28 +0000 (UTC)
+From: Jose Abreu <Jose.Abreu@synopsys.com>
+To: netdev@vger.kernel.org
+Subject: [PATCH net-next 0/6] net: stmmac: Improvements for -next
+Date: Tue, 10 Sep 2019 16:41:21 +0200
+Message-Id: <cover.1568126224.git.joabreu@synopsys.com>
+X-Mailer: git-send-email 2.7.4
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_073735_429188_08D0F97A 
-X-CRM114-Status: GOOD (  14.37  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190910_074133_307473_0F3454A1 
+X-CRM114-Status: GOOD (  10.00  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -67,7 +66,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,84 +77,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
- Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
- Russell King <linux@armlinux.org.uk>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
- =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
- Pali =?utf-8?B?Um9ow6Fy?= <pali.rohar@gmail.com>,
- Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
- arm-soc <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============0097017294839963007=="
+Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
+ Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
+ linux-stm32@st-md-mailman.stormreply.com,
+ Maxime Coquelin <mcoquelin.stm32@gmail.com>,
+ Giuseppe Cavallaro <peppe.cavallaro@st.com>,
+ "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Misc patches for -next. It includes:
+ - Two fixes for features in -next only
+ - New features support for GMAC cores (which includes GMAC4 and GMAC5)
 
---===============0097017294839963007==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="qrixv7njwauekhyc"
-Content-Disposition: inline
+---
+Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
+Cc: Alexandre Torgue <alexandre.torgue@st.com>
+Cc: Jose Abreu <joabreu@synopsys.com>
+Cc: "David S. Miller" <davem@davemloft.net>
+Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
+Cc: netdev@vger.kernel.org
+Cc: linux-stm32@st-md-mailman.stormreply.com
+Cc: linux-arm-kernel@lists.infradead.org
+Cc: linux-kernel@vger.kernel.org
+---
 
+Jose Abreu (6):
+  net: stmmac: Prevent divide-by-zero
+  net: stmmac: Add VLAN HASH filtering support in GMAC4+
+  net: stmmac: xgmac: Reinitialize correctly a variable
+  net: stmmac: Add support for SA Insertion/Replacement in GMAC4+
+  net: stmmac: Add support for VLAN Insertion Offload in GMAC4+
+  net: stmmac: ARP Offload for GMAC4+ Cores
 
---qrixv7njwauekhyc
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+ drivers/net/ethernet/stmicro/stmmac/dwmac4.h       | 23 +++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c  | 79 ++++++++++++++++++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.c | 43 ++++++++++++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_descs.h |  9 +++
+ drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c   |  5 +-
+ .../net/ethernet/stmicro/stmmac/dwxgmac2_core.c    |  2 +-
+ drivers/net/ethernet/stmicro/stmmac/stmmac_main.c  |  4 +-
+ 7 files changed, 162 insertions(+), 3 deletions(-)
 
-Hi,
+-- 
+2.7.4
 
-On Tue, Sep 10, 2019 at 08:56:49AM -0500, Adam Ford wrote:
-> On Thu, Sep 5, 2019 at 6:04 PM Tony Lindgren <tony@atomide.com> wrote:
-> > Oh and this needs to default to status =3D "disabled" for
-> > HS devices like n900 as it needs to use the omap3-rom-rng.
->=20
-> I don't know enough about the HS version of the OMAP3, but what's the
-> main difference between omap3-rom-rng and this one?
-
-The OMAP HS chips have the bus firewall configured to block direct
-access to some cryptography related devices. The kernel will crash
-with a bus error, if you try to read/write the registers for
-protected devices. The omap3-rom-rng avoids this by communicating
-with the security middleware component instead of directly accessing
-the RNG hardware.
-
--- Sebastian
-
---qrixv7njwauekhyc
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAEBCgAdFiEE72YNB0Y/i3JqeVQT2O7X88g7+poFAl13tSkACgkQ2O7X88g7
-+prv8g//byjix58ZdQFHZMVKdcFO70kTP9egx8f9Bsi2ZGMy3ybyYweRBD1xerSj
-9ytb9qNeNKC1Tn9R4HXWF2s0uG8YiCCwYv8XO2RGD1gBYc+ohxHMgu2LUHkqrYkd
-4ch8aa6vWOfoYz5p6RZ4TSMifa6pEL/Dntv73BZ2iWyIPNFiU3G0JYERDwh1k2mE
-zJQ/eEq/1G+ztEYBSa5HoRSLQUfgbpRWdnjw/WMQZMYIGb67iKJhEnFRl9bKdiS+
-Bj0od1d1EuQWiYclgBn2qGrfxKbweSmX9rDGTsQKzzb32zUSYLd5eh4m6dpO3Cea
-eWNc4w0cBN5XXDjmVf400xtdbhl4GNS0gwfHUb6QCHp4aSPKGIvv3rU2vt5Rf+HI
-K/u+3sywozcr9D6NbgmTyGNRRUxpZZe7QZdAtIaZChEcwi8FgtCxmeAtnUyXHNxr
-+0vPFHKA3IFKHfR2pNKu2UlS7HbKxUg+ZEgCq6dUAVGQ8BdNK5/a26MbJCASEGor
-OLfajRDyxnyFSlV2rKMh2Ich5oD39lI+rwA2jIJf+EbcHAudd25/4mGxc6Gb2oBb
-PgogxAzpXE95iStDWlUeoS/8Jh0hQtD/zb9amYgvwYSookOL9Wt39x5iMovt8IBm
-pHpoVJGzv5+DB874xaKn0jUe988yQdhym1joC+xayv+LGfBQvkE=
-=hSyU
------END PGP SIGNATURE-----
-
---qrixv7njwauekhyc--
-
-
---===============0097017294839963007==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============0097017294839963007==--
-
