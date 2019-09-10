@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 541E7AE56B
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 10:21:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A08F1AE584
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 10:29:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
@@ -11,24 +11,23 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=vBkWDD4EAuaduxpniEZlwF7ApCLKNf8G6tKXk4hIoVo=; b=Gc74V03i9lxeSwTMl/HNVVnKOV
-	FSC2NFCJYq8CD5v/duQwU2MVv/x2bcOKlo06IbGvp/glvENyLgoUM/BiRLq2zOhqxCD+nUpJVucgN
-	zbLrQN2JpgZ+YRC7RtFBkgY44YA8s8+Dgz5d3GXHg/ZTu9i/MQSRRWLC5LwS+wzWcQAqiSWy+wqLW
-	R3CXTiw641Yvgk5isZrdN9cUEV+XsjuBow+JuyQmSbodTGlPoG4N11J8hkhhgKfd42N4xfP6etEPY
-	6JTBKBxUEUZjo+o4qAIl9l1EU9RZLev8CczYV5dLonJtDTnfg/k1KfA93EK7VDjaD4vrfTzYk1AMq
-	pLJ1nj8g==;
+	bh=4E50mvTqFl4AIBoSdYYIVXqEylFqccK1kUMkgV/uNws=; b=SzC32mx8l05XcrMRi59WkcNKJ/
+	gsU44ipX8tvCAjoHQAuMyamspq+d92AfpxKcdxhK5R2wnSNWOS6ziF7nPBtdFg7J9MLIudmJfmANQ
+	0TeLoBSa56pvXx5/A3IxQ8mIndC75JlmzusFjahYfWAGmU1m6f+/3wCDStl4lYukfZgBsBHrmHT5b
+	QpWVOpT3D+XrX8Q7+nF7wkah2wBHTEDIAyTwMbFGD68Ra+AOlED7UN4sc9qQ+Remd+tVybu4nmctD
+	Dv54bvCemlgJU6+l27KdtgTq+EYtxkI82oM4eHeunJejJymFD2+fKCxrWsNWNMTtUMN1z+8Jf+T+s
+	T0E2KCKg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7bPF-0004Ea-Ew; Tue, 10 Sep 2019 08:21:45 +0000
+	id 1i7bX6-0006R3-3N; Tue, 10 Sep 2019 08:29:52 +0000
 Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7bOi-0004DL-EU; Tue, 10 Sep 2019 08:21:14 +0000
+ id 1i7bWW-0006My-9B; Tue, 10 Sep 2019 08:29:18 +0000
 X-Virus-Scanned: by amavisd-new at test-mx.suse.de
 Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 4C4E6AE78;
- Tue, 10 Sep 2019 08:21:10 +0000 (UTC)
-Subject: Re: [PATCH v4 05/17] arm64: hibernate: remove gotos in
- create_safe_exec_page
+ by mx1.suse.de (Postfix) with ESMTP id CCCB5ACD8;
+ Tue, 10 Sep 2019 08:29:14 +0000 (UTC)
+Subject: Re: [PATCH v4 10/17] arm64: trans_pgd: make trans_pgd_map_page generic
 To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
  sashal@kernel.org, ebiederm@xmission.com, kexec@lists.infradead.org,
  linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
@@ -36,7 +35,7 @@ To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
  james.morse@arm.com, vladimir.murzin@arm.com, bhsharma@redhat.com,
  linux-mm@kvack.org, mark.rutland@arm.com
 References: <20190909181221.309510-1-pasha.tatashin@soleen.com>
- <20190909181221.309510-6-pasha.tatashin@soleen.com>
+ <20190909181221.309510-11-pasha.tatashin@soleen.com>
 From: Matthias Brugger <mbrugger@suse.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
@@ -131,16 +130,16 @@ Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
  DnchsfHg18gCCrEtYZ9czwNjVoV1Tv2lpzTTk+6HEJaQpMnPeAKbOeehq3gYKcvmDL+bRCTj
  mXg8WrBZdUuj0BCDYqneaUgVnp+wQogA3mHGVs281v1XZmjlsVmM9Y8VPE614zSiZQBL5Cin
  BTTI8ssYlV/aIKYi0dxRcj6vYnAfUImOsdZ5AQja5xIqw1rwWWUOYb99
-Message-ID: <9135be3e-cf7e-821d-928d-db98aa3ec9c8@suse.com>
-Date: Tue, 10 Sep 2019 10:21:08 +0200
+Message-ID: <60975350-87f8-56b3-437d-d9ee26ac3bd3@suse.com>
+Date: Tue, 10 Sep 2019 10:29:13 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190909181221.309510-6-pasha.tatashin@soleen.com>
+In-Reply-To: <20190909181221.309510-11-pasha.tatashin@soleen.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_012113_140805_5E140457 
-X-CRM114-Status: GOOD (  15.92  )
+X-CRM114-CacheID: sfid-20190910_012916_621764_322AE5F3 
+X-CRM114-Status: GOOD (  19.05  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
@@ -166,106 +165,171 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
+Bikeshedding alarm, please see below.
 
 On 09/09/2019 20:12, Pavel Tatashin wrote:
-> Usually, gotos are used to handle cleanup after exception, but
-> in case of create_safe_exec_page there are no clean-ups. So,
-> simply return the errors directly.
+> kexec is going to use a different allocator, so make
+> trans_pgd_map_page to accept allocator as an argument, and also
+> kexec is going to use a different map protection, so also pass
+> it via argument.
 > 
-
-While at it, how about also cleaning up swsusp_arch_resume() which has the same
-issue.
-
-Regards,
-Matthias
-
 > Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
-> Reviewed-by: James Morse <james.morse@arm.com>
 > ---
->  arch/arm64/kernel/hibernate.c | 34 +++++++++++-----------------------
->  1 file changed, 11 insertions(+), 23 deletions(-)
+>  arch/arm64/include/asm/trans_pgd.h | 24 ++++++++++++++++++++++--
+>  arch/arm64/kernel/hibernate.c      | 12 +++++++++++-
+>  arch/arm64/mm/trans_pgd.c          | 17 +++++++++++------
+>  3 files changed, 44 insertions(+), 9 deletions(-)
 > 
+> diff --git a/arch/arm64/include/asm/trans_pgd.h b/arch/arm64/include/asm/trans_pgd.h
+> index c7b5402b7d87..53f67ec84cdc 100644
+> --- a/arch/arm64/include/asm/trans_pgd.h
+> +++ b/arch/arm64/include/asm/trans_pgd.h
+> @@ -11,10 +11,30 @@
+>  #include <linux/bits.h>
+>  #include <asm/pgtable-types.h>
+>  
+> +/*
+> + * trans_alloc_page
+> + *	- Allocator that should return exactly one zeroed page, if this
+> + *	 allocator fails, trans_pgd returns -ENOMEM error.
+> + *
+> + * trans_alloc_arg
+> + *	- Passed to trans_alloc_page as an argument
+> + */
+> +
+> +struct trans_pgd_info {
+> +	void * (*trans_alloc_page)(void *arg);
+> +	void *trans_alloc_arg;
+> +};
+> +
+>  int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
+>  			  unsigned long end);
+>  
+> -int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
+> -		       pgprot_t pgprot);
+> +/*
+> + * Add map entry to trans_pgd for a base-size page at PTE level.
+> + * page:	page to be mapped.
+> + * dst_addr:	new VA address for the pages
+> + * pgprot:	protection for the page.
+
+For consistency please describe all function parameters. From my experience
+function parameter description is normally done in the C-file that implements
+the logic. Don't ask me why.
+
+> + */
+> +int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
+> +		       void *page, unsigned long dst_addr, pgprot_t pgprot);
+>  
+>  #endif /* _ASM_TRANS_TABLE_H */
 > diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
-> index 47a861e0cb0c..7bbeb33c700d 100644
+> index 94ede33bd777..9b75b680ab70 100644
 > --- a/arch/arm64/kernel/hibernate.c
 > +++ b/arch/arm64/kernel/hibernate.c
-> @@ -198,7 +198,6 @@ static int create_safe_exec_page(void *src_start, size_t length,
+> @@ -179,6 +179,12 @@ int arch_hibernation_header_restore(void *addr)
+>  }
+>  EXPORT_SYMBOL(arch_hibernation_header_restore);
+>  
+> +static void *
+> +hibernate_page_alloc(void *arg)
+
+AFAICS no new line needed here.
+
+> +{
+> +	return (void *)get_safe_page((gfp_t)(unsigned long)arg);
+> +}
+> +
+>  /*
+>   * Copies length bytes, starting at src_start into an new page,
+>   * perform cache maintenance, then maps it at the specified address low
+> @@ -195,6 +201,10 @@ static int create_safe_exec_page(void *src_start, size_t length,
 >  				 unsigned long dst_addr,
 >  				 phys_addr_t *phys_dst_addr)
 >  {
-> -	int rc = 0;
+> +	struct trans_pgd_info trans_info = {
+> +		.trans_alloc_page	= hibernate_page_alloc,
+> +		.trans_alloc_arg	= (void *)GFP_ATOMIC,
+> +	};
+
+New line between end of struct and other variables.
+
+With these changes:
+Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+
+>  	void *page = (void *)get_safe_page(GFP_ATOMIC);
 >  	pgd_t *trans_pgd;
+>  	int rc;
+> @@ -209,7 +219,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	if (!trans_pgd)
+>  		return -ENOMEM;
+>  
+> -	rc = trans_pgd_map_page(trans_pgd, page, dst_addr,
+> +	rc = trans_pgd_map_page(&trans_info, trans_pgd, page, dst_addr,
+>  				PAGE_KERNEL_EXEC);
+>  	if (rc)
+>  		return rc;
+> diff --git a/arch/arm64/mm/trans_pgd.c b/arch/arm64/mm/trans_pgd.c
+> index 5ac712b92439..7521d558a0b9 100644
+> --- a/arch/arm64/mm/trans_pgd.c
+> +++ b/arch/arm64/mm/trans_pgd.c
+> @@ -25,6 +25,11 @@
+>  #include <linux/mm.h>
+>  #include <linux/mmzone.h>
+>  
+> +static void *trans_alloc(struct trans_pgd_info *info)
+> +{
+> +	return info->trans_alloc_page(info->trans_alloc_arg);
+> +}
+> +
+>  static void _copy_pte(pte_t *dst_ptep, pte_t *src_ptep, unsigned long addr)
+>  {
+>  	pte_t pte = READ_ONCE(*src_ptep);
+> @@ -180,8 +185,8 @@ int trans_pgd_create_copy(pgd_t **dst_pgdp, unsigned long start,
+>  	return rc;
+>  }
+>  
+> -int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
+> -		       pgprot_t pgprot)
+> +int trans_pgd_map_page(struct trans_pgd_info *info, pgd_t *trans_pgd,
+> +		       void *page, unsigned long dst_addr, pgprot_t pgprot)
+>  {
 >  	pgd_t *pgdp;
 >  	pud_t *pudp;
-> @@ -206,47 +205,37 @@ static int create_safe_exec_page(void *src_start, size_t length,
->  	pte_t *ptep;
->  	unsigned long dst = get_safe_page(GFP_ATOMIC);
->  
-> -	if (!dst) {
-> -		rc = -ENOMEM;
-> -		goto out;
-> -	}
-> +	if (!dst)
-> +		return -ENOMEM;
->  
->  	memcpy((void *)dst, src_start, length);
->  	__flush_icache_range(dst, dst + length);
->  
->  	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
-> -	if (!trans_pgd) {
-> -		rc = -ENOMEM;
-> -		goto out;
-> -	}
-> +	if (!trans_pgd)
-> +		return -ENOMEM;
+> @@ -190,7 +195,7 @@ int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
 >  
 >  	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
 >  	if (pgd_none(READ_ONCE(*pgdp))) {
->  		pudp = (void *)get_safe_page(GFP_ATOMIC);
-> -		if (!pudp) {
-> -			rc = -ENOMEM;
-> -			goto out;
-> -		}
-> +		if (!pudp)
-> +			return -ENOMEM;
+> -		pudp = (void *)get_safe_page(GFP_ATOMIC);
+> +		pudp = trans_alloc(info);
+>  		if (!pudp)
+>  			return -ENOMEM;
 >  		pgd_populate(&init_mm, pgdp, pudp);
->  	}
+> @@ -198,7 +203,7 @@ int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
 >  
 >  	pudp = pud_offset(pgdp, dst_addr);
 >  	if (pud_none(READ_ONCE(*pudp))) {
->  		pmdp = (void *)get_safe_page(GFP_ATOMIC);
-> -		if (!pmdp) {
-> -			rc = -ENOMEM;
-> -			goto out;
-> -		}
-> +		if (!pmdp)
-> +			return -ENOMEM;
+> -		pmdp = (void *)get_safe_page(GFP_ATOMIC);
+> +		pmdp = trans_alloc(info);
+>  		if (!pmdp)
+>  			return -ENOMEM;
 >  		pud_populate(&init_mm, pudp, pmdp);
->  	}
+> @@ -206,14 +211,14 @@ int trans_pgd_map_page(pgd_t *trans_pgd, void *page, unsigned long dst_addr,
 >  
 >  	pmdp = pmd_offset(pudp, dst_addr);
 >  	if (pmd_none(READ_ONCE(*pmdp))) {
->  		ptep = (void *)get_safe_page(GFP_ATOMIC);
-> -		if (!ptep) {
-> -			rc = -ENOMEM;
-> -			goto out;
-> -		}
-> +		if (!ptep)
-> +			return -ENOMEM;
+> -		ptep = (void *)get_safe_page(GFP_ATOMIC);
+> +		ptep = trans_alloc(info);
+>  		if (!ptep)
+>  			return -ENOMEM;
 >  		pmd_populate_kernel(&init_mm, pmdp, ptep);
 >  	}
 >  
-> @@ -272,8 +261,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	ptep = pte_offset_kernel(pmdp, dst_addr);
+> -	set_pte(ptep, pfn_pte(virt_to_pfn(page), PAGE_KERNEL_EXEC));
+> +	set_pte(ptep, pfn_pte(virt_to_pfn(page), pgprot));
 >  
->  	*phys_dst_addr = virt_to_phys((void *)dst);
->  
-> -out:
-> -	return rc;
-> +	return 0;
+>  	return 0;
 >  }
->  
->  #define dcache_clean_range(start, end)	__flush_dcache_area(start, (end - start))
 > 
 
 _______________________________________________
