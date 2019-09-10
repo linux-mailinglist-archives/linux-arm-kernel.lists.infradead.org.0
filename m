@@ -2,61 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 492DDAE453
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 09:12:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB182AE481
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 09:15:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=M8BSlK++SECC0EkMruRmVbd04BHCHMRu+nOHhgfzYG8=; b=co7yLx0dl+uPbOm+o6X6u+xGxG
-	zmsSkpLtpW7ffwD9DvfSt5JyMMlq+ib2qMHslSOexT+nMZHdvatp+EJWlOVdIgPa9Lf26kS09E6Ev
-	NDBnpwyQY6qPiNaoPYCHH3L1eLx9/8EP5j1zzBAGHLlp72PPQwPn9bO9rMesDWSJMRTNqDbj9HzSh
-	02pJ6GOq6cB42XpsE+81EZMGvkvtUy+fsbEJSEVJAbGeYvyILm/hNr1I1IICHVEtmnIfNqSRhuIG1
-	//po5uXFsml+rvjouLzyuFP//NgNSNJY5zzLiRvFwcDMDSMrueLPaNcqZIHjLLI9XhlL7XkTYB7eG
-	22AHOd8w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=yrmPiPDSEkw+rmSIIefZMcXF93YMkcADf6FK5GcAmHU=; b=bYOskwKzraJU/KP8azdN+3u0J
+	8bA9MX3Ypy/7BZdie/yDYsgM2hZ52LlUMPyWxuVGm1L0Bid1FzfTEl16z43lcWjtpG1rP7QW+Dr/v
+	QIlNmLi9DlettEkwhqxGS0kb3QSBRujOV1D3zhFTQZIeSzDKrKiTI70f7yorH+owQQVvTV2nGIjlS
+	qYeJDcm5eBO92H9wH8EVGvPANy8OKT/AsGX45R4uAmyE1ruHBuPnNiw+XuxSD7bwyIbezYRzcXdPA
+	ILN6bKPP9FW4lRpK2DKuIds5WhpDzUKAz3N6J/r37eq+2bzhWhR7SEvev43N0IDqTKyuBl63E6cD/
+	KBGRZSfzA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7aK7-0002lN-RE; Tue, 10 Sep 2019 07:12:24 +0000
-Received: from mxwww.masterlogin.de ([2a03:2900:1:1::b])
+	id 1i7aMz-0004RO-TO; Tue, 10 Sep 2019 07:15:22 +0000
+Received: from lelv0143.ext.ti.com ([198.47.23.248])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7aDM-0007ti-U5; Tue, 10 Sep 2019 07:05:27 +0000
-Received: from mxout2.routing.net (unknown [192.168.10.82])
- by new.mxwww.masterlogin.de (Postfix) with ESMTPS id 52516963C5;
- Tue, 10 Sep 2019 07:05:20 +0000 (UTC)
-Received: from mxbox2.masterlogin.de (unknown [192.168.10.253])
- by mxout2.routing.net (Postfix) with ESMTP id ADB286208B;
- Tue, 10 Sep 2019 07:05:20 +0000 (UTC)
-Received: from localhost.localdomain (fttx-pool-185.75.73.135.bambit.de
- [185.75.73.135])
- by mxbox2.masterlogin.de (Postfix) with ESMTPSA id B4CAE1002EF;
- Tue, 10 Sep 2019 07:05:19 +0000 (UTC)
-From: Frank Wunderlich <frank-w@public-files.de>
-To: linux-mediatek@lists.infradead.org
-Subject: [PATCH v7 7/7] arm: dts: mt6323: add keys, power-controller,
- rtc and codec
-Date: Tue, 10 Sep 2019 09:04:46 +0200
-Message-Id: <20190910070446.639-8-frank-w@public-files.de>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190910070446.639-1-frank-w@public-files.de>
-References: <20190910070446.639-1-frank-w@public-files.de>
+ id 1i7aF5-0008M5-Mt
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 07:07:14 +0000
+Received: from lelv0265.itg.ti.com ([10.180.67.224])
+ by lelv0143.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8A773kY063473;
+ Tue, 10 Sep 2019 02:07:03 -0500
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
+ s=ti-com-17Q1; t=1568099223;
+ bh=qhrJHNazfc5CMwtBCfE9AmHbBpmQjdMCtB10M++D6ZI=;
+ h=Subject:To:CC:References:From:Date:In-Reply-To;
+ b=aV5MsxeyOwzwuZre588rIVKEGGzYc0ka2baZHICXVKLIOPQ85G4qlEBnlMU9/6aq/
+ QWLgTsFdP5pvBhU4DDK+fl1lFQb/bNpW77FzDyhCS66xccgugv/apXAeh1XkKaeRA6
+ 5L+806zvG7l2Kb7IKCSvyZDZbZTvjv6TKV9eZRD4=
+Received: from DLEE106.ent.ti.com (dlee106.ent.ti.com [157.170.170.36])
+ by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8A7735E059383
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
+ Tue, 10 Sep 2019 02:07:03 -0500
+Received: from DLEE102.ent.ti.com (157.170.170.32) by DLEE106.ent.ti.com
+ (157.170.170.36) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Tue, 10
+ Sep 2019 02:07:03 -0500
+Received: from fllv0040.itg.ti.com (10.64.41.20) by DLEE102.ent.ti.com
+ (157.170.170.32) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
+ Frontend Transport; Tue, 10 Sep 2019 02:07:03 -0500
+Received: from [10.250.98.116] (ileax41-snat.itg.ti.com [10.172.224.153])
+ by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8A76xLj100346;
+ Tue, 10 Sep 2019 02:07:00 -0500
+Subject: Re: [PATCH v2 06/14] dmaengine: ti: Add cppi5 header for UDMA
+To: Peter Ujfalusi <peter.ujfalusi@ti.com>, Vinod Koul <vkoul@kernel.org>
+References: <20190730093450.12664-1-peter.ujfalusi@ti.com>
+ <20190730093450.12664-7-peter.ujfalusi@ti.com>
+ <20190908142528.GP2672@vkoul-mobl>
+ <8699f999-7834-a083-2c7b-3ea909b1e011@ti.com>
+From: Grygorii Strashko <grygorii.strashko@ti.com>
+Message-ID: <8486fbb1-9d2c-9230-6205-85d58b93697c@ti.com>
+Date: Tue, 10 Sep 2019 10:06:58 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <8699f999-7834-a083-2c7b-3ea909b1e011@ti.com>
+Content-Language: en-US
+X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_000525_400072_9449D249 
-X-CRM114-Status: UNSURE (   8.30  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190910_000712_435576_042040E9 
+X-CRM114-Status: GOOD (  13.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2a03:2900:1:1:0:0:0:b listed in] [list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ medium trust [198.47.23.248 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,78 +94,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Sean Wang <sean.wang@mediatek.com>, Alessandro Zummo <a.zummo@towertech.it>,
- linux-pm@vger.kernel.org, Frank Wunderlich <frank-w@public-files.de>,
- Josef Friedl <josef.friedl@speed.at>, linux-kernel@vger.kernel.org,
- Tianping Fang <tianping.fang@mediatek.com>, Rob Herring <robh+dt@kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Matthias Brugger <matthias.bgg@gmail.com>,
- Mark Rutland <mark.rutland@arm.com>, Eddie Huang <eddie.huang@mediatek.com>,
- Lee Jones <lee.jones@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: nm@ti.com, devicetree@vger.kernel.org, lokeshvutla@ti.com, j-keerthy@ti.com,
+ linux-kernel@vger.kernel.org, t-kristo@ti.com, tony@atomide.com,
+ robh+dt@kernel.org, ssantosh@kernel.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Josef Friedl <josef.friedl@speed.at>
 
-support poweroff and power-related keys on bpi-r2
 
-Suggested-by: Frank Wunderlich <frank-w@public-files.de>
-Signed-off-by: Josef Friedl <josef.friedl@speed.at>
-Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
----
-changes since v6: none
-changes since v5: none
-changes since v4: none
-changes since v3: none
-changes since v2: none (=v2 part 7)
----
- arch/arm/boot/dts/mt6323.dtsi | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+On 09/09/2019 13:59, Peter Ujfalusi wrote:
+> 
+> 
+> On 08/09/2019 17.25, Vinod Koul wrote:
+>> On 30-07-19, 12:34, Peter Ujfalusi wrote:
+>>
+>>> +/**
+>>> + * Descriptor header, present in all types of descriptors
+>>> + */
+>>> +struct cppi5_desc_hdr_t {
+>>> +	u32 pkt_info0;	/* Packet info word 0 (n/a in Buffer desc) */
+>>> +	u32 pkt_info1;	/* Packet info word 1 (n/a in Buffer desc) */
+>>> +	u32 pkt_info2;	/* Packet info word 2 Buffer reclamation info */
+>>> +	u32 src_dst_tag; /* Packet info word 3 (n/a in Buffer desc) */
+>>
+>> Can we move these comments to kernel-doc style please
+> 
+> Sure, I'll move all struct and enums.
+> 
+>>> +/**
+>>> + * cppi5_desc_get_type - get descriptor type
+>>> + * @desc_hdr: packet descriptor/TR header
+>>> + *
+>>> + * Returns descriptor type:
+>>> + * CPPI5_INFO0_DESC_TYPE_VAL_HOST
+>>> + * CPPI5_INFO0_DESC_TYPE_VAL_MONO
+>>> + * CPPI5_INFO0_DESC_TYPE_VAL_TR
+>>> + */
+>>> +static inline u32 cppi5_desc_get_type(struct cppi5_desc_hdr_t *desc_hdr)
+>>> +{
+>>> +	WARN_ON(!desc_hdr);
+>>
+>> why WARN_ON and not return error!
+> 
+> these helpers were intended to be as simple as possible.
+> I can go through with all of the WARN_ONs and replace them with if()
+> pr_warn() and either just return or return with 0.
+> 
+> Would that be acceptable?
+> 
 
-diff --git a/arch/arm/boot/dts/mt6323.dtsi b/arch/arm/boot/dts/mt6323.dtsi
-index ba397407c1dd..7fda40ab5fe8 100644
---- a/arch/arm/boot/dts/mt6323.dtsi
-+++ b/arch/arm/boot/dts/mt6323.dtsi
-@@ -238,5 +238,32 @@
- 				regulator-enable-ramp-delay = <216>;
- 			};
- 		};
-+
-+		mt6323keys: mt6323keys {
-+			compatible = "mediatek,mt6323-keys";
-+			mediatek,long-press-mode = <1>;
-+			power-off-time-sec = <0>;
-+
-+			power {
-+				linux,keycodes = <116>;
-+				wakeup-source;
-+			};
-+
-+			home {
-+				linux,keycodes = <114>;
-+			};
-+		};
-+
-+		codec: mt6397codec {
-+			compatible = "mediatek,mt6397-codec";
-+		};
-+
-+		power-controller {
-+			compatible = "mediatek,mt6323-pwrc";
-+		};
-+
-+		rtc {
-+			compatible = "mediatek,mt6323-rtc";
-+		};
- 	};
- };
+This should never happens in working system unless there is buggy code.
+I think It can be just removed
+
 -- 
-2.17.1
-
+Best regards,
+grygorii
 
 _______________________________________________
 linux-arm-kernel mailing list
