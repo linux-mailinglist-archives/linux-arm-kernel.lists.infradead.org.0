@@ -2,54 +2,54 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2F0F2AEA4C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:26:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 551BCAEA52
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:27:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mvhd3VLCV7zQdmAuDe4aiMp8Tz+M9VOLq4nan4+1Fxk=; b=KCZpXngJGMz65n
-	FbMY701jt2Sn4N/6YVYZwy2yV4GSG6xCq6+jfBrrxYPpZm7XMp1E/WwfpM7LUI5XoD7D1hJz97Bqu
-	Lmg+pWFEMVo0ffDdgu4UBMjqU+pe4Hk+Rj0vdjfg6l5E6dAtt24KyM2hwFpGcjRbQ52vzdp449F6K
-	JgUVHQ6AHCHU9ybgSvnXFnsmR4MmIrEYpzmgnVikmbGbiqk7xn54fAcyk+r/vl9ScaNyKxq9FVVtD
-	UjV7AGXk1q3uJX/oAOsB8YbX7EsYs4zTLu+4JAC8QIxHR+6TBr+N0yD0HuMrbO9z7J/OI4O+X5VLp
-	8zOiJ1yJJ2gvkZ0i2b9Q==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=0KPnCXc3ggjVQLYsmRWvylyNYNiTgE/p1Fba43/fETg=; b=tP3OBS8VKwKpuX
+	gLLb27O40tl4T3uQTx/A4mHh0JILu/6O26eDk3eK2CWbKIYYg3ZVLtDpB+DZhvrtuZ+nDZOeM/qu7
+	dZG+o9/hv1XLXQFrAPsaLqDm+zbHTcZ9rSMhxVbwucgYc38vHy3AKscCeIHYRHvBSZJbwb/9WlfX3
+	DeBX5JQ2l9uP1YzshcbfTRwUJmoqN0mF70yCDv/Zgw36dk/CxNlU/we3g/X97eupsdlvZqB5QHVJ3
+	Xj6LAz+qp/5z7an/UXlSbuhrdOcYwqi8IM3i/Mxdz/yHbkq3wH/AMD2crx88/Hz7QqOEdsTnLoqAA
+	/4g73Vs8w+3/eXKOFDMw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7fDe-0005zp-8V; Tue, 10 Sep 2019 12:26:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
- id 1i7fDH-0005zD-Es
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:25:45 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 21E2C1000;
- Tue, 10 Sep 2019 05:25:38 -0700 (PDT)
-Received: from [10.1.197.50] (e120937-lin.cambridge.arm.com [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 50E5D3F59C;
- Tue, 10 Sep 2019 05:25:37 -0700 (PDT)
-Subject: Re: [PATCH v5 00/11] Add arm64/signal initial kselftest support
-To: Dave Martin <Dave.Martin@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190904114722.GQ27757@arm.com>
-From: Cristian Marussi <cristian.marussi@arm.com>
-Message-ID: <74165b2e-eb4c-994f-20ca-b69f71f3f5bc@arm.com>
-Date: Tue, 10 Sep 2019 13:25:31 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+	id 1i7fEy-0006LL-CR; Tue, 10 Sep 2019 12:27:24 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+ by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7fEj-0006Km-NH
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:27:11 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 0C728AB89;
+ Tue, 10 Sep 2019 12:27:08 +0000 (UTC)
+Date: Tue, 10 Sep 2019 14:27:07 +0200
+From: Michal Hocko <mhocko@kernel.org>
+To: Alexander Duyck <alexander.duyck@gmail.com>
+Subject: Re: [PATCH v9 4/8] mm: Use zone and order instead of free area in
+ free_list manipulators
+Message-ID: <20190910122707.GX2063@dhcp22.suse.cz>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190907172536.10910.99561.stgit@localhost.localdomain>
 MIME-Version: 1.0
-In-Reply-To: <20190904114722.GQ27757@arm.com>
-Content-Language: en-US
+Content-Disposition: inline
+In-Reply-To: <20190907172536.10910.99561.stgit@localhost.localdomain>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_052543_502205_F3BCD384 
-X-CRM114-Status: GOOD (  24.34  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190910_052710_054039_D0901F94 
+X-CRM114-Status: GOOD (  22.88  )
+X-Spam-Score: -1.3 (-)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-1.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,181 +62,279 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-kselftest@vger.kernel.org
+Cc: yang.zhang.wz@gmail.com, pagupta@redhat.com, kvm@vger.kernel.org,
+ david@redhat.com, catalin.marinas@arm.com, lcapitulino@redhat.com,
+ linux-mm@kvack.org, alexander.h.duyck@linux.intel.com, will@kernel.org,
+ aarcange@redhat.com, virtio-dev@lists.oasis-open.org, mst@redhat.com,
+ willy@infradead.org, wei.w.wang@intel.com, ying.huang@intel.com,
+ riel@surriel.com, konrad.wilk@oracle.com, dan.j.williams@intel.com,
+ linux-arm-kernel@lists.infradead.org, osalvador@suse.de, nitesh@redhat.com,
+ dave.hansen@intel.com, linux-kernel@vger.kernel.org, pbonzini@redhat.com,
+ akpm@linux-foundation.org, fengguang.wu@intel.com,
+ kirill.shutemov@linux.intel.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 04/09/2019 12:47, Dave Martin wrote:
-> On Mon, Sep 02, 2019 at 12:29:21pm +0100, Cristian Marussi wrote:
->> Hi
->>
->> this patchset aims to add the initial arch-specific arm64 support to
->> kselftest starting with signals-related test-cases.
->> A common internal test-case layout is proposed which then it is anyway
->> wired-up to the toplevel kselftest Makefile, so that it should be possible
->> at the end to run it on an arm64 target in the usual way with KSFT.
+On Sat 07-09-19 10:25:36, Alexander Duyck wrote:
+> From: Alexander Duyck <alexander.h.duyck@linux.intel.com>
 > 
-> BTW, it's helpful to state the base branch / commit as clearly as
-> possible near the top of the cover letter, say,
+> In order to enable the use of the zone from the list manipulator functions
+> I will need access to the zone pointer. As it turns out most of the
+> accessors were always just being directly passed &zone->free_area[order]
+> anyway so it would make sense to just fold that into the function itself
+> and pass the zone and order as arguments instead of the free area.
+
+Yes this makes the interface better.
+
+> In order to be able to reference the zone we need to move the declaration
+> of the functions down so that we have the zone defined before we define the
+> list manipulation functions.
 > 
-> --8<--
+> Reviewed-by: Dan Williams <dan.j.williams@intel.com>
+> Reviewed-by: David Hildenbrand <david@redhat.com>
+> Reviewed-by: Pankaj Gupta <pagupta@redhat.com>
+> Signed-off-by: Alexander Duyck <alexander.h.duyck@linux.intel.com>
+
+Acked-by: Michal Hocko <mhocko@suse.com>
+
+> ---
+>  include/linux/mmzone.h |   70 ++++++++++++++++++++++++++----------------------
+>  mm/page_alloc.c        |   30 ++++++++-------------
+>  2 files changed, 49 insertions(+), 51 deletions(-)
 > 
-> This series is based on arm64/for-next/core [1]
-> commit 9ce1263033cd ("selftests, arm64: add a selftest for passing tagged pointers to kernel")
-> 
-> [1] git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
-> 
-> -->8--
-> 
-> This is particularly important if you expect the maintainer to pick up
-> the patches.
-> 
-> You don't need to reference a specific commit unless there's a
-> significant chance of conflicts if the wrong commit is used, but it can
-> help provide a clue as to why you're basing on this alternate branch.
-> 
+> diff --git a/include/linux/mmzone.h b/include/linux/mmzone.h
+> index 125f300981c6..2ddf1f1971c0 100644
+> --- a/include/linux/mmzone.h
+> +++ b/include/linux/mmzone.h
+> @@ -100,29 +100,6 @@ struct free_area {
+>  	unsigned long		nr_free;
+>  };
+>  
+> -/* Used for pages not on another list */
+> -static inline void add_to_free_area(struct page *page, struct free_area *area,
+> -			     int migratetype)
+> -{
+> -	list_add(&page->lru, &area->free_list[migratetype]);
+> -	area->nr_free++;
+> -}
+> -
+> -/* Used for pages not on another list */
+> -static inline void add_to_free_area_tail(struct page *page, struct free_area *area,
+> -				  int migratetype)
+> -{
+> -	list_add_tail(&page->lru, &area->free_list[migratetype]);
+> -	area->nr_free++;
+> -}
+> -
+> -/* Used for pages which are on another list */
+> -static inline void move_to_free_area(struct page *page, struct free_area *area,
+> -			     int migratetype)
+> -{
+> -	list_move(&page->lru, &area->free_list[migratetype]);
+> -}
+> -
+>  static inline struct page *get_page_from_free_area(struct free_area *area,
+>  					    int migratetype)
+>  {
+> @@ -130,15 +107,6 @@ static inline struct page *get_page_from_free_area(struct free_area *area,
+>  					struct page, lru);
+>  }
+>  
+> -static inline void del_page_from_free_area(struct page *page,
+> -		struct free_area *area)
+> -{
+> -	list_del(&page->lru);
+> -	__ClearPageBuddy(page);
+> -	set_page_private(page, 0);
+> -	area->nr_free--;
+> -}
+> -
+>  static inline bool free_area_empty(struct free_area *area, int migratetype)
+>  {
+>  	return list_empty(&area->free_list[migratetype]);
+> @@ -796,6 +764,44 @@ static inline bool pgdat_is_empty(pg_data_t *pgdat)
+>  	return !pgdat->node_start_pfn && !pgdat->node_spanned_pages;
+>  }
+>  
+> +/* Used for pages not on another list */
+> +static inline void add_to_free_list(struct page *page, struct zone *zone,
+> +				    unsigned int order, int migratetype)
+> +{
+> +	struct free_area *area = &zone->free_area[order];
+> +
+> +	list_add(&page->lru, &area->free_list[migratetype]);
+> +	area->nr_free++;
+> +}
+> +
+> +/* Used for pages not on another list */
+> +static inline void add_to_free_list_tail(struct page *page, struct zone *zone,
+> +					 unsigned int order, int migratetype)
+> +{
+> +	struct free_area *area = &zone->free_area[order];
+> +
+> +	list_add_tail(&page->lru, &area->free_list[migratetype]);
+> +	area->nr_free++;
+> +}
+> +
+> +/* Used for pages which are on another list */
+> +static inline void move_to_free_list(struct page *page, struct zone *zone,
+> +				     unsigned int order, int migratetype)
+> +{
+> +	struct free_area *area = &zone->free_area[order];
+> +
+> +	list_move(&page->lru, &area->free_list[migratetype]);
+> +}
+> +
+> +static inline void del_page_from_free_list(struct page *page, struct zone *zone,
+> +					   unsigned int order)
+> +{
+> +	list_del(&page->lru);
+> +	__ClearPageBuddy(page);
+> +	set_page_private(page, 0);
+> +	zone->free_area[order].nr_free--;
+> +}
+> +
+>  #include <linux/memory_hotplug.h>
+>  
+>  void build_all_zonelists(pg_data_t *pgdat);
+> diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+> index a791f2baeeeb..f85dc1561b85 100644
+> --- a/mm/page_alloc.c
+> +++ b/mm/page_alloc.c
+> @@ -921,7 +921,6 @@ static inline void __free_one_page(struct page *page,
+>  	struct capture_control *capc = task_capc(zone);
+>  	unsigned long uninitialized_var(buddy_pfn);
+>  	unsigned long combined_pfn;
+> -	struct free_area *area;
+>  	unsigned int max_order;
+>  	struct page *buddy;
+>  
+> @@ -958,7 +957,7 @@ static inline void __free_one_page(struct page *page,
+>  		if (page_is_guard(buddy))
+>  			clear_page_guard(zone, buddy, order, migratetype);
+>  		else
+> -			del_page_from_free_area(buddy, &zone->free_area[order]);
+> +			del_page_from_free_list(buddy, zone, order);
+>  		combined_pfn = buddy_pfn & pfn;
+>  		page = page + (combined_pfn - pfn);
+>  		pfn = combined_pfn;
+> @@ -992,12 +991,11 @@ static inline void __free_one_page(struct page *page,
+>  done_merging:
+>  	set_page_order(page, order);
+>  
+> -	area = &zone->free_area[order];
+>  	if (is_shuffle_order(order) ? shuffle_pick_tail() :
+>  	    buddy_merge_likely(pfn, buddy_pfn, page, order))
+> -		add_to_free_area_tail(page, area, migratetype);
+> +		add_to_free_list_tail(page, zone, order, migratetype);
+>  	else
+> -		add_to_free_area(page, area, migratetype);
+> +		add_to_free_list(page, zone, order, migratetype);
+>  }
+>  
+>  /*
+> @@ -2001,13 +1999,11 @@ void __init init_cma_reserved_pageblock(struct page *page)
+>   * -- nyc
+>   */
+>  static inline void expand(struct zone *zone, struct page *page,
+> -	int low, int high, struct free_area *area,
+> -	int migratetype)
+> +	int low, int high, int migratetype)
+>  {
+>  	unsigned long size = 1 << high;
+>  
+>  	while (high > low) {
+> -		area--;
+>  		high--;
+>  		size >>= 1;
+>  		VM_BUG_ON_PAGE(bad_range(zone, &page[size]), &page[size]);
+> @@ -2021,7 +2017,7 @@ static inline void expand(struct zone *zone, struct page *page,
+>  		if (set_page_guard(zone, &page[size], high, migratetype))
+>  			continue;
+>  
+> -		add_to_free_area(&page[size], area, migratetype);
+> +		add_to_free_list(&page[size], zone, high, migratetype);
+>  		set_page_order(&page[size], high);
+>  	}
+>  }
+> @@ -2179,8 +2175,8 @@ struct page *__rmqueue_smallest(struct zone *zone, unsigned int order,
+>  		page = get_page_from_free_area(area, migratetype);
+>  		if (!page)
+>  			continue;
+> -		del_page_from_free_area(page, area);
+> -		expand(zone, page, order, current_order, area, migratetype);
+> +		del_page_from_free_list(page, zone, current_order);
+> +		expand(zone, page, order, current_order, migratetype);
+>  		set_pcppage_migratetype(page, migratetype);
+>  		return page;
+>  	}
+> @@ -2188,7 +2184,6 @@ struct page *__rmqueue_smallest(struct zone *zone, unsigned int order,
+>  	return NULL;
+>  }
+>  
+> -
+>  /*
+>   * This array describes the order lists are fallen back to when
+>   * the free lists for the desirable migrate type are depleted
+> @@ -2254,7 +2249,7 @@ static int move_freepages(struct zone *zone,
+>  		VM_BUG_ON_PAGE(page_zone(page) != zone, page);
+>  
+>  		order = page_order(page);
+> -		move_to_free_area(page, &zone->free_area[order], migratetype);
+> +		move_to_free_list(page, zone, order, migratetype);
+>  		page += 1 << order;
+>  		pages_moved += 1 << order;
+>  	}
+> @@ -2370,7 +2365,6 @@ static void steal_suitable_fallback(struct zone *zone, struct page *page,
+>  		unsigned int alloc_flags, int start_type, bool whole_block)
+>  {
+>  	unsigned int current_order = page_order(page);
+> -	struct free_area *area;
+>  	int free_pages, movable_pages, alike_pages;
+>  	int old_block_type;
+>  
+> @@ -2441,8 +2435,7 @@ static void steal_suitable_fallback(struct zone *zone, struct page *page,
+>  	return;
+>  
+>  single_page:
+> -	area = &zone->free_area[current_order];
+> -	move_to_free_area(page, area, start_type);
+> +	move_to_free_list(page, zone, current_order, start_type);
+>  }
+>  
+>  /*
+> @@ -3113,7 +3106,6 @@ void split_page(struct page *page, unsigned int order)
+>  
+>  int __isolate_free_page(struct page *page, unsigned int order)
+>  {
+> -	struct free_area *area = &page_zone(page)->free_area[order];
+>  	unsigned long watermark;
+>  	struct zone *zone;
+>  	int mt;
+> @@ -3139,7 +3131,7 @@ int __isolate_free_page(struct page *page, unsigned int order)
+>  
+>  	/* Remove page from free list */
+>  
+> -	del_page_from_free_area(page, area);
+> +	del_page_from_free_list(page, zone, order);
+>  
+>  	/*
+>  	 * Set the pageblock if the isolated page is at least half of a
+> @@ -8560,7 +8552,7 @@ void zone_pcp_reset(struct zone *zone)
+>  		pr_info("remove from free list %lx %d %lx\n",
+>  			pfn, 1 << order, end_pfn);
+>  #endif
+> -		del_page_from_free_area(page, &zone->free_area[order]);
+> +		del_page_from_free_list(page, zone, order);
+>  		for (i = 0; i < (1 << order); i++)
+>  			SetPageReserved((page+i));
+>  		pfn += (1 << order);
 
-Ok, thanks I'll do.
-
->> ~/linux# make TARGETS=arm64 kselftest
->>
->> New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped by
->> family inside subdirectories: arm64/signal is the first family proposed with
->> this series.
->> This series converts also to this subdirectory scheme the pre-existing
->> (already queued on arm64/for-next/core) KSFT arm64 tags tests, moving them
->> into arm64/tags.
->>
->> Thanks
->>
->> Cristian
->>
->>
->> Notes:
->> -----
->> - further details in the included READMEs
->>
->> - more tests still to be written (current strategy is going through the related
->>   Kernel signal-handling code and write a test for each possible and sensible code-path)
->>   A few ideas for more TODO testcases:
->> 	- fake_sigreturn_unmapped_sp: SP into unmapped addrs
->> 	- fake_sigreturn_kernelspace_sp: SP into kernel addrs
->> 	- fake_sigreturn_sve_bad_extra_context: SVE extra context badly formed
->> 	- mangle_sve_invalid_extra_context: SVE extra_context invalid
->>
->> - SVE signal testcases and special handling will be part of an additional patch
->>   still to be released
-> 
-> What's your approach to checking that the test failure paths work?
-> 
-> We could either hack the kernel or the tests to provoke "fake" failures,
-> and I don't think it's necessary to test everything in this way,
-> providing we have confidence that the test strategy and framework works
-> in general.
-> 
-
-So my approach to testing the tests itself has been as follows:
-
-- PASS path: instrumented Kernel itself to print the exact line where the SEGV
-  is supposed to be called and manually check once for all (just redone now).
-  Something like:
-
-# FAKE_SIGRETURN_MISALIGNED_SP :: Triggers a sigreturn with a misaligned sigframe
-Registered handlers for all signals.
-Detected MINSTKSIGSZ:9984
-Testcase initialized.
-uc context validated.
-GOOD CONTEXT grabbed from sig_copyctx handler
-Handled SIG_COPYCTX
-Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAAE5253
-[  188.206911] Kernel SEGV @ 571                                                   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-SIG_OK -- SP:0xFFFFCAAE5253  si_addr@:0xffffcaae5253  si_code:2  token@:0xffffcaae5253  offset:0
-==>> completed. PASS(1)
-
-
-- FAIL path: tried at first the same approach (instrument to avoid the SEGV), but thinking that
-  this could have led to general Kernel instability while processing bad sigframes,
-  I instead instrumented tests and utils as follows:
-
-  - mangle_ TESTS:
-
-    + removed the "mangling" for each test, and observed test FAIL (NO SEGV)
-
-# MANGLE_PSTATE_INVALID_MODE_EL1h :: Mangling uc_mcontext INVALID MODE EL1h
-Registered handlers for all signals.
-Detected MINSTKSIGSZ:9984
-Testcase initialized.
-uc context validated.
-Handled SIG_TRIG
-==>> completed. FAIL(0)
-
-    + SSBS: being this a peculiar mangle_ test, where we check that SSBS is PRESERVED as it is
-      on Kernel restoring sigframe (no expected SEGV), I used a kernel patched to NOT preserve
-      the SSBS bit (so clearing it). Moreover I experimented with the various SSBS support levels
-      (no_supp/SSBS_BIT/MRS+SSBS_BIT) and observed how test behaved related to the detected SSBS support
-
-    + verify that an anomalous SEGV (no SEGV_ACCER) is detected (say a *(* int)0x00= inside handler)
-
-# MANGLE_PSTATE_INVALID_DAIF_BITS :: Mangling uc_mcontext with INVALID DAIF_BITS
-Registered handlers for all signals.
-Detected MINSTKSIGSZ:9984
-Testcase initialized.
-uc context validated.
-SIG_OK -- SP:0xFFFFFBE96DA0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
-si_code != SEGV_ACCERR...test is probably broken!  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
--- RX UNEXPECTED SIGNAL: 6
-==>> completed. FAIL(0)
-
-
-  - fake_sigreturn_ TESTS:
-
-    + verify placing on the stack the good context grabbed from get_current_context() as it is
-      (GOOD), execution flow is anomalously restored inside get_current_context() and such 
-      anomaly is spotted (without deadly loops)
-
-# FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
-Registered handlers for all signals.
-Detected MINSTKSIGSZ:9984
-Testcase initialized.
-uc context validated.
-GOOD CONTEXT grabbed from sig_copyctx handler
-Handled SIG_COPYCTX
-Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAC61F80
-Unexpected successful sigreturn detected: live_uc is stale !        <<<<<<<<<<<<<<<<<<<<<<<<<<<
-==>> completed. FAIL(0)
-
-    + verify that an early SEGV is detected as anomalous (say a *(* int)0x00 before fake sigframe
-      has been placed on the stack)
-
-# FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
-Registered handlers for all signals.
-Detected MINSTKSIGSZ:9984
-Testcase initialized.
-uc context validated.
-GOOD CONTEXT grabbed from sig_copyctx handler
-Handled SIG_COPYCTX
-Available space:3552
-Using badly built context - ERR: BAD MAGIC !
-Calling sigreturn with fake sigframe sized:4688 at SP @FFFFE77C96D0
-SIG_OK -- SP:0xFFFFE77C96D0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
-current->token ZEROED...test is probably broken!   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
--- RX UNEXPECTED SIGNAL: 6
-==>> completed. FAIL(0)
-
-
-> [...]
-> 
-> Cheers
-> ---Dave
-> 
-
-Cheers
-
-Cristian
-
+-- 
+Michal Hocko
+SUSE Labs
 
 _______________________________________________
 linux-arm-kernel mailing list
