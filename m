@@ -2,75 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AF678AF332
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 01:20:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE776AF334
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 01:20:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=HnAIWVwXEr0dHplxSU8IFlzrXJ7n92nB7WG7qT7ZYRA=; b=OzA
-	STvn2/MCIn7g5x9YWIQGmzW/v7UUqkp2FO4lR0N2g8+FrVJQQKb6F/6N/C9pvPx3KHas03bk8Y5MW
-	Qn+kAT4jYJAOZXaA3Qi4bYLLmbr8wNuKmHaIQvWzwtMrucKIxguL6Hvj8UH+MkECiSF4xhF/aK4zF
-	q7r+5GVCbFr+njRa8KUOoBkztYyYGz2pTBMti6YvAsSRSuzajSsnWHrSzRXHEmY3/Gi3L1oMPf8Sk
-	4jETLSPPdPE/6+jAQ3TCwhwzzmyV77uJSfXE2AKoMFfAhFxfkrlHjRkLuxnNqEyQGdg/HsWLw4bO0
-	Zk4q/YO75f65dvaxo/abaT4cQXkJZkA==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=A/tKM3gRjMWrLdL74ycfnpwMrAck3VbThgK4qnISWr4=; b=RRDe1DbKDmRTcZ5G268fgOtdGJ
+	xLmefzlP+i4fcmDHyxSmkdLCbyn6QtWi5jKGLFIXLO6+nW7+AA4fnVR+YGUMhk1S5B/mw5H28z6Pm
+	c6SW+HZ2meGIF0UCLWCADhN7PFOVhw2Zpwu5870RHXpR8MI85w7wF+9ccfunbMaiknepDX2pjP9k0
+	0e47bBiJf5Dt8NouSldgQ3675gFtYDlJux4c5xdxiLOweEj3pqNPiy2wF9m+MtT8PirIvIzJhyD8a
+	kObaGk+jZfgKKxt/G1mDOEiMpVNglwLRmPt4ewX9crJh1dGH+wo0hXeQxEWzjbg5QlG6Ge1zReLa6
+	64bQ8rTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7pQH-0007xj-IE; Tue, 10 Sep 2019 23:19:45 +0000
-Received: from mail-wr1-x42c.google.com ([2a00:1450:4864:20::42c])
+	id 1i7pQr-00085e-LD; Tue, 10 Sep 2019 23:20:22 +0000
+Received: from mail-wm1-x343.google.com ([2a00:1450:4864:20::343])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7pQ3-0007wy-TT
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 23:19:33 +0000
-Received: by mail-wr1-x42c.google.com with SMTP id q17so17671135wrx.10
+ id 1i7pQ6-0007wz-8F
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 23:19:35 +0000
+Received: by mail-wm1-x343.google.com with SMTP id r17so845187wme.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 16:19:28 -0700 (PDT)
+ Tue, 10 Sep 2019 16:19:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=SXqvufRx22Snq4CxB9/c8WHZDNZ5MvJ2HzCzsXJqgHM=;
- b=d1fze8HNJ26w372C7MOYSl0YeOaaQILdmYBO7wYoFgSxcXpHBbR34WKtDC+CZBA8oW
- hzVUtpxkmbGLc+gVz/0BJkN6I5oHEKF4b0hJh6xD2qRuSxqBU5d4Tme9MnewwhIYSgYY
- ICTkBMjee+VVdvZKRhEEs4q28XXfEwca/0PJn4eRKJmFo9F5u2u8sLW5m9jP8gZTND6Q
- zo2soetshVnRVzSSOZ4fMMx0yNOVovfVWSBWsehLNJdeuezamtQaXKscWkAvrP0/7ukr
- 6KrJvq3hptbx+97kXW8IYpaNqsZdeAhsZWTDbKUW4I2F0wgVueb5FavMUrh1QfVGVdnj
- iFAQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=VGVIdAO9OEwtBrGMbmlkUR8fmURSnEmtHuSHajss7bg=;
+ b=NlfcSpZrFWftuixDbmewS1eJhRHfReZ0Po4F+qUjHPU5odMqE0D2dE6j4XdcX7ftYK
+ ykPZ8/Fe1ReQLb4tCNA5FTgWFRj6HNjb23z3DU5qjiI+WK+L9a7qIXCTJ0KO3YgNrF79
+ O5XjK+yJoY1hgct2UeobC92E7qtqaM0UHYgnRfUfMnl+rYGj2dD0ql8WaybRUUetkfL4
+ e8CYqDRigCh85crpWEjBqvcdoDNeAmuO2U4yD9EC/DVY/2QEHnvEQav/ucm2L7m5thNQ
+ qSEKuo9/IvDPrC2ctn6xlvfcgmGCw3c8khVRYwiChPwY//pbhJI1e1XJwsUQsUWWvOw0
+ 0JSA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=SXqvufRx22Snq4CxB9/c8WHZDNZ5MvJ2HzCzsXJqgHM=;
- b=MulE/Jh5mKrrkswFcEBXQgx0oUYcn42TnBg6q42dm+S4Sk65QjQ9e1kgsrwSMw6tE4
- tHls1d0hw4L9RKHyD6LFy2ELquGjR2KZtL/kZFomaAzofU8jeLaiAukYlcTM7pRgq1Rv
- /cFFjELgaHQ8cPSwtD1e1YDETiRF+sCDyO9s+vHcftz3rtx6L+a0VXbP/z5kXurKWeN7
- 2tW4+93T0NXmhe0prtR/LGtl6/eAzh2H2diX1RVezOUNXqAepBbr6zYbtzIXMgffyYK3
- BOKmcutHXpVZruqcymUI3aXNbJQV9nOe8dxz/dk9MoB7Vw7ULgoYqxLSkaRWKXDX0G6Z
- 7dlw==
-X-Gm-Message-State: APjAAAW1ZjjD7aGA/jvMWyCVGsr5liZF8WtUjmZ/Eka8WU86U3dIeKQG
- 9GzNbERdX0w8OwGBSY6CreU55A==
-X-Google-Smtp-Source: APXvYqyWtnl6Kb4GtaRJecmKRxkjIVDfunGlWD24PiMglBNoCWz0IXGtn1ox7W76gE/Y95a5RlizNg==
-X-Received: by 2002:adf:ef05:: with SMTP id e5mr27760313wro.127.1568157567583; 
- Tue, 10 Sep 2019 16:19:27 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=VGVIdAO9OEwtBrGMbmlkUR8fmURSnEmtHuSHajss7bg=;
+ b=aNhowSfRay7S/Mdnuk3HbNtxyos1YFXwANXWgUpdBEslklYQGOce+h4m20WtJChRt3
+ dgFRi2a+j0c5ufh/QK5FPTqpVxRqdhTbICcU/HCmJAK8j8VDMLC8kCskMzUJq61D5F+Z
+ W2Y8CQFOFDlxjYqsq9EpdDma8tcif+wvlxrpmxWginv3ofxbqupBdgYQniGadIrG9WOR
+ amLGmF9tkQqrnbDYtbctpna8SwIxgGl8gwmORmhSvi3/F6TpWj4CzHAaK1lRqaI+Xlvu
+ sYaET+CFvLBD6a+rC+YvSD8brEKMcuzfmJDZhV39mu1fQc6YOKH4eu5nX1x33pTvlYGR
+ HNyg==
+X-Gm-Message-State: APjAAAUS6aGZ1lICeTLwttSXDToMIgjPAsHUQBb0XaiOoSC7EUDu/bHY
+ Y3s2nYhxmcCSrHzUsDfyx9ChiQ==
+X-Google-Smtp-Source: APXvYqxgUrxCnH+dYIH0pxGHFMd/Huacl2SJLvm3KJj+0z9mQMiz69n5tZlrKZ/vWy+qisiVzPN7WQ==
+X-Received: by 2002:a05:600c:2181:: with SMTP id
+ e1mr1403939wme.117.1568157569046; 
+ Tue, 10 Sep 2019 16:19:29 -0700 (PDT)
 Received: from e111045-lin.nice.arm.com ([148.69.85.38])
- by smtp.gmail.com with ESMTPSA id y186sm2137846wmb.41.2019.09.10.16.19.25
+ by smtp.gmail.com with ESMTPSA id y186sm2137846wmb.41.2019.09.10.16.19.27
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Sep 2019 16:19:26 -0700 (PDT)
+ Tue, 10 Sep 2019 16:19:28 -0700 (PDT)
 From: Ard Biesheuvel <ard.biesheuvel@linaro.org>
 To: linux-crypto@vger.kernel.org
-Subject: [PATCH 0/2] crypto: faster GCM-AES for arm64
-Date: Wed, 11 Sep 2019 00:18:58 +0100
-Message-Id: <20190910231900.25445-1-ard.biesheuvel@linaro.org>
+Subject: [PATCH 1/2] crypto: testmgr - add another gcm(aes) testcase
+Date: Wed, 11 Sep 2019 00:18:59 +0100
+Message-Id: <20190910231900.25445-2-ard.biesheuvel@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190910231900.25445-1-ard.biesheuvel@linaro.org>
+References: <20190910231900.25445-1-ard.biesheuvel@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_161932_013696_86EF22A5 
-X-CRM114-Status: UNSURE (   6.98  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190910_161934_293228_1325CF86 
+X-CRM114-Status: GOOD (  10.78  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:42c listed in]
+ no trust [2a00:1450:4864:20:0:0:0:343 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -101,19 +105,219 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series reimplements gcm(aes) for arm64 systems that support the
-AES and 64x64->128 PMULL/PMULL2 instructions. Patch #1 adds a test
-case and patch #2 updates the driver.
+Add an additional gcm(aes) test case that triggers the code path in
+the new arm64 driver that deals with tail blocks whose size is not
+a multiple of the block size, and where the size of the preceding
+input is a multiple of 64 bytes.
 
-Ard Biesheuvel (2):
-  crypto: testmgr - add another gcm(aes) testcase
-  crypto: arm64/gcm-ce - implement 4 way interleave
+Signed-off-by: Ard Biesheuvel <ard.biesheuvel@linaro.org>
+---
+ crypto/testmgr.h | 192 ++++++++++++++++++++
+ 1 file changed, 192 insertions(+)
 
- arch/arm64/crypto/ghash-ce-core.S | 501 ++++++++++++++------
- arch/arm64/crypto/ghash-ce-glue.c | 293 +++++-------
- crypto/testmgr.h                  | 192 ++++++++
- 3 files changed, 659 insertions(+), 327 deletions(-)
-
+diff --git a/crypto/testmgr.h b/crypto/testmgr.h
+index b3296441f9c7..690e68cb3e51 100644
+--- a/crypto/testmgr.h
++++ b/crypto/testmgr.h
+@@ -17411,6 +17411,198 @@ static const struct aead_testvec aes_gcm_tv_template[] = {
+ 			  "\x25\x19\x49\x8e\x80\xf1\x47\x8f"
+ 			  "\x37\xba\x55\xbd\x6d\x27\x61\x8c",
+ 		.clen	= 76,
++	}, {
++		.key	= "\x62\x35\xf8\x95\xfc\xa5\xeb\xf6"
++			  "\x0e\x92\x12\x04\xd3\xa1\x3f\x2e"
++			  "\x8b\x32\xcf\xe7\x44\xed\x13\x59"
++			  "\x04\x38\x77\xb0\xb9\xad\xb4\x38",
++		.klen	= 32,
++		.iv	= "\x00\xff\xff\xff\xff\x00\x00\xff"
++			  "\xff\xff\x00\xff",
++		.ptext	= "\x42\xc1\xcc\x08\x48\x6f\x41\x3f"
++			  "\x2f\x11\x66\x8b\x2a\x16\xf0\xe0"
++			  "\x58\x83\xf0\xc3\x70\x14\xc0\x5b"
++			  "\x3f\xec\x1d\x25\x3c\x51\xd2\x03"
++			  "\xcf\x59\x74\x1f\xb2\x85\xb4\x07"
++			  "\xc6\x6a\x63\x39\x8a\x5b\xde\xcb"
++			  "\xaf\x08\x44\xbd\x6f\x91\x15\xe1"
++			  "\xf5\x7a\x6e\x18\xbd\xdd\x61\x50"
++			  "\x59\xa9\x97\xab\xbb\x0e\x74\x5c"
++			  "\x00\xa4\x43\x54\x04\x54\x9b\x3b"
++			  "\x77\xec\xfd\x5c\xa6\xe8\x7b\x08"
++			  "\xae\xe6\x10\x3f\x32\x65\xd1\xfc"
++			  "\xa4\x1d\x2c\x31\xfb\x33\x7a\xb3"
++			  "\x35\x23\xf4\x20\x41\xd4\xad\x82"
++			  "\x8b\xa4\xad\x96\x1c\x20\x53\xbe"
++			  "\x0e\xa6\xf4\xdc\x78\x49\x3e\x72"
++			  "\xb1\xa9\xb5\x83\xcb\x08\x54\xb7"
++			  "\xad\x49\x3a\xae\x98\xce\xa6\x66"
++			  "\x10\x30\x90\x8c\x55\x83\xd7\x7c"
++			  "\x8b\xe6\x53\xde\xd2\x6e\x18\x21"
++			  "\x01\x52\xd1\x9f\x9d\xbb\x9c\x73"
++			  "\x57\xcc\x89\x09\x75\x9b\x78\x70"
++			  "\xed\x26\x97\x4d\xb4\xe4\x0c\xa5"
++			  "\xfa\x70\x04\x70\xc6\x96\x1c\x7d"
++			  "\x54\x41\x77\xa8\xe3\xb0\x7e\x96"
++			  "\x82\xd9\xec\xa2\x87\x68\x55\xf9"
++			  "\x8f\x9e\x73\x43\x47\x6a\x08\x36"
++			  "\x93\x67\xa8\x2d\xde\xac\x41\xa9"
++			  "\x5c\x4d\x73\x97\x0f\x70\x68\xfa"
++			  "\x56\x4d\x00\xc2\x3b\x1f\xc8\xb9"
++			  "\x78\x1f\x51\x07\xe3\x9a\x13\x4e"
++			  "\xed\x2b\x2e\xa3\xf7\x44\xb2\xe7"
++			  "\xab\x19\x37\xd9\xba\x76\x5e\xd2"
++			  "\xf2\x53\x15\x17\x4c\x6b\x16\x9f"
++			  "\x02\x66\x49\xca\x7c\x91\x05\xf2"
++			  "\x45\x36\x1e\xf5\x77\xad\x1f\x46"
++			  "\xa8\x13\xfb\x63\xb6\x08\x99\x63"
++			  "\x82\xa2\xed\xb3\xac\xdf\x43\x19"
++			  "\x45\xea\x78\x73\xd9\xb7\x39\x11"
++			  "\xa3\x13\x7c\xf8\x3f\xf7\xad\x81"
++			  "\x48\x2f\xa9\x5c\x5f\xa0\xf0\x79"
++			  "\xa4\x47\x7d\x80\x20\x26\xfd\x63"
++			  "\x0a\xc7\x7e\x6d\x75\x47\xff\x76"
++			  "\x66\x2e\x8a\x6c\x81\x35\xaf\x0b"
++			  "\x2e\x6a\x49\x60\xc1\x10\xe1\xe1"
++			  "\x54\x03\xa4\x09\x0c\x37\x7a\x15"
++			  "\x23\x27\x5b\x8b\x4b\xa5\x64\x97"
++			  "\xae\x4a\x50\x73\x1f\x66\x1c\x5c"
++			  "\x03\x25\x3c\x8d\x48\x58\x71\x34"
++			  "\x0e\xec\x4e\x55\x1a\x03\x6a\xe5"
++			  "\xb6\x19\x2b\x84\x2a\x20\xd1\xea"
++			  "\x80\x6f\x96\x0e\x05\x62\xc7\x78"
++			  "\x87\x79\x60\x38\x46\xb4\x25\x57"
++			  "\x6e\x16\x63\xf8\xad\x6e\xd7\x42"
++			  "\x69\xe1\x88\xef\x6e\xd5\xb4\x9a"
++			  "\x3c\x78\x6c\x3b\xe5\xa0\x1d\x22"
++			  "\x86\x5c\x74\x3a\xeb\x24\x26\xc7"
++			  "\x09\xfc\x91\x96\x47\x87\x4f\x1a"
++			  "\xd6\x6b\x2c\x18\x47\xc0\xb8\x24"
++			  "\xa8\x5a\x4a\x9e\xcb\x03\xe7\x2a"
++			  "\x09\xe6\x4d\x9c\x6d\x86\x60\xf5"
++			  "\x2f\x48\x69\x37\x9f\xf2\xd2\xcb"
++			  "\x0e\x5a\xdd\x6e\x8a\xfb\x6a\xfe"
++			  "\x0b\x63\xde\x87\x42\x79\x8a\x68"
++			  "\x51\x28\x9b\x7a\xeb\xaf\xb8\x2f"
++			  "\x9d\xd1\xc7\x45\x90\x08\xc9\x83"
++			  "\xe9\x83\x84\xcb\x28\x69\x09\x69"
++			  "\xce\x99\x46\x00\x54\xcb\xd8\x38"
++			  "\xf9\x53\x4a\xbf\x31\xce\x57\x15"
++			  "\x33\xfa\x96\x04\x33\x42\xe3\xc0"
++			  "\xb7\x54\x4a\x65\x7a\x7c\x02\xe6"
++			  "\x19\x95\xd0\x0e\x82\x07\x63\xf9"
++			  "\xe1\x2b\x2a\xfc\x55\x92\x52\xc9"
++			  "\xb5\x9f\x23\x28\x60\xe7\x20\x51"
++			  "\x10\xd3\xed\x6d\x9b\xab\xb8\xe2"
++			  "\x5d\x9a\x34\xb3\xbe\x9c\x64\xcb"
++			  "\x78\xc6\x91\x22\x40\x91\x80\xbe"
++			  "\xd7\x78\x5c\x0e\x0a\xdc\x08\xe9"
++			  "\x67\x10\xa4\x83\x98\x79\x23\xe7"
++			  "\x92\xda\xa9\x22\x16\xb1\xe7\x78"
++			  "\xa3\x1c\x6c\x8f\x35\x7c\x4d\x37"
++			  "\x2f\x6e\x0b\x50\x5c\x34\xb9\xf9"
++			  "\xe6\x3d\x91\x0d\x32\x95\xaa\x3d"
++			  "\x48\x11\x06\xbb\x2d\xf2\x63\x88"
++			  "\x3f\x73\x09\xe2\x45\x56\x31\x51"
++			  "\xfa\x5e\x4e\x62\xf7\x90\xf9\xa9"
++			  "\x7d\x7b\x1b\xb1\xc8\x26\x6e\x66"
++			  "\xf6\x90\x9a\x7f\xf2\x57\xcc\x23"
++			  "\x59\xfa\xfa\xaa\x44\x04\x01\xa7"
++			  "\xa4\x78\xdb\x74\x3d\x8b\xb5",
++		.plen	= 719,
++		.ctext	= "\x84\x0b\xdb\xd5\xb7\xa8\xfe\x20"
++			  "\xbb\xb1\x12\x7f\x41\xea\xb3\xc0"
++			  "\xa2\xb4\x37\x19\x11\x58\xb6\x0b"
++			  "\x4c\x1d\x38\x05\x54\xd1\x16\x73"
++			  "\x8e\x1c\x20\x90\xa2\x9a\xb7\x74"
++			  "\x47\xe6\xd8\xfc\x18\x3a\xb4\xea"
++			  "\xd5\x16\x5a\x2c\x53\x01\x46\xb3"
++			  "\x18\x33\x74\x6c\x50\xf2\xe8\xc0"
++			  "\x73\xda\x60\x22\xeb\xe3\xe5\x9b"
++			  "\x20\x93\x6c\x4b\x37\x99\xb8\x23"
++			  "\x3b\x4e\xac\xe8\x5b\xe8\x0f\xb7"
++			  "\xc3\x8f\xfb\x4a\x37\xd9\x39\x95"
++			  "\x34\xf1\xdb\x8f\x71\xd9\xc7\x0b"
++			  "\x02\xf1\x63\xfc\x9b\xfc\xc5\xab"
++			  "\xb9\x14\x13\x21\xdf\xce\xaa\x88"
++			  "\x44\x30\x1e\xce\x26\x01\x92\xf8"
++			  "\x9f\x00\x4b\x0c\x4b\xf7\x5f\xe0"
++			  "\x89\xca\x94\x66\x11\x21\x97\xca"
++			  "\x3e\x83\x74\x2d\xdb\x4d\x11\xeb"
++			  "\x97\xc2\x14\xff\x9e\x1e\xa0\x6b"
++			  "\x08\xb4\x31\x2b\x85\xc6\x85\x6c"
++			  "\x90\xec\x39\xc0\xec\xb3\xb5\x4e"
++			  "\xf3\x9c\xe7\x83\x3a\x77\x0a\xf4"
++			  "\x56\xfe\xce\x18\x33\x6d\x0b\x2d"
++			  "\x33\xda\xc8\x05\x5c\xb4\x09\x2a"
++			  "\xde\x6b\x52\x98\x01\xef\x36\x3d"
++			  "\xbd\xf9\x8f\xa8\x3e\xaa\xcd\xd1"
++			  "\x01\x2d\x42\x49\xc3\xb6\x84\xbb"
++			  "\x48\x96\xe0\x90\x93\x6c\x48\x64"
++			  "\xd4\xfa\x7f\x93\x2c\xa6\x21\xc8"
++			  "\x7a\x23\x7b\xaa\x20\x56\x12\xae"
++			  "\x16\x9d\x94\x0f\x54\xa1\xec\xca"
++			  "\x51\x4e\xf2\x39\xf4\xf8\x5f\x04"
++			  "\x5a\x0d\xbf\xf5\x83\xa1\x15\xe1"
++			  "\xf5\x3c\xd8\x62\xa3\xed\x47\x89"
++			  "\x85\x4c\xe5\xdb\xac\x9e\x17\x1d"
++			  "\x0c\x09\xe3\x3e\x39\x5b\x4d\x74"
++			  "\x0e\xf5\x34\xee\x70\x11\x4c\xfd"
++			  "\xdb\x34\xb1\xb5\x10\x3f\x73\xb7"
++			  "\xf5\xfa\xed\xb0\x1f\xa5\xcd\x3c"
++			  "\x8d\x35\x83\xd4\x11\x44\x6e\x6c"
++			  "\x5b\xe0\x0e\x69\xa5\x39\xe5\xbb"
++			  "\xa9\x57\x24\x37\xe6\x1f\xdd\xcf"
++			  "\x16\x2a\x13\xf9\x6a\x2d\x90\xa0"
++			  "\x03\x60\x7a\xed\x69\xd5\x00\x8b"
++			  "\x7e\x4f\xcb\xb9\xfa\x91\xb9\x37"
++			  "\xc1\x26\xce\x90\x97\x22\x64\x64"
++			  "\xc1\x72\x43\x1b\xf6\xac\xc1\x54"
++			  "\x8a\x10\x9c\xdd\x8d\xd5\x8e\xb2"
++			  "\xe4\x85\xda\xe0\x20\x5f\xf4\xb4"
++			  "\x15\xb5\xa0\x8d\x12\x74\x49\x23"
++			  "\x3a\xdf\x4a\xd3\xf0\x3b\x89\xeb"
++			  "\xf8\xcc\x62\x7b\xfb\x93\x07\x41"
++			  "\x61\x26\x94\x58\x70\xa6\x3c\xe4"
++			  "\xff\x58\xc4\x13\x3d\xcb\x36\x6b"
++			  "\x32\xe5\xb2\x6d\x03\x74\x6f\x76"
++			  "\x93\x77\xde\x48\xc4\xfa\x30\x4a"
++			  "\xda\x49\x80\x77\x0f\x1c\xbe\x11"
++			  "\xc8\x48\xb1\xe5\xbb\xf2\x8a\xe1"
++			  "\x96\x2f\x9f\xd1\x8e\x8a\x5c\xe2"
++			  "\xf7\xd7\xd8\x54\xf3\x3f\xc4\x91"
++			  "\xb8\xfb\x86\xdc\x46\x24\x91\x60"
++			  "\x6c\x2f\xc9\x41\x37\x51\x49\x54"
++			  "\x09\x81\x21\xf3\x03\x9f\x2b\xe3"
++			  "\x1f\x39\x63\xaf\xf4\xd7\x53\x60"
++			  "\xa7\xc7\x54\xf9\xee\xb1\xb1\x7d"
++			  "\x75\x54\x65\x93\xfe\xb1\x68\x6b"
++			  "\x57\x02\xf9\xbb\x0e\xf9\xf8\xbf"
++			  "\x01\x12\x27\xb4\xfe\xe4\x79\x7a"
++			  "\x40\x5b\x51\x4b\xdf\x38\xec\xb1"
++			  "\x6a\x56\xff\x35\x4d\x42\x33\xaa"
++			  "\x6f\x1b\xe4\xdc\xe0\xdb\x85\x35"
++			  "\x62\x10\xd4\xec\xeb\xc5\x7e\x45"
++			  "\x1c\x6f\x17\xca\x3b\x8e\x2d\x66"
++			  "\x4f\x4b\x36\x56\xcd\x1b\x59\xaa"
++			  "\xd2\x9b\x17\xb9\x58\xdf\x7b\x64"
++			  "\x8a\xff\x3b\x9c\xa6\xb5\x48\x9e"
++			  "\xaa\xe2\x5d\x09\x71\x32\x5f\xb6"
++			  "\x29\xbe\xe7\xc7\x52\x7e\x91\x82"
++			  "\x6b\x6d\x33\xe1\x34\x06\x36\x21"
++			  "\x5e\xbe\x1e\x2f\x3e\xc1\xfb\xea"
++			  "\x49\x2c\xb5\xca\xf7\xb0\x37\xea"
++			  "\x1f\xed\x10\x04\xd9\x48\x0d\x1a"
++			  "\x1c\xfb\xe7\x84\x0e\x83\x53\x74"
++			  "\xc7\x65\xe2\x5c\xe5\xba\x73\x4c"
++			  "\x0e\xe1\xb5\x11\x45\x61\x43\x46"
++			  "\xaa\x25\x8f\xbd\x85\x08\xfa\x4c"
++			  "\x15\xc1\xc0\xd8\xf5\xdc\x16\xbb"
++			  "\x7b\x1d\xe3\x87\x57\xa7\x2a\x1d"
++			  "\x38\x58\x9e\x8a\x43\xdc\x57"
++			  "\xd1\x81\x7d\x2b\xe9\xff\x99\x3a"
++			  "\x4b\x24\x52\x58\x55\xe1\x49\x14",
++		.clen	= 735,
+ 	}
+ };
+ 
 -- 
 2.17.1
 
