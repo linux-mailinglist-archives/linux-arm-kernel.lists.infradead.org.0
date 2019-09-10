@@ -2,86 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 073E1AE95C
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 13:47:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C3569AE97D
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 13:50:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:Reply-To:List-Subscribe:List-Help:
-	List-Post:List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date
-	:Message-ID:From:References:Subject:To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rt3hfEF6eVjBLqkorHNzK3b64R+3+zwuw6MkRICl6d0=; b=LRQ82j0dcyPNaj
-	uD6YW9oC3LiImu75RZEyCT44l1HYjfiegXngG4f9f0CX459pkXh67AhSYaDLjMOKj/ZAkc0OutiWA
-	riAjbHkJdKiEWKPsKX73Jvje3MIc5ess6fZRHOLtK77H72Kjf7+L4ApQJ4j87ESrIDaVwx3FaBvCn
-	ZrgzVMkBKfmwcgc593MpWfqT8dkI8GFugU9yOtP7WCQQl/jlcsNANwyY0OJWCUDvfUDKO50O5J6dc
-	rqQ9Gji+4jY+L7O1Ghh3Uq7LhLSX5vxvOOafWCBuoMh3cC+zq4M3YIWxhRoTY07IBwPAHbX87GvrH
-	X2gdfc5HeKmxiv9yldUg==;
+	List-Owner; bh=fuEx4zShyyLSysKOd8CnUZUdQkBnDClVVMPtFh5eqjw=; b=LKBaaGjPwHNpND
+	Dlp7s0hnzMidk5MlUoKR1ph7l5Uzou8vKAsRXD3e8nj/hg8IwU4u7dq35QFt0aZKD5Y/D6lcY72y0
+	z2YCRTvU+Dksre6hF0wlwk0OyN9Z38PGAVWPbzPDV54P6Y2/s/bJaI5rA7jfWmiR9O87+gE3flZCg
+	bUqFTZf0uthCDXwMmtjmDW6+d/Zw4VidX0C14J+BMqCp9h4zpHEAA/MIy3n5rB0l/wQ+w7xghp8Ny
+	y3H55C3PrTSvQcZXQqR/qjhi1tVULUesQSAxzDylt7YpPItgqOC+G7Eho9Qf3UuTtUZRy8H7Uoz8o
+	/0zLX7wFJQYAElEniBzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7ebr-0004dU-Vd; Tue, 10 Sep 2019 11:46:59 +0000
-Received: from mail-ed1-f65.google.com ([209.85.208.65])
+	id 1i7efL-0006Ji-80; Tue, 10 Sep 2019 11:50:35 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7ebm-0004cQ-6q
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 11:46:55 +0000
-Received: by mail-ed1-f65.google.com with SMTP id i1so16808445edv.4
+ id 1i7efC-0006JI-1L
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 11:50:27 +0000
+Received: by mail-wr1-x441.google.com with SMTP id l11so19567491wrx.5
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 04:46:52 -0700 (PDT)
+ Tue, 10 Sep 2019 04:50:25 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=Mp/+xh4B3lpSZPmUYL9dk1fTpKxVKAigwQspDwbteG4=;
+ b=sa7HyIV0cMMHhgL1oWqjGwgDx6yJ6vvqgaCRI6+aVF6/EOgson57KX5taONf0xwhZc
+ 1tj9JmDKUINzY4o7P0ZhBW9gvdwuWFZoa5FraxRlX46Y3xbGIUiXtBz8bmJl3e4YVsN2
+ KaLQXi4gy1N2kMStAOhOee9ajNjA2xn2QelLNQ3G76kGH/XIyjvf8QFDakFhQ3a8oViO
+ foT1pNIPDEE+6AtOWPfcLkTx06a67K0AzOG6LqpRXIbptk9eHupVpHni78cO9Y6Ff31d
+ RpmzI6X7ksKaQUorQnu+Fatg5ziWPviVAjqiYPCCzHsoX1xJ0TIF0P1Qa3NhxDdHIn9T
+ tZhQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:reply-to:subject:cc:references:from:message-id
- :date:user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=abgaMe6ZZ95gWMUy3hnBn63QDEWfYInzgOcZ2MI8v94=;
- b=cdYQ05hDgCNcxv+u/CvUz+NgQBMZfF/ZjrrfAloZZE69Tu4qQJ9/RDWh8v1+DrXgVN
- Z9tYyQ4BLERlqbdYiXQgUea6NMxVkG1iRtOpRvmUzKheHCS2KRtd4X0ojSIk2U4Lw1Ve
- zxRu+0eZsIxqYPsziYK76ES0EkFhUpItxVpbpOe3RJQ8T02Y0Z1Z27XhwM009A9gtaP+
- ooDJKqHqmavPxTtZDnIwYBXmT6H1xfxl4oUw/eVXLp/s9VElyHGVNAuBZsko+EsRLZrm
- q6P9pyaPp+0+T6hdn1BkqIqmB00BtgpUb3mm/mImyxE5t8hRfEk7Nl1Zrht6+sgnIg3U
- vaHQ==
-X-Gm-Message-State: APjAAAWIKzV4zDJAvYQWdW4KfZem+Gt8IiudBReqzvvFpAKfy3A2TJMe
- jgp5QSPXmBr2OPXuOztMr9y5DOP2
-X-Google-Smtp-Source: APXvYqzec2pfMLAxkhhovJ45V9gaVPv8RRuMLY7VMY/ZkxobyGPpBpSQQBrFTGvFv0X4GFnIClIdFw==
-X-Received: by 2002:aa7:d28d:: with SMTP id w13mr29796008edq.264.1568116011004; 
- Tue, 10 Sep 2019 04:46:51 -0700 (PDT)
-Received: from [10.10.2.174] (bran.ispras.ru. [83.149.199.196])
- by smtp.gmail.com with ESMTPSA id p4sm3408685edc.38.2019.09.10.04.46.50
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Tue, 10 Sep 2019 04:46:50 -0700 (PDT)
-Subject: Re: [RESEND PATCH] MAINTAINERS: Update path to physmap-versatile.c
-References: <20190813061024.15428-1-efremov@linux.com>
- <20190813063251.21842-1-efremov@linux.com>
- <CACRpkdZRW1fpjf=vQbuDdSC1ZU9o2tq2C2bL0GonQbnPWc06-A@mail.gmail.com>
-From: Denis Efremov <efremov@linux.com>
-Message-ID: <a406a875-b267-9653-ced5-4afee0056975@linux.com>
-Date: Tue, 10 Sep 2019 14:46:49 +0300
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=Mp/+xh4B3lpSZPmUYL9dk1fTpKxVKAigwQspDwbteG4=;
+ b=TA+FxSAEXaUqhA16dV1BNYEfwc0hsfJcE73pkpKkJlPXCzeuMjnAKz85MdCDJ/vzfj
+ n+/WtckpuibzK4SRbr4sdaze83wxFiB0uk6w7SnzthZtorzEihhTZdQvRio545bFR6AY
+ 9uXDH9nLOqSkCM+ONyArpmKa2kDZAxZpYYU71DpBPA+aZFf9Lsa8Qt52TJSP4POi9t7d
+ +19cayYkt64RLC9UCfOvtoMKAKOwJWNTbI7kF6UBrSRhXIYYNCbs681kOvhg7ZyHtPU6
+ h4tJDzMRW9HM3fntc85NLgRNi5c3pv9zGFN0IL2DhLuASMfdHUO3JQTT16auQ65u7you
+ umHg==
+X-Gm-Message-State: APjAAAWLDle1e85ktU3CvQAvxFg0iUSXkxy1OrGZEVvNczgLfW0HDUNP
+ CR41NoeVJziCjinzmShd/QHFH2r4yzWC1X1vd8M=
+X-Google-Smtp-Source: APXvYqy/r75bH4ygY8YmMgMk2X4bmFVs4CUIe5R1fGiV9fEib8ljRft33b37v8rwJrOA1FWZgNDjwW6HapTyAN886xw=
+X-Received: by 2002:a05:6000:142:: with SMTP id
+ r2mr2208566wrx.212.1568116224155; 
+ Tue, 10 Sep 2019 04:50:24 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CACRpkdZRW1fpjf=vQbuDdSC1ZU9o2tq2C2bL0GonQbnPWc06-A@mail.gmail.com>
-Content-Language: en-US
+References: <1566936978-28519-1-git-send-email-peng.fan@nxp.com>
+ <20190906172044.B99FB20838@mail.kernel.org>
+ <CAA+hA=To9B0H1z6Hh1eSZN9_rcextT_Oe-CTMmz9fC9CDNUBTQ@mail.gmail.com>
+ <DB3PR0402MB3916906683B58843B459ABE1F5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+In-Reply-To: <DB3PR0402MB3916906683B58843B459ABE1F5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+From: Daniel Baluta <daniel.baluta@gmail.com>
+Date: Tue, 10 Sep 2019 14:50:12 +0300
+Message-ID: <CAEnQRZCAWa61dj+0=iTBQOrntZ-8mk=YB_jtRV4LAEGTfwZuHQ@mail.gmail.com>
+Subject: Re: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
+To: Anson Huang <anson.huang@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_044654_247445_D9D6A0AD 
-X-CRM114-Status: GOOD (  10.92  )
-X-Spam-Score: 2.2 (++)
+X-CRM114-CacheID: sfid-20190910_045026_103204_D1F49AD2 
+X-CRM114-Status: GOOD (  16.59  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (2.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 1.2 MISSING_HEADERS        Missing To: header
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.208.65 listed in wl.mailspike.net]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (yefremov.denis[at]gmail.com)
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.208.65 listed in list.dnswl.org]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
- 0.9 MALFORMED_FREEMAIL     Bad headers on message from free email
- service
+ provider (daniel.baluta[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,43 +96,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Reply-To: efremov@linux.com
-Cc: Boris Brezillon <bbrezillon@kernel.org>,
- Linus Walleij <linus.walleij@linaro.org>,
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Dong Aisheng <dongas86@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Joe Perches <joe@perches.com>,
- Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ Abel Vesa <abel.vesa@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Jacky Bai <ping.bai@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+On Tue, Sep 10, 2019 at 1:40 PM Anson Huang <anson.huang@nxp.com> wrote:
+>
+>
+>
+> > On Sat, Sep 7, 2019 at 9:47 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> > >
+> > > Quoting Peng Fan (2019-08-27 01:17:50)
+> > > > From: Peng Fan <peng.fan@nxp.com>
+> > > >
+> > > > There is hardware issue that:
+> > > > The output clock the LPCG cell will not turn back on as expected,
+> > > > even though a read of the IPG registers in the LPCG indicates that
+> > > > the clock should be enabled.
+> > > >
+> > > > The software workaround is to write twice to enable the LPCG clock
+> > > > output.
+> > > >
+> > > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> > >
+> > > Does this need a Fixes tag?
+> >
+> > Not sure as it's not code logic issue but a hardware bug.
+> > And 4.19 LTS still have not this driver support.
+>
+> Looks like there is an errata for this issue, and Ranjani just sent a patch for review internally,
+>
+> Back-to-back LPCG writes can be ignored by the LPCG register due to a
+> HW bug. The writes need to be separated by atleast 4 cycles of the gated clock.
+> The workaround is implemented as follows:
+> 1. For clocks running greater than 50MHz no delay is required as the
+> delay in accessing the LPCG register is sufficient.
+> 2. For clocks running greater than 23MHz, a read followed by the write
+> will provide the sufficient delay.
+> 3. For clocks running below 23MHz, LPCG is not used.
 
-On 8/13/19 10:20 AM, Linus Walleij wrote:
-> On Tue, Aug 13, 2019 at 8:33 AM Denis Efremov <efremov@linux.com> wrote:
-> 
->> Update MAINTAINERS record to reflect the filename change
->> from physmap_of_versatile.c to physmap-versatile.c
->>
->> Cc: Boris Brezillon <bbrezillon@kernel.org>
->> Cc: Ricardo Ribalda Delgado <ricardo.ribalda@gmail.com>
->> Cc: Linus Walleij <linus.walleij@linaro.org>
->> Cc: linux-arm-kernel@lists.infradead.org
->> Fixes: 6ca15cfa0788 ("mtd: maps: Rename physmap_of_{versatile, gemini} into physmap-{versatile, gemini}")
->> Signed-off-by: Denis Efremov <efremov@linux.com>
-> 
-> Reviewed-by: Linus Walleij <linus.walleij@linaro.org>
-> 
-> Yours,
-> Linus Walleij
-> 
+Lets add this information in the commit message and also
+enhance the comment before the double write.
 
-Could someone take this fix through his tree?
-
-Thanks,
-Denis
+Also, why can't we add a udelay after the first write and remove
+the second write as having two writes for writing a value looks
+very un-natural.
 
 _______________________________________________
 linux-arm-kernel mailing list
