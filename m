@@ -2,79 +2,117 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5A4DAAE269
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 04:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F24E2AE26E
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 04:48:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=iS/qCCZkfnR/gZwAQtTU/6n6jd8c0b7MI5IQ6uX+PME=; b=K9Pzp2mHa8g9gNEOCFlTMMdM0
-	RVjWq0XP1+DJ0w39am4ZJKSfEK5LyFH7vugAtsXhN9CJ84UkXUjJI0TJ21Vpte6igXgpm8hijUQO2
-	VehHRuuid8qFEnU6FQhaarmOAEQbSpdXlOgpj40br4rF6MNyRxGin6VknrV74UAgxlnKHD3ditWwH
-	e+Imgf7+CMs4r3oz04A8qPcj5ET41cZ76GgL9TZyYEh2o7VUfWfTz6rAyWBW4wyarO4uajFUCAM44
-	HwC7v2pKcip/TjQIEdKsicn5J/KYsJJtM8Jbp4fA3hqXsyMKauQy6Sq2Me8czxCv3Pg5myXxoJ9hA
-	BXOpq/kLA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=GQ7190evOnz7hSxIkpmG8X6jLQG0To7NT6QjTl7sI6w=; b=qdRCAmH7hsPjb9
+	FJTOasHrWfVfoNjjqOMGks9XDnvAxsy6+xC9SlV2kyqrqWWrcYv+UE7za11YBrDjjbg2qBOCgPcqg
+	qBrZPGwA9+rSiEefNIUErhgo4mfIl7QMoTqAjGHZT454mSQP1vaNxbsEZOE2+HT2fiKt2QZtiHRWi
+	iE4koVebrIfgVycIFEdiVCBtRDd81oBy6y6Wr8as30XhYtqD4kVG36Vp0Q4JlhvwRrISjdXAyhJ1A
+	OXjiUMJU/jrfMaoD61PbZNaqHMkhe+G3vWKi60voCUJnEiWrWkmX0kR+2dQp/ca0oaNvDiMrD4JaL
+	m07g3NiP4BUTVwaNwfyg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7WA2-0005Hy-0n; Tue, 10 Sep 2019 02:45:42 +0000
-Received: from regular1.263xmail.com ([211.150.70.199])
+	id 1i7WCb-0005c1-AQ; Tue, 10 Sep 2019 02:48:21 +0000
+Received: from mail-eopbgr40075.outbound.protection.outlook.com ([40.107.4.75]
+ helo=EUR03-DB5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7W9o-0005HB-0d; Tue, 10 Sep 2019 02:45:29 +0000
-Received: from zhangzj?rock-chips.com (unknown [192.168.167.84])
- by regular1.263xmail.com (Postfix) with ESMTP id 72F88401;
- Tue, 10 Sep 2019 10:45:17 +0800 (CST)
-X-263anti-spam: KSV:0;BIG:0;
-X-MAIL-GRAY: 0
-X-MAIL-DELIVERY: 1
-X-KSVirus-check: 0
-X-ADDR-CHECKED4: 1
-X-ABS-CHECKED: 1
-X-SKE-CHECKED: 1
-X-ANTISPAM-LEVEL: 2
-Received: from [172.16.9.224] (unknown [58.22.7.114])
- by smtp.263.net (postfix) whith ESMTP id
- P16693T140560903952128S1568083501895127_; 
- Tue, 10 Sep 2019 10:45:05 +0800 (CST)
-X-IP-DOMAINF: 1
-X-UNIQUE-TAG: <9c1844bd32ab9429d9ac9fa2b5c8436b>
-X-RL-SENDER: zhangzj@rock-chips.com
-X-SENDER: zhangzj@rock-chips.com
-X-LOGIN-NAME: zhangzj@rock-chips.com
-X-FST-TO: linux-rockchip@lists.infradead.org
-X-SENDER-IP: 58.22.7.114
-X-ATTACHMENT-NUM: 0
-X-DNS-TYPE: 0
-Subject: Re: [PATCH v1 1/1] ARM: dts: rockchip: set crypto default disabled on
- rk3288
-To: Heiko Stuebner <heiko@sntech.de>
-References: <20190827071439.14767-1-zhangzj@rock-chips.com>
- <4806912.UyKsYhR33o@phil>
- <3b9cbffa-291e-fc95-bce6-5b24f5fd860d@rock-chips.com>
- <3345609.Z0LLm6LDBC@phil>
-From: Elon Zhang <zhangzj@rock-chips.com>
-Message-ID: <192e0e32-363b-b6aa-84ed-67040c0c5f4f@rock-chips.com>
-Date: Tue, 10 Sep 2019 10:45:04 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <3345609.Z0LLm6LDBC@phil>
+ id 1i7WCM-0005bF-Bl
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 02:48:08 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=CXqQpO26SoHspM4ugLIzXrWTZnCCCCLAxN7rYwLMbRKQ1SgxbMuf2ikDivsRR05T915qhkihHNpXagUqSumrvM/I5rvzkiDEjnJUzsDAEXSFaH2ynQ82nsqckITXpYX5SDHAtBs1XzOfmaZ/A+JzYI/eczyC3zJjyZ8dve0enr4aP7AUioWHyHk8qSXhMbPIXM2pM1W9OU/MjJ4zZF0d8Pib9MiblaLAuAR3cASRyS1mF2QXQP4rFi9kvA8Zz3gyE/nUHazS1OkDfJWsJDJ6x9ppaFVJ5zs672aAtTupXDgaVOCySSE/qoVXXonvsBFL16pYP5Gd0YJ0KebqMZvMkw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=93C4EF6p9yjCol0Pwl/5OV6PN6Rv53cVVcsuP2uFuMs=;
+ b=lBr3kDcULnr9slFee0ebW6jjN2OWE3GsD7z5Y9425AH+x1cSjgpHXPQeRYsaUhHscVKLv3RL01SjUu0H9gvFir/L+Kp96PoN3a43+3II4A4sDZyD461REUpV2SWz9Z78g/tF74ao6y6vr2Uc5M29I0lerTMdCF9XVCrppTk7E8zcun/P2BtXTxBPxon95cCd30QhKkJaWJ/R6UVMsUW+P2wfb/AxEnBTecvDTqNbNqmBpgTXODgs/udj39aGy0pMSHz7MkgEx2TZnvo8ZKNHYjwLXoXjfAchAWlIipw93EyBbSKwFt0ssbzdCxpanaTbR6pWqNX2+PwIUt55Q/zU8g==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=93C4EF6p9yjCol0Pwl/5OV6PN6Rv53cVVcsuP2uFuMs=;
+ b=Gvjb6lxgxN9gOoU/MnX/MzTPRdUB0AW1mZiYe7SsMHXackXoi+J7ANVXWk+AabpA3yzKZIvozUxOI1P71W1j6f+tXGRu1Y6LgxwZM/4ChTwtAIkOFPtSb/7rQ70HWd6lKqWwkpW17YuoyeYG+hTizxzowNxgsjT53DHvIU7I+mA=
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com (52.134.72.18) by
+ DB3PR0402MB3931.eurprd04.prod.outlook.com (52.134.65.153) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.15; Tue, 10 Sep 2019 02:47:59 +0000
+Received: from DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38]) by DB3PR0402MB3916.eurprd04.prod.outlook.com
+ ([fe80::8958:299c:bc54:2a38%7]) with mapi id 15.20.2241.018; Tue, 10 Sep 2019
+ 02:47:59 +0000
+From: Anson Huang <anson.huang@nxp.com>
+To: Dong Aisheng <dongas86@gmail.com>, Stephen Boyd <sboyd@kernel.org>, Peng
+ Fan <peng.fan@nxp.com>
+Subject: RE: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
+Thread-Topic: [PATCH] clk: imx: lpcg: write twice when writing lpcg regs
+Thread-Index: AQHVXK/qRNohGClvt0yC94cqOwkPUKce9XOAgARa7gCAAPmTYA==
+Date: Tue, 10 Sep 2019 02:47:59 +0000
+Message-ID: <DB3PR0402MB3916906683B58843B459ABE1F5B60@DB3PR0402MB3916.eurprd04.prod.outlook.com>
+References: <1566936978-28519-1-git-send-email-peng.fan@nxp.com>
+ <20190906172044.B99FB20838@mail.kernel.org>
+ <CAA+hA=To9B0H1z6Hh1eSZN9_rcextT_Oe-CTMmz9fC9CDNUBTQ@mail.gmail.com>
+In-Reply-To: <CAA+hA=To9B0H1z6Hh1eSZN9_rcextT_Oe-CTMmz9fC9CDNUBTQ@mail.gmail.com>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=anson.huang@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 40c0b3e7-865a-4a8b-2aee-08d735994ae8
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:DB3PR0402MB3931; 
+x-ms-traffictypediagnostic: DB3PR0402MB3931:|DB3PR0402MB3931:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DB3PR0402MB39319FF4AACD2A5837BC05A0F5B60@DB3PR0402MB3931.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01565FED4C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(366004)(136003)(376002)(39860400002)(396003)(199004)(189003)(64756008)(7696005)(11346002)(446003)(71190400001)(71200400001)(110136005)(74316002)(7736002)(478600001)(305945005)(52536014)(14454004)(3846002)(5660300002)(33656002)(6116002)(66066001)(9686003)(66946007)(76116006)(66446008)(6636002)(54906003)(256004)(316002)(6246003)(102836004)(6506007)(53546011)(8676002)(6436002)(86362001)(76176011)(26005)(8936002)(486006)(99286004)(44832011)(66476007)(4326008)(55016002)(186003)(81156014)(81166006)(2906002)(66556008)(229853002)(476003)(53936002)(7416002)(25786009);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DB3PR0402MB3931;
+ H:DB3PR0402MB3916.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: QcwUnDESFfBUDm4toHS5RvQyN8BgiaZyYFpK+bSdQq7m2E5uiTa8R0twqcnuOlnsfXmboiOvyH4cOUo49ds4HtmKtLPeAwiK8ebdeLMHaq5VId9jYKuED8Jdt+Dx0+/gj2MFtVbEfKHc/MEOegLAYdvlXOyXK7f/9o9OK2h2A7zIZ7zNtgbEraUNGNsYeTA8IvR1trgboH9K9FKh9XWWEzDpRJ3yH02CdpF5uTJEv+OiYayF2AEtur4Olchbprl6hraM2p+BxManG+jMlr/ejgSFpkRHsVyGZo0nh8pgGayrHyJDxPb1eUzYrHv2CWHeEEJW4TSsG18v7Z2Slhvv+VLbUlR9Yl8ujbsRw5Euu5POZR/imBVc5pok6rZzCe7HSXeC4L2SGoe855hHCw1E5whOXJQEyPnBBZ/udO+XpEQ=
+MIME-Version: 1.0
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 40c0b3e7-865a-4a8b-2aee-08d735994ae8
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Sep 2019 02:47:59.8092 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 41aLjU+y76hCUEVKAXE6UlLWtLqGtWcHdu6frcEWAm2sFMhYfjUil/yq3CCXNZrGcZRyJLa0T3Dz4/ty6aAZIQ==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB3PR0402MB3931
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_194528_398240_B37798C1 
-X-CRM114-Status: GOOD (  20.13  )
-X-Spam-Score: 1.5 (+)
+X-CRM114-CacheID: sfid-20190909_194806_740106_3747C486 
+X-CRM114-Status: GOOD (  14.05  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.5 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [211.150.70.199 listed in list.dnswl.org]
- 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [58.22.7.114 listed in dnsbl.sorbs.net]
+ no trust [40.107.4.75 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -86,66 +124,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-rockchip@lists.infradead.org,
- robh+dt@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Peng Fan <peng.fan@nxp.com>,
+ Jacky Bai <ping.bai@nxp.com>, "festevam@gmail.com" <festevam@gmail.com>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Abel Vesa <abel.vesa@nxp.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGkgSGVpa28sCgpPbiA5LzEvMjAxOSAwNzowNCwgSGVpa28gU3R1ZWJuZXIgd3JvdGU6Cj4gSGkg
-RWxvbiwKPgo+IEFtIERvbm5lcnN0YWcsIDI5LiBBdWd1c3QgMjAxOSwgMTM6MzE6MDAgQ0VTVCBz
-Y2hyaWViIEVsb24gWmhhbmc6Cj4+IE9uIDgvMjcvMjAxOSAyMjoyOCwgSGVpa28gU3R1ZWJuZXIg
-d3JvdGU6Cj4+PiBBbSBEaWVuc3RhZywgMjcuIEF1Z3VzdCAyMDE5LCAwOToxNDozOSBDRVNUIHNj
-aHJpZWIgRWxvbiBaaGFuZzoKPj4+PiBOb3QgZXZlcnkgYm9hcmQgbmVlZHMgdG8gZW5hYmxlIGNy
-eXB0byBub2RlLCBzbyB0aGUgbm9kZSBzaG91bGQKPj4+PiBiZSBzZXQgZGVmYXVsdCBkaXNhYmxl
-ZCBpbiByazMyODguZHRzaSBhbmQgZW5hYmxlZCBpbiBzcGVjaWZpYwo+Pj4+IGJvYXJkIGR0cyBm
-aWxlLgo+Pj4gQ2FuIHlvdSBnaXZlIGEgYml0IG1vcmUgcmF0aW9uYWxlIGhlcmU/IFRoZXJlIHdv
-dWxkIG5lZWQgdG8gYmUgYSB2ZXJ5Cj4+PiBzcGVjaWZpYyByZWFzb24gYmVjYXVzZSBvZiB0aGUg
-Zm9sbG93aW5nOgo+Pj4KPj4+IFRoZSBjcnlwdG8gbW9kdWxlIGlzIG5vdCB3aXJlZCB0byBzb21l
-IGJvYXJkLXNwZWNpZmljIGNvbXBvbmVudHMsCj4+PiBzbyBpdHMgdXNhYmlsaXR5IGRvZXMgbm90
-IGRlcGVuZCBvbiB0aGUgc3BlY2lmaWMgYm9hcmQgYXQgYWxsLgo+Pj4gSW5zdGVhZCBldmVyeSBi
-b2FyZCBjYW4ganVzdCB1c2UgaXQgb3V0IG9mIHRoZSBib3ggYW5kIHRoZSBkZXZpY2V0cmVlCj4+
-PiBpcyBzdXBwb3NlZCB0byBkZXNjcmliZSB0aGUgaGFyZHdhcmUgYW5kIGlzIF9ub3RfIG1lYW50
-IGFzIGEgc3BhY2UKPj4+IGZvciB1c2VyIGNvbmZpZ3VyYXRpb24uCj4+IFJpZ2h0IGZvciBhbG1v
-c3QgYWxsIG5vcm1hbCBoYXJkd2FyZSBtb2R1bGVzIGJ1dCB0aGUgY3J5cHRvIG1vZHVsZSB3YXMK
-Pj4gZGVzaWduZWQKPj4KPj4gZm9yIHNlY3VyZSB3b3JsZC4gQXMgYSByZXN1bHQsICB0aGUgY3J5
-cHRvIG1vZHVsZSB3aWxsIGJlY29tZQo+PiBpbmFjY2Vzc2libGUgZm9yIGxpbnV4IGtlcm5lbCBp
-ZiBzZWN1cmUgd29ybGQgZW5hYmxlIGl0Lgo+Pgo+PiBXZSBwbGFuIHRvIGVuYWJsZSB0aGUgY3J5
-cHRvIG1vZHVsZSBpbiBzZWN1cmUgd29ybGQgc28gd2Ugc2hvdWxkIHNldAo+PiBjcnlwdG8gbW9k
-dWxlIGRlZmF1bHQgZGlzYWJsZWQgaW4gbGludXgga2VybmVsLgo+IG9rIC4uLiBJJ20gaGFsZndh
-eSBjb252aW5jZWQgOy0pIC4KPgo+IFRoZSBiaWcgdGhpbmcgSSB3YW50IHRvIHNlZSBpcyB0aGF0
-IHNlY3VyZSBzZXR0aW5nIGluIHRoZSBhY3R1YWwgZmlybXdhcmUuCj4gQWthIHJpZ2h0IG5vdyB5
-b3UgcHJvYmFibHkgaGF2ZSB0aGF0IGluIHlvdXIgUm9ja2NoaXAtc3BlY2lmaWMgQVRGIGZvcmsK
-PiBhbmQgSSByZWFsbHkgd2FudCB0byBzZWUgdGhlIHJlbGV2YW50IGNoYW5nZSBmb3IgcHVibGlj
-IHVib290IG9yIEFURi4KPgo+IEkgZG9uJ3QgbmVjZXNzYXJpbHkgcmVxdWlyZSBpdCB0byBiZSBm
-dWxseSBtZXJnZWQgYmVmb3JlIHRha2luZyB0aGlzLCBidXQKPiBJIHJlYWxseSB3YW50IHRvIHNl
-ZSB0aGUgY2hhbmdlIGVpdGhlciBvbiBhIG1haWxpbmcgbGlzdCBvciBhdGYgZ2Vycml0Cj4gaW5z
-dGFuY2UgW3RoYXQgbWFrZXMgdGhlIGNyeXB0byBlbmdpbmUgc2VjdXJlIG9ubHldLgo+Cj4gUmF0
-aW9uYWxlIGJlaGluZCB0aGlzIGlzIHRoYXQgd2UgZG9uJ3QgY2FyZSB2ZXJ5IG11Y2ggYWJvdXQg
-cHJpdmF0ZSBzdHVmZgo+IHRoYXQgdGhlIGdlbmVyYWwgZWNvc3lzdGVtIGRvZXNuJ3QgYmVuZWZp
-dCBmcm9tLgoKTm93IHRoZSBjcnlwdG8gc2VjdXJpdHkgcHJvcGVydHkgc2V0dGluZyBpcyBkb25l
-IGluIHRoZSByb2NrY2hpcCBwcml2YXRlIApjb2RlLCB3aGljaCBpcyBub3QKCm9wZW5zb3VyY2Uu
-IFNvwqAgaWYgeW91IGRvbid0IGNhcmUgYWJvdXQgcHJpdmF0ZSBzdHVmZiBhbmQgdGhlIGNoYW5n
-ZSBpbiAKcHJpdmF0ZSBzdHVmZiB3aWxsIG5vdAoKYWZmZWN0IHRoZSB1cHN0cmVhbSBrZXJuZWws
-wqAgdGhlIGNyeXB0byBjYW4gYmUgZW5hYmxlZCBpbiB1cHN0cmVhbSBrZXJuZWw/Cgo+Cj4KPiBU
-aGFua3MKPiBIZWlrbwo+Cj4KPj4+IFNvIGluIGZhY3QgdGhlIHN0YXR1cyBwcm9wZXJ0eSBzaG91
-bGQgcHJvYmFibHkgZ28gYXdheSBjb21wbGV0ZWx5IGZyb20KPj4+IHRoZSBjcnlwdG8gbm9kZSwg
-YXMgaXQncyB1c2FibGUgb3V0IG9mIHRoZSBib3ggaW4gYWxsIGNhc2VzLgo+Pj4KPj4+Cj4+PiBI
-ZWlrbwo+Pj4KPj4+Cj4+Pgo+Pj4+IFNpZ25lZC1vZmYtYnk6IEVsb24gWmhhbmcgPHpoYW5nempA
-cm9jay1jaGlwcy5jb20+Cj4+Pj4gLS0tCj4+Pj4gICAgYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
-LmR0c2kgfCAyICstCj4+Pj4gICAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRl
-bGV0aW9uKC0pCj4+Pj4KPj4+PiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4
-LmR0c2kgYi9hcmNoL2FybS9ib290L2R0cy9yazMyODguZHRzaQo+Pj4+IGluZGV4IGNjODkzZTE1
-NGZlNS4uZDUwOWFhMjQxNzdjIDEwMDY0NAo+Pj4+IC0tLSBhL2FyY2gvYXJtL2Jvb3QvZHRzL3Jr
-MzI4OC5kdHNpCj4+Pj4gKysrIGIvYXJjaC9hcm0vYm9vdC9kdHMvcmszMjg4LmR0c2kKPj4+PiBA
-QCAtOTg0LDcgKzk4NCw3IEBACj4+Pj4gICAgCQljbG9jay1uYW1lcyA9ICJhY2xrIiwgImhjbGsi
-LCAic2NsayIsICJhcGJfcGNsayI7Cj4+Pj4gICAgCQlyZXNldHMgPSA8JmNydSBTUlNUX0NSWVBU
-Tz47Cj4+Pj4gICAgCQlyZXNldC1uYW1lcyA9ICJjcnlwdG8tcnN0IjsKPj4+PiAtCQlzdGF0dXMg
-PSAib2theSI7Cj4+Pj4gKwkJc3RhdHVzID0gImRpc2FibGVkIjsKPj4+PiAgICAJfTsKPj4+PiAg
-ICAKPj4+PiAgICAJaWVwX21tdTogaW9tbXVAZmY5MDA4MDAgewo+Pj4+Cj4+Pgo+Pj4KPj4+Cj4+
-Pgo+Pj4KPj4KPj4KPgo+Cj4KPgo+Cj4KCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJt
-LWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21h
-aWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
+
+
+> On Sat, Sep 7, 2019 at 9:47 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> >
+> > Quoting Peng Fan (2019-08-27 01:17:50)
+> > > From: Peng Fan <peng.fan@nxp.com>
+> > >
+> > > There is hardware issue that:
+> > > The output clock the LPCG cell will not turn back on as expected,
+> > > even though a read of the IPG registers in the LPCG indicates that
+> > > the clock should be enabled.
+> > >
+> > > The software workaround is to write twice to enable the LPCG clock
+> > > output.
+> > >
+> > > Signed-off-by: Peng Fan <peng.fan@nxp.com>
+> >
+> > Does this need a Fixes tag?
+> 
+> Not sure as it's not code logic issue but a hardware bug.
+> And 4.19 LTS still have not this driver support.
+
+Looks like there is an errata for this issue, and Ranjani just sent a patch for review internally,
+
+Back-to-back LPCG writes can be ignored by the LPCG register due to a 
+HW bug. The writes need to be separated by atleast 4 cycles of the gated clock.
+The workaround is implemented as follows:
+1. For clocks running greater than 50MHz no delay is required as the 
+delay in accessing the LPCG register is sufficient.
+2. For clocks running greater than 23MHz, a read followed by the write 
+will provide the sufficient delay.
+3. For clocks running below 23MHz, LPCG is not used.
+
+Need double check?
+
+Anson.
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
