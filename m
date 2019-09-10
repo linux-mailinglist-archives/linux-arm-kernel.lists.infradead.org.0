@@ -2,88 +2,153 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4488AE4FD
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 09:59:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 129BDAE511
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 10:04:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lly2PjNwgn43WDIfJvLB02u5JSeP76EBXtic9uyIx8A=; b=b1X1aCJZn82pxE
-	BYUyXMkytrYXnJ+HAOq628SPUlTHDh/6QdDX2fGEfgU1W9mwiR9teMulSMFCSQySJKDwgks0wnGH7
-	gJ7Oz7Mi5I/KnvPFSCuS50sIQuS/vQKhKGY0UgVsnwRBWgvNpqHscXpfRxR5dbCUoKh8fid2EXgGT
-	i/nR8mSVikdj4Bb5daQOyA+3mEO+W+9EAdKI5EOURKIRnkd9sGWqYV5chKK07xbIJiTFp1KbORBqU
-	xW9EaZoZ8AjQhmKTxV+EigSg2n43FQSwKgv2C8f+AfHbwxVIcDgg753hnICpAUk3vCgdP66ZE6GAv
-	iwVj2S7s8Px52fle6rTg==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=DekrUKuMze/n4ZB7XHIEHCxnkj3JJBwazz/OK1UwJTw=; b=RkUgikTktQtW+Yn8DS96/M9RL7
+	q/3b+WD6yStAKPykhUWMeXAb6oPEhhYlb7kIrLIYoN6DzsrX5XhoehO/7G7n7eJA4rIGAMLjA7wC8
+	/XgQhEd3ZOUMxkwJH757obm+/M8A43Hm6vfzDjav/0jGrd0jJ5M5FDfy1wu4gsckgn8ErcfP/+fhc
+	8YCn50MwN5r4EOIoMyrb3qCOgXl59BmLpPe3Axxw/1QguhH+Nq+gh+VrnSZKQU3D+p0ScUl/zFqpi
+	hcePHhIoMDHHM7pY5pXJ8Z26hQgBGy1u1P+q68dqrmo2+wPEg+Ck4TxKkVCKb4mOqrRTpT71tplp/
+	CrrEfaAw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7b3f-0004Hd-8d; Tue, 10 Sep 2019 07:59:27 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i7b8E-0006Ag-NV; Tue, 10 Sep 2019 08:04:10 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7b3S-0004HB-Dl
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 07:59:15 +0000
-Received: by mail-pg1-x543.google.com with SMTP id x15so9365504pgg.8
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 00:59:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+ICqDZT0+Rww/hGCZQ9/7SaJeWoOs3iDbAih166xoms=;
- b=F/4DbNZMB0nf7DgnHlLG8hechqYzxn49BWwlDiqD6w5zAWKLdtCcwUMdYD1CsqN+Ng
- jzKPub20pUMRPuzTI4YvJD3AiyE28CCh4t/qGp+gjJYenrY9lh/BXg7sRph0NR66KjSF
- k6CBYACYO5XANiHDoc9soi/2ks1/EbDYV2mfM=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=+ICqDZT0+Rww/hGCZQ9/7SaJeWoOs3iDbAih166xoms=;
- b=T4tFIN/W6RslieSE5KCsLjoA6RzqyGb+iB+qS20/zLzN6fEyPBbo6ZYCMSeuF6YypY
- EueHwKkDvBYw3gSp0U12BlbOBsns3k9waACF/a2CnWD1URpXNllvXQWx+LB168rsp304
- eWAGZjrJRtROQvOtG6ttMCPnv1kOJsgYHZTz1oxKVoyMlzY7pAei9HfbYKs4dUzhf9ii
- RV0ljC9bTAeKx5pItNU6tkxR6/PKkmJDpqulYeJ+qeJU5iTp1PRUJGjZf6vl0rq2Xkln
- xgVNbjs6Z8s6m5xqdIrlpbzfEj319hrp7OBmd3MVs3WyTQPvtWCI6Pk1xXkK2gZvgfMF
- YWfg==
-X-Gm-Message-State: APjAAAXEtKR+mf20a5B1jkMLTnmljKzr31dk0aJoYbMZaHT53Hw3qGPC
- YXo2HxpQzxlMOA5hyQpYWuLAfg==
-X-Google-Smtp-Source: APXvYqyDn9hO++8SUhAPekxT/ojMiADYLdC41QbV41Z++f9OMrsB5LXCadAWjtEN/hNbyMZ7r2vYLg==
-X-Received: by 2002:aa7:870c:: with SMTP id b12mr34260902pfo.122.1568102352293; 
- Tue, 10 Sep 2019 00:59:12 -0700 (PDT)
-Received: from hsinyi-z840.tpe.corp.google.com
- ([2401:fa00:1:10:b852:bd51:9305:4261])
- by smtp.gmail.com with ESMTPSA id c23sm16189538pgj.62.2019.09.10.00.59.10
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Sep 2019 00:59:11 -0700 (PDT)
-From: Hsin-Yi Wang <hsinyi@chromium.org>
-To: Eduardo Valentin <edubezval@gmail.com>,
- Laxman Dewangan <ldewangan@nvidia.com>,
- linux-arm-kernel@lists.infradead.org
-Subject: [PATCH] thermal-generic-adc: Silent error message for EPROBE_DEFER
-Date: Tue, 10 Sep 2019 15:59:07 +0800
-Message-Id: <20190910075907.132200-1-hsinyi@chromium.org>
-X-Mailer: git-send-email 2.23.0.162.g0b9fbb3734-goog
+ id 1i7b7u-00068P-Gn; Tue, 10 Sep 2019 08:03:52 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 54954AED0;
+ Tue, 10 Sep 2019 08:03:46 +0000 (UTC)
+Subject: Re: [PATCH v4 04/17] arm64: hibernate: use get_safe_page directly
+To: Pavel Tatashin <pasha.tatashin@soleen.com>, jmorris@namei.org,
+ sashal@kernel.org, ebiederm@xmission.com, kexec@lists.infradead.org,
+ linux-kernel@vger.kernel.org, corbet@lwn.net, catalin.marinas@arm.com,
+ will@kernel.org, linux-arm-kernel@lists.infradead.org, marc.zyngier@arm.com,
+ james.morse@arm.com, vladimir.murzin@arm.com, bhsharma@redhat.com,
+ linux-mm@kvack.org, mark.rutland@arm.com
+References: <20190909181221.309510-1-pasha.tatashin@soleen.com>
+ <20190909181221.309510-5-pasha.tatashin@soleen.com>
+From: Matthias Brugger <mbrugger@suse.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=mbrugger@suse.com; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <e2ceb43a-d7bf-e0c6-c3ea-b83c95ba880d@suse.com>
+Date: Tue, 10 Sep 2019 10:03:44 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190909181221.309510-5-pasha.tatashin@soleen.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_005914_490686_702F4A6E 
-X-CRM114-Status: GOOD (  10.04  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190910_010350_853187_89C783FC 
+X-CRM114-Status: GOOD (  17.43  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -95,53 +160,102 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Zhang Rui <rui.zhang@intel.com>, Daniel Lezcano <daniel.lezcano@linaro.org>,
- linux-kernel@vger.kernel.org, Jonathan Cameron <jic23@kernel.org>,
- linux-pm@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-If devm_iio_channel_get() or devm_thermal_zone_of_sensor_register()
-fail with EPROBE_DEFER, we shouldn't print an error message, as the
-device will be probed again later.
 
-Signed-off-by: Hsin-Yi Wang <hsinyi@chromium.org>
----
- drivers/thermal/thermal-generic-adc.c | 9 ++++++---
- 1 file changed, 6 insertions(+), 3 deletions(-)
 
-diff --git a/drivers/thermal/thermal-generic-adc.c b/drivers/thermal/thermal-generic-adc.c
-index dcecf2e8dc8e..ae5743c9a894 100644
---- a/drivers/thermal/thermal-generic-adc.c
-+++ b/drivers/thermal/thermal-generic-adc.c
-@@ -134,7 +134,8 @@ static int gadc_thermal_probe(struct platform_device *pdev)
- 	gti->channel = devm_iio_channel_get(&pdev->dev, "sensor-channel");
- 	if (IS_ERR(gti->channel)) {
- 		ret = PTR_ERR(gti->channel);
--		dev_err(&pdev->dev, "IIO channel not found: %d\n", ret);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev, "IIO channel not found: %d\n", ret);
- 		return ret;
- 	}
- 
-@@ -142,8 +143,10 @@ static int gadc_thermal_probe(struct platform_device *pdev)
- 							   &gadc_thermal_ops);
- 	if (IS_ERR(gti->tz_dev)) {
- 		ret = PTR_ERR(gti->tz_dev);
--		dev_err(&pdev->dev, "Thermal zone sensor register failed: %d\n",
--			ret);
-+		if (ret != -EPROBE_DEFER)
-+			dev_err(&pdev->dev,
-+				"Thermal zone sensor register failed: %d\n",
-+				ret);
- 		return ret;
- 	}
- 
--- 
-2.23.0.162.g0b9fbb3734-goog
+On 09/09/2019 20:12, Pavel Tatashin wrote:
+> create_safe_exec_page() uses hibernate's allocator to create a set of page
+> table to map a single page that will contain the relocation code.
+> 
+> Remove the allocator related arguments, and use get_safe_page directly, as
+> it is done in other local functions in this file to simplify function
+> prototype.
+> 
+> Removing this function pointer makes it easier to refactor the code later.
+> 
+> Signed-off-by: Pavel Tatashin <pasha.tatashin@soleen.com>
 
+Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+
+> ---
+>  arch/arm64/kernel/hibernate.c | 17 +++++++----------
+>  1 file changed, 7 insertions(+), 10 deletions(-)
+> 
+> diff --git a/arch/arm64/kernel/hibernate.c b/arch/arm64/kernel/hibernate.c
+> index 227cc26720f7..47a861e0cb0c 100644
+> --- a/arch/arm64/kernel/hibernate.c
+> +++ b/arch/arm64/kernel/hibernate.c
+> @@ -196,9 +196,7 @@ EXPORT_SYMBOL(arch_hibernation_header_restore);
+>   */
+>  static int create_safe_exec_page(void *src_start, size_t length,
+>  				 unsigned long dst_addr,
+> -				 phys_addr_t *phys_dst_addr,
+> -				 void *(*allocator)(gfp_t mask),
+> -				 gfp_t mask)
+> +				 phys_addr_t *phys_dst_addr)
+>  {
+>  	int rc = 0;
+>  	pgd_t *trans_pgd;
+> @@ -206,7 +204,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	pud_t *pudp;
+>  	pmd_t *pmdp;
+>  	pte_t *ptep;
+> -	unsigned long dst = (unsigned long)allocator(mask);
+> +	unsigned long dst = get_safe_page(GFP_ATOMIC);
+>  
+>  	if (!dst) {
+>  		rc = -ENOMEM;
+> @@ -216,7 +214,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  	memcpy((void *)dst, src_start, length);
+>  	__flush_icache_range(dst, dst + length);
+>  
+> -	trans_pgd = allocator(mask);
+> +	trans_pgd = (void *)get_safe_page(GFP_ATOMIC);
+>  	if (!trans_pgd) {
+>  		rc = -ENOMEM;
+>  		goto out;
+> @@ -224,7 +222,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  
+>  	pgdp = pgd_offset_raw(trans_pgd, dst_addr);
+>  	if (pgd_none(READ_ONCE(*pgdp))) {
+> -		pudp = allocator(mask);
+> +		pudp = (void *)get_safe_page(GFP_ATOMIC);
+>  		if (!pudp) {
+>  			rc = -ENOMEM;
+>  			goto out;
+> @@ -234,7 +232,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  
+>  	pudp = pud_offset(pgdp, dst_addr);
+>  	if (pud_none(READ_ONCE(*pudp))) {
+> -		pmdp = allocator(mask);
+> +		pmdp = (void *)get_safe_page(GFP_ATOMIC);
+>  		if (!pmdp) {
+>  			rc = -ENOMEM;
+>  			goto out;
+> @@ -244,7 +242,7 @@ static int create_safe_exec_page(void *src_start, size_t length,
+>  
+>  	pmdp = pmd_offset(pudp, dst_addr);
+>  	if (pmd_none(READ_ONCE(*pmdp))) {
+> -		ptep = allocator(mask);
+> +		ptep = (void *)get_safe_page(GFP_ATOMIC);
+>  		if (!ptep) {
+>  			rc = -ENOMEM;
+>  			goto out;
+> @@ -530,8 +528,7 @@ int swsusp_arch_resume(void)
+>  	 */
+>  	rc = create_safe_exec_page(__hibernate_exit_text_start, exit_size,
+>  				   (unsigned long)hibernate_exit,
+> -				   &phys_hibernate_exit,
+> -				   (void *)get_safe_page, GFP_ATOMIC);
+> +				   &phys_hibernate_exit);
+>  	if (rc) {
+>  		pr_err("Failed to create safe executable page for hibernate_exit code.\n");
+>  		goto out;
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
