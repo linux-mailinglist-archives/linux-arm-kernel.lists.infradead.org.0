@@ -2,79 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B693CAED6F
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:43:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 432C0AED8B
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:45:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JUe12Ocs0WGlqtvcZZLYcEq4sgmiDjKBXvXpEEorCik=; b=b+KcMt3+wvlvn3
-	fkRLTYWmAW/dMirCxT99uBZELY7oBEG6+L/sTIbRyZZcQTNbcd1Fr9zgIE17FOLY9O3fYVlOzVfnJ
-	6WCSKOXczoCdC/48e8wgcv72hPI/+O2Uwr9fGibnS3ay9dCmXg0qlynZMuxjsaaj87qa7mijyB1oG
-	mVtgDFwRCBaP/9ZXvfP6DTgy/EGTqUHd5hWyB5YbpA7wA6gupsJmhfOINTPA8urYL+fHj++5YKk6Z
-	qBa5WHPNeKMU+YQuSjPGXM+ne3zi7bVuooY3tZD9i1N5ql8HJ/nae4foF28Xs/U+N28OK5PbXeHjJ
-	SYOCUyaXkz4PxykQU8kA==;
+	List-Owner; bh=YubueUbgDdOuK2GjHt3ZHoTco2/rJCmEUAWamv5Tfg0=; b=f14AIY3tQah3/W
+	7iZIH+zqgB/KRj7OVXzJ993u6al0j9y75ztktBWgv9irmaA3uqwabMt+iRuCF1Nx4J1Q1wWRMSJHB
+	HjF6UlL2QeNK5YaHCiZLsLM6/LZwQic/ut78+tmHk8KJR2Z+IwYy6W5o1d+NCNCf5FN6XKE26jOE/
+	GxgFA48UTBrTBegSjqUy/iA2VAb9CSIL//APbXSv5B8LpIFHk6GJqgpyYZwuejt7SLvwtQEQj2tCc
+	ZOmiwPu9zp2bLDOT+aSRv4HpW8JqrIqvAWqxuN+rrr+2+Iph0DilLP/Nhekz5AruELf07vhP3ygld
+	dkR3ginha3szZAGPEluA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7hMm-00043J-UU; Tue, 10 Sep 2019 14:43:37 +0000
-Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
+	id 1i7hOH-0004Qh-Jo; Tue, 10 Sep 2019 14:45:09 +0000
+Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7hMB-0003XI-0e
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:43:00 +0000
-Received: by mail-io1-xd43.google.com with SMTP id f4so37353729ion.2
+ id 1i7hO4-0004QB-53
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:44:57 +0000
+Received: by mail-wr1-x441.google.com with SMTP id y19so20841133wrd.3
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 07:42:58 -0700 (PDT)
+ Tue, 10 Sep 2019 07:44:55 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=qwfqdrsthj6wGMKbVfq9KS+2D4+bl2wd+HAoXgrqGpM=;
- b=mdlhWpzQsILASMQ7+1ikwT0fUSiwI9Yno2A8k95yLHD6P9eV0S05kOW5Jv6prsMvSt
- iBXlVLmgNneBJJPewyY1Iz+eUwtz//m6IWYeMweTFXG1suDqKgsSJ2xCT/kZ1HcGuX4Y
- n5DFuajmtetj/LpA2LEgEC9oiE4MlkG9fH5vD+eWjaUxrS6bT4PmDA2aOayknXG3RXII
- 9e0AvcNoE4ZxbCtIxiI/lT91HGh0dhQFb9BVLzxS7z4Bakuzjqvda8OJvgMc4cNBYsKq
- JywENk314egMFnOMmeOVAlHQzPFr5FrWB11JMPxvnyAvp/9VaOr3lB+4BYVwvWI0USRT
- DKkA==
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=K5duO6IbkJ8p2e8p4z12GaGcHnnxC09bJLQvbWViWok=;
+ b=fu4g8oruUidKGWMGKAQilbHJ3zZ7QI7stPHT9LX/emhpA0g/uhNnCIfSzvekCRxVHx
+ Wnrh4cBhFQ05o5vH8hUWdGFnFKzPPI9fi/iv6vHcJlFrQ1nMCaJ5BpIulyKguP3lhglr
+ 9e74K100oZ8+JWH98eeNglVWTOWnCXBZMme6/Lw6ruC2MmV+R72Ou/j9luMFFmINvC1f
+ 0GiPVVVtqRaVbXqxLF3HVhEllIaskwiqn2821fB3L4wcOj8TsZS0O0kHENJXS4uCTrJQ
+ YxZ3oWIPlmC3d7SH/UJsQs1IRCIUc/CdG9PM4XnY07ShLokUiUoQhY2q4EV9Sjn6/cVT
+ TbNw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=qwfqdrsthj6wGMKbVfq9KS+2D4+bl2wd+HAoXgrqGpM=;
- b=SvcqMWnSMMP0EwxPbd9EHPcxeSxXKit0wbLvTit7zcQ/EBvxWnOyDwAN6XHZOJzBD7
- LV/S7GQLtB31rF9O+Q5waapVm6oz7sVtuYWzUB2CQuOCHMyrpBDBpbkxllKXwiv2rAKf
- iWTBSjUzX9Zy3wqt44gLQAC+3TYRNfQLIifZF2H65MaeIXe0kTHa/f9BK1QngsK2eI/B
- t6iRjcYq1Q/4AxpgnqanoUgq7OhpZYoeNHTADIWMdfFU/+aiTavPK40mlFNj7ZuT9aYC
- f5g3ZkWNY1TWl0c5284KA8Z6miLtjpxO9hAp+N6DbBU9eBIxKhC0YlHkFBVZGM/R+u/g
- 7YIA==
-X-Gm-Message-State: APjAAAWvJIyZD8Wt0N3IoIikuveUlob8eLdOt2nCaXxWbcTVnJTjfvgM
- +ve9u9umobN1W4PvVudzllSXevNMbeNhkuD+Bdc=
-X-Google-Smtp-Source: APXvYqw25PAt3681VzSp2aKtn4HION8cnSVVgIaDxDN4t5As0qF4aUf02XL+Yw/GC74k1NJX1qc/ljlh1hZcV/Ap7TM=
-X-Received: by 2002:a02:9f16:: with SMTP id z22mr31770205jal.83.1568126574433; 
- Tue, 10 Sep 2019 07:42:54 -0700 (PDT)
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=K5duO6IbkJ8p2e8p4z12GaGcHnnxC09bJLQvbWViWok=;
+ b=YX0zk+0I9W4kCXfaIuq9E3X2FjzdosRK2uOKlJWKuBDejgpgRjTj9QJzbZl+S9oqp1
+ FJUWkGBnJSE9TjNcQsPtUjSEDRY3G/XB89jX+OQicXR2NyUbCcZcrOK2esD3enL7OsFT
+ 1luw2iEoPxr8ugaLeSH3IYv1oahO7DO9Py4wDg6byiy+wKQ32bMakZ9R+g21aiSlvR//
+ WWenXMhpOe6uNltSRojPkAvpLcqOfUWkT6ciXVyDIH5ojED503VhhXTuAO5ZVpZczDzp
+ po+ls8jViR93yMPfZQ7hgvxZo8zbJhrzq6MAngTMgeaKruH/QI20LD7nWEtPsblV5Fod
+ klzg==
+X-Gm-Message-State: APjAAAUHEGVJzKXbke9+vILGG4Fu+yfWgZtcCSKbTliRxifgQF39qoSQ
+ S4el1lWIdTsHBOsJBy1qJ3k=
+X-Google-Smtp-Source: APXvYqy8oCF9jzlFwjhls5MC+bV0p4KcSxaCpKbMvnhXuGJ9mOg6cetjGtTvTEefF3ROADm+FtzlQA==
+X-Received: by 2002:a5d:45c3:: with SMTP id b3mr27792792wrs.207.1568126694371; 
+ Tue, 10 Sep 2019 07:44:54 -0700 (PDT)
+Received: from pali ([2a02:2b88:2:1::5cc6:2f])
+ by smtp.gmail.com with ESMTPSA id a192sm5705205wma.1.2019.09.10.07.44.52
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Tue, 10 Sep 2019 07:44:53 -0700 (PDT)
+Date: Tue, 10 Sep 2019 16:44:52 +0200
+From: Pali =?utf-8?B?Um9ow6Fy?= <pali.rohar@gmail.com>
+To: Sebastian Reichel <sre@kernel.org>
+Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
+Message-ID: <20190910144452.vmhmls3xhh6hd5xw@pali>
+References: <20190828150037.2640-1-aford173@gmail.com>
+ <20190905230443.GA52127@atomide.com>
+ <CAHCN7xKxffJUV2V2CCuw0iPqUm4LJT28GMrcF2=8rDJQM2dOOw@mail.gmail.com>
+ <20190910143732.3g3q4acvnx2pqvjx@earth.universe>
 MIME-Version: 1.0
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
-In-Reply-To: <20190910124209.GY2063@dhcp22.suse.cz>
-From: Alexander Duyck <alexander.duyck@gmail.com>
-Date: Tue, 10 Sep 2019 07:42:43 -0700
-Message-ID: <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-To: Michal Hocko <mhocko@kernel.org>
+Content-Disposition: inline
+In-Reply-To: <20190910143732.3g3q4acvnx2pqvjx@earth.universe>
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_074259_146573_23BBFE3A 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20190910_074456_190876_5A1978ED 
+X-CRM114-Status: GOOD (  16.33  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:441 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (alexander.duyck[at]gmail.com)
+ provider (pali.rohar[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -82,6 +92,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,67 +104,40 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
- "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Rik van Riel <riel@surriel.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Tony Lindgren <tony@atomide.com>,
+ Adam Ford <adam.ford@logicpd.com>, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ =?utf-8?Q?Beno=C3=AEt?= Cousson <bcousson@baylibre.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <aford173@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
->
-> I wanted to review "mm: Introduce Reported pages" just realize that I
-> have no clue on what is going on so returned to the cover and it didn't
-> really help much. I am completely unfamiliar with virtio so please bear
-> with me.
->
-> On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
-> [...]
-> > This series provides an asynchronous means of reporting to a hypervisor
-> > that a guest page is no longer in use and can have the data associated
-> > with it dropped. To do this I have implemented functionality that allows
-> > for what I am referring to as unused page reporting
-> >
-> > The functionality for this is fairly simple. When enabled it will allocate
-> > statistics to track the number of reported pages in a given free area.
-> > When the number of free pages exceeds this value plus a high water value,
-> > currently 32, it will begin performing page reporting which consists of
-> > pulling pages off of free list and placing them into a scatter list. The
-> > scatterlist is then given to the page reporting device and it will perform
-> > the required action to make the pages "reported", in the case of
-> > virtio-balloon this results in the pages being madvised as MADV_DONTNEED
-> > and as such they are forced out of the guest. After this they are placed
-> > back on the free list,
->
-> And here I am reallly lost because "forced out of the guest" makes me
-> feel that those pages are no longer usable by the guest. So how come you
-> can add them back to the free list. I suspect understanding this part
-> will allow me to understand why we have to mark those pages and prevent
-> merging.
-
-Basically as the paragraph above mentions "forced out of the guest"
-really is just the hypervisor calling MADV_DONTNEED on the page in
-question. So the behavior is the same as any userspace application
-that calls MADV_DONTNEED where the contents are no longer accessible
-from userspace and attempting to access them will result in a fault
-and the page being populated with a zero fill on-demand page, or a
-copy of the file contents if the memory is file backed.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVHVlc2RheSAxMCBTZXB0ZW1iZXIgMjAxOSAxNTozNzozMiBTZWJhc3RpYW4gUmVpY2hlbCB3
+cm90ZToKPiBIaSwKPiAKPiBPbiBUdWUsIFNlcCAxMCwgMjAxOSBhdCAwODo1Njo0OUFNIC0wNTAw
+LCBBZGFtIEZvcmQgd3JvdGU6Cj4gPiBPbiBUaHUsIFNlcCA1LCAyMDE5IGF0IDY6MDQgUE0gVG9u
+eSBMaW5kZ3JlbiA8dG9ueUBhdG9taWRlLmNvbT4gd3JvdGU6Cj4gPiA+IE9oIGFuZCB0aGlzIG5l
+ZWRzIHRvIGRlZmF1bHQgdG8gc3RhdHVzID0gImRpc2FibGVkIiBmb3IKPiA+ID4gSFMgZGV2aWNl
+cyBsaWtlIG45MDAgYXMgaXQgbmVlZHMgdG8gdXNlIHRoZSBvbWFwMy1yb20tcm5nLgo+ID4gCj4g
+PiBJIGRvbid0IGtub3cgZW5vdWdoIGFib3V0IHRoZSBIUyB2ZXJzaW9uIG9mIHRoZSBPTUFQMywg
+YnV0IHdoYXQncyB0aGUKPiA+IG1haW4gZGlmZmVyZW5jZSBiZXR3ZWVuIG9tYXAzLXJvbS1ybmcg
+YW5kIHRoaXMgb25lPwo+IAo+IFRoZSBPTUFQIEhTIGNoaXBzIGhhdmUgdGhlIGJ1cyBmaXJld2Fs
+bCBjb25maWd1cmVkIHRvIGJsb2NrIGRpcmVjdAo+IGFjY2VzcyB0byBzb21lIGNyeXB0b2dyYXBo
+eSByZWxhdGVkIGRldmljZXMuIFRoZSBrZXJuZWwgd2lsbCBjcmFzaAo+IHdpdGggYSBidXMgZXJy
+b3IsIGlmIHlvdSB0cnkgdG8gcmVhZC93cml0ZSB0aGUgcmVnaXN0ZXJzIGZvcgo+IHByb3RlY3Rl
+ZCBkZXZpY2VzLgoKQW5kIGlmIHlvdSB0cnkgdG8gcmVhZCBpdCBtb3JlIHRpbWVzLCBTT0Mgd291
+bGQgYmUgcmVib290ZWQgZm9yIHNlY3VyaXR5CnJlYXNvbnMuCgo+IFRoZSBvbWFwMy1yb20tcm5n
+IGF2b2lkcyB0aGlzIGJ5IGNvbW11bmljYXRpbmcKPiB3aXRoIHRoZSBzZWN1cml0eSBtaWRkbGV3
+YXJlIGNvbXBvbmVudCBpbnN0ZWFkIG9mIGRpcmVjdGx5IGFjY2Vzc2luZwo+IHRoZSBSTkcgaGFy
+ZHdhcmUuCgpBbmQgdGhhdCBjb21wb25lbnQgaXMgbG9hZGVkIGJ5IHNpZ25lZCBib290bG9hZGVy
+IGludG8gInNlY3VyZSIgYXJlYSBub3QKYWNjZXNzaWJsZSBieSAibm9uLXNlY3VyZSIgd29yayAo
+bGlrZSBrZXJuZWwpIGFuZCBjb21tdW5pY2F0aW9uIGlzIGRvbmUKdmlhIGFybSBzbWMgaW5zdHJ1
+Y3Rpb24uCgotLSAKUGFsaSBSb2jDoXIKcGFsaS5yb2hhckBnbWFpbC5jb20KCl9fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
+bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
+dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
