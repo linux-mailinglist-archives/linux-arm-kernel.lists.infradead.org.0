@@ -2,80 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 97639AE5D5
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 10:44:21 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 087D9AE60F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 10:51:22 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=nRV6S2W3/UZbjuojUMt5mdYSJp9F4bZRasKSkAdyuEQ=; b=Pilx8420KUCIUx
-	KCe7W3XVqtuk3wS/aIhOYH0mn9nmLJY7ZB09F+XaWtnRXFFuFvl5jmKzPB9EIj38EKAgUobUQFVqi
-	6/EAXQC9oxsPxN0RMwrxdVt6Bb5aki0bkJA7NljcHILvlct9RHM80jRaDwaYFy8YAZ6ZtwdeGSv2G
-	s0AOD63Q//13afP4WsQ2JyBxr2qcGG+HtYw91ktqcmY9wFudwwqvOAAHI+getZN4BUuva4YfDAXWv
-	wBZdqZz2huV1Sx89FOsBtcGmFJNM36b8ftDmtYNfAj5L7ZQYSvLdBfsD01YXZ9XXxwllexVk3gxAU
-	LTOesbmsEAJIKnawTVig==;
+	List-Owner; bh=JgPIWkaMwB1LJg3Xqo3G0f8/ZiR8S44EZb+LfqEk2Rk=; b=N3QKc8mjKDFIy0
+	VuJk+R2aI1Udw/77fDUt5wKnqEn/HBcLa9ktbIf+qN2hsg9iLjIfY5CFBpQ3qzopxc67omVVPB1Dr
+	2WqarJaJGkfOqa+CLGU0xU3cLKZwVrvwXDhiRzw2dfJfe2EQSs8FpKU6IJYHXzmfYkt2K0wROZ9xI
+	U5qh7IOEOb3EL/0oahLEFhYh+Yzoc5Nanu28asUhhLhpXYTwlg2m2ahvVSJRhylgpLHxd7k7fiJWy
+	J7huMmXLPBt9lQPFW1CwRMGcCuK9xyExeH3bsrGNtacOnGxRdPwUZE+Nc6NArbQ6SNI6cc1m90fCW
+	pdq5FRUjKNU3JOlD305A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7bl4-0004GD-JU; Tue, 10 Sep 2019 08:44:19 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i7brs-0007CX-Gl; Tue, 10 Sep 2019 08:51:20 +0000
+Received: from mail-ot1-x341.google.com ([2607:f8b0:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7bkp-0004FL-D1
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 08:44:05 +0000
-Received: from mail-lf1-f53.google.com (mail-lf1-f53.google.com
- [209.85.167.53])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9184221019
+ id 1i7brf-0007Bd-SY
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 08:51:09 +0000
+Received: by mail-ot1-x341.google.com with SMTP id g25so16056111otl.0
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 08:44:02 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568105043;
- bh=n2FnhZvZY86zGRCH5evX7+DlwR5AirNLeqrX264yekM=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=WGvVjLQnna3RHEQHkRDscbt3Ik/jfL3ZnXeYEqdrfAFAePXoFEAayA+WzjDzN7gIS
- xL1qRcZn3mgpDQ6EXyLYRfY0RC0wW1jiBxyr+WKDPbRZJTCzLutJAlLtjzWjIIUyOk
- hfiWd2G/HUc5TfWUFWoPoHQWGB+Nyb25AE7TB+PA=
-Received: by mail-lf1-f53.google.com with SMTP id r134so12744641lff.12
- for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 01:44:02 -0700 (PDT)
-X-Gm-Message-State: APjAAAU/Z5xfZ9pqK8JTYocYS8XFlcmpgaPrZyXDEevVScqDwrYY7fJz
- dQzNCSvaB1g+BQQz8CNdo+FIPVfYqr9t354UgkY=
-X-Google-Smtp-Source: APXvYqyXRx393/LoDIHBKgAXm7I9lWbgJlOjw6C1wPm1MmUEsJ2qFw1Q5BapRrLrck9Q02orzG3OjXJU3ctiAn/YZg0=
-X-Received: by 2002:a19:770a:: with SMTP id s10mr1997656lfc.30.1568105040685; 
- Tue, 10 Sep 2019 01:44:00 -0700 (PDT)
+ Tue, 10 Sep 2019 01:51:06 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=TORtZiXw+gviBY1uqojNwtzUG5Du45WnPV4wu8nw43A=;
+ b=FP63dxnYbqidnXC5M+glimtjNBKD/siLT23X23yuuOER2/9MRjpqdmr17EYxW/s6p0
+ E+BlJ699H7VMsfwq2N1wqcggLYV4SabdWzY7R+9yPxtI/5t3nmNf5ca2zAEhu1LnVkuB
+ djYTbLY1JIMnBRApHzAxKwnWqjP+nN1qESTU3SbZUvPgE9If19AaeeYRC/e77mGKGlHs
+ Z8ZBwXsPYqqQJgcLf6S0grCdZJQsRslVL3vSrRDO2qTE8+rlRH1udar3q0c+ncpOXXIv
+ 4GVPY8w0RyJ4klXWtdtrKObo3MRhX8E73WYW7kEYXbu2xbXOjxHEltwsAL090sa9hSiJ
+ ROuA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=TORtZiXw+gviBY1uqojNwtzUG5Du45WnPV4wu8nw43A=;
+ b=tESV+xroMDKKx0nkrIg0Y400JslJSI94trmizePlzyDd6Qh2BjqQNavGAxvjASq/Qa
+ 1Iu2NhiWXI5htX8KJwGZ6ZRPOU44yS/1Dl6QDgqtojoK7moqbs4N9rjGO2Cn7UbO/SHM
+ bLzlPhLlSTxs85k9NpNbmf2+GNVNIuQWnpReTgGuzCIHzsWjXZyVm5fbHXInUSH3x6mP
+ iANJWcKu7P8gXbhIeDOjt0ayWC4rrUossMGfZpImlRH4BI0hdhv/gz5SQ7jETr5/0MgZ
+ Gtwr44NBoprWzx5S1ewavpBXRZcHocQPgdo5SRA3lLkEjj3BOC5pKl0U2f3FLbt9xkDP
+ t4tg==
+X-Gm-Message-State: APjAAAUlIgqe5Ygd/0WQySaU2j0ou3WJZ5pBeIWzaUZRAzVx3oFzNiJM
+ EIgKMhhEdn87yTlosDqmWVofuVXSce0nMS3yHKlVvQ==
+X-Google-Smtp-Source: APXvYqxAsq9CF/Si2rdwo5vSZgIzEMUPMsKHEsRblYndhdS59/hlsoR7x+5MiowCWiAhLmrRORnRA4H2pVT8BZGTtxI=
+X-Received: by 2002:a05:6830:1d4e:: with SMTP id
+ p14mr1451146oth.292.1568105466197; 
+ Tue, 10 Sep 2019 01:51:06 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190909183436.9045-1-krzk@kernel.org>
- <CAL_JsqJpZ-64Y7p1w5ctMwbjdftQPLjeh3XRHkBeS6tfYY0a+A@mail.gmail.com>
-In-Reply-To: <CAL_JsqJpZ-64Y7p1w5ctMwbjdftQPLjeh3XRHkBeS6tfYY0a+A@mail.gmail.com>
-From: Krzysztof Kozlowski <krzk@kernel.org>
-Date: Tue, 10 Sep 2019 10:43:49 +0200
-X-Gmail-Original-Message-ID: <CAJKOXPf2b5QsNWq_7D0tyXuEcp93F_CsxEkAze_oV8Z07oNJXA@mail.gmail.com>
-Message-ID: <CAJKOXPf2b5QsNWq_7D0tyXuEcp93F_CsxEkAze_oV8Z07oNJXA@mail.gmail.com>
-Subject: Re: [RFC PATCH 1/2] dt-bindings: pwm: Convert PWM bindings to
- json-schema
-To: Rob Herring <robh+dt@kernel.org>
+References: <20190906084539.21838-1-geert+renesas@glider.be>
+In-Reply-To: <20190906084539.21838-1-geert+renesas@glider.be>
+From: Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Date: Tue, 10 Sep 2019 10:50:55 +0200
+Message-ID: <CAMpxmJVrQ92+ULRrzyN52LwEcdPTuK7OZssZjUcRPRSTBQ=fwg@mail.gmail.com>
+Subject: Re: [PATCH 0/4] gpio: API boundary cleanups
+To: Geert Uytterhoeven <geert+renesas@glider.be>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_014403_478904_EE83F8D5 
-X-CRM114-Status: GOOD (  30.76  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190910_015107_985961_993E91CC 
+X-CRM114-Status: GOOD (  15.74  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -87,225 +89,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- Linux PWM List <linux-pwm@vger.kernel.org>,
- linux-samsung-soc <linux-samsung-soc@vger.kernel.org>,
- Maciej Falkowski <m.falkowski@samsung.com>, devicetree@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Thierry Reding <thierry.reding@gmail.com>,
- Linux LED Subsystem <linux-leds@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: linux-devicetree <devicetree@vger.kernel.org>,
+ Linus Walleij <linus.walleij@linaro.org>, LKML <linux-kernel@vger.kernel.org>,
+ linux-gpio <linux-gpio@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ Frank Rowand <frowand.list@gmail.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Sep 2019 at 10:33, Rob Herring <robh+dt@kernel.org> wrote:
->
-> On Mon, Sep 9, 2019 at 7:35 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
-> >
-> > Convert generic PWM bindings to DT schema format using json-schema.  The
-> > consumer bindings are split to separate file.
-> >
-> > Signed-off-by: Krzysztof Kozlowski <krzk@kernel.org>
-> > ---
-> >  .../devicetree/bindings/clock/pwm-clock.txt   |  2 +-
-> >  .../bindings/display/bridge/ti,sn65dsi86.txt  |  2 +-
-> >  .../devicetree/bindings/display/ssd1307fb.txt |  2 +-
-> >  .../bindings/leds/backlight/pwm-backlight.txt |  2 +-
-> >  .../devicetree/bindings/leds/leds-pwm.txt     |  2 +-
-> >  .../devicetree/bindings/mfd/max77693.txt      |  2 +-
-> >  .../bindings/pwm/atmel-hlcdc-pwm.txt          |  2 +-
-> >  .../devicetree/bindings/pwm/atmel-pwm.txt     |  2 +-
-> >  .../devicetree/bindings/pwm/atmel-tcb-pwm.txt |  2 +-
-> >  .../bindings/pwm/brcm,bcm7038-pwm.txt         |  2 +-
-> >  .../bindings/pwm/brcm,iproc-pwm.txt           |  2 +-
-> >  .../devicetree/bindings/pwm/brcm,kona-pwm.txt |  2 +-
-> >  .../devicetree/bindings/pwm/img-pwm.txt       |  2 +-
-> >  .../devicetree/bindings/pwm/imx-pwm.txt       |  2 +-
-> >  .../devicetree/bindings/pwm/imx-tpm-pwm.txt   |  2 +-
-> >  .../bindings/pwm/lpc1850-sct-pwm.txt          |  2 +-
-> >  .../devicetree/bindings/pwm/mxs-pwm.txt       |  2 +-
-> >  .../bindings/pwm/nvidia,tegra20-pwm.txt       |  2 +-
-> >  .../bindings/pwm/nxp,pca9685-pwm.txt          |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-bcm2835.txt   |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-berlin.txt    |  2 +-
-> >  .../bindings/pwm/pwm-consumers.yaml           | 76 +++++++++++++++++++
-> >  .../devicetree/bindings/pwm/pwm-fsl-ftm.txt   |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-hibvt.txt     |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-lp3943.txt    |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-mediatek.txt  |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-meson.txt     |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-mtk-disp.txt  |  2 +-
-> >  .../bindings/pwm/pwm-omap-dmtimer.txt         |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-rockchip.txt  |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-sifive.txt    |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-stm32-lp.txt  |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-stm32.txt     |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-tiecap.txt    |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-tiehrpwm.txt  |  2 +-
-> >  .../devicetree/bindings/pwm/pwm-zx.txt        |  2 +-
-> >  Documentation/devicetree/bindings/pwm/pwm.txt | 69 -----------------
-> >  .../devicetree/bindings/pwm/pwm.yaml          | 30 ++++++++
-> >  .../bindings/pwm/renesas,pwm-rcar.txt         |  2 +-
-> >  .../bindings/pwm/renesas,tpu-pwm.txt          |  4 +-
-> >  .../devicetree/bindings/pwm/spear-pwm.txt     |  2 +-
-> >  .../devicetree/bindings/pwm/st,stmpe-pwm.txt  |  2 +-
-> >  .../devicetree/bindings/pwm/ti,twl-pwm.txt    |  2 +-
-> >  .../devicetree/bindings/pwm/ti,twl-pwmled.txt |  2 +-
-> >  .../devicetree/bindings/pwm/vt8500-pwm.txt    |  2 +-
-> >  .../bindings/regulator/pwm-regulator.txt      |  2 +-
-> >  .../devicetree/bindings/timer/ingenic,tcu.txt |  2 +-
->
-> We've been leaving the .txt file with a reference to the schema file
-> to avoid doing all the updates. But as you've done it already, that's
-> good.
->
-> >  47 files changed, 151 insertions(+), 114 deletions(-)
-> >  create mode 100644 Documentation/devicetree/bindings/pwm/pwm-consumers.yaml
-> >  delete mode 100644 Documentation/devicetree/bindings/pwm/pwm.txt
-> >  create mode 100644 Documentation/devicetree/bindings/pwm/pwm.yaml
->
-> [...]
->
-> > diff --git a/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml b/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml
-> > new file mode 100644
-> > index 000000000000..39c844fe6338
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/pwm/pwm-consumers.yaml
->
-> We already have a PWM consumer schema in dt-schema repository. It
-> doesn't have the descriptions because we need permission to relicense.
-> My aim is to have all common schema in the dt-schema repo, but we have
-> a mixture because of needing to relicense.
-
-I forgot to check it. In such case the pwm-consumers here do not offer
-much more, except some description and examples. I guess it can be
-just dropped then?
-
-> > @@ -0,0 +1,76 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/pwm/pwm-consumers.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: Specifying PWM information for devices
-> > +
-> > +maintainers:
-> > +  - Thierry Reding <thierry.reding@gmail.com>
-> > +
-> > +description: |
-> > +  PWM properties should be named "pwms". The exact meaning of each pwms
-> > +  property must be documented in the device tree binding for each device.
-> > +  An optional property "pwm-names" may contain a list of strings to label
-> > +  each of the PWM devices listed in the "pwms" property. If no "pwm-names"
-> > +  property is given, the name of the user node will be used as fallback.
-> > +
-> > +  Drivers for devices that use more than a single PWM device can use the
-> > +  "pwm-names" property to map the name of the PWM device requested by the
-> > +  pwm_get() call to an index into the list given by the "pwms" property.
-> > +
-> > +properties:
-> > +  pwms:
-> > +    $ref: /schemas/types.yaml#/definitions/phandle-array
-> > +    description: |
-> > +      Phandle to PWM controller node and pwm-specifier (controller specific).
-> > +      pwm-specifier typically encodes the chip-relative PWM number and the PWM
-> > +      period in nanoseconds.
-> > +      Optionally, the pwm-specifier can encode a number of flags (defined in
-> > +      <dt-bindings/pwm/pwm.h>) in a third cell:
-> > +        - PWM_POLARITY_INVERTED: invert the PWM signal polarity
-> > +
-> > +  pwm-names:
-> > +    $ref: /schemas/types.yaml#/definitions/string-array
-> > +    description:
-> > +      A list of strings to label each of the PWM devices listed in the "pwms"
-> > +      property. If no "pwm-names" property is given, the name of the user node
-> > +      will be used as fallback.
-> > +
-> > +required:
-> > +  - pwms
->
-> Doing this means every consumer has to include this file where as I do
-> 'select: true' some every occurrence of these properties is checked.
-> We're generally only including other schema on the provider side.
->
-> > +
-> > +dependencies:
-> > +  pwm-names: [ pwms ]
-> > +
-> > +examples:
-> > +  - |
-> > +    // The following example could be used to describe a PWM-based
-> > +    // backlight device:
-> > +
-> > +    pwm: pwm {
-> > +      #pwm-cells = <2>;
-> > +    };
-> > +
-> > +    bl: backlight {
-> > +      pwms = <&pwm 0 5000000>;
-> > +      pwm-names = "backlight";
-> > +    };
-> > +
-> > +    // Note that in the example above, specifying the "pwm-names" is redundant
-> > +    // because the name "backlight" would be used as fallback anyway.
-> > +
-> > +  - |
-> > +    // Example with optional PWM specifier for inverse polarity
-> > +
-> > +    #include <dt-bindings/pwm/pwm.h>
-> > +
-> > +    pwm2: pwm {
-> > +      #pwm-cells = <3>;
-> > +    };
-> > +
-> > +    backlight {
-> > +      pwms = <&pwm2 0 5000000 PWM_POLARITY_INVERTED>;
-> > +      pwm-names = "backlight";
-> > +    };
->
-> > diff --git a/Documentation/devicetree/bindings/pwm/pwm.yaml b/Documentation/devicetree/bindings/pwm/pwm.yaml
-> > new file mode 100644
-> > index 000000000000..5d8029f11ccc
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/pwm/pwm.yaml
-> > @@ -0,0 +1,30 @@
-> > +# SPDX-License-Identifier: GPL-2.0
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/pwm/pwm.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: PWM controllers (providers)
-> > +
-> > +maintainers:
-> > +  - Thierry Reding <thierry.reding@gmail.com>
-> > +
-> > +properties:
-> > +  $nodename:
-> > +    pattern: "^pwm(@.*)?$"
->
-> Copy the pattern for spi. We allow for 'pwm-[0-9]' for cases like GPIO PWMs.
-
-Sure
-
->
-> > +
-> > +  "#pwm-cells":
-> > +    $ref: /schemas/types.yaml#/definitions/uint32
->
-> You don't actually need to define the type as we already have for '#.*-cells'
-
-OK.
-
-Best regards,
-Krzysztof
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+cHQuLCA2IHdyeiAyMDE5IG8gMTA6NDUgR2VlcnQgVXl0dGVyaG9ldmVuIDxnZWVydCtyZW5lc2Fz
+QGdsaWRlci5iZT4gbmFwaXNhxYIoYSk6Cj4KPiAgICAgICAgIEhpIExpbnVzLCBCYXJ0b3N6LAo+
+Cj4gVGhpcyBwYXRjaCBzZXJpZXMgY29udGFpbnMgdmFyaW91cyBBUEkgYm91bmRhcnkgY2xlYW51
+cHMgZm9yIGdwaW9saWI6Cj4gICAtIFRoZSBmaXJzdCB0d28gcGF0Y2hlcyBtYWtlIHR3byBmdW5j
+dGlvbnMgcHJpdmF0ZSwKPiAgIC0gVGhlIGxhc3QgdHdvIHBhdGNoZXMgc3dpdGNoIHRoZSByZW1h
+aW5pbmcgZ3Bpb2xpYiBleHBvcnRlZCBmdW5jdGlvbnMKPiAgICAgZnJvbSBFWFBPUlRfU1lNQk9M
+KCkgdG8gRVhQT1JUX1NZTUJPTF9HUEwoKS4KPgo+IEFmdGVyIHRoaXMgdGhlcmUgaXMgb25seSBh
+IHNpbmdsZSBHUElPIGRyaXZlciBmdW5jdGlvbiBleHBvcnRlZCB3aXRoCj4gRVhQT1JUX1NZTUJP
+TCgpOwo+Cj4gICAgIGRyaXZlcnMvZ3Bpby9ncGlvLWh0Yy1lZ3Bpby5jOkVYUE9SVF9TWU1CT0wo
+aHRjX2VncGlvX2dldF93YWtldXBfaXJxKTsKPgo+IEkgYmVsaWV2ZSB0aGlzIHN5bWJvbCB3YXMg
+bmV2ZXIgdXNlZCB1cHN0cmVhbSwgYW5kIG1heSBiZSBhIHJlbGljIG9mIHRoZQo+IG9yaWdpbmFs
+IG91dC1vZi10cmVlIGNvZGUgdGhlIGh0Yy1lZ3BpbyB3YXMgYmFzZWQgb24uICBJIGRvbid0IGtu
+b3cgaWYKPiB0aGVyZSAoc3RpbGwpIGV4aXN0IG91dC1vZi10cmVlIHVzZXJzIG9mIHRoZSBzeW1i
+b2wuCj4KPiBUaGFua3MgZm9yIHlvdXIgY29tbWVudHMhCgpBbGwgbG9va3MgZ29vZCB0byBtZS4g
+QXJlIHlvdSBmaW5lIHdpdGggdGhpcyBiZWluZyBwaWNrZWQgdXAgYWZ0ZXIgdGhlCnY1LjQgbWVy
+Z2Ugd2luZG93PwoKQmFydAoKPgo+IEdlZXJ0IFV5dHRlcmhvZXZlbiAoNCk6Cj4gICBncGlvOiBv
+ZjogTWFrZSBvZl9nZXRfbmFtZWRfZ3Bpb2RfZmxhZ3MoKSBwcml2YXRlCj4gICBncGlvOiBvZjog
+TWFrZSBvZl9ncGlvX3NpbXBsZV94bGF0ZSgpIHByaXZhdGUKPiAgIGdwaW86IG9mOiBTd2l0Y2gg
+dG8gRVhQT1JUX1NZTUJPTF9HUEwoKQo+ICAgZ3BpbzogZGV2cmVzOiBTd2l0Y2ggdG8gRVhQT1JU
+X1NZTUJPTF9HUEwoKQo+Cj4gIGRyaXZlcnMvZ3Bpby9ncGlvbGliLWRldnJlcy5jIHwgMjggKysr
+KysrKysrKysrKystLS0tLS0tLS0tLS0tLQo+ICBkcml2ZXJzL2dwaW8vZ3Bpb2xpYi1vZi5jICAg
+ICB8IDE2ICsrKysrKysrLS0tLS0tLS0KPiAgZHJpdmVycy9ncGlvL2dwaW9saWItb2YuaCAgICAg
+fCAgNyAtLS0tLS0tCj4gIGluY2x1ZGUvbGludXgvb2ZfZ3Bpby5oICAgICAgIHwgMTEgLS0tLS0t
+LS0tLS0KPiAgNCBmaWxlcyBjaGFuZ2VkLCAyMiBpbnNlcnRpb25zKCspLCA0MCBkZWxldGlvbnMo
+LSkKPgo+IC0tCj4gMi4xNy4xCj4KPiBHcntvZXRqZSxlZXRpbmd9cywKPgo+ICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEdlZXJ0Cj4KPiAtLQo+IEdlZXJ0
+IFV5dHRlcmhvZXZlbiAtLSBUaGVyZSdzIGxvdHMgb2YgTGludXggYmV5b25kIGlhMzIgLS0gZ2Vl
+cnRAbGludXgtbTY4ay5vcmcKPgo+IEluIHBlcnNvbmFsIGNvbnZlcnNhdGlvbnMgd2l0aCB0ZWNo
+bmljYWwgcGVvcGxlLCBJIGNhbGwgbXlzZWxmIGEgaGFja2VyLiBCdXQKPiB3aGVuIEknbSB0YWxr
+aW5nIHRvIGpvdXJuYWxpc3RzIEkganVzdCBzYXkgInByb2dyYW1tZXIiIG9yIHNvbWV0aGluZyBs
+aWtlIHRoYXQuCj4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+ICAgICAgICAgICAgICAgLS0gTGludXMgVG9ydmFsZHMKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
