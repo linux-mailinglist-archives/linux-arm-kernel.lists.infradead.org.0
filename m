@@ -2,69 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84732AE79D
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 12:07:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DC680AE7CD
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 12:18:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:Message-Id:
-	In-Reply-To:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	References:List-Owner; bh=WueAoVCJRDLEoC3GkFuigFnkrt2i7qZjTwsmf+rUGMQ=; b=jq4
-	s6G+n1etU7o7cetrywZ0o2aTCeRUv47TqkkMqmJh7UXJIzay7SZ8EjiGdnRRUA0a71Se7tcbmsGJm
-	t1kE3nEMrW7rOmShZNZz3IjW+VTVeqRbuVaYkTL7xly7DpHWkYNP7SiONyeG7VOP4bEOmT2in9Ni9
-	mqFXsJJNPRTpX+mPr9EIdkRqW+GMA4LPgpZ3MZoX8ovj7UxevvgFhIy3Q9ui0QXpvpMNXXJyHxl0u
-	ZDJmYbIxaP7kqsiG/fi4A4iIY8EIUC6K8qjw0RcUYAOW28Dk4Aa0BnoBYqEpqKCcCquOES1MDiLmq
-	3M0c3uk/HL2riYSghd+0TdOArBITgqQ==;
+	List-Owner; bh=EYyGbwopwR8gEBEqdMtWPDMXz0xl/s+XtuuHIeiNAIo=; b=WqE2H3TlQixrqd
+	IHTSXFU3UOfcx65IUUk0OTFd0CMynn2GvnO3v19k+fuutGXqXH7sXGOqIEEvOopBI0nwE3RC7hgUw
+	vG2xhok2W/+jb/beNxCBbUdFyBPpeOx3cYUg65+w5C9WDI6KG1kpmXg5y0WgsRQ5e9c82mkftAIUZ
+	tIwYB4DgQoxC9PqqR9uRYbZ30rmIKsk4aP/usJu9aNnpli0IHWUr/IEueRBVLnjBqOMobe1hnApLQ
+	dljRY5QHXXZKj8opdHw/EMjRYwtPH6t5nHmjZ/mL/Ajdn0Nizcp24xWzkhArV79uhQcZNfaMbPflW
+	9RG/dwLBOZGJ1P4LUXvg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7d3M-0001uO-UT; Tue, 10 Sep 2019 10:07:17 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
+	id 1i7dE1-0005EJ-QR; Tue, 10 Sep 2019 10:18:17 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7d3A-0001u2-Fu
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 10:07:06 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=Date:Message-Id:In-Reply-To:
- Subject:Cc:To:From:Sender:Reply-To:MIME-Version:Content-Type:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
- List-Id:List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:
- List-Archive; bh=TAVHKaWXI4BEycgQJrIFHO035PWGPpF60zavVSn6Qw4=; b=FX3kfwpO8H3z
- ZvMWbvzSvmJAITPgXUsPv4uK/PJ6gKEYzSGHIKKbESt7CQU5s/bVTeUfjdOy+NZBRkBm+iW1CZUJo
- 2AFcAKECVnzGaonfq2Xe03dY3JAg96AlcWIaBkcf+2d0OIvy55fEAVx88CVrS3fQl+LQe/t8B159Y
- twKpA=;
-Received: from [148.69.85.38] (helo=fitzroy.sirena.org.uk)
- by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1i7d36-0006j7-Io; Tue, 10 Sep 2019 10:07:00 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id E825CD02D5A; Tue, 10 Sep 2019 11:06:59 +0100 (BST)
-From: Mark Brown <broonie@kernel.org>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Subject: Applied "regulator: uniphier: Add Pro5 USB3 VBUS support" to the
- regulator tree
-In-Reply-To: <1568080304-1572-1-git-send-email-hayashi.kunihiko@socionext.com>
-X-Patchwork-Hint: ignore
-Message-Id: <20190910100659.E825CD02D5A@fitzroy.sirena.org.uk>
-Date: Tue, 10 Sep 2019 11:06:59 +0100 (BST)
-X-Bad-Reply: In-Reply-To but no 'Re:' in Subject.
+ id 1i7dDv-0005DW-0V
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 10:18:13 +0000
+Received: from mail-vk1-f172.google.com (mail-vk1-f172.google.com
+ [209.85.221.172]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id x8AAHueN011443
+ for <linux-arm-kernel@lists.infradead.org>; Tue, 10 Sep 2019 19:17:57 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x8AAHueN011443
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1568110677;
+ bh=yIKQfh97GgxHjqDfeFwoaAFGiMM6pmiH8tsXc3yeVNw=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=qcXNzlf0KcUbgOr3KW95A3rcl0cUA+VpAOeAMVZzYVAUb/lSyUpg84Xk0PZCcQ/L8
+ 1i1yxRELBst0CCKtXFJog61y3lndYOyJcp+RZsiBeK6p9FPi5DAIUDmSKs0EH6Mkqr
+ T0jjlnf9qUUCsbMRa5n+HsgxeqG6zH+tGJzGbeyPZhpXrX9hRqzRneUWzwkWuw6gdW
+ HPT+y5fo15tbWvu78wWNJ8G+4SLDhxu5orDsd5iQlWX1FLT5QudK5u/sGXXcuimz3Q
+ eAH8eplTtqkBY5FVXUlYFAbka7cSVnwKP6RBTBtAhQWSJ3mj0o7mE7QS9ic+yb0LmG
+ cFR92SJOcZOPg==
+X-Nifty-SrcIP: [209.85.221.172]
+Received: by mail-vk1-f172.google.com with SMTP id d126so1322799vkb.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Sep 2019 03:17:56 -0700 (PDT)
+X-Gm-Message-State: APjAAAUCNRRGWlGPw6LPvbPCVmzfyKAz5qKVdvxRKzJnRduH+Pl9keop
+ kcOBsk4wIP50doVVWTnfdQiSAGeRkYZLVSqAcOA=
+X-Google-Smtp-Source: APXvYqy/cswSnc8WfFFL71roXbz40cEs77mBG+d9RGmyXNZx/2NEp/U4gXNVKHOOAIEYpjdCWmMQjdyo+yofpY8FAww=
+X-Received: by 2002:a1f:60c2:: with SMTP id u185mr1443841vkb.0.1568110675632; 
+ Tue, 10 Sep 2019 03:17:55 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190909202153.144970-1-arnd@arndb.de>
+ <20190910092324.GI9720@e119886-lin.cambridge.arm.com>
+ <CAK8P3a2Vk+KSUGJyPTRuLPD=KPEAR43SZ1ofB6k+KeQi3fSERw@mail.gmail.com>
+In-Reply-To: <CAK8P3a2Vk+KSUGJyPTRuLPD=KPEAR43SZ1ofB6k+KeQi3fSERw@mail.gmail.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Tue, 10 Sep 2019 19:17:19 +0900
+X-Gmail-Original-Message-ID: <CAK7LNAQbjPhDqN9ZeC_qnxzMAhPdrSpG4te0HmRrnxuuM6bquw@mail.gmail.com>
+Message-ID: <CAK7LNAQbjPhDqN9ZeC_qnxzMAhPdrSpG4te0HmRrnxuuM6bquw@mail.gmail.com>
+Subject: Re: [PATCH] arm64: fix unreachable code issue with cmpxchg
+To: Arnd Bergmann <arnd@arndb.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_030704_550446_41E28212 
-X-CRM114-Status: GOOD (  16.02  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190910_031811_265956_A2B7D907 
+X-CRM114-Status: GOOD (  24.14  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -77,106 +84,90 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, Liam Girdwood <lgirdwood@gmail.com>,
- Jassi Brar <jaswinder.singh@linaro.org>, Mark Brown <broonie@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ clang-built-linux <clang-built-linux@googlegroups.com>,
+ Andrew Murray <andrew.murray@arm.com>, Will Deacon <will@kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The patch
+On Tue, Sep 10, 2019 at 6:38 PM Arnd Bergmann <arnd@arndb.de> wrote:
+>
+> On Tue, Sep 10, 2019 at 11:23 AM Andrew Murray <andrew.murray@arm.com> wrote:
+>
+> >
+> > >  arch/arm64/include/asm/cmpxchg.h | 15 ++++++++-------
+> > >  1 file changed, 8 insertions(+), 7 deletions(-)
+> > >
+> > > diff --git a/arch/arm64/include/asm/cmpxchg.h b/arch/arm64/include/asm/cmpxchg.h
+> > > index a1398f2f9994..fd64dc8a235f 100644
+> > > --- a/arch/arm64/include/asm/cmpxchg.h
+> > > +++ b/arch/arm64/include/asm/cmpxchg.h
+> > > @@ -19,7 +19,7 @@
+> > >   * acquire+release for the latter.
+> > >   */
+> > >  #define __XCHG_CASE(w, sfx, name, sz, mb, nop_lse, acq, acq_lse, rel, cl)    \
+> > > -static inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)              \
+> > > +static __always_inline u##sz __xchg_case_##name##sz(u##sz x, volatile void *ptr)\
+> >
+> > This hunk isn't needed, there is no BUILD_BUG here.
+>
+> Right, I noticed this, but it seemed like a good idea regardless given the small
+> size of the function compared with the overhead of a function call.  We clearly
+> want these to be inlined all the time.
 
-   regulator: uniphier: Add Pro5 USB3 VBUS support
 
-has been applied to the regulator tree at
+Generally speaking, this should be judged by the compiler, not by humans.
+If the function size is quite small compared with the cost of function call,
+the compiler will determine to inline it anyway.
+(If the compiler's inlining heuristic is not good, we should fix the compiler.)
 
-   https://git.kernel.org/pub/scm/linux/kernel/git/broonie/regulator.git for-5.4
+So, I personally agree with Andrew Murray.
+We should use __always_inline only when we must to do so.
 
-All being well this means that it will be integrated into the linux-next
-tree (usually sometime in the next 24 hours) and sent to Linus during
-the next merge window (or sooner if it is a bug fix), however if
-problems are discovered then the patch may be dropped or reverted.  
+Masahiro Yamada
 
-You may get further e-mails resulting from automated or manual testing
-and review of the tree, please engage with people reporting problems and
-send followup patches addressing any issues that are reported if needed.
 
-If any updates are required or you are submitting further changes they
-should be sent as incremental updates against current git, existing
-patches will not be replaced.
 
-Please add any relevant lists and maintainers to the CCs when replying
-to this mail.
+>
+> Same for the others.
+>
+> > Alternatively is it possible to replace the BUILD_BUG's with something else?
+> >
+> > I think because we use BUILD_BUG at the end of a switch statement, we make
+> > the assumption that size is known at compile time, for this reason we should
+> > ensure the function containing the BUILD_BUG is __always_inline.
+> >
+> > Looking across the kernel where BUILD_BUG is used as a default in a switch
+> > statment ($ git grep -B 3 BUILD_BUG\( | grep default), most instances are
+> > within macros, but many are found in an __always_inline function:
+> >
+> > arch/x86/kvm/cpuid.h
+> > mm/kasan/generic.c
+> >
+> > Though some are not:
+> >
+> > include/linux/signal.h
+> > arch/arm64/include/asm/arm_dsu/pmu.h
+> >
+> > I wonder if there may be a latent mole ready to whack with pmu.h?
+>
+> Right, it can't hurt to annotate those as well. I actually have another
+> fixup for linux/signal.h that I would have to revisit at some point.
+> See https://bugs.llvm.org/show_bug.cgi?id=38789, I think this is
+> fixed with clang-9 now, but maybe not with clang-8.
+>
+>       Arnd
 
-Thanks,
-Mark
 
-From 3ba5368dc4e5947cb70287754960776c471eb23d Mon Sep 17 00:00:00 2001
-From: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Date: Tue, 10 Sep 2019 10:51:44 +0900
-Subject: [PATCH] regulator: uniphier: Add Pro5 USB3 VBUS support
 
-Pro5 SoC has same scheme of USB3 VBUS as Pro4, so the data for Pro5 is
-equivalent to Pro4.
-
-Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-Link: https://lore.kernel.org/r/1568080304-1572-1-git-send-email-hayashi.kunihiko@socionext.com
-Signed-off-by: Mark Brown <broonie@kernel.org>
----
- .../devicetree/bindings/regulator/uniphier-regulator.txt     | 5 +++--
- drivers/regulator/uniphier-regulator.c                       | 4 ++++
- 2 files changed, 7 insertions(+), 2 deletions(-)
-
-diff --git a/Documentation/devicetree/bindings/regulator/uniphier-regulator.txt b/Documentation/devicetree/bindings/regulator/uniphier-regulator.txt
-index c9919f4b92d2..94fd38b0d163 100644
---- a/Documentation/devicetree/bindings/regulator/uniphier-regulator.txt
-+++ b/Documentation/devicetree/bindings/regulator/uniphier-regulator.txt
-@@ -13,6 +13,7 @@ this layer. These clocks and resets should be described in each property.
- Required properties:
- - compatible: Should be
-     "socionext,uniphier-pro4-usb3-regulator" - for Pro4 SoC
-+    "socionext,uniphier-pro5-usb3-regulator" - for Pro5 SoC
-     "socionext,uniphier-pxs2-usb3-regulator" - for PXs2 SoC
-     "socionext,uniphier-ld20-usb3-regulator" - for LD20 SoC
-     "socionext,uniphier-pxs3-usb3-regulator" - for PXs3 SoC
-@@ -20,12 +21,12 @@ Required properties:
- - clocks: A list of phandles to the clock gate for USB3 glue layer.
- 	According to the clock-names, appropriate clocks are required.
- - clock-names: Should contain
--    "gio", "link" - for Pro4 SoC
-+    "gio", "link" - for Pro4 and Pro5 SoCs
-     "link"        - for others
- - resets: A list of phandles to the reset control for USB3 glue layer.
- 	According to the reset-names, appropriate resets are required.
- - reset-names: Should contain
--    "gio", "link" - for Pro4 SoC
-+    "gio", "link" - for Pro4 and Pro5 SoCs
-     "link"        - for others
- 
- See Documentation/devicetree/bindings/regulator/regulator.txt
-diff --git a/drivers/regulator/uniphier-regulator.c b/drivers/regulator/uniphier-regulator.c
-index 9026d5a3e964..2311924c3103 100644
---- a/drivers/regulator/uniphier-regulator.c
-+++ b/drivers/regulator/uniphier-regulator.c
-@@ -185,6 +185,10 @@ static const struct of_device_id uniphier_regulator_match[] = {
- 		.compatible = "socionext,uniphier-pro4-usb3-regulator",
- 		.data = &uniphier_pro4_usb3_data,
- 	},
-+	{
-+		.compatible = "socionext,uniphier-pro5-usb3-regulator",
-+		.data = &uniphier_pro4_usb3_data,
-+	},
- 	{
- 		.compatible = "socionext,uniphier-pxs2-usb3-regulator",
- 		.data = &uniphier_pxs2_usb3_data,
 -- 
-2.20.1
-
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
