@@ -2,77 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6C65BAEBD1
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 15:44:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 43FC3AEC86
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 15:57:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tNAXSbh3Ehf114d91OTLd9HHTZi4RYiPmgVawi+4QFY=; b=KRL5n+0aSi+qsV
-	Gdb+P8y9j3wkrLmIBe3AP4n26m11LRDbJp18VTnpxwTCT/AzrVZQLtk6EuGoYSN9bhawkivHMlDyB
-	BvIcAIUXmaARzs/Kn9hCzn4FVYA01Uz5rnSOU2+sr/CkOhbhcE+WBnC9f0+bFQa+lebHcMo/rCdlX
-	NfhnD+IqkpuNzKSTY+Zesbbtk2Mytf048seBTn71EB9y4YPjnunPgjusPEcFmK0YEDKShcjdsgLPZ
-	looWNqpx/SY4kKWge0T7c7w6ncem/ncpJmpC+POu5yii4yUaSE/iDJxT1Yn8YKFi7jvSDnxwTvADU
-	atlvzaypl7ocHh8aXGSA==;
+	List-Owner; bh=qHLWP2yD1gYf8UIL0/p+1kVmYFdv2tOt5uaTqCUSgvs=; b=WH3jnnJ3/EQMxs
+	aMBEK4LUvtUFyThG7Q4vF49SsP6R9Uz6SsljEZP6WoHh71VxWo+3kA7sl7cmpt46zoMEQCaKklcLV
+	2/2+co1KsfoWZvCuGjZkv5WNFb7bCrPk1jcHV1V8dei65VEC3WU/AVaOx8cB6JlNLc1X+CosmM82A
+	fmTdAv/aWI45qyxDdcXJ91pxYpyWEEedXeBxstuYsy36zH+AakpSYL7Rvlgytx32+YZ0r3w+TyLyW
+	TmzlnB++dzOJ/RCUpfPu8K8LHL6vTqQowz263FphnsO9o66R2ALoShZLUVYUcqy0yhFAwuR8thFN8
+	FETbIn3P0VU+IUfro2AA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7gR5-0004Xr-QH; Tue, 10 Sep 2019 13:43:59 +0000
-Received: from mail-qk1-f196.google.com ([209.85.222.196])
+	id 1i7gdv-0002fI-Iz; Tue, 10 Sep 2019 13:57:15 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7gQu-0004Wr-Al
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 13:43:49 +0000
-Received: by mail-qk1-f196.google.com with SMTP id 201so17003483qkd.13
+ id 1i7gdj-0002ev-3c
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 13:57:04 +0000
+Received: by mail-io1-xd42.google.com with SMTP id f12so37591903iog.12
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 06:43:47 -0700 (PDT)
+ Tue, 10 Sep 2019 06:57:02 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=WiJfk6BOQ9URkJhc4rYT7Cef+8bJjMR5zQiVGBcXf9o=;
+ b=EaQ6O1eeHeZ7e7GTBRsUQWg0bCT0bWiASR2rd8VgF8uIcukRGqCjUT4xqUaQitnglP
+ ikKMwnlv+rFHcNqG1QjFNIUF671pqNNZA1cTRemld56Mo9Yb0KgQUaxwKUQmYEjI3xzb
+ bgPDPOCmqMm4tNNJARAMqwyX2+LDjYp/eoUgzQxbgyzFjobuIL72VnIStIc5nQQNQnUm
+ HBQVADpd4FRbW4B2zS+Po85H1J8NVYdbjCVBf+xbi+43sXVnTKz1vWiFnCCMZVD7T8LM
+ OuGERIu/ryG9zjMResmNKiNXB5DtgChrabikLFkbjwMycYzyye9mXOH/IvotpF5X5Iv3
+ JlZQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=p6zPc+01Hqtj70FYQH87POktpG3lo+D/uPeGYtLeCvc=;
- b=oBNahKpeS5Yb5dESOffVOHZIS4KFZmFJeVX3YpE1K6R8X4CxIailglHWtD2VMGA/lt
- fQv8rDNQi+z2S8uYQCcseOFejsCWLfkMPguUwmDyEE/nt5DLLXWDfk2PccZCj/8AC30s
- UwDFjB0q9R1P1fAWHj6k+f1MTt5/BUl2f7ah0mCrIAhklAqRChSHZG8f4xJdnlE8WVJG
- Rh5rCvSP4TawmoGTyyl5lElWc5tYeqer834Zu0q47S0sY76+JDG4i8zsp+g4CvCt8NP0
- alhv0/yGYj2QJYuLgCvH2f9fi0PAkNb/yVmPeCm1SeaPHXk1/RMgM9a0RopAPEKEV+DK
- 1dMg==
-X-Gm-Message-State: APjAAAX8mxG9qUq1f2QA+kItFlGfEb+wXqm0v5jTBqckGoVBPtAePimC
- jSi8UmT1JKfRrp0ZrfkXRx9RbhiS5hM25mQXaPg=
-X-Google-Smtp-Source: APXvYqx63W2KmaLnbZnwoNzPoM9AmlM0KI9/P88LEJJ6BbifXaOvNlmx+AWjiX8rS0YSdxh0Xc6uuOzmtj/wUOvmmm8=
-X-Received: by 2002:ae9:ee06:: with SMTP id i6mr8806139qkg.3.1568123026492;
- Tue, 10 Sep 2019 06:43:46 -0700 (PDT)
+ bh=WiJfk6BOQ9URkJhc4rYT7Cef+8bJjMR5zQiVGBcXf9o=;
+ b=n+1gc2VYG/45JyuB/oMfAwXt/1QBXO8pSNPE9Z1Oj2rXsF3LroLASnSMwNxgkcX1oP
+ e8wzYiTVSgZ1bp3NLgE4vjk4gzJoPlwX4VmXDQ7pEGtZlGuK9q2vG8jm08bJGJSF0ppo
+ ULZNU0JlIvmsHIVXvpEdoGafr3FV10FHnc8D1tdSC1zL4s3I+40aTBkm2M5WxgPFgv/N
+ cGyPqkwCI/3jcHNnXfgpsHX4XwGnouIOTAH8nd7It/m4DZ9Psw6DbMjd6qhTmyBrYkwd
+ kpFms/kHGdQxl+PZfBiLah7LF0paAw5X83FeurIFjHicdULCBGgPEustePuLwunFlABx
+ ZKSg==
+X-Gm-Message-State: APjAAAUV97m7MEb2VBTwOa2my3PAVwm4n3n9+aMz7wucnnOqI6eFPboe
+ XC87xeDApFVVpgLWPVenQpqYK20RnOcPmuml9q8=
+X-Google-Smtp-Source: APXvYqwpbmj+9gSQ84cmL21PKzfeoORrvoHlfRtvKw1m73P5qmijzXxshrIRVofX574C/KBbdM2WpaAAorFjgcnQKac=
+X-Received: by 2002:a05:6638:4b:: with SMTP id
+ a11mr32038325jap.0.1568123821449; 
+ Tue, 10 Sep 2019 06:57:01 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190909202153.144970-1-arnd@arndb.de>
- <20190910074606.45k5m2pkztlpj4nj@willie-the-truck>
- <CAK8P3a0O8bVLgMzyc9bXb8joy6CZevP4CVn5eEwEPVqAOutDEw@mail.gmail.com>
- <20190910132415.4j2ygxhuanihvzhx@willie-the-truck>
-In-Reply-To: <20190910132415.4j2ygxhuanihvzhx@willie-the-truck>
-From: Arnd Bergmann <arnd@arndb.de>
-Date: Tue, 10 Sep 2019 15:43:29 +0200
-Message-ID: <CAK8P3a3w6q7iUy2zYRhUqiWCR3o-L5s3BTYvXZMXb0zEa=Ydig@mail.gmail.com>
-Subject: Re: [PATCH] arm64: fix unreachable code issue with cmpxchg
-To: Will Deacon <will@kernel.org>
+References: <20190828150037.2640-1-aford173@gmail.com>
+ <20190905230443.GA52127@atomide.com>
+In-Reply-To: <20190905230443.GA52127@atomide.com>
+From: Adam Ford <aford173@gmail.com>
+Date: Tue, 10 Sep 2019 08:56:49 -0500
+Message-ID: <CAHCN7xKxffJUV2V2CCuw0iPqUm4LJT28GMrcF2=8rDJQM2dOOw@mail.gmail.com>
+Subject: Re: [RFC] ARM: omap3: Enable HWMODS for HW Random Number Generator
+To: Tony Lindgren <tony@atomide.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_064348_373995_30613C6B 
-X-CRM114-Status: GOOD (  25.02  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190910_065703_156096_EC5405F1 
+X-CRM114-Status: GOOD (  30.77  )
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.222.196 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (aford173[at]gmail.com)
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (arndbergmann[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.222.196 listed in wl.mailspike.net]
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ provider (aford173[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,92 +97,143 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: Mark Rutland <mark.rutland@arm.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- clang-built-linux <clang-built-linux@googlegroups.com>,
- Ingo Molnar <mingo@redhat.com>, Andrew Murray <andrew.murray@arm.com>,
- Borislav Petkov <bp@suse.de>, Linux ARM <linux-arm-kernel@lists.infradead.org>
+ devicetree <devicetree@vger.kernel.org>, Paul Walmsley <paul@pwsan.com>,
+ Aaro Koskinen <aaro.koskinen@iki.fi>, Russell King <linux@armlinux.org.uk>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ Tero Kristo <t-kristo@ti.com>, Rob Herring <robh+dt@kernel.org>,
+ =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
+ =?UTF-8?Q?Pali_Roh=C3=A1r?= <pali.rohar@gmail.com>,
+ Linux-OMAP <linux-omap@vger.kernel.org>, Adam Ford <adam.ford@logicpd.com>,
+ arm-soc <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 3:24 PM Will Deacon <will@kernel.org> wrote:
-> On Tue, Sep 10, 2019 at 10:04:24AM +0200, Arnd Bergmann wrote:
-> > On Tue, Sep 10, 2019 at 9:46 AM Will Deacon <will@kernel.org> wrote:
-> > - In theory, CONFIG_OPTIMIZE_INLINING is the right thing to do -- the compilers
-> >   also make some particularly bad decisions around inlining when each inline
-> >   turns into an __always_inline, as has been the case in Linux for a long time.
-> >   I think in most cases, we get better object code with CONFIG_OPTIMIZE_INLINING
-> >   and in the cases where this is worse, it may be better to fix the compiler.
-> >   The new "asm_inline"  macro should also help with that.
+On Thu, Sep 5, 2019 at 6:04 PM Tony Lindgren <tony@atomide.com> wrote:
 >
-> Sure, in theory, but it looks like there isn't a single arm64 compiler out
-> there which gets it right.
-
-I don't see anything architecture specific in here. When the option was
-made generic instead of x86 specific, I fixed a ton of bugs that showed
-up all over the place. If we don't want it on arm64, I'd suggest making
-it a per-architecture opt-in instead of an opt-out.
-
+> Hi,
+>
+> * Adam Ford <aford173@gmail.com> [190828 15:01]:
+> > The datasheet for the AM3517 shows the RNG is connected to L4.
+> > It shows the module address for the RNG is 0x480A0000, and it
+> > matches the omap2.dtsi description.  Since the driver can support
+> > omap2 and omap4, it seems reasonable to assume the omap3 would
+> > use the same core for the RNG.
 > >
-> >     | commit 4f81c5350b44bcc501ab6f8a089b16d064b4d2f6
-> >     | Author: Jeff Dike <jdike@addtoit.com>
-> >     | Date:   Mon Jul 7 13:36:56 2008 -0400
-> >     |
-> >     |     [UML] fix gcc ICEs and unresolved externs
-> >     [...]
-> >     |    This patch reintroduces unit-at-a-time for gcc >= 4.0,
-> > bringing back the
-> >     |    possibility of Uli's crash.  If that happens, we'll debug it.
-> >
-> >     it's still default-off and thus opt-in.
+> > This RFC, mimics much of the omap2 hwmods on the OMAP3. It
+> > also adds the necessary clock for driving the RNG.  Unfortunately,
+> > it appears non-functional.  If anyone has any suggestions on how
+> > to finish the hwmod (or port it to the newer l4 device tree
+> > format), feedback is requested.
 >
-> This appears to be fixing an ICE, whereas the issue reported recently for
-> arm64 gcc was silent miscompilation of atomics in some cases. Unfortunately,
-> I can't seem to find the thread :/ Mark, you were on that one too, right?
-
-Sorry, that reference was unclear, I meant the text for commit 3f9b5cc01856,
-which in turn contains a citation of the earlier 4f81c5350b44bc commit.
-
-> > - The inlining decisions of gcc and clang are already very different, and
-> >    the bugs we are finding around that are much more common than
-> >    the difference between CONFIG_OPTIMIZE_INLINING=y/n on a
-> >    given compiler.
+> Yup I'll take the bait :) The patch below seems to do the trick
+> for me on dm3730 based on translating your patch to probe with
+> ti-sysc.
 >
-> Sorry, not sure that you're getting at here.
+> Not sure about 34xx, it seems we're missing rng_clk? Care
+> to give it a try and attempt simlar patches for 34xx and
+> 3517?
 >
-> Anyway, the second version of your patch looks fine, but I would still
-> prefer to go the extra mile and disable CONFIG_OPTIMIZE_INLINING altogether
-> given that I don't think it's a safe option to enable for us.
 
-The point is that function inlining frequently causes all kinds of problems
-when code was written in a way that is not entirely reproducible but
-depends on the behavior of a particular implementation. I've fixed
-lots of bugs based on any of these:
+I took the block you added to omap36xx and copied it to omap34xx.
+Since this is present in the omap2.dtsi, I wonder if it could be used
+at the omap3.dtsi level instead of am3517, omap34xx and omap36xx.
+What is not clear to me is the clocking architecture needed.  The
+omap34xx-omap36xx-clocks.dtsi have the  aes1, rng_ick, sha1, and des1
+setup which appears to be present in the am3517 based on that
+datasheet, but they are all dependent on the security_l4_ick2 which is
+not defined for am35.  I wonder if all these could move to omap3 and
+its respective clock file.  Duplicating it in 3x locations doesn't
+seem to make sense, but I don't have every permutation of omap3 to
+know, and those features are not clearly documented.
 
-- gcc-4.0 and higher started ignoring 'inline' without
-  __attribute__((always_inline)), so a workaround got applied
-  in 2.6.26, and this turned into CONFIG_OPTIMIZE_INLINING=n
-  later
-- gcc -O2 makes different decisions compared to -Os and -O3,
-  which is an endless source of "uninitialized variable" warnings
-  and similar problems
-- Some configuration options like KASAN grow the code to result
-  in less inlining
-- clang and gcc behave completely differently
-- gcc is traditionally bad at guessing the size of inline assembly
-  to make a good decision
-- newer compilers tend to get better at identifying which functions
-  benefit from inlining, which changes the balance
+I have it working on an omap3530:
 
-CONFIG_OPTIMIZE_INLINING clearly adds to that mess, but it's
-not the worst part. The only real solution tends to be to write
-portable and correct code rather than making assumptions
-about compiler behavior.
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 5.3.0-rc8-00009-gaa2f12f5625a-dirty
+(aford@aford-OptiPlex-7050) (gcc version 8.3.0 (Buildroot
+2019.02.4-00056-gb0868303cf)) #11 SMP Mon Sep 9 13:59:31 CDT 2019
+[    0.000000] CPU: ARMv7 Processor [411fc083] revision 3 (ARMv7), cr=10c5387d
+[    0.000000] CPU: PIPT / VIPT nonaliasing data cache, VIPT
+nonaliasing instruction cache
+[    0.000000] OF: fdt: Machine model: LogicPD Zoom OMAP35xx SOM-LV
+Development Kit
+...snip...
 
-    Arnd
+[    0.000000] OMAP3430/3530 ES3.1 (l2cache iva sgx neon isp)
+
+... snip...
+
+[    0.000000] random: get_random_bytes called from
+start_kernel+0x2e8/0x514 with crng_init=0
+[    2.573120] random: fast init done
+[    5.172821] random: udevd: uninitialized urandom read (16 bytes read)
+[    5.182922] random: udevd: uninitialized urandom read (16 bytes read)
+[    5.190460] random: udevd: uninitialized urandom read (16 bytes read)
+[    7.739837] omap_rng 480a0000.rng: Random Number Generator ver. 70
+[    7.747283] random: crng init done
+[    7.750793] random: 1 urandom warning(s) missed due to ratelimiting
+
+And hexdump  is working on both /dev/hwrng and /dev/random
+I have not been able to replicate the issue you mentioned about it
+dying after a few reads and/or rmmod-modprobe cycles.
+
+
+> At least I'm not needing the "ti,no-reset-on-init" property
+> that your patch has a comment for. Maybe that's needed on
+> some other omap3.
+
+The hwmod I used was a copy-paste from omap2, so it might not be
+needed in omap3's at all.
+
+>
+> Oh and this needs to default to status = "disabled" for
+> HS devices like n900 as it needs to use the omap3-rom-rng.
+
+I don't know enough about the HS version of the OMAP3, but what's the
+main difference between omap3-rom-rng and this one?
+
+adam
+>
+> Regards,
+>
+> Tony
+>
+> 8< -----------------------
+> diff --git a/arch/arm/boot/dts/omap36xx.dtsi b/arch/arm/boot/dts/omap36xx.dtsi
+> --- a/arch/arm/boot/dts/omap36xx.dtsi
+> +++ b/arch/arm/boot/dts/omap36xx.dtsi
+> @@ -140,6 +140,29 @@
+>                         };
+>                 };
+>
+> +               rng_target: target-module@480a0000 {
+> +                       compatible = "ti,sysc-omap2", "ti,sysc";
+> +                       reg = <0x480a003c 0x4>,
+> +                             <0x480a0040 0x4>,
+> +                             <0x480a0044 0x4>;
+> +                       reg-names = "rev", "sysc", "syss";
+> +                       ti,sysc-mask = <(SYSC_OMAP2_AUTOIDLE)>;
+> +                       ti,sysc-sidle = <SYSC_IDLE_FORCE>,
+> +                                       <SYSC_IDLE_NO>;
+> +                       ti,syss-mask = <1>;
+> +                       clocks = <&rng_ick>;
+> +                       clock-names = "ick";
+> +                       #address-cells = <1>;
+> +                       #size-cells = <1>;
+> +                       ranges = <0 0x480a0000 0x2000>;
+> +
+> +                       rng: rng@0 {
+> +                               compatible = "ti,omap2-rng";
+> +                               reg = <0x0 0x2000>;
+> +                               interrupts = <52>;
+> +                       };
+> +               };
+> +
+>                 /*
+>                  * Note that the sysconfig register layout is a subset of the
+>                  * "ti,sysc-omap4" type register with just sidle and midle bits
 
 _______________________________________________
 linux-arm-kernel mailing list
