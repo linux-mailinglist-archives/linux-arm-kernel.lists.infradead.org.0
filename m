@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9421DADAF1
-	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 16:14:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D5DD9ADAF4
+	for <lists+linux-arm-kernel@lfdr.de>; Mon,  9 Sep 2019 16:14:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,49 +11,49 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=/u0RAXlhXhuNpycBkcduuyhpGM9j6eTOpoh4h9rYdAQ=; b=o1Bdz2cg6WuI1Eo5l4hDdt8l4a
-	xDjyijc0SDpe5yGZJ5PYoHrzmXubmM5cF0DoBSQ7MLPwJ1gNT0ABaRH/VeXgk28owPG5sA7meVNJX
-	V+aDYbvq47yKVid6hN/Cj6C5rdasqixulC6C+Kj4UgG85k13M/ihHwwuBlKYq9u2716Tj9Dzt7sRP
-	W51CGTb6kzB5C+jSjrW2DGxdPQJzH5y2Ft1nAgtYNNQhth8TAvZh7IJDWit0J2WmZPAe2b2OY2O+A
-	sCvCdYaeN3cYvnx6iTDMZkFi/bl6kTpiSDg6gPbUMiZ5tvQbq5jG1qqcQ3Ep4Jvc/EQZPRosiU0tQ
-	teQxL2MA==;
+	bh=N/uIvr0YOyyzc7+Mu1vxJgvG4AO+8t1o2CgUiZ5ycm4=; b=hVy+Go1EPmCPg7hJ9uf/EvxgTZ
+	wNsikDA9RsXgDcNj/witbIEzc/g0x9rBncYQeEWJePYeIWCd+lisXd1Zv5clZ59ifK6TWsOBy3dgn
+	Rnps4E2ibuWiFaQx6MTWgrxHbIVRJzmHF/TbsVkCXWVBvjdba4U1vcuf++N8VdCf1CHvGNcisTX2Z
+	2L08ja6qr5WW+4ExWWXrQ2t9xWkIgnACd2zRCh1MqVn7Xu0jEehdUiTC/dY9+aMMlTjxPeXZUOG1N
+	a7yUKwoLLD2Nu0UBbEhoXUURqzSiiuDdliD7M4o2s0W+5uyMafvZ11jutisK6kPNaPIyUwN9y20M+
+	Z3OEnkhw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7KR7-00011S-0I; Mon, 09 Sep 2019 14:14:33 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i7KRP-0001FI-Q4; Mon, 09 Sep 2019 14:14:51 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7KOH-0006vQ-EK
+ id 1i7KOH-0006vj-VA
  for linux-arm-kernel@lists.infradead.org; Mon, 09 Sep 2019 14:11:39 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 409441A0EB7;
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9ECC4200B03;
  Mon,  9 Sep 2019 16:11:36 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 13A211A03DA;
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 72977200858;
  Mon,  9 Sep 2019 16:11:32 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 6A3CF402AF;
- Mon,  9 Sep 2019 22:11:25 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 5F14840323;
+ Mon,  9 Sep 2019 22:11:26 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-clk@vger.kernel.org
-Subject: [PATCH V5 10/11] clk: imx: clk-imx8qxp-lpcg: add runtime pm support
-Date: Mon,  9 Sep 2019 22:10:07 -0400
-Message-Id: <1568081408-26800-11-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH V5 11/11] clk: imx: lpcg: add suspend/resume support
+Date: Mon,  9 Sep 2019 22:10:08 -0400
+Message-Id: <1568081408-26800-12-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
 References: <1568081408-26800-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_071137_709496_A494D677 
-X-CRM114-Status: GOOD (  10.37  )
+X-CRM114-CacheID: sfid-20190909_071138_236421_78469849 
+X-CRM114-Status: GOOD (  11.19  )
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 DATE_IN_FUTURE_06_12   Date: is 6 to 12 hours after Received: date
@@ -78,85 +78,102 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-add runtime pm support
+LPCG clock state may be lost when it's power domain is completely
+off during system suspend/resume and we need save and restore the
+state properly.
 
 Signed-off-by: Dong Aisheng <aisheng.dong@nxp.com>
 ---
 ChangeLog:
-v4->v5:
- * no changes
-v3->v4:
- * disable rpm when error out
+v5:
+ * make suspend/resume function static
+ * improve code comments
+v4: no changes
 v3: new patch
 ---
- drivers/clk/imx/clk-imx8qxp-lpcg.c | 34 +++++++++++++++++++++++++++-------
- 1 file changed, 27 insertions(+), 7 deletions(-)
+ drivers/clk/imx/clk-imx8qxp-lpcg.c |  1 +
+ drivers/clk/imx/clk-lpcg-scu.c     | 37 +++++++++++++++++++++++++++++++++++++
+ drivers/clk/imx/clk-scu.h          |  1 +
+ 3 files changed, 39 insertions(+)
 
 diff --git a/drivers/clk/imx/clk-imx8qxp-lpcg.c b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-index 31efc7a..f395eb5 100644
+index f395eb5..99a5f55 100644
 --- a/drivers/clk/imx/clk-imx8qxp-lpcg.c
 +++ b/drivers/clk/imx/clk-imx8qxp-lpcg.c
-@@ -12,6 +12,7 @@
- #include <linux/of_address.h>
- #include <linux/of_device.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
- #include <linux/slab.h>
+@@ -338,6 +338,7 @@ static struct platform_driver imx8qxp_lpcg_clk_driver = {
+ 	.driver = {
+ 		.name = "imx8qxp-lpcg-clk",
+ 		.of_match_table = imx8qxp_lpcg_match,
++		.pm = &imx_clk_lpcg_scu_pm_ops,
+ 		.suppress_bind_attrs = true,
+ 	},
+ 	.probe = imx8qxp_lpcg_clk_probe,
+diff --git a/drivers/clk/imx/clk-lpcg-scu.c b/drivers/clk/imx/clk-lpcg-scu.c
+index 3c092a0..1dd928a 100644
+--- a/drivers/clk/imx/clk-lpcg-scu.c
++++ b/drivers/clk/imx/clk-lpcg-scu.c
+@@ -33,6 +33,9 @@ struct clk_lpcg_scu {
+ 	void __iomem *reg;
+ 	u8 bit_idx;
+ 	bool hw_gate;
++
++	/* for state save&restore */
++	u32 state;
+ };
  
- #include "clk-scu.h"
-@@ -231,26 +232,45 @@ static int imx_lpcg_parse_clks_from_dt(struct platform_device *pdev,
- 		return -EINVAL;
+ #define to_clk_lpcg_scu(_hw) container_of(_hw, struct clk_lpcg_scu, hw)
+@@ -112,5 +115,39 @@ struct clk_hw *__imx_clk_lpcg_scu(struct device *dev, const char *name,
+ 		hw = ERR_PTR(ret);
  	}
  
-+	pm_runtime_get_noresume(&pdev->dev);
-+	pm_runtime_set_active(&pdev->dev);
-+	pm_runtime_set_autosuspend_delay(&pdev->dev, 500);
-+	pm_runtime_use_autosuspend(&pdev->dev);
-+	pm_runtime_enable(&pdev->dev);
++	if (dev)
++		dev_set_drvdata(dev, clk);
 +
- 	for (i = 0; i < count; i++) {
- 		idx = bit_offset[i] / 4;
- 		if (idx > IMX_LPCG_MAX_CLKS) {
- 			dev_warn(&pdev->dev, "invalid bit offset of clock %d\n",
- 				 i);
--			return -EINVAL;
-+			ret = -EINVAL;
-+			goto out;
- 		}
- 
--		clk_hws[idx] = imx_clk_lpcg_scu(output_names[i],
--						parent_names[i], 0, base,
--						bit_offset[i], false);
-+		clk_hws[idx] = imx_clk_lpcg_scu_dev(&pdev->dev, output_names[i],
-+						    parent_names[i], 0, base,
-+						    bit_offset[i], false);
- 		if (IS_ERR(clk_hws[idx])) {
- 			dev_warn(&pdev->dev, "failed to register clock %d\n",
- 				 idx);
--			return -EINVAL;
-+			ret = -EINVAL;
-+			goto out;
- 		}
- 	}
- 
--	return devm_of_clk_add_hw_provider(&pdev->dev, imx_lpcg_of_clk_src_get,
--					   clk_data);
-+	ret = devm_of_clk_add_hw_provider(&pdev->dev, imx_lpcg_of_clk_src_get,
-+					  clk_data);
-+	if (ret)
-+		goto out;
+ 	return hw;
+ }
 +
-+	pm_runtime_mark_last_busy(&pdev->dev);
-+	pm_runtime_put_autosuspend(&pdev->dev);
++static int __maybe_unused imx_clk_lpcg_scu_suspend(struct device *dev)
++{
++	struct clk_lpcg_scu *clk = dev_get_drvdata(dev);
++
++	clk->state = readl_relaxed(clk->reg);
++	dev_dbg(dev, "save lpcg state 0x%x\n", clk->state);
 +
 +	return 0;
++}
 +
-+out:
-+	pm_runtime_disable(&pdev->dev);
-+	return ret;
- }
++static int __maybe_unused imx_clk_lpcg_scu_resume(struct device *dev)
++{
++	struct clk_lpcg_scu *clk = dev_get_drvdata(dev);
++
++	/*
++	 * FIXME: Sometimes writes don't work unless the CPU issues
++	 * them twice
++	 */
++
++	writel(clk->state, clk->reg);
++	writel(clk->state, clk->reg);
++	dev_dbg(dev, "restore lpcg state 0x%x\n", clk->state);
++
++	return 0;
++}
++
++const struct dev_pm_ops imx_clk_lpcg_scu_pm_ops = {
++	SET_NOIRQ_SYSTEM_SLEEP_PM_OPS(imx_clk_lpcg_scu_suspend,
++				      imx_clk_lpcg_scu_resume)
++};
+diff --git a/drivers/clk/imx/clk-scu.h b/drivers/clk/imx/clk-scu.h
+index 84efda3..6d4b6e2 100644
+--- a/drivers/clk/imx/clk-scu.h
++++ b/drivers/clk/imx/clk-scu.h
+@@ -12,6 +12,7 @@
  
- static int imx8qxp_lpcg_clk_probe(struct platform_device *pdev)
+ extern u32 clock_cells;
+ extern struct list_head imx_scu_clks[];
++extern const struct dev_pm_ops imx_clk_lpcg_scu_pm_ops;
+ 
+ int imx_clk_scu_init(struct device_node *np);
+ struct clk_hw *imx_scu_of_clk_src_get(struct of_phandle_args *clkspec,
 -- 
 2.7.4
 
