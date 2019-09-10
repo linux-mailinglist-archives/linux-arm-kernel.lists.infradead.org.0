@@ -2,63 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 70B68AF28A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 23:24:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B136AF2C7
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 00:06:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r6yQDHRY7d0RwObAxRtXq46W8aI4T7Oe32i0L17p2k0=; b=ozsd59pgYEwDQL
-	ewuDJmDEL/XummBpD65Lr2UGSpctwAVTcEHrLy9qgsjU7sl7Syh+SKq5oF28IrKFoEQmUp9r84Vxd
-	DMu7quhAmPjl1nOrrXt/ifsmy69YzJcySe2fpi/eQVIyuf9u9Robklkozb2GHE4GbEeTuBf/c8IHe
-	xnurXsGC1eB1rgPMsSl0+9wpJfbehbM87HSDxCohIE7tx2odj6m1ejttK/ZCsBoibjRrwq8P3BvTv
-	cTflABhXuibVUQkQTeHOin5Jn1g9tB2unBYGxeCVGPcRjFnI7yOUF5U+DUgaLvdBCzSgoCkvpf6aw
-	hEAsGY5lC7GprV7FfV1w==;
+	List-Owner; bh=c8kPJo7P9f2WLajQFej3B7BxuJ+V7a8RGpHp76FDJH8=; b=DaRSjVJwriUgms
+	AcHHqrJwL6I5HeR01hDolxWcbdn6dXNXMclSLQYKlc+1X6vCwrFB0FC6fBR7ELeoZlqwDRmNsZgg/
+	N4ve/u0Axlv5RKWRhgjkbNkusKyPGNgGtZen2vxvOFH9Kh7dRdIvq5yuSAdHb91bISLCjK1Ow4PAt
+	z70jSTx283kVuWLhJsBmzjcEIGdh8CzoJR9izxQyZ651MceODweGX6Qx7aZP2x40bRjQynj+K45vT
+	6dlKDs+3xmYHWITT0CJ9L5wFhr6yRF7HWDr/uCXbsCSAqZSyhaeSsOc/rhhJdkujbSJQ8Twi9P14e
+	pVe7pDIh4OpndhmGhb7Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7ncB-0002e6-OC; Tue, 10 Sep 2019 21:23:55 +0000
-Received: from mga03.intel.com ([134.134.136.65])
+	id 1i7oGh-0007ws-Lc; Tue, 10 Sep 2019 22:05:47 +0000
+Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
+ helo=mx0a-00082601.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7nbx-0002dl-FE
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 21:23:43 +0000
-X-Amp-Result: SKIPPED(no attachment in message)
-X-Amp-File-Uploaded: False
-Received: from orsmga008.jf.intel.com ([10.7.209.65])
- by orsmga103.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Sep 2019 14:23:40 -0700
-X-IronPort-AV: E=Sophos;i="5.64,490,1559545200"; d="scan'208";a="178807819"
-Received: from ahduyck-desk1.jf.intel.com ([10.7.198.76])
- by orsmga008-auth.jf.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
- 10 Sep 2019 14:23:40 -0700
-Message-ID: <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-From: Alexander Duyck <alexander.h.duyck@linux.intel.com>
-To: Michal Hocko <mhocko@kernel.org>, Alexander Duyck
- <alexander.duyck@gmail.com>
-Date: Tue, 10 Sep 2019 14:23:40 -0700
-In-Reply-To: <20190910175213.GD4023@dhcp22.suse.cz>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
-User-Agent: Evolution 3.30.5 (3.30.5-1.fc29) 
+ id 1i7oGT-0007wQ-4u
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 22:05:34 +0000
+Received: from pps.filterd (m0001303.ppops.net [127.0.0.1])
+ by m0001303.ppops.net (8.16.0.42/8.16.0.42) with SMTP id x8ALvFav009823;
+ Tue, 10 Sep 2019 15:05:29 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
+ h=from : to : cc : subject
+ : date : message-id : references : in-reply-to : content-type : content-id
+ : content-transfer-encoding : mime-version; s=facebook;
+ bh=Oi1aRQuIHWWpAPjw0A/tkFVK/FRrpdHJcjfu2BWSOqU=;
+ b=Qusch0roIpdObaCUq0cO95k/++MFTvFaYmyrdSTmiWCG+ZPHq1QlK3ylK+d1KqvDb+z/
+ U7oT7PbwoJRY5CVJMZr50634ioZ5IWBCDmY6tsqc54NKDKiCRTi3gzcqJaDM+ch2masp
+ EMlnxtIyN+KIWwgQTfW+FPdrpfojSUuh0jg= 
+Received: from mail.thefacebook.com (mailout.thefacebook.com [199.201.64.23])
+ by m0001303.ppops.net with ESMTP id 2uxf95t2jx-18
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Tue, 10 Sep 2019 15:05:29 -0700
+Received: from prn-hub01.TheFacebook.com (2620:10d:c081:35::125) by
+ prn-hub04.TheFacebook.com (2620:10d:c081:35::128) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id
+ 15.1.1713.5; Tue, 10 Sep 2019 15:05:18 -0700
+Received: from NAM01-BN3-obe.outbound.protection.outlook.com (192.168.54.28)
+ by o365-in.thefacebook.com (192.168.16.25) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.1.1713.5
+ via Frontend Transport; Tue, 10 Sep 2019 15:05:18 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=AVBLBOiAJEx3hj4uRCQjoaXD0XU5MRFYZo8ZtdsYEQ7DA3rMASqxv+SoO+FWU3aVunL/KiYczcvhg9AB1eLqANcCOkenLzvmD8Iwj4k4M4ANeuTVwkZY8skKBlVX1Kds6QontxhmBAP83z8AzZ+MIbkSTj1e3y7dZlH7pbu8djJxCBYHY3SINcdgvl5g4aXqy+yLuM9o3HKaGBT7HMOspg5HWh9vcR8nZu6tGeUqGmJDSi46POfWOqMzZI4QvsFHP8vyCTOdahnSgJ/1UgRutBNKlNhjQYfcQyeRRrT5EfLyyMfS5uAee5X+6RezLhQk8mnSZPgt8SQfIE3jd3xQ8Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Oi1aRQuIHWWpAPjw0A/tkFVK/FRrpdHJcjfu2BWSOqU=;
+ b=OwMXEE3j2qyO3uqCmR8IELPFPRpecY+lnu4tmVWLvEz50YbLDWNNThr629EJYk8XD70ZIZDil8+9vtkt37Nx+PByWnB+bH3/eBhITudTRDcYQXouS6zZ0hLij8Fx0KIBgWAgoOgdCxHapsGC+U3cnOkESGiZ1XwuzhJzHBnTLD/OJaHYR3I443FwDo9GyZ6jODhVkOHgWPVqftoSmN9mdaWQqWlBF+ax/4IqQAQbXoKq6L24JlSXI4Q2Bwr51OGla2qn7BDGxvWQjfl6NHmrItgbuBb3af1DlszAXIilm9HiQ7ZXZyQWrK7ssSf4R2Wa9IQbz1f9GHQfz8QiM9UaBw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=fb.com; dmarc=pass action=none header.from=fb.com; dkim=pass
+ header.d=fb.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
+ s=selector2-fb-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Oi1aRQuIHWWpAPjw0A/tkFVK/FRrpdHJcjfu2BWSOqU=;
+ b=OtMIX1aI7k/QqurjUXCCHcpNa5IOYiyxMOLiCenGSOq+mFBJapbcREKix//Tj9xT5Xl9ofdlK8YVz+n9prw+aBWkAS4zx9Efm5Rs6EVUrlgfQ1d54PpuBzrrqc0CHHF3Z6dB0skw66CnwDTmT7mhEXAy641mwxQXGKzbRxdCW1U=
+Received: from CY4PR15MB1269.namprd15.prod.outlook.com (10.172.177.11) by
+ CY4PR15MB1494.namprd15.prod.outlook.com (10.172.160.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.18; Tue, 10 Sep 2019 22:05:16 +0000
+Received: from CY4PR15MB1269.namprd15.prod.outlook.com
+ ([fe80::38b1:336:13e6:b02b]) by CY4PR15MB1269.namprd15.prod.outlook.com
+ ([fe80::38b1:336:13e6:b02b%7]) with mapi id 15.20.2241.018; Tue, 10 Sep 2019
+ 22:05:16 +0000
+From: Vijay Khemka <vijaykhemka@fb.com>
+To: Rashmica Gupta <rashmica.g@gmail.com>, "linus.walleij@linaro.org"
+ <linus.walleij@linaro.org>
+Subject: Re: [PATCH v2 1/4] gpio/aspeed: Fix incorrect number of banks
+Thread-Topic: [PATCH v2 1/4] gpio/aspeed: Fix incorrect number of banks
+Thread-Index: AQHVY4eukfcaDm3E3UCrHqUIDwG6LKclCz8A
+Date: Tue, 10 Sep 2019 22:05:16 +0000
+Message-ID: <4DEF3F24-0249-4A77-981C-EB62EEC29A92@fb.com>
+References: <20190905011635.15902-1-rashmica.g@gmail.com>
+In-Reply-To: <20190905011635.15902-1-rashmica.g@gmail.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [2620:10d:c090:200::2:1b73]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: f7ebd765-f157-4e10-7700-08d7363af698
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:CY4PR15MB1494; 
+x-ms-traffictypediagnostic: CY4PR15MB1494:
+x-microsoft-antispam-prvs: <CY4PR15MB14943CA2FDFBED9838FEAA39DDB60@CY4PR15MB1494.namprd15.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:4125;
+x-forefront-prvs: 01565FED4C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(396003)(136003)(366004)(346002)(376002)(39860400002)(199004)(189003)(91956017)(11346002)(99286004)(66446008)(36756003)(4326008)(2616005)(25786009)(5660300002)(186003)(305945005)(86362001)(6486002)(6436002)(15650500001)(229853002)(46003)(4744005)(6512007)(14454004)(110136005)(8676002)(76176011)(54906003)(256004)(14444005)(7736002)(81156014)(81166006)(6506007)(76116006)(2906002)(8936002)(6246003)(486006)(478600001)(316002)(476003)(102836004)(71200400001)(66946007)(64756008)(2501003)(66476007)(53936002)(66556008)(33656002)(6116002)(446003)(71190400001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR15MB1494;
+ H:CY4PR15MB1269.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+received-spf: None (protection.outlook.com: fb.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: HRoumQrngF3joe0cWmM42WJ/fEeBRSKNxvJOH66pglOWJlVOo04hFR3pkx1Re1RTFmWzMrZT5IhTE+3lA4VaRE9EbM+s1PbiJiFAHs//3UVtg/jmB8+bgF9h2OsaIovDyOd+5LrTH84WCrw0sRJ4bZQebwZV66fU2ZhbmcafUTpn3j6ggAxxhFRwIyfR1ikQGGDbaUihYw56vPUSZGsiSDuamVgH2IqkZ/W/nmCkAEuYaEtiOWELSTE8NsXeJy3aV5KdvJnTHOKIWU+mAJx/dY17TEZ1mrp7/ZWdle4ECwLitinhJv6qXyotrsFySc4UkY4UxX10MBA9UfqJqF/upem9bjAp6sl50HC54anWHzsTxtNHCWhdOD32xJ9ml/FOMMucoq/7R1qPoJgZrGEEQ9nqSBxvMd8o3UcjUYpofxo=
+x-ms-exchange-transport-forked: True
+Content-ID: <04CABF0679C2A6449F9C3251D1D066A9@namprd15.prod.outlook.com>
 MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: f7ebd765-f157-4e10-7700-08d7363af698
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Sep 2019 22:05:16.8514 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: RSNdzNTdY4L0p1SEgu4xSQgl+8W3qWp7Qhij8q5AR1L9jLbzSxjtepnL2QnaM6G8PTyyIxOzo6AHiPkXQ+dPmw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR15MB1494
+X-OriginatorOrg: fb.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-10_12:2019-09-10,2019-09-10 signatures=0
+X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
+ phishscore=0 spamscore=0
+ adultscore=0 mlxscore=0 mlxlogscore=999 priorityscore=1501 suspectscore=0
+ malwarescore=0 lowpriorityscore=0 bulkscore=0 clxscore=1011
+ impostorscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1909100207
+X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_142341_559538_FF2BBF72 
-X-CRM114-Status: GOOD (  40.91  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190910_150533_379609_A9942E75 
+X-CRM114-Status: GOOD (  16.45  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.153.30 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [134.134.136.65 listed in list.dnswl.org]
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -70,188 +153,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
- "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Rik van Riel <riel@surriel.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>,
+ "linux-gpio@vger.kernel.org" <linux-gpio@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>, Bartosz
+ Golaszewski <bgolaszewski@baylibre.com>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 2019-09-10 at 19:52 +0200, Michal Hocko wrote:
-> On Tue 10-09-19 09:05:43, Alexander Duyck wrote:
-> > On Tue, Sep 10, 2019 at 7:47 AM Michal Hocko <mhocko@kernel.org> wrote:
-> > > On Tue 10-09-19 07:42:43, Alexander Duyck wrote:
-> > > > On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
-> > > > > I wanted to review "mm: Introduce Reported pages" just realize that I
-> > > > > have no clue on what is going on so returned to the cover and it didn't
-> > > > > really help much. I am completely unfamiliar with virtio so please bear
-> > > > > with me.
-> > > > > 
-> > > > > On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
-> > > > > [...]
-> > > > > > This series provides an asynchronous means of reporting to a hypervisor
-> > > > > > that a guest page is no longer in use and can have the data associated
-> > > > > > with it dropped. To do this I have implemented functionality that allows
-> > > > > > for what I am referring to as unused page reporting
-> > > > > > 
-> > > > > > The functionality for this is fairly simple. When enabled it will allocate
-> > > > > > statistics to track the number of reported pages in a given free area.
-> > > > > > When the number of free pages exceeds this value plus a high water value,
-> > > > > > currently 32, it will begin performing page reporting which consists of
-> > > > > > pulling pages off of free list and placing them into a scatter list. The
-> > > > > > scatterlist is then given to the page reporting device and it will perform
-> > > > > > the required action to make the pages "reported", in the case of
-> > > > > > virtio-balloon this results in the pages being madvised as MADV_DONTNEED
-> > > > > > and as such they are forced out of the guest. After this they are placed
-> > > > > > back on the free list,
-> > > > > 
-> > > > > And here I am reallly lost because "forced out of the guest" makes me
-> > > > > feel that those pages are no longer usable by the guest. So how come you
-> > > > > can add them back to the free list. I suspect understanding this part
-> > > > > will allow me to understand why we have to mark those pages and prevent
-> > > > > merging.
-> > > > 
-> > > > Basically as the paragraph above mentions "forced out of the guest"
-> > > > really is just the hypervisor calling MADV_DONTNEED on the page in
-> > > > question. So the behavior is the same as any userspace application
-> > > > that calls MADV_DONTNEED where the contents are no longer accessible
-> > > > from userspace and attempting to access them will result in a fault
-> > > > and the page being populated with a zero fill on-demand page, or a
-> > > > copy of the file contents if the memory is file backed.
-> > > 
-> > > As I've said I have no idea about virt so this doesn't really tell me
-> > > much. Does that mean that if somebody allocates such a page and tries to
-> > > access it then virt will handle a fault and bring it back?
-> > 
-> > Actually I am probably describing too much as the MADV_DONTNEED is the
-> > hypervisor behavior in response to the virtio-balloon notification. A
-> > more thorough explanation of it can be found by just running "man
-> > madvise", probably best just to leave it at that since I am probably
-> > confusing things by describing hypervisor behavior in a kernel patch
-> > set.
-> 
-> This analogy is indeed confusing and doesn't help to build a picture.
-
-All I am really doing is using a pointer per free_list, the page->index, 
-and a page flag to provide a way to iterate over the list in such a way
-that I will not repeat the operation on a page I have already reported. It
-is taking advantage of the fact that we add pages to either the head or
-the tail of the list, and can pull the pages from anywhere in the list, so
-we have to work around those edges to avoid processing the already
-reported pages in between.
-
-Admittedly this is pretty complex. I've been at this for several months,
-and have gone through several iterations.
-
-If it helps I can try to draw it out as a bit of ASCII art. Basically what
-I am trying to do is find a way to skip over the blob of reported pages
-that would exist after we have not been reporting for a little while. Most
-of this logic is in the get_reported_pages/free_reported_pages that should
-be in patch 6.
-
-So on our first iteration through the pages it is pretty straightforward.
-We basically just keep pushing the boundary pointer up, we fetch the pages
-immediately in front of it, and then when we return the now-reported pages
-we push the boundary pointer up to those pages.
-
-While we are actively reporting a given zone we prevent any pages from
-being inserted behind the boundary. They are always inserted before the
-boundary pointer. This is achieved by replacing the free_list tail pointer
-value with the boundary pointer value in the case of add_to_tail calls.
-
-Legend:
-U Unused Page
-R Reported Page
-< Boundary Reported Page
-
-     Head ....................................................... Tail
-Start     UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU <
-..        UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU<RRRRRRRRRRRRRRRRRRRRRRR
-End       UU<RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-
-After we completed the boundary pointer is discarded and we don't have to
-update it when the zone->flag indicating reporting is active is no longer
-set. What we then have happening is that pages are pulled out of the
-free_list at random locations or from the head. This causes the list of
-reported pages to slowly shrink, however the block of pages should remain
-contiguous since new pages are only added to the head or the tail.
-
-     Head ....................................................... Tail
-Idle      UUUUUUUUUUUUUUUUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRUUUU
-
-Once we have a large enough difference between the nr_free and
-reported_pages we will then restart the reporting by resetting the
-boundary to the tail and proceeding to pull the non-reported pages that
-are in front of the boundary(fig1). Once those are exhasusted we will
-start pulling the pages from the head of the list, reporting those, and
-then placing them back at the boundary(fig2). When we finally hit the
-point where there are no more pages to pull from the head that are not
-reported we will update the boundary to the first reported page in the
-list, return the reported pages there, and we should be done reporting
-pages from this free list.
-
-     Head ....................................................... Tail
-Start     UUUUUUUUUUUUUUUUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRUUUU <
-fig1      UUUUUUUUUUUUUUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRU<RRRR
-fig2      UUURRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR<RRRRRRRRRRRRRRRRRRRR
-End       UU<RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR
-
-The goal with all this is to allow the boundary pointer to move, but to
-guarantee forward progress as we work our way through the free_list(s).
-Essentially the only requirements we are posing on the page allocator is
-that if it pulls the page at the boundary it has to push it back, and if
-it wants to add to the tail it has to use the boundary page as the tail
-instead.
-
-> > For the most part all the page reporting really does is provide a way
-> > to incrementally identify unused regions of memory in the buddy
-> > allocator. That in turn is used by virtio-balloon in a polling thread
-> > to report to the hypervisor what pages are not in use so that it can
-> > make a decision on what to do with the pages now that it knows they
-> > are unused.
-> 
-> So essentially you want to store metadata into free pages and control
-> what the allocator can do with them? Namely buddy merging if the type
-> doesn't match?
-
-We don't put any limitations on the allocator other then that it needs to
-clean up the metadata on allocation, and that it cannot allocate a page
-that is in the process of being reported since we pulled it from the
-free_list. If the page is a "Reported" page then it decrements the
-reported_pages count for the free_area and makes sure the page doesn't
-exist in the "Boundary" array pointer value, if it does it moves the
-"Boundary" since it is pulling the page.
-
-> > All this is providing is just a report and it is optional if the
-> > hypervisor will act on it or not. If the hypervisor takes some sort of
-> > action on the page, then the expectation is that the hypervisor will
-> > use some sort of mechanism such as a page fault to discover when the
-> > page is used again.
-> 
-> OK so the baloon driver is in charge of this metadata and the allocator
-> has to live with that. Isn't that a layer violation?
-
-Really the metadata belongs to the page reporting. The virtio balloon
-driver doesn't get to see any of it. It basically registers as a Reporting
-interface and then we start sending it scatterlists to report. It doesn't
-do anything with the actual pages themselves other then DMA map the
-physical addresses for them.
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+DQoNCu+7v09uIDkvNC8xOSwgNjoxNyBQTSwgIkxpbnV4LWFzcGVlZCBvbiBiZWhhbGYgb2YgUmFz
+aG1pY2EgR3VwdGEiIDxsaW51eC1hc3BlZWQtYm91bmNlcyt2aWpheWtoZW1rYT1mYi5jb21AbGlz
+dHMub3psYWJzLm9yZyBvbiBiZWhhbGYgb2YgcmFzaG1pY2EuZ0BnbWFpbC5jb20+IHdyb3RlOg0K
+DQogICAgVGhlIGN1cnJlbnQgY2FsY3VsYXRpb24gZm9yIHRoZSBudW1iZXIgb2YgR1BJTyBiYW5r
+cyBpcyBvbmx5IGNvcnJlY3QgaWYNCiAgICB0aGUgbnVtYmVyIG9mIEdQSU9zIGlzIGEgbXVsdGlw
+bGUgb2YgMzIgKGlmIHRoZXJlIHdlcmUgMzEgR1BJT3Mgd2Ugd291bGQNCiAgICBjdXJyZW50bHkg
+c2F5IHRoZXJlIGFyZSAwIGJhbmtzLCB3aGljaCBpcyBpbmNvcnJlY3QpLg0KICAgIA0KICAgIEZp
+eGVzOiAzNjFiNzkxMTlhNGI3ICgnZ3BpbzogQWRkIEFzcGVlZCBkcml2ZXInKQ0KICAgIA0KICAg
+IFNpZ25lZC1vZmYtYnk6IFJhc2htaWNhIEd1cHRhIDxyYXNobWljYS5nQGdtYWlsLmNvbT4NClJl
+dmlld2VkLWJ5OiBWaWpheSBLaGVta2EgPHZpamF5a2hlbWthQGZiLmNvbT4NCiAgICAtLS0NCiAg
+ICAgZHJpdmVycy9ncGlvL2dwaW8tYXNwZWVkLmMgfCAyICstDQogICAgIDEgZmlsZSBjaGFuZ2Vk
+LCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQ0KICAgIA0KICAgIGRpZmYgLS1naXQgYS9k
+cml2ZXJzL2dwaW8vZ3Bpby1hc3BlZWQuYyBiL2RyaXZlcnMvZ3Bpby9ncGlvLWFzcGVlZC5jDQog
+ICAgaW5kZXggOWRlZmUyNWQ0NzIxLi5iODNlMjNhZWNkMTggMTAwNjQ0DQogICAgLS0tIGEvZHJp
+dmVycy9ncGlvL2dwaW8tYXNwZWVkLmMNCiAgICArKysgYi9kcml2ZXJzL2dwaW8vZ3Bpby1hc3Bl
+ZWQuYw0KICAgIEBAIC0xMTY1LDcgKzExNjUsNyBAQCBzdGF0aWMgaW50IF9faW5pdCBhc3BlZWRf
+Z3Bpb19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2KQ0KICAgICAJZ3Bpby0+Y2hp
+cC5iYXNlID0gLTE7DQogICAgIA0KICAgICAJLyogQWxsb2NhdGUgYSBjYWNoZSBvZiB0aGUgb3V0
+cHV0IHJlZ2lzdGVycyAqLw0KICAgIC0JYmFua3MgPSBncGlvLT5jb25maWctPm5yX2dwaW9zID4+
+IDU7DQogICAgKwliYW5rcyA9IERJVl9ST1VORF9VUChncGlvLT5jb25maWctPm5yX2dwaW9zLCAz
+Mik7DQpHb29kIGNhdGNoDQogICAgIAlncGlvLT5kY2FjaGUgPSBkZXZtX2tjYWxsb2MoJnBkZXYt
+PmRldiwNCiAgICAgCQkJCSAgICBiYW5rcywgc2l6ZW9mKHUzMiksIEdGUF9LRVJORUwpOw0KICAg
+ICAJaWYgKCFncGlvLT5kY2FjaGUpDQogICAgLS0gDQogICAgMi4yMC4xDQogICAgDQogICAgDQoN
+Cl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFy
+bS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9y
+ZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1r
+ZXJuZWwK
