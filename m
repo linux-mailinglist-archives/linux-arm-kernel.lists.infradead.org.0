@@ -2,87 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 930AFAE3A9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 08:22:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B05BBAE39F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 08:21:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=sqUdWSdRV3iHnn4uc7eDb0zjQEQX5sGaRktNCj4fIJc=; b=Or351U1TMMQIlUDoEYm6ALv0V
-	qJsoAj3+rDJOBIxvJOQJPJeD9Ijm7WO3VsN7XjNsNqSafJiuMnXJAmDhMYnWl8QEzkRffnqL9pjp1
-	SpJCH0O/5u8qKrRuxB3Hod+DLHrPtJtaDK6z8+6Hno7qZJyiYz7d75rTswKfDuXOFsJ3fqaUkyBp+
-	RuZajrA48G5SfwSdHrSWlM/lsW2ZWkA4rP62JHaRhUzfAj0LmkhMERrNH1ErwmQonOpBp/WQsyt0O
-	QZXSQohbN5nYke/OgFRGkTJMPI/pRX8h9yTGgefZoz+1p9ssB6c4apI1tAdGiFYbc3tdCHKpMr6n2
-	ppydSPU1w==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=rKAmDdIlpe8tL2MdgkKdUfM5Ak7hWC9rEgdRVSZNaAI=; b=PfDen65FrYpDvp
+	zdxtRxJD14FVA65kDDN9DRy1JMrCkn4nibvQl7yECT4Of+BIOyBH5KxH3NcjWJ8JJJkOETxIutHvu
+	tE3/uiGqUUji+psPOWV6XW27TqPo8YBxyIaDaH5cRlri+cmyjtANxG7cxAHRrxL/MpyP2sbT9doRe
+	WP9WqqDIl597mrKhCIljJY4RTgqwmeONMCVvImbupbfQ3c7aDaaidsX9mZo9ICJBN4dYSLC95LeVx
+	lNUFb2c+h/mtgPEaA9CIMno1eZacsAK2eS6O7rYlYcqXwVHLQw3yZfEGkNRBNBTFk6enFHU4pUz5s
+	6aXXHBep8cXgMza2EneA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7ZXj-0000pF-IU; Tue, 10 Sep 2019 06:22:24 +0000
-Received: from smtp-fw-2101.amazon.com ([72.21.196.25])
+	id 1i7ZX3-0000Ki-LP; Tue, 10 Sep 2019 06:21:41 +0000
+Received: from mail-eopbgr10112.outbound.protection.outlook.com
+ ([40.107.1.112] helo=EUR02-HE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7ZWr-0000Js-1D
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 06:21:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=amazon.com; i=@amazon.com; q=dns/txt; s=amazon201209;
- t=1568096488; x=1599632488;
- h=subject:to:cc:references:from:message-id:date:
- mime-version:in-reply-to:content-transfer-encoding;
- bh=P2cS529XUmulKfRe/UANSM/dlb33mBmMJiHTNnM+zWE=;
- b=uR30FecKBi3b6JpiTLonlq8ol9c47cxJNNnPKm+81uJwY139oSzKn6Bq
- 4qJFZww/tIRjUD4vT/Pi+BNV2MUO+MHB3vy+V7XQzY/wPoOmNdOswjuFu
- pdV/x54NMVMDofKkvBLeshixKlzk/5eTmnXjIP9rZipz9oyycG4oEFp7l k=;
-X-IronPort-AV: E=Sophos;i="5.64,487,1559520000"; d="scan'208";a="749910613"
-Received: from iad6-co-svc-p1-lb1-vlan2.amazon.com (HELO
- email-inbound-relay-1a-7d76a15f.us-east-1.amazon.com) ([10.124.125.2])
- by smtp-border-fw-out-2101.iad2.amazon.com with ESMTP;
- 10 Sep 2019 06:21:25 +0000
-Received: from EX13MTAUEA001.ant.amazon.com
- (iad55-ws-svc-p15-lb9-vlan2.iad.amazon.com [10.40.159.162])
- by email-inbound-relay-1a-7d76a15f.us-east-1.amazon.com (Postfix) with ESMTPS
- id 95BD1A0742; Tue, 10 Sep 2019 06:21:19 +0000 (UTC)
-Received: from EX13D01EUB001.ant.amazon.com (10.43.166.194) by
- EX13MTAUEA001.ant.amazon.com (10.43.61.243) with Microsoft SMTP Server (TLS)
- id 15.0.1367.3; Tue, 10 Sep 2019 06:21:18 +0000
-Received: from [10.125.238.52] (10.43.161.176) by EX13D01EUB001.ant.amazon.com
- (10.43.166.194) with Microsoft SMTP Server (TLS) id 15.0.1367.3;
- Tue, 10 Sep 2019 06:21:07 +0000
-Subject: Re: [PATCH 2/3] soc: amazon: al-pos: Introduce Amazon's Annapurna
- Labs POS driver
-To: Arnd Bergmann <arnd@arndb.de>
-References: <1568020220-7758-1-git-send-email-talel@amazon.com>
- <1568020220-7758-3-git-send-email-talel@amazon.com>
- <CAK8P3a3UF7xPV1U3eW6Jdu754P1bzG208UxD9KUxEm1JjZudww@mail.gmail.com>
- <98f0028e-5653-3116-fdaa-1385ecdf0289@amazon.com>
- <CAK8P3a1NVGwYa1bw_vjBatd1xe-i875X1Vq1M+2G_Zxd2Oqusg@mail.gmail.com>
- <8f7840c3-a682-04a5-18bf-ac7a723725b0@amazon.com>
- <CAK8P3a1fbK-qoK+K1ZsWsU3rkxxZgZGaK8ywFAcM4va1GRn_FQ@mail.gmail.com>
-From: "Shenhar, Talel" <talel@amazon.com>
-Message-ID: <b50ba032-51f7-3cd1-a302-30146560f636@amazon.com>
-Date: Tue, 10 Sep 2019 09:21:01 +0300
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:68.0) Gecko/20100101
- Thunderbird/68.0
-MIME-Version: 1.0
-In-Reply-To: <CAK8P3a1fbK-qoK+K1ZsWsU3rkxxZgZGaK8ywFAcM4va1GRn_FQ@mail.gmail.com>
+ id 1i7ZWo-0000Ig-Kx
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 06:21:28 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=jx3pi3zH9YD62KmQyR/3XYBCtn6nQwM7yJ9tMdVFneRj2KS87DrkPqZQX87lA6liG+tBxAMeRZXRFAsabLgPvjorZR/Lx+RxbFP5Rvujs3gg/n48Jw7FoEFa12sVPPY+YFokzLB36uy1ZQU8ACNbzhtGalHpUHIx1RbuC7aEtgx7aOjbSNykCXUWCyrcHqCmrnPLSH805engKL4Dyi3FEtHNnzEJbWf3EZHJ4lpWElvv/yHZ/3kBG44YQVy243W4FipKzeJgCXwedBrSeG7AgJ/aBIyikSaur4DDUPDyOLL0kzxWkii0dbvnGSF/9ssBw5TxgibPowTeMoI2bZoO9w==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wOC+Tl+9sA8VHFcI3fdk9syq6SeNSlDvyvJeCCnfbNM=;
+ b=KF9U83MhxJJdBI0VltFb6Zo6zbQqDZA3Xed0bQuOMsrRLL8/d/ilwZLY4OZg592aPJ2b/2u5m+C4c2XVhnEeVPUUekUC16y/424X4r0IcNhecUkQEjOj2ix0RU8EilH5Lbf3loeWRejVcD0REUuJ0DzOy7szEN8wtOj6XtsJADGD1C3D/SeiRI4TqRWg/mVq1lUaeWRMXxdhXkoRgGUxYH6mct5PkOjQPI68INnWA+VqMUSWpu2IkQJAu2qvROGF1AbEITyxT7dwnfk5zb8ICb7T3jUYHvAofvuNBtUoLVk4BGsvVt4xjuEw8fp6PlddVsnWPnCDh93acet6arI3BA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=toradex.com; dmarc=pass action=none header.from=toradex.com;
+ dkim=pass header.d=toradex.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=toradex.com;
+ s=selector2;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=wOC+Tl+9sA8VHFcI3fdk9syq6SeNSlDvyvJeCCnfbNM=;
+ b=WMIZ2/Jpiri19C2qgIUD5xYig8tGxokMFcEau4LQ3A4RRuwjFJGSjLzUc/vok0ctS724Y5FAPa8lokf0nes5ozbmt0uiGjKa15P5DCXJzPjmH57wNouDyB2HyztAppF8+qfg7f2x8/lgpjLvvquKf/EXeSBQoGs8I0n06+kGaKY=
+Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com (52.134.17.157) by
+ VI1PR0502MB3054.eurprd05.prod.outlook.com (10.175.21.149) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.20; Tue, 10 Sep 2019 06:21:13 +0000
+Received: from VI1PR0502MB3965.eurprd05.prod.outlook.com
+ ([fe80::f59f:a307:9c53:63b9]) by VI1PR0502MB3965.eurprd05.prod.outlook.com
+ ([fe80::f59f:a307:9c53:63b9%6]) with mapi id 15.20.2241.018; Tue, 10 Sep 2019
+ 06:21:13 +0000
+From: Philippe Schenker <philippe.schenker@toradex.com>
+To: "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>, Mark Brown
+ <broonie@kernel.org>, Shawn Guo <shawnguo@kernel.org>, Sascha Hauer
+ <s.hauer@pengutronix.de>, Liam Girdwood <lgirdwood@gmail.com>
+Subject: [PATCH v2 0/3] Add new binding regulator-fixed-clock to
+ regulator-fixed
+Thread-Topic: [PATCH v2 0/3] Add new binding regulator-fixed-clock to
+ regulator-fixed
+Thread-Index: AQHVZ5/xkR9Jah05zE2oPXjXVjZAdQ==
+Date: Tue, 10 Sep 2019 06:21:13 +0000
+Message-ID: <20190910062103.39641-1-philippe.schenker@toradex.com>
+Accept-Language: en-GB, en-US
 Content-Language: en-US
-X-Originating-IP: [10.43.161.176]
-X-ClientProxiedBy: EX13D31UWC002.ant.amazon.com (10.43.162.220) To
- EX13D01EUB001.ant.amazon.com (10.43.166.194)
-Precedence: Bulk
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: PR0P264CA0052.FRAP264.PROD.OUTLOOK.COM
+ (2603:10a6:100:1d::16) To VI1PR0502MB3965.eurprd05.prod.outlook.com
+ (2603:10a6:803:23::29)
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=philippe.schenker@toradex.com; 
+x-ms-exchange-messagesentrepresentingtype: 1
+x-mailer: git-send-email 2.23.0
+x-originating-ip: [46.140.72.82]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 4f1415d6-8898-4739-5746-08d735b7142c
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:VI1PR0502MB3054; 
+x-ms-traffictypediagnostic: VI1PR0502MB3054:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VI1PR0502MB3054E7A6AEF87A16FA9A4E21F4B60@VI1PR0502MB3054.eurprd05.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 01565FED4C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(136003)(39850400004)(366004)(346002)(396003)(376002)(85664002)(189003)(199004)(966005)(316002)(25786009)(14454004)(4326008)(256004)(71200400001)(71190400001)(7736002)(305945005)(53936002)(478600001)(50226002)(36756003)(8936002)(66476007)(66556008)(81156014)(64756008)(81166006)(66446008)(66946007)(486006)(44832011)(110136005)(99286004)(1076003)(6506007)(386003)(8676002)(2616005)(476003)(2501003)(6512007)(6306002)(14444005)(26005)(54906003)(5660300002)(7416002)(86362001)(6116002)(3846002)(102836004)(186003)(2906002)(52116002)(6486002)(6436002)(66066001);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:VI1PR0502MB3054;
+ H:VI1PR0502MB3965.eurprd05.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: toradex.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: K/br8gfpFViuYdqMinKyN30Btffutp5tfNwnX6kk3RW9fyrIXTbgv3l5YWkgELNaZ2gEkZNEXDu6CALqm59jNcHZ6YY+HCgUHdvV6rByNOb8gqE9UmELbdIeh2+seOcT0TzbQ3lI4jHtbEG5bDiecdfRbgct03+CDPLaFfqPb+oJNlzlJvtiandnIeMUy2MGzMKhVtaEwxuRNQIqGjtbAqgwoOp+TirGN6nbEZ427TgSuLyqpRC0y4Jcsyk7AyQl/KKXUZMrzJ7pubuUSokuEGOSEV2NvH0bKSbJSBFfAoyXSuAajdZFKnLJ1IDC7LI3wgrUE93opcTgRK8nL/xuT1iXBUfTGrAR9LVYuXfofpe31wDx7zySc03AQ7/JYQGWJ9oWHnX33mrzMohfgLlxbmcFcVYdA2/kWd1a8gCm/1M=
+MIME-Version: 1.0
+X-OriginatorOrg: toradex.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 4f1415d6-8898-4739-5746-08d735b7142c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 10 Sep 2019 06:21:13.3000 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: d9995866-0d9b-4251-8315-093f062abab4
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: Vf8v2mx4mlymcRQbqHfRFJbC/YSHTTYfiqvLcMUwP0Px/FsWkLsEYZM7Qy7dXeKPECk6ZqYMcRrUnBvhFIs9EF9taVltvViepqY8K6HV4dY=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR0502MB3054
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190909_232129_204157_E8C978AC 
-X-CRM114-Status: GOOD (  21.15  )
-X-Spam-Score: -12.7 (------------)
+X-CRM114-CacheID: sfid-20190909_232126_692965_CBEEAF9D 
+X-CRM114-Status: GOOD (  11.60  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-12.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [72.21.196.25 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [40.107.1.112 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -7.5 USER_IN_DEF_SPF_WL     From: address is in the default SPF
- white-list
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -90,9 +118,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
+Precedence: list
 List-Id: <linux-arm-kernel.lists.infradead.org>
 List-Unsubscribe: <http://lists.infradead.org/mailman/options/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=unsubscribe>
@@ -101,70 +129,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, mjourdan@baylibre.com,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- jonnyc@amazon.com, Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- ronenk@amazon.com, Will
- Deacon <will@kernel.org>, Benjamin Herrenschmidt <benh@kernel.crashing.org>,
- DTML <devicetree@vger.kernel.org>, Maxime Ripard <mripard@kernel.org>,
- Rob Herring <robh+dt@kernel.org>, Santosh Shilimkar <ssantosh@kernel.org>,
- Thomas Gleixner <tglx@linutronix.de>, hanochu@amazon.com,
- Linux ARM <linux-arm-kernel@lists.infradead.org>, barakw@amazon.com,
- hhhawa@amazon.com, gregkh <gregkh@linuxfoundation.org>,
- paul.kocialkowski@bootlin.com, Patrick
- Venture <venture@google.com>, Olof Johansson <olof@lixom.net>,
- David Miller <davem@davemloft.net>, David Woodhouse <dwmw@amazon.co.uk>
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Luka Pivk <luka.pivk@toradex.com>, Stefan Agner <stefan.agner@toradex.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>,
+ Philippe Schenker <philippe.schenker@toradex.com>,
+ Rob Herring <robh+dt@kernel.org>, NXP Linux Team <linux-imx@nxp.com>,
+ Max Krummenacher <max.krummenacher@toradex.com>,
+ Fabio Estevam <festevam@gmail.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 
-On 9/9/2019 6:16 PM, Arnd Bergmann wrote:
-> On Mon, Sep 9, 2019 at 4:11 PM Shenhar, Talel <talel@amazon.com> wrote:
->> On 9/9/2019 4:41 PM, Arnd Bergmann wrote:
->>
->> In current implementation of v1, I am not doing any read barrier, Hence,
->> using the non-relaxed will add unneeded memory barrier.
->>
->> I have no strong objection moving to the non-relaxed version and have an
->> unneeded memory barrier, as this path is not "hot" one.
-> Ok, then please add it.
-ok, shall be part of v2
->
->> Beside of avoiding the unneeded memory barrier, I would be happy to keep
->> common behavior for our drivers:
->>
->> e.g.
->>
->> https://github.com/torvalds/linux/blob/master/drivers/irqchip/irq-al-fic.c#L49
->>
->>
->> So what do you think we should go with? relaxed or non-relaxed?
-> The al_fic_set_trigger() function is clearly a slow-path and should use the
-> non-relaxed functions. In case of al_fic_irq_handler(), the extra barrier
-> might introduce a measurable overhead, but at the same time I'm
-> not sure if that one is correct without the barrier:
->
-> If you have an MSI-type interrupt for notifying a device driver of
-> a DMA completion, there might not be any other barrier between
-> the arrival of the MSI message and the CPU accessing the data.
-> Depending on how strict the hardware implements MSI and how
-> the IRQ is chained, this could lead to data corruption.
->
-> If the interrupt is only used for level or edge triggered interrupts,
-> this is ok since you already need another register read in
-> the driver before it can safely access a DMA buffer.
->
-> In either case, if you can prove that it's safe to use the relaxed
-> version here and you think that it may help, it would be good to
-> add a comment explaining the reasoning.
-Decided to go with the non-relaxed version as this is not hot path and 
-likely be more clear to the common reader to have non relaxed version.
->
->         Arnd
+Our hardware has a FET that is switching power rail of the ethernet PHY
+on and off. This switching enable signal is a clock from the SoC.
+
+There is no possibility in regulator subsystem to have this hardware
+reflected in software.
+
+I already discussed with Mark Brown about possible solutions and he
+suggested to create at least a new compatible. [1]
+This discussion includes also a better explanation of our circuit as
+well as schematics. So please refer to that link if you have questions
+about that.
+
+In this first attempt I created a new binding "regulator-fixed-clock"
+that can take a clock from devicetree. This is a simple addition to
+regulator-fixed. If the binding regulator-fixed-clock is given, the
+clock is simply enabled on regulator enable and disabled on regulator
+disable.
+To be able to have multiple consumers a counter variable is also given
+that tells how many consumers need power from this regulator.
+
+Best regards,
+Philippe
+
+[1] https://lkml.org/lkml/2019/8/7/78
+
+
+Changes in v2:
+- return priv->clk_enable_counter > 0 directly.
+- Change select: to if:
+- Change items: to enum:
+- Defined how many clocks should be given
+
+Philippe Schenker (3):
+  regulator: fixed: add possibility to enable by clock
+  ARM: dts: imx6ull-colibri: add phy-supply and respective regulator
+  dt-bindings: regulator: add regulator-fixed-clock binding
+
+ .../bindings/regulator/fixed-regulator.yaml   | 19 ++++-
+ arch/arm/boot/dts/imx6ull-colibri.dtsi        | 12 +++
+ drivers/regulator/fixed.c                     | 83 ++++++++++++++++++-
+ 3 files changed, 110 insertions(+), 4 deletions(-)
+
+-- 
+2.23.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
