@@ -2,69 +2,79 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71F28AED6A
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:42:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B693CAED6F
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 16:43:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=hXRFNs/xf0bGkFbkp+B+tCrP5bH+BKyTGrkA9Iws9UA=; b=Hv0YMogdjxWaTXabZP2hebLEeE
-	5G5l9RdXk8nVXDKABCdbWCl36rZRBv45g8dW99d3PxFwoPvUxyU1EGH3/CT+z6N+AV1sdMyUeexf5
-	auYPZPA4gyz1/SH4q9EUWGc1nV+WaFb+PEmceAp2U2VgHee2JkMitE+aQJvdNrTEIqGoyP54DdOSd
-	x7SGRMzjTXOdAvafOSA+BgqUc6jOA0X4luH+cf1aIlDDItaAid26AaYsU/DiPNIRg0C/H7hUQwr9N
-	0yo6Vd0HrqZULwxJ7xfhnQ380kTmscfLDTPfA0+vhqTpHlc0J9XHUPL4AjFhxX1aTJgi2K1bX4vly
-	x2pzgICA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=JUe12Ocs0WGlqtvcZZLYcEq4sgmiDjKBXvXpEEorCik=; b=b+KcMt3+wvlvn3
+	fkRLTYWmAW/dMirCxT99uBZELY7oBEG6+L/sTIbRyZZcQTNbcd1Fr9zgIE17FOLY9O3fYVlOzVfnJ
+	6WCSKOXczoCdC/48e8wgcv72hPI/+O2Uwr9fGibnS3ay9dCmXg0qlynZMuxjsaaj87qa7mijyB1oG
+	mVtgDFwRCBaP/9ZXvfP6DTgy/EGTqUHd5hWyB5YbpA7wA6gupsJmhfOINTPA8urYL+fHj++5YKk6Z
+	qBa5WHPNeKMU+YQuSjPGXM+ne3zi7bVuooY3tZD9i1N5ql8HJ/nae4foF28Xs/U+N28OK5PbXeHjJ
+	SYOCUyaXkz4PxykQU8kA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7hLh-0002jL-8h; Tue, 10 Sep 2019 14:42:29 +0000
-Received: from dc2-smtprelay2.synopsys.com ([198.182.61.142]
- helo=smtprelay-out1.synopsys.com)
+	id 1i7hMm-00043J-UU; Tue, 10 Sep 2019 14:43:37 +0000
+Received: from mail-io1-xd43.google.com ([2607:f8b0:4864:20::d43])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7hKn-0001yc-7q
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:41:37 +0000
-Received: from mailhost.synopsys.com (mdc-mailhost2.synopsys.com
- [10.225.0.210])
- (using TLSv1.3 with cipher TLS_AES_256_GCM_SHA384 (256/256 bits))
- (No client certificate requested)
- by smtprelay-out1.synopsys.com (Postfix) with ESMTPS id 61E27C2B55;
- Tue, 10 Sep 2019 14:41:31 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=synopsys.com; s=mail;
- t=1568126491; bh=WXb3k5kCzoIqB0+MtuE+z0LkMBJLvWOptqMwOn7VXow=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:In-Reply-To:
- References:From;
- b=DaRe0YkgTbbaPL71rZVUpSLT35ofKxuwgfuk4lS6ziJpDwHFBg6hojL0xGWP0dSJf
- Y4bEm+bCfQKysQaqSKPuRQvL73WiG3cECCtImeez0muWjLEztjnxGwrPtPpj5XHAii
- h8newO+ZVZRf57KgmaTzECB1MLy4J1Va5H2tCN2yu2xAwydL4dvrjYgnoqy+PT8PyC
- nOQ9rrAhuBZJJJQcsf0TxdxUjLs/hZ26vwYdRouWpiX1AH/Cs0+E9ycfsdmw4n+hJ1
- TfV2YOO1LCjHf1g+QSMrKZV02FJv1E9PUQFE0EFeWMcBhZcqgGjmvSh7yKVUdvAfl/
- ksZzbVHL62hzA==
-Received: from de02dwia024.internal.synopsys.com
- (de02dwia024.internal.synopsys.com [10.225.19.81])
- by mailhost.synopsys.com (Postfix) with ESMTP id 24FAAA006F;
- Tue, 10 Sep 2019 14:41:30 +0000 (UTC)
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-To: netdev@vger.kernel.org
-Subject: [PATCH net-next 6/6] net: stmmac: ARP Offload for GMAC4+ Cores
-Date: Tue, 10 Sep 2019 16:41:27 +0200
-Message-Id: <9423c111db514a03abfe6ee7f74052245a859d1f.1568126225.git.joabreu@synopsys.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <cover.1568126224.git.joabreu@synopsys.com>
-References: <cover.1568126224.git.joabreu@synopsys.com>
-In-Reply-To: <cover.1568126224.git.joabreu@synopsys.com>
-References: <cover.1568126224.git.joabreu@synopsys.com>
+ id 1i7hMB-0003XI-0e
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 14:43:00 +0000
+Received: by mail-io1-xd43.google.com with SMTP id f4so37353729ion.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Tue, 10 Sep 2019 07:42:58 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=qwfqdrsthj6wGMKbVfq9KS+2D4+bl2wd+HAoXgrqGpM=;
+ b=mdlhWpzQsILASMQ7+1ikwT0fUSiwI9Yno2A8k95yLHD6P9eV0S05kOW5Jv6prsMvSt
+ iBXlVLmgNneBJJPewyY1Iz+eUwtz//m6IWYeMweTFXG1suDqKgsSJ2xCT/kZ1HcGuX4Y
+ n5DFuajmtetj/LpA2LEgEC9oiE4MlkG9fH5vD+eWjaUxrS6bT4PmDA2aOayknXG3RXII
+ 9e0AvcNoE4ZxbCtIxiI/lT91HGh0dhQFb9BVLzxS7z4Bakuzjqvda8OJvgMc4cNBYsKq
+ JywENk314egMFnOMmeOVAlHQzPFr5FrWB11JMPxvnyAvp/9VaOr3lB+4BYVwvWI0USRT
+ DKkA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=qwfqdrsthj6wGMKbVfq9KS+2D4+bl2wd+HAoXgrqGpM=;
+ b=SvcqMWnSMMP0EwxPbd9EHPcxeSxXKit0wbLvTit7zcQ/EBvxWnOyDwAN6XHZOJzBD7
+ LV/S7GQLtB31rF9O+Q5waapVm6oz7sVtuYWzUB2CQuOCHMyrpBDBpbkxllKXwiv2rAKf
+ iWTBSjUzX9Zy3wqt44gLQAC+3TYRNfQLIifZF2H65MaeIXe0kTHa/f9BK1QngsK2eI/B
+ t6iRjcYq1Q/4AxpgnqanoUgq7OhpZYoeNHTADIWMdfFU/+aiTavPK40mlFNj7ZuT9aYC
+ f5g3ZkWNY1TWl0c5284KA8Z6miLtjpxO9hAp+N6DbBU9eBIxKhC0YlHkFBVZGM/R+u/g
+ 7YIA==
+X-Gm-Message-State: APjAAAWvJIyZD8Wt0N3IoIikuveUlob8eLdOt2nCaXxWbcTVnJTjfvgM
+ +ve9u9umobN1W4PvVudzllSXevNMbeNhkuD+Bdc=
+X-Google-Smtp-Source: APXvYqw25PAt3681VzSp2aKtn4HION8cnSVVgIaDxDN4t5As0qF4aUf02XL+Yw/GC74k1NJX1qc/ljlh1hZcV/Ap7TM=
+X-Received: by 2002:a02:9f16:: with SMTP id z22mr31770205jal.83.1568126574433; 
+ Tue, 10 Sep 2019 07:42:54 -0700 (PDT)
+MIME-Version: 1.0
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+In-Reply-To: <20190910124209.GY2063@dhcp22.suse.cz>
+From: Alexander Duyck <alexander.duyck@gmail.com>
+Date: Tue, 10 Sep 2019 07:42:43 -0700
+Message-ID: <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+To: Michal Hocko <mhocko@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_074133_343152_6B3D6417 
-X-CRM114-Status: GOOD (  12.73  )
+X-CRM114-CacheID: sfid-20190910_074259_146573_23BBFE3A 
+X-CRM114-Status: GOOD (  18.90  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d43 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (alexander.duyck[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,132 +93,65 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Jose Abreu <Jose.Abreu@synopsys.com>, Joao Pinto <Joao.Pinto@synopsys.com>,
- Alexandre Torgue <alexandre.torgue@st.com>, linux-kernel@vger.kernel.org,
- linux-stm32@st-md-mailman.stormreply.com,
- Maxime Coquelin <mcoquelin.stm32@gmail.com>,
- Giuseppe Cavallaro <peppe.cavallaro@st.com>,
- "David S. Miller" <davem@davemloft.net>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ "Michael S. Tsirkin" <mst@redhat.com>, Matthew Wilcox <willy@infradead.org>,
+ "Wang, Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Rik van Riel <riel@surriel.com>,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Implement the ARP Offload feature in GMAC4 and GMAC5 cores.
+On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
+>
+> I wanted to review "mm: Introduce Reported pages" just realize that I
+> have no clue on what is going on so returned to the cover and it didn't
+> really help much. I am completely unfamiliar with virtio so please bear
+> with me.
+>
+> On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
+> [...]
+> > This series provides an asynchronous means of reporting to a hypervisor
+> > that a guest page is no longer in use and can have the data associated
+> > with it dropped. To do this I have implemented functionality that allows
+> > for what I am referring to as unused page reporting
+> >
+> > The functionality for this is fairly simple. When enabled it will allocate
+> > statistics to track the number of reported pages in a given free area.
+> > When the number of free pages exceeds this value plus a high water value,
+> > currently 32, it will begin performing page reporting which consists of
+> > pulling pages off of free list and placing them into a scatter list. The
+> > scatterlist is then given to the page reporting device and it will perform
+> > the required action to make the pages "reported", in the case of
+> > virtio-balloon this results in the pages being madvised as MADV_DONTNEED
+> > and as such they are forced out of the guest. After this they are placed
+> > back on the free list,
+>
+> And here I am reallly lost because "forced out of the guest" makes me
+> feel that those pages are no longer usable by the guest. So how come you
+> can add them back to the free list. I suspect understanding this part
+> will allow me to understand why we have to mark those pages and prevent
+> merging.
 
-Signed-off-by: Jose Abreu <joabreu@synopsys.com>
-
----
-Cc: Giuseppe Cavallaro <peppe.cavallaro@st.com>
-Cc: Alexandre Torgue <alexandre.torgue@st.com>
-Cc: Jose Abreu <joabreu@synopsys.com>
-Cc: "David S. Miller" <davem@davemloft.net>
-Cc: Maxime Coquelin <mcoquelin.stm32@gmail.com>
-Cc: netdev@vger.kernel.org
-Cc: linux-stm32@st-md-mailman.stormreply.com
-Cc: linux-arm-kernel@lists.infradead.org
-Cc: linux-kernel@vger.kernel.org
----
- drivers/net/ethernet/stmicro/stmmac/dwmac4.h      |  3 +++
- drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c | 19 +++++++++++++++++++
- drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c  |  1 +
- 3 files changed, 23 insertions(+)
-
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-index e88dac1dd765..89a3420eba42 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4.h
-@@ -40,6 +40,7 @@
- #define GMAC_HW_FEATURE3		0x00000128
- #define GMAC_MDIO_ADDR			0x00000200
- #define GMAC_MDIO_DATA			0x00000204
-+#define GMAC_ARP_ADDR			0x00000210
- #define GMAC_ADDR_HIGH(reg)		(0x300 + reg * 8)
- #define GMAC_ADDR_LOW(reg)		(0x304 + reg * 8)
- 
-@@ -165,6 +166,7 @@ enum power_event {
- #define GMAC_DEBUG_RPESTS		BIT(0)
- 
- /* MAC config */
-+#define GMAC_CONFIG_ARPEN		BIT(31)
- #define GMAC_CONFIG_SARC		GENMASK(30, 28)
- #define GMAC_CONFIG_SARC_SHIFT		28
- #define GMAC_CONFIG_IPC			BIT(27)
-@@ -188,6 +190,7 @@ enum power_event {
- #define GMAC_HW_FEAT_TXCOSEL		BIT(14)
- #define GMAC_HW_FEAT_EEESEL		BIT(13)
- #define GMAC_HW_FEAT_TSSEL		BIT(12)
-+#define GMAC_HW_FEAT_ARPOFFSEL		BIT(9)
- #define GMAC_HW_FEAT_MMCSEL		BIT(8)
- #define GMAC_HW_FEAT_MGKSEL		BIT(7)
- #define GMAC_HW_FEAT_RWKSEL		BIT(6)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-index a99effe61325..9b4b5f69fc02 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_core.c
-@@ -782,6 +782,22 @@ static void dwmac4_enable_vlan(struct mac_device_info *hw, u32 type)
- 	writel(value, ioaddr + GMAC_VLAN_INCL);
- }
- 
-+static void dwmac4_set_arp_offload(struct mac_device_info *hw, bool en,
-+				   u32 addr)
-+{
-+	void __iomem *ioaddr = hw->pcsr;
-+	u32 value;
-+
-+	writel(addr, ioaddr + GMAC_ARP_ADDR);
-+
-+	value = readl(ioaddr + GMAC_CONFIG);
-+	if (en)
-+		value |= GMAC_CONFIG_ARPEN;
-+	else
-+		value &= ~GMAC_CONFIG_ARPEN;
-+	writel(value, ioaddr + GMAC_CONFIG);
-+}
-+
- const struct stmmac_ops dwmac4_ops = {
- 	.core_init = dwmac4_core_init,
- 	.set_mac = stmmac_set_mac,
-@@ -815,6 +831,7 @@ const struct stmmac_ops dwmac4_ops = {
- 	.update_vlan_hash = dwmac4_update_vlan_hash,
- 	.sarc_configure = dwmac4_sarc_configure,
- 	.enable_vlan = dwmac4_enable_vlan,
-+	.set_arp_offload = dwmac4_set_arp_offload,
- };
- 
- const struct stmmac_ops dwmac410_ops = {
-@@ -850,6 +867,7 @@ const struct stmmac_ops dwmac410_ops = {
- 	.update_vlan_hash = dwmac4_update_vlan_hash,
- 	.sarc_configure = dwmac4_sarc_configure,
- 	.enable_vlan = dwmac4_enable_vlan,
-+	.set_arp_offload = dwmac4_set_arp_offload,
- };
- 
- const struct stmmac_ops dwmac510_ops = {
-@@ -890,6 +908,7 @@ const struct stmmac_ops dwmac510_ops = {
- 	.update_vlan_hash = dwmac4_update_vlan_hash,
- 	.sarc_configure = dwmac4_sarc_configure,
- 	.enable_vlan = dwmac4_enable_vlan,
-+	.set_arp_offload = dwmac4_set_arp_offload,
- };
- 
- int dwmac4_setup(struct stmmac_priv *priv)
-diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-index f3ca0236450d..68c157979b94 100644
---- a/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-+++ b/drivers/net/ethernet/stmicro/stmmac/dwmac4_dma.c
-@@ -349,6 +349,7 @@ static void dwmac4_get_hw_feature(void __iomem *ioaddr,
- 	dma_cap->tx_coe = (hw_cap & GMAC_HW_FEAT_TXCOSEL) >> 14;
- 	dma_cap->rx_coe =  (hw_cap & GMAC_HW_FEAT_RXCOESEL) >> 16;
- 	dma_cap->vlins = (hw_cap & GMAC_HW_FEAT_SAVLANINS) >> 27;
-+	dma_cap->arpoffsel = (hw_cap & GMAC_HW_FEAT_ARPOFFSEL) >> 9;
- 
- 	/* MAC HW feature1 */
- 	hw_cap = readl(ioaddr + GMAC_HW_FEATURE1);
--- 
-2.7.4
-
+Basically as the paragraph above mentions "forced out of the guest"
+really is just the hypervisor calling MADV_DONTNEED on the page in
+question. So the behavior is the same as any userspace application
+that calls MADV_DONTNEED where the contents are no longer accessible
+from userspace and attempting to access them will result in a fault
+and the page being populated with a zero fill on-demand page, or a
+copy of the file contents if the memory is file backed.
 
 _______________________________________________
 linux-arm-kernel mailing list
