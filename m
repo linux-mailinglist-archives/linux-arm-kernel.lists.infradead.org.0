@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4AC04AEA36
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:22:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E8B3FAEA28
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 10 Sep 2019 14:21:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=4wen4q7oYdpseEBF7oe6h1DZcZzBnRWk1bbw+47V8Ec=; b=NHe
-	PD8rsHWe+8JFNzLl9FH82zz2k4LmXIRydkLZhCRANWPjAWnCv8nQMJL8cZvDDIPwh1tcWhZU8l6Ly
-	Xy+jaxPf9zz3mfHmyPMohwzPE3ELXF8HxfrU8wfRbNGw2nNMdZh9WOmZoLEG0CCMCu0IRBiQeFnkR
-	yOm1LZxOLqEz/94d6E+l4ApGLbjT2uLP/hymJv/lGyq8H7HpUWsrcJhVJhvY5xUyaSLu4qQLRGw4o
-	okdPAp3wXRsMnVA1IR479tV+TD5tGLPjPF+zTxJdIoXnt8TawNDXVK1zO2PlO+TOPztudihwOVwBv
-	6H0mm2jb43tgior8pHGc6ycfBRPOeUQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=H9BL/t3Y/qnIQFbt4A3yaF5sK5Ch0dUwL5U88rvQXmo=; b=Taec2sPtdQf9pSQPitxxuf4acP
+	yMY0JZ4fXZWVE47RqvhHlfJILWjQUtL0s/kh40hINl/weyCbkwKhvZeoTr0B1Xt6dzuT1EG8oDwBZ
+	lFsM8A5z/S6mHAEorDvPFY7Q58izEuJyxCUtLhbBjyAx/FLHTxVGBFv+WA1hRDKYtM88uobFQMLND
+	2V05XyP/cmfd7Eg/8WmSBogoQNTU0IfCgukIO4cwscrAaJiGZ8/wieHZyptDKhNBozeObPo9CHbqJ
+	v33Xd6tgNlDCyH1SfZowQFlBhr1fnELZd+yOf0YZKFm8KOxmQEV4uScjeSlKhPkom0D6nCf9w9fQl
+	+5DlfCjw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7f9q-0003RB-5s; Tue, 10 Sep 2019 12:22:06 +0000
-Received: from inva021.nxp.com ([92.121.34.21])
+	id 1i7f9E-0002x1-BH; Tue, 10 Sep 2019 12:21:28 +0000
+Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7f8y-0002v0-E4
- for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:21:13 +0000
-Received: from inva021.nxp.com (localhost [127.0.0.1])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 93FAD200090;
- Tue, 10 Sep 2019 14:21:08 +0200 (CEST)
+ id 1i7f8x-0002uy-BL
+ for linux-arm-kernel@lists.infradead.org; Tue, 10 Sep 2019 12:21:12 +0000
+Received: from inva020.nxp.com (localhost [127.0.0.1])
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id EE3091A009A;
+ Tue, 10 Sep 2019 14:21:07 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 521212004BF;
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 7E92A1A0495;
  Tue, 10 Sep 2019 14:21:04 +0200 (CEST)
 Received: from lsv03124.swis.in-blr01.nxp.com (lsv03124.swis.in-blr01.nxp.com
  [92.120.146.121])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 1F134402A5;
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id AEE41402D2;
  Tue, 10 Sep 2019 20:20:59 +0800 (SGT)
 From: Ashish Kumar <Ashish.Kumar@nxp.com>
 To: devicetree@vger.kernel.org, robh@kernel.org, mark.rutland@arm.com,
  shawnguo@kernel.org
-Subject: [PATCH] arm64: dts: ls1028a: Add FlexSPI support for NXP LS1028
-Date: Tue, 10 Sep 2019 17:50:51 +0530
-Message-Id: <1568118055-9740-1-git-send-email-Ashish.Kumar@nxp.com>
+Subject: [PATCH] arm64: dts: ls1046a: Add QSPI node for ls1046afrwy
+Date: Tue, 10 Sep 2019 17:50:52 +0530
+Message-Id: <1568118055-9740-2-git-send-email-Ashish.Kumar@nxp.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1568118055-9740-1-git-send-email-Ashish.Kumar@nxp.com>
+References: <1568118055-9740-1-git-send-email-Ashish.Kumar@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_052112_752242_A92124F8 
-X-CRM114-Status: UNSURE (   9.15  )
+X-CRM114-CacheID: sfid-20190910_052111_526892_56E612B7 
+X-CRM114-Status: UNSURE (   7.91  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -52,7 +55,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.21 listed in list.dnswl.org]
+ medium trust [92.121.34.13 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -66,105 +69,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Xiaowei Bao <xiaowei.bao@nxp.com>, linux-kernel@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, Ashish Kumar <Ashish.Kumar@nxp.com>
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Ashish Kumar <Ashish.Kumar@nxp.com>
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add fspi node property for LS1028A SoC for FlexSPI driver.
-Property added for FlexSPI controller and for the connected
-slave device for the LS1028ARDB and LS1028AQDS target.
-RDB and QDS is having one SPI-NOR flash device, mt35xu02g
-connected at CS0.
-This flash device "mt35xu02g" is tested for octal read
+This board has a single 64MB mt25qu512a flash.
+QUAD I/O read and single I/O write is tested.
 
-Signed-off-by: Xiaowei Bao <xiaowei.bao@nxp.com>
 Signed-off-by: Ashish Kumar <Ashish.Kumar@nxp.com>
 ---
- arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts | 15 +++++++++++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts | 15 +++++++++++++++
- arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi    | 13 +++++++++++++
- 3 files changed, 43 insertions(+)
+ arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-index 5e14e5a..5d46993 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-qds.dts
-@@ -103,6 +103,21 @@
- 	status = "okay";
+diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
+index 3595be0..c95d1ca 100644
+--- a/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
++++ b/arch/arm64/boot/dts/freescale/fsl-ls1046a-frwy.dts
+@@ -112,6 +112,21 @@
+ 
  };
  
-+&fspi {
++&qspi {
 +	status = "okay";
-+	flash0: mt35xu02g@0 {
-+		compatible = "micron,mt35xu02g", "jedec,spi-nor";
++
++	qflash0: mt25qu512a@0 {
++		compatible = "micron,mt25qu512a", "jedec,spi-nor";
 +		#address-cells = <1>;
 +		#size-cells = <1>;
 +		m25p,fast-read;
 +		spi-max-frequency = <50000000>;
++		spi-rx-bus-width = <4>;
++		spi-tx-bus-width = <4>;
 +		reg = <0>;
-+		/* The following setting enables 1-1-8 (CMD-ADDR-DATA) mode */
-+		spi-rx-bus-width = <8>; /* 8 SPI Rx lines */
-+		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
 +	};
 +};
 +
- &i2c0 {
- 	status = "okay";
+ #include "fsl-ls1046-post.dtsi"
  
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-index 1a69221..f33cb2e 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a-rdb.dts
-@@ -96,6 +96,21 @@
- 	status = "okay";
- };
- 
-+&fspi {
-+	status = "okay";
-+	flash0: mt35xu02g@0 {
-+		compatible = "micron,mt35xu02g", "jedec,spi-nor";
-+		#address-cells = <1>;
-+		#size-cells = <1>;
-+		m25p,fast-read;
-+		spi-max-frequency = <50000000>;
-+		reg = <0>;
-+		/* The following setting enables 1-1-8 (CMD-ADDR-DATA) mode */
-+		spi-rx-bus-width = <8>; /* 8 SPI Rx lines */
-+		spi-tx-bus-width = <1>; /* 1 SPI Tx line */
-+	};
-+};
-+
- &i2c0 {
- 	status = "okay";
- 
-diff --git a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-index b139b29..4aa1825 100644
---- a/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-+++ b/arch/arm64/boot/dts/freescale/fsl-ls1028a.dtsi
-@@ -174,6 +174,19 @@
- 			clocks = <&sysclk>;
- 		};
- 
-+		fspi: spi@20c0000 {
-+			compatible = "nxp,lx2160a-fspi";
-+			#address-cells = <1>;
-+			#size-cells = <0>;
-+			reg = <0x0 0x20c0000 0x0 0x10000>,
-+			      <0x0 0x20000000 0x0 0x10000000>;
-+			reg-names = "fspi_base", "fspi_mmap";
-+			interrupts = <GIC_SPI 25 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&clockgen 4 3>, <&clockgen 4 3>;
-+			clock-names = "fspi_en", "fspi";
-+			status = "disabled";
-+		};
-+
- 		i2c0: i2c@2000000 {
- 			compatible = "fsl,vf610-i2c";
- 			#address-cells = <1>;
+ &fman0 {
 -- 
 2.7.4
 
