@@ -2,116 +2,145 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 409FEAFCFF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:43:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 32717AFD08
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:46:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Cw7DfYkC8zvQMb4AJgv+i3WQ/BekNyyitv7CpoUNlxs=; b=JgGmqUH/gp6vgh
-	LbVUlI2cEU4FjmRztvbrVTQ7Xfr6chhTO7fLuZitxDtcBXCcli2aemhkX8dOsHxRHXt8kge66UB0q
-	PJihgTpP9XdylPCnofR3fs2a+mLhIk9XULNsNjOL2FtxJCDq/klZc6Au8IXEfvPO6C4ITRHvyhnAa
-	QgOsdhTaMIl5supqVqx87MsmsGD/1e/dVNqTgCQ6vzHdgV5MW2w4HYR9DuY/Vh9WsySjjCrmswgn2
-	2+7wbimUFMs768sGAmvXbKmhAkSElPU/xDQTezWZ8BvcHd8mDT+iCohTKDv/0LTQEykKKI+DJ8gDG
-	RLUSuA7MqJWugenCO2Og==;
+	List-Owner; bh=2uquSQnbB+nby5zv9OVsbsLitETy74vhXJpP8AwafWc=; b=IzVSTLYlT36fHI
+	vwNw8aOHUmn2JJjQKzQNnynXvk9PaBN46xr+dC4sRpca87bPOA0nWnasHWvg+4SClOK3f8D7EplkW
+	umoQDS7Fxb3fU+4ZvU5bRV4YKjsUvTsrH8EjzEyZn5WECN40LbYQQZ1LY0MP9AemzANpMiSpR/uSk
+	LBedqvi5suYTbMo77ITw09aJsZSHZwXGm2QncVcrdcRTMZTj+9gUJg2SlXAv+WocXaSYGKAN/MoEE
+	WH1a2qm/tlJc7yw5zjFQTwiR0hS107kG3aIoT/9roayuTXY0nsjNueAh6ulbB7xyiRlNn74qK3OeI
+	vBrEBRE7eAJFZGDGP1AQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i81xm-0007i7-9O; Wed, 11 Sep 2019 12:43:10 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i820X-00010Y-12; Wed, 11 Sep 2019 12:46:01 +0000
+Received: from mail-wm1-x341.google.com ([2a00:1450:4864:20::341])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i81xY-0007hN-NQ
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 12:42:58 +0000
-Received: from smtp.corp.redhat.com (int-mx01.intmail.prod.int.phx2.redhat.com
- [10.5.11.11])
- (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 9E3EA10576CB;
- Wed, 11 Sep 2019 12:42:55 +0000 (UTC)
-Received: from [10.36.117.155] (ovpn-117-155.ams2.redhat.com [10.36.117.155])
- by smtp.corp.redhat.com (Postfix) with ESMTP id E8A62601B6;
- Wed, 11 Sep 2019 12:42:42 +0000 (UTC)
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-To: Michal Hocko <mhocko@kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
- <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
- <20190911113619.GP4023@dhcp22.suse.cz>
- <20190911080804-mutt-send-email-mst@kernel.org>
- <20190911121941.GU4023@dhcp22.suse.cz> <20190911122526.GV4023@dhcp22.suse.cz>
-From: David Hildenbrand <david@redhat.com>
+ id 1i8200-0000xz-DF
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 12:45:30 +0000
+Received: by mail-wm1-x341.google.com with SMTP id p7so3320131wmp.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 05:45:26 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=baylibre-com.20150623.gappssmtp.com; s=20150623;
+ h=subject:to:cc:references:from:openpgp:autocrypt:organization
+ :message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=sYTCPQr58Ua4ctdJ+VnB47YHWrWIBH3iEJ3RS9pRSbc=;
+ b=YxweOHwIShbCH6hPS6i6HV84ePL/8cEwnniaq115pVZCO5TbxKkSDODe32M1V4EEcp
+ kkvAWuy94ZbnizIyYiG/68Etc5xCsb5L2K0F/wnD8Z0T1/zmZB3W8nlgiBl46+hLGb3l
+ 8cDyaEku+ZkPIVqy4WrasJR182doXyud39F8FnbqWQklXrJtbo9d37Gq53dDsgT38+68
+ uhcm73eH6zYBPMflwvFivpuyPAl6hX5UqX5TwSE2UKSUBsQYngi1R7Kh4mJc1O1UD23t
+ Hu6ED0MLURUNKVvtT0PlmP5K1sSv+umSwhZOo/WZQYp2pZeIvyRsrI5aJwJ0//huUHte
+ VACA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
+ :organization:message-id:date:user-agent:mime-version:in-reply-to
+ :content-language:content-transfer-encoding;
+ bh=sYTCPQr58Ua4ctdJ+VnB47YHWrWIBH3iEJ3RS9pRSbc=;
+ b=I5dVUMmvgfRzrfuLEskYGXFgv/Ig+xzcbmwni5QBGKY3ixz4s0zj5Ph5XLalkP53BK
+ KHAthI24LVcrykaOKKXbGZ7KOd4h2xGV316/okTiDVml3SgchlmLMEVzRs6fg2yZimM/
+ VGXmfItrOfvjazubCqg9pHfw8V4G3PcWVOCUvhkVL/YGCpfQv7gdJy0tsmc0INSLXE9Y
+ vGkoc2KLQM95nDhxkLd3BC4F1aBqHlwR7kmKkAzWpUTzHDzY8GM4mP+djBTozbZHcTrj
+ 6VO7moiozBgxB1SgRkH4Qen5Mrff5wTSd7oq7Q6TrHZS6mv2l2w6s7DEmFvbVhzFvI7/
+ 2JeQ==
+X-Gm-Message-State: APjAAAXQu6YzBEfg+lfrz9ZQdPGY9KMQ5uUVfGjq5p3zWGNGTz495s34
+ YvzNoRXL+fX2Uu2D99evDu2llg==
+X-Google-Smtp-Source: APXvYqzuBGTWjnqVDdMs2zEFwas3SIFlbtItk3NMd8bprZpJajDKQbiu1luuEHm9SFCTUIv/iE7wrg==
+X-Received: by 2002:a05:600c:24e:: with SMTP id
+ 14mr3921540wmj.140.1568205924684; 
+ Wed, 11 Sep 2019 05:45:24 -0700 (PDT)
+Received: from [192.168.1.62] (wal59-h01-176-150-251-154.dsl.sta.abo.bbox.fr.
+ [176.150.251.154])
+ by smtp.gmail.com with ESMTPSA id x5sm29802865wrg.69.2019.09.11.05.45.23
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 11 Sep 2019 05:45:24 -0700 (PDT)
+Subject: Re: [PATCH 4/6] phy: meson-g12a-usb3-pcie: Add support for PCIe mode
+To: Andrew Murray <andrew.murray@arm.com>
+References: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
+ <1567950178-4466-5-git-send-email-narmstrong@baylibre.com>
+ <20190911121954.GS9720@e119886-lin.cambridge.arm.com>
+From: Neil Armstrong <narmstrong@baylibre.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
- 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
- SE+xAvmumFBY
-Organization: Red Hat GmbH
-Message-ID: <4748a572-57b3-31da-0dde-30138e550c3a@redhat.com>
-Date: Wed, 11 Sep 2019 14:42:41 +0200
+Autocrypt: addr=narmstrong@baylibre.com; prefer-encrypt=mutual; keydata=
+ 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
+ ZaTUOEkgIor5losDrePdPgE=
+Organization: Baylibre
+Message-ID: <e4249d3a-9a98-c596-01ae-2917ffd78f17@baylibre.com>
+Date: Wed, 11 Sep 2019 14:45:23 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190911122526.GV4023@dhcp22.suse.cz>
+In-Reply-To: <20190911121954.GS9720@e119886-lin.cambridge.arm.com>
 Content-Language: en-US
-X-Scanned-By: MIMEDefang 2.79 on 10.5.11.11
-X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.6.2
- (mx1.redhat.com [10.5.110.64]); Wed, 11 Sep 2019 12:42:56 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_054256_805946_B2DAA318 
-X-CRM114-Status: GOOD (  25.57  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190911_054528_606354_E6DB6F18 
+X-CRM114-Status: GOOD (  21.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:341 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -123,95 +152,170 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
- Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: lorenzo.pieralisi@arm.com, khilman@baylibre.com, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, repk@triplefau.lt, maz@kernel.org,
+ bhelgaas@google.com, linux-amlogic@lists.infradead.org, yue.wang@Amlogic.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 11.09.19 14:25, Michal Hocko wrote:
-> On Wed 11-09-19 14:19:41, Michal Hocko wrote:
->> On Wed 11-09-19 08:08:38, Michael S. Tsirkin wrote:
->>> On Wed, Sep 11, 2019 at 01:36:19PM +0200, Michal Hocko wrote:
->>>> On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
->>>> [...]
->>>>> We don't put any limitations on the allocator other then that it needs to
->>>>> clean up the metadata on allocation, and that it cannot allocate a page
->>>>> that is in the process of being reported since we pulled it from the
->>>>> free_list. If the page is a "Reported" page then it decrements the
->>>>> reported_pages count for the free_area and makes sure the page doesn't
->>>>> exist in the "Boundary" array pointer value, if it does it moves the
->>>>> "Boundary" since it is pulling the page.
->>>>
->>>> This is still a non-trivial limitation on the page allocation from an
->>>> external code IMHO. I cannot give any explicit reason why an ordering on
->>>> the free list might matter (well except for page shuffling which uses it
->>>> to make physical memory pattern allocation more random) but the
->>>> architecture seems hacky and dubious to be honest. It shoulds like the
->>>> whole interface has been developed around a very particular and single
->>>> purpose optimization.
->>>>
->>>> I remember that there was an attempt to report free memory that provided
->>>> a callback mechanism [1], which was much less intrusive to the internals
->>>> of the allocator yet it should provide a similar functionality. Did you
->>>> see that approach? How does this compares to it? Or am I completely off
->>>> when comparing them?
->>>>
->>>> [1] mostly likely not the latest version of the patchset
->>>> http://lkml.kernel.org/r/1502940416-42944-5-git-send-email-wei.w.wang@intel.com
->>>
->>> Linus nacked that one. He thinks invoking callbacks with lots of
->>> internal mm locks is too fragile.
+On 11/09/2019 14:19, Andrew Murray wrote:
+> On Sun, Sep 08, 2019 at 01:42:56PM +0000, Neil Armstrong wrote:
+>> This adds extended PCIe PHY functions for the Amlogic G12A
+>> USB3+PCIE Combo PHY to support reset, power_on and power_off for
+>> PCIe exclusively.
 >>
->> I would be really curious how much he would be happy about injecting
->> other restrictions on the allocator like this patch proposes. This is
->> more intrusive as it has a higher maintenance cost longterm IMHO.
+>> With these callbacks, we can handle all the needed operations of the
+>> Amlogic PCIe controller driver.
+>>
+>> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+>> ---
+>>  .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 70 ++++++++++++++++---
+>>  1 file changed, 61 insertions(+), 9 deletions(-)
+>>
+>> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+>> index ac322d643c7a..08e322789e59 100644
+>> --- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+>> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+>> @@ -50,6 +50,8 @@
+>>  	#define PHY_R5_PHY_CR_ACK				BIT(16)
+>>  	#define PHY_R5_PHY_BS_OUT				BIT(17)
+>>  
+>> +#define PCIE_RESET_DELAY					500
+>> +
+>>  struct phy_g12a_usb3_pcie_priv {
+>>  	struct regmap		*regmap;
+>>  	struct regmap		*regmap_cr;
+>> @@ -196,6 +198,10 @@ static int phy_g12a_usb3_init(struct phy *phy)
+>>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>>  	int data, ret;
+>>  
+>> +	ret = reset_control_reset(priv->reset);
+>> +	if (ret)
+>> +		return ret;
+>> +
 > 
-> Btw. I do agree that callbacks with internal mm locks are not great
-> either. We do have a model for that in mmu_notifiers and it is something
-> I do consider PITA, on the other hand it is mostly sleepable part of the
-> interface which makes it the real pain. The above callback mechanism was
-> explicitly documented with restrictions and that the context is
-> essentially atomic with no access to particular struct pages and no
-> expensive operations possible. So in the end I've considered it
-> acceptably painful. Not that I want to override Linus' nack but if
-> virtualization usecases really require some form of reporting and no
-> other way to do that push people to invent even more interesting
-> approaches then we should simply give them/you something reasonable
-> and least intrusive to our internals.
+> Right, so we've moved this to apply to USB only, thus assuming PCI will
+> call .reset for its reset (why the asymmetry?).
+
+Exact, there is no power_on/power_off when USB3 mode is used, and vendor
+always reset the PHY before switching to USB3, but for PCIe, it seems the
+reset and the power_on must be done separately with the PCIe controller init
+and reset in the middle.
+
+I would prefer symmetry aswell :-/
+
+Neil
+
 > 
+> Thanks,
+> 
+> Andrew Murray
+> 
+>>  	/* Switch PHY to USB3 */
+>>  	/* TODO figure out how to handle when PCIe was set in the bootloader */
+>>  	regmap_update_bits(priv->regmap, PHY_R0,
+>> @@ -272,24 +278,64 @@ static int phy_g12a_usb3_init(struct phy *phy)
+>>  	return 0;
+>>  }
+>>  
+>> -static int phy_g12a_usb3_pcie_init(struct phy *phy)
+>> +static int phy_g12a_usb3_pcie_power_on(struct phy *phy)
+>> +{
+>> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>> +
+>> +	if (priv->mode == PHY_TYPE_USB3)
+>> +		return 0;
+>> +
+>> +	regmap_update_bits(priv->regmap, PHY_R0,
+>> +			   PHY_R0_PCIE_POWER_STATE,
+>> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int phy_g12a_usb3_pcie_power_off(struct phy *phy)
+>> +{
+>> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>> +
+>> +	if (priv->mode == PHY_TYPE_USB3)
+>> +		return 0;
+>> +
+>> +	regmap_update_bits(priv->regmap, PHY_R0,
+>> +			   PHY_R0_PCIE_POWER_STATE,
+>> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1d));
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int phy_g12a_usb3_pcie_reset(struct phy *phy)
+>>  {
+>>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>>  	int ret;
+>>  
+>> -	ret = reset_control_reset(priv->reset);
+>> +	if (priv->mode == PHY_TYPE_USB3)
+>> +		return 0;
+>> +
+>> +	ret = reset_control_assert(priv->reset);
+>>  	if (ret)
+>>  		return ret;
+>>  
+>> +	udelay(PCIE_RESET_DELAY);
+>> +
+>> +	ret = reset_control_deassert(priv->reset);
+>> +	if (ret)
+>> +		return ret;
+>> +
+>> +	udelay(PCIE_RESET_DELAY);
+>> +
+>> +	return 0;
+>> +}
+>> +
+>> +static int phy_g12a_usb3_pcie_init(struct phy *phy)
+>> +{
+>> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>> +
+>>  	if (priv->mode == PHY_TYPE_USB3)
+>>  		return phy_g12a_usb3_init(phy);
+>>  
+>> -	/* Power UP PCIE */
+>> -	/* TODO figure out when the bootloader has set USB3 mode before */
+>> -	regmap_update_bits(priv->regmap, PHY_R0,
+>> -			   PHY_R0_PCIE_POWER_STATE,
+>> -			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
+>> -
+>>  	return 0;
+>>  }
+>>  
+>> @@ -297,7 +343,10 @@ static int phy_g12a_usb3_pcie_exit(struct phy *phy)
+>>  {
+>>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>>  
+>> -	return reset_control_reset(priv->reset);
+>> +	if (priv->mode == PHY_TYPE_USB3)
+>> +		return reset_control_reset(priv->reset);
+>> +
+>> +	return 0;
+>>  }
+>>  
+>>  static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
+>> @@ -326,6 +375,9 @@ static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
+>>  static const struct phy_ops phy_g12a_usb3_pcie_ops = {
+>>  	.init		= phy_g12a_usb3_pcie_init,
+>>  	.exit		= phy_g12a_usb3_pcie_exit,
+>> +	.power_on	= phy_g12a_usb3_pcie_power_on,
+>> +	.power_off	= phy_g12a_usb3_pcie_power_off,
+>> +	.reset		= phy_g12a_usb3_pcie_reset,
+>>  	.owner		= THIS_MODULE,
+>>  };
+>>  
+>> -- 
+>> 2.17.1
+>>
 
-The issue with "[PATCH v14 4/5] mm: support reporting free page blocks"
- is that it cannot really handle the use case we have here if I am not
-wrong. While a page is getting processed by the hypervisor (e.g.
-MADV_DONTNEED), it must not get reused.
-
-"Some page blocks may
-leave the free list after zone->lock is released, so it is the caller's
-responsibility to either detect or prevent the use of such pages."
-
-If I'm not wrong, this only made sense to speed up migration in the
-hypervisor, where you can deal with false positives differently.
-
--- 
-
-Thanks,
-
-David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
