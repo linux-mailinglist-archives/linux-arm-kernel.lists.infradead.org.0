@@ -2,56 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 71EDEAF7AA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:22:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 631B8AF7C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:24:45 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fhMCIbNsmrkXg0w4oMl/w+W4eg+s0MH73+5ocTvnU/E=; b=GW6FmgaNf9jm7D
-	3c6jxeJXOedJSr6VNk6xtG6c9ev65e52CChjbwnxkRu4qP+/OJOEeDAN1s5J3myBP/hlfpn7beuVe
-	IRj3Af6Sjn78JvAx36ytTnnUNI2XbnkX52/iTnC5bbNltIfBw2wRgE3HhxvpVaZEIXNopBqExCvfx
-	E+qzn2WoN9rEqNI30SvzwKlAzQWzRET3cxM7EV9Wr8cJdliIsfLy8DJ9voFwmhjdiZ9fc0Kce/Ypk
-	NG2Lob58f7aWREkj8jwYk2uh3LJyNRMcTa4hPof7OzFmQ6SKAEML1u/UFmpnfFHnACdHyarBHXFP1
-	fu2DM+14EOXK6POI1CmA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kvplxmL40bDFD9JWnPGl3Rv5BlhaV0XX+hikxUlTSYI=; b=BGSaIhKwXFnODe
+	kJC002qLfitn6sNHImdsAg9Z1PAhqABVly8MwQwJim1wXI7IFMZpF57jo2oEsi/zpkJlvkN/kC8T3
+	OGokVcec2jhWYkdVDjvpWkUj2ON1mBFeCPR9e7+xc91rfeJx+TQyZ56e/epBE5nty961zZV4ezOnp
+	vkPBCmmT1ZYYAopj9JvO/y6mEBVXb8zBWKWUvgzvKNq0r+kCcW7pMMa5RT9Ii+cXOGlHVy9GIIC+8
+	smiORjriSdFwY3i9RIthaU32/S9ESvMoYr14WPVWtheRGLjeMPZdtxXDEbQLgYYlQT/crf4/fK2ag
+	/K2w1QSQc+KQqE3P7B7w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7xtF-0003eM-Nv; Wed, 11 Sep 2019 08:22:14 +0000
-Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
+	id 1i7xvX-0003vm-EF; Wed, 11 Sep 2019 08:24:35 +0000
+Received: from esa3.microchip.iphmx.com ([68.232.153.233])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7xt2-0003dj-Un
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:22:02 +0000
-Received: from localhost (unknown [148.69.85.38])
- (using TLSv1 with cipher AES256-SHA (256/256 bits))
- (Client did not present a certificate)
- (Authenticated sender: davem-davemloft)
- by shards.monkeyblade.net (Postfix) with ESMTPSA id 1393F15567355;
- Wed, 11 Sep 2019 01:21:56 -0700 (PDT)
-Date: Wed, 11 Sep 2019 10:21:55 +0200 (CEST)
-Message-Id: <20190911.102155.148817974369878410.davem@davemloft.net>
-To: Jose.Abreu@synopsys.com
-Subject: Re: [PATCH net-next 0/6] net: stmmac: Improvements for -next
-From: David Miller <davem@davemloft.net>
-In-Reply-To: <cover.1568126224.git.joabreu@synopsys.com>
-References: <cover.1568126224.git.joabreu@synopsys.com>
-X-Mailer: Mew version 6.8 on Emacs 26.2
-Mime-Version: 1.0
-X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
- (shards.monkeyblade.net [149.20.54.216]);
- Wed, 11 Sep 2019 01:21:58 -0700 (PDT)
+ id 1i7xvH-0003uq-Gz
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:24:22 +0000
+Received-SPF: Pass (esa3.microchip.iphmx.com: domain of
+ Eugen.Hristev@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="Eugen.Hristev@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa3.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa3.microchip.iphmx.com;
+ envelope-from="Eugen.Hristev@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa3.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Eugen.Hristev@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: L0u4jR5yduQ+iqio9ZPjlHtUu5+OYzkayQmqmmZicr3Aln0nfF7HMMSIcZj4mMKmurwQdkaVDT
+ VKIxkNpY8SmHtxtJlyddsYvT3MNN2Qotuag/hds67FO2kUSa2TX7PX+2SvSnjl7eUO/3KVzhmn
+ ciUA3NYp+RoCUgG10Fr28Yar1vVU8DPlc9zLtEZF7kAMuhykp7phAQXaAFv6vcAnkNXqeUb3+d
+ fB9t6HTLB9TNJsotBK1VfTwtlqkpBZ9Qcbw9RQHWUKjLeoKPdP/7Qck2Bsc+iAERcefMsKZ4PG
+ CAI=
+X-IronPort-AV: E=Sophos;i="5.64,492,1559545200"; d="scan'208";a="48642329"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa3.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 Sep 2019 01:24:17 -0700
+Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
+ chn-vm-ex03.mchp-main.com (10.10.85.151) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 11 Sep 2019 01:24:17 -0700
+Received: from NAM02-SN1-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.72) with Microsoft SMTP Server
+ (version=TLS1_2, 
+ cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5 via Frontend
+ Transport; Wed, 11 Sep 2019 01:24:17 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=N62jA5r/qKG8bPGn/bVhNgbxFkoSGIIvRQoWdQPpUXWEW/ZmTp/mZMShzyw/VOzUBXe5sYKJm+g47YeKoLNDxR3mPPguNH9igQwyfqk4V0ALdkdN6kF4le4T3N62COIA33Bng93CIrmRgTQj7Xkc26yPyJVrN4umfZ6rl+cN364FAfwd8/IfVMAmwUUfPy7qRlsUExEcZKHg90f+pJqQpX0x/xwb3xWuALgzaGi6BnyBW3wiJeomXU2tmHDjSU/2nOC/KyzrOkUOuXUrKrsflZlQZ976eGF3LJbfnO+ksRrN2MTmIow9nx7rLK/BNhYVpJYTfUSgVuhvSl5nSpHMmw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=35IFG+Xf34QFpoHfJHsfSoScCqAUS+jX9A9SkKyJNx0=;
+ b=meFIiuFuCopnnYh2i0EjM9pGruVm3XyH2ii+zKY5ognYeVxNjLxjgIhkDzJPTlDM3LoIaZmhNKoYhe0je8FF35zZ3d0Zwza8srqZ1+t4iNMBrAcU1xtabKujZrtNV1kQ10Szc44Dd4PVaiQj27aAuMaMdxGHXpclo30skEGiK02UVBM9AVl5msQSA/3bAGf+zYf3M0VrOSXUIj9LpmxTW6GP5EI4JwraE7biZmMmTwwfiyAj1cQssYL8lnpG08602Yl1vfjPR5ngCm8xsIMh/A4iEiyS1qIkySPKoM7cvKv+UmlfkurWJWn6XPi+n0RYFqtbTHPT1COQFbZutmyFFw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=35IFG+Xf34QFpoHfJHsfSoScCqAUS+jX9A9SkKyJNx0=;
+ b=GB8BUC1jMY9ZC9nUoFBzObZXpy1eeSaVY5aZWk0/zOv9QZl3RcUtgmLw0ZhuAvaK0cEZQnui789BHoBAvY55CYYIPFZ1C0lD13nOTEjCcJX+Xt0dDp5cL3Im9thqs5QwTWDP7i53bDb2Rv7o6KVxszmevvcqBbViWroWmWWZasA=
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com (10.168.108.8) by
+ DM5PR11MB1452.namprd11.prod.outlook.com (10.172.36.135) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.18; Wed, 11 Sep 2019 08:24:14 +0000
+Received: from DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::a141:1974:9668:fbe2]) by DM5PR11MB1242.namprd11.prod.outlook.com
+ ([fe80::a141:1974:9668:fbe2%12]) with mapi id 15.20.2241.018; Wed, 11 Sep
+ 2019 08:24:14 +0000
+From: <Eugen.Hristev@microchip.com>
+To: <wsa@the-dreams.de>, <peda@axentia.se>, <mark.rutland@arm.com>,
+ <Ludovic.Desroches@microchip.com>, <linux-i2c@vger.kernel.org>,
+ <devicetree@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>, <alexandre.belloni@bootlin.com>,
+ <robh+dt@kernel.org>
+Subject: [PATCH v5 0/9] i2c: add support for filters
+Thread-Topic: [PATCH v5 0/9] i2c: add support for filters
+Thread-Index: AQHVaHpLr7113TR4Hk2itVe9BFeajQ==
+Date: Wed, 11 Sep 2019 08:24:14 +0000
+Message-ID: <1568189911-31641-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US, ro-RO
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: VI1P189CA0008.EURP189.PROD.OUTLOOK.COM
+ (2603:10a6:802:2a::21) To DM5PR11MB1242.namprd11.prod.outlook.com
+ (2603:10b6:3:14::8)
+x-mailer: git-send-email 2.7.4
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [94.177.32.156]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: baa66c79-36bd-411b-8232-08d736916e23
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:DM5PR11MB1452; 
+x-ms-traffictypediagnostic: DM5PR11MB1452:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <DM5PR11MB1452716D9DCD95F663157E3FE8B10@DM5PR11MB1452.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 0157DEB61B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(346002)(376002)(39860400002)(396003)(366004)(136003)(189003)(199004)(52116002)(3846002)(2501003)(66556008)(66476007)(66946007)(54906003)(110136005)(478600001)(25786009)(316002)(6436002)(6116002)(66066001)(386003)(14454004)(2906002)(102836004)(486006)(476003)(2616005)(6506007)(186003)(26005)(4326008)(8936002)(81166006)(81156014)(7736002)(66446008)(8676002)(5660300002)(50226002)(64756008)(86362001)(2201001)(99286004)(71190400001)(71200400001)(53936002)(36756003)(256004)(107886003)(6512007)(305945005)(6486002)(921003)(1121003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:DM5PR11MB1452;
+ H:DM5PR11MB1242.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: FU2c8nyrDhiRXvjneemGrOtUMzAuzl9nYdXmolGmiVVnlGEudCJhDCIIDXeVz+TpfpBAMiCos9yYtar1LlXJzd3XYJdUkfuCKXtmTAvRVx7MvVqBc+2BDLAPktozJHKhQ9rDlFEK4pjGf6XY+o66yHT/yF3HWh7lxDKRllpFNCReKxXK0+We69jnrl5VbjZG8dLcam/YgcTVrRNcV8oGd9xmKchAZYfnS6IwPhyILwUo6fZRT7qCzDVq7XA83gqJqUsbqAbNnPCi/ipRXrkQWhD9RFibEgipfkiKfFNvDEYol4VIjVCx70pe7V09OI3DZ5cB7O3tbmDdBFDYFcQlURhUQboHShxH0d86L2sVhOzt/h74pcT/MsB7Q0p1ffjkhqxu94zDsF3CVIMkIplrMKoIw2a7iN89Qe2YxFS+X6I=
+MIME-Version: 1.0
+X-MS-Exchange-CrossTenant-Network-Message-Id: baa66c79-36bd-411b-8232-08d736916e23
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2019 08:24:14.4852 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: p0BugN2odvcBkhXKrhdNsvNrmkuxwsvyhgItxnDE2EEXI8THYUk1dNR0dhSSUqa/+iwrfQJelSlHeKHeolkfgiMryPAtFmV6uOCH70kGprM=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: DM5PR11MB1452
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_012200_990771_9C2CBB45 
-X-CRM114-Status: UNSURE (   5.84  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_012419_633699_6DFAAF96 
+X-CRM114-Status: GOOD (  14.16  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.153.233 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -63,23 +162,89 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Joao.Pinto@synopsys.com, alexandre.torgue@st.com, netdev@vger.kernel.org,
- linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
- peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Eugen.Hristev@microchip.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Jose Abreu <Jose.Abreu@synopsys.com>
-Date: Tue, 10 Sep 2019 16:41:21 +0200
+From: Eugen Hristev <eugen.hristev@microchip.com>
 
-> Misc patches for -next. It includes:
->  - Two fixes for features in -next only
->  - New features support for GMAC cores (which includes GMAC4 and GMAC5)
+Hello,
 
-Series applied, but what exactly does "ARP offload" even do?
+This series adds support for analog and digital filters for i2c controllers
+
+This series is based on the series:
+[PATCH v2 0/9] i2c: at91: filters support for at91 SoCs
+and later
+[PATCH v4 0/9] i2c: add support for filters
+and enhanced to add the bindings for all controllers plus an extra bindings
+for the width of the spikes in nanoseconds (digital filters) and cut-off
+frequency (analog filters)
+
+First, bindings are created for
+'i2c-analog-filter'
+'i2c-digital-filter'
+'i2c-digital-filter-width-ns'
+'i2c-analog-filter-cutoff-frequency'
+
+The support is added in the i2c core to retrieve filter width/cutoff frequency
+and add it to the timings structure.
+Next, the at91 driver is enhanced for supporting digital filter, advanced
+digital filter (with selectable spike width) and the analog filter.
+
+Finally the device tree for two boards are modified to make use of the
+new properties.
+
+This series is the result of the comments on the ML in the direction
+requested: to make the bindings globally available for i2c drivers.
+
+Changes in v5:
+- renamed i2c-filter-width-ns to i2c-digital-filter-width-ns as this
+is applicable only to digital filter
+- created new binding i2c-digital-filter-width-ns for analog filters.
+
+Changes in v4:
+- renamed i2c-ana-filter to i2c-analog-filter
+- renamed i2c-dig-filter to i2c-digital-filter
+
+Changes in v3:
+- made bindings global for i2c controllers and modified accordingly
+- gave up PADFCDF bit because it's a lack in datasheet
+- the computation on the width of the spike is based on periph clock as it
+is done for hold time.
+
+Changes in v2:
+- added device tree bindings and support for enable-ana-filt and
+enable-dig-filt
+- added the new properties to the DT for sama5d4_xplained/sama5d2_xplained
+
+Eugen Hristev (9):
+  dt-bindings: i2c: at91: add new compatible
+  dt-bindings: i2c: add bindings for i2c analog and digital filter
+  i2c: add support for filters optional properties
+  i2c: at91: add new platform support for sam9x60
+  i2c: at91: add support for digital filtering
+  i2c: at91: add support for advanced digital filtering
+  i2c: at91: add support for analog filtering
+  ARM: dts: at91: sama5d2_xplained: add analog and digital filter for
+    i2c
+  ARM: dts: at91: sama5d4_xplained: add digital filter for i2c
+
+ Documentation/devicetree/bindings/i2c/i2c-at91.txt |  3 +-
+ Documentation/devicetree/bindings/i2c/i2c.txt      | 18 ++++++++
+ arch/arm/boot/dts/at91-sama5d2_xplained.dts        |  6 +++
+ arch/arm/boot/dts/at91-sama5d4_xplained.dts        |  1 +
+ drivers/i2c/busses/i2c-at91-core.c                 | 38 +++++++++++++++++
+ drivers/i2c/busses/i2c-at91-master.c               | 49 ++++++++++++++++++++--
+ drivers/i2c/busses/i2c-at91.h                      | 13 ++++++
+ drivers/i2c/i2c-core-base.c                        |  6 +++
+ include/linux/i2c.h                                |  6 +++
+ 9 files changed, 136 insertions(+), 4 deletions(-)
+
+-- 
+2.7.4
+
 
 _______________________________________________
 linux-arm-kernel mailing list
