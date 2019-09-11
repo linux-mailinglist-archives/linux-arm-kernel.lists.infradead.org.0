@@ -2,66 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77B48AF9DD
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 12:05:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BA2B0AFA04
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 12:10:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+xpRc+hM/eh7L2goz+5Gdz4MHCzRfvv5wY7wsq+qssc=; b=n5oHXnW1HxO6tj
-	rY/qPoNEX81vyypw6vwQxzOkFChjXWJsdkiaVQorSPR4eMef+JRF3VeAsJNfRvRIojVwBNLoUqLnT
-	GXIjJ/cymnKZiSJ++oPXs/WqG/zA3pGdKAKcFtgpsYFt0FYMACwysuKRpHV7mq6ofoQBP11bCg2Lq
-	3RLKXBG8TCDRFdP1evlWtkbraB3wyR4f7Jmmxu/rNMHOC4w7QNpEtY3HpfcTIYeM6KjdOu3dkxNle
-	ZO4Jl9qQuWI4jSICH6SgpFlcsfb+gpv3acsaOEdhk7mOg1bn7oE7k/JHY3D2BnENYMfJU4zmYKu/8
-	DoUMRdA9YhNAouI8AAQQ==;
+	List-Owner; bh=jld8FDWTLggnOaS1FsA/+Gmgk240o/UXZmI4/1N0LUM=; b=eK/ql4suq0ssVS
+	kU7sydBGOZ5+x+a6lNobCLuSxyQrfPHkLD3sqegyzkZBsQ2HFNfWq65+MdOMZwVtrTR4a3LYh0K9l
+	dsmdBYWgDY96alJQSMNIAc9sOkrcGYts337rK+sz0cKn+emxuV8g3mr5y33XVQyEFiEf9XyZbwXYA
+	lFVni6OwKHrExczjhEtfvwmT1O98gqPD6QTKLjNVXcTOZa3zg6cpnOrF8uBwSEOK2zj7yk9XC09nL
+	GUDykQvrPi62LO1XGGAGQkKhs2/M6b+Bo4F5g4pgaL6p9TCDDXBX1gkd51L1R4601/BY9tMPcaGbZ
+	N3bOK2TbzCEMbveIox8g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7zUz-0003pe-Ut; Wed, 11 Sep 2019 10:05:17 +0000
+	id 1i7za2-0006c2-Mv; Wed, 11 Sep 2019 10:10:31 +0000
 Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7zUi-0003Xo-Kf
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 10:05:01 +0000
-Received: by mail-lf1-x142.google.com with SMTP id r134so15936976lff.12
+ id 1i7zZo-0006bI-5w
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 10:10:17 +0000
+Received: by mail-lf1-x142.google.com with SMTP id j4so15955543lfh.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 03:05:00 -0700 (PDT)
+ Wed, 11 Sep 2019 03:10:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=aEBAvzyvKwKy4+z0icRgfRVKXYXcNb1iM7EN7yrDUow=;
- b=b5WLEtD03nLPtyVSE+wLZn9h7qijVtAN+cYaeN6IYy+aFGDtEbDuL/gYsMMM/a/5ed
- Bm/8bSgVFY582J67Cdazp0Jc7/0Ip0JtCwnp1Jwa0sBRHurYKd3AFT/MOoX9EgKmv7Wt
- THm606K5uucv2RO6R7HvnwPXo9zNI5/SCpU50YcpK5nYOIZ/jeKlZyT4JwA91pyBCRGY
- 76K3WnTq/FQ1cFtQhenLCpIb3UROTl/67IWPqHB+hXeomfMlanRc/zaQHe3r5hBODnQq
- lVYiLeCNz+Ewk8X+yoLY0VvEITQNeFzHI7YN8tMAZaUuIjZtJqEzFplZ9DoSsXHDz63B
- er6A==
+ :cc; bh=Fd44UJ2qp7SxlmPH92Hh2fZtRoYOa2yVKq8dtzIHoUY=;
+ b=weAyWjo4quJcwmENKcNerNmyN+gz/QJ9hYm8rmn0/rQ4AF+hN9LftSYTgS3KxWM9dR
+ tlgY+fTeAXsDs4FJRXwaCuDUUcOv2DWlkbSIIiob2peEB4Hnw81+IpJetrTGCEbx7O2I
+ 9Yl6U/Lfnxb4U4Jv1lwMercoCINucwno4J2A0Jf/rYQ26oAWmb4i8bR8Zl986fCF3crW
+ ZNeQ+TUh0b9lN4q6SdlSC5UDgTPgH3z1QVTZQtYPrJHV4hgeFpDRZQD1+vDtcmyzoI6N
+ 2fCBXQEVf8qcPbNDTCxRpJQyxaAo2YjTtrJxGC033lysc/91IdDBTbwvU/a3KTj20yWw
+ dR6g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=aEBAvzyvKwKy4+z0icRgfRVKXYXcNb1iM7EN7yrDUow=;
- b=P5NH/sy/39F030jAYyEkseyt+UwTup7xvR2nrCy3VghJTcf7h3dcetXuqjpo/5tVYb
- lCJ2M9JB+Fq5nY6/7TtzoHuvDRYJhuTEWmexcFR1Yzlfzac1C3mKSByTrHlQ1joKrASD
- C44SwcwR/Zun+pARueHCbLTfDWzXHXubsykzyBD5R8QsvT4qQGkxNBnzueYkrg9+cBn1
- 7FZ3DzOflVMP4uO/PGazJebKK8DgmbB18WRjlMhnolat3/Iaz+wLpzdD/sflGwGpKPmq
- feQJ/AKByQf45GF0LCKlsIUTaX7J+RwvzgOLSROpaxsQWcaE4SS6QtfzTXcOAjtRU2J+
- g1SA==
-X-Gm-Message-State: APjAAAWYhMUeCfNBmkA3KLxJed3U06BybJKKSE6DnyiwSrkQGQx7EHcf
- OzkoFTwmn3S8WQrLTBxYD873WTjVK6HEgrxhBB1e1w==
-X-Google-Smtp-Source: APXvYqyC+pv5N0Vcj+RE52xkcBxAzDFKvxknvjpMo7X5lxTEnajzZlDFTx5W6vtzY7meOzprM4Zolus/zI1aT2yhpaQ=
-X-Received: by 2002:a19:117:: with SMTP id 23mr23845320lfb.115.1568196299188; 
- Wed, 11 Sep 2019 03:04:59 -0700 (PDT)
+ bh=Fd44UJ2qp7SxlmPH92Hh2fZtRoYOa2yVKq8dtzIHoUY=;
+ b=EIe/xygCzgXAROY7jYyIBR66n5K9vCVI6XPg6OJRO0eDC5JFyzJbZvF7QrVbk6mYhG
+ ZoB+J+vRSfTKEt2N8DttGuUCQFlC6z2tnfYipr079hCX8RP7GDyUs1plhq0vRcIRFxVd
+ rmw5g2fpBM/shlzsFOIbIOshFo1oBT7h+tB4iDoNyb6l+yhoEGfXJP1BnMWTeIJfIAwT
+ yaUPD3tNwqpKm/ZhgjwOkt6dAmIFKkqVXYLQgSJO4F1qxLVcbsiw7UMA+TwWdw8Nt59c
+ k2KohrB0vy3iqG5LLBvmKfNwW19nR8McV43MfwfNKWWjeYK/FjwdAgr22fL622lU87yf
+ V03g==
+X-Gm-Message-State: APjAAAVuTf9yg2e6Cncjl/krAV4ZpItTQNHKrtu/X8EidYabnA3K5ker
+ 3M1PtOzVXaGA003oWal4VuLYY0O3SbYxtExlWnJI7Q==
+X-Google-Smtp-Source: APXvYqxXrKv8m/NgHM1ig0qAYSi29B4YPdGe3bL55eGb9Rww2zvzQ3IpVfOta67Ay2PtbrLdxjwEiKNEmAnXzj6hqYE=
+X-Received: by 2002:a19:48c3:: with SMTP id
+ v186mr23663867lfa.141.1568196614289; 
+ Wed, 11 Sep 2019 03:10:14 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190906062623.13354-1-rashmica.g@gmail.com>
-In-Reply-To: <20190906062623.13354-1-rashmica.g@gmail.com>
+References: <20190906062644.13445-1-rashmica.g@gmail.com>
+In-Reply-To: <20190906062644.13445-1-rashmica.g@gmail.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 11 Sep 2019 11:04:47 +0100
-Message-ID: <CACRpkdZvBHk65Vs93YbrTR92-8o0SgtUUWMBXeABQH0PZwpRxQ@mail.gmail.com>
-Subject: Re: [PATCH v3 2/5] gpio/aspeed: Fix incorrect number of banks
+Date: Wed, 11 Sep 2019 11:10:02 +0100
+Message-ID: <CACRpkda7WAZxUSjOXRj5Q1mSC0ZhYey2E9RkuX7p6Wcs_kXB=w@mail.gmail.com>
+Subject: Re: [PATCH v3 3/5] gpio/aspeed: Setup irqchip dynamically
 To: Rashmica Gupta <rashmica.g@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_030500_676058_3CDCBD2A 
-X-CRM114-Status: UNSURE (   8.40  )
+X-CRM114-CacheID: sfid-20190911_031016_226381_C1089F43 
+X-CRM114-Status: UNSURE (   7.53  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -105,16 +106,14 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 On Fri, Sep 6, 2019 at 7:26 AM Rashmica Gupta <rashmica.g@gmail.com> wrote:
 
-> The current calculation for the number of GPIO banks is only correct if
-> the number of GPIOs is a multiple of 32 (if there were 31 GPIOs we would
-> currently say there are 0 banks, which is incorrect).
->
-> Fixes: 361b79119a4b7 ('gpio: Add Aspeed driver')
+> This is in preparation for adding ast2600 support. The ast2600 SoC
+> requires two instances of the GPIO driver as it has two GPIO
+> controllers. Each instance needs it's own irqchip.
 >
 > Signed-off-by: Rashmica Gupta <rashmica.g@gmail.com>
-> Reviewed-by: Andrew Jeffery <andrew@aj.id.au>
 
-Patch applied.
+Patch applied with Joel's ACK, needed some fuzzing but
+fixed it up.
 
 Yours,
 Linus Walleij
