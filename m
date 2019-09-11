@@ -2,92 +2,115 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6FC8AFBB9
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 13:48:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CC66EAFBC0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 13:49:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SB1aEUKFaQgWNW7D3TyRkT0eFMHK5Ty5nB/t+7MamDM=; b=Kx+iCohqWaq+YL
-	QlkyxOEf5ob499AzXahwib6/+KmhIO3X7FnpEvJKkNg9x3Zt03uFoff7WhGIGpAlCkAyCxRvTt3g5
-	x/LXGpF8p/s8b26UFyTUmVeIFsT9/e/gE9YHj/1V+vOfrG2PHuvkKHN4J5lXqnyRvhuBZInVuNBoY
-	CtDavVX90Vwuc/oyZJoa7Fqd6OBVT6k5XLGiQZ1B86m+/GVhYmyWqu3yM0HI192SH5Ztegzb+oeBj
-	iAmS5G0mihNUaGdcXsZvX6iMp4RCgjosEQPf7WgTr70DPnYSv/POn+w8YBrbTOpJO3AKmCPWzU4bZ
-	A1p9v2g/Z2I3eddS9lhw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=sIsqx6zrYVLU/cXWjeouHGwu96geQgXtn/+frLpTJj8=; b=kRlnpVEo0NC95M
+	L5+PhRKyDzgCA1McoKmwQ1EZAqdmGiM4SJlZ2j5tCPU33zKu2RjCqoyMhk7ZZWtmsum/hHhPgFvfk
+	sgGSEepP5uVqN5cv2x2//C5NME3c4DgcG8usTELtqPwzU53i4J7777ByxV6L/oVdnhvm59blmQ7mq
+	eu9p0c8VJrlijqdgfYwyWefyxzcNtVlpWtv8thYa930yItsCRmNNteAmp38e0Pzs10kVdECvrI4J+
+	Bj7FhPsvfzq2dHdgkI/h/PUqzbDOWsYRHNnSDB7W8U15Y2hIlH4uoWXyOb2wENceQ/dvnZvvTRC62
+	VKyMyXF4m/k2kiIymWLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i816E-0002hu-8Z; Wed, 11 Sep 2019 11:47:50 +0000
-Received: from mail-wm1-x342.google.com ([2a00:1450:4864:20::342])
+	id 1i817H-0003GL-Gt; Wed, 11 Sep 2019 11:48:55 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i815N-0002SW-C9
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 11:46:58 +0000
-Received: by mail-wm1-x342.google.com with SMTP id p13so3150587wmh.1
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 04:46:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=XLyQ3Vlb+rG+95957y6BztxIW1tdl5LgP7WaxmxVaO0=;
- b=Q1jZcqmWsHMzgEghiccCanRSPHWlytaT/p73rkABDBpEVrVIdPyhVBsQRa83y7yMwk
- 8vVGvx30GcYDujSlS3VxDH5ZmkqUbcKICCbkOmPADFguytXS59u9yHhwAmSl5fDbd5YY
- X2li4ZcxeJjFi6+DJyrRPSgpSsMU6SySDL60WMIS2gWFtEQie2Vnug5trHsGrDV8qLF0
- ihFNv9p5QnRps0Xm7D//Dig9Y6f1hok8zIrdddu9wOkudYYpIYdHUh3+fyEJ465lg6Dw
- wB7tnkq37MYs03eZ/B6bTZslAceoKcWexuBT6RYVxRTcq3GAL2lZ4E8CWlwiiMHhwBp2
- Iruw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=XLyQ3Vlb+rG+95957y6BztxIW1tdl5LgP7WaxmxVaO0=;
- b=AofrQGvOUvTeI3Q2RCuoTAQtVBOUHb8VSZqDuJqNqJKXvomzmfJ70vJS6bagRTc28Z
- 1IXSFbMLelPk9n3CJKCnG5H8U0FX8uhDMamwWj1dAFsb0+etCql6Pt/8XB5GMcaVxEUA
- xhKnZ3NFrbOyxqWbizJEf/OVX26La+9IP/4Ii/s/lwO7m3T1a2Apvvcf5AYdSNAA+obn
- g0QtUk1WH9rBLv296/QFDWpRvN4tV92kmz0ba2DnFq3fqPXoRU8oNCi+AkgJZuB9jGQF
- mb1DDSGZSmNDDHbROXbqmuABoR3ALDtGJD2btOEuzjR2higZguPbYwIDPZ6CBd2gIl7u
- h4EQ==
-X-Gm-Message-State: APjAAAVKjf0jrydjWDyTOfI91nwt6qroGEzDooMguvJr53tjjP/x3WzX
- C0hZyCKDNVej6OS+YZF6pys=
-X-Google-Smtp-Source: APXvYqw/b7RlrRsnWT6dq2slgxmNWcb7VI6HItkHhXi+DVQQc12hADdcTu7V5ysU+9FcYNW/Ovxx5g==
-X-Received: by 2002:a1c:f518:: with SMTP id t24mr3443917wmh.98.1568202416288; 
- Wed, 11 Sep 2019 04:46:56 -0700 (PDT)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id h17sm4864705wme.6.2019.09.11.04.46.55
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Sep 2019 04:46:55 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
- wens@csie.org
-Subject: [PATCH 2/2] crypto: sun4i-ss: enable pm_runtime
-Date: Wed, 11 Sep 2019 13:46:50 +0200
-Message-Id: <20190911114650.20567-3-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
-In-Reply-To: <20190911114650.20567-1-clabbe.montjoie@gmail.com>
-References: <20190911114650.20567-1-clabbe.montjoie@gmail.com>
+ id 1i816J-0002wf-FV
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 11:47:58 +0000
+Received: from smtp.corp.redhat.com (int-mx08.intmail.prod.int.phx2.redhat.com
+ [10.5.11.23])
+ (using TLSv1.2 with cipher AECDH-AES256-SHA (256/256 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id EF9F6302C098;
+ Wed, 11 Sep 2019 11:47:51 +0000 (UTC)
+Received: from [10.36.117.155] (ovpn-117-155.ams2.redhat.com [10.36.117.155])
+ by smtp.corp.redhat.com (Postfix) with ESMTP id B804F19C6A;
+ Wed, 11 Sep 2019 11:47:31 +0000 (UTC)
+Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+To: Michal Hocko <mhocko@kernel.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+ <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+ <20190910144713.GF2063@dhcp22.suse.cz>
+ <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
+ <20190910175213.GD4023@dhcp22.suse.cz>
+ <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
+ <20190911113619.GP4023@dhcp22.suse.cz>
+From: David Hildenbrand <david@redhat.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=david@redhat.com; prefer-encrypt=mutual; keydata=
+ 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
+ SE+xAvmumFBY
+Organization: Red Hat GmbH
+Message-ID: <9ac38890-be04-036e-0d6c-ea54e35a20db@redhat.com>
+Date: Wed, 11 Sep 2019 13:47:30 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
+In-Reply-To: <20190911113619.GP4023@dhcp22.suse.cz>
+Content-Language: en-US
+X-Scanned-By: MIMEDefang 2.84 on 10.5.11.23
+X-Greylist: Sender IP whitelisted, not delayed by milter-greylist-4.5.16
+ (mx1.redhat.com [10.5.110.46]); Wed, 11 Sep 2019 11:47:52 +0000 (UTC)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_044657_518719_64E2294C 
-X-CRM114-Status: GOOD (  14.90  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190911_044756_013680_63384834 
+X-CRM114-Status: GOOD (  22.40  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:342 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -99,153 +122,69 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-kernel@vger.kernel.org
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
+ Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch enables power management on the Security System.
+On 11.09.19 13:36, Michal Hocko wrote:
+> On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
+> [...]
+>> We don't put any limitations on the allocator other then that it needs to
+>> clean up the metadata on allocation, and that it cannot allocate a page
+>> that is in the process of being reported since we pulled it from the
+>> free_list. If the page is a "Reported" page then it decrements the
+>> reported_pages count for the free_area and makes sure the page doesn't
+>> exist in the "Boundary" array pointer value, if it does it moves the
+>> "Boundary" since it is pulling the page.
+> 
+> This is still a non-trivial limitation on the page allocation from an
+> external code IMHO. I cannot give any explicit reason why an ordering on
+> the free list might matter (well except for page shuffling which uses it
+> to make physical memory pattern allocation more random) but the
+> architecture seems hacky and dubious to be honest. It shoulds like the
+> whole interface has been developed around a very particular and single
+> purpose optimization.
+> 
+> I remember that there was an attempt to report free memory that provided
+> a callback mechanism [1], which was much less intrusive to the internals
+> of the allocator yet it should provide a similar functionality. Did you
+> see that approach? How does this compares to it? Or am I completely off
+> when comparing them?
+> 
+> [1] mostly likely not the latest version of the patchset
+> http://lkml.kernel.org/r/1502940416-42944-5-git-send-email-wei.w.wang@intel.com
+> 
 
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |  5 +++
- drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 42 ++++++++++++++++++++++-
- 2 files changed, 46 insertions(+), 1 deletion(-)
+FWIW, Nitesh was looking into another approach [1], whereby the metadata
+is stored outside of the buddy (unreported pages are tracked in a
+bitmap). There are some limitations to this approach (esp., sparse zones
+might waste memory (1bit per 2MB), memory hot(un)plug not supported yet
+completely, scanning of the bitmap necessary). OTOH, the core buddy
+modifications are minimized.
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-index fa4b1b47822e..1fedec9e83b0 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-@@ -10,6 +10,8 @@
-  *
-  * You could find the datasheet in Documentation/arm/sunxi.rst
-  */
-+
-+#include <linux/pm_runtime.h>
- #include "sun4i-ss.h"
- 
- static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_request *areq)
-@@ -497,13 +499,16 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
- 		return PTR_ERR(op->fallback_tfm);
- 	}
- 
-+	pm_runtime_get_sync(op->ss->dev);
- 	return 0;
- }
- 
- void sun4i_ss_cipher_exit(struct crypto_tfm *tfm)
- {
- 	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
-+
- 	crypto_free_sync_skcipher(op->fallback_tfm);
-+	pm_runtime_put_sync(op->ss->dev);
- }
- 
- /* check and set the AES key, prepare the mode to be used */
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-index 2c9ff01dddfc..5e6e1a308f60 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
-@@ -14,6 +14,7 @@
- #include <linux/module.h>
- #include <linux/of.h>
- #include <linux/platform_device.h>
-+#include <linux/pm_runtime.h>
- #include <crypto/scatterwalk.h>
- #include <linux/scatterlist.h>
- #include <linux/interrupt.h>
-@@ -258,6 +259,37 @@ static int sun4i_ss_enable(struct sun4i_ss_ctx *ss)
- 	return err;
- }
- 
-+#ifdef CONFIG_PM
-+static int sun4i_ss_pm_suspend(struct device *dev)
-+{
-+	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
-+
-+	sun4i_ss_disable(ss);
-+	return 0;
-+}
-+
-+static int sun4i_ss_pm_resume(struct device *dev)
-+{
-+	struct sun4i_ss_ctx *ss = dev_get_drvdata(dev);
-+
-+	return sun4i_ss_enable(ss);
-+}
-+#endif
-+
-+const struct dev_pm_ops sun4i_ss_pm_ops = {
-+	SET_RUNTIME_PM_OPS(sun4i_ss_pm_suspend, sun4i_ss_pm_resume, NULL)
-+};
-+
-+static void sun4i_ss_pm_init(struct sun4i_ss_ctx *ss)
-+{
-+	pm_runtime_use_autosuspend(ss->dev);
-+	pm_runtime_set_autosuspend_delay(ss->dev, 1000);
-+
-+	pm_runtime_get_noresume(ss->dev);
-+	pm_runtime_set_active(ss->dev);
-+	pm_runtime_enable(ss->dev);
-+}
-+
- static int sun4i_ss_probe(struct platform_device *pdev)
- {
- 	u32 v;
-@@ -357,9 +389,12 @@ static int sun4i_ss_probe(struct platform_device *pdev)
- 	writel(0, ss->base + SS_CTL);
- 
- 	ss->dev = &pdev->dev;
-+	platform_set_drvdata(pdev, ss);
- 
- 	spin_lock_init(&ss->slock);
- 
-+	sun4i_ss_pm_init(ss);
-+
- 	for (i = 0; i < ARRAY_SIZE(ss_algs); i++) {
- 		ss_algs[i].ss = ss;
- 		switch (ss_algs[i].type) {
-@@ -388,7 +423,8 @@ static int sun4i_ss_probe(struct platform_device *pdev)
- 			break;
- 		}
- 	}
--	platform_set_drvdata(pdev, ss);
-+
-+	pm_runtime_put_sync(ss->dev);
- 	return 0;
- error_alg:
- 	i--;
-@@ -405,6 +441,7 @@ static int sun4i_ss_probe(struct platform_device *pdev)
- 			break;
- 		}
- 	}
-+	pm_runtime_disable(ss->dev);
- error_enable:
- 	sun4i_ss_disable(ss);
- 	return err;
-@@ -429,6 +466,8 @@ static int sun4i_ss_remove(struct platform_device *pdev)
- 		}
- 	}
- 
-+	pm_runtime_disable(ss->dev);
-+
- 	writel(0, ss->base + SS_CTL);
- 	sun4i_ss_disable(ss);
- 	return 0;
-@@ -445,6 +484,7 @@ static struct platform_driver sun4i_ss_driver = {
- 	.remove         = sun4i_ss_remove,
- 	.driver         = {
- 		.name           = "sun4i-ss",
-+		.pm		= &sun4i_ss_pm_ops,
- 		.of_match_table	= a20ss_crypto_of_match_table,
- 	},
- };
+[1] https://lkml.org/lkml/2019/8/12/593
+
 -- 
-2.21.0
 
+Thanks,
+
+David / dhildenb
 
 _______________________________________________
 linux-arm-kernel mailing list
