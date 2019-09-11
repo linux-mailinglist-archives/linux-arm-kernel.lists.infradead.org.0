@@ -2,47 +2,45 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 349CCAFECA
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:35:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 889BDAFF02
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:42:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R+olGdzPMsEINDxs4OobgvPHnxnKrZNQxplYFAqkQLM=; b=aGwL7YM+5Ly9Kz
-	AHF+Oa73z0u8+w1nb38JALTgzFXUvDelyOXj0rNXsF7llzP+/7rRnuhBX3wGZyhw8hrgFHu9V2yfd
-	GtLhMJgwdC3UlMfLOjMTSfNjVPkguITKi20wNQHJeWeK5+EdII5g8LnMtBBiOG0s1ifbEgGiDD1E4
-	lZuU+Z9Z+rrrrmLUdjwZvYugKyiZzy4yWlhOEo4gK8Jjqy7bJoAypbUwVjZQJ6D9FF8wkGTcOWGoC
-	dbyjHLOXyoErNTa5igv9LWwDUcJxb858/a03KsTX6/CuWzqzbMqtHlrFZiF/Hj4LyK9TrL2P6yWvw
-	NRy4ALN7ld7Ztdxd9RAA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=V9JBta7o8HApUm99SaaFGSeFp8q294n+YsjG2Ja91uM=; b=HcFZsvgdg4+AjZ
+	adcm7zlI6MQo88hGaX1IylLoheYoAlcq53RpRJnyr5c4gu+KTqgGeh8KcyQEQMz1B8yQSVvkK4vF+
+	kxMTPZu+/CMPPK2yMGre3BzhQzwJSUeczqk6GEpgDdjhNrRMZHWSblZgfQ0v1V4AWCsbVGzvNX9aF
+	swQtx5JZUjRjXRW6pjkLDGd5eWO0tQB4MmPTavhABBnx9clkvSv1OVHItEaH5ZZH6d8gB1OzAWBjv
+	K0AF4YA/pWnIWM9rMMmCfgiDfS/4q6c9bdIwW2fWZ3nHQMG+qaAxOQIlHSEdZzyNA3b3OeJ0jDmym
+	BCr0PEcmnpTlfko5kXPA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i83in-0008SY-EG; Wed, 11 Sep 2019 14:35:49 +0000
+	id 1i83pJ-0001qf-Hw; Wed, 11 Sep 2019 14:42:33 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i83ib-0008Rl-8u; Wed, 11 Sep 2019 14:35:38 +0000
+ id 1i83p5-0001pR-R0
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:42:20 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0980D1000;
- Wed, 11 Sep 2019 07:35:34 -0700 (PDT)
-Received: from C02TF0J2HF1T.local (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 5DC9C3F67D;
- Wed, 11 Sep 2019 07:35:30 -0700 (PDT)
-Date: Wed, 11 Sep 2019 15:35:27 +0100
-From: Catalin Marinas <catalin.marinas@arm.com>
-To: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-Subject: Re: [PATCH v5 3/4] arm64: use both ZONE_DMA and ZONE_DMA32
-Message-ID: <20190911143527.GB43864@C02TF0J2HF1T.local>
-References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
- <20190909095807.18709-4-nsaenzjulienne@suse.de>
- <b0b824bebb9ef13ce746f9914de83126b0386e23.camel@suse.de>
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 60E521000;
+ Wed, 11 Sep 2019 07:42:16 -0700 (PDT)
+Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
+ [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 392243F67D;
+ Wed, 11 Sep 2019 07:42:15 -0700 (PDT)
+From: Robin Murphy <robin.murphy@arm.com>
+To: will@kernel.org,
+	joro@8bytes.org
+Subject: [PATCH 0/3] iommu/io-pgtable-arm: Mali LPAE improvements
+Date: Wed, 11 Sep 2019 15:42:06 +0100
+Message-Id: <cover.1568211045.git.robin.murphy@arm.com>
+X-Mailer: git-send-email 2.21.0.dirty
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <b0b824bebb9ef13ce746f9914de83126b0386e23.camel@suse.de>
-User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_073537_358803_1452EE77 
-X-CRM114-Status: GOOD (  12.11  )
+X-CRM114-CacheID: sfid-20190911_074219_918770_FC4A3E59 
+X-CRM114-Status: GOOD (  10.04  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,53 +59,35 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, mbrugger@suse.com, marc.zyngier@arm.com,
- robin.murphy@arm.com, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
- robh+dt@kernel.org, wahrenst@gmx.net, m.szyprowski@samsung.com,
- linux-riscv@lists.infradead.org, phill@raspberrypi.org,
- Will Deacon <will@kernel.org>, hch@lst.de,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: robh@kernel.org, tomeu.vizoso@collabora.com, narmstrong@baylibre.com,
+ steven.price@arm.com, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 11, 2019 at 12:54:38PM +0200, Nicolas Saenz Julienne wrote:
-> On Mon, 2019-09-09 at 11:58 +0200, Nicolas Saenz Julienne wrote:
-> >  /*
-> > - * Return the maximum physical address for ZONE_DMA32 (DMA_BIT_MASK(32)). It
-> > - * currently assumes that for memory starting above 4G, 32-bit devices will
-> > - * use a DMA offset.
-> > + * Return the maximum physical address for a zone with a given address size
-> > + * limit. It currently assumes that for memory starting above 4G, 32-bit
-> > + * devices will use a DMA offset.
-> >   */
-> > -static phys_addr_t __init max_zone_dma32_phys(void)
-> > +static phys_addr_t __init max_zone_phys(unsigned int zone_bits)
-> >  {
-> >         phys_addr_t offset = memblock_start_of_DRAM() & GENMASK_ULL(63, 32);
-> > -       return min(offset + (1ULL << 32), memblock_end_of_DRAM());
-> > +       return min(offset + (1ULL << zone_bits), memblock_end_of_DRAM());
-> >  }
-> 
-> while testing other code on top of this series on odd arm64 machines I found an
-> issue: when memblock_start_of_DRAM() != 0, max_zone_phys() isn't taking into
-> account the offset to the beginning of memory. This doesn't matter with
-> zone_bits == 32 but it does when zone_bits == 30.
+Hi all,
 
-I thought about this but I confused myself and the only case I had in
-mind was an AMD Seattle system with RAM starting at 4GB.
+Here's the eagerly-awaited fix to unblock T720/T820, plus a couple of
+other bits that I've collected so far. I'm not considering this as
+5.3 fixes material, but it would be nice if there's any chance still
+to sneak it into 5.4.
 
-What we need from this function is that the lowest naturally aligned
-2^30 RAM is covered by ZONE_DMA while the rest to 2^32 are ZONE_DMA32.
-This assumed that devices only capable of 30-bit (or 32-bit), have the
-top address bits hardwired to be able access the bottom of the memory
-(and this would be expressed in DT as the DMA offset).
+Robin.
 
-I guess the fix here is to use GENMASK_ULL(63, zone_bits).
+
+Robin Murphy (3):
+  iommu/io-pgtable-arm: Correct Mali attributes
+  iommu/io-pgtable-arm: Support more Mali configurations
+  iommu/io-pgtable-arm: Allow coherent walks for Mali
+
+ drivers/iommu/io-pgtable-arm.c | 61 ++++++++++++++++++++++++++--------
+ 1 file changed, 48 insertions(+), 13 deletions(-)
 
 -- 
-Catalin
+2.21.0.dirty
+
 
 _______________________________________________
 linux-arm-kernel mailing list
