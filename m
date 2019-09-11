@@ -2,60 +2,88 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id DCAC3AF706
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 09:37:23 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BED96AF70F
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 09:40:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=IThpTfyKP8tWJk2yvX+i57ZiLP3U8ri6WlsY9YP0uUQ=; b=BEyawlEJvtAEu9
-	h7ZytWcPmG2sMguP/s5ecmqu7rZ7zGEQUoRpJNQprHDIho2MEPgy4dRLCw6eNX5HkOVuO2nm08HQM
-	lTQEZkPgy1ixz6vYydGnuue1VOGW/Wm5d2O14o9ldUFTx8Ti/s0jd1u+88+8q/g3LlcveoL+qXRgE
-	kUNjO+GeOM0Ab/ogSqcIEdRWG7Ib+6WYWe1eYoFw5WPC0R+3ptk3l7ued04VZVapkEp+550pFPNF4
-	4AYlist8kjhomfSvjl3mXfrdC+C08gjL5ZZewEDCS1FRPFPx6dfF9mO4HGnJhdss1hDFxu/dzXjbT
-	jFme9wyPj/g9J+OfewLg==;
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=+o1KK/KmH2rRiSPj063te+/4fXEDgRU+ouYPnXSUpsQ=; b=iwWJLobumTuSqs
+	K+5mRml79kio9kiy7L7cMrGBNbsZOtjBHYKTNjFrOzXH+OaWBoK10qBwBXK/YAFYmXAxjdD4xvX/L
+	igGVsrjcX+oHEXj5hZj+Hfv8QeC6EwgNNgh9jqjov/Mx2HYsZ/8p19HyTrqqyZc8IxIxzZa7US+9s
+	j0JUTCp9Gice8jqyIIbM6lm1r5kEHAVKT8fMeWYFlJi8W+pGAqQTItP8YViUx+a6ZkOx8W0c5vRpQ
+	+tjCrZ76EOm1naLLTKEJdSftuu9PQeJoa7HMexxXJolsp5nc2+WSvfR7GmJwfThcnDbmSQTckO/Rk
+	KI01vZBuaXGcin7YUyLA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7xBl-00055U-Vr; Wed, 11 Sep 2019 07:37:17 +0000
-Received: from mail-sh.amlogic.com ([58.32.228.43])
+	id 1i7xFB-0006oF-QL; Wed, 11 Sep 2019 07:40:49 +0000
+Received: from mail-lf1-x144.google.com ([2a00:1450:4864:20::144])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7xAp-00054e-7n; Wed, 11 Sep 2019 07:36:21 +0000
-Received: from [10.18.29.226] (10.18.29.226) by mail-sh.amlogic.com
- (10.18.11.5) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1591.10; Wed, 11 Sep
- 2019 15:37:02 +0800
-Subject: Re: [PATCH v2 4/4] arm64: dts: add support for A1 based Amlogic AD401
-To: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-References: <1567667251-33466-1-git-send-email-jianxin.pan@amlogic.com>
- <1567667251-33466-5-git-send-email-jianxin.pan@amlogic.com>
- <CAFBinCBSmW4y-Dz7EkJMV8HOU4k6Z0G-K6T77XnVrHyubaSsdg@mail.gmail.com>
- <be032a85-b60d-f7f0-8404-b27784d809df@amlogic.com>
- <CAFBinCD7gFzOsmZCB8T1KJKVsgL7WMhoEkj3dRzyqwAnjC0CNA@mail.gmail.com>
- <a82336e2-44df-5682-1c86-daf8a8448d30@amlogic.com>
- <CAFBinCAJG4=M3BSXfREGU+iadMPkc7=yt3AdcqA1KAhQx6Wh9w@mail.gmail.com>
-From: Jianxin Pan <jianxin.pan@amlogic.com>
-Message-ID: <09d7f5cc-9063-28f4-b68f-79f21fca500b@amlogic.com>
-Date: Wed, 11 Sep 2019 15:37:02 +0800
-User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1i7xEv-0006nx-Ad
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 07:40:34 +0000
+Received: by mail-lf1-x144.google.com with SMTP id t8so15603897lfc.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 00:40:32 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc; bh=yGNk1RwgDOsyCCRD4DtS7SLFCAJ4uRNecHgJg3xepp4=;
+ b=UpBQbVsnN5xYSgo2RjhHUKXqrhI6w5Dj/A7gHNFQTrWESKN+M6dDTjNuLc9/tPyFtF
+ gkmtyUkWWffk5X1QjAJBDfi78m78uq9xVx3ZOvPuQy7N7DlEfjdelv5cLTb60Is/zzVq
+ eDFmutokRgkKMAgie0FdUbXwOg/Vmq8y2caArGG3rOxq7XBShYzCWXkMZno2Ame7YACx
+ 7MmL+Io03yInzGtRvJehZa7Bv+GipAN8Dg5049AVUc5cqbjxo1dRRUQt9v9lw4rWeMaM
+ 20vqMyYqloFKydKnl3tbU5OdD6kxUizOhwgWBs/Wjz8+20CvoqlPrhjhivdW1ejikC05
+ 0srg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=yGNk1RwgDOsyCCRD4DtS7SLFCAJ4uRNecHgJg3xepp4=;
+ b=oOZ576rdykduRrRjwpsIM7U54QHNj52l/nMucybgs/dGEShTDP/tMdv6ulwuc0PCIM
+ Kn2Iqr/5WAymtNL2URZPKSxUiWuGBsR5uVB3nBbqIytV917gyy+7JWscTONmP6b3cq1e
+ gvuMeJAzMTWNhR6fqE22djSYxV0XGK0GbzuVIPbw6T5SVnXIlwcM/4/ydsJbhqqtqLmo
+ uzSngpTWuAbtFf9rUR9paiHfiEl8b5ZY4vZ7kzkRptZbsGFwcUCcKGsJ5LqeaZVbeU6X
+ ZbKXMBnq/bOfVquQVWS/E3abX4byl1wpfu/GNQsO7mgkjFj6ROwCrKcAVL3Litn0lYVo
+ Hh0w==
+X-Gm-Message-State: APjAAAUN7a8on4Edie2RSy0lrRVawCLM+/FKTm2GvDdPVt0hsJmtx8Fo
+ Yq3XlHVl5CYKfApAUBJ9meGpFtouwrEUnkBvE8I=
+X-Google-Smtp-Source: APXvYqwUncX3xOzOXQXzt6cKSxnSf5sLh9t6B+yzNdkVqFRWuIDLJV/37rJRMtQanjEENFU/nt1fZd0aj42mKIo6yU4=
+X-Received: by 2002:a05:6512:6c:: with SMTP id
+ i12mr23245659lfo.40.1568187630837; 
+ Wed, 11 Sep 2019 00:40:30 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <CAFBinCAJG4=M3BSXfREGU+iadMPkc7=yt3AdcqA1KAhQx6Wh9w@mail.gmail.com>
-Content-Language: en-US
-X-Originating-IP: [10.18.29.226]
-X-ClientProxiedBy: mail-sh.amlogic.com (10.18.11.5) To mail-sh.amlogic.com
- (10.18.11.5)
+References: <20190826095828.8948-1-ilie.halip@gmail.com>
+ <20190911070314.GE17142@dragon>
+In-Reply-To: <20190911070314.GE17142@dragon>
+From: Ilie Halip <ilie.halip@gmail.com>
+Date: Wed, 11 Sep 2019 10:40:19 +0300
+Message-ID: <CAHFW8PTS6DQCmJKOC0PK=4A6zjOZm6Krhr6MTqB1c8kZ8++hNw@mail.gmail.com>
+Subject: Re: [PATCH] bus: imx-weim: remove __init from 2 functions
+To: Shawn Guo <shawnguo@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_003619_437492_E8D15178 
-X-CRM114-Status: GOOD (  15.29  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_004033_394128_6BD5ABE3 
+X-CRM114-Status: UNSURE (   6.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:144 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (ilie.halip[at]gmail.com)
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -67,65 +95,23 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Hanjie Lin <hanjie.lin@amlogic.com>,
- Victor Wan <victor.wan@amlogic.com>, Neil Armstrong <narmstrong@baylibre.com>,
- Kevin Hilman <khilman@baylibre.com>, linux-kernel@vger.kernel.org,
- Qiufang Dai <qiufang.dai@amlogic.com>, Rob Herring <robh+dt@kernel.org>,
- Jian Hu <jian.hu@amlogic.com>, Xingyu Chen <xingyu.chen@amlogic.com>,
- Tao Zeng <tao.zeng@amlogic.com>, Carlo Caione <carlo@caione.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org,
- Jerome Brunet <jbrunet@baylibre.com>
+Cc: clang-built-linux <clang-built-linux@googlegroups.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Arnd Bergmann <arnd@arndb.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Martin,
+Hi Shawn,
 
-On 2019/9/10 1:24, Martin Blumenstingl wrote:
-> Hi Jianxin,
-> 
-> On Mon, Sep 9, 2019 at 2:03 PM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
->>
->> Hi Martin,
->>
->> On 2019/9/7 23:02, Martin Blumenstingl wrote:
->>> Hi Jianxin,
->>>
->>> On Fri, Sep 6, 2019 at 7:58 AM Jianxin Pan <jianxin.pan@amlogic.com> wrote:
->>> [...]
->>>>> also I'm a bit surprised to see no busses (like aobus, cbus, periphs, ...) here
->>>>> aren't there any busses defined in the A1 SoC implementation or are
->>>>> were you planning to add them later?
->>>> Unlike previous series,there is no Cortex-M3 AO CPU in A1, and there is no AO/EE power domain.
->>>> Most of the registers are on the apb_32b bus.  aobus, cbus and periphs are not used in A1.
->>> OK, thank you for the explanation
->>> since you're going to re-send the patch anyways: can you please
->>> include the apb_32b bus?
->>> all other upstream Amlogic .dts are using the bus definitions, so that
->>> will make A1 consistent with the other SoCs
->> In A1 (and the later C1), BUS is not mentioned in the memmap and register spec.
->> Registers are organized and grouped by functions, and we can not find information about buses from the SoC document.
-> do you know why the busses are not part of the documentation?
-> 
->> Maybe it's better to remove bus definitions for these chips.
-> my understanding is that devicetree describes the hardware
-> so if there's a bus in hardware (that we know about) then we should
-> describe it in devicetree
-> 
-> personally I think busses also make the .dts easier to read:
-> instead of a huge .dts with all nodes on one level it's split into
-> multiple smaller sub-nodes - thus making it easier to keep track of
-> "where am I in this file".
-> 
-OK, I will add the bus description for A1.
-Thank you for your suggestion.
-> 
-> Martin
-> 
-> .
-> 
+I think you can disregard this patch; the issue was already fixed by
+Arnd[1] a couple of days after I sent it.
 
+[1] https://git.kernel.org/pub/scm/linux/kernel/git/soc/soc.git/commit/?h=for-next&id=3b1261fb72c7dc6a9e4604ef1ea01d6bb67cc3d1
+
+Thanks,
+I.H.
 
 _______________________________________________
 linux-arm-kernel mailing list
