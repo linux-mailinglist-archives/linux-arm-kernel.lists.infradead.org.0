@@ -2,78 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 886A6AF817
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3460CAF821
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:40:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cq2tpF+jcr+UV1zrAzt0ifrEZB3mlmheLSP221H6WkE=; b=J80VvvNuiUWHtg
-	MoNPL+Y2Sctjw6XqgVK31w/MDf/DFZojluAfjPC2dThQ1EMAm9IKWqMlVl2QsIvHuIiGX24Goc5Xk
-	P+WMn9CLszqeZUx6oH8YfIpBqYmRdL3K4zfw1PeNs5d9fpkA2wp5TM+lv14rOZZVExpbnKNbUbTbW
-	0GIaFKNJWYB+U2BjW7bt7uLfxPK/fJAhm42V7kt5LA2nRkbH4OKuch6iNfFaFPJEA5gNX06gbJpUk
-	+OpLwDo7LgVP7eFqZJy6+N9adxM242XqS1DHzicZt8pAt7wE+G/yeelK8b1wsRhrKghQjWGTEz9cn
-	d+QH89zMeEr6tV6VGi+w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=4+scLqlHhBU3p8/HU2o4C4Zwc6xEhzKPjqM3Xkk4NAY=; b=WNQv/RB/NOeRcj
+	B1zr1zUGAB5zp5YpvWVmgdlkWJwO8DthWP+9TgdGH4yEepN1Ompg/IVDBm3P4AcgfZq2XMggIpdi+
+	if4eqJE0itKRDdvY9gkF/Z501C2MIpEjVKvKKoLX6YZSHltt/q02bjt5nM+T2SPx2/DtTPVi/KP9O
+	dXQykW0yx1jtfdWRHcEpwhFj3K0ROPcH47uoN1d7mUhevjdB0VjwJXbQdFS80xXMalw+YYo0/SQha
+	4jZaYkG2ynPk6OVSRqJdx6gknR+AQ8axd4em/QZYcpzESrwezSQaMFrcEfDlH1SupRir15ZPWMB49
+	sPxRWfKq1p3XKOSqtYDQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7y7T-00039E-2l; Wed, 11 Sep 2019 08:36:55 +0000
-Received: from conssluserg-01.nifty.com ([210.131.2.80])
+	id 1i7yAK-0003TV-Mi; Wed, 11 Sep 2019 08:39:52 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7y6b-00037M-GI
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:36:05 +0000
-Received: from mail-ua1-f51.google.com (mail-ua1-f51.google.com
- [209.85.222.51]) (authenticated)
- by conssluserg-01.nifty.com with ESMTP id x8B8ZPvX011676
- for <linux-arm-kernel@lists.infradead.org>; Wed, 11 Sep 2019 17:35:26 +0900
-DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-01.nifty.com x8B8ZPvX011676
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
- s=dec2015msa; t=1568190926;
- bh=UbX3WXF/x+Rp6FshhKSMSv77yFQt2MJQYXIacczcOm4=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=JG6jeoYkIoyz9hVMNylQov1lsadJ2Ymk3kcG9THkhfzDB8Qn8Od+1+s0ZZOcLUDVM
- 1lB4XH1BOtZ/bgRDoPLV4+8XoCf+UMs0FreaCRdlnowCCLxHEMjx3nvcRB9HYWcIxF
- 6n7GTRrARLGqFJneU1JbnQOG5+irb8BZOd50v9WAGuI4vt42irBbO3KLyfsT50YQhd
- PLLUp3iraO/oHZ0ZYjUCIthcBTkySj+/r4VE+J0nYpGDkm9GPtVkIsP0Ec3HUF6DSh
- V07P9LxtPMOQ5WcjjlLzkDLhJ3DRNPS1HFbW4DJwbhjuJdvVOVj1mpyC7nCnNJfxlw
- 3XMVokxUZswJQ==
-X-Nifty-SrcIP: [209.85.222.51]
-Received: by mail-ua1-f51.google.com with SMTP id h23so6500440uao.10
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 01:35:25 -0700 (PDT)
-X-Gm-Message-State: APjAAAUCUPGlFrPL5FcAxS+bKyhDh1eJvP02+5eP562G8B9yH0hMkbP7
- mfh68Qyh1TMdwySfSNVitfktzZAj77BB4im8kJw=
-X-Google-Smtp-Source: APXvYqw2os4SpkKt9TYxK/NIhy5fZfjI/sZqp463uL6bUWD5LsVyITxvYtnxTtE218CqYv1VBusgmxJzlWgdcXn4jzs=
-X-Received: by 2002:a9f:3f8a:: with SMTP id k10mr16907716uaj.121.1568190924800; 
- Wed, 11 Sep 2019 01:35:24 -0700 (PDT)
+ id 1i7yA2-0003SF-Ab; Wed, 11 Sep 2019 08:39:35 +0000
+X-UUID: 58ddb690ac584148baa79e4ab800ce74-20190911
+X-UUID: 58ddb690ac584148baa79e4ab800ce74-20190911
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1633767191; Wed, 11 Sep 2019 00:39:25 -0800
+Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 01:39:25 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 16:39:23 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 11 Sep 2019 16:39:23 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Andrew Morton <akpm@linux-foundation.org>, "Martin
+ Schwidefsky" <schwidefsky@de.ibm.com>, Andrey Konovalov
+ <andreyknvl@google.com>, Qian Cai <cai@lca.pw>, Vlastimil Babka
+ <vbabka@suse.cz>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v3] mm/kasan: dump alloc and free stack for page allocator
+Date: Wed, 11 Sep 2019 16:39:21 +0800
+Message-ID: <20190911083921.4158-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-References: <20190905054647.1235-1-james.tai@realtek.com>
- <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
- <43B123F21A8CFE44A9641C099E4196FFCF8DA1D0@RTITMBSVM04.realtek.com.tw>
- <CAK8P3a39VrC1Xn+HZc5gvh1-nUYKywDGjTfO9WPCqim89WtGAg@mail.gmail.com>
-In-Reply-To: <CAK8P3a39VrC1Xn+HZc5gvh1-nUYKywDGjTfO9WPCqim89WtGAg@mail.gmail.com>
-From: Masahiro Yamada <yamada.masahiro@socionext.com>
-Date: Wed, 11 Sep 2019 17:34:48 +0900
-X-Gmail-Original-Message-ID: <CAK7LNATpbAMGU1u6T_1tX57mHbCR-57q+kDwXMOHAJ2R5kvfrg@mail.gmail.com>
-Message-ID: <CAK7LNATpbAMGU1u6T_1tX57mHbCR-57q+kDwXMOHAJ2R5kvfrg@mail.gmail.com>
-Subject: Re: [PATCH] ARM: Add support for Realtek SOC
-To: Arnd Bergmann <arnd@arndb.de>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_013602_121164_EEAC29E5 
-X-CRM114-Status: GOOD (  12.05  )
-X-Spam-Score: 1.0 (+)
+X-CRM114-CacheID: sfid-20190911_013934_373980_AADAD64A 
+X-CRM114-Status: GOOD (  11.86  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (1.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.131.2.80 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ no trust [216.200.240.184 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -85,49 +75,107 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
- =?UTF-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
- Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
- Phinex Hung <phinex@realtek.com>, Rob Herring <robh@kernel.org>,
- Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
- Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
- Thierry Reding <treding@nvidia.com>,
- "jamestai.sky@gmail.com" <jamestai.sky@gmail.com>,
- Doug Anderson <armlinux@m.disordat.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- =?UTF-8?B?SmFtZXMgVGFpW+aItOW/l+WzsF0=?= <james.tai@realtek.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
- Nick Desaulniers <ndesaulniers@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Paul Burton <paul.burton@mips.com>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gV2VkLCBTZXAgMTEsIDIwMTkgYXQgNToxNyBQTSBBcm5kIEJlcmdtYW5uIDxhcm5kQGFybmRi
-LmRlPiB3cm90ZToKPgo+IE9uIFdlZCwgU2VwIDExLCAyMDE5IGF0IDk6NDYgQU0gSmFtZXMgVGFp
-W+aItOW/l+WzsF0gPGphbWVzLnRhaUByZWFsdGVrLmNvbT4gd3JvdGU6Cj4gPiA+IFN1YmplY3Q6
-IFJlOiBbUEFUQ0hdIEFSTTogQWRkIHN1cHBvcnQgZm9yIFJlYWx0ZWsgU09DCj4KPiA+ID4gPiBA
-QCAtMTQ4LDYgKzE0OCw3IEBAIGVuZGlmCj4gPiA+ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9N
-U004WDYwKSA6PSAweDAwMjA4MDAwCj4gPiA+ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9NU004
-OTYwKSA6PSAweDAwMjA4MDAwCj4gPiA+ID4gIHRleHRvZnMtJChDT05GSUdfQVJDSF9NRVNPTikg
-Oj0gMHgwMDIwODAwMAo+ID4gPiA+ICt0ZXh0b2ZzLSQoQ09ORklHX0FSQ0hfUkVBTFRFSykgOj0g
-MHgwMDIwODAwMAo+ID4gPiA+ICB0ZXh0b2ZzLSQoQ09ORklHX0FSQ0hfQVhYSUEpIDo9IDB4MDAz
-MDgwMDAKPiA+ID4KPiA+ID4gQ2FuIHlvdSBleHBsYWluIHdoeSB0aGlzIGlzIG5lZWRlZCBmb3Ig
-eW91ciBwbGF0Zm9ybT8KPiA+ID4KPiA+IFdlIG5lZWQgdG8gcmVzZXJ2ZSBtZW1vcnkgKDB4MDAw
-MDAwMDAgfiAweDAwMUIwMDAwKSBmb3Igcm9tIGFuZCBib290IGNvZGUuCj4KPiBPay4KCgpJIGRv
-IG5vdCBsaWtlIHRoaXMgbXVjaC4KClRoaXMgcGxhdGZvcm0gaXMgQVJDSF9NVUxUSV9WNy4KCkFS
-TV9QQVRDSF9QSFlTX1ZJUlQgYWxsb3dzIHlvdSB0byBwbGFjZSB0aGUga2VybmVsIGltYWdlCmFu
-eXdoZXJlIGluIG1lbW9yeSBhcyBsb25nIGFzIHRoZSBiYXNlIGlzIGFsaWduZWQgYXQgMTZNQi4K
-ClRoZSBtaW5pbXVtICd0ZXh0b2ZzLXkgOj0gMHgwMDA4MDAwJyArIGV4dHJhIDE2TUIgb2Zmc2V0
-CndpbGwgY3JlYXRlIGEgc3BhY2UgKDB4MDAwMDAwMDAgfiAweDAxMDA4MDAwKS4KClRoaXMgaXMg
-bW9yZSB0aGFuIG5lZWRlZCwgYnV0IGl0IGlzIG5vdCBhIGJpZyBkZWFsCnRvIHdhc3RlIHNvbWUg
-bWVnYWJ5dGVzIG9mIG1lbW9yeS4KCgotLSAKQmVzdCBSZWdhcmRzCk1hc2FoaXJvIFlhbWFkYQoK
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX18KbGludXgtYXJt
-LWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgtYXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3Jn
-Cmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3JnL21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtl
-cm5lbAo=
+This patch is KASAN's report adds the alloc/free stack for page allocator
+in order to help programmer to see memory corruption caused by the page.
+
+By default, KASAN doesn't record alloc or free stack for page allocator.
+It is difficult to fix up the page use-after-free or double-free issue.
+
+We add the following changing:
+1) KASAN enable PAGE_OWNER by default to get the alloc stack of the page.
+2) Add new feature option to get the free stack of the page.
+
+The new feature KASAN_DUMP_PAGE depends on DEBUG_PAGEALLOC, it will help
+to record free stack of the page, it is very helpful for solving the page
+use-after-free or double-free issue.
+
+When KASAN_DUMP_PAGE is enabled then KASAN's report will show the last
+alloc and free stack of the page, it should be:
+
+BUG: KASAN: use-after-free in kmalloc_pagealloc_uaf+0x70/0x80
+Write of size 1 at addr ffffffc0d60e4000 by task cat/115
+...
+ prep_new_page+0x1c8/0x218
+ get_page_from_freelist+0x1ba0/0x28d0
+ __alloc_pages_nodemask+0x1d4/0x1978
+ kmalloc_order+0x28/0x58
+ kmalloc_order_trace+0x28/0xe0
+ kmalloc_pagealloc_uaf+0x2c/0x80
+page last free stack trace:
+ __free_pages_ok+0x116c/0x1630
+ __free_pages+0x50/0x78
+ kfree+0x1c4/0x250
+ kmalloc_pagealloc_uaf+0x38/0x80
+
+Changes since v1:
+- slim page_owner and move it into kasan
+- enable the feature by default
+
+Changes since v2:
+- enable PAGE_OWNER by default
+- use DEBUG_PAGEALLOC to get page information
+
+cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+cc: Vlastimil Babka <vbabka@suse.cz>
+cc: Andrey Konovalov <andreyknvl@google.com>
+Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+---
+ lib/Kconfig.kasan | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+index 4fafba1a923b..4d59458c0c5a 100644
+--- a/lib/Kconfig.kasan
++++ b/lib/Kconfig.kasan
+@@ -41,6 +41,7 @@ config KASAN_GENERIC
+ 	select SLUB_DEBUG if SLUB
+ 	select CONSTRUCTORS
+ 	select STACKDEPOT
++	select PAGER_OWNER
+ 	help
+ 	  Enables generic KASAN mode.
+ 	  Supported in both GCC and Clang. With GCC it requires version 4.9.2
+@@ -63,6 +64,7 @@ config KASAN_SW_TAGS
+ 	select SLUB_DEBUG if SLUB
+ 	select CONSTRUCTORS
+ 	select STACKDEPOT
++	select PAGER_OWNER
+ 	help
+ 	  Enables software tag-based KASAN mode.
+ 	  This mode requires Top Byte Ignore support by the CPU and therefore
+@@ -135,6 +137,19 @@ config KASAN_S390_4_LEVEL_PAGING
+ 	  to 3TB of RAM with KASan enabled). This options allows to force
+ 	  4-level paging instead.
+ 
++config KASAN_DUMP_PAGE
++	bool "Dump the last allocation and freeing stack of the page"
++	depends on KASAN
++	select DEBUG_PAGEALLOC
++	help
++	  By default, KASAN enable PAGE_OWNER only to record alloc stack
++	  for page allocator. It is difficult to fix up page use-after-free
++	  or double-free issue.
++	  This feature depends on DEBUG_PAGEALLOC, it will extra record
++	  free stack of page. It is very helpful for solving the page
++	  use-after-free or double-free issue.
++	  This option will have a small memory overhead.
++
+ config TEST_KASAN
+ 	tristate "Module for testing KASAN for bug detection"
+ 	depends on m && KASAN
+-- 
+2.18.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
