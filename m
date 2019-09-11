@@ -2,81 +2,64 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B90CB0469
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 21:06:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5246FB0479
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 21:13:07 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:
+	In-Reply-To:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=N/FbQHeK8i9dP+LNflkSjFn9S7XIjt0j+wIvl6v55io=; b=FbPiTliisw7JsR
-	8U2DdtnnsXjWaYoSZR7ENcyTuNAo9Qv0T+Gz1CJuxgVn5jsz3VSJAjPiYCyybZbWSWkZW36D/bjEv
-	KIBk4y6tXlMcSG432+/+G0w4JKp+DfWhuxEZ3o5PUTIGIpFJiGX4txycwg4IsxWKrJvz4fr0bU8Qq
-	C+/BPfheG3DFv7nryXuRusnXQH3XNMy19kebnwRZd+yFF5HOelGzQEQFd/JctNBzeFHXAp1Vzaid8
-	Pu5aj8B4vXG3olEwf9vfgnRpiTcCSQThRSr5ute0pDI+g18pb2PB5wflQrmw1YmXQuQHjJJiJrBS3
-	eZeAruRtFhXU/nQyf1rQ==;
+	List-Owner; bh=ql11s56CxMrCDwrMovM2buFjtEckkcSG7Ppo1fFzo80=; b=FP09PsqMDeRRYN
+	gVvOPOkUypheCdGEUkV+1w2muKAVX3DonNsoVpJP9s/K7IGy1NSVcX51MKac2oQikZs94Z+2TqbTH
+	4wMh7i9+FG+gqUShWzCVWB1pzA3SNhW5k4e9eIrmin7MbNdVPVZVhpM/hXliXU24VNzSgESPfPj5z
+	OubXC8lZ31L+3u9ZobfwlL7pEUGAS4yuQ3L8uADo51FempMq8aK6tssVA/ftKChOQVVRRDPXZyMHw
+	aS/cd05o9l0sKRuq8IhjGRa20/st7xuGF4S+BlHiEUafD3RS2ULnB+m03fXNxVgs6t5opLVlOTNAC
+	fOUdt/3jqhTPZDoCaq9w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i87wC-0006z9-Tz; Wed, 11 Sep 2019 19:05:56 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1i8836-0000W3-0c; Wed, 11 Sep 2019 19:13:04 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i87w0-0006yO-IG
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 19:05:46 +0000
-Received: by mail-io1-xd44.google.com with SMTP id d17so26512700ios.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 12:05:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=CRqcj7+NuoI4D3cZX40T5TKikuDO93RhQlD6Y+l1eos=;
- b=TFQM0ojamkh1ySloLepkw4Vnnp+z3PWbYhYVqfkdh4RxgGEuHC8TPTbpPbHy6x2JD0
- JRUofNZKnBYbutyDTigYjqzOBsaCkSSp2rSl7dz9AfUYw8IZrQ5RGdVORUbixBiivPyC
- 4We9ZWshElKuWJ4fE3UjLaRxLawGRNLiFCDws2ba2evyAajjVJrUdSZU/0jqB3xkeLkD
- hw3FRKk6X/U5TAhBdki7UmmeY8N76FyqymbXsNA/JGyt+cYmtdrsN94M7mM7DTwRm4ZJ
- ZngIcxjzCos1Tl9aSuDs9N8sMuShcXcZ5ykpNKaAi0c9WhRK14DBUow1s2/49M/VHyx4
- ZBpQ==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=CRqcj7+NuoI4D3cZX40T5TKikuDO93RhQlD6Y+l1eos=;
- b=hU9EtDAeXb9RRW0ASYEwxKcMda54rqseo8Jufk2NfYO9znJIrprwKgvxrNMspsl1Nf
- ulHs3+xbbVGdPd92HkuUwEi/dtJ0VabeDllNDmnUCq2I3YaVrvQXl3ZDF1Fx8kS4HYf5
- 10C7GojwKEu5rT2/4tEjKpYBG+FUaNvsR71EwcL6SuWujwYB6K/kT+WEb/uBCucrmFV0
- 5OAh2dIxU/+GOs3A2j025ODHZ21KohuIcYLQfuO4GgDeUFmAQqWW4cG5eUUZ8FhpR+Md
- 2k+2ZWYzLbDmSlt9s3tNdQRrrOfgjgF3WlAIerPc5Q8RVz2gXPDSoiTIUoo1vB7L7QzZ
- NlvA==
-X-Gm-Message-State: APjAAAUR2FDOvyWgHa15uE7veFSJvi2z2Aj8shS9RQHPPS95Kr6wQ+oQ
- slMwhApplVAvq2AxNtCGvymvx0DgDKsH6f8fXM8=
-X-Google-Smtp-Source: APXvYqyW3zpytIyyY4lkLih9aeq6GQUikYQE55Vk06YhYYlczXfzgPpsPg7ZSwNMCyW0TtkF3zR3Lv4zwFuvzF0J46Y=
-X-Received: by 2002:a02:b395:: with SMTP id p21mr40570622jan.52.1568228743054; 
- Wed, 11 Sep 2019 12:05:43 -0700 (PDT)
+ id 1i882j-0000Vg-WE
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 19:12:43 +0000
+Received: from localhost (c-67-164-102-47.hsd1.ca.comcast.net [67.164.102.47])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7A4242075C;
+ Wed, 11 Sep 2019 19:12:40 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568229161;
+ bh=VPT7mijC4q1kEydmhkrufKNG2yzGMdjsTOZaEMfyAb8=;
+ h=Date:From:To:cc:Subject:In-Reply-To:References:From;
+ b=06FeZG8ZNyNusLCCPXzRSYmNlOeHcB9qefO1tzjUjw08sIGocxmuBX/13QuREeVi3
+ YneN37UBEK1ALsEP802ZNxG5xPe+yh1l9Ame8GNhvAjFqHCXFiolye32I9AJx3Cd3U
+ Dzbya/sKdFP7WtGH5NKiXCZ3PD5UYH97yToyJUN0=
+Date: Wed, 11 Sep 2019 12:12:34 -0700 (PDT)
+From: Stefano Stabellini <sstabellini@kernel.org>
+X-X-Sender: sstabellini@sstabellini-ThinkPad-T480s
+To: Peng Fan <peng.fan@nxp.com>
+Subject: RE: [PATCH V2] arm: xen: mm: use __GPF_DMA32 for arm64
+In-Reply-To: <AM0PR04MB448166E527EF4ABFCE3DD59688B10@AM0PR04MB4481.eurprd04.prod.outlook.com>
+Message-ID: <alpine.DEB.2.21.1909111211290.6288@sstabellini-ThinkPad-T480s>
+References: <1567175255-1798-1-git-send-email-peng.fan@nxp.com>
+ <d7477406-a8a0-5c3c-13dc-2c84e27b8afa@arm.com>
+ <20190830085807.GA15771@infradead.org>
+ <alpine.DEB.2.21.1908301926500.21347@sstabellini-ThinkPad-T480s>
+ <AM0PR04MB448166E527EF4ABFCE3DD59688B10@AM0PR04MB4481.eurprd04.prod.outlook.com>
+User-Agent: Alpine 2.21 (DEB 202 2017-01-01)
 MIME-Version: 1.0
-References: <cover.1568224032.git.hns@goldelico.com>
- <9254e741d1b43d824f0697ec54fe9c132903e244.1568224033.git.hns@goldelico.com>
-In-Reply-To: <9254e741d1b43d824f0697ec54fe9c132903e244.1568224033.git.hns@goldelico.com>
-From: Adam Ford <aford173@gmail.com>
-Date: Wed, 11 Sep 2019 14:05:31 -0500
-Message-ID: <CAHCN7x+rK3aoLN7bKOn69JDsfJX69VSJBTuSRe78_YidmbOzEA@mail.gmail.com>
-Subject: Re: [PATCH v3 1/8] cpufreq: ti-cpufreq: add support for omap34xx and
- omap36xx
-To: "H. Nikolaus Schaller" <hns@goldelico.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_120544_622822_47BF6B43 
-X-CRM114-Status: GOOD (  28.89  )
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190911_121242_062990_F4BC3020 
+X-CRM114-Status: GOOD (  21.07  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -85,6 +68,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,226 +80,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Discussions about the Letux Kernel <letux-kernel@openphoenux.org>,
- linux-pm@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- Viresh Kumar <viresh.kumar@linaro.org>,
- "Rafael J. Wysocki" <rjw@rjwysocki.net>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Enric Balletbo i Serra <eballetbo@gmail.com>, Rob Herring <robh+dt@kernel.org>,
- =?UTF-8?Q?Andr=C3=A9_Roth?= <neolynx@gmail.com>,
- =?UTF-8?Q?Beno=C3=AEt_Cousson?= <bcousson@baylibre.com>,
- kernel@pyra-handheld.com, Teresa Remmet <t.remmet@phytec.de>,
- Javier Martinez Canillas <javier@dowhile0.org>,
- Linux-OMAP <linux-omap@vger.kernel.org>,
- arm-soc <linux-arm-kernel@lists.infradead.org>, Roger Quadros <rogerq@ti.com>
+Cc: "jgross@suse.com" <jgross@suse.com>,
+ Stefano Stabellini <sstabellini@kernel.org>,
+ Catalin Marinas <Catalin.Marinas@arm.com>,
+ "linux@armlinux.org.uk" <linux@armlinux.org.uk>,
+ Christoph Hellwig <hch@infradead.org>, Julien Grall <Julien.Grall@arm.com>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "xen-devel@lists.xenproject.org" <xen-devel@lists.xenproject.org>,
+ "boris.ostrovsky@oracle.com" <boris.ostrovsky@oracle.com>, nd <nd@arm.com>,
+ "will@kernel.org" <will@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ Robin Murphy <Robin.Murphy@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 11, 2019 at 12:47 PM H. Nikolaus Schaller <hns@goldelico.com> wrote:
->
-> This adds code and tables to read the silicon revision and
-> eFuse (speed binned / 720 MHz grade) bits for selecting
-> opp-v2 table entries.
->
-> Since these bits are not always part of the syscon register
-> range (like for am33xx, am43, dra7), we add code to directly
-> read the register values using ioremap() if syscon access fails.
->
-> The format of the opp-supported-hw entries is that it has
-> two 32 bit bitfields. E.g.:
->
->         opp-supported-hw = <0xffffffff 3>
->
-> The first value is matched against the bit position of the
-> silicon revision which is (see TRM)
->
-> omap34xx:
-> BIT(0)  ES1.0
-> BIT(1)  ES2.0
-> BIT(2)  ES2.1
-> BIT(3)  ES3.0
-> BIT(4)  ES3.1
-> BIT(7)  ES3.1.2
->
-> omap36xx:
-> BIT(0)  ES1.0
-> BIT(1)  ES1.1
-> BIT(2)  ES1.2
->
-> The second value is matched against the speed grade eFuse:
->
-> BIT(0)  no high speed OPP
-> BIT(1)  high speed OPP
->
-> This means for the example above that it is always enabled
-> while e.g.
->
->         opp-supported-hw = <0x1 2>
->
-> enables the OPP only for ES1.0 BIT(0) and if the high speed
-> eFuse is set BIT(1).
->
-> Signed-off-by: H. Nikolaus Schaller <hns@goldelico.com>
-> Reviewed-by: Tony Lindgren <tony@atomide.com>
+On Wed, 11 Sep 2019, Peng Fan wrote:
+> > Subject: Re: [PATCH V2] arm: xen: mm: use __GPF_DMA32 for arm64
+> > 
+> > + Juergen, Boris
+> > 
+> > On Fri, 30 Aug 2019, Christoph Hellwig wrote:
+> > > Can we take a step back and figure out what we want to do here?
+> > >
+> > > AFAICS this function allocates memory for the swiotlb-xen buffer, and
+> > > that means it must be <= 32-bit addressable to satisfy the DMA API
+> > > guarantees.  That means we generally want to use GFP_DMA32
+> > everywhere
+> > > that exists, but on systems with odd zones we might want to dip into
+> > > GFP_DMA.  This also means swiotlb-xen doesn't actually do the right
+> > > thing on x86 at the moment.  So shouldn't we just have one common
+> > > routine in swiotlb-xen.c that checks if we have CONFIG_ZONE_DMA32 set,
+> > > then try GFP_DMA32, and if not check if CONFIG_ZONE_DMA is set and
+> > > then try that, else default to GFP_KERNEL?
+> > 
+> > Yes, for ARM/ARM64 it makes a lot of sense given that dom0 is 1:1 mapped
+> > (pseudo-physical == physical).  I'll let Juergen and Boris comment on the x86
+> > side of things, but on x86 PV Dom0 is not 1:1 mapped so
+> > GFP_DMA32 is probably not meaningful.
+> 
+> If we only take ARM/ARM64, so could the following patch be ok?
+> 
+> diff --git a/arch/arm/xen/mm.c b/arch/arm/xen/mm.c
+> index d33b77e9add3..e5a6a73b2e06 100644
+> --- a/arch/arm/xen/mm.c
+> +++ b/arch/arm/xen/mm.c
+> @@ -28,7 +28,11 @@ unsigned long xen_get_swiotlb_free_pages(unsigned int order)
+> 
+>         for_each_memblock(memory, reg) {
+>                 if (reg->base < (phys_addr_t)0xffffffff) {
+> +#ifdef CONFIG_ZONE_DMA32
+> +                       flags |= __GFP_DMA32;
+> +#else
+>                         flags |= __GFP_DMA;
+> +#endif
+>                         break;
+>                 }
+>         }
 
-For the entire series, I tested on the Logic PD devices:
-DM3730 Torpedo, OMAP3530 SOM-LV, DM3730 SOM-LV and AM3517-EVM
-
-Tested-by: Adam Ford <aford173@gmail.com>
-
-> ---
->  drivers/cpufreq/ti-cpufreq.c | 91 +++++++++++++++++++++++++++++++++++-
->  1 file changed, 89 insertions(+), 2 deletions(-)
->
-> diff --git a/drivers/cpufreq/ti-cpufreq.c b/drivers/cpufreq/ti-cpufreq.c
-> index 2ad1ae17932d..f2f58d689320 100644
-> --- a/drivers/cpufreq/ti-cpufreq.c
-> +++ b/drivers/cpufreq/ti-cpufreq.c
-> @@ -31,6 +31,11 @@
->  #define DRA7_EFUSE_OD_MPU_OPP                  BIT(1)
->  #define DRA7_EFUSE_HIGH_MPU_OPP                        BIT(2)
->
-> +#define OMAP3_CONTROL_DEVICE_STATUS            0x4800244C
-> +#define OMAP3_CONTROL_IDCODE                   0x4830A204
-> +#define OMAP34xx_ProdID_SKUID                  0x4830A20C
-> +#define OMAP3_SYSCON_BASE      (0x48000000 + 0x2000 + 0x270)
-> +
->  #define VERSION_COUNT                          2
->
->  struct ti_cpufreq_data;
-> @@ -84,6 +89,13 @@ static unsigned long dra7_efuse_xlate(struct ti_cpufreq_data *opp_data,
->         return calculated_efuse;
->  }
->
-> +static unsigned long omap3_efuse_xlate(struct ti_cpufreq_data *opp_data,
-> +                                     unsigned long efuse)
-> +{
-> +       /* OPP enable bit ("Speed Binned") */
-> +       return BIT(efuse);
-> +}
-> +
->  static struct ti_cpufreq_soc_data am3x_soc_data = {
->         .efuse_xlate = amx3_efuse_xlate,
->         .efuse_fallback = AM33XX_800M_ARM_MPU_MAX_FREQ,
-> @@ -111,6 +123,56 @@ static struct ti_cpufreq_soc_data dra7_soc_data = {
->         .multi_regulator = true,
->  };
->
-> +/*
-> + * OMAP35x TRM (SPRUF98K):
-> + *  CONTROL_IDCODE (0x4830 A204) describes Silicon revisions.
-> + *  Control OMAP Status Register 15:0 (Address 0x4800 244C)
-> + *    to separate between omap3503, omap3515, omap3525, omap3530
-> + *    and feature presence.
-> + *    There are encodings for versions limited to 400/266MHz
-> + *    but we ignore.
-> + *    Not clear if this also holds for omap34xx.
-> + *  some eFuse values e.g. CONTROL_FUSE_OPP1_VDD1
-> + *    are stored in the SYSCON register range
-> + *  Register 0x4830A20C [ProdID.SKUID] [0:3]
-> + *    0x0 for normal 600/430MHz device.
-> + *    0x8 for 720/520MHz device.
-> + *    Not clear what omap34xx value is.
-> + */
-> +
-> +static struct ti_cpufreq_soc_data omap34xx_soc_data = {
-> +       .efuse_xlate = omap3_efuse_xlate,
-> +       .efuse_offset = OMAP34xx_ProdID_SKUID - OMAP3_SYSCON_BASE,
-> +       .efuse_shift = 3,
-> +       .efuse_mask = BIT(3),
-> +       .rev_offset = OMAP3_CONTROL_IDCODE - OMAP3_SYSCON_BASE,
-> +       .multi_regulator = false,
-> +};
-> +
-> +/*
-> + * AM/DM37x TRM (SPRUGN4M)
-> + *  CONTROL_IDCODE (0x4830 A204) describes Silicon revisions.
-> + *  Control Device Status Register 15:0 (Address 0x4800 244C)
-> + *    to separate between am3703, am3715, dm3725, dm3730
-> + *    and feature presence.
-> + *   Speed Binned = Bit 9
-> + *     0 800/600 MHz
-> + *     1 1000/800 MHz
-> + *  some eFuse values e.g. CONTROL_FUSE_OPP 1G_VDD1
-> + *    are stored in the SYSCON register range.
-> + *  There is no 0x4830A20C [ProdID.SKUID] register (exists but
-> + *    seems to always read as 0).
-> + */
-> +
-> +static struct ti_cpufreq_soc_data omap36xx_soc_data = {
-> +       .efuse_xlate = omap3_efuse_xlate,
-> +       .efuse_offset = OMAP3_CONTROL_DEVICE_STATUS - OMAP3_SYSCON_BASE,
-> +       .efuse_shift = 9,
-> +       .efuse_mask = BIT(9),
-> +       .rev_offset = OMAP3_CONTROL_IDCODE - OMAP3_SYSCON_BASE,
-> +       .multi_regulator = false,
-> +};
-> +
->  /**
->   * ti_cpufreq_get_efuse() - Parse and return efuse value present on SoC
->   * @opp_data: pointer to ti_cpufreq_data context
-> @@ -127,7 +189,17 @@ static int ti_cpufreq_get_efuse(struct ti_cpufreq_data *opp_data,
->
->         ret = regmap_read(opp_data->syscon, opp_data->soc_data->efuse_offset,
->                           &efuse);
-> -       if (ret) {
-> +       if (ret == -EIO) {
-> +               /* not a syscon register! */
-> +               void __iomem *regs = ioremap(OMAP3_SYSCON_BASE +
-> +                               opp_data->soc_data->efuse_offset, 4);
-> +
-> +               if (!regs)
-> +                       return -ENOMEM;
-> +               efuse = readl(regs);
-> +               iounmap(regs);
-> +               }
-> +       else if (ret) {
->                 dev_err(dev,
->                         "Failed to read the efuse value from syscon: %d\n",
->                         ret);
-> @@ -158,7 +230,17 @@ static int ti_cpufreq_get_rev(struct ti_cpufreq_data *opp_data,
->
->         ret = regmap_read(opp_data->syscon, opp_data->soc_data->rev_offset,
->                           &revision);
-> -       if (ret) {
-> +       if (ret == -EIO) {
-> +               /* not a syscon register! */
-> +               void __iomem *regs = ioremap(OMAP3_SYSCON_BASE +
-> +                               opp_data->soc_data->rev_offset, 4);
-> +
-> +               if (!regs)
-> +                       return -ENOMEM;
-> +               revision = readl(regs);
-> +               iounmap(regs);
-> +               }
-> +       else if (ret) {
->                 dev_err(dev,
->                         "Failed to read the revision number from syscon: %d\n",
->                         ret);
-> @@ -190,6 +272,11 @@ static const struct of_device_id ti_cpufreq_of_match[] = {
->         { .compatible = "ti,am33xx", .data = &am3x_soc_data, },
->         { .compatible = "ti,am43", .data = &am4x_soc_data, },
->         { .compatible = "ti,dra7", .data = &dra7_soc_data },
-> +       { .compatible = "ti,omap34xx", .data = &omap34xx_soc_data, },
-> +       { .compatible = "ti,omap36xx", .data = &omap36xx_soc_data, },
-> +       /* legacy */
-> +       { .compatible = "ti,omap3430", .data = &omap34xx_soc_data, },
-> +       { .compatible = "ti,omap3630", .data = &omap36xx_soc_data, },
->         {},
->  };
->
-> --
-> 2.19.1
->
->
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+I am OK with something like this, but at that point we can use
+IS_ENABLED(CONFIG_ZONE_DMA32) for the check.
 
 _______________________________________________
 linux-arm-kernel mailing list
