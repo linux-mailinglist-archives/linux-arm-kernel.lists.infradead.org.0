@@ -2,64 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 87822AFC2C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:06:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C320AFC37
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:09:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=lqfM6g7KJ+oMN2ViJf0ul/WrMphhNjl+/aE2LI9Obvg=; b=abZwcQeSCb1/DX5QEKNIKEG7Ny
-	8kvGEIpWi5yuOuhgebVyh4On1/KRCVanosp5c47kM01KHFhFRLGkU1WLXCuhIwiLs8UCqd98XRQLJ
-	JUbF0nkVtLXTghFyxM+lMDtJchovMz9Xpv+y79tGJnbyrWi0F4nbQx+nJkoHMmbdQJ8Aa5Gz3Hqxf
-	Vxy7n+tmaertwXfzdhtq7UyY/+0QsKxmd4RHsYeAHOsjRmY1A4iqv1VG3hFubJ9d5b+UqDKvLOvfH
-	FSTHYmoaIUMulzxnb3FjWtJ3PsyPeEog7WV+HLuKx5d/I9Is4qlmpHRLcywZy9XTRmfYILrp6ht56
-	+XWQ40cw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=8e9TDRGKsGu2Uq5FwcfMHtzUw8wegQ2WM39Q3l/1Mis=; b=suFZN9WX/tfrBn
+	U95n9Je6bz7LF8xU/rsnowhJeacSInZxoOVOQXqB2WhOQKShX5leSJ5Z3sTLS3LYG9pPxeLCC+q65
+	R4k0rATZcv54Omo+oj1goSxCcvd6QO4nFWm4wyAsABzf01MkTeNOvQB4bIlNIobqML/MFKrLjogxo
+	e4DfffwmJPgaNrbK3t6adAvoUjp85FLeD48adAFr0JmujxbL4Eva3xwM2UwX5PLCnh0xgTTyZ5dQC
+	CuwNEtHDXTTUz8Yw4u0rBiIGoyEBxiscYkWqctPbCPl4Tvc8QiJRlReCiBvFT1PwzfkQ7MEDE9oZP
+	eDu5+Amnb1u4RM28tLkA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i81Od-00062U-Fp; Wed, 11 Sep 2019 12:06:52 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i81Qn-0003ij-6v; Wed, 11 Sep 2019 12:09:05 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i81NQ-00051s-UN
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 12:05:39 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id F1EA21A0091;
- Wed, 11 Sep 2019 14:05:34 +0200 (CEST)
-Received: from inva024.eu-rdc02.nxp.com (inva024.eu-rdc02.nxp.com
- [134.27.226.22])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id E462A1A008D;
- Wed, 11 Sep 2019 14:05:34 +0200 (CEST)
-Received: from fsr-ub1864-112.ea.freescale.net
- (fsr-ub1864-112.ea.freescale.net [10.171.82.98])
- by inva024.eu-rdc02.nxp.com (Postfix) with ESMTP id 4CE44205DE;
- Wed, 11 Sep 2019 14:05:34 +0200 (CEST)
-From: Leonard Crestez <leonard.crestez@nxp.com>
-To: Stephen Boyd <sboyd@kernel.org>, Shawn Guo <shawnguo@kernel.org>,
- Jacky Bai <ping.bai@nxp.com>, Abel Vesa <abel.vesa@nxp.com>
-Subject: [PATCH 3/3] clk: imx8mn: Define gates for pll1/2 fixed dividers
-Date: Wed, 11 Sep 2019 15:05:29 +0300
-Message-Id: <d6443fc624e18311a434540f6aea0f22f63868d3.1568203237.git.leonard.crestez@nxp.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <cover.1568203237.git.leonard.crestez@nxp.com>
-References: <cover.1568203237.git.leonard.crestez@nxp.com>
-In-Reply-To: <cover.1568203237.git.leonard.crestez@nxp.com>
-References: <cover.1568203237.git.leonard.crestez@nxp.com>
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i81QX-0003hw-St
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 12:08:51 +0000
+Received: from mail-qk1-f200.google.com (mail-qk1-f200.google.com
+ [209.85.222.200])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 0E08B2A09D4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 12:08:49 +0000 (UTC)
+Received: by mail-qk1-f200.google.com with SMTP id k68so24772502qkb.19
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 05:08:49 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=enh0zIvHZGYnRPPPLW+6aSKLca0Arx8DkKfrIqKoLus=;
+ b=TVFQ1qj811pKOLjGqbItCtqDT4xZpxcieGUDbDMvlVq0HdVn6HtS2C14F80tYxMvKq
+ NeKD72kWPMWclsjybZg11MejXo4Pxr3fdZ97+U7cIMjO9my4EdKaFjPMLLEiUzIhjK2N
+ 6ndRe8kKsAwVm83nAigD/3MXksT4KSBEpSacks0by4Ha16NPcNIdZF7ymbPjID2AJdtw
+ J90NTQYctuf8FC7Gc3HoyUuXOBH6kO4LaPwH+M+MPKocLU1TaWy2foPY7Zb4ggLy5MI3
+ 2V1dRwbxZARzQme1gFsb4Upobmb9zPvo4K1ZR/px2QalFHYBqsUO29e5KgxxxT9zM9vN
+ QDzg==
+X-Gm-Message-State: APjAAAWhpWmh7pK0icmw6enCDI05bv1w6lZz7zeFd+eSJEzYT/4g56L9
+ goBE9SMFHICL3ys5phUI/O72DaXxREbmCwousx3CEJxVEo84MlmiYaR1kxaskLlyGuw9m+4DBKC
+ jedJzU1MaYFzDZT61gQEmX/5OhZ4bNnNbZuo=
+X-Received: by 2002:ac8:3564:: with SMTP id z33mr18649579qtb.291.1568203728299; 
+ Wed, 11 Sep 2019 05:08:48 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqzeft2UuPFTSdxyb4bOFOk8mjCIC7+wIdafGuW+Aj+RlGHxCc75dN/Ohnmz48toLx7v9uY0nw==
+X-Received: by 2002:ac8:3564:: with SMTP id z33mr18649552qtb.291.1568203728135; 
+ Wed, 11 Sep 2019 05:08:48 -0700 (PDT)
+Received: from redhat.com ([80.74.107.118])
+ by smtp.gmail.com with ESMTPSA id x12sm8228721qtb.32.2019.09.11.05.08.40
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Wed, 11 Sep 2019 05:08:47 -0700 (PDT)
+Date: Wed, 11 Sep 2019 08:08:38 -0400
+From: "Michael S. Tsirkin" <mst@redhat.com>
+To: Michal Hocko <mhocko@kernel.org>
+Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
+Message-ID: <20190911080804-mutt-send-email-mst@kernel.org>
+References: <20190907172225.10910.34302.stgit@localhost.localdomain>
+ <20190910124209.GY2063@dhcp22.suse.cz>
+ <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
+ <20190910144713.GF2063@dhcp22.suse.cz>
+ <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
+ <20190910175213.GD4023@dhcp22.suse.cz>
+ <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
+ <20190911113619.GP4023@dhcp22.suse.cz>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190911113619.GP4023@dhcp22.suse.cz>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_050537_320026_2BC92A91 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190911_050849_974537_CC3DE627 
+X-CRM114-Status: GOOD (  23.03  )
+X-Spam-Score: -3.5 (---)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-3.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
+ [80.74.107.118 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,140 +97,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Dong Aisheng <aisheng.dong@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Michael Turquette <mturquette@baylibre.com>, linux-imx@nxp.com,
- kernel@pengutronix.de, Fabio Estevam <fabio.estevam@nxp.com>,
- linux-clk@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
+ kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
+ Catalin Marinas <catalin.marinas@arm.com>,
+ Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
+ linux-mm <linux-mm@kvack.org>,
+ Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
+ Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
+ Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
+ Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
+ Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
+ Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
+ Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
+ Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
+ Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
+ Fengguang Wu <fengguang.wu@intel.com>,
+ "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On imx8mn there are 9 fixed-factor dividers for SYS_PLL1 and SYS_PLL2
-each with their own gate. Only one of these gates (the one "dividing" by
-one) is currently defined and it's incorrectly set as the parent of all
-the fixed-factor dividers.
+On Wed, Sep 11, 2019 at 01:36:19PM +0200, Michal Hocko wrote:
+> On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
+> [...]
+> > We don't put any limitations on the allocator other then that it needs to
+> > clean up the metadata on allocation, and that it cannot allocate a page
+> > that is in the process of being reported since we pulled it from the
+> > free_list. If the page is a "Reported" page then it decrements the
+> > reported_pages count for the free_area and makes sure the page doesn't
+> > exist in the "Boundary" array pointer value, if it does it moves the
+> > "Boundary" since it is pulling the page.
+> 
+> This is still a non-trivial limitation on the page allocation from an
+> external code IMHO. I cannot give any explicit reason why an ordering on
+> the free list might matter (well except for page shuffling which uses it
+> to make physical memory pattern allocation more random) but the
+> architecture seems hacky and dubious to be honest. It shoulds like the
+> whole interface has been developed around a very particular and single
+> purpose optimization.
+> 
+> I remember that there was an attempt to report free memory that provided
+> a callback mechanism [1], which was much less intrusive to the internals
+> of the allocator yet it should provide a similar functionality. Did you
+> see that approach? How does this compares to it? Or am I completely off
+> when comparing them?
+> 
+> [1] mostly likely not the latest version of the patchset
+> http://lkml.kernel.org/r/1502940416-42944-5-git-send-email-wei.w.wang@intel.com
+> 
+> -- 
+> Michal Hocko
+> SUSE Labs
 
-Add the other 8 gates to the clock tree between sys_pll1/2_bypass and
-the fixed dividers.
-
-Signed-off-by: Leonard Crestez <leonard.crestez@nxp.com>
----
- drivers/clk/imx/clk-imx8mn.c             | 57 ++++++++++++++++--------
- include/dt-bindings/clock/imx8mn-clock.h | 19 +++++++-
- 2 files changed, 56 insertions(+), 20 deletions(-)
-
-diff --git a/drivers/clk/imx/clk-imx8mn.c b/drivers/clk/imx/clk-imx8mn.c
-index cc65c1369530..ca5f760a1108 100644
---- a/drivers/clk/imx/clk-imx8mn.c
-+++ b/drivers/clk/imx/clk-imx8mn.c
-@@ -450,33 +450,52 @@ static int imx8mn_clocks_probe(struct platform_device *pdev)
- 	clks[IMX8MN_VIDEO_PLL1_OUT] = imx_clk_gate("video_pll1_out", "video_pll1_bypass", base + 0x28, 13);
- 	clks[IMX8MN_DRAM_PLL_OUT] = imx_clk_gate("dram_pll_out", "dram_pll_bypass", base + 0x50, 13);
- 	clks[IMX8MN_GPU_PLL_OUT] = imx_clk_gate("gpu_pll_out", "gpu_pll_bypass", base + 0x64, 11);
- 	clks[IMX8MN_VPU_PLL_OUT] = imx_clk_gate("vpu_pll_out", "vpu_pll_bypass", base + 0x74, 11);
- 	clks[IMX8MN_ARM_PLL_OUT] = imx_clk_gate("arm_pll_out", "arm_pll_bypass", base + 0x84, 11);
--	clks[IMX8MN_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1_bypass", base + 0x94, 11);
--	clks[IMX8MN_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2_bypass", base + 0x104, 11);
- 	clks[IMX8MN_SYS_PLL3_OUT] = imx_clk_gate("sys_pll3_out", "sys_pll3_bypass", base + 0x114, 11);
- 
--	/* SYS PLL fixed output */
--	clks[IMX8MN_SYS_PLL1_40M] = imx_clk_fixed_factor("sys_pll1_40m", "sys_pll1_out", 1, 20);
--	clks[IMX8MN_SYS_PLL1_80M] = imx_clk_fixed_factor("sys_pll1_80m", "sys_pll1_out", 1, 10);
--	clks[IMX8MN_SYS_PLL1_100M] = imx_clk_fixed_factor("sys_pll1_100m", "sys_pll1_out", 1, 8);
--	clks[IMX8MN_SYS_PLL1_133M] = imx_clk_fixed_factor("sys_pll1_133m", "sys_pll1_out", 1, 6);
--	clks[IMX8MN_SYS_PLL1_160M] = imx_clk_fixed_factor("sys_pll1_160m", "sys_pll1_out", 1, 5);
--	clks[IMX8MN_SYS_PLL1_200M] = imx_clk_fixed_factor("sys_pll1_200m", "sys_pll1_out", 1, 4);
--	clks[IMX8MN_SYS_PLL1_266M] = imx_clk_fixed_factor("sys_pll1_266m", "sys_pll1_out", 1, 3);
--	clks[IMX8MN_SYS_PLL1_400M] = imx_clk_fixed_factor("sys_pll1_400m", "sys_pll1_out", 1, 2);
-+	/* SYS PLL1 fixed output */
-+	clks[IMX8MN_SYS_PLL1_40M_CG] = imx_clk_gate("sys_pll1_40m_cg", "sys_pll1_bypass", base + 0x94, 27);
-+	clks[IMX8MN_SYS_PLL1_80M_CG] = imx_clk_gate("sys_pll1_80m_cg", "sys_pll1_bypass", base + 0x94, 25);
-+	clks[IMX8MN_SYS_PLL1_100M_CG] = imx_clk_gate("sys_pll1_100m_cg", "sys_pll1_bypass", base + 0x94, 23);
-+	clks[IMX8MN_SYS_PLL1_133M_CG] = imx_clk_gate("sys_pll1_133m_cg", "sys_pll1_bypass", base + 0x94, 21);
-+	clks[IMX8MN_SYS_PLL1_160M_CG] = imx_clk_gate("sys_pll1_160m_cg", "sys_pll1_bypass", base + 0x94, 19);
-+	clks[IMX8MN_SYS_PLL1_200M_CG] = imx_clk_gate("sys_pll1_200m_cg", "sys_pll1_bypass", base + 0x94, 17);
-+	clks[IMX8MN_SYS_PLL1_266M_CG] = imx_clk_gate("sys_pll1_266m_cg", "sys_pll1_bypass", base + 0x94, 15);
-+	clks[IMX8MN_SYS_PLL1_400M_CG] = imx_clk_gate("sys_pll1_400m_cg", "sys_pll1_bypass", base + 0x94, 13);
-+	clks[IMX8MN_SYS_PLL1_OUT] = imx_clk_gate("sys_pll1_out", "sys_pll1_bypass", base + 0x94, 11);
-+
-+	clks[IMX8MN_SYS_PLL1_40M] = imx_clk_fixed_factor("sys_pll1_40m", "sys_pll1_40m_cg", 1, 20);
-+	clks[IMX8MN_SYS_PLL1_80M] = imx_clk_fixed_factor("sys_pll1_80m", "sys_pll1_80m_cg", 1, 10);
-+	clks[IMX8MN_SYS_PLL1_100M] = imx_clk_fixed_factor("sys_pll1_100m", "sys_pll1_100m_cg", 1, 8);
-+	clks[IMX8MN_SYS_PLL1_133M] = imx_clk_fixed_factor("sys_pll1_133m", "sys_pll1_133m_cg", 1, 6);
-+	clks[IMX8MN_SYS_PLL1_160M] = imx_clk_fixed_factor("sys_pll1_160m", "sys_pll1_160m_cg", 1, 5);
-+	clks[IMX8MN_SYS_PLL1_200M] = imx_clk_fixed_factor("sys_pll1_200m", "sys_pll1_200m_cg", 1, 4);
-+	clks[IMX8MN_SYS_PLL1_266M] = imx_clk_fixed_factor("sys_pll1_266m", "sys_pll1_266m_cg", 1, 3);
-+	clks[IMX8MN_SYS_PLL1_400M] = imx_clk_fixed_factor("sys_pll1_400m", "sys_pll1_400m_cg", 1, 2);
- 	clks[IMX8MN_SYS_PLL1_800M] = imx_clk_fixed_factor("sys_pll1_800m", "sys_pll1_out", 1, 1);
- 
--	clks[IMX8MN_SYS_PLL2_50M] = imx_clk_fixed_factor("sys_pll2_50m", "sys_pll2_out", 1, 20);
--	clks[IMX8MN_SYS_PLL2_100M] = imx_clk_fixed_factor("sys_pll2_100m", "sys_pll2_out", 1, 10);
--	clks[IMX8MN_SYS_PLL2_125M] = imx_clk_fixed_factor("sys_pll2_125m", "sys_pll2_out", 1, 8);
--	clks[IMX8MN_SYS_PLL2_166M] = imx_clk_fixed_factor("sys_pll2_166m", "sys_pll2_out", 1, 6);
--	clks[IMX8MN_SYS_PLL2_200M] = imx_clk_fixed_factor("sys_pll2_200m", "sys_pll2_out", 1, 5);
--	clks[IMX8MN_SYS_PLL2_250M] = imx_clk_fixed_factor("sys_pll2_250m", "sys_pll2_out", 1, 4);
--	clks[IMX8MN_SYS_PLL2_333M] = imx_clk_fixed_factor("sys_pll2_333m", "sys_pll2_out", 1, 3);
--	clks[IMX8MN_SYS_PLL2_500M] = imx_clk_fixed_factor("sys_pll2_500m", "sys_pll2_out", 1, 2);
-+	/* SYS PLL2 fixed output */
-+	clks[IMX8MN_SYS_PLL2_50M_CG] = imx_clk_gate("sys_pll2_50m_cg", "sys_pll2_bypass", base + 0x104, 27);
-+	clks[IMX8MN_SYS_PLL2_100M_CG] = imx_clk_gate("sys_pll2_100m_cg", "sys_pll2_bypass", base + 0x104, 25);
-+	clks[IMX8MN_SYS_PLL2_125M_CG] = imx_clk_gate("sys_pll2_125m_cg", "sys_pll2_bypass", base + 0x104, 23);
-+	clks[IMX8MN_SYS_PLL2_166M_CG] = imx_clk_gate("sys_pll2_166m_cg", "sys_pll2_bypass", base + 0x104, 21);
-+	clks[IMX8MN_SYS_PLL2_200M_CG] = imx_clk_gate("sys_pll2_200m_cg", "sys_pll2_bypass", base + 0x104, 19);
-+	clks[IMX8MN_SYS_PLL2_250M_CG] = imx_clk_gate("sys_pll2_250m_cg", "sys_pll2_bypass", base + 0x104, 17);
-+	clks[IMX8MN_SYS_PLL2_333M_CG] = imx_clk_gate("sys_pll2_333m_cg", "sys_pll2_bypass", base + 0x104, 15);
-+	clks[IMX8MN_SYS_PLL2_500M_CG] = imx_clk_gate("sys_pll2_500m_cg", "sys_pll2_bypass", base + 0x104, 13);
-+	clks[IMX8MN_SYS_PLL2_OUT] = imx_clk_gate("sys_pll2_out", "sys_pll2_bypass", base + 0x104, 11);
-+
-+	clks[IMX8MN_SYS_PLL2_50M] = imx_clk_fixed_factor("sys_pll2_50m", "sys_pll2_50m_cg", 1, 20);
-+	clks[IMX8MN_SYS_PLL2_100M] = imx_clk_fixed_factor("sys_pll2_100m", "sys_pll2_100m_cg", 1, 10);
-+	clks[IMX8MN_SYS_PLL2_125M] = imx_clk_fixed_factor("sys_pll2_125m", "sys_pll2_125m_cg", 1, 8);
-+	clks[IMX8MN_SYS_PLL2_166M] = imx_clk_fixed_factor("sys_pll2_166m", "sys_pll2_166m_cg", 1, 6);
-+	clks[IMX8MN_SYS_PLL2_200M] = imx_clk_fixed_factor("sys_pll2_200m", "sys_pll2_200m_cg", 1, 5);
-+	clks[IMX8MN_SYS_PLL2_250M] = imx_clk_fixed_factor("sys_pll2_250m", "sys_pll2_250m_cg", 1, 4);
-+	clks[IMX8MN_SYS_PLL2_333M] = imx_clk_fixed_factor("sys_pll2_333m", "sys_pll2_333m_cg", 1, 3);
-+	clks[IMX8MN_SYS_PLL2_500M] = imx_clk_fixed_factor("sys_pll2_500m", "sys_pll2_500m_cg", 1, 2);
- 	clks[IMX8MN_SYS_PLL2_1000M] = imx_clk_fixed_factor("sys_pll2_1000m", "sys_pll2_out", 1, 1);
- 
- 	np = dev->of_node;
- 	base = devm_platform_ioremap_resource(pdev, 0);
- 	if (WARN_ON(IS_ERR(base))) {
-diff --git a/include/dt-bindings/clock/imx8mn-clock.h b/include/dt-bindings/clock/imx8mn-clock.h
-index d7b201652f4c..0f2b8423ce1d 100644
---- a/include/dt-bindings/clock/imx8mn-clock.h
-+++ b/include/dt-bindings/clock/imx8mn-clock.h
-@@ -209,8 +209,25 @@
- #define IMX8MN_CLK_ARM				191
- #define IMX8MN_CLK_NAND_USDHC_BUS_RAWNAND_CLK	192
- #define IMX8MN_CLK_GPU_CORE_ROOT		193
- #define IMX8MN_CLK_GIC				194
- 
--#define IMX8MN_CLK_END				195
-+#define IMX8MN_SYS_PLL1_40M_CG			195
-+#define IMX8MN_SYS_PLL1_80M_CG			196
-+#define IMX8MN_SYS_PLL1_100M_CG			197
-+#define IMX8MN_SYS_PLL1_133M_CG			198
-+#define IMX8MN_SYS_PLL1_160M_CG			199
-+#define IMX8MN_SYS_PLL1_200M_CG			200
-+#define IMX8MN_SYS_PLL1_266M_CG			201
-+#define IMX8MN_SYS_PLL1_400M_CG			202
-+#define IMX8MN_SYS_PLL2_50M_CG			203
-+#define IMX8MN_SYS_PLL2_100M_CG			204
-+#define IMX8MN_SYS_PLL2_125M_CG			205
-+#define IMX8MN_SYS_PLL2_166M_CG			206
-+#define IMX8MN_SYS_PLL2_200M_CG			207
-+#define IMX8MN_SYS_PLL2_250M_CG			208
-+#define IMX8MN_SYS_PLL2_333M_CG			209
-+#define IMX8MN_SYS_PLL2_500M_CG			210
-+
-+#define IMX8MN_CLK_END				211
- 
- #endif
--- 
-2.17.1
-
+Linus nacked that one. He thinks invoking callbacks with lots of
+internal mm locks is too fragile.
 
 _______________________________________________
 linux-arm-kernel mailing list
