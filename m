@@ -2,61 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6BE41AFD9D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 15:20:28 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D141BAFDAB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 15:23:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=OLFgaJylI9ZBBlmwGr+xc9wX3nineAt9Jl4iPf5IJx4=; b=czLpy4rFEjdDHz
-	zIkCXiSdW4vQeT/v2LtCpXQ/jN04lYH7rkUlzXnK/agjDpS3kGM/JqvYxzCP0yL0NmcC4nKlxwmkv
-	dgnn1g6+ytZq4Br+nb6bY/wwHW0t2txmIJ5VRRjMzdmOyRy3uGdwfRUrwiyT6L3Zgy4gnS8AYWIG0
-	DwwHMTDtMKXHTNBFJxNRLhz7LVqBplvzne8oaFD07T9oFvqS1cYYH+xa+x37+/Kk/bkpqosIedxmf
-	68S2jzpDFSWzo0AdVshYX1mWE+t5c6qXQG2hnLoGdRs1UlOWb0tTm4NWGRVhHyE0TqxVrUoSNq3x4
-	0j81i/eSt153B+X2Dj6A==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=r9igpL7Ua9ww8zpgxksJ3QWGZOJDtwgMJeXlfo8Lj24=; b=F+SrHEcdjIt15l
+	KZVlTF3Ix4fqeMKB+BRszWSrjwGO1Vv7e9gv4wiYAchyU/Gmec5jMACfwVuLjrxG4PpZlWdLecatX
+	gvMddxZPR+JudeDjb8g75M84Xvhd9bPXKDUcCOx+eBYN8548U3W0nZVSrWK/8CmyIucgAhFW5HLTi
+	OQ/zR171hvbsfveaUGNvqMHoTHu7NqUHSgyQUaJg6qt6Xz71tyhLHI8tvH256aXoOHdSwqJLkcJVI
+	oWC3uRqP0yYlBZxyMYu8I/mlniYD1v9W6bM1Lu2qw2cxQkzhhPa+esFbOWPaXFQR2B3cT5+L4rwJ6
+	Lgz2tFgVlQPkgcjD4iqg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i82Xq-0007dO-UR; Wed, 11 Sep 2019 13:20:27 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i82av-0000Ne-3X; Wed, 11 Sep 2019 13:23:37 +0000
+Received: from mail2-relais-roc.national.inria.fr ([192.134.164.83])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i82XW-0006e6-Al
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 13:20:08 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id D5E76AF97;
- Wed, 11 Sep 2019 13:20:02 +0000 (UTC)
-Date: Wed, 11 Sep 2019 15:20:02 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190911132002.GA4023@dhcp22.suse.cz>
-References: <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
- <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
- <20190911113619.GP4023@dhcp22.suse.cz>
- <20190911080804-mutt-send-email-mst@kernel.org>
- <20190911121941.GU4023@dhcp22.suse.cz>
- <20190911122526.GV4023@dhcp22.suse.cz>
- <4748a572-57b3-31da-0dde-30138e550c3a@redhat.com>
- <20190911125413.GY4023@dhcp22.suse.cz>
- <736594d6-b9ae-ddb9-2b96-85648728ef33@redhat.com>
+ id 1i82aj-0000Mz-EW
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 13:23:26 +0000
+X-IronPort-AV: E=Sophos;i="5.64,493,1559512800"; d="scan'208";a="401262392"
+Received: from no3.u-bordeaux.fr (HELO [10.3.4.179]) ([147.210.245.180])
+ by mail2-relais-roc.national.inria.fr with ESMTP/TLS/AES128-SHA;
+ 11 Sep 2019 15:23:23 +0200
+To: linux-arm-kernel@lists.infradead.org
+From: Brice Goglin <Brice.Goglin@inria.fr>
+Subject: offline CPUs shown in sysfs core_siblings mask
+Openpgp: preference=signencrypt
+Autocrypt: addr=Brice.Goglin@inria.fr; prefer-encrypt=mutual; keydata=
+ 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
+Message-ID: <c1596783-cd14-8247-3c42-faa052c5c066@inria.fr>
+Date: Wed, 11 Sep 2019 15:23:23 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <736594d6-b9ae-ddb9-2b96-85648728ef33@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_062006_677711_B16BAE2D 
-X-CRM114-Status: GOOD (  32.48  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190911_062325_766887_F5353100 
+X-CRM114-Status: UNSURE (   7.65  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.134.164.83 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -69,146 +103,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
- Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 11-09-19 15:03:39, David Hildenbrand wrote:
-> On 11.09.19 14:54, Michal Hocko wrote:
-> > On Wed 11-09-19 14:42:41, David Hildenbrand wrote:
-> >> On 11.09.19 14:25, Michal Hocko wrote:
-> >>> On Wed 11-09-19 14:19:41, Michal Hocko wrote:
-> >>>> On Wed 11-09-19 08:08:38, Michael S. Tsirkin wrote:
-> >>>>> On Wed, Sep 11, 2019 at 01:36:19PM +0200, Michal Hocko wrote:
-> >>>>>> On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
-> >>>>>> [...]
-> >>>>>>> We don't put any limitations on the allocator other then that it needs to
-> >>>>>>> clean up the metadata on allocation, and that it cannot allocate a page
-> >>>>>>> that is in the process of being reported since we pulled it from the
-> >>>>>>> free_list. If the page is a "Reported" page then it decrements the
-> >>>>>>> reported_pages count for the free_area and makes sure the page doesn't
-> >>>>>>> exist in the "Boundary" array pointer value, if it does it moves the
-> >>>>>>> "Boundary" since it is pulling the page.
-> >>>>>>
-> >>>>>> This is still a non-trivial limitation on the page allocation from an
-> >>>>>> external code IMHO. I cannot give any explicit reason why an ordering on
-> >>>>>> the free list might matter (well except for page shuffling which uses it
-> >>>>>> to make physical memory pattern allocation more random) but the
-> >>>>>> architecture seems hacky and dubious to be honest. It shoulds like the
-> >>>>>> whole interface has been developed around a very particular and single
-> >>>>>> purpose optimization.
-> >>>>>>
-> >>>>>> I remember that there was an attempt to report free memory that provided
-> >>>>>> a callback mechanism [1], which was much less intrusive to the internals
-> >>>>>> of the allocator yet it should provide a similar functionality. Did you
-> >>>>>> see that approach? How does this compares to it? Or am I completely off
-> >>>>>> when comparing them?
-> >>>>>>
-> >>>>>> [1] mostly likely not the latest version of the patchset
-> >>>>>> http://lkml.kernel.org/r/1502940416-42944-5-git-send-email-wei.w.wang@intel.com
-> >>>>>
-> >>>>> Linus nacked that one. He thinks invoking callbacks with lots of
-> >>>>> internal mm locks is too fragile.
-> >>>>
-> >>>> I would be really curious how much he would be happy about injecting
-> >>>> other restrictions on the allocator like this patch proposes. This is
-> >>>> more intrusive as it has a higher maintenance cost longterm IMHO.
-> >>>
-> >>> Btw. I do agree that callbacks with internal mm locks are not great
-> >>> either. We do have a model for that in mmu_notifiers and it is something
-> >>> I do consider PITA, on the other hand it is mostly sleepable part of the
-> >>> interface which makes it the real pain. The above callback mechanism was
-> >>> explicitly documented with restrictions and that the context is
-> >>> essentially atomic with no access to particular struct pages and no
-> >>> expensive operations possible. So in the end I've considered it
-> >>> acceptably painful. Not that I want to override Linus' nack but if
-> >>> virtualization usecases really require some form of reporting and no
-> >>> other way to do that push people to invent even more interesting
-> >>> approaches then we should simply give them/you something reasonable
-> >>> and least intrusive to our internals.
-> >>>
-> >>
-> >> The issue with "[PATCH v14 4/5] mm: support reporting free page blocks"
-> >>  is that it cannot really handle the use case we have here if I am not
-> >> wrong. While a page is getting processed by the hypervisor (e.g.
-> >> MADV_DONTNEED), it must not get reused.
-> > 
-> > What prevents to use the callback to get a list of pfn ranges to work on
-> > and then use something like start_isolate_page_range on the collected
-> > pfn ranges to make sure nobody steals pages from under your feet, do
-> > your thing and drop the isolated state afterwards.
-> > 
-> > I am saying somethig like because you wouldn't really want a generic
-> > has_unmovable_pages but rather
-> >                 if (!page_ref_count(page)) {
-> >                         if (PageBuddy(page))
-> >                                 iter += (1 << page_order(page)) - 1;
-> >                         continue;
-> >                 }
-> > subset of it.
-> > 
-> 
-> Something slightly similar is being performed by Nitesh's patch set. On
-> every free of a certain granularity, he records it in the bitmap. These
-> bits are "hints of free pages".
-> 
-> A thread then walks over the bitmap and tries to allocate the "hints".
-> If the pages were already reused, the bit is silently cleared.
-> 
-> Instead of allocating/freeing, we could only try to isolate the
-> pageblock, then test if free. (One of the usual issues to work around is
-> MAX_ORDER-1 crossing pageblocks, that might need special care)
+Hello
 
-OK, cool that I have reinvented the wheel ;). Allocation is indeed not
-necessary as long as pages are isolated because nobody will allocate
-them.
- 
-> I think you should have a look at the rough idea of Nitesh's patch set
-> to see if something like that is going into a better direction. The
-> bitmap part is in place to do bulk reporting and avoid duplicate reports.
+We have a report from a user of hwloc/lstopo on ThunderX2 that complains
+that offline CPUs are shown in sysfs cpu core_siblings files.
 
-Let's see how much time I can find for that in my endless inbox whack a mole.
- 
-> I think main points we want (and what I am missing from callback idea
-> being discussed) are
-> 1. Do bulk reporting only when a certain threshold is reached
+$ cat sys/devices/system/cpu/*/topology/core_siblings
+000000,0fffffff
+000000,0fffffff
+000000,0fffffff
+000000,0fffffff
+ffffff,f0000000
+ffffff,f0000000
+ffffff,f0000000
+ffffff,f0000000
 
-Is a time based approach too coarse?
+Only 8 online logicial CPUs, but 56 are shown in these masks. This is on
+RHEL7 with a kernel 4.14.0-115.2.2.el7a.aarch64 but I couldn't find any
+significant change in Linux git.
 
-> 2. Report only bigger granularities (especially, avoid THP splits in the
-> hypervisor - >= 2MB proofed to be effective)
+On x86, only online CPUs are shown, you would get:
 
-the callback has supported order based scan in some of its iteration.
+$ cat sys/devices/system/cpu/*/topology/core_siblings
+000000,0000000f
+000000,0000000f
+000000,0000000f
+000000,0000000f
+000000,f0000000
+000000,f0000000
+000000,f0000000
+000000,f0000000
 
-> 3. Avoid reporting what has just been reported.
+I guess thread_siblings has the same behavior but I couldn't test it.
 
-Is the overhead of checking a pfn range in a bitmask that much of an
-overhead to really care?
+Do you ever plan to align the ARM behavior with x86? I couldn't find
+anything in the doc stating whether offline CPUs are supposed to be
+shown there, but it would be nice to have the same behavior across
+different architectures. I couldn't find any such code for POWER either.
 
-> 4. Continuously report, not the "one time report everything" approach.
+Brice
 
-So you mean the allocator reporting this rather than an external code to
-poll right? I do not know, how much this is nice to have than must have?
--- 
-Michal Hocko
-SUSE Labs
+
 
 _______________________________________________
 linux-arm-kernel mailing list
