@@ -2,86 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 25B4DAF7E5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:27:51 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0394BAF803
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:32:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=CsOYp8bx3mk+MrfrUXyywrofyY1nUMQiTMd6LoDAVYU=; b=dmdKUsNKIFGk/B
-	wa4AKxWytSWvjy683U8Sehbzf/eb0mRvLp+CjuPIWjuyT3ajIIXkOWrDoTGZ98Kg4Vz2/GeQLgqJ2
-	Jj481kAiDx6WAdEDxAtiJwS5Al8qm3kUv54Br+Rwk+IijdDYtQWx3j+HeAHiXJ/MdN7wW0rmVi9fX
-	ePj9BLqqwdr7KsqTUl5aP9JE+ciPi/JOXaQ2ZS15OYsNCYQl0eGLF2vw4li4YUKE+L/09hmFUwPlt
-	VWlSIrDEWbwSEUDPyzozIfnw+UvgzsUO9mVqBuuPoE/StMfgnU7ya6WhcncVd4Aw0w1p+072+eI76
-	08/uIspgsHMNT5wyTd0w==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Subject:To:From:Message-ID:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=yO4SAbgixAYKWFD5pCe05Yg9nkL4XAEX5B8F6pPhf0E=; b=Y5hYoiNO1DkbLo
+	4NFPKXLTPi0X5xvbgK9NAdlpYTzzx5XHOAnpjQAr8+PUgBJx+gnD48NrL6NBDy6a97jIXt6Fea7Rx
+	0NFM1DbJcX/UH5RFgQ6SPyBjIVMaDmEh/Da0uiN7t7jENay0f3Y/88PY0PU807WHRZtGALQ06vsbe
+	3VgsXPb+0lLZti/7/u85BhvguFw1kM/JpcjxFS3/pnhdmtRNc8h3cU4PICRiu1Tadwo5hVqLx8juW
+	DdL8ltp+8kjqQph1scTonwSffxcWtDvHM74Wn05lgrIFjzcgZoLg8zEFPAt9riyVys5xij1WN3/lB
+	N3MknQ76Vv89hEK/rUwQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7xyU-0007om-Bo; Wed, 11 Sep 2019 08:27:38 +0000
-Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
- by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7xxq-0007Tw-Ea
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:27:00 +0000
-Received: by mail-pg1-x544.google.com with SMTP id u17so11145275pgi.6
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 01:26:57 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=chromium.org; s=google;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4r0nmZkQSsR2gJHf1JrXB09YJMiVgOB3zCW5D3saotk=;
- b=SkDdQyZvW4zi69+lyo92l0Kk3Thw/bwocTopP9fFph6zyBMtEB/3j1KLDMRUxqxdz8
- +GfX2YdSkpKSLb2PvhEGCOF4NwPA/U6Y1kiPxadIOSTS6TyJZFma9bzPGLj2n8QbL23D
- Hr+J8YoPtLhznecB9zPycHkXrnWu5k+PMPJ+M=
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=4r0nmZkQSsR2gJHf1JrXB09YJMiVgOB3zCW5D3saotk=;
- b=PMxdYxLa23GBoboE/tWXFQys1NNY5f/02tP9VROH5+O5wdG4/V7145GBCzGDQxxRJx
- dCjir+DSpEImRWlsRefeNprEDiRnx3APg3gKNQEEzZLrYIzimpGyAEg5AJ6f0acSNsgk
- KixpHZL0xgmKb3oiiqP6/1PW1JYDvZVViUWfBoCqbDZmdNdypppJrc6p39j615oCkLZ2
- Nhmq4uLVztfKUcu+SSaNbG96Ek19qKzIKZn4bcNLnsA6B0s2YZDNh54dgsco6CjtJbuI
- oZ317Nja+F0jmpM+5Z7iySNNedVbFG9X+FavWqv2HCR5bbPV81RCSChMnOqo6ytfiULV
- PyuQ==
-X-Gm-Message-State: APjAAAW080z73g7KmRVsEOkgqLtwZ9dQcX0683pHo9FZX/ki/+EQLuPr
- XDpZtdyI3zCFByY2IVM1eSEXxg==
-X-Google-Smtp-Source: APXvYqyu86LR1qJn3qdq+8oCOL+6X9M/yekQdNO+TlGPFuebwd792sRf58JYMVY/Ym+ipZH+zK0xSA==
-X-Received: by 2002:a63:487:: with SMTP id 129mr4981704pge.14.1568190416941;
- Wed, 11 Sep 2019 01:26:56 -0700 (PDT)
-Received: from localhost ([2401:fa00:1:10:79b4:bd83:e4a5:a720])
- by smtp.gmail.com with ESMTPSA id t12sm22798655pfe.58.2019.09.11.01.26.52
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Wed, 11 Sep 2019 01:26:55 -0700 (PDT)
-From: Cheng-Yi Chiang <cychiang@chromium.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH v3] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-Date: Wed, 11 Sep 2019 16:26:46 +0800
-Message-Id: <20190911082646.134347-1-cychiang@chromium.org>
-X-Mailer: git-send-email 2.23.0.162.g0b9fbb3734-goog
-MIME-Version: 1.0
+	id 1i7y2v-0001LS-0v; Wed, 11 Sep 2019 08:32:13 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
+ id 1i7y2E-0001Km-4c
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:31:32 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3E3E21000;
+ Wed, 11 Sep 2019 01:31:28 -0700 (PDT)
+Received: from big-swifty.misterjones.org (unknown [172.31.20.19])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 2E8103F67D;
+ Wed, 11 Sep 2019 01:31:25 -0700 (PDT)
+Date: Wed, 11 Sep 2019 09:31:24 +0100
+Message-ID: <86h85js083.wl-maz@kernel.org>
+From: Marc Zyngier <maz@kernel.org>
+To: Zenghui Yu <yuzenghui@huawei.com>
+Subject: Re: [PATCH 2/2] KVM: arm/arm64: Print the EC hex value with its exact
+ width
+In-Reply-To: <1568169216-12632-3-git-send-email-yuzenghui@huawei.com>
+References: <1568169216-12632-1-git-send-email-yuzenghui@huawei.com>
+ <1568169216-12632-3-git-send-email-yuzenghui@huawei.com>
+User-Agent: Wanderlust/2.15.9 (Almost Unreal) SEMI-EPG/1.14.7 (Harue)
+ FLIM/1.14.9 (=?UTF-8?B?R29qxY0=?=) APEL/10.8 EasyPG/1.0.0 Emacs/26
+ (aarch64-unknown-linux-gnu) MULE/6.0 (HANACHIRUSATO)
+Organization: Approximate
+MIME-Version: 1.0 (generated by SEMI-EPG 1.14.7 - "Harue")
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_012658_660505_BBF80D4F 
-X-CRM114-Status: GOOD (  12.14  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190911_013130_447622_3B75909B 
+X-CRM114-Status: GOOD (  15.28  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,127 +64,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, kuninori.morimoto.gx@renesas.com,
- Neil Armstrong <narmstrong@baylibre.com>, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com, a.hajda@samsung.com,
- Laurent.pinchart@ideasonboard.com, Yakir Yang <ykk@rock-chips.com>,
- sam@ravnborg.org, Jerome Brunet <jbrunet@baylibre.com>,
- zhengxing@rock-chips.com, linux-rockchip@lists.infradead.org,
- dgreid@chromium.org, cychiang@chromium.org, tzungbi@chromium.org,
- Jonas Karlman <jonas@kwiboo.se>, jeffy.chen@rock-chips.com,
- eddie.cai@rock-chips.com, linux-arm-kernel@lists.infradead.org,
- Jernej Skrabec <jernej.skrabec@siol.net>, dianders@chromium.org,
- daniel@ffwll.ch, enric.balletbo@collabora.com, kuankuan.y@gmail.com
+Cc: suzuki.poulose@arm.com, linux-kernel@vger.kernel.org, james.morse@arm.com,
+ julien.thierry.kdev@gmail.com, wanghaibin.wang@huawei.com,
+ kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yakir Yang <ykk@rock-chips.com>
+On Wed, 11 Sep 2019 03:33:36 +0100,
+Zenghui Yu <yuzenghui@huawei.com> wrote:
+> 
+> EC is the bits [31:26] of ESR_ELx on arm64 (HSR on arm). Print the
+> hex value with its exact width (8).
+> 
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+> ---
+>  virt/kvm/arm/trace.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+> 
+> diff --git a/virt/kvm/arm/trace.h b/virt/kvm/arm/trace.h
+> index 204d210d01c2..022b0a060034 100644
+> --- a/virt/kvm/arm/trace.h
+> +++ b/virt/kvm/arm/trace.h
+> @@ -42,7 +42,7 @@ TRACE_EVENT(kvm_exit,
+>  		__entry->vcpu_pc		= vcpu_pc;
+>  	),
+>  
+> -	TP_printk("%s: HSR_EC: 0x%04x (%s), PC: 0x%08lx",
+> +	TP_printk("%s: HSR_EC: 0x%02x (%s), PC: 0x%08lx",
+>  		  __print_symbolic(__entry->ret, kvm_arm_exception_type),
+>  		  __entry->esr_ec,
+>  		  __print_symbolic(__entry->esr_ec, kvm_arm_exception_class),
 
-When transmitting IEC60985 linear PCM audio, we configure the
-Aduio Sample Channel Status information in the IEC60958 frame.
-The status bit is already available in iec.status of hdmi_codec_params.
+Although you're right that 8 bits ought to be enough, this is a change
+to the output of the tracepoint, which userspace could (does?) parse.
+I'm thus reluctant to change anything there, knowing that we don't
+lose any information, and just print two extra zeroes.
 
-This fix the issue that audio does not come out on some monitors
-(e.g. LG 22CV241)
+Am I missing anything?
 
-Note that these registers are only for interfaces:
-I2S audio interface, General Purpose Audio (GPA), or AHB audio DMA
-(AHBAUDDMA).
-For S/PDIF interface this information comes from the stream.
+Thanks,
 
-Currently this function dw_hdmi_set_channel_status is only called
-from dw-hdmi-i2s-audio in I2S setup.
+	M.
 
-Signed-off-by: Yakir Yang <ykk@rock-chips.com>
-Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
----
-
-Change from v2 to v3:
-1. Reuse what is already set in iec.status in hw_param.
-2. Remove all useless definition of registers and values.
-3. Note that the original sampling frequency is not written to
-   the channel status as we reuse create_iec958_consumer in pcm_iec958.c.
-   Without that it can still play audio fine.
-
- .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  1 +
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 20 +++++++++++++++++++
- drivers/gpu/drm/bridge/synopsys/dw-hdmi.h     |  2 ++
- include/drm/bridge/dw_hdmi.h                  |  1 +
- 4 files changed, 24 insertions(+)
-
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-index 34d8e837555f..20f4f92dd866 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-@@ -102,6 +102,7 @@ static int dw_hdmi_i2s_hw_params(struct device *dev, void *data,
- 	}
- 
- 	dw_hdmi_set_sample_rate(hdmi, hparms->sample_rate);
-+	dw_hdmi_set_channel_status(hdmi, hparms->iec.status);
- 	dw_hdmi_set_channel_count(hdmi, hparms->channels);
- 	dw_hdmi_set_channel_allocation(hdmi, hparms->cea.channel_allocation);
- 
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-index bd65d0479683..aa7efd4da1c8 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-@@ -582,6 +582,26 @@ static unsigned int hdmi_compute_n(unsigned int freq, unsigned long pixel_clk)
- 	return n;
- }
- 
-+/*
-+ * When transmitting IEC60958 linear PCM audio, these registers allow to
-+ * configure the channel status information of all the channel status
-+ * bits in the IEC60958 frame. For the moment this configuration is only
-+ * used when the I2S audio interface, General Purpose Audio (GPA),
-+ * or AHB audio DMA (AHBAUDDMA) interface is active
-+ * (for S/PDIF interface this information comes from the stream).
-+ */
-+void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
-+				u8 *channel_status)
-+{
-+	/*
-+	 * Set channel status register for frequency and word length.
-+	 * Use default values for other registers.
-+	 */
-+	hdmi_writeb(hdmi, channel_status[3], HDMI_FC_AUDSCHNLS7);
-+	hdmi_writeb(hdmi, channel_status[4], HDMI_FC_AUDSCHNLS8);
-+}
-+EXPORT_SYMBOL_GPL(dw_hdmi_set_channel_status);
-+
- static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
- 	unsigned long pixel_clk, unsigned int sample_rate)
- {
-diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-index 6988f12d89d9..fcff5059db24 100644
---- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-+++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-@@ -158,6 +158,8 @@
- #define HDMI_FC_SPDDEVICEINF                    0x1062
- #define HDMI_FC_AUDSCONF                        0x1063
- #define HDMI_FC_AUDSSTAT                        0x1064
-+#define HDMI_FC_AUDSCHNLS7                      0x106e
-+#define HDMI_FC_AUDSCHNLS8                      0x106f
- #define HDMI_FC_DATACH0FILL                     0x1070
- #define HDMI_FC_DATACH1FILL                     0x1071
- #define HDMI_FC_DATACH2FILL                     0x1072
-diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-index cf528c289857..4b3e863c4f8a 100644
---- a/include/drm/bridge/dw_hdmi.h
-+++ b/include/drm/bridge/dw_hdmi.h
-@@ -156,6 +156,7 @@ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool hpd, bool rx_sense);
- 
- void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
- void dw_hdmi_set_channel_count(struct dw_hdmi *hdmi, unsigned int cnt);
-+void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi, u8 *channel_status);
- void dw_hdmi_set_channel_allocation(struct dw_hdmi *hdmi, unsigned int ca);
- void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
- void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
 -- 
-2.23.0.162.g0b9fbb3734-goog
-
+Jazz is not dead, it just smells funny.
 
 _______________________________________________
 linux-arm-kernel mailing list
