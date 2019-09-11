@@ -2,47 +2,42 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9F39FAFF07
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:43:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10678AFF28
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:51:08 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gKk3QxlgWWtFtmjqWZVTiqjV597T/QEM7+9GxGc98X0=; b=gabV/qygReUz2T
-	tDU0xtsWAb27HoTSPg5F51SWLxIjg2m+ua6UJovnhUcy/jtQezgZq17XHdHune9VOOim8QL5AC0mj
-	VbjCzwT75kHdoXWg+fhNg6sEjndA5m48oM6SHlAlpYb1D3ZOItnTjSyyI/vR+J7z/Cw8bc7z4mWWc
-	oPExyowIZIzvzcqBWPIH2/79IPOLUY+3oHvX/cSKz7jP7h9taXeB7CY3S6tuAyaBPC335iXdOPIA5
-	ZgRJNAV7uMUGtSq9gYIx1KFRytbCUAG6pgNj8gae8nEpOblhAuXznjzixzS2eNElsvpprR8AcWTjl
-	OcCG5VGYB8Vs9L0tv0qA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=F9DYROJ1NDR73G8OEYAyFC5viwxbC4DvAHUaeZGor4o=; b=qlgGQi3IiHHgI0
+	pO8gnLTJVBB3/+YRDIBA8BGkx1+zMKyOfhT80fvhoC7ral1uPwxRznVBT5ryyJAOyWSQ8bTQDT0F5
+	Urz9pJnuTNB6lKeOKtasLSEfeaWAdjUVPMJ8dpAGcAidItA1jKITW92RfcO/p3jy5M2eo9MMGRt6s
+	ONZyENU19s0mKmAYKe0Lc6dgYOaxkzivl4WXLDRNOgiIONh8w6MtijcmTVOUaeBUdcOcCDm302CZ6
+	zAp8SfxU5yHLClYCb26pCH5OKMHQGfam8BYbswSHkONIFSjg8kLL3L7pPQeRhk6WEGNA8ypCxpdzu
+	RhXx6teGeIuaH7nNjpMA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i83q8-0002Xf-Cd; Wed, 11 Sep 2019 14:43:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i83p7-0001qD-LF
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:42:22 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6D89615A2;
- Wed, 11 Sep 2019 07:42:20 -0700 (PDT)
-Received: from e110467-lin.cambridge.arm.com (e110467-lin.cambridge.arm.com
- [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 444063F67D;
- Wed, 11 Sep 2019 07:42:19 -0700 (PDT)
-From: Robin Murphy <robin.murphy@arm.com>
-To: will@kernel.org,
-	joro@8bytes.org
-Subject: [PATCH 3/3] iommu/io-pgtable-arm: Allow coherent walks for Mali
-Date: Wed, 11 Sep 2019 15:42:09 +0100
-Message-Id: <8eb563978e7e872ddde45c0413e1a3f30b792658.1568211045.git.robin.murphy@arm.com>
-X-Mailer: git-send-email 2.21.0.dirty
-In-Reply-To: <cover.1568211045.git.robin.murphy@arm.com>
-References: <cover.1568211045.git.robin.murphy@arm.com>
+	id 1i83xa-0007Fy-7N; Wed, 11 Sep 2019 14:51:06 +0000
+Received: from mx1.emlix.com ([188.40.240.192])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i83wa-0005QX-Qk
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:50:08 +0000
+Received: from mailer.emlix.com (unknown [81.20.119.6])
+ (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mx1.emlix.com (Postfix) with ESMTPS id A80495FBAB;
+ Wed, 11 Sep 2019 16:50:00 +0200 (CEST)
+From: Philipp Puschmann <philipp.puschmann@emlix.com>
+To: linux-kernel@vger.kernel.org
+Subject: [PATCH 0/4] Fix UART DMA freezes for iMX6
+Date: Wed, 11 Sep 2019 16:49:39 +0200
+Message-Id: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_074221_732593_67DC79EA 
-X-CRM114-Status: GOOD (  12.87  )
+X-CRM114-CacheID: sfid-20190911_075005_027786_18358D20 
+X-CRM114-Status: GOOD (  10.13  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,44 +56,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: robh@kernel.org, tomeu.vizoso@collabora.com, narmstrong@baylibre.com,
- steven.price@arm.com, iommu@lists.linux-foundation.org,
+Cc: linux-serial@vger.kernel.org, shawnguo@kernel.org, s.hauer@pengutronix.de,
+ jslaby@suse.com, vkoul@kernel.org, linux-imx@nxp.com, kernel@pengutronix.de,
+ gregkh@linuxfoundation.org, dmaengine@vger.kernel.org,
+ dan.j.williams@intel.com, festevam@gmail.com,
+ Philipp Puschmann <philipp.puschmann@emlix.com>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Midgard GPUs have ACE-Lite master interfaces which allows systems to
-integrate them in an I/O-coherent manner. It seems that from the GPU's
-viewpoint, the rest of the system is its outer shareable domain, and it
-will only emit snoop signals for outer shareable accesses. As such,
-setting the TTBR_SHARE_OUTER bit does indeed get coherent pagetable
-walks working nicely.
+For some years and since many kernel versions there are reports that
+RX UART DMA channel stops working at one point. So far the usual workaround was
+to disable RX DMA. This patches try to fix the underlying problem.
 
-Making data accesses coherent seems to be more of a challenge...
+When a running sdma script does not find any usable destination buffer to put
+its data into it just leads to stopping the channel being scheduled again. As
+solution we we manually retrigger the sdma script for this channel and by this
+dissolve the freeze.
 
-Signed-off-by: Robin Murphy <robin.murphy@arm.com>
----
- drivers/iommu/io-pgtable-arm.c | 3 +++
- 1 file changed, 3 insertions(+)
+While this seems to work fine so far a further patch in this series increases
+the number of RX DMA periods for UART to reduce use cases running into such
+a situation.
 
-diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-index 77f41c9dd9be..2794d4661339 100644
---- a/drivers/iommu/io-pgtable-arm.c
-+++ b/drivers/iommu/io-pgtable-arm.c
-@@ -1061,6 +1061,9 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
- 	cfg->arm_mali_lpae_cfg.transtab = virt_to_phys(data->pgd) |
- 					  ARM_MALI_LPAE_TTBR_READ_INNER |
- 					  ARM_MALI_LPAE_TTBR_ADRMODE_TABLE;
-+	if (cfg->coherent_walk)
-+		cfg->arm_mali_lpae_cfg.transtab |= ARM_MALI_LPAE_TTBR_SHARE_OUTER;
-+
- 	return &data->iop;
- 
- out_free_data:
+This patch series was tested with the current kernel and backported to
+kernel 4.15 with a special use case using a WL1837MOD via UART and provoking
+the hanging of UART RX DMA within seconds after starting a test application.
+It resulted in well known
+  "Bluetooth: hci0: command 0x0408 tx timeout"
+errors and complete stop of UART data reception. Our Bluetooth traffic consists
+of many independent small packets, mostly only a few bytes, causing high usage
+of periods.
+
+
+Philipp Puschmann (4):
+  dmaengine: imx-sdma: fix buffer ownership
+  dmaengine: imx-sdma: fix dma freezes
+  serial: imx: adapt rx buffer and dma periods
+  dmaengine: imx-sdma: drop redundant variable
+
+ drivers/dma/imx-sdma.c   | 32 ++++++++++++++++++++++----------
+ drivers/tty/serial/imx.c |  5 ++---
+ 2 files changed, 24 insertions(+), 13 deletions(-)
+
 -- 
-2.21.0.dirty
+2.23.0
 
 
 _______________________________________________
