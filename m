@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A61A7B0583
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 00:20:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8E756B0584
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 00:20:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,53 +11,53 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=0GDwdUS8DlOvWZKcde/qC19Ez4hyUTvPSRT29i7lB10=; b=j+EkQ5BbSCA4squHb5Vtbf6USv
-	kgVBEzUAVFJcT+lvxfDkoP5Nn9QHbmZ6rCoRBTMh97psJYtqBuWyjEAWXmZ3AZekPqhFpL60ukeBz
-	lROoVj1wZnExAGaEOmr3v4vMkdEc3ldAdetnY8J7bIYySv4Xo+3G6qA3bZPQ0/kFn13Tf1Z6WA6Ji
-	t0h5FTouq74RXq/jluvWQO0XeCanFGgbU7+YgHr6Rc6DRaeFci9kTNBuYPltyN/5UZ/6FwAb4h3eE
-	pJRitjGZC07utM4lJ0k6LXC6Y2u19kRxOnJ+h3P9CfnGBlSuH7iqP/pBL+YnKf3OLzQinAqUUu1wa
-	rY7D+FTQ==;
+	bh=gafyLhDmP5pqCHJPt6FbOBDtg2Dp52u5j0wna1+HopA=; b=rBh3v4oznNcvoPz7ZjSZr0d2jw
+	0ntf640mUG3hvlqyxKFoB5TjOX/vBYaPBXZ4BZo4HbUcnBlEdLTK5TXJybRPtMvRN4bDbUeQcZFud
+	u44la/FYCcNyfQ1oLYQr/g3sTsnib1q3ydJ+Y5QKVGtLkeMlKAVFjzhGFyX/IwLclcyhqeExt3HmX
+	CeVSNF3ZXNN2/McKiSZRCPv8rDeukgX8AdnuRov4T2Su9F/93ePUoALU5ir6LIYoGn/gjBTe27kEu
+	z+bZizjM8U6ERomxRyda/xYmEH5J0mRg5WJrWm/TBL2VSaWm3Ics+Ab2sr4kEo83qFPql08o8xjEM
+	IWtsvEfg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8AyD-0000LN-20; Wed, 11 Sep 2019 22:20:13 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1i8AyT-0001rW-Qg; Wed, 11 Sep 2019 22:20:30 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Ax8-00088a-1I
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 22:19:07 +0000
-Received: by mail-pf1-x442.google.com with SMTP id x127so14574999pfb.7
+ id 1i8AxB-0008C9-NE
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 22:19:11 +0000
+Received: by mail-pl1-x641.google.com with SMTP id m9so10798781pls.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 15:19:06 -0700 (PDT)
+ Wed, 11 Sep 2019 15:19:09 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :in-reply-to:references;
- bh=2X3SRzIwnpnErNdvMpQKEQIE0nPz8iNvb6s2mmkqEds=;
- b=Swe/IstEy9pJgy/ebR3/loS/F6ULouZpNAU5NMAqHNylVvY3mNNAYA86S47/2tdJZd
- WhL6RXJs2HTYZjJf/1u5hRsPFPZDwLbJ1rKRh+ZuqFi7lWVF2c0cQKuhMhryOIltmXfo
- VnMRj/LeFqBgBI9QC6/OoUunbXEBEg0ebmry1bGY4S25ACVVx4TvuTFs2pJRPOrc2yzg
- nznWtz5O4489ZB7dlT5rF8uDp6/e08vlVO1GFK5zZCaGBPC4iTwYq84rt359mZJnMP+B
- oiy6sxWSDmSWSjNIaAlLZAbU9kGX6aMkw/nwNU8NRSOEblS36HObUny1W+IoD3t+5nX4
- xjyw==
+ bh=mMNl63FO67KUuEHw42vIWKlthSpMwd5FVOOXIHmqrU4=;
+ b=a8PMTBBTeeZyu/Wvz6ibbwLc/1cJ7vElKoSkSXAji0+1n+9jR/t/r7x/pf8m+oNx7I
+ 7DSzXISCFD+sD00yT2TicutThMC9mFxdIcPpLvxkcBseFcgNlCwSKCbVM20+jp4pQGu3
+ CnExwUjzYpA2YT+AfVkJr/xlkDxC8joLHCGhWZBITmmkqldtD8BD3W30lM3IXT6t6Qcc
+ Euk0Yp8DJlwSseJv53H0WKPmfZNPCnVsL5Z/CotAsmdO2tFTKSizohPZrDC6a/rbfzmZ
+ kQfygH+3vorPTAqv2ENiOYfY5POKMqh2gH6PW3WeAfwSm2RyHHQFxOjzkCHBMgw8Ly1k
+ PNrA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:in-reply-to:references;
- bh=2X3SRzIwnpnErNdvMpQKEQIE0nPz8iNvb6s2mmkqEds=;
- b=lRp06VHLj35iBoeji6esPYKHt2kdEMijdNHo6ITG22MNfCFL/QvMJARGM/rpeLmG3X
- hRzeRVhfSN6SP/OpQhvo0L3hPsbwptyGrDS76ZE3iG8w/FA8wGMs85kGMWAMTd9H0lrG
- Cmd7StaU9a1efHcK/8qw3/yA0hyp3FIfDFJ6EmlqPnSiZXA8+uIHmmupmkocRXiXCyRf
- PbTiOKmqGiHxDTooKm5Mm5o19oen7BJV74tLmJnLjlwuM9V0b+6MGFJg3DMvQeWnRVmR
- Tll3NszipJaL/5ETTDB1Yo5fC6RAx0l7MMc7dJP11l4kcpCsQGzAB3olnCggiIPwKwRr
- pmrA==
-X-Gm-Message-State: APjAAAX8yEP31duh3K2EhvBlyv0m2hJW28PtfVN3cAAlbbBeEnq3Pood
- 08H7cMle17MTyOPYcyWB7Hyyfg==
-X-Google-Smtp-Source: APXvYqw5tBXGpyCHobC9PqT+BPqZzA2y82ejBsAPKuGT1mvGwANpkp7rRrgoOvQbqobn6t1RI+V35w==
-X-Received: by 2002:a17:90a:37d1:: with SMTP id
- v75mr8187287pjb.33.1568240345437; 
- Wed, 11 Sep 2019 15:19:05 -0700 (PDT)
+ bh=mMNl63FO67KUuEHw42vIWKlthSpMwd5FVOOXIHmqrU4=;
+ b=GTQ49wfOy0vy6g0JwCzY6vylHZ79gTOI0VVSSq7dWu9IwGpJihko+sgJ56zke4ziKa
+ Vx3uA0KbS/eMwba8Dyp6deev6s/LZJGkADt03C2i83cNwyVZ6il8ILaqcOjDbpqLquqO
+ 0ZlCFI+mI0I2wNLmGGnXMXvEmYRlkp+r1s8V2z9M+3hWN8ZZF2zAOs5SRmCTKwojNZa/
+ fy8eVqDNPsIX+Th5dMyJ836QfjIxPOM1ZCk5rencHaC19Q/qZ/FyF0Hi2LDF0bVZesry
+ XykxTPV/eGSy7REJhhKeo7s98/AnwmQxlrK4seGI4FgMQSb46IE9oeJxFTsw7s1c4Z92
+ k5wQ==
+X-Gm-Message-State: APjAAAUQgW1Y3qW4QMsfFtHbLul5ZhI90lASHhEpgNZTw+4jrWZ06CxS
+ tqr3t3R+rOOwRfSDnmUU8hM66Q==
+X-Google-Smtp-Source: APXvYqxywK/VqaJubZy+tpMXHI2hldjrJm9ASPz2i3rYysqWyhJf1sL0Mqz/b5O7hDlKl+2gVQIUJg==
+X-Received: by 2002:a17:902:8d81:: with SMTP id
+ v1mr22729125plo.23.1568240348925; 
+ Wed, 11 Sep 2019 15:19:08 -0700 (PDT)
 Received: from localhost ([49.248.179.160])
- by smtp.gmail.com with ESMTPSA id 69sm30084787pfb.145.2019.09.11.15.19.04
+ by smtp.gmail.com with ESMTPSA id c2sm23999870pfd.66.2019.09.11.15.19.07
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 11 Sep 2019 15:19:04 -0700 (PDT)
+ Wed, 11 Sep 2019 15:19:08 -0700 (PDT)
 From: Amit Kucheria <amit.kucheria@linaro.org>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  arm@kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
@@ -70,24 +70,24 @@ To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Michael Turquette <mturquette@baylibre.com>,
  Sebastian Reichel <sre@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
  Will Deacon <will@kernel.org>
-Subject: [PATCH 3/4] arm64: Kconfig: Fix VEXPRESS driver dependencies
-Date: Thu, 12 Sep 2019 03:48:47 +0530
-Message-Id: <8f539b28c25d22b8f515c131cd6b24c309f7ca90.1568239378.git.amit.kucheria@linaro.org>
+Subject: [PATCH 4/4] arm64: Kconfig: Fix EXYNOS driver dependencies
+Date: Thu, 12 Sep 2019 03:48:48 +0530
+Message-Id: <79755cb29b8c23709e346b5dd290481a36627648.1568239378.git.amit.kucheria@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <cover.1568239378.git.amit.kucheria@linaro.org>
 References: <cover.1568239378.git.amit.kucheria@linaro.org>
 In-Reply-To: <cover.1568239378.git.amit.kucheria@linaro.org>
 References: <cover.1568239378.git.amit.kucheria@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_151906_095164_FF104606 
-X-CRM114-Status: GOOD (  12.73  )
+X-CRM114-CacheID: sfid-20190911_151909_949078_5DC055B3 
+X-CRM114-Status: GOOD (  11.57  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -116,43 +116,39 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Push various VEXPRESS drivers behind ARCH_VEXPRESS dependency so that it
+Push various EXYNOS drivers behind ARCH_EXYNOS dependency so that it
 doesn't get enabled by default on other platforms.
 
 Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
 ---
- drivers/bus/Kconfig           | 2 +-
- drivers/clk/versatile/Kconfig | 4 ++--
- 2 files changed, 3 insertions(+), 3 deletions(-)
+ drivers/clk/Kconfig       | 1 +
+ drivers/regulator/Kconfig | 1 +
+ 2 files changed, 2 insertions(+)
 
-diff --git a/drivers/bus/Kconfig b/drivers/bus/Kconfig
-index d80e8d70bf10..b2b1beee9953 100644
---- a/drivers/bus/Kconfig
-+++ b/drivers/bus/Kconfig
-@@ -166,7 +166,7 @@ config UNIPHIER_SYSTEM_BUS
+diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+index 9b2790d3f18a..bdf164a7a7c5 100644
+--- a/drivers/clk/Kconfig
++++ b/drivers/clk/Kconfig
+@@ -194,6 +194,7 @@ config COMMON_CLK_ASPEED
  
- config VEXPRESS_CONFIG
- 	bool "Versatile Express configuration bus"
--	default y if ARCH_VEXPRESS
-+	depends on ARCH_VEXPRESS
- 	depends on ARM || ARM64
- 	depends on OF
- 	select REGMAP
-diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
-index ac766855ba16..826750292c1e 100644
---- a/drivers/clk/versatile/Kconfig
-+++ b/drivers/clk/versatile/Kconfig
-@@ -5,8 +5,8 @@ config ICST
- config COMMON_CLK_VERSATILE
- 	bool "Clock driver for ARM Reference designs"
- 	depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
--		ARCH_VERSATILE || ARCH_VEXPRESS || ARM64 || \
--		COMPILE_TEST
-+		ARCH_VERSATILE || ARCH_VEXPRESS || COMPILE_TEST
-+	depends on ARM64
- 	select REGMAP_MMIO
+ config COMMON_CLK_S2MPS11
+ 	tristate "Clock driver for S2MPS1X/S5M8767 MFD"
++	depends on ARCH_EXYNOS
+ 	depends on MFD_SEC_CORE || COMPILE_TEST
  	---help---
-           Supports clocking on ARM Reference designs:
+ 	  This driver supports S2MPS11/S2MPS14/S5M8767 crystal oscillator
+diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
+index b57093d7c01f..a4c4f01343fd 100644
+--- a/drivers/regulator/Kconfig
++++ b/drivers/regulator/Kconfig
+@@ -797,6 +797,7 @@ config REGULATOR_S2MPA01
+ 
+ config REGULATOR_S2MPS11
+ 	tristate "Samsung S2MPS11/13/14/15/S2MPU02 voltage regulator"
++	depends on ARCH_EXYNOS
+ 	depends on MFD_SEC_CORE
+ 	help
+ 	 This driver supports a Samsung S2MPS11/13/14/15/S2MPU02 voltage
 -- 
 2.17.1
 
