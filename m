@@ -2,59 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDAEFB057E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 00:19:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A97BCB0580
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 00:19:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=kKFEWpJpsh6Lt/OrO+Qyp+7gumufV1fCSuo9d7r9Ng8=; b=Wnq
-	TIiRIAzzjtZj7vdDW7QiuZ8KJQsrQHHaVpJBLMU6sdiKptjlB4NM0EbgP5IjdyLZwC7fIKz8+F4uq
-	H9GhGHfpdXEHg6VRvFa7q5ZM/xda8qzUlXO7lSXxejf6wgsyil1d0wxQndozcxwJAdvij0C4OvS79
-	bSSK1uYspoeAzT1ALQbJ77XY98MgsCFLvruvtr9WN135xkBGFO55HsUPFP/t03Gfgrl/oDFtl7tts
-	VtvpQLnzkm9oERAvKcDq0ayRWeXeyg7FQXIJP7uxdIoljSPwcpr6irLMEilfKHaWmSoV1uaLHRbtt
-	QKojR5FVxuRAkXtCCMLgJr0W1NP6tRQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=JwptaAGmUgXlQaKUMZh/iNH9opXzqATjzaQicx5NsNQ=; b=FNVJ2z0iqwzU2VBZm9TOd+ag/V
+	30eX3C+yD2VNYkBV1ahvpKufmgwcw/u7gg9KvwRq/6k/B+PLVPC+ip66PROvbyE0QbGbAPo8hxwca
+	PGZzTLvXsiwNWEed81z43HxUlDqcklgDtiklKU+jl4eA78OdDrFbDQpj3jvMuiK4QBYqFW8IhK8Ga
+	5dew3qjcj/x4V+hzY0PIA4xmGBVC4hfq7S5VdgQ/qXqm2G4P3M4RIrlye//LWRy6ZdyhDOd5tpw+Y
+	ilbYnzWBzKZSbtjFNiqY2LyiEXFZHkdRDr75x84tC4spQ2QgJFhjA9P0Nve1xbkICdajItiEuwCWM
+	bOIlOXTA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8AxF-00081I-JY; Wed, 11 Sep 2019 22:19:13 +0000
-Received: from mail-pg1-x541.google.com ([2607:f8b0:4864:20::541])
+	id 1i8AxW-0008Gv-2T; Wed, 11 Sep 2019 22:19:30 +0000
+Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Aww-0007x7-OO
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 22:18:56 +0000
-Received: by mail-pg1-x541.google.com with SMTP id x15so12246714pgg.8
+ id 1i8Ax0-00080w-M7
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 22:19:00 +0000
+Received: by mail-pf1-x442.google.com with SMTP id q5so14565198pfg.13
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 15:18:54 -0700 (PDT)
+ Wed, 11 Sep 2019 15:18:58 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=XMh9vqXFV71BBXfbQeqQ2AI4/VRHGP8NHDiJ3hd+W2c=;
- b=dfUFqn9GmQQfPInseKvxR8/MfpW8jptfI5OoFIgi0zvZOMbwaNSR10Eq+XBJSFsNYd
- vGjgVyaCttoTF0bidKsGXaXdbNpRpMIva11M19yysOu907+gXXYL+v/A4NnXoUMCxDuO
- rUorgIlhOWzW62Yag0jaeWo8A5lF25viT8ELc0+A/LeZzl8Y8c1xQ9g+REJ8UIGOgBuB
- mqYMZ5Arjb8bcZc2LIvu52wngHmg07ljwecDu6tXfwOvyi6sErhzDq6bZQo9X03SNDGb
- LZqK5p7G9e8iuZWNrfehZHgS7Yfjbe7yaJUCgBtFlus2nv2h13jIlVEzU25ZMgxHHe2+
- X6/g==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references
+ :in-reply-to:references;
+ bh=wJpUcmtI6YKhyLGtOcvDAWFwk949XlDAmv2MKsxWP1U=;
+ b=DMkvTmwVBoZy7jqUIkAihodC8R4kqONrk3HGJetqqwTAcCDCcYKzpuoElpoaj8L4q3
+ kKAmLx32GZAY0DgrK7yzscFGAZzHV24sY6eDNwE0lp4RqIGvHit4bu1Vuqcm2NlyyYRU
+ L3qjQuPWAX9cZEUzgkadODxqhF3eBa2y0DhN1H4UCagnFBKVrEgpQjE9I1NtUyfZ02fZ
+ z1RWSyAFtOaxIDNIeSoIaPHqKn0dXGifT5otHgWpv1Gdudbav2hq4d8vK8e6HO+QxMlR
+ BI1FLqp0jLwQ5iKEuprVYqwH/Wvo4kSjvvG/gaOi/KA8BPaM8SDl2B0A+FXXzETgvYz3
+ KgrQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=XMh9vqXFV71BBXfbQeqQ2AI4/VRHGP8NHDiJ3hd+W2c=;
- b=hoMrxOI9bITlq8NkM5I6QHyqzDbM4cj85hYbjv2PbCRH7HBywJ6m9gZEuuVGwTsHqu
- 5JzAt6QtPazxuHx32Nycb3ITyIYQciGOPpyEkDMIPMCNf18exkY1IN+37E9nDWkQalDL
- UcrlIioRsvUsxKwiXIYcmol6JYX7jG+QDmQUcdNGMpDoXtQQBo3tDW3UtzucHQc15H5e
- fy70ZXPHCp8Ne3ddGyusUeYCgQpbKSP41bWXiuvhOLiFQ5Lw+M8rK7iWz0TZQlYWfJG1
- itT4YWe7V9Ptpha3DEF+gR8gN3Z+Atl74eY5mfrINtz1Uf3c+FfQmweuDfnpro2JXIeK
- 1lyQ==
-X-Gm-Message-State: APjAAAXUFasyW1yTah9lIjhdcWk8NuXcZro+degUp5FaqcMRl2VoSVcf
- LIHfg7/Fp5kWzxhj0az8PwiRUw==
-X-Google-Smtp-Source: APXvYqzABztHQChdM8v4krHqAsKVKJHoGyO3bgM5SrAaN0DScRsQ2Ub9RLeinBiXp7kc3wggdgVYNw==
-X-Received: by 2002:a17:90a:266c:: with SMTP id
- l99mr8084116pje.93.1568240333366; 
- Wed, 11 Sep 2019 15:18:53 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references:in-reply-to:references;
+ bh=wJpUcmtI6YKhyLGtOcvDAWFwk949XlDAmv2MKsxWP1U=;
+ b=uDbqmZpEGm2J0z9wWwSCdxKGQUJ6kA4bYQGyXgrHyhwsMyo9IEC2bsf9AYFfN3K9vA
+ SU+ucD6v1Mt7Bqh7C4v6cqoFLGrMePXkxArckJIa7/pdmdR47vyieX2mBpCYfpM4RqdM
+ /qLPzKqvOO/qZ0/UzURBEPCSC+bbziWqDLdY/R19AhL5OPtIhqet6F4L0ataiIWvLbvA
+ 8kS3vR976rltL+M4/vv9+iuQ9KJAE1Gltx4p2Ochm7Z4WMPL0DYY+dcC+CgsU6YMymMc
+ 9oYevE3u7Ue7fNvk7QKzviF0ZCHT2KzwwQSIe3bOhLZm0gD4HR1EvP4Guyez27zn8nHO
+ DhiA==
+X-Gm-Message-State: APjAAAU3C4nq7hdLwdXS2i55VQDQqteowNsrtx+FyFIXJYQxtpXal98B
+ /zAHbP4DB9WD20E83Sp58VpUpg==
+X-Google-Smtp-Source: APXvYqzP0/gBNZzG2CFRFIE/UkaEI5NjGZqMp4m4/H9NRm7GUMMLKzapx1Z7TocuBDHfZe6TC2ck1g==
+X-Received: by 2002:a63:2807:: with SMTP id o7mr35679328pgo.131.1568240337895; 
+ Wed, 11 Sep 2019 15:18:57 -0700 (PDT)
 Received: from localhost ([49.248.179.160])
- by smtp.gmail.com with ESMTPSA id d15sm22787418pfo.118.2019.09.11.15.18.52
+ by smtp.gmail.com with ESMTPSA id r13sm2806843pgp.63.2019.09.11.15.18.56
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Wed, 11 Sep 2019 15:18:52 -0700 (PDT)
+ Wed, 11 Sep 2019 15:18:57 -0700 (PDT)
 From: Amit Kucheria <amit.kucheria@linaro.org>
 To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  arm@kernel.org, Bartosz Golaszewski <bgolaszewski@baylibre.com>,
@@ -67,21 +69,24 @@ To: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  Michael Turquette <mturquette@baylibre.com>,
  Sebastian Reichel <sre@kernel.org>, Stephen Boyd <sboyd@kernel.org>,
  Will Deacon <will@kernel.org>
-Subject: [PATCH 0/4] Cleanup arm64 driver dependencies
-Date: Thu, 12 Sep 2019 03:48:44 +0530
-Message-Id: <cover.1568239378.git.amit.kucheria@linaro.org>
+Subject: [PATCH 1/4] arm64: Kconfig: Fix XGENE driver dependencies
+Date: Thu, 12 Sep 2019 03:48:45 +0530
+Message-Id: <f6cefef2bf6b34ec6eb82d3614054734fa5e8dd1.1568239378.git.amit.kucheria@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <cover.1568239378.git.amit.kucheria@linaro.org>
+References: <cover.1568239378.git.amit.kucheria@linaro.org>
+In-Reply-To: <cover.1568239378.git.amit.kucheria@linaro.org>
+References: <cover.1568239378.git.amit.kucheria@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_151854_952250_1707A3A0 
-X-CRM114-Status: UNSURE (   9.87  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190911_151858_723341_A016F9A4 
+X-CRM114-Status: GOOD (  14.19  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:541 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,29 +116,95 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-I was using initcall_debugging on a QCOM platform and ran across a bunch of
-driver initcalls that are enabled even if their SoC support is disabled.
+Push various XGENE drivers behind ARCH_XGENE dependency so that it
+doesn't get enabled by default on other platforms.
 
-Here are some fixups for a subset of them.
-
-Amit Kucheria (4):
-  arm64: Kconfig: Fix XGENE driver dependencies
-  arm64: Kconfig: Fix BRCMSTB driver dependencies
-  arm64: Kconfig: Fix VEXPRESS driver dependencies
-  arm64: Kconfig: Fix EXYNOS driver dependencies
-
+Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
+---
  arch/arm64/Kconfig.platforms   | 3 +++
- drivers/bus/Kconfig            | 3 ++-
- drivers/clk/Kconfig            | 3 ++-
- drivers/clk/versatile/Kconfig  | 4 ++--
+ drivers/clk/Kconfig            | 2 +-
  drivers/gpio/Kconfig           | 1 +
  drivers/pci/controller/Kconfig | 1 +
  drivers/phy/Kconfig            | 1 +
- drivers/power/reset/Kconfig    | 3 ++-
- drivers/regulator/Kconfig      | 1 +
- drivers/soc/bcm/Kconfig        | 1 +
- 10 files changed, 16 insertions(+), 5 deletions(-)
+ drivers/power/reset/Kconfig    | 2 +-
+ 6 files changed, 8 insertions(+), 2 deletions(-)
 
+diff --git a/arch/arm64/Kconfig.platforms b/arch/arm64/Kconfig.platforms
+index 4778c775de1b..cdf4e452e34c 100644
+--- a/arch/arm64/Kconfig.platforms
++++ b/arch/arm64/Kconfig.platforms
+@@ -281,6 +281,9 @@ config ARCH_VULCAN
+ 
+ config ARCH_XGENE
+ 	bool "AppliedMicro X-Gene SOC Family"
++	select COMMON_CLK_XGENE
++	select PCI_XGENE
++	select GPIO_XGENE
+ 	help
+ 	  This enables support for AppliedMicro X-Gene SOC Family
+ 
+diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+index 801fa1cd0321..9b2790d3f18a 100644
+--- a/drivers/clk/Kconfig
++++ b/drivers/clk/Kconfig
+@@ -225,7 +225,7 @@ config CLK_QORIQ
+ 
+ config COMMON_CLK_XGENE
+ 	bool "Clock driver for APM XGene SoC"
+-	default ARCH_XGENE
++	depends on ARCH_XGENE
+ 	depends on ARM64 || COMPILE_TEST
+ 	---help---
+ 	  Sypport for the APM X-Gene SoC reference, PLL, and device clocks.
+diff --git a/drivers/gpio/Kconfig b/drivers/gpio/Kconfig
+index bb13c266c329..072c749c5c1f 100644
+--- a/drivers/gpio/Kconfig
++++ b/drivers/gpio/Kconfig
+@@ -580,6 +580,7 @@ config GPIO_VX855
+ 
+ config GPIO_XGENE
+ 	bool "APM X-Gene GPIO controller support"
++	depends on ARCH_XGENE
+ 	depends on ARM64 && OF_GPIO
+ 	help
+ 	  This driver is to support the GPIO block within the APM X-Gene SoC
+diff --git a/drivers/pci/controller/Kconfig b/drivers/pci/controller/Kconfig
+index fe9f9f13ce11..44699f45784f 100644
+--- a/drivers/pci/controller/Kconfig
++++ b/drivers/pci/controller/Kconfig
+@@ -112,6 +112,7 @@ config PCIE_XILINX
+ config PCI_XGENE
+ 	bool "X-Gene PCIe controller"
+ 	depends on ARM64 || COMPILE_TEST
++	depends on ARCH_XGENE
+ 	depends on OF || (ACPI && PCI_QUIRKS)
+ 	help
+ 	  Say Y here if you want internal PCI support on APM X-Gene SoC.
+diff --git a/drivers/phy/Kconfig b/drivers/phy/Kconfig
+index 0263db2ac874..7c5eefecdabd 100644
+--- a/drivers/phy/Kconfig
++++ b/drivers/phy/Kconfig
+@@ -44,6 +44,7 @@ config PHY_PISTACHIO_USB
+ 
+ config PHY_XGENE
+ 	tristate "APM X-Gene 15Gbps PHY support"
++	depends on ARCH_XGENE
+ 	depends on HAS_IOMEM && OF && (ARM64 || COMPILE_TEST)
+ 	select GENERIC_PHY
+ 	help
+diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
+index a564237278ff..651b763f80cd 100644
+--- a/drivers/power/reset/Kconfig
++++ b/drivers/power/reset/Kconfig
+@@ -181,7 +181,7 @@ config POWER_RESET_VEXPRESS
+ 
+ config POWER_RESET_XGENE
+ 	bool "APM SoC X-Gene reset driver"
+-	depends on ARM64
++	depends on ARCH_XGENE && ARM64
+ 	help
+ 	  Reboot support for the APM SoC X-Gene Eval boards.
+ 
 -- 
 2.17.1
 
