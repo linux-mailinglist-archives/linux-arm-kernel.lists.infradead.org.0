@@ -2,96 +2,65 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 41DB4B03D8
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:46:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B4A58B03F0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:50:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mLlO2sBhYhAVhfbHoj7JVZWo1fSGSgfdSu2vWpK5AeM=; b=sk+5I2q4xPKEUi
-	klOvpovshd0CK9bXiv+OqRTb7bJernrYmN1MCkXPN94axPpBmesZ84Ax5vbA5ejfKIN2QSjG5pnZ/
-	fjfILgHhbl2zjoQ/tWhe9n/tqrr8IV1kNTZKbgMgKm0BsIALzjecCxCS0aFXaA17iwBuA8Im64s+v
-	NUW90mG+at6rRKQp5OmWTNy/XJnt1EDDSEVXL1R+oiwyQM2bH3pZXHg4DydT/iojZWXes2ruTnqKn
-	0pMSIXROGGV7H4DJ/BtvOxb6cW1YJQx6QbxaRTCdym1icIKjbuHkXKT6YTt6d3/MSXGu6BrXkcu1R
-	fqlKx4JgUa9Cdd6lHIWg==;
+	List-Owner; bh=QAzPPFCmRBep7+0Rey3uiA4mIzYS3QA1V1u9OjlWhTA=; b=TIJLDLU2uwwca0
+	xEK4MN7Ct5HZfCnFPU8YPIcBScyQ2ZqkCQ11vogQ8tS0Kbf7kr7V2ntNdAhPv6lKBj5wVcipRYe8C
+	Duf9VFQ7pe8bT5cXW4AM96KNOlF4iobV5jaY0go4xMMFVJL5kzNnOjv4KkmaKyMLswlJD8ko/9adM
+	Uw76yuN3F+nne6sJz0RXONyO8zdTJuypMiXLacr+PnoCO6c3CkywGXpw+lLXNDbq+EL3Ebfu7S810
+	YEBqQxghG6j+GagA8MliVshJaZVSlEAPJlmPbpRDtmLXcxpU8npAg1uL5G8B6eTnPR4wmZqcZLSfV
+	gnbazJ3/eG7h2tiqUntA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i87d7-0004Gc-VW; Wed, 11 Sep 2019 18:46:14 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i87gn-0005cK-Tw; Wed, 11 Sep 2019 18:50:02 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i87bt-0003cL-Cu; Wed, 11 Sep 2019 18:45:00 +0000
-Received: by mail-pg1-x543.google.com with SMTP id u17so11960793pgi.6;
- Wed, 11 Sep 2019 11:44:56 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=sender:date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:content-transfer-encoding:in-reply-to
- :user-agent; bh=TqRe5lHOX4M4V547/WzO3Xh0zpwoYhwfsfhLh4/QmNw=;
- b=cnMbF78zIN2X9zEOosJXsLy6lBLW8nW1rFohkwPEIwEa6uF/WOsmr2xAEaCVe9SAaN
- i7+2cu7+E+HD86A9dgw7KnHv3DgSkf6MbdVO6kYHFHGtBoMfaXxiHoGeuuUYZoXnYMZY
- Ekg3XH3c4rxVxhQhmfQv/GmEOMWlbMfF3zq/YKsRPvNNmuh+7DmnXbZDJakCr3JItly7
- E/L6ZmHXOf49bDukg+osrL8HBIaUPKtSIS4xFCHloTkspkUpLF4eXYWTwugwaG0JCCW0
- hiovc2vqED7iGDoHu2Ad6HClqB4Wpnka75/Wpcf8D3WPpKG4j8ii4SVkKr6u3WFJeoyc
- 0Vmg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
- :references:mime-version:content-disposition
- :content-transfer-encoding:in-reply-to:user-agent;
- bh=TqRe5lHOX4M4V547/WzO3Xh0zpwoYhwfsfhLh4/QmNw=;
- b=e+7EQfVMv56JRZkEbv6WmgCyQZ7CypKqfs2n29PNnwoUxAzsFwOPGK7UF1hfSxNQVj
- gCd8aDnl4WFgy/CUcXp4ho2fPx1BGPlkQ7M8mYOS2tCaxgJ7NqbhEUUCnpfB5XJf4rO7
- +AchCBaV0BVjGuA3bD1yyewE+yLqZ+J67sAN7/GjUODzvpjdyh/etUO7kw3HKKlGDWhA
- gy+8XHsHxf72A+3bnUcmO8aOSJJg3NvqNXwUx/rXVFjoBMj8QkVSd0T9/AGGtu1IpPiB
- cs0bgeJ9qzoPIeUUNBIF1/lqD7A3UPABaQP2+PWKGCfJRbMyVwo7RU6ywmA4HAPGPV9g
- F60Q==
-X-Gm-Message-State: APjAAAU/ACjjYj6xz7CEgxLj8R1GdfIyx28Zll/tSR0UGdYHOTsHjesA
- TRvyKZ84J7poB1YugQc6UZc=
-X-Google-Smtp-Source: APXvYqywaaDO+l8UX/soexCNWT1d0rN20NelYgx+BVxfqR8t062U5VDK59Nz1VPcLeOY/YWISW81Sg==
-X-Received: by 2002:a62:cb:: with SMTP id 194mr46108963pfa.130.1568227496001; 
- Wed, 11 Sep 2019 11:44:56 -0700 (PDT)
-Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
- by smtp.gmail.com with ESMTPSA id g26sm23692017pfi.103.2019.09.11.11.44.54
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Wed, 11 Sep 2019 11:44:54 -0700 (PDT)
-Date: Wed, 11 Sep 2019 11:44:53 -0700
-From: Guenter Roeck <linux@roeck-us.net>
-To: Chunfeng Yun <chunfeng.yun@mediatek.com>
-Subject: Re: [PATCH v3 3/7] usb: mtu3: support ip-sleep wakeup for MT8183
-Message-ID: <20190911184453.GA2628@roeck-us.net>
-References: <1567150854-30033-1-git-send-email-chunfeng.yun@mediatek.com>
- <1567150854-30033-4-git-send-email-chunfeng.yun@mediatek.com>
+ id 1i87gQ-0005bH-HX; Wed, 11 Sep 2019 18:49:40 +0000
+X-UUID: 3fe9a2b3e50c42418e7dc75cc460c1dd-20190911
+X-UUID: 3fe9a2b3e50c42418e7dc75cc460c1dd-20190911
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
+ (envelope-from <sean.wang@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 27193781; Wed, 11 Sep 2019 10:49:30 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 11:49:28 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Sep 2019 02:49:26 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Sep 2019 02:49:26 +0800
+Message-ID: <1568227767.8481.4.camel@mtkswgap22>
+Subject: Re: [PATCH v7 5/7] power: reset: add driver for mt6323 poweroff
+From: Sean Wang <sean.wang@mediatek.com>
+To: Frank Wunderlich <frank-w@public-files.de>
+Date: Thu, 12 Sep 2019 02:49:27 +0800
+In-Reply-To: <20190910070446.639-6-frank-w@public-files.de>
+References: <20190910070446.639-1-frank-w@public-files.de>
+ <20190910070446.639-6-frank-w@public-files.de>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1567150854-30033-4-git-send-email-chunfeng.yun@mediatek.com>
-User-Agent: Mutt/1.5.24 (2015-08-30)
+X-TM-SNTS-SMTP: 40F2DA63D46F5CD798C0546348146FBED6745C18E6A0AE0525103705EBD596C12000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_114457_460972_5EED2373 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: 0.2 (/)
+X-CRM114-CacheID: sfid-20190911_114938_644098_CB05BA8E 
+X-CRM114-Status: GOOD (  23.49  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (groeck7[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (groeck7[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,52 +72,190 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Mathias Nyman <mathias.nyman@intel.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
+ Alexandre Belloni <alexandre.belloni@bootlin.com>,
+ Alessandro Zummo <a.zummo@towertech.it>, linux-pm@vger.kernel.org,
+ Josef Friedl <josef.friedl@speed.at>, linux-kernel@vger.kernel.org,
+ Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
+ Eddie Huang <eddie.huang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
+ Matthias Brugger <matthias.bgg@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
+ Tianping Fang <tianping.fang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-T24gRnJpLCBBdWcgMzAsIDIwMTkgYXQgMDM6NDA6NTBQTSArMDgwMCwgQ2h1bmZlbmcgWXVuIHdy
-b3RlOgo+IFN1cHBvcnQgVVNCIHdha2V1cCBieSBpcC1zbGVlcCBtb2RlIGZvciBNVDgxODMsIGl0
-J3Mgc2ltaWxhciB0bwo+IE1UODE3Mwo+IAo+IFNpZ25lZC1vZmYtYnk6IENodW5mZW5nIFl1biA8
-Y2h1bmZlbmcueXVuQG1lZGlhdGVrLmNvbT4KPiAtLS0KPiB2MzogY2hhbmdlcyBtaWNyb3MgZGVm
-aW5lCj4gCj4gdjI6IG5vIGNoYW5nZXMKPiAtLS0KPiAgZHJpdmVycy91c2IvbXR1My9tdHUzX2hv
-c3QuYyB8IDE0ICsrKysrKysrKysrKystCj4gIDEgZmlsZSBjaGFuZ2VkLCAxMyBpbnNlcnRpb25z
-KCspLCAxIGRlbGV0aW9uKC0pCj4gCj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvdXNiL210dTMvbXR1
-M19ob3N0LmMgYi9kcml2ZXJzL3VzYi9tdHUzL210dTNfaG9zdC5jCj4gaW5kZXggYzg3MWI5NGYz
-ZTZmLi40ZjgyMDg4ODVlYmQgMTAwNjQ0Cj4gLS0tIGEvZHJpdmVycy91c2IvbXR1My9tdHUzX2hv
-c3QuYwo+ICsrKyBiL2RyaXZlcnMvdXNiL210dTMvbXR1M19ob3N0LmMKPiBAQCAtMTgsNiArMTgs
-MTIgQEAKPiAgI2luY2x1ZGUgIm10dTMuaCIKPiAgI2luY2x1ZGUgIm10dTNfZHIuaCIKPiAgCj4g
-Ky8qIG10ODE4MyBldGMgKi8KPiArI2RlZmluZSBQRVJJX1dLX0NUUkwwCTB4MjAKPiArI2RlZmlu
-ZSBXQzBfSVNfQyh4KQkoKCh4KSAmIDB4ZikgPDwgMjgpICAvKiBjeWNsZSBkZWJvdW5jZSAqLwo+
-ICsjZGVmaW5lIFdDMF9JU19QCUJJVCgxMikJLyogcG9sYXJpdHkgKi8KPiArI2RlZmluZSBXQzBf
-SVNfRU4JQklUKDYpCj4gKwoKRm9yIDY0LWJpdCBidWlsZHMsIHRoaXMgcmVzdWx0cyBpbjoKCmRy
-aXZlcnMvdXNiL210dTMvbXR1M19ob3N0LmM6IEluIGZ1bmN0aW9uIOKAmHNzdXNiX3dha2V1cF9p
-cF9zbGVlcF9zZXTigJk6Ci4vaW5jbHVkZS9saW51eC9iaXRzLmg6NjoxOTogd2FybmluZzoKCWNv
-bnZlcnNpb24gZnJvbSDigJhsb25nIHVuc2lnbmVkIGludOKAmSB0byDigJh1MzLigJkge2FrYSDi
-gJh1bnNpZ25lZCBpbnTigJl9CgljaGFuZ2VzIHZhbHVlIGZyb20g4oCYMTg0NDY3NDQwNzM0NDEx
-MjAzMjDigJkgdG8g4oCYNDAyNjUzNjAwMOKAmSBbLVdvdmVyZmxvd10KCnNpbmNlIFdDMF9JU19D
-KCkgaXMgc2lnbiBleHRlbmRlZCB0byA2NCBiaXQgYW5kIHRoZW4gdHJ1bmNhdGVkLgoKT2JzZXJ2
-ZWQgd2l0aCBnY2MgNy40LjAgYW5kIDguMy4wLgoKR3VlbnRlcgoKPiAgLyogbXQ4MTczIGV0YyAq
-Lwo+ICAjZGVmaW5lIFBFUklfV0tfQ1RSTDEJMHg0Cj4gICNkZWZpbmUgV0MxX0lTX0MoeCkJKCgo
-eCkgJiAweGYpIDw8IDI2KSAgLyogY3ljbGUgZGVib3VuY2UgKi8KPiBAQCAtMzAsNyArMzYsOCBA
-QAo+ICAjZGVmaW5lIFNTQ19TUE1fSU5UX0VOCQlCSVQoMSkKPiAgCj4gIGVudW0gc3N1c2JfdXdr
-X3ZlcnMgewo+IC0JU1NVU0JfVVdLX1YxID0gMSwKPiArCVNTVVNCX1VXS19WMCA9IDAsCj4gKwlT
-U1VTQl9VV0tfVjEsCj4gIAlTU1VTQl9VV0tfVjIsCj4gIH07Cj4gIAo+IEBAIC00Myw2ICs1MCwx
-MSBAQCBzdGF0aWMgdm9pZCBzc3VzYl93YWtldXBfaXBfc2xlZXBfc2V0KHN0cnVjdCBzc3VzYl9t
-dGsgKnNzdXNiLCBib29sIGVuYWJsZSkKPiAgCXUzMiByZWcsIG1zaywgdmFsOwo+ICAKPiAgCXN3
-aXRjaCAoc3N1c2ItPnV3a192ZXJzKSB7Cj4gKwljYXNlIFNTVVNCX1VXS19WMDoKPiArCQlyZWcg
-PSBzc3VzYi0+dXdrX3JlZ19iYXNlICsgUEVSSV9XS19DVFJMMDsKPiArCQltc2sgPSBXQzBfSVNf
-RU4gfCBXQzBfSVNfQygweGYpIHwgV0MwX0lTX1A7Cj4gKwkJdmFsID0gZW5hYmxlID8gKFdDMF9J
-U19FTiB8IFdDMF9JU19DKDB4OCkpIDogMDsKPiArCQlicmVhazsKPiAgCWNhc2UgU1NVU0JfVVdL
-X1YxOgo+ICAJCXJlZyA9IHNzdXNiLT51d2tfcmVnX2Jhc2UgKyBQRVJJX1dLX0NUUkwxOwo+ICAJ
-CW1zayA9IFdDMV9JU19FTiB8IFdDMV9JU19DKDB4ZikgfCBXQzFfSVNfUDsKCl9fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFp
-bGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlz
-dHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi, Frank
+
+On Tue, 2019-09-10 at 09:04 +0200, Frank Wunderlich wrote:
+> From: Josef Friedl <josef.friedl@speed.at>
+> 
+> add poweroff driver for mt6323 and make Makefile and Kconfig-Entries
+> 
+> Suggested-by: Frank Wunderlich <frank-w@public-files.de>
+> Signed-off-by: Josef Friedl <josef.friedl@speed.at>
+> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
+> Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+
+
+Thanks for your help keep the unfinished driver to upstream
+
+Acked-by: Sean Wang <sean.wang@mediatek.com>
+
+> ---
+> changes since v6: none
+> changes since v5: split out mfd/mt6397/core.h
+> changes since v4: none
+> changes since v3: none
+> changes since v2: none (=v2 part 5)
+> ---
+>  drivers/power/reset/Kconfig           | 10 +++
+>  drivers/power/reset/Makefile          |  1 +
+>  drivers/power/reset/mt6323-poweroff.c | 97 +++++++++++++++++++++++++++
+>  3 files changed, 108 insertions(+)
+>  create mode 100644 drivers/power/reset/mt6323-poweroff.c
+> 
+> diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
+> index a564237278ff..c721939767eb 100644
+> --- a/drivers/power/reset/Kconfig
+> +++ b/drivers/power/reset/Kconfig
+> @@ -140,6 +140,16 @@ config POWER_RESET_LTC2952
+>  	  This driver supports an external powerdown trigger and board power
+>  	  down via the LTC2952. Bindings are made in the device tree.
+>  
+> +config POWER_RESET_MT6323
+> +       bool "MediaTek MT6323 power-off driver"
+> +       depends on MFD_MT6397
+> +       help
+> +         The power-off driver is responsible for externally shutdown down
+> +         the power of a remote MediaTek SoC MT6323 is connected to through
+> +         controlling a tiny circuit BBPU inside MT6323 RTC.
+> +
+> +         Say Y if you have a board where MT6323 could be found.
+> +
+>  config POWER_RESET_QNAP
+>  	bool "QNAP power-off driver"
+>  	depends on OF_GPIO && PLAT_ORION
+> diff --git a/drivers/power/reset/Makefile b/drivers/power/reset/Makefile
+> index 85da3198e4e0..da37f8b851dc 100644
+> --- a/drivers/power/reset/Makefile
+> +++ b/drivers/power/reset/Makefile
+> @@ -11,6 +11,7 @@ obj-$(CONFIG_POWER_RESET_GPIO) += gpio-poweroff.o
+>  obj-$(CONFIG_POWER_RESET_GPIO_RESTART) += gpio-restart.o
+>  obj-$(CONFIG_POWER_RESET_HISI) += hisi-reboot.o
+>  obj-$(CONFIG_POWER_RESET_MSM) += msm-poweroff.o
+> +obj-$(CONFIG_POWER_RESET_MT6323) += mt6323-poweroff.o
+>  obj-$(CONFIG_POWER_RESET_QCOM_PON) += qcom-pon.o
+>  obj-$(CONFIG_POWER_RESET_OCELOT_RESET) += ocelot-reset.o
+>  obj-$(CONFIG_POWER_RESET_PIIX4_POWEROFF) += piix4-poweroff.o
+> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
+> new file mode 100644
+> index 000000000000..1caf43d9e46d
+> --- /dev/null
+> +++ b/drivers/power/reset/mt6323-poweroff.c
+> @@ -0,0 +1,97 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Power off through MediaTek PMIC
+> + *
+> + * Copyright (C) 2018 MediaTek Inc.
+> + *
+> + * Author: Sean Wang <sean.wang@mediatek.com>
+> + *
+> + */
+> +
+> +#include <linux/err.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/platform_device.h>
+> +#include <linux/mfd/mt6397/core.h>
+> +#include <linux/mfd/mt6397/rtc.h>
+> +
+> +struct mt6323_pwrc {
+> +	struct device *dev;
+> +	struct regmap *regmap;
+> +	u32 base;
+> +};
+> +
+> +static struct mt6323_pwrc *mt_pwrc;
+> +
+> +static void mt6323_do_pwroff(void)
+> +{
+> +	struct mt6323_pwrc *pwrc = mt_pwrc;
+> +	unsigned int val;
+> +	int ret;
+> +
+> +	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
+> +	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
+> +
+> +	ret = regmap_read_poll_timeout(pwrc->regmap,
+> +					pwrc->base + RTC_BBPU, val,
+> +					!(val & RTC_BBPU_CBUSY),
+> +					MTK_RTC_POLL_DELAY_US,
+> +					MTK_RTC_POLL_TIMEOUT);
+> +	if (ret)
+> +		dev_err(pwrc->dev, "failed to write BBPU: %d\n", ret);
+> +
+> +	/* Wait some time until system down, otherwise, notice with a warn */
+> +	mdelay(1000);
+> +
+> +	WARN_ONCE(1, "Unable to power off system\n");
+> +}
+> +
+> +static int mt6323_pwrc_probe(struct platform_device *pdev)
+> +{
+> +	struct mt6397_chip *mt6397_chip = dev_get_drvdata(pdev->dev.parent);
+> +	struct mt6323_pwrc *pwrc;
+> +	struct resource *res;
+> +
+> +	pwrc = devm_kzalloc(&pdev->dev, sizeof(*pwrc), GFP_KERNEL);
+> +	if (!pwrc)
+> +		return -ENOMEM;
+> +
+> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
+> +	pwrc->base = res->start;
+> +	pwrc->regmap = mt6397_chip->regmap;
+> +	pwrc->dev = &pdev->dev;
+> +	mt_pwrc = pwrc;
+> +
+> +	pm_power_off = &mt6323_do_pwroff;
+> +
+> +	return 0;
+> +}
+> +
+> +static int mt6323_pwrc_remove(struct platform_device *pdev)
+> +{
+> +	if (pm_power_off == &mt6323_do_pwroff)
+> +		pm_power_off = NULL;
+> +
+> +	return 0;
+> +}
+> +
+> +static const struct of_device_id mt6323_pwrc_dt_match[] = {
+> +	{ .compatible = "mediatek,mt6323-pwrc" },
+> +	{},
+> +};
+> +MODULE_DEVICE_TABLE(of, mt6323_pwrc_dt_match);
+> +
+> +static struct platform_driver mt6323_pwrc_driver = {
+> +	.probe          = mt6323_pwrc_probe,
+> +	.remove         = mt6323_pwrc_remove,
+> +	.driver         = {
+> +		.name   = "mt6323-pwrc",
+> +		.of_match_table = mt6323_pwrc_dt_match,
+> +	},
+> +};
+> +
+> +module_platform_driver(mt6323_pwrc_driver);
+> +
+> +MODULE_DESCRIPTION("Poweroff driver for MT6323 PMIC");
+> +MODULE_AUTHOR("Sean Wang <sean.wang@mediatek.com>");
+> +MODULE_LICENSE("GPL v2");
+
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
