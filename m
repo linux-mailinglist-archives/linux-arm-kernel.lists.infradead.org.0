@@ -2,68 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3460CAF821
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:40:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8797CAF840
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:51:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Date:Message-ID:Subject:
+	From:To:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
 	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=4+scLqlHhBU3p8/HU2o4C4Zwc6xEhzKPjqM3Xkk4NAY=; b=WNQv/RB/NOeRcj
-	B1zr1zUGAB5zp5YpvWVmgdlkWJwO8DthWP+9TgdGH4yEepN1Ompg/IVDBm3P4AcgfZq2XMggIpdi+
-	if4eqJE0itKRDdvY9gkF/Z501C2MIpEjVKvKKoLX6YZSHltt/q02bjt5nM+T2SPx2/DtTPVi/KP9O
-	dXQykW0yx1jtfdWRHcEpwhFj3K0ROPcH47uoN1d7mUhevjdB0VjwJXbQdFS80xXMalw+YYo0/SQha
-	4jZaYkG2ynPk6OVSRqJdx6gknR+AQ8axd4em/QZYcpzESrwezSQaMFrcEfDlH1SupRir15ZPWMB49
-	sPxRWfKq1p3XKOSqtYDQ==;
+	List-Owner; bh=HANcoZiWN09bIfEhCEFbVuIuJtPIVOdhrphEnhIRIbM=; b=G87UNSMaSXlHYW
+	9Rx9fqfEcmCDekF/ASCqx8unawzzHd6qKm/+lanRxI0RNyaeSbipyd1hh1uNJ9f94dyRMYDOUJIV5
+	ObH8G7byDET72s4ppjMv+JfXQ6MLhZxKDPh1C6rzmhKXnYpap7JQW6oVcxu7KVtEtQOjxKrlCscvN
+	XIlGRsZ/dbioKWzSont+6p/xRsv/vo1rpVKMgWSPDgjo8qHnFBEtgH3/wirw9s/XdBRO/pzTpbzox
+	EraAqEYEK+P9Z73Fjdx3IFp0tTHdJWCVvNqaFXuFRyVrH/vpqJ00vubTfiyBmpLMwtFUNtTxEH4qI
+	jAK99EL+eHZ9Al92b9Ow==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7yAK-0003TV-Mi; Wed, 11 Sep 2019 08:39:52 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i7yL6-0007zB-4B; Wed, 11 Sep 2019 08:51:00 +0000
+Received: from szxga04-in.huawei.com ([45.249.212.190] helo=huawei.com)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7yA2-0003SF-Ab; Wed, 11 Sep 2019 08:39:35 +0000
-X-UUID: 58ddb690ac584148baa79e4ab800ce74-20190911
-X-UUID: 58ddb690ac584148baa79e4ab800ce74-20190911
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <walter-zh.wu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1633767191; Wed, 11 Sep 2019 00:39:25 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Sep 2019 01:39:25 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Sep 2019 16:39:23 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Wed, 11 Sep 2019 16:39:23 +0800
-From: Walter Wu <walter-zh.wu@mediatek.com>
-To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
- <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
- <matthias.bgg@gmail.com>, Andrew Morton <akpm@linux-foundation.org>, "Martin
- Schwidefsky" <schwidefsky@de.ibm.com>, Andrey Konovalov
- <andreyknvl@google.com>, Qian Cai <cai@lca.pw>, Vlastimil Babka
- <vbabka@suse.cz>, Arnd Bergmann <arnd@arndb.de>
-Subject: [PATCH v3] mm/kasan: dump alloc and free stack for page allocator
-Date: Wed, 11 Sep 2019 16:39:21 +0800
-Message-ID: <20190911083921.4158-1-walter-zh.wu@mediatek.com>
-X-Mailer: git-send-email 2.18.0
+ id 1i7yKt-0007yX-TA
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:50:49 +0000
+Received: from DGGEMS403-HUB.china.huawei.com (unknown [172.30.72.58])
+ by Forcepoint Email with ESMTP id 1641D4EFB943E5F659AA;
+ Wed, 11 Sep 2019 16:50:39 +0800 (CST)
+Received: from [127.0.0.1] (10.177.251.225) by DGGEMS403-HUB.china.huawei.com
+ (10.3.19.203) with Microsoft SMTP Server id 14.3.439.0;
+ Wed, 11 Sep 2019 16:50:29 +0800
+To: <catalin.marinas@arm.com>, <will@kernel.org>
+From: Yunfeng Ye <yeyunfeng@huawei.com>
+Subject: [PATCH] arm64: psci: Use udelay() instead of msleep() to reduce
+ waiting time
+Message-ID: <e4d42bda-72f2-4002-f319-1cbe2bff74d2@huawei.com>
+Date: Wed, 11 Sep 2019 16:50:08 +0800
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-X-MTK: N
+Content-Language: en-US
+X-Originating-IP: [10.177.251.225]
+X-CFilter-Loop: Reflected
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_013934_373980_AADAD64A 
-X-CRM114-Status: GOOD (  11.86  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_015048_112155_175FF4CA 
+X-CRM114-Status: GOOD (  12.88  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [45.249.212.190 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -75,104 +64,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
- linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
- linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: kstewart@linuxfoundation.org, ard.biesheuvel@linaro.org,
+ gregkh@linuxfoundation.org, linux-kernel@vger.kernel.org, tglx@linutronix.de,
+ wuyun.wu@huawei.com, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch is KASAN's report adds the alloc/free stack for page allocator
-in order to help programmer to see memory corruption caused by the page.
+We want to reduce the time of cpu_down() for saving power, found that
+cpu_psci_cpu_kill() cost 10ms after psci_ops.affinity_info() fail.
 
-By default, KASAN doesn't record alloc or free stack for page allocator.
-It is difficult to fix up the page use-after-free or double-free issue.
+Normally the time cpu dead is very short, it is no need to wait 10ms.
+so use udelay 10us to instead msleep 10ms in every waiting loop, and add
+cond_resched() to give a chance to run a higher-priority process.
 
-We add the following changing:
-1) KASAN enable PAGE_OWNER by default to get the alloc stack of the page.
-2) Add new feature option to get the free stack of the page.
-
-The new feature KASAN_DUMP_PAGE depends on DEBUG_PAGEALLOC, it will help
-to record free stack of the page, it is very helpful for solving the page
-use-after-free or double-free issue.
-
-When KASAN_DUMP_PAGE is enabled then KASAN's report will show the last
-alloc and free stack of the page, it should be:
-
-BUG: KASAN: use-after-free in kmalloc_pagealloc_uaf+0x70/0x80
-Write of size 1 at addr ffffffc0d60e4000 by task cat/115
-...
- prep_new_page+0x1c8/0x218
- get_page_from_freelist+0x1ba0/0x28d0
- __alloc_pages_nodemask+0x1d4/0x1978
- kmalloc_order+0x28/0x58
- kmalloc_order_trace+0x28/0xe0
- kmalloc_pagealloc_uaf+0x2c/0x80
-page last free stack trace:
- __free_pages_ok+0x116c/0x1630
- __free_pages+0x50/0x78
- kfree+0x1c4/0x250
- kmalloc_pagealloc_uaf+0x38/0x80
-
-Changes since v1:
-- slim page_owner and move it into kasan
-- enable the feature by default
-
-Changes since v2:
-- enable PAGE_OWNER by default
-- use DEBUG_PAGEALLOC to get page information
-
-cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
-cc: Vlastimil Babka <vbabka@suse.cz>
-cc: Andrey Konovalov <andreyknvl@google.com>
-Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
 ---
- lib/Kconfig.kasan | 15 +++++++++++++++
- 1 file changed, 15 insertions(+)
+ arch/arm64/kernel/psci.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
-diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
-index 4fafba1a923b..4d59458c0c5a 100644
---- a/lib/Kconfig.kasan
-+++ b/lib/Kconfig.kasan
-@@ -41,6 +41,7 @@ config KASAN_GENERIC
- 	select SLUB_DEBUG if SLUB
- 	select CONSTRUCTORS
- 	select STACKDEPOT
-+	select PAGER_OWNER
- 	help
- 	  Enables generic KASAN mode.
- 	  Supported in both GCC and Clang. With GCC it requires version 4.9.2
-@@ -63,6 +64,7 @@ config KASAN_SW_TAGS
- 	select SLUB_DEBUG if SLUB
- 	select CONSTRUCTORS
- 	select STACKDEPOT
-+	select PAGER_OWNER
- 	help
- 	  Enables software tag-based KASAN mode.
- 	  This mode requires Top Byte Ignore support by the CPU and therefore
-@@ -135,6 +137,19 @@ config KASAN_S390_4_LEVEL_PAGING
- 	  to 3TB of RAM with KASan enabled). This options allows to force
- 	  4-level paging instead.
- 
-+config KASAN_DUMP_PAGE
-+	bool "Dump the last allocation and freeing stack of the page"
-+	depends on KASAN
-+	select DEBUG_PAGEALLOC
-+	help
-+	  By default, KASAN enable PAGE_OWNER only to record alloc stack
-+	  for page allocator. It is difficult to fix up page use-after-free
-+	  or double-free issue.
-+	  This feature depends on DEBUG_PAGEALLOC, it will extra record
-+	  free stack of page. It is very helpful for solving the page
-+	  use-after-free or double-free issue.
-+	  This option will have a small memory overhead.
-+
- config TEST_KASAN
- 	tristate "Module for testing KASAN for bug detection"
- 	depends on m && KASAN
+diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
+index 85ee7d0..9e9d8a6 100644
+--- a/arch/arm64/kernel/psci.c
++++ b/arch/arm64/kernel/psci.c
+@@ -86,15 +86,15 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
+ 	 * while it is dying. So, try again a few times.
+ 	 */
+
+-	for (i = 0; i < 10; i++) {
++	for (i = 0; i < 10000; i++) {
+ 		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
+ 		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
+ 			pr_info("CPU%d killed.\n", cpu);
+ 			return 0;
+ 		}
+
+-		msleep(10);
+-		pr_info("Retrying again to check for CPU kill\n");
++		cond_resched();
++		udelay(10);
+ 	}
+
+ 	pr_warn("CPU%d may not have shut down cleanly (AFFINITY_INFO reports %d)\n",
 -- 
-2.18.0
+1.8.3.1
 
 
 _______________________________________________
