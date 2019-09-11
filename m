@@ -2,83 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7467FB02E7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 19:47:20 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8202BB02EF
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 19:48:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=lsyI3am0/6URCmLymBedfckxE5MwDVYSJoxIRhebM40=; b=Ohr
-	qLcAcESwLBguM1Mg9+FPd73GN4x0sSCDccDK3aUL/ZFG1caOBoB3A34B1+vw65R4yy6Ul3vy9Idyt
-	hOFrvrrCRKA7cC4zyqCbzJCNGJbx+HVTkD4+FqIAAkGmXKOEuoS3xC5J+yrrRNb6JZE+0Thb0uayJ
-	oT97c6rNEsULnLt/mxhh1l3cxvZ3KBUN6wHUt+KAqIwm1KmR9AzJjgyENVdwyU6QB6alBJE1elvAF
-	f1zEkLrYv8dz2MJAumJwyYxzsE9pQfXWbo5y2Svow6Y6DRPeGR3NPEp2J2Rr6cG144RlH/VIXBCKb
-	rfe9Q2UAx3cUBx+eIhj6BXu7XMaUpiQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=v+1kOPqU9ZWUGNctlzXh4yvLs3QwY5gnt/cPUv3p/yY=; b=epmVEgcuNuktX2
+	eeBTt3AUtgu9H2lHw20v4eV3LqGN6Tc8bG4mr0F3jA+EzsMQpIXscB99J3QYFjf4q7G7bDvBEo+J5
+	7OK7Ub6HA6S1dKFRULGiH3ZT8yPCMltI47AVJ4xESdQg5NLjL4E04ywOi8p4+G5T4nmrfmaiMqlhQ
+	VLY9ZGLpWSejbGJsO9vh8DvbYDa4rNN5U0o62LVfTKQpz+E9t7FJHeyP6ExS95KjMYcTWal2d2O8R
+	60LXBJ8zCNQkGwfbhk1p5FenI1rJTszTt+z4fDRBmIeetAc0bE2Elt01U08ifvH+OZCbbGXL8SeoB
+	2Mpvzzwh3w1uoK/e2q1g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i86i0-0006jv-I7; Wed, 11 Sep 2019 17:47:12 +0000
-Received: from mail-io1-xd44.google.com ([2607:f8b0:4864:20::d44])
+	id 1i86iw-0007SS-Bo; Wed, 11 Sep 2019 17:48:10 +0000
+Received: from mo6-p02-ob.smtp.rzone.de ([2a01:238:20a:202:5302::2])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i86hn-0006ja-SB
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 17:47:01 +0000
-Received: by mail-io1-xd44.google.com with SMTP id f4so47116233ion.2
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 10:46:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=m6EOAJO1qgEemJlkYFxDYcBwzW52x2O5dEl25GRcoSc=;
- b=LQHGkTsqCaP8EfYJI/4g9fzb5NhR+mH8Ofvj4v2IIjBuYitiqn/Iz0cp5UZVRy6EGq
- GcsPryMwY+RrBvooTU18BzfsCCX7TDEihCT8uSFRtDj/93ML9GR1wXg7Va/QCNIj7H+w
- aYd4DGYjJOJBQ01MdyYdzWl1PCZpdbt8UyAAzTzFEvRZE3euqOUQ+IDxvT0ZRV5Z+jXN
- 8s8QBvTzTOnCp0IiDHH8OhOJtToHgAIiLEAfcFwk5UDydGLLuTMcKbVF1gdPLzTsd6og
- rnb0wU3P+F5ibXwLonI/Ns26o3b/RtvMw05MrWXDNphEP8JCw8WRUbiy5GBnoG1YyQDE
- 0zVA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=m6EOAJO1qgEemJlkYFxDYcBwzW52x2O5dEl25GRcoSc=;
- b=X8r+ELAZ4nELfHPGbTSdTbNCbBlgMj7xwO+NMJx4J8AOVaIduRZ6CaE5+1EpwDnR8l
- 5wb2iXU4m5Yd79EnwMMDHJv/7PnfkcMc/6Yj4GGZTshTEOD32VuW+oBbW+EbKjTGZzym
- e1YwsYLWih/wfxkWLDEaNP11/SBUY/4LHofOQfpaQnFHG86wgBVVAfjfljI8DLLMyPWr
- inG+cVcZOKFvUbJfuokTqUvlSTRgEzaMcLpNGl1XJQwwR6+xJZKPa5cGHsqsd2ABbHG8
- ExFEgfxs3rAepBwEuNNBRzMKNPUuDKM9MSWmA6nbTKGWfDhwACzie+8fLAJFuXDE2Ysf
- MUuA==
-X-Gm-Message-State: APjAAAW0T95HA84Ygf88NMwGaj6SJkJRIK65kKOsJ8V37MFAL/hKKAxR
- G9VlLZk3Nv/8x9QnfHRfNtI=
-X-Google-Smtp-Source: APXvYqzxTMSyzOm40fnhFm9eaQZkFEEtBWf0exKouA7+NALtOfOJVLpNgsp+8oDMNF52g0vv1Y8dZg==
-X-Received: by 2002:a5d:89c1:: with SMTP id a1mr7693726iot.306.1568224018425; 
- Wed, 11 Sep 2019 10:46:58 -0700 (PDT)
-Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
- [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id z11sm18788778ioi.88.2019.09.11.10.46.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Sep 2019 10:46:57 -0700 (PDT)
-From: Adam Ford <aford173@gmail.com>
-To: linux-omap@vger.kernel.org
-Subject: [PATCH] ARM: omap2plus_defconfig: Enable DRM_TI_TFP410
-Date: Wed, 11 Sep 2019 12:46:47 -0500
-Message-Id: <20190911174647.29721-1-aford173@gmail.com>
-X-Mailer: git-send-email 2.17.1
+ id 1i86i9-0006wI-HN
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 17:47:24 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; t=1568224036;
+ s=strato-dkim-0002; d=goldelico.com;
+ h=Message-Id:Date:Subject:Cc:To:From:X-RZG-CLASS-ID:X-RZG-AUTH:From:
+ Subject:Sender;
+ bh=OlzypCaQKSjZuhd91T1qjCuJ5hWzxdmcL55w16GN85E=;
+ b=rqZLZePZEnJWHBzLqpO6i3go4gMEQn08lrmKFBjFVcmOHuukOd/g+WbqtE9Hwn7CLV
+ P6mkCRu1jy8pWGaL3LFA0n5p2kz+z6W+OKNZ1BuIs6xzK8ltvY69ObrY+4x1e2bAIyPy
+ Ww2U1Bbz/kQg9bFFb37zaPFUPU8GZ0G4/OebbbA+j8MuPjQiuQocpOdlQ41v7yqOKYyD
+ wFjVZ2EH0NVLiUa3/dBlsLKYZ7KxzUKiVinwwCGXD0NCu+BtpUkk2ouTfzIEtZ6uk4HS
+ 9FkNJeKdAgqcR/EGdyKkUJrmMY3wn4mfl/ueNnsCqWCOP4S3ZcJHWayBpF3+/bCMXcOg
+ 9FYA==
+X-RZG-AUTH: ":JGIXVUS7cutRB/49FwqZ7WcJeFKiMhflhwDubTJ9o1OAA2UNf2M7Nk1d2C6Y"
+X-RZG-CLASS-ID: mo00
+Received: from iMac.fritz.box by smtp.strato.de (RZmta 44.27.0 DYNA|AUTH)
+ with ESMTPSA id u036f9v8BHlE8nq
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (curve secp521r1 with
+ 521 ECDH bits, eq. 15360 bits RSA))
+ (Client did not present a certificate);
+ Wed, 11 Sep 2019 19:47:14 +0200 (CEST)
+From: "H. Nikolaus Schaller" <hns@goldelico.com>
+To: =?UTF-8?q?Beno=C3=AEt=20Cousson?= <bcousson@baylibre.com>,
+ Tony Lindgren <tony@atomide.com>, Rob Herring <robh+dt@kernel.org>,
+ Adam Ford <aford173@gmail.com>,
+ =?UTF-8?q?Andr=C3=A9=20Roth?= <neolynx@gmail.com>,
+ Mark Rutland <mark.rutland@arm.com>,
+ "Rafael J. Wysocki" <rjw@rjwysocki.net>,
+ Viresh Kumar <viresh.kumar@linaro.org>,
+ Enric Balletbo i Serra <eballetbo@gmail.com>,
+ Javier Martinez Canillas <javier@dowhile0.org>,
+ Roger Quadros <rogerq@ti.com>, Teresa Remmet <t.remmet@phytec.de>,
+ "H. Nikolaus Schaller" <hns@goldelico.com>
+Subject: [PATCH v3 0/8] OMAP3: convert opp-v1 to opp-v2 and read speed binned
+ / 720MHz grade bits
+Date: Wed, 11 Sep 2019 19:47:06 +0200
+Message-Id: <cover.1568224032.git.hns@goldelico.com>
+X-Mailer: git-send-email 2.19.1
+MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_104659_940214_230285F1 
-X-CRM114-Status: UNSURE (   7.53  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.1 (/)
+X-CRM114-CacheID: sfid-20190911_104722_100902_A5657127 
+X-CRM114-Status: GOOD (  13.44  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.1 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d44 listed in]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [2a01:238:20a:202:5302:0:0:2 listed in]
  [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (aford173[at]gmail.com)
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (aford173[at]gmail.com)
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -97,36 +91,133 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, Tony Lindgren <tony@atomide.com>,
- adam.ford@logicpd.com, sre@kernel.org, Russell King <linux@armlinux.org.uk>,
- Adam Ford <aford173@gmail.com>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: devicetree@vger.kernel.org, linux-omap@vger.kernel.org,
+ linux-pm@vger.kernel.org, linux-kernel@vger.kernel.org,
+ kernel@pyra-handheld.com, letux-kernel@openphoenux.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The TFP410 driver was removed but the replacement driver was
-never enabled.  This patch enableds the DRM_TI_TFP410
+CHANGES V3:
+* make omap36xx control the abb-ldo and properly switch mode
+  (suggested by Adam Ford <aford173@gmail.com>)
+* add a note about enabling the turbo-mode OPPs
 
-Fixes: be3143d8b27f ("drm/omap: Remove TFP410 and DVI connector drivers")
+PATCH V2 2019-09-07 19:46:58:
+* fix ti-cpufreq to properly describe which compatible string is legacy
+* add some reviewed-by and acked-by Tony Lindgren <tony@atomide.com>
+* include am3517 patches by Adam Ford <aford173@gmail.com>
+* review opp-suspend; and add turbo-mode; opp properties
+* add a note how to disable an OPP in a board.dts file
 
-Signed-off-by: Adam Ford <aford173@gmail.com>
+PATCH V1 2019-09-07 08:56:19:
+* fix typo in omap3-ldp.dts
+  (reported by Tony Lindgren <tony@atomide.com>)
+* extend commit message to describe the bit patterns needed
+  for opp-supported-hw
+* add error check to ioremap()
+  (suggested by Christ van Willegen <cvwillegen@gmail.com>)
+* update Documentation/devicetree/bindings/arm/omap/omap.txt
+* change bulk update to use "ti,omap3430" and "ti,omap3630"
+* update OPP4 of omap3430 to 1275 mV since it was not a valid
+  voltage for the twl4030 driver (reported by Tony Lindgren
+  <tony@atomide.com>)
 
-diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
-index a0449d3b48a5..d384c13de19a 100644
---- a/arch/arm/configs/omap2plus_defconfig
-+++ b/arch/arm/configs/omap2plus_defconfig
-@@ -359,6 +359,7 @@ CONFIG_DRM_OMAP_PANEL_TPO_TD028TTEC1=m
- CONFIG_DRM_OMAP_PANEL_TPO_TD043MTEA1=m
- CONFIG_DRM_OMAP_PANEL_NEC_NL8048HL11=m
- CONFIG_DRM_TILCDC=m
-+CONFIG_DRM_TI_TFP410=m
- CONFIG_FB=y
- CONFIG_FIRMWARE_EDID=y
- CONFIG_FB_MODE_HELPERS=y
+RFC V2 2019-09-04 10:53:43:
+* merge separate patch to remove opp-v1 table from n950-n9 into
+  the general omap3xxx.dtsi patch
+  (suggested by Viresh Kumar <viresh.kumar@linaro.org>)
+* add legacy compatibility to ti,omap3430 and ti,omap3630 for
+  the ti-cpufreq driver
+* make driver and omap3xxx.dtsi patches pass checkpatch
+* add bulk patch to explicitly define compatibility to ti,omap3430
+  and ti,omap36xx in addition to ti,omap3 of all in-tree boards
+  where it was missing
+
+RFC V1 2019-09-02 12:55:55:
+
+This patch set converts the omap3 opp tables to opp-v2 format
+and extends the ti-cpufreq to support omap3.
+
+It adds 720 MHz (omap34xx) and 1 GHz (omap36xx) OPPs but
+tells the ti-cpufreq driver to disable them if the speed
+binned / 720MHz grade eFuse bits indicate that the chip
+is not rated for that speed. 
+
+It has been tested (for chip variant detection, not reliability
+of the high speed OPPs) on:
+
+* BeagleBoard C2 (omap3530 600MHz)
+* BeagleBoard XM B (dm3730 800MHz)
+* GTA04A4 (dm3730 800MHz)
+* GTA04A5 (dm3730 1GHz)
+
+
+Adam Ford (2):
+  cpufreq: ti-cpufreq: Add support for AM3517
+  ARM: dts: Add OPP-V2 table for AM3517
+
+H. Nikolaus Schaller (6):
+  cpufreq: ti-cpufreq: add support for omap34xx and omap36xx
+  ARM: dts: omap34xx & omap36xx: replace opp-v1 tables by opp-v2 for
+  DTS: bindings: omap: update bindings documentation
+  ARM: dts: omap3: bulk convert compatible to be explicitly ti,omap3430
+    or ti,omap3630 or ti,am3517
+  cpufreq: ti-cpufreq: omap36xx use "cpu0","vbb" if run in
+    multi_regulator mode
+  ARM: dts: omap36xx: using OPP1G needs to control the abb_ldo
+
+ .../devicetree/bindings/arm/omap/omap.txt     |  30 +++--
+ .../bindings/cpufreq/ti-cpufreq.txt           |   6 +-
+ arch/arm/boot/dts/am3517.dtsi                 |  31 +++++
+ arch/arm/boot/dts/am3517_mt_ventoux.dts       |   2 +-
+ .../boot/dts/logicpd-som-lv-35xx-devkit.dts   |   2 +-
+ .../boot/dts/logicpd-torpedo-35xx-devkit.dts  |   2 +-
+ arch/arm/boot/dts/omap3-beagle-xm.dts         |   2 +-
+ arch/arm/boot/dts/omap3-beagle.dts            |   2 +-
+ arch/arm/boot/dts/omap3-cm-t3530.dts          |   2 +-
+ arch/arm/boot/dts/omap3-cm-t3730.dts          |   2 +-
+ arch/arm/boot/dts/omap3-devkit8000-lcd43.dts  |   2 +-
+ arch/arm/boot/dts/omap3-devkit8000-lcd70.dts  |   2 +-
+ arch/arm/boot/dts/omap3-devkit8000.dts        |   2 +-
+ arch/arm/boot/dts/omap3-gta04.dtsi            |   2 +-
+ arch/arm/boot/dts/omap3-ha-lcd.dts            |   2 +-
+ arch/arm/boot/dts/omap3-ha.dts                |   2 +-
+ arch/arm/boot/dts/omap3-igep0020-rev-f.dts    |   2 +-
+ arch/arm/boot/dts/omap3-igep0020.dts          |   2 +-
+ arch/arm/boot/dts/omap3-igep0030-rev-g.dts    |   2 +-
+ arch/arm/boot/dts/omap3-igep0030.dts          |   2 +-
+ arch/arm/boot/dts/omap3-ldp.dts               |   2 +-
+ arch/arm/boot/dts/omap3-lilly-a83x.dtsi       |   2 +-
+ arch/arm/boot/dts/omap3-lilly-dbb056.dts      |   2 +-
+ arch/arm/boot/dts/omap3-n9.dts                |   2 +-
+ arch/arm/boot/dts/omap3-n950-n9.dtsi          |   7 --
+ arch/arm/boot/dts/omap3-n950.dts              |   2 +-
+ .../arm/boot/dts/omap3-overo-storm-alto35.dts |   2 +-
+ .../boot/dts/omap3-overo-storm-chestnut43.dts |   2 +-
+ .../boot/dts/omap3-overo-storm-gallop43.dts   |   2 +-
+ .../arm/boot/dts/omap3-overo-storm-palo35.dts |   2 +-
+ .../arm/boot/dts/omap3-overo-storm-palo43.dts |   2 +-
+ .../arm/boot/dts/omap3-overo-storm-summit.dts |   2 +-
+ arch/arm/boot/dts/omap3-overo-storm-tobi.dts  |   2 +-
+ .../boot/dts/omap3-overo-storm-tobiduo.dts    |   2 +-
+ arch/arm/boot/dts/omap3-pandora-1ghz.dts      |   2 +-
+ arch/arm/boot/dts/omap3-sbc-t3530.dts         |   2 +-
+ arch/arm/boot/dts/omap3-sbc-t3730.dts         |   2 +-
+ arch/arm/boot/dts/omap3-sniper.dts            |   2 +-
+ arch/arm/boot/dts/omap3-thunder.dts           |   2 +-
+ arch/arm/boot/dts/omap3-zoom3.dts             |   2 +-
+ arch/arm/boot/dts/omap3430-sdp.dts            |   2 +-
+ arch/arm/boot/dts/omap34xx.dtsi               |  66 ++++++++--
+ arch/arm/boot/dts/omap36xx.dtsi               |  65 ++++++++--
+ drivers/cpufreq/cpufreq-dt-platdev.c          |   2 +-
+ drivers/cpufreq/ti-cpufreq.c                  | 119 +++++++++++++++++-
+ 45 files changed, 320 insertions(+), 80 deletions(-)
+
 -- 
-2.17.1
+2.19.1
 
 
 _______________________________________________
