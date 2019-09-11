@@ -2,75 +2,74 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5E769AF97D
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 11:51:22 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BD779AF97E
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 11:51:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=J8a0175dt5HP5FVy1DpUvApE+CuynX57pe8dNaTTETw=; b=VOvcBtiQ3L/yVZ
-	T4yNoPW0HUPWTdtFwc4qciTKjt/PXGdMppStDl7H0Z6FF7k/tfoYt9MHBk4fIz9NYUiVI9o9VREe/
-	7epepB7smaOXrIb/zt/6lGK5UJFcoBnygmE254NsuylL4oUGVolJ6yrp9IID7RNhd0PZo5Jzkmldn
-	iZVn49nEPLVXvwR9UWeFRts6Pewlqnovdf2e69yrLuUCz/ifxtpc1QkySnxrIc9pgL1i+EWJdbawv
-	7YVPsz0NhVbfyElAbyhTva0+RS7pj1/wJowXTqPLQdtI4WB1pmu+vrUWlb3CMYgBEwvTm64fgNqQE
-	mr9rKnAh5DXP0EwmqeXw==;
+	List-Owner; bh=6A81zIs6MNh8StNKuHQF2eN9xXIetGaJcbbjvbXLTQk=; b=DkxRzRTjnlI0ZT
+	hupaZ9/5+R1BVBxeXHe9W3HWywJc6OcQnccujFGZHpJ5B16GoXrG011Zrt5e6Hgc1PBmOPoD8uKv0
+	L723TOcJBq8wiGpKzDlaBlIBddCZayL2yX88ACtyuOvR6kCAcC783oQ7Fl31PplAa32NZaaIFfN12
+	/tnqv/N31zSrmYZZ0eTTCrOmMpz7eV+Et1fWIf3kWSeag8p9B6igGOSri+ohpAjMknySnYonlM0jE
+	08B9mTIRS5iAhkTckr+0Sel21x91rYc7UHTZsv2l88ZZH2uV4dyJxkkwg4B9O3fy5raCMtRJFsMj8
+	GVIiqWnJDG+PCNP2+/Jg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7zHN-000480-8I; Wed, 11 Sep 2019 09:51:13 +0000
-Received: from mail-lf1-x142.google.com ([2a00:1450:4864:20::142])
+	id 1i7zHc-0004N3-Vj; Wed, 11 Sep 2019 09:51:29 +0000
+Received: from mail-lj1-x244.google.com ([2a00:1450:4864:20::244])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7z9a-0003FT-Gj
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 09:43:11 +0000
-Received: by mail-lf1-x142.google.com with SMTP id c195so1033237lfg.9
+ id 1i7zB2-0004ag-Aw
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 09:44:42 +0000
+Received: by mail-lj1-x244.google.com with SMTP id y5so8522977lji.4
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 02:43:09 -0700 (PDT)
+ Wed, 11 Sep 2019 02:44:40 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=n0eGU7EwYvV44i/yZMlYO2mgsRqBSzpFil4+yiEnP3M=;
- b=jcbRuqnqmVkgtZ98MPCNgpOW1Z6kmUSw8xfMYAW37/xJ62Qt3QsQ/voTaoFkiTXyDP
- w1Q6d7XhKj2eklW4V5AoidRHlrApe860OCk56LBhG/GrCi+4h+4CGPvYYXbc21mT2Qmb
- n8/oZluaIZNJqeg71T5o1EhMoB+m0tTvFGbJeLBixpk1B0OvuwGsdc44VhKJIB54ydLM
- +rJ1kHOtRpY3wWwCnkSYJO6TzxUPRlzQadSIu3Q0h8wveQneMW03LB1cnaSuhiyk35Up
- nJFTKiaBIgKKwiKSXI8tF9Js1bVU4DuCKFCf6MOBC8EWum5/LM9CClP0N5EetYarRvQn
- HOcA==
+ :cc; bh=TfO4HK/WGXxXK4b73oCZUUTA55lR9Dm1uUKXZY75m1g=;
+ b=FVd794B/Kh/woVfXGPNZCcWRpdvtsO7FEOFvVWWsDu9CYn3LPtCumsPuml8fSoKw+e
+ KnKQ1OQBqXFQg6aAxPWZ9HUGhtvWVXE2oMkqx/P0c4YZ5Dr+VfmnJTgVQP/TupXCVAgd
+ PSXqaZfRWqeyTLoKB2ClqNXo0wsisp9NfhfloqBp6KpkJstC4JydH0EqgRt0bq0sqtGb
+ UtIxjI9Qxd/S9sWFfStjHiOq9R0mDh75ID1sH9qF6T9BmL7AkK+TJsEKb9iUw2WSAj2X
+ ky1GT9TVT4NlNp7nUobvtpK89c2PzAxwlBYSGimYJTckgwGmIvYBAvMsoseCkdXWoyUJ
+ GvgA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=n0eGU7EwYvV44i/yZMlYO2mgsRqBSzpFil4+yiEnP3M=;
- b=FGE6UDzHjx23TEhpOl3v8yC8gg18H5uidkDG1TZxHYNyeinle+dFEwXhgVceLNju+S
- IEX6Pvx24VAGwQa3hjaEc+89gb9gKGl9BwwTEkeRsC9OzVcU2Wkj4QosLvs+5h95umyN
- VAm9My07PrxQMaYqwC2Qe3gHHau1LKiEDh7uHm3Ncgh9iLniHYXvuBwrZiw4sYi+EQ+D
- hfgX3bMRRm1SKYBdDetbtawdcTf8U/G3bUQEEGAI85NoGqtCdupAYoSlmTzyIEoXRdjW
- +kJJO6kZCaUqn9xBACY/e1lOrABqaHxYkNOnJsrH/0edV4ShBWZ+LxS5esP+rrmg/cDe
- Y+DA==
-X-Gm-Message-State: APjAAAVIaRnQb5HwNQE+rkvdj/irRhQ2gDR6DSovumk2RSZp3FBHpu2f
- 5ABlrtCH7vnzRNRh5HFDFD8x3jcurot3Jqha0Fu2+bd5vvLasQ==
-X-Google-Smtp-Source: APXvYqx4fsV/WTIRSXhN20GDJfDooCB6DWGgBVXCN0nS2mCnPbakVJ5rn36/YEesW30QiVEAg3CUEQ+P0NTYpRFt3xA=
-X-Received: by 2002:ac2:51a7:: with SMTP id f7mr1200184lfk.152.1568194988428; 
- Wed, 11 Sep 2019 02:43:08 -0700 (PDT)
+ bh=TfO4HK/WGXxXK4b73oCZUUTA55lR9Dm1uUKXZY75m1g=;
+ b=W+GOBblMyRpsqnkPQSAnJIoKbiT9BNrkAuq8Fa6DL++WILIj/jMT8CXe2QGWZ/wRyC
+ xIQXxFoPRCABupOtjqI98y48LDBKE04w/M5lXeoRqynLbZnI505TgwRaxSaWexAacENH
+ +CfyqYyZJ7Wy0uasWWPL7VwJsSF/LZP5vLA8eY1Kyi+7JttdLY/ltTmcfPMS1lksrtfB
+ o4zH83p3RJyKXIEGaRlsZ+X6OP+0Ypey1/gFzkBalHxHRU2wpcQP2IgN3k8dDe4TW3Cd
+ muG/b0i7PWXebaEu0KlaF3oLqeW+9QV8a4c+L/IsVUuMVF1vtV01xJquzq01wjOwOS05
+ gztg==
+X-Gm-Message-State: APjAAAVZBPt31cQKmJcJIOz3lW1zn2ig8ZbOOv5AKpUU8LDDzyeKuymi
+ 3KrusBxJLuJvBsyJYAwMP/bxMG8Qi5kIaTPN2et91aJXAthJ5Q==
+X-Google-Smtp-Source: APXvYqyeJkEnPdU1nrHqRvNcYPbtI5tOlybw7foaIzX3I439oYmaNxLFkKhZDLyK6wH/rgo0lItiJsUi9kMI/EVGZhQ=
+X-Received: by 2002:a2e:8056:: with SMTP id p22mr17545242ljg.69.1568195078811; 
+ Wed, 11 Sep 2019 02:44:38 -0700 (PDT)
 MIME-Version: 1.0
-References: <1567054348-19685-1-git-send-email-srinath.mannam@broadcom.com>
- <1567054348-19685-3-git-send-email-srinath.mannam@broadcom.com>
-In-Reply-To: <1567054348-19685-3-git-send-email-srinath.mannam@broadcom.com>
+References: <1568178685-30738-1-git-send-email-rayagonda.kokatanur@broadcom.com>
+In-Reply-To: <1568178685-30738-1-git-send-email-rayagonda.kokatanur@broadcom.com>
 From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 11 Sep 2019 10:42:57 +0100
-Message-ID: <CACRpkdYyHMHknkrH_Gm45tgwv6dgjFxdoeg+Hj_KBWWyQqV1og@mail.gmail.com>
-Subject: Re: [PATCH 2/2] gpio: iproc-gpio: Handle interrupts for multiple
- instances
-To: Srinath Mannam <srinath.mannam@broadcom.com>
+Date: Wed, 11 Sep 2019 10:44:27 +0100
+Message-ID: <CACRpkdYSHnt3WMjpukHKq0kygxZbxHt8tipkQ-UHdXWYr0L5yg@mail.gmail.com>
+Subject: Re: [PATCH v1 1/1] pinctrl: iproc: Add 'get_direction' support
+To: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_024310_684876_B7B20C34 
-X-CRM114-Status: GOOD (  14.17  )
+X-CRM114-CacheID: sfid-20190911_024440_543184_F0FBE210 
+X-CRM114-Status: UNSURE (   9.04  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:142 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:244 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -92,10 +91,9 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>,
- Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>,
- Ray Jui <rjui@broadcom.com>,
+Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
  bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -103,30 +101,14 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Aug 29, 2019 at 5:52 AM Srinath Mannam
-<srinath.mannam@broadcom.com> wrote:
+On Wed, Sep 11, 2019 at 6:16 AM Rayagonda Kokatanur
+<rayagonda.kokatanur@broadcom.com> wrote:
 
-> From: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
+> Add 'get_direction' support to the iProc GPIO driver.
 >
-> When multiple instance of iproc-gpio chips are present, a fix up
-> message[1] is printed during the probe of second and later instances.
->
-> This issue is because driver sharing same irq_chip data structure
-> among multiple instances of driver.
->
-> Fix this by allocating irq_chip data structure per instance of
-> iproc-gpio.
->
-> [1] fix up message addressed by this patch
-> [  7.862208] gpio gpiochip2: (689d0000.gpio): detected irqchip that
->    is shared with multiple gpiochips: please fix the driver.
->
-> Fixes: 616043d58a89 ("pinctrl: Rename gpio driver from cygnus to iproc")
 > Signed-off-by: Rayagonda Kokatanur <rayagonda.kokatanur@broadcom.com>
 
-Patch applied, I had to rewrite it a bit to fit the new code that
-set up the irqchip when adding the gpio_chip, please check that
-the result works.
+Patch applied, thanks for doing this!
 
 Yours,
 Linus Walleij
