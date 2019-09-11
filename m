@@ -2,118 +2,67 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 98ACDAF5BE
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:26:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B9B85AF5DB
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:33:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rzf4KjkTs78XMRM6LRSGk/ALBkdXQFRipQ5ntTk9LDg=; b=XcB1Pgk4IuDxbj
-	Ps9bB2/Wj4wwWNKSjXCh8EiEJs44kjoYqXq6NFXmZYQBiF6h4AdW7hxl35YUMVoS216A1OwGPKQqK
-	U8wqb8lymMFjz0wIYcwFSVc1dEowPb/OCVsB6qVmH1+eTd3ymXjC2xihdbMI9OoJa8Y79yp4XM3gI
-	PpAPlqYlrY7WOw26J6POyc0LzGwdpcxbXJWv5DqAyj/NEIekvW3IUd7zi4BnLiCtvoPQ4a9ni2vzG
-	MSiy3P1p4wrwXeCZMIT8YvtFuzb8mDJI90keer7wgakJkE6asWQ+uEMJvmbPukq95zPr2ZECmTEFi
-	IdOEwrmq8IOFVU0ZakHg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=ZkiGBftyJPlzkAWhGfZLRVvWcm1KYhJ9HoSIawkE2Pk=; b=kF6VVTKuOcnUov
+	cAzzsOMobKTjwDtpqgByQ9zEEFx1m5DP/VNxWrq7Guj5r6qtsmYQoaHx93KKqf9kv5TOLfDm4DmyR
+	lfwk0xDleNAWNo+FJ4tyetA2xXxgNxN5ZMSei1SbWhiJ6V82Xk4tXY1I5Bpd9FfUCFVV/7+cRW3Ka
+	Lq4aZ+j+WRhqY7JfSGI3jUA5uh7+nUCSiaUbE91o466UGrpyxfpwXhcrDTJAwKrhEHDVfah5DIlPT
+	LmprNuU4en5abpFTnL7m2WEgyn3x0dLaAge6LK4OR0Z6ENgDMz5dLK5JDi4Sz2TGx1+BPunrl6dRf
+	I1UdKCVh1KWKZEKG/oxA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7w4r-0004uZ-LY; Wed, 11 Sep 2019 06:26:05 +0000
-Received: from mail-eopbgr20045.outbound.protection.outlook.com ([40.107.2.45]
- helo=EUR02-VE1-obe.outbound.protection.outlook.com)
+	id 1i7wBx-0006rm-3Y; Wed, 11 Sep 2019 06:33:25 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7w4d-0004u8-GY
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:25:53 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AhQgZA9RL2RnUEE8En3cCN6d3nqE6gxNFyzAm6Aq134MqX0W5hOF6xYUbbHXfCLs6wcSglQJi1H8eFFmL8NhJx30CJ/txM8Krn51HB8hDryTY62JLf8Prlpdet4biqL4mAODLFXPHbS56Liwr1RsEPDMRd5VtMXVW9a7h+x81rDjFZGfE9HT44glvmW/5/Pc7yrt7mcwH7tW2Bb2gTrX1R7aahutEBXTcRpbBz0bmdeDIqQbu0z1Ce94301wl/aGuWPIGcdJv/EtePFn6Af823Tn5h5Zb6b5KUQydvqeTN5AA4jrr5sH++aAMQ3g/P8pZanb9UhfLIkBozFqBuQHtA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w0oEkVv3Qp5GP1MfcPqvcdNuPJFghY9hqhJQ2bMLAkM=;
- b=iOq9/A1p3Tt8Dckl4B4TqKuwpY50JsfbtFXgKZRnqaT35xglHU1751zRth9k2WNNGfD5D4eQqyt4J3lhB+qpxoq2bY6u0EkemcYtD4c8SG+vZQEdiwMyt2a8QLPZJIx4pHwfXdPb2DDNIPDajbu/DAHmzOXrX9QLCBp8oZ9htCAuao31+mcB5R2KEmzlhEBzO68SBpMbYKQ3qa25YoZSYnTL8DIWjuTA0cSeP1TwULEhyIgntuUhRbiFPtfZWWmSo9TNj+YKt15XlayWQx5W9V2sZmKrUmTYCEEu+OSiJkmZqYfis3rodPfv8K7zsWb5DbD7RDsiOApWoiLNDZeiEA==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=w0oEkVv3Qp5GP1MfcPqvcdNuPJFghY9hqhJQ2bMLAkM=;
- b=poFRPox0fMD200mjsw8hCP1CN0aR53a/MCr4y396sQCr6HXq2OP0qMul0J03CWxXT6joxrXDGTM3nFCD7h/EI5ugs/9aHjO1TBxZUplPrpjG2TPxI6alioxOYC3Q+zbA/7renMyOG2PPW9GLAEOuxJaiid0CQNiczrpJ0dDl+ws=
-Received: from DB7PR04MB4490.eurprd04.prod.outlook.com (52.135.138.150) by
- DB7PR04MB4235.eurprd04.prod.outlook.com (52.135.128.153) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2241.18; Wed, 11 Sep 2019 06:25:47 +0000
-Received: from DB7PR04MB4490.eurprd04.prod.outlook.com
- ([fe80::4427:96f2:f651:6dfa]) by DB7PR04MB4490.eurprd04.prod.outlook.com
- ([fe80::4427:96f2:f651:6dfa%5]) with mapi id 15.20.2241.018; Wed, 11 Sep 2019
- 06:25:47 +0000
-From: Biwen Li <biwen.li@nxp.com>
-To: Biwen Li <biwen.li@nxp.com>, "andy.shevchenko@gmail.com"
- <andy.shevchenko@gmail.com>, "rafael@kernel.org" <rafael@kernel.org>, Leo Li
- <leoyang.li@nxp.com>, Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>, Udit
- Kumar <udit.kumar@nxp.com>, "wsa@the-dreams.de" <wsa@the-dreams.de>,
- "rjw@rjwysocki.net" <rjw@rjwysocki.net>
-Subject: RE: [v2] ACPI: support for NXP i2c controller
-Thread-Topic: [v2] ACPI: support for NXP i2c controller
-Thread-Index: AQHVZImk5g5PYdwMgEGSUu7QXQNuc6cmCfxA
-Date: Wed, 11 Sep 2019 06:25:47 +0000
-Message-ID: <DB7PR04MB4490390AC5331280CDF012E38FB10@DB7PR04MB4490.eurprd04.prod.outlook.com>
-References: <20190906075319.21244-1-biwen.li@nxp.com>
-In-Reply-To: <20190906075319.21244-1-biwen.li@nxp.com>
-Accept-Language: zh-CN, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=biwen.li@nxp.com; 
-x-originating-ip: [119.31.174.73]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 8e1044cb-a643-4ee0-8314-08d73680e24f
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
- SRVR:DB7PR04MB4235; 
-x-ms-traffictypediagnostic: DB7PR04MB4235:|DB7PR04MB4235:
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <DB7PR04MB423549E353D4131150B333E18FB10@DB7PR04MB4235.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:483;
-x-forefront-prvs: 0157DEB61B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(39860400002)(366004)(136003)(396003)(376002)(346002)(189003)(199004)(7696005)(316002)(446003)(11346002)(6116002)(8676002)(81156014)(478600001)(81166006)(5660300002)(66066001)(66476007)(256004)(66946007)(14444005)(7416002)(66446008)(64756008)(66556008)(25786009)(52536014)(7736002)(74316002)(305945005)(71190400001)(71200400001)(6246003)(53936002)(4326008)(8936002)(229853002)(33656002)(6436002)(476003)(54906003)(186003)(3846002)(55016002)(2906002)(9686003)(44832011)(486006)(86362001)(14454004)(102836004)(76116006)(99286004)(2201001)(26005)(110136005)(76176011)(2501003)(6506007);
- DIR:OUT; SFP:1101; SCL:1; SRVR:DB7PR04MB4235;
- H:DB7PR04MB4490.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: iF2SUKnxSzLiiZskm+ykpukJHTYSSRcZhXEr4bqD1SThDBvevwQLqAiHmtoIvV1A+OO/k4Lxj3lX3rnlVkkTFWiyed16txQj63EBIpg9RFfHo7M3H5wCqENf1o20XlbJ2O3PkClpoZjO6KAh/HhA0xLBLzQ0v9pBBNvSeNTqf3FpmafazzkqLq4eqbFPnXyHPVagI4aaU9X3wx8uNFDijn0wuvvkv4hYS0vAB8biHBYKUFk0X3vb5k9/bOPfz4U49W5JS34pHbBjA0EpfDYAqyPODEWw5Q1SASfeVl3fUnejYQU+P2GBKaRktvG6AA5Nw4M1oSiwoXGonmdXQXntNGJrzaf0DnKk4G+P7ndi5zS2w46uXMdUs1/awj298xhWqYQJy+jEG1bN1pYg7br1y7h9r17WsUKWh6ewyiF3HJA=
+ id 1i7wBV-0006gg-Np; Wed, 11 Sep 2019 06:32:59 +0000
+X-UUID: 10817411352a45c983144532ab019628-20190910
+X-UUID: 10817411352a45c983144532ab019628-20190910
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 337924590; Tue, 10 Sep 2019 22:32:49 -0800
+Received: from MTKMBS01N2.mediatek.inc (172.21.101.79) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Tue, 10 Sep 2019 23:32:49 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs01n2.mediatek.inc (172.21.101.79) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 14:32:46 +0800
+Received: from mtkswgap22.mediatek.inc (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 11 Sep 2019 14:32:46 +0800
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: <linux-scsi@vger.kernel.org>, <linux-block@vger.kernel.org>,
+ <martin.petersen@oracle.com>, <axboe@kernel.dk>, <jejb@linux.ibm.com>,
+ <matthias.bgg@gmail.com>
+Subject: [PATCH v1] fixup null q->dev checking in both block and scsi layer
+Date: Wed, 11 Sep 2019 14:32:40 +0800
+Message-ID: <1568183562-18241-1-git-send-email-stanley.chu@mediatek.com>
+X-Mailer: git-send-email 1.7.9.5
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 8e1044cb-a643-4ee0-8314-08d73680e24f
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2019 06:25:47.5890 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: a7fkQTTbZyXHQTfJ5ixjwBiCwuIcnJP8gXeISo/PaKHH+7GWm1dwZ8Ez3AUfXmH5bv2qIezn3CvzbqGAdwxWhw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: DB7PR04MB4235
+X-TM-SNTS-SMTP: 132F359E13791AB27648D710E93C0462C44FA0D70584A38ED65C1DB61DF7ABA02000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_232551_548283_38271F98 
-X-CRM114-Status: GOOD (  14.13  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190910_233257_778259_4E71D98E 
+X-CRM114-Status: UNSURE (   5.76  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.2.45 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -125,140 +74,33 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-acpi@vger.kernel.org" <linux-acpi@vger.kernel.org>,
- "linux-i2c@vger.kernel.org" <linux-i2c@vger.kernel.org>,
- Chuanhua Han <chuanhua.han@nxp.com>,
- "shawnguo@kernel.org" <shawnguo@kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
+ kuohong.wang@mediatek.com, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, Stanley Chu <stanley.chu@mediatek.com>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi rafael, wolfram
-	Any comments about this?
-> 
-> Enable NXP i2c controller to boot with ACPI
-> 
-> Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
-> Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
-> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
-> Signed-off-by: Biwen Li <biwen.li@nxp.com>
-> ---
-> Change in v2:
-> 	- Simplify code
-> 	- Adjust header file order
-> 	- Not use ACPI_PTR()
-> 
->  drivers/acpi/acpi_apd.c      |  7 +++++++
->  drivers/i2c/busses/i2c-imx.c | 17 +++++++++++++----
->  2 files changed, 20 insertions(+), 4 deletions(-)
-> 
-> diff --git a/drivers/acpi/acpi_apd.c b/drivers/acpi/acpi_apd.c index
-> 7cd0c9ac71ea..71511ae2dfcd 100644
-> --- a/drivers/acpi/acpi_apd.c
-> +++ b/drivers/acpi/acpi_apd.c
-> @@ -160,11 +160,17 @@ static const struct apd_device_desc hip08_i2c_desc
-> = {
->  	.setup = acpi_apd_setup,
->  	.fixed_clk_rate = 250000000,
->  };
-> +
->  static const struct apd_device_desc thunderx2_i2c_desc = {
->  	.setup = acpi_apd_setup,
->  	.fixed_clk_rate = 125000000,
->  };
-> 
-> +static const struct apd_device_desc nxp_i2c_desc = {
-> +	.setup = acpi_apd_setup,
-> +	.fixed_clk_rate = 350000000,
-> +};
-> +
->  static const struct apd_device_desc hip08_spi_desc = {
->  	.setup = acpi_apd_setup,
->  	.fixed_clk_rate = 250000000,
-> @@ -238,6 +244,7 @@ static const struct acpi_device_id acpi_apd_device_ids[]
-> = {
->  	{ "HISI02A1", APD_ADDR(hip07_i2c_desc) },
->  	{ "HISI02A2", APD_ADDR(hip08_i2c_desc) },
->  	{ "HISI0173", APD_ADDR(hip08_spi_desc) },
-> +	{ "NXP0001", APD_ADDR(nxp_i2c_desc) },
->  #endif
->  	{ }
->  };
-> diff --git a/drivers/i2c/busses/i2c-imx.c b/drivers/i2c/busses/i2c-imx.c index
-> 15f6cde6452f..a3b61336fe55 100644
-> --- a/drivers/i2c/busses/i2c-imx.c
-> +++ b/drivers/i2c/busses/i2c-imx.c
-> @@ -20,6 +20,7 @@
->   *
->   */
-> 
-> +#include <linux/acpi.h>
->  #include <linux/clk.h>
->  #include <linux/completion.h>
->  #include <linux/delay.h>
-> @@ -255,6 +256,12 @@ static const struct of_device_id i2c_imx_dt_ids[] =
-> {  };  MODULE_DEVICE_TABLE(of, i2c_imx_dt_ids);
-> 
-> +static const struct acpi_device_id i2c_imx_acpi_ids[] = {
-> +	{"NXP0001", .driver_data = (kernel_ulong_t)&vf610_i2c_hwdata},
-> +	{ }
-> +};
-> +MODULE_DEVICE_TABLE(acpi, i2c_imx_acpi_ids);
-> +
->  static inline int is_imx1_i2c(struct imx_i2c_struct *i2c_imx)  {
->  	return i2c_imx->hwdata->devtype == IMX1_I2C; @@ -1048,14 +1055,13
-> @@ static const struct i2c_algorithm i2c_imx_algo = {
-> 
->  static int i2c_imx_probe(struct platform_device *pdev)  {
-> -	const struct of_device_id *of_id = of_match_device(i2c_imx_dt_ids,
-> -							   &pdev->dev);
->  	struct imx_i2c_struct *i2c_imx;
->  	struct resource *res;
->  	struct imxi2c_platform_data *pdata = dev_get_platdata(&pdev->dev);
->  	void __iomem *base;
->  	int irq, ret;
->  	dma_addr_t phy_addr;
-> +	const struct imx_i2c_hwdata *match;
-> 
->  	dev_dbg(&pdev->dev, "<%s>\n", __func__);
-> 
-> @@ -1075,8 +1081,9 @@ static int i2c_imx_probe(struct platform_device
-> *pdev)
->  	if (!i2c_imx)
->  		return -ENOMEM;
-> 
-> -	if (of_id)
-> -		i2c_imx->hwdata = of_id->data;
-> +	match = device_get_match_data(&pdev->dev);
-> +	if (match)
-> +		i2c_imx->hwdata = match;
->  	else
->  		i2c_imx->hwdata = (struct imx_i2c_hwdata *)
->  				platform_get_device_id(pdev)->driver_data;
-> @@ -1089,6 +1096,7 @@ static int i2c_imx_probe(struct platform_device
-> *pdev)
->  	i2c_imx->adapter.nr		= pdev->id;
->  	i2c_imx->adapter.dev.of_node	= pdev->dev.of_node;
->  	i2c_imx->base			= base;
-> +	ACPI_COMPANION_SET(&i2c_imx->adapter.dev,
-> ACPI_COMPANION(&pdev->dev));
-> 
->  	/* Get I2C clock */
->  	i2c_imx->clk = devm_clk_get(&pdev->dev, NULL); @@ -1247,6 +1255,7
-> @@ static struct platform_driver i2c_imx_driver = {
->  		.name = DRIVER_NAME,
->  		.pm = &i2c_imx_pm_ops,
->  		.of_match_table = i2c_imx_dt_ids,
-> +		.acpi_match_table = i2c_imx_acpi_ids,
->  	},
->  	.id_table = imx_i2c_devtype,
->  };
-> --
-> 2.17.1
+Some devices may skip blk_pm_runtime_init() and have null pointer
+in its request_queue->dev. For example, SCSI devices of UFS Well-Known
+LUNs.
+
+Currently the null pointer is checked by the user of
+blk_set_runtime_active(), i.e., scsi_dev_type_resume(). It is better to
+check it by blk_set_runtime_active() itself instead of by its users.
+
+Stanley Chu (2):
+  block: bypass blk_set_runtime_active for uninitialized q->dev
+  scsi: core: remove dummy q->dev check
+
+ block/blk-pm.c         | 3 +++
+ drivers/scsi/scsi_pm.c | 3 +--
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+-- 
+2.18.0
 
 
 _______________________________________________
