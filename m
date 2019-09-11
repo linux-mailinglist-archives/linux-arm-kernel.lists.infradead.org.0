@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 99CAEAFD48
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 15:00:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A8F23AFD4D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 15:02:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Gbn8J8H5GJFhbNIpp0hVy5w2ylKC5jpU1pTYocgVlxg=; b=doFRPLT8mg+ACA
-	g+QXRJYHjqFa9vIY5ecy7z2+N1+z909idsv9+HbIo8NfrxX79ISpDYK5tu+YI98ECG7CDUHOUuJCV
-	5OnJhofWz9jQp9En0Z0eIgFWZKEpJFz7+/3H6XEFifrQ7yVnn+BriAMWAbCmq1O4CDkZtnQBk6tVR
-	mpvKyC+2dV7m1e6A561CrJrkK9ExxR290i8saYFDhNm24Rps3McP32AmqDTWTbJW3l0B7mS+sHQlx
-	JKquJl/DmR66iLwedpzEuMQzi6u0YCbdLdyOOZ7/d12cFTeWiyyjkryAAvRVfaHSBZeS2JHfi0TAX
-	tDHOku6IYqEGO0LolkpA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=cloKPI9x7IpqKew1Od84UDEUcicnlrGvncTSnE4o9fs=; b=RQhg33sKx5p9ny
+	laMLZFiJOhygZ1ty3V1plE2TwD4qtA59OeKMWI/zHwL44NuY2dVMA/Xa/zNosHFJZWrE8oeuI5wn1
+	1VLM5fChvHtRnv7ybbimK6hEoRhleTRl7b1x7GigB9k008U8Oi5eSJM+TvCxaDAiPZckgsukMQtHm
+	rYwfBq3ksdBpwe60nrLxlMQ86+Y7terhqEYplkrDGzS/VTfh2XzIN3AaOtp6kKumMfawfBZVB64JM
+	GGqSSXkcR81ZLiXmNP4ptcwMgVncg5mEfT3Gat2Qt+eEVg6rhyCDNZrUUSsRU3/ouVYJ/+Sp9frB2
+	I6zU/7qiNRU2SnimbIXQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i82EN-0006on-K0; Wed, 11 Sep 2019 13:00:19 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i82E5-0005uF-GZ; Wed, 11 Sep 2019 13:00:03 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 169811000;
- Wed, 11 Sep 2019 06:00:01 -0700 (PDT)
-Received: from localhost (unknown [10.37.6.20])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 81A113F59C;
- Wed, 11 Sep 2019 06:00:00 -0700 (PDT)
-Date: Wed, 11 Sep 2019 13:59:58 +0100
-From: Andrew Murray <andrew.murray@arm.com>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH 4/6] phy: meson-g12a-usb3-pcie: Add support for PCIe mode
-Message-ID: <20190911125958.GW9720@e119886-lin.cambridge.arm.com>
-References: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
- <1567950178-4466-5-git-send-email-narmstrong@baylibre.com>
- <20190911121954.GS9720@e119886-lin.cambridge.arm.com>
- <e4249d3a-9a98-c596-01ae-2917ffd78f17@baylibre.com>
+	id 1i82GN-0007Qm-EB; Wed, 11 Sep 2019 13:02:23 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i82G7-0007PW-RQ; Wed, 11 Sep 2019 13:02:09 +0000
+X-UUID: e3271ab8dc1a4ec49e2259ad1f15b1f2-20190911
+X-UUID: e3271ab8dc1a4ec49e2259ad1f15b1f2-20190911
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
+ (envelope-from <walter-zh.wu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 529136661; Wed, 11 Sep 2019 05:02:01 -0800
+Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 06:01:59 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 21:01:58 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 11 Sep 2019 21:01:58 +0800
+From: Walter Wu <walter-zh.wu@mediatek.com>
+To: Andrey Ryabinin <aryabinin@virtuozzo.com>, Alexander Potapenko
+ <glider@google.com>, Dmitry Vyukov <dvyukov@google.com>, Matthias Brugger
+ <matthias.bgg@gmail.com>, Andrew Morton <akpm@linux-foundation.org>, "Martin
+ Schwidefsky" <schwidefsky@de.ibm.com>, Andrey Konovalov
+ <andreyknvl@google.com>, Qian Cai <cai@lca.pw>, Vlastimil Babka
+ <vbabka@suse.cz>, Arnd Bergmann <arnd@arndb.de>
+Subject: [PATCH v4] mm/kasan: dump alloc and free stack for page allocator
+Date: Wed, 11 Sep 2019 21:01:56 +0800
+Message-ID: <20190911130156.12628-1-walter-zh.wu@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <e4249d3a-9a98-c596-01ae-2917ffd78f17@baylibre.com>
-User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_060001_636204_BB3DD941 
-X-CRM114-Status: GOOD (  23.04  )
+X-CRM114-CacheID: sfid-20190911_060207_893663_B9ED328A 
+X-CRM114-Status: GOOD (  11.96  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,178 +75,108 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: lorenzo.pieralisi@arm.com, khilman@baylibre.com, linux-pci@vger.kernel.org,
- linux-kernel@vger.kernel.org, kishon@ti.com, repk@triplefau.lt, maz@kernel.org,
- bhelgaas@google.com, linux-amlogic@lists.infradead.org, yue.wang@Amlogic.com,
- linux-arm-kernel@lists.infradead.org
+Cc: Walter Wu <walter-zh.wu@mediatek.com>, wsd_upstream@mediatek.com,
+ linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com, linux-mm@kvack.org,
+ linux-mediatek@lists.infradead.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 11, 2019 at 02:45:23PM +0200, Neil Armstrong wrote:
-> On 11/09/2019 14:19, Andrew Murray wrote:
-> > On Sun, Sep 08, 2019 at 01:42:56PM +0000, Neil Armstrong wrote:
-> >> This adds extended PCIe PHY functions for the Amlogic G12A
-> >> USB3+PCIE Combo PHY to support reset, power_on and power_off for
-> >> PCIe exclusively.
-> >>
-> >> With these callbacks, we can handle all the needed operations of the
-> >> Amlogic PCIe controller driver.
-> >>
-> >> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
-> >> ---
-> >>  .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 70 ++++++++++++++++---
-> >>  1 file changed, 61 insertions(+), 9 deletions(-)
-> >>
-> >> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-> >> index ac322d643c7a..08e322789e59 100644
-> >> --- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-> >> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-> >> @@ -50,6 +50,8 @@
-> >>  	#define PHY_R5_PHY_CR_ACK				BIT(16)
-> >>  	#define PHY_R5_PHY_BS_OUT				BIT(17)
-> >>  
-> >> +#define PCIE_RESET_DELAY					500
-> >> +
-> >>  struct phy_g12a_usb3_pcie_priv {
-> >>  	struct regmap		*regmap;
-> >>  	struct regmap		*regmap_cr;
-> >> @@ -196,6 +198,10 @@ static int phy_g12a_usb3_init(struct phy *phy)
-> >>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >>  	int data, ret;
-> >>  
-> >> +	ret = reset_control_reset(priv->reset);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> > 
-> > Right, so we've moved this to apply to USB only, thus assuming PCI will
-> > call .reset for its reset (why the asymmetry?).
-> 
-> Exact, there is no power_on/power_off when USB3 mode is used, and vendor
-> always reset the PHY before switching to USB3, but for PCIe, it seems the
-> reset and the power_on must be done separately with the PCIe controller init
-> and reset in the middle.
-> 
-> I would prefer symmetry aswell :-/
+This patch is KASAN's report adds the alloc/free stack for page allocator
+in order to help programmer to see memory corruption caused by the page.
 
-OK.
+By default, KASAN doesn't record alloc or free stack for page allocator.
+It is difficult to fix up the page use-after-free or double-free issue.
 
-Thanks,
+We add the following changing:
+1) KASAN enable PAGE_OWNER by default to get the alloc stack of the page.
+2) Add new feature option to get the free stack of the page.
 
-Andrew Murray
+The new feature KASAN_DUMP_PAGE depends on DEBUG_PAGEALLOC, it will help
+to record free stack of the page, it is very helpful for solving the page
+use-after-free or double-free issue.
 
-> 
-> Neil
-> 
-> > 
-> > Thanks,
-> > 
-> > Andrew Murray
-> > 
-> >>  	/* Switch PHY to USB3 */
-> >>  	/* TODO figure out how to handle when PCIe was set in the bootloader */
-> >>  	regmap_update_bits(priv->regmap, PHY_R0,
-> >> @@ -272,24 +278,64 @@ static int phy_g12a_usb3_init(struct phy *phy)
-> >>  	return 0;
-> >>  }
-> >>  
-> >> -static int phy_g12a_usb3_pcie_init(struct phy *phy)
-> >> +static int phy_g12a_usb3_pcie_power_on(struct phy *phy)
-> >> +{
-> >> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >> +
-> >> +	if (priv->mode == PHY_TYPE_USB3)
-> >> +		return 0;
-> >> +
-> >> +	regmap_update_bits(priv->regmap, PHY_R0,
-> >> +			   PHY_R0_PCIE_POWER_STATE,
-> >> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int phy_g12a_usb3_pcie_power_off(struct phy *phy)
-> >> +{
-> >> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >> +
-> >> +	if (priv->mode == PHY_TYPE_USB3)
-> >> +		return 0;
-> >> +
-> >> +	regmap_update_bits(priv->regmap, PHY_R0,
-> >> +			   PHY_R0_PCIE_POWER_STATE,
-> >> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1d));
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int phy_g12a_usb3_pcie_reset(struct phy *phy)
-> >>  {
-> >>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >>  	int ret;
-> >>  
-> >> -	ret = reset_control_reset(priv->reset);
-> >> +	if (priv->mode == PHY_TYPE_USB3)
-> >> +		return 0;
-> >> +
-> >> +	ret = reset_control_assert(priv->reset);
-> >>  	if (ret)
-> >>  		return ret;
-> >>  
-> >> +	udelay(PCIE_RESET_DELAY);
-> >> +
-> >> +	ret = reset_control_deassert(priv->reset);
-> >> +	if (ret)
-> >> +		return ret;
-> >> +
-> >> +	udelay(PCIE_RESET_DELAY);
-> >> +
-> >> +	return 0;
-> >> +}
-> >> +
-> >> +static int phy_g12a_usb3_pcie_init(struct phy *phy)
-> >> +{
-> >> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >> +
-> >>  	if (priv->mode == PHY_TYPE_USB3)
-> >>  		return phy_g12a_usb3_init(phy);
-> >>  
-> >> -	/* Power UP PCIE */
-> >> -	/* TODO figure out when the bootloader has set USB3 mode before */
-> >> -	regmap_update_bits(priv->regmap, PHY_R0,
-> >> -			   PHY_R0_PCIE_POWER_STATE,
-> >> -			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
-> >> -
-> >>  	return 0;
-> >>  }
-> >>  
-> >> @@ -297,7 +343,10 @@ static int phy_g12a_usb3_pcie_exit(struct phy *phy)
-> >>  {
-> >>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-> >>  
-> >> -	return reset_control_reset(priv->reset);
-> >> +	if (priv->mode == PHY_TYPE_USB3)
-> >> +		return reset_control_reset(priv->reset);
-> >> +
-> >> +	return 0;
-> >>  }
-> >>  
-> >>  static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
-> >> @@ -326,6 +375,9 @@ static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
-> >>  static const struct phy_ops phy_g12a_usb3_pcie_ops = {
-> >>  	.init		= phy_g12a_usb3_pcie_init,
-> >>  	.exit		= phy_g12a_usb3_pcie_exit,
-> >> +	.power_on	= phy_g12a_usb3_pcie_power_on,
-> >> +	.power_off	= phy_g12a_usb3_pcie_power_off,
-> >> +	.reset		= phy_g12a_usb3_pcie_reset,
-> >>  	.owner		= THIS_MODULE,
-> >>  };
-> >>  
-> >> -- 
-> >> 2.17.1
-> >>
-> 
+When KASAN_DUMP_PAGE is enabled then KASAN's report will show the last
+alloc and free stack of the page, it should be:
+
+BUG: KASAN: use-after-free in kmalloc_pagealloc_uaf+0x70/0x80
+Write of size 1 at addr ffffffc0d60e4000 by task cat/115
+...
+ prep_new_page+0x1c8/0x218
+ get_page_from_freelist+0x1ba0/0x28d0
+ __alloc_pages_nodemask+0x1d4/0x1978
+ kmalloc_order+0x28/0x58
+ kmalloc_order_trace+0x28/0xe0
+ kmalloc_pagealloc_uaf+0x2c/0x80
+page last free stack trace:
+ __free_pages_ok+0x116c/0x1630
+ __free_pages+0x50/0x78
+ kfree+0x1c4/0x250
+ kmalloc_pagealloc_uaf+0x38/0x80
+
+Changes since v1:
+- slim page_owner and move it into kasan
+- enable the feature by default
+
+Changes since v2:
+- enable PAGE_OWNER by default
+- use DEBUG_PAGEALLOC to get page information
+
+Changes since v3:
+- correct typo
+
+cc: Andrey Ryabinin <aryabinin@virtuozzo.com>
+cc: Vlastimil Babka <vbabka@suse.cz>
+cc: Andrey Konovalov <andreyknvl@google.com>
+Signed-off-by: Walter Wu <walter-zh.wu@mediatek.com>
+---
+ lib/Kconfig.kasan | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+
+diff --git a/lib/Kconfig.kasan b/lib/Kconfig.kasan
+index 4fafba1a923b..a3683e952b10 100644
+--- a/lib/Kconfig.kasan
++++ b/lib/Kconfig.kasan
+@@ -41,6 +41,7 @@ config KASAN_GENERIC
+ 	select SLUB_DEBUG if SLUB
+ 	select CONSTRUCTORS
+ 	select STACKDEPOT
++	select PAGE_OWNER
+ 	help
+ 	  Enables generic KASAN mode.
+ 	  Supported in both GCC and Clang. With GCC it requires version 4.9.2
+@@ -63,6 +64,7 @@ config KASAN_SW_TAGS
+ 	select SLUB_DEBUG if SLUB
+ 	select CONSTRUCTORS
+ 	select STACKDEPOT
++	select PAGE_OWNER
+ 	help
+ 	  Enables software tag-based KASAN mode.
+ 	  This mode requires Top Byte Ignore support by the CPU and therefore
+@@ -135,6 +137,19 @@ config KASAN_S390_4_LEVEL_PAGING
+ 	  to 3TB of RAM with KASan enabled). This options allows to force
+ 	  4-level paging instead.
+ 
++config KASAN_DUMP_PAGE
++	bool "Dump the last allocation and freeing stack of the page"
++	depends on KASAN
++	select DEBUG_PAGEALLOC
++	help
++	  By default, KASAN enable PAGE_OWNER only to record alloc stack
++	  for page allocator. It is difficult to fix up page use-after-free
++	  or double-free issue.
++	  The feature depends on DEBUG_PAGEALLOC, it will extra record
++	  free stack of the page. It is very helpful for solving the page
++	  use-after-free or double-free issue.
++	  The feature will have a small memory overhead.
++
+ config TEST_KASAN
+ 	tristate "Module for testing KASAN for bug detection"
+ 	depends on m && KASAN
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
