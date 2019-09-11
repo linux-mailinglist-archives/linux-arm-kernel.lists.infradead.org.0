@@ -2,49 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 77F11B03BF
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:37:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 66A96B03C0
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:38:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=N6hC9q25+N6p8jKd3wvwE6BXZlmWQ3Al3Rq4cUTtGqs=; b=HiS
-	Z5oqcz0Tqihdrldi/hst0RyzssvYta8gNVh+nBdEkUFj5DUTrkMpv7GCQXYD7mdu3IdjO1dlxnMcC
-	h0bysSBzxLN+X2goenxnBgphGayjIQpIgvoZr+I6I3YDhmtxXddKWj8doT6xF5Sctx6UfIsdriuPH
-	kUSSjW+7gz/JScyhnPZNu/NBhiFG3V1DyWPUXma1VYQWLdtmCH+L0OZ/qo4UNSEO9Z/3NWHgYe/py
-	gEoRebRD5MyDokqKsWGLkheaIsEbkaa0GmZ3txQSz4UE9Dq3Hwwaj4X9Ek65wGj9/r/eDae07ROp0
-	vU3xu/Ira9XHAA+9WLNxINoi9zB2saQ==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=dH+XkCn8QI5CevUfEQsX44ReIUjgVyONoHuE9bqsvcE=; b=FsIO65H/JNBD623ezbGXKO2k79
+	UCRx5XkILgLuSnIzcl55p58kTq8q1BeMR2WWGqE7Msh4DNzYytFpXh477iHca/Ft4+ovfnqtuDOBQ
+	k5yoBNDga9PHdsiGzYzjNNF1JCBbaoEvBVkgwDJvPSSRTsLHMm4NkFJkOsqGc3nikoIm6DVU6UfAI
+	ktR4SkdWTHy14UUmYg+BoUlZB9vS9PBhCOIZ2cWKdevmgWqVj9p0Dy3GSIrR05RvEe3Jxx2W4sc1d
+	5Od6evBkqFkX0QfE5L0JLAWg9aQsMqGkaHwTr7abkBzBIQtEaxvA56dcPq/zyATVGtwTaKrm4RtmW
+	OqwCT/qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i87Uh-0001iE-37; Wed, 11 Sep 2019 18:37:31 +0000
+	id 1i87V4-0001vs-4G; Wed, 11 Sep 2019 18:37:54 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i87Tw-0001KA-6w
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 18:36:46 +0000
+ id 1i87Ty-0001Mn-FR
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 18:36:47 +0000
 Received: from localhost.localdomain (unknown [194.230.155.145])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1EC7D2084D;
- Wed, 11 Sep 2019 18:36:39 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 957EE20863;
+ Wed, 11 Sep 2019 18:36:43 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568227002;
- bh=zsAB6WKO0YUTRbf1KlkkihwcBaG99V4V6kcl0Y33ae4=;
- h=From:To:Cc:Subject:Date:From;
- b=vFzY2gxxGLGsQPPMu4wBVwmwpKxTfRAY9t5Cj8YqhPr4ci7+zFL82rKfU2A/VwiPb
- SKFqk/aGXuL0w7oHpgS05xAWBZbHg+zi3Wsw028J7nJPFJP/P62rL8GoXNGB0LrH+e
- laizrxj2EEWRnQ3lB3iFetfQkvbxodu4fwIiyUqM=
+ s=default; t=1568227006;
+ bh=zGc5nUnSrcLmCATImTaZ81stiof+h7AVsb7mMRzglHQ=;
+ h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
+ b=epMIAbtK1rFqZ/4CHUz4ELsJLowpBnDvtMQa5AC8jk3ZcGbRCfG3hxX+yVp0ptnOX
+ lWUjPThKTgxtTOgLaH9oQhQ+1iirO09jCTZrcF8SxagFJTFYTusBjn3P87l4Yu9noY
+ pgVN93YEcJlobSwuyLEjXAT+RUKLCkgSUD2e21MM=
 From: Krzysztof Kozlowski <krzk@kernel.org>
 To: Olof Johansson <olof@lixom.net>, Arnd Bergmann <arnd@arndb.de>,
  arm@kernel.org, soc@kernel.org
-Subject: [GIT PULL 1/2] arm64: dts: exynos: Pull for v5.4
-Date: Wed, 11 Sep 2019 20:36:31 +0200
-Message-Id: <20190911183632.4317-1-krzk@kernel.org>
+Subject: [GIT PULL 2/2] ARM: samsung: mach/soc for v5.4, second pull
+Date: Wed, 11 Sep 2019 20:36:32 +0200
+Message-Id: <20190911183632.4317-2-krzk@kernel.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190911183632.4317-1-krzk@kernel.org>
+References: <20190911183632.4317-1-krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_113644_799477_AA653154 
-X-CRM114-Status: GOOD (  10.92  )
+X-CRM114-CacheID: sfid-20190911_113646_611008_AA0DDB2A 
+X-CRM114-Status: GOOD (  11.81  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -84,43 +87,42 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-Unfortunately the patches were applied right after closing the linux-next.
+Late pull, on top of previous pull request.  Unfortunately the patches
+were applied right after closing the linux-next.
+
 
 Best regards,
 Krzysztof
 
 
-The following changes since commit 5f9e832c137075045d15cd6899ab0505cfb2ca4b:
+The following changes since commit c663d542bfb40eeeb6d393ed155c23a4666d65e1:
 
-  Linus 5.3-rc1 (2019-07-21 14:05:38 -0700)
+  MAINTAINERS: Extend patterns for Samsung SoC, Security Subsystem and clock drivers (2019-08-22 21:04:45 +0200)
 
 are available in the Git repository at:
 
-  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-dt64-5.4
+  https://git.kernel.org/pub/scm/linux/kernel/git/krzk/linux.git tags/samsung-soc-5.4-3
 
-for you to fetch changes up to 266cf9826de38efac416e744d42364ac7fa9dc5b:
+for you to fetch changes up to 13aeb3fe4d5bd78a6dc7bde32986a7296da420d3:
 
-  arm64: dts: exynos: Remove useless #address-cells property for GIC node (2019-09-05 21:27:17 +0200)
-
-----------------------------------------------------------------
-Samsung DTS ARM64 changes for v5.4
-
-1. Fix boot of Exynos7 due to wrong address/size of memory node,
-2. Move GPU under /soc node,
-3. Minor cleanup of #address-cells.
+  ARM: exynos: Enable support for ARM architected timers (2019-09-09 20:56:43 +0200)
 
 ----------------------------------------------------------------
-Marek Szyprowski (4):
-      arm64: dts: exynos: Propagate address/size cell change to /memory node
-      arm64: dts: exynos: Move GPU under /soc node for Exynos5433
-      arm64: dts: exynos: Move GPU under /soc node for Exynos7
-      arm64: dts: exynos: Remove useless #address-cells property for GIC node
+Samsung mach/soc changes for v5.4, part 2
 
- .../boot/dts/exynos/exynos5433-tm2-common.dtsi     |   2 +-
- arch/arm64/boot/dts/exynos/exynos5433.dtsi         | 102 ++++++++++-----------
- arch/arm64/boot/dts/exynos/exynos7-espresso.dts    |   2 +-
- arch/arm64/boot/dts/exynos/exynos7.dtsi            |  23 +++--
- 4 files changed, 64 insertions(+), 65 deletions(-)
+1. Fix system restart on S3C6410 due to missing match of watchdog,
+2. Enable suppor for ARM architected timers on Exynos.
+
+----------------------------------------------------------------
+Lihua Yao (1):
+      ARM: samsung: Fix system restart on S3C6410
+
+Marek Szyprowski (1):
+      ARM: exynos: Enable support for ARM architected timers
+
+ arch/arm/mach-exynos/Kconfig           | 1 +
+ arch/arm/plat-samsung/watchdog-reset.c | 1 +
+ 2 files changed, 2 insertions(+)
 
 _______________________________________________
 linux-arm-kernel mailing list
