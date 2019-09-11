@@ -2,89 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62C0FAF609
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:43:39 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2A21AAF60B
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:44:03 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=DEkifx+74N+bTMXpVTBodon9Z36C4spKKIvHKpR35BI=; b=HeJA903QcMt3PX
-	ZWJ+O3pFHRLxXX0Eh5xXh5vepMz2fPnV23ZP6Gy92f2PTrCa9kkqhzVpWe2nFuE615wUDf/7ZjmDx
-	KFgIuHEueF8agP2xCO4X3R/az6+2q+armJOqg05J/P5gQjJfKdz3jx11TQAQpZ8c4JRUYNjeoYxZ1
-	icF8J5YImSh/llfyDIrKuFtcoHTZ51W30yFy4FfIWVii4Sz4zvAonAjjYEa1e5YY71pVWqJ09H2XY
-	Wk0twoZlYKWliOJL5AEjRx7tYiXEG5DcQUfPxIgGeYLkCpr59xILswNu6/Au1u+fGfzfmYaWcKMJa
-	JsXQnJKmm+13pg8oWLsg==;
+	List-Owner; bh=35BKmuO3SpxkzX0aSVI8PV7YD7t8LRjpTp7UwxjYasA=; b=h3j1TYR1tS3bXL
+	M2VvgjKltKLWgQdDr6dy2OXC8cqCSzeUFOmzl7k6I023qotKGImt2V475yuSpvD9tgVnnVUSgn+EP
+	a9jgfOCu+gSLGLnFfu7PifCGqzL54x++U4ZJ/O0l2Hdp4uI1N7nJnDQlhqTVE6V/uadT/rahIlo9x
+	AKUmFBJihHLhI4ByT7F/4LNcR8OLM2TikZ7yhIms18qxPnJAPEeutvJgmlxC4IbjL0bsO8lRdoQqX
+	utjUjnzQN5O2MIKCb6gTKyu+8Ise9mGlA48N7MleN/cGJUdjQ0GYmPgcxKWggh9irc8/TzsnegV4c
+	5DtPmZs/K3K80Xl4xOUw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7wLp-0003a0-I3; Wed, 11 Sep 2019 06:43:37 +0000
-Received: from esa2.microchip.iphmx.com ([68.232.149.84])
+	id 1i7wM6-0003of-VS; Wed, 11 Sep 2019 06:43:55 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7wKp-0002jJ-FX
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:42:36 +0000
-Received-SPF: Pass (esa2.microchip.iphmx.com: domain of
- Nicolas.Ferre@microchip.com designates 198.175.253.82 as
- permitted sender) identity=mailfrom;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="Nicolas.Ferre@microchip.com";
- x-conformance=spf_only; x-record-type="v=spf1";
- x-record-text="v=spf1 mx a:ushub1.microchip.com
- a:smtpout.microchip.com a:mx1.microchip.iphmx.com
- a:mx2.microchip.iphmx.com include:servers.mcsv.net
- include:mktomail.com include:spf.protection.outlook.com ~all"
-Received-SPF: None (esa2.microchip.iphmx.com: no sender
- authenticity information available from domain of
- postmaster@email.microchip.com) identity=helo;
- client-ip=198.175.253.82; receiver=esa2.microchip.iphmx.com;
- envelope-from="Nicolas.Ferre@microchip.com";
- x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
-Authentication-Results: esa2.microchip.iphmx.com;
- dkim=none (message not signed) header.i=none;
- spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
- spf=None smtp.helo=postmaster@email.microchip.com;
- dmarc=pass (p=none dis=none) d=microchip.com
-IronPort-SDR: oVL/De3qJ0eO2V641n5mVglNnEflb5buSfjyBElXkHLnlgZ2Ubshz3su221izQyQZlRtDipJEC
- A5Pxx19x16XpoBvUNOwYN9SGQK0clb/ZncuqGT6nDW8lKVWHJ+nWOzG04y/Q3SkKlAqhUkbi8+
- rzr9UWetZkdPY1u7GmIUWkxT6odcbSYStYpC9/trJJkReeBrPID98furAQnAlQzj/rLaWPsViv
- KVKQ/uOJ8VbXYf1HSEG1IXRt37WijuS27k79ikdJ/7GH/wEVf8Rsl/g6jYveXJZ2hOzkG4CLdl
- M7w=
-X-IronPort-AV: E=Sophos;i="5.64,492,1559545200"; d="scan'208";a="48466723"
-Received: from smtpout.microchip.com (HELO email.microchip.com)
- ([198.175.253.82])
- by esa2.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
- 10 Sep 2019 23:42:32 -0700
-Received: from chn-vm-ex02.mchp-main.com (10.10.85.144) by
- chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Tue, 10 Sep 2019 23:42:32 -0700
-Received: from tenerife.corp.atmel.com (10.10.85.251) by
- chn-vm-ex02.mchp-main.com (10.10.85.144) with Microsoft SMTP Server id
- 15.1.1713.5 via Frontend Transport; Tue, 10 Sep 2019 23:42:30 -0700
-From: Nicolas Ferre <nicolas.ferre@microchip.com>
-To: <linux-kernel@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
- <stern@rowland.harvard.edu>, <gregkh@linuxfoundation.org>
-Subject: [PATCH 3/3] USB: host: ohci-at91: resume: balance the clock start call
-Date: Wed, 11 Sep 2019 08:41:54 +0200
-Message-ID: <20190911064154.28633-4-nicolas.ferre@microchip.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190911064154.28633-1-nicolas.ferre@microchip.com>
-References: <20190911064154.28633-1-nicolas.ferre@microchip.com>
+ id 1i7wLD-0003FJ-Mg
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:43:01 +0000
+Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
+ (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 7EC7D21A4C;
+ Wed, 11 Sep 2019 06:42:52 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568184179;
+ bh=5fDkxYy4jOJS/+QkDeYxCAE8Sxo/JVPofcF3L2N5Fic=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=Y9IQJVh4gWWvNhP69nMQB9GqIa6147EQg+yKHp+8dtZOLWPT0SiiubwSFtWogeqKb
+ WBEs+sFuXPJJjJZ36g1A4MkIszLObdh7dyzQ2eOGo5JR1AGBR69g4Vv5VuL/C+GNKX
+ p3dFw6HxfOqh/ZGsP7fIeBC23ZkyR+j34Wmie6sw=
+Date: Wed, 11 Sep 2019 14:42:47 +0800
+From: Shawn Guo <shawnguo@kernel.org>
+To: Fancy Fang <chen.fang@nxp.com>
+Subject: Re: [PATCH 1/2] ARM: dts: imx7ulp: remove mipi pll clock node
+Message-ID: <20190911064246.GC17142@dragon>
+References: <20190823003600.8317-1-chen.fang@nxp.com>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190823003600.8317-1-chen.fang@nxp.com>
+User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_234235_627925_78B1D0AE 
-X-CRM114-Status: UNSURE (   8.70  )
+X-CRM114-CacheID: sfid-20190910_234300_122410_4E2905F8 
+X-CRM114-Status: UNSURE (   8.74  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.3 (--)
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [68.232.149.84 listed in list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,45 +77,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Boris.Krasnovskiy@lairdconnect.com,
- Alexandre Belloni <alexandre.belloni@bootlin.com>, linux-usb@vger.kernel.org,
- Ludovic Desroches <ludovic.desroches@microchip.com>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <anson.huang@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
+ "mturquette@baylibre.com" <mturquette@baylibre.com>,
+ Jana Build <jana.build@nxp.com>,
+ "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ LnxRevLi <LnxRevLi@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Boris Krasnovskiy <Boris.Krasnovskiy@lairdconnect.com>
+On Fri, Aug 23, 2019 at 12:37:30AM +0000, Fancy Fang wrote:
+> According to the IMX7ULP reference manual, the mipi pll
+> clock comes from the MIPI PHY PLL output. So it should
+> not be defined as a fixed clock. So remove this clock
+> node and all the references to it.
+> 
+> Signed-off-by: Fancy Fang <chen.fang@nxp.com>
 
-There is a clock enable counter run away problem in resume ohci_at91. Code
-enables clock that was never disabled in case of non wakeup interface. That
-would make clock unstoppable in future.
-Use proper alternative to start clocks only if they were stopped before.
-
-Signed-off-by: Boris Krasnovskiy <Boris.Krasnovskiy@lairdconnect.com>
-Signed-off-by: Nicolas Ferre <nicolas.ferre@microchip.com>
----
- drivers/usb/host/ohci-at91.c | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/drivers/usb/host/ohci-at91.c b/drivers/usb/host/ohci-at91.c
-index 85d67fe42d59..513e48397743 100644
---- a/drivers/usb/host/ohci-at91.c
-+++ b/drivers/usb/host/ohci-at91.c
-@@ -643,8 +643,8 @@ ohci_hcd_at91_drv_resume(struct device *dev)
- 
- 	if (ohci_at91->wakeup)
- 		disable_irq_wake(hcd->irq);
--
--	at91_start_clock(ohci_at91);
-+	else
-+		at91_start_clock(ohci_at91);
- 
- 	ohci_resume(hcd, false);
- 
--- 
-2.17.1
-
+Applied, thanks.
 
 _______________________________________________
 linux-arm-kernel mailing list
