@@ -2,60 +2,52 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4A188AFC63
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:20:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 10610AFC65
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 14:20:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SILS7oQLZQW63JR+ri5J/m0ewVONeoa4gdrRjaeMLtI=; b=TPBbRvJUAcT6iZ
-	eKQngSTX4Gp/DQRJU1XKEEnnJt6wija2x8XHvQGLtARK+a9WUtkYTeQp7I7anFzndRsBx5Wu0ZJPV
-	XVO6qcFAiwrSU4S6xcTz/wXvj/YY7JSdJZ1SkeS6mhYSaPKOFkZNdJeibMZc5tsEOWvl3b79VJiMU
-	lBRzVLMuYDXh1MA06rRCX9ds6G1kMRS2NM+N+RKHPGFzA7BJBMOjvDOguKHMw+svrcP/hKahn6cYn
-	TvE+ysN6LXpaZuoFUfgY47yoB/sf9sO0qAOt9lCxunsojXENhRc9970OMIrAPrVCU7mz5RZekntHK
-	QVfobeg93sv/epepJJ0Q==;
+	List-Owner; bh=+3exGEFcnMqMoYAhBDy/Jc27nm5bT2GGwGnDBXgbLDc=; b=JyZZVAiZ5r7Uxy
+	eQSoVmYDllorck/0j9EDaA6Bv3ij0XAuHLshPVqnaPSLrF4SI0TV403WAIsc11tLuVXp8vyuQ2HH7
+	Xuh/U4O8+///k9peqzR+l6pJhBo3l2aTo4QRjb/3sVpvEp3wzvzWKu8QlqR/8Tt090AoJdwQ4nztR
+	02gbOrxCT9rDY6rr33Zq8gcgJcYp5ErSxvpPBvB40hiogG85QQvpCl1KBug9Hp/vPUbVQP1+ogQan
+	DiNL3HlivnOj7vGVoDDsXUimsvj6mlp85b4SofgC+FEgGJdjJBl2HOM9kLtAR0nYXZ9Cq7VaWCpdu
+	X3WfFHiyhAFWOfqoTTsQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i81bT-0006eP-Ov; Wed, 11 Sep 2019 12:20:08 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i81b6-0006ds-P8
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 12:19:46 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id 2C828B667;
- Wed, 11 Sep 2019 12:19:42 +0000 (UTC)
-Date: Wed, 11 Sep 2019 14:19:41 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: "Michael S. Tsirkin" <mst@redhat.com>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190911121941.GU4023@dhcp22.suse.cz>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
- <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
- <20190911113619.GP4023@dhcp22.suse.cz>
- <20190911080804-mutt-send-email-mst@kernel.org>
+	id 1i81bu-000897-Ro; Wed, 11 Sep 2019 12:20:34 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i81bL-0006mK-7R; Wed, 11 Sep 2019 12:20:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 3D1D91000;
+ Wed, 11 Sep 2019 05:19:58 -0700 (PDT)
+Received: from localhost (unknown [10.37.6.20])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A969D3F59C;
+ Wed, 11 Sep 2019 05:19:57 -0700 (PDT)
+Date: Wed, 11 Sep 2019 13:19:56 +0100
+From: Andrew Murray <andrew.murray@arm.com>
+To: Neil Armstrong <narmstrong@baylibre.com>
+Subject: Re: [PATCH 4/6] phy: meson-g12a-usb3-pcie: Add support for PCIe mode
+Message-ID: <20190911121954.GS9720@e119886-lin.cambridge.arm.com>
+References: <1567950178-4466-1-git-send-email-narmstrong@baylibre.com>
+ <1567950178-4466-5-git-send-email-narmstrong@baylibre.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190911080804-mutt-send-email-mst@kernel.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <1567950178-4466-5-git-send-email-narmstrong@baylibre.com>
+User-Agent: Mutt/1.10.1+81 (426a6c1) (2018-08-26)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_051945_110924_0BDD58AA 
-X-CRM114-Status: GOOD (  19.84  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190911_051959_433690_1C818943 
+X-CRM114-Status: GOOD (  20.26  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -68,65 +60,158 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, David Hildenbrand <david@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
- Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: lorenzo.pieralisi@arm.com, khilman@baylibre.com, linux-pci@vger.kernel.org,
+ linux-kernel@vger.kernel.org, kishon@ti.com, repk@triplefau.lt, maz@kernel.org,
+ bhelgaas@google.com, linux-amlogic@lists.infradead.org, yue.wang@Amlogic.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed 11-09-19 08:08:38, Michael S. Tsirkin wrote:
-> On Wed, Sep 11, 2019 at 01:36:19PM +0200, Michal Hocko wrote:
-> > On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
-> > [...]
-> > > We don't put any limitations on the allocator other then that it needs to
-> > > clean up the metadata on allocation, and that it cannot allocate a page
-> > > that is in the process of being reported since we pulled it from the
-> > > free_list. If the page is a "Reported" page then it decrements the
-> > > reported_pages count for the free_area and makes sure the page doesn't
-> > > exist in the "Boundary" array pointer value, if it does it moves the
-> > > "Boundary" since it is pulling the page.
-> > 
-> > This is still a non-trivial limitation on the page allocation from an
-> > external code IMHO. I cannot give any explicit reason why an ordering on
-> > the free list might matter (well except for page shuffling which uses it
-> > to make physical memory pattern allocation more random) but the
-> > architecture seems hacky and dubious to be honest. It shoulds like the
-> > whole interface has been developed around a very particular and single
-> > purpose optimization.
-> > 
-> > I remember that there was an attempt to report free memory that provided
-> > a callback mechanism [1], which was much less intrusive to the internals
-> > of the allocator yet it should provide a similar functionality. Did you
-> > see that approach? How does this compares to it? Or am I completely off
-> > when comparing them?
-> > 
-> > [1] mostly likely not the latest version of the patchset
-> > http://lkml.kernel.org/r/1502940416-42944-5-git-send-email-wei.w.wang@intel.com
+On Sun, Sep 08, 2019 at 01:42:56PM +0000, Neil Armstrong wrote:
+> This adds extended PCIe PHY functions for the Amlogic G12A
+> USB3+PCIE Combo PHY to support reset, power_on and power_off for
+> PCIe exclusively.
 > 
-> Linus nacked that one. He thinks invoking callbacks with lots of
-> internal mm locks is too fragile.
+> With these callbacks, we can handle all the needed operations of the
+> Amlogic PCIe controller driver.
+> 
+> Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+> ---
+>  .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 70 ++++++++++++++++---
+>  1 file changed, 61 insertions(+), 9 deletions(-)
+> 
+> diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+> index ac322d643c7a..08e322789e59 100644
+> --- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+> +++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
+> @@ -50,6 +50,8 @@
+>  	#define PHY_R5_PHY_CR_ACK				BIT(16)
+>  	#define PHY_R5_PHY_BS_OUT				BIT(17)
+>  
+> +#define PCIE_RESET_DELAY					500
+> +
+>  struct phy_g12a_usb3_pcie_priv {
+>  	struct regmap		*regmap;
+>  	struct regmap		*regmap_cr;
+> @@ -196,6 +198,10 @@ static int phy_g12a_usb3_init(struct phy *phy)
+>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>  	int data, ret;
+>  
+> +	ret = reset_control_reset(priv->reset);
+> +	if (ret)
+> +		return ret;
+> +
 
-I would be really curious how much he would be happy about injecting
-other restrictions on the allocator like this patch proposes. This is
-more intrusive as it has a higher maintenance cost longterm IMHO.
--- 
-Michal Hocko
-SUSE Labs
+Right, so we've moved this to apply to USB only, thus assuming PCI will
+call .reset for its reset (why the asymmetry?).
+
+Thanks,
+
+Andrew Murray
+
+>  	/* Switch PHY to USB3 */
+>  	/* TODO figure out how to handle when PCIe was set in the bootloader */
+>  	regmap_update_bits(priv->regmap, PHY_R0,
+> @@ -272,24 +278,64 @@ static int phy_g12a_usb3_init(struct phy *phy)
+>  	return 0;
+>  }
+>  
+> -static int phy_g12a_usb3_pcie_init(struct phy *phy)
+> +static int phy_g12a_usb3_pcie_power_on(struct phy *phy)
+> +{
+> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+> +
+> +	if (priv->mode == PHY_TYPE_USB3)
+> +		return 0;
+> +
+> +	regmap_update_bits(priv->regmap, PHY_R0,
+> +			   PHY_R0_PCIE_POWER_STATE,
+> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_g12a_usb3_pcie_power_off(struct phy *phy)
+> +{
+> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+> +
+> +	if (priv->mode == PHY_TYPE_USB3)
+> +		return 0;
+> +
+> +	regmap_update_bits(priv->regmap, PHY_R0,
+> +			   PHY_R0_PCIE_POWER_STATE,
+> +			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1d));
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_g12a_usb3_pcie_reset(struct phy *phy)
+>  {
+>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>  	int ret;
+>  
+> -	ret = reset_control_reset(priv->reset);
+> +	if (priv->mode == PHY_TYPE_USB3)
+> +		return 0;
+> +
+> +	ret = reset_control_assert(priv->reset);
+>  	if (ret)
+>  		return ret;
+>  
+> +	udelay(PCIE_RESET_DELAY);
+> +
+> +	ret = reset_control_deassert(priv->reset);
+> +	if (ret)
+> +		return ret;
+> +
+> +	udelay(PCIE_RESET_DELAY);
+> +
+> +	return 0;
+> +}
+> +
+> +static int phy_g12a_usb3_pcie_init(struct phy *phy)
+> +{
+> +	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+> +
+>  	if (priv->mode == PHY_TYPE_USB3)
+>  		return phy_g12a_usb3_init(phy);
+>  
+> -	/* Power UP PCIE */
+> -	/* TODO figure out when the bootloader has set USB3 mode before */
+> -	regmap_update_bits(priv->regmap, PHY_R0,
+> -			   PHY_R0_PCIE_POWER_STATE,
+> -			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
+> -
+>  	return 0;
+>  }
+>  
+> @@ -297,7 +343,10 @@ static int phy_g12a_usb3_pcie_exit(struct phy *phy)
+>  {
+>  	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
+>  
+> -	return reset_control_reset(priv->reset);
+> +	if (priv->mode == PHY_TYPE_USB3)
+> +		return reset_control_reset(priv->reset);
+> +
+> +	return 0;
+>  }
+>  
+>  static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
+> @@ -326,6 +375,9 @@ static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
+>  static const struct phy_ops phy_g12a_usb3_pcie_ops = {
+>  	.init		= phy_g12a_usb3_pcie_init,
+>  	.exit		= phy_g12a_usb3_pcie_exit,
+> +	.power_on	= phy_g12a_usb3_pcie_power_on,
+> +	.power_off	= phy_g12a_usb3_pcie_power_off,
+> +	.reset		= phy_g12a_usb3_pcie_reset,
+>  	.owner		= THIS_MODULE,
+>  };
+>  
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
