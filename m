@@ -2,53 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2A21AAF60B
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:44:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 071ACAF613
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:46:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=35BKmuO3SpxkzX0aSVI8PV7YD7t8LRjpTp7UwxjYasA=; b=h3j1TYR1tS3bXL
-	M2VvgjKltKLWgQdDr6dy2OXC8cqCSzeUFOmzl7k6I023qotKGImt2V475yuSpvD9tgVnnVUSgn+EP
-	a9jgfOCu+gSLGLnFfu7PifCGqzL54x++U4ZJ/O0l2Hdp4uI1N7nJnDQlhqTVE6V/uadT/rahIlo9x
-	AKUmFBJihHLhI4ByT7F/4LNcR8OLM2TikZ7yhIms18qxPnJAPEeutvJgmlxC4IbjL0bsO8lRdoQqX
-	utjUjnzQN5O2MIKCb6gTKyu+8Ise9mGlA48N7MleN/cGJUdjQ0GYmPgcxKWggh9irc8/TzsnegV4c
-	5DtPmZs/K3K80Xl4xOUw==;
+	List-Owner; bh=lPuw7pqPHXOmAB4aJld5s50vmqohLIMxfFqlR8Spzbk=; b=WAGZbcLN8u1Qot
+	XMD8mEwATJ2lh6p4lxxUa5A5DDadCwtcmNeR4qG9Dwrbm/aJy8eYj6SjCazc80/x+JbJIOweN0FRM
+	Q84HQzuMl+MjxDfxiBxROmBvdtXk+vKutNf02IYH12AzYpht5DRxCocLQM9JACd6b0S+JdQBOrLHf
+	IVUKrAcZ9c2IAc4EsbhnOO+T720QgDZReH0AOS5AykC3dtLGObjithooXDm5XNlBMOzHH1wUyLUg2
+	KdE0GsPJaNwilRjvrxZ3FVcwZlR0W7G/e96dFswXQsNCFf02Ugm3/kJKGExGdf4DN0Ey4ynyN/ez7
+	5qG304tSlp5YuVJrJf7g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7wM6-0003of-VS; Wed, 11 Sep 2019 06:43:55 +0000
+	id 1i7wOX-0005Oe-PP; Wed, 11 Sep 2019 06:46:25 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7wLD-0003FJ-Mg
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:43:01 +0000
+ id 1i7wOK-0005OI-V9
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:46:14 +0000
 Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
  (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 7EC7D21A4C;
- Wed, 11 Sep 2019 06:42:52 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8C39E21928;
+ Wed, 11 Sep 2019 06:46:03 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568184179;
- bh=5fDkxYy4jOJS/+QkDeYxCAE8Sxo/JVPofcF3L2N5Fic=;
+ s=default; t=1568184372;
+ bh=qIBVFBd3Uzn1ZDrcBL8VAS5pV0/6Y6gy5xboCpJ+3/g=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=Y9IQJVh4gWWvNhP69nMQB9GqIa6147EQg+yKHp+8dtZOLWPT0SiiubwSFtWogeqKb
- WBEs+sFuXPJJjJZ36g1A4MkIszLObdh7dyzQ2eOGo5JR1AGBR69g4Vv5VuL/C+GNKX
- p3dFw6HxfOqh/ZGsP7fIeBC23ZkyR+j34Wmie6sw=
-Date: Wed, 11 Sep 2019 14:42:47 +0800
+ b=y714A/OZ45VZt+Bk1N9sfI0EdgWcR7HUGZ9LgvsRB4mLhZ0T6qhLi2kX+E7Til6gF
+ pq2q/RPs2GxKEJXiXnSRX6X8xzZNNtZDW79t9kbutbowD1zlW70J8WhOFQinZBckzb
+ S3BXq+PGPVQZkJQ3slRkMVX+7x18y6zvP/QslzsI=
+Date: Wed, 11 Sep 2019 14:45:58 +0800
 From: Shawn Guo <shawnguo@kernel.org>
 To: Fancy Fang <chen.fang@nxp.com>
-Subject: Re: [PATCH 1/2] ARM: dts: imx7ulp: remove mipi pll clock node
-Message-ID: <20190911064246.GC17142@dragon>
+Subject: Re: [PATCH 2/2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
+Message-ID: <20190911064556.GD17142@dragon>
 References: <20190823003600.8317-1-chen.fang@nxp.com>
+ <20190823003600.8317-2-chen.fang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190823003600.8317-1-chen.fang@nxp.com>
+In-Reply-To: <20190823003600.8317-2-chen.fang@nxp.com>
 User-Agent: Mutt/1.5.21 (2010-09-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_234300_122410_4E2905F8 
-X-CRM114-Status: UNSURE (   8.74  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190910_234613_050745_A9174E23 
+X-CRM114-Status: GOOD (  18.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -93,15 +93,93 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 12:37:30AM +0000, Fancy Fang wrote:
-> According to the IMX7ULP reference manual, the mipi pll
-> clock comes from the MIPI PHY PLL output. So it should
-> not be defined as a fixed clock. So remove this clock
-> node and all the references to it.
+On Fri, Aug 23, 2019 at 12:37:35AM +0000, Fancy Fang wrote:
+> The mipi pll clock comes from the MIPI PHY PLL output, so
+> it should not be a fixed clock.
+> 
+> MIPI PHY PLL is in the MIPI DSI space, and it is used as
+> the bit clock for transferring the pixel data out and its
+> output clock is configured according to the display mode.
+> 
+> So it should be used only for MIPI DSI and not be exported
+> out for other usages.
 > 
 > Signed-off-by: Fancy Fang <chen.fang@nxp.com>
+> ---
+>  .../devicetree/bindings/clock/imx7ulp-clock.txt   |  1 -
+>  drivers/clk/imx/clk-imx7ulp.c                     |  3 +--
+>  include/dt-bindings/clock/imx7ulp-clock.h         | 15 +++++++--------
+>  3 files changed, 8 insertions(+), 11 deletions(-)
+> 
+> diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
+> index a4f8cd478f92..93d89adb7afe 100644
+> --- a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
+> +++ b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
+> @@ -82,7 +82,6 @@ pcc2: pcc2@403f0000 {
+>  		 <&scg1 IMX7ULP_CLK_APLL_PFD0>,
+>  		 <&scg1 IMX7ULP_CLK_UPLL>,
+>  		 <&scg1 IMX7ULP_CLK_SOSC_BUS_CLK>,
+> -		 <&scg1 IMX7ULP_CLK_MIPI_PLL>,
+>  		 <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>,
+>  		 <&scg1 IMX7ULP_CLK_ROSC>,
+>  		 <&scg1 IMX7ULP_CLK_SPLL_BUS_CLK>;
+> diff --git a/drivers/clk/imx/clk-imx7ulp.c b/drivers/clk/imx/clk-imx7ulp.c
+> index 2022d9bead91..459b120b71d5 100644
+> --- a/drivers/clk/imx/clk-imx7ulp.c
+> +++ b/drivers/clk/imx/clk-imx7ulp.c
+> @@ -28,7 +28,7 @@ static const char * const scs_sels[]		= { "dummy", "sosc", "sirc", "firc", "dumm
+>  static const char * const ddr_sels[]		= { "apll_pfd_sel", "upll", };
+>  static const char * const nic_sels[]		= { "firc", "ddr_clk", };
+>  static const char * const periph_plat_sels[]	= { "dummy", "nic1_bus_clk", "nic1_clk", "ddr_clk", "apll_pfd2", "apll_pfd1", "apll_pfd0", "upll", };
+> -static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "mpll", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
+> +static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "dummy", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
+>  static const char * const arm_sels[]		= { "divcore", "dummy", "dummy", "hsrun_divcore", };
+>  
+>  /* used by sosc/sirc/firc/ddr/spll/apll dividers */
+> @@ -75,7 +75,6 @@ static void __init imx7ulp_clk_scg1_init(struct device_node *np)
+>  	clks[IMX7ULP_CLK_SOSC]		= imx_obtain_fixed_clk_hw(np, "sosc");
+>  	clks[IMX7ULP_CLK_SIRC]		= imx_obtain_fixed_clk_hw(np, "sirc");
+>  	clks[IMX7ULP_CLK_FIRC]		= imx_obtain_fixed_clk_hw(np, "firc");
+> -	clks[IMX7ULP_CLK_MIPI_PLL]	= imx_obtain_fixed_clk_hw(np, "mpll");
+>  	clks[IMX7ULP_CLK_UPLL]		= imx_obtain_fixed_clk_hw(np, "upll");
+>  
+>  	/* SCG1 */
+> diff --git a/include/dt-bindings/clock/imx7ulp-clock.h b/include/dt-bindings/clock/imx7ulp-clock.h
+> index 6f66f9005c81..f8d34fb4378f 100644
+> --- a/include/dt-bindings/clock/imx7ulp-clock.h
+> +++ b/include/dt-bindings/clock/imx7ulp-clock.h
+> @@ -49,15 +49,14 @@
+>  #define IMX7ULP_CLK_NIC1_DIV		36
+>  #define IMX7ULP_CLK_NIC1_BUS_DIV	37
+>  #define IMX7ULP_CLK_NIC1_EXT_DIV	38
+> -#define IMX7ULP_CLK_MIPI_PLL		39
+> -#define IMX7ULP_CLK_SIRC		40
+> -#define IMX7ULP_CLK_SOSC_BUS_CLK	41
+> -#define IMX7ULP_CLK_FIRC_BUS_CLK	42
+> -#define IMX7ULP_CLK_SPLL_BUS_CLK	43
+> -#define IMX7ULP_CLK_HSRUN_SYS_SEL	44
+> -#define IMX7ULP_CLK_HSRUN_CORE_DIV	45
+> +#define IMX7ULP_CLK_SIRC		39
+> +#define IMX7ULP_CLK_SOSC_BUS_CLK	40
+> +#define IMX7ULP_CLK_FIRC_BUS_CLK	41
+> +#define IMX7ULP_CLK_SPLL_BUS_CLK	42
+> +#define IMX7ULP_CLK_HSRUN_SYS_SEL	43
+> +#define IMX7ULP_CLK_HSRUN_CORE_DIV	44
 
-Applied, thanks.
+No.  These clock IDs need to be stable, as they are referred by DT.
+If you want to remove an ID, just remove it, keep others unchanged.
+
+Shawn
+
+>  
+> -#define IMX7ULP_CLK_SCG1_END		46
+> +#define IMX7ULP_CLK_SCG1_END		45
+>  
+>  /* PCC2 */
+>  #define IMX7ULP_CLK_DMA1		0
+> -- 
+> 2.17.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
