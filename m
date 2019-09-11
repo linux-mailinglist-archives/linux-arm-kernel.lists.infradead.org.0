@@ -2,84 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 44F8BAF9A7
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 11:58:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8A257AF9CA
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 12:03:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QheM4fkOIzVTCg90ApCoacyeDRCa9iavO5pIjKncNlM=; b=mLd8KuS2F2hL8y
-	7oAB2gCS9ccuBih2JB0xc7OwFpccLmdYNPIUdpDuEr/2rJECbbMNb/qBnQu/z3o3FHcyCE6fWZoCo
-	hzg6gOH2mADtx6nr2g1IDSAcMmgiuTdU3V3gEc+VOOxiK0cFOCp619xkMHJOrBv3UbMPm0hZq4rsL
-	o6AH0w13hbrtVISf7aO4V8eIZqnEd5RUYIW//TyeTdAU004cAcPmEwHHBcBrvmRUaX0FcgpC1g7d3
-	9YYyYadgWnySEKdP2khULADNz+Gs9GXY+Er20eDtio3KStK/4Y5z3KoYS1CG05mz82v4gyApds42V
-	Bas9crVTG4GIqdWMQAlg==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=dCt2vQERDvx4tteVasxpla9254Bx2ZTq4fU2SChzWQ8=; b=G+V
+	vQfgPKSSMcBV9VRt7K5DG26ZR+lIunq3W5Tk7OuW/bR5s5JiuEk4Vmx6Se8D5zv3uU6yhMaXhahUc
+	dbuZeQj3J4aWNdDIIq6mQCrJbD3+Q8z9XmgH9fqU51KXipX7zEtZ5XzaVdTSG1VHPUSG2J+IKR/Lg
+	odmrDeMtQaffvhKRLSeBa4eWSB4+9AN6rmMwanFtCBPHEIkugkGZzCgsAepKtUavVkqfROa5J6Z6m
+	AuuLXep0K5vkeooOMqK5Jijz4nalQh+POHQ3hpSyao6avy9A67DtXYveX9kkNsUTGOnafyU63dVU3
+	3ovUfiOIw7KLAFfT3nHH0y7bxDLJchg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7zOM-00070x-EL; Wed, 11 Sep 2019 09:58:26 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
+	id 1i7zSo-0002lY-9k; Wed, 11 Sep 2019 10:03:02 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7zO8-00070c-I0
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 09:58:13 +0000
-Received: by mail-lj1-x242.google.com with SMTP id a4so19358748ljk.8
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 02:58:12 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=k4dGhcxp6T6gSoKIxWokryHsNaeknVwfT4UnRhjgn/A=;
- b=tkDWR58vwuKS0da2FWu9u/M/Xn/DyAr+ZUrx/+cJp27zqKvp/xBOMk/VGYXwWTSTla
- RUGyo5mKpJkCSH4kikwfH+5eo9+R6rZIayBLRSf+XRHifxKTcmqIQ4gwFxUtB1L1mNNv
- C+y6q8VDxxIv11W0mSPewJcrRxVLCXfhy/zrVENzffiPUZWT19SmmXpXLxeHXmrBsWUW
- Z+acs/RypO6knajkSEc5Qz/wJsF/2ZvG/Tnm6Rf1dhTLkszi/Ebc+DrhWG1iSvuJcAmU
- OvMWljKcMJ9mFuT5LckIuewLzRHNMNjiVhbyaXyBbavOplfSxkteHCHD9wi0oaIvuhN+
- RE7A==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=k4dGhcxp6T6gSoKIxWokryHsNaeknVwfT4UnRhjgn/A=;
- b=NJtUR/jtMnmtCTw8hf1i4gIuvd57PYIVoGgadP+wPo+uQlZn/6/UqXNw6f51dC/rQh
- PQcGue3YBFAg+wX9nrvDdarJ+pBSzXg7ahXC8E22bPxTSGkEEL9CjSLx5yNgFN3ylnRh
- xSBidyle7ETncbq2Ud8f1gZcLDG3Db05vJKBf9ezIh5+x0TEo0grMOHGRsl8CoHfGlre
- MWQ/PZAeaqvbKhYY0EqO7fHP3vM/0BiXGxCP/oxFSmDbFbA8fCfq9mVkHe44Jy5WZ46T
- NWuc7Gj2YO5SzCEZpakhAIA7Dmdiz/nPmopZzT/lJIYf3FqF+fT4TiDA/VPJoCrk+5Jc
- 73kw==
-X-Gm-Message-State: APjAAAW6LVc4vuXgSq+q5NclbNweBMczZ92LLzKgCCjrDt3g4e9ARKX8
- i3JFWmWHmgFjLDjAPUSSJuWfJm5YFUc810rQiORu/w==
-X-Google-Smtp-Source: APXvYqwbLg5jGI86j9e4EMl792llsAjTOPkGlSGFa4C8Xlkdq8JvUyl4zObZNLLqt7Sar4h37ifM08D33QB5mKjQPek=
-X-Received: by 2002:a2e:8056:: with SMTP id p22mr17584388ljg.69.1568195890794; 
- Wed, 11 Sep 2019 02:58:10 -0700 (PDT)
-MIME-Version: 1.0
-References: <20190905140919.29283-1-colin.king@canonical.com>
-In-Reply-To: <20190905140919.29283-1-colin.king@canonical.com>
-From: Linus Walleij <linus.walleij@linaro.org>
-Date: Wed, 11 Sep 2019 10:57:59 +0100
-Message-ID: <CACRpkdbYKjKPAT=V8K_JtP49teq5q9GELkK-vc+mQEdwcU781w@mail.gmail.com>
-Subject: Re: [PATCH] pinctrl: bcm: remove redundant assignment to pointer log
-To: Colin King <colin.king@canonical.com>
+ id 1i7zSb-0002l2-UE
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 10:02:51 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id B820F2005B1;
+ Wed, 11 Sep 2019 12:02:47 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id A98AF200022;
+ Wed, 11 Sep 2019 12:02:42 +0200 (CEST)
+Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 2F9EF402AE;
+ Wed, 11 Sep 2019 18:02:36 +0800 (SGT)
+From: Hui Song <hui.song_1@nxp.com>
+To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Linus Walleij <linus.walleij@linaro.org>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>
+Subject: [PATCH] gpio/mpc8xxx: change irq handler from chained to normal
+Date: Wed, 11 Sep 2019 17:52:27 +0800
+Message-Id: <20190911095227.16003-1-hui.song_1@nxp.com>
+X-Mailer: git-send-email 2.9.5
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_025812_622711_E0012B81 
-X-CRM114-Status: UNSURE (   9.44  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190911_030250_118214_0DE33338 
+X-CRM114-Status: GOOD (  11.34  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -91,32 +66,98 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
- kernel-janitors@vger.kernel.org,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-gpio@vger.kernel.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 5, 2019 at 3:09 PM Colin King <colin.king@canonical.com> wrote:
+From: Song Hui <hui.song_1@nxp.com>
 
-> From: Colin Ian King <colin.king@canonical.com>
->
-> The pointer log is being initialized with a value that is never read
-> and is being re-assigned a little later on. The assignment is
-> redundant and hence can be removed.
->
-> Addresses-Coverity: ("Unused value")
-> Signed-off-by: Colin Ian King <colin.king@canonical.com>
+More than one gpio controllers can share one interrupt, change the
+driver to request shared irq.
 
-Patch applied.
+Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
+Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
+Signed-off-by: Song Hui <hui.song_1@nxp.com>
+---
+Changes in v4:
+	- convert 'pr_err' to 'dev_err'.
+Changes in v3:
+	- update the patch description.
+Changes in v2:
+	- delete the compatible of ls1088a.
+ drivers/gpio/gpio-mpc8xxx.c | 22 ++++++++++++++--------
+ 1 file changed, 14 insertions(+), 8 deletions(-)
 
-Yours,
-Linus Walleij
+diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
+index 16a47de..e16591b 100644
+--- a/drivers/gpio/gpio-mpc8xxx.c
++++ b/drivers/gpio/gpio-mpc8xxx.c
+@@ -22,6 +22,7 @@
+ #include <linux/irq.h>
+ #include <linux/gpio/driver.h>
+ #include <linux/bitops.h>
++#include <linux/interrupt.h>
+ 
+ #define MPC8XXX_GPIO_PINS	32
+ 
+@@ -127,10 +128,9 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
+ 		return -ENXIO;
+ }
+ 
+-static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
++static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
+ {
+-	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
+-	struct irq_chip *chip = irq_desc_get_chip(desc);
++	struct mpc8xxx_gpio_chip *mpc8xxx_gc = (struct mpc8xxx_gpio_chip *)data;
+ 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
+ 	unsigned int mask;
+ 
+@@ -139,8 +139,8 @@ static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
+ 	if (mask)
+ 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
+ 						     32 - ffs(mask)));
+-	if (chip->irq_eoi)
+-		chip->irq_eoi(&desc->irq_data);
++
++	return IRQ_HANDLED;
+ }
+ 
+ static void mpc8xxx_irq_unmask(struct irq_data *d)
+@@ -388,7 +388,7 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 
+ 	ret = gpiochip_add_data(gc, mpc8xxx_gc);
+ 	if (ret) {
+-		pr_err("%pOF: GPIO chip registration failed with status %d\n",
++		dev_err("%pOF: GPIO chip registration failed with status %d\n",
+ 		       np, ret);
+ 		goto err;
+ 	}
+@@ -409,8 +409,14 @@ static int mpc8xxx_probe(struct platform_device *pdev)
+ 	if (devtype->gpio_dir_in_init)
+ 		devtype->gpio_dir_in_init(gc);
+ 
+-	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
+-					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
++	ret = request_irq(mpc8xxx_gc->irqn, mpc8xxx_gpio_irq_cascade,
++		IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade", mpc8xxx_gc);
++	if (ret) {
++		dev_err("%s: failed to request_irq(%d), ret = %d\n",
++				np->full_name, mpc8xxx_gc->irqn, ret);
++		goto err;
++	}
++
+ 	return 0;
+ err:
+ 	iounmap(mpc8xxx_gc->regs);
+-- 
+2.9.5
+
 
 _______________________________________________
 linux-arm-kernel mailing list
