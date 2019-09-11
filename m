@@ -2,65 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B133AF767
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:03:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24989AF78D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:17:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=TtSDmpCZZLUyIycWFMf3g1UFBY2aseeOjNF1SzdqzfQ=; b=UzlwOLEMUt88V9
-	wXvOUM5A2bfEvaZpoQhwjUfnAr6yfX+XmLQi5pPMiQVuGWnODMl2gt+Xk6sM7xr51RSWi5/yU+egN
-	B6yrYgLQxorUOf1JLX+rg4E4TLPO5jstfCU8FR9WH2SqeuYvzTYArE+5IfN5tj2VbstAlS2X24h5e
-	FDov7RfavDScXczYIj1IZ2UQbYBsL6DijSlUCEDqPEifp9SrF6ZjO2GQ0AQFbDo/2XVbDu1iRSghd
-	QsxRkFgQeBXllS8IT78vzH3M9IvpvdXbsnOdXL/t3qjlfejoG8buBWRdgV0k5yMR1SeRcmYW92z4L
-	MdZ/nta8PXTZ0W4yZwRQ==;
+	List-Owner; bh=0y9rzX6/nxiAYJd+gK6fAQ7VGAyfjVz5XoHWurTLI+c=; b=Cyw58FcvBEBbz9
+	+rSsRooqZaT8AxH2CKpD+3Y46v4atLn2PX3f393JsQLPNFC6IMEipDMn60g6E0r+YChiMWsJ1RuP6
+	gs/hDCZlEjzl1q7XegSuKx5o23N/qo5MYSQzvFHbVO7om4gLU7ZpY4LoQSt+xTmUs1TitcUzP8kZn
+	x28gFmp3Y7waArvmNLqg/VBhLQfRBu6FucziCfOx/QmVahpflRnNvIvc+IwRAnJyL8Jw8car3V/gP
+	L4moaX7yD3mpZtLHi60cfcKL+mKDPI7UilJxgByQWUrzn4g4qXTPS8awXojs11TirOn27RUkXmkOx
+	I2n8l69+zXeXUvP785HA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7xb9-0005YR-8r; Wed, 11 Sep 2019 08:03:31 +0000
-Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
+	id 1i7xof-00022U-Le; Wed, 11 Sep 2019 08:17:29 +0000
+Received: from mail-qt1-f194.google.com ([209.85.160.194])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7xav-0005Y3-Ik
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:03:19 +0000
-Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID x8B82wYK017764,
- This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCASV02.realtek.com.tw[172.21.6.19])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id x8B82wYK017764
- (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
- Wed, 11 Sep 2019 16:02:58 +0800
-Received: from RTITMBSVM04.realtek.com.tw ([fe80::e404:880:2ef1:1aa1]) by
- RTITCASV02.realtek.com.tw ([::1]) with mapi id 14.03.0468.000; Wed, 11 Sep
- 2019 16:02:58 +0800
-From: =?utf-8?B?SmFtZXMgVGFpW+aItOW/l+WzsF0=?= <james.tai@realtek.com>
-To: Arnd Bergmann <arnd@arndb.de>, "jamestai.sky@gmail.com"
- <jamestai.sky@gmail.com>
-Subject: RE: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
-Thread-Topic: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
-Thread-Index: AQHVY8HXZVVvJynf2kC9vxZJ/q2xi6ccPyyAgAnSCBA=
-Date: Wed, 11 Sep 2019 08:02:57 +0000
-Message-ID: <43B123F21A8CFE44A9641C099E4196FFCF8DA22D@RTITMBSVM04.realtek.com.tw>
-References: <20190905081140.1428-1-james.tai@realtek.com>
- <CAK8P3a2j2m0mUPLDe5G19Xzu2t+xbO4QWvg=PdQWnGoqTkDpsg@mail.gmail.com>
-In-Reply-To: <CAK8P3a2j2m0mUPLDe5G19Xzu2t+xbO4QWvg=PdQWnGoqTkDpsg@mail.gmail.com>
-Accept-Language: zh-TW, en-US
-Content-Language: zh-TW
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [172.21.190.187]
+ id 1i7xoN-00021n-LC
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:17:13 +0000
+Received: by mail-qt1-f194.google.com with SMTP id b2so24217380qtq.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 01:17:11 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=sSX4It+UYh+SclLrqRYTuJcNxBVNhdLE6sMCo8UKYag=;
+ b=DDenaPNpYDj5b3g2+M7KfCVqh2Vc18tMsHJPGayJXIs2Ta/ls062TMX0EYbtnMKJO0
+ TiTZUY+XXELldtGkdQTCYo/1PcRZCLmqH6KJqNrl2BqAwo4FCeZ8in1f+L1T4dYrMdJg
+ yRgH88AN/eiu1isjyW8FX+1gz3lmCLuQPnN/Mgh6dGOou614+Bi4KH9lJNLXFymDXohy
+ c8Ps+UClfxfqb2WTWGYtoNeyJPmdsa0ecFy5v35G6ENk/YHjE9ITQHjpLUGUp1uXVE50
+ I0IR4EcLN1SZdFpFUHvUWgwrB75Ttz+X/y50v4fL+az7kCZZcr4tna08sLMzuymFQxVA
+ AG+Q==
+X-Gm-Message-State: APjAAAWR7AoRVFG9RTgW+dPvFaQtnfQPQ9UczMQ1ag0cNlJByyk4ZJWJ
+ KjYW2Uldg5j7nZT9wyHhrZNs/uMTjbuwZ13D14M=
+X-Google-Smtp-Source: APXvYqz45pgoTmTVL0lx/QE8rf/L0T6m/MIjRIXLqE3v8w3FYXI3PhfhiwrwjKmjULONteqaD1CGPmWyYRZFxNBlgK4=
+X-Received: by 2002:ac8:342a:: with SMTP id u39mr33940011qtb.7.1568189830279; 
+ Wed, 11 Sep 2019 01:17:10 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190905054647.1235-1-james.tai@realtek.com>
+ <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
+ <43B123F21A8CFE44A9641C099E4196FFCF8DA1D0@RTITMBSVM04.realtek.com.tw>
+In-Reply-To: <43B123F21A8CFE44A9641C099E4196FFCF8DA1D0@RTITMBSVM04.realtek.com.tw>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 11 Sep 2019 10:16:53 +0200
+Message-ID: <CAK8P3a39VrC1Xn+HZc5gvh1-nUYKywDGjTfO9WPCqim89WtGAg@mail.gmail.com>
+Subject: Re: [PATCH] ARM: Add support for Realtek SOC
+To: =?UTF-8?B?SmFtZXMgVGFpW+aItOW/l+WzsF0=?= <james.tai@realtek.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_010317_903800_9E5EFCBD 
-X-CRM114-Status: GOOD (  24.81  )
+X-CRM114-CacheID: sfid-20190911_011711_697869_64E4FC5C 
+X-CRM114-Status: GOOD (  27.76  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.160.194 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.194 listed in wl.mailspike.net]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,187 +84,86 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: =?utf-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>,
- Phinex Hung <phinex@realtek.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+Cc: "Jason A . Donenfeld" <Jason@zx2c4.com>,
+ =?UTF-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>,
+ Linus Walleij <linus.walleij@linaro.org>, Stefan Agner <stefan@agner.ch>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Benjamin Gaignard <benjamin.gaignard@linaro.org>,
+ Mauro Carvalho Chehab <mchehab+samsung@kernel.org>,
+ Phinex Hung <phinex@realtek.com>, Rob Herring <robh@kernel.org>,
+ Lorenzo Pieralisi <Lorenzo.Pieralisi@arm.com>,
+ Russell King <linux@armlinux.org.uk>, Mike Rapoport <rppt@linux.ibm.com>,
+ Thierry Reding <treding@nvidia.com>,
+ "jamestai.sky@gmail.com" <jamestai.sky@gmail.com>,
+ Doug Anderson <armlinux@m.disordat.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Russell King <linux@armlinux.org.uk>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
+ Nick Desaulniers <ndesaulniers@google.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Paul Burton <paul.burton@mips.com>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
-> 
-> On Thu, Sep 5, 2019 at 10:14 AM <jamestai.sky@gmail.com> wrote:
-> >
-> > From: "james.tai" <james.tai@realtek.com>
-> >
-> > Add a defconfig for Realtek RTD16XX platform.
-> >
-> > Signed-off-by: james.tai <james.tai@realtek.com>
-> > ---
-> >  arch/arm/configs/rtd16xx_defconfig | 427
-> > +++++++++++++++++++++++++++++
-> 
-> We usually try to have one defconfig per vendor. Expecting that there will be
-> other Realtek SoCs in the future that we may add here, I would name this
-> 'rtd_defconfig' or 'realtek_defconfig'.
-> 
-I will modify config file name in new version patch.
-
-> Please also add the set of options you want to multi_v7_defconfig so you are
-> able to boot with that.
-
-OK, I understand.
-
-> >  1 file changed, 427 insertions(+)
-> >  create mode 100644 arch/arm/configs/rtd16xx_defconfig
-> >
-> > diff --git a/arch/arm/configs/rtd16xx_defconfig
-> > b/arch/arm/configs/rtd16xx_defconfig
-> > new file mode 100644
-> > index 000000000000..49bcbe6c6af8
-> > --- /dev/null
-> > +++ b/arch/arm/configs/rtd16xx_defconfig
-> > @@ -0,0 +1,427 @@
-> > +CONFIG_SYSVIPC=y
-> > +CONFIG_NO_HZ=y
-> > +CONFIG_HIGH_RES_TIMERS=y
-> > +CONFIG_CGROUPS=y
-> > +CONFIG_BLK_DEV_INITRD=y
-> > +CONFIG_EMBEDDED=y
-> 
-> I normally would not turn on CONFIG_EMBEDDED, this is only needed to
-> change some rare options.
-
-I will turn off CONFIG_EMBEDDED in new version patch.
-
-> > +CONFIG_PERF_EVENTS=y
-> > +CONFIG_ARCH_REALTEK=y
-> > +CONFIG_ARCH_RTD16XX=y
-> > +CONFIG_ARM_THUMBEE=y
-> 
-> ThumbEE is deprecated in ARMv8, and one usually should not rely on it. If you
-> don't actually need it, just turn it off.
-
-I will turn off CONFIG_ARM_THUMBEE in new version patch.
-
-> (note: this is unrelated to regular thumb execution, which is enabled by
-> default)
-> 
-> > +# CONFIG_CACHE_L2X0 is not set
-> > +# CONFIG_ARM_ERRATA_643719 is not set
-> CONFIG_ARM_ERRATA_814220=y
-> > +CONFIG_SMP=y CONFIG_SCHED_MC=y CONFIG_SCHED_SMT=y
-> 
-> If you don't have SMT in the CPU, there is no need ot enable this.
-
-RTD16XX platform don't have SMT in the CPU.
-I will turn off CONFIG_SCHED_SMT in new version patch.
-
-> > +CONFIG_HAVE_ARM_ARCH_TIMER=y
-> > +CONFIG_MCPM=y
-> > +CONFIG_NR_CPUS=6
-> > +CONFIG_HZ_250=y
-> > +CONFIG_OABI_COMPAT=y
-> 
-> It seems unlikely you want OABI_COMPAT
-> 
-
-I will turn off CONFIG_OABI_COMPAT in new version patch.
-
-> > +CONFIG_HIGHMEM=y
-> > +CONFIG_FORCE_MAX_ZONEORDER=12
-> > +CONFIG_SECCOMP=y
-> > +CONFIG_ARM_APPENDED_DTB=y
-> > +CONFIG_ARM_ATAG_DTB_COMPAT=y
-> > +CONFIG_KEXEC=y
-> > +CONFIG_EFI=y
-> 
-> What method do you actually use for booting? New platforms should generally
-> not require CONFIG_ARM_APPENDED_DTB or
-> CONFIG_ARM_ATAG_DTB_COMPAT, and I suspect you don't use EFI.
-> 
-RTD16XX platform don't use EFI.
-I will turn off these config in new version patch.
-
-> > +CONFIG_CPUFREQ_DT=y
-> > +CONFIG_QORIQ_CPUFREQ=y
-> 
-> QORIQ_CPUFREQ is a platform specific option that you won't need.
-> 
-I will turn off CONFIG_QORIQ_CPUFREQ in new version patch.
-
-> > +CONFIG_NET_DSA=m
-> > +CONFIG_CAN=y
-> > +CONFIG_CAN_FLEXCAN=m
-> > +CONFIG_CAN_RCAR=m
-> > +CONFIG_BT=m
-> > +CONFIG_BT_HCIUART=m
-> > +CONFIG_BT_HCIUART_BCM=y
-> > +CONFIG_BT_MRVL=m
-> > +CONFIG_BT_MRVL_SDIO=m
-> 
-> Many more hardware specific drivers here that you should turn off
->
-> > +CONFIG_MTD=y
-> > +CONFIG_MTD_CMDLINE_PARTS=y
-> > +CONFIG_MTD_BLOCK=y
-> > +CONFIG_MTD_CFI=y
-> > +CONFIG_MTD_PHYSMAP=y
-> > +CONFIG_MTD_PHYSMAP_OF=y
-> > +CONFIG_MTD_RAW_NAND=y
-> > +CONFIG_MTD_NAND_DENALI_DT=y
-> > +CONFIG_MTD_NAND_BRCMNAND=y
-> 
-> and here.
-
-I will turn off these config in new version patch.
-
-> > +CONFIG_BLK_DEV_LOOP=y
-> > +CONFIG_BLK_DEV_RAM=y
-> > +CONFIG_BLK_DEV_RAM_SIZE=65536
-> 
-> Do you require BLK_DEV_RAM for initrd? Normally one uses initramfs instead
-> or tmpfs instead.
-> 
-RTD16XX platform have use 'initramfs'.
-I will turn off this config in new version patch.
-
-> > +# CONFIG_NET_VENDOR_3COM is not set
-> > +# CONFIG_NET_VENDOR_ADAPTEC is not set #
-> CONFIG_NET_VENDOR_AGERE is
-> > +not set # CONFIG_NET_VENDOR_ALACRITECH is not set #
-> > +CONFIG_NET_VENDOR_ALTEON is not set
-> 
-> I would trim the list here, just leave all network device vendors enabled, they
-> don't hurt.
-> 
-I will turn on these config in new version patch.
-
-> > +CONFIG_USB_PEGASUS=y
-> > +CONFIG_USB_RTL8152=m
-> > +CONFIG_USB_LAN78XX=m
-> > +CONFIG_USB_USBNET=y
-> > +CONFIG_USB_NET_SMSC75XX=y
-> > +CONFIG_USB_NET_SMSC95XX=y
-> > +CONFIG_BRCMFMAC=m
-> > +CONFIG_MWIFIEX=m
-> > +CONFIG_MWIFIEX_SDIO=m
-> > +CONFIG_RT2X00=m
-> > +CONFIG_RT2800USB=m
-> 
-> Do you need all of the above? It's no problem to enable them if you do, it just
-> seems unusual.
-
-RTD16XX platform don't need all config.
-I will turn off these config in new version patch.
-
->         Arnd
-> 
-> ------Please consider the environment before printing this e-mail.
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCBTZXAgMTEsIDIwMTkgYXQgOTo0NiBBTSBKYW1lcyBUYWlb5oi05b+X5bOwXSA8amFt
+ZXMudGFpQHJlYWx0ZWsuY29tPiB3cm90ZToKPiA+IFN1YmplY3Q6IFJlOiBbUEFUQ0hdIEFSTTog
+QWRkIHN1cHBvcnQgZm9yIFJlYWx0ZWsgU09DCgo+ID4gPiBAQCAtMTQ4LDYgKzE0OCw3IEBAIGVu
+ZGlmCj4gPiA+ICB0ZXh0b2ZzLSQoQ09ORklHX0FSQ0hfTVNNOFg2MCkgOj0gMHgwMDIwODAwMAo+
+ID4gPiAgdGV4dG9mcy0kKENPTkZJR19BUkNIX01TTTg5NjApIDo9IDB4MDAyMDgwMDAKPiA+ID4g
+IHRleHRvZnMtJChDT05GSUdfQVJDSF9NRVNPTikgOj0gMHgwMDIwODAwMAo+ID4gPiArdGV4dG9m
+cy0kKENPTkZJR19BUkNIX1JFQUxURUspIDo9IDB4MDAyMDgwMDAKPiA+ID4gIHRleHRvZnMtJChD
+T05GSUdfQVJDSF9BWFhJQSkgOj0gMHgwMDMwODAwMAo+ID4KPiA+IENhbiB5b3UgZXhwbGFpbiB3
+aHkgdGhpcyBpcyBuZWVkZWQgZm9yIHlvdXIgcGxhdGZvcm0/Cj4gPgo+IFdlIG5lZWQgdG8gcmVz
+ZXJ2ZSBtZW1vcnkgKDB4MDAwMDAwMDAgfiAweDAwMUIwMDAwKSBmb3Igcm9tIGFuZCBib290IGNv
+ZGUuCgpPay4KCj4gPiA+ICtjb25maWcgQVJDSF9SVEQxNlhYCj4gPiA+ICsgICAgICAgYm9vbCAi
+RW5hYmxlIHN1cHBvcnQgZm9yIFJURDE2MTkiCj4gPiA+ICsgICAgICAgZGVwZW5kcyBvbiBBUkNI
+X1JFQUxURUsKPiA+ID4gKyAgICAgICBzZWxlY3QgQVJNX0dJQ19WMwo+ID4gPiArICAgICAgIHNl
+bGVjdCBBUk1fUFNDSQo+ID4KPiA+IEFzIEkgdW5kZXJzdGFuZCwgdGhpcyBjaGlwIHVzZXMgYSBD
+b3J0ZXgtQTU1LiBXaGF0IGlzIHRoZSByZWFzb24gZm9yIGFkZGluZwo+ID4gc3VwcG9ydCBvbmx5
+IHRvIHRoZSAzMi1iaXQgQVJNIGFyY2hpdGVjdHVyZSByYXRoZXIgdGhhbiA2NC1iaXQ/Cj4KPiBU
+aGUgUlREMTZYWCBwbGF0Zm9ybSBhbHNvIHN1cHBvcnQgdGhlIDY0LWJpdCBBUk0gYXJjaGl0ZWN0
+dXJlLgo+IEkgd2lsbCBhZGQgdGhlIDY0LWJpdCBBUk0gYXJjaGl0ZWN0dXJlIGluIG5ldyB2ZXJz
+aW9uIHBhdGNoLgo+Cj4gPiBNb3N0IDY0LWJpdCBTb0NzIGFyZSBvbmx5IHN1cHBvcnRlZCB3aXRo
+IGFyY2gvYXJtNjQsIGJ1dCBnZW5lcmFsbHkgc3BlYWtpbmcKPiA+IHRoYXQgaXMgbm90IGEgcmVx
+dWlyZW1lbnQuIE15IHJ1bGUgb2YgdGh1bWIgaXMgdGhhdCBvbiBzeXN0ZW1zIHdpdGggMUdCIG9m
+Cj4gPiBSQU0gb3IgbW9yZSwgb25lIHdvdWxkIHdhbnQgdG8gcnVuIGEgNjQtYml0IGtlcm5lbCwg
+d2hpbGUgc3lzdGVtcyB3aXRoIGxlc3MKPiA+IHRoYW4gdGhhdCBhcmUgYmV0dGVyIG9mZiB3aXRo
+IGEgMzItYml0IG9uZSwgYnV0IHRoYXQgaXMgY2xlYXJseSBub3QgdGhlIG9ubHkgcmVhc29uCj4g
+PiBmb3IgcGlja2luZyBvbmUgb3ZlciB0aGUgb3RoZXIuCj4gPgo+IFN1cHBvcnQgMzItYml0IEFS
+TSBhcmNoaXRlY3R1cmUgaXMgZm9yIGFwcGxpY2F0aW9uIGNvbXBhdGliaWxpdHkuCgpHZW5lcmFs
+bHkgc3BlYWtpbmcsIGEgNjQtYml0IGtlcm5lbCBzaG91bGQgd29yayBiZXR0ZXIgb24gNjQtYml0
+IGhhcmR3YXJlCmV2ZW4gd2hlbiB5b3UgYXJlIHJ1bm5pbmcgbW9zdGx5IDMyLWJpdCBhcHBsaWNh
+dGlvbnMuIEhvd2V2ZXIsIHlvdSBtYXkKaGF2ZSBkZXZpY2UgZHJpdmVycyB0aGF0IGRvIG5vdCBj
+b3JyZWN0bHkgc2V0IGNvbXBhdF9pb2N0bCBoYW5kbGVycy4KCkFzIEkgc2FpZCwgaXQncyBubyBw
+cm9ibGVtIHRvIGFsbG93IGJvdGgsIGp1c3QgZXhwbGFpbiB0aGlzIGluIHRoZQpjaGFuZ2Vsb2cg
+dGV4dCBmb3IgdGhlIGRyaXZlciwgYWxvbmcgd2l0aCB0aGUgbmVlZCBmb3IgdGhlIHRleHRvZnMK
+c2V0dGluZy4KCj4gPiBJdCdzIHZlcnkgdW51c3VhbCB0byBzZWUgY3VzdG9tIHNtcCBvcGVyYXRp
+b25zIG9uIGFuIEFSTXY4IHN5c3RlbSwgYXMgd2UKPiA+IG5vcm1hbGx5IHVzZSBQU0NJIGhlcmUu
+IENhbiB5b3UgZXhwbGFpbiB3aGF0IGlzIGdvaW5nIG9uIGhlcmU/IEFyZSB5b3UgYWJsZSB0bwo+
+ID4gdXNlIGEgYm9vdCB3cmFwcGVyIHRoYXQgaW1wbGVtZW50cyB0aGVzZSBpbiBwc2NpIGluc3Rl
+YWQ/Cj4gPgo+IFRoZSBzbXAgb3BlcmF0aW9ucyBpcyBwb3J0aW5nIGZvcm0gb3RoZXIgUmVhbHRl
+ayBwbGF0Zm9ybS4KPgo+IEN1cnJlbnRseSwgVGhlIFJURDE2WFggcGxhdGZvcm0gY2FuIHVzZSB0
+aGUgUFNDSSBtZXRob2QuCj4gSSB3aWxsIGFkZCBQU0NJIG1ldGhvZCBpbiBuZXcgdmVyc2lvbiBw
+YXRjaC4KCk9rLCBwZXJmZWN0IQoKPiA+ID4gKyAgICAgICB0aW1lcl9wcm9iZSgpOwo+ID4gPiAr
+ICAgICAgIHRpY2tfc2V0dXBfaHJ0aW1lcl9icm9hZGNhc3QoKTsgfQo+ID4KPiA+IFdoYXQgZG8g
+eW91IG5lZWQgdGlja19zZXR1cF9ocnRpbWVyX2Jyb2FkY2FzdCgpIGZvcj8gSSBkb24ndCBzZWUg
+YW55IG90aGVyCj4gPiBwbGF0Zm9ybSBjYWxsaW5nIHRoaXMuCj4gPgo+IEkgd2FudCB0byBpbml0
+aWFsaXplIHRoZSBIUiB0aW1lci4KCkknbSBzdGlsbCB1bnN1cmUgYWJvdXQgdGhpcyBvbmUuIE15
+IGZlZWxpbmcgaXMgdGhhdCBpdCBzaG91bGQgbm90IGJlCmluIHRoZSBwbGF0Zm9ybQpjb2RlLCBi
+dXQgSSBkb24ndCBxdWl0ZSB1bmRlcnN0YW5kIHdoaWNoIGhhcmR3YXJlIG5lZWRzIGl0LiBJIHNl
+ZSB0aGF0CkxvcmVuem8gUGllcmFsaXNpIGFkZGVkIHRoZSBzYW1lIGNvZGUgdG8gYXJtNjQgaW4g
+Y29tbWl0IDkzNThkNzU1YmQ1YwooImFybTY0OiBrZXJuZWw6IGluaXRpYWxpemUgYnJvYWRjYXN0
+IGhydGltZXIgYmFzZWQgY2xvY2sgZXZlbnQgZGV2aWNlIiksCmJ1dCBub3RoaW5nIGV2ZXIgY2Fs
+bHMgaXQgb24gMzItYml0IGFyY2gvYXJtIGV2ZW4gdGhvdWdoIHRoZSBjb2RlIGRvZXMKZ2V0IGJ1
+aWx0IGluIHRvIHRoZSBrZXJuZWwuCgpNeSBmZWVsaW5nIGlzIHRoYXQgZWl0aGVyIHlvdSBkb24n
+dCByZWFsbHkgbmVlZCBpdCwgb3IgdGhpcyBpcyBzb21ldGhpbmcKdGhhdCBvdGhlciBwbGF0Zm9y
+bXMgc2hvdWxkIHJlYWxseSBkbyBhcyB3ZWxsLCBhbmQgaXQgc2hvdWxkIGJlIGNhbGxlZCBmcm9t
+CnRoZSBnZW5lcmljIHRpbWVfaW5pdCgpIGZ1bmN0aW9uIGluIGFyY2gvYXJtL2tlcm5lbC90aW1l
+LmMgaW5zdGVhZC4KCkNhbiB5b3UgdHJ5IHRvIGZpbmQgb3V0IG1vcmUgb2YgdGhlIGJhY2tncm91
+bmQgaGVyZSwgYW5kIHRoZW4KbW92ZSB0aGUgY2FsbCB0byB0aW1lX2luaXQoKSBhc3N1bWluZyBp
+dCBpcyBpbmRlZWQgdXNlZnVsPwoKICAgICAgIEFybmQKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
