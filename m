@@ -2,70 +2,155 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 071ACAF613
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 08:46:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5D1CAF65D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 09:06:01 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lPuw7pqPHXOmAB4aJld5s50vmqohLIMxfFqlR8Spzbk=; b=WAGZbcLN8u1Qot
-	XMD8mEwATJ2lh6p4lxxUa5A5DDadCwtcmNeR4qG9Dwrbm/aJy8eYj6SjCazc80/x+JbJIOweN0FRM
-	Q84HQzuMl+MjxDfxiBxROmBvdtXk+vKutNf02IYH12AzYpht5DRxCocLQM9JACd6b0S+JdQBOrLHf
-	IVUKrAcZ9c2IAc4EsbhnOO+T720QgDZReH0AOS5AykC3dtLGObjithooXDm5XNlBMOzHH1wUyLUg2
-	KdE0GsPJaNwilRjvrxZ3FVcwZlR0W7G/e96dFswXQsNCFf02Ugm3/kJKGExGdf4DN0Ey4ynyN/ez7
-	5qG304tSlp5YuVJrJf7g==;
+	List-Owner; bh=Qzbf7+JN144yRBlxx3g+k1uqoiOW8yeGAWcAPNQOuDo=; b=QiU2eDtwT4wW1g
+	+nFTrOg/hBFJHPFYktbf9TBqtjS6h6hdPMQt8bOPN3ueSg9LU80YL/0GYewLPHWSPnzfb42J731aM
+	J2EKhNGR0R80vVShN01liJ9RwjWuWLCzK3lIMEClDXSeyI42qZYIWZcMLya76sH2M/nI6APol+lWZ
+	2urn01VMN/hiNaqymMwbRPlemb0l4GHss7VmTWsLs8bYxDld0uOE4U2fD1nvy4ZgzyMEypIpU9dfZ
+	PqHJVUuoENgriSMH66cJrc2OVQHTu6mmIpxbF26S0VTJ0D5GTh5CKdcP35IG32Ctjv4agcD5AuaSi
+	9oQl2izHTRRR4Nni5Nsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7wOX-0005Oe-PP; Wed, 11 Sep 2019 06:46:25 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i7whS-00039y-0D; Wed, 11 Sep 2019 07:05:58 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7wOK-0005OI-V9
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 06:46:14 +0000
-Received: from dragon (98.142.130.235.16clouds.com [98.142.130.235])
- (using TLSv1.2 with cipher DHE-RSA-AES128-SHA (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 8C39E21928;
- Wed, 11 Sep 2019 06:46:03 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568184372;
- bh=qIBVFBd3Uzn1ZDrcBL8VAS5pV0/6Y6gy5xboCpJ+3/g=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=y714A/OZ45VZt+Bk1N9sfI0EdgWcR7HUGZ9LgvsRB4mLhZ0T6qhLi2kX+E7Til6gF
- pq2q/RPs2GxKEJXiXnSRX6X8xzZNNtZDW79t9kbutbowD1zlW70J8WhOFQinZBckzb
- S3BXq+PGPVQZkJQ3slRkMVX+7x18y6zvP/QslzsI=
-Date: Wed, 11 Sep 2019 14:45:58 +0800
-From: Shawn Guo <shawnguo@kernel.org>
-To: Fancy Fang <chen.fang@nxp.com>
-Subject: Re: [PATCH 2/2] clk: imx7ulp: remove IMX7ULP_CLK_MIPI_PLL clock
-Message-ID: <20190911064556.GD17142@dragon>
-References: <20190823003600.8317-1-chen.fang@nxp.com>
- <20190823003600.8317-2-chen.fang@nxp.com>
+ id 1i7wfG-0001lo-8g
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 07:03:46 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Nicolas.Ferre@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="Nicolas.Ferre@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Nicolas.Ferre@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ spf=Pass smtp.mailfrom=Nicolas.Ferre@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dkim=pass (signature verified) header.i=@microchiptechnology.onmicrosoft.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: 4UU2ij4CUaVoOlQdxapdg+n0yD5uZXMDiQ0UwccxRkc8ZWOOOipW5m5NeAJhUz2MVMugmT75h3
+ olonsfiQh/JF1aR73ydNGLOSvGYWRZF/Pvh4vUpIq1xs60QvRCWMchc0kw4jeNWGuYG5V+4+Jc
+ 1yeaEwHocOfnTAfQuFjDYXuWkXgz2L972cPLEQwiaCFryYR2SDaMbfFFToOJHu6X4ePBc2PMRi
+ obRSQsN3jrudNBJ+zuzz2qGpoEF67eej1RtD+sJPvpcLo2zNFyZIECswfWsi5oXVugwqnweJ7U
+ mMI=
+X-IronPort-AV: E=Sophos;i="5.64,492,1559545200"; d="scan'208";a="50021070"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 11 Sep 2019 00:03:37 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Wed, 11 Sep 2019 00:03:36 -0700
+Received: from NAM02-BL2-obe.outbound.protection.outlook.com (10.10.215.89) by
+ email.microchip.com (10.10.87.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
+ via Frontend Transport; Wed, 11 Sep 2019 00:03:36 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=PjmdCuS6rRaqtP7ShqGNzrSxhdEobS6g/XIqyoZb6Zn+z54hnHjZVrln9z5Hn2nzI7FmaOiBDkS0wNNAphy4/EL2SjN96B8PZ9EVqZML+3WCuJ4mSCg47ZU/SvBkos3yVYtQHqb7dIPSIi614rQ3fdHRApUsnbc4O79E4ezQx2F1T1IR/9kg8Fv3gFsAK+B7+isoHybmeQp/ZqaOZulJlVlrkzVX1a1x3ZQNRZRArAwDdVmF/TaV9M2kbyQnRtK7YaY40HRc0xMDv1MN0h3lUltJ4i3DdAf9ZX5IxY0fGc6Mlp6Rbtki1To7KMJ4/8XJBgy97mKlsrtYipSAw+BbFQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TsG3D75Ic6QdG+bjSpR50/r6PabK4dy/mu9sYtgtHmc=;
+ b=iWXCNQK5LdXd6UWlOQccCeGkha6qRg4jezc53vhRoYRJ+0aIXMp4S/5EmK2JH9gnKeFDgTRO2nc9ySbWFne7nkcXwxCehSmSgRQZuGzifE5SWJsrfR/NH81Nuw7D3iY14AZlti93kOy3cgql0FdzfQWlNvL3oh7RXMhDc2fJg/pUQiWENrWVbuiBjYBGH3lRh7j+0xM5zJ35iChe7pnDHMHIwhP0yLCTS6u6UsZcF3EnaIcJDIGOaaah0NNZbRsEL9aa1n0Hk7+D/OxdJYAZAMu7NRQelIv+l23UDKZ7o8t8REEG6l+QPCL1xhXDCXTqC7hpyLQJO38UdU6K2xrZaA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=microchip.com; dmarc=pass action=none
+ header.from=microchip.com; dkim=pass header.d=microchip.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=microchiptechnology.onmicrosoft.com;
+ s=selector2-microchiptechnology-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=TsG3D75Ic6QdG+bjSpR50/r6PabK4dy/mu9sYtgtHmc=;
+ b=BiXCY+y2S9JvQOKZIg+1FYJfMsT2aqorW7+ufAu2PEW3ZxUdvPB0kqLY+6O5RyDKpU/7yIl7otH4LyNg5O1vJFUZgbfUY3BQP8eQ55qqDDXfzWnw+aBECz4XmwB86rjyXVHsaJNVpMCTKobpMDiIBvjblr9qdHFhg6oqr/ggY+I=
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com (10.172.55.15) by
+ MWHPR11MB1501.namprd11.prod.outlook.com (10.172.54.136) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.18; Wed, 11 Sep 2019 07:03:08 +0000
+Received: from MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::9943:3e43:c1ac:1efd]) by MWHPR11MB1662.namprd11.prod.outlook.com
+ ([fe80::9943:3e43:c1ac:1efd%3]) with mapi id 15.20.2241.018; Wed, 11 Sep 2019
+ 07:03:08 +0000
+From: <Nicolas.Ferre@microchip.com>
+To: <Eugen.Hristev@microchip.com>, <mturquette@baylibre.com>,
+ <sboyd@kernel.org>, <alexandre.belloni@bootlin.com>,
+ <linux-clk@vger.kernel.org>, <linux-arm-kernel@lists.infradead.org>,
+ <linux-kernel@vger.kernel.org>
+Subject: Re: [PATCH] clk: at91: allow 24 Mhz clock as input for PLL
+Thread-Topic: [PATCH] clk: at91: allow 24 Mhz clock as input for PLL
+Thread-Index: AQHVaGukjPTRbry/ckGMFC3Lf3IeQKcmC9UA
+Date: Wed, 11 Sep 2019 07:03:08 +0000
+Message-ID: <0e8083a3-9443-e2f0-d4a3-1b02a5728759@microchip.com>
+References: <1568183622-7858-1-git-send-email-eugen.hristev@microchip.com>
+In-Reply-To: <1568183622-7858-1-git-send-email-eugen.hristev@microchip.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-clientproxiedby: LNXP265CA0062.GBRP265.PROD.OUTLOOK.COM
+ (2603:10a6:600:5d::26) To MWHPR11MB1662.namprd11.prod.outlook.com
+ (2603:10b6:301:e::15)
+x-ms-exchange-messagesentrepresentingtype: 1
+x-originating-ip: [109.208.20.6]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: b2fe3458-ac8a-40fd-bf02-08d7368619bc
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:MWHPR11MB1501; 
+x-ms-traffictypediagnostic: MWHPR11MB1501:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MWHPR11MB150197D363531750C7F0F197E0B10@MWHPR11MB1501.namprd11.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:6790;
+x-forefront-prvs: 0157DEB61B
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(376002)(136003)(346002)(396003)(39860400002)(366004)(189003)(199004)(486006)(26005)(64756008)(66476007)(66556008)(6436002)(6486002)(8936002)(31686004)(4744005)(2201001)(31696002)(110136005)(2501003)(14454004)(6506007)(53546011)(316002)(71190400001)(102836004)(11346002)(476003)(2906002)(186003)(99286004)(86362001)(2616005)(81156014)(81166006)(25786009)(7736002)(305945005)(71200400001)(386003)(8676002)(66446008)(3846002)(6116002)(256004)(14444005)(446003)(66066001)(478600001)(5660300002)(229853002)(66946007)(53936002)(6246003)(76176011)(6512007)(52116002)(36756003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:MWHPR11MB1501;
+ H:MWHPR11MB1662.namprd11.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: microchip.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: eocCDEOFTxMIqIgfb1PRysWRcwG8cfDMlre/SYfctd00IEuvZwhRvENLNV0ZHGGgAT1Bo80ZTt9sIc+dHIFlqxwiNyaFiW3WQp7ryPiA4gwvi43xliCIBixLqSGnEwhquZn4e+aqE/7AauqhPla8EOts/3+QQP2ty/KSo3s6lNqAClQHURrlWduw+ZLapxOQ8LDCeCjjW74hMIrZKzP4mWllFpg71Ap5PZmoM6iOFzBbUqi7OiYOXLtuXLte3UgvsWSX7/mr9Xl7Gpd84rvWc5AXFHlq3lYd6ojqEt3E4IV0kjVD+pfoqnXVGvGIC1v6vc2uRO6wREYrAmZaMBrRdKg/u6VhdHd+e+1u9IlYSKDncDlRlDsY0KNSakRQpmYxgotKdIYFU11Bt1SPwnshdVhtdjPxk1tWXnqzUpo2rEw=
+Content-ID: <5AE7C555EE18024381B1E45B19217032@namprd11.prod.outlook.com>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190823003600.8317-2-chen.fang@nxp.com>
-User-Agent: Mutt/1.5.21 (2010-09-15)
+X-MS-Exchange-CrossTenant-Network-Message-Id: b2fe3458-ac8a-40fd-bf02-08d7368619bc
+X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2019 07:03:08.3881 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 3f4057f3-b418-4d4e-ba84-d55b4e897d88
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: gyniLpdoRDReZY8XzRZ+UNwRsr+JrgyTrfiT1MoYo68LWJFNTVwtaz+kqoGKekyrNn1M2WCyCShyOLJKJZIRO1jJz9qke8ebKTzsyiCeQBU=
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MWHPR11MB1501
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_234613_050745_A9174E23 
-X-CRM114-Status: GOOD (  18.05  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190911_000345_188624_3941E87F 
+X-CRM114-Status: GOOD (  11.74  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -77,109 +162,47 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Aisheng Dong <aisheng.dong@nxp.com>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <anson.huang@nxp.com>, "sboyd@kernel.org" <sboyd@kernel.org>,
- "mturquette@baylibre.com" <mturquette@baylibre.com>,
- Jana Build <jana.build@nxp.com>,
- "linux-clk@vger.kernel.org" <linux-clk@vger.kernel.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- LnxRevLi <LnxRevLi@nxp.com>, dl-linux-imx <linux-imx@nxp.com>,
- "kernel@pengutronix.de" <kernel@pengutronix.de>,
- "festevam@gmail.com" <festevam@gmail.com>,
- "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Aug 23, 2019 at 12:37:35AM +0000, Fancy Fang wrote:
-> The mipi pll clock comes from the MIPI PHY PLL output, so
-> it should not be a fixed clock.
+On 11/09/2019 at 08:39, Eugen Hristev - M18282 wrote:
+> From: Eugen Hristev <eugen.hristev@microchip.com>
 > 
-> MIPI PHY PLL is in the MIPI DSI space, and it is used as
-> the bit clock for transferring the pixel data out and its
-> output clock is configured according to the display mode.
+> The PLL input range needs to be able to allow 24 Mhz crystal as input
+> Update the range accordingly in plla characteristics struct
 > 
-> So it should be used only for MIPI DSI and not be exported
-> out for other usages.
-> 
-> Signed-off-by: Fancy Fang <chen.fang@nxp.com>
+> Signed-off-by: Eugen Hristev <eugen.hristev@microchip.com>
+
+Acked-by: Nicolas Ferre <nicolas.ferre@microchip.com>
+Thanks Eugen!
+
+Best regards,
+   Nicolas
+
 > ---
->  .../devicetree/bindings/clock/imx7ulp-clock.txt   |  1 -
->  drivers/clk/imx/clk-imx7ulp.c                     |  3 +--
->  include/dt-bindings/clock/imx7ulp-clock.h         | 15 +++++++--------
->  3 files changed, 8 insertions(+), 11 deletions(-)
+>   drivers/clk/at91/sama5d2.c | 2 +-
+>   1 file changed, 1 insertion(+), 1 deletion(-)
 > 
-> diff --git a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-> index a4f8cd478f92..93d89adb7afe 100644
-> --- a/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-> +++ b/Documentation/devicetree/bindings/clock/imx7ulp-clock.txt
-> @@ -82,7 +82,6 @@ pcc2: pcc2@403f0000 {
->  		 <&scg1 IMX7ULP_CLK_APLL_PFD0>,
->  		 <&scg1 IMX7ULP_CLK_UPLL>,
->  		 <&scg1 IMX7ULP_CLK_SOSC_BUS_CLK>,
-> -		 <&scg1 IMX7ULP_CLK_MIPI_PLL>,
->  		 <&scg1 IMX7ULP_CLK_FIRC_BUS_CLK>,
->  		 <&scg1 IMX7ULP_CLK_ROSC>,
->  		 <&scg1 IMX7ULP_CLK_SPLL_BUS_CLK>;
-> diff --git a/drivers/clk/imx/clk-imx7ulp.c b/drivers/clk/imx/clk-imx7ulp.c
-> index 2022d9bead91..459b120b71d5 100644
-> --- a/drivers/clk/imx/clk-imx7ulp.c
-> +++ b/drivers/clk/imx/clk-imx7ulp.c
-> @@ -28,7 +28,7 @@ static const char * const scs_sels[]		= { "dummy", "sosc", "sirc", "firc", "dumm
->  static const char * const ddr_sels[]		= { "apll_pfd_sel", "upll", };
->  static const char * const nic_sels[]		= { "firc", "ddr_clk", };
->  static const char * const periph_plat_sels[]	= { "dummy", "nic1_bus_clk", "nic1_clk", "ddr_clk", "apll_pfd2", "apll_pfd1", "apll_pfd0", "upll", };
-> -static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "mpll", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
-> +static const char * const periph_bus_sels[]	= { "dummy", "sosc_bus_clk", "dummy", "firc_bus_clk", "rosc", "nic1_bus_clk", "nic1_clk", "spll_bus_clk", };
->  static const char * const arm_sels[]		= { "divcore", "dummy", "dummy", "hsrun_divcore", };
->  
->  /* used by sosc/sirc/firc/ddr/spll/apll dividers */
-> @@ -75,7 +75,6 @@ static void __init imx7ulp_clk_scg1_init(struct device_node *np)
->  	clks[IMX7ULP_CLK_SOSC]		= imx_obtain_fixed_clk_hw(np, "sosc");
->  	clks[IMX7ULP_CLK_SIRC]		= imx_obtain_fixed_clk_hw(np, "sirc");
->  	clks[IMX7ULP_CLK_FIRC]		= imx_obtain_fixed_clk_hw(np, "firc");
-> -	clks[IMX7ULP_CLK_MIPI_PLL]	= imx_obtain_fixed_clk_hw(np, "mpll");
->  	clks[IMX7ULP_CLK_UPLL]		= imx_obtain_fixed_clk_hw(np, "upll");
->  
->  	/* SCG1 */
-> diff --git a/include/dt-bindings/clock/imx7ulp-clock.h b/include/dt-bindings/clock/imx7ulp-clock.h
-> index 6f66f9005c81..f8d34fb4378f 100644
-> --- a/include/dt-bindings/clock/imx7ulp-clock.h
-> +++ b/include/dt-bindings/clock/imx7ulp-clock.h
-> @@ -49,15 +49,14 @@
->  #define IMX7ULP_CLK_NIC1_DIV		36
->  #define IMX7ULP_CLK_NIC1_BUS_DIV	37
->  #define IMX7ULP_CLK_NIC1_EXT_DIV	38
-> -#define IMX7ULP_CLK_MIPI_PLL		39
-> -#define IMX7ULP_CLK_SIRC		40
-> -#define IMX7ULP_CLK_SOSC_BUS_CLK	41
-> -#define IMX7ULP_CLK_FIRC_BUS_CLK	42
-> -#define IMX7ULP_CLK_SPLL_BUS_CLK	43
-> -#define IMX7ULP_CLK_HSRUN_SYS_SEL	44
-> -#define IMX7ULP_CLK_HSRUN_CORE_DIV	45
-> +#define IMX7ULP_CLK_SIRC		39
-> +#define IMX7ULP_CLK_SOSC_BUS_CLK	40
-> +#define IMX7ULP_CLK_FIRC_BUS_CLK	41
-> +#define IMX7ULP_CLK_SPLL_BUS_CLK	42
-> +#define IMX7ULP_CLK_HSRUN_SYS_SEL	43
-> +#define IMX7ULP_CLK_HSRUN_CORE_DIV	44
-
-No.  These clock IDs need to be stable, as they are referred by DT.
-If you want to remove an ID, just remove it, keep others unchanged.
-
-Shawn
-
->  
-> -#define IMX7ULP_CLK_SCG1_END		46
-> +#define IMX7ULP_CLK_SCG1_END		45
->  
->  /* PCC2 */
->  #define IMX7ULP_CLK_DMA1		0
-> -- 
-> 2.17.1
+> diff --git a/drivers/clk/at91/sama5d2.c b/drivers/clk/at91/sama5d2.c
+> index 6509d09..0de1108 100644
+> --- a/drivers/clk/at91/sama5d2.c
+> +++ b/drivers/clk/at91/sama5d2.c
+> @@ -21,7 +21,7 @@ static const struct clk_range plla_outputs[] = {
+>   };
+>   
+>   static const struct clk_pll_characteristics plla_characteristics = {
+> -	.input = { .min = 12000000, .max = 12000000 },
+> +	.input = { .min = 12000000, .max = 24000000 },
+>   	.num_output = ARRAY_SIZE(plla_outputs),
+>   	.output = plla_outputs,
+>   	.icpll = plla_icpll,
 > 
+
+
+-- 
+Nicolas Ferre
 
 _______________________________________________
 linux-arm-kernel mailing list
