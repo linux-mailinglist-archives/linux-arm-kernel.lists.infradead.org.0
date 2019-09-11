@@ -2,68 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 57D61AFF35
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:53:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FFFAAFF38
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:53:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=P4QEVdReUM3BNMbwEiAZDhnpMokNEsXkMQOI3oQMXmw=; b=Dbb
-	qLcHEwBG7xxwO39HNYt6MlyL8JWgAKuo4EzKfWqQWkI4rR+o/wp3jac7pb/j14Mk3Pr+cAAzzpd2m
-	3Z1oJp8dUfFyEx64EXpfkC0cPaOvIsb0Nr6NnutkymqOJlV9jy+yUFkUajke53NiIr07WkOJh61Rz
-	jZ02SDTMzj7VTwNXwDLG583zYUXqJyWVE2tFG1LirWZzRtlkRxZxsy5NhVmIZ8hDbsYhk0P2IGsxS
-	ntvV0xgpM2DElAhu5JL88Kq2K+UuDTq6BizTa8fRGIKi+8U5MizKW5UMfUgAkajMhwK5YhxugB6T9
-	XQH45plfZlLct0GpjeNk1hzrb54RZxw==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=O7nYWpNazvF5YJMi4ks86gvUo1VjnkT634mnzdW4cJc=; b=iRFi/EhRUARRVM8OxY2hJmOlPm
+	OZ6aLBLXIv1wcjtpNUy5Frt4Us/D4MLprohb1vEB9RWMZbX/5jR2oiVbzxhA7C20i1YLfwX6XQVKj
+	0PAkY5SCLwc22k0EuCkcls3n5X+d5eLk6NndOg6AcIeilNx4iHs8lcWzm1vScb+urAkE6BjuLw02W
+	U29FfI2BbGhsGHYNwkJ44G70XhxY3rr7thyzZqmsrZa6gOEfRJwSEA5Cq/XGhdJ2Y9tQyW48hJ2P1
+	c2k1s/bhi8uHDD4tV0LI6xpYnNDhdBAXxgLdLng5+/4ttFlXvwdO8H+sC4nNqFZtnFOmoXg31uEX3
+	BIZJ7XvA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i83zR-000813-Fd; Wed, 11 Sep 2019 14:53:01 +0000
-Received: from mail-io1-xd41.google.com ([2607:f8b0:4864:20::d41])
+	id 1i83zj-0008Gy-L2; Wed, 11 Sep 2019 14:53:19 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i83zD-00080A-9n
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:52:48 +0000
-Received: by mail-io1-xd41.google.com with SMTP id r26so46331575ioh.8
+ id 1i83zE-00080X-Hy
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:52:49 +0000
+Received: by mail-io1-xd42.google.com with SMTP id r26so46331788ioh.8
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 07:52:46 -0700 (PDT)
+ Wed, 11 Sep 2019 07:52:48 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id;
- bh=NGTdt9F3ZZ0dAl/NdWgfhoQHQnI6Jo5dypLz9RxIFA4=;
- b=GbyNlW7h2LT7nD3Ki7aDD9R1X05eplw0cyGNnFV9cKkIE8KMZE8Z5Wi32J3x9MuD6d
- zED3Dr8G52vVyizid/Bfl4ycAopbtx6KJ82zD56iixaf5vJMVq9adv8MxHqXJE7i9rB3
- LXwhDREw4vrAttqxN5ia3975x/V78DTDCq9/JFA8r4htJgk2YgUNzlacu+5f1be+4+V2
- 6gT1D9PPSf5hIgpKrxPjYbJLLDYbAALoFHUuIrqvxLpuTy9W1VVINDSfjoqicZ+OAZGH
- YxhKsUFVpHWC6lRx3F4J6r3XOenJMbPiqY8tVGxJp/hYw5oKLCQIfhMv9S2fR+nuT/x6
- NqYw==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=EK6qCrLs052uo8saG/CKa8ACsOJwz6xJszIlrDZpsn0=;
+ b=EJxgSrwxeKZnsDxcEKl73+la0dwFwYX53cwgBqHkUzfOWdRkYE1XxsiDi4DrMNJIMR
+ Huj0+fS8TUIXfbu1WeaeSOSEWJu+b1sZzSPtc9ZT8dMDVMnG7QCx5o4v8y5V2leVJ56q
+ f99gBbjGPULCbdirwzwaa/++SJrrJzkUtv/jscMiHbSeFamYbaDaO2HFlvO8fInoeEzi
+ UiFsGXrbMxO6Um0muMOiSruK/WVsGTrAxZaQp4Z5xHc10NOy4hB8sAALYxVhvHhJO4vs
+ sTjqzQJVaoqNj9Z0fh5YESgsloEsoGJRWtY546a46OFbfT1osPKkAHd3FiG6PUHRAGlw
+ YScQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=NGTdt9F3ZZ0dAl/NdWgfhoQHQnI6Jo5dypLz9RxIFA4=;
- b=egqc2NX2E4ML6TbuxY6Kr36WmM0kPNi3PJR056L0Y0bk75VNUvy7teU2DeJsSxd/f7
- 7IOITwp/thZoN9itmuEujylwHRqMdmeHgP0gcg4nrk5/gLkzqu+556P7N0y8YXzv5oiy
- 8CvlugJBfEkfGWt5Z4/k8BqPzMXaKRkjyEF4ThIL4U2JYcdIH6PedJVw/9giqG1M5lTQ
- cjjU8c32eft1tjGQYP2VtqPyLrdkoFw/HRnn5bwI1cmH9JokjjPlGteZPOnhrmvB1c9N
- vkSkUal5BM8ZyKiKTzvJjXhskb9HcfNMactPv3p+ezdrZDM7wA6ZRUpcMSJSfjytwO3+
- qwdg==
-X-Gm-Message-State: APjAAAXx0tAiLoE/u2AOsh7W3HF7+w1CeUAG6Ehh08JDgdX8Dnz+Uqa+
- VC46cRnwBokjU6smMGrVoIo=
-X-Google-Smtp-Source: APXvYqzVP2bjj9XYcMcE3MUN8QMaHKh++5QvZJUYU65sh0Dv0wdc0Q1dzhJAnOiiWC/xGnT3dclImQ==
-X-Received: by 2002:a5d:894a:: with SMTP id b10mr17475319iot.49.1568213565885; 
- Wed, 11 Sep 2019 07:52:45 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=EK6qCrLs052uo8saG/CKa8ACsOJwz6xJszIlrDZpsn0=;
+ b=IS5itfduPnQ1Ri8EuboraCzho+kXyKjKd6x+ioobIM3XdXKPDb9ufNtYqG6uoJTbkm
+ aZVkf69Nwg+GMoHIyyOk2TP1/FPLeiIfV2IGcFtjvuGtEs0Ce5Gdn0pSO7KAmcAlhlib
+ chHShJHynPN9M22Mm47yb0u2pJCTQyhSg1qgZee3kC6TFYJQnkeiGdZI1oIzpio4Q/cI
+ e8s4xths67zA6cF4BJDih/lHqGGLmoawPqmfAqKxNGmynv46KoNKvtyh5HUOgyIgUntf
+ d3pHr7FkWuM53QulKGQPhl41GRoaQw3PGh01Pu87Sp96YopP2JEq5a1ePNvCjzfrt0Nw
+ Bfeg==
+X-Gm-Message-State: APjAAAXxB5wKJNBne1UVBYRJv3DEeBlSOFwnrwai/6zGckGxgKE3KpMe
+ T2Zxm2hriLcH9C6svmwia3o=
+X-Google-Smtp-Source: APXvYqwmkuACqYgeZMs8kyMj9c/8J+l6z2tWpsZtI2fuCEHycQPjmI33v7tLfm0zVUbqyA5tbqGiKA==
+X-Received: by 2002:a6b:acc5:: with SMTP id
+ v188mr43578191ioe.268.1568213567401; 
+ Wed, 11 Sep 2019 07:52:47 -0700 (PDT)
 Received: from localhost.localdomain (c-73-37-219-234.hsd1.mn.comcast.net.
  [73.37.219.234])
- by smtp.gmail.com with ESMTPSA id p25sm17109904ioo.35.2019.09.11.07.52.44
+ by smtp.gmail.com with ESMTPSA id p25sm17109904ioo.35.2019.09.11.07.52.46
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Sep 2019 07:52:44 -0700 (PDT)
+ Wed, 11 Sep 2019 07:52:46 -0700 (PDT)
 From: Adam Ford <aford173@gmail.com>
 To: linux-omap@vger.kernel.org
-Subject: [PATCH 1/2] ARM: omap2plus_defconfig: Update for removed items
-Date: Wed, 11 Sep 2019 09:52:25 -0500
-Message-Id: <20190911145226.21088-1-aford173@gmail.com>
+Subject: [PATCH 2/2] ARM: omap2plus_defconfig: Update for moved item
+Date: Wed, 11 Sep 2019 09:52:26 -0500
+Message-Id: <20190911145226.21088-2-aford173@gmail.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190911145226.21088-1-aford173@gmail.com>
+References: <20190911145226.21088-1-aford173@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_075247_366776_7E6EC0A3 
-X-CRM114-Status: UNSURE (   7.54  )
+X-CRM114-CacheID: sfid-20190911_075248_590956_82727497 
+X-CRM114-Status: UNSURE (   8.76  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -71,7 +76,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d41 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -106,33 +111,35 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The omap panel-dpi driver was removed in
-Commit 8bf4b1621178 ("drm/omap: Remove panel-dpi driver")
+When running make savedefconfig ARCH=arm, CONFIG_DMA_CMA
+changed location.  To help facilitate future changes to
+omap2plus_defconfig, this patch re-syncs the omap2plus file
+with the updated location generated by make savedefconfig.
 
-The tFP410 and DVI connector was remove in
-Commit be3143d8b27f ("drm/omap: Remove TFP410 and DVI connector drivers")
-
-This patch removes these items from the omap2plus_defconfig.
+No items were removed or added during this patch.
 
 Signed-off-by: Adam Ford <aford173@gmail.com>
 
 diff --git a/arch/arm/configs/omap2plus_defconfig b/arch/arm/configs/omap2plus_defconfig
-index c7bf9c493646..166b36be2ca6 100644
+index 166b36be2ca6..a0449d3b48a5 100644
 --- a/arch/arm/configs/omap2plus_defconfig
 +++ b/arch/arm/configs/omap2plus_defconfig
-@@ -349,12 +349,9 @@ CONFIG_OMAP5_DSS_HDMI=y
- CONFIG_OMAP2_DSS_SDI=y
- CONFIG_OMAP2_DSS_DSI=y
- CONFIG_DRM_OMAP_ENCODER_OPA362=m
--CONFIG_DRM_OMAP_ENCODER_TFP410=m
- CONFIG_DRM_OMAP_ENCODER_TPD12S015=m
--CONFIG_DRM_OMAP_CONNECTOR_DVI=m
- CONFIG_DRM_OMAP_CONNECTOR_HDMI=m
- CONFIG_DRM_OMAP_CONNECTOR_ANALOG_TV=m
--CONFIG_DRM_OMAP_PANEL_DPI=m
- CONFIG_DRM_OMAP_PANEL_DSI_CM=m
- CONFIG_DRM_OMAP_PANEL_SONY_ACX565AKM=m
- CONFIG_DRM_OMAP_PANEL_LGPHILIPS_LB035Q02=m
+@@ -128,7 +128,6 @@ CONFIG_PCI_ENDPOINT_CONFIGFS=y
+ CONFIG_PCI_EPF_TEST=m
+ CONFIG_DEVTMPFS=y
+ CONFIG_DEVTMPFS_MOUNT=y
+-CONFIG_DMA_CMA=y
+ CONFIG_OMAP_OCP2SCP=y
+ CONFIG_CONNECTOR=m
+ CONFIG_MTD=y
+@@ -537,6 +536,7 @@ CONFIG_CRC_T10DIF=y
+ CONFIG_CRC_ITU_T=y
+ CONFIG_CRC7=y
+ CONFIG_LIBCRC32C=y
++CONFIG_DMA_CMA=y
+ CONFIG_FONTS=y
+ CONFIG_FONT_8x8=y
+ CONFIG_FONT_8x16=y
 -- 
 2.17.1
 
