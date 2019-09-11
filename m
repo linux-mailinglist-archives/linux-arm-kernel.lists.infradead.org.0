@@ -2,42 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 10678AFF28
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:51:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C6EE8AFF23
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 16:50:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=F9DYROJ1NDR73G8OEYAyFC5viwxbC4DvAHUaeZGor4o=; b=qlgGQi3IiHHgI0
-	pO8gnLTJVBB3/+YRDIBA8BGkx1+zMKyOfhT80fvhoC7ral1uPwxRznVBT5ryyJAOyWSQ8bTQDT0F5
-	Urz9pJnuTNB6lKeOKtasLSEfeaWAdjUVPMJ8dpAGcAidItA1jKITW92RfcO/p3jy5M2eo9MMGRt6s
-	ONZyENU19s0mKmAYKe0Lc6dgYOaxkzivl4WXLDRNOgiIONh8w6MtijcmTVOUaeBUdcOcCDm302CZ6
-	zAp8SfxU5yHLClYCb26pCH5OKMHQGfam8BYbswSHkONIFSjg8kLL3L7pPQeRhk6WEGNA8ypCxpdzu
-	RhXx6teGeIuaH7nNjpMA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=lRVqA64ZBseZYZlTCxE2/siZ/IrGS04d3Nozb8Q7ySo=; b=BX0f671rLIUZ/0
+	EejQjEIT54AGMqm0nL66lQNQMDC+tHE+NiNFU4Em6vfsLMp5/9O0ziTHFzV0HZJ1pswGqsOK1vlx/
+	gIGf7GdeE4XkMIHYyTSEJ//clrKf6ww59WfblzfPt2/fJIZl6kJv7MnndbC0ZJBzsX6UeXwHGGlRZ
+	zRBNOcqDHlsaVzDZ8XfYUzphtasD7R5hLWlfWwGMMFfH6vtre9aoqG2vPN6SFTzCnoJskQlagODgj
+	WcFKVXtD+jYiR+aT9pRrx38TEokfze4C8oQIeMe+FjutPBIYLZwwCevFn87YpVBe0g+qcHBp8xxeh
+	/ZyV4Ycts1EgC9uBeBdg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i83xa-0007Fy-7N; Wed, 11 Sep 2019 14:51:06 +0000
+	id 1i83wo-0006PO-Fg; Wed, 11 Sep 2019 14:50:18 +0000
 Received: from mx1.emlix.com ([188.40.240.192])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i83wa-0005QX-Qk
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:50:08 +0000
+ id 1i83wa-0005QL-F5
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 14:50:06 +0000
 Received: from mailer.emlix.com (unknown [81.20.119.6])
  (using TLSv1.2 with cipher ADH-AES256-GCM-SHA384 (256/256 bits))
  (No client certificate requested)
- by mx1.emlix.com (Postfix) with ESMTPS id A80495FBAB;
+ by mx1.emlix.com (Postfix) with ESMTPS id BC6E95FC57;
  Wed, 11 Sep 2019 16:50:00 +0200 (CEST)
 From: Philipp Puschmann <philipp.puschmann@emlix.com>
 To: linux-kernel@vger.kernel.org
-Subject: [PATCH 0/4] Fix UART DMA freezes for iMX6
-Date: Wed, 11 Sep 2019 16:49:39 +0200
-Message-Id: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+Subject: [PATCH 1/4] dmaengine: imx-sdma: fix buffer ownership
+Date: Wed, 11 Sep 2019 16:49:40 +0200
+Message-Id: <20190911144943.21554-2-philipp.puschmann@emlix.com>
 X-Mailer: git-send-email 2.23.0
+In-Reply-To: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+References: <20190911144943.21554-1-philipp.puschmann@emlix.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_075005_027786_18358D20 
-X-CRM114-Status: GOOD (  10.13  )
+X-CRM114-CacheID: sfid-20190911_075004_662743_248B6DB5 
+X-CRM114-Status: GOOD (  12.16  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -67,39 +69,45 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-For some years and since many kernel versions there are reports that
-RX UART DMA channel stops working at one point. So far the usual workaround was
-to disable RX DMA. This patches try to fix the underlying problem.
+BD_DONE flag marks ownership of the buffer. When 1 SDMA owns the buffer,
+when 0 ARM owns it. When processing the buffers in
+sdma_update_channel_loop the ownership of the currently processed buffer
+was set to SDMA again before running the callback function of the the
+buffer and while the sdma script may be running in parallel. So there was
+the possibility to get the buffer overwritten by SDMA before it has been
+processed by kernel leading to kind of random errors in the upper layers,
+e.g. bluetooth.
 
-When a running sdma script does not find any usable destination buffer to put
-its data into it just leads to stopping the channel being scheduled again. As
-solution we we manually retrigger the sdma script for this channel and by this
-dissolve the freeze.
+It may be further a good idea to make the status struct member volatile or
+access it using writel or similar to rule out that the compiler sets the
+BD_DONE flag before the callback routine has finished.
 
-While this seems to work fine so far a further patch in this series increases
-the number of RX DMA periods for UART to reduce use cases running into such
-a situation.
+Signed-off-by: Philipp Puschmann <philipp.puschmann@emlix.com>
+---
+ drivers/dma/imx-sdma.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
 
-This patch series was tested with the current kernel and backported to
-kernel 4.15 with a special use case using a WL1837MOD via UART and provoking
-the hanging of UART RX DMA within seconds after starting a test application.
-It resulted in well known
-  "Bluetooth: hci0: command 0x0408 tx timeout"
-errors and complete stop of UART data reception. Our Bluetooth traffic consists
-of many independent small packets, mostly only a few bytes, causing high usage
-of periods.
-
-
-Philipp Puschmann (4):
-  dmaengine: imx-sdma: fix buffer ownership
-  dmaengine: imx-sdma: fix dma freezes
-  serial: imx: adapt rx buffer and dma periods
-  dmaengine: imx-sdma: drop redundant variable
-
- drivers/dma/imx-sdma.c   | 32 ++++++++++++++++++++++----------
- drivers/tty/serial/imx.c |  5 ++---
- 2 files changed, 24 insertions(+), 13 deletions(-)
-
+diff --git a/drivers/dma/imx-sdma.c b/drivers/dma/imx-sdma.c
+index a01f4b5d793c..1abb14ff394d 100644
+--- a/drivers/dma/imx-sdma.c
++++ b/drivers/dma/imx-sdma.c
+@@ -802,7 +802,6 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
+ 		*/
+ 
+ 		desc->chn_real_count = bd->mode.count;
+-		bd->mode.status |= BD_DONE;
+ 		bd->mode.count = desc->period_len;
+ 		desc->buf_ptail = desc->buf_tail;
+ 		desc->buf_tail = (desc->buf_tail + 1) % desc->num_bd;
+@@ -817,6 +816,8 @@ static void sdma_update_channel_loop(struct sdma_channel *sdmac)
+ 		dmaengine_desc_get_callback_invoke(&desc->vd.tx, NULL);
+ 		spin_lock(&sdmac->vc.lock);
+ 
++		bd->mode.status |= BD_DONE;
++
+ 		if (error)
+ 			sdmac->status = old_status;
+ 	}
 -- 
 2.23.0
 
