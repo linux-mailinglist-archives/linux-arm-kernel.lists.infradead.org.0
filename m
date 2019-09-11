@@ -2,89 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 52011AF8D5
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 11:24:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 52FBDAF904
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 11:34:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Mt4sx/e7xrKOE0J+iVEQoIu5aV6EGrhm0W6UzHaI8/M=; b=STCt0qTVlV1Ygf
-	NmOUaOCmo1Q5TZuXsnwO8YFIUusUeZGhVkpvas2OqwvxD+89j8tOv8gVSWnQF3Yak7WRcuStbbb+Y
-	nSw7wjIJ42L+V0Tir0qOT0Ti+mdYH63ZyNn7H5nsL3BuLQ2aTG/VOzQvOSWFSt+Z/2fWHAF2itsl+
-	3G/1wDe6qg5OvNkCRQWvWELoMkasmZoSzuR9TjDW/WSS0P3bBjhR5BO1VspkkhheggG8zBvWuaAXl
-	+wkpWmfCUO7nDJxavYl/2WRWiC2fXz/FIBt+ymAkfdGHvOnda06h01u2C6vl0eCbDPkr50MYklUQ1
-	+lhqLDAVnVifm08fHPAg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=eEDOkWncBRZT6mwVsx3XGPtZIez1Oa/e0Vn0ebHrEQI=; b=jwWItOhr+7IJlf
+	dzAVYpNfjoMMM8qFlMrhll57684ILBPtH0xPfGQNLCdhe7AddXpIACJl6gcv5hVbmS60SnMFrCIjo
+	G6Y5aJ1+DumVICFVwzIjKmRkrtCMEInZgDMn/xbRmhXmoZ5pRT3AOiEmPey+6GnfR216iEPOgXBnI
+	t8Vn9WMl4Tp2TF2bjTpGo3EMaNKnfP6YgmDQMELpk57S3faA6OnVE9gp17Xv0QkytCVi5u54FATA9
+	YnDQwxp8sb6WkNeIVOymQWdSYwVCSm2f8JqT+52Zz4J5GnRflsKKABeIfof9NHauJhLWaRwp/H3/s
+	cLFfLCQGpAfqnQTunpPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7yrC-0002J3-Lm; Wed, 11 Sep 2019 09:24:10 +0000
-Received: from mx1.redhat.com ([209.132.183.28])
+	id 1i7z1a-0006LT-Jd; Wed, 11 Sep 2019 09:34:54 +0000
+Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7yqv-0002IH-9U
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 09:23:55 +0000
-Received: from mail-qk1-f197.google.com (mail-qk1-f197.google.com
- [209.85.222.197])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mx1.redhat.com (Postfix) with ESMTPS id 389C211A27
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 09:23:52 +0000 (UTC)
-Received: by mail-qk1-f197.google.com with SMTP id x186so4339087qke.13
- for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 02:23:52 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to;
- bh=mYSD9hRnX/6v3ywsydqfkpFUdOIKRrBI76zwVnPyG4o=;
- b=Y+qsBGgKGlysnETcqRFoXv7r8yCww2AtmhFx5A/yBPctlnmUppNoPKWmZyw1pfv20z
- rcvSODvvnI4MzcDk5+AcHuKnuEkSmK9+WPgsUe2fQBCDHP8G2OdpAPjbYaYCK6C7H1c9
- ly37LG1UQY875LdkxaM9tiCLqW2Lg1lrrB4k2cqeAUtKloTEMBUhNFkZS7UxOkzv7OYz
- Fe9lPTqGRUm4/5hwN0ysmidz+wQj6EB1LH1wVvNekAYi5uiLk+Ekz7fqyKEQI3DZDinL
- gLc6qCk7ViB2px16YTs24sfuCRctLdxb7BC/hKNtjHt4QqyP5zMb1izml/dIBZeerYDp
- V8LQ==
-X-Gm-Message-State: APjAAAX5NlZcBMeMW+zB8JkPa1SCDeWWfE2BODbmnPDbidRMYCLxhFtq
- 0VfHHBzCtio/HBXBWoO7e8j54yt889lxmwMKM+hdVrzN9Rj0MkU6psonB7iRR+snsX83zrkkRVm
- iQGbOqR5bsk1kakc8OBfaXCj9nHYJA35ndw4=
-X-Received: by 2002:a37:a503:: with SMTP id o3mr33610736qke.115.1568193831418; 
- Wed, 11 Sep 2019 02:23:51 -0700 (PDT)
-X-Google-Smtp-Source: APXvYqz8QR5cKcd/uXRYlQ318mPxE6jSP+97aQIMCCQ/RUZeDP873f/PJ5B1bFEAkiTG92ijMAd8cg==
-X-Received: by 2002:a37:a503:: with SMTP id o3mr33610704qke.115.1568193831205; 
- Wed, 11 Sep 2019 02:23:51 -0700 (PDT)
-Received: from redhat.com ([80.74.107.118])
- by smtp.gmail.com with ESMTPSA id r13sm5657063qkm.48.2019.09.11.02.23.43
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Wed, 11 Sep 2019 02:23:50 -0700 (PDT)
-Date: Wed, 11 Sep 2019 05:23:40 -0400
-From: "Michael S. Tsirkin" <mst@redhat.com>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [virtio-dev] Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190911051819-mutt-send-email-mst@kernel.org>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910161818.GF2797@work-vm>
- <f74117db-225d-92cb-9476-22c0f752659d@redhat.com>
+ id 1i7z10-00064x-Iz; Wed, 11 Sep 2019 09:34:20 +0000
+X-UUID: 68a2b10964584ac08f98777074b044fd-20190911
+X-UUID: 68a2b10964584ac08f98777074b044fd-20190911
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ (envelope-from <bibby.hsieh@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1097992909; Wed, 11 Sep 2019 01:34:16 -0800
+Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 02:34:14 -0700
+Received: from mtkcas07.mediatek.inc (172.21.101.84) by
+ mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 17:34:08 +0800
+Received: from mtksdccf07.mediatek.inc (172.21.84.99) by mtkcas07.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
+ Frontend Transport; Wed, 11 Sep 2019 17:34:08 +0800
+From: Bibby Hsieh <bibby.hsieh@mediatek.com>
+To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
+ <tfiga@chromium.org>, <matthias.bgg@gmail.com>, <mchehab@kernel.org>
+Subject: [RFC, v3, 0/4] media: mediatek: support mdp3 on mt8183 platform
+Date: Wed, 11 Sep 2019 17:34:02 +0800
+Message-ID: <20190911093406.5688-1-bibby.hsieh@mediatek.com>
+X-Mailer: git-send-email 2.18.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <f74117db-225d-92cb-9476-22c0f752659d@redhat.com>
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_022353_376813_939609F3 
-X-CRM114-Status: GOOD (  34.73  )
-X-Spam-Score: -3.5 (---)
+X-CRM114-CacheID: sfid-20190911_023418_688803_6D6AE68D 
+X-CRM114-Status: UNSURE (   9.01  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-3.5 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [209.132.183.28 listed in list.dnswl.org]
- 1.5 RCVD_IN_SORBS_WEB      RBL: SORBS: sender is an abusable web server
- [80.74.107.118 listed in dnsbl.sorbs.net]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -96,134 +70,119 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, Michal Hocko <mhocko@kernel.org>,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Matthew Wilcox <willy@infradead.org>, "Wang, Wei W" <wei.w.wang@intel.com>,
- ying.huang@intel.com, Rik van Riel <riel@surriel.com>,
- "Dr. David Alan Gilbert" <dgilbert@redhat.com>,
- Dan Williams <dan.j.williams@intel.com>, lcapitulino@redhat.com,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- Nitesh Narayan Lal <nitesh@redhat.com>, Dave Hansen <dave.hansen@intel.com>,
- LKML <linux-kernel@vger.kernel.org>, Paolo Bonzini <pbonzini@redhat.com>,
- Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
+ srv_heupstream@mediatek.com, daoyuan huang <daoyuan.huang@mediatek.com>,
+ holmes.chiou@mediatek.com, Jerry-ch.Chen@mediatek.com, jungo.lin@mediatek.com,
+ sj.huang@mediatek.com, yuzhao@chromium.org, linux-mediatek@lists.infradead.org,
+ zwisler@chromium.org, christie.yu@mediatek.com, frederic.chen@mediatek.com,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 06:22:37PM +0200, David Hildenbrand wrote:
-> On 10.09.19 18:18, Dr. David Alan Gilbert wrote:
-> > * Alexander Duyck (alexander.duyck@gmail.com) wrote:
-> >> On Tue, Sep 10, 2019 at 7:47 AM Michal Hocko <mhocko@kernel.org> wrote:
-> >>>
-> >>> On Tue 10-09-19 07:42:43, Alexander Duyck wrote:
-> >>>> On Tue, Sep 10, 2019 at 5:42 AM Michal Hocko <mhocko@kernel.org> wrote:
-> >>>>>
-> >>>>> I wanted to review "mm: Introduce Reported pages" just realize that I
-> >>>>> have no clue on what is going on so returned to the cover and it didn't
-> >>>>> really help much. I am completely unfamiliar with virtio so please bear
-> >>>>> with me.
-> >>>>>
-> >>>>> On Sat 07-09-19 10:25:03, Alexander Duyck wrote:
-> >>>>> [...]
-> >>>>>> This series provides an asynchronous means of reporting to a hypervisor
-> >>>>>> that a guest page is no longer in use and can have the data associated
-> >>>>>> with it dropped. To do this I have implemented functionality that allows
-> >>>>>> for what I am referring to as unused page reporting
-> >>>>>>
-> >>>>>> The functionality for this is fairly simple. When enabled it will allocate
-> >>>>>> statistics to track the number of reported pages in a given free area.
-> >>>>>> When the number of free pages exceeds this value plus a high water value,
-> >>>>>> currently 32, it will begin performing page reporting which consists of
-> >>>>>> pulling pages off of free list and placing them into a scatter list. The
-> >>>>>> scatterlist is then given to the page reporting device and it will perform
-> >>>>>> the required action to make the pages "reported", in the case of
-> >>>>>> virtio-balloon this results in the pages being madvised as MADV_DONTNEED
-> >>>>>> and as such they are forced out of the guest. After this they are placed
-> >>>>>> back on the free list,
-> >>>>>
-> >>>>> And here I am reallly lost because "forced out of the guest" makes me
-> >>>>> feel that those pages are no longer usable by the guest. So how come you
-> >>>>> can add them back to the free list. I suspect understanding this part
-> >>>>> will allow me to understand why we have to mark those pages and prevent
-> >>>>> merging.
-> >>>>
-> >>>> Basically as the paragraph above mentions "forced out of the guest"
-> >>>> really is just the hypervisor calling MADV_DONTNEED on the page in
-> >>>> question. So the behavior is the same as any userspace application
-> >>>> that calls MADV_DONTNEED where the contents are no longer accessible
-> >>>> from userspace and attempting to access them will result in a fault
-> >>>> and the page being populated with a zero fill on-demand page, or a
-> >>>> copy of the file contents if the memory is file backed.
-> >>>
-> >>> As I've said I have no idea about virt so this doesn't really tell me
-> >>> much. Does that mean that if somebody allocates such a page and tries to
-> >>> access it then virt will handle a fault and bring it back?
-> >>
-> >> Actually I am probably describing too much as the MADV_DONTNEED is the
-> >> hypervisor behavior in response to the virtio-balloon notification. A
-> >> more thorough explanation of it can be found by just running "man
-> >> madvise", probably best just to leave it at that since I am probably
-> >> confusing things by describing hypervisor behavior in a kernel patch
-> >> set.
-> >>
-> >> For the most part all the page reporting really does is provide a way
-> >> to incrementally identify unused regions of memory in the buddy
-> >> allocator. That in turn is used by virtio-balloon in a polling thread
-> >> to report to the hypervisor what pages are not in use so that it can
-> >> make a decision on what to do with the pages now that it knows they
-> >> are unused.
-> >>
-> >> All this is providing is just a report and it is optional if the
-> >> hypervisor will act on it or not. If the hypervisor takes some sort of
-> >> action on the page, then the expectation is that the hypervisor will
-> >> use some sort of mechanism such as a page fault to discover when the
-> >> page is used again.
-> > 
-> > OK, that's interestingly different (but OK) from some other schemes that
-> > hav ebeen described which *require* the guest to somehow indicate the
-> > page is in use before starting to use the page again.
-> > 
-> 
-> virtio-balloon also has a mode where the guest would not have to
-> indicate to the host before re-using a page. Only
-> VIRTIO_BALLOON_F_MUST_TELL_HOST enforces this. So it's not completely new.
+From: daoyuan huang <daoyuan.huang@mediatek.com>
 
-VIRTIO_BALLOON_F_MUST_TELL_HOST is a bit different.
-When it's not set, guest still must tell host about
-pages in use, it just can batch these notifications
-sending them possibly after page has been used.
-So even with VIRTIO_BALLOON_F_MUST_TELL_HOST off you don't
-skip the notification.
+Changes since v2:
+- modify code for review comment from Tomasz Figa & Alexandre Courbot
+- review comment from Rob Hering will offer code revision in v4, due to
+  it's related to device node modification, will need to modify code
+  architecture
 
+Changes since v1:
+- modify code for CMDQ v3 API support
+- EC ipi cmd migration
+- fix compliance test fail item (m2m cmd with -f)
+due to there is two problem in runing all format(-f) cmd:
+1. out of memory before test complete
+        Due to capture buffer mmap (refcount + 1) after reqbuf but seems
+        no corresponding munmap called before device close.
+        There are total 12XX items(formats) in format test and each format
+        alloc 8 capture/output buffers.
+2. unceasingly captureBufs() (randomly)
+        Seems the break statement didn't catch the count == 0 situation:
+        In v4l2-test-buffers.cpp, function: captureBufs()
+                        ...
+                        count--;
+                        if (!node->is_m2m && !count)
+                                break;
+        Log is as attachment
 
-From hypervisor point of view, this feature is very much like adding
-page to the balloon and immediately taking it out of the balloon again,
-just doing it in one operation.
+I will paste the test result with problem part in another e-mail
 
-The main difference is the contents of the page, which matters
-with poisoning: in that case hypervisor is expected to hand
-back page with the poisoning content. Not so with regular
-deflate where page contents is undefined.
+Hi,
 
-Well and also the new interface is optimized for large chunks
-of memory since we'll likely be dealing with such.
+This is the first version of RFC patch for Media Data Path 3 (MDP3),
+MDP3 is used for scaling and color format conversion.
+support using GCE to write register in critical time limitation.
+support V4L2 m2m device control.
 
-> > Dave
-> 
-> 
-> -- 
-> 
-> Thanks,
-> 
-> David / dhildenb
+Ping-Hsun Wu (1):
+  dts: arm64: mt8183: Add Mediatek MDP3 nodes
+
+daoyuan huang (3):
+  dt-binding: mt8183: Add Mediatek MDP3 dt-bindings
+  media: platform: Add Mediatek MDP3 driver KConfig
+  media: platform: mtk-mdp3: Add Mediatek MDP3 driver
+
+ .../bindings/media/mediatek,mt8183-mdp3.txt   |  201 +++
+ arch/arm64/boot/dts/mediatek/mt8183.dtsi      |  137 ++
+ drivers/media/platform/Kconfig                |   19 +
+ drivers/media/platform/Makefile               |    1 +
+ drivers/media/platform/mtk-mdp3/Makefile      |    7 +
+ drivers/media/platform/mtk-mdp3/isp_reg.h     |   37 +
+ .../media/platform/mtk-mdp3/mdp-platform.h    |   58 +
+ .../media/platform/mtk-mdp3/mdp_reg_ccorr.h   |   75 +
+ .../media/platform/mtk-mdp3/mdp_reg_rdma.h    |  206 +++
+ drivers/media/platform/mtk-mdp3/mdp_reg_rsz.h |  109 ++
+ .../media/platform/mtk-mdp3/mdp_reg_wdma.h    |  125 ++
+ .../media/platform/mtk-mdp3/mdp_reg_wrot.h    |  115 ++
+ .../media/platform/mtk-mdp3/mmsys_config.h    |  188 +++
+ drivers/media/platform/mtk-mdp3/mmsys_mutex.h |   35 +
+ .../media/platform/mtk-mdp3/mmsys_reg_base.h  |   38 +
+ drivers/media/platform/mtk-mdp3/mtk-img-ipi.h |  270 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-cmdq.c   |  504 +++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-cmdq.h   |   54 +
+ .../media/platform/mtk-mdp3/mtk-mdp3-comp.c   | 1328 +++++++++++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-comp.h   |  155 ++
+ .../media/platform/mtk-mdp3/mtk-mdp3-core.c   |  277 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-core.h   |   84 ++
+ .../media/platform/mtk-mdp3/mtk-mdp3-m2m.c    |  816 ++++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-m2m.h    |   42 +
+ .../media/platform/mtk-mdp3/mtk-mdp3-regs.c   |  739 +++++++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-regs.h   |  375 +++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-vpu.c    |  313 ++++
+ .../media/platform/mtk-mdp3/mtk-mdp3-vpu.h    |   81 +
+ 28 files changed, 6389 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/mediatek,mt8183-mdp3.txt
+ create mode 100644 drivers/media/platform/mtk-mdp3/Makefile
+ create mode 100644 drivers/media/platform/mtk-mdp3/isp_reg.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp-platform.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_ccorr.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_rdma.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_rsz.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_wdma.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mdp_reg_wrot.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_config.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_mutex.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mmsys_reg_base.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-img-ipi.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-cmdq.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-comp.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-comp.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-core.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-core.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-m2m.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-m2m.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-regs.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-regs.h
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-vpu.c
+ create mode 100644 drivers/media/platform/mtk-mdp3/mtk-mdp3-vpu.h
+
+-- 
+2.18.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
