@@ -2,64 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A914CB022C
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 18:54:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B35EAB0231
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 18:55:47 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ePpg+sjUoyLxDty913o+p8o+TkQpfOZW6BkGnQgjAvI=; b=jZ3BQFqOc/yWnp
-	9ViuWLqa5wZG+N19UDCEIFV/rdV9KVnK78gucLwyJ6qtdbVvkUv3+OKYp6J7FqBumsVy5jHWl+7ya
-	MtvgfZg6u5fqHjHVmiDuA9yvc66BW6ldzL0OuncctEzkKvVCcymavn8yzjHN8unt+nCECOaYOAqZ4
-	d+nyREu8fl4JqA1J07nBR0xq4VafN4nR44OVyF93rH48s/Pv6GOt+3EbPjHni9j3jDVbTGnZsJg4/
-	CERjaT/xFMvrO2AxlkCG2jyl7uXn7VIeX2/zxa8QY+tSfEY8YHoe5LoknbnBePUFSQOGc0T29sQgZ
-	pfc/rUd5W88DQ+ih5M4Q==;
+	List-Owner; bh=yjA9M61dsRUrs1BipaU670BuGwltQt7xkwHq0+DvL9k=; b=bP6gM1JmWl+wLs
+	icc6YYxyAoIj0RNbUyLPysOZcfabAjf/WV8fVXQt+ltW1G1V3wmCJak7oLU99EYOR/gWHNfQg3eys
+	75DBZR/eWg5JNiMk6f6oTsfP4KLCKK8VrsOF5P53KOegDq+Jb3ZrPKQoxekOLeKF2ezgQmoQIU/Vr
+	ga9iEgNuZY6vSXEQaJTbNmOhpfNMSU2uJ0k/IckE8lGQRL3qR4WB/Xr7iNVVpM8MZ675ghTZM11wD
+	rMCemvVHeHWx3T4/fJDXM18S5mbtbFtrLag5qNTHhyf2Pay6wLcBV7MfWfuRK9sZ486F1OW8Mbhle
+	Y1uo8Rs/TqbkteRkqNrw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i85tD-0003U1-UL; Wed, 11 Sep 2019 16:54:44 +0000
-Received: from mailoutvs4.siol.net ([185.57.226.195] helo=mail.siol.net)
+	id 1i85uD-0004xs-Tz; Wed, 11 Sep 2019 16:55:46 +0000
+Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i85sy-0003Sw-R3; Wed, 11 Sep 2019 16:54:31 +0000
-Received: from localhost (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTP id 44A12522489;
- Wed, 11 Sep 2019 18:54:20 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at psrvmta12.zcs-production.pri
-Received: from mail.siol.net ([127.0.0.1])
- by localhost (psrvmta12.zcs-production.pri [127.0.0.1]) (amavisd-new,
- port 10032)
- with ESMTP id JqGzle1UahVN; Wed, 11 Sep 2019 18:54:19 +0200 (CEST)
-Received: from mail.siol.net (localhost [127.0.0.1])
- by mail.siol.net (Zimbra) with ESMTPS id 9203F521CBC;
- Wed, 11 Sep 2019 18:54:19 +0200 (CEST)
-Received: from jernej-laptop.localnet (cpe-86-58-59-25.static.triera.net
- [86.58.59.25]) (Authenticated sender: jernej.skrabec@siol.net)
- by mail.siol.net (Zimbra) with ESMTPA id 8399E522314;
- Wed, 11 Sep 2019 18:54:16 +0200 (CEST)
-From: Jernej =?utf-8?B?xaBrcmFiZWM=?= <jernej.skrabec@siol.net>
-To: Neil Armstrong <narmstrong@baylibre.com>
-Subject: Re: [PATCH v3] drm: bridge/dw_hdmi: add audio sample channel status
- setting
-Date: Wed, 11 Sep 2019 18:54:16 +0200
-Message-ID: <10668907.r1TyVuJQb1@jernej-laptop>
-In-Reply-To: <1e2ec69d-e42d-4e1b-7ce9-d1620cfbb4c9@baylibre.com>
-References: <20190911082646.134347-1-cychiang@chromium.org>
- <1e2ec69d-e42d-4e1b-7ce9-d1620cfbb4c9@baylibre.com>
+ id 1i85tp-0004xJ-Gq
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 16:55:23 +0000
+Received: by mail-io1-xd42.google.com with SMTP id k13so32248276ioj.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 09:55:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=x17kcwTzLlp3AfSaKdZGwJQ4xIT8JG2uuYs3ld3gBdQ=;
+ b=Or3of+ZM/yv75Ya1r+oOFZduWrVp1tGDuHRoCdr6HUO6H1JxbI1Y312hqPrDR2oHYy
+ Kcv65TaVSQnM4k6Qp/25n9MvyICvzQcmj0TWnWhjwlkGScxgxlKpPWkAx4uRnlmK9MmP
+ 0PkahmtEzEWmSDw6BPjKAKdOaL9/W7AgPVnDElH/kDjUHRCQzq9yIu8DXKw0L4SuZgMV
+ VVlP9upAsFnT79nxa7qO7mN5r13x4v7wyl+K0+BnSTykGhRLVTdq00w+aSWxC+/rjYK1
+ K4B4Ox8b3NW13YdFCweUiKqMcDIwnGYm7Zb3fYQgUiUWyWkuI8MgFBvIXXq+qbxZd4ok
+ CWPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=x17kcwTzLlp3AfSaKdZGwJQ4xIT8JG2uuYs3ld3gBdQ=;
+ b=BU6nIye0l3gTnTLTEa/oPanSXACVgzgyQEZwEwX/zVd7Nq77A8U+g9QAzwahVW6J5s
+ rLdpGXTKdxy639tFiKizCZv0Po4/V31oHpztY6s4XGeWxRncENsaeDSRVufdc+NXuLzG
+ ndMejVSqcgpiKVwXYXHyb97QryZ3GEXo2eMoWBwrg83f8av3Ntf/wVNcdDUf/G+2D2wb
+ JA7uvCMlY8s7asPeIFKRdq1/Z4VO5e6ACLXSggQTM6KRlpzMv2VmPhyST0m7WAd9fk7X
+ qcFLu5Qv70djZlTyTtt0pA0goikyftXHA41iQVs2sWxsn3a+DEyaMacqGnm5m3/FyWbD
+ 7+Zg==
+X-Gm-Message-State: APjAAAWWbUYSODkHN2TJwWvp4DI0uMUrB+MtL04KEnQw0mLEFD/nOUlf
+ qq2/dSGxhGQzrlHNGjBrHw31t1jYaThYylyTy8I=
+X-Google-Smtp-Source: APXvYqwpx89BGLysU2GSOowdBNkAvpvNXZaPuDIzD466qjSq4YPYqpsgCVd+LCc0T0bwN/jNMczZiKyEr5liu4d2ehg=
+X-Received: by 2002:a6b:1646:: with SMTP id 67mr147961iow.11.1568220920591;
+ Wed, 11 Sep 2019 09:55:20 -0700 (PDT)
 MIME-Version: 1.0
+References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
+ <1567004515-3567-2-git-send-email-peng.fan@nxp.com>
+ <20190909164208.6605054e@donnerap.cambridge.arm.com>
+ <CABb+yY2rppSOgqMy+R294d94xwi5UPR55Eo-WB8KA6m11nG3iQ@mail.gmail.com>
+ <20190911160308.30878cc3@donnerap.cambridge.arm.com>
+In-Reply-To: <20190911160308.30878cc3@donnerap.cambridge.arm.com>
+From: Jassi Brar <jassisinghbrar@gmail.com>
+Date: Wed, 11 Sep 2019 11:55:09 -0500
+Message-ID: <CABb+yY1oZxvX+mRNmObAHsGoBfN0F4GO+9PSj06EFaF3DsnstA@mail.gmail.com>
+Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
+ SMC/HVC mailbox
+To: Andre Przywara <andre.przywara@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_095429_200883_D3B346D0 
-X-CRM114-Status: GOOD (  21.05  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190911_095521_566060_E182A756 
+X-CRM114-Status: GOOD (  27.54  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [185.57.226.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (jassisinghbrar[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FROM_EXCESS_BASE64     From: base64 encoded unnecessarily
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,171 +98,115 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: alsa-devel@alsa-project.org, dianders@chromium.org,
- kuninori.morimoto.gx@renesas.com, airlied@linux.ie,
- dri-devel@lists.freedesktop.org, cain.cai@rock-chips.com, a.hajda@samsung.com,
- Laurent.pinchart@ideasonboard.com, Yakir Yang <ykk@rock-chips.com>,
- sam@ravnborg.org, Jerome Brunet <jbrunet@baylibre.com>,
- zhengxing@rock-chips.com, linux-rockchip@lists.infradead.org,
- dgreid@chromium.org, Cheng-Yi Chiang <cychiang@chromium.org>,
- tzungbi@chromium.org, Jonas Karlman <jonas@kwiboo.se>,
- jeffy.chen@rock-chips.com, eddie.cai@rock-chips.com,
- linux-arm-kernel@lists.infradead.org, linux-kernel@vger.kernel.org,
- daniel@ffwll.ch, enric.balletbo@collabora.com, kuankuan.y@gmail.com
+Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
+ Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
+ "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Dne sreda, 11. september 2019 ob 18:23:59 CEST je Neil Armstrong napisal(a):
-> On 11/09/2019 10:26, Cheng-Yi Chiang wrote:
-> > From: Yakir Yang <ykk@rock-chips.com>
-> > 
-> > When transmitting IEC60985 linear PCM audio, we configure the
-> > Aduio Sample Channel Status information in the IEC60958 frame.
-> > The status bit is already available in iec.status of hdmi_codec_params.
-> > 
-> > This fix the issue that audio does not come out on some monitors
-> > (e.g. LG 22CV241)
-> > 
-> > Note that these registers are only for interfaces:
-> > I2S audio interface, General Purpose Audio (GPA), or AHB audio DMA
-> > (AHBAUDDMA).
-> > For S/PDIF interface this information comes from the stream.
-> > 
-> > Currently this function dw_hdmi_set_channel_status is only called
-> > from dw-hdmi-i2s-audio in I2S setup.
-> > 
-> > Signed-off-by: Yakir Yang <ykk@rock-chips.com>
-> > Signed-off-by: Cheng-Yi Chiang <cychiang@chromium.org>
-> > ---
-> > 
-> > Change from v2 to v3:
-> > 1. Reuse what is already set in iec.status in hw_param.
-> > 2. Remove all useless definition of registers and values.
-> > 3. Note that the original sampling frequency is not written to
-> > 
-> >    the channel status as we reuse create_iec958_consumer in pcm_iec958.c.
-> >    Without that it can still play audio fine.
-> >  
-> >  .../drm/bridge/synopsys/dw-hdmi-i2s-audio.c   |  1 +
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.c     | 20 +++++++++++++++++++
-> >  drivers/gpu/drm/bridge/synopsys/dw-hdmi.h     |  2 ++
-> >  include/drm/bridge/dw_hdmi.h                  |  1 +
-> >  4 files changed, 24 insertions(+)
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c index
-> > 34d8e837555f..20f4f92dd866 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi-i2s-audio.c
-> > @@ -102,6 +102,7 @@ static int dw_hdmi_i2s_hw_params(struct device *dev,
-> > void *data,> 
-> >  	}
-> >  	
-> >  	dw_hdmi_set_sample_rate(hdmi, hparms->sample_rate);
-> > 
-> > +	dw_hdmi_set_channel_status(hdmi, hparms->iec.status);
-> > 
-> >  	dw_hdmi_set_channel_count(hdmi, hparms->channels);
-> >  	dw_hdmi_set_channel_allocation(hdmi, hparms-
->cea.channel_allocation);
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c index
-> > bd65d0479683..aa7efd4da1c8 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.c
-> > @@ -582,6 +582,26 @@ static unsigned int hdmi_compute_n(unsigned int freq,
-> > unsigned long pixel_clk)> 
-> >  	return n;
-> >  
-> >  }
-> > 
-> > +/*
-> > + * When transmitting IEC60958 linear PCM audio, these registers allow to
-> > + * configure the channel status information of all the channel status
-> > + * bits in the IEC60958 frame. For the moment this configuration is only
-> > + * used when the I2S audio interface, General Purpose Audio (GPA),
-> > + * or AHB audio DMA (AHBAUDDMA) interface is active
-> > + * (for S/PDIF interface this information comes from the stream).
-> > + */
-> > +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi,
-> > +				u8 *channel_status)
-> > +{
-> > +	/*
-> > +	 * Set channel status register for frequency and word length.
-> > +	 * Use default values for other registers.
-> > +	 */
-> > +	hdmi_writeb(hdmi, channel_status[3], HDMI_FC_AUDSCHNLS7);
-> > +	hdmi_writeb(hdmi, channel_status[4], HDMI_FC_AUDSCHNLS8);
-> > +}
-> > +EXPORT_SYMBOL_GPL(dw_hdmi_set_channel_status);
-> > +
-> > 
-> >  static void hdmi_set_clk_regenerator(struct dw_hdmi *hdmi,
-> >  
-> >  	unsigned long pixel_clk, unsigned int sample_rate)
-> >  
-> >  {
-> > 
-> > diff --git a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h index
-> > 6988f12d89d9..fcff5059db24 100644
-> > --- a/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > +++ b/drivers/gpu/drm/bridge/synopsys/dw-hdmi.h
-> > @@ -158,6 +158,8 @@
-> > 
-> >  #define HDMI_FC_SPDDEVICEINF                    0x1062
-> >  #define HDMI_FC_AUDSCONF                        0x1063
-> >  #define HDMI_FC_AUDSSTAT                        0x1064
-> > 
-> > +#define HDMI_FC_AUDSCHNLS7                      0x106e
-> > +#define HDMI_FC_AUDSCHNLS8                      0x106f
-> > 
-> >  #define HDMI_FC_DATACH0FILL                     0x1070
-> >  #define HDMI_FC_DATACH1FILL                     0x1071
-> >  #define HDMI_FC_DATACH2FILL                     0x1072
-> > 
-> > diff --git a/include/drm/bridge/dw_hdmi.h b/include/drm/bridge/dw_hdmi.h
-> > index cf528c289857..4b3e863c4f8a 100644
-> > --- a/include/drm/bridge/dw_hdmi.h
-> > +++ b/include/drm/bridge/dw_hdmi.h
-> > @@ -156,6 +156,7 @@ void dw_hdmi_setup_rx_sense(struct dw_hdmi *hdmi, bool
-> > hpd, bool rx_sense);> 
-> >  void dw_hdmi_set_sample_rate(struct dw_hdmi *hdmi, unsigned int rate);
-> >  void dw_hdmi_set_channel_count(struct dw_hdmi *hdmi, unsigned int cnt);
-> > 
-> > +void dw_hdmi_set_channel_status(struct dw_hdmi *hdmi, u8
-> > *channel_status);
-> > 
-> >  void dw_hdmi_set_channel_allocation(struct dw_hdmi *hdmi, unsigned int
-> >  ca);
-> >  void dw_hdmi_audio_enable(struct dw_hdmi *hdmi);
-> >  void dw_hdmi_audio_disable(struct dw_hdmi *hdmi);
-> 
-> Looks fine for me:
-> Reviewed-by: Neil Armstrong <narmstrong@baylibre.com>
-> 
-> Jonas ? Jernej ? Russell ?
+On Wed, Sep 11, 2019 at 10:03 AM Andre Przywara <andre.przywara@arm.com> wrote:
+>
+> On Tue, 10 Sep 2019 21:44:11 -0500
+> Jassi Brar <jassisinghbrar@gmail.com> wrote:
+>
+> Hi,
+>
+> > On Mon, Sep 9, 2019 at 10:42 AM Andre Przywara <andre.przywara@arm.com> wrote:
+> > >
+> > > On Wed, 28 Aug 2019 03:02:58 +0000
+> > > Peng Fan <peng.fan@nxp.com> wrote:
+> > >
+> [ ... ]
+> > >
+> > > > +
+> > > > +  arm,func-ids:
+> > > > +    description: |
+> > > > +      An array of 32-bit values specifying the function IDs used by each
+> > > > +      mailbox channel. Those function IDs follow the ARM SMC calling
+> > > > +      convention standard [1].
+> > > > +
+> > > > +      There is one identifier per channel and the number of supported
+> > > > +      channels is determined by the length of this array.
+> > >
+> > > I think this makes it obvious that arm,num-chans is not needed.
+> > >
+> > > Also this somewhat contradicts the driver implementation, which allows the array to be shorter, marking this as UINT_MAX and later on using the first data item as a function identifier. This is somewhat surprising and not documented (unless I missed something).
+> > >
+> > > So I would suggest:
+> > > - We drop the transports property, and always put the client provided data in the registers, according to the SMCCC. Document this here.
+> > >   A client not needing those could always puts zeros (or garbage) in there, the respective firmware would just ignore the registers.
+> > > - We drop "arm,num-chans", as this is just redundant with the length of the func-ids array.
+> > > - We don't impose an arbitrary limit on the number of channels. From the firmware point of view this is just different function IDs, from Linux' point of view just the size of the memory used. Both don't need to be limited artificially IMHO.
+> > >
+> > Sounds like we are in sync.
+> >
+> > > - We mark arm,func-ids as required, as this needs to be fixed, allocated number.
+> > >
+> > I still think func-id can be done without. A client can always pass
+> > the value as it knows what it expects.
+>
+> I don't think it's the right abstraction. The mailbox *controller* uses a specific func-id, this has to match the one the firmware expects. So this is a property of the mailbox transport channel (the SMC call), and the *client* should *not* care about it. It just sees the logical channel ID (if we have one), which the controller translates into the func-ID.
+>
+arg0 is special only to the client/protocol, otherwise it is simply
+the first argument for the arm_smccc_smc *instruction* controller.
+arg[1,7] are already provided by the client, so it is only neater if
+arg0 is also taken from the client.
 
-Patch itself is fine, I'm just wondering if more information should be copied 
-from status array to registers. But I think they are not 1:1 mapping so some 
-more work would be needed. Anyway, patch is:
+But as I said, I am still ok if func-id is passed from dt and arg0
+from client is ignored because we have one channel per controller
+design and we don't have to worry about number of channels there can
+be dedicated to specific functions.
 
-Reviewed-by: Jernej Skrabec <jernej.skrabec@siol.net>
+> So it should really look like this (assuming only single channel controllers):
+> mailbox: smc-mailbox {
+>     #mbox-cells = <0>;
+>     compatible = "arm,smc-mbox";
+>     method = "smc";
+>
+Do we want to do away with 'method' property and use different
+'compatible' properties instead?
+ compatible = "arm,smc-mbox";     or    compatible = "arm,hvc-mbox";
 
-Best regards,
-Jernej
+>     arm,func-id = <0x820000fe>;
+> };
+> scmi {
+>     compatible = "arm,scmi";
+>     mboxes = <&smc_mbox>;
+>     mbox-names = "tx"; /* rx is optional */
+>     shmem = <&cpu_scp_hpri>;
+> };
+>
+> If you allow the client to provide the function ID (and I am not saying this is a good idea): where would this func ID come from? It would need to be a property of the client DT node, then. So one way would be to use the func ID as the Linux mailbox channel ID:
+> mailbox: smc-mailbox {
+>     #mbox-cells = <1>;
+>     compatible = "arm,smc-mbox";
+>     method = "smc";
+> };
+> scmi {
+>     compatible = "arm,scmi";
+>     mboxes = <&smc_mbox 0x820000fe>;
+>     mbox-names = "tx"; /* rx is optional */
+>     shmem = <&cpu_scp_hpri>;
+> };
+>
+> But this doesn't look desirable.
+>
+> And as I mentioned this before: allowing some mailbox clients to provide the function IDs sound scary, as they could use anything they want, triggering random firmware actions (think PSCI_CPU_OFF).
+>
+That paranoia is unwarranted. We have to keep faith in kernel-space
+code doing the right thing.
+Either the illegitimate function request should be rejected by the
+firmware or client driver be called buggy.... just as we would call a
+block device driver buggy if it messed up the sector numbers in a
+write request.
 
-> 
-> If it's ok for you I'll apply it.
-> 
-> Neil
-
-
-
-
+thnx.
 
 _______________________________________________
 linux-arm-kernel mailing list
