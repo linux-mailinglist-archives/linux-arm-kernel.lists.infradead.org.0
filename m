@@ -2,80 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 419C3AF518
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 06:33:12 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 45567AF52C
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 06:54:39 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=I8mrzJwH78n0mTs3hrGsgvNTFymvEoPGwnjculc7Yq8=; b=NxamZe12ZLRis4
-	aBMoJY9EHinTAd11wiIPjBXKpFteRrL96H5WTzTZJ9S50QIC/b1Utc1vI5ASDULPz/GFGSgrIb0Ue
-	bzQahq4N/EcwVUBSpMzjeFQFGPrP2uXAl2KNJK4cARS2F8QNAgVo2QWsiKBUeLZep3gOQTr2wfgG5
-	tarJi41p4ZkFa2LbVcWXW1CvozjfmUC8YfpaTTUZwfSyFU1BtvkaEPyPRIYUqHMki126nvtqLJjbM
-	AsBff+cyxPjTLTq7/NU3AE2LO3VaXpBy70WLc52sThHXD3muCl6yjtMxIwzDDOj45f5Fq9LwmrbuS
-	pFyFbbCbglu0/uc8bR2g==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
+	:Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=LHtm6d0+V/bjn3qp+i4ibjHTf30uCav7tJLpfrXp4Vs=; b=sOHXqKYgcZyYNG
+	stU0Fi041OGz/Xh8Xbca1Bp0+rPrk0PK9rUADJbRkF5iOSIbjnJvWTj8YaFTDy/smzry4WzLaAwG4
+	/0Ddgy21RR5KQBBouVNBaY89JvVdd6JB5LzTZbNwI4V8A2gXTrihpjW6og2FB3R+HGX8IA2Cf6upy
+	qvtOFW6sqO4h5FuGn3u85BaWKjfYTB5QSgkpoHBFYDQc3eG/fIhuhhukhi2fAqWV/BcdLzs6jvzAQ
+	BaYnS1tkozB765ZUw73tVpAxCeTLAyqRc5DU7OwIFfn9irKEtJseRvw1fWHEYyOc/DHRmDVUZ1DU5
+	TwNJSiOySlPfXzUCiAfA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7uJU-0004Pk-1C; Wed, 11 Sep 2019 04:33:04 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i7ueD-0001UH-Iv; Wed, 11 Sep 2019 04:54:29 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7uIU-0003oW-3k
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 04:32:03 +0000
-Received: by mail-pf1-x441.google.com with SMTP id r12so12864103pfh.1
+ id 1i7udz-0001Td-Ci
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 04:54:16 +0000
+Received: by mail-pl1-x641.google.com with SMTP id s17so4696430plp.2
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 21:32:01 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=0x0f.com; s=google;
- h=from:to:cc:subject:date:message-id:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=YheNAKZhR+O+rBJo0i7qqvlhDdwLsChDJZIO9P7slME=;
- b=kNFjCjUvea0XHWJPdyvY0r+85dIkHVCT7I+9E/MpjOp7jyRMdgy6+g/tZE2hXbiFRR
- ga0y+ROyOz7k6wnEQS+d47BvRecHEMHC/R58cNtfZHW7V7pEqrJ+fGOj5Eh68b2FelcF
- urlcSR/OP9NvfABCybM0dk0F5TtCmMF6bne6o=
+ Tue, 10 Sep 2019 21:54:14 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:mime-version:content-disposition
+ :user-agent; bh=5gcsHX1jM73NrhKsXACQeSTphDjoPn7GsPpfGO2Qoek=;
+ b=GJdFUC3yNvSWX58n2jkWy5f1Y/EheqUE8tLAB1NUkxjQpa6GRAgCQHlFRmINhLM5hL
+ Ww6LUqH4F9EdY9DxaWKX7fjpG0u93sLSZQXj+tftl99JYdFH9N3ixuQRkngP15Fk1w18
+ WsFhfuEfCz3TSweZ8YZ3yJgVXv6QHwhFWpLA3Jmm6dtQ0W4IVhrKVtk2KsueNC1XGbxX
+ zqxzj+cf6gxTztp1d5sS6Awnz023Y9YhgS13/4vbX6ReYOJOV3A/AzwHrB3F2C5n6tgY
+ HKsXAnKDz1mU/mLeALbgdJFgTFV2gIjUxkCPyHDf6KHSE11EOffWbAqZ/3I1poWZREN9
+ 215g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=YheNAKZhR+O+rBJo0i7qqvlhDdwLsChDJZIO9P7slME=;
- b=ueF9/ygArNa79RB/XBas38/KR1uZ5a1hKPCCJNgFGfyb8fqRM0sSWkd0Y9bklvSCNG
- bWj/U9dI2etT/GDBsCAlAMavBGRo/Lj4+YnBpyvRjcT5pN/hPyod94Pbg06Z96CBbxMO
- T8lFmKX1i/rCApM4C7F05UH/RUf0EwtDPegdi/s2u2qW+1DlWcr+TQpDFdnhAT/Oby1y
- +CvlvkHaD3xEETBc96vfYV1X7Q89iBnd1e5wNxLee91eVIKDYpJPXw+vFJydDDLfWxe1
- TGcz/7gx2gWIdIKBI2xM6V2OXXDiqz77MS0Bknmio3BqNJ3Xi+KXh6Q8TG7LssWCdG/K
- 9KCw==
-X-Gm-Message-State: APjAAAXDKDMpMkDiW4t/Y6sPdhszD+Lpd/lQ3ogtRrGxfUSm89rBIks5
- 8CokUAMN5Gs5XiMT/PvY1UF7YMf5GF/S8A==
-X-Google-Smtp-Source: APXvYqwSVKFkTYL4JJwL/JG5MI+zsD5tHooAAwNraD8s/fXAVxr/CUokXoZ0fyQ0s+4Hp53MPTWGwg==
-X-Received: by 2002:aa7:8dcf:: with SMTP id j15mr30177292pfr.5.1568176320919; 
- Tue, 10 Sep 2019 21:32:00 -0700 (PDT)
-Received: from shiro.work (p1092222-ipngn200709sizuokaden.shizuoka.ocn.ne.jp.
- [220.106.235.222])
- by smtp.googlemail.com with ESMTPSA id u17sm264700pjn.7.2019.09.10.21.31.59
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Tue, 10 Sep 2019 21:32:00 -0700 (PDT)
-From: Daniel Palmer <daniel@0x0f.com>
-To: linux-arm-kernel@lists.infradead.org
-Subject: [RFC 4/4] ARM: mstar: Add dts for msc313e based BreadBee board
-Date: Wed, 11 Sep 2019 13:31:42 +0900
-Message-Id: <20190911043142.3734-4-daniel@0x0f.com>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190911043142.3734-1-daniel@0x0f.com>
-References: <20190911043142.3734-1-daniel@0x0f.com>
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:mime-version
+ :content-disposition:user-agent;
+ bh=5gcsHX1jM73NrhKsXACQeSTphDjoPn7GsPpfGO2Qoek=;
+ b=Vf5x3v+t/jDmOn94Y2bcJKa4B3Ag53FFcurxu6QIjX93OdWkPtUTdiprSjh+iPI4PL
+ rnnOEcJ8ZAX1Meq8+YIj9pbEl4F54ctQyY/9R/jv8HcJ3RD2tyra7D+fC0ApG3TgUKGa
+ 378wsnYjVs2J8xvz5ZYhoJtJgvy4oPObqVb/Fr+EXU7B3a8hM1hO0oec20uIaTGfE1Fq
+ O3JBx2/gH9Q005Ag5dI9z4O0c5x7uozcMqvfTPopVzmWzfH0JjwbYPDBz9o0MUrgFE+T
+ ItrUznPkUSgXRbQd5ru7DZklIpKQDPGKwpvdZZu2RPQFznEPz+M/y6keaLoaePpX/caf
+ mLmQ==
+X-Gm-Message-State: APjAAAXJYLt2+eG2AeLw+LDiKl9HzB3WAyLNOvD5Jkq5j02iBJyTGTGf
+ 2eDEbO3/AtVZZNxFCnPoqU8=
+X-Google-Smtp-Source: APXvYqx+WwrQ59WbRKhxTrX038bhtsCNOaRLTsvfuuiIzJUW1ROpG1neMcP2+anS++fR5Cmt/auYPg==
+X-Received: by 2002:a17:902:36e:: with SMTP id
+ 101mr33406340pld.51.1568177653661; 
+ Tue, 10 Sep 2019 21:54:13 -0700 (PDT)
+Received: from LGEARND20B15 ([27.122.242.75])
+ by smtp.gmail.com with ESMTPSA id v23sm610304pfe.85.2019.09.10.21.54.11
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Tue, 10 Sep 2019 21:54:13 -0700 (PDT)
+Date: Wed, 11 Sep 2019 13:54:08 +0900
+From: Austin Kim <austindh.kim@gmail.com>
+To: linux@armlinux.org.uk, allison@lohutok.net, info@metux.net,
+ matthias.schiffer@ew.tq-group.com
+Subject: [PATCH] ARM: module: Drop 'rel->r_offset < 0' always false statement
+Message-ID: <20190911045408.GA62424@LGEARND20B15>
 MIME-Version: 1.0
+Content-Disposition: inline
+User-Agent: Mutt/1.5.24 (2015-08-30)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_213202_213337_60DE10B2 
-X-CRM114-Status: GOOD (  12.76  )
+X-CRM114-CacheID: sfid-20190910_215415_458829_51FE7EDE 
+X-CRM114-Status: GOOD (  12.56  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (austindh.kim[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -94,82 +98,45 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Daniel Palmer <daniel@0x0f.com>
+Cc: austindh.kim@gmail.com, linux-kernel@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-BreadBee is an opensource development board based on the
-MStar msc313e SoC.
+Since rel->r_offset is declared as Elf32_Addr,
+this value is always non-negative.
+typedef struct elf32_rel {
+	  Elf32_Addr	r_offset;
+	    Elf32_Word	r_info;
+} Elf32_Rel;
 
-Hardware details, schematics and so on can be found at:
-https://github.com/breadbee/breadbee
+typedef __u32	Elf32_Addr;
+typedef unsigned int __u32;
+
+Drop 'rel->r_offset < 0' statement which is always false.
+
+Signed-off-by: Austin Kim <austindh.kim@gmail.com>
 ---
- MAINTAINERS                            |  1 +
- arch/arm/boot/dts/Makefile             |  1 +
- arch/arm/boot/dts/msc313e-breadbee.dts | 26 ++++++++++++++++++++++++++
- 3 files changed, 28 insertions(+)
- create mode 100644 arch/arm/boot/dts/msc313e-breadbee.dts
+ arch/arm/kernel/module.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-diff --git a/MAINTAINERS b/MAINTAINERS
-index c71c3ec3d43f..2768d6e07afb 100644
---- a/MAINTAINERS
-+++ b/MAINTAINERS
-@@ -1961,6 +1961,7 @@ L:	linux-arm-kernel@lists.infradead.org (moderated for non-subscribers)
- F:	Documentation/devicetree/bindings/arm/mstar.yaml
- F:	arch/arm/mach-mstar/
- F:	arch/arm/boot/dts/msc313*.dtsi
-+F:	arch/arm/boot/dts/msc313e-*.dts
- S:	Maintained
+diff --git a/arch/arm/kernel/module.c b/arch/arm/kernel/module.c
+index deef17f..0921ce7 100644
+--- a/arch/arm/kernel/module.c
++++ b/arch/arm/kernel/module.c
+@@ -92,7 +92,7 @@ apply_relocate(Elf32_Shdr *sechdrs, const char *strtab, unsigned int symindex,
+ 		sym = ((Elf32_Sym *)symsec->sh_addr) + offset;
+ 		symname = strtab + sym->st_name;
  
- ARM/NEC MOBILEPRO 900/c MACHINE SUPPORT
-diff --git a/arch/arm/boot/dts/Makefile b/arch/arm/boot/dts/Makefile
-index 9159fa2cea90..b4b5f639859a 100644
---- a/arch/arm/boot/dts/Makefile
-+++ b/arch/arm/boot/dts/Makefile
-@@ -1265,6 +1265,7 @@ dtb-$(CONFIG_ARCH_MEDIATEK) += \
- 	mt8127-moose.dtb \
- 	mt8135-evbp1.dtb
- dtb-$(CONFIG_ARCH_MILBEAUT) += milbeaut-m10v-evb.dtb
-+dtb-$(CONFIG_ARCH_MSTAR) += msc313e-breadbee.dtb
- dtb-$(CONFIG_ARCH_ZX) += zx296702-ad1.dtb
- dtb-$(CONFIG_ARCH_ASPEED) += \
- 	aspeed-ast2500-evb.dtb \
-diff --git a/arch/arm/boot/dts/msc313e-breadbee.dts b/arch/arm/boot/dts/msc313e-breadbee.dts
-new file mode 100644
-index 000000000000..470ea5fd94a7
---- /dev/null
-+++ b/arch/arm/boot/dts/msc313e-breadbee.dts
-@@ -0,0 +1,26 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (c) 2019 thingy.jp.
-+ * Author: Daniel Palmer <daniel@thingy.jp>
-+ */
-+
-+/dts-v1/;
-+#include "msc313e.dtsi"
-+
-+/ {
-+	model = "thingy.jp breadbee";
-+	compatible = "thingyjp,breadbee", "mstar,msc313e", "mstar,msc313";
-+
-+	chosen {
-+		stdout-path = "serial0:115200n8";
-+		bootargs = "console=ttyS0,115200";
-+	};
-+
-+	aliases {
-+		console = &pm_uart;
-+	};
-+};
-+
-+&pm_uart {
-+	status = "okay";
-+};
+-		if (rel->r_offset < 0 || rel->r_offset > dstsec->sh_size - sizeof(u32)) {
++		if (rel->r_offset > dstsec->sh_size - sizeof(u32)) {
+ 			pr_err("%s: section %u reloc %u sym '%s': out of bounds relocation, offset %d size %u\n",
+ 			       module->name, relindex, i, symname,
+ 			       rel->r_offset, dstsec->sh_size);
 -- 
-2.23.0
+2.6.2
 
 
 _______________________________________________
