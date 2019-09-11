@@ -2,149 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2C174B0321
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 19:50:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 75E92B039D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:27:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=263bwiK/fvYcRq/RAJpLVp7AJCM7a0ZfJAHKkp9Q4KM=; b=kwpBFTFBfb2bHo
-	UWaJ8rvKQPADotyD8LRphiLJj7EVvMvoXFSxDB7XAEDBdPiRzKVkYgVSQQ+KMR2WUJX8P9DEIokRo
-	sSWleIpC16LuFw26BZ4p1MQsbDY1JRfRKAfnGs/zsde/s0F1ybkTrA8kc4CMASqSg/DfqE47Jh3wY
-	HTS5+YNrQc7Fx7JHhoFwUyogU6oiLvHD5KJIbDvS83LvrEJnWpnEYqIOa6syAiPeA1NusNtdd4w2I
-	1hkq8Nuxlt8lpaKhSgnd8bry4E0rYX/gYCMvbfaNEf0Q86saA686xcQoRM0QVwhkoy9ADCobkZBr6
-	CDN8wUC2nXvaHBQjLmpQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=zzz4NMbEnwvtHmqEkH9IHb0AOM6ORqVGtfS15E6hdBA=; b=DJL1wb6ukG3NnH
+	Quc8u2Y1+S4PtH0dBlO2nw+887ITunjDe1NyZcMgK5jctKosoNbYNxoli3iOXwRMXtMtSLAB7UPs3
+	Qp5jOSZJpv1jyEtVGvkQwNL5603bWz170yYmdDZBFTT38kmPJXG/6NWjjcndPrirEBVFdNUrlU2hE
+	LkzO5QnUrh7pKQKH5pDWYiHgsQ8V04IZqDkK/o6uQqk5epD5LNgMw77AhplvW6gZ4oVnvo0S1qjW5
+	NlA02ucUSaRBp87Y8lnn0nPSpDM2KN3GtYSq0c3pdIv4VgSGULSoVgRrP4aZ+KyZKw5Pn793sgfMb
+	/6W4BjnzMrl4fQSi+lhg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i86l0-0000oH-Hk; Wed, 11 Sep 2019 17:50:18 +0000
-Received: from mx0b-00082601.pphosted.com ([67.231.153.30]
- helo=mx0a-00082601.pphosted.com)
+	id 1i87Kq-0005XS-1f; Wed, 11 Sep 2019 18:27:20 +0000
+Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i86jJ-0007yY-78
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 17:48:35 +0000
-Received: from pps.filterd (m0089730.ppops.net [127.0.0.1])
- by m0089730.ppops.net (8.16.0.42/8.16.0.42) with SMTP id x8BHhrqV005445;
- Wed, 11 Sep 2019 10:48:29 -0700
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.com;
- h=from : to : cc : subject
- : date : message-id : references : in-reply-to : content-type : content-id
- : content-transfer-encoding : mime-version; s=facebook;
- bh=jBcQKaH5LdenjvKb2ODTu+8ZtI396yTYtzxscCRirbk=;
- b=b/O+vgIW3ZKOsJpEvap+43SUnl5lQ6s8dt1irCpOExiE/23SXSIBpzxXBb3e6rauY9Iz
- hYzqgR8JiYSg/b0z8zxY+UFyGvwaAVIq2BZAGau5rG4WxtdKXNTbLgtdkOC3rcRjRQA2
- TkEUiBnCdNbE1fAr230KrTdlullarWrkjOw= 
-Received: from maileast.thefacebook.com ([163.114.130.16])
- by m0089730.ppops.net with ESMTP id 2uy315rvfy-2
- (version=TLSv1.2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128 verify=NOT);
- Wed, 11 Sep 2019 10:48:29 -0700
-Received: from ash-exhub204.TheFacebook.com (2620:10d:c0a8:83::4) by
- ash-exhub202.TheFacebook.com (2620:10d:c0a8:83::6) with Microsoft SMTP Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
- 15.1.1713.5; Wed, 11 Sep 2019 10:48:29 -0700
-Received: from NAM05-DM3-obe.outbound.protection.outlook.com (100.104.31.183)
- by o365-in.thefacebook.com (100.104.36.100) with Microsoft SMTP
- Server
- (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id 15.1.1713.5
- via Frontend Transport; Wed, 11 Sep 2019 10:48:29 -0700
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=mLo8nLXe2NWNgXJVvrDp/jMhBCQd85FLcbASq83S0kbfpE3+9dNqEaakgOg4JqV9Veh2Snf6c2/o3lMlyLvVawtKsMobtltDXlKriRgap0sqcH3U4iGAEJcZsviocEQaw/s2ocZEkVnG7EyOSP2+CQLNjGqseYWLcf+DpzLpV1Bpf9RsazMHMCc3/R3xBocUXvN5Hide7WmKhRkN8qdEy1Jj5583yX/E6gqqdmOY7FXfN//Wj1tefp4WSIfeLDETGM1AHS1LqHzMJEitxGI4hC+pTHH8fJxwChnskHNcr6HS5kq69Ptm+9gza0HiH+QVWBOBeDLytRqlVdpDXYsEnQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jBcQKaH5LdenjvKb2ODTu+8ZtI396yTYtzxscCRirbk=;
- b=DExd8Cc1/xOSPcqqGfYPU/b+UaWrTFshZwMAzpRtMV4do0PXzWaQQd44i+IqEwRMJzsp/f0mbMfB57I1JAa/mKdkvuT6ovL+GOdjY/6ov41uOSO9JbDcxriE2m3otBJCoM50Z/ey+N2Qx2WsyshbkhEcIqfQ7/C+XM0HWJY1Im2O3GfesVMYdTXuSJR37b3rAnmf21DK75IUospuLzzmJy8RJI++oAGDHngqTkvydnkm+17uQOJbdMLVKGf4r1Io9C3OexNK+hhHeqD4u6FsfIFnkb+vbeE9nJ7iMe5No9EJPg2baVYBmU8GUR8viTx//vgah+nibN+ljKOSbIlZow==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=fb.com; dmarc=pass action=none header.from=fb.com; dkim=pass
- header.d=fb.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=fb.onmicrosoft.com;
- s=selector2-fb-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=jBcQKaH5LdenjvKb2ODTu+8ZtI396yTYtzxscCRirbk=;
- b=CMcyNlmuI1+CGpJKTiRzeJ7/yIA3d13MKYMplEb59mAX/SstktWMwof31Pmw52Refh0jLiBH2Y04CNQnSGlnN5NaQ2D3/c/Bvk8EKLGcqRXpg5kAGwrNagIl5G+0mzok2K5vA/cJgLdgRuR3MlNh19shjuy3Wihtpf07RVi0/nc=
-Received: from CY4PR15MB1269.namprd15.prod.outlook.com (10.172.177.11) by
- CY4PR15MB1735.namprd15.prod.outlook.com (10.174.53.137) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2241.18; Wed, 11 Sep 2019 17:48:28 +0000
-Received: from CY4PR15MB1269.namprd15.prod.outlook.com
- ([fe80::38b1:336:13e6:b02b]) by CY4PR15MB1269.namprd15.prod.outlook.com
- ([fe80::38b1:336:13e6:b02b%7]) with mapi id 15.20.2241.018; Wed, 11 Sep 2019
- 17:48:28 +0000
-From: Vijay Khemka <vijaykhemka@fb.com>
-To: Rashmica Gupta <rashmica.g@gmail.com>, "linus.walleij@linaro.org"
- <linus.walleij@linaro.org>, "linux-gpio@vger.kernel.org"
- <linux-gpio@vger.kernel.org>, "bgolaszewski@baylibre.com"
- <bgolaszewski@baylibre.com>
-Subject: Re: [PATCH 1/4] gpio/aspeed: Fix incorrect number of banks
-Thread-Topic: [PATCH 1/4] gpio/aspeed: Fix incorrect number of banks
-Thread-Index: AQHVaJq7WAtiKansOkK5PsarCtqTlacmS6yA
-Date: Wed, 11 Sep 2019 17:48:28 +0000
-Message-ID: <39AE527D-F629-4AD7-980C-61C55C5B8718@fb.com>
-References: <20190904061245.30770-1-rashmica.g@gmail.com>
-In-Reply-To: <20190904061245.30770-1-rashmica.g@gmail.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-originating-ip: [2620:10d:c090:200::1:a2f5]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 184b43eb-096c-4a32-a506-08d736e040c4
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(2017052603328)(7193020);
- SRVR:CY4PR15MB1735; 
-x-ms-traffictypediagnostic: CY4PR15MB1735:
-x-microsoft-antispam-prvs: <CY4PR15MB173514C64C2D7ABC2E47CEB7DDB10@CY4PR15MB1735.namprd15.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:337;
-x-forefront-prvs: 0157DEB61B
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10019020)(136003)(346002)(376002)(366004)(39860400002)(396003)(189003)(199004)(2201001)(66446008)(64756008)(305945005)(7736002)(8676002)(81156014)(81166006)(4326008)(8936002)(5660300002)(86362001)(91956017)(76116006)(256004)(14444005)(53936002)(99286004)(6512007)(4744005)(71190400001)(6246003)(6486002)(71200400001)(36756003)(25786009)(2501003)(66946007)(66556008)(66476007)(110136005)(54906003)(478600001)(316002)(15650500001)(14454004)(102836004)(6506007)(446003)(11346002)(486006)(2616005)(476003)(6436002)(33656002)(6116002)(2906002)(186003)(46003)(76176011)(229853002);
- DIR:OUT; SFP:1102; SCL:1; SRVR:CY4PR15MB1735;
- H:CY4PR15MB1269.namprd15.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: fb.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: nbwWDL8gxJuJykVH61Nkut1QogRYCiclf0AH9JmPcGkMPCgMVHiJc3GHjdl20yUr8z7DwkEeOLI9C1M6Utvxcw1wbLj0tRCNRshUt1GHzsgKbbibrzrurIKguFNaXxE6G/go9UtOe57pNaAx0z2TwrYa+0H+UXvBJzX6exQkyzQsitRwjO6ZQhW9wpFBAcwwja2cG1A9B7tJcXszPMbUGJFHiiq4qKO5rhz7B2n1Ssii44xFfaKZ1oUh6jhFaJfo0plQHr/+BdbVQeYwgNTBXt2CnKVnOcJ1BKnvMqvmUALOp2bhoNMIQFva8PTHOZEY85Ka9Z2fK0GtxRIO+4qUYJIuQakdNyendGc5ayzddzZKe81PaOOQyjTEC4s0YY3ys5aS/nWghAYplI1EhW92iFlCgfwqM/S267LlANIkEPs=
-x-ms-exchange-transport-forked: True
-Content-ID: <0850C97D1AD5DA42B0602E19CF283F98@namprd15.prod.outlook.com>
+ id 1i87JT-0004bz-Ge; Wed, 11 Sep 2019 18:25:58 +0000
+X-Virus-Scanned: by amavisd-new at test-mx.suse.de
+Received: from relay2.suse.de (unknown [195.135.220.254])
+ by mx1.suse.de (Postfix) with ESMTP id 62098AC28;
+ Wed, 11 Sep 2019 18:25:51 +0000 (UTC)
+From: Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+To: catalin.marinas@arm.com, hch@lst.de, wahrenst@gmx.net,
+ marc.zyngier@arm.com, robh+dt@kernel.org
+Subject: [PATCH v6 0/4] Raspberry Pi 4 DMA addressing support
+Date: Wed, 11 Sep 2019 20:25:42 +0200
+Message-Id: <20190911182546.17094-1-nsaenzjulienne@suse.de>
+X-Mailer: git-send-email 2.23.0
 MIME-Version: 1.0
-X-MS-Exchange-CrossTenant-Network-Message-Id: 184b43eb-096c-4a32-a506-08d736e040c4
-X-MS-Exchange-CrossTenant-originalarrivaltime: 11 Sep 2019 17:48:28.1948 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 8ae927fe-1255-47a7-a2af-5f3a069daaa2
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: ecZpug9A0LiyU7nDZ9dJx0ao1IaxbfhPZzM53gHZ+jrvkZxn6TeHZ4DRxibrILt8VkmBnRxqgXa1XOk0BiRQHA==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: CY4PR15MB1735
-X-OriginatorOrg: fb.com
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-11_08:2019-09-11,2019-09-11 signatures=0
-X-Proofpoint-Spam-Details: rule=fb_default_notspam policy=fb_default score=0
- lowpriorityscore=0
- malwarescore=0 priorityscore=1501 clxscore=1015 mlxscore=0 mlxlogscore=999
- phishscore=0 spamscore=0 bulkscore=0 impostorscore=0 adultscore=0
- suspectscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1906280000 definitions=main-1909110164
-X-FB-Internal: deliver
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_104833_601168_E3C1C10F 
-X-CRM114-Status: GOOD (  16.37  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190911_112555_857509_95DE5CAF 
+X-CRM114-Status: GOOD (  14.69  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [67.231.153.30 listed in list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [195.135.220.15 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -156,35 +57,125 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-aspeed@lists.ozlabs.org" <linux-aspeed@lists.ozlabs.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: linux-arm-kernel@lists.infradead.org, f.fainelli@gmail.com,
+ robin.murphy@arm.com, linux-kernel@vger.kernel.org, linux-mm@kvack.org,
+ mbrugger@suse.com, linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org,
+ will@kernel.org, nsaenzjulienne@suse.de, m.szyprowski@samsung.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-DQoNCu+7v09uIDkvMTEvMTksIDU6MTYgQU0sICJMaW51eC1hc3BlZWQgb24gYmVoYWxmIG9mIFJh
-c2htaWNhIEd1cHRhIiA8bGludXgtYXNwZWVkLWJvdW5jZXMrdmlqYXlraGVta2E9ZmIuY29tQGxp
-c3RzLm96bGFicy5vcmcgb24gYmVoYWxmIG9mIHJhc2htaWNhLmdAZ21haWwuY29tPiB3cm90ZToN
-Cg0KICAgIEZpeGVzOiAzNjFiNzkxMTlhNGI3ICgnZ3BpbzogQWRkIEFzcGVlZCBkcml2ZXInKQ0K
-ICAgIA0KICAgIFNpZ25lZC1vZmYtYnk6IFJhc2htaWNhIEd1cHRhIDxyYXNobWljYS5nQGdtYWls
-LmNvbT4NCiAgICAtLS0NCiAgICAgZHJpdmVycy9ncGlvL2dwaW8tYXNwZWVkLmMgfCAyICstDQog
-ICAgIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQ0KICAgIA0K
-ICAgIGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwaW8vZ3Bpby1hc3BlZWQuYyBiL2RyaXZlcnMvZ3Bp
-by9ncGlvLWFzcGVlZC5jDQogICAgaW5kZXggOWRlZmUyNWQ0NzIxLi43Nzc1MmIyNjI0ZTggMTAw
-NjQ0DQogICAgLS0tIGEvZHJpdmVycy9ncGlvL2dwaW8tYXNwZWVkLmMNCiAgICArKysgYi9kcml2
-ZXJzL2dwaW8vZ3Bpby1hc3BlZWQuYw0KICAgIEBAIC0xMTY1LDcgKzExNjUsNyBAQCBzdGF0aWMg
-aW50IF9faW5pdCBhc3BlZWRfZ3Bpb19wcm9iZShzdHJ1Y3QgcGxhdGZvcm1fZGV2aWNlICpwZGV2
-KQ0KICAgICAJZ3Bpby0+Y2hpcC5iYXNlID0gLTE7DQogICAgIA0KICAgICAJLyogQWxsb2NhdGUg
-YSBjYWNoZSBvZiB0aGUgb3V0cHV0IHJlZ2lzdGVycyAqLw0KICAgIC0JYmFua3MgPSBncGlvLT5j
-b25maWctPm5yX2dwaW9zID4+IDU7DQogICAgKwliYW5rcyA9IChncGlvLT5jb25maWctPm5yX2dw
-aW9zID4+IDUpICsgMTsNCklmIG51bWJlciBvZiBncGlvcyBhcmUgMzIgdGhlbiBpdCBzaG91bGQg
-YmUgb25seSAxIGJhbmssIGFzIHBlciBhYm92ZSBpdCBpcyAyIGJhbmsuDQogICAgIAlncGlvLT5k
-Y2FjaGUgPSBkZXZtX2tjYWxsb2MoJnBkZXYtPmRldiwNCiAgICAgCQkJCSAgICBiYW5rcywgc2l6
-ZW9mKHUzMiksIEdGUF9LRVJORUwpOw0KICAgICAJaWYgKCFncGlvLT5kY2FjaGUpDQogICAgLS0g
-DQogICAgMi4yMC4xDQogICAgDQogICAgDQoNCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
-bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
-YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi all,
+this series attempts to address some issues we found while bringing up
+the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
+up of these discussions:
+v5: https://lkml.org/lkml/2019/9/9/170
+v4: https://lkml.org/lkml/2019/9/6/352
+v3: https://lkml.org/lkml/2019/9/2/589
+v2: https://lkml.org/lkml/2019/8/20/767
+v1: https://lkml.org/lkml/2019/7/31/922
+RFC: https://lkml.org/lkml/2019/7/17/476
+
+The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
+only address the first GB: their DMA address range is
+0xc0000000-0xfc000000 which is aliased to the first GB of physical
+memory 0x00000000-0x3c000000. Note that only some peripherals have these
+limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
+view of the address space by virtue of being hooked up trough a second
+interconnect.
+
+Part of this is solved on arm32 by setting up the machine specific
+'.dma_zone_size = SZ_1G', which takes care of reserving the coherent
+memory area at the right spot. That said no buffer bouncing (needed for
+dma streaming) is available at the moment, but that's a story for
+another series.
+
+Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
+ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
+arch code as if all peripherals where be able to address the first 4GB
+of memory.
+
+In the light of this, the series implements the following changes:
+
+- Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
+  area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
+  the RPi4 is the only arm64 device with such DMA addressing limitations
+  so this hardcoded solution was deemed preferable.
+
+- Properly set ARCH_ZONE_DMA_BITS.
+
+- Reserve the CMA area in a place suitable for all peripherals.
+
+This series has been tested on multiple devices both by checking the
+zones setup matches the expectations and by double-checking physical
+addresses on pages allocated on the three relevant areas GFP_DMA,
+GFP_DMA32, GFP_KERNEL:
+
+- On an RPi4 with variations on the ram memory size. But also forcing
+  the situation where all three memory zones are nonempty by setting a 3G
+  ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
+
+- On a Synquacer box[1] with 32G of memory.
+
+- On a Cavium ThunderX2 with 256GB of memory.
+
+- On an ACPI based Huawei TaiShan server[2] with 256G of memory.
+
+- On a QEMU virtual machine running arm64's OpenSUSE Tumbleweed.
+
+That's all.
+
+Regards,
+Nicolas
+
+[1] https://www.96boards.org/product/developerbox/
+[2] https://e.huawei.com/en/products/cloud-computing-dc/servers/taishan-server/taishan-2280-v2
+
+---
+
+Changes in v6:
+- Fix bug in max_zone_phys()
+
+Changes in v5:
+- Fix issue with swiotlb initialization
+
+Changes in v4:
+- Rebased to linux-next
+- Fix issue when NUMA=n and ZONE_DMA=n
+- Merge two max_zone_dma*_phys() functions
+
+Changes in v3:
+- Fixed ZONE_DMA's size to 1G
+- Update mmzone.h's comment to match changes in arm64
+- Remove all dma-direct patches
+
+Changes in v2:
+- Update comment to reflect new zones split
+- ZONE_DMA will never be left empty
+- Try another approach merging both ZONE_DMA comments into one
+- Address Christoph's comments
+- If this approach doesn't get much traction I'll just drop the patch
+  from the series as it's not really essential
+
+Nicolas Saenz Julienne (4):
+  arm64: mm: use arm64_dma_phys_limit instead of calling
+    max_zone_dma_phys()
+  arm64: rename variables used to calculate ZONE_DMA32's size
+  arm64: use both ZONE_DMA and ZONE_DMA32
+  mm: refresh ZONE_DMA and ZONE_DMA32 comments in 'enum zone_type'
+
+ arch/arm64/Kconfig            |  4 ++
+ arch/arm64/include/asm/page.h |  2 +
+ arch/arm64/mm/init.c          | 71 +++++++++++++++++++++++++----------
+ include/linux/mmzone.h        | 45 ++++++++++++----------
+ 4 files changed, 83 insertions(+), 39 deletions(-)
+
+-- 
+2.23.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
