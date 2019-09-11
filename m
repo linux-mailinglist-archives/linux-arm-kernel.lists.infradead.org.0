@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9A35EAF720
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 09:47:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 9B133AF767
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 10:03:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=9ecv73KSmkAQ8EyLBdMj2qskHJX1346DC0Az/9vd3X8=; b=nDl9z1Ldbqh6Od
-	AMN2Vkcml2/O9aWDrSuI9iqbok36fKHpf2VsAZ78h1XcO5KACJ97BwNhOTHOFc79m+1oHSa8YgRpO
-	8MeSivvEJ0KVNabtnSeTgN+iwYnG33Oil3d6DeWI87Gvt2qlxeNrUttSRovdbTbr3Or2lvTq5zO9m
-	/Ct3iINoZKIzmci6/SZ4ZfTnXN11vyOtqALhxUBlbehG47HPcjq2FM/aKx1jz+hZcYdhSkPEtfDVe
-	Gv0ZHqGzCkOzqYHdKe7WBVwGuamLMgeD8hva3yo34jdj1m98SEXU+GYwV8dx+kpC3Nsa4InwLlnLb
-	Pyyqawrcydv8XPmKb1VQ==;
+	List-Owner; bh=TtSDmpCZZLUyIycWFMf3g1UFBY2aseeOjNF1SzdqzfQ=; b=UzlwOLEMUt88V9
+	wXvOUM5A2bfEvaZpoQhwjUfnAr6yfX+XmLQi5pPMiQVuGWnODMl2gt+Xk6sM7xr51RSWi5/yU+egN
+	B6yrYgLQxorUOf1JLX+rg4E4TLPO5jstfCU8FR9WH2SqeuYvzTYArE+5IfN5tj2VbstAlS2X24h5e
+	FDov7RfavDScXczYIj1IZ2UQbYBsL6DijSlUCEDqPEifp9SrF6ZjO2GQ0AQFbDo/2XVbDu1iRSghd
+	QsxRkFgQeBXllS8IT78vzH3M9IvpvdXbsnOdXL/t3qjlfejoG8buBWRdgV0k5yMR1SeRcmYW92z4L
+	MdZ/nta8PXTZ0W4yZwRQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7xL9-0008Nn-Pm; Wed, 11 Sep 2019 07:47:00 +0000
+	id 1i7xb9-0005YR-8r; Wed, 11 Sep 2019 08:03:31 +0000
 Received: from rtits2.realtek.com ([211.75.126.72] helo=rtits2.realtek.com.tw)
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7xKt-0008N3-UE
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 07:46:46 +0000
+ id 1i7xav-0005Y3-Ik
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 08:03:19 +0000
 Authenticated-By: 
-X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID x8B7jWvI012271,
+X-SpamFilter-By: BOX Solutions SpamTrap 5.62 with qID x8B82wYK017764,
  This message is accepted by code: ctloc85258
-Received: from mail.realtek.com (RTITCAS11.realtek.com.tw[172.21.6.12])
- by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id x8B7jWvI012271
- (version=TLSv1.2 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Wed, 11 Sep 2019 15:45:34 +0800
+Received: from mail.realtek.com (RTITCASV02.realtek.com.tw[172.21.6.19])
+ by rtits2.realtek.com.tw (8.15.2/2.57/5.78) with ESMTPS id x8B82wYK017764
+ (version=TLSv1 cipher=DHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Wed, 11 Sep 2019 16:02:58 +0800
 Received: from RTITMBSVM04.realtek.com.tw ([fe80::e404:880:2ef1:1aa1]) by
- RTITCAS11.realtek.com.tw ([fe80::7c6d:ced5:c4ff:8297%15]) with mapi id
- 14.03.0468.000; Wed, 11 Sep 2019 15:45:31 +0800
+ RTITCASV02.realtek.com.tw ([::1]) with mapi id 14.03.0468.000; Wed, 11 Sep
+ 2019 16:02:58 +0800
 From: =?utf-8?B?SmFtZXMgVGFpW+aItOW/l+WzsF0=?= <james.tai@realtek.com>
 To: Arnd Bergmann <arnd@arndb.de>, "jamestai.sky@gmail.com"
  <jamestai.sky@gmail.com>
-Subject: RE: [PATCH] ARM: Add support for Realtek SOC
-Thread-Topic: [PATCH] ARM: Add support for Realtek SOC
-Thread-Index: AQHVY67V+8blpY45FUyr2dN3mgK/RqccOwQAgAf67AA=
-Date: Wed, 11 Sep 2019 07:45:30 +0000
-Message-ID: <43B123F21A8CFE44A9641C099E4196FFCF8DA1D0@RTITMBSVM04.realtek.com.tw>
-References: <20190905054647.1235-1-james.tai@realtek.com>
- <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
-In-Reply-To: <CAK8P3a13=VBZnj6E=s7mZk0o7Q3XkMHgcsL12s-3psuOWsfOtQ@mail.gmail.com>
+Subject: RE: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
+Thread-Topic: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
+Thread-Index: AQHVY8HXZVVvJynf2kC9vxZJ/q2xi6ccPyyAgAnSCBA=
+Date: Wed, 11 Sep 2019 08:02:57 +0000
+Message-ID: <43B123F21A8CFE44A9641C099E4196FFCF8DA22D@RTITMBSVM04.realtek.com.tw>
+References: <20190905081140.1428-1-james.tai@realtek.com>
+ <CAK8P3a2j2m0mUPLDe5G19Xzu2t+xbO4QWvg=PdQWnGoqTkDpsg@mail.gmail.com>
+In-Reply-To: <CAK8P3a2j2m0mUPLDe5G19Xzu2t+xbO4QWvg=PdQWnGoqTkDpsg@mail.gmail.com>
 Accept-Language: zh-TW, en-US
 Content-Language: zh-TW
 X-MS-Has-Attach: 
@@ -51,8 +51,8 @@ X-MS-TNEF-Correlator:
 x-originating-ip: [172.21.190.187]
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_004644_289998_C5C8F515 
-X-CRM114-Status: GOOD (  35.62  )
+X-CRM114-CacheID: sfid-20190911_010317_903800_9E5EFCBD 
+X-CRM114-Status: GOOD (  24.81  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,234 +72,184 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Rob
- Herring <robh@kernel.org>, "Jason A . Donenfeld" <Jason@zx2c4.com>, Thierry
- Reding <treding@nvidia.com>, Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- =?utf-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>,
- Linus Walleij <linus.walleij@linaro.org>, Nicolas Pitre <nico@fluxnic.net>,
- Nick Desaulniers <ndesaulniers@google.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Stefan Agner <stefan@agner.ch>, Russell King <linux@armlinux.org.uk>,
- Masahiro Yamada <yamada.masahiro@socionext.com>, Paul
- Burton <paul.burton@mips.com>, Benjamin Gaignard <benjamin.gaignard@linaro.org>,
- =?utf-8?B?QW5kcmVhcyBGw6RyYmVy?= <afaerber@suse.de>,
- Mauro Carvalho Chehab <mchehab+samsung@kernel.org>, Doug
- Anderson <armlinux@m.disordat.com>, Mike Rapoport <rppt@linux.ibm.com>,
+Cc: =?utf-8?B?Q1lfSHVhbmdb6buD6Ymm5pmPXQ==?= <cy.huang@realtek.com>,
  Phinex Hung <phinex@realtek.com>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Russell King <linux@armlinux.org.uk>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-> Subject: Re: [PATCH] ARM: Add support for Realtek SOC
+> Subject: Re: [PATCH] ARM: config: Add Realtek RTD16XX defconfig
 > 
-> On Thu, Sep 5, 2019 at 7:48 AM <jamestai.sky@gmail.com> wrote:
+> On Thu, Sep 5, 2019 at 10:14 AM <jamestai.sky@gmail.com> wrote:
 > >
 > > From: "james.tai" <james.tai@realtek.com>
 > >
-> > This patch adds the basic machine file for the Realtek RTD16XX
-> > platform.
+> > Add a defconfig for Realtek RTD16XX platform.
 > >
 > > Signed-off-by: james.tai <james.tai@realtek.com>
+> > ---
+> >  arch/arm/configs/rtd16xx_defconfig | 427
+> > +++++++++++++++++++++++++++++
 > 
-> Hi James,
+> We usually try to have one defconfig per vendor. Expecting that there will be
+> other Realtek SoCs in the future that we may add here, I would name this
+> 'rtd_defconfig' or 'realtek_defconfig'.
 > 
-> Thanks a lot for your submission! I'm glad to see interest in upstream support
-> for this SoC family. I have a few small comments on details, mostly where I
-> would either like to see an explanation in the patch description, or things that
-> looks like they can be left out from the patch.
->
-Thanks for your reply.
+I will modify config file name in new version patch.
 
-> > index 33b00579beff..c7c9a3662eb7 100644
-> > --- a/arch/arm/Kconfig
-> > +++ b/arch/arm/Kconfig
-> > @@ -836,6 +836,8 @@ source "arch/arm/mach-zx/Kconfig"
-> >
-> >  source "arch/arm/mach-zynq/Kconfig"
-> >
-> > +source "arch/arm/mach-realtek/Kconfig"
-> > +
-> > diff --git a/arch/arm/mach-realtek/Kconfig
-> b/arch/arm/mach-realtek/Kconfig
-> > @@ -225,6 +226,7 @@ machine-$(CONFIG_ARCH_VT8500)
-> += vt8500
-> >  machine-$(CONFIG_ARCH_W90X900)         += w90x900
-> >  machine-$(CONFIG_ARCH_ZX)              += zx
-> >  machine-$(CONFIG_ARCH_ZYNQ)            += zynq
-> > +machine-$(CONFIG_ARCH_REALTEK)         += realtek
-> >  machine-$(CONFIG_PLAT_SPEAR)           += spear
-> >
-> >  # Platform directory name.  This list is sorted alphanumerically
-> 
-> Please keep these lists in alphabetical order.
-> 
-I will keep these lists in alphabetical order in new version patch.
+> Please also add the set of options you want to multi_v7_defconfig so you are
+> able to boot with that.
 
-> >  # ARMv7-M architecture
-> >  config ARCH_EFM32
-> >         bool "Energy Micro efm32"
-> > diff --git a/arch/arm/Makefile b/arch/arm/Makefile index
-> > c3624ca6c0bc..1f0926449d47 100644
-> > --- a/arch/arm/Makefile
-> > +++ b/arch/arm/Makefile
-> > @@ -148,6 +148,7 @@ endif
-> >  textofs-$(CONFIG_ARCH_MSM8X60) := 0x00208000
-> >  textofs-$(CONFIG_ARCH_MSM8960) := 0x00208000
-> >  textofs-$(CONFIG_ARCH_MESON) := 0x00208000
-> > +textofs-$(CONFIG_ARCH_REALTEK) := 0x00208000
-> >  textofs-$(CONFIG_ARCH_AXXIA) := 0x00308000
-> 
-> Can you explain why this is needed for your platform?
-> 
-We need to reserve memory (0x00000000 ~ 0x001B0000) for rom and boot code.
+OK, I understand.
 
-> >  # Machine directory name.  This list is sorted alphanumerically new
-> > file mode 100644 index 000000000000..a8269964dbdb
+> >  1 file changed, 427 insertions(+)
+> >  create mode 100644 arch/arm/configs/rtd16xx_defconfig
+> >
+> > diff --git a/arch/arm/configs/rtd16xx_defconfig
+> > b/arch/arm/configs/rtd16xx_defconfig
+> > new file mode 100644
+> > index 000000000000..49bcbe6c6af8
 > > --- /dev/null
-> > +++ b/arch/arm/mach-realtek/Kconfig
-> > @@ -0,0 +1,32 @@
-> > +# SPDX-License-Identifier: GPL-2.0-only menuconfig ARCH_REALTEK
-> > +       bool "Realtek SoCs"
+> > +++ b/arch/arm/configs/rtd16xx_defconfig
+> > @@ -0,0 +1,427 @@
+> > +CONFIG_SYSVIPC=y
+> > +CONFIG_NO_HZ=y
+> > +CONFIG_HIGH_RES_TIMERS=y
+> > +CONFIG_CGROUPS=y
+> > +CONFIG_BLK_DEV_INITRD=y
+> > +CONFIG_EMBEDDED=y
 > 
-> Please add "depends on ARCH_MULTI_V7" to avoid compile time issues when
-> selecting it on an earlier architecture.
-> 
-I will add "depends on ARCH_MULTI_V7" in new version patch.
+> I normally would not turn on CONFIG_EMBEDDED, this is only needed to
+> change some rare options.
 
-> > +       select ARM_GLOBAL_TIMER
-> > +       select CLKDEV_LOOKUP
-> > +       select HAVE_SMP
-> > +       select HAVE_MACH_CLKDEV
-> > +       select GENERIC_CLOCKEVENTS
-> > +       select HAVE_SCHED_CLOCK
-> > +       select ARCH_HAS_CPUFREQ
-> > +       select CLKSRC_OF
-> > +       select ARCH_REQUIRE_GPIOLIB
-> > +       select GENERIC_IRQ_CHIP
-> > +       select IRQ_DOMAIN
-> > +       select PINCTRL
-> > +       select COMMON_CLK
-> > +       select ARCH_HAS_BARRIERS
-> > +       select SPARSE_IRQ
-> > +       select PM_OPP
-> > +       select ARM_HAS_SG_CHAIN
-> > +       select ARM_PATCH_PHYS_VIRT
-> > +       select AUTO_ZRELADDR
-> > +       select MIGHT_HAVE_PCI
-> > +       select MULTI_IRQ_HANDLER
-> > +       select PCI_DOMAINS if PCI
-> > +       select USE_OF
+I will turn off CONFIG_EMBEDDED in new version patch.
+
+> > +CONFIG_PERF_EVENTS=y
+> > +CONFIG_ARCH_REALTEK=y
+> > +CONFIG_ARCH_RTD16XX=y
+> > +CONFIG_ARM_THUMBEE=y
 > 
-> Almost all of the symbols above are implied by
-> ARCH_MULTI_V7 and should not be selected separately.
+> ThumbEE is deprecated in ARMv8, and one usually should not rely on it. If you
+> don't actually need it, just turn it off.
+
+I will turn off CONFIG_ARM_THUMBEE in new version patch.
+
+> (note: this is unrelated to regular thumb execution, which is enabled by
+> default)
+> 
+> > +# CONFIG_CACHE_L2X0 is not set
+> > +# CONFIG_ARM_ERRATA_643719 is not set
+> CONFIG_ARM_ERRATA_814220=y
+> > +CONFIG_SMP=y CONFIG_SCHED_MC=y CONFIG_SCHED_SMT=y
+> 
+> If you don't have SMT in the CPU, there is no need ot enable this.
+
+RTD16XX platform don't have SMT in the CPU.
+I will turn off CONFIG_SCHED_SMT in new version patch.
+
+> > +CONFIG_HAVE_ARM_ARCH_TIMER=y
+> > +CONFIG_MCPM=y
+> > +CONFIG_NR_CPUS=6
+> > +CONFIG_HZ_250=y
+> > +CONFIG_OABI_COMPAT=y
+> 
+> It seems unlikely you want OABI_COMPAT
+> 
+
+I will turn off CONFIG_OABI_COMPAT in new version patch.
+
+> > +CONFIG_HIGHMEM=y
+> > +CONFIG_FORCE_MAX_ZONEORDER=12
+> > +CONFIG_SECCOMP=y
+> > +CONFIG_ARM_APPENDED_DTB=y
+> > +CONFIG_ARM_ATAG_DTB_COMPAT=y
+> > +CONFIG_KEXEC=y
+> > +CONFIG_EFI=y
+> 
+> What method do you actually use for booting? New platforms should generally
+> not require CONFIG_ARM_APPENDED_DTB or
+> CONFIG_ARM_ATAG_DTB_COMPAT, and I suspect you don't use EFI.
+> 
+RTD16XX platform don't use EFI.
+I will turn off these config in new version patch.
+
+> > +CONFIG_CPUFREQ_DT=y
+> > +CONFIG_QORIQ_CPUFREQ=y
+> 
+> QORIQ_CPUFREQ is a platform specific option that you won't need.
+> 
+I will turn off CONFIG_QORIQ_CPUFREQ in new version patch.
+
+> > +CONFIG_NET_DSA=m
+> > +CONFIG_CAN=y
+> > +CONFIG_CAN_FLEXCAN=m
+> > +CONFIG_CAN_RCAR=m
+> > +CONFIG_BT=m
+> > +CONFIG_BT_HCIUART=m
+> > +CONFIG_BT_HCIUART_BCM=y
+> > +CONFIG_BT_MRVL=m
+> > +CONFIG_BT_MRVL_SDIO=m
+> 
+> Many more hardware specific drivers here that you should turn off
 >
-OK, I understand.
+> > +CONFIG_MTD=y
+> > +CONFIG_MTD_CMDLINE_PARTS=y
+> > +CONFIG_MTD_BLOCK=y
+> > +CONFIG_MTD_CFI=y
+> > +CONFIG_MTD_PHYSMAP=y
+> > +CONFIG_MTD_PHYSMAP_OF=y
+> > +CONFIG_MTD_RAW_NAND=y
+> > +CONFIG_MTD_NAND_DENALI_DT=y
+> > +CONFIG_MTD_NAND_BRCMNAND=y
+> 
+> and here.
 
-> > +config ARCH_RTD16XX
-> > +       bool "Enable support for RTD1619"
-> > +       depends on ARCH_REALTEK
-> > +       select ARM_GIC_V3
-> > +       select ARM_PSCI
-> 
-> As I understand, this chip uses a Cortex-A55. What is the reason for adding
-> support only to the 32-bit ARM architecture rather than 64-bit?
+I will turn off these config in new version patch.
 
-The RTD16XX platform also support the 64-bit ARM architecture.
-I will add the 64-bit ARM architecture in new version patch.
+> > +CONFIG_BLK_DEV_LOOP=y
+> > +CONFIG_BLK_DEV_RAM=y
+> > +CONFIG_BLK_DEV_RAM_SIZE=65536
+> 
+> Do you require BLK_DEV_RAM for initrd? Normally one uses initramfs instead
+> or tmpfs instead.
+> 
+RTD16XX platform have use 'initramfs'.
+I will turn off this config in new version patch.
 
-> Most 64-bit SoCs are only supported with arch/arm64, but generally speaking
-> that is not a requirement. My rule of thumb is that on systems with 1GB of
-> RAM or more, one would want to run a 64-bit kernel, while systems with less
-> than that are better off with a 32-bit one, but that is clearly not the only reason
-> for picking one over the other.
+> > +# CONFIG_NET_VENDOR_3COM is not set
+> > +# CONFIG_NET_VENDOR_ADAPTEC is not set #
+> CONFIG_NET_VENDOR_AGERE is
+> > +not set # CONFIG_NET_VENDOR_ALACRITECH is not set #
+> > +CONFIG_NET_VENDOR_ALTEON is not set
 > 
-Support 32-bit ARM architecture is for application compatibility.
+> I would trim the list here, just leave all network device vendors enabled, they
+> don't hurt.
+> 
+I will turn on these config in new version patch.
 
-> > +
-> > +static int rtk_boot_secondary(unsigned int cpu, struct task_struct
-> > +*idle) {
-> > +       unsigned long entry_pa = __pa_symbol(secondary_startup);
-> > +
-> > +       writel_relaxed(entry_pa | (cpu << CPUID), cpu_release_virt);
-> > +
-> > +       arch_send_wakeup_ipi_mask(cpumask_of(cpu));
-> > +
-> > +       return 0;
-> > +}
+> > +CONFIG_USB_PEGASUS=y
+> > +CONFIG_USB_RTL8152=m
+> > +CONFIG_USB_LAN78XX=m
+> > +CONFIG_USB_USBNET=y
+> > +CONFIG_USB_NET_SMSC75XX=y
+> > +CONFIG_USB_NET_SMSC95XX=y
+> > +CONFIG_BRCMFMAC=m
+> > +CONFIG_MWIFIEX=m
+> > +CONFIG_MWIFIEX_SDIO=m
+> > +CONFIG_RT2X00=m
+> > +CONFIG_RT2800USB=m
 > 
-> It's very unusual to see custom smp operations on an ARMv8 system, as we
-> normally use PSCI here. Can you explain what is going on here? Are you able to
-> use a boot wrapper that implements these in psci instead?
->
-The smp operations is porting form other Realtek platform.
+> Do you need all of the above? It's no problem to enable them if you do, it just
+> seems unusual.
 
-Currently, The RTD16XX platform can use the PSCI method.
-I will add PSCI method in new version patch.
+RTD16XX platform don't need all config.
+I will turn off these config in new version patch.
 
-> > +
-> > +#include "platsmp.h"
-> > +
-> > +#define RBUS_BASE_PHYS (0x98000000)
-> > +#define RBUS_BASE_VIRT (0xfe000000)
-> > +#define RBUS_BASE_SIZE (0x00100000)
-> > +
-> > +static struct map_desc rtk_io_desc[] __initdata = {
-> > +       {
-> > +               .virtual = (unsigned long) IOMEM(RBUS_BASE_VIRT),
-> > +               .pfn = __phys_to_pfn(RBUS_BASE_PHYS),
-> > +               .length = RBUS_BASE_SIZE,
-> > +               .type = MT_DEVICE,
-> > +       },
-> > +};
-> 
-> This needs a comment: Why do you require a static mapping for
-> "RBUS_BASE_PHYS"? Normally device drivers should just use
-> ioremap() for mapping whichever registers they want to access.
-> 
-The static mapping is for old Realtek devices driver.
-I will 'use ioremap()' to replace with static mapping.
-
-> > +static void __init rtk_dt_init(void)
-> > +{
-> > +       of_platform_populate(NULL, of_default_bus_match_table, NULL,
-> > +NULL); }
-> 
-> This should be taken care of by the
-> of_platform_default_populate_init() and can be dropped.
-> 
-I will remove rtk_dt_init() in new version patch.
-
-> > +static void __init rtk_timer_init(void) { #ifdef CONFIG_COMMON_CLK
-> > +       of_clk_init(NULL);
-> > +#endif
-> 
-> COMMON_CLK is implied by ARCH_MULTI_V7, so the #ifdef can be dropped.
-> 
-OK, I understand.
-
-> > +       timer_probe();
-> > +       tick_setup_hrtimer_broadcast(); }
-> 
-> What do you need tick_setup_hrtimer_broadcast() for? I don't see any other
-> platform calling this.
-> 
-I want to initialize the HR timer.
-
-> > +bool __init rtk_smp_init_ops(void)
-> > +{
-> > +       smp_set_ops(smp_ops(rtk_smp_ops));
-> > +
-> > +       return true;
-> > +}
-> 
-> I think this can also be dropped, as you set the smp_ops in the machine
-> descriptor.
-> 
-OK, I understand.
-
->        Arnd
+>         Arnd
 > 
 > ------Please consider the environment before printing this e-mail.
 _______________________________________________
