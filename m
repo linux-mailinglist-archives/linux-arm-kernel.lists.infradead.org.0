@@ -2,88 +2,76 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1AFBDAF47A
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 04:44:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BF321AF511
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 06:28:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WQCIiC2q/53x2NrmYy1MCg+NebPBz9EDOmm32pkuGaA=; b=K5BZ46IYvMw+Gk
-	C6WQ0gecGXnDMyyKsVdBzEH1uc58Ew5Ieqj7VYblfTgJ1hd1fGOnPFa8sTTxbdgFSrZ3ekX1f8y1E
-	n0rpEseLWbT9n74kQZh6qDEZ6fl5fGaJvmng5IIefVG8Vvgmt7R2OinjDGsdNSyGLIj7invMiFzqp
-	saxXoKsPUcVuHeWVYJd16DA7Fe5XbrDbZqSpH+WViV8WIYrvUCPP/WU3Td/po5Z8SkkICA+Mx22HB
-	8/8rkVyvu0MwhYBLKczdAtWdjonkjdOHLopEaas96jFoH/EpRvd3Rtv/ANm2jwbA4/ONQq39HCFPC
-	Rkzu5aES7VDF1gamIW5g==;
+	List-Owner; bh=tfNdpfNfO4Bnj0AvMTD8myQjfPtntx8XIP9Bk9HyWms=; b=P1OPNfgk4Fdmnp
+	JBqKnqaIcacOm3JjNAcrf7k+aCNk7jtFQGYmp1hrHC6Q+Bv1XY3zn2lB3/ZgV/gZD0933U9Erlz9Z
+	+mRMwn9RfvQsqMITp8FMFIZ1wpxltH0ZiKRpIUdpgSqMEKBUd+j0Ljp76Y155I6rLJwBcLp3EMFEY
+	BiZK+iMVqdhgiQxJLlJXD5PES3XCESm/IwZzlJIpiku6GDrDGfICpBQRcLI6lU39KRthM/quozJHN
+	MZatwzbBOqKzNJMVw6GL0wUn00NaRb56nRAPM+C2E42R4HeBp3Us2EICbYPFj+SSF4zmczZbpcNFg
+	wsbH8X8k+rudoOwPOp5A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92 #3 (Red Hat Linux))
-	id 1i7scW-0004qE-8J; Wed, 11 Sep 2019 02:44:36 +0000
-Received: from mail-io1-xd42.google.com ([2607:f8b0:4864:20::d42])
+	id 1i7uF6-0001Jg-32; Wed, 11 Sep 2019 04:28:32 +0000
+Received: from conssluserg-02.nifty.com ([210.131.2.81])
  by bombadil.infradead.org with esmtps (Exim 4.92 #3 (Red Hat Linux))
- id 1i7scJ-0004pP-9Q
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 02:44:25 +0000
-Received: by mail-io1-xd42.google.com with SMTP id f4so41683783ion.2
+ id 1i7uEj-0001JE-B1
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 04:28:10 +0000
+Received: from mail-vk1-f174.google.com (mail-vk1-f174.google.com
+ [209.85.221.174]) (authenticated)
+ by conssluserg-02.nifty.com with ESMTP id x8B4RYsA010847
+ for <linux-arm-kernel@lists.infradead.org>; Wed, 11 Sep 2019 13:27:35 +0900
+DKIM-Filter: OpenDKIM Filter v2.10.3 conssluserg-02.nifty.com x8B4RYsA010847
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nifty.com;
+ s=dec2015msa; t=1568176055;
+ bh=2bJShX4Ff3PHK48gMEQzP3cEPpqbzfOY7VjrtVo5UdE=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=Hs+rUzHvcvyixmd4WHBymTPg9eM8TpjwUJ4vFyDVkUagWGjFfo6xJO3TNLLOECcA2
+ 8TH0W6loMI2+LzBH7C605ynFFMC2F2gI45BKaNhtOz/7LWgN539M79Ztbbz5plvDXf
+ DbnWn24NDIR08VdXE8cd5pIKq6i+vo3K+UtJf2lyAwYHMJBKywvf9pwVhdzzp55reQ
+ rv9WMwPpA4rIDguE1ZVDSINae+++fzo7xyd27gWzOy567gshnqNw2YNmRs7n5HUplr
+ H1XLV9mI+WxV2Y6wMgheXjKbwJJZ9PP9Y2XfP8D+mw2ltPYiB6MuZBH5ozMyqMPTLa
+ G4cuVSLNech7w==
+X-Nifty-SrcIP: [209.85.221.174]
+Received: by mail-vk1-f174.google.com with SMTP id t136so4062355vkt.9
  for <linux-arm-kernel@lists.infradead.org>;
- Tue, 10 Sep 2019 19:44:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=Tpmd4s87/SLkLb8E8kOjEIQTqrfm/vOEY+B+rLuuG44=;
- b=qdyi2X6bwwHCXJ+qW+lzy8gdokKC1xm6E0cMPkCpNi8h1KMab5j+wAfnd4IN/nhoZP
- LUbbF+6h1z9jx592a34+SkpSF2sx9ph9BH5LABjIxiOAIxQ8in0jefIsQHgF6kK1OfCz
- ZLsiq9xcESnWBvP2tgHNoBd6SCsdD1ib2zpnvAitj30HjVJmFlRW+iUU+VitSZG/foJX
- BfbFOTWOyNZXDSHRd/AfpkJFKuZvoMbGRkyezvUPHiDDDi1qpLQ8JNXPTV5fnecDtDdL
- 99+j2UYHuEW9gh7jg5cu8tGXE4yiFOQz1/KVnHYnzcMObVFCAGV4L0+BWLPIAJMSoCmF
- HnMg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=Tpmd4s87/SLkLb8E8kOjEIQTqrfm/vOEY+B+rLuuG44=;
- b=rKC1qjL/HfSvipahxWDiQ2wF8+qdVxBDA1pshRBBMeMtiQtMumU8rFAygWcJqXbDsX
- DmnHnThY14FToZFscJyCFb9jx1tcM+8jHP5rchHHdce4hCXq0Xq1e/GslwOWeGkRHlPA
- FrxPlXl0igTtzwaDZw1/i9jObpWfkSipYDEW/oZDJzLNrIKvOpwHEVkuwJ1SXYiUGScj
- ugIMnYRLJSd4UzTBub1VZfkRFeAZOc5x3QIx2B+IYMqBezcwiNNKJ5juaEz1CKF1Lb/B
- JK5g37ew9nN4vGewI4wltPQDGvovZM81X7Ak25PCVdD96aCG8ayb4CgvjRw60wbxLZu2
- zeQQ==
-X-Gm-Message-State: APjAAAVs8cvSNaTT/ccS2q7ADqT5LU0LWP7wmGkb98Y+KvNriqb1vcl2
- y+tUa8kkJmp1AtF3IoqyCjJ4xhJrpqGb3+76rcGD5w==
-X-Google-Smtp-Source: APXvYqxC5/ICozkrWJmI5Nd/Y6JYBFqpeOItewQ2dP2xWjPVpaX1wqYKW2lq8ogSzZ3Y/VGmHATwkRhifz8pcSVmMnw=
-X-Received: by 2002:a6b:e609:: with SMTP id g9mr13296099ioh.7.1568169862392;
- Tue, 10 Sep 2019 19:44:22 -0700 (PDT)
+ Tue, 10 Sep 2019 21:27:35 -0700 (PDT)
+X-Gm-Message-State: APjAAAVbVHiphttgVxNFHFW3XP4bEgBAIR1W3FRsuIGjDA4ShQ3iud/Q
+ 1untdhCm0kSEztDm/Df8Q8qjyONS8yJ6paNgF4U=
+X-Google-Smtp-Source: APXvYqxcC7v9qXKkiFdYOioajynW6ENkts6eVJhzv73g0b3GlVu6ohGHdS3vnp8EInycfekShhmHhrgynXloMMplkJc=
+X-Received: by 2002:a1f:2343:: with SMTP id j64mr12520866vkj.84.1568176054022; 
+ Tue, 10 Sep 2019 21:27:34 -0700 (PDT)
 MIME-Version: 1.0
-References: <1567004515-3567-1-git-send-email-peng.fan@nxp.com>
- <1567004515-3567-2-git-send-email-peng.fan@nxp.com>
- <20190909164208.6605054e@donnerap.cambridge.arm.com>
-In-Reply-To: <20190909164208.6605054e@donnerap.cambridge.arm.com>
-From: Jassi Brar <jassisinghbrar@gmail.com>
-Date: Tue, 10 Sep 2019 21:44:11 -0500
-Message-ID: <CABb+yY2rppSOgqMy+R294d94xwi5UPR55Eo-WB8KA6m11nG3iQ@mail.gmail.com>
-Subject: Re: [PATCH v5 1/2] dt-bindings: mailbox: add binding doc for the ARM
- SMC/HVC mailbox
-To: Andre Przywara <andre.przywara@arm.com>
+References: <1568169216-12632-1-git-send-email-yuzenghui@huawei.com>
+ <1568169216-12632-2-git-send-email-yuzenghui@huawei.com>
+In-Reply-To: <1568169216-12632-2-git-send-email-yuzenghui@huawei.com>
+From: Masahiro Yamada <yamada.masahiro@socionext.com>
+Date: Wed, 11 Sep 2019 13:26:58 +0900
+X-Gmail-Original-Message-ID: <CAK7LNARPo6VgzXn5kfrL7MWRtBoNf83yCM0r8jZ0iURU_to_BA@mail.gmail.com>
+Message-ID: <CAK7LNARPo6VgzXn5kfrL7MWRtBoNf83yCM0r8jZ0iURU_to_BA@mail.gmail.com>
+Subject: Re: [PATCH 1/2] KVM: arm/arm64: vgic: Use the appropriate
+ TRACE_INCLUDE_PATH
+To: Zenghui Yu <yuzenghui@huawei.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190910_194423_349993_6687C201 
-X-CRM114-Status: GOOD (  38.96  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190910_212809_603787_7A3FA6B1 
+X-CRM114-Status: GOOD (  14.65  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:d42 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ no trust [210.131.2.81 listed in list.dnswl.org]
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (jassisinghbrar[at]gmail.com)
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -96,158 +84,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "mark.rutland@arm.com" <mark.rutland@arm.com>,
- "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>, "f.fainelli@gmail.com" <f.fainelli@gmail.com>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "robh+dt@kernel.org" <robh+dt@kernel.org>, dl-linux-imx <linux-imx@nxp.com>,
- "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: suzuki.poulose@arm.com, maz@kernel.org,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ James Morse <james.morse@arm.com>, julien.thierry.kdev@gmail.com,
+ wanghaibin.wang@huawei.com, kvmarm@lists.cs.columbia.edu,
+ linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 9, 2019 at 10:42 AM Andre Przywara <andre.przywara@arm.com> wrote:
+On Wed, Sep 11, 2019 at 11:35 AM Zenghui Yu <yuzenghui@huawei.com> wrote:
 >
-> On Wed, 28 Aug 2019 03:02:58 +0000
-> Peng Fan <peng.fan@nxp.com> wrote:
+> Commit 49dfe94fe5ad ("KVM: arm/arm64: Fix TRACE_INCLUDE_PATH") fixes
+> TRACE_INCLUDE_PATH to the correct relative path to the define_trace.h
+> and explains why did the old one work.
 >
-> Hi,
+> The same fix should be applied to virt/kvm/arm/vgic/trace.h.
 >
-> sorry for the late reply, eventually managed to have a closer look on this.
->
-> > From: Peng Fan <peng.fan@nxp.com>
-> >
-> > The ARM SMC/HVC mailbox binding describes a firmware interface to trigger
-> > actions in software layers running in the EL2 or EL3 exception levels.
-> > The term "ARM" here relates to the SMC instruction as part of the ARM
-> > instruction set, not as a standard endorsed by ARM Ltd.
-> >
-> > Signed-off-by: Peng Fan <peng.fan@nxp.com>
-> > ---
-> >  .../devicetree/bindings/mailbox/arm-smc.yaml       | 125 +++++++++++++++++++++
-> >  1 file changed, 125 insertions(+)
-> >  create mode 100644 Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> >
-> > diff --git a/Documentation/devicetree/bindings/mailbox/arm-smc.yaml b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > new file mode 100644
-> > index 000000000000..f8eb28d5e307
-> > --- /dev/null
-> > +++ b/Documentation/devicetree/bindings/mailbox/arm-smc.yaml
-> > @@ -0,0 +1,125 @@
-> > +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
-> > +%YAML 1.2
-> > +---
-> > +$id: http://devicetree.org/schemas/mailbox/arm-smc.yaml#
-> > +$schema: http://devicetree.org/meta-schemas/core.yaml#
-> > +
-> > +title: ARM SMC Mailbox Interface
-> > +
-> > +maintainers:
-> > +  - Peng Fan <peng.fan@nxp.com>
-> > +
-> > +description: |
-> > +  This mailbox uses the ARM smc (secure monitor call) and hvc (hypervisor
-> > +  call) instruction to trigger a mailbox-connected activity in firmware,
-> > +  executing on the very same core as the caller. By nature this operation
-> > +  is synchronous and this mailbox provides no way for asynchronous messages
-> > +  to be delivered the other way round, from firmware to the OS, but
-> > +  asynchronous notification could also be supported. However the value of
-> > +  r0/w0/x0 the firmware returns after the smc call is delivered as a received
-> > +  message to the mailbox framework, so a synchronous communication can be
-> > +  established, for a asynchronous notification, no value will be returned.
-> > +  The exact meaning of both the action the mailbox triggers as well as the
-> > +  return value is defined by their users and is not subject to this binding.
-> > +
-> > +  One use case of this mailbox is the SCMI interface, which uses shared memory
-> > +  to transfer commands and parameters, and a mailbox to trigger a function
-> > +  call. This allows SoCs without a separate management processor (or when
-> > +  such a processor is not available or used) to use this standardized
-> > +  interface anyway.
-> > +
-> > +  This binding describes no hardware, but establishes a firmware interface.
-> > +  Upon receiving an SMC using one of the described SMC function identifiers,
-> > +  the firmware is expected to trigger some mailbox connected functionality.
-> > +  The communication follows the ARM SMC calling convention.
-> > +  Firmware expects an SMC function identifier in r0 or w0. The supported
-> > +  identifiers are passed from consumers, or listed in the the arm,func-ids
-> > +  properties as described below. The firmware can return one value in
-> > +  the first SMC result register, it is expected to be an error value,
-> > +  which shall be propagated to the mailbox client.
-> > +
-> > +  Any core which supports the SMC or HVC instruction can be used, as long as
-> > +  a firmware component running in EL3 or EL2 is handling these calls.
-> > +
-> > +properties:
-> > +  compatible:
-> > +    const: arm,smc-mbox
-> > +
-> > +  "#mbox-cells":
-> > +    const: 1
-> > +
-> > +  arm,num-chans:
-> > +    description: The number of channels supported.
-> > +    items:
-> > +      minimum: 1
-> > +      maximum: 4096 # Should be enough?
->
-> This maximum sounds rather arbitrary. Why do we need one? In the driver this just allocates more memory, so why not just impose no artificial limit at all?
->
-This will be gone, once the driver is converted to 1channel per controller.
+> Cc: Masahiro Yamada <yamada.masahiro@socionext.com>
 
-> Actually, do we need this property at all? Can't we just rely on the size of arm,func-ids to determine this (using of_property_count_elems_of_size() in the driver)? Having both sounds redundant and brings up the question what to do if they don't match.
+Please feel free to replace the Cc: with my:
+
+Reviewed-by: Masahiro Yamada <yamada.masahiro@socionext.com>
+
+
+Thanks.
+
+
+> Signed-off-by: Zenghui Yu <yuzenghui@huawei.com>
+> ---
+>  virt/kvm/arm/vgic/trace.h | 2 +-
+>  1 file changed, 1 insertion(+), 1 deletion(-)
+>
+> diff --git a/virt/kvm/arm/vgic/trace.h b/virt/kvm/arm/vgic/trace.h
+> index 55fed77a9f73..4fd4f6db181b 100644
+> --- a/virt/kvm/arm/vgic/trace.h
+> +++ b/virt/kvm/arm/vgic/trace.h
+> @@ -30,7 +30,7 @@ TRACE_EVENT(vgic_update_irq_pending,
+>  #endif /* _TRACE_VGIC_H */
+>
+>  #undef TRACE_INCLUDE_PATH
+> -#define TRACE_INCLUDE_PATH ../../../virt/kvm/arm/vgic
+> +#define TRACE_INCLUDE_PATH ../../virt/kvm/arm/vgic
+>  #undef TRACE_INCLUDE_FILE
+>  #define TRACE_INCLUDE_FILE trace
+>
+> --
+> 2.19.1
+>
 >
 
-> > +
-> > +  method:
-> > +    - enum:
-> > +        - smc
-> > +        - hvc
-> > +
-> > +  transports:
-> > +    - enum:
-> > +        - mem
-> > +        - reg
->
-> Shouldn't there be a description on what both mean, exactly?
-> For instance I would expect a list of registers to be shown for the "reg" case, and be it by referring to the ARM SMCCC.
->
-> Also looking at the driver this brings up more questions:
-> - Which memory does mem refer to? If this is really the means of transport, it should be referenced in this *controller* node and populated by the driver. Looking at the example below and the driver code, it actually isn't used that way, instead the memory is used and controlled by the mailbox *client*.
-> - What is the actual difference between the two transports? For "mem" we just populate the registers with 0, for "reg" we use the data. Couldn't this be left to the client?
->
-> There are more points which makes me think this property is actually redundant, see my comments on patch 2/2.
->
-> > +
-> > +  arm,func-ids:
-> > +    description: |
-> > +      An array of 32-bit values specifying the function IDs used by each
-> > +      mailbox channel. Those function IDs follow the ARM SMC calling
-> > +      convention standard [1].
-> > +
-> > +      There is one identifier per channel and the number of supported
-> > +      channels is determined by the length of this array.
->
-> I think this makes it obvious that arm,num-chans is not needed.
->
-> Also this somewhat contradicts the driver implementation, which allows the array to be shorter, marking this as UINT_MAX and later on using the first data item as a function identifier. This is somewhat surprising and not documented (unless I missed something).
->
-> So I would suggest:
-> - We drop the transports property, and always put the client provided data in the registers, according to the SMCCC. Document this here.
->   A client not needing those could always puts zeros (or garbage) in there, the respective firmware would just ignore the registers.
-> - We drop "arm,num-chans", as this is just redundant with the length of the func-ids array.
-> - We don't impose an arbitrary limit on the number of channels. From the firmware point of view this is just different function IDs, from Linux' point of view just the size of the memory used. Both don't need to be limited artificially IMHO.
->
-Sounds like we are in sync.
 
-> - We mark arm,func-ids as required, as this needs to be fixed, allocated number.
->
-I still think func-id can be done without. A client can always pass
-the value as it knows what it expects. But I can live with it being
-optional.
-
-cheers!
+-- 
+Best Regards
+Masahiro Yamada
 
 _______________________________________________
 linux-arm-kernel mailing list
