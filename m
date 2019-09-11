@@ -2,65 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B4A58B03F0
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:50:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E909BB040D
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 20:51:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QAzPPFCmRBep7+0Rey3uiA4mIzYS3QA1V1u9OjlWhTA=; b=TIJLDLU2uwwca0
-	xEK4MN7Ct5HZfCnFPU8YPIcBScyQ2ZqkCQ11vogQ8tS0Kbf7kr7V2ntNdAhPv6lKBj5wVcipRYe8C
-	Duf9VFQ7pe8bT5cXW4AM96KNOlF4iobV5jaY0go4xMMFVJL5kzNnOjv4KkmaKyMLswlJD8ko/9adM
-	Uw76yuN3F+nne6sJz0RXONyO8zdTJuypMiXLacr+PnoCO6c3CkywGXpw+lLXNDbq+EL3Ebfu7S810
-	YEBqQxghG6j+GagA8MliVshJaZVSlEAPJlmPbpRDtmLXcxpU8npAg1uL5G8B6eTnPR4wmZqcZLSfV
-	gnbazJ3/eG7h2tiqUntA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=8ubsRZwq3ZkjS9wojv9f0rxSyH2fis85ov1CEdjNJdw=; b=U5gdhneaxi9XBL
+	y+IG+eROQor4GyUMk0/OXDTFn9GvhoSbjOx8zrDiwXmVKv1e3NmHXoLKviLWEaLCiefNV7Q1vaOC/
+	T5pydPRFi4be8r34BFB+i1LgDdu+S550t2d8AsppvUaL8sqyToLER/88t6JP1z6cDPjPcbK8CPNE7
+	lMLPgSxUxfcoFDPPzGII1EEYhOrS4kUXpHoxmVb0ZwA+H1W8ALimgNtIEp3IdlICMFyilvJpJ/OOj
+	RtTeNKmt5gY8N4U6SsnJDfzK2iqMF3rcSi0MR6ln15kk8MFLQTFy+eqX7G4GjBDXBB5SkR3PVVhvm
+	+J54QhySGcWvFhgO0Ceg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i87gn-0005cK-Tw; Wed, 11 Sep 2019 18:50:02 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i87hl-0007HD-EC; Wed, 11 Sep 2019 18:51:01 +0000
+Received: from mga11.intel.com ([192.55.52.93])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i87gQ-0005bH-HX; Wed, 11 Sep 2019 18:49:40 +0000
-X-UUID: 3fe9a2b3e50c42418e7dc75cc460c1dd-20190911
-X-UUID: 3fe9a2b3e50c42418e7dc75cc460c1dd-20190911
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw02.mediatek.com
- (envelope-from <sean.wang@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 27193781; Wed, 11 Sep 2019 10:49:30 -0800
-Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
- MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Sep 2019 11:49:28 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Sep 2019 02:49:26 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Sep 2019 02:49:26 +0800
-Message-ID: <1568227767.8481.4.camel@mtkswgap22>
-Subject: Re: [PATCH v7 5/7] power: reset: add driver for mt6323 poweroff
-From: Sean Wang <sean.wang@mediatek.com>
-To: Frank Wunderlich <frank-w@public-files.de>
-Date: Thu, 12 Sep 2019 02:49:27 +0800
-In-Reply-To: <20190910070446.639-6-frank-w@public-files.de>
-References: <20190910070446.639-1-frank-w@public-files.de>
- <20190910070446.639-6-frank-w@public-files.de>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1i87hR-0007Ew-I5
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 18:50:42 +0000
+X-Amp-Result: SKIPPED(no attachment in message)
+X-Amp-File-Uploaded: False
+Received: from orsmga002.jf.intel.com ([10.7.209.21])
+ by fmsmga102.fm.intel.com with ESMTP/TLS/DHE-RSA-AES256-GCM-SHA384;
+ 11 Sep 2019 11:50:40 -0700
+X-ExtLoop1: 1
+X-IronPort-AV: E=Sophos;i="5.64,492,1559545200"; d="scan'208";a="196980862"
+Received: from sjchrist-coffee.jf.intel.com ([10.54.74.41])
+ by orsmga002.jf.intel.com with ESMTP; 11 Sep 2019 11:50:40 -0700
+From: Sean Christopherson <sean.j.christopherson@intel.com>
+To: James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Janosch Frank <frankja@linux.ibm.com>, Paolo Bonzini <pbonzini@redhat.com>,
+ =?UTF-8?q?Radim=20Kr=C4=8Dm=C3=A1=C5=99?= <rkrcmar@redhat.com>,
+ Marc Zyngier <marc.zyngier@arm.com>
+Subject: [PATCH 00/13] KVM: Dynamically size memslot arrays
+Date: Wed, 11 Sep 2019 11:50:25 -0700
+Message-Id: <20190911185038.24341-1-sean.j.christopherson@intel.com>
+X-Mailer: git-send-email 2.22.0
 MIME-Version: 1.0
-X-TM-SNTS-SMTP: 40F2DA63D46F5CD798C0546348146FBED6745C18E6A0AE0525103705EBD596C12000:8
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_114938_644098_CB05BA8E 
-X-CRM114-Status: GOOD (  23.49  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_115041_607025_67FC731B 
+X-CRM114-Status: GOOD (  11.68  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [192.55.52.93 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -72,187 +66,79 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-rtc@vger.kernel.org, devicetree@vger.kernel.org,
- Alexandre Belloni <alexandre.belloni@bootlin.com>,
- Alessandro Zummo <a.zummo@towertech.it>, linux-pm@vger.kernel.org,
- Josef Friedl <josef.friedl@speed.at>, linux-kernel@vger.kernel.org,
- Rob Herring <robh+dt@kernel.org>, linux-mediatek@lists.infradead.org,
- Eddie Huang <eddie.huang@mediatek.com>, Sebastian Reichel <sre@kernel.org>,
- Matthias Brugger <matthias.bgg@gmail.com>, Mark Rutland <mark.rutland@arm.com>,
- Tianping Fang <tianping.fang@mediatek.com>, Lee Jones <lee.jones@linaro.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: Julien Thierry <julien.thierry@arm.com>, Wanpeng Li <wanpengli@tencent.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ linux-arm-kernel@lists.infradead.org, Joerg Roedel <joro@8bytes.org>,
+ Cornelia Huck <cohuck@redhat.com>, linux-mips@vger.kernel.org,
+ Sean Christopherson <sean.j.christopherson@intel.com>,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ kvm-ppc@vger.kernel.org, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Jim Mattson <jmattson@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi, Frank
+The end goal of this series is to dynamically size the memslot array so
+that KVM allocates memory based on the number of memslots in use, as
+opposed to unconditionally allocating memory for the maximum number of
+memslots.  On x86, each memslot consumes 88 bytes, and so with 2 address
+spaces of 512 memslots, each VM consumes ~90k bytes for the memslots.
+E.g. given a VM that uses a total of 30 memslots, dynamic sizing reduces
+the memory footprint from 90k to ~2.6k bytes.
 
-On Tue, 2019-09-10 at 09:04 +0200, Frank Wunderlich wrote:
-> From: Josef Friedl <josef.friedl@speed.at>
-> 
-> add poweroff driver for mt6323 and make Makefile and Kconfig-Entries
-> 
-> Suggested-by: Frank Wunderlich <frank-w@public-files.de>
-> Signed-off-by: Josef Friedl <josef.friedl@speed.at>
-> Signed-off-by: Frank Wunderlich <frank-w@public-files.de>
-> Acked-by: Sebastian Reichel <sebastian.reichel@collabora.com>
+The changes required to support dynamic sizing are relatively small,
+e.g. are essentially contained in patches 12/13 and 13/13.  Patches 1-11
+clean up the memslot code, which has gotten quite crusy, especially
+__kvm_set_memory_region().  The clean up is likely not strictly necessary
+to switch to dynamic sizing, but I didn't have a remotely reasonable
+level of confidence in the correctness of the dynamic sizing without first
+doing the clean up.
 
+Testing, especially non-x86 platforms, would be greatly appreciated.  I'd
+really like to get at least one Tested-by from all architectures.  The
+non-x86 changes are for all intents and purposes untested, e.g. I compile
+tested pieces of the code by copying them into x86, but that's it.  In
+theory, the vast majority of the functional changes are arch agnostic, in
+theory... 
 
-Thanks for your help keep the unfinished driver to upstream
+Sean Christopherson (13):
+  KVM: Reinstall old memslots if arch preparation fails
+  KVM: PPC: Move memslot memory allocation into prepare_memory_region()
+  KVM: x86: Allocate memslot resources during prepare_memory_region()
+  KVM: Drop kvm_arch_create_memslot()
+  KVM: Refactor error handling for setting memory region
+  KVM: Move setting of memslot into helper routine
+  KVM: Move memslot deletion to helper function
+  KVM: Simplify kvm_free_memslot() and all its descendents
+  KVM: Clean up local variable usage in __kvm_set_memory_region()
+  KVM: Provide common implementation for generic dirty log functions
+  KVM: Ensure validity of memslot with respect to kvm_get_dirty_log()
+  KVM: Terminate memslot walks via used_slots
+  KVM: Dynamically size memslot array based on number of used slots
 
-Acked-by: Sean Wang <sean.wang@mediatek.com>
+ arch/mips/include/asm/kvm_host.h      |   2 +-
+ arch/mips/kvm/mips.c                  |  68 +---
+ arch/powerpc/include/asm/kvm_ppc.h    |  14 +-
+ arch/powerpc/kvm/book3s.c             |  22 +-
+ arch/powerpc/kvm/book3s_hv.c          |  36 +-
+ arch/powerpc/kvm/book3s_pr.c          |  20 +-
+ arch/powerpc/kvm/booke.c              |  17 +-
+ arch/powerpc/kvm/powerpc.c            |  13 +-
+ arch/s390/include/asm/kvm_host.h      |   2 +-
+ arch/s390/kvm/kvm-s390.c              |  21 +-
+ arch/x86/include/asm/kvm_page_track.h |   3 +-
+ arch/x86/kvm/page_track.c             |  15 +-
+ arch/x86/kvm/x86.c                    | 100 ++---
+ include/linux/kvm_host.h              |  48 +--
+ virt/kvm/arm/arm.c                    |  47 +--
+ virt/kvm/arm/mmu.c                    |  18 +-
+ virt/kvm/kvm_main.c                   | 546 ++++++++++++++++----------
+ 17 files changed, 467 insertions(+), 525 deletions(-)
 
-> ---
-> changes since v6: none
-> changes since v5: split out mfd/mt6397/core.h
-> changes since v4: none
-> changes since v3: none
-> changes since v2: none (=v2 part 5)
-> ---
->  drivers/power/reset/Kconfig           | 10 +++
->  drivers/power/reset/Makefile          |  1 +
->  drivers/power/reset/mt6323-poweroff.c | 97 +++++++++++++++++++++++++++
->  3 files changed, 108 insertions(+)
->  create mode 100644 drivers/power/reset/mt6323-poweroff.c
-> 
-> diff --git a/drivers/power/reset/Kconfig b/drivers/power/reset/Kconfig
-> index a564237278ff..c721939767eb 100644
-> --- a/drivers/power/reset/Kconfig
-> +++ b/drivers/power/reset/Kconfig
-> @@ -140,6 +140,16 @@ config POWER_RESET_LTC2952
->  	  This driver supports an external powerdown trigger and board power
->  	  down via the LTC2952. Bindings are made in the device tree.
->  
-> +config POWER_RESET_MT6323
-> +       bool "MediaTek MT6323 power-off driver"
-> +       depends on MFD_MT6397
-> +       help
-> +         The power-off driver is responsible for externally shutdown down
-> +         the power of a remote MediaTek SoC MT6323 is connected to through
-> +         controlling a tiny circuit BBPU inside MT6323 RTC.
-> +
-> +         Say Y if you have a board where MT6323 could be found.
-> +
->  config POWER_RESET_QNAP
->  	bool "QNAP power-off driver"
->  	depends on OF_GPIO && PLAT_ORION
-> diff --git a/drivers/power/reset/Makefile b/drivers/power/reset/Makefile
-> index 85da3198e4e0..da37f8b851dc 100644
-> --- a/drivers/power/reset/Makefile
-> +++ b/drivers/power/reset/Makefile
-> @@ -11,6 +11,7 @@ obj-$(CONFIG_POWER_RESET_GPIO) += gpio-poweroff.o
->  obj-$(CONFIG_POWER_RESET_GPIO_RESTART) += gpio-restart.o
->  obj-$(CONFIG_POWER_RESET_HISI) += hisi-reboot.o
->  obj-$(CONFIG_POWER_RESET_MSM) += msm-poweroff.o
-> +obj-$(CONFIG_POWER_RESET_MT6323) += mt6323-poweroff.o
->  obj-$(CONFIG_POWER_RESET_QCOM_PON) += qcom-pon.o
->  obj-$(CONFIG_POWER_RESET_OCELOT_RESET) += ocelot-reset.o
->  obj-$(CONFIG_POWER_RESET_PIIX4_POWEROFF) += piix4-poweroff.o
-> diff --git a/drivers/power/reset/mt6323-poweroff.c b/drivers/power/reset/mt6323-poweroff.c
-> new file mode 100644
-> index 000000000000..1caf43d9e46d
-> --- /dev/null
-> +++ b/drivers/power/reset/mt6323-poweroff.c
-> @@ -0,0 +1,97 @@
-> +// SPDX-License-Identifier: GPL-2.0
-> +/*
-> + * Power off through MediaTek PMIC
-> + *
-> + * Copyright (C) 2018 MediaTek Inc.
-> + *
-> + * Author: Sean Wang <sean.wang@mediatek.com>
-> + *
-> + */
-> +
-> +#include <linux/err.h>
-> +#include <linux/module.h>
-> +#include <linux/of.h>
-> +#include <linux/platform_device.h>
-> +#include <linux/mfd/mt6397/core.h>
-> +#include <linux/mfd/mt6397/rtc.h>
-> +
-> +struct mt6323_pwrc {
-> +	struct device *dev;
-> +	struct regmap *regmap;
-> +	u32 base;
-> +};
-> +
-> +static struct mt6323_pwrc *mt_pwrc;
-> +
-> +static void mt6323_do_pwroff(void)
-> +{
-> +	struct mt6323_pwrc *pwrc = mt_pwrc;
-> +	unsigned int val;
-> +	int ret;
-> +
-> +	regmap_write(pwrc->regmap, pwrc->base + RTC_BBPU, RTC_BBPU_KEY);
-> +	regmap_write(pwrc->regmap, pwrc->base + RTC_WRTGR, 1);
-> +
-> +	ret = regmap_read_poll_timeout(pwrc->regmap,
-> +					pwrc->base + RTC_BBPU, val,
-> +					!(val & RTC_BBPU_CBUSY),
-> +					MTK_RTC_POLL_DELAY_US,
-> +					MTK_RTC_POLL_TIMEOUT);
-> +	if (ret)
-> +		dev_err(pwrc->dev, "failed to write BBPU: %d\n", ret);
-> +
-> +	/* Wait some time until system down, otherwise, notice with a warn */
-> +	mdelay(1000);
-> +
-> +	WARN_ONCE(1, "Unable to power off system\n");
-> +}
-> +
-> +static int mt6323_pwrc_probe(struct platform_device *pdev)
-> +{
-> +	struct mt6397_chip *mt6397_chip = dev_get_drvdata(pdev->dev.parent);
-> +	struct mt6323_pwrc *pwrc;
-> +	struct resource *res;
-> +
-> +	pwrc = devm_kzalloc(&pdev->dev, sizeof(*pwrc), GFP_KERNEL);
-> +	if (!pwrc)
-> +		return -ENOMEM;
-> +
-> +	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
-> +	pwrc->base = res->start;
-> +	pwrc->regmap = mt6397_chip->regmap;
-> +	pwrc->dev = &pdev->dev;
-> +	mt_pwrc = pwrc;
-> +
-> +	pm_power_off = &mt6323_do_pwroff;
-> +
-> +	return 0;
-> +}
-> +
-> +static int mt6323_pwrc_remove(struct platform_device *pdev)
-> +{
-> +	if (pm_power_off == &mt6323_do_pwroff)
-> +		pm_power_off = NULL;
-> +
-> +	return 0;
-> +}
-> +
-> +static const struct of_device_id mt6323_pwrc_dt_match[] = {
-> +	{ .compatible = "mediatek,mt6323-pwrc" },
-> +	{},
-> +};
-> +MODULE_DEVICE_TABLE(of, mt6323_pwrc_dt_match);
-> +
-> +static struct platform_driver mt6323_pwrc_driver = {
-> +	.probe          = mt6323_pwrc_probe,
-> +	.remove         = mt6323_pwrc_remove,
-> +	.driver         = {
-> +		.name   = "mt6323-pwrc",
-> +		.of_match_table = mt6323_pwrc_dt_match,
-> +	},
-> +};
-> +
-> +module_platform_driver(mt6323_pwrc_driver);
-> +
-> +MODULE_DESCRIPTION("Poweroff driver for MT6323 PMIC");
-> +MODULE_AUTHOR("Sean Wang <sean.wang@mediatek.com>");
-> +MODULE_LICENSE("GPL v2");
-
+-- 
+2.22.0
 
 
 _______________________________________________
