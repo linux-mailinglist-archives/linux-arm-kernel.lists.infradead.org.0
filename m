@@ -2,64 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1A34EB0500
-	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 22:49:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BB928B0517
+	for <lists+linux-arm-kernel@lfdr.de>; Wed, 11 Sep 2019 23:07:51 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=46VS4rxBckjbbsnHG9859mONEcoBe0RO5QirFopVsJs=; b=MPh5GXm2h+E7Brqa5Bhv5qqdH
-	f+dKnKUDiAiM7mP2rX05IMD3YB/ZACG2CNxDzDDWdRHGpMiaaZtq8PMSXnXZXp+eZt21u/mM/FX0g
-	LszVTPM962bdCxvoZKm1/3JNM85P5XGux/cm2sYz5A2Ky89/zvj0tktxyeaGYJcqey/ii80WoOubw
-	87m4iTx+c6I197/B5p3Y6/FNQxJPviTo3yEL+WLvbflvW8MsRoIODm+bwRt8ivf/A6VqArpmbs3ro
-	N69DSXQNbGvo09/UeWqmvuDmKBO9mr1g7o3aUiWPhWl0dvniCvZcvf9WEyCkVQZN7VS44WsnUPXKd
-	el3selHdA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=Y/ninjslyM1HxqjatfccSmA7sjjrhMEzDN1gkQitZow=; b=AbPMcU4bC3oDUC
+	/IYNs8Fd2pG79IZm8Pt8T73yrisrPx0+OUW8l+gDXmlwdXVpUAZQfsVQ2t8o+9GKI77Lutj6hM38O
+	d6fKgsLDZRO7+RRS5M/IKTt7o0PSGLu1YzcyAhtOaSVEwM39+PMxHN8ZdUCRsJYU89ubgBwIrJHWm
+	p3nhuAcKFQd8YasiKaIxb1IeKvNGjUOqr2SDW+D35xOcPdhmnyle0tirpsSgHAxSZ/JPSC2emEDwz
+	jFxhy/i43N0k2iiUKGdNzV9iOBJaM53/fjaukZjH6EeB/Gf1entsLPnYVSQoL2sr/nSE6bk3SDc++
+	n/l34H12ZNOvQykxKFQA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i89Y5-0005zu-72; Wed, 11 Sep 2019 20:49:09 +0000
-Received: from anholt.net ([50.246.234.109])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i89Xo-0005zZ-Fn
- for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 20:48:54 +0000
-Received: from localhost (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id B20CF10A37A2;
- Wed, 11 Sep 2019 13:48:46 -0700 (PDT)
-X-Virus-Scanned: Debian amavisd-new at anholt.net
-Received: from anholt.net ([127.0.0.1])
- by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
- with LMTP id QFhPKD3VB0id; Wed, 11 Sep 2019 13:48:45 -0700 (PDT)
-Received: from eliezer.anholt.net (localhost [127.0.0.1])
- by anholt.net (Postfix) with ESMTP id 70C5D10A379E;
- Wed, 11 Sep 2019 13:48:45 -0700 (PDT)
-Received: by eliezer.anholt.net (Postfix, from userid 1000)
- id A112E2FE2E27; Wed, 11 Sep 2019 13:48:46 -0700 (PDT)
-From: Eric Anholt <eric@anholt.net>
-To: Stefan Wahren <wahrenst@gmx.net>, Florian Fainelli <f.fainelli@gmail.com>,
- Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>,
- Paul Kocialkowski <paul.kocialkowski@bootlin.com>, boris.brezillon@bootlin.com
-Subject: Re: [PATCH] Revert "ARM: bcm283x: Switch V3D over to using the PM
- driver instead of firmware."
-In-Reply-To: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
-References: <1567957493-4567-1-git-send-email-wahrenst@gmx.net>
-User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
- (x86_64-pc-linux-gnu)
-Date: Wed, 11 Sep 2019 13:48:46 -0700
-Message-ID: <87ftl2lftd.fsf@anholt.net>
+	id 1i89q8-0003VL-FY; Wed, 11 Sep 2019 21:07:48 +0000
+Received: from mail-qt1-f195.google.com ([209.85.160.195])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i89pv-0003TT-Jl
+ for linux-arm-kernel@lists.infradead.org; Wed, 11 Sep 2019 21:07:36 +0000
+Received: by mail-qt1-f195.google.com with SMTP id u40so27075619qth.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 14:07:34 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=AFuB2QpmFZeeFcW1/wDZ3Q3qc6SL3R+R31YUNn2vg8g=;
+ b=j9zgxHU4Gt8EAMGOUsKd+sKMYjmpJTAlvRDGeAq0h3ZiWOFKtY2A68np2nFz27v6Mc
+ IjXei4wISPtMcGFbe/rhONPH8RynIi9rGXducM19yyRIy6JLxa4JnuEQxSKtzLmz6tsH
+ +wj5d7tjq4q6zipghImvA8Koe+U/sd8jxPMfsInDllr++fkBPLnzq/BS7NRbo8q40z1+
+ gWBm23/WKjbiQC7KCQGzTNSdmI7kliDF2NqwEQbkyeE5KRBPeXrZPEZioZTlGT2OEc/h
+ lSjeiQYaWx54xZx2xlJ2a8f/5Gv4rP2eHlKHVJHxnLtKp9BqxHpgFPmt7qQ4yv37aplf
+ mTPA==
+X-Gm-Message-State: APjAAAVV8oH+Kzso9xupomnbPG3/p4KjOi/FPYCxxsYvpBtFu+f0Kroy
+ 1fHrzkwN6e2wFEzWaNKgj6j2z4iEmvW0153PV8A=
+X-Google-Smtp-Source: APXvYqxmXppy4+77gx+LlXeaQMHszT42JLyi2myisyPCzAxn3WpjRosxEgQuBtMuYRI4gv0BJqTsq3M7LCuPPknqN5Q=
+X-Received: by 2002:ac8:32ec:: with SMTP id a41mr36952783qtb.18.1568236053461; 
+ Wed, 11 Sep 2019 14:07:33 -0700 (PDT)
 MIME-Version: 1.0
+References: <20190911183632.4317-1-krzk@kernel.org>
+In-Reply-To: <20190911183632.4317-1-krzk@kernel.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Wed, 11 Sep 2019 23:07:17 +0200
+Message-ID: <CAK8P3a2pBV+fh0rHitZ30Zz61QNRLfNSD-nhnzq4ZtxSh66F1Q@mail.gmail.com>
+Subject: Re: [GIT PULL 1/2] arm64: dts: exynos: Pull for v5.4
+To: Krzysztof Kozlowski <krzk@kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_134852_564728_280B5BCF 
-X-CRM114-Status: GOOD (  15.42  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190911_140735_651750_149B100C 
+X-CRM114-Status: GOOD (  12.89  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [50.246.234.109 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ no trust [209.85.160.195 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.195 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -71,80 +82,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: stable@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- dri-devel@lists.freedesktop.org, linux-arm-kernel@lists.infradead.org,
- Stefan Wahren <wahrenst@gmx.net>
-Content-Type: multipart/mixed; boundary="===============2297618593606822930=="
+Cc: DTML <devicetree@vger.kernel.org>,
+ "moderated list:ARM/SAMSUNG EXYNOS ARM ARCHITECTURES"
+ <linux-samsung-soc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
---===============2297618593606822930==
-Content-Type: multipart/signed; boundary="=-=-=";
-	micalg=pgp-sha512; protocol="application/pgp-signature"
-
---=-=-=
-Content-Type: text/plain
-
-Stefan Wahren <wahrenst@gmx.net> writes:
-
-> Since release of the new BCM2835 PM driver there has been several reports
-> of V3D probing issues. This is caused by timeouts during powering-up the
-> GRAFX PM domain:
+On Wed, Sep 11, 2019 at 8:36 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
 >
->   bcm2835-power: Timeout waiting for grafx power OK
+> Hi,
 >
-> I was able to reproduce this reliable on my Raspberry Pi 3B+ after setting
-> force_turbo=1 in the firmware configuration. Since there are no issues
-> using the firmware PM driver with the same setup, there must be an issue
-> in the BCM2835 PM driver.
->
-> Unfortunately there hasn't been much progress in identifying the root cause
-> since June (mostly in the lack of documentation), so i decided to switch
-> back until the issue in the BCM2835 PM driver is fixed.
->
-> Link: https://github.com/raspberrypi/linux/issues/3046
-> Fixes: e1dc2b2e1bef (" ARM: bcm283x: Switch V3D over to using the PM driver instead of firmware.")
-> Cc: stable@vger.kernel.org
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> Unfortunately the patches were applied right after closing the linux-next.
 
-Acked-by: Eric Anholt <eric@anholt.net>
+Hi Krzysztof,
 
-I wish someone with firmware source had the time to look into why using
-open source drivers to drive this hardware was failing, but I don't have
-that time or code any more.
+I took a look at these and am not convinced this is right:
 
---=-=-=
-Content-Type: application/pgp-signature; name="signature.asc"
+> 1. Fix boot of Exynos7 due to wrong address/size of memory node,
 
------BEGIN PGP SIGNATURE-----
+The current state is clearly broken and a fix is needed, but
+I'm not sure this is the right fix. Why do you have 32-bit physical
+addressing on a 64-bit chip? I looked at commit ef72171b3621
+that introduced it, and it seems it would be better to just
+revert back to 64-bit addresses.
 
-iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAl15Xa4ACgkQtdYpNtH8
-nui29hAAghQUxmPKCpEEJiONuOiuIC7ozMT9p5wZ2f3fdWyJdDFBBLGldPea7SgA
-mjNWZ2dk4yUEY2BFKVjoeMCCs3KMdiuqzi+6kkAaK21zflRA1A65Vw65/tfyvzdw
-iKL24+/dAH9A0k+UcZZ5ujptijaOCdnxif1lc4+hyADe1Oxw5E8Be8d9GvadZwaU
-mOG+16Sf0U3OcbGOvfPndIrHeKHgDpVN+U0MNUlEx1HMh7yfXT0QtK7iSwabjWZF
-FJ27WGqPaEo3+LMGCOSj5TEA72B08oEvl0nbl562dFWT6mau3R9DiCEZcWNODMhZ
-YAZ+fxJR3MeHsr8KdxH1p6Z9eDNCxaa9LOz6+Tmn5SEUlaMdiNFi84FjMgct9JoK
-3O1h8tzijpjvifSvwa1r4jVNMi3y+8vIZ+RTyGCTB9yoye0Hs+zJgtSu3vbjs6Nz
-Scd3TjCslZBPlm7TpSAFCyIowuMOGmWASq0eoOxRBMGTQYPLorqR+llenYOCbtEC
-l9Vx3WdoPgH2Zd+Hof9Jn7ZDwDrtyFXkOsFwSmoRkVzPTH9u108rTX8+AkyxDybt
-CvhnFGxUg2cOTTTIUoDYFpxQN7bTzjIqq7iu5iVQlXzq9js5/TovcdA6jO9u5B4N
-2fVQGEGrfJeWZM0ICoVDaILnEHdASZYD/s3nbIq4/Jkrmu40MMc=
-=vNM5
------END PGP SIGNATURE-----
---=-=-=--
+> 2. Move GPU under /soc node,
 
+No problem
 
---===============2297618593606822930==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> 3. Minor cleanup of #address-cells.
+
+IIRC, an interrupt-controller is required to have a #address-cells
+property, even if that is normally zero. I don't remember the
+details, but the gic binding lists it as mandatory, and I think
+the PCI interrupt-map relies on it. I would just drop this patch.
+
+    Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============2297618593606822930==--
-
