@@ -2,97 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6401AB0CDB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:27:00 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 24A5BB0CE7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:29:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
-	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ZHgo3FEOeItQmSC8pP0hmsYy5qjiYK87V5PDLgNW5og=; b=WDTimuVi/yZmTL
-	s6VbsjV+9Lhcnw9eKuwjrfLdIluHvBZj4x4VfgSWNQxutufL4CuON3SA3GfZwQ9NnYIU9phm9adCx
-	xUw3QhMI+tV5fmFXwqVdRKVdSGD57w13UEXPlgAApYoynWNYR+HsEqzkKiXHFTt7sDBS/wGb6w063
-	OQPkPEbIcfaFx0GckOOnjmQw3o0lLi2KR0iViZL4BkYEvCaiIp9toYojLO+95Hnx49zS5Mp13NY4Z
-	4lX8K9KTug6YzBaDu5WD/Vdvhb3iVcuL2US80PW133pdZdTcLyMRLbFi4K44C5grfuARn8rTtcdOV
-	1ybalNv2IKdEsUhgcNbQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=9nHzLBOvdYw+w1mROOg3El5PUw+vEpAF6YKS5Oizihs=; b=R7cbXKrLga9Zkj
+	21/TuBfcFWgW+46lSvIfgIasivev7HfCwIugIPIcZDZyQksa7rj1PV4s7Hg+na9znxKNNoczIP9XT
+	4zHdOQ+etqfIlqy/7YylOSLEYRaVNq0AM7e0v3Dh+qQxe06tTj/FxKzrlnsNrrmmaurLuLXdcZbSO
+	F91TCH6FiFXNsr0ip6O5lGicOf/W/wZP81Z3O7DlzFfOVJV/F9f85xFnMnkB05Eck7NYG58GVukdC
+	IYAaT77O+28nWk5nB9fFoWqfmZ1F5CYVBrBPvwWrTY1WLV1AoSfYyNaBXY3hRBbqRm1wQcmmatAMl
+	Yudom1Kb/vyC1Sllt39A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8MJN-00026v-8E; Thu, 12 Sep 2019 10:26:49 +0000
-Received: from out5-smtp.messagingengine.com ([66.111.4.29])
+	id 1i8MLm-0002XW-0P; Thu, 12 Sep 2019 10:29:18 +0000
+Received: from mx0b-00128a01.pphosted.com ([148.163.139.77])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8MJ6-000267-Eb
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:26:35 +0000
-Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
- by mailout.nyi.internal (Postfix) with ESMTP id CDAA322245;
- Thu, 12 Sep 2019 06:26:27 -0400 (EDT)
-Received: from imap2 ([10.202.2.52])
- by compute4.internal (MEProxy); Thu, 12 Sep 2019 06:26:27 -0400
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
- mime-version:message-id:in-reply-to:references:date:from:to:cc
- :subject:content-type; s=fm3; bh=hH6krjDyM1ef7cBjth9GvNBMbTUI9b+
- 39ETpeM1V4vs=; b=NHMNQMg+HFPouEvMQ00sKE/W0BsIAYFMCmqPDrTUQO6EqlR
- 0wh/LUFfCkK9s3vYt2qjyKQvYd4tFrh0P/t00fYORmhhxbXQqQj4bzkZ2uaWfPk+
- n3qrYCOHYv30kvYh+P+myvR4uJg/mKyMOd1Ay0Iz1wtq0QXaArzQieqCrNvwU2qs
- 1bTfGjrhRV7DSto1+GrQ0gvyJyzfgBUEaRDfKugJ23ZYqC71h3fgj6CKARc/ZGw/
- 4Ml53ei0IbK/SWxVNT4+jV2iUfiCOTU2NTrmow3LFuPGtUxQZa0Z5amAV6dj1w1s
- MA10yj0+f/TMChNfXg04bVJXrWeX52EQDpSWS6Q==
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
- messagingengine.com; h=cc:content-type:date:from:in-reply-to
- :message-id:mime-version:references:subject:to:x-me-proxy
- :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=hH6krj
- DyM1ef7cBjth9GvNBMbTUI9b+39ETpeM1V4vs=; b=SXH9K8WEkJux2WUVSDI78n
- AOj3buJkf8DgR3jYi7VHNH2a3c4uqEsc/dGKY1uknNvnrgJfp6dJZk7gWVHwC9zi
- S1SpNPI6ChUtzJEojbDYRGZP/EL2sMlMWX4KHJygDIapXlMsKS+9xPLdKbPhImRg
- S4BoBRe+i1MpHIubusilRTqr5GB6nAVmchSAQItbTYxHHN5/67E/her2lw18oQiD
- 8SxcH9CoFvKxXBcCBNHbzGTm7WltTmzg1kPQrxxAJxZp/F8v+/I6XLNTqRNck2I8
- kN6nri4R6vUf4Pu2nWEfiH23TIZDHwTK/CofWJ58x/5u9IaUZgODEQWsTngifRPA
- ==
-X-ME-Sender: <xms:Uh16XSVBjtb16JkF2tIvIYISZaCxuUrOVo92Ul0Z-4MDK0VbF0HJ-Q>
-X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrtdehgddviecutefuodetggdotefrodftvf
- curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
- uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
- fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
- vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
- hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
- ufhiiigvpedt
-X-ME-Proxy: <xmx:Uh16XQL3Oxbb0GmE0XZZDmuKp1_PaBTv2QJpPgBENmsyMaV6XdHv1Q>
- <xmx:Uh16XcveF0GiadG_lUbwsrsYyUrA5VLiSrWrVGY1iO1MG0bb3U-1fA>
- <xmx:Uh16XVJ3HgoxVidgB2HsX8LfawoOQtQ02K13OoyzQrzvTnhobwfVEw>
- <xmx:Ux16XUk7PROLbEoYHv_ELhTN8sOnkupa5QZJq7d4yxrADFT3zS1jnA>
-Received: by mailuser.nyi.internal (Postfix, from userid 501)
- id DB132E00A9; Thu, 12 Sep 2019 06:26:26 -0400 (EDT)
-X-Mailer: MessagingEngine.com Webmail Interface
-User-Agent: Cyrus-JMAP/3.1.7-237-gf35468d-fmstable-20190912v1
-Mime-Version: 1.0
-Message-Id: <c51f0ef0-cd1a-47db-8551-706c5864e0be@www.fastmail.com>
-In-Reply-To: <CACRpkdYW_PX7npB+b1YJ4pfFQNLVOsMx2hpKtntBeHg=C1j-Cg@mail.gmail.com>
-References: <20190829071738.2523-1-andrew@aj.id.au>
- <CACRpkdYW_PX7npB+b1YJ4pfFQNLVOsMx2hpKtntBeHg=C1j-Cg@mail.gmail.com>
-Date: Thu, 12 Sep 2019 19:56:05 +0930
-From: "Andrew Jeffery" <andrew@aj.id.au>
-To: "Linus Walleij" <linus.walleij@linaro.org>
-Subject: =?UTF-8?Q?Re:_[PATCH_pinctrl/fixes]_pinctrl:_aspeed:_Fix_spurious_mux_fa?=
- =?UTF-8?Q?ilures_on_the_AST2500?=
+ id 1i8MLV-0002WW-Qd
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:29:03 +0000
+Received: from pps.filterd (m0167091.ppops.net [127.0.0.1])
+ by mx0b-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8CASlIH024068; Thu, 12 Sep 2019 06:28:56 -0400
+Received: from nam03-dm3-obe.outbound.protection.outlook.com
+ (mail-dm3nam03lp2057.outbound.protection.outlook.com [104.47.41.57])
+ by mx0b-00128a01.pphosted.com with ESMTP id 2uv6a9r64v-1
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Thu, 12 Sep 2019 06:28:56 -0400
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Y2XWlC1g1TLRG8FkO4MqGYK8W8UBkh+RlaBsYbmN50rfY7wpr8q/vUta4UmEj1Mbz38tUcBsrxYxiK4DcyxfbcgmA7RhQSgXdhhBq4L1WSYuikXFRM+YsnW5kpyOvP0KyS6LVDICHe5wIuuj0MYqLIfBRQpOxyh+iN3d81lt1Nnebgv42QFGBizaMZLayFOD4WKKxkaZM1Ue48UYiMHVzvhXkDwoJdWZVwtfgvwLRZ6dyX70h0uQ1degUYfhvW8sz8CC/4kChqOyXt/rkYYTJSgIluZ0OeeRvbhHYxtMvnBTsE1ziobDNL1A5EQpo995/ZOpGjCCtuiRKJIHBWaL6A==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RQ0uzHRZGaUQlzUs+HXy+tvbdQgya2t3zqjsiawQh2E=;
+ b=bxPpVBf1iq3kzAm8YhmUEIbpvSJqDSYxaBmlpi1i/cR9j/hePd7ZDGtAR4FocV2AooOWea5zAYrS4u2N0SXcmm0vkRdJQU9akzpDxwFBYP7TweqEFalfGpG5QrJD4dZ7ZQt7O3NHAz0es5NnvpiPfsqTKDaoKFJS8PMsfYSId/3Vz3tvbNTiGcfMRS101VGKkA/ygahMj5hN+Yg07oGZGSH3JxFhlr4JDJhKa1Cws4YZdd+tDCSFEwCJQGQQF4yxBdJqixFASoQ4bFkk5WtDx1S3Q+TJzUDbHzQccqiZ51OnjDZpdc1wP3omzQ5AA7HUptNltPer4HJf36jbIk2WZg==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
+ 137.71.25.57) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=analog.com;
+ dmarc=bestguesspass action=none header.from=analog.com; dkim=none (message
+ not signed); arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=RQ0uzHRZGaUQlzUs+HXy+tvbdQgya2t3zqjsiawQh2E=;
+ b=qxKgbsPJzfrxOONGgtzTuotRJpWoYrlVUe08lyW/vRJ0RaGSmOD01UQVKVdRjrQ6fUR79V2852WxWOye7j8E2zNPA5/rg0Yzrd1OapNNf4eDixDF314A0313vZzmy130X4ZzrPUNHfeScaADDJUzwqkDhFcekAxjmnbv1MTFrok=
+Received: from BN8PR03CA0034.namprd03.prod.outlook.com (2603:10b6:408:94::47)
+ by BN3PR03MB2227.namprd03.prod.outlook.com (2a01:111:e400:7bba::12)
+ with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2263.17; Thu, 12 Sep
+ 2019 10:28:55 +0000
+Received: from CY1NAM02FT004.eop-nam02.prod.protection.outlook.com
+ (2a01:111:f400:7e45::201) by BN8PR03CA0034.outlook.office365.com
+ (2603:10b6:408:94::47) with Microsoft SMTP Server (version=TLS1_2,
+ cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2199.21 via Frontend
+ Transport; Thu, 12 Sep 2019 10:28:55 +0000
+Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
+ 137.71.25.57 as permitted sender) receiver=protection.outlook.com;
+ client-ip=137.71.25.57; helo=nwd2mta2.analog.com;
+Received: from nwd2mta2.analog.com (137.71.25.57) by
+ CY1NAM02FT004.mail.protection.outlook.com (10.152.74.112) with Microsoft SMTP
+ Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2241.14
+ via Frontend Transport; Thu, 12 Sep 2019 10:28:54 +0000
+Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
+ [10.64.69.107])
+ by nwd2mta2.analog.com (8.13.8/8.13.8) with ESMTP id x8CASndV012000
+ (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
+ Thu, 12 Sep 2019 03:28:49 -0700
+Received: from saturn.ad.analog.com (10.48.65.123) by
+ NWD2HUBCAS7.ad.analog.com (10.64.69.107) with Microsoft SMTP Server id
+ 14.3.408.0; Thu, 12 Sep 2019 06:28:53 -0400
+From: Alexandru Ardelean <alexandru.ardelean@analog.com>
+To: <netdev@vger.kernel.org>, <linux-stm32@st-md-mailman.stormreply.com>,
+ <linux-arm-kernel@lists.infradead.org>, <linux-kernel@vger.kernel.org>
+Subject: [PATCH v2] net: stmmac: socfpga: re-use the `interface` parameter
+ from platform data
+Date: Thu, 12 Sep 2019 16:28:50 +0300
+Message-ID: <20190912132850.10585-1-alexandru.ardelean@analog.com>
+X-Mailer: git-send-email 2.20.1
+MIME-Version: 1.0
+X-ADIRoutedOnPrem: True
+X-EOPAttributedMessage: 0
+X-MS-Office365-Filtering-HT: Tenant
+X-Forefront-Antispam-Report: CIP:137.71.25.57; IPV:NLI; CTRY:US; EFV:NLI;
+ SFV:NSPM;
+ SFS:(10009020)(346002)(376002)(39860400002)(396003)(136003)(189003)(199004)(54534003)(336012)(305945005)(44832011)(36756003)(476003)(478600001)(5660300002)(486006)(70206006)(8936002)(26005)(70586007)(50466002)(7636002)(426003)(107886003)(186003)(48376002)(86362001)(2616005)(8676002)(126002)(2201001)(246002)(2870700001)(316002)(4326008)(51416003)(50226002)(7696005)(1076003)(47776003)(54906003)(110136005)(106002)(2906002)(356004)(81973001)(2101003);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BN3PR03MB2227; H:nwd2mta2.analog.com; FPR:;
+ SPF:Pass; LANG:en; PTR:nwd2mail11.analog.com; MX:1; A:1; 
+X-MS-PublicTrafficType: Email
+X-MS-Office365-Filtering-Correlation-Id: d139b25e-fb44-4f23-be7a-08d7376c035c
+X-Microsoft-Antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328);
+ SRVR:BN3PR03MB2227; 
+X-MS-TrafficTypeDiagnostic: BN3PR03MB2227:
+X-Microsoft-Antispam-PRVS: <BN3PR03MB2227AD1C979C15CD48365E62F9B00@BN3PR03MB2227.namprd03.prod.outlook.com>
+X-MS-Oob-TLC-OOBClassifiers: OLM:6108;
+X-Forefront-PRVS: 01583E185C
+X-MS-Exchange-SenderADCheck: 1
+X-Microsoft-Antispam-Message-Info: dR5zoj/n96O+PARMvuXpRTEyu9AunmOyaCMJx9fmpm14Ywqk+4gqUQzrtOaR6bjiD40IXlBkZS3Nka/ZUoRSbqD45v7A0iUtYf5exOYk1f7KgX3j1Y/6E3B+CBDvKyrI8vDFY1dGaQ43k6b2UpxeIc973eqM3UbmjHV9ATOKJBf7IolloE73mfOkba1PryNvIZSpR+y5Q68QXj8Iat94UHuU+iO68m5TJ2uRdS7eWevAg7I6b2I2BwJhh7cEYdh6SX/EkX9TOGcUT/PWR3BxsH2bloH18GRx1ei1e43qxzlr1MyfYSBhbt8ixNyFa4b8fYsoOD2Hrj66AGSBo5dCjkBvFW9ngHkShtxJJdduLv+FSiiAxSW8eOJrx/bCbPr6lY04+qmTL3X3tGrNerobuM8ov2QOcntmuDBzxp5/F7U=
+X-OriginatorOrg: analog.com
+X-MS-Exchange-CrossTenant-OriginalArrivalTime: 12 Sep 2019 10:28:54.7368 (UTC)
+X-MS-Exchange-CrossTenant-Network-Message-Id: d139b25e-fb44-4f23-be7a-08d7376c035c
+X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
+X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.57];
+ Helo=[nwd2mta2.analog.com]
+X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN3PR03MB2227
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-12_05:2019-09-11,2019-09-12 signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ spamscore=0 clxscore=1015
+ mlxscore=0 lowpriorityscore=0 malwarescore=0 bulkscore=0 phishscore=0
+ suspectscore=0 priorityscore=1501 impostorscore=0 mlxlogscore=889
+ adultscore=0 classifier=spam adjust=0 reason=mlx scancount=1
+ engine=8.12.0-1906280000 definitions=main-1909120111
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_032632_856921_BCE8D4C4 
-X-CRM114-Status: GOOD (  11.66  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190912_032902_136002_021C2054 
+X-CRM114-Status: GOOD (  12.64  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [66.111.4.29 listed in list.dnswl.org]
+ low trust [148.163.139.77 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -104,52 +142,92 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
- OpenBMC Maillist <openbmc@lists.ozlabs.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Joel Stanley <joel@jms.id.au>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- John Wang <wangzqbj@inspur.com>
+Cc: alexandre.torgue@st.com, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, Alexandru Ardelean <alexandru.ardelean@analog.com>,
+ davem@davemloft.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+The socfpga sub-driver defines an `interface` field in the `socfpga_dwmac`
+struct and parses it on init.
 
+The shared `stmmac_probe_config_dt()` function also parses this from the
+device-tree and makes it available on the returned `plat_data` (which is
+the same data available via `netdev_priv()`).
 
-On Thu, 12 Sep 2019, at 17:53, Linus Walleij wrote:
-> On Thu, Aug 29, 2019 at 8:17 AM Andrew Jeffery <andrew@aj.id.au> wrote:
-> 
-> > Commit 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
-> > was determined to be a partial fix to the problem of acquiring the LPC
-> > Host Controller and GFX regmaps: The AST2500 pin controller may need to
-> > fetch syscon regmaps during expression evaluation as well as when
-> > setting mux state. For example, this case is hit by attempting to export
-> > pins exposing the LPC Host Controller as GPIOs.
-> >
-> > An optional eval() hook is added to the Aspeed pinmux operation struct
-> > and called from aspeed_sig_expr_eval() if the pointer is set by the
-> > SoC-specific driver. This enables the AST2500 to perform the custom
-> > action of acquiring its regmap dependencies as required.
-> >
-> > John Wang tested the fix on an Inspur FP5280G2 machine (AST2500-based)
-> > where the issue was found, and I've booted the fix on Witherspoon
-> > (AST2500) and Palmetto (AST2400) machines, and poked at relevant pins
-> > under QEMU by forcing mux configurations via devmem before exporting
-> > GPIOs to exercise the driver.
-> >
-> > Fixes: 7d29ed88acbb ("pinctrl: aspeed: Read and write bits in LPC and GFX controllers")
-> > Fixes: 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
-> > Reported-by: John Wang <wangzqbj@inspur.com>
-> > Tested-by: John Wang <wangzqbj@inspur.com>
-> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
-> 
-> Applied for fixes already yesterday!
+All that's needed now is to dig that information out, via some
+`dev_get_drvdata()` && `netdev_priv()` calls and re-use it.
 
-Thanks! Hoping to avoid such late fixes in the future...
+Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
+---
 
-Andrew
+Changelog v1 -> v2:
+* initially, this patch was developed on a 4.14 kernel, and adapted (badly)
+  to `net-next`, so it did not build ; the v2 has been fixed and adapted
+  correctly
+
+ .../net/ethernet/stmicro/stmmac/dwmac-socfpga.c   | 15 ++++++++++-----
+ 1 file changed, 10 insertions(+), 5 deletions(-)
+
+diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+index c141fe783e87..5b6213207c43 100644
+--- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
++++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+@@ -46,7 +46,6 @@ struct socfpga_dwmac_ops {
+ };
+ 
+ struct socfpga_dwmac {
+-	int	interface;
+ 	u32	reg_offset;
+ 	u32	reg_shift;
+ 	struct	device *dev;
+@@ -110,8 +109,6 @@ static int socfpga_dwmac_parse_data(struct socfpga_dwmac *dwmac, struct device *
+ 	struct resource res_tse_pcs;
+ 	struct resource res_sgmii_adapter;
+ 
+-	dwmac->interface = of_get_phy_mode(np);
+-
+ 	sys_mgr_base_addr =
+ 		altr_sysmgr_regmap_lookup_by_phandle(np, "altr,sysmgr-syscon");
+ 	if (IS_ERR(sys_mgr_base_addr)) {
+@@ -231,6 +228,14 @@ static int socfpga_dwmac_parse_data(struct socfpga_dwmac *dwmac, struct device *
+ 	return ret;
+ }
+ 
++static inline int socfpga_get_plat_phymode(struct socfpga_dwmac *dwmac)
++{
++	struct net_device *ndev = dev_get_drvdata(dwmac->dev);
++	struct stmmac_priv *priv = netdev_priv(ndev);
++
++	return priv->plat->interface;
++}
++
+ static int socfpga_set_phy_mode_common(int phymode, u32 *val)
+ {
+ 	switch (phymode) {
+@@ -255,7 +260,7 @@ static int socfpga_set_phy_mode_common(int phymode, u32 *val)
+ static int socfpga_gen5_set_phy_mode(struct socfpga_dwmac *dwmac)
+ {
+ 	struct regmap *sys_mgr_base_addr = dwmac->sys_mgr_base_addr;
+-	int phymode = dwmac->interface;
++	int phymode = socfpga_get_plat_phymode(dwmac);
+ 	u32 reg_offset = dwmac->reg_offset;
+ 	u32 reg_shift = dwmac->reg_shift;
+ 	u32 ctrl, val, module;
+@@ -314,7 +319,7 @@ static int socfpga_gen5_set_phy_mode(struct socfpga_dwmac *dwmac)
+ static int socfpga_gen10_set_phy_mode(struct socfpga_dwmac *dwmac)
+ {
+ 	struct regmap *sys_mgr_base_addr = dwmac->sys_mgr_base_addr;
+-	int phymode = dwmac->interface;
++	int phymode = socfpga_get_plat_phymode(dwmac);
+ 	u32 reg_offset = dwmac->reg_offset;
+ 	u32 reg_shift = dwmac->reg_shift;
+ 	u32 ctrl, val, module;
+-- 
+2.20.1
+
 
 _______________________________________________
 linux-arm-kernel mailing list
