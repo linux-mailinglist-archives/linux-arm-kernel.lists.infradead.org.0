@@ -2,83 +2,83 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9023EB1741
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 04:41:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8189AB1742
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 04:41:26 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zw3W86Zhfg/LGJaM5niZg2ncMP8TVywQibSjy2bvR4k=; b=IcFNfc3bDTxsWZ
-	WVoDRQPotF9lUQejBxYlBp+mzhosgcDQN+Nx2vJHN0qRLAMRQQJPB7D/0n1MzySNOO/I6jdY7pS61
-	T+7autVtydCi/0tv89OU4om4WThYaGo1bLcdhA0Q7EDNEF1dfsTdv6BGaOfVOLp6dUZy5AUBPSdNJ
-	x6n/qJz2uRJwP+WcRrea4hMbCCxA59KkL4adWnGOHgTd1MqWbYahY/9Wk9rBrzCpOeKEWYQrOMp7U
-	LG1Pin05MSpv9oEFcYadcG+DJ/20en0MruwymyHq9vlffo+AQfRaujrq1IkJsBCPl7hG5fcdIcadL
-	s/kPy/eHtWN6NsE7USSQ==;
+	List-Owner; bh=cHxFAhioUS0d+7EpdKggoOk2ej5sfuB+raxvBbMmROI=; b=ViUJ7fcGnSusLS
+	WRjte978AbzszNOW18UiFR6ZHZNRMNt1iHwJoeOLHmve2HJvQAuKjiF9KwqnCDXVgxdQVGhuaKotI
+	7VuApXH1k+vy6y9zfHKI/rww0GqFnnq5G+yIcxvsFrz8j3QNFFiTA87Ab5sTrF+g5K5OWaDbplnWR
+	l6xTey0uxZ4fBbdSeb++zKFx2bHK5YqRMNeeY26B5C6h+P6gTwQR1gShViV2wj1AhUbT9IW730Ycr
+	FOKUQOVd1Cx8/3wBdSUAhowIHxxBssaEWa7iJh3dvxOwlLpC9iQ/DvxUl+EjCftt/vqs2I23nT0af
+	anhVYCDRWZO7b6QAj13Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8bW5-0001q4-4d; Fri, 13 Sep 2019 02:40:57 +0000
-Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
+	id 1i8bWW-00024y-SA; Fri, 13 Sep 2019 02:41:25 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8bVm-0001oW-Hm
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 02:40:40 +0000
-Received: by mail-pl1-x644.google.com with SMTP id t11so12597142plo.0
+ id 1i8bVo-0001oZ-2i
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 02:40:41 +0000
+Received: by mail-pg1-x544.google.com with SMTP id 4so14442757pgm.12
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 19:40:33 -0700 (PDT)
+ Thu, 12 Sep 2019 19:40:35 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=date:from:to:cc:subject:message-id:references:mime-version
  :content-disposition:in-reply-to:user-agent;
- bh=o10bTPI1fGjtaNVr4lSeeHoUxfwk3uBoK8DuweeUXb8=;
- b=AucsQVseCLmfa6f68FGaHKvutY86bgCEDYee7FhydkZRh7iDmqpC8uCPiTjaNDPGpD
- KL0g4B+x3ZHdqBkhsi1sotu3iWGE5AAdb/LwWvk5jipRKIujP/ONZIJz2F+kHz6IGcTH
- be5ak9geKw1tkLfXO0eewdHpwmKv6gRAgpD1o4O2pvDNdSkJtWOlsQ7SRRtvp1nOFcfM
- Ehg4cPUtobvM4Lkq/QYbtGKzRWS/I6PxuXBuWnB9cJCDjCJvcsR5Ow7eB0E8+H9I2mK0
- lZX6lkHpb3wlRSkKqgMMATOEkJP4mCN3OFkukQ6Q+yXkHLtlummxBNaXSsFUd45ZRuyI
- AI0A==
+ bh=UP1u+Dca8sbP4Ltz5lkNdGLJogvNgYuMygajS9RlyYE=;
+ b=BlJvvwTnzkIA0n+L8NqoxzOtG9oKdjMXjIljgTUnEY4TDEIVCL98hvGYxFGso5Govp
+ /mrbptuCcSCKFnR6cI8BAIPfcv/R+dhaGmRvaozpc/HHqRYObph8iyyb2msX+SgCzlWh
+ bTWmHGS1fWrioNoJNz/baL1KgqSdzA8Qe1WqxMI/uxTxVSKb85Hsp2P2i1ppD2WXPfBN
+ zPi6N79XOSTPwrAiMLTovC1l0BCR4JnPEsYp8WmmDPMBXJkoGksyN7xUTXU5BB+UtAX5
+ SUD+MA3wDB+IFoq2E3RHRZVw+tqlpGKMxL/cIp42f66sO3gH2y1ka+rk+XBXj+xsSiR4
+ atxw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:date:from:to:cc:subject:message-id:references
  :mime-version:content-disposition:in-reply-to:user-agent;
- bh=o10bTPI1fGjtaNVr4lSeeHoUxfwk3uBoK8DuweeUXb8=;
- b=ImxjaY5z58qmRquILvgq4lJLkgxFqf+WyrHPYc0E+G9gHRPLrFXippxKDKG+Unplv3
- bFru+YIPxQ3ttilyx5C7NEWV6ygeXmlz+71xh3Rgf9bFKO+Vgq+rCm0ChLUoAD2rql0P
- ZWnKOvATeD9U2Xx/0MkZ4BpUzwRgkroU9M9uH85Wz3xBrmOZEzLi8E+L+TKIgtV341Ze
- XuEUjR82vlUIrx/P7sM6GclwlN6xtZ4ncuUvpH4PVLbjcuxsQNkRiEO+yOv2qvSnMFsz
- cvYNiXbQoe3NV8EuIa5W0pb2cvsIBvFceiIMXgR5O4v4RE5j3LUUR96Pm1lTXO4+ognS
- z2FQ==
-X-Gm-Message-State: APjAAAW2dyKxwdGdGwQUVccsDIrIM0BGQsyBNzALO40NTQW8ymYSLeBC
- pMBQWchfZ34sD3fzPfVPM/II0ywK6zCxPw==
-X-Google-Smtp-Source: APXvYqwN2ZoOUxJYfpw2vYhfd2BDQQ5qh0TfD2HVwYWe9asnPcx8vFEbsYxRUP6NyYikhLivIf12fQ==
-X-Received: by 2002:a17:902:aa06:: with SMTP id
- be6mr41582114plb.94.1568342432557; 
- Thu, 12 Sep 2019 19:40:32 -0700 (PDT)
+ bh=UP1u+Dca8sbP4Ltz5lkNdGLJogvNgYuMygajS9RlyYE=;
+ b=q1d1IApSIUeX48uHemTbDR3mRSHVdqoRVM74pKEAq1WNY7qfzDZGFmcTLRJPyAn32k
+ mQR4279meL/PVdjfwPhbHOgz9J39L820AF3PQaTnAi0NqBJoNrLtEQ08OP7eYWBhGHdO
+ iS/qmEVVayvSycZvlRuDqyl2dOdwboenyhJb748g1ji+iMUSG2VhN1gfgJN3euCwDxwB
+ uFIhXi0w0gEOqjQwC0rNEZRE7uDz1WRq316UHrJj2N3ufOniAlSdsV+b7xSHcE9Q85Zq
+ nKIIgUEm1McEchv1UswNy2Kbo6cD1RxCYQFX3W0Qyf4HAXn8pnfMEXCFnhY1j3ewGNyO
+ Fhyw==
+X-Gm-Message-State: APjAAAVHKGno2bSxhDqrX5YoD0TTlk/yPTVniA7wFozaHHZ6ykeN9a/5
+ 3i8Lge2EbhWtZ6fZaUZ/+dE=
+X-Google-Smtp-Source: APXvYqxXudnFv0wlNAyfrLVbGR5PsDT0j5xxkmQaSeJwOpX52h+MqyJpzvy9Cm7IZab0s11TaKzU5Q==
+X-Received: by 2002:a62:8c11:: with SMTP id m17mr22088610pfd.245.1568342434904; 
+ Thu, 12 Sep 2019 19:40:34 -0700 (PDT)
 Received: from localhost (c-73-158-250-148.hsd1.ca.comcast.net.
  [73.158.250.148])
- by smtp.gmail.com with ESMTPSA id l23sm4812673pgj.53.2019.09.12.19.40.31
+ by smtp.gmail.com with ESMTPSA id z23sm387918pje.2.2019.09.12.19.40.34
  (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Thu, 12 Sep 2019 19:40:31 -0700 (PDT)
-Date: Thu, 12 Sep 2019 21:13:00 +0100
+ Thu, 12 Sep 2019 19:40:34 -0700 (PDT)
+Date: Thu, 12 Sep 2019 21:22:39 +0100
 From: Dmitry Torokhov <dmitry.torokhov@gmail.com>
-To: Robin van der Gracht <robin@protonic.nl>
-Subject: Re: [PATCH v3] input: keyboard: snvs_pwrkey: Send key events for
- i.MX6 S, DL and Q
-Message-ID: <20190912201300.GA636@penguin>
-References: <20190904062329.97520-1-robin@protonic.nl>
+To: Anson Huang <Anson.Huang@nxp.com>
+Subject: Re: [PATCH V3 2/5] input: keyboard: imx_sc: Add i.MX system
+ controller key support
+Message-ID: <20190912202239.GB636@penguin>
+References: <1567546600-21566-1-git-send-email-Anson.Huang@nxp.com>
+ <1567546600-21566-2-git-send-email-Anson.Huang@nxp.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190904062329.97520-1-robin@protonic.nl>
+In-Reply-To: <1567546600-21566-2-git-send-email-Anson.Huang@nxp.com>
 User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_194038_593761_23749009 
-X-CRM114-Status: GOOD (  25.45  )
+X-CRM114-CacheID: sfid-20190912_194040_124301_A54247D5 
+X-CRM114-Status: GOOD (  26.02  )
 X-Spam-Score: 0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -103,116 +103,275 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Adam Ford <aford173@gmail.com>, Marco Felsch <m.felsch@pengutronix.de>,
- "linux-kernel @ vger . kernel . org" <linux-kernel@vger.kernel.org>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- "linux-input @ vger . kernel . org" <linux-input@vger.kernel.org>,
- RobinGong <yibin.gong@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- "linux-arm-kernel @ lists . infradead . org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: mark.rutland@arm.com, ulf.hansson@linaro.org, ping.bai@nxp.com,
+ catalin.marinas@arm.com, peng.fan@nxp.com, stefan@agner.ch,
+ bjorn.andersson@linaro.org, leonard.crestez@nxp.com, will@kernel.org,
+ festevam@gmail.com, yuehaibing@huawei.com, marcin.juszkiewicz@linaro.org,
+ jagan@amarulasolutions.com, linux-input@vger.kernel.org, ronald@innovation.ch,
+ Linux-imx@nxp.com, devicetree@vger.kernel.org, arnd@arndb.de,
+ s.hauer@pengutronix.de, mripard@kernel.org, m.felsch@pengutronix.de,
+ robh+dt@kernel.org, tglx@linutronix.de, andriy.shevchenko@linux.intel.com,
+ daniel.baluta@nxp.com, linux-arm-kernel@lists.infradead.org,
+ aisheng.dong@nxp.com, fugang.duan@nxp.com, gregkh@linuxfoundation.org,
+ linux-kernel@vger.kernel.org, dinguyen@kernel.org, kernel@pengutronix.de,
+ olof@lixom.net, shawnguo@kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Robin,
+Hi Anson,
 
-On Wed, Sep 04, 2019 at 06:23:29AM +0000, Robin van der Gracht wrote:
-> The first generation i.MX6 processors does not send an interrupt when the
-> power key is pressed. It sends a power down request interrupt if the key is
-> released before a hard shutdown (5 second press). This should allow
-> software to bring down the SoC safely.
+On Tue, Sep 03, 2019 at 05:36:37PM -0400, Anson Huang wrote:
+> i.MX8QXP is an ARMv8 SoC which has a Cortex-M4 system controller
+> inside, the system controller is in charge of controlling power,
+> clock and scu key etc..
 > 
-> For this driver to work as a regular power key with the older SoCs, we need
-> to send a keypress AND release when we get the power down request irq.
+> Adds i.MX system controller key driver support, Linux kernel has
+> to communicate with system controller via MU (message unit) IPC
+> to get scu key's status.
 > 
-> Signed-off-by: Robin van der Gracht <robin@protonic.nl>
+> Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
 > ---
-> 
-> Changes v2 -> v3:
->  - Drop alt compatible string for identifying first revision snvs hardware,
->    read minor revision from register instead.
->  - Drop imx6qdl.dtsi modification and device-tree binding documentation.
->  - Add an additional input_sync() to create 2 seperate input reports for press
->    and release.
-> 
->  drivers/input/keyboard/Kconfig       |  2 +-
->  drivers/input/keyboard/snvs_pwrkey.c | 28 ++++++++++++++++++++++++++--
->  2 files changed, 27 insertions(+), 3 deletions(-)
+> Changes since V2:
+> 	- use private platform data instead of global data;
+> 	- use "key" instead of "pwrkey";
+> 	- fix some data format.
+> ---
+>  drivers/input/keyboard/Kconfig      |   7 ++
+>  drivers/input/keyboard/Makefile     |   1 +
+>  drivers/input/keyboard/imx_sc_key.c | 178 ++++++++++++++++++++++++++++++++++++
+>  3 files changed, 186 insertions(+)
+>  create mode 100644 drivers/input/keyboard/imx_sc_key.c
 > 
 > diff --git a/drivers/input/keyboard/Kconfig b/drivers/input/keyboard/Kconfig
-> index 7c4f19dab34f..937e58da5ce1 100644
+> index 2e6d288..607acf2 100644
 > --- a/drivers/input/keyboard/Kconfig
 > +++ b/drivers/input/keyboard/Kconfig
-> @@ -436,7 +436,7 @@ config KEYBOARD_SNVS_PWRKEY
->  	depends on OF
->  	help
->  	  This is the snvs powerkey driver for the Freescale i.MX application
-> -	  processors that are newer than i.MX6 SX.
-> +	  processors.
+> @@ -469,6 +469,13 @@ config KEYBOARD_IMX
+>  	  To compile this driver as a module, choose M here: the
+>  	  module will be called imx_keypad.
 >  
->  	  To compile this driver as a module, choose M here; the
->  	  module will be called snvs_pwrkey.
-> diff --git a/drivers/input/keyboard/snvs_pwrkey.c b/drivers/input/keyboard/snvs_pwrkey.c
-> index 5342d8d45f81..828580eee0d2 100644
-> --- a/drivers/input/keyboard/snvs_pwrkey.c
-> +++ b/drivers/input/keyboard/snvs_pwrkey.c
-> @@ -19,6 +19,7 @@
->  #include <linux/mfd/syscon.h>
->  #include <linux/regmap.h>
->  
-> +#define SNVS_HPVIDR1_REG 0xF8
->  #define SNVS_LPSR_REG	0x4C	/* LP Status Register */
->  #define SNVS_LPCR_REG	0x38	/* LP Control Register */
->  #define SNVS_HPSR_REG	0x14
-> @@ -37,6 +38,7 @@ struct pwrkey_drv_data {
->  	int wakeup;
->  	struct timer_list check_timer;
->  	struct input_dev *input;
-> +	u8 minor_rev;
->  };
->  
->  static void imx_imx_snvs_check_for_events(struct timer_list *t)
-> @@ -45,6 +47,20 @@ static void imx_imx_snvs_check_for_events(struct timer_list *t)
->  	struct input_dev *input = pdata->input;
->  	u32 state;
->  
-> +	if (pdata->minor_rev == 0) {
-> +		/*
-> +		 * The first generation i.MX6 SoCs only sends an interrupt on
-> +		 * button release. To mimic power-key usage, we'll prepend a
-> +		 * press event.
-> +		 */
-> +		input_report_key(input, pdata->keycode, 1);
-> +		input_sync(input);
-> +		input_report_key(input, pdata->keycode, 0);
-> +		input_sync(input);
-> +		pm_relax(input->dev.parent);
+> +config KEYBOARD_IMX_SC_KEY
+> +	tristate "IMX SCU Key Driver"
+> +	depends on IMX_SCU
+> +	help
+> +	  This is the system controller key driver for NXP i.MX SoCs with
+> +	  system controller inside.
+> +
+>  config KEYBOARD_NEWTON
+>  	tristate "Newton keyboard"
+>  	select SERIO
+> diff --git a/drivers/input/keyboard/Makefile b/drivers/input/keyboard/Makefile
+> index 9510325..f5b1752 100644
+> --- a/drivers/input/keyboard/Makefile
+> +++ b/drivers/input/keyboard/Makefile
+> @@ -29,6 +29,7 @@ obj-$(CONFIG_KEYBOARD_HIL)		+= hil_kbd.o
+>  obj-$(CONFIG_KEYBOARD_HIL_OLD)		+= hilkbd.o
+>  obj-$(CONFIG_KEYBOARD_IPAQ_MICRO)	+= ipaq-micro-keys.o
+>  obj-$(CONFIG_KEYBOARD_IMX)		+= imx_keypad.o
+> +obj-$(CONFIG_KEYBOARD_IMX_SC_KEY)	+= imx_sc_key.o
+>  obj-$(CONFIG_KEYBOARD_HP6XX)		+= jornada680_kbd.o
+>  obj-$(CONFIG_KEYBOARD_HP7XX)		+= jornada720_kbd.o
+>  obj-$(CONFIG_KEYBOARD_LKKBD)		+= lkkbd.o
+> diff --git a/drivers/input/keyboard/imx_sc_key.c b/drivers/input/keyboard/imx_sc_key.c
+> new file mode 100644
+> index 0000000..e69479b
+> --- /dev/null
+> +++ b/drivers/input/keyboard/imx_sc_key.c
+> @@ -0,0 +1,178 @@
+> +// SPDX-License-Identifier: GPL-2.0
+> +/*
+> + * Copyright 2019 NXP.
+> + */
+> +
+> +#include <linux/device.h>
+> +#include <linux/err.h>
+> +#include <linux/firmware/imx/sci.h>
+> +#include <linux/init.h>
+> +#include <linux/input.h>
+> +#include <linux/interrupt.h>
+> +#include <linux/jiffies.h>
+> +#include <linux/kernel.h>
+> +#include <linux/module.h>
+> +#include <linux/of.h>
+> +#include <linux/of_address.h>
+> +#include <linux/platform_device.h>
+> +
+> +#define DEBOUNCE_TIME	100
+> +#define REPEAT_INTERVAL	60
+> +
+> +#define SC_IRQ_BUTTON		1
+> +#define SC_IRQ_GROUP_WAKE	3
+> +#define IMX_SC_MISC_FUNC_GET_BUTTON_STATUS	18
+> +
+> +struct imx_key_drv_data {
+> +	int keycode;
+> +	bool keystate;  /* 1: pressed, 0: release */
+> +	bool delay_check;
+> +	struct delayed_work check_work;
+> +	struct input_dev *input;
+> +	struct imx_sc_ipc *key_ipc_handle;
+> +	struct notifier_block key_notifier;
+> +};
+> +
+> +struct imx_sc_msg_key {
+> +	struct imx_sc_rpc_msg hdr;
+> +	u8 state;
+> +};
+> +
+> +static int imx_sc_key_notify(struct notifier_block *nb,
+> +			     unsigned long event, void *group)
+> +{
+> +	struct imx_key_drv_data *priv =
+> +				 container_of(nb,
+> +					      struct imx_key_drv_data,
+> +					      key_notifier);
+> +
+> +	if ((event & SC_IRQ_BUTTON) && (*(u8 *)group == SC_IRQ_GROUP_WAKE)
+> +	    && !priv->delay_check) {
+> +		priv->delay_check = 1;
+> +		schedule_delayed_work(&priv->check_work,
+> +				      msecs_to_jiffies(REPEAT_INTERVAL));
+> +	}
+> +
+> +	return 0;
+> +}
+> +
+> +static void imx_sc_check_for_events(struct work_struct *work)
+> +{
+> +	struct imx_key_drv_data *priv =
+> +				 container_of(work,
+> +					      struct imx_key_drv_data,
+> +					      check_work.work);
+> +	struct input_dev *input = priv->input;
+> +	struct imx_sc_msg_key msg;
+> +	struct imx_sc_rpc_msg *hdr = &msg.hdr;
+> +	bool state;
+> +	int ret;
+> +
+> +	hdr->ver = IMX_SC_RPC_VERSION;
+> +	hdr->svc = IMX_SC_RPC_SVC_MISC;
+> +	hdr->func = IMX_SC_MISC_FUNC_GET_BUTTON_STATUS;
+> +	hdr->size = 1;
+> +
+> +	ret = imx_scu_call_rpc(priv->key_ipc_handle, &msg, true);
+> +	if (ret) {
+> +		dev_err(&input->dev, "read imx sc key failed, ret %d\n", ret);
 > +		return;
 > +	}
 > +
->  	regmap_read(pdata->snvs, SNVS_HPSR_REG, &state);
->  	state = state & SNVS_HPSR_BTN ? 1 : 0;
->  
-> @@ -67,13 +83,17 @@ static irqreturn_t imx_snvs_pwrkey_interrupt(int irq, void *dev_id)
->  {
->  	struct platform_device *pdev = dev_id;
->  	struct pwrkey_drv_data *pdata = platform_get_drvdata(pdev);
-> +	unsigned long expire = jiffies;
->  	u32 lp_status;
->  
->  	pm_wakeup_event(pdata->input->dev.parent, 0);
->  
->  	regmap_read(pdata->snvs, SNVS_LPSR_REG, &lp_status);
-> -	if (lp_status & SNVS_LPSR_SPO)
-> -		mod_timer(&pdata->check_timer, jiffies + msecs_to_jiffies(DEBOUNCE_TIME));
-> +	if (lp_status & SNVS_LPSR_SPO) {
-> +		if (pdata->minor_rev > 0)
-> +			expire = jiffies + msecs_to_jiffies(DEBOUNCE_TIME);
-> +		mod_timer(&pdata->check_timer, expire);
+> +	state = (bool)msg.state;
+> +
+> +	if (!state && !priv->keystate)
+> +		state = true;
+> +
+> +	if (state ^ priv->keystate) {
+> +		pm_wakeup_event(input->dev.parent, 0);
+> +		priv->keystate = state;
+> +		input_event(input, EV_KEY, priv->keycode, state);
+> +		input_sync(input);
+> +		if (!state)
+> +			priv->delay_check = 0;
+> +		pm_relax(priv->input->dev.parent);
+> +	}
+> +
+> +	if (state)
+> +		schedule_delayed_work(&priv->check_work,
+> +				      msecs_to_jiffies(DEBOUNCE_TIME));
 
-Why do we even need to fire the timer in case of the first generation
-hardware? Just send press and release events directly from the ISR.
+Hmm, I am not quite sure follow the code. Judging by the name, you are
+trying to handle debounce, but if I understand this correctly you
+already sent out the press event for now.
+
+Could you please explain what you are trying to do here.
+
+> +}
+> +
+> +static int imx_sc_key_probe(struct platform_device *pdev)
+> +{
+> +	struct device_node *np = pdev->dev.of_node;
+> +	static struct imx_key_drv_data *priv;
+> +	struct input_dev *input;
+> +	int ret;
+> +
+> +	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
+> +	if (!priv)
+> +		return -ENOMEM;
+> +
+> +	ret = imx_scu_get_handle(&priv->key_ipc_handle);
+> +	if (ret)
+> +		return ret;
+> +
+> +	if (of_property_read_u32(np, "linux,keycode", &priv->keycode)) {
+> +		dev_err(&pdev->dev, "missing KEY_POWER in DT\n");
+> +		return -EINVAL;
+> +	}
+> +
+> +	INIT_DELAYED_WORK(&priv->check_work, imx_sc_check_for_events);
+> +
+> +	input = devm_input_allocate_device(&pdev->dev);
+> +	if (!input) {
+> +		dev_err(&pdev->dev, "failed to allocate the input device\n");
+> +		return -ENOMEM;
+> +	}
+> +
+> +	input->name = pdev->name;
+> +	input->phys = "imx-sc-key/input0";
+> +	input->id.bustype = BUS_HOST;
+> +
+> +	input_set_capability(input, EV_KEY, priv->keycode);
+> +
+> +	ret = input_register_device(input);
+> +	if (ret) {
+> +		dev_err(&pdev->dev, "failed to register input device\n");
+> +		return ret;
+> +	}
+> +
+> +	priv->input = input;
+> +	platform_set_drvdata(pdev, priv);
+> +
+> +	ret = imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, true);
+> +	if (ret) {
+> +		dev_warn(&pdev->dev, "enable scu group irq failed\n");
+> +		return ret;
+> +	}
+> +
+> +	priv->key_notifier.notifier_call = imx_sc_key_notify;
+> +	ret = imx_scu_irq_register_notifier(&priv->key_notifier);
+> +	if (ret) {
+> +		imx_scu_irq_group_enable(SC_IRQ_GROUP_WAKE, SC_IRQ_BUTTON, false);
+> +		dev_warn(&pdev->dev, "register scu notifier failed\n");
+> +	}
+> +
+> +	return ret;
+> +}
+> +
+> +static const struct of_device_id imx_sc_key_ids[] = {
+> +	{ .compatible = "fsl,imx-sc-key" },
+> +	{ /* sentinel */ }
+> +};
+> +MODULE_DEVICE_TABLE(of, imx_sc_key_ids);
+> +
+> +static struct platform_driver imx_sc_key_driver = {
+> +	.driver = {
+> +		.name = "imx-sc-key",
+> +		.of_match_table = imx_sc_key_ids,
+> +	},
+> +	.probe = imx_sc_key_probe,
+
+You need a remove() handler to disable the itq group, remove the
+notifier, cancel the delayed work, etc.
+
+> +};
+> +module_platform_driver(imx_sc_key_driver);
+> +
+> +MODULE_AUTHOR("Anson Huang <Anson.Huang@nxp.com>");
+> +MODULE_DESCRIPTION("i.MX System Controller Key Driver");
+> +MODULE_LICENSE("GPL v2");
+> -- 
+> 2.7.4
+> 
 
 Thanks.
 
