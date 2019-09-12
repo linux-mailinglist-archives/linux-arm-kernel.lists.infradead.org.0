@@ -2,69 +2,95 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 679D1B0A9B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 10:49:07 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41B9AB0AA0
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 10:49:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fA9Lvo0kBgozvOhJily6OIx/y5iD5QbUluIq4YIsCto=; b=ZnocDAX5TQ2uIQ
-	/tAauj7wnA4f4GN9UY1ThCaR8WF69rBsgOZ8nftPaPtid+tzS+xbXeOF2ADNJ3jEB2F6F5By7ojCV
-	IpOoXUja9dSg1nAkumrqxfiKkA8R7lvztj/5oop6IwKoDRIBzoaJnDdQFFISgOJ0sBQ9/Tv3UYRq+
-	avBkKn0xTV8fKDj9A0zDaUbyFtobvo9/nbsjBW360ZeOCRGcjKGIhXUITEYY1SqWh9d8jbG2yJb55
-	DI0JN6ht1VFvMF92CPRkRk3cTel10CjN9fVe+dMZetw0D7t4nBz6Hiz2lDTVDXPpbZc9ATe+CRn5I
-	N6uvWfrz2tW+VNh3Td5A==;
+	List-Owner; bh=2ubdsLBN1Ztijc6OLkAbsuh+BZozFlJLJS6e98lIEIY=; b=PFYmrhJrHI3b6M
+	lyJ0owh54jdGLVCcWkNm4D1KQtzzDT2n2MF6LNAhmBlalMvi2Q5YnKh/isjdX3YWePw4a0TaJNrIZ
+	E5E4WBtDP8B+MycCF6LcnZZUDZQJXGYXJnTDJ7ZVF3Y0TQC5DmTt7Fjcyzg+gCqV0vdFn63IolWPk
+	SE9y8C5YtvG/f42DnwTBJAR6dBSTt3jRgec0LGPCJK9GpR5xfzNiVP2BZhz4hzzmsLLUnR7+lzOjc
+	SV6hj64rQDmUsFqGcCiIeHi9RCHF4j50dE9E91XfkbgjhfgVH/QOAt897A11321F1gtbL62BBEn7P
+	7vynIKS8iBWHKdUojBdA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Kmm-0006BE-Ky; Thu, 12 Sep 2019 08:49:04 +0000
-Received: from eu-smtp-delivery-151.mimecast.com ([146.101.78.151])
+	id 1i8KnD-0006VE-QH; Thu, 12 Sep 2019 08:49:31 +0000
+Received: from mail-wr1-x444.google.com ([2a00:1450:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Kma-0006A6-Mo
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 08:48:54 +0000
-Received: from AcuMS.aculab.com (156.67.243.126 [156.67.243.126]) (Using
- TLS) by relay.mimecast.com with ESMTP id
- uk-mta-17-AvKfWONiOouzoUVnjrPlUA-1; Thu, 12 Sep 2019 09:48:43 +0100
-Received: from AcuMS.Aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) by
- AcuMS.aculab.com (fd9f:af1c:a25b:0:43c:695e:880f:8750) with Microsoft SMTP
- Server (TLS) id 15.0.1347.2; Thu, 12 Sep 2019 09:48:42 +0100
-Received: from AcuMS.Aculab.com ([fe80::43c:695e:880f:8750]) by
- AcuMS.aculab.com ([fe80::43c:695e:880f:8750%12]) with mapi id 15.00.1347.000; 
- Thu, 12 Sep 2019 09:48:42 +0100
-From: David Laight <David.Laight@ACULAB.COM>
-To: 'Yunfeng Ye' <yeyunfeng@huawei.com>, "catalin.marinas@arm.com"
- <catalin.marinas@arm.com>, "will@kernel.org" <will@kernel.org>
-Subject: RE: [PATCH] arm64: psci: Use udelay() instead of msleep() to reduce
- waiting time
-Thread-Topic: [PATCH] arm64: psci: Use udelay() instead of msleep() to reduce
- waiting time
-Thread-Index: AQHVaH4AwWDpQzK54U6c4a0pGnl8oKcnvCiA
-Date: Thu, 12 Sep 2019 08:48:42 +0000
-Message-ID: <18c9fd22d72d4ea1a11e800e8873dd8d@AcuMS.aculab.com>
-References: <e4d42bda-72f2-4002-f319-1cbe2bff74d2@huawei.com>
-In-Reply-To: <e4d42bda-72f2-4002-f319-1cbe2bff74d2@huawei.com>
-Accept-Language: en-GB, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-ms-exchange-transport-fromentityheader: Hosted
-x-originating-ip: [10.202.205.107]
+ id 1i8Kmu-0006Pm-OX
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 08:49:14 +0000
+Received: by mail-wr1-x444.google.com with SMTP id l16so27418203wrv.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Sep 2019 01:49:11 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:content-transfer-encoding:in-reply-to
+ :user-agent; bh=e+Gp9bvg2doYl3vt8UvKYTIGNZ3niQ5XGKnO6ggp+VY=;
+ b=BohMUVOwccV7eixIyuzSffx1C1R/02VJ5TADZ2b16JPGKurlRaBsjNKAHOstU0x43Q
+ OULaaIo4e046DFHcBMKrwxOvZYFwrZ9hz8h5ti5bFb0Bum8I/M3ySKZymFORO9Osnfnp
+ mbrMEKqEHAfB5vi8DcBXUCXMWnELXFHJd3AT6BQiA2SVjXDBYXOXWnJqdne0EPRAtdyN
+ fFZcZd3TgWFwwvL7dhbDTHVixRDKKpCV2Z0RIt7/Jixclhlg/fTK5bwlNAmNMuggqOpl
+ kyudZlApLfcNaxL4sc90Wlehs0dBoKAjwk1J6YuKLLId/JFNXR3+DqKA5dbncj8JTFJA
+ Os2A==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:content-transfer-encoding
+ :in-reply-to:user-agent;
+ bh=e+Gp9bvg2doYl3vt8UvKYTIGNZ3niQ5XGKnO6ggp+VY=;
+ b=k/DmODvOLctudoHnt5+0rOU6kP3EYqtF2UQOs8JhVW5g39mtIKw2/b4DZXJS6R6vX2
+ MpApMjp/aoIQAbQayPsOwmaPo5ON8BrAqiVbcEbjP/KAMbwlPHxbzcm99nJcneurypf/
+ Vf9MV/eb55sbK2Z8lBDCd3p+Sfam+OwA3tq8oOY4yC9wgNCIOgkiJrF1ZlJZD0Ao0yXL
+ nRHfaQahTqG3E3Mj7FoQ6e9v8PUdeuuEAeXykLILMAaATADeRWhM0duBEPsC4E/FNSU4
+ 2NWoUMkE1amullScF9k79HiOu+wtZqIdo+YOTXhoyMMti952S56kKpVuB5j7RmbwDLyh
+ MY1A==
+X-Gm-Message-State: APjAAAXQFo95MGawPSEnl8l+Gl5a0IKJkGyOAZ0PZw25V2hpQKb7RLt/
+ 49qlfpq9/JIT/kWfDUafihY=
+X-Google-Smtp-Source: APXvYqyEDkWR4oC31C2oMu6luZi3ueVnPKImB1BJM2Lmv+TtEx9dSjvWD6SJc20F3l41IM99V0/YYQ==
+X-Received: by 2002:adf:ffd1:: with SMTP id x17mr4758794wrs.139.1568278150339; 
+ Thu, 12 Sep 2019 01:49:10 -0700 (PDT)
+Received: from Red ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
+ by smtp.googlemail.com with ESMTPSA id p85sm11790384wme.23.2019.09.12.01.49.09
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 12 Sep 2019 01:49:09 -0700 (PDT)
+Date: Thu, 12 Sep 2019 10:49:07 +0200
+From: Corentin Labbe <clabbe.montjoie@gmail.com>
+To: Maxime Ripard <maxime.ripard@anandra.org>
+Subject: Re: [PATCH 2/2] crypto: sun4i-ss: enable pm_runtime
+Message-ID: <20190912084907.GA26551@Red>
+References: <20190911114650.20567-1-clabbe.montjoie@gmail.com>
+ <20190911114650.20567-3-clabbe.montjoie@gmail.com>
+ <CAO4ZVTM99FksM71BAiraYj7eyREO1Qi=L1NFzEkNmMgBmphBww@mail.gmail.com>
 MIME-Version: 1.0
-X-MC-Unique: AvKfWONiOouzoUVnjrPlUA-1
-X-Mimecast-Spam-Score: 0
+Content-Disposition: inline
+In-Reply-To: <CAO4ZVTM99FksM71BAiraYj7eyREO1Qi=L1NFzEkNmMgBmphBww@mail.gmail.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_014853_020312_EC05D653 
-X-CRM114-Status: GOOD (  17.70  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190912_014912_803448_B9CFF34F 
+X-CRM114-Status: GOOD (  22.24  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [146.101.78.151 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:444 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (clabbe.montjoie[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,63 +102,128 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
+ Chen-Yu Tsai <wens@csie.org>, linux-crypto@vger.kernel.org,
+ davem@davemloft.net, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Yunfeng Ye
-> Sent: 11 September 2019 09:50
-> We want to reduce the time of cpu_down() for saving power, found that
-> cpu_psci_cpu_kill() cost 10ms after psci_ops.affinity_info() fail.
-> 
-> Normally the time cpu dead is very short, it is no need to wait 10ms.
-> so use udelay 10us to instead msleep 10ms in every waiting loop, and add
-> cond_resched() to give a chance to run a higher-priority process.
-> 
-> Signed-off-by: Yunfeng Ye <yeyunfeng@huawei.com>
-> ---
->  arch/arm64/kernel/psci.c | 6 +++---
->  1 file changed, 3 insertions(+), 3 deletions(-)
-> 
-> diff --git a/arch/arm64/kernel/psci.c b/arch/arm64/kernel/psci.c
-> index 85ee7d0..9e9d8a6 100644
-> --- a/arch/arm64/kernel/psci.c
-> +++ b/arch/arm64/kernel/psci.c
-> @@ -86,15 +86,15 @@ static int cpu_psci_cpu_kill(unsigned int cpu)
->  	 * while it is dying. So, try again a few times.
->  	 */
-> 
-> -	for (i = 0; i < 10; i++) {
-> +	for (i = 0; i < 10000; i++) {
->  		err = psci_ops.affinity_info(cpu_logical_map(cpu), 0);
->  		if (err == PSCI_0_2_AFFINITY_LEVEL_OFF) {
->  			pr_info("CPU%d killed.\n", cpu);
->  			return 0;
->  		}
-> 
-> -		msleep(10);
-> -		pr_info("Retrying again to check for CPU kill\n");
-> +		cond_resched();
-> +		udelay(10);
+On Thu, Sep 12, 2019 at 08:35:51AM +0200, Maxime Ripard wrote:
+> Hi,
+> =
 
-You really don't want to be doing 10000 udelay(10) before giving up.
+> Le mer. 11 sept. 2019 =E0 13:46, Corentin Labbe
+> <clabbe.montjoie@gmail.com> a =E9crit :
+> >
+> > This patch enables power management on the Security System.
+> >
+> > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > ---
+> >  drivers/crypto/sunxi-ss/sun4i-ss-cipher.c |  5 +++
+> >  drivers/crypto/sunxi-ss/sun4i-ss-core.c   | 42 ++++++++++++++++++++++-
+> >  2 files changed, 46 insertions(+), 1 deletion(-)
+> >
+> > diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto=
+/sunxi-ss/sun4i-ss-cipher.c
+> > index fa4b1b47822e..1fedec9e83b0 100644
+> > --- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+> > +++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
+> > @@ -10,6 +10,8 @@
+> >   *
+> >   * You could find the datasheet in Documentation/arm/sunxi.rst
+> >   */
+> > +
+> > +#include <linux/pm_runtime.h>
+> >  #include "sun4i-ss.h"
+> >
+> >  static int noinline_for_stack sun4i_ss_opti_poll(struct skcipher_reque=
+st *areq)
+> > @@ -497,13 +499,16 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
+> >                 return PTR_ERR(op->fallback_tfm);
+> >         }
+> >
+> > +       pm_runtime_get_sync(op->ss->dev);
+> >         return 0;
+> >  }
+> >
+> >  void sun4i_ss_cipher_exit(struct crypto_tfm *tfm)
+> >  {
+> >         struct sun4i_tfm_ctx *op =3D crypto_tfm_ctx(tfm);
+> > +
+> >         crypto_free_sync_skcipher(op->fallback_tfm);
+> > +       pm_runtime_put_sync(op->ss->dev);
+> >  }
+> >
+> >  /* check and set the AES key, prepare the mode to be used */
+> > diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-core.c b/drivers/crypto/s=
+unxi-ss/sun4i-ss-core.c
+> > index 2c9ff01dddfc..5e6e1a308f60 100644
+> > --- a/drivers/crypto/sunxi-ss/sun4i-ss-core.c
+> > +++ b/drivers/crypto/sunxi-ss/sun4i-ss-core.c
+> > @@ -14,6 +14,7 @@
+> >  #include <linux/module.h>
+> >  #include <linux/of.h>
+> >  #include <linux/platform_device.h>
+> > +#include <linux/pm_runtime.h>
+> >  #include <crypto/scatterwalk.h>
+> >  #include <linux/scatterlist.h>
+> >  #include <linux/interrupt.h>
+> > @@ -258,6 +259,37 @@ static int sun4i_ss_enable(struct sun4i_ss_ctx *ss)
+> >         return err;
+> >  }
+> >
+> > +#ifdef CONFIG_PM
+> > +static int sun4i_ss_pm_suspend(struct device *dev)
+> > +{
+> > +       struct sun4i_ss_ctx *ss =3D dev_get_drvdata(dev);
+> > +
+> > +       sun4i_ss_disable(ss);
+> > +       return 0;
+> > +}
+> > +
+> > +static int sun4i_ss_pm_resume(struct device *dev)
+> > +{
+> > +       struct sun4i_ss_ctx *ss =3D dev_get_drvdata(dev);
+> > +
+> > +       return sun4i_ss_enable(ss);
+> > +}
+> > +#endif
+> > +
+> > +const struct dev_pm_ops sun4i_ss_pm_ops =3D {
+> > +       SET_RUNTIME_PM_OPS(sun4i_ss_pm_suspend, sun4i_ss_pm_resume, NUL=
+L)
+> > +};
+> > +
+> > +static void sun4i_ss_pm_init(struct sun4i_ss_ctx *ss)
+> > +{
+> > +       pm_runtime_use_autosuspend(ss->dev);
+> > +       pm_runtime_set_autosuspend_delay(ss->dev, 1000);
+> > +
+> > +       pm_runtime_get_noresume(ss->dev);
+> > +       pm_runtime_set_active(ss->dev);
+> > +       pm_runtime_enable(ss->dev);
+> > +}
+> =
 
-If udelay(10) is long enough for the normal case, then do that once.
-After that use usleep_range().
+> It's not really clear to me what you're doing here? Can you explain?
+> =
 
-	David
 
--
-Registered Address Lakeside, Bramley Road, Mount Farm, Milton Keynes, MK1 1PT, UK
-Registration No: 1397386 (Wales)
+I set the autosuspend state and delay.
+
+I say that the device is active and so I "get" it.
+Then I enable PM.
+
+I do like that since I use the device later in probe(), so I need to keep i=
+t up.
+At the end of probe() I put the device which go in suspend automaticaly aft=
+er.
+
+Regards
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
