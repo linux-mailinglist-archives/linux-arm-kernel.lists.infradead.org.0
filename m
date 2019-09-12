@@ -2,66 +2,60 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3D05CB06D7
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 04:42:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B8D5BB0707
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 04:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=iu3ik4qOgXG3jghznohj16wTtAf42IUqjiKh4bm/mhE=; b=GwgQGIH4+yQHCO
-	BxUiK8rZALdGyKekENvkjyKA14ShbvlH9xHKU22JJIXROdAOsW1NQ37fBQ/hGk/AddSC16TGHxLBV
-	4bbbBdi8jBy9NrDCzsFgaEIjFj2SWd+HXQXiaosRVcmHxezy4qHokO/X1Kj+4caXA5YlnRX/irho2
-	4if/7PQy2SmuluP8myAoRHQqL75hnVt7rBe72zJGYBjnnm5ELTry6PDbF4uqkyM+9LTnPIYRvLuM5
-	6VbM6J6NxXc+m7ZK94JlWI/NpXfSJFshFvSi+knWw3DOteV7P+3jx+PVSS8XWjfvH+a7Uca3EAofn
-	Rk+NW7GPQJloavxa7Stw==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=Z3ixm6vgC8JN1SOQCAaOuVfVF5/xAU1GlyZScZSXmCg=; b=dY0
+	fHzCRTzwccUl9XUtOgznfXkMGc9Yc1Pib1RJHReFZoKgucvlYyKRLCIOHvYO68EH8uY8jgyDHNcUc
+	LJdXrz6UGhI2I43Oowpi38KntciJe9HBgj25FzSSfyEsvph86C4UMMC20dF3fhzoZgyCDEtnstDhV
+	I9owxjp5qJmuPWoYeYKRteO4NpZmvr3hg+Dz3WdFKu40p6AinQerwccUyXop+hZV3g1uYNCrRKwdh
+	XFYKc3kk45Ccl3uXr82sBl2rhMFrhjOAZhOWCp/12drv0Vh9BgJJjUN8wiJ8ejM13nAmlqHUH1hMC
+	x3Ey/KQRAgGfBozfQu8Q0xY60owO+bw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8F40-00088f-9y; Thu, 12 Sep 2019 02:42:28 +0000
-Received: from honk.sigxcpu.org ([24.134.29.49])
+	id 1i8FJ6-0004mC-TK; Thu, 12 Sep 2019 02:58:05 +0000
+Received: from inva021.nxp.com ([92.121.34.21])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8F3n-00087c-1n
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 02:42:16 +0000
-Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id ACF3CFB03;
- Thu, 12 Sep 2019 04:42:13 +0200 (CEST)
-X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
-Received: from honk.sigxcpu.org ([127.0.0.1])
- by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id z-y1afFhBSMJ; Thu, 12 Sep 2019 04:42:12 +0200 (CEST)
-Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id D371D46CC1; Wed, 11 Sep 2019 19:42:10 -0700 (PDT)
-Date: Wed, 11 Sep 2019 19:42:10 -0700
-From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
-To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Lucas Stach <l.stach@pengutronix.de>, Abel Vesa <abel.vesa@nxp.com>,
- Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
- "Angus Ainslie (Purism)" <angus@akkea.ca>,
- Andrey Smirnov <andrew.smirnov@gmail.com>,
+ id 1i8FIg-0004cA-PG
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 02:57:40 +0000
+Received: from inva021.nxp.com (localhost [127.0.0.1])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 48D5F2000C7;
+ Thu, 12 Sep 2019 04:57:33 +0200 (CEST)
+Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
+ [165.114.16.14])
+ by inva021.eu-rdc02.nxp.com (Postfix) with ESMTP id 9B5432000FF;
+ Thu, 12 Sep 2019 04:57:28 +0200 (CEST)
+Received: from localhost.localdomain (shlinux2.ap.freescale.net
+ [10.192.224.44])
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 96547402AD;
+ Thu, 12 Sep 2019 10:57:22 +0800 (SGT)
+From: Anson Huang <Anson.Huang@nxp.com>
+To: robh+dt@kernel.org, mark.rutland@arm.com, shawnguo@kernel.org,
+ s.hauer@pengutronix.de, kernel@pengutronix.de, festevam@gmail.com,
  devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
  linux-kernel@vger.kernel.org
-Subject: Re: [PATCH] dts: arm64: imx8mq: Enable gpu passive throttling
-Message-ID: <20190912024210.GA13270@bogon.m.sigxcpu.org>
-References: <cf1b114bcc6ef26e032c352b8c885aaf5f3594d0.1568254197.git.agx@sigxcpu.org>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <cf1b114bcc6ef26e032c352b8c885aaf5f3594d0.1568254197.git.agx@sigxcpu.org>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+Subject: [PATCH 1/2] ARM: dts: imx7d: Correct speed grading fuse settings
+Date: Thu, 12 Sep 2019 10:56:31 +0800
+Message-Id: <1568256992-31707-1-git-send-email-Anson.Huang@nxp.com>
+X-Mailer: git-send-email 2.7.4
+X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_194215_252299_C07F0AD5 
-X-CRM114-Status: GOOD (  14.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_195738_956621_0A8B523C 
+X-CRM114-Status: UNSURE (   8.03  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [24.134.29.49 listed in list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [92.121.34.21 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -74,81 +68,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Linux-imx@nxp.com
+MIME-Version: 1.0
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
-On Wed, Sep 11, 2019 at 07:14:25PM -0700, Guido G=FCnther wrote:
-> Temperature and hysteresis were picked after the CPU.
+The 800MHz opp speed grading fuse mask should be 0xd instead
+of 0xf according to fuse map definition:
 
-I pulled that one from the wrong branch so please disregard. I've
-sent out a v2.
-Cheers,
- -- Guido
+SPEED_GRADING[1:0]	MHz
+	00		800
+	01		500
+	10		1000
+	11		1200
 
-> =
+Signed-off-by: Anson Huang <Anson.Huang@nxp.com>
+---
+ arch/arm/boot/dts/imx7d.dtsi | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
-> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
-> ---
->  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 15 +++++++++++++++
->  1 file changed, 15 insertions(+)
-> =
+diff --git a/arch/arm/boot/dts/imx7d.dtsi b/arch/arm/boot/dts/imx7d.dtsi
+index 9c8dd32..0083272 100644
+--- a/arch/arm/boot/dts/imx7d.dtsi
++++ b/arch/arm/boot/dts/imx7d.dtsi
+@@ -43,7 +43,7 @@
+ 			opp-hz = /bits/ 64 <792000000>;
+ 			opp-microvolt = <1000000>;
+ 			clock-latency-ns = <150000>;
+-			opp-supported-hw = <0xf>, <0xf>;
++			opp-supported-hw = <0xd>, <0xf>;
+ 		};
+ 
+ 		opp-996000000 {
+-- 
+2.7.4
 
-> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
-dts/freescale/imx8mq.dtsi
-> index 564045927485..fda636085bb3 100644
-> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
-> @@ -235,12 +235,26 @@
->  			thermal-sensors =3D <&tmu 1>;
->  =
-
->  			trips {
-> +				gpu-alert {
-> +					temperature =3D <80000>;
-> +					hysteresis =3D <2000>;
-> +					type =3D "passive";
-> +				};
-> +
->  				gpu-crit {
->  					temperature =3D <90000>;
->  					hysteresis =3D <2000>;
->  					type =3D "critical";
->  				};
->  			};
-> +
-> +			cooling-maps {
-> +				map0 {
-> +					trip =3D <&gpu_alert>;
-> +					cooling-device =3D
-> +						<&gpu THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
-> +				};
-> +			};
->  		};
->  =
-
->  		vpu-thermal {
-> @@ -1006,6 +1020,7 @@
->  			         <&clk IMX8MQ_CLK_GPU_AXI>,
->  			         <&clk IMX8MQ_CLK_GPU_AHB>;
->  			clock-names =3D "core", "shader", "bus", "reg";
-> +			#cooling-cells =3D <2>;
->  			assigned-clocks =3D <&clk IMX8MQ_CLK_GPU_CORE_SRC>,
->  			                  <&clk IMX8MQ_CLK_GPU_SHADER_SRC>,
->  			                  <&clk IMX8MQ_CLK_GPU_AXI>,
-> -- =
-
-> 2.23.0.rc1
-> =
-
-> =
-
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
 
 _______________________________________________
 linux-arm-kernel mailing list
