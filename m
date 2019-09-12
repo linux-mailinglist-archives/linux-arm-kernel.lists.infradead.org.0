@@ -2,72 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6CBEAB0D4B
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:54:02 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 089ACB0D4D
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:54:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=chumjJZe2hYpohJdXEiSu4v6ILrzZQBpYRjBhulZDpA=; b=HgQZkZvKf32ypDhh8hNvXiFM3
-	zqNbwC54ljSgmh10X2fbucbQcUzzRy9eWIId2VthURmp4OMdBu+YcKmqK2/9sCPynIPm0tDKXPgeU
-	zagTchRrc24OEREXTdil1CCZlxm/jP5utsq6Df7evZ/JpvnIANjDlvUL3qWGN2dFTXw9vvo1QbZko
-	LF+XBc6+rF2a+B+OckzO7QuhUPkg0vZ8D1S+iBBfr6UULkqrCg63NPKF1E2HKgO55Ykwf7nAmD3PK
-	TLhB9hrZV823Op8X6YwldzTPXWwoIat5cF2viNRZ6RoWxnL0XrxDk/NZfelqJoQCkY2Kc9Ve57TAm
-	K8S66/jAg==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2LCEdeQLq4eUG0FmEBCDNwGUrr0hcG9FPc2+TBIYKqc=; b=pDRzyWeY9zq5ib
+	VtLXGXSp5IWUV3IzKtma8QSUaY/xECrtuMPQ38G3CbSQtWZO9Mjo4DXn254MIiOEGsW5X+EXD0JNM
+	3kze+4GEAZ2UiO7drDjdEkVWHmXZdYejt3T+eLGOFkvZRYn+6IOgxi9DjSBXwI3sS6U7ffaGYCRGV
+	1AIolZeLWLYxX5bbyapLFmgfc7tdtNC5eY9aV5hDTN+F5xZKsJtixIsIjbPcfjoFwKHRg6AD4iqGq
+	FvXO4dzJk34KLpTfpFSWPlzMSOtXq0YO8GYKy7qPuMg/anfi1BIp/svtUexnjqViZxykKbH4NhoAj
+	gmZZYMJ/8ZQYQI7AP7zw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Mjg-0004Gh-6V; Thu, 12 Sep 2019 10:54:00 +0000
-Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8MjS-0004GH-PT
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:53:48 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=sirena.org.uk; s=20170815-heliosphere; h=In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=D2D5xYaEKANX2x4ZJuWEVTNW1zYISnb/gu0LN4hJxKM=; b=WNqaA4u/faAGf9OS5qIbmq2Hs
- mWYdtL6fbchxGuAx43E34yD8Iuej5YZd3OfeAtXScPg4snnUaiz4NneKJONB/gxrQ6u2M6Ed0Bstq
- yQrjujqbf5juAAMGsRHZf6mDLO3xGHGkO1G0qO2n4xFS1KP75OW60V0gBrQZ2iCuWjvIM=;
-Received: from 195-23-252-136.net.novis.pt ([195.23.252.136]
- helo=fitzroy.sirena.org.uk) by heliosphere.sirena.org.uk with esmtpsa
- (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
- (envelope-from <broonie@sirena.org.uk>)
- id 1i8MjM-0006Ya-Sb; Thu, 12 Sep 2019 10:53:40 +0000
-Received: by fitzroy.sirena.org.uk (Postfix, from userid 1000)
- id DD9C0D0046D; Thu, 12 Sep 2019 11:53:39 +0100 (BST)
-Date: Thu, 12 Sep 2019 11:53:39 +0100
-From: Mark Brown <broonie@kernel.org>
-To: Amit Kucheria <amit.kucheria@linaro.org>
-Subject: Re: [PATCH 0/4] Cleanup arm64 driver dependencies
-Message-ID: <20190912105339.GK2036@sirena.org.uk>
-References: <cover.1568239378.git.amit.kucheria@linaro.org>
- <20190912094651.GH2036@sirena.org.uk>
- <CAP245DXBwwtcbjRQV_bCdYK5SZH9C9oxZJ2rFraJpbd5L0sHvw@mail.gmail.com>
+	id 1i8Mjy-0004oO-L2; Thu, 12 Sep 2019 10:54:18 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8Mjb-0004Uy-Rk
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:53:57 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D01551000;
+ Thu, 12 Sep 2019 03:53:54 -0700 (PDT)
+Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id BF10C3F59C;
+ Thu, 12 Sep 2019 03:53:53 -0700 (PDT)
+Subject: Re: [PATCH 3/3] iommu/io-pgtable-arm: Allow coherent walks for Mali
+To: Robin Murphy <robin.murphy@arm.com>, will@kernel.org, joro@8bytes.org
+References: <cover.1568211045.git.robin.murphy@arm.com>
+ <8eb563978e7e872ddde45c0413e1a3f30b792658.1568211045.git.robin.murphy@arm.com>
+From: Steven Price <steven.price@arm.com>
+Message-ID: <5aee1c30-65ba-a608-6033-dedf004b24ea@arm.com>
+Date: Thu, 12 Sep 2019 11:53:52 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <CAP245DXBwwtcbjRQV_bCdYK5SZH9C9oxZJ2rFraJpbd5L0sHvw@mail.gmail.com>
-X-Cookie: Be careful!  UGLY strikes 9 out of 10!
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <8eb563978e7e872ddde45c0413e1a3f30b792658.1568211045.git.robin.murphy@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_035346_839344_A4212390 
-X-CRM114-Status: GOOD (  16.06  )
-X-Spam-Score: -0.1 (/)
+X-CRM114-CacheID: sfid-20190912_035356_015501_618D39CA 
+X-CRM114-Status: GOOD (  18.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.1 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,89 +62,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- linux-pci <linux-pci@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, arm-soc <arm@kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Will Deacon <will@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
- Lists LAKML <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5523629135399233179=="
+Cc: robh@kernel.org, iommu@lists.linux-foundation.org,
+ linux-arm-kernel@lists.infradead.org, tomeu.vizoso@collabora.com,
+ narmstrong@baylibre.com
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 11/09/2019 15:42, Robin Murphy wrote:
+> Midgard GPUs have ACE-Lite master interfaces which allows systems to
+> integrate them in an I/O-coherent manner. It seems that from the GPU's
+> viewpoint, the rest of the system is its outer shareable domain, and it
+> will only emit snoop signals for outer shareable accesses. As such,
+> setting the TTBR_SHARE_OUTER bit does indeed get coherent pagetable
+> walks working nicely.
+> 
+> Making data accesses coherent seems to be more of a challenge...
+> 
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
 
---===============5523629135399233179==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="H6o9R95t2FPeZmf3"
-Content-Disposition: inline
+Reviewed-by: Steven Price <steven.price@arm.com>
 
+Note the terminology in the GPU is *very* confusing here. Midgard refers
+to the system's inner shareable domain as "outer shareable", and uses
+"inner shareable" to mean purely within the GPU.
 
---H6o9R95t2FPeZmf3
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
+For data access kbase sets up a different default MEMATTR if ACE is
+available:
 
-On Thu, Sep 12, 2019 at 03:33:20PM +0530, Amit Kucheria wrote:
-> On Thu, Sep 12, 2019 at 3:17 PM Mark Brown <broonie@kernel.org> wrote:
+	/* Set to implementation defined, outer caching */
+	#define AS_MEMATTR_LPAE_OUTER_IMPL_DEF        0x88ull
+[...]
+	#define AS_MEMATTR_INDEX_DEFAULT_ACE           3
+[...]
+	/* Outer coherent, inner implementation defined policy */
+	#define AS_MEMATTR_INDEX_OUTER_IMPL_DEF        3
 
-> > > I was using initcall_debugging on a QCOM platform and ran across a bunch of
-> > > driver initcalls that are enabled even if their SoC support is disabled.
+Steve
 
-> > What exactly is the problem you're trying to fix here?  For the
-> > drivers I looked at these were bog standard register the driver
-> > with the subsystem type initcalls on optional drivers so not
-> > doing anything particularly disruptive or anything like that.
+> ---
+>  drivers/iommu/io-pgtable-arm.c | 3 +++
+>  1 file changed, 3 insertions(+)
+> 
+> diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
+> index 77f41c9dd9be..2794d4661339 100644
+> --- a/drivers/iommu/io-pgtable-arm.c
+> +++ b/drivers/iommu/io-pgtable-arm.c
+> @@ -1061,6 +1061,9 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
+>  	cfg->arm_mali_lpae_cfg.transtab = virt_to_phys(data->pgd) |
+>  					  ARM_MALI_LPAE_TTBR_READ_INNER |
+>  					  ARM_MALI_LPAE_TTBR_ADRMODE_TABLE;
+> +	if (cfg->coherent_walk)
+> +		cfg->arm_mali_lpae_cfg.transtab |= ARM_MALI_LPAE_TTBR_SHARE_OUTER;
+> +
+>  	return &data->iop;
+>  
+>  out_free_data:
+> 
 
-> I was trying to prune the defconfig only to drivers that make sense on
-> the SoC. e.g. Why should I see a brcmstb_soc_device_early_init() call
-> on a QCOM system when I've disabled ARCH_BRCMSTB?
-
-So this is really just the standard make Kconfig easier to use by
-filtering out noise thing.  It'd be clearer if you said that in
-the changelog, and like the review comments have been saying you
-need to leave in an || COMPILE_TEST in there otherwise it's
-actively harmful.
-
-> I came across this while trying to figure out how to make thermal and
-> cpufreq frameworks initialise as early as possible.
-
-AFAICT you'd also have been happy if you just built these drivers
-modular?
-
---H6o9R95t2FPeZmf3
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl16I7EACgkQJNaLcl1U
-h9A5Xwf/Rv/6OyuOPX5W2hdLghPKgkdYoB2KbGacwvDTAd1oxRtRjMbzWEVEvqYO
-j7Tj/JYrweUkTWM5SVxsDpiSAk7bx5eAGlLMxPDtK6NcM48bSaURXpoWhOQ4EWKo
-ygzxV2PFMVmDf3yOmTcSXDpu+sAvb5eIF+gbsLCS98uc3uPZT8dO8Q3ZOI8R8TLJ
-6AAdcecAKc+T156a8ted8iIlK9Ze2hTY1J1mfrIsXvpdAxcfmLaqB26ZfDSUN5AE
-EUZFeWQboDrYzuSWYGjgqKMyzFhgigoYgnKI1hnepKs1tqoieoT9DZZ0AT2dcCGL
-2STeoJiRo8YT6dVf8HnBzwNSizJdQg==
-=8wH4
------END PGP SIGNATURE-----
-
---H6o9R95t2FPeZmf3--
-
-
---===============5523629135399233179==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5523629135399233179==--
-
