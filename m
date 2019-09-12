@@ -2,86 +2,66 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2EBA6B1460
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 20:24:17 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F0DE6B149C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 20:53:44 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wAQna5/iyd2rZ0U/3BRISwAi6V1aVMtBIUEeGXqOiIs=; b=d1CftfyqEp0IBM
-	Y66DhZN+7QFy6uNn3N54ZnkYZsDVsHp093PgnBWuruQ49A/erotldgivugP4NcCEvPUk77bHZG3mg
-	cDVSSPWx//Z+1WL9x4ZF8C6RVXxTVm4e69Sqzyyn39DtSFQu1J3gln9Wp9QlsuwVIKaIquk9Mbo9w
-	bVjCQzM/6MeG1lQriVolgV+v7exIWF4Y+LY1cR77InpaEo4DDVEQI5MaLsyJqnhOUslpiWsf7T5iP
-	gSYrfoY0s0JnDubs4eGck1XVvHlC2PIWXWBxhS+0qBr6Qj1/06R5oDeKV8KxuFBQgJHI0P0CR+9Ca
-	y+H6EnFUYDmd5eqQSFwQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Date:References:In-Reply-To:Subject:To:From:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ttQmPBB85chY4dN3QAVkdvzV4K/60Rcu9MLt2BtA66M=; b=cQYnfK6UUk3gqsrU6R8EqCsIN
+	h75ewT+Kfl1W+xBBBpYq4zHB79pCdOYdcts3r+zy73kb9YsyNa4jBYWLFA1lp8rmDBwcK9n2LB4f1
+	loU4jvTencwo2ZyTS4fsoZu2bieR8ZkSFeqCok2MKDD0nqJowyN5KvaWcUmwbjeOoLY3Z2t10lZaU
+	JG2ZlSTjFe8VgZ0kmbDptrAS7XSSC+YhiZ9KdNVvCd51hDVQfzxSdRnUY/aS41O0mlBddEnzIVAKv
+	QDXWqjljNsmVsUitsDoiWLeY60QGQJjq3MtwfMhuV563DTDIXbaQunpxR7CIUSRXNviCyhv5NXf/2
+	2zRT06sgQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8TlC-0000Ju-3S; Thu, 12 Sep 2019 18:24:02 +0000
-Received: from mail-lj1-x242.google.com ([2a00:1450:4864:20::242])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Tkx-0000Ib-FQ
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 18:23:48 +0000
-Received: by mail-lj1-x242.google.com with SMTP id j16so24581544ljg.6
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 11:23:46 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=IzpHMPyEAs7qHXeC8+PI+k8EjPmSxRwc5lCuYXRCv54=;
- b=UZ3qHTaVrczrYkLqCzFJel3IMA/0c7kf0uAfHAAJOzbYtfQv5ist1ZHOa4QlmfW8Y8
- 1AccvRFP+4hzmqF/mVoOwGA4l8o5DpECcGgLYz2jE77VlFvAgE+zB30oFDvBEvN4+qN7
- b2KB42vYdwZpch/CRMGMfR6lyFLUvffEYJGADc/Aaexis9rTRYC+WyV2vz2TYvVvKYIN
- /Hj7Z7dhOQ9iBUcmPP31o62k891bi3/x4FEzaOJz5n6DkNAttTbJv+jeqdrBpWk4Jcvj
- /DcBW3x7lGouxlUi484qAfkGHAmC3hpvwfD4UqKFSlkAZsAwUOfj9fqzmF3WTw8wZ4Om
- a/Mw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=IzpHMPyEAs7qHXeC8+PI+k8EjPmSxRwc5lCuYXRCv54=;
- b=KzwgMY96wUMHP4BEdjXAqUKSREF+QJrLjyy+aZFBgnvoamdTRb1jUoIXMGF/SOxqnV
- mxOlXa+Z5GLrilaYdQwDJNyDyfJtSzmjG2L+mwPCvx7tKjro64eQ3ksLhrcRHu5YQaFy
- yeKMFle3skZdvnEBN8Od8sdB8GR4vWM6kfh54D1MfeVD/vFQh+jEjtaBSZZFDEjPXWBS
- J06iWgsvxY/PlW5SO8PRTFUjeJtn0NczyogvvUKSI0OXfNXPVYx73xdl83ZGtGT+VnYQ
- H7sYJJkhs2lbMOU66zF/7oTxpfPB8Ce6sib6FU61keC5byo/rzIVa2hxFjcYoKkzbFhL
- akkQ==
-X-Gm-Message-State: APjAAAU+u68Y1i5AG+xRrCWq60iQbjF3xgxEK1bryH3WlcZyInZy50I4
- wgVW1WcgdAMCaykrNrVvuo4d758CRowuqXBUPSI=
-X-Google-Smtp-Source: APXvYqyg3z0rmVB8MqaYGii3kSi/ffw+EZze6khxHsFFAgdyRAoLKz5Agii/j7bEpQw09ybFOM96bJvWRrgLf56KWoY=
-X-Received: by 2002:a2e:3e0d:: with SMTP id l13mr27406384lja.10.1568312624761; 
- Thu, 12 Sep 2019 11:23:44 -0700 (PDT)
+	id 1i8UDc-0002AO-7P; Thu, 12 Sep 2019 18:53:24 +0000
+Received: from anholt.net ([50.246.234.109])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8UDB-00029w-Rf; Thu, 12 Sep 2019 18:52:59 +0000
+Received: from localhost (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id 46F5910A37AE;
+ Thu, 12 Sep 2019 11:52:54 -0700 (PDT)
+X-Virus-Scanned: Debian amavisd-new at anholt.net
+Received: from anholt.net ([127.0.0.1])
+ by localhost (kingsolver.anholt.net [127.0.0.1]) (amavisd-new, port 10024)
+ with LMTP id Fw3lQsD2bIYU; Thu, 12 Sep 2019 11:52:50 -0700 (PDT)
+Received: from eliezer.anholt.net (localhost [127.0.0.1])
+ by anholt.net (Postfix) with ESMTP id 8B4EC10A37B3;
+ Thu, 12 Sep 2019 11:52:50 -0700 (PDT)
+Received: by eliezer.anholt.net (Postfix, from userid 1000)
+ id E6AB12FE2E27; Thu, 12 Sep 2019 11:52:50 -0700 (PDT)
+From: Eric Anholt <eric@anholt.net>
+To: Matthias Brugger <matthias.bgg@gmail.com>, Stefan Wahren <wahrenst@gmx.net>,
+ Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
+ Scott Branden <sbranden@broadcom.com>, Wolfram Sang <wsa@the-dreams.de>,
+ Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH V2 05/13] clk: bcm2835: Add BCM2711_CLOCK_EMMC2 support
+In-Reply-To: <d89bbc4b-b6bc-0d4e-86d1-6be11876ce00@gmail.com>
+References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
+ <1565713248-4906-6-git-send-email-wahrenst@gmx.net>
+ <d89bbc4b-b6bc-0d4e-86d1-6be11876ce00@gmail.com>
+User-Agent: Notmuch/0.22.2+1~gb0bcfaa (http://notmuchmail.org) Emacs/26.1
+ (x86_64-pc-linux-gnu)
+Date: Thu, 12 Sep 2019 11:52:49 -0700
+Message-ID: <87o8zp1h4u.fsf@anholt.net>
 MIME-Version: 1.0
-References: <20190911144943.21554-1-philipp.puschmann@emlix.com>
-In-Reply-To: <20190911144943.21554-1-philipp.puschmann@emlix.com>
-From: Fabio Estevam <festevam@gmail.com>
-Date: Thu, 12 Sep 2019 15:23:34 -0300
-Message-ID: <CAOMZO5BKiZGF=iR071DaWLp-_7wTVJKLbOn3ihwPeVVSNF6nCg@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Fix UART DMA freezes for iMX6
-To: Philipp Puschmann <philipp.puschmann@emlix.com>,
- Robin Gong <yibin.gong@nxp.com>, Fugang Duan <fugang.duan@nxp.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_112347_544001_B1DFD0AB 
-X-CRM114-Status: GOOD (  15.97  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190912_115257_984253_AAE98742 
+X-CRM114-Status: GOOD (  16.21  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:242 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [50.246.234.109 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (festevam[at]gmail.com)
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,68 +73,131 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-serial@vger.kernel.org,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>,
- linux-kernel <linux-kernel@vger.kernel.org>, Vinod <vkoul@kernel.org>,
- NXP Linux Team <linux-imx@nxp.com>, Sascha Hauer <kernel@pengutronix.de>,
- Jiri Slaby <jslaby@suse.com>, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, Shawn Guo <shawnguo@kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
+ linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============4451920714567277653=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Philipp,
+--===============4451920714567277653==
+Content-Type: multipart/signed; boundary="=-=-=";
+	micalg=pgp-sha512; protocol="application/pgp-signature"
 
-Thanks for submitting these fixes.
+--=-=-=
+Content-Type: text/plain
+Content-Transfer-Encoding: quoted-printable
 
-On Wed, Sep 11, 2019 at 11:50 AM Philipp Puschmann
-<philipp.puschmann@emlix.com> wrote:
+Matthias Brugger <matthias.bgg@gmail.com> writes:
+
+> On 13/08/2019 18:20, Stefan Wahren wrote:
+>> The new BCM2711 supports an additional clock for the emmc2 block.
+>> So add a new compatible and register this clock only for BCM2711.
+>>=20
+>> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+>> Reviewed-by: Matthias Brugger <mbrugger@suse.com>
+>> Acked-by: Eric Anholt <eric@anholt.net>
+>> ---
+>>  drivers/clk/bcm/clk-bcm2835.c | 20 +++++++++++++++++++-
+>>  1 file changed, 19 insertions(+), 1 deletion(-)
+>>=20
+>> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835=
+.c
+>> index 21cd952..fdf672a 100644
+>> --- a/drivers/clk/bcm/clk-bcm2835.c
+>> +++ b/drivers/clk/bcm/clk-bcm2835.c
+>> @@ -114,6 +114,8 @@
+>>  #define CM_AVEODIV		0x1bc
+>>  #define CM_EMMCCTL		0x1c0
+>>  #define CM_EMMCDIV		0x1c4
+>> +#define CM_EMMC2CTL		0x1d0
+>> +#define CM_EMMC2DIV		0x1d4
+>>=20
+>>  /* General bits for the CM_*CTL regs */
+>>  # define CM_ENABLE			BIT(4)
+>> @@ -290,7 +292,8 @@
+>>  #define BCM2835_MAX_FB_RATE	1750000000u
+>>=20
+>>  #define SOC_BCM2835		BIT(0)
+>> -#define SOC_ALL			(SOC_BCM2835)
+>> +#define SOC_BCM2711		BIT(1)
+>> +#define SOC_ALL			(SOC_BCM2835 | SOC_BCM2711)
+>>=20
+>>  /*
+>>   * Names of clocks used within the driver that need to be replaced
+>> @@ -2003,6 +2006,16 @@ static const struct bcm2835_clk_desc clk_desc_arr=
+ay[] =3D {
+>>  		.frac_bits =3D 8,
+>>  		.tcnt_mux =3D 39),
+>>=20
+>> +	/* EMMC2 clock (only available for BCM2711) */
+>> +	[BCM2711_CLOCK_EMMC2]	=3D REGISTER_PER_CLK(
+>> +		SOC_BCM2711,
+>> +		.name =3D "emmc2",
+>> +		.ctl_reg =3D CM_EMMC2CTL,
+>> +		.div_reg =3D CM_EMMC2DIV,
+>> +		.int_bits =3D 4,
+>> +		.frac_bits =3D 8,
+>> +		.tcnt_mux =3D 42),
+>> +
+>>  	/* General purpose (GPIO) clocks */
+>>  	[BCM2835_CLOCK_GP0]	=3D REGISTER_PER_CLK(
+>>  		SOC_ALL,
+>> @@ -2238,8 +2251,13 @@ static const struct cprman_plat_data cprman_bcm28=
+35_plat_data =3D {
+>>  	.soc =3D SOC_BCM2835,
+>>  };
+>>=20
+>> +static const struct cprman_plat_data cprman_bcm2711_plat_data =3D {
+>> +	.soc =3D SOC_BCM2711,
+>> +};
+>> +
+>>  static const struct of_device_id bcm2835_clk_of_match[] =3D {
+>>  	{ .compatible =3D "brcm,bcm2835-cprman", .data =3D &cprman_bcm2835_pla=
+t_data },
+>> +	{ .compatible =3D "brcm,bcm2711-cprman", .data =3D &cprman_bcm2711_pla=
+t_data },
 >
-> For some years and since many kernel versions there are reports that
-> RX UART DMA channel stops working at one point. So far the usual workaround was
-> to disable RX DMA. This patches try to fix the underlying problem.
->
-> When a running sdma script does not find any usable destination buffer to put
-> its data into it just leads to stopping the channel being scheduled again. As
-> solution we we manually retrigger the sdma script for this channel and by this
-> dissolve the freeze.
->
-> While this seems to work fine so far a further patch in this series increases
-> the number of RX DMA periods for UART to reduce use cases running into such
-> a situation.
->
-> This patch series was tested with the current kernel and backported to
-> kernel 4.15 with a special use case using a WL1837MOD via UART and provoking
-> the hanging of UART RX DMA within seconds after starting a test application.
-> It resulted in well known
->   "Bluetooth: hci0: command 0x0408 tx timeout"
-> errors and complete stop of UART data reception. Our Bluetooth traffic consists
-> of many independent small packets, mostly only a few bytes, causing high usage
-> of periods.
->
->
-> Philipp Puschmann (4):
->   dmaengine: imx-sdma: fix buffer ownership
->   dmaengine: imx-sdma: fix dma freezes
->   serial: imx: adapt rx buffer and dma periods
->   dmaengine: imx-sdma: drop redundant variable
+> Because the RPi4 FW uses bcm2838-cprman as compatible, we will need to ad=
+d this
+> here as well.
 
-I have some suggestions:
+Upstream has not committed to backwards compat with Pi's firmware.  That
+makes the ABI requirement we get held to for upstream's DT absurd, but
+that's the state of things.
 
-1. Please split this in two series: one for dmaengine and other one for serial
+--=-=-=
+Content-Type: application/pgp-signature; name="signature.asc"
 
-2. Please add Fixes tag when appropriate, so that the fixes can be
-backported to stable kernels.
+-----BEGIN PGP SIGNATURE-----
 
-3. Please Cc Robin and Andy
+iQIzBAEBCgAdFiEE/JuuFDWp9/ZkuCBXtdYpNtH8nugFAl16lAEACgkQtdYpNtH8
+nuiquBAAqGE/S+glO2WG6bRp748JssNBNyGIYDyPnsgqZMjtxUBeyHT4VXejcHqE
+cPsjlLNfppLDxUnHPoPvo7C/gUgcgSG+SyMubALDNdYyOIftGV5VSLK6d6LrhIGf
+1yvohK4q5cn5S3I2E1xotOLOAvoZxdX7EA9EpMYrF8BttpkxfX62gftV3wgWf0Yk
+3t1JkR9uZKwM623xJzrAom0MmkmuZDqPBmrQAuR4r4rftx4BAYuYIoRIJ6kiOS2w
+Lfn9nQ1i8u2l3tBrwSnHTN6yhPsYg0+blqqRmI6MTheILyC1HLFzI7KA2iOfJ/Ea
+zsnJ4QCbFbKQvsSVCsAYZRF4ulPtziMhkGNFLvLytSQYpmBGyf7gCTLI6Evca5rS
+7CSaB/K1TL9p2DKE2yqZEkn5c0EYugXDXefyzN8HIQpHh4IUL+6DPiGWAUljXdU/
+eyRYH5HUYgWON0yScodM/Laa9DI7xfK5RA4Ij0fOgcdCfj6S/NaT0HwVIGxLxabA
+u0YMiuVr6q70mUIo0T6fPr7O8WPNCa0PYJkxLis+YshCPcUKNkSCVgq5eFMi8/Xy
+7sdsgp31OkxCoqHAT4G87gtrnLkv7iQRFsz59dQe5YenbdCXLxh91BEvzP3Bn+Mj
+LWtlPr6KVBlwfx0Tq+uf5xCJ13+sBRnGteamwsrbp/IvBdPH71o=
+=qgc8
+-----END PGP SIGNATURE-----
+--=-=-=--
 
-Thanks
+
+--===============4451920714567277653==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============4451920714567277653==--
+
