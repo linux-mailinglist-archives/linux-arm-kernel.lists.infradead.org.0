@@ -2,67 +2,87 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 908BBB12D9
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 18:36:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7A04CB130B
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 18:49:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=2OOz5757bB2MWkRAeitSJPUHZ+CuEOcpWmIv+MYvT9Y=; b=B8VlFnz67ylMCx
-	iAUf/f/+96Mo62J0BvBjQlRtDjgI2XhlTOpzE5Hb8arojAkOyUWHs35Oz0KSldvgORnPJqrsH6/uT
-	Notz/xw/0SGBvaMbjphlHzblKjT2lRcDwqDZfuBZDl0NiqCmACxU3YS0VD/v3OhuGAHs/63pLOYD8
-	DxWgzXGjaQbv+RcTsU15I2f/fe1toWdycTlx8JF7v7nPjJDQZvt9ujHXSUZQLbs9RNa59ziBBG9tx
-	0LL6O+ygzhfNRIF5vM5kGEeVmmcsF6HFmFr07+wE8jiElpBkGUsQP03LyXGmj5z1JVJDpqS1u60fr
-	QuqtJMYg3DMUDNCt7L6g==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=mBEU6gn5ijUlEWPEaiV8Ucs6xJuWxhKny2PXMyjqRow=; b=Rxt7MXxxA/aFWA
+	vcRAwI93BctKt90JwecftSx01ONNYafFQp9jU3NOBz84wN+qeCtUTV/w7hxZSwmd++jdU84dPXJ+H
+	naEbNFNifZ0hzGDDayzcbatqRyZRRne/y+JKkVt4HtVuwG79V4GKbbCDidWXmcdDxWbcUIxetC5jB
+	wqT19UGLUBDo83WDbx1lo8dA12ezAZu4dKmoSbj/yxt4J0dPJ5tfXBB0cMHwQV0VLvxuAQU+VbBkn
+	MvGoDg7ojcMZJJ0UIVVCtHEtL6/M6U8uSTsTcDefTj8UUJDg8gPHRrL4NG63qy28dHgnyDh1JpLr8
+	IuVY+pYQMeOCp/mhW2Nw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8S4b-0004iT-E3; Thu, 12 Sep 2019 16:35:57 +0000
-Received: from outbound-smtp02.blacknight.com ([81.17.249.8])
+	id 1i8SI2-0007uO-6F; Thu, 12 Sep 2019 16:49:50 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8S4H-0004hK-E7
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 16:35:40 +0000
-Received: from mail.blacknight.com (pemlinmail02.blacknight.ie [81.17.254.11])
- by outbound-smtp02.blacknight.com (Postfix) with ESMTPS id E65F498BD8
+ id 1i8SHj-0007rA-35
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 16:49:32 +0000
+Received: from mail-wr1-f70.google.com (mail-wr1-f70.google.com
+ [209.85.221.70])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 057ED882F2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 17:35:26 +0100 (IST)
-Received: (qmail 8291 invoked from network); 12 Sep 2019 16:35:26 -0000
-Received: from unknown (HELO techsingularity.net)
- (mgorman@techsingularity.net@[84.203.19.210])
- by 81.17.254.9 with ESMTPSA (AES256-SHA encrypted, authenticated);
- 12 Sep 2019 16:35:26 -0000
-Date: Thu, 12 Sep 2019 17:35:25 +0100
-From: Mel Gorman <mgorman@techsingularity.net>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190912163525.GV2739@techsingularity.net>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
- <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
- <20190911113619.GP4023@dhcp22.suse.cz>
- <CAKgT0UfOp1c+ov=3pBD72EkSB9Vm7mG5G6zJj4=j=UH7zCgg2Q@mail.gmail.com>
- <20190912091925.GM4023@dhcp22.suse.cz>
+ Thu, 12 Sep 2019 16:49:29 +0000 (UTC)
+Received: by mail-wr1-f70.google.com with SMTP id m9so4020731wrs.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Sep 2019 09:49:28 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=p6UoFWsgsPkuQtSEESX9kkhleKRjVbh91vbkMxi8FIw=;
+ b=Mr+EvyGqOJPSNtRcRce7gsgJaLWK0B4H4wJwvo/TS9k6SS0Uem7tjjt7yBhX+beK5C
+ KKe5a1JcTi+a44bsj/AoHqRDCQumiWlmFjx1CsI8LeGdAt0AflX44yEHnpLcjPvYQfsM
+ /r2Bjzz5ynqIboG3100eQojhZUdjQVcMEuoj2+wh5NV70+bT2f/nfhu6Hg+/vEakRxoa
+ 40I+arUUZ9DAHAHSNnOr4B+3rmDkByTVNkA945be+b7WoAMgBfB3rkKhrGfgTEJEondm
+ 0EQFYzqOcz15x25KNjQF+f51QwEdrpBRAx5CbGhrQNM1p+AzrOx8aFIrCQrbAdzbFT4d
+ jXWA==
+X-Gm-Message-State: APjAAAUjcUSHUhSD1x7YnSpv206XdPiGSybN9Xuo8DNGnHvl+1Q7vq+J
+ CF72coZxvXE/AWRf4c15X0un3EpyuhlwzyBIqfC8GmkFnCgMO3cY8DfvCgBfDFi2gUgxUO10z+S
+ pdo9D+wmvHOwGlcvyizdfcb05InAnqwD976g=
+X-Received: by 2002:a5d:6811:: with SMTP id w17mr31804399wru.181.1568306967677; 
+ Thu, 12 Sep 2019 09:49:27 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxrL3VP6sAEDt0Bo0M7LVEBolaalUXmcE8h3jDG603x7fhGBgsss6KO8uKCmP0qnEKPpoX5oQ==
+X-Received: by 2002:a5d:6811:: with SMTP id w17mr31804366wru.181.1568306967374; 
+ Thu, 12 Sep 2019 09:49:27 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:3166:d768:e1a7:aab8?
+ ([2001:b07:6468:f312:3166:d768:e1a7:aab8])
+ by smtp.gmail.com with ESMTPSA id h17sm807220wme.6.2019.09.12.09.49.25
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Thu, 12 Sep 2019 09:49:26 -0700 (PDT)
+Subject: Re: KASAN: slab-out-of-bounds Read in handle_vmptrld
+To: Vitaly Kuznetsov <vkuznets@redhat.com>, kvm@vger.kernel.org
+References: <000000000000a9d4f705924cff7a@google.com>
+ <87lfutei1j.fsf@vitty.brq.redhat.com>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Openpgp: preference=signencrypt
+Message-ID: <5218e70e-8a80-7c5f-277b-01d9ab70692a@redhat.com>
+Date: Thu, 12 Sep 2019 18:49:26 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190912091925.GM4023@dhcp22.suse.cz>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <87lfutei1j.fsf@vitty.brq.redhat.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_093537_747096_E69ABCA2 
-X-CRM114-Status: GOOD (  31.02  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190912_094931_180996_335DBDB9 
+X-CRM114-Status: GOOD (  20.13  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [81.17.249.8 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,126 +94,84 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- David Hildenbrand <david@redhat.com>, Matthew Wilcox <willy@infradead.org>,
- "Wang, Wei W" <wei.w.wang@intel.com>, Mel Gorman <mgorman@suse.de>,
- ying.huang@intel.com, Rik van Riel <riel@surriel.com>,
- Vlastimil Babka <vbabka@suse.cz>, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- Nitesh Narayan Lal <nitesh@redhat.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: mark.rutland@arm.com, wanpengli@tencent.com, narmstrong@baylibre.com,
+ catalin.marinas@arm.com, will.deacon@arm.com, rkrcmar@redhat.com,
+ hpa@zytor.com, khilman@baylibre.com, joro@8bytes.org, x86@kernel.org,
+ mingo@redhat.com, Dmitry Vyukov <dvyukov@google.com>,
+ syzbot <syzbot+46f1dd7dbbe2bfb98b10@syzkaller.appspotmail.com>,
+ devicetree@vger.kernel.org, syzkaller-bugs@googlegroups.com,
+ robh+dt@kernel.org, bp@alien8.de, linux-amlogic@lists.infradead.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, jmattson@google.com,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ USB list <linux-usb@vger.kernel.org>, linux-kernel@vger.kernel.org,
+ sean.j.christopherson@intel.com, carlo@caione.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 12, 2019 at 11:19:25AM +0200, Michal Hocko wrote:
-> On Wed 11-09-19 08:12:03, Alexander Duyck wrote:
-> > On Wed, Sep 11, 2019 at 4:36 AM Michal Hocko <mhocko@kernel.org> wrote:
-> > >
-> > > On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
-> > > [...]
-> > > > We don't put any limitations on the allocator other then that it needs to
-> > > > clean up the metadata on allocation, and that it cannot allocate a page
-> > > > that is in the process of being reported since we pulled it from the
-> > > > free_list. If the page is a "Reported" page then it decrements the
-> > > > reported_pages count for the free_area and makes sure the page doesn't
-> > > > exist in the "Boundary" array pointer value, if it does it moves the
-> > > > "Boundary" since it is pulling the page.
-> > >
-> > > This is still a non-trivial limitation on the page allocation from an
-> > > external code IMHO. I cannot give any explicit reason why an ordering on
-> > > the free list might matter (well except for page shuffling which uses it
-> > > to make physical memory pattern allocation more random) but the
-> > > architecture seems hacky and dubious to be honest. It shoulds like the
-> > > whole interface has been developed around a very particular and single
-> > > purpose optimization.
-> > 
-> > How is this any different then the code that moves a page that will
-> > likely be merged to the tail though?
+[tl;dr: there could be a /dev/usb bug only affecting KASAN
+configurations, jump to the end to skip the analysis and get to the bug
+details]
+
+On 12/09/19 15:54, Vitaly Kuznetsov wrote:
+> Hm, the bisection seems bogus but the stack points us to the following
+> piece of code:
 > 
-> I guess you are referring to the page shuffling. If that is the case
-> then this is an integral part of the allocator for a reason and it is
-> very well obvious in the code including the consequences. I do not
-> really like an idea of hiding similar constrains behind a generic
-> looking feature which is completely detached from the allocator and so
-> any future change of the allocator might subtly break it.
+>  4776)              if (kvm_vcpu_map(vcpu, gpa_to_gfn(vmptr), &map)) {
+> <skip>
+>  4783)                      return nested_vmx_failValid(vcpu,
+>  4784)                              VMXERR_VMPTRLD_INCORRECT_VMCS_REVISION_ID);
+>  4785)              }
+>  4786) 
+>  4787)              new_vmcs12 = map.hva;
+>  4788) 
+> *4789)              if (new_vmcs12->hdr.revision_id != VMCS12_REVISION ||
+>  4790)                  (new_vmcs12->hdr.shadow_vmcs &&
+>  4791)                   !nested_cpu_has_vmx_shadow_vmcs(vcpu))) {
 > 
+> the reported problem seems to be on VMCS12 region access but it's part
+> of guest memory and we successfuly managed to map it. We're definitely
+> within 1-page range. Maybe KASAN is just wrong here?
 
-It's not just that, compaction pokes into the free_area information as
-well and directly takes pages from the free list without going through
-the page allocator itself. It assumes that a free page is a free page
-and only takes the zone and migratetype into account.
+Here is the relevant part of the syzkaller repro:
 
-> > In our case the "Reported" page is likely going to be much more
-> > expensive to allocate and use then a standard page because it will be
-> > faulted back in. In such a case wouldn't it make sense for us to want
-> > to keep the pages that don't require faults ahead of those pages in
-> > the free_list so that they are more likely to be allocated?
-> 
-> OK, I was suspecting this would pop out. And this is exactly why I
-> didn't like an idea of an external code imposing a non obvious constrains
-> to the allocator. You simply cannot count with any ordering with the
-> page allocator.
+syz_kvm_setup_cpu$x86(r1, 0xffffffffffffffff,
+&(0x7f0000000000/0x18000)=nil, 0x0, 0x133, 0x0, 0x0, 0xff7d)
+r3 = syz_open_dev$usb(&(0x7f0000000080)='/dev/bus/usb/00#/00#\x00',
+0x40000fffffd, 0x200800000000042)
+mmap$IORING_OFF_SQES(&(0x7f0000007000/0x2000)=nil, 0x2000, 0x4, 0x13,
+r3, 0x10000000)
+syz_kvm_setup_cpu$x86(0xffffffffffffffff, r2,
+&(0x7f0000000000/0x18000)=nil, 0x0, 0xfefd, 0x40, 0x0, 0xfffffffffffffdd4)
+ioctl$KVM_RUN(r2, 0xae80, 0x0)
 
-Indeed not. It can be arbitrary and compaction can interfere with the
-ordering as well. While in theory that could be addressed by always
-going through an interface maintained by the page allocator, it would be
-tricky to test the virtio case in particular.
+The mmap$IORING_OFF_SQES is just a normal mmap from a device, which
+replaces the previous mapping for guest memory and in particular
+0x7f0000007000 which is the VMCS (from the C reproducer: "#define
+ADDR_VAR_VMCS 0x7000").
 
-> We used to distinguish cache hot/cold pages in the past
-> and pushed pages to the specific end of the free list but that has been
-> removed.
+The previous mapping is freed with do_munmap and then repopulated in
+usbdev_mmap with remap_pfn_range.  In KVM this means that kvm_vcpu_map
+goes through hva_to_pfn_remapped, which correctly calls get_page via
+kvm_get_pfn.  (Note that although drivers/usb/core/devio.c's usbdev_mmap
+sets VM_IO *after* calling remap_pfn_range, remap_pfn_range itself
+helpfully sets it before calling remap_p4d_range.  And anyway KVM is
+looking at vma->vm_flags under mmap_sem, which is held during mmap).
 
-That was always best effort too, not a hard guarantee. It was eventually
-removed as the cost of figuring out the ordering exceeded the benefit.
+So, KVM should be doing the right thing.  Now, the error is:
 
-> There are other potential changes like that possible. Shuffling
-> is a good recent example.
-> 
-> Anyway I am not a maintainer of this code. I would really like to hear
-> opinions from Mel and Vlastimil here (now CCed - the thread starts
-> http://lkml.kernel.org/r/20190907172225.10910.34302.stgit@localhost.localdomain.
+> Read of size 4 at addr ffff888091e10000 by task syz-executor758/10006
+> The buggy address belongs to the object at ffff888091e109c0 
+> The buggy address is located 2496 bytes to the left of
+>  8192-byte region [ffff888091e109c0, ffff888091e129c0) 
 
-I worry that poking too much into the internal state of the allocator
-will be fragile long-term. There is the arch alloc/free hooks but they
-are typically about protections only and does not interfere with the
-internal state of the allocator. Compaction pokes in as well but once
-the page is off the free list, the page allocator no longer cares so
-again there is on interference with the internal state. If the state is
-interefered with externally, it becomes unclear what happens if things
-like page merging is deferred in a way the allocator cannot control as
-high-order allocation requests may fail for example. For THP, it would
-not matter but failed allocation reports when pages are on the freelist,
-but unsuitable for allocation because of the reported state, would be
-hard to debug. Similarly, latency issues due to a reported page being
-picked for allocation but requiring communication with the hypervisor
-will be difficult to debug and atomic allocations may fail entirely.
-Finally, if merging was broken for reported/unreported pages, it could
-be a long time before such bugs were fixed.
+And given the use of remap_pfn_range in devusb_mmap, the simplest
+explanation could be that USB expects kmalloc-8k to return 8k-aligned
+values, but this is not true anymore with KASAN.  CCing Dmitry, Greg and
+linux-usb.
 
-That's a lot of caveats to optimise communication about unused free
-pages to the allocator. I didn't read the patches particularly carefully
-but it was not clear why a best effort was not made to track free pages
-and if the metadata maintenance for that fills then do exhaustive
-searches for remaining pages. It might be difficult to stabilise that as
-the metadata may overflow again while the exhaustive search takes place.
-Much would depend on the frequency that pages are entering/leaving
-reported state.
-
--- 
-Mel Gorman
-SUSE Labs
+Paolo
 
 _______________________________________________
 linux-arm-kernel mailing list
