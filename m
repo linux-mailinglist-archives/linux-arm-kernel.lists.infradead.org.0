@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 94311B1243
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 17:35:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 724BBB1244
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 17:35:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=tTpyUbC/pG9VnoKcy5iREYzeGv937cQyVs833C9EpyI=; b=ZU79PSdQRIcAIbT8POnXCmxh1r
-	q4iHeqZPnzg4cHAGZkcF5gR/OriTiZAPqXdfohuMngojLcq0zHwNFoySdqdAervuk4wguD8vr+AUD
-	Ws4SmzRMCjzDNqoS6pPypCYvPTHVkFXInJ1g0J1FfpLi/LZmem0s8I5NCQCVWBGqMJfMh8h9fwd9y
-	kgTJKnOkXfrkD66vwCoCMoI7FXMVtx3jlwZhHrY3hG0+FlbA+06dipgy62VsaFokYWCNFdHHta/XO
-	kVoFJ1gVRdpwG2dsFr0kSzyKMJVX1uXYDDrxcceeIt73vxvlIZ4pU+DHEVjSRNPLyIcAHRx9sI9U0
-	XCBxY6rw==;
+	bh=lGrL/csT9inDA2uZsuCzXniOfJ8i7ZqSPUI6NMHzl4I=; b=WANGRJshS5pq7/ys1Doc4tskW8
+	/k5C9OF8ovObslGy/lgIriiwxCApKqZMdf4pw41Yj8xYJq1+HeX2ynWYltSPlXoM5/BQ79iPAdEFm
+	rdyG5gYwGpPjfX+wlJGmdl6m8M10++4ewtE5d4au2WVS1MFn1PXlLFG69WKxwEhXjxKVnJfWK3iCs
+	Jw3EGCI4GV9evBOSY4elnnztF4wtecrla3S/JwCKV+pY3KgzIsKurAG3Vh9WxfKtJRkeB1CkgwcjA
+	oLUM8sDq/Pcn8FU/5eKb9TmkIeK4JJ/eI8L9lLNKG5nnbKVsezsczFOiRdwOp46OpPXKjypwqXHt6
+	5laXrwpQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8R7x-0008EO-KS; Thu, 12 Sep 2019 15:35:21 +0000
+	id 1i8R8F-0001Nt-NA; Thu, 12 Sep 2019 15:35:39 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8R53-00069b-Jp
+ id 1i8R54-0006Am-Dk
  for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 15:32:23 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id DF8441A0301;
- Thu, 12 Sep 2019 17:32:19 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 258141A069F;
+ Thu, 12 Sep 2019 17:32:21 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 0ABDD1A0691;
- Thu, 12 Sep 2019 17:32:14 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 447EC1A06A2;
+ Thu, 12 Sep 2019 17:32:15 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 0A22E40326;
- Thu, 12 Sep 2019 23:32:06 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 448AF4031D;
+ Thu, 12 Sep 2019 23:32:08 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 09/15] arm64: dts: imx8qm: add lsio ss support
-Date: Thu, 12 Sep 2019 23:30:46 +0800
-Message-Id: <1568302252-28066-10-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH V3 10/15] arm64: dts: imx8qm: add conn ss support
+Date: Thu, 12 Sep 2019 23:30:47 +0800
+Message-Id: <1568302252-28066-11-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
 References: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_083221_883371_D1DAA03D 
-X-CRM114-Status: UNSURE (   9.73  )
+X-CRM114-CacheID: sfid-20190912_083222_648112_03AADBE3 
+X-CRM114-Status: UNSURE (   9.68  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,9 +79,10 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The LSIO SS of MX8QM is exactly the same as MX8QXP. So we can fully
-reuse the exist LSIO SS dtsi. Add <soc>-ss-lsio.dtsi with compatible
-string updated according to imx8-ss-lsio.dtsi.
+The CONN SS of MX8QM is mostly the same as MX8QXP except it has one more
+USB HSIC module support. So we can fully reuse the exist CONN SS dtsi.
+Add <soc>-ss-conn.dtsi with compatible string updated according to
+imx8-ss-conn.dtsi.
 
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
@@ -98,76 +99,36 @@ v2->v3:
 v1->v2:
  * change to the new two cell scu clk binding
 ---
- arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi | 61 +++++++++++++++++++++++
- 1 file changed, 61 insertions(+)
- create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi
+ arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi b/arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi
+diff --git a/arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi b/arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi
 new file mode 100644
-index 0000000..6fe3906
+index 0000000..00ae820
 --- /dev/null
-+++ b/arch/arm64/boot/dts/freescale/imx8qm-ss-lsio.dtsi
-@@ -0,0 +1,61 @@
++++ b/arch/arm64/boot/dts/freescale/imx8qm-ss-conn.dtsi
+@@ -0,0 +1,21 @@
 +// SPDX-License-Identifier: GPL-2.0+
 +/*
 + * Copyright 2019 NXP
 + *	Dong Aisheng <aisheng.dong@nxp.com>
 + */
 +
-+&lsio_gpio0 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
++&fec1 {
++	compatible = "fsl,imx8qm-fec", "fsl,imx6sx-fec";
 +};
 +
-+&lsio_gpio1 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
++&fec2 {
++	compatible = "fsl,imx8qm-fec", "fsl,imx6sx-fec";
 +};
 +
-+&lsio_gpio2 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
++&usdhc1 {
++	compatible = "fsl,imx8qm-usdhc", "fsl,imx7d-usdhc";
 +};
 +
-+&lsio_gpio3 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
-+};
-+
-+&lsio_gpio4 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
-+};
-+
-+&lsio_gpio5 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
-+};
-+
-+&lsio_gpio6 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
-+};
-+
-+&lsio_gpio7 {
-+	compatible = "fsl,imx8qm-gpio", "fsl,imx35-gpio";
-+};
-+
-+&lsio_mu0 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
-+};
-+
-+&lsio_mu1 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
-+};
-+
-+&lsio_mu2 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
-+};
-+
-+&lsio_mu3 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
-+};
-+
-+&lsio_mu4 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
-+};
-+
-+&lsio_mu13 {
-+	compatible = "fsl,imx8qm-mu", "fsl,imx6sx-mu";
++&usdhc2 {
++	compatible = "fsl,imx8qm-usdhc", "fsl,imx7d-usdhc";
 +};
 -- 
 2.7.4
