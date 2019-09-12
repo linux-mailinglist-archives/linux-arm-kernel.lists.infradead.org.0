@@ -2,86 +2,146 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C984B0E29
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 13:42:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 693EEB0E78
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 14:03:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=mFgNZYRjFu3CoZwYTxrxQwarBFT6GRc04NDgKgvKVNM=; b=K5ckh/Nv7LH5MU
-	SspHk0Fu5lbSbs8vlp22XImyqCXT+RurgCZIQ5qAR3BhaELdU+ywvbYRA8azYernO6TduLaAJ3euQ
-	da+oR9BXxH9FYI1TcO8ijdyT9qYw/CXiwJbwPMGhff20oxYMCBSiOyygtVsbf+xGC3QGVbOnBMYIq
-	qlX8UhVAJInjeakM+Y9mPZ3K3SKCO6YD3DYmymoxL5KBOcrV6neHigPZfj/Jdpz26IhxJZfz1g/6s
-	SedMMbTO46JJ8zaR0/WTAvfIiYk73i5HYh837WSsZGLFNjZi8RQLw64rR6MC2KbVOckHD7qMQVeAI
-	uGowAbO9KDAHtriZDXtw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	Message-Id:In-Reply-To:MIME-Version:Date:From:References:To:Subject:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=nR8q0Qd12gnKlmow4ZknfcVnHWigySPRqRgcqjw4keY=; b=P1S2k2oY4V3wb6ZHi+MYniKhY
+	VsojHuXb7gB9A7GMXPC70aU57HGRD7WrM0Nuso4I066VWcke9q6tBsreoh4geXkEmN+oXbMcBPcXf
+	937RPp0PBErIlH2LHiMBxa6D5GrXbLhReEkvGLd7nXCwxyhOJhcApUZF+5uf5Pn0YDLFoWl6O8JFU
+	3IoDl+ajt3jv1xczwp5Ct2RV1LLFr/uvpk0zRjNNQR74bwflgW9ydA3vJLj4UX6WN84NCUaKd92HT
+	iQolHi7AWvIWzeTERGcug1MSsknPozCGp1CFpORo8oDusxD+2JZn+ACKMSBVqbKKRN3CCjAWpbBmB
+	+WhHeabuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8NUo-0007hW-AA; Thu, 12 Sep 2019 11:42:42 +0000
-Received: from fllv0015.ext.ti.com ([198.47.19.141])
+	id 1i8NoS-0006in-De; Thu, 12 Sep 2019 12:03:00 +0000
+Received: from mx0b-001b2d01.pphosted.com ([148.163.158.5]
+ helo=mx0a-001b2d01.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8NS1-0004LK-4Q
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 11:39:50 +0000
-Received: from lelv0265.itg.ti.com ([10.180.67.224])
- by fllv0015.ext.ti.com (8.15.2/8.15.2) with ESMTP id x8CBdkfr116608;
- Thu, 12 Sep 2019 06:39:46 -0500
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=ti.com;
- s=ti-com-17Q1; t=1568288386;
- bh=YLleoDeFe+/39hjFYAaiNlP+EU5/AACmJxmEmj1xr2o=;
- h=From:To:CC:Subject:Date:In-Reply-To:References;
- b=UKfYta98/Cb+jehL2iHDW+IaIaAYBTcg4S3XxUVBitRtIWUsnJQnZAArtgGPcKQO+
- ogYND/kzWQKNLTTVX/Z9pGz8K1AwX0DfdvS+YZtE55gzMIg8ztgscClffOxcasqJt3
- HQ+iNT6ltMRrf2zVNxm/PMfXKqZ8J02UIVkBW+2g=
-Received: from DFLE114.ent.ti.com (dfle114.ent.ti.com [10.64.6.35])
- by lelv0265.itg.ti.com (8.15.2/8.15.2) with ESMTPS id x8CBdkwk050898
- (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=FAIL);
- Thu, 12 Sep 2019 06:39:46 -0500
-Received: from DFLE105.ent.ti.com (10.64.6.26) by DFLE114.ent.ti.com
- (10.64.6.35) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5; Thu, 12
- Sep 2019 06:39:46 -0500
-Received: from fllv0040.itg.ti.com (10.64.41.20) by DFLE105.ent.ti.com
- (10.64.6.26) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256_P256) id 15.1.1713.5 via
- Frontend Transport; Thu, 12 Sep 2019 06:39:46 -0500
-Received: from sokoban.bb.dnainternet.fi (ileax41-snat.itg.ti.com
- [10.172.224.153])
- by fllv0040.itg.ti.com (8.15.2/8.15.2) with ESMTP id x8CBdKd1120606;
- Thu, 12 Sep 2019 06:39:44 -0500
-From: Tero Kristo <t-kristo@ti.com>
-To: <linux-omap@vger.kernel.org>, <ssantosh@kernel.org>,
- <p.zabel@pengutronix.de>, <robh+dt@kernel.org>, <tony@atomide.com>,
- <s-anna@ti.com>
-Subject: [PATCHv5 10/10] ARM: OMAP2+: pdata-quirks: add PRM data for reset
- support
-Date: Thu, 12 Sep 2019 14:39:16 +0300
-Message-ID: <20190912113916.20093-11-t-kristo@ti.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190912113916.20093-1-t-kristo@ti.com>
-References: <20190912113916.20093-1-t-kristo@ti.com>
+ id 1i8NoF-0006iD-6X
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 12:02:48 +0000
+Received: from pps.filterd (m0098413.ppops.net [127.0.0.1])
+ by mx0b-001b2d01.pphosted.com (8.16.0.27/8.16.0.27) with SMTP id
+ x8CBwb87004438
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 12 Sep 2019 08:02:43 -0400
+Received: from e06smtp04.uk.ibm.com (e06smtp04.uk.ibm.com [195.75.94.100])
+ by mx0b-001b2d01.pphosted.com with ESMTP id 2uymbh37km-1
+ (version=TLSv1.2 cipher=AES256-GCM-SHA384 bits=256 verify=NOT)
+ for <linux-arm-kernel@lists.infradead.org>; Thu, 12 Sep 2019 08:02:42 -0400
+Received: from localhost
+ by e06smtp04.uk.ibm.com with IBM ESMTP SMTP Gateway: Authorized Use Only!
+ Violators will be prosecuted
+ for <linux-arm-kernel@lists.infradead.org> from <frankja@linux.ibm.com>;
+ Thu, 12 Sep 2019 13:02:40 +0100
+Received: from b06avi18878370.portsmouth.uk.ibm.com (9.149.26.194)
+ by e06smtp04.uk.ibm.com (192.168.101.134) with IBM ESMTP SMTP Gateway:
+ Authorized Use Only! Violators will be prosecuted; 
+ (version=TLSv1/SSLv3 cipher=AES256-GCM-SHA384 bits=256/256)
+ Thu, 12 Sep 2019 13:02:34 +0100
+Received: from d06av26.portsmouth.uk.ibm.com (d06av26.portsmouth.uk.ibm.com
+ [9.149.105.62])
+ by b06avi18878370.portsmouth.uk.ibm.com (8.14.9/8.14.9/NCO v10.0) with ESMTP
+ id x8CC2XSN38469942
+ (version=TLSv1/SSLv3 cipher=DHE-RSA-AES256-GCM-SHA384 bits=256 verify=OK);
+ Thu, 12 Sep 2019 12:02:33 GMT
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id B8AB4AE9DF;
+ Thu, 12 Sep 2019 11:36:50 +0000 (GMT)
+Received: from d06av26.portsmouth.uk.ibm.com (unknown [127.0.0.1])
+ by IMSVA (Postfix) with ESMTP id 5C3C7AE9D8;
+ Thu, 12 Sep 2019 11:36:49 +0000 (GMT)
+Received: from localhost.localdomain (unknown [9.145.92.148])
+ by d06av26.portsmouth.uk.ibm.com (Postfix) with ESMTP;
+ Thu, 12 Sep 2019 11:36:49 +0000 (GMT)
+Subject: Re: [PATCH 05/13] KVM: Refactor error handling for setting memory
+ region
+To: Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?=
+ <rkrcmar@redhat.com>, Marc Zyngier <marc.zyngier@arm.com>
+References: <20190911185038.24341-1-sean.j.christopherson@intel.com>
+ <20190911185038.24341-6-sean.j.christopherson@intel.com>
+From: Janosch Frank <frankja@linux.ibm.com>
+Openpgp: preference=signencrypt
+Autocrypt: addr=frankja@linux.ibm.com; prefer-encrypt=mutual; keydata=
+ mQINBFubpD4BEADX0uhkRhkj2AVn7kI4IuPY3A8xKat0ihuPDXbynUC77mNox7yvK3X5QBO6
+ qLqYr+qrG3buymJJRD9xkp4mqgasHdB5WR9MhXWKH08EvtvAMkEJLnqxgbqf8td3pCQ2cEpv
+ 15mH49iKSmlTcJ+PvJpGZcq/jE42u9/0YFHhozm8GfQdb9SOI/wBSsOqcXcLTUeAvbdqSBZe
+ zuMRBivJQQI1esD9HuADmxdE7c4AeMlap9MvxvUtWk4ZJ/1Z3swMVCGzZb2Xg/9jZpLsyQzb
+ lDbbTlEeyBACeED7DYLZI3d0SFKeJZ1SUyMmSOcr9zeSh4S4h4w8xgDDGmeDVygBQZa1HaoL
+ Esb8Y4avOYIgYDhgkCh0nol7XQ5i/yKLtnNThubAcxNyryw1xSstnKlxPRoxtqTsxMAiSekk
+ 0m3WJwvwd1s878HrQNK0orWd8BzzlSswzjNfQYLF466JOjHPWFOok9pzRs+ucrs6MUwDJj0S
+ cITWU9Rxb04XyigY4XmZ8dywaxwi2ZVTEg+MD+sPmRrTw+5F+sU83cUstuymF3w1GmyofgsU
+ Z+/ldjToHnq21MNa1wx0lCEipCCyE/8K9B9bg9pUwy5lfx7yORP3JuAUfCYb8DVSHWBPHKNj
+ HTOLb2g2UT65AjZEQE95U2AY9iYm5usMqaWD39pAHfhC09/7NQARAQABtCVKYW5vc2NoIEZy
+ YW5rIDxmcmFua2phQGxpbnV4LmlibS5jb20+iQI3BBMBCAAhBQJbm6Q+AhsjBQsJCAcCBhUI
+ CQoLAgQWAgMBAh4BAheAAAoJEONU5rjiOLn4p9gQALjkdj5euJVI2nNT3/IAxAhQSmRhPEt0
+ AmnCYnuTcHRWPujNr5kqgtyER9+EMQ0ZkX44JU2q7OWxTdSNSAN/5Z7qmOR9JySvDOf4d3mS
+ bMB5zxL9d8SbnSs1uW96H9ZBTlTQnmLfsiM9TetAjSrR8nUmjGhe2YUhJLR1v1LguME+YseT
+ eXnLzIzqqpu311/eYiiIGcmaOjPCE+vFjcXL5oLnGUE73qSYiujwhfPCCUK0850o1fUAYq5p
+ CNBCoKT4OddZR+0itKc/cT6NwEDwdokeg0+rAhxb4Rv5oFO70lziBplEjOxu3dqgIKbHbjza
+ EXTb+mr7VI9O4tTdqrwJo2q9zLqqOfDBi7NDvZFLzaCewhbdEpDYVu6/WxprAY94hY3F4trT
+ rQMHJKQENtF6ZTQc9fcT5I3gAmP+OEvDE5hcTALpWm6Z6SzxO7gEYCnF+qGXqp8sJVrweMub
+ UscyLqHoqdZC2UG4LQ1OJ97nzDpIRe0g6oJ9ZIYHKmfw5jjwH6rASTld5MFWajWdNsqK15k/
+ RZnHAGICKVIBOBsq26m4EsBlfCdt3b/6emuBjUXR1pyjHMz2awWzCq6/6OWs5eANZ0sdosNq
+ dq2v0ULYTazJz2rlCXV89qRa7ukkNwdBSZNEwsD4eEMicj1LSrqWDZMAALw50L4jxaMD7lPL
+ jJbauQINBFubpD4BEADAcUTRqXF/aY53OSH7IwIK9lFKxIm0IoFkOEh7LMfp7FGzaP7ANrZd
+ cIzhZi38xyOkcaFY+npGEWvko7rlIAn0JpBO4x3hfhmhBD/WSY8LQIFQNNjEm3vzrMo7b9Jb
+ JAqQxfbURY3Dql3GUzeWTG9uaJ00u+EEPlY8zcVShDltIl5PLih20e8xgTnNzx5c110lQSu0
+ iZv2lAE6DM+2bJQTsMSYiwKlwTuv9LI9Chnoo6+tsN55NqyMxYqJgElk3VzlTXSr3+rtSCwf
+ tq2cinETbzxc1XuhIX6pu/aCGnNfuEkM34b7G1D6CPzDMqokNFbyoO6DQ1+fW6c5gctXg/lZ
+ 602iEl4C4rgcr3+EpfoPUWzKeM8JXv5Kpq4YDxhvbitr8Dm8gr38+UKFZKlWLlwhQ56r/zAU
+ v6LIsm11GmFs2/cmgD1bqBTNHHcTWwWtRTLgmnqJbVisMJuYJt4KNPqphTWsPY8SEtbufIlY
+ HXOJ2lqUzOReTrie2u0qcSvGAbSfec9apTFl2Xko/ddqPcZMpKhBiXmY8tJzSPk3+G4tqur4
+ 6TYAm5ouitJsgAR61Cu7s+PNuq/pTLDhK+6/Njmc94NGBcRA4qTuysEGE79vYWP2oIAU4Fv6
+ gqaWHZ4MEI2XTqH8wiwzPdCQPYsSE0fXWiYu7ObeErT6iLSTZGx4rQARAQABiQIfBBgBCAAJ
+ BQJbm6Q+AhsMAAoJEONU5rjiOLn4DDEP/RuyckW65SZcPG4cMfNgWxZF8rVjeVl/9PBfy01K
+ 8R0hajU40bWtXSMiby7j0/dMjz99jN6L+AJHJvrLz4qYRzn2Ys843W+RfXj62Zde4YNBE5SL
+ jJweRCbMWKaJLj6499fctxTyeb9+AMLQS4yRSwHuAZLmAb5AyCW1gBcTWZb8ON5BmWnRqeGm
+ IgC1EvCnHy++aBnHTn0m+zV89BhTLTUal35tcjUFwluBY39R2ux/HNlBO1GY3Z+WYXhBvq7q
+ katThLjaQSmnOrMhzqYmdShP1leFTVbzXUUIYv/GbynO/YrL2gaQpaP1bEUEi8lUAfXJbEWG
+ dnHFkciryi092E8/9j89DJg4mmZqOau7TtUxjRMlBcIliXkzSLUk+QvD4LK1kWievJse4mte
+ FBdkWHfP4BH/+8DxapRcG1UAheSnSRQ5LiO50annOB7oXF+vgKIaie2TBfZxQNGAs3RQ+bga
+ DchCqFm5adiSP5+OT4NjkKUeGpBe/aRyQSle/RropTgCi85pje/juYEn2P9UAgkfBJrOHvQ9
+ Z+2Sva8FRd61NJLkCJ4LFumRn9wQlX2icFbi8UDV3do0hXJRRYTWCxrHscMhkrFWLhYiPF4i
+ phX7UNdOWBQ90qpHyAxHmDazdo27gEjfvsgYMdveKknEOTEb5phwxWgg7BcIDoJf9UMC
+Date: Thu, 12 Sep 2019 13:36:48 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.7.0
 MIME-Version: 1.0
-X-EXCLAIMER-MD-CONFIG: e1e8a2fd-e40a-4ac6-ac9b-f7e9cc9ee180
+In-Reply-To: <20190911185038.24341-6-sean.j.christopherson@intel.com>
+X-TM-AS-GCONF: 00
+x-cbid: 19091212-0016-0000-0000-000002AA674A
+X-IBM-AV-DETECTION: SAVI=unused REMOTE=unused XFE=unused
+x-cbparentid: 19091212-0017-0000-0000-0000330AF860
+Message-Id: <9773a72d-2a58-fbb1-ed2b-82af0bb5f49a@linux.ibm.com>
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:, ,
+ definitions=2019-09-12_05:, , signatures=0
+X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
+ priorityscore=1501
+ malwarescore=0 suspectscore=2 phishscore=0 bulkscore=0 spamscore=0
+ clxscore=1015 lowpriorityscore=0 mlxscore=0 impostorscore=0
+ mlxlogscore=939 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1906280000 definitions=main-1909120129
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_043949_279341_5E20C7E2 
-X-CRM114-Status: GOOD (  10.55  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190912_050247_366175_71A7EB2E 
+X-CRM114-Status: GOOD (  31.31  )
+X-Spam-Score: -0.7 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.7 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [198.47.19.141 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [148.163.158.5 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [148.163.158.5 listed in wl.mailspike.net]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -93,65 +153,228 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Julien Thierry <julien.thierry@arm.com>, Wanpeng Li <wanpengli@tencent.com>,
+ kvm@vger.kernel.org, David Hildenbrand <david@redhat.com>,
+ Joerg Roedel <joro@8bytes.org>, Cornelia Huck <cohuck@redhat.com>,
+ linux-mips@vger.kernel.org, kvm-ppc@vger.kernel.org,
+ linux-kernel@vger.kernel.org, James Morse <james.morse@arm.com>,
+ linux-arm-kernel@lists.infradead.org, Vitaly Kuznetsov <vkuznets@redhat.com>,
+ kvmarm@lists.cs.columbia.edu, Suzuki K Pouloze <suzuki.poulose@arm.com>,
+ Jim Mattson <jmattson@google.com>
+Content-Type: multipart/mixed; boundary="===============6498452572134257593=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The parent clockdomain for reset must be in force wakeup mode, otherwise
-the reset may never complete. Add pdata quirks for this purpose for PRM
-driver.
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--===============6498452572134257593==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+ protocol="application/pgp-signature";
+ boundary="Bm0JecVlrjrc0FKCyusctXhutbwL6ZTpe"
 
-Signed-off-by: Tero Kristo <t-kristo@ti.com>
----
- arch/arm/mach-omap2/pdata-quirks.c | 12 ++++++++++++
- 1 file changed, 12 insertions(+)
+This is an OpenPGP/MIME signed message (RFC 4880 and 3156)
+--Bm0JecVlrjrc0FKCyusctXhutbwL6ZTpe
+Content-Type: multipart/mixed; boundary="6J8eeynfSebyZsyGavbEUWKxUSMvfibQv";
+ protected-headers="v1"
+From: Janosch Frank <frankja@linux.ibm.com>
+To: Sean Christopherson <sean.j.christopherson@intel.com>,
+ James Hogan <jhogan@kernel.org>, Paul Mackerras <paulus@ozlabs.org>,
+ Christian Borntraeger <borntraeger@de.ibm.com>,
+ Paolo Bonzini <pbonzini@redhat.com>, =?UTF-8?B?UmFkaW0gS3LEjW3DocWZ?=
+ <rkrcmar@redhat.com>, Marc Zyngier <marc.zyngier@arm.com>
+Cc: David Hildenbrand <david@redhat.com>, Cornelia Huck <cohuck@redhat.com>,
+ Vitaly Kuznetsov <vkuznets@redhat.com>, Wanpeng Li <wanpengli@tencent.com>,
+ Jim Mattson <jmattson@google.com>, Joerg Roedel <joro@8bytes.org>,
+ James Morse <james.morse@arm.com>, Julien Thierry <julien.thierry@arm.com>,
+ Suzuki K Pouloze <suzuki.poulose@arm.com>, linux-mips@vger.kernel.org,
+ kvm-ppc@vger.kernel.org, kvm@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org, kvmarm@lists.cs.columbia.edu,
+ linux-kernel@vger.kernel.org
+Message-ID: <9773a72d-2a58-fbb1-ed2b-82af0bb5f49a@linux.ibm.com>
+Subject: Re: [PATCH 05/13] KVM: Refactor error handling for setting memory
+ region
+References: <20190911185038.24341-1-sean.j.christopherson@intel.com>
+ <20190911185038.24341-6-sean.j.christopherson@intel.com>
+In-Reply-To: <20190911185038.24341-6-sean.j.christopherson@intel.com>
 
-diff --git a/arch/arm/mach-omap2/pdata-quirks.c b/arch/arm/mach-omap2/pdata-quirks.c
-index 6c6f8fce854e..4730f8c0cb0e 100644
---- a/arch/arm/mach-omap2/pdata-quirks.c
-+++ b/arch/arm/mach-omap2/pdata-quirks.c
-@@ -25,6 +25,7 @@
- #include <linux/platform_data/ti-sysc.h>
- #include <linux/platform_data/wkup_m3.h>
- #include <linux/platform_data/asoc-ti-mcbsp.h>
-+#include <linux/platform_data/ti-prm.h>
- 
- #include "clockdomain.h"
- #include "common.h"
-@@ -565,6 +566,12 @@ void omap_pcs_legacy_init(int irq, void (*rearm)(void))
- 	pcs_pdata.rearm = rearm;
- }
- 
-+static struct ti_prm_platform_data ti_prm_pdata = {
-+	.clkdm_deny_idle = clkdm_deny_idle,
-+	.clkdm_allow_idle = clkdm_allow_idle,
-+	.clkdm_lookup = clkdm_lookup,
-+};
-+
- /*
-  * GPIOs for TWL are initialized by the I2C bus and need custom
-  * handing until DSS has device tree bindings.
-@@ -664,6 +671,11 @@ static struct of_dev_auxdata omap_auxdata_lookup[] = {
- 	/* Common auxdata */
- 	OF_DEV_AUXDATA("ti,sysc", 0, NULL, &ti_sysc_pdata),
- 	OF_DEV_AUXDATA("pinctrl-single", 0, NULL, &pcs_pdata),
-+	OF_DEV_AUXDATA("ti,omap4-prm-inst", 0, NULL, &ti_prm_pdata),
-+	OF_DEV_AUXDATA("ti,omap5-prm-inst", 0, NULL, &ti_prm_pdata),
-+	OF_DEV_AUXDATA("ti,dra7-prm-inst", 0, NULL, &ti_prm_pdata),
-+	OF_DEV_AUXDATA("ti,am3-prm-inst", 0, NULL, &ti_prm_pdata),
-+	OF_DEV_AUXDATA("ti,am4-prm-inst", 0, NULL, &ti_prm_pdata),
- 	{ /* sentinel */ },
- };
- 
--- 
-2.17.1
+--6J8eeynfSebyZsyGavbEUWKxUSMvfibQv
+Content-Type: text/plain; charset=utf-8
+Content-Language: en-US
+Content-Transfer-Encoding: quoted-printable
 
---
-Texas Instruments Finland Oy, Porkkalankatu 22, 00180 Helsinki. Y-tunnus/Business ID: 0615521-4. Kotipaikka/Domicile: Helsinki
+On 9/11/19 8:50 PM, Sean Christopherson wrote:
+> Replace a big pile o' gotos with returns to make it more obvious what
+> error code is being returned, and to prepare for refactoring the
+> functional, i.e. post-checks, portion of __kvm_set_memory_region().
+>=20
+> Signed-off-by: Sean Christopherson <sean.j.christopherson@intel.com>
+
+Definitely necessary
+Reviewed-by: Janosch Frank <frankja@linux.ibm.com>
+
+> ---
+>  virt/kvm/kvm_main.c | 40 ++++++++++++++++++----------------------
+>  1 file changed, 18 insertions(+), 22 deletions(-)
+>=20
+> diff --git a/virt/kvm/kvm_main.c b/virt/kvm/kvm_main.c
+> index ea8f2f37096f..8306ce3345a6 100644
+> --- a/virt/kvm/kvm_main.c
+> +++ b/virt/kvm/kvm_main.c
+> @@ -929,34 +929,33 @@ int __kvm_set_memory_region(struct kvm *kvm,
+> =20
+>  	r =3D check_memory_region_flags(mem);
+>  	if (r)
+> -		goto out;
+> +		return r;
+> =20
+> -	r =3D -EINVAL;
+>  	as_id =3D mem->slot >> 16;
+>  	id =3D (u16)mem->slot;
+> =20
+>  	/* General sanity checks */
+>  	if (mem->memory_size & (PAGE_SIZE - 1))
+> -		goto out;
+> +		return -EINVAL;
+>  	if (mem->guest_phys_addr & (PAGE_SIZE - 1))
+> -		goto out;
+> +		return -EINVAL;
+>  	/* We can read the guest memory with __xxx_user() later on. */
+>  	if ((id < KVM_USER_MEM_SLOTS) &&
+>  	    ((mem->userspace_addr & (PAGE_SIZE - 1)) ||
+>  	     !access_ok((void __user *)(unsigned long)mem->userspace_addr,
+>  			mem->memory_size)))
+> -		goto out;
+> +		return -EINVAL;
+>  	if (as_id >=3D KVM_ADDRESS_SPACE_NUM || id >=3D KVM_MEM_SLOTS_NUM)
+> -		goto out;
+> +		return -EINVAL;
+>  	if (mem->guest_phys_addr + mem->memory_size < mem->guest_phys_addr)
+> -		goto out;
+> +		return -EINVAL;
+> =20
+>  	slot =3D id_to_memslot(__kvm_memslots(kvm, as_id), id);
+>  	base_gfn =3D mem->guest_phys_addr >> PAGE_SHIFT;
+>  	npages =3D mem->memory_size >> PAGE_SHIFT;
+> =20
+>  	if (npages > KVM_MEM_MAX_NR_PAGES)
+> -		goto out;
+> +		return -EINVAL;
+> =20
+>  	new =3D old =3D *slot;
+> =20
+> @@ -973,20 +972,18 @@ int __kvm_set_memory_region(struct kvm *kvm,
+>  			if ((new.userspace_addr !=3D old.userspace_addr) ||
+>  			    (npages !=3D old.npages) ||
+>  			    ((new.flags ^ old.flags) & KVM_MEM_READONLY))
+> -				goto out;
+> +				return -EINVAL;
+> =20
+>  			if (base_gfn !=3D old.base_gfn)
+>  				change =3D KVM_MR_MOVE;
+>  			else if (new.flags !=3D old.flags)
+>  				change =3D KVM_MR_FLAGS_ONLY;
+> -			else { /* Nothing to change. */
+> -				r =3D 0;
+> -				goto out;
+> -			}
+> +			else /* Nothing to change. */
+> +				return 0;
+>  		}
+>  	} else {
+>  		if (!old.npages)
+> -			goto out;
+> +			return -EINVAL;
+> =20
+>  		change =3D KVM_MR_DELETE;
+>  		new.base_gfn =3D 0;
+> @@ -995,29 +992,29 @@ int __kvm_set_memory_region(struct kvm *kvm,
+> =20
+>  	if ((change =3D=3D KVM_MR_CREATE) || (change =3D=3D KVM_MR_MOVE)) {
+>  		/* Check for overlaps */
+> -		r =3D -EEXIST;
+>  		kvm_for_each_memslot(slot, __kvm_memslots(kvm, as_id)) {
+>  			if (slot->id =3D=3D id)
+>  				continue;
+>  			if (!((base_gfn + npages <=3D slot->base_gfn) ||
+>  			      (base_gfn >=3D slot->base_gfn + slot->npages)))
+> -				goto out;
+> +				return -EEXIST;
+>  		}
+>  	}
+> =20
+> -	r =3D -ENOMEM;
+> -
+>  	/* Allocate/free page dirty bitmap as needed */
+>  	if (!(new.flags & KVM_MEM_LOG_DIRTY_PAGES))
+>  		new.dirty_bitmap =3D NULL;
+>  	else if (!new.dirty_bitmap) {
+> -		if (kvm_create_dirty_bitmap(&new) < 0)
+> -			goto out;
+> +		r =3D kvm_create_dirty_bitmap(&new);
+> +		if (r)
+> +			return r;
+>  	}
+> =20
+>  	slots =3D kvzalloc(sizeof(struct kvm_memslots), GFP_KERNEL_ACCOUNT);
+> -	if (!slots)
+> +	if (!slots) {
+> +		r =3D -ENOMEM;
+>  		goto out_bitmap;
+> +	}
+>  	memcpy(slots, __kvm_memslots(kvm, as_id), sizeof(struct kvm_memslots)=
+);
+> =20
+>  	if ((change =3D=3D KVM_MR_DELETE) || (change =3D=3D KVM_MR_MOVE)) {
+> @@ -1068,7 +1065,6 @@ int __kvm_set_memory_region(struct kvm *kvm,
+>  out_bitmap:
+>  	if (new.dirty_bitmap && !old.dirty_bitmap)
+>  		kvm_destroy_dirty_bitmap(&new);
+> -out:
+>  	return r;
+>  }
+>  EXPORT_SYMBOL_GPL(__kvm_set_memory_region);
+>=20
+
+
+
+--6J8eeynfSebyZsyGavbEUWKxUSMvfibQv--
+
+--Bm0JecVlrjrc0FKCyusctXhutbwL6ZTpe
+Content-Type: application/pgp-signature; name="signature.asc"
+Content-Description: OpenPGP digital signature
+Content-Disposition: attachment; filename="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEEwGNS88vfc9+v45Yq41TmuOI4ufgFAl16LdAACgkQ41TmuOI4
+ufiqdRAAk7Fq5LoAJLqJFxnCihIQRlcl8vo542WY/o9SIjSW82ULb9ja3jx/IZOo
+zXJt4+l9ZwKB3cwu3Z9pkvcu+D7PgbVSHyCAraimR8rk/TznU4esmSGNZX//BmaX
+AfSdajjNFNRXP+HsOlR0OVsvX6JBWQqfikSvqUv+GGzhOOB5TT7QIlNGTUFJhTuj
+DWsP4KnnRlxI8a6Tz0mXfcJLDABMu2Ypl8IjtEkAS57byfjVuy1fP3/WtiWW8QST
+2BeoiY5FQH/syqW0oXYO6Ov2rlS2gKMPwaL5nQwuHrOxd+A1qZv9rX7NU1P3+eZq
++Xutlm/mQHajvO6FfiuUf2pG/YuwfCyhX/ENMcmohw5TO1sdZDcY/BSHop0UYv+F
+8RkUxxstxRot67kTQvjZ1p60Tz/SYmxszldFM2noNPjzitbwUoiHrLl9Ti1MeMJ3
+QXb1ZCuTA8/F138tNGVL52JIOrsbIqvdLoc1/4qxJPLYbHzF/HMSqJ0nHl8tFa5Y
+D9N8xdr1pdQoHKNVLDVI8b5Jt5yMaeN4WrBqOFxTVme6XCxGu2eNRxyNWZbA2+Z3
+nDkoU2HaEDH3QbH2LuZy9wDTHlPb1dnO3XatbDqCf32/gsChlKjuEcKOcNnBVntM
+Izb7sxZStgMuHCrkgWweUjFkyR93+8JboW1iJKcFYtR1FWfffyU=
+=pPrb
+-----END PGP SIGNATURE-----
+
+--Bm0JecVlrjrc0FKCyusctXhutbwL6ZTpe--
+
+
+
+--===============6498452572134257593==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============6498452572134257593==--
+
+
