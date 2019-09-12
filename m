@@ -2,57 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1E273B1575
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 22:34:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B71B7B1579
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 22:36:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=gqzYawu+PaPmKg0ZELG5FZUE7aJZ1PeeHQDJn2tj7f0=; b=XeItA2iB9FKedT
-	v2vyAOBlHuzHmbAn3W92qQhLKDiByXQnKzPOALQ1vNf3R9Gz3bIjqvKOZzHW7dYolGeUNGMAybHMD
-	dfm5PnhAzPVwLAFRq53j3REMsVb5m0741fog9NwM7V3uzSv65aun22EeSb1cXk+hnv90JbcfZlIw0
-	SMLwH89EHkP+52edqoIoCAkoeqCBVWfW+MnJ0UDEKznizQPCGz7yg8qZDO1NS018ZUXNOWPO1ZAsD
-	oOFCi/IhY9Xn+v1A/5ezX9AeWKNvqAYA4K4iCO/1hHcpEh7233YHrlHzXA7MBDy+Ay423ZAgHR47f
-	61RS8fCjI0qJPdn6mDZA==;
+	List-Owner; bh=0q7DSV37GgNa2xwInEaJAIV7eTN/dIFaZv1IScOMRHA=; b=HS8aZzL6pSQgDL
+	zLwM/sytuGde3SNGXUm3JQ72qV7osZkJ/oWLbQyTsK70ch9aS2ZKv6chRFx1hYYJ9nrSuG7LoB4Nu
+	2puagItkazVI+m0jyvv6W/SS98OsP5FZF5hrbCJePUYaFyh2K72htJatTwa4TANAnN+DZ1poG463S
+	AxMSJg5KdJZGZegeXdY3Yb695NjhO3d3Zsq5yb/cvJtUWQHCX+ZxNq7dQUkCUb/B8F+0TTrWO7O9o
+	hoaNoMopMbEwKmyP55G06jFxMXeiz78U+4ft5JtqfaYbabD2amf/saXaz+foC5n/rGpJVUSrOMsB8
+	/vDX8nH3yc2hGSlMzZ/A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8VnM-0001Tg-3a; Thu, 12 Sep 2019 20:34:24 +0000
+	id 1i8Vp7-0001id-1z; Thu, 12 Sep 2019 20:36:13 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Vm4-0001ST-2W
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 20:33:06 +0000
+ id 1i8VnU-0001fM-Tu
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 20:34:45 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 1B7142081B;
- Thu, 12 Sep 2019 20:33:02 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id 822EE2081B;
+ Thu, 12 Sep 2019 20:34:29 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568320383;
- bh=CB2XpztpavJGy3dm3AoMm+FcqVmWK1TrOXf41F5cmwg=;
+ s=default; t=1568320470;
+ bh=9zsVAQszxukXWrSERDHPeEK1oIeDsPHZ+92NCDWFApk=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=caMq8O9OoJzYXInTCWtgcByNPiOWIaps2AzQGUoA3ebFQRsv7lBeXZ/lwMjbntD1H
- ReskcFFUIqcNtmZmgQ3lVrJJJwrn62/H+099nba/6y6v27Gd2ZShStQ0aaQu/8Rb4B
- kGjSRuutTV4HzCssIjjdbgN+Pdpk7Qzg4iQ57Ko8=
-Date: Thu, 12 Sep 2019 22:33:01 +0200
+ b=eKmeCfGU2SI0KmRPr2IfM8VLEvVDZaEpn6MMiadOLQg3013o1tXlxC2LpDeWpQV0h
+ +7equ1jM/7hcEU3Zg0xrtDUXTWQFB08nas8ttZcLnFAyfr0YOKGQ3hzyUxxREnfDYp
+ 80endAJMkSLfewUaf4DV8NTpm8rVsMvuYlnGavmY=
+Date: Thu, 12 Sep 2019 22:34:27 +0200
 From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH 3/9] dt-bindings: crypto: Add DT bindings documentation
- for sun8i-ce Crypto Engine
-Message-ID: <20190912203301.is4ubixhk64dl5t7@localhost.localdomain>
-References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
- <20190906184551.17858-4-clabbe.montjoie@gmail.com>
- <20190907040116.lib532o2eqt4qnvv@flea> <20190911183158.GA8264@Red>
- <20190912093737.s6iu63sdncij2qib@localhost.localdomain>
- <CAGb2v678WGQm5PNy8GhOTpz+fYeLP3k0dnR0F00yyZpSRcA4yA@mail.gmail.com>
+To: Jernej =?utf-8?Q?=C5=A0krabec?= <jernej.skrabec@siol.net>
+Subject: Re: [PATCH 3/6] ARM: dts: sunxi: h3/h5: Add MBUS controller node
+Message-ID: <20190912203427.ajbmtm5djctpkz6p@localhost.localdomain>
+References: <20190912175132.411-1-jernej.skrabec@siol.net>
+ <20190912175132.411-4-jernej.skrabec@siol.net>
+ <20190912202057.czb6nzgssg442isi@localhost.localdomain>
+ <1679881.yZ8pMUtPNZ@jernej-laptop>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <CAGb2v678WGQm5PNy8GhOTpz+fYeLP3k0dnR0F00yyZpSRcA4yA@mail.gmail.com>
+In-Reply-To: <1679881.yZ8pMUtPNZ@jernej-laptop>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_133304_418617_5E362952 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190912_133437_474523_167C165D 
+X-CRM114-Status: GOOD (  19.97  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -81,42 +79,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>, Russell King <linux@armlinux.org.uk>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
- David Miller <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ linux-sunxi@googlegroups.com, linux-kernel@vger.kernel.org, hverkuil@xs4all.nl,
+ wens@csie.org, robh+dt@kernel.org, mchehab@kernel.org,
+ linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 12, 2019 at 09:26:27PM +0100, Chen-Yu Tsai wrote:
-> > >
-> > >   clock-names:
-> > >     items:
-> > >       - const: ahb
-> > >       - const: mod
-> > >       - const: mbus
-> >
-> > And here as well
-> >
-> > Something I missed earlier though was that we've tried to unify as
-> > much as possible the ahb / apb / axi clocks around the bus name, it
-> > would be great if you could do it.
-> 
-> I think we also want to standardize "mbus" as "dram"?
-
-Do we? The only user so far seems to be sun9i-de, while mbus has more
-users. I don't really care though, both mbus and dram are pretty
-generic to me. What makes you prefer dram over mbus?
-
-Maxime
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gVGh1LCBTZXAgMTIsIDIwMTkgYXQgMTA6Mjg6MzdQTSArMDIwMCwgSmVybmVqIMWga3JhYmVj
+IHdyb3RlOgo+IERuZSDEjWV0cnRlaywgMTIuIHNlcHRlbWJlciAyMDE5IG9iIDIyOjIwOjU3IENF
+U1QgamUgTWF4aW1lIFJpcGFyZCBuYXBpc2FsKGEpOgo+ID4gSGksCj4gPiAKPiA+IE9uIFRodSwg
+U2VwIDEyLCAyMDE5IGF0IDA3OjUxOjI5UE0gKzAyMDAsIEplcm5laiBTa3JhYmVjIHdyb3RlOgo+
+ID4gPiBCb3RoLCBIMyBhbmQgSDUsIGNvbnRhaW4gTUJVUywgd2hpY2ggaXMgdGhlIGJ1cyB1c2Vk
+IGJ5IERNQSBkZXZpY2VzIHRvCj4gPiA+IGFjY2VzcyBzeXN0ZW0gbWVtb3J5Lgo+ID4gPiAKPiA+
+ID4gTUJVUyBjb250cm9sbGVyIGlzIHJlc3BvbnNpYmxlIGZvciBhcmJpdHJhdGlvbiBiZXR3ZWVu
+IGNoYW5uZWxzIGJhc2VkCj4gPiA+IG9uIHNldCBwcmlvcml0eSBhbmQgY2FuIGRvIHNvbWUgb3Ro
+ZXIgdGhpbmdzIGFzIHdlbGwsIGxpa2UgcmVwb3J0Cj4gPiA+IGJhbmR3aWR0aCB1c2VkLiBJdCBh
+bHNvIG1hcHMgUkFNIHJlZ2lvbiB0byBkaWZmZXJlbnQgYWRkcmVzcyB0aGFuIENQVS4KPiA+ID4g
+Cj4gPiA+IFNpZ25lZC1vZmYtYnk6IEplcm5laiBTa3JhYmVjIDxqZXJuZWouc2tyYWJlY0BzaW9s
+Lm5ldD4KPiA+ID4gLS0tCj4gPiA+IAo+ID4gPiAgYXJjaC9hcm0vYm9vdC9kdHMvc3VueGktaDMt
+aDUuZHRzaSB8IDkgKysrKysrKysrCj4gPiA+ICAxIGZpbGUgY2hhbmdlZCwgOSBpbnNlcnRpb25z
+KCspCj4gPiA+IAo+ID4gPiBkaWZmIC0tZ2l0IGEvYXJjaC9hcm0vYm9vdC9kdHMvc3VueGktaDMt
+aDUuZHRzaQo+ID4gPiBiL2FyY2gvYXJtL2Jvb3QvZHRzL3N1bnhpLWgzLWg1LmR0c2kgaW5kZXgg
+ZWJhMTkwYjNmOWRlLi5lZjFkMDM4MTI2MzYKPiA+ID4gMTAwNjQ0Cj4gPiA+IC0tLSBhL2FyY2gv
+YXJtL2Jvb3QvZHRzL3N1bnhpLWgzLWg1LmR0c2kKPiA+ID4gKysrIGIvYXJjaC9hcm0vYm9vdC9k
+dHMvc3VueGktaDMtaDUuZHRzaQo+ID4gPiBAQCAtMTA5LDYgKzEwOSw3IEBACj4gPiA+IAo+ID4g
+PiAgCQljb21wYXRpYmxlID0gInNpbXBsZS1idXMiOwo+ID4gPiAgCQkjYWRkcmVzcy1jZWxscyA9
+IDwxPjsKPiA+ID4gIAkJI3NpemUtY2VsbHMgPSA8MT47Cj4gPiA+IAo+ID4gPiArCQlkbWEtcmFu
+Z2VzOwo+ID4gPiAKPiA+ID4gIAkJcmFuZ2VzOwo+ID4gPiAgCQkKPiA+ID4gIAkJZGlzcGxheV9j
+bG9ja3M6IGNsb2NrQDEwMDAwMDAgewo+ID4gPiAKPiA+ID4gQEAgLTUzOCw2ICs1MzksMTQgQEAK
+PiA+ID4gCj4gPiA+ICAJCQl9Owo+ID4gPiAgCQkKPiA+ID4gIAkJfTsKPiA+ID4gCj4gPiA+ICsJ
+CW1idXM6IGRyYW0tY29udHJvbGxlckAxYzYyMDAwIHsKPiA+ID4gKwkJCWNvbXBhdGlibGUgPSAi
+YWxsd2lubmVyLHN1bjhpLWgzLW1idXMiOwo+ID4gPiArCQkJcmVnID0gPDB4MDFjNjIwMDAgMHgx
+MDAwPjsKPiA+ID4gKwkJCWNsb2NrcyA9IDwmY2N1IDExMz47Cj4gPiA+ICsJCQlkbWEtcmFuZ2Vz
+ID0gPDB4MDAwMDAwMDAgMHg0MDAwMDAwMCAKPiAweGMwMDAwMDAwPjsKPiA+ID4gKwkJCSNpbnRl
+cmNvbm5lY3QtY2VsbHMgPSA8MT47Cj4gPiA+ICsJCX07Cj4gPiA+ICsKPiA+IAo+ID4gSWYgdGhh
+dCdzIGVhc3kgZW5vdWdoIHRvIGFjY2VzcywgY2FuIHlvdSBhbHNvIGFkZCB0aGUgcmVmZXJlbmNl
+cyBpbgo+ID4gdGhlIGRldmljZXMgdGhhdCBhcmUgYWxyZWFkeSB0aGVyZT8gKENTSSBhbmQgREUg
+Y29tZXMgdG8gbXkgbWluZCwgYnV0Cj4gPiB0aGVyZSBtaWdodCBiZSBvdGhlcnMpLgo+IAo+IFN0
+cmFuZ2VseSwgREUyIGRvZXNuJ3QgdXNlIHRoaXMgb2Zmc2V0LiBUaGF0IHdhcyB0ZXN0ZWQgb24g
+T3JhbmdlUGkgUGx1czJFLCAKPiB3aGljaCBoYXMgMiBHaUIgb2YgUkFNIGFuZCBzdWJ0cmFjdGlu
+ZyB0aGlzIG9mZnNldCBjYXVzZXMgY29ycnVwdGVkIGltYWdlLgoKT2ssIHdlaXJkLiBCdXQgaWYg
+aXQgd2FzIHRlc3RlZCB0aGVuIGZpbmUgYnkgbWUgOikKCj4gQnV0IEkgY2FuIGFkZCB0aGlzIHBy
+b3BlcnRpZXMgdG8gQ1NJIHRvby4gSG93ZXZlciwgd291bGRuJ3QgdGhhdCBuZWVkIENTSSBEVCAK
+PiBiaW5kaW5nIGV4cGFuc2lvbiB3aXRoIHRob3NlIHByb3BlcnRpZXM/IG90aGV0d2lzZSBEVCBj
+aGVjayB3aWxsIGZhaWwuCgpPaCByaWdodCwgd2UgZGVmaW5pdGVseSBuZWVkIHRvIHVwZGF0ZSB0
+aGUgYmluZGluZyBpbmRlZWQuIFRoZSBjb2RlCnNob3VsZCBiZSBhYmxlIHRvIGNvcGUgd2l0aCBi
+b3RoIGNhc2VzIGFscmVhZHkuCgpNYXhpbWUKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFy
+bS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9t
+YWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
