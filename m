@@ -2,70 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A4911B1360
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 19:19:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BFA1EB1366
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 19:21:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=w2gL57Vufgj1a0vHwq1TS1xdFHVFRoizksnMq1tchfg=; b=BGBkr5LAhLkEkH
-	5tfc2F7ZDq88IXePXIKXVkURSsoSfCe2cKAHlIO8CD2DYVWDtbaBF2tZCYH2INLMVBX70XCKc8BF0
-	W5iYJRT83RS/Mpmr7M5/TrLM3wXwlp791apLXW4EE7NLV9gWhRzBaflmx0kZ025WeJLVYvV+k1Cci
-	fhBb6vh3TbUZRV3ERzPydHiYTm19RvH/8CwKHYteiBHbdmAN/4V7wkKEEl/61hzhiJTZXafXtfqck
-	2ufL5FTm7xb6k3F4N+RMNp6tAn++QirO2K5QdRPPzvRI92tfBxnMyYbbDu+iQRjz/LWy2BpFDoRik
-	Q4oCc8xX2q1Fylsy6HCw==;
+	List-Owner; bh=2kzjXARXfHH+3SfzB5mBiVWP3sLhnaGILwMptoZUHS4=; b=GfqwxMih66BVaC
+	3khq9q/MbAxZ1uVnXgSP2mnt8PjF2byAzvNJ9WksRe1XUdqCa2F/pEHusDaoGSfTe0TNvgjgPKgot
+	Uf1jlppp429eHn/3DNHRNZ1XpUhG42T1Y/YnEpYvorUFnoR8ZflOaEP4wWrL80riwXvjHFSddKF7Q
+	ZgCwHDW/YRvoSMC2IvoRF+JfUBRUUFKqKIEuimNqKMJ0q90WcQYZ+SSg8TtvJzDSSxTRkKIeT7Cix
+	hNWqiPqe7CS6RSZMDgAY3944Gq+gxa1Qbl//PV92b5h16H2HcV6k4Lgv0GHVLMxgn0Klc5FCOte9R
+	soqSMaciEW8Uc8N+VvEQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8SkF-0001v4-OG; Thu, 12 Sep 2019 17:18:59 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i8SmV-0003mP-HH; Thu, 12 Sep 2019 17:21:19 +0000
+Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Sju-0001t2-2D; Thu, 12 Sep 2019 17:18:39 +0000
-Received: by mail-ed1-x544.google.com with SMTP id f2so18294052edw.3;
- Thu, 12 Sep 2019 10:18:37 -0700 (PDT)
+ id 1i8SmI-0003lp-3h
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 17:21:07 +0000
+Received: by mail-ed1-x541.google.com with SMTP id f19so24613321eds.12
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Sep 2019 10:21:05 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=WjWivUqwjVpp0/8DenMs7t3E0v8OlG3jjIrBdhn++Xs=;
- b=KC4+bOGjVudLuvnx3DL2l2WnwwRzTsiAsmvfc10y5LFpHmtEv13U6rxua9GHn3hqKw
- u1s7KiYQInaepFVIQNdqGeU23W6UXqPq93jcwFoXFezvzWscXRwcG3iC3fm0eusNuxk1
- pgVUj+9XQrSozRmZno0wNh+fFgcTeJ+dq4jyHiclfKCWvTE1Eqa5E6oJ/jhwqNGsz6T6
- 19mxR9oSz48QogO+stm+dH4rLgh2j/0pRyE4PtjdyXF1IP7ftR45hP+sEW0uj5D1UiXl
- ubcTyWky0L4FD7iID1FjWl8g7GIboR+jGXn3Be1CxbZv5K4WGxlFiknlSW0Vvye8KHU9
- aTPA==
+ bh=dq+ZhK4d7lL2s5x8xlpABC534HfysjVeU6PZopQ0WxE=;
+ b=W36nctF3MLHjsgnPbSFhGfq04rcioeMl+9pvIJcfkqNziqUgWrdsAB5pccfN+CyjfW
+ aNpboaAg9SU2SmqvbRlm6wTVIu3Drc268Kco1BwL0XCORR0BLQaK8de4QpaKsfp2lMUp
+ F/Ui+IZvdlcP/yaFA3/MseXbKLXCRvYhy4MIw9Wzvh8Ra5CfmpSjiEFUv+GTWfVuTA8e
+ RdKF8UxcSPd3rRc0Uo+EcreGQDs5ZE2caTknSZZ2AMgj1PyaOD3wfVsrkckJLXdsRoNQ
+ DYf/JazCq8ekJLAxabaINuyQiZrz179Avcr0iqsExsltka105PijoFa83vn1snllOE54
+ uHMA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=WjWivUqwjVpp0/8DenMs7t3E0v8OlG3jjIrBdhn++Xs=;
- b=QepIf3LxhysuZ5BTpUNNHgU9Tmxis8m2hQOclZA3eWP1ETHdAwjyOPh1i/jOK20/E4
- N7siN8mOQag24nMdhk74wxX3CI3GNe0acFIhpfUN8Wm+f5jwA5ZOiaJ5pR2oLpG/OZKq
- sTU+tpqXXfaUMso1fGZ4YPjqL1a/4S+qCqCXnXoWsl1CbKgm/cmsalkw1uWOJT4xOZxx
- JqKG5+C64fd26NclOz/2KKvV+CMljpKS1R5RXuC5amB/RN7mInSS4hNHvza8GXjYIcHv
- Z5ShUpVYptI23FMIza3a4+Y4XDbU6MjHKZQ9TqBjxaQ+mJkyHlZljZffBkQMvW7bLedz
- 2fnw==
-X-Gm-Message-State: APjAAAUgAjSEXMCQeJxS4TlwqJDPMSI5T1ON2etshB6i89qVKa5gMyEu
- p5twnIs7/3c7WDfX7uTECIgBpySIhLE=
-X-Google-Smtp-Source: APXvYqzQsBMUB2kWVJUj+bp4eOKZcb5ri1R7US8hwDOLVMktvXexCWbYFRAKZ49/TkFRO+qdP1n3Ig==
-X-Received: by 2002:a17:906:5391:: with SMTP id
- g17mr36221249ejo.79.1568308714315; 
- Thu, 12 Sep 2019 10:18:34 -0700 (PDT)
+ bh=dq+ZhK4d7lL2s5x8xlpABC534HfysjVeU6PZopQ0WxE=;
+ b=VjvAemqRBJpGisphausnpJufxMBAib9JdtEZnYiCvCUxdmOiFNzYke2hhTMC9I4AVN
+ vKggv/kpfl2QBr6x8H62hiD9ZyO2Khkp7XWZuKj4aEi6VXgHesJiRqB94JIAxR9WQqvu
+ 2f/h0Nbv0j38Mxajno91ryhPllke1V5z9OCdd+KDuVl0uNWzR685KRns2y/HJVlG2Bpx
+ WQNLHYZ3AduVPxOdFCBNsjOaFjYwy2HJpmiXZ209muhW5jS+jjLbPcia/GUNXu6u6TTk
+ kmfrfjD31n7k+9QV5Z1ZVOP6A1KNBbgrJm1F5eL4oLptvBek9Bz2+tjiI5bab353kxoc
+ e+kg==
+X-Gm-Message-State: APjAAAXcj61XLr7dj/3OJvE0v5uZrxb9x0IhlscOEehr8aWJOGgAjgVj
+ eAQi32wrvxtBNkjXINZuEGfv8KB+TkM=
+X-Google-Smtp-Source: APXvYqyarEFr6LuNaOuDoS4XN6Ijd+CrVmNqfr4rGePH6uKeHeNVGQ0wSLf5uGbctMr0JXBipiBD2w==
+X-Received: by 2002:a17:906:bb14:: with SMTP id
+ jz20mr6291438ejb.218.1568308864312; 
+ Thu, 12 Sep 2019 10:21:04 -0700 (PDT)
 Received: from ziggy.stardust ([37.223.145.235])
- by smtp.gmail.com with ESMTPSA id k11sm2677479ejr.3.2019.09.12.10.18.32
+ by smtp.gmail.com with ESMTPSA id la18sm2903485ejb.14.2019.09.12.10.21.03
  (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 12 Sep 2019 10:18:33 -0700 (PDT)
-Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
-To: Matthias Brugger <mbrugger@suse.com>, Stefan Wahren <wahrenst@gmx.net>,
- catalin.marinas@arm.com, marc.zyngier@arm.com, robh+dt@kernel.org,
- linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org,
- linux-riscv@lists.infradead.org, hch@lst.de,
- Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
-References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
- <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
- <3f9af46e-2e1a-771f-57f2-86a53caaf94a@suse.com>
+ Thu, 12 Sep 2019 10:21:03 -0700 (PDT)
+Subject: Re: [PATCH 2/3] i2c: bcm2835: Avoid clk stretch quirk for BCM2711
+To: Stefan Wahren <wahrenst@gmx.net>, Wolfram Sang <wsa@the-dreams.de>,
+ Eric Anholt <eric@anholt.net>, Florian Fainelli <f.fainelli@gmail.com>,
+ Ray Jui <rjui@broadcom.com>, Scott Branden <sbranden@broadcom.com>
+References: <1566925456-5928-1-git-send-email-wahrenst@gmx.net>
+ <1566925456-5928-3-git-send-email-wahrenst@gmx.net>
 From: Matthias Brugger <matthias.bgg@gmail.com>
 Openpgp: preference=signencrypt
 Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
@@ -161,23 +160,23 @@ Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
  pac005PuhxCWkKTJz3gCmznnoat4GCnL5gy/m0Qk45l4PFqwWXVLo9AQg2Kp3mlIFZ6fsEKI
  AN5hxlbNvNb9V2Zo5bFZjPWPFTxOteM0omUAS+QopwU0yPLLGJVf2iCmItHcUXI+r2JwH1CJ
  jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <09f82f88-a13a-b441-b723-7bb061a2f1e3@gmail.com>
-Date: Thu, 12 Sep 2019 19:18:31 +0200
+Message-ID: <c43878d8-e7d0-bc13-107b-2b6045692504@gmail.com>
+Date: Thu, 12 Sep 2019 19:21:02 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <3f9af46e-2e1a-771f-57f2-86a53caaf94a@suse.com>
+In-Reply-To: <1566925456-5928-3-git-send-email-wahrenst@gmx.net>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_101838_107162_3BD21696 
-X-CRM114-Status: GOOD (  23.77  )
+X-CRM114-CacheID: sfid-20190912_102106_180845_7A0A6A36 
+X-CRM114-Status: GOOD (  23.44  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:541 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -201,9 +200,7 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, robin.murphy@arm.com, linux-kernel@vger.kernel.org,
- linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org, will@kernel.org,
- m.szyprowski@samsung.com
+Cc: linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -211,99 +208,67 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 10/09/2019 11:27, Matthias Brugger wrote:
+On 27/08/2019 19:04, Stefan Wahren wrote:
+> The I2C block on the BCM2711 isn't affected by the clk stretching bug.
+> So there is no need to apply the corresponding quirk.
 > 
+> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
+> Reviewed-by: Eric Anholt <eric@anholt.net>
+> ---
+>  drivers/i2c/busses/i2c-bcm2835.c | 8 +++++---
+>  1 file changed, 5 insertions(+), 3 deletions(-)
 > 
-> On 09/09/2019 21:33, Stefan Wahren wrote:
->> Hi Nicolas,
->>
->> Am 09.09.19 um 11:58 schrieb Nicolas Saenz Julienne:
->>> Hi all,
->>> this series attempts to address some issues we found while bringing up
->>> the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
->>> up of these discussions:
->>> v4: https://lkml.org/lkml/2019/9/6/352
->>> v3: https://lkml.org/lkml/2019/9/2/589
->>> v2: https://lkml.org/lkml/2019/8/20/767
->>> v1: https://lkml.org/lkml/2019/7/31/922
->>> RFC: https://lkml.org/lkml/2019/7/17/476
->>>
->>> The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
->>> only address the first GB: their DMA address range is
->>> 0xc0000000-0xfc000000 which is aliased to the first GB of physical
->>> memory 0x00000000-0x3c000000. Note that only some peripherals have these
->>> limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
->>> view of the address space by virtue of being hooked up trough a second
->>> interconnect.
->>>
->>> Part of this is solved on arm32 by setting up the machine specific
->>> '.dma_zone_size = SZ_1G', which takes care of reserving the coherent
->>> memory area at the right spot. That said no buffer bouncing (needed for
->>> dma streaming) is available at the moment, but that's a story for
->>> another series.
->>>
->>> Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
->>> ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
->>> arch code as if all peripherals where be able to address the first 4GB
->>> of memory.
->>>
->>> In the light of this, the series implements the following changes:
->>>
->>> - Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
->>>   area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
->>>   the RPi4 is the only arm64 device with such DMA addressing limitations
->>>   so this hardcoded solution was deemed preferable.
->>>
->>> - Properly set ARCH_ZONE_DMA_BITS.
->>>
->>> - Reserve the CMA area in a place suitable for all peripherals.
->>>
->>> This series has been tested on multiple devices both by checking the
->>> zones setup matches the expectations and by double-checking physical
->>> addresses on pages allocated on the three relevant areas GFP_DMA,
->>> GFP_DMA32, GFP_KERNEL:
->>>
->>> - On an RPi4 with variations on the ram memory size. But also forcing
->>>   the situation where all three memory zones are nonempty by setting a 3G
->>>   ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
->>>
->> i like to test this series on Raspberry Pi 4 and i have some questions
->> to get arm64 running:
->>
->> Do you use U-Boot? Which tree?
+> diff --git a/drivers/i2c/busses/i2c-bcm2835.c b/drivers/i2c/busses/i2c-bcm2835.c
+> index 67752f7..ab5502f 100644
+> --- a/drivers/i2c/busses/i2c-bcm2835.c
+> +++ b/drivers/i2c/busses/i2c-bcm2835.c
+> @@ -12,6 +12,7 @@
+>  #include <linux/interrupt.h>
+>  #include <linux/io.h>
+>  #include <linux/module.h>
+> +#include <linux/of_device.h>
+>  #include <linux/platform_device.h>
+>  #include <linux/slab.h>
 > 
-> If you want to use U-Boot, try v2019.10-rc4, it should have everything you need
-> to boot your kernel.
+> @@ -389,7 +390,7 @@ static const struct i2c_algorithm bcm2835_i2c_algo = {
+>  };
 > 
+>  /*
+> - * This HW was reported to have problems with clock stretching:
+> + * The BCM2835 was reported to have problems with clock stretching:
+>   * http://www.advamation.com/knowhow/raspberrypi/rpi-i2c-bug.html
+>   * https://www.raspberrypi.org/forums/viewtopic.php?p=146272
+>   */
+> @@ -475,7 +476,7 @@ static int bcm2835_i2c_probe(struct platform_device *pdev)
+>  	adap->algo = &bcm2835_i2c_algo;
+>  	adap->dev.parent = &pdev->dev;
+>  	adap->dev.of_node = pdev->dev.of_node;
+> -	adap->quirks = &bcm2835_i2c_quirks;
+> +	adap->quirks = of_device_get_match_data(&pdev->dev);
+> 
+>  	bcm2835_i2c_writel(i2c_dev, BCM2835_I2C_C, 0);
+> 
+> @@ -501,7 +502,8 @@ static int bcm2835_i2c_remove(struct platform_device *pdev)
+>  }
+> 
+>  static const struct of_device_id bcm2835_i2c_of_match[] = {
+> -	{ .compatible = "brcm,bcm2835-i2c" },
+> +	{ .compatible = "brcm,bcm2711-i2c" },
+> +	{ .compatible = "brcm,bcm2835-i2c", .data = &bcm2835_i2c_quirks },
 
-Ok, here is a thing. In the linux kernel we now use bcm2711 as SoC name, but the
-RPi4 devicetree provided by the FW uses mostly bcm2838. U-Boot in its default
-config uses the devicetree provided by the FW, mostly because this way you don't
-have to do anything to find out how many RAM you really have. Secondly because
-this will allow us, in the near future, to have one U-boot binary for both RPi3
-and RPi4 (and as a side effect one binary for RPi1 and RPi2).
-
-Anyway, I found at least, that the following compatibles need to be added:
-
-"brcm,bcm2838-cprman"
-"brcm,bcm2838-gpio"
-
-Without at least the cprman driver update, you won't see anything.
-
-"brcm,bcm2838-rng200" is also a candidate.
-
-I also suppose we will need to add "brcm,bcm2838" to
-arch/arm/mach-bcm/bcm2711.c, but I haven't verified this.
+RPi4 FW seems to still use bcm2835-i2c as compatible in it's DTB blob. Does this
+break the driver or is this something we can improve by changing the FW blob in
+the future without breaking the driver now?
 
 Regards,
 Matthias
 
-> Regards,
-> Matthias
+>  	{},
+>  };
+>  MODULE_DEVICE_TABLE(of, bcm2835_i2c_of_match);
+> --
+> 2.7.4
 > 
->> Are there any config.txt tweaks necessary?
->>
->>
 > 
 > _______________________________________________
 > linux-arm-kernel mailing list
