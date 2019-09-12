@@ -2,48 +2,48 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A681EB0D17
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:41:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 29E6EB0D2C
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:48:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=SmKIHZB1BFdFlUs2FduzLZ+C4kIb3rXsTkJ9ghi5dTU=; b=FlhSExWgK0j3tQ
-	oAaRF3aa+GIIM6K4bUiNf37ruQ7gsDNgwtpQSRNJl+TWzfPMUvN6odbl0FRPeKEi9B/7mk/mTFlS9
-	k4a+4XozC27BbvDP4eWiv8i648QnquD265yV2nQYdfCjfTzCmvR8S00Z2GsYOr+PEMP3+/ZnfWs+u
-	xOESOdM/X7VJgZczekwuU8q/d0xKy2vzqVvjMsKAWjrN2Xtm+FcPnaJ+W3lJVplqhAZGVltOgXKqK
-	KWj6yP407MnrH5J//oQQRdiHp8FlDT1AYIZOPAxGtwosYSUxV0bpBFItrsttwafmi1bjbGcrK2mf7
-	KbuKGCSipBs2ThG6FOnA==;
+	List-Owner; bh=VVr6KOwrT5qEF5+PjqV+PMwCqL5/dhJICF2ZougMfHI=; b=BwEn8C8Bx9sAmS
+	AgsAvSOUdWE/U7y6TxJGC+iwQS2Vl9//BOjS1jjH1wTZoQU+tEB7wp1So3Bed7JPHGpX+CKi5PK3j
+	vAPBKxPa3kD6piOhcYoSE4cZCileSmWXsZeo0bA1yTlc05TKjCr6crbo5XMDpVoL3a4gwNjGoZJoa
+	m4n+cRodhFt+4i/lVGOvlCpP04T2Y2AiB/BPwclXm/+MIhSc0UvAXCe3Fqh8Qn0pvpvR5C6aVHXPG
+	9kf/geBC6q32jXW6oP+W9tN0h/viqwR7qz9aMh8MOSDcfJaV1Srfknp7mN7tOgYKeqQpF0t9IkO9w
+	duoGaMbwjy2hJOZlgaHg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8MXh-0007tx-Ot; Thu, 12 Sep 2019 10:41:37 +0000
+	id 1i8Mdx-0001CQ-HN; Thu, 12 Sep 2019 10:48:05 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8MXU-0007tb-SM
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:41:26 +0000
+ id 1i8Mdk-0001C7-HN
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:47:53 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C9EEC1000;
- Thu, 12 Sep 2019 03:41:20 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 029601000;
+ Thu, 12 Sep 2019 03:47:52 -0700 (PDT)
 Received: from [10.1.196.133] (e112269-lin.cambridge.arm.com [10.1.196.133])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id A8F0E3F59C;
- Thu, 12 Sep 2019 03:41:19 -0700 (PDT)
-Subject: Re: [PATCH 1/3] iommu/io-pgtable-arm: Correct Mali attributes
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 7EA643F59C;
+ Thu, 12 Sep 2019 03:47:50 -0700 (PDT)
+Subject: Re: [PATCH 2/3] iommu/io-pgtable-arm: Support more Mali configurations
 To: Robin Murphy <robin.murphy@arm.com>, will@kernel.org, joro@8bytes.org
 References: <cover.1568211045.git.robin.murphy@arm.com>
- <8b9515e86053910196cbc90b71af97be8928585c.1568211045.git.robin.murphy@arm.com>
+ <69c934789ad2bf486b03682563ea2262ea6d9301.1568211045.git.robin.murphy@arm.com>
 From: Steven Price <steven.price@arm.com>
-Message-ID: <fe46d0e7-ab88-4bfd-ac4f-a08b75696d73@arm.com>
-Date: Thu, 12 Sep 2019 11:41:18 +0100
+Message-ID: <6e3f7b2f-fa84-422f-602a-0773835018cb@arm.com>
+Date: Thu, 12 Sep 2019 11:47:49 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <8b9515e86053910196cbc90b71af97be8928585c.1568211045.git.robin.murphy@arm.com>
+In-Reply-To: <69c934789ad2bf486b03682563ea2262ea6d9301.1568211045.git.robin.murphy@arm.com>
 Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_034125_005834_C7087497 
-X-CRM114-Status: GOOD (  22.97  )
+X-CRM114-CacheID: sfid-20190912_034752_620459_4C06BB1D 
+X-CRM114-Status: GOOD (  20.73  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -71,107 +71,56 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On 11/09/2019 15:42, Robin Murphy wrote:
-> Whilst Midgard's MEMATTR follows a similar principle to the VMSA MAIR,
-> the actual attribute values differ, so although it currently appears to
-> work to some degree, we probably shouldn't be using our standard stage 1
-> MAIR for that. Instead, generate a reasonable MEMATTR with attribute
-> values borrowed from the kbase driver; at this point we'll be overriding
-> or ignoring pretty much all of the LPAE config, so just implement these
-> Mali details in a dedicated allocator instead of pretending to subclass
-> the standard VMSA format.
+> In principle, Midgard GPUs supporting smaller VA sizes should only
+> require 3-level pagetables, since the address bits resolved at level 0
+> (47:40) will never change. However, the kbase driver does not appear to
+> have any notion of a variable start level, and empirically T720 and T820
+> rapidly blow up with translation faults unless given a full 4-level
+> table, despite only supporting a 33-bit VA size.
+
+Midgard 'LPAE' isn't really LPAE and does indeed always require all
+levels of page tables. The 33-bit VA size is really only limiting the
+storage of virtual addresses in the GPU and not affecting the MMU.
+
+> The 'real' IAS value is still valuable in terms of validating addresses
+> on map/unmap, so tweak the allocator to allow smaller values while still
+> forcing the resultant tables to the full 4 levels.
 > 
 > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-
-The Midgard MMU "uses concepts" from LPAE but really isn't LPAE, so this
-seems like a good tidy up.
 
 Reviewed-by: Steven Price <steven.price@arm.com>
 
 Steve
 
 > ---
->  drivers/iommu/io-pgtable-arm.c | 53 +++++++++++++++++++++++++---------
->  1 file changed, 40 insertions(+), 13 deletions(-)
+>  drivers/iommu/io-pgtable-arm.c | 7 ++++++-
+>  1 file changed, 6 insertions(+), 1 deletion(-)
 > 
 > diff --git a/drivers/iommu/io-pgtable-arm.c b/drivers/iommu/io-pgtable-arm.c
-> index 161a7d56264d..9e35cd991f06 100644
+> index 9e35cd991f06..77f41c9dd9be 100644
 > --- a/drivers/iommu/io-pgtable-arm.c
 > +++ b/drivers/iommu/io-pgtable-arm.c
-> @@ -167,6 +167,9 @@
->  #define ARM_MALI_LPAE_TTBR_READ_INNER	BIT(2)
->  #define ARM_MALI_LPAE_TTBR_SHARE_OUTER	BIT(4)
+> @@ -1022,7 +1022,7 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
+>  	if (cfg->quirks)
+>  		return NULL;
 >  
-> +#define ARM_MALI_LPAE_MEMATTR_IMP_DEF	0x88ULL
-> +#define ARM_MALI_LPAE_MEMATTR_WRITE_ALLOC 0x8DULL
-> +
->  /* IOPTE accessors */
->  #define iopte_deref(pte,d) __va(iopte_to_paddr(pte, d))
->  
-> @@ -1013,27 +1016,51 @@ arm_32_lpae_alloc_pgtable_s2(struct io_pgtable_cfg *cfg, void *cookie)
->  static struct io_pgtable *
->  arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
->  {
-> -	struct io_pgtable *iop;
-> +	struct arm_lpae_io_pgtable *data;
-> +
-> +	/* No quirks for Mali (hopefully) */
-> +	if (cfg->quirks)
-> +		return NULL;
->  
->  	if (cfg->ias != 48 || cfg->oas > 40)
+> -	if (cfg->ias != 48 || cfg->oas > 40)
+> +	if (cfg->ias > 48 || cfg->oas > 40)
 >  		return NULL;
 >  
 >  	cfg->pgsize_bitmap &= (SZ_4K | SZ_2M | SZ_1G);
-> -	iop = arm_64_lpae_alloc_pgtable_s1(cfg, cookie);
-> -	if (iop) {
-> -		u64 mair, ttbr;
+> @@ -1031,6 +1031,11 @@ arm_mali_lpae_alloc_pgtable(struct io_pgtable_cfg *cfg, void *cookie)
+>  	if (!data)
+>  		return NULL;
 >  
-> -		/* Copy values as union fields overlap */
-> -		mair = cfg->arm_lpae_s1_cfg.mair[0];
-> -		ttbr = cfg->arm_lpae_s1_cfg.ttbr[0];
-> +	data = arm_lpae_alloc_pgtable(cfg);
-> +	if (!data)
-> +		return NULL;
->  
-> -		cfg->arm_mali_lpae_cfg.memattr = mair;
-> -		cfg->arm_mali_lpae_cfg.transtab = ttbr |
-> -			ARM_MALI_LPAE_TTBR_READ_INNER |
-> -			ARM_MALI_LPAE_TTBR_ADRMODE_TABLE;
-> -	}
-> +	/*
-> +	 * MEMATTR: Mali has no actual notion of a non-cacheable type, so the
-> +	 * best we can do is mimic the out-of-tree driver and hope that the
-> +	 * "implementation-defined caching policy" is good enough. Similarly,
-> +	 * we'll use it for the sake of a valid attribute for our 'device'
-> +	 * index, although callers should never request that in practice.
-> +	 */
-> +	cfg->arm_mali_lpae_cfg.memattr =
-> +		(ARM_MALI_LPAE_MEMATTR_IMP_DEF
-> +		 << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_NC)) |
-> +		(ARM_MALI_LPAE_MEMATTR_WRITE_ALLOC
-> +		 << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_CACHE)) |
-> +		(ARM_MALI_LPAE_MEMATTR_IMP_DEF
-> +		 << ARM_LPAE_MAIR_ATTR_SHIFT(ARM_LPAE_MAIR_ATTR_IDX_DEV));
->  
-> -	return iop;
-> +	data->pgd = __arm_lpae_alloc_pages(data->pgd_size, GFP_KERNEL, cfg);
-> +	if (!data->pgd)
-> +		goto out_free_data;
-> +
-> +	/* Ensure the empty pgd is visible before TRANSTAB can be written */
-> +	wmb();
-> +
-> +	cfg->arm_mali_lpae_cfg.transtab = virt_to_phys(data->pgd) |
-> +					  ARM_MALI_LPAE_TTBR_READ_INNER |
-> +					  ARM_MALI_LPAE_TTBR_ADRMODE_TABLE;
-> +	return &data->iop;
-> +
-> +out_free_data:
-> +	kfree(data);
-> +	return NULL;
->  }
->  
->  struct io_pgtable_init_fns io_pgtable_arm_64_lpae_s1_init_fns = {
+> +	/* Mali seems to need a full 4-level table regardless of IAS */
+> +	if (data->levels < ARM_LPAE_MAX_LEVELS) {
+> +		data->levels = ARM_LPAE_MAX_LEVELS;
+> +		data->pgd_size = sizeof(arm_lpae_iopte);
+> +	}
+>  	/*
+>  	 * MEMATTR: Mali has no actual notion of a non-cacheable type, so the
+>  	 * best we can do is mimic the out-of-tree driver and hope that the
 > 
 
 
