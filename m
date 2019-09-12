@@ -2,98 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 623FEB0CD1
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:25:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6401AB0CDB
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 12:27:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Subject:To:From:Date:References:
+	In-Reply-To:Message-Id:Mime-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GlipExXvH9UFfX5Mhnxv135ziANDMLrwE0y5/KdVZMo=; b=SEWKJLVsBtIt3r
-	+KCgnabsWFZp8CHWpdpxm58i9DIrq+3q2Yi/BmD6kQKYpSnojxbGqxEcbkZdExF027F3RTUC3akLj
-	UayT8wOvjrhSg9BJIRrhZ/TL49Li/pFm6c9jA3DKtZYYvSR9LDJlGnwgr3xzH4o3yq/PUSOvxB8pm
-	ALxf9xaN0wwiJ7rysKATQqPnu2BtFoWxGszqI0+spKZdJtvbLJC98nr2OIY/qUtgNWGqiBF1aJrqP
-	ky2LONft9nGBqAponZ9vQE+hmP5ySPiWuP8jo0e9RSha/c5sds2g79QS2YvaOlPiV/DbfnMdplBUW
-	JpJKoWKr44CsYTBz3Puw==;
+	List-Owner; bh=ZHgo3FEOeItQmSC8pP0hmsYy5qjiYK87V5PDLgNW5og=; b=WDTimuVi/yZmTL
+	s6VbsjV+9Lhcnw9eKuwjrfLdIluHvBZj4x4VfgSWNQxutufL4CuON3SA3GfZwQ9NnYIU9phm9adCx
+	xUw3QhMI+tV5fmFXwqVdRKVdSGD57w13UEXPlgAApYoynWNYR+HsEqzkKiXHFTt7sDBS/wGb6w063
+	OQPkPEbIcfaFx0GckOOnjmQw3o0lLi2KR0iViZL4BkYEvCaiIp9toYojLO+95Hnx49zS5Mp13NY4Z
+	4lX8K9KTug6YzBaDu5WD/Vdvhb3iVcuL2US80PW133pdZdTcLyMRLbFi4K44C5grfuARn8rTtcdOV
+	1ybalNv2IKdEsUhgcNbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8MHv-0000XD-6y; Thu, 12 Sep 2019 10:25:19 +0000
-Received: from mail-ed1-x541.google.com ([2a00:1450:4864:20::541])
+	id 1i8MJN-00026v-8E; Thu, 12 Sep 2019 10:26:49 +0000
+Received: from out5-smtp.messagingengine.com ([66.111.4.29])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8MH5-0000Wq-FJ
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:24:28 +0000
-Received: by mail-ed1-x541.google.com with SMTP id c20so14450888eds.1
- for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 03:24:26 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=shutemov-name.20150623.gappssmtp.com; s=20150623;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=+mmfaBX0Np9W/b7Q5MqD32lbNina1cQ/FOr9Xbx+2SA=;
- b=rjY82Sy3etyc/lURHAAH5Zl+/VTkVL1QfiSGIjGFzaoW/tFRFM+zEYupBdTECALHrG
- yPnD/zet+9v/0zbzm/E5VjxIC4kHBGoI6fG6y3ZudVWE1Fqr5jUEFHOhmpHGUgJBjFLR
- Pp4qZYYyCBsVXmvAX8dVxq7xFDjWJd+exfdSoleHOrbAKfryXx1FyZtARD7dR7tAJFzo
- JrefYLyjWx+Ptmb0NQyHMPY02QIUK5RaU1NoX/BBPIIVc7yZpU9xVdpA7vqiSPpdXXbt
- d5OJ8VA03djK7lmxCv6oPg+S+/UFNoBoSlbJXwZ5azlQ2uo9F1xXDa4+5x33RZHpoQkO
- TV/w==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=+mmfaBX0Np9W/b7Q5MqD32lbNina1cQ/FOr9Xbx+2SA=;
- b=lpIMbmO8EXYlMYBTQqICJJqbnFr5Ui0lXV3BtuzeXBqgS35ZFeHaH/x8lxhukQFY4q
- KD0jgsO2Whqc9LE9tm0vsqFii7/lffnayRyI2VcwFWL7JIdrSBB4sHrUa/YoIjjJg4UA
- 33GfpkY2k5uk2bOgVZauhV74jVAtdDaSLOsC25nv1IHoH1m6XPDIubDqgLhbVGBwYLoR
- fRE7SswK0UoDlnSzw/8k3IblIsgUodDT71AOM9UDn2zOjALIQYI+8nW/qfi7Zq9FdvhN
- fI3BnQc/e0xTFDIS1heI+D/1BOb5OZsXdKzwc3qlzdjk1b/KVZ+0vjxF6/QsJpzNFxWV
- GrHw==
-X-Gm-Message-State: APjAAAUJ14QGVTfHUxOqQ2BhbMUgIy8+rM6qRGLsHOjP/s1ilDJ1rdIF
- KQOdp5BEjRzfkoptVNoN/t3BiQ==
-X-Google-Smtp-Source: APXvYqxqQuNiTjkjaC8Hs02PHF+LHAOwtw4KJLDqhBlQ3F6XmLygJAqZUw/cEZVOIq4hY2vxi9be2Q==
-X-Received: by 2002:a50:8961:: with SMTP id f30mr40528236edf.144.1568283865271; 
- Thu, 12 Sep 2019 03:24:25 -0700 (PDT)
-Received: from box.localdomain ([86.57.175.117])
- by smtp.gmail.com with ESMTPSA id qt5sm2710889ejb.11.2019.09.12.03.24.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Thu, 12 Sep 2019 03:24:24 -0700 (PDT)
-Received: by box.localdomain (Postfix, from userid 1000)
- id 04633100B4A; Thu, 12 Sep 2019 13:24:26 +0300 (+03)
-Date: Thu, 12 Sep 2019 13:24:25 +0300
-From: "Kirill A. Shutemov" <kirill@shutemov.name>
-To: Michal Hocko <mhocko@kernel.org>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190912102425.wzhhe6ygfgg64sma@box>
-References: <20190907172225.10910.34302.stgit@localhost.localdomain>
- <20190910124209.GY2063@dhcp22.suse.cz>
- <CAKgT0Udr6nYQFTRzxLbXk41SiJ-pcT_bmN1j1YR4deCwdTOaUQ@mail.gmail.com>
- <20190910144713.GF2063@dhcp22.suse.cz>
- <CAKgT0UdB4qp3vFGrYEs=FwSXKpBEQ7zo7DV55nJRO2C-KCEOrw@mail.gmail.com>
- <20190910175213.GD4023@dhcp22.suse.cz>
- <1d7de9f9f4074f67c567dbb4cc1497503d739e30.camel@linux.intel.com>
- <20190911113619.GP4023@dhcp22.suse.cz>
- <CAKgT0UfOp1c+ov=3pBD72EkSB9Vm7mG5G6zJj4=j=UH7zCgg2Q@mail.gmail.com>
- <20190912091925.GM4023@dhcp22.suse.cz>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <20190912091925.GM4023@dhcp22.suse.cz>
-User-Agent: NeoMutt/20180716
+ id 1i8MJ6-000267-Eb
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 10:26:35 +0000
+Received: from compute4.internal (compute4.nyi.internal [10.202.2.44])
+ by mailout.nyi.internal (Postfix) with ESMTP id CDAA322245;
+ Thu, 12 Sep 2019 06:26:27 -0400 (EDT)
+Received: from imap2 ([10.202.2.52])
+ by compute4.internal (MEProxy); Thu, 12 Sep 2019 06:26:27 -0400
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=aj.id.au; h=
+ mime-version:message-id:in-reply-to:references:date:from:to:cc
+ :subject:content-type; s=fm3; bh=hH6krjDyM1ef7cBjth9GvNBMbTUI9b+
+ 39ETpeM1V4vs=; b=NHMNQMg+HFPouEvMQ00sKE/W0BsIAYFMCmqPDrTUQO6EqlR
+ 0wh/LUFfCkK9s3vYt2qjyKQvYd4tFrh0P/t00fYORmhhxbXQqQj4bzkZ2uaWfPk+
+ n3qrYCOHYv30kvYh+P+myvR4uJg/mKyMOd1Ay0Iz1wtq0QXaArzQieqCrNvwU2qs
+ 1bTfGjrhRV7DSto1+GrQ0gvyJyzfgBUEaRDfKugJ23ZYqC71h3fgj6CKARc/ZGw/
+ 4Ml53ei0IbK/SWxVNT4+jV2iUfiCOTU2NTrmow3LFuPGtUxQZa0Z5amAV6dj1w1s
+ MA10yj0+f/TMChNfXg04bVJXrWeX52EQDpSWS6Q==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=
+ messagingengine.com; h=cc:content-type:date:from:in-reply-to
+ :message-id:mime-version:references:subject:to:x-me-proxy
+ :x-me-proxy:x-me-sender:x-me-sender:x-sasl-enc; s=fm3; bh=hH6krj
+ DyM1ef7cBjth9GvNBMbTUI9b+39ETpeM1V4vs=; b=SXH9K8WEkJux2WUVSDI78n
+ AOj3buJkf8DgR3jYi7VHNH2a3c4uqEsc/dGKY1uknNvnrgJfp6dJZk7gWVHwC9zi
+ S1SpNPI6ChUtzJEojbDYRGZP/EL2sMlMWX4KHJygDIapXlMsKS+9xPLdKbPhImRg
+ S4BoBRe+i1MpHIubusilRTqr5GB6nAVmchSAQItbTYxHHN5/67E/her2lw18oQiD
+ 8SxcH9CoFvKxXBcCBNHbzGTm7WltTmzg1kPQrxxAJxZp/F8v+/I6XLNTqRNck2I8
+ kN6nri4R6vUf4Pu2nWEfiH23TIZDHwTK/CofWJ58x/5u9IaUZgODEQWsTngifRPA
+ ==
+X-ME-Sender: <xms:Uh16XSVBjtb16JkF2tIvIYISZaCxuUrOVo92Ul0Z-4MDK0VbF0HJ-Q>
+X-ME-Proxy-Cause: gggruggvucftvghtrhhoucdtuddrgedufedrtdehgddviecutefuodetggdotefrodftvf
+ curfhrohhfihhlvgemucfhrghsthforghilhdpqfgfvfdpuffrtefokffrpgfnqfghnecu
+ uegrihhlohhuthemuceftddtnecusecvtfgvtghiphhivghnthhsucdlqddutddtmdenuc
+ fjughrpefofgggkfgjfhffhffvufgtsehttdertderreejnecuhfhrohhmpedftehnughr
+ vgifucflvghffhgvrhihfdcuoegrnhgurhgvfiesrghjrdhiugdrrghuqeenucfrrghrrg
+ hmpehmrghilhhfrhhomheprghnughrvgifsegrjhdrihgurdgruhenucevlhhushhtvghr
+ ufhiiigvpedt
+X-ME-Proxy: <xmx:Uh16XQL3Oxbb0GmE0XZZDmuKp1_PaBTv2QJpPgBENmsyMaV6XdHv1Q>
+ <xmx:Uh16XcveF0GiadG_lUbwsrsYyUrA5VLiSrWrVGY1iO1MG0bb3U-1fA>
+ <xmx:Uh16XVJ3HgoxVidgB2HsX8LfawoOQtQ02K13OoyzQrzvTnhobwfVEw>
+ <xmx:Ux16XUk7PROLbEoYHv_ELhTN8sOnkupa5QZJq7d4yxrADFT3zS1jnA>
+Received: by mailuser.nyi.internal (Postfix, from userid 501)
+ id DB132E00A9; Thu, 12 Sep 2019 06:26:26 -0400 (EDT)
+X-Mailer: MessagingEngine.com Webmail Interface
+User-Agent: Cyrus-JMAP/3.1.7-237-gf35468d-fmstable-20190912v1
+Mime-Version: 1.0
+Message-Id: <c51f0ef0-cd1a-47db-8551-706c5864e0be@www.fastmail.com>
+In-Reply-To: <CACRpkdYW_PX7npB+b1YJ4pfFQNLVOsMx2hpKtntBeHg=C1j-Cg@mail.gmail.com>
+References: <20190829071738.2523-1-andrew@aj.id.au>
+ <CACRpkdYW_PX7npB+b1YJ4pfFQNLVOsMx2hpKtntBeHg=C1j-Cg@mail.gmail.com>
+Date: Thu, 12 Sep 2019 19:56:05 +0930
+From: "Andrew Jeffery" <andrew@aj.id.au>
+To: "Linus Walleij" <linus.walleij@linaro.org>
+Subject: =?UTF-8?Q?Re:_[PATCH_pinctrl/fixes]_pinctrl:_aspeed:_Fix_spurious_mux_fa?=
+ =?UTF-8?Q?ilures_on_the_AST2500?=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_032427_546938_2FDE9120 
-X-CRM114-Status: GOOD (  21.58  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190912_032632_856921_BCE8D4C4 
+X-CRM114-Status: GOOD (  11.66  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:541 listed in]
- [list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [66.111.4.29 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -105,67 +104,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- David Hildenbrand <david@redhat.com>, Matthew Wilcox <willy@infradead.org>,
- "Wang, Wei W" <wei.w.wang@intel.com>, Mel Gorman <mgorman@suse.de>,
- ying.huang@intel.com, Rik van Riel <riel@surriel.com>,
- Vlastimil Babka <vbabka@suse.cz>, Dan Williams <dan.j.williams@intel.com>,
- linux-arm-kernel@lists.infradead.org, Oscar Salvador <osalvador@suse.de>,
- Nitesh Narayan Lal <nitesh@redhat.com>,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+Cc: linux-aspeed <linux-aspeed@lists.ozlabs.org>,
+ OpenBMC Maillist <openbmc@lists.ozlabs.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Joel Stanley <joel@jms.id.au>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ John Wang <wangzqbj@inspur.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu, Sep 12, 2019 at 11:19:25AM +0200, Michal Hocko wrote:
-> On Wed 11-09-19 08:12:03, Alexander Duyck wrote:
-> > On Wed, Sep 11, 2019 at 4:36 AM Michal Hocko <mhocko@kernel.org> wrote:
-> > >
-> > > On Tue 10-09-19 14:23:40, Alexander Duyck wrote:
-> > > [...]
-> > > > We don't put any limitations on the allocator other then that it needs to
-> > > > clean up the metadata on allocation, and that it cannot allocate a page
-> > > > that is in the process of being reported since we pulled it from the
-> > > > free_list. If the page is a "Reported" page then it decrements the
-> > > > reported_pages count for the free_area and makes sure the page doesn't
-> > > > exist in the "Boundary" array pointer value, if it does it moves the
-> > > > "Boundary" since it is pulling the page.
-> > >
-> > > This is still a non-trivial limitation on the page allocation from an
-> > > external code IMHO. I cannot give any explicit reason why an ordering on
-> > > the free list might matter (well except for page shuffling which uses it
-> > > to make physical memory pattern allocation more random) but the
-> > > architecture seems hacky and dubious to be honest. It shoulds like the
-> > > whole interface has been developed around a very particular and single
-> > > purpose optimization.
-> > 
-> > How is this any different then the code that moves a page that will
-> > likely be merged to the tail though?
+
+
+On Thu, 12 Sep 2019, at 17:53, Linus Walleij wrote:
+> On Thu, Aug 29, 2019 at 8:17 AM Andrew Jeffery <andrew@aj.id.au> wrote:
 > 
-> I guess you are referring to the page shuffling. If that is the case
-> then this is an integral part of the allocator for a reason and it is
-> very well obvious in the code including the consequences. I do not
-> really like an idea of hiding similar constrains behind a generic
-> looking feature which is completely detached from the allocator and so
-> any future change of the allocator might subtly break it.
+> > Commit 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
+> > was determined to be a partial fix to the problem of acquiring the LPC
+> > Host Controller and GFX regmaps: The AST2500 pin controller may need to
+> > fetch syscon regmaps during expression evaluation as well as when
+> > setting mux state. For example, this case is hit by attempting to export
+> > pins exposing the LPC Host Controller as GPIOs.
+> >
+> > An optional eval() hook is added to the Aspeed pinmux operation struct
+> > and called from aspeed_sig_expr_eval() if the pointer is set by the
+> > SoC-specific driver. This enables the AST2500 to perform the custom
+> > action of acquiring its regmap dependencies as required.
+> >
+> > John Wang tested the fix on an Inspur FP5280G2 machine (AST2500-based)
+> > where the issue was found, and I've booted the fix on Witherspoon
+> > (AST2500) and Palmetto (AST2400) machines, and poked at relevant pins
+> > under QEMU by forcing mux configurations via devmem before exporting
+> > GPIOs to exercise the driver.
+> >
+> > Fixes: 7d29ed88acbb ("pinctrl: aspeed: Read and write bits in LPC and GFX controllers")
+> > Fixes: 674fa8daa8c9 ("pinctrl: aspeed-g5: Delay acquisition of regmaps")
+> > Reported-by: John Wang <wangzqbj@inspur.com>
+> > Tested-by: John Wang <wangzqbj@inspur.com>
+> > Signed-off-by: Andrew Jeffery <andrew@aj.id.au>
+> 
+> Applied for fixes already yesterday!
 
-I don't necessary follow why shuffling is more integral to page allocator
-than reporting would be. It's next to shutffle.c under mm/ and integrated
-in a simillar way.
+Thanks! Hoping to avoid such late fixes in the future...
 
--- 
- Kirill A. Shutemov
+Andrew
 
 _______________________________________________
 linux-arm-kernel mailing list
