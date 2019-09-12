@@ -2,50 +2,46 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 3F3B1B1094
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:03:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 41B64B10B7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:09:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=0r7JEoscD6BhWe30IlGDXMrpV0NeOnaZ2Xd8IHLArDI=; b=Go2ry7I27zsZCIsTAS9EotDYZ
-	ykfdAkwYdgDsFPNhrI3xkX6pyohpAARn/Oe1ZXjVaVbNEZ1lql4ar1lbhSJ6KvWk6cbTN/JlRO9pI
-	pVVCAABTH4Hx7sehxdEbol5sh/U94pumLHw1cECNaMUQc6g4oJfLmWLYOOiSHQTEMmLsUwdatvxcq
-	J8z1sm8C7TyGZehqJMok8L5b4Naz1nIgruVB6OxXFNYR4yk21uicZAvuPNPZLD0aGLWw3d9Q4DT8f
-	p+cmmGcr6u+qbDz6bNHigT0U/ssXix9hHQdJ6xkxXSJeoljme0lh1bwmtvKqpDsYtMSFIuIzRy0d3
-	l2vrFruPw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=oxvRrrR49FJshhKzTgUHwgLq7utiq4QVuHKugC0uPeI=; b=s30SHXVmXT3WTi
+	1STFziq0+HN1Wn0U0Gna6tEhdt7gw/kxges0Vz/SlilLXVeuagfa47AM6PoyTTexyMJ9QFbiSvfey
+	5JXRk3mocZhKcSMlMY0TzxBPO3sgQdy5p9dTVkD20+W9cDS2tCT30o0MjQ49GYc74vSNYCAESmq1z
+	xSgqnWMdgHpn6I8l+n355RMBppWCAG7b60k/FWVQqwvqn3oCM7wGvlmJKXIaqX8sohthatD8R7XG2
+	lQ3RXjCfAe2Xqh7g7voAF7REyBW+Ma4GdNI01isrSxoP4cIWTEIXa2K43MzG3ee5/6BAOmqOu6LA6
+	HweUEXqhByrfTmNpZ8WA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Pgc-0008TV-58; Thu, 12 Sep 2019 14:03:02 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8PgN-0008TB-Cj
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 14:02:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B05D828;
- Thu, 12 Sep 2019 07:02:46 -0700 (PDT)
-Received: from [10.249.163.245] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B8E8A3F71F;
- Thu, 12 Sep 2019 07:02:44 -0700 (PDT)
-Subject: Re: [PATCH v5 2/3] dt-bindings: arm: coresight: Add support for
- coresight-loses-context-with-cpu
-To: andrew.murray@arm.com, mathieu.poirier@linaro.org,
- alexander.shishkin@linux.intel.com
-References: <20190816154615.39854-1-andrew.murray@arm.com>
- <20190816154615.39854-3-andrew.murray@arm.com>
-From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <34570d2f-b9b7-a45e-8a52-86808198755b@arm.com>
-Date: Thu, 12 Sep 2019 15:06:06 +0100
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.7.0
+	id 1i8Pmd-0002Xd-G3; Thu, 12 Sep 2019 14:09:15 +0000
+Received: from relay.sw.ru ([185.231.240.75])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8Pm3-0002Ge-1p; Thu, 12 Sep 2019 14:08:40 +0000
+Received: from [172.16.25.5] by relay.sw.ru with esmtp (Exim 4.92)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1i8Plm-0008P3-U4; Thu, 12 Sep 2019 17:08:23 +0300
+Subject: Re: [PATCH v3] mm/kasan: dump alloc and free stack for page allocator
+To: Vlastimil Babka <vbabka@suse.cz>, Qian Cai <cai@lca.pw>,
+ Walter Wu <walter-zh.wu@mediatek.com>
+References: <20190911083921.4158-1-walter-zh.wu@mediatek.com>
+ <5E358F4B-552C-4542-9655-E01C7B754F14@lca.pw>
+ <c4d2518f-4813-c941-6f47-73897f420517@suse.cz>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <e4e23249-9f37-1d66-d411-7786b7aba36e@virtuozzo.com>
+Date: Thu, 12 Sep 2019 17:08:21 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <20190816154615.39854-3-andrew.murray@arm.com>
+In-Reply-To: <c4d2518f-4813-c941-6f47-73897f420517@suse.cz>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_070247_478335_20CF6DD5 
-X-CRM114-Status: GOOD (  19.92  )
+X-CRM114-CacheID: sfid-20190912_070839_095695_F2BDAF32 
+X-CRM114-Status: GOOD (  12.74  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -64,51 +60,50 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Al.Grant@arm.com, coresight@lists.linaro.org, leo.yan@linaro.org,
- sudeep.holla@arm.com, linux-arm-kernel@lists.infradead.org,
- mike.leach@linaro.org
+Cc: wsd_upstream@mediatek.com, Arnd Bergmann <arnd@arndb.de>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ linux-kernel@vger.kernel.org, kasan-dev@googlegroups.com,
+ Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, linux-mediatek@lists.infradead.org,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 08/16/2019 04:46 PM, Andrew Murray wrote:
-> Some coresight components, because of choices made during hardware
-> integration, require their state to be saved and restored across CPU low
-> power states.
+
+
+On 9/12/19 4:53 PM, Vlastimil Babka wrote:
+> On 9/11/19 5:19 PM, Qian Cai wrote:
+>>
+>> The new config looks redundant and confusing. It looks to me more of a document update
+>> in Documentation/dev-tools/kasan.txt to educate developers to select PAGE_OWNER and
+>> DEBUG_PAGEALLOC if needed.
+>  
+> Agreed. But if you want it fully automatic, how about something
+> like this (on top of mmotm/next)? If you agree I'll add changelog
+> and send properly.
 > 
-> The software has no reliable method of detecting when save/restore is
-> required thus let's add a binding to inform the kernel.
+> ----8<----
 > 
-> Signed-off-by: Andrew Murray <andrew.murray@arm.com>
+> From a528d14c71d7fdf5872ca8ab3bd1b5bad26670c9 Mon Sep 17 00:00:00 2001
+> From: Vlastimil Babka <vbabka@suse.cz>
+> Date: Thu, 12 Sep 2019 15:51:23 +0200
+> Subject: [PATCH] make KASAN enable page_owner with free stack capture
+> 
 > ---
->   Documentation/devicetree/bindings/arm/coresight.txt | 9 +++++++++
->   1 file changed, 9 insertions(+)
-> 
-> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
-> index fcc3bacfd8bc..d02c42d21f2f 100644
-> --- a/Documentation/devicetree/bindings/arm/coresight.txt
-> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
-> @@ -87,6 +87,15 @@ its hardware characteristcs.
->   
->   	* port or ports: see "Graph bindings for Coresight" below.
->   
-> +* Optional properties for all components:
-> +
-> +	* arm,coresight-loses-context-with-cpu : boolean. Indicates that the
-> +	  hardware will lose register context on CPU power down (e.g. CPUIdle).
-> +	  An example of where this may be needed are systems which contain a
-> +	  coresight component and CPU in the same power domain. When the CPU
-> +	  powers down the coresight component also powers down and loses its
-> +	  context. This property is currently only used for the ETM 4.x driver.
-> +
->   * Optional properties for ETM/PTMs:
->   
->   	* arm,cp14: must be present if the system accesses ETM/PTM management
+>  include/linux/page_owner.h |  1 +
+>  lib/Kconfig.kasan          |  4 ++++
+>  mm/Kconfig.debug           |  5 +++++
+>  mm/page_alloc.c            |  6 +++++-
+>  mm/page_owner.c            | 37 ++++++++++++++++++++++++-------------
+>  5 files changed, 39 insertions(+), 14 deletions(-)
 > 
 
+Looks ok to me. This certainly better than full dependency on the DEBUG_PAGEALLOC which we don't need.
 
-Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
+ 
 
 _______________________________________________
 linux-arm-kernel mailing list
