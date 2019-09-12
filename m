@@ -2,58 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D147CB0B14
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:18:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 26BE5B0B26
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:19:54 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ja2cyGEfIKJRzX0Z9WKvZsv0rs1trpIY4013oeE2jrM=; b=q7hmwh+/RWK1Oz
-	VIpVCZZQTbKFjqcq59T3XIq63DndZPEcpX2N7boN7oi4UkLMutGG5BtPZ2DcX93BO1P48B3C2kn/w
-	o2MLvrlY5/03CEXuvUu5UBU5qFJ+/LojjVakJaq8ObjFgnqiY4bEHs/F9vDWSV7pqOtzLWptBlVcP
-	qMG/lVSFzIJi69ZGiJf/CrmLTziRWH/tQJO6hWMENMZB0dcqF+y3wIKyMkXAxPA2eBoUTp8hAWtcr
-	dgw6m4YyLkPb6tuDpZ9ICvpPRKEStNSoRWM/vNjdLna0Sb7Os66O6498N3mTV8zRmjU7pjUHfREDP
-	UHOcoFXctA9e6WvhnFTA==;
+	List-Owner; bh=h7OXL8YYPFlsL2KyxExxQv59fSnzqiSLBHSq0wkw6Ew=; b=ueYZqZ/t64kWhl
+	NF/DCgVq9rfTUwwYuyZ96YZWkG+g6T+f7tZ3jajHhO4tMkLexy6YcgDRl4yZKtfNChY5Az/1ZR8vr
+	k0DXeLx0ORFPmSUZA8AGEo5rf6bVXagiwWzkJSfi7LoJBy9FGPtoNzGFdEdW4RIRyVyrYEt/3rbE2
+	3WgMPI/j+nV9JNGV5G6RcHEmUljvU/GvtOaXhT8k1k6iTBhS96pB1iN9sgIiSY45XR4uzm+oWOqh5
+	0OmLeT2DHlK66Bt3Xa8QVo547BCFjHwl4WrQxcTI9MEi2V+Xwgv90lkJuut/W7roFAK/7NUpugVfm
+	qMOWNhMCUd5J5ObiXt0A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8LEw-0000Gi-2o; Thu, 12 Sep 2019 09:18:10 +0000
+	id 1i8LGa-0000yL-Hq; Thu, 12 Sep 2019 09:19:52 +0000
 Received: from mail-qt1-f193.google.com ([209.85.160.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8LEJ-0000Fy-Ie
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:17:33 +0000
-Received: by mail-qt1-f193.google.com with SMTP id o12so28797239qtf.3
+ id 1i8LGA-0000xv-2n
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:19:27 +0000
+Received: by mail-qt1-f193.google.com with SMTP id u9so2756472qtq.2
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 02:17:31 -0700 (PDT)
+ Thu, 12 Sep 2019 02:19:25 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=3v9vNWScPyFQpJOj2uC5NrtlNxn+puyxlyM0L6NxVxI=;
- b=tpEftexTzJ7l2ujLjI+gDCvnFoUVaqG9wDdzbfu0kzWkEHx6m2XEJzl3+QBykpRhNy
- M4xrdkxu5DwyCzyF4FF0M26c1nP9Hbtp/137+sGn20RLZkFrh+yE4F2oIoAljY7j3qG3
- kp3+cNDqGZlprZc6kjIidU73YdVCQ61JVUEi++gVDeHh0yQGXA/OSVS9omKCceAygaqN
- Tdy0CChJCsaZ+s6YxBf9Rx3MRmgDzbMCrSkNMiz4TG/0KiMiwWG5URfs8NcKMhVmd80a
- yZgzrAXNdpjylq2pp13V902xrPshVBJhIH6hYYFnytiESfHNL5aIklYbJ7uL7cADU7oV
- JUdA==
-X-Gm-Message-State: APjAAAVqMKew1xBJ/VK4qmUe0M+hokA58kp/vYa1pyPWQY1RwKZskody
- FGmA8P3L9mkQEmydgG+mr0PaB++A1wq8lpcAF8w=
-X-Google-Smtp-Source: APXvYqy+bZ/IsdWGG/lweYHMToFo2NNHZpONP/kd5+jqUDDglfiDRhLYrs6Ayjqcx3vUQ5sGnAv8u0JP9HHxRjVMY+w=
-X-Received: by 2002:ac8:6b1a:: with SMTP id w26mr39336977qts.304.1568279850382; 
- Thu, 12 Sep 2019 02:17:30 -0700 (PDT)
+ bh=/EEX7046EyQX+dgnwukMDo53SMY+ASxsTkaNPVYvx58=;
+ b=orVW9ZVoDD/tRTOo7DyuZOlp+1ih7luOu/XTsgquIY9H/V4JIKQQ2jk8gXMXRo8trm
+ /QkjYBFyB2YG+UPpfzE7cN7MgewxS/sJq7sJjZH5VVZJ+UHMsmrIpebBVYDUOQHRJvLu
+ gWMjhdNtu7dpP2IYsiPpLdwkXbl3ppZ6C6dGZBAcs+BXib9+wJIpaqpT0wmp1zW9loNa
+ F5dj347xb0CwBwB2qcUX7bVw8J8+YNGBUaCcy1YC8eTMprdetA3q16LyEEn12WF1KDzh
+ zXPI0jcbQ0o3lCW8truvC49JKv5WTz9kT3vTAtnjn0r7VmwX2dSmJQTTXqpHWHgVsn5T
+ wnSw==
+X-Gm-Message-State: APjAAAWbjSXebrnCJf6fTCVJC5EU85HtezpHNFOutccz1Qds4yO6bKTu
+ rHi+qasg6zQ6KLMK4DkJHR7K7zM0c2xS72UOh94=
+X-Google-Smtp-Source: APXvYqxc9h25eFxwD6FF26I9C2UvbFHea+FAz5jrXWYXKHKodElhIHAuiEDujG9bSdmHQyIXfwwVsVbgEgxQPoPvjYY=
+X-Received: by 2002:a0c:e0c4:: with SMTP id x4mr25828053qvk.176.1568279964901; 
+ Thu, 12 Sep 2019 02:19:24 -0700 (PDT)
 MIME-Version: 1.0
 References: <cover.1568239378.git.amit.kucheria@linaro.org>
- <8f539b28c25d22b8f515c131cd6b24c309f7ca90.1568239378.git.amit.kucheria@linaro.org>
-In-Reply-To: <8f539b28c25d22b8f515c131cd6b24c309f7ca90.1568239378.git.amit.kucheria@linaro.org>
+ <79755cb29b8c23709e346b5dd290481a36627648.1568239378.git.amit.kucheria@linaro.org>
+In-Reply-To: <79755cb29b8c23709e346b5dd290481a36627648.1568239378.git.amit.kucheria@linaro.org>
 From: Arnd Bergmann <arnd@arndb.de>
-Date: Thu, 12 Sep 2019 11:17:14 +0200
-Message-ID: <CAK8P3a3u8KhgaqoK0=2CXBs0HMh0fuN-ANvvQtSrWQm0J6xnvw@mail.gmail.com>
-Subject: Re: [PATCH 3/4] arm64: Kconfig: Fix VEXPRESS driver dependencies
+Date: Thu, 12 Sep 2019 11:19:09 +0200
+Message-ID: <CAK8P3a1K-Cj53RBAvXiGoeqJsymLmH0A3i-b-cE9tZ9PhwO0XQ@mail.gmail.com>
+Subject: Re: [PATCH 4/4] arm64: Kconfig: Fix EXYNOS driver dependencies
 To: Amit Kucheria <amit.kucheria@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_021731_698552_FA183104 
-X-CRM114-Status: GOOD (  14.60  )
+X-CRM114-CacheID: sfid-20190912_021926_125400_7B2D97D9 
+X-CRM114-Status: GOOD (  11.52  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -65,10 +65,10 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
  provider (arndbergmann[at]gmail.com)
- 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
- [209.85.160.193 listed in wl.mailspike.net]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.160.193 listed in wl.mailspike.net]
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
  0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
@@ -100,49 +100,41 @@ Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
 On Thu, Sep 12, 2019 at 12:19 AM Amit Kucheria <amit.kucheria@linaro.org> wrote:
->
-> Push various VEXPRESS drivers behind ARCH_VEXPRESS dependency so that it
-> doesn't get enabled by default on other platforms.
->
-> Signed-off-by: Amit Kucheria <amit.kucheria@linaro.org>
-> ---
->  drivers/bus/Kconfig           | 2 +-
->  drivers/clk/versatile/Kconfig | 4 ++--
->  2 files changed, 3 insertions(+), 3 deletions(-)
->
-> diff --git a/drivers/bus/Kconfig b/drivers/bus/Kconfig
-> index d80e8d70bf10..b2b1beee9953 100644
-> --- a/drivers/bus/Kconfig
-> +++ b/drivers/bus/Kconfig
-> @@ -166,7 +166,7 @@ config UNIPHIER_SYSTEM_BUS
->
->  config VEXPRESS_CONFIG
->         bool "Versatile Express configuration bus"
-> -       default y if ARCH_VEXPRESS
-> +       depends on ARCH_VEXPRESS
->         depends on ARM || ARM64
->         depends on OF
 
-Removing the 'default y' breaks existing defconfig files,
+> diff --git a/drivers/clk/Kconfig b/drivers/clk/Kconfig
+> index 9b2790d3f18a..bdf164a7a7c5 100644
+> --- a/drivers/clk/Kconfig
+> +++ b/drivers/clk/Kconfig
+> @@ -194,6 +194,7 @@ config COMMON_CLK_ASPEED
+>
+>  config COMMON_CLK_S2MPS11
+>         tristate "Clock driver for S2MPS1X/S5M8767 MFD"
+> +       depends on ARCH_EXYNOS
+>         depends on MFD_SEC_CORE || COMPILE_TEST
+>         ---help---
+>           This driver supports S2MPS11/S2MPS14/S5M8767 crystal oscillator
 
-Adding the 'depends on ARCH_VEXPRESS' unnecessarily limits
-compile-testing. I'd rather extend it to other architectures than
-limit it to builds that have vexpress enabled.
+This breaks compile-testing on non-ARM targets.
 
-> diff --git a/drivers/clk/versatile/Kconfig b/drivers/clk/versatile/Kconfig
-> index ac766855ba16..826750292c1e 100644
-> --- a/drivers/clk/versatile/Kconfig
-> +++ b/drivers/clk/versatile/Kconfig
-> @@ -5,8 +5,8 @@ config ICST
->  config COMMON_CLK_VERSATILE
->         bool "Clock driver for ARM Reference designs"
->         depends on ARCH_INTEGRATOR || ARCH_REALVIEW || \
-> -               ARCH_VERSATILE || ARCH_VEXPRESS || ARM64 || \
-> -               COMPILE_TEST
-> +               ARCH_VERSATILE || ARCH_VEXPRESS || COMPILE_TEST
-> +       depends on ARM64
+> diff --git a/drivers/regulator/Kconfig b/drivers/regulator/Kconfig
+> index b57093d7c01f..a4c4f01343fd 100644
+> --- a/drivers/regulator/Kconfig
+> +++ b/drivers/regulator/Kconfig
+> @@ -797,6 +797,7 @@ config REGULATOR_S2MPA01
+>
+>  config REGULATOR_S2MPS11
+>         tristate "Samsung S2MPS11/13/14/15/S2MPU02 voltage regulator"
+> +       depends on ARCH_EXYNOS
+>         depends on MFD_SEC_CORE
+>         help
+>          This driver supports a Samsung S2MPS11/13/14/15/S2MPU02 voltage
 
-It's definitely wrong to limit this to 64 bit.
+Same here. What you could do instead is add
+
+        depends on ARCH_EXYNOS || COMPILE_TEST
+
+to MFD_SEC_CORE, this would then propagate to these
+two drivers as well.
 
       Arnd
 
