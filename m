@@ -2,58 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 54F5BB0AC3
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 10:59:56 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B3837B0AEA
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:06:40 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Cc:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=mxmC8w3PAiwyeAv/DHuO/7GfzK0seV/praHOM/qPXno=; b=T2hGX+keJw7jPRtqTVi/aHZJkX
-	NUK//+s21Kvmidovku9kV/USaqWa3jIuiY5xymZicELruUvsn0p6O1GhUUT3igEpq6VJyo+iIgz/p
-	IFynPthftLhmexzGRkYoCzxTL/ElaGiMC2ysb6A6WVE6njdLSBS52KQh/LlD2njMNKajTwe3wLVW3
-	1yyhNr7O87PhDQt3utEu5tX0XeU+PDYIDCtOkrEYpbh9TMjrPG4ng4IImLl58UMlw0pw7O4aKVxC1
-	q/QtZ2eTXGXPqsNb2W779DBjumaOC8zcFv4Ey/3eOhZU6O8Slfu87BNrrgZHAaikm1uxij/UCYD3v
-	WjsGL9Sg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=xFEjprNOfBdndvD4wm8E9uOwc1R/lLAPgpbiFaQfuQo=; b=PP/6/M3KkrLMiF
+	SNoXWUyEhSjTm9xsLcIi5CzDtrj8fmvnMv8M86r22uxdKMWXAetOOFe4cXmAwoZrI9CLwIcNRE769
+	LfyfJuP1yMWcadOgJGWmKG7sSIIjXjQjbwbIsSYn/1exn/U4z24pYm0hRAmDbiGsrPlnHtVVEfTru
+	gCZmvheEJR0A4NHcjTqebENaK+5eyEHg/GFH3Ew3sYSHW7iNbzkMd3Thd3QgXa8NaLxrkW5Ik/dKy
+	s+KEpNlJY2jaL/GHr+DFa9BR0AAOCk7LvO+sqiKeCVZsn01s3z4cz4EnK0iTaxkZrJvCMWjq4Q3ad
+	hJI1sHIsI6upiw/951+Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8KxF-0001XT-FI; Thu, 12 Sep 2019 08:59:53 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Kx3-0001X8-VQ
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 08:59:43 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 0D6FA1000;
- Thu, 12 Sep 2019 01:59:41 -0700 (PDT)
-Received: from [10.162.41.127] (p8cg001049571a15.blr.arm.com [10.162.41.127])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 1746F3F71F; Thu, 12 Sep 2019 01:59:39 -0700 (PDT)
-Subject: Re: [PATCH] aarch64/mm: speedup memory initialisation
-To: Hubert Ralf <Ralf.Hubert@preh.de>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-References: <20190910085822.27072-1-ralf.hubert@preh.de>
- <645c9de8-d82a-8d51-ae4a-bcf903ccd1e5@arm.com>
- <bf14a3cb2812c03d08c380fccc4ca336cb7b5352.camel@preh.de>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <7ac85677-782a-5080-558f-bc210b5aad10@arm.com>
-Date: Thu, 12 Sep 2019 14:29:49 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
+	id 1i8L3f-0004b9-4S; Thu, 12 Sep 2019 09:06:31 +0000
+Received: from mail-lj1-x243.google.com ([2a00:1450:4864:20::243])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8L2n-0004ad-0a
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:05:38 +0000
+Received: by mail-lj1-x243.google.com with SMTP id h2so16331758ljk.1
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Sep 2019 02:05:36 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=mime-version:references:in-reply-to:from:date:message-id:subject:to
+ :cc:content-transfer-encoding;
+ bh=yO0Ugz+vt5CON7QrbS17pn/9PoZbjOpwqpjgIPuPJBI=;
+ b=JJf5Um2xcF6I4Vn5Xtmtb4fAN1rtfg7aG42sxpsldtz+GgKvxTp9tTKa3VkZPvd9EY
+ dNzJ9xxQyS5kWB6EYiK9A9y/XxTEbxHF+zBJb89n6dDM57nEbNVKR4rsAIl5lf8Vhag+
+ TclfJV07yTOh8AcC1ggO1+zr5+Myc0FLWvLQnhvWQE30mYuP0yE+rULvwCNU9ShRD18t
+ Ncf+uKf0LjKen0Acg8JxoedVHusi+NQfZzIwwkPo4tfApHhpJzwol/5ei1Ca5GtDRVn0
+ itrKDGPC4kbBoCIDKzKKGKr2LcuCjbM5hHFqKkGEVt56HMsRvQ2UcuurPsCGdFd9ll7C
+ b6ZA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc:content-transfer-encoding;
+ bh=yO0Ugz+vt5CON7QrbS17pn/9PoZbjOpwqpjgIPuPJBI=;
+ b=s5u07Cgil1WoUuIxkO0RWAPPs6Rzc71A1vY0Q9BB5VzbsPvVzSAR0Sh/OzQ15VW2PC
+ KluaAW69Uj2Vxr+OJ9I5n6SqlhznIMKqTGj+As5Chz7P4RPQLyQ2KjCTrbQHKqB+yxrY
+ l6SBJbIfGy85jyooFELqMcUdyo3yqOOOYqeLrKWf4LliXk5YUgfbZ+Nnl7tx/2gSVDJ7
+ B0NpHcBmXa5x6s0MFjV4ZgIMQMeBFle1GJQxAsEnxH86R0QOtXH+mwvBxXxy4ipNsFWt
+ 9Xs0+lQJEocms+TE2Jqlgb7NDDfV2TfgYVeNFqRB3X3HIC89yVpxehIK7KdiC+vc/pwN
+ 2T9g==
+X-Gm-Message-State: APjAAAXfWOjLOAVl8/15IhcxA83FuvwlrVaAOrHltT2AUxa0m+hAK0oS
+ 5WH4eAQ7vpEGW3deTf2Swd1vk0u4E3joyfmWT6HdXg==
+X-Google-Smtp-Source: APXvYqxXstkfuaWL/WFUhn1/bUVAnAuPusgloIUG5UcV8mlZwjnAkzyfflZWQZ9rXkXh1oQu49x02P3fCMOERZMIJrI=
+X-Received: by 2002:a2e:654a:: with SMTP id z71mr26065109ljb.37.1568279134855; 
+ Thu, 12 Sep 2019 02:05:34 -0700 (PDT)
 MIME-Version: 1.0
-In-Reply-To: <bf14a3cb2812c03d08c380fccc4ca336cb7b5352.camel@preh.de>
-Content-Language: en-US
+References: <20190909105919.30418-1-u.kleine-koenig@pengutronix.de>
+In-Reply-To: <20190909105919.30418-1-u.kleine-koenig@pengutronix.de>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 12 Sep 2019 10:05:23 +0100
+Message-ID: <CACRpkdZTzYtxjmiEnbvSn0-WQtxADLrxJGb_Q83gtRFhcShRiQ@mail.gmail.com>
+Subject: Re: [PATCH RFC] gpio: define gpio-init nodes to initialize pins
+ similar to hogs
+To: =?UTF-8?Q?Uwe_Kleine=2DK=C3=B6nig?= <u.kleine-koenig@pengutronix.de>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_015942_100028_6E714127 
-X-CRM114-Status: GOOD (  20.12  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190912_020537_068332_6C50922F 
+X-CRM114-Status: GOOD (  13.36  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:243 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,123 +92,42 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Bartosz Golaszewski <bgolaszewski@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>,
+ Sascha Hauer <kernel@pengutronix.de>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-
-On 09/12/2019 02:10 PM, Hubert Ralf wrote:
-> Am Donnerstag, den 12.09.2019, 13:42 +0530 schrieb Anshuman Khandual:
->>
->> On 09/10/2019 02:29 PM, Hubert Ralf wrote:
->>> On ARM64 memmap_init_zone is used during bootmem_init, which iterates over
->>> all pages in the memory starting at the lowest address until the highest
->>> address is reached. On arm64 this ends up in searching a memmory region
->>> containing for each single page between lowest and highest available
->>> physicall address.
->>>
->>> Having a sparse memory system there may be some big holes in the
->>> memory map. For each page in this holes a lookup is done, which is
->>> implemented as a binary search on the available memory blocks.
->>>
->>> Adding a memmap_init for aarch64 to do the init only for the available
->>> memory areas reduces the time needed for initialising memory on startup.
->>> On a Renesas R-CAR M3 based system with a total hole of 20GB bootmem_init
->>> execution time is reduced from 378ms to 84ms.
->>>
->>> Signed-off-by: Ralf Hubert <ralf.hubert@preh.de>
->>> ---
->>>  arch/arm64/include/asm/pgtable.h |  7 +++++++
->>>  arch/arm64/mm/init.c             | 24 ++++++++++++++++++++++++
->>>  2 files changed, 31 insertions(+)
->>>
->>> diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
->>> index e09760ece844..8c6eefc08b0b 100644
->>> --- a/arch/arm64/include/asm/pgtable.h
->>> +++ b/arch/arm64/include/asm/pgtable.h
->>> @@ -298,6 +298,13 @@ static inline int pte_same(pte_t pte_a, pte_t pte_b)
->>>  	return (lhs == rhs);
->>>  }
->>>  
->>> +#ifdef CONFIG_SPARSEMEM
->>> +/* arch mem_map init routine is needed due to holes in a memmap */
->>> +#   define __HAVE_ARCH_MEMMAP_INIT
->>
->> This is not required any more. Its gone with the following commit which
->> also made generic memmap_init() an weak function currently overridden
->> only on ia64.
->>
->> dfb3ccd00a0 ("mm: make memmap_init a proper function")
->>
->>> +	void memmap_init(unsigned long size, int nid, unsigned long zone,
->>> +			 unsigned long start_pfn);
->>> +#endif /* CONFIG_SPARSEMEM */
->>> +
->>>  /*
->>>   * Huge pte definitions.
->>>   */
->>> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
->>> index f3c795278def..206b28310872 100644
->>> --- a/arch/arm64/mm/init.c
->>> +++ b/arch/arm64/mm/init.c
->>> @@ -250,6 +250,30 @@ int pfn_valid(unsigned long pfn)
->>>  }
->>>  EXPORT_SYMBOL(pfn_valid);
->>>  
->>> +#ifdef CONFIG_SPARSEMEM
->>> +void __meminit
->>> +memmap_init(unsigned long size, int nid, unsigned long zone,
->>> +	    unsigned long start_pfn)
->>> +{
->>> +	struct memblock_region *reg;
->>> +
->>> +	for_each_memblock(memory, reg) {
->>> +		unsigned long start = memblock_region_memory_base_pfn(reg);
->>> +		unsigned long end = memblock_region_memory_end_pfn(reg);
->>> +
->>> +		if (start < start_pfn)
->>> +			start = start_pfn;
->>> +		if (end > start_pfn + size)
->>> +			end = start_pfn + size;
->>> +
->>> +		if (start < end) {
->>> +			memmap_init_zone(end - start, nid, zone, start,
->>> +					 MEMMAP_EARLY, NULL);
->>> +		}
->>> +	}
->>> +}
->>> +#endif /* CONFIG_SPARSEMEM */
->>
->> In generic mmap_init(), the current high cost comes from early_pfn_valid()
->> check for each pfn in memmap_init_zone() given that early_pfn_valid() is
->> pfn_valid() when CONFIG_SPARSEMEM which is known to be expensive on arm64.
->>
->> Though we cannot do anything about pfns which are really present but the
->> high cost for non present pfns should be eliminated. The following check
->> in the above for_each_memblock() loop can achieve that.
->>
->> if (reg->flags & MEMBLOCK_NOMAP)
->> 	continue;
->>
->> MEMBLOCK_NOMAP universally should not be initialized into a zone and holes
->> if any should also be universally skipped across platforms. So these changes
->> can be moved into generic memmap_init() which will benefit other platforms.
-> Not sure if I got this. This is a additional short path for memblocks with
-> the MEMBLOCK_NOMAP flag set, right? For memblocks without these flag the remaining
-> code still needs to be executed?
-
-Right, they should be initialized in the zone.
-
-> 
-> In my case I have 4 memblocks with 1.5GB RAM at 0x4000 0000, 0x4 8000 0000,
-> 0x6 0000 0000 and 0x6 8000 0000. None of them has the MEMBLOCK_NOMAP flag set.
-
-All of them should be added into the zone with memmap_init_zone() because none of
-them has the flag.
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gTW9uLCBTZXAgOSwgMjAxOSBhdCAxMTo1OSBBTSBVd2UgS2xlaW5lLUvDtm5pZwo8dS5rbGVp
+bmUta29lbmlnQHBlbmd1dHJvbml4LmRlPiB3cm90ZToKCj4gU29tZXRpbWVzIGl0IGlzIGhhbmR5
+IHRvIGJlIGFibGUgdG8gZWFzaWx5IGRlZmluZSBhICJzYWZlIiBzdGF0ZSBmb3IgYQo+IEdQSU8u
+IFRoaXMgbWlnaHQgZm9yIGV4YW1wbGUgYmUgdXNlZCB0byBlbnN1cmUgdGhhdCBhbiBldGhlcm5l
+dCBwaHkgaXMKPiBwcm9wZXJseSByZXNldCBkdXJpbmcgc3RhcnR1cCBvciBqdXN0IHRoYXQgYWxs
+IHBpbnMgaGF2ZSBhIGRlZmluZWQgc3RhdGUKPiB0byBtaW5pbWl6ZSBsZWFrYWdlIGN1cnJlbnQu
+IEFzIHN1Y2ggYSBwaW4gbXVzdCBiZSByZXF1ZXN0YWJsZSAoYW5kCj4gY2hhbmdhYmxlKSBieSBh
+IGRldmljZSBkcml2ZXIsIGEgZ3Bpby1ob2cgY2Fubm90IGJlIHVzZWQuCj4KPiBTbyBkZWZpbmUg
+YSBHUElPIGluaXRpYWxpemVyIHdpdGggYSBzeW50YXggaWRlbnRpY2FsIHRvIGEgR1BJTyBob2cg
+anVzdAo+IHVzaW5nICJncGlvLWluaXQiIGFzIGlkZW50aWZpZXIgaW5zdGVhZCBvZiAiZ3Bpby1o
+b2ciLgo+Cj4gVGhlIHVzYWdlIEkgaGF2ZSBpbiBtaW5kIChhbmQgYWxzbyBpbXBsZW1lbnRlZCBp
+biBhIGN1c3RvbSBwYXRjaCBzdGFjawo+IG9uIHRvcCBvZiBiYXJlYm94IGFscmVhZHkpIGlzIHRh
+cmdldGluZyB0aGUgYm9vdGxvYWRlciBhbmQgbm90Cj4gbmVjZXNzYXJpbHkgTGludXggYXMgc3Vj
+aCBhbiBib290LXVwIGluaXRpYWxpc2F0aW9uIHNob3VsZCBiZSBkb25lIGFzCj4gZWFybHkgYXMg
+cG9zc2libGUuCj4KPiBOb3QteWV0LXNpZ25lZC1vZmYtYnk6IFV3ZSBLbGVpbmUtS8O2bmlnIDx1
+LmtsZWluZS1rb2VuaWdAcGVuZ3V0cm9uaXguZGU+Cj4gLS0tCj4gSGVsbG8sCj4KPiBtYXliZSBp
+dCBhbHNvIG1ha2VzIHNlbnNlIHRvIHVzZSAiZ3Bpby1zYWZlIj8gTWF5YmUgaXQgKHRoZW4pIG1h
+a2VzCj4gc2Vuc2UgdG8gcmVzZXQgdGhlIGdwaW8gaW4gdGhlIGluZGljYXRlZCBzdGF0ZSBhZnRl
+ciBpdCBpcyByZWxlYXNlZD8KPgo+IEFsc28gaXQgbWlnaHQgYmUgYmVuZWZpY2lhbCB0byBtYWtl
+IHRoZSB3b3JkaW5nIG1vcmUgZXhwbGljaXQgaW4gdGhlCj4gZGVzY3JpcHRpb24gYW5kIGZvciBl
+eGFtcGxlIHRlbGwgdGhhdCBvbmx5IG9uZSBvZiBncGlvLWhvZyBhbmQgZ3Bpby1pbml0Cj4gbXVz
+dCBiZSBwcm92aWRlZC4KCkl0J3Mgbm8gc2VjcmV0IHRoYXQgSSBhbSBpbiBmYXZvciBvZiB0aGlz
+IGFwcHJvYWNoLCBhcyBJIGxpa2UgY29uc2lzdGVuY3kKd2l0aCB0aGUgaG9ncy4KClRoZSBEVCBw
+ZW9wbGUgaGF2ZSBiZWVuIGFnYWluc3QsIGFzIHRoZXkgcHJlZmVyIHNvbWV0aGluZyBsaWtlIGFu
+CmluaXRpYWwgYXJyYXkgb2YgdmFsdWVzIGFraW4gdG8gZ3Bpby1uYW1lcyBJSVJDLiBCdXQgdGhp
+cyBpcyBhIGdvb2QKdGltZSBmb3IgdGhlbSB0byBzcGVhayB1cC4KCllvdXJzLApMaW51cyBXYWxs
+ZWlqCgpfX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51
+eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVh
+ZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1h
+cm0ta2VybmVsCg==
