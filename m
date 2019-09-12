@@ -2,62 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37544B1550
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 22:21:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5DE61B1559
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 22:22:30 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JLvB60bLQIVubLH8pDs9cw0ObNGabXg+53SphaZcKIo=; b=BSQzyulQW8ekYq
-	+/kvhONuqGd6/jDgExLcFklMR2n7AEGcptKfHajmxVZJbLLxncDZZ0Go+Q0oBh2uBihxuCFF9t//i
-	CHY3qC5sjIdMnY1btlpcp+T9AOB8uOrGctwi8LaNcxoGa+n9/6+fMAPU+yk+QqDYl33VKbD9d8fjM
-	4xN1KGwrzkCkjcaoyH2c8ZjCxwLwbWJWjiyejzQCC1CxxB8A0erzeGrWVAMiTnwAkYbPnRnHwyytZ
-	KbRbTiZ9BQ3q9076GYLRBdQN/wtTpkEmsUTUEiF1GTrAXZn/qYxMPQMIKOFmxb+oA1ejkDhfRzWdk
-	v8tH58npmOBPtJMspCQw==;
+	List-Owner; bh=CAV6iBGPQ9GwyxVFEYGCwsb36ZicwBkCMkMtPp2zwxI=; b=DI08lqMIFZFp1J
+	U9RmUVcaivRYoSdLxi+Fht1I0+1QNNHprXHYPal5HNnBDWENA3cUmjZmrdFdUbCA2E5Th0V6/i/ha
+	q6LGTGtAl8btOLbDnSBFPHjDV7r9RBK5kSkxiqh1CuKCga7y4nzoD57phh0IYIXR52xImG+tFC+4e
+	sg19ed9U6ejpAEMMs8BV8L38xwvENBDqXOpG05VHjP1XEd6TQRHyNeApd4AvGWNab39AKAicEJ9P9
+	4dM+MttpceeUSaVxwf61fENhDtaoXHebQ70lX0mP+tsJIn0LBVORfsIRXbSU06yrBJv/Iwf7B/iKX
+	DdgfoYGhFQE627pOjRIQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Vae-0005jf-2J; Thu, 12 Sep 2019 20:21:16 +0000
+	id 1i8Vbo-000603-Ps; Thu, 12 Sep 2019 20:22:28 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8VaP-0005j9-HB
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 20:21:02 +0000
+ id 1i8Vbb-0005zN-LO
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 20:22:17 +0000
 Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
  (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
  bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3ABB020663;
- Thu, 12 Sep 2019 20:21:00 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id CCA6020830;
+ Thu, 12 Sep 2019 20:22:14 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568319660;
- bh=l2NAdBIQ4Z3zUHMO8cl9sMZVQOpKcb4IKh5SGYzqnUw=;
+ s=default; t=1568319735;
+ bh=BwW5ZiZNxIZ35K8u4ts+t57OyUjjLd6ycUYf3HCyazE=;
  h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=HcMHJ8/VTSujngw2sG/YUpTBVedAbF59mgqRGLNz0nTXyUIefs1UMjNnekxklREHQ
- QA1rU81q07pCFdAG+K4VEOizOODHaBZVOAllODrbuMZj3/Ib7MqnkHlecVMmg5JGLL
- zW2g8lnfLHq4jW7EyZtp5EeEz/U5f5+bZRCLlYFQ=
-Date: Thu, 12 Sep 2019 22:20:57 +0200
+ b=fqF+mzmlGe0LaAtKLvp8xByYqBHhnlrXlUa6J6tfTKSXIBBL/OYhRIE30QRCMXkei
+ HHEhMe8wHovnA88dVr/DyCFw/lrqdMYvyXU17NKO9iSEmyDV/FAJMNP+FTm1KkY4t9
+ gm3SyZY1xqKW6g/dmkijJJn7/GGHdfERpHvp1vOY=
+Date: Thu, 12 Sep 2019 22:22:12 +0200
 From: Maxime Ripard <mripard@kernel.org>
 To: Jernej Skrabec <jernej.skrabec@siol.net>
-Subject: Re: [PATCH 3/6] ARM: dts: sunxi: h3/h5: Add MBUS controller node
-Message-ID: <20190912202057.czb6nzgssg442isi@localhost.localdomain>
+Subject: Re: [PATCH 4/6] dt-bindings: media: Add Allwinner H3 Deinterlace
+ binding
+Message-ID: <20190912202212.wkdipjx2bspfupem@localhost.localdomain>
 References: <20190912175132.411-1-jernej.skrabec@siol.net>
- <20190912175132.411-4-jernej.skrabec@siol.net>
+ <20190912175132.411-5-jernej.skrabec@siol.net>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190912175132.411-4-jernej.skrabec@siol.net>
+In-Reply-To: <20190912175132.411-5-jernej.skrabec@siol.net>
 User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_132101_595901_76BE0E75 
-X-CRM114-Status: GOOD (  14.98  )
+X-CRM114-CacheID: sfid-20190912_132215_720262_AE628B51 
+X-CRM114-Status: GOOD (  15.05  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
  -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
  high trust [198.145.29.99 listed in list.dnswl.org]
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -88,49 +89,80 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 Hi,
 
-On Thu, Sep 12, 2019 at 07:51:29PM +0200, Jernej Skrabec wrote:
-> Both, H3 and H5, contain MBUS, which is the bus used by DMA devices to
-> access system memory.
-> 
-> MBUS controller is responsible for arbitration between channels based
-> on set priority and can do some other things as well, like report
-> bandwidth used. It also maps RAM region to different address than CPU.
+On Thu, Sep 12, 2019 at 07:51:30PM +0200, Jernej Skrabec wrote:
+> Allwinner H3 Deinterlace core is used for deinterlacing interlaced video
+> content. Core can also be found on some later SoCs, like H5 and R40.
 > 
 > Signed-off-by: Jernej Skrabec <jernej.skrabec@siol.net>
 > ---
->  arch/arm/boot/dts/sunxi-h3-h5.dtsi | 9 +++++++++
->  1 file changed, 9 insertions(+)
+>  .../media/allwinner,sun8i-h3-deinterlace.yaml | 76 +++++++++++++++++++
+>  1 file changed, 76 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
 > 
-> diff --git a/arch/arm/boot/dts/sunxi-h3-h5.dtsi b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-> index eba190b3f9de..ef1d03812636 100644
-> --- a/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-> +++ b/arch/arm/boot/dts/sunxi-h3-h5.dtsi
-> @@ -109,6 +109,7 @@
->  		compatible = "simple-bus";
->  		#address-cells = <1>;
->  		#size-cells = <1>;
-> +		dma-ranges;
->  		ranges;
->  
->  		display_clocks: clock@1000000 {
-> @@ -538,6 +539,14 @@
->  			};
->  		};
->  
-> +		mbus: dram-controller@1c62000 {
-> +			compatible = "allwinner,sun8i-h3-mbus";
-> +			reg = <0x01c62000 0x1000>;
-> +			clocks = <&ccu 113>;
-> +			dma-ranges = <0x00000000 0x40000000 0xc0000000>;
-> +			#interconnect-cells = <1>;
-> +		};
+> diff --git a/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml b/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
+> new file mode 100644
+> index 000000000000..31c0ac427442
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/media/allwinner,sun8i-h3-deinterlace.yaml
+> @@ -0,0 +1,76 @@
+> +# SPDX-License-Identifier: (GPL-2.0 OR BSD-2-Clause)
+> +%YAML 1.2
+> +---
+> +$id: http://devicetree.org/schemas/arm/allwinner,sun8i-h3-deinterlace.yaml#
+> +$schema: http://devicetree.org/meta-schemas/core.yaml#
 > +
+> +title: Allwinner H3 Deinterlace Device Tree Bindings
+> +
+> +maintainers:
+> +  - Chen-Yu Tsai <wens@csie.org>
+> +  - Maxime Ripard <maxime.ripard@bootlin.com>
 
-If that's easy enough to access, can you also add the references in
-the devices that are already there? (CSI and DE comes to my mind, but
-there might be others).
+mripard@kernel.org please
 
-Thanks!
+> +
+> +description: |-
+> +  The Allwinner H3 and later has a deinterlace core used for
+> +  deinterlacing interlaced video content.
+> +
+> +properties:
+> +  compatible:
+> +    const: allwinner,sun8i-h3-deinterlace
+> +
+> +  reg:
+> +    maxItems: 1
+> +
+> +  interrupts:
+> +    maxItems: 1
+> +
+> +  clocks:
+> +    items:
+> +      - description: Deinterlace interface clock
+> +      - description: Deinterlace module clock
+> +      - description: Deinterlace DRAM clock
+> +
+> +  clock-names:
+> +    items:
+> +      - const: bus
+> +      - const: mod
+> +      - const: ram
+> +
+> +  resets:
+> +    maxItems: 1
+> +
+> +  interconnects:
+> +    maxItems: 1
+> +
+> +  interconnect-names:
+> +    items:
+> +      - const: dma-mem
+
+You can define it as:
+
+interconnect-names:
+    const: dma-mem
+
+There's no need for the items here.
+
 Maxime
 
 _______________________________________________
