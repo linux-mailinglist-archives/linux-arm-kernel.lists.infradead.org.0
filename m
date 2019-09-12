@@ -2,186 +2,149 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 22D6DB1370
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 19:24:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 925C4B1389
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 19:27:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
 	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
 	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=6ooefwnFiU1yxv49jVXlCaEIT2mfWQb6oqkhnMzl32A=; b=aiy4CBhefFGstc
-	jdCBIX3DbTKzbWsvK5+bHcoWKtmEmgLURtJhNEcn2rDrXNVMMidWyESEtqgeXJeYjgwhTKF13Qnml
-	vDK9KBv1FeO0EX3nfQ520JYy8cfAGoRMpcT4TwApZUaQiNeqs2/+uK1ozeKJa+FWjTVcUeJMMtOwz
-	xS7YGCGmOz4e8bMar39Q5inTJDjKG5mqJBWIBKEH28QeVVyGyJPqXSVlIjsmsNdCCaJv4aOdU3I1u
-	JlSDkShT0uegcUFxYVBa5IC+2mvmaMyc+gAAUVQDFYVr7hTskjEyM3EQzIoM7sU5wItMWg2XyAjfy
-	nm72GDbBfKA8JA5OQ3zQ==;
+	List-Owner; bh=8npf6gtXeaoJ5v9a+d3bFU5NOudN8TuYV5vZ6wt+0hw=; b=a2sDmuJD018ifq
+	KmHN2W2FFjoPI8ZfKc1LdXX71xIUGeiRN2kLD+C1ivsCLos0sjCdZseqh1g/jqbLzrVeahPdFkW74
+	lzYXcCk9Srufj+8Wdk/JIwAQNAxO3zUtqh4xql319KT7v5MA1P4YPKaDIx137yu4uFGvcqB5ppMSQ
+	NdJkEzPyviu9FvqbJnRcKdqvV/sTzbdxAa0n0FC38ef6mjy48a7lS++BuwbhuePRztFPs+Us/nq4B
+	HqMyrq7mWjBljqfBYPpqhxMU0Flr7Po0N2S7blWCjvUhhhUOMvk47irajamBSbZhUUa1XISLc+oSI
+	oLtzcKRirL5p/xkV621A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Spr-00044N-SZ; Thu, 12 Sep 2019 17:24:48 +0000
-Received: from mail-ed1-x544.google.com ([2a00:1450:4864:20::544])
+	id 1i8Ssk-0005fO-UN; Thu, 12 Sep 2019 17:27:47 +0000
+Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Spg-00043x-6O; Thu, 12 Sep 2019 17:24:37 +0000
-Received: by mail-ed1-x544.google.com with SMTP id a23so22432373edv.5;
- Thu, 12 Sep 2019 10:24:36 -0700 (PDT)
+ id 1i8SsV-0005dM-BI; Thu, 12 Sep 2019 17:27:33 +0000
+Received: by mail-pf1-x444.google.com with SMTP id d15so16399429pfo.10;
+ Thu, 12 Sep 2019 10:27:30 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=subject:to:cc:references:from:openpgp:autocrypt:message-id:date
  :user-agent:mime-version:in-reply-to:content-language
  :content-transfer-encoding;
- bh=47/wXc9rf9Ux1m99kbSa/jErJayFEv/4bL6ywJuiERY=;
- b=hY06RrEQDjqQ3vYk5aZ3GUE/XCPrEQ6W6Ob5lsfnTh6Ual6vz++XLlycp8lAL1zueO
- 2dR4p2fkLeghasBt8VtYzENaGLdjdCuPg8qCwBPqN/4CBfUJIZA54X/uFjetkCb6+RJI
- Zoh80K9KwO7GE+FnTT2ToQRzleyfA6UP2dR5zU9auh2GB1Z1odfiB2xAr+ny8aGQ67wF
- SfI3gy5OPRUOEKtCfteG2q4sC4BsSNMlPQOkO2gCS7KsBv4Wd5zrWFtnqpwp0A7P8Di6
- /tPR8D0TSVXIstJQTFLgHOVVSKoPR4sYQtvC7VVYWHS6BkgSnWrSkbLde2wHE8Q7LM2v
- 50ng==
+ bh=A2VaeoGOcPWnzldQ4YT0skQxO0QLv8zFl3O0Sl2BGVk=;
+ b=SJdrpw0L226VGKzsh56oaTd1bDqArbaJl6lmB4oBxhL/SA3ZEqZ3lWfLpdjRhuVHAF
+ zkRMXKWQGb+zVvUeQw185dLJdCPPbLnB+idlskGbIZkKE3XYdx/goRi8GTNhy156FYjf
+ fN1SKuPPGYyp37cGdOdcQFKrVJCfbey1mk0RCN9AIdEXsnwjLwiAaajcLPF60wRu64wX
+ u5xi/NSZIERbg23LJFg3yYN4kCk4VmGwIcPA9YD9O42Ris9QAyGZHmfI6//34GKM7r5t
+ P74MJXFajGD4L+ZMABwd448vM7EsB1BGFZLMH7Lz0STr/2HWuZe6OlnzNAlJpX1NlfPT
+ oy8g==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:subject:to:cc:references:from:openpgp:autocrypt
  :message-id:date:user-agent:mime-version:in-reply-to
  :content-language:content-transfer-encoding;
- bh=47/wXc9rf9Ux1m99kbSa/jErJayFEv/4bL6ywJuiERY=;
- b=LNUf0aqY1cczLe5nIM1faiiQ9hfV33ZoShxQW9KTj2rq0YznpirqO/8vD6nzsvQZVc
- L/+TRcu5KOEaNMEQJoj2ItntyOy0kTQDRjTieuESNaJmRE9FU0l2QuZ0djQh4aAAT9Ad
- RvhkAwsxuJzxMpI/uyxXz4+LcE0JOBHWmaOg8QyXgu3Byj+IuKhZ5M6RVADXFy+RdwN4
- r5q1MoLjtseayT8fjQV1wkI1NgzeL0zi7TnlYb7MQNBhxHyYQTZlQ6VQT0P+VPrIvn/z
- ifXXFz7HcS3NLjiZRlzJFYMwiuAhBeMwQdnStXvIQ20q/agvLUVIt4EhC4RgSjtBoOAs
- zViQ==
-X-Gm-Message-State: APjAAAWw+LbtkkcgRq36rLHDLhjRzbq0XtqV6yVnLO6WdQT9xampezif
- hIQMc6UDYZ32VoYMW+1Zopc=
-X-Google-Smtp-Source: APXvYqzHDoMuvbT8k2H7huqsrr2E7bVBJ8Ve+fNHuHKlkzUwAtIkQJAnrQJ82vbd7IIT/yQSr/wvUA==
-X-Received: by 2002:a17:906:7c4e:: with SMTP id
- g14mr36067987ejp.103.1568309074890; 
- Thu, 12 Sep 2019 10:24:34 -0700 (PDT)
-Received: from ziggy.stardust ([37.223.145.235])
- by smtp.gmail.com with ESMTPSA id m13sm4829069edr.15.2019.09.12.10.24.33
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Thu, 12 Sep 2019 10:24:34 -0700 (PDT)
-Subject: Re: [PATCH V2 05/13] clk: bcm2835: Add BCM2711_CLOCK_EMMC2 support
-To: Stefan Wahren <wahrenst@gmx.net>, Eric Anholt <eric@anholt.net>,
- Florian Fainelli <f.fainelli@gmail.com>, Ray Jui <rjui@broadcom.com>,
- Scott Branden <sbranden@broadcom.com>, Wolfram Sang <wsa@the-dreams.de>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Michael Turquette <mturquette@baylibre.com>, Stephen Boyd <sboyd@kernel.org>
-References: <1565713248-4906-1-git-send-email-wahrenst@gmx.net>
- <1565713248-4906-6-git-send-email-wahrenst@gmx.net>
-From: Matthias Brugger <matthias.bgg@gmail.com>
+ bh=A2VaeoGOcPWnzldQ4YT0skQxO0QLv8zFl3O0Sl2BGVk=;
+ b=DlOt998+x+djPxIEkO4N4IcZiKbGAX2ZAIkWxCx4/j+yIUxfdQKW1k74wAWIh6U6ES
+ 43f2iuvBO8rMcvMrGWVtn8lVhMrYY7pVySt/M1w9ikhYL8ZtazgyyHjGTuZJpQ1FWT+R
+ s3NsIBncLwKENDOJfFDJud0ml9re4rOEpWxVxirTPNNDzDJGhHLJ4rq34+n8ghfslaIj
+ 9NLedD0ku70f4xvjgeZxxSsZigMaj8AOroe0tQVQ5KHs8OvKSnMISXmmo1e1tB8fzO0O
+ lrbeWfidG/GoDtQCXRmWzx9TSUdbtWKPRsRhwJZrOTV6Bih/VFW9fHQ+omtaW95PEA/N
+ mWIA==
+X-Gm-Message-State: APjAAAW0+jbX0Bg+A27mvGKbHmTztSr2ZkiaV9Z70G+nzGsU3nZc1OYA
+ 9A1/IcNJ7Pob6Y1Au4WWht0=
+X-Google-Smtp-Source: APXvYqwPffKdzYn1icfU0Q8+3fovb5jHDAE3FDfUPH6fI0dNsE+i7CHa3/Qquhr8ZcaBAGA2Oyu2HQ==
+X-Received: by 2002:a63:dd17:: with SMTP id t23mr8540859pgg.295.1568309250064; 
+ Thu, 12 Sep 2019 10:27:30 -0700 (PDT)
+Received: from [10.67.49.31] ([192.19.223.252])
+ by smtp.googlemail.com with ESMTPSA id s97sm583106pjc.4.2019.09.12.10.27.27
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Thu, 12 Sep 2019 10:27:29 -0700 (PDT)
+Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
+To: Matthias Brugger <matthias.bgg@gmail.com>,
+ Matthias Brugger <mbrugger@suse.com>, Stefan Wahren <wahrenst@gmx.net>,
+ catalin.marinas@arm.com, marc.zyngier@arm.com, robh+dt@kernel.org,
+ linux-mm@kvack.org, linux-arm-kernel@lists.infradead.org,
+ linux-riscv@lists.infradead.org, hch@lst.de,
+ Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
+ <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
+ <3f9af46e-2e1a-771f-57f2-86a53caaf94a@suse.com>
+ <09f82f88-a13a-b441-b723-7bb061a2f1e3@gmail.com>
+From: Florian Fainelli <f.fainelli@gmail.com>
 Openpgp: preference=signencrypt
-Autocrypt: addr=matthias.bgg@gmail.com; prefer-encrypt=mutual; keydata=
- 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
- jrHWeQEI2ucSKsNa8FllDmG/fQ==
-Message-ID: <d89bbc4b-b6bc-0d4e-86d1-6be11876ce00@gmail.com>
-Date: Thu, 12 Sep 2019 19:24:32 +0200
+Autocrypt: addr=f.fainelli@gmail.com; prefer-encrypt=mutual; keydata=
+ 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
+ M5kY0ACeNhCZJvZ5g4C2Lc9fcTHu8jxmEkI=
+Message-ID: <abc4b2b9-41ee-16f0-5102-6032182738be@gmail.com>
+Date: Thu, 12 Sep 2019 10:27:23 -0700
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
  Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1565713248-4906-6-git-send-email-wahrenst@gmx.net>
+In-Reply-To: <09f82f88-a13a-b441-b723-7bb061a2f1e3@gmail.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_102436_358329_4C1EB86E 
-X-CRM114-Status: GOOD (  23.37  )
+X-CRM114-CacheID: sfid-20190912_102731_415492_E260C5E8 
+X-CRM114-Status: GOOD (  23.29  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:544 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:444 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (matthias.bgg[at]gmail.com)
+ provider (f.fainelli[at]gmail.com)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -200,97 +163,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, bcm-kernel-feedback-list@broadcom.com,
- linux-i2c@vger.kernel.org, linux-clk@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-rpi-kernel@lists.infradead.org
+Cc: robin.murphy@arm.com, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org, will@kernel.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 9/12/19 10:18 AM, Matthias Brugger wrote:
+> 
+> 
+> On 10/09/2019 11:27, Matthias Brugger wrote:
+>>
+>>
+>> On 09/09/2019 21:33, Stefan Wahren wrote:
+>>> Hi Nicolas,
+>>>
+>>> Am 09.09.19 um 11:58 schrieb Nicolas Saenz Julienne:
+>>>> Hi all,
+>>>> this series attempts to address some issues we found while bringing up
+>>>> the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
+>>>> up of these discussions:
+>>>> v4: https://lkml.org/lkml/2019/9/6/352
+>>>> v3: https://lkml.org/lkml/2019/9/2/589
+>>>> v2: https://lkml.org/lkml/2019/8/20/767
+>>>> v1: https://lkml.org/lkml/2019/7/31/922
+>>>> RFC: https://lkml.org/lkml/2019/7/17/476
+>>>>
+>>>> The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
+>>>> only address the first GB: their DMA address range is
+>>>> 0xc0000000-0xfc000000 which is aliased to the first GB of physical
+>>>> memory 0x00000000-0x3c000000. Note that only some peripherals have these
+>>>> limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
+>>>> view of the address space by virtue of being hooked up trough a second
+>>>> interconnect.
+>>>>
+>>>> Part of this is solved on arm32 by setting up the machine specific
+>>>> '.dma_zone_size = SZ_1G', which takes care of reserving the coherent
+>>>> memory area at the right spot. That said no buffer bouncing (needed for
+>>>> dma streaming) is available at the moment, but that's a story for
+>>>> another series.
+>>>>
+>>>> Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
+>>>> ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
+>>>> arch code as if all peripherals where be able to address the first 4GB
+>>>> of memory.
+>>>>
+>>>> In the light of this, the series implements the following changes:
+>>>>
+>>>> - Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
+>>>>   area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
+>>>>   the RPi4 is the only arm64 device with such DMA addressing limitations
+>>>>   so this hardcoded solution was deemed preferable.
+>>>>
+>>>> - Properly set ARCH_ZONE_DMA_BITS.
+>>>>
+>>>> - Reserve the CMA area in a place suitable for all peripherals.
+>>>>
+>>>> This series has been tested on multiple devices both by checking the
+>>>> zones setup matches the expectations and by double-checking physical
+>>>> addresses on pages allocated on the three relevant areas GFP_DMA,
+>>>> GFP_DMA32, GFP_KERNEL:
+>>>>
+>>>> - On an RPi4 with variations on the ram memory size. But also forcing
+>>>>   the situation where all three memory zones are nonempty by setting a 3G
+>>>>   ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
+>>>>
+>>> i like to test this series on Raspberry Pi 4 and i have some questions
+>>> to get arm64 running:
+>>>
+>>> Do you use U-Boot? Which tree?
+>>
+>> If you want to use U-Boot, try v2019.10-rc4, it should have everything you need
+>> to boot your kernel.
+>>
+> 
+> Ok, here is a thing. In the linux kernel we now use bcm2711 as SoC name, but the
+> RPi4 devicetree provided by the FW uses mostly bcm2838. U-Boot in its default
+> config uses the devicetree provided by the FW, mostly because this way you don't
+> have to do anything to find out how many RAM you really have. Secondly because
+> this will allow us, in the near future, to have one U-boot binary for both RPi3
+> and RPi4 (and as a side effect one binary for RPi1 and RPi2).
 
+Fairly sure we had the conversation a few weeks ago about whether to
+chose bcm2711 or bcm2838 for the compatible string. In all cases, the
+actual HW this designates is the same, but there was a consistency
+argument that 2838, is numerically + 1 than its predecessor and might be
+how the RPi would be announced, even if the chip silkscreen says 2711.
 
-On 13/08/2019 18:20, Stefan Wahren wrote:
-> The new BCM2711 supports an additional clock for the emmc2 block.
-> So add a new compatible and register this clock only for BCM2711.
-> 
-> Signed-off-by: Stefan Wahren <wahrenst@gmx.net>
-> Reviewed-by: Matthias Brugger <mbrugger@suse.com>
-> Acked-by: Eric Anholt <eric@anholt.net>
-> ---
->  drivers/clk/bcm/clk-bcm2835.c | 20 +++++++++++++++++++-
->  1 file changed, 19 insertions(+), 1 deletion(-)
-> 
-> diff --git a/drivers/clk/bcm/clk-bcm2835.c b/drivers/clk/bcm/clk-bcm2835.c
-> index 21cd952..fdf672a 100644
-> --- a/drivers/clk/bcm/clk-bcm2835.c
-> +++ b/drivers/clk/bcm/clk-bcm2835.c
-> @@ -114,6 +114,8 @@
->  #define CM_AVEODIV		0x1bc
->  #define CM_EMMCCTL		0x1c0
->  #define CM_EMMCDIV		0x1c4
-> +#define CM_EMMC2CTL		0x1d0
-> +#define CM_EMMC2DIV		0x1d4
-> 
->  /* General bits for the CM_*CTL regs */
->  # define CM_ENABLE			BIT(4)
-> @@ -290,7 +292,8 @@
->  #define BCM2835_MAX_FB_RATE	1750000000u
-> 
->  #define SOC_BCM2835		BIT(0)
-> -#define SOC_ALL			(SOC_BCM2835)
-> +#define SOC_BCM2711		BIT(1)
-> +#define SOC_ALL			(SOC_BCM2835 | SOC_BCM2711)
-> 
->  /*
->   * Names of clocks used within the driver that need to be replaced
-> @@ -2003,6 +2006,16 @@ static const struct bcm2835_clk_desc clk_desc_array[] = {
->  		.frac_bits = 8,
->  		.tcnt_mux = 39),
-> 
-> +	/* EMMC2 clock (only available for BCM2711) */
-> +	[BCM2711_CLOCK_EMMC2]	= REGISTER_PER_CLK(
-> +		SOC_BCM2711,
-> +		.name = "emmc2",
-> +		.ctl_reg = CM_EMMC2CTL,
-> +		.div_reg = CM_EMMC2DIV,
-> +		.int_bits = 4,
-> +		.frac_bits = 8,
-> +		.tcnt_mux = 42),
-> +
->  	/* General purpose (GPIO) clocks */
->  	[BCM2835_CLOCK_GP0]	= REGISTER_PER_CLK(
->  		SOC_ALL,
-> @@ -2238,8 +2251,13 @@ static const struct cprman_plat_data cprman_bcm2835_plat_data = {
->  	.soc = SOC_BCM2835,
->  };
-> 
-> +static const struct cprman_plat_data cprman_bcm2711_plat_data = {
-> +	.soc = SOC_BCM2711,
-> +};
-> +
->  static const struct of_device_id bcm2835_clk_of_match[] = {
->  	{ .compatible = "brcm,bcm2835-cprman", .data = &cprman_bcm2835_plat_data },
-> +	{ .compatible = "brcm,bcm2711-cprman", .data = &cprman_bcm2711_plat_data },
-
-Because the RPi4 FW uses bcm2838-cprman as compatible, we will need to add this
-here as well.
-
-Regards,
-Matthias
-
->  	{}
->  };
->  MODULE_DEVICE_TABLE(of, bcm2835_clk_of_match);
-> --
-> 2.7.4
-> 
-> 
-> _______________________________________________
-> linux-arm-kernel mailing list
-> linux-arm-kernel@lists.infradead.org
-> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-> 
+If we start adding 2711, does that mean we should also add 2708/09/10 to
+existing 2835/36/37 compatible strings or has that ship sailed?
+-- 
+Florian
 
 _______________________________________________
 linux-arm-kernel mailing list
