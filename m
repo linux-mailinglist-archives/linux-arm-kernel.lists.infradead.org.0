@@ -2,57 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id EE57FB0A79
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 10:38:04 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6836FB0A81
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 10:40:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=34XAWCsMVl6Eo00K/cfaJnJCkhZJF1VibUSi0Q1ez/c=; b=MBKS/cg5uO12cV
-	+VmVU6t6mbngX9I+9AtO42PACGeA2OIIYgTnCn8otc90EVM8/eEEl9mjv+z1pgoVjLilFBhQgv5md
-	k3zFPdMoJOOsrx1chxHC2n/axgP769HI45Y/MIFkk47sXC5vVBRTcDy19laidE4JwE5DuAkwEKzlf
-	EFpD1GFc5/MJmRCsfAlewT4BfKDVlP3hjp0d71pFPvExdAj3Z7sjgAzncG2cjyn8zIeZJdwPFuagu
-	aaIPXaoU+ARccYprOGpsbbR5/5gnG5sCuFb9c7THwk/Vs/Iwy0x4p4Gy3kJZJnM6wptUFiFDbioqJ
-	VQlPviw6s4dKmW/jPFeA==;
+	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
+	References:Message-ID:Date:Subject:To:From:Reply-To:Cc:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=U8pMCSgU9qAr19bJTQvmK4XYSVc2TeLW36tPXg4H1js=; b=H7N65ZTmHzXcWH
+	v6ntBEyWuSa0yTxwO/yp1qtnnWz3LR53vcGDBnP8MbnRrD3ZoQJyrS3s+vGL41hHbJPQSUGaOwYRx
+	aAx6sV0Ws1Gj9vJ6/xPqTNen04VSJlfxp7Pl9oQtsJglYrfPWpoTFUqSwu6RRgbTp4ELnzFduxxX7
+	5StnzMhnX9QIa5ozMT/jRe2JizO8v1qLZKPu3YBM/Q8t/QcQsDjc9y4lqtLact8sOOYctTqp83Je1
+	cHNm3pQ2NGyU46+2zb2zNWzJue+PMkovecKBSHn7OSK+SWCtTdxYVUiqxRr4MDz6a09tcFjm/Vj+n
+	09FPZ7t/GMTBw6/3hMYw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Kc7-0002fg-41; Thu, 12 Sep 2019 08:38:03 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Kbq-0002fK-JI
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 08:37:48 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id BB8C01000;
- Thu, 12 Sep 2019 01:37:45 -0700 (PDT)
-Received: from [10.162.41.127] (p8cg001049571a15.blr.arm.com [10.162.41.127])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
- 6006D3F71F; Thu, 12 Sep 2019 01:37:39 -0700 (PDT)
-Subject: Re: [PATCH V7 3/3] arm64/mm: Enable memory hot remove
-To: Catalin Marinas <catalin.marinas@arm.com>
-References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
- <1567503958-25831-4-git-send-email-anshuman.khandual@arm.com>
- <20190910161759.GI14442@C02TF0J2HF1T.local>
- <9a7a82cd-77d0-bcab-3028-7be0599b0a10@arm.com>
-From: Anshuman Khandual <anshuman.khandual@arm.com>
-Message-ID: <93dc87f9-b0e5-140c-fb6c-1fa3d438381f@arm.com>
-Date: Thu, 12 Sep 2019 14:07:49 +0530
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
- Thunderbird/52.9.1
-MIME-Version: 1.0
-In-Reply-To: <9a7a82cd-77d0-bcab-3028-7be0599b0a10@arm.com>
+	id 1i8KeU-0004DI-RX; Thu, 12 Sep 2019 08:40:30 +0000
+Received: from mail01.preh.com ([80.149.130.22])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8KeI-0004Ch-Sl
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 08:40:20 +0000
+From: Hubert Ralf <Ralf.Hubert@preh.de>
+To: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>, "anshuman.khandual@arm.com"
+ <anshuman.khandual@arm.com>
+Subject: Re: [PATCH] aarch64/mm: speedup memory initialisation
+Thread-Topic: [PATCH] aarch64/mm: speedup memory initialisation
+Thread-Index: AQHVZ7YAP7sn04V7oEKvWrPakQZn36cnkreAgAAHnIA=
+Date: Thu, 12 Sep 2019 08:40:12 +0000
+Message-ID: <bf14a3cb2812c03d08c380fccc4ca336cb7b5352.camel@preh.de>
+References: <20190910085822.27072-1-ralf.hubert@preh.de>
+ <645c9de8-d82a-8d51-ae4a-bcf903ccd1e5@arm.com>
+In-Reply-To: <645c9de8-d82a-8d51-ae4a-bcf903ccd1e5@arm.com>
+Accept-Language: de-DE, en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-tm-snts-smtp: F3CD44FFDCA80C49406212E51BA14C0E735217CA327F3C4BF5855FCB79B0CA1B2000:8
+x-exclaimer-md-config: 142fe46c-4d13-4ac1-9970-1f36f118897a
+Content-ID: <5A748C9235CB314B96B3AD44B957F82B@preh.de>
+MIME-Version: 1.0
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; d=preh.de; s=key1;
+ c=relaxed/relaxed; 
+ h=from:to:subject:date:message-id:references:content-type:mime-version;
+ bh=s1pvdvHnBiRrpTVXcOtVIsYH20hnmvOXB0Bg9zwBByU=;
+ b=kkAQxuK5WxCSEoCuVqQNc/vp2JtrQJHJ+/okFntEPH7JJCWUu0IFYgOI0CFteN77nPhYOeJPjZvD
+ rUiCZ8pa+nNtzdwixspZImZeAw2nwO7riOnL/Vzr8Z7BhJ+KdPl46igCFFs2Bu4WwHj2m/n3sAmC
+ TjLiYL/QkfiYNAMwmYqYnvi6A2CNO7sCIA2Kevoc2Q6n3tW/l/xhNmR+GZVRmR4hMSDd14Res0QZ
+ v4krHN0eVDqhfSJQZepK7imMhplWLF6tAgQwQUWFouKMoltCmGwB93UZnef+Ou3G+M0nzGubxcwg
+ cQG5mD17Rc4sWvRRFfTAKdDJh8/bKPWvg6pA8Q==
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_013746_721030_7E266862 
-X-CRM114-Status: GOOD (  22.39  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190912_014019_461382_79F81405 
+X-CRM114-Status: GOOD (  23.83  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [80.149.130.22 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,91 +82,112 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com, linux-mm@kvack.org,
- arunks@codeaurora.org, cpandya@codeaurora.org, ira.weiny@intel.com,
- will@kernel.org, steven.price@arm.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, Robin.Murphy@arm.com, broonie@kernel.org, cai@lca.pw,
- ard.biesheuvel@arm.com, dan.j.williams@intel.com,
- linux-arm-kernel@lists.infradead.org, osalvador@suse.de, steve.capper@arm.com,
- logang@deltatee.com, linux-kernel@vger.kernel.org, akpm@linux-foundation.org,
- mgorman@techsingularity.net
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Am Donnerstag, den 12.09.2019, 13:42 +0530 schrieb Anshuman Khandual:
+> 
+> On 09/10/2019 02:29 PM, Hubert Ralf wrote:
+> > On ARM64 memmap_init_zone is used during bootmem_init, which iterates over
+> > all pages in the memory starting at the lowest address until the highest
+> > address is reached. On arm64 this ends up in searching a memmory region
+> > containing for each single page between lowest and highest available
+> > physicall address.
+> > 
+> > Having a sparse memory system there may be some big holes in the
+> > memory map. For each page in this holes a lookup is done, which is
+> > implemented as a binary search on the available memory blocks.
+> > 
+> > Adding a memmap_init for aarch64 to do the init only for the available
+> > memory areas reduces the time needed for initialising memory on startup.
+> > On a Renesas R-CAR M3 based system with a total hole of 20GB bootmem_init
+> > execution time is reduced from 378ms to 84ms.
+> > 
+> > Signed-off-by: Ralf Hubert <ralf.hubert@preh.de>
+> > ---
+> >  arch/arm64/include/asm/pgtable.h |  7 +++++++
+> >  arch/arm64/mm/init.c             | 24 ++++++++++++++++++++++++
+> >  2 files changed, 31 insertions(+)
+> > 
+> > diff --git a/arch/arm64/include/asm/pgtable.h b/arch/arm64/include/asm/pgtable.h
+> > index e09760ece844..8c6eefc08b0b 100644
+> > --- a/arch/arm64/include/asm/pgtable.h
+> > +++ b/arch/arm64/include/asm/pgtable.h
+> > @@ -298,6 +298,13 @@ static inline int pte_same(pte_t pte_a, pte_t pte_b)
+> >  	return (lhs == rhs);
+> >  }
+> >  
+> > +#ifdef CONFIG_SPARSEMEM
+> > +/* arch mem_map init routine is needed due to holes in a memmap */
+> > +#   define __HAVE_ARCH_MEMMAP_INIT
+> 
+> This is not required any more. Its gone with the following commit which
+> also made generic memmap_init() an weak function currently overridden
+> only on ia64.
+> 
+> dfb3ccd00a0 ("mm: make memmap_init a proper function")
+> 
+> > +	void memmap_init(unsigned long size, int nid, unsigned long zone,
+> > +			 unsigned long start_pfn);
+> > +#endif /* CONFIG_SPARSEMEM */
+> > +
+> >  /*
+> >   * Huge pte definitions.
+> >   */
+> > diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> > index f3c795278def..206b28310872 100644
+> > --- a/arch/arm64/mm/init.c
+> > +++ b/arch/arm64/mm/init.c
+> > @@ -250,6 +250,30 @@ int pfn_valid(unsigned long pfn)
+> >  }
+> >  EXPORT_SYMBOL(pfn_valid);
+> >  
+> > +#ifdef CONFIG_SPARSEMEM
+> > +void __meminit
+> > +memmap_init(unsigned long size, int nid, unsigned long zone,
+> > +	    unsigned long start_pfn)
+> > +{
+> > +	struct memblock_region *reg;
+> > +
+> > +	for_each_memblock(memory, reg) {
+> > +		unsigned long start = memblock_region_memory_base_pfn(reg);
+> > +		unsigned long end = memblock_region_memory_end_pfn(reg);
+> > +
+> > +		if (start < start_pfn)
+> > +			start = start_pfn;
+> > +		if (end > start_pfn + size)
+> > +			end = start_pfn + size;
+> > +
+> > +		if (start < end) {
+> > +			memmap_init_zone(end - start, nid, zone, start,
+> > +					 MEMMAP_EARLY, NULL);
+> > +		}
+> > +	}
+> > +}
+> > +#endif /* CONFIG_SPARSEMEM */
+> 
+> In generic mmap_init(), the current high cost comes from early_pfn_valid()
+> check for each pfn in memmap_init_zone() given that early_pfn_valid() is
+> pfn_valid() when CONFIG_SPARSEMEM which is known to be expensive on arm64.
+> 
+> Though we cannot do anything about pfns which are really present but the
+> high cost for non present pfns should be eliminated. The following check
+> in the above for_each_memblock() loop can achieve that.
+> 
+> if (reg->flags & MEMBLOCK_NOMAP)
+> 	continue;
+> 
+> MEMBLOCK_NOMAP universally should not be initialized into a zone and holes
+> if any should also be universally skipped across platforms. So these changes
+> can be moved into generic memmap_init() which will benefit other platforms.
+Not sure if I got this. This is a additional short path for memblocks with
+the MEMBLOCK_NOMAP flag set, right? For memblocks without these flag the remaining
+code still needs to be executed?
 
-
-On 09/12/2019 09:58 AM, Anshuman Khandual wrote:
-> 
-> On 09/10/2019 09:47 PM, Catalin Marinas wrote:
->> On Tue, Sep 03, 2019 at 03:15:58PM +0530, Anshuman Khandual wrote:
->>> @@ -770,6 +1022,28 @@ int __meminit vmemmap_populate(unsigned long start, unsigned long end, int node,
->>>  void vmemmap_free(unsigned long start, unsigned long end,
->>>  		struct vmem_altmap *altmap)
->>>  {
->>> +#ifdef CONFIG_MEMORY_HOTPLUG
->>> +	/*
->>> +	 * FIXME: We should have called remove_pagetable(start, end, true).
->>> +	 * vmemmap and vmalloc virtual range might share intermediate kernel
->>> +	 * page table entries. Removing vmemmap range page table pages here
->>> +	 * can potentially conflict with a concurrent vmalloc() allocation.
->>> +	 *
->>> +	 * This is primarily because vmalloc() does not take init_mm ptl for
->>> +	 * the entire page table walk and it's modification. Instead it just
->>> +	 * takes the lock while allocating and installing page table pages
->>> +	 * via [p4d|pud|pmd|pte]_alloc(). A concurrently vanishing page table
->>> +	 * entry via memory hot remove can cause vmalloc() kernel page table
->>> +	 * walk pointers to be invalid on the fly which can cause corruption
->>> +	 * or worst, a crash.
->>> +	 *
->>> +	 * So free_empty_tables() gets called where vmalloc and vmemmap range
->>> +	 * do not overlap at any intermediate level kernel page table entry.
->>> +	 */
->>> +	unmap_hotplug_range(start, end, true);
->>> +	if (!vmalloc_vmemmap_overlap)
->>> +		free_empty_tables(start, end);
->>> +#endif
->>>  }
->>>  #endif	/* CONFIG_SPARSEMEM_VMEMMAP */
-> Hello Catalin,
-> 
->> I wonder whether we could simply ignore the vmemmap freeing altogether,
->> just leave it around and not unmap it. This way, we could call
-> This would have been an option (even if we just ignore for a moment that
-> it might not be the cleanest possible method) if present memory hot remove
-> scenarios involved just system RAM of comparable sizes.
-> 
-> But with persistent memory which will be plugged in as ZONE_DEVICE might
-> ask for a vmem_atlamp based vmemmap mapping where the backing memory comes
-> from the persistent memory range itself not from existing system RAM. IIRC
-> altmap support was originally added because the amount persistent memory on
-> a system might be order of magnitude higher than that of regular system RAM.
-> During normal memory hot add (without altmap) would have caused great deal
-> of consumption from system RAM just for persistent memory range's vmemmap
-> mapping. In order to avoid such a scenario altmap was created to allocate
-> vmemmap mapping backing memory from the device memory range itself.
-> 
-> In such cases vmemmap must be unmapped and it's backing memory freed up for
-> the complete removal of persistent memory which originally requested for
-> altmap based vmemmap backing.
-> 
-> Just as a reference, the upcoming series which enables altmap support on
-> arm64 tries to allocate vmemmap mapping backing memory from the device range
-> itself during memory hot add and free them up during memory hot remove. Those
-> methods will not be possible if memory hot-remove does not really free up
-> vmemmap backing storage.
-> 
-> https://patchwork.kernel.org/project/linux-mm/list/?series=139299
-> 
-
-Just to add in here. There is an ongoing work which will enable allocating
-memory from the hot-add range itself even for normal system RAM. So this
-might not be specific to ZONE_DEVICE based device/persistent memory alone
-for a long time.
-
-https://lore.kernel.org/lkml/20190725160207.19579-1-osalvador@suse.de/
-
+In my case I have 4 memblocks with 1.5GB RAM at 0x4000 0000, 0x4 8000 0000,
+0x6 0000 0000 and 0x6 8000 0000. None of them has the MEMBLOCK_NOMAP flag set.
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
