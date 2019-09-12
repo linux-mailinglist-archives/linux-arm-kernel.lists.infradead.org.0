@@ -2,80 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 61645B1157
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:42:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1FB07B116A
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:48:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=xApM9Fc7/0cdmQQTkLT4wsxrMaU1gaFoKNPURjWj1iA=; b=FFEt31vBujc5DkX3QZmoQJO4c
-	lHIJmOup2IudgHcYCu1tWmXqVs7BKPuB3vYw3x0/SgnNic2uKSuHTQQ/xkU1wSW8yr5XUM5P/C1fT
-	LsnM1AOgnu92UmrRYkyt2/po6GattpVrJpQGhWc6bFmoZtk0b1puWodnRyyKhct1V55OdPIiKX0+H
-	wzzVpa6kUqe2psJXjwYmRnDR5TzA7aJGxG3VGR6rh3P5KDoFl1GhcyNiH2FVdT+XqmxQMi7ZzcK4F
-	NiS9t/TIktdLo+eomMlJE6QCyy8FzfbAvstmpwXXRBFnfdbD0UdT8ugU5Pg1cukkbJ1jTIrh5SNG4
-	2RiHy2YcQ==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=NKK0US3j3Idu9LTt6+RR9j13QlcZL/OF/xOfgULheBA=; b=VXdX8PQUPwsWAp
+	3Du0X06nihd5rD25CY4YsAWR8OhLo4867mN1a48dvL9eMGfvFSCYek0YfSqmz0K/9n6uYEqNAzoQK
+	FE8GTxsePKHETtsHvdNmIttHfNJj2lNGdcG3H/r/6UB/5fUAP2w9AjDgva2jwAIEwnRxqx7Xa9Byx
+	L6Grw1+4ohIlDro94zf/ElmcfSVu1+1IW2WOfOviM/iilxG/w4JLIBAdPMiseqD280j/Je8RJH07a
+	9BmRYXVB1W8fVeZnpTkUJ+z1eK5hIGcqWkzV5LsCjfGXpz5LgW6HKNflhSq7JBV7WMH/Y196dAX4L
+	RK1XMCt23XZp5UonQuog==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8QJD-0005sA-Ac; Thu, 12 Sep 2019 14:42:55 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
+	id 1i8QOR-0007bp-Hn; Thu, 12 Sep 2019 14:48:19 +0000
+Received: from mail-eopbgr140042.outbound.protection.outlook.com
+ ([40.107.14.42] helo=EUR01-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8QJ0-0005qt-Cm; Thu, 12 Sep 2019 14:42:44 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 46ThLp3CQXz9typD;
- Thu, 12 Sep 2019 16:42:26 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=rF17s6tJ; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id CVQlmJ3AEH2k; Thu, 12 Sep 2019 16:42:26 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 46ThLp1t53z9typC;
- Thu, 12 Sep 2019 16:42:26 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1568299346; bh=otnUrb4pzuxU7Yp0+QroZ8OVT4O1umudoLeJqQl5wZo=;
- h=Subject:To:Cc:References:From:Date:In-Reply-To:From;
- b=rF17s6tJhq8MvFO5HaHkJAy0j4vJJMc9gH1QsIdlkc0uGkrBFzY6mm7WqD7gp6Y2w
- pDwud6FagAuEx2hmyDZDo1d1qU6dEAs2y6kNIO4poGfjfz3+JYPoadusOPxMP4DNCT
- uG/GxTT9Ndmwpf9KkQmrv+QnUdDjo6qRIVZu/AVs=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id C98AA8B940;
- Thu, 12 Sep 2019 16:42:27 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id 67GVoWa0YCuH; Thu, 12 Sep 2019 16:42:27 +0200 (CEST)
-Received: from [192.168.4.90] (unknown [192.168.4.90])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id A5BBC8B933;
- Thu, 12 Sep 2019 16:42:25 +0200 (CEST)
-Subject: Re: [PATCH V2 0/2] mm/debug: Add tests for architecture exported page
- table helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Message-ID: <527edfce-c986-de4c-e286-34a70f6a2790@c-s.fr>
-Date: Thu, 12 Sep 2019 16:42:25 +0200
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+ id 1i8QO3-0007bV-Pr
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 14:47:57 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ea1jSFx3nP0RaFtiQ412DTbgtjkEF2cp9vQZDujfUoSt89sj8su/454eR7vo3f1hDurBTcIM7qOtqAUWTJhzNIbg5FsYArpuq316TqycYjt7+Fc513HWAx/7CpRM+emjUPg8O32pPxlm3I2QprcOFr6R5KuriKrE9rjXXoIqfz33NOvA2+raZ2DQGmLCUXWXwEgMwOTUFYS48ej5p9EOIxnmurJ04a818n8afLdSm9o8ebHbVavfKM/q1S+BxOa49BhIt77rCqioOEieSisdWKpxvVWdYLADxfvSP9g8pEN1XumS7DGD+DQ7ZnN2J6nP523Zei10fpC6qI9YWuV2tg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B2dkLJ8d12hl1LrhgErARR7sfye+zOIzbg5U+PQEewA=;
+ b=kTGLhfC+O0f8fy/CG51sZaz2VIbnnyridLInAvG5200ybHPYz996REgDZUL5YSKUgFbcQj3B254wJiItIldzHCZ4YS9oyiejQiPbZbSJhZMgihdIYVq0mBS9olJUy/YaVBBb0HZDVXvPO1aRGnj4A7qp4C9glvCjTDpeey9P8aZKKwC6hu4NDcHz4LIbl8ZBo+tJdZVUV06gn9NM5YlmbJPFUzGhAL1q3UAzt6vXLLbId1XUG0rhuUq0gbT7bVy376b9bSTalEnNfY1L0JqnzRts3X2L0HorHdhHZlZ8k+7ijirVciZtSMME2fwH8LMoN4b7UzH4D5cP4gCblbjiUA==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=B2dkLJ8d12hl1LrhgErARR7sfye+zOIzbg5U+PQEewA=;
+ b=HOdjjY088GejQJK2DNpylsH8a0RnkLtWk2aLk2YXJghXdPCoBpwQkfEOFZHP1K9OOYN2rYiPc8mMR16lUNhcjRUJruRpZdvC/UOw1n3A3WXCyYoREL7eMtR+qbOyhjPxNEeu6PvUufKZAaf3QbpWsO837Mh3Frp9eKUEo02a1Kc=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.235.81) by
+ VE1PR04MB6429.eurprd04.prod.outlook.com (20.179.232.154) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2241.18; Thu, 12 Sep 2019 14:47:52 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::8f2:412c:88c6:a365]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::8f2:412c:88c6:a365%7]) with mapi id 15.20.2241.022; Thu, 12 Sep 2019
+ 14:47:52 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+Subject: RE: FYI: imx-sdma firmware is not compatible with SLUB slab allocator
+Thread-Topic: FYI: imx-sdma firmware is not compatible with SLUB slab allocator
+Thread-Index: AQHVXNw+wzto4eeux06zQsdxRt35zKcQS7yAgABK/MCAARQlAIAH0cMggACSdICADU6HIIAAhmQAgAAo24CAACE7gIAACDaAgAAASpA=
+Date: Thu, 12 Sep 2019 14:47:51 +0000
+Message-ID: <VE1PR04MB6638E1FD68E7B4F5D4F7AED789B00@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <VI1PR04MB7023FB06F79F31334905D34EEEA00@VI1PR04MB7023.eurprd04.prod.outlook.com>
+ <7282882c-1c79-9685-4bfe-80195976c8d6@televic.com>
+ <VE1PR04MB663818AE90C9997DC340250989A30@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <f68d8972-7471-6544-d50f-55267e6790a7@televic.com>
+ <VE1PR04MB66380D06DD2619493904B38B89B90@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <dc06392b-8242-7d09-e0fe-49fb04849ebb@televic.com>
+ <VE1PR04MB66385122B55060CE7919014D89B00@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <9a48ca49-4c6f-f17e-3306-6af41d3b162c@televic.com>
+ <5274ab9f-999a-9d11-35fa-43b57187607b@televic.com>
+ <VE1PR04MB663817327D9A585F0C4A158589B00@VE1PR04MB6638.eurprd04.prod.outlook.com>
+ <20190912144023.GZ13294@shell.armlinux.org.uk>
+In-Reply-To: <20190912144023.GZ13294@shell.armlinux.org.uk>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [92.121.68.129]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 3f45f8c2-473a-4752-ff55-08d73790304c
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:VE1PR04MB6429; 
+x-ms-traffictypediagnostic: VE1PR04MB6429:|VE1PR04MB6429:
+x-ms-exchange-purlcount: 1
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB6429546CB2D077EF7A3968D789B00@VE1PR04MB6429.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:7219;
+x-forefront-prvs: 01583E185C
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(39860400002)(136003)(366004)(396003)(346002)(376002)(189003)(199004)(13464003)(9686003)(71190400001)(14454004)(99286004)(55016002)(66066001)(6916009)(5660300002)(4326008)(7696005)(8676002)(66946007)(966005)(305945005)(76116006)(64756008)(66476007)(66556008)(81166006)(52536014)(81156014)(8936002)(66446008)(25786009)(102836004)(186003)(54906003)(6116002)(256004)(26005)(486006)(45080400002)(14444005)(5024004)(6506007)(7736002)(53546011)(71200400001)(53936002)(3846002)(74316002)(229853002)(33656002)(86362001)(76176011)(6306002)(476003)(11346002)(6246003)(6436002)(446003)(478600001)(2906002)(316002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6429;
+ H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 374Q4+lyh5tg3PnGF9lR64nEVM2g6YvEgxF6pSTTTkuGpe2wui4AtAFHmXSwHCYv4jKlsw6vsEN0SHM28lyxuXF3AyqBqVt1ZEHAgUR+cMft+/NmoCUFrNwKTmRiCNxZ+kckmr8TUMVTJVTG1t7f+Zt1Lq/hdr8XdxsrGpM73b0l4hhm5skvPK9V7S9Xrfgy9rZAl7G9bK2mDmQyoOPjKyhJQ9iezWHBs+JJolxnSvG1wGRwIk8AiBuY/XqludXSThR1ybVG3Rr//ahsLJy2r7IIouyiS1l7dUJhpDvFxIJ269Tp5Rau0GSIajsfU7RBhXMrRInFlkpeF/ee4UQJ3XO1YHOb72CsyPjKEjgTjgw/M7eqSGtnDgvYUf1kIdqY9QZOoVkLKOiG0a/EXSO9dAxie7uwOAx1SMTN6Vr/EgM=
 MIME-Version: 1.0
-In-Reply-To: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
-Content-Language: fr
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 3f45f8c2-473a-4752-ff55-08d73790304c
+X-MS-Exchange-CrossTenant-originalarrivaltime: 12 Sep 2019 14:47:51.6128 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: j739MnOPP2IB3feJYPaSCEw5MEssgZiHVxZbRLOF5/3p26kY/PKT7M42i1zqsapiJTu8rvEsZ92fjJCzI+EGTA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6429
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_074242_730723_4BAC6150 
-X-CRM114-Status: GOOD (  20.57  )
+X-CRM114-CacheID: sfid-20190912_074755_845967_2857896A 
+X-CRM114-Status: GOOD (  24.68  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ no trust [40.107.14.42 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
@@ -94,138 +132,104 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
- linux-sh@vger.kernel.org, Peter Zijlstra <peterz@infradead.org>,
- James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
- Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
- Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
- x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
- Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
- Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Gerald Schaefer <gerald.schaefer@de.ibm.com>,
- linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
- Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
- linux-arm-kernel@lists.infradead.org,
- Sri Krishna chowdary <schowdary@nvidia.com>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
- Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
- Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
- Vineet Gupta <vgupta@synopsys.com>,
- Martin Schwidefsky <schwidefsky@de.ibm.com>,
- Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>,
- Mike Kravetz <mike.kravetz@oracle.com>
-Content-Transfer-Encoding: base64
-Content-Type: text/plain; charset="utf-8"; Format="flowed"
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ Jurgen Lambrecht <J.Lambrecht@TELEVIC.com>, dl-linux-imx <linux-imx@nxp.com>,
+ "u.kleine-koenig@pengutronix.de" <u.kleine-koenig@pengutronix.de>,
+ Leonard Crestez <leonard.crestez@nxp.com>, Fabio Estevam <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpJIGRpZG4ndCBnZXQgcGF0Y2ggMSBvZiB0aGlzIHNlcmllcywgYW5kIGl0IGlzIG5vdCBv
-biBsaW51eHBwYy1kZXYgCnBhdGNod29yayBlaXRoZXIuIENhbiB5b3UgcmVzZW5kID8KClRoYW5r
-cwpDaHJpc3RvcGhlCgpMZSAxMi8wOS8yMDE5IMOgIDA4OjAyLCBBbnNodW1hbiBLaGFuZHVhbCBh
-IMOpY3JpdMKgOgo+IFRoaXMgc2VyaWVzIGFkZHMgYSB0ZXN0IHZhbGlkYXRpb24gZm9yIGFyY2hp
-dGVjdHVyZSBleHBvcnRlZCBwYWdlIHRhYmxlCj4gaGVscGVycy4gUGF0Y2ggaW4gdGhlIHNlcmll
-cyBhZGRzIGJhc2ljIHRyYW5zZm9ybWF0aW9uIHRlc3RzIGF0IHZhcmlvdXMKPiBsZXZlbHMgb2Yg
-dGhlIHBhZ2UgdGFibGUuIEJlZm9yZSB0aGF0IGl0IGV4cG9ydHMgZ2lnYW50aWMgcGFnZSBhbGxv
-Y2F0aW9uCj4gZnVuY3Rpb24gZnJvbSBIdWdlVExCLgo+IAo+IFRoaXMgdGVzdCB3YXMgb3JpZ2lu
-YWxseSBzdWdnZXN0ZWQgYnkgQ2F0YWxpbiBkdXJpbmcgYXJtNjQgVEhQIG1pZ3JhdGlvbgo+IFJG
-QyBkaXNjdXNzaW9uIGVhcmxpZXIuIEdvaW5nIGZvcndhcmQgaXQgY2FuIGluY2x1ZGUgbW9yZSBz
-cGVjaWZpYyB0ZXN0cwo+IHdpdGggcmVzcGVjdCB0byB2YXJpb3VzIGdlbmVyaWMgTU0gZnVuY3Rp
-b25zIGxpa2UgVEhQLCBIdWdlVExCIGV0YyBhbmQKPiBwbGF0Zm9ybSBzcGVjaWZpYyB0ZXN0cy4K
-PiAKPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1tbS8yMDE5MDYyODEwMjAwMy5HQTU2
-NDYzQGFycmFraXMuZW1lYS5hcm0uY29tLwo+IAo+IFRlc3Rpbmc6Cj4gCj4gU3VjY2Vzc2Z1bGx5
-IGJ1aWxkIGFuZCBib290IHRlc3RlZCBvbiBib3RoIGFybTY0IGFuZCB4ODYgcGxhdGZvcm1zIHdp
-dGhvdXQKPiBhbnkgdGVzdCBmYWlsaW5nLiBPbmx5IGJ1aWxkIHRlc3RlZCBvbiBzb21lIG90aGVy
-IHBsYXRmb3Jtcy4KPiAKPiBCdXQgSSB3b3VsZCByZWFsbHkgYXBwcmVjaWF0ZSBpZiBmb2xrcyBj
-YW4gaGVscCB2YWxpZGF0ZSB0aGlzIHRlc3Qgb24gb3RoZXIKPiBwbGF0Zm9ybXMgYW5kIHJlcG9y
-dCBiYWNrIHByb2JsZW1zLiBBbGwgc3VnZ2VzdGlvbnMsIGNvbW1lbnRzIGFuZCBpbnB1dHMKPiB3
-ZWxjb21lLiBUaGFuayB5b3UuCj4gCj4gQ2hhbmdlcyBpbiBWMjoKPiAKPiAtIEZpeGVkIHNtYWxs
-IHR5cG8gZXJyb3IgaW4gTU9EVUxFX0RFU0NSSVBUSU9OKCkKPiAtIEZpeGVkIG02NGsgYnVpbGQg
-cHJvYmxlbXMgZm9yIGx2YWx1ZSBjb25jZXJucyBpbiBwbWRfeHh4X3Rlc3RzKCkKPiAtIEZpeGVk
-IGR5bmFtaWMgcGFnZSB0YWJsZSBsZXZlbCBmb2xkaW5nIHByb2JsZW1zIG9uIHg4NiBhcyBwZXIg
-S2lycmlsCj4gLSBGaXhlZCBzZWNvbmQgcG9pbnRlcnMgZHVyaW5nIHB4eF9wb3B1bGF0ZV90ZXN0
-cygpIHBlciBLaXJpbGwgYW5kIEdlcmFsZAo+IC0gQWxsb2NhdGUgYW5kIGZyZWUgcHRlIHRhYmxl
-IHdpdGggcHRlX2FsbG9jX29uZS9wdGVfZnJlZSBwZXIgS2lyaWxsCj4gLSBNb2RpZmllZCBweHhf
-Y2xlYXJfdGVzdHMoKSB0byBhY2NvbW1vZGF0ZSBzMzkwIGxvd2VyIDEyIGJpdHMgc2l0dWF0aW9u
-Cj4gLSBDaGFuZ2VkIFJBTkRPTV9OWlZBTFVFIHZhbHVlIGZyb20gMHhiZSB0byAweGZmCj4gLSBD
-aGFuZ2VkIGFsbG9jYXRpb24sIHVzYWdlLCBmcmVlIHNlcXVlbmNlIGZvciBzYXZlZF9wdGVwCj4g
-LSBSZW5hbWVkIFZNQV9GTEFHUyBhcyBWTUZMQUdTCj4gLSBJbXBsZW1lbnRlZCBhIG5ldyBtZXRo
-b2QgZm9yIHJhbmRvbSB2YWRkciBnZW5lcmF0aW9uCj4gLSBJbXBsZW1lbnRlZCBzb21lIG90aGVy
-IGNsZWFudXBzCj4gLSBEcm9wcGVkIGV4dGVybiByZWZlcmVuY2UgdG8gbW1fYWxsb2MoKQo+IC0g
-Q3JlYXRlZCBhbmQgZXhwb3J0ZWQgbmV3IGFsbG9jX2dpZ2FudGljX3BhZ2Vfb3JkZXIoKQo+IC0g
-RHJvcHBlZCB0aGUgY3VzdG9tIGFsbG9jYXRvciBhbmQgdXNlZCBuZXcgYWxsb2NfZ2lnYW50aWNf
-cGFnZV9vcmRlcigpCj4gCj4gQ2hhbmdlcyBpbiBWMToKPiAKPiBodHRwczovL2xvcmUua2VybmVs
-Lm9yZy9saW51eC1tbS8xNTY3NDk3NzA2LTg2NDktMS1naXQtc2VuZC1lbWFpbC1hbnNodW1hbi5r
-aGFuZHVhbEBhcm0uY29tLwo+IAo+IC0gQWRkZWQgZmFsbGJhY2sgbWVjaGFuaXNtIGZvciBQTUQg
-YWxpZ25lZCBtZW1vcnkgYWxsb2NhdGlvbiBmYWlsdXJlCj4gCj4gQ2hhbmdlcyBpbiBSRkMgVjI6
-Cj4gCj4gaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtbW0vMTU2NTMzNTk5OC0yMjU1My0x
-LWdpdC1zZW5kLWVtYWlsLWFuc2h1bWFuLmtoYW5kdWFsQGFybS5jb20vVC8jdQo+IAo+IC0gTW92
-ZWQgdGVzdCBtb2R1bGUgYW5kIGl0J3MgY29uZmlnIGZyb20gbGliLyB0byBtbS8KPiAtIFJlbmFt
-ZWQgY29uZmlnIFRFU1RfQVJDSF9QR1RBQkxFIGFzIERFQlVHX0FSQ0hfUEdUQUJMRV9URVNUCj4g
-LSBSZW5hbWVkIGZpbGUgZnJvbSB0ZXN0X2FyY2hfcGd0YWJsZS5jIHRvIGFyY2hfcGd0YWJsZV90
-ZXN0LmMKPiAtIEFkZGVkIHJlbGV2YW50IE1PRFVMRV9ERVNDUklQVElPTigpIGFuZCBNT0RVTEVf
-QVVUSE9SKCkgZGV0YWlscwo+IC0gRHJvcHBlZCBsb2FkYWJsZSBtb2R1bGUgY29uZmlnIG9wdGlv
-bgo+IC0gQmFzaWMgdGVzdHMgbm93IHVzZSBtZW1vcnkgYmxvY2tzIHdpdGggcmVxdWlyZWQgc2l6
-ZSBhbmQgYWxpZ25tZW50Cj4gLSBQVUQgYWxpZ25lZCBtZW1vcnkgYmxvY2sgZ2V0cyBhbGxvY2F0
-ZWQgd2l0aCBhbGxvY19jb250aWdfcmFuZ2UoKQo+IC0gSWYgUFVEIGFsaWduZWQgbWVtb3J5IGNv
-dWxkIG5vdCBiZSBhbGxvY2F0ZWQgaXQgZmFsbHMgYmFjayBvbiBQTUQgYWxpZ25lZAo+ICAgIG1l
-bW9yeSBibG9jayBmcm9tIHBhZ2UgYWxsb2NhdG9yIGFuZCBwdWRfKiB0ZXN0cyBhcmUgc2tpcHBl
-ZAo+IC0gQ2xlYXIgYW5kIHBvcHVsYXRlIHRlc3RzIG5vdyBvcGVyYXRlIG9uIHJlYWwgaW4gbWVt
-b3J5IHBhZ2UgdGFibGUgZW50cmllcwo+IC0gRHVtbXkgbW1fc3RydWN0IGdldHMgYWxsb2NhdGVk
-IHdpdGggbW1fYWxsb2MoKQo+IC0gRHVtbXkgcGFnZSB0YWJsZSBlbnRyaWVzIGdldCBhbGxvY2F0
-ZWQgd2l0aCBbcHVkfHBtZHxwdGVdX2FsbG9jX1ttYXBdKCkKPiAtIFNpbXBsaWZpZWQgW3A0ZHxw
-Z2RdX2Jhc2ljX3Rlc3RzKCksIG5vdyBoYXMgcmFuZG9tIHZhbHVlcyBpbiB0aGUgZW50cmllcwo+
-IAo+IE9yaWdpbmFsIFJGQyBWMToKPiAKPiBodHRwczovL2xvcmUua2VybmVsLm9yZy9saW51eC1t
-bS8xNTY0MDM3NzIzLTI2Njc2LTEtZ2l0LXNlbmQtZW1haWwtYW5zaHVtYW4ua2hhbmR1YWxAYXJt
-LmNvbS8KPiAKPiBDYzogQW5kcmV3IE1vcnRvbiA8YWtwbUBsaW51eC1mb3VuZGF0aW9uLm9yZz4K
-PiBDYzogVmxhc3RpbWlsIEJhYmthIDx2YmFia2FAc3VzZS5jej4KPiBDYzogR3JlZyBLcm9haC1I
-YXJ0bWFuIDxncmVna2hAbGludXhmb3VuZGF0aW9uLm9yZz4KPiBDYzogVGhvbWFzIEdsZWl4bmVy
-IDx0Z2x4QGxpbnV0cm9uaXguZGU+Cj4gQ2M6IE1pa2UgUmFwb3BvcnQgPHJwcHRAbGludXgudm5l
-dC5pYm0uY29tPgo+IENjOiBKYXNvbiBHdW50aG9ycGUgPGpnZ0B6aWVwZS5jYT4KPiBDYzogRGFu
-IFdpbGxpYW1zIDxkYW4uai53aWxsaWFtc0BpbnRlbC5jb20+Cj4gQ2M6IFBldGVyIFppamxzdHJh
-IDxwZXRlcnpAaW5mcmFkZWFkLm9yZz4KPiBDYzogTWljaGFsIEhvY2tvIDxtaG9ja29Aa2VybmVs
-Lm9yZz4KPiBDYzogTWFyayBSdXRsYW5kIDxtYXJrLnJ1dGxhbmRAYXJtLmNvbT4KPiBDYzogTWFy
-ayBCcm93biA8YnJvb25pZUBrZXJuZWwub3JnPgo+IENjOiBTdGV2ZW4gUHJpY2UgPFN0ZXZlbi5Q
-cmljZUBhcm0uY29tPgo+IENjOiBBcmQgQmllc2hldXZlbCA8YXJkLmJpZXNoZXV2ZWxAbGluYXJv
-Lm9yZz4KPiBDYzogTWFzYWhpcm8gWWFtYWRhIDx5YW1hZGEubWFzYWhpcm9Ac29jaW9uZXh0LmNv
-bT4KPiBDYzogS2VlcyBDb29rIDxrZWVzY29va0BjaHJvbWl1bS5vcmc+Cj4gQ2M6IFRldHN1byBI
-YW5kYSA8cGVuZ3Vpbi1rZXJuZWxAaS1sb3ZlLnNha3VyYS5uZS5qcD4KPiBDYzogTWF0dGhldyBX
-aWxjb3ggPHdpbGx5QGluZnJhZGVhZC5vcmc+Cj4gQ2M6IFNyaSBLcmlzaG5hIGNob3dkYXJ5IDxz
-Y2hvd2RhcnlAbnZpZGlhLmNvbT4KPiBDYzogRGF2ZSBIYW5zZW4gPGRhdmUuaGFuc2VuQGludGVs
-LmNvbT4KPiBDYzogUnVzc2VsbCBLaW5nIC0gQVJNIExpbnV4IDxsaW51eEBhcm1saW51eC5vcmcu
-dWs+Cj4gQ2M6IE1pY2hhZWwgRWxsZXJtYW4gPG1wZUBlbGxlcm1hbi5pZC5hdT4KPiBDYzogUGF1
-bCBNYWNrZXJyYXMgPHBhdWx1c0BzYW1iYS5vcmc+Cj4gQ2M6IE1hcnRpbiBTY2h3aWRlZnNreSA8
-c2Nod2lkZWZza3lAZGUuaWJtLmNvbT4KPiBDYzogSGVpa28gQ2Fyc3RlbnMgPGhlaWtvLmNhcnN0
-ZW5zQGRlLmlibS5jb20+Cj4gQ2M6ICJEYXZpZCBTLiBNaWxsZXIiIDxkYXZlbUBkYXZlbWxvZnQu
-bmV0Pgo+IENjOiBWaW5lZXQgR3VwdGEgPHZndXB0YUBzeW5vcHN5cy5jb20+Cj4gQ2M6IEphbWVz
-IEhvZ2FuIDxqaG9nYW5Aa2VybmVsLm9yZz4KPiBDYzogUGF1bCBCdXJ0b24gPHBhdWwuYnVydG9u
-QG1pcHMuY29tPgo+IENjOiBSYWxmIEJhZWNobGUgPHJhbGZAbGludXgtbWlwcy5vcmc+Cj4gQ2M6
-IEtpcmlsbCBBLiBTaHV0ZW1vdiA8a2lyaWxsQHNodXRlbW92Lm5hbWU+Cj4gQ2M6IEdlcmFsZCBT
-Y2hhZWZlciA8Z2VyYWxkLnNjaGFlZmVyQGRlLmlibS5jb20+Cj4gQ2M6IENocmlzdG9waGUgTGVy
-b3kgPGNocmlzdG9waGUubGVyb3lAYy1zLmZyPgo+IENjOiBNaWtlIEtyYXZldHogPG1pa2Uua3Jh
-dmV0ekBvcmFjbGUuY29tPgo+IENjOiBsaW51eC1zbnBzLWFyY0BsaXN0cy5pbmZyYWRlYWQub3Jn
-Cj4gQ2M6IGxpbnV4LW1pcHNAdmdlci5rZXJuZWwub3JnCj4gQ2M6IGxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwo+IENjOiBsaW51eC1pYTY0QHZnZXIua2VybmVsLm9yZwo+IENj
-OiBsaW51eHBwYy1kZXZAbGlzdHMub3psYWJzLm9yZwo+IENjOiBsaW51eC1zMzkwQHZnZXIua2Vy
-bmVsLm9yZwo+IENjOiBsaW51eC1zaEB2Z2VyLmtlcm5lbC5vcmcKPiBDYzogc3BhcmNsaW51eEB2
-Z2VyLmtlcm5lbC5vcmcKPiBDYzogeDg2QGtlcm5lbC5vcmcKPiBDYzogbGludXgta2VybmVsQHZn
-ZXIua2VybmVsLm9yZwo+IAo+IEFuc2h1bWFuIEtoYW5kdWFsICgyKToKPiAgICBtbS9odWdldGxi
-OiBNYWtlIGFsbG9jX2dpZ2FudGljX3BhZ2UoKSBhdmFpbGFibGUgZm9yIGdlbmVyYWwgdXNlCj4g
-ICAgbW0vcGd0YWJsZS9kZWJ1ZzogQWRkIHRlc3QgdmFsaWRhdGluZyBhcmNoaXRlY3R1cmUgcGFn
-ZSB0YWJsZSBoZWxwZXJzCj4gCj4gICBhcmNoL3g4Ni9pbmNsdWRlL2FzbS9wZ3RhYmxlXzY0X3R5
-cGVzLmggfCAgIDIgKwo+ICAgaW5jbHVkZS9saW51eC9odWdldGxiLmggICAgICAgICAgICAgICAg
-IHwgICA5ICsKPiAgIG1tL0tjb25maWcuZGVidWcgICAgICAgICAgICAgICAgICAgICAgICB8ICAx
-NCArCj4gICBtbS9NYWtlZmlsZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgfCAgIDEgKwo+
-ICAgbW0vYXJjaF9wZ3RhYmxlX3Rlc3QuYyAgICAgICAgICAgICAgICAgIHwgNDI5ICsrKysrKysr
-KysrKysrKysrKysrKysrKwo+ICAgbW0vaHVnZXRsYi5jICAgICAgICAgICAgICAgICAgICAgICAg
-ICAgIHwgIDI0ICstCj4gICA2IGZpbGVzIGNoYW5nZWQsIDQ3NyBpbnNlcnRpb25zKCspLCAyIGRl
-bGV0aW9ucygtKQo+ICAgY3JlYXRlIG1vZGUgMTAwNjQ0IG1tL2FyY2hfcGd0YWJsZV90ZXN0LmMK
-PiAKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4
-LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFk
-Lm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFy
-bS1rZXJuZWwK
+On 2019/9/12 22:40 Russell King - ARM Linux admin <linux@armlinux.org.uk> wrote:
+> On Thu, Sep 12, 2019 at 02:19:51PM +0000, Robin Gong wrote:
+> > > -----Original Message-----
+> > On 2019/9/12 20:12 Jurgen Lambrecht <J.Lambrecht@TELEVIC.com> wrote:
+> > >
+> > > On 9/12/19 11:45 AM, Jurgen Lambrecht wrote:
+> > > > CAUTION: This Email originated from outside Televic. Do not click
+> > > > links or
+> > > open attachments unless you recognize the sender and know the
+> > > content is safe.
+> > > >
+> > > >
+> > > > On 9/12/19 4:06 AM, Robin Gong wrote:
+> > > >>> (this looked the most interesting commit)
+> > > >> I identified this issue which caused by
+> > > >> SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3 (41)exceed the structure
+> > > >> sdma_script_start_addrs(40) so that illegal memory touch, such as
+> > > >> slob block header, thus kernel trap into while() loop forever in
+> slob_free().
+> > > Please see the below code piece in sdma_add_scripts().
+> > > >>           for (i = 0; i < sdma->script_number; i++)
+> > > >>                   if (addr_arr[i] > 0)
+> > > >>                           saddr_arr[i] = addr_arr[i]; That issue
+> > > >> was brought by commit a572460be9cf (dmaengine: imx-sdma:
+> > > >> Add support for version 3 firmware) because the
+> > > >> SDMA_SCRIPT_ADDRS_ARRAY_SIZE_V3
+> > > >> (38->41 3 scripts added) not align with script number added in
+> > > >> sdma_script_start_addrs(2 scripts). Please have a try with the
+> > > >> below
+> > > >> patch:
+> > > >> diff --git a/include/linux/platform_data/dma-imx-sdma.h
+> > > >> b/include/linux/platform_data/dma-imx-sdma.h
+> > > >> index 6eaa53c..30e676b 100644
+> > > >> --- a/include/linux/platform_data/dma-imx-sdma.h
+> > > >> +++ b/include/linux/platform_data/dma-imx-sdma.h
+> > > >> @@ -51,7 +51,10 @@ struct sdma_script_start_addrs {
+> > > >>           /* End of v2 array */
+> > > >>           s32 zcanfd_2_mcu_addr;
+> > > >>           s32 zqspi_2_mcu_addr;
+> > > >> +       s32 mcu_2_ecspi_addr;
+> > > >>           /* End of v3 array */
+> > > >> +       s32 mcu_2_zqspi_addr;
+> > > >> +       /* End of v4 array */
+> > > >>    };
+> > > >>
+> > > > Yes, this patch solves it! I can now use SLOB slab allocator. I
+> > > > tried several reboots and power cycles.
+> > > > I tried with different dts (without earlycon, without sdma on uart
+> > > > and ecspi).
+> > > > I did not try other kernels, only 4.19.66+fscl with our patches
+> > > > and sdma
+> > > > v3.5 built-in.
+> > > I tried again v5.3 rc6 with SLOB, but it still booted OK, then took
+> > > latest v5.3 rc8 from mainline, and it also boots OK - tried several times also
+> with power cycle.
+> > >
+> > > Then I added your patch, and it "still" boots :-). So OK:
+> > >
+> > > Linux imx6ul-33927318 5.3.0-rc8-dirty #3 PREEMPT Thu Sep 12 13:54:25
+> > > CEST
+> > > 2019 armv7l GNU/Linux
+> > Thanks for your test on v5.3. Yes, that potential memory corrupt only
+> > happen on one word, most time it may hid well during kernel bootup,
+> > and it's so luck for us that your 'SLOB + firmware built in' case
+> > could expose it :).Thanks for your report, I'll post a formal patch for review
+> later.
+> 
+> It sounds like this code is very fragile, and it seems like this mistake could
+> easily happen again in the future.
+> 
+> How about ensuring that sdma->script_number * sizeof(u32) < sizeof(struct
+> sdma_script_start_addrs), since sdma_add_scripts() has no protection against
+> overrunning the structure size.
+Yes, that's what my thought: add conditional checking, and warning log triggered 
+if sdma->script_number * sizeof(u32) > sizeof(struct sdma_script_start_addrs).
+> 
+> --
+> RMK's Patch system:
+> https://eur01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.
+> armlinux.org.uk%2Fdeveloper%2Fpatches%2F&amp;data=02%7C01%7Cyibin.
+> gong%40nxp.com%7C45c63241e494447ce5b508d7378f28d5%7C686ea1d3bc
+> 2b4c6fa92cd99c5c301635%7C0%7C0%7C637038960316627129&amp;sdata=d
+> QRdAxrau8EL2X7etr9MlKxNccoe70jM2dsMeUM3%2BbY%3D&amp;reserved=
+> 0
+> FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps
+> up According to speedtest.net: 11.9Mbps down 500kbps up
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
