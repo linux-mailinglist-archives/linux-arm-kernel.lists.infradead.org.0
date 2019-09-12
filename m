@@ -2,73 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5097FB0850
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 07:37:27 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id F18C3B0855
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 07:37:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Content-ID:In-Reply-To:
-	References:Message-ID:Date:Subject:To:From:Reply-To:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=lyMN4f4hT6BYDZuesgnYyhX6lh01e37oo62A4oXw98Q=; b=INShvS6qPT5MTX
-	LTLT10do8TQ2fjrHziSl1zkjiqXvaSagzqvB9AeogFjBDhGd3IbXaVNWoRLiNoxG3A72QxsFtWiwP
-	ie6D1T6aYBWSV8uW7K2+KcAm2cISS8XnJJLI3i7qLSdvOnB0Yq8YsyVqdHBK56X7iyQ2OuHZEBDBi
-	6kYjCA5UDI3tkjTkPvKq5kSVMeYOJbFltFLMrm5K4m5VwZg3xEgF0N3MV7spRJe1MX3qX8BArAESP
-	b7YITx9gOkLSL6XMjJ0n3Ym9vDy9DYAecfvNxabxV2nAQF6aCFrSrffWKxHuJihSz64kjmBVWOkv+
-	Te3NjkYyva/7j2PwtA2A==;
+	List-Owner; bh=ZV30RAWDLxFRhmVGRmKiqi/m6Ud4oXuTk+1uNdaAqsw=; b=KKHrTM6g+kVGPk
+	AlDzV+LFPAjLpSlzPQXRxHmBb+dvz5dqo4+w8PL6VAWO1EDLGWNt0dIIUiw3I1cScq9WQ1geYYDNW
+	If8Duf13hkbuRjix2V8744miti5ApJr1k7hSHq9OvKlkDpuWoXrhbbYo555RE9ZwhWP8DoqX2lYxs
+	m+VeV6yzi6gKc+QHLzShsINfiKy8Vpw+SNB8nQErPZWNkGwM5ekTEChIameWZI8wGXVa3639VgIsL
+	fNFUu0pWBYXjp1CwaWR1zRTaEGQcS54rF+A+bR4B1sUt0hwxaIyFLyRhptU2OKoV2INJZ2kKfWhXf
+	pAlGOdnxKU+0qS8nldzQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Hn8-0003DP-OM; Thu, 12 Sep 2019 05:37:14 +0000
-Received: from mail01.preh.com ([80.149.130.22])
+	id 1i8Hnk-0003ST-1F; Thu, 12 Sep 2019 05:37:52 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Hmz-0003Cy-7B
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 05:37:06 +0000
-From: Hubert Ralf <Ralf.Hubert@preh.de>
-To: "james.morse@arm.com" <james.morse@arm.com>
-Subject: Re: [PATCH] aarch64/mm: speedup memory initialisation
-Thread-Topic: [PATCH] aarch64/mm: speedup memory initialisation
-Thread-Index: AQHVZ7YAP7sn04V7oEKvWrPakQZn36cmiUYAgADd1IA=
-Date: Thu, 12 Sep 2019 05:36:53 +0000
-Message-ID: <92d07b70571fd76a7502faa6d199d4d11c498b20.camel@preh.de>
-References: <20190910085822.27072-1-ralf.hubert@preh.de>
- <93e5d420-91b7-0e42-7d3f-776323abe450@arm.com>
-In-Reply-To: <93e5d420-91b7-0e42-7d3f-776323abe450@arm.com>
-Accept-Language: de-DE, en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-tm-snts-smtp: 6A6D6DF8643980ACFDBA9BA559625D0B9F46C165C34F77B8171E1543024AE4182000:8
-x-exclaimer-md-config: 142fe46c-4d13-4ac1-9970-1f36f118897a
-Content-ID: <94F99584725C474C91DEEB88B03B6693@preh.de>
+ id 1i8HnV-0003RE-Lp; Thu, 12 Sep 2019 05:37:39 +0000
+X-UUID: 027181bb97164833ab9c92b1883b890d-20190911
+X-UUID: 027181bb97164833ab9c92b1883b890d-20190911
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 90688073; Wed, 11 Sep 2019 21:37:33 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Wed, 11 Sep 2019 22:37:32 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Thu, 12 Sep 2019 13:37:31 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Thu, 12 Sep 2019 13:37:31 +0800
+Message-ID: <1568266651.16730.13.camel@mtkswgap22>
+Subject: RE: [PATCH v1 2/3] scsi: ufs: override auto suspend tunables for ufs
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Avri Altman <Avri.Altman@wdc.com>
+Date: Thu, 12 Sep 2019 13:37:31 +0800
+In-Reply-To: <MN2PR04MB6991D63EEF50367BE2CB062CFCB10@MN2PR04MB6991.namprd04.prod.outlook.com>
+References: <1568194890-24439-1-git-send-email-stanley.chu@mediatek.com>
+ <1568194890-24439-3-git-send-email-stanley.chu@mediatek.com>
+ <MN2PR04MB6991D63EEF50367BE2CB062CFCB10@MN2PR04MB6991.namprd04.prod.outlook.com>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; d=preh.de; s=key1;
- c=relaxed/relaxed; 
- h=from:to:cc:subject:date:message-id:references:content-type:mime-version;
- bh=zy5nLI13VDOJdJBgYEzoE4IyqVrqIjItCwDt2Yato3c=;
- b=cC5SH+DcToqKaOfCd1wX0588v/qVFd+SFB5t97IuNhHfSVdDCWXUbczBc+uUrrl0y8qB4GdMqN5i
- n8xpLQiktKE+uQC6kuA2FYfFcyPB0Lh+IGGytfIeZlSk0DbpS/lvpI+2SfWzg/+nyUA6XurCEc5q
- 69HOp2PjTEgOmxEy0/ofU+eekxooB+Bvq64+c64JdXkk/sX5z7JnNt98aUJmu+X3ZHbDrULgJ6lz
- pewkx3Lc9P2jClO6IeLljNboEC/I0fhjFNfeiJz+R9LCyEsiubZMRx3qqX23m0GMDL6Rb+KjPRbj
- 6/ii35TjqJkPPqmAV1TKFHfqXzLIgGEbo4580g==
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_223705_605667_88B8345A 
-X-CRM114-Status: GOOD (  16.98  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190911_223737_714235_A5469CCF 
+X-CRM114-Status: UNSURE (   7.71  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [80.149.130.22 listed in list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -80,51 +75,53 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "linux-arm-kernel@lists.infradead.org"
- <linux-arm-kernel@lists.infradead.org>
+Cc: "sthumma@codeaurora.org" <sthumma@codeaurora.org>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "vivek.gautam@codeaurora.org" <vivek.gautam@codeaurora.org>,
+ "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
+ "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
+ "evgreen@chromium.org" <evgreen@chromium.org>,
+ "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
+ "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "beanhuo@micron.com" <beanhuo@micron.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "bvanassche@acm.org" <bvanassche@acm.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi James,
-On 09/11/2019, 17:22 +0100 James Morse wrote:
-> Hi Hubert,
-> 
-> (Subject-Nit: The prefix for this part of the kernel is 'arm64: mm:'. 
-> git log --oneline $file will usually give you enough examples you can 
-> spot the pattern.)
-Thanks for the hint.
-> 
-> On 9/10/19 9:59 AM, Hubert Ralf wrote:
-> > On ARM64 memmap_init_zone is used during bootmem_init, which iterates over
-> > all pages in the memory starting at the lowest address until the highest
-> > address is reached. On arm64 this ends up in searching a memmory region
-> > containing for each single page between lowest and highest available
-> > physicall address.
-> > Having a sparse memory system there may be some big holes in the
-> > memory map. For each page in this holes a lookup is done, which is
-> > implemented as a binary search on the available memory blocks.
+Hi Avri,
+
+> > diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c index
+> > 30b752c61b97..d253a018a73b 100644
+> > --- a/drivers/scsi/ufs/ufshcd.c
+> > +++ b/drivers/scsi/ufs/ufshcd.c
+> > @@ -88,6 +88,9 @@
+> >  /* Interrupt aggregation default timeout, unit: 40us */
+> >  #define INT_AGGR_DEF_TO        0x02
 > > 
-> > Adding a memmap_init for aarch64 to do the init only for the available
-> > memory areas reduces the time needed for initialising memory on startup.
-> > On a Renesas R-CAR M3 based system with a total hole of 20GB bootmem_init
-> > execution time is reduced from 378ms to 84ms.
+> > +/* default delay of autosuspend: 2000 ms */ #define
+> Typo?
 > 
-> Hmm, there is nothing arm64 specific about this SPARSEMEM behaviour.
-> Is there any reason this can't be done in core code, where it would 
-> benefit other architectures too?
-I'll try to move this to the core code.
-> 
-> (You'd need it to depend on !ARCH_DISCARD_MEMBLOCK as it looks like 
-> memory-hotplug uses this late).
-> 
-> 
-> Thanks,
-> 
-> James
+
+This is wired because it looks fine in both my local patch and in
+patchwork website: https://patchwork.kernel.org/patch/11140759/
+
+Anyway I will try to fix and check it carefully in v2.
+
 Thanks,
-Ralf
+Stanley
+
+
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
