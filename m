@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0C662B0BDB
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:47:48 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8D34BB0C16
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:57:48 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=ir6VIcQvljhTwmcjCtQ0SBngxlhSQevHEaEV/iB1BIo=; b=eJ033u+NwXb6RL
-	5vp0H8fPEUgUc3ex77Jb5ojo+Us29LfZuJCkC66B4rkP0Ui5sIpEB79GcVcVCgekCjNzYi4le001U
-	Y9q2ZEiKnpccQ03ffgZ1ELi+RxRp8YVG951jkbN7zGSzui7CEICuxdNl8CqGmmJcUIurgnmnBLd8/
-	I4Y4SZzxjatpIdzcO1Dm0xaFk8tZm1Efs+Eh2Z0uS0KJQAHa8CZY5bT8AjnvwDw2OA48H4Hv0n79p
-	WeJ6b+3b3jbds+TkyUyJ/gM5bO17uNXHhKHnXvEntrQFniNSENbsCHRJpqMfbfWJqqS7BWZXYoM38
-	wSmMMUBYkiEICBlrmxww==;
+	List-Owner; bh=3/N52mgNRsnhhATuGUNEXJvkPvGl3V/dF1BTqpB6pqk=; b=HZbIpg6Azo+UsG
+	2xe9K0vHjfCVqHIzA2fd5VzZle+Aj1G2+0dHm3ivKW+GbVUHwSXzRKeF4rQTchHJMrejOkrAaMkyw
+	O/9D+Jl89QJNJOGoJ0KQzYikzizCI5d6YyiUlfx+E6P+5/JWEYaYW+RyYokR5Cot7WvHAWvUCGjTq
+	sruUPpftnJPZ2Xs1VXzDvBAKRliIFjU7mmVEXX9MgWKvQFY1/A7KZn1lAydBPW457go4arZJLFYxW
+	jzuBSAjjF8APKfj2aghgThH3XW5dPVheY2zGxrUVSJzxohfrMqc5NZADcAZx1MPGP6EiWurIwAyVP
+	IXSQjbsXUqmrkKmLtw6Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Lha-0004jv-Ez; Thu, 12 Sep 2019 09:47:46 +0000
-Received: from mail-qk1-x744.google.com ([2607:f8b0:4864:20::744])
+	id 1i8LrF-0007vD-Lc; Thu, 12 Sep 2019 09:57:45 +0000
+Received: from mail-lf1-x141.google.com ([2a00:1450:4864:20::141])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8LhK-0004iW-UE
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:47:32 +0000
-Received: by mail-qk1-x744.google.com with SMTP id f13so23799044qkm.9
+ id 1i8Lr4-0007uv-Mz
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:57:35 +0000
+Received: by mail-lf1-x141.google.com with SMTP id d17so959837lfa.7
  for <linux-arm-kernel@lists.infradead.org>;
- Thu, 12 Sep 2019 02:47:30 -0700 (PDT)
+ Thu, 12 Sep 2019 02:57:34 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=njDtF8upkA6+NaauiLZUsAxJubAF9fG83zymry8vAaU=;
- b=hWMSgmlLtCEWRX/MHXkshsdVSzIZAXdwroHnFWd1J+Pi/zDbGAZcyCfZPRTWouMTs3
- HjdnM7SbArudL+LwJw9WXwtNhkxNJ3vPlJTBXwcwK+HnfsDPaTouep35wtRSaBTUpjrI
- 9emk8DOaWZePVDjguyhCt/ZL5d6Jbv6RqoCnfcdaExjJj3B1O2Clo5CXX+ScgLcmxCOf
- 9/ugnWmvMifS7Z+DvKaoS9sgQ0er8SxLA0lyfPk5VTk9hpa5RR1ZuoDNDMMCWrBadl7y
- 3s3xpnuk7FYIRnmUpF5Mf7/DQ3YY1oZ0lqDWccoUZ59bcKSlG6yXZueBxl49+QYWgfcz
- G4sA==
+ :cc; bh=2riQYjdYJYpTusYyd81I617wQxn19uT6YXDHRH2PAKQ=;
+ b=Wa+2PEDukS5xcIvafDhQDAUFe/6aib6sQO4rzmCZBV2shVTZUYc1Choz82sk5OFlY4
+ Bo9nnua++u8b1NHvGuy4ZyRHUTqiv9yNQ1Le+4c+DDg4LxYvMeWN1vZkPO6DSyKALmST
+ JQs+2L9fU4+gJB0XEjgm4wEZV3/VG5yPx/tvHUAvcCMR4rb+u0ahVsRi2iD5rOB7D0Dw
+ itytXqdFtRF0c1+O4/P/hZnw2nBp0lFAIDf3Vk2ld8q4WPhesgOwyBilOa3+QFL7dE1C
+ +zU8XCekX19X9mjOhiBsdEgbze9BbOuoD6q50i0dwt+3KPh8tABZkoemY8ChK4cIGYgE
+ IaOg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:mime-version:references:in-reply-to:from:date
  :message-id:subject:to:cc;
- bh=njDtF8upkA6+NaauiLZUsAxJubAF9fG83zymry8vAaU=;
- b=guqP20O8PqO/IfLkvzaWucpknRGvfAlrolh9K0X3D/ly5IW1mmohTex6K+ptgZ+Dve
- WXMbOHExf7yGSL7lT1YtjxVlfB5FG+RgH7YqjORCttSDSIkbAtLd+whiIvTIsAKDrOa3
- tODaDj1wOfsL7l3zbAempCHYTvBClv/JSOokzIwlCb3HPF00DNd9QSnZjb2WSaS4ivp5
- F837nnnV0mXJIKL1pJ8R6bF4shpavqTMP/rFm94hl1GlS2+LwKGYBn7fbfbbvfnatk0F
- GtOXod3empnqq01eAtRTVB6R0TgToqUmwHFYwAQDLRYqfKNS1vYbWxVfoFUGibX7UuDi
- Ublw==
-X-Gm-Message-State: APjAAAX5LTum/wMaIUNHnytdBy+AX5pGP3qMSGRkr5f0BmDap92rSD4X
- kPl8ziTi1+yX2wS02EjyUj0IUItGvwxo+MJ3unqvEVvLU8s=
-X-Google-Smtp-Source: APXvYqz/1oDNL1ZZfCatdlik6ssSKqxLf+19ecAGHXvhEDBbY9mBKtVG6u/Wq02n39I2GGkc6GmOYewOwwhK8D9OZR8=
-X-Received: by 2002:a37:6d2:: with SMTP id 201mr39608673qkg.106.1568281649476; 
- Thu, 12 Sep 2019 02:47:29 -0700 (PDT)
+ bh=2riQYjdYJYpTusYyd81I617wQxn19uT6YXDHRH2PAKQ=;
+ b=N17QqJi4JXquJzc+E5fbQ30lSFzyAWcKDe8cdvq4aQoTulcd9cuVHepHuJC0594+8H
+ IlFUupA0iFdFcxjh4k2o+FuH2M+bfpCk88slgPiuk2dyCaCB0YbhsQgSDWfgPeuQNxIx
+ kDhFEsr7sSVIy/mWd0AGMHG6b+GvXC5H8zKSvOVSEwqFHI8VrpfiP8SYc8/mz0ibC9HX
+ XAjsdl8EFnyBM0xPD3pGxrZo1Veioz3ZEJtnUzshgHk8nb5ak58NocwCDEfA+EnuxFBB
+ BgdUIg+RqaSXdrXOt8KKQKmd8mNPr3IATLEP63TU6gfCpPXF7YlEfOs2Gj9UKIIkw45/
+ faWQ==
+X-Gm-Message-State: APjAAAVtH2CXS7IcshWnyWVQDGPX5dBMg2IUn0GYb/CZup0hyjvLCbDq
+ g/tsgJy+RnQOMZm7/iCXqYdRpPeptWzTmx4nJH021A==
+X-Google-Smtp-Source: APXvYqyuzJ6eZWaK28dmU7yeuYfU71UXRJhDCit17aW8lgp5kYPE3UpXMIT+KK4butOImbh6RmOSQqr8crN9DXph8zE=
+X-Received: by 2002:ac2:5c11:: with SMTP id r17mr27613759lfp.61.1568282253045; 
+ Thu, 12 Sep 2019 02:57:33 -0700 (PDT)
 MIME-Version: 1.0
-References: <cover.1568239378.git.amit.kucheria@linaro.org>
- <CAK8P3a2zGJx7SCA4LUHPGTybN8GU16Ah3H0FbaOEwR3H7uGCnA@mail.gmail.com>
-In-Reply-To: <CAK8P3a2zGJx7SCA4LUHPGTybN8GU16Ah3H0FbaOEwR3H7uGCnA@mail.gmail.com>
-From: Amit Kucheria <amit.kucheria@linaro.org>
-Date: Thu, 12 Sep 2019 15:17:18 +0530
-Message-ID: <CAP245DVab2Zw8XPCvCc4kCrq7RCSRh0K8wN=AmLdLMVJQcTmSA@mail.gmail.com>
-Subject: Re: [PATCH 0/4] Cleanup arm64 driver dependencies
-To: Arnd Bergmann <arnd@arndb.de>
+References: <1567054348-19685-1-git-send-email-srinath.mannam@broadcom.com>
+ <1567054348-19685-2-git-send-email-srinath.mannam@broadcom.com>
+ <CACRpkdZe2btC-vjRq1rPaHA9pXUi8N_cZT-RQ5m=PxjmkASieA@mail.gmail.com>
+ <535f7569-70d0-1a7c-e15d-b77301867629@broadcom.com>
+In-Reply-To: <535f7569-70d0-1a7c-e15d-b77301867629@broadcom.com>
+From: Linus Walleij <linus.walleij@linaro.org>
+Date: Thu, 12 Sep 2019 10:57:21 +0100
+Message-ID: <CACRpkdajpxFM+2VNdOiKk3a=dYfeAOud6C_SXBdL+3L0uYqHcw@mail.gmail.com>
+Subject: Re: [PATCH 1/2] gpio: iproc-gpio: Fix incorrect pinconf configurations
+To: Ray Jui <ray.jui@broadcom.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_024730_975131_66978590 
-X-CRM114-Status: GOOD (  15.64  )
+X-CRM114-CacheID: sfid-20190912_025734_757752_522803EA 
+X-CRM114-Status: UNSURE (   9.67  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:744 listed in]
+ no trust [2a00:1450:4864:20:0:0:0:141 listed in]
  [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
@@ -91,66 +94,29 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
- Liam Girdwood <lgirdwood@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
- Catalin Marinas <catalin.marinas@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Linux PM list <linux-pm@vger.kernel.org>,
- linux-clk <linux-clk@vger.kernel.org>,
+Cc: Scott Branden <sbranden@broadcom.com>, Ray Jui <rjui@broadcom.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- linux-pci <linux-pci@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>, arm-soc <arm@kernel.org>,
- Mark Brown <broonie@kernel.org>,
- "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
- Sebastian Reichel <sre@kernel.org>, Will Deacon <will@kernel.org>,
- Michael Turquette <mturquette@baylibre.com>,
+ Srinath Mannam <srinath.mannam@broadcom.com>, Li Jin <li.jin@broadcom.com>,
+ bcm-kernel-feedback-list <bcm-kernel-feedback-list@broadcom.com>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Arnd,
+On Wed, Sep 11, 2019 at 5:55 PM Ray Jui <ray.jui@broadcom.com> wrote:
 
-On Thu, Sep 12, 2019 at 2:59 PM Arnd Bergmann <arnd@arndb.de> wrote:
+> These patches were actually all internally reviewed by Broadcom
+> maintainers before sending out to the mailing list.
 >
-> On Thu, Sep 12, 2019 at 12:18 AM Amit Kucheria <amit.kucheria@linaro.org> wrote:
-> >
-> > I was using initcall_debugging on a QCOM platform and ran across a bunch of
-> > driver initcalls that are enabled even if their SoC support is disabled.
-> >
-> > Here are some fixups for a subset of them.
+> Obviously you wouldn't know about that, :)
 >
-> The idea seems reasonable, disabling a platform may just turn off
-> all the drivers that are not useful elsewhere, but there are mistakes
-> in a lot of your changes, so I'm certainly not applying these for 5.4.
+> One of us should have explicitly given our ACK, sorry...
 
-OK, thanks for confirming that you have no objections to such changes, per-se.
+It's fine, the process is not perfect.
 
-I'll spend some more time ensuring COMPILE_TEST coverage for these
-cleanups. I only focused on quickly cleaning up my initcall_debug
-output for now.
-
-> Generally speaking, the way that works best is
->
-> config SUBSYS_DRIVER_FOO
->        tristate "SUBSYS support for FOO platform"
->        depends on ARCH_FOO || COMPILE_TEST
->        depends on SUBSYS
->        default "m" if ARCH_FOO
->
-> This means it's enabled as a loadable module by default (use
-> default "y" instead where necessary) as long as the platform
-> is enabled, but an x86 allmodconfig build also includes it
-> because of COMPILE_TEST, while any configuration without
-> ARCH_FOO that is not compile-testing cannot enable it.
-
-How would you like to handle defconfigs which list a driver
-explicitly? Should we add ARCH_FOO to those defconfigs or remove
-DRIVER_FOO from them?
-
-Regards,
-Amit
+Thanks!
+Linus Walleij
 
 _______________________________________________
 linux-arm-kernel mailing list
