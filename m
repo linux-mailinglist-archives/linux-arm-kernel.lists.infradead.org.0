@@ -2,50 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0B79EB108D
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:00:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3F3B1B1094
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 16:03:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
 	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
 	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
 	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=HbTen84rfxfg0XUTWJtwC1ob11WSfqzDqQD/ivqcELY=; b=K+VHdqEniNZU6DlZYySNxfy6k
-	QKo9fRIRnF9mOyM5aBblFl5qjigA/Z46WcuTwnr7LtwxT1zrHb9JGK3iYmgVduqZ4TyMeMkV/8n2x
-	twbRcmOkg64nA+1Hcex5walKn1isbsjM8aXXplT6/QQLq1EdF/5yH0eLpCrRd3XRanJOdx+USqv7l
-	dl3UFg3Gc0KnNVcQzMvVofDtTAsFG2X5LU+RsV3o56IQ9VWaslvqHXgvKV5cPyTXDopgl2NHYcCyf
-	fXR5yoDhZxX5gpvkGwonpagJfg/sX939HOWWiKpPmJVu90Jf+sk4zKOmyzjmRKDBPz9YIJiuH0MaZ
-	tk+UH1rLg==;
+	 bh=0r7JEoscD6BhWe30IlGDXMrpV0NeOnaZ2Xd8IHLArDI=; b=Go2ry7I27zsZCIsTAS9EotDYZ
+	ykfdAkwYdgDsFPNhrI3xkX6pyohpAARn/Oe1ZXjVaVbNEZ1lql4ar1lbhSJ6KvWk6cbTN/JlRO9pI
+	pVVCAABTH4Hx7sehxdEbol5sh/U94pumLHw1cECNaMUQc6g4oJfLmWLYOOiSHQTEMmLsUwdatvxcq
+	J8z1sm8C7TyGZehqJMok8L5b4Naz1nIgruVB6OxXFNYR4yk21uicZAvuPNPZLD0aGLWw3d9Q4DT8f
+	p+cmmGcr6u+qbDz6bNHigT0U/ssXix9hHQdJ6xkxXSJeoljme0lh1bwmtvKqpDsYtMSFIuIzRy0d3
+	l2vrFruPw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8PeI-0008Cq-Jp; Thu, 12 Sep 2019 14:00:38 +0000
+	id 1i8Pgc-0008TV-58; Thu, 12 Sep 2019 14:03:02 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Pe6-0008CR-7r
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 14:00:27 +0000
+ id 1i8PgN-0008TB-Cj
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 14:02:48 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 5805028;
- Thu, 12 Sep 2019 07:00:23 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id B05D828;
+ Thu, 12 Sep 2019 07:02:46 -0700 (PDT)
 Received: from [10.249.163.245] (unknown [172.31.20.19])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 92C7A3F71F;
- Thu, 12 Sep 2019 07:00:21 -0700 (PDT)
-Subject: Re: [PATCH v5 1/3] coresight: etm4x: save/restore state across CPU
- low power states
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B8E8A3F71F;
+ Thu, 12 Sep 2019 07:02:44 -0700 (PDT)
+Subject: Re: [PATCH v5 2/3] dt-bindings: arm: coresight: Add support for
+ coresight-loses-context-with-cpu
 To: andrew.murray@arm.com, mathieu.poirier@linaro.org,
  alexander.shishkin@linux.intel.com
 References: <20190816154615.39854-1-andrew.murray@arm.com>
- <20190816154615.39854-2-andrew.murray@arm.com>
+ <20190816154615.39854-3-andrew.murray@arm.com>
 From: Suzuki K Poulose <suzuki.poulose@arm.com>
-Message-ID: <3e3f7e86-c62b-e9d6-9d42-f4897b47847d@arm.com>
-Date: Thu, 12 Sep 2019 15:03:44 +0100
+Message-ID: <34570d2f-b9b7-a45e-8a52-86808198755b@arm.com>
+Date: Thu, 12 Sep 2019 15:06:06 +0100
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
  Thunderbird/52.7.0
 MIME-Version: 1.0
-In-Reply-To: <20190816154615.39854-2-andrew.murray@arm.com>
+In-Reply-To: <20190816154615.39854-3-andrew.murray@arm.com>
 Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_070026_371939_4E895794 
-X-CRM114-Status: GOOD (  21.74  )
+X-CRM114-CacheID: sfid-20190912_070247_478335_20CF6DD5 
+X-CRM114-Status: GOOD (  19.92  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -72,97 +72,41 @@ Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Andrew,
-
 On 08/16/2019 04:46 PM, Andrew Murray wrote:
-> Some hardware will ignore bit TRCPDCR.PU which is used to signal
-> to hardware that power should not be removed from the trace unit.
-> Let's mitigate against this by conditionally saving and restoring
-> the trace unit state when the CPU enters low power states.
+> Some coresight components, because of choices made during hardware
+> integration, require their state to be saved and restored across CPU low
+> power states.
 > 
-> This patchset introduces a firmware property named
-> 'arm,coresight-loses-context-with-cpu' - when this is present the
-> hardware state will be conditionally saved and restored.
-> 
-> A module parameter 'pm_save_enable' is also introduced which can
-> be configured to override the firmware property. This can be set
-> to never allow save/restore or to conditionally allow it (only for
-> self-hosted). The default value is determined by firmware.
-> 
-> We avoid saving the hardware state when self-hosted coresight isn't
-> in use to reduce PM latency - we can't determine this by reading the
-> claim tags (TRCCLAIMCLR) as these are 'trace' registers which need
-> power and clocking, something we can't easily provide in the PM
-> context. Therefore we rely on the existing drvdata->mode internal
-> state that is set when self-hosted coresight is used (and powered).
-
-The patch looks good to me. Some very minor comments below.
-
+> The software has no reliable method of detecting when save/restore is
+> required thus let's add a binding to inform the kernel.
 > 
 > Signed-off-by: Andrew Murray <andrew.murray@arm.com>
 > ---
->   drivers/hwtracing/coresight/coresight-etm4x.c | 318 ++++++++++++++++++
->   drivers/hwtracing/coresight/coresight-etm4x.h |  64 ++++
->   drivers/hwtracing/coresight/coresight.c       |   6 +
->   include/linux/coresight.h                     |   6 +
->   4 files changed, 394 insertions(+)
+>   Documentation/devicetree/bindings/arm/coresight.txt | 9 +++++++++
+>   1 file changed, 9 insertions(+)
+> 
+> diff --git a/Documentation/devicetree/bindings/arm/coresight.txt b/Documentation/devicetree/bindings/arm/coresight.txt
+> index fcc3bacfd8bc..d02c42d21f2f 100644
+> --- a/Documentation/devicetree/bindings/arm/coresight.txt
+> +++ b/Documentation/devicetree/bindings/arm/coresight.txt
+> @@ -87,6 +87,15 @@ its hardware characteristcs.
+>   
+>   	* port or ports: see "Graph bindings for Coresight" below.
+>   
+> +* Optional properties for all components:
+> +
+> +	* arm,coresight-loses-context-with-cpu : boolean. Indicates that the
+> +	  hardware will lose register context on CPU power down (e.g. CPUIdle).
+> +	  An example of where this may be needed are systems which contain a
+> +	  coresight component and CPU in the same power domain. When the CPU
+> +	  powers down the coresight component also powers down and loses its
+> +	  context. This property is currently only used for the ETM 4.x driver.
+> +
+>   * Optional properties for ETM/PTMs:
+>   
+>   	* arm,cp14: must be present if the system accesses ETM/PTM management
 > 
 
-
-> +static void etm4_cpu_restore(struct etmv4_drvdata *drvdata)
-> +{
-> +	int i;
-> +	struct etmv4_save_state *state = drvdata->save_state;
-> +
-> +	CS_UNLOCK(drvdata->base);
-> +
-> +	writel_relaxed(state->trcclaimset, drvdata->base + TRCCLAIMSET);
-> +
-> +	writel_relaxed(state->trcprgctlr, drvdata->base + TRCPRGCTLR);
-> +	writel_relaxed(state->trcprocselr, drvdata->base + TRCPROCSELR);
-> +	writel_relaxed(state->trcconfigr, drvdata->base + TRCCONFIGR);
-> +	writel_relaxed(state->trcauxctlr, drvdata->base + TRCAUXCTLR);
-> +	writel_relaxed(state->trceventctl0r, drvdata->base + TRCEVENTCTL0R);
-> +	writel_relaxed(state->trceventctl1r, drvdata->base + TRCEVENTCTL1R);
-> +	writel_relaxed(state->trcstallctlr, drvdata->base + TRCSTALLCTLR);
-> +	writel_relaxed(state->trctsctlr, drvdata->base + TRCTSCTLR);
-> +	writel_relaxed(state->trcsyncpr, drvdata->base + TRCSYNCPR);
-> +	writel_relaxed(state->trcccctlr, drvdata->base + TRCCCCTLR);
-> +	writel_relaxed(state->trcbbctlr, drvdata->base + TRCBBCTLR);
-> +	writel_relaxed(state->trctraceidr, drvdata->base + TRCTRACEIDR);
-> +	writel_relaxed(state->trcqctlr, drvdata->base + TRCQCTLR);
-> +
-> +	writel_relaxed(state->trcvictlr, drvdata->base + TRCVICTLR);
-> +	writel_relaxed(state->trcviiectlr, drvdata->base + TRCVIIECTLR);
-> +	writel_relaxed(state->trcvissctlr, drvdata->base + TRCVISSCTLR);
-> +	writel_relaxed(state->trcvipcssctlr, drvdata->base + TRCVIPCSSCTLR);
-> +	writel_relaxed(state->trcvdctlr, drvdata->base + TRCVDCTLR);
-> +	writel_relaxed(state->trcvdsacctlr, drvdata->base + TRCVDSACCTLR);
-> +	writel_relaxed(state->trcvdarcctlr, drvdata->base + TRCVDARCCTLR);
-> +
-> +	for (i = 0; i < drvdata->nrseqstate; i++)
-> +		writel_relaxed(state->trcseqevr[i],
-> +					drvdata->base + TRCSEQEVRn(i));
-
-minor nit: alignment issues here and below for the multi-line
-write_relaxed() invocations.
-...
-
-
-> +static int etm4_cpu_pm_notify(struct notifier_block *nb, unsigned long cmd,
-> +			      void *v)
-> +{
-> +	struct etmv4_drvdata *drvdata;
-> +	unsigned int cpu = smp_processor_id();
-> +
-> +	if (!etmdrvdata[cpu])
-> +		return 0;
-
-
-Please could we be consistent with the return value. i.e, use something
-in line with NOTIFY_*. NOTIFY_OK ?
-
-With the above fixed:
 
 Reviewed-by: Suzuki K Poulose <suzuki.poulose@arm.com>
 
