@@ -2,67 +2,89 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9B78DB085E
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 07:39:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 53DE7B087E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 07:59:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=X/6cJZbLt6QtM19lN6kIJbXzOhr/QvSEknpRAT+n6v8=; b=IsBZ3XIEYQm+He
-	zmBEKuaD3qQcDZ6BuJ286dE84NxW4PLuX//sM4XWLLxCjFjG0y77YPrhEoqk4YloP87y37wBjPM50
-	evR7ipxaxqxdat5GYFNhvbHitFk+LWLjCsxd86qF6ld3f1ll2fBJLConJVxjIAna0laMCNwhxmoEn
-	D+fuU9ZghzePdN6UqnWiQYH77ga+4U6H+AMSEgMkwWTgPkf2IG6ToicBKD5Zp9bQT0xFqdBzGo1Da
-	0Ycsd4q3KQ1AFYw8PivKnLSSpyx45KWV7hWD8+F2GLl7jwX1DhHI15L3wtVny9lWwVMWpzKb0OjLt
-	HnCmqOwDq/Fue1ocXM2A==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=RIVkPumO6Nr3O4FE+nIWZ7PoycXGFfOPD5YSBnTmDNA=; b=t8GfXnqGuiq/Uq
+	E16sRMqqFHZ3A2bzmFGCq/9AAvwAPs8n0sBMbvt6lPdIiCo4qOhbqYs94FT0qgqCRZsmsNx5vI+tJ
+	scvWWup6MIK7YNrFBRM6LwONgwD0UJi2UEvNFlk3MQzpmV+Y8L4CnOcJ58C+DqzEu2lMnKrLdh++t
+	3VN5Kl0RCm1dKS4fAALJpvpCERngw2+/EPPF7QQ3Tw4M/uhvLvuC+u2aS38B2ffjkfiDnmqEDsExK
+	IkB4UdJq6AlQayTIV8zzkjg5Ee9pJ3VN8E3tA76TKWvT5cTFtFb9KMszbz1O2Vg/NOuw3ERspYA8w
+	oCxAIwm8JxkUmZadDu2g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8HpZ-0003lS-Hc; Thu, 12 Sep 2019 05:39:45 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i8I8G-00015v-8M; Thu, 12 Sep 2019 05:59:04 +0000
+Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8HpL-0003kA-Vv; Thu, 12 Sep 2019 05:39:33 +0000
-X-UUID: 36771e0318794a80b637c25702678d7c-20190911
-X-UUID: 36771e0318794a80b637c25702678d7c-20190911
-Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 2132904841; Wed, 11 Sep 2019 21:39:28 -0800
-Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Wed, 11 Sep 2019 22:39:27 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Thu, 12 Sep 2019 13:39:25 +0800
-Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Thu, 12 Sep 2019 13:39:25 +0800
-Message-ID: <1568266766.16730.15.camel@mtkswgap22>
-Subject: RE: [PATCH v1 3/3] scsi: ufs-mediatek: enable auto suspend capability
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: Avri Altman <Avri.Altman@wdc.com>
-Date: Thu, 12 Sep 2019 13:39:26 +0800
-In-Reply-To: <MN2PR04MB6991A6F223D9C711A3D00B21FCB10@MN2PR04MB6991.namprd04.prod.outlook.com>
-References: <1568194890-24439-1-git-send-email-stanley.chu@mediatek.com>
- <1568194890-24439-4-git-send-email-stanley.chu@mediatek.com>
- <MN2PR04MB6991A6F223D9C711A3D00B21FCB10@MN2PR04MB6991.namprd04.prod.outlook.com>
-X-Mailer: Evolution 3.2.3-0ubuntu6 
+ id 1i8I7w-00013I-Qj
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 05:58:46 +0000
+Received: by mail-pl1-x641.google.com with SMTP id bd8so11266971plb.6
+ for <linux-arm-kernel@lists.infradead.org>;
+ Wed, 11 Sep 2019 22:58:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
+ h=from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ewsM+ptx+1TxqOGMUvTLgS+XKJ532sfsZuY42/XtR1w=;
+ b=sinym85EOH7jJpDdKQ/TEn8uVKWo7eqXR7VorCouyeWiz9YlVd8iijtdZKbkft+aS2
+ cma3rSeSWJ7ndFdyqkGxMchUx8dOKSyLfKMCbyIQidLAoMzaSmx9vLlwLdra8KyKTXQ3
+ 269kt8q4g7LDXXKCpHg1Vv73xtiXw+VjC1AJpdvhmD6nVoOKl+qkIW3OBOyr9WsVP1ng
+ gYyHl0OeSeFxh1c6AWpdTp+dnjVzCyLgYV8HU5B35iGz1ixQHZGzJsTzPCoDnnFhQEy7
+ 26RfJLNjncKmzsJ+jDkqTyojTnDBSi8O5eDvkn+u08SEwMO1HwZyrkiXNYUeHg2c9Z1E
+ 8lAw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
+ :content-transfer-encoding;
+ bh=ewsM+ptx+1TxqOGMUvTLgS+XKJ532sfsZuY42/XtR1w=;
+ b=JG0I/ZnWltQOvzN4s+shM2MsbzzoU/GL+q+p5rcMlFZvIWNX1bHFwDIegp2/mPvJ1c
+ 33A2h+yWt8qvlC/6ZZq4rYCuEeDvrczaO7lc9tzEb/mBqBTVAUnnlrnbYhBCmhqg47zA
+ i6k6v0kxUlrwcEBzQobo5xISQd4df4EtymTeXz4wg+mafjV7jRlRSeUTNTrr+Sposoof
+ FDUwjtWN1MB/87oqBthrLBAKmjhmlSWeXIMQc6ljwwWXZVXI0ZKFnhSP5riNtUDFT6se
+ gT460kNqhg/ZVm0/4PCt884aI8ovr1tH1+VKp6mHPdOwSq04kjJhd1T/BXYC9HiHFd3D
+ qJhw==
+X-Gm-Message-State: APjAAAXGj7pRua3C5OmRfnY7ob2730nrm+jGY6HvwD/hVGXGRYMGA/lw
+ 0nqDfQCW7agEorWvlgxjmu0t0g==
+X-Google-Smtp-Source: APXvYqzZpl0/HTX1R8ymT1ubUa4kovYmNBK+fPCzo83wsXYgya38Pn/fN+mE+kfvEHZnSIqyD+crrA==
+X-Received: by 2002:a17:902:8b85:: with SMTP id
+ ay5mr35629312plb.120.1568267923917; 
+ Wed, 11 Sep 2019 22:58:43 -0700 (PDT)
+Received: from linaro.org ([121.95.100.191])
+ by smtp.googlemail.com with ESMTPSA id r30sm45472534pfl.42.2019.09.11.22.58.43
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Wed, 11 Sep 2019 22:58:43 -0700 (PDT)
+From: AKASHI Takahiro <takahiro.akashi@linaro.org>
+To: catalin.marinas@arm.com, will.deacon@arm.com, robh+dt@kernel.org,
+ frowand.list@gmail.com
+Subject: [PATCH 0/3] arm64: kexec_file: add kdump
+Date: Thu, 12 Sep 2019 15:01:47 +0900
+Message-Id: <20190912060150.10818-1-takahiro.akashi@linaro.org>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_223932_031419_C6BDEDA9 
-X-CRM114-Status: GOOD (  12.27  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190911_225844_872677_0EEDA2CF 
+X-CRM114-Status: GOOD (  10.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
+ no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,68 +96,43 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "sthumma@codeaurora.org" <sthumma@codeaurora.org>,
- "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
- "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
- "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "vivek.gautam@codeaurora.org" <vivek.gautam@codeaurora.org>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "beanhuo@micron.com" <beanhuo@micron.com>,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- "bvanassche@acm.org" <bvanassche@acm.org>
+Cc: kexec@lists.infradead.org, james.morse@arm.com,
+ linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ AKASHI Takahiro <takahiro.akashi@linaro.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Avri,
+This is the last piece of my kexec_file_load implementation for arm64.
+It is now ready for being merged as some relevant patch to dtc/libfdt[1]
+has finally been integrated in v5.3-rc1.
+(Nothing changed since kexec_file v16[2] except adding Patch#1 and #2.)
 
-On Wed, 2019-09-11 at 10:58 +0000, Avri Altman wrote:
-> > 
-> > Enable auto suspend capability in MediaTek UFS driver.
-> > 
-> > Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-> Reviewed-by: Avri Altman <avri.altman@wdc.com>
-> 
-> > ---
-> >  drivers/scsi/ufs/ufs-mediatek.c | 7 +++++++
-> >  1 file changed, 7 insertions(+)
-> > 
-> > diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-> > index 0f6ff33ce52e..b7b177c6194c 100644
-> > --- a/drivers/scsi/ufs/ufs-mediatek.c
-> > +++ b/drivers/scsi/ufs/ufs-mediatek.c
-> > @@ -117,6 +117,11 @@ static int ufs_mtk_setup_clocks(struct ufs_hba
-> > *hba, bool on,
-> >         return ret;
-> >  }
-> > 
-> > +static void ufs_mtk_set_caps(struct ufs_hba *hba) {
-> > +       hba->caps |= UFSHCD_CAP_RPM_AUTOSUSPEND; }
-> Even a one-liner deserve new line for its closing brackets
+Patch#1 and #2 are preliminary patches for libfdt component.
+Patch#3 is to add kdump support.
 
-The wired format is just happening the same as
-[PATCH v1 2/3] scsi: ufs: override auto suspend tunables for ufs
+[1] commit 9bb9c6a110ea ("scripts/dtc: Update to upstream version
+    v1.5.0-23-g87963ee20693"), in particular
+	7fcf8208b8a9 libfdt: add fdt_append_addrrange()
+[2] http://lists.infradead.org/pipermail/linux-arm-kernel/2018-November/612641.html
 
-It looks fine in patchwork website:
-https://patchwork.kernel.org/patch/11140757/
+AKASHI Takahiro (3):
+  libfdt: define UINT32_MAX in libfdt_env.h
+  libfdt: include fdt_addresses.c
+  arm64: kexec_file: add crash dump support
 
-I'll try to fix it in v2.
+ arch/arm64/include/asm/kexec.h         |   4 +
+ arch/arm64/kernel/kexec_image.c        |   4 -
+ arch/arm64/kernel/machine_kexec_file.c | 105 ++++++++++++++++++++++++-
+ include/linux/libfdt_env.h             |   3 +
+ lib/Makefile                           |   2 +-
+ lib/fdt_addresses.c                    |   2 +
+ 6 files changed, 112 insertions(+), 8 deletions(-)
+ create mode 100644 lib/fdt_addresses.c
 
-Thanks,
-Stanley
-
-
+-- 
+2.21.0
 
 
 _______________________________________________
