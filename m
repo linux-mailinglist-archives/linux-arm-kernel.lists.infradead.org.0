@@ -2,78 +2,123 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F1D25B08EC
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 08:37:14 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id CE366B090E
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 08:56:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=+ymZC0edsCy+zxxqxntoiK3oJ9VUDspnpM9cyu29974=; b=F8xFsPh93PDgF2
-	XvfufR1LXl82SvBq3MGRMNEm/Tgphf0jWks9jPaHj/K7yRI4APyWOb27lMJnZq5qj/fMYD4oLIXz4
-	GCyAxP8R8zyNz/gWqCdZDwny7lSsA4F2MbkNHHEXiw3mnxq6aaF7B6hVCxyg2kcdo1s27UTNOS8kw
-	uaPt6FFzCkKiOkvaLntMTOoasjW1XpQ1R+sbqxuwAz5S9BIYwDZwn9YJPu2SqjM9AWriPhn0Bx0/3
-	3SOVkQq+lEFzFXB/PD3J9tVr5nsvFJ3p/6N275C6xF8p9F+uNsJga59wJRmPJ9u7CqVGpajmNGeN+
-	lkUp3oz9WiIKXrw98UcA==;
+	List-Owner; bh=j0xQYwImp9VP88n0RlxQ7vAqGVPBO/lwSwaax8eN9G0=; b=Knu6tBTJ+Er6vk
+	GC+lKptDXd+N6GgRY+BHUAL9DDONtLbwOzkAwBBdEpJjgi/1XgNP19bpoOdlJrn71OiCfF/DIPo3D
+	Wd4CTltkb9u0HobmpL4pmMWErYM/tu71UxWZbCZzpekN9fhwUTcXXb6Mzme2P4VM07gpQaM93nvYR
+	QZuj4lDvEs8+1imedacDQgIHpvWpXOB9XGTbIw53aayh0bacpeiVCiD1Cnx/WOseD37t2dKeD6EhY
+	ONKQTAJHU+sQbfw8jcbhoR2VeXeCrNjX0c9JyqLJTIe3tuXDOGE6Ryht04I8tW5zXIJ5FT/i97RDR
+	rADu1/LWK4HRdrWDwYng==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8Ij4-0007JP-R5; Thu, 12 Sep 2019 06:37:07 +0000
-Received: from mail-vs1-xe44.google.com ([2607:f8b0:4864:20::e44])
+	id 1i8J1i-0005kH-8t; Thu, 12 Sep 2019 06:56:22 +0000
+Received: from mailout2.w1.samsung.com ([210.118.77.12])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8Ii3-0006Vh-As
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 06:36:04 +0000
-Received: by mail-vs1-xe44.google.com with SMTP id p13so263641vsr.4
+ id 1i8J1X-0005jU-BV
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 06:56:13 +0000
+Received: from eucas1p2.samsung.com (unknown [182.198.249.207])
+ by mailout2.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190912065608euoutp0298045c787322e03d594579c341de02d3~DnoA4La6g1604016040euoutp02Q
  for <linux-arm-kernel@lists.infradead.org>;
- Wed, 11 Sep 2019 23:36:02 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=anandra.org; s=google;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc:content-transfer-encoding;
- bh=nmpGWYLtPSGrl1YWqJfUO5R7bgXryGBrcoRpFN/0a0g=;
- b=O3ail7doj7o7Ovvdm3xbfylphlfCHkXhRP/yCEXns19SI/49dj1zJ4ofS+2ymWt+g/
- y3q+7bsHhKZFTNIpho1NHXrbDOdNcKjML+gCzkCZ+eLyV+AqGgc9o4+wnx+HuUy+3hez
- q0rJuJtUyNvi5UZacXPNLJQdCthFS0Q25TmxVvFnqiqA592RsAQBs99I3jOtyvmTdOvu
- dFCpvzJT4TmCrUFXGkMWFmoe5L8WsPrO889Dvxz2XXHJ7oQ/RSdg2r4En1N7OJUqfYpr
- mjhDbzRkmwSlM9gb5CdLpopbdfxbi9icDKEIkwf9cUNCAAjaRZrmxC1rVSj01sJbkeID
- IuBw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc:content-transfer-encoding;
- bh=nmpGWYLtPSGrl1YWqJfUO5R7bgXryGBrcoRpFN/0a0g=;
- b=B/3cAPSo12pK7vB1PE8mM5EvGjn8ESl3MzIRzlPBx08OnZlefiXJ20tgtbJy6SEdya
- U2UDhLpY2BwUQ6zquxgigRBKYqzG/Mk94/6oItvE9lvLEa4wnJ4iSfFxC0/78uei6rm4
- pj4oizpivcxxpyLwCc29ackHTDJMST1v+Up8VZHq4weCLEhTxEPNMysB6zvqneNkbNY+
- FGKxigaSnI8uw/4feBu+yFq6WlT/7yA4qFRjaegQAI7JOOYEELYPUYCpgq8F+kBj6j+W
- db8spFi8FGDz7sR8pPTqoaasjN7V9RTbBaCJybx+AumdaeYs4kP6jWCERoGkJ1To9FwC
- Lw1A==
-X-Gm-Message-State: APjAAAWz1ncVzMB60v5qX46rrcRj5NtJT4AXgYyhXBrGc6qGveG1TXBj
- FHiZFkvH+jV7LKfsfSs94c5GeVHQjm4ULJFZ/JK9zA==
-X-Google-Smtp-Source: APXvYqzfE/Y4NxqCwMzVJjDMqfSUa87VwUqGZkEU9X98b47pKVZNAOOE5Iwr+L1cGROF1MU6wEDKkyLDzUkDX8srS94=
-X-Received: by 2002:a67:f504:: with SMTP id u4mr22402937vsn.146.1568270162133; 
- Wed, 11 Sep 2019 23:36:02 -0700 (PDT)
+ Thu, 12 Sep 2019 06:56:08 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout2.w1.samsung.com
+ 20190912065608euoutp0298045c787322e03d594579c341de02d3~DnoA4La6g1604016040euoutp02Q
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1568271368;
+ bh=SXyZ7BFmp7DTbszG2J0W99CFEbiXjbkhhWkifCd4LFo=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=E34iWiXQu7Ohs+WN3R97GidobY8FmrCg3tqzPMTeVsHoJ7pAKSLymMBr3eUu6/F8v
+ tOaVEypO/j/ajEBWFifEq35v8zW6sC6rpY95V7jN3CzX+hrwGlZW2ZwzBHDLTIH4sO
+ m3H+9pLa57EYejvwIoPU83rwamIC7BnPKDJo1GGw=
+Received: from eusmges1new.samsung.com (unknown [203.254.199.242]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190912065608eucas1p1d3035ea751c5df6756d6761027d0c172~DnoAXvxd82976929769eucas1p1c;
+ Thu, 12 Sep 2019 06:56:08 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges1new.samsung.com (EUCPMTA) with SMTP id 29.5F.04469.70CE97D5; Thu, 12
+ Sep 2019 07:56:07 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190912065607eucas1p181db5a82e2979b1fc44d6ab3218d0baa~Dnn-kUtQK1580015800eucas1p1U;
+ Thu, 12 Sep 2019 06:56:07 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190912065607eusmtrp2f2499608759d8e0464f00a91259e2d45~Dnn-WLz4v1406714067eusmtrp2t;
+ Thu, 12 Sep 2019 06:56:07 +0000 (GMT)
+X-AuditID: cbfec7f2-54fff70000001175-5f-5d79ec077324
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id E1.EB.04166.70CE97D5; Thu, 12
+ Sep 2019 07:56:07 +0100 (BST)
+Received: from [106.120.50.63] (unknown [106.120.50.63]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190912065606eusmtip11861b3157f5bf44dff9efabafe47586d~Dnn_tg_AT1027410274eusmtip1K;
+ Thu, 12 Sep 2019 06:56:06 +0000 (GMT)
+Subject: Re: [GIT PULL 1/2] arm64: dts: exynos: Pull for v5.4
+To: Krzysztof Kozlowski <krzk@kernel.org>, Arnd Bergmann <arnd@arndb.de>
+From: Marek Szyprowski <m.szyprowski@samsung.com>
+Message-ID: <39cac04f-684f-ffa5-a5ba-d1734fa00477@samsung.com>
+Date: Thu, 12 Sep 2019 08:56:05 +0200
+User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-References: <20190911114650.20567-1-clabbe.montjoie@gmail.com>
- <20190911114650.20567-3-clabbe.montjoie@gmail.com>
-In-Reply-To: <20190911114650.20567-3-clabbe.montjoie@gmail.com>
-From: Maxime Ripard <maxime.ripard@anandra.org>
-Date: Thu, 12 Sep 2019 08:35:51 +0200
-Message-ID: <CAO4ZVTM99FksM71BAiraYj7eyREO1Qi=L1NFzEkNmMgBmphBww@mail.gmail.com>
-Subject: Re: [PATCH 2/2] crypto: sun4i-ss: enable pm_runtime
-To: Corentin Labbe <clabbe.montjoie@gmail.com>
+In-Reply-To: <CAJKOXPcOSvc2DfoN+7Tca=t5dSm3RcKqmm06AfR0PAVBeY=GvQ@mail.gmail.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA01SaUhUYRTtmzfvzXNw7HNUvGkkDFRUNGa2PColoR8DEWT0I0vLKZ8LuTGL
+ qW2mFjZJxoRok2SlZWnmkrmMWeqYa+6l4rSYI6mlJI0Sbpnjw/LfueecyzkXLk2IK0gnOiRc
+ xSrC5aESSsgvrZ9u2yoYi/Hb9s6wm6mfLKGYeW29gMmsayOZFNMPgmlvLxQwxaYekunWZ1BM
+ evtrHtPca6YYU+8ctV8om53RIllx7nVK9iL7sux9YzwpMxevO0weF+4LYENDoliFq6e/MPhb
+ 6oQgMhFHG+f6UBwyWmuQFQ14Bwx3zxMaJKTF+AmCh/oUyiKI8SSC9NaLnGBGMFP2m7+8YTbc
+ JTkhB8GzqQ98bhhHkN2XhCwuO+wBNamdAgu2xzKom73Ks5gIPMEDfbyRZxEo7Aaacc1Sngh7
+ QmFywuIyTfPxenhT6m6hHbAv5IwN8DmLLTTdGVrCVtgbRpo+LmUR2AXKxjMIDjtC/1DmUhbg
+ ZgE0l1WSXO0D8LazleCwHXxvKBFweC0sVCwvJCD42pYv4IZkBN3x6Yhz7QVDQydpaUfgTVCg
+ d+VoL7iiGeRZaMA20Dduy5WwAW1pGsHRIki6JubcG0DX8PxfbE1HF3ELSXQrTtOtOEe34hzd
+ /9z7iJ+LHFm1MiyIVbqFs+ekSnmYUh0eJD0TEVaMFh+q5U/Dr3I01XW6FmEaSaxF+FO0n5iU
+ RyljwmoR0ITEXjSQuEiJAuQxsawi4pRCHcoqa5EzzZc4is6vGjghxkFyFXuWZSNZxbLKo62c
+ 4pBvT8uRe+7zT3/mO++pmtLlywJdoh8cHB3zqUz2xpIOu12BHtUeM9XSnRPBqscuW0zTyRvV
+ zM2sV/2qevzSkOd5rKDIR1jepU+zW6OivGI/kzfsyQveBdovJyOHH2kdpNtH/Kl5yqsiT2eY
+ mjmadaiosSrBuDA8WDR6+1Klr2m1hK8MlrttJhRK+V8OsPZbTAMAAA==
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFjrDIsWRmVeSWpSXmKPExsVy+t/xu7rsbypjDdb2sFsc+7KFzeLvpGPs
+ FvOPnGO16H/8mtni/PkN7BabHl9jtbi8aw6bxYzz+5gsTl3/zGbx+PofNgcuj9+/JjF6bFrV
+ yeaxeUm9x5UTTawenzfJBbBG6dkU5ZeWpCpk5BeX2CpFG1oY6RlaWugZmVjqGRqbx1oZmSrp
+ 29mkpOZklqUW6dsl6GU8m/qBvaBFoOL2nxuMDYy3eboYOTkkBEwkPh+ezdrFyMUhJLCUUeLq
+ 8jNsEAkZiZPTGlghbGGJP9e62CCKXjNKnO9ezwKSEBawlTg49SI7iC0i4CFx5HcrE0gRs8An
+ JolHt6dAdUxlkvjd28cMUsUmYCjR9bYLbAWvgJ3Ehp5mxi5GDg4WAVWJ/duMQcKiAjES26ZO
+ YoUoEZQ4OfMJ2DJOgUCJFyfvMILYzAJmEvM2P2SGsOUltr+dA2WLS9x6Mp9pAqPQLCTts5C0
+ zELSMgtJywJGllWMIqmlxbnpucWGesWJucWleel6yfm5mxiBMbnt2M/NOxgvbQw+xCjAwajE
+ wytwtyJWiDWxrLgy9xCjBAezkgjvgxagEG9KYmVValF+fFFpTmrxIUZToN8mMkuJJucD00Ve
+ SbyhqaG5haWhubG5sZmFkjhvh8DBGCGB9MSS1OzU1ILUIpg+Jg5OqQbGdDMt7vSXk9dVLak+
+ ZBvA6COyozVczP2N9dM1m7++udacfLrG99CTFcu0dO/989A32aqbePdSefK/qpmWD89dy/au
+ W+cjq3pvwvbDUt2iLjd5FeI0H69eeuyYoGbfBK/SU9FhS5ZO7Pj7KNw/8oT7vY7XF48YdPlo
+ +Gh+2vFWWD0xLVfxlm2rEktxRqKhFnNRcSIA4Pt9T98CAAA=
+X-CMS-MailID: 20190912065607eucas1p181db5a82e2979b1fc44d6ab3218d0baa
+X-Msg-Generator: CA
+X-RootMTR: 20190912063304epcas2p43dce48bd815124121c65ea47fd2dfc26
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190912063304epcas2p43dce48bd815124121c65ea47fd2dfc26
+References: <20190911183632.4317-1-krzk@kernel.org>
+ <CAK8P3a2pBV+fh0rHitZ30Zz61QNRLfNSD-nhnzq4ZtxSh66F1Q@mail.gmail.com>
+ <CGME20190912063304epcas2p43dce48bd815124121c65ea47fd2dfc26@epcas2p4.samsung.com>
+ <CAJKOXPcOSvc2DfoN+7Tca=t5dSm3RcKqmm06AfR0PAVBeY=GvQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_233603_525571_806C5531 
-X-CRM114-Status: GOOD (  16.84  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190911_235611_594433_ABF89216 
+X-CRM114-Status: GOOD (  15.98  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:e44 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.12 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
@@ -81,6 +126,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -92,66 +138,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
- linux-kernel@vger.kernel.org, Maxime Ripard <mripard@kernel.org>,
- Chen-Yu Tsai <wens@csie.org>, linux-crypto@vger.kernel.org,
- davem@davemloft.net, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: DTML <devicetree@vger.kernel.org>, "moderated list:ARM/SAMSUNG EXYNOS
+ ARM ARCHITECTURES" <linux-samsung-soc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ SoC Team <soc@kernel.org>, arm-soc <arm@kernel.org>,
+ Kukjin Kim <kgene@kernel.org>, Olof Johansson <olof@lixom.net>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpMZSBtZXIuIDExIHNlcHQuIDIwMTkgw6AgMTM6NDYsIENvcmVudGluIExhYmJlCjxjbGFi
-YmUubW9udGpvaWVAZ21haWwuY29tPiBhIMOpY3JpdCA6Cj4KPiBUaGlzIHBhdGNoIGVuYWJsZXMg
-cG93ZXIgbWFuYWdlbWVudCBvbiB0aGUgU2VjdXJpdHkgU3lzdGVtLgo+Cj4gU2lnbmVkLW9mZi1i
-eTogQ29yZW50aW4gTGFiYmUgPGNsYWJiZS5tb250am9pZUBnbWFpbC5jb20+Cj4gLS0tCj4gIGRy
-aXZlcnMvY3J5cHRvL3N1bnhpLXNzL3N1bjRpLXNzLWNpcGhlci5jIHwgIDUgKysrCj4gIGRyaXZl
-cnMvY3J5cHRvL3N1bnhpLXNzL3N1bjRpLXNzLWNvcmUuYyAgIHwgNDIgKysrKysrKysrKysrKysr
-KysrKysrKy0KPiAgMiBmaWxlcyBjaGFuZ2VkLCA0NiBpbnNlcnRpb25zKCspLCAxIGRlbGV0aW9u
-KC0pCj4KPiBkaWZmIC0tZ2l0IGEvZHJpdmVycy9jcnlwdG8vc3VueGktc3Mvc3VuNGktc3MtY2lw
-aGVyLmMgYi9kcml2ZXJzL2NyeXB0by9zdW54aS1zcy9zdW40aS1zcy1jaXBoZXIuYwo+IGluZGV4
-IGZhNGIxYjQ3ODIyZS4uMWZlZGVjOWU4M2IwIDEwMDY0NAo+IC0tLSBhL2RyaXZlcnMvY3J5cHRv
-L3N1bnhpLXNzL3N1bjRpLXNzLWNpcGhlci5jCj4gKysrIGIvZHJpdmVycy9jcnlwdG8vc3VueGkt
-c3Mvc3VuNGktc3MtY2lwaGVyLmMKPiBAQCAtMTAsNiArMTAsOCBAQAo+ICAgKgo+ICAgKiBZb3Ug
-Y291bGQgZmluZCB0aGUgZGF0YXNoZWV0IGluIERvY3VtZW50YXRpb24vYXJtL3N1bnhpLnJzdAo+
-ICAgKi8KPiArCj4gKyNpbmNsdWRlIDxsaW51eC9wbV9ydW50aW1lLmg+Cj4gICNpbmNsdWRlICJz
-dW40aS1zcy5oIgo+Cj4gIHN0YXRpYyBpbnQgbm9pbmxpbmVfZm9yX3N0YWNrIHN1bjRpX3NzX29w
-dGlfcG9sbChzdHJ1Y3Qgc2tjaXBoZXJfcmVxdWVzdCAqYXJlcSkKPiBAQCAtNDk3LDEzICs0OTks
-MTYgQEAgaW50IHN1bjRpX3NzX2NpcGhlcl9pbml0KHN0cnVjdCBjcnlwdG9fdGZtICp0Zm0pCj4g
-ICAgICAgICAgICAgICAgIHJldHVybiBQVFJfRVJSKG9wLT5mYWxsYmFja190Zm0pOwo+ICAgICAg
-ICAgfQo+Cj4gKyAgICAgICBwbV9ydW50aW1lX2dldF9zeW5jKG9wLT5zcy0+ZGV2KTsKPiAgICAg
-ICAgIHJldHVybiAwOwo+ICB9Cj4KPiAgdm9pZCBzdW40aV9zc19jaXBoZXJfZXhpdChzdHJ1Y3Qg
-Y3J5cHRvX3RmbSAqdGZtKQo+ICB7Cj4gICAgICAgICBzdHJ1Y3Qgc3VuNGlfdGZtX2N0eCAqb3Ag
-PSBjcnlwdG9fdGZtX2N0eCh0Zm0pOwo+ICsKPiAgICAgICAgIGNyeXB0b19mcmVlX3N5bmNfc2tj
-aXBoZXIob3AtPmZhbGxiYWNrX3RmbSk7Cj4gKyAgICAgICBwbV9ydW50aW1lX3B1dF9zeW5jKG9w
-LT5zcy0+ZGV2KTsKPiAgfQo+Cj4gIC8qIGNoZWNrIGFuZCBzZXQgdGhlIEFFUyBrZXksIHByZXBh
-cmUgdGhlIG1vZGUgdG8gYmUgdXNlZCAqLwo+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2NyeXB0by9z
-dW54aS1zcy9zdW40aS1zcy1jb3JlLmMgYi9kcml2ZXJzL2NyeXB0by9zdW54aS1zcy9zdW40aS1z
-cy1jb3JlLmMKPiBpbmRleCAyYzlmZjAxZGRkZmMuLjVlNmUxYTMwOGY2MCAxMDA2NDQKPiAtLS0g
-YS9kcml2ZXJzL2NyeXB0by9zdW54aS1zcy9zdW40aS1zcy1jb3JlLmMKPiArKysgYi9kcml2ZXJz
-L2NyeXB0by9zdW54aS1zcy9zdW40aS1zcy1jb3JlLmMKPiBAQCAtMTQsNiArMTQsNyBAQAo+ICAj
-aW5jbHVkZSA8bGludXgvbW9kdWxlLmg+Cj4gICNpbmNsdWRlIDxsaW51eC9vZi5oPgo+ICAjaW5j
-bHVkZSA8bGludXgvcGxhdGZvcm1fZGV2aWNlLmg+Cj4gKyNpbmNsdWRlIDxsaW51eC9wbV9ydW50
-aW1lLmg+Cj4gICNpbmNsdWRlIDxjcnlwdG8vc2NhdHRlcndhbGsuaD4KPiAgI2luY2x1ZGUgPGxp
-bnV4L3NjYXR0ZXJsaXN0Lmg+Cj4gICNpbmNsdWRlIDxsaW51eC9pbnRlcnJ1cHQuaD4KPiBAQCAt
-MjU4LDYgKzI1OSwzNyBAQCBzdGF0aWMgaW50IHN1bjRpX3NzX2VuYWJsZShzdHJ1Y3Qgc3VuNGlf
-c3NfY3R4ICpzcykKPiAgICAgICAgIHJldHVybiBlcnI7Cj4gIH0KPgo+ICsjaWZkZWYgQ09ORklH
-X1BNCj4gK3N0YXRpYyBpbnQgc3VuNGlfc3NfcG1fc3VzcGVuZChzdHJ1Y3QgZGV2aWNlICpkZXYp
-Cj4gK3sKPiArICAgICAgIHN0cnVjdCBzdW40aV9zc19jdHggKnNzID0gZGV2X2dldF9kcnZkYXRh
-KGRldik7Cj4gKwo+ICsgICAgICAgc3VuNGlfc3NfZGlzYWJsZShzcyk7Cj4gKyAgICAgICByZXR1
-cm4gMDsKPiArfQo+ICsKPiArc3RhdGljIGludCBzdW40aV9zc19wbV9yZXN1bWUoc3RydWN0IGRl
-dmljZSAqZGV2KQo+ICt7Cj4gKyAgICAgICBzdHJ1Y3Qgc3VuNGlfc3NfY3R4ICpzcyA9IGRldl9n
-ZXRfZHJ2ZGF0YShkZXYpOwo+ICsKPiArICAgICAgIHJldHVybiBzdW40aV9zc19lbmFibGUoc3Mp
-Owo+ICt9Cj4gKyNlbmRpZgo+ICsKPiArY29uc3Qgc3RydWN0IGRldl9wbV9vcHMgc3VuNGlfc3Nf
-cG1fb3BzID0gewo+ICsgICAgICAgU0VUX1JVTlRJTUVfUE1fT1BTKHN1bjRpX3NzX3BtX3N1c3Bl
-bmQsIHN1bjRpX3NzX3BtX3Jlc3VtZSwgTlVMTCkKPiArfTsKPiArCj4gK3N0YXRpYyB2b2lkIHN1
-bjRpX3NzX3BtX2luaXQoc3RydWN0IHN1bjRpX3NzX2N0eCAqc3MpCj4gK3sKPiArICAgICAgIHBt
-X3J1bnRpbWVfdXNlX2F1dG9zdXNwZW5kKHNzLT5kZXYpOwo+ICsgICAgICAgcG1fcnVudGltZV9z
-ZXRfYXV0b3N1c3BlbmRfZGVsYXkoc3MtPmRldiwgMTAwMCk7Cj4gKwo+ICsgICAgICAgcG1fcnVu
-dGltZV9nZXRfbm9yZXN1bWUoc3MtPmRldik7Cj4gKyAgICAgICBwbV9ydW50aW1lX3NldF9hY3Rp
-dmUoc3MtPmRldik7Cj4gKyAgICAgICBwbV9ydW50aW1lX2VuYWJsZShzcy0+ZGV2KTsKPiArfQoK
-SXQncyBub3QgcmVhbGx5IGNsZWFyIHRvIG1lIHdoYXQgeW91J3JlIGRvaW5nIGhlcmU/IENhbiB5
-b3UgZXhwbGFpbj8KClRoZSByZXN0IGxvb2tzIGZpbmUuCgpNYXhpbWUKCl9fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGlu
-ZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMu
-aW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+Hi
+
+On 2019-09-12 08:32, Krzysztof Kozlowski wrote:
+> On Wed, 11 Sep 2019 at 23:07, Arnd Bergmann <arnd@arndb.de> wrote:
+>> On Wed, Sep 11, 2019 at 8:36 PM Krzysztof Kozlowski <krzk@kernel.org> wrote:
+>>> Hi,
+>>>
+>>> Unfortunately the patches were applied right after closing the linux-next.
+>> Hi Krzysztof,
+>>
+>> I took a look at these and am not convinced this is right:
+>>
+>>> 1. Fix boot of Exynos7 due to wrong address/size of memory node,
+>> The current state is clearly broken and a fix is needed, but
+>> I'm not sure this is the right fix. Why do you have 32-bit physical
+>> addressing on a 64-bit chip? I looked at commit ef72171b3621
+>> that introduced it, and it seems it would be better to just
+>> revert back to 64-bit addresses.
+> We discussed with Marek Szyprowski that either we can go back to
+> 64-bit addressing or stick to 32. There are not known boards with more
+> than 4 GB of RAM so from this point of view the choice was irrelevant.
+> At the end of discussion I mentioned to stick with other arm64 boards
+> (although not all), so revert to have 64 bit address... but Marek
+> chosen differently. Since you ask, let's go back with revert.
+
+I decided to go with 32bit version to make the fix smaller and easier to 
+backport. If you select revert, make sure that it is applied after 
+moving gpu node under /soc, otherwise the gpu node will have incorrect 
+(32bit) reg property. Also add the gpu related patch as an (optional?) 
+prerequisite for it.
+
+>> 2. Move GPU under /soc node,
+>> No problem
+>>
+>>> 3. Minor cleanup of #address-cells.
+>> IIRC, an interrupt-controller is required to have a #address-cells
+>> property, even if that is normally zero. I don't remember the
+>> details, but the gic binding lists it as mandatory, and I think
+>> the PCI interrupt-map relies on it. I would just drop this patch.
+> Indeed, binding requires both address and size cells. I'll drop it.
+
+Ookay, I wasn't aware of that.
+
+
+Best regards
+-- 
+Marek Szyprowski, PhD
+Samsung R&D Institute Poland
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
