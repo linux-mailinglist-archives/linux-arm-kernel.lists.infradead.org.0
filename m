@@ -2,62 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F08C2B0B53
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:26:40 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 740D1B0B67
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 11:29:33 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0RmLPLwiscCwM1PXX41gUs8g12LtRYbu4nfu28gWEuw=; b=n1XqtSXI41KG5d
-	DzvQvdujO+cjoT9QSJ8kCU6cKNdQZwFhENxJ9MGYCtsABn1zal1zTOh05eKCMQ/qyg9ok2oH/xoQa
-	AZEqH83TDtd5Wq64L8/EHhqkqYb60yu7/WK5Xz5Tus2OtbPlEJHzg3L8OxwoJm/C0w+NHHGfK2eHN
-	/OJgJOoXO3eQmirHBw5gzfCi07vSF1AKt52Gla+W9AZpTBXNplautOMnhcWM9FpC+RNM7vbI08YU2
-	d9p1wuHNk+TPBHQwuJnkai8zyoOBcKd9B63rUJKd3T8VDtP4Z2N1X4PpROTAsCNs9dMQZwhsby8bB
-	37JmppcLsflTk7YSNWWA==;
+	List-Owner; bh=k7cWXpyZ4Gqigbd9sCAojnoD5nknnF58AiSzHgdzq4M=; b=TFeMFw+5FctdeH
+	t8AZCR35MwPtlwEDDVY6MGi8NMTtrHrIODGrjbIVTJVX+NyNLBwVAf4AX+gxYlr2J3lwiZHKh1+1O
+	6NrJi0NTEb3ERVxCHUy+0ujfc9mPbXOtqgKMMY816rBI2P9UX7p/NoejN7DtBwl/M8tt54HoRAKUP
+	9E5kUvODLRvJSVuIsq6JpKc+Z1kI8qKjJwRmqcB04rvbm0Xh3NIC7V1kHLiU3gGs+JsQHQRzxjg4m
+	no105u+VOzOiHiCLnJHKkd+/QT83Ebvvi/hwjdoK0sCjNq5o7UtxI5W9f4js4s72q53pY/O19EIz2
+	vyoI6T7KI9++kiSdZthw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8LN9-0005IZ-K8; Thu, 12 Sep 2019 09:26:39 +0000
-Received: from mx2.suse.de ([195.135.220.15] helo=mx1.suse.de)
+	id 1i8LPt-0005vb-Su; Thu, 12 Sep 2019 09:29:29 +0000
+Received: from mail-qk1-f193.google.com ([209.85.222.193])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8LMk-0005I1-DK
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:26:16 +0000
-X-Virus-Scanned: by amavisd-new at test-mx.suse.de
-Received: from relay2.suse.de (unknown [195.135.220.254])
- by mx1.suse.de (Postfix) with ESMTP id DD20AAED6;
- Thu, 12 Sep 2019 09:26:12 +0000 (UTC)
-Date: Thu, 12 Sep 2019 11:26:11 +0200
-From: Michal Hocko <mhocko@kernel.org>
-To: David Hildenbrand <david@redhat.com>
-Subject: Re: [PATCH v9 0/8] stg mail -e --version=v9 \
-Message-ID: <20190912092611.GN4023@dhcp22.suse.cz>
-References: <20190911121941.GU4023@dhcp22.suse.cz>
- <20190911122526.GV4023@dhcp22.suse.cz>
- <4748a572-57b3-31da-0dde-30138e550c3a@redhat.com>
- <20190911125413.GY4023@dhcp22.suse.cz>
- <736594d6-b9ae-ddb9-2b96-85648728ef33@redhat.com>
- <20190911132002.GA4023@dhcp22.suse.cz>
- <20190911135100.GC4023@dhcp22.suse.cz>
- <abea20a0-463c-68c0-e810-2e341d971b30@redhat.com>
- <20190912071633.GL4023@dhcp22.suse.cz>
- <ef460202-cebd-c6d2-19f3-e8a82a3d3cbd@redhat.com>
+ id 1i8LPi-0005u7-30
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 09:29:19 +0000
+Received: by mail-qk1-f193.google.com with SMTP id u186so34431qkc.5
+ for <linux-arm-kernel@lists.infradead.org>;
+ Thu, 12 Sep 2019 02:29:17 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:mime-version:references:in-reply-to:from:date
+ :message-id:subject:to:cc;
+ bh=wtGU4iMWfZeQ/FsklpEfRM6iPwzDv+XphhtaUmBwgSA=;
+ b=cXZa6uEiXFgIFhXRLy4oJ4cDlVfR30nO8gqBnbmtsSeqHDS0EX+wQGhIab/tK8++7u
+ GpNRWF+X8J7XuQ8ontf8LFAhbII74PXXTfHYMnAWyt6KU7yTgSZjlpumDoKqJFbnoOHp
+ B31me+OxnnY54a7m0ZJ0yu11cOOyA7EoPj4/0vM12f2haq9VzB3COlbACd/lmux4ZVBp
+ Mq36WW6kXm1704YP4O/xeiYZcTtcvQ4WyB+dtvhdQzLj6DcCKld8UqqLHW5UaYPZUugH
+ 4z2WqZO+wM+kEIIt1sV2lyjI8vD0uFcYivXK/NWOvSz8cQn6KODPS8obhm7Yig0RpCIq
+ 5D5A==
+X-Gm-Message-State: APjAAAX/7bGu4jQ5wh+Irx2h9TRHBnvVH3mSxRqRf2CqdPHBgZ04G01e
+ MHRUsii4o9DzBYGeCkAuYOWjEFFTjjAyH89HmcI=
+X-Google-Smtp-Source: APXvYqycQWX7fEy2jA5D+LxaO4u4opsppoZ4/cfOD3zMYVxe++YCYyGMd3QpWn3hGnNZZJlZplYFA331lIror8ITmVA=
+X-Received: by 2002:a05:620a:145a:: with SMTP id
+ i26mr40226931qkl.352.1568280556796; 
+ Thu, 12 Sep 2019 02:29:16 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <ef460202-cebd-c6d2-19f3-e8a82a3d3cbd@redhat.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+References: <cover.1568239378.git.amit.kucheria@linaro.org>
+In-Reply-To: <cover.1568239378.git.amit.kucheria@linaro.org>
+From: Arnd Bergmann <arnd@arndb.de>
+Date: Thu, 12 Sep 2019 11:29:00 +0200
+Message-ID: <CAK8P3a2zGJx7SCA4LUHPGTybN8GU16Ah3H0FbaOEwR3H7uGCnA@mail.gmail.com>
+Subject: Re: [PATCH 0/4] Cleanup arm64 driver dependencies
+To: Amit Kucheria <amit.kucheria@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_022614_738468_DEE30C3E 
-X-CRM114-Status: GOOD (  34.15  )
-X-Spam-Score: -1.3 (-)
+X-CRM114-CacheID: sfid-20190912_022918_130194_417EAF92 
+X-CRM114-Status: GOOD (  11.41  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-1.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [195.135.220.15 listed in list.dnswl.org]
- 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [209.85.222.193 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (arndbergmann[at]gmail.com)
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.222.193 listed in wl.mailspike.net]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,158 +82,51 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Yang Zhang <yang.zhang.wz@gmail.com>, Pankaj Gupta <pagupta@redhat.com>,
- kvm list <kvm@vger.kernel.org>, "Michael S. Tsirkin" <mst@redhat.com>,
+Cc: Lorenzo Pieralisi <lorenzo.pieralisi@arm.com>,
+ Liam Girdwood <lgirdwood@gmail.com>, Stephen Boyd <sboyd@kernel.org>,
  Catalin Marinas <catalin.marinas@arm.com>,
- Alexander Duyck <alexander.duyck@gmail.com>, lcapitulino@redhat.com,
- linux-mm <linux-mm@kvack.org>,
- Alexander Duyck <alexander.h.duyck@linux.intel.com>, will@kernel.org,
- Andrea Arcangeli <aarcange@redhat.com>, virtio-dev@lists.oasis-open.org,
- Rik van Riel <riel@surriel.com>, Matthew Wilcox <willy@infradead.org>, "Wang,
- Wei W" <wei.w.wang@intel.com>, ying.huang@intel.com,
- Konrad Rzeszutek Wilk <konrad.wilk@oracle.com>,
- Dan Williams <dan.j.williams@intel.com>, linux-arm-kernel@lists.infradead.org,
- Oscar Salvador <osalvador@suse.de>, Nitesh Narayan Lal <nitesh@redhat.com>,
- Dave Hansen <dave.hansen@intel.com>, LKML <linux-kernel@vger.kernel.org>,
- Paolo Bonzini <pbonzini@redhat.com>, Andrew Morton <akpm@linux-foundation.org>,
- Fengguang Wu <fengguang.wu@intel.com>,
- "Kirill A. Shutemov" <kirill.shutemov@linux.intel.com>
+ Linus Walleij <linus.walleij@linaro.org>,
+ Linux PM list <linux-pm@vger.kernel.org>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ linux-pci <linux-pci@vger.kernel.org>, Kishon Vijay Abraham I <kishon@ti.com>,
+ Bartosz Golaszewski <bgolaszewski@baylibre.com>, arm-soc <arm@kernel.org>,
+ Mark Brown <broonie@kernel.org>,
+ "open list:GPIO SUBSYSTEM" <linux-gpio@vger.kernel.org>,
+ Sebastian Reichel <sre@kernel.org>, Will Deacon <will@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Thu 12-09-19 09:47:30, David Hildenbrand wrote:
-> On 12.09.19 09:16, Michal Hocko wrote:
-> > On Wed 11-09-19 18:09:18, David Hildenbrand wrote:
-> >> On 11.09.19 15:51, Michal Hocko wrote:
-> >>> On Wed 11-09-19 15:20:02, Michal Hocko wrote:
-> >>> [...]
-> >>>>> 4. Continuously report, not the "one time report everything" approach.
-> >>>>
-> >>>> So you mean the allocator reporting this rather than an external code to
-> >>>> poll right? I do not know, how much this is nice to have than must have?
-> >>>
-> >>> Another idea that I haven't really thought through so it might turned
-> >>> out to be completely bogus but let's try anyway. Your "report everything"
-> >>> just made me look and realize that free_pages_prepare already performs
-> >>> stuff that actually does something similar yet unrelated.
-> >>>
-> >>> We do report to special page poisoning, zeroying or
-> >>> CONFIG_DEBUG_PAGEALLOC to unmap the address from the kernel address
-> >>> space. This sounds like something fitting your model no?
-> >>>
-> >>
-> >> AFAIKS, the poisoning/unmapping is done whenever a page is freed. I
-> >> don't quite see yet how that would help to remember if a page was
-> >> already reported.
-> > 
-> > Do you still have to differ that state when each page is reported?
-> 
-> Ah, very good point. I can see that the reason for this was not
-> discussed in this thread so far. (Alexander, Nitesh, please correct me
-> if I am wrong). It's buried in the long history of free page
-> hinting/reporting.
+On Thu, Sep 12, 2019 at 12:18 AM Amit Kucheria <amit.kucheria@linaro.org> wrote:
+>
+> I was using initcall_debugging on a QCOM platform and ran across a bunch of
+> driver initcalls that are enabled even if their SoC support is disabled.
+>
+> Here are some fixups for a subset of them.
 
-It would really be preferable to summarize such a previous discussion
-ideally with some references.
+The idea seems reasonable, disabling a platform may just turn off
+all the drivers that are not useful elsewhere, but there are mistakes
+in a lot of your changes, so I'm certainly not applying these for 5.4.
 
-> Some early patch sets tried to report during every free synchronously.
-> Free a page, report them to the hypervisor. This resulted in some issues
-> (especially, locking-related and the virtio + the hypervisor being
-> involved, resulting in unpredictable delays, quite some overhead ...).
-> It was no good.
-> 
-> One design decision then was to not report single pages, but a bunch of
-> pages at once. This made it necessary to "remember" the pages to be
-> reported and to temporarily block them from getting allocated while
-> reporting.
-> 
-> Nitesh implemented (at least) two "capture PFNs of free pages in an
-> array when freeing" approaches. One being synchronous from the freeing
-> CPU once the list was full (having similar issues as plain synchronous
-> reporting) and one being asynchronous by a separate thread (which solved
-> many locking issues).
-> 
-> Turned out the a simple array can quickly lead to us having to drop
-> "reports" to the hypervisor because the array is full and the reporting
-> thread was not able to keep up. Not good as well. Especially, if some
-> process frees a lot of memory this can happen quickly and Nitesh wa
-> sable to trigger this scenario frequently.
-> 
-> Finally, Nitesh decided to use the bitmap instead to keep track of pages
-> to report. I'd like to note that this approach could still be combined
-> with an "array of potentially free PFNs". Only when the array/circular
-> buffer runs out of entries ("reporting thread cannot keep up"), we would
-> have to go back to scanning the bitmap.
-> 
-> That was also the point where Alexander decided to look into integrating
-> tracking/handling reported/unreported pages directly in the buddy.
+Generally speaking, the way that works best is
 
-OK, this gives at least some background which is really appreciated.
-Explaining _why_ you need something in the core MM is essential to move
-forward.
- 
-> >> After reporting the page we would have to switch some
-> >> state (Nitesh: bitmap bit, Alexander: page flag) to identify that.
-> > 
-> > Yes, you can either store the state somewhere.
-> > 
-> >> Of course, we could map the page and treat that as "the state" when we
-> >> reported it, but I am not sure that's such a good idea :)
-> >>
-> >> As always, I might be very wrong ...
-> > 
-> > I still do not fully understand the usecase so I might be equally wrong.
-> > My thinking is along these lines. Why should you scan free pages when
-> > you can effectively capture each freed page? If you go one step further
-> > then post_alloc_hook would be the counterpart to know that your page has
-> > been allocated.
-> 
-> I'd like to note that Nitesh's patch set contains the following hunk,
-> which is roughly what you were thinking :)
-> 
-> 
-> -static inline void __free_one_page(struct page *page,
-> +inline void __free_one_page(struct page *page,
->  		unsigned long pfn,
->  		struct zone *zone, unsigned int order,
-> -		int migratetype)
-> +		int migratetype, bool hint)
->  {
->  	unsigned long combined_pfn;
->  	unsigned long uninitialized_var(buddy_pfn);
-> @@ -980,7 +981,8 @@ static inline void __free_one_page(struct page *page,
->  				migratetype);
->  	else
->  		add_to_free_area(page, &zone->free_area[order], migratetype);
-> -
-> +	if (hint)
-> +		page_hinting_enqueue(page, order);
->  }
-> 
-> 
-> (ignore the hint parameter, when he would switch to a isolate vs.
-> alloc/free, that can go away and all we left is the enqueue part)
-> 
-> 
-> Inside that callback we can remember the pages any way we want. Right
-> now in a bitmap. Maybe later in a array + bitmap (as discussed above).
-> Another idea I had was to simply go over all pages and report them when
-> running into this "array full" condition. But I am not yet sure about
-> the performance implications on rather large machines. So the bitmap
-> idea might have some other limitations but seems to do its job.
-> 
-> Hoe that makes things clearer and am not missing something.
+config SUBSYS_DRIVER_FOO
+       tristate "SUBSYS support for FOO platform"
+       depends on ARCH_FOO || COMPILE_TEST
+       depends on SUBSYS
+       default "m" if ARCH_FOO
 
-It certainly helped me to get a better idea. I have commented on my
-reservations regarding the approach in this thread elsewhere but at
-least I _think_ I am getting a point of what you guys try to achieve.
+This means it's enabled as a loadable module by default (use
+default "y" instead where necessary) as long as the platform
+is enabled, but an x86 allmodconfig build also includes it
+because of COMPILE_TEST, while any configuration without
+ARCH_FOO that is not compile-testing cannot enable it.
 
-Thanks!
--- 
-Michal Hocko
-SUSE Labs
+       Arnd
 
 _______________________________________________
 linux-arm-kernel mailing list
