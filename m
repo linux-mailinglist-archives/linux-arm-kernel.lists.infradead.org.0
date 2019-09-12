@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id D1A69B1237
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 17:33:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C22E0B1238
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 17:33:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,42 +11,42 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=2Z8YMiayGQcVHZfjtsy0JqhOH++3AlSjzMikqqTq1iE=; b=tRj0VGBztkXOUphYcSA8E53C/w
-	aELrmm1BibSqjr/x6vLHyzZXYEEwh/pLvYN1sf8/oyhIIk6Jco66YvfSvBQlLeKXIDshdszgCv0lk
-	e95Qxxq6Gzyu3XPOALuB74pjNPcLgYZfrl/SU0xF/QfBmdeJfd/lFg4nMyKkWfI9h2uiIoChdAngo
-	TU9gSPNx3F6ZfNiPdTf5jBmZ9M1xwtrn065ktH4i/kc0k2YKyHAXtf+C9Pzg9q1whNT6voeJy0sTC
-	m58ZFLQLALg71SZ/zXJAD3yEs1b+ZZEezxLE07xH+RCeKCScQ16xJBxVVjRl9YlCFg3L2hEEHhzUg
-	yFPgja3w==;
+	bh=OpOp+FF9hjgmfM48jrMgvyQf/+Ce0137NjMtF69DkAg=; b=mAurUAOo0k7JjUMLdK7WT3feCx
+	lsvz2KTFRkwOTzo4mhLhaQ8Ywlj50fSf7trdMs7rGIfFhq8+3I7UW6KB227fZJ+4Nj+6UizRZsyHW
+	KXvtE/Bg3SHa3MW2f8jaz84l6wLgTdya/TzuYqmV/LcmQXapQ9Ig1CxMKnighFaczuXCX7uO+3IPK
+	l8v6cEct1bgwzsRJl1/cmNxblH+rTS7pbvuob0JT1fgSEhlsjyTEuEcHRCQp41r+a1njfI9xjUmKq
+	Sjj/fSQbreylI70dO2KK5BTghj+1TlHb/lsg2Qmpo3wZP4mTDiF6uOZXOyczhZXWKS4UbTfNMxyX1
+	6uDeBU4Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8R65-0006p4-Vb; Thu, 12 Sep 2019 15:33:26 +0000
+	id 1i8R6M-00074L-3A; Thu, 12 Sep 2019 15:33:42 +0000
 Received: from inva020.nxp.com ([92.121.34.13])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8R4x-00063e-Ks
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 15:32:17 +0000
+ id 1i8R4z-00065S-C1
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 15:32:19 +0000
 Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 73C361A06A1;
- Thu, 12 Sep 2019 17:32:14 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 30A011A0301;
+ Thu, 12 Sep 2019 17:32:16 +0200 (CEST)
 Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
  [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 6153D1A0301;
- Thu, 12 Sep 2019 17:32:08 +0200 (CEST)
+ by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 20C811A013D;
+ Thu, 12 Sep 2019 17:32:10 +0200 (CEST)
 Received: from localhost.localdomain (shlinux2.ap.freescale.net
  [10.192.224.44])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id F311E402FC;
- Thu, 12 Sep 2019 23:32:00 +0800 (SGT)
+ by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id 399524032B;
+ Thu, 12 Sep 2019 23:32:02 +0800 (SGT)
 From: Dong Aisheng <aisheng.dong@nxp.com>
 To: linux-arm-kernel@lists.infradead.org
-Subject: [PATCH V3 04/15] arm64: dts: imx8: add lsio lpcg clocks
-Date: Thu, 12 Sep 2019 23:30:41 +0800
-Message-Id: <1568302252-28066-5-git-send-email-aisheng.dong@nxp.com>
+Subject: [PATCH V3 05/15] arm64: dts: imx8: add conn lpcg clocks
+Date: Thu, 12 Sep 2019 23:30:42 +0800
+Message-Id: <1568302252-28066-6-git-send-email-aisheng.dong@nxp.com>
 X-Mailer: git-send-email 2.7.4
 In-Reply-To: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
 References: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
 X-Virus-Scanned: ClamAV using ClamSMTP
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_083216_055941_FAA79BC6 
-X-CRM114-Status: UNSURE (   8.90  )
+X-CRM114-CacheID: sfid-20190912_083217_772477_137DED1A 
+X-CRM114-Status: UNSURE (   9.24  )
 X-CRM114-Notice: Please train this message.
 X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
@@ -79,7 +79,7 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add lsio lpcg clocks
+Add conn lpcg clocks
 
 Cc: Rob Herring <robh+dt@kernel.org>
 Cc: Mark Rutland <mark.rutland@arm.com>
@@ -96,189 +96,134 @@ v2->v3:
 v1->v2:
  * Use old SCU clock binding temporarily to avoid build warning due to SCU
    clock cell will be changed to 2.
- * add power domain property
+ * add power domain propertyv1->v2:
 ---
- arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi | 155 +++++++++++++++++++++++-
- 1 file changed, 154 insertions(+), 1 deletion(-)
+ arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi | 103 +++++++++++++++++++++++-
+ 1 file changed, 100 insertions(+), 3 deletions(-)
 
-diff --git a/arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi b/arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi
-index 00eaadb..ff29e7f 100644
---- a/arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi
-+++ b/arch/arm64/boot/dts/freescale/imx8-ss-lsio.dtsi
-@@ -4,12 +4,28 @@
+diff --git a/arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi b/arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi
+index e5f6041..0a0e479 100644
+--- a/arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi
++++ b/arch/arm64/boot/dts/freescale/imx8-ss-conn.dtsi
+@@ -4,15 +4,33 @@
   *	Dong Aisheng <aisheng.dong@nxp.com>
   */
  
 +#include <dt-bindings/firmware/imx/rsrc.h>
 +
- lsio_subsys: bus@5d000000 {
+ conn_subsys: bus@5b000000 {
  	compatible = "simple-bus";
  	#address-cells = <1>;
  	#size-cells = <1>;
- 	ranges = <0x5d000000 0x0 0x5d000000 0x1000000>;
+ 	ranges = <0x5b000000 0x0 0x5b000000 0x1000000>;
  
-+	lsio_mem_clk: clock-lsio-mem {
+-	conn_lpcg: clock-controller@5b200000 {
+-		reg = <0x5b200000 0xb0000>;
+-		#clock-cells = <1>;
++	conn_axi_clk: clock-conn-axi {
 +		compatible = "fixed-clock";
 +		#clock-cells = <0>;
-+		clock-frequency = <200000000>;
-+		clock-output-names = "lsio_mem_clk";
++		clock-frequency = <333333333>;
++		clock-output-names = "conn_axi_clk";
 +	};
 +
-+	lsio_bus_clk: clock-lsio-bus {
++	conn_ahb_clk: clock-conn-ahb {
 +		compatible = "fixed-clock";
 +		#clock-cells = <0>;
-+		clock-frequency = <100000000>;
-+		clock-output-names = "lsio_bus_clk";
++		clock-frequency = <166666666>;
++		clock-output-names = "conn_ahb_clk";
 +	};
 +
- 	lsio_gpio0: gpio@5d080000 {
- 		reg = <0x5d080000 0x10000>;
- 		interrupts = <GIC_SPI 136 IRQ_TYPE_LEVEL_HIGH>;
-@@ -131,8 +147,145 @@ lsio_subsys: bus@5d000000 {
- 		power-domains = <&pd IMX_SC_R_MU_13A>;
++	conn_ipg_clk: clock-conn-ipg {
++		compatible = "fixed-clock";
++		#clock-cells = <0>;
++		clock-frequency = <83333333>;
++		clock-output-names = "conn_ipg_clk";
  	};
  
--	lsio_lpcg: clock-controller@5d400000 {
+ 	usdhc1: mmc@5b010000 {
+@@ -92,4 +110,83 @@ conn_subsys: bus@5b000000 {
+ 		power-domains = <&pd IMX_SC_R_ENET_1>;
+ 		status = "disabled";
+ 	};
++
 +	/* LPCG clocks */
-+	lsio_lpcg: clock-controller-legacy@5d400000 {
- 		reg = <0x5d400000 0x400000>;
- 		#clock-cells = <1>;
- 	};
-+
-+	pwm0_lpcg: clock-controller@5d400000 {
-+		reg = <0x5d400000 0x10000>;
++	conn_lpcg: clock-controller-legacy@5b200000 {
++		reg = <0x5b200000 0xb0000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM0_CLK>, <&clk IMX_LSIO_PWM0_CLK>,
-+			 <&clk IMX_LSIO_PWM0_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM0_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm0_lpcg_ipg_clk",
-+				     "pwm0_lpcg_ipg_hf_clk",
-+				     "pwm0_lpcg_ipg_s_clk",
-+				     "pwm0_lpcg_ipg_slv_clk",
-+				     "pwm0_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_0>;
 +	};
 +
-+	pwm1_lpcg: clock-controller@5d410000 {
-+		reg = <0x5d410000 0x10000>;
++	sdhc0_lpcg: clock-controller@5b200000 {
++		reg = <0x5b200000 0x10000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM1_CLK>, <&clk IMX_LSIO_PWM1_CLK>,
-+			 <&clk IMX_LSIO_PWM1_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM1_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm1_lpcg_ipg_clk",
-+				     "pwm1_lpcg_ipg_hf_clk",
-+				     "pwm1_lpcg_ipg_s_clk",
-+				     "pwm1_lpcg_ipg_slv_clk",
-+				     "pwm1_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_1>;
++		clocks = <&clk IMX_CONN_SDHC0_CLK>,
++			 <&conn_ipg_clk>, <&conn_axi_clk>;
++		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_4>,
++				<IMX_LPCG_CLK_5>;
++		clock-output-names = "sdhc0_lpcg_per_clk",
++				     "sdhc0_lpcg_ipg_clk",
++				     "sdhc0_lpcg_ahb_clk";
++		power-domains = <&pd IMX_SC_R_SDHC_0>;
 +	};
 +
-+	pwm2_lpcg: clock-controller@5d420000 {
-+		reg = <0x5d420000 0x10000>;
++	sdhc1_lpcg: clock-controller@5b210000 {
++		reg = <0x5b210000 0x10000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM2_CLK>, <&clk IMX_LSIO_PWM2_CLK>,
-+			 <&clk IMX_LSIO_PWM2_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM2_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm2_lpcg_ipg_clk",
-+				     "pwm2_lpcg_ipg_hf_clk",
-+				     "pwm2_lpcg_ipg_s_clk",
-+				     "pwm2_lpcg_ipg_slv_clk",
-+				     "pwm2_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_2>;
++		clocks = <&clk IMX_CONN_SDHC1_CLK>,
++			 <&conn_ipg_clk>, <&conn_axi_clk>;
++		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_4>,
++				<IMX_LPCG_CLK_5>;
++		clock-output-names = "sdhc1_lpcg_per_clk",
++				     "sdhc1_lpcg_ipg_clk",
++				     "sdhc1_lpcg_ahb_clk";
++		power-domains = <&pd IMX_SC_R_SDHC_1>;
 +	};
 +
-+	pwm3_lpcg: clock-controller@5d430000 {
-+		reg = <0x5d430000 0x10000>;
++	sdhc2_lpcg: clock-controller@5b220000 {
++		reg = <0x5b220000 0x10000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM3_CLK>, <&clk IMX_LSIO_PWM3_CLK>,
-+			 <&clk IMX_LSIO_PWM3_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM3_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm3_lpcg_ipg_clk",
-+				     "pwm3_lpcg_ipg_hf_clk",
-+				     "pwm3_lpcg_ipg_s_clk",
-+				     "pwm3_lpcg_ipg_slv_clk",
-+				     "pwm3_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_3>;
++		clocks = <&clk IMX_CONN_SDHC2_CLK>,
++			 <&conn_ipg_clk>, <&conn_axi_clk>;
++		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_4>,
++				<IMX_LPCG_CLK_5>;
++		clock-output-names = "sdhc2_lpcg_per_clk",
++				     "sdhc2_lpcg_ipg_clk",
++				     "sdhc2_lpcg_ahb_clk";
++		power-domains = <&pd IMX_SC_R_SDHC_2>;
 +	};
 +
-+	pwm4_lpcg: clock-controller@5d440000 {
-+		reg = <0x5d440000 0x10000>;
++	enet0_lpcg: clock-controller@5b230000 {
++		reg = <0x5b230000 0x10000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM4_CLK>, <&clk IMX_LSIO_PWM4_CLK>,
-+			 <&clk IMX_LSIO_PWM4_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM4_CLK>;
++		clocks = <&clk IMX_CONN_ENET0_ROOT_CLK>,
++			 <&clk IMX_CONN_ENET0_ROOT_CLK>,
++			 <&conn_axi_clk>, <&conn_ipg_clk>, <&conn_ipg_clk>;
 +		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm4_lpcg_ipg_clk",
-+				     "pwm4_lpcg_ipg_hf_clk",
-+				     "pwm4_lpcg_ipg_s_clk",
-+				     "pwm4_lpcg_ipg_slv_clk",
-+				     "pwm4_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_4>;
++				<IMX_LPCG_CLK_2>, <IMX_LPCG_CLK_4>,
++				<IMX_LPCG_CLK_5>;
++		clock-output-names = "enet0_ipg_root_clk",
++				     "enet0_tx_clk",
++				     "enet0_ahb_clk",
++				     "enet0_ipg_clk",
++				     "enet0_ipg_s_clk";
++		power-domains = <&pd IMX_SC_R_ENET_0>;
 +	};
 +
-+	pwm5_lpcg: clock-controller@5d450000 {
-+		reg = <0x5d450000 0x10000>;
++	enet1_lpcg: clock-controller@5b240000 {
++		reg = <0x5b240000 0x10000>;
 +		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM5_CLK>, <&clk IMX_LSIO_PWM5_CLK>,
-+			 <&clk IMX_LSIO_PWM5_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM5_CLK>;
++		clocks = <&clk IMX_CONN_ENET1_ROOT_CLK>,
++			 <&clk IMX_CONN_ENET1_ROOT_CLK>,
++			 <&conn_axi_clk>, <&conn_ipg_clk>, <&conn_ipg_clk>;
 +		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm5_lpcg_ipg_clk",
-+				     "pwm5_lpcg_ipg_hf_clk",
-+				     "pwm5_lpcg_ipg_s_clk",
-+				     "pwm5_lpcg_ipg_slv_clk",
-+				     "pwm5_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_5>;
-+	};
-+
-+	pwm6_lpcg: clock-controller@5d460000 {
-+		reg = <0x5d460000 0x10000>;
-+		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM6_CLK>, <&clk IMX_LSIO_PWM6_CLK>,
-+			 <&clk IMX_LSIO_PWM6_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM6_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm6_lpcg_ipg_clk",
-+				     "pwm6_lpcg_ipg_hf_clk",
-+				     "pwm6_lpcg_ipg_s_clk",
-+				     "pwm6_lpcg_ipg_slv_clk",
-+				     "pwm6_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_6>;
-+	};
-+
-+	pwm7_lpcg: clock-controller@5d470000 {
-+		reg = <0x5d470000 0x10000>;
-+		#clock-cells = <1>;
-+		clocks = <&clk IMX_LSIO_PWM7_CLK>, <&clk IMX_LSIO_PWM7_CLK>,
-+			 <&clk IMX_LSIO_PWM7_CLK>, <&lsio_bus_clk>,
-+			 <&clk IMX_LSIO_PWM7_CLK>;
-+		clock-indices = <IMX_LPCG_CLK_0>, <IMX_LPCG_CLK_1>,
-+				<IMX_LPCG_CLK_4>, <IMX_LPCG_CLK_5>,
-+				<IMX_LPCG_CLK_6>;
-+		clock-output-names = "pwm7_lpcg_ipg_clk",
-+				     "pwm7_lpcg_ipg_hf_clk",
-+				     "pwm7_lpcg_ipg_s_clk",
-+				     "pwm7_lpcg_ipg_slv_clk",
-+				     "pwm7_lpcg_ipg_mstr_clk";
-+		power-domains = <&pd IMX_SC_R_PWM_7>;
++				<IMX_LPCG_CLK_2>, <IMX_LPCG_CLK_4>,
++				<IMX_LPCG_CLK_5>;
++		clock-output-names = "enet1_ipg_root_clk",
++				     "enet1_tx_clk",
++				     "enet1_ahb_clk",
++				     "enet1_ipg_clk",
++				     "enet1_ipg_s_clk";
++		power-domains = <&pd IMX_SC_R_ENET_1>;
 +	};
  };
 -- 
