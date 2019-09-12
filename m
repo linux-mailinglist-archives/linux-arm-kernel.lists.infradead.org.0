@@ -2,63 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C176CB06D4
-	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 04:41:33 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3D05CB06D7
+	for <lists+linux-arm-kernel@lfdr.de>; Thu, 12 Sep 2019 04:42:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Cc:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=NhyHmADOuQJNev/O6KwplyKzasavUCV2aUnpSxEiBV0=; b=AX93vxJU60uR6a
-	6h3Y3A9XIBHQFbNKD0FlkFEO1n3rS3VKq+mJteulhXmGtcJkVKetiTdA8WB0BOakwDZBMsOkeFtuR
-	Ky3NeuZXRhOAkfblZE5WysYEOm0hJ1IwirRmv83EvKlOO7bKQUCwavllMWJjYQ3KjAF77lz2BNP1I
-	pJItLnSEfaI47OEu2+BeX5g1Dr+0TwcJwKsySnlehslP6z4t/FF0yLbwUT6lRF3u/Sxigr7tYwtB6
-	c8X744AoV3n8iykrlD41t+aYm4p1qMOSxlgVOICZsk1W+bI6IfN085H/fT7QCwsR7utpOVAGmnO/W
-	94nUWV7DnVitJiMGQ77A==;
+	List-Owner; bh=iu3ik4qOgXG3jghznohj16wTtAf42IUqjiKh4bm/mhE=; b=GwgQGIH4+yQHCO
+	BxUiK8rZALdGyKekENvkjyKA14ShbvlH9xHKU22JJIXROdAOsW1NQ37fBQ/hGk/AddSC16TGHxLBV
+	4bbbBdi8jBy9NrDCzsFgaEIjFj2SWd+HXQXiaosRVcmHxezy4qHokO/X1Kj+4caXA5YlnRX/irho2
+	4if/7PQy2SmuluP8myAoRHQqL75hnVt7rBe72zJGYBjnnm5ELTry6PDbF4uqkyM+9LTnPIYRvLuM5
+	6VbM6J6NxXc+m7ZK94JlWI/NpXfSJFshFvSi+knWw3DOteV7P+3jx+PVSS8XWjfvH+a7Uca3EAofn
+	Rk+NW7GPQJloavxa7Stw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8F2z-0007nn-Vo; Thu, 12 Sep 2019 02:41:26 +0000
+	id 1i8F40-00088f-9y; Thu, 12 Sep 2019 02:42:28 +0000
 Received: from honk.sigxcpu.org ([24.134.29.49])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8F2K-0007M4-Dy
- for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 02:40:45 +0000
+ id 1i8F3n-00087c-1n
+ for linux-arm-kernel@lists.infradead.org; Thu, 12 Sep 2019 02:42:16 +0000
 Received: from localhost (localhost [127.0.0.1])
- by honk.sigxcpu.org (Postfix) with ESMTP id 6DDFDFB03;
- Thu, 12 Sep 2019 04:40:42 +0200 (CEST)
+ by honk.sigxcpu.org (Postfix) with ESMTP id ACF3CFB03;
+ Thu, 12 Sep 2019 04:42:13 +0200 (CEST)
 X-Virus-Scanned: Debian amavisd-new at honk.sigxcpu.org
 Received: from honk.sigxcpu.org ([127.0.0.1])
  by localhost (honk.sigxcpu.org [127.0.0.1]) (amavisd-new, port 10024)
- with ESMTP id 3IWeS0LC8kQt; Thu, 12 Sep 2019 04:40:40 +0200 (CEST)
+ with ESMTP id z-y1afFhBSMJ; Thu, 12 Sep 2019 04:42:12 +0200 (CEST)
 Received: by bogon.sigxcpu.org (Postfix, from userid 1000)
- id 5EB2D46CC3; Wed, 11 Sep 2019 19:40:36 -0700 (PDT)
-From: =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>
-To: "To : Lucas Stach" <l.stach@pengutronix.de>,
- Russell King <linux+etnaviv@armlinux.org.uk>,
- Christian Gmeiner <christian.gmeiner@gmail.com>,
- David Airlie <airlied@linux.ie>, Daniel Vetter <daniel@ffwll.ch>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ id D371D46CC1; Wed, 11 Sep 2019 19:42:10 -0700 (PDT)
+Date: Wed, 11 Sep 2019 19:42:10 -0700
+From: Guido =?iso-8859-1?Q?G=FCnther?= <agx@sigxcpu.org>
+To: Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
  Shawn Guo <shawnguo@kernel.org>, Sascha Hauer <s.hauer@pengutronix.de>,
  Pengutronix Kernel Team <kernel@pengutronix.de>,
  Fabio Estevam <festevam@gmail.com>, NXP Linux Team <linux-imx@nxp.com>,
- Abel Vesa <abel.vesa@nxp.com>, Anson Huang <Anson.Huang@nxp.com>,
- Carlo Caione <ccaione@baylibre.com>,
- =?UTF-8?q?Guido=20G=C3=BCnther?= <agx@sigxcpu.org>,
+ Lucas Stach <l.stach@pengutronix.de>, Abel Vesa <abel.vesa@nxp.com>,
+ Anson Huang <Anson.Huang@nxp.com>, Carlo Caione <ccaione@baylibre.com>,
+ "Angus Ainslie (Purism)" <angus@akkea.ca>,
  Andrey Smirnov <andrew.smirnov@gmail.com>,
- "Angus Ainslie (Purism)" <angus@akkea.ca>, etnaviv@lists.freedesktop.org,
- dri-devel@lists.freedesktop.org, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Subject: [PATCH v2 2/2] dt-bindings: etnaviv: Add #cooling-cells
-Date: Wed, 11 Sep 2019 19:40:36 -0700
-Message-Id: <6e9d761598b2361532146f43161fd05f3eee6545.1568255903.git.agx@sigxcpu.org>
-X-Mailer: git-send-email 2.23.0.rc1
-In-Reply-To: <cover.1568255903.git.agx@sigxcpu.org>
-References: <cover.1568255903.git.agx@sigxcpu.org>
+ devicetree@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org
+Subject: Re: [PATCH] dts: arm64: imx8mq: Enable gpu passive throttling
+Message-ID: <20190912024210.GA13270@bogon.m.sigxcpu.org>
+References: <cf1b114bcc6ef26e032c352b8c885aaf5f3594d0.1568254197.git.agx@sigxcpu.org>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <cf1b114bcc6ef26e032c352b8c885aaf5f3594d0.1568254197.git.agx@sigxcpu.org>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190911_194044_634242_C6BDBBBB 
-X-CRM114-Status: UNSURE (   9.78  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190911_194215_252299_C07F0AD5 
+X-CRM114-Status: GOOD (  14.12  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -79,26 +74,83 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-QWRkICNjb29saW5nLWNlbGxzIGZvciB3aGVuIHRoZSBncHUgYWN0cyBhcyBhIGNvb2xpbmcgZGV2
-aWNlLgoKU2lnbmVkLW9mZi1ieTogR3VpZG8gR8O8bnRoZXIgPGFneEBzaWd4Y3B1Lm9yZz4KLS0t
-CiAuLi4vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5L2V0bmF2aXYvZXRuYXZpdi1kcm0udHh0
-ICAgICAgICAgIHwgMSArCiAxIGZpbGUgY2hhbmdlZCwgMSBpbnNlcnRpb24oKykKCmRpZmYgLS1n
-aXQgYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9ldG5hdml2L2V0
-bmF2aXYtZHJtLnR4dCBiL0RvY3VtZW50YXRpb24vZGV2aWNldHJlZS9iaW5kaW5ncy9kaXNwbGF5
-L2V0bmF2aXYvZXRuYXZpdi1kcm0udHh0CmluZGV4IDhkZWYxMWIxNmEyNC4uNjQwNTkyZThhYjJl
-IDEwMDY0NAotLS0gYS9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvZGlzcGxheS9l
-dG5hdml2L2V0bmF2aXYtZHJtLnR4dAorKysgYi9Eb2N1bWVudGF0aW9uL2RldmljZXRyZWUvYmlu
-ZGluZ3MvZGlzcGxheS9ldG5hdml2L2V0bmF2aXYtZHJtLnR4dApAQCAtMjEsNiArMjEsNyBAQCBS
-ZXF1aXJlZCBwcm9wZXJ0aWVzOgogT3B0aW9uYWwgcHJvcGVydGllczoKIC0gcG93ZXItZG9tYWlu
-czogYSBwb3dlciBkb21haW4gY29uc3VtZXIgc3BlY2lmaWVyIGFjY29yZGluZyB0bwogICBEb2N1
-bWVudGF0aW9uL2RldmljZXRyZWUvYmluZGluZ3MvcG93ZXIvcG93ZXJfZG9tYWluLnR4dAorLSAj
-Y29vbGluZy1jZWxsczogOiBJZiB1c2VkIGFzIGEgY29vbGluZyBkZXZpY2UsIG11c3QgYmUgPDI+
-CiAKIGV4YW1wbGU6CiAKLS0gCjIuMjMuMC5yYzEKCgpfX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2VybmVsIG1haWxpbmcgbGlzdApsaW51
-eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0cDovL2xpc3RzLmluZnJhZGVhZC5v
-cmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVsCg==
+Hi,
+On Wed, Sep 11, 2019 at 07:14:25PM -0700, Guido G=FCnther wrote:
+> Temperature and hysteresis were picked after the CPU.
+
+I pulled that one from the wrong branch so please disregard. I've
+sent out a v2.
+Cheers,
+ -- Guido
+
+> =
+
+> Signed-off-by: Guido G=FCnther <agx@sigxcpu.org>
+> ---
+>  arch/arm64/boot/dts/freescale/imx8mq.dtsi | 15 +++++++++++++++
+>  1 file changed, 15 insertions(+)
+> =
+
+> diff --git a/arch/arm64/boot/dts/freescale/imx8mq.dtsi b/arch/arm64/boot/=
+dts/freescale/imx8mq.dtsi
+> index 564045927485..fda636085bb3 100644
+> --- a/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> +++ b/arch/arm64/boot/dts/freescale/imx8mq.dtsi
+> @@ -235,12 +235,26 @@
+>  			thermal-sensors =3D <&tmu 1>;
+>  =
+
+>  			trips {
+> +				gpu-alert {
+> +					temperature =3D <80000>;
+> +					hysteresis =3D <2000>;
+> +					type =3D "passive";
+> +				};
+> +
+>  				gpu-crit {
+>  					temperature =3D <90000>;
+>  					hysteresis =3D <2000>;
+>  					type =3D "critical";
+>  				};
+>  			};
+> +
+> +			cooling-maps {
+> +				map0 {
+> +					trip =3D <&gpu_alert>;
+> +					cooling-device =3D
+> +						<&gpu THERMAL_NO_LIMIT THERMAL_NO_LIMIT>;
+> +				};
+> +			};
+>  		};
+>  =
+
+>  		vpu-thermal {
+> @@ -1006,6 +1020,7 @@
+>  			         <&clk IMX8MQ_CLK_GPU_AXI>,
+>  			         <&clk IMX8MQ_CLK_GPU_AHB>;
+>  			clock-names =3D "core", "shader", "bus", "reg";
+> +			#cooling-cells =3D <2>;
+>  			assigned-clocks =3D <&clk IMX8MQ_CLK_GPU_CORE_SRC>,
+>  			                  <&clk IMX8MQ_CLK_GPU_SHADER_SRC>,
+>  			                  <&clk IMX8MQ_CLK_GPU_AXI>,
+> -- =
+
+> 2.23.0.rc1
+> =
+
+> =
+
+> _______________________________________________
+> linux-arm-kernel mailing list
+> linux-arm-kernel@lists.infradead.org
+> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
