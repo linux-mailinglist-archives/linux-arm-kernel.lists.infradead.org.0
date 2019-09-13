@@ -2,74 +2,77 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 520E6B2214
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:37:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 8DE26B2215
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:37:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Subject:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PomFfjH/Uy6Re8OQdZVo6P0dDmn4th3dF4pFeEiHHrM=; b=RGtI2cPxculiuD
-	fvTRRgf4TyRrUuCUamsDnihP6juFhe73jl1UPLPfS9Iuj77N2ehwSSauUG/MlMPjIjmaNOnNkw4+U
-	Sj0+yzMb+PQ4BOXiH8poedT2efByfi4YYfwwG8WmmX05CEK/FojIMmmjjneuinMa9kvGSJB5yb5pT
-	5ET1N3Jb1+5eNHnDZLzFvUHEfN1XOKqX7AZkJaXHJoo5jgv46icTPvRrfvmdeDzhkVZjJdQM/MIxh
-	sOirppdmXjRXa1MSSbpN81mBcbF/evkLCRZq764v7ck8rvfwHYJUwASg/WTAozriThMWbxnokvSff
-	l3NskIVKOgIBRnxYx1+A==;
+	List-Owner; bh=qSHGB25vBSpAE9D27EUpfp0XCPnID+6WTI2WHlrIXWk=; b=Zqhl6wJ+RFc4Wn
+	Y+ny5N6sH4fLiCSVS3HwmWjiN0+SciqdhC9hV2LBxIFAiVsYw3fbd1hJ0TtYjMcDfGgI1uomfE1da
+	+65c7annC9PjAlgtINlf1G2q33oZ1tGbgBdfq4BWmqWL8MjulGXUsQbxnCxbuBPKdUJ/VU2Ixj2Ad
+	3NSlwPfR8/4ZHtkJqe7ZSSg6tlPCucuutVo0ibdA4EptnCjCIAHPxXNFZU76hBYGBbkbcMa+FN1pd
+	6cWO4+whtQnVTqlIMmbLR1lfyWIakmZWMK6//AmCstQzSIjc8QqWOchXFfCORy4wJ+mOBA0VQnVhW
+	flW5hYHU5m8hSc5z37yA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mhW-00032v-Hk; Fri, 13 Sep 2019 14:37:30 +0000
-Received: from mail-oi1-f194.google.com ([209.85.167.194])
+	id 1i8mhq-0003Jd-Rm; Fri, 13 Sep 2019 14:37:51 +0000
+Received: from mail-ot1-f67.google.com ([209.85.210.67])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mgE-0002K2-Kb
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:36:12 +0000
-Received: by mail-oi1-f194.google.com with SMTP id k20so2819713oih.3
+ id 1i8mgG-0002Mb-Pf
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:36:14 +0000
+Received: by mail-ot1-f67.google.com with SMTP id h17so25849801otn.5
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 07:36:09 -0700 (PDT)
+ Fri, 13 Sep 2019 07:36:12 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:message-id:date:from:to:cc:subject:references
  :mime-version:content-disposition:in-reply-to;
- bh=x59L5apnJL40NtS0tdeDtuo7G6k5ZSeB+XKw0XxxnFI=;
- b=KgH8YrAjnSfW9mguFABNyrJx8dCwg5dQt5n5Zyhu+HKVoFcXRK+BdIRWDgCQEjGeQt
- 59JqakcUVslv5mrl8YZ0nQSqhfkWIrw/pUMZwzIIDRdRd0QIhjmVHyUjbIxl0/m24uzN
- QFNxEXyWOg8qD8h0okjzEdFkVdFtjEHMS8YsgixXxx86e0S/9Dmk0xsUUW9Eo0VxtIQo
- +uub0bvavMHgMbZV6tzLui1GzzMT1oZJYVjhkmNnTTzts8hwJ4Uw589ee7qRUHu8yTSw
- /3UI8sRKLyCOW1OfOhfBOibBC4wuOEI5rnHdsL1dlZlQmd8l0RvqpE+1IV9/vKGrSHy0
- L1bQ==
-X-Gm-Message-State: APjAAAXr5PkpeCj/jva1HS1Lk08qv1NSzM2WV729B9u3TXjNkOfWukRx
- Am++Sq0P8Cn7z0q3UHd9QQ==
-X-Google-Smtp-Source: APXvYqwcZJeRHC1PVNC2DKjUVCVr9+SFzeO0M0kOrsz2lu3agim9M0Aj63nSjTgT/vcdVxuD4z+A6g==
-X-Received: by 2002:a05:6808:7c1:: with SMTP id
- f1mr2510604oij.123.1568385369033; 
- Fri, 13 Sep 2019 07:36:09 -0700 (PDT)
+ bh=Udp1qs2PnQd+suer1OhTIlkS/OekkcPK9CiDkJDjShA=;
+ b=nrDwNEj6M3INklBqHpQxKeuk0MT8wNKO28JJdxCb94PCZvkTaj2HpRvmZUUIXPEcuf
+ nHzns/lK4iNiZCOIiqd5zZ6MaRKlA+rJ8mWSytJX7XsJamvLLkO+V0mRY8H0DUV36KPI
+ FvclwHMMDO/eARjKmyIkty778MSsoZEj4EW+/Z3IUBWo1hwmpGFQxMVpoKSxOtWpNbGn
+ mGil40rKhM6mhEFsFrKOlVRXnnn/sriuXG0feX8dyJoPB9pII7VOUuptSEylGhwJmNnX
+ voRiutpXXgkL6qror6lb7gT6L1+hjK1vI5z4/Wl6NbtDLgvOGVvoPEKTumI9wJNYy9ko
+ LDBg==
+X-Gm-Message-State: APjAAAWBqHPm8wgZacpzGiS6AdjYvIRRj0YEZ7KxUOaVD+khu5kO/9cb
+ oSIN5xDKZ2L/VoJYT4yxmA==
+X-Google-Smtp-Source: APXvYqycFKRr57mlzxEV5y+yWerE/UvbEc15wS4dWm6MgJQ1ln7TuCcpwqsSqLk1VgSzUI9biggE8Q==
+X-Received: by 2002:a9d:5f9a:: with SMTP id g26mr9285769oti.27.1568385371763; 
+ Fri, 13 Sep 2019 07:36:11 -0700 (PDT)
 Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
  [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id s194sm921883oie.19.2019.09.13.07.36.08
+ by smtp.gmail.com with ESMTPSA id j3sm1115259oih.52.2019.09.13.07.36.10
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Sep 2019 07:36:08 -0700 (PDT)
-Message-ID: <5d7ba958.1c69fb81.d998a.6602@mx.google.com>
-Date: Fri, 13 Sep 2019 15:36:07 +0100
+ Fri, 13 Sep 2019 07:36:10 -0700 (PDT)
+Message-ID: <5d7ba95a.1c69fb81.bfd81.77ba@mx.google.com>
+Date: Fri, 13 Sep 2019 15:36:10 +0100
 From: Rob Herring <robh@kernel.org>
-To: Talel Shenhar <talel@amazon.com>
-Subject: Re: [PATCH 1/3] dt-bindings: edac: al-mc-edac: Amazon's Annapurna
- Labs Memory Controller EDAC
-References: <1567603943-25316-1-git-send-email-talel@amazon.com>
- <1567603943-25316-2-git-send-email-talel@amazon.com>
+To: Krzysztof Kozlowski <krzk@kernel.org>
+Subject: Re: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3
+ memories
+References: <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
+ <20190906101344.3535-1-l.luba@partner.samsung.com>
+ <20190906101344.3535-4-l.luba@partner.samsung.com>
+ <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+ <52963d0d-cf48-7085-5581-a94c6e15e0bd@partner.samsung.com>
+ <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <1567603943-25316-2-git-send-email-talel@amazon.com>
-X-Mutt-References: <1567603943-25316-2-git-send-email-talel@amazon.com>
+In-Reply-To: <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
+X-Mutt-References: <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_073610_701998_546541F5 
-X-CRM114-Status: GOOD (  13.32  )
+X-CRM114-CacheID: sfid-20190913_073613_043258_98714FF4 
+X-CRM114-Status: GOOD (  23.35  )
 X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.194 listed in list.dnswl.org]
+ no trust [209.85.210.67 listed in list.dnswl.org]
  0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
  mail domains are different
  0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
@@ -78,8 +81,9 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_H3      RBL: Good reputation (+3)
+ [209.85.210.67 listed in wl.mailspike.net]
+ 0.0 RCVD_IN_MSPIKE_WL      Mailspike good senders
  0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
  EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
@@ -93,66 +97,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, barakw@amazon.com,
- ronenk@amazon.com, hhhawa@amazon.com, gregkh@linuxfoundation.org,
- jonnyc@amazon.com, hanochu@amazon.com, linux-kernel@vger.kernel.org,
- james.morse@arm.com, catalin.marinas@arm.com, bp@alien8.de, mchehab@kernel.org,
- will@kernel.org, davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
- linux-edac@vger.kernel.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ linux-pm@vger.kernel.org,
+ =?utf-8?Q?Bart=C5=82omiej_=C5=BBo=C5=82nierkiewicz?=
+ <b.zolnierkie@samsung.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Lukasz Luba <l.luba@partner.samsung.com>, Chanwoo Choi <cw00.choi@samsung.com>,
+ kyungmin.park@samsung.com, kgene@kernel.org, myungjoo.ham@samsung.com,
+ s.nawrocki@samsung.com, linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Wed, Sep 04, 2019 at 04:32:21PM +0300, Talel Shenhar wrote:
-> Document Amazon's Annapurna Labs Memory Controller EDAC SoC binding.
+On Fri, Sep 06, 2019 at 01:50:26PM +0200, Krzysztof Kozlowski wrote:
+> On Fri, 6 Sep 2019 at 13:39, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+> >
+> > Hi Krzysztof,
+> >
+> > On 9/6/19 12:56 PM, Krzysztof Kozlowski wrote:
+> > > On Fri, 6 Sep 2019 at 12:14, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+> > >>
+> > >> Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+> > >> Minor fixes in the old documentation.
+> > >>
+> > >> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+> > >> ---
+> > >>   .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+> > >>   1 file changed, 27 insertions(+), 2 deletions(-)
+> > >>
+> > >> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> > >> index 3b2485b84b3f..de0905239767 100644
+> > >> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> > >> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+> > >> @@ -40,10 +40,34 @@ Child nodes:
+> > >>     a given speed-bin. Please see Documentation/devicetree/
+> > >>     bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
+> > >>
+> > >> +Samsung K3QF2F20DB LPDDR3 memory
+> > >> +------------------------------------------------------------
+> > >> +
+> > >> +This binding uses the LPDDR3 binding (described above)
+> > >> +
+> > >> +Required properties:
+> > >> +- compatible:  Should be:
+> > >> +               "samsung,K3QF2F20DB"
+> > >> +               followed by "jedec,lpddr3"
+> > >> +- density  : <u32> representing density in Mb (Mega bits)
+> > >> +- io-width : <u32> representing bus width. Possible value 32
+> > >> +- #address-cells: Must be set to 1
+> > >> +- #size-cells: Must be set to 0
+> > >
+> > > If you decided to repeat all properties again, then it deserves its
+> > > own bindings file. However I though about simpler solution - just
+> > > document compatible. Exactly the same as AT24 or AT25 EEPROM bindings.
+> > > There is not much benefit from copying all these properties.
+> > OK, I see. I will add only 'compatible' and skip the rest then.
+> > So the lpddr3.txt file will get this addition:
+> >
+> > +Samsung K3QF2F20DB LPDDR3 memory
+> > +------------------------------------------------------------
+> > +
+> > +This binding uses the LPDDR3 binding (described above)
+> > +
+> > +Required properties:
+> > +- compatible:  Should be:
+> > +               "samsung,K3QF2F20DB"
+> > +               followed by "jedec,lpddr3"
+> > +
+> > +Optional properties:
+> > +
+> > +The optional properties are the same as in the LPDDR3 generic bindings and
+> > +values should be taken from the data-sheet. Detailed bindings are described
+> > +above.
+> > +
+> > +Child nodes:
+> > +
+> > +Detailed bindings are described in LPDDR3 generic bindings described above.
+> > +
+> >
+> > Is it OK?
 > 
-> Signed-off-by: Talel Shenhar <talel@amazon.com>
-> ---
->  .../devicetree/bindings/edac/amazon,al-mc-edac.txt | 24 ++++++++++++++++++++++
->  1 file changed, 24 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
-> 
-> diff --git a/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
-> new file mode 100644
-> index 0000000..9a3803f
-> --- /dev/null
-> +++ b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
-> @@ -0,0 +1,24 @@
-> +Amazon's Annapurna Labs Memory Controller EDAC
-> +
-> +EDAC node is defined to describe on-chip error detection and correction for
-> +Amazon's Annapurna Labs Memory Controller.
-> +
-> +Required properties:
-> +- compatible:	Shall be "amazon,al-mc-edac".
-> +- reg:		DDR controller resource.
-> +
-> +Optional:
-> +- interrupt-names:	may include "ue", for uncorrectable errors,
-> +			and/or "ce", for correctable errors.
-> +- interrupts:		should contain the interrupts associated with the
-> +			interrupts names.
-> +
-> +Example:
-> +
-> +al_mc_edac {
+> To me it is still a lot of text just for one compatible and I can
+> image more of such entries for other memories... However I do not mind
+> and anyway, YAML will simplify it. If you're in doubt, wait for Rob's
+> reply as this is his part.
 
-edac@f0080000
+We can't have multiple (top-level) schema in one file, so better to add 
+in where the existing compatible strings are.
 
-With that,
-
-Reviewed-by: Rob Herring <robh@kernel.org>
-
-> +	compatible = "amazon,al-mc-edac";
-> +	reg = <0x0 0xf0080000 0x0 0x00010000>;
-> +	interrupt-parent = <&amazon_al_system_fabric>;
-> +	interrupt-names = "ue";
-> +	interrupts = <20 IRQ_TYPE_LEVEL_HIGH>;
-> +};
-> -- 
-> 2.7.4
-> 
+Rob
 
 
 _______________________________________________
