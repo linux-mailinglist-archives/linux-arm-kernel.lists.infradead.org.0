@@ -2,91 +2,86 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4EA1CB2213
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:37:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 520E6B2214
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:37:32 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Subject:To:From:Date:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=epBPg7ps5nbQ0SV8KtC1zAEz9uh7uapdcHymrnG1QU8=; b=X0SJLYrBsoi2EH
-	BOOZZWRREQO3Tykg+Ud98XQn8bCN6Y6d+Ox8WGsOgXlI3NOe81bDOiMlkV8m6h+qZG0wNHoZS0gag
-	aZsMiWR7DLQXRiqivygRNkdtR1d1/oWS3XgjqlgzqjilEKaAwMapVfFkNHxJk+GKMJhZUNA263zkh
-	oc7Noa6OJqXfm0bmOboSeGK2iZD56Rp8Vyjj/UuuxvgK/0dMPDds4Kbvb2LO+3va8BEeWMgVNrJ9q
-	UCOPm8oYB39kRP7J+ierbPT7bjjGlkPLJQIrn7q9rlP0NgIWUkzgJrDX51lnNSbqhdbE9CC73+Dgn
-	98amBfA239WqUXLDYbww==;
+	List-Owner; bh=PomFfjH/Uy6Re8OQdZVo6P0dDmn4th3dF4pFeEiHHrM=; b=RGtI2cPxculiuD
+	fvTRRgf4TyRrUuCUamsDnihP6juFhe73jl1UPLPfS9Iuj77N2ehwSSauUG/MlMPjIjmaNOnNkw4+U
+	Sj0+yzMb+PQ4BOXiH8poedT2efByfi4YYfwwG8WmmX05CEK/FojIMmmjjneuinMa9kvGSJB5yb5pT
+	5ET1N3Jb1+5eNHnDZLzFvUHEfN1XOKqX7AZkJaXHJoo5jgv46icTPvRrfvmdeDzhkVZjJdQM/MIxh
+	sOirppdmXjRXa1MSSbpN81mBcbF/evkLCRZq764v7ck8rvfwHYJUwASg/WTAozriThMWbxnokvSff
+	l3NskIVKOgIBRnxYx1+A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mhA-0002kc-Fz; Fri, 13 Sep 2019 14:37:08 +0000
-Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
+	id 1i8mhW-00032v-Hk; Fri, 13 Sep 2019 14:37:30 +0000
+Received: from mail-oi1-f194.google.com ([209.85.167.194])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mfT-0001g0-Er
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:35:25 +0000
-Received: by mail-qk1-x743.google.com with SMTP id w2so5513528qkf.2
+ id 1i8mgE-0002K2-Kb
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:36:12 +0000
+Received: by mail-oi1-f194.google.com with SMTP id k20so2819713oih.3
  for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 07:35:21 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
- h=message-id:subject:from:to:cc:date:in-reply-to:references
- :mime-version:content-transfer-encoding;
- bh=9Z6EfKc/tiAqCe5nrG0CEyU7I6TZY+4MO6IYTk9GKp4=;
- b=HXxFGlzHNUOzcVXhTjcVeZmsY2axuZDsxqSpeSdttKnUjeABS7vFI9wGZqOFaDjiFy
- rjtdYtiDL+6Um4ZCqTtpgMSJ4ZlzzX9/lEtFFr2nMNVwUbpKTTyz9rk2OMPEFWVeZHMY
- 2l4z+kT583DhzTXTow3J1EUhDrWBRfKLG4tQSJ38xy2n1lUEe8+LItcUZVur7IKH/J8m
- 1CjuFwK+mZhj/eKSvyJl7EmoNpU6xaAZUxykHNyleehJ0XF8W5NKkiCbloVGmSa/D3s6
- VQ3bJ8piHxWlkM5Y/czZiuGiEitm7NBMSrCyNXjAdPwpM409Rdq+yAWEsZ7xLHz4VMMT
- 0/0g==
+ Fri, 13 Sep 2019 07:36:09 -0700 (PDT)
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
- :references:mime-version:content-transfer-encoding;
- bh=9Z6EfKc/tiAqCe5nrG0CEyU7I6TZY+4MO6IYTk9GKp4=;
- b=Xp0TvzE/UqsyM7kb0sAIq1yN2URRgi6VpJMnmNsVXC636Dy0FIPRzC1qkMk/jLF2Fa
- adrSNpIjLLMisg0FxJGvxNKIM6Qxnmw3+HE1icjsebh5TDj175xB4FUfADftHrCn2DXc
- 2p7gPwYfo0m+t1HJyhR5KpojJHbvB9OXqw9q9McJezpQ3qGxI3F+XN/KAfrjD+mhlEdo
- VpLkqL+HqRMFJN8lZ73j7hM9qQwGgR/C8ZHAmIsMURlpuHTCVRzMfMLNdd69RKGQYNTY
- Hx6fWgxZmLrROlx2sMQRRI0u0Uv8Me4tyvTFRxOxf8eR+PpByUf29CBRU7KynWK8pHbC
- RgdQ==
-X-Gm-Message-State: APjAAAV5ZlfKzg4wokjrVUAD27q7lNdwiyAEo4RwvZk+H1rsQw2P6cn1
- DXhWAMQs4mztfutEKOS5vmd8oQ==
-X-Google-Smtp-Source: APXvYqzFSI15WScpD6Ky3Htl5LWDtXBTh2C4ek5k+asPOfoOylHjTbFZaJGuOFuZAgXEhDc5477Zdg==
-X-Received: by 2002:a05:620a:49b:: with SMTP id
- 27mr33288710qkr.89.1568385320693; 
- Fri, 13 Sep 2019 07:35:20 -0700 (PDT)
-Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
- [66.187.233.206])
- by smtp.gmail.com with ESMTPSA id v2sm10601115qtv.22.2019.09.13.07.35.19
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Fri, 13 Sep 2019 07:35:20 -0700 (PDT)
-Message-ID: <1568385318.5576.146.camel@lca.pw>
-Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
-From: Qian Cai <cai@lca.pw>
-To: Robin Murphy <robin.murphy@arm.com>, will@kernel.org, joro@8bytes.org
-Date: Fri, 13 Sep 2019 10:35:18 -0400
-In-Reply-To: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
-References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
-X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
-Mime-Version: 1.0
+ h=x-gm-message-state:message-id:date:from:to:cc:subject:references
+ :mime-version:content-disposition:in-reply-to;
+ bh=x59L5apnJL40NtS0tdeDtuo7G6k5ZSeB+XKw0XxxnFI=;
+ b=KgH8YrAjnSfW9mguFABNyrJx8dCwg5dQt5n5Zyhu+HKVoFcXRK+BdIRWDgCQEjGeQt
+ 59JqakcUVslv5mrl8YZ0nQSqhfkWIrw/pUMZwzIIDRdRd0QIhjmVHyUjbIxl0/m24uzN
+ QFNxEXyWOg8qD8h0okjzEdFkVdFtjEHMS8YsgixXxx86e0S/9Dmk0xsUUW9Eo0VxtIQo
+ +uub0bvavMHgMbZV6tzLui1GzzMT1oZJYVjhkmNnTTzts8hwJ4Uw589ee7qRUHu8yTSw
+ /3UI8sRKLyCOW1OfOhfBOibBC4wuOEI5rnHdsL1dlZlQmd8l0RvqpE+1IV9/vKGrSHy0
+ L1bQ==
+X-Gm-Message-State: APjAAAXr5PkpeCj/jva1HS1Lk08qv1NSzM2WV729B9u3TXjNkOfWukRx
+ Am++Sq0P8Cn7z0q3UHd9QQ==
+X-Google-Smtp-Source: APXvYqwcZJeRHC1PVNC2DKjUVCVr9+SFzeO0M0kOrsz2lu3agim9M0Aj63nSjTgT/vcdVxuD4z+A6g==
+X-Received: by 2002:a05:6808:7c1:: with SMTP id
+ f1mr2510604oij.123.1568385369033; 
+ Fri, 13 Sep 2019 07:36:09 -0700 (PDT)
+Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
+ [24.155.109.49])
+ by smtp.gmail.com with ESMTPSA id s194sm921883oie.19.2019.09.13.07.36.08
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Fri, 13 Sep 2019 07:36:08 -0700 (PDT)
+Message-ID: <5d7ba958.1c69fb81.d998a.6602@mx.google.com>
+Date: Fri, 13 Sep 2019 15:36:07 +0100
+From: Rob Herring <robh@kernel.org>
+To: Talel Shenhar <talel@amazon.com>
+Subject: Re: [PATCH 1/3] dt-bindings: edac: al-mc-edac: Amazon's Annapurna
+ Labs Memory Controller EDAC
+References: <1567603943-25316-1-git-send-email-talel@amazon.com>
+ <1567603943-25316-2-git-send-email-talel@amazon.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <1567603943-25316-2-git-send-email-talel@amazon.com>
+X-Mutt-References: <1567603943-25316-2-git-send-email-talel@amazon.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_073523_714241_2A5F81A7 
-X-CRM114-Status: GOOD (  15.12  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190913_073610_701998_546541F5 
+X-CRM114-Status: GOOD (  13.32  )
+X-Spam-Score: 0.3 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
- [list.dnswl.org]
+ no trust [209.85.167.194 listed in list.dnswl.org]
+ 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (robherring2[at]gmail.com)
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
+ -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
+ [209.85.167.194 listed in wl.mailspike.net]
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,59 +93,67 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, barakw@amazon.com,
+ ronenk@amazon.com, hhhawa@amazon.com, gregkh@linuxfoundation.org,
+ jonnyc@amazon.com, hanochu@amazon.com, linux-kernel@vger.kernel.org,
+ james.morse@arm.com, catalin.marinas@arm.com, bp@alien8.de, mchehab@kernel.org,
+ will@kernel.org, davem@davemloft.net, linux-arm-kernel@lists.infradead.org,
+ linux-edac@vger.kernel.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 2019-09-13 at 12:48 +0100, Robin Murphy wrote:
-> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
-> for smoking out inadequate firmware, the failure mode is non-obvious
-> and can be confusing for end users. Add some special-case reporting of
-> Unidentified Stream Faults to help clarify this particular symptom.
+On Wed, Sep 04, 2019 at 04:32:21PM +0300, Talel Shenhar wrote:
+> Document Amazon's Annapurna Labs Memory Controller EDAC SoC binding.
 > 
-> CC: Douglas Anderson <dianders@chromium.org>
-> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> Signed-off-by: Talel Shenhar <talel@amazon.com>
 > ---
->  drivers/iommu/arm-smmu.c | 5 +++++
->  drivers/iommu/arm-smmu.h | 2 ++
->  2 files changed, 7 insertions(+)
+>  .../devicetree/bindings/edac/amazon,al-mc-edac.txt | 24 ++++++++++++++++++++++
+>  1 file changed, 24 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
 > 
-> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> index b7cf24402a94..76ac8c180695 100644
-> --- a/drivers/iommu/arm-smmu.c
-> +++ b/drivers/iommu/arm-smmu.c
-> @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
->  	dev_err_ratelimited(smmu->dev,
->  		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
->  		gfsr, gfsynr0, gfsynr1, gfsynr2);
-> +	if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
-> +	    (gfsr & sGFSR_USF))
-> +		dev_err_ratelimited(smmu->dev,
-> +			"Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
-> +			(u16)gfsynr1);
-
-dev_err_once(), i.e., don't need to remind people to set "arm-
-smmu.disable_bypass=0" multiple times.
-
->  
->  	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
->  	return IRQ_HANDLED;
-> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
-> index c9c13b5785f2..46f7e161e83e 100644
-> --- a/drivers/iommu/arm-smmu.h
-> +++ b/drivers/iommu/arm-smmu.h
-> @@ -79,6 +79,8 @@
->  #define ID7_MINOR			GENMASK(3, 0)
->  
->  #define ARM_SMMU_GR0_sGFSR		0x48
-> +#define sGFSR_USF			BIT(2)
+> diff --git a/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
+> new file mode 100644
+> index 0000000..9a3803f
+> --- /dev/null
+> +++ b/Documentation/devicetree/bindings/edac/amazon,al-mc-edac.txt
+> @@ -0,0 +1,24 @@
+> +Amazon's Annapurna Labs Memory Controller EDAC
 > +
->  #define ARM_SMMU_GR0_sGFSYNR0		0x50
->  #define ARM_SMMU_GR0_sGFSYNR1		0x54
->  #define ARM_SMMU_GR0_sGFSYNR2		0x58
+> +EDAC node is defined to describe on-chip error detection and correction for
+> +Amazon's Annapurna Labs Memory Controller.
+> +
+> +Required properties:
+> +- compatible:	Shall be "amazon,al-mc-edac".
+> +- reg:		DDR controller resource.
+> +
+> +Optional:
+> +- interrupt-names:	may include "ue", for uncorrectable errors,
+> +			and/or "ce", for correctable errors.
+> +- interrupts:		should contain the interrupts associated with the
+> +			interrupts names.
+> +
+> +Example:
+> +
+> +al_mc_edac {
+
+edac@f0080000
+
+With that,
+
+Reviewed-by: Rob Herring <robh@kernel.org>
+
+> +	compatible = "amazon,al-mc-edac";
+> +	reg = <0x0 0xf0080000 0x0 0x00010000>;
+> +	interrupt-parent = <&amazon_al_system_fabric>;
+> +	interrupt-names = "ue";
+> +	interrupts = <20 IRQ_TYPE_LEVEL_HIGH>;
+> +};
+> -- 
+> 2.7.4
+> 
+
 
 _______________________________________________
 linux-arm-kernel mailing list
