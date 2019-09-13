@@ -2,69 +2,72 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8C93EB220E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:35:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7BEBBB2205
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:35:31 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=9pLbzfWKHLJZTd/eB13StBqE8KPlns+Co0A3X+p5ORc=; b=Xin0hewk0RePpL
-	JiHgTr1Znsu0RxQTskxoeuImrKxCTf7ZgINZNw8oHCevgqD1R27HZqZijE8l3xLRRCXz4759q7Upw
-	l/oX4DSGrKaxWuFO9XmtR/VVgpGEadhYhRBAQqZvl7Bhdb6AGZNV4h81vd8SrE2HpL9IvVa8pbFhP
-	AtLuZzt79MaDev45jw/sIkZSQtGankDe4bhGBnq07nUFs2cT3a41LiIvTS1UIVnU1QxxQGgwqe1FD
-	e/HLU40gtIKUZ8rOzccfCX4lDlfL0AQE2bNbKN7RmUq7LQWfCM0RfPV/E3zLLxBJnU3z0moohL+ct
-	PrViJANBALsyDeI6kdXQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=FUJmmq1XxQNvITnAKvWqMYy1w4j3n2l3PgFcj2MwNxM=; b=hZfdMM1nIvxsxo
+	p4cw6LVmOmrAleOprfEZvaJfaQfcA4CFqaoMqTU69CK++L7BWtyV+dwAAQ/N2gE2y5MdEQ6BkAIE8
+	9plI8k/o7b+8NL0zsJFA0MX4/rIrJRsnn7eniB5flTj2l6+31getfQ3sgUH37En2z2AYwpFKn7z2K
+	LBNyrnYsBIFcmNRyy4oj9eQB97V1hKieP3MvORw27oSXPrGpztIWm4DqjArhJtTrcZoL4cwpvGWkv
+	KxXkd0vWf812lr03vSZwJ/KllSudC/E31hk9qU5UiVx7TIgPaP5OWNsf/w84VL4f5ierVAUMcJ2uz
+	krnkC0dZ3dS3sjRcg87Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mfr-0001nj-GO; Fri, 13 Sep 2019 14:35:47 +0000
+	id 1i8mfZ-0001ZY-Gp; Fri, 13 Sep 2019 14:35:29 +0000
 Received: from mx08-00178001.pphosted.com ([91.207.212.93]
  helo=mx07-00178001.pphosted.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mfD-0000nB-Gl
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:35:10 +0000
+ id 1i8mfD-0000pa-Gm
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:35:09 +0000
 Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
  by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8DEV1EQ017893; Fri, 13 Sep 2019 16:35:01 +0200
+ x8DEV2DB017906; Fri, 13 Sep 2019 16:35:02 +0200
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
  h=from : to : cc : subject
- : date : message-id : mime-version : content-type; s=STMicroelectronics;
- bh=WcH/XeLRXrchzGM2oayh6FpZp9ixOv6Rjd72cfZUEDM=;
- b=dEdNnG1PFncizfoScByurpL+4XLDP78kKGX2VXj5XAwHuJItlL96iVQhZhLXsannVizP
- tyFEJpueQyblheGUGcSM8Xr7yB85XlCUlg0uoJJAH05Cprzm2aOZ3fy2ENaR7uNxtzx9
- sbxpyCI0T0CMVizoc1HWiw0SqH/yvCGXukCoFA/PgrZbxZNm0v32vUEU9HidLEhHLryD
- Ur3ghBBLiZCPpay1hXWNRI26JRn/GmWqqvsBWGRLzmUO0Bs0jt/nA1/5iF5+MKdQhBYx
- INkWAyqKg11YTeFrkP4ux+w/Mvpzg2/dIjAIY65SGCQq0HjT/3aUm+D9efC8t0neqqF3 pg== 
+ : date : message-id : in-reply-to : references : mime-version :
+ content-type; s=STMicroelectronics;
+ bh=DFTucAlvurnxrOQhU2WCHuTw7pQSUYy9Sj83fGtCSFA=;
+ b=NKc1suqt82um1oIkCpYkoW8cXCseTWaAfh5xIqcQ7WPCRcT6wYEPa35c6mhsqXmnDsCW
+ 8DiVmB1iW4QTYZFGuHHHIqwU30QTCzmDhUUgJc+TaEu2Qz8g57itsLw1TUDLyTW5IvZz
+ XPcENx+tfPJo33219I6UCeLif6Ul0uYmkyL8VjWoePLKoNlHtisNjqZB7PH3/7jdd6E6
+ MBOT5f8FABWfDLBkseVejJ0DYQ74mostrs3VCNC7FqVPVrKNrnspmmGeA511969gH4/4
+ +S64vj6SaDKb4IsjFrs2LCiuM5aUjMs/ByHlQXpDuukarD2I6ifnD402H+qkWiuXWT3a 2w== 
 Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2uytdx5n81-1
+ by mx08-00178001.pphosted.com with ESMTP id 2uytdx5n83-1
  (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 13 Sep 2019 16:35:01 +0200
+ Fri, 13 Sep 2019 16:35:02 +0200
 Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 2581F4B;
- Fri, 13 Sep 2019 14:34:57 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas24.st.com [10.75.90.94])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 3853E2C86AE;
- Fri, 13 Sep 2019 16:34:57 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by Safex1hubcas24.st.com
- (10.75.90.94) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 13 Sep
- 2019 16:34:57 +0200
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 086594C;
+ Fri, 13 Sep 2019 14:34:59 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 6BB532C86B2;
+ Fri, 13 Sep 2019 16:34:58 +0200 (CEST)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS23.st.com
+ (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 13 Sep
+ 2019 16:34:58 +0200
 Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
  Microsoft SMTP Server (TLS) id 14.3.439.0;
- Fri, 13 Sep 2019 16:34:56 +0200
+ Fri, 13 Sep 2019 16:34:57 +0200
 From: Fabrice Gasnier <fabrice.gasnier@st.com>
 To: <alexandre.torgue@st.com>
-Subject: [PATCH 0/3] Add support for ADC on stm32mp157a-dk1
-Date: Fri, 13 Sep 2019 16:34:37 +0200
-Message-ID: <1568385280-2633-1-git-send-email-fabrice.gasnier@st.com>
+Subject: [PATCH 1/3] ARM: dts: stm32: Enable VREFBUF on stm32mp157a-dk1
+Date: Fri, 13 Sep 2019 16:34:38 +0200
+Message-ID: <1568385280-2633-2-git-send-email-fabrice.gasnier@st.com>
 X-Mailer: git-send-email 2.7.4
+In-Reply-To: <1568385280-2633-1-git-send-email-fabrice.gasnier@st.com>
+References: <1568385280-2633-1-git-send-email-fabrice.gasnier@st.com>
 MIME-Version: 1.0
 X-Originating-IP: [10.48.1.232]
 X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
  definitions=2019-09-13_07:2019-09-11,2019-09-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_073507_953875_077BD01E 
-X-CRM114-Status: GOOD (  11.18  )
+X-CRM114-CacheID: sfid-20190913_073507_933066_6FB869B4 
+X-CRM114-Status: GOOD (  12.23  )
 X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.9 points)
@@ -101,20 +104,28 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This series adds support for ADC on stm32mp157a-dk1 board:
-- enable vrefbuf regulator used as reference voltage
-- define ADC pins for AIN connector and USB Type-C CC pins
-- configure ADC1 and ADC2 to use these
+Enable VREFBUF as ADC/DAC uses it on stm32mp157a-dk1 board.
 
-Fabrice Gasnier (3):
-  ARM: dts: stm32: Enable VREFBUF on stm32mp157a-dk1
-  ARM: dts: stm32: add ADC pins used on stm32mp157a-dk1
-  ARM: dts: stm32: enable ADC support on stm32mp157a-dk1
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ arch/arm/boot/dts/stm32mp157a-dk1.dts | 7 +++++++
+ 1 file changed, 7 insertions(+)
 
- arch/arm/boot/dts/stm32mp157-pinctrl.dtsi | 16 +++++++++++++++
- arch/arm/boot/dts/stm32mp157a-dk1.dts     | 34 +++++++++++++++++++++++++++++++
- 2 files changed, 50 insertions(+)
-
+diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
+index 0615d1c..ebd9f33 100644
+--- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
++++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
+@@ -449,3 +449,10 @@
+ 	pinctrl-0 = <&uart4_pins_a>;
+ 	status = "okay";
+ };
++
++&vrefbuf {
++	regulator-min-microvolt = <2500000>;
++	regulator-max-microvolt = <2500000>;
++	vdda-supply = <&vdd>;
++	status = "okay";
++};
 -- 
 2.7.4
 
