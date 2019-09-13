@@ -2,65 +2,84 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id BAF6CB1D1D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:11:46 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6E1A9B1D3E
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:18:41 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=4S5XWIDIMyfDU3INqIEl3djhdvvFEOSrvbo44VvmQq0=; b=YmRO1ctdnigIthoCI5XDXsTQE
-	NleqxiM+NIiVYlirPVQ6XDxne4Brbo4izOBPevWngNfntAz5EYauuvOcAaeFt/GfECrQ+GOS2X1I6
-	lrvWCN2+G6cRUgRVYa8pWKN28ysDVAhfmDROQ0KPGbwXifi9JekkoYw1uZS6VabPns8QDhQJV2g4d
-	7Eoyo1VNVIVOXDmaDTSXQ91hG6mEpozy0pADd/lrCNS18Mf9EN3P5w+6+3G2bywD1OOs6FzGFwxeJ
-	uN7+evvmhldmRl1oO76yhvnmnZyYsIlWrryo9zbRLFq7aikJPJ/fZC02XR0SQWgvBmKaAvCWNO9D4
-	sq1dUMi6A==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=tREgIwCcEvXoOzLKMv8aLZ7lDzDebzBhvo3hArOaopo=; b=o1YHoU4D0kyb6O
+	9Y0VfEm4Au9Kg/uE7sYlNlIq86ZSSt3lqHqaMeK1MX6l0VVNYWZGypnWNdw1F9o99rme237AFxqYn
+	pty1RaDpysVN2g5uH1iXBhRsCXVxgvXFIxNmEZw41bdPms5XOhFt+39rZHn17TWCyFw80Aa0ztO3c
+	RofgTvTEfrjNok5geh+Tcs7qcdAtOsE+SK0d2eo+OAe4BMBrIA2w0t2AnIbni7PkRPqyL/GNyYYQ5
+	DdRhvGptqedZRr8Bxfe7mdmOcGSnrsrL+xXmNwIfxbEQt+EWeeYYt37VnKBakUaL00kLJ4Mx7oy4y
+	p3Hrped22BdJn2nDhU9Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8kQT-00076i-2f; Fri, 13 Sep 2019 12:11:45 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i8kX7-0000UB-V6; Fri, 13 Sep 2019 12:18:38 +0000
+Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8kQB-00075Y-2m
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:11:30 +0000
-Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 492572084F;
- Fri, 13 Sep 2019 12:11:26 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568376686;
- bh=/yuo8LkwG/vK/Jb+QiIu8OrXJNZtg/fik8C0+OyD7Hk=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=sUuajaYi7mGVPkYopS1AqkdFgGHainGr/gFIVTgTFj4NMzKmhzsepPa+usLvieQUN
- dMuKx/90Qo2hO8vo88PimuVso31oG8ACymDRc1FiPDfcFb+uyCy3gJc/Br0IrC5YRH
- N/jCU2YES2jDkCLv5dUBl3+wC5+8TahER8kXag7s=
-Date: Fri, 13 Sep 2019 14:11:24 +0200
-From: Maxime Ripard <mripard@kernel.org>
-To: Chen-Yu Tsai <wens@csie.org>
-Subject: Re: [PATCH 3/9] dt-bindings: crypto: Add DT bindings documentation
- for sun8i-ce Crypto Engine
-Message-ID: <20190913121124.clfi46vcnrxhzmwh@localhost.localdomain>
-References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
- <20190906184551.17858-4-clabbe.montjoie@gmail.com>
- <20190907040116.lib532o2eqt4qnvv@flea> <20190911183158.GA8264@Red>
- <20190912093737.s6iu63sdncij2qib@localhost.localdomain>
- <CAGb2v678WGQm5PNy8GhOTpz+fYeLP3k0dnR0F00yyZpSRcA4yA@mail.gmail.com>
- <20190912203301.is4ubixhk64dl5t7@localhost.localdomain>
- <CAGb2v646YkM93BAo=hrpL+tgDU-JJ49-uMCMGECUbouoJrpg=w@mail.gmail.com>
+ id 1i8kWu-0000Sh-4E
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:18:25 +0000
+Received: by mail-wm1-x344.google.com with SMTP id v17so2020964wml.4
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Sep 2019 05:18:22 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=L2Cakw64Ur8nPCw1uUR/WlbNeQH+sAcuv7OY6j+C6MA=;
+ b=YVvMeOhDewiCpmZozcwGl4ejAK+9WK/9Z+J7H9sDgMudKaYbPEB5ff4hPlFam6HtG7
+ SKq47C2uL/08Gx8QHB0TYCtI4xqOneLcbwhi7VzlUUQCw9oJghWbJ7ZIRh2hIMMlfcg5
+ rPmMDfxt7UqaefTshjYFNJZUpgl24TlzeLDsgNgpmAzRNbDcsOpR3SfGmDMGGS6TS7xT
+ DI9zuLWyL9aADGPPthbbWgyZpRLLDUjYk7Ey8y8iti1YFh7AcMNEFGQbfEnGi3oZ4azQ
+ /iJ472WSAhndN+55EK1kMnAOEvwD9t767WUbB0OSWv7n2c81rPeN1nPh0hStPXtJOugn
+ M3tA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=L2Cakw64Ur8nPCw1uUR/WlbNeQH+sAcuv7OY6j+C6MA=;
+ b=MdiZk3nbv5NCbH2cIakLuDilLIErOhjC/vW1HIYRDOWk/AEBPzw3yN1EPHV/XTgcIY
+ odnNyZCTwpU/hvIFVWD6vGtxlflgljflZ+vQGk5gzAgEi70uaGVY54iYVLx9Qz6L5qTC
+ sN55EkpMWLj7RLiG1/hMhzi8J1TNVYtIbUsmBCtCIxF84IFeiHDzDj221kE75gumX5cq
+ 1Rx5FtzvcwayBOJ9XlR9y7HrELSxof5WB52cyhp64kkAinFskODmM2+bvm8nLGB365Po
+ 2e81nz8M7VHpoeua++mfl8tvWrCRKnUmH52MzpIYTbjlPp6rDEtbXQLAtyfswouNT6qn
+ DPyA==
+X-Gm-Message-State: APjAAAWyw8tA6I88UVwe1a3bgsjCges6CWOylqcddxD5bYmC3eAtVffh
+ 8lp9VDk6/INAACbHNH/ZxaA=
+X-Google-Smtp-Source: APXvYqzCo3gG3+eVr790S6I7T0wbEvLoOdwHeYlzsyGjVmOJug5XAhqAn64Ep5+tD9TX3lLN5L+S1g==
+X-Received: by 2002:a1c:2302:: with SMTP id j2mr3071322wmj.174.1568377101707; 
+ Fri, 13 Sep 2019 05:18:21 -0700 (PDT)
+Received: from localhost ([193.47.161.132])
+ by smtp.gmail.com with ESMTPSA id a11sm2283446wmj.21.2019.09.13.05.18.20
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Fri, 13 Sep 2019 05:18:20 -0700 (PDT)
+Date: Fri, 13 Sep 2019 14:16:08 +0200
+From: Oliver Graute <oliver.graute@gmail.com>
+To: Dong Aisheng <aisheng.dong@nxp.com>
+Subject: Re: [PATCH V3 00/15] arm64: dts: imx8: architecture improvement and
+ adding imx8qm support
+Message-ID: <20190913121608.GD16292@optiplex>
+References: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
 MIME-Version: 1.0
-In-Reply-To: <CAGb2v646YkM93BAo=hrpL+tgDU-JJ49-uMCMGECUbouoJrpg=w@mail.gmail.com>
-User-Agent: NeoMutt/20180716
+Content-Disposition: inline
+In-Reply-To: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_051127_145417_236FB23E 
-X-CRM114-Status: GOOD (  15.77  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190913_051824_193828_17904CD3 
+X-CRM114-Status: GOOD (  12.51  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2a00:1450:4864:20:0:0:0:344 listed in]
+ [list.dnswl.org]
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (oliver.graute[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -70,7 +89,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -82,83 +100,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>,
- devicetree <devicetree@vger.kernel.org>,
- Herbert Xu <herbert@gondor.apana.org.au>, Russell King <linux@armlinux.org.uk>,
- linux-kernel <linux-kernel@vger.kernel.org>,
- linux-sunxi <linux-sunxi@googlegroups.com>, Rob Herring <robh+dt@kernel.org>,
- Corentin Labbe <clabbe.montjoie@gmail.com>, linux-crypto@vger.kernel.org,
- David Miller <davem@davemloft.net>,
- linux-arm-kernel <linux-arm-kernel@lists.infradead.org>
-Content-Type: multipart/mixed; boundary="===============5024350495696930036=="
+Cc: devicetree@vger.kernel.org, dongas86@gmail.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, robh+dt@kernel.org, linux-imx@nxp.com,
+ kernel@pengutronix.de, fabio.estevam@nxp.com, shawnguo@kernel.org,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 12/09/19, Dong Aisheng wrote:
+> IMX SCU based platforms (e.g. MX8QM/MX8QXP) are comprised of a number of SS
+> (Subsystems), those SS may be shared between different SoCs while most of them
+> can be reused like Devices Resources, Clocks, Power domains and etc.
+> 
+> This patch series aims to improve the MX8 architecture to comply with the HW
+> design to save a lot of duplicated codes and benefits us a better
+> maintainability and scalability in the future.
+> 
+> This patch series depends on another clk new binding series:
+> https://patchwork.kernel.org/cover/11046287/
 
---===============5024350495696930036==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="mxfblhwyykii33ch"
-Content-Disposition: inline
+Thx for your update of this patch series. I'am running into the issue
+that my linux next-20190904 unfortunately is not booting with it on my
+imx8QM board. Kernel is just stuck during boot see below.
 
+I applied your v5 of your clock binding patches series and applied this
+series in v3. Your former two patch series worked well with next-20190716.
 
---mxfblhwyykii33ch
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+The last messages from the kernel are:
 
-On Thu, Sep 12, 2019 at 09:37:17PM +0100, Chen-Yu Tsai wrote:
-> On Thu, Sep 12, 2019 at 9:33 PM Maxime Ripard <mripard@kernel.org> wrote:
-> > On Thu, Sep 12, 2019 at 09:26:27PM +0100, Chen-Yu Tsai wrote:
-> > > > >
-> > > > >   clock-names:
-> > > > >     items:
-> > > > >       - const: ahb
-> > > > >       - const: mod
-> > > > >       - const: mbus
-> > > >
-> > > > And here as well
-> > > >
-> > > > Something I missed earlier though was that we've tried to unify as
-> > > > much as possible the ahb / apb / axi clocks around the bus name, it
-> > > > would be great if you could do it.
-> > >
-> > > I think we also want to standardize "mbus" as "dram"?
-> >
-> > Do we? The only user so far seems to be sun9i-de, while mbus has more
-> > users. I don't really care though, both mbus and dram are pretty
-> > generic to me. What makes you prefer dram over mbus?
->=20
-> Argh... it's actually "ram" we use the most. Both "dram" and "mbus"
-> have only one instance each.
+[    1.019208] imx-scu scu: mbox_request_channel_byname() could not locate channel named "gip3"
+[    1.027316] imx-scu scu: failed to request mbox chan gip3, ret -22
+[    1.033480] imx-scu scu: failed to enable general irq channel: -22
+[    1.039646] imx-scu scu: NXP i.MX SCU Initialized
+[    1.047414] a35_clk: failed to get clock rate -22
+[    1.058682]  lcd0-pwm0: failed to power up resource 188 ret -22
+[    1.064314] imx-scu-clk: probe of pwm_clk failed with error -22
+[    1.070538]  lcd0: failed to power up resource 187 ret -22
+[    1.075690] imx-scu-clk: probe of lcd_clk failed with error -22
+[    1.085965] mipi_csi0_core_clk: failed to attached the power domain -2
+[    1.092359] mipi_csi0_esc_clk: failed to attached the power domain -2
+[    1.098777] mipi_csi0_i2c0_clk: failed to attached the power domain -2
+[    1.105278] mipi_csi0_pwm0_clk: failed to attached the power domain -2
+[    1.115744] imx8qm-pinctrl scu:pinctrl: initialized IMX pinctrl driver
+[    1.123923] gpio-mxc 5d080000.gpio: IRQ index 1 not found
+[    1.130276] gpio-mxc 5d090000.gpio: IRQ index 1 not found
 
-Let's use ram then :)
+I see similar messages also with your older working patches, only the
+last two lines are new errors.
 
-Maxime
+Best regards,
 
---mxfblhwyykii33ch
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXXuHbAAKCRDj7w1vZxhR
-xazRAP9q4WVrPnh+fZ02hS/8DFlnUg4ZEiOZEKaupnYTZODnDgEA3aUQ5mkgXMdG
-FzX2x3Ap9qkbqSmmGBRWN/QtgReLcg0=
-=KM0B
------END PGP SIGNATURE-----
-
---mxfblhwyykii33ch--
-
-
---===============5024350495696930036==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+Oliver
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============5024350495696930036==--
-
