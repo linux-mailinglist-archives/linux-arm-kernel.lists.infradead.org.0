@@ -2,86 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C6E97B1838
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 08:24:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 86EB9B1840
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 08:25:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Date:In-Reply-To:To
-	:Subject:From:Message-Id:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:
-	List-Owner; bh=0xrYYsy/trhqFED4my7vdfXZmI0ciOTN7OGQLoTxLSY=; b=Ua9g9JWiICgVuq
-	ntgSMJninZLT4wEWLh/oQgRutiexr74VevSz53uiTJ8Kk5nLvGyWYuB/O47htmKN+M1cg4zEZD3al
-	PRgOi4wIy50d+LF45vizQWadYmzk/wwkNoC7P+3QDkn1AE9gtHF8yfoN/qjffSmT4u0tVlNE1S0XY
-	Y7QvBaHYgqYWGTpPFVBaR6SxMfjcbhviglUkNaHXPyc9BCNdkeV+ICDmYE3aW8iVtZuHbxPZteHfO
-	nXVzWQ2P70VgVrMvfBkq910urZQxZxmLIiIto3czcbNOe09//xyiZ8BIsvhj2aa/b/XsVopEwZ1wJ
-	gF8OnTOGFA726zVJzwpQ==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=WvgVMD8GbzB2FbykolecWWQzd47NeOm14zgSLGqAO/I=; b=T+9Qsr45ujVx27
+	AjwvJRzGNYM9Fy6QVdxwW8sUeVFbMqwzBSiIWV97X8x0vcgN4KvnuH+c6i2Qf2lm+a8kdrOt1yEot
+	drCoaATsPsS9FeGkg9qES/6PI9gwbEN+vXqibPfrBvKw5Gwa9CMiz5i+vTJbwI3vB8DgQN3TNOpRC
+	nJcsugeSI8VWmq50aVVVHUTae4LdI/DjALOkFrwKrnJ/5gA1xVF9xYT9nr16nW37zQsv7NPZFD0++
+	WI3nGOmmm4OIBZQWdQrNxjtO2/fYbJWxHglcUr74KVieQ9abFmJsqwM1SgwvBHWnxHIIx+JgBLdf1
+	KUMYL+5k4cBizIyf6wgw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8f09-0002j7-Mz; Fri, 13 Sep 2019 06:24:13 +0000
-Received: from pegase1.c-s.fr ([93.17.236.30])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8ezt-0002iF-S0; Fri, 13 Sep 2019 06:23:59 +0000
-Received: from localhost (mailhub1-int [192.168.12.234])
- by localhost (Postfix) with ESMTP id 46V5F20LG8z9vKGM;
- Fri, 13 Sep 2019 08:23:50 +0200 (CEST)
-Authentication-Results: localhost; dkim=pass
- reason="1024-bit key; insecure key"
- header.d=c-s.fr header.i=@c-s.fr header.b=f446T9wp; dkim-adsp=pass;
- dkim-atps=neutral
-X-Virus-Scanned: Debian amavisd-new at c-s.fr
-Received: from pegase1.c-s.fr ([192.168.12.234])
- by localhost (pegase1.c-s.fr [192.168.12.234]) (amavisd-new, port 10024)
- with ESMTP id zlMG0g1kYZvK; Fri, 13 Sep 2019 08:23:49 +0200 (CEST)
-Received: from messagerie.si.c-s.fr (messagerie.si.c-s.fr [192.168.25.192])
- by pegase1.c-s.fr (Postfix) with ESMTP id 46V5F16D30z9vKGY;
- Fri, 13 Sep 2019 08:23:49 +0200 (CEST)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=c-s.fr; s=mail;
- t=1568355829; bh=pdwAlCDBbA9CsaJmAmYfOp6ncuC/iDPFuNIc/mtHpeE=;
- h=From:Subject:To:Cc:In-Reply-To:Date:From;
- b=f446T9wpDZfLilO9u7fC1JJ5iPPIYtr2YAcUoymNbdzP8LwmjS6SLA7gucXb/2pYd
- VcLEFXtcILm2zGItfCjmRNrmwQSWptgurhi6JAzw/j7ABoblpvS+FvvWWNuWnkMXHB
- 2ymh0I7z1GrSxPozeE2BsYVNS2vfgkTIggcJZPx4=
-Received: from localhost (localhost [127.0.0.1])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id BE6A08B7FD;
- Fri, 13 Sep 2019 08:23:50 +0200 (CEST)
-X-Virus-Scanned: amavisd-new at c-s.fr
-Received: from messagerie.si.c-s.fr ([127.0.0.1])
- by localhost (messagerie.si.c-s.fr [127.0.0.1]) (amavisd-new, port 10023)
- with ESMTP id PJOZp0medcMg; Fri, 13 Sep 2019 08:23:50 +0200 (CEST)
-Received: from pc16032vm.idsi0.si.c-s.fr (po15451.idsi0.si.c-s.fr
- [172.25.230.101])
- by messagerie.si.c-s.fr (Postfix) with ESMTP id 42BBF8B770;
- Fri, 13 Sep 2019 08:23:50 +0200 (CEST)
-Received: by pc16032vm.idsi0.si.c-s.fr (Postfix, from userid 0)
- id 17A0F6B760; Fri, 13 Sep 2019 06:23:49 +0000 (UTC)
-Message-Id: <1892b37d1fd9a4ed39e76c4b999b6556077201c0.1568355752.git.christophe.leroy@c-s.fr>
-From: Christophe Leroy <christophe.leroy@c-s.fr>
-Subject: [PATCH] mm/pgtable/debug: Fix test validating architecture page table
- helpers
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org
-In-Reply-To: <ab0ca38b-1e4f-b636-f8b4-007a15903984@c-s.fr>
-Date: Fri, 13 Sep 2019 06:23:49 +0000 (UTC)
+	id 1i8f15-00030o-Sy; Fri, 13 Sep 2019 06:25:11 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8f0j-0002yM-1P; Fri, 13 Sep 2019 06:24:50 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 584DD337;
+ Thu, 12 Sep 2019 23:24:47 -0700 (PDT)
+Received: from [10.162.41.125] (p8cg001049571a15.blr.arm.com [10.162.41.125])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ 349C73F67D; Thu, 12 Sep 2019 23:27:01 -0700 (PDT)
+Subject: Re: [PATCH V2 0/2] mm/debug: Add tests for architecture exported page
+ table helpers
+To: Christophe Leroy <christophe.leroy@c-s.fr>, linux-mm@kvack.org
+References: <1568268173-31302-1-git-send-email-anshuman.khandual@arm.com>
+ <527edfce-c986-de4c-e286-34a70f6a2790@c-s.fr>
+From: Anshuman Khandual <anshuman.khandual@arm.com>
+Message-ID: <1b467d7a-0324-eb2c-876a-f04a99b9c596@arm.com>
+Date: Fri, 13 Sep 2019 11:54:43 +0530
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:52.0) Gecko/20100101
+ Thunderbird/52.9.1
+MIME-Version: 1.0
+In-Reply-To: <527edfce-c986-de4c-e286-34a70f6a2790@c-s.fr>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190912_232358_204109_AF2B06E1 
-X-CRM114-Status: UNSURE (   8.38  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190912_232449_128873_6CE2E963 
+X-CRM114-Status: GOOD (  14.02  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [93.17.236.30 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,66 +67,47 @@ Cc: Mark Rutland <mark.rutland@arm.com>, linux-ia64@vger.kernel.org,
  James Hogan <jhogan@kernel.org>, Heiko Carstens <heiko.carstens@de.ibm.com>,
  Michal Hocko <mhocko@kernel.org>, Dave Hansen <dave.hansen@intel.com>,
  Paul Mackerras <paulus@samba.org>, sparclinux@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>, linux-s390@vger.kernel.org,
- Jason Gunthorpe <jgg@ziepe.ca>, x86@kernel.org,
- Russell King - ARM Linux <linux@armlinux.org.uk>,
+ Thomas Gleixner <tglx@linutronix.de>, linux-s390@vger.kernel.org,
+ Jason Gunthorpe <jgg@ziepe.ca>, Michael Ellerman <mpe@ellerman.id.au>,
+ x86@kernel.org, Russell King - ARM Linux <linux@armlinux.org.uk>,
  Matthew Wilcox <willy@infradead.org>, Steven Price <Steven.Price@arm.com>,
  Tetsuo Handa <penguin-kernel@i-love.sakura.ne.jp>,
- Vlastimil Babka <vbabka@suse.cz>, linux-snps-arc@lists.infradead.org,
- Kees Cook <keescook@chromium.org>, Mark Brown <broonie@kernel.org>,
- "Kirill A . Shutemov" <kirill@shutemov.name>,
- Thomas Gleixner <tglx@linutronix.de>,
  Gerald Schaefer <gerald.schaefer@de.ibm.com>,
+ linux-snps-arc@lists.infradead.org, Kees Cook <keescook@chromium.org>,
+ Masahiro Yamada <yamada.masahiro@socionext.com>,
+ Mark Brown <broonie@kernel.org>, "Kirill A . Shutemov" <kirill@shutemov.name>,
+ Dan Williams <dan.j.williams@intel.com>, Vlastimil Babka <vbabka@suse.cz>,
  linux-arm-kernel@lists.infradead.org,
  Sri Krishna chowdary <schowdary@nvidia.com>,
- Masahiro Yamada <yamada.masahiro@socionext.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Ard Biesheuvel <ard.biesheuvel@linaro.org>, linux-mips@vger.kernel.org,
+ Ard Biesheuvel <ard.biesheuvel@linaro.org>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-mips@vger.kernel.org,
  Ralf Baechle <ralf@linux-mips.org>, linux-kernel@vger.kernel.org,
  Paul Burton <paul.burton@mips.com>, Mike Rapoport <rppt@linux.vnet.ibm.com>,
  Vineet Gupta <vgupta@synopsys.com>,
  Martin Schwidefsky <schwidefsky@de.ibm.com>,
  Andrew Morton <akpm@linux-foundation.org>, linuxppc-dev@lists.ozlabs.org,
- "David S. Miller" <davem@davemloft.net>
-MIME-Version: 1.0
+ "David S. Miller" <davem@davemloft.net>,
+ Mike Kravetz <mike.kravetz@oracle.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Fix build failure on powerpc.
 
-Fix preemption imbalance.
 
-Signed-off-by: Christophe Leroy <christophe.leroy@c-s.fr>
----
- mm/arch_pgtable_test.c | 3 +++
- 1 file changed, 3 insertions(+)
+On 09/12/2019 08:12 PM, Christophe Leroy wrote:
+> Hi,
+> 
+> I didn't get patch 1 of this series, and it is not on linuxppc-dev patchwork either. Can you resend ?
 
-diff --git a/mm/arch_pgtable_test.c b/mm/arch_pgtable_test.c
-index 8b4a92756ad8..f2b3c9ec35fa 100644
---- a/mm/arch_pgtable_test.c
-+++ b/mm/arch_pgtable_test.c
-@@ -24,6 +24,7 @@
- #include <linux/swap.h>
- #include <linux/swapops.h>
- #include <linux/sched/mm.h>
-+#include <linux/highmem.h>
- #include <asm/pgalloc.h>
- #include <asm/pgtable.h>
- 
-@@ -400,6 +401,8 @@ static int __init arch_pgtable_tests_init(void)
- 	p4d_clear_tests(p4dp);
- 	pgd_clear_tests(mm, pgdp);
- 
-+	pte_unmap(ptep);
-+
- 	pmd_populate_tests(mm, pmdp, saved_ptep);
- 	pud_populate_tests(mm, pudp, saved_pmdp);
- 	p4d_populate_tests(mm, p4dp, saved_pudp);
--- 
-2.13.3
+Its there on linux-mm patchwork and copied on linux-kernel@vger.kernel.org
+as well. The CC list for the first patch was different than the second one.
 
+https://patchwork.kernel.org/patch/11142317/
+
+Let me know if you can not find it either on MM or LKML list.
+
+- Anshuman
 
 _______________________________________________
 linux-arm-kernel mailing list
