@@ -2,54 +2,90 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C2203B226D
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:44:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C00D9B22E2
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 17:04:37 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
-	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=us5Ut5MR97bWb94sFOh/czKCJYSyP1D8cxTJvaF9Cj0=; b=hyAEDoP89axS/+Y4CnHVUCTPW
-	HfXzOyiox11TOTnftnz6qY9GwyFDcrPpgOxyB5lDY9Wjkq2XjUwsq6splGpZRrZIeb5qWPxFifShc
-	wjDvKG3LMsD7qYA5JQ+qYu4kQeP7xsmQGSfLxQhAxwkmj/EwxkdMmdTpM/YL2ioO9hGiPTcMUzV9Y
-	E9zlsB0OzaPC7W1Rn6DjJjdV8lGLhrdqlcz+vqDJTSa/eGvIOQksDaJvEz/Zxqrp3IpgXeJDUwjA+
-	5aFDlkh4cXza1MDLNa08LUNrtiDhNS8/72rp88xhliDJnoryODweYWuyPg6WL3qAwQY+qEsFhRHtz
-	j713IbpGA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=ez/eq+eJhn9eyQIXvsZwRI5E8Z6ZaSsbwS7J/2DRrDM=; b=CCHsZ8z5/ISYY8
+	AgSgJUgsYrFPxDMdBZHixHcl0x46/B5epFPoImXb5FFHBfm7rv+I118/n5tijazClu4OIXJLdbd1C
+	zXtmOfIUcBYjM1c9zHkDVktzzOkGYVSKm+Nvr8oWZy0dIxVkOq9ju12BjVMsEbAdZeeKICRJXD1I1
+	HJPjSKGyhWtfGfQxwx6yr+3HFveS3CDdF8YQVh6MoeAyBfNq20OrXZpfA4iJjbjRDlUo1GzTSZIMK
+	opufLPoA2G5V4BHESayt/H/0e3u9ZEePo5tvIqBBvOoCUWBxzrztPOEw1PnPGcH7Jj7jP+Wb9ESEr
+	EFHW8+Z81rgfpx9/FZrQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mo2-0007cH-Vu; Fri, 13 Sep 2019 14:44:14 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mno-0007bo-7C
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:44:01 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A350A1000;
- Fri, 13 Sep 2019 07:43:59 -0700 (PDT)
-Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B0EFA3F67D;
- Fri, 13 Sep 2019 07:43:58 -0700 (PDT)
-Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
-To: Qian Cai <cai@lca.pw>, will@kernel.org, joro@8bytes.org
-References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
- <1568385318.5576.146.camel@lca.pw>
-From: Robin Murphy <robin.murphy@arm.com>
-Message-ID: <e33fb57a-04de-1b97-2e8a-c51c17fea248@arm.com>
-Date: Fri, 13 Sep 2019 15:43:54 +0100
+	id 1i8n7E-0006Rr-Pd; Fri, 13 Sep 2019 15:04:06 +0000
+Received: from mx1.redhat.com ([209.132.183.28])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8n4h-0006KN-Hg
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 15:01:30 +0000
+Received: from mail-wr1-f71.google.com (mail-wr1-f71.google.com
+ [209.85.221.71])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mx1.redhat.com (Postfix) with ESMTPS id 931FB9ACE
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Sep 2019 15:01:26 +0000 (UTC)
+Received: by mail-wr1-f71.google.com with SMTP id z8so3865441wrs.14
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Sep 2019 08:01:26 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:openpgp:message-id
+ :date:user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=zuzwEhDdM8nFD/eqeUMdkZbahAvWuck1YuH/cdNiv9o=;
+ b=IkuGJqnq/A5TmXl/T0DZWtFXlT1rrvYfdFsxksuwASKEc3xZ2LXRxfkv8qj+YTQ5I6
+ mOoVSfZ0mT6LcoO0uYKUFueM13ikNYeIQr4vcY8gv5vyLwS/yfhVNLL7Vto/iam7YPkM
+ VchZuRpnjGV5r7zjymPd62yHyDUdzb5ozisiCoH/1IZ1PxTCIHfWImLO91/e+t9eBzZb
+ yQPQbJI07K+BW4AvCsgROXxW8euRyym/tmNxyDGb8jpTjbd7I/VHrGeaIMuQ7C+jL/Yc
+ yAG2Iaha0Z+IQxrt/fAQzYFGc5GL77pOVtdnhSsIxm5rdOmIfmtVxWPGV2zkYSS+x1N1
+ zLpg==
+X-Gm-Message-State: APjAAAXwKqC6dpvlMP1CgXTOSFmRETtX+SGUAQ1BK/C7rFPb+HD18hTZ
+ BZ+46wcU6iKSWkCRKMEKvSvU3nJCRReb58Aw52O4JxRncoyS66JTyca+DMzqwP5TBVe6y7O5MVt
+ PJ8pk/4ldV4mV+RJpxl8EBrNILC4e1Ot00qI=
+X-Received: by 2002:a1c:c013:: with SMTP id q19mr3447802wmf.87.1568386884927; 
+ Fri, 13 Sep 2019 08:01:24 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxVmkhicWbX9sM2V6LPnr+xLUUrZU9HvAJMzAOfyJJVoRtNarvooFR4sjG8yibYs2ccdb68wg==
+X-Received: by 2002:a1c:c013:: with SMTP id q19mr3447762wmf.87.1568386884662; 
+ Fri, 13 Sep 2019 08:01:24 -0700 (PDT)
+Received: from ?IPv6:2001:b07:6468:f312:c5d2:4bb2:a923:3a9a?
+ ([2001:b07:6468:f312:c5d2:4bb2:a923:3a9a])
+ by smtp.gmail.com with ESMTPSA id y15sm1949532wmj.32.2019.09.13.08.01.23
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Fri, 13 Sep 2019 08:01:24 -0700 (PDT)
+Subject: Re: KASAN: slab-out-of-bounds Read in handle_vmptrld
+To: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
+References: <000000000000a9d4f705924cff7a@google.com>
+ <87lfutei1j.fsf@vitty.brq.redhat.com>
+ <5218e70e-8a80-7c5f-277b-01d9ab70692a@redhat.com>
+ <20190913044614.GA120223@kroah.com>
+ <db02a285-ad1d-6094-6359-ba80e6d3f2e0@redhat.com>
+ <20190913130226.GB403359@kroah.com>
+From: Paolo Bonzini <pbonzini@redhat.com>
+Openpgp: preference=signencrypt
+Message-ID: <6a0ec3a2-2a52-f67a-6140-e0a60874538a@redhat.com>
+Date: Fri, 13 Sep 2019 17:01:22 +0200
 User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-In-Reply-To: <1568385318.5576.146.camel@lca.pw>
-Content-Language: en-GB
+In-Reply-To: <20190913130226.GB403359@kroah.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_074400_304421_A1EECAD6 
-X-CRM114-Status: GOOD (  16.62  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190913_080127_681998_C3281ACB 
+X-CRM114-Status: GOOD (  15.53  )
+X-Spam-Score: -5.0 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-5.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [209.132.183.28 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -62,68 +98,48 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
- linux-arm-kernel@lists.infradead.org
+Cc: mark.rutland@arm.com, x86@kernel.org, wanpengli@tencent.com,
+ kvm@vger.kernel.org, narmstrong@baylibre.com, catalin.marinas@arm.com,
+ will.deacon@arm.com, hpa@zytor.com, khilman@baylibre.com, joro@8bytes.org,
+ rkrcmar@redhat.com, mingo@redhat.com, Dmitry Vyukov <dvyukov@google.com>,
+ syzbot <syzbot+46f1dd7dbbe2bfb98b10@syzkaller.appspotmail.com>,
+ devicetree@vger.kernel.org, syzkaller-bugs@googlegroups.com,
+ robh+dt@kernel.org, bp@alien8.de, linux-amlogic@lists.infradead.org,
+ tglx@linutronix.de, linux-arm-kernel@lists.infradead.org, jmattson@google.com,
+ USB list <linux-usb@vger.kernel.org>, linux-kernel@vger.kernel.org,
+ sean.j.christopherson@intel.com, carlo@caione.org,
+ Vitaly Kuznetsov <vkuznets@redhat.com>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 13/09/2019 15:35, Qian Cai wrote:
-> On Fri, 2019-09-13 at 12:48 +0100, Robin Murphy wrote:
->> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
->> for smoking out inadequate firmware, the failure mode is non-obvious
->> and can be confusing for end users. Add some special-case reporting of
->> Unidentified Stream Faults to help clarify this particular symptom.
->>
->> CC: Douglas Anderson <dianders@chromium.org>
->> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
->> ---
->>   drivers/iommu/arm-smmu.c | 5 +++++
->>   drivers/iommu/arm-smmu.h | 2 ++
->>   2 files changed, 7 insertions(+)
->>
->> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
->> index b7cf24402a94..76ac8c180695 100644
->> --- a/drivers/iommu/arm-smmu.c
->> +++ b/drivers/iommu/arm-smmu.c
->> @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
->>   	dev_err_ratelimited(smmu->dev,
->>   		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
->>   		gfsr, gfsynr0, gfsynr1, gfsynr2);
->> +	if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
->> +	    (gfsr & sGFSR_USF))
->> +		dev_err_ratelimited(smmu->dev,
->> +			"Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
->> +			(u16)gfsynr1);
-> 
-> dev_err_once(), i.e., don't need to remind people to set "arm-
-> smmu.disable_bypass=0" multiple times.
+On 13/09/19 15:02, Greg Kroah-Hartman wrote:
+> Look at linux-next, we "should" have fixed up hcd_buffer_alloc() now to
+> not need this type of thing.  If we got it wrong, please let us know and
+> then yes, a fix like this would be most appreciated :)
 
-Indeed, but in many cases it then quickly gets buried by an unending 
-storm of repeated faults (not every console has capture and scrollback...)
+I still see
 
-Given that it's a "this is why your machine is on fire" kind of message, 
-I figured that it's probably best to err on the side of visibility.
+	/* some USB hosts just use PIO */
+	if (!hcd_uses_dma(hcd)) {
+		*dma = ~(dma_addr_t) 0;
+		return kmalloc(size, mem_flags);
+	}
 
-Robin.
+in linux-next's hcd_buffer_alloc and also in usb.git's usb-next branch.
+ I also see the same
 
->>   
->>   	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
->>   	return IRQ_HANDLED;
->> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
->> index c9c13b5785f2..46f7e161e83e 100644
->> --- a/drivers/iommu/arm-smmu.h
->> +++ b/drivers/iommu/arm-smmu.h
->> @@ -79,6 +79,8 @@
->>   #define ID7_MINOR			GENMASK(3, 0)
->>   
->>   #define ARM_SMMU_GR0_sGFSR		0x48
->> +#define sGFSR_USF			BIT(2)
->> +
->>   #define ARM_SMMU_GR0_sGFSYNR0		0x50
->>   #define ARM_SMMU_GR0_sGFSYNR1		0x54
->>   #define ARM_SMMU_GR0_sGFSYNR2		0x58
+	if (remap_pfn_range(vma, vma->vm_start,
+			virt_to_phys(usbm->mem) >> PAGE_SHIFT,
+			size, vma->vm_page_prot) < 0) {
+		...
+	}
+
+in usbdev_mmap.  Of course it's possible that I'm looking at the wrong
+branch, or just being dense.
+
+Paolo
 
 _______________________________________________
 linux-arm-kernel mailing list
