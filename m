@@ -2,79 +2,82 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 01424B2212
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:36:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4EA1CB2213
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:37:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=R8Aascf4+agu43GUZpc0MAfjJvMt3LUyeZAVPUzFK0Q=; b=R/JECrBlINabqG
-	xxdn7dNORnLBAkacXmCiT17mzWmZ6/WUyYeJlszn8O1pTIpP02HaGNjx0uMBr1vaq8Pue2OTHr+T6
-	gKXSUdAamoLpffxM/WqYfcGlODtkwYSWpi8Osm/5Jz6IapuBCnJ3uqxAg+r+GKdpWcdujDaqQwraG
-	AhgmILAV30XO4x3EwH9nUH9fdAQvGbPPsKdJIp7fSeiPyCNowFQL8cFuyGPVIhlwYHF+EEdmyQxIQ
-	SjRIldXwinS5NmQON2ELV+L1FU+P5UAM/WSWyCLI+rUsFdUm4DeTeyo7EK/onpmxiIHTTfHpYlG9s
-	ERdyTeQkMDjIC3x32PvQ==;
+	List-Owner; bh=epBPg7ps5nbQ0SV8KtC1zAEz9uh7uapdcHymrnG1QU8=; b=X0SJLYrBsoi2EH
+	BOOZZWRREQO3Tykg+Ud98XQn8bCN6Y6d+Ox8WGsOgXlI3NOe81bDOiMlkV8m6h+qZG0wNHoZS0gag
+	aZsMiWR7DLQXRiqivygRNkdtR1d1/oWS3XgjqlgzqjilEKaAwMapVfFkNHxJk+GKMJhZUNA263zkh
+	oc7Noa6OJqXfm0bmOboSeGK2iZD56Rp8Vyjj/UuuxvgK/0dMPDds4Kbvb2LO+3va8BEeWMgVNrJ9q
+	UCOPm8oYB39kRP7J+ierbPT7bjjGlkPLJQIrn7q9rlP0NgIWUkzgJrDX51lnNSbqhdbE9CC73+Dgn
+	98amBfA239WqUXLDYbww==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mga-0002Ie-2a; Fri, 13 Sep 2019 14:36:32 +0000
-Received: from mx08-00178001.pphosted.com ([91.207.212.93]
- helo=mx07-00178001.pphosted.com)
+	id 1i8mhA-0002kc-Fz; Fri, 13 Sep 2019 14:37:08 +0000
+Received: from mail-qk1-x743.google.com ([2607:f8b0:4864:20::743])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mfF-0001Bb-LP
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:35:12 +0000
-Received: from pps.filterd (m0046660.ppops.net [127.0.0.1])
- by mx08-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8DEV2ZR017903; Fri, 13 Sep 2019 16:35:04 +0200
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
- h=from : to : cc : subject
- : date : message-id : in-reply-to : references : mime-version :
- content-type; s=STMicroelectronics;
- bh=hryKjyfCxTA2dnqKEkk14SmwqqJ3l+c8gAOzB7s0IVA=;
- b=1JWVK43fjD4/dHSvcvQQk318CIAnOUS9PlDb7E9UrkKWBPkvLOhUQAA+ttkePsMr9ScY
- v0wAZe02xXOOEs86nn3WDwIkFM5mtjWroOoGGMLDl2qwUOIH66HYB7cTTIg+IAYvALCh
- kZQnAlRPHnrr5Tl1ndalpo8MgsdoDf9Vvs4x1jbD8DHDTqb9eqUiN9gccv3tzRD7a5EE
- J7ySaocVq0CY8t3500m9LLJZw0LCl+BXRu5K6iXGlSKhSyF3nFfzhqJSZuAVclPByQ+O
- 1CO7mK+J599J6GnWVml4gJfm+UleSNeDdyiazE6r5inJcWzejyHzDP79Tvg/Q5Lrt5oQ KQ== 
-Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
- by mx08-00178001.pphosted.com with ESMTP id 2uytdx5n8a-1
- (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
- Fri, 13 Sep 2019 16:35:04 +0200
-Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
- by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 3639D50;
- Fri, 13 Sep 2019 14:35:01 +0000 (GMT)
-Received: from Webmail-eu.st.com (Safex1hubcas23.st.com [10.75.90.46])
- by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id 917192C86AE;
- Fri, 13 Sep 2019 16:35:00 +0200 (CEST)
-Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS23.st.com
- (10.75.90.46) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 13 Sep
- 2019 16:35:00 +0200
-Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
- Microsoft SMTP Server (TLS) id 14.3.439.0;
- Fri, 13 Sep 2019 16:35:00 +0200
-From: Fabrice Gasnier <fabrice.gasnier@st.com>
-To: <alexandre.torgue@st.com>
-Subject: [PATCH 3/3] ARM: dts: stm32: enable ADC support on stm32mp157a-dk1
-Date: Fri, 13 Sep 2019 16:34:40 +0200
-Message-ID: <1568385280-2633-4-git-send-email-fabrice.gasnier@st.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1568385280-2633-1-git-send-email-fabrice.gasnier@st.com>
-References: <1568385280-2633-1-git-send-email-fabrice.gasnier@st.com>
-MIME-Version: 1.0
-X-Originating-IP: [10.48.1.232]
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-13_07:2019-09-11,2019-09-13 signatures=0
+ id 1i8mfT-0001g0-Er
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:35:25 +0000
+Received: by mail-qk1-x743.google.com with SMTP id w2so5513528qkf.2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Fri, 13 Sep 2019 07:35:21 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=lca.pw; s=google;
+ h=message-id:subject:from:to:cc:date:in-reply-to:references
+ :mime-version:content-transfer-encoding;
+ bh=9Z6EfKc/tiAqCe5nrG0CEyU7I6TZY+4MO6IYTk9GKp4=;
+ b=HXxFGlzHNUOzcVXhTjcVeZmsY2axuZDsxqSpeSdttKnUjeABS7vFI9wGZqOFaDjiFy
+ rjtdYtiDL+6Um4ZCqTtpgMSJ4ZlzzX9/lEtFFr2nMNVwUbpKTTyz9rk2OMPEFWVeZHMY
+ 2l4z+kT583DhzTXTow3J1EUhDrWBRfKLG4tQSJ38xy2n1lUEe8+LItcUZVur7IKH/J8m
+ 1CjuFwK+mZhj/eKSvyJl7EmoNpU6xaAZUxykHNyleehJ0XF8W5NKkiCbloVGmSa/D3s6
+ VQ3bJ8piHxWlkM5Y/czZiuGiEitm7NBMSrCyNXjAdPwpM409Rdq+yAWEsZ7xLHz4VMMT
+ 0/0g==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:message-id:subject:from:to:cc:date:in-reply-to
+ :references:mime-version:content-transfer-encoding;
+ bh=9Z6EfKc/tiAqCe5nrG0CEyU7I6TZY+4MO6IYTk9GKp4=;
+ b=Xp0TvzE/UqsyM7kb0sAIq1yN2URRgi6VpJMnmNsVXC636Dy0FIPRzC1qkMk/jLF2Fa
+ adrSNpIjLLMisg0FxJGvxNKIM6Qxnmw3+HE1icjsebh5TDj175xB4FUfADftHrCn2DXc
+ 2p7gPwYfo0m+t1HJyhR5KpojJHbvB9OXqw9q9McJezpQ3qGxI3F+XN/KAfrjD+mhlEdo
+ VpLkqL+HqRMFJN8lZ73j7hM9qQwGgR/C8ZHAmIsMURlpuHTCVRzMfMLNdd69RKGQYNTY
+ Hx6fWgxZmLrROlx2sMQRRI0u0Uv8Me4tyvTFRxOxf8eR+PpByUf29CBRU7KynWK8pHbC
+ RgdQ==
+X-Gm-Message-State: APjAAAV5ZlfKzg4wokjrVUAD27q7lNdwiyAEo4RwvZk+H1rsQw2P6cn1
+ DXhWAMQs4mztfutEKOS5vmd8oQ==
+X-Google-Smtp-Source: APXvYqzFSI15WScpD6Ky3Htl5LWDtXBTh2C4ek5k+asPOfoOylHjTbFZaJGuOFuZAgXEhDc5477Zdg==
+X-Received: by 2002:a05:620a:49b:: with SMTP id
+ 27mr33288710qkr.89.1568385320693; 
+ Fri, 13 Sep 2019 07:35:20 -0700 (PDT)
+Received: from dhcp-41-57.bos.redhat.com (nat-pool-bos-t.redhat.com.
+ [66.187.233.206])
+ by smtp.gmail.com with ESMTPSA id v2sm10601115qtv.22.2019.09.13.07.35.19
+ (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
+ Fri, 13 Sep 2019 07:35:20 -0700 (PDT)
+Message-ID: <1568385318.5576.146.camel@lca.pw>
+Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
+From: Qian Cai <cai@lca.pw>
+To: Robin Murphy <robin.murphy@arm.com>, will@kernel.org, joro@8bytes.org
+Date: Fri, 13 Sep 2019 10:35:18 -0400
+In-Reply-To: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
+References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
+X-Mailer: Evolution 3.22.6 (3.22.6-10.el7) 
+Mime-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_073509_992193_61D9564E 
-X-CRM114-Status: GOOD (  14.89  )
-X-Spam-Score: -0.9 (/)
+X-CRM114-CacheID: sfid-20190913_073523_714241_2A5F81A7 
+X-CRM114-Status: GOOD (  15.12  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.9 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [91.207.212.93 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:743 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -95,73 +98,59 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, robh+dt@kernel.org, mcoquelin.stm32@gmail.com,
- fabrice.gasnier@st.com, linux-stm32@st-md-mailman.stormreply.com,
+Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
  linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Configure ADC support on stm32mp157a-dk1. It can be used for various
-purpose:
-- AIN connector has several analog inputs: ANA0, ANA1, ADC2 in6 & in2,
-  ADC1 in13 & in6
-- USB Type-C CC1 & CC2 pins wired to in18 & in19
-It's easier then to Configure them all. But keep them disabled by default,
-so the pins are kept in their initial state to lower power consumption.
-This way they can also be used as GPIO.
-Add VDD and VDDA supplies to ADC on stm32mp157c-dk1 board. This allows to
-get full ADC analog performances in case VDDA is below 2.7V (not the case
-by default).
+On Fri, 2019-09-13 at 12:48 +0100, Robin Murphy wrote:
+> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
+> for smoking out inadequate firmware, the failure mode is non-obvious
+> and can be confusing for end users. Add some special-case reporting of
+> Unidentified Stream Faults to help clarify this particular symptom.
+> 
+> CC: Douglas Anderson <dianders@chromium.org>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>  drivers/iommu/arm-smmu.c | 5 +++++
+>  drivers/iommu/arm-smmu.h | 2 ++
+>  2 files changed, 7 insertions(+)
+> 
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index b7cf24402a94..76ac8c180695 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>  	dev_err_ratelimited(smmu->dev,
+>  		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
+>  		gfsr, gfsynr0, gfsynr1, gfsynr2);
+> +	if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
+> +	    (gfsr & sGFSR_USF))
+> +		dev_err_ratelimited(smmu->dev,
+> +			"Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
+> +			(u16)gfsynr1);
 
-Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
----
- arch/arm/boot/dts/stm32mp157a-dk1.dts | 27 +++++++++++++++++++++++++++
- 1 file changed, 27 insertions(+)
+dev_err_once(), i.e., don't need to remind people to set "arm-
+smmu.disable_bypass=0" multiple times.
 
-diff --git a/arch/arm/boot/dts/stm32mp157a-dk1.dts b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-index ebd9f33..2f42fcd 100644
---- a/arch/arm/boot/dts/stm32mp157a-dk1.dts
-+++ b/arch/arm/boot/dts/stm32mp157a-dk1.dts
-@@ -97,6 +97,33 @@
- 	};
- };
- 
-+&adc {
-+	pinctrl-names = "default";
-+	pinctrl-0 = <&adc12_ain_pins_a>, <&adc12_usb_cc_pins_a>;
-+	vdd-supply = <&vdd>;
-+	vdda-supply = <&vdd>;
-+	vref-supply = <&vrefbuf>;
-+	status = "disabled";
-+	adc1: adc@0 {
-+		/*
-+		 * Type-C USB_PWR_CC1 & USB_PWR_CC2 on in18 & in19.
-+		 * Use at least 5 * RC time, e.g. 5 * (Rp + Rd) * C:
-+		 * 5 * (56 + 47kOhms) * 5pF => 2.5us.
-+		 * Use arbitrary margin here (e.g. 5us).
-+		 */
-+		st,min-sample-time-nsecs = <5000>;
-+		/* AIN connector, USB Type-C CC1 & CC2 */
-+		st,adc-channels = <0 1 6 13 18 19>;
-+		status = "okay";
-+	};
-+	adc2: adc@100 {
-+		/* AIN connector, USB Type-C CC1 & CC2 */
-+		st,adc-channels = <0 1 2 6 18 19>;
-+		st,min-sample-time-nsecs = <5000>;
-+		status = "okay";
-+	};
-+};
-+
- &cec {
- 	pinctrl-names = "default", "sleep";
- 	pinctrl-0 = <&cec_pins_b>;
--- 
-2.7.4
-
+>  
+>  	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
+>  	return IRQ_HANDLED;
+> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+> index c9c13b5785f2..46f7e161e83e 100644
+> --- a/drivers/iommu/arm-smmu.h
+> +++ b/drivers/iommu/arm-smmu.h
+> @@ -79,6 +79,8 @@
+>  #define ID7_MINOR			GENMASK(3, 0)
+>  
+>  #define ARM_SMMU_GR0_sGFSR		0x48
+> +#define sGFSR_USF			BIT(2)
+> +
+>  #define ARM_SMMU_GR0_sGFSYNR0		0x50
+>  #define ARM_SMMU_GR0_sGFSYNR1		0x54
+>  #define ARM_SMMU_GR0_sGFSYNR2		0x58
 
 _______________________________________________
 linux-arm-kernel mailing list
