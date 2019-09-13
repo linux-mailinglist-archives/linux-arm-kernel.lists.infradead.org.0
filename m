@@ -2,138 +2,102 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E409EB1A21
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 10:50:06 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DBDAFB1A3A
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 10:54:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=PDgz1FVvPTmjFPqN2iuFwt4AhdGZyQRDGWQ8uHCk4cE=; b=YPn9nQ/mPkdMAF
-	ZWKTR5+MFdQ22D08x3Dpn2WTZ/FgTcCXSTBsBsRT4BLb8IzbEi+H0lrd7y95yU/NKH80uTCUH1CxE
-	90gDyBgVCIsX7JYj0LWxgpsW+0zC4ZWOK4d71YksuBtayhTmGey+V3jQAu51XZxpktX7bWDk9bafv
-	AEcF3UclrQuDhhaRBSc4H5si6Z3Qn3xN3ehaeJ/kp1/J5Okq45DtVNMED6xur2Rh1SbBgdJTfsREA
-	3o8HhQ3dYoseRPQKodtQrV4UIkubzJZa6F2kDwAktyLAUuJF2gWunRMley8U7da0vNgAQjG4vKxc2
-	TeqxuIYPnPwfof5DMPEg==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=9jBuY4MZy1QLa20rGBSk9GMZmwdYVZmSymoIdnh7amE=; b=FJP0Ej7KtIKCHX
+	DLgyFeAKHi6uZklPYYwQC+1mxBHmfUs7bObQo+LVvRoFqRD71D01jBzU5n+NEWBzBI79uv/11x9//
+	WYfyQKd44w8vdwyl73RZlg2Qp6k6wog0cArpGFx5ksnpD+AmOBsvmJSWLlTloLalj7jO+06SdFNJC
+	WTsyt+8QwB1gU1y82C+fq12JaomZ9+28UAnj102qtEjmmeFTYmTY6rqv1l8I+f9JN/Jr/NRddolZ+
+	u77nQxiNy3NJS0MW+nHdMvwNUNH5ZCayKHb+lNk8chlniRelsZtQ/NDYOOObm8FYh3F+Lb6nn4aHw
+	nrAW7OSKVjiO5E5sXilg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8hHF-0005Oo-Ro; Fri, 13 Sep 2019 08:50:03 +0000
-Received: from mx0a-00128a01.pphosted.com ([148.163.135.77])
+	id 1i8hLy-0001de-AB; Fri, 13 Sep 2019 08:54:54 +0000
+Received: from mout.gmx.net ([212.227.17.20])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8hDx-0002mD-1l
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 08:46:39 +0000
-Received: from pps.filterd (m0167088.ppops.net [127.0.0.1])
- by mx0a-00128a01.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
- x8D8gsta001935; Fri, 13 Sep 2019 04:46:34 -0400
-Received: from nam01-by2-obe.outbound.protection.outlook.com
- (mail-by2nam01lp2058.outbound.protection.outlook.com [104.47.34.58])
- by mx0a-00128a01.pphosted.com with ESMTP id 2uytdfsa85-1
- (version=TLSv1.2 cipher=ECDHE-RSA-AES256-GCM-SHA384 bits=256 verify=NOT);
- Fri, 13 Sep 2019 04:46:34 -0400
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=AGmFx0b/y7/0tkBVloHzr44Zhknq2Y7C5lmAXJSwUVuJcK6ZK27a2lzHnxyfMERuGImWt/gxaK5uL1VNiXZz9YLXkSBdgEMknNOC+x/rzAI1kPIJPiXDa3ljYhHkk20Np0o+kcjc5rfIuGDqqzifbcZbmcWqUOaAj74fNrOoOC9Omy4PjmDhhbA8Mcu4uq+C5Rq0wV4IFf9rSQKscCapKtNzIWQrZtRwqnLvVE6Jq3w4PhXRZZmj31edooWuRhndJVMU61rBgpCt6tFyBmqt3EZikAsVp0v9u2jNVyHDmUKAPvvWuFL/eswzxTCaSlmIwW3tAHZ+TorqPQU73vk1tQ==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hfHznp9C/uGwlBu8jzfVRiiAcVsPibiwgdWvzbHijTM=;
- b=A+ZxWru9mLGsc9w7sgFpv+C4Ge8Zg/AHUIet1RCfLYkmPjQ2ZzWozIDzRp0/XxUJ6cL9V2pHDG9dfVhPH1DWEnqVjLx/I5IqX4cIDRc9jNpw16jX0LDzO3WB+XjIRoSDIRoOOT6mzR1e81AwOMZIZumIj+w4HlalU8r2fRAebsRBuQ4g8xyBXL6J1taqifbEIr7WCH7xlz9MirLF9WkccWhy0nFRPqOH9aMSfFsYW1eiqkHa9Ba+y2c9fva8hIxcQ/iTTN6lQjhwTNtvun+efIaPj7noGElaoTV9tpigEphBMqsVvoxmVMDKY2QPTAIsy23G9BeOC1yN0i5oh0HUgw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass (sender ip is
- 137.71.25.57) smtp.rcpttodomain=vger.kernel.org smtp.mailfrom=analog.com;
- dmarc=bestguesspass action=none header.from=analog.com; dkim=none (message
- not signed); arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=analog.onmicrosoft.com; s=selector2-analog-onmicrosoft-com;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=hfHznp9C/uGwlBu8jzfVRiiAcVsPibiwgdWvzbHijTM=;
- b=SpbpG12eqce0ul1uYaIwAOUvb4pELMWyv+n7FnEtP4XHJ9vKrM8RFF9xbg0dOSp3zcBtoX+Y/obv916/wpLDQwsC32mFZ3ta7+jwKf3ic9LJufns+TfxL9spLqjqypV3iRtnzMAez6+TUhS8rWt3Y3e/MdJH6CxC42WXrEKahA0=
-Received: from CY4PR03CA0012.namprd03.prod.outlook.com (2603:10b6:903:33::22)
- by BYAPR03MB4790.namprd03.prod.outlook.com (2603:10b6:a03:135::22)
- with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id 15.20.2241.18; Fri, 13 Sep
- 2019 08:46:32 +0000
-Received: from CY1NAM02FT019.eop-nam02.prod.protection.outlook.com
- (2a01:111:f400:7e45::204) by CY4PR03CA0012.outlook.office365.com
- (2603:10b6:903:33::22) with Microsoft SMTP Server (version=TLS1_2,
- cipher=TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384) id 15.20.2263.15 via Frontend
- Transport; Fri, 13 Sep 2019 08:46:31 +0000
-Received-SPF: Pass (protection.outlook.com: domain of analog.com designates
- 137.71.25.57 as permitted sender) receiver=protection.outlook.com;
- client-ip=137.71.25.57; helo=nwd2mta2.analog.com;
-Received: from nwd2mta2.analog.com (137.71.25.57) by
- CY1NAM02FT019.mail.protection.outlook.com (10.152.75.177) with Microsoft SMTP
- Server (version=TLS1_0, cipher=TLS_RSA_WITH_AES_256_CBC_SHA) id 15.20.2263.17
- via Frontend Transport; Fri, 13 Sep 2019 08:46:31 +0000
-Received: from NWD2HUBCAS7.ad.analog.com (nwd2hubcas7.ad.analog.com
- [10.64.69.107])
- by nwd2mta2.analog.com (8.13.8/8.13.8) with ESMTP id x8D8kQkP030691
- (version=TLSv1/SSLv3 cipher=AES256-SHA bits=256 verify=OK);
- Fri, 13 Sep 2019 01:46:26 -0700
-Received: from saturn.ad.analog.com (10.48.65.123) by
- NWD2HUBCAS7.ad.analog.com (10.64.69.107) with Microsoft SMTP Server id
- 14.3.408.0; Fri, 13 Sep 2019 04:46:30 -0400
-From: Alexandru Ardelean <alexandru.ardelean@analog.com>
-To: <linux-spi@vger.kernel.org>, <linux-iio@vger.kernel.org>,
- <linux-arm-kernel@lists.infradead.org>, <linux-tegra@vger.kernel.org>,
- <linux-kernel@vger.kernel.org>, <bcm-kernel-feedback-list@broadcom.com>
-Subject: [RFC PATCH 08/15] spi: core,
- atmel: convert `word_delay_usecs` -> `word_delay` for spi_device
-Date: Fri, 13 Sep 2019 14:45:43 +0300
-Message-ID: <20190913114550.956-9-alexandru.ardelean@analog.com>
-X-Mailer: git-send-email 2.20.1
-In-Reply-To: <20190913114550.956-1-alexandru.ardelean@analog.com>
-References: <20190913114550.956-1-alexandru.ardelean@analog.com>
+ id 1i8hI8-0007mv-Ip; Fri, 13 Sep 2019 08:50:58 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=gmx.net;
+ s=badeba3b8450; t=1568364635;
+ bh=OZqY8YEmhSzYpVNahFixu1x4zax59nBDtoBfEOKOU5s=;
+ h=X-UI-Sender-Class:Subject:To:Cc:References:From:Date:In-Reply-To;
+ b=LgBrFGcKw3jzMlfJOCjItxE63zvj5he1+kky9ilivtcRdrHVQsn77FeH0WFVA/7o5
+ fQ+BbYa36NLTKwhjgpD+JeHKXyvPiuy7tyD+lNpC8LEHM5cMglVxMA/OIalDzoRSGI
+ n8ASzdbzVhqlhX/QhvOfCvQb7DyVFgu6o2AJUvF8=
+X-UI-Sender-Class: 01bb95c1-4bf8-414a-932a-4f6e2808ef9c
+Received: from [192.168.1.162] ([37.4.249.90]) by mail.gmx.com (mrgmx103
+ [212.227.17.168]) with ESMTPSA (Nemesis) id 0Lzsf1-1iCMTA0Nu7-014yUk; Fri, 13
+ Sep 2019 10:50:35 +0200
+Subject: Re: [PATCH v5 0/4] Raspberry Pi 4 DMA addressing support
+To: Matthias Brugger <mbrugger@suse.com>, catalin.marinas@arm.com,
+ marc.zyngier@arm.com, Matthias Brugger <matthias.bgg@gmail.com>,
+ robh+dt@kernel.org, linux-mm@kvack.org,
+ linux-arm-kernel@lists.infradead.org, linux-riscv@lists.infradead.org,
+ hch@lst.de, Nicolas Saenz Julienne <nsaenzjulienne@suse.de>
+References: <20190909095807.18709-1-nsaenzjulienne@suse.de>
+ <5a8af6e9-6b90-ce26-ebd7-9ee626c9fa0e@gmx.net>
+ <3f9af46e-2e1a-771f-57f2-86a53caaf94a@suse.com>
+ <09f82f88-a13a-b441-b723-7bb061a2f1e3@gmail.com>
+ <2c3e1ef3-0dba-9f79-52e2-314b6b500e14@gmx.net>
+ <4a6f965b-c988-5839-169f-9f24a0e7a567@suse.com>
+From: Stefan Wahren <wahrenst@gmx.net>
+Message-ID: <48a6b72d-d554-b563-5ed6-9a79db5fb4ab@gmx.net>
+Date: Fri, 13 Sep 2019 10:50:32 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-ADIRoutedOnPrem: True
-X-EOPAttributedMessage: 0
-X-MS-Office365-Filtering-HT: Tenant
-X-Forefront-Antispam-Report: CIP:137.71.25.57; IPV:NLI; CTRY:US; EFV:NLI;
- SFV:NSPM;
- SFS:(10009020)(39860400002)(346002)(136003)(376002)(396003)(189003)(199004)(2201001)(305945005)(76176011)(36756003)(14444005)(44832011)(2870700001)(54906003)(106002)(110136005)(8676002)(336012)(476003)(50226002)(478600001)(2906002)(5660300002)(4326008)(2616005)(70586007)(86362001)(186003)(70206006)(11346002)(486006)(7696005)(246002)(47776003)(7416002)(8936002)(356004)(107886003)(426003)(50466002)(316002)(446003)(48376002)(26005)(7636002)(51416003)(1076003)(6666004)(126002)(142933001)(81973001)(2101003);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR03MB4790; H:nwd2mta2.analog.com; FPR:;
- SPF:Pass; LANG:en; PTR:nwd2mail11.analog.com; MX:1; A:1; 
-X-MS-PublicTrafficType: Email
-X-MS-Office365-Filtering-Correlation-Id: 197dd7dd-8d79-4dfa-ee28-08d73826e025
-X-Microsoft-Antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(4709080)(1401327)(4618075)(2017052603328);
- SRVR:BYAPR03MB4790; 
-X-MS-TrafficTypeDiagnostic: BYAPR03MB4790:
-X-Microsoft-Antispam-PRVS: <BYAPR03MB4790DB9658B1548E832BC453F9B30@BYAPR03MB4790.namprd03.prod.outlook.com>
-X-MS-Oob-TLC-OOBClassifiers: OLM:8882;
-X-Forefront-PRVS: 0159AC2B97
-X-MS-Exchange-SenderADCheck: 1
-X-Microsoft-Antispam-Message-Info: hkzuZ4EgFWxaaRFAsuTbZ6xlrUqsy407WTj1MXXi+xT+oNtUuvuajs4yOnjsd25VLGQj2Od2+UfCv8N1XEk4AOFsth4x/BV33C5ptxcWEChBBRQAyFlh1iX3SEgV/rzDH0OHwIdmMbJFZxr9SJD6QgiUH2cFtIU1zLH+lv8ljjTQcCZPcGUYnhKfgtLRM+ceRMqw/dajB64vgjPKLhkSAnaCS+PEFWT9zFXcCW8qDYqEPggfGJcIEOySab/MLK0cQEFjoX7s+Pzu4bAnuN0VUzg0VahBGNcWrhZERQr3ii3QfH9rt1OCLGOhhPLDYwB602YZy9cBF//QGK8GYc2boXtftDU4ReRy4wg/530Zpc+qNJoozyxzOrohRBxdCTmFH3gtKzx/ccZaxTcb+z4tl6Jl4MYDccd7X9Qo+/6IysY=
-X-OriginatorOrg: analog.com
-X-MS-Exchange-CrossTenant-OriginalArrivalTime: 13 Sep 2019 08:46:31.5398 (UTC)
-X-MS-Exchange-CrossTenant-Network-Message-Id: 197dd7dd-8d79-4dfa-ee28-08d73826e025
-X-MS-Exchange-CrossTenant-Id: eaa689b4-8f87-40e0-9c6f-7228de4d754a
-X-MS-Exchange-CrossTenant-OriginalAttributedTenantConnectingIp: TenantId=eaa689b4-8f87-40e0-9c6f-7228de4d754a; Ip=[137.71.25.57];
- Helo=[nwd2mta2.analog.com]
-X-MS-Exchange-CrossTenant-FromEntityHeader: HybridOnPrem
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR03MB4790
-X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
- definitions=2019-09-13_05:2019-09-11,2019-09-13 signatures=0
-X-Proofpoint-Spam-Details: rule=outbound_notspam policy=outbound score=0
- mlxlogscore=999
- impostorscore=0 priorityscore=1501 suspectscore=0 clxscore=1015
- lowpriorityscore=0 malwarescore=0 spamscore=0 adultscore=0 mlxscore=0
- phishscore=0 bulkscore=0 classifier=spam adjust=0 reason=mlx scancount=1
- engine=8.12.0-1908290000 definitions=main-1909130083
+In-Reply-To: <4a6f965b-c988-5839-169f-9f24a0e7a567@suse.com>
+Content-Language: en-US
+X-Provags-ID: V03:K1:5fDbWcniG6VsoBWaSc+GYFShgEo4REYeFeRHrSgDDglxm5sD6x2
+ UrWf7vgL6ch3G20ivsSWNIYWs/Bz1I+ZBgUC3eKNW5tdmxyn8E7T09758U+Tzf0wd/Wfw8R
+ nrZhE9fM238lCEGselAeaRWRKnV6VycB/TqFyuOdS/3m/0VwhMdxszt4cj6OQds8ZEJHgz5
+ lsHhLpKSOwmBUbNVq/KdA==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:PLc07q3TRNY=:+TtDNvVyj685IvAHzOOktc
+ kx+vI+eRRKzbqWd9bDoq8bo6RUCq2UiiBjt/4MAb2tnL51PkKCkYHzlLLVBuwOSz9m+mSJGYi
+ 3zQd9+4D5ZLnGGpSJKEJVvz2kSVmQiofGovvP1jXFcZWenr8riydzYGNY+HAYiqCxRaUA/eFX
+ E6xKpZo0iCDgnGdKi8+8xebctj7qpdvBjQif0wnINKavSgNh68oh0AUaigrhNyTkx7yCZSwv1
+ DxjnGg4fcjODfNNNEyYWmUd8MReYV1F0ehLs33w2Nxw60jHXeGmiep953V4atjlczfyqThy1R
+ uLcOMT92s/f7l7jtsN4dC+ZACigrck1L2eh2cBjDP9jBvEC79BTYXAe5bJQ/NLYlFNJzuJ0L5
+ KeM/4DFNCEJzuFJiNH3QdltPzA+2EIlzIZXl259m8wC5K2jB+gnScjnB3ZNYEg2pbIS6i4vp7
+ eA4IRIA1+P2jzMG9K8WKQp0T1aShulE+puyTCFwsz2eXeqLdxWuEbvtPiac2qMMqjLolkaG48
+ FV7hnRI3NkswtrztAzqfO+VJ0qPM00Kw6xotij/QHh8oU0BqpdD9+cAo+clP+40ysg0uKxV1Y
+ PYE2OWrVVwhEODxtvsJ+PGPADi0/tXm4fF3RyKNK5YQ69FtWTzQhecT5phJsYxTuEO6JRVFEH
+ tCm1NM+lN48t6dHOKPZPMeyASDCIy8pelwOiO5uAyg6u/RM65mkYXam7rrmEnYFTzfsw2IiCC
+ +FyqOyFxRVQbxIwaMlTwaBXGbad61xAueSYnodWFeuByuX0hGZ2Zm/uqxnLGJuQTpVrNMUDiA
+ 80QTtrA0KYBIaL2uqVZvjnTBNklNcb+Bul0JTVLe1+wSd/xs73IvfO/EH5Go5NpdCD2CHGNh/
+ SGnV/vUI0sShAZB3yhkhzvPzBDG3iWzcjKLCq9GQ2XQV6vWt/AQEE0iXQBZX5Fi85Qkf/9Orb
+ 7ZPA0klbpejckcIoscN1Vandk0ERHH6JArUBfIAQokm/ElVeOHqF7RcfpzlarmXkaz65JFY03
+ 4ZAxD1pCVkNsGrtcfta2mXQ97NrVDDVR6ZBwKR6IshAUVzG02FtirFYR/uvzQCiLzbzjhd2Jv
+ hnHwsSRwRw5L/ZeWRxt5BQOx4FXI4aaq7/ANCbqqurfTzVZ+SH+M6W7oxUb51cW+JPzUAxTxt
+ zWlhgmJD26gIhkPblPuZX6IyXK2IU/IvYLe5QIFuATMSATrzDVrMYP+IWVG4UYw4WaAdMQQf/
+ IzirydQqcD7FTclu9dRm0zhhepscswytTs0NfKopHHrsepk8IMYtE7M4DYk0=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_014637_206256_FAB9FE36 
-X-CRM114-Status: GOOD (  16.79  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190913_015056_942051_0340F571 
+X-CRM114-Status: GOOD (  23.98  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [148.163.135.77 listed in list.dnswl.org]
+ low trust [212.227.17.20 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (wahrenst[at]gmx.net)
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -145,174 +109,147 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, baolin.wang@linaro.org, zhang.lyra@gmail.com,
- linus.walleij@linaro.org, broonie@kernel.org, orsonzhai@gmail.com,
- Alexandru Ardelean <alexandru.ardelean@analog.com>, jic23@kernel.org
+Cc: f.fainelli@gmail.com, robin.murphy@arm.com, linux-kernel@vger.kernel.org,
+ linux-rpi-kernel@lists.infradead.org, phill@raspberrypi.org, will@kernel.org,
+ m.szyprowski@samsung.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This change does a conversion from the `word_delay_usecs` -> `word_delay`
-for the `spi_device` struct.
+Am 13.09.19 um 10:09 schrieb Matthias Brugger:
+>
+> On 12/09/2019 21:32, Stefan Wahren wrote:
+>> Am 12.09.19 um 19:18 schrieb Matthias Brugger:
+>>> On 10/09/2019 11:27, Matthias Brugger wrote:
+>>>> On 09/09/2019 21:33, Stefan Wahren wrote:
+>>>>> Hi Nicolas,
+>>>>>
+>>>>> Am 09.09.19 um 11:58 schrieb Nicolas Saenz Julienne:
+>>>>>> Hi all,
+>>>>>> this series attempts to address some issues we found while bringing up
+>>>>>> the new Raspberry Pi 4 in arm64 and it's intended to serve as a follow
+>>>>>> up of these discussions:
+>>>>>> v4: https://lkml.org/lkml/2019/9/6/352
+>>>>>> v3: https://lkml.org/lkml/2019/9/2/589
+>>>>>> v2: https://lkml.org/lkml/2019/8/20/767
+>>>>>> v1: https://lkml.org/lkml/2019/7/31/922
+>>>>>> RFC: https://lkml.org/lkml/2019/7/17/476
+>>>>>>
+>>>>>> The new Raspberry Pi 4 has up to 4GB of memory but most peripherals can
+>>>>>> only address the first GB: their DMA address range is
+>>>>>> 0xc0000000-0xfc000000 which is aliased to the first GB of physical
+>>>>>> memory 0x00000000-0x3c000000. Note that only some peripherals have these
+>>>>>> limitations: the PCIe, V3D, GENET, and 40-bit DMA channels have a wider
+>>>>>> view of the address space by virtue of being hooked up trough a second
+>>>>>> interconnect.
+>>>>>>
+>>>>>> Part of this is solved on arm32 by setting up the machine specific
+>>>>>> '.dma_zone_size = SZ_1G', which takes care of reserving the coherent
+>>>>>> memory area at the right spot. That said no buffer bouncing (needed for
+>>>>>> dma streaming) is available at the moment, but that's a story for
+>>>>>> another series.
+>>>>>>
+>>>>>> Unfortunately there is no such thing as 'dma_zone_size' in arm64. Only
+>>>>>> ZONE_DMA32 is created which is interpreted by dma-direct and the arm64
+>>>>>> arch code as if all peripherals where be able to address the first 4GB
+>>>>>> of memory.
+>>>>>>
+>>>>>> In the light of this, the series implements the following changes:
+>>>>>>
+>>>>>> - Create both DMA zones in arm64, ZONE_DMA will contain the first 1G
+>>>>>>   area and ZONE_DMA32 the rest of the 32 bit addressable memory. So far
+>>>>>>   the RPi4 is the only arm64 device with such DMA addressing limitations
+>>>>>>   so this hardcoded solution was deemed preferable.
+>>>>>>
+>>>>>> - Properly set ARCH_ZONE_DMA_BITS.
+>>>>>>
+>>>>>> - Reserve the CMA area in a place suitable for all peripherals.
+>>>>>>
+>>>>>> This series has been tested on multiple devices both by checking the
+>>>>>> zones setup matches the expectations and by double-checking physical
+>>>>>> addresses on pages allocated on the three relevant areas GFP_DMA,
+>>>>>> GFP_DMA32, GFP_KERNEL:
+>>>>>>
+>>>>>> - On an RPi4 with variations on the ram memory size. But also forcing
+>>>>>>   the situation where all three memory zones are nonempty by setting a 3G
+>>>>>>   ZONE_DMA32 ceiling on a 4G setup. Both with and without NUMA support.
+>>>>>>
+>>>>> i like to test this series on Raspberry Pi 4 and i have some questions
+>>>>> to get arm64 running:
+>>>>>
+>>>>> Do you use U-Boot? Which tree?
+>>>> If you want to use U-Boot, try v2019.10-rc4, it should have everything you need
+>>>> to boot your kernel.
+>>>>
+>>> Ok, here is a thing. In the linux kernel we now use bcm2711 as SoC name, but the
+>>> RPi4 devicetree provided by the FW uses mostly bcm2838.
+>> Do you mean the DTB provided at runtime?
+>>
+>> You mean the merged U-Boot changes, doesn't work with my Raspberry Pi
+>> series?
+>>
+>>>  U-Boot in its default
+>>> config uses the devicetree provided by the FW, mostly because this way you don't
+>>> have to do anything to find out how many RAM you really have. Secondly because
+>>> this will allow us, in the near future, to have one U-boot binary for both RPi3
+>>> and RPi4 (and as a side effect one binary for RPi1 and RPi2).
+>>>
+>>> Anyway, I found at least, that the following compatibles need to be added:
+>>>
+>>> "brcm,bcm2838-cprman"
+>>> "brcm,bcm2838-gpio"
+>>>
+>>> Without at least the cprman driver update, you won't see anything.
+>>>
+>>> "brcm,bcm2838-rng200" is also a candidate.
+>>>
+>>> I also suppose we will need to add "brcm,bcm2838" to
+>>> arch/arm/mach-bcm/bcm2711.c, but I haven't verified this.
+>> How about changing this in the downstream kernel? Which is much easier.
+> I'm not sure I understand what you want to say. My goal is to use the upstream
+> kernel with the device tree blob provided by the FW.
 
-This allows users to specify inter-word delays in other unit types
-(nano-seconds or clock cycles), depending on how users want.
+The device tree blob you are talking is defined in this repository:
 
-The Atmel SPI driver is the only current user of the `word_delay_usecs`
-field (from the `spi_device` struct).
-So, it needed a slight conversion to use the `word_delay` as an `spi_delay`
-struct.
+https://github.com/raspberrypi/linux
 
-In SPI core, the only required mechanism is to update the `word_delay`
-information per `spi_transfer`. This requires a bit more logic than before,
-because it needs that both delays be converted to a common unit
-(nano-seconds) for comparison.
+So the word FW is misleading to me.
 
-Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
----
- drivers/spi/spi-atmel.c | 26 ++++++++++++++++++++++++--
- drivers/spi/spi.c       | 24 ++++++++++++++++++++++--
- include/linux/spi/spi.h |  7 ++-----
- 3 files changed, 48 insertions(+), 9 deletions(-)
+>  If you talk about the
+> downstream kernel, I suppose you mean we should change this in the FW DT blob
+> and in the downstream kernel. That would work for me.
+>
+> Did I understand you correctly?
 
-diff --git a/drivers/spi/spi-atmel.c b/drivers/spi/spi-atmel.c
-index f00b367523cd..009bb4fb5e5f 100644
---- a/drivers/spi/spi-atmel.c
-+++ b/drivers/spi/spi-atmel.c
-@@ -1172,12 +1172,31 @@ atmel_spi_pdc_interrupt(int irq, void *dev_id)
- 	return ret;
- }
- 
-+static int atmel_word_delay_csr(struct spi_device *spi, struct atmel_spi *as)
-+{
-+	struct spi_delay *delay = &spi->word_delay;
-+	u32 value = delay->value;
-+
-+	switch (delay->unit) {
-+	case SPI_DELAY_UNIT_NSECS:
-+		value /= 1000;
-+		break;
-+	case SPI_DELAY_UNIT_USECS:
-+		break;
-+	default:
-+		return -EINVAL;
-+	}
-+
-+	return (as->spi_clk / 1000000 * value) >> 5;
-+}
-+
- static int atmel_spi_setup(struct spi_device *spi)
- {
- 	struct atmel_spi	*as;
- 	struct atmel_spi_device	*asd;
- 	u32			csr;
- 	unsigned int		bits = spi->bits_per_word;
-+	int			word_delay_csr;
- 
- 	as = spi_master_get_devdata(spi->master);
- 
-@@ -1201,11 +1220,14 @@ static int atmel_spi_setup(struct spi_device *spi)
- 	 */
- 	csr |= SPI_BF(DLYBS, 0);
- 
-+	word_delay_csr = atmel_word_delay_csr(as, spi);
-+	if (word_delay_csr < 0)
-+		return word_delay_csr;
-+
- 	/* DLYBCT adds delays between words.  This is useful for slow devices
- 	 * that need a bit of time to setup the next transfer.
- 	 */
--	csr |= SPI_BF(DLYBCT,
--			(as->spi_clk / 1000000 * spi->word_delay_usecs) >> 5);
-+	csr |= SPI_BF(DLYBCT, word_delay_csr);
- 
- 	asd = spi->controller_state;
- 	if (!asd) {
-diff --git a/drivers/spi/spi.c b/drivers/spi/spi.c
-index d0bf0ffca042..ba8731b77753 100644
---- a/drivers/spi/spi.c
-+++ b/drivers/spi/spi.c
-@@ -3159,6 +3159,26 @@ void spi_set_cs_timing(struct spi_device *spi, u8 setup, u8 hold,
- }
- EXPORT_SYMBOL_GPL(spi_set_cs_timing);
- 
-+static int _spi_xfer_word_delay_update(struct spi_transfer *xfer,
-+				       struct spi_device *spi)
-+{
-+	int delay1, delay2;
-+
-+	delay1 = _spi_delay_to_ns(&xfer->word_delay, xfer);
-+	if (delay1 < 0)
-+		return delay1;
-+
-+	delay2 = _spi_delay_to_ns(&spi->word_delay, xfer);
-+	if (delay2 < 0)
-+		return delay2;
-+
-+	if (delay1 < delay2)
-+		memcpy(&xfer->word_delay, &spi->word_delay,
-+		       sizeof(xfer->word_delay));
-+
-+	return 0;
-+}
-+
- static int __spi_validate(struct spi_device *spi, struct spi_message *message)
- {
- 	struct spi_controller *ctlr = spi->controller;
-@@ -3294,8 +3314,8 @@ static int __spi_validate(struct spi_device *spi, struct spi_message *message)
- 				return -EINVAL;
- 		}
- 
--		if (xfer->word_delay_usecs < spi->word_delay_usecs)
--			xfer->word_delay_usecs = spi->word_delay_usecs;
-+		if (_spi_xfer_word_delay_update(xfer, spi))
-+			return -EINVAL;
- 	}
- 
- 	message->status = -EINPROGRESS;
-diff --git a/include/linux/spi/spi.h b/include/linux/spi/spi.h
-index 16397b210e0c..e7ec0be16a82 100644
---- a/include/linux/spi/spi.h
-+++ b/include/linux/spi/spi.h
-@@ -138,7 +138,7 @@ extern int spi_delay_exec(struct spi_delay *_delay, struct spi_transfer *xfer);
-  *	the spi_master.
-  * @cs_gpiod: gpio descriptor of the chipselect line (optional, NULL when
-  *	not using a GPIO line)
-- * @word_delay_usecs: microsecond delay to be inserted between consecutive
-+ * @word_delay: delay to be inserted between consecutive
-  *	words of a transfer
-  *
-  * @statistics: statistics for the spi_device
-@@ -188,7 +188,7 @@ struct spi_device {
- 	const char		*driver_override;
- 	int			cs_gpio;	/* LEGACY: chip select gpio */
- 	struct gpio_desc	*cs_gpiod;	/* chip select gpio desc */
--	uint8_t			word_delay_usecs; /* inter-word delay */
-+	struct spi_delay	word_delay; /* inter-word delay */
- 
- 	/* the statistics */
- 	struct spi_statistics	statistics;
-@@ -757,8 +757,6 @@ extern void spi_res_release(struct spi_controller *ctlr,
-  * @delay_usecs: microseconds to delay after this transfer before
-  *	(optionally) changing the chipselect status, then starting
-  *	the next transfer or completing this @spi_message.
-- * @word_delay_usecs: microseconds to inter word delay after each word size
-- *	(set by bits_per_word) transmission.
-  * @word_delay: inter word delay to be introduced after each word size
-  *	(set by bits_per_word) transmission.
-  * @effective_speed_hz: the effective SCK-speed that was used to
-@@ -844,7 +842,6 @@ struct spi_transfer {
- #define	SPI_NBITS_DUAL		0x02 /* 2bits transfer */
- #define	SPI_NBITS_QUAD		0x04 /* 4bits transfer */
- 	u8		bits_per_word;
--	u8		word_delay_usecs;
- 	u16		delay_usecs;
- 	struct spi_delay	cs_change_delay;
- 	struct spi_delay	word_delay;
--- 
-2.20.1
+Yes
 
+So i suggest to add the upstream compatibles into the repo mentioned above.
+
+Sorry, but in case you decided as a U-Boot developer to be compatible
+with a unreviewed DT, we also need to make U-Boot compatible with
+upstream and downstream DT blobs.
+
+>
+>>> Regards,
+>>> Matthias
+>>>
+>>>> Regards,
+>>>> Matthias
+>>>>
+>>>>> Are there any config.txt tweaks necessary?
+>>>>>
+>>>>>
+>>>> _______________________________________________
+>>>> linux-arm-kernel mailing list
+>>>> linux-arm-kernel@lists.infradead.org
+>>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>>>
+>>> _______________________________________________
+>>> linux-arm-kernel mailing list
+>>> linux-arm-kernel@lists.infradead.org
+>>> http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+>>
 
 _______________________________________________
 linux-arm-kernel mailing list
