@@ -2,51 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5C50DB21A7
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:14:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 46169B21FC
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:34:57 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:References:
+	To:From:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
 	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=vJm4CcjtTlMIseQ3mFj8S3Oiz3zR8D7S4jIbckW+gXM=; b=jPwjeUEHiS/8H32+mkM9mg7ek
-	QGWa2+i6sigYx1rbk5rGSuoD5nKMLbJ8qtgIcEZkrVZycO1su9d8QNVq7lDRmNlyhhghFUoCT9ykL
-	r/6kvTmDdrCoZrRepFtkmei9cWEhCqZ1tHWpWw8OdyDBYstb+uZ0AGAr76SOUB33uvChgGeem0IXb
-	SQAkR5yuZHIQRhqc3qWNWp4MpokMrNJgrMPOMZtra6JVrxW5cRhutl1gwU6sQ/+lFvdKJprUfEwAf
-	DxJEOCf7IpN6FrQT5AtSl9TvzpiPVmzy04TBz/pWbpaNoEJMkLdOQpCtCfPPvJzYdYZUTb/PWQAWN
-	la6ihf56g==;
+	 bh=qVaw+m87jBcjzZJF7zKWmCNakCw6tJvbPm4Va7TzMj4=; b=jpK/ffAtt7p4NU4PeSTXUZBZe
+	suQAlgK/+sHz9Hp0fetpvKXFCyqJzLtYS2zlDBCm/7C5C+k6hHaHIvhI9viBx7hyaCYN/xLaA2X6i
+	NnX/Nb6aLKJZUEVpiuXNMZ+tZkJjG+TDXxaZkD2JqzhOCZHMs89rYPCJGWsr5HCIyH2zg4WPLTcTR
+	zpLNABdJZOdN79KBFmWsvMq70PjefCtrFPcUFUWVimtDWkp4mpxAFcgArkyoUDPluzTJr2mI5T0Qu
+	97G4URozjCg9apG1MWL+xRRySmfArqXRpqg6fLEr6qddnupn4oNN03KN2ohHRRv9Mej8TRZmPsneq
+	CnS+hR3Eg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mLI-0001Qh-Dk; Fri, 13 Sep 2019 14:14:32 +0000
-Received: from sauhun.de ([88.99.104.3] helo=pokefinder.org)
+	id 1i8meu-0008K9-SY; Fri, 13 Sep 2019 14:34:49 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mKe-0001Pm-54
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:13:54 +0000
-Received: from localhost (234.77.63.94.rev.vodafone.pt [94.63.77.234])
- by pokefinder.org (Postfix) with ESMTPSA id 8BC042C3115;
- Fri, 13 Sep 2019 16:13:45 +0200 (CEST)
-Date: Fri, 13 Sep 2019 15:13:45 +0100
-From: Wolfram Sang <wsa@the-dreams.de>
-To: Biwen Li <biwen.li@nxp.com>
-Subject: Re: [v2] ACPI: support for NXP i2c controller
-Message-ID: <20190913141344.GB1022@kunai>
-References: <20190906075319.21244-1-biwen.li@nxp.com>
+ id 1i8meV-0008JZ-0p
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:34:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A3C4D1000;
+ Fri, 13 Sep 2019 07:34:18 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F25143F67D;
+ Fri, 13 Sep 2019 07:34:17 -0700 (PDT)
+Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
+From: Robin Murphy <robin.murphy@arm.com>
+To: will@kernel.org, joro@8bytes.org
+References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
+Message-ID: <a33b166d-dbfa-7791-0a36-b7deda1fc03d@arm.com>
+Date: Fri, 13 Sep 2019 15:34:16 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
 MIME-Version: 1.0
-In-Reply-To: <20190906075319.21244-1-biwen.li@nxp.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+In-Reply-To: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_071352_528844_BAB30C86 
-X-CRM114-Status: UNSURE (   6.22  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190913_073423_108937_5660FD9B 
+X-CRM114-Status: GOOD (  18.56  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [88.99.104.3 listed in list.dnswl.org]
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
@@ -59,73 +61,64 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: udit.kumar@nxp.com, s.hauer@pengutronix.de, rafael@kernel.org,
- rjw@rjwysocki.net, linux-kernel@vger.kernel.org, leoyang.li@nxp.com,
- linux-acpi@vger.kernel.org, andy.shevchenko@gmail.com,
- meenakshi.aggarwal@nxp.com, linux-i2c@vger.kernel.org, chuanhua.han@nxp.com,
- shawnguo@kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: multipart/mixed; boundary="===============7869519314364705606=="
+Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+On 13/09/2019 12:48, Robin Murphy wrote:
+> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
+> for smoking out inadequate firmware, the failure mode is non-obvious
+> and can be confusing for end users. Add some special-case reporting of
+> Unidentified Stream Faults to help clarify this particular symptom.
+> 
+> CC: Douglas Anderson <dianders@chromium.org>
+> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+> ---
+>   drivers/iommu/arm-smmu.c | 5 +++++
+>   drivers/iommu/arm-smmu.h | 2 ++
+>   2 files changed, 7 insertions(+)
+> 
+> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+> index b7cf24402a94..76ac8c180695 100644
+> --- a/drivers/iommu/arm-smmu.c
+> +++ b/drivers/iommu/arm-smmu.c
+> @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>   	dev_err_ratelimited(smmu->dev,
+>   		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
+>   		gfsr, gfsynr0, gfsynr1, gfsynr2);
+> +	if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
+> +	    (gfsr & sGFSR_USF))
+> +		dev_err_ratelimited(smmu->dev,
+> +			"Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
+> +			(u16)gfsynr1);
+>   
+>   	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
+>   	return IRQ_HANDLED;
+> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+> index c9c13b5785f2..46f7e161e83e 100644
+> --- a/drivers/iommu/arm-smmu.h
+> +++ b/drivers/iommu/arm-smmu.h
+> @@ -79,6 +79,8 @@
+>   #define ID7_MINOR			GENMASK(3, 0)
+>   
+>   #define ARM_SMMU_GR0_sGFSR		0x48
+> +#define sGFSR_USF			BIT(2)
 
---===============7869519314364705606==
-Content-Type: multipart/signed; micalg=pgp-sha512;
-	protocol="application/pgp-signature"; boundary="i9LlY+UWpKt15+FH"
-Content-Disposition: inline
+Sigh... and of course what I actually meant here was that this is the 
+2nd bit, which is bit 1, which is also 2. I blame Friday :(
 
+Robin.
 
---i9LlY+UWpKt15+FH
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
-
-On Fri, Sep 06, 2019 at 03:53:19PM +0800, Biwen Li wrote:
-> From: Chuanhua Han <chuanhua.han@nxp.com>
->=20
-> Enable NXP i2c controller to boot with ACPI
->=20
-> Signed-off-by: Meenakshi Aggarwal <meenakshi.aggarwal@nxp.com>
-> Signed-off-by: Udit Kumar <udit.kumar@nxp.com>
-> Signed-off-by: Chuanhua Han <chuanhua.han@nxp.com>
-> Signed-off-by: Biwen Li <biwen.li@nxp.com>
-
-Added Rafael's tag from v1 and applied to for-next, thanks!
-
-
---i9LlY+UWpKt15+FH
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCgAdFiEEOZGx6rniZ1Gk92RdFA3kzBSgKbYFAl17pBgACgkQFA3kzBSg
-Kba+Cg//Q9SHjSTH13UGRUp2U0vv+JXhqpjqwDHNLtrcgLy5K1XTRpVp+HFwE/kt
-RWOBpIHo4UHOwHLpxX9TcHYdKNPg/ZZx0lfoyIP4M50aznEXoDXxYeXTvtM+2RId
-gaTu/w6OHA2wIDty+8cCuJMzxiYeS+AEwgVn82WcF19ZFzFehCpUs6j0w1aqBi2k
-NunT4wQUO4AUlI9TdMUwY5/xm5/DZPKLYHtH3P6GKQTGkR0t3gyFTeVfNWtg8INJ
-Ih3bPh0bFO5IZXkUC46mRxuLaAM7q/WbfZ5kj8UyQz/3VZq0td+mGWnRfVix5P7v
-8if1Ay8jrv5bsiCcpfFmZMZteR4qseNNW+l9JL3yd3hjeH0pljaC8TiDxjIfEqYm
-O3kvmj7T0ZEGmrgFppq/81jH5+xFK5zShpCT6ijTubt8Pr/FTGSGzGX28jBQ240V
-ftguvv8FLZUBmHH8990eLIgHn1xHdETs2u1yutwlJxWN+UyJMeOBuwc6d2nwkNXR
-gixUEQOcQxdGjBAXZg6fmeuJpUvg2izKadNmkPDXILzp1VupbyqotIMlHPLHOD4X
-ky5v2eFbZfriCe4CbZqqV98pxIZFskzdHjZkXCNqzjGUpSz5Fgq8W6SWgzOJ40n6
-VA2OMoXrj72XfReZE7k+1IKRg6ZhAZXAv5tXsmuxs2W5VmGsBRg=
-=Jmts
------END PGP SIGNATURE-----
-
---i9LlY+UWpKt15+FH--
-
-
---===============7869519314364705606==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
+> +
+>   #define ARM_SMMU_GR0_sGFSYNR0		0x50
+>   #define ARM_SMMU_GR0_sGFSYNR1		0x54
+>   #define ARM_SMMU_GR0_sGFSYNR2		0x58
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============7869519314364705606==--
-
