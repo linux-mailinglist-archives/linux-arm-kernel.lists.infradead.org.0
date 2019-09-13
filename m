@@ -2,62 +2,53 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 707AAB1CCF
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:02:42 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id B6F8CB1D19
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:11:23 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=McAmTBeENeoEkQ399fXkp6xbRXHaNtOkdAS2FHTpfk0=; b=D8L4nFeXpW0pfp
-	vHK/qWu9QKFT/sqkYxh17bDUaHPJTKswGWP/W6hbplg6VkjtjeuS6O2iHeSIaQZjQP72354BWS7fA
-	I7UdU9DokqfUJylHpJPO7PjBn+fvrcbunYfz59L11WPkN6oGVvPE+u2l4AsxSA+BXein+Bw+NsGXX
-	ZquiO5WBBGcKr5TgBPWvlw5It8d9eQXFyjRMfqYTo7WBeX66lj3RLovXz2/JnJ5IlnuzXedD51zPY
-	ImkjuPsYr8b4nUzjEDghcYReut63a5SR4ag8xbwmTWmupODemCQS+Q5TJLYmcaveJ38Aq3QU6qGcX
-	Hi4QQKssCThnC+WcEt0g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=AONUh2Hf0JRqKa5nLQod7xl+UNPbGAepv9ZGw5tG3JA=; b=CZH/eVpX3xnAkx3QNEd2UyBLn
+	C5hSzcVq0o4aoinF7Kf+EHDr3I2cZSNa+iRl/B49bn99SYgWLxOCYyL8vL5BlP6td9RZ1OXC0O5GO
+	sAYqJOjAjkcZk5aUPIilVFUnAJTuUH4YuZcMYKn1rZkxyRA6lSL3I5MbguvtilAX7MJPtGBOoI0M+
+	jvwkibxz83Wj3gVYgtg9l5UPFI8WSFwaewSXk1usE2R5miV1wMhiBImP9+gwdAy6s5c6bPJNaNuBW
+	jVDyobH+dan4rj6nZCZyyo8Bw3sFILP4bycaJJeBchbk0L9MJFvMRfzL9IwJFP1Rj4CdN6rP3mJEj
+	e9VddXn1Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8kHg-0003me-0a; Fri, 13 Sep 2019 12:02:40 +0000
+	id 1i8kQ0-0006qU-8M; Fri, 13 Sep 2019 12:11:16 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8kHO-0003mF-CC
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:02:23 +0000
-Received: from mail-qt1-f179.google.com (mail-qt1-f179.google.com
- [209.85.160.179])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 3477F2089F
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 12:02:21 +0000 (UTC)
+ id 1i8kPk-0006q1-Aa
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:11:01 +0000
+Received: from localhost (lfbn-1-10718-76.w90-89.abo.wanadoo.fr [90.89.68.76])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 07D4E2084F;
+ Fri, 13 Sep 2019 12:10:58 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568376141;
- bh=f1icbhyLjDTw18ni73/UkubJFKFg7NU5Nz1H8j36deE=;
- h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=khu/4l2AR5/wD9c4lxk37FnlVEsQufdiq4tIoPbX/mbmqLoivPTrDckQ5K0AM8B/A
- qGBbzduXGLgm99Tx8CRhEfz9BYzBOFuzbDV/fjA9fO+SOHZ7pEVXjpQTxRa6aCu7Lf
- 0G0jf/JZDmg3q6N7Jg3Xf7CgxeGxsw1F/cOZVYJ0=
-Received: by mail-qt1-f179.google.com with SMTP id o12so33582290qtf.3
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 05:02:21 -0700 (PDT)
-X-Gm-Message-State: APjAAAUtloRHkHokwp1xzgC/EFLvghOHqSuk9W49l2KOfgxbxq3DE+Ot
- IWOz2V9PQeIrEB9rdTnGpgVZIqgON9u+hq3z7A==
-X-Google-Smtp-Source: APXvYqxhImx0WCWl6gHAKAv4CO2JaiSe49Yyuisx+y0vlZXmgIej0DwlltGO3tbu29OwjF0BKoB68pGatJWBjYAsUlY=
-X-Received: by 2002:ac8:6941:: with SMTP id n1mr2485052qtr.143.1568376140388; 
- Fri, 13 Sep 2019 05:02:20 -0700 (PDT)
+ s=default; t=1568376659;
+ bh=FImV5Wq2wnlVDJQJ0cPRAqO4Ulwuut3JipAbAXiZP/Y=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=LnQgWi3zVU/eEwNcUziGBkjZME18TnXuqtb7uosH8tcwnufrV6XXCx8ZL/tsLjC7X
+ EvDZ6H3PzoDi6AmxufMmOPqZ/0TH9TxDCHmNCFI9+wogHCZcdQc815kHrKT5Um9skt
+ tL2SggScWfXRqd2wGNzP4qMbfBHkUFbeA/0jQUHA=
+Date: Fri, 13 Sep 2019 14:10:56 +0200
+From: Maxime Ripard <mripard@kernel.org>
+To: Corentin Labbe <clabbe.montjoie@gmail.com>
+Subject: Re: [PATCH 9/9] sunxi_defconfig: add new crypto options
+Message-ID: <20190913121056.h2iotti6dzpsp6lx@localhost.localdomain>
+References: <20190906184551.17858-1-clabbe.montjoie@gmail.com>
+ <20190906184551.17858-10-clabbe.montjoie@gmail.com>
+ <20190907040353.hrz7gmqgzpfpo4xj@flea> <20190913081555.GA22538@Red>
 MIME-Version: 1.0
-References: <20190908120528.9392-1-horms+renesas@verge.net.au>
-In-Reply-To: <20190908120528.9392-1-horms+renesas@verge.net.au>
-From: Rob Herring <robh+dt@kernel.org>
-Date: Fri, 13 Sep 2019 13:02:08 +0100
-X-Gmail-Original-Message-ID: <CAL_JsqLN66LK3=4K9dLtHWd=nOAJ7ofKH6TKp058gqOV32rj8g@mail.gmail.com>
-Message-ID: <CAL_JsqLN66LK3=4K9dLtHWd=nOAJ7ofKH6TKp058gqOV32rj8g@mail.gmail.com>
-Subject: Re: [PATCH v2] dt-bindings: arm: renesas: Convert 'renesas,
- prr' to json-schema
-To: Simon Horman <horms+renesas@verge.net.au>
+In-Reply-To: <20190913081555.GA22538@Red>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_050222_442592_51E52FA2 
-X-CRM114-Status: GOOD (  13.52  )
+X-CRM114-CacheID: sfid-20190913_051100_388667_65B0D9C0 
+X-CRM114-Status: GOOD (  14.26  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -86,41 +77,70 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Yoshihiro Kaneko <ykaneko0929@gmail.com>, Magnus Damm <magnus.damm@gmail.com>,
- "open list:MEDIA DRIVERS FOR RENESAS - FCP"
- <linux-renesas-soc@vger.kernel.org>,
- "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
- <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ herbert@gondor.apana.org.au, linux-sunxi@googlegroups.com,
+ linux@armlinux.org.uk, linux-kernel@vger.kernel.org, wens@csie.org,
+ robh+dt@kernel.org, linux-crypto@vger.kernel.org, davem@davemloft.net,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============8721399174908621033=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, Sep 8, 2019 at 11:14 PM Simon Horman <horms+renesas@verge.net.au> wrote:
->
-> Convert Renesas Product Register bindings documentation to json-schema.
->
-> Signed-off-by: Simon Horman <horms+renesas@verge.net.au>
-> ---
-> Based on v5.3-rc1
-> Tested using:
->   make dtbs_check DT_SCHEMA_FILES=Documentation/devicetree/bindings/arm/renesas,prr.yaml
->
-> v2
-> * Use simple enum for compat values
-> * Drop "" from compat values
-> * Only supply 'maxItems' property to 'reg'
-> ---
->  .../devicetree/bindings/arm/renesas,prr.txt        | 20 -------------
->  .../devicetree/bindings/arm/renesas,prr.yaml       | 35 ++++++++++++++++++++++
->  2 files changed, 35 insertions(+), 20 deletions(-)
->  delete mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.txt
->  create mode 100644 Documentation/devicetree/bindings/arm/renesas,prr.yaml
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+--===============8721399174908621033==
+Content-Type: multipart/signed; micalg=pgp-sha256;
+	protocol="application/pgp-signature"; boundary="ffgt2cjw56vmabzb"
+Content-Disposition: inline
+
+
+--ffgt2cjw56vmabzb
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
+
+On Fri, Sep 13, 2019 at 10:15:55AM +0200, Corentin Labbe wrote:
+> On Sat, Sep 07, 2019 at 07:03:53AM +0300, Maxime Ripard wrote:
+> > On Fri, Sep 06, 2019 at 08:45:51PM +0200, Corentin Labbe wrote:
+> > > This patch adds the new allwinner crypto configs to sunxi_defconfig
+> > >
+> > > Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
+> > > ---
+> > >  arch/arm/configs/sunxi_defconfig | 2 ++
+> > >  1 file changed, 2 insertions(+)
+> >=20
+> > Can you also enable it in arm64's defconfig as a module?
+> >=20
+>
+> Does you prefer adding a Kconfig "DEFAULT m if ARCH_SUNXI" which
+> permit to not touch any defconfig ?
+
+It's not the preferred solution, unfortunately
+
+Maxime
+--ffgt2cjw56vmabzb
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iHUEABYIAB0WIQRcEzekXsqa64kGDp7j7w1vZxhRxQUCXXuHUAAKCRDj7w1vZxhR
+xVj6AQCte0LxsckHRmuiUFmI2uusqYR7WoJJUQuHpsZznP2FkQEArHYCXAXLwf4v
+eUq+1BJhz/6J08UKnz6F1MN145U+fA4=
+=du6r
+-----END PGP SIGNATURE-----
+
+--ffgt2cjw56vmabzb--
+
+
+--===============8721399174908621033==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============8721399174908621033==--
+
