@@ -2,66 +2,85 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 714D2B1FB5
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 15:22:36 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2B728B1FB3
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 15:22:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=UxiY4ZDJxXXo+nwI6AKzsXl3mSZ9X4QiAtOJ5pk7/Lc=; b=bP77/5tMLVllBv
-	qK+xoGfA0oeNL1K6hfcHZTtJQylPwzJh6PG2xi0JC84UDc8I/hrDZ0ztFMG/CKfnZ0ZUwntQ1nZY1
-	aBYHpYTAKizt/nDIBoPbaJlo7ahRMsBzyx0sTpjjh3orrsCzCHRUrQJUaz7e0HHnp7637Dt+2vJ7l
-	U7P4fHUBesmLBLbiROtRkMtCPQGkaDYPrsk6S1YPacHR49xlcOCbyFGhibwu8RBcxtZT4rN6+qg+1
-	LOivFqgoabwFClFGKB+G2Bsj1oG7v8ro44qM465V28TDPGilgLNyWCCGcfzWhEz+pBPXDJeYutwsy
-	sjh/HPpGH5hyxJaOlrTA==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=i/81fkcvpxRUdqC4V8PwROuVeajh+EdG09NNl4AHsM8=; b=MwxwOtyliq9ke5
+	oNK3TtTm/OkZq03YjG8rgYoYDCKUWh4wN22ReK5RZE4KVQ5f6M1vPFw1BFqnWZcm321w7XSZZLUSx
+	P5k+9NgOKPmOKUL036oTgt+dGx3s1+wEMtz1HfNIuvALDaBFBS70zvP7MmG8t4mBDZD09U4xru9u+
+	7v8ssGw/CHYHWRk42ZDMO7+fyxxndtwsBA/8qXvD+0KmlYtuuXdlr8JYamauItqIMxn+Ap7ps1Ne2
+	5ciw+03YHQRVIlbztGQ55cM6dkUIgLmVPc8oDyjhktcYCbE5G2IxPeqYz9QMp9s4MZ49/h3DhrPh8
+	+kmcSzYmicS6gt/Nb/OQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8lX0-00017s-MF; Fri, 13 Sep 2019 13:22:34 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i8lWg-0000ri-Ke; Fri, 13 Sep 2019 13:22:14 +0000
+Received: from mx07-00178001.pphosted.com ([62.209.51.94])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8lWZ-00010S-Rj
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 13:22:09 +0000
-Received: from localhost (unknown [104.132.45.99])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 2324E20717;
- Fri, 13 Sep 2019 13:22:07 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568380927;
- bh=D+ayJoqqDHf3tOg91N7qgIjywSwI/UaGuz/3VIYF/X4=;
- h=From:To:Cc:Subject:Date:In-Reply-To:References:From;
- b=yBllPpAmTTtfv5ieuJwdN1DxoPHRRlDJYZ5zm8Ums9k07nNRNjk+xcGdjR0tPitL5
- ukBIx8X07pACpU+kjfYVrGWZa0MbxWIQuzfPrdCQtt8amjjbQ4QfnFCDmIaMFr4cqi
- 9fvw2RJalPevjv41fwVphDiS3KfaTafX9nbRXy0I=
-From: Greg Kroah-Hartman <gregkh@linuxfoundation.org>
-To: linux-kernel@vger.kernel.org
-Subject: [PATCH 5.2 28/37] usb: chipidea: imx: fix EPROBE_DEFER support during
- driver probe
-Date: Fri, 13 Sep 2019 14:07:33 +0100
-Message-Id: <20190913130521.093678100@linuxfoundation.org>
-X-Mailer: git-send-email 2.23.0
-In-Reply-To: <20190913130510.727515099@linuxfoundation.org>
-References: <20190913130510.727515099@linuxfoundation.org>
-User-Agent: quilt/0.66
+ id 1i8lWN-0000pe-Mu
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 13:21:57 +0000
+Received: from pps.filterd (m0046037.ppops.net [127.0.0.1])
+ by mx07-00178001.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8DDGDDQ008470; Fri, 13 Sep 2019 15:21:45 +0200
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=st.com;
+ h=from : to : cc : subject
+ : date : message-id : mime-version : content-type; s=STMicroelectronics;
+ bh=XsRDAFdNpZsq68i7jv8FE3dvyRmLYMzu893o05OONls=;
+ b=F/KxLIs604mI5tT9XNXLzWVfNZC04NPczB2rKfTrvl8xMvXssmxN5svUaiLe67H9xKIa
+ L0nEQ7TtrcaKK/6/sNY/IEVt7WgSnCnhK5UgTUM+tH+H/au1HAvRlineBlxIhHNx6SqC
+ P5QHdTRDFE0l5l4IwKSCPDgE/y/AawZCQJtce9h3FCdiOTDrjQBNFCDdI1TU2tsbqJOd
+ LRqqWtcGgln1hvj55Ub1xCDl26GMyYHxuPrEKFDw3XEoncS7ou7oH6omH7QYjla5Y/mj
+ QOYt+6e2zxX4X5gJ4wd5nvb2eW+lhTI3qMHIlG7H5Z703w9E/mO3vU0sA5ZpaNRlT8Vh IA== 
+Received: from beta.dmz-ap.st.com (beta.dmz-ap.st.com [138.198.100.35])
+ by mx07-00178001.pphosted.com with ESMTP id 2uyte2w3k6-1
+ (version=TLSv1 cipher=ECDHE-RSA-AES256-SHA bits=256 verify=NOT);
+ Fri, 13 Sep 2019 15:21:45 +0200
+Received: from euls16034.sgp.st.com (euls16034.sgp.st.com [10.75.44.20])
+ by beta.dmz-ap.st.com (STMicroelectronics) with ESMTP id 90BA74B;
+ Fri, 13 Sep 2019 13:21:40 +0000 (GMT)
+Received: from Webmail-eu.st.com (Safex1hubcas21.st.com [10.75.90.44])
+ by euls16034.sgp.st.com (STMicroelectronics) with ESMTP id E43132C2B99;
+ Fri, 13 Sep 2019 15:21:39 +0200 (CEST)
+Received: from SAFEX1HUBCAS22.st.com (10.75.90.92) by SAFEX1HUBCAS21.st.com
+ (10.75.90.44) with Microsoft SMTP Server (TLS) id 14.3.439.0; Fri, 13 Sep
+ 2019 15:21:39 +0200
+Received: from localhost (10.48.1.232) by Webmail-ga.st.com (10.75.90.48) with
+ Microsoft SMTP Server (TLS) id 14.3.439.0;
+ Fri, 13 Sep 2019 15:21:38 +0200
+From: Fabrice Gasnier <fabrice.gasnier@st.com>
+To: <jic23@kernel.org>
+Subject: [PATCH] iio: adc: stm32-adc: fix a race when using several adcs with
+ dma and irq
+Date: Fri, 13 Sep 2019 15:21:30 +0200
+Message-ID: <1568380890-313-1-git-send-email-fabrice.gasnier@st.com>
+X-Mailer: git-send-email 2.7.4
 MIME-Version: 1.0
+X-Originating-IP: [10.48.1.232]
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-13_06:2019-09-11,2019-09-13 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_062208_148282_CD1EB0E0 
-X-CRM114-Status: GOOD (  16.90  )
-X-Spam-Score: -5.0 (-----)
+X-CRM114-CacheID: sfid-20190913_062156_228274_527F711C 
+X-CRM114-Status: GOOD (  20.05  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.0 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [62.209.51.94 listed in list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,141 +92,194 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Peter Chen <Peter.Chen@nxp.com>, Fabio Estevam <festevam@gmail.com>,
- Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
- Sascha Hauer <s.hauer@pengutronix.de>, linux-usb@vger.kernel.org,
- stable@vger.kernel.org, NXP Linux Team <linux-imx@nxp.com>,
- Pengutronix Kernel Team <kernel@pengutronix.de>,
- =?UTF-8?q?Andr=C3=A9=20Draszik?= <git@andred.net>,
- Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: lars@metafoo.de, alexandre.torgue@st.com, linux-iio@vger.kernel.org,
+ pmeerw@pmeerw.net, linux-kernel@vger.kernel.org, mcoquelin.stm32@gmail.com,
+ knaack.h@gmx.de, fabrice.gasnier@st.com,
+ linux-stm32@st-md-mailman.stormreply.com, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SWYgZHJpdmVyIHByb2JlIG5lZWRzIHRvIGJlIGRlZmVycmVkLCBlLmcuIGJlY2F1c2UgY2lfaGRy
-Y19hZGRfZGV2aWNlKCkKaXNuJ3QgcmVhZHkgeWV0LCB0aGlzIGRyaXZlciBjdXJyZW50bHkgbWlz
-YmVoYXZlcyBiYWRseToKICAgIGEpIHN1Y2Nlc3MgaXMgc3RpbGwgcmVwb3J0ZWQgdG8gdGhlIGRy
-aXZlciBjb3JlIChtZWFuaW5nIGEgMm5kCiAgICAgICBwcm9iZSBhdHRlbXB0IHdpbGwgbmV2ZXIg
-YmUgZG9uZSksIGxlYXZpbmcgdGhlIGRyaXZlciBpbgogICAgICAgYSBkeXNmdW5jdGlvbmFsIHN0
-YXRlIGFuZCB0aGUgaGFyZHdhcmUgdW51c2FibGUKCiAgICBiKSBkcml2ZXIgcmVtb3ZlIC8gc2h1
-dGRvd24gT09QU2VzOgogICAgWyAgMjA2Ljc4NjkxNl0gVW5hYmxlIHRvIGhhbmRsZSBrZXJuZWwg
-cGFnaW5nIHJlcXVlc3QgYXQgdmlydHVhbCBhZGRyZXNzIGZmZmZmZGZmCiAgICBbICAyMDYuNzk0
-MTQ4XSBwZ2QgPSA4ODBiOWY4MgogICAgWyAgMjA2Ljc5Njg5MF0gW2ZmZmZmZGZmXSAqcGdkPWFi
-ZjVlODYxLCAqcHRlPTAwMDAwMDAwLCAqcHB0ZT0wMDAwMDAwMAogICAgWyAgMjA2LjgwMzE3OV0g
-SW50ZXJuYWwgZXJyb3I6IE9vcHM6IDM3IFsjMV0gUFJFRU1QVCBTTVAgQVJNCiAgICBbICAyMDYu
-ODA4NTgxXSBNb2R1bGVzIGxpbmtlZCBpbjogd2wxOHh4IGV2YnVnCiAgICBbICAyMDYuODEzMzA4
-XSBDUFU6IDEgUElEOiAxIENvbW06IHN5c3RlbWQtc2h1dGRvdyBOb3QgdGFpbnRlZCA0LjE5LjM1
-K2dmMzQ1YzkzYjQxOTUgIzEKICAgIFsgIDIwNi44MjEwNTNdIEhhcmR3YXJlIG5hbWU6IEZyZWVz
-Y2FsZSBpLk1YNyBEdWFsIChEZXZpY2UgVHJlZSkKICAgIFsgIDIwNi44MjY4MTNdIFBDIGlzIGF0
-IGNpX2hkcmNfcmVtb3ZlX2RldmljZSsweDQvMHgyMAogICAgWyAgMjA2LjgzMTY5OV0gTFIgaXMg
-YXQgY2lfaGRyY19pbXhfcmVtb3ZlKzB4MjAvMHhlOAogICAgWyAgMjA2LjgzNjQwN10gcGMgOiBb
-PDgwNWNkNGIwPl0gICAgbHIgOiBbPDgwNWQ2MmNjPl0gICAgcHNyOiAyMDAwMDAxMwogICAgWyAg
-MjA2Ljg0MjY3OF0gc3AgOiBhODA2YmU0MCAgaXAgOiAwMDAwMDAwMSAgZnAgOiA4MGFkYmQzYwog
-ICAgWyAgMjA2Ljg0NzkwNl0gcjEwOiA4MGIxYjc5NCAgcjkgOiA4MGQ1ZGZlMCAgcjggOiBhODE5
-MmM0NAogICAgWyAgMjA2Ljg1MzEzNl0gcjcgOiA4MGRiOTNhMCAgcjYgOiBhODE5MmMxMCAgcjUg
-OiBhODE5MmMwMCAgcjQgOiBhOTNhNGEwMAogICAgWyAgMjA2Ljg1OTY2OF0gcjMgOiAwMDAwMDAw
-MCAgcjIgOiBhODE5MmNlNCAgcjEgOiBmZmZmZmZmZiAgcjAgOiBmZmZmZmRmYgogICAgWyAgMjA2
-Ljg2NjIwMV0gRmxhZ3M6IG56Q3YgIElSUXMgb24gIEZJUXMgb24gIE1vZGUgU1ZDXzMyICBJU0Eg
-QVJNICBTZWdtZW50IG5vbmUKICAgIFsgIDIwNi44NzMzNDFdIENvbnRyb2w6IDEwYzUzODdkICBU
-YWJsZTogYTllMGMwNmEgIERBQzogMDAwMDAwNTEKICAgIFsgIDIwNi44NzkwOTJdIFByb2Nlc3Mg
-c3lzdGVtZC1zaHV0ZG93IChwaWQ6IDEsIHN0YWNrIGxpbWl0ID0gMHhiMjcxMzUzYykKICAgIFsg
-IDIwNi44ODU2MjRdIFN0YWNrOiAoMHhhODA2YmU0MCB0byAweGE4MDZjMDAwKQogICAgWyAgMjA2
-Ljg4OTk5Ml0gYmU0MDogYTkzYTRhMDAgODA1ZDYyY2MgYTgxOTJjMWMgYTgxNzBlMTAgYTgxOTJj
-MTAgODA0OWE0OTAgODBkMDRkMDggMDAwMDAwMDAKICAgIFsgIDIwNi44OTgxNzldIGJlNjA6IDAw
-MDAwMDAwIDgwZDBkYTJjIGZlZTFkZWFkIDAwMDAwMDAwIGE4MDZhMDAwIDAwMDAwMDU4IDAwMDAw
-MDAwIDgwMTQ4YjA4CiAgICBbICAyMDYuOTA2MzY2XSBiZTgwOiAwMTIzNDU2NyA4MDE0OGQ4YyBh
-OTg1ODYwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCAwMDAwMDAwMCA4MGQwNGQwOAogICAg
-WyAgMjA2LjkxNDU1M10gYmVhMDogMDAwMDAwMDAgMDAwMDAwMDAgYTgyNzQxZTAgYTk4NTg2MDAg
-MDAwMDAwMjQgMDAwMDAwMDIgYTk4NTg2MDggMDAwMDAwMDUKICAgIFsgIDIwNi45MjI3NDBdIGJl
-YzA6IDAwMDAwMDFlIDgwMjJjMDU4IDAwMDAwMDAwIDAwMDAwMDAwIGE4MDZiZjE0IGE5ODU4NjAw
-IDAwMDAwMDAwIGE4MDZiZWZjCiAgICBbICAyMDYuOTMwOTI3XSBiZWUwOiBhODA2YmY3OCAwMDAw
-MDAwMCA3ZWUxMmMzMCA4MDIyYzE4YyBhODA2YmVmOCBhODA2YmVmYyAwMDAwMDAwMCAwMDAwMDAw
-MQogICAgWyAgMjA2LjkzOTExNV0gYmYwMDogMDAwMDAwMDAgMDAwMDAwMjQgYTgwNmJmMTQgMDAw
-MDAwMDUgN2VlMTNiMzQgN2VlMTJjNjggMDAwMDAwMDQgN2VlMTNmMjAKICAgIFsgIDIwNi45NDcz
-MDJdIGJmMjA6IDAwMDAwMDEwIDdlZTEyYzdjIDAwMDAwMDA1IDdlZTEyZDA0IDAwMDAwMDBhIDc2
-ZTdkYzAwIDAwMDAwMDAxIDgwZDBmMTQwCiAgICBbICAyMDYuOTU1NDkwXSBiZjQwOiBhYjYzNzg4
-MCBhOTc0ZGU0MCA2MDAwMDAxMyA4MGQwZjE0MCBhYjYzNzhhMCA4MGQwNGQwOCBhODA4MDQ3MCBh
-OTg1ODYwMAogICAgWyAgMjA2Ljk2MzY3N10gYmY2MDogYTk4NTg2MDAgMDAwMDAwMDAgMDAwMDAw
-MDAgODAyMmMyNGMgMDAwMDAwMDAgODAxNDQzMTAgMDAwMDAwMDAgMDAwMDAwMDAKICAgIFsgIDIw
-Ni45NzE4NjRdIGJmODA6IDgwMTAxMjA0IDgwZDA0ZDA4IDAwMDAwMDAwIDgwZDA0ZDA4IDAwMDAw
-MDAwIDAwMDAwMDAwIDAwMDAwMDAzIDAwMDAwMDU4CiAgICBbICAyMDYuOTgwMDUxXSBiZmEwOiA4
-MDEwMTIwNCA4MDEwMTAwMCAwMDAwMDAwMCAwMDAwMDAwMCBmZWUxZGVhZCAyODEyMTk2OSAwMTIz
-NDU2NyAwMDAwMDAwMAogICAgWyAgMjA2Ljk4ODIzN10gYmZjMDogMDAwMDAwMDAgMDAwMDAwMDAg
-MDAwMDAwMDMgMDAwMDAwNTggMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKICAg
-IFsgIDIwNi45OTY0MjVdIGJmZTA6IDAwNDlmZmIwIDdlZTEzZDU4IDAwNDhhODRiIDc2ZjI0NWE2
-IDYwMDAwMDMwIGZlZTFkZWFkIDAwMDAwMDAwIDAwMDAwMDAwCiAgICBbICAyMDcuMDA0NjIyXSBb
-PDgwNWNkNGIwPl0gKGNpX2hkcmNfcmVtb3ZlX2RldmljZSkgZnJvbSBbPDgwNWQ2MmNjPl0gKGNp
-X2hkcmNfaW14X3JlbW92ZSsweDIwLzB4ZTgpCiAgICBbICAyMDcuMDEzNTA5XSBbPDgwNWQ2MmNj
-Pl0gKGNpX2hkcmNfaW14X3JlbW92ZSkgZnJvbSBbPDgwNDlhNDkwPl0gKGRldmljZV9zaHV0ZG93
-bisweDE2Yy8weDIxOCkKICAgIFsgIDIwNy4wMjIwNTBdIFs8ODA0OWE0OTA+XSAoZGV2aWNlX3No
-dXRkb3duKSBmcm9tIFs8ODAxNDhiMDg+XSAoa2VybmVsX3Jlc3RhcnQrMHhjLzB4NTApCiAgICBb
-ICAyMDcuMDI5OTgwXSBbPDgwMTQ4YjA4Pl0gKGtlcm5lbF9yZXN0YXJ0KSBmcm9tIFs8ODAxNDhk
-OGM+XSAoc3lzX3JlYm9vdCsweGY0LzB4MWYwKQogICAgWyAgMjA3LjAzNzY0OF0gWzw4MDE0OGQ4
-Yz5dIChzeXNfcmVib290KSBmcm9tIFs8ODAxMDEwMDA+XSAocmV0X2Zhc3Rfc3lzY2FsbCsweDAv
-MHg1NCkKICAgIFsgIDIwNy4wNDUzMDhdIEV4Y2VwdGlvbiBzdGFjaygweGE4MDZiZmE4IHRvIDB4
-YTgwNmJmZjApCiAgICBbICAyMDcuMDUwMzY4XSBiZmEwOiAgICAgICAgICAgICAgICAgICAwMDAw
-MDAwMCAwMDAwMDAwMCBmZWUxZGVhZCAyODEyMTk2OSAwMTIzNDU2NyAwMDAwMDAwMAogICAgWyAg
-MjA3LjA1ODU1NF0gYmZjMDogMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDMgMDAwMDAwNTggMDAw
-MDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAgMDAwMDAwMDAKICAgIFsgIDIwNy4wNjY3MzddIGJmZTA6
-IDAwNDlmZmIwIDdlZTEzZDU4IDAwNDhhODRiIDc2ZjI0NWE2CiAgICBbICAyMDcuMDcxNzk5XSBD
-b2RlOiBlYmZmZmZhOCBlM2EwMDAwMCBlOGJkODAxMCBlOTJkNDAxMCAoZTU5MDQwMDQpCiAgICBb
-ICAyMDcuMDc4MDIxXSAtLS1bIGVuZCB0cmFjZSBiZTQ3NDI0ZTNmZDQ2ZTlmIF0tLS0KICAgIFsg
-IDIwNy4wODI2NDddIEtlcm5lbCBwYW5pYyAtIG5vdCBzeW5jaW5nOiBGYXRhbCBleGNlcHRpb24K
-ICAgIFsgIDIwNy4wODc4OTRdIC0tLVsgZW5kIEtlcm5lbCBwYW5pYyAtIG5vdCBzeW5jaW5nOiBG
-YXRhbCBleGNlcHRpb24gXS0tLQoKICAgIGMpIHRoZSBlcnJvciBwYXRoIGluIGNvbWJpbmF0aW9u
-IHdpdGggZHJpdmVyIHJlbW92YWwgY2F1c2VzCiAgICAgICBpbWJhbGFuY2VkIGNhbGxzIHRvIHRo
-ZSBjbGtfKigpIGFuZCBwbV8oKSogQVBJcwoKYSkgaGFwcGVucyBiZWNhdXNlIHRoZSBvcmlnaW5h
-bCBpbnRlbmRlZCByZXR1cm4gdmFsdWUgaXMKICAgb3ZlcndyaXR0ZW4gKHdpdGggMCkgYnkgdGhl
-IHJldHVybiBjb2RlIG9mCiAgIHJlZ3VsYXRvcl9kaXNhYmxlKCkgaW4gY2lfaGRyY19pbXhfcHJv
-YmUoKSdzIGVycm9yIHBhdGgKYikgaGFwcGVucyBiZWNhdXNlIGNpX3BkZXYgaXMgLUVQUk9CRV9E
-RUZFUiwgd2hpY2ggY2F1c2VzCiAgIGNpX2hkcmNfcmVtb3ZlX2RldmljZSgpIHRvIE9PUFMKCkZp
-eCBhKSBieSBiZWluZyBtb3JlIGNhcmVmdWwgaW4gY2lfaGRyY19pbXhfcHJvYmUoKSdzIGVycm9y
-CnBhdGggYW5kIG5vdCBvdmVyd3JpdGluZyB0aGUgcmVhbCBlcnJvciBjb2RlCgpGaXggYikgYnkg
-Y2FsbGluZyB0aGUgcmVzcGVjdGl2ZSBjbGVhbnVwIGZ1bmN0aW9ucyBkdXJpbmcKcmVtb3ZlIG9u
-bHkgd2hlbiBuZWVkZWQgKHdoZW4gY2lfcGRldiAhPSBOVUxMLCBpLmUuIHdoZW4KZXZlcnl0aGlu
-ZyB3YXMgaW5pdGlhbGlzZWQgY29ycmVjdGx5KS4gVGhpcyBhbHNvIGhhcyB0aGUKc2lkZSBlZmZl
-Y3Qgb2Ygbm90IGNhdXNpbmcgaW1iYWxhbmNlZCBjbGtfKigpIGFuZCBwbV8qKCkKQVBJIGNhbGxz
-IGFzIHBhcnQgb2YgdGhlIGVycm9yIGNvZGUgcGF0aC4KCkZpeGVzOiA3YzhlODkwOTQxN2UgKCJ1
-c2I6IGNoaXBpZGVhOiBpbXg6IGFkZCBIU0lDIHN1cHBvcnQiKQpTaWduZWQtb2ZmLWJ5OiBBbmRy
-w6kgRHJhc3ppayA8Z2l0QGFuZHJlZC5uZXQ+CkNjOiBzdGFibGUgPHN0YWJsZUB2Z2VyLmtlcm5l
-bC5vcmc+CkNDOiBQZXRlciBDaGVuIDxQZXRlci5DaGVuQG54cC5jb20+CkNDOiBHcmVnIEtyb2Fo
-LUhhcnRtYW4gPGdyZWdraEBsaW51eGZvdW5kYXRpb24ub3JnPgpDQzogU2hhd24gR3VvIDxzaGF3
-bmd1b0BrZXJuZWwub3JnPgpDQzogU2FzY2hhIEhhdWVyIDxzLmhhdWVyQHBlbmd1dHJvbml4LmRl
-PgpDQzogUGVuZ3V0cm9uaXggS2VybmVsIFRlYW0gPGtlcm5lbEBwZW5ndXRyb25peC5kZT4KQ0M6
-IEZhYmlvIEVzdGV2YW0gPGZlc3RldmFtQGdtYWlsLmNvbT4KQ0M6IE5YUCBMaW51eCBUZWFtIDxs
-aW51eC1pbXhAbnhwLmNvbT4KQ0M6IGxpbnV4LXVzYkB2Z2VyLmtlcm5lbC5vcmcKQ0M6IGxpbnV4
-LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpDQzogbGludXgta2VybmVsQHZnZXIua2Vy
-bmVsLm9yZwpMaW5rOiBodHRwczovL2xvcmUua2VybmVsLm9yZy9yLzIwMTkwODEwMTUwNzU4LjE3
-Njk0LTEtZ2l0QGFuZHJlZC5uZXQKU2lnbmVkLW9mZi1ieTogR3JlZyBLcm9haC1IYXJ0bWFuIDxn
-cmVna2hAbGludXhmb3VuZGF0aW9uLm9yZz4KLS0tCiBkcml2ZXJzL3VzYi9jaGlwaWRlYS9jaV9o
-ZHJjX2lteC5jIHwgMTkgKysrKysrKysrKysrLS0tLS0tLQogMSBmaWxlIGNoYW5nZWQsIDEyIGlu
-c2VydGlvbnMoKyksIDcgZGVsZXRpb25zKC0pCgpkaWZmIC0tZ2l0IGEvZHJpdmVycy91c2IvY2hp
-cGlkZWEvY2lfaGRyY19pbXguYyBiL2RyaXZlcnMvdXNiL2NoaXBpZGVhL2NpX2hkcmNfaW14LmMK
-aW5kZXggYTc2NzA4NTAxMjM2ZC4uNWZhYWU5NjczNWU2MiAxMDA2NDQKLS0tIGEvZHJpdmVycy91
-c2IvY2hpcGlkZWEvY2lfaGRyY19pbXguYworKysgYi9kcml2ZXJzL3VzYi9jaGlwaWRlYS9jaV9o
-ZHJjX2lteC5jCkBAIC00NTMsOSArNDUzLDExIEBAIGVycl9jbGs6CiAJaW14X2Rpc2FibGVfdW5w
-cmVwYXJlX2Nsa3MoZGV2KTsKIGRpc2FibGVfaHNpY19yZWd1bGF0b3I6CiAJaWYgKGRhdGEtPmhz
-aWNfcGFkX3JlZ3VsYXRvcikKLQkJcmV0ID0gcmVndWxhdG9yX2Rpc2FibGUoZGF0YS0+aHNpY19w
-YWRfcmVndWxhdG9yKTsKKwkJLyogZG9uJ3Qgb3ZlcndyaXRlIG9yaWdpbmFsIHJldCAoY2YuIEVQ
-Uk9CRV9ERUZFUikgKi8KKwkJcmVndWxhdG9yX2Rpc2FibGUoZGF0YS0+aHNpY19wYWRfcmVndWxh
-dG9yKTsKIAlpZiAocGRhdGEuZmxhZ3MgJiBDSV9IRFJDX1BNUU9TKQogCQlwbV9xb3NfcmVtb3Zl
-X3JlcXVlc3QoJmRhdGEtPnBtX3Fvc19yZXEpOworCWRhdGEtPmNpX3BkZXYgPSBOVUxMOwogCXJl
-dHVybiByZXQ7CiB9CiAKQEAgLTQ2OCwxNCArNDcwLDE3IEBAIHN0YXRpYyBpbnQgY2lfaGRyY19p
-bXhfcmVtb3ZlKHN0cnVjdCBwbGF0Zm9ybV9kZXZpY2UgKnBkZXYpCiAJCXBtX3J1bnRpbWVfZGlz
-YWJsZSgmcGRldi0+ZGV2KTsKIAkJcG1fcnVudGltZV9wdXRfbm9pZGxlKCZwZGV2LT5kZXYpOwog
-CX0KLQljaV9oZHJjX3JlbW92ZV9kZXZpY2UoZGF0YS0+Y2lfcGRldik7CisJaWYgKGRhdGEtPmNp
-X3BkZXYpCisJCWNpX2hkcmNfcmVtb3ZlX2RldmljZShkYXRhLT5jaV9wZGV2KTsKIAlpZiAoZGF0
-YS0+b3ZlcnJpZGVfcGh5X2NvbnRyb2wpCiAJCXVzYl9waHlfc2h1dGRvd24oZGF0YS0+cGh5KTsK
-LQlpbXhfZGlzYWJsZV91bnByZXBhcmVfY2xrcygmcGRldi0+ZGV2KTsKLQlpZiAoZGF0YS0+cGxh
-dF9kYXRhLT5mbGFncyAmIENJX0hEUkNfUE1RT1MpCi0JCXBtX3Fvc19yZW1vdmVfcmVxdWVzdCgm
-ZGF0YS0+cG1fcW9zX3JlcSk7Ci0JaWYgKGRhdGEtPmhzaWNfcGFkX3JlZ3VsYXRvcikKLQkJcmVn
-dWxhdG9yX2Rpc2FibGUoZGF0YS0+aHNpY19wYWRfcmVndWxhdG9yKTsKKwlpZiAoZGF0YS0+Y2lf
-cGRldikgeworCQlpbXhfZGlzYWJsZV91bnByZXBhcmVfY2xrcygmcGRldi0+ZGV2KTsKKwkJaWYg
-KGRhdGEtPnBsYXRfZGF0YS0+ZmxhZ3MgJiBDSV9IRFJDX1BNUU9TKQorCQkJcG1fcW9zX3JlbW92
-ZV9yZXF1ZXN0KCZkYXRhLT5wbV9xb3NfcmVxKTsKKwkJaWYgKGRhdGEtPmhzaWNfcGFkX3JlZ3Vs
-YXRvcikKKwkJCXJlZ3VsYXRvcl9kaXNhYmxlKGRhdGEtPmhzaWNfcGFkX3JlZ3VsYXRvcik7CisJ
-fQogCiAJcmV0dXJuIDA7CiB9Ci0tIAoyLjIwLjEKCgoKCl9fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
-bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
-Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+End of conversion may be handled by using IRQ or DMA. There may be a
+race when two conversions complete at the same time on several ADCs.
+EOC can be read as 'set' for several ADCs, with:
+- an ADC configured to use IRQs. EOCIE bit is set. The handler is normally
+  called in this case.
+- an ADC configured to use DMA. EOCIE bit isn't set. EOC triggers the DMA
+  request instead. It's then automatically cleared by DMA read. But the
+  handler gets called due to status bit is temporarily set (IRQ triggered
+  by the other ADC).
+So both EOC status bit in CSR and EOCIE control bit must be checked
+before invoking the interrupt handler (e.g. call ISR only for
+IRQ-enabled ADCs).
+
+Fixes: 2763ea0585c9 ("iio: adc: stm32: add optional dma support")
+
+Signed-off-by: Fabrice Gasnier <fabrice.gasnier@st.com>
+---
+ drivers/iio/adc/stm32-adc-core.c | 43 +++++++++++++++++++++++++++++++++++++---
+ drivers/iio/adc/stm32-adc-core.h | 13 ++++++++++++
+ drivers/iio/adc/stm32-adc.c      |  6 ------
+ 3 files changed, 53 insertions(+), 9 deletions(-)
+
+diff --git a/drivers/iio/adc/stm32-adc-core.c b/drivers/iio/adc/stm32-adc-core.c
+index 9b85fef..7297396 100644
+--- a/drivers/iio/adc/stm32-adc-core.c
++++ b/drivers/iio/adc/stm32-adc-core.c
+@@ -71,6 +71,8 @@
+  * @eoc1:	adc1 end of conversion flag in @csr
+  * @eoc2:	adc2 end of conversion flag in @csr
+  * @eoc3:	adc3 end of conversion flag in @csr
++ * @ier:	interrupt enable register offset for each adc
++ * @eocie_msk:	end of conversion interrupt enable mask in @ier
+  */
+ struct stm32_adc_common_regs {
+ 	u32 csr;
+@@ -78,6 +80,8 @@ struct stm32_adc_common_regs {
+ 	u32 eoc1_msk;
+ 	u32 eoc2_msk;
+ 	u32 eoc3_msk;
++	u32 ier;
++	u32 eocie_msk;
+ };
+ 
+ struct stm32_adc_priv;
+@@ -303,6 +307,8 @@ static const struct stm32_adc_common_regs stm32f4_adc_common_regs = {
+ 	.eoc1_msk = STM32F4_EOC1,
+ 	.eoc2_msk = STM32F4_EOC2,
+ 	.eoc3_msk = STM32F4_EOC3,
++	.ier = STM32F4_ADC_CR1,
++	.eocie_msk = STM32F4_EOCIE,
+ };
+ 
+ /* STM32H7 common registers definitions */
+@@ -311,8 +317,24 @@ static const struct stm32_adc_common_regs stm32h7_adc_common_regs = {
+ 	.ccr = STM32H7_ADC_CCR,
+ 	.eoc1_msk = STM32H7_EOC_MST,
+ 	.eoc2_msk = STM32H7_EOC_SLV,
++	.ier = STM32H7_ADC_IER,
++	.eocie_msk = STM32H7_EOCIE,
+ };
+ 
++static const unsigned int stm32_adc_offset[STM32_ADC_MAX_ADCS] = {
++	0, STM32_ADC_OFFSET, STM32_ADC_OFFSET * 2,
++};
++
++static unsigned int stm32_adc_eoc_enabled(struct stm32_adc_priv *priv,
++					  unsigned int adc)
++{
++	u32 ier, offset = stm32_adc_offset[adc];
++
++	ier = readl_relaxed(priv->common.base + offset + priv->cfg->regs->ier);
++
++	return ier & priv->cfg->regs->eocie_msk;
++}
++
+ /* ADC common interrupt for all instances */
+ static void stm32_adc_irq_handler(struct irq_desc *desc)
+ {
+@@ -323,13 +345,28 @@ static void stm32_adc_irq_handler(struct irq_desc *desc)
+ 	chained_irq_enter(chip, desc);
+ 	status = readl_relaxed(priv->common.base + priv->cfg->regs->csr);
+ 
+-	if (status & priv->cfg->regs->eoc1_msk)
++	/*
++	 * End of conversion may be handled by using IRQ or DMA. There may be a
++	 * race here when two conversions complete at the same time on several
++	 * ADCs. EOC may be read 'set' for several ADCs, with:
++	 * - an ADC configured to use DMA (EOC triggers the DMA request, and
++	 *   is then automatically cleared by DR read in hardware)
++	 * - an ADC configured to use IRQs (EOCIE bit is set. The handler must
++	 *   be called in this case)
++	 * So both EOC status bit in CSR and EOCIE control bit must be checked
++	 * before invoking the interrupt handler (e.g. call ISR only for
++	 * IRQ-enabled ADCs).
++	 */
++	if (status & priv->cfg->regs->eoc1_msk &&
++	    stm32_adc_eoc_enabled(priv, 0))
+ 		generic_handle_irq(irq_find_mapping(priv->domain, 0));
+ 
+-	if (status & priv->cfg->regs->eoc2_msk)
++	if (status & priv->cfg->regs->eoc2_msk &&
++	    stm32_adc_eoc_enabled(priv, 1))
+ 		generic_handle_irq(irq_find_mapping(priv->domain, 1));
+ 
+-	if (status & priv->cfg->regs->eoc3_msk)
++	if (status & priv->cfg->regs->eoc3_msk &&
++	    stm32_adc_eoc_enabled(priv, 2))
+ 		generic_handle_irq(irq_find_mapping(priv->domain, 2));
+ 
+ 	chained_irq_exit(chip, desc);
+diff --git a/drivers/iio/adc/stm32-adc-core.h b/drivers/iio/adc/stm32-adc-core.h
+index 8af507b..8dc936b 100644
+--- a/drivers/iio/adc/stm32-adc-core.h
++++ b/drivers/iio/adc/stm32-adc-core.h
+@@ -25,8 +25,21 @@
+  * --------------------------------------------------------
+  */
+ #define STM32_ADC_MAX_ADCS		3
++#define STM32_ADC_OFFSET		0x100
+ #define STM32_ADCX_COMN_OFFSET		0x300
+ 
++/* STM32F4 - registers for each ADC instance */
++#define STM32F4_ADC_CR1			0x04
++
++/* STM32F4_ADC_CR1 - bit fields */
++#define STM32F4_EOCIE			BIT(5)
++
++/* STM32H7 - registers for each instance */
++#define STM32H7_ADC_IER			0x04
++
++/* STM32H7_ADC_IER - bit fields */
++#define STM32H7_EOCIE			BIT(2)
++
+ /**
+  * struct stm32_adc_common - stm32 ADC driver common data (for all instances)
+  * @base:		control registers base cpu addr
+diff --git a/drivers/iio/adc/stm32-adc.c b/drivers/iio/adc/stm32-adc.c
+index 6a7dd08..3c9f456 100644
+--- a/drivers/iio/adc/stm32-adc.c
++++ b/drivers/iio/adc/stm32-adc.c
+@@ -30,7 +30,6 @@
+ 
+ /* STM32F4 - Registers for each ADC instance */
+ #define STM32F4_ADC_SR			0x00
+-#define STM32F4_ADC_CR1			0x04
+ #define STM32F4_ADC_CR2			0x08
+ #define STM32F4_ADC_SMPR1		0x0C
+ #define STM32F4_ADC_SMPR2		0x10
+@@ -54,7 +53,6 @@
+ #define STM32F4_RES_SHIFT		24
+ #define STM32F4_RES_MASK		GENMASK(25, 24)
+ #define STM32F4_SCAN			BIT(8)
+-#define STM32F4_EOCIE			BIT(5)
+ 
+ /* STM32F4_ADC_CR2 - bit fields */
+ #define STM32F4_SWSTART			BIT(30)
+@@ -69,7 +67,6 @@
+ 
+ /* STM32H7 - Registers for each ADC instance */
+ #define STM32H7_ADC_ISR			0x00
+-#define STM32H7_ADC_IER			0x04
+ #define STM32H7_ADC_CR			0x08
+ #define STM32H7_ADC_CFGR		0x0C
+ #define STM32H7_ADC_SMPR1		0x14
+@@ -89,9 +86,6 @@
+ #define STM32H7_EOC			BIT(2)
+ #define STM32H7_ADRDY			BIT(0)
+ 
+-/* STM32H7_ADC_IER - bit fields */
+-#define STM32H7_EOCIE			STM32H7_EOC
+-
+ /* STM32H7_ADC_CR - bit fields */
+ #define STM32H7_ADCAL			BIT(31)
+ #define STM32H7_ADCALDIF		BIT(30)
+-- 
+2.7.4
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
