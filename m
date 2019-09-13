@@ -2,81 +2,55 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E6F2BB225F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:40:10 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2203B226D
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 16:44:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:To:In-Reply-To:
-	References:Subject:From:Date:Message-ID:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=gOKpOXOmyKdz7rnp5XylbaZiv1seRqu9cnDCPp/DPbM=; b=UT0luiw36nMwKud7hY3tiPkyuS
-	fOWoRGRtH1xa7OuUmPQ9Ugsae+3dB2iQQtPVzvBaoF9e6xbPiwMHe7rkl4CYYnS7a07+lRwNa0GZa
-	EF/nuZGQd9HKDqyAAlQ1ebucnDVGDFiAI6C9liWjKxEEM9nwh246upKaXezmviuaOmBp0iPipdgyN
-	PA9srlcVtah1d1mL2tEPW/liRUKdB3dOV0StZ4Pm/Heq3bhx1ERUmol6wM/NDiKwX1GtTLdCYZRAc
-	qjs8th2Y/IaDemv9Tkmmr9oqN0Gc5hdb/fxJTpATVV/6aSPGDvYiIg7DcUVm1hoqjbHQnz2pGGMq/
-	1tEdTu7g==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=us5Ut5MR97bWb94sFOh/czKCJYSyP1D8cxTJvaF9Cj0=; b=hyAEDoP89axS/+Y4CnHVUCTPW
+	HfXzOyiox11TOTnftnz6qY9GwyFDcrPpgOxyB5lDY9Wjkq2XjUwsq6splGpZRrZIeb5qWPxFifShc
+	wjDvKG3LMsD7qYA5JQ+qYu4kQeP7xsmQGSfLxQhAxwkmj/EwxkdMmdTpM/YL2ioO9hGiPTcMUzV9Y
+	E9zlsB0OzaPC7W1Rn6DjJjdV8lGLhrdqlcz+vqDJTSa/eGvIOQksDaJvEz/Zxqrp3IpgXeJDUwjA+
+	5aFDlkh4cXza1MDLNa08LUNrtiDhNS8/72rp88xhliDJnoryODweYWuyPg6WL3qAwQY+qEsFhRHtz
+	j713IbpGA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8mjw-0004wy-M8; Fri, 13 Sep 2019 14:40:00 +0000
-Received: from mail-oi1-f193.google.com ([209.85.167.193])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8mgV-0002Zr-SF
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:36:29 +0000
-Received: by mail-oi1-f193.google.com with SMTP id v16so2775335oiv.13
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 07:36:27 -0700 (PDT)
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:message-id:date:from:subject:references
- :in-reply-to:cc:cc:to;
- bh=XF/J+3ctjtlo/NlmrKY+nZTXf6q7nI9Vp8O8/m5fFYw=;
- b=nTSrPecjPWIDmJMOMhU3wakKVwzC3pNYl/N8OS16si7SBv23EkQOQy/Te51VoQ62ZK
- rZDGmTigH9vXUxkERb+aU3uT9esNHa63hRtbG35zrM6o1PP4Y3INwVIU2MEHSG3S/L0i
- R6sEvrt3R9nASV5vPVM29snvxm/s/Wy4xskWxcTyhRTys5F6XcSb6+QuXwV1tip0hPeo
- eEI00VIpn6yEbMf0Ea1G7IyHz069D9+ir0bxXiYZuTV/HEWOWEx05ffkoCmyQv/rxD03
- 64JASIMeMa2erMfB5enBhTJUTXTqUGKHVx4mH152zy1bY47gG+loU7UEmRpWJBw5IvVo
- +fYg==
-X-Gm-Message-State: APjAAAUBxfN0Kqrqx+np/oLa9mdSmHqi+Gwvry70Nd8rdGpIEyMZ3uH/
- AG2Yfj88TKccKRrjwvZxxg==
-X-Google-Smtp-Source: APXvYqwebrpt6cNCRPnAVBk2egSEUvhDKhy/qsYCKODmPuxqc7VBU23iwhJZOOIBx5hQpU+pizh/yg==
-X-Received: by 2002:aca:53cf:: with SMTP id h198mr3477800oib.160.1568385386903; 
- Fri, 13 Sep 2019 07:36:26 -0700 (PDT)
-Received: from localhost (24-155-109-49.dyn.grandenetworks.net.
- [24.155.109.49])
- by smtp.gmail.com with ESMTPSA id l47sm9612669ota.56.2019.09.13.07.36.26
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Fri, 13 Sep 2019 07:36:26 -0700 (PDT)
-Message-ID: <5d7ba96a.1c69fb81.b5d1e.fd85@mx.google.com>
-Date: Fri, 13 Sep 2019 15:36:25 +0100
-From: Rob Herring <robh@kernel.org>
-Subject: Re: [PATCH] reset: uniphier-glue: Add Pro5 USB3 support
-References: <1568080527-1767-1-git-send-email-hayashi.kunihiko@socionext.com>
-In-Reply-To: <1568080527-1767-1-git-send-email-hayashi.kunihiko@socionext.com>
-To: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
+	id 1i8mo2-0007cH-Vu; Fri, 13 Sep 2019 14:44:14 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8mno-0007bo-7C
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 14:44:01 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id A350A1000;
+ Fri, 13 Sep 2019 07:43:59 -0700 (PDT)
+Received: from [10.1.197.57] (e110467-lin.cambridge.arm.com [10.1.197.57])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id B0EFA3F67D;
+ Fri, 13 Sep 2019 07:43:58 -0700 (PDT)
+Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
+To: Qian Cai <cai@lca.pw>, will@kernel.org, joro@8bytes.org
+References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
+ <1568385318.5576.146.camel@lca.pw>
+From: Robin Murphy <robin.murphy@arm.com>
+Message-ID: <e33fb57a-04de-1b97-2e8a-c51c17fea248@arm.com>
+Date: Fri, 13 Sep 2019 15:43:54 +0100
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.6.1
+MIME-Version: 1.0
+In-Reply-To: <1568385318.5576.146.camel@lca.pw>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_073627_982827_D069BF9D 
-X-CRM114-Status: GOOD (  10.16  )
-X-Spam-Score: 0.3 (/)
+X-CRM114-CacheID: sfid-20190913_074400_304421_A1EECAD6 
+X-CRM114-Status: GOOD (  16.62  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [209.85.167.193 listed in list.dnswl.org]
- 0.0 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
- mail domains are different
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (robherring2[at]gmail.com)
- -0.0 RCVD_IN_MSPIKE_H2      RBL: Average reputation (+2)
- [209.85.167.193 listed in wl.mailspike.net]
- 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
- in digit (robherring2[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
- EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -88,31 +62,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: , Mark Rutland <mark.rutland@arm.com>,
- Kunihiko Hayashi <hayashi.kunihiko@socionext.com>,
- Masami Hiramatsu <masami.hiramatsu@linaro.org>, devicetree@vger.kernel.org,
- linux-kernel@vger.kernel.org, Masahiro Yamada <yamada.masahiro@socionext.com>,
- Philipp Zabel <p.zabel@pengutronix.de>,
- Jassi Brar <jaswinder.singh@linaro.org>, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
-Content-Type: text/plain; charset="us-ascii"
+Cc: iommu@lists.linux-foundation.org, Douglas Anderson <dianders@chromium.org>,
+ linux-arm-kernel@lists.infradead.org
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, 10 Sep 2019 10:55:27 +0900, Kunihiko Hayashi wrote:
-> Pro5 SoC has same scheme of USB3 reset as Pro4, so the data for Pro5 is
-> equivalent to Pro4.
+On 13/09/2019 15:35, Qian Cai wrote:
+> On Fri, 2019-09-13 at 12:48 +0100, Robin Murphy wrote:
+>> Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
+>> for smoking out inadequate firmware, the failure mode is non-obvious
+>> and can be confusing for end users. Add some special-case reporting of
+>> Unidentified Stream Faults to help clarify this particular symptom.
+>>
+>> CC: Douglas Anderson <dianders@chromium.org>
+>> Signed-off-by: Robin Murphy <robin.murphy@arm.com>
+>> ---
+>>   drivers/iommu/arm-smmu.c | 5 +++++
+>>   drivers/iommu/arm-smmu.h | 2 ++
+>>   2 files changed, 7 insertions(+)
+>>
+>> diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
+>> index b7cf24402a94..76ac8c180695 100644
+>> --- a/drivers/iommu/arm-smmu.c
+>> +++ b/drivers/iommu/arm-smmu.c
+>> @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
+>>   	dev_err_ratelimited(smmu->dev,
+>>   		"\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
+>>   		gfsr, gfsynr0, gfsynr1, gfsynr2);
+>> +	if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
+>> +	    (gfsr & sGFSR_USF))
+>> +		dev_err_ratelimited(smmu->dev,
+>> +			"Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
+>> +			(u16)gfsynr1);
 > 
-> Signed-off-by: Kunihiko Hayashi <hayashi.kunihiko@socionext.com>
-> ---
->  Documentation/devicetree/bindings/reset/uniphier-reset.txt | 5 +++--
->  drivers/reset/reset-uniphier-glue.c                        | 4 ++++
->  2 files changed, 7 insertions(+), 2 deletions(-)
-> 
+> dev_err_once(), i.e., don't need to remind people to set "arm-
+> smmu.disable_bypass=0" multiple times.
 
-Reviewed-by: Rob Herring <robh@kernel.org>
+Indeed, but in many cases it then quickly gets buried by an unending 
+storm of repeated faults (not every console has capture and scrollback...)
 
+Given that it's a "this is why your machine is on fire" kind of message, 
+I figured that it's probably best to err on the side of visibility.
+
+Robin.
+
+>>   
+>>   	arm_smmu_gr0_write(smmu, ARM_SMMU_GR0_sGFSR, gfsr);
+>>   	return IRQ_HANDLED;
+>> diff --git a/drivers/iommu/arm-smmu.h b/drivers/iommu/arm-smmu.h
+>> index c9c13b5785f2..46f7e161e83e 100644
+>> --- a/drivers/iommu/arm-smmu.h
+>> +++ b/drivers/iommu/arm-smmu.h
+>> @@ -79,6 +79,8 @@
+>>   #define ID7_MINOR			GENMASK(3, 0)
+>>   
+>>   #define ARM_SMMU_GR0_sGFSR		0x48
+>> +#define sGFSR_USF			BIT(2)
+>> +
+>>   #define ARM_SMMU_GR0_sGFSYNR0		0x50
+>>   #define ARM_SMMU_GR0_sGFSYNR1		0x54
+>>   #define ARM_SMMU_GR0_sGFSYNR2		0x58
 
 _______________________________________________
 linux-arm-kernel mailing list
