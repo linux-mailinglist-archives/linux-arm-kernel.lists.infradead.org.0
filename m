@@ -2,93 +2,50 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6E1A9B1D3E
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:18:41 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3A92CB1DE8
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 14:56:27 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=tREgIwCcEvXoOzLKMv8aLZ7lDzDebzBhvo3hArOaopo=; b=o1YHoU4D0kyb6O
-	9Y0VfEm4Au9Kg/uE7sYlNlIq86ZSSt3lqHqaMeK1MX6l0VVNYWZGypnWNdw1F9o99rme237AFxqYn
-	pty1RaDpysVN2g5uH1iXBhRsCXVxgvXFIxNmEZw41bdPms5XOhFt+39rZHn17TWCyFw80Aa0ztO3c
-	RofgTvTEfrjNok5geh+Tcs7qcdAtOsE+SK0d2eo+OAe4BMBrIA2w0t2AnIbni7PkRPqyL/GNyYYQ5
-	DdRhvGptqedZRr8Bxfe7mdmOcGSnrsrL+xXmNwIfxbEQt+EWeeYYt37VnKBakUaL00kLJ4Mx7oy4y
-	p3Hrped22BdJn2nDhU9Q==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=uYlNTkHmMn8eIElzlO0bE+ntjHBC9ZxZALwBfWXaLUc=; b=e+S
+	43dBz4ojlpzJrbblVprkmGQEA32nzjWDW2JwYZS+OgwyjHDljhd23V8A5+BhfP+36Ga7R3NcfQy6c
+	inXhPLSpPyimHyoPfDa1nxODdsqFBcS9mKOlCZaaJWm7dS+p0mTqtF9o8yfeXRkGPAMxeZqw49qxs
+	mryk4/1twQEy2qNj2bZzGtw6kGhM6FA8snClcIJ7628io3R253qsv11jcL3FrRM/XMAJDetdNXcpC
+	ulnOvrVViSaPUOX6PJpMYjjcDgzkq7KkSRaU41rAX85mDEv9ZBSJMz+ccxpfblTW454MKORzL+mQl
+	Xkuivse43dO18GXGEiZ7qHHxNJ0A1fw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8kX7-0000UB-V6; Fri, 13 Sep 2019 12:18:38 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8kWu-0000Sh-4E
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:18:25 +0000
-Received: by mail-wm1-x344.google.com with SMTP id v17so2020964wml.4
- for <linux-arm-kernel@lists.infradead.org>;
- Fri, 13 Sep 2019 05:18:22 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=L2Cakw64Ur8nPCw1uUR/WlbNeQH+sAcuv7OY6j+C6MA=;
- b=YVvMeOhDewiCpmZozcwGl4ejAK+9WK/9Z+J7H9sDgMudKaYbPEB5ff4hPlFam6HtG7
- SKq47C2uL/08Gx8QHB0TYCtI4xqOneLcbwhi7VzlUUQCw9oJghWbJ7ZIRh2hIMMlfcg5
- rPmMDfxt7UqaefTshjYFNJZUpgl24TlzeLDsgNgpmAzRNbDcsOpR3SfGmDMGGS6TS7xT
- DI9zuLWyL9aADGPPthbbWgyZpRLLDUjYk7Ey8y8iti1YFh7AcMNEFGQbfEnGi3oZ4azQ
- /iJ472WSAhndN+55EK1kMnAOEvwD9t767WUbB0OSWv7n2c81rPeN1nPh0hStPXtJOugn
- M3tA==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=L2Cakw64Ur8nPCw1uUR/WlbNeQH+sAcuv7OY6j+C6MA=;
- b=MdiZk3nbv5NCbH2cIakLuDilLIErOhjC/vW1HIYRDOWk/AEBPzw3yN1EPHV/XTgcIY
- odnNyZCTwpU/hvIFVWD6vGtxlflgljflZ+vQGk5gzAgEi70uaGVY54iYVLx9Qz6L5qTC
- sN55EkpMWLj7RLiG1/hMhzi8J1TNVYtIbUsmBCtCIxF84IFeiHDzDj221kE75gumX5cq
- 1Rx5FtzvcwayBOJ9XlR9y7HrELSxof5WB52cyhp64kkAinFskODmM2+bvm8nLGB365Po
- 2e81nz8M7VHpoeua++mfl8tvWrCRKnUmH52MzpIYTbjlPp6rDEtbXQLAtyfswouNT6qn
- DPyA==
-X-Gm-Message-State: APjAAAWyw8tA6I88UVwe1a3bgsjCges6CWOylqcddxD5bYmC3eAtVffh
- 8lp9VDk6/INAACbHNH/ZxaA=
-X-Google-Smtp-Source: APXvYqzCo3gG3+eVr790S6I7T0wbEvLoOdwHeYlzsyGjVmOJug5XAhqAn64Ep5+tD9TX3lLN5L+S1g==
-X-Received: by 2002:a1c:2302:: with SMTP id j2mr3071322wmj.174.1568377101707; 
- Fri, 13 Sep 2019 05:18:21 -0700 (PDT)
-Received: from localhost ([193.47.161.132])
- by smtp.gmail.com with ESMTPSA id a11sm2283446wmj.21.2019.09.13.05.18.20
- (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
- Fri, 13 Sep 2019 05:18:20 -0700 (PDT)
-Date: Fri, 13 Sep 2019 14:16:08 +0200
-From: Oliver Graute <oliver.graute@gmail.com>
-To: Dong Aisheng <aisheng.dong@nxp.com>
-Subject: Re: [PATCH V3 00/15] arm64: dts: imx8: architecture improvement and
- adding imx8qm support
-Message-ID: <20190913121608.GD16292@optiplex>
-References: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
-MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <1568302252-28066-1-git-send-email-aisheng.dong@nxp.com>
-User-Agent: Mutt/1.9.4 (2018-02-28)
+	id 1i8l7Y-00079q-JE; Fri, 13 Sep 2019 12:56:17 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8l7E-00079S-Kv
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 12:55:58 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id C241C28;
+ Fri, 13 Sep 2019 05:55:54 -0700 (PDT)
+Received: from lakrids.cambridge.arm.com (usa-sjc-imap-foss1.foss.arm.com
+ [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 1A5593F67D;
+ Fri, 13 Sep 2019 05:55:53 -0700 (PDT)
+From: Mark Rutland <mark.rutland@arm.com>
+To: linux-arm-kernel@lists.infradead.org
+Subject: [PATCH] arm64: simplify syscall wrapper ifdeffery
+Date: Fri, 13 Sep 2019 13:55:50 +0100
+Message-Id: <20190913125550.7053-1-mark.rutland@arm.com>
+X-Mailer: git-send-email 2.11.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_051824_193828_17904CD3 
-X-CRM114-Status: GOOD (  12.51  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190913_055556_730628_95EB9071 
+X-CRM114-Status: GOOD (  10.04  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (oliver.graute[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -100,59 +57,81 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, dongas86@gmail.com, catalin.marinas@arm.com,
- will.deacon@arm.com, robh+dt@kernel.org, linux-imx@nxp.com,
- kernel@pengutronix.de, fabio.estevam@nxp.com, shawnguo@kernel.org,
- linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On 12/09/19, Dong Aisheng wrote:
-> IMX SCU based platforms (e.g. MX8QM/MX8QXP) are comprised of a number of SS
-> (Subsystems), those SS may be shared between different SoCs while most of them
-> can be reused like Devices Resources, Clocks, Power domains and etc.
-> 
-> This patch series aims to improve the MX8 architecture to comply with the HW
-> design to save a lot of duplicated codes and benefits us a better
-> maintainability and scalability in the future.
-> 
-> This patch series depends on another clk new binding series:
-> https://patchwork.kernel.org/cover/11046287/
+Back in commit:
 
-Thx for your update of this patch series. I'am running into the issue
-that my linux next-20190904 unfortunately is not booting with it on my
-imx8QM board. Kernel is just stuck during boot see below.
+  4378a7d4be30ec69 ("arm64: implement syscall wrappers")
 
-I applied your v5 of your clock binding patches series and applied this
-series in v3. Your former two patch series worked well with next-20190716.
+... I implemented the arm64 syscall wrapper glue following the approach
+taken on x86. While doing so, I also copied across some ifdeffery that
+isn't necessary on arm64.
 
-The last messages from the kernel are:
+On arm64 we don't share any of the native wrappers with compat tasks,
+and unlike x86 we don't have alternative implementations of
+SYSCALL_DEFINE0(), COND_SYSCALL(), or SYS_NI() defined when AArch32
+compat support is enabled.
 
-[    1.019208] imx-scu scu: mbox_request_channel_byname() could not locate channel named "gip3"
-[    1.027316] imx-scu scu: failed to request mbox chan gip3, ret -22
-[    1.033480] imx-scu scu: failed to enable general irq channel: -22
-[    1.039646] imx-scu scu: NXP i.MX SCU Initialized
-[    1.047414] a35_clk: failed to get clock rate -22
-[    1.058682]  lcd0-pwm0: failed to power up resource 188 ret -22
-[    1.064314] imx-scu-clk: probe of pwm_clk failed with error -22
-[    1.070538]  lcd0: failed to power up resource 187 ret -22
-[    1.075690] imx-scu-clk: probe of lcd_clk failed with error -22
-[    1.085965] mipi_csi0_core_clk: failed to attached the power domain -2
-[    1.092359] mipi_csi0_esc_clk: failed to attached the power domain -2
-[    1.098777] mipi_csi0_i2c0_clk: failed to attached the power domain -2
-[    1.105278] mipi_csi0_pwm0_clk: failed to attached the power domain -2
-[    1.115744] imx8qm-pinctrl scu:pinctrl: initialized IMX pinctrl driver
-[    1.123923] gpio-mxc 5d080000.gpio: IRQ index 1 not found
-[    1.130276] gpio-mxc 5d090000.gpio: IRQ index 1 not found
+Thus we don't need to prevent multiple definitions of these macros, and
+can remove the #ifndef ... #endif guards protecting them. If any of
+these had been previously defined elsewhere, syscalls are unlikely to
+work correctly, and we'd want the compiler to warn about the multiple
+definitions.
 
-I see similar messages also with your older working patches, only the
-last two lines are new errors.
+Signed-off-by: Mark Rutland <mark.rutland@arm.com>
+Cc: Catalin Marinas <catalin.marinas@arm.com>
+Cc: Will Deacon <will@kernel.org>
+---
+ arch/arm64/include/asm/syscall_wrapper.h | 6 ------
+ 1 file changed, 6 deletions(-)
 
-Best regards,
+Hi Will, Catalin,
 
-Oliver
+This is based on Sami's patch [1] implementing a type-safe COND_SYSCALL on
+arm64. I've given both a spin atop of today's arm64 for-next/core branch.
+
+Mark.
+
+[1] https://lore.kernel.org/r/20190910224044.100388-1-samitolvanen@google.com
+
+diff --git a/arch/arm64/include/asm/syscall_wrapper.h b/arch/arm64/include/asm/syscall_wrapper.h
+index 06d880b3526c..b383b4802a7b 100644
+--- a/arch/arm64/include/asm/syscall_wrapper.h
++++ b/arch/arm64/include/asm/syscall_wrapper.h
+@@ -66,24 +66,18 @@ struct pt_regs;
+ 	}									\
+ 	static inline long __do_sys##name(__MAP(x,__SC_DECL,__VA_ARGS__))
+ 
+-#ifndef SYSCALL_DEFINE0
+ #define SYSCALL_DEFINE0(sname)							\
+ 	SYSCALL_METADATA(_##sname, 0);						\
+ 	asmlinkage long __arm64_sys_##sname(const struct pt_regs *__unused);	\
+ 	ALLOW_ERROR_INJECTION(__arm64_sys_##sname, ERRNO);			\
+ 	asmlinkage long __arm64_sys_##sname(const struct pt_regs *__unused)
+-#endif
+ 
+-#ifndef COND_SYSCALL
+ #define COND_SYSCALL(name)							\
+ 	asmlinkage long __weak __arm64_sys_##name(const struct pt_regs *regs)	\
+ 	{									\
+ 		return sys_ni_syscall();					\
+ 	}
+-#endif
+ 
+-#ifndef SYS_NI
+ #define SYS_NI(name) SYSCALL_ALIAS(__arm64_sys_##name, sys_ni_posix_timers);
+-#endif
+ 
+ #endif /* __ASM_SYSCALL_WRAPPER_H */
+-- 
+2.11.0
+
 
 _______________________________________________
 linux-arm-kernel mailing list
