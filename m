@@ -2,54 +2,80 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CF192B252F
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 20:24:25 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2C620B2535
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 20:28:14 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=yC1rEYIfUBKGOxXkve+zcbmjz+PAGcfuQ/YX238WGeg=; b=uUICvAeQNxXAXY5BRwaxHKSn1T
-	MOspfa3a3n+1rqidn7kaVQO8GLcuWTxT1TIFlpp2SVJGz75jbpVnJ9fsp+0JLrdbaDq/MKbpekFbD
-	0nBcSj30viWvC0nhF+tZ88PaKF9x1HR5/wstDK8MqPYzfd09RYefwHQJuErdZyiNxC4gANL3y9rZY
-	IC7h+mHOMUrYyKR3FZMbL9xq7oGer3AviDGV/sWmpji13eNP16LBRP4hFUNbY9jAzAZf8S0xcB9HM
-	sVY5u9TW7aEHIXAIifY4nHBGSooEdByJX38RNM+c55kL8iD0Rm6mdINKUCtuXlU9bGFxpSPQrNify
-	GalWGTBA==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=nXBoR8ZfMEoDoFz+J8/BWvrdeXjv+QEK6nDDrc2nm0Y=; b=iXgZEWxoHOgpFz
+	bCGK5ltNzQjmxF/MpjadqsjwUQia9bVYnTmSu6Rflw177Fad7UZDaeTZXdNFihrajBaikflWfpGF7
+	VJAIPNKlWILj5mvsnil7GNLQck5TS1OXMNtWiphmMDY6OTaLltKxelKG1HdczZ7HO1pU2T0wOZaRO
+	8KdcPgtjXsv2ypvDMpKPIPApQ/5regdgE2GetlitHr5lyhyo8DWFVhfVpj2RE8y4ltOHNO2ReV4im
+	BLP+2CfZcTO111LA64FTPSda0x0TI+8NTw5HVGwiHJLUUeqVNly1Xh4Y1N/odWRoGukFvUE5wkT+3
+	lHuwYegrev6CNSf6yagw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8qF6-00081N-AH; Fri, 13 Sep 2019 18:24:24 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8qC5-0005QS-HY
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 18:21:18 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 455AC28;
- Fri, 13 Sep 2019 11:21:17 -0700 (PDT)
-Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
- [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id CBF3B3F71F;
- Fri, 13 Sep 2019 11:21:14 -0700 (PDT)
-From: Cristian Marussi <cristian.marussi@arm.com>
-To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v2 12/12] sparc64: smp: use generic SMP stop common code
-Date: Fri, 13 Sep 2019 19:19:53 +0100
-Message-Id: <20190913181953.45748-13-cristian.marussi@arm.com>
-X-Mailer: git-send-email 2.17.1
-In-Reply-To: <20190913181953.45748-1-cristian.marussi@arm.com>
+	id 1i8qIf-0001M6-PU; Fri, 13 Sep 2019 18:28:05 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i8qIS-0001LP-VI
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 18:27:54 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=rUHXVclZXHF+9qsNmXDNmKFf2GeFqSzWSuwkR1JCZ7I=; b=0S6NAFBooMrp44Rx9duwP6fvW
+ ILLr/ywXbzUq3/H0KKZY+AqA4DUuQJVWiCgncsKYkGZgmaKmhl3hAje8C0yv692H5cWHsaRPU//Xe
+ 8ZF8H40qaY0yT3zp728l67JIs57A3yiPMqE39lGW7BL2dJbxW80slK+E4wJ97WAv4dSaB4colLC7d
+ h1EeWjD4ELQhsppY//bfGtxRj8y3zTeDtNlfXwk3NenC56szHq4IuYr3ioB96km+6Ygsmi3Avx18T
+ 4/Vwg+nNM/lILz0tmPnzrP+JCUFABB/id+2OJv4D8DoOSFrv0AhgHtkuxKHbjwyhVjG0o7fAfKhaf
+ G6YGHr6jg==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:39110)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i8qHu-0004DJ-Po; Fri, 13 Sep 2019 19:27:18 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i8qHp-00064I-Jr; Fri, 13 Sep 2019 19:27:13 +0100
+Date: Fri, 13 Sep 2019 19:27:13 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [RFC PATCH v2 00/12] Unify SMP stop generic logic to common code
+Message-ID: <20190913182713.GB13294@shell.armlinux.org.uk>
 References: <20190913181953.45748-1-cristian.marussi@arm.com>
+MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <20190913181953.45748-1-cristian.marussi@arm.com>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_112117_801070_DF20ED65 
-X-CRM114-Status: UNSURE (   9.82  )
+X-CRM114-CacheID: sfid-20190913_112753_010973_0F38B3F4 
+X-CRM114-Status: UNSURE (   8.10  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,80 +90,33 @@ List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>,
 Cc: linux-arch@vger.kernel.org, mark.rutland@arm.com,
  sparclinux@vger.kernel.org, dzickus@redhat.com, ehabkost@redhat.com,
  peterz@infradead.org, catalin.marinas@arm.com, x86@kernel.org,
- linux@armlinux.org.uk, davem@davemloft.net, hch@infradead.org,
+ linux-kernel@vger.kernel.org, davem@davemloft.net, hch@infradead.org,
  takahiro.akashi@linaro.org, mingo@redhat.com, james.morse@arm.com,
  hidehiro.kawai.ez@hitachi.com, tglx@linutronix.de, will@kernel.org,
  dave.martin@arm.com, linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make sparc64 use the generic SMP-stop logic provided by common code
-unified smp_send_stop() function.
+On Fri, Sep 13, 2019 at 07:19:41PM +0100, Cristian Marussi wrote:
+> Tested as follows:
+> 
+> - arm:
+> 1. boot
 
-Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
----
- arch/sparc/Kconfig         |  1 +
- arch/sparc/kernel/smp_64.c | 15 ++++++++-------
- 2 files changed, 9 insertions(+), 7 deletions(-)
+So this basically means the code paths you're touching are untested on
+ARM... given that, and the variety of systems we have out there, why
+should the patches touching ARM be taken?
 
-diff --git a/arch/sparc/Kconfig b/arch/sparc/Kconfig
-index 7926a2e11bdc..67d8bb741378 100644
---- a/arch/sparc/Kconfig
-+++ b/arch/sparc/Kconfig
-@@ -95,6 +95,7 @@ config SPARC64
- 	select ARCH_HAS_PTE_SPECIAL
- 	select PCI_DOMAINS if PCI
- 	select ARCH_HAS_GIGANTIC_PAGE
-+	select ARCH_USE_COMMON_SMP_STOP
- 
- config ARCH_DEFCONFIG
- 	string
-diff --git a/arch/sparc/kernel/smp_64.c b/arch/sparc/kernel/smp_64.c
-index a8275fea4b70..759e5fd867c5 100644
---- a/arch/sparc/kernel/smp_64.c
-+++ b/arch/sparc/kernel/smp_64.c
-@@ -1537,7 +1537,12 @@ static void stop_this_cpu(void *dummy)
- 	prom_stopself();
- }
- 
--void smp_send_stop(void)
-+void arch_smp_cpus_stop_complete(void)
-+{
-+	smp_call_function(stop_this_cpu, NULL, 0);
-+}
-+
-+void arch_smp_stop_call(cpumask_t *cpus, unsigned int __unused)
- {
- 	int cpu;
- 
-@@ -1546,10 +1551,7 @@ void smp_send_stop(void)
- #ifdef CONFIG_SERIAL_SUNHV
- 		sunhv_migrate_hvcons_irq(this_cpu);
- #endif
--		for_each_online_cpu(cpu) {
--			if (cpu == this_cpu)
--				continue;
--
-+		for_each_cpu(cpu, cpus) {
- 			set_cpu_online(cpu, false);
- #ifdef CONFIG_SUN_LDOMS
- 			if (ldom_domaining_enabled) {
-@@ -1562,8 +1564,7 @@ void smp_send_stop(void)
- #endif
- 				prom_stopcpu_cpuid(cpu);
- 		}
--	} else
--		smp_call_function(stop_this_cpu, NULL, 0);
-+	}
- }
- 
- /**
+Given that you're an ARM Ltd employee, I'm sure you can find 32-bit
+systems to test - or have ARM Ltd got rid of everything that isn't
+64-bit? ;)
+
 -- 
-2.17.1
-
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
