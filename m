@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id B3D50B2528
-	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 20:23:26 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 23CC2B2529
+	for <lists+linux-arm-kernel@lfdr.de>; Fri, 13 Sep 2019 20:23:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,37 +11,37 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=SSRh2j3P55uDwTANfuj7S72jzD+GJVs1sJrs8ukhb4Q=; b=U9KihjBZm9DQ12L2WLmL2bxlhm
-	57gWmzYsS73yhTvGc2aWr23/mPYvP7Z927bldU4E3Ie1H4SgcvqhY90aXTvQNs7EWrvtPnAzKQbZ7
-	h8LA809cmhI2Q/g/dcCIthFU7+IapvC7DZaNufL5R355DRXEF+2VkLHf6gNGbzZ2ydDOBsJ+g/Ph9
-	3Af09iS2bEW3Nt6hjQVChd+DnlfFgoZPPFjIbGfMikPFP+NvO1PtEsBSNdfCb+rNFlonoosjrGqA8
-	5xG6xrobb6jUW/LBVSBPpq7jp6PrOrSKbBVSPpfyXWVx2Z6yxqelq5F7YxRUlprVh72T7ZX0iLRqq
-	YE9H93Qw==;
+	bh=QoFFKFyRSDJKG21bJUCBrfEYtWbA8387YO2olz6KSWk=; b=XLr+7pEIJODt5vrIzyAIe1OOPd
+	nBS11HeXk9JVPtgCENfAMqF7cXAJILjHmv+1c6Yw4vr4lVThhIJ65nK9nGoJtN3p8xHUZQsi0mbJw
+	AL4o+t1iyzoJDWuMG2iSePtNbWO82JY/XJRsZ+B91Sp5rAIEyla1fxLobAAGAVyjDuJuVWRg1Xr1E
+	yW3t32LOwbwRv14Njtn7pqx864ipULASykCAH/4FmXwnFP+Nq/d7bI0EZZq8akEzD5fbA+p0eLPTo
+	129i5yItQfns2/IxiK6pSgfaD7WjUBYTrfdjjnBf7YHeOsiOlLgzSkd8BQBuw2lFyAjva9CGN3Ov+
+	H/Eb7QIg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i8qE2-00071J-Qf; Fri, 13 Sep 2019 18:23:18 +0000
+	id 1i8qEI-0007FY-F1; Fri, 13 Sep 2019 18:23:34 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i8qBu-0005Ek-UG
- for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 18:21:08 +0000
+ id 1i8qBx-0005Ib-VW
+ for linux-arm-kernel@lists.infradead.org; Fri, 13 Sep 2019 18:21:12 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 935531570;
- Fri, 13 Sep 2019 11:21:06 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 430AC28;
+ Fri, 13 Sep 2019 11:21:09 -0700 (PDT)
 Received: from e120937-lin.cambridge.arm.com (e120937-lin.cambridge.arm.com
  [10.1.197.50])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id 25A573F71F;
- Fri, 13 Sep 2019 11:21:04 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id C94E53F71F;
+ Fri, 13 Sep 2019 11:21:06 -0700 (PDT)
 From: Cristian Marussi <cristian.marussi@arm.com>
 To: linux-kernel@vger.kernel.org
-Subject: [RFC PATCH v2 08/12] x86: smp: use generic SMP stop common code
-Date: Fri, 13 Sep 2019 19:19:49 +0100
-Message-Id: <20190913181953.45748-9-cristian.marussi@arm.com>
+Subject: [RFC PATCH v2 09/12] x86: smp: use SMP crash-stop common code
+Date: Fri, 13 Sep 2019 19:19:50 +0100
+Message-Id: <20190913181953.45748-10-cristian.marussi@arm.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190913181953.45748-1-cristian.marussi@arm.com>
 References: <20190913181953.45748-1-cristian.marussi@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190913_112107_080141_D0347688 
-X-CRM114-Status: GOOD (  18.90  )
+X-CRM114-CacheID: sfid-20190913_112110_296046_95DD0BAE 
+X-CRM114-Status: GOOD (  18.83  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,26 +73,31 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Make x86 use the generic SMP-stop logic provided by common code unified
-smp_send_stop() function.
+Make x86 use the SMP common implementation of crash_smp_send_stop() and
+its generic logic, by removing the x86 crash_smp_send_stop() definition
+and providing the needed arch specific helpers.
 
-Introduce needed arch_smp_stop_call()/arch_smp_cpus_stop_complete()
-helpers that implement the backend architectures specific functionalities
-previously provided by native_stop_other_cpus(): common logic is now
-delegated to common SMP stop code.
+Remove also redundant smp_ops.crash_stop_other_cpus(); add shared util
+function common_nmi_shootdown_cpus(), which is a generalization of the
+previous nmi_shootdown_cpus(), and it is used by architecture backend
+helper arch_smp_crash_call().
 
-Remove arch-specific smp_send_stop(), and redefine original function
-native_stop_other_cpus() to rely instead on the unified common code
-version of smp_send_stop(): native_stop_other_cpus() is anyway kept
-since it is wired to smp_ops.stop_other_cpus() which get called at
-reboot time with particular waiting settings.
+Modify original crash_nmi_callback() to properly set cpu offline flag
+and adding needed memory barriers.
+
+Modify original nmi_shootdown_cpus() to rely on common code logic
+provided by generic crash_smp_send_stop(): this was needed because the
+original nmi_shootdown_cpus() was used also on the emergency reboot
+path, employing a different callback. Reuse the same shootdown_callback
+mechanism to properly handle both a crash and an emergency reboot through
+the same common code crash path.
 
 Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
 ---
 Note that in this patch we kept in use the original x86 local handling
-of 'stopping_cpu' variable:
+of 'crashing_cpu' variable:
 
-	atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id());
+	crashing_cpu = safe_smp_processor_id();
 
 Instead, common SMP stop code could have been easily extended to keep and
 expose to architectures backends such value using some additional helper
@@ -100,162 +105,210 @@ like smp_stop_get_stopping_cpu_id().
 
 This has not been addressed in this series.
 ---
- arch/x86/Kconfig           |  1 +
- arch/x86/include/asm/smp.h |  5 --
- arch/x86/kernel/smp.c      | 95 ++++++++++++++++----------------------
- 3 files changed, 41 insertions(+), 60 deletions(-)
+ arch/x86/include/asm/reboot.h |  2 ++
+ arch/x86/include/asm/smp.h    |  1 -
+ arch/x86/kernel/crash.c       | 27 ++++---------------
+ arch/x86/kernel/reboot.c      | 50 ++++++++++++++++++++++-------------
+ arch/x86/kernel/smp.c         |  3 ---
+ 5 files changed, 38 insertions(+), 45 deletions(-)
 
-diff --git a/arch/x86/Kconfig b/arch/x86/Kconfig
-index 222855cc0158..0fcee2f03a5b 100644
---- a/arch/x86/Kconfig
-+++ b/arch/x86/Kconfig
-@@ -92,6 +92,7 @@ config X86
- 	select ARCH_USE_BUILTIN_BSWAP
- 	select ARCH_USE_QUEUED_RWLOCKS
- 	select ARCH_USE_QUEUED_SPINLOCKS
-+	select ARCH_USE_COMMON_SMP_STOP
- 	select ARCH_WANT_BATCHED_UNMAP_TLB_FLUSH
- 	select ARCH_WANTS_DYNAMIC_TASK_STRUCT
- 	select ARCH_WANT_HUGE_PMD_SHARE
+diff --git a/arch/x86/include/asm/reboot.h b/arch/x86/include/asm/reboot.h
+index 04c17be9b5fd..a1a9cbed6df5 100644
+--- a/arch/x86/include/asm/reboot.h
++++ b/arch/x86/include/asm/reboot.h
+@@ -3,6 +3,7 @@
+ #define _ASM_X86_REBOOT_H
+ 
+ #include <linux/kdebug.h>
++#include <linux/cpumask.h>
+ 
+ struct pt_regs;
+ 
+@@ -28,6 +29,7 @@ void __noreturn machine_real_restart(unsigned int type);
+ typedef void (*nmi_shootdown_cb)(int, struct pt_regs*);
+ void nmi_panic_self_stop(struct pt_regs *regs);
+ void nmi_shootdown_cpus(nmi_shootdown_cb callback);
++void common_nmi_shootdown_cpus(cpumask_t *cpus, nmi_shootdown_cb callback);
+ void run_crash_ipi_callback(struct pt_regs *regs);
+ 
+ #endif /* _ASM_X86_REBOOT_H */
 diff --git a/arch/x86/include/asm/smp.h b/arch/x86/include/asm/smp.h
-index e1356a3b8223..5cf590259d68 100644
+index 5cf590259d68..684643ad71e4 100644
 --- a/arch/x86/include/asm/smp.h
 +++ b/arch/x86/include/asm/smp.h
-@@ -67,11 +67,6 @@ extern void set_cpu_sibling_map(int cpu);
- #ifdef CONFIG_SMP
- extern struct smp_ops smp_ops;
+@@ -49,7 +49,6 @@ struct smp_ops {
+ 	void (*smp_cpus_done)(unsigned max_cpus);
  
--static inline void smp_send_stop(void)
+ 	void (*stop_other_cpus)(int wait);
+-	void (*crash_stop_other_cpus)(void);
+ 	void (*smp_send_reschedule)(int cpu);
+ 
+ 	int (*cpu_up)(unsigned cpu, struct task_struct *tidle);
+diff --git a/arch/x86/kernel/crash.c b/arch/x86/kernel/crash.c
+index 2bf70a2fed90..8fff06c7cd26 100644
+--- a/arch/x86/kernel/crash.c
++++ b/arch/x86/kernel/crash.c
+@@ -96,34 +96,16 @@ static void kdump_nmi_callback(int cpu, struct pt_regs *regs)
+ 	disable_local_APIC();
+ }
+ 
+-void kdump_nmi_shootdown_cpus(void)
++void arch_smp_crash_call(cpumask_t *cpus, unsigned int __unused)
+ {
+-	nmi_shootdown_cpus(kdump_nmi_callback);
+-
+-	disable_local_APIC();
++	common_nmi_shootdown_cpus(cpus, kdump_nmi_callback);
+ }
+ 
+-/* Override the weak function in kernel/panic.c */
+-void crash_smp_send_stop(void)
++void arch_smp_cpus_crash_complete(void)
+ {
+-	static int cpus_stopped;
+-
+-	if (cpus_stopped)
+-		return;
+-
+-	if (smp_ops.crash_stop_other_cpus)
+-		smp_ops.crash_stop_other_cpus();
+-	else
+-		smp_send_stop();
+-
+-	cpus_stopped = 1;
++	disable_local_APIC();
+ }
+ 
+-#else
+-void crash_smp_send_stop(void)
 -{
--	smp_ops.stop_other_cpus(0);
+-	/* There are no cpus to shootdown */
+-}
+ #endif
+ 
+ void native_machine_crash_shutdown(struct pt_regs *regs)
+@@ -139,6 +121,7 @@ void native_machine_crash_shutdown(struct pt_regs *regs)
+ 	/* The kernel is broken so disable interrupts */
+ 	local_irq_disable();
+ 
++	/* calling into SMP common stop code */
+ 	crash_smp_send_stop();
+ 
+ 	/*
+diff --git a/arch/x86/kernel/reboot.c b/arch/x86/kernel/reboot.c
+index 09d6bded3c1e..69f894e28fec 100644
+--- a/arch/x86/kernel/reboot.c
++++ b/arch/x86/kernel/reboot.c
+@@ -799,7 +799,6 @@ int crashing_cpu = -1;
+ 
+ static nmi_shootdown_cb shootdown_callback;
+ 
+-static atomic_t waiting_for_crash_ipi;
+ static int crash_ipi_issued;
+ 
+ static int crash_nmi_callback(unsigned int val, struct pt_regs *regs)
+@@ -819,7 +818,12 @@ static int crash_nmi_callback(unsigned int val, struct pt_regs *regs)
+ 
+ 	shootdown_callback(cpu, regs);
+ 
+-	atomic_dec(&waiting_for_crash_ipi);
++	/* ensure all shootdown writes are visible once cpu is seen offline */
++	smp_wmb();
++	set_cpu_online(cpu, false);
++	/* ensure all writes are globally visible before cpu parks */
++	wmb();
++
+ 	/* Assume hlt works */
+ 	halt();
+ 	for (;;)
+@@ -828,29 +832,44 @@ static int crash_nmi_callback(unsigned int val, struct pt_regs *regs)
+ 	return NMI_HANDLED;
+ }
+ 
+-static void smp_send_nmi_allbutself(void)
+-{
+-	apic->send_IPI_allbutself(NMI_VECTOR);
 -}
 -
- static inline void stop_other_cpus(void)
+ /*
+  * Halt all other CPUs, calling the specified function on each of them
+  *
+  * This function can be used to halt all other CPUs on crash
+  * or emergency reboot time. The function passed as parameter
+  * will be called inside a NMI handler on all CPUs.
++ *
++ * It relies on crash_smp_send_stop() common code logic to shutdown CPUs.
+  */
+ void nmi_shootdown_cpus(nmi_shootdown_cb callback)
  {
- 	smp_ops.stop_other_cpus(1);
+-	unsigned long msecs;
++	local_irq_disable();
++
++	shootdown_callback = callback;
++	/* ensure callback in place before calling into common crash code */
++	wmb();
++	/* call into common SMP Crash Stop to reuse the logic */
++	crash_smp_send_stop();
++}
++
++/*
++ * Halt the specified @cpus, calling the provided @callback on each of them
++ * unless a shootdown_callback was already installed previously: this way
++ * we can handle here also the emergency reboot requests issued via
++ * nmi_shootdown_cpus() and routed via usual common code crash_smp_send_stop()
++ *
++ * Called by arch_smp_crash_call() arch-helper.
++ */
++void common_nmi_shootdown_cpus(cpumask_t *cpus, nmi_shootdown_cb callback)
++{
+ 	local_irq_disable();
+ 
+ 	/* Make a note of crashing cpu. Will be used in NMI callback. */
+ 	crashing_cpu = safe_smp_processor_id();
+ 
+-	shootdown_callback = callback;
+-
+-	atomic_set(&waiting_for_crash_ipi, num_online_cpus() - 1);
++	/* skip when the callback has been already set by nmi_shootdown_cpus */
++	if (!shootdown_callback)
++		shootdown_callback = callback;
+ 	/* Would it be better to replace the trap vector here? */
+ 	if (register_nmi_handler(NMI_LOCAL, crash_nmi_callback,
+ 				 NMI_FLAG_FIRST, "crash"))
+@@ -860,18 +879,11 @@ void nmi_shootdown_cpus(nmi_shootdown_cb callback)
+ 	 * out the NMI
+ 	 */
+ 	wmb();
+-
+-	smp_send_nmi_allbutself();
++	apic->send_IPI_mask(cpus, NMI_VECTOR);
+ 
+ 	/* Kick CPUs looping in NMI context. */
+ 	WRITE_ONCE(crash_ipi_issued, 1);
+ 
+-	msecs = 1000; /* Wait at most a second for the other cpus to stop */
+-	while ((atomic_read(&waiting_for_crash_ipi) > 0) && msecs) {
+-		mdelay(1);
+-		msecs--;
+-	}
+-
+ 	/* Leave the nmi callback set */
+ }
+ 
 diff --git a/arch/x86/kernel/smp.c b/arch/x86/kernel/smp.c
-index 96421f97e75c..0942cae46fee 100644
+index 0942cae46fee..d718b185c6a9 100644
 --- a/arch/x86/kernel/smp.c
 +++ b/arch/x86/kernel/smp.c
-@@ -179,78 +179,63 @@ asmlinkage __visible void smp_reboot_interrupt(void)
- 	irq_exit();
- }
+@@ -295,9 +295,6 @@ struct smp_ops smp_ops = {
+ 	.smp_cpus_done		= native_smp_cpus_done,
  
--static void native_stop_other_cpus(int wait)
-+void arch_smp_stop_call(cpumask_t *cpus, unsigned int attempt_num)
- {
--	unsigned long flags;
--	unsigned long timeout;
--
- 	if (reboot_force)
- 		return;
+ 	.stop_other_cpus	= native_stop_other_cpus,
+-#if defined(CONFIG_KEXEC_CORE)
+-	.crash_stop_other_cpus	= kdump_nmi_shootdown_cpus,
+-#endif
+ 	.smp_send_reschedule	= native_smp_send_reschedule,
  
--	/*
--	 * Use an own vector here because smp_call_function
--	 * does lots of things not suitable in a panic situation.
--	 */
--
--	/*
--	 * We start by using the REBOOT_VECTOR irq.
--	 * The irq is treated as a sync point to allow critical
--	 * regions of code on other cpus to release their spin locks
--	 * and re-enable irqs.  Jumping straight to an NMI might
--	 * accidentally cause deadlocks with further shutdown/panic
--	 * code.  By syncing, we give the cpus up to one second to
--	 * finish their work before we force them off with the NMI.
--	 */
--	if (num_online_cpus() > 1) {
--		/* did someone beat us here? */
--		if (atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id()) != -1)
--			return;
--
--		/* sync above data before sending IRQ */
--		wmb();
--
--		apic->send_IPI_allbutself(REBOOT_VECTOR);
--
-+	if (attempt_num == 1) {
- 		/*
--		 * Don't wait longer than a second if the caller
--		 * didn't ask us to wait.
-+		 * We start by using the REBOOT_VECTOR irq.
-+		 * The irq is treated as a sync point to allow critical
-+		 * regions of code on other cpus to release their spin locks
-+		 * and re-enable irqs.  Jumping straight to an NMI might
-+		 * accidentally cause deadlocks with further shutdown/panic
-+		 * code.  By syncing, we give the cpus up to one second to
-+		 * finish their work before we force them off with the NMI.
- 		 */
--		timeout = USEC_PER_SEC;
--		while (num_online_cpus() > 1 && (wait || timeout--))
--			udelay(1);
--	}
--	
--	/* if the REBOOT_VECTOR didn't work, try with the NMI */
--	if ((num_online_cpus() > 1) && (!smp_no_nmi_ipi))  {
--		if (register_nmi_handler(NMI_LOCAL, smp_stop_nmi_callback,
--					 NMI_FLAG_FIRST, "smp_stop"))
--			/* Note: we ignore failures here */
--			/* Hope the REBOOT_IRQ is good enough */
--			goto finish;
-+
-+		/* Used by NMI handler callback to skip the stopping_cpu. */
-+		atomic_cmpxchg(&stopping_cpu, -1, safe_smp_processor_id());
- 
- 		/* sync above data before sending IRQ */
- 		wmb();
--
--		pr_emerg("Shutting down cpus with NMI\n");
--
--		apic->send_IPI_allbutself(NMI_VECTOR);
--
--		/*
--		 * Don't wait longer than a 10 ms if the caller
--		 * didn't ask us to wait.
--		 */
--		timeout = USEC_PER_MSEC * 10;
--		while (num_online_cpus() > 1 && (wait || timeout--))
--			udelay(1);
-+		apic->send_IPI_mask(cpus, REBOOT_VECTOR);
-+	} else if (attempt_num > 1 && !smp_no_nmi_ipi) {
-+		/* if the REBOOT_VECTOR didn't work, try with the NMI */
-+
-+		/* Don't wait longer than 10 ms when not asked to wait */
-+		smp_stop_set_wait_timeout_us(USEC_PER_MSEC * 10);
-+
-+		/* Note: we ignore failures here */
-+		/* Hope the REBOOT_IRQ was good enough */
-+		if (!register_nmi_handler(NMI_LOCAL, smp_stop_nmi_callback,
-+					  NMI_FLAG_FIRST, "smp_stop")) {
-+			/* sync above data before sending IRQ */
-+			wmb();
-+			pr_emerg("Shutting down cpus with NMI\n");
-+			apic->send_IPI_mask(cpus, NMI_VECTOR);
-+		}
- 	}
-+}
-+
-+void arch_smp_cpus_stop_complete(void)
-+{
-+	unsigned long flags;
- 
--finish:
- 	local_irq_save(flags);
- 	disable_local_APIC();
- 	mcheck_cpu_clear(this_cpu_ptr(&cpu_info));
- 	local_irq_restore(flags);
- }
- 
-+static void native_stop_other_cpus(int wait)
-+{
-+	smp_stop_set_wait_forever(wait);
-+	/* use common SMP stop code */
-+	smp_send_stop();
-+}
-+
- /*
-  * Reschedule call back. KVM uses this interrupt to force a cpu out of
-  * guest mode
+ 	.cpu_up			= native_cpu_up,
 -- 
 2.17.1
 
