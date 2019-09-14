@@ -2,87 +2,92 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 96F14B2C74
-	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Sep 2019 19:41:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2F7BEB2CA0
+	for <lists+linux-arm-kernel@lfdr.de>; Sat, 14 Sep 2019 21:06:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
-	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=LhYdWOT36MTJNVvVqNDveJRcfP6tXA9cFDajbPR7u+k=; b=rSwrPJBO++5Rib
-	1Eg0LXEPy3HVMUUXXjfQOLkQeCrFz+QWmN5jKFWVL+hyEOqwRrDWMRLwtElQXbQrYMxPv1cCcHzHK
-	6eedZnEzg7zU5I+w2ohppF5HmFY4dFcGKu0dH1AEKfh8i0tNBdIBX4tebhrIV6WLLni6D54Vlc9kD
-	817qEk21PheoU4EHfpwj/0ZATbBKDsw2ghs13R5no240JHnzvPS7exDJwegIT7wgeKPcMwlHLKh5D
-	PrFqfQUZ75QeYnKRxxRt90A0DC+BNx5v17MpiL2UDUTMlQOtoTREJFwGDqmUNoUN1U/rGldJHspNF
-	RdtpLh7iEGYhtQRxExqQ==;
+	List-Owner; bh=HbW2xq3p6PhU9LjlVko2p0SoehKkzLd/PXbL+Kr/wc8=; b=BV7gaKlsro6lxj
+	H8r2PK8JV2VytVpJepqqp07NBbss8m3jhyYaaygTFoC0oKY5JFWb9s0H8DXZxmWZUN9o9xSolgZ0G
+	eBNHvzvP7F7wET+zluC+VrXpXu2SpOGNzp9vrbbxq8NnTX8X1uFW6oRv04Txgrzxtggi9FqS4ID2z
+	+cBnt7LtaTmFmNQ9V8KJPOT2CPA43KaCSrSlLE11E7/rmf1H1iEXzT6nvXcOg+bQNkHnsMfgBBQX6
+	jT8TdqW3UMzekpWNXQv+dvPxTfs02QUHGxldIgVhMuj187bEuuI9yvL98p7qiOvbDxhrJHpCM4VaV
+	xV31bA9vBmntyN8tj0qg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9C2n-0008Te-96; Sat, 14 Sep 2019 17:41:09 +0000
-Received: from mail-oi1-x243.google.com ([2607:f8b0:4864:20::243])
+	id 1i9DMs-0007Bl-EV; Sat, 14 Sep 2019 19:05:58 +0000
+Received: from esa1.microchip.iphmx.com ([68.232.147.91])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9C2Z-0008TB-P1; Sat, 14 Sep 2019 17:40:57 +0000
-Received: by mail-oi1-x243.google.com with SMTP id v16so5179595oiv.13;
- Sat, 14 Sep 2019 10:40:55 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=googlemail.com; s=20161025;
- h=mime-version:references:in-reply-to:from:date:message-id:subject:to
- :cc; bh=ScwrZFTGOc+kbhhZsRu5GL1IOvADxSoY4roa9r4rvrc=;
- b=oR/DGMfb/9sZrS1uWjRRtNMdrY5WzzoMndCtZaKV+gw+KnCyNqnAKD24aJKKHJdhxu
- i7amzSzK25ME7g67a28AVFajVTK1cxb+fmXDMU3GS565nM7NXjVzmCa0GD3MOJ6wO5Pp
- sgODIbPNcyMnunPtbLm0F3kOFWFeMMfYJp/Jlt/maGebgXr3vcTwhEgPwASNRV+50Pjg
- N620uvQjpgRfC54Yg71xZ7CQbDchDgFgsYw186toIk3YCFIMqHkiTH4G8cDjv1uhtv6k
- 6CgYOUzRHIF14PfBznVGZmQpHsEl3KPgCzFYkK98WoRPBqoSUhB8ZvFYFQK2WLEceNUq
- m55g==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:mime-version:references:in-reply-to:from:date
- :message-id:subject:to:cc;
- bh=ScwrZFTGOc+kbhhZsRu5GL1IOvADxSoY4roa9r4rvrc=;
- b=SrrfFGsjhsQb3z/bbjdG42SOQVrbjRIIiXwP7YsiLpfhNp3y5geioOaH5o0GZ93+a+
- W9WXkum0+8s0W6/t6jVogh+WHJyGo0nIJ5Q52xvWfUEe1SosbehnIbMts6pD01h+PGeg
- tuVgrfBHqL/EcpdRRQzPDNdjLqE7a1c4NXZUYQXRFMRDSn1VOfSQWLdP6YOVofRjayhi
- p9oUQC51OARq68AFEFftXGRmn9UOuOZ3OscbTRR1RfPkivQkcL1v4dBobESOv9v8S0IR
- PygebrCSmXyDVsjhRUPzBLClgu6D0+zB8duhJLvM0Yc8PC+iUVxvuYXOI8i7Vb/VkWdo
- vz7Q==
-X-Gm-Message-State: APjAAAUzXJ9ULw3Wj2o0jAmRkhSIE9RAqdYNfQXE8eIf3viCUXQ8evGE
- 8Qxn7E7xLLnCj9O/5vHphCMeZiEUlbWRj+Nl768=
-X-Google-Smtp-Source: APXvYqxzDSV60TGVXBUNUlUYl4UV7zv7qNNLwQJ0PfQSVLqrKQObbcGram3Yy+w0QN7EAUgIusf4gu4nw3EU9eIuIxE=
-X-Received: by 2002:aca:4d08:: with SMTP id a8mr8328954oib.39.1568482854580;
- Sat, 14 Sep 2019 10:40:54 -0700 (PDT)
+ id 1i9DMf-0007Ax-2a
+ for linux-arm-kernel@lists.infradead.org; Sat, 14 Sep 2019 19:05:48 +0000
+Received-SPF: Pass (esa1.microchip.iphmx.com: domain of
+ Ludovic.Desroches@microchip.com designates 198.175.253.82 as
+ permitted sender) identity=mailfrom;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="Ludovic.Desroches@microchip.com";
+ x-conformance=spf_only; x-record-type="v=spf1";
+ x-record-text="v=spf1 mx a:ushub1.microchip.com
+ a:smtpout.microchip.com a:mx1.microchip.iphmx.com
+ a:mx2.microchip.iphmx.com include:servers.mcsv.net
+ include:mktomail.com include:spf.protection.outlook.com ~all"
+Received-SPF: None (esa1.microchip.iphmx.com: no sender
+ authenticity information available from domain of
+ postmaster@email.microchip.com) identity=helo;
+ client-ip=198.175.253.82; receiver=esa1.microchip.iphmx.com;
+ envelope-from="Ludovic.Desroches@microchip.com";
+ x-sender="postmaster@email.microchip.com"; x-conformance=spf_only
+Authentication-Results: esa1.microchip.iphmx.com;
+ dkim=none (message not signed) header.i=none;
+ spf=Pass smtp.mailfrom=Ludovic.Desroches@microchip.com;
+ spf=None smtp.helo=postmaster@email.microchip.com;
+ dmarc=pass (p=none dis=none) d=microchip.com
+IronPort-SDR: NamCnpYy7SPDNIB3inySM76wPEFDkbfm16Jv9c2QJO7rqBr18skMfsFHvgdYGBvU/O7zLERuLf
+ sMp/3dM2X6MFofMZCc49ldEjcBZKAJ9XLk5J1vftjusHp+vZcM+Wt5GWC+evLq6iyou2dyYAIP
+ 2s+WfJvk6zxP6JLtyJSVfFCgvCIJgAfewFMp9x38PFg6qFOGq/e6rF7zUYWOnIcav5mAwHUb8m
+ aW6QlCXClqr2pWjIzPSr5wrO10iAJts19F7p1YFXyIA9nU5nZGwZgTKtu/11LDhp78n1k4UNFh
+ tgk=
+X-IronPort-AV: E=Sophos;i="5.64,505,1559545200"; d="scan'208";a="50488026"
+Received: from smtpout.microchip.com (HELO email.microchip.com)
+ ([198.175.253.82])
+ by esa1.microchip.iphmx.com with ESMTP/TLS/AES256-SHA256;
+ 14 Sep 2019 12:05:38 -0700
+Received: from chn-vm-ex03.mchp-main.com (10.10.85.151) by
+ chn-vm-ex04.mchp-main.com (10.10.85.152) with Microsoft SMTP Server
+ (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256) id
+ 15.1.1713.5; Sat, 14 Sep 2019 12:05:29 -0700
+Received: from localhost (10.10.85.251) by chn-vm-ex03.mchp-main.com
+ (10.10.85.151) with Microsoft SMTP Server id 15.1.1713.5 via Frontend
+ Transport; Sat, 14 Sep 2019 12:05:29 -0700
+Date: Sat, 14 Sep 2019 21:05:28 +0200
+From: Ludovic Desroches <ludovic.desroches@microchip.com>
+To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Subject: Re: [PATCH] i2c: at91: Send bus clear command if SCL or SDA is down
+Message-ID: <20190914190528.wnxhcjo5s66qive6@sekiro>
+Mail-Followup-To: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>,
+ linux-i2c@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ linux-kernel@vger.kernel.org, nicolas.ferre@microchip.com,
+ alexandre.belloni@bootlin.com, wsa@the-dreams.de
+References: <20190911095854.5141-1-codrin.ciubotariu@microchip.com>
 MIME-Version: 1.0
-References: <1567780354-59472-1-git-send-email-christianshewitt@gmail.com>
- <1567780354-59472-4-git-send-email-christianshewitt@gmail.com>
-In-Reply-To: <1567780354-59472-4-git-send-email-christianshewitt@gmail.com>
-From: Martin Blumenstingl <martin.blumenstingl@googlemail.com>
-Date: Sat, 14 Sep 2019 19:40:42 +0200
-Message-ID: <CAFBinCANaKMHRuwaFwubZcDjZaGYcLcVuHjJsakR0uJkmZxRMw@mail.gmail.com>
-Subject: Re: [RESEND PATCH v3 3/3] arm64: dts: meson-g12b-ugoos-am6: add
- initial device-tree
-To: Christian Hewitt <christianshewitt@gmail.com>
+Content-Disposition: inline
+In-Reply-To: <20190911095854.5141-1-codrin.ciubotariu@microchip.com>
+User-Agent: NeoMutt/20180716
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_104055_841056_37E3587A 
-X-CRM114-Status: UNSURE (   8.02  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190914_120545_129076_253A3603 
+X-CRM114-Status: GOOD (  15.03  )
+X-Spam-Score: -2.3 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.3 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:243 listed in]
- [list.dnswl.org]
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [68.232.147.91 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (martin.blumenstingl[at]googlemail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,109 +99,99 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
- Oleg Ivanov <balbes-150@yandex.ru>, Kevin Hilman <khilman@baylibre.com>,
- linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
- linux-amlogic@lists.infradead.org, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.belloni@bootlin.com, wsa@the-dreams.de,
+ linux-kernel@vger.kernel.org, linux-i2c@vger.kernel.org,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Christian,
+On Wed, Sep 11, 2019 at 12:58:54PM +0300, Codrin Ciubotariu wrote:
+> After a transfer timeout, some faulty I2C slave devices might hold down
+> the SCL or the SDA pins. We can generate a bus clear command, hoping that
+> the slave might release the pins.
+> 
+> Signed-off-by: Codrin Ciubotariu <codrin.ciubotariu@microchip.com>
+Acked-by: Ludovic Desroches <ludovic.desroches@microchip.com>
 
-my nit-picks below
+I'll be off for three weeks so if there are minor changes, you can keep my
+ack.
 
-On Fri, Sep 6, 2019 at 4:34 PM Christian Hewitt
-<christianshewitt@gmail.com> wrote:
-[...]
-> +       spdif_dit: audio-codec-1 {
-> +               #sound-dai-cells = <0>;
-> +               compatible = "linux,spdif-dit";
-> +               status = "okay";
-> +               sound-name-prefix = "DIT";
-> +       };
-please move it below sdio_pwrseq (or at least somewhere below the memory node)
+Thanks
 
-[...]
-> +       vcc_3v3: regulator-vcc_3v3 {
-> +               compatible = "regulator-fixed";
-> +               regulator-name = "VCC_3V3";
-> +               regulator-min-microvolt = <3300000>;
-> +               regulator-max-microvolt = <3300000>;
-> +               vin-supply = <&vddao_3v3>;
-> +               regulator-always-on;
-> +               /* FIXME: actually controlled by VDDCPU_B_EN */
-can we add the enable GPIO here now that we know how to describe the
-VDDCPU_B regulator?
+Ludovic
 
-[...]
-> +       usb1_pow: regulator-usb1_pow {
-for consistency with the regulators above: regulator-usb1-pow
-
-[...]
-> +       usb_pwr_en: regulator-usb_pwr_en {
-for consistency with the regulators above: regulator-usb-pwr-en
-
-[...]
-> +       vddao_1v8: regulator-vddao_1v8 {
-for consistency with the regulators above: regulator-vddao-1v8
-
-[...
-> +       vddao_3v3: regulator-vddao_3v3 {
-for consistency with the regulators above: regulator-vddao-3v3
-
-[...]
-> +&cpu0 {
-> +       cpu-supply = <&vddcpu_b>;
-> +       operating-points-v2 = <&cpu_opp_table_0>;
-> +       clocks = <&clkc CLKID_CPU_CLK>;
-> +       clock-latency = <50000>;
-> +};
+> ---
+>  drivers/i2c/busses/i2c-at91-master.c | 20 ++++++++++++++++++++
+>  drivers/i2c/busses/i2c-at91.h        |  6 +++++-
+>  2 files changed, 25 insertions(+), 1 deletion(-)
+> 
+> diff --git a/drivers/i2c/busses/i2c-at91-master.c b/drivers/i2c/busses/i2c-at91-master.c
+> index a3fcc35ffd3b..5f544a16db96 100644
+> --- a/drivers/i2c/busses/i2c-at91-master.c
+> +++ b/drivers/i2c/busses/i2c-at91-master.c
+> @@ -599,6 +599,26 @@ static int at91_do_twi_transfer(struct at91_twi_dev *dev)
+>  		at91_twi_write(dev, AT91_TWI_CR,
+>  			       AT91_TWI_THRCLR | AT91_TWI_LOCKCLR);
+>  	}
 > +
-> +&cpu1 {
-> +       cpu-supply = <&vddcpu_b>;
-> +       operating-points-v2 = <&cpu_opp_table_0>;
-> +       clocks = <&clkc CLKID_CPU_CLK>;
-> +       clock-latency = <50000>;
-> +};
+> +	/*
+> +	 * After timeout, some faulty I2C slave devices might hold SCL/SDA down;
+> +	 * we can send a bus clear command, hoping that the pins will be
+> +	 * released
+> +	 */
+> +	if (!(dev->transfer_status & AT91_TWI_SDA) ||
+> +	    !(dev->transfer_status & AT91_TWI_SCL)) {
+> +		dev_dbg(dev->dev,
+> +			"SDA/SCL are down; sending bus clear command\n");
+> +		if (dev->use_alt_cmd) {
+> +			unsigned int acr;
 > +
-> +&cpu100 {
-> +       cpu-supply = <&vddcpu_a>;
-> +       operating-points-v2 = <&cpub_opp_table_1>;
-> +       clocks = <&clkc CLKID_CPUB_CLK>;
-> +       clock-latency = <50000>;
-> +};
+> +			acr = at91_twi_read(dev, AT91_TWI_ACR);
+> +			acr &= ~AT91_TWI_ACR_DATAL_MASK;
+> +			at91_twi_write(dev, AT91_TWI_ACR, acr);
+> +		}
+> +		at91_twi_write(dev, AT91_TWI_CR, AT91_TWI_CLEAR);
+> +	}
 > +
-> +&cpu101 {
-> +       cpu-supply = <&vddcpu_a>;
-> +       operating-points-v2 = <&cpub_opp_table_1>;
-> +       clocks = <&clkc CLKID_CPUB_CLK>;
-> +       clock-latency = <50000>;
-> +};
-> +
-> +&cpu102 {
-> +       cpu-supply = <&vddcpu_a>;
-> +       operating-points-v2 = <&cpub_opp_table_1>;
-> +       clocks = <&clkc CLKID_CPUB_CLK>;
-> +       clock-latency = <50000>;
-> +};
-> +
-> +&cpu103 {
-> +       cpu-supply = <&vddcpu_a>;
-> +       operating-points-v2 = <&cpub_opp_table_1>;
-> +       clocks = <&clkc CLKID_CPUB_CLK>;
-> +       clock-latency = <50000>;
-> +};
-(not limited to this patch: there's a lot of redundancy with the CPU
-nodes across the G12B .dts)
-
-[...]
-> +&sd_emmc_a {
-all nodes starting here should use alphabetical sorting
-
-
-Martin
+>  	return ret;
+>  }
+>  
+> diff --git a/drivers/i2c/busses/i2c-at91.h b/drivers/i2c/busses/i2c-at91.h
+> index 499b506f6128..ffb870f3ffc6 100644
+> --- a/drivers/i2c/busses/i2c-at91.h
+> +++ b/drivers/i2c/busses/i2c-at91.h
+> @@ -36,6 +36,7 @@
+>  #define	AT91_TWI_SVDIS		BIT(5)	/* Slave Transfer Disable */
+>  #define	AT91_TWI_QUICK		BIT(6)	/* SMBus quick command */
+>  #define	AT91_TWI_SWRST		BIT(7)	/* Software Reset */
+> +#define	AT91_TWI_CLEAR		BIT(15) /* Bus clear command */
+>  #define	AT91_TWI_ACMEN		BIT(16) /* Alternative Command Mode Enable */
+>  #define	AT91_TWI_ACMDIS		BIT(17) /* Alternative Command Mode Disable */
+>  #define	AT91_TWI_THRCLR		BIT(24) /* Transmit Holding Register Clear */
+> @@ -69,6 +70,8 @@
+>  #define	AT91_TWI_NACK		BIT(8)	/* Not Acknowledged */
+>  #define	AT91_TWI_EOSACC		BIT(11)	/* End Of Slave Access */
+>  #define	AT91_TWI_LOCK		BIT(23) /* TWI Lock due to Frame Errors */
+> +#define	AT91_TWI_SCL		BIT(24) /* TWI SCL status */
+> +#define	AT91_TWI_SDA		BIT(25) /* TWI SDA status */
+>  
+>  #define	AT91_TWI_INT_MASK \
+>  	(AT91_TWI_TXCOMP | AT91_TWI_RXRDY | AT91_TWI_TXRDY | AT91_TWI_NACK \
+> @@ -81,7 +84,8 @@
+>  #define	AT91_TWI_THR		0x0034	/* Transmit Holding Register */
+>  
+>  #define	AT91_TWI_ACR		0x0040	/* Alternative Command Register */
+> -#define	AT91_TWI_ACR_DATAL(len)	((len) & 0xff)
+> +#define	AT91_TWI_ACR_DATAL_MASK	GENMASK(15, 0)
+> +#define	AT91_TWI_ACR_DATAL(len)	((len) & AT91_TWI_ACR_DATAL_MASK)
+>  #define	AT91_TWI_ACR_DIR	BIT(8)
+>  
+>  #define	AT91_TWI_FMR		0x0050	/* FIFO Mode Register */
+> -- 
+> 2.20.1
+> 
 
 _______________________________________________
 linux-arm-kernel mailing list
