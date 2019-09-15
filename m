@@ -2,37 +2,37 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 8AC17B2EC7
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 08:50:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A32B5B2ECF
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 08:51:36 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=bx87uu1c8g1dCxuuTNm4FxG0qEb9oOPsODlGZnMbF+o=; b=m5mdpIY/O4xLej
-	5DbyimGTP+Zp0HWKXG9JlJse8XpSk9gtblUIROhDzoNTlxEhitJIWnW+dLig+HMWhzw2vC2E3ZqmO
-	A79hwOpLwQGWxhZoGl/9Icekcu9LOwiHoJtsaUZ8bmrVE1RNf/H53DgAh7D1ZtD+bTOCh67NOQsRD
-	qwtx1z7XpXs5ZqqHGQfwvgybhFAPQ8efA1NpAYn9RHqG9R93IX1USaXUjcES9yc7WD73C1hIynCX8
-	CCNCwxs3Q/Fjr0YtmWRNfy+lRSVyBldUGKnZJ5UK8M73CUzSidgAhOxBWqapqQCxNT2KsL9MEBB+g
-	+YpK4Dt00UoQLHoR88Xg==;
+	List-Owner; bh=23faDVdnHY5Uhi40tlk2ZLQb5zg4DYYwMsqplIUETt0=; b=YjYB9iskBZxaMW
+	9yO9DNLiYcuoR8lYSBPiI/5VcJTUujDoHiuZaJc3u+uFd/sbHfbGo3ZUif/yQCoSY/wi5QdxBUqtx
+	Iozv2gpgkVFkGVxKJf8TS/iwYLgqKQAI8U0IDSy18+dWg+qZyKy+hrmobjPUFzIIq2JbUNukD59N+
+	SQCQG4qvUGXX0fGFh1WkIustqlO95jR0B1NUZRdGL58o4IflaPBrzCn9YsdblO6qlILXS0aCxolMg
+	1e98A/vvf/yTyvAfgodt3R3Bbb9pDs7HHVxSdNBHsQqek5mifsejFg3mMMwXUQ4WmQbzwHkY2NtOA
+	hDa1TO5wO8yUGRibqHVQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9OMl-0003H4-08; Sun, 15 Sep 2019 06:50:35 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i9ONi-00045Q-Um; Sun, 15 Sep 2019 06:51:35 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9OMT-0003Fw-D6; Sun, 15 Sep 2019 06:50:19 +0000
-X-UUID: a8718d121adf433c8d4cfd3f5514ce77-20190914
-X-UUID: a8718d121adf433c8d4cfd3f5514ce77-20190914
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
+ id 1i9OMc-0003O1-JG; Sun, 15 Sep 2019 06:50:28 +0000
+X-UUID: 60fb1a137372408e97b4bce0cb1f37ae-20190914
+X-UUID: 60fb1a137372408e97b4bce0cb1f37ae-20190914
+Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
  (envelope-from <louis.kuo@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1446642154; Sat, 14 Sep 2019 22:50:09 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 14 Sep 2019 23:50:08 -0700
+ with ESMTP id 1149236540; Sat, 14 Sep 2019 22:50:21 -0800
+Received: from MTKMBS01N1.mediatek.inc (172.21.101.68) by
+ MTKMBS62N2.mediatek.inc (172.29.193.42) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sat, 14 Sep 2019 23:50:21 -0700
 Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
+ mtkmbs01n1.mediatek.inc (172.21.101.68) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Sun, 15 Sep 2019 14:50:07 +0800
 Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
@@ -41,24 +41,25 @@ From: Louis Kuo <louis.kuo@mediatek.com>
 To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
  <tfiga@chromium.org>, <keiichiw@chromium.org>, <matthias.bgg@gmail.com>,
  <mchehab@kernel.org>
-Subject: [RFC PATCH V4 2/4] media: platform: Add Mediatek sensor interface
- driver KConfig
-Date: Sun, 15 Sep 2019 14:50:02 +0800
-Message-ID: <20190915065004.20257-3-louis.kuo@mediatek.com>
+Subject: [RFC PATCH V4 3/4] dt-bindings: mt8183: Add sensor interface
+ dt-bindings
+Date: Sun, 15 Sep 2019 14:50:03 +0800
+Message-ID: <20190915065004.20257-4-louis.kuo@mediatek.com>
 X-Mailer: git-send-email 2.18.0
 In-Reply-To: <20190915065004.20257-1-louis.kuo@mediatek.com>
 References: <20190915065004.20257-1-louis.kuo@mediatek.com>
 MIME-Version: 1.0
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_235017_449545_9AD592C1 
-X-CRM114-Status: UNSURE (   8.85  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190914_235026_971604_3724F5F5 
+X-CRM114-Status: GOOD (  10.33  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
@@ -85,42 +86,50 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This patch adds KConfig for sensor interface driver. Sensor interface
-driver
-is a MIPI-CSI2 host driver, namely, a HW camera interface controller.
-It support a widely adopted, simple, high-speed protocol primarily
-intended
-for point-to-point image and video transmission between cameras and host
-devices.
+This patch adds the DT binding documentation for the sensor interface
+module in Mediatek SoCs.
 
 Signed-off-by: Louis Kuo <louis.kuo@mediatek.com>
 ---
- drivers/media/platform/mtk-isp/Kconfig | 17 +++++++++++++++++
- 1 file changed, 17 insertions(+)
- create mode 100644 drivers/media/platform/mtk-isp/Kconfig
+ .../bindings/media/mediatek-seninf.txt        | 30 +++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/media/mediatek-seninf.txt
 
-diff --git a/drivers/media/platform/mtk-isp/Kconfig b/drivers/media/platform/mtk-isp/Kconfig
+diff --git a/Documentation/devicetree/bindings/media/mediatek-seninf.txt b/Documentation/devicetree/bindings/media/mediatek-seninf.txt
 new file mode 100644
-index 000000000000..bc7fd01808b3
+index 000000000000..bf2eb801cb47
 --- /dev/null
-+++ b/drivers/media/platform/mtk-isp/Kconfig
-@@ -0,0 +1,17 @@
-+config MTK_SENINF
-+	bool "Mediatek mipi csi2 driver"
-+	depends on VIDEO_V4L2 && VIDEO_V4L2_SUBDEV_API
-+	depends on MEDIA_CAMERA_SUPPORT
-+	select V4L2_FWNODE
++++ b/Documentation/devicetree/bindings/media/mediatek-seninf.txt
+@@ -0,0 +1,30 @@
++* Mediatek seninf MIPI-CSI2 host driver
 +
-+	default n
-+	help
-+	    This driver provides a mipi-csi2 host driver used as a
-+	    interface to connect camera with Mediatek's
-+	    MT8183 SOCs. It is able to handle multiple cameras
-+	    at the same time.
++Seninf MIPI-CSI2 host driver is a HW camera interface controller. It support a widely adopted,
++simple, high-speed protocol primarily intended for point-to-point image and video
++transmission between cameras and host devices.
 +
-+	    Choose y if you want to use Mediatek SoCs to create image
-+	    capture application such as video recording and still image
-+	    capture.
++Required properties:
++  - compatible: "mediatek,mt8183-seninf"
++  - reg: Must contain an entry for each entry in reg-names.
++  - reg-names: Must include the following entries:
++    "base_reg": seninf registers base
++    "rx_reg": Rx analog registers base
++  - interrupts: interrupt number to the cpu.
++  - clocks : clock name from clock manager
++  - clock-names: must be CLK_CAM_SENINF and CLK_TOP_MUX_SENINF.
++    It is the clocks of seninf
++
++Example:
++	seninf: seninf@1a040000 {
++		compatible = "mediatek,mt8183-seninf";
++		reg = <0 0x1a040000 0 0x8000>,
++		      <0 0x11C80000 0 0x6000>;
++		reg-names = "base_reg", "rx_reg";
++		interrupts = <GIC_SPI 251 IRQ_TYPE_LEVEL_LOW>;
++		power-domains = <&scpsys MT8183_POWER_DOMAIN_CAM>;
++		clocks = <&camsys CLK_CAM_SENINF>,
++			 <&topckgen CLK_TOP_MUX_SENINF>;
++		clock-names = "CLK_CAM_SENINF", "CLK_TOP_MUX_SENINF";
++	}
 +
 -- 
 2.18.0
