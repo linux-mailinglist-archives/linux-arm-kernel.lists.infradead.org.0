@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id C178EB2F13
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 09:32:38 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 59413B2F16
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 09:33:10 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,64 +11,63 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=PN/nnd6NmZiVG9sRf9i68vMfihNMtSlo7mJROP1I3EY=; b=V8hDQYsIdz1Jjin6CXiht+hcfC
-	l53qOAW4VzOs2zTmE/6VvwrpTIxVx6NZaNpHGMUtSo1v3FC54otBb5H6pHeIRpefW5kgw1PZhbKsO
-	5bKd7zpx8Sek+aRgNw0SufSCbsOQSzJEfDHNrcuxqyodnRYNjMDq7BynbQ/+F+p3KJp8zrPmhVCIU
-	e/A3Bl2qFi3KiD6o/Y32o/YMpfdpuoo4HeH4btV7mUNIlgF4guX//8hd+LlpPnfReq/szRV8H9quk
-	HzDFUZRPWimOdHKhSKx4JnUIw8JMGuasPtCVUetdISlVjP6DmatIxJF/q6UFQeMH2C2LaJHAakgIE
-	ghLmKTvw==;
+	bh=a690hcS672OrADbxAawfoj1EtNTZ30SciEBFs+F4tTk=; b=sFhPdpnA706Xec/8h9XL3tIRNt
+	tF+AluOccvEw9V7Tqb11xykjRwRY6VtBaqozXYeZO+lKp2QLL0gfjfe/WHvXgvtfl/6z7lXIARm35
+	mlcTOk4pSTQulvDUptdI2SX/w1U8pbVeFvJ8bmjVtAgFndLdvyOrZGZ7d0hUbb9HoSHgWRy1Fo7rs
+	odZRkG3q0effmX19nLtazQ6dFMhEeRV7vQhef4o4UWqd7MqhKIyhIFGRuiK0SFZ31equX9fB+sUJB
+	X3nFp/sCfpy040JnVuVOlQUhgbltGQ9OuYmg9B0789GUk5a9hPl5BDa5vB2CWKK9DiKWVK2MB4M7V
+	w16qodUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9P1J-0008Of-VA; Sun, 15 Sep 2019 07:32:30 +0000
+	id 1i9P1q-0000Co-C1; Sun, 15 Sep 2019 07:33:02 +0000
 Received: from mail-pf1-x444.google.com ([2607:f8b0:4864:20::444])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9P13-0008Mi-9r
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 07:32:17 +0000
-Received: by mail-pf1-x444.google.com with SMTP id y5so17793692pfo.4
+ id 1i9P1a-0000CD-HI
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 07:32:48 +0000
+Received: by mail-pf1-x444.google.com with SMTP id y5so17794008pfo.4
  for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Sep 2019 00:32:12 -0700 (PDT)
+ Sun, 15 Sep 2019 00:32:46 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=S4PgIGQ3wJQUQthoZj1zqeVCz9S7XcbHvEQ97PV6+tM=;
- b=eK5araplelxFt5qbQ2yVZnHo79vn6Wv45m52C1zwcLZlVgsLls4QF3DE+Jz8oX6muB
- w1OTTbKsAzjUfTYwmTzpWqpUNkVoK1py5YfJa5hfOf4pZ0Zhf9KFPDdknI5BhN6pCITT
- g9qN+ZZPP1vjXH3aBQW4C0UsQTLkb7EsQx6U4xNRW7HaHvb6qW0YA8eUrDOzQ0bq3/D/
- JrdoCpbL23u9b0yJ31RxMmeG3JChQ5TtY17t8zp5yUJVu5B1KQtTeykS/MUCDK/jsupe
- fIS7nh+bP+w+fsHJKAEtnt3a+dtP2KoyzEu0g6Z7Huc78nKCTDW6h6xl+Tus5O6lttjn
- 1O2Q==
+ bh=epiWAfrrjHwKJt0b7IMtr8i9SbnEcdcq2Ym8PuAYz04=;
+ b=QtyDwWHemh4cRk7EU4ZwvpL1HMwqx2nSdOePw1BNvFwHm0++GYgWCO69MOU5SAKKDm
+ bKw7HlAcNKeeEef1wKUPYaoqxyyGhnUEnrX76doUT1E9IVXloFaZ5hCd8yamr+EFN5sm
+ Qzlmxo7+hTrXuKITqoZuvRdpEeZn1nzaypHV7OdEL5a1O1G1pVVS8cErf1GaFIZinCFt
+ qHt1+Hfyw3JpHB28dugHsdi6DRiIFHED+53aUfUVtD7k35ST9XD6p9FxKcc3djaGw4VK
+ kVPj0oGNypP+oTC1Ps0drCM284c1u6ZwNTvUe/F2F7aWLOvfL5VR5LWWXjKdgbbMF+Ue
+ W3aw==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=S4PgIGQ3wJQUQthoZj1zqeVCz9S7XcbHvEQ97PV6+tM=;
- b=doAuYbknFeKNOiF4DBjR6Ejt8lD6YvyIRNoeMdZwMJLLztFOtfRQI6yXAfxXUE/iMv
- yx6m2Hh0wyK9UyWPfr+pcMbZGyh+Yiskr9NWNOW8KSCz45MqPJZR3xdVGd0n7HZh6LE/
- 2e6EWhyR/l8Fuyzu8iCgQQxKvcvSEsMSh7xZyVsXYFydGkuGlCSp/gLiu4WOT9afnlzD
- 4XB2wN84pmDNo07YR9EtFP2Pz/PjFPLpvIcdbBrBE6vMXhN+T7nGHLfA6Pcb/aRqG81o
- id8QFepbJLVV6elPzq40V/eI4VQrdMqqGSsqm8gnaAB0O1f9n3wGe0SnUSoKgTQ+Tf+u
- H1Sg==
-X-Gm-Message-State: APjAAAWUagKQAffR+U4c6XYrjvA1Fe/aUYla/fp0x7BoysOWCuaHC38p
- LGPehJws5akNk+KXTUSEOPU=
-X-Google-Smtp-Source: APXvYqw4GNHiM/JotTPC37vIr0f7HSYy4qPrwREclNq9g2KRIxRE6+gg2fLKcFMNvrV/T8jwjBTuFg==
-X-Received: by 2002:a17:90a:ba16:: with SMTP id
- s22mr13936707pjr.84.1568532732350; 
- Sun, 15 Sep 2019 00:32:12 -0700 (PDT)
+ bh=epiWAfrrjHwKJt0b7IMtr8i9SbnEcdcq2Ym8PuAYz04=;
+ b=OjpXSlKhb3S0Te3knLTRfx26394/u6H5NYGYnqpvUbIeH/bH2XsKe+DKO37ef1JQbj
+ WTH6NcMGBASxXJK9sF1t+G+Uu30Gg0fCsPGYJ3jrRsVRXLheGwDRJWTCMqhk4ZcgBPEr
+ 6BaX4VWlVwW/WbmztYJL7uD4MW28sKiD5+JhPFpvA6QG/875U6N82UGQPV3hTQRPNkl0
+ 66vlyoFKX7ytnUmIphZSTfxspeBDQ7EbP+/+VaP4G9P4NtFUCUg12J3s+AaV/otPsT+7
+ Qf1o8r869lw6LqXivelPm5Ly01kXIcx3XwT17NWuKM6Zg8BD0VqQXxADZaKukOjNx87U
+ f1+w==
+X-Gm-Message-State: APjAAAXVRHipNe5q8Umwxl/ciNOB3gDOqwrZwBigEawTiHvUO5d6ypuy
+ 1Bs/Z5P+Q5GUyae0O/mZFJw=
+X-Google-Smtp-Source: APXvYqxKE6UOnyayAFP+Ed+EdafQY4inmPdkuc4MpFTdLnndQPUnn3o556ROa4qcANt3ls98+BqUww==
+X-Received: by 2002:a63:5652:: with SMTP id g18mr19651857pgm.393.1568532765954; 
+ Sun, 15 Sep 2019 00:32:45 -0700 (PDT)
 Received: from satendra-MM061.ib-wrb304n.setup.in ([103.82.150.111])
- by smtp.gmail.com with ESMTPSA id 30sm7567118pjk.25.2019.09.15.00.32.07
+ by smtp.gmail.com with ESMTPSA id b6sm27961404pgq.26.2019.09.15.00.32.41
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Sun, 15 Sep 2019 00:32:11 -0700 (PDT)
+ Sun, 15 Sep 2019 00:32:45 -0700 (PDT)
 From: Satendra Singh Thakur <sst2005@gmail.com>
 To: 
-Subject: [PATCH 7/9] probe/dma/sun4i: removed redundant code from sun4i dma
+Subject: [PATCH 9/9] probe/dma/owl: removed redundant code from owl dma
  controller's probe function
-Date: Sun, 15 Sep 2019 13:02:00 +0530
-Message-Id: <20190915073201.24032-1-sst2005@gmail.com>
+Date: Sun, 15 Sep 2019 13:02:36 +0530
+Message-Id: <20190915073237.24176-1-sst2005@gmail.com>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190915072644.23329-1-sst2005@gmail.com>
 References: <20190915072644.23329-1-sst2005@gmail.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_003213_342942_CF2DFF67 
-X-CRM114-Status: GOOD (  14.57  )
+X-CRM114-CacheID: sfid-20190915_003246_568761_6D1DE80E 
+X-CRM114-Status: GOOD (  14.58  )
 X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.1 points)
@@ -101,11 +100,12 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Maxime Ripard <maxime.ripard@bootlin.com>, Chen-Yu Tsai <wens@csie.org>,
- linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
- satendrasingh.thakur@hcl.com, dmaengine@vger.kernel.org,
- Dan Williams <dan.j.williams@intel.com>,
+Cc: linux-kernel@vger.kernel.org, Vinod Koul <vkoul@kernel.org>,
+ satendrasingh.thakur@hcl.com,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ dmaengine@vger.kernel.org, Dan Williams <dan.j.williams@intel.com>,
  Satendra Singh Thakur <sst2005@gmail.com>,
+ =?UTF-8?q?Andreas=20F=C3=A4rber?= <afaerber@suse.de>,
  linux-arm-kernel@lists.infradead.org
 MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
@@ -127,59 +127,69 @@ which is pushed in previous patch [01/09].
 Signed-off-by: Satendra Singh Thakur <satendrasingh.thakur@hcl.com>
 Signed-off-by: Satendra Singh Thakur <sst2005@gmail.com>
 ---
- drivers/dma/sun4i-dma.c | 30 +++++++++---------------------
- 1 file changed, 9 insertions(+), 21 deletions(-)
+ drivers/dma/owl-dma.c | 29 +++++++++--------------------
+ 1 file changed, 9 insertions(+), 20 deletions(-)
 
-diff --git a/drivers/dma/sun4i-dma.c b/drivers/dma/sun4i-dma.c
-index 1f80568b2613..5db139ff43ac 100644
---- a/drivers/dma/sun4i-dma.c
-+++ b/drivers/dma/sun4i-dma.c
-@@ -15,6 +15,7 @@
- #include <linux/platform_device.h>
+diff --git a/drivers/dma/owl-dma.c b/drivers/dma/owl-dma.c
+index 90bbcef99ef8..03e692fc25a1 100644
+--- a/drivers/dma/owl-dma.c
++++ b/drivers/dma/owl-dma.c
+@@ -23,6 +23,7 @@
+ #include <linux/of_device.h>
+ #include <linux/of_dma.h>
  #include <linux/slab.h>
- #include <linux/spinlock.h>
 +#include <linux/probe-helper.h>
- 
  #include "virt-dma.h"
  
-@@ -1119,29 +1120,16 @@ static irqreturn_t sun4i_dma_interrupt(int irq, void *dev_id)
- static int sun4i_dma_probe(struct platform_device *pdev)
+ #define OWL_DMA_FRAME_MAX_LENGTH		0xfffff
+@@ -1045,20 +1046,15 @@ static int owl_dma_probe(struct platform_device *pdev)
  {
- 	struct sun4i_dma_dev *priv;
+ 	struct device_node *np = pdev->dev.of_node;
+ 	struct owl_dma *od;
 -	struct resource *res;
- 	int i, j, ret;
- 
--	priv = devm_kzalloc(&pdev->dev, sizeof(*priv), GFP_KERNEL);
--	if (!priv)
+ 	int ret, i, nr_channels, nr_requests;
+-
+-	od = devm_kzalloc(&pdev->dev, sizeof(*od), GFP_KERNEL);
+-	if (!od)
 -		return -ENOMEM;
 -
 -	res = platform_get_resource(pdev, IORESOURCE_MEM, 0);
--	priv->base = devm_ioremap_resource(&pdev->dev, res);
--	if (IS_ERR(priv->base))
--		return PTR_ERR(priv->base);
+-	if (!res)
+-		return -EINVAL;
 -
--	priv->irq = platform_get_irq(pdev, 0);
--	if (priv->irq < 0) {
--		dev_err(&pdev->dev, "Cannot claim IRQ\n");
--		return priv->irq;
--	}
--
--	priv->clk = devm_clk_get(&pdev->dev, NULL);
--	if (IS_ERR(priv->clk)) {
--		dev_err(&pdev->dev, "No clock specified\n");
--		return PTR_ERR(priv->clk);
--	}
+-	od->base = devm_ioremap_resource(&pdev->dev, res);
+-	if (IS_ERR(od->base))
+-		return PTR_ERR(od->base);
 +	/*
 +	 * This macro internally combines following functions:
 +	 * devm_kzalloc, platform_get_resource, devm_ioremap_resource,
 +	 * devm_clk_get, platform_get_irq
 +	 */
-+	ret = devm_platform_probe_helper(pdev, priv, NULL);
++	ret = devm_platform_probe_helper(pdev, od, NULL);
 +	if (ret < 0)
 +		return ret;
  
- 	platform_set_drvdata(pdev, priv);
- 	spin_lock_init(&priv->lock);
+ 	ret = of_property_read_u32(np, "dma-channels", &nr_channels);
+ 	if (ret) {
+@@ -1105,18 +1101,11 @@ static int owl_dma_probe(struct platform_device *pdev)
+ 
+ 	INIT_LIST_HEAD(&od->dma.channels);
+ 
+-	od->clk = devm_clk_get(&pdev->dev, NULL);
+-	if (IS_ERR(od->clk)) {
+-		dev_err(&pdev->dev, "unable to get clock\n");
+-		return PTR_ERR(od->clk);
+-	}
+-
+ 	/*
+ 	 * Eventhough the DMA controller is capable of generating 4
+ 	 * IRQ's for DMA priority feature, we only use 1 IRQ for
+ 	 * simplification.
+ 	 */
+-	od->irq = platform_get_irq(pdev, 0);
+ 	ret = devm_request_irq(&pdev->dev, od->irq, owl_dma_interrupt, 0,
+ 			       dev_name(&pdev->dev), od);
+ 	if (ret) {
 -- 
 2.17.1
 
