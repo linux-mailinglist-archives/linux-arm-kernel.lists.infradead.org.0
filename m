@@ -2,88 +2,129 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 37D87B2DDB
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 04:36:19 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D0182B2E66
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 07:04:52 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=GM7lfMGmX4ot5PQEPeGUlyI48yWqSL9k/uzkeDcBEn4=; b=YKuUF9ebcy388c
-	/hovf8zeKA2KsdxVrDDT5mX0dJq73gRDKBNjLhHc/BRhA027kaQvJZphi+8r5p3Ey67PrkHFkJxHu
-	932jrNQkIizSqtB5rs1sqQS+4iutQeKB/QHnRxINxtKdFEZ2uezxmyyWpw5X0qbereI7F+te1NbRi
-	d8D08AU1rFgwoQmEsH6+2B0/Ra+B81q2/NQnkQIWKGAD+HcdqOC2AdD4QmARqkWVQFLbPFA7SiOWF
-	sNsRgC2dPDkDDM8tNWvadu9arsmuUOkube7OTReutozPcUNqPXEq2SOLJSPvvHOoFOEIM+DIvQA3j
-	cz2NtsAO8ps25vjHAotQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=N1XtGFbPhAQ9f403SeYzwGk1F08RjaEhXdx/1Jr6XiY=; b=YkqrIk2Nh2Wcs/
+	dd4JctPSv50wrydCsbgNWow84JZEx32m9i8Ja0lRXbpv9Nd+mq8T3ps16c3Q2B/AnDo5stIbhZPWj
+	/PtuGrC++48xgvH/SE/i/eatx7qpxkIi7QSmC/QgjU1kh5OA4Hy+uRKmAO1QN/+vGHT878qKR8Wbz
+	Lz+7T5uy4j4Jv+XNZbCVvh/qijC5/93VEHfXvvJPbRIIB32jm1yuvlO2fuJWHCJVoAwAH7DM7RZ0h
+	ICt/KdhifQJK6gzLBrYxY4hw/jxLmtbZ6eeh81Nbcv9hJft8fKfbWgrcLLjFPHsMcZOTLJ+6v5a+w
+	LmEBhfMS2l8FXftfC0JQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9KOT-0007jM-4J; Sun, 15 Sep 2019 02:36:05 +0000
-Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
+	id 1i9Mi4-0005hr-O6; Sun, 15 Sep 2019 05:04:30 +0000
+Received: from esa5.hgst.iphmx.com ([216.71.153.144])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9KOB-0007is-Qd
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 02:35:50 +0000
-Received: by mail-pf1-x441.google.com with SMTP id q21so20328539pfn.11
- for <linux-arm-kernel@lists.infradead.org>;
- Sat, 14 Sep 2019 19:35:43 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=subject:to:cc:references:from:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=fhQRRoTWVDlkY7bkl1HwIxtbioEN9dfRxohZkdD1f9M=;
- b=oXe4Q8xkuN/WPthulSrCIQoFnOzQuOLjaM94ovBClDefXyw5ovNZQI5UxwCo1NsTrI
- qVl/6cRRmr+qcvtWQPmX/5Yz+sphzpUOsP4WG9Y8yRIFaaysposUEHDahrjcSYfzD2fi
- dNjKpndLrX/FWkY6oJc6gHsADmWv45gjJMUL3WIzunxOmhd6N01z/PvDsnMKCwhfS9L8
- zmW986xrcgPO9AsSS0Y84PEZjyS6KkPVHSKUiUYvqnRwFH5DElGEZNhZOJ4d9Y/ITR70
- GcLf46BfWLGbFaNLXSH9EhNaOcg3wR+dNXqVvixO1ziCL4N5U+JiGLr5ilv//dX8FwsM
- fvvw==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:message-id:date
- :user-agent:mime-version:in-reply-to:content-language
- :content-transfer-encoding;
- bh=fhQRRoTWVDlkY7bkl1HwIxtbioEN9dfRxohZkdD1f9M=;
- b=Lqin9Kx77tJBP9ZYQCWI3dnpv2ZowbG9q7cRICckouPAVnrgaccmAkfPPgvOC/Eujo
- 2PwZSgerZ4WIIhRPPcJkoZyvzz+7M3HKA3mOOu3TAV6aikInfhEcrCl8WmiMBd0yI0PE
- U4mlEmjFT0DCI41+EDYJpED5SATfY2Y3kiVqBJkHJWgZgXQGX65gBiTqKQSo4Ctx48QT
- bzha0hiW9XLpAyJH3v0dZd4r35oItUeCiFqFvPg8RXxtAp9N1r2uBYc99YW6C4KmsfWR
- LumEH28yIbZy8xHUrT9WsHA38D3IBMzw9TZou7wYEeZbDet03+eJnAAyQxi9dxYJG6jT
- zu1Q==
-X-Gm-Message-State: APjAAAWeqfa5ljF+shKhgGCgEheSVKbsnnEDo4BA0gnA+GQKmaeezIzk
- EBlCWzSP6fSB7muBNyrR8G0=
-X-Google-Smtp-Source: APXvYqx06da70srL4i4scsPW1kg1/C9aD5pMasQ7FoZzWmxFwg25UIdGOhHDBr6G6FhNTB7IHEefjg==
-X-Received: by 2002:a63:2216:: with SMTP id i22mr7782671pgi.430.1568514942554; 
- Sat, 14 Sep 2019 19:35:42 -0700 (PDT)
-Received: from [192.168.68.119] (220-245-129-191.tpgi.com.au.
- [220.245.129.191])
- by smtp.gmail.com with ESMTPSA id e1sm3291519pgd.21.2019.09.14.19.35.24
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sat, 14 Sep 2019 19:35:41 -0700 (PDT)
-Subject: Re: [PATCH V7 2/3] arm64/mm: Hold memory hotplug lock while walking
- for kernel page table dump
-To: Anshuman Khandual <anshuman.khandual@arm.com>, linux-mm@kvack.org,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- akpm@linux-foundation.org, catalin.marinas@arm.com, will@kernel.org
-References: <1567503958-25831-1-git-send-email-anshuman.khandual@arm.com>
- <1567503958-25831-3-git-send-email-anshuman.khandual@arm.com>
-From: Balbir Singh <bsingharora@gmail.com>
-Message-ID: <66922798-9de7-a230-8548-1f205e79ea50@gmail.com>
-Date: Sun, 15 Sep 2019 12:35:21 +1000
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.8.0
-MIME-Version: 1.0
-In-Reply-To: <1567503958-25831-3-git-send-email-anshuman.khandual@arm.com>
+ id 1i9MhQ-0005h1-DS; Sun, 15 Sep 2019 05:03:52 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=simple/simple;
+ d=wdc.com; i=@wdc.com; q=dns/txt; s=dkim.wdc.com;
+ t=1568523828; x=1600059828;
+ h=from:to:cc:subject:date:message-id:references:
+ in-reply-to:content-transfer-encoding:mime-version;
+ bh=Chks9ClJHwPBARUlK8iqwFCm96S+GK/iZ2/WaJ6ewUc=;
+ b=BPAeFCAUkCfuSitaeF9UJGO5EsFSMcr5blPEcg5qujeeC5YZhkZvsSvr
+ z32KJwAgH9OB6+8yNctumvj/SPcH34HmrOnIeu4fmqar9H4fgB+sfkKCq
+ bwCf7c/QyCGIrmMfhhk4uF7V+piaCUWEvrQzsl2JViVG9L8SfkjVzMLyR
+ H6ucHX7nRvL3dPvt5A6bjHxuyXfpKyR4KKWH957XXc0ZB8qIFj3QSVCRl
+ gG62Ge4ATKZL9xTzntCJdesgQhYO1pYuSCvADy8HKgH9j6mFV5nX1bCxt
+ 5lRa+x0b8vGsZhVciZALAhf/I293CS2MGd1kM1NQntEvCJL6CoO/IkzvK w==;
+IronPort-SDR: i+VxeOkIzDn9gy6rv7eNjAtrJBhEgMpgA1qZYysYxUJyobn7DRZCdcAIaHnEWKAnwAJMyMo/R3
+ 3Bdk7f45ewcNz7SYLjxZCNBNb25DTk4tNCrl40nuvOZsjTxoCoWsTcaLyJD5gZGFro8u022boE
+ w8yLJnJN7ojhFWdLz8257Uidg1+zSt/9tFH2NP5odcjZfHAM6O5ereotVSzojV/vcCrTaUD29W
+ 3K9y5v7ansiKyGXlTVqou9lByRWBWgSbnJh0YnQIaYj+CAYw4/jw3q8iTIQ9bXXJXrxwnqhBPS
+ yDQ=
+X-IronPort-AV: E=Sophos;i="5.64,506,1559491200"; d="scan'208";a="119121434"
+Received: from mail-by2nam05lp2054.outbound.protection.outlook.com (HELO
+ NAM05-BY2-obe.outbound.protection.outlook.com) ([104.47.50.54])
+ by ob1.hgst.iphmx.com with ESMTP; 15 Sep 2019 13:03:40 +0800
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=ZJEzRzoADf6z+1RwTTzYckGU89EhUaMbW2JR4JuT2OtbkCA1w2FDcDB0QcjQW2TWTZoFOh+4TAs9qG8CuCDvI4VYbgnsvL5ZOTURsnewSAMhCOWcsmE8m+G2fZcighJgQnGaUoYGjAHkzdlwTeYQSe/vmw8RSn7/RO4wgLfe0ChocmRRc/Y+dIyuh8wqJP1j4zttFnAK9maZ92OeYCcBDUcH6IhOVliNb9CkbXmMPO9hHCo9jEuvL9nZwYuEAN19BDtrRX/0f+Lk6Kvx0j+RAXcQH5K1UYUuOhVW/p6MfXtX76i8dBcEf7dtn79SGVTSCghSdZkfHczwTNwoZz09kQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Chks9ClJHwPBARUlK8iqwFCm96S+GK/iZ2/WaJ6ewUc=;
+ b=Fbr5BTXojR8fqe5eaJQshxm9ThWDMjAodJK4fVvDgDQR3QQsLDTQ/GQrCSVIO0WCiaz/QIsga9JiXPgay36rP5BF9TrfSQK6Qr5G2gsvU841DZsCA3iL0VVFaaXppD+8dKh81L8ThsOTaCLqQfCOi6kXSlOiRFb7C3/qa+Zo8hI+ASyNJ/mhY4H/jzTzynWeA7sgcdSQ2bpvptVR8tac+F4mrNXBn+geAOJfvVyC+ecBeQdxyTMtjg8ZfZtW9MwsGbqw/whqJ6U6HqAYoDwwzw8KN/IEjiGifRN8vlflg02YUDGqwGnVX8TLWrshkzfdQWbrbkdtUYxDQG4P8gyLow==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=wdc.com; dmarc=pass action=none header.from=wdc.com; dkim=pass
+ header.d=wdc.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=sharedspace.onmicrosoft.com; s=selector2-sharedspace-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=Chks9ClJHwPBARUlK8iqwFCm96S+GK/iZ2/WaJ6ewUc=;
+ b=zJGpYxMcQlS/xbeM5zEVocS3K9TB+hcwEZZe05aKpojwx4lXU3viQdrjNXt1fmx7e9VQpwvrYxZ9bS8sVe+NB9SP4Prv7PXL0TcS29reraab13t3yRacpCGJajgF2xpCs2Ta83e7dXV497CLrL3XxpLKS5Y7QjA/xW7LmBQLGOI=
+Received: from MN2PR04MB6061.namprd04.prod.outlook.com (20.178.246.15) by
+ MN2PR04MB6029.namprd04.prod.outlook.com (20.178.246.139) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.13; Sun, 15 Sep 2019 05:03:38 +0000
+Received: from MN2PR04MB6061.namprd04.prod.outlook.com
+ ([fe80::e1a5:8de2:c3b1:3fb0]) by MN2PR04MB6061.namprd04.prod.outlook.com
+ ([fe80::e1a5:8de2:c3b1:3fb0%7]) with mapi id 15.20.2263.023; Sun, 15 Sep 2019
+ 05:03:38 +0000
+From: Anup Patel <Anup.Patel@wdc.com>
+To: Palmer Dabbelt <palmer@sifive.com>, "will@kernel.org" <will@kernel.org>
+Subject: RE: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Thread-Topic: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+ separate file
+Thread-Index: AQHU4ARW4cwQ4eGTBkiNSNBcx5My8aaNvxWAgBVs3wCAAA0vgIAABQWAgAAz5gCAAAYHgIABXjKAgAZcEYCAdrxbgIAHNtEAgAMkQoCAAPtQ0A==
+Date: Sun, 15 Sep 2019 05:03:38 +0000
+Message-ID: <MN2PR04MB606117F2AC47385EF23D267D8D8D0@MN2PR04MB6061.namprd04.prod.outlook.com>
+References: <20190912140256.fwbutgmadpjbjnab@willie-the-truck>
+ <mhng-166dcd4f-9483-4aab-a83a-914d70ddb5a4@palmer-si-x1e>
+In-Reply-To: <mhng-166dcd4f-9483-4aab-a83a-914d70ddb5a4@palmer-si-x1e>
+Accept-Language: en-US
 Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=Anup.Patel@wdc.com; 
+x-originating-ip: [49.207.49.169]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 077cc312-e726-46a6-dd40-08d7399a1201
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(5600166)(711020)(4605104)(1401327)(4618075)(2017052603328)(7193020);
+ SRVR:MN2PR04MB6029; 
+x-ms-traffictypediagnostic: MN2PR04MB6029:
+x-ms-exchange-purlcount: 2
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <MN2PR04MB602981B00CEC0AC7D7A86E488D8D0@MN2PR04MB6029.namprd04.prod.outlook.com>
+wdcipoutbound: EOP-TRUE
+x-ms-oob-tlc-oobclassifiers: OLM:6108;
+x-forefront-prvs: 01613DFDC8
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10019020)(4636009)(376002)(136003)(396003)(39860400002)(346002)(366004)(199004)(13464003)(189003)(74316002)(316002)(966005)(25786009)(3846002)(76116006)(26005)(6116002)(55236004)(305945005)(66066001)(66946007)(66446008)(64756008)(66556008)(66476007)(102836004)(256004)(54906003)(2501003)(7736002)(478600001)(4326008)(33656002)(110136005)(229853002)(53546011)(6506007)(14454004)(81166006)(6246003)(81156014)(7696005)(446003)(9686003)(11346002)(99286004)(6306002)(71190400001)(71200400001)(6436002)(5660300002)(7416002)(476003)(186003)(55016002)(76176011)(53936002)(52536014)(8936002)(86362001)(486006)(2906002)(8676002);
+ DIR:OUT; SFP:1102; SCL:1; SRVR:MN2PR04MB6029;
+ H:MN2PR04MB6061.namprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; A:1; MX:1; 
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: sQdWGfS4ONuNECE4i/uE3dTO4x8zKnKX2PHAImSkDJWFtLybrmdz3BVjJpsoMXXR8uzGd9+DX6Ks6WoieOIaaQOklc6RH3UzkIFYfhBSTf5MHafJort67RCKNyYpCv1oXto4ieW5yPHPz0m1ZRHU7k7El/M1y0A4BMwgF228F95pKwvIBUeTXWtgjknDt68k5Sj/gOCCAFwuy5hVqoC4v5hrZ2YmIMwTlK8dfMF+AV2GKNvr1i5VRLo+Rw2E0dtvQ/DrjXCF/Dt1x0IqLxxVQMrJnPQzFQ75JBVs1Vgei2YSkUtVyLcZBDXdnBpMxKIlE/suVBQK8tix2c7l39Le+eeusflBrramYGz5oHnKGsVBIfQccaFIs/QLZNbDBLM/jPLZNwkRkV8TFd6qebJUz3QBz0Xn4LW+iN0ReO8cT1M=
+MIME-Version: 1.0
+X-OriginatorOrg: wdc.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 077cc312-e726-46a6-dd40-08d7399a1201
+X-MS-Exchange-CrossTenant-originalarrivaltime: 15 Sep 2019 05:03:38.3364 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: b61c8803-16f3-4c35-9b17-6f65f441df86
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: 2xaVWlQjH/gbtQ3nYyFIu1lMCo3QEl5NxVddA23LCZjlRgg7Kvm3fjkty3KMHn+rZc482PPy1Bq7F8hWnhbH/Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: MN2PR04MB6029
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_193547_890982_1004F8C1 
-X-CRM114-Status: GOOD (  20.18  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190914_220348_778946_53A5F280 
+X-CRM114-Status: GOOD (  20.27  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [216.71.153.144 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (bsingharora[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -92,9 +133,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
- [list.dnswl.org]
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -106,12 +144,25 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, mhocko@suse.com, david@redhat.com,
- ira.weiny@intel.com, steve.capper@arm.com, mgorman@techsingularity.net,
- steven.price@arm.com, broonie@kernel.org, cai@lca.pw, ard.biesheuvel@arm.com,
- cpandya@codeaurora.org, arunks@codeaurora.org, dan.j.williams@intel.com,
- Robin.Murphy@arm.com, logang@deltatee.com, valentin.schneider@arm.com,
- suzuki.poulose@arm.com, osalvador@suse.de
+Cc: "aou@eecs.berkeley.edu" <aou@eecs.berkeley.edu>,
+ Arnd Bergmann <arnd@arndb.de>,
+ "julien.thierry@arm.com" <julien.thierry@arm.com>,
+ "marc.zyngier@arm.com" <marc.zyngier@arm.com>,
+ "catalin.marinas@arm.com" <catalin.marinas@arm.com>,
+ "suzuki.poulose@arm.com" <suzuki.poulose@arm.com>,
+ Will Deacon <will.deacon@arm.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ "iommu@lists.linux-foundation.org" <iommu@lists.linux-foundation.org>,
+ "rppt@linux.ibm.com" <rppt@linux.ibm.com>,
+ Christoph Hellwig <hch@infradead.org>, Atish Patra <Atish.Patra@wdc.com>,
+ "julien.grall@arm.com" <julien.grall@arm.com>,
+ "guoren@kernel.org" <guoren@kernel.org>, "gary@garyguo.net" <gary@garyguo.net>,
+ Paul Walmsley <paul.walmsley@sifive.com>,
+ "christoffer.dall@arm.com" <christoffer.dall@arm.com>,
+ "james.morse@arm.com" <james.morse@arm.com>,
+ "linux-riscv@lists.infradead.org" <linux-riscv@lists.infradead.org>,
+ "kvmarm@lists.cs.columbia.edu" <kvmarm@lists.cs.columbia.edu>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
@@ -119,54 +170,62 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 
 
 
-On 3/9/19 7:45 pm, Anshuman Khandual wrote:
-> The arm64 page table dump code can race with concurrent modification of the
-> kernel page tables. When a leaf entries are modified concurrently, the dump
-> code may log stale or inconsistent information for a VA range, but this is
-> otherwise not harmful.
+> -----Original Message-----
+> From: linux-kernel-owner@vger.kernel.org <linux-kernel-
+> owner@vger.kernel.org> On Behalf Of Palmer Dabbelt
+> Sent: Saturday, September 14, 2019 7:31 PM
+> To: will@kernel.org
+> Cc: guoren@kernel.org; Will Deacon <will.deacon@arm.com>;
+> julien.thierry@arm.com; aou@eecs.berkeley.edu; james.morse@arm.com;
+> Arnd Bergmann <arnd@arndb.de>; suzuki.poulose@arm.com;
+> marc.zyngier@arm.com; catalin.marinas@arm.com; Anup Patel
+> <Anup.Patel@wdc.com>; linux-kernel@vger.kernel.org;
+> rppt@linux.ibm.com; Christoph Hellwig <hch@infradead.org>; Atish Patra
+> <Atish.Patra@wdc.com>; julien.grall@arm.com; gary@garyguo.net; Paul
+> Walmsley <paul.walmsley@sifive.com>; christoffer.dall@arm.com; linux-
+> riscv@lists.infradead.org; kvmarm@lists.cs.columbia.edu; linux-arm-
+> kernel@lists.infradead.org; iommu@lists.linux-foundation.org
+> Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
+> separate file
 > 
-> When intermediate levels of table are freed, the dump code will continue to
-> use memory which has been freed and potentially reallocated for another
-> purpose. In such cases, the dump code may dereference bogus addresses,
-> leading to a number of potential problems.
+> On Thu, 12 Sep 2019 07:02:56 PDT (-0700), will@kernel.org wrote:
+> > On Sun, Sep 08, 2019 at 07:52:55AM +0800, Guo Ren wrote:
+> >> On Mon, Jun 24, 2019 at 6:40 PM Will Deacon <will@kernel.org> wrote:
+> >> > > I'll keep my system use the same ASID for SMP + IOMMU :P
+> >> >
+> >> > You will want a separate allocator for that:
+> >> >
+> >> > https://lkml.kernel.org/r/20190610184714.6786-2-jean-philippe.bruck
+> >> > er@arm.com
+> >>
+> >> Yes, it is hard to maintain ASID between IOMMU and CPUMMU or
+> >> different system, because it's difficult to synchronize the IO_ASID
+> >> when the CPU ASID is rollover.
+> >> But we could still use hardware broadcast TLB invalidation
+> >> instruction to uniformly manage the ASID and IO_ASID, or OTHER_ASID in
+> our IOMMU.
+> >
+> > That's probably a bad idea, because you'll likely stall execution on
+> > the CPU until the IOTLB has completed invalidation. In the case of
+> > ATS, I think an endpoint ATC is permitted to take over a minute to
+> > respond. In reality, I suspect the worst you'll ever see would be in
+> > the msec range, but that's still an unacceptable period of time to hold a
+> CPU.
+> >
+> >> Welcome to join our disscusion:
+> >> "Introduce an implementation of IOMMU in linux-riscv"
+> >> 9 Sep 2019, 10:45 Jade-room-I&II (Corinthia Hotel Lisbon) RISC-V MC
+> >
+> > I attended this session, but it unfortunately raised many more
+> > questions than it answered.
 > 
-> Intermediate levels of table may by freed during memory hot-remove,
-> which will be enabled by a subsequent patch. To avoid racing with
-> this, take the memory hotplug lock when walking the kernel page table.
-> 
-> Acked-by: David Hildenbrand <david@redhat.com>
-> Acked-by: Mark Rutland <mark.rutland@arm.com>
-> Signed-off-by: Anshuman Khandual <anshuman.khandual@arm.com>
-> ---
->  arch/arm64/mm/ptdump_debugfs.c | 4 ++++
->  1 file changed, 4 insertions(+)
-> 
-> diff --git a/arch/arm64/mm/ptdump_debugfs.c b/arch/arm64/mm/ptdump_debugfs.c
-> index 064163f25592..b5eebc8c4924 100644
-> --- a/arch/arm64/mm/ptdump_debugfs.c
-> +++ b/arch/arm64/mm/ptdump_debugfs.c
-> @@ -1,5 +1,6 @@
->  // SPDX-License-Identifier: GPL-2.0
->  #include <linux/debugfs.h>
-> +#include <linux/memory_hotplug.h>
->  #include <linux/seq_file.h>
->  
->  #include <asm/ptdump.h>
-> @@ -7,7 +8,10 @@
->  static int ptdump_show(struct seq_file *m, void *v)
->  {
->  	struct ptdump_info *info = m->private;
-> +
-> +	get_online_mems();
->  	ptdump_walk_pgd(m, info);
-> +	put_online_mems();
+> Ya, we're a long way from figuring this out.
 
-Looks sane, BTW, checking other arches they might have the same race.
-Is there anything special about the arch?
+For everyone's reference, here is our first attempt at RISC-V ASID allocator:
+http://archive.lwn.net:8080/linux-kernel/20190329045111.14040-1-anup.patel@wdc.com/T/#u
 
-Acked-by: Balbir Singh <bsingharora@gmail.com>
-
-
+Regards,
+Anup
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
