@@ -2,91 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F3D1CB3164
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 20:36:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 058AEB317C
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 20:52:24 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=lBdo5J5SkMa84vR6UlBR5vzsuifFtTIGMlsVkBEzgFE=; b=QSv605nbHAKdsN
-	BgaJIaHPhiSHQV8zBZZRZoWMpIu0FXyBS+r3Zo4ZtI0a4sWxPgLbwiws09UcrdSwZK3A2ID5Cj+pn
-	zaf6dSLC70QkWNSAeUYRhdc6YMAdgjj8YrJ026cwkynOHcL/6J04duN8ZG3QMfMFICHYE5QsUaj/O
-	Iaz/XpPGZ8BndV6Ljy/pNEcXnoTD0K3U+B8XiMDn1D3nVG/9DI2SoNOSkfiJyuCN7bdaZXI95Dpzq
-	6p7ICp6TZTcfJkUDPRbySybAonkVf+DyL93kWA6koIfeQCVcVgXuNnkdXnGbyYU7PoJRpehhoiRg4
-	6WHGIdljmwkhQRZ/k5Sw==;
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=l2FcQVyu3TSFDs+/0FttRCqMSg8icHFW4PKZ+QbleqE=; b=SCa2paka0kv+dQ
+	Au6PJ0fqsw47z8UJ0oan6Yn7ACrcLuKInudJI2MZfmtMpO+NlwX1P8D6r5SaCl1ismu97b8BYK3/E
+	qQUebijkGGncuoFVwsBkQ1WQZ8rQULgLhZxXlCc2Q6H1ZYfKrDcKTPdRyBiMFqEOiLR9Ot6TStcVe
+	nG8LKUzPPRr+buqZgBDllXmqJBzHSPGU2icIxErvYXt/WF81K76BoTW3D7p2/E8w4RlHzC4+JG7iV
+	m3QXmvhmGc4/GrDeIzZxcxlx6xv9YLBuWsyg4s0eKzLsR9Eq/bjXrbnePi/yq1g2v3PKqU6Lkjir4
+	AkdQ92qT9N0LI/FZzz0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9ZO2-00041U-3N; Sun, 15 Sep 2019 18:36:38 +0000
-Received: from mail-wm1-x344.google.com ([2a00:1450:4864:20::344])
+	id 1i9Zd9-00007i-Tw; Sun, 15 Sep 2019 18:52:16 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9ZNN-0003tc-1b
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 18:35:58 +0000
-Received: by mail-wm1-x344.google.com with SMTP id m3so7740909wmc.5
- for <linux-arm-kernel@lists.infradead.org>;
- Sun, 15 Sep 2019 11:35:53 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0lspMjLiionZILkbBr8xfiqwsFdKOXlG6Qqe5s5HG7c=;
- b=BDpr1LCcQBR8RMm+cBgOIclbkpAVbLmO1JLnUiOzNq/PIurUa2s2f92YPB3ZKTopCR
- MRAYLgrv9CWU5oG5nOtlquC6N85TVGGYrMeARJJpdGLIPbcqgmTtBVT3DUCFKVY0hc7G
- n6oPbmLkQGjyqa2qVUur8LC5d/wrdeLfHreFpKuLEQJP5wKG1ffm+9gySglEj3TABwBr
- Ly/t0K+kQlF0ck4Eq8zAMfC2N8uLJYv8k6siXy7Ym69TVO6PQRTziISyR3pYSpbnudRD
- Msox/dobtnl8zwnoLyePA4tJ0Y+Y8JmYIauAE1rjoDMA9cu1/rsBySEUva62htVazwzc
- jUew==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id:mime-version
- :content-transfer-encoding;
- bh=0lspMjLiionZILkbBr8xfiqwsFdKOXlG6Qqe5s5HG7c=;
- b=lGG3dfR0GXuxCsFhCOyoip9gobd864kpkzFgOqVIVY4/hGqGq2Kzt77/cOqHFfRIpL
- nLj7Y4EtwHjYiCnD27nzn2vDzHmIfuMJtYcgnEb1vuShxSumCqA62xAT8R4Yc3ig+I4w
- cIZxTfFKHIol3HQF7kZMgCsNN5HsX3Ji8nYcd5EzChi2JNnLDaNBQ5/fts7Ppi2A1GZ8
- 9971mKW134swnAi0OhilXiUZYYciC394y8Fqx1hoMTOGu7FOjyH7roPsaC9COsQ6XKJr
- klG13KLn0k4LYh0XSBbF/CIR9GStP6Angm8dVic0wN+tmwPbahTA6M0HcXgtySEzu6Bd
- UV8Q==
-X-Gm-Message-State: APjAAAUqOlfzTPL/o4V0zxiwZiEyBm3PshJYVrkMr3ecZ+0Pbww52NAQ
- 5KnR0PKeuVbaDtM2EPDMqR8=
-X-Google-Smtp-Source: APXvYqxaHaJ3pIakOfUWi1LNN/GOhxVtf6MMn4HmvmZuJr5tm/FKdc97pvTfhJrcS2rbUqLHLMFrzA==
-X-Received: by 2002:a1c:a94b:: with SMTP id s72mr11109366wme.9.1568572551931; 
- Sun, 15 Sep 2019 11:35:51 -0700 (PDT)
-Received: from Red.localdomain ([2a01:cb1d:147:7200:2e56:dcff:fed2:c6d6])
- by smtp.googlemail.com with ESMTPSA id
- t203sm11365202wmf.42.2019.09.15.11.35.50
- (version=TLS1_2 cipher=ECDHE-RSA-AES128-GCM-SHA256 bits=128/128);
- Sun, 15 Sep 2019 11:35:51 -0700 (PDT)
-From: Corentin Labbe <clabbe.montjoie@gmail.com>
-To: davem@davemloft.net, herbert@gondor.apana.org.au, mripard@kernel.org,
- wens@csie.org
-Subject: [PATCH] crypto: sun4i-ss: erase key after use
-Date: Sun, 15 Sep 2019 20:35:36 +0200
-Message-Id: <20190915183536.3835-1-clabbe.montjoie@gmail.com>
-X-Mailer: git-send-email 2.21.0
-MIME-Version: 1.0
+ id 1i9Zcv-000079-MQ
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 18:52:03 +0000
+Received: from localhost (93-63-141-166.ip28.fastwebnet.it [93.63.141.166])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id 99A15153E82EC;
+ Sun, 15 Sep 2019 11:51:50 -0700 (PDT)
+Date: Sun, 15 Sep 2019 19:51:49 +0100 (WEST)
+Message-Id: <20190915.195149.86866545205816280.davem@davemloft.net>
+To: alexandru.ardelean@analog.com
+Subject: Re: [PATCH v2] net: stmmac: socfpga: re-use the `interface`
+ parameter from platform data
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20190912132850.10585-1-alexandru.ardelean@analog.com>
+References: <20190912132850.10585-1-alexandru.ardelean@analog.com>
+X-Mailer: Mew version 6.8 on Emacs 26.2
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Sun, 15 Sep 2019 11:51:52 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_113557_321944_A2F4D69A 
-X-CRM114-Status: GOOD (  11.20  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190915_115201_736635_F507CDFD 
+X-CRM114-Status: UNSURE (   7.26  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:344 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (clabbe.montjoie[at]gmail.com)
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -98,41 +64,26 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, stable@vger.kernel.org,
- linux-sunxi@googlegroups.com, Corentin Labbe <clabbe.montjoie@gmail.com>,
- linux-crypto@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-When a TFM is unregistered, the sun4i-ss driver does not clean the key used,
-leaking it in memory.
-This patch adds this absent key cleaning.
+From: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Date: Thu, 12 Sep 2019 16:28:50 +0300
 
-Fixes: 6298e948215f ("crypto: sunxi-ss - Add Allwinner Security System crypto accelerator")
-Cc: <stable@vger.kernel.org> # 4.3+
-Signed-off-by: Corentin Labbe <clabbe.montjoie@gmail.com>
----
- drivers/crypto/sunxi-ss/sun4i-ss-cipher.c | 2 ++
- 1 file changed, 2 insertions(+)
+> diff --git a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+> index c141fe783e87..5b6213207c43 100644
+> --- a/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+> +++ b/drivers/net/ethernet/stmicro/stmmac/dwmac-socfpga.c
+ ...
+> +static inline int socfpga_get_plat_phymode(struct socfpga_dwmac *dwmac)
 
-diff --git a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-index fa4b1b47822e..60d99370a4ec 100644
---- a/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-+++ b/drivers/crypto/sunxi-ss/sun4i-ss-cipher.c
-@@ -503,6 +503,8 @@ int sun4i_ss_cipher_init(struct crypto_tfm *tfm)
- void sun4i_ss_cipher_exit(struct crypto_tfm *tfm)
- {
- 	struct sun4i_tfm_ctx *op = crypto_tfm_ctx(tfm);
-+
-+	memzero_explicit(op->key, op->keylen);
- 	crypto_free_sync_skcipher(op->fallback_tfm);
- }
- 
--- 
-2.21.0
-
+Please do not use the inline keyword in foo.c files, let the compiler device.
 
 _______________________________________________
 linux-arm-kernel mailing list
