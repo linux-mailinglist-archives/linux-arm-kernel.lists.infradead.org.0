@@ -2,60 +2,73 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id CDE28B2F8B
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 12:22:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 5590AB2FE3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 14:32:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=L+I4F6aMD+edsZ4CdcID3JfVEljy7AhJ+kJ3bZUPRZU=; b=PzDKLWvSL/AvX+
-	ag1hn+GR9DbddCuaKPc0RqcdBtl2Yla7YSxMb0kzYVQsv32vMOwdyf0IaNl4xwsv8YsH/ruSez4ar
-	4iFPXiPGEE1aOGCGSRoYn8dxzBODXmNqQTMRYrb2Bo8oZeiHuvegQfW8QXK2Yx1x8BCn0kkk2tjMj
-	dKguzUUTodYx6m2vxnV2Y0rQs8bl/WrxX5lGAFtFXA/Y0wXJKa9W6ntxUkvK1kLAkBaLopdHZbUpw
-	XqZBsVUI9zFUK6+6X+Jp43SxBEV1P544pmsi831PlhrHWmwIWOKU1AK6SVT+6uD8a7D/EktL74OZo
-	5cLzKXXOjKAMPB+vQZ2Q==;
+	List-Owner; bh=0A8AzW8s0mzlvXJ29uuuK6RemBZiG+H8NATaF6fiCE8=; b=jqy553H7KOkTeK
+	ZbT8vaJoLtd8/p3X1s6GEULKo55To0Eo3mB83Z3QMNrThfQk21JZ4aRpJvTMTQpseYBVp2we9ebqa
+	u83D10WpnJBHEPFiA5jLF9iJBRTNcf8VsS4xkWt7590Tt1rZ3jkm3gudfxoWno7l273JUzJe3EwBE
+	CWRr4qqu+/+ZfLoFVKdJb7Be/K8amuzZ8GoopEAH0Dlec3GspGPkbs5oTOuzBkyspBL/NgSM8ylws
+	GAe/h3Hea8/Jz60PFHBosSXbnwix44FxJfACJyD0EJavgZCh+uiz2icn99/dCQx+JTwC+MjK4vEpN
+	DRBP974pIRD3HkYBlFXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9Rfx-0005fo-Nl; Sun, 15 Sep 2019 10:22:38 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i9Thv-0000tS-5a; Sun, 15 Sep 2019 12:32:47 +0000
+Received: from pandora.armlinux.org.uk
+ ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9RfY-0005fD-0C
- for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 10:22:13 +0000
-Received: from archlinux (cpc149474-cmbg20-2-0-cust94.5-4.cable.virginm.net
- [82.4.196.95])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 07FD220692;
- Sun, 15 Sep 2019 10:22:08 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568542931;
- bh=jQ+dE0FqCn4YmPt8H5tQ6UZBzpg1F2BEc20j8Ptglzk=;
- h=Date:From:To:Cc:Subject:In-Reply-To:References:From;
- b=Y5BbD16mnzz7OhM8IfFnS1ggxaS2GA7BFcYFp/ccokTArfJNqni/tOl8YgI7yBU1a
- 02MB/74LKXFKXF/CZtGJW3ui1b5ObbJmJeNgeAeV4H9IUbuVJb7IUfH4AHojzPQ2RJ
- MHoECe9e7kfh2HZwSU+AzNE8mmhDT2tYuMWweIsI=
-Date: Sun, 15 Sep 2019 11:22:05 +0100
-From: Jonathan Cameron <jic23@kernel.org>
-To: Alexandru Ardelean <alexandru.ardelean@analog.com>
-Subject: Re: [RFC PATCH 00/15] Unify SPI delays into an `struct spi_delay`
-Message-ID: <20190915112205.0007d62d@archlinux>
-In-Reply-To: <20190913114550.956-1-alexandru.ardelean@analog.com>
-References: <20190913114550.956-1-alexandru.ardelean@analog.com>
-X-Mailer: Claws Mail 3.17.4 (GTK+ 2.24.32; x86_64-pc-linux-gnu)
+ id 1i9ThT-0000ro-EC
+ for linux-arm-kernel@lists.infradead.org; Sun, 15 Sep 2019 12:32:22 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
+ MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
+ Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+ Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=2ONh9octt7hrPQetjAA69jtrwBb1nNoc7kuenQgL5+s=; b=mJ6H+5JgApMXvWLKoEtXtjl77
+ hNJLFf6z/ksCIQG/TLHSLwulUUOyPEmA7T5BDrbcj4f9qyEa+oS5plI7CYErFAEv2hI92Br+q7GRa
+ jkhD5WnV5YMYILs14ZS/efkjqWne23ugyTLZH4ogNuGEC229bHkpMTzzQUY/L3IY5S9InHLdDBBjp
+ 7ZRexRIJi+jQ4qIQAdkvI7vKV/6wFxiv3oryJHRD7FPCJtrFuibCJCVF4tbVRWTh3Jrk6ORRsM3aV
+ PTWCdJP44LcDAtXzb6n+fh/2m89BwbExLqjyQuAPhWSobXo/5ZZ4qNccJ5CaBVH4faPWTavuzDRxH
+ G1U4YUI9w==;
+Received: from shell.armlinux.org.uk
+ ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:39810)
+ by pandora.armlinux.org.uk with esmtpsa
+ (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
+ (envelope-from <linux@armlinux.org.uk>)
+ id 1i9Tes-0006Iq-Jp; Sun, 15 Sep 2019 13:29:38 +0100
+Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
+ (envelope-from <linux@shell.armlinux.org.uk>)
+ id 1i9Tej-0007lP-9q; Sun, 15 Sep 2019 13:29:29 +0100
+Date: Sun, 15 Sep 2019 13:29:29 +0100
+From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+To: Baruch Siach <baruch@tkos.co.il>
+Subject: Re: [PATCH] ARM: dts: imx6dl: SolidRun: add phy node with 100Mb/s
+ max-speed
+Message-ID: <20190915122929.GB25745@shell.armlinux.org.uk>
+References: <20190910155507.491230-1-tinywrkb@gmail.com>
+ <20190910185033.GD9761@lunn.ch> <87muf6oyvr.fsf@tarshish>
 MIME-Version: 1.0
+Content-Disposition: inline
+In-Reply-To: <87muf6oyvr.fsf@tarshish>
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_032212_102621_8B390CF8 
-X-CRM114-Status: GOOD (  18.16  )
-X-Spam-Score: -5.2 (-----)
+X-CRM114-CacheID: sfid-20190915_053220_183659_F68F0456 
+X-CRM114-Status: GOOD (  18.55  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
+ [list.dnswl.org]
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -64,7 +77,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -76,94 +88,75 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: f.fainelli@gmail.com, baolin.wang@linaro.org, linux-iio@vger.kernel.org,
- zhang.lyra@gmail.com, linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
- linux-spi@vger.kernel.org, broonie@kernel.org,
- bcm-kernel-feedback-list@broadcom.com, linux-tegra@vger.kernel.org,
- orsonzhai@gmail.com, linux-arm-kernel@lists.infradead.org
+Cc: Mark Rutland <mark.rutland@arm.com>, Andrew Lunn <andrew@lunn.ch>,
+ "open list:OPEN FIRMWARE AND FLATTENED DEVICE TREE BINDINGS"
+ <devicetree@vger.kernel.org>, Fabio Estevam <festevam@gmail.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, tinywrkb <tinywrkb@gmail.com>,
+ open list <linux-kernel@vger.kernel.org>, Rob Herring <robh+dt@kernel.org>,
+ NXP Linux Team <linux-imx@nxp.com>,
+ Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Shawn Guo <shawnguo@kernel.org>, linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, 13 Sep 2019 14:45:35 +0300
-Alexandru Ardelean <alexandru.ardelean@analog.com> wrote:
+On Sun, Sep 15, 2019 at 09:30:00AM +0300, Baruch Siach wrote:
+> Hi Andrew,
+> 
+> On Tue, Sep 10 2019, Andrew Lunn wrote:
+> > On Tue, Sep 10, 2019 at 06:55:07PM +0300, tinywrkb wrote:
+> >> Cubox-i Solo/DualLite carrier board has 100Mb/s magnetics while the
+> >> Atheros AR8035 PHY on the MicroSoM v1.3 CPU module is a 1GbE PHY device.
+> >>
+> >> Since commit 5502b218e001 ("net: phy: use phy_resolve_aneg_linkmode in
+> >> genphy_read_status") ethernet is broken on Cubox-i Solo/DualLite devices.
+> >
+> > Hi Tinywrkb
+> >
+> > You emailed lots of people, but missed the PHY maintainers :-(
+> >
+> > Are you sure this is the patch which broken it? Did you do a git
+> > bisect.
+> 
+> Tinywrkb confirmed to me in private communication that revert of
+> 5502b218e001 fixes Ethernet for him on effected system.
+> 
+> He also referred me to an old Cubox-i spec that lists 10/100 Ethernet
+> only for i.MX6 Solo/DualLite variants of Cubox-i. It turns out that
+> there was a plan to use a different 10/100 PHY for Solo/DualLite
+> SOMs. This plan never materialized. All SolidRun i.MX6 SOMs use the same
+> AR8035 PHY that supports 1Gb.
+> 
+> Commit 5502b218e001 might be triggering a hardware issue on the affected
+> Cubox-i. I could not reproduce the issue here with Cubox-i and a Dual
+> SOM variant running v5.3-rc8. I have no Solo/DualLite variant handy at
+> the moment.
 
-> Initially, I started this patchset thinking: "we need a new delay for
-> something-something" (in case someone is curios, we need a CS-hold-time for
-> the first transfer, because the CS wakes a chip from sleep-mode).
-> 
-> Then I added the delay, and felt a bit dirty-inside about adding a new one
-> (just like that), and decided to look at maybe cleaning things up a bit,
-> and a few days later, I got here.
-> 
-> Full disclaimer: this patchset is not complete. It's an RFC.
-> It's based on top of Jonathan's `iio/togreg` branch which also includes the
-> ADIS driver library changes and also includes `cs_change_delay`.
-> 
-> I'll send a V2 patchset, which just the first 4 patches, since I feel that
-> those are a bit more complete.
-> 
-> I thought about just sending the first 4 patches on-their-own, but I
-> figured that the whole series (even if not complete) serves as a better
-> explanation about the whole "why?".
-> 
-> Hopefully, this can sort-of-explain things.
-> I'll reference this RFC on the next series.
+With 5.3 due out today, I'll be updating my systems to that, which will
+include quite a few variants of the Hummingboard.
 
-General approach looks sensible to me. Over to SPI specialists on
-whether this is a sensible bit of unification to do.
+It looks like one of my Solo Hummingboards (running a fully up to date
+Fedora 28) has encountered a problem, so needs a reboot...
 
-Jonathan
+systemd-journald[436]: Failed to retrieve credentials for PID 17906, ignoring: Cannot allocate memory
+systemd-journald[436]: Failed to open runtime journal: Cannot allocate memory
 
-> 
-> Thanks
-> 
-> Alexandru Ardelean (15):
->   spi: move `cs_change_delay` backwards compat logic outside switch
->   spi: introduce spi_delay struct as "value + unit" &  spi_delay_exec()
->   spi: make `cs_change_delay` the first user of the `spi_delay` logic
->   iio: imu: adis: convert cs_change_delay to spi_delay struct
->   spi: sprd: convert transfer word delay to spi_delay struct
->   spi: orion: use new `word_delay` field for SPI transfers
->   spi: spidev: use new `word_delay` field for spi transfers
->   spi: core,atmel: convert `word_delay_usecs` -> `word_delay` for
->     spi_device
->   spi: introduce `delay` field for `spi_transfer` + spi_transfer_exec()
->   spi: use new `spi_transfer_delay` helper where straightforward
->   spi: tegra114: use `spi_transfer_delay` helper
->   spi: spi-loopback-test: use new `delay` field
->   spi: spidev: use new `delay` field for spi transfers
->   spi: tegra114: change format for `spi_set_cs_timing()` function
->   spi: implement SW control for CS times
-> 
->  drivers/iio/imu/adis.c           |  24 ++---
->  drivers/spi/spi-atmel.c          |  29 +++++-
->  drivers/spi/spi-bcm63xx-hsspi.c  |   3 +-
->  drivers/spi/spi-cavium.c         |   3 +-
->  drivers/spi/spi-fsl-dspi.c       |   3 +-
->  drivers/spi/spi-fsl-espi.c       |   3 +-
->  drivers/spi/spi-fsl-spi.c        |   3 +-
->  drivers/spi/spi-loopback-test.c  |  12 ++-
->  drivers/spi/spi-mpc512x-psc.c    |   3 +-
->  drivers/spi/spi-mpc52xx-psc.c    |   3 +-
->  drivers/spi/spi-omap-100k.c      |   3 +-
->  drivers/spi/spi-orion.c          |   6 +-
->  drivers/spi/spi-pl022.c          |  25 +++--
->  drivers/spi/spi-sc18is602.c      |   3 +-
->  drivers/spi/spi-sh-hspi.c        |   3 +-
->  drivers/spi/spi-sprd.c           |  11 ++-
->  drivers/spi/spi-tegra114.c       |  39 +++++---
->  drivers/spi/spi-tegra20-sflash.c |   2 +-
->  drivers/spi/spi-topcliff-pch.c   |   7 +-
->  drivers/spi/spi-txx9.c           |   3 +-
->  drivers/spi/spi-xcomm.c          |   3 +-
->  drivers/spi/spi.c                | 162 +++++++++++++++++++++++++------
->  drivers/spi/spidev.c             |   6 +-
->  include/linux/spi/spi.h          |  65 ++++++++++---
->  24 files changed, 293 insertions(+), 131 deletions(-)
-> 
+# ps aux
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+...
+root       436  0.0  5.2 3128140 26392 ?       Ss   Aug03   1:20 /usr/lib/systemd/systemd-journald
+# uptime
+ 13:28:41 up 42 days, 19:13,  1 user,  load average: 0.00, 0.03, 0.00
 
+Looks like systemd-journald has a rather bad memory leak...
+
+#include <std-complaints-about-systemd>
+
+-- 
+RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
+FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
+According to speedtest.net: 11.9Mbps down 500kbps up
 
 _______________________________________________
 linux-arm-kernel mailing list
