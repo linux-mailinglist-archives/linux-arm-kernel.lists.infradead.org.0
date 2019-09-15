@@ -2,66 +2,91 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 738F2B2ECD
-	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 08:51:18 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 7C3DEB2EE3
+	for <lists+linux-arm-kernel@lfdr.de>; Sun, 15 Sep 2019 09:01:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=fkAecsSET6MO9JqsLaPjmPUoMe5B6fRuWFDJx/rQdw8=; b=NLO1tcpCFKOwOZ
-	xidhp1yjzkV5jsZOdvVnv1GJxh0J0M586EFJPSKXlg2RL1aA0vbklQ7CDnvQwA1kFkv+urWYXYR69
-	Rnyk4F927r+otx+B70il4oPsSeCmD+66MAexsjTC7uQbhhyCBESQlhFZml8XSIQBlrN9dgLcBjiIs
-	e6lRYTgsaTDiorMF6OaY+pzoCtroZfiQQcLw2mqImMJCnqWPynWAWoeDH2+HppTzC8zEeZhs1IBDA
-	N4HG5DiWvFbITPMNAXLpnqm+nGLbwDsQh6ZdrZYlfIdUvUOt+oPNphIodM7DV+VJb3tKNBrHDfglx
-	h2sb9/0b8ezkEROeyxbA==;
+	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
+	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=FIvuNFZBcdWwKa0/zCJcCw+LVoLpgM/TT/JPt9Tz1HQ=; b=j2y
+	IcXvkRKV4aKqen7WSAOKK64rI5AGCQkGrbQO5VnNxKqyl5DKM7dPIwGtRyiGli2pEv8RSCEP5ioL9
+	nTWEATfkrOdvYEOWbkhO1pneMZFqcGED6gE3bWWxvmIvkRcd3lH59cGKmReTzRgStP3lZ2ukSGvOw
+	YB2QErk7Uct9PHWtPEgJMRANa8U0oy7ZU0LyE3nRENYHq/bqRGBh6fE0oAE69gSSLaUuDkBNRW6e0
+	MmiLrKxgtWZ2YXQsaiyTGgHD0MBG7h3eHLgFGZbsVEq9g9Qe4UJmUvChsSZV81LxYY1RH6SujhBSQ
+	BsyVqzm7CjQ0CmM8zwXoI6tHyAKsIJg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9ONR-0003p7-30; Sun, 15 Sep 2019 06:51:17 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i9OX8-0007Ks-8V; Sun, 15 Sep 2019 07:01:18 +0000
+Received: from mail-pf1-x441.google.com ([2607:f8b0:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9OMb-0003MY-Bz; Sun, 15 Sep 2019 06:50:26 +0000
-X-UUID: b30853d0fb004d858e37ae791aac6856-20190914
-X-UUID: b30853d0fb004d858e37ae791aac6856-20190914
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
- (envelope-from <louis.kuo@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 242341422; Sat, 14 Sep 2019 22:50:21 -0800
-Received: from MTKMBS02N1.mediatek.inc (172.21.101.77) by
- MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sat, 14 Sep 2019 23:50:19 -0700
-Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
- mtkmbs02n1.mediatek.inc (172.21.101.77) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 15 Sep 2019 14:50:07 +0800
-Received: from mtksdccf07.mediatek.inc (172.21.84.99) by MTKCAS06.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Sun, 15 Sep 2019 14:50:07 +0800
-From: Louis Kuo <louis.kuo@mediatek.com>
-To: <hans.verkuil@cisco.com>, <laurent.pinchart+renesas@ideasonboard.com>,
- <tfiga@chromium.org>, <keiichiw@chromium.org>, <matthias.bgg@gmail.com>,
- <mchehab@kernel.org>
-Subject: [RFC PATCH V4 4/4] dts: arm64: mt8183: Add sensor interface nodes
-Date: Sun, 15 Sep 2019 14:50:04 +0800
-Message-ID: <20190915065004.20257-5-louis.kuo@mediatek.com>
-X-Mailer: git-send-email 2.18.0
-In-Reply-To: <20190915065004.20257-1-louis.kuo@mediatek.com>
-References: <20190915065004.20257-1-louis.kuo@mediatek.com>
-MIME-Version: 1.0
-X-MTK: N
+ id 1i9OWX-0007K6-HW; Sun, 15 Sep 2019 07:00:43 +0000
+Received: by mail-pf1-x441.google.com with SMTP id q12so217283pff.9;
+ Sun, 15 Sep 2019 00:00:37 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=from:to:cc:subject:date:message-id;
+ bh=qTxLl5voUFSb9X26smlelj8GYPRuvUJLayWNlgtrH8I=;
+ b=W6CL0NcuOOKiayvD0SZ2TQ8KNDiXRiTQoN+morrL2hU5DijtUSqNQM3zTPPdChx0j/
+ c9lrCWh+xKTHyxxva/vhIr6blk0ZF4gNl8oeb4lQyJCAMSzutvtbb66WFQPn2HfYdsMk
+ AeqKA36ulAIJuaFlkr0pr9FOryh9s/7wNXjtdaXl2rStcGrzQc5tWeXRmc5PSgJTryRx
+ wkZr1oSCapdVN3YouuleEWUawIH6Rb3RXCMV7KRZDGbEaEtTnwsMizb827nV9Y1NCj0v
+ k5QZj8DW+4x9hWs0Qn2BQo6H3+H26M6mXG+bmVw7gWsUGS4e88Ii21n0nX13wa58MBZ+
+ GeGg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:from:to:cc:subject:date:message-id;
+ bh=qTxLl5voUFSb9X26smlelj8GYPRuvUJLayWNlgtrH8I=;
+ b=FdW1wJK5DxCAi57u0LhpjjniguQiZXI4r+fB+UTNfmfuM1esrk9b9VLu5Ozb81kyvL
+ /P22pXkAo+rnIg2jjpIki8HV4S5HMmdcsEpQfMCMBqRZy7Rn4c4gpaFxxZhudZ6aD2dF
+ sBrYx6zB7wQT5zj6YoFeHvfuWPMsVWvTWwXKgaawftXchmAI9BxQipZFNrR3BifFjvhz
+ B0xH/H3EXct0EmaNh8rHbSCZzlKYXVG8jtS3CgoADDQlC6GhxO6MNfryVOoFgN//yzED
+ UDzZFwblTe3AzVaFVbrZ3KxsSna91wavWvAOCGLs7oZfzOx+e0565kdrvpUFMl6ZgYqF
+ zBJQ==
+X-Gm-Message-State: APjAAAXXe/TR5KRhyW7S9FCHIf9Bi1hTH9VgwP+W6gIm4lLO3yaXLbK6
+ NacdDIdGBqlCPJXmMtUp9bE=
+X-Google-Smtp-Source: APXvYqzDLofZo0Q9BogI7k5yAM89atbsKPZgSNVhbxB/0fbNPWM4aT0+glaa5BRRGORfoywzP7hEIw==
+X-Received: by 2002:a63:5222:: with SMTP id g34mr16131609pgb.405.1568530836882; 
+ Sun, 15 Sep 2019 00:00:36 -0700 (PDT)
+Received: from satendra-MM061.ib-wrb304n.setup.in ([103.82.150.111])
+ by smtp.gmail.com with ESMTPSA id 197sm16699453pge.39.2019.09.15.00.00.29
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Sun, 15 Sep 2019 00:00:35 -0700 (PDT)
+From: Satendra Singh Thakur <sst2005@gmail.com>
+To: dan.j.williams@intel.com, vkoul@kernel.org, jun.nie@linaro.org,
+ shawnguo@kernel.org, agross@kernel.org, sean.wang@mediatek.com,
+ matthias.bgg@gmail.com, maxime.ripard@bootlin.com, wens@csie.org,
+ lars@metafoo.de, afaerber@suse.de, manivannan.sadhasivam@linaro.org
+Subject: [PATCH 0/9] added helper macros to remove duplicate code from probe
+ functions of the platform drivers
+Date: Sun, 15 Sep 2019 12:30:03 +0530
+Message-Id: <20190915070003.21260-1-sst2005@gmail.com>
+X-Mailer: git-send-email 2.17.1
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190914_235025_521486_E33B8F1F 
-X-CRM114-Status: UNSURE (   7.10  )
+X-CRM114-CacheID: sfid-20190915_000041_924140_795E72C3 
+X-CRM114-Status: UNSURE (   7.25  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-Spam-Score: 0.1 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (sst2005[at]gmail.com)
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:441 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (sst2005[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -73,51 +98,80 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com, Rynn.Wu@mediatek.com,
- srv_heupstream@mediatek.com, Jerry-ch.Chen@mediatek.com,
- jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
- linux-mediatek@lists.infradead.org, zwisler@chromium.org,
- louis.kuo@mediatek.com, christie.yu@mediatek.com, frederic.chen@mediatek.com,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
+Cc: linux-kernel@vger.kernel.org, linux-mediatek@lists.infradead.org,
+ satendrasingh.thakur@hcl.com, dmaengine@vger.kernel.org,
+ Satendra Singh Thakur <sst2005@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+MIME-Version: 1.0
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add nodes for Mediatek's sensor interface device. Sensor interface module
-embedded in Mediatek SOCs, works as a HW camera interface controller
-intended for image and data transmission between cameras and host devices.
+1. For most of the platform drivers's probe include following steps
 
-Signed-off-by: Louis Kuo <louis.kuo@mediatek.com>
----
- arch/arm64/boot/dts/mediatek/mt8183.dtsi | 14 ++++++++++++++
- 1 file changed, 14 insertions(+)
+-memory allocation for driver's private structure
+-getting io resources
+-io remapping resources
+-getting irq number
+-registering irq
+-setting driver's private data
+-getting clock
+-preparing and enabling clock
 
-diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-index 66aaa07f6cec..f1d081b99867 100644
---- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-+++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-@@ -506,4 +506,18 @@
- 			#clock-cells = <1>;
- 		};
- 	};
-+
-+	seninf: seninf@1a040000 {
-+		compatible = "mediatek,mt8183-seninf";
-+		reg = <0 0x1a040000 0 0x8000>,
-+		      <0 0x11C80000 0 0x6000>;
-+		reg-names = "base_reg", "rx_reg";
-+		interrupts = <GIC_SPI 251 IRQ_TYPE_LEVEL_LOW>;
-+		power-domains = <&scpsys MT8183_POWER_DOMAIN_CAM>;
-+		clocks = <&camsys CLK_CAM_SENINF>,
-+			 <&topckgen CLK_TOP_MUX_SENINF>;
-+		clock-names = "CLK_CAM_SENINF", "CLK_TOP_MUX_SENINF";
-+		status = "disabled";
-+		};
-+	};
- };
+2. We have defined a set of macros to combine some or all of
+the above mentioned steps. This will remove redundant/duplicate
+code in drivers' probe functions of platform drivers.
+
+devm_platform_probe_helper(pdev, priv, clk_name);
+devm_platform_probe_helper_clk(pdev, priv, clk_name);
+devm_platform_probe_helper_irq(pdev, priv, clk_name,
+irq_hndlr, irq_flags, irq_name, irq_devid);
+devm_platform_probe_helper_all(pdev, priv, clk_name,
+irq_hndlr, irq_flags, irq_name, irq_devid);
+devm_platform_probe_helper_all_data(pdev, priv, clk_name,
+irq_hndlr, irq_flags, irq_name, irq_devid);
+
+3. Code is made devres compatible (wherever required)
+The functions: clk_get, request_irq, kzalloc, platform_get_resource
+are replaced with their devm_* counterparts.
+
+4. Few bugs are also fixed.
+
+Satendra Singh Thakur (9):
+  probe/dma : added helper macros to remove redundant/duplicate code
+    from probe functions of the dma controller drivers
+  probe/dma/jz4740: removed redundant code from jz4740 dma controller's 
+       probe function
+  probe/dma/zx: removed redundant code from zx dma controller's probe
+    function
+  probe/dma/qcom-bam: removed redundant code from qcom bam dma
+    controller's probe function
+  probe/dma/mtk-hs: removed redundant code from mediatek hs dma
+    controller's probe function
+  probe/dma/sun6i: removed redundant code from sun6i dma controller's
+    probe function
+  probe/dma/sun4i: removed redundant code from sun4i dma controller's
+    probe function
+  probe/dma/axi: removed redundant code from axi dma controller's probe
+    function
+  probe/dma/owl: removed redundant code from owl dma controller's probe
+    function
+
+ drivers/dma/dma-axi-dmac.c       |  28 ++---
+ drivers/dma/dma-jz4740.c         |  33 +++---
+ drivers/dma/mediatek/mtk-hsdma.c |  38 +++----
+ drivers/dma/owl-dma.c            |  29 ++---
+ drivers/dma/qcom/bam_dma.c       |  71 +++++-------
+ drivers/dma/sun4i-dma.c          |  30 ++----
+ drivers/dma/sun6i-dma.c          |  30 ++----
+ drivers/dma/zx_dma.c             |  35 ++----
+ include/linux/probe-helper.h     | 179 +++++++++++++++++++++++++++++++
+ 9 files changed, 280 insertions(+), 193 deletions(-)
+ create mode 100644 include/linux/probe-helper.h
+
 -- 
-2.18.0
+2.17.1
 
 
 _______________________________________________
