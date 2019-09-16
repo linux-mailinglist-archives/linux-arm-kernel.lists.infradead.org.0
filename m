@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 262E8B3E0E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:47:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 18684B3E11
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:48:17 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,72 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=E3Ur/volLeiqVi7nSujA+kBI02brchL9pCLsFjKYhTU=; b=JdmCilLYDydoxsaTpiFXLINxmH
-	7ZdtzxLL67wvs3wpDQuk/YzGYa8vX8CrsB0P/5z1YP0D8NazY7SvAcQBs5iiqrfNWJCJ9xJZoQMII
-	LtNM0QORX69G9YB9lM2ax4nASUXbXlS3+G30NJ9EM1QC1LQKuO0GM0KRGZJOC+3Foxjd6lUpBRqQB
-	jqB/pHcK7XK87+adXh/95DX2qTJ5PYQoA8X8X0MCoZ8qIa18IADrqAYhdevOugRqoKET0qZ+UrbF1
-	d70qUpk79LA7mCLOUDvB8nZPwt2NxDO7vjoQWaaEK7MCAlvv63YozLwng2YrlB6hYebqUjFwvXkh+
-	DjJbt8qA==;
+	bh=fFv2mg+0W8vyMHERlSg/aTum7c73HP2zCnF9v3e4mhk=; b=txFeMLLXZ9uD7NfpZTPpaRjeEK
+	qrQQi9fJ1r4Gry3MYLi/kw5OiQS/2t74dATcu3k7ZtZEuxUW8ASyLpw7MhffumW7rZckUEpy1ck8t
+	vmHZwfzvi6U+zyWYSVs1brZtwHEugF2ImjArF/9k8Lh5/Vkt4F39Dwh67aVEudppxY8JW739dh7cy
+	rm1LMMTS3VhGwKNd1DoIGW/Se2kzqgchd5O0kKWjcrWAxJyLcjLSDqSl70O5WmtwbDL/0LH4TRqr2
+	hUZefT49SWUN3bUfW3CpAf4SmGEWaQ7LS1eyc8tDuucrlU87RnxhtUc3bxAkJtSIwM4yQ26KTDtsh
+	TiJJvi0g==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tEG-0007WG-7I; Mon, 16 Sep 2019 15:47:52 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i9tEd-0007mS-Fi; Mon, 16 Sep 2019 15:48:15 +0000
+Received: from mail-pg1-x544.google.com ([2607:f8b0:4864:20::544])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tCz-0006mV-Lc
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 15:46:35 +0000
-Received: by mail-pl1-x641.google.com with SMTP id b10so68820plr.4
+ id 1i9tD5-0006qc-7B
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 15:46:42 +0000
+Received: by mail-pg1-x544.google.com with SMTP id a3so205744pgm.13
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 08:46:33 -0700 (PDT)
+ Mon, 16 Sep 2019 08:46:39 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=GdUGLfzA/moIy9fqv00a3/N33TZrVkt63TobdJZyyCw=;
- b=f5uuo8d0Eac1oehzzno+gz4SgKXXXELEQr8OOsFMTlLzjQHG1qP3ca5oK34hNBEw5H
- 7icQx4hOYnguI4btVP/2f+R/WtV0vnb/qG0VhwifaUbNDTDOszAGraQSRNkHaZQhVLkN
- P7XHlajOs6MINTQpKI09MvV5s3l492Tsfp/9zd+XiRpjEQUhw4/8lM7+dVRBzVybGgxi
- 7j4qqkaQD1tL4tYSRER7C1iQoGhv1iAJNwaUlPwmGN9FUBtlzQ5j/5Ghc3kACrw/OOWX
- ASIo3Dta1rCyZrbDZCbcJ+CKCPa8VDN0zoQLut0m5YjxyW9Sur67vJOuLXTPbAwCEoPN
- +h1w==
+ bh=nH4eH2+AdUUr/ixPubTt3rBpS2s2N2X/tbfYHc3R6f8=;
+ b=koaQCYI/sf25OYQBe6JaYlxFU6qwSJ6+tixnBZk1pjOixcbOlAxK7u4fn4kIT6+6hI
+ 88SnbXzYYqNKQHlHSm4Ft6hrDz6/OetP2zU+wLoEMdxnZXyVjv8ivHmSnrvDaZCJA9B8
+ e7KAjxcmSFiDkte8Vk3dmfv5n5UPxHmfUmddq1hiRWXXXZhgILD+pHM8NW2ZO1PpD84N
+ 8a/WgV1TsGUXohhn0e+5t96CIzyLTTqukq5noEpz7tWs9uzTxGZwWrmw+QyPj8JthLup
+ kxpkHUb35LLJMj1mqf40/xzu4gxj0Qg2RgMOdaIxQbOomnK1xQyEomnf2arLyPE9SHqK
+ yCKg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=GdUGLfzA/moIy9fqv00a3/N33TZrVkt63TobdJZyyCw=;
- b=ZpErLxii/Xd6q8YYsd50k7o7GdFqiQbdVDqRyFa1HcYht4pSdr1TOf5RqJal79Dz2u
- kM2aj8XUdRS9Lw0djemZWf9NS8hXVKcJGzakFwfNDlxURXOHSuZ6tWY4PE07ZLob5cek
- iKdDcchyx0gti9nOwNE248nXSzRunZMro5Lz2NF5r4kXLweekAbtnwhwXZsxhk3VRAtJ
- 9LvqKvay9EY5pCCC1Y1KWQMOMHsSrB8RrubldZWfnNJrlBsIPI4a16zJqWwWXUMtndyp
- LYQODTD+gQECFzIHJBe7dJotri3PeTlkQJsUdqZS2GSHyuFG0bdNo88A+RIZaYR2S1B/
- mEFA==
-X-Gm-Message-State: APjAAAXKkCoCSHDY1jkDmDCv7YQgYoBickMHmuSPoUaULaLqqZPagTsX
- BBXRJ7EtEUgq/t8qQ7Tnv8vC
-X-Google-Smtp-Source: APXvYqxQVpA35IOqLq2Hr/utbWBDftkp4RcZap5GW+4N216N28cBd/8WPcwz6xFyhBbjCuGfLkMAmw==
-X-Received: by 2002:a17:902:7401:: with SMTP id g1mr500851pll.20.1568648793095; 
- Mon, 16 Sep 2019 08:46:33 -0700 (PDT)
+ bh=nH4eH2+AdUUr/ixPubTt3rBpS2s2N2X/tbfYHc3R6f8=;
+ b=ET2ocNsLHV7LmONK76jGGhDiGgsMINaFstJI/7L9k/uwZRpdYnCjyzoQi6mIWCtzjF
+ hhJA1GXb0N5CclHLTtge92jh1eLV4AnnAeGn7HBJ3dCanu2V1z/AP5pHtx71gyFhtbgc
+ Ny8XgbfWcsOw37lzHsPTCnrF7qeLAmrdoPix2DF8AsTYxL+/Li7JMdvZLPDb/mxTLCdD
+ ZZ/wBqGoVCfpOhuov5rcZ3OZjIavwnHbhKtExrG0WV+W9mrwLIO5UdKbwe3rAZQtSRU3
+ o1H3lfoTBIVtv4/pDPlFsYsFOBIlxDnKQEJAsDt7uKX+kmnYbmFX3/nH5Y1KXmG8jFwU
+ pr4g==
+X-Gm-Message-State: APjAAAWQ7GP/lvtboqZXZyGarndgAeGBCfMyjnPfADRuMJOuuxWth1Xt
+ UyxILm+rvb7HYR0UOoPrYwB2
+X-Google-Smtp-Source: APXvYqwKsIFOyVxPhtB9/lB5tMMNYxPewwQo1OQ0Cb2lCA89/PcUjm4K5MHqTG+d8DctO+IY68pL0A==
+X-Received: by 2002:a63:31c6:: with SMTP id
+ x189mr19821528pgx.240.1568648798287; 
+ Mon, 16 Sep 2019 08:46:38 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:90b:91ce:94c2:ef93:5bd:cfe8])
  by smtp.gmail.com with ESMTPSA id
- s5sm36227670pfe.52.2019.09.16.08.46.28
+ s5sm36227670pfe.52.2019.09.16.08.46.33
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 08:46:32 -0700 (PDT)
+ Mon, 16 Sep 2019 08:46:37 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: ulf.hansson@linaro.org, afaerber@suse.de, robh+dt@kernel.org,
  sboyd@kernel.org
-Subject: [PATCH v4 3/7] arm64: dts: actions: Add MMC controller support for
- S900
-Date: Mon, 16 Sep 2019 21:15:42 +0530
-Message-Id: <20190916154546.24982-4-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v4 4/7] arm64: dts: actions: Add uSD and eMMC support for
+ Bubblegum96
+Date: Mon, 16 Sep 2019 21:15:43 +0530
+Message-Id: <20190916154546.24982-5-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
 References: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_084634_073868_D7169D66 
-X-CRM114-Status: GOOD (  10.62  )
+X-CRM114-CacheID: sfid-20190916_084639_400950_42B993ED 
+X-CRM114-Status: GOOD (  11.69  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:544 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -109,76 +110,103 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Add MMC controller support for Actions Semi S900 SoC. There are 4 MMC
-controllers in this SoC which can be used for accessing SD/MMC/SDIO cards.
+Add uSD and eMMC support for Bubblegum96 board based on Actions Semi
+S900 SoC. SD0 is connected to uSD slot and SD2 is connected to eMMC.
+Since there is no PMIC support added yet, fixed regulator has been
+used as a regulator node.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- arch/arm64/boot/dts/actions/s900.dtsi | 45 +++++++++++++++++++++++++++
- 1 file changed, 45 insertions(+)
+ .../boot/dts/actions/s900-bubblegum-96.dts    | 62 +++++++++++++++++++
+ 1 file changed, 62 insertions(+)
 
-diff --git a/arch/arm64/boot/dts/actions/s900.dtsi b/arch/arm64/boot/dts/actions/s900.dtsi
-index df3a68a3ac97..eb35cf78ab73 100644
---- a/arch/arm64/boot/dts/actions/s900.dtsi
-+++ b/arch/arm64/boot/dts/actions/s900.dtsi
-@@ -4,6 +4,7 @@
-  */
+diff --git a/arch/arm64/boot/dts/actions/s900-bubblegum-96.dts b/arch/arm64/boot/dts/actions/s900-bubblegum-96.dts
+index 732daaa6e9d3..59291e0ea1ee 100644
+--- a/arch/arm64/boot/dts/actions/s900-bubblegum-96.dts
++++ b/arch/arm64/boot/dts/actions/s900-bubblegum-96.dts
+@@ -12,6 +12,9 @@
+ 	model = "Bubblegum-96";
  
- #include <dt-bindings/clock/actions,s900-cmu.h>
-+#include <dt-bindings/gpio/gpio.h>
- #include <dt-bindings/interrupt-controller/arm-gic.h>
- #include <dt-bindings/reset/actions,s900-reset.h>
- 
-@@ -284,5 +285,49 @@
- 			dma-requests = <46>;
- 			clocks = <&cmu CLK_DMAC>;
- 		};
-+
-+		mmc0: mmc@e0330000 {
-+			compatible = "actions,owl-mmc";
-+			reg = <0x0 0xe0330000 0x0 0x4000>;
-+			interrupts = <GIC_SPI 42 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cmu CLK_SD0>;
-+			resets = <&cmu RESET_SD0>;
-+			dmas = <&dma 2>;
-+			dma-names = "mmc";
-+			status = "disabled";
-+		};
-+
-+		mmc1: mmc@e0334000 {
-+			compatible = "actions,owl-mmc";
-+			reg = <0x0 0xe0334000 0x0 0x4000>;
-+			interrupts = <GIC_SPI 43 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cmu CLK_SD1>;
-+			resets = <&cmu RESET_SD1>;
-+			dmas = <&dma 3>;
-+			dma-names = "mmc";
-+			status = "disabled";
-+		};
-+
-+		mmc2: mmc@e0338000 {
-+			compatible = "actions,owl-mmc";
-+			reg = <0x0 0xe0338000 0x0 0x4000>;
-+			interrupts = <GIC_SPI 44 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cmu CLK_SD2>;
-+			resets = <&cmu RESET_SD2>;
-+			dmas = <&dma 4>;
-+			dma-names = "mmc";
-+			status = "disabled";
-+		};
-+
-+		mmc3: mmc@e033c000 {
-+			compatible = "actions,owl-mmc";
-+			reg = <0x0 0xe033c000 0x0 0x4000>;
-+			interrupts = <GIC_SPI 62 IRQ_TYPE_LEVEL_HIGH>;
-+			clocks = <&cmu CLK_SD3>;
-+			resets = <&cmu RESET_SD3>;
-+			dmas = <&dma 46>;
-+			dma-names = "mmc";
-+			status = "disabled";
-+		};
+ 	aliases {
++		mmc0 = &mmc0;
++		mmc1 = &mmc1;
++		mmc2 = &mmc2;
+ 		serial5 = &uart5;
  	};
+ 
+@@ -23,6 +26,24 @@
+ 		device_type = "memory";
+ 		reg = <0x0 0x0 0x0 0x80000000>;
+ 	};
++
++	/* Fixed regulator used in the absence of PMIC */
++	vcc_3v1: vcc-3v1 {
++		compatible = "regulator-fixed";
++		regulator-name = "fixed-3.1V";
++		regulator-min-microvolt = <3100000>;
++		regulator-max-microvolt = <3100000>;
++		regulator-always-on;
++	};
++
++	/* Fixed regulator used in the absence of PMIC */
++	sd_vcc: sd-vcc {
++		compatible = "regulator-fixed";
++		regulator-name = "fixed-3.1V";
++		regulator-min-microvolt = <3100000>;
++		regulator-max-microvolt = <3100000>;
++		regulator-always-on;
++	};
  };
+ 
+ &i2c0 {
+@@ -241,6 +262,47 @@
+ 			bias-pull-up;
+ 		};
+ 	};
++
++	mmc0_default: mmc0_default {
++		pinmux {
++			groups = "sd0_d0_mfp", "sd0_d1_mfp", "sd0_d2_d3_mfp",
++				 "sd0_cmd_mfp", "sd0_clk_mfp";
++			function = "sd0";
++		};
++	};
++
++	mmc2_default: mmc2_default {
++		pinmux {
++			groups = "nand0_d0_ceb3_mfp";
++			function = "sd2";
++		};
++	};
++};
++
++/* uSD */
++&mmc0 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc0_default>;
++	no-sdio;
++	no-mmc;
++	no-1-8-v;
++	cd-gpios = <&pinctrl 120 GPIO_ACTIVE_LOW>;
++	bus-width = <4>;
++	vmmc-supply = <&sd_vcc>;
++	vqmmc-supply = <&sd_vcc>;
++};
++
++/* eMMC */
++&mmc2 {
++	status = "okay";
++	pinctrl-names = "default";
++	pinctrl-0 = <&mmc2_default>;
++	no-sdio;
++	no-sd;
++	non-removable;
++	bus-width = <8>;
++	vmmc-supply = <&vcc_3v1>;
+ };
+ 
+ &timer {
 -- 
 2.17.1
 
