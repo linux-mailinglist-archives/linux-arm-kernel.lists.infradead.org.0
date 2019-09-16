@@ -2,114 +2,106 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 26B37B3A5C
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:33:54 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D6B84B3A68
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:35:29 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=r+OFAB2gHlxI99Qit4byJfxL8mS06Y/M8AW7HQ6O0G8=; b=GD88oR48X6Djh3
-	A0N+3F5ljtgAMW+E28c/1ksBachqxKaJzIGb3pV4jAKOdv9OLvCOeBCJ16V9FtPYlhYqX04x0uUmg
-	xgmxCv8Q0F8YnruJdBB4Qx/CXrtYESe3s9p3KuydOkE8YB+ZkVJKlYhkKjCL1euT9d5DOSqKiHcXr
-	lrU3rzuQbxsBFN6gLQMzwVW+mwkR4gj0jTK6Oqu1pKd5LyVt4hvx4F6a1nLO2vhbDp+PcjWCCf2Di
-	MLkVx/2x088sqW7AVw1wn5zpKEpFuxFkO0CrxKJ8GF/YXYcjm2Er/DvgkKsjpuNuHV7wBlgTXCQA6
-	9PCUsbJOf51szpiThtzw==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:Message-ID:Date
+	:Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	List-Owner; bh=Zxyx6JSuJw6/CcMN0E8u7pKcxrMzIsGWZPkyN7R9KOs=; b=dWxNGL8VRJPCRu
+	L2CsuC71w4BHWNYl8AM2iDVyDDKtBVy2SPmdAQpShSOqF2lRX5utibOXiAzOIUuv+5OahPtwNG60l
+	QZg9dR9pag1dbhB35COqGukafjMKEqF/lMzg4o7kbkJd2bl5qeP4O2rk0RasEUq8v4BBRXaYGg6SX
+	hc7fEWMYcN7vyT7ffbYWDeDG96WUyx/G3YsD1AyLSnU6D4RGiahKqKZ3Ex1fYmFnFr1uPQ9up2ZSM
+	SgnnsFWpFwZ7P49iZws93FIUuaGCDavBSS0x9hPJ8jdf41uNYkouXrDDlJm05icg84K6JyHVV5WYj
+	nSCiBhXeBNA137YEPJeQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9qCF-0002EK-DW; Mon, 16 Sep 2019 12:33:35 +0000
-Received: from mail-eopbgr740088.outbound.protection.outlook.com
- ([40.107.74.88] helo=NAM01-BN3-obe.outbound.protection.outlook.com)
+	id 1i9qDv-0002kT-Sh; Mon, 16 Sep 2019 12:35:20 +0000
+Received: from mail-eopbgr20054.outbound.protection.outlook.com ([40.107.2.54]
+ helo=EUR02-VE1-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9qBo-0002DB-BM; Mon, 16 Sep 2019 12:33:09 +0000
+ id 1i9qDT-0002h2-Fs
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 12:34:53 +0000
 ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=ZtnY2kiQ0cxqKkVBSVaCE8OKB+G3x6M1mKRqXkid+YgJ3SYRZmdLCdHs7wDhF+nD5wYB3r7g6HqsLtpFzUJ1Y4qS4ZyT4xPdYvllLthosTdjdm0bdbgpMOBZWyob/8hHgjls0tn2NZOBG/2E495yproRuTNSEUWNERyGS12eRFMNz3an7Cj9UbfROt10FTpRCOGSc5CkfuCTw61eWPSaG0jiaig5GXtViDLDbt2Ck5h/bJbRmwKcgrWkIgZ8u3MqEJMn1ilqu06ASmK4GLpnCArTlPwFDJen5LuHUvKgVy/6E91MIlau00fZNH5S1hGjMviGCE3taCqQ4N6gieHdBA==
+ b=medvI1zpWPUrIsPH4uoDBwjY5l+6UaRc4VjTIwIxMqawRYNpb67ImWMLgv5+AHcGmwI0Fj/b7HWLk7ywkzvBkKLKVP+EU3Jqf+LOQVytN1UVFy6/3Ap0VWaoyEj1OTHKIV2o4iaFmEGE0SbUlE/FIjVQ2/rA1Qkp9PlDomfBAthy/nFQvZYW+7CVO2UseAixx3tBTwOI976fKVjSobh06v3Sz94uE/CVK5843n4ihWScQlknoIVdrrMmr9d+waxMw6G2Xj9Zcj9fLiSxqJdKH9OfpI68xJPjC3zEI8B+hxpqeit2DNhWN0qghwWIk+SkptRjWh8f/GWdKLgJo4SDgQ==
 ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
  s=arcselector9901;
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RJIQD4Fu92aqPD9b2OwvruL9ykrqcq+nJAPtGlDGvUs=;
- b=DopK3xL8ZIOfbEyhpcFa+Cn5ZXfSGxgmsJT03so3iDkNAbmEJ6A6PSSII08GaXoFOFIee2aWofROokaiVHJ7pX7HMH0GtbTQCvuM9ZpZis+4hHcMfWcnhjgVx9FVgqlqFOWsiSM4STWETwYebIb82kA50VoaMe3KTlk0p5ZsI7tq9d4SYzHadNw3RDVX1rD4MOC3QLMsfRoRQjfi0K9J3g6TtBD/w0zUZY1zmazUk433im4EXR8Hc3ZVHhgvFNhqy0+xOpObZcLGxHX8hYnCaxOw2SLgSi+XrophikgSqZ0p7QAQN41JFSO6cQSlotFG7LWcCD0ohi88mwWyWhrz9g==
+ bh=Ml3YPGsLpUOIkgTIous3KeFaFrHR8fYhTHyUTHQBDvk=;
+ b=OsqCm5K1Ls2JCtopimvLl5yw7Jv+wO9ppElouZnVqT/3dn4iwE/rS0G4FYGhlGRoHdVTKLsRdRiIZPMR8SL5zIxsmvq0roH6qqQyFFrDGqnH+fGV3m0vKlLUaZOBV/DSLG4mLeTC68OsY+wUvxIJxb48tkwaRIufuy4fel+boCnY12gOWFekGrWbRt5xsCt7NGbl1ZApd6cpG+r8ToXz8BIrlCWwSNGtWwnjqdH6/GOl2hAotzXNFO+5Zf89KJHfOvfaDr8n3SGwOrtDNMX88tSl+ScXeI/5fZBBp/hsTvs7ApSVxNR0hD6zcrKEAOgIQH95k6NkEl8/vUSMcs4T4g==
 ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=micron.com; dmarc=pass action=none header.from=micron.com;
- dkim=pass header.d=micron.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=micron.com;
- s=selector2;
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
  h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=RJIQD4Fu92aqPD9b2OwvruL9ykrqcq+nJAPtGlDGvUs=;
- b=hB4C0X6gn8TKBDCTj3MYkShQwkxtOG3ci6Wz/jqnnsUXIvGi/OjCN2QaW/ba0oC8z0uCOAHRsl0ukLPxy/vAT5QRu0NaLQiSxYNXKhRGQMcRslzAQGo18rUJH6+HgnF0qiPs5e63Zc4247LIMg+ERJznaJ/1Bv6tJOxRXmRcn0w=
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com (20.176.179.87) by
- BN7PR08MB4482.namprd08.prod.outlook.com (52.135.248.141) with Microsoft SMTP
+ bh=Ml3YPGsLpUOIkgTIous3KeFaFrHR8fYhTHyUTHQBDvk=;
+ b=DQD0lSihdWhpEFFa6i9KeLWap9Bzz/jHy5gXF8D3bI3zFJAat2MAMGe5bksg6ymr4RArj+FMFJQ0Gs+et9tjGyXa3l8zDlpjJ776iow1ZI/NuW0hpa9GQHxnXBDq/AQVSxtr2JKBNP7LWzg0cDUf5x9T//SF2B96P6DVXOpMEuM=
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com (10.186.159.144) by
+ VI1PR04MB3280.eurprd04.prod.outlook.com (10.170.231.145) with Microsoft SMTP
  Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2263.23; Mon, 16 Sep 2019 12:33:05 +0000
-Received: from BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::1c5f:b47c:d1c3:c30c]) by BN7PR08MB5684.namprd08.prod.outlook.com
- ([fe80::1c5f:b47c:d1c3:c30c%7]) with mapi id 15.20.2263.023; Mon, 16 Sep 2019
- 12:33:05 +0000
-From: "Bean Huo (beanhuo)" <beanhuo@micron.com>
-To: Stanley Chu <stanley.chu@mediatek.com>, "linux-scsi@vger.kernel.org"
- <linux-scsi@vger.kernel.org>, "martin.petersen@oracle.com"
- <martin.petersen@oracle.com>, "avri.altman@wdc.com" <avri.altman@wdc.com>,
- "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
- "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
- "sthumma@codeaurora.org" <sthumma@codeaurora.org>, "jejb@linux.ibm.com"
- <jejb@linux.ibm.com>, "bvanassche@acm.org" <bvanassche@acm.org>
-Subject: RE: [EXT] [PATCH v3 2/3] scsi: ufs: override auto suspend tunables
- for ufs
-Thread-Topic: [EXT] [PATCH v3 2/3] scsi: ufs: override auto suspend tunables
- for ufs
-Thread-Index: AQHVbFqa8oaq4Yk69ky4RtSVevqDnacuPMkg
-Date: Mon, 16 Sep 2019 12:33:04 +0000
-Message-ID: <BN7PR08MB56847455A8B0C7D89FF8C6A1DB8C0@BN7PR08MB5684.namprd08.prod.outlook.com>
-References: <1568616437-16271-1-git-send-email-stanley.chu@mediatek.com>
- <1568616437-16271-3-git-send-email-stanley.chu@mediatek.com>
-In-Reply-To: <1568616437-16271-3-git-send-email-stanley.chu@mediatek.com>
-Accept-Language: en-150, en-US
+ 15.20.2263.23; Mon, 16 Sep 2019 12:34:45 +0000
+Received: from VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::c5e8:90f8:da97:947e]) by VI1PR04MB7023.eurprd04.prod.outlook.com
+ ([fe80::c5e8:90f8:da97:947e%3]) with mapi id 15.20.2263.023; Mon, 16 Sep 2019
+ 12:34:45 +0000
+From: Leonard Crestez <leonard.crestez@nxp.com>
+To: Georgi Djakov <georgi.djakov@linaro.org>, Rob Herring
+ <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
+ "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>
+Subject: Re: [RFCv4 0/7] interconnect: Add imx support via devfreq
+Thread-Topic: [RFCv4 0/7] interconnect: Add imx support via devfreq
+Thread-Index: AQHVWcA7xPiNhLrdqkSG10Lu7U9EhQ==
+Date: Mon, 16 Sep 2019 12:34:45 +0000
+Message-ID: <VI1PR04MB702373BE28E4404C7F2CE75FEE8C0@VI1PR04MB7023.eurprd04.prod.outlook.com>
+References: <cover.1566570260.git.leonard.crestez@nxp.com>
+Accept-Language: en-US
 Content-Language: en-US
 X-MS-Has-Attach: 
 X-MS-TNEF-Correlator: 
 authentication-results: spf=none (sender IP is )
- smtp.mailfrom=beanhuo@micron.com; 
-x-originating-ip: [165.225.81.111]
+ smtp.mailfrom=leonard.crestez@nxp.com; 
+x-originating-ip: [89.37.124.34]
 x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 85d4f1a9-90c5-4fbc-6f4e-08d73aa205a9
+x-ms-office365-filtering-correlation-id: 566f74f1-8beb-4b4f-7e67-08d73aa241c7
+x-ms-office365-filtering-ht: Tenant
 x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4534185)(7168020)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:BN7PR08MB4482; 
-x-ms-traffictypediagnostic: BN7PR08MB4482:|BN7PR08MB4482:|BN7PR08MB4482:
-x-microsoft-antispam-prvs: <BN7PR08MB4482369422C121B851BE1710DB8C0@BN7PR08MB4482.namprd08.prod.outlook.com>
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VI1PR04MB3280; 
+x-ms-traffictypediagnostic: VI1PR04MB3280:|VI1PR04MB3280:
 x-ms-exchange-transport-forked: True
-x-ms-oob-tlc-oobclassifiers: OLM:400;
+x-microsoft-antispam-prvs: <VI1PR04MB328079E81EFC1924AE45127AEE8C0@VI1PR04MB3280.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:10000;
 x-forefront-prvs: 0162ACCC24
 x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(136003)(376002)(366004)(396003)(346002)(39860400002)(199004)(189003)(9686003)(66066001)(55016002)(446003)(99286004)(558084003)(110136005)(86362001)(316002)(7416002)(2906002)(6506007)(6246003)(476003)(102836004)(55236004)(186003)(11346002)(26005)(76176011)(7736002)(305945005)(74316002)(52536014)(76116006)(54906003)(66446008)(64756008)(66556008)(66476007)(66946007)(53936002)(7696005)(5660300002)(3846002)(6116002)(8676002)(486006)(81166006)(71190400001)(2501003)(81156014)(229853002)(256004)(6436002)(71200400001)(8936002)(2201001)(14454004)(33656002)(478600001)(25786009)(4326008);
- DIR:OUT; SFP:1101; SCL:1; SRVR:BN7PR08MB4482;
- H:BN7PR08MB5684.namprd08.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ SFS:(10009020)(4636009)(366004)(376002)(346002)(396003)(39860400002)(136003)(199004)(189003)(33656002)(486006)(44832011)(7696005)(9686003)(8936002)(81156014)(8676002)(99286004)(86362001)(55016002)(2501003)(66066001)(54906003)(110136005)(316002)(25786009)(476003)(14454004)(76116006)(91956017)(186003)(66446008)(66556008)(66476007)(66946007)(4326008)(64756008)(26005)(53546011)(76176011)(478600001)(102836004)(6506007)(3846002)(7416002)(6116002)(71190400001)(71200400001)(52536014)(81166006)(446003)(256004)(229853002)(6436002)(305945005)(53936002)(5660300002)(2906002)(74316002)(7736002)(6246003)(14444005);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VI1PR04MB3280;
+ H:VI1PR04MB7023.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
  PTR:InfoNoRecords; A:1; MX:1; 
-received-spf: None (protection.outlook.com: micron.com does not designate
+received-spf: None (protection.outlook.com: nxp.com does not designate
  permitted sender hosts)
 x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: Hj1J/rjTnkIy0MkU5zEAZUgTPhcCdA53nu0OzgFGIA3dNrBcvSf6H+qprJ8gB5jPq1UkM//bF8bSkH30fFta4i7NbksqcHEyDQs+W0SZtYVSkHOzXvMzUnZuM3hVKmZGlYKSmLqJZptQlhcDu4VovjKOrpmUyeQBtI1hGrcCB6yvulrqkQ7y9GAxnmDWB/zsNZvJCpwCdnogS9BHrQ1Fi/WAsB+uDkvW8Eiu98WGr7SmWPp9Bei+xgaJ7GddbBS186hyLRPzSq5Bc0ZrQfKapI3vUBLCUd1AOKUBAm1U9GKGLsVlML7l4CIegK7xMg0nKTUnsEJaSRJI54aCkZoiBYqge5E6gsZsSqIvbMKWh1AD4vpz9ZmAjAWkeHloeC7Aosu4GVUNR9dtKJmSY+o3xeaT+mo8f4A3AZIrITxXnsA=
+x-microsoft-antispam-message-info: cIcb1sLISs6WjBDIovfGIeSHBXeZ9HrV/DNCBq26iQPPSL8chDkPbElHx/Y93thtdeEJtjNkfv5VeouaHbdtztcTPgmMXKhdERJPog6CNu5vdC8vLjLCly0ImDQ0fRy9hg4n7q97SExCfFZwaD0UYWH4AamMJq3E9+cNhRLelMLwclsn4oK4vQ1zNflpqO4oKkEZ4tZf8LbqHNvGhoGFaG3JsfHSyosckfCQ9DWCa2355cDFPc/a/WULhTxLEQTv6aQekdrCmUVQ0k4wps7OgY3oIeaXb6+DssvflSVNbAbq8YKQHUjfIorC4FUeCl1eCSDW0ucd62x31Y7eeF4TdbcZCyAL2w3nQ4kZ2IjXCl5PmJ60+qKbngbCgps1lPRvOB8Fqa+PE0sTyX7WrBp2MLW3BPmJOqOEhE9Dw6+VNpI=
 MIME-Version: 1.0
-X-OriginatorOrg: micron.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 85d4f1a9-90c5-4fbc-6f4e-08d73aa205a9
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2019 12:33:04.9048 (UTC)
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 566f74f1-8beb-4b4f-7e67-08d73aa241c7
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2019 12:34:45.4176 (UTC)
 X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: f38a5ecd-2813-4862-b11b-ac1d563c806f
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
 X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: 1LL98TBqr1xooJLv8PIjqlouIOEHaYN8Xta2UM46oNiyYc5LDVyLlwCy/zIcyfNmfPlJBeSizqhAK5/NgHpOlw==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: BN7PR08MB4482
+X-MS-Exchange-CrossTenant-userprincipalname: CWaEHDDjLQDsP/13KOQHx/1aut7vKDMooUcJRCvOQoKjmBYNjfNXIJnzxRgOvi057LKJoUQRd88fFhkrsOphQw==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VI1PR04MB3280
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_053308_449994_5BA0BAA3 
-X-CRM114-Status: UNSURE (   3.03  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_053451_600298_3DBA7378 
+X-CRM114-Status: GOOD (  12.17  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.74.88 listed in list.dnswl.org]
+ no trust [40.107.2.54 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -130,28 +122,72 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
- "andy.teng@mediatek.com" <andy.teng@mediatek.com>,
- "chun-hung.wu@mediatek.com" <chun-hung.wu@mediatek.com>,
- "kuohong.wang@mediatek.com" <kuohong.wang@mediatek.com>,
- "evgreen@chromium.org" <evgreen@chromium.org>,
- "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
- "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
- "peter.wang@mediatek.com" <peter.wang@mediatek.com>,
- "vivek.gautam@codeaurora.org" <vivek.gautam@codeaurora.org>,
- "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
- "kernel-team@android.com" <kernel-team@android.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
+Cc: Aisheng Dong <aisheng.dong@nxp.com>,
+ =?iso-8859-2?Q?Artur_=A6wigo=F1?= <a.swigon@partner.samsung.com>,
+ Saravana Kannan <saravanak@google.com>,
+ "linux-pm@vger.kernel.org" <linux-pm@vger.kernel.org>,
+ Stephen Boyd <sboyd@kernel.org>, Viresh Kumar <viresh.kumar@linaro.org>,
+ Michael Turquette <mturquette@baylibre.com>,
+ Krzysztof Kozlowski <krzk@kernel.org>, Chanwoo Choi <cw00.choi@samsung.com>,
+ Kyungmin Park <kyungmin.park@samsung.com>,
+ MyungJoo Ham <myungjoo.ham@samsung.com>,
+ Alexandre Bailon <abailon@baylibre.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ Fabio Estevam <fabio.estevam@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ dl-linux-imx <linux-imx@nxp.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
->
->Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
->Reviewed-by: Avri Altman <avri.altman@wdc.com>
-Reviewed-by: Bean Huo <beanhuo@micron.com>
+On 23.08.2019 17:37, Leonard Crestez wrote:
+> This series add imx support for interconnect via devfreq: the ICC
+> framework is used to aggregate requests from devices and then those are
+> converted to DEV_PM_QOS_MIN_FREQUENCY requests for devfreq.
+>  
+> Since there is no single devicetree node that can represent the "interconnect"
+> new API is added to allow individual devfreq nodes to act as parsing proxies
+> all mapping to a single soc-level icc provider. This is still RFC
+> because of this
 
+Any comments? I made a lot of changes relative to previous versions, 
+most of them solely to avoid adding a virtual node in DT bindings.
+
+The only current interconnect provider implementation is for qcom and it 
+uses a firmware node as the provider node (with #interconnect-cells). 
+However there is no obvious equivalent of that for imx and many other SOCs.
+
+On imx there are multiple pieces of scalable fabric which can be defined 
+in DT as devfreq devices and it sort of makes sense to add 
+#interconnect-cells to those. However when it comes to describing the 
+SOC interconnect graph it's much more convenient to have a single 
+per-SOC platform driver.
+
+My solution is to add an "icc_proxy" API so that a single platform-level 
+interconnect provider can be referenced through multiple DT nodes. Does 
+this make sense?
+
+The implementation is not very pretty, the interconnect platform devices 
+ends up enumerating the entire devicetree in order to find proxies.
+
+Right now the interconnect API use a relatively standard split between 
+consumer and "provider" but I think it might make sense to have a 
+separate abstractions for "graph" and "midnode". A "midnode" could act 
+as a DT proxy if there is no single representation of the "interconnect" 
+and it could support custom scaling for itself (with the default being 
+scaling kbps into MIN_FREQ).
+
+There are also other options:
+  * Pick one "main" bus and bless it as the "interconnect provider". I 
+want to represent buses as devfreq devices so I would have to call from 
+devfreq to ICC for registration somehow.
+  * Maybe the "no virtual device" rule could be relaxed for the 
+interconnect subsystem?
+
+--
+Regards,
+Leonard
 
 _______________________________________________
 linux-arm-kernel mailing list
