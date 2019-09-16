@@ -2,55 +2,68 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 84D91B3473
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 07:36:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E89D8B347E
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 07:46:20 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=HicEt6Z0FFJJIiKfvFMM8yu8718HFztokLj0cbJG7w0=; b=lyP3N0L+yVjoHo
-	Tak7rSzShrc+Pz/axWpa6Yn03EaDtKSlBvSJRTnmj7YEx9oWjDqezdBpExSWrsFiJpl20a6nTIqpD
-	lfcEAKnDLbZXL90EJhoEfAu1Agu6xJEC6pMGuSfxSiTK3XSAaqwjpN/ck9odJVTFeZ6mCuyWzzWJG
-	X0qzNOFE4Bb3QBwmfwwk5GoowrEt+uPO7bNN/X/zC1GGBfKT8xbtK1qb0xysxjTZwJN4kwBjye/KR
-	xdsvhmc32KUTww28scTHX1HczFT2fblzp/tEvvdSMffPIaa9i+KgGh2z740W+sNZF+K6//Y1c8g0P
-	DRzw95zAm49epLhj8cuQ==;
+	List-Owner; bh=+bKgm/FMCCB6y5eMPWNwv/LqIvvJZXMfx966Lk5tpu4=; b=ShPQVNqvo+A8Zy
+	5ebyGboYaJL44Fr5DI0S99YtOgVUFLYwtKVkCflX/YDbRY7K08KEQbPq1Cyfez2lNCesYtBNCH41u
+	ISJOuYBfv5J8h2HoKbLlAFgOXG8pUbH2HzXVT31EPn2OUFyzOyp/TpB+lKtBZddz0O8YGksAQRue6
+	r2gerxoPpHq9T1Xw54huBYq+IqzyHZ7yCEjaOd+oZe4O5nifZGqujJohdNIcXb+OAdL8QMUL27PWI
+	CiVM3d/b440R4XckK3ym6MqVntLl5ol/XR4QOSgsXfP02wEdhfq2HSAxZDtOwMcUif+g9Mjzb0Bib
+	JRL51sedjnie7SNu63KQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9jge-0006GF-U9; Mon, 16 Sep 2019 05:36:33 +0000
+	id 1i9jq6-0000yJ-O7; Mon, 16 Sep 2019 05:46:18 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9jgS-0006FM-Rw; Mon, 16 Sep 2019 05:36:22 +0000
-X-UUID: 9d8a9cd6d0e144b7ade354635eb78cdc-20190915
-X-UUID: 9d8a9cd6d0e144b7ade354635eb78cdc-20190915
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw01.mediatek.com
- (envelope-from <yingjoe.chen@mediatek.com>)
+ id 1i9jpm-0000wn-GT; Mon, 16 Sep 2019 05:46:00 +0000
+X-UUID: e43ba61f6687490584b44da81ff63918-20190915
+X-UUID: e43ba61f6687490584b44da81ff63918-20190915
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <chunfeng.yun@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1164024764; Sun, 15 Sep 2019 21:36:14 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 811570657; Sun, 15 Sep 2019 21:45:54 -0800
+Received: from MTKMBS33DR.mediatek.inc (172.27.6.106) by
  MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 15 Sep 2019 22:36:13 -0700
-Received: from mtkcas09.mediatek.inc (172.21.101.178) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 13:36:11 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas09.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 16 Sep 2019 13:36:11 +0800
-Message-ID: <1568612172.14078.3.camel@mtksdaap41>
-Subject: Re: [RFC PATCH V4 4/4] dts: arm64: mt8183: Add sensor interface nodes
-From: Yingjoe Chen <yingjoe.chen@mediatek.com>
-To: Louis Kuo <louis.kuo@mediatek.com>
-Date: Mon, 16 Sep 2019 13:36:12 +0800
-In-Reply-To: <20190915065004.20257-5-louis.kuo@mediatek.com>
-References: <20190915065004.20257-1-louis.kuo@mediatek.com>
- <20190915065004.20257-5-louis.kuo@mediatek.com>
+ 15.0.1395.4; Sun, 15 Sep 2019 22:45:53 -0700
+Received: from MTKCAS32.mediatek.inc (172.27.4.184) by MTKMBS33DR.mediatek.inc
+ (172.27.6.106) with Microsoft SMTP Server (TLS) id 15.0.1395.4;
+ Mon, 16 Sep 2019 13:45:48 +0800
+Received: from [10.17.3.153] (172.27.4.253) by MTKCAS32.mediatek.inc
+ (172.27.4.170) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 16 Sep 2019 13:45:47 +0800
+Message-ID: <1568612747.7317.72.camel@mhfsdcap03>
+Subject: Re: [PATCH v3 3/7] usb: mtu3: support ip-sleep wakeup for MT8183
+From: Chunfeng Yun <chunfeng.yun@mediatek.com>
+To: Guenter Roeck <linux@roeck-us.net>
+Date: Mon, 16 Sep 2019 13:45:47 +0800
+In-Reply-To: <20190911184453.GA2628@roeck-us.net>
+References: <1567150854-30033-1-git-send-email-chunfeng.yun@mediatek.com>
+ <1567150854-30033-4-git-send-email-chunfeng.yun@mediatek.com>
+ <20190911184453.GA2628@roeck-us.net>
 X-Mailer: Evolution 3.10.4-0ubuntu2 
 MIME-Version: 1.0
+X-TM-AS-Product-Ver: SMEX-12.5.0.1684-8.5.1010-24914.004
+X-TM-AS-Result: No-8.235300-8.000000-10
+X-TMASE-MatchedRID: csPTYAMX1+HmLzc6AOD8DfHkpkyUphL9dfsypiTqGpue9toQ6h6LE2ng
+ VUDf4c8Y3UJTYve4D89VVkf0bJfBjyxppiUy9o4cA9lly13c/gElWygvtTclwFGLwJXlA4mIwBI
+ zUVtFoCLgRgaCjJFnr+xbYZUuzB/CsWFXqrN3c5D1WO1NzV/CYNi5W7Rf+s6QiiKPXbEds+4eMp
+ 1P/J9F6H2dcFgFzv71OLoOGImc4B4M8jMXjBF+sIMbH85DUZXy3QfwsVk0UbtuRXh7bFKB7lAlx
+ 8mk+INITqHBTq5IMRMciNlpck9RPvcGG72gNuthWClYJu9r4yY=
+X-TM-AS-User-Approved-Sender: No
+X-TM-AS-User-Blocked-Sender: No
+X-TMASE-Result: 10--8.235300-8.000000
+X-TMASE-Version: SMEX-12.5.0.1684-8.5.1010-24914.004
+X-TM-SNTS-SMTP: 3242FE149AFF8C962B76284F45FA462CBA199288A603FDB43D5C66F530F60A4F2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_223620_916741_91176A90 
-X-CRM114-Status: GOOD (  12.15  )
+X-CRM114-CacheID: sfid-20190915_224558_556231_CCFDF361 
+X-CRM114-Status: GOOD (  14.44  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -73,64 +86,56 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Sean.Cheng@mediatek.com,
- laurent.pinchart+renesas@ideasonboard.com, Rynn.Wu@mediatek.com,
- christie.yu@mediatek.com, srv_heupstream@mediatek.com,
- Jerry-ch.Chen@mediatek.com, tfiga@chromium.org, keiichiw@chromium.org,
- jungo.lin@mediatek.com, sj.huang@mediatek.com, yuzhao@chromium.org,
- hans.verkuil@cisco.com, zwisler@chromium.org, frederic.chen@mediatek.com,
- matthias.bgg@gmail.com, linux-mediatek@lists.infradead.org, mchehab@kernel.org,
- linux-arm-kernel@lists.infradead.org, linux-media@vger.kernel.org
-Content-Type: text/plain; charset="us-ascii"
-Content-Transfer-Encoding: 7bit
+Cc: Mark Rutland <mark.rutland@arm.com>, devicetree@vger.kernel.org,
+ Mathias Nyman <mathias.nyman@intel.com>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>, linux-usb@vger.kernel.org,
+ linux-kernel@vger.kernel.org, Rob Herring <robh+dt@kernel.org>,
+ linux-mediatek@lists.infradead.org, Matthias Brugger <matthias.bgg@gmail.com>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Sun, 2019-09-15 at 14:50 +0800, Louis Kuo wrote:
-> Add nodes for Mediatek's sensor interface device. Sensor interface module
-> embedded in Mediatek SOCs, works as a HW camera interface controller
-> intended for image and data transmission between cameras and host devices.
-> 
-> Signed-off-by: Louis Kuo <louis.kuo@mediatek.com>
-> ---
->  arch/arm64/boot/dts/mediatek/mt8183.dtsi | 14 ++++++++++++++
->  1 file changed, 14 insertions(+)
-> 
-> diff --git a/arch/arm64/boot/dts/mediatek/mt8183.dtsi b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> index 66aaa07f6cec..f1d081b99867 100644
-> --- a/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> +++ b/arch/arm64/boot/dts/mediatek/mt8183.dtsi
-> @@ -506,4 +506,18 @@
->  			#clock-cells = <1>;
->  		};
->  	};
-> +
-> +	seninf: seninf@1a040000 {
-> +		compatible = "mediatek,mt8183-seninf";
-> +		reg = <0 0x1a040000 0 0x8000>,
-> +		      <0 0x11C80000 0 0x6000>;
-
-Please use lower case for hex value.
-
-
-> +		reg-names = "base_reg", "rx_reg";
-> +		interrupts = <GIC_SPI 251 IRQ_TYPE_LEVEL_LOW>;
-> +		power-domains = <&scpsys MT8183_POWER_DOMAIN_CAM>;
-> +		clocks = <&camsys CLK_CAM_SENINF>,
-> +			 <&topckgen CLK_TOP_MUX_SENINF>;
-> +		clock-names = "CLK_CAM_SENINF", "CLK_TOP_MUX_SENINF";
-> +		status = "disabled";
-> +		};
-> +	};
-
-
-extra } ?
-
-Joe.C
-
-
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+T24gV2VkLCAyMDE5LTA5LTExIGF0IDExOjQ0IC0wNzAwLCBHdWVudGVyIFJvZWNrIHdyb3RlOgo+
+IE9uIEZyaSwgQXVnIDMwLCAyMDE5IGF0IDAzOjQwOjUwUE0gKzA4MDAsIENodW5mZW5nIFl1biB3
+cm90ZToKPiA+IFN1cHBvcnQgVVNCIHdha2V1cCBieSBpcC1zbGVlcCBtb2RlIGZvciBNVDgxODMs
+IGl0J3Mgc2ltaWxhciB0bwo+ID4gTVQ4MTczCj4gPiAKPiA+IFNpZ25lZC1vZmYtYnk6IENodW5m
+ZW5nIFl1biA8Y2h1bmZlbmcueXVuQG1lZGlhdGVrLmNvbT4KPiA+IC0tLQo+ID4gdjM6IGNoYW5n
+ZXMgbWljcm9zIGRlZmluZQo+ID4gCj4gPiB2Mjogbm8gY2hhbmdlcwo+ID4gLS0tCj4gPiAgZHJp
+dmVycy91c2IvbXR1My9tdHUzX2hvc3QuYyB8IDE0ICsrKysrKysrKysrKystCj4gPiAgMSBmaWxl
+IGNoYW5nZWQsIDEzIGluc2VydGlvbnMoKyksIDEgZGVsZXRpb24oLSkKPiA+IAo+ID4gZGlmZiAt
+LWdpdCBhL2RyaXZlcnMvdXNiL210dTMvbXR1M19ob3N0LmMgYi9kcml2ZXJzL3VzYi9tdHUzL210
+dTNfaG9zdC5jCj4gPiBpbmRleCBjODcxYjk0ZjNlNmYuLjRmODIwODg4NWViZCAxMDA2NDQKPiA+
+IC0tLSBhL2RyaXZlcnMvdXNiL210dTMvbXR1M19ob3N0LmMKPiA+ICsrKyBiL2RyaXZlcnMvdXNi
+L210dTMvbXR1M19ob3N0LmMKPiA+IEBAIC0xOCw2ICsxOCwxMiBAQAo+ID4gICNpbmNsdWRlICJt
+dHUzLmgiCj4gPiAgI2luY2x1ZGUgIm10dTNfZHIuaCIKPiA+ICAKPiA+ICsvKiBtdDgxODMgZXRj
+ICovCj4gPiArI2RlZmluZSBQRVJJX1dLX0NUUkwwCTB4MjAKPiA+ICsjZGVmaW5lIFdDMF9JU19D
+KHgpCSgoKHgpICYgMHhmKSA8PCAyOCkgIC8qIGN5Y2xlIGRlYm91bmNlICovCj4gPiArI2RlZmlu
+ZSBXQzBfSVNfUAlCSVQoMTIpCS8qIHBvbGFyaXR5ICovCj4gPiArI2RlZmluZSBXQzBfSVNfRU4J
+QklUKDYpCj4gPiArCj4gCj4gRm9yIDY0LWJpdCBidWlsZHMsIHRoaXMgcmVzdWx0cyBpbjoKPiAK
+PiBkcml2ZXJzL3VzYi9tdHUzL210dTNfaG9zdC5jOiBJbiBmdW5jdGlvbiDigJhzc3VzYl93YWtl
+dXBfaXBfc2xlZXBfc2V04oCZOgo+IC4vaW5jbHVkZS9saW51eC9iaXRzLmg6NjoxOTogd2Fybmlu
+ZzoKPiAJY29udmVyc2lvbiBmcm9tIOKAmGxvbmcgdW5zaWduZWQgaW504oCZIHRvIOKAmHUzMuKA
+mSB7YWthIOKAmHVuc2lnbmVkIGludOKAmX0KPiAJY2hhbmdlcyB2YWx1ZSBmcm9tIOKAmDE4NDQ2
+NzQ0MDczNDQxMTIwMzIw4oCZIHRvIOKAmDQwMjY1MzYwMDDigJkgWy1Xb3ZlcmZsb3ddCj4gCj4g
+c2luY2UgV0MwX0lTX0MoKSBpcyBzaWduIGV4dGVuZGVkIHRvIDY0IGJpdCBhbmQgdGhlbiB0cnVu
+Y2F0ZWQuCkdvdCBpdCwgdGhhbmtzIGEgbG90Cgo+IAo+IE9ic2VydmVkIHdpdGggZ2NjIDcuNC4w
+IGFuZCA4LjMuMC4KPiAKPiBHdWVudGVyCj4gCj4gPiAgLyogbXQ4MTczIGV0YyAqLwo+ID4gICNk
+ZWZpbmUgUEVSSV9XS19DVFJMMQkweDQKPiA+ICAjZGVmaW5lIFdDMV9JU19DKHgpCSgoKHgpICYg
+MHhmKSA8PCAyNikgIC8qIGN5Y2xlIGRlYm91bmNlICovCj4gPiBAQCAtMzAsNyArMzYsOCBAQAo+
+ID4gICNkZWZpbmUgU1NDX1NQTV9JTlRfRU4JCUJJVCgxKQo+ID4gIAo+ID4gIGVudW0gc3N1c2Jf
+dXdrX3ZlcnMgewo+ID4gLQlTU1VTQl9VV0tfVjEgPSAxLAo+ID4gKwlTU1VTQl9VV0tfVjAgPSAw
+LAo+ID4gKwlTU1VTQl9VV0tfVjEsCj4gPiAgCVNTVVNCX1VXS19WMiwKPiA+ICB9Owo+ID4gIAo+
+ID4gQEAgLTQzLDYgKzUwLDExIEBAIHN0YXRpYyB2b2lkIHNzdXNiX3dha2V1cF9pcF9zbGVlcF9z
+ZXQoc3RydWN0IHNzdXNiX210ayAqc3N1c2IsIGJvb2wgZW5hYmxlKQo+ID4gIAl1MzIgcmVnLCBt
+c2ssIHZhbDsKPiA+ICAKPiA+ICAJc3dpdGNoIChzc3VzYi0+dXdrX3ZlcnMpIHsKPiA+ICsJY2Fz
+ZSBTU1VTQl9VV0tfVjA6Cj4gPiArCQlyZWcgPSBzc3VzYi0+dXdrX3JlZ19iYXNlICsgUEVSSV9X
+S19DVFJMMDsKPiA+ICsJCW1zayA9IFdDMF9JU19FTiB8IFdDMF9JU19DKDB4ZikgfCBXQzBfSVNf
+UDsKPiA+ICsJCXZhbCA9IGVuYWJsZSA/IChXQzBfSVNfRU4gfCBXQzBfSVNfQygweDgpKSA6IDA7
+Cj4gPiArCQlicmVhazsKPiA+ICAJY2FzZSBTU1VTQl9VV0tfVjE6Cj4gPiAgCQlyZWcgPSBzc3Vz
+Yi0+dXdrX3JlZ19iYXNlICsgUEVSSV9XS19DVFJMMTsKPiA+ICAJCW1zayA9IFdDMV9JU19FTiB8
+IFdDMV9JU19DKDB4ZikgfCBXQzFfSVNfUDsKCgoKX19fX19fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX18KbGludXgtYXJtLWtlcm5lbCBtYWlsaW5nIGxpc3QKbGludXgt
+YXJtLWtlcm5lbEBsaXN0cy5pbmZyYWRlYWQub3JnCmh0dHA6Ly9saXN0cy5pbmZyYWRlYWQub3Jn
+L21haWxtYW4vbGlzdGluZm8vbGludXgtYXJtLWtlcm5lbAo=
