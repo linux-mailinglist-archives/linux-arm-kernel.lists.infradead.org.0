@@ -2,57 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 29179B34DD
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 08:48:16 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 213BBB34DB
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 08:47:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Date:Subject:To
-	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=x2qfQ7kPg+4CMuJ8RnqsnJN8g8qBSsk72aLZF5VX1A0=; b=T2r35FAyhHLFfA
-	IT+r127RfX1P+VcvuECqPvlb0rjRCuITA8navT3zTIKwmMwpIehC2GoZ8DOxSTY6C4tMBuOongjsU
-	8rh08ka++QVRvT8xWvWqlgyFQzyUV4kv4HxqoVTzsVfy7Sz+HaFcICf/g2eWFPKzOUcNR8Xr3TLGp
-	ZKh08SGMJ84hulkqLAYFihlCVNPYLrDxk0QknjnIwWL9GiQuEABvJGrRN1ZtP9U0XCJxcI87ShSFg
-	qBNjrL5SLUqBGXXmwW0E6pLjhfb5KAAhKw1FVAa92fWoINv3HLPMhYoyscbgkxyKO5/5VsLatyfQu
-	0xiCiKckaWLFT7FshiNQ==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=3N+wWwVne7vwr+GjqZQnvZdrD8tPDAjt/McDfdBt1KU=; b=GPx8kFxmEy26mp
+	cSlqLAJ3UYWc9pTORyJ+yRqJgHOfH+IBGkqYB7FrA1+BFEexRDjOp5MWibeBPUMXvnCUyEtLUbFEO
+	kkJ39RJyMuLq244MaJ48MGzlN7k6ijRES3sy3vSiGnMuaMWeXhLbeBRacVdv0XfLy7ZzkK7t++msJ
+	YA9wzwl4kTM9+RzHOo/I8N1Z7sQ4mWdj4oPmRypfnhaJE2o7g4Jk3yB+KUAI4N+SCdhNoj7S6NtX4
+	YkHMNbByzrv4A3MY+IUzHvBcuyczikzqXaOCt/6taNk35+xZCcoxgQh+GcYRUFVDq2moEvELqSQb2
+	+w3Pz/w7Vq1RLD7Q9iuQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9ko2-0007gR-Bw; Mon, 16 Sep 2019 06:48:14 +0000
+	id 1i9knl-0007Qd-I3; Mon, 16 Sep 2019 06:47:57 +0000
 Received: from mailgw02.mediatek.com ([216.200.240.185])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9knQ-0007Jh-EG; Mon, 16 Sep 2019 06:47:37 +0000
-X-UUID: 6f39e1dbb890442e9eccfcfb54d5a987-20190915
-X-UUID: 6f39e1dbb890442e9eccfcfb54d5a987-20190915
+ id 1i9knL-0007Ed-Oc; Mon, 16 Sep 2019 06:47:33 +0000
+X-UUID: 9c2badfcb916486c8726c4820d6fb958-20190915
+X-UUID: 9c2badfcb916486c8726c4820d6fb958-20190915
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw02.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1004268676; Sun, 15 Sep 2019 22:47:33 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Sun, 15 Sep 2019 23:47:32 -0700
+ with ESMTP id 1942945880; Sun, 15 Sep 2019 22:47:22 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 15 Sep 2019 23:47:20 -0700
 Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 14:47:18 +0800
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Sep 2019 14:47:19 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas07.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 16 Sep 2019 14:47:18 +0800
+ Frontend Transport; Mon, 16 Sep 2019 14:47:19 +0800
 From: Stanley Chu <stanley.chu@mediatek.com>
 To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
  <pedrom.sousa@synopsys.com>, <sthumma@codeaurora.org>, <jejb@linux.ibm.com>,
  <bvanassche@acm.org>
-Subject: [PATCH v3 0/3] scsi: core: allow auto suspend override by low-level
+Subject: [PATCH v3 1/3] scsi: core: allow auto suspend override by low-level
  driver
-Date: Mon, 16 Sep 2019 14:47:14 +0800
-Message-ID: <1568616437-16271-1-git-send-email-stanley.chu@mediatek.com>
+Date: Mon, 16 Sep 2019 14:47:15 +0800
+Message-ID: <1568616437-16271-2-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
+In-Reply-To: <1568616437-16271-1-git-send-email-stanley.chu@mediatek.com>
+References: <1568616437-16271-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: C2197604482A5188BE84FEA9371351EB3FC7533F9D5A3BE0390823DCF643005A2000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_234736_570118_1FED94D5 
-X-CRM114-Status: UNSURE (   8.84  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190915_234731_916693_D714CF25 
+X-CRM114-Status: GOOD (  13.78  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -84,37 +86,86 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Until now the scsi mid-layer forbids runtime suspend till userspace enables it. This is mainly to quarantine some disks with broken runtime power management or have high latencies executing suspend resume callbacks. If the userspace doesn't enable the runtime suspend the underlying hardware will be always on even when it is not doing any useful work and thus wasting power.
+Rework from previous work by:
+Sujit Reddy Thumma <sthumma@codeaurora.org>
 
-Some low-level drivers for the controllers can efficiently use runtime power management to reduce power consumption and improve battery life.
+Until now the scsi mid-layer forbids runtime suspend till userspace
+enables it. This is mainly to quarantine some disks with broken
+runtime power management or have high latencies executing suspend
+resume callbacks. If the userspace doesn't enable the runtime suspend
+the underlying hardware will be always on even when it is not doing
+any useful work and thus wasting power.
 
-This patchset allows runtime suspend parameters override within the LLD itself instead of waiting for userspace to control the power management, and make UFS as the first user of this capability.
+Some low-level drivers for the controllers can efficiently use runtime
+power management to reduce power consumption and improve battery life.
+Allow runtime suspend parameters override within the LLD itself
+instead of waiting for userspace to control the power management.
 
-v2 => v3:
-- Create a member indicating autosuspend delay for the same SCSI host in SCSI host template (Bart)
-- Use separate variables to control different things, (Bart)
-    (a) Whether or not runtime suspend is enabled at device creation time
-    (b) The power management autosuspend delay
+Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
+Reviewed-by: Avri Altman <avri.altman@wdc.com>
+---
+ drivers/scsi/scsi_sysfs.c  | 3 ++-
+ drivers/scsi/sd.c          | 4 ++++
+ include/scsi/scsi_device.h | 2 +-
+ include/scsi/scsi_host.h   | 3 +++
+ 4 files changed, 10 insertions(+), 2 deletions(-)
 
-v1 => v2:
-- Allow "zero" sdev->rpm_autosuspend_delay (Avri)
-- Fix format of some lines (Avri)
-
-
-Stanley Chu (3):
-  scsi: core: allow auto suspend override by low-level driver
-  scsi: ufs: override auto suspend tunables for ufs
-  scsi: ufs-mediatek: enable auto suspend capability
-
- drivers/scsi/scsi_sysfs.c       |  3 ++-
- drivers/scsi/sd.c               |  4 ++++
- drivers/scsi/ufs/ufs-mediatek.c |  3 +++
- drivers/scsi/ufs/ufshcd.c       |  9 +++++++++
- drivers/scsi/ufs/ufshcd.h       | 10 ++++++++++
- include/scsi/scsi_device.h      |  2 +-
- include/scsi/scsi_host.h        |  3 +++
- 7 files changed, 32 insertions(+), 2 deletions(-)
-
+diff --git a/drivers/scsi/scsi_sysfs.c b/drivers/scsi/scsi_sysfs.c
+index 64c96c7828ee..d879073b0bbb 100644
+--- a/drivers/scsi/scsi_sysfs.c
++++ b/drivers/scsi/scsi_sysfs.c
+@@ -1300,7 +1300,8 @@ int scsi_sysfs_add_sdev(struct scsi_device *sdev)
+ 	device_enable_async_suspend(&sdev->sdev_gendev);
+ 	scsi_autopm_get_target(starget);
+ 	pm_runtime_set_active(&sdev->sdev_gendev);
+-	pm_runtime_forbid(&sdev->sdev_gendev);
++	if (!sdev->rpm_autosuspend_on)
++		pm_runtime_forbid(&sdev->sdev_gendev);
+ 	pm_runtime_enable(&sdev->sdev_gendev);
+ 	scsi_autopm_put_target(starget);
+ 
+diff --git a/drivers/scsi/sd.c b/drivers/scsi/sd.c
+index 149d406aacc9..c810cc5071d8 100644
+--- a/drivers/scsi/sd.c
++++ b/drivers/scsi/sd.c
+@@ -3371,6 +3371,10 @@ static int sd_probe(struct device *dev)
+ 	}
+ 
+ 	blk_pm_runtime_init(sdp->request_queue, dev);
++	if (sdp->rpm_autosuspend_on) {
++		pm_runtime_set_autosuspend_delay(dev,
++			sdp->host->hostt->rpm_autosuspend_delay);
++	}
+ 	device_add_disk(dev, gd, NULL);
+ 	if (sdkp->capacity)
+ 		sd_dif_config_host(sdkp);
+diff --git a/include/scsi/scsi_device.h b/include/scsi/scsi_device.h
+index 202f4d6a4342..495e30adb53f 100644
+--- a/include/scsi/scsi_device.h
++++ b/include/scsi/scsi_device.h
+@@ -199,7 +199,7 @@ struct scsi_device {
+ 	unsigned broken_fua:1;		/* Don't set FUA bit */
+ 	unsigned lun_in_cdb:1;		/* Store LUN bits in CDB[1] */
+ 	unsigned unmap_limit_for_ws:1;	/* Use the UNMAP limit for WRITE SAME */
+-
++	unsigned rpm_autosuspend_on:1;	/* Runtime autosuspend */
+ 	atomic_t disk_events_disable_depth; /* disable depth for disk events */
+ 
+ 	DECLARE_BITMAP(supported_events, SDEV_EVT_MAXBITS); /* supported events */
+diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
+index cc139dbd71e5..3cb64f0a7e3a 100644
+--- a/include/scsi/scsi_host.h
++++ b/include/scsi/scsi_host.h
+@@ -474,6 +474,9 @@ struct scsi_host_template {
+ 	 */
+ 	unsigned int cmd_size;
+ 	struct scsi_host_cmd_pool *cmd_pool;
++
++	/* Delay for runtime autosuspend */
++	int rpm_autosuspend_delay;
+ };
+ 
+ /*
 -- 
 2.18.0
 
