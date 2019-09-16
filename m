@@ -2,77 +2,81 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62FDDB3E99
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:15:32 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B6F0B3E9D
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:15:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=Qv4F7e4T+fiPm7TtcJhHTAiY0tzaoI7trSZ2fB6PKsk=; b=p1q
-	qQHyobpw+KsS8F+Zxc49xTqx7n/w5ZDCdsB6c90xM26ekquRXEi9KJzOkdJmMGzMht5UkQ/3HwDMx
-	EukqvzVXP/MxuRBLYAk8WFOGJ5R5q89RZd+IHxoQtkvhrUynK7DNOqMsoAdiEQVWotZv/mTH/FtQ6
-	McuThw1S+9cT0yapnlDuVDdwZdI6W5TRtEQKKb3Y5aRcUtpsCOaxmUKm5SJiSUKWDHIHL1OCI3JR1
-	JSM9HbrZStXVYdRcWXOtyvQPeP0KCwH4wGgtpSwXht7WJb+eFJ2f7OAzaMDZ4W+JOD7TolNI3bfaU
-	zEL6MSPlzXIR7PuCn+AEoSeo+jrPAxg==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=GzcP66efJhZfoMphK3p+IkaCcUpjhVnsuJxSVVyfI4I=; b=soszK7jd38GeS6Gu9TexWSsEQq
+	CeycX4qWqYsrzl2qACHBumq3SeK4j+neF1lnctaMfAraXzNV6v+mpu+x1A2YT24nqvvxABA39OnJr
+	OzrwihQKn8wHPSEe+D/yG1it+2+xK6P49FgPDdXcQg2I8ue46YG6fgdLXQK2s8sR2sCH+7Xj1DAY9
+	ZT0kwzhkqtiyitf6EWiwMjNt7VsE4pz/qjjxFXgBvXjEpyW1vN1I2jlVgIyg/HcdzM1K2GE254VjD
+	WNyOKQ0hy88/wGuXKC8foC4nAZS3GC1c4HeZUlgNf5z4e+5G1nxM+1AxPvFEaq7ZK0KJ+Z1e98iLv
+	gTzVjDcw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9teq-0002jO-5t; Mon, 16 Sep 2019 16:15:20 +0000
-Received: from mail-pf1-x442.google.com ([2607:f8b0:4864:20::442])
+	id 1i9tfF-0003i9-1l; Mon, 16 Sep 2019 16:15:45 +0000
+Received: from mail-pg1-x542.google.com ([2607:f8b0:4864:20::542])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9teY-0002Ht-4w
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:03 +0000
-Received: by mail-pf1-x442.google.com with SMTP id y5so190259pfo.4
+ id 1i9tec-0002wp-Ql
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:08 +0000
+Received: by mail-pg1-x542.google.com with SMTP id x15so265118pgg.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 09:15:02 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:06 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=from:to:cc:subject:date:message-id;
- bh=YqI202SP9Uvm6lQD97H4g3P2DuY2a7DQ+cgjEVc1iKE=;
- b=TCFJ+T5VQp/PBhYSSCAmY4rWCPO61OkcTmlcfwPeLEQxWoNSKi4+kdpTZ3KgLao1bP
- 78YuAjmnc+fuu15yyj9WuXavFLo8vmEeWx9qRJzt2m4tH4E88ZFkNAIUws8SNjvV334h
- ZuPxKFcj8jmDVbVXdIPSxRMx/rCG8AD6PQ8BL784ZjC1LzJKMv4fCABTrrpjSBnufWpR
- ab8VVXa7At+aYgWye6PRjYBlah4HDNfLX/FlQRlnybwD/nSvKQB+0yTYJCVPvOACTUnJ
- Sjjwkj38yDCfOyKJfB+vFJuVLkxtLsVxSuLrzVyu4hFFuOkAkQM87YzArntp+bofj1Ef
- XhAQ==
+ h=from:to:cc:subject:date:message-id:in-reply-to:references;
+ bh=70nxwZafCYlFjcUnZixCqBC0Lk3FuIHCQ+uw4WwvqpE=;
+ b=A1ugiOOPB7IojLFg9zG7Z22Pk5Hy1X6F1BvfvZbhB4LvJPypy+NTg/ATLcqMSTnN29
+ cvS5V6/R4wanwOaOkFhUCdel4TZ/BNMZSNfWvTHyUtWJwqprpL/CXF1cbtGl6P5Ijj1f
+ FHctexMt1/Bo9pShonbRxtdHV3xU0Lahg4ss4Xufa7DfP1GfsKtHF0CAUK6TcXS7LOBl
+ tHZEDtDJcffi/YKAr5jdQXuCIia6TqGCeFAzAwh2R9lXiq8rdjJ0I1cwH/E86NMPEj/r
+ PFSYcus9YyaJVpMdVPF4T60PAWtBxTdiN73uiyQOGe1IDLySZX7+7PnOFxraTdxunT75
+ ctoQ==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
- h=x-gm-message-state:from:to:cc:subject:date:message-id;
- bh=YqI202SP9Uvm6lQD97H4g3P2DuY2a7DQ+cgjEVc1iKE=;
- b=uOHVVOO7I3svmp64yTYYn6G1q0dDYzFLWF9yVCdDtU6F6vi/+CFrJ4vStQn4LV/vpj
- W2MLc4dgZynIl2GDsAWBxa+dnP59Vl9QHEzBk5tBfxvWPDV7V4BRKBgCplCqQkakdz6T
- EyRWbGN/E1wYTBOkCifpgew86NyJeFc7S5pQlWNHwZC9EgZm6A84o6kzPST7HgxC/1W2
- FlrGx0FnwEjh5PDpBciADeuaPfs5SSxINCF4cogEMHFhbBhbr7DDaxZZn+zHOA96feyT
- SDr+hxd1c95t7etK494/ik13w5WjNYtku5rPNGsODEJ/whIjUhFvI6mIWydpkoslB11R
- YDgQ==
-X-Gm-Message-State: APjAAAWBgMqv9IpT//Cgq22u+tgEvfbIkyF0Z4xjop0vSrtG9xtskDEQ
- GzmQ0v1G5PqqWkROYpFGBVif
-X-Google-Smtp-Source: APXvYqz3wknvxuDQCjKwVjta//PKTOY6hHZ8/aiT+AGaASzY6TDIDhkjaGXnLFFiW8AbLhsQ+RIWlw==
-X-Received: by 2002:a63:221f:: with SMTP id i31mr13278538pgi.251.1568650501307; 
- Mon, 16 Sep 2019 09:15:01 -0700 (PDT)
+ h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
+ :references;
+ bh=70nxwZafCYlFjcUnZixCqBC0Lk3FuIHCQ+uw4WwvqpE=;
+ b=Rni9u7kdPfmMCL8AdjbqPohB27UPX0MMeJTD+h1PUFhvHAMNRFbjk0OvAEhL12VxSr
+ bjdvo1KrP8Uhw/IA55EqpR54w8FSv2rQMJS1U1dhi16B26YnZAoLtTcDur8JCTLUBWvO
+ z5sBRDPHtpl88l2q3FzYYyWnG8uMkBvmVqILqurRWhVmxwfKluSQTNHCeFdyGR8P9lH3
+ v1WonPYqkvvDEN8JgQBqyY2bwlEYFx7usjjXAKJwG+Nd5mCByXGVvK4zj3m22DW73dZk
+ 1WnXytXfDL2w6QRmUfKU68n98ieyUBTwi0m1nUNr9r9bWmzbZUihgImCxthiXv/0jOUX
+ +iGg==
+X-Gm-Message-State: APjAAAVBfungeOtqY6PHr6OXp0locUrvdDbFlnvGXF0ELhfv3UqYUcbd
+ GkdC7mItFNH8C0rDcJZeo/AA
+X-Google-Smtp-Source: APXvYqxSax50pawR6i4u56ziysZ9sLdFtdyKBhaZ6zTz4KztldaLEtes3ldaJLB33hc0GcJBWrSOkQ==
+X-Received: by 2002:a17:90a:db04:: with SMTP id g4mr502843pjv.51.1568650506251; 
+ Mon, 16 Sep 2019 09:15:06 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:90b:91ce:94c2:ef93:5bd:cfe8])
  by smtp.gmail.com with ESMTPSA id
- h66sm614134pjb.0.2019.09.16.09.14.56
+ h66sm614134pjb.0.2019.09.16.09.15.01
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 09:15:00 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:05 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: sboyd@kernel.org,
 	mturquette@baylibre.com,
 	robh+dt@kernel.org
-Subject: [PATCH v5 0/8] Add Bitmain BM1880 clock driver
-Date: Mon, 16 Sep 2019 21:44:39 +0530
-Message-Id: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 1/8] clk: Zero init clk_init_data in helpers
+Date: Mon, 16 Sep 2019 21:44:40 +0530
+Message-Id: <20190916161447.32715-2-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
+References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_091502_208501_0B19A1A1 
-X-CRM114-Status: GOOD (  12.27  )
+X-CRM114-CacheID: sfid-20190916_091507_029278_E43E8AB8 
+X-CRM114-Status: GOOD (  12.65  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:442 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:542 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -105,70 +109,84 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hello,
+The clk_init_data struct needs to be initialized to zero for the new
+parent_map implementation to work correctly. Otherwise, the member which
+is available first will get processed.
 
-This patchset adds common clock driver for Bitmain BM1880 SoC clock
-controller. The clock controller consists of gate, divider, mux
-and pll clocks with different compositions. Hence, the driver uses
-composite clock structure in place where multiple clocking units are
-combined together.
+Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+---
+ drivers/clk/clk-composite.c  | 2 +-
+ drivers/clk/clk-divider.c    | 2 +-
+ drivers/clk/clk-fixed-rate.c | 2 +-
+ drivers/clk/clk-gate.c       | 2 +-
+ drivers/clk/clk-mux.c        | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
 
-This patchset also removes UART fixed clock and sources clocks from clock
-controller for Sophon Edge board where the driver has been validated.
-
-Thanks,
-Mani
-
-Changes in v5:
-
-* Incorporated review comments from Rob on dt binding
-
-Changes in v4:
-
-* Fixed devicetree binding issue
-* Added ARCH_BITMAIN as the default for the clk driver
-
-Changes in v3:
-
-* Switched to clk_hw_{register/unregister} APIs
-* Returned clk_hw from the in-driver registration helpers
-
-Changes in v2:
-
-* Converted the dt binding to YAML
-* Incorporated review comments from Stephen (majority of change is switching
-  to new way of specifying clk parents)
-
-
-Manivannan Sadhasivam (8):
-  clk: Zero init clk_init_data in helpers
-  clk: Warn if clk_init_data is not zero initialized
-  clk: Add clk_hw_unregister_composite helper function definition
-  dt-bindings: clock: Add devicetree binding for BM1880 SoC
-  arm64: dts: bitmain: Add clock controller support for BM1880 SoC
-  arm64: dts: bitmain: Source common clock for UART controllers
-  clk: Add common clock driver for BM1880 SoC
-  MAINTAINERS: Add entry for BM1880 SoC clock driver
-
- .../bindings/clock/bitmain,bm1880-clk.yaml    |  76 ++
- MAINTAINERS                                   |   2 +
- .../boot/dts/bitmain/bm1880-sophon-edge.dts   |   9 -
- arch/arm64/boot/dts/bitmain/bm1880.dtsi       |  28 +
- drivers/clk/Kconfig                           |   7 +
- drivers/clk/Makefile                          |   1 +
- drivers/clk/clk-bm1880.c                      | 966 ++++++++++++++++++
- drivers/clk/clk-composite.c                   |  13 +-
- drivers/clk/clk-divider.c                     |   2 +-
- drivers/clk/clk-fixed-rate.c                  |   2 +-
- drivers/clk/clk-gate.c                        |   2 +-
- drivers/clk/clk-mux.c                         |   2 +-
- drivers/clk/clk.c                             |   8 +
- include/dt-bindings/clock/bm1880-clock.h      |  82 ++
- 14 files changed, 1186 insertions(+), 14 deletions(-)
- create mode 100644 Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
- create mode 100644 drivers/clk/clk-bm1880.c
- create mode 100644 include/dt-bindings/clock/bm1880-clock.h
-
+diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c
+index b06038b8f658..4d579f9d20f6 100644
+--- a/drivers/clk/clk-composite.c
++++ b/drivers/clk/clk-composite.c
+@@ -208,7 +208,7 @@ struct clk_hw *clk_hw_register_composite(struct device *dev, const char *name,
+ 			unsigned long flags)
+ {
+ 	struct clk_hw *hw;
+-	struct clk_init_data init;
++	struct clk_init_data init = { NULL };
+ 	struct clk_composite *composite;
+ 	struct clk_ops *clk_composite_ops;
+ 	int ret;
+diff --git a/drivers/clk/clk-divider.c b/drivers/clk/clk-divider.c
+index 3f9ff78c4a2a..65dd8137f9ec 100644
+--- a/drivers/clk/clk-divider.c
++++ b/drivers/clk/clk-divider.c
+@@ -471,7 +471,7 @@ static struct clk_hw *_register_divider(struct device *dev, const char *name,
+ {
+ 	struct clk_divider *div;
+ 	struct clk_hw *hw;
+-	struct clk_init_data init;
++	struct clk_init_data init = { NULL };
+ 	int ret;
+ 
+ 	if (clk_divider_flags & CLK_DIVIDER_HIWORD_MASK) {
+diff --git a/drivers/clk/clk-fixed-rate.c b/drivers/clk/clk-fixed-rate.c
+index a7e4aef7a376..746c3ecdc5b3 100644
+--- a/drivers/clk/clk-fixed-rate.c
++++ b/drivers/clk/clk-fixed-rate.c
+@@ -58,7 +58,7 @@ struct clk_hw *clk_hw_register_fixed_rate_with_accuracy(struct device *dev,
+ {
+ 	struct clk_fixed_rate *fixed;
+ 	struct clk_hw *hw;
+-	struct clk_init_data init;
++	struct clk_init_data init = { NULL };
+ 	int ret;
+ 
+ 	/* allocate fixed-rate clock */
+diff --git a/drivers/clk/clk-gate.c b/drivers/clk/clk-gate.c
+index 1b99fc962745..8ed83ec730cb 100644
+--- a/drivers/clk/clk-gate.c
++++ b/drivers/clk/clk-gate.c
+@@ -141,7 +141,7 @@ struct clk_hw *clk_hw_register_gate(struct device *dev, const char *name,
+ {
+ 	struct clk_gate *gate;
+ 	struct clk_hw *hw;
+-	struct clk_init_data init;
++	struct clk_init_data init = { NULL };
+ 	int ret;
+ 
+ 	if (clk_gate_flags & CLK_GATE_HIWORD_MASK) {
+diff --git a/drivers/clk/clk-mux.c b/drivers/clk/clk-mux.c
+index 66e91f740508..2caa6b2a9ee5 100644
+--- a/drivers/clk/clk-mux.c
++++ b/drivers/clk/clk-mux.c
+@@ -153,7 +153,7 @@ struct clk_hw *clk_hw_register_mux_table(struct device *dev, const char *name,
+ {
+ 	struct clk_mux *mux;
+ 	struct clk_hw *hw;
+-	struct clk_init_data init;
++	struct clk_init_data init = { NULL };
+ 	u8 width = 0;
+ 	int ret;
+ 
 -- 
 2.17.1
 
