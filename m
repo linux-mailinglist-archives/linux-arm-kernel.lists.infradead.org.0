@@ -2,124 +2,135 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 17FB0B3769
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 11:45:44 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A105EB3783
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 11:50:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:References:In-Reply-To:MIME-Version:
+	Date:Message-ID:From:To:Subject:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=RGIK3Dd39P/R/7l2hHmtK1nHI+Vp3a+mQzXiqUV3QYg=; b=kAyy7oUhrQfV7W
-	CYjBymnrq8PZX2aeTouNhzTeDviKvbZOMpYRCctH56TwI33wllJ5xctINLBpGI2d/wy9O/kgvQYnB
-	jKBwc2dDXcMiu0lJF3JBFn4UcwdtbtZCP0vTdaZHacR9UcLIwPURQPPFIAZPOD2EygJ7SQfAOoG1J
-	pDYfkrb5Gj0UFW4qG8hZa7jKblbKZrsxIQNs5BWMpccXP8X5mFf+evG+zDFr6j69i0GQlx0E8fqL3
-	CbCIJ5oh+Y8zPXvCKz6Ml3E6RnDD1we1D4WZgAYPq4yFpw/21oXE2LkYS6ndSPAkv5G2cqMhZn9Vj
-	0cpqXfgdXdm2phqpxuxQ==;
+	List-Owner; bh=2/s07Klv1d2OySnheXOSh+kl011hrEHNhD+XuCza7Oc=; b=QmybtKiuCmqBw5
+	g5jVXJaAbE5jT+bKK1gbNXP6NBZ9z9UAnz4PWZykIVGU2A3papd2st8f+cYP6vZOK4DBg1UBsUzJn
+	XbsrdAYQ40OqlHbS03nkiUxbADV2VTx/ji4QrteVu8NS1P3r/tiLmn4/KGLTO7/lxZlr8YNqaQwHJ
+	z/ulJOLzZFhT9GxNCRgteKdDYKxykvktVEftBOPameRFAyd8BKMfwaEzm3Eppe5uQ/8wzdEhPKonk
+	b0K26CFa3yp4yjfI1R4+Gg4vOqSWa/7sAlKwXPzFbNxGnGbrc8zCC/RZWtLmHf3t0m6cFyMaxdY1f
+	9PLbqpgxehcL9F3BhU2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9nZf-0004ff-DO; Mon, 16 Sep 2019 09:45:35 +0000
-Received: from mail-eopbgr10049.outbound.protection.outlook.com ([40.107.1.49]
- helo=EUR02-HE1-obe.outbound.protection.outlook.com)
+	id 1i9neJ-0006JK-RJ; Mon, 16 Sep 2019 09:50:23 +0000
+Received: from mailout1.w1.samsung.com ([210.118.77.11])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9nYp-00032L-Am
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 09:44:45 +0000
-ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
- b=Be3MTed1PRJzwcCt1hGDgWf0rBFEdn01ovY5tzHsyDtY8q1NoG192wWOCZTKEjiB6jwMXyyhHMHRD+PXScyxG+yZF0OTWDkEMCnjSfMIrG8wrH/Phg9bJGrs5X0OxK2HINWLhc1HdcC11zdX9golGyUz8oceXF4AN6OLsiPRYkEGC9xIbQII28a0+t25XvNC933c2XgDCOvxUTbrvwPECFsBtFowc9ICr/1WqPSW+fhASICdv6KQBQAQaRFOqq8vcIYEMY8b/vCjExYAZD7qvyNUCQXwawW4FKznTBrQvOWB3dbGloKq65UgsbpDIiH6eDmmslZqGKirjBdfOfiwBA==
-ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
- s=arcselector9901;
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7FJTyOwjd9hE2TfgR7a2Fk5cGji2TGsc+fCxqaCZJ4Q=;
- b=nk48If9273e3brwLwWDKDPTNroYTscPyYeeKn6oUkfk7zCf/Vc9oDN5CRPW98MSSpRm83ipqYIRCLXDlIY9Bokh6OBgitVqhEJ4jRdxeZ6gFW+0mFngOIqCMfq/I8OxEvyecL/FlZbCXD2ppkb7gwHCb/LbBDbvn7YFfoeb1TQI5zfFpAuWuHups3X3Od/wplWhTxpx//48xeTbhwJQPTxq0hP0PwDt8IZdlerxjaImpDZleoeTCPBWHryxbvs6vTHgbj7743HaGwl/bD+3UjJEGHm+s6Gpq9USxNKSgUZzjetlPj2dJhHu+XhXQgzp+K3HSXGTVEuZ8VTlCUVolEw==
-ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
- smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
- header.d=nxp.com; arc=none
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
- h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
- bh=7FJTyOwjd9hE2TfgR7a2Fk5cGji2TGsc+fCxqaCZJ4Q=;
- b=XKlvryg6LSth4xlEoY+40KrkS+HuqPrr+qx4ZbndmbNcg+RgtDXqWnQxGy8tjDBV3ttpmkdvlGLQOBaYrm9t40i4Rf4u+Wz18n6qPigo97DBtxXTC33UDON8eKWm1EN6Hwo6Yln4XX6GGedds+GoXpJG04gacvj36Mj7so9FcAE=
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com (52.135.147.15) by
- AM0PR04MB4674.eurprd04.prod.outlook.com (52.135.149.144) with Microsoft SMTP
- Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
- 15.20.2263.13; Mon, 16 Sep 2019 09:44:41 +0000
-Received: from AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8]) by AM0PR04MB4481.eurprd04.prod.outlook.com
- ([fe80::6ca2:ec08:2b37:8ab8%6]) with mapi id 15.20.2263.023; Mon, 16 Sep 2019
- 09:44:41 +0000
-From: Peng Fan <peng.fan@nxp.com>
-To: "robh+dt@kernel.org" <robh+dt@kernel.org>, "mark.rutland@arm.com"
- <mark.rutland@arm.com>, "jassisinghbrar@gmail.com"
- <jassisinghbrar@gmail.com>, "sudeep.holla@arm.com" <sudeep.holla@arm.com>,
- "andre.przywara@arm.com" <andre.przywara@arm.com>, "f.fainelli@gmail.com"
- <f.fainelli@gmail.com>
-Subject: [PATCH V6 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Topic: [PATCH V6 2/2] mailbox: introduce ARM SMC based mailbox
-Thread-Index: AQHVbHNdulW1qSzh8kulKbzCOfhGfw==
-Date: Mon, 16 Sep 2019 09:44:41 +0000
-Message-ID: <1568626884-5189-3-git-send-email-peng.fan@nxp.com>
-References: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
-In-Reply-To: <1568626884-5189-1-git-send-email-peng.fan@nxp.com>
-Accept-Language: en-US
-Content-Language: en-US
-X-MS-Has-Attach: 
-X-MS-TNEF-Correlator: 
-x-mailer: git-send-email 2.7.4
-x-clientproxiedby: HK0PR01CA0054.apcprd01.prod.exchangelabs.com
- (2603:1096:203:a6::18) To AM0PR04MB4481.eurprd04.prod.outlook.com
- (2603:10a6:208:70::15)
-authentication-results: spf=none (sender IP is )
- smtp.mailfrom=peng.fan@nxp.com; 
-x-ms-exchange-messagesentrepresentingtype: 1
-x-originating-ip: [119.31.174.66]
-x-ms-publictraffictype: Email
-x-ms-office365-filtering-correlation-id: 6808022f-1368-447c-2c37-08d73a8a7f6e
-x-ms-office365-filtering-ht: Tenant
-x-microsoft-antispam: BCL:0; PCL:0;
- RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
- SRVR:AM0PR04MB4674; 
-x-ms-traffictypediagnostic: AM0PR04MB4674:|AM0PR04MB4674:
-x-ms-exchange-purlcount: 1
-x-ms-exchange-transport-forked: True
-x-microsoft-antispam-prvs: <AM0PR04MB4674A1B1A9374F3552D6CDC9888C0@AM0PR04MB4674.eurprd04.prod.outlook.com>
-x-ms-oob-tlc-oobclassifiers: OLM:6430;
-x-forefront-prvs: 0162ACCC24
-x-forefront-antispam-report: SFV:NSPM;
- SFS:(10009020)(4636009)(366004)(136003)(396003)(376002)(346002)(39860400002)(189003)(199004)(50226002)(81156014)(44832011)(8676002)(8936002)(81166006)(66946007)(14454004)(52116002)(99286004)(15650500001)(6436002)(316002)(2616005)(53936002)(486006)(305945005)(7736002)(86362001)(476003)(76176011)(66066001)(36756003)(2201001)(54906003)(6486002)(446003)(11346002)(2906002)(66556008)(5660300002)(6512007)(110136005)(386003)(6506007)(4326008)(71200400001)(26005)(71190400001)(102836004)(966005)(6116002)(66476007)(3846002)(186003)(64756008)(256004)(66446008)(6306002)(2501003)(478600001)(25786009);
- DIR:OUT; SFP:1101; SCL:1; SRVR:AM0PR04MB4674;
- H:AM0PR04MB4481.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
- PTR:InfoNoRecords; MX:1; A:1; 
-received-spf: None (protection.outlook.com: nxp.com does not designate
- permitted sender hosts)
-x-ms-exchange-senderadcheck: 1
-x-microsoft-antispam-message-info: jMkY6u3N+UlUN4IafInkDz0ka+LVmlMaV5uFqntfo+ZEO/bQ9SB3d1vt3mL0epia2/87XEyPI6QQLmLZwpL91YFY1tkuaguP/ArB1FilfAVmlZzgBkDtTusFBWf8utME6+HZfjN1uU7waP1uYq0CPtJLm5ZUlbEYBMWCJfF2Lxr6Zwlk+Mo0BKDHvDCO0Ed98l21/dhpPheAQv5xVMkXDUgmIW2tmlXurUEyvB9AQfmRwWflUqn+wUzar4bfOJ+pOTfs8SGNA/WQ6CVT/EF5Z+45Jc4JwAt0FxOwAkIl7Fye5z6LCc1o+PSljKvNX0IsrYGBNWHNpe+oZmyZ+LFe+K/NfQ6RUdv4wwICDCAIkQrfqctCea8JzCgzHLMP9/cOTdWDs0wskvG2+xcj7jVp8fZ3fQgzttiqVcctjwhl0RU=
+ id 1i9ndz-0005OC-7c
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 09:50:05 +0000
+Received: from eucas1p1.samsung.com (unknown [182.198.249.206])
+ by mailout1.w1.samsung.com (KnoxPortal) with ESMTP id
+ 20190916094957euoutp010c1d679f7f345e5912d0a6d1bc6bfa00~E4k6v6w7n1114311143euoutp01w
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 09:49:57 +0000 (GMT)
+DKIM-Filter: OpenDKIM Filter v2.11.0 mailout1.w1.samsung.com
+ 20190916094957euoutp010c1d679f7f345e5912d0a6d1bc6bfa00~E4k6v6w7n1114311143euoutp01w
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=samsung.com;
+ s=mail20170921; t=1568627397;
+ bh=iuHLb85Z2D3Szb5HcwZ4eEWC4tX/t5FH2HMb/lXL8xM=;
+ h=Subject:To:Cc:From:Date:In-Reply-To:References:From;
+ b=LUYpa4Sh3S8XjbZGY7vITT/EJ2IwD14Svik/lE5EvSYeHsJJ2Gg9EfVQmJ6I4DS1f
+ IVz8ZJFtLTOd/DZ/78TydKSRZjizifz9P7Ut2Ak33BDiZjoavUaf1UIKqt4Zk08s7N
+ ppojjdbIUeBAgzWV0v50tmR2hIQwVSrrt82gbEmI=
+Received: from eusmges3new.samsung.com (unknown [203.254.199.245]) by
+ eucas1p1.samsung.com (KnoxPortal) with ESMTP id
+ 20190916094957eucas1p1035b14c56a867a0206e2e1d11c19645b~E4k5-3U-E2395523955eucas1p1O;
+ Mon, 16 Sep 2019 09:49:57 +0000 (GMT)
+Received: from eucas1p1.samsung.com ( [182.198.249.206]) by
+ eusmges3new.samsung.com (EUCPMTA) with SMTP id 15.1B.04374.4CA5F7D5; Mon, 16
+ Sep 2019 10:49:56 +0100 (BST)
+Received: from eusmtrp2.samsung.com (unknown [182.198.249.139]) by
+ eucas1p2.samsung.com (KnoxPortal) with ESMTPA id
+ 20190916094956eucas1p24cc2a1dfa8565ba6e1ff3d4fd1f09f73~E4k5KmyED0502405024eucas1p2M;
+ Mon, 16 Sep 2019 09:49:56 +0000 (GMT)
+Received: from eusmgms1.samsung.com (unknown [182.198.249.179]) by
+ eusmtrp2.samsung.com (KnoxPortal) with ESMTP id
+ 20190916094955eusmtrp2debf0d072bbc1b2e06241b7ea59df52d~E4k48V3iW1858618586eusmtrp2l;
+ Mon, 16 Sep 2019 09:49:55 +0000 (GMT)
+X-AuditID: cbfec7f5-4ddff70000001116-2e-5d7f5ac4b73e
+Received: from eusmtip1.samsung.com ( [203.254.199.221]) by
+ eusmgms1.samsung.com (EUCPMTA) with SMTP id 4B.F0.04166.3CA5F7D5; Mon, 16
+ Sep 2019 10:49:55 +0100 (BST)
+Received: from [106.120.51.20] (unknown [106.120.51.20]) by
+ eusmtip1.samsung.com (KnoxPortal) with ESMTPA id
+ 20190916094954eusmtip11d9afbb904d4a61073bd82cea965e2cb~E4k33i_DG2359023590eusmtip12;
+ Mon, 16 Sep 2019 09:49:54 +0000 (GMT)
+Subject: Re: [PATCH 3/3] dt-bindings: ddr: Add bindings for Samsung LPDDR3
+ memories
+To: Rob Herring <robh@kernel.org>, Krzysztof Kozlowski <krzk@kernel.org>
+From: Lukasz Luba <l.luba@partner.samsung.com>
+Message-ID: <a06caf21-b2a9-919f-6e73-69122fee5f66@partner.samsung.com>
+Date: Mon, 16 Sep 2019 11:49:53 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-OriginatorOrg: nxp.com
-X-MS-Exchange-CrossTenant-Network-Message-Id: 6808022f-1368-447c-2c37-08d73a8a7f6e
-X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2019 09:44:41.6247 (UTC)
-X-MS-Exchange-CrossTenant-fromentityheader: Hosted
-X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
-X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
-X-MS-Exchange-CrossTenant-userprincipalname: BnqeDvxBx+XmDtDSAwPTnfT0JV44MgCYLrr/aaAAAh8S6SDh4iVlQp3mw/ENFwssB9x6gXYuOfegzMLbMue9vg==
-X-MS-Exchange-Transport-CrossTenantHeadersStamped: AM0PR04MB4674
+In-Reply-To: <5d7ba95a.1c69fb81.bfd81.77ba@mx.google.com>
+Content-Language: en-US
+X-Brightmail-Tracker: H4sIAAAAAAAAA02Se0hTYRjG+3Z2Li4nn1PzRaNwEN1Q0/rjWNIFREYEldGFYtmqg0Zu051W
+ qyRXoGml3cDLMldQrdZqtWxeikW6vJS6ZFR2o4uDoKaBWiSrzHkm+d/vfd7n430e+BhC9paM
+ Y/Zo9nE6jSpPTknEzrbRnkT31iLloiFHInu32k6yr0a+kKzZ3UOyp/u/EazHc4dmu4/5adbR
+ /5Jkvc21FDtc7kZstcclYm+539Ps1Ve9Ivbt0esUO/awkWZb/cdJ9mfHZ7QSK2x1NqRoMr2n
+ FQ5rGaW4d6VIUVFvRYphx6x11FZJ+m4ub89+Tpe8fIckt/mkXZTfFGfwtV6mjMgZcwKFMYCX
+ wOO2TnQCSRgZvo6gq+sJIQwjCDpGn9DCMIygu26Qmnxy8/yN0MKCoMVRGRoGEHjbAqKgKwpv
+ hK6TATrI0VgB72ptEyYC28RgMn4Yv8gwFE6CRmtB0CPFmeC7cVYcZDGeA2W9T4kgx+AtMPSx
+ lRQ8kdBZ45vwhOE0KGnwTDCBY+GNzywSeDY0DNROdAD8h4bOd15CiJ0Bpe02kcBR8LW9nhZ4
+ Jow1mUM6D8byy0jgQug/fTHkWQat7b1kMDOB54O9OVmQV8GY6RwVlAFHQN9ApBAhAs45qwhB
+ lkJpiUxwz4P6U89Dh2aAxVZJn0Fy05RipillTFPKmP7fvYTEVhTL6Xl1Dscv1nAHkniVmtdr
+ cpJ2adUONP7lnv1t/9GIXL93tiDMIHm41Fh8RCkjVfv5g+oWBAwhj5ZuLj2slEl3qw4e4nTa
+ bJ0+j+NbUDwjlsdKD0/7uE2Gc1T7uL0cl8/pJrciJizOiLJvv+bM14pS5Pq4NE6XubT7bL4y
+ zeBiZlesfxO/qVird4UXfE/Aqele/xp11vOM1Bff+fslqwt/NfMa1+AKrVnVEzhQ98DlvjBk
+ 8cf0Wa55PznnagwdJnPkM7stkMlNpz4zfQs/VSVkFNdkJb3WSdfKDIOPvsQGyjbEt22/Khfz
+ uaqUBYSOV/0DAL2IlG4DAAA=
+X-Brightmail-Tracker: H4sIAAAAAAAAA+NgFnrLIsWRmVeSWpSXmKPExsVy+t/xu7qHo+pjDU5OMLHYOGM9q8X1L89Z
+ LeYfOcdq0f/4NbPF+fMb2C3ONr1ht9j0+BqrxeVdc9gsPvceYbSYcX4fk8XaI3fZLZZev8hk
+ cbtxBZvF/z072C0Ov2lntfh24hGjg4DHmnlrGD12zrrL7rFpVSebx+Yl9R59W1YxenzeJBfA
+ FqVnU5RfWpKqkJFfXGKrFG1oYaRnaGmhZ2RiqWdobB5rZWSqpG9nk5Kak1mWWqRvl6CXsat7
+ PVPBTqmKJ4cXsjUwbhPtYuTkkBAwkVg9eSV7FyMXh5DAUkaJ5/eOskAkxCQm7dvODmELS/y5
+ 1sUGYgsJvGaUuDufB8QWFgiVONP9G6xGRMBD4s6cNWCDmAXWsUgsnviaCaLhILNE51G9LkYO
+ DjYBPYkdqwpBwrwCbhJPVk4E28UioCrRefEUM4gtKhAhcXjHLEaIGkGJkzOfgNVwClhKtG0/
+ D2YzC5hJzNv8kBnCFpe49WQ+E4QtL7H97RzmCYxCs5C0z0LSMgtJyywkLQsYWVYxiqSWFuem
+ 5xYb6hUn5haX5qXrJefnbmIERvW2Yz8372C8tDH4EKMAB6MSD29Da12sEGtiWXFl7iFGCQ5m
+ JRHe8I7qWCHelMTKqtSi/Pii0pzU4kOMpkDPTWSWEk3OByacvJJ4Q1NDcwtLQ3Njc2MzCyVx
+ 3g6BgzFCAumJJanZqakFqUUwfUwcnFINjDxuaQvCPuYennXzMbu58wXbnBnc6bO2yy6aaavs
+ Oenz3hNLQ/3izCduPJInuJb9+CeefN4NLUZCM7+n9NUJXlOXDJ7KP6/h57726lsm7Q+jUk59
+ beZnP7ms/4R0z4/8sGU1wWY7SoqdObMZn625e+GX0g2n3GL53/LS5ms0rLqXLdz7mL3ipRJL
+ cUaioRZzUXEiACZDB4wAAwAA
+X-CMS-MailID: 20190916094956eucas1p24cc2a1dfa8565ba6e1ff3d4fd1f09f73
+X-Msg-Generator: CA
+X-RootMTR: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
+X-EPHeader: CA
+CMS-TYPE: 201P
+X-CMS-RootMailID: 20190906101407eucas1p15eb0df53374b27497b4793eab24becf6
+References: <CGME20190906101407eucas1p15eb0df53374b27497b4793eab24becf6@eucas1p1.samsung.com>
+ <20190906101344.3535-1-l.luba@partner.samsung.com>
+ <20190906101344.3535-4-l.luba@partner.samsung.com>
+ <CAJKOXPfoYxTVvt_bMQOs1=BkHzUuW_WvL9zn0jTGS6LLpv=fhQ@mail.gmail.com>
+ <52963d0d-cf48-7085-5581-a94c6e15e0bd@partner.samsung.com>
+ <CAJKOXPfEcURr_bLRaAdjWT3cb7mcuKTk8rmn7OTO=xtvjvJ=jQ@mail.gmail.com>
+ <5d7ba95a.1c69fb81.bfd81.77ba@mx.google.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_024443_556425_E0DF8FB3 
-X-CRM114-Status: GOOD (  18.06  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190916_025003_456513_4C2DE05D 
+X-CRM114-Status: GOOD (  18.29  )
+X-Spam-Score: -5.1 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.1 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [40.107.1.49 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [210.118.77.11 listed in list.dnswl.org]
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -131,246 +142,105 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "devicetree@vger.kernel.org" <devicetree@vger.kernel.org>,
- Peng Fan <peng.fan@nxp.com>,
+Cc: mark.rutland@arm.com, devicetree@vger.kernel.org,
+ willy.mh.wolff.ml@gmail.com,
+ "linux-samsung-soc@vger.kernel.org" <linux-samsung-soc@vger.kernel.org>,
+ =?UTF-8?Q?Bart=c5=82omiej_=c5=bbo=c5=82nierkiewicz?=
+ <b.zolnierkie@samsung.com>, linux-pm@vger.kernel.org,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
- dl-linux-imx <linux-imx@nxp.com>
+ Chanwoo Choi <cw00.choi@samsung.com>, kyungmin.park@samsung.com,
+ kgene@kernel.org, myungjoo.ham@samsung.com, s.nawrocki@samsung.com,
+ linux-arm-kernel@lists.infradead.org,
+ Marek Szyprowski <m.szyprowski@samsung.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Peng Fan <peng.fan@nxp.com>
+Hi Rob,
 
-This mailbox driver implements a mailbox which signals transmitted data
-via an ARM smc (secure monitor call) instruction. The mailbox receiver
-is implemented in firmware and can synchronously return data when it
-returns execution to the non-secure world again.
-An asynchronous receive path is not implemented.
-This allows the usage of a mailbox to trigger firmware actions on SoCs
-which either don't have a separate management processor or on which such
-a core is not available. A user of this mailbox could be the SCP
-interface.
+On 9/13/19 4:36 PM, Rob Herring wrote:
+> On Fri, Sep 06, 2019 at 01:50:26PM +0200, Krzysztof Kozlowski wrote:
+>> On Fri, 6 Sep 2019 at 13:39, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>>>
+>>> Hi Krzysztof,
+>>>
+>>> On 9/6/19 12:56 PM, Krzysztof Kozlowski wrote:
+>>>> On Fri, 6 Sep 2019 at 12:14, Lukasz Luba <l.luba@partner.samsung.com> wrote:
+>>>>>
+>>>>> Add description of bindings for Samsung k3qf2f20db LPDDR3 memory.
+>>>>> Minor fixes in the old documentation.
+>>>>>
+>>>>> Signed-off-by: Lukasz Luba <l.luba@partner.samsung.com>
+>>>>> ---
+>>>>>    .../devicetree/bindings/ddr/lpddr3.txt        | 29 +++++++++++++++++--
+>>>>>    1 file changed, 27 insertions(+), 2 deletions(-)
+>>>>>
+>>>>> diff --git a/Documentation/devicetree/bindings/ddr/lpddr3.txt b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>>> index 3b2485b84b3f..de0905239767 100644
+>>>>> --- a/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>>> +++ b/Documentation/devicetree/bindings/ddr/lpddr3.txt
+>>>>> @@ -40,10 +40,34 @@ Child nodes:
+>>>>>      a given speed-bin. Please see Documentation/devicetree/
+>>>>>      bindings/ddr/lpddr3-timings.txt for more information on "lpddr3-timings"
+>>>>>
+>>>>> +Samsung K3QF2F20DB LPDDR3 memory
+>>>>> +------------------------------------------------------------
+>>>>> +
+>>>>> +This binding uses the LPDDR3 binding (described above)
+>>>>> +
+>>>>> +Required properties:
+>>>>> +- compatible:  Should be:
+>>>>> +               "samsung,K3QF2F20DB"
+>>>>> +               followed by "jedec,lpddr3"
+>>>>> +- density  : <u32> representing density in Mb (Mega bits)
+>>>>> +- io-width : <u32> representing bus width. Possible value 32
+>>>>> +- #address-cells: Must be set to 1
+>>>>> +- #size-cells: Must be set to 0
+>>>>
+>>>> If you decided to repeat all properties again, then it deserves its
+>>>> own bindings file. However I though about simpler solution - just
+>>>> document compatible. Exactly the same as AT24 or AT25 EEPROM bindings.
+>>>> There is not much benefit from copying all these properties.
+>>> OK, I see. I will add only 'compatible' and skip the rest then.
+>>> So the lpddr3.txt file will get this addition:
+>>>
+>>> +Samsung K3QF2F20DB LPDDR3 memory
+>>> +------------------------------------------------------------
+>>> +
+>>> +This binding uses the LPDDR3 binding (described above)
+>>> +
+>>> +Required properties:
+>>> +- compatible:  Should be:
+>>> +               "samsung,K3QF2F20DB"
+>>> +               followed by "jedec,lpddr3"
+>>> +
+>>> +Optional properties:
+>>> +
+>>> +The optional properties are the same as in the LPDDR3 generic bindings and
+>>> +values should be taken from the data-sheet. Detailed bindings are described
+>>> +above.
+>>> +
+>>> +Child nodes:
+>>> +
+>>> +Detailed bindings are described in LPDDR3 generic bindings described above.
+>>> +
+>>>
+>>> Is it OK?
+>>
+>> To me it is still a lot of text just for one compatible and I can
+>> image more of such entries for other memories... However I do not mind
+>> and anyway, YAML will simplify it. If you're in doubt, wait for Rob's
+>> reply as this is his part.
+> 
+> We can't have multiple (top-level) schema in one file, so better to add
+> in where the existing compatible strings are.
 
-Modified from Andre Przywara's v2 patch
-https://lore.kernel.org/patchwork/patch/812999/
+Thank you for your comment. I will add the needed string into existing
+compatible then.
 
-Cc: Andre Przywara <andre.przywara@arm.com>
-Signed-off-by: Peng Fan <peng.fan@nxp.com>
----
- drivers/mailbox/Kconfig           |   7 ++
- drivers/mailbox/Makefile          |   2 +
- drivers/mailbox/arm-smc-mailbox.c | 167 ++++++++++++++++++++++++++++++++++++++
- 3 files changed, 176 insertions(+)
- create mode 100644 drivers/mailbox/arm-smc-mailbox.c
-
-diff --git a/drivers/mailbox/Kconfig b/drivers/mailbox/Kconfig
-index ab4eb750bbdd..7707ee26251a 100644
---- a/drivers/mailbox/Kconfig
-+++ b/drivers/mailbox/Kconfig
-@@ -16,6 +16,13 @@ config ARM_MHU
- 	  The controller has 3 mailbox channels, the last of which can be
- 	  used in Secure mode only.
- 
-+config ARM_SMC_MBOX
-+	tristate "Generic ARM smc mailbox"
-+	depends on OF && HAVE_ARM_SMCCC
-+	help
-+	  Generic mailbox driver which uses ARM smc calls to call into
-+	  firmware for triggering mailboxes.
-+
- config IMX_MBOX
- 	tristate "i.MX Mailbox"
- 	depends on ARCH_MXC || COMPILE_TEST
-diff --git a/drivers/mailbox/Makefile b/drivers/mailbox/Makefile
-index c22fad6f696b..93918a84c91b 100644
---- a/drivers/mailbox/Makefile
-+++ b/drivers/mailbox/Makefile
-@@ -7,6 +7,8 @@ obj-$(CONFIG_MAILBOX_TEST)	+= mailbox-test.o
- 
- obj-$(CONFIG_ARM_MHU)	+= arm_mhu.o
- 
-+obj-$(CONFIG_ARM_SMC_MBOX)	+= arm-smc-mailbox.o
-+
- obj-$(CONFIG_IMX_MBOX)	+= imx-mailbox.o
- 
- obj-$(CONFIG_ARMADA_37XX_RWTM_MBOX)	+= armada-37xx-rwtm-mailbox.o
-diff --git a/drivers/mailbox/arm-smc-mailbox.c b/drivers/mailbox/arm-smc-mailbox.c
-new file mode 100644
-index 000000000000..c84aef39c8d9
---- /dev/null
-+++ b/drivers/mailbox/arm-smc-mailbox.c
-@@ -0,0 +1,167 @@
-+// SPDX-License-Identifier: GPL-2.0
-+/*
-+ * Copyright (C) 2016,2017 ARM Ltd.
-+ * Copyright 2019 NXP
-+ */
-+
-+#include <linux/arm-smccc.h>
-+#include <linux/device.h>
-+#include <linux/kernel.h>
-+#include <linux/interrupt.h>
-+#include <linux/mailbox_controller.h>
-+#include <linux/module.h>
-+#include <linux/platform_device.h>
-+
-+struct arm_smc_chan_data {
-+	unsigned int function_id;
-+};
-+
-+struct arm_smccc_mbox_cmd {
-+	unsigned int function_id;
-+	union {
-+		unsigned int args_smccc32[6];
-+		unsigned long args_smccc64[6];
-+	};
-+};
-+
-+typedef unsigned long (smc_mbox_fn)(unsigned int, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long, unsigned long,
-+				    unsigned long);
-+static smc_mbox_fn *invoke_smc_mbox_fn;
-+
-+static int arm_smc_send_data(struct mbox_chan *link, void *data)
-+{
-+	struct arm_smc_chan_data *chan_data = link->con_priv;
-+	struct arm_smccc_mbox_cmd *cmd = data;
-+	unsigned long ret;
-+	u32 function_id;
-+
-+	function_id = chan_data->function_id;
-+	if (!function_id)
-+		function_id = cmd->function_id;
-+
-+	if (function_id & BIT(30)) {
-+		ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc64[0],
-+					 cmd->args_smccc64[1],
-+					 cmd->args_smccc64[2],
-+					 cmd->args_smccc64[3],
-+					 cmd->args_smccc64[4],
-+					 cmd->args_smccc64[5]);
-+	} else {
-+		ret = invoke_smc_mbox_fn(function_id, cmd->args_smccc32[0],
-+					 cmd->args_smccc32[1],
-+					 cmd->args_smccc32[2],
-+					 cmd->args_smccc32[3],
-+					 cmd->args_smccc32[4],
-+					 cmd->args_smccc32[5]);
-+	}
-+
-+	mbox_chan_received_data(link, (void *)ret);
-+
-+	return 0;
-+}
-+
-+static unsigned long __invoke_fn_hvc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_hvc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static unsigned long __invoke_fn_smc(unsigned int function_id,
-+				     unsigned long arg0, unsigned long arg1,
-+				     unsigned long arg2, unsigned long arg3,
-+				     unsigned long arg4, unsigned long arg5)
-+{
-+	struct arm_smccc_res res;
-+
-+	arm_smccc_smc(function_id, arg0, arg1, arg2, arg3, arg4,
-+		      arg5, 0, &res);
-+	return res.a0;
-+}
-+
-+static const struct mbox_chan_ops arm_smc_mbox_chan_ops = {
-+	.send_data	= arm_smc_send_data,
-+};
-+
-+static int arm_smc_mbox_probe(struct platform_device *pdev)
-+{
-+	struct device *dev = &pdev->dev;
-+	struct mbox_controller *mbox;
-+	struct arm_smc_chan_data *chan_data;
-+	int ret;
-+	u32 function_id = 0;
-+
-+	if (of_device_is_compatible(dev->of_node, "arm,smc-mbox"))
-+		invoke_smc_mbox_fn = __invoke_fn_smc;
-+	else
-+		invoke_smc_mbox_fn = __invoke_fn_hvc;
-+
-+	mbox = devm_kzalloc(dev, sizeof(*mbox), GFP_KERNEL);
-+	if (!mbox)
-+		return -ENOMEM;
-+
-+	mbox->num_chans = 1;
-+	mbox->chans = devm_kzalloc(dev, sizeof(*mbox->chans), GFP_KERNEL);
-+	if (!mbox->chans)
-+		return -ENOMEM;
-+
-+	chan_data = devm_kzalloc(dev, sizeof(*chan_data), GFP_KERNEL);
-+	if (!chan_data)
-+		return -ENOMEM;
-+
-+	of_property_read_u32(dev->of_node, "arm,func-id", &function_id);
-+	chan_data->function_id = function_id;
-+
-+	mbox->chans->con_priv = chan_data;
-+
-+	mbox->txdone_poll = false;
-+	mbox->txdone_irq = false;
-+	mbox->ops = &arm_smc_mbox_chan_ops;
-+	mbox->dev = dev;
-+
-+	platform_set_drvdata(pdev, mbox);
-+
-+	ret = devm_mbox_controller_register(dev, mbox);
-+	if (ret)
-+		return ret;
-+
-+	dev_info(dev, "ARM SMC mailbox enabled.\n");
-+
-+	return ret;
-+}
-+
-+static int arm_smc_mbox_remove(struct platform_device *pdev)
-+{
-+	struct mbox_controller *mbox = platform_get_drvdata(pdev);
-+
-+	mbox_controller_unregister(mbox);
-+	return 0;
-+}
-+
-+static const struct of_device_id arm_smc_mbox_of_match[] = {
-+	{ .compatible = "arm,smc-mbox", },
-+	{ .compatible = "arm,hvc-mbox", },
-+	{},
-+};
-+MODULE_DEVICE_TABLE(of, arm_smc_mbox_of_match);
-+
-+static struct platform_driver arm_smc_mbox_driver = {
-+	.driver = {
-+		.name = "arm-smc-mbox",
-+		.of_match_table = arm_smc_mbox_of_match,
-+	},
-+	.probe		= arm_smc_mbox_probe,
-+	.remove		= arm_smc_mbox_remove,
-+};
-+module_platform_driver(arm_smc_mbox_driver);
-+
-+MODULE_AUTHOR("Peng Fan <peng.fan@nxp.com>");
-+MODULE_DESCRIPTION("Generic ARM smc mailbox driver");
-+MODULE_LICENSE("GPL v2");
--- 
-2.16.4
+Regards,
+Lukasz
 
 
 _______________________________________________
