@@ -2,58 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 04708B3E41
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:58:50 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1EAFBB3E46
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:59:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=rPedt20NU1DymH6d9zPqKjqBlvDah693QAjIPPKSB/g=; b=jwDmA3S/n9wmU6
-	yPONXTYQe/SO1521D7OJq055NEUrKRiEQMFJ9x5qDpb63OjqwVJ6czdu7U7jWsF0cccFet7Fe9Vwg
-	DylOm/0OanQQkMZIGVCWweqPI02aVoEhEb1lzqh46CZEeZ7BpzC2wkXCpucX/S62nnBK2KNRNj7R4
-	wHJABH33t2VmbpmywSgTOH3ZlEirq2kTcq0o3nE5nz6ShHc7yXcG/AaoH2nDBJCGrV5pf17tuE8Gl
-	/nU5dqTCPKQLhKiuCjH9KBtRIquvE3z8mYhwz7OUMW9tkNt2LYFgO2tzkrZubBEaKs6EDFCst8+gg
-	r/SL0JlYJod5zjxa54yA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KVIha94PbFYNsAX9tYVLEYhLujmK6LpSFBNa9l/mLvk=; b=H9JUjg0AbE81lL
+	ncg16nCGbzm93eQAkDfKnx522mVh/azxLaOLDWfBLRnYye9JoYkPEvVtz55LxCWHuBEHsU+arO8qY
+	d1m790YLG2a1WsIV/dtl2a42TuEdGxTU9shC+rJjNDn7tCKso+DR9ifbP4dFIJ0iiejsY7vyZM+nM
+	hcvnh5a1xK/4YLAm/wddsMoQvoOt9Zynkpf/kDJ8UfTnbi4li3mrWl82qP99RVIZ6zxbuLmMsKYKr
+	qf3ofljgz8HWW3Al20CFmV2m0ho2hSzQ7wDE5nFI6Ol/RFmMXM4nBjwRbZuungk/Clxdl/25pmBv6
+	SX+FYR8FPcaVezEZuGsw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tOi-0004mR-9B; Mon, 16 Sep 2019 15:58:40 +0000
-Received: from mailgw02.mediatek.com ([216.200.240.185])
+	id 1i9tPC-00056h-5P; Mon, 16 Sep 2019 15:59:10 +0000
+Received: from relay.sw.ru ([185.231.240.75])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tN8-0003tF-33; Mon, 16 Sep 2019 15:57:03 +0000
-X-UUID: 4ea6ad7cccb348789d2c67b328ce9860-20190916
-X-UUID: 4ea6ad7cccb348789d2c67b328ce9860-20190916
-Received: from mtkcas68.mediatek.inc [(172.29.94.19)] by mailgw02.mediatek.com
- (envelope-from <stanley.chu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 1951472587; Mon, 16 Sep 2019 07:56:55 -0800
-Received: from mtkmbs08n1.mediatek.inc (172.21.101.55) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 08:56:54 -0700
-Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs08n1.mediatek.inc (172.21.101.55) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 23:56:52 +0800
-Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
- Frontend Transport; Mon, 16 Sep 2019 23:56:52 +0800
-From: Stanley Chu <stanley.chu@mediatek.com>
-To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
- <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
- <pedrom.sousa@synopsys.com>, <sthumma@codeaurora.org>, <jejb@linux.ibm.com>,
- <bvanassche@acm.org>
-Subject: [PATCH v4 3/3] scsi: ufs-mediatek: enable auto suspend capability
-Date: Mon, 16 Sep 2019 23:56:51 +0800
-Message-ID: <1568649411-5127-4-git-send-email-stanley.chu@mediatek.com>
-X-Mailer: git-send-email 1.7.9.5
-In-Reply-To: <1568649411-5127-1-git-send-email-stanley.chu@mediatek.com>
-References: <1568649411-5127-1-git-send-email-stanley.chu@mediatek.com>
+ id 1i9tNg-0004M4-AI; Mon, 16 Sep 2019 15:57:39 +0000
+Received: from [172.16.25.5] by relay.sw.ru with esmtp (Exim 4.92)
+ (envelope-from <aryabinin@virtuozzo.com>)
+ id 1i9tNU-0003lm-Nv; Mon, 16 Sep 2019 18:57:24 +0300
+Subject: Re: [PATCH v3] mm/kasan: dump alloc and free stack for page allocator
+To: Vlastimil Babka <vbabka@suse.cz>, Walter Wu <walter-zh.wu@mediatek.com>
+References: <20190911083921.4158-1-walter-zh.wu@mediatek.com>
+ <5E358F4B-552C-4542-9655-E01C7B754F14@lca.pw>
+ <c4d2518f-4813-c941-6f47-73897f420517@suse.cz>
+ <1568297308.19040.5.camel@mtksdccf07>
+ <613f9f23-c7f0-871f-fe13-930c35ef3105@suse.cz>
+ <79fede05-735b-8477-c273-f34db93fd72b@virtuozzo.com>
+ <6d58ce86-b2a4-40af-bf40-c604b457d086@suse.cz>
+From: Andrey Ryabinin <aryabinin@virtuozzo.com>
+Message-ID: <4e76e7ce-1d61-524a-622b-663c01d19707@virtuozzo.com>
+Date: Mon, 16 Sep 2019 18:57:23 +0300
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-X-MTK: N
+In-Reply-To: <6d58ce86-b2a4-40af-bf40-c604b457d086@suse.cz>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_085702_193663_729033A4 
-X-CRM114-Status: UNSURE (   6.93  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_085736_507225_40E7F6D8 
+X-CRM114-Status: GOOD (  16.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -61,8 +52,6 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,42 +63,95 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: marc.w.gonzalez@free.fr, andy.teng@mediatek.com, chun-hung.wu@mediatek.com,
- kuohong.wang@mediatek.com, evgreen@chromium.org, subhashj@codeaurora.org,
- linux-mediatek@lists.infradead.org, peter.wang@mediatek.com,
- vivek.gautam@codeaurora.org, matthias.bgg@gmail.com,
- Stanley Chu <stanley.chu@mediatek.com>, kernel-team@android.com,
- linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
+Cc: wsd_upstream@mediatek.com, Arnd Bergmann <arnd@arndb.de>,
+ linux-mm@kvack.org, Andrey Konovalov <andreyknvl@google.com>,
+ linux-mediatek@lists.infradead.org, linux-kernel@vger.kernel.org,
+ kasan-dev@googlegroups.com, Martin Schwidefsky <schwidefsky@de.ibm.com>,
+ Alexander Potapenko <glider@google.com>, linux-arm-kernel@lists.infradead.org,
+ Matthias Brugger <matthias.bgg@gmail.com>, Qian Cai <cai@lca.pw>,
+ Andrew Morton <akpm@linux-foundation.org>, Dmitry Vyukov <dvyukov@google.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable auto suspend capability in MediaTek UFS driver.
+On 9/16/19 12:42 PM, Vlastimil Babka wrote:
+> On 9/12/19 7:05 PM, Andrey Ryabinin wrote:
+>>
+>> Or another alternative option (and actually easier one to implement), leave PAGE_OWNER as is (no "select"s in Kconfigs)
+>> Make PAGE_OWNER_FREE_STACK like this:
+>>
+>> +config PAGE_OWNER_FREE_STACK
+>> +	def_bool KASAN || DEBUG_PAGEALLOC
+>> +	depends on PAGE_OWNER
+>> +
+>>
+>> So, users that want alloc/free stack will have to enable CONFIG_PAGE_OWNER=y and add page_owner=on to boot cmdline.
+>>
+>>
+>> Basically the difference between these alternative is whether we enable page_owner by default or not. But there is always a possibility to disable it.
+> 
+> OK, how about this?
+> 
+ ...
 
-Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
-Reviewed-by: Avri Altman <avri.altman@wdc.com>
----
- drivers/scsi/ufs/ufs-mediatek.c | 3 +++
- 1 file changed, 3 insertions(+)
+> diff --git a/mm/page_alloc.c b/mm/page_alloc.c
+> index c5d62f1c2851..d9e44671af3f 100644
+> --- a/mm/page_alloc.c
+> +++ b/mm/page_alloc.c
+> @@ -710,8 +710,12 @@ static int __init early_debug_pagealloc(char *buf)
+>  	if (kstrtobool(buf, &enable))
+>  		return -EINVAL;
+>  
+> -	if (enable)
+> +	if (enable) {
+>  		static_branch_enable(&_debug_pagealloc_enabled);
+> +#ifdef CONFIG_PAGE_OWNER
+> +		page_owner_free_stack_disabled = false;
 
-diff --git a/drivers/scsi/ufs/ufs-mediatek.c b/drivers/scsi/ufs/ufs-mediatek.c
-index 0f6ff33ce52e..83e28edc3ac5 100644
---- a/drivers/scsi/ufs/ufs-mediatek.c
-+++ b/drivers/scsi/ufs/ufs-mediatek.c
-@@ -147,6 +147,9 @@ static int ufs_mtk_init(struct ufs_hba *hba)
- 	if (err)
- 		goto out_variant_clear;
+I think this won't work with CONFIG_DEBUG_PAGEALLOC_ENABLE_DEFAULT=y
+
+> +#endif
+> +	}
+>  
+>  	return 0;
+>  }
+> diff --git a/mm/page_owner.c b/mm/page_owner.c
+> index dee931184788..b589bfbc4795 100644
+> --- a/mm/page_owner.c
+> +++ b/mm/page_owner.c
+> @@ -24,13 +24,15 @@ struct page_owner {
+>  	short last_migrate_reason;
+>  	gfp_t gfp_mask;
+>  	depot_stack_handle_t handle;
+> -#ifdef CONFIG_DEBUG_PAGEALLOC
+> +#ifdef CONFIG_PAGE_OWNER_FREE_STACK
+>  	depot_stack_handle_t free_handle;
+>  #endif
+>  };
+>  
+>  static bool page_owner_disabled = true;
+> +bool page_owner_free_stack_disabled = true;
+>  DEFINE_STATIC_KEY_FALSE(page_owner_inited);
+> +static DEFINE_STATIC_KEY_FALSE(page_owner_free_stack);
+>  
+>  static depot_stack_handle_t dummy_handle;
+>  static depot_stack_handle_t failure_handle;
+> @@ -46,6 +48,9 @@ static int __init early_page_owner_param(char *buf)
+>  	if (strcmp(buf, "on") == 0)
+>  		page_owner_disabled = false;
+>  
+> +	if (!page_owner_disabled && IS_ENABLED(CONFIG_KASAN))
+
+I'd rather keep all logic in one place, i.e. "if (!page_owner_disabled && (IS_ENABLED(CONFIG_KASAN) || debug_pagealloc_enabled())"
+With this no changes in early_debug_pagealloc() required and CONFIG_DEBUG_PAGEALLOC_ENABLE_DEFAULT=y should also work correctly.
+
+> +		page_owner_free_stack_disabled = false;
+> +
+>  	return 0;
+>  }
+>  early_param("page_owner", early_page_owner_param);
  
-+	/* Enable runtime autosuspend */
-+	hba->caps |= UFSHCD_CAP_RPM_AUTOSUSPEND;
-+
- 	/*
- 	 * ufshcd_vops_init() is invoked after
- 	 * ufshcd_setup_clock(true) in ufshcd_hba_init() thus
--- 
-2.18.0
-
 
 _______________________________________________
 linux-arm-kernel mailing list
