@@ -2,96 +2,70 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 5DA91B3E1F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:50:57 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 1ECAAB3E2F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:56:02 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
-	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
-	In-Reply-To:MIME-Version:References:Message-ID:Subject:To:From:Date:Reply-To:
-	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
-	 bh=hdpAdKB9t2rP3tyQ3a+MBnPi0dcP3jjhmTsqIMgWMrw=; b=T/ExeAD3kmYgb3zV9XD+yhDnK
-	euX9a8gl9rHfawx3jcg2rS/mOD+6ywNmv8Vmevf7Xy30rGZ8wV2JwMykXAcYQc1VOsLlkOGoq7omH
-	pS54fQSJXjbuG4tCkBrFpSSY0QrJE4iQwhHdxvgAd4BYWfnh7BRk2uqmmQQs8jN6b4sADSNhCF5bT
-	vvIWR15FG9oIolXhnVkz6EmFVQGDYDfzSem1nqdq49Am9OkA1Q9rOw/NtwUBVlcfORhegLrI78Gfr
-	Yuv2GTMTGxHSD/tHO8ua0VWSpbX7VnWn2m+xhMJ+wNRrEmwmbcCz24g8UDo5EqfVaVVze9FafNRqz
-	CKBuXVZ8Q==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=bZDplFUlRx6K4v0uD+06AXGui4KLZywZkqKvelhm0T4=; b=gsTztMul2TNtOV
+	qSsiImowpFNvI3RGR8SgksKeti+K+Yfs3wic956mY3EkpLk562oXtLJN9qIzRzyZ3IKivM4gD1VtK
+	r5AFA2FFLm2ieCKob7efaum/AJtkarXdtPNM6HWlI/Bhq/kJDiTmqR9ciDGywsvUyT9IhyUuV45Kc
+	Q1VF3KUXfn0JCHq9MN1e7ClTKp8MyH4pi9SFVMeO5+PFUYz4B8RS+3Z5UQxC5nbeLwO3CAWHLH4A8
+	Wh9q8HRWxnpxfEqEuXeqTOPTZq35/kyPLgWIsvHK4Lj4Q+VGVnZkaZIk0NO2ySxawGPE0xrM+vCmk
+	ohwlixctUpXeKbjUZdyQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tHD-0001k8-Fd; Mon, 16 Sep 2019 15:50:55 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1i9tM8-0003ba-7f; Mon, 16 Sep 2019 15:56:00 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tGv-0001jJ-NB
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 15:50:39 +0000
-Received: by mail-ed1-x543.google.com with SMTP id y91so506746ede.9
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 08:50:35 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
- h=date:from:to:cc:subject:message-id:references:mime-version
- :content-disposition:in-reply-to:user-agent;
- bh=DXT5s5fcLo5soj6xPZXRL1OiieH+UG8Sh7YMbwrqdTY=;
- b=Z86ccvCJI2Ejf1Us2VTCs5VOixyaILzuUwsvay36+/c6qmGFGLxx/9cKATXG/I17tZ
- mORrbl5596r0TfEbX3g3qi7IJ5RkZ+AIeJO90befmT2ShG/Pg3ykLQNPEc7D2+t62vmk
- lTyMSb/ZS0NNJDnrR5m8xCCC0LzXaXFo7ynisqndrutAslb+pEfoo6bSEilKm2gz2Mc/
- noOpnkTqfvAUjSZhFT7x7kUlWUR53Ek73PKSFqRH4Spp2cHgxJVz0Bk6QKnCdEmECHSB
- gaPg8Pj+lVu/RXgXLQF5/XFBSkEVRblwmxuX2krVH2V8QgloFoTn61ux+s2QIFqc6ws0
- r9ag==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:from:to:cc:subject:message-id:references
- :mime-version:content-disposition:in-reply-to:user-agent;
- bh=DXT5s5fcLo5soj6xPZXRL1OiieH+UG8Sh7YMbwrqdTY=;
- b=O9lwSZoXQ3RbJBBj5rtiU/ZYoA+3ZsPKFK1XJTJqbfUN6CaGVtnAHYD+OWHcENgl3A
- x06HwOWBpdZz4jjNFQQM6y13MCB6hIJjcMhCXf/3W+9Y76Qg9HGmiuUBsanE50VTT691
- isG0cYuc1pdx0B10aDBZI7OrF/n++cAK6ZZKL2G1l3W041wL9S8zSuWH5xdv6//HkKT8
- TQ/GlzoG96IunmV5KYHCHph94b1repKZmD2jb36rsX1frLHNlZ7sL6DwhHz/Klmgp3Ld
- nuZ557cjGuUNn5w4GK3hEL/yrnwy8iM33h+swOGRc13r8NtHYN/WY0441UWwBzO/MbzX
- Vg0A==
-X-Gm-Message-State: APjAAAVm3aYvwOxmSAyYAaV6byGe91rEAEIencDmlcvRAOM0lsPmfbXf
- qaygVHC8ZlAW3iQS1CNzDPK3vs/r
-X-Google-Smtp-Source: APXvYqxemzQcB+foO0oWW16WA8jesorwVSirhODeLhX0PsKWxQEP74hj5zCxde53PT5+a6JMAEj5cA==
-X-Received: by 2002:a05:6402:1501:: with SMTP id
- f1mr8902512edw.76.1568649034241; 
- Mon, 16 Sep 2019 08:50:34 -0700 (PDT)
-Received: from localhost (p2E5BE2CE.dip0.t-ipconnect.de. [46.91.226.206])
- by smtp.gmail.com with ESMTPSA id oo23sm4321225ejb.64.2019.09.16.08.50.32
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 08:50:32 -0700 (PDT)
-Date: Mon, 16 Sep 2019 17:50:31 +0200
-From: Thierry Reding <thierry.reding@gmail.com>
-To: Guenter Roeck <linux@roeck-us.net>
-Subject: Re: [PATCH 0/6] ARM, arm64: Remove arm_pm_restart()
-Message-ID: <20190916155031.GE7488@ulmo>
-References: <20170130110512.6943-1-thierry.reding@gmail.com>
- <20190914152544.GA17499@roeck-us.net>
- <CAK8P3a3G_9EeK-Xp7ZeA0EN7WNzrL7AxoQcNZ8z-oe5NsTYW6g@mail.gmail.com>
- <056ccf5c-6c6c-090b-6ca1-ab666021db48@roeck-us.net>
- <20190916134920.GA18267@ulmo> <20190916154336.GA6628@roeck-us.net>
+ id 1i9tLv-0003ay-Hq; Mon, 16 Sep 2019 15:55:49 +0000
+X-UUID: a316e97ddcbb4af3a4bce1b081c2f467-20190916
+X-UUID: a316e97ddcbb4af3a4bce1b081c2f467-20190916
+Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 1757759617; Mon, 16 Sep 2019 07:55:39 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Sep 2019 08:55:38 -0700
+Received: from mtkcas08.mediatek.inc (172.21.101.126) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Sep 2019 23:55:36 +0800
+Received: from [172.21.77.33] (172.21.77.33) by mtkcas08.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 16 Sep 2019 23:55:36 +0800
+Message-ID: <1568649336.16730.22.camel@mtkswgap22>
+Subject: Re: [PATCH v3 1/3] scsi: core: allow auto suspend override by
+ low-level driver
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Bart Van Assche <bvanassche@acm.org>
+Date: Mon, 16 Sep 2019 23:55:36 +0800
+In-Reply-To: <bebea62f-8ab0-528f-5634-9b3c06f47ef7@acm.org>
+References: <1568616437-16271-1-git-send-email-stanley.chu@mediatek.com>
+ <1568616437-16271-2-git-send-email-stanley.chu@mediatek.com>
+ <bebea62f-8ab0-528f-5634-9b3c06f47ef7@acm.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
 MIME-Version: 1.0
-In-Reply-To: <20190916154336.GA6628@roeck-us.net>
-User-Agent: Mutt/1.12.1 (2019-06-15)
+X-TM-SNTS-SMTP: 5F47E35CB09F565A53FE9C6AB70840EF796B39E9C06F1BF69DB3769F521CD1352000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_085037_761117_47D7D77E 
-X-CRM114-Status: GOOD (  26.34  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190916_085547_600943_9F8024B6 
+X-CRM114-Status: UNSURE (   6.51  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
- provider (thierry.reding[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -103,124 +77,52 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>
-Content-Type: multipart/mixed; boundary="===============8307714486159819806=="
+Cc: "sthumma@codeaurora.org" <sthumma@codeaurora.org>,
+ "linux-scsi@vger.kernel.org" <linux-scsi@vger.kernel.org>,
+ "martin.petersen@oracle.com" <martin.petersen@oracle.com>,
+ "marc.w.gonzalez@free.fr" <marc.w.gonzalez@free.fr>,
+ "vivek.gautam@codeaurora.org" <vivek.gautam@codeaurora.org>,
+ "kernel-team@android.com" <kernel-team@android.com>,
+ "jejb@linux.ibm.com" <jejb@linux.ibm.com>,
+ Chun-Hung Wu =?UTF-8?Q?=28=E5=B7=AB=E9=A7=BF=E5=AE=8F=29?=
+ <Chun-hung.Wu@mediatek.com>,
+ Kuohong Wang =?UTF-8?Q?=28=E7=8E=8B=E5=9C=8B=E9=B4=BB=29?=
+ <kuohong.wang@mediatek.com>,
+ "subhashj@codeaurora.org" <subhashj@codeaurora.org>,
+ "evgreen@chromium.org" <evgreen@chromium.org>,
+ "avri.altman@wdc.com" <avri.altman@wdc.com>,
+ "linux-mediatek@lists.infradead.org" <linux-mediatek@lists.infradead.org>,
+ Peter Wang =?UTF-8?Q?=28=E7=8E=8B=E4=BF=A1=E5=8F=8B=29?=
+ <peter.wang@mediatek.com>, "alim.akhtar@samsung.com" <alim.akhtar@samsung.com>,
+ Andy Teng =?UTF-8?Q?=28=E9=84=A7=E5=A6=82=E5=AE=8F=29?=
+ <Andy.Teng@mediatek.com>, "matthias.bgg@gmail.com" <matthias.bgg@gmail.com>,
+ "pedrom.sousa@synopsys.com" <pedrom.sousa@synopsys.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>,
+ "beanhuo@micron.com" <beanhuo@micron.com>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
+Hi Bart,
 
---===============8307714486159819806==
-Content-Type: multipart/signed; micalg=pgp-sha256;
-	protocol="application/pgp-signature"; boundary="0H629O+sVkh21xTi"
-Content-Disposition: inline
+> > -
+> > +	unsigned rpm_autosuspend_on:1;	/* Runtime autosuspend */
+> >   	atomic_t disk_events_disable_depth; /* disable depth for disk events */
+>     The "_on" part in the variable name "rpm_autosuspend_on" is probably 
+> redundant and the comment could have been more elaborate. Anyway:
 
+OK! Thanks for suggestions. Will fix both in next version.
 
---0H629O+sVkh21xTi
-Content-Type: text/plain; charset=us-ascii
-Content-Disposition: inline
-Content-Transfer-Encoding: quoted-printable
+> 
+> Reviewed-by: Bart Van Assche <bvanassche@acm.org>
 
-On Mon, Sep 16, 2019 at 08:43:36AM -0700, Guenter Roeck wrote:
-> On Mon, Sep 16, 2019 at 03:49:20PM +0200, Thierry Reding wrote:
-> > On Mon, Sep 16, 2019 at 06:17:01AM -0700, Guenter Roeck wrote:
-> > > On 9/16/19 12:49 AM, Arnd Bergmann wrote:
-> > > > On Sat, Sep 14, 2019 at 5:26 PM Guenter Roeck <linux@roeck-us.net> =
-wrote:
-> > > > > On Mon, Jan 30, 2017 at 12:05:06PM +0100, Thierry Reding wrote:
-> > > > > > From: Thierry Reding <treding@nvidia.com>
-> > > > > >=20
-> > > > > > Hi everyone,
-> > > > > >=20
-> > > > > > This small series is preparatory work for a series that I'm wor=
-king on
-> > > > > > which attempts to establish a formal framework for system resta=
-rt and
-> > > > > > power off.
-> > > > > >=20
-> > > > > > Guenter has done a lot of good work in this area, but it never =
-got
-> > > > > > merged. I think this set is a valuable addition to the kernel b=
-ecause
-> > > > > > it converts all odd providers to the established mechanism for =
-restart.
-> > > > > >=20
-> > > > > > Since this is stretched across both 32-bit and 64-bit ARM, as w=
-ell as
-> > > > > > PSCI, and given the SoC/board level of functionality, I think i=
-t might
-> > > > > > make sense to take this through the ARM SoC tree in order to si=
-mplify
-> > > > > > the interdependencies. But it should also be possible to take p=
-atches
-> > > > > > 1-4 via their respective trees this cycle and patches 5-6 throu=
-gh the
-> > > > > > ARM and arm64 trees for the next cycle, if that's preferred.
-> > > > > >=20
-> > > > >=20
-> > > > > We tried this twice now, and it seems to go nowhere. What does it=
- take
-> > > > > to get it applied ?
-> > > >=20
-> > > > Can you send a pull request to soc@kernel.org after the merge windo=
-w,
-> > > > with everyone else on Cc? If nobody objects, I'll merge it through
-> > > > the soc tree.
-> > > >=20
-> > >=20
-> > > Sure, I'll rebase and do that.
-> >=20
-> > I've uploaded a rebased tree here:
-> >=20
-> > 	https://github.com/thierryreding/linux/tree/for-5.5/system-power-reset
-> >=20
-> > The first 6 patches in that tree correspond to this series. There were a
-> > couple of conflicts I had to resolve and I haven't fully tested the
-> > series yet, but if you haven't done any of the rebasing, the above may
-> > be useful to you.
-> >=20
->=20
-> Maybe Arnd can just use your branch (or rather part of it if you would
-> split it off) since you already did the work ?
-
-Yeah, I can just send the pull request for the 6 patches after -rc1.
-
-Thierry
-
---0H629O+sVkh21xTi
-Content-Type: application/pgp-signature; name="signature.asc"
-
------BEGIN PGP SIGNATURE-----
-
-iQIzBAABCAAdFiEEiOrDCAFJzPfAjcif3SOs138+s6EFAl1/r0cACgkQ3SOs138+
-s6Hcsg//fOHVfHF/Lf4ZR1EsztDM9RWSeiV9KzV5if3/BHqV9rjYuaYD5mEGOS5/
-PDmXH7k6ndPcHqi2x+QfSNUhd629S+6X63wsFswe40l1mGOcAWIYS+0Qs+hKLZh2
-FtaX78iD9aKSe1/l6HEwMhw2PEGDYTSCEXr39/O8zfNRhfgmVWTXVKDFC5UR+XHw
-BThItNfSoGksS1MdGERKUemF4mNhX+2tPfPYEE7sjPkf/f+Fg/vufZYCsTETWQo2
-Bj35696KNjRgsYZjN5WQ3FgFA6Sz4dOqsV4c7A2iZ1294OSfKIfi4WKIWg3tJX5q
-yVH/E+mXwi59c62LqNhYiS/A+ukYvMcSZZvKKCQFCw5Gc/KmdUcR724N1Xi+zMAk
-kHMHJ7ADvsyJ3tYi9vck1yFpZzsCkQJzcrR///MGx3mO41offZed73j/gH/kFm7r
-hoYb9y2x+E97keY++ESodR758zUlSyWXF4sR4LVmpeeqHQw25Xc+s8wXlAfy+K3T
-2zE1DbxdlPB4qIjZ2FTKah7Y/h4th0+oaUa7P6ZDbrySrswFuwv3RoIK+UkZROB2
-B0FRfEvtXsgqMr6T/e8x9svVhFxdar8uFtXlT9cArc79wPusjANzFP70opkQ62zN
-SokCNLDqLbv0Fx4YBAZt2eFlVhvrMGQE34Ni/2R6nuDbMNHu5R4=
-=bM0l
------END PGP SIGNATURE-----
-
---0H629O+sVkh21xTi--
+Thanks,
+Stanley
 
 
---===============8307714486159819806==
-Content-Type: text/plain; charset="us-ascii"
-MIME-Version: 1.0
-Content-Transfer-Encoding: 7bit
-Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
-
---===============8307714486159819806==--
-
