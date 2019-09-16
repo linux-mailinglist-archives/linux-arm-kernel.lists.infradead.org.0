@@ -2,61 +2,63 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 0FCC4B3FE8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:01:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id DD6A2B3FED
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:02:38 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
 	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=0vPkP3nFceeyjltc3bv0dVtizYnmomJgmybc0vxfhOE=; b=K5YcKBE5u54wPD
-	1TPOYWCTS444qOqvdwurJYn0KlhWNenxXRGlE1E4l+c/oB5aoWNKJunmk++1+zJqh+vneVfFTAkOU
-	v22/NXf6Pho1WCUYvqAA6NrSmYTjOj699IqT1fmlQcnz+JrCFaVLCdnGpiKXBac5Eae/RuDtfLOqa
-	f4DGZY73pXxfOhisVWU+tF87NXbR+8nziYYFd8dHSCyNnXr4pJ2onv+Ok7NAUbWnVmq+rSTb0UlDz
-	PISVDMsHSVBNM+yOP0nRmoWbLEpQYMwGEW1ILFj0loPDmD/63XhE687zsizIdKwQpgmmPNsA/dW2V
-	NkHD/+lUiNjNC4BgcPXw==;
+	List-Owner; bh=8LqmXrWbJya+NiVC/Oat33Gf9Hq+2JKpXDXYN5mub8U=; b=t8Z/7JqFBfwGXo
+	OCassbxd0BxkUlMvJ0riuMnIp5L8lprZ9wvn4sG/GHbVet+wCL4T9ky376ERjXBF2Fbibxwe+bZAl
+	iMYs3kGMrIAaIce3WIk2MV0nE86cn9YHSBeP5KZoPbp5pOZ+yJzBc5dPx3afPUi8vrxovUg9C0MGZ
+	r4XE9zFtquOUxHTsx64xF/R4p+diFJDDmc9lSFf3kPXYGUq3nA5gpt1J2D8NQ6/Gbs3xHAYSJdS7v
+	Y+I/fkIdp58h3jVGET5BAvB9dpThZlYIVjcYIvc/9ynbeezK86B0rQE9zlf7NN4RjPk2gpKp5OwNt
+	9IyGhuniSjZzNswic9cA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9vJH-0000TK-Ft; Mon, 16 Sep 2019 18:01:11 +0000
+	id 1i9vKf-0000mD-9Y; Mon, 16 Sep 2019 18:02:37 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9vIy-0000Q0-Dl; Mon, 16 Sep 2019 18:00:58 +0000
-Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
- [209.85.160.177])
+ id 1i9vKQ-0000l5-60
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 18:02:27 +0000
+Received: from mail-qk1-f181.google.com (mail-qk1-f181.google.com
+ [209.85.222.181])
  (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
  (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id 9E75120830;
- Mon, 16 Sep 2019 18:00:51 +0000 (UTC)
+ by mail.kernel.org (Postfix) with ESMTPSA id BD28A206C2
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 18:02:21 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568656851;
- bh=dMVZGCnsh4fILPwk9WjxtUMiqu6/4VUD7cpn/PynxBU=;
+ s=default; t=1568656941;
+ bh=jw9WxCmFRLg9kFz2L7R8cTZs0S4CVzr5+ZqT8UTf1jI=;
  h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
- b=dA+WUt4bl+6RjbJXd6HF1hu64FfIcM9QX9YW4t2hzTazyLV/Iaoca7f3s5hvMGRfX
- dUkMCuyYjsg7LbTHbUT4NtHLI1jntNf386bm+W+Sn/j/D/cwc/e5hXg3YRgLTnilsp
- ekJXXM1ZL9uIJUpxuj4/0YcEw835CHNKr6fffgxY=
-Received: by mail-qt1-f177.google.com with SMTP id x5so911936qtr.7;
- Mon, 16 Sep 2019 11:00:51 -0700 (PDT)
-X-Gm-Message-State: APjAAAVcnOEVCT/ebARhIJuqFcuLIv5qOkJHWMbLsTyAzgtfnXW2UyT+
- 8lgfVPQ9M5AsF+pnIa9vVaFmKplDEqN6MmuIVg==
-X-Google-Smtp-Source: APXvYqyf350ByfqcVlNXWlnTIksw+7j/6O4GUGxPPUMBxsS6Jl38vpunqWIRMsPX1zJ/s4uT+gn50ziIwq/u9H4MMs4=
-X-Received: by 2002:ac8:444f:: with SMTP id m15mr938733qtn.110.1568656850832; 
- Mon, 16 Sep 2019 11:00:50 -0700 (PDT)
+ b=V23dSxE2kGCR3BVUjTONF1FRXfP1gZhfaFk4gApW297O01495XrpSj2MLtlSUoInV
+ kqTTrnnezGyP8I98AdDkAnb04MUJWvUN7Cd1X/u2fHZTGU1pOyUzYkIt1evdGPO1jg
+ FVWdR6xHqLvbwo/FUj+S/ARtAPoCTzccCeEmuDRQ=
+Received: by mail-qk1-f181.google.com with SMTP id i78so866147qke.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 11:02:21 -0700 (PDT)
+X-Gm-Message-State: APjAAAUR2rWajTzNItfAXh4yLmQEJTta2f+qXabmkuAFncWbA9jgZTyK
+ CBWTr2Nq80AON+ySMprpxI8UkThccERmYQhvpw==
+X-Google-Smtp-Source: APXvYqwIiBMlyhrPnYeXlslX3QQeHDB1E7HsL8JSZyGmHrkr6hB5Cyuj+9oFg0wnVhS/VTV38+HO6mnIuvsId6+pqz8=
+X-Received: by 2002:a37:8905:: with SMTP id l5mr1331558qkd.152.1568656940987; 
+ Mon, 16 Sep 2019 11:02:20 -0700 (PDT)
 MIME-Version: 1.0
-References: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
- <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
-In-Reply-To: <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
+References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
+ <20190916161447.32715-5-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20190916161447.32715-5-manivannan.sadhasivam@linaro.org>
 From: Rob Herring <robh+dt@kernel.org>
-Date: Mon, 16 Sep 2019 13:00:39 -0500
-X-Gmail-Original-Message-ID: <CAL_JsqJP6JiZTV=DwuSQLLEv9dMST82Xkrb5AnqREjR5hk5=7Q@mail.gmail.com>
-Message-ID: <CAL_JsqJP6JiZTV=DwuSQLLEv9dMST82Xkrb5AnqREjR5hk5=7Q@mail.gmail.com>
-Subject: Re: [PATCH v4 2/7] dt-bindings: mmc: Add Actions Semi SD/MMC/SDIO
- controller binding
+Date: Mon, 16 Sep 2019 13:02:09 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqKDp4kY=PxDNnr2NARZ0HSPrtvLCuTh_9mvaWY8-5Sqbg@mail.gmail.com>
+Message-ID: <CAL_JsqKDp4kY=PxDNnr2NARZ0HSPrtvLCuTh_9mvaWY8-5Sqbg@mail.gmail.com>
+Subject: Re: [PATCH v5 4/8] dt-bindings: clock: Add devicetree binding for
+ BM1880 SoC
 To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_110052_494118_3A4AB874 
-X-CRM114-Status: UNSURE (   8.99  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_110222_247183_E51A7882 
+X-CRM114-Status: GOOD (  10.65  )
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -85,14 +87,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
- Stephen Boyd <sboyd@kernel.org>, linux-actions@lists.infradead.org,
- Linus Walleij <linus.walleij@linaro.org>,
- linux-mmc <linux-mmc@vger.kernel.org>,
+Cc: devicetree@vger.kernel.org, Stephen Boyd <sboyd@kernel.org>,
+ Michael Turquette <mturquette@baylibre.com>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- Thomas Liau <thomas.liau@actions-semi.com>,
- linux-clk <linux-clk@vger.kernel.org>,
- =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ darren.tsao@bitmain.com, haitao.suo@bitmain.com, fisher.cheng@bitmain.com,
+ alec.lin@bitmain.com, linux-clk <linux-clk@vger.kernel.org>,
  "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
  <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
@@ -100,17 +99,18 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 10:46 AM Manivannan Sadhasivam
+On Mon, Sep 16, 2019 at 11:15 AM Manivannan Sadhasivam
 <manivannan.sadhasivam@linaro.org> wrote:
 >
-> Add devicetree YAML binding for Actions Semi Owl SoC's SD/MMC/SDIO
-> controller.
+> Add YAML devicetree binding for Bitmain BM1880 SoC.
 >
 > Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 > ---
->  .../devicetree/bindings/mmc/owl-mmc.yaml      | 59 +++++++++++++++++++
->  1 file changed, 59 insertions(+)
->  create mode 100644 Documentation/devicetree/bindings/mmc/owl-mmc.yaml
+>  .../bindings/clock/bitmain,bm1880-clk.yaml    | 76 +++++++++++++++++
+>  include/dt-bindings/clock/bm1880-clock.h      | 82 +++++++++++++++++++
+>  2 files changed, 158 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+>  create mode 100644 include/dt-bindings/clock/bm1880-clock.h
 
 Reviewed-by: Rob Herring <robh@kernel.org>
 
