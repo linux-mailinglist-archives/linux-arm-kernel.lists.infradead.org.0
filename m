@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E5E20B3EA0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:16:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 734B0B3EAF
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:16:56 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,74 +11,73 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=uRUc7XYzJxwTJgNhDswp7zFUVk2Sg2n1ScP3cFH5+rY=; b=oDqQNfJ/Iz/fcUb6qvl3RZBnOq
-	r5PluRdU6XkfPBjpf36eKBQtnjdQ52FOanZQJFM9qEBYHhy14esKQ55P6NLjIURVYCPWyNw6LhtZN
-	IWYx6/GpctSO151zmoD6nIPrjl6rXOPgFUVxQYwlwD2SyzV82kr3nzoF71EvXisprAjdshTMlcyWz
-	TBxG9r5PeGYxO6Bd6CIeXNxbc0fex9CLWNRekNBScHMTDtDF1YbPAYFO998TQkCUAnKWNfas4dXWV
-	tWp3HC/onGxFB7yS8WUuAkrZ7GyuCJnPYkawG1ht3Qn6jW/eDgwQBwQA0eZmLDKv2DT7LGD9OT/5w
-	nE9uyLhQ==;
+	bh=Xz4KAgRscjpo+N06GU0OMLZLDUwq8PWIQ8X+MC4a1rg=; b=R0xALtFpVeHs99l4NrSiGn7TkA
+	P8UpKJqIGvB+I0Q9pCdQmY/G8tj8Hv5vEg9zYHOG8vTcW+pLXtciZ9Cve6ad3Ww4l4TIY+HbjPlfJ
+	oYaphmkZQwkyLjgsPJilVGmIC/3FELk0Z2NTqQQOzlIXGZ/5SSqnm1xuo8J3D3zwCRI8G54Wgrlv5
+	hU+hfr6uugRGLFTXMb1MR+xdKpKKvT4nwiNMS5qIugI9nSaOA/+MxP9yTKTU4dPQaMPTbytAExtSY
+	G93PRWQmlyONo0fg1diodoptrp3BmFQmvylEMmRYeeP9ajdf0EFKwkHbq8lEczNYutBOX72NAYAav
+	3dWK73Qw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tfw-0004Kv-4R; Mon, 16 Sep 2019 16:16:28 +0000
-Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
+	id 1i9tgD-0004cq-Sd; Mon, 16 Sep 2019 16:16:46 +0000
+Received: from mail-pl1-x644.google.com ([2607:f8b0:4864:20::644])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tem-0003bc-0o
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:17 +0000
-Received: by mail-pg1-x543.google.com with SMTP id n190so293487pgn.0
+ id 1i9teq-0003gT-N0
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:22 +0000
+Received: by mail-pl1-x644.google.com with SMTP id t10so96094plr.8
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 09:15:15 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:20 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=RtuYujDQbGoE383NaOTW8yNTTYMDfvcRIoYrv77xBo0=;
- b=Hj6QoIN6KZ6+DhiumykPCijqElZfOah/NzphYnS7V98SDfdJQfhOakb9NSOsbAz7ME
- 9PmGP929SZ56sAB1fQ17iyymu1/w7wo0r8yJfKfzQwLPCelP2u+rV01jXg++B4kEGtVX
- nL9TljiPJiRSyfMXWTl1ZHFj45Z+zy1ID9LsuXayael/sHHLjGIw4w8hOycBpZ74Wtb2
- ga/10z3Bz5tHOmdC+oMWG3LFl8/UN24QIAemzNhxmSY01cbgc1ReYhF0dv9ykFP89zxD
- YHzeCDmMnOkqD57pJsZKTPpr3ye2+7dKPkFDkPnj8LiApv6XvKqiujop9pXqJbeWGip1
- SvKA==
+ bh=klfCMSt7jESV3x0ypDMgiUBLr/uboYQpHdjbWUnIcx4=;
+ b=kqKUhGFnK7PiW1lIk2W46lvM6hutZ+vVtqkEC9+VB4hh8gIJezFH1gAWXKtNH22Y+g
+ M9hqgqc0p/30fu2L0wM4SYlyWTfD+lyJ9wowRlRhwE0xvT+gJ2ldPJIyyOfaRfJYfehL
+ W5j4r9nr0vpbP5mtCjsDLMrAwRRIJWTaPTajOAEn+NvhcZ9OSjStQXwx8NTUxGf1wIru
+ Jkv+2Wkg/75q6BX5s1A0fu8VECiPPu6Rdw1h8Vo8Q5YahotRZVWnX8/AbHr9Z83xAUd8
+ 0bYKcEu3ayLob4xTgsh3q4gnUy1yKOrd55VkOtE2VvQSkGQMgwbKOu7J7Z5e1buN4SWs
+ Kqug==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=RtuYujDQbGoE383NaOTW8yNTTYMDfvcRIoYrv77xBo0=;
- b=NN0ifEwT7RnTMQSxjqGaX7Yvd6mO1tncID3T1Alj+Svw30ysDL/NU2KTCrLPqey73f
- qFsZhJawkSL3Y9aAh4xqSSZeerYI+OsyC2L80G0eP+h1x/2AQws452Kt61QzT0thDStM
- GS8fbSKnEsGGo9r0k37nMrEj5TfN+Hmx3l+y1vJX25gPIS7wiKz8KMNiEMH62h78N48K
- 8Eafh99dizFhmwlbPbBxugriAExoacMcHxZuK9btHcmlXHyaKFXSNnPOo8DEViW0BzR6
- FzFZ0bVeFt7Nj73+mzYUnyo/88KcGNKce7H/hEjEshOaw3jZ8vsMyidYc67c7WG9k1u9
- A2BA==
-X-Gm-Message-State: APjAAAUyhsBx7IH+Gb54N6AN5SqcU3QsTI+cP0EMFoQU4XLXhGtYUnlg
- 1B+LVbQrTGQnoC1amfCmFORT
-X-Google-Smtp-Source: APXvYqykGw2se+1YdEpdnu59uhuq+FCf/teB61ZdN3oz9apYHya31RXFapv1QdA8jAI3JZ65NhNx/g==
-X-Received: by 2002:a63:10a:: with SMTP id 10mr57256448pgb.281.1568650515328; 
- Mon, 16 Sep 2019 09:15:15 -0700 (PDT)
+ bh=klfCMSt7jESV3x0ypDMgiUBLr/uboYQpHdjbWUnIcx4=;
+ b=MOYeJV7EDqZh+iCzhsJ2IFAm0cK8FIHlYulSu2/HwstqVyebG/+aBDnRPyzVngFdPD
+ i3QhCTri4xOmkEiRRHR0xxyX51XfLGZIhrxN8DnvssiTh4brBoypAB51B4byrT2WFC1J
+ QnaHafFwF/K2h/fRKo2j/HP6q7nHEkGd68q9PLRaya0N/JDw1vqaOYTYFynxM4LKoNiC
+ IAmohMXbUeXEr1aHbpmr4GwbpDvnECbQzqHbY5cG2Pd3VgySYMNoSjvZbNRAe0Xy1LMj
+ NS3oZva8gn+AdCqkQDr1SCY2oODQmNhEodVOOQZiEfJsHF8/QUo8fjdxzCeehGLU1uPG
+ rsRw==
+X-Gm-Message-State: APjAAAWyj/MVAfXwC8XI/6DlWwq1I7aAxN9QEKB5JOtgvQVldp/kcpSz
+ rqTd39PRx37p2CSg4Hnr+ua2
+X-Google-Smtp-Source: APXvYqxjhtNhdJLtMMoSfB2eWfekEsCcYzrdYDoMUPMVee8IeUpFn+JrWkIOU5rzsDbuRSjYdtC9Tg==
+X-Received: by 2002:a17:902:9347:: with SMTP id g7mr648639plp.0.1568650520121; 
+ Mon, 16 Sep 2019 09:15:20 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:90b:91ce:94c2:ef93:5bd:cfe8])
  by smtp.gmail.com with ESMTPSA id
- h66sm614134pjb.0.2019.09.16.09.15.11
+ h66sm614134pjb.0.2019.09.16.09.15.15
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 09:15:14 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:19 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: sboyd@kernel.org,
 	mturquette@baylibre.com,
 	robh+dt@kernel.org
-Subject: [PATCH v5 3/8] clk: Add clk_hw_unregister_composite helper function
- definition
-Date: Mon, 16 Sep 2019 21:44:42 +0530
-Message-Id: <20190916161447.32715-4-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 4/8] dt-bindings: clock: Add devicetree binding for BM1880
+ SoC
+Date: Mon, 16 Sep 2019 21:44:43 +0530
+Message-Id: <20190916161447.32715-5-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
 References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_091516_100005_60A9023B 
-X-CRM114-Status: UNSURE (   9.64  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190916_091520_942227_959F518E 
+X-CRM114-Status: GOOD (  13.81  )
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:644 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -111,33 +110,186 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This function has been delcared but not defined anywhere. Hence, this
-commit adds definition for it.
+Add YAML devicetree binding for Bitmain BM1880 SoC.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/clk/clk-composite.c | 11 +++++++++++
- 1 file changed, 11 insertions(+)
+ .../bindings/clock/bitmain,bm1880-clk.yaml    | 76 +++++++++++++++++
+ include/dt-bindings/clock/bm1880-clock.h      | 82 +++++++++++++++++++
+ 2 files changed, 158 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+ create mode 100644 include/dt-bindings/clock/bm1880-clock.h
 
-diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c
-index 4d579f9d20f6..ccca58a6d271 100644
---- a/drivers/clk/clk-composite.c
-+++ b/drivers/clk/clk-composite.c
-@@ -344,3 +344,14 @@ void clk_unregister_composite(struct clk *clk)
- 	clk_unregister(clk);
- 	kfree(composite);
- }
+diff --git a/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml b/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+new file mode 100644
+index 000000000000..e63827399c1a
+--- /dev/null
++++ b/Documentation/devicetree/bindings/clock/bitmain,bm1880-clk.yaml
+@@ -0,0 +1,76 @@
++# SPDX-License-Identifier: (GPL-2.0-only OR BSD-2-Clause)
++%YAML 1.2
++---
++$id: http://devicetree.org/schemas/bindings/clock/bitmain,bm1880-clk.yaml#
++$schema: http://devicetree.org/meta-schemas/core.yaml#
 +
-+void clk_hw_unregister_composite(struct clk_hw *hw)
-+{
-+	struct clk_composite *composite;
++title: Bitmain BM1880 Clock Controller
 +
-+	composite = to_clk_composite(hw);
++maintainers:
++  - Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 +
-+	clk_hw_unregister(hw);
-+	kfree(composite);
-+}
-+EXPORT_SYMBOL_GPL(clk_hw_unregister_composite);
++description: |
++  The Bitmain BM1880 clock controller generates and supplies clock to
++  various peripherals within the SoC.
++
++  This binding uses common clock bindings
++  [1] Documentation/devicetree/bindings/clock/clock-bindings.txt
++
++properties:
++  compatible:
++    const: bitmain,bm1880-clk
++
++  reg:
++    items:
++      - description: pll registers
++      - description: system registers
++
++  reg-names:
++    items:
++      - const: pll
++      - const: sys
++
++  clocks:
++    maxItems: 1
++
++  clock-names:
++    const: osc
++
++  '#clock-cells':
++    const: 1
++
++required:
++  - compatible
++  - reg
++  - reg-names
++  - clocks
++  - clock-names
++  - '#clock-cells'
++
++additionalProperties: false
++
++examples:
++  # Clock controller node:
++  - |
++    clk: clock-controller@e8 {
++        compatible = "bitmain,bm1880-clk";
++        reg = <0xe8 0x0c>, <0x800 0xb0>;
++        reg-names = "pll", "sys";
++        clocks = <&osc>;
++        clock-names = "osc";
++        #clock-cells = <1>;
++    };
++
++  # Example UART controller node that consumes clock generated by the clock controller:
++  - |
++    uart0: serial@58018000 {
++         compatible = "snps,dw-apb-uart";
++         reg = <0x0 0x58018000 0x0 0x2000>;
++         clocks = <&clk 45>, <&clk 46>;
++         clock-names = "baudclk", "apb_pclk";
++         interrupts = <0 9 4>;
++         reg-shift = <2>;
++         reg-io-width = <4>;
++    };
++
++...
+diff --git a/include/dt-bindings/clock/bm1880-clock.h b/include/dt-bindings/clock/bm1880-clock.h
+new file mode 100644
+index 000000000000..b46732361b25
+--- /dev/null
++++ b/include/dt-bindings/clock/bm1880-clock.h
+@@ -0,0 +1,82 @@
++/* SPDX-License-Identifier: GPL-2.0+ */
++/*
++ * Device Tree binding constants for Bitmain BM1880 SoC
++ *
++ * Copyright (c) 2019 Linaro Ltd.
++ */
++
++#ifndef __DT_BINDINGS_CLOCK_BM1880_H
++#define __DT_BINDINGS_CLOCK_BM1880_H
++
++#define BM1880_CLK_OSC			0
++#define BM1880_CLK_MPLL			1
++#define BM1880_CLK_SPLL			2
++#define BM1880_CLK_FPLL			3
++#define BM1880_CLK_DDRPLL		4
++#define BM1880_CLK_A53			5
++#define BM1880_CLK_50M_A53		6
++#define BM1880_CLK_AHB_ROM		7
++#define BM1880_CLK_AXI_SRAM		8
++#define BM1880_CLK_DDR_AXI		9
++#define BM1880_CLK_EFUSE		10
++#define BM1880_CLK_APB_EFUSE		11
++#define BM1880_CLK_AXI5_EMMC		12
++#define BM1880_CLK_EMMC			13
++#define BM1880_CLK_100K_EMMC		14
++#define BM1880_CLK_AXI5_SD		15
++#define BM1880_CLK_SD			16
++#define BM1880_CLK_100K_SD		17
++#define BM1880_CLK_500M_ETH0		18
++#define BM1880_CLK_AXI4_ETH0		19
++#define BM1880_CLK_500M_ETH1		20
++#define BM1880_CLK_AXI4_ETH1		21
++#define BM1880_CLK_AXI1_GDMA		22
++#define BM1880_CLK_APB_GPIO		23
++#define BM1880_CLK_APB_GPIO_INTR	24
++#define BM1880_CLK_GPIO_DB		25
++#define BM1880_CLK_AXI1_MINER		26
++#define BM1880_CLK_AHB_SF		27
++#define BM1880_CLK_SDMA_AXI		28
++#define BM1880_CLK_SDMA_AUD		29
++#define BM1880_CLK_APB_I2C		30
++#define BM1880_CLK_APB_WDT		31
++#define BM1880_CLK_APB_JPEG		32
++#define BM1880_CLK_JPEG_AXI		33
++#define BM1880_CLK_AXI5_NF		34
++#define BM1880_CLK_APB_NF		35
++#define BM1880_CLK_NF			36
++#define BM1880_CLK_APB_PWM		37
++#define BM1880_CLK_DIV_0_RV		38
++#define BM1880_CLK_DIV_1_RV		39
++#define BM1880_CLK_MUX_RV		40
++#define BM1880_CLK_RV			41
++#define BM1880_CLK_APB_SPI		42
++#define BM1880_CLK_TPU_AXI		43
++#define BM1880_CLK_DIV_UART_500M	44
++#define BM1880_CLK_UART_500M		45
++#define BM1880_CLK_APB_UART		46
++#define BM1880_CLK_APB_I2S		47
++#define BM1880_CLK_AXI4_USB		48
++#define BM1880_CLK_APB_USB		49
++#define BM1880_CLK_125M_USB		50
++#define BM1880_CLK_33K_USB		51
++#define BM1880_CLK_DIV_12M_USB		52
++#define BM1880_CLK_12M_USB		53
++#define BM1880_CLK_APB_VIDEO		54
++#define BM1880_CLK_VIDEO_AXI		55
++#define BM1880_CLK_VPP_AXI		56
++#define BM1880_CLK_APB_VPP		57
++#define BM1880_CLK_DIV_0_AXI1		58
++#define BM1880_CLK_DIV_1_AXI1		59
++#define BM1880_CLK_AXI1			60
++#define BM1880_CLK_AXI2			61
++#define BM1880_CLK_AXI3			62
++#define BM1880_CLK_AXI4			63
++#define BM1880_CLK_AXI5			64
++#define BM1880_CLK_DIV_0_AXI6		65
++#define BM1880_CLK_DIV_1_AXI6		66
++#define BM1880_CLK_MUX_AXI6		67
++#define BM1880_CLK_AXI6			68
++#define BM1880_NR_CLKS			69
++
++#endif /* __DT_BINDINGS_CLOCK_BM1880_H */
 -- 
 2.17.1
 
