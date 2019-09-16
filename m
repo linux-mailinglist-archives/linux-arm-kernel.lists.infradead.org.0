@@ -2,55 +2,105 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92BECB3A0E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:14:53 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 49C70B3A33
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:23:59 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=O6zzPTTa/F0TD5A/tZFLYN2o6b0i6AZy5SDVa5vuVOo=; b=LooooR5dKzp1dl
-	WB9acreDJtZx9tof+1Vh4HlEfJD77MB2WS/1UqrbbCvVUi6B9QlFB94snJ76w22r4yHzF43cNjsrf
-	4yRaYhQsexDXMW/7iVGnUOhVhgCUFEc3O6xFQrDd56AuW9C87Gim8qsBGL/dDO4aynbfpXGT6PyLw
-	V1+ICK8zMUdIRwy7qkz25UPtYHhw4IdTCO/h99Ak3/laS5XL41IVdN2iW+pZQti67+fea+HNz/i0d
-	VLwaK7TalfZ799Sue8buebE7KP1tEXOxIjIrm3orb6KXu4ebhahGcmwMr4DbJ3n011puaOhTx0xK4
-	GS73kpiIMCCNQtvWBoWA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
+	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
+	List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:Message-ID:From:
+	References:To:Subject:Reply-To:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Owner;
+	 bh=ad24azqvdl3f+cGktcKNl3sP5cIJBjEAG7uxdxrQULg=; b=A9fE2KbCeDWwck6RuJxbZusDg
+	+OIWEPCvmP8v/VN62ft11KX/H065nTQ/ei0fjZ+LzUYLV4Ly6dRc4ALe9aNI/njzvHOIhUfJZMGxf
+	H7H8ZNxz1zIIPOnxHnDbxAzBFpIyJQgwYOaQb8uuiHiE0KJ9rOkEJYgVxKvmVGUR6+r0gqlAdxqec
+	ESMEr5LEYrCuwaB3+bRMxrw5LeMfwvTxIOfb23Vbl8GgbOdMGO2xHgQPWQsLHr/QHMMg6WD1yvGq7
+	5yZpKw+tnB5scYglytZmHVdOVsWS9XrOKcFGZMXn3iU9JG+H0MKX69K6mcwfKvFWToWqcKMB3vl2K
+	l+EJbm9sg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9pu7-0006jG-0k; Mon, 16 Sep 2019 12:14:51 +0000
-Received: from foss.arm.com ([217.140.110.172])
- by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9ptp-0006ik-7U
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 12:14:34 +0000
-Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D7F53337;
- Mon, 16 Sep 2019 05:14:31 -0700 (PDT)
-Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id EFC323F59C;
- Mon, 16 Sep 2019 05:14:30 -0700 (PDT)
-Date: Mon, 16 Sep 2019 13:14:28 +0100
-From: Dave Martin <Dave.Martin@arm.com>
-To: Cristian Marussi <cristian.marussi@arm.com>
-Subject: Re: [PATCH v5 00/11] Add arm64/signal initial kselftest support
-Message-ID: <20190916121428.GJ27757@arm.com>
-References: <20190902112932.36129-1-cristian.marussi@arm.com>
- <20190904114722.GQ27757@arm.com>
- <74165b2e-eb4c-994f-20ca-b69f71f3f5bc@arm.com>
+	id 1i9q2v-0002tD-4y; Mon, 16 Sep 2019 12:23:57 +0000
+Received: from us-smtp-delivery-1.mimecast.com ([205.139.110.120]
+ helo=us-smtp-1.mimecast.com)
+ by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i9q2d-0002QH-Ag
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 12:23:41 +0000
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=redhat.com;
+ s=mimecast20190719; t=1568636616;
+ h=from:from:reply-to:subject:subject:date:date:message-id:message-id:
+ to:to:cc:cc:mime-version:mime-version:content-type:content-type:
+ content-transfer-encoding:content-transfer-encoding:
+ in-reply-to:in-reply-to:references:references;
+ bh=xuFZUsJJRGLuvev598sKrB52HnexJgaP+W91bQH5myw=;
+ b=fOj31eIGeNkbNyqnSp0xBWWNNnCSekUWUiVuTBWBpLO5rb2OmAzq5eS9ueD4wAXYTii5Cp
+ XVWVhOxIrIa0wLFTcpw0kVA8UfdRBPXaTojSFrbXV3wFd9ytQienYqjiwzs7j6qlp3vVB7
+ 5Yl77mSjRbU76NfTxmoLCV2eVHorC7g=
+Received: from mail-qk1-f198.google.com (mail-qk1-f198.google.com
+ [209.85.222.198]) (Using TLS) by relay.mimecast.com with ESMTP id
+ us-mta-194-t6sDWYrpNqKR7wdj0FMGWQ-1; Mon, 16 Sep 2019 08:23:32 -0400
+Received: by mail-qk1-f198.google.com with SMTP id r141so14803812qke.7
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 05:23:32 -0700 (PDT)
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:subject:to:cc:references:from:message-id:date
+ :user-agent:mime-version:in-reply-to:content-language
+ :content-transfer-encoding;
+ bh=aFQYEXYlxKj3Sm3zW29/VoCLHuhuxmTHLOejlFqsxPw=;
+ b=Jb6IrnI+aHiq5JGluV0KYkZimUWJF5T0dno1NENwrnubLFe2ckXmLK3MEGzRISr5JN
+ 5a4IB+jGlyomJ5MHCnOUpX2n47NJnnBRXXDCuNuQIjOM1WXxW2n0g7wJZK2zJhcoPGI3
+ sKLPK92KKCTpAPypwQG7SX7bRLBTi1Zt6aSim7PVPRE7Ksl9FBwHCM4h1fl4YmWE18cy
+ BDeiOWgIZ9GJXCDjtn+8UPEAD4+A3RI8OdMAF65lEGj4BH/sxx6WZwBbO1MBoC1Of/Bn
+ +C0O0b9ik8wpAj1SqAxyM8MDumEcjPxrvNpymmzeLXp+HdTsnbjEv5DR+nBZss6DvNvp
+ Z1VA==
+X-Gm-Message-State: APjAAAUBg7aeMQ4a+BkLRPhFsww98JZhzJPo5oWmpWLM04dhRvzQ4nMj
+ w7eThPwKQ7tkNKUjqa4GCooPwH+XHmfaugCYgj9CKmIcHW36jXOJcJU+U+7Jp4VsG9RSnxtOk0b
+ FPwsogdn4arBiGoaDJHOEo6ZsfBa2gGTDU7A=
+X-Received: by 2002:a37:bcc6:: with SMTP id
+ m189mr48798059qkf.436.1568636611756; 
+ Mon, 16 Sep 2019 05:23:31 -0700 (PDT)
+X-Google-Smtp-Source: APXvYqxDIGS3OQUOohOp1Ug/qVyEA/U4iNc6+2vozZatrm/x1j+LyqlIhVdzXycKw8RYr2Oc+YqI6g==
+X-Received: by 2002:a37:bcc6:: with SMTP id
+ m189mr48798037qkf.436.1568636611494; 
+ Mon, 16 Sep 2019 05:23:31 -0700 (PDT)
+Received: from [192.168.1.157] (pool-96-235-39-235.pitbpa.fios.verizon.net.
+ [96.235.39.235])
+ by smtp.gmail.com with ESMTPSA id z5sm21437547qtb.49.2019.09.16.05.23.30
+ (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+ Mon, 16 Sep 2019 05:23:30 -0700 (PDT)
+Subject: Re: [PATCH] arm64: use generic free_initrd_mem()
+To: Mike Rapoport <rppt@kernel.org>, Catalin Marinas
+ <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
+ Mark Rutland <mark.rutland@arm.com>
+References: <1568618488-19055-1-git-send-email-rppt@kernel.org>
+From: Laura Abbott <labbott@redhat.com>
+Message-ID: <0ba20aa4-d2dd-2263-6b5f-16a5c8a39f67@redhat.com>
+Date: Mon, 16 Sep 2019 08:23:29 -0400
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <74165b2e-eb4c-994f-20ca-b69f71f3f5bc@arm.com>
-User-Agent: Mutt/1.5.23 (2014-03-12)
+In-Reply-To: <1568618488-19055-1-git-send-email-rppt@kernel.org>
+Content-Language: en-US
+X-MC-Unique: t6sDWYrpNqKR7wdj0FMGWQ-1
+X-Mimecast-Spam-Score: 0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_051433_360502_741C5D5E 
-X-CRM114-Status: GOOD (  29.46  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190916_052339_454296_0AF2B048 
+X-CRM114-Status: GOOD (  19.02  )
+X-Spam-Score: -2.5 (--)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (-2.5 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
+ -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
+ medium trust [205.139.110.120 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -62,177 +112,61 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
- linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="us-ascii"
+Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
+ Mike Rapoport <rppt@linux.ibm.com>
 Content-Transfer-Encoding: 7bit
+Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Tue, Sep 10, 2019 at 01:25:31PM +0100, Cristian Marussi wrote:
-> On 04/09/2019 12:47, Dave Martin wrote:
-> > On Mon, Sep 02, 2019 at 12:29:21pm +0100, Cristian Marussi wrote:
-> >> Hi
-> >>
-> >> this patchset aims to add the initial arch-specific arm64 support to
-> >> kselftest starting with signals-related test-cases.
-> >> A common internal test-case layout is proposed which then it is anyway
-> >> wired-up to the toplevel kselftest Makefile, so that it should be possible
-> >> at the end to run it on an arm64 target in the usual way with KSFT.
-> > 
-> > BTW, it's helpful to state the base branch / commit as clearly as
-> > possible near the top of the cover letter, say,
-> > 
-> > --8<--
-> > 
-> > This series is based on arm64/for-next/core [1]
-> > commit 9ce1263033cd ("selftests, arm64: add a selftest for passing tagged pointers to kernel")
-> > 
-> > [1] git://git.kernel.org/pub/scm/linux/kernel/git/arm64/linux.git for-next/core
-> > 
-> > -->8--
-> > 
-> > This is particularly important if you expect the maintainer to pick up
-> > the patches.
-> > 
-> > You don't need to reference a specific commit unless there's a
-> > significant chance of conflicts if the wrong commit is used, but it can
-> > help provide a clue as to why you're basing on this alternate branch.
-> > 
+On 9/16/19 8:21 AM, Mike Rapoport wrote:
+> From: Mike Rapoport <rppt@linux.ibm.com>
 > 
-> Ok, thanks I'll do.
+> arm64 calls memblock_free() for the initrd area in its implementation of
+> free_initrd_mem(), but this call has no actual effect that late in the boot
+> process. By the time initrd is freed, all the reserved memory is managed by
+> the page allocator and the memblock.reserved is unused, so there is no
+> point to update it.
 > 
-> >> ~/linux# make TARGETS=arm64 kselftest
-> >>
-> >> New KSFT arm64 testcases live inside tools/testing/selftests/arm64 grouped by
-> >> family inside subdirectories: arm64/signal is the first family proposed with
-> >> this series.
-> >> This series converts also to this subdirectory scheme the pre-existing
-> >> (already queued on arm64/for-next/core) KSFT arm64 tags tests, moving them
-> >> into arm64/tags.
-> >>
-> >> Thanks
-> >>
-> >> Cristian
-> >>
-> >>
-> >> Notes:
-> >> -----
-> >> - further details in the included READMEs
-> >>
-> >> - more tests still to be written (current strategy is going through the related
-> >>   Kernel signal-handling code and write a test for each possible and sensible code-path)
-> >>   A few ideas for more TODO testcases:
-> >> 	- fake_sigreturn_unmapped_sp: SP into unmapped addrs
-> >> 	- fake_sigreturn_kernelspace_sp: SP into kernel addrs
-> >> 	- fake_sigreturn_sve_bad_extra_context: SVE extra context badly formed
-> >> 	- mangle_sve_invalid_extra_context: SVE extra_context invalid
-> >>
-> >> - SVE signal testcases and special handling will be part of an additional patch
-> >>   still to be released
-> > 
-> > What's your approach to checking that the test failure paths work?
-> > 
-> > We could either hack the kernel or the tests to provoke "fake" failures,
-> > and I don't think it's necessary to test everything in this way,
-> > providing we have confidence that the test strategy and framework works
-> > in general.
-> > 
-> 
-> So my approach to testing the tests itself has been as follows:
-> 
-> - PASS path: instrumented Kernel itself to print the exact line where the SEGV
->   is supposed to be called and manually check once for all (just redone now).
->   Something like:
-> 
-> # FAKE_SIGRETURN_MISALIGNED_SP :: Triggers a sigreturn with a misaligned sigframe
-> Registered handlers for all signals.
-> Detected MINSTKSIGSZ:9984
-> Testcase initialized.
-> uc context validated.
-> GOOD CONTEXT grabbed from sig_copyctx handler
-> Handled SIG_COPYCTX
-> Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAAE5253
-> [  188.206911] Kernel SEGV @ 571                                                   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> SIG_OK -- SP:0xFFFFCAAE5253  si_addr@:0xffffcaae5253  si_code:2  token@:0xffffcaae5253  offset:0
-> ==>> completed. PASS(1)
-> 
-> 
-> - FAIL path: tried at first the same approach (instrument to avoid the SEGV), but thinking that
->   this could have led to general Kernel instability while processing bad sigframes,
->   I instead instrumented tests and utils as follows:
-> 
->   - mangle_ TESTS:
-> 
->     + removed the "mangling" for each test, and observed test FAIL (NO SEGV)
-> 
-> # MANGLE_PSTATE_INVALID_MODE_EL1h :: Mangling uc_mcontext INVALID MODE EL1h
-> Registered handlers for all signals.
-> Detected MINSTKSIGSZ:9984
-> Testcase initialized.
-> uc context validated.
-> Handled SIG_TRIG
-> ==>> completed. FAIL(0)
-> 
->     + SSBS: being this a peculiar mangle_ test, where we check that SSBS is PRESERVED as it is
->       on Kernel restoring sigframe (no expected SEGV), I used a kernel patched to NOT preserve
->       the SSBS bit (so clearing it). Moreover I experimented with the various SSBS support levels
->       (no_supp/SSBS_BIT/MRS+SSBS_BIT) and observed how test behaved related to the detected SSBS support
-> 
->     + verify that an anomalous SEGV (no SEGV_ACCER) is detected (say a *(* int)0x00= inside handler)
-> 
-> # MANGLE_PSTATE_INVALID_DAIF_BITS :: Mangling uc_mcontext with INVALID DAIF_BITS
-> Registered handlers for all signals.
-> Detected MINSTKSIGSZ:9984
-> Testcase initialized.
-> uc context validated.
-> SIG_OK -- SP:0xFFFFFBE96DA0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
-> si_code != SEGV_ACCERR...test is probably broken!  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> -- RX UNEXPECTED SIGNAL: 6
-> ==>> completed. FAIL(0)
-> 
-> 
->   - fake_sigreturn_ TESTS:
-> 
->     + verify placing on the stack the good context grabbed from get_current_context() as it is
->       (GOOD), execution flow is anomalously restored inside get_current_context() and such 
->       anomaly is spotted (without deadly loops)
-> 
-> # FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
-> Registered handlers for all signals.
-> Detected MINSTKSIGSZ:9984
-> Testcase initialized.
-> uc context validated.
-> GOOD CONTEXT grabbed from sig_copyctx handler
-> Handled SIG_COPYCTX
-> Calling sigreturn with fake sigframe sized:4688 at SP @FFFFCAC61F80
-> Unexpected successful sigreturn detected: live_uc is stale !        <<<<<<<<<<<<<<<<<<<<<<<<<<<
-> ==>> completed. FAIL(0)
-> 
->     + verify that an early SEGV is detected as anomalous (say a *(* int)0x00 before fake sigframe
->       has been placed on the stack)
-> 
-> # FAKE_SIGRETURN_BAD_MAGIC :: Trigger a sigreturn with a sigframe with a bad magic
-> Registered handlers for all signals.
-> Detected MINSTKSIGSZ:9984
-> Testcase initialized.
-> uc context validated.
-> GOOD CONTEXT grabbed from sig_copyctx handler
-> Handled SIG_COPYCTX
-> Available space:3552
-> Using badly built context - ERR: BAD MAGIC !
-> Calling sigreturn with fake sigframe sized:4688 at SP @FFFFE77C96D0
-> SIG_OK -- SP:0xFFFFE77C96D0  si_addr@:(nil)  si_code:1  token@:(nil)  offset:0
-> current->token ZEROED...test is probably broken!   <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-> -- RX UNEXPECTED SIGNAL: 6
-> ==>> completed. FAIL(0)
 
-OK, seems reasonable.
+People like to use memblock for keeping track of memory even if it has no
+actual effect. We made this change explicitly (see 05c58752f9dc ("arm64: To remove
+initrd reserved area entry from memblock") That said, moving to the generic
+APIs would be nice. Maybe we can find another place to update the accounting?
 
-I was just curious as to how you'd approached it.
+> Without the memblock_free() call the only difference between arm64 and the
+> generic versions of free_initrd_mem() is the memory poisoning. Switching
+> arm64 to the generic version will enable the poisoning.
+> 
+> Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
+> ---
+> 
+> I've boot tested it on qemu and I've checked that kexec works.
+> 
+>   arch/arm64/mm/init.c | 8 --------
+>   1 file changed, 8 deletions(-)
+> 
+> diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
+> index f3c7952..8ad2934 100644
+> --- a/arch/arm64/mm/init.c
+> +++ b/arch/arm64/mm/init.c
+> @@ -567,14 +567,6 @@ void free_initmem(void)
+>   	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
+>   }
+>   
+> -#ifdef CONFIG_BLK_DEV_INITRD
+> -void __init free_initrd_mem(unsigned long start, unsigned long end)
+> -{
+> -	free_reserved_area((void *)start, (void *)end, 0, "initrd");
+> -	memblock_free(__virt_to_phys(start), end - start);
+> -}
+> -#endif
+> -
+>   /*
+>    * Dump out memory limit information on panic.
+>    */
+> 
 
-Cheers
----Dave
 
 _______________________________________________
 linux-arm-kernel mailing list
