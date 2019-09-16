@@ -2,8 +2,8 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id A5310B3E9E
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:16:13 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id E5E20B3EA0
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 18:16:35 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
@@ -11,73 +11,74 @@ DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
 	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
 	:Resent-Message-ID:List-Owner;
-	bh=eZYXm80IJTsuJNvvgEh9TkT96zv/i4k+guvkU1KpMIY=; b=XRHBBwBOCYtxDpfelx+EdNlKWy
-	bznlVQ8QbzkiYBZ30Olw4PRBHGMjUp4tTTIZMiYq3hBKJItQGpga0QgdR5LkPQIcG4jaCkQ0WCcFo
-	t9qQYX8yjTYYpGdj56e0C36z9P82udHQITYbUQwZfdUqamuX+TEes5x1F2rSaSWF9JiUf2FV3+0pl
-	DzPD1D08O+efe4NK+LwO1F/tSDXBteT3036MOd1F9KztVmhsAqnWz6LF8pJClmFmO8KWfyXIhPnpw
-	ibxZ/elZQeGUiYVnMHv7AlVoTtX5ymj80sunkxrfI7GxCIM6FcZG6TaIHezwHFgPe6o93jHcKpGvU
-	xmkBDKBQ==;
+	bh=uRUc7XYzJxwTJgNhDswp7zFUVk2Sg2n1ScP3cFH5+rY=; b=oDqQNfJ/Iz/fcUb6qvl3RZBnOq
+	r5PluRdU6XkfPBjpf36eKBQtnjdQ52FOanZQJFM9qEBYHhy14esKQ55P6NLjIURVYCPWyNw6LhtZN
+	IWYx6/GpctSO151zmoD6nIPrjl6rXOPgFUVxQYwlwD2SyzV82kr3nzoF71EvXisprAjdshTMlcyWz
+	TBxG9r5PeGYxO6Bd6CIeXNxbc0fex9CLWNRekNBScHMTDtDF1YbPAYFO998TQkCUAnKWNfas4dXWV
+	tWp3HC/onGxFB7yS8WUuAkrZ7GyuCJnPYkawG1ht3Qn6jW/eDgwQBwQA0eZmLDKv2DT7LGD9OT/5w
+	nE9uyLhQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tfY-00041U-2T; Mon, 16 Sep 2019 16:16:04 +0000
-Received: from mail-pl1-x643.google.com ([2607:f8b0:4864:20::643])
+	id 1i9tfw-0004Kv-4R; Mon, 16 Sep 2019 16:16:28 +0000
+Received: from mail-pg1-x543.google.com ([2607:f8b0:4864:20::543])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9teh-0003W7-EK
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:13 +0000
-Received: by mail-pl1-x643.google.com with SMTP id t11so116563plo.0
+ id 1i9tem-0003bc-0o
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 16:15:17 +0000
+Received: by mail-pg1-x543.google.com with SMTP id n190so293487pgn.0
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 09:15:11 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:15 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
  h=from:to:cc:subject:date:message-id:in-reply-to:references;
- bh=a/DBFL5pnFxmW7r8pfJ654oUFkPKTYmOJJb8EXbuSt0=;
- b=sYJTtMzaFQwnHrfE0d9bJhN5rJL+SO2sue5FpfF9LXaYmhdpitHfR1Mc6XMxU1Oth+
- JQAA2gJlVkMivG0TmPvinQOqimNim8N/21fhacTw0RdNDLtxPidi7L9R2U43pM6SLVaQ
- ua24bR6jkaW/OpEH84OUVaTt5s3KO3zFAZPV1earH/37b07DVZ/iKbah7H78F9ruW6dn
- BckDQs5uhXLjdbUq/WfcMG7QausOcDfiKMi/tFmNhYQCx/ddbG/CDzBXCEc2cH0dGrc5
- KFx+mQF1bn5iJK9R3+e439dl8iIWf/BRAUXaj7JeJ9DvsUXa1qV0jRfO6F4Q3IyBRncZ
- dtLQ==
+ bh=RtuYujDQbGoE383NaOTW8yNTTYMDfvcRIoYrv77xBo0=;
+ b=Hj6QoIN6KZ6+DhiumykPCijqElZfOah/NzphYnS7V98SDfdJQfhOakb9NSOsbAz7ME
+ 9PmGP929SZ56sAB1fQ17iyymu1/w7wo0r8yJfKfzQwLPCelP2u+rV01jXg++B4kEGtVX
+ nL9TljiPJiRSyfMXWTl1ZHFj45Z+zy1ID9LsuXayael/sHHLjGIw4w8hOycBpZ74Wtb2
+ ga/10z3Bz5tHOmdC+oMWG3LFl8/UN24QIAemzNhxmSY01cbgc1ReYhF0dv9ykFP89zxD
+ YHzeCDmMnOkqD57pJsZKTPpr3ye2+7dKPkFDkPnj8LiApv6XvKqiujop9pXqJbeWGip1
+ SvKA==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references;
- bh=a/DBFL5pnFxmW7r8pfJ654oUFkPKTYmOJJb8EXbuSt0=;
- b=thsM/DW/XHHhKB8qIAuhgTrPMELeKOIDWxsmY9o/NHTfN+VSbGXw/NAK5pzkCrWQFc
- Gmg8Xlzi561YDxlaBV4Pp3SCJBAlWh6Vi8FtVUnXgkkai2YlWiLsSeRIxaFsNn4wKOWB
- BPHd4Iqw2V1Q3kYSA4DBNizopggNA8mXH1A11M8h2WWt0Md/96vMJNIBpyQ0Y3xqCUne
- WiBFt+YKvupSJQVPNAz7jXnag8m5vjcdSIOpQls30J6xhFQDRrOrCJshDh2zQJJnyHX5
- HumY3HOKvP4CDwublVJWCi8s1qDADFVITGoqFFCknnGJw93BBPnnSD3m+SmGQXpwU03y
- N8Gw==
-X-Gm-Message-State: APjAAAWboYpIwy+FiJKGXF7AJKAOM7fqd0WSzLxTAdInq/20PvU9KjZJ
- 1m3jlCa33lixRWfw4Mg3M+jD
-X-Google-Smtp-Source: APXvYqwai5hRsIjr6Sio2D633cSZ/kBiyCycKeMWSitnZm0JKjOMYo+90556s/ze4/hobdpZhKTxwA==
-X-Received: by 2002:a17:902:7296:: with SMTP id
- d22mr607247pll.41.1568650510819; 
- Mon, 16 Sep 2019 09:15:10 -0700 (PDT)
+ bh=RtuYujDQbGoE383NaOTW8yNTTYMDfvcRIoYrv77xBo0=;
+ b=NN0ifEwT7RnTMQSxjqGaX7Yvd6mO1tncID3T1Alj+Svw30ysDL/NU2KTCrLPqey73f
+ qFsZhJawkSL3Y9aAh4xqSSZeerYI+OsyC2L80G0eP+h1x/2AQws452Kt61QzT0thDStM
+ GS8fbSKnEsGGo9r0k37nMrEj5TfN+Hmx3l+y1vJX25gPIS7wiKz8KMNiEMH62h78N48K
+ 8Eafh99dizFhmwlbPbBxugriAExoacMcHxZuK9btHcmlXHyaKFXSNnPOo8DEViW0BzR6
+ FzFZ0bVeFt7Nj73+mzYUnyo/88KcGNKce7H/hEjEshOaw3jZ8vsMyidYc67c7WG9k1u9
+ A2BA==
+X-Gm-Message-State: APjAAAUyhsBx7IH+Gb54N6AN5SqcU3QsTI+cP0EMFoQU4XLXhGtYUnlg
+ 1B+LVbQrTGQnoC1amfCmFORT
+X-Google-Smtp-Source: APXvYqykGw2se+1YdEpdnu59uhuq+FCf/teB61ZdN3oz9apYHya31RXFapv1QdA8jAI3JZ65NhNx/g==
+X-Received: by 2002:a63:10a:: with SMTP id 10mr57256448pgb.281.1568650515328; 
+ Mon, 16 Sep 2019 09:15:15 -0700 (PDT)
 Received: from localhost.localdomain ([2409:4072:90b:91ce:94c2:ef93:5bd:cfe8])
  by smtp.gmail.com with ESMTPSA id
- h66sm614134pjb.0.2019.09.16.09.15.06
+ h66sm614134pjb.0.2019.09.16.09.15.11
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 09:15:10 -0700 (PDT)
+ Mon, 16 Sep 2019 09:15:14 -0700 (PDT)
 From: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 To: sboyd@kernel.org,
 	mturquette@baylibre.com,
 	robh+dt@kernel.org
-Subject: [PATCH v5 2/8] clk: Warn if clk_init_data is not zero initialized
-Date: Mon, 16 Sep 2019 21:44:41 +0530
-Message-Id: <20190916161447.32715-3-manivannan.sadhasivam@linaro.org>
+Subject: [PATCH v5 3/8] clk: Add clk_hw_unregister_composite helper function
+ definition
+Date: Mon, 16 Sep 2019 21:44:42 +0530
+Message-Id: <20190916161447.32715-4-manivannan.sadhasivam@linaro.org>
 X-Mailer: git-send-email 2.17.1
 In-Reply-To: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
 References: <20190916161447.32715-1-manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_091511_886682_F82D7C0B 
-X-CRM114-Status: GOOD (  11.98  )
+X-CRM114-CacheID: sfid-20190916_091516_100005_60A9023B 
+X-CRM114-Status: UNSURE (   9.64  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:643 listed in]
+ no trust [2607:f8b0:4864:20:0:0:0:543 listed in]
  [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
@@ -110,37 +111,33 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-The new implementation for determining parent map uses multiple ways
-to pass parent info. The order in which it gets processed depends on
-the first available member. Hence, it is necessary to zero init the
-clk_init_data struct so that the expected member gets processed correctly.
-So, add a warning if multiple clk_init_data members are available during
-clk registration.
+This function has been delcared but not defined anywhere. Hence, this
+commit adds definition for it.
 
 Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 ---
- drivers/clk/clk.c | 8 ++++++++
- 1 file changed, 8 insertions(+)
+ drivers/clk/clk-composite.c | 11 +++++++++++
+ 1 file changed, 11 insertions(+)
 
-diff --git a/drivers/clk/clk.c b/drivers/clk/clk.c
-index c0990703ce54..7d6d6984c979 100644
---- a/drivers/clk/clk.c
-+++ b/drivers/clk/clk.c
-@@ -3497,6 +3497,14 @@ static int clk_core_populate_parent_map(struct clk_core *core)
- 	if (!num_parents)
- 		return 0;
- 
-+	/*
-+	 * Check for non-zero initialized clk_init_data struct. This is
-+	 * required because, we only require one of the (parent_names/
-+	 * parent_data/parent_hws) to be set at a time. Otherwise, the
-+	 * current code would use first available member.
-+	 */
-+	WARN_ON((parent_names && parent_data) || (parent_names && parent_hws));
+diff --git a/drivers/clk/clk-composite.c b/drivers/clk/clk-composite.c
+index 4d579f9d20f6..ccca58a6d271 100644
+--- a/drivers/clk/clk-composite.c
++++ b/drivers/clk/clk-composite.c
+@@ -344,3 +344,14 @@ void clk_unregister_composite(struct clk *clk)
+ 	clk_unregister(clk);
+ 	kfree(composite);
+ }
 +
- 	/*
- 	 * Avoid unnecessary string look-ups of clk_core's possible parents by
- 	 * having a cache of names/clk_hw pointers to clk_core pointers.
++void clk_hw_unregister_composite(struct clk_hw *hw)
++{
++	struct clk_composite *composite;
++
++	composite = to_clk_composite(hw);
++
++	clk_hw_unregister(hw);
++	kfree(composite);
++}
++EXPORT_SYMBOL_GPL(clk_hw_unregister_composite);
 -- 
 2.17.1
 
