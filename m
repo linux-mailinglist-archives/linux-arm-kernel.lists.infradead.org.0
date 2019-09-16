@@ -2,59 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7CAB9B349B
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 08:09:03 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C2D48B34B6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 08:30:21 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=ufxrtS1tGLMDwpJyeECswxqdomoP4yWl6ERPxfpUC/0=; b=FBK
-	qNHsxcXkb8O+awao7lwHsnrgr+2asE+rfNUIo5FTOPXYEU192H1PvZAHNiOOo9pnPUgjMDiJio+Yl
-	ZVda33ObXroqjcSCffeFMbp5qA4KTgNjpRFegEpggHwIjD0oaQNGmFRxMc+T4Cv/GhGrh1RhiIRBz
-	o9re0akCvde1T6sQuHnHdx0o0XF/xmZlfUpvnqEm6fv+WpHlzdaNRcsWfrz39Dw06M8p7GePel0Ff
-	8jWLu0O6oP2qLFunvJ1LO3cSZyZQTDbRvZ5/SO4xEAqu5QgO89y4UY9f9+30CdXNRznM6D6YPOoYT
-	Z/ZHPxDVwyd9vUmrnRnHdh00hDo7v6g==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
+	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=v3mc2jOPxcGi/82clebj66A3CuaWgrkmQCDC2s8kNhE=; b=lAGjfqe4tqstyb
+	EgPTdS9S7DMV7WNlKBI46ORO4NDfh4m98REmhE+ULoQHKfuWdZMaMvPYBUd84n4E0rAwXoCaPetTl
+	zI1OPIF2UfV9lNRFgTLtCM/kgTGCHoq4buJ09nt2Mh08v+bzzaOYIPWMLIjXbWC61cDm3CG3b24OV
+	IsLEuzVOtLnW0Rtdac8RALWlz3PjRV9vKoZsU3bJim7pFf2mFNSux1fnZN9j0vtI5ag2tFep8noF7
+	0m/b7yS2LyBb1QaWVl1A79e9UuSeBn3e40+6DN4A4CsgET3WvrJhHFhUgZxnRGwJyHuysigQsZtIl
+	IlUNLsLV8YCBtVlqmHNA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9kC4-0000cz-Iv; Mon, 16 Sep 2019 06:09:00 +0000
-Received: from inva020.nxp.com ([92.121.34.13])
+	id 1i9kWf-0000c5-Js; Mon, 16 Sep 2019 06:30:18 +0000
+Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9kBr-0000bi-SG
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 06:08:49 +0000
-Received: from inva020.nxp.com (localhost [127.0.0.1])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 384761A053A;
- Mon, 16 Sep 2019 08:08:43 +0200 (CEST)
-Received: from invc005.ap-rdc01.nxp.com (invc005.ap-rdc01.nxp.com
- [165.114.16.14])
- by inva020.eu-rdc02.nxp.com (Postfix) with ESMTP id 254F11A0532;
- Mon, 16 Sep 2019 08:08:38 +0200 (CEST)
-Received: from titan.ap.freescale.net (TITAN.ap.freescale.net [10.192.208.233])
- by invc005.ap-rdc01.nxp.com (Postfix) with ESMTP id A02CD402BF;
- Mon, 16 Sep 2019 14:08:31 +0800 (SGT)
-From: Hui Song <hui.song_1@nxp.com>
-To: Shawn Guo <shawnguo@kernel.org>, Li Yang <leoyang.li@nxp.com>,
- Rob Herring <robh+dt@kernel.org>, Mark Rutland <mark.rutland@arm.com>,
- Linus Walleij <linus.walleij@linaro.org>,
- Bartosz Golaszewski <bgolaszewski@baylibre.com>
-Subject: [PATCH v5] gpio/mpc8xxx: change irq handler from chained to normal
-Date: Mon, 16 Sep 2019 13:58:17 +0800
-Message-Id: <20190916055817.43425-1-hui.song_1@nxp.com>
-X-Mailer: git-send-email 2.9.5
-X-Virus-Scanned: ClamAV using ClamSMTP
+ id 1i9kWP-0008S8-M1; Mon, 16 Sep 2019 06:30:03 +0000
+X-UUID: 68082b7bc9aa4a5e91a2bb204e6d46d4-20190915
+X-UUID: 68082b7bc9aa4a5e91a2bb204e6d46d4-20190915
+Received: from mtkcas66.mediatek.inc [(172.29.193.44)] by mailgw01.mediatek.com
+ (envelope-from <stanley.chu@mediatek.com>)
+ (musrelay.mediatek.com ESMTP with TLS)
+ with ESMTP id 415744337; Sun, 15 Sep 2019 22:29:56 -0800
+Received: from MTKMBS02N2.mediatek.inc (172.21.101.101) by
+ MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Sun, 15 Sep 2019 23:29:54 -0700
+Received: from MTKCAS06.mediatek.inc (172.21.101.30) by
+ mtkmbs02n2.mediatek.inc (172.21.101.101) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Sep 2019 14:29:52 +0800
+Received: from [172.21.77.33] (172.21.77.33) by MTKCAS06.mediatek.inc
+ (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
+ Transport; Mon, 16 Sep 2019 14:29:52 +0800
+Message-ID: <1568615392.16730.17.camel@mtkswgap22>
+Subject: Re: [PATCH v2 3/3] scsi: ufs-mediatek: enable auto suspend capability
+From: Stanley Chu <stanley.chu@mediatek.com>
+To: Bart Van Assche <bvanassche@acm.org>
+Date: Mon, 16 Sep 2019 14:29:52 +0800
+In-Reply-To: <160452c7-c53c-155c-49a9-4365166032a8@acm.org>
+References: <1568270135-32442-1-git-send-email-stanley.chu@mediatek.com>
+ <1568270135-32442-4-git-send-email-stanley.chu@mediatek.com>
+ <160452c7-c53c-155c-49a9-4365166032a8@acm.org>
+X-Mailer: Evolution 3.2.3-0ubuntu6 
+MIME-Version: 1.0
+X-TM-SNTS-SMTP: 75057D6A14387FD4D93A3473C52F51AE3FD1B009813949CF92BCA4F9F378EA592000:8
+X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190915_230848_193355_09C1BBC9 
-X-CRM114-Status: GOOD (  12.00  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190915_233001_736854_6BA55BF4 
+X-CRM114-Status: UNSURE (   8.11  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [92.121.34.13 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [216.200.240.184 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -66,106 +76,41 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: devicetree@vger.kernel.org, Song Hui <hui.song_1@nxp.com>,
- linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- linux-gpio@vger.kernel.org
-MIME-Version: 1.0
+Cc: sthumma@codeaurora.org, linux-scsi@vger.kernel.org,
+ martin.petersen@oracle.com, marc.w.gonzalez@free.fr,
+ vivek.gautam@codeaurora.org, subhashj@codeaurora.org, jejb@linux.ibm.com,
+ chun-hung.wu@mediatek.com, kuohong.wang@mediatek.com, evgreen@chromium.org,
+ avri.altman@wdc.com, linux-mediatek@lists.infradead.org,
+ peter.wang@mediatek.com, alim.akhtar@samsung.com, andy.teng@mediatek.com,
+ matthias.bgg@gmail.com, pedrom.sousa@synopsys.com,
+ linux-arm-kernel@lists.infradead.org, beanhuo@micron.com
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Song Hui <hui.song_1@nxp.com>
+Hi Bart,
 
-More than one gpio controllers can share one interrupt, change the
-driver to request shared irq.
 
-Signed-off-by: Laurentiu Tudor <Laurentiu.Tudor@nxp.com>
-Signed-off-by: Alex Marginean <alexandru.marginean@nxp.com>
-Signed-off-by: Song Hui <hui.song_1@nxp.com>
----
-Changes in v5:
-	- add traverse every bit function.
-Changes in v4:
-	- convert 'pr_err' to 'dev_err'.
-Changes in v3:
-	- update the patch description.
-Changes in v2:
-	- delete the compatible of ls1088a.
- drivers/gpio/gpio-mpc8xxx.c | 30 +++++++++++++++++++-----------
- 1 file changed, 19 insertions(+), 11 deletions(-)
+> > @@ -147,6 +152,8 @@ static int ufs_mtk_init(struct ufs_hba *hba)
+> >  	if (err)
+> >  		goto out_variant_clear;
+> >  
+> > +	ufs_mtk_set_caps(hba);
+> > +
+> >  	/*
+> >  	 * ufshcd_vops_init() is invoked after
+> >  	 * ufshcd_setup_clock(true) in ufshcd_hba_init() thus
+> 
+> Please inline the ufs_mtk_set_caps() function. Introducing single line
+> functions like is done in this patch doesn't improve readability.
+> 
 
-diff --git a/drivers/gpio/gpio-mpc8xxx.c b/drivers/gpio/gpio-mpc8xxx.c
-index 16a47de..3a06ca9 100644
---- a/drivers/gpio/gpio-mpc8xxx.c
-+++ b/drivers/gpio/gpio-mpc8xxx.c
-@@ -22,6 +22,7 @@
- #include <linux/irq.h>
- #include <linux/gpio/driver.h>
- #include <linux/bitops.h>
-+#include <linux/interrupt.h>
- 
- #define MPC8XXX_GPIO_PINS	32
- 
-@@ -127,20 +128,20 @@ static int mpc8xxx_gpio_to_irq(struct gpio_chip *gc, unsigned offset)
- 		return -ENXIO;
- }
- 
--static void mpc8xxx_gpio_irq_cascade(struct irq_desc *desc)
-+static irqreturn_t mpc8xxx_gpio_irq_cascade(int irq, void *data)
- {
--	struct mpc8xxx_gpio_chip *mpc8xxx_gc = irq_desc_get_handler_data(desc);
--	struct irq_chip *chip = irq_desc_get_chip(desc);
-+	struct mpc8xxx_gpio_chip *mpc8xxx_gc = (struct mpc8xxx_gpio_chip *)data;
- 	struct gpio_chip *gc = &mpc8xxx_gc->gc;
- 	unsigned int mask;
-+	int i;
- 
- 	mask = gc->read_reg(mpc8xxx_gc->regs + GPIO_IER)
- 		& gc->read_reg(mpc8xxx_gc->regs + GPIO_IMR);
--	if (mask)
-+	for_each_set_bit(i, &mask, 32)
- 		generic_handle_irq(irq_linear_revmap(mpc8xxx_gc->irq,
--						     32 - ffs(mask)));
--	if (chip->irq_eoi)
--		chip->irq_eoi(&desc->irq_data);
-+						     31 - i));
-+
-+	return IRQ_HANDLED;
- }
- 
- static void mpc8xxx_irq_unmask(struct irq_data *d)
-@@ -388,8 +389,8 @@ static int mpc8xxx_probe(struct platform_device *pdev)
- 
- 	ret = gpiochip_add_data(gc, mpc8xxx_gc);
- 	if (ret) {
--		pr_err("%pOF: GPIO chip registration failed with status %d\n",
--		       np, ret);
-+		dev_err(&pdev->dev, "%pOF: GPIO chip registration failed with status %d\n",
-+			np, ret);
- 		goto err;
- 	}
- 
-@@ -409,8 +410,15 @@ static int mpc8xxx_probe(struct platform_device *pdev)
- 	if (devtype->gpio_dir_in_init)
- 		devtype->gpio_dir_in_init(gc);
- 
--	irq_set_chained_handler_and_data(mpc8xxx_gc->irqn,
--					 mpc8xxx_gpio_irq_cascade, mpc8xxx_gc);
-+	ret = request_irq(mpc8xxx_gc->irqn, mpc8xxx_gpio_irq_cascade,
-+			  IRQF_NO_THREAD | IRQF_SHARED, "gpio-cascade",
-+			  mpc8xxx_gc);
-+	if (ret) {
-+		dev_err(&pdev->dev, "%s: failed to request_irq(%d), ret = %d\n",
-+			np->full_name, mpc8xxx_gc->irqn, ret);
-+		goto err;
-+	}
-+
- 	return 0;
- err:
- 	iounmap(mpc8xxx_gc->regs);
--- 
-2.9.5
+OK! Will be fixed in next version.
+
+Thanks,
+Stanley
+
 
 
 _______________________________________________
