@@ -2,75 +2,75 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id E64BCB3ABB
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:52:35 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id D9FA1B3AC6
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:53:28 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-Id:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=cPY+k7lmr/lY4GSXCvSIj0Mvq45e3uz4c9sA0usfI9g=; b=SCEUBTR8HJvlVv
-	CQ7QxF1OsL8P9fksofQ2Erk1dKN9K1tfcwtHekGIBclrqKvr/IZ+oIZP72Cvqxf28tYilCwZi+urn
-	RVnWKsiRAIJCnnAC1OA7V62yyySRi+eGAYq+3jfBWSnaeGYEUHMaoXv+tqcCGFUjpOJuWZxkKinOe
-	TgxuTOL7n0CjQeaYSkMxSpoDnjNMwPW9zhreh4AONHVw3udyVJYfMtVS8XgElUL4B8pQhPb2MGZiZ
-	R5m0fSlV+iwGtDYmPkM0cvPT6Zx6hmhl1UePyB+Fwm6Su/zhZAhJyXUZ7qLwihNnt6oz6QylOv7vv
-	rEQHk5Dg1WowsKWtZNVA==;
+	List-Owner; bh=3fcVdNLYQkp3F5e9Ul3TU0kiGxFqKc6B6DbOpqC83DU=; b=SPxT6GtiJY/J8w
+	1hS9US/p91thAWS5PO1iyaPI0YEF4rE/J5kNP/jdS1TDKt+Czm16Gxbhlsx4BBSmJcOL10JHP+RL1
+	Mp2d0nCCONwroAzJArX1P2XAwBJhIM12BtnbcrQf0pb4i2rcSByd60JeQXwfi6IsL8FcYrwv9quQz
+	+xQts+HWS0JlwPgfH2VNsQbs6dIZ3sF5o9JBpjoJpBVKJdnq9B7uGrsETwDCaYwc2bqqryNBZ49dl
+	i4sogG4+UGydAnZUXtd7PJDnbSXvC5Nqz6t8Uvhp1dbg+ahbD9zAw3q3llExmhygTIdoNAZsPqrE7
+	Qyy0ntLCGzNKsdfjF/Hw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9qUT-0003ns-Sf; Mon, 16 Sep 2019 12:52:26 +0000
+	id 1i9qVS-0004aM-VV; Mon, 16 Sep 2019 12:53:27 +0000
 Received: from mail-wr1-x441.google.com ([2a00:1450:4864:20::441])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9qSc-0002oy-6V
+ id 1i9qSd-0002q9-EH
  for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 12:50:33 +0000
-Received: by mail-wr1-x441.google.com with SMTP id q14so38713599wrm.9
+Received: by mail-wr1-x441.google.com with SMTP id r3so8604359wrj.6
  for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 05:50:30 -0700 (PDT)
+ Mon, 16 Sep 2019 05:50:31 -0700 (PDT)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=baylibre-com.20150623.gappssmtp.com; s=20150623;
  h=from:to:cc:subject:date:message-id:in-reply-to:references
  :mime-version:content-transfer-encoding;
- bh=v37YRUaZlEabq7YVJ6vC/oIxKBbvZ5ttPDUZlrXerbs=;
- b=FwV6HXM0xB9Sh5RDBNWs3vbJHkS4oiOfhW7BDcNZBH7xC46IXYZrUs/HdYuFS1JlL9
- 1bJL1V5fydViQpgtBBuhmSylQakstrzh4srNFkHZZpfS+/2HTPO16PTOzGVUpKOta+Ga
- dA036vTgnAfozK02GiTzbDHqg+/igLznRXI1ocDxmXlJV2L9d21hdCtwPeAMhrhQSRYP
- f1GxLOwj09j+Dw1oVbvk59VzqVo5LbQZmBP8SKKLLhEQNo3475PM6Z1GZ1b1xIc9VxQ8
- wcFbdA0BQ5Uo9Cd8vVwewOY1LDEfiJXkWdXa0T37QX22JsuqbOFbMz8gGodVvM98HZV8
- qHlw==
+ bh=+4tUhg/FYSoCjPdeGmyIF23gJp8e0cOaQveyAhmml58=;
+ b=biQL4vPtAO/eRyWG2pyM/1VRI6KGVgdG5RnuFyTEFhuLwWJ0kLQemGQgyafw5Yb0gJ
+ aeb3+1ZecPorUyn8KoLfh4DVYmhqryNYpNytuFGtbGL5IkmAVY87xaB8jOFJRRRPOtjc
+ 1d5beDepFLUIB8is3UjvUbQLHyfvb5KztvPpqTVVRw2GOaOugDnrSYHhYMBkJoSnTQBl
+ 4pjLcbCERC5yomdTYxsqApKyrp7RAZjbWTigH2zqTGkgV+VBlqZZhDo2BJRyK8tdtqTr
+ D6nW5MmlWgGz59KjXp9S80X7hDeXR/LVifjFQ1vGMdUTiFgEjCF0fGNl7Tt3STp8oVDV
+ d8vg==
 X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
  d=1e100.net; s=20161025;
  h=x-gm-message-state:from:to:cc:subject:date:message-id:in-reply-to
  :references:mime-version:content-transfer-encoding;
- bh=v37YRUaZlEabq7YVJ6vC/oIxKBbvZ5ttPDUZlrXerbs=;
- b=OPog4T/xnZ1LkMMbrLbdlI8X7b2InvZzzDOYz8jijUzLLLoADvcE7MJUdt/uhYnbEr
- KqLqArZFPw2rpzw7PXYTt+2NNPqxA4/woVaRezCPGxPthrixyHSYTct5n7KvL3BlRdqS
- TakIO7lnj533itHXPaL8uo7Fj/pjENIVbjQyTxkkO1bfQFkd964TfSK5mY8/TQWQuiCo
- /c1iSR7J0JFPiXt63mZbWLS3TEyurq70+w7Wiu69aCFNYd8wJifye9j67A9z54eW2B0B
- EH0H6eLxl1zRCexnfGmMQtVmevfw/wdDsgEZlDFFrd9dMsfBmhVh7ub+y+8l+ymF/Oeb
- S3aw==
-X-Gm-Message-State: APjAAAXg8FgTleaGNyHYw92eqi+K5rInqni2v9pwhS/VBfiVcy2fy3Uh
- MkUc+WcyzcNdvrrDr//AdemvX6mpLDeXfA==
-X-Google-Smtp-Source: APXvYqxqo0DsebMgSsfjoDkyv3+h2AlrRYOajCRyv1V+zM8U63v4xh8a32dBZWvtCncxQqLL5AOSzQ==
-X-Received: by 2002:a5d:668d:: with SMTP id l13mr8313545wru.279.1568638228805; 
- Mon, 16 Sep 2019 05:50:28 -0700 (PDT)
+ bh=+4tUhg/FYSoCjPdeGmyIF23gJp8e0cOaQveyAhmml58=;
+ b=LEVoPoC5HBq5kHc9hLwPOxjtEMQ4H3V12RNfDwBS6lLrY2eYu0xz52NXJIc4jD2Fu3
+ ApYq4MYro938CZgfMkeIp0zx+BhWRKyaNLqOku/L6BWh7nV1W/xaoBBL6vlqjQa6tbAL
+ YzzzqvJ896Agwp5isJlhHLWYZRfXu8qNElXQI8neqUNMW67V2H5zGBbVgmku3rU7scW5
+ lwPKE5ZfYIX8NakGp3nr/nQ2uBuv0ZyJ5hSLdIE/5pHL/wZjaZRzDYeXk/HoL0yXlUdh
+ 5QI8VDJ91BuxiQWYmcp5JDsg9GEecRYpw5JlfvmCrmk8Vy86LPFNIgnv9R0y6r46lNWv
+ iriQ==
+X-Gm-Message-State: APjAAAUouhjX6TGoqhviNQYqGTMjNMfgd2RYVFHUjgdEs1xP5Qj3sDgj
+ AWucA0FQCIyqKFTMevw2vritlg==
+X-Google-Smtp-Source: APXvYqy1hNq5WUJY3HgMK8Ka9tQQvMhhGJR9MlmF5V00NBgLlsE0SBGYjU7dlURi2Bms3zgjzUlcIQ==
+X-Received: by 2002:adf:e48f:: with SMTP id i15mr20030170wrm.26.1568638230051; 
+ Mon, 16 Sep 2019 05:50:30 -0700 (PDT)
 Received: from bender.baylibre.local
  (lmontsouris-657-1-212-31.w90-63.abo.wanadoo.fr. [90.63.244.31])
- by smtp.gmail.com with ESMTPSA id o12sm15109960wrm.23.2019.09.16.05.50.27
+ by smtp.gmail.com with ESMTPSA id o12sm15109960wrm.23.2019.09.16.05.50.28
  (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 05:50:28 -0700 (PDT)
+ Mon, 16 Sep 2019 05:50:29 -0700 (PDT)
 From: Neil Armstrong <narmstrong@baylibre.com>
 To: khilman@baylibre.com, lorenzo.pieralisi@arm.com, kishon@ti.com,
  bhelgaas@google.com, andrew.murray@arm.com
-Subject: [PATCH v2 4/6] phy: meson-g12a-usb3-pcie: Add support for PCIe mode
-Date: Mon, 16 Sep 2019 14:50:20 +0200
-Message-Id: <20190916125022.10754-5-narmstrong@baylibre.com>
+Subject: [PATCH v2 5/6] arm64: dts: meson-g12a: Add PCIe node
+Date: Mon, 16 Sep 2019 14:50:21 +0200
+Message-Id: <20190916125022.10754-6-narmstrong@baylibre.com>
 X-Mailer: git-send-email 2.22.0
 In-Reply-To: <20190916125022.10754-1-narmstrong@baylibre.com>
 References: <20190916125022.10754-1-narmstrong@baylibre.com>
 MIME-Version: 1.0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_055030_381137_75A14BE5 
-X-CRM114-Status: GOOD (  15.66  )
+X-CRM114-CacheID: sfid-20190916_055031_480643_615F2811 
+X-CRM114-Status: GOOD (  11.41  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -104,137 +104,78 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-This adds extended PCIe PHY functions for the Amlogic G12A
-USB3+PCIE Combo PHY to support reset, power_on and power_off for
-PCIe exclusively.
+This adds the Amlogic G12A PCI Express controller node, also
+using the USB3+PCIe Combo PHY.
 
-With these callbacks, we can handle all the needed operations of the
-Amlogic PCIe controller driver.
+The PHY mode selection is static, thus the USB3+PCIe Combo PHY
+phandle would need to be removed from the USB control node if the
+shared differential lines are used for PCIe instead of USB3.
 
 Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
 ---
- .../phy/amlogic/phy-meson-g12a-usb3-pcie.c    | 70 ++++++++++++++++---
- 1 file changed, 61 insertions(+), 9 deletions(-)
+ .../boot/dts/amlogic/meson-g12-common.dtsi    | 33 +++++++++++++++++++
+ arch/arm64/boot/dts/amlogic/meson-sm1.dtsi    |  4 +++
+ 2 files changed, 37 insertions(+)
 
-diff --git a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-index ac322d643c7a..08e322789e59 100644
---- a/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-+++ b/drivers/phy/amlogic/phy-meson-g12a-usb3-pcie.c
-@@ -50,6 +50,8 @@
- 	#define PHY_R5_PHY_CR_ACK				BIT(16)
- 	#define PHY_R5_PHY_BS_OUT				BIT(17)
+diff --git a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+index 852cf9cf121b..7330dc37b7a6 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-g12-common.dtsi
+@@ -95,6 +95,39 @@
+ 		#size-cells = <2>;
+ 		ranges;
  
-+#define PCIE_RESET_DELAY					500
++		pcie: pcie@fc000000 {
++			compatible = "amlogic,g12a-pcie", "snps,dw-pcie";
++			reg = <0x0 0xfc000000 0x0 0x400000
++			       0x0 0xff648000 0x0 0x2000
++			       0x0 0xfc400000 0x0 0x200000>;
++			reg-names = "elbi", "cfg", "config";
++			interrupts = <GIC_SPI 221 IRQ_TYPE_LEVEL_HIGH>;
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0>;
++			interrupt-map = <0 0 0 0 &gic GIC_SPI 223 IRQ_TYPE_LEVEL_HIGH>;
++			bus-range = <0x0 0xff>;
++			#address-cells = <3>;
++			#size-cells = <2>;
++			device_type = "pci";
++			ranges = <0x81000000 0 0 0x0 0xfc600000 0 0x00100000
++				  0x82000000 0 0xfc700000 0x0 0xfc700000 0 0x1900000>;
 +
- struct phy_g12a_usb3_pcie_priv {
- 	struct regmap		*regmap;
- 	struct regmap		*regmap_cr;
-@@ -196,6 +198,10 @@ static int phy_g12a_usb3_init(struct phy *phy)
- 	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
- 	int data, ret;
- 
-+	ret = reset_control_reset(priv->reset);
-+	if (ret)
-+		return ret;
++			clocks = <&clkc CLKID_PCIE_PHY
++				  &clkc CLKID_PCIE_COMB
++				  &clkc CLKID_PCIE_PLL>;
++			clock-names = "general",
++				      "pclk",
++				      "port";
++			resets = <&reset RESET_PCIE_CTRL_A>,
++				 <&reset RESET_PCIE_APB>;
++			reset-names = "port",
++				      "apb";
++			num-lanes = <1>;
++			phys = <&usb3_pcie_phy PHY_TYPE_PCIE>;
++			phy-names = "pcie";
++			status = "disabled";
++		};
 +
- 	/* Switch PHY to USB3 */
- 	/* TODO figure out how to handle when PCIe was set in the bootloader */
- 	regmap_update_bits(priv->regmap, PHY_R0,
-@@ -272,24 +278,64 @@ static int phy_g12a_usb3_init(struct phy *phy)
- 	return 0;
- }
- 
--static int phy_g12a_usb3_pcie_init(struct phy *phy)
-+static int phy_g12a_usb3_pcie_power_on(struct phy *phy)
-+{
-+	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-+
-+	if (priv->mode == PHY_TYPE_USB3)
-+		return 0;
-+
-+	regmap_update_bits(priv->regmap, PHY_R0,
-+			   PHY_R0_PCIE_POWER_STATE,
-+			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_usb3_pcie_power_off(struct phy *phy)
-+{
-+	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-+
-+	if (priv->mode == PHY_TYPE_USB3)
-+		return 0;
-+
-+	regmap_update_bits(priv->regmap, PHY_R0,
-+			   PHY_R0_PCIE_POWER_STATE,
-+			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1d));
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_usb3_pcie_reset(struct phy *phy)
- {
- 	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
- 	int ret;
- 
--	ret = reset_control_reset(priv->reset);
-+	if (priv->mode == PHY_TYPE_USB3)
-+		return 0;
-+
-+	ret = reset_control_assert(priv->reset);
- 	if (ret)
- 		return ret;
- 
-+	udelay(PCIE_RESET_DELAY);
-+
-+	ret = reset_control_deassert(priv->reset);
-+	if (ret)
-+		return ret;
-+
-+	udelay(PCIE_RESET_DELAY);
-+
-+	return 0;
-+}
-+
-+static int phy_g12a_usb3_pcie_init(struct phy *phy)
-+{
-+	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
-+
- 	if (priv->mode == PHY_TYPE_USB3)
- 		return phy_g12a_usb3_init(phy);
- 
--	/* Power UP PCIE */
--	/* TODO figure out when the bootloader has set USB3 mode before */
--	regmap_update_bits(priv->regmap, PHY_R0,
--			   PHY_R0_PCIE_POWER_STATE,
--			   FIELD_PREP(PHY_R0_PCIE_POWER_STATE, 0x1c));
--
- 	return 0;
- }
- 
-@@ -297,7 +343,10 @@ static int phy_g12a_usb3_pcie_exit(struct phy *phy)
- {
- 	struct phy_g12a_usb3_pcie_priv *priv = phy_get_drvdata(phy);
- 
--	return reset_control_reset(priv->reset);
-+	if (priv->mode == PHY_TYPE_USB3)
-+		return reset_control_reset(priv->reset);
-+
-+	return 0;
- }
- 
- static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
-@@ -326,6 +375,9 @@ static struct phy *phy_g12a_usb3_pcie_xlate(struct device *dev,
- static const struct phy_ops phy_g12a_usb3_pcie_ops = {
- 	.init		= phy_g12a_usb3_pcie_init,
- 	.exit		= phy_g12a_usb3_pcie_exit,
-+	.power_on	= phy_g12a_usb3_pcie_power_on,
-+	.power_off	= phy_g12a_usb3_pcie_power_off,
-+	.reset		= phy_g12a_usb3_pcie_reset,
- 	.owner		= THIS_MODULE,
+ 		ethmac: ethernet@ff3f0000 {
+ 			compatible = "amlogic,meson-axg-dwmac",
+ 				     "snps,dwmac-3.70a",
+diff --git a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+index 91492819d0d8..ee9ea3c69433 100644
+--- a/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
++++ b/arch/arm64/boot/dts/amlogic/meson-sm1.dtsi
+@@ -135,6 +135,10 @@
+ 	power-domains = <&pwrc PWRC_SM1_ETH_ID>;
  };
  
++&pcie {
++	power-domains = <&pwrc PWRC_SM1_PCIE_ID>;
++};
++
+ &pwrc {
+ 	compatible = "amlogic,meson-sm1-pwrc";
+ };
 -- 
 2.22.0
 
