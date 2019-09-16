@@ -2,61 +2,101 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 80412B3D9F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:27:15 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 3C78BB3DDA
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:44:11 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=Zip7C13DauLlHdkTn4lj9Ph1BpcRLrBgZA5Ks+LlR8s=; b=cUeFk5N5Nq9EAe
-	S3cTb+fLv0XfbZw4sKdSXfEkwRHboRbec+7+e3UQMH/y4J2kqKu6uSkaumHxPGNd6N3h9Tzazr515
-	oNjgBmHTVLZvw+gfUu7ku4phfkVBD3thWlvDbhGqE0kV844YNV6A6jUdWWZ13Apy55v79XvC2ZtTg
-	n9i66D1u4Nv8mQ++xp8aUxkIWfshHwzWcm8XoSEBJHYpX4kllEvcJ5rywHZ2k8qmadc/4MEpnhwe8
-	rHIeZsFi5M70ReUlgJqTS6Krct2AWbU2Wo/Jk+9biuUobiAdFM1Bq/UySQy5++ae8LeGc98+5vy1E
-	baJu6DEIzPWWNUjXr+Vw==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=y2ZBsHP0/9B3+H1GqaYXLmTH4teESIdZZknkHnKW+TM=; b=u7R8P9bklAc52+
+	biscBfmU1ZwGMhTmrOysAqxofmJNKPidRhAAcIrZem/9c2woYP9CVN3C11Tp2IAbxabFZgQYSorM7
+	zO5QdR9WoodnGNMGco+UUYZOJ6HGskQuF6/2k7i3MLYTYbNaVDIvbjhJB9o8eNTVO6IrZyzKSmzxC
+	uOdCz5GeYExIcqJdnfI5JHSMjHNmdnK3JFfC88WR5+Dj5i6tSuvlLQUeiHDDAY+hpKxcW2SugYVZU
+	xAPb8ZetAgNuMNOcEwUn+5svVTjFOmzkbRNrdk9Gcz3dK4uYsOuaCup/0GJGA8eTVJ4q33iX7gy0R
+	dUuA3fflK48bjF8YO9iw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9suH-00083W-9x; Mon, 16 Sep 2019 15:27:13 +0000
-Received: from szxga07-in.huawei.com ([45.249.212.35] helo=huawei.com)
+	id 1i9tAY-0004e0-7r; Mon, 16 Sep 2019 15:44:03 +0000
+Received: from mail-pf1-x443.google.com ([2607:f8b0:4864:20::443])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9stw-00081z-JB
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 15:26:54 +0000
-Received: from DGGEMS401-HUB.china.huawei.com (unknown [172.30.72.59])
- by Forcepoint Email with ESMTP id A8D59719CC43F681D61C;
- Mon, 16 Sep 2019 23:26:32 +0800 (CST)
-Received: from [127.0.0.1] (10.177.251.225) by DGGEMS401-HUB.china.huawei.com
- (10.3.19.201) with Microsoft SMTP Server id 14.3.439.0;
- Mon, 16 Sep 2019 23:26:25 +0800
-Subject: Re: [PATCH] arm64: psci: Use udelay() instead of msleep() to reduce
- waiting time
-To: David Laight <David.Laight@ACULAB.COM>, "catalin.marinas@arm.com"
- <catalin.marinas@arm.com>, "will@kernel.org" <will@kernel.org>
-References: <e4d42bda-72f2-4002-f319-1cbe2bff74d2@huawei.com>
- <18c9fd22d72d4ea1a11e800e8873dd8d@AcuMS.aculab.com>
-From: Yunfeng Ye <yeyunfeng@huawei.com>
-Message-ID: <bf4ab998-00af-1638-0ab4-64f3ea02568c@huawei.com>
-Date: Mon, 16 Sep 2019 23:26:20 +0800
-User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:60.0) Gecko/20100101
- Thunderbird/60.6.1
+ id 1i9tAC-0004dE-Cz
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 15:43:42 +0000
+Received: by mail-pf1-x443.google.com with SMTP id q5so104415pfg.13
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 08:43:40 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=sender:date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=GIKTiyEj4N0Tk5F27SiQQIDS5N8HwkMtaseA3IamvV4=;
+ b=JPd+kuMRkI2hyka5aobdVqsgU5OzRfLwXigswG+wwo96vSE8DXOebxg2e1XNYJZBsf
+ 59bDUGGC7oi5JbEuuWjRdZxbg/K0OZX5XOJicvXosVR3JbCO1p8bdFMoPD/depZ2O1u6
+ NpV4abQFpjO+ytgnmHQuNOVMxs9ELWhv7MmvQFSP6Bo3Lv4x1hnIQuNLKaEROSYCptgq
+ rxSTEfQk9BduAkK+fypO8uzRLfmDuuI4A7e/38REN+iJ4EGnGfThYlQUPCOcCCMGnWvB
+ wyAf2EVEbGUs6Ow33skONvtObFJN83ChEks9cPcEcP3UweycIwBOPhXkAMePm3NuOGJE
+ RFzw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:sender:date:from:to:cc:subject:message-id
+ :references:mime-version:content-disposition:in-reply-to:user-agent;
+ bh=GIKTiyEj4N0Tk5F27SiQQIDS5N8HwkMtaseA3IamvV4=;
+ b=DxboKwi6K0XIFo+pyHI6jMeo2+SWQxcwBW5KZms7nM0mdJGgD0NkmlQGVoY7Ore63X
+ 3KlUJvwJRs6VESpwCs+iG3yEXYw4d70gYxCS7qKTxEQtnnCa/wQdKuDaFE0AbEfq0lgW
+ vIkpCeJ8QoBslbAlCobCn12uyerfark2YCK71GBsJN0AemIzQoqD+LaMcPwyPibsnk76
+ vimrTilX943DcfVJF6JOjAxg9W+2AB0uhC7X32oiQdQjMOGOtQKQ8oYRjmSL+l9psz8P
+ kaNqDVZzx1t6mIf/uUGqFvLc769ZENBCLwX1ip29O9CFAErtWxb2qMnBCqp+j2pf+zDQ
+ 8NmQ==
+X-Gm-Message-State: APjAAAVf7JeAHR5dTmYyyo6QNBK4Yac/J9Bg4npHv7yptvrj4USxIVaz
+ SrxSrzm06n9jTNWgtOo5O4rFdJI6
+X-Google-Smtp-Source: APXvYqweEKNe6aDL2/LMO034hvNQ2czMevJUdslQ+3U9k2rktGL8GiKf/o0Mqi4l2pInj+Kdp1R0KA==
+X-Received: by 2002:a17:90a:b013:: with SMTP id
+ x19mr403482pjq.58.1568648619545; 
+ Mon, 16 Sep 2019 08:43:39 -0700 (PDT)
+Received: from localhost ([2600:1700:e321:62f0:329c:23ff:fee3:9d7c])
+ by smtp.gmail.com with ESMTPSA id p189sm57462133pfp.163.2019.09.16.08.43.37
+ (version=TLS1_2 cipher=ECDHE-RSA-CHACHA20-POLY1305 bits=256/256);
+ Mon, 16 Sep 2019 08:43:38 -0700 (PDT)
+Date: Mon, 16 Sep 2019 08:43:36 -0700
+From: Guenter Roeck <linux@roeck-us.net>
+To: Thierry Reding <thierry.reding@gmail.com>
+Subject: Re: [PATCH 0/6] ARM, arm64: Remove arm_pm_restart()
+Message-ID: <20190916154336.GA6628@roeck-us.net>
+References: <20170130110512.6943-1-thierry.reding@gmail.com>
+ <20190914152544.GA17499@roeck-us.net>
+ <CAK8P3a3G_9EeK-Xp7ZeA0EN7WNzrL7AxoQcNZ8z-oe5NsTYW6g@mail.gmail.com>
+ <056ccf5c-6c6c-090b-6ca1-ab666021db48@roeck-us.net>
+ <20190916134920.GA18267@ulmo>
 MIME-Version: 1.0
-In-Reply-To: <18c9fd22d72d4ea1a11e800e8873dd8d@AcuMS.aculab.com>
-Content-Language: en-US
-X-Originating-IP: [10.177.251.225]
-X-CFilter-Loop: Reflected
+Content-Disposition: inline
+In-Reply-To: <20190916134920.GA18267@ulmo>
+User-Agent: Mutt/1.9.4 (2018-02-28)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_082652_824986_0C17CC6D 
-X-CRM114-Status: GOOD (  18.38  )
-X-Spam-Score: -2.3 (--)
+X-CRM114-CacheID: sfid-20190916_084340_445779_89470BD5 
+X-CRM114-Status: GOOD (  25.69  )
+X-Spam-Score: 0.4 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.3 points)
+ Content analysis details:   (0.4 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [45.249.212.35 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:443 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (groeck7[at]gmail.com)
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 0.2 FREEMAIL_ENVFROM_END_DIGIT Envelope-from freemail username ends
+ in digit (groeck7[at]gmail.com)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ 0.0 FREEMAIL_FORGED_FROMDOMAIN 2nd level domains in From and
+ EnvelopeFrom freemail headers are different
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -68,61 +108,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "kstewart@linuxfoundation.org" <kstewart@linuxfoundation.org>,
- "ard.biesheuvel@linaro.org" <ard.biesheuvel@linaro.org>,
- "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+Cc: Linux ARM <linux-arm-kernel@lists.infradead.org>,
  "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
- "tglx@linutronix.de" <tglx@linutronix.de>,
- "wuyun.wu@huawei.com" <wuyun.wu@huawei.com>,
- "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+ Arnd Bergmann <arnd@arndb.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-CgpPbiAyMDE5LzkvMTIgMTY6NDgsIERhdmlkIExhaWdodCB3cm90ZToKPiBGcm9tOiBZdW5mZW5n
-IFllCj4+IFNlbnQ6IDExIFNlcHRlbWJlciAyMDE5IDA5OjUwCj4+IFdlIHdhbnQgdG8gcmVkdWNl
-IHRoZSB0aW1lIG9mIGNwdV9kb3duKCkgZm9yIHNhdmluZyBwb3dlciwgZm91bmQgdGhhdAo+PiBj
-cHVfcHNjaV9jcHVfa2lsbCgpIGNvc3QgMTBtcyBhZnRlciBwc2NpX29wcy5hZmZpbml0eV9pbmZv
-KCkgZmFpbC4KPj4KPj4gTm9ybWFsbHkgdGhlIHRpbWUgY3B1IGRlYWQgaXMgdmVyeSBzaG9ydCwg
-aXQgaXMgbm8gbmVlZCB0byB3YWl0IDEwbXMuCj4+IHNvIHVzZSB1ZGVsYXkgMTB1cyB0byBpbnN0
-ZWFkIG1zbGVlcCAxMG1zIGluIGV2ZXJ5IHdhaXRpbmcgbG9vcCwgYW5kIGFkZAo+PiBjb25kX3Jl
-c2NoZWQoKSB0byBnaXZlIGEgY2hhbmNlIHRvIHJ1biBhIGhpZ2hlci1wcmlvcml0eSBwcm9jZXNz
-Lgo+Pgo+PiBTaWduZWQtb2ZmLWJ5OiBZdW5mZW5nIFllIDx5ZXl1bmZlbmdAaHVhd2VpLmNvbT4K
-Pj4gLS0tCj4+ICBhcmNoL2FybTY0L2tlcm5lbC9wc2NpLmMgfCA2ICsrKy0tLQo+PiAgMSBmaWxl
-IGNoYW5nZWQsIDMgaW5zZXJ0aW9ucygrKSwgMyBkZWxldGlvbnMoLSkKPj4KPj4gZGlmZiAtLWdp
-dCBhL2FyY2gvYXJtNjQva2VybmVsL3BzY2kuYyBiL2FyY2gvYXJtNjQva2VybmVsL3BzY2kuYwo+
-PiBpbmRleCA4NWVlN2QwLi45ZTlkOGE2IDEwMDY0NAo+PiAtLS0gYS9hcmNoL2FybTY0L2tlcm5l
-bC9wc2NpLmMKPj4gKysrIGIvYXJjaC9hcm02NC9rZXJuZWwvcHNjaS5jCj4+IEBAIC04NiwxNSAr
-ODYsMTUgQEAgc3RhdGljIGludCBjcHVfcHNjaV9jcHVfa2lsbCh1bnNpZ25lZCBpbnQgY3B1KQo+
-PiAgCSAqIHdoaWxlIGl0IGlzIGR5aW5nLiBTbywgdHJ5IGFnYWluIGEgZmV3IHRpbWVzLgo+PiAg
-CSAqLwo+Pgo+PiAtCWZvciAoaSA9IDA7IGkgPCAxMDsgaSsrKSB7Cj4+ICsJZm9yIChpID0gMDsg
-aSA8IDEwMDAwOyBpKyspIHsKPj4gIAkJZXJyID0gcHNjaV9vcHMuYWZmaW5pdHlfaW5mbyhjcHVf
-bG9naWNhbF9tYXAoY3B1KSwgMCk7Cj4+ICAJCWlmIChlcnIgPT0gUFNDSV8wXzJfQUZGSU5JVFlf
-TEVWRUxfT0ZGKSB7Cj4+ICAJCQlwcl9pbmZvKCJDUFUlZCBraWxsZWQuXG4iLCBjcHUpOwo+PiAg
-CQkJcmV0dXJuIDA7Cj4+ICAJCX0KPj4KPj4gLQkJbXNsZWVwKDEwKTsKPj4gLQkJcHJfaW5mbygi
-UmV0cnlpbmcgYWdhaW4gdG8gY2hlY2sgZm9yIENQVSBraWxsXG4iKTsKPj4gKwkJY29uZF9yZXNj
-aGVkKCk7Cj4+ICsJCXVkZWxheSgxMCk7Cj4gCj4gWW91IHJlYWxseSBkb24ndCB3YW50IHRvIGJl
-IGRvaW5nIDEwMDAwIHVkZWxheSgxMCkgYmVmb3JlIGdpdmluZyB1cC4KPiAKPiBJZiB1ZGVsYXko
-MTApIGlzIGxvbmcgZW5vdWdoIGZvciB0aGUgbm9ybWFsIGNhc2UsIHRoZW4gZG8gdGhhdCBvbmNl
-Lgo+IEFmdGVyIHRoYXQgdXNlIHVzbGVlcF9yYW5nZSgpLgo+ID4gCURhdmlkCj4gClRoYW5rcyBm
-b3IgeW91ciBhZHZpY2UuIHRoZSBkZWxheSBkZXBlbmQgb24gdGhlIG51bSBvZiBjb3JlcywgcmFu
-Z2UKZnJvbSA1MHVzIHRvIDUwMHVzLCBJIGhhdmUgdGVzdCB0aGUgdGltZSBvbiB0aGUgMTQwKyBj
-b3JlcyBjcHXvvJoKCiAgKDEwdXMgZXZlcnkgdGltZSkKICBbIDExNzcuOTc5NjQyXSBwc2NpOiBD
-UFUxIGtpbGxlZC4gdG90YWwgd2FpdCA0IHRpbWVzCiAgWyAxMTc4LjAxMTM2OV0gcHNjaTogQ1BV
-MiBraWxsZWQuIHRvdGFsIHdhaXQgNiB0aW1lcwogIFsgMTE3OC4wMzUyNDddIHBzY2k6IENQVTMg
-a2lsbGVkLiB0b3RhbCB3YWl0IDMgdGltZXMKICBbIDExNzguMDcxMTM0XSBwc2NpOiBDUFU0IGtp
-bGxlZC4gdG90YWwgd2FpdCA4IHRpbWVzCiAgLi4uLi4uCiAgWyAxMTkwLjEyODIwMl0gcHNjaTog
-Q1BVMTM5IGtpbGxlZC4gdG90YWwgd2FpdCA1MCB0aW1lcwogIFsgMTE5MC4xNTYyNjZdIHBzY2k6
-IENQVTE0MCBraWxsZWQuIHRvdGFsIHdhaXQgNDggdGltZXMKICBbIDExOTAuMTkyMDgyXSBwc2Np
-OiBDUFUxNDEga2lsbGVkLiB0b3RhbCB3YWl0IDQ2IHRpbWVzCiAgWyAxMTkwLjIyNDEwNF0gcHNj
-aTogQ1BVMTQyIGtpbGxlZC4gdG90YWwgd2FpdCA0NiB0aW1lcwoKQ2FuIEkgYnVzdC13YWl0IDFt
-c++8jHdoaWNoIGlzIDEwMCB0aWVtcyB1ZGVsYXkoMTApLCBhZnRlciB0aGF0LCB1c2UKdXNsZWVw
-X3JhbmdlKDEwMDAsIDEwMDAwKSA/ICBJIGRvbid0IHdhbnQgb3RoZXIgcHJvY2VzcyBvY2N1cHkg
-Y3B1CmZvciBhIGxvbmcgdGltZSB3aGVuIEkgbGV0IG91dCB0aGUgY3B1LiB0aGFua3MuCgo+IC0K
-PiBSZWdpc3RlcmVkIEFkZHJlc3MgTGFrZXNpZGUsIEJyYW1sZXkgUm9hZCwgTW91bnQgRmFybSwg
-TWlsdG9uIEtleW5lcywgTUsxIDFQVCwgVUsKPiBSZWdpc3RyYXRpb24gTm86IDEzOTczODYgKFdh
-bGVzKQo+IAoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-CmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxAbGlzdHMuaW5m
-cmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xp
-bnV4LWFybS1rZXJuZWwK
+On Mon, Sep 16, 2019 at 03:49:20PM +0200, Thierry Reding wrote:
+> On Mon, Sep 16, 2019 at 06:17:01AM -0700, Guenter Roeck wrote:
+> > On 9/16/19 12:49 AM, Arnd Bergmann wrote:
+> > > On Sat, Sep 14, 2019 at 5:26 PM Guenter Roeck <linux@roeck-us.net> wrote:
+> > > > On Mon, Jan 30, 2017 at 12:05:06PM +0100, Thierry Reding wrote:
+> > > > > From: Thierry Reding <treding@nvidia.com>
+> > > > > 
+> > > > > Hi everyone,
+> > > > > 
+> > > > > This small series is preparatory work for a series that I'm working on
+> > > > > which attempts to establish a formal framework for system restart and
+> > > > > power off.
+> > > > > 
+> > > > > Guenter has done a lot of good work in this area, but it never got
+> > > > > merged. I think this set is a valuable addition to the kernel because
+> > > > > it converts all odd providers to the established mechanism for restart.
+> > > > > 
+> > > > > Since this is stretched across both 32-bit and 64-bit ARM, as well as
+> > > > > PSCI, and given the SoC/board level of functionality, I think it might
+> > > > > make sense to take this through the ARM SoC tree in order to simplify
+> > > > > the interdependencies. But it should also be possible to take patches
+> > > > > 1-4 via their respective trees this cycle and patches 5-6 through the
+> > > > > ARM and arm64 trees for the next cycle, if that's preferred.
+> > > > > 
+> > > > 
+> > > > We tried this twice now, and it seems to go nowhere. What does it take
+> > > > to get it applied ?
+> > > 
+> > > Can you send a pull request to soc@kernel.org after the merge window,
+> > > with everyone else on Cc? If nobody objects, I'll merge it through
+> > > the soc tree.
+> > > 
+> > 
+> > Sure, I'll rebase and do that.
+> 
+> I've uploaded a rebased tree here:
+> 
+> 	https://github.com/thierryreding/linux/tree/for-5.5/system-power-reset
+> 
+> The first 6 patches in that tree correspond to this series. There were a
+> couple of conflicts I had to resolve and I haven't fully tested the
+> series yet, but if you haven't done any of the rebasing, the above may
+> be useful to you.
+> 
+
+Maybe Arnd can just use your branch (or rather part of it if you would
+split it off) since you already did the work ?
+
+Thanks,
+Guenter
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
