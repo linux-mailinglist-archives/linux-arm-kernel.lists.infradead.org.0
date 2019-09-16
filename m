@@ -2,71 +2,58 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 068C4B3844
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 12:37:05 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id C694EB384F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 12:38:25 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=3lWSK0LaGplIt/C12+Q848h0sDo+YfBT06G37LNks1I=; b=bwYtaBXFFxumFu
-	RnwmH1g5byZWU2MN6wqP2gHqDG1did8SV7zpCSbKM9V4Ap7h0jwpwG46eitW8PO56N3+Gr4re4H7e
-	HemQxX6bcGZvnZANhqyl16j/LIHDgUhvPwpHFh3ex4PhiRutTEu9MxXRPb+1YNsEzZqNEZHEpTkXv
-	e+ZX6v3Is/53P/Xez/HSZPYmHKHWHcGEh3PfbTprQYd3ToXdIQMiwMCAyvzJ8eh9e0t7EQH41U/By
-	8x+Ac9UAgmw9QNnHj3vJkQ5iOHdlTNejwq9EHZYyLy+v8hRa32xzJjyo6mCeYrMjyfC8tQfuAeUCw
-	nXI6OH90XUkCr5IrduWA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=2tMw0XE2p3NFhHittoewpbe68DOfjulHDYUXkzFef9k=; b=DoGRjnbkNWjim5
+	bUCKy6sKC9i4KkIH8yixXOj9liEo/nB1AythexG+q7uAdXFGkwLJ9a6mtgQ7hOWnurwhX3wwoG9OD
+	tWMoRoxssCz+k443wdB0vC234zwdp8b6bajSDikcg9IiOH1VIptyy2oulUg+80z+DMCs19DLx4D8v
+	e+QOjJR8p5fi0q2OmtmvtV/lTWGMEtpBu6KSIEm/dF/On9lSCuCpgQy7egUyLzPoxgfOkNd2NfA2W
+	Po1TE+pDBPFZX9f3a9oLYuXApoJtgNYtdWMVKIU9Gz8Z22DBl6zmzDKd1nzAGDg5lgt9hvyJ8OotS
+	n4Np/BUv0Yc44/+LZU0w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9oNJ-0005Ns-Ph; Mon, 16 Sep 2019 10:36:54 +0000
-Received: from onstation.org ([52.200.56.107])
+	id 1i9oOe-0006Rv-Qi; Mon, 16 Sep 2019 10:38:17 +0000
+Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9oMl-0005N2-OL
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 10:36:21 +0000
-Received: from localhost (c-98-239-145-235.hsd1.wv.comcast.net
- [98.239.145.235])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id 35DF83E8F9;
- Mon, 16 Sep 2019 10:36:14 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1568630176;
- bh=4KQmgz71YU3A68V+Z3HaVPiT+RBIQPuGE3xqAmSJ6fE=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=mYdC2Jostpc6JnzwEQKwLhjI7/uhjM7Lt0RJ5HB20fuJn1eObXMqrg4rMz0NWQAha
- 9mZxUJPUj3+2M4JFGaGm27QPrkXQDLGJNiBeRsEplRktcZoLHydxXxBglCpX5+wd9L
- fPvoREGjrIlTtEyAFeXHDspo9m5N2e4aerYO4rDQ=
-Date: Mon, 16 Sep 2019 06:36:14 -0400
-From: Brian Masney <masneyb@onstation.org>
-To: Andrzej Hajda <a.hajda@samsung.com>
+ id 1i9oMv-0005Oq-7b
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 10:36:31 +0000
+Received: from [127.0.0.1] (localhost [127.0.0.1])
+ (Authenticated sender: eballetbo) with ESMTPSA id 0662A28D1E3
 Subject: Re: [PATCH 05/11] drm/bridge: analogix-anx78xx: correct value of TX_P0
-Message-ID: <20190916103614.GA1644@onstation.org>
+To: Andrzej Hajda <a.hajda@samsung.com>, Brian Masney
+ <masneyb@onstation.org>, bjorn.andersson@linaro.org, robh+dt@kernel.org,
+ agross@kernel.org, narmstrong@baylibre.com, robdclark@gmail.com,
+ sean@poorly.run
 References: <20190815004854.19860-1-masneyb@onstation.org>
  <CGME20190815004918epcas3p135042bc52c7e3c8b1aca7624d121af97@epcas3p1.samsung.com>
  <20190815004854.19860-6-masneyb@onstation.org>
  <dc10dd84-72e2-553e-669b-271b77b4a21a@samsung.com>
+From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
+Message-ID: <98199a9b-f7e0-ef95-62d7-401273457692@collabora.com>
+Date: Mon, 16 Sep 2019 12:36:19 +0200
+User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
+ Thunderbird/60.9.0
 MIME-Version: 1.0
-Content-Disposition: inline
 In-Reply-To: <dc10dd84-72e2-553e-669b-271b77b4a21a@samsung.com>
+Content-Language: en-GB
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_033619_925254_1F4E38BF 
-X-CRM114-Status: GOOD (  20.11  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190916_033629_503175_73CDE470 
+X-CRM114-Status: GOOD (  17.58  )
+X-Spam-Score: -0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.200.56.107 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
+ lines
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,92 +66,54 @@ List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
 Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- narmstrong@baylibre.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- linus.walleij@linaro.org, jonas@kwiboo.se, agross@kernel.org,
- dri-devel@lists.freedesktop.org, bjorn.andersson@linaro.org,
- robdclark@gmail.com, robh+dt@kernel.org, Laurent.pinchart@ideasonboard.com,
- daniel@ffwll.ch, linux-arm-msm@vger.kernel.org, enric.balletbo@collabora.com,
- freedreno@lists.freedesktop.org, sean@poorly.run,
+ jonas@kwiboo.se, airlied@linux.ie, linux-arm-msm@vger.kernel.org,
+ linus.walleij@linaro.org, linux-kernel@vger.kernel.org,
+ dri-devel@lists.freedesktop.org, Laurent.pinchart@ideasonboard.com,
+ daniel@ffwll.ch, freedreno@lists.freedesktop.org,
  linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset="utf-8"
+Content-Transfer-Encoding: base64
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 12:02:09PM +0200, Andrzej Hajda wrote:
-> On 15.08.2019 02:48, Brian Masney wrote:
-> > When attempting to configure this driver on a Nexus 5 phone (msm8974),
-> > setting up the dummy i2c bus for TX_P0 would fail due to an -EBUSY
-> > error. The downstream MSM kernel sources [1] shows that the proper value
-> > for TX_P0 is 0x78, not 0x70, so correct the value to allow device
-> > probing to succeed.
-> >
-> > [1] https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/drivers/vid=
-eo/slimport/slimport_tx_reg.h
-> >
-> > Signed-off-by: Brian Masney <masneyb@onstation.org>
-> > ---
-> >  drivers/gpu/drm/bridge/analogix-anx78xx.h | 2 +-
-> >  1 file changed, 1 insertion(+), 1 deletion(-)
-> >
-> > diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.h b/drivers/gpu/dr=
-m/bridge/analogix-anx78xx.h
-> > index 25e063bcecbc..bc511fc605c9 100644
-> > --- a/drivers/gpu/drm/bridge/analogix-anx78xx.h
-> > +++ b/drivers/gpu/drm/bridge/analogix-anx78xx.h
-> > @@ -6,7 +6,7 @@
-> >  #ifndef __ANX78xx_H
-> >  #define __ANX78xx_H
-> >  =
-
-> > -#define TX_P0				0x70
-> > +#define TX_P0				0x78
-> =
-
-> =
-
-> This bothers me little. There are no upstream users, grepping android
-> sources suggests that both values can be used [1][2]=A0 (grep for "#define
-> TX_P0"), moreover there is code suggesting both values can be valid [3].
-> =
-
-> Could you verify datasheet which i2c slave addresses are valid for this
-> chip, if both I guess this patch should be reworked.
-> =
-
-> =
-
-> [1]:
-> https://android.googlesource.com/kernel/msm/+/android-msm-flo-3.4-jb-mr2/=
-drivers/misc/slimport_anx7808/slimport_tx_reg.h
-> =
-
-> [2]:
-> https://github.com/AndroidGX/SimpleGX-MM-6.0_H815_20d/blob/master/drivers=
-/video/slimport/anx7812/slimport7812_tx_reg.h
-> =
-
-> [3]:
-> https://github.com/commaai/android_kernel_leeco_msm8996/blob/master/drive=
-rs/video/msm/mdss/dp/slimport_custom_declare.h#L73
-
-This address is 0x78 on my Nexus 5. Given [3] above it looks like we
-need to support both addresses. What do you think about moving these
-addresses into device tree?
-
-The downstream and upstream kernel sources divide these addresses by two
-to get the i2c address. Here's the code in upstream:
-
-https://elixir.bootlin.com/linux/latest/source/drivers/gpu/drm/bridge/analo=
-gix-anx78xx.c#L1353
-https://elixir.bootlin.com/linux/latest/source/drivers/gpu/drm/bridge/analo=
-gix-anx78xx.c#L41
-
-I'm not sure why the actual i2c address isn't used in this code.
-
-Brian
-
-_______________________________________________
-linux-arm-kernel mailing list
-linux-arm-kernel@lists.infradead.org
-http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+SGkgQW5kcnplaiBhbmQgQnJpYW4KCk9uIDE2LzkvMTkgMTI6MDIsIEFuZHJ6ZWogSGFqZGEgd3Jv
+dGU6Cj4gT24gMTUuMDguMjAxOSAwMjo0OCwgQnJpYW4gTWFzbmV5IHdyb3RlOgo+PiBXaGVuIGF0
+dGVtcHRpbmcgdG8gY29uZmlndXJlIHRoaXMgZHJpdmVyIG9uIGEgTmV4dXMgNSBwaG9uZSAobXNt
+ODk3NCksCj4+IHNldHRpbmcgdXAgdGhlIGR1bW15IGkyYyBidXMgZm9yIFRYX1AwIHdvdWxkIGZh
+aWwgZHVlIHRvIGFuIC1FQlVTWQo+PiBlcnJvci4gVGhlIGRvd25zdHJlYW0gTVNNIGtlcm5lbCBz
+b3VyY2VzIFsxXSBzaG93cyB0aGF0IHRoZSBwcm9wZXIgdmFsdWUKPj4gZm9yIFRYX1AwIGlzIDB4
+NzgsIG5vdCAweDcwLCBzbyBjb3JyZWN0IHRoZSB2YWx1ZSB0byBhbGxvdyBkZXZpY2UKPj4gcHJv
+YmluZyB0byBzdWNjZWVkLgo+Pgo+PiBbMV0gaHR0cHM6Ly9naXRodWIuY29tL0FJQ1Ava2VybmVs
+X2xnZV9oYW1tZXJoZWFkL2Jsb2IvbjcuMS9kcml2ZXJzL3ZpZGVvL3NsaW1wb3J0L3NsaW1wb3J0
+X3R4X3JlZy5oCj4+Cj4+IFNpZ25lZC1vZmYtYnk6IEJyaWFuIE1hc25leSA8bWFzbmV5YkBvbnN0
+YXRpb24ub3JnPgo+PiAtLS0KPj4gIGRyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgtYW54
+Nzh4eC5oIHwgMiArLQo+PiAgMSBmaWxlIGNoYW5nZWQsIDEgaW5zZXJ0aW9uKCspLCAxIGRlbGV0
+aW9uKC0pCj4+Cj4+IGRpZmYgLS1naXQgYS9kcml2ZXJzL2dwdS9kcm0vYnJpZGdlL2FuYWxvZ2l4
+LWFueDc4eHguaCBiL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgtYW54Nzh4eC5oCj4+
+IGluZGV4IDI1ZTA2M2JjZWNiYy4uYmM1MTFmYzYwNWM5IDEwMDY0NAo+PiAtLS0gYS9kcml2ZXJz
+L2dwdS9kcm0vYnJpZGdlL2FuYWxvZ2l4LWFueDc4eHguaAo+PiArKysgYi9kcml2ZXJzL2dwdS9k
+cm0vYnJpZGdlL2FuYWxvZ2l4LWFueDc4eHguaAo+PiBAQCAtNiw3ICs2LDcgQEAKPj4gICNpZm5k
+ZWYgX19BTlg3OHh4X0gKPj4gICNkZWZpbmUgX19BTlg3OHh4X0gKPj4gIAo+PiAtI2RlZmluZSBU
+WF9QMAkJCQkweDcwCj4+ICsjZGVmaW5lIFRYX1AwCQkJCTB4NzgKPiAKPiAKPiBUaGlzIGJvdGhl
+cnMgbWUgbGl0dGxlLiBUaGVyZSBhcmUgbm8gdXBzdHJlYW0gdXNlcnMsIGdyZXBwaW5nIGFuZHJv
+aWQKPiBzb3VyY2VzIHN1Z2dlc3RzIHRoYXQgYm90aCB2YWx1ZXMgY2FuIGJlIHVzZWQgWzFdWzJd
+wqAgKGdyZXAgZm9yICIjZGVmaW5lCj4gVFhfUDAiKSwgbW9yZW92ZXIgdGhlcmUgaXMgY29kZSBz
+dWdnZXN0aW5nIGJvdGggdmFsdWVzIGNhbiBiZSB2YWxpZCBbM10uCj4gCj4gQ291bGQgeW91IHZl
+cmlmeSBkYXRhc2hlZXQgd2hpY2ggaTJjIHNsYXZlIGFkZHJlc3NlcyBhcmUgdmFsaWQgZm9yIHRo
+aXMKPiBjaGlwLCBpZiBib3RoIEkgZ3Vlc3MgdGhpcyBwYXRjaCBzaG91bGQgYmUgcmV3b3JrZWQu
+Cj4gCgpPbiBteSBjYXNlIHRoZSB2YWxpZCBpMmMgc2xhdmUgYWRkcmVzcyBpcyAweDcwIChmcm9t
+IGRhdGFzaGVldCwgdmVyeSBzb3JyeSBJCmNhbid0IHNoYXJlIGl0KSBhbmQgdGhlIGJyaWRnZSB1
+c2VkIGlzIGFuIEFOWDc4MTQsIGl0IGNvdWxkIGJlIHRoYXQgQU5YNzgwOCBvcgpBTlg3ODEyIGhh
+dmUgZGlmZmVyZW50IHNsYXZlIGFkZHJlc3Nlcz8KClJlZ2FyZHMsCiBFbnJpYwoKPiAKPiBbMV06
+Cj4gaHR0cHM6Ly9hbmRyb2lkLmdvb2dsZXNvdXJjZS5jb20va2VybmVsL21zbS8rL2FuZHJvaWQt
+bXNtLWZsby0zLjQtamItbXIyL2RyaXZlcnMvbWlzYy9zbGltcG9ydF9hbng3ODA4L3NsaW1wb3J0
+X3R4X3JlZy5oCj4gCj4gWzJdOgo+IGh0dHBzOi8vZ2l0aHViLmNvbS9BbmRyb2lkR1gvU2ltcGxl
+R1gtTU0tNi4wX0g4MTVfMjBkL2Jsb2IvbWFzdGVyL2RyaXZlcnMvdmlkZW8vc2xpbXBvcnQvYW54
+NzgxMi9zbGltcG9ydDc4MTJfdHhfcmVnLmgKPiAKPiBbM106Cj4gaHR0cHM6Ly9naXRodWIuY29t
+L2NvbW1hYWkvYW5kcm9pZF9rZXJuZWxfbGVlY29fbXNtODk5Ni9ibG9iL21hc3Rlci9kcml2ZXJz
+L3ZpZGVvL21zbS9tZHNzL2RwL3NsaW1wb3J0X2N1c3RvbV9kZWNsYXJlLmgjTDczCj4gCj4gCj4g
+UmVnYXJkcwo+IAo+IEFuZHJ6ZWoKPiAKPiAKPj4gICNkZWZpbmUgVFhfUDEJCQkJMHg3YQo+PiAg
+I2RlZmluZSBUWF9QMgkJCQkweDcyCj4+ICAKPiAKPiAKCl9fX19fX19fX19fX19fX19fX19fX19f
+X19fX19fX19fX19fX19fX19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0Cmxp
+bnV4LWFybS1rZXJuZWxAbGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFk
+Lm9yZy9tYWlsbWFuL2xpc3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
