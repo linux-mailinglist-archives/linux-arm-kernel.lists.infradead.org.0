@@ -2,67 +2,118 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 6ACCAB3605
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 09:56:24 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 09E52B361C
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 10:03:19 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
-	Date:To:From:Subject:Message-ID:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=675RvWpFyoIwMfASzpPiHw7mLkm3iSI9r1GlkpoIVv4=; b=OrK/KzAobyGSUN
-	39NvlfBWsh6eOpAjuDLrSIqcIKsPQybhGhx2JJFHWAE0cbrGgg1iYuqt1nzMMDuM07NOmzwtJL8Y+
-	ZZdsMVvFuFtJHi3Z+rptk6EfjGI/i23mYRi7rC/jft+e/YmCE6c2vv91BjxR2n9yUJ7fJDpmWfsZI
-	tfz+bhH1HTdpYjC6plnNIzK/VrAff5mVnusvWa7bFLHepgJ+vD3389rJMP5ixtS/OWle+K+TenN0e
-	8O4w/h1WZUCZNM8e0Oewn1c89fo2dBPy6yU1q3RQrQeg2Uobbz9kAWsl6l7Gg4bS9wgd001JMveUm
-	V1bakgpi3LUQCQ5ZAOAQ==;
+	List-Owner; bh=TtKyB12X0Dhd+8tFo7xb2gvwH+RWpI6LfHzpZIvtlwQ=; b=mp/R+rdkMzhgmL
+	K//dNuSe/DMGN4r+v9PxGju0Wvaqq4YuVINF58jA0iSFbgq2l6EyGzcJsTues5LOoIUyXzB3oyfEa
+	xjSI2fEpd3luoSTEAoysqbZLfHozvFtMujZBVCd/G/F4lR4czML3gB+pI+aOUQjEJHX7eWjXFxayM
+	nPLEVY2PRaF8PpWVjYaEK1wE9ZXI986Kpd4oLvaoMtpo/hBcYJLXA/APg+Oqm0hm5TT1Q10GUF3g3
+	dMVxQySzAfczwnKlL11VrFrYcUdh2XzrWVTki2EpsipgeGqfHY9tkKt49vYxVjmWRrP9SKFJAfRyi
+	xlZK7UEKKJTTkHWZz+kg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9lro-0002cF-KF; Mon, 16 Sep 2019 07:56:12 +0000
-Received: from mailgw01.mediatek.com ([216.200.240.184])
+	id 1i9lyY-000547-22; Mon, 16 Sep 2019 08:03:10 +0000
+Received: from mail-am5eur02on0605.outbound.protection.outlook.com
+ ([2a01:111:f400:fe07::605]
+ helo=EUR02-AM5-obe.outbound.protection.outlook.com)
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9lrS-0002bE-6S; Mon, 16 Sep 2019 07:55:51 +0000
-X-UUID: 522624b7f65241438522ec780c06801d-20190915
-X-UUID: 522624b7f65241438522ec780c06801d-20190915
-Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
- (envelope-from <ck.hu@mediatek.com>)
- (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 254404354; Sun, 15 Sep 2019 23:55:43 -0800
-Received: from MTKMBS07N2.mediatek.inc (172.21.101.141) by
- MTKMBS62DR.mediatek.inc (172.29.94.18) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 00:55:42 -0700
-Received: from mtkcas07.mediatek.inc (172.21.101.84) by
- mtkmbs07n2.mediatek.inc (172.21.101.141) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 15:55:40 +0800
-Received: from [172.21.77.4] (172.21.77.4) by mtkcas07.mediatek.inc
- (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via Frontend
- Transport; Mon, 16 Sep 2019 15:55:40 +0800
-Message-ID: <1568620540.7280.1.camel@mtksdaap41>
-Subject: Re: [PATCH v3 12/14] drm/mediatek: Add pm runtime support for ovl
- and rdma
-From: CK Hu <ck.hu@mediatek.com>
-To: Yong Wu <yong.wu@mediatek.com>
-Date: Mon, 16 Sep 2019 15:55:40 +0800
-In-Reply-To: <1567503456-24725-13-git-send-email-yong.wu@mediatek.com>
-References: <1567503456-24725-1-git-send-email-yong.wu@mediatek.com>
- <1567503456-24725-13-git-send-email-yong.wu@mediatek.com>
-X-Mailer: Evolution 3.10.4-0ubuntu2 
+ id 1i9lyG-00053Z-EB
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 08:02:55 +0000
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=Wrk/aRXqc7Ki0rjY0K2kUOktreEdiNhNuXM78Q3Sdy7cjdqea72h8EKz5UAvSw44icswJY0c67lPS09j83bXFkfc6wsSdZjwX0HMzSBH5ttauKB6XCozulp4Hpw4kH4xSR83F7IvEww0yO5PNR7yNZda/hR0xlM4RXqZY4dlZ4Ab03TsWtkn6LNdn6KA/h86mQLWQo7WDu2QlMm59Mnb0jYvTFlDM6wRjImDXHQtGTHm7R8+YHCWBKtgse/XE3nmFAKL72ATa0pYtmvfVMAbqjoepv9Eo6eNqz8nbl1BZzOf78ZulhDXL5SctDfuvM7jFwZtWiKDnyLgS+NTFU2Evw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KPuvN+kDylNI+qUnXmqbN38GKnIwxTl7w0MidEyAfZs=;
+ b=mbS8WmjfUeaaCrVboyS9XwYCprgR132Ureb+Yi8d4NLXu+eeRdnKghAu7+1rIQjnXpE2LYzV8KayWaPlpurK6oHIWhV9VhhDPOwQJJTNjbgQTad3JrxJJXikqZjVmZGd35VRY04sDSzkGZCah4LiZPxORsV0sRYJBz9wAlHhgSCSD1y7eObk6Yi8fepDjRU1eA34NHp5xiq4qsc+oSBwju1nKbVdP+rlguQVZb8He6o6ChoktT8QOvimiO0fnj7A9c99RcC9kDzOof80lcVtJWagZI9tkzawmvZYPf4FQ6J/kthivUM9PKj1KcEIpshB2/I+oxnqGHXESByWcaUjGw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=nxp.com; dmarc=pass action=none header.from=nxp.com; dkim=pass
+ header.d=nxp.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=nxp.com; s=selector2; 
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=KPuvN+kDylNI+qUnXmqbN38GKnIwxTl7w0MidEyAfZs=;
+ b=gIeEnxG4OfwlNUxRQcs/5rjo4UY+fVo6+gQZULr0dQwk3lB7qK6jgrXt4QTSLZKcaoNl+Hw5jNND35R1KtNMSShrANI/LiBzq80MdMBq8ilM3NdQnwDNjt/SFwxWiDjFL0xVH3gDhQCAR34NbkkSIkvEDUY9REKDeZJcc5vqrtk=
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com (20.179.235.81) by
+ VE1PR04MB6496.eurprd04.prod.outlook.com (20.179.233.142) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.17; Mon, 16 Sep 2019 08:02:49 +0000
+Received: from VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::c8ae:f1f7:b7be:5976]) by VE1PR04MB6638.eurprd04.prod.outlook.com
+ ([fe80::c8ae:f1f7:b7be:5976%4]) with mapi id 15.20.2263.023; Mon, 16 Sep 2019
+ 08:02:49 +0000
+From: Robin Gong <yibin.gong@nxp.com>
+To: Philipp Puschmann <philipp.puschmann@emlix.com>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Subject: RE: [PATCH 0/4] Fix UART DMA freezes for iMX6
+Thread-Topic: [PATCH 0/4] Fix UART DMA freezes for iMX6
+Thread-Index: AQHVaLAxu2UDdwNxk0eJG3Q3r0yNHKct9iKQ
+Date: Mon, 16 Sep 2019 08:02:49 +0000
+Message-ID: <VE1PR04MB66383FAB08506993B305AC8D898C0@VE1PR04MB6638.eurprd04.prod.outlook.com>
+References: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+In-Reply-To: <20190911144943.21554-1-philipp.puschmann@emlix.com>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+authentication-results: spf=none (sender IP is )
+ smtp.mailfrom=yibin.gong@nxp.com; 
+x-originating-ip: [119.31.174.66]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 33c64e22-a496-4e98-a413-08d73a7c446a
+x-ms-office365-filtering-ht: Tenant
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(5600167)(711020)(4605104)(1401327)(4618075)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(2017052603328)(7193020);
+ SRVR:VE1PR04MB6496; 
+x-ms-traffictypediagnostic: VE1PR04MB6496:|VE1PR04MB6496:
+x-ms-exchange-transport-forked: True
+x-microsoft-antispam-prvs: <VE1PR04MB649679AD6CFC9D65CB9F5733898C0@VE1PR04MB6496.eurprd04.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:9508;
+x-forefront-prvs: 0162ACCC24
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(396003)(136003)(366004)(39860400002)(376002)(189003)(199004)(14454004)(71200400001)(71190400001)(52536014)(478600001)(81166006)(316002)(76176011)(81156014)(2501003)(33656002)(7696005)(25786009)(66946007)(66476007)(64756008)(256004)(8676002)(4326008)(66446008)(66556008)(99286004)(5660300002)(229853002)(54906003)(6246003)(14444005)(66066001)(110136005)(6436002)(55016002)(9686003)(76116006)(11346002)(486006)(7416002)(3846002)(7736002)(86362001)(446003)(2906002)(102836004)(6116002)(186003)(305945005)(476003)(26005)(8936002)(53936002)(74316002)(6506007);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:VE1PR04MB6496;
+ H:VE1PR04MB6638.eurprd04.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: nxp.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: MFCm1zv4tbzNCiFPQ1W2csUN1IgzUd3fkemEb0fz6qlJchlafWcAiMCeQXZG4vx5R69/b9DsOO+cfnFsm30FT3fIcLoSlqILF5omm9qg5TVVC0k8L339YKIHo5WoTMCkBU29ZoxZ58ZHuSokR59WKtD//nlagtVRx7smd/zTj9/BRegrF1Vi5lhdHALuG5CJIzOvRuTHAKX66F9u90ttLoMmSy7YkPpv160ZMMCGPT4PReKPDxw32XCZEtOIr6rvkBqw0JiC2+kKt85swXCvePvuCUoKiEfQWpCOtiMqWjZs0KUnHGUYg4V8W7BMIisyslEt32ZCTcKavY3AVTMzq7C7sGbQVerMwkJvwznqq4qK+LOrTOEfirKeaYmT5qhEKJIvECRnXmQtl+bAUJw1udJJqBUcaLXDgaTK+v5SSZk=
 MIME-Version: 1.0
-X-MTK: N
+X-OriginatorOrg: nxp.com
+X-MS-Exchange-CrossTenant-Network-Message-Id: 33c64e22-a496-4e98-a413-08d73a7c446a
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2019 08:02:49.1571 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 686ea1d3-bc2b-4c6f-a92c-d99c5c301635
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: J5iIFzzxLDqPHFAGVJcBV0mc0VHea3IF8mGB7X4Gl9YfBEwIc9NY9osidi5bqObLhkdny33eJ0j4ww1N1+298Q==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: VE1PR04MB6496
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_005550_247190_20E53016 
-X-CRM114-Status: GOOD (  20.33  )
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190916_010252_483135_2DCA1489 
+X-CRM114-Status: GOOD (  16.51  )
+X-Spam-Score: 0.8 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (0.8 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [216.200.240.184 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ no trust [2a01:111:f400:fe07:0:0:0:605 listed in]
+ [list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 T_SPF_PERMERROR        SPF: test of record failed (permerror)
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
+ 1.0 FORGED_SPF_HELO        No description available.
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,213 +125,66 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: youlin.pei@mediatek.com, devicetree@vger.kernel.org,
- Nicolas Boichat <drinkcat@chromium.org>, cui.zhang@mediatek.com,
- srv_heupstream@mediatek.com, Tomasz
- Figa <tfiga@google.com>, Joerg Roedel <joro@8bytes.org>,
- Will Deacon <will.deacon@arm.com>, linux-kernel@vger.kernel.org,
- Evan Green <evgreen@chromium.org>, chao.hao@mediatek.com,
- iommu@lists.linux-foundation.org, Rob Herring <robh+dt@kernel.org>,
- linux-mediatek@lists.infradead.org, Yongqiang Niu <yongqiang.niu@mediatek.com>,
- Matthias Brugger <matthias.bgg@gmail.com>, ming-fan.chen@mediatek.com,
- anan.sun@mediatek.com, Robin Murphy <robin.murphy@arm.com>, Matthias
- Kaehlcke <mka@chromium.org>, linux-arm-kernel@lists.infradead.org
+Cc: "linux-serial@vger.kernel.org" <linux-serial@vger.kernel.org>,
+ "shawnguo@kernel.org" <shawnguo@kernel.org>,
+ "s.hauer@pengutronix.de" <s.hauer@pengutronix.de>,
+ "jslaby@suse.com" <jslaby@suse.com>, "vkoul@kernel.org" <vkoul@kernel.org>,
+ dl-linux-imx <linux-imx@nxp.com>,
+ "kernel@pengutronix.de" <kernel@pengutronix.de>,
+ "gregkh@linuxfoundation.org" <gregkh@linuxfoundation.org>,
+ "dmaengine@vger.kernel.org" <dmaengine@vger.kernel.org>,
+ "dan.j.williams@intel.com" <dan.j.williams@intel.com>,
+ "festevam@gmail.com" <festevam@gmail.com>,
+ "linux-arm-kernel@lists.infradead.org" <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-
-Hi, Yong:
-
-On Tue, 2019-09-03 at 17:37 +0800, Yong Wu wrote:
-> From: Yongqiang Niu <yongqiang.niu@mediatek.com>
+On 2019/9/11 Philipp Puschmann <philipp.puschmann@emlix.com> wrote:
+> For some years and since many kernel versions there are reports that RX
+> UART DMA channel stops working at one point. So far the usual workaround
+> was to disable RX DMA. This patches try to fix the underlying problem.
 > 
-> Display use the dispsys device to call pm_rumtime_get_sync before.
-> This patch add pm_runtime_xx with ovl and rdma device which has linked
-> with larb0, then it will enable the correpsonding larb0 clock
-> automatically by the device link.
-
-This patch should be applied before "drm/mediatek: Get rid of
-mtk_smi_larb_get/put". If before that patch, this patch is a preparation
-of that patch. If after that patch, this patch is a bug fix of that
-patch. Why let bug happen?
-
+> When a running sdma script does not find any usable destination buffer to put
+> its data into it just leads to stopping the channel being scheduled again. As
+> solution we we manually retrigger the sdma script for this channel and by this
+> dissolve the freeze.
 > 
-> Signed-off-by: Yongqiang Niu <yongqiang.niu@mediatek.com>
-> Signed-off-by: Yong Wu <yong.wu@mediatek.com>
-> ---
->  drivers/gpu/drm/mediatek/mtk_disp_ovl.c     |  5 +++++
->  drivers/gpu/drm/mediatek/mtk_disp_rdma.c    |  5 +++++
->  drivers/gpu/drm/mediatek/mtk_drm_crtc.c     | 18 ++++++++++++++++--
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c |  9 +++++++++
->  drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h |  1 +
->  5 files changed, 36 insertions(+), 2 deletions(-)
+> While this seems to work fine so far a further patch in this series increases the
+> number of RX DMA periods for UART to reduce use cases running into such a
+> situation.
 > 
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> index c4f07c2..51958cf 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_ovl.c
-> @@ -9,6 +9,7 @@
->  #include <linux/of_device.h>
->  #include <linux/of_irq.h>
->  #include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
->  
->  #include "mtk_drm_crtc.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -300,6 +301,8 @@ static int mtk_disp_ovl_probe(struct platform_device *pdev)
->  		return ret;
->  	}
->  
-> +	pm_runtime_enable(dev);
-> +
->  	ret = component_add(dev, &mtk_disp_ovl_component_ops);
->  	if (ret)
->  		dev_err(dev, "Failed to add component: %d\n", ret);
+> This patch series was tested with the current kernel and backported to kernel
+> 4.15 with a special use case using a WL1837MOD via UART and provoking the
+Hi Philipp, Could your Bluetooth issue be reproduce on latest linux-next? Or did
+your kernel which can be reproduced include the below patch?
 
-This error should do some error handling to undo pm_runtime_enable().
+commit d1a792f3b4072bfac4150bb62aa34917b77fdb6d
+Author: Russell King - ARM Linux <linux@arm.linux.org.uk>
+Date:   Wed Jun 25 13:00:33 2014 +0100
 
-> @@ -311,6 +314,8 @@ static int mtk_disp_ovl_remove(struct platform_device *pdev)
->  {
->  	component_del(&pdev->dev, &mtk_disp_ovl_component_ops);
->  
-> +	pm_runtime_disable(&pdev->dev);
-> +
->  	return 0;
->  }
->  
-> diff --git a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> index 9a6f0a2..15e5c3a 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_disp_rdma.c
-> @@ -9,6 +9,7 @@
->  #include <linux/of_device.h>
->  #include <linux/of_irq.h>
->  #include <linux/platform_device.h>
-> +#include <linux/pm_runtime.h>
->  
->  #include "mtk_drm_crtc.h"
->  #include "mtk_drm_ddp_comp.h"
-> @@ -306,6 +307,8 @@ static int mtk_disp_rdma_probe(struct platform_device *pdev)
->  
->  	platform_set_drvdata(pdev, priv);
->  
-> +	pm_runtime_enable(dev);
-> +
->  	ret = component_add(dev, &mtk_disp_rdma_component_ops);
->  	if (ret)
->  		dev_err(dev, "Failed to add component: %d\n", ret);
-
-Ditto.
-
-> @@ -317,6 +320,8 @@ static int mtk_disp_rdma_remove(struct platform_device *pdev)
->  {
->  	component_del(&pdev->dev, &mtk_disp_rdma_component_ops);
->  
-> +	pm_runtime_disable(&pdev->dev);
-> +
->  	return 0;
->  }
->  
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> index c1e891e..daf002e 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_crtc.c
-> @@ -358,13 +358,21 @@ static void mtk_drm_crtc_atomic_enable(struct drm_crtc *crtc,
->  				       struct drm_crtc_state *old_state)
->  {
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> +	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
->  	int ret;
->  
->  	DRM_DEBUG_DRIVER("%s %d\n", __func__, crtc->base.id);
->  
-> +	ret = pm_runtime_get_sync(comp->dev);
-> +	if (ret < 0)
-> +		DRM_DEV_ERROR(comp->dev, "Failed to enable power domain: %d\n",
-> +			      ret);
-> +
->  	ret = mtk_crtc_ddp_hw_init(mtk_crtc);
-> -	if (ret)
-> +	if (ret) {
-> +		pm_runtime_put(comp->dev);
->  		return;
-> +	}
->  
->  	drm_crtc_vblank_on(crtc);
->  	mtk_crtc->enabled = true;
-> @@ -374,7 +382,8 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
->  					struct drm_crtc_state *old_state)
->  {
->  	struct mtk_drm_crtc *mtk_crtc = to_mtk_crtc(crtc);
-> -	int i;
-> +	struct mtk_ddp_comp *comp = mtk_crtc->ddp_comp[0];
-> +	int i, ret;
->  
->  	DRM_DEBUG_DRIVER("%s %d\n", __func__, crtc->base.id);
->  	if (!mtk_crtc->enabled)
-> @@ -398,6 +407,11 @@ static void mtk_drm_crtc_atomic_disable(struct drm_crtc *crtc,
->  	mtk_crtc_ddp_hw_fini(mtk_crtc);
->  
->  	mtk_crtc->enabled = false;
-> +
-> +	ret = pm_runtime_put(comp->dev);
-> +	if (ret < 0)
-> +		DRM_DEV_ERROR(comp->dev, "Failed to disable power domain: %d\n",
-> +			      ret);
->  }
->  
->  static void mtk_drm_crtc_atomic_begin(struct drm_crtc *crtc,
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> index 7dc8496..c45e1f0 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.c
-> @@ -256,6 +256,8 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
->  		      struct mtk_ddp_comp *comp, enum mtk_ddp_comp_id comp_id,
->  		      const struct mtk_ddp_comp_funcs *funcs)
->  {
-> +	struct platform_device *comp_pdev;
-> +
->  	if (comp_id < 0 || comp_id >= DDP_COMPONENT_ID_MAX)
->  		return -EINVAL;
->  
-> @@ -282,6 +284,13 @@ int mtk_ddp_comp_init(struct device *dev, struct device_node *node,
->  	if (IS_ERR(comp->clk))
->  		return PTR_ERR(comp->clk);
->  
-> +	comp_pdev = of_find_device_by_node(node);
-> +	if (!comp_pdev) {
-> +		dev_err(dev, "Waiting for device %s\n", node->full_name);
-> +		return -EPROBE_DEFER;
-> +	}
-> +	comp->dev = &comp_pdev->dev;
-
-This should be
-
-	comp->dev = dev;
-
-Regards,
-CK
-
-> +
->  	return 0;
->  }
->  
-> diff --git a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> index 108de60..d1838a8 100644
-> --- a/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> +++ b/drivers/gpu/drm/mediatek/mtk_drm_ddp_comp.h
-> @@ -83,6 +83,7 @@ struct mtk_ddp_comp {
->  	struct clk *clk;
->  	void __iomem *regs;
->  	int irq;
-> +	struct device *dev;
->  	enum mtk_ddp_comp_id id;
->  	const struct mtk_ddp_comp_funcs *funcs;
->  };
-
-
+    Update imx-sdma cyclic handling to report residue
+> hanging of UART RX DMA within seconds after starting a test application.
+> It resulted in well known
+>   "Bluetooth: hci0: command 0x0408 tx timeout"
+> errors and complete stop of UART data reception. Our Bluetooth traffic
+> consists of many independent small packets, mostly only a few bytes, causing
+> high usage of periods.
+> 
+> 
+> Philipp Puschmann (4):
+>   dmaengine: imx-sdma: fix buffer ownership
+>   dmaengine: imx-sdma: fix dma freezes
+>   serial: imx: adapt rx buffer and dma periods
+>   dmaengine: imx-sdma: drop redundant variable
+> 
+>  drivers/dma/imx-sdma.c   | 32 ++++++++++++++++++++++----------
+>  drivers/tty/serial/imx.c |  5 ++---
+>  2 files changed, 24 insertions(+), 13 deletions(-)
+> 
+> --
+> 2.23.0
 
 
 _______________________________________________
