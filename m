@@ -2,179 +2,69 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7C1C0B3AD8
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 14:58:09 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id EEC2DB3AF1
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 15:05:53 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wu1u94fkrW3odskgUOgmswfVghxWItNFw+RJ3syvvi8=; b=LmUqTI3OmislGw
-	tacfi7WYamNp7dDd1rWsYV68g6fWE9NMbXqMSKzPhri3v27gGZun9weZuRLWbMbPrk62uHJgqAAHs
-	dNN1BKiMDQth18lytuFlOWUngtUp4jXhroM47BmhFgCw6Kzf2YsVFejrAJy6zV33qgmV+pOXOA9T3
-	7vQos9XJpEN/8FweRXQhSnxQtLHR4G0yCCBNR/oxCaf0OrMsXUjispAEt7VhUXIWIlEFIXUrDmOHb
-	V7pfbUU6E9GSpl2jGyAzUa1CaGfDSrgdGedr4C+S68AJxXGZO3etj5WtEO4ihAANR3b/Pm7woji//
-	yt2RT01P62TrFJg0rgMg==;
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-Id:Date:Subject:To
+	:From:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
+	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
+	List-Owner; bh=kd/Xp+n4RHvdMdnm1Opq+CVik/XLEbM6P4b3SHeO6sM=; b=S3lIQ6WDQqqKj8
+	U8x/4jWG9SjJULh0xTNnj6IYtSX78BQqH9dY+l6TaODGylj4Q9AXz+Moo8MmbHWU8fV2SlioQgEEs
+	fVWwNCyrQDePviyRRKN2ViwzLifSlrYHKZoNJ8A+X+LFzudwNmkJe/XLigHKSsQbAXW/iOBKO4XcM
+	B1yRwzs+Ukif8weinS4imhbDLmHFK9BFT0+SeMjZ8EtPVjAOXFHL/h9esMwy8XUnx1JOlF9v+zbrh
+	qlKlIQNqyovWExiuN6nfpcQRfvJZa6U2GaDDWHtKQq31TwDG4UdPl4+XCgra+qAZS1ZDpT+IY7ezC
+	YZujDuK8Sh4su0CosjEg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9qZr-0007EO-8Q; Mon, 16 Sep 2019 12:57:59 +0000
-Received: from mail-ed1-x543.google.com ([2a00:1450:4864:20::543])
+	id 1i9qhM-0002Kd-El; Mon, 16 Sep 2019 13:05:44 +0000
+Received: from mout.perfora.net ([74.208.4.196])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9qZE-0007BN-V9
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 12:57:22 +0000
-Received: by mail-ed1-x543.google.com with SMTP id z9so32978034edq.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 05:57:19 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=linaro.org; s=google;
- h=subject:to:cc:references:from:autocrypt:message-id:date:user-agent
- :mime-version:in-reply-to:content-language:content-transfer-encoding;
- bh=aFLGIENEDQOBhys1thGsZ6higxQQlTaU+TMP6ccyh4Y=;
- b=PzM0Z5Yud8yQir7fH+iLf2GzB7onVdqE8GWsCpjrxxFYJxBz3iPT9RXPYlL5+7RLKJ
- B0eJPkBkayQnWh9BdA7YkAvCr7tdmd6rOOEtLgtzWV8Pj6mjjXMcN4xlDHCRcKOL9wsm
- CmHmGhktWLbIIAqF7npC02At32NC2WzAiBKxehoKv7M3d/Ngb4l237APpecOgFuQHl3A
- zqjX0k9imB+4Mk2R26QUJvtTO5yQoAQA9z9KE8XMmSJtv7CQ5cJwTbd+M9q8IMsO93EV
- 9TnImA4fHSr00QdYOeuKatwfMrLxAwJC7oWye16o/qyVuO53YJGcy0GpivWpe1E24y+F
- sHlg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:subject:to:cc:references:from:autocrypt
- :message-id:date:user-agent:mime-version:in-reply-to
- :content-language:content-transfer-encoding;
- bh=aFLGIENEDQOBhys1thGsZ6higxQQlTaU+TMP6ccyh4Y=;
- b=knLiIJ863PCTeXkVnKD5JwtZZD3msU5fE1kGylPd1ti+nK9dXSye+bCs5eZ0oIjzdN
- Vd3ulz+ZhrG/JgAqj8eqPS/ykUs3U2gsa4xnv7mv6Tcs21Y5AbGUc0do1htUhigDoCg3
- ezyGZ2sbfeRlb+HuR8UwH5YnRE3fSBTBwNbD+SKLDG5ueHmy1YpGLpLspfckJYU+S2DM
- ralast9vltBqbMizEQ1Yx8dbJ4lzmn4xEO74PDfM8xKgmXFjttW2ItDbKPOHejlRdkAZ
- UqRvMsDZIrHOsLqexRKKeeMcTiEq17u4VV5yFgOt4ZicywkAgkePEE0ISszHzJMq/yvE
- +Shw==
-X-Gm-Message-State: APjAAAXr8ljws8UrFq/4hMQvGFREGJp+FQ2VToy+K8scXWmcV6I5aDRN
- 8JREw1EGD/q1BxR4FMrpFD9k9g==
-X-Google-Smtp-Source: APXvYqx1oWgsSbWM8oAM35XecbDYmxBGz5TMfGulCgFf1MxD+hF1N4mXSrJxaw49dBgzMpBbsX+l6w==
-X-Received: by 2002:aa7:c154:: with SMTP id r20mr40727034edp.268.1568638638822; 
- Mon, 16 Sep 2019 05:57:18 -0700 (PDT)
-Received: from [10.10.2.67] ([85.195.192.192])
- by smtp.gmail.com with ESMTPSA id o26sm1526150edi.23.2019.09.16.05.57.17
- (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
- Mon, 16 Sep 2019 05:57:18 -0700 (PDT)
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-To: Guo Ren <guoren@kernel.org>, Will Deacon <will@kernel.org>
-References: <20190321163623.20219-12-julien.grall@arm.com>
- <0dfe120b-066a-2ac8-13bc-3f5a29e2caa3@arm.com>
- <CAJF2gTTXHHgDboaexdHA284y6kNZVSjLis5-Q2rDnXCxr4RSmA@mail.gmail.com>
- <c871a5ae-914f-a8bb-9474-1dcfec5d45bf@arm.com>
- <20190619091219.GB7767@fuggles.cambridge.arm.com>
- <CAJF2gTTmFq3yYa9UrdZRAFwJgC=KmKTe2_NFy_UZBUQovqQJPg@mail.gmail.com>
- <20190619123939.GF7767@fuggles.cambridge.arm.com>
- <CAJF2gTSiiiewTLwVAXvPLO7rTSUw1rg8VtFLzANdP2S2EEbTjg@mail.gmail.com>
- <20190624104006.lvm32nahemaqklxc@willie-the-truck>
- <CAJF2gTSC1sGgmiTCgzKUTdPyUZ3LG4H7N8YbMyWr-E+eifGuYg@mail.gmail.com>
- <20190912140256.fwbutgmadpjbjnab@willie-the-truck>
- <CAJF2gTT2c45HRfATF+=zs-HNToFAKgq1inKRmJMV3uPYBo4iVg@mail.gmail.com>
- <CAJF2gTTsHCsSpf1ncVb=ZJS2d=r+AdDi2=5z-REVS=uUg9138A@mail.gmail.com>
-From: Jean-Philippe Brucker <jean-philippe@linaro.org>
-Autocrypt: addr=jean-philippe@linaro.org; keydata=
- mQINBFjECSIBEACydb9gqSK48ok0i6BQG5HzrtJLuVNNzRJtx7+nbD5GJfSCND/IJBZEJpXC
- EE5wTsYc0Lrc0UP5CH5WOTrinO5xif19ebgyKebLaFf4EykGuyliWZ5yqjUQTTM1SWQBbVqh
- eYf4LcVX1HkGXDBc1/I7l1NP4t3MYoBYKz8rrOBh9ZpX7h+0AH+Hhrw3Cl2zD/El5Xbzlr9n
- UmezRFLOLD9/DI8feDwinqZlumYPTl6w04oZy6t3wOMF5HUXwtUqusS0NAPcsKoP4PIBCWWo
- up5zyknJHT8G6epZSX/yOv2n0VNIHoQnBESVUJsivpDl0W5XnBoryV7K33uLHbaeeTW/dxrC
- gyPJ+RsAd6dntGWauYOLC0U8cYefsyVLOtDs0m3m9vQ97J+vu62QwOojTnIFjCCy8D0jZTGX
- MjKUBLRTVw19YgWZI95PUX2iUo1+GNMLQs4FOZDrf1gSzVX5xrzftcqbeKDH39YVAST/ckev
- 07tUsorT9mEW1tDpGsy8dAlT4PXoxMKMCo2lgVMQzenat0jNz+VBTRHqaCNwarqRJGDzA+DN
- dd7tsTKoSfjctzvROpMjppMb2xsOeMl6ozl8qwZ2I87zsyZcOOlRv21gIeccxQu/JDZ3V/LK
- TlGEZjoHkteyxiIwzJaj9HtdTyQNU8gMCGn1Bh+JGa5bl7Yg/QARAQABtDBKZWFuLVBoaWxp
- cHBlIEJydWNrZXIgPGplYW4tcGhpbGlwcGVAbGluYXJvLm9yZz6JAk4EEwEIADgWIQSwY9Pc
- Iqou8ZPik3NETQX+8zb18wUCXSTIywIbAwULCQgHAgYVCgkICwIEFgIDAQIeAQIXgAAKCRBE
- TQX+8zb18/ZHD/wOqyQBN2LVZfHSp2/gHECIOXHw4BD1FbRjaE+Q4GhVFNgFAUbTqVQk376s
- LqDoh2RomsQ5WhPtl55sBnj3XfeppB6XYnhzijbADYCEY86sTInO0NYnCd2K7EvFgKAxJLM0
- k4GYl3gWN4K4y6KLOSYZ2ZOBvoL3KNpUEZaLGKrudC83fygOWwSEjoKIMp1fl7b6E62+oxtH
- 07w9IrSl014u+1gd6HTiBrv2xNIk5oR9TdJWFKImy3TZfVdgxezlEy7CEbdaoSLoFHDHB5Wo
- lh9c12yX3hAkUSSfv3V9H9bfFWGA+LwYEl7oDNoTdGFBpp4qMTOF+0I+YzKNkBFFvrO1hZO3
- lu4imMg3vMNBx2Ne47oVdoDqGe/bjNkT8odjp9yf1fhXkYRTypQ6gDtwta5OwjNQrUdgFw8L
- jhfploX2I8M9I954y06dcp0wXwCVlZzviMH3GLqobzi7AjzNSHlg4Eg5c29MVXjW4BbWZW1e
- POUsdjNExqatQ04axq9qK8LqdSqHyOumP6cncdWL73CROkD+04HXhcbLaQmEdIBqGtZHFS6G
- +NmzhEkKN7saaY0gH1RNlj1K5/9b6mjVH3DCP45aPDb3oAgmWBaLyZ0LghpcKqRNkzpM6Zjd
- oYDb6oOXPW0o9BIzkTV+OS1SqK0XHQCruXM/mnJyVUNTk/DTorkCDQRYxAkiARAA1gc0liQh
- pCDTbqYjLLCE3GKIbz/U7hpWvRwqz3pBqCXZcsfCJ7WERf9HWHFjA07vitDNCdBxEoSoPI5M
- NgJGkLQuZuVtk/rEChEwJ2zVoLCj+s+9XNdfcGH63u1igbF8i4RDLQ1fR9Fqrg/tjUM04f9r
- XKZkGaZ+4V5l411PxlzZA3Om+1bg+n1ibFHMNvHFxFcpYjEOf3All2/bsp+ewWa8GYDZGhfI
- R8n4UREYQJtgORRlq2U3qvSrGZIotwtuu4IfcAJZVJELDBQr+T+D+XzOLBF2u3axNjqhd1aT
- F4LTAy9LtQDEKFdlxpfHT37POe5axe0lTBwj0yMe4mkzPhL+5DR79otVqCzz4Vc/7eIVv54G
- kl7ca1WLGUlksZOPfd08/1mvR+P3ESssRVqYDz3vdSkFLVfVSYmowmWkfP+HIbAjVabK9QhI
- l59P1efgqcM7qKvzNWFblc5hMhyxSqlAdvhzbwpcGqxSxHx7SednDRXEQYW06es6oV2+QfbH
- PT1hZETQinLF0APcfCpqwtbDWtL8yJ7X3CPTUriZAlGY/luY0haaWeJwvZuTYLwPAZVSZlFi
- gyKgSXWkFffDd8dCq3wRW4xXCVwa3yriztgHwVbPy8ue9NTFg7OeNbAUiVK3J2z+Fh93vZUN
- MX45r89HfBhUKUdG6PRUxfMCvdEAEQEAAYkCNgQYAQgAIBYhBLBj09wiqi7xk+KTc0RNBf7z
- NvXzBQJYxAkiAhsMAAoJEERNBf7zNvXzQkoP/A68mDi6avshkYsUFCFswtep1f37s9lygNTD
- kPTGAhbfnyefVyYgjIcoQxRe3GwqxkBqEPS54cnL8KwI884WOsMvU73BRrRNMUkU1b9NUR0I
- SsS51yfE/WzqNH4nFfkKi4hC0cGPHvjfKqOsd7jFW2clLLPrTOSt6URF7jhFqgKa1zb+AuK6
- 9auVo7YpcPwPU4DMXZvUk/aew6/V5HIczVs9UTNQ5UhccUq3Z6vWa9NSVXAthsOoo5xGp8x0
- LY8gHV/Z168uCyaK/j0zfrxzUgLSsYMBf5WnBx89Jnagg9ST6MNhBtldOaOVFf0AnDORJyLk
- /JUPMO/+Ar4djcIHaSbUPU75f2a1UZDyYic5/c3w/3Xj0MaGHrgAKfWl/15pg3LAEkKHCu9M
- CfXcpwutiI8rrrRFc6kQkTEzIHV4kYn+Ywh9F4Y82Cih2wCL0A78ixvoIKKqTjBl6NnBdQ4w
- wMpH/h7UvvvWN4WvRN7Hrpx3UZcFP3OiUx51zaIfv+/8XeHlyC5/d0uM4pzoqg9Y1hNTohno
- Sx/4o8/nTtu6KzgWwTIrIPFayUkz9VU+T5tceS0jtN2GXrBqS46novXO5BA/oznxWVj/3Em5
- U7QW+3A6pYwPaCZtxl+dQSgTKokZJfrvEfgjOHwqCxbHFOpK76i90GlcW2B9SjqibNIPdb7m
- uQINBFm1RCsBEADP0rzvPh4R0y0NcyUoAJVSMMfM/VkW1gdguo0YPPNNYnhp9Op/iNw28gtw
- puhZWzmUaU9x6VBIggnV9UhCJPCrO2+ODp3cIvR7JHlc9Z8jg4zIwf9KVbkBijnVruzbRkUy
- JU0HQ/dIfPATBeIK/1pueZ2rad8u8efrzyu6VEtNBkTaFiK6SQnSEXEwRyDf9weKrcVjQXFh
- 9KzJ7hqwvvyb9eWRFgWWi4xU30CWN26dMMK852wGp/4j3JJtGRJCfv86M8Gc1+9W8hcjuhR+
- HUEpxBnLGUGCpGU1zxJosmiSTZ+lozoI8Tm47L2hUI2yqd8uEe1KfiOVvLyU7o2L0aNgigD4
- sNkoyYkRSqeMP8BcEIpA8ZBJ2oCyluZP3ZY7YRizf1OLGW5joEQ0BWjQuiRWPEepMh51l5GU
- UFyOgLY/pj9zgk5EqhrejHrMG6h82tl6Be7PTK3r7KC+MV8jjeX77PPQnEmxWzh1DsvAAMqR
- 4F9UMZEsAugoCW25Rr0MUefOUGodAZbB+KY5f4XHGO6qEGtAdnhjDP4G7qA1D4y+gU6DR2db
- VbK2B7CoQVt8bFg6yBGeLQ3Wyayl9eujI96bWnLRwZrXavYLcpOyBF0tlp4YD2GZD+0nr243
- hkEskoJUz3Fne5o7LHsaOzRTdOhIJX//Gyzn6ezSW7y0eLHNaQARAQABiQRyBBgBCAAmFiEE
- sGPT3CKqLvGT4pNzRE0F/vM29fMFAlm1RCsCGwIFCQlmAYACQAkQRE0F/vM29fPBdCAEGQEI
- AB0WIQQDmQNJKcUHr2CstV4BtBS7JBpUdQUCWbVEKwAKCRABtBS7JBpUdd01EACcj9EAPjjp
- 6D/imnLOWYF0fcVM7m4ktu7UGTR7xGuINzai1K2lw25W39xecPPaAcqdORd4aBOJZ00jdKLi
- LwILnHYi0woNPZY2F7282Um2EwN+/YPUdu8tSZIo5F2Zx55pBmz7YtX3UtdwHiPi0dxCRVQq
- ZdbjduBGuoN4oYnIWsT4bIU0PHVbW1nz3+cQzhdSDwvK/2uVgIG8c1rmfuMbDDh80BDDRM//
- kZrWV6S/JKEKR7SNnmvC/z3s9OHBJsDydfRVkIU0yGb4Sw+pe/4r1aTSAdKfifXjo7OVA+uS
- W5/EcfqyHG+4VdHmanAciTv88ckF7oQNpOPpH8hg4n9YYkBd+nbO58lD4wtgHYqJdfl6Q4er
- xmRr3pR2p1KZs/hb7mB0hGoGTlHoq4+nD9Eb1RVAEcg7P2oLY0m1WljPeDyZG4yhSxjURfPB
- /TSYHi85XoXZw/ptAF9J9orU3UoPyX/JS+UtL61L9jK+D0/VaPWLSpbw5pFaTMsB5fp7Msbr
- AuuOep6PwBmgFnPpQ5SX5XqaN/h4K2vnFq2B0F11m7JVyFiUqhO/Hrkr2O5VHdaOIB7w5N+V
- Ru/6Y9Z6xtnxTy/GsVCxJoRNWFbK9T6v3g21ESPfyp4cEEX8j+r+WhqK/9ytY3MaUsO4yJ/g
- Fc0Sv5nlpoz50VzHp3/8VV6OSKk/EACqtMTR99xjlzCjegm61Lt4TZ1e+4pu7LzCWzCcdQG5
- zaov8uLuCmT32l6tRjyQEgEPo9H8TuCurp3YQ83bAfZhowPVBuLigpf0sjOR7qdFz5Kirx7f
- oNbWMiAkfyyntmmq+RnO22mdsBombBeVcTirM0Gu5nVuGQ55seH3ecqJPP1ztlAwOOvNGvO9
- cB7nMe0QaRTFj4uBgdOTkjq+lnjULLUrDjoKnF08sDoO/Gigj5f4bfHjd6dkT4YxPVmHVpHV
- FmjXNgy0Jcft8I449FCeZv3Ba8KZQ++pB5wwJfgUxJanRMy3aDXYkcn4ZQkV8ogX7DE9gOPw
- 4pVqNCS6hvzHBAsY/sGGgoxYJQJvTJxovApMyi1YqK3V4BNaHyOyOCSTcoYh8kiOSV/KXEkd
- aOruGBzKzZyLfHPAnMolBuZ/6NTdBr6F6iy2YIz4whI2i9sGMkPjWh3UcmqeUHBg02cgTPew
- lVlrgFLPoJ0r52tsxYvE+a+FtBv0KGWk1RJ4bAKvNJUJeGMzAqHhpoQnw0nZhPAvAnAJ3j+Q
- sNiMLAL+daIAlufLaeYCGKnCw9uOfJWXPMednN/NgfRafHYAOmnmlEh2dXPf+FXSH0mwFWPD
- 6BrkExywH3k9qVdWUdxd0hg4nRGMAB8KK9KgyBTtmTKrBkScMJbWPlJTHrmMqU8dlQ==
-Message-ID: <057a0af3-93f7-271c-170e-4b31e6894c3c@linaro.org>
-Date: Mon, 16 Sep 2019 14:57:16 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:68.0) Gecko/20100101
- Thunderbird/68.0
+ id 1i9qgq-0001hD-Lw
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 13:05:16 +0000
+Received: from marcel-nb-toradex-int.toradex.int ([46.140.72.82]) by
+ mrelay.perfora.net (mreueus004 [74.208.5.2]) with ESMTPSA (Nemesis) id
+ 1MFtEB-1hsZj60155-00HOxU; Mon, 16 Sep 2019 15:04:39 +0200
+From: Marcel Ziswiler <marcel@ziswiler.com>
+To: devicetree@vger.kernel.org
+Subject: [PATCH v1] arm64: dts: freescale: add initial support for colibri
+ imx8x
+Date: Mon, 16 Sep 2019 15:04:27 +0200
+Message-Id: <20190916130427.20413-1-marcel@ziswiler.com>
+X-Mailer: git-send-email 2.21.0
 MIME-Version: 1.0
-In-Reply-To: <CAJF2gTTsHCsSpf1ncVb=ZJS2d=r+AdDi2=5z-REVS=uUg9138A@mail.gmail.com>
-Content-Language: en-US
+X-Provags-ID: V03:K1:4uztDj2XVwqkjRQFdWlqw7KDq5Bmpq48z0z1KZhcMtUc81UAOMT
+ EJKUVWtTCoy/vttWcBN+07XXq1ASz/Iuit0WWEKv39I/H5dtnXiGn9fTHEZE2Bf+721OESR
+ 5os71SduXBnBEdsVqhNt/ElgvdEgzufZsAbksL6WISnmoSCrz5B4NSXBZtuDJn/f52dUKKq
+ sxC28jhD9ZchBIufAmDYQ==
+X-Spam-Flag: NO
+X-UI-Out-Filterresults: notjunk:1;V03:K0:UVcNlKG4M4s=:l/4g6PJVbAzTdY5NPW+M4o
+ P9laXcyhbunQKJMbg9LQFoTQpmOpt9US6VDhtlTQ2Wx1zOSjXqpdPzsEtAuQ2AIY/rNwWcq8G
+ jchrd0WEKP6abwE3NDEnXRMlyZyjhaHKxdMOItDZhVrM0T4VLqVqPf67PNAqbhQas7Olfm84+
+ G2CsUrHM067htK0iOqA+pcsOigdmkd5JkSLlEnMtysPlvssnF+DUGA5dKwgRRULjWw8bRgaFu
+ Eyzi1ma3mL6u3DMVITWyHd2EZ4o0SFXfnn6Y/ysta/JwRi0FcrSewBDl6yXo8T2KspsJ8+AKI
+ d2AqqVg7oB6BBCVVQlH/T1JFkOH6g/hFVUEvzCjtvlXb7e9hyPLZkTqwAsG2J3LeQLOJriy4u
+ 6gALi1WQ2aJN4M8+XiDcX479xF2YHjKkOnKYuq0RBXgVcr6qMNSOxtgrmsgFm2+vVYgT8M/gf
+ EHI3E3h9yHbpR9nm+h9gljGxVE8OlED8ESCiyVus8aUXWbhAKJce+iuGQjkFnxIphXS4289lh
+ 5uJR3vgwKpR7TyCVdpV/cD4rHS98SQgSw6SphvAzmTrGoDS0aKo0h/UKkAqx33VpckeV7XvIC
+ cDtSzNsl8CAWv0ovc5XzAzynYq4yJwqMWJlVgXfaxk+fNbEe93PCpdMBWENtw6WuYlKsb7LdR
+ d0E1zJ15C2RQKwsI+CEFa7ElQXyOFbWf2b2kcW/XIkEl9qEOKFJ7GcyHm/4IZUgVhOHB1RarI
+ YCtrKUVIEB9D7hGExa0ojAiADG3PX9j+p5CWiHCEJMdLWA9YR0rLz4JXzYLJZ3LtEhsR72OjN
+ kmb7aljbRCyYtsqL+yz2+a/b3oXsGt2WJ04go0aVN/K5bMley5g1VxW720B863fZ1vGwoUsOw
+ hYaqSdyaChnwZ6B7kWUxPVyb5prup6Jg5/EznLOis=
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_055721_022630_542D20B4 
-X-CRM114-Status: GOOD (  28.95  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190916_060513_251856_74B602BC 
+X-CRM114-Status: GOOD (  16.85  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2a00:1450:4864:20:0:0:0:543 listed in]
- [list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
- 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
+ no trust [74.208.4.196 listed in list.dnswl.org]
+ -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -186,92 +76,757 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: aou@eecs.berkeley.edu,
- Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
- Arnd Bergmann <arnd@arndb.de>, suzuki.poulose@arm.com,
- Marc Zyngier <marc.zyngier@arm.com>, Catalin Marinas <catalin.marinas@arm.com>,
- Palmer Dabbelt <palmer@sifive.com>, christoffer.dall@arm.com,
- iommu@lists.linux-foundation.org, Mike Rapoport <rppt@linux.ibm.com>,
- Anup Patel <anup.Patel@wdc.com>, Atish Patra <Atish.Patra@wdc.com>,
- Julien Grall <julien.grall@arm.com>, james.morse@arm.com, gary@garyguo.net,
- Paul Walmsley <paul.walmsley@sifive.com>, linux-riscv@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: Aisheng Dong <aisheng.dong@nxp.com>, Mark Rutland <mark.rutland@arm.com>,
+ Sascha Hauer <s.hauer@pengutronix.de>, Pramod Kumar <pramod.kumar_1@nxp.com>,
+ Marcel Ziswiler <marcel.ziswiler@toradex.com>, Shawn Guo <shawnguo@kernel.org>,
+ Bhaskar Upadhaya <bhaskar.upadhaya@nxp.com>, Jon Nettleton <jon@solid-run.com>,
+ linux-kernel@vger.kernel.org, Li Yang <leoyang.li@nxp.com>,
+ Rob Herring <robh+dt@kernel.org>, Vabhav Sharma <vabhav.sharma@nxp.com>,
+ linux-imx@nxp.com, Pengutronix Kernel Team <kernel@pengutronix.de>,
+ Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>,
+ Fabio Estevam <festevam@gmail.com>, Richard Hu <richard.hu@technexion.com>,
+ linux-arm-kernel@lists.infradead.org, Lucas Stach <l.stach@pengutronix.de>
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAxMy8wOS8yMDE5IDA5OjEzLCBHdW8gUmVuIHdyb3RlOgo+IEFub3RoZXIgaWRlYSBp
-cyBzZXBlcmF0ZSByZW1vdGUgVExCIGludmFsaWRhdGUgaW50byB0d28gaW5zdHJ1Y3Rpb25zOgo+
-IAo+IMKgLSBzZmVuY2Uudm1hLmIuYXN5Ywo+IMKgLSBzZmVuY2Uudm1hLmIuYmFycmllciAvLyB3
-YWl0IGFsbCBhc3luYyBUTEIgaW52YWxpZGF0ZSBvcGVyYXRpb25zCj4gZmluaXNoZWQgZm9yIGFs
-bCBoYXJ0cy4KCkl0J3Mgbm90IGNsZWFyIHRvIG1lIGhvdyB0aGlzIGhlbHBzLCBidXQgSSBwcm9i
-YWJseSBkb24ndCBoYXZlIHRoZSB3aG9sZQpwaWN0dXJlLiBJZiB5b3UgaGF2ZSBhIHBsYWNlIHdo
-ZXJlIGl0IGlzIHNhZmUgdG8gd2FpdCBmb3IgdGhlIGJhcnJpZXIgdG8KY29tcGxldGUsIHdoeSBu
-b3QgZG8gdGhlIHdob2xlIGludmFsaWRhdGUgdGhlcmU/Cgo+IChJIHJlbWVtYmVyIHdobyBtZW50
-aW9uZWQgbWUgc2VwYXJhdGUgdGhlbSBpbnRvIHR3byBpbnN0cnVjdGlvbnMgYWZ0ZXIKPiBzZXNz
-aW9uLiBBbnVwPyBJcyB0aGUgaWRlYSByaWdodCA/KcKgCj4gCj4gQWN0dWFsbHksIEkgbmV2ZXIg
-Y29uc2lkZXIgYXN5YyBUTEIgaW52YWxpZGF0ZSBiZWZvcmUsIGJlY2F1c2UgY3VycmVudCBvdXIK
-PiBsaWdodCBpb21tdSBkaWQgbm90IG5lZWQgaXQuCj4gCj4gVGh4IGFsbCBwZW9wbGUgYXR0ZW5k
-IHRoZSBzZXNzaW9uIDopIExldCdzIGNvbnRpbnVlIHRoZSB0YWxrLsKgCj4gCj4gCj4gR3VvIFJl
-biA8Z3VvcmVuQGtlcm5lbC5vcmcgPG1haWx0bzpndW9yZW5Aa2VybmVsLm9yZz4+IOS6jiAyMDE5
-5bm0OeaciDEy5pel5ZGoCj4g5ZubIDIyOjU55YaZ6YGT77yaCj4gCj4gICAgIFRoeCBXaWxsIGZv
-ciByZXBseS4KPiAKPiAgICAgT24gVGh1LCBTZXAgMTIsIDIwMTkgYXQgMzowMyBQTSBXaWxsIERl
-YWNvbiA8d2lsbEBrZXJuZWwub3JnCj4gICAgIDxtYWlsdG86d2lsbEBrZXJuZWwub3JnPj4gd3Jv
-dGU6Cj4gICAgID4KPiAgICAgPiBPbiBTdW4sIFNlcCAwOCwgMjAxOSBhdCAwNzo1Mjo1NUFNICsw
-ODAwLCBHdW8gUmVuIHdyb3RlOgo+ICAgICA+ID4gT24gTW9uLCBKdW4gMjQsIDIwMTkgYXQgNjo0
-MCBQTSBXaWxsIERlYWNvbiA8d2lsbEBrZXJuZWwub3JnCj4gICAgIDxtYWlsdG86d2lsbEBrZXJu
-ZWwub3JnPj4gd3JvdGU6Cj4gICAgID4gPiA+ID4gSSdsbCBrZWVwIG15IHN5c3RlbSB1c2UgdGhl
-IHNhbWUgQVNJRCBmb3IgU01QICsgSU9NTVUgOlAKPiAgICAgPiA+ID4KPiAgICAgPiA+ID4gWW91
-IHdpbGwgd2FudCBhIHNlcGFyYXRlIGFsbG9jYXRvciBmb3IgdGhhdDoKPiAgICAgPiA+ID4KPiAg
-ICAgPiA+ID4KPiAgICAgaHR0cHM6Ly9sa21sLmtlcm5lbC5vcmcvci8yMDE5MDYxMDE4NDcxNC42
-Nzg2LTItamVhbi1waGlsaXBwZS5icnVja2VyQGFybS5jb20KPiAgICAgPiA+Cj4gICAgID4gPiBZ
-ZXMsIGl0IGlzIGhhcmQgdG8gbWFpbnRhaW4gQVNJRCBiZXR3ZWVuIElPTU1VIGFuZCBDUFVNTVUg
-b3IgZGlmZmVyZW50Cj4gICAgID4gPiBzeXN0ZW0sIGJlY2F1c2UgaXQncyBkaWZmaWN1bHQgdG8g
-c3luY2hyb25pemUgdGhlIElPX0FTSUQgd2hlbiB0aGUgQ1BVCj4gICAgID4gPiBBU0lEIGlzIHJv
-bGxvdmVyLgo+ICAgICA+ID4gQnV0IHdlIGNvdWxkIHN0aWxsIHVzZSBoYXJkd2FyZSBicm9hZGNh
-c3QgVExCIGludmFsaWRhdGlvbiBpbnN0cnVjdGlvbgo+ICAgICA+ID4gdG8gdW5pZm9ybWx5IG1h
-bmFnZSB0aGUgQVNJRCBhbmQgSU9fQVNJRCwgb3IgT1RIRVJfQVNJRCBpbiBvdXIgSU9NTVUuCj4g
-ICAgID4KPiAgICAgPiBUaGF0J3MgcHJvYmFibHkgYSBiYWQgaWRlYSwgYmVjYXVzZSB5b3UnbGwg
-bGlrZWx5IHN0YWxsIGV4ZWN1dGlvbiBvbiB0aGUKPiAgICAgPiBDUFUgdW50aWwgdGhlIElPVExC
-IGhhcyBjb21wbGV0ZWQgaW52YWxpZGF0aW9uLiBJbiB0aGUgY2FzZSBvZiBBVFMsCj4gICAgIEkg
-dGhpbmsKPiAgICAgPiBhbiBlbmRwb2ludCBBVEMgaXMgcGVybWl0dGVkIHRvIHRha2Ugb3ZlciBh
-IG1pbnV0ZSB0byByZXNwb25kLiBJbgo+ICAgICByZWFsaXR5LCBJCj4gICAgID4gc3VzcGVjdCB0
-aGUgd29yc3QgeW91J2xsIGV2ZXIgc2VlIHdvdWxkIGJlIGluIHRoZSBtc2VjIHJhbmdlLCBidXQg
-dGhhdCdzCj4gICAgID4gc3RpbGwgYW4gdW5hY2NlcHRhYmxlIHBlcmlvZCBvZiB0aW1lIHRvIGhv
-bGQgYSBDUFUuCj4gICAgIEp1c3QgYXMgSSd2ZSBzYWlkIGluIHRoZSBzZXNzaW9uIHRoYXQgSU9U
-TEIgaW52YWxpZGF0ZSBkZWxheSBpcwo+ICAgICBhbm90aGVyIHRvcGljLCBNeSBtYWluIHByb3Bv
-c2FsIGlzIHRvIGludHJvZHVjZSBzdGFnZTEucGdkIGFuZAo+ICAgICBzdGFnZTIucGdkIGFzIGFk
-ZHJlc3Mgc3BhY2UgaWRlbnRpZmllcnMgYmV0d2VlbiBkaWZmZXJlbnQgVExCIHN5c3RlbXMKPiAg
-ICAgYmFzZWQgb24gdm1pZCwgYXNpZC4gTXkgbGFzdCBwYXJ0IG9mIHNpbGRlcyB3aWxsIHNob3cg
-eW91IGhvdyB0bwo+ICAgICB0cmFuc2xhdGUgc3RhZ2UxLzIucGdkIHRvIGFzL3ZtaWQgaW4gUENJ
-IEFUUyBzeXN0ZW0gYW5kIHRoZSBtZXRob2QKPiAgICAgY291bGQgd29yayB3aXRoIFNNTVUtdjMg
-YW5kIGludGVsIFZ0LWQuIChJdCdzIHJlZ3JldCBmb3IgbWUgdGhlcmUgaXMKPiAgICAgbm8gdGlt
-ZSB0byBzaG93IHlvdSB0aGUgd2hvbGUgc2xpZGVzLikKPiAKPiAgICAgSW4gb3VyIGxpZ2h0IElP
-TU1VIGltcGxlbWVudGF0aW9uLCB0aGVyZSdzIG5vIElPVExCIGludmFsaWRhdGUgZGVsYXkKPiAg
-ICAgcHJvYmxlbS4gQmVjYXN1ZSBJT01NVSBpcyB2ZXJ5IGNsb3NlIHRvIENQVSBNTVUgYW5kIGlu
-dGVyY29ubmVjdCdzCj4gICAgIGRlbGF5IGlzIHRoZSBzYW1lIHdpdGggU01QIENQVXMgTU1VIChu
-byBQQ0ksIFZNIHN1cHBvcnRlZCkuCj4gCj4gICAgIFRvIHNvbHZlIHRoZSBwcm9ibGVtLCB3ZSBj
-b3VsZCBkZWZpbmUgYSBhc3luYyBtb2RlIGluIHNmZW5jZS52bWEuYiB0bwo+ICAgICBzbG92ZSB0
-aGUgcHJvYmxlbSBhbmQgZmluaXNoZWQgd2l0aCBwZXJfY3B1X2lycS9leGNlcHRpb24uCgpUaGUg
-c29sdXRpb24gSSBoYWQgdG8gdGhpcyBwcm9ibGVtIGlzIHBpbm5pbmcgdGhlIEFTSUQgWzFdIHVz
-ZWQgYnkgdGhlCklPTU1VLCB0byBwcmV2ZW50IHRoZSBDUFUgZnJvbSByZWN5Y2xpbmcgdGhlIEFT
-SUQgb24gcm9sbG92ZXIuIFRoaXMgd2F5CnRoZSBDUFUgZG9lc24ndCBoYXZlIHRvIHdhaXQgZm9y
-IElPTU1VIGludmFsaWRhdGlvbnMgdG8gY29tcGxldGUsIHdoZW4Kc2NoZWR1bGluZyBhIHRhc2sg
-dGhhdCBtaWdodCBub3QgZXZlbiBoYXZlIGFueXRoaW5nIHRvIGRvIHdpdGggdGhlIElPTU1VLgoK
-SW4gdGhlIEFybSBTTU1VLCBBU0lEIGFuZCBJT0FTSUQgKFBBU0lEKSBhcmUgc2VwYXJhdGUgaWRl
-bnRpZmllcnMuIElPQVNJRAppbmRleGVzIGFuIGVudHJ5IGluIHRoZSBjb250ZXh0IGRlc2NyaXB0
-b3IgdGFibGUsIHdoaWNoIGNvbnRhaW5zIHRoZSBBU0lELgpTbyB3aXRoIHVucGlubmVkIHNoYXJl
-ZCBBU0lEIHlvdSBkb24ndCBuZWVkIHRvIGludmFsaWRhdGUgdGhlIEFUQyBvbgpyb2xsb3Zlciwg
-c2luY2UgdGhlIElPQVNJRCBkb2Vzbid0IGNoYW5nZSwgYnV0IHlvdSBkbyBuZWVkIHRvIG1vZGlm
-eSB0aGUKY29udGV4dCBkZXNjcmlwdG9yIGFuZCBpbnZhbGlkYXRlIGNhY2hlZCB2ZXJzaW9ucyBv
-ZiBpdC4KCk9uY2UgeW91IGhhdmUgcGlubmVkIEFTSURzLCB5b3UgY291bGQgYWxzbyBkZWNsYXJl
-IHRoYXQgSU9BU0lEID0gQVNJRC4gSQpkb24ndCByZW1lbWJlciBmaW5kaW5nIGFuIGFyZ3VtZW50
-IHRvIHN0cmljdGx5IGZvcmJpZCBpdCwgZXZlbiB0aG91Z2ggQVNJRAphbmQgSU9BU0lEIGhhdmUg
-ZGlmZmVyZW50IHNpemVzIG9uIEFybSAocmVzcGVjdGl2ZWx5IDgvMTYgYW5kIDIwIGJpdHMpLgoK
-VGhhbmtzLApKZWFuCgpbMV0KaHR0cHM6Ly9sb3JlLmtlcm5lbC5vcmcvbGludXgtaW9tbXUvMjAx
-ODA1MTExOTA2NDEuMjMwMDgtMTctamVhbi1waGlsaXBwZS5icnVja2VyQGFybS5jb20vCgpfX19f
-X19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fXwpsaW51eC1hcm0ta2Vy
-bmVsIG1haWxpbmcgbGlzdApsaW51eC1hcm0ta2VybmVsQGxpc3RzLmluZnJhZGVhZC5vcmcKaHR0
-cDovL2xpc3RzLmluZnJhZGVhZC5vcmcvbWFpbG1hbi9saXN0aW5mby9saW51eC1hcm0ta2VybmVs
-Cg==
+From: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+
+This patch adds the device tree to support Toradex Colibri iMX8X a
+computer on module which can be used on different carrier boards.
+
+The module consists of a NXP i.MX 8X family SoC (either i.MX 8DualX or
+8QuadXPlus), a PF8100 PMIC, a FastEthernet PHY, 1 or 2 GB of LPDDR4
+RAM, some level shifters, a Micron eMMC, a USB hub, an AD7879 resistive
+touch controller, a SGTL5000 audio codec and on-module CSI as well as
+DSI-LVDS FFC receptacles plus an optional Bluetooth/Wi-Fi module.
+
+Anything that is not self-contained on the module is disabled by
+default.
+
+The device tree for the Colibri Evaluation Board includes the module's
+device tree and enables the supported peripherals of the carrier board
+(the Colibri Evaluation Board supports almost all of them).
+
+So far there is no display or USB functionality supported at all but
+basic console UART, eMMC and Ethernet functionality work fine.
+
+Signed-off-by: Marcel Ziswiler <marcel.ziswiler@toradex.com>
+
+---
+
+ arch/arm64/boot/dts/freescale/Makefile        |   1 +
+ .../dts/freescale/imx8qxp-colibri-eval-v3.dts |  15 +
+ .../freescale/imx8qxp-colibri-eval-v3.dtsi    |  62 ++
+ .../boot/dts/freescale/imx8qxp-colibri.dtsi   | 592 ++++++++++++++++++
+ 4 files changed, 670 insertions(+)
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dts
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dtsi
+ create mode 100644 arch/arm64/boot/dts/freescale/imx8qxp-colibri.dtsi
+
+diff --git a/arch/arm64/boot/dts/freescale/Makefile b/arch/arm64/boot/dts/freescale/Makefile
+index 93fce8f0c66d..bd3764e52cfd 100644
+--- a/arch/arm64/boot/dts/freescale/Makefile
++++ b/arch/arm64/boot/dts/freescale/Makefile
+@@ -31,4 +31,5 @@ dtb-$(CONFIG_ARCH_MXC) += imx8mq-pico-pi.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-rmb3.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8mq-zii-ultra-zest.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8qxp-ai_ml.dtb
++dtb-$(CONFIG_ARCH_MXC) += imx8qxp-colibri-eval-v3.dtb
+ dtb-$(CONFIG_ARCH_MXC) += imx8qxp-mek.dtb
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dts b/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dts
+new file mode 100644
+index 000000000000..85fc800c348f
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dts
+@@ -0,0 +1,15 @@
++// SPDX-License-Identifier: GPL-2.0+ OR X11
++/*
++ * Copyright 2019 Toradex
++ */
++
++/dts-v1/;
++
++#include "imx8qxp-colibri.dtsi"
++#include "imx8qxp-colibri-eval-v3.dtsi"
++
++/ {
++	model = "Toradex Colibri iMX8QXP/DX on Colibri Evaluation Board V3";
++	compatible = "toradex,colibri-imx8qxp-eval-v3",
++		     "toradex,colibri-imx8qxp", "fsl,imx8qxp";
++};
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dtsi
+new file mode 100644
+index 000000000000..f5e4f380755c
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-colibri-eval-v3.dtsi
+@@ -0,0 +1,62 @@
++// SPDX-License-Identifier: GPL-2.0+ OR X11
++/*
++ * Copyright 2019 Toradex
++ */
++
++#include "dt-bindings/input/linux-event-codes.h"
++
++/ {
++	aliases {
++		rtc0 = &rtc_i2c;
++		rtc1 = &rtc;
++	};
++
++	gpio-keys {
++		compatible = "gpio-keys";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_gpiokeys>;
++
++		power {
++			label = "Wake-Up";
++			gpios = <&lsio_gpio3 10 GPIO_ACTIVE_HIGH>;
++			linux,code = <KEY_WAKEUP>;
++			debounce-interval = <10>;
++			gpio-key,wakeup;
++		};
++	};
++};
++
++/* Colibri Ethernet */
++&fec1 {
++	status = "okay";
++};
++
++&adma_i2c1 {
++	status = "okay";
++
++	/* M41T0M6 real time clock on carrier board */
++	rtc_i2c: rtc@68 {
++		compatible = "st,m41t0";
++		reg = <0x68>;
++	};
++};
++
++/* Colibri UART_B */
++&adma_lpuart0 {
++	status= "okay";
++};
++
++/* Colibri UART_C */
++&adma_lpuart2 {
++	status= "okay";
++};
++
++/* Colibri UART_A */
++&adma_lpuart3 {
++	status= "okay";
++};
++
++/* Colibri SDCard */
++&usdhc2 {
++	status = "okay";
++};
+diff --git a/arch/arm64/boot/dts/freescale/imx8qxp-colibri.dtsi b/arch/arm64/boot/dts/freescale/imx8qxp-colibri.dtsi
+new file mode 100644
+index 000000000000..efdc332d082e
+--- /dev/null
++++ b/arch/arm64/boot/dts/freescale/imx8qxp-colibri.dtsi
+@@ -0,0 +1,592 @@
++// SPDX-License-Identifier: GPL-2.0+ OR X11
++/*
++ * Copyright 2019 Toradex
++ */
++
++#include "imx8qxp.dtsi"
++
++/ {
++	model = "Toradex Colibri iMX8QXP/DX Module";
++	compatible = "toradex,colibri-imx8x", "fsl,imx8qxp";
++
++	chosen {
++		stdout-path = &adma_lpuart3;
++	};
++
++	reg_module_3v3: regulator-module-3v3 {
++		compatible = "regulator-fixed";
++		regulator-name = "+V3.3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++	};
++};
++
++/* Colibri Ethernet */
++&fec1 {
++	pinctrl-names = "default", "sleep";
++	pinctrl-0 = <&pinctrl_fec1>;
++	pinctrl-1 = <&pinctrl_fec1_sleep>;
++	phy-mode = "rmii";
++	phy-handle = <&ethphy0>;
++	fsl,magic-packet;
++
++	mdio {
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		ethphy0: ethernet-phy@2 {
++			compatible = "ethernet-phy-ieee802.3-c22";
++			max-speed = <100>;
++			reg = <2>;
++		};
++	};
++};
++
++/* On-module I2C */
++&adma_i2c0 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c0>, <&pinctrl_sgtl5000_usb_clk>;
++	status = "okay";
++
++	/* Touch controller */
++	ad7879@2c {
++		compatible = "adi,ad7879-1";
++		pinctrl-names = "default";
++		pinctrl-0 = <&pinctrl_ad7879_int>;
++		reg = <0x2c>;
++		interrupt-parent = <&lsio_gpio3>;
++		interrupts = <5 IRQ_TYPE_EDGE_FALLING>;
++		touchscreen-max-pressure = <4096>;
++		adi,resistance-plate-x = <120>;
++		adi,first-conversion-delay = /bits/ 8 <3>;
++		adi,acquisition-time = /bits/ 8 <1>;
++		adi,median-filter-size = /bits/ 8 <2>;
++		adi,averaging = /bits/ 8 <1>;
++		adi,conversion-interval = /bits/ 8 <255>;
++	};
++};
++
++/* Colibri I2C */
++&adma_i2c1 {
++	#address-cells = <1>;
++	#size-cells = <0>;
++	clock-frequency = <100000>;
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_i2c1>;
++};
++
++&iomuxc {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_hog0>, <&pinctrl_hog1>, <&pinctrl_ext_io0>;
++
++	colibri-imx8qxp {
++		/* On-module touch pen-down interrupt */
++		pinctrl_ad7879_int: ad7879-int {
++			fsl,pins = <
++				IMX8QXP_MIPI_CSI0_I2C0_SCL_LSIO_GPIO3_IO05	0x21
++			>;
++		};
++
++		/* Colibri Analogue Inputs */
++		pinctrl_adc0: adc0grp {
++			fsl,pins = <
++				IMX8QXP_ADC_IN0_ADMA_ADC_IN0			0x60		/* SODIMM   8 */
++				IMX8QXP_ADC_IN1_ADMA_ADC_IN1			0x60		/* SODIMM   6 */
++				IMX8QXP_ADC_IN4_ADMA_ADC_IN4			0x60		/* SODIMM   4 */
++				IMX8QXP_ADC_IN5_ADMA_ADC_IN5			0x60		/* SODIMM   2 */
++			>;
++		};
++
++		pinctrl_can_int: can-int-grp {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_DQS_LSIO_GPIO3_IO13		0x40		/* SODIMM  73 */
++			>;
++		};
++
++		pinctrl_csi_ctl: csictlgrp {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_SS0_B_LSIO_GPIO3_IO14		0x20		/* SODIMM  77 */
++				IMX8QXP_QSPI0A_SS1_B_LSIO_GPIO3_IO15		0x20		/* SODIMM  89 */
++			>;
++		};
++
++		pinctrl_gpiokeys: gpiokeysgrp {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_DATA1_LSIO_GPIO3_IO10		0x20		/* SODIMM  45 */
++			>;
++		};
++
++		/* Colibri UART_B */
++		pinctrl_lpuart0: lpuart0grp {
++			fsl,pins = <
++				IMX8QXP_UART0_RX_ADMA_UART0_RX			0x06000020	/* SODIMM  36 */
++				IMX8QXP_UART0_TX_ADMA_UART0_TX			0x06000020	/* SODIMM  38 */
++				IMX8QXP_FLEXCAN0_RX_ADMA_UART0_RTS_B		0x06000020	/* SODIMM  34 */
++				IMX8QXP_FLEXCAN0_TX_ADMA_UART0_CTS_B		0x06000020	/* SODIMM  32 */
++			>;
++		};
++
++		/* Colibri UART_C */
++		pinctrl_lpuart2: lpuart2grp {
++			fsl,pins = <
++				IMX8QXP_UART2_RX_ADMA_UART2_RX			0x06000020	/* SODIMM  19 */
++				IMX8QXP_UART2_TX_ADMA_UART2_TX			0x06000020	/* SODIMM  21 */
++			>;
++		};
++
++		/* Colibri UART_A */
++		pinctrl_lpuart3: lpuart3grp {
++			fsl,pins = <
++				IMX8QXP_FLEXCAN2_RX_ADMA_UART3_RX		0x06000020	/* SODIMM  33 */
++				IMX8QXP_FLEXCAN2_TX_ADMA_UART3_TX		0x06000020	/* SODIMM  35 */
++			>;
++		};
++
++		/* Colibri UART_A Control */
++		pinctrl_lpuart3_ctrl: lpuart3ctrlgrp {
++			fsl,pins = <
++				IMX8QXP_MIPI_DSI1_GPIO0_01_LSIO_GPIO2_IO00	0x20		/* SODIMM  23 */
++				IMX8QXP_SAI1_RXD_LSIO_GPIO0_IO29		0x20		/* SODIMM  25 */
++				IMX8QXP_SAI1_RXC_LSIO_GPIO0_IO30		0x20		/* SODIMM  27 */
++				IMX8QXP_CSI_RESET_LSIO_GPIO3_IO03		0x20		/* SODIMM  29 */
++				IMX8QXP_USDHC1_CD_B_LSIO_GPIO4_IO22		0x20		/* SODIMM  31 */
++				IMX8QXP_CSI_EN_LSIO_GPIO3_IO02			0x20		/* SODIMM  37 */
++			>;
++		};
++
++		/* Colibri Ethernet: On-module 100Mbps PHY Micrel KSZ8041 */
++		pinctrl_fec1: fec1grp {
++			fsl,pins = <
++				IMX8QXP_ENET0_MDC_CONN_ENET0_MDC			0x06000020
++				IMX8QXP_ENET0_MDIO_CONN_ENET0_MDIO			0x06000020
++				IMX8QXP_ENET0_RGMII_TX_CTL_CONN_ENET0_RGMII_TX_CTL	0x61
++				IMX8QXP_ENET0_RGMII_TXC_CONN_ENET0_RCLK50M_OUT		0x06000061
++				IMX8QXP_ENET0_RGMII_TXD0_CONN_ENET0_RGMII_TXD0		0x61
++				IMX8QXP_ENET0_RGMII_TXD1_CONN_ENET0_RGMII_TXD1		0x61
++				IMX8QXP_ENET0_RGMII_RX_CTL_CONN_ENET0_RGMII_RX_CTL	0x61
++				IMX8QXP_ENET0_RGMII_RXD0_CONN_ENET0_RGMII_RXD0		0x61
++				IMX8QXP_ENET0_RGMII_RXD1_CONN_ENET0_RGMII_RXD1		0x61
++				IMX8QXP_ENET0_RGMII_RXD2_CONN_ENET0_RMII_RX_ER		0x61
++			>;
++		};
++
++		pinctrl_fec1_sleep: fec1-sleep-grp {
++			fsl,pins = <
++				IMX8QXP_ENET0_MDC_LSIO_GPIO5_IO11		0x06000041
++				IMX8QXP_ENET0_MDIO_LSIO_GPIO5_IO10		0x06000041
++				IMX8QXP_ENET0_RGMII_TX_CTL_LSIO_GPIO4_IO30	0x41
++				IMX8QXP_ENET0_RGMII_TXC_LSIO_GPIO4_IO29		0x41
++				IMX8QXP_ENET0_RGMII_TXD0_LSIO_GPIO4_IO31	0x41
++				IMX8QXP_ENET0_RGMII_TXD1_LSIO_GPIO5_IO00	0x41
++				IMX8QXP_ENET0_RGMII_RX_CTL_LSIO_GPIO5_IO04	0x41
++				IMX8QXP_ENET0_RGMII_RXD0_LSIO_GPIO5_IO05	0x41
++				IMX8QXP_ENET0_RGMII_RXD1_LSIO_GPIO5_IO06	0x41
++				IMX8QXP_ENET0_RGMII_RXD2_LSIO_GPIO5_IO07	0x41
++			>;
++		};
++
++		/* Colibri LCD Back-Light GPIO */
++		pinctrl_gpio_bl_on: gpio-bl-on {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_DATA3_LSIO_GPIO3_IO12		0x60		/* SODIMM  71 */
++			>;
++		};
++
++		pinctrl_hog0: hog0grp {
++			fsl,pins = <
++				IMX8QXP_ENET0_RGMII_TXD3_LSIO_GPIO5_IO02	0x06000020	/* SODIMM  65 */
++				IMX8QXP_CSI_D07_CI_PI_D09			0x61		/* SODIMM  65 */
++				IMX8QXP_QSPI0A_DATA2_LSIO_GPIO3_IO11		0x20		/* SODIMM  69 */
++				IMX8QXP_SAI0_TXC_LSIO_GPIO0_IO26		0x20		/* SODIMM  79 */
++				IMX8QXP_CSI_D02_CI_PI_D04			0x61		/* SODIMM  79 */
++				IMX8QXP_ENET0_RGMII_RXC_LSIO_GPIO5_IO03		0x06000020	/* SODIMM  85 */
++				IMX8QXP_CSI_D06_CI_PI_D08			0x61		/* SODIMM  85 */
++				IMX8QXP_QSPI0B_SCLK_LSIO_GPIO3_IO17		0x20		/* SODIMM  95 */
++				IMX8QXP_SAI0_RXD_LSIO_GPIO0_IO27		0x20		/* SODIMM  97 */
++				IMX8QXP_CSI_D03_CI_PI_D05			0x61		/* SODIMM  97 */
++				IMX8QXP_QSPI0B_DATA0_LSIO_GPIO3_IO18		0x20		/* SODIMM  99 */
++				IMX8QXP_SAI0_TXFS_LSIO_GPIO0_IO28		0x20		/* SODIMM 101 */
++				IMX8QXP_CSI_D00_CI_PI_D02			0x61		/* SODIMM 101 */
++				IMX8QXP_SAI0_TXD_LSIO_GPIO0_IO25		0x20		/* SODIMM 103 */
++				IMX8QXP_CSI_D01_CI_PI_D03			0x61		/* SODIMM 103 */
++				IMX8QXP_QSPI0B_DATA1_LSIO_GPIO3_IO19		0x20		/* SODIMM 105 */
++				IMX8QXP_QSPI0B_DATA2_LSIO_GPIO3_IO20		0x20		/* SODIMM 107 */
++				IMX8QXP_USB_SS3_TC2_LSIO_GPIO4_IO05		0x20		/* SODIMM 127 */
++				IMX8QXP_USB_SS3_TC3_LSIO_GPIO4_IO06		0x20		/* SODIMM 131 */
++				IMX8QXP_USB_SS3_TC1_LSIO_GPIO4_IO04		0x20		/* SODIMM 133 */
++				IMX8QXP_CSI_PCLK_LSIO_GPIO3_IO00		0x20		/* SODIMM  96 */
++				IMX8QXP_QSPI0B_DATA3_LSIO_GPIO3_IO21		0x20		/* SODIMM  98 */
++				IMX8QXP_SAI1_RXFS_LSIO_GPIO0_IO31		0x20		/* SODIMM 100 */
++				IMX8QXP_QSPI0B_DQS_LSIO_GPIO3_IO22		0x20		/* SODIMM 102 */
++				IMX8QXP_QSPI0B_SS0_B_LSIO_GPIO3_IO23		0x20		/* SODIMM 104 */
++				IMX8QXP_QSPI0B_SS1_B_LSIO_GPIO3_IO24		0x20		/* SODIMM 106 */
++			>;
++		};
++
++		pinctrl_hog1: hog1grp {
++			fsl,pins = <
++				IMX8QXP_CSI_MCLK_LSIO_GPIO3_IO01		0x20		/* SODIMM  75 */
++				IMX8QXP_QSPI0A_SCLK_LSIO_GPIO3_IO16		0x20		/* SODIMM  93 */
++			>;
++		};
++
++		/*
++		 * This pin is used in the SCFW as a UART. Using it from
++		 * Linux would require rewritting the SCFW board file.
++		 */
++		pinctrl_hog_scfw: hogscfwgrp {
++			fsl,pins = <
++				IMX8QXP_SCU_GPIO0_00_LSIO_GPIO2_IO03		0x20		/* SODIMM 144 */
++			>;
++		};
++
++		/* On Module I2C */
++		pinctrl_i2c0: i2c0grp {
++			fsl,pins = <
++				IMX8QXP_MIPI_CSI0_GPIO0_00_ADMA_I2C0_SCL	0x06000021
++				IMX8QXP_MIPI_CSI0_GPIO0_01_ADMA_I2C0_SDA	0x06000021
++			>;
++		};
++
++		/* Colibri I2C */
++		pinctrl_i2c1: i2c1grp {
++			fsl,pins = <
++				IMX8QXP_MIPI_DSI0_GPIO0_00_ADMA_I2C1_SCL	0x06000021	/* SODIMM 196 */
++				IMX8QXP_MIPI_DSI0_GPIO0_01_ADMA_I2C1_SDA	0x06000021	/* SODIMM 194 */
++			>;
++		};
++
++		/* Colibri optional CAN on UART_B RTS/CTS */
++		pinctrl_flexcan1: flexcan0grp {
++			fsl,pins = <
++				IMX8QXP_FLEXCAN0_TX_ADMA_FLEXCAN0_TX		0x21		/* SODIMM  32 */
++				IMX8QXP_FLEXCAN0_RX_ADMA_FLEXCAN0_RX		0x21		/* SODIMM  34 */
++			>;
++		};
++
++		/* Colibri optional CAN on PS2 */
++		pinctrl_flexcan2: flexcan1grp {
++			fsl,pins = <
++				IMX8QXP_FLEXCAN1_TX_ADMA_FLEXCAN1_TX		0x21		/* SODIMM  55 */
++				IMX8QXP_FLEXCAN1_RX_ADMA_FLEXCAN1_RX		0x21		/* SODIMM  63 */
++			>;
++		};
++
++		/* On module wifi module */
++		pinctrl_pcieb: pciebgrp {
++			fsl,pins = <
++				IMX8QXP_PCIE_CTRL0_CLKREQ_B_LSIO_GPIO4_IO01	0x04000061	/* SODIMM 178 */
++				IMX8QXP_PCIE_CTRL0_WAKE_B_LSIO_GPIO4_IO02	0x04000061	/* SODIMM  94 */
++				IMX8QXP_PCIE_CTRL0_PERST_B_LSIO_GPIO4_IO00	0x60		/* SODIMM  81 */
++			>;
++		};
++
++		/* Colibri PWM_A */
++		pinctrl_pwm_a: pwma {
++		/* both pins are connected together, reserve the unused CSI_D05 */
++			fsl,pins = <
++				IMX8QXP_CSI_D05_CI_PI_D07			0x61		/* SODIMM  59 */
++				IMX8QXP_SPI0_CS1_ADMA_LCD_PWM0_OUT		0x60		/* SODIMM  59 */
++			>;
++		};
++
++		/* Colibri PWM_B */
++		pinctrl_pwm_b: pwmb {
++			fsl,pins = <
++				IMX8QXP_UART1_TX_LSIO_PWM0_OUT			0x60		/* SODIMM  28 */
++			>;
++		};
++
++		/* Colibri PWM_C */
++		pinctrl_pwm_c: pwmc {
++			fsl,pins = <
++				IMX8QXP_UART1_RX_LSIO_PWM1_OUT			0x60		/* SODIMM  30 */
++			>;
++		};
++
++		/* Colibri PWM_D */
++		pinctrl_pwm_d: pwmd {
++		/* both pins are connected together, reserve the unused CSI_D04 */
++			fsl,pins = <
++				IMX8QXP_CSI_D04_CI_PI_D06			0x61		/* SODIMM  67 */
++				IMX8QXP_UART1_RTS_B_LSIO_PWM2_OUT		0x60		/* SODIMM  67 */
++			>;
++		};
++
++		/* On-module I2S */
++		pinctrl_sai0: sai0grp {
++			fsl,pins = <
++				IMX8QXP_SPI0_SDI_ADMA_SAI0_TXD			0x06000040
++				IMX8QXP_SPI0_CS0_ADMA_SAI0_RXD			0x06000040
++				IMX8QXP_SPI0_SCK_ADMA_SAI0_TXC			0x06000040
++				IMX8QXP_SPI0_SDO_ADMA_SAI0_TXFS			0x06000040
++			>;
++		};
++
++		/* Colibri Audio Analogue Microphone GND */
++		pinctrl_sgtl5000: sgtl5000 {
++			fsl,pins = <
++				/* MIC GND EN */
++				IMX8QXP_MIPI_CSI0_I2C0_SDA_LSIO_GPIO3_IO06	0x41
++			>;
++		};
++
++		/* On-module SGTL5000 clock */
++		pinctrl_sgtl5000_usb_clk: sgtl5000-usb-clk {
++			fsl,pins = <
++				IMX8QXP_ADC_IN3_ADMA_ACM_MCLK_OUT0		0x21
++			>;
++		};
++
++		/* On-module USB interrupt */
++		pinctrl_usb3503a: usb3503a-grp {
++			fsl,pins = <
++				IMX8QXP_MIPI_CSI0_MCLK_OUT_LSIO_GPIO3_IO04	0x61
++			>;
++		};
++
++		/* Colibri USB Client Cable Detect */
++		pinctrl_usbc_det: usbc-det {
++			fsl,pins = <
++				IMX8QXP_ENET0_REFCLK_125M_25M_LSIO_GPIO5_IO09	0x06000040	/* SODIMM 137 */
++			>;
++		};
++
++		pinctrl_ext_io0: ext-io0 {
++			fsl,pins = <
++				IMX8QXP_ENET0_RGMII_RXD3_LSIO_GPIO5_IO08	0x06000040	/* SODIMM 135 */
++			>;
++		};
++
++		/* Colibri Parallel RGB LCD Interface */
++		pinctrl_lcdif: lcdif-pins {
++			fsl,pins = <
++				IMX8QXP_MCLK_OUT0_ADMA_LCDIF_CLK		0x60		/* SODIMM  56 */
++				IMX8QXP_SPI3_CS0_ADMA_LCDIF_HSYNC		0x60		/* SODIMM  68 */
++				IMX8QXP_MCLK_IN0_ADMA_LCDIF_VSYNC		0x60		/* SODIMM  82 */
++				IMX8QXP_MCLK_IN1_ADMA_LCDIF_EN			0x60		/* SODIMM  44 */
++				IMX8QXP_USDHC1_RESET_B_LSIO_GPIO4_IO19		0x60		/* SODIMM  44 */
++				IMX8QXP_ESAI0_FSR_ADMA_LCDIF_D00		0x60		/* SODIMM  76 */
++				IMX8QXP_USDHC1_WP_LSIO_GPIO4_IO21		0x60		/* SODIMM  76 */
++				IMX8QXP_ESAI0_FST_ADMA_LCDIF_D01		0x60		/* SODIMM  70 */
++				IMX8QXP_ESAI0_SCKR_ADMA_LCDIF_D02		0x60		/* SODIMM  60 */
++				IMX8QXP_ESAI0_SCKT_ADMA_LCDIF_D03		0x60		/* SODIMM  58 */
++				IMX8QXP_ESAI0_TX0_ADMA_LCDIF_D04		0x60		/* SODIMM  78 */
++				IMX8QXP_ESAI0_TX1_ADMA_LCDIF_D05		0x60		/* SODIMM  72 */
++				IMX8QXP_ESAI0_TX2_RX3_ADMA_LCDIF_D06		0x60		/* SODIMM  80 */
++				IMX8QXP_ESAI0_TX3_RX2_ADMA_LCDIF_D07		0x60		/* SODIMM  46 */
++				IMX8QXP_ESAI0_TX4_RX1_ADMA_LCDIF_D08		0x60		/* SODIMM  62 */
++				IMX8QXP_ESAI0_TX5_RX0_ADMA_LCDIF_D09		0x60		/* SODIMM  48 */
++				IMX8QXP_SPDIF0_RX_ADMA_LCDIF_D10		0x60		/* SODIMM  74 */
++				IMX8QXP_SPDIF0_TX_ADMA_LCDIF_D11		0x60		/* SODIMM  50 */
++				IMX8QXP_SPDIF0_EXT_CLK_ADMA_LCDIF_D12		0x60		/* SODIMM  52 */
++				IMX8QXP_SPI3_SCK_ADMA_LCDIF_D13			0x60		/* SODIMM  54 */
++				IMX8QXP_SPI3_SDO_ADMA_LCDIF_D14			0x60		/* SODIMM  66 */
++				IMX8QXP_SPI3_SDI_ADMA_LCDIF_D15			0x60		/* SODIMM  64 */
++				IMX8QXP_SPI3_CS1_ADMA_LCDIF_D16			0x60		/* SODIMM  57 */
++				IMX8QXP_ENET0_RGMII_TXD2_LSIO_GPIO5_IO01	0x60		/* SODIMM  57 */
++				IMX8QXP_UART1_CTS_B_ADMA_LCDIF_D17		0x60		/* SODIMM  61 */
++			>;
++		};
++
++		/* USB Host Power Enable */
++		pinctrl_usbh1_reg: usbh1-reg {
++			fsl,pins = <
++				IMX8QXP_USB_SS3_TC0_LSIO_GPIO4_IO03		0x06000040	/* SODIMM 129 */
++			>;
++		};
++
++		/* On-module eMMC */
++		pinctrl_usdhc1: usdhc1grp {
++			fsl,pins = <
++				IMX8QXP_EMMC0_CLK_CONN_EMMC0_CLK		0x06000041
++				IMX8QXP_EMMC0_CMD_CONN_EMMC0_CMD		0x21
++				IMX8QXP_EMMC0_DATA0_CONN_EMMC0_DATA0		0x21
++				IMX8QXP_EMMC0_DATA1_CONN_EMMC0_DATA1		0x21
++				IMX8QXP_EMMC0_DATA2_CONN_EMMC0_DATA2		0x21
++				IMX8QXP_EMMC0_DATA3_CONN_EMMC0_DATA3		0x21
++				IMX8QXP_EMMC0_DATA4_CONN_EMMC0_DATA4		0x21
++				IMX8QXP_EMMC0_DATA5_CONN_EMMC0_DATA5		0x21
++				IMX8QXP_EMMC0_DATA6_CONN_EMMC0_DATA6		0x21
++				IMX8QXP_EMMC0_DATA7_CONN_EMMC0_DATA7		0x21
++				IMX8QXP_EMMC0_STROBE_CONN_EMMC0_STROBE		0x41
++				IMX8QXP_EMMC0_RESET_B_CONN_EMMC0_RESET_B	0x21
++			>;
++		};
++
++		pinctrl_usdhc1_100mhz: usdhc1grp100mhz {
++			fsl,pins = <
++				IMX8QXP_EMMC0_CLK_CONN_EMMC0_CLK		0x06000041
++				IMX8QXP_EMMC0_CMD_CONN_EMMC0_CMD		0x21
++				IMX8QXP_EMMC0_DATA0_CONN_EMMC0_DATA0		0x21
++				IMX8QXP_EMMC0_DATA1_CONN_EMMC0_DATA1		0x21
++				IMX8QXP_EMMC0_DATA2_CONN_EMMC0_DATA2		0x21
++				IMX8QXP_EMMC0_DATA3_CONN_EMMC0_DATA3		0x21
++				IMX8QXP_EMMC0_DATA4_CONN_EMMC0_DATA4		0x21
++				IMX8QXP_EMMC0_DATA5_CONN_EMMC0_DATA5		0x21
++				IMX8QXP_EMMC0_DATA6_CONN_EMMC0_DATA6		0x21
++				IMX8QXP_EMMC0_DATA7_CONN_EMMC0_DATA7		0x21
++				IMX8QXP_EMMC0_STROBE_CONN_EMMC0_STROBE		0x41
++				IMX8QXP_EMMC0_RESET_B_CONN_EMMC0_RESET_B	0x21
++			>;
++		};
++
++		pinctrl_usdhc1_200mhz: usdhc1grp200mhz {
++			fsl,pins = <
++				IMX8QXP_EMMC0_CLK_CONN_EMMC0_CLK		0x06000041
++				IMX8QXP_EMMC0_CMD_CONN_EMMC0_CMD		0x21
++				IMX8QXP_EMMC0_DATA0_CONN_EMMC0_DATA0		0x21
++				IMX8QXP_EMMC0_DATA1_CONN_EMMC0_DATA1		0x21
++				IMX8QXP_EMMC0_DATA2_CONN_EMMC0_DATA2		0x21
++				IMX8QXP_EMMC0_DATA3_CONN_EMMC0_DATA3		0x21
++				IMX8QXP_EMMC0_DATA4_CONN_EMMC0_DATA4		0x21
++				IMX8QXP_EMMC0_DATA5_CONN_EMMC0_DATA5		0x21
++				IMX8QXP_EMMC0_DATA6_CONN_EMMC0_DATA6		0x21
++				IMX8QXP_EMMC0_DATA7_CONN_EMMC0_DATA7		0x21
++				IMX8QXP_EMMC0_STROBE_CONN_EMMC0_STROBE		0x41
++				IMX8QXP_EMMC0_RESET_B_CONN_EMMC0_RESET_B	0x21
++			>;
++		};
++
++		/* Colibri SDCard CardDetect */
++		pinctrl_usdhc2_gpio: usdhc2gpiogrp {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_DATA0_LSIO_GPIO3_IO09		0x06000021	/* SODIMM  43 */
++			>;
++		};
++
++		pinctrl_usdhc2_gpio_sleep: usdhc2gpioslpgrp {
++			fsl,pins = <
++				IMX8QXP_QSPI0A_DATA0_LSIO_GPIO3_IO09		0x60		/* SODIMM  43 */
++			>;
++		};
++
++		/* Colibri SDCard */
++		pinctrl_usdhc2: usdhc2grp {
++			fsl,pins = <
++				IMX8QXP_USDHC1_CLK_CONN_USDHC1_CLK		0x06000041	/* SODIMM  47 */
++				IMX8QXP_USDHC1_CMD_CONN_USDHC1_CMD		0x21		/* SODIMM 190 */
++				IMX8QXP_USDHC1_DATA0_CONN_USDHC1_DATA0		0x21		/* SODIMM 192 */
++				IMX8QXP_USDHC1_DATA1_CONN_USDHC1_DATA1		0x21		/* SODIMM  49 */
++				IMX8QXP_USDHC1_DATA2_CONN_USDHC1_DATA2		0x21		/* SODIMM  51 */
++				IMX8QXP_USDHC1_DATA3_CONN_USDHC1_DATA3		0x21		/* SODIMM  53 */
++				IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT	0x21
++			>;
++		};
++
++		pinctrl_usdhc2_100mhz: usdhc2grp100mhz {
++			fsl,pins = <
++				IMX8QXP_USDHC1_CLK_CONN_USDHC1_CLK		0x06000041	/* SODIMM  47 */
++				IMX8QXP_USDHC1_CMD_CONN_USDHC1_CMD		0x21		/* SODIMM 190 */
++				IMX8QXP_USDHC1_DATA0_CONN_USDHC1_DATA0		0x21		/* SODIMM 192 */
++				IMX8QXP_USDHC1_DATA1_CONN_USDHC1_DATA1		0x21		/* SODIMM  49 */
++				IMX8QXP_USDHC1_DATA2_CONN_USDHC1_DATA2		0x21		/* SODIMM  51 */
++				IMX8QXP_USDHC1_DATA3_CONN_USDHC1_DATA3		0x21		/* SODIMM  53 */
++				IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT	0x21
++			>;
++		};
++
++		pinctrl_usdhc2_200mhz: usdhc2grp200mhz {
++			fsl,pins = <
++				IMX8QXP_USDHC1_CLK_CONN_USDHC1_CLK		0x06000041	/* SODIMM  47 */
++				IMX8QXP_USDHC1_CMD_CONN_USDHC1_CMD		0x21		/* SODIMM 190 */
++				IMX8QXP_USDHC1_DATA0_CONN_USDHC1_DATA0		0x21		/* SODIMM 192 */
++				IMX8QXP_USDHC1_DATA1_CONN_USDHC1_DATA1		0x21		/* SODIMM  49 */
++				IMX8QXP_USDHC1_DATA2_CONN_USDHC1_DATA2		0x21		/* SODIMM  51 */
++				IMX8QXP_USDHC1_DATA3_CONN_USDHC1_DATA3		0x21		/* SODIMM  53 */
++				IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT	0x21
++			>;
++		};
++
++		pinctrl_usdhc2_sleep: usdhc2slpgrp {
++			fsl,pins = <
++				IMX8QXP_USDHC1_CLK_LSIO_GPIO4_IO23		0x60		/* SODIMM  47 */
++				IMX8QXP_USDHC1_CMD_LSIO_GPIO4_IO24		0x60		/* SODIMM 190 */
++				IMX8QXP_USDHC1_DATA0_LSIO_GPIO4_IO25		0x60		/* SODIMM 192 */
++				IMX8QXP_USDHC1_DATA1_LSIO_GPIO4_IO26		0x60		/* SODIMM  49 */
++				IMX8QXP_USDHC1_DATA2_LSIO_GPIO4_IO27		0x60		/* SODIMM  51 */
++				IMX8QXP_USDHC1_DATA3_LSIO_GPIO4_IO28		0x60		/* SODIMM  53 */
++				IMX8QXP_USDHC1_VSELECT_CONN_USDHC1_VSELECT	0x21
++			>;
++		};
++
++		/* MIPI DSI I2C accessible on SODIMM (X1) and FFC (X2) */
++		pinctrl_i2c0_mipi_lvds0: mipi_lvds0_i2c0_grp {
++			fsl,pins = <
++				IMX8QXP_MIPI_DSI0_I2C0_SCL_MIPI_DSI0_I2C0_SCL	0xc6000020	/* SODIMM 140 */
++				IMX8QXP_MIPI_DSI0_I2C0_SDA_MIPI_DSI0_I2C0_SDA	0xc6000020	/* SODIMM 142 */
++			>;
++		};
++
++		/* MIPI CSI I2C accessible on SODIMM (X1) and FFC (X3) */
++		pinctrl_i2c0_mipi_lvds1: mipi_lvds1_i2c0_grp {
++			fsl,pins = <
++				IMX8QXP_MIPI_DSI1_I2C0_SCL_MIPI_DSI1_I2C0_SCL	0xc6000020	/* SODIMM 186 */
++				IMX8QXP_MIPI_DSI1_I2C0_SDA_MIPI_DSI1_I2C0_SDA	0xc6000020	/* SODIMM 188 */
++			>;
++		};
++
++		/* Colibri SPI */
++		pinctrl_lpspi2: lpspi2 {
++			fsl,pins = <
++				IMX8QXP_SPI2_CS0_LSIO_GPIO1_IO00		0x21		/* SODIMM  86 */
++				IMX8QXP_SPI2_SDO_ADMA_SPI2_SDO			0x06000040	/* SODIMM  92 */
++				IMX8QXP_SPI2_SDI_ADMA_SPI2_SDI			0x06000040	/* SODIMM  90 */
++				IMX8QXP_SPI2_SCK_ADMA_SPI2_SCK			0x06000040	/* SODIMM  88 */
++			>;
++		};
++
++		pinctrl_wifi: wifigrp {
++			fsl,pins = <
++				IMX8QXP_SCU_BOOT_MODE3_SCU_DSC_RTC_CLOCK_OUTPUT_32K	0x20
++			>;
++		};
++	};
++};
++
++/* Colibri UART_B */
++&adma_lpuart0 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_lpuart0>;
++};
++
++/* Colibri UART_C */
++&adma_lpuart2 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_lpuart2>;
++};
++
++/* Colibri UART_A */
++&adma_lpuart3 {
++	pinctrl-names = "default";
++	pinctrl-0 = <&pinctrl_lpuart3>, <&pinctrl_lpuart3_ctrl>;
++};
++
++/* On-module eMMC */
++&usdhc1 {
++	bus-width = <8>;
++	non-removable;
++	no-sd;
++	no-sdio;
++	pinctrl-names = "default", "state_100mhz", "state_200mhz";
++	pinctrl-0 = <&pinctrl_usdhc1>;
++	pinctrl-1 = <&pinctrl_usdhc1_100mhz>;
++	pinctrl-2 = <&pinctrl_usdhc1_200mhz>;
++	status = "okay";
++};
++
++/* Colibri SDCard */
++&usdhc2 {
++	bus-width = <4>;
++	cd-gpios = <&lsio_gpio3 9 GPIO_ACTIVE_LOW>;
++	vmmc-supply = <&reg_module_3v3>;
++	pinctrl-names = "default", "state_100mhz", "state_200mhz", "sleep";
++	pinctrl-0 = <&pinctrl_usdhc2>, <&pinctrl_usdhc2_gpio>;
++	pinctrl-1 = <&pinctrl_usdhc2_100mhz>, <&pinctrl_usdhc2_gpio>;
++	pinctrl-2 = <&pinctrl_usdhc2_200mhz>, <&pinctrl_usdhc2_gpio>;
++	pinctrl-3 = <&pinctrl_usdhc2_sleep>, <&pinctrl_usdhc2_gpio_sleep>;
++	disable-wp;
++};
+-- 
+2.21.0
+
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
