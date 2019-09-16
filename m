@@ -2,71 +2,132 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2DB58B3F88
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 19:17:43 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6AF18B3FA2
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 19:37:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:MIME-Version:Message-ID:Subject:To:From
-	:Date:Reply-To:Cc:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:
-	List-Owner; bh=5llOpirdAWfUzVvq4h8ZVuveFPfXMrQok9w7kwDLdvI=; b=AnZUoixMOXVRVM
-	VU8EeXHpW1K1LVhPe/ImYA/CC+N6bKmouO78YyitMpOJCeMFwkSjg2/HFIad89w5BfHYXwoAPOJwP
-	HwCPjJ2ZeaeTPaOZA39rSJpQyzFTLZcRasmLFIkwkdSYFSsBXNUClLWBs2P6YCOqfDm8oj39SWJA0
-	vs5E13a5OPEDjeUnfxRWzBDppfY5Uk6Zm4t+PVKe3/sigB5voXo6j0GemzgZ8vDj+v/1LUr5MxbmH
-	XsOizlGuWbp7D6/plE0+Yqfjs86pPR3IBehXZCRofrg4X9j2EZ+qcUhFLwJ4pdS2jmVykmT+Bxigp
-	Bw9rcbPgPe2VhSU8K1hg==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:MIME-Version:In-Reply-To:References:
+	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=QEMTGVsIqF0H3HgRErJxykPo5Bl7q6JyQl44Qh+xVJY=; b=mVX0pC8AZ6BpOv
+	9ic0Z9LKl2jMoVTY2tTdF2ujtgKCqmHaknnKvBobSfWhMyy2//m7eVM4l1JkO36gm97PPSZSoHtcV
+	zZ4FHkIONenboUSIumTO+WE29hz4YlhleFNIw/Dp96DtNS8140ukbAt9lay9vSJtukfZXJn2Dks5H
+	KfLCsVzBc8ZVU/YMOkr7mIBkO7Wk6//FP+bOHNH9CkoSK7JDk5R5i75IpccCVT+mFRpNLv6ssUWjE
+	TEjW0fqllpkVrCrOhU5H5nWw7kKzECVAHxe/pH8N7sg0KaCm6B430zhm1E94sdyH5tvnmnnZ8PcWp
+	uRDIWrgoz2HoEomFw8bA==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9udA-0003l1-VU; Mon, 16 Sep 2019 17:17:40 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1i9uw2-0001LW-SN; Mon, 16 Sep 2019 17:37:10 +0000
+Received: from mx0b-0016f401.pphosted.com ([67.231.156.173])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9ucv-0003dB-Fl
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 17:17:31 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:Content-Type:MIME-Version:
- Message-ID:Subject:To:From:Date:Reply-To:Cc:Content-Transfer-Encoding:
- Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
- Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=P9qVJKlvyn4aP4f/O45V2DON/bGLrejbbTHVrSmMC9s=; b=sdt2E3nCJoFE3/EYgWaYHDEZj
- g3aKS0Ib7TuJ9UInEBMifyjx5z9Y9fSrJ1sFbFtC1zktxUKpuPdlmnf/Qp8enN0JM06P56rvHrr/9
- NHVZDFZbTDTMM6smtwDd7VcPDNHRK74tPUAGGVMjtqIfC3IMmf+fv9NAA8Nq8V8FssAc8nzwplO9r
- Sh82I3VHQkKqHDKXi3V37/ki9tceqxqgGRT8wCBK+lbVNQLhWvFQCFuDucYxE/T2CZdhsHY7T7AgX
- 0AnLgW794rmBTDyXmi/IWbtIx+fudp3Y+gMbcDFdMm51YFsFW3oVRM8QgWfrwz5dEPsTTV/7NJ1Tn
- 2n//kgAPg==;
-Received: from shell.armlinux.org.uk
- ([2001:4d48:ad52:3201:5054:ff:fe00:4ec]:32770)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1i9uam-0004yx-RV; Mon, 16 Sep 2019 18:15:12 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1i9uak-0000TK-1f; Mon, 16 Sep 2019 18:15:10 +0100
-Date: Mon, 16 Sep 2019 18:15:10 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
-To: Adrian Hunter <adrian.hunter@intel.com>, linux-mmc@vger.kernel.org,
- linux-arm-kernel@lists.infradead.org
-Subject: [REGRESSION] sdhci no longer detects SD cards on LX2160A
-Message-ID: <20190916171509.GG25745@shell.armlinux.org.uk>
+ id 1i9uvn-0001L6-RT
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 17:37:00 +0000
+Received: from pps.filterd (m0045851.ppops.net [127.0.0.1])
+ by mx0b-0016f401.pphosted.com (8.16.0.42/8.16.0.42) with SMTP id
+ x8GHZR8D024090; Mon, 16 Sep 2019 10:36:42 -0700
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=marvell.com;
+ h=from : to : cc :
+ subject : date : message-id : references : in-reply-to : content-type :
+ content-transfer-encoding : mime-version; s=pfpt0818;
+ bh=LuKHDxmQEjIpUDJiv7bYD0FLOsjRgR34+oWJYrjuvYI=;
+ b=V2TRTRVGE8DtWlAJAAPB4BxbjpJZCPtSQLm9CkB9cauZGmTemeC3GXTDWVnIApEu7vbm
+ qfWhLyFpVSDaQoK17vbDtBowNpNaYAS/HL0ZbCOzeEzWT3rBwiLcULjV0j/YOfGEeVSE
+ jZpRxITYkD/2DtOeMmkrTBW+Lh7fJSzlfiiAHx8iPCF1s5tUEbcd9ZZyLv7sYJa17IPV
+ yyaDv/duJpcvwsbNN28saUQJTMw97McZOKachAAI2hdaOvPzx/B/nK1q2pIA70IZ5rTA
+ DlLRSJNm3wC7Isf+WObfUlfqjaotgZuGzXFbQApnKawlPRukQIPcq1anYzmaV4YGWUNF HA== 
+Received: from sc-exch02.marvell.com ([199.233.58.182])
+ by mx0b-0016f401.pphosted.com with ESMTP id 2v0yqkqf4e-2
+ (version=TLSv1.2 cipher=ECDHE-RSA-AES256-SHA384 bits=256 verify=NOT);
+ Mon, 16 Sep 2019 10:36:42 -0700
+Received: from SC-EXCH01.marvell.com (10.93.176.81) by SC-EXCH02.marvell.com
+ (10.93.176.82) with Microsoft SMTP Server (TLS) id 15.0.1367.3; Mon, 16 Sep
+ 2019 10:36:41 -0700
+Received: from NAM02-SN1-obe.outbound.protection.outlook.com (104.47.36.56) by
+ SC-EXCH01.marvell.com (10.93.176.81) with Microsoft SMTP Server
+ (TLS) id
+ 15.0.1367.3 via Frontend Transport; Mon, 16 Sep 2019 10:36:41 -0700
+ARC-Seal: i=1; a=rsa-sha256; s=arcselector9901; d=microsoft.com; cv=none;
+ b=E1mayRmjprQn/3av7fBanvZ5+AWDxwcFGHvyEEq40hr0vMpAPPh+3NW8dW4MCVN11hiu7IBYhFmAhLe8hKn0sBoZOAs6bnTsI7yf7LVC8Dvm/Z7vnmjoWKfkoOnJ4KcAmKD5avG1FinUASUWJm9Mh6G3KfJN88e6oUCM0r4U0VZkF2i9T9bEb+jdYIYiQvHtyhLtzhYLGW0ZYHQeROR9V74T/jpyiHcOSA5f1Yu4l29IsQq4RMVw1PWDGEbLzJFr8Z8ehBSKxMBmeov4pptub8etjxGrwZCFgSzkFzoCTnmeRckvx/sNue4AYsTYxDygU6yFpjz8vOh/NR5CjejiwQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=microsoft.com; 
+ s=arcselector9901;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LuKHDxmQEjIpUDJiv7bYD0FLOsjRgR34+oWJYrjuvYI=;
+ b=dxSMrtoklS+AFS+YLb6b7Cnve87On6Y9FoQC3oXezwyL+yo9ALaDf3BC1833YLBXcCVlxzFeM4E4IzeSZv1NntT5kyTjwgfbzQFULqd7ihAloGJCfOtDCwbyoyiUZJ/9Q0EwsqaB2aZN0X0+S8wfrmNSespzGuzjX6ssn5Y7q2cCTg51r+gVE9JWM50QThL+A5LND6B8W/rVWvorSjotzAzzg/agogvW0eVx9b5jiVY0zg0b3j5wJsZQfCVXzuzGBzmSlmb1YkFwJdM+s/RGluB3GVJFzE8otwckfmSPL8MVSPFwdhIChXOkSJrZbpDaAvZJE12Sk6OHqAaT9FfTWw==
+ARC-Authentication-Results: i=1; mx.microsoft.com 1; spf=pass
+ smtp.mailfrom=marvell.com; dmarc=pass action=none header.from=marvell.com;
+ dkim=pass header.d=marvell.com; arc=none
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=marvell.onmicrosoft.com; s=selector2-marvell-onmicrosoft-com;
+ h=From:Date:Subject:Message-ID:Content-Type:MIME-Version:X-MS-Exchange-SenderADCheck;
+ bh=LuKHDxmQEjIpUDJiv7bYD0FLOsjRgR34+oWJYrjuvYI=;
+ b=KfvzY1P6LVc5HJI0PuY1stcdLE9whxQ4zYft378AlNn+FkWyR/je+whTTixghqwTvXPChBMaDXT8+MTT7J+4lTvR+vCIJKB/JzX70Zjc0BLbjVdMeCv10J2WZb46lohuTXC7i13bElA+M13n3DtKj7tpS1qNvlbEnMA/GMsDhwo=
+Received: from BYAPR18MB2438.namprd18.prod.outlook.com (20.179.91.207) by
+ BYAPR18MB2503.namprd18.prod.outlook.com (20.179.92.207) with Microsoft SMTP
+ Server (version=TLS1_2, cipher=TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384) id
+ 15.20.2263.24; Mon, 16 Sep 2019 17:36:39 +0000
+Received: from BYAPR18MB2438.namprd18.prod.outlook.com
+ ([fe80::edaf:9c09:bc17:6ee7]) by BYAPR18MB2438.namprd18.prod.outlook.com
+ ([fe80::edaf:9c09:bc17:6ee7%3]) with mapi id 15.20.2263.023; Mon, 16 Sep 2019
+ 17:36:39 +0000
+From: Sujeet Kumar Baranwal <sbaranwal@marvell.com>
+To: Sudeep Holla <sudeep.holla@arm.com>
+Subject: RE: [EXT] Re: SCMI & Devfreq
+Thread-Topic: [EXT] Re: SCMI & Devfreq
+Thread-Index: AdVpmcIOOnWimjPqQIW4YU3Z3/EySQAg3ggAAIw5QkAACl8sgAAPZ0vw
+Date: Mon, 16 Sep 2019 17:36:39 +0000
+Message-ID: <BYAPR18MB2438DC4E8CA4E90455F0345BAF8C0@BYAPR18MB2438.namprd18.prod.outlook.com>
+References: <BYAPR18MB24387C9DDE32067F1763B6DEAFB00@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <20190913102304.GC2559@bogus>
+ <BYAPR18MB2438723658EF1F0586170CDDAF8C0@BYAPR18MB2438.namprd18.prod.outlook.com>
+ <20190916101505.GB6109@bogus>
+In-Reply-To: <20190916101505.GB6109@bogus>
+Accept-Language: en-US
+Content-Language: en-US
+X-MS-Has-Attach: 
+X-MS-TNEF-Correlator: 
+x-originating-ip: [199.233.58.128]
+x-ms-publictraffictype: Email
+x-ms-office365-filtering-correlation-id: 791a014e-f541-4af4-6d23-08d73acc6e94
+x-microsoft-antispam: BCL:0; PCL:0;
+ RULEID:(2390118)(7020095)(4652040)(8989299)(4534185)(4627221)(201703031133081)(201702281549075)(8990200)(5600167)(711020)(4605104)(1401327)(2017052603328)(7193020);
+ SRVR:BYAPR18MB2503; 
+x-ms-traffictypediagnostic: BYAPR18MB2503:
+x-microsoft-antispam-prvs: <BYAPR18MB2503A9964319404F6AEE1CCAAF8C0@BYAPR18MB2503.namprd18.prod.outlook.com>
+x-ms-oob-tlc-oobclassifiers: OLM:8882;
+x-forefront-prvs: 0162ACCC24
+x-forefront-antispam-report: SFV:NSPM;
+ SFS:(10009020)(4636009)(346002)(366004)(396003)(136003)(39860400002)(376002)(189003)(199004)(51914003)(13464003)(76116006)(476003)(11346002)(14454004)(66476007)(446003)(64756008)(66946007)(66446008)(66556008)(6246003)(6916009)(74316002)(305945005)(99286004)(55016002)(52536014)(229853002)(6116002)(3846002)(53936002)(256004)(186003)(102836004)(6506007)(53546011)(76176011)(7736002)(86362001)(25786009)(478600001)(26005)(4326008)(66066001)(5660300002)(71200400001)(71190400001)(486006)(9686003)(2906002)(6436002)(7696005)(8936002)(8676002)(316002)(81166006)(81156014)(33656002);
+ DIR:OUT; SFP:1101; SCL:1; SRVR:BYAPR18MB2503;
+ H:BYAPR18MB2438.namprd18.prod.outlook.com; FPR:; SPF:None; LANG:en;
+ PTR:InfoNoRecords; MX:1; A:1; 
+received-spf: None (protection.outlook.com: marvell.com does not designate
+ permitted sender hosts)
+x-ms-exchange-senderadcheck: 1
+x-microsoft-antispam-message-info: 4S8Uw/k/laU47P/X7hKBN9GlGELaVdb7PeDkWLJt4bLTzpZ3YQtqg/DpF+yw807AaRXSEoSLeS4mgxIg9hGxEhc+UHCYPwhD9KD8gK5/TizulVuf0qa4taQpAhh2Nl9j/hiiVUCvQVPKZLGXBIOFuZIemBdcutgaxLYb2cfg8VXlrpiH+4RAKlm268npUhwO5aBmsvMB4bqyFfdUv+yX9f84Wpsnlty7BH6F8TvzyRgYPTaCTL/zppQIqoevsV98gkbt8oeoILwNYgxc2a1tv3HVQTO7slrdUTQBqLyLOHwJRlI2+KsvyF//oGRSWgWQtaEFUk/kANIZEUYhbbRQMKBp/E7hydS59Q5oL2/ydtn/8ESCSigiCPOi+TAhbo6yQk2GcEKhkpwMuTpMEG0JUWqR8xuLBBJpJ32wDyrYBFk=
+x-ms-exchange-transport-forked: True
 MIME-Version: 1.0
-Content-Disposition: inline
-User-Agent: Mutt/1.10.1 (2018-07-13)
+X-MS-Exchange-CrossTenant-Network-Message-Id: 791a014e-f541-4af4-6d23-08d73acc6e94
+X-MS-Exchange-CrossTenant-originalarrivaltime: 16 Sep 2019 17:36:39.7485 (UTC)
+X-MS-Exchange-CrossTenant-fromentityheader: Hosted
+X-MS-Exchange-CrossTenant-id: 70e1fb47-1155-421d-87fc-2e58f638b6e0
+X-MS-Exchange-CrossTenant-mailboxtype: HOSTED
+X-MS-Exchange-CrossTenant-userprincipalname: atA/3QHASEH0cK5Q3qEkMowL4j2kOz9mkU7eqmzOb8SlShIojqTZUTI32rK3uOG0eCBvL50ZCltlvc2yc8M7SA==
+X-MS-Exchange-Transport-CrossTenantHeadersStamped: BYAPR18MB2503
+X-OriginatorOrg: marvell.com
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:6.0.70,1.0.8
+ definitions=2019-09-16_07:2019-09-11,2019-09-16 signatures=0
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_101725_532661_D06C5507 
-X-CRM114-Status: UNSURE (   6.46  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190916_103656_216769_BCA5E35E 
+X-CRM114-Status: GOOD (  13.29  )
+X-Spam-Score: -0.9 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-0.9 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
+ -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
+ low trust [67.231.156.173 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
@@ -86,130 +147,55 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
+Cc: "linux-arm-kernel@lists.infradead.org"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi,
+Ok, Sudeep. I would wait for your mail.
 
-It seems that somewhere between v5.2 and v5.3, sdhci fails to detect
-SD cards on the NXP LX2160A, but continues to work with eMMC.
-This uses the sdhci-esdhc driver.
+Regards
+Sujeet
+-----Original Message-----
+From: Sudeep Holla <sudeep.holla@arm.com> 
+Sent: Monday, September 16, 2019 3:15 AM
+To: Sujeet Kumar Baranwal <sbaranwal@marvell.com>
+Cc: linux-arm-kernel@lists.infradead.org
+Subject: Re: [EXT] Re: SCMI & Devfreq
 
-v5.2:
+On Mon, Sep 16, 2019 at 05:22:02AM +0000, Sujeet Kumar Baranwal wrote:
+> Thanks Sudeep.
+>
+>>> Good, but just a quick question to check if this is ACPI or DT based 
+>>> platform ?
+>
+> DT based.
+>
 
-sdhci: Secure Digital Host Controller Interface driver
-sdhci: Copyright(c) Pierre Ossman
-sdhci-pltfm: SDHCI platform and OF driver helper
-mmc0: SDHCI controller on 2140000.esdhc [2140000.esdhc] using ADMA 64-bit
-mmc1: SDHCI controller on 2150000.esdhc [2150000.esdhc] using ADMA 64-bit
-mmc0: new high speed SDHC card at address aaaa
-mmcblk0: mmc0:aaaa SU04G 3.69 GiB
-mmc1: new HS400 MMC card at address 0001
-mmcblk1: mmc1:0001 DF4064 58.2 GiB
-mmcblk1boot0: mmc1:0001 DF4064 partition 1 4.00 MiB
-mmcblk1boot1: mmc1:0001 DF4064 partition 2 4.00 MiB
-mmcblk1rpmb: mmc1:0001 DF4064 partition 3 4.00 MiB, chardev (247:0)
- mmcblk1: p1
+Good.
 
-v5.3:
+>>> Yes it needs some work and I do have some prototype, but with no 
+>>> users in the upstream, I haven't added it yet.
+>>> What kind of devices are these ? There was some work around generic 
+>>> devfreq driver that I had seen >>on the list and my plan was to do 
+>>> something similar, I need to dig up details as it was while ago.
+>
+> These are devices needing dedicated clocks like dsp engines. There is 
+> a need for a userspace dev governor controlling the frequency in 
+> different situation.
 
-sdhci: Secure Digital Host Controller Interface driver
-sdhci: Copyright(c) Pierre Ossman
-sdhci-pltfm: SDHCI platform and OF driver helper
-mmc0: SDHCI controller on 2140000.esdhc [2140000.esdhc] using ADMA 64-bit
-mmc1: SDHCI controller on 2150000.esdhc [2150000.esdhc] using ADMA 64-bit
-mmc0: ADMA error
-mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00002202
-mmc0: sdhci: Blk size:  0x00000008 | Blk cnt:  0x00000001
-mmc0: sdhci: Argument:  0x00000000 | Trn mode: 0x00000013
-mmc0: sdhci: Present:   0x01f50008 | Host ctl: 0x00000038
-mmc0: sdhci: Power:     0x00000003 | Blk gap:  0x00000000
-mmc0: sdhci: Wake-up:   0x00000000 | Clock:    0x000040d8
-mmc0: sdhci: Timeout:   0x00000003 | Int stat: 0x00000001
-mmc0: sdhci: Int enab:  0x037f108f | Sig enab: 0x037f108b
-mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00002202
-mmc0: sdhci: Caps:      0x35fa0000 | Caps_1:   0x0000af00
-mmc0: sdhci: Cmd:       0x0000333a | Max curr: 0x00000000
-mmc0: sdhci: Resp[0]:   0x00000920 | Resp[1]:  0x001d8a33
-mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x3f400e00
-mmc0: sdhci: Host ctl2: 0x00000000
-mmc0: sdhci: ADMA Err:  0x00000009 | ADMA Ptr: 0x000000236d43820c
-mmc0: sdhci: ============================================
-mmc0: error -5 whilst initialising SD card
-mmc0: ADMA error
-mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00002202
-mmc0: sdhci: Blk size:  0x00000008 | Blk cnt:  0x00000001
-mmc0: sdhci: Argument:  0x00000000 | Trn mode: 0x00000013
-mmc0: sdhci: Present:   0x01f50008 | Host ctl: 0x00000038
-mmc0: sdhci: Power:     0x00000003 | Blk gap:  0x00000000
-mmc0: sdhci: Wake-up:   0x00000000 | Clock:    0x00008098
-mmc0: sdhci: Timeout:   0x00000002 | Int stat: 0x00000001
-mmc0: sdhci: Int enab:  0x037f108f | Sig enab: 0x037f108b
-mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00002202
-mmc0: sdhci: Caps:      0x35fa0000 | Caps_1:   0x0000af00
-mmc0: sdhci: Cmd:       0x0000333a | Max curr: 0x00000000
-mmc0: sdhci: Resp[0]:   0x00000920 | Resp[1]:  0x001d8a33
-mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x3f400e00
-mmc0: sdhci: Host ctl2: 0x00000000
-mmc0: sdhci: ADMA Err:  0x00000009 | ADMA Ptr: 0x000000236d43820c
-mmc0: sdhci: ============================================
-mmc0: error -5 whilst initialising SD card
-mmc1: new HS400 MMC card at address 0001
-mmcblk1: mmc1:0001 DF4064 58.2 GiB
-mmcblk1boot0: mmc1:0001 DF4064 partition 1 4.00 MiB
-mmcblk1boot1: mmc1:0001 DF4064 partition 2 4.00 MiB
-mmcblk1rpmb: mmc1:0001 DF4064 partition 3 4.00 MiB, chardev (247:0)
- mmcblk1: p1
-mmc0: ADMA error
-mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00002202
-mmc0: sdhci: Blk size:  0x00000008 | Blk cnt:  0x00000001
-mmc0: sdhci: Argument:  0x00000000 | Trn mode: 0x00000013
-mmc0: sdhci: Present:   0x01f50008 | Host ctl: 0x00000038
-mmc0: sdhci: Power:     0x00000003 | Blk gap:  0x00000000
-mmc0: sdhci: Wake-up:   0x00000000 | Clock:    0x000080d8
-mmc0: sdhci: Timeout:   0x00000002 | Int stat: 0x00000001
-mmc0: sdhci: Int enab:  0x037f108f | Sig enab: 0x037f108b
-mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00002202
-mmc0: sdhci: Caps:      0x35fa0000 | Caps_1:   0x0000af00
-mmc0: sdhci: Cmd:       0x0000333a | Max curr: 0x00000000
-mmc0: sdhci: Resp[0]:   0x00000920 | Resp[1]:  0x001d8a33
-mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x3f400e00
-mmc0: sdhci: Host ctl2: 0x00000000
-mmc0: sdhci: ADMA Err:  0x00000009 | ADMA Ptr: 0x000000236d43820c
-mmc0: sdhci: ============================================
-mmc0: error -5 whilst initialising SD card
-mmc0: ADMA error
-mmc0: sdhci: ============ SDHCI REGISTER DUMP ===========
-mmc0: sdhci: Sys addr:  0x00000000 | Version:  0x00002202
-mmc0: sdhci: Blk size:  0x00000008 | Blk cnt:  0x00000001
-mmc0: sdhci: Argument:  0x00000000 | Trn mode: 0x00000013
-mmc0: sdhci: Present:   0x01f50008 | Host ctl: 0x00000038
-mmc0: sdhci: Power:     0x00000003 | Blk gap:  0x00000000
-mmc0: sdhci: Wake-up:   0x00000000 | Clock:    0x000080f8
-mmc0: sdhci: Timeout:   0x00000002 | Int stat: 0x00000001
-mmc0: sdhci: Int enab:  0x037f108f | Sig enab: 0x037f108b
-mmc0: sdhci: ACmd stat: 0x00000000 | Slot int: 0x00002202
-mmc0: sdhci: Caps:      0x35fa0000 | Caps_1:   0x0000af00
-mmc0: sdhci: Cmd:       0x0000333a | Max curr: 0x00000000
-mmc0: sdhci: Resp[0]:   0x00000920 | Resp[1]:  0x001d8a33
-mmc0: sdhci: Resp[2]:   0x325b5900 | Resp[3]:  0x3f400e00
-mmc0: sdhci: Host ctl2: 0x00000000
-mmc0: sdhci: ADMA Err:  0x00000009 | ADMA Ptr: 0x000000236d43820c
-mmc0: sdhci: ============================================
-mmc0: error -5 whilst initialising SD card
+Okay, thanks for the info.
 
-The platform has an iommu, which is in pass-through mode, via
-arm_smmu.disable_bypass=0.
+> Could you please share your patches and any instructions if needed.
+>
 
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+It needs some polishing before I post them externally, they are still hackish. I will do soonish.
+
+--
+Regards,
+Sudeep
 
 _______________________________________________
 linux-arm-kernel mailing list
