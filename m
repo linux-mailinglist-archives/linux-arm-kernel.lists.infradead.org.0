@@ -2,67 +2,59 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 1B147B3577
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 09:22:08 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id BEC06B357B
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 09:23:12 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=l8Z1BAjenIkRCU4KKSzUCxkxx3lcWo8C+2ni+dQS5ek=; b=daC
-	kL3tUBIPB5ncqZfPYgWJkoQ8zxvfJRcaFWRKGC31hSNNNUNM9UuzvGnRG+PTcZE0ZeY0teWLXl5CH
-	vp+/3mg0cDa9OAqLtBENE/A1WGoWZ8njDNMyup/uOotWa5tI6D9MKUNS1EFbqjYhinZGvvK387GrV
-	e46iIOTL5ggSgWfRugfX3NJ70RtRzrxcK39X3lyA6aei2r8Rv6ncddEcVAKgg8xEKC/xeJqUYNMYh
-	HOsnKDD136OEAtTd7PsxVicdAa4jAJ2R9DZQkpDctPRUJJUPHm5O+hkd+QjUIndW+d5LeNjkntust
-	NOE3Z1A7ZErkaMpgKSPU8KOp3Pv+l/Q==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Mime-Version:References:In-Reply-To:
+	From:Subject:To:Message-Id:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=D5la9ZCWjcCrXlJzLR2R3OZ2YBuglb2cOKCdk4VSy+4=; b=uohpOBoHmftDFm
+	dEk4gytol1VogWzMTTDlENytnyV93sCuRRqiu5WnvLqb8vXJMAdfzCrj63bhDtWloaiCSaCMBYdea
+	7rm0yUVjbtweVJTdVgYMFvpZDh+yPV78pfVcSUFDXFyrZw5tSTsRR8VYGKeZuIEUgRfOiGqFrS0kZ
+	netdhaRToJVbl5NQwmSb/vHLAGf0UBko0oUbBBSh7wBnGtr7UVHBTV//XlHOxuC96MAg0U9ersGwd
+	y5Z7q6q4W9DjpMk1Y6CbDch1PpLatSHDxWp3veWA1/QIH0Sa1SKIjkeDuleSZTuv0mHBzldWWk774
+	M9IR+t8EFBBloDPTKg3A==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9lKj-0004Iv-Vd; Mon, 16 Sep 2019 07:22:02 +0000
-Received: from mail.kernel.org ([198.145.29.99])
+	id 1i9lLr-0004eE-2b; Mon, 16 Sep 2019 07:23:11 +0000
+Received: from shards.monkeyblade.net ([2620:137:e000::1:9])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9lKR-0004I2-EI
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 07:21:44 +0000
-Received: from aquarius.haifa.ibm.com (nesher1.haifa.il.ibm.com [195.110.40.7])
- (using TLSv1.2 with cipher ECDHE-RSA-AES128-SHA256 (128/128 bits))
- (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id B3580206A4;
- Mon, 16 Sep 2019 07:21:38 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568618500;
- bh=ZNzODOxruTg8StFF9gj8UjlKbahmC5vEdHRA5AUlXQs=;
- h=From:To:Cc:Subject:Date:From;
- b=GFEe+YXDq1D7SlleJ3gt0iXMEu0DdY+ZGgYH0brOW8ZMldag9FGK8oSw4SKcEmD19
- LwlwmHRtN8G4K7pvjCIj7HrIVPA91yY7uOqhRhQkx7cmAw6+obkWqf59oZdBulmRtJ
- z5ADC604hp9Q8Vwl/6jGPYZfWJL7Tx8GU0gMh7Wg=
-From: Mike Rapoport <rppt@kernel.org>
-To: Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>,
- Mark Rutland <mark.rutland@arm.com>
-Subject: [PATCH] arm64: use generic free_initrd_mem()
-Date: Mon, 16 Sep 2019 10:21:28 +0300
-Message-Id: <1568618488-19055-1-git-send-email-rppt@kernel.org>
-X-Mailer: git-send-email 2.7.4
+ id 1i9lLa-0004dM-Dw
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 07:22:55 +0000
+Received: from localhost (unknown [85.119.46.8])
+ (using TLSv1 with cipher AES256-SHA (256/256 bits))
+ (Client did not present a certificate)
+ (Authenticated sender: davem-davemloft)
+ by shards.monkeyblade.net (Postfix) with ESMTPSA id ED851152483C6;
+ Mon, 16 Sep 2019 00:22:51 -0700 (PDT)
+Date: Mon, 16 Sep 2019 09:22:44 +0200 (CEST)
+Message-Id: <20190916.092244.764910996352099184.davem@davemloft.net>
+To: alexandru.ardelean@analog.com
+Subject: Re: [PATCH v3] net: stmmac: socfpga: re-use the `interface`
+ parameter from platform data
+From: David Miller <davem@davemloft.net>
+In-Reply-To: <20190916070400.18721-1-alexandru.ardelean@analog.com>
+References: <20190916070400.18721-1-alexandru.ardelean@analog.com>
+X-Mailer: Mew version 6.8 on Emacs 26.2
+Mime-Version: 1.0
+X-Greylist: Sender succeeded SMTP AUTH, not delayed by milter-greylist-4.5.12
+ (shards.monkeyblade.net [149.20.54.216]);
+ Mon, 16 Sep 2019 00:22:54 -0700 (PDT)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_002143_504205_27961FFA 
-X-CRM114-Status: UNSURE (   9.47  )
+X-CRM114-CacheID: sfid-20190916_002254_473355_F3F2D9BE 
+X-CRM114-Status: UNSURE (   7.93  )
 X-CRM114-Notice: Please train this message.
-X-Spam-Score: -5.2 (-----)
+X-Spam-Score: 3.6 (+++)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-5.2 points)
+ Content analysis details:   (3.6 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
- high trust [198.145.29.99 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
+ 3.6 RCVD_IN_SBL_CSS        RBL: Received via a relay in Spamhaus SBL-CSS
+ [85.119.46.8 listed in zen.spamhaus.org]
+ 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
- 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
- valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
- -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -74,56 +66,31 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: linux-kernel@vger.kernel.org, linux-arm-kernel@lists.infradead.org,
- Mike Rapoport <rppt@linux.ibm.com>
-MIME-Version: 1.0
+Cc: alexandre.torgue@st.com, netdev@vger.kernel.org,
+ linux-kernel@vger.kernel.org, joabreu@synopsys.com, mcoquelin.stm32@gmail.com,
+ peppe.cavallaro@st.com, linux-stm32@st-md-mailman.stormreply.com,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-From: Mike Rapoport <rppt@linux.ibm.com>
+From: Alexandru Ardelean <alexandru.ardelean@analog.com>
+Date: Mon, 16 Sep 2019 10:04:00 +0300
 
-arm64 calls memblock_free() for the initrd area in its implementation of
-free_initrd_mem(), but this call has no actual effect that late in the boot
-process. By the time initrd is freed, all the reserved memory is managed by
-the page allocator and the memblock.reserved is unused, so there is no
-point to update it.
+> The socfpga sub-driver defines an `interface` field in the `socfpga_dwmac`
+> struct and parses it on init.
+> 
+> The shared `stmmac_probe_config_dt()` function also parses this from the
+> device-tree and makes it available on the returned `plat_data` (which is
+> the same data available via `netdev_priv()`).
+> 
+> All that's needed now is to dig that information out, via some
+> `dev_get_drvdata()` && `netdev_priv()` calls and re-use it.
+> 
+> Signed-off-by: Alexandru Ardelean <alexandru.ardelean@analog.com>
 
-Without the memblock_free() call the only difference between arm64 and the
-generic versions of free_initrd_mem() is the memory poisoning. Switching
-arm64 to the generic version will enable the poisoning.
-
-Signed-off-by: Mike Rapoport <rppt@linux.ibm.com>
----
-
-I've boot tested it on qemu and I've checked that kexec works.
-
- arch/arm64/mm/init.c | 8 --------
- 1 file changed, 8 deletions(-)
-
-diff --git a/arch/arm64/mm/init.c b/arch/arm64/mm/init.c
-index f3c7952..8ad2934 100644
---- a/arch/arm64/mm/init.c
-+++ b/arch/arm64/mm/init.c
-@@ -567,14 +567,6 @@ void free_initmem(void)
- 	unmap_kernel_range((u64)__init_begin, (u64)(__init_end - __init_begin));
- }
- 
--#ifdef CONFIG_BLK_DEV_INITRD
--void __init free_initrd_mem(unsigned long start, unsigned long end)
--{
--	free_reserved_area((void *)start, (void *)end, 0, "initrd");
--	memblock_free(__virt_to_phys(start), end - start);
--}
--#endif
--
- /*
-  * Dump out memory limit information on panic.
-  */
--- 
-2.7.4
-
+Applied.
 
 _______________________________________________
 linux-arm-kernel mailing list
