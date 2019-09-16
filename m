@@ -2,53 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id F28B9B3FE0
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:00:49 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 0FCC4B3FE8
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:01:13 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	List-Archive:List-Unsubscribe:List-Id:To:Subject:Message-ID:Date:From:
+	In-Reply-To:References:MIME-Version:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=WfCIuMJJTfdgN6sIh1jRixUiZ+T16YrjpGaf1dnrxWc=; b=shziPzyXtli9GQ
-	ApFISzuT3PbZ3iVPi35gpLpWwJQupPdNubXbAufNa9AQfaiDebJy2j+5lcDQgq//fHyY5QOVATosf
-	HrZcXV0rHWII+XNUOiWg4LoK8sQTUCrERKPfwtzB5cVhoeTHc0H1ygRqY43lB3B+NTMmRyVl3nuiV
-	thnMR0J+8t2/IoKUIEPBM6pDYMxz0WKpxp0UaS8MLuzIFyWTqu9TB2X+7JWbBA9xOGdgtPM4I0Xl2
-	RhReLPjD3imDN/4Nx8vCF6YwA2nUJBcoihNlc6sid2iMQYARzz9Sh+wYa1GJiH6lvb3bzdFZ7wShs
-	gQxzpNcMiQtvB7Rsx//w==;
+	List-Owner; bh=0vPkP3nFceeyjltc3bv0dVtizYnmomJgmybc0vxfhOE=; b=K5YcKBE5u54wPD
+	1TPOYWCTS444qOqvdwurJYn0KlhWNenxXRGlE1E4l+c/oB5aoWNKJunmk++1+zJqh+vneVfFTAkOU
+	v22/NXf6Pho1WCUYvqAA6NrSmYTjOj699IqT1fmlQcnz+JrCFaVLCdnGpiKXBac5Eae/RuDtfLOqa
+	f4DGZY73pXxfOhisVWU+tF87NXbR+8nziYYFd8dHSCyNnXr4pJ2onv+Ok7NAUbWnVmq+rSTb0UlDz
+	PISVDMsHSVBNM+yOP0nRmoWbLEpQYMwGEW1ILFj0loPDmD/63XhE687zsizIdKwQpgmmPNsA/dW2V
+	NkHD/+lUiNjNC4BgcPXw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9vIr-0000Cc-CR; Mon, 16 Sep 2019 18:00:45 +0000
+	id 1i9vJH-0000TK-Ft; Mon, 16 Sep 2019 18:01:11 +0000
 Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9vIc-0000Br-GQ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 18:00:36 +0000
-Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
- bits)) (No client certificate requested)
- by mail.kernel.org (Postfix) with ESMTPSA id C557C20830;
- Mon, 16 Sep 2019 18:00:25 +0000 (UTC)
+ id 1i9vIy-0000Q0-Dl; Mon, 16 Sep 2019 18:00:58 +0000
+Received: from mail-qt1-f177.google.com (mail-qt1-f177.google.com
+ [209.85.160.177])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES128-GCM-SHA256 (128/128 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 9E75120830;
+ Mon, 16 Sep 2019 18:00:51 +0000 (UTC)
 DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
- s=default; t=1568656826;
- bh=0MuDEueeqiW3vBqPYXeawD+yH0V26W4id32WaUlsst8=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=hTJdMMxm4MH8Vuo2SfpSVaRsGtN9mRmFfEkuKRy89OdziWXWiCDgbMK6SKY/k+ecA
- Kh5+WeWNxsaNtIYz1MwWr9JBUepq1Ardm/RHCa8v8DGRbwqRGFdkYBHL0diVMaYfVc
- Nag18aTsDUASPnJo0glomtDEik/z0OHcN5oc5IaA=
-Date: Mon, 16 Sep 2019 19:00:22 +0100
-From: Will Deacon <will@kernel.org>
-To: Doug Anderson <dianders@chromium.org>
-Subject: Re: [PATCH] iommu/arm-smmu: Report USF more clearly
-Message-ID: <20190916180021.cp2onwou7pbsrygd@willie-the-truck>
-References: <2762ffd4c196dc91d62e10eb8b753f256ea9b629.1568375317.git.robin.murphy@arm.com>
- <CAD=FV=XPi+DCwg2DWbZkXQGTpxWy=vWa1LQR=zHZr93WKjCmzA@mail.gmail.com>
+ s=default; t=1568656851;
+ bh=dMVZGCnsh4fILPwk9WjxtUMiqu6/4VUD7cpn/PynxBU=;
+ h=References:In-Reply-To:From:Date:Subject:To:Cc:From;
+ b=dA+WUt4bl+6RjbJXd6HF1hu64FfIcM9QX9YW4t2hzTazyLV/Iaoca7f3s5hvMGRfX
+ dUkMCuyYjsg7LbTHbUT4NtHLI1jntNf386bm+W+Sn/j/D/cwc/e5hXg3YRgLTnilsp
+ ekJXXM1ZL9uIJUpxuj4/0YcEw835CHNKr6fffgxY=
+Received: by mail-qt1-f177.google.com with SMTP id x5so911936qtr.7;
+ Mon, 16 Sep 2019 11:00:51 -0700 (PDT)
+X-Gm-Message-State: APjAAAVcnOEVCT/ebARhIJuqFcuLIv5qOkJHWMbLsTyAzgtfnXW2UyT+
+ 8lgfVPQ9M5AsF+pnIa9vVaFmKplDEqN6MmuIVg==
+X-Google-Smtp-Source: APXvYqyf350ByfqcVlNXWlnTIksw+7j/6O4GUGxPPUMBxsS6Jl38vpunqWIRMsPX1zJ/s4uT+gn50ziIwq/u9H4MMs4=
+X-Received: by 2002:ac8:444f:: with SMTP id m15mr938733qtn.110.1568656850832; 
+ Mon, 16 Sep 2019 11:00:50 -0700 (PDT)
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <CAD=FV=XPi+DCwg2DWbZkXQGTpxWy=vWa1LQR=zHZr93WKjCmzA@mail.gmail.com>
-User-Agent: NeoMutt/20170113 (1.7.2)
+References: <20190916154546.24982-1-manivannan.sadhasivam@linaro.org>
+ <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
+In-Reply-To: <20190916154546.24982-3-manivannan.sadhasivam@linaro.org>
+From: Rob Herring <robh+dt@kernel.org>
+Date: Mon, 16 Sep 2019 13:00:39 -0500
+X-Gmail-Original-Message-ID: <CAL_JsqJP6JiZTV=DwuSQLLEv9dMST82Xkrb5AnqREjR5hk5=7Q@mail.gmail.com>
+Message-ID: <CAL_JsqJP6JiZTV=DwuSQLLEv9dMST82Xkrb5AnqREjR5hk5=7Q@mail.gmail.com>
+Subject: Re: [PATCH v4 2/7] dt-bindings: mmc: Add Actions Semi SD/MMC/SDIO
+ controller binding
+To: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_110030_589299_F6D88B9E 
-X-CRM114-Status: GOOD (  25.78  )
+X-CRM114-CacheID: sfid-20190916_110052_494118_3A4AB874 
+X-CRM114-Status: UNSURE (   8.99  )
+X-CRM114-Notice: Please train this message.
 X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (-5.2 points)
@@ -77,90 +85,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <joro@8bytes.org>,
- Robin Murphy <robin.murphy@arm.com>,
- "list@263.net:IOMMU DRIVERS <iommu@lists.linux-foundation.org>,
- Joerg Roedel <joro@8bytes.org>, " <iommu@lists.linux-foundation.org>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>
+Cc: devicetree@vger.kernel.org, Ulf Hansson <ulf.hansson@linaro.org>,
+ Stephen Boyd <sboyd@kernel.org>, linux-actions@lists.infradead.org,
+ Linus Walleij <linus.walleij@linaro.org>,
+ linux-mmc <linux-mmc@vger.kernel.org>,
+ "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>,
+ Thomas Liau <thomas.liau@actions-semi.com>,
+ linux-clk <linux-clk@vger.kernel.org>,
+ =?UTF-8?Q?Andreas_F=C3=A4rber?= <afaerber@suse.de>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Fri, Sep 13, 2019 at 03:44:12PM -0700, Doug Anderson wrote:
-> On Fri, Sep 13, 2019 at 4:48 AM Robin Murphy <robin.murphy@arm.com> wrote:
-> >
-> > Although CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT is a welcome tool
-> > for smoking out inadequate firmware, the failure mode is non-obvious
-> > and can be confusing for end users. Add some special-case reporting of
-> > Unidentified Stream Faults to help clarify this particular symptom.
-> >
-> > CC: Douglas Anderson <dianders@chromium.org>
-> 
-> nit that I believe that "Cc" (lowercase 2nd c) is correct.
-> 
-> > Signed-off-by: Robin Murphy <robin.murphy@arm.com>
-> > ---
-> >  drivers/iommu/arm-smmu.c | 5 +++++
-> >  drivers/iommu/arm-smmu.h | 2 ++
-> >  2 files changed, 7 insertions(+)
-> >
-> > diff --git a/drivers/iommu/arm-smmu.c b/drivers/iommu/arm-smmu.c
-> > index b7cf24402a94..76ac8c180695 100644
-> > --- a/drivers/iommu/arm-smmu.c
-> > +++ b/drivers/iommu/arm-smmu.c
-> > @@ -499,6 +499,11 @@ static irqreturn_t arm_smmu_global_fault(int irq, void *dev)
-> >         dev_err_ratelimited(smmu->dev,
-> >                 "\tGFSR 0x%08x, GFSYNR0 0x%08x, GFSYNR1 0x%08x, GFSYNR2 0x%08x\n",
-> >                 gfsr, gfsynr0, gfsynr1, gfsynr2);
-> > +       if (IS_ENABLED(CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT) &&
-> > +           (gfsr & sGFSR_USF))
-> > +               dev_err_ratelimited(smmu->dev,
-> > +                       "Stream ID %hu may not be described by firmware, try booting with \"arm-smmu.disable_bypass=0\"\n",
-> > +                       (u16)gfsynr1);
-> 
-> In general it seems like a sane idea to surface an error like this.  I
-> guess a few nits:
-> 
-> 1. "By firmware" might be a bit misleading.  In most cases I'm aware
-> of the problem is in the device tree that was bundled together with
-> the kernel.  If there are actually cases where firmware has baked in a
-> device tree and it got this wrong then we might want to spend time
-> figuring out what to do about it.
+On Mon, Sep 16, 2019 at 10:46 AM Manivannan Sadhasivam
+<manivannan.sadhasivam@linaro.org> wrote:
+>
+> Add devicetree YAML binding for Actions Semi Owl SoC's SD/MMC/SDIO
+> controller.
+>
+> Signed-off-by: Manivannan Sadhasivam <manivannan.sadhasivam@linaro.org>
+> ---
+>  .../devicetree/bindings/mmc/owl-mmc.yaml      | 59 +++++++++++++++++++
+>  1 file changed, 59 insertions(+)
+>  create mode 100644 Documentation/devicetree/bindings/mmc/owl-mmc.yaml
 
-I thought that was usually the way UEFI systems worked, where the kernel
-is updated independently of the device-tree? Either way, that should be
-what we're aiming for, even if many platforms require the two to be tied
-together.
-
-> 2. Presumably booting with "arm-smmu.disable_bypass=0" is in most
-> cases the least desirable option available.  I always consider kernel
-> command line parameters as something of a last resort for
-> configuration and would only be something that and end user might do
-> if they were given a kernel compiled by someone else (like if someone
-> where taking a prebuilt Linux distro and trying to install it onto a
-> generic PC).  Are you seeing cases where this is happening?  If people
-> are compiling their own kernel I'd argue that telling them to set
-> "CONFIG_ARM_SMMU_DISABLE_BYPASS_BY_DEFAULT" to "no" is much better
-> than trying to jam a command line option on.  Command line options
-> don't scale well.
-
-Hmm. Recompiling seems like even more of a last resort to me!
-
-> 3. Any chance you could make it more obvious that this change is
-> undesirable and a last resort?  AKA:
-> 
-> "Stream ID x blocked for security reasons; allow anyway by booting
-> with arm-smmu.disable_bypass=0"
-
-How about:
-
-  "Blocked transaction from unknown Stream ID x; boot with
-   \"arm-smmu.disable_bypass=0\" to allow these transactions, although this
-   may have security implications."
-
-Will
+Reviewed-by: Rob Herring <robh@kernel.org>
 
 _______________________________________________
 linux-arm-kernel mailing list
