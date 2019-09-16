@@ -2,81 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 4C52FB404F
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:29:29 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id ABC78B4083
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 20:45:15 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:
-	Content-Transfer-Encoding:Cc:List-Subscribe:List-Help:List-Post:List-Archive:
-	List-Unsubscribe:List-Id:Mime-Version:Message-ID:To:From:In-Reply-To:Subject:
-	Date:Reply-To:Content-ID:Content-Description:Resent-Date:Resent-From:
-	Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:References:List-Owner;
-	 bh=5bzuZm6X2tcqQdqfbGYLSDaSM0oths9y7Z7YiauOiis=; b=ZHBM3yDX9FX0/tHcAYHcL2u/b
-	auEs51UChGLM713ow1RPE5cYOJKxK/csitnQ3CAzjj1gpOfjwjcsLPlGfMu+LS10aBDeYC3f6o+ab
-	WaHQg9wJRejdBcDh5DiGfzdMyv7CUax0O9OsTKmhlCp9o9gHADwtaaHQtaf0Ddo0Q+iOOQEbWVDT9
-	MRzQb0mMCnMNqYdNwFNb5Wx9iym4SIbYcdAnQuYQfMMhkPbaQsEvpdwdPGHoq4MJrMplImdbTlce1
-	0dVIkEVn5C2Y9khQayeH5JxahuqdiT4nSMHqMP5ye3WZv2PJbVPPoMfQO5ab93Tz8YVUpFZLmQxvj
-	V7Q2LSQRA==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:Subject:From:To:
+	References:In-Reply-To:MIME-Version:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=kh40Va9poKZYihG/KErM4Mjcejiq3Aw3poIfiwVs0H4=; b=sDVVuvTMBK7QPh
+	jpAdsV3U8IkdUoa0FNgeCLBsMGvzqCkUWWRV3am57Ua2RapEysj5bc46/jiH9M+b+s/H81PGoU1EP
+	ugPr5RV+AUXZ5aJ33GHl5+N58f+8MPVb7xcFtXSvX2UjcJ1dkKnjKdDerMs9rby5Vj3SRQZwYs+Zs
+	svIQ5SPyboQHfyzHN7BgscOfYJpqLj7kaD4PCFbFUlsNnJi11seJX6uS6L9M80vUSuX7WyLesuGJ9
+	s/zSSRn7AMzcjagKtT+kUO1FT02afyRh2fT8pUvKzi9X8cvD5rLAoEb+JMW/OufdAlwsEQonl4RtH
+	7fv3PGQwckL/BzPUCwFw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9vkc-0000zZ-Rm; Mon, 16 Sep 2019 18:29:27 +0000
-Received: from mail-pl1-x641.google.com ([2607:f8b0:4864:20::641])
+	id 1i9vzZ-00073x-HB; Mon, 16 Sep 2019 18:44:53 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9vkE-0000we-RX
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 18:29:08 +0000
-Received: by mail-pl1-x641.google.com with SMTP id t10so266788plr.8
- for <linux-arm-kernel@lists.infradead.org>;
- Mon, 16 Sep 2019 11:28:59 -0700 (PDT)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sifive.com; s=google;
- h=date:subject:in-reply-to:cc:from:to:message-id:mime-version
- :content-transfer-encoding;
- bh=Jp6I/WhdjgXBrLm8XFTV/W2CbBlPUTPrifY9W91dfHI=;
- b=SgPNHmHUI3s6Y5U+Q0BVqT7wuZAahYN9Sp7bvK/WkhmSDCYSm5A+2HKPWAwtkqtGXp
- 9J3gPqcUCHFjkPsRUuU3/KOZR1hYBqyd/MNpI1ipdxi9pUvmGf4l8CrTHsTBzP2tIBQ8
- hFmy5Ft2frUue4ny34BBNvYMvx8XYRjMj04QJzEGKwueGRY2SpndnAROT9qoBFdw5EJm
- pmSgIzCOb60ekhNb5wLkLoTTOYA6xXYpqBLK5btuPldjQ2T2RWcShbymrS2g+P20jTDk
- J+EEppal95vaxj+HdoxekXNZMooOdG9AHCiBegMOADmYTE4Cj6LN4ZjAIM8hUT2YUY+H
- p7Sg==
-X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
- d=1e100.net; s=20161025;
- h=x-gm-message-state:date:subject:in-reply-to:cc:from:to:message-id
- :mime-version:content-transfer-encoding;
- bh=Jp6I/WhdjgXBrLm8XFTV/W2CbBlPUTPrifY9W91dfHI=;
- b=pmTCQg0dSfk32DOzORzyb/DLatjpQsurVmbIx20L+zjniJtb3hSqMX+f9ZCRj8iGB0
- 80cdiGTzYrk6uzT0aVNf494ij+9bu/QRlv5tUTiIWxHYZeIbcwl9K+k4qWb3z384LZkc
- bphaPTeBw56VeFtVxK+NG1Mshy06PBpD0908H8zBTHzD/3hd/VzPr0o0nL8Lku/O4Wj5
- nHM/KQ8zlVecByUeHAOYE378vRXz7In5tsk0z/lSwFnpV2ClBfkVz72BK0IkhJMgps31
- uOT2Zg3ztIh+jie6Ra/Z8To24ID/ke+6TVROe7zZAPCk0IdTf36OX0nxZKH/spS8iAo0
- 14Sw==
-X-Gm-Message-State: APjAAAVUKymc9eiYkOUq3+FNmA3doTD4uEgfhXHuCtaKE3XWnR83OVLn
- N+SXvoMWGhXGjGDpQTdEipFwIA==
-X-Google-Smtp-Source: APXvYqyPLzCNMj7vNHvNiodpwn0FVuHbfPgpqBsoZRBBK2pBoeehbEWH1qRowZP5cnYDV+iwsY1UPQ==
-X-Received: by 2002:a17:902:5a44:: with SMTP id
- f4mr1093510plm.31.1568658539014; 
- Mon, 16 Sep 2019 11:28:59 -0700 (PDT)
-Received: from localhost ([12.206.222.5])
- by smtp.gmail.com with ESMTPSA id a4sm12595350pfn.110.2019.09.16.11.28.57
- (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
- Mon, 16 Sep 2019 11:28:58 -0700 (PDT)
-Date: Mon, 16 Sep 2019 11:28:58 -0700 (PDT)
-X-Google-Original-Date: Mon, 16 Sep 2019 11:28:52 PDT (-0700)
-Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
- separate file
-In-Reply-To: <20190916181800.7lfpt3t627byoomt@willie-the-truck>
-From: Palmer Dabbelt <palmer@sifive.com>
-To: will@kernel.org
-Message-ID: <mhng-11e0cc7f-264b-4412-9424-2357bc27dcb3@palmer-si-x1c4>
-Mime-Version: 1.0 (MHng)
+ id 1i9vys-00073O-3p
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 18:44:15 +0000
+Received: from kernel.org (unknown [104.132.0.74])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+ (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 8A55720665;
+ Mon, 16 Sep 2019 18:44:08 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568659448;
+ bh=pbTap0qQESXbY2wcTrAFWEhhJ5izJs0ygVfo35DBPjU=;
+ h=In-Reply-To:References:Cc:To:From:Subject:Date:From;
+ b=Kqn8UbqrH9ON5pkKL491zhG6FHe75och86calYcDDJgBJ/X2G5zDTwrKELX8cWyDB
+ WUS8YJcmp3lwhIx3pMhqptM5YaixggRIAI0Oziezj6/dwBYvWT5eHyrQJxBvZ8rUKS
+ a9Lc6TsCVa9nw62xHdj6fWNtvE+PLFHTo+mqyK2Y=
+MIME-Version: 1.0
+In-Reply-To: <CAA+hA=QoZFFb_EVfxcDuJB-9VobVd-1-RyhWeNTSePxW50P8Eg@mail.gmail.com>
+References: <1566299605-15641-1-git-send-email-aisheng.dong@nxp.com>
+ <1566299605-15641-4-git-send-email-aisheng.dong@nxp.com>
+ <20190906170643.B310F20578@mail.kernel.org>
+ <CAA+hA=QoZFFb_EVfxcDuJB-9VobVd-1-RyhWeNTSePxW50P8Eg@mail.gmail.com>
+To: Dong Aisheng <dongas86@gmail.com>
+From: Stephen Boyd <sboyd@kernel.org>
+Subject: Re: [PATCH V4 03/11] clk: imx: scu: add two cells binding support
+User-Agent: alot/0.8.1
+Date: Mon, 16 Sep 2019 11:44:07 -0700
+Message-Id: <20190916184408.8A55720665@mail.kernel.org>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_112902_888841_8B47E90B 
-X-CRM114-Status: GOOD (  24.30  )
-X-Spam-Score: -0.2 (/)
+X-CRM114-CacheID: sfid-20190916_114410_184223_65D51EFA 
+X-CRM114-Status: GOOD (  16.25  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.2 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [2607:f8b0:4864:20:0:0:0:641 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
@@ -86,6 +66,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  envelope-from domain
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
  author's domain
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -97,97 +78,68 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: julien.thierry@arm.com, catalin.marinas@arm.com,
- Will Deacon <will.deacon@arm.com>, christoffer.dall@arm.com,
- Atish Patra <Atish.Patra@wdc.com>, julien.grall@arm.com, guoren@kernel.org,
- gary@garyguo.net, linux-riscv@lists.infradead.org,
- kvmarm@lists.cs.columbia.edu, rppt@linux.ibm.com,
- Christoph Hellwig <hch@infradead.org>, aou@eecs.berkeley.edu,
- Arnd Bergmann <arnd@arndb.de>, suzuki.poulose@arm.com, marc.zyngier@arm.com,
- Paul Walmsley <paul.walmsley@sifive.com>, linux-arm-kernel@lists.infradead.org,
- Anup Patel <Anup.Patel@wdc.com>, linux-kernel@vger.kernel.org,
- iommu@lists.linux-foundation.org, james.morse@arm.com
+Cc: Dong Aisheng <aisheng.dong@nxp.com>,
+ Michael Turquette <mturquette@baylibre.com>, dl-linux-imx <linux-imx@nxp.com>,
+ Sascha Hauer <kernel@pengutronix.de>, Fabio Estevam <fabio.estevam@nxp.com>,
+ Shawn Guo <shawnguo@kernel.org>, linux-clk <linux-clk@vger.kernel.org>,
+ "moderated list:ARM/FREESCALE IMX / MXC ARM ARCHITECTURE"
+ <linux-arm-kernel@lists.infradead.org>
+Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
-Content-Type: text/plain; charset="us-ascii"; Format="flowed"
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, 16 Sep 2019 11:18:00 PDT (-0700), will@kernel.org wrote:
-> On Sun, Sep 15, 2019 at 05:03:38AM +0000, Anup Patel wrote:
->>
->>
->> > -----Original Message-----
->> > From: linux-kernel-owner@vger.kernel.org <linux-kernel-
->> > owner@vger.kernel.org> On Behalf Of Palmer Dabbelt
->> > Sent: Saturday, September 14, 2019 7:31 PM
->> > To: will@kernel.org
->> > Cc: guoren@kernel.org; Will Deacon <will.deacon@arm.com>;
->> > julien.thierry@arm.com; aou@eecs.berkeley.edu; james.morse@arm.com;
->> > Arnd Bergmann <arnd@arndb.de>; suzuki.poulose@arm.com;
->> > marc.zyngier@arm.com; catalin.marinas@arm.com; Anup Patel
->> > <Anup.Patel@wdc.com>; linux-kernel@vger.kernel.org;
->> > rppt@linux.ibm.com; Christoph Hellwig <hch@infradead.org>; Atish Patra
->> > <Atish.Patra@wdc.com>; julien.grall@arm.com; gary@garyguo.net; Paul
->> > Walmsley <paul.walmsley@sifive.com>; christoffer.dall@arm.com; linux-
->> > riscv@lists.infradead.org; kvmarm@lists.cs.columbia.edu; linux-arm-
->> > kernel@lists.infradead.org; iommu@lists.linux-foundation.org
->> > Subject: Re: [PATCH RFC 11/14] arm64: Move the ASID allocator code in a
->> > separate file
->> >
->> > On Thu, 12 Sep 2019 07:02:56 PDT (-0700), will@kernel.org wrote:
->> > > On Sun, Sep 08, 2019 at 07:52:55AM +0800, Guo Ren wrote:
->> > >> On Mon, Jun 24, 2019 at 6:40 PM Will Deacon <will@kernel.org> wrote:
->> > >> > > I'll keep my system use the same ASID for SMP + IOMMU :P
->> > >> >
->> > >> > You will want a separate allocator for that:
->> > >> >
->> > >> > https://lkml.kernel.org/r/20190610184714.6786-2-jean-philippe.bruck
->> > >> > er@arm.com
->> > >>
->> > >> Yes, it is hard to maintain ASID between IOMMU and CPUMMU or
->> > >> different system, because it's difficult to synchronize the IO_ASID
->> > >> when the CPU ASID is rollover.
->> > >> But we could still use hardware broadcast TLB invalidation
->> > >> instruction to uniformly manage the ASID and IO_ASID, or OTHER_ASID in
->> > our IOMMU.
->> > >
->> > > That's probably a bad idea, because you'll likely stall execution on
->> > > the CPU until the IOTLB has completed invalidation. In the case of
->> > > ATS, I think an endpoint ATC is permitted to take over a minute to
->> > > respond. In reality, I suspect the worst you'll ever see would be in
->> > > the msec range, but that's still an unacceptable period of time to hold a
->> > CPU.
->> > >
->> > >> Welcome to join our disscusion:
->> > >> "Introduce an implementation of IOMMU in linux-riscv"
->> > >> 9 Sep 2019, 10:45 Jade-room-I&II (Corinthia Hotel Lisbon) RISC-V MC
->> > >
->> > > I attended this session, but it unfortunately raised many more
->> > > questions than it answered.
->> >
->> > Ya, we're a long way from figuring this out.
->>
->> For everyone's reference, here is our first attempt at RISC-V ASID allocator:
->> http://archive.lwn.net:8080/linux-kernel/20190329045111.14040-1-anup.patel@wdc.com/T/#u
->
-> With a reply stating that the patch "absolutely does not work" ;)
->
-> What exactly do you want people to do with that? It's an awful lot of effort
-> to review this sort of stuff and given that Guo Ren is talking about sharing
-> page tables between the CPU and an accelerator, maybe you're better off
-> stabilising Linux for the platforms that you can actually test rather than
-> getting so far ahead of yourselves that you end up with a bunch of wasted
-> work on patches that probably won't get merged any time soon.
->
-> Seriously, they say "walk before you can run", but this is more "crawl
-> before you can fly". What's the rush?
+Quoting Dong Aisheng (2019-09-09 03:23:25)
+> Hi Stephen,
+> 
+> Thanks for the review.
+> 
+> On Sat, Sep 7, 2019 at 5:29 PM Stephen Boyd <sboyd@kernel.org> wrote:
+> >
+> > Quoting Dong Aisheng (2019-08-20 04:13:17)
+> > > diff --git a/drivers/clk/imx/clk-imx8qxp.c b/drivers/clk/imx/clk-imx8qxp.c
+> > > index 5e2903e..1ad3f2a 100644
+> > > --- a/drivers/clk/imx/clk-imx8qxp.c
+> > > +++ b/drivers/clk/imx/clk-imx8qxp.c
+> > > @@ -134,7 +134,12 @@ static int imx8qxp_clk_probe(struct platform_device *pdev)
+> > >                                 i, PTR_ERR(clks[i]));
+> > >         }
+> > >
+> > > -       return of_clk_add_hw_provider(ccm_node, of_clk_hw_onecell_get, clk_data);
+> > > +       if (clock_cells == 2)
+> >
+> > Can you just read this from the DT node again instead of having a global
+> > variable called "clock_cells" for this?
+> >
+> 
+> I tried thinking about it.
+> One problem is that we also need this information in the exist clk
+> registration API to
+> keep the backwards compatibility:
+> e.g.
+>  static inline struct clk_hw *imx_clk_scu(const char *name, u32 rsrc_id,
+>                                          u8 clk_type)
+>  {
+> -       return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
+> +       if (clock_cells == 2)
+> +               return imx_clk_scu_alloc_dev(name, NULL, 0, rsrc_id, clk_type);
+> +       else
+> +               return __imx_clk_scu(name, NULL, 0, rsrc_id, clk_type);
+>  }
+> 
+> Parsing it for all clocks seems not good.
 
-I agree, and I think I've been pretty clear here: we're not merging this ASID 
-stuff until we have a platform we can test on, particularly as the platforms we 
-have now already need some wacky hacks around TLB flushing that we haven't 
-gotten to the bottom of.
+Can you parse it once for the clock controller and then pass it to the
+registration function as the number of cells? I dislike the global and
+the name of the global.
 
-> Will
+> 
+> In the future, i planned to totally remove the legacy binding support which
+> is a premature one and missing continued support.
+> Then we will also remove this unneeded clock_cells.
+
+Ok sure.
+
 
 _______________________________________________
 linux-arm-kernel mailing list
