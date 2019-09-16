@@ -2,38 +2,38 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 62691B3E38
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:57:31 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id A66BEB3E3F
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 17:58:06 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:MIME-Version:References:In-Reply-To:
 	Message-ID:Date:Subject:To:From:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=eZ+ZJkNu/0HsiwIkQ+yBMuj2dSy4/kHw3dhifL5eb8Y=; b=R2uuz82f0zkz7s
-	ViS1jIja0ZKN0dHRbMwnrQAdLXur81JDn1QD+iRVUWkdky210+r5Kw8mDJk1tdJgl5BvDmCSPw/LN
-	jWdIEyX1y6AqFvkQnLfwG24x+Xrjv3khHlhGstGKCd3EGRRBMwHhOWVXXZMM1k/zwnYO3BopUkhRj
-	+XIKjuAtj/k1Ra/k5QNFiDAqHUfVs9P181DYN3BMSz4vT12l2fZDmIx8DzcmERZ6WuGdVLUizKzUb
-	fs/eFw90Bk623VDu21S8ByHfqnKrV6+8G6EQXSNexuO5Dl17CITTPEYEAGABYOnvamvaVaW8jlKVW
-	WFjEV9F7/hRsBiArugMg==;
+	List-Owner; bh=BC2A38pbCLPtty6UVVFdXN8QkwWcVs0vS5OJRgVBCO0=; b=fS/r3fNZj8Reek
+	4TScbHiD2PbeMj7ipSe3wKq2oY9QghnlpmyAFa52wENH9U1zR5FpyYeS5B+K02CGxgJa8ZXATjzLE
+	/iWv7wFIstA13r6u3IUqV4VAK4bwzT6x7NiVHLVs+rWapgu25vuZqBc5vSBgzjdW42NP//WUBWQ2u
+	8+cHFhzUAN+UuZpp24W3BFiz5qlDnI2GfkYfS4T8zyU3dhHS9cO68rSj0qZYrTkAFUPnbY4oc+p9D
+	Xin+Bo2SehMiTMSiAMThgDrEMSAcNdvs1GPgiWtAD6a/366d8FXOk7bbBRUygQnx/01WFKvavRksU
+	w4GWx6I/Pw5sPuwM3WbQ==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9tNZ-00048C-Ue; Mon, 16 Sep 2019 15:57:30 +0000
+	id 1i9tO2-0004OA-0q; Mon, 16 Sep 2019 15:57:58 +0000
 Received: from mailgw01.mediatek.com ([216.200.240.184])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9tN2-0003sf-O9; Mon, 16 Sep 2019 15:56:58 +0000
-X-UUID: b2f9f9c5e8c94478a38067bfa55284e9-20190916
-X-UUID: b2f9f9c5e8c94478a38067bfa55284e9-20190916
+ id 1i9tN3-0003sR-0H; Mon, 16 Sep 2019 15:56:58 +0000
+X-UUID: aad4ccb38e064581986ecf12052d34e8-20190916
+X-UUID: aad4ccb38e064581986ecf12052d34e8-20190916
 Received: from mtkcas67.mediatek.inc [(172.29.193.45)] by mailgw01.mediatek.com
  (envelope-from <stanley.chu@mediatek.com>)
  (musrelay.mediatek.com ESMTP with TLS)
- with ESMTP id 251422856; Mon, 16 Sep 2019 07:56:54 -0800
-Received: from mtkmbs07n1.mediatek.inc (172.21.101.16) by
+ with ESMTP id 1206966653; Mon, 16 Sep 2019 07:56:54 -0800
+Received: from mtkmbs08n2.mediatek.inc (172.21.101.56) by
  MTKMBS62N1.mediatek.inc (172.29.193.41) with Microsoft SMTP Server (TLS) id
  15.0.1395.4; Mon, 16 Sep 2019 08:56:53 -0700
 Received: from mtkcas08.mediatek.inc (172.21.101.126) by
- mtkmbs07n1.mediatek.inc (172.21.101.16) with Microsoft SMTP Server (TLS) id
- 15.0.1395.4; Mon, 16 Sep 2019 23:56:51 +0800
+ mtkmbs08n2.mediatek.inc (172.21.101.56) with Microsoft SMTP Server (TLS) id
+ 15.0.1395.4; Mon, 16 Sep 2019 23:56:52 +0800
 Received: from mtkswgap22.mediatek.inc (172.21.77.33) by mtkcas08.mediatek.inc
  (172.21.101.73) with Microsoft SMTP Server id 15.0.1395.4 via
  Frontend Transport; Mon, 16 Sep 2019 23:56:52 +0800
@@ -42,18 +42,18 @@ To: <linux-scsi@vger.kernel.org>, <martin.petersen@oracle.com>,
  <avri.altman@wdc.com>, <alim.akhtar@samsung.com>,
  <pedrom.sousa@synopsys.com>, <sthumma@codeaurora.org>, <jejb@linux.ibm.com>,
  <bvanassche@acm.org>
-Subject: [PATCH v4 1/3] scsi: core: allow auto suspend override by low-level
- driver
-Date: Mon, 16 Sep 2019 23:56:49 +0800
-Message-ID: <1568649411-5127-2-git-send-email-stanley.chu@mediatek.com>
+Subject: [PATCH v4 2/3] scsi: ufs: override auto suspend tunables for ufs
+Date: Mon, 16 Sep 2019 23:56:50 +0800
+Message-ID: <1568649411-5127-3-git-send-email-stanley.chu@mediatek.com>
 X-Mailer: git-send-email 1.7.9.5
 In-Reply-To: <1568649411-5127-1-git-send-email-stanley.chu@mediatek.com>
 References: <1568649411-5127-1-git-send-email-stanley.chu@mediatek.com>
 MIME-Version: 1.0
+X-TM-SNTS-SMTP: 14C49FDDBE8AF5C33097E70534305C3A8D5C53DEBAB1935D84DD7AB726A174652000:8
 X-MTK: N
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_085656_786888_6DD365CA 
-X-CRM114-Status: GOOD (  12.91  )
+X-CRM114-CacheID: sfid-20190916_085657_054422_A7AA365F 
+X-CRM114-Status: GOOD (  10.23  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -90,85 +90,83 @@ Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infrade
 Rework from previous work by:
 Sujit Reddy Thumma <sthumma@codeaurora.org>
 
-Until now the scsi mid-layer forbids runtime suspend till userspace
-enables it. This is mainly to quarantine some disks with broken
-runtime power management or have high latencies executing suspend
-resume callbacks. If the userspace doesn't enable the runtime suspend
-the underlying hardware will be always on even when it is not doing
-any useful work and thus wasting power.
-
-Some low-level drivers for the controllers can efficiently use runtime
-power management to reduce power consumption and improve battery life.
-Allow runtime suspend parameters override within the LLD itself
-instead of waiting for userspace to control the power management.
+Override auto suspend tunables for UFS device LUNs during
+initialization so as to efficiently manage background operations
+and the power consumption.
 
 Signed-off-by: Stanley Chu <stanley.chu@mediatek.com>
 Reviewed-by: Avri Altman <avri.altman@wdc.com>
-Reviewed-by: Bart Van Assche <bvanassche@acm.org>
+Reviewed-by: Bean Huo <beanhuo@micron.com>
 ---
- drivers/scsi/scsi_sysfs.c  | 3 ++-
- drivers/scsi/sd.c          | 4 ++++
- include/scsi/scsi_device.h | 3 ++-
- include/scsi/scsi_host.h   | 3 +++
- 4 files changed, 11 insertions(+), 2 deletions(-)
+ drivers/scsi/ufs/ufshcd.c |  9 +++++++++
+ drivers/scsi/ufs/ufshcd.h | 10 ++++++++++
+ 2 files changed, 19 insertions(+)
 
-diff --git a/drivers/scsi/scsi_sysfs.c b/drivers/scsi/scsi_sysfs.c
-index 64c96c7828ee..cebb9336c02b 100644
---- a/drivers/scsi/scsi_sysfs.c
-+++ b/drivers/scsi/scsi_sysfs.c
-@@ -1300,7 +1300,8 @@ int scsi_sysfs_add_sdev(struct scsi_device *sdev)
- 	device_enable_async_suspend(&sdev->sdev_gendev);
- 	scsi_autopm_get_target(starget);
- 	pm_runtime_set_active(&sdev->sdev_gendev);
--	pm_runtime_forbid(&sdev->sdev_gendev);
-+	if (!sdev->rpm_autosuspend)
-+		pm_runtime_forbid(&sdev->sdev_gendev);
- 	pm_runtime_enable(&sdev->sdev_gendev);
- 	scsi_autopm_put_target(starget);
+diff --git a/drivers/scsi/ufs/ufshcd.c b/drivers/scsi/ufs/ufshcd.c
+index 30b752c61b97..60a24fe908e7 100644
+--- a/drivers/scsi/ufs/ufshcd.c
++++ b/drivers/scsi/ufs/ufshcd.c
+@@ -88,6 +88,9 @@
+ /* Interrupt aggregation default timeout, unit: 40us */
+ #define INT_AGGR_DEF_TO	0x02
  
-diff --git a/drivers/scsi/sd.c b/drivers/scsi/sd.c
-index 149d406aacc9..7358d2b0b2d2 100644
---- a/drivers/scsi/sd.c
-+++ b/drivers/scsi/sd.c
-@@ -3371,6 +3371,10 @@ static int sd_probe(struct device *dev)
- 	}
- 
- 	blk_pm_runtime_init(sdp->request_queue, dev);
-+	if (sdp->rpm_autosuspend) {
-+		pm_runtime_set_autosuspend_delay(dev,
-+			sdp->host->hostt->rpm_autosuspend_delay);
-+	}
- 	device_add_disk(dev, gd, NULL);
- 	if (sdkp->capacity)
- 		sd_dif_config_host(sdkp);
-diff --git a/include/scsi/scsi_device.h b/include/scsi/scsi_device.h
-index 202f4d6a4342..039e289f295e 100644
---- a/include/scsi/scsi_device.h
-+++ b/include/scsi/scsi_device.h
-@@ -199,7 +199,8 @@ struct scsi_device {
- 	unsigned broken_fua:1;		/* Don't set FUA bit */
- 	unsigned lun_in_cdb:1;		/* Store LUN bits in CDB[1] */
- 	unsigned unmap_limit_for_ws:1;	/* Use the UNMAP limit for WRITE SAME */
--
-+	unsigned rpm_autosuspend:1;	/* Enable runtime autosuspend at device
-+					 * creation time */
- 	atomic_t disk_events_disable_depth; /* disable depth for disk events */
- 
- 	DECLARE_BITMAP(supported_events, SDEV_EVT_MAXBITS); /* supported events */
-diff --git a/include/scsi/scsi_host.h b/include/scsi/scsi_host.h
-index cc139dbd71e5..3cb64f0a7e3a 100644
---- a/include/scsi/scsi_host.h
-+++ b/include/scsi/scsi_host.h
-@@ -474,6 +474,9 @@ struct scsi_host_template {
- 	 */
- 	unsigned int cmd_size;
- 	struct scsi_host_cmd_pool *cmd_pool;
++/* default delay of autosuspend: 2000 ms */
++#define RPM_AUTOSUSPEND_DELAY_MS 2000
 +
-+	/* Delay for runtime autosuspend */
-+	int rpm_autosuspend_delay;
+ #define ufshcd_toggle_vreg(_dev, _vreg, _on)				\
+ 	({                                                              \
+ 		int _ret;                                               \
+@@ -4612,9 +4615,14 @@ static int ufshcd_change_queue_depth(struct scsi_device *sdev, int depth)
+  */
+ static int ufshcd_slave_configure(struct scsi_device *sdev)
+ {
++	struct ufs_hba *hba = shost_priv(sdev->host);
+ 	struct request_queue *q = sdev->request_queue;
+ 
+ 	blk_queue_update_dma_pad(q, PRDT_DATA_BYTE_COUNT_PAD - 1);
++
++	if (ufshcd_is_rpm_autosuspend_allowed(hba))
++		sdev->rpm_autosuspend = 1;
++
+ 	return 0;
+ }
+ 
+@@ -7041,6 +7049,7 @@ static struct scsi_host_template ufshcd_driver_template = {
+ 	.track_queue_depth	= 1,
+ 	.sdev_groups		= ufshcd_driver_groups,
+ 	.dma_boundary		= PAGE_SIZE - 1,
++	.rpm_autosuspend_delay	= RPM_AUTOSUSPEND_DELAY_MS,
  };
  
- /*
+ static int ufshcd_config_vreg_load(struct device *dev, struct ufs_vreg *vreg,
+diff --git a/drivers/scsi/ufs/ufshcd.h b/drivers/scsi/ufs/ufshcd.h
+index a43c7135f33d..99ea416519af 100644
+--- a/drivers/scsi/ufs/ufshcd.h
++++ b/drivers/scsi/ufs/ufshcd.h
+@@ -714,6 +714,12 @@ struct ufs_hba {
+ 	 * the performance of ongoing read/write operations.
+ 	 */
+ #define UFSHCD_CAP_KEEP_AUTO_BKOPS_ENABLED_EXCEPT_SUSPEND (1 << 5)
++	/*
++	 * This capability allows host controller driver to automatically
++	 * enable runtime power management by itself instead of waiting
++	 * for userspace to control the power management.
++	 */
++#define UFSHCD_CAP_RPM_AUTOSUSPEND (1 << 6)
+ 
+ 	struct devfreq *devfreq;
+ 	struct ufs_clk_scaling clk_scaling;
+@@ -747,6 +753,10 @@ static inline bool ufshcd_can_autobkops_during_suspend(struct ufs_hba *hba)
+ {
+ 	return hba->caps & UFSHCD_CAP_AUTO_BKOPS_SUSPEND;
+ }
++static inline bool ufshcd_is_rpm_autosuspend_allowed(struct ufs_hba *hba)
++{
++	return hba->caps & UFSHCD_CAP_RPM_AUTOSUSPEND;
++}
+ 
+ static inline bool ufshcd_is_intr_aggr_allowed(struct ufs_hba *hba)
+ {
 -- 
 2.18.0
 
