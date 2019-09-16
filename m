@@ -2,72 +2,71 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 9CBBBB385A
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 12:40:34 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4B1F8B3868
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 12:43:00 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
-	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
-	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
-	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=JdDRBhD3zVIQqXoYmhc7jL3gl5LRia2WpsUBMrp1cQo=; b=Nu+LaF6EQX9XI5
-	NYlWePEtprBKMaPLPTodzSUwtwV9ilvFCScMig/caXuc5TVQn5KsrL9N0+3XQdaFhBpOCChHD1MkF
-	uPwTGp08wnhylkEHY2mlWwSbn1FrIQ97eiiTOjzRJ/s+9izarwKjHxSMt/SbTsoEZ/u/nWYdQqBPp
-	2iIo7U8U660Rr5iIAO+nfzz6dwwfWilVB3voi2kpjVY36WyKcIRcfGIh5MJJYdrzSw6/H9ITPIC14
-	pm0etkhNL0jfS0H2Nyh4BUrNzQ0Hyc/6GK8TijjTFlyitdGxeymDnRXqAbrn1Ytp/4U4g953JKCco
-	96w+HW6YKlRsq58o6Ubw==;
+	d=lists.infradead.org; s=bombadil.20170209; h=Sender:Content-Type:Cc:
+	List-Subscribe:List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:
+	MIME-Version:Message-ID:Subject:To:From:Date:Reply-To:
+	Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
+	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
+	References:List-Owner; bh=O9IKtY1mYC+Lxs9/WJV55s/vtS/MOdP1aFdqf7Gl+p0=; b=I3Q
+	MnLSzqHCIBmrF9VXXlX6yAZZDKgNkiJh/2oQ607Kr8t+en2MoFPByU/Pu9DLZawIVtr1dYgN0ve5D
+	BvPcOKL9+KRAWRxLtLK8BbttbYhv2/SdU7Myn3dtK4iWP9uYHi8CY8KZBVWie+tmsSYPBk/c3zW3k
+	Y/ABxeB7aRn5TtAghGyCRT+ITfjzeZgpC+Sd/BNzglii5sOUeM5HXpTDIagxnUFkuhxtog4TTm22H
+	vIdiBtsabFIRqPmNaVoVeeHRFr2kybgpjbDOIvV2198Navsx3iSGiFgWRfgSH5G0horAoa6/i+dkc
+	9udsuiK2SFlpqc1sS6xExyz/eGBtQOw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9oQj-00081z-Ks; Mon, 16 Sep 2019 10:40:25 +0000
-Received: from onstation.org ([52.200.56.107])
+	id 1i9oT5-0000AZ-TB; Mon, 16 Sep 2019 10:42:52 +0000
+Received: from heliosphere.sirena.org.uk ([2a01:7e01::f03c:91ff:fed4:a3b6])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9oQR-0007em-AZ
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 10:40:09 +0000
-Received: from localhost (c-98-239-145-235.hsd1.wv.comcast.net
- [98.239.145.235])
- (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
- (No client certificate requested) (Authenticated sender: masneyb)
- by onstation.org (Postfix) with ESMTPSA id BA7C13E8F9;
- Mon, 16 Sep 2019 10:40:04 +0000 (UTC)
-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=onstation.org;
- s=default; t=1568630406;
- bh=wtwhbwzLFX1hOxjHI6Km7YJYGl4UdbLbrZnDLLvMrxY=;
- h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
- b=ZCbe4Dvg00xGUQPAJF2/aulQkpQnoxQ9lj5hlCcH+yDvWz62utM+p5k/NFiRgU5g7
- ejeE3yaBaSO72f5dG0dLexNQgj3mUW/ZcK9AIHSwI0LwXFUiGBSvVZMgPYYx4dpRRy
- Q2xqU7xpuIY37lxivUDxElfp7rj2ouOFcdwdZimc=
-Date: Mon, 16 Sep 2019 06:40:04 -0400
-From: Brian Masney <masneyb@onstation.org>
-To: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Subject: Re: [PATCH 05/11] drm/bridge: analogix-anx78xx: correct value of TX_P0
-Message-ID: <20190916104004.GB1644@onstation.org>
-References: <20190815004854.19860-1-masneyb@onstation.org>
- <CGME20190815004918epcas3p135042bc52c7e3c8b1aca7624d121af97@epcas3p1.samsung.com>
- <20190815004854.19860-6-masneyb@onstation.org>
- <dc10dd84-72e2-553e-669b-271b77b4a21a@samsung.com>
- <98199a9b-f7e0-ef95-62d7-401273457692@collabora.com>
+ id 1i9oSr-00009r-3G
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 10:42:38 +0000
+DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
+ d=sirena.org.uk; s=20170815-heliosphere; h=Content-Type:MIME-Version:
+ Message-ID:Subject:Cc:To:From:Date:Sender:Reply-To:Content-Transfer-Encoding:
+ Content-ID:Content-Description:Resent-Date:Resent-From:Resent-Sender:
+ Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:References:List-Id:
+ List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
+ bh=JZBjiu6mXEF4xljF1dJvnzItrxLJQ/ptLLfiyKsUZDM=; b=mcTQ3/PmWWPgIhdxeGMFgAW+F
+ 1fLJopUTSjAisftrUQn8kbLQVK2OpQSbkj3b1Vl0Xi1aQeTUQ5YogfHaYMV7gY19ZeLXOWCTL2fav
+ 4q8glNwUzm/puuhRvzWb4RtjCxXnv6Tet9/LAt/vUoJzQHqeHTcUyJDrILuyyw0AEqYMo=;
+Received: from cpc102320-sgyl38-2-0-cust46.18-2.cable.virginm.net
+ ([82.37.168.47] helo=ypsilon.sirena.org.uk)
+ by heliosphere.sirena.org.uk with esmtpsa
+ (TLS1.3:ECDHE_RSA_AES_256_GCM_SHA384:256) (Exim 4.92)
+ (envelope-from <broonie@sirena.co.uk>)
+ id 1i9oSn-0003vN-9s; Mon, 16 Sep 2019 10:42:33 +0000
+Received: by ypsilon.sirena.org.uk (Postfix, from userid 1000)
+ id 2E02B2741A23; Mon, 16 Sep 2019 11:42:32 +0100 (BST)
+Date: Mon, 16 Sep 2019 11:42:31 +0100
+From: Mark Brown <broonie@kernel.org>
+To: Rasmus Villemoes <linux@rasmusvillemoes.dk>,
+ Miguel Ojeda <miguel.ojeda.sandonis@gmail.com>,
+ Catalin Marinas <catalin.marinas@arm.com>, Will Deacon <will@kernel.org>
+Subject: linux-next: manual merge of the arm64 tree with the
+ compiler-attributes tree
+Message-ID: <20190916104231.GX4352@sirena.co.uk>
 MIME-Version: 1.0
-Content-Disposition: inline
-In-Reply-To: <98199a9b-f7e0-ef95-62d7-401273457692@collabora.com>
+X-Cookie: Man and wife make one fool.
+User-Agent: Mutt/1.10.1 (2018-07-13)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_034007_443817_8CCE63AD 
-X-CRM114-Status: GOOD (  19.42  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190916_034237_152146_2BF7BAA9 
+X-CRM114-Status: UNSURE (   7.93  )
+X-CRM114-Notice: Please train this message.
+X-Spam-Score: 0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [52.200.56.107 listed in list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
+ 0.2 HEADER_FROM_DIFFERENT_DOMAINS From and EnvelopeFrom 2nd level
+ mail domains are different
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
- -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
- envelope-from domain
- -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
- author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -79,83 +78,97 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- narmstrong@baylibre.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- linus.walleij@linaro.org, jonas@kwiboo.se, agross@kernel.org,
- dri-devel@lists.freedesktop.org, bjorn.andersson@linaro.org,
- Andrzej Hajda <a.hajda@samsung.com>, robdclark@gmail.com, robh+dt@kernel.org,
- Laurent.pinchart@ideasonboard.com, daniel@ffwll.ch,
- linux-arm-msm@vger.kernel.org, freedreno@lists.freedesktop.org,
- sean@poorly.run, linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="iso-8859-1"
-Content-Transfer-Encoding: quoted-printable
+Cc: Linux Next Mailing List <linux-next@vger.kernel.org>,
+ Linux Kernel Mailing List <linux-kernel@vger.kernel.org>,
+ linux-arm-kernel@lists.infradead.org
+Content-Type: multipart/mixed; boundary="===============7553489479812147362=="
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-On Mon, Sep 16, 2019 at 12:36:19PM +0200, Enric Balletbo i Serra wrote:
-> Hi Andrzej and Brian
-> =
 
-> On 16/9/19 12:02, Andrzej Hajda wrote:
-> > On 15.08.2019 02:48, Brian Masney wrote:
-> >> When attempting to configure this driver on a Nexus 5 phone (msm8974),
-> >> setting up the dummy i2c bus for TX_P0 would fail due to an -EBUSY
-> >> error. The downstream MSM kernel sources [1] shows that the proper val=
-ue
-> >> for TX_P0 is 0x78, not 0x70, so correct the value to allow device
-> >> probing to succeed.
-> >>
-> >> [1] https://github.com/AICP/kernel_lge_hammerhead/blob/n7.1/drivers/vi=
-deo/slimport/slimport_tx_reg.h
-> >>
-> >> Signed-off-by: Brian Masney <masneyb@onstation.org>
-> >> ---
-> >>  drivers/gpu/drm/bridge/analogix-anx78xx.h | 2 +-
-> >>  1 file changed, 1 insertion(+), 1 deletion(-)
-> >>
-> >> diff --git a/drivers/gpu/drm/bridge/analogix-anx78xx.h b/drivers/gpu/d=
-rm/bridge/analogix-anx78xx.h
-> >> index 25e063bcecbc..bc511fc605c9 100644
-> >> --- a/drivers/gpu/drm/bridge/analogix-anx78xx.h
-> >> +++ b/drivers/gpu/drm/bridge/analogix-anx78xx.h
-> >> @@ -6,7 +6,7 @@
-> >>  #ifndef __ANX78xx_H
-> >>  #define __ANX78xx_H
-> >>  =
+--===============7553489479812147362==
+Content-Type: multipart/signed; micalg=pgp-sha512;
+	protocol="application/pgp-signature"; boundary="Y48FV0AvvvAm5Iyr"
+Content-Disposition: inline
 
-> >> -#define TX_P0				0x70
-> >> +#define TX_P0				0x78
-> > =
 
-> > =
+--Y48FV0AvvvAm5Iyr
+Content-Type: text/plain; charset=us-ascii
+Content-Disposition: inline
+Content-Transfer-Encoding: quoted-printable
 
-> > This bothers me little. There are no upstream users, grepping android
-> > sources suggests that both values can be used [1][2]=A0 (grep for "#def=
-ine
-> > TX_P0"), moreover there is code suggesting both values can be valid [3].
-> > =
+Hi all,
 
-> > Could you verify datasheet which i2c slave addresses are valid for this
-> > chip, if both I guess this patch should be reworked.
-> > =
+Today's linux-next merge of the arm64 tree got a conflict in:
 
-> =
+  init/Kconfig
 
-> On my case the valid i2c slave address is 0x70 (from datasheet, very sorr=
-y I
-> can't share it) and the bridge used is an ANX7814, it could be that ANX78=
-08 or
-> ANX7812 have different slave addresses?
+between commit:
 
-I haven't been able to find any of the datasheets for these devices
-online. Product briefs are online (such as =
+  eb111869301e15b7373 ("compiler-types.h: add asm_inline definition")
 
-https://www.analogix.com/en/system/files/ANX7808_product_brief.pdf), but
-they don't provide this type of information.
+=66rom the compiler-attributes tree and commit:
 
-Brian
+  2d122942484c20b ("Revert "init/Kconfig: Fix infinite Kconfig recursion on=
+ PPC"")
+
+=66rom the arm64 tree.
+
+I fixed it up (see below) and can carry the fix as necessary. This
+is now fixed as far as linux-next is concerned, but any non trivial
+conflicts should be mentioned to your upstream maintainer when your tree
+is submitted for merging.  You may also want to consider cooperating
+with the maintainer of the conflicting tree to minimise any particularly
+complex conflicts.
+
+diff --cc init/Kconfig
+index 257e428c90472,d96127ebc44e0..cebadd0cfa50e
+--- a/init/Kconfig
++++ b/init/Kconfig
+@@@ -30,9 -30,9 +30,12 @@@ config CC_CAN_LIN
+  config CC_HAS_ASM_GOTO
+        def_bool $(success,$(srctree)/scripts/gcc-goto.sh $(CC))
+ =20
+ +config CC_HAS_ASM_INLINE
+ +      def_bool $(success,echo 'void foo(void) { asm inline (""); }' | $(C=
+C) -x c - -c -o /dev/null)
+ +
++ config TOOLS_SUPPORT_RELR
++       def_bool $(success,env "CC=3D$(CC)" "LD=3D$(LD)" "NM=3D$(NM)" "OBJC=
+OPY=3D$(OBJCOPY)" $(srctree)/scripts/tools-support-relr.sh)
++=20
+  config CC_HAS_WARN_MAYBE_UNINITIALIZED
+        def_bool $(cc-option,-Wmaybe-uninitialized)
+        help
+
+--Y48FV0AvvvAm5Iyr
+Content-Type: application/pgp-signature; name="signature.asc"
+
+-----BEGIN PGP SIGNATURE-----
+
+iQEzBAABCgAdFiEEreZoqmdXGLWf4p/qJNaLcl1Uh9AFAl1/ZxcACgkQJNaLcl1U
+h9BiNgf7BUPhO+mDw5BCZm9EeRGqX2N+OfJwDTJ1+fa6mVSR7olKtg1n4raFn7Ex
+hbwCpqh0IL7tS9mvQOqo64zCUmhXDrMsiGe8Zk9iODnAETVdhGYM7vMC1YMLi5et
+KeNG/by+pMv56RXllDX/kXNvVAJptCUCWZAclLeHLWyb7bG2xpZfZy+3PIJlsWxU
+SvwNMegCobH50m5MSrDiYsoWq80mC8pKBOEqTuP1utmKDhLJR+aFu3P3BnnAu5wE
+EJieQaQ4C0TuNTcTSHVDicFQxYcTbmt8CDZcetNz27Get/pO13RYVYpnsGAKJJ60
+PBvRcHuMpwZChVP7TwRpgBfDBnECTA==
+=sijn
+-----END PGP SIGNATURE-----
+
+--Y48FV0AvvvAm5Iyr--
+
+
+--===============7553489479812147362==
+Content-Type: text/plain; charset="us-ascii"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline
 
 _______________________________________________
 linux-arm-kernel mailing list
 linux-arm-kernel@lists.infradead.org
 http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
+
+--===============7553489479812147362==--
+
