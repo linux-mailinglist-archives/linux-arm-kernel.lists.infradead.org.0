@@ -2,58 +2,57 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 09664B3967
-	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 13:33:30 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 2FA37B3993
+	for <lists+linux-arm-kernel@lfdr.de>; Mon, 16 Sep 2019 13:41:04 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
-	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
-	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
-	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=QkTR9IDiQnvUkPiB4WbnUro9dTPfXJJ1tpdj0ZF8m58=; b=L561XWRqF8opcp
-	lgi1iG8m+VvDnDFo1EicALUw7uFq2c/naPTRXT3uM4SurG4Sw40pnYrzsV4CAEEpBJqFvELxoXS/k
-	THRiVOwwMqwjJXiM1PWHSbx6H4gPdpOkRJMiQAoUeoexTjVdAc/UPrI4OMSanS3tpEfDsdVj/P3jE
-	65i79G3y8JEPMJtVNPFUld/4ePLAgUSZrwhkry9kAgOpzSZ81Dws+gSWSHuyJoVrU19VzS42WMzXa
-	SBIkmj2iZ1nS04C5F11HunBJsUQfU2LYd5lmfWhMj/pnkP5dFTzxxGU+t9rXajmBDtpPEPBCb9KKa
-	2fO/i47yl8lu2hNQojmA==;
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
+	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
+	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=KJtlfr6fxj6N2/rxYnL3Ct96V6HIsSGxHCvPA9oOAv0=; b=hIKyty0vb3ajZ4
+	h0R82UlQUus/xZQqcx24298uNI4dPQlibV1hw22DwGJDbnR2xrC0yPcXwL7slQCM1vcCwz2ZhAemg
+	oszw7Bzc7Myf350SJgVNfIG+WFDFffQYlufnEFBOLTJqXIbmkCKovm59uXb6qoVdwtLyKpl50emTe
+	DZHMaBCMOsR/VYSiak/Ku67QwrtJZKcub9Cj+EhVnLq5ulrtMJhvEv2J2GESLGmfKgA/D+Lt9/Gq1
+	jYzRO+nd1FuLWhjQQ18/bdPzwFEnuLvIw6mTFLXORf0AyTWZ7vWWaFzH9eZfichv08qQETJ8gz9iK
+	6ZhuuRQ96fFW7+enCg2Q==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1i9pFv-0000gU-12; Mon, 16 Sep 2019 11:33:20 +0000
-Received: from bhuna.collabora.co.uk ([2a00:1098:0:82:1000:25:2eeb:e3e3])
- by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1i9pFf-0000ff-Ru
- for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 11:33:05 +0000
-Received: from [127.0.0.1] (localhost [127.0.0.1])
- (Authenticated sender: eballetbo) with ESMTPSA id D44D228D45B
-Subject: Re: [PATCH 05/11] drm/bridge: analogix-anx78xx: correct value of TX_P0
-To: Laurent Pinchart <laurent.pinchart@ideasonboard.com>,
- Brian Masney <masneyb@onstation.org>
-References: <20190815004854.19860-1-masneyb@onstation.org>
- <CGME20190815004918epcas3p135042bc52c7e3c8b1aca7624d121af97@epcas3p1.samsung.com>
- <20190815004854.19860-6-masneyb@onstation.org>
- <dc10dd84-72e2-553e-669b-271b77b4a21a@samsung.com>
- <20190916103614.GA1644@onstation.org>
- <20190916104907.GB4734@pendragon.ideasonboard.com>
-From: Enric Balletbo i Serra <enric.balletbo@collabora.com>
-Message-ID: <3ec4f0bc-f3c5-aebf-8213-bc4f80915902@collabora.com>
-Date: Mon, 16 Sep 2019 13:32:58 +0200
-User-Agent: Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101
- Thunderbird/60.9.0
+	id 1i9pNE-0003mO-F9; Mon, 16 Sep 2019 11:40:52 +0000
+Received: from foss.arm.com ([217.140.110.172])
+ by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
+ id 1i9pMt-0003lo-Mr
+ for linux-arm-kernel@lists.infradead.org; Mon, 16 Sep 2019 11:40:33 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id D9F091000;
+ Mon, 16 Sep 2019 04:40:28 -0700 (PDT)
+Received: from arm.com (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id F147D3F59C;
+ Mon, 16 Sep 2019 04:40:27 -0700 (PDT)
+Date: Mon, 16 Sep 2019 12:40:25 +0100
+From: Dave Martin <Dave.Martin@arm.com>
+To: Cristian Marussi <cristian.marussi@arm.com>
+Subject: Re: [PATCH v5 02/11] kselftest: arm64: add common utils and one
+ testcase
+Message-ID: <20190916114025.GH27757@arm.com>
+References: <20190902112932.36129-1-cristian.marussi@arm.com>
+ <20190902112932.36129-3-cristian.marussi@arm.com>
+ <20190904114752.GS27757@arm.com>
+ <4d13461b-acf6-505f-aefc-05afdec278c7@arm.com>
 MIME-Version: 1.0
-In-Reply-To: <20190916104907.GB4734@pendragon.ideasonboard.com>
-Content-Language: en-GB
+Content-Disposition: inline
+In-Reply-To: <4d13461b-acf6-505f-aefc-05afdec278c7@arm.com>
+User-Agent: Mutt/1.5.23 (2014-03-12)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_043304_180663_86A8AD19 
-X-CRM114-Status: GOOD (  23.21  )
-X-Spam-Score: -0.0 (/)
+X-CRM114-CacheID: sfid-20190916_044031_839947_65EDB84D 
+X-CRM114-Status: GOOD (  48.07  )
+X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.0 points)
+ Content analysis details:   (0.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
  -0.0 SPF_PASS               SPF: sender matches SPF record
- -0.0 SPF_HELO_PASS          SPF: HELO matches SPF record
- 0.0 UNPARSEABLE_RELAY      Informational: message has unparseable relay
- lines
+ 0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -65,86 +64,405 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: mark.rutland@arm.com, devicetree@vger.kernel.org, jernej.skrabec@siol.net,
- narmstrong@baylibre.com, airlied@linux.ie, linux-kernel@vger.kernel.org,
- linus.walleij@linaro.org, jonas@kwiboo.se, agross@kernel.org,
- dri-devel@lists.freedesktop.org, bjorn.andersson@linaro.org,
- Andrzej Hajda <a.hajda@samsung.com>, robdclark@gmail.com, robh+dt@kernel.org,
- daniel@ffwll.ch, linux-arm-msm@vger.kernel.org,
- freedreno@lists.freedesktop.org, sean@poorly.run,
- linux-arm-kernel@lists.infradead.org
-Content-Type: text/plain; charset="utf-8"
-Content-Transfer-Encoding: base64
+Cc: amit.kachhap@arm.com, andreyknvl@google.com, shuah@kernel.org,
+ linux-kselftest@vger.kernel.org, linux-arm-kernel@lists.infradead.org
+Content-Type: text/plain; charset="us-ascii"
+Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-SGksCgpPbiAxNi85LzE5IDEyOjQ5LCBMYXVyZW50IFBpbmNoYXJ0IHdyb3RlOgo+IEhpIEJyaWFu
-LAo+IAo+IE9uIE1vbiwgU2VwIDE2LCAyMDE5IGF0IDA2OjM2OjE0QU0gLTA0MDAsIEJyaWFuIE1h
-c25leSB3cm90ZToKPj4gT24gTW9uLCBTZXAgMTYsIDIwMTkgYXQgMTI6MDI6MDlQTSArMDIwMCwg
-QW5kcnplaiBIYWpkYSB3cm90ZToKPj4+IE9uIDE1LjA4LjIwMTkgMDI6NDgsIEJyaWFuIE1hc25l
-eSB3cm90ZToKPj4+PiBXaGVuIGF0dGVtcHRpbmcgdG8gY29uZmlndXJlIHRoaXMgZHJpdmVyIG9u
-IGEgTmV4dXMgNSBwaG9uZSAobXNtODk3NCksCj4+Pj4gc2V0dGluZyB1cCB0aGUgZHVtbXkgaTJj
-IGJ1cyBmb3IgVFhfUDAgd291bGQgZmFpbCBkdWUgdG8gYW4gLUVCVVNZCj4+Pj4gZXJyb3IuIFRo
-ZSBkb3duc3RyZWFtIE1TTSBrZXJuZWwgc291cmNlcyBbMV0gc2hvd3MgdGhhdCB0aGUgcHJvcGVy
-IHZhbHVlCj4+Pj4gZm9yIFRYX1AwIGlzIDB4NzgsIG5vdCAweDcwLCBzbyBjb3JyZWN0IHRoZSB2
-YWx1ZSB0byBhbGxvdyBkZXZpY2UKPj4+PiBwcm9iaW5nIHRvIHN1Y2NlZWQuCj4+Pj4KPj4+PiBb
-MV0gaHR0cHM6Ly9naXRodWIuY29tL0FJQ1Ava2VybmVsX2xnZV9oYW1tZXJoZWFkL2Jsb2Ivbjcu
-MS9kcml2ZXJzL3ZpZGVvL3NsaW1wb3J0L3NsaW1wb3J0X3R4X3JlZy5oCj4+Pj4KPj4+PiBTaWdu
-ZWQtb2ZmLWJ5OiBCcmlhbiBNYXNuZXkgPG1hc25leWJAb25zdGF0aW9uLm9yZz4KPj4+PiAtLS0K
-Pj4+PiAgZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hbmFsb2dpeC1hbng3OHh4LmggfCAyICstCj4+
-Pj4gIDEgZmlsZSBjaGFuZ2VkLCAxIGluc2VydGlvbigrKSwgMSBkZWxldGlvbigtKQo+Pj4+Cj4+
-Pj4gZGlmZiAtLWdpdCBhL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgtYW54Nzh4eC5o
-IGIvZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hbmFsb2dpeC1hbng3OHh4LmgKPj4+PiBpbmRleCAy
-NWUwNjNiY2VjYmMuLmJjNTExZmM2MDVjOSAxMDA2NDQKPj4+PiAtLS0gYS9kcml2ZXJzL2dwdS9k
-cm0vYnJpZGdlL2FuYWxvZ2l4LWFueDc4eHguaAo+Pj4+ICsrKyBiL2RyaXZlcnMvZ3B1L2RybS9i
-cmlkZ2UvYW5hbG9naXgtYW54Nzh4eC5oCj4+Pj4gQEAgLTYsNyArNiw3IEBACj4+Pj4gICNpZm5k
-ZWYgX19BTlg3OHh4X0gKPj4+PiAgI2RlZmluZSBfX0FOWDc4eHhfSAo+Pj4+ICAKPj4+PiAtI2Rl
-ZmluZSBUWF9QMAkJCQkweDcwCj4+Pj4gKyNkZWZpbmUgVFhfUDAJCQkJMHg3OAo+Pj4KPj4+Cj4+
-PiBUaGlzIGJvdGhlcnMgbWUgbGl0dGxlLiBUaGVyZSBhcmUgbm8gdXBzdHJlYW0gdXNlcnMsIGdy
-ZXBwaW5nIGFuZHJvaWQKPj4+IHNvdXJjZXMgc3VnZ2VzdHMgdGhhdCBib3RoIHZhbHVlcyBjYW4g
-YmUgdXNlZCBbMV1bMl3CoCAoZ3JlcCBmb3IgIiNkZWZpbmUKPj4+IFRYX1AwIiksIG1vcmVvdmVy
-IHRoZXJlIGlzIGNvZGUgc3VnZ2VzdGluZyBib3RoIHZhbHVlcyBjYW4gYmUgdmFsaWQgWzNdLgo+
-Pj4KPj4+IENvdWxkIHlvdSB2ZXJpZnkgZGF0YXNoZWV0IHdoaWNoIGkyYyBzbGF2ZSBhZGRyZXNz
-ZXMgYXJlIHZhbGlkIGZvciB0aGlzCj4+PiBjaGlwLCBpZiBib3RoIEkgZ3Vlc3MgdGhpcyBwYXRj
-aCBzaG91bGQgYmUgcmV3b3JrZWQuCj4+Pgo+Pj4KPj4+IFsxXToKPj4+IGh0dHBzOi8vYW5kcm9p
-ZC5nb29nbGVzb3VyY2UuY29tL2tlcm5lbC9tc20vKy9hbmRyb2lkLW1zbS1mbG8tMy40LWpiLW1y
-Mi9kcml2ZXJzL21pc2Mvc2xpbXBvcnRfYW54NzgwOC9zbGltcG9ydF90eF9yZWcuaAo+Pj4KPj4+
-IFsyXToKPj4+IGh0dHBzOi8vZ2l0aHViLmNvbS9BbmRyb2lkR1gvU2ltcGxlR1gtTU0tNi4wX0g4
-MTVfMjBkL2Jsb2IvbWFzdGVyL2RyaXZlcnMvdmlkZW8vc2xpbXBvcnQvYW54NzgxMi9zbGltcG9y
-dDc4MTJfdHhfcmVnLmgKPj4+Cj4+PiBbM106Cj4+PiBodHRwczovL2dpdGh1Yi5jb20vY29tbWFh
-aS9hbmRyb2lkX2tlcm5lbF9sZWVjb19tc204OTk2L2Jsb2IvbWFzdGVyL2RyaXZlcnMvdmlkZW8v
-bXNtL21kc3MvZHAvc2xpbXBvcnRfY3VzdG9tX2RlY2xhcmUuaCNMNzMKPj4KPj4gVGhpcyBhZGRy
-ZXNzIGlzIDB4Nzggb24gbXkgTmV4dXMgNS4gR2l2ZW4gWzNdIGFib3ZlIGl0IGxvb2tzIGxpa2Ug
-d2UKPj4gbmVlZCB0byBzdXBwb3J0IGJvdGggYWRkcmVzc2VzLiBXaGF0IGRvIHlvdSB0aGluayBh
-Ym91dCBtb3ZpbmcgdGhlc2UKPj4gYWRkcmVzc2VzIGludG8gZGV2aWNlIHRyZWU/Cj4gCj4gQXNz
-dW1pbmcgdGhhdCB0aGUgZGV2aWNlIHN1cHBvcnRzIGRpZmZlcmVudCBhZGRyZXNzZXMgKEkgY2Fu
-J3QgdmFsaWRhdGUKPiB0aGF0IGFzIEkgZG9uJ3QgaGF2ZSBhY2Nlc3MgdG8gdGhlIGRhdGFzaGVl
-dCksIGFuZCBkaWZmZXJlbnQgYWRkcmVzc2VzCj4gbmVlZCB0byBiZSB1c2VkIG9uIGRpZmZlcmVu
-dCBzeXN0ZW1zLCB0aGVuIHRoZSBhZGRyZXNzIHRvIGJlIHVzZWQgbmVlZHMKPiB0byBiZSBwcm92
-aWRlZCBieSB0aGUgZmlybXdhcmUgKERUIGluIHRoaXMgY2FzZSkuIFR3byBvcHRpb25zIGFyZQo+
-IHBvc3NpYmxlLCBlaXRoZXIgc3BlY2lmeWluZyB0aGUgYWRkcmVzcyBleHBsaWNpdGx5IGluIHRo
-ZSBkZXZpY2UncyBEVAo+IG5vZGUsIG9yIHNwZWNpZnlpbmcgZnJlZSBhZGRyZXNzZXMgKGluIHRo
-ZSBmb3JtIG9mIGEgd2hpdGUgbGlzdCBvciBibGFjawo+IGxpc3QpIGFuZCBhbGxvY2F0aW5nIGFu
-IGFkZHJlc3MgZnJvbSB0aGF0IHBvb2wuIFRoZSBsYXR0ZXIgaGFzIGJlZW4KPiBkaXNjdXNzZWQg
-aW4gYSBCb0YgYXQgdGhlIExpbnV4IFBsdW1iZXJzIENvbmZlcmVuY2UgbGFzdCB3ZWVrLAo+IGh0
-dHBzOi8vbGludXhwbHVtYmVyc2NvbmYub3JnL2V2ZW50LzQvY29udHJpYnV0aW9ucy81NDIvLgo+
-IAo+PiBUaGUgZG93bnN0cmVhbSBhbmQgdXBzdHJlYW0ga2VybmVsIHNvdXJjZXMgZGl2aWRlIHRo
-ZXNlIGFkZHJlc3NlcyBieSB0d28KPj4gdG8gZ2V0IHRoZSBpMmMgYWRkcmVzcy4gSGVyZSdzIHRo
-ZSBjb2RlIGluIHVwc3RyZWFtOgo+Pgo+PiBodHRwczovL2VsaXhpci5ib290bGluLmNvbS9saW51
-eC9sYXRlc3Qvc291cmNlL2RyaXZlcnMvZ3B1L2RybS9icmlkZ2UvYW5hbG9naXgtYW54Nzh4eC5j
-I0wxMzUzCj4+IGh0dHBzOi8vZWxpeGlyLmJvb3RsaW4uY29tL2xpbnV4L2xhdGVzdC9zb3VyY2Uv
-ZHJpdmVycy9ncHUvZHJtL2JyaWRnZS9hbmFsb2dpeC1hbng3OHh4LmMjTDQxCj4+Cj4+IEknbSBu
-b3Qgc3VyZSB3aHkgdGhlIGFjdHVhbCBpMmMgYWRkcmVzcyBpc24ndCB1c2VkIGluIHRoaXMgY29k
-ZS4KPiAKClRoZSBBTlg3ODAyLzEyLzE0LzE2IGhhcyBhIHNsYXZlIEkyQyBidXMgdGhhdCBwcm92
-aWRlcyB0aGUgaW50ZXJmYWNlIHRvIGFjY2VzcwpvciBjb250cm9sIHRoZSBjaGlwIGZyb20gdGhl
-IEFQLiBUaGUgSTJDIHNsYXZlIGFkZHJlc3NlcyB1c2VkIHRvIGNvbnRyb2wgdGhlCkFOWDc4MDIv
-MTIvMTQvMTYgYXJlIDcwaCwgNzJoLCA3QWgsIDdFaCBhbmQgODBoLiBFdmVyeSBhZGRyZXNzIGFs
-bG93cyB5b3UgdG8KYWNjZXNzIHRvIGRpZmZlcmVudCByZWdpc3RlcnMgb2YgdGhlIGNoaXAgYW5k
-IEFGQUlDUyBpcyBub3QgY29uZmlndXJhYmxlLgoKSSBkb24ndCB0aGluayB0aGVzZSBhZGRyZXNz
-ZXMgc2hvdWxkIGJlIGNvbmZpZ3VyZWQgdmlhIERUIGJ1dCBmb3IgdGhlIGRyaXZlciBpdHNlbGYu
-CgpNeSB3aWxkIGd1ZXNzIGlzIHRoYXQgdGhlIEFOWDc4MDggaGFzIGRpZmZlcmVudCBhZGRyZXNz
-ZXMsIGJ1dCBJIGRvbid0IGhhdmUgdGhlCmRhdGFzaGVldCBvZiB0aGlzIHZlcnNpb24uCgpCZXN0
-IHJlZ2FyZHMsCiBFbnJpYwoKCl9fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19fX19f
-X19fX19fX19fCmxpbnV4LWFybS1rZXJuZWwgbWFpbGluZyBsaXN0CmxpbnV4LWFybS1rZXJuZWxA
-bGlzdHMuaW5mcmFkZWFkLm9yZwpodHRwOi8vbGlzdHMuaW5mcmFkZWFkLm9yZy9tYWlsbWFuL2xp
-c3RpbmZvL2xpbnV4LWFybS1rZXJuZWwK
+On Fri, Sep 06, 2019 at 11:26:29AM +0100, Cristian Marussi wrote:
+> Hi
+> 
+> On 04/09/2019 12:47, Dave Martin wrote:
+> > ^Nit: "add one testcase" doesn't really describe what is being added here.
+> > 
+> 
+> Yep I know...I was trying to stay under first commit line length limitations
+> 
+> > Maybe the following would work as the subject line:
+> > 
+> > --8<--
+> > kselftest: arm64: mangle_pstate_invalid_compat_toggle and common utils
+> > -->8--
+> > 
+> I'll grab it
+> 
+> 
+> > The remainder of the commit message looks fine.
+> > 
+> > On Mon, Sep 02, 2019 at 12:29:23pm +0100, Cristian Marussi wrote:
+> >> Add some arm64/signal specific boilerplate and utility code to help
+> >> further testcases' development.
+> >>
+> >> Introduce also one simple testcase mangle_pstate_invalid_compat_toggle
+> >> and some related helpers: it is a simple mangle testcase which messes
+> >> with the ucontext_t from within the signal handler, trying to toggle
+> >> PSTATE state bits to switch the system between 32bit/64bit execution
+> >> state. Expects SIGSEGV on test PASS.
+> >>
+> >> Signed-off-by: Cristian Marussi <cristian.marussi@arm.com>
+> >> ---
+> >> v4 --> v5
+> >> - moved kernel headers include search to top level KSFT arm64 Makefile
+> >> - removed warning about kernel headers not found
+> >> - moved testcases/.gitignore up one level
+> >> v3 --> v4
+> >> - removed standalone mode
+> >> - fixed arm64/signal/README
+> >> - add file level comments: test layout / test description
+> >> - reduced verbosity
+> >> - removed spurious headers includes
+> >> - reviewed ID_AA64MMFR[1,2]_EL1 macros
+> >> - removed unused feats_ok
+> >> - simplified CPU features gathering
+> >> - reviewed included headers
+> >> - fixed/refactored get_header() and validation routines
+> >> - added test description
+> >> ---
+> > 
+> > [...]
+> > 
+> >> diff --git a/tools/testing/selftests/arm64/signal/test_signals.c b/tools/testing/selftests/arm64/signal/test_signals.c
+> >> new file mode 100644
+> >> index 000000000000..f05c6dbf8659
+> >> --- /dev/null
+> >> +++ b/tools/testing/selftests/arm64/signal/test_signals.c
+> >> @@ -0,0 +1,29 @@
+> >> +// SPDX-License-Identifier: GPL-2.0
+> >> +/*
+> >> + * Copyright (C) 2019 ARM Limited
+> >> + *
+> >> + * Generic test wrapper for arm64 signal tests.
+> >> + *
+> >> + * Each test provides its own tde struct tddescr descriptor to link with
+> > 
+> > Typo?  tdescr
+> > 
+> Yes
+> 
+> > [...]
+> > 
+> >> diff --git a/tools/testing/selftests/arm64/signal/test_signals_utils.c b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> >> new file mode 100644
+> >> index 000000000000..e2a5f37e6ad3
+> >> --- /dev/null
+> >> +++ b/tools/testing/selftests/arm64/signal/test_signals_utils.c
+> >> @@ -0,0 +1,269 @@
+> >> +// SPDX-License-Identifier: GPL-2.0
+> >> +/* Copyright (C) 2019 ARM Limited */
+> >> +
+> >> +#include <stdio.h>
+> >> +#include <stdlib.h>
+> >> +#include <signal.h>
+> >> +#include <string.h>
+> >> +#include <unistd.h>
+> >> +#include <assert.h>
+> >> +#include <sys/auxv.h>
+> >> +#include <linux/auxvec.h>
+> >> +#include <ucontext.h>
+> >> +
+> >> +#include "test_signals.h"
+> >> +#include "test_signals_utils.h"
+> >> +#include "testcases/testcases.h"
+> >> +
+> >> +extern struct tdescr *current;
+> >> +
+> >> +static char *feats_store[FMAX_END] = {
+> > 
+> > Nit: can we call this feat_names[]?ok
+> > 
+> > "store" makes me think of loads and stores...
+> > 
+> > Also, nit: can this be static const char *const []?
+> > 
+> > String literals are immutable anyway, and I guess we don't intend too
+> > modify the pointers to the strings either...
+> > 
+> Yes of course.
+> 
+> >> +	" SSBS ",
+> >> +	" PAN ",
+> >> +	" UAO ",
+> >> +};
+> >> +
+> >> +#define MAX_FEATS_SZ	128
+> >> +static char feats_string[MAX_FEATS_SZ];
+> >> +
+> >> +static inline char *feats_to_string(unsigned long feats)
+> >> +{
+> >> +	size_t flen = MAX_FEATS_SZ - 1;
+> >> +
+> >> +	for (int i = 0; i < FMAX_END; i++) {
+> >> +		if (feats & 1UL << i) {
+> > 
+> > Nit: maybe have () around (1UL << i), though I think it makes no
+> > difference.
+> 
+> Yes it's better, I feared that, being not required, was frown upon.
+> 
+> > 
+> >> +			size_t tlen = strlen(feats_store[i]);
+> >> +
+> >> +			assert(flen > tlen);
+> >> +			flen -= tlen;
+> >> +			strncat(feats_string, feats_store[i], flen);
+> >> +		}
+> >> +	}
+> >> +
+> >> +	return feats_string;
+> >> +}
+> >> +
+> >> +static void unblock_signal(int signum)
+> >> +{
+> >> +	sigset_t sset;
+> >> +
+> >> +	sigemptyset(&sset);
+> >> +	sigaddset(&sset, signum);
+> >> +	sigprocmask(SIG_UNBLOCK, &sset, NULL);
+> >> +}
+> >> +
+> >> +static void default_result(struct tdescr *td, bool force_exit)
+> >> +{
+> >> +	if (td->pass)
+> >> +		fprintf(stderr, "==>> completed. PASS(1)\n");
+> >> +	else
+> >> +		fprintf(stdout, "==>> completed. FAIL(0)\n");
+> >> +	if (force_exit)
+> >> +		exit(td->pass ? EXIT_SUCCESS : EXIT_FAILURE);
+> >> +}
+> >> +
+> >> +static inline bool are_feats_ok(struct tdescr *td)
+> >> +{
+> >> +	return (td->feats_required & td->feats_supported) == td->feats_required;
+> >> +}
+> >> +
+> >> +static void default_handler(int signum, siginfo_t *si, void *uc)
+> >> +{
+> >> +	if (current->sig_trig && signum == current->sig_trig) {
+> > 
+> > (Thinking about it, signum is never 0 because there is no signal 0.
+> > So we could write if (signum == current->sig_trig).  But I think your
+> > code makes the intention clearer -- so no need to change it.)
+> > 
+> 
+> Yes, in fact that's the reason I left it even if unneeded.
+
+Ok, sounds fine.
+
+> >> +		fprintf(stderr, "Handling SIG_TRIG\n");
+> >> +		current->triggered = 1;
+> >> +		/* ->run was asserted NON-NULL in test_setup() already */
+> >> +		current->run(current, si, uc);
+> >> +	} else if (signum == SIGILL && !current->initialized) {
+
+[...]
+
+> >> +static int test_init(struct tdescr *td)
+> >> +{
+> >> +	td->minsigstksz = getauxval(AT_MINSIGSTKSZ);
+> >> +	if (!td->minsigstksz)
+> >> +		td->minsigstksz = MINSIGSTKSZ;
+> >> +	fprintf(stderr, "Detected MINSTKSIGSZ:%d\n", td->minsigstksz);
+> >> +
+> >> +	if (td->feats_required) {
+> >> +		bool feats_ok = false;
+> >> +
+> >> +		td->feats_supported = 0;
+> >> +		/*
+> >> +		 * Checking for CPU required features using both the
+> >> +		 * auxval and the arm64 MRS Emulation to read sysregs.
+> >> +		 */
+> >> +		if (getauxval(AT_HWCAP) & HWCAP_CPUID) {
+> >> +			uint64_t val = 0;
+> >> +
+> >> +			/* Uses HWCAP to check capability */
+> >> +			if (getauxval(AT_HWCAP) & HWCAP_SSBS)
+> >> +				td->feats_supported |= FEAT_SSBS;
+> > 
+> > Should this be outside the HWCAP_CPUID check?
+> 
+> Right.
+> 
+> > 
+> > It's only the get_regval(SYS_ID_foo) based checks that depend on
+> > HWCAP_CPUID.
+> > 
+> >> +			/* Uses MRS emulation to check capability */
+> >> +			get_regval(SYS_ID_AA64MMFR1_EL1, val);
+> >> +			if (ID_AA64MMFR1_EL1_PAN_SUPPORTED(val))
+> >> +				td->feats_supported |= FEAT_PAN;
+> >> +			/* Uses MRS emulation to check capability */
+> >> +			get_regval(SYS_ID_AA64MMFR2_EL1, val);
+> >> +			if (ID_AA64MMFR2_EL1_UAO_SUPPORTED(val))
+> >> +				td->feats_supported |= FEAT_UAO;
+> >> +		} else {
+> >> +			fprintf(stderr,
+> >> +				"HWCAP_CPUID NOT available. Mark ALL feats UNSUPPORTED.\n");
+> >> +		}
+> >> +		feats_ok = are_feats_ok(td);
+> >> +		fprintf(stderr,
+> >> +			"Required Features: [%s] %ssupported\n",
+> >> +			feats_ok ? feats_to_string(td->feats_supported) :
+> >> +			feats_to_string(td->feats_required ^
+> >> +					td->feats_supported),
+> > 
+> > Should this be something like:
+> > td->feats_required & ~td->feats_supported ?
+> > 
+> > Otherwise we'll include features that are supported but not required,
+> > when printing the features that are NOT supported.
+> > 
+> > Alternatively, we could just print out the required and supported sets
+> > separately and leave it up to the user to obverse how they are
+> > different.
+> > 
+> > (Watch out for calling feats_to_string() twice in the same printf() call
+> > though.)
+> > 
+> Ok. Reported information was poor in fact.
+
+[..]
+
+> >> diff --git a/tools/testing/selftests/arm64/signal/testcases/testcases.c b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+> >> new file mode 100644
+> >> index 000000000000..72e3f482b177
+> >> --- /dev/null
+> >> +++ b/tools/testing/selftests/arm64/signal/testcases/testcases.c
+> >> @@ -0,0 +1,151 @@
+> >> +// SPDX-License-Identifier: GPL-2.0
+> >> +/* Copyright (C) 2019 ARM Limited */
+> >> +#include "testcases.h"
+> >> +
+> >> +struct _aarch64_ctx *get_header(struct _aarch64_ctx *head, uint32_t magic,
+> >> +				size_t resv_sz, size_t *offset)
+> >> +{
+> >> +	size_t offs = 0;
+> >> +	struct _aarch64_ctx *found = NULL;
+> >> +
+> >> +	if (!head)
+> >> +		return found;
+> >> +
+> > 
+> > I suggest you also check for resv_sz < HDR_SZ, since the while()
+> > condition assumes that resv_sz - HDR_SZ doesn't underflow.
+> > 
+> > For now, I think resv_sz is already sizeof(__reserved) so this is never
+> > true, but I suspect we will want to reuse this code eventually to looko
+> > at the contents of extra_context.  Then, resv_sz would be the
+> > extra_context size rather than a fixed constant.
+> > 
+> 
+> Ok....in fact I think I removed recently such check...not sure why o_O
+> I'll fix it.
+> 
+> 
+> >> +	while (offs <= resv_sz - HDR_SZ &&
+> >> +	       head->magic != magic && head->magic) {
+> >> +		offs += head->size;
+> >> +		head = GET_RESV_NEXT_HEAD(head);
+> >> +	}
+> >> +	if (head->magic == magic) {
+> >> +		found = head;
+> >> +		if (offset)
+> >> +			*offset = offs;
+> >> +	}
+> > 
+> > Although there appears to be some code duplication here, I guess you
+> > need things this way to do the right thing if called with magic==0.
+> > 
+> > So I guess this is fine.
+> >
+> Yes that was exactly the point, and it seemed to me that removing further
+> duplication would have made the code more complex and unreadable.
+> 
+> > Ultimately it would be good to have GET_RESV_NEXT_HEAD() work more
+> > like an iterator, doing integrity bounds/alignment checks and updating
+> > offs as it goes, but for now I think the code is sufficient.  We can
+> > always beef it up later to catch more kinds of error from the kernel.
+> > 
+> Yes I remember you told me that on a previous iteration, but for now I left the
+> GET_RESV_NEXT_HEAD() as it was without embedding the bounds checking logic
+> because it is indirectly used also by the validation function that I use in
+> the ASSERT_GOOD/BAD_CONTEXT() macros, so it should be able to handle
+> artficially badly formed and corrupted frames without bailing out: it just walks
+> and any kind of logic is handled outside...but maybe I'm overthinking
+> (certainly I have not explained this reasons anywhere...I'll add a comment)
+
+Sure, I think that's sufficient.
+
+We could always improve this later, if needed.
+
+[...]
+
+> >> +bool validate_reserved(ucontext_t *uc, size_t resv_sz, char **err)
+> >> +{
+> >> +	bool terminated = false;
+> >> +	size_t offs = 0;
+> >> +	int flags = 0;
+> >> +	struct extra_context *extra = NULL;
+> >> +	struct _aarch64_ctx *head =
+> >> +		(struct _aarch64_ctx *)uc->uc_mcontext.__reserved;
+> >> +
+> >> +	if (!err)
+> >> +		return false;
+> >> +	/* Walk till the end terminator verifying __reserved contents */
+> >> +	while (head && !terminated && offs < resv_sz) {
+> >> +		if ((uint64_t)head & 0x0fUL) {
+> >> +			*err = "Misaligned HEAD";
+> >> +			return false;
+> >> +		}
+> >> +
+> >> +		switch (head->magic) {
+> >> +		case 0:
+> >> +			if (head->size)
+> >> +				*err = "Bad size for terminator";
+> >> +			else
+> >> +				terminated = true;
+> >> +			break;
+> >> +		case FPSIMD_MAGIC:
+> >> +			if (flags & FPSIMD_CTX)
+> >> +				*err = "Multiple FPSIMD_MAGIC";
+> >> +			else if (head->size !=
+> >> +				 sizeof(struct fpsimd_context))
+> >> +				*err = "Bad size for fpsimd_context";
+> >> +			flags |= FPSIMD_CTX;
+> >> +			break;
+> >> +		case ESR_MAGIC:
+> >> +			if (head->size != sizeof(struct esr_context))
+> >> +				fprintf(stderr,
+> >> +					"Bad size for esr_context is not an error...just ignore.\n");
+> >> +			break;
+> > 
+> > Although it's not essential, I'd prefer that we enforce the correct
+> > size here.  All records, including esr_context are intended to be
+> > fixed-size.
+> > 
+> > In the kernel we check a bit more loosely -- this allows userspace to
+> > delete a record using head->size += next_head->size.  This way no
+> > memmove() is needed to shuffle subsequent records down.  I don't know
+> > whether any userspace code makes use of this -- prior to SVE there were
+> > no optional records except for esr_context, and sigreturn ignores that
+> > in any case so deleting it is pointless.
+> > 
+> 
+> > The kernel should never insert extra padding between records though,
+> > so I think it makes sense to have strict size checks in this test.
+> > 
+> 
+> Ok, I'll do. I kept it loose as it is in Kernel, because in some past tests
+> (now removed) I used to play also with esr_context size to build easily an inflated
+> fake sigframe (but good) and adding some badness on top of it.
+
+OK, I guess that would be a problem if we want to use the same validity
+checker for kernel-generated and user-generated signal frames.
+
+I'm happy either way ... I'll take a look at v6 and comment.
+
+Cheers
+---Dave
+
+_______________________________________________
+linux-arm-kernel mailing list
+linux-arm-kernel@lists.infradead.org
+http://lists.infradead.org/mailman/listinfo/linux-arm-kernel
