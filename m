@@ -2,54 +2,44 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id AB28AB4FA9
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:50:37 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 309A3B4FAA
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:50:58 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=o+M6iQczGkuYgOI88+tUhuxeX+qkSH+s3ezBgMJOS+4=; b=CqiPFDXwzjENPO
-	ORhq8uPLV+FSAW6vYq2UbhV/QXcBpHIgRcKzdbl5faQeSxCiJ5OWFnIEY8FKGRWGga9+La7WAXE0L
-	4aTIZ1eadkV3en4+FCN/JtCaacjB/49CHMrr8HboMAjCdW1c93L1h4E81T+IVE/pFw9eOuBUdaiuY
-	Ri1ArmtUazYBlfZRAjCOUxFGiRp+RYWr8TFHht3/6BzjE49qRrlOuOfVhImBW0hMFmTre0HDC3E8g
-	OZQyD/FcZhx9XedKgzSns6DBvo/e7+Mr5BJIY+5cH//qhR5nW0ol6wpScLuuiS+fDwBYkUVdS/+LM
-	Dm+a7mOEUuaiWI14kNKA==;
+	List-Owner; bh=l+r/xw1sy526IBrsf/IjS/2Xxtmly2LZIXLoS7mCQfA=; b=gBJ4QykQ7Sf1NS
+	a8dCuIu+GJ7YBJfw4ZtX3opDRN37ywY74j2g3tuPhQFFW2U7nXf/bpZsUo8+r5LQfXFL86yW/11i3
+	P/XFklPP/ZpZW9LpUah9DThHcaH80C4j2aLKJTisiZNDzGEDNIbuqXqYUfrcuipcU1kMYkEidnYhM
+	7wpOPUYoR6beipPljsM57CLtnc+7idu5ZxLzxQOpqvJBIFg3p8uKuW9rqIKFosF/OPp+CBUwi9Orp
+	qizmxZfR8QUvi2aCRKjM/j58pPlD11+RPGxL7cN9QjIl1H5OSPlcXWw7ortNxuxO4L/4LD1Ji2Lb1
+	VYx+yfgRVJheunxIPIUg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iADsA-0003EK-19; Tue, 17 Sep 2019 13:50:26 +0000
-Received: from pandora.armlinux.org.uk
- ([2001:4d48:ad52:3201:214:fdff:fe10:1be6])
+	id 1iADsX-0003Ss-8B; Tue, 17 Sep 2019 13:50:49 +0000
+Received: from mail.kernel.org ([198.145.29.99])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iADrq-0002Fz-SG
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:50:10 +0000
-DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
- d=armlinux.org.uk; s=pandora-2019; h=Sender:In-Reply-To:Content-Type:
- MIME-Version:References:Message-ID:Subject:Cc:To:From:Date:Reply-To:
- Content-Transfer-Encoding:Content-ID:Content-Description:Resent-Date:
- Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:List-Id:
- List-Help:List-Unsubscribe:List-Subscribe:List-Post:List-Owner:List-Archive;
- bh=ixPF66S1XEW6DoFy8CVYHJVE6hgRd/68MWIlm+YGQGQ=; b=b6pUmwH9IlXUvL2KhzslExPfl
- np33xjAdjKROOrqn4uH4Paxg5CeDEsA6ylMWZS4E7AIvjNSMA5yA4vMZ5s2+HgbHt+0DDFwDNyEN2
- 4LdtDwXhvhN/vFsT67gkDO4HORY4Y9N2Pro1+uemfeeoXt7NH2Sd3XiE5BfgjMcfeuoo/pF0hrN1c
- C4XuwXiDEjI+nCXPNlcVSTvLyMJinPfZRDvn5qbo/1jzTQ3AVq6M8wu1BNmayKsowMbGjDFx1DGJX
- HyECt9iuw8fyU1CMr5m96uoNo5wz6tCu71yMDOZAxVszdBxMLJJdPF/5AMo/8oIAcZ0HDyNgyC7p0
- HCbt/rEjA==;
-Received: from shell.armlinux.org.uk
- ([2002:4e20:1eda:1:5054:ff:fe00:4ec]:40648)
- by pandora.armlinux.org.uk with esmtpsa
- (TLSv1.2:ECDHE-RSA-AES256-GCM-SHA384:256) (Exim 4.90_1)
- (envelope-from <linux@armlinux.org.uk>)
- id 1iADra-0002C1-6k; Tue, 17 Sep 2019 14:49:50 +0100
-Received: from linux by shell.armlinux.org.uk with local (Exim 4.92)
- (envelope-from <linux@shell.armlinux.org.uk>)
- id 1iADrX-0001L1-82; Tue, 17 Sep 2019 14:49:47 +0100
-Date: Tue, 17 Sep 2019 14:49:47 +0100
-From: Russell King - ARM Linux admin <linux@armlinux.org.uk>
+ id 1iADru-0003Du-P6
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:50:12 +0000
+Received: from willie-the-truck (236.31.169.217.in-addr.arpa [217.169.31.236])
+ (using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256
+ bits)) (No client certificate requested)
+ by mail.kernel.org (Postfix) with ESMTPSA id 789B920640;
+ Tue, 17 Sep 2019 13:50:06 +0000 (UTC)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/simple; d=kernel.org;
+ s=default; t=1568728208;
+ bh=EF+cokmhO844wU/4E9FL9Kj9ejUO2xemZNs6ofyBbn0=;
+ h=Date:From:To:Cc:Subject:References:In-Reply-To:From;
+ b=IvRwRRjnAr5zTaNftoPS4pX32ccElvTTlH+lVfGvBripBgTJC1sgMNmMUVvvms2wv
+ nT94fQkKBlsMKygEXcw28S11v61/DieDU9F4R5lxEDWurTWrOKhFZp58dYkrhdczbT
+ q3w/4NqWhCyynQfMJV+OqtWoVtNedf7LTIYBvjcQ=
+Date: Tue, 17 Sep 2019 14:50:03 +0100
+From: Will Deacon <will@kernel.org>
 To: Robin Murphy <robin.murphy@arm.com>
 Subject: Re: [REGRESSION] sdhci no longer detects SD cards on LX2160A
-Message-ID: <20190917134947.GS25745@shell.armlinux.org.uk>
+Message-ID: <20190917135002.5rolyvlgmnyepk2c@willie-the-truck>
 References: <20190916171509.GG25745@shell.armlinux.org.uk>
  <b19a0640-5d71-a005-eb0f-c6840f181e5d@free.fr>
  <20190917081931.GI25745@shell.armlinux.org.uk>
@@ -62,20 +52,19 @@ References: <20190916171509.GG25745@shell.armlinux.org.uk>
 MIME-Version: 1.0
 Content-Disposition: inline
 In-Reply-To: <c12e21c3-6bef-38ed-3693-b958be17d555@arm.com>
-User-Agent: Mutt/1.10.1 (2018-07-13)
+User-Agent: NeoMutt/20170113 (1.7.2)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_065007_318695_006CCD74 
-X-CRM114-Status: GOOD (  45.38  )
-X-Spam-Score: -2.5 (--)
+X-CRM114-CacheID: sfid-20190917_065010_863860_2DC73D4E 
+X-CRM114-Status: GOOD (  44.09  )
+X-Spam-Score: -5.2 (-----)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-2.5 points)
+ Content analysis details:   (-5.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -2.3 RCVD_IN_DNSWL_MED      RBL: Sender listed at https://www.dnswl.org/,
- medium trust [2001:4d48:ad52:3201:214:fdff:fe10:1be6 listed in]
- [list.dnswl.org]
+ -5.0 RCVD_IN_DNSWL_HI       RBL: Sender listed at https://www.dnswl.org/,
+ high trust [198.145.29.99 listed in list.dnswl.org]
+ -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
- 0.0 SPF_NONE               SPF: sender does not publish an SPF Record
  0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
  valid
  -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
@@ -83,6 +72,7 @@ X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
  envelope-from domain
  -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ -0.0 DKIMWL_WL_HIGH         DKIMwl.org - Whitelisted High sender
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -94,9 +84,11 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: dann frazier <dann.frazier@canonical.com>, linux-mmc@vger.kernel.org,
- Adrian Hunter <adrian.hunter@intel.com>, Will Deacon <will.deacon@arm.com>,
- Nicolin Chen <nicoleotsuka@gmail.com>, Christoph Hellwig <hch@lst.de>,
+Cc: dann frazier <dann.frazier@canonical.com>,
+ Will Deacon <will.deacon@arm.com>,
+ Russell King - ARM Linux admin <linux@armlinux.org.uk>,
+ Adrian Hunter <adrian.hunter@intel.com>, Nicolin Chen <nicoleotsuka@gmail.com>,
+ linux-mmc@vger.kernel.org, Christoph Hellwig <hch@lst.de>,
  Linux ARM <linux-arm-kernel@lists.infradead.org>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
@@ -324,32 +316,13 @@ On Tue, Sep 17, 2019 at 02:38:00PM +0100, Robin Murphy wrote:
 > addresses that the controller needed additional configuration to be able to
 > access[1] - no amount of cache maintenance would affect that.
 
-As already replied, v4 mode is not documented as being available on
-the LX2160A - the bit in the control register is marked as "reserved".
-This is as expected as it is documented that it is using a v3.00 of
-the SDHCI standard, rather than v4.00.
+To be honest, the conclusion in that other thread wasn't exactly satisfying.
+The reporter says "Probably, my device is not 64-bit capable." and the fix
+changes the buffer allocation enough that I wouldn't rule out the same
+coherency issue as being the root cause. I don't think we ever tried adding
+cache flushing to see if it helped.
 
-So, sorry, enabling "v4 mode" isn't a workaround in this scenario.
-
-Given that v4 mode is not mandatory, this shouldn't be a work-around.
-
-Given that it _does_ work some of the time with the table >4GB, then
-this is not an addressing limitation.
-
-> However, the other difference between getting a single page directly from
-> the page allocator vs. the CMA area is that accesses to the linear mapping
-> of the CMA area are probably pretty rare, whereas for the single-page case
-> it's much more likely that kernel tasks using adjacent pages could lead to
-> prefetching of the descriptor page's cacheable alias. That could certainly
-> explain how reverting that commit manages to hide an apparent coherency
-> issue.
-
-Right, so how do we fix this?
-
--- 
-RMK's Patch system: https://www.armlinux.org.uk/developer/patches/
-FTTC broadband for 0.8mile line in suburbia: sync at 12.1Mbps down 622kbps up
-According to speedtest.net: 11.9Mbps down 500kbps up
+Will
 
 _______________________________________________
 linux-arm-kernel mailing list
