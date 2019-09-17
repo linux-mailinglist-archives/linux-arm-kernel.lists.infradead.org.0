@@ -2,46 +2,49 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 92190B4CD0
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 13:25:45 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 317A8B4CCC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 13:25:43 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:Message-Id:Date:
-	Subject:To:From:Reply-To:Content-ID:Content-Description:Resent-Date:
-	Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:In-Reply-To:
-	References:List-Owner; bh=QZUa2sJzHW0je7FayCtcpnQoEDdPhQrbzWtZY548QOA=; b=ZR8
-	zBNJCvJqK2hi9JEVhnmIEX0opEZm+uLLHTRaEft47DIJSDIavysOlUq1onJ26i517ceXT5U8WIbwd
-	pTG1GqZlGr+TTM4aMXa387rpzldvlFRx6m3uWYGvtMEmQmUs1HpnYnJAZHppRcmgcizBwSVeVoVDp
-	1GK0zAOzulOYG3fYoS5xNYV3faCSuJ80M47ek4Y0fXZb4dDXedHyRCjOJm3ag8c8x3puJYUEYPrsW
-	ZsLn84qjkRrVkPps79bLUpCFcM6jlhH+gYp8SrrE9X3teM8Hi81AM5gdp0cy13bsThu+MJIILCK3Z
-	qzik3ZCjjpcVTc6POM+LQVsCzSlA/8w==;
+	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
+	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
+	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
+	:Resent-Message-ID:List-Owner;
+	bh=Ulqm1+7LYjSxMabVAyB/Re6EvUJVVDjq/JOAn7kPlh4=; b=A05Pew/w7IqvJ1csIXjkg/ObpG
+	5+aUVWAUnpHy9KHR0T7EpS/QP81K+8vxLIwrML/yV71tKP3sP0Lp3RQ/8pZhFM+pEHmrCnBHs6iVJ
+	v7aTAMIsK8Rv6g2GLvdxi7MOccaL1Eb6zU8d7BruI3sYweB7Gs+JSYs3LCiLWny/qnmKMS77aJrCs
+	rhkx6bDLqxPMDcvfjbqkUYnG/BmdMJY7oyWONA1HzEk9KEhBbtHiUNnAPF5/FmcTjrpwb/tOABMUj
+	DWS7dUHeLfdSX5AYtp7Px2wdtqYrUcEodE4xUPHCRFk28+7ctZtRiAU4LAIHm/f8dLYDo+p5o8tPR
+	jd6vsg3w==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iABbl-0006vu-9l; Tue, 17 Sep 2019 11:25:21 +0000
+	id 1iABc5-0007MY-Bi; Tue, 17 Sep 2019 11:25:41 +0000
 Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iABbU-0005ld-6I
+ id 1iABbU-0006S9-EY
  for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 11:25:05 +0000
 Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
- by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 8F0741000;
- Tue, 17 Sep 2019 04:25:00 -0700 (PDT)
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id DB24E15A2;
+ Tue, 17 Sep 2019 04:25:03 -0700 (PDT)
 Received: from entos-d05.shanghai.arm.com (entos-d05.shanghai.arm.com
  [10.169.40.35])
- by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id 5367F3F59C;
- Tue, 17 Sep 2019 04:24:57 -0700 (PDT)
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPA id EA0E33F59C;
+ Tue, 17 Sep 2019 04:25:00 -0700 (PDT)
 From: Jianyong Wu <jianyong.wu@arm.com>
 To: netdev@vger.kernel.org, pbonzini@redhat.com,
  sean.j.christopherson@intel.com, maz@kernel.org, richardcochran@gmail.com,
  Mark.Rutland@arm.com, Will.Deacon@arm.com, suzuki.poulose@arm.com
-Subject: [RFC PATCH v2 0/6] Enable ptp_kvm for arm64
-Date: Tue, 17 Sep 2019 07:24:24 -0400
-Message-Id: <20190917112430.45680-1-jianyong.wu@arm.com>
+Subject: [RFC PATCH v2 1/6] Export psci_ops.conduit symbol as modules will use
+ it.
+Date: Tue, 17 Sep 2019 07:24:25 -0400
+Message-Id: <20190917112430.45680-2-jianyong.wu@arm.com>
 X-Mailer: git-send-email 2.17.1
+In-Reply-To: <20190917112430.45680-1-jianyong.wu@arm.com>
+References: <20190917112430.45680-1-jianyong.wu@arm.com>
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_042504_281617_4D0083C2 
-X-CRM114-Status: UNSURE (   8.72  )
-X-CRM114-Notice: Please train this message.
+X-CRM114-CacheID: sfid-20190917_042504_532743_4A320A04 
+X-CRM114-Status: GOOD (  10.15  )
 X-Spam-Score: 0.0 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
  Content analysis details:   (0.0 points)
@@ -69,56 +72,58 @@ Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-kvm ptp targets to provide high precision time sync between guest
-and host in virtualization environment. This patch enable kvm ptp
-for arm64.
-This patch set base on [1][2][3]
+If arm_smccc_1_1_invoke used in modules, psci_ops.conduit should
+be export.
 
-change log:
-from v1 to v2:
-        (1) move arch-specific code from arch/ to driver/ptp/
-        (2) offer mechanism to inform userspace if ptp_kvm service is
-available.
-        (3) separate ptp_kvm code for arm64 into hypervisor part and
-guest part.
-        (4) add API to expose monotonic clock and counter value.
-        (5) refine code: remove no necessary part and reconsitution.
+Signed-off-by: Jianyong Wu <jianyong.wu@arm.com>
+---
+ drivers/firmware/psci/psci.c | 6 ++++++
+ include/linux/arm-smccc.h    | 2 +-
+ include/linux/psci.h         | 1 +
+ 3 files changed, 8 insertions(+), 1 deletion(-)
 
-[1]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=125ea89e4a21e2fc5235410f966a996a1a7148bf
-[2]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=464f5a1741e5959c3e4d2be1966ae0093b4dce06
-[3]https://git.kernel.org/pub/scm/linux/kernel/git/will/linux.git/
-commit/?h=kvm/hvc&id=6597490e005d0eeca8ed8c1c1d7b4318ee014681
-
-Jianyong Wu (6):
-  Export psci_ops.conduit symbol as modules will use it.
-  reorganize ptp_kvm modules to make it arch-independent.
-  Timer: expose monotonic clock and counter value
-  arm64: Add hvc call service for ptp_kvm.
-  Enable ptp_kvm for arm64
-  kvm: add kvm ptp capability extension for arm64
-
- drivers/firmware/psci/psci.c         |  6 ++
- drivers/ptp/Kconfig                  |  2 +-
- drivers/ptp/Makefile                 |  1 +
- drivers/ptp/{ptp_kvm.c => kvm_ptp.c} | 77 ++++++------------------
- drivers/ptp/ptp_kvm_arm64.c          | 82 ++++++++++++++++++++++++++
- drivers/ptp/ptp_kvm_x86.c            | 87 ++++++++++++++++++++++++++++
- include/asm-generic/ptp_kvm.h        | 12 ++++
- include/linux/arm-smccc.h            | 14 ++++-
- include/linux/psci.h                 |  1 +
- include/linux/timekeeping.h          |  3 +
- include/uapi/linux/kvm.h             |  1 +
- kernel/time/timekeeping.c            | 13 +++++
- virt/kvm/arm/arm.c                   |  1 +
- virt/kvm/arm/psci.c                  | 17 ++++++
- 14 files changed, 256 insertions(+), 61 deletions(-)
- rename drivers/ptp/{ptp_kvm.c => kvm_ptp.c} (63%)
- create mode 100644 drivers/ptp/ptp_kvm_arm64.c
- create mode 100644 drivers/ptp/ptp_kvm_x86.c
- create mode 100644 include/asm-generic/ptp_kvm.h
-
+diff --git a/drivers/firmware/psci/psci.c b/drivers/firmware/psci/psci.c
+index f82ccd39a913..35c4eaab1451 100644
+--- a/drivers/firmware/psci/psci.c
++++ b/drivers/firmware/psci/psci.c
+@@ -212,6 +212,12 @@ static unsigned long psci_migrate_info_up_cpu(void)
+ 			      0, 0, 0);
+ }
+ 
++enum psci_conduit psci_get_conduit(void)
++{
++	return psci_ops.conduit;
++}
++EXPORT_SYMBOL(psci_get_conduit);
++
+ static void set_conduit(enum psci_conduit conduit)
+ {
+ 	switch (conduit) {
+diff --git a/include/linux/arm-smccc.h b/include/linux/arm-smccc.h
+index 552cbd49abe8..a6e4d3e3d10a 100644
+--- a/include/linux/arm-smccc.h
++++ b/include/linux/arm-smccc.h
+@@ -357,7 +357,7 @@ asmlinkage void __arm_smccc_hvc(unsigned long a0, unsigned long a1,
+  * The return value also provides the conduit that was used.
+  */
+ #define arm_smccc_1_1_invoke(...) ({					\
+-		int method = psci_ops.conduit;				\
++		int method = psci_get_conduit();			\
+ 		switch (method) {					\
+ 		case PSCI_CONDUIT_HVC:					\
+ 			arm_smccc_1_1_hvc(__VA_ARGS__);			\
+diff --git a/include/linux/psci.h b/include/linux/psci.h
+index a8a15613c157..e5cedc986049 100644
+--- a/include/linux/psci.h
++++ b/include/linux/psci.h
+@@ -42,6 +42,7 @@ struct psci_operations {
+ 	enum smccc_version smccc_version;
+ };
+ 
++extern enum psci_conduit psci_get_conduit(void);
+ extern struct psci_operations psci_ops;
+ 
+ #if defined(CONFIG_ARM_PSCI_FW)
 -- 
 2.17.1
 
