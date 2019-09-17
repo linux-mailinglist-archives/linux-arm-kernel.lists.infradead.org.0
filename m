@@ -2,57 +2,61 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 2305EB4EE6
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:13:01 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 6FFFEB4EF0
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 15:14:46 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
-	Content-Transfer-Encoding:Content-Type:MIME-Version:Cc:List-Subscribe:
-	List-Help:List-Post:List-Archive:List-Unsubscribe:List-Id:References:
-	In-Reply-To:Message-Id:Date:Subject:To:From:Reply-To:Content-ID:
-	Content-Description:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc
-	:Resent-Message-ID:List-Owner;
-	bh=Xmmnt9IoESfsc4G+cTr8sn0Mfs7HICLZvkdOuock60k=; b=nDMZSirVlPcs1zCGcbdx/cMf0v
-	GEdxZV+IGyoML6FSWsAeyrqO8Zk7g7LT/JCQhmDl6e9n1FPz5kLUFqY2ePxQ9hNFL7DCBTXcGHbD4
-	iiGXhQ4Osg6h9iC9L9rjfCyKdockamCmMcfKkDDH5bcjdgNImIblvegnDk4I1xXH7ucSMHVG740Us
-	p1fu21LTZ/i99RgmhcOcQE7HHmXvM0WP2zmODMSqLPYWXI7SDo1nD/PcAa9ZbAX6TwgXC2Mhx0rHM
-	C26GSSaCafpRmOxv6FkaVSkF0K9aPO/LDuTGhIUKQOPWoUty30SKz9gySiY9LxsjB13o3VVmzAmk3
-	Ew5AQYdw==;
+	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
+	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:Date:
+	Message-ID:From:References:To:Subject:Reply-To:Content-ID:Content-Description
+	:Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
+	List-Owner; bh=p1Sk5Ac5x9hfhJM930M0QwmHf6rU1CftXc0rh2JL5AE=; b=Mn171n6l4ZddoK
+	KctecCF9YKlGkmrHobf7pPxPLtnSvJdG0SpipIWKJae9kHa1CpEEbH3ICd6tmHhT7On6s2OpmKF2w
+	DeE6pvTBt8P/WMU57obSwn1EkRlja+8It9H5eAMuhpC5CYWDbQ+FC5PIklANVHzV1h9p7EYFZs1sT
+	s+2LEseNQK9YDk4TgV0GkPmAel/2p/kpqRViRVvdIbFNlt5bqdXJC6ED23fz4EsUrRJS1BhqAwFJ5
+	Sy4RbVgjwvm/cNUtCbms9tzDnrH7PVCwajCYOEXt8C602LvHdP/PvA6wYlA7qILSPOq6DSEQOqFP5
+	nBWJdO7+6xKG/QZugcMg==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iADHq-0003pg-2t; Tue, 17 Sep 2019 13:12:54 +0000
-Received: from relmlor1.renesas.com ([210.160.252.171]
- helo=relmlie5.idc.renesas.com)
+	id 1iADJc-0004ne-Oa; Tue, 17 Sep 2019 13:14:44 +0000
+Received: from foss.arm.com ([217.140.110.172])
  by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iADHZ-0003pC-Cz
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:12:38 +0000
-X-IronPort-AV: E=Sophos;i="5.64,516,1559487600"; d="scan'208";a="26795102"
-Received: from unknown (HELO relmlir5.idc.renesas.com) ([10.200.68.151])
- by relmlie5.idc.renesas.com with ESMTP; 17 Sep 2019 22:12:31 +0900
-Received: from be1yocto.ree.adwin.renesas.com (unknown [172.29.43.62])
- by relmlir5.idc.renesas.com (Postfix) with ESMTP id D10CE400857B;
- Tue, 17 Sep 2019 22:12:27 +0900 (JST)
-From: Biju Das <biju.das@bp.renesas.com>
-To: Catalin Marinas <catalin.marinas@arm.com>,
-	Will Deacon <will@kernel.org>
-Subject: [PATCH 2/4] arm64: defconfig: enable R8A774B1 SoC
-Date: Tue, 17 Sep 2019 14:05:28 +0100
-Message-Id: <1568725530-55241-3-git-send-email-biju.das@bp.renesas.com>
-X-Mailer: git-send-email 2.7.4
-In-Reply-To: <1568725530-55241-1-git-send-email-biju.das@bp.renesas.com>
-References: <1568725530-55241-1-git-send-email-biju.das@bp.renesas.com>
+ id 1iADJH-0004eR-3O
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 13:14:24 +0000
+Received: from usa-sjc-imap-foss1.foss.arm.com (unknown [10.121.207.14])
+ by usa-sjc-mx-foss1.foss.arm.com (Postfix) with ESMTP id 6957F28;
+ Tue, 17 Sep 2019 06:14:22 -0700 (PDT)
+Received: from [10.1.197.61] (usa-sjc-imap-foss1.foss.arm.com [10.121.207.14])
+ by usa-sjc-imap-foss1.foss.arm.com (Postfix) with ESMTPSA id
+ B6A843F575; Tue, 17 Sep 2019 06:14:21 -0700 (PDT)
+Subject: Re: [PATCH] KVM: arm64: vgic-v4: Move the GICv4 residency flow to be
+ driven by vcpu_load/put
+To: Zenghui Yu <yuzenghui@huawei.com>, linux-arm-kernel@lists.infradead.org,
+ kvmarm@lists.cs.columbia.edu, kvm@vger.kernel.org
+References: <20190903155747.219802-1-maz@kernel.org>
+ <5ab75fec-6014-e3b4-92a3-63d5015814c1@huawei.com>
+ <07ddb304-9a7a-64a3-386a-96eea4516346@kernel.org>
+ <dcc5a10b-c9ca-f833-4a60-e5d3726fa0b9@huawei.com>
+ <3b2d4a15-5658-f50f-0214-1da708cd4923@huawei.com>
+From: Marc Zyngier <maz@kernel.org>
+Organization: Approximate
+Message-ID: <c068036a-e9e2-0cb1-d1b5-9cf6d53e963f@kernel.org>
+Date: Tue, 17 Sep 2019 14:14:19 +0100
+User-Agent: Mozilla/5.0 (X11; Linux aarch64; rv:60.0) Gecko/20100101
+ Thunderbird/60.8.0
+MIME-Version: 1.0
+In-Reply-To: <3b2d4a15-5658-f50f-0214-1da708cd4923@huawei.com>
+Content-Language: en-US
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190917_061237_545061_3F8C5325 
-X-CRM114-Status: UNSURE (   9.06  )
-X-CRM114-Notice: Please train this message.
-X-Spam-Score: 0.0 (/)
+X-CRM114-CacheID: sfid-20190917_061423_235218_07D72ABC 
+X-CRM114-Status: GOOD (  12.21  )
+X-Spam-Score: 1.0 (+)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (0.0 points)
+ Content analysis details:   (1.0 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
- no trust [210.160.252.171 listed in list.dnswl.org]
- -0.0 SPF_PASS               SPF: sender matches SPF record
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ 1.0 SPF_SOFTFAIL           SPF: sender does not match SPF record (softfail)
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -64,46 +68,28 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Fabrizio Castro <fabrizio.castro@bp.renesas.com>,
- linux-renesas-soc@vger.kernel.org,
- Chris Paterson <Chris.Paterson2@renesas.com>,
- Anson Huang <Anson.Huang@nxp.com>, Arnd Bergmann <arnd@arndb.de>,
- Maxime Ripard <mripard@kernel.org>, Biju Das <biju.das@bp.renesas.com>,
- Marcin Juszkiewicz <marcin.juszkiewicz@linaro.org>,
- Dinh Nguyen <dinguyen@kernel.org>, Simon Horman <horms@verge.net.au>,
- Bjorn Andersson <bjorn.andersson@linaro.org>,
- Jagan Teki <jagan@amarulasolutions.com>, Olof Johansson <olof@lixom.net>,
- Geert Uytterhoeven <geert+renesas@glider.be>,
- Leonard Crestez <leonard.crestez@nxp.com>, Shawn Guo <shawnguo@kernel.org>,
- linux-arm-kernel@lists.infradead.org
-MIME-Version: 1.0
+Cc: Andre Przywara <Andre.Przywara@arm.com>
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Enable the Renesas RZ/G2N (R8A774B1) SoC in the ARM64 defconfig.
+On 17/09/2019 11:17, Zenghui Yu wrote:
+> Hi Marc,
+> 
+> On 2019/9/17 17:31, Zenghui Yu wrote:
+>>
+>> But this time I got the following WARNING:
+> 
+> Please ignore it. I think this is mostly caused by my local buggy
+> patch... Sorry for the noise.
 
-Signed-off-by: Biju Das <biju.das@bp.renesas.com>
----
- arch/arm64/configs/defconfig | 1 +
- 1 file changed, 1 insertion(+)
+Right. I couldn't quite figure out how this could happen with the
+current state of the code...
 
-diff --git a/arch/arm64/configs/defconfig b/arch/arm64/configs/defconfig
-index 0e58ef0..6433d33 100644
---- a/arch/arm64/configs/defconfig
-+++ b/arch/arm64/configs/defconfig
-@@ -721,6 +721,7 @@ CONFIG_QCOM_SMD_RPM=y
- CONFIG_QCOM_SMP2P=y
- CONFIG_QCOM_SMSM=y
- CONFIG_ARCH_R8A774A1=y
-+CONFIG_ARCH_R8A774B1=y
- CONFIG_ARCH_R8A774C0=y
- CONFIG_ARCH_R8A7795=y
- CONFIG_ARCH_R8A7796=y
+	M.
 -- 
-2.7.4
-
+Jazz is not dead, it just smells funny...
 
 _______________________________________________
 linux-arm-kernel mailing list
