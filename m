@@ -2,62 +2,97 @@ Return-Path: <linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infr
 X-Original-To: lists+linux-arm-kernel@lfdr.de
 Delivered-To: lists+linux-arm-kernel@lfdr.de
 Received: from bombadil.infradead.org (bombadil.infradead.org [IPv6:2607:7c80:54:e::133])
-	by mail.lfdr.de (Postfix) with ESMTPS id 7D61FB44ED
-	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 02:41:47 +0200 (CEST)
+	by mail.lfdr.de (Postfix) with ESMTPS id 4A6FCB44FC
+	for <lists+linux-arm-kernel@lfdr.de>; Tue, 17 Sep 2019 02:54:16 +0200 (CEST)
 DKIM-Signature: v=1; a=rsa-sha256; q=dns/txt; c=relaxed/relaxed;
 	d=lists.infradead.org; s=bombadil.20170209; h=Sender:
 	Content-Transfer-Encoding:Content-Type:Cc:List-Subscribe:List-Help:List-Post:
 	List-Archive:List-Unsubscribe:List-Id:In-Reply-To:MIME-Version:References:
 	Message-ID:Subject:To:From:Date:Reply-To:Content-ID:Content-Description:
 	Resent-Date:Resent-From:Resent-Sender:Resent-To:Resent-Cc:Resent-Message-ID:
-	List-Owner; bh=wDxj7EsvbELROZGVGXfIJD7aZfCFIoJ8I0F6glgNHk8=; b=tFSBKu/E7OUG+c
-	qm0zda7NleoDm4pipwf7kbNNk9No9u55WYm+y0vtv4DzmasH8EldvI5yuH54nNp40jGYkhbfiLhcB
-	mEoAexnXGd7695XIXoLulZPcMuI62EJcBkp4t3GGdyTLYAQo3SxX7Qhr5YJuktAneSAjNVzpHtsy4
-	fNeatzqRPdqA5hxNk9QtYHTxyDJTlcfICtA4zIMdHsdWa7C/DH0XqJJWDI9Td6QOVK7r/DZRxDOVp
-	Xp7RPtXpzB830vtOlIS7yaSnfAHXTQz5maIzL9DOzjKqou+IpPpi+/CHd83C0A2sy2CbYZS8LA+3C
-	c+mkhXGhDD61ABENJtKw==;
+	List-Owner; bh=mewM2e1j5/f2UA4T3Dr9TSmKp6fClVbVG+b3jDFKx1c=; b=OdVaC5CXmmqk9T
+	CbbSDEPuseLCOf4xvUFXquWSew45bIAZrxh3SqtrTPhgrTeJLQlltlebYhy2K+Z8jBMXzq6x051zf
+	vd+iUkJ2Fe2Azj02rPTYyxwGStfZ0tGdPY3lI/rl2OlPJsCBO2oSQ5nYAecveQlAGDpyB4ixSM/8A
+	yqCe5cXh4YjSGfjM1YtMqWoexhKIwmKJMrle3C2Jn7FwLKW7g4Md1I6Sbjh+XFQCYZWzxgPXHDzu3
+	dKjK3uY5CgK/cPFz3HgjhbrwzGb+c09tZ1GKqBFZHxoAdRvDVZL+tJX9wbfNciuwfYB6/p6fe9bE8
+	JL3ses7Ups/DbK9ex6pw==;
 Received: from localhost ([127.0.0.1] helo=bombadil.infradead.org)
 	by bombadil.infradead.org with esmtp (Exim 4.92.2 #3 (Red Hat Linux))
-	id 1iA1Yn-0005Zv-Dk; Tue, 17 Sep 2019 00:41:37 +0000
-Received: from relay3-d.mail.gandi.net ([217.70.183.195])
+	id 1iA1ko-0000ge-CT; Tue, 17 Sep 2019 00:54:02 +0000
+Received: from mail-pl1-x642.google.com ([2607:f8b0:4864:20::642])
  by bombadil.infradead.org with esmtps (Exim 4.92.2 #3 (Red Hat Linux))
- id 1iA1Ya-0005Yr-1k
- for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 00:41:25 +0000
-X-Originating-IP: 90.65.161.137
-Received: from localhost (lfbn-1-1545-137.w90-65.abo.wanadoo.fr
- [90.65.161.137])
- (Authenticated sender: alexandre.belloni@bootlin.com)
- by relay3-d.mail.gandi.net (Postfix) with ESMTPSA id 3659060002;
- Tue, 17 Sep 2019 00:41:14 +0000 (UTC)
-Date: Tue, 17 Sep 2019 02:41:13 +0200
-From: Alexandre Belloni <alexandre.belloni@bootlin.com>
-To: Thierry Reding <thierry.reding@gmail.com>
-Subject: Re: [PATCH 0/6] ARM, arm64: Remove arm_pm_restart()
-Message-ID: <20190917004113.GC21254@piout.net>
-References: <20170130110512.6943-1-thierry.reding@gmail.com>
- <20190914152544.GA17499@roeck-us.net>
- <CAK8P3a3G_9EeK-Xp7ZeA0EN7WNzrL7AxoQcNZ8z-oe5NsTYW6g@mail.gmail.com>
- <056ccf5c-6c6c-090b-6ca1-ab666021db48@roeck-us.net>
- <20190916134920.GA18267@ulmo> <20190916154336.GA6628@roeck-us.net>
- <20190916155031.GE7488@ulmo>
- <CAK8P3a1EZi5apOm90B6YW2GzFXsirz5wk-D66daR20oj_TLXNg@mail.gmail.com>
- <20190916202809.GA42800@mithrandir>
+ id 1iA1kX-0000fx-Uo
+ for linux-arm-kernel@lists.infradead.org; Tue, 17 Sep 2019 00:53:47 +0000
+Received: by mail-pl1-x642.google.com with SMTP id k1so702640pls.11
+ for <linux-arm-kernel@lists.infradead.org>;
+ Mon, 16 Sep 2019 17:53:44 -0700 (PDT)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=gmail.com; s=20161025;
+ h=date:from:to:cc:subject:message-id:references:mime-version
+ :content-disposition:in-reply-to:user-agent;
+ bh=bb3WgUuPlwJWlYbzoUQVlukqZNU/xGNNtLsMKZAKSWI=;
+ b=JJiE+j6yomdxr6HSuUweYXgimT2ZE+elZD7yXoRYTuhZwLroQjRbf33BiGhl+/ecw1
+ Z9r/FP6bqd9jN8I9Hoz4Vl5u/19RTPOqvefNOGfqtSSxMUQu/8SS4r3RmlsaQDPfeJr3
+ eeNzl1kYYq0UrvUDshYHOC5YpIERwW8isPEgNbuDlaM7sIIAiZa7ca16WICZguqkcGl/
+ aCGcwWn2N++7fdU99NbfKxrTFr5E1tfFIjWIHLe3nrmgh3fIDbxEoE0AREy0Z1g3Z9l2
+ IPsMwpB95rnV9lJn6rjxAsdKIj9/lS3sW474ujoVQWbwvmWs2VnYpceyk3kFvGYKReCm
+ 2gKw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+ d=1e100.net; s=20161025;
+ h=x-gm-message-state:date:from:to:cc:subject:message-id:references
+ :mime-version:content-disposition:in-reply-to:user-agent;
+ bh=bb3WgUuPlwJWlYbzoUQVlukqZNU/xGNNtLsMKZAKSWI=;
+ b=G3CJQMB9PJMFAO+Dc+qQvq5EYvvLLZTHu+hfh0ryl+fptSz3OufBiQyYDkk42Ja5sB
+ A7z2MUThqgyFeN35MSeNuw3Ta0t+Xi7yf59jpJhCBKwfAFiFh/gb+xENPJeP82cizUe2
+ QMPoOO9JCFL4OQ3bf0Pm917Plf+KpLLibCxzV6cdXgBxjDMXDWis9sYlEkwHKpttv4/q
+ ZaJYUWbJmo5svz3UbKRjZJTb6nz29m7R7rcbGQ59kuImZ/Bp6Laq1uFgL3IQ+sf8SPQe
+ k0pdFIJekuUJS9FDR4ayVvXuI0cdhQrHwYN+OAuMiu1kLWif+C5OWKOikTdNxrM1vrMF
+ 7OAQ==
+X-Gm-Message-State: APjAAAVHc39KF4kr/aV+pgweye8mICUvArUUwcL0g9lhoWMus5JGcmCa
+ qL/SuqSnRUNRN359BpgNqLCnHett
+X-Google-Smtp-Source: APXvYqxWmGkNGIvP0iApQpIgZ+XbGCgnNGJDgqVmTf07dDFscLXble+QsYvpdfkGJt5n1L26rkvQWg==
+X-Received: by 2002:a17:902:166:: with SMTP id 93mr944351plb.195.1568681624214; 
+ Mon, 16 Sep 2019 17:53:44 -0700 (PDT)
+Received: from localhost ([110.70.27.73])
+ by smtp.gmail.com with ESMTPSA id bx18sm336950pjb.26.2019.09.16.17.53.42
+ (version=TLS1_3 cipher=TLS_AES_256_GCM_SHA384 bits=256/256);
+ Mon, 16 Sep 2019 17:53:43 -0700 (PDT)
+Date: Tue, 17 Sep 2019 09:53:40 +0900
+From: Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>
+To: Steven Rostedt <rostedt@goodmis.org>
+Subject: Re: page_alloc.shuffle=1 + CONFIG_PROVE_LOCKING=y = arm64 hang
+Message-ID: <20190917005340.GA9679@jagdpanzerIV>
+References: <1566509603.5576.10.camel@lca.pw>
+ <1567717680.5576.104.camel@lca.pw>
+ <1568128954.5576.129.camel@lca.pw>
+ <20190911011008.GA4420@jagdpanzerIV>
+ <1568289941.5576.140.camel@lca.pw>
+ <20190916104239.124fc2e5@gandalf.local.home>
 MIME-Version: 1.0
 Content-Disposition: inline
-In-Reply-To: <20190916202809.GA42800@mithrandir>
+In-Reply-To: <20190916104239.124fc2e5@gandalf.local.home>
 User-Agent: Mutt/1.12.1 (2019-06-15)
 X-CRM114-Version: 20100106-BlameMichelson ( TRE 0.8.0 (BSD) ) MR-646709E3 
-X-CRM114-CacheID: sfid-20190916_174124_242696_F38EFBC6 
-X-CRM114-Status: GOOD (  11.27  )
-X-Spam-Score: -0.7 (/)
+X-CRM114-CacheID: sfid-20190916_175346_019900_A36AAA93 
+X-CRM114-Status: GOOD (  10.89  )
+X-Spam-Score: -0.2 (/)
 X-Spam-Report: SpamAssassin version 3.4.2 on bombadil.infradead.org summary:
- Content analysis details:   (-0.7 points)
+ Content analysis details:   (-0.2 points)
  pts rule name              description
  ---- ---------------------- --------------------------------------------------
- -0.7 RCVD_IN_DNSWL_LOW      RBL: Sender listed at https://www.dnswl.org/,
- low trust [217.70.183.195 listed in list.dnswl.org]
+ -0.0 RCVD_IN_DNSWL_NONE     RBL: Sender listed at https://www.dnswl.org/,
+ no trust [2607:f8b0:4864:20:0:0:0:642 listed in]
+ [list.dnswl.org]
  -0.0 SPF_PASS               SPF: sender matches SPF record
+ 0.0 FREEMAIL_FROM          Sender email is commonly abused enduser mail
+ provider (sergey.senozhatsky.work[at]gmail.com)
  0.0 SPF_HELO_NONE          SPF: HELO does not publish an SPF Record
+ -0.1 DKIM_VALID Message has at least one valid DKIM or DK signature
+ 0.1 DKIM_SIGNED            Message has a DKIM or DK signature, not necessarily
+ valid
+ -0.1 DKIM_VALID_EF          Message has a valid DKIM or DK signature from
+ envelope-from domain
+ -0.1 DKIM_VALID_AU          Message has a valid DKIM or DK signature from
+ author's domain
 X-BeenThere: linux-arm-kernel@lists.infradead.org
 X-Mailman-Version: 2.1.29
 Precedence: list
@@ -69,40 +104,34 @@ List-Post: <mailto:linux-arm-kernel@lists.infradead.org>
 List-Help: <mailto:linux-arm-kernel-request@lists.infradead.org?subject=help>
 List-Subscribe: <http://lists.infradead.org/mailman/listinfo/linux-arm-kernel>, 
  <mailto:linux-arm-kernel-request@lists.infradead.org?subject=subscribe>
-Cc: Guenter Roeck <linux@roeck-us.net>,
- Linux ARM <linux-arm-kernel@lists.infradead.org>,
- Arnd Bergmann <arnd@arndb.de>,
- "linux-kernel@vger.kernel.org" <linux-kernel@vger.kernel.org>
+Cc: Petr Mladek <pmladek@suse.com>, Theodore Ts'o <tytso@mit.edu>,
+ Sergey Senozhatsky <sergey.senozhatsky.work@gmail.com>,
+ Arnd Bergmann <arnd@arndb.de>, Peter Zijlstra <peterz@infradead.org>,
+ Catalin Marinas <catalin.marinas@arm.com>, linux-kernel@vger.kernel.org,
+ linux-mm@kvack.org, Qian Cai <cai@lca.pw>,
+ Greg Kroah-Hartman <gregkh@linuxfoundation.org>,
+ Waiman Long <longman@redhat.com>, Dan Williams <dan.j.williams@intel.com>,
+ Will Deacon <will@kernel.org>, Thomas Gleixner <tglx@linutronix.de>,
+ linux-arm-kernel@lists.infradead.org
 Content-Type: text/plain; charset="us-ascii"
 Content-Transfer-Encoding: 7bit
 Sender: "linux-arm-kernel" <linux-arm-kernel-bounces@lists.infradead.org>
 Errors-To: linux-arm-kernel-bounces+lists+linux-arm-kernel=lfdr.de@lists.infradead.org
 
-Hi Thierry,
-
-On 16/09/2019 22:28:09+0200, Thierry Reding wrote:
-> > > Yeah, I can just send the pull request for the 6 patches after -rc1.
+On (09/16/19 10:42), Steven Rostedt wrote:
+[..]
 > > 
-> > Ok, sounds good. I'm also happy to take the remaining patches
-> > in that branch, for the other architectures.
+> > This will also fix the hang.
+> > 
+> > Sergey, do you plan to submit this Ted?
 > 
-> All of the patches beyond the 6 in this set rely on the system reset and
-> power "framework". I don't think there was broad concensus on that idea
-> yet. If you think it's worth another try I'm happy to send the patches
-> out again.
-> 
+> Perhaps for a quick fix (and a comment that says this needs to be fixed
+> properly).
 
-Could you consider converting the RTC drivers too? The ones used for
-poweroff are:
+I guess it would make sense, since LTS and -stable kernels won't get new
+printk().
 
-drivers/rtc/rtc-ds1685.c
-drivers/rtc/rtc-jz4740.c
-drivers/rtc/rtc-omap.c
-
--- 
-Alexandre Belloni, Bootlin
-Embedded Linux and Kernel engineering
-https://bootlin.com
+	-ss
 
 _______________________________________________
 linux-arm-kernel mailing list
